@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 585C310FB75
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 11:12:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 652ED10FB7A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 11:13:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mt0SCo0XTmAiE8jbDbfJNzZQGmuCYPSVjgcN2+f/yvk=; b=divoPO+s87O70x
-	EXdA4M9tS+iDS/SrFx0TuINGV38A+RylU7TT/5zPSka2D39WeAAqtdf8OFJtyE433KRmS2NJ3k/As
-	eHni7h+oQuPRkvTjPR2jfPc6CHE+U5xa+VYU4o6WUG1XdlGTjR+TsRbKCn93MIcut5MTkWOBVsezV
-	KJshKF5uPtyaoOhDIHh04RnYvDxk3qVfs6aZytkAZO7/jKx8mEEcoYV9cSou3iIcw9E10+wXSow+5
-	gxRiagGqtFhsWqy+8vZp8UhTdnrNNAQl8Aj4yjRwnWC6WFpf4LwUMvXrzvpzw+ZnbmOMpHCeqs7aE
-	H8Z7F7+q9acHR93i86Vg==;
+	List-Owner; bh=SGWOAorw7CJwebupbkPakMPcNGtP/3Cb+5Q0TwxBfLY=; b=ORsnUtPbhKD+cN
+	Bit+ca6Ao4HXldSUJ1ulhvS5nG2K8GZS82/Peb/eIkwG1mh1fAF35dRFBjB5gWxL4voFlaz057SmD
+	5fZvNX4pACwZ30sLlM7QPn4DJ6FDn08vc0+yJngR4Nj3I5CpPsq35JZ8ckbdzTtEPSSnFXGhzzc0/
+	LNsltDT1udkEpKYmt43Q+V3xl4ht70ZUVpsbFEjbkyRbnMncenxHbKQnJk+soyRemp3ZmqBouy75C
+	iiF8V3cV4jBV+tfGsar+rKxKA5aJk0spWCXQJh24gV1Za6Flb6CWXJsRyK2N/oAetGpwunFBaRnL8
+	WjCR4hVKfyCgWGVubjeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic5AP-0006zR-Fk; Tue, 03 Dec 2019 10:12:25 +0000
+	id 1ic5B9-0007HN-Ng; Tue, 03 Dec 2019 10:13:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic5AG-0006y7-WD; Tue, 03 Dec 2019 10:12:18 +0000
+ id 1ic5Az-0007GT-Kk; Tue, 03 Dec 2019 10:13:03 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DD68A206DF;
- Tue,  3 Dec 2019 10:12:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 22E5C206DF;
+ Tue,  3 Dec 2019 10:12:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575367935;
- bh=njEa6+IrLjuvJPILzHBnWSOeMyzbeQ4z6Q3+166H/eE=;
+ s=default; t=1575367981;
+ bh=wI49/3MX3A5K4KXoKvz8MjUjQ7lmXO+cIlGX8yR3wXs=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=EwECi3FPLB/gvnYoP5ns47k1Roo8LLto0gKhd1RbDt8bHESwF/OS5NpOW/mDzvbBU
- aNAi2vigGNx3RvjT6bsRLY06FdN/918p4dNXEvOAMkx+FqMjBl+PWB3UrR7P1cM92U
- sGuAtpf5TUSO3fHv9ZfheiDtJ8l0aAS48yG5iCLU=
-Date: Tue, 3 Dec 2019 10:12:03 +0000
+ b=Sc86W9/tccQOqQmYT3saFdznHpCbiKhhZ0lfmhYEUbg7DqCajtQ8cwkT4HGMqsFQg
+ bWcuPJo8EhusJxRV2NfJEIpb5L7QcVt2PMZ3cow5j4BzFTQNSoTVMCEM7NkLJ/834F
+ JUbhMmgAFoB883XHKUkBCUhzsbpQZstw1bHbNfuM=
+Date: Tue, 3 Dec 2019 10:12:50 +0000
 From: Will Deacon <will@kernel.org>
-To: Bhupesh Sharma <bhsharma@redhat.com>
-Subject: Re: [PATCH v5 0/5] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-Message-ID: <20191203101202.GA6815@willie-the-truck>
-References: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
- <20191129102421.GA28322@willie-the-truck>
- <CACi5LpNQPw41kGsW+d0PyZaC7gSrbgwT2VxwyO5r3j83h-mkEQ@mail.gmail.com>
+To: John Stultz <john.stultz@linaro.org>
+Subject: Re: [PATCH v6 3/4] arm64: use both ZONE_DMA and ZONE_DMA32
+Message-ID: <20191203101249.GC6815@willie-the-truck>
+References: <20190911182546.17094-1-nsaenzjulienne@suse.de>
+ <20190911182546.17094-4-nsaenzjulienne@suse.de>
+ <CALAqxLVVcsmFrDKLRGRq7GewcW405yTOxG=KR3csVzQ6bXutkA@mail.gmail.com>
+ <CALAqxLUkPNf9JYyt+_VOrxq=Zq03veb1y-7aDx+_Vw+fF9i82A@mail.gmail.com>
+ <CALAqxLW7RTif_NPxFXnxfTm2_ST+6aNmE6X=3v4XsuojKH2mtg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CACi5LpNQPw41kGsW+d0PyZaC7gSrbgwT2VxwyO5r3j83h-mkEQ@mail.gmail.com>
+In-Reply-To: <CALAqxLW7RTif_NPxFXnxfTm2_ST+6aNmE6X=3v4XsuojKH2mtg@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_021217_057697_9A542BB5 
-X-CRM114-Status: GOOD (  15.49  )
+X-CRM114-CacheID: sfid-20191203_021301_722415_B1ADD551 
+X-CRM114-Status: GOOD (  18.50  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,57 +79,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Paul Mackerras <paulus@samba.org>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Boris Petkov <bp@alien8.de>, Dave Anderson <anderson@redhat.com>,
- Michael Ellerman <mpe@ellerman.id.au>, James Morse <james.morse@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linuxppc-dev@lists.ozlabs.org, Ingo Molnar <mingo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Steve Capper <steve.capper@arm.com>
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Amit Pundir <amit.pundir@linaro.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ mbrugger@suse.com, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, lkml <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, linux-mm <linux-mm@kvack.org>,
+ Rob Herring <robh+dt@kernel.org>, wahrenst@gmx.net,
+ Nicolas Dechense <nicolas.dechesne@linaro.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Nov 30, 2019 at 01:35:36AM +0530, Bhupesh Sharma wrote:
-> On Fri, Nov 29, 2019 at 3:54 PM Will Deacon <will@kernel.org> wrote:
-> > On Fri, Nov 29, 2019 at 01:53:36AM +0530, Bhupesh Sharma wrote:
-> > > Changes since v4:
-> > > ----------------
-> > > - v4 can be seen here:
-> > >   http://lists.infradead.org/pipermail/kexec/2019-November/023961.html
-> > > - Addressed comments from Dave and added patches for documenting
-> > >   new variables appended to vmcoreinfo documentation.
-> > > - Added testing report shared by Akashi for PATCH 2/5.
-> >
-> > Please can you fix your mail setup? The last two times you've sent this
-> > series it seems to get split into two threads, which is really hard to
-> > track in my inbox:
-> >
-> > First thread:
-> >
-> > https://lore.kernel.org/lkml/1574972621-25750-1-git-send-email-bhsharma@redhat.com/
-> >
-> > Second thread:
-> >
-> > https://lore.kernel.org/lkml/1574972716-25858-1-git-send-email-bhsharma@redhat.com/
-> 
-> There seems to be some issue with my server's msmtp settings. I have
-> tried resending the v5 (see
-> <http://lists.infradead.org/pipermail/linux-arm-kernel/2019-November/696833.html>).
-> 
-> I hope the threading is ok this time.
+Hi John,
 
-Much better now, thanks for sorting it out.
+On Mon, Dec 02, 2019 at 10:03:17PM -0800, John Stultz wrote:
+> Ok, narrowing it down further, it seems its the following bit from the
+> patch:
+> 
+> > @@ -201,13 +212,18 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
+> >         struct memblock_region *reg;
+> >         unsigned long zone_size[MAX_NR_ZONES], zhole_size[MAX_NR_ZONES];
+> >         unsigned long max_dma32 = min;
+> > +       unsigned long max_dma = min;
+> >
+> >         memset(zone_size, 0, sizeof(zone_size));
+> >
+> > -       /* 4GB maximum for 32-bit only capable devices */
+> > +#ifdef CONFIG_ZONE_DMA
+> > +       max_dma = PFN_DOWN(arm64_dma_phys_limit);
+> > +       zone_size[ZONE_DMA] = max_dma - min;
+> > +       max_dma32 = max_dma;
+> > +#endif
+> >  #ifdef CONFIG_ZONE_DMA32
+> >         max_dma32 = PFN_DOWN(arm64_dma32_phys_limit);
+> > -       zone_size[ZONE_DMA32] = max_dma32 - min;
+> > +       zone_size[ZONE_DMA32] = max_dma32 - max_dma;
+> >  #endif
+> >         zone_size[ZONE_NORMAL] = max - max_dma32;
+> >
+> > @@ -219,11 +235,17 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
+> >
+> >                 if (start >= max)
+> >                         continue;
+> > -
+> > +#ifdef CONFIG_ZONE_DMA
+> > +               if (start < max_dma) {
+> > +                       unsigned long dma_end = min_not_zero(end, max_dma);
+> > +                       zhole_size[ZONE_DMA] -= dma_end - start;
+> > +               }
+> > +#endif
+> >  #ifdef CONFIG_ZONE_DMA32
+> >                 if (start < max_dma32) {
+> > -                       unsigned long dma_end = min(end, max_dma32);
+> > -                       zhole_size[ZONE_DMA32] -= dma_end - start;
+> > +                       unsigned long dma32_end = min(end, max_dma32);
+> > +                       unsigned long dma32_start = max(start, max_dma);
+> > +                       zhole_size[ZONE_DMA32] -= dma32_end - dma32_start;
+> >                 }
+> >  #endif
+> >                 if (end > max_dma32) {
+> 
+> The zhole_sizes end up being:
+> zhole_size: DMA: 67671, DMA32: 1145664 NORMAL: 0
+> 
+> This seems to be due to dma32_start being calculated as 786432 each
+> time - I'm guessing that's the max_dma value.
+> Where dma32_end is around 548800, but changes each iteration (so we
+> end up subtracting a negative value each pass, growing the size).
+
+Yeah, this logic looks utterly buggered to me so I'm surprised that nobody
+else has seen the problem. In particlar, kernelci is reporting success
+on the same SoC :/
+
+https://kernelci.org/boot/sdm845-db845c/
+
+The logs also don't seem to match up with the trees either. For example,
+looking at the boot logs for:
+
+https://kernelci.org/boot/id/5de5fc60b1ed6e2d46960f08/
+
+It claims that the kernel is "next-2019-12-30" but the dmesg says:
+
+[    0.000000] Linux version 5.4.0 (KernelCI@b19b74fe311d) (gcc version
+8.3.0 (Debian 8.3.0-2)) #1 SMP PREEMPT Tue Dec 3 03:14:07 UTC 2019
+
+Which isn't great.
+
+Anyway, I've had a go at fixing it below but it's 100% untested. I think
+the issue is that your SoC has memblocks contained entirely within the
+ZONE_DMA region and we don't cater for that at all when processing the
+ZONE_DMA32 region.
 
 Will
+
+--->8
+
+diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+index be9481cdf3b9..af365ce59ed6 100644
+--- a/arch/arm64/mm/init.c
++++ b/arch/arm64/mm/init.c
+@@ -242,19 +242,19 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
+ 		if (start < max_dma) {
+ 			unsigned long dma_end = min_not_zero(end, max_dma);
+ 			zhole_size[ZONE_DMA] -= dma_end - start;
++			start = dma_end;
+ 		}
+ #endif
+ #ifdef CONFIG_ZONE_DMA32
+-		if (start < max_dma32) {
++		if (start >= max_dma && start < max_dma32) {
+ 			unsigned long dma32_end = min(end, max_dma32);
+-			unsigned long dma32_start = max(start, max_dma);
+-			zhole_size[ZONE_DMA32] -= dma32_end - dma32_start;
++			zhole_size[ZONE_DMA32] -= dma32_end - start;
++			start = dma32_end;
+ 		}
+ #endif
+-		if (end > max_dma32) {
++		if (start >= max_dma32) {
+ 			unsigned long normal_end = min(end, max);
+-			unsigned long normal_start = max(start, max_dma32);
+-			zhole_size[ZONE_NORMAL] -= normal_end - normal_start;
++			zhole_size[ZONE_NORMAL] -= normal_end - start;
+ 		}
+ 	}
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
