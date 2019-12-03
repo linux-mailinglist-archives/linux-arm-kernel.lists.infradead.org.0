@@ -2,71 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25FBF10FB24
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 10:53:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 585C310FB75
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 11:12:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Si+rPBl1qyTJgCxOJUK5MAkMvvJSHq129ZXWCBZ/Dm8=; b=D4GkvOVe7a5Unz
-	rwoQ/HDxhL3vPNe5s7fY5hKelS/o37CIjuciruDcxpbf7XUjAlfucJJcZV7SgB9OR++XfDP3JOkYj
-	0YYTi84jNGUJhZ/g0jkEip2VSWX3JkBUmUwCEODPahddpu9Jt8fBKUB6BIktf4t4pUykhF25dfMKe
-	odoKmdX7sIkKszLy7L1GB2v9l4Ed+Ho5+tglyB87QLxPHp2dza17B46hl/E1sXXBceI6Fd7BmIPgn
-	85Mpyfqx+hCfL9FrR2M0/vN6qTME1EtvUmKzGNmNLg5SuZAp3SwZutEy7s3oui3DwepNxXeuJkPRA
-	P0v7iseAMncDruGuWPkw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mt0SCo0XTmAiE8jbDbfJNzZQGmuCYPSVjgcN2+f/yvk=; b=divoPO+s87O70x
+	EXdA4M9tS+iDS/SrFx0TuINGV38A+RylU7TT/5zPSka2D39WeAAqtdf8OFJtyE433KRmS2NJ3k/As
+	eHni7h+oQuPRkvTjPR2jfPc6CHE+U5xa+VYU4o6WUG1XdlGTjR+TsRbKCn93MIcut5MTkWOBVsezV
+	KJshKF5uPtyaoOhDIHh04RnYvDxk3qVfs6aZytkAZO7/jKx8mEEcoYV9cSou3iIcw9E10+wXSow+5
+	gxRiagGqtFhsWqy+8vZp8UhTdnrNNAQl8Aj4yjRwnWC6WFpf4LwUMvXrzvpzw+ZnbmOMpHCeqs7aE
+	H8Z7F7+q9acHR93i86Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic4sD-0000Lj-Ag; Tue, 03 Dec 2019 09:53:37 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::11])
+	id 1ic5AP-0006zR-Fk; Tue, 03 Dec 2019 10:12:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic4s5-0000L2-Km
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 09:53:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1575366806;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=nKaS4MAvt3OZJHqBZTJcLG5ezQhyH1oHB2okMG2uf+w=;
- b=p3E1ITn6rXFfoUOSo0Rq9Hgo356keGSwqZj4fmVAwO0NxCbvjYfze+NMjJowxsS7t7
- jxedp7rJCrEyFqbP2Mw2Q7sIn/O109/fTL8uPAss8eTM1tKXQb55Q/Gb3Tw6oAta/bUQ
- 6DpO1w9qhGG8tKILklnOKX9FRrngxkfzMycP9b0qqOXkKGNoLwx0Gu801uVq/Yt8+36G
- erMrwd0B8cqFkHNiXkLhSm9i9FyES9Ffh3m4XWMcHXdHwaf0dtdZHxa0UFPqv3ECgEvP
- r6hpP068t0f+3R7qMK0yTKE2BruP3IGQLjiYI3xYDV6ECjLzx+LSYiBzrNFhe7XsSEem
- +Paw==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj5Qpw97WFDlacXAYPiQ=="
-X-RZG-CLASS-ID: mo00
-Received: from imac.fritz.box by smtp.strato.de (RZmta 46.0.2 DYNA|AUTH)
- with ESMTPSA id 6067eavB39r93YV
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
- ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Tue, 3 Dec 2019 10:53:09 +0100 (CET)
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-Subject: Re: [PATCH] ARM: OMAP2+: Fix warnings with broken
- omap2_set_init_voltage()
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <20191202213929.GB35479@atomide.com>
-Date: Tue, 3 Dec 2019 10:53:09 +0100
-Message-Id: <EE749881-C3DB-4BBE-85FE-E5AF3D34884F@goldelico.com>
-References: <20190924233222.52757-1-tony@atomide.com>
- <8FFD44DB-73F8-4807-91E1-C97DA8F781BA@goldelico.com>
- <20191202213929.GB35479@atomide.com>
-To: Tony Lindgren <tony@atomide.com>
-X-Mailer: Apple Mail (2.3124)
+ id 1ic5AG-0006y7-WD; Tue, 03 Dec 2019 10:12:18 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DD68A206DF;
+ Tue,  3 Dec 2019 10:12:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575367935;
+ bh=njEa6+IrLjuvJPILzHBnWSOeMyzbeQ4z6Q3+166H/eE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=EwECi3FPLB/gvnYoP5ns47k1Roo8LLto0gKhd1RbDt8bHESwF/OS5NpOW/mDzvbBU
+ aNAi2vigGNx3RvjT6bsRLY06FdN/918p4dNXEvOAMkx+FqMjBl+PWB3UrR7P1cM92U
+ sGuAtpf5TUSO3fHv9ZfheiDtJ8l0aAS48yG5iCLU=
+Date: Tue, 3 Dec 2019 10:12:03 +0000
+From: Will Deacon <will@kernel.org>
+To: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: Re: [PATCH v5 0/5] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
+ for arm64 and MAX_PHYSMEM_BITS for all archs)
+Message-ID: <20191203101202.GA6815@willie-the-truck>
+References: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
+ <20191129102421.GA28322@willie-the-truck>
+ <CACi5LpNQPw41kGsW+d0PyZaC7gSrbgwT2VxwyO5r3j83h-mkEQ@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CACi5LpNQPw41kGsW+d0PyZaC7gSrbgwT2VxwyO5r3j83h-mkEQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_015330_263795_2CA40340 
-X-CRM114-Status: GOOD (  27.10  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191203_021217_057697_9A542BB5 
+X-CRM114-Status: GOOD (  15.49  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5301:0:0:11 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -74,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,128 +78,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ kexec mailing list <kexec@lists.infradead.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, =?utf-8?Q?Andr=C3=A9_Roth?= <neolynx@gmail.com>,
- Andreas Kemnade <andreas@kemnade.info>,
- Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <aford173@gmail.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
+ Paul Mackerras <paulus@samba.org>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ Boris Petkov <bp@alien8.de>, Dave Anderson <anderson@redhat.com>,
+ Michael Ellerman <mpe@ellerman.id.au>, James Morse <james.morse@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
+ linuxppc-dev@lists.ozlabs.org, Ingo Molnar <mingo@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Steve Capper <steve.capper@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-HiTony,
-
-> Am 02.12.2019 um 22:39 schrieb Tony Lindgren <tony@atomide.com>:
+On Sat, Nov 30, 2019 at 01:35:36AM +0530, Bhupesh Sharma wrote:
+> On Fri, Nov 29, 2019 at 3:54 PM Will Deacon <will@kernel.org> wrote:
+> > On Fri, Nov 29, 2019 at 01:53:36AM +0530, Bhupesh Sharma wrote:
+> > > Changes since v4:
+> > > ----------------
+> > > - v4 can be seen here:
+> > >   http://lists.infradead.org/pipermail/kexec/2019-November/023961.html
+> > > - Addressed comments from Dave and added patches for documenting
+> > >   new variables appended to vmcoreinfo documentation.
+> > > - Added testing report shared by Akashi for PATCH 2/5.
+> >
+> > Please can you fix your mail setup? The last two times you've sent this
+> > series it seems to get split into two threads, which is really hard to
+> > track in my inbox:
+> >
+> > First thread:
+> >
+> > https://lore.kernel.org/lkml/1574972621-25750-1-git-send-email-bhsharma@redhat.com/
+> >
+> > Second thread:
+> >
+> > https://lore.kernel.org/lkml/1574972716-25858-1-git-send-email-bhsharma@redhat.com/
 > 
-> Hi,
+> There seems to be some issue with my server's msmtp settings. I have
+> tried resending the v5 (see
+> <http://lists.infradead.org/pipermail/linux-arm-kernel/2019-November/696833.html>).
 > 
-> * H. Nikolaus Schaller <hns@goldelico.com> [191202 21:10]:
->>> Am 25.09.2019 um 01:32 schrieb Tony Lindgren <tony@atomide.com>:
->>> Guys, please check and ack if we can really do this to get rid of some
->>> pointless dmesg -l3 errors without affecting the ongoing cpufreq and
->>> voltage work.
->> 
->> unfortunately we did not yet test in combination with the 1GHz OPP
->> patches for omap3630 (queued for v5.5-rc1) and it appears that this
->> patch breaks the 1GHz OPP.
->> 
->> The symptom is that it works fine on a dm3730 with 800MHz rating
->> but results in spurious kernel panics, stack corruption, virtual memory
->> failures, OneNAND DMA timeouts etc. on a dm3730 with 1GHz speed grade.
-> 
-> Hmm yeah OK, I was a bit worried about this breaking something.
-> 
->> We can also re-add the "turbo-mode" tags in the omap36xx.dtsi (or
->> remove the 1GHz OPP) and can then boot with 800MHz max. clock. But
->> enabling boost (echo 1 >/sys/devices/system/cpu/cpufreq/boost) makes
->> the problem and its symptoms appear almost immediately.
->> 
->> After some scratching our heads we found that v5.3.7 is still good and
->> v5.3.8 is bad. A bisect of our tree (which includes the 1GHz OPP) did
->> point to this patch whichwas apparently already backported to v5.3.8 and
->> v5.4.
->> 
->> So I assume that the code removed here enabled or initialized something
->> we need for safe 1GHz transitions. Maybe the ABB-LDO. Or it looks up the
->> vdd regulator and initializes it earlier than without this code. Maybe
->> it also (pre-)initializes some clk which could now be left uninitialized
->> too long?
-> 
-> It was just doing voltdm_lookup() and clk_get_rate() and then failed
-> dev_pm_opp_find_freq_ceil(), but I don't see what these might affect..
-> 
->> Note that seeing the log message indicates that voltdm_scale() and
->> dev_pm_opp_get_voltage() are not called, but all functions before could
->> be with side-effects.
-> 
-> Yes that is strange. There's no clk_prepare() before we proceed to
-> call clk_get_rate() either, not sure if that matter here though.
-> 
->> v5.5-rc1 will likely fail right from the beginning (only on 1GHz rated
->> omap36xx) because it makes the combination of this patch and 1GHz OPP
->> public (linux-next should already fail but it appears that nobody has
->> tested).
-> 
-> OK
+> I hope the threading is ok this time.
 
-Well, it is not that urgent as I thought since I have not yet submitted
-my patch to remove the turbo-mode tags for 1GHz OPP. Therefore even if this
-code is deployed, no dm3730 will try to boot or run at 1GHz unless
-manually enabled by echo 1 >/sys/devices/system/cpu/cpufreq/boost.
+Much better now, thanks for sorting it out.
 
-> 
->> Any ideas how to fix? Before I try to do a revert and then add goto exit;
->> after each function call and see which ones are essential for 1GHz.
-> 
-> If you have things reproducable, care to try to narrow the issue down
-> a bit by trying see which parts of the old omap2_set_init_voltage()
-> fix the issue?
-> 
-> The issue should be there somewhere in the few lines of code before
-> dev_pm_opp_find_freq_ceil(), right?
-> 
-> It would be good to understand what's going on before reverting or
-> fixing things condering that a revert would add back code that has
-> it's own errors and fails to init :)
+Will
 
-Indeed!
-
-> 
-> Another thing to check is if the dev instance is actually the right
-> one we had in omap2_set_init_voltage() vs the dts dev instance as
-> we use that with dev_pm_opp_find_freq_ceil().
-
-As a first step I tried to comment out some steps but immediately
-got failures.
-
-What I then noticed is that there is only a message for
-
-[    2.508392] omap2_set_init_voltage: unable to find boot up OPP for vdd_core
-[    2.517639] omap2_set_init_voltage: unable to set vdd_core
-
-There is none for vdd_mpu_iva. This OPP initialization is successful
-and does call voltdm_scale() once.
-
-So it appears as if omap3_init_voltages() is not a complete no-op.
-
-IMHO the reason for the message is that u-boot defines a frequency
-and voltage that can not be found in the OPP table at all.
-
-Maybe a better solution to get rid of the message would be to modify 
-dev_pm_opp_find_freq_ceil() to interpolate between OPPs?
-
-Hm. After looking into the code I start to wonder why it fails at
-all. _find_freq_ceil() should return the highest available frequency
-above the one passed in and u-boot should not pass more than 800 MHz...
-
-That is IMHO a good next step to go into details.
-
-BR,
-Nikolaus
- 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
