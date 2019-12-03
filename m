@@ -2,129 +2,158 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3CAD10FD77
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:17:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFFC410FD7C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:17:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9W8yrlyJOAC5PSEC6j9kdxxx249KuAsiR4FSvEPFH7U=; b=Kj2fPGVsFPHLuw
-	CMkMzzINFd8Etv7mhSibQKG2FRBtAwTVlBVET6fCYTDssXS1Tj++bCRP/Sry6gnUdJmqp6ORIpsL9
-	zQFJfnCJpmcxfKewRs/RbhKKxor5KKDiehYo7xSD9kz7t47MKnldDlhR3So+i0cn14fNgqDtEWVUi
-	7TlH2aF3KPY6s5E+1/adZhzTltE48Xnh/egIb+FTVgHzlN9x5U9jMM2OoSnaHa9dFaEeSaRcrrVqk
-	NHLX/gDIEn/dAIVH4VDCn89LRxbRANTsEFJwHZRorSS/BVt+QQ90X8AD+QD+nbuzGGUikNwCVqerb
-	KR3UpPR9dVASGjtrjDRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vb0hDCaQlkXyjj6KE8fyU5GpqTHtHROLatrRxOsYBkA=; b=kf8QrEDAOwZc1I
+	fQ1nCEwr6OO7YSs60wYz20yZDV3tK9Mf93G7igL67OFxptqqiefec2DjttQ0shuZ9rrsgiHaOj3/4
+	NWTzQ4tajK4DXjkpN5Du6yc9afUL1vHwWgWEOD46VENm7z+p4hxzPp0ZaSDy3REfsXymXp5whxNOx
+	ikxFRd2jCkJrCqNCK3kY4aI++hgr/A/QKAf5i9Yc5Ot5hiYlzgfqvhPLobfRWQwudS/dUU9Rf2N0P
+	NaYsmztVOWWGExIldgA6Duyg49u1PxOC2p5JdwY+YoiiEytarnp+hfYWRBzCDSGaUIBMoiUBNkTpz
+	RyshXHcJ1goBUPgV3wtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic778-0002te-9H; Tue, 03 Dec 2019 12:17:10 +0000
-Received: from mail-eopbgr820078.outbound.protection.outlook.com
- ([40.107.82.78] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
+	id 1ic77m-0003RY-J6; Tue, 03 Dec 2019 12:17:50 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic76y-0002tK-IS
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:17:01 +0000
+ id 1ic77e-0003M9-Mr
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:17:44 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ Eugen.Hristev@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="Eugen.Hristev@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa2.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: xucRU/gZXc6bR9sWr2GsvLC7501YqQ0R5UUgoG/iwG7eUHiKMX8Nit34WdolT80ss6tx2Pc8uV
+ QySrWLWXXsT2ftetJt31z5oI3dCHM6bv3VT5T8SzCMPPCdozCm6KYXWCIAH4KoCm0L4R4SlbHU
+ Vu3bLzTMMNETNbuRCuQwkNbz4JYKpabXby4OTeR2lYrbakA01gnKBc1bHMYZ5heX+OSGM2HrQ/
+ BoVWdUa8RnWLwP4+JWv8bK9WRa3Q+UBXNC45d04Y3oLod+urQnxfVe5941dNjBli+iK/rf8zqd
+ 3WQ=
+X-IronPort-AV: E=Sophos;i="5.69,273,1571727600"; d="scan'208";a="58577949"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 03 Dec 2019 05:17:37 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 3 Dec 2019 05:17:36 -0700
+Received: from NAM02-CY1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Tue, 3 Dec 2019 05:17:37 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kPiacHwhjhyvwDrf47lgcbGWyduJgalPV9KwSO2ZixMkfaneKt5zHGKimwPuevLasvONOj73kass1M6qMXYk8mAvyTlQSj1ZtU1WlU6yKQ1B8d6HBAroDKtxr4SNuY2cbT++PFDUACZoO0bLToiy9dBR7WIo8o6vEwZRoqNgYL3Gupa7JHFz+T+OumMzRSRNvzKNw68HsP+amA/KvsPiRMZmtuQYnaGBp87Qnb0df+kVJCCtBkBsoSoVCmwLCcrk++0LEeDtGlF0KI2QyliXcJ+mSjZza2Uv08HKUHXmMkLLgfc6FT5BLF0UbPPWktZCRdERQQgypTLBnyWPbZXEfA==
+ b=XCZo1OMphRy/tZuiYPwXUaA9DvwAzba1WKYkjaqrYT447aE1cTmGhuXf55AbXRIiMjDqGLs02KaHWeXE3KKsYWScnVLCx1LI+rrjO9AtthupVn0usUUPLhB4vsQZnXQCHQdHQY0ABTINBUc2HgDGXekKfkesiwc0sZcvMxfXJW3jaHNuWKhsAjpxYCeXP5/+cI9balxN3a8AZ8giATyfJJe5tZMn8z7g7nuW7p3jBK8/QFgRlrGpBbUTDN1odIB5K3rIxDVkioMG5CDvR6BCMECTwsHqkQ5nF3xloo3gkc/rt7DUz35ID9z52EgYx3Ls+nturyQC1AXQPfQ3RHtKLA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3bC/DBH+Fsqt9IFQLULfciwewb1aPMv738DvhiWhzDc=;
- b=T88Avg77KjzAIBM4cBJPONjs96Jb0sIaidGbs1zamOvnG0Jyr2+gk6SivAV/Tpoqm9hebE/Yj42mqkYL1m2noPbAXDWRocVrv7/UOVfWNyL/7tYqb61UVbAZ9RaDZYCgqUOZPhIdUGataVCaAQVIaBMXODO/d48jkmN3BJlE0KyiSzaxGMrhCd6eeG2iHab0eKmbImxQ5N0/bfzj5iy0mucFW7oETUjLhrz4fFK4VLlxIaN3cAlYEIMS59XVqdtb/j0HdGtNOZz8NGJrHQXlBWIWQofOW210KLSUoCeQOJUy0rblAZCXQ2YQTsV5CAuLHBazrXEnA9OPHqAdk1Ur9A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
+ bh=WefrUTgDqd5plj6/DrtCCMbnV9LMt3JU+ooAFDBXuqU=;
+ b=XMGCI5QjzhjfPegMDFggQnZ3N1kbcuzrGJDzNPAWO1/zjBi46ZDNK5pnJCREFEWOrzI2SMarF9cRMcengb1mVHxxHviCMjbzI02uEos1cnx7LQNiCHMzrHvLTin+TBERl1NGxo36v2hC7orlN9J0ziDf0XlxpI2AYpG+lFs7nxi0tli9Z1U8UmMPxoCAkrvW8lyIh3ZHcA8KJqoUPRmU9DDWvOrrjlsBH1E2sOHFybRIstjI3qQGGPHNHriXC1NLmMx4KOUneMAN+DsQ+xlNi1M1oYYDlAWHydco0zwnHzxY3sgACVOy9LPXAYEw5t7nDsWbmNqaIshZ4+aGF1wWhA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3bC/DBH+Fsqt9IFQLULfciwewb1aPMv738DvhiWhzDc=;
- b=qtgHH97nrT07HFCbnV/BMWld+yBjCNd98uTd/Eb6adfiZ7rlli3tGEyLxUrgxXpCG5fZn7vuLg8EQZv7T/2hIqcrl4yJEoSHxMWcvFw0veZ/H9YmA+XQXB5VlpwUsbhb9GP4mN4F/JL8SGY6EVB8nCMIEz6+hBUbMHlgPf40s+M=
-Received: from SN6PR02CA0009.namprd02.prod.outlook.com (2603:10b6:805:a2::22)
- by DM6PR02MB4779.namprd02.prod.outlook.com (2603:10b6:5:16::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2495.22; Tue, 3 Dec
- 2019 12:16:56 +0000
-Received: from CY1NAM02FT014.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e45::204) by SN6PR02CA0009.outlook.office365.com
- (2603:10b6:805:a2::22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2495.18 via Frontend
- Transport; Tue, 3 Dec 2019 12:16:56 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
- header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- CY1NAM02FT014.mail.protection.outlook.com (10.152.75.142) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2474.17
- via Frontend Transport; Tue, 3 Dec 2019 12:16:55 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <srinivas.neeli@xilinx.com>)
- id 1ic76t-0006qd-EU; Tue, 03 Dec 2019 04:16:55 -0800
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <srinivas.neeli@xilinx.com>)
- id 1ic76o-0006DO-Aw; Tue, 03 Dec 2019 04:16:50 -0800
-Received: from xsj-pvapsmtp01 (mailman.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xB3CGfvb025018; 
- Tue, 3 Dec 2019 04:16:41 -0800
-Received: from [10.140.6.6] (helo=xhdappanad40.xilinx.com)
- by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <srinivas.neeli@xilinx.com>)
- id 1ic76f-0006CV-4p; Tue, 03 Dec 2019 04:16:41 -0800
-From: Srinivas Neeli <srinivas.neeli@xilinx.com>
-To: wg@grandegger.com, mkl@pengutronix.de, davem@davemloft.net,
- michal.simek@xilinx.com, appanad@xilinx.com
-Subject: [PATCH V2] can: xilinx_can: Fix missing Rx can packets on CANFD2.0
-Date: Tue,  3 Dec 2019 17:46:36 +0530
-Message-Id: <1575375396-3403-1-git-send-email-srinivas.neeli@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(396003)(39860400002)(346002)(136003)(189003)(199004)(356004)(7696005)(70586007)(51416003)(50226002)(81156014)(336012)(5660300002)(316002)(6666004)(186003)(2616005)(26005)(8676002)(16586007)(70206006)(8936002)(81166006)(426003)(305945005)(44832011)(107886003)(106002)(9786002)(6636002)(48376002)(4326008)(50466002)(36756003)(36386004)(2906002)(478600001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB4779; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
+ bh=WefrUTgDqd5plj6/DrtCCMbnV9LMt3JU+ooAFDBXuqU=;
+ b=dB1nz4MaNliWMwP66OS/a99V7qM4i5KKPrTLAFuMYtJR4dpyGFjsjLraaRUyg+E3dtmRJozWhCbgs+9dpVfUxrd4WU4WcuE5Yg8B6VhkhoN5YdcG3SGiux59D9dRWp82+9V9HxymGXt+pbDM3wbtr5OP4pT/1nx058/mqSktqJE=
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
+ DM5PR11MB1323.namprd11.prod.outlook.com (10.168.108.7) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2495.18; Tue, 3 Dec 2019 12:17:33 +0000
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::9039:e0e8:9032:20c1]) by DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::9039:e0e8:9032:20c1%12]) with mapi id 15.20.2495.014; Tue, 3 Dec 2019
+ 12:17:32 +0000
+From: <Eugen.Hristev@microchip.com>
+To: <alexandru.Ardelean@analog.com>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>, <linux-iio@vger.kernel.org>
+Subject: Re: [PATCH] iio: at91-sama5d2_adc: fix
+ iio_triggered_buffer_{predisable,postenable} positions
+Thread-Topic: [PATCH] iio: at91-sama5d2_adc: fix
+ iio_triggered_buffer_{predisable,postenable} positions
+Thread-Index: AQHVo6GcybDu2MmyfkWfKAIGUFGv9aegRneAgABwyQCAAQdpgIAGeAaAgAAlqACAAAOTgA==
+Date: Tue, 3 Dec 2019 12:17:32 +0000
+Message-ID: <3a8ea46b-14d4-30d8-5766-02538cab8394@microchip.com>
+References: <20191023082508.17583-1-alexandru.ardelean@analog.com>
+ <17cf55869cc418795d0013c0594ed8fc04381d46.camel@analog.com>
+ <9df3d999-0ec6-a282-d24b-8f7df5f14f6d@microchip.com>
+ <e43bf58f-223c-0b12-2912-6f353d866ec3@microchip.com>
+ <74aabb41107ab162660f21e726c88a9dd40ecc5e.camel@analog.com>
+ <60ce6ff9-ba06-2522-e9a0-55e6fd2731ec@microchip.com>
+ <0075d7fc890b0986f2113664c664ff46931de432.camel@analog.com>
+In-Reply-To: <0075d7fc890b0986f2113664c664ff46931de432.camel@analog.com>
+Accept-Language: en-US, ro-RO
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM4P190CA0022.EURP190.PROD.OUTLOOK.COM
+ (2603:10a6:200:56::32) To DM5PR11MB1242.namprd11.prod.outlook.com
+ (2603:10b6:3:14::8)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tagtoolbar-keys: D20191203141711886
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 1270efa2-b469-46b4-4e48-08d777eac613
+x-ms-traffictypediagnostic: DM5PR11MB1323:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM5PR11MB1323250C0F42B91B2C245ABAE8420@DM5PR11MB1323.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 02408926C4
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(39860400002)(136003)(396003)(346002)(366004)(199004)(189003)(51914003)(446003)(2201001)(186003)(316002)(6246003)(66446008)(64756008)(52116002)(99286004)(5660300002)(11346002)(2616005)(66476007)(110136005)(54906003)(31686004)(36756003)(66946007)(66556008)(86362001)(6436002)(6486002)(71190400001)(71200400001)(6306002)(25786009)(30864003)(2501003)(4326008)(8936002)(2906002)(14444005)(7736002)(966005)(478600001)(8676002)(6116002)(3846002)(4001150100001)(229853002)(81156014)(81166006)(14454004)(256004)(76176011)(5024004)(102836004)(305945005)(6506007)(53546011)(386003)(31696002)(26005)(6512007)(142933001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1323;
+ H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 5lrSIJtwVyBXBpAC0Y0Db5EhITB3m/zlc28v14OGhGsaPijkHG6QqCFGcqW9dTMzZ+58ze3m0TNhmtRJv4c+pv+V434P3AVCLayFpnuhBDp1uqk7Nbld73eycnuZZHZFR8jOXWtSzNasEPDs2qp8HIt1TDE324EYZkiTEJlJsYDwfwDJPQaHoDTvQFwejRNLjlnNLvUaCLBbYpCKMW384ksfRP7erAt7jmTgr0fZuxTfl6XShYBnH28m/jxXEfKUUzs2gm5F+sTW9Xuk5daaZ/mRrUTTyi8uiOwvEzN6ZT81Gu5MbgFW92IGYvID1Sl+thEZ0xmh4E4WEVbqiElWNsCJiFdJ/sRTGF8HUrwHg8OMplddGcpfYRY3n3OCB5lXmiK8Si8f6/1I6Gu9+JnEKWoLQR1tHig07r2PHzHQqcjWGngT+OuY46a2SCyLvBuDZVJ+fTrsUwnyqoVSFAbkMZ+i5YTTtcVuwCXo5Y/S1ww=
+Content-ID: <2B8178F32A40634CBE4A12C8EA570F56@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 21c6aa24-7193-491a-6511-08d777eab051
-X-MS-TrafficTypeDiagnostic: DM6PR02MB4779:
-X-Microsoft-Antispam-PRVS: <DM6PR02MB47793B736800DA643558DD81AF420@DM6PR02MB4779.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:4502;
-X-Forefront-PRVS: 02408926C4
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: Iyq/kJnNGjkrPIa/KQlIA5eAf/mtyN3JvzqXwIGkN8HQbir3StVJRrlZ7FOzkcTFWPMwisL6yIKWqK/ewdLTt2alirq0lkv19QYtGbYZzG5lAnD1fAqUyaFEfp6bma0RLT6zxu2rOPjnKAAB4UMhHrn+K4kKuTWqikyu4Tmvlesz1EE/JlwSpPrIBGMMs7qBJg0j9ldRZ3J8sB/1ds5XgQhlcXfYbGbwg/1801EDfND3+S6iwBuqxLIATIJtxCuDYNlUh9DGkL4AsiFrSqY9lCsd9uritcWCCEC5l8JoXudCVj0xY77j33fawCPvMbTbxqJ5JfcPiDqQ5e93Hn3Rr+A/s7BkSN+V8frJVWc/M8qwB5Bg74FFM3FKKvUpJZEsrU4NQlNT0bku9+xdXdwWkDag2Gkw2TVGojl571gnUZz7yb/VNTS1MFWT3Kj47xKY
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Dec 2019 12:16:55.9090 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 21c6aa24-7193-491a-6511-08d777eab051
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB4779
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1270efa2-b469-46b4-4e48-08d777eac613
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Dec 2019 12:17:32.7739 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: rcLiyZAUSrLuLXuFQiI/fWmSOGFBlA03tAA86ZZ8VqvKM+N+cJldU+VWBS2Qvzzcix6G9OSv/gvwqO9JVE6hs7gNhcVe/MqSoVG8EMLOjPA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1323
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_041700_616736_E932C56C 
-X-CRM114-Status: UNSURE (   9.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191203_041742_843156_206DF4AF 
+X-CRM114-Status: GOOD (  22.17  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.82.78 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -139,57 +168,347 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Srinivas Neeli <srinivas.neeli@xilinx.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-can@vger.kernel.org, nagasure@xilinx.com,
- git@xilinx.com, linux-arm-kernel@lists.infradead.org
+Cc: alexandre.belloni@bootlin.com, lars@metafoo.de,
+ Ludovic.Desroches@microchip.com, pmeerw@pmeerw.net, knaack.h@gmx.de,
+ jic23@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CANFD2.0 core uses BRAM for storing acceptance filter ID(AFID) and MASK
-(AFMASK)registers. So by default AFID and AFMASK registers contain random
-data. Due to random data, we are not able to receive all CAN ids.
-
-Initializing AFID and AFMASK registers with Zero before enabling
-acceptance filter to receive all packets irrespective of ID and Mask.
-
-Fixes: 0db9071353a0 ("can: xilinx: add can 2.0 support")
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
-Signed-off-by: Srinivas Neeli <srinivas.neeli@xilinx.com>
----
- drivers/net/can/xilinx_can.c | 7 +++++++
- 1 file changed, 7 insertions(+)
-
-diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.c
-index 464af939cd8a..c1dbab8c896d 100644
---- a/drivers/net/can/xilinx_can.c
-+++ b/drivers/net/can/xilinx_can.c
-@@ -60,6 +60,8 @@ enum xcan_reg {
- 	XCAN_TXMSG_BASE_OFFSET	= 0x0100, /* TX Message Space */
- 	XCAN_RXMSG_BASE_OFFSET	= 0x1100, /* RX Message Space */
- 	XCAN_RXMSG_2_BASE_OFFSET	= 0x2100, /* RX Message Space */
-+	XCAN_AFR_2_MASK_OFFSET	= 0x0A00, /* Acceptance Filter MASK */
-+	XCAN_AFR_2_ID_OFFSET	= 0x0A04, /* Acceptance Filter ID */
- };
- 
- #define XCAN_FRAME_ID_OFFSET(frame_base)	((frame_base) + 0x00)
-@@ -1809,6 +1811,11 @@ static int xcan_probe(struct platform_device *pdev)
- 
- 	pm_runtime_put(&pdev->dev);
- 
-+	if (priv->devtype.flags & XCAN_FLAG_CANFD_2) {
-+		priv->write_reg(priv, XCAN_AFR_2_ID_OFFSET, 0x00000000);
-+		priv->write_reg(priv, XCAN_AFR_2_MASK_OFFSET, 0x00000000);
-+	}
-+
- 	netdev_dbg(ndev, "reg_base=0x%p irq=%d clock=%d, tx buffers: actual %d, using %d\n",
- 		   priv->reg_base, ndev->irq, priv->can.clock.freq,
- 		   hw_tx_max, priv->tx_max);
--- 
-2.7.4
 
 
+On 03.12.2019 14:04, Ardelean, Alexandru wrote:
+
+> On Tue, 2019-12-03 at 09:49 +0000, Eugen.Hristev@microchip.com wrote:
+>> [External]
+>>
+>>
+>>
+>> On 29.11.2019 09:02, Ardelean, Alexandru wrote:
+>>
+>>> On Thu, 2019-11-28 at 15:19 +0000, Eugen.Hristev@microchip.com wrote:
+>>>
+>>> Hey,
+>>>
+>>> Sorry for the late reply.
+>>> I'm also juggling a few things.
+>>>
+>>>> On 28.11.2019 10:36, Eugen.Hristev@microchip.com wrote:
+>>>>
+>>>>> On 25.11.2019 17:03, Ardelean, Alexandru wrote:
+>>>>>> On Wed, 2019-10-23 at 11:25 +0300, Alexandru Ardelean wrote:
+>>>>>>> The iio_triggered_buffer_{predisable,postenable} functions
+>>>>>>> attach/detach
+>>>>>>> poll functions.
+>>>>>>>
+>>>>>>> The iio_triggered_buffer_postenable() should be called first to
+>>>>>>> attach
+>>>>>>> the
+>>>>>>> poll function, and then the driver can init the data to be
+>>>>>>> triggered.
+>>>>>>>
+>>>>>>> Similarly, iio_triggered_buffer_predisable() should be called
+>>>>>>> last
+>>>>>>> to
+>>>>>>> first
+>>>>>>> disable the data (to be triggered) and then the poll function
+>>>>>>> should be
+>>>>>>> detached.
+>>>>>
+>>>>> Hi Alexandru,
+>>>>>
+>>>>> Sorry for this late reply,
+>>>>>
+>>>>> I remember that by adding specific at91_adc code for
+>>>>> predisable/postenable , I was replacing the existing standard
+>>>>> callback
+>>>>> with my own, and have my specific at91 code before postenable and
+>>>>> then
+>>>>> calling the subsystem postenable,
+>>>>> and in similar way, for predisable, first call the subsystem
+>>>>> predisable
+>>>>> then doing my predisable code (in reverse order as in postenable)
+>>>>>
+>>>>> If you say the order should be reversed (basically have the
+>>>>> pollfunction
+>>>>> first), how is current code working ?
+>>>>> Should current code fail if the poll function is not attached in
+>>>>> time ?
+>>>>> Or there is a race between triggered data and the attachment of the
+>>>>> pollfunc ?
+>>>>>
+>>>>> I am thinking that attaching the pollfunc later makes it work
+>>>>> because
+>>>>> the DMA is not started yet. What happens if we have the pollfunc
+>>>>> attached but DMA is not started (basically the trigger is not
+>>>>> started)
+>>>>> ,
+>>>>> can this lead to unexpected behavior ? Like the pollfunc polling
+>>>>> but no
+>>>>> trigger started/no DMA started.
+>>>>
+>>>> I looked a bit more into the code and in DMA case, using postenable
+>>>> first will lead to calling attach pollfunc, which will also enable
+>>>> the
+>>>> trigger, but the DMA is not yet started.
+>>>> Is this the desired effect ?
+>>>
+>>> Yes.
+>>
+>> How is this correct ? We start the trigger but have no buffer to carry
+>> to... what happens with the data ? -> I think we both have an answer to
+>> that, as you state below
+>>
+>>>> Normally when using DMA I would say we
+>>>> would need to enable DMA first to be ready to carry data (and
+>>>> coherent
+>>>> area etc.) and then enable the trigger.
+>>>
+>>> So, there is a change in our tree [from some time ago].
+>>> See here:
+>>> https://github.com/analogdevicesinc/linux/commit/eee97d12665fef8cf429a1e5035b23ae969705b8
+>>>
+>>> Particularly, what's interesting is around line:
+>>> https://github.com/analogdevicesinc/linux/commit/eee97d12665fef8cf429a1e5035b23ae969705b8#diff-0a87744ce945d2c1c89ea19f21fb35bbR722
+>>> And you may need to expand some stuff to see more of the function-body.
+>>> And some things may have changed in upstream IIO since that change.
+>>>
+>>> The change is to make the pollfunc attach/detach become part of the IIO
+>>> framework, because plenty of drivers just call
+>>> iio_triggered_buffer_postenable() & iio_triggered_buffer_predisable()
+>>> to
+>>> manually attach/detach the pollfunc for triggered buffers.
+>>
+>> Okay, I understand this. at91-sama5d2_adc does not manually
+>> attach/detach the pollfunc. So why do we need to change anything here ?
+>>
+>>
+>>> That change is from 2015, and since then, some drivers were added that
+>>> just
+>>> manually attach/detach the pollfunc [and do nothing more with the
+>>> postenable/predisable hooks].
+>>>
+>>> I tried to upstream a more complete version of that patch a while ago
+>>> [u1].
+>>> https://patchwork.kernel.org/patch/10482167/
+>>> https://patchwork.kernel.org/patch/10737291/
+>>>
+>>> The conclusion was to first fix the attach/detach pollfunc order in all
+>>> IIO
+>>> drivers, so that when patch [u1] is applied, there is no more
+>>> discussion
+>>> about the correct order for attach/detach pollfunc.
+>>
+>> Allright, what is required to be fixed regarding the order, in this
+>> specific case? We enable the DMA, and then we do the normal 'postenable'
+>> that was called anyway if we did not override the 'postenable' in the
+>> ops. Do you want to move this code to 'preenable' and keep 'postenable'
+>> to the standard subsystem one ?
+>>
+>> The same applies to the predisable, we first call the subsystem
+>> 'predisable' then do the specific at91 stuff. You want to move this to
+>> the 'postdisable' ?
+>>
+>> I think reverting the order inside the functions themselves is not good
+>> as we replace the order of starting trigger/DMA setup.
+>> So, coming to your question below...
+>>
+>>> Coming back here [and to your question], my answer is: I don't know if
+>>> the
+>>> at91 DMA needs to be enabled/disabled before/after the pollfunc
+>>> attach/detach.
+>>> This sounds like specific stuff for at91 [which is fine].
+>>>
+>>> It could be that some other hooks may need to used to enable DMA
+>>> before/after the attach/detach pollfunc. Maybe
+>>> preenable()/postdisable() ?
+>>>
+>>> In any case, what I would like [with this discussion], is to resolve a
+>>> situation where we can get closer to moving the attach/pollfunc code to
+>>> IIO
+>>> core. So, if AT91 requires a different ordering, I think you would be
+>>> more
+>>> appropriate to tell me, and propose an alternative to this patch.
+>>
+>> ... yes, this looks more appropriate, to move things to
+>> 'preenable/postdisable', if you feel like 'postenable/predisable' is not
+>> the proper place to put them.
+>> But the order itself, first enable DMA then trigger, and disable in
+>> reverse order, I do not think there is anything wrong with that? Am I
+>> misunderstanding ?
+> 
+> Should be good.
+> 
+>>
+>> If Jonathan or Ludovic have a different idea, please let me know.
+> 
+> There is an alternative here [to this].
+> Maybe using the IIO Buffer DMA[Engine] integration that Lars wrote [1].
+> This would avoid calling dmaengine_terminate_sync() and similar hooks in
+> the AT91 driver. That also preserves the correct order (start DMA first,
+> then attach pollfunc ; and reverse on disable).
+> But that is more work; not on the patch itself, but more on the testing.
+
+Initially, when I implemented the DMA part for this driver, this was the 
+idea. However the DMA engine was not used at that time by anyone , and I 
+could not make it work properly. Jonathan advised at that moment to use 
+this current framework.
+
+> 
+> [1] Upstreaming more parts for the IIO Buffer DMA[Engine] integration is on
+> my to-do-list as well. I think there are still some patches that we use,
+> but are not upstreamed yet.
+> 
+> I'll come-up a with a V2 for this with preenable()/postdisable()
+> alternative here.
+
+Ok, I will test it .
+
+What I do not understand completely is why it bothers you to have at91 
+specific code in postenable / predisable.
+The same thing will happen will happen with preenable/postdisable: 
+specific at91 code will be called after subsystem preenable and before 
+subsystem postdisable.
+
+> 
+> Thanks
+> Alex
+> 
+>>
+>> Also, I can test your patch to see if everything is fine.
+>>
+>> Thanks,
+>> Eugen
+>>
+>>> Thanks :)
+>>> Alex
+>>>
+>>>>>>> For this driver, the predisable & postenable hooks are also
+>>>>>>> need to
+>>>>>>> take
+>>>>>>> into consideration the touchscreen, so the hooks need to be put
+>>>>>>> in
+>>>>>>> places
+>>>>>>> that avoid the code for that cares about it.
+>>>>>>>
+>>>>>>
+>>>>>> ping here
+>>>>>>
+>>>>>>> Signed-off-by: Alexandru Ardelean <
+>>>>>>> alexandru.ardelean@analog.com>
+>>>>>>> ---
+>>>>>>>      drivers/iio/adc/at91-sama5d2_adc.c | 19 ++++++++++---------
+>>>>>>>      1 file changed, 10 insertions(+), 9 deletions(-)
+>>>>>>>
+>>>>>>> diff --git a/drivers/iio/adc/at91-sama5d2_adc.c
+>>>>>>> b/drivers/iio/adc/at91-
+>>>>>>> sama5d2_adc.c
+>>>>>>> index e1850f3d5cf3..ac3e5c4c9840 100644
+>>>>>>> --- a/drivers/iio/adc/at91-sama5d2_adc.c
+>>>>>>> +++ b/drivers/iio/adc/at91-sama5d2_adc.c
+>>>>>>> @@ -889,20 +889,24 @@ static int
+>>>>>>> at91_adc_buffer_postenable(struct
+>>>>>>> iio_dev *indio_dev)
+>>>>>>>           if (!(indio_dev->currentmode &
+>>>>>>> INDIO_ALL_TRIGGERED_MODES))
+>>>>>>>                   return -EINVAL;
+>>>>>>>
+>>>>>>> +     ret = iio_triggered_buffer_postenable(indio_dev);
+>>>>>>> +     if (ret)
+>>>>>>> +             return ret;
+>>>>>>> +
+>>>>>>>           /* we continue with the triggered buffer */
+>>>>>>>           ret = at91_adc_dma_start(indio_dev);
+>>>>>>>           if (ret) {
+>>>>>>>                   dev_err(&indio_dev->dev, "buffer postenable
+>>>>>>> failed\n");
+>>>>>>> +             iio_triggered_buffer_predisable(indio_dev);
+>>>>>>>                   return ret;
+>>>>>>>           }
+>>>>>>>
+>>>>>>> -     return iio_triggered_buffer_postenable(indio_dev);
+>>>>>>> +     return 0;
+>>>>>>>      }
+>>>>>>>
+>>>>>>>      static int at91_adc_buffer_predisable(struct iio_dev
+>>>>>>> *indio_dev)
+>>>>>>>      {
+>>>>>>>           struct at91_adc_state *st = iio_priv(indio_dev);
+>>>>>>> -     int ret;
+>>>>>>>           u8 bit;
+>>>>>>>
+>>>>>>>           /* check if we are disabling triggered buffer or the
+>>>>>>> touchscreen */
+>>>>>>> @@ -916,13 +920,8 @@ static int
+>>>>>>> at91_adc_buffer_predisable(struct
+>>>>>>> iio_dev
+>>>>>>> *indio_dev)
+>>>>>>>           if (!(indio_dev->currentmode &
+>>>>>>> INDIO_ALL_TRIGGERED_MODES))
+>>>>>>>                   return -EINVAL;
+>>>>>>>
+>>>>>>> -     /* continue with the triggered buffer */
+>>>>>>> -     ret = iio_triggered_buffer_predisable(indio_dev);
+>>>>>>> -     if (ret < 0)
+>>>>>>> -             dev_err(&indio_dev->dev, "buffer predisable
+>>>>>>> failed\n");
+>>>>>>> -
+>>>>>>>           if (!st->dma_st.dma_chan)
+>>>>>>> -             return ret;
+>>>>>>> +             goto out;
+>>>>>>>
+>>>>>>>           /* if we are using DMA we must clear registers and end
+>>>>>>> DMA
+>>>>>>> */
+>>>>>>>           dmaengine_terminate_sync(st->dma_st.dma_chan);
+>>>>>>> @@ -949,7 +948,9 @@ static int
+>>>>>>> at91_adc_buffer_predisable(struct
+>>>>>>> iio_dev
+>>>>>>> *indio_dev)
+>>>>>>>
+>>>>>>>           /* read overflow register to clear possible overflow
+>>>>>>> status
+>>>>>>> */
+>>>>>>>           at91_adc_readl(st, AT91_SAMA5D2_OVER);
+>>>>>>> -     return ret;
+>>>>>>> +
+>>>>>>> +out:
+>>>>>
+>>>>> I would prefer if this label is named with a function name prefix,
+>>>>> otherwise 'out' is pretty generic and can collide with other things
+>>>>> in
+>>>>> the file... I want to avoid having an out2 , out3 later if code
+>>>>> changes.
+>>>>>
+>>>
+>>> Sure.
+>>> Will do that.
+>>>
+>>> I did not bother much with these labels, because after applying [u1],
+>>> some
+>>> of them [maybe all] should go away.
+>>>
+>>>
+>>>>> Thanks for the patch,
+>>>>> Eugen
+>>>>>
+>>>>>>> +     return iio_triggered_buffer_predisable(indio_dev);
+>>>>>>>      }
+>>>>>>>
+>>>>>>>      static const struct iio_buffer_setup_ops
+>>>>>>> at91_buffer_setup_ops =
+>>>>>>> {
+>>>>>> _______________________________________________
+>>>>>> linux-arm-kernel mailing list
+>>>>>> linux-arm-kernel@lists.infradead.org
+>>>>>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>>>>>>
+>>> _______________________________________________
+>>> linux-arm-kernel mailing list
+>>> linux-arm-kernel@lists.infradead.org
+>>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>>>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
