@@ -2,72 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01FF711002B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 15:31:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C099F110039
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 15:35:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EmWG0T7WH+TE6gPi9wT+wXEEWxRup/SdMbjJN6MhjtE=; b=YMvhNfsbmQZN2I
-	4T2+5YxU/uEiMvGh8qaqo68e2C/Fqsw6cSLLWRGonhG4XOw0keVFmUy4HELgnglzn0OL8UKKmTjOP
-	BnB9MsXAN177kiQ1fJQW/gVgpNTE8ZMxtHDnOXJIX+1Gth1L87LyEbb5t1+a9Ep8+Z8c1L1rK9Ite
-	VVv2Gc4J8BH/NQxf6BV2C8lmdOVxSdTtjSTBX+Imgw2zlwAiu3Ow0w1sCV8QBCe14Uo7G6YCPW0GZ
-	d5bAkrLZZQFk9BBVhzg5xyrdlKeTWS5GQbNwbbJe+8N93cylUcsHAMQqctrBEfX/wfADmv9BIK2wo
-	sEJUU3J4lwIsw0EukmNA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MUelaKML4TEae9TmExmPp+qwA/pV/I/x5YZCyvQB2nw=; b=rW6wSjHwaPgFstMsWARXs/eAK
+	NVU7hzFX5Rtkf8u4TCjcMQHukjmIYekkWlErjGKIkypA/GS72ZiaxcCizG3lXbfDxhhwcV+h4kopM
+	+4H0x5DC0XUEj7R3OG9P/MrsoeH+UgqomA6WpJWqbW7eU9sQamnRkKtDG+iOT+7OLZcautKOiaa3p
+	uAVbTuKYW5JIUciiR2O9Wr/MUYFYIv31pTPotg/OdrJXNJrJQy8WJ+CYSfkn9c1ebIc/r0Dqev0Fp
+	6QgE1+g1QuA+p4bFjrj/hmATlApvPEw+yIW5PenUQb02JvMA2Nn+0tEJ+vQyOKdKarjx2MAwMUKb+
+	v+QZghsAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic9DD-00026D-Tb; Tue, 03 Dec 2019 14:31:35 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ic9Gl-0002z5-Ct; Tue, 03 Dec 2019 14:35:15 +0000
+Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic9D6-00021u-AA
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 14:31:29 +0000
-Received: from mail-qv1-f45.google.com (mail-qv1-f45.google.com
- [209.85.219.45])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C84092080A
+ id 1ic9GN-0002mx-Sz
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 14:34:53 +0000
+Received: by mail-lj1-x22d.google.com with SMTP id u17so4102433lja.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue,  3 Dec 2019 14:31:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575383487;
- bh=paDjy7hZsmQkcUp7jKSH70ftPLffSgdTsEFpUetgz24=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=KZ3PkNnslqc7BEkuj8s892JHiyp111mpjo13oyKF2LEIsAAcH/hc5JifebD94uck3
- nvVaUSye1Jaz8ajRoUANeZarO5PaXCebynHCFsWg9UsJyvHq5vbTBbBh+fkKJlWy4n
- ygD9D5lhomlPo1jbX8Cgfpm0LyJHYR996Q4klzU0=
-Received: by mail-qv1-f45.google.com with SMTP id y8so1563612qvk.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 06:31:27 -0800 (PST)
-X-Gm-Message-State: APjAAAWafqiByYFSeNYie8gRsb20AN+y1h2R0j/0P/OZ1FhqEWO5UfGF
- B/ZGfxrBZUSh5E0y/J18YYoQKgtF/BBaCRzM+A==
-X-Google-Smtp-Source: APXvYqxDBnGQNKjTk3qSKKiOvMvxPKQPV7m6ur08FqhiSl9j9w8DAHBF3481M9puWdGG8hXS2X7yJKuiKlMAjUfp4E0=
-X-Received: by 2002:a05:6214:11ac:: with SMTP id
- u12mr5420247qvv.85.1575383483847; 
- Tue, 03 Dec 2019 06:31:23 -0800 (PST)
+ Tue, 03 Dec 2019 06:34:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=M6eYxvrmGTgvLkHnmtaDrBAJscdJSkVSQQjq8E421sE=;
+ b=l+EtDD0mmto9cjLtj65Q3j0IaYnGm/KLzNZuSMDoVEB55z/0UXMyoddvpqCXsqgZTt
+ 9SBqXWrpVo14hIcYuRGzC814fm+Eih8ZMdAyMdwNwahs4Ei0e+1Xtxcav82AAq6NXd0x
+ sFX6cAydu1nv1O9C4vO00vYX/pqRfkHE6fy+5xzY9eH9D7G1uUiJycxYQNBuEgfvaSCs
+ EUTVGVvKQH7oLcqAOnIvW14jv27u6lr6gjgrcIlwfJSpPOSXs4dyOFmVS0VKd+bFDvNU
+ K4KDsHGdm4BDuOztsFeplbswtVRpK5zZBFIW7bb6XBktQW4TghuBK4DDJpdML+vZYOy+
+ 2bSQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=M6eYxvrmGTgvLkHnmtaDrBAJscdJSkVSQQjq8E421sE=;
+ b=aPoBLvkL1N/+Lg4QYVkltN4oQASGeUFNJn2eXcRS6kt7ZyNJjTEsClDaYkf+rHfmJh
+ CcB6S2BSHa6URQQIukkF1WlDMrSWLyQQ9zIrDPyf69Mfzgaj3EuMwTZVVaFjakKoXDg2
+ MHuujl7wEZjJcRXuzXczS8mW+L3IcyC9CEJf2D3rK/CPyZyObcjEChnQnLh/dqC64ymU
+ YXDeq/hKZuF0ToThCdztD9va5UuJAPIs94oyOQfju7+nlwDKRva/sNCJf9qJtSc4NFRI
+ 1j1J1Pg5yvz/h7ldmJC7OAxn5pHzOCV/oJiLb7rBFCejzchrg+vbSH+SB+jThHTXAGSS
+ 8TVA==
+X-Gm-Message-State: APjAAAWeZjnp4yCnopb8+P3udP97mAzb34U54tQ+j6nGkwSNwLd6e2dZ
+ YeU4YNrq4B+nHmKIuO5q7W4=
+X-Google-Smtp-Source: APXvYqxM/TOCCnbM2c2O3Dv/w38/MFFDMAoKmFjSGRwUQRs2Ew0oMYt823SYDS7D84H94ojX/PWVtg==
+X-Received: by 2002:a2e:2201:: with SMTP id i1mr2743098lji.110.1575383688248; 
+ Tue, 03 Dec 2019 06:34:48 -0800 (PST)
+Received: from [192.168.1.10] ([95.174.107.249])
+ by smtp.gmail.com with ESMTPSA id t27sm1493932ljd.26.2019.12.03.06.34.46
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 03 Dec 2019 06:34:47 -0800 (PST)
+Subject: Re: Issue with imx_get_temp()
+To: Fabio Estevam <festevam@gmail.com>
+References: <de442143-568d-5fbf-ed0c-d169e33e5d66@gmail.com>
+ <CAOMZO5Aoj9pUpMdqVTG2pOUBUpnHsxA-Kduhia7_EJZvdEGjwQ@mail.gmail.com>
+From: Igor Plyatov <plyatov@gmail.com>
+Message-ID: <edcbf5f1-7d77-a384-6746-02154cbf497c@gmail.com>
+Date: Tue, 3 Dec 2019 17:34:46 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-References: <cover.5630f63168ad5cddf02e9796106f8e086c196907.1575376664.git-series.andrew@aj.id.au>
- <3da2492c244962c27b21aad87bfa6bf74f568f1d.1575376664.git-series.andrew@aj.id.au>
-In-Reply-To: <3da2492c244962c27b21aad87bfa6bf74f568f1d.1575376664.git-series.andrew@aj.id.au>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 3 Dec 2019 08:31:10 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+3qXJbTu9G42g11PLJH-A0XeSQmJKj0obO32QFna3dEA@mail.gmail.com>
-Message-ID: <CAL_Jsq+3qXJbTu9G42g11PLJH-A0XeSQmJKj0obO32QFna3dEA@mail.gmail.com>
-Subject: Re: [PATCH 1/3] dt-bindings: ipmi: aspeed: Introduce a v2 binding for
- KCS
-To: Andrew Jeffery <andrew@aj.id.au>
+In-Reply-To: <CAOMZO5Aoj9pUpMdqVTG2pOUBUpnHsxA-Kduhia7_EJZvdEGjwQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_063128_392206_5C5984B3 
-X-CRM114-Status: GOOD (  17.71  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191203_063451_951590_EFF00200 
+X-CRM114-Status: GOOD (  11.03  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:22d listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (plyatov[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -76,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,81 +102,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Corey Minyard <minyard@acm.org>, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-aspeed@lists.ozlabs.org, Joel Stanley <joel@jms.id.au>,
- openipmi-developer@lists.sourceforge.net,
+Cc: Amit Kucheria <amit.kucheria@verdurent.com>, linux-pm@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Eduardo Valentin <edubezval@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 3, 2019 at 6:36 AM Andrew Jeffery <andrew@aj.id.au> wrote:
->
-> The v2 binding utilises reg and renames some of the v1 properties.
->
-> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> ---
->  Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt | 20 +++++---
->  1 file changed, 14 insertions(+), 6 deletions(-)
->
-> diff --git a/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt b/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
-> index d98a9bf45d6c..76b180ebbde4 100644
-> --- a/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
-> +++ b/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
-> @@ -1,9 +1,10 @@
-> -* Aspeed KCS (Keyboard Controller Style) IPMI interface
-> +# Aspeed KCS (Keyboard Controller Style) IPMI interface
->
->  The Aspeed SOCs (AST2400 and AST2500) are commonly used as BMCs
->  (Baseboard Management Controllers) and the KCS interface can be
->  used to perform in-band IPMI communication with their host.
->
-> +## v1
->  Required properties:
->  - compatible : should be one of
->      "aspeed,ast2400-kcs-bmc"
-> @@ -12,14 +13,21 @@ Required properties:
->  - kcs_chan : The LPC channel number in the controller
->  - kcs_addr : The host CPU IO map address
->
-> +## v2
-> +Required properties:
-> +- compatible : should be one of
-> +    "aspeed,ast2400-kcs-bmc-v2"
-> +    "aspeed,ast2500-kcs-bmc-v2"
-> +- reg : The address and size of the IDR, ODR and STR registers
-> +- interrupts : interrupt generated by the controller
-> +- slave-reg : The host CPU IO map address
+Dear Fabio,
 
-aspeed,slave-reg
+> Are you able to reproduce this issue with a 5.4.1 kernel? 
 
->
->  Example:
->
-> -    kcs3: kcs3@0 {
-> -        compatible = "aspeed,ast2500-kcs-bmc";
-> -        reg = <0x0 0x80>;
-> +    kcs3: kcs@24 {
-> +        compatible = "aspeed,ast2500-kcs-bmc-v2";
-> +        reg = <0x24 0x1>, <0x30 0x1>, <0x3c 0x1>;
+Sorry, I can test currently only with 5.1.1.
 
-What are the other registers in this address space? I'm not so sure
-this is an improvement if you end up with a bunch of nodes with single
-registers.
+Best wishes.
 
->          interrupts = <8>;
-> -        kcs_chan = <3>;
-> -        kcs_addr = <0xCA2>;
-> +        slave-reg = <0xca2>;
->          status = "okay";
->      };
-> --
-> git-series 0.9.1
+--
+
+Igor Plyatov
+
 
 _______________________________________________
 linux-arm-kernel mailing list
