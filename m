@@ -2,98 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C04B10F840
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 08:02:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C517410F847
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 08:03:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1HTZff5URYbfjfaCQjgGzJTh19Wcemg4RQbu87ExifI=; b=HjoJi4YYg/YbmJ
-	4hPaBc2blEH1JLerCeZtSNGfzsLV69sf8yMvrOTh9xTRPpIrRa7l4hxbMetsjGSKhiTbmWIz54h5a
-	VykNhP4lheda2XlyHHaQKiq2tqQvRh9MIj/C6YXgMzlJcWiP6mwY82dQbARkOQLhLov1o3S7Ciixw
-	PdHRe/7YXB2/ckzK9mFjlzQB9pHaRw2n1mqc2K6b+cw5mF9DXDiX2OJ24fRRFfa4cjeMNrycQeIus
-	ByrdEx+GWUDyCWmhgLwxsenhCjPL1PDYbzlxhN/o7B7l6uSbT83MG6oG5AlLBkJkpqIMIDHttQWOq
-	fkP+Habj5wgyCe4x6sTQ==;
+	List-Owner; bh=5Be9aH/4UjOLFPjyxCGoN+FqUGc1JS0qVISUTyWpneI=; b=YRW1+/Zyh0/zQ2
+	vWklPiMFavB6rZzq9OQ4We7ocX/PtvEcpLfA1+ns9SJBRvqRo4bjIdo1iWM4CCF4RPphGkDyOcI19
+	UOPmXXBpQjCBEH+UYqYaoT6KRPEqQSRabQDQNTBGVz9UK/kMZzxkeDaLKXsz/vwbbpduD1t3Fx6ra
+	AStqmlH8id8TQJArBDC8tDHyy9HPnn+IUkK9khC7MaNNXoeM7wURRQeZLQ6HiZY1y314c53mSSW7K
+	xmdW2OfFcrkm+hfi9yxKiE7Y2rQq2xbIdRHJo25ilu1Y6b7uOVDvBsU7U071xAQs9WWzCkZqlitk3
+	KEgAnhlAZVtmoC26APrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic2CJ-0001IM-Q8; Tue, 03 Dec 2019 07:02:11 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1ic2DF-0001Ym-UQ; Tue, 03 Dec 2019 07:03:09 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic2CC-0001HW-HL
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 07:02:05 +0000
-Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa4.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa4.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: sXlx3woo87bn8n13DyiB7JOkMCWIdXI0/a627Q8iPGDmP7TpoDXyjK5UJ3Bdemcn+hiMVlAbpY
- K2wzg3hVsxsEvjxq9awRD1DGtL7cSG3L2hGG1OrITol5wFnUTuIqd6p6rFeUS+baggxvr+mBAu
- 0KDwGhFtF5WQeLNVPE8PeGcmLiZUUjx1FtD5NrADRKcLcXJCXBnvitS6ivfc1CwBxqVlUhtsd5
- CPS84MPsBzg7M3jaRWW/hHRfpLGfO46qboHvYWEgBOmKqRAyExZOBIeZL43eq0ct1XlimcT/1M
- LeQ=
-X-IronPort-AV: E=Sophos;i="5.69,272,1571727600"; d="scan'208";a="57262689"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 03 Dec 2019 00:02:01 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 3 Dec 2019 00:01:30 -0700
-Received: from localhost (10.10.85.251) by chn-vm-ex01.mchp-main.com
- (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Tue, 3 Dec 2019 00:01:30 -0700
-Date: Tue, 3 Dec 2019 08:01:21 +0100
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: Eugen Hristev - M18282 <Eugen.Hristev@microchip.com>
-Subject: Re: [PATCH v2 2/3] i2c: at91: fix clk_offset for sam9x60
-Message-ID: <20191203070121.ebba7qc7mvo6jcgy@M43218.corp.atmel.com>
-Mail-Followup-To: Eugen Hristev - M18282 <Eugen.Hristev@microchip.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "wsa@the-dreams.de" <wsa@the-dreams.de>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "peda@axentia.se" <peda@axentia.se>,
- Codrin Ciubotariu - M19940 <Codrin.Ciubotariu@microchip.com>,
- Nicolas Ferre - M43238 <Nicolas.Ferre@microchip.com>
-References: <1575276957-5615-2-git-send-email-eugen.hristev@microchip.com>
- <1575277244-6507-1-git-send-email-eugen.hristev@microchip.com>
+ id 1ic2D6-0001Y8-8b; Tue, 03 Dec 2019 07:03:04 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id DCEFE309;
+ Tue,  3 Dec 2019 08:02:56 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1575356577;
+ bh=BHGcClPJ8faRIFKK7GdcaZ3ZNqYB59soqjub02MQB1U=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=E3kueX+7poUsLlLNHNb8tDRtAIJFMNynguFfEhRjHD8V/rg8SOIyTvGI64Sm/v7sW
+ kRat1924btOO2rZxPhXW1Fv6jz6Q2UvxV3F3RAYHjBZjx27fOnvFuVje9e9COANAEw
+ Z4e9gqTJkCwCprwCs08uymK0XroFud5phDqLqJFY=
+Date: Tue, 3 Dec 2019 09:02:49 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Sam Ravnborg <sam@ravnborg.org>
+Subject: Re: [PATCH v1 07/26] drm/panel: remove get_timings
+Message-ID: <20191203070249.GG4730@pendragon.ideasonboard.com>
+References: <20191202193230.21310-1-sam@ravnborg.org>
+ <20191202193230.21310-8-sam@ravnborg.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1575277244-6507-1-git-send-email-eugen.hristev@microchip.com>
+In-Reply-To: <20191202193230.21310-8-sam@ravnborg.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_230204_608460_87F07AE4 
-X-CRM114-Status: GOOD (  14.24  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191202_230300_594050_274123E2 
+X-CRM114-Status: GOOD (  15.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,60 +73,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "wsa@the-dreams.de" <wsa@the-dreams.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>, Codrin
- Ciubotariu - M19940 <Codrin.Ciubotariu@microchip.com>,
- "peda@axentia.se" <peda@axentia.se>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Stefan Agner <stefan@agner.ch>, linux-samsung-soc@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Jagan Teki <jagan@amarulasolutions.com>,
+ Jitao Shi <jitao.shi@mediatek.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
+ Abhinav Kumar <abhinavk@codeaurora.org>, linux-tegra@vger.kernel.org,
+ Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
+ Purism Kernel Team <kernel@puri.sm>, linux-renesas-soc@vger.kernel.org,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 02, 2019 at 10:01:17AM +0100, Eugen Hristev - M18282 wrote:
-> From: Eugen Hristev <eugen.hristev@microchip.com>
-> 
-> In SAM9X60 datasheet, FLEX_TWI_CWGR register rescription mentions clock
+Hi Sam,
 
-typo here: description
+Thank you for the patch.
 
-> offset of 3 cycles (compared to 4 in eg. SAMA5D3).
-> This is the same offset as in SAMA5D2.
-> 
-> Fixes: b00277923743 ("i2c: at91: add new platform support for sam9x60")
-> Suggested-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
-Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+On Mon, Dec 02, 2019 at 08:32:11PM +0100, Sam Ravnborg wrote:
+> There was no users - so remove it.
+> The callback was implemented in two drivers - deleted.
 
-Thanks
+This looks good to me, so
 
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+
+but I'll let Thierry decide if he prefers keeping it.
+
+> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Thierry Reding <thierry.reding@gmail.com>
+> Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+> Cc: Sam Ravnborg <sam@ravnborg.org>
+> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+> Cc: Maxime Ripard <mripard@kernel.org>
+> Cc: David Airlie <airlied@linux.ie>
+> Cc: Daniel Vetter <daniel@ffwll.ch>
 > ---
+>  drivers/gpu/drm/panel/panel-seiko-43wvf1g.c | 18 ------------------
+>  drivers/gpu/drm/panel/panel-simple.c        | 18 ------------------
+>  include/drm/drm_panel.h                     |  9 ---------
+>  3 files changed, 45 deletions(-)
 > 
-> Sorry, wrong subject line. Modified to SAM9X60 .
-> 
-> 
->  drivers/i2c/busses/i2c-at91-core.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/i2c/busses/i2c-at91-core.c b/drivers/i2c/busses/i2c-at91-core.c
-> index e13af48..5137e62 100644
-> --- a/drivers/i2c/busses/i2c-at91-core.c
-> +++ b/drivers/i2c/busses/i2c-at91-core.c
-> @@ -174,7 +174,7 @@ static struct at91_twi_pdata sama5d2_config = {
+> diff --git a/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c b/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
+> index b878930b17e4..3bcba64235c4 100644
+> --- a/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
+> +++ b/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
+> @@ -217,30 +217,12 @@ static int seiko_panel_get_modes(struct drm_panel *panel,
+>  	return seiko_panel_get_fixed_modes(p, connector);
+>  }
 >  
->  static struct at91_twi_pdata sam9x60_config = {
->  	.clk_max_div = 7,
-> -	.clk_offset = 4,
-> +	.clk_offset = 3,
->  	.has_unre_flag = true,
->  	.has_alt_cmd = true,
->  	.has_hold_field = true,
-> -- 
-> 2.7.4
-> 
+> -static int seiko_panel_get_timings(struct drm_panel *panel,
+> -				    unsigned int num_timings,
+> -				    struct display_timing *timings)
+> -{
+> -	struct seiko_panel *p = to_seiko_panel(panel);
+> -	unsigned int i;
+> -
+> -	if (p->desc->num_timings < num_timings)
+> -		num_timings = p->desc->num_timings;
+> -
+> -	if (timings)
+> -		for (i = 0; i < num_timings; i++)
+> -			timings[i] = p->desc->timings[i];
+> -
+> -	return p->desc->num_timings;
+> -}
+> -
+>  static const struct drm_panel_funcs seiko_panel_funcs = {
+>  	.disable = seiko_panel_disable,
+>  	.unprepare = seiko_panel_unprepare,
+>  	.prepare = seiko_panel_prepare,
+>  	.enable = seiko_panel_enable,
+>  	.get_modes = seiko_panel_get_modes,
+> -	.get_timings = seiko_panel_get_timings,
+>  };
+>  
+>  static int seiko_panel_probe(struct device *dev,
+> diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
+> index d6299fe6d276..e225791a6fb2 100644
+> --- a/drivers/gpu/drm/panel/panel-simple.c
+> +++ b/drivers/gpu/drm/panel/panel-simple.c
+> @@ -326,30 +326,12 @@ static int panel_simple_get_modes(struct drm_panel *panel,
+>  	return num;
+>  }
+>  
+> -static int panel_simple_get_timings(struct drm_panel *panel,
+> -				    unsigned int num_timings,
+> -				    struct display_timing *timings)
+> -{
+> -	struct panel_simple *p = to_panel_simple(panel);
+> -	unsigned int i;
+> -
+> -	if (p->desc->num_timings < num_timings)
+> -		num_timings = p->desc->num_timings;
+> -
+> -	if (timings)
+> -		for (i = 0; i < num_timings; i++)
+> -			timings[i] = p->desc->timings[i];
+> -
+> -	return p->desc->num_timings;
+> -}
+> -
+>  static const struct drm_panel_funcs panel_simple_funcs = {
+>  	.disable = panel_simple_disable,
+>  	.unprepare = panel_simple_unprepare,
+>  	.prepare = panel_simple_prepare,
+>  	.enable = panel_simple_enable,
+>  	.get_modes = panel_simple_get_modes,
+> -	.get_timings = panel_simple_get_timings,
+>  };
+>  
+>  #define PANEL_SIMPLE_BOUNDS_CHECK(to_check, bounds, field) \
+> diff --git a/include/drm/drm_panel.h b/include/drm/drm_panel.h
+> index 4fd61cb9eb93..c4e82b9ce586 100644
+> --- a/include/drm/drm_panel.h
+> +++ b/include/drm/drm_panel.h
+> @@ -102,15 +102,6 @@ struct drm_panel_funcs {
+>  	 */
+>  	int (*get_modes)(struct drm_panel *panel,
+>  			 struct drm_connector *connector);
+> -
+> -	/**
+> -	 * @get_timings:
+> -	 *
+> -	 * Copy display timings into the provided array and return
+> -	 * the number of display timings available.
+> -	 */
+> -	int (*get_timings)(struct drm_panel *panel, unsigned int num_timings,
+> -			   struct display_timing *timings);
+>  };
+>  
+>  /**
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
