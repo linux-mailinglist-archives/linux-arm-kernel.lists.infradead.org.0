@@ -2,86 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63636110011
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 15:22:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01FF711002B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 15:31:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LJqcIi5A5FcnLejBP1KOcWJRvloeMz35Um4IXJIHLb0=; b=eeWkIdaNDZbLR+
-	+XQM6DHSmayrZP332hFNdeRydVJA5bHE5hFX4ppF+ozgJEfPTKrx8g4dUr+Ljx9j1foKthAwnaVYV
-	x70pbsktKooMg8CrivwhFQtBWPXyivGtzlKxsOouhWcs2zJWH3Cpe0rmEoqlgX6BudsuuvYjBD8Y1
-	xpQ5E0hJ8jfH5wSz4TvP6PHB1keRiF84p1YPFvRRW+H+eWcVxhp2/tV6bj915Inh2T3jaxlx5kOFg
-	oTwva/ohgJ8b93qbWqPtctCduQqdPnUVrP1OmyChHufiqvgew1wmRfeLr0ozGc+TKzMGSjRIk/MJS
-	7NYlMtlwamhnFoBn7Auw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EmWG0T7WH+TE6gPi9wT+wXEEWxRup/SdMbjJN6MhjtE=; b=YMvhNfsbmQZN2I
+	4T2+5YxU/uEiMvGh8qaqo68e2C/Fqsw6cSLLWRGonhG4XOw0keVFmUy4HELgnglzn0OL8UKKmTjOP
+	BnB9MsXAN177kiQ1fJQW/gVgpNTE8ZMxtHDnOXJIX+1Gth1L87LyEbb5t1+a9Ep8+Z8c1L1rK9Ite
+	VVv2Gc4J8BH/NQxf6BV2C8lmdOVxSdTtjSTBX+Imgw2zlwAiu3Ow0w1sCV8QBCe14Uo7G6YCPW0GZ
+	d5bAkrLZZQFk9BBVhzg5xyrdlKeTWS5GQbNwbbJe+8N93cylUcsHAMQqctrBEfX/wfADmv9BIK2wo
+	sEJUU3J4lwIsw0EukmNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic94C-0006on-6b; Tue, 03 Dec 2019 14:22:16 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1ic9DD-00026D-Tb; Tue, 03 Dec 2019 14:31:35 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic943-0006nq-R4
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 14:22:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1575382917;
- bh=VPL5dxTYRT1YckwTNyKeV63nmsga6aqCNvYIhHWOx+I=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=PtycFUyrkw8ngoFP4NBX5zi6AZFApbjcOB/Wf+mtZ8M/G3kN+e98sjt7LnwUWSxay
- QEtQKSQqMBS5TM+3LWISFc60TVuzTYP3C+w66bo4c0Ln930S+NXnXOW/OoxmdJw0OU
- d46XcXOKlShmq6ZiF2myP5w4baveg1jWHChUXjJg=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from zaphod.peppercon.de ([212.80.250.50]) by mail.gmx.com (mrgmx004
- [212.227.17.190]) with ESMTPSA (Nemesis) id 1MbAcs-1i5H9Z1tRg-00bdwu; Tue, 03
- Dec 2019 15:21:57 +0100
-From: Ingo van Lil <inguin@gmx.de>
-To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Peter Rosin <peda@axentia.se>
-Subject: [PATCH] ARM: dts: at91: Reenable UART TX pull-ups
-Date: Tue,  3 Dec 2019 15:21:47 +0100
-Message-Id: <20191203142147.875227-1-inguin@gmx.de>
-X-Mailer: git-send-email 2.21.0
+ id 1ic9D6-00021u-AA
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 14:31:29 +0000
+Received: from mail-qv1-f45.google.com (mail-qv1-f45.google.com
+ [209.85.219.45])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C84092080A
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue,  3 Dec 2019 14:31:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575383487;
+ bh=paDjy7hZsmQkcUp7jKSH70ftPLffSgdTsEFpUetgz24=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=KZ3PkNnslqc7BEkuj8s892JHiyp111mpjo13oyKF2LEIsAAcH/hc5JifebD94uck3
+ nvVaUSye1Jaz8ajRoUANeZarO5PaXCebynHCFsWg9UsJyvHq5vbTBbBh+fkKJlWy4n
+ ygD9D5lhomlPo1jbX8Cgfpm0LyJHYR996Q4klzU0=
+Received: by mail-qv1-f45.google.com with SMTP id y8so1563612qvk.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Dec 2019 06:31:27 -0800 (PST)
+X-Gm-Message-State: APjAAAWafqiByYFSeNYie8gRsb20AN+y1h2R0j/0P/OZ1FhqEWO5UfGF
+ B/ZGfxrBZUSh5E0y/J18YYoQKgtF/BBaCRzM+A==
+X-Google-Smtp-Source: APXvYqxDBnGQNKjTk3qSKKiOvMvxPKQPV7m6ur08FqhiSl9j9w8DAHBF3481M9puWdGG8hXS2X7yJKuiKlMAjUfp4E0=
+X-Received: by 2002:a05:6214:11ac:: with SMTP id
+ u12mr5420247qvv.85.1575383483847; 
+ Tue, 03 Dec 2019 06:31:23 -0800 (PST)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:QFxVTPMDMPVZDLRdDkSXfFJ/Lba6s9TWcXRRXPKkp2exq3hKr3o
- XR6keVtstbA3XPhAqxrFGwUA76Zj05+n1guPDpbO89RS51w6/7k3+HRWTfbrgJnV+OSlG+e
- lRWeVV4ITBPVv69Ef9c9oNm2i9Bt/f/OqBspTRA6JC1eDIhMEYOJ/KqcftLK4cCgUVCuLnY
- R1eINlC1EzdRYhD7qL4ww==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:swqUhQVh+9A=:sLaJarqLcvtQsBJ9EdMkJc
- c1s0YJSFI7NAeuhyWINcb/pqor0OBEL0JxZf7pHFVigeeo6WWn+hhLYV+C3epz98Jpx4AQ+rs
- TxwHsuArg3yU6xzwIxPMeUResz9Uq9dcEMLUgbLsELJy+x9dh7Eazrz9FJJN4dc8f/sGt6eVh
- JFIaocQiLayeTcxCRsuJW276ywF5SPX0GD6ezB163iOrLhkO+bUipu6vZolTIWVBMn30P6tFM
- PFkJ8hu5gZ0ViD96aRIZgPsGSFD5tHXtmpaRS672XOH2h8enP1CrbeWoR+gVmUEK54K7a5XqV
- QvYmu1bj4kPKyRqg2b3PDG61kxoCE4QAEEfnZMUzboY6IqFXLPtNqaOqqUZk1wH8WQN5mEaC3
- bxkIOG9t80ICsxXQ7QCrKib/aCjMPftsLS+89ZuK2b10beIfgGjoVrK51daZ0wAofnBlq6eiZ
- SJjoy0Sj8+u9fCTACR0yx9swgkiKN3+H7+LJ+59PGx+3rNos7WN/JNhOEakQlAgWrcMrv9JZg
- uI/0i4pH2b5DZiY6caKVJj2B7NYMbDo+B52JKc6waJU4/IOwdnQnXngOYZ4QphYpwVmzQtGYx
- eZflHgNscZSDGFjWPs0mXlKzHTkaQ41mPOH9iD4sLiVJTJU/WE/t3HO9Gz11lM7S2XVVkGp8M
- eiL2fnlgYTOIiCXCPC0EK2Sb03B/FfwP5IW6y7b7coloTYtCul09elk6JG7yYANZpt7536rRJ
- MPRMIqt4V+ldPISGSbr+dACK1kQEdLa/P6cZModXUQZunQhlgOwllhM7qPIZK5/8Z+zNsVCIn
- q7f4qSL51pEel+1RX0iN3nicnPZGbHowVFNlU76r+/jqgGMPe60vrA6jmSmBBVcGKIufr5XBY
- 3Wh41m6rFqvYEJPXSWj5BRretjPpQsEIcIcAP7U/TmcGZ8k+6k/pQ2eLwLm4I1xM/F00GmuHq
- WmeQCPFsK0EJl1G4fMDDtRBjv7wXBYg0EXKmrpOw9zP+iJG86z8g7JYXeayHVg2c9fJAPbhxH
- ChqStxoRX0/tjy1//T12hdCOzA+hYSMX3znCvOkpHYcU1zw06/QYd8MSjVQ0SEoLHH4K5tT4A
- tJYC+VZ8W1dfUPCbpuxRDWGPWhGdDpNx/IjJrVccLqDG/QvmIW9+asBkSQWSp2yRZ7G/Wszcg
- ChZ+5QwLD+KsEhjFDcDzMpgkiRriPiSk+fuj0kSDZeezIOUe7T+OQGPuJxZ0euhXFypLm6Ik6
- NVbvhK4PKG3t8saBfkteaMORXakbUcuHcHqKf9g==
+References: <cover.5630f63168ad5cddf02e9796106f8e086c196907.1575376664.git-series.andrew@aj.id.au>
+ <3da2492c244962c27b21aad87bfa6bf74f568f1d.1575376664.git-series.andrew@aj.id.au>
+In-Reply-To: <3da2492c244962c27b21aad87bfa6bf74f568f1d.1575376664.git-series.andrew@aj.id.au>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 3 Dec 2019 08:31:10 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+3qXJbTu9G42g11PLJH-A0XeSQmJKj0obO32QFna3dEA@mail.gmail.com>
+Message-ID: <CAL_Jsq+3qXJbTu9G42g11PLJH-A0XeSQmJKj0obO32QFna3dEA@mail.gmail.com>
+Subject: Re: [PATCH 1/3] dt-bindings: ipmi: aspeed: Introduce a v2 binding for
+ KCS
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_062208_812178_08D7CADE 
-X-CRM114-Status: UNSURE (   8.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191203_063128_392206_5C5984B3 
+X-CRM114-Status: GOOD (  17.71  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (inguin[at]gmx.de)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,238 +88,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Ingo van Lil <inguin@gmx.de>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Corey Minyard <minyard@acm.org>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-aspeed@lists.ozlabs.org, Joel Stanley <joel@jms.id.au>,
+ openipmi-developer@lists.sourceforge.net,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Pull-ups for SAM9 UART/USART TX lines were disabled in a previous
-commit. However, several chips in the SAM9 family require pull-ups to
-prevent the TX lines from falling (and causing an endless break
-condition) when the transceiver is disabled.
+On Tue, Dec 3, 2019 at 6:36 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+>
+> The v2 binding utilises reg and renames some of the v1 properties.
+>
+> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> ---
+>  Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt | 20 +++++---
+>  1 file changed, 14 insertions(+), 6 deletions(-)
+>
+> diff --git a/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt b/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
+> index d98a9bf45d6c..76b180ebbde4 100644
+> --- a/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
+> +++ b/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
+> @@ -1,9 +1,10 @@
+> -* Aspeed KCS (Keyboard Controller Style) IPMI interface
+> +# Aspeed KCS (Keyboard Controller Style) IPMI interface
+>
+>  The Aspeed SOCs (AST2400 and AST2500) are commonly used as BMCs
+>  (Baseboard Management Controllers) and the KCS interface can be
+>  used to perform in-band IPMI communication with their host.
+>
+> +## v1
+>  Required properties:
+>  - compatible : should be one of
+>      "aspeed,ast2400-kcs-bmc"
+> @@ -12,14 +13,21 @@ Required properties:
+>  - kcs_chan : The LPC channel number in the controller
+>  - kcs_addr : The host CPU IO map address
+>
+> +## v2
+> +Required properties:
+> +- compatible : should be one of
+> +    "aspeed,ast2400-kcs-bmc-v2"
+> +    "aspeed,ast2500-kcs-bmc-v2"
+> +- reg : The address and size of the IDR, ODR and STR registers
+> +- interrupts : interrupt generated by the controller
+> +- slave-reg : The host CPU IO map address
 
-From the SAM9G20 datasheet, 32.5.1: "To prevent the TXD line from
-falling when the USART is disabled, the use of an internal pull up
-is mandatory.". This commit reenables the pull-ups for all chips having
-that sentence in their datasheets.
+aspeed,slave-reg
 
-Fixes: 5e04822f7db5 ("ARM: dts: at91: fixes uart pinctrl, set pullup on rx, clear pullup on tx")
-Signed-off-by: Ingo van Lil <inguin@gmx.de>
-Cc: Peter Rosin <peda@axentia.se>
----
- arch/arm/boot/dts/at91sam9260.dtsi | 12 ++++++------
- arch/arm/boot/dts/at91sam9261.dtsi |  6 +++---
- arch/arm/boot/dts/at91sam9263.dtsi |  6 +++---
- arch/arm/boot/dts/at91sam9g45.dtsi |  8 ++++----
- arch/arm/boot/dts/at91sam9rl.dtsi  |  8 ++++----
- 5 files changed, 20 insertions(+), 20 deletions(-)
+>
+>  Example:
+>
+> -    kcs3: kcs3@0 {
+> -        compatible = "aspeed,ast2500-kcs-bmc";
+> -        reg = <0x0 0x80>;
+> +    kcs3: kcs@24 {
+> +        compatible = "aspeed,ast2500-kcs-bmc-v2";
+> +        reg = <0x24 0x1>, <0x30 0x1>, <0x3c 0x1>;
 
-diff --git a/arch/arm/boot/dts/at91sam9260.dtsi b/arch/arm/boot/dts/at91sam9260.dtsi
-index dee9c0c8a096..16c6fd3c4246 100644
---- a/arch/arm/boot/dts/at91sam9260.dtsi
-+++ b/arch/arm/boot/dts/at91sam9260.dtsi
-@@ -187,7 +187,7 @@
- 				usart0 {
- 					pinctrl_usart0: usart0-0 {
- 						atmel,pins =
--							<AT91_PIOB 4 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 4 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 5 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+What are the other registers in this address space? I'm not so sure
+this is an improvement if you end up with a bunch of nodes with single
+registers.
 
-@@ -221,7 +221,7 @@
- 				usart1 {
- 					pinctrl_usart1: usart1-0 {
- 						atmel,pins =
--							<AT91_PIOB 6 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 6 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 7 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -239,7 +239,7 @@
- 				usart2 {
- 					pinctrl_usart2: usart2-0 {
- 						atmel,pins =
--							<AT91_PIOB 8 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 8 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 9 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -257,7 +257,7 @@
- 				usart3 {
- 					pinctrl_usart3: usart3-0 {
- 						atmel,pins =
--							<AT91_PIOB 10 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 10 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 11 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -275,7 +275,7 @@
- 				uart0 {
- 					pinctrl_uart0: uart0-0 {
- 						atmel,pins =
--							<AT91_PIOA 31 AT91_PERIPH_B AT91_PINCTRL_NONE
-+							<AT91_PIOA 31 AT91_PERIPH_B AT91_PINCTRL_PULL_UP
- 							 AT91_PIOA 30 AT91_PERIPH_B AT91_PINCTRL_PULL_UP>;
- 					};
- 				};
-@@ -283,7 +283,7 @@
- 				uart1 {
- 					pinctrl_uart1: uart1-0 {
- 						atmel,pins =
--							<AT91_PIOB 12 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 12 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 13 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
- 				};
-diff --git a/arch/arm/boot/dts/at91sam9261.dtsi b/arch/arm/boot/dts/at91sam9261.dtsi
-index dba025a98527..5ed3d745ac86 100644
---- a/arch/arm/boot/dts/at91sam9261.dtsi
-+++ b/arch/arm/boot/dts/at91sam9261.dtsi
-@@ -329,7 +329,7 @@
- 				usart0 {
- 					pinctrl_usart0: usart0-0 {
- 						atmel,pins =
--							<AT91_PIOC 8 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOC 8 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOC 9 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -347,7 +347,7 @@
- 				usart1 {
- 					pinctrl_usart1: usart1-0 {
- 						atmel,pins =
--							<AT91_PIOC 12 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOC 12 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOC 13 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -365,7 +365,7 @@
- 				usart2 {
- 					pinctrl_usart2: usart2-0 {
- 						atmel,pins =
--							<AT91_PIOC 14 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOC 14 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOC 15 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-diff --git a/arch/arm/boot/dts/at91sam9263.dtsi b/arch/arm/boot/dts/at91sam9263.dtsi
-index 99678abdda93..5c990cfae254 100644
---- a/arch/arm/boot/dts/at91sam9263.dtsi
-+++ b/arch/arm/boot/dts/at91sam9263.dtsi
-@@ -183,7 +183,7 @@
- 				usart0 {
- 					pinctrl_usart0: usart0-0 {
- 						atmel,pins =
--							<AT91_PIOA 26 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOA 26 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOA 27 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -201,7 +201,7 @@
- 				usart1 {
- 					pinctrl_usart1: usart1-0 {
- 						atmel,pins =
--							<AT91_PIOD 0 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOD 0 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOD 1 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -219,7 +219,7 @@
- 				usart2 {
- 					pinctrl_usart2: usart2-0 {
- 						atmel,pins =
--							<AT91_PIOD 2 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOD 2 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOD 3 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-diff --git a/arch/arm/boot/dts/at91sam9g45.dtsi b/arch/arm/boot/dts/at91sam9g45.dtsi
-index 691c95ea6175..fd179097a4bf 100644
---- a/arch/arm/boot/dts/at91sam9g45.dtsi
-+++ b/arch/arm/boot/dts/at91sam9g45.dtsi
-@@ -556,7 +556,7 @@
- 				usart0 {
- 					pinctrl_usart0: usart0-0 {
- 						atmel,pins =
--							<AT91_PIOB 19 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 19 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 18 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -574,7 +574,7 @@
- 				usart1 {
- 					pinctrl_usart1: usart1-0 {
- 						atmel,pins =
--							<AT91_PIOB 4 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 4 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 5 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -592,7 +592,7 @@
- 				usart2 {
- 					pinctrl_usart2: usart2-0 {
- 						atmel,pins =
--							<AT91_PIOB 6 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 6 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 7 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -610,7 +610,7 @@
- 				usart3 {
- 					pinctrl_usart3: usart3-0 {
- 						atmel,pins =
--							<AT91_PIOB 8 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 8 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 9 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-diff --git a/arch/arm/boot/dts/at91sam9rl.dtsi b/arch/arm/boot/dts/at91sam9rl.dtsi
-index 8643b7151565..ea024e4b6e09 100644
---- a/arch/arm/boot/dts/at91sam9rl.dtsi
-+++ b/arch/arm/boot/dts/at91sam9rl.dtsi
-@@ -682,7 +682,7 @@
- 				usart0 {
- 					pinctrl_usart0: usart0-0 {
- 						atmel,pins =
--							<AT91_PIOA 6 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOA 6 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOA 7 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -721,7 +721,7 @@
- 				usart1 {
- 					pinctrl_usart1: usart1-0 {
- 						atmel,pins =
--							<AT91_PIOA 11 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOA 11 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOA 12 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -744,7 +744,7 @@
- 				usart2 {
- 					pinctrl_usart2: usart2-0 {
- 						atmel,pins =
--							<AT91_PIOA 13 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOA 13 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOA 14 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
-@@ -767,7 +767,7 @@
- 				usart3 {
- 					pinctrl_usart3: usart3-0 {
- 						atmel,pins =
--							<AT91_PIOB 0 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOB 0 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOB 1 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
-
---
-2.21.0
-
+>          interrupts = <8>;
+> -        kcs_chan = <3>;
+> -        kcs_addr = <0xCA2>;
+> +        slave-reg = <0xca2>;
+>          status = "okay";
+>      };
+> --
+> git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
