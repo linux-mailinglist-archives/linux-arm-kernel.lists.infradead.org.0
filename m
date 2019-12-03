@@ -2,78 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 533A310FD42
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:07:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0738010FD63
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 13:09:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jRblaPfwNOE+J2+o1ZyqDYXEsrPMNK1RPL49h/TJ/mY=; b=aT9TLRpyE6Cfi3
-	TLRCL/r2iKLJ9tGrOyWOZHCrZwoI3sgd5oJzNqCSCstXUXQ2EOT9huCpoIkvYt0TUyi2mayWhnGZ/
-	+K7Fih6/ze8bKd52Y7hOuOYEpKWKKxTJczl6IYxCAGfyRqOx9GJCQpW3QsRPHdrX2AJbpZq/5DhgJ
-	pcOxOEPmD8uNA8cpJrYj9Pshy1tSqoPMbS6Do8BV7IHXUzMVClCuzk5sHXhAJ56U7lS0yCrnCq8qd
-	FHQ+9eUapHL9ZH2WfhcyCo+bJOEEI4azoNFjbSYzkClYhG6V9uHzQo/Ru3vytTBcbLLgUGqkDmSnW
-	7XrCRPA64Ro42CYdmFUg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=2spSQEB9aUw3wcS/0m1oKhcmEuTkUFPzBB2Xpi00ybQ=; b=U5G
+	6gZcvN5+6Sg7WuYxR7G2jApPP0vMSsmeKOYevG478UuoIct1bbqtzrxo+G0ATzcYto4Pzp/exSNgk
+	qRs1pUGz/tvXYzG+WxVR9gLdaBbA6geORnNcp606ZrYQQQJ7jXQIX0zcx5ap/hlr6+tVN8/7wl5PE
+	CZ4wAg7YxY76fJaHR5LYT/9LlrxF8RYl2CtLm91mQKH2CUGsdAmJQv4wn0FS0BcuJ4t6BVpS20dAT
+	j1c3uZfBCG+tDf692KYeFjH6phCiShEQCfr33a+RitEGUWmOTbJ7yhIAimppD8PLtvyaFWFKN5LOH
+	uenLE1sKEVDMJ5OEvKKuv1YNh+HNWvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic6y5-00060e-Jt; Tue, 03 Dec 2019 12:07:49 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1ic703-00073a-BG; Tue, 03 Dec 2019 12:09:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic6v8-0002NW-4P
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:04:48 +0000
-Received: by mail-lf1-x142.google.com with SMTP id 203so2681869lfa.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 04:04:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=41gz7Pr3bu95rsc2AmP+uk3DRv43sggDSJGl0PUK5A8=;
- b=vbIBHcDr/qXhhDiGkKQDs2V+qghI3vJUjWRJZh+QM0n7WjE7nswn5FuYePJCHdHzT2
- avY0Mreifj3ivibbFeMUjPiHT+tse5RWRK63vnjmUS+IAjcQYfzm2Xx8LcDAK7FAmJRK
- +yUPtu9k6n+mzGGTQF8ICWdPsQnKyju/t4JU96PqX2wlaY8qdTg4pn2QAJeK+icv1Lky
- lfOihAkVdTDKuyvGQSRNZbXxh/DH+GeYqf4cXJLUXlCglkncka1j6IrhzSORGoPely9n
- b+4NVU8DzzaWt+bB8B1RFgwqtyAi3FMrobRFKfA05P2euNq7kzqUr+nm7yEpv8HcnxE1
- NJDQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=41gz7Pr3bu95rsc2AmP+uk3DRv43sggDSJGl0PUK5A8=;
- b=OTbtzVslpXDMdI8N/wFpLRgfmuBC9ZcjNIc3aZFux9+/WWvgvHlARqFhvpPf9skZ1D
- +CfRrbiE8m1i0aVTH08DuOMBNUVjo9Pv8tqsJhqbt8pmjQhT9+5tdrt+ZLQ9JmFOouWn
- JaWXX4JVaW81sCa3awZebYF//yBCkY87f0Pnl6c4qJ+KcXlFc7eXm3LOnSk1OMw1msmV
- tW7MK/lem7JR7kZFR9L2A/DRtTBZgrl1SxsRbrgSOQueOcc0A8qfghI3XkPxs3BGloUt
- aPEqQGsGITYTtSTp+oVxbvYuFWEthsZvqzZFThHZGhtOFbNjA1mzY+DmCq6c0r7fjsLG
- A6LQ==
-X-Gm-Message-State: APjAAAVhzrcFVYD3GwKdbPWaXyudToqRXJYboNmYm2Y7BOipdkoAzyH7
- n5Cxre4tnmTZMV7Hw25sfCrjmr8Mv7lYSTzUnGk=
-X-Google-Smtp-Source: APXvYqzfZ00PJpD/WaW2YVAH/ohfpVaLwioqHtBL+vwNMKZqqB4MnjZ7lOePHAJd+K2wIAXl/jgDkhuvxG7sGPwy6Sc=
-X-Received: by 2002:ac2:4119:: with SMTP id b25mr2532251lfi.90.1575374683194; 
- Tue, 03 Dec 2019 04:04:43 -0800 (PST)
-MIME-Version: 1.0
-References: <08794fde-cdd0-287c-62bf-e2e3b8c80686@gmail.com>
- <20191203101509.wte47aad5k4mqu2y@pengutronix.de>
-In-Reply-To: <20191203101509.wte47aad5k4mqu2y@pengutronix.de>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Tue, 3 Dec 2019 09:04:58 -0300
-Message-ID: <CAOMZO5Cn993y9VeFN6hPO3-cfNnUKiuFd_rqAZ8htz=dO6t6ig@mail.gmail.com>
-Subject: Re: Issue with imx_get_temp()
-To: Marco Felsch <m.felsch@pengutronix.de>
+ id 1ic6zs-00072t-0m
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 12:09:41 +0000
+Received: from e123331-lin.cambridge.arm.com (fw-tnat-cam5.arm.com
+ [217.140.106.53])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 313F3206EC;
+ Tue,  3 Dec 2019 12:09:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575374979;
+ bh=HLDxHA3u6zPkA2L16cd+TIrnIq/ec/amOCKSyTzNINA=;
+ h=From:To:Cc:Subject:Date:From;
+ b=0aqxQRQQMi4A6lW+SzviNDpHyP8y95CWHyDkHQfyQ8TdHG/CkzreQi9kQ8xs5aFxY
+ S4LwA1GXUVOTXKnv6/vVnufU82An+JWdNQs4hNTc49sqepTOrWCcL+yn+NLzzTctbk
+ xcYMReIIjaBi3DxNj7QgwBsSSZ6u2Cwu4eruLUxk=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-efi@vger.kernel.org
+Subject: [PATCH 0/2] efi: simplify property table handling on ARM
+Date: Tue,  3 Dec 2019 12:09:15 +0000
+Message-Id: <20191203120917.25981-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_040446_262345_769A45B9 
-X-CRM114-Status: GOOD (  10.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191203_040940_083150_8F63AABF 
+X-CRM114-Status: UNSURE (   8.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -4.7 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-4.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -82,6 +62,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.5 PDS_BTC_ID             FP reduced Bitcoin ID
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,54 +75,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Amit Kucheria <amit.kucheria@verdurent.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-pm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>, Igor Plyatov <plyatov@gmail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Eduardo Valentin <edubezval@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, james.morse@arm.com, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marco,
+Instead of sorting the memory map and comparing the placement and
+type of adjacent entries in the EFI memory map, which was implemented
+to prevent breakage when the pointless and deprecated UEFI property
+table feature is provided by the firmware, boot with a 1:1 mapping
+for runtime services in this case, which works around the issue as
+well.
 
-On Tue, Dec 3, 2019 at 7:15 AM Marco Felsch <m.felsch@pengutronix.de> wrote:
+Also, move the code that handles this feature into arch/x86, which
+is the only architecture which is known to have shipped systems with
+this feature enabled.
 
-> Mh.. it seems that the irq gets enabled before a irq-handler is
-> registered. As your backlog shows the thermal_zone_device_register()
-> triggers a imx_get_temp() and during boot the irq_enabled is false and
-> it seems that your temperature is below the alarm_temp. So in such a
-> case the enable_irq() is executed. I don't know what happens if we
-> enable a irq without a irq-handler.
+Ard Biesheuvel (2):
+  efi/arm64: use 1:1 mapping of RT services if property table exists
+  efi: move handling of properties table to x86 specific code
 
-I think your analysis makes sense.
+ arch/x86/platform/efi/efi.c             |  22 ++++-
+ drivers/firmware/efi/efi.c              |  19 ----
+ drivers/firmware/efi/libstub/Makefile   |   1 -
+ drivers/firmware/efi/libstub/arm-stub.c | 103 ++++++--------------
+ include/linux/efi.h                     |   1 -
+ 5 files changed, 50 insertions(+), 96 deletions(-)
 
-Should we move the ' data->irq_enabled = true' just prior to calling
-thermal_zone_device_register()?
+-- 
+2.17.1
 
---- a/drivers/thermal/imx_thermal.c
-+++ b/drivers/thermal/imx_thermal.c
-@@ -803,6 +803,7 @@ static int imx_thermal_probe(struct platform_device *pdev)
-                goto legacy_cleanup;
-        }
-
-+       data->irq_enabled = true;
-        data->tz = thermal_zone_device_register("imx_thermal_zone",
-                                                IMX_TRIP_NUM,
-                                                BIT(IMX_TRIP_PASSIVE), data,
-@@ -837,7 +838,6 @@ static int imx_thermal_probe(struct platform_device *pdev)
-        regmap_write(map, data->socdata->sensor_ctrl + REG_SET,
-                     data->socdata->measure_temp_mask);
-
--       data->irq_enabled = true;
-        data->mode = THERMAL_DEVICE_ENABLED;
-
-        ret = devm_request_threaded_irq(&pdev->dev, data->irq,
 
 _______________________________________________
 linux-arm-kernel mailing list
