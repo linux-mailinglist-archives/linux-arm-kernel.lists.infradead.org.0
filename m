@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC52810FF39
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 14:50:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1044D10FF40
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 14:50:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XKMK7p4o1fHvJqQQWNzPQ2QGxfn3rDyemAmHE5oAu+w=; b=DDC0x76V9kxZeW
-	rcI/V2TvPlHj3J/B+lvOk6So3zZ9bTbn1mDpPazIiH6LGJmc0PlpYg7POcriydfVbbQUewHNGUDrX
-	6uPFpuTxLOqXF2AyEWecLWvP02e+Ro+zp99ywnXAOWzwuqJwrGGjfWgHu7GrnPvybujHJUYh7q4e4
-	8dwpzMmgi/4bEs+FsP0mS/b9YWWpNEg8oqe/ePJyix/oc5d8cgSTI6XnbMDzC7HrzDd0GpuIgdz4p
-	J2l6E0sOGEXV297XJnPWn67bzIVL8Xo1L9tM1VomPm5kmFKVouzlDgOJ+WTl4dlMqaMOns1CPrODn
-	V+dPwZ3SVO8jRBl73JFg==;
+	List-Owner; bh=9aa3ZaQ5G5vshs/OR7CTB7AEQle2FCx6x+V24n4MgRk=; b=mI51yt05P09h+P
+	yiXG+dqdWwE/cOrMW38ZTW9OUL9Gx74QYfOVwlcQyOGJdKHz8ChrUH0uUce5EGevHNqOGWTIrsdBI
+	fm27e+Vb8ump2vNeNcnN2i8xTMleXg+BBwsANZR30dh1F37e6LMuJPiF9MzqjWk3ZI58NAsVZxQrz
+	fdq4YYKu0/WheAWdjKqnUb8niiyYHosAeuDBpZPW5qcL04qPDw+3cTYA/syWBtguMSDU0ipvltNOg
+	wdQBIsVFRKcpqWnMR7FGcUPB97CGvSlRgnFqB6qZASiOAQI8P7LBIXDWLuxulfAEv2hKYjX3NVHVQ
+	mejMTlVx4hfBNg5o5SxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic8Yq-0000Vd-Gt; Tue, 03 Dec 2019 13:49:53 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1ic8ZO-0000kz-68; Tue, 03 Dec 2019 13:50:26 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic8Xm-0008Sd-Of
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 13:48:48 +0000
-Received: by mail-pf1-x443.google.com with SMTP id d199so1877127pfd.11
+ id 1ic8Xt-00006K-0m
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 13:48:56 +0000
+Received: by mail-pg1-x544.google.com with SMTP id q127so1715763pga.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 05:48:46 -0800 (PST)
+ Tue, 03 Dec 2019 05:48:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=cZ4/teiuFdafb5RuME47dUY85SO685foNncJ+cZhSOo=;
- b=bzQVtQsvU9O8dXv0M3xGbCqaL/q9CJlsqOgF/n0/hHdtOVxO72jDaIEkuyUHzEV57O
- qM3Bj9ZKAxHvUv3WI2J6Y5gAxkCp6TuLc2HzernLE1JTTaenMGcBkRIwMB42wg6gjvqY
- Utw7kPxSbcEWTXM9ZCgJpIMtVH6IzQLCePT74=
+ bh=lDJf2uYfDmQWtbbV6ZzytU1h+3qcWlYg0vHzuCFbvic=;
+ b=dljMBjZTTzYVZx3NJIiaTEKY+fBL1rJ0VhDMi5ObHjHZmD6d6/YkIak3capZ8MXAcl
+ 0HHbF26ngBJZQ8gJi72dDs2EJfcuSffsgquhnS4ZKAxUvU+FNQDus06hoTP4S7gV2V4D
+ p5ozM+tkWAxjwq6p5k8NVEHgMcFwOo6kIyG9g=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=cZ4/teiuFdafb5RuME47dUY85SO685foNncJ+cZhSOo=;
- b=T+C8KNI9yjADqYzDG3Pf1EHZnpjBS0Pqx5lEX/9WjLhjht/KJPj8f7tPMoorNTNfbf
- hDKyvPdS9Z2WORAJMBf5lJBDNptPgmn+gIZ7xxBJD+XzhdMhrjmhV+BSE6pd2XvcYxvL
- 52WbDIc8JRsVy8bT0+5Ag+G8qvUdlQvL9FcLl89gJWlr8bU1JvNGXBy05/GYEyo34FKR
- vHXp0trkg1eABqaiPYHJPqc3cnQTVU1xhOBYtsgMGGJJO5g+qFQNrSTDr2nxO6Gkipal
- 1KWEnHKdmC6A5SFXqXavuNoizFm/vED4QZ8W1SjpMicfKNeAQcnCelTX5HVA1vzk0zgI
- g7AQ==
-X-Gm-Message-State: APjAAAUoWHo+4rwbGjSKAFDRqrgO1uzOa7t9923nYfRBDKgYfeGPeuMh
- VLQbo6RHMA4k66bF6+tm05ih6Q==
-X-Google-Smtp-Source: APXvYqzOhrp2vBfBWLr6WtTENMHpXtD/Gx6XDn+ryyG4N1W0Xbbc1zWvgIC4t9s/eR2eo7kqDboxPw==
-X-Received: by 2002:a63:c652:: with SMTP id x18mr5478439pgg.211.1575380925537; 
- Tue, 03 Dec 2019 05:48:45 -0800 (PST)
+ bh=lDJf2uYfDmQWtbbV6ZzytU1h+3qcWlYg0vHzuCFbvic=;
+ b=QNUweDKFYBZQYYVoUsxSui6iIMLpYfXgAIW9IZhzB9tmn/+KW/xNjsyPSMpTgNryl2
+ f5ofYGd+GG6ecFhjZmEULek5JJqGvodfFj8PrYW2uOq1WQBNUOE8A3ntGUOMbdRv+7XO
+ HEQm0kHwpqq/d82gOm7/EQOtqPd4y6dbtnfcN8JAblWwD1XxjA8P10l8kxbfLFIiFKQ7
+ TNfwmlSQeWU4mTLzhOizBfR8cSPBQ+jHHg3N51I03stmk9iEB8xO8YwqcbwAyqtmTAI5
+ UicrBrJ2SHIahIyaeiqrwsvno1HXCD5EHP2j0cEyLC0eEENiuXQ1Gx5jnVIKzPuH0mf1
+ I9XQ==
+X-Gm-Message-State: APjAAAU+HVuFoFcgu22nBxa8G24SR8gMgR9iSadUtKSX2MaqqzrEY6rY
+ dMEWhwOURa7JssZce0c0jSMaww==
+X-Google-Smtp-Source: APXvYqwQHjJFEEwhVh4UAmgN93Bdic+cbDd2uJ8/t2CawkxL9VtbaPUQzrKhamJ0900Y+rNZOt7WkQ==
+X-Received: by 2002:a63:4466:: with SMTP id t38mr5499310pgk.316.1575380930403; 
+ Tue, 03 Dec 2019 05:48:50 -0800 (PST)
 Received: from localhost.localdomain ([115.97.190.29])
- by smtp.gmail.com with ESMTPSA id y144sm4397892pfb.188.2019.12.03.05.48.40
+ by smtp.gmail.com with ESMTPSA id y144sm4397892pfb.188.2019.12.03.05.48.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Dec 2019 05:48:45 -0800 (PST)
+ Tue, 03 Dec 2019 05:48:49 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v12 3/7] drm/sun4i: dsi: Add has_mod_clk quirk
-Date: Tue,  3 Dec 2019 19:18:12 +0530
-Message-Id: <20191203134816.5319-4-jagan@amarulasolutions.com>
+Subject: [PATCH v12 4/7] drm/sun4i: dsi: Handle bus clock via
+ regmap_mmio_attach_clk
+Date: Tue,  3 Dec 2019 19:18:13 +0530
+Message-Id: <20191203134816.5319-5-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20191203134816.5319-1-jagan@amarulasolutions.com>
 References: <20191203134816.5319-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_054846_849840_C0EC8F53 
-X-CRM114-Status: GOOD (  19.06  )
+X-CRM114-CacheID: sfid-20191203_054853_090351_762E2B22 
+X-CRM114-Status: GOOD (  17.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,150 +107,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As per the user manual, look like mod clock is not mandatory
-for all Allwinner MIPI DSI controllers, it is connected to
-CLK_DSI_SCLK for A31 and not available in A64.
+regmap has special API to enable the controller bus clock while
+initializing register space, and current driver is using
+devm_regmap_init_mmio_clk which require to specify bus
+clk_id argument as "bus"
 
-So add has_mod_clk quirk and process the mod clk accordingly.
+But, the usage of clocks are varies between different Allwinner
+DSI controllers. Clocking in A33 would need bus and mod clocks
+where as A64 would need only bus clock.
 
-Tested-by: Merlijn Wajer <merlijn@wizzup.org>
+Since A64 support only single bus clock, it is optional to
+specify the clock-names on the controller device tree node.
+So using NULL on clk_id would get the attached clock.
+
+To support clk_id as "bus" and "NULL" during clock enablement
+between controllers, this patch add generic code to handle
+the bus clock using regmap_mmio_attach_clk with associated
+regmap APIs.
+
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
 Changes for v12:
-- none
+- get bus clock only when mod clock present
+- use regmap_mmio_attach_clk
 
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 38 ++++++++++++++++++--------
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h |  5 ++++
- 2 files changed, 32 insertions(+), 11 deletions(-)
+ drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 43 +++++++++++++++++++++-----
+ 1 file changed, 35 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-index c958ca9bae63..8c4c541224dd 100644
+index 8c4c541224dd..6085ad2eafc3 100644
 --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
 +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-@@ -11,6 +11,7 @@
- #include <linux/crc-ccitt.h>
- #include <linux/module.h>
- #include <linux/of_address.h>
-+#include <linux/of_device.h>
- #include <linux/phy/phy-mipi-dphy.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-@@ -1093,6 +1094,7 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
- 	dsi->dev = dev;
+@@ -1082,6 +1082,7 @@ static const struct component_ops sun6i_dsi_ops = {
+ static int sun6i_dsi_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
++	const char *clk_name = NULL;
+ 	struct sun6i_dsi *dsi;
+ 	struct resource *res;
+ 	void __iomem *base;
+@@ -1095,6 +1096,8 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
  	dsi->host.ops = &sun6i_dsi_host_ops;
  	dsi->host.dev = dev;
-+	dsi->variant = of_device_get_match_data(dev);
+ 	dsi->variant = of_device_get_match_data(dev);
++	if (dsi->variant->has_mod_clk)
++		clk_name = "bus";
  
  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
  	base = devm_ioremap_resource(dev, res);
-@@ -1120,17 +1122,20 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
+@@ -1109,24 +1112,35 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
+ 		return PTR_ERR(dsi->regulator);
+ 	}
+ 
+-	dsi->regs = devm_regmap_init_mmio_clk(dev, "bus", base,
+-					      &sun6i_dsi_regmap_config);
+-	if (IS_ERR(dsi->regs)) {
+-		dev_err(dev, "Couldn't create the DSI encoder regmap\n");
+-		return PTR_ERR(dsi->regs);
+-	}
+-
+ 	dsi->reset = devm_reset_control_get_shared(dev, NULL);
+ 	if (IS_ERR(dsi->reset)) {
+ 		dev_err(dev, "Couldn't get our reset line\n");
  		return PTR_ERR(dsi->reset);
  	}
  
--	dsi->mod_clk = devm_clk_get(dev, "mod");
--	if (IS_ERR(dsi->mod_clk)) {
--		dev_err(dev, "Couldn't get the DSI mod clock\n");
--		return PTR_ERR(dsi->mod_clk);
-+	if (dsi->variant->has_mod_clk) {
-+		dsi->mod_clk = devm_clk_get(dev, "mod");
-+		if (IS_ERR(dsi->mod_clk)) {
-+			dev_err(dev, "Couldn't get the DSI mod clock\n");
-+			return PTR_ERR(dsi->mod_clk);
-+		}
++	dsi->regs = devm_regmap_init_mmio(dev, base, &sun6i_dsi_regmap_config);
++	if (IS_ERR(dsi->regs)) {
++		dev_err(dev, "Couldn't init regmap\n");
++		return PTR_ERR(dsi->regs);
++	}
++
++	dsi->bus_clk = devm_clk_get(dev, clk_name);
++	if (IS_ERR(dsi->bus_clk)) {
++		dev_err(dev, "Couldn't get the DSI bus clock\n");
++		ret = PTR_ERR(dsi->bus_clk);
++		goto err_regmap;
++	} else {
++		ret = regmap_mmio_attach_clk(dsi->regs, dsi->bus_clk);
++		if (ret)
++			goto err_bus_clk;
++	}
++
+ 	if (dsi->variant->has_mod_clk) {
+ 		dsi->mod_clk = devm_clk_get(dev, "mod");
+ 		if (IS_ERR(dsi->mod_clk)) {
+ 			dev_err(dev, "Couldn't get the DSI mod clock\n");
+-			return PTR_ERR(dsi->mod_clk);
++			ret = PTR_ERR(dsi->mod_clk);
++			goto err_attach_clk;
+ 		}
  	}
  
- 	/*
- 	 * In order to operate properly, that clock seems to be always
- 	 * set to 297MHz.
- 	 */
--	clk_set_rate_exclusive(dsi->mod_clk, 297000000);
-+	if (dsi->variant->has_mod_clk)
-+		clk_set_rate_exclusive(dsi->mod_clk, 297000000);
- 
- 	dsi->dphy = devm_phy_get(dev, "dphy");
- 	if (IS_ERR(dsi->dphy)) {
-@@ -1160,7 +1165,8 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
- err_pm_disable:
- 	pm_runtime_disable(dev);
+@@ -1167,6 +1181,14 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
  err_unprotect_clk:
--	clk_rate_exclusive_put(dsi->mod_clk);
-+	if (dsi->variant->has_mod_clk)
-+		clk_rate_exclusive_put(dsi->mod_clk);
+ 	if (dsi->variant->has_mod_clk)
+ 		clk_rate_exclusive_put(dsi->mod_clk);
++err_attach_clk:
++	if (!IS_ERR(dsi->bus_clk))
++		regmap_mmio_detach_clk(dsi->regs);
++err_bus_clk:
++	if (!IS_ERR(dsi->bus_clk))
++		clk_put(dsi->bus_clk);
++err_regmap:
++	regmap_exit(dsi->regs);
  	return ret;
  }
  
-@@ -1172,7 +1178,8 @@ static int sun6i_dsi_remove(struct platform_device *pdev)
- 	component_del(&pdev->dev, &sun6i_dsi_ops);
- 	mipi_dsi_host_unregister(&dsi->host);
- 	pm_runtime_disable(dev);
--	clk_rate_exclusive_put(dsi->mod_clk);
-+	if (dsi->variant->has_mod_clk)
-+		clk_rate_exclusive_put(dsi->mod_clk);
+@@ -1181,6 +1203,11 @@ static int sun6i_dsi_remove(struct platform_device *pdev)
+ 	if (dsi->variant->has_mod_clk)
+ 		clk_rate_exclusive_put(dsi->mod_clk);
  
++	if (!IS_ERR(dsi->bus_clk))
++		regmap_mmio_detach_clk(dsi->regs);
++
++	regmap_exit(dsi->regs);
++
  	return 0;
  }
-@@ -1189,7 +1196,8 @@ static int __maybe_unused sun6i_dsi_runtime_resume(struct device *dev)
- 	}
  
- 	reset_control_deassert(dsi->reset);
--	clk_prepare_enable(dsi->mod_clk);
-+	if (dsi->variant->has_mod_clk)
-+		clk_prepare_enable(dsi->mod_clk);
- 
- 	/*
- 	 * Enable the DSI block.
-@@ -1217,7 +1225,8 @@ static int __maybe_unused sun6i_dsi_runtime_suspend(struct device *dev)
- {
- 	struct sun6i_dsi *dsi = dev_get_drvdata(dev);
- 
--	clk_disable_unprepare(dsi->mod_clk);
-+	if (dsi->variant->has_mod_clk)
-+		clk_disable_unprepare(dsi->mod_clk);
- 	reset_control_assert(dsi->reset);
- 	regulator_disable(dsi->regulator);
- 
-@@ -1230,9 +1239,16 @@ static const struct dev_pm_ops sun6i_dsi_pm_ops = {
- 			   NULL)
- };
- 
-+static const struct sun6i_dsi_variant sun6i_a31_mipi_dsi = {
-+	.has_mod_clk = true,
-+};
-+
- static const struct of_device_id sun6i_dsi_of_table[] = {
--	{ .compatible = "allwinner,sun6i-a31-mipi-dsi" },
--	{ }
-+	{
-+		.compatible = "allwinner,sun6i-a31-mipi-dsi",
-+		.data = &sun6i_a31_mipi_dsi,
-+	},
-+	{ /* sentinel */ }
- };
- MODULE_DEVICE_TABLE(of, sun6i_dsi_of_table);
- 
-diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-index 3f4846f581ef..d791c9f6fccf 100644
---- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-+++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-@@ -15,6 +15,10 @@
- 
- #define SUN6I_DSI_TCON_DIV	4
- 
-+struct sun6i_dsi_variant {
-+	bool			has_mod_clk;
-+};
-+
- struct sun6i_dsi {
- 	struct drm_connector	connector;
- 	struct drm_encoder	encoder;
-@@ -31,6 +35,7 @@ struct sun6i_dsi {
- 	struct sun4i_drv	*drv;
- 	struct mipi_dsi_device	*device;
- 	struct drm_panel	*panel;
-+	const struct sun6i_dsi_variant	*variant;
- };
- 
- static inline struct sun6i_dsi *host_to_sun6i_dsi(struct mipi_dsi_host *host)
 -- 
 2.18.0.321.gffc6fa0e3
 
