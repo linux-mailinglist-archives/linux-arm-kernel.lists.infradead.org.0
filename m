@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1044D10FF40
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 14:50:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3978210FF42
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 14:51:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9aa3ZaQ5G5vshs/OR7CTB7AEQle2FCx6x+V24n4MgRk=; b=mI51yt05P09h+P
-	yiXG+dqdWwE/cOrMW38ZTW9OUL9Gx74QYfOVwlcQyOGJdKHz8ChrUH0uUce5EGevHNqOGWTIrsdBI
-	fm27e+Vb8ump2vNeNcnN2i8xTMleXg+BBwsANZR30dh1F37e6LMuJPiF9MzqjWk3ZI58NAsVZxQrz
-	fdq4YYKu0/WheAWdjKqnUb8niiyYHosAeuDBpZPW5qcL04qPDw+3cTYA/syWBtguMSDU0ipvltNOg
-	wdQBIsVFRKcpqWnMR7FGcUPB97CGvSlRgnFqB6qZASiOAQI8P7LBIXDWLuxulfAEv2hKYjX3NVHVQ
-	mejMTlVx4hfBNg5o5SxA==;
+	List-Owner; bh=bHx6cgLqYMUEuYceUPiGe4mnDpnhEcNFnAsLSNsnOCI=; b=Cz5NbfO4GdUD7h
+	dK6SCpu1XFa6jhoAlJPnP6zYAwltqlKVIzDs7TF2+8D8lpsHvaTUIykP2SzKEjrtyEDPq7Fnf72oO
+	dk/ZOfcgZQ3KQwp3ndDxUl76Tkhxj3UGXGzPcH1QsKx7V3wgdo/bmLGSw+NsKZJmuO1/vQPJ9Ing9
+	ydBqGJKkiMxrQli9z/un7NAYCCecGgPB8bRysOUeXFtVDcXLPFFmXqqq2JWjpcMYOdQoGghnOo5w8
+	C5L6mYEsN4qwW3IzBl9YQsBI2tOnwNo9c+qKgy+RGBCREeMnR7beo5FSttqFubE9f4XZjuum/RLtr
+	1veKggUD+ZUcBbUklM9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic8ZO-0000kz-68; Tue, 03 Dec 2019 13:50:26 +0000
+	id 1ic8Zq-0002PV-7t; Tue, 03 Dec 2019 13:50:54 +0000
 Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic8Xt-00006K-0m
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 13:48:56 +0000
-Received: by mail-pg1-x544.google.com with SMTP id q127so1715763pga.4
+ id 1ic8Xx-00009w-EZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 13:49:00 +0000
+Received: by mail-pg1-x544.google.com with SMTP id r11so1724349pgf.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 05:48:52 -0800 (PST)
+ Tue, 03 Dec 2019 05:48:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=lDJf2uYfDmQWtbbV6ZzytU1h+3qcWlYg0vHzuCFbvic=;
- b=dljMBjZTTzYVZx3NJIiaTEKY+fBL1rJ0VhDMi5ObHjHZmD6d6/YkIak3capZ8MXAcl
- 0HHbF26ngBJZQ8gJi72dDs2EJfcuSffsgquhnS4ZKAxUvU+FNQDus06hoTP4S7gV2V4D
- p5ozM+tkWAxjwq6p5k8NVEHgMcFwOo6kIyG9g=
+ bh=GvY7EGGLO25a5o48qmefaws4aAtPmG5PqqVM+V2F2v0=;
+ b=P61OjPv9p9rdBXwWKpdC3BKZ2eG0qALzjaq4PWVhOv0Imk1pU/XdRKWhc/V7jYac6t
+ C5RiQZlWUz54FyBSjjP0vgGT3D9vcDvvz944EqNqD68VIRRtcYY0B3vzz+CPeMCq9XiE
+ yKGDB5aamTiO66N04pyDT3FNRkzikQI/7Qqe8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=lDJf2uYfDmQWtbbV6ZzytU1h+3qcWlYg0vHzuCFbvic=;
- b=QNUweDKFYBZQYYVoUsxSui6iIMLpYfXgAIW9IZhzB9tmn/+KW/xNjsyPSMpTgNryl2
- f5ofYGd+GG6ecFhjZmEULek5JJqGvodfFj8PrYW2uOq1WQBNUOE8A3ntGUOMbdRv+7XO
- HEQm0kHwpqq/d82gOm7/EQOtqPd4y6dbtnfcN8JAblWwD1XxjA8P10l8kxbfLFIiFKQ7
- TNfwmlSQeWU4mTLzhOizBfR8cSPBQ+jHHg3N51I03stmk9iEB8xO8YwqcbwAyqtmTAI5
- UicrBrJ2SHIahIyaeiqrwsvno1HXCD5EHP2j0cEyLC0eEENiuXQ1Gx5jnVIKzPuH0mf1
- I9XQ==
-X-Gm-Message-State: APjAAAU+HVuFoFcgu22nBxa8G24SR8gMgR9iSadUtKSX2MaqqzrEY6rY
- dMEWhwOURa7JssZce0c0jSMaww==
-X-Google-Smtp-Source: APXvYqwQHjJFEEwhVh4UAmgN93Bdic+cbDd2uJ8/t2CawkxL9VtbaPUQzrKhamJ0900Y+rNZOt7WkQ==
-X-Received: by 2002:a63:4466:: with SMTP id t38mr5499310pgk.316.1575380930403; 
- Tue, 03 Dec 2019 05:48:50 -0800 (PST)
+ bh=GvY7EGGLO25a5o48qmefaws4aAtPmG5PqqVM+V2F2v0=;
+ b=hi7b3UIYBxCiUOpC3p4Q559KJxeL3AW5VkAaz3CB+1E0PsUgE0BCh1qfqPGzbp8Jhh
+ rH66haPaaGvBJhUMJlC1OGOTHtKfYWUC3Gwxy09dsjVPFITSvTtIWqz+ofdpdMWo2QOr
+ INTBaB/kgAIicvc2KSNGK/aXuj2/YXBFlz1/CEhjHJRuVSmhXuYYTu/36gGMHe5+5+MR
+ iJzGsVuSb97H2wALoswSGxawSViFk3hZdKxDq+xbQ+HEpuZ5xT6UOO+TbKfEF/j6gaB8
+ J6O1G71746LF3O/ziFl/yYIOoND/2ePxxNEGt9muRCCb5K9V32QvD/v9tz6G/EtPwtiA
+ +TUw==
+X-Gm-Message-State: APjAAAVR7tN8sUqsAXEKHrGTiq8yeiaGpc+KYEffcoC7yFPnvTEIVSPT
+ pvmn+j1EfcMPBN2Jq4ZQSWGcHQ==
+X-Google-Smtp-Source: APXvYqwm0cu3OUOj7mGNRPnxcAIXp99P9fa7KifqYH6jQUxCZrws2pFbIgmk6iPHa24PSNgZI5cxGA==
+X-Received: by 2002:a63:101:: with SMTP id 1mr5341092pgb.336.1575380935648;
+ Tue, 03 Dec 2019 05:48:55 -0800 (PST)
 Received: from localhost.localdomain ([115.97.190.29])
- by smtp.gmail.com with ESMTPSA id y144sm4397892pfb.188.2019.12.03.05.48.45
+ by smtp.gmail.com with ESMTPSA id y144sm4397892pfb.188.2019.12.03.05.48.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Dec 2019 05:48:49 -0800 (PST)
+ Tue, 03 Dec 2019 05:48:55 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v12 4/7] drm/sun4i: dsi: Handle bus clock via
- regmap_mmio_attach_clk
-Date: Tue,  3 Dec 2019 19:18:13 +0530
-Message-Id: <20191203134816.5319-5-jagan@amarulasolutions.com>
+Subject: [PATCH v12 5/7] drm/sun4i: dsi: Add Allwinner A64 MIPI DSI support
+Date: Tue,  3 Dec 2019 19:18:14 +0530
+Message-Id: <20191203134816.5319-6-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20191203134816.5319-1-jagan@amarulasolutions.com>
 References: <20191203134816.5319-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_054853_090351_762E2B22 
-X-CRM114-Status: GOOD (  17.96  )
+X-CRM114-CacheID: sfid-20191203_054857_648671_4420160A 
+X-CRM114-Status: GOOD (  11.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -107,125 +106,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-regmap has special API to enable the controller bus clock while
-initializing register space, and current driver is using
-devm_regmap_init_mmio_clk which require to specify bus
-clk_id argument as "bus"
+The MIPI DSI controller in Allwinner A64 is similar to A33.
 
-But, the usage of clocks are varies between different Allwinner
-DSI controllers. Clocking in A33 would need bus and mod clocks
-where as A64 would need only bus clock.
-
-Since A64 support only single bus clock, it is optional to
-specify the clock-names on the controller device tree node.
-So using NULL on clk_id would get the attached clock.
-
-To support clk_id as "bus" and "NULL" during clock enablement
-between controllers, this patch add generic code to handle
-the bus clock using regmap_mmio_attach_clk with associated
-regmap APIs.
+But unlike A33, A64 doesn't have DSI_SCLK gating so add compatible
+for Allwinner A64 with uninitialized has_mod_clk driver.
 
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+Tested-by: Merlijn Wajer <merlijn@wizzup.org>
 ---
 Changes for v12:
-- get bus clock only when mod clock present
-- use regmap_mmio_attach_clk
+- none
 
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 43 +++++++++++++++++++++-----
- 1 file changed, 35 insertions(+), 8 deletions(-)
+ drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-index 8c4c541224dd..6085ad2eafc3 100644
+index 6085ad2eafc3..34a64473dd09 100644
 --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
 +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-@@ -1082,6 +1082,7 @@ static const struct component_ops sun6i_dsi_ops = {
- static int sun6i_dsi_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-+	const char *clk_name = NULL;
- 	struct sun6i_dsi *dsi;
- 	struct resource *res;
- 	void __iomem *base;
-@@ -1095,6 +1096,8 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
- 	dsi->host.ops = &sun6i_dsi_host_ops;
- 	dsi->host.dev = dev;
- 	dsi->variant = of_device_get_match_data(dev);
-+	if (dsi->variant->has_mod_clk)
-+		clk_name = "bus";
+@@ -1270,11 +1270,18 @@ static const struct sun6i_dsi_variant sun6i_a31_mipi_dsi = {
+ 	.has_mod_clk = true,
+ };
  
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	base = devm_ioremap_resource(dev, res);
-@@ -1109,24 +1112,35 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
- 		return PTR_ERR(dsi->regulator);
- 	}
- 
--	dsi->regs = devm_regmap_init_mmio_clk(dev, "bus", base,
--					      &sun6i_dsi_regmap_config);
--	if (IS_ERR(dsi->regs)) {
--		dev_err(dev, "Couldn't create the DSI encoder regmap\n");
--		return PTR_ERR(dsi->regs);
--	}
--
- 	dsi->reset = devm_reset_control_get_shared(dev, NULL);
- 	if (IS_ERR(dsi->reset)) {
- 		dev_err(dev, "Couldn't get our reset line\n");
- 		return PTR_ERR(dsi->reset);
- 	}
- 
-+	dsi->regs = devm_regmap_init_mmio(dev, base, &sun6i_dsi_regmap_config);
-+	if (IS_ERR(dsi->regs)) {
-+		dev_err(dev, "Couldn't init regmap\n");
-+		return PTR_ERR(dsi->regs);
-+	}
++static const struct sun6i_dsi_variant sun50i_a64_mipi_dsi = {
++};
 +
-+	dsi->bus_clk = devm_clk_get(dev, clk_name);
-+	if (IS_ERR(dsi->bus_clk)) {
-+		dev_err(dev, "Couldn't get the DSI bus clock\n");
-+		ret = PTR_ERR(dsi->bus_clk);
-+		goto err_regmap;
-+	} else {
-+		ret = regmap_mmio_attach_clk(dsi->regs, dsi->bus_clk);
-+		if (ret)
-+			goto err_bus_clk;
-+	}
-+
- 	if (dsi->variant->has_mod_clk) {
- 		dsi->mod_clk = devm_clk_get(dev, "mod");
- 		if (IS_ERR(dsi->mod_clk)) {
- 			dev_err(dev, "Couldn't get the DSI mod clock\n");
--			return PTR_ERR(dsi->mod_clk);
-+			ret = PTR_ERR(dsi->mod_clk);
-+			goto err_attach_clk;
- 		}
- 	}
- 
-@@ -1167,6 +1181,14 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
- err_unprotect_clk:
- 	if (dsi->variant->has_mod_clk)
- 		clk_rate_exclusive_put(dsi->mod_clk);
-+err_attach_clk:
-+	if (!IS_ERR(dsi->bus_clk))
-+		regmap_mmio_detach_clk(dsi->regs);
-+err_bus_clk:
-+	if (!IS_ERR(dsi->bus_clk))
-+		clk_put(dsi->bus_clk);
-+err_regmap:
-+	regmap_exit(dsi->regs);
- 	return ret;
- }
- 
-@@ -1181,6 +1203,11 @@ static int sun6i_dsi_remove(struct platform_device *pdev)
- 	if (dsi->variant->has_mod_clk)
- 		clk_rate_exclusive_put(dsi->mod_clk);
- 
-+	if (!IS_ERR(dsi->bus_clk))
-+		regmap_mmio_detach_clk(dsi->regs);
-+
-+	regmap_exit(dsi->regs);
-+
- 	return 0;
- }
- 
+ static const struct of_device_id sun6i_dsi_of_table[] = {
+ 	{
+ 		.compatible = "allwinner,sun6i-a31-mipi-dsi",
+ 		.data = &sun6i_a31_mipi_dsi,
+ 	},
++	{
++		.compatible = "allwinner,sun50i-a64-mipi-dsi",
++		.data = &sun50i_a64_mipi_dsi,
++	},
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, sun6i_dsi_of_table);
 -- 
 2.18.0.321.gffc6fa0e3
 
