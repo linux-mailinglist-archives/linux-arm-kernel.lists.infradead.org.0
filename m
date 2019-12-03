@@ -2,68 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04B5F10F794
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 07:01:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2571210F79C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 07:03:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ANXpGqPixxq139udblYv6e4AsFfym9pf0UhrugE7dEU=; b=oc3nPobih3hfnO
-	l67FK/gw49X2Y/sNApo6bqgtZ1lcT4dTAbY2GpUTDwOss30y4keQAsBgVGs3ru6BtiixeO0pKCgD2
-	NAq30FVlpYS0CR424skNwgLn36Kd8v2FXU9XWi4GZ2pldcMwyqcyZI9P4DGcLMWfLlSIZPZGp4+Zo
-	PHXCoXw9gKXZQbCNFdTyiLUQ5fn9DdyDIZWEAo5m62HevVoamYwy3Pa3LrsFvgoliA7jekueSaJT+
-	pxNVk4DSSHZEkxaU30CDcRbiC0GCEiGCp5HZenHyBUmbtoaLcRLYYhEfaNO3PiOJmyIY5JJ7X9yDA
-	ulZtWdUXDdjl0aK0kEhw==;
+	List-Owner; bh=9Zcgm6BLMW5Q1CGm8pAORL8SD1DfLmrOsUW6zFkp2uI=; b=kZ/LjKlflCDWiS
+	GY79cWagbXYnEJ+yQsQT2KU33SNxHdjsD9ln+RNh/0wbOsFmS7T9lh1nJMSzwPDfbXLSZbLBrway4
+	gq8eAFQah7zFExlA0uNiI+UVGY1iE+9tXhmHCchPjMlYCuFlRL+QCmRp/c1h7laAbiMQtoYoaDBgt
+	Yb6IUGPgHtqerDaHz8Gnr6BNBGtd2yQf4txQ4ZnW90Szv1ugXrRCYJsh4sqoSZClJLaMerD5lYk3E
+	cZoKL1pbCXWNfO9NLND3NiTHWgSeAhsGhlYW5qKSfJ4iLSMZCUJjE1VrBbFCbpRQq7lhVB5aM3Mzs
+	7mRxDC4PD0znD56diBKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic1Fs-0003FM-7I; Tue, 03 Dec 2019 06:01:48 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ic1Hd-0003sk-Sk; Tue, 03 Dec 2019 06:03:37 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic1Fk-0003EN-AW; Tue, 03 Dec 2019 06:01:42 +0000
-X-UUID: b015fd2b24884f4b8fef2d9e1f66fb36-20191202
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=gQqcAbItPJZOgRGUKH/mNqtTCzALL4Ct7jtKjeo6Ew4=; 
- b=eurCXLVgNGTKryG2SGv9PhGB4FUTd9MSny58gtDcVqNECiaPlkrVHgUkgu6v4jYaD1B5SpSRIVNeF2XoiC7iMFognjX3eC8Va/G/XWi66s1zifog8i0hCCM1ykVxSEXR0CnW4BEboAzRa+iQoXLgl2zdLavyGv35OXJpQFq3tZ8=;
-X-UUID: b015fd2b24884f4b8fef2d9e1f66fb36-20191202
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <bibby.hsieh@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1144230028; Mon, 02 Dec 2019 22:01:36 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Dec 2019 21:59:00 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Dec 2019 13:58:00 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 3 Dec 2019 13:58:53 +0800
-Message-ID: <1575352691.3410.2.camel@mtksdaap41>
-Subject: Re: [PATCH v1 6/6] drm/mediatek: apply CMDQ control flow
-From: Bibby Hsieh <bibby.hsieh@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>
-Date: Tue, 3 Dec 2019 13:58:11 +0800
-In-Reply-To: <1575337114.1155.4.camel@mtksdaap41>
-References: <20191128024238.9399-1-bibby.hsieh@mediatek.com>
- <20191128024238.9399-7-bibby.hsieh@mediatek.com>
- <1575337114.1155.4.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1ic1HW-0003s4-Je
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 06:03:32 +0000
+Received: by mail-ot1-x342.google.com with SMTP id i4so1924537otr.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Dec 2019 22:03:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=em0mwcnekNPSrQ/TlvXcfMqa65n+WTC4RKGqGuPqh0E=;
+ b=rwTTgtN9QbUVjkYn/DftNihRoNzWlKozTXKK/Oz6EFiI5FCqNX3eA84Ik8dRuF6uYZ
+ fCpfslNuibOwIMTM8B6vcT82vvAxvndKCEQVWFa/W7ZYPo5Jzzxwd4YYtTRhOccZ+sd0
+ v/KFd7bfR/bhY/p4sv6qW5SZLwZlHpEwTw59RoYxzG8SraSQxdLkXRL30s7tjJUFFcKZ
+ qOTz6F+tUWH3tYfZC6ysvC5G4w28oNKF8gfoDV4lyrTARKXv8vUV2tB/AkcUPdmw2XbR
+ h/huoCaLj6772I7cwpfHgH/ZdYGfc13dvkKgH3c9tA9IR/l8unPzFyY1pMcA42zsUTso
+ /y+g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=em0mwcnekNPSrQ/TlvXcfMqa65n+WTC4RKGqGuPqh0E=;
+ b=XkT9/4/F0lIvRX/FZB3BJvCnlj9UsEvVJ5q8ijWZjJZLPkeWEJjK6J5wgRpVa/m+1j
+ A3FwZvGPsJTqFPdj+5EdJKSsrHWRDtaN8LBBCuJaySGWRCtNK7K+2Erjj53rMUAO938p
+ WQGbjbMFjj21IzDfqd6XSh+jDqUKajN5GQARdbYlG6HH1B/zsz8XPgNidh5P7q/o5UxF
+ Wmryph8iSyUQugBbkMbrv0lmTC6+G2nvFfZzYRQh97K2ndbH0m2ZoWYQ3UvFqluJouEW
+ bJX7QCSSgjPoOhM/qubizoULNFjSXBui6CVmjrUDfma25/DScl3O3ZHMw2aO5JcsHc5Q
+ SaZQ==
+X-Gm-Message-State: APjAAAUkUzR4qLG37vo5VwEWFkB9wAjIzAexBioXl0XqKHCqtOwzqYbv
+ ssbvLqGHQ4nd967sH0AlAkOg+AP9B8KDA8X2JT3Ezg==
+X-Google-Smtp-Source: APXvYqyUwjjUt6uilPV5TuiM+Ljl5ziWLr7U6mbVF1pTfEgj/j/jZ1ejlryeTCkLK1bytyv33a+7IyXMakumOsoc9E0=
+X-Received: by 2002:a9d:3af:: with SMTP id f44mr1989987otf.332.1575353009553; 
+ Mon, 02 Dec 2019 22:03:29 -0800 (PST)
 MIME-Version: 1.0
-X-MTK: N
+References: <20190911182546.17094-1-nsaenzjulienne@suse.de>
+ <20190911182546.17094-4-nsaenzjulienne@suse.de>
+ <CALAqxLVVcsmFrDKLRGRq7GewcW405yTOxG=KR3csVzQ6bXutkA@mail.gmail.com>
+ <CALAqxLUkPNf9JYyt+_VOrxq=Zq03veb1y-7aDx+_Vw+fF9i82A@mail.gmail.com>
+In-Reply-To: <CALAqxLUkPNf9JYyt+_VOrxq=Zq03veb1y-7aDx+_Vw+fF9i82A@mail.gmail.com>
+From: John Stultz <john.stultz@linaro.org>
+Date: Mon, 2 Dec 2019 22:03:17 -0800
+Message-ID: <CALAqxLW7RTif_NPxFXnxfTm2_ST+6aNmE6X=3v4XsuojKH2mtg@mail.gmail.com>
+Subject: Re: [PATCH v6 3/4] arm64: use both ZONE_DMA and ZONE_DMA32
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_220140_375181_FCC365A2 
-X-CRM114-Status: GOOD (  23.88  )
+X-CRM114-CacheID: sfid-20191202_220330_778338_EACF79AE 
+X-CRM114-Status: GOOD (  19.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -73,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,278 +93,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, Yongqiang Niu <yongqiang.niu@mediatek.com>,
- srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, tfiga@chromium.org,
- YT Shen <yt.shen@mediatek.com>, Thierry Reding <thierry.reding@gmail.com>,
- linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Amit Pundir <amit.pundir@linaro.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Will Deacon <will@kernel.org>,
+ mbrugger@suse.com, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, lkml <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, linux-mm <linux-mm@kvack.org>,
+ Rob Herring <robh+dt@kernel.org>, wahrenst@gmx.net,
+ Nicolas Dechense <nicolas.dechesne@linaro.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-12-03 at 09:38 +0800, CK Hu wrote:
-> Hi, Bibby:
-> 
-> On Thu, 2019-11-28 at 10:42 +0800, Bibby Hsieh wrote:
-> > Unlike other SoCs, MT8183 does not have "shadow"
-> > registers for performaing an atomic video mode
-> > set or page flip at vblank/vsync.
-> > 
-> > The CMDQ (Commend Queue) in MT8183 is used to help
-> > update all relevant display controller registers
-> > with critical time limation.
-> > 
-> > Signed-off-by: YT Shen <yt.shen@mediatek.com>
-> > Signed-off-by: CK Hu <ck.hu@mediatek.com>
-> > Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
-> > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> > Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> > ---
-> >  drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 86 ++++++++++++++++++++-
-> >  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 31 ++++++++
-> >  2 files changed, 113 insertions(+), 4 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > index fcf4e755e0bd..1b4e537ac3c1 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > @@ -12,6 +12,8 @@
-> >  #include <drm/drm_plane_helper.h>
-> >  #include <drm/drm_probe_helper.h>
-> >  #include <drm/drm_vblank.h>
-> > +#include <linux/of_address.h>
-> > +#include <linux/soc/mediatek/mtk-cmdq.h>
-> >  
-> >  #include "mtk_drm_drv.h"
-> >  #include "mtk_drm_crtc.h"
-> > @@ -42,6 +44,9 @@ struct mtk_drm_crtc {
-> >  	unsigned int			layer_nr;
-> >  	bool				pending_planes;
-> >  
-> > +	struct cmdq_client		*cmdq_client;
-> > +	u32				cmdq_event;
-> > +
-> >  	void __iomem			*config_regs;
-> >  	const struct mtk_mmsys_reg_data *mmsys_reg_data;
-> >  	struct mtk_disp_mutex		*mutex;
-> > @@ -56,6 +61,11 @@ struct mtk_crtc_state {
-> >  	unsigned int			pending_width;
-> >  	unsigned int			pending_height;
-> >  	unsigned int			pending_vrefresh;
-> > +	struct cmdq_pkt			*cmdq_handle;
-> > +};
-> > +
-> > +struct mtk_cmdq_cb_data {
-> > +	struct cmdq_pkt			*cmdq_handle;
-> >  };
-> >  
-> >  static inline struct mtk_drm_crtc *to_mtk_crtc(struct drm_crtc *c)
-> > @@ -229,6 +239,46 @@ struct mtk_ddp_comp *mtk_drm_ddp_comp_for_plane(struct drm_crtc *crtc,
-> >  	return NULL;
-> >  }
-> >  
-> > +#ifdef CONFIG_MTK_CMDQ
-> > +static void ddp_cmdq_cb(struct cmdq_cb_data data)
-> > +{
-> > +	struct mtk_cmdq_cb_data *cb_data = data.data;
-> > +
-> > +	cmdq_pkt_destroy(cb_data->cmdq_handle);
-> > +	kfree(cb_data);
-> > +}
-> > +
-> > +static void mtk_cmdq_acquire(struct drm_crtc *crtc)
-> > +{
-> > +	struct mtk_crtc_state *mtk_crtc_state =
-> > +			to_mtk_crtc_state(crtc->state);
-> > +	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> > +
-> > +	mtk_crtc_state->cmdq_handle =
-> > +			cmdq_pkt_create(mtk_crtc->cmdq_client,
-> > +					PAGE_SIZE);
-> 
-> I would like to remove atomic feature in cmdq driver and drm driver
-> could reuse the pkt. Please refer to [1] for detail.
-> 
-> [1]
-> http://lists.infradead.org/pipermail/linux-mediatek/2019-January/016866.html
-Hi, CK,
+On Mon, Dec 2, 2019 at 9:38 PM John Stultz <john.stultz@linaro.org> wrote:
+> On Mon, Dec 2, 2019 at 9:08 PM John Stultz <john.stultz@linaro.org> wrote:
+> > Hey Nicolas,
+> >   Testing the db845c with linus/master, I found a regression causing
+> > system hangs in early boot:
+...
+> > In the above log:
+> > [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: -188245
+> > looks the most suspect, and going back to the working a573cdd7973d +
+> > build fix I see:
+> > [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 957419
+> >
+> > Do you have any suggestions for what might be going wrong?
+>
+> Digging further, it seems the error is found in calculate_node_totalpages()
+>  real_size = size - zone_absent_pages_in_node(pgdat->node_id, i,
+>                                                   node_start_pfn, node_end_pfn,
+>                                                   zholes_size);
+>
+> Where for zone DMA32 size is 262144, but real_size is calculated as -883520.
+>
+> I've not traced through to figure out why zone_absent_pages_in_node is
+> coming up with such a large number yet, but I'm about to crash so I
+> wanted to share.
 
-Thanks for all the comments.
-I will change them in my next version.
+Ok, narrowing it down further, it seems its the following bit from the patch:
 
-About the atomic feature removing, I think we already made note at here.
-Let's fix them after the atomic feature removed really.
+> @@ -201,13 +212,18 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
+>         struct memblock_region *reg;
+>         unsigned long zone_size[MAX_NR_ZONES], zhole_size[MAX_NR_ZONES];
+>         unsigned long max_dma32 = min;
+> +       unsigned long max_dma = min;
+>
+>         memset(zone_size, 0, sizeof(zone_size));
+>
+> -       /* 4GB maximum for 32-bit only capable devices */
+> +#ifdef CONFIG_ZONE_DMA
+> +       max_dma = PFN_DOWN(arm64_dma_phys_limit);
+> +       zone_size[ZONE_DMA] = max_dma - min;
+> +       max_dma32 = max_dma;
+> +#endif
+>  #ifdef CONFIG_ZONE_DMA32
+>         max_dma32 = PFN_DOWN(arm64_dma32_phys_limit);
+> -       zone_size[ZONE_DMA32] = max_dma32 - min;
+> +       zone_size[ZONE_DMA32] = max_dma32 - max_dma;
+>  #endif
+>         zone_size[ZONE_NORMAL] = max - max_dma32;
+>
+> @@ -219,11 +235,17 @@ static void __init zone_sizes_init(unsigned long min, unsigned long max)
+>
+>                 if (start >= max)
+>                         continue;
+> -
+> +#ifdef CONFIG_ZONE_DMA
+> +               if (start < max_dma) {
+> +                       unsigned long dma_end = min_not_zero(end, max_dma);
+> +                       zhole_size[ZONE_DMA] -= dma_end - start;
+> +               }
+> +#endif
+>  #ifdef CONFIG_ZONE_DMA32
+>                 if (start < max_dma32) {
+> -                       unsigned long dma_end = min(end, max_dma32);
+> -                       zhole_size[ZONE_DMA32] -= dma_end - start;
+> +                       unsigned long dma32_end = min(end, max_dma32);
+> +                       unsigned long dma32_start = max(start, max_dma);
+> +                       zhole_size[ZONE_DMA32] -= dma32_end - dma32_start;
+>                 }
+>  #endif
+>                 if (end > max_dma32) {
 
-Bibby
-> 
-> > +	cmdq_pkt_clear_event(mtk_crtc_state->cmdq_handle,
-> > +			     mtk_crtc->cmdq_event);
-> > +	cmdq_pkt_wfe(mtk_crtc_state->cmdq_handle, mtk_crtc->cmdq_event);
-> > +}
-> > +
-> > +static void mtk_cmdq_release(struct drm_crtc *crtc)
-> > +{
-> > +	struct mtk_crtc_state *mtk_crtc_state =
-> > +			to_mtk_crtc_state(crtc->state);
-> > +	struct mtk_cmdq_cb_data *cb_data;
-> > +
-> > +	cb_data = kmalloc(sizeof(*cb_data), GFP_KERNEL);
-> > +	if (!cb_data) {
-> > +		DRM_DEV_ERROR(crtc->dev->dev, "Failed to alloc cb_data\n");
-> > +		return;
-> > +	}
-> > +
-> > +	cb_data->cmdq_handle = mtk_crtc_state->cmdq_handle;
-> > +	cmdq_pkt_flush_async(mtk_crtc_state->cmdq_handle,
-> > +			     ddp_cmdq_cb, cb_data);
-> > +}
-> > +#endif
-> >  static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
-> >  {
-> >  	struct drm_crtc *crtc = &mtk_crtc->base;
-> > @@ -383,7 +433,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
-> >  	if (state->pending_config) {
-> >  		mtk_ddp_comp_config(comp, state->pending_width,
-> >  				    state->pending_height,
-> > -				    state->pending_vrefresh, 0, NULL);
-> > +				    state->pending_vrefresh, 0,
-> > +				    state->cmdq_handle);
-> >  
-> >  		state->pending_config = false;
-> >  	}
-> > @@ -403,7 +454,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
-> >  
-> >  			if (comp)
-> >  				mtk_ddp_comp_layer_config(comp, local_layer,
-> > -							  plane_state, NULL);
-> > +							  plane_state,
-> > +							  state->cmdq_handle);
-> >  			plane_state->pending.config = false;
-> >  		}
-> >  		mtk_crtc->pending_planes = false;
-> > @@ -454,6 +506,13 @@ void mtk_drm_crtc_cursor_update(struct drm_crtc *crtc, struct drm_plane *plane,
-> >  		mtk_crtc_ddp_config(crtc);
-> >  		mtk_disp_mutex_release(mtk_crtc->mutex);
-> >  	}
-> > +#ifdef CONFIG_MTK_CMDQ
-> > +	if (mtk_crtc->cmdq_client) {
-> > +		mtk_cmdq_acquire(crtc);
-> > +		mtk_crtc_ddp_config(crtc);
-> > +		mtk_cmdq_release(crtc);
-> > +	}
-> > +#endif
-> >  	mutex_unlock(&priv->hw_lock);
-> >  }
-> >  
-> > @@ -570,6 +629,13 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
-> >  		mtk_crtc_ddp_config(crtc);
-> >  		mtk_disp_mutex_release(mtk_crtc->mutex);
-> >  	}
-> > +#ifdef CONFIG_MTK_CMDQ
-> > +	if (mtk_crtc->cmdq_client) {
-> > +		mtk_cmdq_acquire(crtc);
-> > +		mtk_crtc_ddp_config(crtc);
-> > +		mtk_cmdq_release(crtc);
-> > +	}
-> > +#endif
-> 
-> This part is almost the same as the one in mtk_drm_crtc_cursor_update(),
-> try to merge them.
-> 
-> >  }
-> >  
-> >  static const struct drm_crtc_funcs mtk_crtc_funcs = {
-> > @@ -619,7 +685,7 @@ void mtk_crtc_ddp_irq(struct drm_crtc *crtc, struct mtk_ddp_comp *comp)
-> >  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> >  	struct mtk_drm_private *priv = crtc->dev->dev_private;
-> >  
-> > -	if (!priv->data->shadow_register)
-> > +	if (!priv->data->shadow_register && !mtk_crtc->cmdq_client)
-> >  		mtk_crtc_ddp_config(crtc);
-> >  
-> >  	mtk_drm_finish_page_flip(mtk_crtc);
-> > @@ -761,6 +827,18 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
-> >  	drm_mode_crtc_set_gamma_size(&mtk_crtc->base, MTK_LUT_SIZE);
-> >  	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
-> >  	priv->num_pipes++;
-> > -
-> > +#ifdef CONFIG_MTK_CMDQ
-> > +	mtk_crtc->cmdq_client =
-> > +			cmdq_mbox_create(dev, drm_crtc_index(&mtk_crtc->base),
-> > +					 2000);
-> > +	of_property_read_u32_index(dev->of_node, "mediatek,gce-events",
-> > +				   drm_crtc_index(&mtk_crtc->base),
-> > +				   &mtk_crtc->cmdq_event);
-> > +	if (IS_ERR(mtk_crtc->cmdq_client)) {
-> > +		dev_dbg(dev, "mtk_crtc %d failed to create mailbox client, writing register by CPU now\n",
-> > +			drm_crtc_index(&mtk_crtc->base));
-> > +		mtk_crtc->cmdq_client = NULL;
-> > +	}
-> > +#endif
-> >  	return 0;
-> >  }
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> > index 6d0f349ddf82..9cc12af2bc06 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> > @@ -370,6 +370,9 @@ int mtk_ddp_comp_init(struct device *dev, struct device_node *node,
-> >  		      const struct mtk_ddp_comp_funcs *funcs)
-> >  {
-> >  	struct platform_device *comp_pdev;
-> > +	struct resource res;
-> > +	struct cmdq_client_reg *cmdq_reg;
-> > +	int ret = 0;
-> >  
-> >  	if (comp_id < 0 || comp_id >= DDP_COMPONENT_ID_MAX)
-> >  		return -EINVAL;
-> > @@ -404,6 +407,34 @@ int mtk_ddp_comp_init(struct device *dev, struct device_node *node,
-> >  	}
-> >  	comp->dev = &comp_pdev->dev;
-> >  
-> > +#ifdef CONFIG_MTK_CMDQ
-> > +	if (of_address_to_resource(node, 0, &res) != 0) {
-> > +		dev_err(dev, "Missing reg in %s node\n",
-> > +			node->full_name);
-> > +		return -EINVAL;
-> > +	}
-> > +	comp->regs_pa = res.start;
-> > +
-> > +	comp_pdev = of_find_device_by_node(node);
-> > +	if (!comp_pdev) {
-> > +		dev_warn(dev, "Waiting for component device %s\n",
-> > +			 node->full_name);
-> > +		return -EPROBE_DEFER;
-> > +	}
-> > +
-> > +	cmdq_reg = kzalloc(sizeof(*cmdq_reg), GFP_KERNEL);
-> > +	if (!cmdq_reg)
-> > +		return -EINVAL;
-> > +
-> > +	ret = cmdq_dev_get_client_reg(&comp_pdev->dev, cmdq_reg, 0);
-> > +	if (ret != 0)
-> > +		dev_dbg(&comp_pdev->dev,
-> > +			"get mediatek,gce-client-reg fail!\n");
-> > +	else
-> > +		comp->subsys = cmdq_reg->subsys;
-> > +
-> > +	kfree(cmdq_reg);
-> > +#endif
-> 
-> I would like to move this part to the patch "drm/mediatek: support CMDQ
-> interface in ddp component".
-> 
-> Regards,
-> CK
-> 
-> >  	return 0;
-> >  }
-> >  
-> 
-> 
+The zhole_sizes end up being:
+zhole_size: DMA: 67671, DMA32: 1145664 NORMAL: 0
+
+This seems to be due to dma32_start being calculated as 786432 each
+time - I'm guessing that's the max_dma value.
+Where dma32_end is around 548800, but changes each iteration (so we
+end up subtracting a negative value each pass, growing the size).
+
+thanks
+-john
 
 _______________________________________________
 linux-arm-kernel mailing list
