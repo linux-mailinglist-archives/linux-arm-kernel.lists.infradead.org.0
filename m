@@ -2,78 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 240181105C2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 21:15:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFEE31105CB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 21:15:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=XcfsztumDMHexL79PPf/nlXAw5lQpB3CX3nibJLcHCE=; b=oLD
-	7hTl5UQJk5ST9oBJ8BUKblDPyUea23aHKcWtZvMKl+1xjjWv/DANHwnxGNmaa0TRxFF7m/HkdCAJT
-	eQp9qoEaNlimSLhQZaDceStt+FegK97FzhiopVQbgfeEwBad3XIwL3F2ZIzT9Gs9vflHm6//Q4jio
-	3fpyBSskHwsZ9bIUs56Zcd7hSXcZfgdB7A3cGOhTEhpyM3w1fNeQNRZhJh6vAPlgY7FOcjqgo0ZG6
-	IxAMJH4hKfkterwE/FFYOll+0tvfGy+XcAyh2cN64i74CzHWKc4TxDcr8AkjEddBVYtGlLKvFVeIB
-	RPrMU/6RWME6LXd/WL5Z83cyfq2QHeg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=7UuQvzn3zaQYa8JeB5D28yyKSdDT/v4jDFdwVsU8QBQ=; b=DinFsaXrI7v7/ZAkvVkAraFHi5
+	FXpiDRmpBU7/Q8eqTCuvLf85GYPLl7UiSNdf9h2zbN7kkDGtm2cUunG8LELsGPUCvTjq1Uiz075vc
+	f2U+lP14q3HTaNauLul3j4KAoT/q6vMfKH4F9lN6Flib12p+HCz/FiMfg1dwVrXUeVS6+7pvADv6W
+	fJGauMaEDM62HwckvRFjHrqmyuK8Ftjc70svibSGsV2Y4QzLuzen7L+yEjkpDUfzFs97gabsp1A8A
+	hgjZkEW7cH3CtU5+lGnZIH8pBlSlJI0tyE0xZUDdvVU+ptvn8vfUe5fvZ/EWLXt+WqAInVRqehokn
+	mnSXzk3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icEZP-00021V-Ms; Tue, 03 Dec 2019 20:14:51 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1icEZw-0002D3-E8; Tue, 03 Dec 2019 20:15:24 +0000
+Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icEZE-0001sH-Jv; Tue, 03 Dec 2019 20:14:41 +0000
-Received: by mail-qt1-x841.google.com with SMTP id 5so2625750qtz.1;
- Tue, 03 Dec 2019 12:14:39 -0800 (PST)
+ id 1icEZF-0001vo-GU; Tue, 03 Dec 2019 20:14:42 +0000
+Received: by mail-qv1-xf42.google.com with SMTP id t9so2087282qvh.13;
+ Tue, 03 Dec 2019 12:14:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=hsFoc2grURMCqHJk3/bdURAhFk0iV5nKoNBvEUJuOoU=;
- b=r0oYPeT0dWKW6vbtNpxzFaHkL847f7O2oRZppJeekAmjqhAGscbeuhJcZS4FEXuF0d
- Eivr8nfQXnGZGBhS6iwWfhO/pmXRfRhtz5+3qyoIL5QAKvgOXNPv77T2RzROQnHfG445
- NFrmn9TWNxIJo2eVlLWS54UzF4gOULPWQYyW+DSrLBNJlx2U/wac5p1bZZya0hC8F6y2
- FmaU0ZkOh1AcMi5TYArQyeTDNTtY7RTwT40rMExw5WOsABWpeqCmjAYcrKHff8GDHFPj
- wxVezSv+Oe2IG/6luskAGi/qT2i7Rv3GbfOn3KNbh3Fs5HsGd5w4IPcQa5sIaRFaHCcQ
- 7JfA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=bm5k8zQpgAmJX5WQch8jWZs9UGjvpkTxdBtgDKGujPw=;
+ b=Rr8Px1+PnYNeAUdxUPfn+MJ12/5cvatkF40H/w7qFPZyM9q/+/3r9EBWgso4D6A/zS
+ gMWC4aC9LCFOHmy9QqlhooMIR2KF0S3+0+TQrctIkumfx/JKcSvLob7ffgzRzauz9Pmr
+ gL7lc7YHOrxDX8LGyvTHufa9nkHPBsM/A1fOZbP5SsWh23sqzFlcBMQeKq2aUpIKLb43
+ KyyBTrq7BafTEzmpiDZ8Y8rIeSDmEop3wqs9VWn0l2231ClS6pPhNBuK1VZb1DMEzdZA
+ g8EgjoUgPSadz49jpZYU0mQh5gOli2yqqRCzgOPz6H6d086w9swpGaQDp/xXy3DFbN1H
+ AJNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=hsFoc2grURMCqHJk3/bdURAhFk0iV5nKoNBvEUJuOoU=;
- b=Z/nuTUoqICxgHzeG/neyJoPJcprMv5QDwpW+ftR0u5Icwcb0cWrtmgSsl+/y9aE1ID
- Gj9vr5br/pYrXWOmQ730kErVoJIdyWdokuKNM5buuBhywQobBeZA/oMOvBE+PvDS/+Nn
- 80mdWAmjoAOJh8eG0o1r2BB+Fp1aeGPszyNmgfEFE0ww0jwlb+J5mnIVrXvp7KBve1Cy
- Cpl1HPNeTG7ChKc69AMX+veuyVBkJ5bddtQrYHIfdikvo5DcyaKf6dhNggZ/1rs//mUf
- H6t52YgsxEwixQfixIHhukJVv2/Y7t/6eKrx16HoSCwuqiXJStCEpR3Uu/2f4DaVGHou
- igsg==
-X-Gm-Message-State: APjAAAX86GE/n1jkb/pIJBiDwggWSkwNvSGgROqBm+7LnxHizryX/Gx2
- mkAAz0bP7dZMmV9oulcBEQ==
-X-Google-Smtp-Source: APXvYqydjbtdnetb3atoETs7iRjrH/Ds6KbWS01EyGo87g8Ha5IGxW3sg0uVv6yHnIYgY43xfuVNPQ==
-X-Received: by 2002:ac8:4794:: with SMTP id k20mr3159837qtq.382.1575404079285; 
- Tue, 03 Dec 2019 12:14:39 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=bm5k8zQpgAmJX5WQch8jWZs9UGjvpkTxdBtgDKGujPw=;
+ b=je+VIu8bntuPPeDjRYoqBT/yY36Bo7wVL9y0pxe2HiKIqIrz07b6TV6hs++k4Ae6s4
+ /4dgzv3EixM1LqZiHFX/k7X5fI6l/RTIEcHSw8IRMX3pVD737HT6/FhqxmfrvgdWSixs
+ ScQWNb7aqHDMK0uTqlS3f6qi8/PwgJkNKAp/+Uw89fvNXx0KpNPCSrD0Q4MPg+2ws1N3
+ Wx9grKEXtKWr7BlG4nzRrFwjca+9OJIHD8dKaF3WFwgSFD/auME2st/Rb8kiv/jHDCNt
+ w6l24kc0xBmJlUr4c0xnc7LKK4yQs9jeAdsY3oQTZqXSCNsK89wu3b4/aYh6bSKwqDi5
+ yvbg==
+X-Gm-Message-State: APjAAAWiSm+roo8QHs/4qFuTb+xSC5sv9N5fpi75ez5OW62AtumZzKpV
+ QHMYYqdB3XtCxiwQVFNrmQ==
+X-Google-Smtp-Source: APXvYqxG6NRh8Mwfq13GzmsRH4miOdxwm088FfOdpCEqPNeMTwLiuS9YjJADGVY5pvc3GZI5br4xMA==
+X-Received: by 2002:ad4:4e34:: with SMTP id dm20mr7183818qvb.163.1575404080368; 
+ Tue, 03 Dec 2019 12:14:40 -0800 (PST)
 Received: from gabell.cable.rcn.com
  (209-6-122-159.s2973.c3-0.arl-cbr1.sbo-arl.ma.cable.rcncustomer.com.
  [209.6.122.159])
- by smtp.gmail.com with ESMTPSA id l34sm2437104qtd.71.2019.12.03.12.14.38
+ by smtp.gmail.com with ESMTPSA id l34sm2437104qtd.71.2019.12.03.12.14.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Dec 2019 12:14:38 -0800 (PST)
+ Tue, 03 Dec 2019 12:14:39 -0800 (PST)
 From: Masayoshi Mizuma <msys.mizuma@gmail.com>
 To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
  linux-arm-kernel@lists.infradead.org, linux-efi@vger.kernel.org
-Subject: [PATCH v2 0/2] efi: arm64: Introduce /proc/efi/memreserve to tell the
- persistent pages
-Date: Tue,  3 Dec 2019 15:14:08 -0500
-Message-Id: <20191203201410.28045-1-msys.mizuma@gmail.com>
+Subject: [PATCH v2 1/2] efi: add /proc/efi directory
+Date: Tue,  3 Dec 2019 15:14:09 -0500
+Message-Id: <20191203201410.28045-2-msys.mizuma@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191203201410.28045-1-msys.mizuma@gmail.com>
+References: <20191203201410.28045-1-msys.mizuma@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_121440_683282_486A2A28 
-X-CRM114-Status: UNSURE (   6.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191203_121441_550865_1553BCB0 
+X-CRM114-Status: GOOD (  11.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (msys.mizuma[at]gmail.com)
@@ -108,31 +107,53 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
 
-kexec reboot sometime fails in early boot sequence on aarch64 machine.
-That is because kexec overwrites the LPI property tables and pending
-tables with the initrd.
+Add /proc/efi directory to show some efi internal information.
 
-To avoid the overwrite, introduce /proc/efi/memreserve to tell the
-tables region to kexec so that kexec can avoid the memory region to
-locate initrd.
+Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+---
+ drivers/firmware/efi/efi.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
-kexec also needs a patch to handle /proc/efi/memreserve. I'm preparing
-the patch for kexec.
-
-Changelog
-    v2: - Change memreserve file location from sysfs to procfs.
-          memreserve may exceed the PAGE_SIZE in case efi_memreserve_root
-          has a lot of entries. So we cannot use sysfs_kf_seq_show().
-          Use seq_printf() in procfs instead.
-
-Masayoshi Mizuma (2):
-  efi: add /proc/efi directory
-  efi: arm64: Introduce /proc/efi/memreserve to tell the persistent
-    pages
-
- drivers/firmware/efi/efi.c | 93 +++++++++++++++++++++++++++++++++++++-
- 1 file changed, 92 insertions(+), 1 deletion(-)
-
+diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
+index d101f072c..d8157cb34 100644
+--- a/drivers/firmware/efi/efi.c
++++ b/drivers/firmware/efi/efi.c
+@@ -325,6 +325,22 @@ static __init int efivar_ssdt_load(void)
+ static inline int efivar_ssdt_load(void) { return 0; }
+ #endif
+ 
++#ifdef CONFIG_PROC_FS
++static struct proc_dir_entry *proc_efi;
++static int __init efi_proc_init(void)
++{
++	proc_efi = proc_mkdir("efi", NULL);
++	if (!proc_efi) {
++		pr_err("/proc/efi: Cannot create /proc/efi directory.\n");
++		return 1;
++	}
++
++	return 0;
++}
++#else
++static inline int efi_proc_init(void) { return 0; }
++#endif /* CONFIG_PROC_FS */
++
+ /*
+  * We register the efi subsystem with the firmware subsystem and the
+  * efivars subsystem with the efi subsystem, if the system was booted with
+@@ -381,6 +397,12 @@ static int __init efisubsys_init(void)
+ 		goto err_remove_group;
+ 	}
+ 
++	error = efi_proc_init();
++	if (error) {
++		sysfs_remove_mount_point(efi_kobj, "efivars");
++		goto err_remove_group;
++	}
++
+ 	return 0;
+ 
+ err_remove_group:
 -- 
 2.18.1
 
