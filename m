@@ -2,51 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2254810FC7F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 12:28:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B34B10FC9F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 12:44:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=S/GUOgv55hK4ckjog+W2iSG8EMbXF2eH5GuXL+jnvXM=; b=TdR1s2tfJJZu3du6soOlDwvPU
-	AajvkWVQpbBPjclcnsC9eg/S6kTKOYka933imFQrkVdkyxU4js9qdqh7sGKm7NeO7Zw4lppzbhbm5
-	GGF9Jcj0ooxaRMkCPMjFJkBCXN6vjCc+90E49vsTZ5UB7/qp9yfHLSDy1CgrXViyeMO9MeRzEqooc
-	5FoOBMxul8zd59dFr5g57UdCWriOVtr7gL17z+dEoQxP+VqBYDCakDzRokMuLRF/rBFXZ6kEtCZz2
-	0Kv2EOYZYAsPy4EVDp7tYaiCBJ/0MisWKtf8XZugyAyLaQQMEm/IMjcZc50BsY1A29weHS1N8AiTE
-	l1SkEOSuA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jJ5jMGDXutiGEcaJnesb6tqNEgugoT/DRRr6tW2mWbw=; b=BfkxRY0RU2lnZ5
+	eHxdR/6NxojXdApnZEWK2xe0mZPxtLUR4EFkmuYnnBRmxmUqtBwlXqPPDOb2Oe63uNQ2TbmIyp9vK
+	EYNjXR8uauos79JEzwaB/PObpPOhciRbDo4EY41rmN+BiG/tBdYk06N47fk0oFgaPdUB9p6TirNi5
+	u0BaVdRYOcZZa7xV50zpbipIjYTI80Qzw8HFpkcDcMrhGBkm8mAG02oWIMbYf+OOwaE9zpSM0lPiM
+	NQiKnu9VoryPSj9YGRoXgyWt/ElAoPR7V+0nivI/WmZ60n95tK5eIkToQiVe9VvPYqHU6+mLWWfxo
+	1m9tIGVMtiUiLtT0yEMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic6MH-00027c-MB; Tue, 03 Dec 2019 11:28:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic6M9-000278-58
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 11:28:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D17AA30E;
- Tue,  3 Dec 2019 03:28:34 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 11BDA3F68E;
- Tue,  3 Dec 2019 03:28:33 -0800 (PST)
-Subject: Re: [PATCH v5 06/14] coresight: cti: Add device tree support for v8
- arch CTI
-To: Mike Leach <mike.leach@linaro.org>
-References: <20191119231912.12768-1-mike.leach@linaro.org>
- <20191119231912.12768-7-mike.leach@linaro.org>
- <b2f640d3-c320-82d4-7399-172846820589@arm.com>
- <CAJ9a7VgkgoUTL0+_3kj53go_CKtAH3fO5xF9UNDPPz1se1SKSw@mail.gmail.com>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <ffda8aff-0904-7292-e2f1-93833b936c49@arm.com>
-Date: Tue, 3 Dec 2019 11:28:32 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+	id 1ic6bc-0007BO-O0; Tue, 03 Dec 2019 11:44:36 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ic6bV-0007B3-LR
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 11:44:31 +0000
+Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1ic6bP-0007A3-EI; Tue, 03 Dec 2019 12:44:23 +0100
+Message-ID: <895eb269794c200e7c04161188787b3933e3ee0c.camel@pengutronix.de>
+Subject: Re: [PATCH 1/3] ARM: dts: imx6: phycore-som: fix arm and soc
+ minimum voltage
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Marco Felsch <m.felsch@pengutronix.de>, Stefan
+ =?ISO-8859-1?Q?Riedm=FCller?= <s.riedmueller@phytec.de>
+Date: Tue, 03 Dec 2019 12:44:18 +0100
+In-Reply-To: <20191203083307.ntoe2bwha7hzlr42@pengutronix.de>
+References: <20191129164859.15632-1-m.felsch@pengutronix.de>
+ <ec29daf9-d87f-276f-2927-da66b153840f@phytec.de>
+ <20191202124200.mvwnsne2vnszyprj@pengutronix.de>
+ <b4e1fb4d-6e0f-4501-17a4-ee837548ad86@phytec.de>
+ <20191202141406.gvzc3lnxefczd33b@pengutronix.de>
+ <dc55f52f-c01b-1f9e-4149-740e2c6d9663@phytec.de>
+ <20191202145308.7w5pic3fwpq752mz@pengutronix.de>
+ <acdbab96-dfc0-87ab-b759-79c7bfe77c3c@phytec.de>
+ <20191203083307.ntoe2bwha7hzlr42@pengutronix.de>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-In-Reply-To: <CAJ9a7VgkgoUTL0+_3kj53go_CKtAH3fO5xF9UNDPPz1se1SKSw@mail.gmail.com>
-Content-Language: en-US
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_032837_285907_3E10FC21 
-X-CRM114-Status: GOOD (  21.79  )
+X-CRM114-CacheID: sfid-20191203_034429_703471_E7E661AB 
+X-CRM114-Status: GOOD (  24.61  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,126 +72,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>
+Cc: festevam@gmail.com, shawnguo@kernel.org, chf.fritz@googlemail.com,
+ robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de, c.hemp@phytec.de,
+ s.christ@phytec.de, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 03/12/2019 10:59, Mike Leach wrote:
-> Hi Suzuki,
+On Di, 2019-12-03 at 09:33 +0100, Marco Felsch wrote:
+[...]
+> > > Please check the following structs:
+> > > 
+> > >   - static const struct da9062_regulator_info local_da9061_regulator_info[]
+> > >   - static const struct da9062_regulator_info local_da9062_regulator_info[]
+> > > 
+> > > There you have the min_uV, uV_step, n_voltages so the core can validate
+> > > if the dt-value is within the range.
+> > 
+> > Thanks, that makes more sense.
+> > 
+> > > > The regulator bindings state:
+> > > > - regulator-min-microvolt: smallest voltage consumers may set
+> > > > 
+> > > > - regulator-max-microvolt: largest voltage consumers may set
+> > > 
+> > > Yes and according the datasheet I mentionied the current values aren't
+> > > correct.
+> > > 
+> > > > For me that is device depended and not design depended.
+> > > > 
+> > > > What is the scenario you're thinking about which would cause the SOC, as a
+> > > > consumer, to request a lower voltage as it needs?
+> > > 
+> > > The thing is that the DT abstracts the HW and these values are not
+> > > correct. As mentioned in my commit message the values should meet
+> > > the datasheet restrictions and this isn't the case yet.
+> > 
+> > I don't agree. The datasheet you mention is the i.MX 6 datasheet and thus
+> > the limitation should reside in the i.MX 6 regulators and not in the PMIC's.
+> > This limitation is not just valid in combination with that PMIC but for all
+> > i.MX 6.
 > 
-> On Fri, 29 Nov 2019 at 11:33, Suzuki Kuruppassery Poulose
-> <suzuki.poulose@arm.com> wrote:
->>
->> On 19/11/2019 23:19, Mike Leach wrote:
->>> The v8 architecture defines the relationship between a PE, its optional ETM
->>> and a CTI. Unlike non-architectural CTIs which are implementation defined,
->>> this has a fixed set of connections which can therefore be represented as a
->>> simple tag in the device tree.
->>>
->>> This patch defines the tags needed to create an entry for this PE/ETM/CTI
->>> relationship, and provides functionality to implement the connection model
->>> in the CTI driver.
->>>
->>> Signed-off-by: Mike Leach <mike.leach@linaro.org>
->>> ---
+> The datasheet tells you which voltage should be applied to the imx6 and
+> so you have to set this here. What happens if the internally ldo
+> request a voltage value below 0.9V? Then the value will be applied
+> because we specified 0.73V and the system don't work anymore or did you
+> verified that case?
 
+The DT constraints are supposed to reflect absolute maximum ratings of
+the board design. The regulator driver already knows the limits of the
+PMIC chip, so there is no point in duplicating this information in the
+DT.
 
->>> +#ifdef CONFIG_OF
->>> +/*
->>> + * CTI can be bound to a CPU, or a system device.
->>> + * CPU can be declared at the device top level or in a connections node
->>> + * so need to check relative to node not device.
->>> + */
->>> +static int of_cti_get_cpu_at_node(const struct device_node *node)
->>> +{
->>> +     int cpu;
->>> +     struct device_node *dn;
->>> +
->>> +     if (node == NULL)
->>> +             return -1;
->>> +
->>> +     dn = of_parse_phandle(node, "cpu", 0);
->>> +     /* CTI affinity defaults to no cpu */
->>> +     if (!dn)
->>> +             return -1;
->>> +     cpu = of_cpu_node_to_id(dn);
->>> +     of_node_put(dn);
->>> +
->>> +     /* No Affinity  if no cpu nodes are found */
->>> +     return (cpu < 0) ? -1 : cpu;
->>> +}
->>> +
->>> +static const char *of_cti_get_node_name(const struct device_node *node)
->>> +{
->>> +     if (node)
->>> +             return node->full_name;
->>> +     return "unknown";
->>> +}
->>> +#else
->>> +static int of_cti_get_cpu_at_node(const struct device_node *node)
->>> +{
->>> +     return -1;
->>> +}
->>> +
->>> +static const char *of_cti_get_node_name(const struct device_node *node)
->>> +{
->>> +     return "unknown";
->>> +}
->>> +#endif
->>> +
->>> +static int cti_plat_get_cpu_at_node(struct fwnode_handle *fwnode)
->>> +{
->>
->> You may simply reuse coresight_get_cpu() below, instead of adding this
->> duplicate set of functions. See below.
->>
->>
+The DT constraints are there to make sure the regulator core can
+constrain the voltage setting to something safe for the specific
+design. A consumer driver bug must never be able to set a voltage that
+is outside of the absolute maximum ratings of _all_ consumers of this
+specific power rail. I know that a lot of DTs get this detail wrong,
+but we shouldn't block patches to fix this. :)
+
+> > If I have this wrong and the maintainers agree with you could you please
+> > make sure to account for the bypass mode as well since these values from the
+> > datasheet are valid too?
 > 
-> No we can't. coresight_get_cpu gets the 'cpu' entry relative to the
-> device node, this gets the 'cpu' relative to the supplied node.
-> This is very important for the case where a none v8 architected PE is
-> attached to a CTI. This will use the devicetree form:-
-> 
-> cti@<addr> {
->      [ some stuff  ]
->     trig_conns@1 {
->            cpu = <&CPU0>
->            [trigger signal  connection info for this cpu]
->     }
-> }
-> 
-> trig_conns is a child node and we must look for 'cpu' relative to it.
+> As I said, the bypass mode isn't supported by the driver and all imx6
+> based devicetrees follow that case. So we don't have to take that into
+> account. Also we can't meet both contraints with one dt and futhermore
+> the bypass mode decrease your imx6 lifetime due the the increased ripple
+> on the arm-core supply. So I think no one wants this setup in the near
+> future.
 
-Ok. May be we could refactor the function to find the 'CPU' node
-relative to the given "fwnode" and let the coresight_get_cpu() use it ?
+As a violation of the minimum voltage setting is very unlikely to cause
+any permanent damage to the design (expect if you got reverse voltage
+flows somewhere) I think it is safe to include the LDO bypass supply
+limits as the lower bound in the DT constraints, even if this mode
+isn't currently used anywhere.
 
-int coresight_get_cpu(struct device *dev)
-{
-	return coresight_get_fwnode_cpu(dev_fwnode(dev));
-}
+Regards,
+Lucas
 
-That way it is clear what we are dealing with. i.e, fwnode of any level
-(device or an intermediate node).
-
->>> +     csdev = cti_get_assoc_csdev_by_fwnode(cs_fwnode);
->>> +     if (csdev)
->>> +             assoc_name = dev_name(&csdev->dev);
->>
->> Does it make sense to defer the probing until the ETM device  turn up ?
->> Its fine either way.
->>
-> 
-> Not really as the ETM is optional but the PE still has a CTI.
-
-Ah, you're right. Please ignore my comment.
-
-Kind regards
-Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
