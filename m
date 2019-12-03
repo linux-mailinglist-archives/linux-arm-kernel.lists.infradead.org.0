@@ -2,67 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AD2910F5A0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 04:34:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CABE010F5F9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 04:54:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8O3d4pOcM6kqDIHKYaLK30mje4c/tC2phtGiAPIMxuI=; b=UExa0sKlqK3KVo
-	1SpuHvTRy1+vvVsjIiASNTKNMLYW2fNjgzz3oTuJs9VIQ7zOLW1ic/Tt/s1MGNnqeBI45tpZbW+c8
-	rPi22RpLMza5SMEs//o0yk+Lx2K2ugqlRUUBm4cyRKJa9WVaJ0NsNidXg+vofGJhS1/Yvdpkv1OBY
-	jR1qQ45NHP5m8ORwMFaOImqyP37KXUkD25yrQzcjCDdOMEgq8l2GYZDFne5RDB6BHb3XZHx0B5QX+
-	oiif9uxFp4IrRa48J4BXwPiZEdtV7PIZXi6AzApMCELWBj2Vjog0ee3kjBHrr94SZ2gyWDoneWURX
-	4tBohgr5a3RMo1HlNNUQ==;
+	List-Owner; bh=QtdUx40vXtXFKPKfnHOfbwNqAwxCG7PQYXr4rGvzfwI=; b=lQBRFUQYDuaVbR
+	caatholRjxVitHl/ineEwnyyEbFTO0GpvE97Yg8gRX4vThC2qiFFNf++tyhYEVYtqlI8A0hYsgRt1
+	ysQ/cK7NV611p5j2KDHBgNtTggiq5wHdGmowEJXaTipQ1nMNrL7wpC0iUrQBodINE9xd79LzGBGWm
+	mEl0vlf1cRSCPAoOq/X/hVyngEYaLnyIxSTb+JANidx8w9MP5r9AUidqIIShIk0CZz96sS/DpXKt0
+	raeqklyYD0+uZSMHjs3tfEXSCXcip0+umIqOVCMiTUoMSoVzqNhwaW6efE/4ngMyW8K8DVHB6A2M7
+	M4aYRZ1sr88mRzVc1HMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibyxX-0006qt-AX; Tue, 03 Dec 2019 03:34:43 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ibzGM-0005G8-5T; Tue, 03 Dec 2019 03:54:10 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibyxR-0006qH-Cm; Tue, 03 Dec 2019 03:34:39 +0000
-X-UUID: 1d13ed885f664f5cbe3bcf4b82673030-20191202
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=YYdvdLxaz+GrtaamZIqTRrwxovn6ou6aNFueL+5BIUI=; 
- b=i5z0BJM5zG4zTt49S9eba3RZRo3J16IO1cT51iOotJ7V7VOk4r9TcmgBrG2k0Ox1LfKEh12NscTYLiSd2o4guGqTVRysbIUsZS0A8Bn6eSvX6qFAs/WJwT7g5NPiWmcdZj2YKzcMcJgVTVCuaS+iKmCWl1ZAWYmKag+1C/NeLW0=;
-X-UUID: 1d13ed885f664f5cbe3bcf4b82673030-20191202
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 765615208; Mon, 02 Dec 2019 19:34:31 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Dec 2019 19:35:12 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Dec 2019 11:34:13 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 3 Dec 2019 11:34:08 +0800
-Message-ID: <1575344068.627.2.camel@mtksdaap41>
-Subject: Re: [PATCH v1 5/6] drm/mediatek: support CMDQ interface in ddp
- component
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Tue, 3 Dec 2019 11:34:28 +0800
-In-Reply-To: <1575341763.19788.3.camel@mtksdaap41>
-References: <20191128024238.9399-1-bibby.hsieh@mediatek.com>
- <20191128024238.9399-6-bibby.hsieh@mediatek.com>
- <1575341763.19788.3.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1ibzGE-0005Fd-Mp
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 03:54:04 +0000
+Received: by mail-il1-x142.google.com with SMTP id t9so1872723iln.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Dec 2019 19:54:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=P66P0ilxXmQ/bFuRbUZj8MYSHIX9XQA0VvK+ZgM+jMI=;
+ b=EQX9ghzstAeFCYJB4ktw87KzjfpcmZguNfHkYQ7o2IhuBaxHuNjluCAoDjiaXY6Oxy
+ g0y/CIADTI4AIlQMcor/P5iRIUI8HANb/w2gBMR866Hf8+Cl5sMbyIA5YupZt4pUrHRI
+ f3Zch/S6GeQtmYOrR8Q38OVq7VsdY9JshmLYHQSqRMLUWf6q/G0W0yze2ew6y0oC5bSY
+ f99/+ZMfCAR/dRptc1kWeGgg2NU5TcQWJBrvm/tSNFLw0//RU74Me1UUr10hAaUeZphq
+ 7RbuQN3IJ3uz36vb7JOfCUEvisRocuNUjuIWOLhHPu4N6TSOS4SKlB3HyGkBqKS0PPyR
+ etRw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=P66P0ilxXmQ/bFuRbUZj8MYSHIX9XQA0VvK+ZgM+jMI=;
+ b=mdaardSONlBCb+kN/qAuRsz0RArhUaQ9CbYzbQJAolezy6GQnXNYQ1TVjZD/0tdG53
+ INbMDVcGRR1gyUWRu5zCm0v8A2A4mclcZJgYWjWNtLcPRCUnXVIrBruCELfteH05ljx+
+ N29PIMiCqoZX5kQdB1JalBxLP0iEviWh4wM3ZzfCJhxzW7szLCRdYhpLyH960xxxTS6K
+ vac7LE8/sgzbS5TypXG+icmLklvH0WnnyuXqKLR96YyQyGi8/3NlZXOpjhhbpCQuPu0S
+ T+WW4DHGiDfyFU2ImcbU/6tKjgEef4b5BgWW9myUInXv+qjtcQFWpTxhSM6WaMhLhNZY
+ rvIQ==
+X-Gm-Message-State: APjAAAVu92spTB5RyQy/UjTAnhz4dWmDLjAUyQ/yq1a2asHQvN/B7GSa
+ Awa1EInREuSSU7D3+MtwIwr/ORK6exuWz2igxc4Sqg==
+X-Google-Smtp-Source: APXvYqy2zUY/LL0dv7iBMmNQUjPgcL6eR1t0egWLgsB8mWiDl9VLhHaQQdxMWFLledpWGRrJHdNdUXiXrbLxJBBZu54=
+X-Received: by 2002:a92:9107:: with SMTP id t7mr2945252ild.51.1575345241540;
+ Mon, 02 Dec 2019 19:54:01 -0800 (PST)
 MIME-Version: 1.0
-X-MTK: N
+References: <20191202144524.5391-1-jun.nie@linaro.org>
+ <20191202144524.5391-3-jun.nie@linaro.org>
+ <449968d8f085a1d1fcf4018bb8efe454fa35b3e3.camel@pengutronix.de>
+In-Reply-To: <449968d8f085a1d1fcf4018bb8efe454fa35b3e3.camel@pengutronix.de>
+From: Jun Nie <jun.nie@linaro.org>
+Date: Tue, 3 Dec 2019 11:53:50 +0800
+Message-ID: <CABymUCNDZSH+mB9TyyUBwgRu-qTRbgUv89va2HuBs4VeJWn6uA@mail.gmail.com>
+Subject: Re: [PATCH 2/3] reset: hisilicon: Extend reset operation type
+To: Philipp Zabel <p.zabel@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_193437_446307_FA460B28 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20191202_195402_759151_708F4CB6 
+X-CRM114-Status: GOOD (  25.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -72,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,185 +93,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, Yongqiang Niu <yongqiang.niu@mediatek.com>,
- srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, tfiga@chromium.org,
- YT Shen <yt.shen@mediatek.com>, Thierry Reding <thierry.reding@gmail.com>,
- linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ sboyd@kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ yuehaibing@huawei.com, Wei Xu <xuwei5@hisilicon.com>,
+ xuejiancheng@hisilicon.com, Rob Herring <robh+dt@kernel.org>,
+ swinslow@gmail.com, opensource@jilayne.com, tglx@linutronix.de,
+ linux-clk@vger.kernel.org, allison@lohutok.net,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Bibby:
-
-On Tue, 2019-12-03 at 10:56 +0800, CK Hu wrote:
-> Hi, Bibby:
-> 
-> On Thu, 2019-11-28 at 10:42 +0800, Bibby Hsieh wrote:
-> > The CMDQ (Command Queue) in MT8183 is used to help
-> > update all relevant display controller registers
-> > with critical time limation.
-> > This patch add cmdq interface in ddp_comp interface,
-> > let all ddp_comp interface can support cpu/cmdq function
-> > at the same time.
-> > 
-> > Signed-off-by: YT Shen <yt.shen@mediatek.com>
-> > Signed-off-by: CK Hu <ck.hu@mediatek.com>
-> > Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
-> > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> > Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> > ---
-> >  drivers/gpu/drm/mediatek/mtk_disp_color.c   |   7 +-
-> >  drivers/gpu/drm/mediatek/mtk_disp_ovl.c     |  65 ++++++-----
-> >  drivers/gpu/drm/mediatek/mtk_disp_rdma.c    |  43 ++++---
-> >  drivers/gpu/drm/mediatek/mtk_drm_crtc.c     |  11 +-
-> >  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 120 ++++++++++++++------
-> >  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  55 ++++++---
-> >  6 files changed, 190 insertions(+), 111 deletions(-)
-> > 
-> 
-
-[snip]
-
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> > index ec55c7488cc3..5b0a3d48dfa6 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> > @@ -69,25 +69,30 @@ enum mtk_ddp_comp_id {
-> >  };
-> >  
-> >  struct mtk_ddp_comp;
-> > -
-> > +struct cmdq_pkt;
-> >  struct mtk_ddp_comp_funcs {
-> >  	void (*config)(struct mtk_ddp_comp *comp, unsigned int w,
-> > -		       unsigned int h, unsigned int vrefresh, unsigned int bpc);
-> > +		       unsigned int h, unsigned int vrefresh,
-> > +		       unsigned int bpc, struct cmdq_pkt *cmdq_pkt);
-> >  	void (*start)(struct mtk_ddp_comp *comp);
-> >  	void (*stop)(struct mtk_ddp_comp *comp);
-> >  	void (*enable_vblank)(struct mtk_ddp_comp *comp, struct drm_crtc *crtc);
-> >  	void (*disable_vblank)(struct mtk_ddp_comp *comp);
-> >  	unsigned int (*supported_rotations)(struct mtk_ddp_comp *comp);
-> >  	unsigned int (*layer_nr)(struct mtk_ddp_comp *comp);
-> > -	void (*layer_on)(struct mtk_ddp_comp *comp, unsigned int idx);
-> > -	void (*layer_off)(struct mtk_ddp_comp *comp, unsigned int idx);
-> > +	void (*layer_on)(struct mtk_ddp_comp *comp, unsigned int idx,
-> > +			 struct cmdq_pkt *cmdq_pkt);
-> > +	void (*layer_off)(struct mtk_ddp_comp *comp, unsigned int idx,
-> > +			  struct cmdq_pkt *cmdq_pkt);
-
-layer_on() and layer_off() looks useless, so I would like you just
-remove this interface in another patch.
-
-Regards,
-CK
-
-> >  	int (*layer_check)(struct mtk_ddp_comp *comp,
-> >  			   unsigned int idx,
-> >  			   struct mtk_plane_state *state);
-> >  	void (*layer_config)(struct mtk_ddp_comp *comp, unsigned int idx,
-> > -			     struct mtk_plane_state *state);
-> > +			     struct mtk_plane_state *state,
-> > +			     struct cmdq_pkt *cmdq_pkt);
-> >  	void (*gamma_set)(struct mtk_ddp_comp *comp,
-> > -			  struct drm_crtc_state *state);
-> > +			  struct drm_crtc_state *state,
-> > +			  struct cmdq_pkt *cmdq_pkt);
-> >  	void (*bgclr_in_on)(struct mtk_ddp_comp *comp);
-> >  	void (*bgclr_in_off)(struct mtk_ddp_comp *comp);
-> >  };
-> > @@ -99,14 +104,17 @@ struct mtk_ddp_comp {
-> >  	struct device *dev;
-> >  	enum mtk_ddp_comp_id id;
-> >  	const struct mtk_ddp_comp_funcs *funcs;
-> > +	resource_size_t regs_pa;
-> > +	u8 subsys;
-> >  };
-> >  
-> >  static inline void mtk_ddp_comp_config(struct mtk_ddp_comp *comp,
-> >  				       unsigned int w, unsigned int h,
-> > -				       unsigned int vrefresh, unsigned int bpc)
-> > +				       unsigned int vrefresh, unsigned int bpc,
-> > +				       struct cmdq_pkt *cmdq_pkt)
-> >  {
-> >  	if (comp->funcs && comp->funcs->config)
-> > -		comp->funcs->config(comp, w, h, vrefresh, bpc);
-> > +		comp->funcs->config(comp, w, h, vrefresh, bpc, cmdq_pkt);
-> >  }
-> >  
-> >  static inline void mtk_ddp_comp_start(struct mtk_ddp_comp *comp)
-> > @@ -152,17 +160,19 @@ static inline unsigned int mtk_ddp_comp_layer_nr(struct mtk_ddp_comp *comp)
-> >  }
-> >  
-> >  static inline void mtk_ddp_comp_layer_on(struct mtk_ddp_comp *comp,
-> > -					 unsigned int idx)
-> > +					 unsigned int idx,
-> > +					 struct cmdq_pkt *cmdq_pkt)
-> >  {
-> >  	if (comp->funcs && comp->funcs->layer_on)
-> > -		comp->funcs->layer_on(comp, idx);
-> > +		comp->funcs->layer_on(comp, idx, cmdq_pkt);
-> >  }
-> >  
-> >  static inline void mtk_ddp_comp_layer_off(struct mtk_ddp_comp *comp,
-> > -					  unsigned int idx)
-> > +					  unsigned int idx,
-> > +					  struct cmdq_pkt *cmdq_pkt)
-> >  {
-> >  	if (comp->funcs && comp->funcs->layer_off)
-> > -		comp->funcs->layer_off(comp, idx);
-> > +		comp->funcs->layer_off(comp, idx, cmdq_pkt);
-> >  }
-> >  
-> >  static inline int mtk_ddp_comp_layer_check(struct mtk_ddp_comp *comp,
-> > @@ -176,17 +186,19 @@ static inline int mtk_ddp_comp_layer_check(struct mtk_ddp_comp *comp,
-> >  
-> >  static inline void mtk_ddp_comp_layer_config(struct mtk_ddp_comp *comp,
-> >  					     unsigned int idx,
-> > -					     struct mtk_plane_state *state)
-> > +					     struct mtk_plane_state *state,
-> > +					     struct cmdq_pkt *cmdq_pkt)
-> >  {
-> >  	if (comp->funcs && comp->funcs->layer_config)
-> > -		comp->funcs->layer_config(comp, idx, state);
-> > +		comp->funcs->layer_config(comp, idx, state, cmdq_pkt);
-> >  }
-> >  
-> >  static inline void mtk_ddp_gamma_set(struct mtk_ddp_comp *comp,
-> > -				     struct drm_crtc_state *state)
-> > +				     struct drm_crtc_state *state,
-> > +				     struct cmdq_pkt *cmdq_pkt)
-> >  {
-> >  	if (comp->funcs && comp->funcs->gamma_set)
-> > -		comp->funcs->gamma_set(comp, state);
-> > +		comp->funcs->gamma_set(comp, state, cmdq_pkt);
-> >  }
-> >  
-> >  static inline void mtk_ddp_comp_bgclr_in_on(struct mtk_ddp_comp *comp)
-> > @@ -209,6 +221,13 @@ int mtk_ddp_comp_init(struct device *dev, struct device_node *comp_node,
-> >  int mtk_ddp_comp_register(struct drm_device *drm, struct mtk_ddp_comp *comp);
-> >  void mtk_ddp_comp_unregister(struct drm_device *drm, struct mtk_ddp_comp *comp);
-> >  void mtk_dither_set(struct mtk_ddp_comp *comp, unsigned int bpc,
-> > -		    unsigned int CFG);
-> > -
-> > +		    unsigned int CFG, struct cmdq_pkt *cmdq_pkt);
-> > +enum mtk_ddp_comp_type mtk_ddp_comp_get_type(enum mtk_ddp_comp_id comp_id);
-> > +void mtk_ddp_write(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-> > +		   struct mtk_ddp_comp *comp, unsigned int offset);
-> > +void mtk_ddp_write_relaxed(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-> > +			   struct mtk_ddp_comp *comp, unsigned int offset);
-> > +void mtk_ddp_write_mask(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-> > +			struct mtk_ddp_comp *comp, unsigned int offset,
-> > +			unsigned int mask);
-> >  #endif /* MTK_DRM_DDP_COMP_H */
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+UGhpbGlwcCBaYWJlbCA8cC56YWJlbEBwZW5ndXRyb25peC5kZT4g5LqOMjAxOeW5tDEy5pyIM+aX
+peWRqOS6jCDkuIrljYgxOjA05YaZ6YGT77yaCj4KPiBPbiBNb24sIDIwMTktMTItMDIgYXQgMjI6
+NDUgKzA4MDAsIEp1biBOaWUgd3JvdGU6Cj4gPiBFeHRlbmQgcmVzZXQgb3BlcmF0aW9ucyB0byBz
+dXBwb3J0IGNvbWJpbmF0aW9uIG9mIHRocmVlIHR5cGUgZmxhZ3M6Cj4gPiBBU1NFUlQvREVBU1NF
+UlQgU0VUL0NMRUFSIFBPTEwuCj4gPgo+ID4gU2lnbmVkLW9mZi1ieTogSnVuIE5pZSA8anVuLm5p
+ZUBsaW5hcm8ub3JnPgo+ID4gLS0tCj4gPiAgZHJpdmVycy9jbGsvaGlzaWxpY29uL3Jlc2V0LmMg
+fCA1OCArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLQo+ID4gIDEgZmlsZSBjaGFu
+Z2VkLCA1MyBpbnNlcnRpb25zKCspLCA1IGRlbGV0aW9ucygtKQo+ID4KPiA+IGRpZmYgLS1naXQg
+YS9kcml2ZXJzL2Nsay9oaXNpbGljb24vcmVzZXQuYyBiL2RyaXZlcnMvY2xrL2hpc2lsaWNvbi9y
+ZXNldC5jCj4gPiBpbmRleCA5M2NlZTE3ZGI4YjEuLmRlN2QxODZiMDg5NCAxMDA2NDQKPiA+IC0t
+LSBhL2RyaXZlcnMvY2xrL2hpc2lsaWNvbi9yZXNldC5jCj4gPiArKysgYi9kcml2ZXJzL2Nsay9o
+aXNpbGljb24vcmVzZXQuYwo+ID4gQEAgLTIsMjAgKzIsMjUgQEAKPiA+ICAvKgo+ID4gICAqIEhp
+c2lsaWNvbiBSZXNldCBDb250cm9sbGVyIERyaXZlcgo+ID4gICAqCj4gPiAtICogQ29weXJpZ2h0
+IChjKSAyMDE1LTIwMTYgSGlTaWxpY29uIFRlY2hub2xvZ2llcyBDby4sIEx0ZC4KPiA+ICsgKiBD
+b3B5cmlnaHQgKGMpIDIwMTUtMjAxOSBIaVNpbGljb24gVGVjaG5vbG9naWVzIENvLiwgTHRkLgo+
+ID4gICAqLwo+ID4KPiA+ICAjaW5jbHVkZSA8bGludXgvaW8uaD4KPiA+ICsjaW5jbHVkZSA8bGlu
+dXgvaW9wb2xsLmg+Cj4gPiAgI2luY2x1ZGUgPGxpbnV4L29mX2FkZHJlc3MuaD4KPiA+ICAjaW5j
+bHVkZSA8bGludXgvcGxhdGZvcm1fZGV2aWNlLmg+Cj4gPiAgI2luY2x1ZGUgPGxpbnV4L3Jlc2V0
+LWNvbnRyb2xsZXIuaD4KPiA+ICAjaW5jbHVkZSA8bGludXgvc2xhYi5oPgo+ID4gICNpbmNsdWRl
+IDxsaW51eC9zcGlubG9jay5oPgo+ID4gKwo+ID4gKyNpbmNsdWRlIDxkdC1iaW5kaW5ncy9yZXNl
+dC9oaXNpbGljb24tcmVzZXRzLmg+Cj4gPiAgI2luY2x1ZGUgInJlc2V0LmgiCj4gPgo+ID4gICNk
+ZWZpbmUgICAgICBISVNJX1JFU0VUX0JJVF9NQVNLICAgICAweDFmCj4gPiAgI2RlZmluZSAgICAg
+IEhJU0lfUkVTRVRfT0ZGU0VUX1NISUZUIDgKPiA+ICAjZGVmaW5lICAgICAgSElTSV9SRVNFVF9P
+RkZTRVRfTUFTSyAgMHhmZmZmMDAKPiA+ICsjZGVmaW5lICAgICAgSElTSV9SRVNFVF9GTEFHX1NI
+SUZUICAgMjQKPiA+ICsjZGVmaW5lICAgICAgSElTSV9SRVNFVF9GTEFHX01BU0sgICAgMHhmZjAw
+MDAwMAo+ID4KPiA+ICBzdHJ1Y3QgaGlzaV9yZXNldF9jb250cm9sbGVyIHsKPiA+ICAgICAgIHNw
+aW5sb2NrX3QgICAgICBsb2NrOwo+ID4gQEAgLTMwLDE0ICszNSwxNyBAQCBzdHJ1Y3QgaGlzaV9y
+ZXNldF9jb250cm9sbGVyIHsKPiA+ICBzdGF0aWMgaW50IGhpc2lfcmVzZXRfb2ZfeGxhdGUoc3Ry
+dWN0IHJlc2V0X2NvbnRyb2xsZXJfZGV2ICpyY2RldiwKPiA+ICAgICAgICAgICAgICAgICAgICAg
+ICBjb25zdCBzdHJ1Y3Qgb2ZfcGhhbmRsZV9hcmdzICpyZXNldF9zcGVjKQo+ID4gIHsKPiA+ICsg
+ICAgIHVuc2lnbmVkIGxvbmcgZmxhZ3M7Cj4gPiAgICAgICB1MzIgb2Zmc2V0Owo+ID4gICAgICAg
+dTggYml0Owo+ID4KPiA+ICsgICAgIGZsYWdzID0gKHJlc2V0X3NwZWMtPmFyZ3NbMl0gPDwgSElT
+SV9SRVNFVF9GTEFHX1NISUZUKQo+ID4gKyAgICAgICAgICAgICAmIEhJU0lfUkVTRVRfRkxBR19N
+QVNLOwo+ID4gICAgICAgb2Zmc2V0ID0gKHJlc2V0X3NwZWMtPmFyZ3NbMF0gPDwgSElTSV9SRVNF
+VF9PRkZTRVRfU0hJRlQpCj4gPiAgICAgICAgICAgICAgICYgSElTSV9SRVNFVF9PRkZTRVRfTUFT
+SzsKPiA+ICAgICAgIGJpdCA9IHJlc2V0X3NwZWMtPmFyZ3NbMV0gJiBISVNJX1JFU0VUX0JJVF9N
+QVNLOwo+ID4KPiA+IC0gICAgIHJldHVybiAob2Zmc2V0IHwgYml0KTsKPiA+ICsgICAgIHJldHVy
+biAoZmxhZ3MgfCBvZmZzZXQgfCBiaXQpOwo+ID4gIH0KPiA+Cj4gPiAgc3RhdGljIGludCBoaXNp
+X3Jlc2V0X2Fzc2VydChzdHJ1Y3QgcmVzZXRfY29udHJvbGxlcl9kZXYgKnJjZGV2LAo+ID4gQEAg
+LTQ4LDEzICs1NiwzMyBAQCBzdGF0aWMgaW50IGhpc2lfcmVzZXRfYXNzZXJ0KHN0cnVjdCByZXNl
+dF9jb250cm9sbGVyX2RldiAqcmNkZXYsCj4gPiAgICAgICB1MzIgb2Zmc2V0LCByZWc7Cj4gPiAg
+ICAgICB1OCBiaXQ7Cj4gPgo+ID4gKyAgICAgZmxhZ3MgPSAoaWQgJiBISVNJX1JFU0VUX0ZMQUdf
+TUFTSykgPj4gSElTSV9SRVNFVF9GTEFHX1NISUZUOwo+ID4gKyAgICAgaWYgKGZsYWdzICYgSElT
+SV9BU1NFUlRfTk9ORSkKPiA+ICsgICAgICAgICAgICAgcmV0dXJuIC1FTk9UU1VQUDsgLyogYXNz
+ZXJ0IG5vdCBzdXBwb3J0ZWQgZm9yIHRoaXMgcmVzZXQgKi8KPgo+IEFzIGxvbmcgYXMgLmFzc2Vy
+dCBhbmQgLmRlYXNzZXJ0IGFyZSB0aGUgb25seSBpbXBsZW1lbnRlZCBvcGVyYXRpb25zIGZvcgo+
+IHRoaXMgcmVzZXQgY29udHJvbGxlciwgdGhpcyBkb2VzIG5vdCBtYWtlIGFueSBzZW5zZSB0byBt
+ZS4gQXJlIHRoZXJlCj4gcmVzZXRzIHRoYXQgY2FuIG9ubHkgYmUgZGVhc3NlcnRlZD8KClNvbWUg
+cmVzZXQgaXMgYXNzZXJ0ZWQgb24gcG93ZXIgb24gYXV0b21hdGljYWxseS4gU28gb25seSAuZGVh
+c3NlcnQgaXMgbmVlZGVkLgo+Cj4gPiArCj4gPiAgICAgICBvZmZzZXQgPSAoaWQgJiBISVNJX1JF
+U0VUX09GRlNFVF9NQVNLKSA+PiBISVNJX1JFU0VUX09GRlNFVF9TSElGVDsKPiA+ICAgICAgIGJp
+dCA9IGlkICYgSElTSV9SRVNFVF9CSVRfTUFTSzsKPiA+Cj4gPiArICAgICBwcl9kZXZlbCgiJXMg
+JXMgdG8gJXMgMHgleDpiaXRbJWRdXG4iLCBfX2Z1bmNfXywKPiA+ICsgICAgICAgICAgICAgZmxh
+Z3MgJiBISVNJX0FTU0VSVF9QT0xMID8gInBvbGwiIDogIiIsCj4gPiArICAgICAgICAgICAgIGZs
+YWdzICYgSElTSV9BU1NFUlRfU0VUID8gInNldCI6ImNsZWFyIiwgb2Zmc2V0LCBiaXQpOwo+ID4g
+Kwo+ID4gKyAgICAgaWYgKGZsYWdzICYgSElTSV9BU1NFUlRfUE9MTCkgewo+Cj4gU2luY2UgSElT
+SV9BU1NFUlRfUE9MTCBpcyAwLCB0aGlzIGlzIGFsd2F5cyBmYWxzZS4KCldpbGwgZml4IHRoZSB3
+cm9uZyB2YWx1ZSBkZWZpbml0aW9uIGluIG5leHQgdmVyc2lvbiBwYXRjaC4gVGhlIHNhbWUgdG8K
+YmVsb3cgY29tbWVudHMuCj4KPiA+ICsgICAgICAgICAgICAgaWYgKGZsYWdzICYgSElTSV9BU1NF
+UlRfU0VUKQo+ID4gKyAgICAgICAgICAgICAgICAgICAgIHJldHVybiByZWFkbF9wb2xsX3RpbWVv
+dXQocnN0Yy0+bWVtYmFzZSArIG9mZnNldCwKPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgIHJlZywgcmVnICYgQklUKGJpdCksIDAsIDUwMDApOwo+ID4g
+KyAgICAgICAgICAgICBlbHNlCj4gPiArICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIHJlYWRs
+X3BvbGxfdGltZW91dChyc3RjLT5tZW1iYXNlICsgb2Zmc2V0LAo+ID4gKyAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmVnLCAhKHJlZyAmIEJJVChiaXQpKSwK
+PiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDAsIDUw
+MDApOwo+Cj4gQW5kIHRoaXMgaXMgZWZmZWN0aXZlbHkgZGVhZCBjb2RlLiBEbyB5b3UgcmVhbGx5
+IGhhdmUgaGFyZHdhcmUgdGhhdAo+IGFzc2VydHMgb3IgYXNzZXJ0cyBhIHJlc2V0IGxpbmUgaW4g
+cmVhY3Rpb24gdG8gYSByZWFkIGFjY2Vzcz8KPgo+IFNob3VsZCBISVNJX0FTU0VSVF9QT0xMIGFu
+ZCBISVNJX0RFQVNTRVJUX1BPTEwgYmUgbXV0dWFsbHkgZXhjbHVzaXZlPwo+Cj4gPiArICAgICB9
+Cj4gPiArCj4gPiAgICAgICBzcGluX2xvY2tfaXJxc2F2ZSgmcnN0Yy0+bG9jaywgZmxhZ3MpOwo+
+ID4KPiA+ICAgICAgIHJlZyA9IHJlYWRsKHJzdGMtPm1lbWJhc2UgKyBvZmZzZXQpOwo+ID4gLSAg
+ICAgd3JpdGVsKHJlZyB8IEJJVChiaXQpLCByc3RjLT5tZW1iYXNlICsgb2Zmc2V0KTsKPiA+ICsg
+ICAgIC8qIERlZmF1bHQgaXMgc2V0dGluZyB0byBhc3NlcnQgZm9yIG5vIGZsYWcgY2FzZS4gKi8K
+PiA+ICsgICAgIHJlZyA9IChmbGFncyAmIEhJU0lfQVNTRVJUX0NMRUFSKSA/IHJlZyAmIH5CSVQo
+Yml0KSA6IHJlZyB8IEJJVChiaXQpOwo+Cj4gQ29uc2lkZXIgbW92aW5nIHRoaXMgaW50byBhIGhl
+bHBlciBmdW5jdGlvbiB3aXRoIGEgYm9vbGVhbiBzZXQvY2xlYXIKPiBwYXJhbWV0ZXIuCgpXaWxs
+IGRvLgo+Cj4gQXMgbG9uZyBhcyBISVNJX0FTU0VSVF9DTEVBUiBpcyAwLCB0aGUgZmlyc3QgYnJh
+bmNoIGlzIGRlYWQgY29kZS4KPgo+ID4gKyAgICAgd3JpdGVsKHJlZywgcnN0Yy0+bWVtYmFzZSAr
+IG9mZnNldCk7Cj4gPgo+ID4gICAgICAgc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmcnN0Yy0+bG9j
+aywgZmxhZ3MpOwo+ID4KPiA+IEBAIC02OSwxMyArOTcsMzMgQEAgc3RhdGljIGludCBoaXNpX3Jl
+c2V0X2RlYXNzZXJ0KHN0cnVjdCByZXNldF9jb250cm9sbGVyX2RldiAqcmNkZXYsCj4gPiAgICAg
+ICB1MzIgb2Zmc2V0LCByZWc7Cj4gPiAgICAgICB1OCBiaXQ7Cj4gPgo+ID4gKyAgICAgZmxhZ3Mg
+PSAoaWQgJiBISVNJX1JFU0VUX0ZMQUdfTUFTSykgPj4gSElTSV9SRVNFVF9GTEFHX1NISUZUOwo+
+ID4gKyAgICAgaWYgKGZsYWdzICYgSElTSV9ERUFTU0VSVF9OT05FKQo+ID4gKyAgICAgICAgICAg
+ICByZXR1cm4gLUVOT1RTVVBQOyAvKiBkZWFzc2VydCBub3Qgc3VwcG9ydGVkIGZvciB0aGlzIHJl
+c2V0ICovCj4gPiArCj4KPiBBcmUgdGhlcmUgcmVzZXRzIHRoYXQgY2FuIG9ubHkgZXZlciBiZSBh
+c3NlcnRlZD8KCkkgZG8gbm90IGtub3cgeWV0LiBPbmx5IGV4dGVuZCB0aGlzIGRyaXZlciB3aXRo
+IGFsbCBjb21iaW5hdGlvbiBpbiBsb2dpYy4KPgo+ID4gICAgICAgb2Zmc2V0ID0gKGlkICYgSElT
+SV9SRVNFVF9PRkZTRVRfTUFTSykgPj4gSElTSV9SRVNFVF9PRkZTRVRfU0hJRlQ7Cj4gPiAgICAg
+ICBiaXQgPSBpZCAmIEhJU0lfUkVTRVRfQklUX01BU0s7Cj4gPgo+ID4gKyAgICAgcHJfZGV2ZWwo
+IiVzICVzIHRvICVzIDB4JXg6Yml0WyVkXVxuIiwgX19mdW5jX18sCj4gPiArICAgICAgICAgICAg
+IGZsYWdzICYgSElTSV9ERUFTU0VSVF9QT0xMID8gInBvbGwiIDogIiIsCj4gPiArICAgICAgICAg
+ICAgIGZsYWdzICYgSElTSV9ERUFTU0VSVF9TRVQgPyAiY2xlYXIiOiJzZXQiLCBvZmZzZXQsIGJp
+dCk7Cj4gPiArCj4gPiArICAgICBpZiAoZmxhZ3MgJiBISVNJX0RFQVNTRVJUX1BPTEwpIHsKPiA+
+ICsgICAgICAgICAgICAgaWYgKGZsYWdzICYgSElTSV9ERUFTU0VSVF9TRVQpCj4gPiArICAgICAg
+ICAgICAgICAgICAgICAgcmV0dXJuIHJlYWRsX3BvbGxfdGltZW91dChyc3RjLT5tZW1iYXNlICsg
+b2Zmc2V0LAo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgcmVnLCByZWcgJiBCSVQoYml0KSwgMCwgNTAwMCk7Cj4gPiArICAgICAgICAgICAgIGVsc2UK
+PiA+ICsgICAgICAgICAgICAgICAgICAgICByZXR1cm4gcmVhZGxfcG9sbF90aW1lb3V0KHJzdGMt
+Pm1lbWJhc2UgKyBvZmZzZXQsCj4gPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICByZWcsICEocmVnICYgQklUKGJpdCkpLAo+ID4gKyAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMCwgNTAwMCk7Cj4KPiBTZWUgYWJvdmUs
+IHRoaXMgY29kZSBjdXJyZW50bHkgY2FuIG5ldmVyIGJlIHJlYWNoZWQuCj4KPiA+ICsgICAgIH0K
+PiA+ICsKPiA+ICAgICAgIHNwaW5fbG9ja19pcnFzYXZlKCZyc3RjLT5sb2NrLCBmbGFncyk7Cj4g
+Pgo+ID4gICAgICAgcmVnID0gcmVhZGwocnN0Yy0+bWVtYmFzZSArIG9mZnNldCk7Cj4gPiAtICAg
+ICB3cml0ZWwocmVnICYgfkJJVChiaXQpLCByc3RjLT5tZW1iYXNlICsgb2Zmc2V0KTsKPiA+ICsg
+ICAgIC8qIERlZmF1bHQgaXMgY2xlYXJpbmcgdG8gZGVhc3NlYXJ0IGZvciBubyBmbGFnIGNhc2Uu
+ICovCj4gPiArICAgICByZWcgPSAoZmxhZ3MgJiBISVNJX0RFQVNTRVJUX1NFVCkgPyByZWcgfCBC
+SVQoYml0KSA6IHJlZyAmIH5CSVQoYml0KTsKPgo+IFNhbWUgYXMgYWJvdmUsIHRoZSByZWFkLW1v
+ZGlmeS13cml0ZSBmb3Igc2V0L2NsZWFyIGNvdWxkIGJlIHNwbGl0IG91dAo+IGludG8gYSBoZWxw
+ZXIuCj4KPiA+ICsgICAgIHdyaXRlbChyZWcsIHJzdGMtPm1lbWJhc2UgKyBvZmZzZXQpOwo+ID4K
+PiA+ICAgICAgIHNwaW5fdW5sb2NrX2lycXJlc3RvcmUoJnJzdGMtPmxvY2ssIGZsYWdzKTsKPiA+
+Cj4gPiBAQCAtMTAzLDcgKzE1MSw3IEBAIHN0cnVjdCBoaXNpX3Jlc2V0X2NvbnRyb2xsZXIgKmhp
+c2lfcmVzZXRfaW5pdChzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ID4gICAgICAgcnN0
+Yy0+cmNkZXYub3duZXIgPSBUSElTX01PRFVMRTsKPiA+ICAgICAgIHJzdGMtPnJjZGV2Lm9wcyA9
+ICZoaXNpX3Jlc2V0X29wczsKPiA+ICAgICAgIHJzdGMtPnJjZGV2Lm9mX25vZGUgPSBwZGV2LT5k
+ZXYub2Zfbm9kZTsKPiA+IC0gICAgIHJzdGMtPnJjZGV2Lm9mX3Jlc2V0X25fY2VsbHMgPSAyOwo+
+ID4gKyAgICAgcnN0Yy0+cmNkZXYub2ZfcmVzZXRfbl9jZWxscyA9IDM7Cj4KPiBUaGlzIGJyZWFr
+cyBjdXJyZW50IGRldmljZSB0cmVlcyAoYmVmb3JlIHBhdGNoIDMpLiBZb3UgY2FuIG1ha2Ugc3Vy
+ZQo+IGRldmljZSB0cmVlcyB3aXRoICNyZXNldC1jZWxscyA9IDwyPiBrZWVwIHdvcmtpbmcgYnkg
+cGFyc2luZyB0aGUgI3Jlc2V0LQo+IGNlbGxzIGFuZCBzZXR0aW5nIHRoaXMgdmFsdWUgdG8gMiBm
+b3Igb2xkIERUcy4KCkFsbCBjdXJyZW50IGR0cyBmaWxlIGFyZSBtb2RpZmllZCBhY2NvcmRpbmds
+eS4gQnV0IGV4aXN0aW5nIGR0YiBiaW5hcnkgc3VwcG9ydAppcyBhbiBpc3N1ZS4gRG8geW91IGhh
+dmUgYW55IHN1Z2dlc3Rpb24/Cgo+Cj4gPiAgICAgICByc3RjLT5yY2Rldi5vZl94bGF0ZSA9IGhp
+c2lfcmVzZXRfb2ZfeGxhdGU7Cj4gPiAgICAgICByZXNldF9jb250cm9sbGVyX3JlZ2lzdGVyKCZy
+c3RjLT5yY2Rldik7Cj4KPiByZWdhcmRzCj4gUGhpbGlwcAo+CgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
