@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33665110476
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 19:47:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE344110489
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 19:53:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6gUWuD2Wm245ivIDJuVMXipBDX8YdOmbjO9FS+vchok=; b=PWTsbpr4m81PlY
-	ZpW/CDgcO0PO5lmpQJ0Ay3IzxBmFTkDrxa6WOQ8H69EO9+SoXH5OQWz8dL0z4Fzq3xenR+GluMe/V
-	NKUsFBY+HkelJojv0gy+GskBdlNXiiFaxnHOC4YyX1Af5X3hm+W/1rU9iEm+xF3wN5t7D6KiuRxLi
-	KlwCGPxlTyC/f4H0LB1qG+VqvQMTvfS4GFo0ZXkCS4PU8LphXXfFwTUxjHC10AEG3npz/HezzUDD7
-	KR9o+D862GOK/eWuYL3ET2n4aXal+K3dnxvVLuI8LMg+Kg19TnH2Q/61Pc/nyRMlXkIYPXCfG2ht0
-	PjWo4qjpBb82gfMsNakw==;
+	List-Owner; bh=hLngyYNNlEiPPusuP93/zDLTGkpU/LuySEqZhEo6mhk=; b=VW17SH7FGCIWs9
+	2ZyNbxQqDU2nlcX0In7/UVphfA5/wQJwVmYp7E7z7/zWzL20GKWAxjk1PF2H2fJwe3jCM761iL05g
+	nZ4bpWmviZ4Jg74emkMVtfO1BLdXNKkR0RThrUj0OWoQq5wvG5JT/91L2dBFMy6xxoTCzuNaBK8g2
+	UXCF8e7not7UlPvkn8+ZY7gWSKpR8Z/GlvEnJ424LaQwgavoQgcF575Aq+J3SK0Mzqa3bpKCDo0SU
+	5HO/uQ5aBIbPOyr+/X+NyCKNhgy/eVCJO1/L0PRZMhLARAhl8a0hGgNiSBBckz6Z0RS3ewwHUUC1T
+	Pg8AfDEAOhVxNt2BQdGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icDDE-00022X-0L; Tue, 03 Dec 2019 18:47:52 +0000
+	id 1icDIJ-0003n3-1K; Tue, 03 Dec 2019 18:53:07 +0000
 Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icDD6-000224-KO
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 18:47:45 +0000
-Received: by mail-ot1-x343.google.com with SMTP id 77so3876300oty.6
+ id 1icDI4-0003je-7P
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 18:52:53 +0000
+Received: by mail-ot1-x343.google.com with SMTP id k14so3913794otn.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 10:47:44 -0800 (PST)
+ Tue, 03 Dec 2019 10:52:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pfO60WpFdVXD9ykCy83yYLYqu37ZRkpOI6iazA+g73k=;
- b=jrBUX3W/cj7i2lJk0w7h8DromxINw5Nmmr4l6t63OkmNeRwhn/r4qAb45sdstr2z26
- 22Xt9iOLQcEzh0BzacyYi/P/Wps71zJ04bWGjsx6zNcvIBDhZ/fdnaZgDVSeH1oJkCyR
- ad2vhAUE/sJZYQjynBObtGlsFBmX2GAUgjKgixSfKWlJB6/3obaG9loYEGkHYl34c7RO
- UELCZelTjZVnA4oGPvddVTJAYrovnfb6R16Y4SnZzYhsHNM2Gp7iXz/k72ElCNPeRzrb
- tuWukCYh8Tgjv1jZpYFq6WxVg/TTZ2Ov34yIlI/rgl3hdD4xXJPUTJF4U8gdFeLJqF/K
- Tkxg==
+ :cc; bh=YkhAW1JPr4wZMcoCAUkgxrDKX3tQPoTOxDYTCkC3waU=;
+ b=Hjdnznllgz669BoJ6LQ0C+l+dL6PlscmUgAL1xpsNv/OaGjyoqdX7VSxhCQuBQ578j
+ I8wBqlCTN8W3TPwmh0VjoFP16rkUV57cnrlQ6rmTM3FC8LnYDp2RFyJCeImcGS3luMQN
+ 5Pu14bEsp34hPT3kI0X555jj6yLIjO+w1v93OC6r6xrBW6ZD0k5NQJhT9WmTZxjzia0F
+ xClTWg5I6rE0qu76U55V/jhhlQzMFDFm+p/rNQMM3r8N24Nil2ykHLCSojd3IJ5Ir3sz
+ dSEbTT62wRkRO+leUKlpqJzb4pO7s+PblAW2no7YvZUBRXlG7NyK1Q/T7Jb3QsuPGAk4
+ BXQw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=pfO60WpFdVXD9ykCy83yYLYqu37ZRkpOI6iazA+g73k=;
- b=ow1ZzIVDKHADwbyvUFN4bb9P2gEbtesVi8GZL4azCGf/VccdmTHkJm0Hm5c0XFEMWM
- QdMEIiz2+n6186aQjHnzb8mDm7LwJF+HZa2uS4d7dq0wvHTIHV4fdOgH9wZYhq0WvrKZ
- 6kB2I993U+BzNPWubi89ViKDJNY+1HqswpeNroOgreOjtxNXbr6M9ZHkVbLbSwRAIGKt
- T1a4c82mfiTM4FA27pQLhn+nokVzWciGOKF722rfQg7RskmKjMZsWzmtu6N6deFhnqG0
- o4SjI1qWM/I0LGXPej6QyMj2qWXU49C+Sw3zf/whFPN7/hUoZko/9706txLq9yX3Nhrb
- qNFg==
-X-Gm-Message-State: APjAAAXskXEzbqSyMNxWQOemNLbIi4LxTaNWx8FD4cVc4y87V6JjlLxU
- gP+Zlg5/YkkYWJVqqy66AZ9fl94zNZUp9kUjzN1mLA==
-X-Google-Smtp-Source: APXvYqwmBgkNOXdWKfFhoRJ5fYuF8t0A71o7eGmZ1W9UCAO3LKG+omVrqIoWLKPd/hqTtznUqwTF6fmD/YdQIIy+Hhg=
-X-Received: by 2002:a9d:3af:: with SMTP id f44mr4143411otf.332.1575398863576; 
- Tue, 03 Dec 2019 10:47:43 -0800 (PST)
+ bh=YkhAW1JPr4wZMcoCAUkgxrDKX3tQPoTOxDYTCkC3waU=;
+ b=SUFjAVRY1CgR3t0CtFD0jQaVlkNo4W2kkqSYh3YdxwVelnbcfX7gBR08/7mVQi4rI9
+ CM7adxNLQUMC2HoqogfeVfP/Fs66ZrrRkc0TnIiV8kD2uqxs683Xwyimp6B+rsFhYG81
+ Bi4aXz4LxcWqhpVD+chQXUPRCrE/q6cUxRHRZL7kRgyR9hwlcJ6E1kB8gMETIBRHCnem
+ ZETMRMS7PNdfZxvwkBahMQOCxK05qaWVF2JMWTwdGeXYjB3MIiUBVqMmnp8b/tLnTo8d
+ X1ClKWC2l9rFokYJJLYMw5JLVz2U6NRcIA3aHYoIlp0BwUY/89p8u94sDu9ZRtgAiSpy
+ BpGg==
+X-Gm-Message-State: APjAAAUZXCrJ4QU/s3wCdNPwhLgADfl/rDoiqOfLasw1akaqPVQrK6T1
+ qbkQKnoyXjPWSdvtMANt74UA6ebPhuXo0G/yKFHZlw==
+X-Google-Smtp-Source: APXvYqzs7Nq2HrpEsJ4z5tKrIRIy0SlwXh4gQuwIAJKfRwUoQoon8oTcC/R8n/ASFFf8Ve6Wlkan1uzWdKSQKA9MBuI=
+X-Received: by 2002:a9d:3af:: with SMTP id f44mr4158036otf.332.1575399171204; 
+ Tue, 03 Dec 2019 10:52:51 -0800 (PST)
 MIME-Version: 1.0
 References: <20191203121013.9280-1-will@kernel.org>
-In-Reply-To: <20191203121013.9280-1-will@kernel.org>
+ <CALAqxLWbswQmLYJa_ODUDC0XJ5u=y_Nn074qcVAh1HZiTLNy1Q@mail.gmail.com>
+In-Reply-To: <CALAqxLWbswQmLYJa_ODUDC0XJ5u=y_Nn074qcVAh1HZiTLNy1Q@mail.gmail.com>
 From: John Stultz <john.stultz@linaro.org>
-Date: Tue, 3 Dec 2019 10:47:32 -0800
-Message-ID: <CALAqxLWbswQmLYJa_ODUDC0XJ5u=y_Nn074qcVAh1HZiTLNy1Q@mail.gmail.com>
+Date: Tue, 3 Dec 2019 10:52:40 -0800
+Message-ID: <CALAqxLUupqjxqWVs+Ei0QkOAWmQt7CEq-3LQsq3mzW9dFNDzhg@mail.gmail.com>
 Subject: Re: [PATCH] arm64: mm: Fix initialisation of DMA zones on non-NUMA
  systems
 To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_104744_676694_683E791F 
-X-CRM114-Status: UNSURE (   8.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191203_105252_274868_F288979F 
+X-CRM114-Status: GOOD (  10.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -103,17 +103,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 3, 2019 at 4:10 AM Will Deacon <will@kernel.org> wrote:
+On Tue, Dec 3, 2019 at 10:47 AM John Stultz <john.stultz@linaro.org> wrote:
 >
-> John reports that the recently merged commit 1a8e1cef7603 ("arm64: use
-> both ZONE_DMA and ZONE_DMA32") breaks the boot on his DB845C board:
+> On Tue, Dec 3, 2019 at 4:10 AM Will Deacon <will@kernel.org> wrote:
+> >
+> > John reports that the recently merged commit 1a8e1cef7603 ("arm64: use
+> > both ZONE_DMA and ZONE_DMA32") breaks the boot on his DB845C board:
+>
+> I've also tripped on the same issue with the original HiKey board, and
+> can validate that this patch resolves the issue there.
+>
+> Tested-by: John Stultz <john.stultz@linaro.org>
 
-I've also tripped on the same issue with the original HiKey board, and
-can validate that this patch resolves the issue there.
-
-Tested-by: John Stultz <john.stultz@linaro.org>
-
-thanks
+Also validated on db845c.
+Thanks so much for the quick fix!
 -john
 
 _______________________________________________
