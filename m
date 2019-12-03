@@ -2,114 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C329810FE5B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 14:05:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 347BA10FE6A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 14:09:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O6FsCwIrVeqAhuniHgL8v32tLLxlCwUvcrrAaA7qzRc=; b=XKz77NZCtJ/jJI
-	LvLG50BWLgWVMjnwMo+PmzlNB6Z3t+d7Yk/ob3zR3Y2qVIfxEkH9UAzEHVUqEFzWeER8LvwOGwvka
-	lLTjhVxnuQq5cZow8J100CtJTiYw6bFNc5gbm4SdCj/7TRTdPdEPWZ03cccB4sxsxH9DZAqxX4T3+
-	FM+itwtF4UM/zLuLtcZWhxcopIAe0pV0VK8HBjdjwXHFJMrX95OfzdHuar+4zP8frAElGaNQStm9a
-	3UUN4vJsgTHVF3d7ustva/Yn5ToVkq3i0V9VRXYPagYDVXz0j66ZF6JrFc7ZVcYsyZxZVba3f5iHb
-	hRmuqp72MCzt8WNJ+iOA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XNdml+7StOJFPn+fy5U/fO+HuXAqotg4WA70nFIbZJ4=; b=ZvzQsaXWji0m9S
+	+rmNp3X/lvXIDke4/3RX64gfZmTDUkU35NXTHPTk+RXHxz3zZZFhp7QYs3M495p+pcY740N8KPivL
+	0Mo15UKILMYAiketBw1jiE9Zs+DJSaJhFSzV4/5NU8FMlceqZ3xub6gM4J93eZAEjrnicTIz9QQFH
+	U2L87OrQiG84An4QhVC3owYiIp9btMQzS597HKvfhdy04ph/ppnZMG6IwIzs8QNKgu7lyVuCD2Ysl
+	nwwwBpEe+51Zhlg96w2QFicbcvPrHQWskPR3/IVmAbHphWV0WpiHTAXGlLhjcdoMLZDOU69IiFLEo
+	dKUne4OzvEa8vVL7Exqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic7rl-0008WQ-49; Tue, 03 Dec 2019 13:05:21 +0000
-Received: from mail-eopbgr140107.outbound.protection.outlook.com
- ([40.107.14.107] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1ic7vl-0000o0-8Y; Tue, 03 Dec 2019 13:09:29 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic7rX-0007FP-ID
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 13:05:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=itiSklXH9YMNpPXmSVS+jPtpU1jIFWuvWyYurdVlGO6lWxrUG9+Sm1LNCyp58uOaMcKf1AE0fBzej1o8Y2+W1P/hO9FZVwVML0resZiwvrAN1JTlyjUZ5WVfhnSFNGRu8qC/IMPQ+zWroImQsxAzSPhIhdfVfAKGJNh8h6Y2c/BI1HEa9kifs1bTMb13yB6k07Ikai93pgd6jQysOXNJuI4RnScuy1V+2jRFfTDH158272FWhy0Os7/LLYejAHClaQeEjcTogjrPPDlHQBIyzOv53F2kiWVYlGV1m681fCgwG2oOBLNnhluRgCZRGCGliZ5SMK/LpkL3R01k/+a7VQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=y6H4RF7fl5CSFX/0j+TWyz1D3w/8Bk8M64RsIspG79Y=;
- b=PH4+LDDtYMAg7ZnPzOsI30yUXioCSkqSloAjub8Yyy00tbnGrAhEiSP5TN062QKsjG7dZVMpjFUyV7R4WPhX2CZQbLslN4FkET60z2oXSwaVn5ITC0lA8GTjYiVxBlpsisa5uSPDhJCy+ypL2yntltyOog7szG3eR4bfbIdb69lD7eilOzeOQvhlM60FKjPWtbQJktttKhGqOvVrgUK1otDfR5FpqkpwuvUtOZlsSjaBWtaDlI7eq7mVUzVs0lNasaJgHkPX20viGWD5jYrhnNvGEKUd3exH+DyAqknQjeAGdbTRxPj9/t03EqDy4cVTOu2gkfzBx5IxXNUPC3cf1g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
- dkim=pass header.d=axentia.se; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=y6H4RF7fl5CSFX/0j+TWyz1D3w/8Bk8M64RsIspG79Y=;
- b=GZ1ph2Ws0sGreY8b6udkcp3pAaMdfQ0ebEuy7XlkuaqDuPKrotMNkdDjHY62mBRHESOQOHfeJV31wCL8tkmakUcvXxeawtBPNhivhvptLYyqFPez+cJQImVHWOd8W7jyrVOakmxgJWu/GNCk7Atxa2XsWPJgoc9KjNP9Gpa+aRs=
-Received: from AM6PR0202MB3432.eurprd02.prod.outlook.com (52.133.11.29) by
- AM6PR0202MB3432.eurprd02.prod.outlook.com (52.133.11.29) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2495.20; Tue, 3 Dec 2019 13:04:57 +0000
-Received: from AM6PR0202MB3432.eurprd02.prod.outlook.com
- ([fe80::dc43:ed2c:945a:cd5]) by AM6PR0202MB3432.eurprd02.prod.outlook.com
- ([fe80::dc43:ed2c:945a:cd5%6]) with mapi id 15.20.2495.014; Tue, 3 Dec 2019
- 13:04:56 +0000
-From: Peter Rosin <peda@axentia.se>
-To: Ingo van Lil <inguin@gmx.de>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
-Subject: Re: [PATCH] ARM: dts: at91: Reenable UART TX pull-ups
-Thread-Topic: [PATCH] ARM: dts: at91: Reenable UART TX pull-ups
-Thread-Index: AQHVpdOvdUWDNvrpeU+UsNRoQGwGi6eoaNgA
-Date: Tue, 3 Dec 2019 13:04:56 +0000
-Message-ID: <8e8dfc02-bdab-d6f1-f6e9-e1dba7e38bfd@axentia.se>
-References: <20191128100629.10247-1-inguin@gmx.de>
-In-Reply-To: <20191128100629.10247-1-inguin@gmx.de>
-Accept-Language: en-US, sv-SE
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
-x-originating-ip: [213.112.138.100]
-x-clientproxiedby: HE1PR0501CA0018.eurprd05.prod.outlook.com
- (2603:10a6:3:1a::28) To AM6PR0202MB3432.eurprd02.prod.outlook.com
- (2603:10a6:209:26::29)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peda@axentia.se; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 7947a15e-1176-4e68-4c89-08d777f16542
-x-ms-traffictypediagnostic: AM6PR0202MB3432:
-x-microsoft-antispam-prvs: <AM6PR0202MB3432543D7F9A72DC1E7F2763BC420@AM6PR0202MB3432.eurprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2512;
-x-forefront-prvs: 02408926C4
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(39830400003)(376002)(136003)(366004)(346002)(396003)(189003)(199004)(229853002)(5660300002)(7736002)(305945005)(71190400001)(4326008)(110136005)(71200400001)(6436002)(508600001)(31696002)(25786009)(2201001)(8936002)(14444005)(186003)(316002)(99286004)(6486002)(4001150100001)(54906003)(6246003)(256004)(6512007)(2616005)(81166006)(2501003)(66946007)(66556008)(64756008)(58126008)(11346002)(66446008)(6506007)(446003)(81156014)(36756003)(65956001)(66476007)(3846002)(53546011)(2906002)(102836004)(6116002)(386003)(14454004)(4744005)(31686004)(8676002)(26005)(76176011)(86362001)(52116002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:AM6PR0202MB3432;
- H:AM6PR0202MB3432.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: axentia.se does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: OW7JiUo2rj5SorxM8jmVHQ0LkOFQg5sbAHBz7EkHkjMJZxsWZhjtfZLxiuq99dLtuAU0XEn2KS7Sw4Fez8/RQZ1NkCQVwRF/a+IfQizPTDp6j43e/HI4Ck/n2UZgktdbV2xOhAL9GhdvTrFDjij8A1JgfyhDc+bNvtcySbXYbS04dYcVOkae3kN6d1lzKIQyGxbrBkz/EYXfgIfuhdeJLPLD7dQs9XRpbSuVEZE0rDCRaICXm7skuHENTXtRy2QLtwh4KKzQcal11HWwA0YiY0lS04trp+b1IP9gGqqIJONuuraOKKdavHDp4PEUrZ5VQh6G1lgVePvKUamhj4btyJ/PquTuofIjrDlO/qJXZAVHJ86fh4PSWSgbxpgT/9wt2Ue16Gv/s7qOzdWzBaytSL26sipzqU501N+/i1wGLGoJ3oF8DwpAqee1gScXOzZM
-x-ms-exchange-transport-forked: True
-Content-ID: <67E14BFC18AD7247B2E9B05C77247FF9@eurprd02.prod.outlook.com>
+ id 1ic7ve-0000nd-B6
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 13:09:23 +0000
+Received: by mail-lj1-x241.google.com with SMTP id z17so3682895ljk.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Dec 2019 05:09:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4UEsXQl3I/T+z770nwn4lhgtMw/PAlF7NFfwFxnxhdI=;
+ b=J6+nzx7Liq6IkE2ZbYv9iUn6DDeNpvUfozrfr15HUHXmbq90IDh1BO0EgBG0+CCwLu
+ sD0B+Rdq6AcqNxWVMibtCf1cFinsGwEofsyVGx+DgG4qAqXhy4Q/78XoJalr6884ADHb
+ HGFn/8qrVrXA7FHavmw0heG9YpcSDT32SBqrUhYQhx19OO72p+DVt17Ar7wq/RowfQzz
+ BFAhttnz2BLXMPa8qdlp3pgOufM+IQB6TsMhO7fWxhRCAXMc6woWk2C6oFQYH5WsIuKj
+ lqC82sbD7neLMb8H64IWa/tCoueus+MQxZl49kqQi12uL1FVn/bcMILg+kCAM/OJZLd7
+ ancA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4UEsXQl3I/T+z770nwn4lhgtMw/PAlF7NFfwFxnxhdI=;
+ b=Jh8KVqnxYhe6vUEvZxKCqFEgbHzSSgZclAjaG+MQmCW1aVco4jkOTCUDqHzSPH7Hfl
+ Srp1kTcbVzoPp+6odlCFG/L9TW9xs9Tlyd+Wq2hq8QhVdcA6PtSCkht7QoN6/50gAsjR
+ AgwKenhwtFJeBzrP6iGUaKn1YmEw8k7alhcClk/AV2U5CDoCpvmHdSBkPzrWFEiiY3Ut
+ V5WhVSyfidw5+ZqeLpEeEZhzBSV2YtI9KYCZQV6agPRonEQkFR/y4jbqbRUYKkxHbi7y
+ EgX5EATWtDL4JCeR9QIu+/rzK1V33gM7yxRpR5OPl4UtcycYewzwP0aBogHU5Cx9rXME
+ Bfrw==
+X-Gm-Message-State: APjAAAUGoMx2CtOCZl2QK9U7Ahulayy2t5UTZdr2y/VUUun3ut5kJlwH
+ wwlp+Me3mSujH3sXY1zjXWNXEp3HKbE=
+X-Google-Smtp-Source: APXvYqyE8bvn/4nxbTp2IzkuXev0B626VRgW8HBr3BcVrnwalF9TVnvlTRTVtQ+yRAn39dTihi+AQQ==
+X-Received: by 2002:a2e:85d5:: with SMTP id h21mr2515391ljj.243.1575378559953; 
+ Tue, 03 Dec 2019 05:09:19 -0800 (PST)
+Received: from genomnajs.ideon.se ([85.235.10.227])
+ by smtp.gmail.com with ESMTPSA id s22sm1344688ljm.41.2019.12.03.05.09.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Dec 2019 05:09:18 -0800 (PST)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: dri-devel@lists.freedesktop.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
+Subject: [PATCH] drm/tilcdc: Switch to using GPIO descriptors
+Date: Tue,  3 Dec 2019 14:09:16 +0100
+Message-Id: <20191203130916.155779-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-OriginatorOrg: axentia.se
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7947a15e-1176-4e68-4c89-08d777f16542
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Dec 2019 13:04:56.8200 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: BX7/dn1le8ArtHpHh8NeM4BRgis99HE5mKiuzWMmpPjk/OPpxiSBlesPU2CTn7+u
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0202MB3432
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_050507_673944_CD9F042F 
-X-CRM114-Status: GOOD (  12.70  )
+X-CRM114-CacheID: sfid-20191203_050922_391891_9F24CED2 
+X-CRM114-Status: GOOD (  14.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.107 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -128,37 +96,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, Jyri Sarha <jsarha@ti.com>,
+ linux-arm-kernel@lists.infradead.org, David Lechner <david@lechnology.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-11-28 11:06, Ingo van Lil wrote:
-> Pull-ups for SAM9 UART/USART TX lines were disabled in 5e04822f.
-> However, several chips in the SAM9 family require pull-ups to prevent
-> the TX lines from falling (and causing an endless break condition) when
-> the transceiver is disabled.
-> 
-> From the SAM9G20 datasheet, 32.5.1: "To prevent the TXD line from
-> falling when the USART is disabled, the use of an internal pull up
-> is mandatory.". This commit reenables the pull-ups for all chips having
-> that sentence in their datasheets.
-> 
-> Signed-off-by: Ingo van Lil <inguin@gmx.de>
+The TI LCDC picks a GPIO line from the device tree to use
+for DPMS power on/off. We can switch this to use a GPIO
+descriptor pretty easily. Make sure to request the GPIO
+"as is" so that the DPMS state that we start (boot) in is
+preserved.
 
-Sounds reasonable, and sorry for the breakage. However, perhaps a proper
-fixes tag (with the prescribed length of the commit hash) should be in
-there somewhere?
+Cc: Jyri Sarha <jsarha@ti.com>
+Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>
+Cc: David Lechner <david@lechnology.com>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ drivers/gpu/drm/tilcdc/tilcdc_tfp410.c | 30 ++++++++++++--------------
+ 1 file changed, 14 insertions(+), 16 deletions(-)
 
-Fixes: 5e04822f7db5 ("ARM: dts: at91: fixes uart pinctrl, set pullup on rx, clear pullup on tx")
+diff --git a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+index 530edb3b51cc..41cd9a7c4316 100644
+--- a/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
++++ b/drivers/gpu/drm/tilcdc/tilcdc_tfp410.c
+@@ -4,9 +4,8 @@
+  * Author: Rob Clark <robdclark@gmail.com>
+  */
+ 
+-#include <linux/gpio.h>
++#include <linux/gpio/consumer.h>
+ #include <linux/mod_devicetable.h>
+-#include <linux/of_gpio.h>
+ #include <linux/pinctrl/consumer.h>
+ #include <linux/platform_device.h>
+ 
+@@ -21,7 +20,7 @@
+ struct tfp410_module {
+ 	struct tilcdc_module base;
+ 	struct i2c_adapter *i2c;
+-	int gpio;
++	struct gpio_desc *power_gpiod;
+ };
+ #define to_tfp410_module(x) container_of(x, struct tfp410_module, base)
+ 
+@@ -58,10 +57,10 @@ static void tfp410_encoder_dpms(struct drm_encoder *encoder, int mode)
+ 
+ 	if (mode == DRM_MODE_DPMS_ON) {
+ 		DBG("Power on");
+-		gpio_direction_output(tfp410_encoder->mod->gpio, 1);
++		gpiod_direction_output(tfp410_encoder->mod->power_gpiod, 1);
+ 	} else {
+ 		DBG("Power off");
+-		gpio_direction_output(tfp410_encoder->mod->gpio, 0);
++		gpiod_direction_output(tfp410_encoder->mod->power_gpiod, 0);
+ 	}
+ 
+ 	tfp410_encoder->dpms = mode;
+@@ -318,17 +317,17 @@ static int tfp410_probe(struct platform_device *pdev)
+ 
+ 	of_node_put(i2c_node);
+ 
+-	tfp410_mod->gpio = of_get_named_gpio_flags(node, "powerdn-gpio",
+-			0, NULL);
+-	if (tfp410_mod->gpio < 0) {
+-		dev_warn(&pdev->dev, "No power down GPIO\n");
+-	} else {
+-		ret = gpio_request(tfp410_mod->gpio, "DVI_PDn");
+-		if (ret) {
+-			dev_err(&pdev->dev, "could not get DVI_PDn gpio\n");
+-			goto fail_adapter;
+-		}
++	tfp410_mod->power_gpiod = devm_gpiod_get_optional(&pdev->dev,
++							  "powerdn",
++							  GPIOD_ASIS);
++	if (IS_ERR(tfp410_mod->power_gpiod)) {
++		dev_err(&pdev->dev, "could not get DVI_PDn gpio\n");
++		goto fail_adapter;
+ 	}
++	if (!tfp410_mod->power_gpiod)
++		dev_warn(&pdev->dev, "No power down GPIO\n");
++	else
++		gpiod_set_consumer_name(tfp410_mod->power_gpiod, "DVI_PDn");
+ 
+ 	return 0;
+ 
+@@ -346,7 +345,6 @@ static int tfp410_remove(struct platform_device *pdev)
+ 	struct tfp410_module *tfp410_mod = to_tfp410_module(mod);
+ 
+ 	i2c_put_adapter(tfp410_mod->i2c);
+-	gpio_free(tfp410_mod->gpio);
+ 
+ 	tilcdc_module_cleanup(mod);
+ 
+-- 
+2.23.0
 
-Also, I think the same kind of change was made to the barebox bootloader
-at about the same time. Is there a fix for that queued up as well?
 
-Cheers,
-Peter
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
