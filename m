@@ -2,108 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD5E910F4C7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 03:06:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF59D10F4DD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 03:14:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ch67FmC29aTbyZs9h5B5xKHF2J75DLcSqDW+/570/iU=; b=qT/SQ26x9Bo3zg
-	t297e1IhUM0LkYt1iJKHdzmijY/HZDwr9pGNv6bhpkVENiqvlS5WHHMpQ5U5AwSKaXagJ9G3ZbnxX
-	7KIwjPqDhXlUtWFx0qBXzuwHP19+weVcCHolzjiWM3uLqvpFyny2/DE/kDHe8KmNzpIalTJGe2TpI
-	JpQddauAu6pmM3e5RfQPqfgQbpNhjlnuFsEHuwoKaZBMdhcvmF6dNs2HYWrWANEA5oyRAAYqZJinU
-	eFih8NXuGezNrfQncniYivoaago2/w5yhgUPyzzXgZEbYgZAIwnYyaKrEdAqTX2zGttbjC9fICUgZ
-	IW7A5eieVeTfjTbmibYQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VgZFb72l5DV0iGffbcDLJSXPqSBylKAXzDWfZbH834w=; b=fkInyqnKdVxub+
+	SLdXS1gY3oxqGmpNHf5I8la3D7fT1SgxdtA2cKqKZkSWaVmN2wf93y6x+nrN2I3Q7jMX8flbybzh/
+	Ge9tUvl2/wqVpN9IBou7qT6DTy5HLQLugAi+PaCBOW2Ug8HNswZQxqJzrifK+cWh/yr8sGc6zZBXh
+	Ex7r1Tq0KCnaptADkxhayC+hDqqL0YjFcYzCub64gFP52eo1teBHEK9y+pw/5w7vIJO1gyclU9ypm
+	Ch/QBr8IvOHNWJO89lgIrSOr+5OpI5wh96DbFVOC6R27Zhin001U4Lkxu27IHMlN5ywUAx40fC+mk
+	e5LFbqLcJYh1ApmNTstg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibxaG-00010I-Q8; Tue, 03 Dec 2019 02:06:36 +0000
-Received: from mail-eopbgr10069.outbound.protection.outlook.com ([40.107.1.69]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1ibxi5-0002yI-MI; Tue, 03 Dec 2019 02:14:41 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibxa9-0000za-5T
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 02:06:30 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=TvbbLuFmGxZdFTad6MuCDP0sFxO3J6LQTOEITXDEB2konZ+aYSGcDTi2Qi3w08Hoza9tYdVV2FuRSZ4eJVVQDCdlksnhGJprZapi5j7kY9hVcO8gTZZr4c9o/Mik6e+7DgAbNp7h52NVoWirxBSdBBgnsNr4GbHu8u7uDm7hNkrcLUlwOWHwsljHxqLWp5UVEahvLodaUkDQjFcbUSBX1TP8307eO+t8WvMpRMzoBxCwBBm2GDy/LRDzAwCpNkEgCZmNSU/VwQj1//QH99QCMQ90wmlg10aumhPHZXYAamcZ//RVs7iv31eP+4kPSerXBIaRsn5rEY7GGCFcpK1Drw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wFKHw7buYOeEI4jNps6gd2jlp+XjgOHTnaBECrN//zE=;
- b=inRwP0EWn1I/fBKxALDiV71saVUdkYxnXi//fY6QX7SbhP0RFjlkwUU7GC+1n1AMPW+ubQFTdx5gZf4sH+i2+kKg6Ve9OEAH3rbMtnk+2EwoYL9Jxagi5OWEXWFL8dvYyvYFwf9VTLoGviTpU5nCYWkMB6Qj370NArniG98zL2P3dWEffkjE+87MXUHsI2JfooSw5CKgsC1y/iIHE6BnGI6VUUCHt7C718MJQxZoDvmz3vdXB90brIMcr4c9vWTvWV3f3vF7ryaXjDkjy6jDFvyi6OC3su0l+VlJBfCGotZgoyGBz6kGGdbnHqR1vyR25zsdhRatG7TAJk2z0ucI9Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=wFKHw7buYOeEI4jNps6gd2jlp+XjgOHTnaBECrN//zE=;
- b=UILtfsIP3ZlEOQohGGMMIQY6d6emA5+lXhqKrVORNSpIIFbv6a30eEQhJJfLyRwLVI2UakQawNGRYsFSZaoJpH3uAespPdHswCwP9cPvGQrjc47bko1NW4asJJ36yr9UGaLSbW464thRf4KzvmZXuik63iMG5eBy1hNjPuUopZg=
-Received: from VI1PR0402MB3600.eurprd04.prod.outlook.com (52.134.3.146) by
- VI1PR0402MB2862.eurprd04.prod.outlook.com (10.175.23.143) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2495.18; Tue, 3 Dec 2019 02:06:25 +0000
-Received: from VI1PR0402MB3600.eurprd04.prod.outlook.com
- ([fe80::30e0:6638:e97c:e625]) by VI1PR0402MB3600.eurprd04.prod.outlook.com
- ([fe80::30e0:6638:e97c:e625%7]) with mapi id 15.20.2495.014; Tue, 3 Dec 2019
- 02:06:25 +0000
-From: Andy Duan <fugang.duan@nxp.com>
-To: Andre Renaud <arenaud@designa-electronics.com>
-Subject: RE: [EXT] Re: iMX6/UART imprecise external abort
-Thread-Topic: [EXT] Re: iMX6/UART imprecise external abort
-Thread-Index: AQHVqVLo4K9VUksIR0CZH5d48DlS+qenpL4wgAADpQCAAAElwA==
-Date: Tue, 3 Dec 2019 02:06:25 +0000
-Message-ID: <VI1PR0402MB36003D1412629B09289D977FFF420@VI1PR0402MB3600.eurprd04.prod.outlook.com>
-References: <CAEj2-1PyhkhEJ1+uRWio4vYxGuFOuR9mpZOdxmDDjGt_Az+3uA@mail.gmail.com>
- <CAOMZO5AxvuWETvubZU1Tu=0-SeoSzJs=LZcj-JJFE1+4O6-FxA@mail.gmail.com>
- <VI1PR0402MB3600E87D07687EDD89AA1050FF420@VI1PR0402MB3600.eurprd04.prod.outlook.com>
- <CAEj2-1OXUguf-iT2E_HVE-c5LUkufCapsvCOZ0iT-knkLp1vFA@mail.gmail.com>
-In-Reply-To: <CAEj2-1OXUguf-iT2E_HVE-c5LUkufCapsvCOZ0iT-knkLp1vFA@mail.gmail.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=fugang.duan@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: d230191f-b84c-4663-e1c8-08d7779566ac
-x-ms-traffictypediagnostic: VI1PR0402MB2862:
-x-microsoft-antispam-prvs: <VI1PR0402MB2862B844D705611D7BA19BBCFF420@VI1PR0402MB2862.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
-x-forefront-prvs: 02408926C4
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(396003)(366004)(376002)(346002)(136003)(199004)(189003)(66556008)(66446008)(6916009)(99286004)(66476007)(86362001)(66946007)(4744005)(7696005)(64756008)(305945005)(9686003)(55016002)(76116006)(14444005)(256004)(5660300002)(229853002)(14454004)(7736002)(4326008)(25786009)(33656002)(52536014)(76176011)(6436002)(478600001)(74316002)(102836004)(316002)(6116002)(11346002)(66066001)(446003)(186003)(3846002)(54906003)(8936002)(6506007)(26005)(6246003)(2906002)(81156014)(71200400001)(81166006)(71190400001)(8676002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB2862;
- H:VI1PR0402MB3600.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: wFQjA4eqoQyZCyGjNWxx8RKvO6zx7fkRfCSi6mBso5njIIsexGkTT/u4XvJD6DSAIt9OMPY+rwygywX6TeNXfiqkAo2uweM8GmmDDKItXmaZmsrjlsu00vWVKJE4/k5hCXveQsYBiNptNgZSV7VFWSmFg7PMJcETITNKjii6LBeu+QMDIM1WxjlO5KDR3EVkj87SgZLzkREr7a/X/UYMMHZXgVhUzOuXQKlYrZcpsp8l4Fyb0tbG0/1zNVgHaaabLy9/ux4ujdpurj/4HeYApra76OTxuQsZ537VrR/4M1XXwAR5UIGDJmYNpMDntzQcA1sWg/ZwR1wjLPIkWsOcGXNewjowVrq/l7kUt5go+9yOJPa/sxdrj117UI5Yb6IIURMRs/av9BrCEb7l8G5K5mVpE0HjY2XAvz/m+Xd9lwIQgyuyfoPYF9UuztVTlu5B
-x-ms-exchange-transport-forked: True
+ id 1ibxhw-0002xx-0z
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 02:14:33 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id g4so785309pjs.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Dec 2019 18:14:30 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=9KPgXU3E6Sr8Ubzx44nNFMIGdqQxtI966pQzecUZpvA=;
+ b=LGXX2od9Dv4BFtWI7Z2tcOdykO5L4amDzI2vnG+zPiaVeqhsUQEJUh8c6FBGaxMIvO
+ hzJMEaO3SPr6VnFlGXxoUh8OQ+SLy0DODfQ5NidpvlZwh07seFU0+688MeV9VJRHb610
+ aFWeEG9KV4+nyN3V3Cj83iTd5gSxf35wTmqkE4sED5hiHJHHXw+Kh1L5Nnc7CYjiKA7x
+ JxbEHBEreLo/11Xepy2qKdlitBHDayOqUazHUgtbjP7vAqaHIYwg2jiL1TjpxKfUT1nG
+ XkwcIwOPbFFD0zE0YgPgX5siYWhxAK2tBJg2PD6XViveBALyMSnN6Z3sgm1cyq0Kurn7
+ VWWQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=9KPgXU3E6Sr8Ubzx44nNFMIGdqQxtI966pQzecUZpvA=;
+ b=lX0v8uTcu2j2L/Yrfd/G/u0DST7E1T2kt3AAKfaZ/M4MSYjbEkfKmhr9QKK0upDNEg
+ xTCzjs78LqC1ARqPcGa7ikdwdtEb50wL9l37UwZK0o91+8xSSgmx9EwXg5x5CGl6iFzg
+ 4yCdnuelYrmGzu0WZdVl8ZlTcwk0i27jLN/SGT4khO5oYgy8Jl2MeNIfSQzAQeIgWeXn
+ Vbwbxt46viSUuCppMYXdxb6gX0C0lGnczvZ5OZA13kJctpzgxGG/wTmdbD9W5HzRKaUB
+ DDfmmC9ABs8notQfH9/IRc1A4GBGyjDFOwmPht/USuk+kAFOoLlR6mth48/TWvCnOLiW
+ Sp+g==
+X-Gm-Message-State: APjAAAWZCyrBBHkkt+h77OxhTCAg9l2ux1M9gumkeUQfl52300T6tfKz
+ /s2jAlnYSHlKoxa/mVumQQE=
+X-Google-Smtp-Source: APXvYqx5B6sHweZcdl06RHNrv7cwxjlpUX4+DkYw3Pcovt9avfdndMvedC5ziOW3Tw2ueV26ai5QRw==
+X-Received: by 2002:a17:902:bf47:: with SMTP id
+ u7mr2551220pls.259.1575339269628; 
+ Mon, 02 Dec 2019 18:14:29 -0800 (PST)
+Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
+ [216.71.213.236])
+ by smtp.gmail.com with ESMTPSA id a12sm922528pga.11.2019.12.02.18.14.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 02 Dec 2019 18:14:29 -0800 (PST)
+From: Vasily Khoruzhick <anarsoul@gmail.com>
+To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+Subject: [PATCH] arm64: dts: allwinner: a64: set GPU clock to 432 MHz
+Date: Mon,  2 Dec 2019 18:14:20 -0800
+Message-Id: <20191203021420.164129-1-anarsoul@gmail.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d230191f-b84c-4663-e1c8-08d7779566ac
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Dec 2019 02:06:25.1103 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: UtZ1L+mPYfKqYV0EiklcRgIFHAh/6ZjvfrDLaBNkodvP8KMeHw+K/Zu3ySMFEguhcK2dNgwwZ5pFVWTJKd2hHg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB2862
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_180629_207507_B2BE71B4 
-X-CRM114-Status: GOOD (  11.39  )
+X-CRM114-CacheID: sfid-20191202_181432_072834_456F4AE5 
+X-CRM114-Status: GOOD (  10.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.69 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (anarsoul[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -122,32 +97,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, "moderated list:ARM/FREESCALE IMX /
- MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andre Renaud <arenaud@designa-electronics.com> Sent: Tuesday, December 3, 2019 10:01 AM
-> > > Could you please try a vanilla 5.4.1 kernel?
-> >
-> > Please try 5.4 kernel firstly.
-> 
-> We are trying 5.4.1 at the moment, but will try 5.4 after that if the issue
-> persists.
-> 
-> > Can you remove the sdma firmware
-> > "/lib/firmware/imx/sdma/sdma-imx6q.bin" and try it ?
-> At the moment we have CONFIG_IMX_SDMA not set, so I'm assuming this
-> binary wouldn't have any impact?
+That's what BSP kernel sets it to and it seems to work fine.
 
-Yes, if the config is disabled, SDMA driver is not loaded.
+Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+---
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 3 +++
+ 1 file changed, 3 insertions(+)
 
-In generally, access uart valid registers cannot cause external data abort.
-> 
-> Regards,
-> Andre
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+index 27e48234f1c2..0051f39b3d98 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+@@ -976,6 +976,9 @@ mali: gpu@1c40000 {
+ 			clocks = <&ccu CLK_BUS_GPU>, <&ccu CLK_GPU>;
+ 			clock-names = "bus", "core";
+ 			resets = <&ccu RST_BUS_GPU>;
++
++			assigned-clocks = <&ccu CLK_GPU>;
++			assigned-clock-rates = <432000000>;
+ 		};
+ 
+ 		gic: interrupt-controller@1c81000 {
+-- 
+2.24.0
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
