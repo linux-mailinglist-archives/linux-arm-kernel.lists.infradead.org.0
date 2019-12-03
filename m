@@ -2,84 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FBAF111B1B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 22:40:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71A6D111B63
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 23:09:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tyQYZgvCHPMfz5VIyrOjPbXBdq+fpRkClPGbQ4Iih5w=; b=nzhCwdLxgxTM1p
-	N9+CT0LcpyvjpizDmKAzva9U+AVyCRpowQ5X/e+M5UWzuJLWIkgVDNxtuDxNvKMHmUYXxh3osLqkT
-	5nRVeHvb/ST1cli04AMVdNaqWOG+RnE6OWRiwMgdCyzZLtNZPnWuqEmhhvyQiwlBboKl4ZfwenJE5
-	lYSIISTxqHLzJdh3OwU1OcPpWkWCuv8heK6GrgMNzBQoBfPMk7/Q6cYqwtjG41QtAKW52/Pf0M4sY
-	n/REj2r/YNEdt8gNIkbHo89tpPX8i5Ku3Jw+WOXOy+y9Z611jGZQzez1JNzUx7EDTNk182vLnRIoD
-	LUBkeiUiG1Y2McRhyBFQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/gLRYVUTtSAZdQscM/+42QQ5Z1SfurFc1u++qOwr9fM=; b=KGMNrIkmQCjypYqCZaNBRk2eR
+	dg0acbq/DIk830oalKr4hy+4FgsupZ6MHVlRjLeGVjwN7nIqKRbgwsJbLXmdVBRJbP1yYtEfS9QLi
+	OOWx3Bl9xa5KjwFfIQwb83cvpJ8YmgGHq85sg/lklvDPagkXRF6Af0tp8/ClQZiPeFAan3ZckArl0
+	NVeSTARty0MSMRIxXv81AWzofACQid6dF6GHrj55VPILGFNjtuC0qa9WULrMQnEctQfGNT65sToun
+	UiGgTl6NWcFwPd0fe3Q6BdiSMp7sdXpFZ1ypnd0GxAoLGnCU7znaKFvYXBtEXZP15D2WcCHUkknRO
+	86aiVB0nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icFuL-0001Qi-5M; Tue, 03 Dec 2019 21:40:33 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1icGMY-00027N-EB; Tue, 03 Dec 2019 22:09:42 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icFu9-0001Q9-CT
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 21:40:22 +0000
-Received: by mail-ot1-f67.google.com with SMTP id p8so4340557oth.10
+ id 1icGMR-00026i-3i
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 22:09:36 +0000
+Received: by mail-pg1-x541.google.com with SMTP id z124so2257420pgb.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 13:40:21 -0800 (PST)
+ Tue, 03 Dec 2019 14:09:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=mSBIYOscptZnYWaI4AeOjEh64oDv5ru63qkreKiXvlY=;
+ b=geuMiRjARcxU+pIzzuOeH6lx6cneFVRMrKbm5tRMvY3hwxiwCgtP/MLufBqpU4RJ7h
+ 3UO8ZYfwl1j2qXpO4wsmCZlyRB/63Co3z+e4AVTFnaN3wUIXNoU58uL87/FjdMvz5C9t
+ dSKy47buYSGEPK+Do9zawbCYg+AbEQpnBDPBU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=hERvSaz66SkiNBwQoTtBUm4Hajuej4GF7gNQy5oDEtA=;
- b=hhOfA+i2fdsDL6O6ZsTiNbIMH4hAJv6wbrM4QeC2x+7xjCqXEuXr2esKUXsQa+k9Fx
- 6DoOLTScy2y+sf5g0YyDVMWtyHbJfnoazD32lfRmypjuhgCCPPXJM1CYDJRLR5o4QGkE
- PfewOwtasmNi30yjjzeUdbZAamEO4/iOvW5Q3/Rf+RkYPjPE8xg2jPdG5x3YgjAbqlHN
- dVyRlo2ruNPsaTMNK3qRVxDpgKiJHq6ApiHOILuYDHQ2QEiP9jPzu1DPoR0HNnmHxcWT
- TCxh1nZow7p3jGLXA90RxDlt1mYSdvd9AYhKlUe82XqQH1BxtJxHUjz4ZuE3euY10s6J
- +7UA==
-X-Gm-Message-State: APjAAAU0tbJ0ClJdfWfJjuQToiK7+rxZbJT1cMk8LybdrX4WY2xR1pa6
- q71XSJcMw8/DTlCFUarldQ==
-X-Google-Smtp-Source: APXvYqxf17ZEEJHtpbzNPWQPDQrchks+zHBzzA9aGw9kjrzAjVDaPbPgWRLQpOyzkE7L0M5bx5LpoQ==
-X-Received: by 2002:a9d:588c:: with SMTP id x12mr24016otg.2.1575409220365;
- Tue, 03 Dec 2019 13:40:20 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w123sm1552436oiw.47.2019.12.03.13.40.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Dec 2019 13:40:19 -0800 (PST)
-Date: Tue, 3 Dec 2019 15:40:19 -0600
-From: Rob Herring <robh@kernel.org>
-To: Stephan Gerhold <stephan@gerhold.net>
-Subject: Re: [PATCH 1/2] dt-bindings: mfd: ab8500: Document AB8505 bindings
-Message-ID: <20191203214019.GA24180@bogus>
-References: <20191117221053.278415-1-stephan@gerhold.net>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=mSBIYOscptZnYWaI4AeOjEh64oDv5ru63qkreKiXvlY=;
+ b=PPEt2D5wZRT6ikLYbzfX15PFnsklhZ+2tpc+uAchTO12H7E2dAUB2dIR407faX8pws
+ NaOXhGNAJ2xJ7uSLOtPRCPdTc6Q2cpRbfctrmQkibWDC8CxDc3HZtqGfuRs/HLQ7twZN
+ RNWrL/uIzDpLgvnOSSYJrkJGbvxt/X5RcaNRWdpG4GiLQgZ3Za/7JBRrca2WwDTHlOCi
+ FpUxU5TuwYWiE+vf36j5Bj54KK2SWcTPcdhSPa+vdDdb0VzLrBO99Lcy19PQW5fLsRy3
+ xfXpOlsdqLDSU/JFEzgc9qold1u9FfUJemI3y09JQlZ/NvRd/lwetnf+xaBwhG7D5Irg
+ dhuA==
+X-Gm-Message-State: APjAAAUY6vpkqEBKrNMyB3zVgGqAMgEoSxJEi6HvML6sBA6YQJ2sIvxj
+ Zj1IN/D71prW0FvPeLtjiZIrPg==
+X-Google-Smtp-Source: APXvYqylfTPPGwnkmI3aoo7y5yzJGuEDLuZJ1o057PLvAd+XFAn29jSN6QkIzubcCN2MEgWSyp95Dg==
+X-Received: by 2002:a63:6704:: with SMTP id b4mr8002284pgc.424.1575410973842; 
+ Tue, 03 Dec 2019 14:09:33 -0800 (PST)
+Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id k12sm4471207pgm.65.2019.12.03.14.09.26
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 03 Dec 2019 14:09:33 -0800 (PST)
+Subject: Re: [PATCH v3 2/6] PCI: iproc: Add INTx support with better modeling
+To: Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Andrew Murray <andrew.murray@arm.com>
+References: <1575349026-8743-1-git-send-email-srinath.mannam@broadcom.com>
+ <1575349026-8743-3-git-send-email-srinath.mannam@broadcom.com>
+ <20191203155514.GE18399@e119886-lin.cambridge.arm.com>
+ <CAHp75Vf7d=Gw24MTq2q3BKspkLEDDM24GVK4Zh_4zfZEzVuZjw@mail.gmail.com>
+From: Ray Jui <ray.jui@broadcom.com>
+Message-ID: <40fffa66-4b06-a851-84c2-4de36d5c6777@broadcom.com>
+Date: Tue, 3 Dec 2019 14:09:22 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191117221053.278415-1-stephan@gerhold.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAHp75Vf7d=Gw24MTq2q3BKspkLEDDM24GVK4Zh_4zfZEzVuZjw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_134021_438661_5A33517C 
-X-CRM114-Status: GOOD (  13.03  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191203_140935_150749_5F86C1C6 
+X-CRM114-Status: GOOD (  16.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,28 +101,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stephan Gerhold <stephan@gerhold.net>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
+ Ray Jui <rjui@broadcom.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Srinath Mannam <srinath.mannam@broadcom.com>, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 17 Nov 2019 23:10:52 +0100, Stephan Gerhold wrote:
-> AB8505 can now be configured from the device tree.
-> The configuration is almost identical to AB8500, so just add a note
-> for the nodes/compatibles that differ between the two revisions.
+
+
+On 12/3/19 11:27 AM, Andy Shevchenko wrote:
+> On Tue, Dec 3, 2019 at 5:55 PM Andrew Murray <andrew.murray@arm.com> wrote:
+>> On Tue, Dec 03, 2019 at 10:27:02AM +0530, Srinath Mannam wrote:
 > 
-> Cc: Linus Walleij <linus.walleij@linaro.org>
-> Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
-> ---
->  Documentation/devicetree/bindings/mfd/ab8500.txt | 8 +++++---
->  1 file changed, 5 insertions(+), 3 deletions(-)
+>>> +     /* go through INTx A, B, C, D until all interrupts are handled */
+>>> +     do {
+>>> +             status = iproc_pcie_read_reg(pcie, IPROC_PCIE_INTX_CSR);
+>>
+>> By performing this read once and outside of the do/while loop you may improve
+>> performance. I wonder how probable it is to get another INTx whilst handling
+>> one?
+> 
+> May I ask how it can be improved?
+> One read will be needed any way, and so does this code.
 > 
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+I guess the current code will cause the IPROC_PCIE_INTX_CSR register to 
+be read TWICE, if it's ever set to start with.
+
+But then if we do it outside of the while loop, if we ever receive an 
+interrupt while servicing one, the interrupt will still need to be 
+serviced, and in this case, it will cause additional context switch 
+overhead by going out and back in the interrupt context.
+
+My take is that it's probably more ideal to leave this portion of code 
+as it is.
+
+>>> +             for_each_set_bit(bit, &status, PCI_NUM_INTX) {
+>>> +                     virq = irq_find_mapping(pcie->irq_domain, bit);
+>>> +                     if (virq)
+>>> +                             generic_handle_irq(virq);
+>>> +                     else
+>>> +                             dev_err(dev, "unexpected INTx%u\n", bit);
+>>> +             }
+>>> +     } while ((status & SYS_RC_INTX_MASK) != 0);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
