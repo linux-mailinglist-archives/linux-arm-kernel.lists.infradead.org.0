@@ -2,66 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B475111DDB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 23:59:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F3E6111BC3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 23:37:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bh8zMmU9DID41lI/OHX2ar/Jc0E2Ha+rEF6eIaOu8ps=; b=g/7oPuuZ0Drfr9
-	1gsABAsahHZmgSgycqA1KucynsSJ6Yc51IxZFMuLLqlN6x8EjcHf2n71BI+2gIK8SvI3iYqgYdgYh
-	x2vgjUQoMVP+VHuRxO3z9jPY9ZFZ61QaabhLL9rQN69zPIYp7EsgWcwOmjuYFZB/j+ngp9Eij+Y/z
-	pVEPYwELYRG69jjpPdIn539RQiDrzpyNF0iON3Wj/pwb63u2/bEMj4Tgt5c6x3XB4WCpHWVDJ7Rpa
-	dQ62hFios4i8SGw+11v4JPxuosI1jibgz1GR9o1TRyTy/z5uCn5y+u+Qzh5mxQN13F1OIrD4EL892
-	LfSbgoRioEBN29actTCA==;
+	List-Owner; bh=oYX9qPjyTMCV3UKDF6WwLrxyhjjy3B2LjAkQriQGDPQ=; b=FKpy2Ej+/sboku
+	0seHWKNKK+Z/NHyOTQ3iiwHUUl+NAJ0DoA3EE1IAynFT20YJCQ7OBuQPy8NA82dpOw2pYkIYidDv9
+	dHdl6uoC2WpRRO+E63gC4A1A6sICYG1PGI716Qtb6CD6mTpsLjkXVAnnXqYyuDz+iANMFtHsmivuf
+	Vg69HpBiFMpDpdadKSMvo6H8cPs2InLo39P0GRoOxzI0KjxuffH+32OMZ42KBJ2Dxj3Yam0CLx5+i
+	INCMR6/uWKyB4uvtGk5IPRfQeWPEjaDwCvumCa4rOcenPQ7qWkB7wY4t+SKpRpv70R6YckPhz7lLR
+	wZc4tYsEek7OP9SmOOnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icH8Y-0008R5-A6; Tue, 03 Dec 2019 22:59:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1icGnC-000572-QK; Tue, 03 Dec 2019 22:37:14 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icH8Q-0008Pf-Vz; Tue, 03 Dec 2019 22:59:12 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C7A7C20803;
- Tue,  3 Dec 2019 22:59:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575413943;
- bh=xse6kgt5T0zLm987FtTsfxKSnjkyBAkCk5p8frhNgPk=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rNsVxxg7d6RWxHbd7kPIZSKh44YDZuYotn+fTLSZ7sRFEcBdWJJxVUfUClMxnSgf5
- 7VFD5keOghIau6mncYXeoW4wfl108IXYgjt68aIiyJQjGmPPg0CacDkmV/GH91FrNj
- fjaOdtKDntK9KXfKEHmBt2A5KZlnWii6GTdDkq4A=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.19 299/321] mtd: rawnand: atmel: fix possible object
- reference leak
-Date: Tue,  3 Dec 2019 23:36:05 +0100
-Message-Id: <20191203223442.705005398@linuxfoundation.org>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191203223427.103571230@linuxfoundation.org>
-References: <20191203223427.103571230@linuxfoundation.org>
-User-Agent: quilt/0.66
+ id 1icGn3-00055v-SM; Tue, 03 Dec 2019 22:37:07 +0000
+Received: by mail-oi1-f196.google.com with SMTP id 6so4967651oix.7;
+ Tue, 03 Dec 2019 14:37:05 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=NnWqN+v6idF+rYohPBc8yK8WHdS4XunbYI4eJ0qCx44=;
+ b=R50tlexcX0fIWyvZrOSQXVmGxQ8r/JqJTo18Sy4bUwV2fVpBr0jJ8A49tyXvgDZ5Ye
+ y80P8NpqtT7SFD6b7yX9z3L9t39BAdMGp53aDqsFnZFJHojLCI+lQGVk/kPOkwZWfKvw
+ 0jlgM6QPstOZKEVz6djimG5Ssb8ll8jJ8tAekqjDAJiSBzSlxL6LZz950obyTX8UXaQ5
+ hgJjZTCj7JhksQU32GXbreDSvXKvsRlqfhxc2Hn8d23gSTUr3tZ0UsTYXLWYQSvEZGLU
+ AzZQHdkaivp4NHrVzc4UuJbGYP1tMC6eDTzA95G0gRrjgOCh9ZcS/T3Im03AqKUY4mKf
+ xHHA==
+X-Gm-Message-State: APjAAAXvkk6dWtq2pWVdbc4/xWFgQZfnCNqjLRQhzfj9PylV6BfkfchW
+ 1N1u+sXSGnqIiBLL+wEVxQ==
+X-Google-Smtp-Source: APXvYqyY+MvnuM+hiACvXhy/3tKtbTc72UkG95+81S0zipokTze6+5MxpHqRBYpAnCxnfaY6IROUJQ==
+X-Received: by 2002:aca:4cc7:: with SMTP id z190mr996oia.10.1575412625132;
+ Tue, 03 Dec 2019 14:37:05 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id m2sm1615150oim.13.2019.12.03.14.37.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Dec 2019 14:37:04 -0800 (PST)
+Date: Tue, 3 Dec 2019 16:37:04 -0600
+From: Rob Herring <robh@kernel.org>
+To: Jagan Teki <jagan@amarulasolutions.com>
+Subject: Re: [PATCH v2 1/2] dt-bindings: arm: rockchip: Add libretech for
+ roc-pc binding
+Message-ID: <20191203223704.GA29109@bogus>
+References: <20191119185817.11216-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191119185817.11216-1-jagan@amarulasolutions.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_145911_077799_F0CA2AA5 
-X-CRM114-Status: GOOD (  14.98  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191203_143705_917439_3C4696A7 
+X-CRM114-Status: GOOD (  16.67  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,102 +89,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Boris Brezillon <bbrezillon@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Tudor Ambarus <tudor.ambarus@microchip.com>,
- Wen Yang <yellowriver2010@hotmail.com>, stable@vger.kernel.org,
- Richard Weinberger <richard@nod.at>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Lee Jones <lee.jones@linaro.org>, Brian Norris <computersforpeace@gmail.com>,
- David Woodhouse <dwmw2@infradead.org>, Marek Vasut <marek.vasut@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Da Xue <da@lessconfused.com>, Heiko Stuebner <heiko@sntech.de>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Akash Gajjar <akash@openedev.com>, Levin Du <djw@t-chip.com.cn>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Wen Yang <yellowriver2010@hotmail.com>
+On Wed, Nov 20, 2019 at 12:28:16AM +0530, Jagan Teki wrote:
+> Though the ROC-PC is manufactured by firefly, it is co-designed
+> by libretch like other Libretech computer boards from allwinner,
+> amlogic does.
+> 
+> It is always meaningful to keep maintain those vendors who are
+> part of design participation, so add libretech roc-pc compatible
+> with existing binding.
 
-commit a12085d13997ed15f745f33a0e01002541160179 upstream.
+Maybe so, but this is pretty pointless if it's not different h/w. 
+Compatible strings are simply a h/w identifier.
 
-of_find_device_by_node() takes a reference to the struct device
-when it finds a match via get_device, there is no need to call
-get_device() twice.
-We also should make sure to drop the reference to the device
-taken by of_find_device_by_node() on driver unbind.
+> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> ---
+>  Documentation/devicetree/bindings/arm/rockchip.yaml | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> index f7470ed1e17d..45728fd22af8 100644
+> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
+> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> @@ -100,6 +100,7 @@ properties:
+>        - description: Firefly ROC-RK3399-PC
+>          items:
+>            - enum:
+> +              - libretech,roc-rk3399-pc
+>                - firefly,roc-rk3399-pc
+>                - firefly,roc-rk3399-pc-mezzanine
 
-Fixes: f88fc122cc34 ("mtd: nand: Cleanup/rework the atmel_nand driver")
-Signed-off-by: Wen Yang <yellowriver2010@hotmail.com>
-Suggested-by: Boris Brezillon <bbrezillon@kernel.org>
-Reviewed-by: Boris Brezillon <bbrezillon@kernel.org>
-Reviewed-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Acked-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Cc: Tudor Ambarus <tudor.ambarus@microchip.com>
-Cc: Boris Brezillon <bbrezillon@kernel.org>
-Cc: Miquel Raynal <miquel.raynal@bootlin.com>
-Cc: Richard Weinberger <richard@nod.at>
-Cc: David Woodhouse <dwmw2@infradead.org>
-Cc: Brian Norris <computersforpeace@gmail.com>
-Cc: Marek Vasut <marek.vasut@gmail.com>
-Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
-Cc: linux-mtd@lists.infradead.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-Signed-off-by: Lee Jones <lee.jones@linaro.org>
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+This doesn't match your change in the dts. file. The schema says there 
+are 2 strings with the first one being 1 of these 3.
 
----
- drivers/mtd/nand/raw/atmel/pmecc.c |   21 +++++++++++++++------
- 1 file changed, 15 insertions(+), 6 deletions(-)
-
---- a/drivers/mtd/nand/raw/atmel/pmecc.c
-+++ b/drivers/mtd/nand/raw/atmel/pmecc.c
-@@ -876,23 +876,32 @@ static struct atmel_pmecc *atmel_pmecc_g
- {
- 	struct platform_device *pdev;
- 	struct atmel_pmecc *pmecc, **ptr;
-+	int ret;
- 
- 	pdev = of_find_device_by_node(np);
--	if (!pdev || !platform_get_drvdata(pdev))
-+	if (!pdev)
- 		return ERR_PTR(-EPROBE_DEFER);
-+	pmecc = platform_get_drvdata(pdev);
-+	if (!pmecc) {
-+		ret = -EPROBE_DEFER;
-+		goto err_put_device;
-+	}
- 
- 	ptr = devres_alloc(devm_atmel_pmecc_put, sizeof(*ptr), GFP_KERNEL);
--	if (!ptr)
--		return ERR_PTR(-ENOMEM);
--
--	get_device(&pdev->dev);
--	pmecc = platform_get_drvdata(pdev);
-+	if (!ptr) {
-+		ret = -ENOMEM;
-+		goto err_put_device;
-+	}
- 
- 	*ptr = pmecc;
- 
- 	devres_add(userdev, ptr);
- 
- 	return pmecc;
-+
-+err_put_device:
-+	put_device(&pdev->dev);
-+	return ERR_PTR(ret);
- }
- 
- static const int atmel_pmecc_strengths[] = { 2, 4, 8, 12, 24, 32 };
-
-
+>            - const: rockchip,rk3399
+> -- 
+> 2.18.0.321.gffc6fa0e3
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
