@@ -2,58 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6BAC1103D6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 18:48:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD5651103EB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 19:00:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=b23yfjh1FlCiyBX+NSMRbBtudftp4yIB5JdrKVpnI/c=; b=UBKsgtsgv4u6pVId6ylVWtfqG
-	decpqBKJnXmm4cMZKop0f37C13oXzPeK+R/eiOD7l35Vf7bwldckOmLnh52mLQ6DDvwTKxa2Jy/Gk
-	hQAjGVVbUkxjwCA1vYPp47+an19Pm9bgIrG7Fz2ezz6TSZmzAM66n2vBFHKUkqmAGN7wBKIu/8WgA
-	DfatcOAAnZ/hVuKQ4sTL1ulyfxEbXAHJ0b3anO3Ud5B2KYpJM6XzaIS5Gv0zIL4yj9bsagpgh6kNx
-	ood/wDzLFcbYqeXvPw3rG+aEz1OeD6e0MRJaxjwYKkkYEHl7wMXRyAT9DwrTfJ5wchPistIYFnZUj
-	a3K/RgjWQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7KXTofVfr5MmrnZi1qetq/oNgRkI2ghwVCQ0GmYw9Sg=; b=ZeJOx8jPlWFaom
+	WWagYxZeETY1C6DBqOLFCV2QrZijA+4KMJlI9XJtrdGSiB0Pp8PQ1N56NlQsQbnC1TnCIWaGYy05/
+	qajel+S42wm614f2pyRzDs8+CK2YpgYvSSBo79rtR2cRlDOsv6OvgE98ivNY9Q1NWDikD3T5fRFb5
+	KDr/xwJsq8IcA5R2sbCt1sd0JAi82D8ZtfkiyTH3UQe1O18ceEIb7R7T+gsKfOy6lMit4l1mn59z4
+	wlvQspBMVFccOPtjB1ARpZf0CrFKvfu4PE/o6geM2S+4ukpnS7diW6oiBf3brWkGH0fnciIjIhwjC
+	KTSFehDEmlnfk8D6v6gQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icCHN-0005B2-9M; Tue, 03 Dec 2019 17:48:05 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1icCTT-0001YY-RG; Tue, 03 Dec 2019 18:00:35 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icCHF-00056v-AG
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 17:47:59 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@misterjones.org>)
- id 1icCHB-0001L9-Fa; Tue, 03 Dec 2019 18:47:53 +0100
-To: Jerome Forissier <jerome@forissier.org>
-Subject: Re: Kernel v5.2+ on =?UTF-8?Q?HiKey=39=36=30=3F?=
-X-PHP-Originating-Script: 0:main.inc
+ id 1icCTN-0001Y8-GI
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 18:00:31 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 03 Dec 2019 10:00:28 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,274,1571727600"; d="scan'208";a="208527468"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga008.fm.intel.com with ESMTP; 03 Dec 2019 10:00:27 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1icCTL-000HgF-6w; Wed, 04 Dec 2019 02:00:27 +0800
+Date: Wed, 4 Dec 2019 01:59:47 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: [nomadik:ux500-skomer 40/47]
+ drivers/gpu/drm/panel/panel-novatek-nt35510.c:385:5: sparse: sparse: symbol
+ 'nt35510_send_long' was not declared. Should it be static?
+Message-ID: <201912040159.hVq7kws6%lkp@intel.com>
 MIME-Version: 1.0
-Date: Tue, 03 Dec 2019 17:47:53 +0000
-From: Marc Zyngier <maz@misterjones.org>
-Organization: Metropolis
-In-Reply-To: <f58c2c0e-ec82-6675-84e6-ad63fd93c8ff@forissier.org>
-References: <f58c2c0e-ec82-6675-84e6-ad63fd93c8ff@forissier.org>
-Message-ID: <5e71ae8ec1ecb64544d131686f5405bb@www.loen.fr>
-X-Sender: maz@misterjones.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: jerome@forissier.org, linux-arm-kernel@lists.infradead.org,
- vincenzo.frascino@arm.com
-X-SA-Exim-Mail-From: maz@misterjones.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_094757_507633_E997AFA0 
-X-CRM114-Status: GOOD (  17.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191203_100029_554545_1A2F2260 
+X-CRM114-Status: GOOD (  10.14  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,86 +69,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: kbuild-all@lists.01.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jerome,
+tree:   https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-nomadik.git ux500-skomer
+head:   10adfdbea52ccf7346c17aec778042ab5b604ca9
+commit: 40d1110621b1f80d7b04c36bd212cd34574d51f8 [40/47] drm/panel: Add driver for Novatek NT35510-based panels
+reproduce:
+        # apt-get install sparse
+        # sparse version: v0.6.1-82-g68ac1bb-dirty
+        git checkout 40d1110621b1f80d7b04c36bd212cd34574d51f8
+        make ARCH=x86_64 allmodconfig
+        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
 
-Adding Vincenzo (who was the last one to mess with the VDSO).
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
 
-On 2019-12-03 15:43, Jerome Forissier wrote:
-> Hi,
->
-> Has anyone successfully run kernel v5.2 or later on a HiKey960 board?
->
-> For some reason, anything past v5.1 doesn't work for me and I could 
-> not
-> figure out why. The symptom is it never gets to the login prompt. The
-> root FS is a Buildroot-generated one, and prior to reaching the 
-> kernel
-> the board runs TF-A, OP-TEE, UEFI (edk2) and Grub.
->
-> I tried replacing /init with a shell, in which case I can type a 
-> command
-> but whatever it is (even a simple "ls"), the command hangs on exit 
-> and I
-> never get back to the prompt.
->
-> Then I started bisecting, that was quite painful but I found several
-> problematic commits. I ended up reverting the following (in this 
-> order)
-> to be able to boot v5.4:
->
-> 1. "arm64: vdso: Substitute gettimeofday() with C implementation"
-> 2. "arm64: vdso: Explicitly add build-id option"
-> 3. "arm64: arch_timer: Ensure counter register reads occur with 
-> seqlock
->     held"
-> 4. "arm64: vdso: Remove stale files from old assembly implementation"
->
-> So the main thing appears to be the VDSO stuff, but if I do not also
-> revert the arch_timer commit I get a kernel panic:
->
-> [    4.657118] Run /init as init process
-> [    4.662380] Kernel panic - not syncing: Attempted to kill init!
->                exitcode=0x00000004
-> [    4.670035] CPU: 7 PID: 1 Comm: init Not tainted 5.4.0-00003-
->                g223b12c033fb #258
-> [    4.677338] Hardware name: HiKey960 (DT)
-> [    4.681253] Call trace:
-> [    4.683700]  dump_backtrace+0x0/0x148
-> [    4.687355]  show_stack+0x24/0x30
-> [    4.690664]  dump_stack+0xbc/0x100
-> [    4.694058]  panic+0x168/0x368
-> [    4.697105]  do_exit+0xa10/0xa28
-> [    4.700323]  do_group_exit+0x48/0xa8
-> [    4.703892]  get_signal+0xec/0x848
-> [    4.707287]  do_notify_resume+0x21c/0x480
-> [    4.711290]  work_pending+0x8/0x10
-> [    4.714689] SMP: stopping secondary CPUs
-> [    4.718607] Kernel Offset: disabled
-> [    4.722089] CPU features: 0x0002,21082004
-> [    4.726090] Memory Limit: none
-> [    4.729145] ---[ end Kernel panic - not syncing: Attempted to kill
->                init! exitcode=0x00000004 ]---
->
-> Any idea what could be wrong with my setup?
 
-Posting the relevant sections of your kernel messages would be a good 
-start.
+sparse warnings: (new ones prefixed by >>)
 
-The reversal of the timer patch seems like a red herring, but Vincenzo
-should be able to help you there.
+>> drivers/gpu/drm/panel/panel-novatek-nt35510.c:385:5: sparse: sparse: symbol 'nt35510_send_long' was not declared. Should it be static?
 
-Thanks,
+Please review and possibly fold the followup patch.
 
-         M.
--- 
-Who you jivin' with that Cosmik Debris?
+---
+0-DAY kernel test infrastructure                 Open Source Technology Center
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
 
 _______________________________________________
 linux-arm-kernel mailing list
