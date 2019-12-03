@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC0FA10FF1F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 14:48:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C0E910FF2C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 14:49:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=G9RaJj+lqvn0AUIF1AOEd+WmyskUiJAJR+lg0bBjCVQ=; b=step25vNa0Cy3n
-	Hml6aZpcMvbHvF49sBkAMQ6yM4OrjjmFtZgdY6V/r5OicPLSwG8OI0JFAni/ebVMa/s5Dw+1icLpu
-	ZJ/VSiX6jHo1XoppH8QF7SV708d14WgCvPZ+uT04bKXk5xgUP+F09A4OyIjt8gSgRqIjkGuAQfvm8
-	umXmEuMvzKASOb6zhQxbaIWRnkT5om+ZzBFAeqBvoYoHXMAiUlHqMqwHPXIL1B7ZZbUrsXZ/9FOcw
-	vShIjSnAjCEqKGYYA8r0mR6JPZiW+umJiM2IDVzKb4bf/obcLN/g8ovxrYz7StcQP+u/zMc4bgTv4
-	1Yh14Uilf79zMa/gXl+Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pBZC8tu0x9aSa7L63y+K7AIClsXlA5S0gLnH8tBzhBc=; b=a0G2gcj941F3Ev
+	Th7CDN1+o1L5OnuQNqYr840ErHBhE5j2jlWNanQjk+04nyI6bBqy5f2Td75zImELbUlR66LJn7U/N
+	6KsrgFfHSe1MVkJ0tLkjDvzPnFuIIRNtgP7rnt1JQzjGXoNgXQSPbSEf7r57n8NeV7647e7TQFk6o
+	/frN//o4BU6ZNWShze3pSSz7ntnKu/ydTia6ZNJHBaxNcZU8NrtbQXsy8HUtZjRSUtvffl6OuVman
+	M06O1sDGvDPJ2phSFOYGBjaDOmmvGnwC6DflvFf91p7sC2HUsNT/wANT1S+GVTvud5f1AbOXMQvky
+	S0i2IM5eIiKDwciw2b2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic8Xd-00089H-6J; Tue, 03 Dec 2019 13:48:37 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1ic8Xu-0008Ha-QG; Tue, 03 Dec 2019 13:48:54 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic8XV-00088x-WB
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 13:48:31 +0000
-Received: by mail-pl1-x642.google.com with SMTP id o9so1726633plk.6
+ id 1ic8Xb-0008CR-Gs
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 13:48:36 +0000
+Received: by mail-pf1-x442.google.com with SMTP id h14so1877392pfe.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 05:48:29 -0800 (PST)
+ Tue, 03 Dec 2019 05:48:35 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=7fyH+2F2a+rl1kectMRnZFlHTKNuWeTnYPoVBXe5Db4=;
- b=O7md203+f98TyLan33Yz4aeIVna2Ip1fUra9eSfxZt0oM+104KLRNIYxIR3+igDF91
- ZSIlXuIuSFdOCRwQA6VRzSsU2uUWuWRdGZ3LpLOzawoqqBUauMRZWt0AH5gcrW+KIbbg
- TGcdTj7F2aaAZV+V9yBZPetyHggQ+sa8SJ5gI=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=UUlsRRK2pgCm9l96Sadau8/Jinv10/1VueVd+pNemqM=;
+ b=kxVcUwh6Bbz7GVnMzIw7OTehgR8KgnjaD4BiGmDF/ZlEyM7XbXFeVNJkNUjcS0t6l1
+ ug08pUmwQ8V3G1mAq5V/rr+pNYT5oBj1D04K4ejrpKH8Q0S2oo0oJ4yVDGTkroAclcl8
+ ITvyf4yd9x2XCvuTbtm7VgEqscmkSFDA0Nuxw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=7fyH+2F2a+rl1kectMRnZFlHTKNuWeTnYPoVBXe5Db4=;
- b=TRESSQEXWSzW57D67DNBOvjBmPjXAqhvC3YwSBeY+PkW+SMR66TOqTH9bAdQeDxuDG
- zx84prQNciPP0E1bYNAPxn6ETIjRtNLau9NA+0ScLYJPh7G7xGZqddX2T8IkSeyGDd0R
- q1EabMOLm2dQJgVM2lbWwSxZzr292XLw9HffokxU96IMWVW6G7mWs1f4H4ZPJyYfuyRQ
- SuQgOccQsKB9bTH83KsD9rMPcFjGCVZI9sOfxlZDgBWkBsnJE75N7OjAgCB3XtCOLcgH
- npBMTYnMeIvq4tF5bzDy5zy8An32Ev+Szex2/vT9sEPIu+N+JF1nXzq+VE6x9KzRjKsD
- CHKQ==
-X-Gm-Message-State: APjAAAVCvpyr+zOW4ZjTQoqQwi5/AYNVakB7cVL9RIswQyLGv/g+AUnN
- KUaIHlLzb8liqgPFjvsA+g4Erpirs0CXgg==
-X-Google-Smtp-Source: APXvYqzbpkPoRAjx7jYyIBTmDtEHbDTA8NmXpToYJsChd3LnIUvBCuRXvE+x3s8pofxO0AXSfe7fjg==
-X-Received: by 2002:a17:902:fe12:: with SMTP id
- g18mr4992444plj.20.1575380908885; 
- Tue, 03 Dec 2019 05:48:28 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=UUlsRRK2pgCm9l96Sadau8/Jinv10/1VueVd+pNemqM=;
+ b=CROHNfPuyhNAb+i2BfqJJLXPamfnrbNTrJHVkREeu/I6MaMy/oU/eQFu/VVATELuSc
+ UYumF1maSVh2zsVCuwaUZ6Dic+3AUg6Q/rct8aD+nGDKYo64KKQ7eYul4lkqGcWjh7n+
+ IslyIONsFUwdKq40xjvRxr+WP3XCB0gxw3Hj1qtsQVDgELz3ThDnNB4gKdQEfBHSPx9L
+ TgL42V9GCROXPsCS0CRmxgHylkyMXoUHI4t1uDtAsCo0Qv4SxQItYSsapNMuQISAZ27I
+ BvhUxrNlFFPL6LHFGVvoBeF5vwoXw6tiKQ6dIujSGFqDiWWXUUsPKR6wE6etkHUQ1MiE
+ bPzA==
+X-Gm-Message-State: APjAAAUH/SpK7yhXULyLE9NFy06uN/MZAEgac6dhtHMhyDz8Xv4hgStB
+ nj+2dE0vXI53/HK3Y42ycSl8cQ==
+X-Google-Smtp-Source: APXvYqybsy7gWan3hjAOgJUaGmGoAqpOTEE3wpc7hSQ1++Wb69OSIzyrvfi/r0nKL4x2BRjmdiyFJw==
+X-Received: by 2002:a63:e94d:: with SMTP id q13mr5361869pgj.209.1575380914518; 
+ Tue, 03 Dec 2019 05:48:34 -0800 (PST)
 Received: from localhost.localdomain ([115.97.190.29])
- by smtp.gmail.com with ESMTPSA id y144sm4397892pfb.188.2019.12.03.05.48.23
+ by smtp.gmail.com with ESMTPSA id y144sm4397892pfb.188.2019.12.03.05.48.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Dec 2019 05:48:28 -0800 (PST)
+ Tue, 03 Dec 2019 05:48:34 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v12 0/7] drm/sun4i: Allwinner A64 MIPI-DSI support
-Date: Tue,  3 Dec 2019 19:18:09 +0530
-Message-Id: <20191203134816.5319-1-jagan@amarulasolutions.com>
+Subject: [PATCH v12 1/7] dt-bindings: sun6i-dsi: Document A64 MIPI-DSI
+ controller
+Date: Tue,  3 Dec 2019 19:18:10 +0530
+Message-Id: <20191203134816.5319-2-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
+In-Reply-To: <20191203134816.5319-1-jagan@amarulasolutions.com>
+References: <20191203134816.5319-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_054830_181049_AE964794 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20191203_054835_574084_C512E8F1 
+X-CRM114-Status: GOOD (  12.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,89 +107,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is v12 version for Allwinner A64 MIPI-DSI support
-and here is the previous version set[1]
+The MIPI DSI controller in Allwinner A64 is similar to A33.
 
+But unlike A33, A64 doesn't have DSI_SCLK gating so it is valid
+to have separate compatible for A64 on the same driver.
+
+DSI_SCLK uses mod clock-names on dt-bindings, so the same
+is not required for A64.
+
+On that note
+- A64 require minimum of 1 clock like the bus clock
+- A33 require minimum of 2 clocks like both bus, mod clocks
+
+So, update dt-bindings so-that it can document both A33,
+A64 bindings requirements.
+
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+---
 Changes for v12:
-- use enum insted of oneOf+const
-- handle bus clock using regmap attach clk
-- tested on A64, A33 boards.
-Changes for v11:
-- fix dt-bindings for dphy
-- fix dt-bindings for dsi controller
-- add bus clock handling code
-- tested on A64, A33 boards.
-Changes for v10:
-- updated dt-bindings as per .yaml format
-- rebased on drm-misc/for-linux-next
-Changes for v9:
-- moved dsi fixes in separate series on top of A33
-- rebase on linux-next
-Changes for v8:
-- rebased on drm-misc change along with linux-next
-- reworked video start delay patch
-- tested on 4 different dsi panels
-- reworked commit messages
-Changes for v7:
-- moved vcc-dsi binding to required filed.
-- drop quotes on fallback dphy bindings.
-- drop min_rate clock pll-mipi patches.
-- introduce dclk divider computation as like A64 BSP.
-- add A64 DSI quark patches.
-- fixed A64 DSI pipeline.
-- add proper commit messages.
-- collect Merlijn Wajer Tested-by credits.
-Changes for v6:
-- dropped unneeded changes, patches
-- fixed all burst mode patches as per previous version comments
-- rebase on master
-- update proper commit message
-- dropped unneeded comments
-- order the patches that make review easy
-Changes for v5:
-- collect Rob, Acked-by
-- droped "Fix VBP size calculation" patch
-- updated vblk timing calculation.
-- droped techstar, bananapi dsi panel drivers which may require
-  bridge or other setup. it's under discussion.
-Changes for v4:
-- droppoed untested CCU_FEATURE_FIXED_POSTDIV check code in
-  nkm min, max rate patches
-- create two patches for "Add Allwinner A64 MIPI DSI support"
-  one for has_mod_clk quirk and other one for A64 support
-- use existing driver code construct for hblk computation
-- dropped "Increase hfp packet overhead" patch [2], though BSP added
-  this but we have no issues as of now.
-  (no issues on panel side w/o this change)
-- create separate function for vblk computation 
-- enable vcc-dsi regulator in dsi_runtime_resume
-- collect Rob, Acked-by
-- update MAINTAINERS file for panel drivers
-- cleanup commit messages
-- fixed checkpatch warnings/errors
+- Use 'enum' instead of oneOf+const
 
-[1] https://patchwork.freedesktop.org/series/68579/
+ .../display/allwinner,sun6i-a31-mipi-dsi.yaml | 20 +++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
 
-Any inputs?
-Jagan.
-
-Jagan Teki (7):
-  dt-bindings: sun6i-dsi: Document A64 MIPI-DSI controller
-  dt-bindings: sun6i-dsi: Add A64 DPHY compatible (w/ A31 fallback)
-  drm/sun4i: dsi: Add has_mod_clk quirk
-  drm/sun4i: dsi: Handle bus clock via regmap_mmio_attach_clk
-  drm/sun4i: dsi: Add Allwinner A64 MIPI DSI support
-  arm64: dts: allwinner: a64: Add MIPI DSI pipeline
-  [DO NOT MERGE] arm64: dts: allwinner: bananapi-m64: Enable Bananapi S070WV20-CT16 DSI panel
-
- .../display/allwinner,sun6i-a31-mipi-dsi.yaml | 20 ++++-
- .../phy/allwinner,sun6i-a31-mipi-dphy.yaml    |  6 +-
- .../dts/allwinner/sun50i-a64-bananapi-m64.dts | 31 +++++++
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 37 ++++++++
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c        | 86 +++++++++++++++----
- drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h        |  5 ++
- 6 files changed, 164 insertions(+), 21 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
+index dafc0980c4fa..b91446475f35 100644
+--- a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
++++ b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
+@@ -15,7 +15,9 @@ properties:
+   "#size-cells": true
+ 
+   compatible:
+-    const: allwinner,sun6i-a31-mipi-dsi
++    enum:
++      - allwinner,sun6i-a31-mipi-dsi
++      - allwinner,sun50i-a64-mipi-dsi
+ 
+   reg:
+     maxItems: 1
+@@ -24,6 +26,8 @@ properties:
+     maxItems: 1
+ 
+   clocks:
++    minItems: 1
++    maxItems: 2
+     items:
+       - description: Bus Clock
+       - description: Module Clock
+@@ -63,13 +67,25 @@ required:
+   - reg
+   - interrupts
+   - clocks
+-  - clock-names
+   - phys
+   - phy-names
+   - resets
+   - vcc-dsi-supply
+   - port
+ 
++allOf:
++  - if:
++      properties:
++         compatible:
++           contains:
++             const: allwinner,sun6i-a31-mipi-dsi
++      then:
++        properties:
++          clocks:
++            minItems: 2
++        required:
++          - clock-names
++
+ additionalProperties: false
+ 
+ examples:
 -- 
 2.18.0.321.gffc6fa0e3
 
