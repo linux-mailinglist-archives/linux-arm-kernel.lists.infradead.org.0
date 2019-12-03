@@ -2,58 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B34B10FC9F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 12:44:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66A6610FCA6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 12:46:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jJ5jMGDXutiGEcaJnesb6tqNEgugoT/DRRr6tW2mWbw=; b=BfkxRY0RU2lnZ5
-	eHxdR/6NxojXdApnZEWK2xe0mZPxtLUR4EFkmuYnnBRmxmUqtBwlXqPPDOb2Oe63uNQ2TbmIyp9vK
-	EYNjXR8uauos79JEzwaB/PObpPOhciRbDo4EY41rmN+BiG/tBdYk06N47fk0oFgaPdUB9p6TirNi5
-	u0BaVdRYOcZZa7xV50zpbipIjYTI80Qzw8HFpkcDcMrhGBkm8mAG02oWIMbYf+OOwaE9zpSM0lPiM
-	NQiKnu9VoryPSj9YGRoXgyWt/ElAoPR7V+0nivI/WmZ60n95tK5eIkToQiVe9VvPYqHU6+mLWWfxo
-	1m9tIGVMtiUiLtT0yEMg==;
+	List-Owner; bh=QRZoU074k8zmOM+g01t9TsGUN/YLqtvKpPEcMxSrBx4=; b=dq6alGJHPLoJ3S
+	TLXQHlAdyonWN64S8K0IkR6Blze9C7Z3ytXj/DjOEw7w4X5N4IwjpSyT1AqZHuFu1dC61H+ZT6jN+
+	VIpClMhh1WKrNzZUqe1ouC3mw8FmkoCn8B6kykqm9rtJHViSQYnyYGEx5nB40T409DYYcWhPX8mvF
+	n3OLlAZDNq1ekSlOaJndEB8Dl6+WuwfLvqia3BI7qmRqakuxE3IrNTl/UPuBiB8ZN4AliS3TyVx6Y
+	6yVGw89d+Un/7/cTVqBHi0HWpNVo38Hc7xL0/BOq0MR1Sk1jM0uuMhQHgBHtLGQnmG/3wyYEE0m1y
+	JRya9Yr5kd2xw7PyC3pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic6bc-0007BO-O0; Tue, 03 Dec 2019 11:44:36 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic6bV-0007B3-LR
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 11:44:31 +0000
-Received: from kresse.hi.pengutronix.de ([2001:67c:670:100:1d::2a])
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <l.stach@pengutronix.de>)
- id 1ic6bP-0007A3-EI; Tue, 03 Dec 2019 12:44:23 +0100
-Message-ID: <895eb269794c200e7c04161188787b3933e3ee0c.camel@pengutronix.de>
-Subject: Re: [PATCH 1/3] ARM: dts: imx6: phycore-som: fix arm and soc
- minimum voltage
-From: Lucas Stach <l.stach@pengutronix.de>
-To: Marco Felsch <m.felsch@pengutronix.de>, Stefan
- =?ISO-8859-1?Q?Riedm=FCller?= <s.riedmueller@phytec.de>
-Date: Tue, 03 Dec 2019 12:44:18 +0100
-In-Reply-To: <20191203083307.ntoe2bwha7hzlr42@pengutronix.de>
-References: <20191129164859.15632-1-m.felsch@pengutronix.de>
- <ec29daf9-d87f-276f-2927-da66b153840f@phytec.de>
- <20191202124200.mvwnsne2vnszyprj@pengutronix.de>
- <b4e1fb4d-6e0f-4501-17a4-ee837548ad86@phytec.de>
- <20191202141406.gvzc3lnxefczd33b@pengutronix.de>
- <dc55f52f-c01b-1f9e-4149-740e2c6d9663@phytec.de>
- <20191202145308.7w5pic3fwpq752mz@pengutronix.de>
- <acdbab96-dfc0-87ab-b759-79c7bfe77c3c@phytec.de>
- <20191203083307.ntoe2bwha7hzlr42@pengutronix.de>
-User-Agent: Evolution 3.30.5-1.1 
+	id 1ic6dQ-0000U6-Kh; Tue, 03 Dec 2019 11:46:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ic6dG-0000TB-2G
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 11:46:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 16FCB30E;
+ Tue,  3 Dec 2019 03:46:15 -0800 (PST)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 69F083F68E;
+ Tue,  3 Dec 2019 03:46:13 -0800 (PST)
+Date: Tue, 3 Dec 2019 11:46:07 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH v11 2/2] mailbox: introduce ARM SMC based mailbox
+Message-ID: <20191203114607.GA4171@bogus>
+References: <1575281525-1549-1-git-send-email-peng.fan@nxp.com>
+ <1575281525-1549-3-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::2a
-X-SA-Exim-Mail-From: l.stach@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <1575281525-1549-3-git-send-email-peng.fan@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_034429_703471_E7E661AB 
-X-CRM114-Status: GOOD (  24.61  )
+X-CRM114-CacheID: sfid-20191203_034618_151134_26B3686E 
+X-CRM114-Status: GOOD (  14.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,86 +61,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: festevam@gmail.com, shawnguo@kernel.org, chf.fritz@googlemail.com,
- robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de, c.hemp@phytec.de,
- s.christ@phytec.de, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
+ "andre.przywara@arm.com" <andre.przywara@arm.com>,
+ "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>, Viresh Kumar <viresh.kumar@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Di, 2019-12-03 at 09:33 +0100, Marco Felsch wrote:
-[...]
-> > > Please check the following structs:
-> > > 
-> > >   - static const struct da9062_regulator_info local_da9061_regulator_info[]
-> > >   - static const struct da9062_regulator_info local_da9062_regulator_info[]
-> > > 
-> > > There you have the min_uV, uV_step, n_voltages so the core can validate
-> > > if the dt-value is within the range.
-> > 
-> > Thanks, that makes more sense.
-> > 
-> > > > The regulator bindings state:
-> > > > - regulator-min-microvolt: smallest voltage consumers may set
-> > > > 
-> > > > - regulator-max-microvolt: largest voltage consumers may set
-> > > 
-> > > Yes and according the datasheet I mentionied the current values aren't
-> > > correct.
-> > > 
-> > > > For me that is device depended and not design depended.
-> > > > 
-> > > > What is the scenario you're thinking about which would cause the SOC, as a
-> > > > consumer, to request a lower voltage as it needs?
-> > > 
-> > > The thing is that the DT abstracts the HW and these values are not
-> > > correct. As mentioned in my commit message the values should meet
-> > > the datasheet restrictions and this isn't the case yet.
-> > 
-> > I don't agree. The datasheet you mention is the i.MX 6 datasheet and thus
-> > the limitation should reside in the i.MX 6 regulators and not in the PMIC's.
-> > This limitation is not just valid in combination with that PMIC but for all
-> > i.MX 6.
-> 
-> The datasheet tells you which voltage should be applied to the imx6 and
-> so you have to set this here. What happens if the internally ldo
-> request a voltage value below 0.9V? Then the value will be applied
-> because we specified 0.73V and the system don't work anymore or did you
-> verified that case?
+(+Viresh,Arnd)
 
-The DT constraints are supposed to reflect absolute maximum ratings of
-the board design. The regulator driver already knows the limits of the
-PMIC chip, so there is no point in duplicating this information in the
-DT.
+On Mon, Dec 02, 2019 at 10:14:43AM +0000, Peng Fan wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+>
+> This mailbox driver implements a mailbox which signals transmitted data
+> via an ARM smc (secure monitor call) instruction. The mailbox receiver
+> is implemented in firmware and can synchronously return data when it
+> returns execution to the non-secure world again.
+> An asynchronous receive path is not implemented.
+> This allows the usage of a mailbox to trigger firmware actions on SoCs
+> which either don't have a separate management processor or on which such
+> a core is not available. A user of this mailbox could be the SCP
+> interface.
+>
 
-The DT constraints are there to make sure the regulator core can
-constrain the voltage setting to something safe for the specific
-design. A consumer driver bug must never be able to set a voltage that
-is outside of the absolute maximum ratings of _all_ consumers of this
-specific power rail. I know that a lot of DTs get this detail wrong,
-but we shouldn't block patches to fix this. :)
+I would like to know all the use-cases for this driver ? Is this only for
+SCMI or will this get used with other protocols on the top. I assume the
+latter and hence it is preferred to keep this as a mailbox driver.
 
-> > If I have this wrong and the maintainers agree with you could you please
-> > make sure to account for the bypass mode as well since these values from the
-> > datasheet are valid too?
-> 
-> As I said, the bypass mode isn't supported by the driver and all imx6
-> based devicetrees follow that case. So we don't have to take that into
-> account. Also we can't meet both contraints with one dt and futhermore
-> the bypass mode decrease your imx6 lifetime due the the increased ripple
-> on the arm-core supply. So I think no one wants this setup in the near
-> future.
+I am not against this approach but the reason I ask is to avoid duplication.
+Viresh has suggested abstraction of transport from SCMI driver to enable
+other transports[1]. Couple of transports that I am aware of is this SMC/HVC
+and the new(still in-concept) SPCI.
 
-As a violation of the minimum voltage setting is very unlikely to cause
-any permanent damage to the design (expect if you got reverse voltage
-flows somewhere) I think it is safe to include the LDO bypass supply
-limits as the lower bound in the DT constraints, even if this mode
-isn't currently used anywhere.
+So I am looking for opinions on that approach. Please feel free to comment
+here or as part of that patch.
 
+--
 Regards,
-Lucas
+Sudeep
 
+[1] https://lore.kernel.org/lkml/5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org
 
 _______________________________________________
 linux-arm-kernel mailing list
