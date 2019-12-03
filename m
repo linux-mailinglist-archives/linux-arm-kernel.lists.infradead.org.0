@@ -2,86 +2,148 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBA2A10FC1D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 12:00:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACF3310FC2A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 12:04:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I76BV/u3ySmxFUxTeBtuTxU/Pfg4R58nKTUbrz/osnE=; b=Ulb4IQ416mLcuF
-	2MvJFkctbfIKML7nSIRq+rKPwBAe4/0hs7X/M/0TFhW2R7dpKi2OS0WJKZ7oV/IdU5KObwZBCk/V+
-	eUMOXD9wlI8ZF/PviXl+Hd92RYnXDS6MAFtg7i7kS6NMhOGWs+xm2rOQo8AuPbykAh7x6rhvhYRTw
-	IFFEqrRsEb1xNbGo9fg5QpwvhPXjp0W1/xbfB/lJltXHQcxCE1EJCnX/l3Q/hiF+842Ri11bVhoSj
-	tOjZ7XRDKBfiU/wXlIiKI8xx79y4pdU1Bsd9/vuopD9zZVPkN41aeej+O6wDBIj+2OOyIiQb0LPFH
-	x70BPHIVBmbXzBXPS5iA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7SmJST/VtGeKZ/zWSdEjvheRS36MueptwvkYfuPI7aA=; b=LPFeGfPzjf3pah
+	YMB20AhXhQvmsb5F8gebxztjKTGkDFW3RcTGrYZrkddvMtoXO40uQklYvcUHKSCKSR33+tHqx5YLR
+	C5KmyQuB3DRxGbpk9j89Bs9zQ0yTlqgjhPXV9sJ7McXIEUaMB+k8AslbYsJLkKyezQJ1E7EhunwQZ
+	LAgy3lizhu04SPRG2Mx8SeB5yZA7hCK+8tVvnQBFW+G+2YbTmsQJqrRsnlQ/t8nsJi4VxUKnavmGe
+	kNuo6mtsC0KMNSQ8BVfilil2aveq03GVl5qvg0oZFKpUucvz3Ilse59Ht0OcdJVahYGm8B0oj0ik6
+	pANVxQdWgyDVcigpfAMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic5ug-0008Tt-GW; Tue, 03 Dec 2019 11:00:14 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1ic5z3-0001GM-1i; Tue, 03 Dec 2019 11:04:45 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic5uW-0007pk-7I
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 11:00:06 +0000
-Received: by mail-qk1-x744.google.com with SMTP id v23so2982826qkg.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 03:00:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=EWBAJXc6VmZPvFymEbCvvEBg7Re43Tz8rygktUPmfdM=;
- b=eb/s68g8l1nh3EpPuEraD4O6BvxqhO2mnWdCufdUjvqarr7qmrzIfwfvJRilR5MYjz
- ombe1QuZB118EeQfnfozS+2PJrIVncbTR2Qr4xUfYu5KYaCRE9uo7rNMYbwIzjY8Dgw2
- ujCp/cEdGCeNXb+E9Od+amzwP9mQdXwCXStUpmaSNY5X7qTAij+LOUqqLUYdHSTil6xL
- vIA8ri6fPUIMOvbW2jNfWMKztnoHp1zm/OhYdse6bGg5nniJ2NDYEE/SrtPzTYg/+MtX
- MXFWrcpz8nCYYIQRhf8JpK9mHOwjV+VT3mKb2Vz9wdSFoeQkJWSiNFnB/piAfZCXD/ka
- YCfg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=EWBAJXc6VmZPvFymEbCvvEBg7Re43Tz8rygktUPmfdM=;
- b=I1kImOKX33Jmt047/Acjag7jsaIMkEZPTOJOvNBTt/dFYehAoGZ8Zn4Zbthi92hy1I
- 4Gvmyp1PgK4AQ+orl5KDeByPyfXXgplE07BNZdOFqCTU3FUasBWnmTfUIbcERujc0iPH
- 5ZsVHRKkaJoTv8amwUKC6Qy/Rt97VmtklyfEa5oPnG85N0zg0lbPA5Nl60XvXEt2+cLw
- Rimj64wLBXiKHpRw3DfPj98iah94mOxTtInACumTkjoRFXBx3BD3Pg/cJ5gBfCMiGh5i
- oOxNADQfhuwXsSl6OGcYymJRDF7uTnT0FEXjcqP6vp5s0eJ3zeUoZc2ts6PRozu4Zo8i
- ai8Q==
-X-Gm-Message-State: APjAAAWD8wqisLNq3cZl85F42h5Y4z5qlGbEFE2vEU6sSNjQgXBjXlp7
- LcENpStkuT9ZzxC6076S5bKl2LbYjQqbofwZm+P0Eg==
-X-Google-Smtp-Source: APXvYqxR967AtFzYAEY6ZcCvVfk7QLyQym15XW4NBQgMNFk+lFWlDM/XbYy0dFgW3j695MmmUZrbnOCqex+sL9U68fo=
-X-Received: by 2002:a37:62d2:: with SMTP id w201mr4181845qkb.445.1575370802100; 
- Tue, 03 Dec 2019 03:00:02 -0800 (PST)
+ id 1ic5yx-0001GF-70
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 03 Dec 2019 11:04:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=GamgyIllCD7PYwObjf6Kkx15TnJPZXQNm5m4b8GAl1s=; b=fiJG+aRVHzRSkXUEg5JQh+8MeE
+ pcqzb1OV1yHihEX/ixnQ4rHeTa6pEtq9408toj/gwb1S+IcOo+ETHREBY6QobdoC3MSMF6jEXOgQ7
+ yKV0riQ6p24HIfRdhMPRiaoLscUANknocKhGtFLzhPe5hRaPtcUHHySEA/Vtej1Uf6qg387kp+1I9
+ CBDqwo/99AuoThIGN8STBkm1Ltcfudkiwz7gZrS5ygllhEsNRLwRuR+SNjTq20k5sLrUhf/CCSK5C
+ VJOhKTTD/gISGbV0To9/iyIr3daKKqCwe2k3Mvq0cGKz6+4O8h3F/nZ1ziCk3V+RsPJxFkMLNKOj/
+ QhtT8emA==;
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ic5xP-0000og-1S
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 11:05:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1575370937;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+ bh=GamgyIllCD7PYwObjf6Kkx15TnJPZXQNm5m4b8GAl1s=;
+ b=i8PMyv5jz+MRs6qD+m1ogPVpKz/lj3Vwd/bDh6VWa2rtQx+qLeFM1YafZ3ojK/2KCnSly6
+ jVBO0GqlTvjwiytnH/zQBQ9Hj43BamqP0iCi6w/007zNoj6hTalV69Qu60PKzvAGx0OO+9
+ j6BwtDMA/iHwyjgqf6sphBwmckaWWpI=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-418-092A4xRhN2aYVFT9gstubw-1; Tue, 03 Dec 2019 06:02:13 -0500
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 2DD25800D41;
+ Tue,  3 Dec 2019 11:02:11 +0000 (UTC)
+Received: from [10.36.118.120] (unknown [10.36.118.120])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 0AE5E60BFB;
+ Tue,  3 Dec 2019 11:02:06 +0000 (UTC)
+Subject: Re: [PATCH v15 00/23] Generic page walk and ptdump
+To: Steven Price <steven.price@arm.com>, Qian Cai <cai@lca.pw>,
+ Andrew Morton <akpm@linux-foundation.org>, linux-mm@kvack.org
+References: <20191101140942.51554-1-steven.price@arm.com>
+ <1572896147.5937.116.camel@lca.pw>
+ <7B040741-EC8A-4CC0-964B-4046AE2E617A@lca.pw>
+ <16da6118-ac4d-a165-6202-0731a776ac72@arm.com>
+From: David Hildenbrand <david@redhat.com>
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ SE+xAvmumFBY
+Organization: Red Hat GmbH
+Message-ID: <911fac4a-2204-f994-a101-16a60fba12e8@redhat.com>
+Date: Tue, 3 Dec 2019 12:02:06 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-References: <20191119231912.12768-1-mike.leach@linaro.org>
- <20191119231912.12768-7-mike.leach@linaro.org>
- <b2f640d3-c320-82d4-7399-172846820589@arm.com>
-In-Reply-To: <b2f640d3-c320-82d4-7399-172846820589@arm.com>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Tue, 3 Dec 2019 10:59:49 +0000
-Message-ID: <CAJ9a7VgkgoUTL0+_3kj53go_CKtAH3fO5xF9UNDPPz1se1SKSw@mail.gmail.com>
-Subject: Re: [PATCH v5 06/14] coresight: cti: Add device tree support for v8
- arch CTI
-To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
+In-Reply-To: <16da6118-ac4d-a165-6202-0731a776ac72@arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-MC-Unique: 092A4xRhN2aYVFT9gstubw-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_030004_314885_E08AED57 
-X-CRM114-Status: GOOD (  40.37  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20191203_110503_509163_BC51BFA9 
+X-CRM114-Status: GOOD (  23.51  )
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-2.5 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,332 +155,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org, "Liang,
+ Kan" <kan.liang@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
+On 06.11.19 16:05, Steven Price wrote:
+> On 06/11/2019 13:31, Qian Cai wrote:
+>>
+>>
+>>> On Nov 4, 2019, at 2:35 PM, Qian Cai <cai@lca.pw> wrote:
+>>>
+>>> On Fri, 2019-11-01 at 14:09 +0000, Steven Price wrote:
+> [...]
+>>>> Changes since v14:
+>>>> https://lore.kernel.org/lkml/20191028135910.33253-1-steven.price@arm.com/
+>>>> * Switch walk_page_range() into two functions, the existing
+>>>>    walk_page_range() now still requires VMAs (and treats areas without a
+>>>>    VMA as a 'hole'). The new walk_page_range_novma() ignores VMAs and
+>>>>    will report the actual page table layout. This fixes the previous
+>>>>    breakage of /proc/<pid>/pagemap
+>>>> * New patch at the end of the series which reduces the 'level' numbers
+>>>>    by 1 to simplify the code slightly
+>>>> * Added tags
+>>>
+>>> Does this new version also take care of this boot crash seen with v14? Suppose
+>>> it is now breaking CONFIG_EFI_PGT_DUMP=y? The full config is,
+>>>
+>>> https://raw.githubusercontent.com/cailca/linux-mm/master/x86.config
+>>>
+>>
+>> V15 is indeed DOA here.
+> 
+> Thanks for finding this, it looks like EFI causes issues here. The below fixes
+> this for me (booting in QEMU).
+> 
+> Andrew: do you want me to send out the entire series again for this fix, or
+> can you squash this into mm-pagewalk-allow-walking-without-vma.patch?
+> 
+> Thanks,
+> 
+> Steve
+> 
+> ---8<---
+> diff --git a/mm/pagewalk.c b/mm/pagewalk.c
+> index c7529dc4f82b..70dcaa23598f 100644
+> --- a/mm/pagewalk.c
+> +++ b/mm/pagewalk.c
+> @@ -90,7 +90,7 @@ static int walk_pmd_range(pud_t *pud, unsigned long addr, unsigned long end,
+>   			split_huge_pmd(walk->vma, pmd, addr);
+>   			if (pmd_trans_unstable(pmd))
+>   				goto again;
+> -		} else if (pmd_leaf(*pmd)) {
+> +		} else if (pmd_leaf(*pmd) || !pmd_present(*pmd)) {
+>   			continue;
+>   		}
+>   
+> @@ -141,7 +141,7 @@ static int walk_pud_range(p4d_t *p4d, unsigned long addr, unsigned long end,
+>   			split_huge_pud(walk->vma, pud, addr);
+>   			if (pud_none(*pud))
+>   				goto again;
+> -		} else if (pud_leaf(*pud)) {
+> +		} else if (pud_leaf(*pud) || !pud_present(*pud)) {
+>   			continue;
+>   		}
+>   
+> 
 
-On Fri, 29 Nov 2019 at 11:33, Suzuki Kuruppassery Poulose
-<suzuki.poulose@arm.com> wrote:
->
-> On 19/11/2019 23:19, Mike Leach wrote:
-> > The v8 architecture defines the relationship between a PE, its optional ETM
-> > and a CTI. Unlike non-architectural CTIs which are implementation defined,
-> > this has a fixed set of connections which can therefore be represented as a
-> > simple tag in the device tree.
-> >
-> > This patch defines the tags needed to create an entry for this PE/ETM/CTI
-> > relationship, and provides functionality to implement the connection model
-> > in the CTI driver.
-> >
-> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> > ---
-> >   .../coresight/coresight-cti-platform.c        | 205 ++++++++++++++++++
-> >   1 file changed, 205 insertions(+)
-> >
-> > diff --git a/drivers/hwtracing/coresight/coresight-cti-platform.c b/drivers/hwtracing/coresight/coresight-cti-platform.c
-> > index 665be86c585d..790dd30b85f5 100644
-> > --- a/drivers/hwtracing/coresight/coresight-cti-platform.c
-> > +++ b/drivers/hwtracing/coresight/coresight-cti-platform.c
-> > @@ -3,10 +3,208 @@
-> >    * Copyright (c) 2019, The Linaro Limited. All rights reserved.
-> >    */
-> >
-> > +#include <dt-bindings/arm/coresight-cti-dt.h>
-> >   #include <linux/of.h>
-> >
-> >   #include "coresight-cti.h"
-> >
-> > +/* Number of CTI signals in the v8 architecturally defined connection */
-> > +#define NR_V8PE_IN_SIGS              2
-> > +#define NR_V8PE_OUT_SIGS     3
-> > +#define NR_V8ETM_INOUT_SIGS  4
-> > +
-> > +/* CTI device tree connection property keywords */
-> > +#define CTI_DT_V8ARCH                "arm,cti-v8-arch"
-> > +#define CTI_DT_CSDEV_ASSOC   "arm,cs-dev-assoc"
-> > +
-> > +/*
-> > + * Find a registered coresight device from a device fwnode.
-> > + * The node info is associated with the AMBA parent, but the
-> > + * csdev keeps a copy so iterate round the coresight bus to
-> > + * find the device.
-> > + */
-> > +static struct coresight_device *
-> > +cti_get_assoc_csdev_by_fwnode(struct fwnode_handle *r_fwnode)
->
-> To be frank this has nothing to do with the CTI and is in a way
-> a good candidate for a CoreSight generic function. We do similar
-> stuff in coresight_fixup_device_conns(). So this could be :
->
-> struct coresight_device *
-> coresight_find_device_by_fwnode(const struct fwnode_handle *fwnode)
->
-> > +{
-> > +     struct device *dev;
-> > +     struct coresight_device *csdev = NULL;
-> > +
-> > +     dev = bus_find_device_by_fwnode(&coresight_bustype, r_fwnode);
-> > +     if (dev) {
-> > +             csdev = to_coresight_device(dev);
-> > +             put_device(dev);
-> > +     }
-> > +     return csdev;
-> > +}
-> > +
->
-> And used in coresight_fixup_conns().
->
+Even with this fix, booting for me under QEMU fails. See
 
-OK - I'll look at that.
+https://lore.kernel.org/linux-mm/b7ce62f2-9a48-6e48-6685-003431e521aa@redhat.com/
 
-> > +#ifdef CONFIG_OF
-> > +/*
-> > + * CTI can be bound to a CPU, or a system device.
-> > + * CPU can be declared at the device top level or in a connections node
-> > + * so need to check relative to node not device.
-> > + */
-> > +static int of_cti_get_cpu_at_node(const struct device_node *node)
-> > +{
-> > +     int cpu;
-> > +     struct device_node *dn;
-> > +
-> > +     if (node == NULL)
-> > +             return -1;
-> > +
-> > +     dn = of_parse_phandle(node, "cpu", 0);
-> > +     /* CTI affinity defaults to no cpu */
-> > +     if (!dn)
-> > +             return -1;
-> > +     cpu = of_cpu_node_to_id(dn);
-> > +     of_node_put(dn);
-> > +
-> > +     /* No Affinity  if no cpu nodes are found */
-> > +     return (cpu < 0) ? -1 : cpu;
-> > +}
-> > +
-> > +static const char *of_cti_get_node_name(const struct device_node *node)
-> > +{
-> > +     if (node)
-> > +             return node->full_name;
-> > +     return "unknown";
-> > +}
-> > +#else
-> > +static int of_cti_get_cpu_at_node(const struct device_node *node)
-> > +{
-> > +     return -1;
-> > +}
-> > +
-> > +static const char *of_cti_get_node_name(const struct device_node *node)
-> > +{
-> > +     return "unknown";
-> > +}
-> > +#endif
-> > +
-> > +static int cti_plat_get_cpu_at_node(struct fwnode_handle *fwnode)
-> > +{
->
-> You may simply reuse coresight_get_cpu() below, instead of adding this
-> duplicate set of functions. See below.
->
->
+-- 
+Thanks,
 
-No we can't. coresight_get_cpu gets the 'cpu' entry relative to the
-device node, this gets the 'cpu' relative to the supplied node.
-This is very important for the case where a none v8 architected PE is
-attached to a CTI. This will use the devicetree form:-
+David / dhildenb
 
-cti@<addr> {
-    [ some stuff  ]
-   trig_conns@1 {
-          cpu = <&CPU0>
-          [trigger signal  connection info for this cpu]
-   }
-}
-
-trig_conns is a child node and we must look for 'cpu' relative to it.
-
-
-> > +static int cti_plat_create_v8_etm_connection(struct device *dev,
-> > +                                          struct cti_drvdata *drvdata)
-> > +{
-> > +     int ret = -ENOMEM, i;
-> > +     struct fwnode_handle *root_fwnode, *cs_fwnode;
-> > +     const char *assoc_name = NULL;
-> > +     struct coresight_device *csdev;
-> > +     struct cti_trig_con *tc = NULL;
-> > +
-> > +     root_fwnode = dev_fwnode(dev);
-> > +     if (IS_ERR_OR_NULL(root_fwnode))
-> > +             return -EINVAL;
-> > +
-> > +     /* Can optionally have an etm node - return if not  */
-> > +     cs_fwnode = fwnode_find_reference(root_fwnode, CTI_DT_CSDEV_ASSOC, 0);
-> > +     if (IS_ERR_OR_NULL(cs_fwnode))
-> > +             return 0;
-> > +
-> > +     /* allocate memory */
-> > +     tc = cti_allocate_trig_con(dev, NR_V8ETM_INOUT_SIGS,
-> > +                                NR_V8ETM_INOUT_SIGS);
-> > +     if (!tc)
-> > +             goto create_v8_etm_out;
-> > +
-> > +     /* build connection data */
-> > +     tc->con_in->used_mask = 0xF0; /* sigs <4,5,6,7> */
-> > +     tc->con_out->used_mask = 0xF0; /* sigs <4,5,6,7> */
-> > +
-> > +     /*
-> > +      * The EXTOUT type signals from the ETM are connected to a set of input
-> > +      * triggers on the CTI, the EXTIN being connected to output triggers.
-> > +      */
-> > +     for (i = 0; i < NR_V8ETM_INOUT_SIGS; i++) {
-> > +             tc->con_in->sig_types[i] = ETM_EXTOUT;
-> > +             tc->con_out->sig_types[i] = ETM_EXTIN;
-> > +     }
-> > +
-> > +     /*
-> > +      * We look to see if the ETM coresight device associated with this
-> > +      * handle has been registered with the system - i.e. probed before
-> > +      * this CTI. If so csdev will be non NULL and we can use the device
-> > +      * name and pass the csdev to the connection entry function where
-> > +      * the association will be recorded.
-> > +      * If not, then simply record the name in the connection data, the
-> > +      * probing of the ETM will call into the CTI driver API to update the
-> > +      * association then.
-> > +      */
-> > +     csdev = cti_get_assoc_csdev_by_fwnode(cs_fwnode);
-> > +     if (csdev)
-> > +             assoc_name = dev_name(&csdev->dev);
->
-> Does it make sense to defer the probing until the ETM device  turn up ?
-> Its fine either way.
->
-
-Not really as the ETM is optional but the PE still has a CTI.
-
-> > +     else
-> > +             assoc_name = cti_plat_get_node_name(cs_fwnode);
-> > +     ret = cti_add_connection_entry(dev, drvdata, tc, csdev, assoc_name);
-> > +
-> > +create_v8_etm_out:
-> > +     fwnode_handle_put(cs_fwnode);
-> > +     return ret;
-> > +}
-> > +
-> > +/*
-> > + * Create an architecturally defined v8 connection
-> > + * must have a cpu, can have an ETM.
-> > + */
-> > +static int cti_plat_create_v8_connections(struct device *dev,
-> > +                                       struct cti_drvdata *drvdata)
-> > +{
-> > +     struct cti_device *cti_dev = &drvdata->ctidev;
-> > +     struct cti_trig_con *tc = NULL;
-> > +     int cpuid = 0;
-> > +     char cpu_name_str[16];
-> > +     int ret = -ENOMEM;
-> > +
-> > +     /* Must have a cpu node */
-> > +     cpuid = cti_plat_get_cpu_at_node(dev_fwnode(dev));
->
-> Could we reuse coresight_get_cpu(dev) instead ? I understand that the
-> ACPI bindings have not been defined and it may be slightly different
-> from what we have now for the ETMs (i.e, ETM node as child of the CPU
-> node). But I don't see why we can't force it for the CTIs either.
-> In the worst case, you could still reuse the of_coresgith_get_cpu(dev)
-> instead of writing your own for the OF case.
->
-
-See comments above - in theory here we could use coresight_get_cpu(),
-but for consistency it is better to use that same function throughout
-in case someone decided to "fix" it later.
-I probably need to beef up the comments around
-cti_plat_get_cpu_at_node / of_cti_get_cpu_at_node.
-
->
-> > +     if (cpuid < 0) {
-> > +             dev_warn(dev, "CTI v8 DT binding no cpu\n");
->
-> This may be better off without mentioning the DT. e.g,
->
-> "CTI Arm v8 architected connection: missing CPU\n"
->
-OK
->
-> > +             return -EINVAL;
-> > +     }
-> > +     cti_dev->cpu = cpuid;
-> > +
-> > +     /* Allocate the v8 cpu connection memory */
-> > +     tc = cti_allocate_trig_con(dev, NR_V8PE_IN_SIGS, NR_V8PE_OUT_SIGS);
-> > +     if (!tc)
-> > +             goto of_create_v8_out;
-> > +
-> > +     /* Set the v8 PE CTI connection data */
-> > +     tc->con_in->used_mask = 0x3; /* sigs <0 1> */
-> > +     tc->con_in->sig_types[0] = PE_DBGTRIGGER;
-> > +     tc->con_in->sig_types[1] = PE_PMUIRQ;
-> > +     tc->con_out->used_mask = 0x7; /* sigs <0 1 2 > */
-> > +     tc->con_out->sig_types[0] = PE_EDBGREQ;
-> > +     tc->con_out->sig_types[1] = PE_DBGRESTART;
-> > +     tc->con_out->sig_types[2] = PE_CTIIRQ;
-> > +     scnprintf(cpu_name_str, sizeof(cpu_name_str), "cpu%d", cpuid);
-> > +
-> > +     ret = cti_add_connection_entry(dev, drvdata, tc, NULL, cpu_name_str);
-> > +     if (ret)
-> > +             goto of_create_v8_out;
-> > +
-> > +     /* Create the v8 ETM associated connection */
-> > +     ret = cti_plat_create_v8_etm_connection(dev, drvdata);
-> > +     if (ret)
-> > +             goto of_create_v8_out;
-> > +
-> > +     /* filter pe_edbgreq - PE trigout sig <0> */
-> > +     drvdata->config.trig_out_filter |= 0x1;
-> > +
-> > +of_create_v8_out:
-> > +     return ret;
-> > +}
-> > +
-> >   /* get the hardware configuration & connection data. */
-> >   int cti_plat_get_hw_data(struct device *dev,
-> >                        struct cti_drvdata *drvdata)
-> > @@ -14,6 +212,13 @@ int cti_plat_get_hw_data(struct device *dev,
-> >       int rc = 0;
-> >       struct cti_device *cti_dev = &drvdata->ctidev;
-> >
-> > +     /* check for a v8 architectural CTI device */
-> minor nit: Check for Arm v8 architected CTI connection ?
->
-> > +     if (device_property_read_bool(dev, CTI_DT_V8ARCH)) {
-> > +             rc = cti_plat_create_v8_connections(dev, drvdata);
-> > +             if (rc)
-> > +                     return rc;
-> > +     }
-> > +
-> >       /* if no connections, just add a single default based on max IN-OUT */
-> >       if (cti_dev->nr_trig_con == 0)
-> >               rc = cti_add_default_connection(dev, drvdata);
-> >
->
->
-> Suzuki
-
-Thanks
-
-
-Mike
-
---
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
