@@ -2,59 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A67DE10FB8A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 11:15:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DAFF410FB98
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 11:16:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7oBWvUayWMTNgD0DwaG0GxXRrPdps7Xw+4TGFTKVU+Y=; b=eTiMJvMPCXwW0M
-	nRGJQNOs63K0p2idxw6vnzlqQp4LnZWgkPJvFOPt2FVY7xbmtMXHTA1zyAImOfvlvjrvi1mfS88OD
-	RkH4E9oyAzjZwUszzER73NUSUy2Xza8y1QY2Ahr23aJ9SFMzxUPWOtlghZ7NY6bPrQ2wwhkhw2om/
-	Cwt6GS3BVboKM9fwcoHW9gl3t4hNJF4lsGcGghMDaFtVJHNQzDGV+cMSZCiXN0D7VvHaOeLnQge8s
-	ew3/MQjNaG2qCIDjIw+DtnBFBcd/TaDbj3cBpXvnfRyOCDurlRHl1uPJjGdgOGTgjXeO7GYHJK2oi
-	BCz9z0s8jYUMu8YleScQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nAP8rOXwgueQRUkZSwRto6ofA9DTvDBIUc1vMvMVe4M=; b=tZW81LWWj0yKJIRV8U116mz1o
+	2wpKdmS+WWhV1b4K/Jc02qg7LGvBuSe2eqBzExAlOT5oUYdIb5/rvZUg0AUDvkqGwHMLlo8bLeOnl
+	BepFv+7DtzAbZ48GvgEETJzZTtAtNbw2//rNMKu9SVEleX8GtUKlFvpppzaJTOSQxIEBjyYo4+t2d
+	uZaTn6B0QauxitP/jc+gWqDHHm36D0+3/QVfHnLlmV4pZ7ZWY2x+SQi0wQ4ogk673fmPuQ5OSWZAQ
+	efNCboeq727v5GT9KyF3p7az7Fdy+aP2ZTwOOZT4srOadeTTrkg5uAJBxL+ZM3z/kk0rUH6V1Sej3
+	LRRZJ8ALw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic5DK-0000Pe-Oz; Tue, 03 Dec 2019 10:15:26 +0000
+	id 1ic5Dr-0000gf-9i; Tue, 03 Dec 2019 10:15:59 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic5DD-0000P7-Bw
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 10:15:20 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ id 1ic5Df-0000g3-4T
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 10:15:48 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
  by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1ic5D7-0006Qc-Ml; Tue, 03 Dec 2019 11:15:13 +0100
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1ic5D3-0002Xv-TN; Tue, 03 Dec 2019 11:15:09 +0100
-Date: Tue, 3 Dec 2019 11:15:09 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Igor Plyatov <plyatov@gmail.com>
-Subject: Re: Issue with imx_get_temp()
-Message-ID: <20191203101509.wte47aad5k4mqu2y@pengutronix.de>
-References: <08794fde-cdd0-287c-62bf-e2e3b8c80686@gmail.com>
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mkl@pengutronix.de>)
+ id 1ic5Dd-0006fb-6f; Tue, 03 Dec 2019 11:15:45 +0100
+Received: from [IPv6:2a03:f580:87bc:d400:858e:130c:14c0:366e] (unknown
+ [IPv6:2a03:f580:87bc:d400:858e:130c:14c0:366e])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits)
+ client-signature RSA-PSS (4096 bits))
+ (Client CN "mkl@blackshift.org",
+ Issuer "StartCom Class 1 Client CA" (not verified))
+ (Authenticated sender: mkl@blackshift.org)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id BFA3F487404;
+ Tue,  3 Dec 2019 10:15:42 +0000 (UTC)
+Subject: Re: [PATCH] MAINTAINERS: Add fragment for xilinx CAN driver
+To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com
+References: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <f402beaa-2efa-aa65-3828-328c80baae30@pengutronix.de>
+Date: Tue, 3 Dec 2019 11:15:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <08794fde-cdd0-287c-62bf-e2e3b8c80686@gmail.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 11:11:20 up 18 days,  1:29, 28 users,  load average: 0.10, 0.03, 0.01
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
+In-Reply-To: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: mkl@pengutronix.de
 X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_021519_411131_B6BC8FD3 
-X-CRM114-Status: GOOD (  12.77  )
+X-CRM114-CacheID: sfid-20191203_021547_329846_D3DD8555 
+X-CRM114-Status: GOOD (  10.57  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,125 +137,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Amit Kucheria <amit.kucheria@verdurent.com>, linux-pm@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Eduardo Valentin <edubezval@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-can@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============4143107692707708101=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Igor,
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============4143107692707708101==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="PpQmVNvZpFJ9IGkFYhXpuINI1ehnops4z"
 
-On 19-12-02 16:45, Igor Plyatov wrote:
-> Dear all,
-> =
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--PpQmVNvZpFJ9IGkFYhXpuINI1ehnops4z
+Content-Type: multipart/mixed; boundary="ZeiVB2HZ5wWxACmWsjRUy6E1Q0DFUC0SX";
+ protected-headers="v1"
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com
+Cc: linux-can@vger.kernel.org, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Message-ID: <f402beaa-2efa-aa65-3828-328c80baae30@pengutronix.de>
+Subject: Re: [PATCH] MAINTAINERS: Add fragment for xilinx CAN driver
+References: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
+In-Reply-To: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
 
-> please=A0 look at back-trace below. It happens on Freescale i.MX6 Quad.
-> =
+--ZeiVB2HZ5wWxACmWsjRUy6E1Q0DFUC0SX
+Content-Type: text/plain; charset=utf-8
+Content-Language: de-DE
+Content-Transfer-Encoding: quoted-printable
 
-> Found a few of those during power on/off stress test in the climate chamb=
-er:
-> =
+On 11/21/19 9:39 AM, Appana Durga Kedareswara rao wrote:
+> Added entry for xilinx CAN driver.
+>=20
+> Signed-off-by: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.co=
+m>
 
-> [    0.657596] ------------[ cut here ]------------
-> [    0.657626] WARNING: CPU: 3 PID: 150 at /home/geosig/development/oe-co=
-re-toradex-cr7/build/tmp-glibc/work-shared/cr7/kernel-source/kernel/irq/chi=
-p.c:242 __irq_startup+0x94/0xa8
-> [    0.657630] Modules linked in:
-> [    0.657643] CPU: 3 PID: 150 Comm: kworker/3:1 Not tainted 5.1.1 #1
-> [    0.657648] Hardware name: Freescale i.MX6 Quad/DualLite (Device Tree)
-> [    0.657660] Workqueue: events deferred_probe_work_func
-> [    0.657691] [<8011005c>] (unwind_backtrace) from [<8010b8c8>] (show_st=
-ack+0x10/0x14)
-> [    0.657709] [<8010b8c8>] (show_stack) from [<80857b04>] (dump_stack+0x=
-88/0x9c)
-> [    0.657727] [<80857b04>] (dump_stack) from [<8011f308>] (__warn+0xdc/0=
-xf4)
-> [    0.657741] [<8011f308>] (__warn) from [<8011f438>] (warn_slowpath_nul=
-l+0x40/0x48)
-> [    0.657752] [<8011f438>] (warn_slowpath_null) from [<8016d1a8>] (__irq=
-_startup+0x94/0xa8)
-> [    0.657762] [<8016d1a8>] (__irq_startup) from [<8016d208>] (irq_startu=
-p+0x4c/0x130)
-> [    0.657772] [<8016d208>] (irq_startup) from [<8016a6dc>] (enable_irq+0=
-x44/0x90)
-> [    0.657790] [<8016a6dc>] (enable_irq) from [<8066f05c>] (imx_get_temp+=
-0x1bc/0x1fc)
-> [    0.657804] [<8066f05c>] (imx_get_temp) from [<8066cd78>] (thermal_zon=
-e_get_temp+0x48/0x68)
-> [    0.657816] [<8066cd78>] (thermal_zone_get_temp) from [<8066a3e4>] (th=
-ermal_zone_device_update.part.3+0x28/0xcc)
-> [    0.657827] [<8066a3e4>] (thermal_zone_device_update.part.3) from [<80=
-66afc4>] (thermal_zone_device_register+0x4ac/0x5ec)
-> [    0.657837] [<8066afc4>] (thermal_zone_device_register) from [<8066f58=
-0>] (imx_thermal_probe+0x3a8/0x61c)
-> [    0.657853] [<8066f580>] (imx_thermal_probe) from [<8054ae90>] (platfo=
-rm_drv_probe+0x48/0x98)
-> [    0.657864] [<8054ae90>] (platform_drv_probe) from [<805492a4>] (reall=
-y_probe+0x228/0x2d0)
-> [    0.657875] [<805492a4>] (really_probe) from [<805494ac>] (driver_prob=
-e_device+0x60/0x174)
-> [    0.657892] [<805494ac>] (driver_probe_device) from [<805476f4>] (bus_=
-for_each_drv+0x58/0xb8)
-> [    0.657903] [<805476f4>] (bus_for_each_drv) from [<80549008>] (__devic=
-e_attach+0xd0/0x13c)
-> [    0.657914] [<80549008>] (__device_attach) from [<80548404>] (bus_prob=
-e_device+0x84/0x8c)
-> [    0.657923] [<80548404>] (bus_probe_device) from [<8054889c>] (deferre=
-d_probe_work_func+0x64/0x90)
-> [    0.657938] [<8054889c>] (deferred_probe_work_func) from [<80136fd0>] =
-(process_one_work+0x204/0x420)
-> [    0.657952] [<80136fd0>] (process_one_work) from [<80137ddc>] (worker_=
-thread+0x44/0x5bc)
-> [    0.657966] [<80137ddc>] (worker_thread) from [<8013cab0>] (kthread+0x=
-144/0x14c)
-> [    0.657978] [<8013cab0>] (kthread) from [<801010e8>] (ret_from_fork+0x=
-14/0x2c)
-> [    0.657984] Exception stack(0xd0ae1fb0 to 0xd0ae1ff8)
-> [    0.657992] 1fa0:                                     00000000 0000000=
-0 00000000 00000000
-> [    0.658002] 1fc0: 00000000 00000000 00000000 00000000 00000000 0000000=
-0 00000000 00000000
-> [    0.658010] 1fe0: 00000000 00000000 00000000 00000000 00000013 00000000
-> [    0.658016] ---[ end trace 6bb553a60c0886bd ]---
-> =
+Added to linux-can.
 
-> Can somebody recommend, how to debug/resolve this issue?
+tnx,
+Marc
 
-Mh.. it seems that the irq gets enabled before a irq-handler is
-registered. As your backlog shows the thermal_zone_device_register()
-triggers a imx_get_temp() and during boot the irq_enabled is false and
-it seems that your temperature is below the alarm_temp. So in such a
-case the enable_irq() is executed. I don't know what happens if we
-enable a irq without a irq-handler.
-
-Regards,
-  Marco =
+--=20
+Pengutronix e.K.                 | Marc Kleine-Budde           |
+Embedded Linux                   | https://www.pengutronix.de  |
+Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
+Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
 
 
-> Best wishes.
-> --
-> Igor Plyatov
-> =
+--ZeiVB2HZ5wWxACmWsjRUy6E1Q0DFUC0SX--
 
-> =
+--PpQmVNvZpFJ9IGkFYhXpuINI1ehnops4z
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
 
-> =
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEmvEkXzgOfc881GuFWsYho5HknSAFAl3mNcsACgkQWsYho5Hk
+nSDM2wgApra9Z4I934ScsmYTRYGRmyYCEqJ38RsqaP1gGn5SFN2D3MTZu8xB2Ar6
+uRv1KkIfku8c2I4mHnK4MuI/gDbBcB/9/U5FmYV1bCy/fz4R2aQfqgMfIjqJ5G2y
+U8u1C5kX5IYF/1ej59bJ7wZtpcREVqUphNL+D8Yc3APk2+rm5QnyUFt/EqgVQQ7t
+jn4WpwLErYpNR6LVwgsf3XpkY+JMJR4srXX3M0sxSatyCvgfmsIHccQP7yuPGG1W
+zLrGgqIBdCioqlTUtxhWSVTlVezaOi8ViVkvImt56SY6S92ObTOg+K9sZWZ1crAV
+cB3AljztHTusmHcurs9Hxr3qR7/a3g==
+=e34r
+-----END PGP SIGNATURE-----
+
+--PpQmVNvZpFJ9IGkFYhXpuINI1ehnops4z--
 
 
--- =
-
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+--===============4143107692707708101==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4143107692707708101==--
+
