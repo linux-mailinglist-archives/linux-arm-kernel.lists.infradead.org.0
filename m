@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17D7110F86C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 08:11:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08AE510F86E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 08:12:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4S7zHfg2URjLunb8IAFbIPfVje2+oZYHNgbrS9fVLgk=; b=DIxLv/AO5oSynM
-	PQmElXpD5/baWhQ10hTJpMI5XvE7joXDhkg1cMa8+jO6141VfaRci5eAGDxT4m0KpW/+Kn1KJ2e6O
-	5k5v34APRVhq+1LbqvjZuUJW+80UXE7qyVTnK2MnlLFg2OFXePGURzZDD4nr1JbjIiYPgb7j/pOwY
-	QgbLOodQKOqCsTjLbDtErj8vHZ/O3KWaYnuPP1ghC2VJ7Rf7WbYV1ZIN8y/zmAjg2IPEwDHLxaA7o
-	kHlaDezx3n/ZoSNJJRjUqqP+6MqaAk/+929eCAAXy6l//BON1tn3Bv7cJB7Zm8UBVmfHePBAageGU
-	rsBaGEYn/XspHV73LGyA==;
+	List-Owner; bh=iuw8FgnV183QUMlG23VKy7c+y3c5zZ4SKZoKZdf2zcA=; b=oWFuwFSzNnV7sD
+	NQ9x3qCZpUu7yfI6Fxxg2CwX0C55ofAnvKp8eCNCUHC3gib8+wS6lEvBrCGdfUvv673kyDx7mtYUo
+	sVTDDDqCIKHBT55/iRIiNBYql3M8wHKkC4H1O793nwWcUVNMAYjFqOhUow3720sLFKEWeNEsJxzjx
+	VJPwbvqk7ljOWOLeAEf1klDWCqNwYcsxwdtLws4PUa85d/15SVrwMBbH+HwZqlGe52+l/8R0hFg96
+	DpCa9Z4gxM/KGyFF5pWcBsVrC9bYEUgk/HG4skbX6aOPSuNo73KxqukmJe8C+gLuaTrvWzMZxWwdB
+	tnp+zrkLPGne/S+Dth+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic2LR-0005ZF-Mq; Tue, 03 Dec 2019 07:11:37 +0000
+	id 1ic2M5-00068M-UI; Tue, 03 Dec 2019 07:12:17 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic2Kc-00050I-PR; Tue, 03 Dec 2019 07:10:48 +0000
-X-UUID: 1014344613b4432dbcb4584337e45463-20191202
+ id 1ic2Kf-00050O-W4; Tue, 03 Dec 2019 07:10:51 +0000
+X-UUID: c795760dedd747af895bd02f580857bb-20191202
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=ALb9eTY4ZWuID2Vkmm7K94CdWCk3b0cs7y9hwg3nxDE=; 
- b=Q9gs55Yf+9Yg9p9XAL8N2jjFbmOfMQTSVL/r4v0oiPLKjIy9h7vvVqmtfUcuK1hhLlWvglpTaoO9LkPr2gmQA6s19tptFeCz7nsw6UsRbqxUHogZQ8xk71m3Yr4hzGEBSYiFrQVwD3Q/cDg4vKSBXqmzYC7blnl+sMtTFdiTCtQ=;
-X-UUID: 1014344613b4432dbcb4584337e45463-20191202
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ bh=1r+UsnH1G/Cjf6k9hcifXRG1NUK52vTics2/q0qiWz0=; 
+ b=BwcOnIKITl8DKBgw7ZhWTqy6HFkvbvwE3m10ebrBIk1o6Up1A63EIAx3MCEFfshoO3HqIefUg20ZbM4/+FKSUQfB6f+8lO6a9UrKwIMV+OeK4PWhR19gfIJFjgKZwHSB+o36gzfgcgN2M5YfG/j/UogWpMxWqVL9cieBrZ3UB3Y=;
+X-UUID: c795760dedd747af895bd02f580857bb-20191202
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <bibby.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1710248821; Mon, 02 Dec 2019 23:10:40 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ with ESMTP id 359761858; Mon, 02 Dec 2019 23:10:46 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 2 Dec 2019 23:10:51 -0800
+ 15.0.1395.4; Mon, 2 Dec 2019 23:10:57 -0800
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Dec 2019 15:10:22 +0800
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 3 Dec 2019 15:10:38 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Tue, 3 Dec 2019 15:10:20 +0800
@@ -46,18 +46,18 @@ From: Bibby Hsieh <bibby.hsieh@mediatek.com>
 To: David Airlie <airlied@linux.ie>, Matthias Brugger
  <matthias.bgg@gmail.com>, Daniel Vetter <daniel.vetter@ffwll.ch>,
  <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>
-Subject: [PATCH v2 3/6] drm/mediatek: update cursors by using async atomic
- update
-Date: Tue, 3 Dec 2019 15:10:33 +0800
-Message-ID: <20191203071036.14158-4-bibby.hsieh@mediatek.com>
+Subject: [PATCH v2 4/6] drm/mediatek: remove unused external function
+Date: Tue, 3 Dec 2019 15:10:34 +0800
+Message-ID: <20191203071036.14158-5-bibby.hsieh@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20191203071036.14158-1-bibby.hsieh@mediatek.com>
 References: <20191203071036.14158-1-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_231046_841742_D16F75FB 
-X-CRM114-Status: GOOD (  13.66  )
+X-CRM114-CacheID: sfid-20191202_231050_092104_88EC602E 
+X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,168 +99,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support to async updates of cursors by using the new atomic
-interface for that.
+layer_on and layer_off both are unused external function,
+remove them from mtk_ddp_comp_funcs structure.
 
 Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c  | 33 ++++++++++++++++
- drivers/gpu/drm/mediatek/mtk_drm_crtc.h  |  2 +
- drivers/gpu/drm/mediatek/mtk_drm_plane.c | 50 ++++++++++++++++++++++++
- drivers/gpu/drm/mediatek/mtk_drm_plane.h |  2 +
- 4 files changed, 87 insertions(+)
+ drivers/gpu/drm/mediatek/mtk_disp_ovl.c     |  2 --
+ drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h | 16 ----------------
+ 2 files changed, 18 deletions(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index 4c25ad2182b0..b23fe74b8b0a 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -422,6 +422,39 @@ int mtk_drm_crtc_plane_check(struct drm_crtc *crtc, struct drm_plane *plane,
+diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+index 722a5adb79dc..8a32248671c3 100644
+--- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
++++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+@@ -314,8 +314,6 @@ static const struct mtk_ddp_comp_funcs mtk_disp_ovl_funcs = {
+ 	.disable_vblank = mtk_ovl_disable_vblank,
+ 	.supported_rotations = mtk_ovl_supported_rotations,
+ 	.layer_nr = mtk_ovl_layer_nr,
+-	.layer_on = mtk_ovl_layer_on,
+-	.layer_off = mtk_ovl_layer_off,
+ 	.layer_check = mtk_ovl_layer_check,
+ 	.layer_config = mtk_ovl_layer_config,
+ 	.bgclr_in_on = mtk_ovl_bgclr_in_on,
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
+index ec55c7488cc3..653ef1cb3748 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
++++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
+@@ -79,8 +79,6 @@ struct mtk_ddp_comp_funcs {
+ 	void (*disable_vblank)(struct mtk_ddp_comp *comp);
+ 	unsigned int (*supported_rotations)(struct mtk_ddp_comp *comp);
+ 	unsigned int (*layer_nr)(struct mtk_ddp_comp *comp);
+-	void (*layer_on)(struct mtk_ddp_comp *comp, unsigned int idx);
+-	void (*layer_off)(struct mtk_ddp_comp *comp, unsigned int idx);
+ 	int (*layer_check)(struct mtk_ddp_comp *comp,
+ 			   unsigned int idx,
+ 			   struct mtk_plane_state *state);
+@@ -151,20 +149,6 @@ static inline unsigned int mtk_ddp_comp_layer_nr(struct mtk_ddp_comp *comp)
  	return 0;
  }
  
-+void mtk_drm_crtc_async_update(struct drm_crtc *crtc, struct drm_plane *plane,
-+			       struct drm_plane_state *new_state)
-+{
-+	struct mtk_drm_private *priv = crtc->dev->dev_private;
-+	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-+	const struct drm_plane_helper_funcs *plane_helper_funcs =
-+			plane->helper_private;
-+	int i;
-+
-+	if (!mtk_crtc->enabled)
-+		return;
-+
-+	plane_helper_funcs->atomic_update(plane, new_state);
-+
-+	for (i = 0; i < mtk_crtc->layer_nr; i++) {
-+		struct drm_plane *plane = &mtk_crtc->planes[i];
-+		struct mtk_plane_state *plane_state;
-+
-+		plane_state = to_mtk_plane_state(plane->state);
-+		if (plane_state->pending.async_dirty) {
-+			plane_state->pending.config = true;
-+			plane_state->pending.async_update = false;
-+			plane_state->pending.async_dirty = false;
-+		}
-+	}
-+	mtk_crtc->pending_planes = true;
-+	if (priv->data->shadow_register) {
-+		mtk_disp_mutex_acquire(mtk_crtc->mutex);
-+		mtk_crtc_ddp_config(crtc);
-+		mtk_disp_mutex_release(mtk_crtc->mutex);
-+	}
-+}
-+
- static void mtk_drm_crtc_atomic_enable(struct drm_crtc *crtc,
- 				       struct drm_crtc_state *old_state)
- {
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
-index 6afe1c19557a..a2b4677a451c 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
-@@ -21,5 +21,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 			unsigned int path_len);
- int mtk_drm_crtc_plane_check(struct drm_crtc *crtc, struct drm_plane *plane,
- 			     struct mtk_plane_state *state);
-+void mtk_drm_crtc_async_update(struct drm_crtc *crtc, struct drm_plane *plane,
-+			       struct drm_plane_state *plane_state);
- 
- #endif /* MTK_DRM_CRTC_H */
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-index cd7c97eb7ee6..6bdb42f068fb 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-@@ -7,6 +7,7 @@
- #include <drm/drm_atomic.h>
- #include <drm/drm_atomic_helper.h>
- #include <drm/drm_fourcc.h>
-+#include <drm/drm_atomic_uapi.h>
- #include <drm/drm_plane_helper.h>
- #include <drm/drm_gem_framebuffer_helper.h>
- 
-@@ -70,6 +71,50 @@ static void mtk_drm_plane_destroy_state(struct drm_plane *plane,
- 	kfree(to_mtk_plane_state(state));
- }
- 
-+static int mtk_plane_atomic_async_check(struct drm_plane *plane,
-+					struct drm_plane_state *state)
-+{
-+	struct drm_crtc_state *crtc_state;
-+
-+	if (plane != state->crtc->cursor)
-+		return -EINVAL;
-+
-+	if (!plane->state)
-+		return -EINVAL;
-+
-+	if (!plane->state->fb)
-+		return -EINVAL;
-+
-+	if (state->state)
-+		crtc_state = drm_atomic_get_existing_crtc_state(state->state,
-+								state->crtc);
-+	else /* Special case for asynchronous cursor updates. */
-+		crtc_state = state->crtc->state;
-+
-+	return drm_atomic_helper_check_plane_state(plane->state, crtc_state,
-+						   DRM_PLANE_HELPER_NO_SCALING,
-+						   DRM_PLANE_HELPER_NO_SCALING,
-+						   true, true);
-+}
-+
-+static void mtk_plane_atomic_async_update(struct drm_plane *plane,
-+					  struct drm_plane_state *new_state)
-+{
-+	struct mtk_plane_state *state = to_mtk_plane_state(plane->state);
-+
-+	plane->state->crtc_x = new_state->crtc_x;
-+	plane->state->crtc_y = new_state->crtc_y;
-+	plane->state->crtc_h = new_state->crtc_h;
-+	plane->state->crtc_w = new_state->crtc_w;
-+	plane->state->src_x = new_state->src_x;
-+	plane->state->src_y = new_state->src_y;
-+	plane->state->src_h = new_state->src_h;
-+	plane->state->src_w = new_state->src_w;
-+	state->pending.async_update = true;
-+
-+	mtk_drm_crtc_async_update(new_state->crtc, plane, new_state);
-+}
-+
- static const struct drm_plane_funcs mtk_plane_funcs = {
- 	.update_plane = drm_atomic_helper_update_plane,
- 	.disable_plane = drm_atomic_helper_disable_plane,
-@@ -141,6 +186,9 @@ static void mtk_plane_atomic_update(struct drm_plane *plane,
- 	state->pending.rotation = plane->state->rotation;
- 	wmb(); /* Make sure the above parameters are set before update */
- 	state->pending.dirty = true;
-+
-+	if (state->pending.async_update)
-+		state->pending.async_dirty = true;
- }
- 
- static void mtk_plane_atomic_disable(struct drm_plane *plane,
-@@ -158,6 +206,8 @@ static const struct drm_plane_helper_funcs mtk_plane_helper_funcs = {
- 	.atomic_check = mtk_plane_atomic_check,
- 	.atomic_update = mtk_plane_atomic_update,
- 	.atomic_disable = mtk_plane_atomic_disable,
-+	.atomic_async_update = mtk_plane_atomic_async_update,
-+	.atomic_async_check = mtk_plane_atomic_async_check,
- };
- 
- int mtk_plane_init(struct drm_device *dev, struct drm_plane *plane,
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.h b/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-index 760885e35b27..41882465dd67 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-@@ -22,6 +22,8 @@ struct mtk_plane_pending_state {
- 	unsigned int			height;
- 	unsigned int			rotation;
- 	bool				dirty;
-+	bool				async_dirty;
-+	bool				async_update;
- };
- 
- struct mtk_plane_state {
+-static inline void mtk_ddp_comp_layer_on(struct mtk_ddp_comp *comp,
+-					 unsigned int idx)
+-{
+-	if (comp->funcs && comp->funcs->layer_on)
+-		comp->funcs->layer_on(comp, idx);
+-}
+-
+-static inline void mtk_ddp_comp_layer_off(struct mtk_ddp_comp *comp,
+-					  unsigned int idx)
+-{
+-	if (comp->funcs && comp->funcs->layer_off)
+-		comp->funcs->layer_off(comp, idx);
+-}
+-
+ static inline int mtk_ddp_comp_layer_check(struct mtk_ddp_comp *comp,
+ 					   unsigned int idx,
+ 					   struct mtk_plane_state *state)
 -- 
 2.18.0
 _______________________________________________
