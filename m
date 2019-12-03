@@ -2,130 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAFF410FB98
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 11:16:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 509C210FBA9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Dec 2019 11:18:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nAP8rOXwgueQRUkZSwRto6ofA9DTvDBIUc1vMvMVe4M=; b=tZW81LWWj0yKJIRV8U116mz1o
-	2wpKdmS+WWhV1b4K/Jc02qg7LGvBuSe2eqBzExAlOT5oUYdIb5/rvZUg0AUDvkqGwHMLlo8bLeOnl
-	BepFv+7DtzAbZ48GvgEETJzZTtAtNbw2//rNMKu9SVEleX8GtUKlFvpppzaJTOSQxIEBjyYo4+t2d
-	uZaTn6B0QauxitP/jc+gWqDHHm36D0+3/QVfHnLlmV4pZ7ZWY2x+SQi0wQ4ogk673fmPuQ5OSWZAQ
-	efNCboeq727v5GT9KyF3p7az7Fdy+aP2ZTwOOZT4srOadeTTrkg5uAJBxL+ZM3z/kk0rUH6V1Sej3
-	LRRZJ8ALw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4ibbT6W02G2txmZ/lUIQBs7SGjHsrDZ6Feitlh0DV64=; b=rmM+8Gf1db9DxD
+	+TL91NOmkVGJMdCrmW56qBMb1Kpiwu+nCaj0k/6TxC41dU5MY/oeOSCd7unMp49ccAFkQfR2jdq2v
+	pKB7dwa4yRxVPOa33NPgFSpItTS7inAaxB0ahW3b6RfQg595R5flYBxhPCHrXQyYvBCb0lQ2RFHNd
+	ITKDsxa9DBRNDNCeebnJOAEi4OUmAM59UJpsY0rjPKJ0idNAZ46nYOO97H7+P6FPH+IgQrIhnN+hA
+	oEL/iNTFsyw0lqt5NwTajFFJmxe2Sif7Zz/OkcMzaL8bioCD/dGyzm9+4Bhmcfz9Y/MZZuCVST7Zl
+	yh4zg7NDPhhkFxwPPFhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic5Dr-0000gf-9i; Tue, 03 Dec 2019 10:15:59 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1ic5Fx-0001N1-2E; Tue, 03 Dec 2019 10:18:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic5Df-0000g3-4T
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Dec 2019 10:15:48 +0000
-Received: from gallifrey.ext.pengutronix.de
- ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mkl@pengutronix.de>)
- id 1ic5Dd-0006fb-6f; Tue, 03 Dec 2019 11:15:45 +0100
-Received: from [IPv6:2a03:f580:87bc:d400:858e:130c:14c0:366e] (unknown
- [IPv6:2a03:f580:87bc:d400:858e:130c:14c0:366e])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits)
- client-signature RSA-PSS (4096 bits))
- (Client CN "mkl@blackshift.org",
- Issuer "StartCom Class 1 Client CA" (not verified))
- (Authenticated sender: mkl@blackshift.org)
- by smtp.blackshift.org (Postfix) with ESMTPSA id BFA3F487404;
- Tue,  3 Dec 2019 10:15:42 +0000 (UTC)
-Subject: Re: [PATCH] MAINTAINERS: Add fragment for xilinx CAN driver
-To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
- wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com
-References: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-Openpgp: preference=signencrypt
-Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
- mQINBFFVq30BEACtnSvtXHoeHJxG6nRULcvlkW6RuNwHKmrqoksispp43X8+nwqIFYgb8UaX
- zu8T6kZP2wEIpM9RjEL3jdBjZNCsjSS6x1qzpc2+2ivjdiJsqeaagIgvy2JWy7vUa4/PyGfx
- QyUeXOxdj59DvLwAx8I6hOgeHx2X/ntKAMUxwawYfPZpP3gwTNKc27dJWSomOLgp+gbmOmgc
- 6U5KwhAxPTEb3CsT5RicsC+uQQFumdl5I6XS+pbeXZndXwnj5t84M+HEj7RN6bUfV2WZO/AB
- Xt5+qFkC/AVUcj/dcHvZwQJlGeZxoi4veCoOT2MYqfR0ax1MmN+LVRvKm29oSyD4Ts/97cbs
- XsZDRxnEG3z/7Winiv0ZanclA7v7CQwrzsbpCv+oj+zokGuKasofzKdpywkjAfSE1zTyF+8K
- nxBAmzwEqeQ3iKqBc3AcCseqSPX53mPqmwvNVS2GqBpnOfY7Mxr1AEmxdEcRYbhG6Xdn+ACq
- Dq0Db3A++3PhMSaOu125uIAIwMXRJIzCXYSqXo8NIeo9tobk0C/9w3fUfMTrBDtSviLHqlp8
- eQEP8+TDSmRP/CwmFHv36jd+XGmBHzW5I7qw0OORRwNFYBeEuiOIgxAfjjbLGHh9SRwEqXAL
- kw+WVTwh0MN1k7I9/CDVlGvc3yIKS0sA+wudYiselXzgLuP5cQARAQABtCZNYXJjIEtsZWlu
- ZS1CdWRkZSA8bWtsQHBlbmd1dHJvbml4LmRlPokCVAQTAQoAPgIbAwIeAQIXgAULCQgHAwUV
- CgkICwUWAgMBABYhBMFAC6CzmJ5vvH1bXCte4hHFiupUBQJcUsSbBQkM366zAAoJECte4hHF
- iupUgkAP/2RdxKPZ3GMqag33jKwKAbn/fRqAFWqUH9TCsRH3h6+/uEPnZdzhkL4a9p/6OeJn
- Z6NXqgsyRAOTZsSFcwlfxLNHVxBWm8pMwrBecdt4lzrjSt/3ws2GqxPsmza1Gs61lEdYvLST
- Ix2vPbB4FAfE0kizKAjRZzlwOyuHOr2ilujDsKTpFtd8lV1nBNNn6HBIBR5ShvJnwyUdzuby
- tOsSt7qJEvF1x3y49bHCy3uy+MmYuoEyG6zo9udUzhVsKe3hHYC2kfB16ZOBjFC3lH2U5An+
- yQYIIPZrSWXUeKjeMaKGvbg6W9Oi4XEtrwpzUGhbewxCZZCIrzAH2hz0dUhacxB201Y/faY6
- BdTS75SPs+zjTYo8yE9Y9eG7x/lB60nQjJiZVNvZ88QDfVuLl/heuIq+fyNajBbqbtBT5CWf
- mOP4Dh4xjm3Vwlz8imWW/drEVJZJrPYqv0HdPbY8jVMpqoe5jDloyVn3prfLdXSbKPexlJaW
- 5tnPd4lj8rqOFShRnLFCibpeHWIumqrIqIkiRA9kFW3XMgtU6JkIrQzhJb6Tc6mZg2wuYW0d
- Wo2qvdziMgPkMFiWJpsxM9xPk9BBVwR+uojNq5LzdCsXQ2seG0dhaOTaaIDWVS8U/V8Nqjrl
- 6bGG2quo5YzJuXKjtKjZ4R6k762pHJ3tnzI/jnlc1sXzuQENBFxSzJYBCAC58uHRFEjVVE3J
- 31eyEQT6H1zSFCccTMPO/ewwAnotQWo98Bc67ecmprcnjRjSUKTbyY/eFxS21JnC4ZB0pJKx
- MNwK6zq71wLmpseXOgjufuG3kvCgwHLGf/nkBHXmSINHvW00eFK/kJBakwHEbddq8Dr4ewmr
- G7yr8d6A3CSn/qhOYWhIxNORK3SVo4Io7ExNX/ljbisGsgRzsWvY1JlN4sabSNEr7a8YaqTd
- 2CfFe/5fPcQRGsfhAbH2pVGigr7JddONJPXGE7XzOrx5KTwEv19H6xNe+D/W3FwjZdO4TKIo
- vcZveSDrFWOi4o2Te4O5OB/2zZbNWPEON8MaXi9zABEBAAGJA3IEGAEKACYWIQTBQAugs5ie
- b7x9W1wrXuIRxYrqVAUCXFLMlgIbAgUJAeKNmgFACRArXuIRxYrqVMB0IAQZAQoAHRYhBJrx
- JF84Dn3PPNRrhVrGIaOR5J0gBQJcUsyWAAoJEFrGIaOR5J0grw4H/itil/yryJCvzi6iuZHS
- suSHHOiEf+UQHib1MLP96LM7FmDabjVSmJDpH4TsMu17A0HTG+bPMAdeia0+q9FWSvSHYW8D
- wNhfkb8zojpa37qBpVpiNy7r6BKGSRSoFOv6m/iIoRJuJ041AEKao6djj/FdQF8OV1EtWKRO
- +nE2bNuDCcwHkhHP+FHExdzhKSmnIsMjGpGwIQKN6DxlJ7fN4W7UZFIQdSO21ei+akinBo4K
- O0uNCnVmePU1UzrwXKG2sS2f97A+sZE89vkc59NtfPHhofI3JkmYexIF6uqLA3PumTqLQ2Lu
- bywPAC3YNphlhmBrG589p+sdtwDQlpoH9O7NeBAAg/lyGOUUIONrheii/l/zR0xxr2TDE6tq
- 6HZWdtjWoqcaky6MSyJQIeJ20AjzdV/PxMkd8zOijRVTnlK44bcfidqFM6yuT1bvXAO6NOPy
- pvBRnfP66L/xECnZe7s07rXpNFy72XGNZwhj89xfpK4a9E8HQcOD0mNtCJaz7TTugqBOsQx2
- 45VPHosmhdtBQ6/gjlf2WY9FXb5RyceeSuK4lVrz9uZB+fUHBge/giOSsrqFo/9fWAZsE67k
- 6Mkdbpc7ZQwxelcpP/giB9N+XAfBsffQ8q6kIyuFV4ILsIECCIA4nt1rYmzphv6t5J6PmlTq
- TzW9jNzbYANoOFAGnjzNRyc9i8UiLvjhTzaKPBOkQfhStEJaZrdSWuR/7Tt2wZBBoNTsgNAw
- A+cEu+SWCvdX7vNpsCHMiHtcEmVt5R0Tex1Ky87EfXdnGR2mDi6Iyxi3MQcHez3C61Ga3Baf
- P8UtXR6zrrrlX22xXtpNJf4I4Z6RaLpB/avIXTFXPbJ8CUUbVD2R2mZ/jyzaTzgiABDZspbS
- gw17QQUrKqUog0nHXuaGGA1uvreHTnyBWx5P8FP7rhtvYKhw6XdJ06ns+2SFcQv0Bv6PcSDK
- aRXmnW+OsDthn84x1YkfGIRJEPvvmiOKQsFEiB4OUtTX2pheYmZcZc81KFfJMmE8Z9+LT6Ry
- uSS5AQ0EXFLNDgEIAL14qAzTMCE1PwRrYJRI/RSQGAGF3HLdYvjbQd9Ozzg02K3mNCF2Phb1
- cjsbMk/V6WMxYoZCEtCh4X2GjQG2GDDW4KC9HOa8cTmr9Vcno+f+pUle09TMzWDgtnH92WKx
- d0FIQev1zDbxU7lk1dIqyOjjpyhmR8Put6vgunvuIjGJ/GapHL/O0yjVlpumtmow6eME2muc
- TeJjpapPWBGcy/8VU4LM8xMeMWv8DtQML5ogyJxZ0Smt+AntIzcF9miV2SeYXA3OFiojQstF
- vScN7owL1XiQ3UjJotCp6pUcSVgVv0SgJXbDo5Nv87M2itn68VPfTu2uBBxRYqXQovsR++kA
- EQEAAYkCPAQYAQoAJhYhBMFAC6CzmJ5vvH1bXCte4hHFiupUBQJcUs0OAhsMBQkB4o0iAAoJ
- ECte4hHFiupUbioQAJ40bEJmMOF28vFcGvQrpI+lfHJGk9zSrh4F4SlJyOVWV1yWyUAINr8w
- v1aamg2nAppZ16z4nAnGU/47tWZ4P8blLVG8x4SWzz3D7MCy1FsQBTrWGLqWldPhkBAGp2VH
- xDOK4rLhuQWx3H5zd3kPXaIgvHI3EliWaQN+u2xmTQSJN75I/V47QsaPvkm4TVe3JlB7l1Fg
- OmSvYx31YC+3slh89ayjPWt8hFaTLnB9NaW9bLhs3E2ESF9Dei0FRXIt3qnFV/hnETsx3X4h
- KEnXxhSRDVeURP7V6P/z3+WIfddVKZk5ZLHi39fJpxvsg9YLSfStMJ/cJfiPXk1vKdoa+FjN
- 7nGAZyF6NHTNhsI7aHnvZMDavmAD3lK6CY+UBGtGQA3QhrUc2cedp1V53lXwor/D/D3Wo9wY
- iSXKOl4fFCh2Peo7qYmFUaDdyiCxvFm+YcIeMZ8wO5udzkjDtP4lWKAn4tUcdcwMOT5d0I3q
- WATP4wFI8QktNBqF3VY47HFwF9PtNuOZIqeAquKezywUc5KqKdqEWCPx9pfLxBAh3GW2Zfjp
- lP6A5upKs2ktDZOC2HZXP4IJ1GTk8hnfS4ade8s9FNcwu9m3JlxcGKLPq5DnIbPVQI1UUR4F
- QyAqTtIdSpeFYbvH8D7pO4lxLSz2ZyBMk+aKKs6GL5MqEci8OcFW
-Message-ID: <f402beaa-2efa-aa65-3828-328c80baae30@pengutronix.de>
-Date: Tue, 3 Dec 2019 11:15:39 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1ic5FU-0001LY-MT; Tue, 03 Dec 2019 10:17:48 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CBC562068E;
+ Tue,  3 Dec 2019 10:17:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575368260;
+ bh=5ySN3e5aUDRbhiQLCPyxs/vWIneLIy4KAn4LJwCq6Qs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=kMScm8GSzW4KeDWfSNSKzpGeRbVVCFvwkHxu3o+HncYmc1ZMD9uM8+flajxYG3OSj
+ /3ciRNYMo3BiZw+E7eMtEjiYd7+acvkY5XsvqH5JshHzGPG8kNDM9bW1JHSNuNlDOg
+ pVuRor6iCytI5GH4UIuH6jiB6DLUtCW0mKX2yae8=
+Date: Tue, 3 Dec 2019 10:17:20 +0000
+From: Will Deacon <will@kernel.org>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v5 3/3] hwrng: add mtk-sec-rng driver
+Message-ID: <20191203101720.GD6815@willie-the-truck>
+References: <1574864578-467-1-git-send-email-neal.liu@mediatek.com>
+ <1574864578-467-4-git-send-email-neal.liu@mediatek.com>
+ <CADnJP=uhD=J2NrpSwiX8oCTd-u_q05=HhsAV-ErCsXNDwVS0rA@mail.gmail.com>
+ <1575027046.24848.4.camel@mtkswgap22>
+ <CAKv+Gu_um7eRYXbieW7ogDX5mmZaxP7JQBJM9CajK+6CsO5RgQ@mail.gmail.com>
+ <20191202191146.79e6368c@why>
 MIME-Version: 1.0
-In-Reply-To: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
-X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
-X-SA-Exim-Mail-From: mkl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20191202191146.79e6368c@why>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_021547_329846_D3DD8555 
-X-CRM114-Status: GOOD (  10.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191203_021740_795914_312B84D5 
+X-CRM114-Status: GOOD (  22.19  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -137,87 +80,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-can@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============4143107692707708101=="
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ wsd_upstream <wsd_upstream@mediatek.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Sean Wang <sean.wang@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Neal Liu <neal.liu@mediatek.com>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
+ Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Crystal Guo =?utf-8?B?KOmDreaZtik=?= <Crystal.Guo@mediatek.com>,
+ Lars Persson <lists@bofh.nu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============4143107692707708101==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="PpQmVNvZpFJ9IGkFYhXpuINI1ehnops4z"
+On Mon, Dec 02, 2019 at 07:11:46PM +0000, Marc Zyngier wrote:
+> On Mon, 2 Dec 2019 16:12:09 +0000
+> Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+> 
+> > (adding some more arm64 folks)
+> > 
+> > On Fri, 29 Nov 2019 at 11:30, Neal Liu <neal.liu@mediatek.com> wrote:
+> > >
+> > > On Fri, 2019-11-29 at 18:02 +0800, Lars Persson wrote:  
+> > > > Hi Neal,
+> > > >
+> > > > On Wed, Nov 27, 2019 at 3:23 PM Neal Liu <neal.liu@mediatek.com> wrote:  
+> > > > >
+> > > > > For MediaTek SoCs on ARMv8 with TrustZone enabled, peripherals like
+> > > > > entropy sources is not accessible from normal world (linux) and
+> > > > > rather accessible from secure world (ATF/TEE) only. This driver aims
+> > > > > to provide a generic interface to ATF rng service.
+> > > > >  
+> > > >
+> > > > I am working on several SoCs that also will need this kind of driver
+> > > > to get entropy from Arm trusted firmware.
+> > > > If you intend to make this a generic interface, please clean up the
+> > > > references to MediaTek and give it a more generic name. For example
+> > > > "Arm Trusted Firmware random number driver".
+> > > >
+> > > > It will also be helpful if the SMC call number is configurable.
+> > > >
+> > > > - Lars  
+> > >
+> > > Yes, I'm trying to make this to a generic interface. I'll try to make
+> > > HW/platform related dependency to be configurable and let it more
+> > > generic.
+> > > Thanks for your suggestion.
+> > >  
+> > 
+> > I don't think it makes sense for each arm64 platform to expose an
+> > entropy source via SMC calls in a slightly different way, and model it
+> > as a h/w driver. Instead, we should try to standardize this, and
+> > perhaps expose it via the architectural helpers that already exist
+> > (get_random_seed_long() and friends), so they get plugged into the
+> > kernel random pool driver directly.
+> 
+> Absolutely. I'd love to see a standard, ARM-specified, virtualizable
+> RNG that is abstracted from the HW.
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---PpQmVNvZpFJ9IGkFYhXpuINI1ehnops4z
-Content-Type: multipart/mixed; boundary="ZeiVB2HZ5wWxACmWsjRUy6E1Q0DFUC0SX";
- protected-headers="v1"
-From: Marc Kleine-Budde <mkl@pengutronix.de>
-To: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
- wg@grandegger.com, davem@davemloft.net, michal.simek@xilinx.com
-Cc: linux-can@vger.kernel.org, netdev@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Message-ID: <f402beaa-2efa-aa65-3828-328c80baae30@pengutronix.de>
-Subject: Re: [PATCH] MAINTAINERS: Add fragment for xilinx CAN driver
-References: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
-In-Reply-To: <1574325564-30529-1-git-send-email-appana.durga.rao@xilinx.com>
+Same here. I hacked up some initial code for doing this with KVM [1], but
+I'd much rather it was part of a standard service specification so that
+we could use the same interface for talking to the firmware and the
+hypervisor.
 
---ZeiVB2HZ5wWxACmWsjRUy6E1Q0DFUC0SX
-Content-Type: text/plain; charset=utf-8
-Content-Language: de-DE
-Content-Transfer-Encoding: quoted-printable
+Will
 
-On 11/21/19 9:39 AM, Appana Durga Kedareswara rao wrote:
-> Added entry for xilinx CAN driver.
->=20
-> Signed-off-by: Appana Durga Kedareswara rao <appana.durga.rao@xilinx.co=
-m>
-
-Added to linux-can.
-
-tnx,
-Marc
-
---=20
-Pengutronix e.K.                 | Marc Kleine-Budde           |
-Embedded Linux                   | https://www.pengutronix.de  |
-Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
-Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
-
-
---ZeiVB2HZ5wWxACmWsjRUy6E1Q0DFUC0SX--
-
---PpQmVNvZpFJ9IGkFYhXpuINI1ehnops4z
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEmvEkXzgOfc881GuFWsYho5HknSAFAl3mNcsACgkQWsYho5Hk
-nSDM2wgApra9Z4I934ScsmYTRYGRmyYCEqJ38RsqaP1gGn5SFN2D3MTZu8xB2Ar6
-uRv1KkIfku8c2I4mHnK4MuI/gDbBcB/9/U5FmYV1bCy/fz4R2aQfqgMfIjqJ5G2y
-U8u1C5kX5IYF/1ej59bJ7wZtpcREVqUphNL+D8Yc3APk2+rm5QnyUFt/EqgVQQ7t
-jn4WpwLErYpNR6LVwgsf3XpkY+JMJR4srXX3M0sxSatyCvgfmsIHccQP7yuPGG1W
-zLrGgqIBdCioqlTUtxhWSVTlVezaOi8ViVkvImt56SY6S92ObTOg+K9sZWZ1crAV
-cB3AljztHTusmHcurs9Hxr3qR7/a3g==
-=e34r
------END PGP SIGNATURE-----
-
---PpQmVNvZpFJ9IGkFYhXpuINI1ehnops4z--
-
-
---===============4143107692707708101==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/log/?h=kvm/hvc
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4143107692707708101==--
-
