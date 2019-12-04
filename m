@@ -2,144 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F52B1130FB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 18:42:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9800F113118
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 18:51:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IYe1nS234KSkkkGwpIDbkUVs3whdGvzfN4mx7mG5Jfw=; b=X480dsY4IKUu1M
-	bbsbdJfMiiWAI5PCkhaoix7+m6mNwUMaGVC7TICyrYifPBM2L+RV0wY7ltDDLKPz/kwMntxhxNJaU
-	t4FhsBkQ4KT/hlMSdisF6b715BiAharkaoOuAqcBNWYbGziKBAwusrQ3D5JcKFO+mAjLW7NEEoEbm
-	wpz0xMbcO4vFGsyzIOB32Uj2TWD0AkhVu24Imy86yPrQ7IEY+li10gUwy17EahnnjrqZRmC0EooRm
-	rr8e6MfikVRrbu0BSuLfCCx7P42br0UXaBp4ZqA0f/ibDCDjTnR/zYtR7/s11BCXiwjFjAQ/0fGvO
-	Fv8e9hwWlMIWLBLahffA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=aJq8Lj812kyQ5Kl9jJOaX6cl4PNv02dZUb1VZlcIYbQ=; b=Wpx+bhk9zi86Uo
+	D2Z1oQNm9XT6WJImO46ye60moLr2wYdHWplA2vMxAgQlIK1Q9GFiNVBNfCeVlB8k9yrAgfJf/3AGe
+	MPMZdjCfCxw25A0NNqUyQzrENnIPi802vXMPwxoLE4cNpXw9acYbsMXpAiis4VQ1OIZoPkkszXJqu
+	5KJrvjr6p86+NPDsk4Hwf4wbdAeJQqc5sRvpY35IW5+Bt0ZHjFzr/KkdzyHDVx2gm9141FlQ91ZJp
+	/jL6oTemqUkDbo3jnNSJQrJuuLyhkBGQzyoWg6I3DXTDOGFiaJWdjyrPYkZQIalSI9ijfvW9CfU6Y
+	5pJUp/oKbKLfVEOuTODA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icYft-0004hY-Bs; Wed, 04 Dec 2019 17:42:53 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1icYo2-0008D0-0y; Wed, 04 Dec 2019 17:51:18 +0000
+Received: from mail-eopbgr690058.outbound.protection.outlook.com
+ ([40.107.69.58] helo=NAM04-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icYfl-0004f6-N1
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 17:42:47 +0000
-Received: by mail-pl1-x644.google.com with SMTP id d19so12446pls.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 09:42:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=gCV6yJBGuyI3vqteKeYvrMOHA0Ztd5PLf6lc7lYjUNk=;
- b=TLpV5L/EebJf1lWmnOuhW6jmepaUXb1nk4R93u/it/HPpUOCoBjO1EBwVnh6S+h4Vi
- VwqfcPoHdtwkpZqTZDP1DiOlIxicjBSip/i/xke3gCbbcXbmRU2r13MwOrJso6EGr5j/
- 4wDLEPCHzujzV+bv28wfDL/9JI+/n5NgiLLM0efgfFeKTLjiB1gJIc4LyFteOgSvNjQl
- sdWw4mai3pK0olNwEF1sR0zuF61FC+AHMxW7zLMCkhuHWc10g03MBJM1/f0IWn0B3zuJ
- 2u/zhK7hTV2fezaF7qQJf0T6dY2iRoj0zw5G4QY7s/7YYxOMt9sL8U7FpUPTlapgFrUe
- sljA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=gCV6yJBGuyI3vqteKeYvrMOHA0Ztd5PLf6lc7lYjUNk=;
- b=W+NzWa0T11wn1xkiK5dhacBocnOj8tyh5OFs8mLph4132iIRR9UsYTW8xqQmkQgI70
- VN17iikbGxAjavZbqJHBjAfsKoAZ5whrM1LEMm5U9CD4zYYUFIi3kYUrLU7mSIhVZ+dM
- VO7iXpN3kUzEMd08MxmUG9UuUZAdmwk9f1dC3PF+Pe3rNWrq2fL8x/PoyHNjj8TchyK8
- w/PLDIz8LjdxGDHX/PXJItpJfejylMBNSsDTIof8vQgvNQ2OKgI+YGRjcHyHEMYyJtSH
- GPJBBhWTXiSayaTyDDhQxvRK/IgrnOcFPF1YKyvkGldbrr/YajWhtQL/+ANSrPA0fBxs
- Gk2Q==
-X-Gm-Message-State: APjAAAVeldmoomaZTPunDyJtAi29wKrPA2WDNzC3sjIA2mOmb7TcAxDZ
- SJ+dagCUm/WsJxcR1FWBMDYXWnsF
-X-Google-Smtp-Source: APXvYqxPMbSelxk2QoaTS4IEPQI6HFh2Et2riPZYOgFGt5+FQY5h5OrWMiWswdFFIeXUEDXwUnOVYA==
-X-Received: by 2002:a17:90a:f005:: with SMTP id
- bt5mr4565729pjb.16.1575481363552; 
- Wed, 04 Dec 2019 09:42:43 -0800 (PST)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id n12sm7861367pgb.32.2019.12.04.09.42.42
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 04 Dec 2019 09:42:42 -0800 (PST)
-Subject: Re: [PATCH 1/6] thermal: brcmstb_thermal: Do not use DT coefficients
-To: Amit Kucheria <amit.kucheria@verdurent.com>
-References: <20191030182132.25763-1-f.fainelli@gmail.com>
- <20191030182132.25763-2-f.fainelli@gmail.com>
- <CAHLCerP6ricempeG=x-a2_aA6__YqADPKAEG5y7qPYNcD2=47Q@mail.gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <9adf0bd8-99ee-0f38-4608-67c92ba42c88@gmail.com>
-Date: Wed, 4 Dec 2019 09:41:16 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
-MIME-Version: 1.0
-In-Reply-To: <CAHLCerP6ricempeG=x-a2_aA6__YqADPKAEG5y7qPYNcD2=47Q@mail.gmail.com>
+ id 1icYnu-0008Cf-8v
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 17:51:12 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Moz9WYazWrVbRcRjn7BEIGoKcDvqIpS2Y9/9eT7Dvk/jGL8VsM3tkgLmXAdCjzfsRezIOPiDnK5XODOaTlzPoz+bVKtBBd6LFtxW6NeO8IVEPWasQbjBLUq+6fNq417pXq80tQnrEUtICjLrZPRmZr+Ufs9Z5TcHgAM+wjAExd8/NCRpPNiG0yTA4RIET3bOnpFToG5IgPfLwU386CXIDwoyNlBnbE9LVHxBeFqMVz7tWHiLm3L+W9az6jir8pKPgQZl4F9EAPVVXqXVmhHrNg2LVuRxeAIrTYLcUmziVTYYQSNz8bLanPNrT3kSqad5h8JkREiNkuv96AEueQJLrw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=resmRhbbEdLQiaABkrvWa7UP0bKuajx8zrPkJ7jGyEY=;
+ b=RLOIo2O9jCIv5K1mp2DNT1bavg2sTWDx8k/mlGGN5K7cNh24//mZIDXBza4aYQyjguHHw5RRYO6PBnZLUr+i/pVSaaOHVeIblvZFQdV2mMRZbPheEUniFvlRQSu4l5lFIvARQ+m6Di+JIYXUOs7rZGEj6ytABfDCzf+0I5GsvTTmAVt4ajUzrRaHba27xSqJF0ns3yUuOXj13n6cedEpWgTXW6BV07DpIMQPCvV+GwNdvyBtf8aeqdSdIovnZpbte1l1lDciFcjvEsmSd18MYHwJ8y4lL9aEysZzNFN/L8q3pe7JuG00AD2TqxJlsAgcmHtGx+Blf1JTGLYv2Yp/CQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=vmware.com; dmarc=pass action=none header.from=vmware.com;
+ dkim=pass header.d=vmware.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vmware.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=resmRhbbEdLQiaABkrvWa7UP0bKuajx8zrPkJ7jGyEY=;
+ b=rPpnFb1z0BrL2i/CtPpIowXppmzE+RFBwCy20iOA6KYgnUb6VY61TlHSn8ElnbiSP/VkG+yIpnO6+DdzvvMIYHikdYZnXz7FQdjMHQO93iw4EgPnZEvApsTOIZ+OFa2p1RTYJFArh4gYuALyT9tcwKOu9rFZBqwJtodLgqWed6k=
+Received: from MN2PR05MB6141.namprd05.prod.outlook.com (20.178.241.217) by
+ MN2PR05MB6111.namprd05.prod.outlook.com (20.178.240.97) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2516.5; Wed, 4 Dec 2019 17:51:06 +0000
+Received: from MN2PR05MB6141.namprd05.prod.outlook.com
+ ([fe80::611e:6a6b:9109:5aa8]) by MN2PR05MB6141.namprd05.prod.outlook.com
+ ([fe80::611e:6a6b:9109:5aa8%7]) with mapi id 15.20.2516.003; Wed, 4 Dec 2019
+ 17:51:06 +0000
+From: Thomas Hellstrom <thellstrom@vmware.com>
+To: Steven Price <steven.price@arm.com>, David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH v15 00/23] Generic page walk and ptdump
+Thread-Topic: [PATCH v15 00/23] Generic page walk and ptdump
+Thread-Index: AQHVqsB6USxvVndKC0O+X8JyjIw6Ng==
+Date: Wed, 4 Dec 2019 17:51:06 +0000
+Message-ID: <MN2PR05MB61416E0CF8A99C91CD69FC43A15D0@MN2PR05MB6141.namprd05.prod.outlook.com>
+References: <20191101140942.51554-1-steven.price@arm.com>
+ <1572896147.5937.116.camel@lca.pw>
+ <7B040741-EC8A-4CC0-964B-4046AE2E617A@lca.pw>
+ <16da6118-ac4d-a165-6202-0731a776ac72@arm.com>
+ <911fac4a-2204-f994-a101-16a60fba12e8@redhat.com>
+ <0FA196FD-3FCD-431A-AA3E-21BF00EA07DC@lca.pw>
+ <9d5f1689-db82-a6da-d51d-08070aa4bad5@redhat.com>
+ <20191204163235.GA1597@arm.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=thellstrom@vmware.com; 
+x-originating-ip: [155.4.205.35]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 19d7ffd5-9909-4955-959f-08d778e289b5
+x-ms-traffictypediagnostic: MN2PR05MB6111:
+x-microsoft-antispam-prvs: <MN2PR05MB611135ED1D2BF841A8BBA04CA15D0@MN2PR05MB6111.namprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 0241D5F98C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(39860400002)(346002)(136003)(366004)(376002)(55674003)(43544003)(189003)(199004)(76176011)(7696005)(45080400002)(229853002)(14454004)(6436002)(81166006)(81156014)(66476007)(66556008)(64756008)(66946007)(4326008)(86362001)(33656002)(8676002)(2906002)(76116006)(91956017)(55016002)(66446008)(966005)(6246003)(6306002)(14444005)(3846002)(71200400001)(102836004)(478600001)(6116002)(9686003)(71190400001)(8936002)(7416002)(316002)(52536014)(6506007)(53546011)(26005)(186003)(74316002)(5660300002)(99286004)(305945005)(7736002)(110136005)(25786009)(54906003)(41533002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR05MB6111;
+ H:MN2PR05MB6141.namprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: vmware.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: x2OLX0yjNFcT1EEx1vxWzhLV6rn+WQMnWMeFUDRfUFmrprXvctVTrM+BhE2JgyiF5jm3z2ebXQ0633TH+uiv/exSE2q7qjruCikK1YTzU8Yp07nwIu7UJBOOZBGjWQKDzoiv9aMZnMKu+8+r9GgY7Yk/mldpIu2oy4acLge/muez80rj6PNPpN0NXvup1TWG+jlwv5ZZ2HJcZBIik8HLqq5rmjSjzUe+lBL8C4qRwCwyLgNhFFjBie/svI+CvhfQBlTNy26LVcQHoUe7FIElOijQlquHNrepPpZg8NdUGsSO/Ofl4ihW5HttLhVaW3CYNIuDT6uInGD7H8wzVKk4xCQnimdyjdJ8L+FC7/G+H1n0fHqVKxhwMwRqzsdMSra//tG92L4A9jxhs764r6W0coz33xOsa1nVO1nzfL7Ksz8S/VW2CxNJRl4l3jsY93hvn75o+vMkO7nw88Ib6FtlhtmkoKgw0lLaL3manGu+vigH/YlIkfo7bTdluV04jJYExvzt/hlhBZWvnOo4QsephwVWD/oA4/YPh8UpKEEZBqoSrGLfxVAKng9bMF7bU4WuybOycYCiMe4k4PPg5UsTHw==
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: vmware.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 19d7ffd5-9909-4955-959f-08d778e289b5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Dec 2019 17:51:06.2246 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b39138ca-3cee-4b4a-a4d6-cd83d9dd62f0
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 777infu+mfbHdoYbtVmWIen0OrDr1SrCuKCYq9XkVJogJMTS+a3y30aoVSkccATQUyXI1p5ZxHTnUAAU+DPn/w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR05MB6111
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_094245_753210_1D1556BA 
-X-CRM114-Status: GOOD (  26.42  )
+X-CRM114-CacheID: sfid-20191204_095110_371423_C7F4424A 
+X-CRM114-Status: GOOD (  14.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.69.58 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -147,6 +114,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -158,142 +126,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- "open list:BROADCOM STB AVS TMON DRIVER" <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- LKML <linux-kernel@vger.kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, "maintainer:BROADCOM STB AVS TMON DRIVER"
- <bcm-kernel-feedback-list@broadcom.com>, Markus Mayer <mmayer@broadcom.com>,
- Zhang Rui <rui.zhang@intel.com>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, James Morse <James.Morse@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <Catalin.Marinas@arm.com>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux-MM <linux-mm@kvack.org>,
+ =?iso-8859-1?Q?J=E9r=F4me_Glisse?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Qian Cai <cai@lca.pw>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ Borislav Petkov <bp@alien8.de>, Andrew Morton <akpm@linux-foundation.org>,
+ Will Deacon <will@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "Liang, Kan" <kan.liang@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/4/19 12:41 AM, Amit Kucheria wrote:
-> On Wed, Oct 30, 2019 at 11:51 PM Florian Fainelli <f.fainelli@gmail.com> wrote:
->>
->> At the time the brcmstb_thermal driver and its binding were merged, the
->> DT binding did not make the coefficients properties a mandatory one,
->> therefore all users of the brcmstb_thermal driver out there have a non
->> functional implementation with zero coefficients. Even if these
->> properties were provided, the formula used for computation is incorrect.
->>
->> The coefficients are entirely process specific (right now, only 28nm is
->> supported) and not board or SoC specific, it is therefore appropriate to
->> hard code them in the driver given the compatibility string we are
->> probed with which has to be updated whenever a new process is
->> introduced.
->>
->> We remove the existing coefficients definition since subsequent patches
->> are going to add support for a new process and will introduce new
->> coefficients as well.
->>
->> Fixes: 9e03cf1b2dd5 ("thermal: add brcmstb AVS TMON driver")
-> 
-> I think you should fix the computation formula as the first patch and
-> then merge the rest of this patch into your second patch.
-> 
-> I don't think the intermediate state of converting named constants to
-> magic numbers is needed just to convert it over to another set of
-> parameters.
+On 12/4/19 5:32 PM, Steven Price wrote:
+> On Wed, Dec 04, 2019 at 02:56:58PM +0000, David Hildenbrand wrote:
+>> On 04.12.19 15:54, Qian Cai wrote:
+>>>
+>>>> On Dec 3, 2019, at 6:02 AM, David Hildenbrand <david@redhat.com> wrote:
+>>>>
+>>>> On 06.11.19 16:05, Steven Price wrote:
+>>>>> On 06/11/2019 13:31, Qian Cai wrote:
+>>>>>>
+>>>>>>> On Nov 4, 2019, at 2:35 PM, Qian Cai <cai@lca.pw> wrote:
+>>>>>>>
+>>>>>>> On Fri, 2019-11-01 at 14:09 +0000, Steven Price wrote:
+>>>>> [...]
+>>>>>>>> Changes since v14:
+>>>>>>>> https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Flore.kernel.org%2Flkml%2F20191028135910.33253-1-steven.price%40arm.com%2F&amp;data=02%7C01%7Cthellstrom%40vmware.com%7C9f50ca595f81432eff5b08d778d7968a%7Cb39138ca3cee4b4aa4d6cd83d9dd62f0%7C0%7C1%7C637110739727088799&amp;sdata=B3n6TFU7hluQyAXUOEaHBAGNC8mhscMfxSJi%2FrFr%2Flo%3D&amp;reserved=0
+>>>>>>>> * Switch walk_page_range() into two functions, the existing
+>>>>>>>>   walk_page_range() now still requires VMAs (and treats areas without a
+>>>>>>>>   VMA as a 'hole'). The new walk_page_range_novma() ignores VMAs and
+>>>>>>>>   will report the actual page table layout. This fixes the previous
+>>>>>>>>   breakage of /proc/<pid>/pagemap
+>>>>>>>> * New patch at the end of the series which reduces the 'level' numbers
+>>>>>>>>   by 1 to simplify the code slightly
+>>>>>>>> * Added tags
+>>>>>>> Does this new version also take care of this boot crash seen with v14? Suppose
+>>>>>>> it is now breaking CONFIG_EFI_PGT_DUMP=y? The full config is,
+>>>>>>>
+>>>>>>> https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcailca%2Flinux-mm%2Fmaster%2Fx86.config&amp;data=02%7C01%7Cthellstrom%40vmware.com%7C9f50ca595f81432eff5b08d778d7968a%7Cb39138ca3cee4b4aa4d6cd83d9dd62f0%7C0%7C1%7C637110739727088799&amp;sdata=ymVh49kh7VL9yseRdkjSbTwRh%2B7yBXxhK7QMTUzwn4U%3D&amp;reserved=0
+>>>>>>>
+>>>>>> V15 is indeed DOA here.
+>>>>> Thanks for finding this, it looks like EFI causes issues here. The below fixes
+>>>>> this for me (booting in QEMU).
+>>>>>
+>>>>> Andrew: do you want me to send out the entire series again for this fix, or
+>>>>> can you squash this into mm-pagewalk-allow-walking-without-vma.patch?
+>>>>>
+>>>>> Thanks,
+>>>>>
+>>>>> Steve
+>>>>>
+>>>>> ---8<---
+>>>>> diff --git a/mm/pagewalk.c b/mm/pagewalk.c
+>>>>> index c7529dc4f82b..70dcaa23598f 100644
+>>>>> --- a/mm/pagewalk.c
+>>>>> +++ b/mm/pagewalk.c
+>>>>> @@ -90,7 +90,7 @@ static int walk_pmd_range(pud_t *pud, unsigned long addr, unsigned long end,
+>>>>>  			split_huge_pmd(walk->vma, pmd, addr);
+>>>>>  			if (pmd_trans_unstable(pmd))
+>>>>>  				goto again;
+>>>>> -		} else if (pmd_leaf(*pmd)) {
+>>>>> +		} else if (pmd_leaf(*pmd) || !pmd_present(*pmd)) {
+>>>>>  			continue;
+>>>>>  		}
+>>>>>
+>>>>> @@ -141,7 +141,7 @@ static int walk_pud_range(p4d_t *p4d, unsigned long addr, unsigned long end,
+>>>>>  			split_huge_pud(walk->vma, pud, addr);
+>>>>>  			if (pud_none(*pud))
+>>>>>  				goto again;
+>>>>> -		} else if (pud_leaf(*pud)) {
+>>>>> +		} else if (pud_leaf(*pud) || !pud_present(*pud)) {
+>>>>>  			continue;
+>>>>>  		}
+>>>>>
+>>>>>
+>>>> Even with this fix, booting for me under QEMU fails. See
+>>>>
+>>>> https://nam04.safelinks.protection.outlook.com/?url=https%3A%2F%2Flore.kernel.org%2Flinux-mm%2Fb7ce62f2-9a48-6e48-6685-003431e521aa%40redhat.com%2F&amp;data=02%7C01%7Cthellstrom%40vmware.com%7C9f50ca595f81432eff5b08d778d7968a%7Cb39138ca3cee4b4aa4d6cd83d9dd62f0%7C0%7C1%7C637110739727088799&amp;sdata=fRuLrmrzNEkU2MFzSVdyVyXyRoyZ95yZOYuy7aMSi7A%3D&amp;reserved=0
+>>>>
+>>> Yes, for some reasons, this starts to crash on almost all arches here, so it might be worth
+>>> for Andrew to revert those in the meantime while allowing Steven to rework.
+>> I agree, this produces too much noise.
+> I've bisected this problem and it's a merge conflict with:
+>
+> ace88f1018b8 ("mm: pagewalk: Take the pagetable lock in walk_pte_range()")
+>
+> Reverting that commit "fixes" the problem. That commit adds a call to
+> pte_offset_map_lock(), however that isn't necessarily safe when
+> considering an "unusual" mapping in the kernel. Combined with my patch
+> set this leads to the BUG when walking the kernel's page tables.
+>
+> At this stage I think it's best if Andrew drops my series and I'll try
+> to rework it on top -rc1 fixing up this conflict and the other x86
+> 32-bit issue that has cropped up.
 
-ok, so you would rather see this patch using the defined constants while
-fixing the formula, and in a subsequent patch getting rid of the
-constant names since they are going to be added to a per-process table,
-does that sound reasonable?
+Hi,
 
-> 
-> Regards,
-> Amit
-> 
->> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
->> ---
->>  drivers/thermal/broadcom/brcmstb_thermal.c | 37 ++++------------------
->>  1 file changed, 6 insertions(+), 31 deletions(-)
->>
->> diff --git a/drivers/thermal/broadcom/brcmstb_thermal.c b/drivers/thermal/broadcom/brcmstb_thermal.c
->> index 5825ac581f56..42482af0422e 100644
->> --- a/drivers/thermal/broadcom/brcmstb_thermal.c
->> +++ b/drivers/thermal/broadcom/brcmstb_thermal.c
->> @@ -48,15 +48,6 @@
->>  #define AVS_TMON_TEMP_INT_CODE         0x1c
->>  #define AVS_TMON_TP_TEST_ENABLE                0x20
->>
->> -/* Default coefficients */
->> -#define AVS_TMON_TEMP_SLOPE            -487
->> -#define AVS_TMON_TEMP_OFFSET           410040
->> -
->> -/* HW related temperature constants */
->> -#define AVS_TMON_TEMP_MAX              0x3ff
->> -#define AVS_TMON_TEMP_MIN              -88161
->> -#define AVS_TMON_TEMP_MASK             AVS_TMON_TEMP_MAX
->> -
->>  enum avs_tmon_trip_type {
->>         TMON_TRIP_TYPE_LOW = 0,
->>         TMON_TRIP_TYPE_HIGH,
->> @@ -108,23 +99,11 @@ struct brcmstb_thermal_priv {
->>         struct thermal_zone_device *thermal;
->>  };
->>
->> -static void avs_tmon_get_coeffs(struct thermal_zone_device *tz, int *slope,
->> -                               int *offset)
->> -{
->> -       *slope = thermal_zone_get_slope(tz);
->> -       *offset = thermal_zone_get_offset(tz);
->> -}
->> -
->>  /* Convert a HW code to a temperature reading (millidegree celsius) */
->>  static inline int avs_tmon_code_to_temp(struct thermal_zone_device *tz,
->>                                         u32 code)
->>  {
->> -       const int val = code & AVS_TMON_TEMP_MASK;
->> -       int slope, offset;
->> -
->> -       avs_tmon_get_coeffs(tz, &slope, &offset);
->> -
->> -       return slope * val + offset;
->> +       return (410040 - (int)((code & 0x3FF) * 487));
->>  }
->>
->>  /*
->> @@ -136,20 +115,16 @@ static inline int avs_tmon_code_to_temp(struct thermal_zone_device *tz,
->>  static inline u32 avs_tmon_temp_to_code(struct thermal_zone_device *tz,
->>                                         int temp, bool low)
->>  {
->> -       int slope, offset;
->> -
->> -       if (temp < AVS_TMON_TEMP_MIN)
->> -               return AVS_TMON_TEMP_MAX; /* Maximum code value */
->> -
->> -       avs_tmon_get_coeffs(tz, &slope, &offset);
->> +       if (temp < -88161)
->> +               return 0x3FF;   /* Maximum code value */
->>
->> -       if (temp >= offset)
->> +       if (temp >= 410040)
->>                 return 0;       /* Minimum code value */
->>
->>         if (low)
->> -               return (u32)(DIV_ROUND_UP(offset - temp, abs(slope)));
->> +               return (u32)(DIV_ROUND_UP(410040 - temp, 487));
->>         else
->> -               return (u32)((offset - temp) / abs(slope));
->> +               return (u32)((410040 - temp) / 487);
->>  }
->>
->>  static int brcmstb_get_temp(void *data, int *temp)
->> --
->> 2.17.1
->>
+Unfortunately I wasn't aware of that conflict.
+
+Perhaps something similar to this
+
+https://elixir.bootlin.com/linux/v5.4/source/mm/memory.c#L2012
+
+would fix at least this particular issue?
+
+/Thomas
 
 
--- 
-Florian
+
+
+>
+> Steve
+>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
