@@ -2,58 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB890112FB4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 17:11:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40EFA112FCC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 17:16:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j9+3CZ4tA3+qISTssmEMJchKF6yqx3gBHmDo1Ycm6LQ=; b=Iv370OqFSSmyV/
-	qCg8FHQvZq/4FviKooE3FxFKsQmWWfCPKDrSnpC5HMxRL+jENKorW5uazb3eT/inSurxDaufOiLsq
-	7l4QTEDXUjEgOCOR6o2VR4Ycf2eetJlBMAhH9WHFa/ZAvsYuZGAVdlVXg13t/3mZ8tVc4RZEa69vI
-	UHkC55eeTr8IW1Ryup9CyBN/2iGgP3JWfqWlyzUHlAQVEMHHB9mt+E/xshGQ7FgByEfOQL7rbITdR
-	OI1/2oiT6zxzWvowgoSBCHU9fxCSbdCGtPFhY32GcCvHtMW1q3J3bws2x2yT9T1auy4TE89jzeTg0
-	W6xlEa9JYF30hG2cKouA==;
+	List-Owner; bh=izfO/i7P9giU7mgYj3PlknwdjdiDavXMlGePeQ4RtvQ=; b=J7na/tk+F4zZgk
+	jhYzXpNTCWo3OC3wRTuu4vhdrDkU6MFxTN65lqQ75f55rLnxTcBYp05WPOfWmBA5EAtfPYTEn7eok
+	eUu4oiWa0/5XX28DLNoZ0Wp8QwXfil5ZaiyR+dPrXdQZc9XiaC/t0ZefKAjHbu3KBneukhAv7ZZ9q
+	N1Ba/jVObxeGjrSGxH2SXvlycrn76nanht7wE1/h1aqkNHcMacy8gnfKqBMKkjsfP5YjBSjolSovX
+	0sf+JgPYh7oSYVBmvKOrCwzfGZTNB/XP+2hwj09CePiKuTNEDbyvLCos3I2qVuy4M+C1ZGLXgVWOj
+	j67JGcytDU649eWvlYsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icXFj-0003b0-3n; Wed, 04 Dec 2019 16:11:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icXBf-0008CM-Ui
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 16:07:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D0A7831B;
- Wed,  4 Dec 2019 08:07:32 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3FA3A3F52E;
- Wed,  4 Dec 2019 08:07:32 -0800 (PST)
-Date: Wed, 4 Dec 2019 16:07:30 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
-Subject: Re: [PATCH v3 2/6] PCI: iproc: Add INTx support with better modeling
-Message-ID: <20191204160729.GJ18399@e119886-lin.cambridge.arm.com>
-References: <1575349026-8743-1-git-send-email-srinath.mannam@broadcom.com>
- <1575349026-8743-3-git-send-email-srinath.mannam@broadcom.com>
- <20191203155514.GE18399@e119886-lin.cambridge.arm.com>
- <CAHp75Vf7d=Gw24MTq2q3BKspkLEDDM24GVK4Zh_4zfZEzVuZjw@mail.gmail.com>
- <40fffa66-4b06-a851-84c2-4de36d5c6777@broadcom.com>
- <CAHp75VfyKAg4OhzUa4swGXOGTvJ5fVO8mhGSG=5HAUP__M-URQ@mail.gmail.com>
+	id 1icXKh-00065x-HK; Wed, 04 Dec 2019 16:16:55 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1icXKY-00065P-67
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 16:16:47 +0000
+Received: by mail-pl1-x643.google.com with SMTP id q16so3347408plr.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Dec 2019 08:16:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=pqU4igCndeG4UoCDSucNu4GwL3x2y+vfWi/Ebs1wzZc=;
+ b=J6wW9rQZNctPpcpaRobDFMExB93/ZEkzhTam2T23ewBpNq8vpq3su7cM3xksiLZRNj
+ VWPwta8xYcL1/FVMAdHrrQqm0c6LIyIsxgxue6Nal0v0DU7ls9RPDkIGRGiUemkCZKbz
+ 42pJxBUytOxLa7bu52MpYJG4PcBntgRTHizCN1Yh/q1pnqXc3Uqc2I+E/MoFiC7fxL5k
+ wFc3uc1nXh85UFVB2mLGjIjtD49oKFf/fDu/OREA03+FCqWDtXvfnkLlcT93j4BX7+rC
+ hAV9eg9itNtdgLH1AOehHAfFNPjXTPeR9v8kLgmX3SQ0aTeAkM/nMKIeKGQ8GydaR7cm
+ lu5Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=pqU4igCndeG4UoCDSucNu4GwL3x2y+vfWi/Ebs1wzZc=;
+ b=Q5DYch3tCNkSZWurSB4imIiSHdQl+//0bg0ina/dSYL+oezH+huub4oicl+maq9JdU
+ XDa0LT9HWhibe8UQV8joWMlYQz109ZkSzbJzM2H7CjgeVRoiHHGwkDv7arDhPxb0W15K
+ DC5HATnVbYhYl9nO66b3f67irPTq+OiQhDY0F3ceEk3MIIYmKWM9ddtusDROAA9iBu0Q
+ ex6v1Zb73d2kyRGrzFbrZQw3E7oBZN2C+KT2FKbqe98JgJSJgxGZXkUYEG5plVfjT3M+
+ BWwJHLrjYEV1XE4ELrNzbTTH0tm9rGoysIjcXfCe1L6FSqtcouujNA36skufYbp3Z1T4
+ INYQ==
+X-Gm-Message-State: APjAAAWaZDCDTvjf0SJzFfULW6EqqaWqErz2jwPnh7fiHbVpdGyS6XDi
+ yazJSA7r65WjHJ8TY3sGEXI=
+X-Google-Smtp-Source: APXvYqwdytT3wxqOWmWAUSezJYS9o3F9w3oCV/vG1Nqu53f+3nOnX41jUHMdU6TBi2uG6y1+LpWSnw==
+X-Received: by 2002:a17:90b:3011:: with SMTP id
+ hg17mr4116854pjb.90.1575476205426; 
+ Wed, 04 Dec 2019 08:16:45 -0800 (PST)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id x186sm8346024pfx.105.2019.12.04.08.16.42
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 04 Dec 2019 08:16:43 -0800 (PST)
+Date: Wed, 4 Dec 2019 08:16:41 -0800
+From: Guenter Roeck <linux@roeck-us.net>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v7 16/25] arm: Add support for generic vDSO (causing crash)
+Message-ID: <20191204161641.GA28130@roeck-us.net>
+References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
+ <20190621095252.32307-17-vincenzo.frascino@arm.com>
+ <20191204135159.GA7210@roeck-us.net>
+ <6cdf4734-4065-09c1-8623-1bf523b38c1b@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAHp75VfyKAg4OhzUa4swGXOGTvJ5fVO8mhGSG=5HAUP__M-URQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <6cdf4734-4065-09c1-8623-1bf523b38c1b@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_080736_098888_A71A1FAE 
-X-CRM114-Status: GOOD (  22.95  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191204_081646_252943_F9A90B88 
+X-CRM114-Status: GOOD (  18.10  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,87 +107,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Ray Jui <rjui@broadcom.com>, linux-pci@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Srinath Mannam <srinath.mannam@broadcom.com>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Ray Jui <ray.jui@broadcom.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Shijith Thotton <sthotton@marvell.com>,
+ Andre Przywara <andre.przywara@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Paul Burton <paul.burton@mips.com>, linux-kselftest@vger.kernel.org,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 04, 2019 at 10:29:51AM +0200, Andy Shevchenko wrote:
-> On Wed, Dec 4, 2019 at 12:09 AM Ray Jui <ray.jui@broadcom.com> wrote:
-> > On 12/3/19 11:27 AM, Andy Shevchenko wrote:
-> > > On Tue, Dec 3, 2019 at 5:55 PM Andrew Murray <andrew.murray@arm.com> wrote:
-> > >> On Tue, Dec 03, 2019 at 10:27:02AM +0530, Srinath Mannam wrote:
-> > >
-> > >>> +     /* go through INTx A, B, C, D until all interrupts are handled */
-> > >>> +     do {
-> > >>> +             status = iproc_pcie_read_reg(pcie, IPROC_PCIE_INTX_CSR);
-> > >>
-> > >> By performing this read once and outside of the do/while loop you may improve
-> > >> performance. I wonder how probable it is to get another INTx whilst handling
-> > >> one?
-> > >
-> > > May I ask how it can be improved?
-> > > One read will be needed any way, and so does this code.
-> > >
-> >
-> > I guess the current code will cause the IPROC_PCIE_INTX_CSR register to
-> > be read TWICE, if it's ever set to start with.
-> >
-> > But then if we do it outside of the while loop, if we ever receive an
-> > interrupt while servicing one, the interrupt will still need to be
-> > serviced, and in this case, it will cause additional context switch
-> > overhead by going out and back in the interrupt context.
-
-Yes it's a trade off - if you dropped the do/while loop and thus had a single
-read you'd reduce the overhead on interrupt handling in every case except
-where another INTx is received whilst in this function. But as you point out
-each time that does happen you'll pay the penalty of a context switch.
-
-I don't have any knowledge of this platform so I have no idea if such a change
-would be good/bad or material. However I thought I'd point it out. Looking at
-the other controller drivers, some handle in a loop and some don't.
-
-
-> >
-> > My take is that it's probably more ideal to leave this portion of code
-> > as it is.
+On Wed, Dec 04, 2019 at 01:58:25PM +0000, Vincenzo Frascino wrote:
+> Hi Guenter,
 > 
-> Can't we simple drop a do-while completely and leave only
-> for_each_set_bit() loop?
+> On 12/4/19 1:51 PM, Guenter Roeck wrote:
+> > On Fri, Jun 21, 2019 at 10:52:43AM +0100, Vincenzo Frascino wrote:
+> >> The arm vDSO library requires some adaptations to use to take advantage
+> >> of the newly introduced generic vDSO library.
+> >>
+> >> Introduce the following changes:
+> >>  - Modification vdso.c to be compliant with the common vdso datapage
+> >>  - Use of lib/vdso for gettimeofday
+> >>  - Implementation of elf note
+> >>
+> >> Cc: Russell King <linux@armlinux.org.uk>
+> >> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> > 
+> > This patch causes a crash with qemu's mcimx6ul-evk emulation while running
+> > imx_v6_v7_defconfig.
+> > 
 > 
-
-I'm happy either way.
-
-Thanks,
-
-Andrew Murray
-
-> >
-> > >>> +             for_each_set_bit(bit, &status, PCI_NUM_INTX) {
-> > >>> +                     virq = irq_find_mapping(pcie->irq_domain, bit);
-> > >>> +                     if (virq)
-> > >>> +                             generic_handle_irq(virq);
-> > >>> +                     else
-> > >>> +                             dev_err(dev, "unexpected INTx%u\n", bit);
-> > >>> +             }
-> > >>> +     } while ((status & SYS_RC_INTX_MASK) != 0);
-> > >
+> Thank you for reporting this. Could you please provide some details on how I can
+> reproduce the scenario you are describing?
 > 
-> 
-> 
-> -- 
-> With Best Regards,
-> Andy Shevchenko
+- Build imx_v6_v7_defconfig
+- Get root file system or initrd, for example from
+  https://github.com/groeck/linux-build-test/tree/master/rootfs/arm
+- Run image. Example, with initrd:
+	qemu-system-arm -M mcimx6ul-evk -kernel arch/arm/boot/zImage \
+		-no-reboot -initrd rootfs-armv7a.cpio \
+		-m 256 -display none -serial null \
+		--append 'rdinit=/sbin/init earlycon=ec_imx6q,mmio,0x21e8000,115200n8 console=ttymxc1,115200'
+		-dtb arch/arm/boot/dts/imx6ul-14x14-evk.dtb \
+		-nographic -monitor null -serial stdio
+
+qemu has to be v3.1 or later to support the machine.
+
+Hope this helps,
+Guenter
 
 _______________________________________________
 linux-arm-kernel mailing list
