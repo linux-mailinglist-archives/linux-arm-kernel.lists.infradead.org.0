@@ -2,64 +2,151 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA219112235
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 05:50:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60FDE11223A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 05:50:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=yjXfh4L3bNaZXjam3XV6G1f2Ldjj+UAXR2zFhbUfD0w=; b=Skc
-	oEcV6mk9Z4p+s0eF6ZKUOhIsnyt1eHU/SkkU4KpHCdI4F0nFM1chlwhdYPGwQHloL00yuTW6+od3z
-	wKIV/BIhh2gCbJuk49xx72oaBaxIFIFYk7OYebGIBBSBV9DPZJPNxMbAaP77atK9LZPeWmDo+lLeZ
-	Wkd7AAxGNSrCAyiWPfy0vRQ9xqLqUFwcILtR0oHmZi/58F7PZ0Ee+2bAZLyREdsQp9vT5nV8iwV1i
-	KwJRyqGkviFtD+zAJVIliOl3vu5bEibY7KoLIBhC3pRN3+OYzTEvmEnMdKVuUi0/Svrd8iw4SDHKI
-	VDCERrMr9c2tNfTO4a+u3fM1iiSfzRA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=khmzCrSpKmGN5nVVYqlg0ulGpIOPqMD9L9IS2K6mUMI=; b=DTdttt0aQ2OwA6
+	D3fCAMILhpcJKasxXsUf9vKR684o8l7Au94S84rr5hFjsB8RNUoKxSWXHftIO/O6f8bNvQtCGpIAe
+	KCX1AvoCTcPXscIIvY5odis5//x8sgkrFWWtZ0fgW5AOXx8csQqW67Kofglq5f8NiPISM6Isq1zlt
+	v1n7GxSbwoZ9RF/cO5T26sxGOLl/JyQoEl7Y22SGBWxwmNVLMJoM2YYvkTC+El8P7LS5l2S+sv4fx
+	xijh+xRce4X1mDub2VUdS3i5HayStlsUUIiA/W6dwyjceRl7NFxkJiqaDo+4GiRPiP+xncr7bhVTk
+	Lb9etsSr2ZC3ZCmJrq8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icMcJ-0006I2-IY; Wed, 04 Dec 2019 04:50:23 +0000
-Received: from conuserg-07.nifty.com ([210.131.2.74])
+	id 1icMck-0006Wu-Iz; Wed, 04 Dec 2019 04:50:50 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icMcC-0006Hc-4u
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 04:50:18 +0000
-Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
- [153.142.97.92]) (authenticated)
- by conuserg-07.nifty.com with ESMTP id xB44nqwx028807;
- Wed, 4 Dec 2019 13:49:52 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-07.nifty.com xB44nqwx028807
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1575434993;
- bh=Jt7OPPgzmKjsthv+1fEhc/PB2RQML0mCHB/Yk4eNpNM=;
- h=From:To:Cc:Subject:Date:From;
- b=VrRX0cOfzpxSGvNmzzdQh0kNkcAtNB8Cb66qhyQf0UGmGl8TeheA+xVlfDDsx8oTd
- ihGuCs2kY4Pr+9z9J8nqgtAO8+eO2LOQ0zrzEwUdZHx/ZQ9nHPhuYWHon0x/O0Fnpg
- 5rt+uRgMvAAAdrgMm0yy9pxfWqGApcLo+xO/1su5oNizCS6GED3NtjZMsHPiTQpTWL
- FEEoPUgfmPjop9Y2WDJssDfI+1dVnTJynKSvUMETpPNHsf00ot9xMRCfUeULrEVXKJ
- cXYaJFXomi2+r70KP8QRaHHQptdnDXcURrZNyvkIMwejKFr1wtm82d9x1YYB30mq1a
- lVwcaIoUGFiAA==
-X-Nifty-SrcIP: [153.142.97.92]
-From: Masahiro Yamada <masahiroy@kernel.org>
-To: patches@arm.linux.org.uk
-Subject: [PATCH] ARM: decompressor: simplify libfdt builds
-Date: Wed,  4 Dec 2019 13:49:50 +0900
-Message-Id: <20191204044950.10418-1-masahiroy@kernel.org>
-X-Mailer: git-send-email 2.17.1
+ id 1icMca-0006WM-RF
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 04:50:42 +0000
+Received: by mail-wr1-x442.google.com with SMTP id c9so417977wrw.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Dec 2019 20:50:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:from:to:cc:references:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=RqSWbVrcq9JaNwN5b63sKB3VzrDwVIrhAqaUDdsYFMg=;
+ b=QM/FiCWievVnhgR6WHzO6N0zT+OBvxs4A6rStxvOkNTg8i5RRG6FpKmovhHudgUs5j
+ ZzfXL0k0vDnpGBN1s/K5RmoALf3vPniuX5OkYxdjPc5vkGHtfvUyu/jddJTDtjAbIG5L
+ 5VldlV0P58pvvJPWp+AecAxqU+8XF4slSBSjTso/uGh38Xiamj4uROF8iDExtOoluLFW
+ KWG2jk5RdUBTJsNKTGQPUPUZhccY2S6R8rX7ibqiNx6y5H7v0AyDCujJ/lm2DIvG7MzR
+ nl7w9ybWhm+F7JbkmI+rTNaf9lHqgVZ6c76XMgPiTT5VzchIXVNVS2xKz2DRDYCyDSac
+ kOmg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:from:to:cc:references:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=RqSWbVrcq9JaNwN5b63sKB3VzrDwVIrhAqaUDdsYFMg=;
+ b=iVVSrCLM0oF26LXJuHOfqw8RB93KpZQQx1pM4UuQ1PHQH7P5Jj25bA6viyRwhuWE6U
+ 1pWviPj0fE9Gv0/zcxdb3WnSssgv1xwk2VY8BzSqpSsPz0i8yv6KpKvNqKm8HdFQkp6K
+ FillFBmHy0DJ0bwHvRciDm1IKKi27Bh23Y+zOMdsvZ9HD2P1h88i0hEVl9JU2Sb/VEom
+ XvZ11/X/x3qa5HnXrGECOR5gZp5LFUbNv6wkDXW5yNafvofMnGoxOrH/Bq5jqMOQECSU
+ 7OAugQV8oosrDSzlRMJwgUPxvyF6jUSoulQP1W8nAeTWtQcgeqKzUJ0Mj4sA9m6C12Lz
+ i83Q==
+X-Gm-Message-State: APjAAAWOXrJPuTgNCL/omlzrcpBiYP1YnWZbhZNAsKtqhWnKpW9n0g+U
+ i40LdZ5Jb68/miXBfbxMLuolQfSP
+X-Google-Smtp-Source: APXvYqyqArtMsoWCtrBvN8OgeF29QawbeaqqAHsW5j/4q1EZcLhwkH0heINdr0KT6kJKK1nUSya1+A==
+X-Received: by 2002:a5d:4f8e:: with SMTP id d14mr1739622wru.112.1575435038746; 
+ Tue, 03 Dec 2019 20:50:38 -0800 (PST)
+Received: from [10.230.28.123] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id 60sm7097654wrn.86.2019.12.03.20.50.35
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 03 Dec 2019 20:50:37 -0800 (PST)
+Subject: Re: [PATCH 0/6] brcmstb_thermal updates for new processes
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-kernel@vger.kernel.org, Zhang Rui <rui.zhang@intel.com>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>
+References: <20191030182132.25763-1-f.fainelli@gmail.com>
+ <97fc97de-c515-7c70-0c98-44146db91b3e@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ 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
+ a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
+Message-ID: <4edae8c7-abb6-fc71-14c3-9b8ddb4e7003@gmail.com>
+Date: Tue, 3 Dec 2019 20:50:33 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
+MIME-Version: 1.0
+In-Reply-To: <97fc97de-c515-7c70-0c98-44146db91b3e@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_205016_420084_C75894CF 
-X-CRM114-Status: GOOD (  11.02  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191203_205040_908031_A611AE82 
+X-CRM114-Status: GOOD (  15.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.74 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,194 +158,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masahiro Yamada <masahiroy@kernel.org>,
- Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ "open list:BROADCOM STB AVS TMON DRIVER" <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ "maintainer:BROADCOM STB AVS TMON DRIVER"
+ <bcm-kernel-feedback-list@broadcom.com>, Markus Mayer <mmayer@broadcom.com>,
+ "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Copying source files during the build time may not end up with
-as clean code as expected.
-
-lib/fdt*.c simply wrap scripts/dtc/libfdt/fdt*.c, and it works
-nicely. Let's follow that approach for the arm decompressor, too.
-
-Add four wrappers, arch/arm/boot/compressed/fdt*.c and remove
-the Makefile messes. Another nice thing is we no longer need to
-maintain the own libfdt_env.h because the decompressor can include
-<linux/libfdt_env.h>.
-
-Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
----
-
-KernelVersion: v5.5-rc1
 
 
- arch/arm/boot/compressed/.gitignore     |  9 -------
- arch/arm/boot/compressed/Makefile       | 33 +++++++------------------
- arch/arm/boot/compressed/atags_to_fdt.c |  1 +
- arch/arm/boot/compressed/fdt.c          |  1 +
- arch/arm/boot/compressed/fdt_ro.c       |  1 +
- arch/arm/boot/compressed/fdt_rw.c       |  1 +
- arch/arm/boot/compressed/fdt_wip.c      |  1 +
- arch/arm/boot/compressed/libfdt_env.h   | 24 ------------------
- 8 files changed, 14 insertions(+), 57 deletions(-)
- create mode 100644 arch/arm/boot/compressed/fdt.c
- create mode 100644 arch/arm/boot/compressed/fdt_ro.c
- create mode 100644 arch/arm/boot/compressed/fdt_rw.c
- create mode 100644 arch/arm/boot/compressed/fdt_wip.c
- delete mode 100644 arch/arm/boot/compressed/libfdt_env.h
+On 11/20/2019 10:43 AM, Florian Fainelli wrote:
+> 
+> 
+> On 10/30/2019 11:21 AM, Florian Fainelli wrote:
+>> Hi,
+>>
+>> This patch series contains a bug fix for the existing platforms and then
+>> paves the way for adding support for Broadcom STB's latest chips in 16nm
+>> processes, and finally updates the driver with pecularities introduced
+>> with the 16nm, like the lack of interrupt notification from the HW.
+>>
+>> Please queue up the first patch for -stable if you want, thanks!
+> 
+> Ping?
 
-diff --git a/arch/arm/boot/compressed/.gitignore b/arch/arm/boot/compressed/.gitignore
-index 86b2f5d28240..2fdb4885846b 100644
---- a/arch/arm/boot/compressed/.gitignore
-+++ b/arch/arm/boot/compressed/.gitignore
-@@ -6,12 +6,3 @@ hyp-stub.S
- piggy_data
- vmlinux
- vmlinux.lds
--
--# borrowed libfdt files
--fdt.c
--fdt.h
--fdt_ro.c
--fdt_rw.c
--fdt_wip.c
--libfdt.h
--libfdt_internal.h
-diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
-index da599c3a1193..d01ce71afac6 100644
---- a/arch/arm/boot/compressed/Makefile
-+++ b/arch/arm/boot/compressed/Makefile
-@@ -76,29 +76,23 @@ compress-$(CONFIG_KERNEL_LZMA) = lzma
- compress-$(CONFIG_KERNEL_XZ)   = xzkern
- compress-$(CONFIG_KERNEL_LZ4)  = lz4
- 
--# Borrowed libfdt files for the ATAG compatibility mode
--
--libfdt		:= fdt_rw.c fdt_ro.c fdt_wip.c fdt.c
--libfdt_hdrs	:= fdt.h libfdt.h libfdt_internal.h
--
--libfdt_objs	:= $(addsuffix .o, $(basename $(libfdt)))
--
--$(addprefix $(obj)/,$(libfdt) $(libfdt_hdrs)): $(obj)/%: $(srctree)/scripts/dtc/libfdt/%
--	$(call cmd,shipped)
-+ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
-+libfdt_objs = fdt_rw.o fdt_ro.o fdt_wip.o fdt.o atags_to_fdt.o
- 
--$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o): \
--	$(addprefix $(obj)/,$(libfdt_hdrs))
-+OBJS	+= $(libfdt_objs)
- 
--ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
--OBJS	+= $(libfdt_objs) atags_to_fdt.o
-+# -fstack-protector-strong triggers protection checks in this code,
-+# but it is being used too early to link to meaningful stack_chk logic.
-+nossp-flags-$(CONFIG_CC_HAS_STACKPROTECTOR_NONE) := -fno-stack-protector
-+$(foreach o, $(libfdt_objs), \
-+	$(eval CFLAGS_$(o) := -I $(srctree)/scripts/dtc/libfdt) $(nossp-flags-y))
- endif
- 
- targets       := vmlinux vmlinux.lds piggy_data piggy.o \
- 		 lib1funcs.o ashldi3.o bswapsdi2.o \
- 		 head.o $(OBJS)
- 
--clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S \
--		$(libfdt) $(libfdt_hdrs) hyp-stub.S
-+clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S hyp-stub.S
- 
- KBUILD_CFLAGS += -DDISABLE_BRANCH_PROFILING
- KBUILD_CFLAGS += $(DISABLE_ARM_SSP_PER_TASK_PLUGIN)
-@@ -108,15 +102,6 @@ ORIG_CFLAGS := $(KBUILD_CFLAGS)
- KBUILD_CFLAGS = $(subst -pg, , $(ORIG_CFLAGS))
- endif
- 
--# -fstack-protector-strong triggers protection checks in this code,
--# but it is being used too early to link to meaningful stack_chk logic.
--nossp-flags-$(CONFIG_CC_HAS_STACKPROTECTOR_NONE) := -fno-stack-protector
--CFLAGS_atags_to_fdt.o := $(nossp-flags-y)
--CFLAGS_fdt.o := $(nossp-flags-y)
--CFLAGS_fdt_ro.o := $(nossp-flags-y)
--CFLAGS_fdt_rw.o := $(nossp-flags-y)
--CFLAGS_fdt_wip.o := $(nossp-flags-y)
--
- ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin -I$(obj)
- asflags-y := -DZIMAGE
- 
-diff --git a/arch/arm/boot/compressed/atags_to_fdt.c b/arch/arm/boot/compressed/atags_to_fdt.c
-index 64c49747f8a3..8452753efebe 100644
---- a/arch/arm/boot/compressed/atags_to_fdt.c
-+++ b/arch/arm/boot/compressed/atags_to_fdt.c
-@@ -1,4 +1,5 @@
- // SPDX-License-Identifier: GPL-2.0
-+#include <linux/libfdt_env.h>
- #include <asm/setup.h>
- #include <libfdt.h>
- 
-diff --git a/arch/arm/boot/compressed/fdt.c b/arch/arm/boot/compressed/fdt.c
-new file mode 100644
-index 000000000000..49bc1fc1e273
---- /dev/null
-+++ b/arch/arm/boot/compressed/fdt.c
-@@ -0,0 +1 @@
-+#include "../../../../lib/fdt.c"
-diff --git a/arch/arm/boot/compressed/fdt_ro.c b/arch/arm/boot/compressed/fdt_ro.c
-new file mode 100644
-index 000000000000..fc7f8313e93e
---- /dev/null
-+++ b/arch/arm/boot/compressed/fdt_ro.c
-@@ -0,0 +1 @@
-+#include "../../../../lib/fdt_ro.c"
-diff --git a/arch/arm/boot/compressed/fdt_rw.c b/arch/arm/boot/compressed/fdt_rw.c
-new file mode 100644
-index 000000000000..7e9777da2708
---- /dev/null
-+++ b/arch/arm/boot/compressed/fdt_rw.c
-@@ -0,0 +1 @@
-+#include "../../../../lib/fdt_rw.c"
-diff --git a/arch/arm/boot/compressed/fdt_wip.c b/arch/arm/boot/compressed/fdt_wip.c
-new file mode 100644
-index 000000000000..f0b580e760a7
---- /dev/null
-+++ b/arch/arm/boot/compressed/fdt_wip.c
-@@ -0,0 +1 @@
-+#include "../../../../lib/fdt_wip.c"
-diff --git a/arch/arm/boot/compressed/libfdt_env.h b/arch/arm/boot/compressed/libfdt_env.h
-deleted file mode 100644
-index 6a0f1f524466..000000000000
---- a/arch/arm/boot/compressed/libfdt_env.h
-+++ /dev/null
-@@ -1,24 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--#ifndef _ARM_LIBFDT_ENV_H
--#define _ARM_LIBFDT_ENV_H
--
--#include <linux/limits.h>
--#include <linux/types.h>
--#include <linux/string.h>
--#include <asm/byteorder.h>
--
--#define INT32_MAX	S32_MAX
--#define UINT32_MAX	U32_MAX
--
--typedef __be16 fdt16_t;
--typedef __be32 fdt32_t;
--typedef __be64 fdt64_t;
--
--#define fdt16_to_cpu(x)		be16_to_cpu(x)
--#define cpu_to_fdt16(x)		cpu_to_be16(x)
--#define fdt32_to_cpu(x)		be32_to_cpu(x)
--#define cpu_to_fdt32(x)		cpu_to_be32(x)
--#define fdt64_to_cpu(x)		be64_to_cpu(x)
--#define cpu_to_fdt64(x)		cpu_to_be64(x)
--
--#endif
+Rui, anyone?
+
+> 
+>>
+>> Florian Fainelli (6):
+>>   thermal: brcmstb_thermal: Do not use DT coefficients
+>>   thermal: brcmstb_thermal: Prepare to support a different process
+>>   dt-bindings: thermal: Define BCM7216 thermal sensor compatible
+>>   thermal: brcmstb_thermal: Add 16nm process thermal parameters
+>>   thermal: brcmstb_thermal: Restructure interrupt registration
+>>   thermal: brcmstb_thermal: Register different ops per process
+>>
+>>  .../bindings/thermal/brcm,avs-tmon.txt        |   8 +-
+>>  drivers/thermal/broadcom/brcmstb_thermal.c    | 108 ++++++++++--------
+>>  2 files changed, 67 insertions(+), 49 deletions(-)
+>>
+> 
+
 -- 
-2.17.1
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
