@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B324112F3E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 17:01:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26302112F54
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 17:01:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jFzh1C3EsAmw658HZsQjMQSYShHodg5xTDPOTT1H0Lk=; b=YNjI6EsXNT1tZC
-	xDd9EwwtNtxPwnGHc2ruYyV0MCv5cZx8C6SyZa8aKalSfMUTVgqHQqXNjo7H1ateWTX0H34E54Czb
-	2e9Cbau5nrGorcADvMt/rB3aA5G8dGmmZThjCAgTLVaseWgmgWvDtT02WU0umwD+kM2nN/LgflRT3
-	x9BAycdeCG1ol/NjPUtGi49+RelPwrsNx/EBP/YBJnr07g2I1bmFTHQrSooEa2c+VOB+TS/MwEaT/
-	+rLOrsu6NXjNePlEVhuzOQGIvBGQGZhhUSTrTbng/PNALHSjYSjQDtfUPkP3jHND3IEHVJXcNX3Tm
-	RuaVjDhNAxBr152Yay9w==;
+	List-Owner; bh=eIxGx0KSMrkQ+9GKm48j4IhlvKjMNkqrVyUNuaiq34o=; b=gNiV0oD0UZvxVo
+	nE85Aop9/4GJC05ARhfvUlFtkPV+LeLLQZpfR0y0IKKerd9NaDggsJgghCQWKcEJjodok394NrAu8
+	sfi1TuYW00R1T4N3A/rolu7I1KYzFqZJIQNdvWMm415am1DDMw3F2Sm/F9Ivg1mRsL6jtmnAy6rLS
+	asi8QOkhw8goYivrqRSpa9k/jxymipzhfB3Oxll1lYEGSA1HkRIiRc+pep3eew1LgxOMcCTL+b6t7
+	5ydrnqaCCHyEuT49TMCK2Qgyb1mdB6kM0FKPFtynmYM+nCUmOqUmeBNQJucBiWJYRnmt0RmvIYFsn
+	KcoQ0mHJxlHW74N/ZAGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icX59-0000jV-5M; Wed, 04 Dec 2019 16:00:51 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1icX5t-0001Nj-Qh; Wed, 04 Dec 2019 16:01:37 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icX45-0007G6-0p
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 15:59:48 +0000
-Received: by mail-qk1-x742.google.com with SMTP id q28so324139qkn.10
+ id 1icX46-0007Hn-3m
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 15:59:49 +0000
+Received: by mail-qk1-x744.google.com with SMTP id f5so298511qkm.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 07:59:44 -0800 (PST)
+ Wed, 04 Dec 2019 07:59:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=uS5983uJoHZy5JiqeIGQWhAtmT2ue7W1CVbOZjIqk6g=;
- b=ZtlqW1OByAmf47tXyRsopiX+BaNBesr84wke0vTVLOd+GkIrY+k3iBOCn8+k3BhroD
- UNPyg/sFg82rChe6aGKjY90pK15vcnyPSHWI/ntL/xrCb92iqtTCUuFQDgzNKJ3heYcj
- aamqSO5AfV4WR7UoOsASk9fB/ywo0S5VTXfuTqiZNofg+uS4jCiKICD+fWy0+/ahLoap
- dC7A63cF49Lmtymqy1AMRt03PDqSLFIz9dhvMvNL4HhZmvcOOqWAj0KpmU9tEjjVDK+Z
- LjhirTdzsonzWezv7RaT1Qz2fpdpTFzh8noDuDAhec1ZgziXt4/L1/RYgTO0O77TxhMn
- VFMw==
+ bh=O1/Snxb5riMEM2rJi1KMG7s6/Tztu9n9IW8tHLsuHwY=;
+ b=VtXAM4U7F7l2niWs2bjUA1/FCfevZyxkmFcPuFpFGUqREEmkRI3IPJjFp/9sWZ4P9u
+ 34P5r/HciRoHPUgQ2zh1WhfBQ9dc+I9oLLrYVFxPfMSm5eSXfqAPsS25DRtrkU4qMfCV
+ JVFGC9KseajBUqOruNg/NZ83Q44tZwVme4EI3Pja3lk4UB6zPf1enKsubGZs2zAZkd0w
+ zFjnBvC4MnF7DMg65bT++dNi7nJy1b0S2Szx2B3XbhBdFh69wkxvEaNLmYfxSD0WYG+x
+ BKX5FJ2uiYbnPo22WYYeynb4LanTaDONnrGZItg/BIAaFidFw2MowkE73FNI6Xz0B2eO
+ Sgvg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=uS5983uJoHZy5JiqeIGQWhAtmT2ue7W1CVbOZjIqk6g=;
- b=kHCVgz2bCIZkSMn1Y2Or7siQKjU0t4gzVdMq2P1tz5fBl4IjM7S9w7Jb5Hlo1QvWN+
- 1MkKyznVXAcW2Ib7OGKjVK0tBju5cRAH6ZAKDFI/xBpFCBDNS9bJTq3hBAeMDgzqW7Vx
- YdryWA4blPF/z+S0ZTlf50usSD+2Sz9SMkmvVi8xrGApnVlpepkcppZU4vVdFU1qA0OC
- SaGCB8YDcGsNeUN1WDvfYmN+cz/CgX8iDyx3LLyswKGSOYvWd/L2NUW8H/moz5O+F5ZL
- RDhoX1awCniptVBrB3Hphc5luMVurD9Kh6vtMDO75fbF4SwHJWfX4/HeDJAP+nEXQf1I
- TIxQ==
-X-Gm-Message-State: APjAAAU6nvG1u2dT8S0KIruYzHApcz8qm49hLHnV6Mtu6u6pHXyy8Jxo
- qxfnIEXYLUS25OxRz9TaDIRRsg==
-X-Google-Smtp-Source: APXvYqxd8yp8Dngio2HO2NRx40UjWPIBx2dPgEFDiwpELJdmzYKJ7ihFd7m3wohPBcadKXvewYRGxg==
-X-Received: by 2002:a37:8e45:: with SMTP id q66mr3685650qkd.129.1575475183874; 
- Wed, 04 Dec 2019 07:59:43 -0800 (PST)
+ bh=O1/Snxb5riMEM2rJi1KMG7s6/Tztu9n9IW8tHLsuHwY=;
+ b=Mrrq9cvdLvojYvWEdC9q1xJrqPKdQXc5MYqSkGzz9Z+pQlc3dD2mU9Cgc3leU0YN/l
+ ihRMdCmY4hx49MfmWWPwpqjiOLu6HbzH4xTHJydP4Ywb5XQmHMHMCTQ5LS2RA7+P9sqe
+ 2/5TKXsQUXuTZDtjut4vCG64LFRLGPo38aEPPafP/HcN2Au/V1e3w0sljJmsAgk54bJx
+ JjjcUoNtq+DXnvLtxcK93AqDx62Du/LSbugFKm6U2/xmg6QQRNLjv0r98CC7XCqHix1E
+ X/MMgIgIwIPoxPxm7P1AEQRFzhIa/dOSM7HsFFX7vEL7VPM3eC3WG1BPt5079SxBxqYD
+ TvmA==
+X-Gm-Message-State: APjAAAXigfPJElOVeh2XSmGaYcVNqYatehaXEYVKU2Hi6k5JdfFuephf
+ bd5bvCoJYz9o6Z0BQcXeup0MaA==
+X-Google-Smtp-Source: APXvYqwnoYhlsay18cGYdgO8tha/3l6PdDeLuAJb0cJ+NbXd/YkMJZLdic0YIGKGxuueYGo1dLyIrg==
+X-Received: by 2002:a05:620a:844:: with SMTP id
+ u4mr3825309qku.368.1575475185340; 
+ Wed, 04 Dec 2019 07:59:45 -0800 (PST)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id w21sm4177585qth.17.2019.12.04.07.59.42
+ by smtp.gmail.com with ESMTPSA id w21sm4177585qth.17.2019.12.04.07.59.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 07:59:43 -0800 (PST)
+ Wed, 04 Dec 2019 07:59:44 -0800 (PST)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -66,23 +67,24 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com, steve.capper@arm.com, rfontana@redhat.com,
  tglx@linutronix.de
-Subject: [PATCH v8 02/25] kexec: add machine_kexec_post_load()
-Date: Wed,  4 Dec 2019 10:59:15 -0500
-Message-Id: <20191204155938.2279686-3-pasha.tatashin@soleen.com>
+Subject: [PATCH v8 03/25] arm64: kexec: remove unnecessary debug prints
+Date: Wed,  4 Dec 2019 10:59:16 -0500
+Message-Id: <20191204155938.2279686-4-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191204155938.2279686-1-pasha.tatashin@soleen.com>
 References: <20191204155938.2279686-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_075945_074487_B7489C6A 
-X-CRM114-Status: GOOD (  11.77  )
+X-CRM114-CacheID: sfid-20191204_075946_152570_E0C2DDCB 
+X-CRM114-Status: UNSURE (   7.56  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,81 +111,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It is the same as machine_kexec_prepare(), but is called after segments are
-loaded. This way, can do processing work with already loaded relocation
-segments. One such example is arm64: it has to have segments loaded in
-order to create a page table, but it cannot do it during kexec time,
-because at that time allocations won't be possible anymore.
+The kexec_image_info() outputs all the necessary information about the
+upcoming kexec. The extra debug printfs in machine_kexec() are not
+needed.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-Acked-by: Dave Young <dyoung@redhat.com>
 ---
- kernel/kexec.c          | 4 ++++
- kernel/kexec_core.c     | 6 ++++++
- kernel/kexec_file.c     | 4 ++++
- kernel/kexec_internal.h | 2 ++
- 4 files changed, 16 insertions(+)
+ arch/arm64/kernel/machine_kexec.c | 12 ------------
+ 1 file changed, 12 deletions(-)
 
-diff --git a/kernel/kexec.c b/kernel/kexec.c
-index bc933c0db9bf..f977786fe498 100644
---- a/kernel/kexec.c
-+++ b/kernel/kexec.c
-@@ -159,6 +159,10 @@ static int do_kexec_load(unsigned long entry, unsigned long nr_segments,
+diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
+index 0df8493624e0..8e9c924423b4 100644
+--- a/arch/arm64/kernel/machine_kexec.c
++++ b/arch/arm64/kernel/machine_kexec.c
+@@ -160,18 +160,6 @@ void machine_kexec(struct kimage *kimage)
  
- 	kimage_terminate(image);
+ 	kexec_image_info(kimage);
  
-+	ret = machine_kexec_post_load(image);
-+	if (ret)
-+		goto out;
-+
- 	/* Install the new kernel and uninstall the old */
- 	image = xchg(dest_image, image);
- 
-diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-index f7ae04b8de6f..c19c0dad1ebe 100644
---- a/kernel/kexec_core.c
-+++ b/kernel/kexec_core.c
-@@ -589,6 +589,12 @@ static void kimage_free_extra_pages(struct kimage *image)
- 	kimage_free_page_list(&image->unusable_pages);
- 
- }
-+
-+int __weak machine_kexec_post_load(struct kimage *image)
-+{
-+	return 0;
-+}
-+
- void kimage_terminate(struct kimage *image)
- {
- 	if (*image->entry != 0)
-diff --git a/kernel/kexec_file.c b/kernel/kexec_file.c
-index a2df93948665..faa74d5f6941 100644
---- a/kernel/kexec_file.c
-+++ b/kernel/kexec_file.c
-@@ -441,6 +441,10 @@ SYSCALL_DEFINE5(kexec_file_load, int, kernel_fd, int, initrd_fd,
- 
- 	kimage_terminate(image);
- 
-+	ret = machine_kexec_post_load(image);
-+	if (ret)
-+		goto out;
-+
+-	pr_debug("%s:%d: control_code_page:        %p\n", __func__, __LINE__,
+-		kimage->control_code_page);
+-	pr_debug("%s:%d: reboot_code_buffer_phys:  %pa\n", __func__, __LINE__,
+-		&reboot_code_buffer_phys);
+-	pr_debug("%s:%d: reboot_code_buffer:       %p\n", __func__, __LINE__,
+-		reboot_code_buffer);
+-	pr_debug("%s:%d: relocate_new_kernel:      %p\n", __func__, __LINE__,
+-		arm64_relocate_new_kernel);
+-	pr_debug("%s:%d: relocate_new_kernel_size: 0x%lx(%lu) bytes\n",
+-		__func__, __LINE__, arm64_relocate_new_kernel_size,
+-		arm64_relocate_new_kernel_size);
+-
  	/*
- 	 * Free up any temporary buffers allocated which are not needed
- 	 * after image has been loaded
-diff --git a/kernel/kexec_internal.h b/kernel/kexec_internal.h
-index 48aaf2ac0d0d..39d30ccf8d87 100644
---- a/kernel/kexec_internal.h
-+++ b/kernel/kexec_internal.h
-@@ -13,6 +13,8 @@ void kimage_terminate(struct kimage *image);
- int kimage_is_destination_range(struct kimage *image,
- 				unsigned long start, unsigned long end);
- 
-+int machine_kexec_post_load(struct kimage *image);
-+
- extern struct mutex kexec_mutex;
- 
- #ifdef CONFIG_KEXEC_FILE
+ 	 * Copy arm64_relocate_new_kernel to the reboot_code_buffer for use
+ 	 * after the kernel is shut down.
 -- 
 2.24.0
 
