@@ -2,78 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 838D6112E87
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 16:33:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B32CA112EA0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 16:38:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u++2FzLIr0KtpuO7UXWfQuKiInZJf87TjqzuzghPrM4=; b=dG2Clq2S7jf7TN
-	EOmRL9iheeQf2Tb80gnCr9ZmMCQ+GU/h20eNgE5GF9V/ds1Ga8H+1+HHZka2ouLEeMYO/gEpwg3T1
-	2iuV5XnEeD+eQHEyg+0Ci+MYVDsWgKlCfycAKWcX28lH0bGf+2G5xKnia5Zp940dLpb6n41qEPJnX
-	tsn5WiM8jI2xJ2KRCNF87pvcWseH0ovAbeOmyy3hrVoWRrzQR1CSXttSJ8tIITBw45DSIIJ7PjYnB
-	B28t0L6S4J2fhTUdLxUj2a+AdOkJqSn20NSUh3N62BmysJNfXzDAOnTucad9nJZmNSD2MqQdv8067
-	OcrRbVfLMpzC8T4Wl8wA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K6DUCBECg4jXbj2wmiCU0jbkLvNEfAh8aAA1noMFOw8=; b=IxhmHFYoZ1ZryW
+	dsNT5il4/30dTHLWkaGpf6Q5qAnFLE1sH4zGB6LcB34XBlWNEhqik6rPYSpyY8JJuZ63JjyyBcGAy
+	zMNkSNORp+kluAKw4Vg2Lses//E717YyfNJD16ftW22byFnpgT/g9HDkxs2QCsm7xMgMpGg6KHLvS
+	CD2wpdJW6SsYDvSSALA/OPC4aM+IEsyj0GZV/Y+ntTIU53QyH769vsDeZOzmdra7EN5jLyhqQzpup
+	LUpf1dXyWBptu1olvw5LC7fFEvoZWekooJS1DC9uKo36TSCKYp31emgU6W++GX3Q9o4fN3Iu0yT4e
+	xaWGP62Lz6qpRNX/Idmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icWe4-0004FG-C8; Wed, 04 Dec 2019 15:32:52 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1icWir-00062d-Sr; Wed, 04 Dec 2019 15:37:49 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icWdw-0004El-Ki
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 15:32:46 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xB4FRKQ9030262; Wed, 4 Dec 2019 16:32:39 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=+9lWQkEjqwkPOyurtTV3ZM+qwwYATmvlvAbyD5XGBKo=;
- b=h+3Z8EjpO5BwBlzIcXyd9b3IfjghkL8YihNVQ3PAd57zsp6lABUkHl5ShNcow8Ajh+M/
- 4lBqQm7pP4/ByMNK13fpA1sj3i0FMV8OtCFDuL0eGKbZ1a4/7hL1Q9FcxUtwf/TP5FGa
- OoYjdB/oB6/c+dKg8xbeMZitig+OZJNj5H1AkO3AV57GJEb5udRS4Z70rjjO86DqdrWc
- muZLyv1UfTNAcO0u66SHFRcsHAlc1OXbrpM9iQzBtqQIWSmABiN3/e1ONT2egGDWQchs
- W1Rrv79sptz5V3MAPkbJkctYcMrG3OgmgvRlrc0cGOFJO4VDV4Ntpx5GCNfVrCTQMWpB PQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wkeea65fj-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 04 Dec 2019 16:32:39 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E68B010002A;
- Wed,  4 Dec 2019 16:32:38 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id CFEA02C38CF;
- Wed,  4 Dec 2019 16:32:38 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 4 Dec 2019 16:32:38
- +0100
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-To: <broonie@kernel.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
- <alexandre.torgue@st.com>
-Subject: [PATCH] dt-bindings: spi: Convert stm32 spi bindings to json-schema
-Date: Wed, 4 Dec 2019 16:32:33 +0100
-Message-ID: <20191204153233.791-1-benjamin.gaignard@st.com>
-X-Mailer: git-send-email 2.15.0
+ id 1icWii-00062E-9h
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 15:37:41 +0000
+Received: by mail-ot1-x341.google.com with SMTP id x3so6650941oto.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Dec 2019 07:37:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Zsl/NYOHbe+5Z9l4Py0S0UhbStKwiCgjg78sah22X74=;
+ b=De7wqYVNK/pvvWk9mSR7jFvEzZsynk6dJccpz3iNh+S9NEfYYXJZ2HgKfjEZv4EQYi
+ wDRBS00PBoaVLUU0LiAuBWt5/YvRnLqEfJeH9P6vKapz84FBU72ZuyBN5c/30LTDzDCJ
+ 1gHb1/lXcIIjFcwApdj6h0OQhhOH6yDfw6AR+6qAYwgpxyz7P2Kmuh7t4o7KDDHqxuOJ
+ G93q2q/HVYHQi6donkp56u7EfJlWbI2VVUz8TYV9bQmEggqxfHIaX48UF4xePDzSS9IK
+ 7Ox4iI5bfFXBmxtzlWtmOWlbZt86qRyYFoVWwqQILxhjR0CGqB3d7+OipTvbaxReczo1
+ ftSg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Zsl/NYOHbe+5Z9l4Py0S0UhbStKwiCgjg78sah22X74=;
+ b=QiFGqoS7E6pFaofpOHjFZANUlYsbvUlJh99cq7aQ0rvj+Tn2DAX4YCLdhBSF6aTdxH
+ p/47u9wyEDWnNMDVur5NilXs0h7BjoEtKmyfdEUvKpfi6rbTWhcAWfIKvlPLkob41sNH
+ QGMnmZ21oH1VU2J9g9y9JSxuOpE6fFXnEGF4v6bAvvcO0uq+5uJgks7dePT3fJ1DM+kI
+ XvuIncABluy2h3Taz+idEuVXoQsxf5tsAkr3/O9lnK5tpGY/AOdSVUGs82zOHA6UNqfv
+ yINzis0HGbL0V0bK/G8mwtgRSkD8GkvhP0cJqxey6qEpXqMqm3L4XQq5idknV/LwKVms
+ O18Q==
+X-Gm-Message-State: APjAAAWfYaa6EUr6Rg67+HVsonglaq2+SojkAuXa9uvSLxLPVPEr1KTN
+ hnDOo8lVv1RXmOSNN8e4xvMiMQtbqoJptaj7ycY=
+X-Google-Smtp-Source: APXvYqwm/x9oQYj+1JqrNdG6tOLzfyWFpbaFv3VoCKTHKug5N7LCh4qvVQbuivSmaCiIIztxUB857mrUsxEcm+vS0oM=
+X-Received: by 2002:a9d:624e:: with SMTP id i14mr2972023otk.371.1575473859624; 
+ Wed, 04 Dec 2019 07:37:39 -0800 (PST)
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG3NODE3.st.com
- (10.75.127.9)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-12-04_03:2019-12-04,2019-12-04 signatures=0
+References: <20190113021719.46457-1-samuel@sholland.org>
+ <20190113021719.46457-2-samuel@sholland.org>
+ <472c5450-1b60-6ac7-b242-805c2a2f3272@arm.com>
+ <CA+E=qVfaBcUN5iB3kaK5gHyURpWt7ET6_js=sLiDg4PCDXXTYA@mail.gmail.com>
+ <4b922079aeed04f31ff67b3e7fb78022@www.loen.fr>
+In-Reply-To: <4b922079aeed04f31ff67b3e7fb78022@www.loen.fr>
+From: Vasily Khoruzhick <anarsoul@gmail.com>
+Date: Wed, 4 Dec 2019 07:37:13 -0800
+Message-ID: <CA+E=qVc-BA_W8O1qpkKgg5pDax-Jbvmpc-TB7gWB7CfYAxXCXQ@mail.gmail.com>
+Subject: Re: [linux-sunxi] Re: [PATCH v3 1/2] arm64: arch_timer: Workaround
+ for Allwinner A64 timer instability
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_073245_030871_BE93DCF7 
-X-CRM114-Status: GOOD (  15.64  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191204_073740_340710_8E769E3C 
+X-CRM114-Status: GOOD (  13.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (anarsoul[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,211 +97,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Amelie Delaunay <amelie.delaunay@st.com>,
- Benjamin Gaignard <benjamin.gaignard@st.com>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, Erwan Leray <erwan.leray@st.com>,
- Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Samuel Holland <samuel@sholland.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ arm-linux <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the STM32 spi binding to DT schema format using json-schema
+On Wed, Dec 4, 2019 at 4:21 AM Marc Zyngier <maz@kernel.org> wrote:
+>
+> [please note that my email address has changed]
+>
+> On 2019-12-04 04:18, Vasily Khoruzhick wrote:
+>
+> [...]
+>
+> > Unfortunately this patch doesn't completely eliminate the jumps.
+> > There
+> > have been reports from users who still saw 95y jump even with the
+> > patch applied.
+> >
+> > Personally I've seen it once or twice on my Pine64-LTS.
+> >
+> > Looks like we need bigger hammer. Does anyone have any idea what it
+> > could be?
+>
+> Which kernel version did you see this happening on?
 
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-CC: Erwan Leray <erwan.leray@st.com>
-CC: Fabrice Gasnier <fabrice.gasnier@st.com>
-CC: Amelie Delaunay <amelie.delaunay@st.com>
----
- .../devicetree/bindings/spi/spi-stm32.txt          |  62 ------------
- .../devicetree/bindings/spi/st,stm32-spi.yaml      | 105 +++++++++++++++++++++
- 2 files changed, 105 insertions(+), 62 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/spi/spi-stm32.txt
- create mode 100644 Documentation/devicetree/bindings/spi/st,stm32-spi.yaml
+I've seen it on 5.3
 
-diff --git a/Documentation/devicetree/bindings/spi/spi-stm32.txt b/Documentation/devicetree/bindings/spi/spi-stm32.txt
-deleted file mode 100644
-index d82755c63eaf..000000000000
---- a/Documentation/devicetree/bindings/spi/spi-stm32.txt
-+++ /dev/null
-@@ -1,62 +0,0 @@
--STMicroelectronics STM32 SPI Controller
--
--The STM32 SPI controller is used to communicate with external devices using
--the Serial Peripheral Interface. It supports full-duplex, half-duplex and
--simplex synchronous serial communication with external devices. It supports
--from 4 to 32-bit data size. Although it can be configured as master or slave,
--only master is supported by the driver.
--
--Required properties:
--- compatible: Should be one of:
--  "st,stm32h7-spi"
--  "st,stm32f4-spi"
--- reg: Offset and length of the device's register set.
--- interrupts: Must contain the interrupt id.
--- clocks: Must contain an entry for spiclk (which feeds the internal clock
--	  generator).
--- #address-cells:  Number of cells required to define a chip select address.
--- #size-cells: Should be zero.
--
--Optional properties:
--- resets: Must contain the phandle to the reset controller.
--- A pinctrl state named "default" may be defined to set pins in mode of
--  operation for SPI transfer.
--- dmas: DMA specifiers for tx and rx dma. DMA fifo mode must be used. See the
--  STM32 DMA bindings, Documentation/devicetree/bindings/dma/stm32-dma.txt.
--- dma-names: DMA request names should include "tx" and "rx" if present.
--- cs-gpios: list of GPIO chip selects. See the SPI bus bindings,
--  Documentation/devicetree/bindings/spi/spi-bus.txt
--
--
--Child nodes represent devices on the SPI bus
--  See ../spi/spi-bus.txt
--
--Optional properties:
--- st,spi-midi-ns: Only for STM32H7, (Master Inter-Data Idleness) minimum time
--		  delay in nanoseconds inserted between two consecutive data
--		  frames.
--
--
--Example:
--	spi2: spi@40003800 {
--		#address-cells = <1>;
--		#size-cells = <0>;
--		compatible = "st,stm32h7-spi";
--		reg = <0x40003800 0x400>;
--		interrupts = <36>;
--		clocks = <&rcc SPI2_CK>;
--		resets = <&rcc 1166>;
--		dmas = <&dmamux1 0 39 0x400 0x01>,
--		       <&dmamux1 1 40 0x400 0x01>;
--		dma-names = "rx", "tx";
--		pinctrl-0 = <&spi2_pins_b>;
--		pinctrl-names = "default";
--		cs-gpios = <&gpioa 11 0>;
--
--		aardvark@0 {
--			compatible = "totalphase,aardvark";
--			reg = <0>;
--			spi-max-frequency = <4000000>;
--			st,spi-midi-ns = <4000>;
--		};
--	};
-diff --git a/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml b/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml
-new file mode 100644
-index 000000000000..57ef3a0f57e0
---- /dev/null
-+++ b/Documentation/devicetree/bindings/spi/st,stm32-spi.yaml
-@@ -0,0 +1,105 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/spi/st,stm32-spi.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: STMicroelectronics STM32 SPI Controller bindings
-+
-+description: |
-+  The STM32 SPI controller is used to communicate with external devices using
-+  the Serial Peripheral Interface. It supports full-duplex, half-duplex and
-+  simplex synchronous serial communication with external devices. It supports
-+  from 4 to 32-bit data size.
-+
-+maintainers:
-+  - Erwan Leray <erwan.leray@st.com>
-+  - Fabrice Gasnier <fabrice.gasnier@st.com>
-+
-+allOf:
-+  - $ref: "spi-controller.yaml#"
-+  - if:
-+      properties:
-+        comptatible:
-+          constains:
-+            st,stm32f4-spi
-+    then:
-+      properties:
-+        st,spi-midi-ns: false
-+
-+properties:
-+  compatible:
-+    enum:
-+      - st,stm32f4-spi
-+      - st,stm32h7-spi
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  resets:
-+    maxItems: 1
-+
-+  dmas:
-+    description: |
-+      DMA specifiers for tx and rx dma. DMA fifo mode must be used. See
-+      the STM32 DMA bindings Documentation/devicetree/bindings/dma/stm32-dma.txt.
-+    items:
-+      - description: rx DMA channel
-+      - description: tx DMA channel
-+
-+  dma-names:
-+    items:
-+      - const: rx
-+      - const: tx
-+
-+patternProperties:
-+  "^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}@[0-9a-f]+$":
-+    type: object
-+    # SPI slave nodes must be children of the SPI master node and can
-+    # contain the following properties.
-+    properties:
-+      st,spi-midi-ns:
-+        $ref: /schemas/types.yaml#/definitions/uint32
-+        description: |
-+          Only for STM32H7, (Master Inter-Data Idleness) minimum time
-+          delay in nanoseconds inserted between two consecutive data frames.
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - interrupts
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/stm32mp1-clks.h>
-+    #include <dt-bindings/reset/stm32mp1-resets.h>
-+    spi@4000b000 {
-+      #address-cells = <1>;
-+      #size-cells = <0>;
-+      compatible = "st,stm32h7-spi";
-+      reg = <0x4000b000 0x400>;
-+      interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&rcc SPI2_K>;
-+      resets = <&rcc SPI2_R>;
-+      dmas = <&dmamux1 0 39 0x400 0x05>,
-+             <&dmamux1 1 40 0x400 0x05>;
-+      dma-names = "rx", "tx";
-+      cs-gpios = <&gpioa 11 0>;
-+
-+      aardvark@0 {
-+        compatible = "totalphase,aardvark";
-+        reg = <0>;
-+        spi-max-frequency = <4000000>;
-+        st,spi-midi-ns = <4000>;
-+      };
-+    };
-+
-+...
--- 
-2.15.0
-
+>          M.
+> --
+> Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
