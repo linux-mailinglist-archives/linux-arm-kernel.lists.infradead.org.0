@@ -2,58 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFB21112D79
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 15:32:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81C88112DA5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 15:42:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5axuHPW9XsJUeHt7GriSJDhhdBozsT1l9aLIEMKP0EM=; b=e87utiua+TiAAr
-	E6kUvnDYudK8d36CtCCu20Eg2QewT2Hhx4LcemlssMnHHQ31JaYMdV27eOmn02LnBg18GDNFZOJ93
-	tTQs33131yKruZ4NF8248HOBxQQkUjIlf/OSTpwpFkF4emxH0JIum3+crwiM8m3UWtyii6U6Ik0Ww
-	o/xHyGpK2xdMCpHGYGSX8PmFhCDGz99s3+wQhp6DaYZz3yNLPrAM+43VAnP7jkKaTI1V8yzw3J5dt
-	aCEOzvOIw+DC184i/m7Xh6xsI7vhYkIhoLwWwqzslco3YgRTkvkL53/rzBMZS7ez73kIFfmhm3Xu5
-	RP3TSGjgvAowWmK+z8pQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hFyf7RsQOJdnFt3g1NtxXDp2R0fiS1YeodHI+B/Lbrg=; b=GDPaSCYBwFb4LV
+	hpcbX/c6gpChIX9G9KjcJiwgWstxAnxGIHfB3/p8u0MBG1+BficJ/F+/dRYwIkVmMazW+kgYzdCax
+	OApLrMUin1l/ghrDxUlp9MLQPOGKqbMH5sQcLDxQlkWeMw3nJ351v3+vC3OtEsEbWhIPD+PoPsB94
+	hF9JEn6UNIgTQN3yFmS6nqMqoHIoxgtsg5XANt/7LnprxFHiARdeyQsyLnEznqWW/EAQamhzXZ4Hv
+	vV4F20NzhfoAzY2MjHVE2pCxLvdK5QNo+upGq68jhqLsgaBr0zTNHDfT2wwYR8gKdAMdfkFQdcRh0
+	kVq/CM4IzNynhZgQkr9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icVhe-0006WV-MZ; Wed, 04 Dec 2019 14:32:30 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1icVri-00025Y-5N; Wed, 04 Dec 2019 14:42:54 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icVhY-0006Rf-CG
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 14:32:25 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id 256E520106;
- Wed,  4 Dec 2019 15:30:15 +0100 (CET)
-Date: Wed, 4 Dec 2019 15:30:14 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Jyri Sarha <jsarha@ti.com>
-Subject: Re: [PATCH] drm/tilcdc: Switch to using GPIO descriptors
-Message-ID: <20191204143014.GB20926@ravnborg.org>
-References: <20191203130916.155779-1-linus.walleij@linaro.org>
- <b3e3e44b-3061-7531-4e88-7ee9b44f40a7@ti.com>
+ id 1icVrZ-00024Y-SS
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 14:42:47 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: +9RXOtXOFcqc0C2PEUn2bWakLYQg1Jwsi+X+/C2WP04OAGGUfbHMDMnlycCrtVULAXMDo/gjBW
+ SpRrzKLB8HL0LLnbj+Rh6rRfkKl2BAMAR0M6bvp+AXblBClY1HdNXAJfGImjxa/1CvK0Wf4MNu
+ PqrFkq2u5yZc/bB+ZVxyJL1RcqsKWW3dhBB+zKRrkoGwaYkeyqkAbtGBpqknN9v8mWOQqgZ0S9
+ kith57QQe5XSFp3h5OJReHKiQ2notWZIgJpaQIzGEjPm0hh9HwsFxfuKavT4NKqio3svBaRniA
+ rho=
+X-IronPort-AV: E=Sophos;i="5.69,277,1571727600"; d="scan'208";a="56592278"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 04 Dec 2019 07:42:42 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 4 Dec 2019 07:42:41 -0700
+Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Wed, 4 Dec 2019 07:42:38 -0700
+From: Claudiu Beznea <claudiu.beznea@microchip.com>
+To: <robh+dt@kernel.org>, <mark.rutland@arm.com>,
+ <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
+ <ludovic.desroches@microchip.com>, <daniel.lezcano@linaro.org>,
+ <tglx@linutronix.de>
+Subject: [PATCH v3 0/2] add Microchip PIT64B timer
+Date: Wed, 4 Dec 2019 16:42:27 +0200
+Message-ID: <1575470549-702-1-git-send-email-claudiu.beznea@microchip.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b3e3e44b-3061-7531-4e88-7ee9b44f40a7@ti.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10
- a=BTXFA4sy8_DcFOhKg4MA:9 a=CjuIK1q_8ugA:10
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_063224_598405_8E879273 
-X-CRM114-Status: GOOD (  16.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191204_064245_952508_0EFA20D5 
+X-CRM114-Status: GOOD (  15.41  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,40 +95,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Lechner <david@lechnology.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- dri-devel@lists.freedesktop.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Claudiu Beznea <claudiu.beznea@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jyri.
+Hi,
 
-On Tue, Dec 03, 2019 at 08:29:45PM +0200, Jyri Sarha wrote:
-> On 03/12/2019 15:09, Linus Walleij wrote:
-> > The TI LCDC picks a GPIO line from the device tree to use
-> > for DPMS power on/off. We can switch this to use a GPIO
-> > descriptor pretty easily. Make sure to request the GPIO
-> > "as is" so that the DPMS state that we start (boot) in is
-> > preserved.
-> > 
-> 
-> Hmmm, I have been considering ditching this driver all together since no
-> mainline platform has ever used it. Also, if anybody ever wants to
-> connect tfp410 to tilcdc, he should use drm/bridge/ti-tfp410.c instead.
-> 
-> But since the patch is there, maybe I should pick it up, and remove the
-> bundled driver later a bit later.
+This series adds driver for Microchip PIT64B timer.
+Timer could be used in continuous or oneshot mode. It has 2x32 bit registers
+to emulate a 64 bit timer. The timer's period could be configured via LSB_PR
+and MSB_PR registers. The current timer's value could be checked via TLSB and
+TMSB registers. When (TMSB << 32) | TLSB value reach the (MSB_PR << 32) | LSB_PR
+interrupt is raised. If in contiuous mode the TLSB and TMSB resets and restart
+counting.
 
-IMO much better to just get rid of it now - as there is anyway no users.
-No reason to patch code that is essential dead.
-You just postpone the task for no gain.
+This drivers uses PIT64B capabilities for clocksource and clockevent.
+The first requested PIT64B timer is used for clockevent. The second one is used
+for clocksource. Individual PIT64B hardware resources were used for clocksource
+and clockevent to be able to support high resolution timers with this PIT64B
+implementation.
 
-	Sam
+Thank you,
+Claudiu Beznea
+
+Changes in v3:
+- rework data structures:
+	- timer related data structure is called now mchp_pit64b_timer embedding
+	  base iomem, clocks, interrupt, prescaler value
+	- introduced struct mchp_pit64b_clksrc and struct mchp_pit64b_clkevt
+	  instead of mchp_pit64b_clksrc_data and mchp_pit64b_clkevt_data
+	- use container_of() to retrieve mchp_pit64b_timer objects on
+	  clocksource/clockevent specific APIs
+	- document data structures
+- use raw_local_irq_save()/raw_local_irq_restore() when reading
+  MCHP_PIT64B_TLSBR and MCHP_PIT64B_TMSBR in mchp_pit64b_get_period()
+- get rid of mchp_pit64b_read(), mchp_pit64b_write() and use instead
+  readl_relaxed(), writel_relaxed()
+- get rid of mchp_pit64b_set_period() and inlined its instructions in
+  mchp_pit64b_reset()
+- mchp_pit64b_reset() gets now as arguments an object of type
+  struct mchp_pit64b_timer, cycles to program and mode
+- remove static struct clocksource mchp_pit64b_clksrc and
+  static struct clock_event_device mchp_pit64b_clkevt and instead allocate
+  and fill them in mchp_pit64b_dt_init_clksrc() and
+  mchp_pit64b_dt_init_clkevt()
+- call mchp_pit64b_reset() in mchp_pit64b_clkevt_set_next_event() and
+  program clockevent timer with SMOD=0; if SMOD=1 the timer's period could
+  be reprogrammed also if writing TLSB, TMSB if it is running. In cases
+  were its period expired START bit still has to be set in control register.
+  In case the programming sequence is like in v2, with SMOD=1:
+	- program MSB_PR
+	- program LSB_PR
+	- program START bit in control register
+  for short programmed periods we may start the timer twice with this
+  programming sequence, 1st time after LSB_PR is updated (and due to SMOD=1),
+  2nd time after programming START bit in control register and in case
+  programmed period already expire
+- simplify mchp_pit64b_interrupt() by just reading ISR register, to clear the
+  received interrupt, and just call irq_data->clkevt->event_handler(irq_data->clkevt);
+- in mchp_pit64b_pres_compute() chose the bigest prescaler in case a good
+  one not found
+- document mchp_pit64b_pres_prepare() and simplified it a bit
+- enforce gclk as mandatory
+- introduce mchp_pit64b_timer_init() and mchp_pit64b_timer_cleanup()
+- keep the clocksource timer base address in a mchp_pit64b_cs_base variable so
+  that it could be used by mchp_pit64b_sched_read_clk()
+- rework mchp_pit64b_dt_init() and return -EINVAL in case it was called
+  more than two times: one for initialization of clockevent, one for
+  initialization of clocksource
+- introduce MCHP_PIT64B_MR_ONE_SHOT define
+- move the new lines introduced in Makefile and Kconfig at the end of files
+- collect Rob's Reviewed-by tag on patch 1/2
+- review the commit message of patch 2/2
+
+Changes in v2:
+- remove clock-frequency DT binding and hardcoded it in the driver
+- initialize best_pres variable in mchp_pit64b_pres_prepare()
+- remove MCHP_PIT64B_DEF_FREQ 
+- get rid of patches 3-5 from v1 [1] since there is no entry in MAINTAINERS file
+  for this entry. It was removed in
+  commit 44015a8181a5 ("MAINTAINERS: at91: remove the TC entry")
+
+[1] https://lore.kernel.org/lkml/1552580772-8499-1-git-send-email-claudiu.beznea@microchip.com/
+
+Claudiu Beznea (2):
+  dt-bindings: arm: atmel: add bindings for PIT64B
+  clocksource/drivers/timer-microchip-pit64b: add Microchip PIT64B
+    support
+
+ .../devicetree/bindings/arm/atmel-sysregs.txt      |   6 +
+ drivers/clocksource/Kconfig                        |   6 +
+ drivers/clocksource/Makefile                       |   1 +
+ drivers/clocksource/timer-microchip-pit64b.c       | 501 +++++++++++++++++++++
+ 4 files changed, 514 insertions(+)
+ create mode 100644 drivers/clocksource/timer-microchip-pit64b.c
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
