@@ -2,68 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C69721122DF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 07:26:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 033871122F7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 07:37:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=19pg2LQffzgLXE652bGHym6MbDclSPi4ojqydsuuwNM=; b=YhBbfcjRHwuJlT
-	z57GOchSP9FuQVxq+IuQWG3//4eYJMZo6CfAkEKGW/5D3uNCdJ3+Yp4L78NSW9i+PvJYXpUgH+os4
-	CDFzsl29tdlcnFQCTcp+K4e4siePQ4xskrMmVldKSTagHqb4Ei6KIH8fmROdCOnL6ca7fKqdGJX8U
-	ua1QYcQ4TkCsD8JspBwwVCQgIuXxV4RcSgbfwp3jSImP42YnTXF3uQKihSgWJ+ZOAae/xv4jPrMLU
-	C0NJ/A1oq01J0K0bTx4Jy2D6blR7D8CivH2DTda1QrLvjfGMJIl13UimNaqs4MLDxA0wf08g5hthc
-	kguJzwaZRK2U4AzyZKAQ==;
+	List-Owner; bh=B54YryamTxywillE9tl8Cmusw3KFNslcHucvSr+ybho=; b=Lcmkt5mw0S0fTE
+	Fh3qpLLjk13fOZo3JSVK841VAEmkhiuCVwxn8dxVmY6ny7B559wvtNuZVvOlqVaV3xSV5nyFBynZj
+	B/xKHsAcxG/Uhp2LsaUaz7AY2jQwZcEjYFJcA0O/y9ofp+81k0wzILAtr9lA/CHV1Y72cYC7B80qv
+	JLp+iBGVhpPMRWb6JGY14nyoUhT6p2QFDhp5YVR+ZqpJLqzLqP4k91FZA6/ZTr6HVB5k4dunb6cwR
+	50ti8Za2yYYoCuc97fX/aBZczTkiSRy5fKTnJkUvzHmQyTtcfpt0ApnF4MMjmq75vJJeGVEluhPlQ
+	vPDh4b1pMPVSHrPWCBtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icO7I-0004Y5-3H; Wed, 04 Dec 2019 06:26:28 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1icOHg-0000L7-EL; Wed, 04 Dec 2019 06:37:12 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icO79-0004X6-Dc; Wed, 04 Dec 2019 06:26:20 +0000
-X-UUID: f999ebd864594a8e87b23c38fe02163b-20191203
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=dZh9f2aKbDwDYA2AsbYkUX+7UYvyYAk1oinw0XAVMlc=; 
- b=UEjladCi+Jzo23dxdz2Tkjt3LSdfcnKnjtDVkNz0g5mASWvTR/xUYsKNqSkK8/Yx5n2mg69dFweB/H/DenKL80ItvLqS2wvo7dnhERFs6W1+lL4fwq9t3oyVe3nltOuReWtmMmtbM2c41/ph1ZWoyK7jsfeh4ORvG2K3p1Rex44=;
-X-UUID: f999ebd864594a8e87b23c38fe02163b-20191203
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1997585786; Tue, 03 Dec 2019 22:26:14 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Dec 2019 22:27:02 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Dec 2019 14:25:59 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 4 Dec 2019 14:25:17 +0800
-Message-ID: <1575440771.29074.2.camel@mtksdaap41>
-Subject: Re: [PATCH v2 3/6] drm/mediatek: update cursors by using async
- atomic update
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Wed, 4 Dec 2019 14:26:11 +0800
-In-Reply-To: <20191203071036.14158-4-bibby.hsieh@mediatek.com>
-References: <20191203071036.14158-1-bibby.hsieh@mediatek.com>
- <20191203071036.14158-4-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1icOHY-0000Jt-0c; Wed, 04 Dec 2019 06:37:05 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xB46YkGL057001;
+ Wed, 4 Dec 2019 06:36:47 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2019-08-05;
+ bh=yG0uO4UflwgTcea/waIQnEHCSa54PpQUZzE3UTh8gjU=;
+ b=awAy7H72frQh/Ubir0MQ7Yg/Djd/bP6Cb2Q6IDZ0aC0a223v4OrGitrQBXKjxQBCxT66
+ 7Yik4vWDyAmhq6OTdUz8Oh9ZwH03WuoiQc/GGsZeibbCs8xFFH8DC22+e33YYXUj/O8L
+ 7bY/X1QQC4Hrxyva6Y+plLT5dWA/7CHto0Ju3rpsq9s1dsLfOpIuQe02JY98f0HBrm0G
+ qXYt7/sR2zK6IPzmLy+7Hiyb0u+ArW7UPoTLz76SijKWdvD1fS8PrZZOkYDtt8WavggA
+ 5zR/84qjlzzUFs0B+bgV2hJzbjRIGWBatb3etxzSH0T1IuATsJsGdiNdDFbwatUFT4s5 ww== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2120.oracle.com with ESMTP id 2wkh2rc7m6-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 04 Dec 2019 06:36:46 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xB46TClM062802;
+ Wed, 4 Dec 2019 06:36:46 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by userp3030.oracle.com with ESMTP id 2wp17csvwu-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 04 Dec 2019 06:36:46 +0000
+Received: from abhmp0010.oracle.com (abhmp0010.oracle.com [141.146.116.16])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id xB46ahDX004121;
+ Wed, 4 Dec 2019 06:36:44 GMT
+Received: from kadam (/129.205.23.165) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 04 Dec 2019 06:36:42 +0000
+Date: Wed, 4 Dec 2019 09:35:28 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Mao Wenan <maowenan@huawei.com>
+Subject: Re: [PATCH -next] rtc: mt6397: drop free_irq of devm_xx allocated irq
+Message-ID: <20191204063444.GF1765@kadam>
+References: <20191204020209.10363-1-maowenan@huawei.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20191204020209.10363-1-maowenan@huawei.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9460
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=2
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-1912040046
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9460
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=2 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-1912040047
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_222619_468475_0622FB21 
-X-CRM114-Status: GOOD (  17.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191203_223704_141290_47AB3FCB 
+X-CRM114-Status: GOOD (  18.08  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -73,6 +97,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,191 +109,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, srv_heupstream@mediatek.com,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- tfiga@chromium.org, YT Shen <yt.shen@mediatek.com>,
- Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: linux-rtc@vger.kernel.org, a.zummo@towertech.it,
+ alexandre.belloni@bootlin.com, sean.wang@mediatek.com,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Hulk Robot <hulkci@huawei.com>, linux-mediatek@lists.infradead.org,
+ matthias.bgg@gmail.com, eddie.huang@mediatek.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Bibby:
-
-You move the mutex protection to [PATCH v2 6/6] drm/mediatek: apply CMDQ
-control flow, but the race condition exist in this patch. So you should
-move that back in this patch.
-
-Regards,
-CK
-
-On Tue, 2019-12-03 at 15:10 +0800, Bibby Hsieh wrote:
-> Support to async updates of cursors by using the new atomic
-> interface for that.
+On Wed, Dec 04, 2019 at 10:02:09AM +0800, Mao Wenan wrote:
+> rtc->irq is requested by devm_request_threaded_irq,
+> and request_threaded_irq. IRQs requested with this
+> function will be automatically freed on driver detach.
 > 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: Mao Wenan <maowenan@huawei.com>
 > ---
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c  | 33 ++++++++++++++++
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.h  |  2 +
->  drivers/gpu/drm/mediatek/mtk_drm_plane.c | 50 ++++++++++++++++++++++++
->  drivers/gpu/drm/mediatek/mtk_drm_plane.h |  2 +
->  4 files changed, 87 insertions(+)
+>  drivers/rtc/rtc-mt6397.c | 1 -
+>  1 file changed, 1 deletion(-)
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> index 4c25ad2182b0..b23fe74b8b0a 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> @@ -422,6 +422,39 @@ int mtk_drm_crtc_plane_check(struct drm_crtc *crtc, struct drm_plane *plane,
+> diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
+> index 5249fc99fd5f..d6a10111137a 100644
+> --- a/drivers/rtc/rtc-mt6397.c
+> +++ b/drivers/rtc/rtc-mt6397.c
+> @@ -293,7 +293,6 @@ static int mtk_rtc_probe(struct platform_device *pdev)
 >  	return 0;
->  }
 >  
-> +void mtk_drm_crtc_async_update(struct drm_crtc *crtc, struct drm_plane *plane,
-> +			       struct drm_plane_state *new_state)
-> +{
-> +	struct mtk_drm_private *priv = crtc->dev->dev_private;
-> +	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> +	const struct drm_plane_helper_funcs *plane_helper_funcs =
-> +			plane->helper_private;
-> +	int i;
-> +
-> +	if (!mtk_crtc->enabled)
-> +		return;
-> +
-> +	plane_helper_funcs->atomic_update(plane, new_state);
-> +
-> +	for (i = 0; i < mtk_crtc->layer_nr; i++) {
-> +		struct drm_plane *plane = &mtk_crtc->planes[i];
-> +		struct mtk_plane_state *plane_state;
-> +
-> +		plane_state = to_mtk_plane_state(plane->state);
-> +		if (plane_state->pending.async_dirty) {
-> +			plane_state->pending.config = true;
-> +			plane_state->pending.async_update = false;
-> +			plane_state->pending.async_dirty = false;
-> +		}
-> +	}
-> +	mtk_crtc->pending_planes = true;
-> +	if (priv->data->shadow_register) {
-> +		mtk_disp_mutex_acquire(mtk_crtc->mutex);
-> +		mtk_crtc_ddp_config(crtc);
-> +		mtk_disp_mutex_release(mtk_crtc->mutex);
-> +	}
-> +}
-> +
->  static void mtk_drm_crtc_atomic_enable(struct drm_crtc *crtc,
->  				       struct drm_crtc_state *old_state)
->  {
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
-> index 6afe1c19557a..a2b4677a451c 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
-> @@ -21,5 +21,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
->  			unsigned int path_len);
->  int mtk_drm_crtc_plane_check(struct drm_crtc *crtc, struct drm_plane *plane,
->  			     struct mtk_plane_state *state);
-> +void mtk_drm_crtc_async_update(struct drm_crtc *crtc, struct drm_plane *plane,
-> +			       struct drm_plane_state *plane_state);
->  
->  #endif /* MTK_DRM_CRTC_H */
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-> index cd7c97eb7ee6..6bdb42f068fb 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-> @@ -7,6 +7,7 @@
->  #include <drm/drm_atomic.h>
->  #include <drm/drm_atomic_helper.h>
->  #include <drm/drm_fourcc.h>
-> +#include <drm/drm_atomic_uapi.h>
->  #include <drm/drm_plane_helper.h>
->  #include <drm/drm_gem_framebuffer_helper.h>
->  
-> @@ -70,6 +71,50 @@ static void mtk_drm_plane_destroy_state(struct drm_plane *plane,
->  	kfree(to_mtk_plane_state(state));
->  }
->  
-> +static int mtk_plane_atomic_async_check(struct drm_plane *plane,
-> +					struct drm_plane_state *state)
-> +{
-> +	struct drm_crtc_state *crtc_state;
-> +
-> +	if (plane != state->crtc->cursor)
-> +		return -EINVAL;
-> +
-> +	if (!plane->state)
-> +		return -EINVAL;
-> +
-> +	if (!plane->state->fb)
-> +		return -EINVAL;
-> +
-> +	if (state->state)
-> +		crtc_state = drm_atomic_get_existing_crtc_state(state->state,
-> +								state->crtc);
-> +	else /* Special case for asynchronous cursor updates. */
-> +		crtc_state = state->crtc->state;
-> +
-> +	return drm_atomic_helper_check_plane_state(plane->state, crtc_state,
-> +						   DRM_PLANE_HELPER_NO_SCALING,
-> +						   DRM_PLANE_HELPER_NO_SCALING,
-> +						   true, true);
-> +}
-> +
-> +static void mtk_plane_atomic_async_update(struct drm_plane *plane,
-> +					  struct drm_plane_state *new_state)
-> +{
-> +	struct mtk_plane_state *state = to_mtk_plane_state(plane->state);
-> +
-> +	plane->state->crtc_x = new_state->crtc_x;
-> +	plane->state->crtc_y = new_state->crtc_y;
-> +	plane->state->crtc_h = new_state->crtc_h;
-> +	plane->state->crtc_w = new_state->crtc_w;
-> +	plane->state->src_x = new_state->src_x;
-> +	plane->state->src_y = new_state->src_y;
-> +	plane->state->src_h = new_state->src_h;
-> +	plane->state->src_w = new_state->src_w;
-> +	state->pending.async_update = true;
-> +
-> +	mtk_drm_crtc_async_update(new_state->crtc, plane, new_state);
-> +}
-> +
->  static const struct drm_plane_funcs mtk_plane_funcs = {
->  	.update_plane = drm_atomic_helper_update_plane,
->  	.disable_plane = drm_atomic_helper_disable_plane,
-> @@ -141,6 +186,9 @@ static void mtk_plane_atomic_update(struct drm_plane *plane,
->  	state->pending.rotation = plane->state->rotation;
->  	wmb(); /* Make sure the above parameters are set before update */
->  	state->pending.dirty = true;
-> +
-> +	if (state->pending.async_update)
-> +		state->pending.async_dirty = true;
->  }
->  
->  static void mtk_plane_atomic_disable(struct drm_plane *plane,
-> @@ -158,6 +206,8 @@ static const struct drm_plane_helper_funcs mtk_plane_helper_funcs = {
->  	.atomic_check = mtk_plane_atomic_check,
->  	.atomic_update = mtk_plane_atomic_update,
->  	.atomic_disable = mtk_plane_atomic_disable,
-> +	.atomic_async_update = mtk_plane_atomic_async_update,
-> +	.atomic_async_check = mtk_plane_atomic_async_check,
->  };
->  
->  int mtk_plane_init(struct drm_device *dev, struct drm_plane *plane,
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.h b/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-> index 760885e35b27..41882465dd67 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-> @@ -22,6 +22,8 @@ struct mtk_plane_pending_state {
->  	unsigned int			height;
->  	unsigned int			rotation;
->  	bool				dirty;
-> +	bool				async_dirty;
-> +	bool				async_update;
->  };
->  
->  struct mtk_plane_state {
+>  out_free_irq:
+> -	free_irq(rtc->irq, rtc);
+>  	return ret;
+
+Please get rid of the error label as well.
+
+regards,
+dan carpenter
+
 
 _______________________________________________
 linux-arm-kernel mailing list
