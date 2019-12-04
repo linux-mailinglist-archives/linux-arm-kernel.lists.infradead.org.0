@@ -2,68 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60FDE11223A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 05:50:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8C13112240
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 05:55:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=khmzCrSpKmGN5nVVYqlg0ulGpIOPqMD9L9IS2K6mUMI=; b=DTdttt0aQ2OwA6
-	D3fCAMILhpcJKasxXsUf9vKR684o8l7Au94S84rr5hFjsB8RNUoKxSWXHftIO/O6f8bNvQtCGpIAe
-	KCX1AvoCTcPXscIIvY5odis5//x8sgkrFWWtZ0fgW5AOXx8csQqW67Kofglq5f8NiPISM6Isq1zlt
-	v1n7GxSbwoZ9RF/cO5T26sxGOLl/JyQoEl7Y22SGBWxwmNVLMJoM2YYvkTC+El8P7LS5l2S+sv4fx
-	xijh+xRce4X1mDub2VUdS3i5HayStlsUUIiA/W6dwyjceRl7NFxkJiqaDo+4GiRPiP+xncr7bhVTk
-	Lb9etsSr2ZC3ZCmJrq8g==;
+	List-Owner; bh=a0zpE5qY+jNbZeYSpxSuPCM32gmSSzUQERn/iufCvjQ=; b=aEnUSNkDmliyUo
+	rpXW2nn8ufH6ZD2fMup+sPZ0UVOLrR3fDAtN2KPI0PvZbGR+fAhQaXW/YAZDcZoixxZtwb7N9EhN4
+	q3078BlG+W/YhCNbdwQQsojjJhHtJywUemgzhjL4TQWV8u7OiLquVgb9QADY+2nYVc9SquJFD+GK8
+	ZYK8pHb/iAIbBfgAFyEUczm7YkZUWwuJeT5EN3edD1KbjMQMIi1oWUmDabWx7MFnuXcP5RUTu0C3P
+	DgcRdeL5CytRLvKuYuLfU0C124hlyKfBFcnEQivQLM0jXRCeF20G3LHYKhKyWsJVSU6ToRVg0F2eS
+	GTDw9SsmClXo9fYu7R6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icMck-0006Wu-Iz; Wed, 04 Dec 2019 04:50:50 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1icMh4-0008H4-Cv; Wed, 04 Dec 2019 04:55:18 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icMca-0006WM-RF
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 04:50:42 +0000
-Received: by mail-wr1-x442.google.com with SMTP id c9so417977wrw.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Dec 2019 20:50:40 -0800 (PST)
+ id 1icMgx-0008GB-VK; Wed, 04 Dec 2019 04:55:13 +0000
+Received: by mail-wr1-x444.google.com with SMTP id d16so2220179wre.10;
+ Tue, 03 Dec 2019 20:55:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:from:to:cc:references:autocrypt:message-id:date:user-agent
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=RqSWbVrcq9JaNwN5b63sKB3VzrDwVIrhAqaUDdsYFMg=;
- b=QM/FiCWievVnhgR6WHzO6N0zT+OBvxs4A6rStxvOkNTg8i5RRG6FpKmovhHudgUs5j
- ZzfXL0k0vDnpGBN1s/K5RmoALf3vPniuX5OkYxdjPc5vkGHtfvUyu/jddJTDtjAbIG5L
- 5VldlV0P58pvvJPWp+AecAxqU+8XF4slSBSjTso/uGh38Xiamj4uROF8iDExtOoluLFW
- KWG2jk5RdUBTJsNKTGQPUPUZhccY2S6R8rX7ibqiNx6y5H7v0AyDCujJ/lm2DIvG7MzR
- nl7w9ybWhm+F7JbkmI+rTNaf9lHqgVZ6c76XMgPiTT5VzchIXVNVS2xKz2DRDYCyDSac
- kOmg==
+ bh=Odcxr27PsJyXc2GL2yzjyvqk42lklLLv11yX7PMO+VY=;
+ b=fEfSw070ZAOGYPOO7LXCt7S+Sj0YgoP/cszWFat2Sx+JirZt1WeAiCQhbGdp75V5Cw
+ 2lhWJ7nuE9SxZ2zzANw+39tHYdIJB9HeRRy8/6lCSQmdDLec4fgTrhI9av2yU3GARA3K
+ X9AKV/Zcq8eRHkMtAtRtU70AlF7S65RPr6s67nBsQFYGeEOSc8cw1arger2hREVdM2vZ
+ kr4TGWossIAiNIU0TiO8lBrGahvDQUBvlWCTo/X8GyqL1EcwZKvrrQxiegW/4wJwRp3Q
+ WPCpQDCYwKap98ztaRL9MJo0ggNV5Pqet9k7f0dOY50tqLJ4/pjP9iCM+K+QlHgci2aM
+ 8qJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:from:to:cc:references:autocrypt
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=RqSWbVrcq9JaNwN5b63sKB3VzrDwVIrhAqaUDdsYFMg=;
- b=iVVSrCLM0oF26LXJuHOfqw8RB93KpZQQx1pM4UuQ1PHQH7P5Jj25bA6viyRwhuWE6U
- 1pWviPj0fE9Gv0/zcxdb3WnSssgv1xwk2VY8BzSqpSsPz0i8yv6KpKvNqKm8HdFQkp6K
- FillFBmHy0DJ0bwHvRciDm1IKKi27Bh23Y+zOMdsvZ9HD2P1h88i0hEVl9JU2Sb/VEom
- XvZ11/X/x3qa5HnXrGECOR5gZp5LFUbNv6wkDXW5yNafvofMnGoxOrH/Bq5jqMOQECSU
- 7OAugQV8oosrDSzlRMJwgUPxvyF6jUSoulQP1W8nAeTWtQcgeqKzUJ0Mj4sA9m6C12Lz
- i83Q==
-X-Gm-Message-State: APjAAAWOXrJPuTgNCL/omlzrcpBiYP1YnWZbhZNAsKtqhWnKpW9n0g+U
- i40LdZ5Jb68/miXBfbxMLuolQfSP
-X-Google-Smtp-Source: APXvYqyqArtMsoWCtrBvN8OgeF29QawbeaqqAHsW5j/4q1EZcLhwkH0heINdr0KT6kJKK1nUSya1+A==
-X-Received: by 2002:a5d:4f8e:: with SMTP id d14mr1739622wru.112.1575435038746; 
- Tue, 03 Dec 2019 20:50:38 -0800 (PST)
+ bh=Odcxr27PsJyXc2GL2yzjyvqk42lklLLv11yX7PMO+VY=;
+ b=pyE/n8VrhhHXcWVbK7crFuEgTsp7f3kEac1pND/fmRw/MI5sBtEX8Qpv9j9oVglGr0
+ DK+R/4COdRHJWD5L0xVJ1YEbQXyOIHnii2jMUMKs1OjRausW+iL/5R0+cfZ1xiSsyfio
+ MhC9QaT4AAp6Ioalvs3H9Y1RNFzUnrHHWT37dw39CkcB2cKnYTw6Xau7x+YyCggZUKoi
+ 5FF3scW6sUmGE298ALcOYZNgVVW4GvnniJ9jXD8r/1UO+zyjREzG3JdGzjViw06hs9uS
+ os5MoZGQI3kCIbjjUbQt4vZQBt6W3Jy7jWtDQloCIqW7i0afToV3TZ6XuO+Fq1EEpnAP
+ y46Q==
+X-Gm-Message-State: APjAAAU8dvq1BwwgQhVM7dWPUcfMGZ9gxQ2gjCSQ70CFkeJxlcEfotm0
+ c7xGMf15UIm34jUFBBbbXBEKMrZS
+X-Google-Smtp-Source: APXvYqwK6vAh4AB2JIdP+/j6ILpiQYZm6BdV7q+BIgjg8TJofPrlGRt0RxmcxXceGhR18bnuk85aEA==
+X-Received: by 2002:a5d:4e8c:: with SMTP id e12mr1704894wru.109.1575435310013; 
+ Tue, 03 Dec 2019 20:55:10 -0800 (PST)
 Received: from [10.230.28.123] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id 60sm7097654wrn.86.2019.12.03.20.50.35
+ by smtp.gmail.com with ESMTPSA id v3sm6355917wru.32.2019.12.03.20.55.05
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 03 Dec 2019 20:50:37 -0800 (PST)
-Subject: Re: [PATCH 0/6] brcmstb_thermal updates for new processes
+ Tue, 03 Dec 2019 20:55:09 -0800 (PST)
+Subject: Re: [PATCH v3 0/4] Raspberry Pi 4 HWRNG Support
+To: Herbert Xu <herbert@gondor.apana.org.au>,
+ Florian Fainelli <f.fainelli@gmail.com>
+References: <20191120031622.88949-1-stephen@brennan.io>
+ <3e78d01f-f7a4-b3c4-4d23-7be7d6ad764d@gmail.com>
+ <20191121053046.coobocevp4uwwugb@gondor.apana.org.au>
 From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-kernel@vger.kernel.org, Zhang Rui <rui.zhang@intel.com>,
- Eduardo Valentin <edubezval@gmail.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>
-References: <20191030182132.25763-1-f.fainelli@gmail.com>
- <97fc97de-c515-7c70-0c98-44146db91b3e@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
  xGlkaOSDuu09rxuW+69Y2f1TzjFuGpBk4ysWOR85O2Nx8AJ6fYGCoeTbovrNlGT1M9obSFGQ
@@ -118,23 +116,23 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <4edae8c7-abb6-fc71-14c3-9b8ddb4e7003@gmail.com>
-Date: Tue, 3 Dec 2019 20:50:33 -0800
+Message-ID: <5beb190c-fa77-6693-aead-4030930f5b8a@gmail.com>
+Date: Tue, 3 Dec 2019 20:55:04 -0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <97fc97de-c515-7c70-0c98-44146db91b3e@gmail.com>
+In-Reply-To: <20191121053046.coobocevp4uwwugb@gondor.apana.org.au>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_205040_908031_A611AE82 
-X-CRM114-Status: GOOD (  15.15  )
+X-CRM114-CacheID: sfid-20191203_205512_012484_153E3D88 
+X-CRM114-Status: GOOD (  14.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -158,15 +156,15 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- "open list:BROADCOM STB AVS TMON DRIVER" <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM STB AVS TMON DRIVER"
- <bcm-kernel-feedback-list@broadcom.com>, Markus Mayer <mmayer@broadcom.com>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, Arnd Bergmann <arnd@arndb.de>,
+ Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Ray Jui <rjui@broadcom.com>,
+ linux-kernel@vger.kernel.org, linux-crypto@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, Stephen Brennan <stephen@brennan.io>,
+ Matt Mackall <mpm@selenic.com>, linux-arm-kernel@lists.infradead.org,
+ Stefan Wahren <wahrenst@gmx.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -174,39 +172,29 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 11/20/2019 10:43 AM, Florian Fainelli wrote:
-> 
-> 
-> On 10/30/2019 11:21 AM, Florian Fainelli wrote:
->> Hi,
+On 11/20/2019 9:30 PM, Herbert Xu wrote:
+> On Wed, Nov 20, 2019 at 08:09:57PM -0800, Florian Fainelli wrote:
+>> Hi Herbert,
 >>
->> This patch series contains a bug fix for the existing platforms and then
->> paves the way for adding support for Broadcom STB's latest chips in 16nm
->> processes, and finally updates the driver with pecularities introduced
->> with the 16nm, like the lack of interrupt notification from the HW.
+>> On 11/19/2019 7:16 PM, Stephen Brennan wrote:
+>>> This patch series enables support for the HWRNG included on the Raspberry
+>>> Pi 4.  It is simply a rebase of Stefan's branch [1]. I went ahead and
+>>> tested this out on a Pi 4.  Prior to this patch series, attempting to use
+>>> the hwrng gives:
+>>>
+>>>     $ head -c 2 /dev/hwrng
+>>>     head: /dev/hwrng: Input/output error
+>>>
+>>> After this series, the same command gives two random bytes.
 >>
->> Please queue up the first patch for -stable if you want, thanks!
+>> When we get a review from Rob, you can take patches 1-2 through your
+>> tree and Stefan/Nicholas can queue patches 3-4 through the BCM2835 tree
+>> where the DTS files already exist. Does that work for you?
 > 
-> Ping?
+> Yes sure.
 
-Rui, anyone?
-
-> 
->>
->> Florian Fainelli (6):
->>   thermal: brcmstb_thermal: Do not use DT coefficients
->>   thermal: brcmstb_thermal: Prepare to support a different process
->>   dt-bindings: thermal: Define BCM7216 thermal sensor compatible
->>   thermal: brcmstb_thermal: Add 16nm process thermal parameters
->>   thermal: brcmstb_thermal: Restructure interrupt registration
->>   thermal: brcmstb_thermal: Register different ops per process
->>
->>  .../bindings/thermal/brcm,avs-tmon.txt        |   8 +-
->>  drivers/thermal/broadcom/brcmstb_thermal.c    | 108 ++++++++++--------
->>  2 files changed, 67 insertions(+), 49 deletions(-)
->>
-> 
-
+Rob has provided his Acked-by for the binding patch, are you targeting
+these changes for 5.5 or 5.6 at this point?
 -- 
 Florian
 
