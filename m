@@ -2,83 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EB08113787
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 23:22:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 805671137AB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 23:36:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SosaipE1iYBUxFS3qA5y7LDPBBDFeHY3XmY9z7F6Sf8=; b=Kf0PhQr5zEEIjU
-	MP4chKJzdLFSBA+RkW2QBi6RVSz8Q3g0+8/4kAtJj0E8pTg2GD32epfPpGxhkn44byl/5JcRgLB4R
-	0bKiYka8tizj3Ka9F6S/rwT9yuNyX6VqA4Hh2jgT5RjLchMHFQZ0kk+kS1FjEiTjEMzNklW9VOHNl
-	ydVOVDRhiUJLwo+zteFBDmB5Csr1F/5ytpIjrHjnBVUjkThvIgP5dCmahdbO5h2K+X5r+nrkdx0SV
-	P1ghivkV4UTi+m9k+AThbEhhFK/9Io1kK1Y+F6k+hMaMZJQlwogJK/akm3SyQ/zm6nwEtQQEDU3Ti
-	a+jheOivC2acpr44wIvg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FMqfCZeRpIPgLL5WQtxdXPeEDF3ZbpyZpnRDDCxqPyI=; b=ZS1PqHhuiQrzXIBnwm2wrixOw
+	PUYTtJwmWBeqm3nVZRBFDM4d4gNYZPnI/GGmOxIad+BUVWzUIiERbxfdcdkP3CQBW3Hd4VE6ElbQ7
+	p3GIViIkhezZo6ssDAl8POGkPToiTlMcpv2Ept5eOJ+NBXHmi7xg/nEubndmgOp7lj99V5iNK5/S0
+	66vLR9cBnqq5GEQ5sy47709PYDJmza0lzr5Fy6uxCnmKQUzRJijofN01TomTIIpYck7oOG2vpjOoa
+	EmlPdUiBQJvX2s2h70w1R1ooWoAO3moVqLQbkIU1L1trYpsZ//808w+9/UXt+d5gq0KMW1Clii0PZ
+	juNAXHi8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icd1t-00028Q-VH; Wed, 04 Dec 2019 22:21:53 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1icdFm-0007Fq-3U; Wed, 04 Dec 2019 22:36:14 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icd1n-00027f-Bl
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 22:21:48 +0000
-Received: by mail-oi1-f193.google.com with SMTP id b8so814049oiy.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 14:21:46 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0YMXPK0MWLWyfIyxG2mVwtUXfMBfXzC4dJTyDwiUSCI=;
- b=LxCVu2AamyRNqNYybf/e6CNAHeQOz+LyhH2ePLC8lxm3AH1v+96ru2/sgvz1Dq8M3M
- tODRxbbyXgeNrpWiRJ+ffMg0oals9PhuPzd6Cr0aCRDp4OFHs1h1a8xvBN/AtgEI0Vq5
- 084QN1nl4GCzVB6cKssBF98e/mcL0SzajQSdqHSUiEjhOfCQxsXfNgCWUPcjEEYmLmJD
- AoOefb5MbNwDW4XwernBttycAR1VuDymxyU1snEg05UPqetWOwaNxjYW3/U7BD19B5rc
- ENzxBD7S24thnGUBuxvmt7/5TeGdaRnfmhGTyeSDRkja/vZj4fuGX2sfbH3jxfOvxxFq
- vyFg==
-X-Gm-Message-State: APjAAAXXF0ZvFDa58aZXkrLYKkc5yPJFiYCgnDnk9bTXHxKQrbnGitG7
- A3biZS4L9JwCPkwuMM13OA==
-X-Google-Smtp-Source: APXvYqxd6OOdNmobqARjtlfaN0LLudPr5TKfnJ4uyLbrkH6cblTCYO0/yUZjNuu/J1TAHun4I2prDQ==
-X-Received: by 2002:aca:d5d3:: with SMTP id m202mr4421120oig.161.1575498106026; 
- Wed, 04 Dec 2019 14:21:46 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id y24sm2784605oix.31.2019.12.04.14.21.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 14:21:45 -0800 (PST)
-Date: Wed, 4 Dec 2019 16:21:44 -0600
-From: Rob Herring <robh@kernel.org>
-To: Arnaud Pouliquen <arnaud.pouliquen@st.com>
-Subject: Re: [PATCH] dt-bindings: remoteproc: stm32: add wakeup-source property
-Message-ID: <20191204222144.GA25718@bogus>
-References: <20191122125402.14730-1-arnaud.pouliquen@st.com>
+ id 1icdFe-0007FM-DP
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 22:36:07 +0000
+Received: from pps.filterd (m0098404.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xB4MZtcw079935; Wed, 4 Dec 2019 17:35:55 -0500
+Received: from ppma02dal.us.ibm.com (a.bd.3ea9.ip4.static.sl-reverse.com
+ [169.62.189.10])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2wnej0veca-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 04 Dec 2019 17:30:58 -0500
+Received: from pps.filterd (ppma02dal.us.ibm.com [127.0.0.1])
+ by ppma02dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id xB4MOnnk012691;
+ Wed, 4 Dec 2019 22:29:08 GMT
+Received: from b01cxnp22036.gho.pok.ibm.com (b01cxnp22036.gho.pok.ibm.com
+ [9.57.198.26]) by ppma02dal.us.ibm.com with ESMTP id 2wkg273hkx-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 04 Dec 2019 22:29:08 +0000
+Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
+ [9.57.199.108])
+ by b01cxnp22036.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ xB4MT7Np24838566
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 4 Dec 2019 22:29:07 GMT
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id D19A3B205F;
+ Wed,  4 Dec 2019 22:29:07 +0000 (GMT)
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id E102AB2065;
+ Wed,  4 Dec 2019 22:29:06 +0000 (GMT)
+Received: from ltc.linux.ibm.com (unknown [9.16.170.189])
+ by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTP;
+ Wed,  4 Dec 2019 22:29:06 +0000 (GMT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191122125402.14730-1-arnaud.pouliquen@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Wed, 04 Dec 2019 16:29:49 -0600
+From: Adriana Kobylak <anoo@linux.ibm.com>
+To: Andrew Jeffery <andrew@aj.id.au>
+Subject: Re: [PATCH 08/14] ARM: dts: swift: Cleanup gpio-keys-polled properties
+In-Reply-To: <78ea3e17108c7c8fded921f5673777fc415cd66e.1575369656.git-series.andrew@aj.id.au>
+References: <cover.08e3a6c95159f017b753d0f240086d1a7923758b.1575369656.git-series.andrew@aj.id.au>
+ <78ea3e17108c7c8fded921f5673777fc415cd66e.1575369656.git-series.andrew@aj.id.au>
+Message-ID: <450addb633e8572a019ccaec5fd48248@linux.vnet.ibm.com>
+X-Sender: anoo@linux.ibm.com
+User-Agent: Roundcube Webmail/1.0.1
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-12-04_03:2019-12-04,2019-12-04 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0
+ phishscore=0 spamscore=0 adultscore=0 malwarescore=0 bulkscore=0
+ suspectscore=0 impostorscore=0 mlxlogscore=999 priorityscore=1501
+ mlxscore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1910280000 definitions=main-1912040187
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_142147_403479_A74A42E6 
-X-CRM114-Status: GOOD (  10.95  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191204_143606_458377_0AE32D66 
+X-CRM114-Status: GOOD (  14.08  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ [148.163.156.1 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,33 +98,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Stephen Rothwell <sfr@canb.auug.org.au>,
- Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>, linux-kernel@vger.kernel.org,
- Fabien Dessenne <fabien.dessenne@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, Adriana Kobylak <anoo@us.ibm.com>,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Linux-aspeed <linux-aspeed-bounces+anoo=linux.ibm.com@lists.ozlabs.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 22 Nov 2019 13:54:02 +0100, Arnaud Pouliquen wrote:
-> If the optional wdg interrupt is defined, then this property
-> may be defined.
+On 2019-12-03 06:04, Andrew Jeffery wrote:
+> dtbs_check gave the following warning:
 > 
-> Signed-off-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
-> ---
-> This commit is related to the merge conflict issue reported by
-> Stephen Rothwell: https://lkml.org/lkml/2019/11/21/1168
-> ---
->  .../devicetree/bindings/remoteproc/st,stm32-rproc.yaml          | 2 ++
->  1 file changed, 2 insertions(+)
+>     Warning (avoid_unnecessary_addr_size): /gpio-keys-polled:
+> unnecessary #address-cells/#size-cells without "ranges" or child "reg"
+> property
 > 
+> Cc: Adriana Kobylak <anoo@us.ibm.com>
+> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> Reviewed-by: Joel Stanley <joel@jms.id.au>
 
-Applied, thanks.
+Reviewed-by: Adriana Kobylak <anoo@us.ibm.com>
+Tested-by: Adriana Kobylak <anoo@us.ibm.com>
 
-Rob
+> ---
+>  arch/arm/boot/dts/aspeed-bmc-opp-swift.dts | 2 --
+>  1 file changed, 2 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
+> b/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
+> index 0831bc1f5a4c..555d79405884 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-swift.dts
+> @@ -82,8 +82,6 @@
+> 
+>  	gpio-keys-polled {
+>  		compatible = "gpio-keys-polled";
+> -		#address-cells = <1>;
+> -		#size-cells = <0>;
+>  		poll-interval = <1000>;
+> 
+>  		scm0-presence {
 
 _______________________________________________
 linux-arm-kernel mailing list
