@@ -2,66 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E93F113613
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 21:01:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C29AD11363F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 21:15:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=imwb/sYrnv8gw/dOMOBnJ/CwBfL5MzSAuMla/A8MQas=; b=nkfUAZUSC7k6xg63/dkflwcs/
-	GH+/o9ih7mpB/Is7IT7MVVSwI9GnPR5YAeopzrFaS6AqnbZgDSx7/RiB1lpyc2nc/oSEmFOCZOIy9
-	iCKVaCaIIHye5hC8ceD5ssps9LwFwf11ojDkmzu9ZnxQ9ONnyi0BYACo/kVDCvfIgOw7GmcTSGMsf
-	r5HTBbPNBTTHCvLfLN7rZiWDKTUyIbEc+EPhI28iCmS1JWUlYAGD/di80/D2T4kBVQsRczvbsmwRI
-	m6FnEiG371GBP84jEgF/9p9J7dXzVrFbqwazqQLTXrJ/Nw9XOPIqiSRNYv2VKyAjHxWkKEScR5+cq
-	6igvAROmw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ALfAF7/HlPC9wb7iJpPNt0gIP/eAz2Ok4quSJswVwJU=; b=vCfaQ63iqgmlVG
+	qFtepDHVYZB0I+qIHT8UPXz/iEJGis/6ERh0AgxrKzJMREaUdedvjOptd+mSnxIdGNTJzSaDYGQSy
+	YXvGI4LIjovpvE4iYeXFgG5L+mj7CUZd03DF5w/KZzNKSzr/vJ1vbwGDJmp67a8TATWdvgJ+6q36/
+	zKY0KHHi2V14RZfCmocXsxO5OSVzStdJJPuIMpsHPokfTQpoaaNiZnb+j0r9p2xKleKU0GNsqa4aC
+	/dzPgG4ngyhYWiAo00wH4zJJWKbWnfH5v0wzMPjtBHHgmpog2/pJPV4PO7la3iBOc5tM6jndNzFfl
+	/vfVZi4kkiduPDrzlfbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icapd-0003iB-1h; Wed, 04 Dec 2019 20:01:05 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1icb3J-0007r4-Lj; Wed, 04 Dec 2019 20:15:13 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icapW-0003ha-2Y
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 20:00:59 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 04 Dec 2019 12:00:56 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,278,1571727600"; d="scan'208";a="236407731"
-Received: from jcourage-mobl.amr.corp.intel.com (HELO [10.251.152.230])
- ([10.251.152.230])
- by fmsmga004.fm.intel.com with ESMTP; 04 Dec 2019 12:00:54 -0800
-Subject: Re: [alsa-devel] [PATCH] ASoC: SOF: imx8: fix memory allocation
- failure check on priv->pd_dev
-To: Colin King <colin.king@canonical.com>, Liam Girdwood
- <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>, alsa-devel@alsa-project.org,
- linux-arm-kernel@lists.infradead.org
-References: <20191204124816.1415359-1-colin.king@canonical.com>
-From: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
-Message-ID: <33fec540-e97b-25e7-83af-575f19d829d2@linux.intel.com>
-Date: Wed, 4 Dec 2019 13:13:45 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1icb35-0007pb-DP; Wed, 04 Dec 2019 20:15:00 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1icb2t-0001Zb-KG; Wed, 04 Dec 2019 21:14:47 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2 1/5] dt-bindings: arm: rockchip: Add VMARC RK3399Pro
+ SOM binding
+Date: Wed, 04 Dec 2019 21:14:46 +0100
+Message-ID: <5408424.xnnVrITuBQ@diego>
+In-Reply-To: <20191204193240.GA6772@bogus>
+References: <20191121141445.28712-1-jagan@amarulasolutions.com>
+ <20191121141445.28712-2-jagan@amarulasolutions.com>
+ <20191204193240.GA6772@bogus>
 MIME-Version: 1.0
-In-Reply-To: <20191204124816.1415359-1-colin.king@canonical.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_120058_158410_15804B80 
-X-CRM114-Status: GOOD (  17.53  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191204_121459_600808_9CE241A6 
+X-CRM114-Status: GOOD (  18.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,46 +59,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Tom Cubie <tom@radxa.com>, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Jagan Teki <jagan@amarulasolutions.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
+ Akash Gajjar <akash@openedev.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 12/4/19 6:48 AM, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
+Am Mittwoch, 4. Dezember 2019, 20:32:40 CET schrieb Rob Herring:
+> On Thu, Nov 21, 2019 at 07:44:41PM +0530, Jagan Teki wrote:
+> > VMARC RK3399Pro SOM is a standard SMARC SOM design with
+> > Rockchip RK3399Pro SoC, which is designed by Vamrs.
+> > 
+> > Since it is a standard SMARC design, it can be easily
+> > mounted on the supporting Carrier board. Radxa has
+> > suitable carrier board to mount and use it as a final
+> > version board.
+> > 
+> > Add dt-bindings for it.
+> > 
+> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> > ---
+> > Changes for v2:
+> > - none
+> > 
+> >  Documentation/devicetree/bindings/arm/rockchip.yaml | 5 +++++
+> >  1 file changed, 5 insertions(+)
+> > 
+> > diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> > index 45728fd22af8..51aa458833a9 100644
+> > --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
+> > +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> > @@ -526,4 +526,9 @@ properties:
+> >          items:
+> >            - const: tronsmart,orion-r68-meta
+> >            - const: rockchip,rk3368
+> > +
+> > +      - description: Vamrs VMARC RK3399Pro SOM
+> > +        items:
+> > +          - const: vamrs,rk3399pro-vmarc-som
 > 
-> The memory allocation failure check for priv->pd_dev is incorrectly
-> pointer checking priv instead of priv->pd_dev. Fix this.
-> 
-> Addresses-Coverity: ("Logically dead code")
-> Fixes: 202acc565a1f ("ASoC: SOF: imx: Add i.MX8 HW support")
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+> Why do you need this? You just override it in your dts files, so it is 
+> not really used. Perhaps the top-level should have all 3 compatibles? If 
+> so, then the schemas are wrong.
 
-Thanks Colin
+In the past we had SOMs that _could_ function alone, but looking at the
+announcement for this one [0] suggests that the SOM always needs a carrier
+board, so I don't think the SOM actually needs a separate entry but instead
+should be part of the carrier-board compatible list, as Rob suggested.
 
-Acked-by: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
+So I guess we should only have (from patch 3):
+  - description: Radxa ROCK Pi N10
+        items:
+          - const: radxa,rockpi-n10
+          - const: vamrs,rk3399pro-vmarc-som
+          - const: rockchip,rk3399pro
 
-> ---
->   sound/soc/sof/imx/imx8.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/sound/soc/sof/imx/imx8.c b/sound/soc/sof/imx/imx8.c
-> index cfefcfd92798..9d926b1df0d7 100644
-> --- a/sound/soc/sof/imx/imx8.c
-> +++ b/sound/soc/sof/imx/imx8.c
-> @@ -209,7 +209,7 @@ static int imx8_probe(struct snd_sof_dev *sdev)
->   
->   	priv->pd_dev = devm_kmalloc_array(&pdev->dev, priv->num_domains,
->   					  sizeof(*priv->pd_dev), GFP_KERNEL);
-> -	if (!priv)
-> +	if (!priv->pd_dev)
->   		return -ENOMEM;
->   
->   	priv->link = devm_kmalloc_array(&pdev->dev, priv->num_domains,
-> 
+
+Heiko
+
+[0] https://www.96rocks.com/blog/2019/09/11/introduce-vamrc-rk3399pro-som-and-ficus2-carrier-board/
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
