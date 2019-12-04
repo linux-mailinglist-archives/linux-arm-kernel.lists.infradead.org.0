@@ -2,62 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BC58112F94
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 17:07:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA8A0112F90
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 17:06:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eYr8bY8hYDpuYZrYcfiAPvKCZkD842rEGeIoWpMGaME=; b=usdawmDNuyL6vJ
-	PNHIGRbmyMbayiv82LLqcpxng8gFgVyz5uNz72tQFGvtOmrGJ7Tn+8yetW35TgR65I+txBcGibGQq
-	HdQOJkAj8dKa2QBNfoVGVGRK8Vs1ChqCTd6f6o1J4LbTCYP0l58hE0drX5N+XL5QdubXh08cCpyjq
-	NZWCTPZP/HGgUrlKreTKTH2EoKczMda0SrVHzr+jbi+5o0JHsFFn6xmNiiTSbh3UhrbjOc0zKusP9
-	FYlkDIl3GvYLDUOG3E4Z2TqOJ5lYd+uiYKinak4NPzdHPGct3OcCWGbnfJ5PjPezRGw3bz0I/RYti
-	wZFJlacaV9NVOiZs1qDg==;
+	List-Owner; bh=I2vhR7dFPOmBLhtw0/DIHizTwYbA/uCdpRKTl/hdW5g=; b=JuY6EsSwXgqrBu
+	/s1tctvKbluw9c6V9og0aJtOr9Us9jXaH3II3l+o/isgYJca+dcQEra/KtCQiMwug53HzCqyldIek
+	yd6RlrhT4CUfYRO5EST9VU/yDWqVRc13QVr7OrwWO3mIr+XZ8wkAwk5uzU51GEE2bQDLYc3M/RChE
+	aDR6/O0LWJjlOvh/03t8nFlMFoeVsjtStULTm62ESJqR0VfAf3fBen0eZbPNVkXs9iYvnqdfYNKFA
+	Bqf7HZ6x/3N9TsSaXUKp3i4cfiIJVKBUy4IdokzB6SEkwxmJc9luJquTSBQliHoL8zDXDGnG6IuPX
+	r4k8A1zRHwChOMxxTb6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icXB7-0007Rx-SA; Wed, 04 Dec 2019 16:07:01 +0000
-Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
+	id 1icXAX-0006yG-Tr; Wed, 04 Dec 2019 16:06:25 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icX4R-0007f9-Hx
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 16:00:19 +0000
-Received: by mail-qv1-xf44.google.com with SMTP id t5so28539qvs.5
+ id 1icX4b-0000JY-SP
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 04 Dec 2019 16:00:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=caPojFU9C1Vw1ye7p06/lKzSTQslx3S8Kp3MSLulHf8=; b=XBkSBzkjwOV2ugNiFRMlIClx6b
+ As3D+TvF+1bfXwN4dMYwLas2yor2V6OO8T4i3tTWv3DL4vsU93T5GNHp4ksl88N6i/ZZu/ibJb0Yi
+ WYx1G452XnWBcvZCpKvdspnbEwX1F7OLcPQLbmA1tt0tajZTHRdo1Skby41GjKb8PG+gGgAKPibs3
+ /qBKPn6OB6GmHh8IOnlcIzHsaoXeAgqkUa1h0cpuLK9+U66rw45/OBTE0JR95iTolphzykSmKP7L7
+ eLncU6m4BBNLh62wXHLSsNayyM+zwU67h9dGBaEP3X1wqH8EkIYQBOybuTzspxUZHfRKGVmue0jrX
+ iESlCSzA==;
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1icX4Y-00027h-GA
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 16:00:15 +0000
+Received: by mail-qt1-x842.google.com with SMTP id b5so186996qtt.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 08:00:04 -0800 (PST)
+ Wed, 04 Dec 2019 08:00:06 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=qk25YAaOPxhty05prM3atPa37GbiRCyda8Z/W4GKB+0=;
- b=ONUu0JXiiwD4QsGwgCoVpTxf1VginBhYK4+llLcAFwRxv68eP1Xrd1mYHdUi2xG1sv
- I1ioJC+Tox44alCelXxpd8zVXT00sLukPxRUvxgeDg2GtuT6kppFX05xMOlnt5onR7oJ
- GCrzXqMSzBJWI693Hqbu3kK8mltWrsbGtPHBsFk2ZDSkJ5BpEj6W9pUukEKY9XqKhp+x
- DDr1KndM+TrZCFmQKrmtaxSnyklBgJMl3rOXb+8uDbDt/JveU2pBy3/2O93BQYoEdCis
- RIvB/keWXqub9fGpCYdtwIBzhurATuCV8l1OriL/VRSb/tbOHGrB69R9tnHshpbyr0Z4
- QxQQ==
+ bh=caPojFU9C1Vw1ye7p06/lKzSTQslx3S8Kp3MSLulHf8=;
+ b=MYm3P8vaLfZ2ogHotmHOsHIpSVg9cvTGh4ZQEOyCjA5nnY6mdFUFUhx5AXhN0j3XJS
+ beL8d42BtYxbaySly0DTbhBk2AmxjdCf9WX7//T/oz7z9ge0aaEUqx8F8duzafWUbJxA
+ LTWMB6kge+LbwPmEfP3BHmq/62hdxhna88Vx4NVqZnpyJA9KaibztPZdcbPVVexGs0TK
+ VXDAMwSB0nPxu77i8MqaEa8xlHSAf6zthbzRNLnrCri77E4SthsQPlHK6M3Se5qr+myW
+ OV4kg9RT446a+RXhFIUOoqksiJ7J/EBKXfRkS/JZPfLVcTLDgfMF5b5ZUPgxjQCSa4nD
+ NWAw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qk25YAaOPxhty05prM3atPa37GbiRCyda8Z/W4GKB+0=;
- b=uGwYIG0YCc15M38DiKgA1gjR2gwgCdlggBYv+6krZCkqkqvsYV7oeoLGs7ieB6mn7w
- ZHl9gGvkqPiYkPaMv8uurNohQQOvbl7tB029No/Yn0DNdAIVKr5nvtn8SmTJhnRT2pjI
- f4NyWx78s7HnoekjCyRzIVxBhn/Pell4K7Q0rGLEsK3rW7fmGf5fIboVSv7nRaJNM4cT
- uSOgeYV/NoKVx77AqKWP27MslMOJboQPeRjdfvPkKLeElX5vQfut5TiqdirLKd47dpXz
- v43zj122fqoOVnjtWW0wQrF+KeTgIwKJBhyBKR3g9XZEWqiUUWE859tQ9uKoR3AVIzsR
- zSBg==
-X-Gm-Message-State: APjAAAVxHJJ48zjAsEUAPN/h5PqZrP2iMqCKaS9F/LlaAtU0bKkaEEY6
- JCw6ZKpmCZ/M4jXTYZAtoK8rTw==
-X-Google-Smtp-Source: APXvYqz+3hiuV6STGZnHJwaLLwOAKGH4nfp5Zj2mpiy0nDPxYfsoTWtopKzv0qCjUs3Xa4U+8mkFUQ==
-X-Received: by 2002:a05:6214:1428:: with SMTP id
- o8mr3301869qvx.87.1575475203087; 
- Wed, 04 Dec 2019 08:00:03 -0800 (PST)
+ bh=caPojFU9C1Vw1ye7p06/lKzSTQslx3S8Kp3MSLulHf8=;
+ b=eHKlQUbaqqN8AJg/+Mwd0eFrM3g/8YBw0yERJELnmwZk/T61rMIgIF9Ln3FFB1t9pE
+ Hu/Y8aj36nKe9Hv6IJ0k+7AB0fNcBJZQzLeHncwdiQC6N21AosgoZufl8HnqbAEYOVn8
+ Y4oGBGwi31m3Q/HioMREaH3pS++xxm3/pXNBQ0xFf9w5HjIGj8ru2EuNuh/RWZWVVTsX
+ UF8AanDhYyafLmVC37vUY1SU8b2DzI8/weyLojxappFXfTBZh07OMTteyS7Vpykd4C6O
+ QMwaqZ1nzC8YgeMmY4iFI4SQuEb06Se8ezIkAnRyj5dNAkLAow+PiErIRwmeGzPP0kdp
+ fpjg==
+X-Gm-Message-State: APjAAAUnBBgBsb8gymDaq9Q5pVmE0VAg8V6M6D+uPApCo3D4c7KWmBFN
+ IsfCW6BuGYxSNPItw577aWPZ/g==
+X-Google-Smtp-Source: APXvYqzTKumsWYSE0kFMpP6G187N4Bgp/ZpVRjk98+PQxso8eknOwr7Z6ZJIWc+kehL8rXWA6r44+w==
+X-Received: by 2002:ac8:7b24:: with SMTP id l4mr3347748qtu.3.1575475204637;
+ Wed, 04 Dec 2019 08:00:04 -0800 (PST)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id w21sm4177585qth.17.2019.12.04.08.00.01
+ by smtp.gmail.com with ESMTPSA id w21sm4177585qth.17.2019.12.04.08.00.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 08:00:02 -0800 (PST)
+ Wed, 04 Dec 2019 08:00:04 -0800 (PST)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -67,28 +82,29 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com, steve.capper@arm.com, rfontana@redhat.com,
  tglx@linutronix.de
-Subject: [PATCH v8 15/25] arm64: kexec: move relocation function setup
-Date: Wed,  4 Dec 2019 10:59:28 -0500
-Message-Id: <20191204155938.2279686-16-pasha.tatashin@soleen.com>
+Subject: [PATCH v8 16/25] arm64: kexec: call kexec_image_info only once
+Date: Wed,  4 Dec 2019 10:59:29 -0500
+Message-Id: <20191204155938.2279686-17-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191204155938.2279686-1-pasha.tatashin@soleen.com>
 References: <20191204155938.2279686-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_080007_656362_D87561D0 
-X-CRM114-Status: GOOD (  13.07  )
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -107,106 +123,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently, kernel relocation function is configured in machine_kexec()
-at the time of kexec reboot by using control_code_page.
-
-This operation, however, is more logical to be done during kexec_load,
-and thus remove from reboot time. Move, setup of this function to
-newly added machine_kexec_post_load().
-
-Because once MMU is enabled, kexec control page will contain more than
-relocation kernel, but also vector table, add pointer to the actual
-function within this page arch.kern_reloc. Currently, it equals to the
-beginning of page, we will add offsets later, when vector table is
-added.
+Currently, kexec_image_info() is called during load time, and
+right before kernel is being kexec'ed. There is no need to do both.
+So, call it only once when segments are loaded and the physical
+location of page with copy of arm64_relocate_new_kernel is known.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/include/asm/kexec.h    |  1 +
- arch/arm64/kernel/machine_kexec.c | 28 +++++++++++++++-------------
- 2 files changed, 16 insertions(+), 13 deletions(-)
+ arch/arm64/kernel/machine_kexec.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index ad6afed69078..00dbcc71aeb2 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -95,6 +95,7 @@ static inline void crash_post_resume(void) {}
- struct kimage_arch {
- 	void *dtb;
- 	phys_addr_t dtb_mem;
-+	phys_addr_t kern_reloc;
- };
- 
- #ifdef CONFIG_KEXEC_FILE
 diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
-index ae1bad0156cd..46718b289a6b 100644
+index 46718b289a6b..f94119b5cebc 100644
 --- a/arch/arm64/kernel/machine_kexec.c
 +++ b/arch/arm64/kernel/machine_kexec.c
-@@ -42,6 +42,7 @@ static void _kexec_image_info(const char *func, int line,
- 	pr_debug("    start:       %lx\n", kimage->start);
- 	pr_debug("    head:        %lx\n", kimage->head);
- 	pr_debug("    nr_segments: %lu\n", kimage->nr_segments);
-+	pr_debug("    kern_reloc: %pa\n", &kimage->arch.kern_reloc);
+@@ -66,6 +66,7 @@ int machine_kexec_post_load(struct kimage *kimage)
+ 	memcpy(reloc_code, arm64_relocate_new_kernel,
+ 	       arm64_relocate_new_kernel_size);
+ 	kimage->arch.kern_reloc = __pa(reloc_code);
++	kexec_image_info(kimage);
  
- 	for (i = 0; i < kimage->nr_segments; i++) {
- 		pr_debug("      segment[%lu]: %016lx - %016lx, 0x%lx bytes, %lu pages\n",
-@@ -58,6 +59,18 @@ void machine_kexec_cleanup(struct kimage *kimage)
- 	/* Empty routine needed to avoid build errors. */
+ 	return 0;
  }
- 
-+int machine_kexec_post_load(struct kimage *kimage)
-+{
-+	void *reloc_code = page_to_virt(kimage->control_code_page);
-+
-+	memcpy(reloc_code, arm64_relocate_new_kernel,
-+	       arm64_relocate_new_kernel_size);
-+	kimage->arch.kern_reloc = __pa(reloc_code);
-+
-+	return 0;
-+}
-+
-+
- /**
-  * machine_kexec_prepare - Prepare for a kexec reboot.
-  *
-@@ -143,8 +156,7 @@ static void kexec_segment_flush(const struct kimage *kimage)
+@@ -80,8 +81,6 @@ int machine_kexec_post_load(struct kimage *kimage)
   */
- void machine_kexec(struct kimage *kimage)
+ int machine_kexec_prepare(struct kimage *kimage)
  {
--	phys_addr_t reboot_code_buffer_phys;
--	void *reboot_code_buffer;
-+	void *reboot_code_buffer = page_to_virt(kimage->control_code_page);
- 	bool in_kexec_crash = (kimage == kexec_crash_image);
- 	bool stuck_cpus = cpus_are_stuck_in_kernel();
- 
-@@ -155,18 +167,8 @@ void machine_kexec(struct kimage *kimage)
+-	kexec_image_info(kimage);
+-
+ 	if (kimage->type != KEXEC_TYPE_CRASH && cpus_are_stuck_in_kernel()) {
+ 		pr_err("Can't kexec: CPUs are stuck in the kernel.\n");
+ 		return -EBUSY;
+@@ -167,8 +166,6 @@ void machine_kexec(struct kimage *kimage)
  	WARN(in_kexec_crash && (stuck_cpus || smp_crash_stop_failed()),
  		"Some CPUs may be stale, kdump will be unreliable.\n");
  
--	reboot_code_buffer_phys = page_to_phys(kimage->control_code_page);
--	reboot_code_buffer = phys_to_virt(reboot_code_buffer_phys);
--
- 	kexec_image_info(kimage);
- 
--	/*
--	 * Copy arm64_relocate_new_kernel to the reboot_code_buffer for use
--	 * after the kernel is shut down.
--	 */
--	memcpy(reboot_code_buffer, arm64_relocate_new_kernel,
--		arm64_relocate_new_kernel_size);
+-	kexec_image_info(kimage);
 -
  	/* Flush the reboot_code_buffer in preparation for its execution. */
  	__flush_dcache_area(reboot_code_buffer, arm64_relocate_new_kernel_size);
  
-@@ -202,7 +204,7 @@ void machine_kexec(struct kimage *kimage)
- 	 * userspace (kexec-tools).
- 	 * In kexec_file case, the kernel starts directly without purgatory.
- 	 */
--	cpu_soft_restart(reboot_code_buffer_phys, kimage->head, kimage->start,
-+	cpu_soft_restart(kimage->arch.kern_reloc, kimage->head, kimage->start,
- 			 kimage->arch.dtb_mem);
- 
- 	BUG(); /* Should never get here. */
 -- 
 2.24.0
 
