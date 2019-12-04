@@ -2,106 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEC4C11215F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 03:22:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35C6D11216F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 03:32:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kRryMY7a39sqBQH0emeVsB+mbi0LH+GFD5srD6O12DA=; b=RRZgcTA5dOtKPY
-	WgHvf85u9fYRE4yCzE9Rehqq89iR7GdCouaqn+pfUZAtq1D71+fW9KNvhYQrb7UTYwSlxy9Fjxn94
-	B9NUrdftnETElNQl0wt+AyF907AYjYk5zzAUQPfyy90s65AUh5bYg8Bby9QBcprzpRUNenW4tEHFI
-	QxGiGmNani3Kj0MRqzBX7Pu31lwjTQIR+XT/nW6L/tSEqFUL9J2YqEJPZeEO0IdIwXAp2yFEajqo3
-	LqXipfbJntfnDhpf0Fjjjo3Ih3JS3cVypYMCq1X8A+M+i40astH2tF3rqIxL2FCkgCndbLHPorppV
-	HfI2Nl6SlGwMMsRRuXxw==;
+	List-Owner; bh=47JaAlg1N2YTto2nxDR1gETqeFOXLNZzFGYPBEiu2LM=; b=Rh1hN02KUu+llb
+	vRsiu85IpAu2bd4+3InBKc3TO59LW4AwQc4FcDZB9HcrJ+8+ZJZbFlDH7qwjuzi9nXqMdFFkjE9Mz
+	x2EWxBkhvGgwW222k/taA3psFcYKzCU4LLaUvaKM8tUbbT2RarDipwf5flSEKq9cb8ltfzYC8HPgG
+	ajIDpHd/LKalNDW4OJuEPMgrAF7uzbljzAv2sZJmfUuNOmOoN0jgxMyNbwuMo8qgtI3ut8LDZIixv
+	ImjPCHf18fZRwPCRcrvpEbtG0Gho9ttNLt6LW1eCnmWHONymkQlPp+1q6EundsQe5qUvGCVqxS+Nl
+	gA1ZD3+4xBlKFtX70msg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icKJT-0006bC-6S; Wed, 04 Dec 2019 02:22:47 +0000
-Received: from mail-eopbgr30042.outbound.protection.outlook.com ([40.107.3.42]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1icKSw-0001OY-V5; Wed, 04 Dec 2019 02:32:34 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icKJK-0006Wt-VR
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 02:22:41 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=EWXpsGUqmnSoSL+D9JlGrMBaOKJzjY2XsFGPM+W61/ld9BL9GTNQjxmoylC3ToaWnv8QyeUBVBOHcDzmTujSaxgCGQCTxOSqSn6Ey8dEWT7AQncFv0PlK6K5xQdY3TIcrUDvDeKLBmIfSlB0+RvVSMN4uerMzObfm8tyUZH/c1nAj7qYGyG0PtuB3MVPeNQuG1xZ2BkxNdq99z3v86M2kI1t0YBl0CxlO85ipl9w8JnHBoYYtvOLojKZOJwJ+tg3HiXXQn3fzlrwFUezXTN6iTdqJLpCrhBINBZkkRF2Gt2XnDgFnTwRCDArPy21Atzib/6hc2YSZZd7HJc72bRZew==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DbJxBly5TyryvPHM5vQVZjy9njGk9fxennF/bq0h/S8=;
- b=Gfx2HF0jt1MOmVazZ1LOfX34recCKCwqlVDOKr097FuxCj1/zpHqScTMwIuxZ7H6RLCu/J8OmqXCLj6+6ZJT64IsUNegZwJSZ4iy5Hv+03BL3W2/OWtaz+0Bfegcsx7l/3A0zA7cn+6OtwfOdW54az+nu3plvJF7zbTAO3vN3dWv4sqdzvQNocOT0jjEg27LufG/kEKbKNbXUYOJzFzYvoHBCsKKITAC3P9DKwDbzGb1YpVTLxmsV0L7hpNd9PcPZRkiqgpQcGv25L+jju0S0DDl5KrIHfyHAW7eZegSBiVnLGxLkR0IbsSpctaDcuxv2EmMv2mBNGPjolNwgWWd0w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DbJxBly5TyryvPHM5vQVZjy9njGk9fxennF/bq0h/S8=;
- b=obsjUILeJyx3tedyCjXh8WB8lmZEIuqCh8EvNfi4O8EOgqx/w+4dpp8u5otApOV+GIK8Qwr7fsOGq6RQxPr4RH5rT0ZDlVCsXrzt9s21eZBwAUStd2gSzqRwmMI7xMu3WnT67S90n9lGRf3hDqYJUzrsdAIZNitVGdqz8nqhihI=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4786.eurprd04.prod.outlook.com (20.177.42.25) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2495.21; Wed, 4 Dec 2019 02:22:35 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::f16d:a26a:840:f97c]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::f16d:a26a:840:f97c%4]) with mapi id 15.20.2495.014; Wed, 4 Dec 2019
- 02:22:35 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: RE: [PATCH] clk: imx: pll14xx: fix clk_pll14xx_wait_lock
-Thread-Topic: [PATCH] clk: imx: pll14xx: fix clk_pll14xx_wait_lock
-Thread-Index: AQHVlGNoepC2TDBj7kaCYRyt+h3yD6epaaSAgAAAaIA=
-Date: Wed, 4 Dec 2019 02:22:34 +0000
-Message-ID: <AM0PR04MB4481A56B3651CDE63465B7AB885D0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1573018178-14939-1-git-send-email-peng.fan@nxp.com>
- <20191204021908.GN9767@dragon>
-In-Reply-To: <20191204021908.GN9767@dragon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: d01cdf88-d1a0-4354-54dd-08d77860d321
-x-ms-traffictypediagnostic: AM0PR04MB4786:|AM0PR04MB4786:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB4786C49AF7A7D316D0AAF7E9885D0@AM0PR04MB4786.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 0241D5F98C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(346002)(136003)(366004)(396003)(39860400002)(189003)(199004)(6116002)(186003)(11346002)(3846002)(44832011)(446003)(52536014)(4326008)(7696005)(76176011)(6916009)(478600001)(14454004)(6506007)(8676002)(71190400001)(102836004)(71200400001)(25786009)(81166006)(81156014)(26005)(5660300002)(66476007)(2906002)(33656002)(66446008)(66556008)(64756008)(305945005)(66946007)(14444005)(86362001)(229853002)(55016002)(8936002)(9686003)(7736002)(256004)(74316002)(316002)(6246003)(99286004)(6436002)(54906003)(76116006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4786;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: jB5wnzL9ifjnbHUL6Zt6wdNhFMZm0bMiZE3MWa4DY4O77bsEHBpS1bTSaXDBv1lyxbtFRVachYSlKMYlX4RL8fWPVbcsfK42Ih5jICJQP4kr2kelo3yuFnwtJAUManzeO6TpCtjkW95kT4ViPuVcDicXuFD4YAQKsERmXq3xiovx7L4pKe7Z+M/Txs45kQNaMzlKfi7nxNn4WIeYD3bUMKHuUskbkj4ZA2J+uYVrCwgrpGwjqM3bXWlOOdAMSoNFU5ldzlR0v6zmDkrL3wsr6DTcQ+RlkHzFt5e22lHnQy0dsCeyfbv2/Mc/H8/jZ9/BycCVgLyJs/D/uLZ/uzY7tI3QmQ/p/mm2ul1tHzEnb2Vg9rwESIEXn6yejFHN/+wfHZhbVC1mmR20BzhuGgpPrlHvK3CwYGJ6VCsreiqkaIwqrKS6+nZtslzoGgM99v3g
+ id 1icKSl-0001NL-QT; Wed, 04 Dec 2019 02:32:25 +0000
+X-UUID: fac4cf6271d546b7835ef9d060587002-20191203
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=gASy9TDuVsH5zwpxeW0BE8bxVb8mYW76DT6995xQhXA=; 
+ b=QOHYHgfvSFD8m0DDWMic4GaD7zRffTP057Ws/SsQ1lzOhPCh3ga0IqjcmI/q4SbsWBKQZETxYEECbKtQFrKxv++xGGl9RZ7/J8ZXJdIbkji55JlP82QR1jYNIWi1oqgTPlTwy1VxLGwLqfEtrtULsmD3/Cv4N6yU+hnZYI5ienI=;
+X-UUID: fac4cf6271d546b7835ef9d060587002-20191203
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 764643841; Tue, 03 Dec 2019 18:32:19 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 3 Dec 2019 18:23:06 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Dec 2019 10:22:03 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 4 Dec 2019 10:21:56 +0800
+Message-ID: <1575426135.31411.2.camel@mtksdaap41>
+Subject: Re: [PATCH] soc: mediatek: cmdq: avoid racing condition with mutex
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>, Jassi Brar
+ <jassisinghbrar@gmail.com>
+Date: Wed, 4 Dec 2019 10:22:15 +0800
+In-Reply-To: <20191121072910.31665-1-bibby.hsieh@mediatek.com>
+References: <20191121072910.31665-1-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d01cdf88-d1a0-4354-54dd-08d77860d321
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Dec 2019 02:22:34.9645 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 8zHnylVv9WZUNY0q/sK3wRhd7h2v8lTLBn+vp/zliJm/83ROl3CcjjirzWvKZ7O+Co5Lm6pp75fWWYAu3do02Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4786
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_182239_021472_21E12E0A 
-X-CRM114-Status: GOOD (  19.26  )
+X-CRM114-CacheID: sfid-20191203_183223_873078_5E67B11D 
+X-CRM114-Status: GOOD (  13.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.42 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -109,6 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -120,87 +85,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Nicolas
+ Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Shawn,
+Hi, Jassi:
 
-> Subject: Re: [PATCH] clk: imx: pll14xx: fix clk_pll14xx_wait_lock
-> 
-> On Wed, Nov 06, 2019 at 05:31:15AM +0000, Peng Fan wrote:
-> > From: Peng Fan <peng.fan@nxp.com>
-> >
-> > The usage of readl_poll_timeout is wrong, the cond should be "val &
-> > LOCK_STATUS" not "val & LOCK_TIMEOUT_US".
-> 
-> Is this caught just by code inspection or a real world bug? 
+Are mbox_send_message() and mbox_client_txdone() thread-safe? If these
+two are thread-safe, this bug should be fixed in mailbox core not
+client.
 
-Code inspection.
+Regards,
+CK
 
- If you want this
-> get into -rc (and stable kernel) as a fix, you should add more information
-> about the bug, like how it's been triggered, what's the consequence of the
-> bug, and kernel dump message etc.
+On Thu, 2019-11-21 at 15:29 +0800, Bibby Hsieh wrote:
+> If cmdq client is multi thread user, racing will occur without mutex
+> protection. It will make the C message queued in mailbox's queue
+> always need D message's triggering.
 > 
-> >
-> > Fixes: 8646d4dcc7fb ("clk: imx: Add PLLs driver for imx8mm soc")
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > ---
-> >
-> > V1:
-> >  Hi Shawn,
-> >    This patch is made based on 5.4-rc6, not your for-next branch,
+> Thread A		Thread B		  Thread C		Thread D...
+> -----------------------------------------------------------------------------------
+> mbox_send_message()
+> 	send_data()
+> 			mbox_send_message()
+> 				*exit
+> 						mbox_send_message()
+> 							*exit
+> mbox_client_txdone()
+> 	tx_tick()
+> 			mbox_client_txdone()
+> 				tx_tick()
+> 						mbox_client_txdone()
+> 							tx_tick()
+> msg_submit()
+> 	send_data()
+> 			msg_submit()
+> 				*exit
+> 						msg_submit()
+> 							*exit
+> -----------------------------------------------------------------------------------
 > 
-> Please rebase it on 5.5-rc1 which will be coming next Monday.
-
-ok. I'll wait 5.5-rc1, then rebase and post v2.
-
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> ---
+>  drivers/soc/mediatek/mtk-cmdq-helper.c | 3 +++
+>  include/linux/soc/mediatek/mtk-cmdq.h  | 1 +
+>  2 files changed, 4 insertions(+)
 > 
-> >    not sure whether this patch could catch 5.4 release.
-> 
-> You can Cc stable kernel, so that it will be back ported.
-
-ok.
-
-Thanks,
-Peng.
-
-> 
-> Shawn
-> 
-> >
-> >  drivers/clk/imx/clk-pll14xx.c | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/clk/imx/clk-pll14xx.c
-> > b/drivers/clk/imx/clk-pll14xx.c index 7a815ec76aa5..d43b4a3c0de8
-> > 100644
-> > --- a/drivers/clk/imx/clk-pll14xx.c
-> > +++ b/drivers/clk/imx/clk-pll14xx.c
-> > @@ -153,7 +153,7 @@ static int clk_pll14xx_wait_lock(struct
-> > clk_pll14xx *pll)  {
-> >  	u32 val;
-> >
-> > -	return readl_poll_timeout(pll->base, val, val & LOCK_TIMEOUT_US, 0,
-> > +	return readl_poll_timeout(pll->base, val, val & LOCK_STATUS, 0,
-> >  			LOCK_TIMEOUT_US);
-> >  }
-> >
-> > --
-> > 2.16.4
-> >
+> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> index 9add0fd5fa6c..9e35e0beffaa 100644
+> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> @@ -81,6 +81,7 @@ struct cmdq_client *cmdq_mbox_create(struct device *dev, int index, u32 timeout)
+>  	client->client.dev = dev;
+>  	client->client.tx_block = false;
+>  	client->chan = mbox_request_channel(&client->client, index);
+> +	mutex_init(&client->mutex);
+>  
+>  	if (IS_ERR(client->chan)) {
+>  		long err;
+> @@ -352,9 +353,11 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
+>  		spin_unlock_irqrestore(&client->lock, flags);
+>  	}
+>  
+> +	mutex_lock(&client->mutex);
+>  	mbox_send_message(client->chan, pkt);
+>  	/* We can send next packet immediately, so just call txdone. */
+>  	mbox_client_txdone(client->chan, 0);
+> +	mutex_unlock(&client->mutex);
+>  
+>  	return 0;
+>  }
+> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> index a74c1d5acdf3..0f9071cd1bc7 100644
+> --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> @@ -28,6 +28,7 @@ struct cmdq_client {
+>  	struct mbox_chan *chan;
+>  	struct timer_list timer;
+>  	u32 timeout_ms; /* in unit of microsecond */
+> +	struct mutex mutex;
+>  };
+>  
+>  /**
 
 _______________________________________________
 linux-arm-kernel mailing list
