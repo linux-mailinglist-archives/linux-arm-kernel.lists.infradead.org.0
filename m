@@ -2,55 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04894112A0C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 12:25:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 487D5112A17
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 12:26:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dlgrj+7ha9U4IG1t2Gpi247QEhedOLXip/mQAIeSzz4=; b=T7scGMlDj3O0No
-	dBKNkTqRGxqbHZ5BCac8d9XvhN1VVaeyh1BE96ZVczDtFlXsfl6eF62dk40eV8QVvKeB/Od/C/g5g
-	ugfE5jQj79Bn1YychXx5UgqDKMwDH07aND/lQvbFS0LZ1SIRcgn6EhLSZ8pErurmfZ6h+BLMz5RK6
-	mswaYT3ppiuXBVCaC8KhAyXIWIDNFbKQvapVJj9WxGx55mPK05VmtfeuSa84RKLOdIE6XmdLrzxHT
-	vEur5LbaMfN2BOWv951mQ7pUfqnZvq9nzUN1VxwTt4K+zuwv1vth+gfUF+N72Y3aQzwDSb2NJ+gmF
-	Z+nym7ag5aJF+RMfen1w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FTzT+/fPYFmctLHOGIIaKlfqn9OaEyZpUglJ2OoWeEY=; b=iKkNZZLEvtTIIL
+	TNk51OBWm3zYxiEDr3i/utQjoZ7QgzbGx5YLvZi0UnHm3BqJKiYM1oBcV9DXz4jRp3rQAkOPb/53A
+	rdZLu8LWWPMS8MX5CDXDGqYkr+nGQXxuUds+TVlggDM/qK/YMMJs3FYQlFlHLUCIW2sI+jkMvo+OC
+	WYcTVbztOttboS0aSHjHmN0nn3SRwXPUYX8H1rlhcahI924Jx4sHEDMpiaemwnMmyXuQkxfoswfXj
+	+CmtQioOqCInD52lEenqAi0JiMmoYJIqCAFo1uclZc1rvNaZPYTHmwP7DZKIxZsHWKje65Ll7IvcY
+	AOVgRzgcUmV0dVvYbCXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icSmS-0003YM-Ff; Wed, 04 Dec 2019 11:25:16 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icSmJ-0002Y3-FT; Wed, 04 Dec 2019 11:25:09 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id D53B0B1C0;
- Wed,  4 Dec 2019 11:25:02 +0000 (UTC)
-Subject: Re: [PATCH 1/6] dt-bindings: clock: add bindings for RTD1619 clocks
-To: James Tai <james.tai@realtek.com>
-References: <20191203074513.9416-1-james.tai@realtek.com>
- <20191203074513.9416-2-james.tai@realtek.com>
- <f069747b-7f10-f47c-684d-11138b8fd129@suse.de>
- <1130d9316ffb49c8a99b9b2c2d8fa90f@realtek.com>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <da35686d-2584-a13f-b56e-ba3ff9768113@suse.de>
-Date: Wed, 4 Dec 2019 12:25:00 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+	id 1icSnP-00040t-Ds; Wed, 04 Dec 2019 11:26:15 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1icSnG-000409-BG
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 11:26:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DF1FB31B;
+ Wed,  4 Dec 2019 03:26:03 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ DF4E73F68E; Wed,  4 Dec 2019 03:26:02 -0800 (PST)
+Date: Wed, 4 Dec 2019 11:26:00 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: mm: Fix initialisation of DMA zones on non-NUMA
+ systems
+Message-ID: <20191204112600.GE13081@arrakis.emea.arm.com>
+References: <20191203121013.9280-1-will@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <1130d9316ffb49c8a99b9b2c2d8fa90f@realtek.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191203121013.9280-1-will@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_032507_680302_37F7D4CD 
-X-CRM114-Status: GOOD (  12.93  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191204_032606_432468_C55AAF2A 
+X-CRM114-Status: GOOD (  13.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,63 +61,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- =?UTF-8?B?RWRnYXIgTGVlIFvmnY7mib/oq61d?= <cylee12@realtek.com>,
- "linux-realtek-soc@lists.infradead.org"
- <linux-realtek-soc@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Palmer Dabbelt <palmer@dabbelt.com>,
- Paul Walmsley <paul.walmsley@sifive.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ John Stultz <john.stultz@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Christoph Hellwig <hch@lst.de>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSmFtZXMsCgpbZml4aW5nIFBhbG1lcl0KCkFtIDA0LjEyLjE5IHVtIDA1OjExIHNjaHJpZWIg
-SmFtZXMgVGFpOgo+PiBBbSAwMy4xMi4xOSB1bSAwODo0NSBzY2hyaWViIEphbWVzIFRhaToKPj4+
-IEZyb206IGN5bGVlMTIgPGN5bGVlMTJAcmVhbHRlay5jb20+Cj4+Cj4+IFBsZWFzZSBmaXggdGhl
-IGF1dGhvciAoZ2l0IGNvbW1pdCAtLWFtZW5kIC0tYXV0aG9yPSIuLi4iKSBhbmQgdXNlIGFuCj4+
-IGFwcHJvcHJpYXRlIGdpdCBjb25maWcgc2V0dGluZyAoYW5kIGNvbW11bmljYXRpb24gdG8geW91
-ciB0ZWFtKSB0byBhdm9pZCB0aGlzCj4+IHJlb2NjdXJyaW5nIGZvciBuZXcgY29tbWl0cyAtIGFs
-cmVhZHkgcG9pbnRlZCBvdXQgdG8gSmFtZXMuCj4+Cj4+IEJUVyBJIHdvbmRlciB3aHkgd2UgaGF2
-ZSBzbyBtYW55IHNlZW1pbmdseSB1bnJlbGF0ZWQgcGVvcGxlIGluIENDCj4+IChNZWRpYXRlaywg
-UklTQy1WKSB0aGF0IHRoZSBwYXRjaGVzIGFuZCByZXNwb25zZXMga2VlcCBoYW5naW5nIGluIG1h
-aWxpbmcgbGlzdAo+PiBtb2RlcmF0aW9uPwo+IAo+IEkgdXNlZCB0aGUgImdldF9tYWludGFpbmVy
-LnBsIiB0byBmaW5kIHRoZSBlbWFpbCBhZGRyZXNzIG9mIG1haW50YWluZXJzLiBIb3dldmVyLCAK
-PiBJJ20gc28gc29ycnkgZm9yIG1pc3Rha2VubHkgYWRkaW5nIHNvbWUgdW5yZWxhdGVkIHBlb3Bs
-ZSB0byB0aGlzIG1haWwuCgpIZXJlJ3MgbXkgZ2l0LXNlbmQtZW1haWwgY2NjbWQgY29uZmlnIHRo
-YXQgSSByZWNvbW1lbmQ6CgokIGdpdCBjb25maWcgc2VuZGVtYWlsLmNjY21kCnNjcmlwdHMvZ2V0
-X21haW50YWluZXIucGwgLS1ub2dpdC1mYWxsYmFjayAtLW5vcm9sZXN0YXRzCgotLW5vZ2l0LWZh
-bGxiYWNrIHN1cHByZXNzZXMgR2l0IGhpc3RvcnkgdG8gYmUgY2hlY2tlZCBmb3IgcHJldmlvdXMK
-Y29udHJpYnV0b3JzLCBzYXZpbmcgdGltZSBhbmQgYXZvaWRpbmcgdW5yZWxhdGVkIG9yIG91dGRh
-dGVkIHBlb3BsZS4KCi0tbm9yb2xlc3RhdHMgc3VwcHJlc3NlcyBleHRlbnNpdmUgIiguLi4pIiBj
-b21tZW50cyBmb3IgdGhlIGVtYWlsCmFkZHJlc3Nlcywgd2hpY2ggbWlnaHQgd3JhcCBhbmQgYnJl
-YWsgZHVyaW5nIHRyYW5zbWlzc2lvbiBvciB3aGVuIHBlb3BsZQpyZXBseS4KCkluIGFkZGl0aW9u
-IHlvdSBvYnZpb3VzbHkgbmVlZCB0byBjb25maWd1cmUgc2VuZGVtYWlsLnRvLCBhbmQgeW91IG1h
-eQp3YW50IHRvIGFkZCBtdWx0aXBsZSBjYyBsaW5lcyB0byBbc2VuZGVtYWlsXSBpbiB5b3VyIC5n
-aXQvY29uZmlnIHRvCmVuc3VyZSBhbGwgbWFpbHMgaW5jbHVkaW5nIGNvdmVyIGxldHRlcnMgcmVh
-Y2ggTEtNTCBhbmQgTEFLTUwsIHRvbzoKCiQgZ2l0IGNvbmZpZyAtLWdldC1hbGwgc2VuZGVtYWls
-LnRvCmxpbnV4LXJlYWx0ZWstc29jQGxpc3RzLmluZnJhZGVhZC5vcmcKJCBnaXQgY29uZmlnIC0t
-Z2V0LWFsbCBzZW5kZW1haWwuY2MKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-CmxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5lbC5vcmcKCkZ1cnRoZXIsIHlvdSBuZWVkIHRvIGVuc3Vy
-ZSB0aGF0IHlvdSBhcmUgc2VuZGluZyBmcm9tIHRoZSByaWdodCBicmFuY2gsCnNvIHRoYXQgdGhl
-IGxhdGVzdCBNQUlOVEFJTkVSUyBmaWxlIGFuZCBzY3JpcHRzIGdldCB1c2VkLiBBcyBQYXVsCnBv
-aW50ZWQgb3V0LCBQYWxtZXIncyBhZGRyZXNzIGlzIGZpeGVkIGluIGJvdGggbGludXgtbmV4dCBh
-bmQgbGludXgsIHNvCml0IGlzIHJlYWxseSBwdXp6bGluZyB3aGVyZSB5b3UgZ290IHRoYXQgb2xk
-IGFkZHJlc3MgZnJvbS4uLgoKTm90IHVuZGVyc3RhbmRpbmcgeW91ciBzZXR1cCwgeW91J2xsIGhh
-dmUgdG8gZGVidWcgb24geW91ciBvd24gd2hlcmUKdGhvc2UgYWRkcmVzc2VzIGNhbWUgZnJvbS4g
-VHJ5IGdpdCBzZW5kLWVtYWlsIC0tZHJ5LXJ1biB0byByZXZpZXcgdGhlIENDCmFkZHJlc3NlcyBi
-ZWZvcmUgeW91IHNlbmQuIFlvdSBjb3VsZCBhbHNvIHRlbXBvcmFyaWx5IHVzZSAtLXJvbGVzdGF0
-cyB0bwpzZWUgdGhlIE1BSU5UQUlORVJTIHNlY3Rpb24gdGhleSBjYW1lIGZyb20uCgpPbiB0aGUg
-YnJpZ2h0IHNpZGUsIHRoaXMgdGltZSB5b3VyIHBhdGNoZXMgYXJyaXZlZCB0aHJlYWRlZCBjb3Jy
-ZWN0bHkuCgpSZWdhcmRzLApBbmRyZWFzCgotLSAKU1VTRSBTb2Z0d2FyZSBTb2x1dGlvbnMgR2Vy
-bWFueSBHbWJICk1heGZlbGRzdHIuIDUsIDkwNDA5IE7DvHJuYmVyZywgR2VybWFueQpHRjogRmVs
-aXggSW1lbmTDtnJmZmVyCkhSQiAzNjgwOSAoQUcgTsO8cm5iZXJnKQoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Tue, Dec 03, 2019 at 12:10:13PM +0000, Will Deacon wrote:
+> John reports that the recently merged commit 1a8e1cef7603 ("arm64: use
+> both ZONE_DMA and ZONE_DMA32") breaks the boot on his DB845C board:
+> 
+>   | Booting Linux on physical CPU 0x0000000000 [0x517f803c]
+>   | Linux version 5.4.0-mainline-10675-g957a03b9e38f
+>   | Machine model: Thundercomm Dragonboard 845c
+>   | [...]
+>   | Built 1 zonelists, mobility grouping on.  Total pages: -188245
+>   | Kernel command line: earlycon
+>   | firmware_class.path=/vendor/firmware/ androidboot.hardware=db845c
+>   | init=/init androidboot.boot_devices=soc/1d84000.ufshc
+>   | printk.devkmsg=on buildvariant=userdebug root=/dev/sda2
+>   | androidboot.bootdevice=1d84000.ufshc androidboot.serialno=c4e1189c
+>   | androidboot.baseband=sda
+>   | msm_drm.dsi_display0=dsi_lt9611_1080_video_display:
+>   | androidboot.slot_suffix=_a skip_initramfs rootwait ro init=/init
+>   |
+>   | <hangs indefinitely here>
+> 
+> This is because, when CONFIG_NUMA=n, zone_sizes_init() fails to handle
+> memblocks that fall entirely within the ZONE_DMA region and erroneously ends up
+> trying to add a negatively-sized region into the following ZONE_DMA32, which is
+> later interpreted as a large unsigned region by the core MM code.
+> 
+> Rework the non-NUMA implementation of zone_sizes_init() so that the start
+> address of the memblock being processed is adjusted according to the end of the
+> previous zone, which is then range-checked before updating the hole information
+> of subsequent zones.
+> 
+> Cc: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Christoph Hellwig <hch@lst.de>
+> Cc: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Link: https://lore.kernel.org/lkml/CALAqxLVVcsmFrDKLRGRq7GewcW405yTOxG=KR3csVzQ6bXutkA@mail.gmail.com
+> Fixes: 1a8e1cef7603 ("arm64: use both ZONE_DMA and ZONE_DMA32")
+> Reported-by: John Stultz <john.stultz@linaro.org>
+> Signed-off-by: Will Deacon <will@kernel.org>
+
+Queued for 5.5-rc1. Thanks.
+
+-- 
+Catalin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
