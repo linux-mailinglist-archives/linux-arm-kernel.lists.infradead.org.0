@@ -2,78 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C7D81125B5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 09:45:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C65011125BE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 09:46:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+d8Np+CQ6h0zTkakRM7Q1ZZ/Wp35xuuYVNmC6tf0bBI=; b=DLunjGqw2TTl5lqlo5Eti0t9o
-	cZNG50cEyCTc3jZGAqza0FKz+hUN4X0y0L9ag3ZSYg6W3+UZqnRTIuK25fkZ1ZHhE+qwHWjFGCUvv
-	mHSg3E61XHdD5+PnirzGzZlYOOlyLLSfBQjuIuvVjv6t9CM1wZTqQSJqDJGV7UCP6uXMFssWH/bX3
-	PV0riTIZCKuk2Dpqv+8B2GAvqOK+SIiwV4slTD352tCtVpxa15nCFNuGB2/CaIhV6JU+IK+45lD9H
-	7zx0wUD+kLuxI24cdkpYobEZ5lzt0gNm637tCvE0dlAxbTu3KPBHkVP05MdgbNDA3LxZxqP3l2WBU
-	LEnrOtNhQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2vWGBg9DdK4MumIPP8ltObmWUOzVUOtCsp3fLqqYld4=; b=BgYyPfmr6LsFmT
+	e/98bRAgOJPY3yimKCbmmToC6Ig2sVu5/SN4/bHyZN/99cIAFRcbQHZr37eXkiIpgdk+zlv7zcKQH
+	91/j+92qZJLxNOwnJt382hZ74O5XT2HbgVC9SaN3sENcaUtI9paZ7wSpID3nxx1zz9fS8nJqMNSNg
+	9cHAWx728PnkHQsTDgzDKlmvtCU6QJMc9aqiAOiePSuChck4SZ5/ncjjA2yUd+c0tFGC3pACcAjXu
+	nkop6VGRwisRdSWjDoW4kWDd67JA1MiDGjcNZmzHWAfWoe4E0KxVWnZL4INd++jG2ekI3EwmPL40B
+	j+MFQzEj4i7vqL1mF7Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icQI3-0007SH-JM; Wed, 04 Dec 2019 08:45:43 +0000
-Received: from mail.kapsi.fi ([2001:67c:1be8::25])
+	id 1icQIc-0007hY-W3; Wed, 04 Dec 2019 08:46:19 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icQHu-0007R2-97
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 08:45:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=kapsi.fi;
- s=20161220; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Br0dk1bpsyd+4qzgRWaxPCZRu6nFMIoIlIvyu3JM4TQ=; b=GiqY50pjtFIxFoiDaFb3QMvRk/
- wyBqfad1DlP0jVA/tyk5o9bj6nr5Xz+phyKnxrZN8JOSDfM45yH0G3AmYRV5RSN92LrRQS2qhh6xh
- NfZPe6jt/Qt4hBYw7duKijAgiD71N6PgoDy5m4v6FjaewWoTwkHQgcR5eLt3XUujZBDYciPNi4ljK
- jemAMAPNEUw0AoX73KRgadG/XzvXepJIoGLh1cEdCkC1u2mrtjBCKNf97GXlPgHt3Keea7Wfy2c9m
- aipp83JOOoZcK8bmxlsrvLbchu8oOiTjTbc4Ns09aqcaAig0zrqZsdemfLeyQtYwuqep3NHdSxN+V
- ZQDN2+LA==;
-Received: from [193.209.96.43] (helo=[10.21.26.179])
- by mail.kapsi.fi with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <cyndis@kapsi.fi>)
- id 1icQHk-0000se-Bn; Wed, 04 Dec 2019 10:45:24 +0200
-Subject: Re: [TEGRA194_CPUFREQ Patch 1/3] firmware: tegra: adding function to
- get BPMP data
-To: Thierry Reding <thierry.reding@gmail.com>, Sumit Gupta <sumitg@nvidia.com>
-References: <1575394348-17649-1-git-send-email-sumitg@nvidia.com>
- <20191203174229.GA1721849@ulmo>
-From: Mikko Perttunen <cyndis@kapsi.fi>
-Message-ID: <9404232d-84ce-a117-89dd-f2d8de80993e@kapsi.fi>
-Date: Wed, 4 Dec 2019 10:45:24 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1icQIT-0007gd-TK
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 08:46:12 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Ludovic.Desroches@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="Ludovic.Desroches@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: 4xLNsUQDEfxULouLYzoSIaIlckWltHCZaGQd+HaljCUjhF89OsA1yvocbqvxHPGf7Od2Uizpp2
+ QroyqLkablnIIbw2sQYBGjL+HkIopqSH+zRbFj5OXQGMSZ2uKWmvdCkpgB7T36LYbVZMkYfQ6g
+ cB+Q4MJitU/sk+wV5fkRPjAC6ya1ULcv7sclnZFH8eXGAkhfxD+JgybN0EaeGREKPub90zdtZl
+ HJaimALMXvWkOgXSvIQoBNFwNlVfmIYoVgmXdgizzT3z5BZmHN3MFjVZz0sMO0ogVFpWOEdctI
+ FSk=
+X-IronPort-AV: E=Sophos;i="5.69,276,1571727600"; d="scan'208";a="56561727"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 04 Dec 2019 01:46:06 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 4 Dec 2019 01:46:07 -0700
+Received: from localhost (10.10.85.251) by chn-vm-ex01.mchp-main.com
+ (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Wed, 4 Dec 2019 01:46:06 -0700
+Date: Wed, 4 Dec 2019 09:45:55 +0100
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
+Subject: Re: [PATCH] iio: at91-sama5d2_adc: fix
+ iio_triggered_buffer_{predisable,postenable} positions
+Message-ID: <20191204084555.7gjyh23oywhruy7g@M43218.corp.atmel.com>
+Mail-Followup-To: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>,
+ "Eugen.Hristev@microchip.com" <Eugen.Hristev@microchip.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
+ "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "lars@metafoo.de" <lars@metafoo.de>,
+ "pmeerw@pmeerw.net" <pmeerw@pmeerw.net>,
+ "knaack.h@gmx.de" <knaack.h@gmx.de>,
+ "jic23@kernel.org" <jic23@kernel.org>
+References: <20191023082508.17583-1-alexandru.ardelean@analog.com>
+ <17cf55869cc418795d0013c0594ed8fc04381d46.camel@analog.com>
+ <9df3d999-0ec6-a282-d24b-8f7df5f14f6d@microchip.com>
+ <e43bf58f-223c-0b12-2912-6f353d866ec3@microchip.com>
+ <74aabb41107ab162660f21e726c88a9dd40ecc5e.camel@analog.com>
+ <60ce6ff9-ba06-2522-e9a0-55e6fd2731ec@microchip.com>
+ <0075d7fc890b0986f2113664c664ff46931de432.camel@analog.com>
+ <3a8ea46b-14d4-30d8-5766-02538cab8394@microchip.com>
+ <b01afcee62e82e6965115a8a0ec7246f71488df1.camel@analog.com>
 MIME-Version: 1.0
-In-Reply-To: <20191203174229.GA1721849@ulmo>
-Content-Language: en-US
-X-SA-Exim-Connect-IP: 193.209.96.43
-X-SA-Exim-Mail-From: cyndis@kapsi.fi
-X-SA-Exim-Scanned: No (on mail.kapsi.fi); SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <b01afcee62e82e6965115a8a0ec7246f71488df1.camel@analog.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_004534_515917_B5AD268E 
-X-CRM114-Status: GOOD (  17.38  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191204_004610_037683_5E591EF4 
+X-CRM114-Status: GOOD (  58.35  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:1be8:0:0:0:0:25 listed in] [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,121 +113,420 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, viresh.kumar@linaro.org, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, jonathanh@nvidia.com, talho@nvidia.com,
- bbasu@nvidia.com, catalin.marinas@arm.com, linux-tegra@vger.kernel.org,
- mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
+ "lars@metafoo.de" <lars@metafoo.de>,
+ "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "jic23@kernel.org" <jic23@kernel.org>, "pmeerw@pmeerw.net" <pmeerw@pmeerw.net>,
+ "knaack.h@gmx.de" <knaack.h@gmx.de>,
+ "Eugen.Hristev@microchip.com" <Eugen.Hristev@microchip.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The difference here is that whereas on Tegra186 the frequency is managed 
-through a specific memory-mapped device, on Tegra194 the frequency is 
-managed through a CPU MSR leaving no "specific" node for this property 
-apart from the cpu nodes itself.
-
-Now, my original patchset (which this series is based on) did add 
-nvidia,bpmp properties on the CPU DT nodes itself and query BPMP based 
-on that. A change is still required for that since tegra_bpmp_get() 
-currently takes a 'struct device *' which we don't have for a CPU DT node.
-
-Mikko
-
-On 3.12.2019 19.42, Thierry Reding wrote:
-> On Tue, Dec 03, 2019 at 11:02:26PM +0530, Sumit Gupta wrote:
->> Adding new function of_tegra_bpmp_get() to get BPMP data.
->> This function can be used by other drivers like cpufreq to
->> get BPMP data without adding any property in respective
->> drivers DT node.
+On Tue, Dec 03, 2019 at 01:40:34PM +0000, Ardelean, Alexandru wrote:
+> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
 > 
-> What's wrong with adding the property in the DT node? We already do that
-> for Tegra186's CPU frequency driver, so it makes sense to continue that
-> for Tegra194.
+> On Tue, 2019-12-03 at 12:17 +0000, Eugen.Hristev@microchip.com wrote:
+> >
+> > On 03.12.2019 14:04, Ardelean, Alexandru wrote:
+> >
+> > > On Tue, 2019-12-03 at 09:49 +0000, Eugen.Hristev@microchip.com wrote:
+> > > > [External]
+> > > >
+> > > >
+> > > >
+> > > > On 29.11.2019 09:02, Ardelean, Alexandru wrote:
+> > > >
+> > > > > On Thu, 2019-11-28 at 15:19 +0000, Eugen.Hristev@microchip.com
+> > > > > wrote:
+> > > > >
+> > > > > Hey,
+> > > > >
+> > > > > Sorry for the late reply.
+> > > > > I'm also juggling a few things.
+> > > > >
+> > > > > > On 28.11.2019 10:36, Eugen.Hristev@microchip.com wrote:
+> > > > > >
+> > > > > > > On 25.11.2019 17:03, Ardelean, Alexandru wrote:
+> > > > > > > > On Wed, 2019-10-23 at 11:25 +0300, Alexandru Ardelean wrote:
+> > > > > > > > > The iio_triggered_buffer_{predisable,postenable} functions
+> > > > > > > > > attach/detach
+> > > > > > > > > poll functions.
+> > > > > > > > >
+> > > > > > > > > The iio_triggered_buffer_postenable() should be called
+> > > > > > > > > first to
+> > > > > > > > > attach
+> > > > > > > > > the
+> > > > > > > > > poll function, and then the driver can init the data to be
+> > > > > > > > > triggered.
+> > > > > > > > >
+> > > > > > > > > Similarly, iio_triggered_buffer_predisable() should be
+> > > > > > > > > called
+> > > > > > > > > last
+> > > > > > > > > to
+> > > > > > > > > first
+> > > > > > > > > disable the data (to be triggered) and then the poll
+> > > > > > > > > function
+> > > > > > > > > should be
+> > > > > > > > > detached.
+> > > > > > >
+> > > > > > > Hi Alexandru,
+> > > > > > >
+> > > > > > > Sorry for this late reply,
+> > > > > > >
+> > > > > > > I remember that by adding specific at91_adc code for
+> > > > > > > predisable/postenable , I was replacing the existing standard
+> > > > > > > callback
+> > > > > > > with my own, and have my specific at91 code before postenable
+> > > > > > > and
+> > > > > > > then
+> > > > > > > calling the subsystem postenable,
+> > > > > > > and in similar way, for predisable, first call the subsystem
+> > > > > > > predisable
+> > > > > > > then doing my predisable code (in reverse order as in
+> > > > > > > postenable)
+> > > > > > >
+> > > > > > > If you say the order should be reversed (basically have the
+> > > > > > > pollfunction
+> > > > > > > first), how is current code working ?
+> > > > > > > Should current code fail if the poll function is not attached
+> > > > > > > in
+> > > > > > > time ?
+> > > > > > > Or there is a race between triggered data and the attachment of
+> > > > > > > the
+> > > > > > > pollfunc ?
+> > > > > > >
+> > > > > > > I am thinking that attaching the pollfunc later makes it work
+> > > > > > > because
+> > > > > > > the DMA is not started yet. What happens if we have the
+> > > > > > > pollfunc
+> > > > > > > attached but DMA is not started (basically the trigger is not
+> > > > > > > started)
+> > > > > > > ,
+> > > > > > > can this lead to unexpected behavior ? Like the pollfunc
+> > > > > > > polling
+> > > > > > > but no
+> > > > > > > trigger started/no DMA started.
+> > > > > >
+> > > > > > I looked a bit more into the code and in DMA case, using
+> > > > > > postenable
+> > > > > > first will lead to calling attach pollfunc, which will also
+> > > > > > enable
+> > > > > > the
+> > > > > > trigger, but the DMA is not yet started.
+> > > > > > Is this the desired effect ?
+> > > > >
+> > > > > Yes.
+> > > >
+> > > > How is this correct ? We start the trigger but have no buffer to
+> > > > carry
+> > > > to... what happens with the data ? -> I think we both have an answer
+> > > > to
+> > > > that, as you state below
+> > > >
+> > > > > > Normally when using DMA I would say we
+> > > > > > would need to enable DMA first to be ready to carry data (and
+> > > > > > coherent
+> > > > > > area etc.) and then enable the trigger.
+> > > > >
+> > > > > So, there is a change in our tree [from some time ago].
+> > > > > See here:
+> > > > > https://github.com/analogdevicesinc/linux/commit/eee97d12665fef8cf429a1e5035b23ae969705b8
+> > > > >
+> > > > > Particularly, what's interesting is around line:
+> > > > > https://github.com/analogdevicesinc/linux/commit/eee97d12665fef8cf429a1e5035b23ae969705b8#diff-0a87744ce945d2c1c89ea19f21fb35bbR722
+> > > > > And you may need to expand some stuff to see more of the function-
+> > > > > body.
+> > > > > And some things may have changed in upstream IIO since that change.
+> > > > >
+> > > > > The change is to make the pollfunc attach/detach become part of the
+> > > > > IIO
+> > > > > framework, because plenty of drivers just call
+> > > > > iio_triggered_buffer_postenable() &
+> > > > > iio_triggered_buffer_predisable()
+> > > > > to
+> > > > > manually attach/detach the pollfunc for triggered buffers.
+> > > >
+> > > > Okay, I understand this. at91-sama5d2_adc does not manually
+> > > > attach/detach the pollfunc. So why do we need to change anything here
+> > > > ?
+> > > >
+> > > >
+> > > > > That change is from 2015, and since then, some drivers were added
+> > > > > that
+> > > > > just
+> > > > > manually attach/detach the pollfunc [and do nothing more with the
+> > > > > postenable/predisable hooks].
+> > > > >
+> > > > > I tried to upstream a more complete version of that patch a while
+> > > > > ago
+> > > > > [u1].
+> > > > > https://patchwork.kernel.org/patch/10482167/
+> > > > > https://patchwork.kernel.org/patch/10737291/
+> > > > >
+> > > > > The conclusion was to first fix the attach/detach pollfunc order in
+> > > > > all
+> > > > > IIO
+> > > > > drivers, so that when patch [u1] is applied, there is no more
+> > > > > discussion
+> > > > > about the correct order for attach/detach pollfunc.
+> > > >
+> > > > Allright, what is required to be fixed regarding the order, in this
+> > > > specific case? We enable the DMA, and then we do the normal
+> > > > 'postenable'
+> > > > that was called anyway if we did not override the 'postenable' in the
+> > > > ops. Do you want to move this code to 'preenable' and keep
+> > > > 'postenable'
+> > > > to the standard subsystem one ?
+> > > >
+> > > > The same applies to the predisable, we first call the subsystem
+> > > > 'predisable' then do the specific at91 stuff. You want to move this
+> > > > to
+> > > > the 'postdisable' ?
+> > > >
+> > > > I think reverting the order inside the functions themselves is not
+> > > > good
+> > > > as we replace the order of starting trigger/DMA setup.
+> > > > So, coming to your question below...
+> > > >
+> > > > > Coming back here [and to your question], my answer is: I don't know
+> > > > > if
+> > > > > the
+> > > > > at91 DMA needs to be enabled/disabled before/after the pollfunc
+> > > > > attach/detach.
+> > > > > This sounds like specific stuff for at91 [which is fine].
+> > > > >
+> > > > > It could be that some other hooks may need to used to enable DMA
+> > > > > before/after the attach/detach pollfunc. Maybe
+> > > > > preenable()/postdisable() ?
+> > > > >
+> > > > > In any case, what I would like [with this discussion], is to
+> > > > > resolve a
+> > > > > situation where we can get closer to moving the attach/pollfunc
+> > > > > code to
+> > > > > IIO
+> > > > > core. So, if AT91 requires a different ordering, I think you would
+> > > > > be
+> > > > > more
+> > > > > appropriate to tell me, and propose an alternative to this patch.
+> > > >
+> > > > ... yes, this looks more appropriate, to move things to
+> > > > 'preenable/postdisable', if you feel like 'postenable/predisable' is
+> > > > not
+> > > > the proper place to put them.
+> > > > But the order itself, first enable DMA then trigger, and disable in
+> > > > reverse order, I do not think there is anything wrong with that? Am I
+> > > > misunderstanding ?
+> > >
+> > > Should be good.
+> > >
+> > > > If Jonathan or Ludovic have a different idea, please let me know.
+> > >
+> > > There is an alternative here [to this].
+> > > Maybe using the IIO Buffer DMA[Engine] integration that Lars wrote [1].
+> > > This would avoid calling dmaengine_terminate_sync() and similar hooks
+> > > in
+> > > the AT91 driver. That also preserves the correct order (start DMA
+> > > first,
+> > > then attach pollfunc ; and reverse on disable).
+> > > But that is more work; not on the patch itself, but more on the
+> > > testing.
+> >
+> > Initially, when I implemented the DMA part for this driver, this was the
+> > idea. However the DMA engine was not used at that time by anyone , and I
+> > could not make it work properly. Jonathan advised at that moment to use
+> > this current framework.
+> >
+> > > [1] Upstreaming more parts for the IIO Buffer DMA[Engine] integration
+> > > is on
+> > > my to-do-list as well. I think there are still some patches that we
+> > > use,
+> > > but are not upstreamed yet.
+> > >
+> > > I'll come-up a with a V2 for this with preenable()/postdisable()
+> > > alternative here.
+> >
+> > Ok, I will test it .
+> >
+> > What I do not understand completely is why it bothers you to have at91
+> > specific code in postenable / predisable.
+> > The same thing will happen will happen with preenable/postdisable:
+> > specific at91 code will be called after subsystem preenable and before
+> > subsystem postdisable.
 > 
-> Thierry
+> Because I am preparing a framework change to IIO core and all IIO drivers
+> in mainline need to be resolved when that change happens.
+> I am not sure if the change will break any driver, but at least we can
+> minimalize breakage.
 > 
->> Signed-off-by: Sumit Gupta <sumitg@nvidia.com>
->> ---
->>   drivers/firmware/tegra/bpmp.c | 38 ++++++++++++++++++++++++++++++++++++++
->>   include/soc/tegra/bpmp.h      |  5 +++++
->>   2 files changed, 43 insertions(+)
->>
->> diff --git a/drivers/firmware/tegra/bpmp.c b/drivers/firmware/tegra/bpmp.c
->> index 6741fcd..9c3d7f1 100644
->> --- a/drivers/firmware/tegra/bpmp.c
->> +++ b/drivers/firmware/tegra/bpmp.c
->> @@ -38,6 +38,44 @@ channel_to_ops(struct tegra_bpmp_channel *channel)
->>   	return bpmp->soc->ops;
->>   }
->>   
->> +struct tegra_bpmp *of_tegra_bpmp_get(void)
->> +{
->> +	struct platform_device *pdev;
->> +	struct device_node *bpmp_dev;
->> +	struct tegra_bpmp *bpmp;
->> +
->> +	/* Check for bpmp device status in DT */
->> +	bpmp_dev = of_find_compatible_node(NULL, NULL, "nvidia,tegra186-bpmp");
->> +	if (!bpmp_dev) {
->> +		bpmp = ERR_PTR(-ENODEV);
->> +		goto err_out;
->> +	}
->> +	if (!of_device_is_available(bpmp_dev)) {
->> +		bpmp = ERR_PTR(-ENODEV);
->> +		goto err_put;
->> +	}
->> +
->> +	pdev = of_find_device_by_node(bpmp_dev);
->> +	if (!pdev) {
->> +		bpmp = ERR_PTR(-ENODEV);
->> +		goto err_put;
->> +	}
->> +
->> +	bpmp = platform_get_drvdata(pdev);
->> +	if (!bpmp) {
->> +		bpmp = ERR_PTR(-EPROBE_DEFER);
->> +		put_device(&pdev->dev);
->> +		goto err_put;
->> +	}
->> +
->> +	return bpmp;
->> +err_put:
->> +	of_node_put(bpmp_dev);
->> +err_out:
->> +	return bpmp;
->> +}
->> +EXPORT_SYMBOL_GPL(of_tegra_bpmp_get);
->> +
->>   struct tegra_bpmp *tegra_bpmp_get(struct device *dev)
->>   {
->>   	struct platform_device *pdev;
->> diff --git a/include/soc/tegra/bpmp.h b/include/soc/tegra/bpmp.h
->> index f2604e9..21402d9 100644
->> --- a/include/soc/tegra/bpmp.h
->> +++ b/include/soc/tegra/bpmp.h
->> @@ -107,6 +107,7 @@ struct tegra_bpmp_message {
->>   };
->>   
->>   #if IS_ENABLED(CONFIG_TEGRA_BPMP)
->> +struct tegra_bpmp *of_tegra_bpmp_get(void);
->>   struct tegra_bpmp *tegra_bpmp_get(struct device *dev);
->>   void tegra_bpmp_put(struct tegra_bpmp *bpmp);
->>   int tegra_bpmp_transfer_atomic(struct tegra_bpmp *bpmp,
->> @@ -122,6 +123,10 @@ void tegra_bpmp_free_mrq(struct tegra_bpmp *bpmp, unsigned int mrq,
->>   			 void *data);
->>   bool tegra_bpmp_mrq_is_supported(struct tegra_bpmp *bpmp, unsigned int mrq);
->>   #else
->> +static inline struct tegra_bpmp *of_tegra_bpmp_get(void)
->> +{
->> +	return ERR_PTR(-ENOTSUPP);
->> +}
->>   static inline struct tegra_bpmp *tegra_bpmp_get(struct device *dev)
->>   {
->>   	return ERR_PTR(-ENOTSUPP);
->> -- 
->> 2.7.4
->>
+
+Ok re-reading the thread I see what you want to achieve. It should be better to
+have your framework change (code factorization if I have well understood) in the
+patch serie or as an RFC:
+- it helps people to understand why you do these changes
+- if it's rejected or has to be rework, you have uselessly change the
+  drivers and introduce a potential breakage.
+
+If it has already been discussed on the mailing list, forget what I am
+saying.
+
+Regards
+
+Ludovic
+
+> >
+> > > Thanks
+> > > Alex
+> > >
+> > > > Also, I can test your patch to see if everything is fine.
+> > > >
+> > > > Thanks,
+> > > > Eugen
+> > > >
+> > > > > Thanks :)
+> > > > > Alex
+> > > > >
+> > > > > > > > > For this driver, the predisable & postenable hooks are also
+> > > > > > > > > need to
+> > > > > > > > > take
+> > > > > > > > > into consideration the touchscreen, so the hooks need to be
+> > > > > > > > > put
+> > > > > > > > > in
+> > > > > > > > > places
+> > > > > > > > > that avoid the code for that cares about it.
+> > > > > > > > >
+> > > > > > > >
+> > > > > > > > ping here
+> > > > > > > >
+> > > > > > > > > Signed-off-by: Alexandru Ardelean <
+> > > > > > > > > alexandru.ardelean@analog.com>
+> > > > > > > > > ---
+> > > > > > > > >      drivers/iio/adc/at91-sama5d2_adc.c | 19 ++++++++++--
+> > > > > > > > > -------
+> > > > > > > > >      1 file changed, 10 insertions(+), 9 deletions(-)
+> > > > > > > > >
+> > > > > > > > > diff --git a/drivers/iio/adc/at91-sama5d2_adc.c
+> > > > > > > > > b/drivers/iio/adc/at91-
+> > > > > > > > > sama5d2_adc.c
+> > > > > > > > > index e1850f3d5cf3..ac3e5c4c9840 100644
+> > > > > > > > > --- a/drivers/iio/adc/at91-sama5d2_adc.c
+> > > > > > > > > +++ b/drivers/iio/adc/at91-sama5d2_adc.c
+> > > > > > > > > @@ -889,20 +889,24 @@ static int
+> > > > > > > > > at91_adc_buffer_postenable(struct
+> > > > > > > > > iio_dev *indio_dev)
+> > > > > > > > >           if (!(indio_dev->currentmode &
+> > > > > > > > > INDIO_ALL_TRIGGERED_MODES))
+> > > > > > > > >                   return -EINVAL;
+> > > > > > > > >
+> > > > > > > > > +     ret = iio_triggered_buffer_postenable(indio_dev);
+> > > > > > > > > +     if (ret)
+> > > > > > > > > +             return ret;
+> > > > > > > > > +
+> > > > > > > > >           /* we continue with the triggered buffer */
+> > > > > > > > >           ret = at91_adc_dma_start(indio_dev);
+> > > > > > > > >           if (ret) {
+> > > > > > > > >                   dev_err(&indio_dev->dev, "buffer
+> > > > > > > > > postenable
+> > > > > > > > > failed\n");
+> > > > > > > > > +             iio_triggered_buffer_predisable(indio_dev);
+> > > > > > > > >                   return ret;
+> > > > > > > > >           }
+> > > > > > > > >
+> > > > > > > > > -     return iio_triggered_buffer_postenable(indio_dev);
+> > > > > > > > > +     return 0;
+> > > > > > > > >      }
+> > > > > > > > >
+> > > > > > > > >      static int at91_adc_buffer_predisable(struct iio_dev
+> > > > > > > > > *indio_dev)
+> > > > > > > > >      {
+> > > > > > > > >           struct at91_adc_state *st = iio_priv(indio_dev);
+> > > > > > > > > -     int ret;
+> > > > > > > > >           u8 bit;
+> > > > > > > > >
+> > > > > > > > >           /* check if we are disabling triggered buffer or
+> > > > > > > > > the
+> > > > > > > > > touchscreen */
+> > > > > > > > > @@ -916,13 +920,8 @@ static int
+> > > > > > > > > at91_adc_buffer_predisable(struct
+> > > > > > > > > iio_dev
+> > > > > > > > > *indio_dev)
+> > > > > > > > >           if (!(indio_dev->currentmode &
+> > > > > > > > > INDIO_ALL_TRIGGERED_MODES))
+> > > > > > > > >                   return -EINVAL;
+> > > > > > > > >
+> > > > > > > > > -     /* continue with the triggered buffer */
+> > > > > > > > > -     ret = iio_triggered_buffer_predisable(indio_dev);
+> > > > > > > > > -     if (ret < 0)
+> > > > > > > > > -             dev_err(&indio_dev->dev, "buffer predisable
+> > > > > > > > > failed\n");
+> > > > > > > > > -
+> > > > > > > > >           if (!st->dma_st.dma_chan)
+> > > > > > > > > -             return ret;
+> > > > > > > > > +             goto out;
+> > > > > > > > >
+> > > > > > > > >           /* if we are using DMA we must clear registers
+> > > > > > > > > and end
+> > > > > > > > > DMA
+> > > > > > > > > */
+> > > > > > > > >           dmaengine_terminate_sync(st->dma_st.dma_chan);
+> > > > > > > > > @@ -949,7 +948,9 @@ static int
+> > > > > > > > > at91_adc_buffer_predisable(struct
+> > > > > > > > > iio_dev
+> > > > > > > > > *indio_dev)
+> > > > > > > > >
+> > > > > > > > >           /* read overflow register to clear possible
+> > > > > > > > > overflow
+> > > > > > > > > status
+> > > > > > > > > */
+> > > > > > > > >           at91_adc_readl(st, AT91_SAMA5D2_OVER);
+> > > > > > > > > -     return ret;
+> > > > > > > > > +
+> > > > > > > > > +out:
+> > > > > > >
+> > > > > > > I would prefer if this label is named with a function name
+> > > > > > > prefix,
+> > > > > > > otherwise 'out' is pretty generic and can collide with other
+> > > > > > > things
+> > > > > > > in
+> > > > > > > the file... I want to avoid having an out2 , out3 later if code
+> > > > > > > changes.
+> > > > > > >
+> > > > >
+> > > > > Sure.
+> > > > > Will do that.
+> > > > >
+> > > > > I did not bother much with these labels, because after applying
+> > > > > [u1],
+> > > > > some
+> > > > > of them [maybe all] should go away.
+> > > > >
+> > > > >
+> > > > > > > Thanks for the patch,
+> > > > > > > Eugen
+> > > > > > >
+> > > > > > > > > +     return iio_triggered_buffer_predisable(indio_dev);
+> > > > > > > > >      }
+> > > > > > > > >
+> > > > > > > > >      static const struct iio_buffer_setup_ops
+> > > > > > > > > at91_buffer_setup_ops =
+> > > > > > > > > {
+> > > > > > > > _______________________________________________
+> > > > > > > > linux-arm-kernel mailing list
+> > > > > > > > linux-arm-kernel@lists.infradead.org
+> > > > > > > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> > > > > > > >
+> > > > > _______________________________________________
+> > > > > linux-arm-kernel mailing list
+> > > > > linux-arm-kernel@lists.infradead.org
+> > > > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> > > > >
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
