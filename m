@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B5FC113814
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 00:21:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B44D511380F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 00:21:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XBmSApVGHcx0GEK6G7ujPZXM0B4XdVp9Fdeu/3MFYHI=; b=jJk6rrxQGHHWLL
-	nCFIt898oUU4LtezlKKAhi3ZeXJJ7qZGZJW7M0twwrjstCREfzCqh1MvIrMBI5Q17GxPnWdwAOFGO
-	RMZYvY7jca8U3LlIwYR3/S3mRy/glZJ+qyF1V86LqGkXR+brZJc+BMfeoFNZZLwdXxD+aQZWrdo2L
-	7jpBXiMyp/vKJ3Q30kYty8x1rpIVUAD6foY9BO43YvfbPt7ILqRZNuXobcEbiacB0RxmlsDnlBLVC
-	JbIO/nsqHWGYyiHW5Ey6GbutO3WxfEv6PFBH7IfGmoIiOzqzq5UnUOt+/rVSvPC1DKuBoKpcDgLFm
-	qW/v8ZtJNeOF4R6iyQng==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UJQBlJIGaJwp+e057WIKR6diRL0Cm5XeH0ekMc2fbBo=; b=AGS1AVCAt75Uhn
+	qrAAbG7Ern/sPt6EiIr9qHIcfciJSkkzZALLk6wopnR5bmdrIFGw8JiBimSwHW8ZzejpGSQJm4lX7
+	En8DOoH+h0MIMA+jDz7G8hp6bpqCmML67AHsor/+bmqfDY/ei3GgGMEyU1JLdqGC29ZjGjaQNaaFj
+	YRqCdgxjTryXGIIYvjTqQTBhRNv6R1FvWx+um01KxxESJxJ4uVaw2ry5nmgQ7gl90xtj2MCVSvH+4
+	/LKnqWyuXOlp9AhFpOBp5AHXdw9p3y78ztP1kD6LPzETu8Q8TTLwNH8z8M/xHKZVKXC2YQVVXO3W0
+	8G/+JGkkfshhvXMpkzgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icdxT-0005I8-IT; Wed, 04 Dec 2019 23:21:23 +0000
-Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
+	id 1icdxL-00058y-2B; Wed, 04 Dec 2019 23:21:15 +0000
+Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icdx9-00057l-O2
+ id 1icdxA-00057m-7d
  for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 23:21:05 +0000
-Received: by mail-qv1-xf43.google.com with SMTP id b18so583058qvy.3
+Received: by mail-qv1-xf44.google.com with SMTP id z3so593630qvn.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 15:21:02 -0800 (PST)
+ Wed, 04 Dec 2019 15:21:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:mime-version
+ h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=GKIfn1X+i6X56lqVXfyDzwPMZCzheNRzcKTaF4L1NP0=;
- b=XFyzL5rTBwrAztY5nL0Ms1sPvQucTdFNTX8M14EOWrh36IgXf4zoI522rtxEKRoa52
- iLqCy/91jRbUTDBGb3bllaMoyeqCln4xl1FZqj+b3eCzWUr5TgFGFbAmfZ/qpae4CijU
- 35EW4FQh7ww/prBUP0rcMSvO++mJcfO+k+fB3+BP0A1lGoquComcKT6UDiDreQjckSUg
- k2hjQvUPo2N86qG8pbxlMAC6Kn6AAxDYJsEGt+O6B9zeTaxWSo/9qm7e42sxKv/Xabey
- MFKaBloUYjQUJ5KZCxkfZDaZn+HAuOoWlPpNu3Gh25wuUFzC7MSzHyNs/Xar9ayJQjzK
- BvGw==
+ bh=eby1Z/q7U+7Sxm/O/Jl7zP2rKdfik8y03EjcrV9rvuY=;
+ b=NkJEU/yt/blJhAPAwm0//b+ZWq1n7s4JlJ6JP+qdBGuTQCQuHFZ8PMWe00iEhl9sXR
+ D5h+fsIE0OGIVs9vXL4gpNLeOVHliEVsqZGstR3wOREMlUTyHMBjBqiiJN9XSmUHGnl9
+ E029DgxCUKX3rVs0qGMWaVjtplCdTxiZQYRP12zEURRSXHIzCN4n9ZW6ehybuzzr5UNJ
+ Zl0SICIsfPNpjp6MCNV3XJOhgzPiqFDsK+MaqCJejfrOaTmcJDz3S6PSEcE5G1+/Jk4t
+ F2m0xoYu1kjAU9N6m6iUSEwzBQ39xf3hLWime1T3P66/AhdOKcdyJZrg+K7Z5WCheUkf
+ kIJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GKIfn1X+i6X56lqVXfyDzwPMZCzheNRzcKTaF4L1NP0=;
- b=SL7ZutaSaRO7AEzjNq2b4S5oFu0vpvkXAyDGaDGky73QrlqEyx8Ook4kFgXTvKRTyR
- wBSAMqQJEpS1tNvX7CZ4g0hq3YLUL9g/gtfz/o7TG3FkM5w7RxbVriYh7NZIT/D6TbOW
- gNVVZoh/H+Mbg+W6mCQwJ8SO7FRzMYHoUZbAMsCqrHAh+ub0xRmYJJj0zHSK/96kkm9Y
- YVJbyLha8miSsHSx3iVUs7IHeCp942stt70m2AxmtACeQm3m5og64JKHNpab2oxWMRAL
- PCi7/HuVxxcD2FCD/dm1vZAinaM7JLIyEUn66p24Rgx0bRsTX53kIV0mHB5VbQpIqpxT
- koaA==
-X-Gm-Message-State: APjAAAVvM6XgNI0zt5nUIRLM0m2jH0/m5BC+YMN3ZPIlwFSgv668kKuF
- jhQWOdrM9qg3wjBefoCKbLVmvQ==
-X-Google-Smtp-Source: APXvYqwN8rVvbdjEWOZ3Dsr7ynba65KMLwXI/KiByr8BhvRWV22aS+4kNOZAN22diwAm+JbXcarUcQ==
-X-Received: by 2002:ad4:4949:: with SMTP id o9mr4823945qvy.189.1575501661393; 
- Wed, 04 Dec 2019 15:21:01 -0800 (PST)
+ h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=eby1Z/q7U+7Sxm/O/Jl7zP2rKdfik8y03EjcrV9rvuY=;
+ b=uc3aVfH58Um1AMBaFtOV8kq2USfxtaQECmFKjDA3qqhfsdaCnCLv1JiLRAHsgKI/Pl
+ Ec7b3BLdj9oJMiTIRLfFoI8qp15QR6/Vb7FzOUg1wuYlhl0iVu/jOG5adeAiseAfUdLK
+ hEbtsGUVU2L4SFTI61tHxKzKmbghw4zrGkdc32+H2hpG5BPRoQIkRpoyKh/Ck/PWP/bB
+ 70fh6Tx4czGtoRK/LRk9HGKA7FUZg7pEWZDQBN+lBF/nr7vo4zY/9mctajzBtugTo+YG
+ /ST7IipVVhiQHGSU4o5A79aQWvEfUNdKcsk+dAOQiLOugik8zqajstCYDd6UKoB0m0VF
+ GDpg==
+X-Gm-Message-State: APjAAAV+la2tCybytgB1EBhMJUpnKtalgarFwhdM1KTEmMAKRsTjjE6l
+ QXGvcwCM5CWrhoakg48oWyq6Xg==
+X-Google-Smtp-Source: APXvYqwCGhoOs0wEUWkqNpwRHUAKwjbY4ROZeLY1H9ddt2HeC0y/qK9F5ZFbRQ+FLH5XluAaaaKK8A==
+X-Received: by 2002:a0c:ef91:: with SMTP id w17mr5033755qvr.202.1575501663211; 
+ Wed, 04 Dec 2019 15:21:03 -0800 (PST)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id t38sm4667864qta.78.2019.12.04.15.20.59
+ by smtp.gmail.com with ESMTPSA id t38sm4667864qta.78.2019.12.04.15.21.01
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 15:21:00 -0800 (PST)
+ Wed, 04 Dec 2019 15:21:02 -0800 (PST)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  linux-kernel@vger.kernel.org, catalin.marinas@arm.com, will@kernel.org,
@@ -67,14 +67,16 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  boris.ostrovsky@oracle.com, jgross@suse.com, stefan@agner.ch,
  yamada.masahiro@socionext.com, xen-devel@lists.xenproject.org,
  linux@armlinux.org.uk, andrew.cooper3@citrix.com, julien@xen.org
-Subject: [PATCH v4 0/6] Use C inlines for uaccess
-Date: Wed,  4 Dec 2019 18:20:52 -0500
-Message-Id: <20191204232058.2500117-1-pasha.tatashin@soleen.com>
+Subject: [PATCH v4 1/6] arm/arm64/xen: hypercall.h add includes guards
+Date: Wed,  4 Dec 2019 18:20:53 -0500
+Message-Id: <20191204232058.2500117-2-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191204232058.2500117-1-pasha.tatashin@soleen.com>
+References: <20191204232058.2500117-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_152104_195203_D8EA8431 
-X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-CacheID: sfid-20191204_152104_282456_47BB536D 
+X-CRM114-Status: UNSURE (   9.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -106,57 +108,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Changelog:
+The arm and arm64 versions of hypercall.h are missing the include
+guards. This is needed because C inlines for privcmd_call are going to
+be added to the files.
 
-v4:
-	- Split the first patch into two as Julien Grall 
-	- Also as Mark Rutland suggested removed alternatives
-	  from __asm_flush_cache_user_range.
-v3:
-	- Added Acked-by from Stefano Stabellini
-	- Addressed comments from Mark Rutland
-v2:
-	- Addressed Russell King's concern by not adding
-	  uaccess_* to ARM.
-	- Removed the accidental change to xtensa
+Also fix a comment.
 
-Convert the remaining uaccess_* calls from ASM macros to C inlines.
+Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+---
+ arch/arm/include/asm/assembler.h       | 2 +-
+ arch/arm/include/asm/xen/hypercall.h   | 4 ++++
+ arch/arm64/include/asm/xen/hypercall.h | 4 ++++
+ include/xen/arm/hypercall.h            | 6 +++---
+ 4 files changed, 12 insertions(+), 4 deletions(-)
 
-These patches apply against linux-next. I boot tested ARM64, and
-compile tested ARM change
-
-Previous discussions:
-v3: https://lore.kernel.org/lkml/20191127184453.229321-1-pasha.tatashin@soleen.com
-v2: https://lore.kernel.org/lkml/20191122022406.590141-1-pasha.tatashin@soleen.com
-v1: https://lore.kernel.org/lkml/20191121184805.414758-1-pasha.tatashin@soleen.com
-
-Pavel Tatashin (6):
-  arm/arm64/xen: hypercall.h add includes guards
-  arm/arm64/xen: use C inlines for privcmd_call
-  arm64: remove uaccess_ttbr0 asm macros from cache functions
-  arm64: remove __asm_flush_icache_range
-  arm64: move ARM64_HAS_CACHE_DIC/_IDC from asm to C
-  arm64: remove the rest of asm-uaccess.h
-
- arch/arm/include/asm/assembler.h       |  2 +-
- arch/arm/include/asm/xen/hypercall.h   | 10 ++++
- arch/arm/xen/enlighten.c               |  2 +-
- arch/arm/xen/hypercall.S               |  4 +-
- arch/arm64/include/asm/asm-uaccess.h   | 61 -----------------------
- arch/arm64/include/asm/cacheflush.h    | 51 +++++++++++++++++--
- arch/arm64/include/asm/xen/hypercall.h | 28 +++++++++++
- arch/arm64/kernel/entry.S              | 27 +++++++++-
- arch/arm64/lib/clear_user.S            |  2 +-
- arch/arm64/lib/copy_from_user.S        |  2 +-
- arch/arm64/lib/copy_in_user.S          |  2 +-
- arch/arm64/lib/copy_to_user.S          |  2 +-
- arch/arm64/mm/cache.S                  | 68 +++++---------------------
- arch/arm64/mm/flush.c                  |  3 +-
- arch/arm64/xen/hypercall.S             | 19 +------
- include/xen/arm/hypercall.h            | 12 ++---
- 16 files changed, 143 insertions(+), 152 deletions(-)
- delete mode 100644 arch/arm64/include/asm/asm-uaccess.h
-
+diff --git a/arch/arm/include/asm/assembler.h b/arch/arm/include/asm/assembler.h
+index 99929122dad7..8e9262a0f016 100644
+--- a/arch/arm/include/asm/assembler.h
++++ b/arch/arm/include/asm/assembler.h
+@@ -480,7 +480,7 @@ THUMB(	orr	\reg , \reg , #PSR_T_BIT	)
+ 	.macro	uaccess_disable, tmp, isb=1
+ #ifdef CONFIG_CPU_SW_DOMAIN_PAN
+ 	/*
+-	 * Whenever we re-enter userspace, the domains should always be
++	 * Whenever we re-enter kernel, the domains should always be
+ 	 * set appropriately.
+ 	 */
+ 	mov	\tmp, #DACR_UACCESS_DISABLE
+diff --git a/arch/arm/include/asm/xen/hypercall.h b/arch/arm/include/asm/xen/hypercall.h
+index 3522cbaed316..c6882bba5284 100644
+--- a/arch/arm/include/asm/xen/hypercall.h
++++ b/arch/arm/include/asm/xen/hypercall.h
+@@ -1 +1,5 @@
++#ifndef _ASM_ARM_XEN_HYPERCALL_H
++#define _ASM_ARM_XEN_HYPERCALL_H
+ #include <xen/arm/hypercall.h>
++
++#endif /* _ASM_ARM_XEN_HYPERCALL_H */
+diff --git a/arch/arm64/include/asm/xen/hypercall.h b/arch/arm64/include/asm/xen/hypercall.h
+index 3522cbaed316..c3198f9ccd2e 100644
+--- a/arch/arm64/include/asm/xen/hypercall.h
++++ b/arch/arm64/include/asm/xen/hypercall.h
+@@ -1 +1,5 @@
++#ifndef _ASM_ARM64_XEN_HYPERCALL_H
++#define _ASM_ARM64_XEN_HYPERCALL_H
+ #include <xen/arm/hypercall.h>
++
++#endif /* _ASM_ARM64_XEN_HYPERCALL_H */
+diff --git a/include/xen/arm/hypercall.h b/include/xen/arm/hypercall.h
+index b40485e54d80..babcc08af965 100644
+--- a/include/xen/arm/hypercall.h
++++ b/include/xen/arm/hypercall.h
+@@ -30,8 +30,8 @@
+  * IN THE SOFTWARE.
+  */
+ 
+-#ifndef _ASM_ARM_XEN_HYPERCALL_H
+-#define _ASM_ARM_XEN_HYPERCALL_H
++#ifndef _ARM_XEN_HYPERCALL_H
++#define _ARM_XEN_HYPERCALL_H
+ 
+ #include <linux/bug.h>
+ 
+@@ -88,4 +88,4 @@ MULTI_mmu_update(struct multicall_entry *mcl, struct mmu_update *req,
+ 	BUG();
+ }
+ 
+-#endif /* _ASM_ARM_XEN_HYPERCALL_H */
++#endif /* _ARM_XEN_HYPERCALL_H */
 -- 
 2.24.0
 
