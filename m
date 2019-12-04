@@ -2,119 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2040D11221F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 05:34:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA219112235
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 05:50:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hFMaEglAJ8GEI72XkVWAqgZYscCfIiRKx8CPXYulwUw=; b=loUOkuvbcNHw8h
-	LUq54Fw9qZlO4iRalYE0CGGrLNYUMQ4hecw4qpnIW+1Zs+S/Kc0AAcZEWHy4rc0q7wZrdwf3TIlwd
-	K0MbEjNmKZFHRlRRbCT6monD+RNjobwxEnD2J5mwGvPYWK/sBlf/GqLILkToi6DTO/lXOuuRhuU8Z
-	odj6RbqcnEowmrGYW6bIFeOlp/XaKngN6oPeSSLWHawYzT5IQ13mlDS3tZi2CAnpCe2waW9CGquc1
-	WkTXH4s17pggV40zUYEiThwYtKHpo/2DXSDb/E+ZHe7XLYIlfnWI/6swxPHF9SxWZ2Alt3HrOC6OM
-	GMDLdHsoo1ODl2nX5lQQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=yjXfh4L3bNaZXjam3XV6G1f2Ldjj+UAXR2zFhbUfD0w=; b=Skc
+	oEcV6mk9Z4p+s0eF6ZKUOhIsnyt1eHU/SkkU4KpHCdI4F0nFM1chlwhdYPGwQHloL00yuTW6+od3z
+	wKIV/BIhh2gCbJuk49xx72oaBaxIFIFYk7OYebGIBBSBV9DPZJPNxMbAaP77atK9LZPeWmDo+lLeZ
+	Wkd7AAxGNSrCAyiWPfy0vRQ9xqLqUFwcILtR0oHmZi/58F7PZ0Ee+2bAZLyREdsQp9vT5nV8iwV1i
+	KwJRyqGkviFtD+zAJVIliOl3vu5bEibY7KoLIBhC3pRN3+OYzTEvmEnMdKVuUi0/Svrd8iw4SDHKI
+	VDCERrMr9c2tNfTO4a+u3fM1iiSfzRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icMNH-0000Fx-15; Wed, 04 Dec 2019 04:34:51 +0000
-Received: from mail-db5eur03on0616.outbound.protection.outlook.com
- ([2a01:111:f400:fe0a::616]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1icMcJ-0006I2-IY; Wed, 04 Dec 2019 04:50:23 +0000
+Received: from conuserg-07.nifty.com ([210.131.2.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icMN9-0000Et-1G
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 04:34:45 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=IY7Kq/HuUqMwhYDsJcsonuGfvjyrRbbCdHXi09S7JYXBD7SVK7Hrg5Qd7JdrxIZ+ORwCeo19WO/rJqs+RkxZ8b+6hmzuiyxxjI0C34ct2ydsyYQqcE/BMcNdAP9yJa5RDlIdzTTpekyl9yR55ryq0tML1R5AKo9EP7knghv2Q+l3e2tz7V9WZ5u0msJPta2FVnt+lxJzFJjGPlHL9c4riQKdBaQXzI8JVD00Sx+ujbbO4PmmWYKmuaySzQR5QOPqEwe4psfPs3C197LIz1kAOQDVLCiEXWn7BXbKbZgJ3PvqzCf/64R/VEdvIdKb8dm8+DXrJkRMjRnCBr5yJabpNg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jDDxceR3uRvOzGYFEYr79tOoXGobJFa7RaZ+4G2YSSg=;
- b=ag7/J/gYsq9BvCzvDYwvtBDQZqFJUNmITsnCVK7I7RCY+yI08hJ7JXtmWWNe9XrAUyJMA4XrX5+A0HpfiaLBH5pbtYe3JtRovHDt5DsmbmiyJR/KYrUOuIjpIUCkyhrZY9C16+0vufFVig6qFK5I0bdI2l+5+Q7im0cxl5nhSwP1v6mdZy1ySfO5+Pq+RgC/b9GHabdSIz1M2bCqZzIwZW75ndwh3XikWuTEq7rX22+IWXnG7Zbvq9ELx3sX3u/xFzucEsV8loDeekuzQTEsIUt12wpY+SiZWpl5LA/xY/30XtsJwQz2nl00ucjYNaBNAwAqwp2sAk+UyJPkJUyDQQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jDDxceR3uRvOzGYFEYr79tOoXGobJFa7RaZ+4G2YSSg=;
- b=IPfmYZoOtBMvbNnTraDZcqUnHN7ooigy1MMa5alBMuY5FfzUUZSuAt3dp6KlOLTQoBAjhLJu7pfWz518+eeFC8R0SOKfCtHyK1VGv/ovMAOG4Rhq2xqfPjKZjDGImBQH13NUuNP+8PvdMqWhYpFG9yA8+MDMJCKYjEFkAaN9q8U=
-Received: from AM5PR04MB3299.eurprd04.prod.outlook.com (10.173.255.158) by
- AM5PR04MB2962.eurprd04.prod.outlook.com (10.167.170.17) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2495.22; Wed, 4 Dec 2019 04:34:32 +0000
-Received: from AM5PR04MB3299.eurprd04.prod.outlook.com
- ([fe80::a8a6:8d0d:aca4:7bf1]) by AM5PR04MB3299.eurprd04.prod.outlook.com
- ([fe80::a8a6:8d0d:aca4:7bf1%7]) with mapi id 15.20.2495.014; Wed, 4 Dec 2019
- 04:34:32 +0000
-From: Xiaowei Bao <xiaowei.bao@nxp.com>
-To: Robin Murphy <robin.murphy@arm.com>, Marc Zyngier <maz@kernel.org>
-Subject: RE: [PATCH] PCI: layerscape: Add the SRIOV support in host side
-Thread-Topic: [PATCH] PCI: layerscape: Add the SRIOV support in host side
-Thread-Index: AQHVqP2nw3AoM5GAtUqPe+h1Ib8VVaemy2EAgADUbVCAAK4bgIAAOn2AgADDy0A=
-Date: Wed, 4 Dec 2019 04:34:32 +0000
-Message-ID: <AM5PR04MB3299BFC34A4666B7A9C12B13F55D0@AM5PR04MB3299.eurprd04.prod.outlook.com>
-References: <20191202104506.27916-1-xiaowei.bao@nxp.com>
- <606a00a2edcf077aa868319e0daa4dbc@www.loen.fr>
- <AM5PR04MB3299A5A504DEFEF3E137A27CF5420@AM5PR04MB3299.eurprd04.prod.outlook.com>
- <3dcdf44eb76390730658e3f4d932620c@www.loen.fr>
- <8f56c2d9-ab01-a91e-902f-a61def0e8ce8@arm.com>
-In-Reply-To: <8f56c2d9-ab01-a91e-902f-a61def0e8ce8@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=xiaowei.bao@nxp.com; 
-x-originating-ip: [119.31.174.73]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 06e807cf-2547-4f6b-0f07-08d778734263
-x-ms-traffictypediagnostic: AM5PR04MB2962:|AM5PR04MB2962:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM5PR04MB296233C559F9BCDDFC21E507F55D0@AM5PR04MB2962.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 0241D5F98C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(396003)(39860400002)(366004)(376002)(136003)(189003)(199004)(13464003)(102836004)(26005)(81156014)(81166006)(7696005)(76176011)(6506007)(52536014)(44832011)(53546011)(71190400001)(71200400001)(3846002)(11346002)(446003)(66476007)(76116006)(5660300002)(256004)(229853002)(25786009)(7416002)(64756008)(66446008)(66946007)(186003)(478600001)(66556008)(6116002)(54906003)(305945005)(110136005)(7736002)(99286004)(74316002)(4326008)(6436002)(33656002)(14454004)(316002)(9686003)(6246003)(55016002)(8676002)(8936002)(2906002)(86362001)(14444005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM5PR04MB2962;
- H:AM5PR04MB3299.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: wyPbGT6JER8o1dLsljRCwJQlAqd389IoRhyINsHSVGy1Y/nsfI7qB+am2T/lqutkYawT8QKa9XWYpK8Ll8PsZvSWRvzSrVmC2CxCQf5RLhThBtsCcn0Jlp++m87RvUx82t1PLKTAylaYfILwASnZkYMf9lfPri155YHWqpS+IR27MKZq1PGnT2V4abhSSWzZasg63UcJGaVFL6u5KPrjcBeKXgvmxkr1d0Zls3qg45YZNTNrJsc95mmxVFjcUQ9uBT1k9WjI3xj8JGpjLyK6IbfKdMn70Hz136Xk34t1wQRO0Uddt3AFtO1DwNiPqc6hIvSJRcn9vSKkqnf/fTllqEiYx9X5Ed9i8S8MvWkRuJ/x6jjdxeHQ0/NhSpsKyvFYGkCMg2tZrSSsRS+R55lVUEzTJO0DI5TzQPm7szaOK7WpMFXgzt2d4ei4QyR6LJj0JXpk455N00HEnuL8JBAiohP1SGveJu5aGLN5i/unNE9UsUFPYrQhmurmPmGJUCvh
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 06e807cf-2547-4f6b-0f07-08d778734263
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Dec 2019 04:34:32.4975 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: g5jKYx8HkUNFNWlk4gaw6/JM2hgLm9n/xoDGz6z9Gqq7Sb0ECCw6PB6u1rDMBO9IRaAtdd0kYLFpIoRjpj9z8Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR04MB2962
+ id 1icMcC-0006Hc-4u
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 04:50:18 +0000
+Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
+ [153.142.97.92]) (authenticated)
+ by conuserg-07.nifty.com with ESMTP id xB44nqwx028807;
+ Wed, 4 Dec 2019 13:49:52 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-07.nifty.com xB44nqwx028807
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1575434993;
+ bh=Jt7OPPgzmKjsthv+1fEhc/PB2RQML0mCHB/Yk4eNpNM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=VrRX0cOfzpxSGvNmzzdQh0kNkcAtNB8Cb66qhyQf0UGmGl8TeheA+xVlfDDsx8oTd
+ ihGuCs2kY4Pr+9z9J8nqgtAO8+eO2LOQ0zrzEwUdZHx/ZQ9nHPhuYWHon0x/O0Fnpg
+ 5rt+uRgMvAAAdrgMm0yy9pxfWqGApcLo+xO/1su5oNizCS6GED3NtjZMsHPiTQpTWL
+ FEEoPUgfmPjop9Y2WDJssDfI+1dVnTJynKSvUMETpPNHsf00ot9xMRCfUeULrEVXKJ
+ cXYaJFXomi2+r70KP8QRaHHQptdnDXcURrZNyvkIMwejKFr1wtm82d9x1YYB30mq1a
+ lVwcaIoUGFiAA==
+X-Nifty-SrcIP: [153.142.97.92]
+From: Masahiro Yamada <masahiroy@kernel.org>
+To: patches@arm.linux.org.uk
+Subject: [PATCH] ARM: decompressor: simplify libfdt builds
+Date: Wed,  4 Dec 2019 13:49:50 +0900
+Message-Id: <20191204044950.10418-1-masahiroy@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_203443_082056_E2C6579F 
-X-CRM114-Status: GOOD (  30.76  )
-X-Spam-Score: 1.7 (+)
+X-CRM114-CacheID: sfid-20191203_205016_420084_C75894CF 
+X-CRM114-Status: GOOD (  11.02  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.7 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0a:0:0:0:616 listed in]
- [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ no trust [210.131.2.74 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 1.9 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,133 +71,196 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Roy Zang <roy.zang@nxp.com>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "Z.q. Hou" <zhiqiang.hou@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "M.h. Lian" <minghuan.lian@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- Mingkai Hu <mingkai.hu@nxp.com>, "bhelgaas@google.com" <bhelgaas@google.com>,
- "andrew.murray@arm.com" <andrew.murray@arm.com>,
- "frowand.list@gmail.com" <frowand.list@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Masahiro Yamada <masahiroy@kernel.org>,
+ Russell King <linux@armlinux.org.uk>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogUm9iaW4gTXVycGh5IDxy
-b2Jpbi5tdXJwaHlAYXJtLmNvbT4NCj4gU2VudDogMjAxOeW5tDEy5pyIM+aXpSAyMzoyMA0KPiBU
-bzogTWFyYyBaeW5naWVyIDxtYXpAa2VybmVsLm9yZz47IFhpYW93ZWkgQmFvIDx4aWFvd2VpLmJh
-b0BueHAuY29tPg0KPiBDYzogUm95IFphbmcgPHJveS56YW5nQG54cC5jb20+OyBsb3JlbnpvLnBp
-ZXJhbGlzaUBhcm0uY29tOw0KPiBkZXZpY2V0cmVlQHZnZXIua2VybmVsLm9yZzsgbGludXgtcGNp
-QHZnZXIua2VybmVsLm9yZzsgWi5xLiBIb3UNCj4gPHpoaXFpYW5nLmhvdUBueHAuY29tPjsgbGlu
-dXgta2VybmVsQHZnZXIua2VybmVsLm9yZzsgTS5oLiBMaWFuDQo+IDxtaW5naHVhbi5saWFuQG54
-cC5jb20+OyByb2JoK2R0QGtlcm5lbC5vcmc7DQo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZzsgYmhlbGdhYXNAZ29vZ2xlLmNvbTsNCj4gYW5kcmV3Lm11cnJheUBhcm0uY29t
-OyBmcm93YW5kLmxpc3RAZ21haWwuY29tOyBNaW5na2FpIEh1DQo+IDxtaW5na2FpLmh1QG54cC5j
-b20+DQo+IFN1YmplY3Q6IFJlOiBbUEFUQ0hdIFBDSTogbGF5ZXJzY2FwZTogQWRkIHRoZSBTUklP
-ViBzdXBwb3J0IGluIGhvc3Qgc2lkZQ0KPiANCj4gT24gMDMvMTIvMjAxOSAxMTo1MSBhbSwgTWFy
-YyBaeW5naWVyIHdyb3RlOg0KPiA+IE9uIDIwMTktMTItMDMgMDE6NDIsIFhpYW93ZWkgQmFvIHdy
-b3RlOg0KPiA+Pj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gPj4+IEZyb206IE1hcmMg
-WnluZ2llciA8bWF6QG1pc3RlcmpvbmVzLm9yZz4NCj4gPj4+IFNlbnQ6IDIwMTnlubQxMuaciDLm
-l6UgMjA6NDgNCj4gPj4+IFRvOiBYaWFvd2VpIEJhbyA8eGlhb3dlaS5iYW9AbnhwLmNvbT4NCj4g
-Pj4+IENjOiByb2JoK2R0QGtlcm5lbC5vcmc7IGZyb3dhbmQubGlzdEBnbWFpbC5jb207IE0uaC4g
-TGlhbg0KPiA+Pj4gPG1pbmdodWFuLmxpYW5AbnhwLmNvbT47IE1pbmdrYWkgSHUgPG1pbmdrYWku
-aHVAbnhwLmNvbT47IFJveQ0KPiBaYW5nDQo+ID4+PiA8cm95LnphbmdAbnhwLmNvbT47IGxvcmVu
-em8ucGllcmFsaXNpQGFybS5jb207DQo+ID4+PiBhbmRyZXcubXVycmF5QGFybS5jb207IGJoZWxn
-YWFzQGdvb2dsZS5jb207DQo+ID4+PiBkZXZpY2V0cmVlQHZnZXIua2VybmVsLm9yZzsgbGludXgt
-a2VybmVsQHZnZXIua2VybmVsLm9yZzsNCj4gPj4+IGxpbnV4LXBjaUB2Z2VyLmtlcm5lbC5vcmc7
-IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsNCj4gPj4+IFoucS4gSG91IDx6
-aGlxaWFuZy5ob3VAbnhwLmNvbT4NCj4gPj4+IFN1YmplY3Q6IFJlOiBbUEFUQ0hdIFBDSTogbGF5
-ZXJzY2FwZTogQWRkIHRoZSBTUklPViBzdXBwb3J0IGluIGhvc3QNCj4gPj4+IHNpZGUNCj4gPj4+
-DQo+ID4+PiBPbiAyMDE5LTEyLTAyIDEwOjQ1LCBYaWFvd2VpIEJhbyB3cm90ZToNCj4gPj4+ID4g
-R0lDIGdldCB0aGUgbWFwIHJlbGF0aW9ucyBvZiBkZXZpZCBhbmQgc3RyZWFtIGlkIGZyb20gdGhl
-IG1zaS1tYXANCj4gPj4+ID4gcHJvcGVydHkgb2YgRFRTLCBvdXIgcGxhdGZvcm0gYWRkIHRoaXMg
-cHJvcGVydHkgaW4gdS1ib290IGJhc2Ugb24NCj4gPj4+ID4gdGhlIFBDSWUgZGV2aWNlIGluIHRo
-ZSBidXMsIGJ1dCBpZiBlbmFibGUgdGhlIHZmIGRldmljZSBpbiBrZXJuZWwsDQo+ID4+PiA+IHRo
-ZSB2ZiBkZXZpY2UgbXNpLW1hcCB3aWxsIG5vdCBzZXQsIHNvIHRoZSB2ZiBkZXZpY2UgY2FuJ3Qg
-d29yaywNCj4gPj4+ID4gdGhpcyBwYXRjaCBwdXJwb3NlIGlzIHRoYXQgbWFuYWdlIHRoZSBzdHJl
-YW0gaWQgYW5kIGRldmljZSBpZCBtYXANCj4gPj4+ID4gcmVsYXRpb25zIGR5bmFtaWNhbGx5IGlu
-IGtlcm5lbCwgYW5kIG1ha2UgdGhlIG5ldyBQQ0llIGRldmljZSB3b3JrIGluDQo+IGtlcm5lbC4N
-Cj4gPj4+ID4NCj4gPj4+ID4gU2lnbmVkLW9mZi1ieTogWGlhb3dlaSBCYW8gPHhpYW93ZWkuYmFv
-QG54cC5jb20+DQo+ID4+PiA+IC0tLQ0KPiA+Pj4gPsKgIGRyaXZlcnMvb2YvaXJxLmPCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfMKgIDkgKysr
-DQo+ID4+PiA+wqAgZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpLWxheWVyc2NhcGUuYyB8
-IDk0DQo+ID4+PiA+ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrDQo+ID4+PiA+wqAgZHJp
-dmVycy9wY2kvcHJvYmUuY8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCB8wqAgNiArKw0KPiA+Pj4gPsKgIGRyaXZlcnMvcGNpL3JlbW92ZS5jwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8wqAgNiArKw0KPiA+Pj4gPsKg
-IDQgZmlsZXMgY2hhbmdlZCwgMTE1IGluc2VydGlvbnMoKykNCj4gPj4+ID4NCj4gPj4+ID4gZGlm
-ZiAtLWdpdCBhL2RyaXZlcnMvb2YvaXJxLmMgYi9kcml2ZXJzL29mL2lycS5jIGluZGV4DQo+ID4+
-PiA+IGEyOTZlYWYuLjc5MWU2MDkgMTAwNjQ0DQo+ID4+PiA+IC0tLSBhL2RyaXZlcnMvb2YvaXJx
-LmMNCj4gPj4+ID4gKysrIGIvZHJpdmVycy9vZi9pcnEuYw0KPiA+Pj4gPiBAQCAtNTc2LDYgKzU3
-NiwxMSBAQCB2b2lkIF9faW5pdCBvZl9pcnFfaW5pdChjb25zdCBzdHJ1Y3QNCj4gPj4+ID5vZl9k
-ZXZpY2VfaWQNCj4gPj4+ID4gKm1hdGNoZXMpDQo+ID4+PiA+wqDCoMKgwqDCoCB9DQo+ID4+PiA+
-wqAgfQ0KPiA+Pj4gPg0KPiA+Pj4gPiArdTMyIF9fd2VhayBsc19wY2llX3N0cmVhbWlkX2ZpeChz
-dHJ1Y3QgZGV2aWNlICpkZXYsIHUzMiByaWQpIHsNCj4gPj4+ID4gK8KgwqDCoCByZXR1cm4gcmlk
-Ow0KPiA+Pj4gPiArfQ0KPiA+Pj4gPiArDQo+ID4+PiA+wqAgc3RhdGljIHUzMiBfX29mX21zaV9t
-YXBfcmlkKHN0cnVjdCBkZXZpY2UgKmRldiwgc3RydWN0DQo+ID4+PiA+ZGV2aWNlX25vZGUgICoq
-bnAsDQo+ID4+PiA+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB1MzIgcmlkX2lu
-KQ0KPiA+Pj4gPsKgIHsNCj4gPj4+ID4gQEAgLTU5MCw2ICs1OTUsMTAgQEAgc3RhdGljIHUzMiBf
-X29mX21zaV9tYXBfcmlkKHN0cnVjdCBkZXZpY2UNCj4gPj4+ID4qZGV2LCAgc3RydWN0IGRldmlj
-ZV9ub2RlICoqbnAsDQo+ID4+PiA+wqDCoMKgwqDCoMKgwqDCoMKgIGlmICghb2ZfbWFwX3JpZChw
-YXJlbnRfZGV2LT5vZl9ub2RlLCByaWRfaW4sICJtc2ktbWFwIiwNCj4gPj4+ID7CoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJtc2ktbWFwLW1hc2siLCBucCwgJnJpZF9vdXQpKQ0K
-PiA+Pj4gPsKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGJyZWFrOw0KPiA+Pj4gPiArDQo+ID4+
-PiA+ICvCoMKgwqAgaWYgKHJpZF9vdXQgPT0gcmlkX2luKQ0KPiA+Pj4gPiArwqDCoMKgwqDCoMKg
-wqAgcmlkX291dCA9IGxzX3BjaWVfc3RyZWFtaWRfZml4KHBhcmVudF9kZXYsIHJpZF9pbik7DQo+
-ID4+Pg0KPiA+Pj4gT3ZlciBteSBkZWFkIGJvZHkuIEdldCB5b3VyIGZpcm13YXJlIHRvIHByb3Bl
-cmx5IHByb2dyYW0gdGhlIExVVCBzbw0KPiA+Pj4gdGhhdCBpdCBwcmVzZW50cyB0aGUgSVRTIHdp
-dGggYSByZWFzb25hYmxlIHRvcG9sb2d5LiBUaGVyZSBpcw0KPiA+Pj4gYWJzb2x1dGVseSBubyB3
-YXkgdGhpcyBraW5kIG9mIGNoYW5nZSBtYWtlcyBpdCBpbnRvIHRoZSBrZXJuZWwuDQo+ID4+DQo+
-ID4+IFNvcnJ5IGZvciB0aGlzLCBJIGtub3cgaXQgaXMgbm90IHJlYXNvbmFibGUsIGJ1dCBJIGhh
-dmUgbm8gb3RoZXIgd2F5LA0KPiA+PiBhcyBJIGtub3csIEFSTSBnZXQgdGhlIG1hcHBpbmcgb2Yg
-c3RyZWFtIElEIHRvIHJlcXVlc3QgSUQgZnJvbSB0aGUNCj4gPj4gbXNpLW1hcCBwcm9wZXJ0eSBv
-ZiBEVFMsIGlmIGFkZCBhIG5ldyBkZXZpY2Ugd2hpY2ggbmVlZCB0aGUgc3RyZWFtIElEDQo+ID4+
-IGFuZCB0cnkgdG8gZ2V0IGl0IGZyb20gdGhlIG1zaS1tYXAgb2YgRFRTLCBpdCB3aWxsIGZhaWxl
-ZCBhbmQgbm90DQo+ID4+IHdvcmssIHllcz8gU28gY291bGQgeW91IGdpdmUgbWUgYSBiZXR0ZXIg
-YWR2aWNlIHRvIGZpeCB0aGlzIGlzc3VlLCBJDQo+ID4+IHdvdWxkIHJlYWxseSBhcHByZWNpYXRl
-IGFueSBjb21tZW50cyBvciBzdWdnZXN0aW9ucywgdGhhbmtzIGEgbG90Lg0KPiA+DQo+ID4gV2h5
-IGNhbid0IGZpcm13YXJlIGV4cG9zZSBhbiBtc2ktbWFwL21zaS1tYXAtbWFzayB0aGF0IGhhcyBh
-IGxhcmdlDQo+ID4gZW5vdWdoIHJhbmdlIHRvIGVuc3VyZSBtYXBwaW5nIG9mIFZGcz8gV2hhdCBh
-cmUgdGhlIGxpbWl0YXRpb25zIG9mIHRoZQ0KPiA+IExVVCB0aGF0IHdvdWxkIHByZXZlbnQgdGhp
-cyBmcm9tIGJlaW5nIGNvbmZpZ3VyZWQgYmVmb3JlIHRoZSBrZXJuZWwNCj4gPiBib290cz8NCg0K
-VGhhbmtzIGZvciB5b3VyIGNvbW1lbnRzLCB5ZXMsIHRoaXMgaXMgdGhlIHJvb3QgY2F1c2UsIHdl
-IG9ubHkgaGF2ZSAxNiBzdHJlYW0NCklEcyBmb3IgUENJZSBkb21haW4sIHRoaXMgaXMgdGhlIGhh
-cmR3YXJlIGxpbWl0YXRpb24sIGlmIHRoZXJlIGhhdmUgZW5vdWdoIHN0cmVhbQ0KSURzLCB3ZSBj
-YW4gZXhwb3NlIGFuIG1zaS1tYXAvbXNpLW1hcC1tYXNrIGZvciBhbGwgUENJZSBkZXZpY2VzIGlu
-IHN5c3RlbSwNCnVuZm9ydHVuYXRlbHksIHRoZSBzdHJlYW0gSURzIGlzIG5vdCBlbm91Z2gsIEkg
-dGhpbmsgb3RoZXIgQVJNIHZlbmRvciBoYXZlIHNhbWUNCmlzc3VlIHRoYXQgdGhleSBkb24ndCBo
-YXZlIGVub3VnaCBzdHJlYW0gSURzLg0KDQpUaGFua3MNClhpYW93ZWkgIA0KDQo+IA0KPiBGdXJ0
-aGVybW9yZSwgbm90ZSB0aGF0IHRoaXMgYXR0ZW1wdCBpc24ndCBkb2luZyBhbnl0aGluZyBmb3Ig
-dGhlIFNNTVUNCj4gU3RyZWFtIElEcywgc28gdGhlIG1vbWVudCBhbnlvbmUgdHJpZXMgdG8gYXNz
-aWduIHRob3NlIFZGcyB0aGV5J3JlIHN0aWxsIGdvaW5nDQo+IHRvIGdvIGJhbmcgYW55d2F5LiBB
-bnkgZmlybXdhcmUtYmFzZWQgZml4dXAgZm9yIElEIG1hcHBpbmdzLCBjb25maWcgc3BhY2UNCj4g
-YWRkcmVzc2VzLCBldGMuIG5lZWRzIHRvIGJlIFNSLUlPVi1hd2FyZSBhbmQgYWNjb3VudCBmb3Ig
-YWxsICpwb3NzaWJsZSoNCj4gQkRGcy4NCj4gDQo+IE9uIExTMjA4NSBhdCBsZWFzdCwgSUlSQyB5
-b3UgY2FuIGNvbmZpZ3VyZSBhIHNpbmdsZSBMVVQgZW50cnkgdG8ganVzdCB0cmFuc2xhdGUNCj4g
-dGhlIEJ1czpEZXZpY2UgaWRlbnRpZmllciBhbmQgcGFzcyBzb21lIG9yIGFsbCBvZiB0aGUgRnVu
-Y3Rpb24gYml0cyBzdHJhaWdodA0KPiB0aHJvdWdoIGFzIHRoZSBMU0JzIG9mIHRoZSBTdHJlYW0g
-SUQsIHNvIEkgZG9uJ3QgYmVsaWV2ZSB0aGUgcmVsYXRpdmVseSBsaW1pdGVkDQo+IG51bWJlciBv
-ZiBMVVQgcmVnaXN0ZXJzIHNob3VsZCBiZSB0b28gbXVjaCBvZiBhbiBpc3N1ZS4gRm9yIGV4YW1w
-bGUsIGxhc3QNCj4gdGltZSBJIGhhY2tlZCBvbiB0aGF0IEkgYXBwYXJlbnRseSBoYWQgaXQgc2V0
-IHVwIHN0YXRpY2FsbHkgbGlrZSB0aGlzOg0KPiANCj4gJnBjaWUzIHsNCj4gCS8qIFNxdWFzaCA4
-OjU6MyBCREYgZG93biB0byAyOjI6MyAqLw0KPiAJbXNpLW1hcC1tYXNrID0gPDB4MDMxZj47DQo+
-IAltc2ktbWFwID0gPDB4MDAwICZpdHMgMHgwMCAweDIwPiwNCj4gCQkgIDwweDEwMCAmaXRzIDB4
-MjAgMHgyMD4sDQo+IAkJICA8MHgyMDAgJml0cyAweDQwIDB4MjA+LA0KPiAJCSAgPDB4MzAwICZp
-dHMgMHg2MCAweDIwPjsNCj4gfTsNCg0KVGhhbmtzIFJvYmluLCB0aGlzIGlzIGEgZWZmZWN0aXZl
-IHdheSwgYnV0IHdlIG9ubHkgaGF2ZSB0b3RhbCAxNiBzdHJlYW0gSURzIGZvciBQQ0llIGRvbWFp
-biwNCmFuZCBvbmx5IGFzc2lnbiA0IHN0cmVhbSBJRHMgZm9yIGVhY2ggUENJZSBjb250cm9sbGVy
-IGlmIHRoZSBib2FyZCBoYXZlIDQgUENJZSBjb250cm9sbGVycywNCnRoaXMgaXMgdGhlIHJvb3Qg
-Y2F1c2UsIEkgc3VibWl0dGVkIHRoaXMgcGF0Y2ggdG8gZHluYW1pY2FsbHkgbWFuYWdlIHRoZXNl
-IHN0cmVhbSBJRHMsIA0Kc28gdGhhdCBpdCBsb29rcyBsaWtlIGVhY2ggUENJZSBjb250cm9sbGVy
-IGhhcyAxNiBzdHJlYW0gSURzLiBJIGNhbiBkeW5hbWljYWxseSBhbGxvY2F0ZSBhbmQgDQpyZWxl
-YXNlIHRoZXNlIHN0cmVhbSBJRHMgYmFzZWQgb24gdGhlIFBDSWUgZGV2aWNlcyBpbiB0aGUgY3Vy
-cmVudCBzeXN0ZW0uIElmIHVzZSB5b3VyIG1ldGhvZCwNCndlIHN1cHBvcnQgdXAgdG8gNCBQQ0ll
-IGRldmljZXMoMiBQRnMgYW5kIDIgVkZzKSwgaXQgd2lsbCBub3QgYWNoaWV2ZSBvdXIgcHVycG9z
-ZS4NCg0KVGhhbmtzIA0KWGlhb3dlaQ0KDQo+IA0KPiBSb2Jpbi4NCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Copying source files during the build time may not end up with
+as clean code as expected.
+
+lib/fdt*.c simply wrap scripts/dtc/libfdt/fdt*.c, and it works
+nicely. Let's follow that approach for the arm decompressor, too.
+
+Add four wrappers, arch/arm/boot/compressed/fdt*.c and remove
+the Makefile messes. Another nice thing is we no longer need to
+maintain the own libfdt_env.h because the decompressor can include
+<linux/libfdt_env.h>.
+
+Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+---
+
+KernelVersion: v5.5-rc1
+
+
+ arch/arm/boot/compressed/.gitignore     |  9 -------
+ arch/arm/boot/compressed/Makefile       | 33 +++++++------------------
+ arch/arm/boot/compressed/atags_to_fdt.c |  1 +
+ arch/arm/boot/compressed/fdt.c          |  1 +
+ arch/arm/boot/compressed/fdt_ro.c       |  1 +
+ arch/arm/boot/compressed/fdt_rw.c       |  1 +
+ arch/arm/boot/compressed/fdt_wip.c      |  1 +
+ arch/arm/boot/compressed/libfdt_env.h   | 24 ------------------
+ 8 files changed, 14 insertions(+), 57 deletions(-)
+ create mode 100644 arch/arm/boot/compressed/fdt.c
+ create mode 100644 arch/arm/boot/compressed/fdt_ro.c
+ create mode 100644 arch/arm/boot/compressed/fdt_rw.c
+ create mode 100644 arch/arm/boot/compressed/fdt_wip.c
+ delete mode 100644 arch/arm/boot/compressed/libfdt_env.h
+
+diff --git a/arch/arm/boot/compressed/.gitignore b/arch/arm/boot/compressed/.gitignore
+index 86b2f5d28240..2fdb4885846b 100644
+--- a/arch/arm/boot/compressed/.gitignore
++++ b/arch/arm/boot/compressed/.gitignore
+@@ -6,12 +6,3 @@ hyp-stub.S
+ piggy_data
+ vmlinux
+ vmlinux.lds
+-
+-# borrowed libfdt files
+-fdt.c
+-fdt.h
+-fdt_ro.c
+-fdt_rw.c
+-fdt_wip.c
+-libfdt.h
+-libfdt_internal.h
+diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
+index da599c3a1193..d01ce71afac6 100644
+--- a/arch/arm/boot/compressed/Makefile
++++ b/arch/arm/boot/compressed/Makefile
+@@ -76,29 +76,23 @@ compress-$(CONFIG_KERNEL_LZMA) = lzma
+ compress-$(CONFIG_KERNEL_XZ)   = xzkern
+ compress-$(CONFIG_KERNEL_LZ4)  = lz4
+ 
+-# Borrowed libfdt files for the ATAG compatibility mode
+-
+-libfdt		:= fdt_rw.c fdt_ro.c fdt_wip.c fdt.c
+-libfdt_hdrs	:= fdt.h libfdt.h libfdt_internal.h
+-
+-libfdt_objs	:= $(addsuffix .o, $(basename $(libfdt)))
+-
+-$(addprefix $(obj)/,$(libfdt) $(libfdt_hdrs)): $(obj)/%: $(srctree)/scripts/dtc/libfdt/%
+-	$(call cmd,shipped)
++ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
++libfdt_objs = fdt_rw.o fdt_ro.o fdt_wip.o fdt.o atags_to_fdt.o
+ 
+-$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o): \
+-	$(addprefix $(obj)/,$(libfdt_hdrs))
++OBJS	+= $(libfdt_objs)
+ 
+-ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
+-OBJS	+= $(libfdt_objs) atags_to_fdt.o
++# -fstack-protector-strong triggers protection checks in this code,
++# but it is being used too early to link to meaningful stack_chk logic.
++nossp-flags-$(CONFIG_CC_HAS_STACKPROTECTOR_NONE) := -fno-stack-protector
++$(foreach o, $(libfdt_objs), \
++	$(eval CFLAGS_$(o) := -I $(srctree)/scripts/dtc/libfdt) $(nossp-flags-y))
+ endif
+ 
+ targets       := vmlinux vmlinux.lds piggy_data piggy.o \
+ 		 lib1funcs.o ashldi3.o bswapsdi2.o \
+ 		 head.o $(OBJS)
+ 
+-clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S \
+-		$(libfdt) $(libfdt_hdrs) hyp-stub.S
++clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S hyp-stub.S
+ 
+ KBUILD_CFLAGS += -DDISABLE_BRANCH_PROFILING
+ KBUILD_CFLAGS += $(DISABLE_ARM_SSP_PER_TASK_PLUGIN)
+@@ -108,15 +102,6 @@ ORIG_CFLAGS := $(KBUILD_CFLAGS)
+ KBUILD_CFLAGS = $(subst -pg, , $(ORIG_CFLAGS))
+ endif
+ 
+-# -fstack-protector-strong triggers protection checks in this code,
+-# but it is being used too early to link to meaningful stack_chk logic.
+-nossp-flags-$(CONFIG_CC_HAS_STACKPROTECTOR_NONE) := -fno-stack-protector
+-CFLAGS_atags_to_fdt.o := $(nossp-flags-y)
+-CFLAGS_fdt.o := $(nossp-flags-y)
+-CFLAGS_fdt_ro.o := $(nossp-flags-y)
+-CFLAGS_fdt_rw.o := $(nossp-flags-y)
+-CFLAGS_fdt_wip.o := $(nossp-flags-y)
+-
+ ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin -I$(obj)
+ asflags-y := -DZIMAGE
+ 
+diff --git a/arch/arm/boot/compressed/atags_to_fdt.c b/arch/arm/boot/compressed/atags_to_fdt.c
+index 64c49747f8a3..8452753efebe 100644
+--- a/arch/arm/boot/compressed/atags_to_fdt.c
++++ b/arch/arm/boot/compressed/atags_to_fdt.c
+@@ -1,4 +1,5 @@
+ // SPDX-License-Identifier: GPL-2.0
++#include <linux/libfdt_env.h>
+ #include <asm/setup.h>
+ #include <libfdt.h>
+ 
+diff --git a/arch/arm/boot/compressed/fdt.c b/arch/arm/boot/compressed/fdt.c
+new file mode 100644
+index 000000000000..49bc1fc1e273
+--- /dev/null
++++ b/arch/arm/boot/compressed/fdt.c
+@@ -0,0 +1 @@
++#include "../../../../lib/fdt.c"
+diff --git a/arch/arm/boot/compressed/fdt_ro.c b/arch/arm/boot/compressed/fdt_ro.c
+new file mode 100644
+index 000000000000..fc7f8313e93e
+--- /dev/null
++++ b/arch/arm/boot/compressed/fdt_ro.c
+@@ -0,0 +1 @@
++#include "../../../../lib/fdt_ro.c"
+diff --git a/arch/arm/boot/compressed/fdt_rw.c b/arch/arm/boot/compressed/fdt_rw.c
+new file mode 100644
+index 000000000000..7e9777da2708
+--- /dev/null
++++ b/arch/arm/boot/compressed/fdt_rw.c
+@@ -0,0 +1 @@
++#include "../../../../lib/fdt_rw.c"
+diff --git a/arch/arm/boot/compressed/fdt_wip.c b/arch/arm/boot/compressed/fdt_wip.c
+new file mode 100644
+index 000000000000..f0b580e760a7
+--- /dev/null
++++ b/arch/arm/boot/compressed/fdt_wip.c
+@@ -0,0 +1 @@
++#include "../../../../lib/fdt_wip.c"
+diff --git a/arch/arm/boot/compressed/libfdt_env.h b/arch/arm/boot/compressed/libfdt_env.h
+deleted file mode 100644
+index 6a0f1f524466..000000000000
+--- a/arch/arm/boot/compressed/libfdt_env.h
++++ /dev/null
+@@ -1,24 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-#ifndef _ARM_LIBFDT_ENV_H
+-#define _ARM_LIBFDT_ENV_H
+-
+-#include <linux/limits.h>
+-#include <linux/types.h>
+-#include <linux/string.h>
+-#include <asm/byteorder.h>
+-
+-#define INT32_MAX	S32_MAX
+-#define UINT32_MAX	U32_MAX
+-
+-typedef __be16 fdt16_t;
+-typedef __be32 fdt32_t;
+-typedef __be64 fdt64_t;
+-
+-#define fdt16_to_cpu(x)		be16_to_cpu(x)
+-#define cpu_to_fdt16(x)		cpu_to_be16(x)
+-#define fdt32_to_cpu(x)		be32_to_cpu(x)
+-#define cpu_to_fdt32(x)		cpu_to_be32(x)
+-#define fdt64_to_cpu(x)		be64_to_cpu(x)
+-#define cpu_to_fdt64(x)		cpu_to_be64(x)
+-
+-#endif
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
