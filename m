@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95BCC113036
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 17:45:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C53BB113086
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 18:13:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7qLFyhC8EeRcSZXUEYDEd3ELmFN4rLynRtofkakz5pw=; b=Mq4WJlfq/uMmdKURAyOwbGRLj
-	Zlch5+cbUudNarTSRZ/0xWivVFtbjYOsd/FX8PpTeNH8h/gc6JP008cOkNUntm4TaXmxNk1ptMcgN
-	IAjwWWNGRmOcjL9WpZZFnEzwwDkNiDwhKLGSMGH7Qh8uc0r2WK9r2K7WZNF6MvNBsShfQUM/9flCQ
-	JYrVySZoJvV/NHf3hzZx6V98NAsr8I6gILdb+KLu/DSTj/I+Uk1VOmQDJ6j+kcOQWJgj3efuIAYsj
-	OJV7pSRGu5EydPBG1LOqLQt0iO8BD18AJbPm3easvG2gCVSoCawfHGfdxNhBfl0VLQ6eb9nq9IoTq
-	s+d2+RU8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kB4ma+vU3jUnUNmHoXccLpvqL0pnL9RtvI5/XOzY2KQ=; b=b8shpT6M4wiBIO
+	CKjL156w0VRViMSfnsHZ8ZNvUAcXtYxi7YlGSv/GKc5Lf1XEcKSvaGHdTkLD530j0TlDOPWTT3clm
+	KhB95oNXPT2ck74oRTK1igkI3oBSOcdpA9PAsEevz8aS7V2NOjyl/IXyzqX5BYfGyyvDOjhaSb3L8
+	nwMpOLZ5d3/3y8Xb+8J+0FmLsiWj8v1Ouk885XIqoUNEhedE8kAEVdvaHV4ra565dzxH8ia08Dohp
+	omkoZpkc+4+xYRicHeh2Jy3glXkMW1MhfLwMG/bM7uEphnu9qqdzNLZHSU4X05J1+nCL+TBI0i1J+
+	2CPap3xi3sPwwkMH6T6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icXm6-0000Z7-Sb; Wed, 04 Dec 2019 16:45:14 +0000
+	id 1icYD5-0001Zy-FC; Wed, 04 Dec 2019 17:13:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icXlv-0008L1-Ew
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 16:45:05 +0000
+ id 1icYCy-0001ZH-Ph
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 17:13:02 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6138231B;
- Wed,  4 Dec 2019 08:45:02 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 675A83F52E;
- Wed,  4 Dec 2019 08:45:01 -0800 (PST)
-Subject: Re: [PATCH v2 4/8] iommu/arm-smmu: Add split pagetables for Adreno
- IOMMU implementations
-To: Jordan Crouse <jcrouse@codeaurora.org>, iommu@lists.linux-foundation.org
-References: <1574465484-7115-1-git-send-email-jcrouse@codeaurora.org>
- <0101016e95752703-78491f46-41db-441c-b0fb-9a760e4d56cb-000000@us-west-2.amazonses.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <2a43c49e-064e-1e95-6726-8d1e761f6749@arm.com>
-Date: Wed, 4 Dec 2019 16:44:59 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8FB7231B;
+ Wed,  4 Dec 2019 09:12:58 -0800 (PST)
+Received: from [10.37.12.197] (unknown [10.37.12.197])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B509D3F52E;
+ Wed,  4 Dec 2019 09:12:54 -0800 (PST)
+Subject: Re: [PATCH v7 16/25] arm: Add support for generic vDSO (causing crash)
+To: Guenter Roeck <linux@roeck-us.net>
+References: <20190621095252.32307-1-vincenzo.frascino@arm.com>
+ <20190621095252.32307-17-vincenzo.frascino@arm.com>
+ <20191204135159.GA7210@roeck-us.net>
+ <6cdf4734-4065-09c1-8623-1bf523b38c1b@arm.com>
+ <20191204161641.GA28130@roeck-us.net>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <e35a7f71-2477-fa52-01e4-301199e99c2e@arm.com>
+Date: Wed, 4 Dec 2019 17:15:26 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <0101016e95752703-78491f46-41db-441c-b0fb-9a760e4d56cb-000000@us-west-2.amazonses.com>
-Content-Language: en-GB
+In-Reply-To: <20191204161641.GA28130@roeck-us.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_084503_601823_510B7ED3 
-X-CRM114-Status: GOOD (  33.41  )
+X-CRM114-CacheID: sfid-20191204_091300_920533_39CD4C7A 
+X-CRM114-Status: GOOD (  21.55  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,292 +65,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- will@kernel.org, linux-kernel@vger.kernel.org,
+Cc: linux-arch@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ Shijith Thotton <sthotton@marvell.com>,
+ Andre Przywara <andre.przywara@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Huw Davies <huw@codeweavers.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ linux-mips@vger.kernel.org, Dmitry Safonov <0x7f454c46@gmail.com>,
+ Paul Burton <paul.burton@mips.com>, linux-kselftest@vger.kernel.org,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Russell King <linux@armlinux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ Mark Salyzyn <salyzyn@android.com>, Peter Collingbourne <pcc@google.com>,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22/11/2019 11:31 pm, Jordan Crouse wrote:
-> Add implementation specific support to enable split pagetables for
-> SMMU implementations attached to Adreno GPUs on Qualcomm targets.
-> 
-> To enable split pagetables the driver will set an attribute on the domain.
-> if conditions are correct, set up the hardware to support equally sized
-> TTBR0 and TTBR1 regions and programs the domain pagetable to TTBR1 to make
-> it available for global buffers while allowing the GPU the chance to
-> switch the TTBR0 at runtime for per-context pagetables.
-> 
-> After programming the context, the value of the domain attribute can be
-> queried to see if split pagetables were successfully programmed. The
-> domain geometry will be updated so that the caller can determine the
-> start of the region to generate correct virtual addresses.
+Hi Guenter,
 
-Why is any of this in impl? It all looks like perfectly generic 
-architectural TTBR1 setup to me. As long as DOMAIN_ATTR_SPLIT_TABLES is 
-explicitly an opt-in for callers, I'm OK with them having to trust that 
-SEP_UPSTREAM is good enough. Or, even better, make the value of 
-DOMAIN_ATTR_SPLIT_TABLES not a boolean but the actual split point, where 
-the default of 0 would logically mean "no split".
-
-> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
-> ---
+On 12/4/19 4:16 PM, Guenter Roeck wrote:
+> On Wed, Dec 04, 2019 at 01:58:25PM +0000, Vincenzo Frascino wrote:
+>> Hi Guenter,
+>>
+>> On 12/4/19 1:51 PM, Guenter Roeck wrote:
+>>> On Fri, Jun 21, 2019 at 10:52:43AM +0100, Vincenzo Frascino wrote:
+>>>> The arm vDSO library requires some adaptations to use to take advantage
+>>>> of the newly introduced generic vDSO library.
+>>>>
+>>>> Introduce the following changes:
+>>>>  - Modification vdso.c to be compliant with the common vdso datapage
+>>>>  - Use of lib/vdso for gettimeofday
+>>>>  - Implementation of elf note
+>>>>
+>>>> Cc: Russell King <linux@armlinux.org.uk>
+>>>> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+>>>
+>>> This patch causes a crash with qemu's mcimx6ul-evk emulation while running
+>>> imx_v6_v7_defconfig.
+>>>
+>>
+>> Thank you for reporting this. Could you please provide some details on how I can
+>> reproduce the scenario you are describing?
+>>
+> - Build imx_v6_v7_defconfig
+> - Get root file system or initrd, for example from
+>   https://github.com/groeck/linux-build-test/tree/master/rootfs/arm
+> - Run image. Example, with initrd:
+> 	qemu-system-arm -M mcimx6ul-evk -kernel arch/arm/boot/zImage \
+> 		-no-reboot -initrd rootfs-armv7a.cpio \
+> 		-m 256 -display none -serial null \
+> 		--append 'rdinit=/sbin/init earlycon=ec_imx6q,mmio,0x21e8000,115200n8 console=ttymxc1,115200'
+> 		-dtb arch/arm/boot/dts/imx6ul-14x14-evk.dtb \
+> 		-nographic -monitor null -serial stdio
 > 
->   drivers/iommu/arm-smmu-impl.c |  3 ++
->   drivers/iommu/arm-smmu-qcom.c | 96 +++++++++++++++++++++++++++++++++++++++++++
->   drivers/iommu/arm-smmu.c      | 41 ++++++++++++++----
->   drivers/iommu/arm-smmu.h      | 11 +++++
->   4 files changed, 143 insertions(+), 8 deletions(-)
+> qemu has to be v3.1 or later to support the machine.
 > 
-> diff --git a/drivers/iommu/arm-smmu-impl.c b/drivers/iommu/arm-smmu-impl.c
-> index 33ed682..1e91231 100644
-> --- a/drivers/iommu/arm-smmu-impl.c
-> +++ b/drivers/iommu/arm-smmu-impl.c
-> @@ -174,5 +174,8 @@ struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
->   	if (of_device_is_compatible(smmu->dev->of_node, "qcom,sdm845-smmu-500"))
->   		return qcom_smmu_impl_init(smmu);
->   
-> +	if (of_device_is_compatible(smmu->dev->of_node, "qcom,adreno-smmu-v2"))
-> +		return adreno_smmu_impl_init(smmu);
-> +
->   	return smmu;
->   }
-> diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
-> index 24c071c..6591e49 100644
-> --- a/drivers/iommu/arm-smmu-qcom.c
-> +++ b/drivers/iommu/arm-smmu-qcom.c
-> @@ -11,6 +11,102 @@ struct qcom_smmu {
->   	struct arm_smmu_device smmu;
->   };
->   
-> +#define TG0_4K  0
-> +#define TG0_64K 1
-> +#define TG0_16K 2
-> +
-> +#define TG1_16K 1
-> +#define TG1_4K  2
-> +#define TG1_64K 3
-> +
-> +/*
-> + * Set up split pagetables for Adreno SMMUs that will keep a static TTBR1 for
-> + * global buffers and dynamically switch TTBR0 from the GPU for context specific
-> + * pagetables.
-> + */
-> +static int adreno_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
-> +		struct io_pgtable_cfg *pgtbl_cfg)
-> +{
-> +	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
-> +	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
-> +	u32 tcr, tg0;
-> +
-> +	/*
-> +	 * Return error if split pagetables are not enabled so that arm-smmu
-> +	 * do the default configuration
-> +	 */
-> +	if (!(pgtbl_cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1))
-> +		return -EINVAL;
-> +
-> +	/* Get the bank configuration from the pagetable config */
-> +	tcr = arm_smmu_lpae_tcr(pgtbl_cfg) & 0xffff;
 
-The intent is that arm_smmu_lpae_tcr() should inherently return the 
-appropriate half of the TCR based on pgtable_cfg. It seems like a lot of 
-this complexity stems from missing that; sorry if it was unclear.
+Thanks for this. Could you please try the patch below the scissors? Seems fixing
+the issue for me.
 
-Robin.
-
-> +
-> +	/*
-> +	 * The TCR configuration for TTBR0 and TTBR1 is (almost) identical so
-> +	 * just duplicate the T0 configuration and shift it
-> +	 */
-> +	cb->tcr[0] = (tcr << 16) | tcr;
-> +
-> +	/*
-> +	 * The (almost) above refers to the granule size field which is
-> +	 * different for TTBR0 and TTBR1. With the TTBR1 quirk enabled,
-> +	 * io-pgtable-arm will write the T1 appropriate granule size for tg.
-> +	 * Translate the configuration from the T1 field to get the right value
-> +	 * for T0
-> +	 */
-> +	if (pgtbl_cfg->arm_lpae_s1_cfg.tcr.tg == TG1_4K)
-> +		tg0 = TG0_4K;
-> +	else if (pgtbl_cfg->arm_lpae_s1_cfg.tcr.tg == TG1_16K)
-> +		tg0 = TG0_16K;
-> +	else
-> +		tg0 = TG0_64K;
-> +
-> +	/* clear and set the correct value for TG0  */
-> +	cb->tcr[0] &= ~TCR_TG0;
-> +	cb->tcr[0] |= FIELD_PREP(TCR_TG0, tg0);
-> +
-> +	/*
-> +	 * arm_smmu_lape_tcr2 sets SEP_UPSTREAM which is always the appropriate
-> +	 * SEP for Adreno IOMMU
-> +	 */
-> +	cb->tcr[1] = arm_smmu_lpae_tcr2(pgtbl_cfg);
-> +	cb->tcr[1] |= TCR2_AS;
-> +
-> +	/* TTBRs */
-> +	cb->ttbr[0] = FIELD_PREP(TTBRn_ASID, cfg->asid);
-> +	cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> +	cb->ttbr[1] |= FIELD_PREP(TTBRn_ASID, cfg->asid);
-> +
-> +	/* MAIRs */
-> +	cb->mair[0] = pgtbl_cfg->arm_lpae_s1_cfg.mair;
-> +	cb->mair[1] = pgtbl_cfg->arm_lpae_s1_cfg.mair >> 32;
-> +
-> +	return 0;
-> +}
-> +
-> +static int adreno_smmu_init_context(struct arm_smmu_domain *smmu_domain,
-> +		struct io_pgtable_cfg *pgtbl_cfg)
-> +{
-> +	/* Enable split pagetables if the flag is set and the format matches */
-> +	if (smmu_domain->split_pagetables)
-> +		if (smmu_domain->stage == ARM_SMMU_DOMAIN_S1 &&
-> +			smmu_domain->cfg.fmt == ARM_SMMU_CTX_FMT_AARCH64)
-> +			pgtbl_cfg->quirks |= IO_PGTABLE_QUIRK_ARM_TTBR1;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct arm_smmu_impl adreno_smmu_impl = {
-> +	.init_context = adreno_smmu_init_context,
-> +	.init_context_bank = adreno_smmu_init_context_bank,
-> +};
-> +
-> +struct arm_smmu_device *adreno_smmu_impl_init(struct arm_smmu_device *smmu)
-> +{
-> +	smmu->impl = &adreno_smmu_impl;
-> +	return smmu;
-> +}
-> +
->   static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
->   {
->   	int ret;
-> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> index 5c7c32b..f5dc950 100644
-> --- a/drivers/iommu/arm-smmu.c
-> +++ b/drivers/iommu/arm-smmu.c
-> @@ -91,13 +91,6 @@ struct arm_smmu_smr {
->   	bool				valid;
->   };
->   
-> -struct arm_smmu_cb {
-> -	u64				ttbr[2];
-> -	u32				tcr[2];
-> -	u32				mair[2];
-> -	struct arm_smmu_cfg		*cfg;
-> -};
-> -
->   struct arm_smmu_master_cfg {
->   	struct arm_smmu_device		*smmu;
->   	s16				smendx[];
-> @@ -512,10 +505,20 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
->   {
->   	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
->   	struct arm_smmu_cb *cb = &smmu_domain->smmu->cbs[cfg->cbndx];
-> +	struct arm_smmu_device *smmu = smmu_domain->smmu;
->   	bool stage1 = cfg->cbar != CBAR_TYPE_S2_TRANS;
->   
->   	cb->cfg = cfg;
->   
-> +	if (smmu->impl && smmu->impl->init_context_bank) {
-> +		/*
-> +		 * If the implementation specific function returns non-zero then
-> +		 * fall back to the default configuration
-> +		 */
-> +		if (!smmu->impl->init_context_bank(smmu_domain, pgtbl_cfg))
-> +			return; > +	}
-> +
->   	/* TCR */
->   	if (stage1) {
->   		if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_S) {
-> @@ -802,7 +805,17 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
->   
->   	/* Update the domain's page sizes to reflect the page table format */
->   	domain->pgsize_bitmap = pgtbl_cfg.pgsize_bitmap;
-> -	domain->geometry.aperture_end = (1UL << ias) - 1;
-> +
-> +	if (pgtbl_cfg.quirks & IO_PGTABLE_QUIRK_ARM_TTBR1) {
-> +		domain->geometry.aperture_start = ~((1UL << ias) - 1);
-> +		domain->geometry.aperture_end = ~0UL;
-> +	} else {
-> +		domain->geometry.aperture_start = 0;
-> +		domain->geometry.aperture_end = (1UL << ias) - 1;
-> +
-> +		smmu_domain->split_pagetables = false;
-> +	}
-> +
->   	domain->geometry.force_aperture = true;
->   
->   	/* Initialise the context bank with our page table cfg */
-> @@ -1485,6 +1498,9 @@ static int arm_smmu_domain_get_attr(struct iommu_domain *domain,
->   		case DOMAIN_ATTR_NESTING:
->   			*(int *)data = (smmu_domain->stage == ARM_SMMU_DOMAIN_NESTED);
->   			return 0;
-> +		case DOMAIN_ATTR_SPLIT_TABLES:
-> +			*(int *)data = smmu_domain->split_pagetables;
-> +			return 0;
->   		default:
->   			return -ENODEV;
->   		}
-> @@ -1525,6 +1541,15 @@ static int arm_smmu_domain_set_attr(struct iommu_domain *domain,
->   			else
->   				smmu_domain->stage = ARM_SMMU_DOMAIN_S1;
->   			break;
-> +		case DOMAIN_ATTR_SPLIT_TABLES:
-> +			if (smmu_domain->smmu) {
-> +				return -EPERM;
-> +				goto out_unlock;
-> +			}
-> +
-> +			if (*(int *) data)
-> +				smmu_domain->split_pagetables = true;
-> +			break;
->   		default:
->   			ret = -ENODEV;
->   		}
-> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-> index 0eb498f..35158ee 100644
-> --- a/drivers/iommu/arm-smmu.h
-> +++ b/drivers/iommu/arm-smmu.h
-> @@ -329,6 +329,14 @@ struct arm_smmu_domain {
->   	struct mutex			init_mutex; /* Protects smmu pointer */
->   	spinlock_t			cb_lock; /* Serialises ATS1* ops and TLB syncs */
->   	struct iommu_domain		domain;
-> +	bool				split_pagetables;
-> +};
-> +
-> +struct arm_smmu_cb {
-> +	u64				ttbr[2];
-> +	u32				tcr[2];
-> +	u32				mair[2];
-> +	struct arm_smmu_cfg		*cfg;
->   };
->   
->   static inline u32 arm_smmu_lpae_tcr(struct io_pgtable_cfg *cfg)
-> @@ -359,6 +367,8 @@ struct arm_smmu_impl {
->   	int (*reset)(struct arm_smmu_device *smmu);
->   	int (*init_context)(struct arm_smmu_domain *smmu_domain,
->   			struct io_pgtable_cfg *pgtbl_cfg);
-> +	int (*init_context_bank)(struct arm_smmu_domain *smmu_domain,
-> +			struct io_pgtable_cfg *pgtable_cfg);
->   	void (*tlb_sync)(struct arm_smmu_device *smmu, int page, int sync,
->   			 int status);
->   };
-> @@ -425,6 +435,7 @@ static inline void arm_smmu_writeq(struct arm_smmu_device *smmu, int page,
->   
->   struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu);
->   struct arm_smmu_device *qcom_smmu_impl_init(struct arm_smmu_device *smmu);
-> +struct arm_smmu_device *adreno_smmu_impl_init(struct arm_smmu_device *smmu);
->   
->   int arm_mmu500_reset(struct arm_smmu_device *smmu);
->   
+> Hope this helps,
+> Guenter
 > 
+
+-- 
+Regards,
+Vincenzo
+
+--->8---
+
+Author: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Date:   Wed Dec 4 16:58:55 2019 +0000
+
+    arm: Fix __arch_get_hw_counter() access to CNTVCT
+
+    __arch_get_hw_counter() should check clock_mode to see if it can access
+    CNTVCT. With the conversion to unified vDSO this check has been left out.
+
+    This causes on imx v6 and v7 (imx_v6_v7_defconfig) and other platforms to
+    hang at boot during the execution of the init process as per below:
+
+    [   19.976852] Run /sbin/init as init process
+    [   20.044931] Kernel panic - not syncing: Attempted to kill init!
+    exitcode=0x00000004
+
+    Fix the problem verifying that clock_mode is set coherently before
+    accessing CNTVCT.
+
+    Cc: Russell King <linux@armlinux.org.uk>
+    Reported-by: Guenter Roeck <linux@roeck-us.net>
+    Investigated-by: Arnd Bergmann <arnd@arndb.de>
+    Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+
+diff --git a/arch/arm/include/asm/vdso/gettimeofday.h
+b/arch/arm/include/asm/vdso/gettimeofday.h
+index 5b879ae7afc1..0ad2429c324f 100644
+--- a/arch/arm/include/asm/vdso/gettimeofday.h
++++ b/arch/arm/include/asm/vdso/gettimeofday.h
+@@ -75,6 +75,9 @@ static __always_inline u64 __arch_get_hw_counter(int clock_mode)
+ #ifdef CONFIG_ARM_ARCH_TIMER
+        u64 cycle_now;
+
++       if (!clock_mode)
++               return -EINVAL;
++
+        isb();
+        cycle_now = read_sysreg(CNTVCT);
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
