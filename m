@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55775112C4D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 14:08:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D52A2112C4E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 14:08:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wYSfku9iIZyWefI16u85Z5O57opuHHMytEUp28Ppyzk=; b=coOmEge7sTsvZa
-	MzTO717SQuVFvKSEv8eD6rVIHLkCJU10g7LgHQCJH5VZWjq5BTU8YYszvc8S4SUO+hDnvDKWAhXS5
-	ajLarKy8l3ZFjyeVQy7050Edu4LF/G72HNpT1ZCO+va18M2dc7kb6AWqtWUB3Xkh1EBNHDCQdM31A
-	nldQLSCOJniwo2QFMJq3UBs8UU5jJD1n+xmFHPzSQy4mhuJiOQcnStngKh/TPpNWcFwR4EeKmAlWJ
-	+Jg0VyQJlm6aHSVwcb4TFAx/8PIv8vInkrZwQHK375U4RwVS5I8jjJqSsbc8I2jIS7vFw8JEq0OUl
-	Hy00z9cD+TkFPr3FmBbQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q+G2jaMX5m2f7kVRpUIjmOlUN/I616kgxdKO3jSNB94=; b=JmHLr9CJU+wVqj
+	Xc2nfMZ1If2ZKX9z5BpbojFFyqW0UOgQCDkjju/CsyM/da7CJ7fc65k91kw31NxgOhV1hoe6MRgtK
+	MMjK/D8yXtAYqZEEIcSwoolAR0+27tHWkOLBl2ac94U6ZEYs7i7Xik93dphaX6KZlPPqDqq99Kzu4
+	RKhMxrGLtpcrXZDbU/Buk2/69tCfX5pUonQjUP6oHK8xhXFnz/2t2G/Mr20CriDJ7Bl7opZmZG2CJ
+	4CX5HJtNAWjetswVKl+dKScR5oF72qUtuy1Ukwv7ATqqTPuO9hDMAwzkwb5XOakMExp1v7Xmwm7ms
+	KY2NigOkrias3Djcmm/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icUNy-0006Xv-Bx; Wed, 04 Dec 2019 13:08:06 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1icUOF-0006fQ-NM; Wed, 04 Dec 2019 13:08:23 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icUNp-0006WM-Nd
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 13:07:58 +0000
-Received: by mail-wr1-x443.google.com with SMTP id y17so8520788wrh.5
+ id 1icUNr-0006XC-MZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 13:08:00 +0000
+Received: by mail-wm1-x343.google.com with SMTP id s14so7841112wmh.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 05:07:57 -0800 (PST)
+ Wed, 04 Dec 2019 05:07:59 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ux9tITRTJ/K/Qnf2cowWRV/QtrytZWRzAJVLhfRd3HA=;
- b=H2vJTmLCRg2B0vAzcRnFW5l2kcMe9ZMiQmW5lSSXLYs7Gx4zo7g/CsiWsPVgaI1ilc
- wv6bo29fewcdSfV2DAK2WxXKCHV9l6ctdgVbwh4EYnhCJx+rFEnyaMv1oqLIC188qnCy
- d+mej9AsTPL5YF58v6Oc+2ZVG87ok5n+pieT4ovQe5nX34nYv953Rn6Rm0ksOpZYCnfX
- TLvGpWSpLbkGnqajZZBvdYY5UnEWCxsNv83U0S13lwvJAN3rzuXF+FS/HlQlJKZGviYa
- mXKM743d4bTzt2PskNL+QIY21IMCasjcSGJkFflrVQMX8ybMQYNwI7GPQt6nr853pmY/
- WUjg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=0/7wINVtMbJmgnch69y8oJMBPMSuQVXES+Foib2NSNQ=;
+ b=jy4ATzWV2ZqdCLxvh3qRv0G5MCsHyjSmAOH9dhWBl8KMm9uz90vytmJCdpsCSMRs3B
+ lMpNeWRiDSkunQIRty4fm/TvKbC4Jv9U6hWJRqEb8OWkASkKEtzkppf6ix7hblGpojBV
+ coZ3i3q9m2RKNJo+pPnOs3fqSc8snROOry1Z2+m/Wsbn8wsHj+vHCtgSn2fOLpen2z7A
+ GkTLiseXl+gxlUK6sLePAeBWgOKuBa6qoFWu6hoIFoDSKF4ekml0KG0KHm5NoWTwPs9X
+ Uk9koKPPljPFNjEbj2sIf4O/0uGimgGbw3T0HREYEfUTQJ1AYnUKSvQDAmourP80mN0e
+ rGOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ux9tITRTJ/K/Qnf2cowWRV/QtrytZWRzAJVLhfRd3HA=;
- b=I51l/khcRNfcv+ShIPUpYZwceQiL4f0lbJeVHE+N67rDLS8ltykff/cOnWzvUho5sx
- CP3RHqlcMVa2fndG+7nAUJsNplpwtTtI0+wkrcupoka8z8zJZa2fqNDIZzGpZhlSVU0y
- r01Pwaij0ERsAmV4LmnzIAYUbOZ2u1OMHd8/TEaj3ZHULzH8W2O2myJYMdImlOdY4etb
- 4Dq9tm5/Q1GC1Vx0coAkNIqh5jyNDnTbk/1RxAHrnDNO76Q9yf94eVzpch3DSoQtXAnC
- 4TR4ctlTMYHMhmVmzw8Ydca1WRb5IfktasTy16PAnTVH1LLh5DWPv4GjEG3ePd6h/YHh
- 457A==
-X-Gm-Message-State: APjAAAUZBlMBscTgpyrhJwOFDza/nc+7MU2lCVnMCekJhgIY107mVsfh
- EnfhrJsR9DM0D9HN0flRpAk=
-X-Google-Smtp-Source: APXvYqxK3JthT2l0Yj/2dZ39D1HZCIOxy5aGGbAOcYRAPyJaK6c8NE32tB2ZD42/xwsZEruZ3984xg==
-X-Received: by 2002:adf:dc0a:: with SMTP id t10mr3812995wri.138.1575464876303; 
- Wed, 04 Dec 2019 05:07:56 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=0/7wINVtMbJmgnch69y8oJMBPMSuQVXES+Foib2NSNQ=;
+ b=R7N6IcLkNIZRTpbAYo/YIWjPICPwcj2sBswcdFPZW9r2bIxv5zaKJ6dvrSo9ZFfysy
+ h2pxrt/vfh9A3v6l5LU0kdlZBKNQmCYV/z2NedV5HYIEaeG2w0Beh6+0ejjKcdhjdJJj
+ V90+HD5yhWki88o+SYNnY+Ga4bx5+aQ1hG0sjVantg3VeCJ3eUTs/gLb7QvGLJNGBEII
+ rnXCX6ZRWcAECxwekRVXu4y9955hOXIUi7Xr3N8Se7+cmiQtA1gt4WUnU3XAqlrVhvDP
+ eePT6Y0cucKqKBXk9pkBc3ciLy2FvlRcH0sSJy49Cdwx3K1lfIhNPMBYe+FN7lijDgBB
+ wPHA==
+X-Gm-Message-State: APjAAAWipz6r3EOkaSSBBMBhsyfEDZXESYg09jMplbKzG/Zhw4Lp7B/6
+ KqGJVO2g39oVSmSnZM6YaxM=
+X-Google-Smtp-Source: APXvYqzG0LHuLoU/8RkwQDogdyzeWoOEDNJbv+/o466Pvkk/2jIrrUi+5F/MExEMuYHU3Eq7+34Ykg==
+X-Received: by 2002:a7b:c318:: with SMTP id k24mr26898055wmj.54.1575464878274; 
+ Wed, 04 Dec 2019 05:07:58 -0800 (PST)
 Received: from localhost (pD9E518ED.dip0.t-ipconnect.de. [217.229.24.237])
- by smtp.gmail.com with ESMTPSA id a14sm8520219wrx.81.2019.12.04.05.07.54
+ by smtp.gmail.com with ESMTPSA id b17sm8211485wrx.15.2019.12.04.05.07.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 05:07:55 -0800 (PST)
+ Wed, 04 Dec 2019 05:07:57 -0800 (PST)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: soc@kernel.org,
 	arm@kernel.org
-Subject: [GIT PULL 1/3] memory: tegra: Fixes for v5.5-rc1
-Date: Wed,  4 Dec 2019 14:07:51 +0100
-Message-Id: <20191204130753.3614278-1-thierry.reding@gmail.com>
+Subject: [GIT PULL 2/3] soc/tegra: Fixes for v5.5-rc1
+Date: Wed,  4 Dec 2019 14:07:52 +0100
+Message-Id: <20191204130753.3614278-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191204130753.3614278-1-thierry.reding@gmail.com>
+References: <20191204130753.3614278-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_050757_771447_15F2D23B 
-X-CRM114-Status: GOOD (  11.49  )
+X-CRM114-CacheID: sfid-20191204_050759_738268_0C050928 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,33 +109,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi ARM SoC maintainers,
 
-The following changes since commit 141bef44e123c101c0da0443ab6b3cfa750f251a:
+The following changes since commit 69dfb3d4a89afccca1d8f282e49ad1362100cc43:
 
-  memory: tegra: Consolidate registers definition into common header (2019-11-11 14:55:27 +0100)
+  soc/tegra: pmc: Remove unnecessary memory barrier (2019-10-29 14:36:24 +0100)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.5-memory-fixes
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.5-soc-fixes
 
-for you to fetch changes up to 030d2829f4c22e675e21904f32ab60f659174e72:
+for you to fetch changes up to 48914c4ecb0c0fa1d70ea7b97d758ce5fadacfb0:
 
-  memory: tegra30-emc: Fix panic on suspend (2019-11-18 13:54:40 +0100)
+  soc/tegra: pmc: Add reset sources and levels on Tegra194 (2019-11-18 13:56:58 +0100)
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-memory: tegra: Fixes for v5.5-rc1
+soc/tegra: Fixes for v5.5-rc1
 
-This contains a fix for a kernel panic that can occur on suspend if EMC
-timings are not available in device tree.
+Fixes a regression for wake events on Tegra194 caused by the Tegra210
+support that was added in v5.5-rc1 as well as wrong reset sources and
+levels on Tegra194.
 
 ----------------------------------------------------------------
-Dmitry Osipenko (1):
-      memory: tegra30-emc: Fix panic on suspend
+Thierry Reding (3):
+      soc/tegra: pmc: Use lower-case for hexadecimal literals
+      soc/tegra: pmc: Add missing IRQ callbacks on Tegra194
+      soc/tegra: pmc: Add reset sources and levels on Tegra194
 
- drivers/memory/tegra/tegra30-emc.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/soc/tegra/pmc.c | 47 +++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 45 insertions(+), 2 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
