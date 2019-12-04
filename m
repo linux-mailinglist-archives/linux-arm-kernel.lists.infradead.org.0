@@ -2,106 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C65011125BE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 09:46:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 940F61125D2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 09:48:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2vWGBg9DdK4MumIPP8ltObmWUOzVUOtCsp3fLqqYld4=; b=BgYyPfmr6LsFmT
-	e/98bRAgOJPY3yimKCbmmToC6Ig2sVu5/SN4/bHyZN/99cIAFRcbQHZr37eXkiIpgdk+zlv7zcKQH
-	91/j+92qZJLxNOwnJt382hZ74O5XT2HbgVC9SaN3sENcaUtI9paZ7wSpID3nxx1zz9fS8nJqMNSNg
-	9cHAWx728PnkHQsTDgzDKlmvtCU6QJMc9aqiAOiePSuChck4SZ5/ncjjA2yUd+c0tFGC3pACcAjXu
-	nkop6VGRwisRdSWjDoW4kWDd67JA1MiDGjcNZmzHWAfWoe4E0KxVWnZL4INd++jG2ekI3EwmPL40B
-	j+MFQzEj4i7vqL1mF7Bg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=a0uqK3BspNj+rGpbIy8iZSMTzWhFrAHS6Sr8dNM2e7Y=; b=d3W
+	xgxxinRUwld36Yqd8ALm6gAP7GBEooktOE2dgUP6vDvuh1qiHots7KsnQo2lmz5wK9zaWf2qUTJH7
+	YJfUreREdzzGZHRVcYK+rl4doiY6wX+7uVE7DHGYW7dLFagVpwws+4vXMtFREZ9wKgLZVz0VmhD/N
+	fwkd6aL+4eIFlj56PCop5VeeU/HcD6t6m/DQtDVV2Kdjr+XNdIwDlA88D2l8Xep7f/XD94791sKHl
+	kT+kumbPwul2nhOA+VnF4qXyATo/nc/IR8jMIufHTIjnJuX23/MZyfcmPww9XKApXEY3XcMTTGvPu
+	tCOS1YAzZWISMAWYGHGi0tTDGtoYA/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icQIc-0007hY-W3; Wed, 04 Dec 2019 08:46:19 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1icQL2-0008GQ-AB; Wed, 04 Dec 2019 08:48:48 +0000
+Received: from a27-18.smtp-out.us-west-2.amazonses.com ([54.240.27.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icQIT-0007gd-TK
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 08:46:12 +0000
-Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa6.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa6.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 4xLNsUQDEfxULouLYzoSIaIlckWltHCZaGQd+HaljCUjhF89OsA1yvocbqvxHPGf7Od2Uizpp2
- QroyqLkablnIIbw2sQYBGjL+HkIopqSH+zRbFj5OXQGMSZ2uKWmvdCkpgB7T36LYbVZMkYfQ6g
- cB+Q4MJitU/sk+wV5fkRPjAC6ya1ULcv7sclnZFH8eXGAkhfxD+JgybN0EaeGREKPub90zdtZl
- HJaimALMXvWkOgXSvIQoBNFwNlVfmIYoVgmXdgizzT3z5BZmHN3MFjVZz0sMO0ogVFpWOEdctI
- FSk=
-X-IronPort-AV: E=Sophos;i="5.69,276,1571727600"; d="scan'208";a="56561727"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 04 Dec 2019 01:46:06 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 4 Dec 2019 01:46:07 -0700
-Received: from localhost (10.10.85.251) by chn-vm-ex01.mchp-main.com
- (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Wed, 4 Dec 2019 01:46:06 -0700
-Date: Wed, 4 Dec 2019 09:45:55 +0100
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
-Subject: Re: [PATCH] iio: at91-sama5d2_adc: fix
- iio_triggered_buffer_{predisable,postenable} positions
-Message-ID: <20191204084555.7gjyh23oywhruy7g@M43218.corp.atmel.com>
-Mail-Followup-To: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>,
- "Eugen.Hristev@microchip.com" <Eugen.Hristev@microchip.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "lars@metafoo.de" <lars@metafoo.de>,
- "pmeerw@pmeerw.net" <pmeerw@pmeerw.net>,
- "knaack.h@gmx.de" <knaack.h@gmx.de>,
- "jic23@kernel.org" <jic23@kernel.org>
-References: <20191023082508.17583-1-alexandru.ardelean@analog.com>
- <17cf55869cc418795d0013c0594ed8fc04381d46.camel@analog.com>
- <9df3d999-0ec6-a282-d24b-8f7df5f14f6d@microchip.com>
- <e43bf58f-223c-0b12-2912-6f353d866ec3@microchip.com>
- <74aabb41107ab162660f21e726c88a9dd40ecc5e.camel@analog.com>
- <60ce6ff9-ba06-2522-e9a0-55e6fd2731ec@microchip.com>
- <0075d7fc890b0986f2113664c664ff46931de432.camel@analog.com>
- <3a8ea46b-14d4-30d8-5766-02538cab8394@microchip.com>
- <b01afcee62e82e6965115a8a0ec7246f71488df1.camel@analog.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b01afcee62e82e6965115a8a0ec7246f71488df1.camel@analog.com>
+ id 1icQKt-0008Fp-6f
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 08:48:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1575449316;
+ h=From:To:Cc:Subject:Date:Message-Id;
+ bh=gEB6uBMOOwAhGK0idGqw2RrciO9bPtivwYCZYr9wQvM=;
+ b=cZ/F7Axp67MPTNosXkmOHKK1Gno+ceNTZ9IinPRx8C5+8ahq22klbWGIB1tus1zD
+ 6V09CNc5ou98ZnuTnqh0jZiJGReus7eGGK7sb+YzdD08grmBQBUbjAXkQxmAImH654Y
+ pFlifKcYhYABINUlN9+A3XRum9ReOglpBj/Enc08=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1575449316;
+ h=From:To:Cc:Subject:Date:Message-Id:Feedback-ID;
+ bh=gEB6uBMOOwAhGK0idGqw2RrciO9bPtivwYCZYr9wQvM=;
+ b=aivIHEGKuHKBqZBdx5qliaM0NvwdtGcNxRdQloYMf92qvoHdHTJpyqtQIatd7N86
+ 6LEp5QwDZ+8Pf7GEkHdEPTDxAHcvDxMHokV3SGsWCr9NlDgeWw+5wwZmgcVSXK87TOz
+ mtoLGt6ICpWqWDe+/AXR9nTdSqqJBtauYoXevo7Y=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.0
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 64DF8C447AE
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=pillair@codeaurora.org
+From: Rakesh Pillai <pillair@codeaurora.org>
+To: devicetree@vger.kernel.org
+Subject: [PATCH] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module device node
+Date: Wed, 4 Dec 2019 08:48:36 +0000
+Message-ID: <0101016ed018cde9-da3dc3e0-de6e-4b18-9add-bc6f88511ab2-000000@us-west-2.amazonses.com>
+X-Mailer: git-send-email 2.7.4
+X-SES-Outgoing: 2019.12.04-54.240.27.18
+Feedback-ID: 1.us-west-2.CZuq2qbDmUIuT3qdvXlRHZZCpfZqZ4GtG9v3VKgRyF0=:AmazonSES
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_004610_037683_5E591EF4 
-X-CRM114-Status: GOOD (  58.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191204_004839_284823_534E77DE 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [54.240.27.18 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [54.240.27.18 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,420 +90,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "lars@metafoo.de" <lars@metafoo.de>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "jic23@kernel.org" <jic23@kernel.org>, "pmeerw@pmeerw.net" <pmeerw@pmeerw.net>,
- "knaack.h@gmx.de" <knaack.h@gmx.de>,
- "Eugen.Hristev@microchip.com" <Eugen.Hristev@microchip.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-msm@vger.kernel.org, Rakesh Pillai <pillair@codeaurora.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 03, 2019 at 01:40:34PM +0000, Ardelean, Alexandru wrote:
-> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
-> 
-> On Tue, 2019-12-03 at 12:17 +0000, Eugen.Hristev@microchip.com wrote:
-> >
-> > On 03.12.2019 14:04, Ardelean, Alexandru wrote:
-> >
-> > > On Tue, 2019-12-03 at 09:49 +0000, Eugen.Hristev@microchip.com wrote:
-> > > > [External]
-> > > >
-> > > >
-> > > >
-> > > > On 29.11.2019 09:02, Ardelean, Alexandru wrote:
-> > > >
-> > > > > On Thu, 2019-11-28 at 15:19 +0000, Eugen.Hristev@microchip.com
-> > > > > wrote:
-> > > > >
-> > > > > Hey,
-> > > > >
-> > > > > Sorry for the late reply.
-> > > > > I'm also juggling a few things.
-> > > > >
-> > > > > > On 28.11.2019 10:36, Eugen.Hristev@microchip.com wrote:
-> > > > > >
-> > > > > > > On 25.11.2019 17:03, Ardelean, Alexandru wrote:
-> > > > > > > > On Wed, 2019-10-23 at 11:25 +0300, Alexandru Ardelean wrote:
-> > > > > > > > > The iio_triggered_buffer_{predisable,postenable} functions
-> > > > > > > > > attach/detach
-> > > > > > > > > poll functions.
-> > > > > > > > >
-> > > > > > > > > The iio_triggered_buffer_postenable() should be called
-> > > > > > > > > first to
-> > > > > > > > > attach
-> > > > > > > > > the
-> > > > > > > > > poll function, and then the driver can init the data to be
-> > > > > > > > > triggered.
-> > > > > > > > >
-> > > > > > > > > Similarly, iio_triggered_buffer_predisable() should be
-> > > > > > > > > called
-> > > > > > > > > last
-> > > > > > > > > to
-> > > > > > > > > first
-> > > > > > > > > disable the data (to be triggered) and then the poll
-> > > > > > > > > function
-> > > > > > > > > should be
-> > > > > > > > > detached.
-> > > > > > >
-> > > > > > > Hi Alexandru,
-> > > > > > >
-> > > > > > > Sorry for this late reply,
-> > > > > > >
-> > > > > > > I remember that by adding specific at91_adc code for
-> > > > > > > predisable/postenable , I was replacing the existing standard
-> > > > > > > callback
-> > > > > > > with my own, and have my specific at91 code before postenable
-> > > > > > > and
-> > > > > > > then
-> > > > > > > calling the subsystem postenable,
-> > > > > > > and in similar way, for predisable, first call the subsystem
-> > > > > > > predisable
-> > > > > > > then doing my predisable code (in reverse order as in
-> > > > > > > postenable)
-> > > > > > >
-> > > > > > > If you say the order should be reversed (basically have the
-> > > > > > > pollfunction
-> > > > > > > first), how is current code working ?
-> > > > > > > Should current code fail if the poll function is not attached
-> > > > > > > in
-> > > > > > > time ?
-> > > > > > > Or there is a race between triggered data and the attachment of
-> > > > > > > the
-> > > > > > > pollfunc ?
-> > > > > > >
-> > > > > > > I am thinking that attaching the pollfunc later makes it work
-> > > > > > > because
-> > > > > > > the DMA is not started yet. What happens if we have the
-> > > > > > > pollfunc
-> > > > > > > attached but DMA is not started (basically the trigger is not
-> > > > > > > started)
-> > > > > > > ,
-> > > > > > > can this lead to unexpected behavior ? Like the pollfunc
-> > > > > > > polling
-> > > > > > > but no
-> > > > > > > trigger started/no DMA started.
-> > > > > >
-> > > > > > I looked a bit more into the code and in DMA case, using
-> > > > > > postenable
-> > > > > > first will lead to calling attach pollfunc, which will also
-> > > > > > enable
-> > > > > > the
-> > > > > > trigger, but the DMA is not yet started.
-> > > > > > Is this the desired effect ?
-> > > > >
-> > > > > Yes.
-> > > >
-> > > > How is this correct ? We start the trigger but have no buffer to
-> > > > carry
-> > > > to... what happens with the data ? -> I think we both have an answer
-> > > > to
-> > > > that, as you state below
-> > > >
-> > > > > > Normally when using DMA I would say we
-> > > > > > would need to enable DMA first to be ready to carry data (and
-> > > > > > coherent
-> > > > > > area etc.) and then enable the trigger.
-> > > > >
-> > > > > So, there is a change in our tree [from some time ago].
-> > > > > See here:
-> > > > > https://github.com/analogdevicesinc/linux/commit/eee97d12665fef8cf429a1e5035b23ae969705b8
-> > > > >
-> > > > > Particularly, what's interesting is around line:
-> > > > > https://github.com/analogdevicesinc/linux/commit/eee97d12665fef8cf429a1e5035b23ae969705b8#diff-0a87744ce945d2c1c89ea19f21fb35bbR722
-> > > > > And you may need to expand some stuff to see more of the function-
-> > > > > body.
-> > > > > And some things may have changed in upstream IIO since that change.
-> > > > >
-> > > > > The change is to make the pollfunc attach/detach become part of the
-> > > > > IIO
-> > > > > framework, because plenty of drivers just call
-> > > > > iio_triggered_buffer_postenable() &
-> > > > > iio_triggered_buffer_predisable()
-> > > > > to
-> > > > > manually attach/detach the pollfunc for triggered buffers.
-> > > >
-> > > > Okay, I understand this. at91-sama5d2_adc does not manually
-> > > > attach/detach the pollfunc. So why do we need to change anything here
-> > > > ?
-> > > >
-> > > >
-> > > > > That change is from 2015, and since then, some drivers were added
-> > > > > that
-> > > > > just
-> > > > > manually attach/detach the pollfunc [and do nothing more with the
-> > > > > postenable/predisable hooks].
-> > > > >
-> > > > > I tried to upstream a more complete version of that patch a while
-> > > > > ago
-> > > > > [u1].
-> > > > > https://patchwork.kernel.org/patch/10482167/
-> > > > > https://patchwork.kernel.org/patch/10737291/
-> > > > >
-> > > > > The conclusion was to first fix the attach/detach pollfunc order in
-> > > > > all
-> > > > > IIO
-> > > > > drivers, so that when patch [u1] is applied, there is no more
-> > > > > discussion
-> > > > > about the correct order for attach/detach pollfunc.
-> > > >
-> > > > Allright, what is required to be fixed regarding the order, in this
-> > > > specific case? We enable the DMA, and then we do the normal
-> > > > 'postenable'
-> > > > that was called anyway if we did not override the 'postenable' in the
-> > > > ops. Do you want to move this code to 'preenable' and keep
-> > > > 'postenable'
-> > > > to the standard subsystem one ?
-> > > >
-> > > > The same applies to the predisable, we first call the subsystem
-> > > > 'predisable' then do the specific at91 stuff. You want to move this
-> > > > to
-> > > > the 'postdisable' ?
-> > > >
-> > > > I think reverting the order inside the functions themselves is not
-> > > > good
-> > > > as we replace the order of starting trigger/DMA setup.
-> > > > So, coming to your question below...
-> > > >
-> > > > > Coming back here [and to your question], my answer is: I don't know
-> > > > > if
-> > > > > the
-> > > > > at91 DMA needs to be enabled/disabled before/after the pollfunc
-> > > > > attach/detach.
-> > > > > This sounds like specific stuff for at91 [which is fine].
-> > > > >
-> > > > > It could be that some other hooks may need to used to enable DMA
-> > > > > before/after the attach/detach pollfunc. Maybe
-> > > > > preenable()/postdisable() ?
-> > > > >
-> > > > > In any case, what I would like [with this discussion], is to
-> > > > > resolve a
-> > > > > situation where we can get closer to moving the attach/pollfunc
-> > > > > code to
-> > > > > IIO
-> > > > > core. So, if AT91 requires a different ordering, I think you would
-> > > > > be
-> > > > > more
-> > > > > appropriate to tell me, and propose an alternative to this patch.
-> > > >
-> > > > ... yes, this looks more appropriate, to move things to
-> > > > 'preenable/postdisable', if you feel like 'postenable/predisable' is
-> > > > not
-> > > > the proper place to put them.
-> > > > But the order itself, first enable DMA then trigger, and disable in
-> > > > reverse order, I do not think there is anything wrong with that? Am I
-> > > > misunderstanding ?
-> > >
-> > > Should be good.
-> > >
-> > > > If Jonathan or Ludovic have a different idea, please let me know.
-> > >
-> > > There is an alternative here [to this].
-> > > Maybe using the IIO Buffer DMA[Engine] integration that Lars wrote [1].
-> > > This would avoid calling dmaengine_terminate_sync() and similar hooks
-> > > in
-> > > the AT91 driver. That also preserves the correct order (start DMA
-> > > first,
-> > > then attach pollfunc ; and reverse on disable).
-> > > But that is more work; not on the patch itself, but more on the
-> > > testing.
-> >
-> > Initially, when I implemented the DMA part for this driver, this was the
-> > idea. However the DMA engine was not used at that time by anyone , and I
-> > could not make it work properly. Jonathan advised at that moment to use
-> > this current framework.
-> >
-> > > [1] Upstreaming more parts for the IIO Buffer DMA[Engine] integration
-> > > is on
-> > > my to-do-list as well. I think there are still some patches that we
-> > > use,
-> > > but are not upstreamed yet.
-> > >
-> > > I'll come-up a with a V2 for this with preenable()/postdisable()
-> > > alternative here.
-> >
-> > Ok, I will test it .
-> >
-> > What I do not understand completely is why it bothers you to have at91
-> > specific code in postenable / predisable.
-> > The same thing will happen will happen with preenable/postdisable:
-> > specific at91 code will be called after subsystem preenable and before
-> > subsystem postdisable.
-> 
-> Because I am preparing a framework change to IIO core and all IIO drivers
-> in mainline need to be resolved when that change happens.
-> I am not sure if the change will break any driver, but at least we can
-> minimalize breakage.
-> 
+Add device node for the ath10k SNOC platform driver probe
+and add resources required for WCN3990 on sc7180 soc.
 
-Ok re-reading the thread I see what you want to achieve. It should be better to
-have your framework change (code factorization if I have well understood) in the
-patch serie or as an RFC:
-- it helps people to understand why you do these changes
-- if it's rejected or has to be rework, you have uselessly change the
-  drivers and introduce a potential breakage.
+Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
+---
+This change is dependent on the below set of changes
+arm64: dts: sc7180: Add qupv3_0 and qupv3_1 (https://lore.kernel.org/patchwork/patch/1150367/)
+---
+ arch/arm64/boot/dts/qcom/sc7180-idp.dts |  4 ++++
+ arch/arm64/boot/dts/qcom/sc7180.dtsi    | 27 +++++++++++++++++++++++++++
+ 2 files changed, 31 insertions(+)
 
-If it has already been discussed on the mailing list, forget what I am
-saying.
+diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+index 189254f..8a6a760 100644
+--- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
++++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+@@ -248,6 +248,10 @@
+ 	status = "okay";
+ };
+ 
++&wifi {
++	status = "okay";
++};
++
+ /* PINCTRL - additions to nodes defined in sc7180.dtsi */
+ 
+ &qup_i2c2_default {
+diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+index 666e9b9..40c9971 100644
+--- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
++++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+@@ -42,6 +42,12 @@
+ 			compatible = "qcom,cmd-db";
+ 			no-map;
+ 		};
++
++		wlan_fw_mem: wlan_fw_region@93900000 {
++			compatible = "removed-dma-pool";
++			no-map;
++			reg = <0 0x93900000 0 0x200000>;
++		};
+ 	};
+ 
+ 	cpus {
+@@ -1119,6 +1125,27 @@
+ 				#clock-cells = <1>;
+ 			};
+ 		};
++
++		wifi: wifi@18800000 {
++			status = "disabled";
++			compatible = "qcom,wcn3990-wifi";
++			reg = <0 0x18800000 0 0x800000>;
++			reg-names = "membase";
++			interrupts =
++				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
++				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
++				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
++				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
++				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
++				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
++				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
++				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
++				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
++				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
++				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
++				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
++			memory-region = <&wlan_fw_mem>;
++		};
+ 	};
+ 
+ 	timer {
+-- 
+2.7.4
 
-Regards
-
-Ludovic
-
-> >
-> > > Thanks
-> > > Alex
-> > >
-> > > > Also, I can test your patch to see if everything is fine.
-> > > >
-> > > > Thanks,
-> > > > Eugen
-> > > >
-> > > > > Thanks :)
-> > > > > Alex
-> > > > >
-> > > > > > > > > For this driver, the predisable & postenable hooks are also
-> > > > > > > > > need to
-> > > > > > > > > take
-> > > > > > > > > into consideration the touchscreen, so the hooks need to be
-> > > > > > > > > put
-> > > > > > > > > in
-> > > > > > > > > places
-> > > > > > > > > that avoid the code for that cares about it.
-> > > > > > > > >
-> > > > > > > >
-> > > > > > > > ping here
-> > > > > > > >
-> > > > > > > > > Signed-off-by: Alexandru Ardelean <
-> > > > > > > > > alexandru.ardelean@analog.com>
-> > > > > > > > > ---
-> > > > > > > > >      drivers/iio/adc/at91-sama5d2_adc.c | 19 ++++++++++--
-> > > > > > > > > -------
-> > > > > > > > >      1 file changed, 10 insertions(+), 9 deletions(-)
-> > > > > > > > >
-> > > > > > > > > diff --git a/drivers/iio/adc/at91-sama5d2_adc.c
-> > > > > > > > > b/drivers/iio/adc/at91-
-> > > > > > > > > sama5d2_adc.c
-> > > > > > > > > index e1850f3d5cf3..ac3e5c4c9840 100644
-> > > > > > > > > --- a/drivers/iio/adc/at91-sama5d2_adc.c
-> > > > > > > > > +++ b/drivers/iio/adc/at91-sama5d2_adc.c
-> > > > > > > > > @@ -889,20 +889,24 @@ static int
-> > > > > > > > > at91_adc_buffer_postenable(struct
-> > > > > > > > > iio_dev *indio_dev)
-> > > > > > > > >           if (!(indio_dev->currentmode &
-> > > > > > > > > INDIO_ALL_TRIGGERED_MODES))
-> > > > > > > > >                   return -EINVAL;
-> > > > > > > > >
-> > > > > > > > > +     ret = iio_triggered_buffer_postenable(indio_dev);
-> > > > > > > > > +     if (ret)
-> > > > > > > > > +             return ret;
-> > > > > > > > > +
-> > > > > > > > >           /* we continue with the triggered buffer */
-> > > > > > > > >           ret = at91_adc_dma_start(indio_dev);
-> > > > > > > > >           if (ret) {
-> > > > > > > > >                   dev_err(&indio_dev->dev, "buffer
-> > > > > > > > > postenable
-> > > > > > > > > failed\n");
-> > > > > > > > > +             iio_triggered_buffer_predisable(indio_dev);
-> > > > > > > > >                   return ret;
-> > > > > > > > >           }
-> > > > > > > > >
-> > > > > > > > > -     return iio_triggered_buffer_postenable(indio_dev);
-> > > > > > > > > +     return 0;
-> > > > > > > > >      }
-> > > > > > > > >
-> > > > > > > > >      static int at91_adc_buffer_predisable(struct iio_dev
-> > > > > > > > > *indio_dev)
-> > > > > > > > >      {
-> > > > > > > > >           struct at91_adc_state *st = iio_priv(indio_dev);
-> > > > > > > > > -     int ret;
-> > > > > > > > >           u8 bit;
-> > > > > > > > >
-> > > > > > > > >           /* check if we are disabling triggered buffer or
-> > > > > > > > > the
-> > > > > > > > > touchscreen */
-> > > > > > > > > @@ -916,13 +920,8 @@ static int
-> > > > > > > > > at91_adc_buffer_predisable(struct
-> > > > > > > > > iio_dev
-> > > > > > > > > *indio_dev)
-> > > > > > > > >           if (!(indio_dev->currentmode &
-> > > > > > > > > INDIO_ALL_TRIGGERED_MODES))
-> > > > > > > > >                   return -EINVAL;
-> > > > > > > > >
-> > > > > > > > > -     /* continue with the triggered buffer */
-> > > > > > > > > -     ret = iio_triggered_buffer_predisable(indio_dev);
-> > > > > > > > > -     if (ret < 0)
-> > > > > > > > > -             dev_err(&indio_dev->dev, "buffer predisable
-> > > > > > > > > failed\n");
-> > > > > > > > > -
-> > > > > > > > >           if (!st->dma_st.dma_chan)
-> > > > > > > > > -             return ret;
-> > > > > > > > > +             goto out;
-> > > > > > > > >
-> > > > > > > > >           /* if we are using DMA we must clear registers
-> > > > > > > > > and end
-> > > > > > > > > DMA
-> > > > > > > > > */
-> > > > > > > > >           dmaengine_terminate_sync(st->dma_st.dma_chan);
-> > > > > > > > > @@ -949,7 +948,9 @@ static int
-> > > > > > > > > at91_adc_buffer_predisable(struct
-> > > > > > > > > iio_dev
-> > > > > > > > > *indio_dev)
-> > > > > > > > >
-> > > > > > > > >           /* read overflow register to clear possible
-> > > > > > > > > overflow
-> > > > > > > > > status
-> > > > > > > > > */
-> > > > > > > > >           at91_adc_readl(st, AT91_SAMA5D2_OVER);
-> > > > > > > > > -     return ret;
-> > > > > > > > > +
-> > > > > > > > > +out:
-> > > > > > >
-> > > > > > > I would prefer if this label is named with a function name
-> > > > > > > prefix,
-> > > > > > > otherwise 'out' is pretty generic and can collide with other
-> > > > > > > things
-> > > > > > > in
-> > > > > > > the file... I want to avoid having an out2 , out3 later if code
-> > > > > > > changes.
-> > > > > > >
-> > > > >
-> > > > > Sure.
-> > > > > Will do that.
-> > > > >
-> > > > > I did not bother much with these labels, because after applying
-> > > > > [u1],
-> > > > > some
-> > > > > of them [maybe all] should go away.
-> > > > >
-> > > > >
-> > > > > > > Thanks for the patch,
-> > > > > > > Eugen
-> > > > > > >
-> > > > > > > > > +     return iio_triggered_buffer_predisable(indio_dev);
-> > > > > > > > >      }
-> > > > > > > > >
-> > > > > > > > >      static const struct iio_buffer_setup_ops
-> > > > > > > > > at91_buffer_setup_ops =
-> > > > > > > > > {
-> > > > > > > > _______________________________________________
-> > > > > > > > linux-arm-kernel mailing list
-> > > > > > > > linux-arm-kernel@lists.infradead.org
-> > > > > > > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > > > > > > >
-> > > > > _______________________________________________
-> > > > > linux-arm-kernel mailing list
-> > > > > linux-arm-kernel@lists.infradead.org
-> > > > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > > > >
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
