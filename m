@@ -2,86 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7C5F112887
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 10:53:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71CBE11289D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 10:54:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=edDQDdoqifoK4rA/0AnzRrYcUMYNs1yf1YGT4lzyp9I=; b=MA+sjwyKZDdJ92
-	UE7fn0/ofqhdWh1BRNcCt5jNTFc6mR8O9wunR7miyaMG5ldSHFsIrc8jSMbsOCglTLuaHQ6t0goP6
-	sKhvgI9awjCgv3xR+GKXt6vWPRRATJ2yu2000dFIWGQFjvRdSSGmge0rhFSXQZHvqnC82yUUFcMqI
-	+A6ic+EKXExBU9AKprhbv8+JmfzYmcZFrdsFp9urkPUulc/JatuVZSMAnN3sSsN2Onie/HCeAz8oD
-	Y1jjHnrp4/BmeRVD7Q/y555oyT6fJyAmY+uysxB7qh6RWnbVaCoG77PfcIwIScuLHR7xWcueBQ9Q5
-	d4q/U6d+dqJqq1nCjwew==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=12FCnb+SgujR0Z1Dgg6D30jIwJMw9hcYQ3wNX9F9O7s=; b=M5o
+	blNAZhNp1sgnt9vaWsS1kEet1Yk9jwKnkxlTA1s2P9TiORddnf7AJWn3iooVqIzR34/cAnTE2Ce1l
+	hw9zyHZr580Q7w+CAqQzHPyG+7TOcotDUiLaUAW/oG6Fktr4xC8VUExbUE86LtsNw9X+WXkYEaM8+
+	rsw7DmTY+mVUXGWdAhpZSZGhTeWqZePZ3yLeiry2tyHO355ciFwma0S5ImJaqvAI79L+zOVkjphFY
+	7Pck8E/M/6dZCXxhzVM9CqLHM6e/0QLF5qh8M8bPfClYIoRcLVKKsMN5LxaqXnWcCeg+ulJsDCt2N
+	1ix9WD5EeEHB8eFWyVjrGLlfH37IuYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icRL1-0003ZC-Kn; Wed, 04 Dec 2019 09:52:51 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1icRMa-0003vw-74; Wed, 04 Dec 2019 09:54:28 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icRJu-0002Xq-M5
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 09:51:44 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id l4so2788190pjt.5
+ id 1icRMP-0003v7-SC
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 09:54:19 +0000
+Received: by mail-pl1-x643.google.com with SMTP id ay6so2969248plb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 01:51:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=odZi1IR9XnidejlBLuktGXZN6VtsiVWqqzPx3lEfMLA=;
- b=EZITHQSpFxAZT7usbVviH2ml3EM4eJuEr7wGxBmMQMA542RB044GTT2Yfvi31fwPwj
- 0szsqeoYyhxci7N4M1Q8L0voTsmAW210qZPrEg0GKU69+SF68UoL/sS8ok1AW0Cn2Zpy
- 7bIjXY2Hv/Rpzi4bcL8w+rAupBSHi5cl5zGiAXFm6rjf5yQrjiYzyMD5RlkRWn7i4Fbd
- 1syMeTlE/RV8VAozHm2/S4ZV9QQsZTbIyxXL/iVugxJe/yBaLLgMOuxXKFIeX5A4hW6S
- ibbg7jddnoyTowI1oGoAQG4iJt1w13W3TQsEC9aRwZB6bFOEkffLKZ/OzJqbjp94o+rG
- AQ4Q==
+ Wed, 04 Dec 2019 01:54:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=sy0TPVo2jYoLirOgnD0I5TlsFYusUGHr86X3IrbRM40=;
+ b=jkobSOBwsTsp2VlFUJmtvhD8RQntjjl4FzcEViOOz1/cDyieTGtkwGd/ljvQH9vaRQ
+ 4mpmbSOlS7RVfutVY5OB/EJFLV/Ca0P6LDC0J6nStZf0JMn0BD7FhBWxiiCH9he1NWvp
+ rdc8S0j8+qTa8+HCfQZOI3BoWy5lQB4lt/72qAiaJO14mt6HIdS2Ji2Bn0gD4iOwJbF1
+ UN3poic2F4bR+qxO7CLO3CjC+GEeMm4/osXgDX0gkVinxe/NvB6Cf30IH8C6FwlpamXv
+ mDDzjMAPHK92PMd1uvekFEad8qhtBbxvkqQy4xJ9ll6hUJTzRy3xN9j3Nu23kUFckVJj
+ OueA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=odZi1IR9XnidejlBLuktGXZN6VtsiVWqqzPx3lEfMLA=;
- b=h71a4S4JyFSa/rTRbgM7f4ZzhPKBlD0sN9i6edCtCo0foQ0jfhLVkD+5QU3TcRlpS4
- ezc9sJ4hF/sTut5Pxg8CLljvPYmvdbJgtY/CrI1huUmJ1zWtmHe8YJASb7Ke6Zm0xxgV
- KLed2TDZpsnTGp3WKH3t49NPIjRqM5S0/enj2sohQNzHphes68KdMzwTwr1iYm5ustwo
- BArzGE12v0oGQetevEMhNxtdamw/rb6oemcZfdvN1+fwnM2NTDx5n4Bswul3Ni+8VGfR
- 2tNEgE+VV8Rlj3OBfbj/L4FArhqQn7ucLHew7/26FtJsuOyIPeJlPw4hbTERVG2H68G2
- Alow==
-X-Gm-Message-State: APjAAAXIEIFeuP5X1niTYOxLL9eAv2I5SYLp5eVsRhFDymshKVs1OHfi
- miP0hF8KdN0guuLdM136GaO5WQ==
-X-Google-Smtp-Source: APXvYqyY9INZ1vv31aECkzfh918+GS1MGdepYxOYtRHcgrBPgrxoBps2q3Bn16LMv/xK/VTVlgWi5w==
-X-Received: by 2002:a17:90a:19dd:: with SMTP id
- 29mr2442390pjj.32.1575453101867; 
- Wed, 04 Dec 2019 01:51:41 -0800 (PST)
-Received: from localhost ([122.171.112.123])
- by smtp.gmail.com with ESMTPSA id u5sm6865104pfm.115.2019.12.04.01.51.40
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 04 Dec 2019 01:51:40 -0800 (PST)
-Date: Wed, 4 Dec 2019 15:21:38 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [TEGRA194_CPUFREQ Patch 1/3] firmware: tegra: adding function to
- get BPMP data
-Message-ID: <20191204095138.rrul5vxnkprfwmku@vireshk-i7>
-References: <1575394348-17649-1-git-send-email-sumitg@nvidia.com>
- <20191203174229.GA1721849@ulmo>
- <9404232d-84ce-a117-89dd-f2d8de80993e@kapsi.fi>
- <20191204091703.d32to5omdm3eynon@vireshk-i7>
- <20191204093339.GA2784830@ulmo>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191204093339.GA2784830@ulmo>
-User-Agent: NeoMutt/20180716-391-311a52
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=sy0TPVo2jYoLirOgnD0I5TlsFYusUGHr86X3IrbRM40=;
+ b=P/SuRWw3yCi+PNcls7e7iYlkd/WW7jcX/CBpPqOtT7pswZCJCodVaRin/G41TwZ35U
+ KPAIXDGiQailwPGKtYBynnaT5Ej32J97WLNK3ehEHlrUwtV64sJCbcoMzJAtdQxhLNt8
+ wnqZ9D0kVi8XdJDHHCDWNb+0dCNbIK4BwS2zrbkcFG6/ZVE+RMd4fzid+UsbGeru5UXK
+ h/Dj0aAAyBHAOeJ/3nTGHrbV3+eMig2F+LXufEHb7l7py3vZrofhJ3+FWhgbtdo+4EN3
+ D+7P0e8NMKTLh8KonKoX3O+8fWbDfkhtz6SNCQ36LBwUo9Orqdz1fAd9fGGEvww6hv7n
+ 7lrQ==
+X-Gm-Message-State: APjAAAVUZMCRSpMSTe/F+3TEtjYA/Dt9Enln+BNZkQbN/wkvQrXEn3X/
+ naFAmE1py84D69cwifzBTDgTjrY9
+X-Google-Smtp-Source: APXvYqxo3ED3pddFuvzNz/kwQfbUAJnhiSak+AuYf3/mHFipcLJYTWEitA6+QsXxaIQk3P8mDxqRXw==
+X-Received: by 2002:a17:902:b48d:: with SMTP id
+ y13mr2561717plr.195.1575453256706; 
+ Wed, 04 Dec 2019 01:54:16 -0800 (PST)
+Received: from baolinwangubtpc.spreadtrum.com ([117.18.48.82])
+ by smtp.gmail.com with ESMTPSA id k101sm5941687pjb.5.2019.12.04.01.54.14
+ (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Wed, 04 Dec 2019 01:54:16 -0800 (PST)
+From: Baolin Wang <baolin.wang7@gmail.com>
+To: ohad@wizery.com,
+	bjorn.andersson@linaro.org,
+	baohua@kernel.org
+Subject: [PATCH 0/3] Some improvements for SIRF hwspinlock
+Date: Wed,  4 Dec 2019 17:53:30 +0800
+Message-Id: <cover.1575452516.git.baolin.wang7@gmail.com>
+X-Mailer: git-send-email 1.7.9.5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_015142_774228_BEC62C48 
-X-CRM114-Status: GOOD (  17.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191204_015417_906960_67D84BA3 
+X-CRM114-Status: UNSURE (   7.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (baolin.wang7[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (baolin.wang7[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -100,49 +99,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bbasu@nvidia.com, Mikko Perttunen <cyndis@kapsi.fi>,
- linux-pm@vger.kernel.org, catalin.marinas@arm.com, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, jonathanh@nvidia.com, talho@nvidia.com,
- devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-tegra@vger.kernel.org, Sumit Gupta <sumitg@nvidia.com>,
- mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: baolin.wang7@gmail.com, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04-12-19, 10:33, Thierry Reding wrote:
-> Yeah, the code that registers this device is in drivers/base/cpu.c in
-> register_cpu(). It even retrieves the device tree node for the CPU from
-> device tree and stores it in cpu->dev.of_node, so we should be able to
-> just pass &cpu->dev to tegra_bpmp_get() in order to retrieve a reference
-> to the BPMP.
-> 
-> That said, I'm wondering if perhaps we could just add a compatible
-> string to the /cpus node for cases like this where we don't have an
-> actual device representing the CPU complex. There are a number of CPU
-> frequency drivers that register dummy devices just so that they have
-> something to bind a driver to.
-> 
-> If we allow the /cpus node to represent the CPU complex (if no other
-> "device" does that yet), we can add a compatible string and have the
-> cpufreq driver match on that.
-> 
-> Of course this would be slightly difficult to retrofit into existing
-> drivers because they'd need to remain backwards compatible with existing
-> device trees. But it would allow future drivers to do this a little more
-> elegantly. For some SoCs this may not matter, but especially once you
-> start depending on additional resources this would come in handy.
-> 
-> Adding Rob and the device tree mailing list for feedback on this idea.
+This patch set did some improvements for the SIRF hwspinlock driver,
+including changing to use devm_xxx APIs and removing some redundant
+pm runtime functions.
 
-Took some time to find this thread, but something around this was
-suggested by Rafael earlier.
+Baolin Wang (3):
+  hwspinlock: sirf: Change to use devm_platform_ioremap_resource()
+  hwspinlock: sirf: Remove redundant PM runtime functions
+  hwspinlock: sirf: Use devm_hwspin_lock_register() to register hwlock
+    controller
 
-https://lore.kernel.org/lkml/8139001.Q4eV8YG1Il@vostro.rjw.lan/
+ drivers/hwspinlock/sirf_hwspinlock.c |   46 ++++++----------------------------
+ 1 file changed, 7 insertions(+), 39 deletions(-)
 
 -- 
-viresh
+1.7.9.5
+
 
 _______________________________________________
 linux-arm-kernel mailing list
