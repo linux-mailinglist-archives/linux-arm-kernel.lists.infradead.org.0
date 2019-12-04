@@ -2,54 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97787112395
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 08:28:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45EB911239C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 08:31:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QyofYkVZqFCukTLd+M1miJiiLeX+3GRiN3oitF5XwM0=; b=WExywn0Zn6jjOq
-	DphnQSoDtztsyIjK1BJZvn8jPxKRLPcTwojZ8AjGRcBG0dVV4X/QbyaTyxWIYodNUUqm9ORnD51gA
-	7f22KlPsw+49Xmecek6WMsNZrE+XdUu+DIFNi+Vajc9qcJI6MB5GP4MFccASbteNIz5tn1R1VXRYG
-	FDaJLFB7URfoJOTpag8TV43GzR+FNdWBCRukr90xatBIDyG6ZDHm9EauY8AH+Egx7oWFFnMKjvW8p
-	Gq+sImvNtIwyG8XE+FOy8vGq97yVMBiItPBnh8Gl4pzdcfHnx82TLly4njZJ0naIKPrLxJJTfLqmg
-	uWWZkm1NsrobdkAzyG3w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WvLAsT3nAMEF12XyU1MSZ0suvzOKmr+qMMDlpGkC2/4=; b=UAWQwcFYyzsyVq
+	Ax1y3PYB155wjQYlB4Z5uBoU368+or+TUd1JB8rYq9yIxQuKZQR4Q3/+tOKhQHSOuFIJJpZ0L0tEv
+	IjkF0SltBNX6Uzq4gZszO+6gVV1DsqEEzTSDl3ldLi9Bunsr9DGMseHxEBIyNUU4kh2BrZ6JbxFCY
+	AiE4TJOwZq1yfZ2/GiNLmjTJy2QZ2lYgHetoW50Otp63RY5SFqbye9iyG6wrnFQeOM8dDah7Bd5gI
+	9kh00097Azta8s05JfiW06SjDCat3wYnJFuEf7OS/uJFQUwvZJ4o8JP5433LggWZ4Rl5ec2fMQIXR
+	7AGrv9EBuB0RL06V2rpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icP5Q-0000eg-8t; Wed, 04 Dec 2019 07:28:36 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1icP7s-0002JT-7Y; Wed, 04 Dec 2019 07:31:08 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icP5J-0000dv-1J; Wed, 04 Dec 2019 07:28:30 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 349DBACA5;
- Wed,  4 Dec 2019 07:28:27 +0000 (UTC)
-Subject: Re: perf record doesn't work on rtd129x SoC
-To: Wang YanQing <udknight@gmail.com>
-References: <20191204045559.GA10458@udknight>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <f90748d0-8112-3aa8-0c88-e35a8d6e72d3@suse.de>
-Date: Wed, 4 Dec 2019 08:28:26 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1icP7j-0002If-FR; Wed, 04 Dec 2019 07:31:01 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id D9EB019BD49D9D2B1B99;
+ Wed,  4 Dec 2019 15:30:54 +0800 (CST)
+Received: from localhost.localdomain.localdomain (10.175.113.25) by
+ DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
+ 14.3.439.0; Wed, 4 Dec 2019 15:30:44 +0800
+From: Mao Wenan <maowenan@huawei.com>
+To: <eddie.huang@mediatek.com>, <sean.wang@mediatek.com>,
+ <a.zummo@towertech.it>, <alexandre.belloni@bootlin.com>,
+ <matthias.bgg@gmail.com>, <dan.carpenter@oracle.com>
+Subject: [PATCH v2 -next] rtc: mt6397: drop free_irq of devm_xx allocated irq
+Date: Wed, 4 Dec 2019 15:28:26 +0800
+Message-ID: <20191204072826.117432-1-maowenan@huawei.com>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191204063444.GF1765@kadam>
+References: <20191204063444.GF1765@kadam>
 MIME-Version: 1.0
-In-Reply-To: <20191204045559.GA10458@udknight>
-Content-Language: en-US
+X-Originating-IP: [10.175.113.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_232829_223225_E8975DC1 
-X-CRM114-Status: GOOD (  14.82  )
+X-CRM114-CacheID: sfid-20191203_233059_702641_BFF7811E 
+X-CRM114-Status: UNSURE (   7.60  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,45 +65,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-realtek-soc@lists.infradead.org,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- linux-soc@vger.kernel.org,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-rtc@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Mao Wenan <maowenan@huawei.com>,
+ Hulk Robot <hulkci@huawei.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgWWFuUWluZywKCisgTEFLTUwgKyBNYXJrICsgV2lsbAoKQW0gMDQuMTIuMTkgdW0gMDU6NTUg
-c2NocmllYiBXYW5nIFlhblFpbmc6Cj4gSSB1c2UgInBlcmYgcmVjb3JkIiB0byBkZWJ1ZyBwZXJm
-b3JtYW5jZSBpc3N1ZSBvbiBSVEQxMjk2IFNPQywgaXQgZG9lcyd0IHdvcmssIGJ1dAo+IHRoZSAi
-cGVyZiBzdGF0IiBpcyBvayEKClRoYW5rcyBmb3IgdGhlIHJlcG9ydCAtIHdoaWNoIGJvYXJkLCBi
-cmFuY2ggYW5kIChiYXNlKSB0YWcgYXJlIHlvdQp0ZXN0aW5nIGFnYWluc3Q/IEFuZCBhcmUgeW91
-IGJ1aWxkaW5nIHBlcmYgeW91cnNlbGYgZnJvbSBrZXJuZWwgc291cmNlcywKb3IgYXJlIHlvdSB1
-c2luZyBzb21lIGRpc3RybyBwYWNrYWdlPwoKSSBvbmx5IGhhdmUgQnVzeWJveCBpbiBteSBpbml0
-cmQgb24gRFM0MTg7IEkgaGF2ZSBub3QgdGVzdGVkIHBlcmYuCgo+IEFmdGVyIHNvbWUgZGlnIGlu
-IHRoZSBrZXJuZWwsIEkgZmluZCB0aGUgcmVhc29uIGlzIG5vIHBtdSBvdmVyZmxvdyBpbnRlcnJ1
-cHQsIEkgdGhpbmsKPiBiZWxvdyBwbXUgY29uZmlndXJhdGlvbiBpc24ndCByaWdodCBmb3IgUlRE
-MTI5NjoKPiAiCj4gICAgICAgICBhcm1fcG11OiBhcm0tcG11IHsKPiAgICAgICAgICAgICAgICAg
-Y29tcGF0aWJsZSA9ICJhcm0sY29ydGV4LWE1My1wbXUiOwo+ICAgICAgICAgICAgICAgICBpbnRl
-cnJ1cHRzID0gPEdJQ19TUEkgNDggSVJRX1RZUEVfTEVWRUxfSElHSD47Cj4gICAgICAgICB9Owo+
-ICIKPiAKPiBXZSBuZWVkIDQgUE1VIFNQSSBmb3IgUlREMTI5NiAoNCBjb3JlcyksIGFuZCBJIGd1
-ZXNzIHRoZSA0OCBpc24ndCByaWdodCB0b28uCgpOb3RlIHRoYXQgYWJvdmUgcnRkMTI5eC5kdHNp
-IHNuaXBwZXQgaXMgbm90IGNvbXBsZXRlLiBTZWUgcnRkMTI5Ni5kdHNpOgoKJmFybV9wbXUgewoJ
-aW50ZXJydXB0LWFmZmluaXR5ID0gPCZjcHUwPiwgPCZjcHUxPiwgPCZjcHUyPiwgPCZjcHUzPjsK
-fTsKCjQ4IGFuZCBoaWdoLzQgbWF0Y2ggd2hhdCBJIHNlZSBpbiB0aGUgbGF0ZXN0IEJTUDoKCmh0
-dHBzOi8vZ2l0aHViLmNvbS9CUEktU0lOT1ZPSVAvQlBJLU00LWJzcC9ibG9iL21hc3Rlci9saW51
-eC1ydGsvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEyOXgvcnRkLTEyOTYuZHRzaSNM
-MTE2Cgo+IEFueSBzdWdnZXN0aW9uIGlzIHdlbGNvbWUuCj4gCj4gVGhhbmtzIQoKVGhlIG9ubHkg
-ZGlmZmVyZW5jZSBJIHNlZSBpcyAiYXJtLGNvcnRleC1hNTMtcG11IiB2cy4gImFybSxhcm12OC1w
-bXV2MyIuCkJ5IG15IHJlYWRpbmcgb2YgYXJjaC9hcm02NC9rZXJuZWwvcGVyZl9ldmVudC5jIHRo
-ZSBvbmx5IGRpZmZlcmVuY2UKYmV0d2VlbiB0aGUgdHdvIHNob3VsZCBiZSB0aGUgbmFtZSBhbmQg
-YW4gZXh0cmEgY2FjaGVfbWFwLiBZb3UgY291bGQgdHJ5CnRoZSBvdGhlciBjb21wYXRpYmxlIHN0
-cmluZyBpbiB5b3VyIC5kdHMsIGJ1dCBJIGRvdWJ0IGl0J2xsIGhlbHAuCgpIb3BlZnVsbHkgdGhl
-IFJlYWx0ZWsgb3IgQXJtIGd1eXMgY2FuIHNoZWQgc29tZSBsaWdodC4KClJlZ2FyZHMsCkFuZHJl
-YXMKCi0tIApTVVNFIFNvZnR3YXJlIFNvbHV0aW9ucyBHZXJtYW55IEdtYkgKTWF4ZmVsZHN0ci4g
-NSwgOTA0MDkgTsO8cm5iZXJnLCBHZXJtYW55CkdGOiBGZWxpeCBJbWVuZMO2cmZmZXIKSFJCIDM2
-ODA5IChBRyBOw7xybmJlcmcpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+rtc->irq is requested by devm_request_threaded_irq,
+and request_threaded_irq. IRQs requested with this
+function will be automatically freed on driver detach.
+This patch remove unused error label as well.
+
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: Mao Wenan <maowenan@huawei.com>
+---
+ v2: remove error label as Dan Carpenter suggest.
+ drivers/rtc/rtc-mt6397.c | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
+index 5249fc99fd5f..14f3c4915260 100644
+--- a/drivers/rtc/rtc-mt6397.c
++++ b/drivers/rtc/rtc-mt6397.c
+@@ -287,13 +287,6 @@ static int mtk_rtc_probe(struct platform_device *pdev)
+ 	rtc->rtc_dev->ops = &mtk_rtc_ops;
+ 
+ 	ret = rtc_register_device(rtc->rtc_dev);
+-	if (ret)
+-		goto out_free_irq;
+-
+-	return 0;
+-
+-out_free_irq:
+-	free_irq(rtc->irq, rtc);
+ 	return ret;
+ }
+ 
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
