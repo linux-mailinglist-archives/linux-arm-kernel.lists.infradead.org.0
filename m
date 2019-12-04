@@ -2,59 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78E1A112DB4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 15:46:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 807AA112DC5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 15:51:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tR6IqcyLTts6/wXXkRPqzYq21/I55D5rMyyZjWck/ds=; b=pOtBTjbU2tBegJ
-	WK1tzhewPdvlNISLXnnAA9unBgjsEdUcdRmgomOTGwz/YyIU9spvvfzpmdn/TKKOTTEbEYLcByqgB
-	5ovHG7V5Fzd1bdoctzWxZpdbJ/rskI2qccT1dYlqHRXaRvtUvswaHcR/4pfCnK6Zikvg5cwtA9erq
-	DAqVYPg0txsHd+uAWqFORfVUo3IfD1mDhVWMyL4yGmjEP7xcH0Y3YRJ623YXOnlIxwe3qna2cqbaA
-	MZrJdQY3dVeaUMyD3rESoCfv7IoSNFPckNsvJNRAr6sO4wWLArbq4k0ud8AFSbHI6QFb++89H55xO
-	mmRHV8pecY+n4fP7FgMQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=uWTeViw/08bbLvBk1XP0lnFfGwsRbcQJA0bcNRufdzI=; b=hSc5fdlKQ/IsMbu1kM1DN3M5J
+	nOw8Zu3Yrv7Jp4xUaQBui6pe3IZJRlBXG9aUbmoVaxhLVNyVMSATbv+aGBb6WyddTBmesd6eFmiNX
+	fxXY6L16hdKcEkUoggd9izX5Z8521M9bdhirJOS68Gm0hmPrskDMhOrbG2N2Z7RU8fz+BchkZptM3
+	AmWkefUS/rV3aTd7JS9dyPGoqlLwAo+G5ribxDPKnJl3HxUl7F2+5u0NRcg++7ywweZ1cXi5c7HSf
+	xWtd+Zm8PK2aTPHucDY7IiE4PyyFm8AkuLp4y2v62Pd7WbfM8RugJ+X7q0NPyeZozymsQWPVLPIlB
+	71XpaQSog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icVvY-0004Pf-It; Wed, 04 Dec 2019 14:46:52 +0000
-Received: from mga04.intel.com ([192.55.52.120])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icVvP-0004Os-UH
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 14:46:45 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 04 Dec 2019 06:46:43 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,277,1571727600"; d="scan'208";a="208830167"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga008.fm.intel.com with ESMTP; 04 Dec 2019 06:46:42 -0800
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1icVvN-000GdG-RA; Wed, 04 Dec 2019 22:46:41 +0800
-Date: Wed, 4 Dec 2019 22:46:34 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: [arm:cex7 71/84] drivers/net/dsa/mt7530.c:1357:57: sparse: sparse:
- incorrect type in argument 2 (different base types)
-Message-ID: <201912042232.wVMDzon1%lkp@intel.com>
+	id 1icW0C-0006ex-Hk; Wed, 04 Dec 2019 14:51:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1icW05-0006e4-4a; Wed, 04 Dec 2019 14:51:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E56031FB;
+ Wed,  4 Dec 2019 06:51:30 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9C0573F52E;
+ Wed,  4 Dec 2019 06:51:26 -0800 (PST)
+Subject: Re: perf record doesn't work on rtd129x SoC
+From: Robin Murphy <robin.murphy@arm.com>
+To: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>,
+ Wang YanQing <udknight@gmail.com>
+References: <20191204045559.GA10458@udknight>
+ <f90748d0-8112-3aa8-0c88-e35a8d6e72d3@suse.de>
+ <1b2d2bc3-afcf-02c3-ccd6-e2a227c23fd3@arm.com>
+Message-ID: <b9788139-d2cb-9ed4-e887-04651968e5b1@arm.com>
+Date: Wed, 4 Dec 2019 14:51:24 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <1b2d2bc3-afcf-02c3-ccd6-e2a227c23fd3@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_064643_990016_6EE85D78 
-X-CRM114-Status: GOOD (  12.21  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191204_065133_222234_8B773D40 
+X-CRM114-Status: GOOD (  17.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,183 +63,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <rmk+kernel@armlinux.org.uk>, kbuild-all@lists.01.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-realtek-soc@lists.infradead.org,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ linux-soc@vger.kernel.org,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree:   git://git.armlinux.org.uk/~rmk/linux-arm.git cex7
-head:   ec23eefa195e352e11a7289aeaeee478f3e42d47
-commit: 64f322c951364f5d3b2d4acd5f5a8ed4c1745349 [71/84] net: of_get_phy_mode: Change API to solve int/unit warnings
-reproduce:
-        # apt-get install sparse
-        # sparse version: v0.6.1-91-g817270f-dirty
-        git checkout 64f322c951364f5d3b2d4acd5f5a8ed4c1745349
-        make ARCH=x86_64 allmodconfig
-        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
-
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
-
-
-sparse warnings: (new ones prefixed by >>)
-
->> drivers/net/dsa/mt7530.c:1357:57: sparse: sparse: incorrect type in argument 2 (different base types) @@    expected unsigned int enum phy_interface_t [usertype] *interface @@    got unsigned int enum phy_inunsigned int enum phy_interface_t [usertype] *interface @@
->> drivers/net/dsa/mt7530.c:1357:57: sparse:    expected unsigned int enum phy_interface_t [usertype] *interface
->> drivers/net/dsa/mt7530.c:1357:57: sparse:    got unsigned int enum phy_interface_t [addressable] [assigned] [usertype] interface
->> drivers/net/dsa/mt7530.c:1357:57: sparse: sparse: non size-preserving integer to pointer cast
-
-vim +1357 drivers/net/dsa/mt7530.c
-
-  1238	
-  1239	static int
-  1240	mt7530_setup(struct dsa_switch *ds)
-  1241	{
-  1242		struct mt7530_priv *priv = ds->priv;
-  1243		struct device_node *phy_node;
-  1244		struct device_node *mac_np;
-  1245		struct mt7530_dummy_poll p;
-  1246		phy_interface_t interface;
-  1247		struct device_node *dn;
-  1248		u32 id, val;
-  1249		int ret, i;
-  1250	
-  1251		/* The parent node of master netdev which holds the common system
-  1252		 * controller also is the container for two GMACs nodes representing
-  1253		 * as two netdev instances.
-  1254		 */
-  1255		dn = ds->ports[MT7530_CPU_PORT].master->dev.of_node->parent;
-  1256	
-  1257		if (priv->id == ID_MT7530) {
-  1258			priv->ethernet = syscon_node_to_regmap(dn);
-  1259			if (IS_ERR(priv->ethernet))
-  1260				return PTR_ERR(priv->ethernet);
-  1261	
-  1262			regulator_set_voltage(priv->core_pwr, 1000000, 1000000);
-  1263			ret = regulator_enable(priv->core_pwr);
-  1264			if (ret < 0) {
-  1265				dev_err(priv->dev,
-  1266					"Failed to enable core power: %d\n", ret);
-  1267				return ret;
-  1268			}
-  1269	
-  1270			regulator_set_voltage(priv->io_pwr, 3300000, 3300000);
-  1271			ret = regulator_enable(priv->io_pwr);
-  1272			if (ret < 0) {
-  1273				dev_err(priv->dev, "Failed to enable io pwr: %d\n",
-  1274					ret);
-  1275				return ret;
-  1276			}
-  1277		}
-  1278	
-  1279		/* Reset whole chip through gpio pin or memory-mapped registers for
-  1280		 * different type of hardware
-  1281		 */
-  1282		if (priv->mcm) {
-  1283			reset_control_assert(priv->rstc);
-  1284			usleep_range(1000, 1100);
-  1285			reset_control_deassert(priv->rstc);
-  1286		} else {
-  1287			gpiod_set_value_cansleep(priv->reset, 0);
-  1288			usleep_range(1000, 1100);
-  1289			gpiod_set_value_cansleep(priv->reset, 1);
-  1290		}
-  1291	
-  1292		/* Waiting for MT7530 got to stable */
-  1293		INIT_MT7530_DUMMY_POLL(&p, priv, MT7530_HWTRAP);
-  1294		ret = readx_poll_timeout(_mt7530_read, &p, val, val != 0,
-  1295					 20, 1000000);
-  1296		if (ret < 0) {
-  1297			dev_err(priv->dev, "reset timeout\n");
-  1298			return ret;
-  1299		}
-  1300	
-  1301		id = mt7530_read(priv, MT7530_CREV);
-  1302		id >>= CHIP_NAME_SHIFT;
-  1303		if (id != MT7530_ID) {
-  1304			dev_err(priv->dev, "chip %x can't be supported\n", id);
-  1305			return -ENODEV;
-  1306		}
-  1307	
-  1308		/* Reset the switch through internal reset */
-  1309		mt7530_write(priv, MT7530_SYS_CTRL,
-  1310			     SYS_CTRL_PHY_RST | SYS_CTRL_SW_RST |
-  1311			     SYS_CTRL_REG_RST);
-  1312	
-  1313		/* Enable Port 6 only; P5 as GMAC5 which currently is not supported */
-  1314		val = mt7530_read(priv, MT7530_MHWTRAP);
-  1315		val &= ~MHWTRAP_P6_DIS & ~MHWTRAP_PHY_ACCESS;
-  1316		val |= MHWTRAP_MANUAL;
-  1317		mt7530_write(priv, MT7530_MHWTRAP, val);
-  1318	
-  1319		priv->p6_interface = PHY_INTERFACE_MODE_NA;
-  1320	
-  1321		/* Enable and reset MIB counters */
-  1322		mt7530_mib_reset(ds);
-  1323	
-  1324		mt7530_clear(priv, MT7530_MFC, UNU_FFP_MASK);
-  1325	
-  1326		for (i = 0; i < MT7530_NUM_PORTS; i++) {
-  1327			/* Disable forwarding by default on all ports */
-  1328			mt7530_rmw(priv, MT7530_PCR_P(i), PCR_MATRIX_MASK,
-  1329				   PCR_MATRIX_CLR);
-  1330	
-  1331			if (dsa_is_cpu_port(ds, i))
-  1332				mt7530_cpu_port_enable(priv, i);
-  1333			else
-  1334				mt7530_port_disable(ds, i);
-  1335		}
-  1336	
-  1337		/* Setup port 5 */
-  1338		priv->p5_intf_sel = P5_DISABLED;
-  1339		interface = PHY_INTERFACE_MODE_NA;
-  1340	
-  1341		if (!dsa_is_unused_port(ds, 5)) {
-  1342			priv->p5_intf_sel = P5_INTF_SEL_GMAC5;
-  1343			of_get_phy_mode(ds->ports[5].dn, &interface);
-  1344		} else {
-  1345			/* Scan the ethernet nodes. look for GMAC1, lookup used phy */
-  1346			for_each_child_of_node(dn, mac_np) {
-  1347				if (!of_device_is_compatible(mac_np,
-  1348							     "mediatek,eth-mac"))
-  1349					continue;
-  1350	
-  1351				ret = of_property_read_u32(mac_np, "reg", &id);
-  1352				if (ret < 0 || id != 1)
-  1353					continue;
-  1354	
-  1355				phy_node = of_parse_phandle(mac_np, "phy-handle", 0);
-  1356				if (phy_node->parent == priv->dev->of_node->parent) {
-> 1357					of_get_phy_mode(mac_np, interface);
-  1358					id = of_mdio_parse_addr(ds->dev, phy_node);
-  1359					if (id == 0)
-  1360						priv->p5_intf_sel = P5_INTF_SEL_PHY_P0;
-  1361					if (id == 4)
-  1362						priv->p5_intf_sel = P5_INTF_SEL_PHY_P4;
-  1363				}
-  1364				of_node_put(phy_node);
-  1365				break;
-  1366			}
-  1367		}
-  1368	
-  1369		mt7530_setup_port5(ds, interface);
-  1370	
-  1371		/* Flush the FDB table */
-  1372		ret = mt7530_fdb_cmd(priv, MT7530_FDB_FLUSH, NULL);
-  1373		if (ret < 0)
-  1374			return ret;
-  1375	
-  1376		return 0;
-  1377	}
-  1378	
-
----
-0-DAY kernel test infrastructure                 Open Source Technology Center
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDQvMTIvMjAxOSAxMToyMCBhbSwgUm9iaW4gTXVycGh5IHdyb3RlOgo+IE9uIDIwMTktMTIt
+MDQgNzoyOCBhbSwgQW5kcmVhcyBGw6RyYmVyIHdyb3RlOgo+PiBIaSBZYW5RaW5nLAo+Pgo+PiAr
+IExBS01MICsgTWFyayArIFdpbGwKPj4KPj4gQW0gMDQuMTIuMTkgdW0gMDU6NTUgc2NocmllYiBX
+YW5nIFlhblFpbmc6Cj4+PiBJIHVzZSAicGVyZiByZWNvcmQiIHRvIGRlYnVnIHBlcmZvcm1hbmNl
+IGlzc3VlIG9uIFJURDEyOTYgU09DLCBpdCAKPj4+IGRvZXMndCB3b3JrLCBidXQKPj4+IHRoZSAi
+cGVyZiBzdGF0IiBpcyBvayEKPj4KPj4gVGhhbmtzIGZvciB0aGUgcmVwb3J0IC0gd2hpY2ggYm9h
+cmQsIGJyYW5jaCBhbmQgKGJhc2UpIHRhZyBhcmUgeW91Cj4+IHRlc3RpbmcgYWdhaW5zdD8gQW5k
+IGFyZSB5b3UgYnVpbGRpbmcgcGVyZiB5b3Vyc2VsZiBmcm9tIGtlcm5lbCBzb3VyY2VzLAo+PiBv
+ciBhcmUgeW91IHVzaW5nIHNvbWUgZGlzdHJvIHBhY2thZ2U/Cj4+Cj4+IEkgb25seSBoYXZlIEJ1
+c3lib3ggaW4gbXkgaW5pdHJkIG9uIERTNDE4OyBJIGhhdmUgbm90IHRlc3RlZCBwZXJmLgo+Pgo+
+Pj4gQWZ0ZXIgc29tZSBkaWcgaW4gdGhlIGtlcm5lbCwgSSBmaW5kIHRoZSByZWFzb24gaXMgbm8g
+cG11IG92ZXJmbG93IAo+Pj4gaW50ZXJydXB0LCBJIHRoaW5rCj4+PiBiZWxvdyBwbXUgY29uZmln
+dXJhdGlvbiBpc24ndCByaWdodCBmb3IgUlREMTI5NjoKPj4+ICIKPj4+IMKgwqDCoMKgwqDCoMKg
+wqAgYXJtX3BtdTogYXJtLXBtdSB7Cj4+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oCBjb21wYXRpYmxlID0gImFybSxjb3J0ZXgtYTUzLXBtdSI7Cj4+PiDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCBpbnRlcnJ1cHRzID0gPEdJQ19TUEkgNDggSVJRX1RZUEVfTEVWRUxf
+SElHSD47Cj4+PiDCoMKgwqDCoMKgwqDCoMKgIH07Cj4+PiAiCj4+Pgo+Pj4gV2UgbmVlZCA0IFBN
+VSBTUEkgZm9yIFJURDEyOTYgKDQgY29yZXMpLCBhbmQgSSBndWVzcyB0aGUgNDggaXNuJ3QgCj4+
+PiByaWdodCB0b28uCj4+Cj4+IE5vdGUgdGhhdCBhYm92ZSBydGQxMjl4LmR0c2kgc25pcHBldCBp
+cyBub3QgY29tcGxldGUuIFNlZSBydGQxMjk2LmR0c2k6Cj4+Cj4+ICZhcm1fcG11IHsKPj4gwqDC
+oMKgwqBpbnRlcnJ1cHQtYWZmaW5pdHkgPSA8JmNwdTA+LCA8JmNwdTE+LCA8JmNwdTI+LCA8JmNw
+dTM+Owo+PiB9Owo+IAo+IFRoYXQgZG9lc24ndCBoZWxwIG11Y2gsIHNpbmNlIDQgYWZmaW5pdGll
+cyBmb3Igb25lIFNQSSBpcyByYXRoZXIgCj4gbm9uc2Vuc2ljYWwuCj4gCj4+IDQ4IGFuZCBoaWdo
+LzQgbWF0Y2ggd2hhdCBJIHNlZSBpbiB0aGUgbGF0ZXN0IEJTUDoKPj4KPj4gaHR0cHM6Ly9naXRo
+dWIuY29tL0JQSS1TSU5PVk9JUC9CUEktTTQtYnNwL2Jsb2IvbWFzdGVyL2xpbnV4LXJ0ay9hcmNo
+L2FybTY0L2Jvb3QvZHRzL3JlYWx0ZWsvcnRkMTI5eC9ydGQtMTI5Ni5kdHNpI0wxMTYgCj4+Cj4+
+Cj4+PiBBbnkgc3VnZ2VzdGlvbiBpcyB3ZWxjb21lLgo+Pj4KPj4+IFRoYW5rcyEKPj4KPj4gVGhl
+IG9ubHkgZGlmZmVyZW5jZSBJIHNlZSBpcyAiYXJtLGNvcnRleC1hNTMtcG11IiB2cy4gImFybSxh
+cm12OC1wbXV2MyIuCj4+IEJ5IG15IHJlYWRpbmcgb2YgYXJjaC9hcm02NC9rZXJuZWwvcGVyZl9l
+dmVudC5jIHRoZSBvbmx5IGRpZmZlcmVuY2UKPj4gYmV0d2VlbiB0aGUgdHdvIHNob3VsZCBiZSB0
+aGUgbmFtZSBhbmQgYW4gZXh0cmEgY2FjaGVfbWFwLiBZb3UgY291bGQgdHJ5Cj4+IHRoZSBvdGhl
+ciBjb21wYXRpYmxlIHN0cmluZyBpbiB5b3VyIC5kdHMsIGJ1dCBJIGRvdWJ0IGl0J2xsIGhlbHAu
+Cj4+Cj4+IEhvcGVmdWxseSB0aGUgUmVhbHRlayBvciBBcm0gZ3V5cyBjYW4gc2hlZCBzb21lIGxp
+Z2h0Lgo+IAo+IElmIHRoZSBTb0MgcmVhbGx5IGhhcyBhbGwgNCBvdmVyZmxvdyBpbnRlcnJ1cHRz
+IGNvbWJpbmVkIGludG8gYSBzaW5nbGUgCj4gU1BJIGxpbmUsIHRoZW4gc2FtcGxpbmcganVzdCBp
+c24ndCBnb2luZyB0byBiZSBzdXBwb3J0ZWQgLSBpdCdzIAo+IHVucmVhc29uYWJseSBkaWZmaWN1
+bHQgdG8gaGFuZGxlIG92ZXJmbG93IHdoZW4gdGhlIElSUSBtYXkgYmUgdGFrZW4gb24gCj4gdGhl
+IHdyb25nIENQVS4KCk9uIGNsb3NlciBpbnNwZWN0aW9uLCB0aGF0IEJTUCBrZXJuZWwgaW1wbGVt
+ZW50cyBhIHdob2xlIGhydGltZXItYmFzZWQgCmJvZGdlIGluIGFybV9wbXUgdG8gYXBwYXJlbnRs
+eSB3b3JrIGFyb3VuZCBub3QgaGF2aW5nIHVzYWJsZSBpbnRlcnJ1cHRzLCAKc28geWVhaCwgdGhp
+cyBpc24ndCBnb2luZyB0byBiZSB1c2FibGUsIHNvcnJ5LgoKUm9iaW4uCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
