@@ -2,63 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29637113141
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 18:57:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDFDE113155
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 18:58:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PqRXLwEKiYFrWgpHB2c+SZmJP/GUpZN5Ddt+5EbRtGQ=; b=SrPia3jiI7VaFM
-	S9wXFrr7c8XxcyDUK8iZ+SKQVT2emvUtOobREqDbymRHn0beWGJPfUVafbj1oCTOToPWMYIRy5xsK
-	FgPSiCw0MCkqSnuC1rgS2xjrd8W4PkrhWZcayNpRHp/t38FRV9wVwI0WCZRv411C10hLOB/TZ/ez1
-	ml2L1uPgEXSpM1XNieHX1Hk2ZdZboDv3aHOr7C5wiZfBMyzhc/lYM463QCftupSB5WIs7Uxg+d80w
-	/wO3WGAB5chKt8faEUGsnzbu5x03W577Or31SffzGkte2u0giJBiLVT7hZ/lGvD8K+sCEjFBLX46q
-	Yr5TNbwXtgwOUh198WaA==;
+	List-Owner; bh=04rHed7XRteA4RC4xX4KCE7U2ddhl0+UflcUCKL/po0=; b=MAfBKhHwd7O/F6
+	uxTwRMqttewYXrx4vEsA4UZBvMC7NOWEXJ5USi+vX0gZW2QYhxSsZgLjYaxB2zhc/AaKi9ARGyGuA
+	HrCLCLTiYIVYcJkpg1dGU3D+eN//h0VEhL0O8ocKhjAHMRWjY0lfkFq7eKTEpbFRqWYJAV27LY8IL
+	hUSwWRfptjyUUc/GxpyBNP8bZ9O46IhR2qnFyt6D68kBNU249ap3/AYO+MipNhqHWwad1BLPMVcfZ
+	/+inQOYP3Bz66wR0NaLw9Sc286mBL3wCT5Dbf+lFNjm1klkGhGTVUiAjDnWS1piq3kZBKzdmtizAX
+	2DcK7gE6XT4L7F/p+aug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icYuH-00022w-Rp; Wed, 04 Dec 2019 17:57:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1icYv9-0002Nu-Nk; Wed, 04 Dec 2019 17:58:39 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icYuA-00021t-40
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 17:57:39 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 23FE82073B;
- Wed,  4 Dec 2019 17:57:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575482257;
- bh=Z4S5x43rvKxkwPW/lopNw0SaRvqYAgy+2mEVeOu402Y=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=enD6hT5gP4yctfIsW40Iq9QMEm0iURz+cY01stfCheUJThZeyJl97j1nPdqyvAHyY
- FhtUVbyAPcLxj23kBy/CS9rXRU7Eq20Dy2mbSb4PqoYPkTLF/6Wd8hyNAEEiFu/tCK
- Nf3H76/OUiH52ESJD+DONGhQUDh8ptxHF1vE2al4=
-Date: Wed, 4 Dec 2019 17:57:27 +0000
-From: Will Deacon <will@kernel.org>
-To: Jerome Forissier <jerome@forissier.org>
-Subject: Re: Kernel v5.2+ on HiKey960?
-Message-ID: <20191204175726.GA28736@willie-the-truck>
-References: <f58c2c0e-ec82-6675-84e6-ad63fd93c8ff@forissier.org>
- <20191204101851.GC13081@arrakis.emea.arm.com>
- <1c5e497f-4be0-e1f3-4d6d-fed9470d0406@forissier.org>
- <20191204142824.GB26730@arrakis.emea.arm.com>
- <226a53f8-9404-1aa0-ed44-22e2157e4521@forissier.org>
+ id 1icYv2-0002NH-Hs
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 17:58:33 +0000
+Received: by mail-ed1-x544.google.com with SMTP id c93so146001edf.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Dec 2019 09:58:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=e9gkQnU+5q50cQeHx8NRu5HJQyIM32Z6cVBwYXSVjIU=;
+ b=TfH3rUb9CyqcTteFkO3C0xlnbKPaPL+cKMDbTylgoIZRtg9/X9I+YsgFYMbiZXeyWH
+ 6PlZPH1K/5P+XHiHenDCQt4FvrDjS/BrRzDZryGe9Twd6Hm2D/PuFfB0RuI7ndN7FRkU
+ 53yRO+n+zxjDbzNLl19rt+Ux9N0QapQxf/PcuW0FZFx9aDV2esnmpEXuzPCGcvshVi5c
+ mRfJ/YtyltCIrh/P45bL1k1m4RChqhZSyzX/Jcbu3guo/ePbUMweg/D/uJvHeIaqg4Gm
+ 5uP20oOpH/SKLR8di/NnPJ5v5R0wamwgPJl5jM6Ru4CREPcSt4DIS2z6vz82RA/SVf34
+ r3SA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=e9gkQnU+5q50cQeHx8NRu5HJQyIM32Z6cVBwYXSVjIU=;
+ b=caZelLNfIcct+Q1p8+jpv78zW4oiRh49ae1KD/LrjEt29f9BOLfHv49Qn77lt5h/ek
+ 6jdLE0P02eHF2IZgCp9Jx1QS/uwxgIFo5v4b2X170Jb+MYp0xaDHBdK8YJDg5g8BJxib
+ GY/LL9+F+HTNtFq6ds44h7F3xgdlbBxuvC7IZDo1lfCYyBNKMo9pVaaL6FcTqtG38Ess
+ Z8n/A8H9WqQcguEVQyqzyZCbCQh1D+n1clnpN75iZPVcBHxMxFAqAdHm3k/fJmI1AHAz
+ ootqNqtWjgsUmRrHwazqOO9j0+FYCsWvwpM915s1Mw7z7EF4WxHMgWb9x71HoaFeC8oe
+ 97Mw==
+X-Gm-Message-State: APjAAAWng9Onpt7CLMrEYuEYD+/m/rwTPq0wc/w2GmNMGM7uM+XIkjOR
+ n0EKe/WWvUBOhlBnBZ/J373iUfivbvAeaj/n75Yxp9mf
+X-Google-Smtp-Source: APXvYqyAOfG2c7wdnsuR/CLNurVK9MGZsX+GmC1nBIDZq14OwnspMmSoQUW6yoePy6mVNE4fFTYRVftmoUuum47tYGo=
+X-Received: by 2002:aa7:d445:: with SMTP id q5mr5540834edr.16.1575482311052;
+ Wed, 04 Dec 2019 09:58:31 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <226a53f8-9404-1aa0-ed44-22e2157e4521@forissier.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20191127184453.229321-1-pasha.tatashin@soleen.com>
+ <20191127184453.229321-2-pasha.tatashin@soleen.com>
+ <957930d0-8317-9086-c7a1-8de857f358c2@xen.org>
+In-Reply-To: <957930d0-8317-9086-c7a1-8de857f358c2@xen.org>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Wed, 4 Dec 2019 12:58:20 -0500
+Message-ID: <CA+CK2bBWVLZkFo5e8gQUuiqz_b2oCOtD7-9GkCwf9BsFn9wwaA@mail.gmail.com>
+Subject: Re: [PATCH 1/3] arm/arm64/xen: use C inlines for privcmd_call
+To: Julien Grall <julien@xen.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_095738_201120_6AF7DE1A 
-X-CRM114-Status: GOOD (  20.28  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191204_095832_590980_98D106D7 
+X-CRM114-Status: GOOD (  17.43  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -68,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,105 +92,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- maz@kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Stefan Agner <stefan@agner.ch>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, Will Deacon <will@kernel.org>,
+ boris.ostrovsky@oracle.com, Sasha Levin <sashal@kernel.org>,
+ Stefano Stabellini <sstabellini@kernel.org>, James Morris <jmorris@namei.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ xen-devel@lists.xenproject.org, Vladimir Murzin <vladimir.murzin@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, alexios.zavras@intel.com,
+ Thomas Gleixner <tglx@linutronix.de>, allison@lohutok.net, jgross@suse.com,
+ steve.capper@arm.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
+ info@metux.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 04, 2019 at 03:58:57PM +0100, Jerome Forissier wrote:
-> On 12/4/19 3:28 PM, Catalin Marinas wrote:
-> > On Wed, Dec 04, 2019 at 02:15:48PM +0100, Jerome Forissier wrote:
-> >> On 12/4/19 11:18 AM, Catalin Marinas wrote:
-> >>> On Tue, Dec 03, 2019 at 04:43:22PM +0100, Jerome Forissier wrote:
-> >>>> Has anyone successfully run kernel v5.2 or later on a HiKey960 board?
-> >>>>
-> >>>> For some reason, anything past v5.1 doesn't work for me and I could not
-> >>>> figure out why. The symptom is it never gets to the login prompt. The
-> >>>> root FS is a Buildroot-generated one, and prior to reaching the kernel
-> >>>> the board runs TF-A, OP-TEE, UEFI (edk2) and Grub.
-> >>>>
-> >>>> I tried replacing /init with a shell, in which case I can type a command
-> >>>> but whatever it is (even a simple "ls"), the command hangs on exit and I
-> >>>> never get back to the prompt.
-> >>>>
-> >>>> Then I started bisecting, that was quite painful but I found several
-> >>>> problematic commits. I ended up reverting the following (in this order)
-> >>>> to be able to boot v5.4:
-> > [...]
-> >> 75a19a0202db is the first bad commit. Its parent: commit 2f1d4e24d91b
-> >> ("firmware: arm_sdei: Prohibit probing in '_sdei_handler'") boots fine
-> >> [2]. Since reverting 75a19a0202db in v5.2 does not work, I suspect we're
-> >> dealing with multiple problems. As I said, the set of reverts above is
-> >> the best I could figure out, and believe me I spent several days trying
-> >> to troubleshoot this :-/ (that being said, I know nothing about the VDSO
-> >> or the arch timer so I could not try anything meaningful other than
-> >> reverting some commits).
-> > 
-> > Thanks. There could as well be multiple issues. Since commit
-> > 75a19a0202db is cc stable, could you please apply it on top of 5.1 and
-> > see if it fails? I don't have a HiKey960 at hand to try this.
-> > 
-> 
-> Fails indeed (panic): https://pastebin.com/F0jpktii
+On Fri, Nov 29, 2019 at 10:05 AM Julien Grall <julien@xen.org> wrote:
+>
+> Hi,
+>
+> On 27/11/2019 18:44, Pavel Tatashin wrote:
+> > diff --git a/arch/arm64/include/asm/xen/hypercall.h b/arch/arm64/include/asm/xen/hypercall.h
+> > index 3522cbaed316..1a74fb28607f 100644
+> > --- a/arch/arm64/include/asm/xen/hypercall.h
+> > +++ b/arch/arm64/include/asm/xen/hypercall.h
+> > @@ -1 +1,29 @@
+> > +#ifndef _ASM_ARM64_XEN_HYPERCALL_H
+> > +#define _ASM_ARM64_XEN_HYPERCALL_H
+> >   #include <xen/arm/hypercall.h>
+> > +#include <linux/uaccess.h>
+> > +
+> > +static inline long privcmd_call(unsigned int call, unsigned long a1,
+> > +                             unsigned long a2, unsigned long a3,
+> > +                             unsigned long a4, unsigned long a5)
+>
+> I realize that privcmd_call is the only hypercall using Software PAN at
+> the moment. However, dm_op needs the same as hypercall will be issued
+> from userspace as well.
 
-Interesting. I followed your instructions and my board boots fine even
-after applying that patch, but then I see the following on shutdown:
+The clean-up I am working on now is specific to moving current PAN
+useage to C wraps. Once dm_op requires to use PAN it will need to be
+used the C variants, because ASM versions are going to be removed by
+this series.
 
-[   83.022955] WARNING: CPU: 0 PID: 1995 at kernel/time/tick-broadcast.c:647 tick_handle_oneshot_broadcast+0x1c8/0x1e8
-[   83.033392] Modules linked in:
-[   83.036447] CPU: 0 PID: 1995 Comm: init Tainted: G S                5.1.0-253105-g2b41f6584d59 #3
-[   83.045319] Hardware name: HiKey960 (DT)
-[   83.049238] pstate: 00000085 (nzcv daIf -PAN -UAO)
-[   83.054026] pc : tick_handle_oneshot_broadcast+0x1c8/0x1e8
-[   83.059509] lr : tick_handle_oneshot_broadcast+0x15c/0x1e8
-[   83.064990] sp : ffff000010003b40
-[   83.068298] x29: ffff000010003b40 x28: ffff0000116de0e4 
-[   83.073607] x27: ffff0000118e85c0 x26: ffff0000116d7a00 
-[   83.078916] x25: 0000001342080d5f x24: ffff00001198e2f0 
-[   83.084225] x23: ffff0000116ddf40 x22: ffff00001198e2c0 
-[   83.089533] x21: 0000000000000000 x20: 7fffffffffffffff 
-[   83.094842] x19: ffff00001198e280 x18: 0000000000000010 
-[   83.100151] x17: 0000000000000000 x16: 0000000000000000 
-[   83.105459] x15: 0000000000000000 x14: 0000000000000000 
-[   83.110768] x13: ffff000010e544d0 x12: ffff000010e544c8 
-[   83.116077] x11: 0720072007200720 x10: 0000000000000040 
-[   83.121384] x9 : ffff000011705bd0 x8 : ffff000011705bc8 
-[   83.126693] x7 : ffff8000bf0002a0 x6 : 0000000000000004 
-[   83.132002] x5 : 0000000000000000 x4 : 0000000000000001 
-[   83.137310] x3 : 0000000000000000 x2 : 0000000000000100 
-[   83.142619] x1 : ffff0000116ddf40 x0 : 0000000000000000 
-[   83.147929] Call trace:
-[   83.150372]  tick_handle_oneshot_broadcast+0x1c8/0x1e8
-[   83.155512]  sp804_timer_interrupt+0x3c/0x50
-[   83.159782]  __handle_irq_event_percpu+0x78/0x2c8
-[   83.164482]  handle_irq_event_percpu+0x40/0x98
-[   83.168922]  handle_irq_event+0x50/0x80
-[   83.172755]  handle_fasteoi_irq+0xc0/0x178
-[   83.176847]  generic_handle_irq+0x34/0x50
-[   83.180852]  __handle_domain_irq+0x6c/0xc0
-[   83.184947]  gic_handle_irq+0x58/0xa8
-[   83.188605]  el1_irq+0xb8/0x180
-[   83.191740]  __do_softirq+0xa8/0x3a0
-[   83.195314]  irq_exit+0xc0/0xd0
-[   83.198450]  __handle_domain_irq+0x70/0xc0
-[   83.202541]  gic_handle_irq+0x58/0xa8
-[   83.206198]  el1_irq+0xb8/0x180
-[   83.209339]  _raw_spin_unlock_irq+0x28/0x60
-[   83.213520]  do_exit+0xf0/0xa28
-[   83.216661]  __se_sys_reboot+0x16c/0x248
-[   83.220581]  __arm64_sys_reboot+0x24/0x30
-[   83.224590]  el0_svc_common.constprop.0+0x88/0xf8
-[   83.229290]  el0_svc_handler+0x34/0x90
-[   83.233035]  el0_svc+0x8/0xc
-[   83.235909] ---[ end trace 70f495d614c1efd2 ]---
+>
+> So I was wondering whether we should create a generic function (e.g.
+> do_xen_hypercall() or do_xen_user_hypercall()) to cover the two hypercalls?
+>
+> > diff --git a/include/xen/arm/hypercall.h b/include/xen/arm/hypercall.h
+> > index b40485e54d80..624c8ad7e42a 100644
+> > --- a/include/xen/arm/hypercall.h
+> > +++ b/include/xen/arm/hypercall.h
+> > @@ -30,8 +30,8 @@
+> >    * IN THE SOFTWARE.
+> >    */
+> >
+> > -#ifndef _ASM_ARM_XEN_HYPERCALL_H
+> > -#define _ASM_ARM_XEN_HYPERCALL_H
+> > +#ifndef _ARM_XEN_HYPERCALL_H
+> > +#define _ARM_XEN_HYPERCALL_H
+>
+> This change feels a bit out of context. Could you split it in a separate
+> patch?
 
-which is unexpected.
+Makes sense, I am splitting this into a separate patch.
 
-Will
+Thank you,
+Pasha
 
 _______________________________________________
 linux-arm-kernel mailing list
