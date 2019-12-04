@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B86A5113815
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 00:21:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C057113817
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 00:21:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A9AmH+ia46u0C/3dVNEwaWy49QxyBMmFxC2BXcbsKnI=; b=fIZ+nY45c83MHO
-	+9ugQsjD1KcCzCJm67a6wamu3lmhk9eMo3gig4Nj41myVrgo1GcGLW+b31PLPokBO7JxuxcrG8d4u
-	5ZDN/3JH0Z7T49hsLugeYIpuFN45gAZ4dVJUZzv9M9T8Vkb85OsmI6n8CeAYHViGwCH3Nsv6H/AFU
-	A5EvupcDM/Yd7gkrRKUqcRvky6s2xJRY1cDE+lATcC/uLwpKxOKePt+vLTWAQhSWF1z6u8N4IeV8K
-	SqZk9irQlChvITfkyB4T07xjERU2FVI4jSRLX+q+FudPADhIeijRH91RU2bPB7mCB7LCKDSDKuQgw
-	DMrCeHTSod4H1hBgXvGQ==;
+	List-Owner; bh=ZGp8hD82X/I+7IsNRBaDcjUArXhXfIru9P9r8clJTBY=; b=mioPViPrNsvsmg
+	FR5VoMy35ccllQRnKrEUIkx49PaHuLP9lDlT6Hao5UKv6TibF5i18uAWsi1LRlwMD7dRySUISUySQ
+	EJPsDym/SHOWL95WlaoCV8WNuPAkkd9ML4UL/f9iwJWichG0zT0dhHL1ezZ9o0YtO4krs/Uf8E+Dl
+	oD4mgi1OHpADRvHV5WNWgK4hRUtqEbkjwe3TJbuH4F3xgMxYaK506B2DHMfyDLQALya+FMgubQmVb
+	JP5y3LtVczMtx6avCgDsnq/g5+y8Yo+8Nosbee4iz/ZUpzX/f2KBpTILUh4N2l9f50Hae5lW0VsNp
+	4s0+1MC6iVArWzG8EYDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icdxk-0005VM-9p; Wed, 04 Dec 2019 23:21:40 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1icdxx-0005lw-My; Wed, 04 Dec 2019 23:21:53 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icdxC-000589-3f
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 23:21:07 +0000
-Received: by mail-qk1-x742.google.com with SMTP id k6so1679281qki.5
+ id 1icdxE-00058x-1H
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 23:21:09 +0000
+Received: by mail-qt1-x843.google.com with SMTP id 38so1533420qtb.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 15:21:05 -0800 (PST)
+ Wed, 04 Dec 2019 15:21:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=smj6n8EMZwJiO9OcqZKdj+gFypq1fwZIXw8AeaUdZHE=;
- b=N4nfr8PE7rjna1sy2un2T8I/QbS/FDLXdrJdb0wzVkKCQ0Nj4dVx7WmOcfoTbe5Err
- pCFB4uRN8dThnvHaL9+mll+NSkYsl6VZv2Yd50MyOh3YqGpl02gUx8B4ygniHLmcS6pV
- WwaVWKjUa5ffxJzDu0ELYDn5CgGrFItaaLreOkNgU/KSp+i9Suyx3HVGq7XY4Ej0TjWJ
- Ef1KpevZtJDkH9/dlSJgvPDOft/cByij6ONlj8yl/Cwgbln3gj9DTaq7uPAXOC0aWu+O
- iJaLlmbn717MW1qDNHGc+DEKhEaHFO9VZhUoOdnlsN+wP70BOG79UXsp6UJt4CRy/Zd9
- yz9g==
+ bh=0RbtzKmo7zfuXDWfdHWu8S+RDp64jOvNIHTxCP2zpR0=;
+ b=fKNAmmzITxBQfPXz7RiuSqDCTIOORLjqiebWygrTmb5GDTbu93eab5NdPlECyOpMU1
+ bQycVBBiTsagRqQDAGCHalnDsreTbhq9OWqSwczPtC0iabVeXCIWyNwd0zY5A6fpBGtw
+ BKN9bogl0ZI2CpWCScOwSItvhV47o5YyeNqB95okJJ/07WqsxwdFQnmqfF0aEoQmNRGW
+ G9oIP64Vb03Kc2uzWTDE43+VAdjamyPxWnLdmYP2P3SJ7BpquFgkFhH7kjELqP6DG1Ul
+ Wta7gGcIqNYLhwCSGgM42gICune/wyBO6yMOLDUu6z+3PLXyyW4zCU2Z0Qz1OZkITWeg
+ 6Y6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=smj6n8EMZwJiO9OcqZKdj+gFypq1fwZIXw8AeaUdZHE=;
- b=qYgMSsZ2NtP3T82Zh+06mkyB+oMsM0ZNmqXLeKfAXiynIgy17CFY2HBD/sp20/njUt
- IlTTiuLjE7WAdW5Mh2J7tIhMyLoh9vxhMdnBphWiD2nIzbqKW4PR5x0vx3PiVqokwxP4
- eq0KuZ3s2Rohdko/WDyShR7ARzEqbKxySQyXtw8sIr5uNssoJPmqiGXl1TxPyhVTa/Qo
- 0DNw1HXFZjjmg20zYRszAEkar7atcC7xnMobtSGRahWwXjdlqOKMjznK+Grf8iHCSLUt
- hAIqlKLvSqfau2u8HX9NEM6/VuWmlJJXolgTco1QmwZ28pW+jlkzl1fFaZ3n76LxClJj
- 7HOw==
-X-Gm-Message-State: APjAAAXgVx0Hbz5puRmmnpG56U9rlA5cOmeT4GhjLXGQIZZqX0sEQMuv
- sLuZuhy7eV1RKuSetfUtjvbtTA==
-X-Google-Smtp-Source: APXvYqxwjlWsEl+Nl33Swhk+ma+381+gPtq7UHPUaqWh/EAaKEnwlcNsIHolGzi5TlRApATztOnEyg==
-X-Received: by 2002:a37:a744:: with SMTP id q65mr5771564qke.228.1575501664918; 
- Wed, 04 Dec 2019 15:21:04 -0800 (PST)
+ bh=0RbtzKmo7zfuXDWfdHWu8S+RDp64jOvNIHTxCP2zpR0=;
+ b=KsNo6ecq2uaFlDfoREglPSszhQNtCcxolTtX/rHIQ+/MtTclyYchULIA3bryPcp2jE
+ S4cPOuyQ2QSmGVbHfeO6GOn8fHxB9gKgJY6k8OvBEWYtu15qydv0DrKhmmBipnpS0zWT
+ t7TL/hpbpLzfkvOIttasdCygHMcZPdsJ4Mysta2Nd0+MeaYjO4qnETHEqh2qOhC6s4g/
+ tSKat8X7u46t4ZIgCq8laEbvwvtzvmfTzuHUnUjuDKlvPYn72OmCBBlx9zUrdB72aXm8
+ 4B2B2dUHiHwNjDiRV1+Mfa1wmcjI2w8y7AjuPypQm0zeeqvX/ukn796unVze3BR1QYk7
+ c4NQ==
+X-Gm-Message-State: APjAAAUjq+OXiM9ejgRT3gQGK0elB25dlYIEXI9PoxWZEKxYS92E/e2x
+ ZVS1LDlUTUeSHN8kABfk5TGPSQ==
+X-Google-Smtp-Source: APXvYqwGVxtioWa6fg8PFhgdMLvrQWhtfXdKPWJtuq4IqRERiBvIOMKkvDiPshqepZ26wP88iuia0w==
+X-Received: by 2002:aed:31a2:: with SMTP id 31mr4461846qth.196.1575501666754; 
+ Wed, 04 Dec 2019 15:21:06 -0800 (PST)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id t38sm4667864qta.78.2019.12.04.15.21.03
+ by smtp.gmail.com with ESMTPSA id t38sm4667864qta.78.2019.12.04.15.21.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 15:21:04 -0800 (PST)
+ Wed, 04 Dec 2019 15:21:06 -0800 (PST)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  linux-kernel@vger.kernel.org, catalin.marinas@arm.com, will@kernel.org,
@@ -67,23 +67,24 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  boris.ostrovsky@oracle.com, jgross@suse.com, stefan@agner.ch,
  yamada.masahiro@socionext.com, xen-devel@lists.xenproject.org,
  linux@armlinux.org.uk, andrew.cooper3@citrix.com, julien@xen.org
-Subject: [PATCH v4 2/6] arm/arm64/xen: use C inlines for privcmd_call
-Date: Wed,  4 Dec 2019 18:20:54 -0500
-Message-Id: <20191204232058.2500117-3-pasha.tatashin@soleen.com>
+Subject: [PATCH v4 3/6] arm64: remove uaccess_ttbr0 asm macros from cache
+ functions
+Date: Wed,  4 Dec 2019 18:20:55 -0500
+Message-Id: <20191204232058.2500117-4-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191204232058.2500117-1-pasha.tatashin@soleen.com>
 References: <20191204232058.2500117-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_152106_150227_495D4655 
-X-CRM114-Status: GOOD (  12.79  )
+X-CRM114-CacheID: sfid-20191204_152108_107515_1936E65E 
+X-CRM114-Status: GOOD (  10.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,160 +111,207 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-privcmd_call requires to enable access to userspace for the
-duration of the hypercall.
-
-Currently, this is done via assembly macros. Change it to C
-inlines instead.
+We currently duplicate the logic to enable/disable uaccess via TTBR0,
+with C functions and assembly macros. This is a maintenenace burden
+and is liable to lead to subtle bugs, so let's get rid of the assembly
+macros, and always use the C functions. This requires refactoring
+some assembly functions to have a C wrapper.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-Acked-by: Stefano Stabellini <sstabellini@kernel.org>
 ---
- arch/arm/include/asm/xen/hypercall.h   |  6 ++++++
- arch/arm/xen/enlighten.c               |  2 +-
- arch/arm/xen/hypercall.S               |  4 ++--
- arch/arm64/include/asm/xen/hypercall.h | 24 ++++++++++++++++++++++++
- arch/arm64/xen/hypercall.S             | 19 ++-----------------
- include/xen/arm/hypercall.h            |  6 +++---
- 6 files changed, 38 insertions(+), 23 deletions(-)
+ arch/arm64/include/asm/asm-uaccess.h | 22 -----------------
+ arch/arm64/include/asm/cacheflush.h  | 35 ++++++++++++++++++++++++---
+ arch/arm64/mm/cache.S                | 36 ++++++++++------------------
+ arch/arm64/mm/flush.c                |  2 +-
+ 4 files changed, 46 insertions(+), 49 deletions(-)
 
-diff --git a/arch/arm/include/asm/xen/hypercall.h b/arch/arm/include/asm/xen/hypercall.h
-index c6882bba5284..cac5bd9ef519 100644
---- a/arch/arm/include/asm/xen/hypercall.h
-+++ b/arch/arm/include/asm/xen/hypercall.h
-@@ -2,4 +2,10 @@
- #define _ASM_ARM_XEN_HYPERCALL_H
- #include <xen/arm/hypercall.h>
+diff --git a/arch/arm64/include/asm/asm-uaccess.h b/arch/arm64/include/asm/asm-uaccess.h
+index f68a0e64482a..fba2a69f7fef 100644
+--- a/arch/arm64/include/asm/asm-uaccess.h
++++ b/arch/arm64/include/asm/asm-uaccess.h
+@@ -34,28 +34,6 @@
+ 	msr	ttbr0_el1, \tmp1		// set the non-PAN TTBR0_EL1
+ 	isb
+ 	.endm
+-
+-	.macro	uaccess_ttbr0_disable, tmp1, tmp2
+-alternative_if_not ARM64_HAS_PAN
+-	save_and_disable_irq \tmp2		// avoid preemption
+-	__uaccess_ttbr0_disable \tmp1
+-	restore_irq \tmp2
+-alternative_else_nop_endif
+-	.endm
+-
+-	.macro	uaccess_ttbr0_enable, tmp1, tmp2, tmp3
+-alternative_if_not ARM64_HAS_PAN
+-	save_and_disable_irq \tmp3		// avoid preemption
+-	__uaccess_ttbr0_enable \tmp1, \tmp2
+-	restore_irq \tmp3
+-alternative_else_nop_endif
+-	.endm
+-#else
+-	.macro	uaccess_ttbr0_disable, tmp1, tmp2
+-	.endm
+-
+-	.macro	uaccess_ttbr0_enable, tmp1, tmp2, tmp3
+-	.endm
+ #endif
  
-+static inline long privcmd_call(unsigned int call, unsigned long a1,
-+				unsigned long a2, unsigned long a3,
-+				unsigned long a4, unsigned long a5)
+ #endif
+diff --git a/arch/arm64/include/asm/cacheflush.h b/arch/arm64/include/asm/cacheflush.h
+index 665c78e0665a..431f8da2dd02 100644
+--- a/arch/arm64/include/asm/cacheflush.h
++++ b/arch/arm64/include/asm/cacheflush.h
+@@ -61,16 +61,45 @@
+  *		- kaddr  - page address
+  *		- size   - region size
+  */
+-extern void __flush_icache_range(unsigned long start, unsigned long end);
+-extern int  invalidate_icache_range(unsigned long start, unsigned long end);
++extern void __asm_flush_icache_range(unsigned long start, unsigned long end);
++extern long __asm_flush_cache_user_range(unsigned long start,
++					 unsigned long end);
++extern int  __asm_invalidate_icache_range(unsigned long start,
++					  unsigned long end);
+ extern void __flush_dcache_area(void *addr, size_t len);
+ extern void __inval_dcache_area(void *addr, size_t len);
+ extern void __clean_dcache_area_poc(void *addr, size_t len);
+ extern void __clean_dcache_area_pop(void *addr, size_t len);
+ extern void __clean_dcache_area_pou(void *addr, size_t len);
+-extern long __flush_cache_user_range(unsigned long start, unsigned long end);
+ extern void sync_icache_aliases(void *kaddr, unsigned long len);
+ 
++static inline void __flush_cache_user_range(unsigned long start,
++					    unsigned long end)
 +{
-+	return arch_privcmd_call(call, a1, a2, a3, a4, a5);
-+}
- #endif /* _ASM_ARM_XEN_HYPERCALL_H */
-diff --git a/arch/arm/xen/enlighten.c b/arch/arm/xen/enlighten.c
-index dd6804a64f1a..e87280c6d25d 100644
---- a/arch/arm/xen/enlighten.c
-+++ b/arch/arm/xen/enlighten.c
-@@ -440,4 +440,4 @@ EXPORT_SYMBOL_GPL(HYPERVISOR_platform_op_raw);
- EXPORT_SYMBOL_GPL(HYPERVISOR_multicall);
- EXPORT_SYMBOL_GPL(HYPERVISOR_vm_assist);
- EXPORT_SYMBOL_GPL(HYPERVISOR_dm_op);
--EXPORT_SYMBOL_GPL(privcmd_call);
-+EXPORT_SYMBOL_GPL(arch_privcmd_call);
-diff --git a/arch/arm/xen/hypercall.S b/arch/arm/xen/hypercall.S
-index b11bba542fac..277078c7da49 100644
---- a/arch/arm/xen/hypercall.S
-+++ b/arch/arm/xen/hypercall.S
-@@ -94,7 +94,7 @@ HYPERCALL2(multicall);
- HYPERCALL2(vm_assist);
- HYPERCALL3(dm_op);
- 
--ENTRY(privcmd_call)
-+ENTRY(arch_privcmd_call)
- 	stmdb sp!, {r4}
- 	mov r12, r0
- 	mov r0, r1
-@@ -119,4 +119,4 @@ ENTRY(privcmd_call)
- 
- 	ldm sp!, {r4}
- 	ret lr
--ENDPROC(privcmd_call);
-+ENDPROC(arch_privcmd_call);
-diff --git a/arch/arm64/include/asm/xen/hypercall.h b/arch/arm64/include/asm/xen/hypercall.h
-index c3198f9ccd2e..1a74fb28607f 100644
---- a/arch/arm64/include/asm/xen/hypercall.h
-+++ b/arch/arm64/include/asm/xen/hypercall.h
-@@ -1,5 +1,29 @@
- #ifndef _ASM_ARM64_XEN_HYPERCALL_H
- #define _ASM_ARM64_XEN_HYPERCALL_H
- #include <xen/arm/hypercall.h>
-+#include <linux/uaccess.h>
- 
-+static inline long privcmd_call(unsigned int call, unsigned long a1,
-+				unsigned long a2, unsigned long a3,
-+				unsigned long a4, unsigned long a5)
-+{
-+	long rv;
-+
-+	/*
-+	 * Privcmd calls are issued by the userspace. The kernel needs to
-+	 * enable access to TTBR0_EL1 as the hypervisor would issue stage 1
-+	 * translations to user memory via AT instructions. Since AT
-+	 * instructions are not affected by the PAN bit (ARMv8.1), we only
-+	 * need the explicit uaccess_enable/disable if the TTBR0 PAN emulation
-+	 * is enabled (it implies that hardware UAO and PAN disabled).
-+	 */
 +	uaccess_ttbr0_enable();
-+	rv = arch_privcmd_call(call, a1, a2, a3, a4, a5);
-+	/*
-+	 * Disable userspace access from kernel once the hyp call completed.
-+	 */
++	__asm_flush_cache_user_range(start, end);
++	uaccess_ttbr0_disable();
++}
++
++static inline void __flush_icache_range(unsigned long start, unsigned long end)
++{
++	uaccess_ttbr0_enable();
++	__asm_flush_icache_range(start, end);
++	uaccess_ttbr0_disable();
++}
++
++static inline int invalidate_icache_range(unsigned long start,
++					  unsigned long end)
++{
++	int ret;
++
++	uaccess_ttbr0_enable();
++	ret = __asm_invalidate_icache_range(start, end);
 +	uaccess_ttbr0_disable();
 +
-+	return rv;
++	return ret;
 +}
- #endif /* _ASM_ARM64_XEN_HYPERCALL_H */
-diff --git a/arch/arm64/xen/hypercall.S b/arch/arm64/xen/hypercall.S
-index c5f05c4a4d00..921611778d2a 100644
---- a/arch/arm64/xen/hypercall.S
-+++ b/arch/arm64/xen/hypercall.S
-@@ -49,7 +49,6 @@
++
+ static inline void flush_icache_range(unsigned long start, unsigned long end)
+ {
+ 	__flush_icache_range(start, end);
+diff --git a/arch/arm64/mm/cache.S b/arch/arm64/mm/cache.S
+index db767b072601..602b9aa8603a 100644
+--- a/arch/arm64/mm/cache.S
++++ b/arch/arm64/mm/cache.S
+@@ -15,7 +15,7 @@
+ #include <asm/asm-uaccess.h>
  
- #include <linux/linkage.h>
- #include <asm/assembler.h>
--#include <asm/asm-uaccess.h>
- #include <xen/interface/xen.h>
+ /*
+- *	flush_icache_range(start,end)
++ *	__asm_flush_icache_range(start,end)
+  *
+  *	Ensure that the I and D caches are coherent within specified region.
+  *	This is typically used when code has been written to a memory region,
+@@ -24,11 +24,11 @@
+  *	- start   - virtual start address of region
+  *	- end     - virtual end address of region
+  */
+-ENTRY(__flush_icache_range)
++ENTRY(__asm_flush_icache_range)
+ 	/* FALLTHROUGH */
  
+ /*
+- *	__flush_cache_user_range(start,end)
++ *	__asm_flush_cache_user_range(start,end)
+  *
+  *	Ensure that the I and D caches are coherent within specified region.
+  *	This is typically used when code has been written to a memory region,
+@@ -37,8 +37,7 @@ ENTRY(__flush_icache_range)
+  *	- start   - virtual start address of region
+  *	- end     - virtual end address of region
+  */
+-ENTRY(__flush_cache_user_range)
+-	uaccess_ttbr0_enable x2, x3, x4
++ENTRY(__asm_flush_cache_user_range)
+ alternative_if ARM64_HAS_CACHE_IDC
+ 	dsb	ishst
+ 	b	7f
+@@ -60,41 +59,32 @@ alternative_if ARM64_HAS_CACHE_DIC
+ alternative_else_nop_endif
+ 	invalidate_icache_by_line x0, x1, x2, x3, 9f
+ 8:	mov	x0, #0
+-1:
+-	uaccess_ttbr0_disable x1, x2
+-	ret
+-9:
+-	mov	x0, #-EFAULT
++1:	ret
++9:	mov	x0, #-EFAULT
+ 	b	1b
+-ENDPROC(__flush_icache_range)
+-ENDPROC(__flush_cache_user_range)
++ENDPROC(__asm_flush_icache_range)
++ENDPROC(__asm_flush_cache_user_range)
  
-@@ -86,27 +85,13 @@ HYPERCALL2(multicall);
- HYPERCALL2(vm_assist);
- HYPERCALL3(dm_op);
- 
--ENTRY(privcmd_call)
-+ENTRY(arch_privcmd_call)
- 	mov x16, x0
- 	mov x0, x1
- 	mov x1, x2
- 	mov x2, x3
- 	mov x3, x4
- 	mov x4, x5
--	/*
--	 * Privcmd calls are issued by the userspace. The kernel needs to
--	 * enable access to TTBR0_EL1 as the hypervisor would issue stage 1
--	 * translations to user memory via AT instructions. Since AT
--	 * instructions are not affected by the PAN bit (ARMv8.1), we only
--	 * need the explicit uaccess_enable/disable if the TTBR0 PAN emulation
--	 * is enabled (it implies that hardware UAO and PAN disabled).
--	 */
--	uaccess_ttbr0_enable x6, x7, x8
- 	hvc XEN_IMM
--
--	/*
--	 * Disable userspace access from kernel once the hyp call completed.
--	 */
--	uaccess_ttbr0_disable x6, x7
+ /*
+- *	invalidate_icache_range(start,end)
++ *	__asm_invalidate_icache_range(start,end)
+  *
+  *	Ensure that the I cache is invalid within specified region.
+  *
+  *	- start   - virtual start address of region
+  *	- end     - virtual end address of region
+  */
+-ENTRY(invalidate_icache_range)
++ENTRY(__asm_invalidate_icache_range)
+ alternative_if ARM64_HAS_CACHE_DIC
+ 	mov	x0, xzr
+ 	isb
  	ret
--ENDPROC(privcmd_call);
-+ENDPROC(arch_privcmd_call);
-diff --git a/include/xen/arm/hypercall.h b/include/xen/arm/hypercall.h
-index babcc08af965..624c8ad7e42a 100644
---- a/include/xen/arm/hypercall.h
-+++ b/include/xen/arm/hypercall.h
-@@ -41,9 +41,9 @@
+ alternative_else_nop_endif
+-
+-	uaccess_ttbr0_enable x2, x3, x4
+-
+ 	invalidate_icache_by_line x0, x1, x2, x3, 2f
+ 	mov	x0, xzr
+-1:
+-	uaccess_ttbr0_disable x1, x2
+-	ret
+-2:
+-	mov	x0, #-EFAULT
++1:	ret
++2:	mov	x0, #-EFAULT
+ 	b	1b
+-ENDPROC(invalidate_icache_range)
++ENDPROC(__asm_invalidate_icache_range)
  
- struct xen_dm_op_buf;
+ /*
+  *	__flush_dcache_area(kaddr, size)
+diff --git a/arch/arm64/mm/flush.c b/arch/arm64/mm/flush.c
+index ac485163a4a7..b23f34d23f31 100644
+--- a/arch/arm64/mm/flush.c
++++ b/arch/arm64/mm/flush.c
+@@ -75,7 +75,7 @@ EXPORT_SYMBOL(flush_dcache_page);
+ /*
+  * Additional functions defined in assembly.
+  */
+-EXPORT_SYMBOL(__flush_icache_range);
++EXPORT_SYMBOL(__asm_flush_icache_range);
  
--long privcmd_call(unsigned call, unsigned long a1,
--		unsigned long a2, unsigned long a3,
--		unsigned long a4, unsigned long a5);
-+long arch_privcmd_call(unsigned int call, unsigned long a1,
-+		       unsigned long a2, unsigned long a3,
-+		       unsigned long a4, unsigned long a5);
- int HYPERVISOR_xen_version(int cmd, void *arg);
- int HYPERVISOR_console_io(int cmd, int count, char *str);
- int HYPERVISOR_grant_table_op(unsigned int cmd, void *uop, unsigned int count);
+ #ifdef CONFIG_ARCH_HAS_PMEM_API
+ void arch_wb_cache_pmem(void *addr, size_t size)
 -- 
 2.24.0
 
