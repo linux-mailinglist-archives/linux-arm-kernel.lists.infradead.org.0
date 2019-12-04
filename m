@@ -2,70 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5367112A34
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 12:33:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B206112A52
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 12:38:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fd06iaO4ubBU6h0vxdNMEmSurZawqEdUO4xTqPaWkF0=; b=qkda28F0gmvl87
-	75tsZ5JKuPKR3t2igNRY6u6YI8hpIkeul8e7QoDeEct7+rImIddywO1rWXm0jtjMWhqRrxqByq7qF
-	7aZTCuh65NOT5dE4jCXHPTSPKDtEULrlFa+8wamlyXb8mZzaZiZHYZtfiN+BJOYlkttZ1xdM04exC
-	y55mVhH/pULWggwUCtQhggrllWE4ukLHEy+AqFWtEROGexe+GgsEuvwvVgiOM3LXuTxjQZzq9UwWb
-	aeIJ6noFl7XJA9V5vfqCMq23MKSryJACzVfjKy0svG+Qb0sCdN/ZdgDtEyNGWh0Fq3o3jSDsZppht
-	Ro5MEbYX5Nu+KwrFRyow==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nXLX/MHJZuUA8WT5gj4ARKbszyS/wTTvviNhaJxy0sw=; b=S9BHJqYU4ES70sQHHpp2O1B7P
+	BPHfFPfnWbjtK9WGgiJ7xeh1+FpEC6ARY3OT+XVN+R4VLVKZMY6qd/R1wXi5tk+7VeBt9gkF1tfaG
+	K+IWiU3tT+8Hgu76Jo6Kiohn4tepE8LVdtnJGcrRaizWm9ydD/ABggAOueWgH7UBwZOoCXwarCPL1
+	yeEqdVvhWssPi3ndbJjTa6BnnyD+qdpew7+5jMgp8hqptv6iNuIx/li5ZWcR97l/6RuBL2mENK30Q
+	8/VaDoOLkq6W/eHecUmMl/3AOna5cTiMnOZA5IjWwxcPLaXwc8beIHLmB3UK19xFyVkEsFBVPG9Kl
+	SRj39rwLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icSuM-0006YM-Uo; Wed, 04 Dec 2019 11:33:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1icSzE-0008U6-QW; Wed, 04 Dec 2019 11:38:28 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icSuD-0006XC-0R
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 11:33:18 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 701C020637;
- Wed,  4 Dec 2019 11:33:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575459196;
- bh=/JHiz2KIdlsuSMIGuTWB++APfysh52tpv3cjf0DfXIs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vQFAdRPVtLGN6tVS4n8E+qoQTrGa7zC4pyb1tB2ytI54dTK+7rCiFuPKQV9vgRIS6
- +cCkba4E+ihxTkHZK8VVubQL5UGy5UWmdsE/KxjnAcjBjMudaENEODAkH7ZwYDj40S
- xw4GTwtiyRM/gEN/ZW6yEPpjWPwv2OueJTLTvCAc=
-Date: Wed, 4 Dec 2019 19:33:09 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Bobby Jones <rjones@gateworks.com>
-Subject: Re: [PATCH] ARM: dts: imx: ventana: add fxos8700 on gateworks boards
-Message-ID: <20191204113307.GH3365@dragon>
-References: <20191021205426.28825-1-rjones@gateworks.com>
- <CALAE=UAEFobA2SXOTJWAqexg+VNN_VTXGLGH+VwqqjKkuFwddg@mail.gmail.com>
+ id 1icSz6-0008TI-Ut; Wed, 04 Dec 2019 11:38:22 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1icSz1-0001Pc-Ih; Wed, 04 Dec 2019 12:38:15 +0100
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: perf record doesn't work on rtd129x SoC
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CALAE=UAEFobA2SXOTJWAqexg+VNN_VTXGLGH+VwqqjKkuFwddg@mail.gmail.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+Date: Wed, 04 Dec 2019 11:38:15 +0000
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <1b2d2bc3-afcf-02c3-ccd6-e2a227c23fd3@arm.com>
+References: <20191204045559.GA10458@udknight>
+ <f90748d0-8112-3aa8-0c88-e35a8d6e72d3@suse.de>
+ <1b2d2bc3-afcf-02c3-ccd6-e2a227c23fd3@arm.com>
+Message-ID: <1892ab83960fbdcdbb49c141577f2c11@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: robin.murphy@arm.com, afaerber@suse.de, udknight@gmail.com,
+ mark.rutland@arm.com, linux-realtek-soc@lists.infradead.org,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, linux-soc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_033317_072859_C40C9BBB 
-X-CRM114-Status: GOOD (  13.90  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191204_033821_142435_FA072E13 
+X-CRM114-Status: GOOD (  14.00  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,43 +67,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>, Marco Felsch <m.felsch@pengutronix.de>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-realtek-soc@lists.infradead.org,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Wang YanQing <udknight@gmail.com>, linux-soc@vger.kernel.org,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 07, 2019 at 11:10:19AM -0800, Bobby Jones wrote:
-> Hello Shawn,
-> 
-> I just wanted to follow up with this and see if you had a chance to
-> look at this. I submitted this after responding to Marco on my initial
-> submission but haven't heard anything since and didn't want it to fall
-> through the cracks. It may be worth mentioning that both the bindings
-> for the fxos8700 and lsm9ds1 have been accepted by iio.
-> 
-> In addition to this submission I have the following that I'd like to
-> check in on as well:
-> 
-> [PATCH] ARM: dts: imx: imx6qdl-gw553x.dtsi: add lsm9ds1 iio imu/magn support
-> [PATCH] ARM: dts: imx: Add GW5907
-> [PATCH] ARM: dts: imx: Add GW5912
-> [PATCH] ARM: dts: imx: Add GW5913
-> [PATCH] ARM: dts: imx: Add GW5910
-> 
-> Please let me know if there's anything I can do. Thanks!
-
-Hmm, did you copy me on those patches?  I cannot find them in my
-mailbox.
-
-Shawn
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAxOS0xMi0wNCAxMToyMCwgUm9iaW4gTXVycGh5IHdyb3RlOgo+IE9uIDIwMTktMTItMDQg
+NzoyOCBhbSwgQW5kcmVhcyBGw6RyYmVyIHdyb3RlOgo+PiBIaSBZYW5RaW5nLAo+PiArIExBS01M
+ICsgTWFyayArIFdpbGwKPj4gQW0gMDQuMTIuMTkgdW0gMDU6NTUgc2NocmllYiBXYW5nIFlhblFp
+bmc6Cj4+PiBJIHVzZSAicGVyZiByZWNvcmQiIHRvIGRlYnVnIHBlcmZvcm1hbmNlIGlzc3VlIG9u
+IFJURDEyOTYgU09DLCBpdCAKPj4+IGRvZXMndCB3b3JrLCBidXQKPj4+IHRoZSAicGVyZiBzdGF0
+IiBpcyBvayEKPj4gVGhhbmtzIGZvciB0aGUgcmVwb3J0IC0gd2hpY2ggYm9hcmQsIGJyYW5jaCBh
+bmQgKGJhc2UpIHRhZyBhcmUgeW91Cj4+IHRlc3RpbmcgYWdhaW5zdD8gQW5kIGFyZSB5b3UgYnVp
+bGRpbmcgcGVyZiB5b3Vyc2VsZiBmcm9tIGtlcm5lbCAKPj4gc291cmNlcywKPj4gb3IgYXJlIHlv
+dSB1c2luZyBzb21lIGRpc3RybyBwYWNrYWdlPwo+PiBJIG9ubHkgaGF2ZSBCdXN5Ym94IGluIG15
+IGluaXRyZCBvbiBEUzQxODsgSSBoYXZlIG5vdCB0ZXN0ZWQgcGVyZi4KPj4KPj4+IEFmdGVyIHNv
+bWUgZGlnIGluIHRoZSBrZXJuZWwsIEkgZmluZCB0aGUgcmVhc29uIGlzIG5vIHBtdSBvdmVyZmxv
+dyAKPj4+IGludGVycnVwdCwgSSB0aGluawo+Pj4gYmVsb3cgcG11IGNvbmZpZ3VyYXRpb24gaXNu
+J3QgcmlnaHQgZm9yIFJURDEyOTY6Cj4+PiAiCj4+PiAgICAgICAgICBhcm1fcG11OiBhcm0tcG11
+IHsKPj4+ICAgICAgICAgICAgICAgICAgY29tcGF0aWJsZSA9ICJhcm0sY29ydGV4LWE1My1wbXUi
+Owo+Pj4gICAgICAgICAgICAgICAgICBpbnRlcnJ1cHRzID0gPEdJQ19TUEkgNDggSVJRX1RZUEVf
+TEVWRUxfSElHSD47Cj4+PiAgICAgICAgICB9Owo+Pj4gIgo+Pj4KPj4+IFdlIG5lZWQgNCBQTVUg
+U1BJIGZvciBSVEQxMjk2ICg0IGNvcmVzKSwgYW5kIEkgZ3Vlc3MgdGhlIDQ4IGlzbid0IAo+Pj4g
+cmlnaHQgdG9vLgo+PiBOb3RlIHRoYXQgYWJvdmUgcnRkMTI5eC5kdHNpIHNuaXBwZXQgaXMgbm90
+IGNvbXBsZXRlLiBTZWUgCj4+IHJ0ZDEyOTYuZHRzaToKPj4gJmFybV9wbXUgewo+PiAJaW50ZXJy
+dXB0LWFmZmluaXR5ID0gPCZjcHUwPiwgPCZjcHUxPiwgPCZjcHUyPiwgPCZjcHUzPjsKPj4gfTsK
+Pgo+IFRoYXQgZG9lc24ndCBoZWxwIG11Y2gsIHNpbmNlIDQgYWZmaW5pdGllcyBmb3Igb25lIFNQ
+SSBpcyByYXRoZXIgCj4gbm9uc2Vuc2ljYWwuCj4KPj4gNDggYW5kIGhpZ2gvNCBtYXRjaCB3aGF0
+IEkgc2VlIGluIHRoZSBsYXRlc3QgQlNQOgo+PiAKPj4gaHR0cHM6Ly9naXRodWIuY29tL0JQSS1T
+SU5PVk9JUC9CUEktTTQtYnNwL2Jsb2IvbWFzdGVyL2xpbnV4LXJ0ay9hcmNoL2FybTY0L2Jvb3Qv
+ZHRzL3JlYWx0ZWsvcnRkMTI5eC9ydGQtMTI5Ni5kdHNpI0wxMTYKPj4KPj4+IEFueSBzdWdnZXN0
+aW9uIGlzIHdlbGNvbWUuCj4+Pgo+Pj4gVGhhbmtzIQo+PiBUaGUgb25seSBkaWZmZXJlbmNlIEkg
+c2VlIGlzICJhcm0sY29ydGV4LWE1My1wbXUiIHZzLiAKPj4gImFybSxhcm12OC1wbXV2MyIuCj4+
+IEJ5IG15IHJlYWRpbmcgb2YgYXJjaC9hcm02NC9rZXJuZWwvcGVyZl9ldmVudC5jIHRoZSBvbmx5
+IGRpZmZlcmVuY2UKPj4gYmV0d2VlbiB0aGUgdHdvIHNob3VsZCBiZSB0aGUgbmFtZSBhbmQgYW4g
+ZXh0cmEgY2FjaGVfbWFwLiBZb3UgY291bGQgCj4+IHRyeQo+PiB0aGUgb3RoZXIgY29tcGF0aWJs
+ZSBzdHJpbmcgaW4geW91ciAuZHRzLCBidXQgSSBkb3VidCBpdCdsbCBoZWxwLgo+PiBIb3BlZnVs
+bHkgdGhlIFJlYWx0ZWsgb3IgQXJtIGd1eXMgY2FuIHNoZWQgc29tZSBsaWdodC4KPgo+IElmIHRo
+ZSBTb0MgcmVhbGx5IGhhcyBhbGwgNCBvdmVyZmxvdyBpbnRlcnJ1cHRzIGNvbWJpbmVkIGludG8g
+YQo+IHNpbmdsZSBTUEkgbGluZSwgdGhlbiBzYW1wbGluZyBqdXN0IGlzbid0IGdvaW5nIHRvIGJl
+IHN1cHBvcnRlZCAtIAo+IGl0J3MKPiB1bnJlYXNvbmFibHkgZGlmZmljdWx0IHRvIGhhbmRsZSBv
+dmVyZmxvdyB3aGVuIHRoZSBJUlEgbWF5IGJlIHRha2VuIAo+IG9uCj4gdGhlIHdyb25nIENQVS4K
+CkluZGVlZC4gQW5kIEkndmUgcmVjZW50bHkgZm91bmQgdGhpcyBleGFjdCBkZXNpZ24gYmx1bmRl
+ciBvbiBhIGJyYW5kIApuZXcKQW1sb2dpYyBTb0MsIHdoZXJlIHRoZSBwZXItY29yZSBpbnRlcnJ1
+cHRzIGhhdmUgYmVlbiBPUidkIHRvZ2V0aGVyLgpBbmQgbm90IGp1c3QgZm9yIHRoZSBQTVUhIEl0
+IGlzIHRoZSBzYW1lIHNpdHVhdGlvbiBmb3IgdGhlIEdJQywgQ1RJLAphbmQgYSBjb3VwbGUgb2Yg
+b3RoZXIgdGhpbmdzLiBUaGUgb25seSBzYW5lIGludGVycnVwdHMgYXJlIHRoZSB0aW1lcnMuCgoo
+c291bmQgb2YgYSBQQ0IgaGl0dGluZyB0aGUgYmluLi4uKQoKICAgICAgICAgTS4KLS0gCkphenog
+aXMgbm90IGRlYWQuIEl0IGp1c3Qgc21lbGxzIGZ1bm55Li4uCgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
