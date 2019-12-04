@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4DDA112E5B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 16:28:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A573112E7F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 16:31:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
 	Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DYkB7clsPXFBo1qOPpEGywDoAW02+lEJJ30FDO+j/YI=; b=fV1QY753D3eyfu
-	oSGHTwf3mCI+StldCr7AnKodpl8jhqycG3HTw41P6owKpCYnIyQQclMnhvcyqcrXnp0OVsMokTSV/
-	S4twTWm8VSOxxi0eRQn8mJQ+cIasaikRCR9ViqmCRHcygPkxy6GrrMj0PKIJVRrKRe4MA12us8wFB
-	VQexeTKMjP9BLO7PMvFaK6FZ78WufkHoUd0MSxbtvKQdt+HwTWyg53q+zmi/YdUfSvaC5pVC3hp6m
-	V8mZ8yGA9lNXmeN4k1dqFoTirsI4MxeOkihTnthCnkgRKjJKAjQsHJ1JWoiuqWGYMK8pb7zdqpzA9
-	LvSlvjHNyCP5aoz+fWLQ==;
+	List-Owner; bh=NyF3rm64a00+5hl/GE2Pm6MzjZqyrKLSBM50YpdBq4A=; b=Nt1NvPA55X199m
+	syKAMF3uWURVZrM56FNducv+7Hc7zA5sbeTSsoeigET2KI1E87Xrvf0DsO9YwCz0xs0nOV6qn1cPX
+	l2MQiwk/f8leNDuRJM6QwoGnqV3ASxCxo+kc6ZeP1mJ24rKM6GFN90KAaVMUFAz3le+nv/o//5g4P
+	NvCIS6qwcntTfijJs3cME1YROmtMloAYoVsOZT1IxANRcS8YzP+qRS3FOBsnG2xMAzCM73mRfRlmc
+	qkOsJ+e6pgJty2Rp2aFvGKy7Lin+MPgo9t4+ARcp+cJxtYgg6KHxQY57vjX7Uk1hnWYQZ3+R8ksDt
+	phpcdwta8H0dkqyqNKgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icWZe-0002Di-4e; Wed, 04 Dec 2019 15:28:18 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1icWcy-0003xI-Rc; Wed, 04 Dec 2019 15:31:44 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icWZT-0002Cx-JP
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 15:28:09 +0000
-Received: by mail-wr1-x441.google.com with SMTP id w15so9137683wru.4
+ id 1icWcr-0003wU-9k
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 15:31:38 +0000
+Received: by mail-wm1-x341.google.com with SMTP id f129so173990wmf.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 07:28:06 -0800 (PST)
+ Wed, 04 Dec 2019 07:31:35 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=kernelci-org.20150623.gappssmtp.com; s=20150623;
  h=message-id:date:mime-version:content-transfer-encoding:subject:to
- :from:cc; bh=n0PMYgXBxpTJTwUFndMR8j8g1X+3mghMk/wqd/jqgb4=;
- b=cPNuQoPsK/IaM6bjnT9f9fznnLZV6W3amrqNwE5KT0g0fAzb0IB/r7CZzMMmqG5ooF
- bH1J5zqnHViwUlMvEZUMnhKSdwt5CVERjPLQwXJJ59xzXl4TkPThLLFguRiCuTZqZLgh
- p8o9z51+Io63YGZ1D9Y3mBoy3VbQcM+CbjGLvPNMOhaoW6Hz6VFWLzT4xI3Xe6Ft6jSG
- SWNl6f5cKTA5UVJI9eL/iWIM3Xqav0Ge9KFr1dzDqT+TaR4jNStC23Z+6MfNvMlDZFg5
- vHOUT9n0pWZu63JbNZUgt5Wr8SRaNB8EYuYCYVvGYsz6+agsYFdQQOU/RNfLOp2vMOnS
- 7XbQ==
+ :from:cc; bh=ijoLCBnJ3pPexA/GR1FIE4d3lIT82dN/vPnRiftiEjE=;
+ b=E3DsFqNYYoNk3wJ8krQcMebT9+rMBTieirdWX7fi/YE5D0FA1P8YnZ4k8ZZNAJObnb
+ fwLjJ+H6rCS2tv9FYx6CjYeL8ThmCGHLTgz1oQ2HYmorHjwTAm/xeNKu04RpHTjQgQSG
+ AGMUyh6S3BMEQ2BLImO5bJKMED3wiqljPM4VykXcD+mEnl571jShECGkL0tKNNGvDoji
+ nfb8k2Z2q5tf+39Edjv03J1+IuyiwI+cL3VIBnhH/7Rb68MAKPpO7r9CJBczn9CI13DP
+ V6MxlO0bM2m5y3GEm0o639CBJoTN6oHCbL6mrpT1tHVhxqbw3lA4dmRFoeoT9dGPwlCV
+ RyAg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:message-id:date:mime-version
  :content-transfer-encoding:subject:to:from:cc;
- bh=n0PMYgXBxpTJTwUFndMR8j8g1X+3mghMk/wqd/jqgb4=;
- b=mdsVaZHroNLvU3sO6Lhs2ol+isOc595x27tiBcoU9BPxfTIz9QCFwFOpoSjVRYYX0W
- iiIJZvlMTbQe6tUQbjzkn0ItbuJqxOpFLpeM6N5iUwWxd0QxyvXGcvK4kgRVPb7qNC7p
- t1HpAfuPjH/34quhN/bWYDBIy/W6KoLPqw60tbbZErI+TnwXEwT1Pm7nC08FKaVkDKbu
- 0IaVJKYpkzOxkj194vPXFz+n8XLvH/0/8SU31PfqWK8zZypUXDcI2GNUhjA2uYWcP6t3
- yDvIWQmuvf54TRrNGPWpClULmr4lX7+mqFRQdZhO0ITmmrGm+GB0ACk9+Z0UoLSLSzo5
- y+EA==
-X-Gm-Message-State: APjAAAUKarcWmhwRTOXLWLzsTwNW1nE14vXq0W4ISZ99An8QET52T3ku
- N1bWnLTb4GUC8MRbYQyiHOW1KA==
-X-Google-Smtp-Source: APXvYqzg1TyHqcrLbHlAbi08TX3/2GpmskSRV7ZVEsEDmRuvJ1eZlWpKFOWi870svMg0kU8UUNR6OA==
-X-Received: by 2002:adf:eb46:: with SMTP id u6mr4788809wrn.239.1575473284403; 
- Wed, 04 Dec 2019 07:28:04 -0800 (PST)
+ bh=ijoLCBnJ3pPexA/GR1FIE4d3lIT82dN/vPnRiftiEjE=;
+ b=eOfrq3IPT/yCv5atAC6brUoT7mOm+SgcXuBxe0bFX6mU7hUrM911iPfoVwnJgO0x4q
+ d15yDkpXBQQ5Zp5YvC1mQaMI688CxT7YT3sBayeM+yxo9jvJ3oY7MJ+WOJwukq1wDFRm
+ 9RWgbVsqMtYjkfbGkiRjV2X0juk1YoLbEpphX43O1WXrQ82FA2YPY5viPyr5LekrQ3VK
+ kzG3UVohcBEzA3uC9C7aHqE2g3/3O6NiWStfICDbViReTOrNuEctTaIsrFtqvb5ug1MT
+ OvHo+Z2LfROmXIme6Pl7eS9ygQ+dpQCnkquKG8eOA7jyuOv+NGInk95S1GU5H5uz/PLK
+ iZ0A==
+X-Gm-Message-State: APjAAAU6Yx/1wh7qCN8Jo6BQVKNsWTtbH2RBcNRX+LR6O7LtKM6YJJJe
+ BYjSH9yBx5irpvTwwJojwo5riQ==
+X-Google-Smtp-Source: APXvYqxbr+RDuWTYR72YaOoOSelg81h69keK+nXeReh9jM343ocfrIvOsVlWJnN/+vq+YcyK7XaPRw==
+X-Received: by 2002:a1c:a906:: with SMTP id s6mr133439wme.125.1575473494478;
+ Wed, 04 Dec 2019 07:31:34 -0800 (PST)
 Received: from [148.251.42.114] ([2a01:4f8:201:9271::2])
- by smtp.gmail.com with ESMTPSA id b2sm8607869wrr.76.2019.12.04.07.28.03
+ by smtp.gmail.com with ESMTPSA id u10sm6971432wmd.1.2019.12.04.07.31.33
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 07:28:03 -0800 (PST)
-Message-ID: <5de7d083.1c69fb81.82fe2.b0da@mx.google.com>
-Date: Wed, 04 Dec 2019 07:28:03 -0800 (PST)
+ Wed, 04 Dec 2019 07:31:33 -0800 (PST)
+Message-ID: <5de7d155.1c69fb81.c06f8.3583@mx.google.com>
+Date: Wed, 04 Dec 2019 07:31:33 -0800 (PST)
 MIME-Version: 1.0
 X-Kernelci-Report-Type: bisect
 X-Kernelci-Kernel: v5.4-9340-g16839329da69
@@ -65,13 +65,13 @@ X-Kernelci-Tree: ardb
 X-Kernelci-Branch: for-kernelci
 X-Kernelci-Lab-Name: lab-collabora
 Subject: ardb/for-kernelci bisection: boot on rk3288-rock2-square
-To: tomeu.vizoso@collabora.com, guillaume.tucker@collabora.com,
- enric.balletbo@collabora.com, khilman@baylibre.com, mgalka@collabora.com,
- Ard Biesheuvel <ardb@kernel.org>, broonie@kernel.org
+To: Ard Biesheuvel <ardb@kernel.org>, mgalka@collabora.com,
+ guillaume.tucker@collabora.com, broonie@kernel.org,
+ enric.balletbo@collabora.com, tomeu.vizoso@collabora.com, khilman@baylibre.com
 From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_072807_780626_23B79D71 
-X-CRM114-Status: UNSURE (   7.42  )
+X-CRM114-CacheID: sfid-20191204_073137_342965_479FEB8E 
+X-CRM114-Status: UNSURE (   7.20  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,7 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -97,11 +97,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-crypto@vger.kernel.org,
+Cc: Herbert Xu <herbert@gondor.apana.org.au>, linux-kernel@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>, linux-crypto@vger.kernel.org,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Herbert Xu <herbert@gondor.apana.org.au>
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Alexandre Torgue <alexandre.torgue@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -123,9 +123,9 @@ ardb/for-kernelci bisection: boot on rk3288-rock2-square
 
 Summary:
   Start:      16839329da69 enable extra tests by default
-  Details:    https://kernelci.org/boot/id/5de791acd6451dc5be960f08
-  Plain log:  https://storage.kernelci.org//ardb/for-kernelci/v5.4-9340-g16839329da69/arm/multi_v7_defconfig+CONFIG_SMP=n/gcc-8/lab-collabora/boot-rk3288-rock2-square.txt
-  HTML log:   https://storage.kernelci.org//ardb/for-kernelci/v5.4-9340-g16839329da69/arm/multi_v7_defconfig+CONFIG_SMP=n/gcc-8/lab-collabora/boot-rk3288-rock2-square.html
+  Details:    https://kernelci.org/boot/id/5de79104990bc03e5a960f0b
+  Plain log:  https://storage.kernelci.org//ardb/for-kernelci/v5.4-9340-g16839329da69/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-rock2-square.txt
+  HTML log:   https://storage.kernelci.org//ardb/for-kernelci/v5.4-9340-g16839329da69/arm/multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y/gcc-8/lab-collabora/boot-rk3288-rock2-square.html
   Result:     16839329da69 enable extra tests by default
 
 Checks:
@@ -140,7 +140,7 @@ Parameters:
   CPU arch:   arm
   Lab:        lab-collabora
   Compiler:   gcc-8
-  Config:     multi_v7_defconfig+CONFIG_SMP=n
+  Config:     multi_v7_defconfig+CONFIG_EFI=y+CONFIG_ARM_LPAE=y
   Test suite: boot
 
 Breaking commit found:
