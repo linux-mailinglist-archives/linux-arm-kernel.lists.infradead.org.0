@@ -2,67 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CACC112C26
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 13:58:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55775112C4D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 14:08:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=diQP0JO41q+RrhOTZyIPOh7iv+6AqD/OIzrZyW+7T/U=; b=HRZjY6vQPgOXNC
-	Ys5inMcoyI4TMtAqlvby/1rqCC6dUbpQwEQ0+Ua7Os4zEIOWtdi/kFM0Oq6iDBr6+plAjn/WI2zXk
-	/tYQHfMRKtcji3+leXaXmXMu/kShSQx25P8V5nKm5lhKCMFTv5xnV7pbGUU/jFZ9srjTX6eX9CXRH
-	IzniEe5AAXP/rWmo4PayP+n0VNAyq7rKOXz4pv/urlKvqID2w3k+sPytkgC/UsC34LgVdm2em/bX0
-	/gFoqizhxyNYIkDV14tJxfZ18BkHgu8WkqSZJ8GgPf26qNS6GwYAgeMK/Qv8fjVje9/FSE6/n7kkz
-	iGeseyPczz3Si/6RmTUQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wYSfku9iIZyWefI16u85Z5O57opuHHMytEUp28Ppyzk=; b=coOmEge7sTsvZa
+	MzTO717SQuVFvKSEv8eD6rVIHLkCJU10g7LgHQCJH5VZWjq5BTU8YYszvc8S4SUO+hDnvDKWAhXS5
+	ajLarKy8l3ZFjyeVQy7050Edu4LF/G72HNpT1ZCO+va18M2dc7kb6AWqtWUB3Xkh1EBNHDCQdM31A
+	nldQLSCOJniwo2QFMJq3UBs8UU5jJD1n+xmFHPzSQy4mhuJiOQcnStngKh/TPpNWcFwR4EeKmAlWJ
+	+Jg0VyQJlm6aHSVwcb4TFAx/8PIv8vInkrZwQHK375U4RwVS5I8jjJqSsbc8I2jIS7vFw8JEq0OUl
+	Hy00z9cD+TkFPr3FmBbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icUEA-0001gb-BP; Wed, 04 Dec 2019 12:57:58 +0000
+	id 1icUNy-0006Xv-Bx; Wed, 04 Dec 2019 13:08:06 +0000
 Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icUDO-0001Fp-U0
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 12:57:13 +0000
-Received: by mail-wr1-x443.google.com with SMTP id w15so8505494wru.4
+ id 1icUNp-0006WM-Nd
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 13:07:58 +0000
+Received: by mail-wr1-x443.google.com with SMTP id y17so8520788wrh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 04:57:09 -0800 (PST)
+ Wed, 04 Dec 2019 05:07:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=WX9DsnxjR1TLkIQAS0BjsZD23PSgQu93DSuzJlaRss8=;
- b=CjK94ZRk2M/LKqEEX5rm/3WkZf/HiI3Q+vVXDbZOZxQNFGaqW6DwTHkkkx84vRfS+M
- U4ORtkjPBA9iSMbi9wpu7YmMFTp+pNz3ylxcjalwvJv2KZQBId8X2noNPl++SsRNODK7
- QHPvskaMNV5R762Lpb7nY4iTA+SdVhlMhJxfRgfvM6jxwD1ZNI97gcI1rUhzyzNaVE+Q
- k0Bc2/yGbWtp6U/eTSBRlksg5lobZN4iEcrEFCI2rqfgwYhIgxNwI1rIPCeNNltPaVVM
- rHvfdkl+vcc+QKkCwM59zcflNAcevYc8jww4nTJSaG3Zq6ZEE7D6XZBEvNXC3R/zck1W
- +j6w==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ux9tITRTJ/K/Qnf2cowWRV/QtrytZWRzAJVLhfRd3HA=;
+ b=H2vJTmLCRg2B0vAzcRnFW5l2kcMe9ZMiQmW5lSSXLYs7Gx4zo7g/CsiWsPVgaI1ilc
+ wv6bo29fewcdSfV2DAK2WxXKCHV9l6ctdgVbwh4EYnhCJx+rFEnyaMv1oqLIC188qnCy
+ d+mej9AsTPL5YF58v6Oc+2ZVG87ok5n+pieT4ovQe5nX34nYv953Rn6Rm0ksOpZYCnfX
+ TLvGpWSpLbkGnqajZZBvdYY5UnEWCxsNv83U0S13lwvJAN3rzuXF+FS/HlQlJKZGviYa
+ mXKM743d4bTzt2PskNL+QIY21IMCasjcSGJkFflrVQMX8ybMQYNwI7GPQt6nr853pmY/
+ WUjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=WX9DsnxjR1TLkIQAS0BjsZD23PSgQu93DSuzJlaRss8=;
- b=I7Z21o5Wtz4tuo9VDhlwUbZQkalyx6tzL8Tcg8bnIMzqDCOR3a5PGr6PLEmB+k1Vcn
- NpJwPDLtUdL+g4cporXJNoMAeBMX/wGNY1rsBO5BEQORMSm6jfCrNU1xkGOh9Ke9lS9B
- zoI6i2fQWnajaWxQgH/yxCgOwgz9QS7xJ7yhHXaiPxWrrsOICvDDi+Qo/G+WW83pJTbP
- Llb9rqDrq10TUUs3pKFKG67teZABqpNAhT2FFFljP+fd4L8oJdbJ4P28lqDyiAuTzoTy
- gAWTC3Cr+YzZFmAeYNacv1NIj3VCBLoUquXacpsINA7X55f/xNSk/k2lqSYouAnpsdjG
- 58vA==
-X-Gm-Message-State: APjAAAVcexMl6qBsHSZ6qWbi0QH3QYjymARtrPRGU3foDkPzDZ1CS7J2
- wJDuZ4ltcNpsSmgvD7+mNt4rdPQRd4N9XRLMP6s=
-X-Google-Smtp-Source: APXvYqzndsNueQS92Xe4B1d71REsjlvqx9ynvD8CvVkru+ORVDr1gVmjag6dLc6gMBN+1fpeYUjla8YjTCCO/YsvQMA=
-X-Received: by 2002:adf:dd52:: with SMTP id u18mr3950790wrm.131.1575464228649; 
- Wed, 04 Dec 2019 04:57:08 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ux9tITRTJ/K/Qnf2cowWRV/QtrytZWRzAJVLhfRd3HA=;
+ b=I51l/khcRNfcv+ShIPUpYZwceQiL4f0lbJeVHE+N67rDLS8ltykff/cOnWzvUho5sx
+ CP3RHqlcMVa2fndG+7nAUJsNplpwtTtI0+wkrcupoka8z8zJZa2fqNDIZzGpZhlSVU0y
+ r01Pwaij0ERsAmV4LmnzIAYUbOZ2u1OMHd8/TEaj3ZHULzH8W2O2myJYMdImlOdY4etb
+ 4Dq9tm5/Q1GC1Vx0coAkNIqh5jyNDnTbk/1RxAHrnDNO76Q9yf94eVzpch3DSoQtXAnC
+ 4TR4ctlTMYHMhmVmzw8Ydca1WRb5IfktasTy16PAnTVH1LLh5DWPv4GjEG3ePd6h/YHh
+ 457A==
+X-Gm-Message-State: APjAAAUZBlMBscTgpyrhJwOFDza/nc+7MU2lCVnMCekJhgIY107mVsfh
+ EnfhrJsR9DM0D9HN0flRpAk=
+X-Google-Smtp-Source: APXvYqxK3JthT2l0Yj/2dZ39D1HZCIOxy5aGGbAOcYRAPyJaK6c8NE32tB2ZD42/xwsZEruZ3984xg==
+X-Received: by 2002:adf:dc0a:: with SMTP id t10mr3812995wri.138.1575464876303; 
+ Wed, 04 Dec 2019 05:07:56 -0800 (PST)
+Received: from localhost (pD9E518ED.dip0.t-ipconnect.de. [217.229.24.237])
+ by smtp.gmail.com with ESMTPSA id a14sm8520219wrx.81.2019.12.04.05.07.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 04 Dec 2019 05:07:55 -0800 (PST)
+From: Thierry Reding <thierry.reding@gmail.com>
+To: soc@kernel.org,
+	arm@kernel.org
+Subject: [GIT PULL 1/3] memory: tegra: Fixes for v5.5-rc1
+Date: Wed,  4 Dec 2019 14:07:51 +0100
+Message-Id: <20191204130753.3614278-1-thierry.reding@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-References: <20191204124816.1415359-1-colin.king@canonical.com>
-In-Reply-To: <20191204124816.1415359-1-colin.king@canonical.com>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Wed, 4 Dec 2019 14:56:57 +0200
-Message-ID: <CAEnQRZAEExdNS+=aSFb86OCgWfezEFHYvoAJBV4=DshEprRGrA@mail.gmail.com>
-Subject: Re: [PATCH] ASoC: SOF: imx8: fix memory allocation failure check on
- priv->pd_dev
-To: Colin King <colin.king@canonical.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_045711_009627_8E2A60C0 
-X-CRM114-Status: GOOD (  15.82  )
+X-CRM114-CacheID: sfid-20191204_050757_771447_15F2D23B 
+X-CRM114-Status: GOOD (  11.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -74,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (daniel.baluta[at]gmail.com)
+ provider (thierry.reding[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,57 +97,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Baluta <daniel.baluta@nxp.com>,
- Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Linux-ALSA <alsa-devel@alsa-project.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- kernel-janitors@vger.kernel.org, Takashi Iwai <tiwai@suse.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 4, 2019 at 2:49 PM Colin King <colin.king@canonical.com> wrote:
->
-> From: Colin Ian King <colin.king@canonical.com>
->
-> The memory allocation failure check for priv->pd_dev is incorrectly
-> pointer checking priv instead of priv->pd_dev. Fix this.
->
-> Addresses-Coverity: ("Logically dead code")
-> Fixes: 202acc565a1f ("ASoC: SOF: imx: Add i.MX8 HW support")
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+Hi ARM SoC maintainers,
 
-Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
+The following changes since commit 141bef44e123c101c0da0443ab6b3cfa750f251a:
 
-Good catch! Thanks Colin!
+  memory: tegra: Consolidate registers definition into common header (2019-11-11 14:55:27 +0100)
 
-> ---
->  sound/soc/sof/imx/imx8.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/sound/soc/sof/imx/imx8.c b/sound/soc/sof/imx/imx8.c
-> index cfefcfd92798..9d926b1df0d7 100644
-> --- a/sound/soc/sof/imx/imx8.c
-> +++ b/sound/soc/sof/imx/imx8.c
-> @@ -209,7 +209,7 @@ static int imx8_probe(struct snd_sof_dev *sdev)
->
->         priv->pd_dev = devm_kmalloc_array(&pdev->dev, priv->num_domains,
->                                           sizeof(*priv->pd_dev), GFP_KERNEL);
-> -       if (!priv)
-> +       if (!priv->pd_dev)
->                 return -ENOMEM;
->
->         priv->link = devm_kmalloc_array(&pdev->dev, priv->num_domains,
-> --
-> 2.24.0
->
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.5-memory-fixes
+
+for you to fetch changes up to 030d2829f4c22e675e21904f32ab60f659174e72:
+
+  memory: tegra30-emc: Fix panic on suspend (2019-11-18 13:54:40 +0100)
+
+Thanks,
+Thierry
+
+----------------------------------------------------------------
+memory: tegra: Fixes for v5.5-rc1
+
+This contains a fix for a kernel panic that can occur on suspend if EMC
+timings are not available in device tree.
+
+----------------------------------------------------------------
+Dmitry Osipenko (1):
+      memory: tegra30-emc: Fix panic on suspend
+
+ drivers/memory/tegra/tegra30-emc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
