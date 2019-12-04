@@ -2,65 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 454F7112BF7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 13:47:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65671112C27
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 13:58:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=S08AzQAlAgKH0xUj+YALfvG/oV3x0gLeaputjtHA6gI=; b=gY9jGSSDnkCwF2
-	taue1YnvNxBAzUfKnCbDfaWnNKBW2187E8YKgFrfC9AX6WOob9x9S0LroXOkLnmFgZGomkonwp4V9
-	tS7BrWs50Ez90vjLMzw3vtALTc24fWVATGY1OW/rzsYCByrDfbpBcHu/lL5n2a6x1FiymaY1WRGV1
-	BDfH1E4g2xN8t1sfg9BduVl1mxN2ti8AbrzsMRAKa89HJ9GgoGsuLF5KnUHb/1DdQw+Q0KxOWN8GT
-	rE8zCTHafuRKGyfOdz52q8i1IVAk4V8ZGZ34L3IfviwjDB+0ZI7AOJdpm3coWJSerDy78G/vBXWcc
-	0jwBRQnZWTnFNmOO1REQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p7XS+ufBgeXUZtea8brCde+ugk9XeGw+Syd9KDmiPls=; b=TqJdZdx9G/sHQt
+	Jpy0plJwdR9iAL/5cGD+b9ZSB6b6XlbFgJLP23IakKVeDsZ64f8oB1xJFJ4aVEG+f/frcC7YGWe44
+	1tOtI+TC91tb16NF83XHHRU9aW0GXwlEW848lrOfxAgZdzu8CYZ9Veq2Sq32OK3SuA2UwXy6cnWvv
+	pC6yDVq42mjQddBPm7PCZbNQTwOjaAJhpAUJC3EPJdJjMHEw0Ir1fnoARgMfjXbORLxVLatcVwLeH
+	dc26pcCdlucK5hGL3pLfa45O0U4LZwGNPvOoopSs4ojMMK5kyKUXM0GhclKjQU42+PnFfsFDpKBtR
+	MsYjLa6AGDsaaGwHl+Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icU4R-0003cQ-AP; Wed, 04 Dec 2019 12:47:55 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1icUEn-0002DF-LH; Wed, 04 Dec 2019 12:58:37 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icU4H-0003aT-GB; Wed, 04 Dec 2019 12:47:47 +0000
-X-UUID: 3f01b92ee6ce4b07a9902acd5680482c-20191204
+ id 1icUDz-0001lE-5h; Wed, 04 Dec 2019 12:57:50 +0000
+X-UUID: 1c7a6ef0367f417798e3758d4cf8d2fb-20191204
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=ZJ4kkueZ5M1fVXPW34E8ZBOmqDHVewldVKMweLBs5DU=; 
- b=l9JzWrF9OqyRA1W5sV7jsp3BBuweo/Kdae4X6lmwRR0lce+c4+38W68KgyrYqRjdW/nJceROPkrJn9Oyi5vLNY+eO9dnz/BMVyCVgdflTeCFHjh7RGgXkVowL+3eGucrOYMV02EksH+5K71Gbb0TIoGXjkdjxenFtbOfllFz17I=;
-X-UUID: 3f01b92ee6ce4b07a9902acd5680482c-20191204
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=AJ6EJ09qaARojHJVEQN6B8vyTmhEAX2xvL+vGW8QBaU=; 
+ b=rdUNfcQIvYCeI2NBJoGMPH8MeXwADc7TbsJv5o0UfBbDLYwboAHoEv62c3WRETa7Qn4vWwlIp2x3lQrdq9fCj9dkBHPAKZsvcIHPPwJkP1CqpRPTz2bfNJk9zHeZ1nCveoC4ARQUqiIiPbXh+88wz1qnok6hFSTae7wIi72Gmew=;
+X-UUID: 1c7a6ef0367f417798e3758d4cf8d2fb-20191204
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <jerry-ch.chen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 696293361; Wed, 04 Dec 2019 04:47:39 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ with ESMTP id 110816230; Wed, 04 Dec 2019 04:57:44 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Dec 2019 04:48:27 -0800
+ 15.0.1395.4; Wed, 4 Dec 2019 04:48:33 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Dec 2019 20:47:30 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Dec 2019 20:47:25 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Wed, 4 Dec 2019 20:46:40 +0800
+ Frontend Transport; Wed, 4 Dec 2019 20:46:45 +0800
 From: Jerry-ch Chen <Jerry-Ch.chen@mediatek.com>
 To: <hans.verkuil@cisco.com>, <laurent.pinchart+renesas@ideasonboard.com>,
  <tfiga@chromium.org>, <matthias.bgg@gmail.com>, <mchehab@kernel.org>
-Subject: [RFC PATCH V4 0/4] media: platform: Add support for Face Detection
- (FD) on mt8183 SoC
-Date: Wed, 4 Dec 2019 20:47:28 +0800
-Message-ID: <20191204124732.10932-1-Jerry-Ch.chen@mediatek.com>
+Subject: [RFC PATCH V4 1/4] media: v4l2-mem2mem: add v4l2_m2m_suspend,
+ v4l2_m2m_resume
+Date: Wed, 4 Dec 2019 20:47:29 +0800
+Message-ID: <20191204124732.10932-2-Jerry-Ch.chen@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20191204124732.10932-1-Jerry-Ch.chen@mediatek.com>
+References: <20191204124732.10932-1-Jerry-Ch.chen@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_044745_549696_C60FF7EB 
-X-CRM114-Status: UNSURE (   7.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191204_045747_254273_D7272997 
+X-CRM114-Status: GOOD (  12.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -89,6 +92,7 @@ Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com, Rynn.Wu@mediatek.com,
  pihsun@chromium.org, srv_heupstream@mediatek.com, Jerry-ch.Chen@mediatek.com,
  jungo.lin@mediatek.com, sj.huang@mediatek.com, yuzhao@chromium.org,
  linux-mediatek@lists.infradead.org, zwisler@chromium.org,
+ Jerry-ch Chen <jerry-ch.chen@mediatek.corp-partner.google.com>,
  christie.yu@mediatek.com, frederic.chen@mediatek.com,
  linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
@@ -96,252 +100,137 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+From: Pi-Hsun Shih <pihsun@chromium.org>
 
-This RFC patch series is adding Face Detection (FD) driver on Mediatek
-mt8183 SoC. It belongs to the first Mediatek's camera driver series based
-on V4L2 and media controller framework. I posted the main part of the FD
-driver as RFC to discuss first and would like some review comments.
+Add two functions that can be used to stop new jobs from being queued /
+continue running queued job. This can be used while a driver using m2m
+helper is going to suspend / wake up from resume, and can ensure that
+there's no job running in suspend process.
 
-==============
-Introduction
-==============
+BUG=b:143046833
+TEST=build
 
-Face Detection (FD) unit provides hardware accelerated face detection
-feature. It can detect different sizes of faces in a given image.
+Signed-off-by: Pi-Hsun Shih <pihsun@chromium.org>
+Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.corp-partner.google.com>
+---
+ drivers/media/v4l2-core/v4l2-mem2mem.c | 40 ++++++++++++++++++++++++++
+ include/media/v4l2-mem2mem.h           | 22 ++++++++++++++
+ 2 files changed, 62 insertions(+)
 
-The driver is implemented as a normal V4L2 memory-to-memory device and
-supports V4L2 controls for detection settings. It has two buffer queues.
-
-1. Video output buffer: RAW image for face detection.
-
-2. Meta capture buffer: Result of the detected faces.
-
-==================
-Changes in v4
-==================
-
-RFC v4 includes the following modification:
-1. Includes v4l2-mem2mem changes: add v4l2_m2m_suspend, v4l2_m2m_resume
-
-2. Move FD V4L2 control ids back inside FD driver
-
-3. Depend on newer SCP driver api
-
-4. Add exit hw flow for FD driver
-
-5. Add hardware timeout handling in the FD firmware
-
-6. Move allocation of dma buffer from connect / disconnect to driver probe
-/ remove
-
-Todo:
- - Add v4l2 control menus for private mtk fd control
-==================
-Changes in v3
-==================
-
-RFC v3 includes the following modification:
-1. Adjust the private control ids and place them in
- include/uapi/linux/mtk-fd-v4l2-controls.h
-
-2. Merge struct mtk_fd_hw info struct mtk_fd_dev
-
-3. Define FD meta capture buffer in include/uapi/linux/videodev2.h
-
-4. Remove the usage of get_reserved_memory by scp driver,
- use dma_alloc api instead
-
-Todo:
- - Add v4l2 control menus for private mtk fd control
- - Refine the job finish flow when system suspend
-==================
-Changes in v2
-==================
-
-RFC v2 includes the following modification:
-1. Implement FD as a V4L2 mem2mem driver
-
-2. Replace meta input with V4L2 controls
-
-==================
-Changes in v1
-==================
-
-RFC v1 includes the following modification:
-1. Uses Request API instead of FD's buffer collection design
-
-2. removed unnecessary abstraction structurally, including mtk_fd_ctx and
-related ops
-
-3. removed the fd_smem node from device tree
-
-4. Fixed the common issues Tomasz commented on Mediatek ISP Pass 1's RFC v0
-patch series
-
-==================
-Dependent patch
-==================
-
-FD driver depends on SCP driver. The patches are as following:
-
-[1]. Add support for mt8183 SCP
-https://patchwork.kernel.org/cover/1152350/
-
-==================
-Compliance test
-==================
-
-* Version: https://git.linuxtv.org/v4l-utils.git/commit/?id=b16f9e945d74aa5
-* Note: Some failures are caused by the implementation of FD driver,
-        whic is a m2m device with VIDEO_OUT and META_CAPTURE queues,
-        therefore we can't set V4L2_CAP_VIDEO_M2M in device capability, and
-        fail in some non-m2m v4l2 test cases.
-* Test command: v4l2-compliance -m 2
-* test output:
-
-v4l2-compliance SHA: not available, 32 bits
-
-Compliance test for mtk-fd-4.0 device /dev/media2:
-
-Media Driver Info:
-        Driver name      : mtk-fd-4.0
-        Model            : mtk-fd-4.0
-        Serial           :
-        Bus info         : platform:1502b000.fd
-        Media version    : 4.19.84
-        Hardware revision: 0x00000000 (0)
-        Driver version   : 4.19.84
-
-Required ioctls:
-        test MEDIA_IOC_DEVICE_INFO: OK
-
-Allow for multiple opens:
-        test second /dev/media2 open: OK
-        test MEDIA_IOC_DEVICE_INFO: OK
-        test for unlimited opens: OK
-
-Media Controller ioctls:
-        test MEDIA_IOC_G_TOPOLOGY: OK
-        Entities: 3 Interfaces: 1 Pads: 4 Links: 4
-        test MEDIA_IOC_ENUM_ENTITIES/LINKS: OK
-        test MEDIA_IOC_SETUP_LINK: OK
-
-Total for mtk-fd-4.0 device /dev/media2: 7, Succeeded: 7, Failed: 0, Warnings: 0
---------------------------------------------------------------------------------
-Compliance test for mtk-fd-4.0 device /dev/video32:
-
-Driver Info:
-        Driver name      : mtk-fd-4.0
-        Card type        : mtk-fd-4.0
-        Bus info         : platform:1502b000.fd
-        Driver version   : 4.19.84
-        Capabilities     : 0x84a02000
-                Video Output Multiplanar
-                Metadata Capture
-                Streaming
-                Extended Pix Format
-                Device Capabilities
-        Device Caps      : 0x04a02000
-                Video Output Multiplanar
-                Metadata Capture
-                Streaming
-                Extended Pix Format
-Media Driver Info:
-        Driver name      : mtk-fd-4.0
-        Model            : mtk-fd-4.0
-        Serial           :
-        Bus info         : platform:1502b000.fd
-        Media version    : 4.19.84
-        Hardware revision: 0x00000000 (0)
-        Driver version   : 4.19.84
-Interface Info:
-        ID               : 0x0300000c
-        Type             : V4L Video
-Entity Info:
-        ID               : 0x00000001 (1)
-        Name             : mtk-fd-4.0-source
-        Function         : V4L2 I/O
-        Pad 0x01000002   : 0: Source
-          Link 0x02000008: to remote pad 0x1000005 of entity 'mtk-fd-4.0-proc': Data, Enabled, Immutable
-
-Required ioctls:
-        test MC information (see 'Media Driver Info' above): OK
-                fail: v4l2-compliance.cpp(668): dcaps & output_caps
-        test VIDIOC_QUERYCAP: FAIL
-
-Allow for multiple opens:
-        test second /dev/video32 open: OK
-                fail: v4l2-compliance.cpp(668): dcaps & output_caps
-        test VIDIOC_QUERYCAP: FAIL
-        test VIDIOC_G/S_PRIORITY: OK
-        test for unlimited opens: OK
-
-Debug ioctls:
-        test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
-        test VIDIOC_LOG_STATUS: OK (Not Supported)
-
-Input ioctls:
-        test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
-        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
-        test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
-        test VIDIOC_ENUMAUDIO: OK (Not Supported)
-        test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)
-        test VIDIOC_G/S_AUDIO: OK (Not Supported)
-        Inputs: 0 Audio Inputs: 0 Tuners: 0
-
-Output ioctls:
-        test VIDIOC_G/S_MODULATOR: OK (Not Supported)
-        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
-        test VIDIOC_ENUMAUDOUT: OK (Not Supported)
-        test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
-        test VIDIOC_G/S_AUDOUT: OK (Not Supported)
-        Outputs: 0 Audio Outputs: 0 Modulators: 0
-
-Input/Output configuration ioctls:
-        test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
-        test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
-        test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
-        test VIDIOC_G/S_EDID: OK (Not Supported)
-
-Control ioctls:
-        test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
-        test VIDIOC_QUERYCTRL: OK
-        test VIDIOC_G/S_CTRL: OK
-        test VIDIOC_G/S/TRY_EXT_CTRLS: OK
-        test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
-        test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
-        Standard Controls: 1 Private Controls: 6
-
-Format ioctls:
-        test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
-        test VIDIOC_G/S_PARM: OK (Not Supported)
-        test VIDIOC_G_FBUF: OK (Not Supported)
-                fail: v4l2-test-formats.cpp(457): pixelformat 00000000 () for buftype 10 not reported by ENUM_FMT
-        test VIDIOC_G_FMT: FAIL
-                fail: v4l2-test-formats.cpp(457): pixelformat 00000000 () for buftype 10 not reported by ENUM_FMT
-        test VIDIOC_TRY_FMT: FAIL
-                fail: v4l2-test-formats.cpp(457): pixelformat ffffffff (-BE) for buftype 10 not reported by ENUM_FMT
-        test VIDIOC_S_FMT: FAIL
-        test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
-        test Cropping: OK (Not Supported)
-        test Composing: OK (Not Supported)
-        test Scaling: OK (Not Supported)
-
-Codec ioctls:
-        test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
-        test VIDIOC_G_ENC_INDEX: OK (Not Supported)
-        test VIDIOC_(TRY_)DECODER_CMD: OK (Not Supported)
-
-Buffer ioctls:
-                fail: v4l2-test-buffers.cpp(667): q2.reqbufs(node->node2, 1) != EBUSY
-        test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: FAIL
-        test VIDIOC_EXPBUF: OK
-        test Requests: OK
-
-Total for mtk-fd-4.0 device /dev/video32: 45, Succeeded: 39, Failed: 6, Warnings: 0
-
-Grand Total for mtk-fd-4.0 device /dev/media2: 52, Succeeded: 46, Failed: 6, Warnings: 0
+diff --git a/drivers/media/v4l2-core/v4l2-mem2mem.c b/drivers/media/v4l2-core/v4l2-mem2mem.c
+index 5bbdec55b7d7..76ba203e0035 100644
+--- a/drivers/media/v4l2-core/v4l2-mem2mem.c
++++ b/drivers/media/v4l2-core/v4l2-mem2mem.c
+@@ -47,6 +47,10 @@ module_param(debug, bool, 0644);
+ #define TRANS_ABORT		(1 << 2)
+ 
+ 
++/* The job queue is not running new jobs */
++#define QUEUE_PAUSED		(1 << 0)
++
++
+ /* Offset base for buffers on the destination queue - used to distinguish
+  * between source and destination buffers when mmapping - they receive the same
+  * offsets but for different queues */
+@@ -88,6 +92,7 @@ static const char * const m2m_entity_name[] = {
+  * @job_queue:		instances queued to run
+  * @job_spinlock:	protects job_queue
+  * @job_work:		worker to run queued jobs.
++ * @job_queue_flags:	flags of the queue status, %QUEUE_PAUSED.
+  * @m2m_ops:		driver callbacks
+  */
+ struct v4l2_m2m_dev {
+@@ -105,6 +110,7 @@ struct v4l2_m2m_dev {
+ 	struct list_head	job_queue;
+ 	spinlock_t		job_spinlock;
+ 	struct work_struct	job_work;
++	unsigned long		job_queue_flags;
+ 
+ 	const struct v4l2_m2m_ops *m2m_ops;
+ };
+@@ -267,6 +273,12 @@ static void v4l2_m2m_try_run(struct v4l2_m2m_dev *m2m_dev)
+ 		return;
+ 	}
+ 
++	if (m2m_dev->job_queue_flags & QUEUE_PAUSED) {
++		spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
++		dprintk("Running new jobs is paused\n");
++		return;
++	}
++
+ 	m2m_dev->curr_ctx = list_first_entry(&m2m_dev->job_queue,
+ 				   struct v4l2_m2m_ctx, queue);
+ 	m2m_dev->curr_ctx->job_flags |= TRANS_RUNNING;
+@@ -447,6 +459,34 @@ void v4l2_m2m_job_finish(struct v4l2_m2m_dev *m2m_dev,
+ }
+ EXPORT_SYMBOL(v4l2_m2m_job_finish);
+ 
++void v4l2_m2m_suspend(struct v4l2_m2m_dev *m2m_dev)
++{
++	unsigned long flags;
++	struct v4l2_m2m_ctx *curr_ctx;
++
++	spin_lock_irqsave(&m2m_dev->job_spinlock, flags);
++	m2m_dev->job_queue_flags |= QUEUE_PAUSED;
++	curr_ctx = m2m_dev->curr_ctx;
++	spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
++
++	if (curr_ctx)
++		wait_event(curr_ctx->finished,
++			   !(curr_ctx->job_flags & TRANS_RUNNING));
++}
++EXPORT_SYMBOL(v4l2_m2m_suspend);
++
++void v4l2_m2m_resume(struct v4l2_m2m_dev *m2m_dev)
++{
++	unsigned long flags;
++
++	spin_lock_irqsave(&m2m_dev->job_spinlock, flags);
++	m2m_dev->job_queue_flags &= ~QUEUE_PAUSED;
++	spin_unlock_irqrestore(&m2m_dev->job_spinlock, flags);
++
++	v4l2_m2m_try_run(m2m_dev);
++}
++EXPORT_SYMBOL(v4l2_m2m_resume);
++
+ int v4l2_m2m_reqbufs(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
+ 		     struct v4l2_requestbuffers *reqbufs)
+ {
+diff --git a/include/media/v4l2-mem2mem.h b/include/media/v4l2-mem2mem.h
+index 5467264771ec..119a195da390 100644
+--- a/include/media/v4l2-mem2mem.h
++++ b/include/media/v4l2-mem2mem.h
+@@ -183,6 +183,28 @@ v4l2_m2m_buf_done(struct vb2_v4l2_buffer *buf, enum vb2_buffer_state state)
+ 	vb2_buffer_done(&buf->vb2_buf, state);
+ }
+ 
++/**
++ * v4l2_m2m_suspend() - stop new jobs from being run and wait for current job
++ * to finish
++ *
++ * @m2m_dev: opaque pointer to the internal data to handle M2M context
++ *
++ * Called by a driver in the suspend hook. Stop new jobs from being run, and
++ * wait for current running job to finish.
++ */
++void v4l2_m2m_suspend(struct v4l2_m2m_dev *m2m_dev);
++
++/**
++ * v4l2_m2m_resume() - resume job running and try to run a queued job
++ *
++ * @m2m_dev: opaque pointer to the internal data to handle M2M context
++ *
++ * Called by a driver in the resume hook. This reverts the operation of
++ * v4l2_m2m_suspend() and allows job to be run. Also try to run a queued job if
++ * there is any.
++ */
++void v4l2_m2m_resume(struct v4l2_m2m_dev *m2m_dev);
++
+ /**
+  * v4l2_m2m_reqbufs() - multi-queue-aware REQBUFS multiplexer
+  *
+-- 
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
