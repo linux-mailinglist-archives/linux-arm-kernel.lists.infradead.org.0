@@ -2,78 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4660A11237D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 08:20:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97787112395
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 08:28:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=k4aKAceru2vmaVmKtvZ9UeUEA8wCHtCp7S6bUByup4s=; b=sGaTGmvA/0nCaC
-	p+j8JFOB5pWnylyweSDs+SaWeueSRfpdrSLHjFXCrvbBiGsiEH8u/BD2BAOvuQLO//mIJ0XWb2ZbC
-	urPSrW7KyNk4fa7HfT7t8UPxj8Ju9NwqwSOdYunb6P7z8Ml6dsR37cI9x43HXlItO3kKMT5MKNOMp
-	2tK3TyUtw4CiJIXg+89pXDvAR7atOOMNUtgXA3OYBu/osp62NTdLBWI1mldb8aJ4S7/Ao2qox+0ph
-	jCUNdMl86G6L6s6I4QK+paSHo7KMzWHEykDuw7DCz6dRrljZ50Fr/5OK6VvFpVQT0RR68z25nkE7b
-	5svgY6U6n3uWdesSCfsQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QyofYkVZqFCukTLd+M1miJiiLeX+3GRiN3oitF5XwM0=; b=WExywn0Zn6jjOq
+	DphnQSoDtztsyIjK1BJZvn8jPxKRLPcTwojZ8AjGRcBG0dVV4X/QbyaTyxWIYodNUUqm9ORnD51gA
+	7f22KlPsw+49Xmecek6WMsNZrE+XdUu+DIFNi+Vajc9qcJI6MB5GP4MFccASbteNIz5tn1R1VXRYG
+	FDaJLFB7URfoJOTpag8TV43GzR+FNdWBCRukr90xatBIDyG6ZDHm9EauY8AH+Egx7oWFFnMKjvW8p
+	Gq+sImvNtIwyG8XE+FOy8vGq97yVMBiItPBnh8Gl4pzdcfHnx82TLly4njZJ0naIKPrLxJJTfLqmg
+	uWWZkm1NsrobdkAzyG3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icOxS-0006Wu-9t; Wed, 04 Dec 2019 07:20:22 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1icP5Q-0000eg-8t; Wed, 04 Dec 2019 07:28:36 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icOxJ-0006V0-Nl; Wed, 04 Dec 2019 07:20:14 +0000
-X-UUID: 1fc2335618dc42619b63c6bb360bba48-20191203
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=32Tnt40dZXjr4Tv/qzDO3kCW1vUpG7jJjRmXOdyYdQ8=; 
- b=HWjCPuitjcfQB8ZPKlR8Td4sa7eb3gOkNUSgr1LjwBjcAfiMMmsTOtTMpVWNI8+e3Vtsm0KWwMpRw9wOMONdHW7NEyhPdlKNg//xNqwgx6tB0JdXXrJbznL5lb8MqgdDknKNXWQoaRcNdm75VAz/hgAeg8szzsBkBJEdRsYsQQU=;
-X-UUID: 1fc2335618dc42619b63c6bb360bba48-20191203
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <chaotian.jing@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 175764711; Tue, 03 Dec 2019 23:20:04 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Dec 2019 23:20:47 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Dec 2019 15:19:49 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 4 Dec 2019 15:19:06 +0800
-From: Chaotian Jing <chaotian.jing@mediatek.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: [PATCH] mmc: mediatek: fix CMD_TA to 2 for MT8173 HS200/HS400 mode
-Date: Wed, 4 Dec 2019 15:19:58 +0800
-Message-ID: <20191204071958.18553-1-chaotian.jing@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1icP5J-0000dv-1J; Wed, 04 Dec 2019 07:28:30 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 349DBACA5;
+ Wed,  4 Dec 2019 07:28:27 +0000 (UTC)
+Subject: Re: perf record doesn't work on rtd129x SoC
+To: Wang YanQing <udknight@gmail.com>
+References: <20191204045559.GA10458@udknight>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <f90748d0-8112-3aa8-0c88-e35a8d6e72d3@suse.de>
+Date: Wed, 4 Dec 2019 08:28:26 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191204045559.GA10458@udknight>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_232013_780649_41590502 
-X-CRM114-Status: UNSURE (   8.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191203_232829_223225_E8975DC1 
+X-CRM114-Status: GOOD (  14.82  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,48 +61,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: srv_heupstream@mediatek.com, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Chaotian Jing <chaotian.jing@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, hsinyi@google.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-realtek-soc@lists.infradead.org,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ linux-soc@vger.kernel.org,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-there is a chance that always get response CRC error after HS200 tuning,
-the reason is that need set CMD_TA to 2. this modification is only for
-MT8173.
-
-Signed-off-by: Chaotian Jing <chaotian.jing@mediatek.com>
----
- drivers/mmc/host/mtk-sd.c | 2 ++
- 1 file changed, 2 insertions(+)
-
-diff --git a/drivers/mmc/host/mtk-sd.c b/drivers/mmc/host/mtk-sd.c
-index 189e42674d85..010fe29a4888 100644
---- a/drivers/mmc/host/mtk-sd.c
-+++ b/drivers/mmc/host/mtk-sd.c
-@@ -228,6 +228,7 @@
- #define MSDC_PATCH_BIT_SPCPUSH    (0x1 << 29)	/* RW */
- #define MSDC_PATCH_BIT_DECRCTMO   (0x1 << 30)	/* RW */
- 
-+#define MSDC_PATCH_BIT1_CMDTA     (0x7 << 3)    /* RW */
- #define MSDC_PATCH_BIT1_STOP_DLY  (0xf << 8)    /* RW */
- 
- #define MSDC_PATCH_BIT2_CFGRESP   (0x1 << 15)   /* RW */
-@@ -1881,6 +1882,7 @@ static int hs400_tune_response(struct mmc_host *mmc, u32 opcode)
- 
- 	/* select EMMC50 PAD CMD tune */
- 	sdr_set_bits(host->base + PAD_CMD_TUNE, BIT(0));
-+	sdr_set_field(host->base + MSDC_PATCH_BIT1, MSDC_PATCH_BIT1_CMDTA, 2);
- 
- 	if (mmc->ios.timing == MMC_TIMING_MMC_HS200 ||
- 	    mmc->ios.timing == MMC_TIMING_UHS_SDR104)
--- 
-2.18.0
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgWWFuUWluZywKCisgTEFLTUwgKyBNYXJrICsgV2lsbAoKQW0gMDQuMTIuMTkgdW0gMDU6NTUg
+c2NocmllYiBXYW5nIFlhblFpbmc6Cj4gSSB1c2UgInBlcmYgcmVjb3JkIiB0byBkZWJ1ZyBwZXJm
+b3JtYW5jZSBpc3N1ZSBvbiBSVEQxMjk2IFNPQywgaXQgZG9lcyd0IHdvcmssIGJ1dAo+IHRoZSAi
+cGVyZiBzdGF0IiBpcyBvayEKClRoYW5rcyBmb3IgdGhlIHJlcG9ydCAtIHdoaWNoIGJvYXJkLCBi
+cmFuY2ggYW5kIChiYXNlKSB0YWcgYXJlIHlvdQp0ZXN0aW5nIGFnYWluc3Q/IEFuZCBhcmUgeW91
+IGJ1aWxkaW5nIHBlcmYgeW91cnNlbGYgZnJvbSBrZXJuZWwgc291cmNlcywKb3IgYXJlIHlvdSB1
+c2luZyBzb21lIGRpc3RybyBwYWNrYWdlPwoKSSBvbmx5IGhhdmUgQnVzeWJveCBpbiBteSBpbml0
+cmQgb24gRFM0MTg7IEkgaGF2ZSBub3QgdGVzdGVkIHBlcmYuCgo+IEFmdGVyIHNvbWUgZGlnIGlu
+IHRoZSBrZXJuZWwsIEkgZmluZCB0aGUgcmVhc29uIGlzIG5vIHBtdSBvdmVyZmxvdyBpbnRlcnJ1
+cHQsIEkgdGhpbmsKPiBiZWxvdyBwbXUgY29uZmlndXJhdGlvbiBpc24ndCByaWdodCBmb3IgUlRE
+MTI5NjoKPiAiCj4gICAgICAgICBhcm1fcG11OiBhcm0tcG11IHsKPiAgICAgICAgICAgICAgICAg
+Y29tcGF0aWJsZSA9ICJhcm0sY29ydGV4LWE1My1wbXUiOwo+ICAgICAgICAgICAgICAgICBpbnRl
+cnJ1cHRzID0gPEdJQ19TUEkgNDggSVJRX1RZUEVfTEVWRUxfSElHSD47Cj4gICAgICAgICB9Owo+
+ICIKPiAKPiBXZSBuZWVkIDQgUE1VIFNQSSBmb3IgUlREMTI5NiAoNCBjb3JlcyksIGFuZCBJIGd1
+ZXNzIHRoZSA0OCBpc24ndCByaWdodCB0b28uCgpOb3RlIHRoYXQgYWJvdmUgcnRkMTI5eC5kdHNp
+IHNuaXBwZXQgaXMgbm90IGNvbXBsZXRlLiBTZWUgcnRkMTI5Ni5kdHNpOgoKJmFybV9wbXUgewoJ
+aW50ZXJydXB0LWFmZmluaXR5ID0gPCZjcHUwPiwgPCZjcHUxPiwgPCZjcHUyPiwgPCZjcHUzPjsK
+fTsKCjQ4IGFuZCBoaWdoLzQgbWF0Y2ggd2hhdCBJIHNlZSBpbiB0aGUgbGF0ZXN0IEJTUDoKCmh0
+dHBzOi8vZ2l0aHViLmNvbS9CUEktU0lOT1ZPSVAvQlBJLU00LWJzcC9ibG9iL21hc3Rlci9saW51
+eC1ydGsvYXJjaC9hcm02NC9ib290L2R0cy9yZWFsdGVrL3J0ZDEyOXgvcnRkLTEyOTYuZHRzaSNM
+MTE2Cgo+IEFueSBzdWdnZXN0aW9uIGlzIHdlbGNvbWUuCj4gCj4gVGhhbmtzIQoKVGhlIG9ubHkg
+ZGlmZmVyZW5jZSBJIHNlZSBpcyAiYXJtLGNvcnRleC1hNTMtcG11IiB2cy4gImFybSxhcm12OC1w
+bXV2MyIuCkJ5IG15IHJlYWRpbmcgb2YgYXJjaC9hcm02NC9rZXJuZWwvcGVyZl9ldmVudC5jIHRo
+ZSBvbmx5IGRpZmZlcmVuY2UKYmV0d2VlbiB0aGUgdHdvIHNob3VsZCBiZSB0aGUgbmFtZSBhbmQg
+YW4gZXh0cmEgY2FjaGVfbWFwLiBZb3UgY291bGQgdHJ5CnRoZSBvdGhlciBjb21wYXRpYmxlIHN0
+cmluZyBpbiB5b3VyIC5kdHMsIGJ1dCBJIGRvdWJ0IGl0J2xsIGhlbHAuCgpIb3BlZnVsbHkgdGhl
+IFJlYWx0ZWsgb3IgQXJtIGd1eXMgY2FuIHNoZWQgc29tZSBsaWdodC4KClJlZ2FyZHMsCkFuZHJl
+YXMKCi0tIApTVVNFIFNvZnR3YXJlIFNvbHV0aW9ucyBHZXJtYW55IEdtYkgKTWF4ZmVsZHN0ci4g
+NSwgOTA0MDkgTsO8cm5iZXJnLCBHZXJtYW55CkdGOiBGZWxpeCBJbWVuZMO2cmZmZXIKSFJCIDM2
+ODA5IChBRyBOw7xybmJlcmcpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
