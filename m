@@ -2,148 +2,147 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5511B1136C8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 21:53:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5103B1136DF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 22:05:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1K7TKl6J4Z2KPcefz3Utx9B/GzbaYwZJWpnbOfSkQn0=; b=oUrPh+4esWtgLA
-	Jg+HTPaLQP1u6WX3UMQhxYhPhsc2P+TqVLOaPZ3fXmhHFokf9Nw67MHma/PI8fdKXPtbRggFiWSX9
-	haMEPfPreXB5DDIBp9vo905Q//o8BTEBtGJE33//rfSLKJSkJp1VndcFHszQrnaUS0e1Y55hh0mDb
-	vLUrCH20bzFjRmjDUy1w2h4lDh4sLYpRar4Ids/EXcYr1yNxY19wQbn7XFBJLY8Fe/LPKMsgLMWfM
-	kExHeNEYpnWrShbCTWlYDYOW1psB4P/Jqfa+jMlNlqzGBuyjhzHuPFpJJn6JN9RgLSQIxEDBdRFKZ
-	fxDnPsQAck+WeubQW/xw==;
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=zAFHXi/xaq36u6xoKu1Rt72ODnaZ8n2k/B5Fs0V+PnY=; b=mJaDvJuxFb5iWheMXp8gVv2M+r
+	6TfheaqL56eud1WcBwCMtBFwVJ6jKmqxsICapgHlxtuGZjjLD5rEKGi0C6Jtu1osrpve9k4orjRqD
+	bIwBfu3Z06KqvmNwUZPdacigDO1G8Df7/f14aFQzpc2+eN7C5At+A4AAiYVQet5UL6cMSZ/NqIP+T
+	XGSSYxhewRtSp+XyG3W+DxGgV4Ju1overnXw70r9C7iERZjUJ+hyQQuXV+gqYFRb3+6UD9OaV0LKt
+	R0E7OE4l84sEnFsQJu9jPGTWFV+dqsuni97aWayXv8FKfyzL0AL7G5VqizJf4vBZoEYQUsuqij6nH
+	nemzCFTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icbds-000628-Vr; Wed, 04 Dec 2019 20:53:00 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1icbq2-00029z-DW; Wed, 04 Dec 2019 21:05:34 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icbdl-00061h-L1
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 20:52:55 +0000
-Received: by mail-wr1-x443.google.com with SMTP id c14so855992wrn.7
+ id 1icbpv-00029f-95
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 21:05:29 +0000
+Received: by mail-wr1-x444.google.com with SMTP id b6so954683wrq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 12:52:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ Wed, 04 Dec 2019 13:05:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=wmCpBK5gKfNHkehfVw0oOjmIqfu20jWLSFxK7s8CnWs=;
- b=OoFLFYixY2AfF+VyBlD1cF+DZ1WKmEOtVBMCB2bN1SGSSXcy4gPFGq6Y+PQ+Mf8gOx
- bBPhTyIoib4LVgdjUIj203iTZu8rZJu8Kti0CbxNyEDIhKnSX6juMges8H5Ky+3xYKYi
- Q67yiqmRoulqT3mCJhWFCvrOVIhm46nQTt1bfDnpDAfJNW+3sX1Hq75ygzLL0oOf10GM
- bpTCFSPNK4UylN9uAHkVg9kkOx91aDeUMpUpytHJPrRgdnVtwRWV7BGpSNSTzI6nQXnY
- d9bvLDFVRbUBnktZ8lBsft1obFtaQan4u2r7l5voT/7GwCmErM8XNMYWSRP1ZaWPoBM6
- jXaA==
+ bh=pCvZJU1LLJvDUB1G3/9Ogy+cUN7IJ9DJnSumKiA4mLU=;
+ b=iK9OwSXTtq5gOw+4oNEiAG+k3yAuysmjZBzRMoaWUEq9hjcZ9vp+W47ggFB+8jTwc1
+ Nsem8wsR6xqBAQo1PfZ2+Qlh/WQVYLGLwI9cOKHO8DlvSdcMvYYVx3a14ruBWievqfV4
+ kQzJdSXmK6tAWtJbithPWvTwZN7wGB+OwOKggdBmPFx0sd0KJ6m1cAVE284koUgRVMQ8
+ 30+LRAaVZdRQ+bE5R+H9uSlgLaI80VJb4sfy8dztN0WuOsxGZtYj+stWHOCQTGRvxDm8
+ YsZkS2qrFrxs3Ush3EvxZ0JxQ8Y8YkuJt5/4h/pxhf/8QhIOsQu6ZklneTke1xP/2vMQ
+ 3gOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=wmCpBK5gKfNHkehfVw0oOjmIqfu20jWLSFxK7s8CnWs=;
- b=QVoSIuiagejV58cZ1bjyVPGTIZ9KGL6pe9cOQ2NB/TU6NRJ7HNX4aRIdkh+e5uV0Yg
- PlB1OzTMmQoDT0mt1XUaU8UarZjsMYGCQ9lriCrAJcSC7fF5Q3m2M8WjjAvvSL+BbMNf
- drnDWguuwFQsZTvMUsIoHiWI05RyfPTV6pI4Ih9mXqmS2enUXU9z0cZ9oLvA+ksw+7T6
- dMRFHLB1Jf8qd67xd/ZWt9+XC3byhiBPeJpeTXjKy/LJVbvU74bs+tLiF0D9U68J/B5Y
- ijNUyMWpMeiKB026AnYwVWmasuzpNieTrGPz2xJXZ2swRYO23fMhXFWG2H/zrBzQSO1H
- 1j0Q==
-X-Gm-Message-State: APjAAAWBTyK1z2pLYOcIzcS896G8VT7DtI09f9IV8cYakqKBkRJtiE4F
- hvnRQcN3WIoi6BgLSNOiGWw=
-X-Google-Smtp-Source: APXvYqx+bYv1DQGBl83+Eeq4X705HZYCFA6Q0ckfUXAI67YjcQ0weIWLFwYxBfNFLmS+7up1TSvWIA==
-X-Received: by 2002:a5d:6390:: with SMTP id p16mr6451840wru.170.1575492771741; 
- Wed, 04 Dec 2019 12:52:51 -0800 (PST)
-Received: from [192.168.1.19] (cjl224.neoplus.adsl.tpnet.pl. [83.31.61.224])
- by smtp.gmail.com with ESMTPSA id 188sm7707856wmz.13.2019.12.04.12.52.50
+ h=x-gm-message-state:subject:to:references:from:autocrypt:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=pCvZJU1LLJvDUB1G3/9Ogy+cUN7IJ9DJnSumKiA4mLU=;
+ b=oFuGZm0a+qo5p1LlOmUQMDUJn8tFeE+4yGDq5PDAh4wdS4zG2tAXAiDrDvpIsY5Q95
+ u7ixYeRiHnzKxCtK/g6aYvAabfGPo13mcVsCeyAa3bG84HNx25GnZBZffJYbjHPusuwx
+ YGeIduQwki8/2W8N6RjWiS/RMzMXSf+IOJjqhyJzPrlbbzGSIRX2RCyRgSv4Yx9hzlN7
+ +8ZZ1u0r/YDfI0J2O4VQcGztoUlveWApAGGlMnwQD0Rr5mL6TJYcXoLB6n7SoaM4Hu3l
+ HlwbWQwxKKKP6WjRjXcf1qXRgwbvTeX5jsh8x4K2QBWOxTpD+NBICVstbOY89bKq5x+4
+ WOow==
+X-Gm-Message-State: APjAAAVYipqGSnfOh4PtfCA/72AUGYfxusJUPRkvRdPsmniitBjBJKQj
+ JDsNhN7sCdq+BRMDUDIOLk8JdQ==
+X-Google-Smtp-Source: APXvYqwTtSzbJkrzuZm6vwHchEHpIP9b3IKF5oT4sZk+LHvJ60h9TPftWWSrFwb0RbtGJc2IMg+vsA==
+X-Received: by 2002:adf:dc86:: with SMTP id r6mr6752156wrj.68.1575493525175;
+ Wed, 04 Dec 2019 13:05:25 -0800 (PST)
+Received: from ?IPv6:2a01:e34:ed2f:f020:d965:ceae:a314:6edb?
+ ([2a01:e34:ed2f:f020:d965:ceae:a314:6edb])
+ by smtp.googlemail.com with ESMTPSA id g9sm8457863wro.67.2019.12.04.13.05.23
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 04 Dec 2019 12:52:51 -0800 (PST)
-Subject: Re: "leds: gpio: Use generic support for composing LED names" breaks
- gpio debugfs
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Linus Walleij <linus.walleij@linaro.org>, Pavel Machek <pavel@ucw.cz>
-References: <20191204110219.GV25745@shell.armlinux.org.uk>
-From: Jacek Anaszewski <jacek.anaszewski@gmail.com>
-Autocrypt: addr=jacek.anaszewski@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <fb88206c-a094-df37-04af-71a1174fb0f6@gmail.com>
-Date: Wed, 4 Dec 2019 21:52:49 +0100
+ Wed, 04 Dec 2019 13:05:24 -0800 (PST)
+Subject: Re: [PATCH v2 1/5] thermal: stm32: remove hardware irq handler
+To: Pascal Paillet <p.paillet@st.com>, rui.zhang@intel.com,
+ edubezval@gmail.com, amit.kucheria@verdurent.com, mcoquelin.stm32@gmail.com,
+ alexandre.torgue@st.com, david.hernandezsanchez@st.com,
+ horms+renesas@verge.net.au, wsa+renesas@sang-engineering.com,
+ linux-pm@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20191104133020.8820-1-p.paillet@st.com>
+ <20191104133020.8820-2-p.paillet@st.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Autocrypt: addr=daniel.lezcano@linaro.org; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <3b1b690b-71f1-95e7-704b-b3d0073c68de@linaro.org>
+Date: Wed, 4 Dec 2019 22:05:22 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191204110219.GV25745@shell.armlinux.org.uk>
+In-Reply-To: <20191104133020.8820-2-p.paillet@st.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_125253_693910_0F341F2A 
-X-CRM114-Status: GOOD (  17.87  )
-X-Spam-Score: 2.3 (++)
+X-CRM114-CacheID: sfid-20191204_130527_352194_48DFB18E 
+X-CRM114-Status: GOOD (  17.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jacek.anaszewski[at]gmail.com)
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -162,73 +161,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-leds@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russel,
-
-On 12/4/19 12:02 PM, Russell King - ARM Linux admin wrote:
-> Hi,
-> 
-> Patch d7235f5feaa0 ("leds: gpio: Use generic support for composing LED
-> names") changed the way labels are used.
-> 
-> devm_fwnode_get_gpiod_from_child() is passed led.name, which used to be
-> set to the label or node name, resulting in /sys/kernel/debug/gpio
-> containing useful information.  For example:
-> 
->  gpio-487 (                    |udpu:green:power    ) out lo
->  gpio-488 (                    |udpu:red:power      ) out hi
->  gpio-489 (                    |udpu:green:network  ) out hi
->  gpio-490 (                    |udpu:red:network    ) out hi
->  gpio-491 (                    |udpu:green:alarm    ) out hi
->  gpio-492 (                    |udpu:red:alarm      ) out hi
-> 
-> After this commit, it now contains a rather less useful:
-> 
->  gpio-487 (                    |?                   ) out hi ACTIVE LOW
->  gpio-488 (                    |?                   ) out hi ACTIVE LOW
->  gpio-489 (                    |?                   ) out hi ACTIVE LOW
->  gpio-490 (                    |?                   ) out hi ACTIVE LOW
->  gpio-491 (                    |?                   ) out hi ACTIVE LOW
->  gpio-492 (                    |?                   ) out hi ACTIVE LOW
-> 
-> This is because led.name is now NULL prior to the call to
-> devm_fwnode_get_gpiod_from_child().
-
-Ugh, my bad. But it actually has been wrong since the patch
-a96aa64cb5723 ("leds/led-class: Handle LEDs with the same name"),
-which enabled LED core to amend the LED name just beforehand
-the registration of a LED class device.
-
-It seem that the only proper solution would be introducing a new
-pre_register_cdev(const char *name) op to the LED core, that would allow
-drivers to come up with their implementation thereof. In this particular
-case leds-gpio driver would need to put there gpiod initialization.
-
-The pre_register_device op would need to be called (when available)
-from the led_classdev_register_ext() after calling
-led_classdev_next_name() and before device_create_with_groups().
-The op would have to be passed the final_name variable then.
-
-> While this is not an API, it is useful for debugging, and given the
-> dynamic allocation of GPIOs to physical GPIOs, having the labels
-> present is an advantage.
-> 
-> Can this be fixed / old behaviour restored?
-
-If there are no objections I can come up with a fix, but no
-sooner than at the weekend.
-
--- 
-Best regards,
-Jacek Anaszewski
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDQvMTEvMjAxOSAxNDozMCwgUGFzY2FsIFBhaWxsZXQgd3JvdGU6Cj4gUmVtb3ZlIGhhcmR3
+YXJlIGlycSBoYW5kbGVyIGJlY2F1c2UgaXQgaXMgbm90IG5lZWRlZCB0byBkaXNhYmxlIHRoZQo+
+IGludGVycnVwdCBiZWZvcmUgdGhlIHRocmVhZGVkIGhhbmRsZXIuIFRoZSBnb2FsIGlzIHRvIHNp
+bXBsaWZ5Cj4gdGhlIGNvZGUuCgpQbGVhc2UgZWxhYm9yYXRlIHRoZSBleHBsYW5hdGlvbiBoZXJl
+LiBJIGd1ZXNzIGFsbCB0aGUgY29kZSByZW1vdmVkIGlzCmJlY2F1c2Ugb2Y6CgoJLyogcmVhZCBJ
+VCByZWFzb24gaW4gU1IgYW5kIGNsZWFyIGZsYWdzICovCgl2YWx1ZSA9IHJlYWRsX3JlbGF4ZWQo
+c2Vuc29yLT5iYXNlICsgRFRTX1NSX09GRlNFVCk7CgpSaWdodD8KCj4gQ2hhbmdlLUlkOiBJZGE5
+NjdlODU0M2M4ZGFmYzZhMjQ1MDgwMDBmNjRmNjQwNWFkZDMxZAoKUmVtb3ZlIENoYW5nZS1JZC4K
+Ck1pc3NpbmcgU29CLgoKPiAtLS0KPiAgZHJpdmVycy90aGVybWFsL3N0L3N0bV90aGVybWFsLmMg
+fCAyNSArLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2Vy
+dGlvbigrKSwgMjQgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvdGhlcm1h
+bC9zdC9zdG1fdGhlcm1hbC5jIGIvZHJpdmVycy90aGVybWFsL3N0L3N0bV90aGVybWFsLmMKPiBp
+bmRleCBjZjlkZGM1MmYzMGUuLjMxYWE2M2ZiM2RiMSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3Ro
+ZXJtYWwvc3Qvc3RtX3RoZXJtYWwuYwo+ICsrKyBiL2RyaXZlcnMvdGhlcm1hbC9zdC9zdG1fdGhl
+cm1hbC5jCj4gQEAgLTk4LDIxICs5OCwxMCBAQCBzdHJ1Y3Qgc3RtX3RoZXJtYWxfc2Vuc29yIHsK
+PiAgCXVuc2lnbmVkIGludCBsb3dfdGVtcF9lbmFibGVkOwo+ICAJaW50IG51bV90cmlwczsKPiAg
+CWludCBpcnE7Cj4gLQl1bnNpZ25lZCBpbnQgaXJxX2VuYWJsZWQ7Cj4gIAl2b2lkIF9faW9tZW0g
+KmJhc2U7Cj4gIAlpbnQgdDAsIGZtdDAsIHJhbXBfY29lZmY7Cj4gIH07Cj4gIAo+IC1zdGF0aWMg
+aXJxcmV0dXJuX3Qgc3RtX3RoZXJtYWxfYWxhcm1faXJxKGludCBpcnEsIHZvaWQgKnNkYXRhKQo+
+IC17Cj4gLQlzdHJ1Y3Qgc3RtX3RoZXJtYWxfc2Vuc29yICpzZW5zb3IgPSBzZGF0YTsKPiAtCj4g
+LQlkaXNhYmxlX2lycV9ub3N5bmMoaXJxKTsKPiAtCXNlbnNvci0+aXJxX2VuYWJsZWQgPSBmYWxz
+ZTsKPiAtCj4gLQlyZXR1cm4gSVJRX1dBS0VfVEhSRUFEOwo+IC19Cj4gLQo+ICBzdGF0aWMgaXJx
+cmV0dXJuX3Qgc3RtX3RoZXJtYWxfYWxhcm1faXJxX3RocmVhZChpbnQgaXJxLCB2b2lkICpzZGF0
+YSkKPiAgewo+ICAJdTMyIHZhbHVlOwo+IEBAIC00NjQsMTYgKzQ1Myw2IEBAIHN0YXRpYyBpbnQg
+c3RtX3RoZXJtYWxfZ2V0X3RlbXAodm9pZCAqZGF0YSwgaW50ICp0ZW1wKQo+ICAJCQlpZiAocmV0
+KQo+ICAJCQkJcmV0dXJuIHJldDsKPiAgCQl9Cj4gLQo+IC0JCS8qCj4gLQkJICogUmUtZW5hYmxl
+IGFsYXJtIElSUSBpZiB0ZW1wZXJhdHVyZSBiZWxvdyBjcml0aWNhbAo+IC0JCSAqIHRlbXBlcmF0
+dXJlCj4gLQkJICovCj4gLQkJaWYgKCFzZW5zb3ItPmlycV9lbmFibGVkICYmCj4gLQkJICAgIChj
+ZWxzaXVzKCp0ZW1wKSA8IHNlbnNvci0+dGVtcF9jcml0aWNhbCkpIHsKPiAtCQkJc2Vuc29yLT5p
+cnFfZW5hYmxlZCA9IHRydWU7Cj4gLQkJCWVuYWJsZV9pcnEoc2Vuc29yLT5pcnEpOwo+IC0JCX0K
+PiAgCX0KPiAgCj4gIAlyZXR1cm4gMDsKPiBAQCAtNDkzLDcgKzQ3Miw3IEBAIHN0YXRpYyBpbnQg
+c3RtX3JlZ2lzdGVyX2lycShzdHJ1Y3Qgc3RtX3RoZXJtYWxfc2Vuc29yICpzZW5zb3IpCj4gIAl9
+Cj4gIAo+ICAJcmV0ID0gZGV2bV9yZXF1ZXN0X3RocmVhZGVkX2lycShkZXYsIHNlbnNvci0+aXJx
+LAo+IC0JCQkJCXN0bV90aGVybWFsX2FsYXJtX2lycSwKPiArCQkJCQlOVUxMLAo+ICAJCQkJCXN0
+bV90aGVybWFsX2FsYXJtX2lycV90aHJlYWQsCj4gIAkJCQkJSVJRRl9PTkVTSE9ULAo+ICAJCQkJ
+CWRldi0+ZHJpdmVyLT5uYW1lLCBzZW5zb3IpOwo+IEBAIC01MDMsOCArNDgyLDYgQEAgc3RhdGlj
+IGludCBzdG1fcmVnaXN0ZXJfaXJxKHN0cnVjdCBzdG1fdGhlcm1hbF9zZW5zb3IgKnNlbnNvcikK
+PiAgCQlyZXR1cm4gcmV0Owo+ICAJfQo+ICAKPiAtCXNlbnNvci0+aXJxX2VuYWJsZWQgPSB0cnVl
+Owo+IC0KPiAgCWRldl9kYmcoZGV2LCAiJXM6IHRoZXJtYWwgSVJRIHJlZ2lzdGVyZWQiLCBfX2Z1
+bmNfXyk7Cj4gIAo+ICAJcmV0dXJuIDA7Cj4gCgoKLS0gCiA8aHR0cDovL3d3dy5saW5hcm8ub3Jn
+Lz4gTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCgpGb2xs
+b3cgTGluYXJvOiAgPGh0dHA6Ly93d3cuZmFjZWJvb2suY29tL3BhZ2VzL0xpbmFybz4gRmFjZWJv
+b2sgfAo8aHR0cDovL3R3aXR0ZXIuY29tLyMhL2xpbmFyb29yZz4gVHdpdHRlciB8CjxodHRwOi8v
+d3d3LmxpbmFyby5vcmcvbGluYXJvLWJsb2cvPiBCbG9nCgoKX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
+YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
