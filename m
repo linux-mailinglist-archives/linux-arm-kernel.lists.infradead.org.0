@@ -2,59 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E059112922
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 11:18:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B573112925
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 11:19:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=p9CpiZ1p7Kbqc2xnhMPsSdyVQlVZ057X3pgLt59hf7s=; b=Zvq2pOKJa7/TNGNKQoqz7lu55
-	eL1QFF5IIIFVSVbsfjeNK+ECqhWU65cFc9xvF67ZLAfoRFfMAf7lP6wUnZbaGx3jbepOQcBsXATf6
-	zkrZEFzyoPOn99UOGrhi7hE+FfNX7SIvQpSvsZ7RnZVqBOPDLvVZwZymvhCURwuRHaRADcBxFz15J
-	uPBri8s9viuYwhs/unuI0WoU6AH4qggtLxFiivyIds0MJJ3pnxTmJrwqr9YsHNfALt+vl9pEre/hT
-	4MKAJK9uKkkIowAHsoE6H0NBAGd3kkBN1wZ2axOt5VW6YA+iFAXJ+TkETJKPZHwiP0DW6NsqiUOWI
-	oMmKUPOkQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PoJyeOamDgXzhP1P2cAtuSYA8NPEngbaIJrbckZZtME=; b=M2+uk2OzQaOAlh
+	Wor1BvyLhcR1I6QIbzxuT8x22fYkPgZk7Hc8TvcoLTRYM992dtFGqQsQ9XBFg4ECbM1CRcrts8NKF
+	Kcn3K10+IbmBxOPJylWr372/WaLz1ZwagGDYm7yLT1/J7XXumQLdq8nHXbqPwIJG3r5BFWhlZc7tI
+	K+CtEjn2QvBoWityQ2MT7T9Oy+GL8GLBFxavvWb7tKOdH1ZZxGzoZdSd/Qexhs/zNSQzaoM3SDfe8
+	0pm5CRSjfFPsN8sc4XaNVT6v9p12ye46jg3E9dPMURZCvY12S/IqW3bFVE7WZxJsrwBAIZCXhC7yV
+	f0QpokBxCru/J+Ys3blQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icRjr-00004w-Ge; Wed, 04 Dec 2019 10:18:31 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icRjT-0008M3-Ep
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 10:18:09 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1icRjQ-0000Am-3C; Wed, 04 Dec 2019 11:18:04 +0100
+	id 1icRkV-0000a7-2X; Wed, 04 Dec 2019 10:19:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1icRkG-0000Tg-9m
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 10:18:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7F6FB1FB;
+ Wed,  4 Dec 2019 02:18:54 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ E83F93F52E; Wed,  4 Dec 2019 02:18:53 -0800 (PST)
+Date: Wed, 4 Dec 2019 10:18:51 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
 To: Jerome Forissier <jerome@forissier.org>
-Subject: Re: Kernel v5.2+ on =?UTF-8?Q?HiKey=39=36=30=3F?=
-X-PHP-Originating-Script: 0:main.inc
-MIME-Version: 1.0
-Date: Wed, 04 Dec 2019 10:18:03 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <2ad4364a-1498-5a2d-d64b-8d07023cac33@forissier.org>
+Subject: Re: Kernel v5.2+ on HiKey960?
+Message-ID: <20191204101851.GC13081@arrakis.emea.arm.com>
 References: <f58c2c0e-ec82-6675-84e6-ad63fd93c8ff@forissier.org>
- <5e71ae8ec1ecb64544d131686f5405bb@www.loen.fr>
- <2ad4364a-1498-5a2d-d64b-8d07023cac33@forissier.org>
-Message-ID: <0626cdecce80f89caeee38ad26a91247@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: jerome@forissier.org, linux-arm-kernel@lists.infradead.org,
- vincenzo.frascino@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <f58c2c0e-ec82-6675-84e6-ad63fd93c8ff@forissier.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_021807_647144_264372E3 
-X-CRM114-Status: GOOD (  20.72  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191204_021856_426635_7BE3FC69 
+X-CRM114-Status: GOOD (  15.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,115 +61,61 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-W3N3aXRjaGluZyBlbWFpbCBhZGRyZXNzXQoKSGkgSmVyb21lLAoKT24gMjAxOS0xMi0wNCAwOTow
-MSwgSmVyb21lIEZvcmlzc2llciB3cm90ZToKPiBIaSBNYXJjLAo+Cj4gT24gMTIvMy8xOSA2OjQ3
-IFBNLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4+IEhpIEplcm9tZSwKPj4KPj4gQWRkaW5nIFZpbmNl
-bnpvICh3aG8gd2FzIHRoZSBsYXN0IG9uZSB0byBtZXNzIHdpdGggdGhlIFZEU08pLgo+Pgo+PiBP
-biAyMDE5LTEyLTAzIDE1OjQzLCBKZXJvbWUgRm9yaXNzaWVyIHdyb3RlOgo+Pj4gSGksCj4+Pgo+
-Pj4gSGFzIGFueW9uZSBzdWNjZXNzZnVsbHkgcnVuIGtlcm5lbCB2NS4yIG9yIGxhdGVyIG9uIGEg
-SGlLZXk5NjAgCj4+PiBib2FyZD8KPj4+Cj4+PiBGb3Igc29tZSByZWFzb24sIGFueXRoaW5nIHBh
-c3QgdjUuMSBkb2Vzbid0IHdvcmsgZm9yIG1lIGFuZCBJIGNvdWxkIAo+Pj4gbm90Cj4+PiBmaWd1
-cmUgb3V0IHdoeS4gVGhlIHN5bXB0b20gaXMgaXQgbmV2ZXIgZ2V0cyB0byB0aGUgbG9naW4gcHJv
-bXB0LiAKPj4+IFRoZQo+Pj4gcm9vdCBGUyBpcyBhIEJ1aWxkcm9vdC1nZW5lcmF0ZWQgb25lLCBh
-bmQgcHJpb3IgdG8gcmVhY2hpbmcgdGhlIAo+Pj4ga2VybmVsCj4+PiB0aGUgYm9hcmQgcnVucyBU
-Ri1BLCBPUC1URUUsIFVFRkkgKGVkazIpIGFuZCBHcnViLgo+Pj4KPj4+IEkgdHJpZWQgcmVwbGFj
-aW5nIC9pbml0IHdpdGggYSBzaGVsbCwgaW4gd2hpY2ggY2FzZSBJIGNhbiB0eXBlIGEgCj4+PiBj
-b21tYW5kCj4+PiBidXQgd2hhdGV2ZXIgaXQgaXMgKGV2ZW4gYSBzaW1wbGUgImxzIiksIHRoZSBj
-b21tYW5kIGhhbmdzIG9uIGV4aXQgCj4+PiBhbmQgSQo+Pj4gbmV2ZXIgZ2V0IGJhY2sgdG8gdGhl
-IHByb21wdC4KPj4+Cj4+PiBUaGVuIEkgc3RhcnRlZCBiaXNlY3RpbmcsIHRoYXQgd2FzIHF1aXRl
-IHBhaW5mdWwgYnV0IEkgZm91bmQgCj4+PiBzZXZlcmFsCj4+PiBwcm9ibGVtYXRpYyBjb21taXRz
-LiBJIGVuZGVkIHVwIHJldmVydGluZyB0aGUgZm9sbG93aW5nIChpbiB0aGlzIAo+Pj4gb3JkZXIp
-Cj4+PiB0byBiZSBhYmxlIHRvIGJvb3QgdjUuNDoKPj4+Cj4+PiAxLiAiYXJtNjQ6IHZkc286IFN1
-YnN0aXR1dGUgZ2V0dGltZW9mZGF5KCkgd2l0aCBDIGltcGxlbWVudGF0aW9uIgo+Pj4gMi4gImFy
-bTY0OiB2ZHNvOiBFeHBsaWNpdGx5IGFkZCBidWlsZC1pZCBvcHRpb24iCj4+PiAzLiAiYXJtNjQ6
-IGFyY2hfdGltZXI6IEVuc3VyZSBjb3VudGVyIHJlZ2lzdGVyIHJlYWRzIG9jY3VyIHdpdGggCj4+
-PiBzZXFsb2NrCj4+PiDCoMKgwqAgaGVsZCIKPj4+IDQuICJhcm02NDogdmRzbzogUmVtb3ZlIHN0
-YWxlIGZpbGVzIGZyb20gb2xkIGFzc2VtYmx5IAo+Pj4gaW1wbGVtZW50YXRpb24iCj4+Pgo+Pj4g
-U28gdGhlIG1haW4gdGhpbmcgYXBwZWFycyB0byBiZSB0aGUgVkRTTyBzdHVmZiwgYnV0IGlmIEkg
-ZG8gbm90IAo+Pj4gYWxzbwo+Pj4gcmV2ZXJ0IHRoZSBhcmNoX3RpbWVyIGNvbW1pdCBJIGdldCBh
-IGtlcm5lbCBwYW5pYzoKPj4+Cj4+PiBbwqDCoMKgIDQuNjU3MTE4XSBSdW4gL2luaXQgYXMgaW5p
-dCBwcm9jZXNzCj4+PiBbwqDCoMKgIDQuNjYyMzgwXSBLZXJuZWwgcGFuaWMgLSBub3Qgc3luY2lu
-ZzogQXR0ZW1wdGVkIHRvIGtpbGwgaW5pdCEKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgZXhpdGNvZGU9MHgwMDAwMDAwNAo+Pj4gW8KgwqDCoCA0LjY3MDAzNV0gQ1BVOiA3IFBJRDog
-MSBDb21tOiBpbml0IE5vdCB0YWludGVkIDUuNC4wLTAwMDAzLQo+Pj4gwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCBnMjIzYjEyYzAzM2ZiICMyNTgKPj4+IFvCoMKgwqAgNC42NzczMzhdIEhh
-cmR3YXJlIG5hbWU6IEhpS2V5OTYwIChEVCkKPj4+IFvCoMKgwqAgNC42ODEyNTNdIENhbGwgdHJh
-Y2U6Cj4+PiBbwqDCoMKgIDQuNjgzNzAwXcKgIGR1bXBfYmFja3RyYWNlKzB4MC8weDE0OAo+Pj4g
-W8KgwqDCoCA0LjY4NzM1NV3CoCBzaG93X3N0YWNrKzB4MjQvMHgzMAo+Pj4gW8KgwqDCoCA0LjY5
-MDY2NF3CoCBkdW1wX3N0YWNrKzB4YmMvMHgxMDAKPj4+IFvCoMKgwqAgNC42OTQwNThdwqAgcGFu
-aWMrMHgxNjgvMHgzNjgKPj4+IFvCoMKgwqAgNC42OTcxMDVdwqAgZG9fZXhpdCsweGExMC8weGEy
-OAo+Pj4gW8KgwqDCoCA0LjcwMDMyM13CoCBkb19ncm91cF9leGl0KzB4NDgvMHhhOAo+Pj4gW8Kg
-wqDCoCA0LjcwMzg5Ml3CoCBnZXRfc2lnbmFsKzB4ZWMvMHg4NDgKPj4+IFvCoMKgwqAgNC43MDcy
-ODddwqAgZG9fbm90aWZ5X3Jlc3VtZSsweDIxYy8weDQ4MAo+Pj4gW8KgwqDCoCA0LjcxMTI5MF3C
-oCB3b3JrX3BlbmRpbmcrMHg4LzB4MTAKPj4+IFvCoMKgwqAgNC43MTQ2ODldIFNNUDogc3RvcHBp
-bmcgc2Vjb25kYXJ5IENQVXMKPj4+IFvCoMKgwqAgNC43MTg2MDddIEtlcm5lbCBPZmZzZXQ6IGRp
-c2FibGVkCj4+PiBbwqDCoMKgIDQuNzIyMDg5XSBDUFUgZmVhdHVyZXM6IDB4MDAwMiwyMTA4MjAw
-NAo+Pj4gW8KgwqDCoCA0LjcyNjA5MF0gTWVtb3J5IExpbWl0OiBub25lCj4+PiBbwqDCoMKgIDQu
-NzI5MTQ1XSAtLS1bIGVuZCBLZXJuZWwgcGFuaWMgLSBub3Qgc3luY2luZzogQXR0ZW1wdGVkIHRv
-IAo+Pj4ga2lsbAo+Pj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBpbml0ISBleGl0Y29k
-ZT0weDAwMDAwMDA0IF0tLS0KPj4+Cj4+PiBBbnkgaWRlYSB3aGF0IGNvdWxkIGJlIHdyb25nIHdp
-dGggbXkgc2V0dXA/Cj4+Cj4+IFBvc3RpbmcgdGhlIHJlbGV2YW50IHNlY3Rpb25zIG9mIHlvdXIg
-a2VybmVsIG1lc3NhZ2VzIHdvdWxkIGJlIGEgCj4+IGdvb2QKPj4gc3RhcnQuCj4KPiBOb3Qgc3Vy
-ZSB3aGF0J3MgcmVsZXZhbnQsIHNvIGhlcmUgYXJlIHRoZSBmdWxsIGJvb3QgbG9nczogdjUuMSBb
-MV0sCj4gYm9vdHMgZmluZTsgdjUuNCBbMl0sIGhhbmdzIHdoZW4gbGF1bmNoaW5nIC9pbml0IChh
-Y3R1YWxseSBzZWVtcyB0byAKPiBiZQo+IHN0dWNrIGluIHNvbWUga2luZCBvZiBhY3RpdmUgbG9v
-cCBqdWRnaW5nIGJ5IHRoZSAiVEhFUk1BTCBBTEFSTSIKPiBtZXNzYWdlKTsgdjUuNCArIHRoZSBh
-Ym92ZSBjb21taXRzIHJldmVydGVkIFszXSwgYm9vdHMgZmluZSBhZ2Fpbgo+IChwbGVhc2UgaWdu
-b3JlIHRoZSBtZXNzYWdlICJvcHRlZTogUFRBX0NNRF9HRVRfREVWSUNFUyBpbnZva2UgCj4gZnVu
-Y3Rpb24KPiBlcnI6IGZmZmYwMDA2IiBhcyB3ZWxsIGFzIHRoZSBlcnJvcnMgYWJvdXQgL2Rldi90
-ZWUqLCB0aGV5IGFyZSAKPiB1bnJlbGF0ZWQKPiBhbmQgYXJlIGZpeGVkIGluIC1uZXh0KS4KPgo+
-IFsxXSBodHRwczovL3Bhc3RlYmluLmNvbS9wajh0YjRRcgo+IFsyXSBodHRwczovL3Bhc3RlYmlu
-LmNvbS9zUVRNUTh3dQo+IFszXSBodHRwczovL3Bhc3RlYmluLmNvbS81OFl5Y1NGNAoKSXQgaXMg
-YW11c2luZyB0aGF0IHJldmVydGluZyB0aGUgVkRTTyBwYXRjaGVzIGZpeGVzIGFueXRoaW5nLCBh
-cyB5b3VyCkhXIGlzIGFmZmVjdGVkIGJ5IEFSTSBlcnJhdHVtIDg1ODkyMSwgZm9yIHdoaWNoIHdl
-IHNob3VsZCAqZGlzYWJsZSogdGhlClZEU08gYWx0b2dldGhlciAodGhlIGNvdW50ZXIgaXMgbm90
-IHJlbGlhYmxlIGFuZCB3ZSBoYXZlIHRvIHdvcmthcm91bmQKaXQgaW4gdGhlIGtlcm5lbCBhbnl3
-YXksIGhlbmNlIG5vIGZhc3QgZ2V0dGltZW9mZGF5IGZvciB5b3UpLgoKSSBiZXQgdGhhdCB0aGUg
-Y29udmVyc2lvbiB0byB0aGUgZ2VuZXJpYyBWRFNPIGhhcyByZXN1bHRlZCBpbiBhIGxvc3MKb2Yg
-dGhlIFZEU08gZGlzYWJsaW5nIHdoZW4gb25seSBhIHNlY29uZGFyeSBDUFUgaXMgYWZmZWN0ZWQu
-Li4KCkNhbiB5b3UgcGxlYXNlIHRyeSB0aGUgZm9sbG93aW5nIGhhY2sgZm9yIHNpemU/IGl0IGlz
-IGEgdGVycmlibGUgaGFjaywKYnV0IGl0IHNob3VsZCBnaXZlIHVzIGFuIGluZGljYXRpb24gb2Yg
-d2hldGhlciBteSBodW5jaCBpcyBjb3JyZWN0Cm9yIG5vdC4gSWYgdGhpcyB3b3Jrcywgd2UnbGwg
-bG9vayBhdCB0aGUgcmVhbCBzb2x1dGlvbi4gT3RoZXJ3aXNlLCAKd2UnbGwKa2VlcCBkaWdnaW5n
-LgoKVGhhbmtzLAoKICAgICAgICAgTS4KCmRpZmYgLS1naXQgYS9kcml2ZXJzL2Nsb2Nrc291cmNl
-L2FybV9hcmNoX3RpbWVyLmMgCmIvZHJpdmVycy9jbG9ja3NvdXJjZS9hcm1fYXJjaF90aW1lci5j
-CmluZGV4IDlhNTQ2NGM2MjViNC4uZGM2M2JiN2UwOWJjIDEwMDY0NAotLS0gYS9kcml2ZXJzL2Ns
-b2Nrc291cmNlL2FybV9hcmNoX3RpbWVyLmMKKysrIGIvZHJpdmVycy9jbG9ja3NvdXJjZS9hcm1f
-YXJjaF90aW1lci5jCkBAIC0yNCw2ICsyNCw3IEBACiAgI2luY2x1ZGUgPGxpbnV4L3NjaGVkL2Ns
-b2NrLmg+CiAgI2luY2x1ZGUgPGxpbnV4L3NjaGVkX2Nsb2NrLmg+CiAgI2luY2x1ZGUgPGxpbnV4
-L2FjcGkuaD4KKyNpbmNsdWRlIDxsaW51eC90aW1la2VlcGVyX2ludGVybmFsLmg+CgogICNpbmNs
-dWRlIDxhc20vYXJjaF90aW1lci5oPgogICNpbmNsdWRlIDxhc20vdmlydC5oPgpAQCAtNTYyLDYg
-KzU2Myw3IEBAIHZvaWQgYXJjaF90aW1lcl9lbmFibGVfd29ya2Fyb3VuZChjb25zdCBzdHJ1Y3Qg
-CmFyY2hfdGltZXJfZXJyYXR1bV93b3JrYXJvdW5kICp3YQogIAlpZiAod2EtPnJlYWRfY250dmN0
-X2VsMCkgewogIAkJY2xvY2tzb3VyY2VfY291bnRlci5hcmNoZGF0YS52ZHNvX2RpcmVjdCA9IGZh
-bHNlOwogIAkJdmRzb19kZWZhdWx0ID0gZmFsc2U7CisJCXVwZGF0ZV92c3lzY2FsbF9zdGF0dXMo
-MSk7CiAgCX0KICB9CgpkaWZmIC0tZ2l0IGEvaW5jbHVkZS9saW51eC90aW1la2VlcGVyX2ludGVy
-bmFsLmggCmIvaW5jbHVkZS9saW51eC90aW1la2VlcGVyX2ludGVybmFsLmgKaW5kZXggODRmZjI4
-NDRkZjJhLi40MzVjNDJmMzU2N2QgMTAwNjQ0Ci0tLSBhL2luY2x1ZGUvbGludXgvdGltZWtlZXBl
-cl9pbnRlcm5hbC5oCisrKyBiL2luY2x1ZGUvbGludXgvdGltZWtlZXBlcl9pbnRlcm5hbC5oCkBA
-IC0xNDIsNiArMTQyLDcgQEAgc3RydWN0IHRpbWVrZWVwZXIgewoKICBleHRlcm4gdm9pZCB1cGRh
-dGVfdnN5c2NhbGwoc3RydWN0IHRpbWVrZWVwZXIgKnRrKTsKICBleHRlcm4gdm9pZCB1cGRhdGVf
-dnN5c2NhbGxfdHoodm9pZCk7CitleHRlcm4gdm9pZCB1cGRhdGVfdnN5c2NhbGxfc3RhdHVzKHUz
-MiB2YWwpOwoKICAjZWxzZQoKQEAgLTE1MSw2ICsxNTIsOSBAQCBzdGF0aWMgaW5saW5lIHZvaWQg
-dXBkYXRlX3ZzeXNjYWxsKHN0cnVjdCAKdGltZWtlZXBlciAqdGspCiAgc3RhdGljIGlubGluZSB2
-b2lkIHVwZGF0ZV92c3lzY2FsbF90eih2b2lkKQogIHsKICB9CitzdGF0aWMgaW5saW5lIHZvaWQg
-dXBkYXRlX3ZzeXNjYWxsX3N0YXR1cyh1MzIpCit7Cit9CiAgI2VuZGlmCgogICNlbmRpZiAvKiBf
-TElOVVhfVElNRUtFRVBFUl9JTlRFUk5BTF9IICovCmRpZmYgLS1naXQgYS9rZXJuZWwvdGltZS92
-c3lzY2FsbC5jIGIva2VybmVsL3RpbWUvdnN5c2NhbGwuYwppbmRleCA1ZWUwZjc3MDk0MTAuLmY1
-YzA0OGE2NWI3MiAxMDA2NDQKLS0tIGEva2VybmVsL3RpbWUvdnN5c2NhbGwuYworKysgYi9rZXJu
-ZWwvdGltZS92c3lzY2FsbC5jCkBAIC0xMjgsMyArMTI4LDE1IEBAIHZvaWQgdXBkYXRlX3ZzeXNj
-YWxsX3R6KHZvaWQpCgogIAlfX2FyY2hfc3luY192ZHNvX2RhdGEodmRhdGEpOwogIH0KKwordm9p
-ZCB1cGRhdGVfdnN5c2NhbGxfc3RhdHVzKHUzMiB2YWwpCit7CisJc3RydWN0IHZkc29fZGF0YSAq
-dmRhdGEgPSBfX2FyY2hfZ2V0X2tfdmRzb19kYXRhKCk7CisKKwl2ZHNvX3dyaXRlX2JlZ2luKHZk
-YXRhKTsKKworCXZkYXRhW0NTX0hSRVNfQ09BUlNFXS5jbG9ja19tb2RlCT0gdmFsOworCXZkYXRh
-W0NTX1JBV10uY2xvY2tfbW9kZQkJPSB2YWw7CisKKwl2ZHNvX3dyaXRlX2VuZCh2ZGF0YSk7Cit9
-CgotLSAKSmF6eiBpcyBub3QgZGVhZC4gSXQganVzdCBzbWVsbHMgZnVubnkuLi4KCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
-bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, Dec 03, 2019 at 04:43:22PM +0100, Jerome Forissier wrote:
+> Has anyone successfully run kernel v5.2 or later on a HiKey960 board?
+> 
+> For some reason, anything past v5.1 doesn't work for me and I could not
+> figure out why. The symptom is it never gets to the login prompt. The
+> root FS is a Buildroot-generated one, and prior to reaching the kernel
+> the board runs TF-A, OP-TEE, UEFI (edk2) and Grub.
+> 
+> I tried replacing /init with a shell, in which case I can type a command
+> but whatever it is (even a simple "ls"), the command hangs on exit and I
+> never get back to the prompt.
+> 
+> Then I started bisecting, that was quite painful but I found several
+> problematic commits. I ended up reverting the following (in this order)
+> to be able to boot v5.4:
+> 
+> 1. "arm64: vdso: Substitute gettimeofday() with C implementation"
+
+Commit 28b1a824a4f4, merged in 5.3
+
+> 2. "arm64: vdso: Explicitly add build-id option"
+
+Commit 7a0a93c51799, merged in 5.2
+
+> 3. "arm64: arch_timer: Ensure counter register reads occur with seqlock
+>     held"
+
+Commit 75a19a0202db, merged in 5.2.
+
+> 4. "arm64: vdso: Remove stale files from old assembly implementation"
+
+Commit 37a5076098c1, merged in 5.4.
+
+The above is a pretty random set of reverts that doesn't really help
+pinpoint the issue.
+
+Since 5.2 was the first kernel where the regression was noticed, could
+you try reverting commit 75a19a0202db in 5.2 and try that specific
+kernel version? If this doesn't solve the issue, it may be simpler to
+bisect only between 5.1 and 5.2 rather than across multiple kernel
+versions.
+
+Thanks.
+
+-- 
+Catalin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
