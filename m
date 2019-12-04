@@ -2,77 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62784112F7D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 17:05:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2077112F9E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 17:08:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7aM8gPDFdxB+Zzc08G2QJ2l1vysODehwtchYa2cE3lE=; b=kqOdvTwTWpELsP
-	1m4xPBAOrAyLA359l+dwQnXzcwxjIcqyupLJjzLQEyBK/cG/aDRYCZ9FeGNhreCHuUK9lR78bjEr3
-	w/QYW8kGVLm/ektwGGQncEQ1oMGOJbk0tObXy8lKwaWcfN9TY8o4e6BC9MROvZggltCUPYWqzqULJ
-	c2RfAX3T1O+SXuLa+6i4ujAy0j/EK35ixNRuFVQE8HiSfqE6YOcdklYwlfbNJuYLXHXgHxCjM/fp6
-	pUwX/AygjfVP3TbhPWcTuRCwz+ZYOcrUfRZQIie1p2wgcXLBimxjOrCvXsy8lgCfmI+W2Z5bvJ9n7
-	oi/p+I0nKLr2r6gGYo0Q==;
+	List-Owner; bh=mKDY/96IztDTXG7pX9hO1fFggYQ5KpFl6JwzV+LDENY=; b=jYeX5Oj9sxxhrx
+	OPr9xk44m+rfndU/NyPeldaAjmyKcy2n4VxURtoInAtUmU1lmPWy+griSxa7WUEcFor6bKUxtgyK2
+	It4sgc0IcZjl8ENZ/i/SxGRKukSGhOusolkCHGimlWtf+05sIsUK1F3IRZqqv5ENKEfahGLG+jj4p
+	qw/GzBUpHdTDy14W/t60JS1HP7uDVJ4aP49cX63SOYzC2XiWhbrxw3/yUdw0qVAMEhO4/y+PIDhWB
+	l12OH1OY2CjStLk65vqLPz9Lecwp9x8wMia/5GENK4+9RstNQ/xd52UkOCyfXaXmY9CmHIpjtUftf
+	zIktwV11R5ROHJ/itrCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icX9O-0004Vk-Tg; Wed, 04 Dec 2019 16:05:14 +0000
-Received: from casper.infradead.org ([85.118.1.10])
+	id 1icXC2-0008Fa-HV; Wed, 04 Dec 2019 16:07:58 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icX4W-0008IT-Ht
- for linux-arm-kernel@bombadil.infradead.org; Wed, 04 Dec 2019 16:00:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:To:From:Sender:Reply-To:Cc:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=BVZcqc2Z6644/Az5ve2InTrOD+vzGwRmsPVnGeCmQZQ=; b=SIBf4bljsmtbFraDomRLlQPVib
- iOy3Um1q/+VX6xOJ/O0PLBqnEpQnKRN6n+fVQ/eBAhL+KhSvdegYpe9mrgwxXCy9ms2kzpzHZNE26
- 5iqs6X61RCe7aFYvQDpC+/AMn8ZCCELILP0hHHnq2nhuisj18REdExBGFGC7VoCarOGn1BfzASCig
- yVhrJ/KFWnRfS1QitnaMurASKWqleQfCRzd+VZlA/+44gIS6McAMaKw/L2ZpchECmlxGGD4LEIW53
- Lya4GNbbIzmBump1dUqzEkxFM5xmFf5F27YPu5WemYaFAjSLme/QqBER5jhBFDDYKZ8U2zuzSBtBa
- R3iZHnuQ==;
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icX4u-0003Ca-EM
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 16:00:38 +0000
-Received: by mail-qt1-x841.google.com with SMTP id j5so202525qtq.9
+ id 1icX4T-000861-S2
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 16:00:21 +0000
+Received: by mail-qt1-f194.google.com with SMTP id q8so194484qtr.10
  for <linux-arm-kernel@lists.infradead.org>;
  Wed, 04 Dec 2019 08:00:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=BVZcqc2Z6644/Az5ve2InTrOD+vzGwRmsPVnGeCmQZQ=;
- b=Fj3acjtI0vF/2X6yAmVOkmQPOiJyiV9R1DOf9Hh1yWS9xj0L6CWNj0ZtAnLVKoPhIs
- kr5rHc9BhzZ/NPjlNQXew0gPTqMzLA/+7Xhdea9q5VvzWwMNYEDlYxrk9aM8uMZJEzrG
- BW7fWabMXHQvQ1jTAKW0/oblb2GGkJ0omqgeJHeTMISryzpinMo8Z3RE2Hv5fpm5r2er
- OATbxcGcHrWxiXL+/9WEAcpxZ0/hNy+RgRLEPvSDsU6SU/8VfjRdcKjJodiit2Z48uj5
- X77AQQG5YgY7qWKZ3E49twAsmXWIVCUJibwk3iVT++AMRf8Eu7VGPuWmf3AuSJdsZkmD
- QpLw==
+ bh=/MBYltW9rtBSsCfH5mLmr7A6OON/1ojAMvX6KehscWk=;
+ b=PA8kJkX541uA9bLo4WgCm+htG1kvjEaRAVXmfsJT5ev/Ld6leNgY3lHaFjxuS2kq8c
+ JWYwnjGwZOZBuwR+6tFHv+d36VclP/iythlg37WWlFyZC/Cup7dv3JZz/A6DI/lcZjWt
+ 5AcJqcy7mYeyB7YM+4q3rEdREi/VPoO8RR1beH3Ycf5VvzPh41J1zTOmelnLoU3hNUUe
+ w35aOPjfrbpmQukSQQSxmP3M2y+BEpG/kwpUyzBMS6yAbEHAL55EdMhXeS84jRYXb0LK
+ ytRhwV7ojg12l0y/P+BBOVmdhuNFe6aMJcI3UDzN/RtDLnqI0yarDg3C+j/wII1pLKuP
+ Covw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=BVZcqc2Z6644/Az5ve2InTrOD+vzGwRmsPVnGeCmQZQ=;
- b=GSev+tVhzta242ie6WS1Lror/8jU7UHyt4CGi4WcYPWZSVke5xs/VerUzwdbVdCqOU
- 7RO7t1qR2XiNduRI9VC5ELgeSaRTDwZGexCIAOf/Fnci47IlffJYeNndqdLh8/4jyUqC
- Yl9owc4Wu7K8YGyJOp/8JmKxxSevrJd/Ta57oTedrN55IIJm3sVfPISctscis43bIFKb
- ippSSuvyU8jZagTuf8ttb2O0vbpOSSKYIOi8odyptM+zLXleZB3OW6re9wNoz0C+oLKY
- ScEDqlYfDkZmTcxQL2H1R1SvndPs2mGAactxkrDaIMyp6ByqQDKMrvFdbuBm3XxNXfio
- Fm4w==
-X-Gm-Message-State: APjAAAVWid774PX/mk4rOtSOq4utOEFMRyd3PgeUzsjHbRH4HPJGTVte
- UAgOHQilPOUnjsW90Mx3fmmV+g==
-X-Google-Smtp-Source: APXvYqzB+ZcjsuLUod5A2CrdZ5P4hqO77xakVo3euDVIPD3hBa71g2vCu7CIOGElQwxDhATyXOXEjA==
-X-Received: by 2002:ac8:7443:: with SMTP id h3mr3298187qtr.202.1575475206050; 
- Wed, 04 Dec 2019 08:00:06 -0800 (PST)
+ bh=/MBYltW9rtBSsCfH5mLmr7A6OON/1ojAMvX6KehscWk=;
+ b=osrfQPgfiaTqj8sRLmHJk1AYDNN6BLkUh7b8fAJWA1nolRmsZep2v6uWYyCkmgCmbP
+ UmsHapHLmJhDLa4wTf47vnOPBGlwNwnQlb/bT/gV4zQRPY3+gYSkDgPIi1jZ2nixcvZp
+ pfy40ff7yUNmiWB3xgKqc3650XoUTwVRSoGT820Nlr+ATVrvbmWNE9a5/svwMAsqyYrG
+ zoGUIjeF0A1wxmrOvZZhx0e5HFiL6iOtKsotmPPk+x6E+JkytLcV56eWT+LEsx6Ug0Es
+ rR5pw8NG3MROydu/Lneu5oXlHkjXAt/JZYpOlqVpUmrnBWmmSqqwvXM+/qNXQhGYqs9i
+ jJDg==
+X-Gm-Message-State: APjAAAUmCz6B3T+/+D6LdYYio15s1bb/4YGSLANrd/gmW9jURAvKZlX5
+ hZhSO5PYIQcILzuE4m0dmRbADg==
+X-Google-Smtp-Source: APXvYqwbKSwS/yXWuRHb+PaP9MfU0eV8kxGrFkPjas9vXjMIOj11vViQlKH1qIZNWm8y42tqqOAO9w==
+X-Received: by 2002:ac8:5542:: with SMTP id o2mr3360225qtr.387.1575475207544; 
+ Wed, 04 Dec 2019 08:00:07 -0800 (PST)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id w21sm4177585qth.17.2019.12.04.08.00.04
+ by smtp.gmail.com with ESMTPSA id w21sm4177585qth.17.2019.12.04.08.00.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 08:00:05 -0800 (PST)
+ Wed, 04 Dec 2019 08:00:06 -0800 (PST)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -82,34 +66,34 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com, steve.capper@arm.com, rfontana@redhat.com,
  tglx@linutronix.de
-Subject: [PATCH v8 17/25] arm64: kexec: cpu_soft_restart change argument types
-Date: Wed,  4 Dec 2019 10:59:30 -0500
-Message-Id: <20191204155938.2279686-18-pasha.tatashin@soleen.com>
+Subject: [PATCH v8 18/25] arm64: kexec: arm64_relocate_new_kernel clean-ups
+Date: Wed,  4 Dec 2019 10:59:31 -0500
+Message-Id: <20191204155938.2279686-19-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191204155938.2279686-1-pasha.tatashin@soleen.com>
 References: <20191204155938.2279686-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_160036_503118_B5E98128 
-X-CRM114-Status: UNSURE (   8.83  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191204_080010_077953_87905A81 
+X-CRM114-Status: GOOD (  14.02  )
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.2 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [209.85.160.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,43 +110,144 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Change argument types from unsigned long to a more descriptive
-phys_addr_t.
+Remove excessive empty lines from arm64_relocate_new_kernel.
+Also, use comments on the same lines with instructions where
+appropriate.
+
+Change ENDPROC to END it never returns.
+
+copy_page(dest, src, tmps...)
+Increments dest and src by PAGE_SIZE, so no need to store dest
+prior to calling copy_page and increment it after. Also, src is not
+used after a copy, not need to copy either.
+
+Call raw_dcache_line_size()  only when relocation is actually going to
+happen.
+
+Since '.align 3' is intended to align globals at the end of the file,
+move it there.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/kernel/cpu-reset.h | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ arch/arm64/kernel/relocate_kernel.S | 50 +++++++----------------------
+ 1 file changed, 11 insertions(+), 39 deletions(-)
 
-diff --git a/arch/arm64/kernel/cpu-reset.h b/arch/arm64/kernel/cpu-reset.h
-index ed50e9587ad8..3a54c4d987f3 100644
---- a/arch/arm64/kernel/cpu-reset.h
-+++ b/arch/arm64/kernel/cpu-reset.h
-@@ -10,17 +10,17 @@
+diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
+index c1d7db71a726..e9c974ea4717 100644
+--- a/arch/arm64/kernel/relocate_kernel.S
++++ b/arch/arm64/kernel/relocate_kernel.S
+@@ -8,7 +8,6 @@
  
- #include <asm/virt.h>
+ #include <linux/kexec.h>
+ #include <linux/linkage.h>
+-
+ #include <asm/assembler.h>
+ #include <asm/kexec.h>
+ #include <asm/page.h>
+@@ -17,25 +16,21 @@
+ /*
+  * arm64_relocate_new_kernel - Put a 2nd stage image in place and boot it.
+  *
+- * The memory that the old kernel occupies may be overwritten when coping the
++ * The memory that the old kernel occupies may be overwritten when copying the
+  * new image to its final location.  To assure that the
+  * arm64_relocate_new_kernel routine which does that copy is not overwritten,
+  * all code and data needed by arm64_relocate_new_kernel must be between the
+  * symbols arm64_relocate_new_kernel and arm64_relocate_new_kernel_end.  The
+  * machine_kexec() routine will copy arm64_relocate_new_kernel to the kexec
+- * control_code_page, a special page which has been set up to be preserved
+- * during the copy operation.
++ * safe memory that has been set up to be preserved during the copy operation.
+  */
+ ENTRY(arm64_relocate_new_kernel)
+-
+ 	/* Setup the list loop variables. */
+ 	mov	x18, x2				/* x18 = dtb address */
+ 	mov	x17, x1				/* x17 = kimage_start */
+ 	mov	x16, x0				/* x16 = kimage_head */
+-	raw_dcache_line_size x15, x0		/* x15 = dcache line size */
+ 	mov	x14, xzr			/* x14 = entry ptr */
+ 	mov	x13, xzr			/* x13 = copy dest */
+-
+ 	/* Clear the sctlr_el2 flags. */
+ 	mrs	x0, CurrentEL
+ 	cmp	x0, #CurrentEL_EL2
+@@ -46,14 +41,11 @@ ENTRY(arm64_relocate_new_kernel)
+ 	pre_disable_mmu_workaround
+ 	msr	sctlr_el2, x0
+ 	isb
+-1:
+-
+-	/* Check if the new image needs relocation. */
++1:	/* Check if the new image needs relocation. */
+ 	tbnz	x16, IND_DONE_BIT, .Ldone
+-
++	raw_dcache_line_size x15, x1		/* x15 = dcache line size */
+ .Lloop:
+ 	and	x12, x16, PAGE_MASK		/* x12 = addr */
+-
+ 	/* Test the entry flags. */
+ .Ltest_source:
+ 	tbz	x16, IND_SOURCE_BIT, .Ltest_indirection
+@@ -69,34 +61,18 @@ ENTRY(arm64_relocate_new_kernel)
+ 	b.lo    2b
+ 	dsb     sy
  
--void __cpu_soft_restart(unsigned long el2_switch, unsigned long entry,
--	unsigned long arg0, unsigned long arg1, unsigned long arg2);
-+void __cpu_soft_restart(phys_addr_t el2_switch, phys_addr_t entry,
-+	phys_addr_t arg0, phys_addr_t arg1, phys_addr_t arg2);
+-	mov x20, x13
+-	mov x21, x12
+-	copy_page x20, x21, x0, x1, x2, x3, x4, x5, x6, x7
+-
+-	/* dest += PAGE_SIZE */
+-	add	x13, x13, PAGE_SIZE
++	copy_page x13, x12, x0, x1, x2, x3, x4, x5, x6, x7
+ 	b	.Lnext
+-
+ .Ltest_indirection:
+ 	tbz	x16, IND_INDIRECTION_BIT, .Ltest_destination
+-
+-	/* ptr = addr */
+-	mov	x14, x12
++	mov	x14, x12			/* ptr = addr */
+ 	b	.Lnext
+-
+ .Ltest_destination:
+ 	tbz	x16, IND_DESTINATION_BIT, .Lnext
+-
+-	/* dest = addr */
+-	mov	x13, x12
+-
++	mov	x13, x12			/* dest = addr */
+ .Lnext:
+-	/* entry = *ptr++ */
+-	ldr	x16, [x14], #8
+-
+-	/* while (!(entry & DONE)) */
+-	tbz	x16, IND_DONE_BIT, .Lloop
+-
++	ldr	x16, [x14], #8			/* entry = *ptr++ */
++	tbz	x16, IND_DONE_BIT, .Lloop	/* while (!(entry & DONE)) */
+ .Ldone:
+ 	/* wait for writes from copy_page to finish */
+ 	dsb	nsh
+@@ -110,16 +86,12 @@ ENTRY(arm64_relocate_new_kernel)
+ 	mov	x2, xzr
+ 	mov	x3, xzr
+ 	br	x17
+-
+-ENDPROC(arm64_relocate_new_kernel)
+-
+ .ltorg
+-
+-.align 3	/* To keep the 64-bit values below naturally aligned. */
++END(arm64_relocate_new_kernel)
  
--static inline void __noreturn cpu_soft_restart(unsigned long entry,
--					       unsigned long arg0,
--					       unsigned long arg1,
--					       unsigned long arg2)
-+static inline void __noreturn cpu_soft_restart(phys_addr_t entry,
-+					       phys_addr_t arg0,
-+					       phys_addr_t arg1,
-+					       phys_addr_t arg2)
- {
- 	typeof(__cpu_soft_restart) *restart;
- 
--	unsigned long el2_switch = !is_kernel_in_hyp_mode() &&
-+	phys_addr_t el2_switch = !is_kernel_in_hyp_mode() &&
- 		is_hyp_mode_available();
- 	restart = (void *)__pa_symbol(__cpu_soft_restart);
- 
+ .Lcopy_end:
+ .org	KEXEC_CONTROL_PAGE_SIZE
+-
++.align 3	/* To keep the 64-bit values below naturally aligned. */
+ /*
+  * arm64_relocate_new_kernel_size - Number of bytes to copy to the
+  * control_code_page.
 -- 
 2.24.0
 
