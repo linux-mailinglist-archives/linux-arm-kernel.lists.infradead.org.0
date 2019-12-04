@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BFCB11214B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 03:11:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAC00112157
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 03:19:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LJVBDElPeoxd4BdhHdxXHTyc514nWaMQYcBo9k1EJJ8=; b=eUsH/KijnsoLjL
-	oV391nXYSwCxLoPSUMQmOQmQYvg3aHohRQIGGurYeBm0s4lBXBwE5R06QwHHWWD4al4QRpGseapjR
-	bgrS7hqjyisH5g6DJPVEM1S+9IKXGFDJa6vSctPkfiy86aS5QRcuKCVA3EyGe0XwU/QlDs1qKColC
-	ySr0T0oGkH0d0JEMEH7u77JeD9Dvdu3qQ1vdOVndKscQCk552TMxgr8WI+5ScFqUS+fSTasNSWwkP
-	YY3/2leJjVXWRENd9zbrW0FCZsWWGVFQHcEIVgXmNeSkBJ6f5TzXfYBlkXXgekL4EY7L8aXSLPRs9
-	0XVYvmGwBoBnvXsos2eg==;
+	List-Owner; bh=psxcFcytdq4uYxVYtcPz/DFm77gnAbSf2uGGx1/nnrU=; b=PK0i4XSqTPq4LQ
+	Nd4XywVyv36AnNJtXVC4mie6TrsK1ItnbO42hYmQq6PYR9AKgy/vRmCZWXaxHdsSseOac6ahZBuFh
+	BIz7rMjuNPxvAx8tcPEd+NL/2xucJuiJT117S+ATkDFp8Qb1YrKfPA07TcpDNme3plUfeRhRgew0B
+	v6lKIn51lxoJizg08ZcfEeVr9CZnriPSSc0hb5l6jUqA16o0ZgCLfTw1AFnR4D3t7XyjXwV5U9ktG
+	Jh366sYXjqj5rfUY9R5ymPIIdBLCJa0hwrT9QrYnkjbxWuU9uPT0gDoG2CJOtfHXHSN2pb/9tY4JF
+	rbFIb7mZj5yVdnECrHvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icK8t-00033x-7J; Wed, 04 Dec 2019 02:11:51 +0000
+	id 1icKGC-0004uH-NH; Wed, 04 Dec 2019 02:19:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icK8l-00033L-1r
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 02:11:44 +0000
+ id 1icKG5-0004tl-9u
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 02:19:20 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A74392073B;
- Wed,  4 Dec 2019 02:11:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 10B8C2073C;
+ Wed,  4 Dec 2019 02:19:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575425502;
- bh=qAy1hN6YKBjhMpGjB5AiKNMsv5Q5YjwTmEYFHrcRW0Q=;
+ s=default; t=1575425956;
+ bh=FX0SbHl1Yljp4OhiB2FkaDSP/AYuFcF8lh80Js4Mc/c=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PHjT8SSfzvC09abV0WTQ/shpatoyLQpMGrbWV/o18FMjcM9Rdj0QIlX4hbCmFVOUv
- 0Ph8w9m4TVX/nkU/2V0al9OuBXIephrzKxaVVhoxyEe+NRKVq1pY1n9olKS9veorJY
- 6+c0xjDfMHR9YK+6EoGVeJPNuhgJWrll2fKzMuJM=
-Date: Wed, 4 Dec 2019 10:11:35 +0800
+ b=vr3fYKnxYmLmrDqk2Jr6lZOynJiZfJSLzX8Pp8YPusqwp3A8PXmRWEUAI0nnKG9A/
+ vwo2NmNoTfqzw8dGnojNcemy6+kQcl023nXPZiXz1ER1PxNojyMAXBA1rzQAPpIw/a
+ PTYizRwVD2Slkvb9eF8GO4DUlF+PGVQKuF1bjAwI=
+Date: Wed, 4 Dec 2019 10:19:09 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Adam Ford <aford173@gmail.com>
-Subject: Re: [PATCH] ARM: imx_v6_v7_defconfig: Enable TOUCHSCREEN_ILI210X
-Message-ID: <20191204021135.GM9767@dragon>
-References: <20191105134245.22568-1-aford173@gmail.com>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH] clk: imx: pll14xx: fix clk_pll14xx_wait_lock
+Message-ID: <20191204021908.GN9767@dragon>
+References: <1573018178-14939-1-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191105134245.22568-1-aford173@gmail.com>
+In-Reply-To: <1573018178-14939-1-git-send-email-peng.fan@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_181143_118352_52F6137F 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191203_181917_369491_FA395F8D 
+X-CRM114-Status: GOOD (  16.68  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,26 +76,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: adam.ford@logicpd.com, Sascha Hauer <s.hauer@pengutronix.de>,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 07:42:45AM -0600, Adam Ford wrote:
-> The imx6q-logicpd board supports an LCD with an ili2117
-> touchscreen controller.
+On Wed, Nov 06, 2019 at 05:31:15AM +0000, Peng Fan wrote:
+> From: Peng Fan <peng.fan@nxp.com>
 > 
-> This patch enables the TOUCHSCREEN_ILI210X which will support
-> the ili2117.
-> 
-> Signed-off-by: Adam Ford <aford173@gmail.com>
+> The usage of readl_poll_timeout is wrong, the cond should be
+> "val & LOCK_STATUS" not "val & LOCK_TIMEOUT_US".
 
-Applied, thanks.
+Is this caught just by code inspection or a real world bug?  If you want
+this get into -rc (and stable kernel) as a fix, you should add more
+information about the bug, like how it's been triggered, what's the
+consequence of the bug, and kernel dump message etc.
+
+> 
+> Fixes: 8646d4dcc7fb ("clk: imx: Add PLLs driver for imx8mm soc")
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> ---
+> 
+> V1:
+>  Hi Shawn,
+>    This patch is made based on 5.4-rc6, not your for-next branch,
+
+Please rebase it on 5.5-rc1 which will be coming next Monday.
+
+>    not sure whether this patch could catch 5.4 release.
+
+You can Cc stable kernel, so that it will be back ported.
+
+Shawn
+
+> 
+>  drivers/clk/imx/clk-pll14xx.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
+> index 7a815ec76aa5..d43b4a3c0de8 100644
+> --- a/drivers/clk/imx/clk-pll14xx.c
+> +++ b/drivers/clk/imx/clk-pll14xx.c
+> @@ -153,7 +153,7 @@ static int clk_pll14xx_wait_lock(struct clk_pll14xx *pll)
+>  {
+>  	u32 val;
+>  
+> -	return readl_poll_timeout(pll->base, val, val & LOCK_TIMEOUT_US, 0,
+> +	return readl_poll_timeout(pll->base, val, val & LOCK_STATUS, 0,
+>  			LOCK_TIMEOUT_US);
+>  }
+>  
+> -- 
+> 2.16.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
