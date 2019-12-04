@@ -2,84 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48DED112C6C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 14:16:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84C97112C91
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 14:29:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/4JLaD/HoSHBE8zdFbVW/jOYtGK1q/oFxGvQz9r+y+A=; b=rndI7ifP8ZXsN0
-	FiUK1PCNzh1ZosYloCh9hUF5lgzdFbdYnOHKUJANXstnrXbVV8v3P6U3Flgloj4hgySzqpJqR2ftk
-	OwiLtPWOF3Canoz7Tt+NX3pBb70GBiv4hkAzE2O/6C+Gd2G2te95c3nOcJcycEWyfwwWT+hMOD5Ka
-	TP4TslkEwCaoaOPc0sdAKJ4RwL4+Ws1J6Lbmsb2TuAz+j1OlZb7zdaO8Y63D8kX/WzP2YsLGg37Xl
-	UiPNzLOEUwpQhtg5ylx4aZl7fThbbOZIhhxC8HrVzCxhKZ7nwnuH/nxcpcLLTO7aqAl2su981rQ7X
-	P61+BTqXpJlT/kaUEqvA==;
+	List-Owner; bh=foso+nf2NKANqmO2K2ze6KZrh+9P4RtAje4mB936A+c=; b=q10xZZHwJIJbOe
+	qtQyErAmcanjTtJa4ci8fXru4pHuYLEGApTDpY3ZpkgMC4w7DzbIO0PfS2fSzIUwYNYKLKg94Hvl/
+	KV+COY1+rpW859Oo0vPUWuhjDtCH5XfB+Hb6/UMa4JMoU+VKw+oPNHqXM5KYy+ukUec3y2lqB9rIH
+	KAHN7OLF8x2d6N+4e7wH7wBb5xfiOdsDLgZ7e4waA4k+7hlXjP2hhBglghKqvPx5dKJ0zAP8IxlSu
+	UB7htf/0lL9J6rHE2WKLHl1VUn5B3fMeV8kDQRY635WH0xhHsr7+EO8HvenGfIEtm6puqnMYmXhCJ
+	8CGihFNcL4ZDIZZA9YJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icUVf-0002LS-Uz; Wed, 04 Dec 2019 13:16:03 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1icUi4-000764-N9; Wed, 04 Dec 2019 13:28:52 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icUVY-0002Kx-MP
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 13:15:58 +0000
-Received: by mail-wr1-x442.google.com with SMTP id y11so8543755wrt.6
+ id 1icUhx-00075l-Io
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 13:28:47 +0000
+Received: by mail-wm1-x342.google.com with SMTP id u8so7947222wmu.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 05:15:56 -0800 (PST)
+ Wed, 04 Dec 2019 05:28:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=forissier-org.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=lg0wcQ9qSliL/16/yUG7yuxbY838eryV6jlA7T+y1eE=;
- b=is5xur2kiIPMlfEIBksGoIbup7rmve9Y8Kksbr0wbd6Q7VkuqeKBi63wJwXUA4FJVV
- fykF3rWQzRKVy43/BrFsPOhsQDpgTIy26xFYvdGSrNTXCt7aftofYWBZ50jESnwAT8AL
- QR94QKhaWCH0gFVj1HqULXbrxm3kqytQ4v5i+WRCChW3PvOsOsThbhzxqxomw6/5v7MH
- zjyS9VZUgNx2SsOIP1D2Qisz0oDXYWkwJk/Apvby82qW6rjhgNSiYrTTxTJeMrm6DJdW
- iMUN1oHu50zBrcRvDHUzGWnNtTnUKBI/62Bsk+ZrW5lA9SA6loj8zzH+jPCaZbWPEENk
- KA9g==
+ bh=I13vU8la4gLFnqIn36S7jSKVDpHw/83gEMSGkWX2a2I=;
+ b=kDU+ZHJK/ikvPF/sl8YSfSXxjRH4gJ3/+9DCdH6T8aAXXjjPOjdS+BOOF40u1H/OGR
+ Xoh/l2vP2G6rbWW8JPljroqVeB+Nfc0+Y2m9L+5caYlwBlzi7IGe6BTD/KqW+HPHi5lR
+ XcptmV/nf4+Q2hJqlexbBqZMvC9NFiovGnrqIPCYkM69ZzTyrLeEYO/uQOf07AtJCW3+
+ TkI0NeWuTJDNcNQwJCsvLTxIBjcg+8mmIVMEqBcfWNsx9tedUZmPrlnQJAjct7CUonsv
+ Oy+0jJJgGl01+Hcn+gt7+jsjl0qpAy/iRo/VRs1PG/qWqpqhK4Xw8aTj7DpV+13GwG/c
+ IqZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=lg0wcQ9qSliL/16/yUG7yuxbY838eryV6jlA7T+y1eE=;
- b=onB68AtHwTAhpNwxFNO160KWSO9uDkRWpZn6rZVRqFRkpU18ZtouF4cRL2s2VLsgYB
- 9U3DeMfmfrcEE+J0H0eoBCSIgGKLrYMM72cE4Gsb+QoUaDBm+IxOj8a8iaikNeA8+HZW
- o2DAVJ0tQI5mlgrXsUSvO/vEWzqJMk/eQjA/SBaEr8Cow8fwEcInRNr7IEBoOoKE91oE
- e8Ip6vs3gkJHyVfelnsoEj+wgIP2pHosbuJONZ5Yd6HQBLVk8ovoxo3X+M1pDSa5Fagp
- G7+0qvecah2ne0gk4QNyGWMfLRYVLqZ6hrX2XoOwAKKWcmuZTibwGSy0j7A+EVdkri/n
- PqRQ==
-X-Gm-Message-State: APjAAAXfwuvGA+6cmgeWFqngmLaWt7YRX9V9TJtcv87DOjBCGfZN/M5Q
- dFEe/LXNvN7Iq2KOXafu4olI2nTPBUL792N8
-X-Google-Smtp-Source: APXvYqxj2ywho1nhUq5Uk2On4PrBguqJCiZw9MgC9iN912GAC5j9Opagy8rGfie6nmkuRuZeOYonaA==
-X-Received: by 2002:a5d:438c:: with SMTP id i12mr4129149wrq.196.1575465355041; 
- Wed, 04 Dec 2019 05:15:55 -0800 (PST)
+ bh=I13vU8la4gLFnqIn36S7jSKVDpHw/83gEMSGkWX2a2I=;
+ b=F5DkjN9mBtkGM00suhAOz3nWYE7OawTKeHRz/uvN2vZC3yY6TU1N5B9ObYSAttfrEa
+ zaIgRgeW/WOhfBOeCvTjJKoosf5j+4w59tne7ITlaLXKBXn5pexGTOyx65XzBFBlrueC
+ SSc1rJwgl+x+bDXwuXqP3hq0I4YM/Rtnr7pG3gxmoJ/T2dav57pwWdGRYvoBES1rX772
+ 3+e8uRASl7xrxO3OP7abTwCNCSOQ+pvk79VYawbHF5pHbX84w+iwain498f+izCu1F5S
+ +5NdYZjGEx++ef/Y/1oGF/Vpq0gg7/+2un7czvc2/I269ZKaS0XBOj6uKJjd1yJiaTah
+ Pxww==
+X-Gm-Message-State: APjAAAWRZhr55PgDgRObglb86HVt2lFdbGyfQA5IT9gWArTeAS0ZZdfB
+ 4pz8OizJzVYSJGJUasiJxf4+M4yd2NEAIcG2
+X-Google-Smtp-Source: APXvYqzBy5masMJDRtLR90KHkrzmixfjnAZjBcyg4o8GYJzNKGQTgCjdhFkFQe27ZThfr0zTGj/oiQ==
+X-Received: by 2002:a7b:cf0e:: with SMTP id l14mr37683840wmg.23.1575466123567; 
+ Wed, 04 Dec 2019 05:28:43 -0800 (PST)
 Received: from [192.168.1.7] ([5.50.11.226])
- by smtp.gmail.com with ESMTPSA id l17sm7860244wro.77.2019.12.04.05.15.53
+ by smtp.gmail.com with ESMTPSA id k127sm6982725wmk.31.2019.12.04.05.28.42
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 04 Dec 2019 05:15:54 -0800 (PST)
+ Wed, 04 Dec 2019 05:28:43 -0800 (PST)
 Subject: Re: Kernel v5.2+ on HiKey960?
-To: Catalin Marinas <catalin.marinas@arm.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Marc Zyngier <maz@misterjones.org>
 References: <f58c2c0e-ec82-6675-84e6-ad63fd93c8ff@forissier.org>
- <20191204101851.GC13081@arrakis.emea.arm.com>
+ <5e71ae8ec1ecb64544d131686f5405bb@www.loen.fr>
+ <7d9e4b41-6906-d5e0-261d-94d3f47b941f@arm.com>
 From: Jerome Forissier <jerome@forissier.org>
-Message-ID: <1c5e497f-4be0-e1f3-4d6d-fed9470d0406@forissier.org>
-Date: Wed, 4 Dec 2019 14:15:48 +0100
+Message-ID: <c0e4ed1e-298f-7faa-bda9-d92288d3f4e3@forissier.org>
+Date: Wed, 4 Dec 2019 14:28:36 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191204101851.GC13081@arrakis.emea.arm.com>
+In-Reply-To: <7d9e4b41-6906-d5e0-261d-94d3f47b941f@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_051556_728574_E70F4C35 
-X-CRM114-Status: GOOD (  19.37  )
+X-CRM114-CacheID: sfid-20191204_052845_677847_83A1B2C0 
+X-CRM114-Status: GOOD (  14.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -97,75 +99,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Catalin,
+Hi Vincenzo,
 
-On 12/4/19 11:18 AM, Catalin Marinas wrote:
-> On Tue, Dec 03, 2019 at 04:43:22PM +0100, Jerome Forissier wrote:
->> Has anyone successfully run kernel v5.2 or later on a HiKey960 board?
+On 12/4/19 1:49 PM, Vincenzo Frascino wrote:
+> Hi Jerome,
+> 
+> On 12/3/19 5:47 PM, Marc Zyngier wrote:
+>> Hi Jerome,
 >>
->> For some reason, anything past v5.1 doesn't work for me and I could not
->> figure out why. The symptom is it never gets to the login prompt. The
->> root FS is a Buildroot-generated one, and prior to reaching the kernel
->> the board runs TF-A, OP-TEE, UEFI (edk2) and Grub.
->>
->> I tried replacing /init with a shell, in which case I can type a command
->> but whatever it is (even a simple "ls"), the command hangs on exit and I
->> never get back to the prompt.
->>
->> Then I started bisecting, that was quite painful but I found several
->> problematic commits. I ended up reverting the following (in this order)
->> to be able to boot v5.4:
->>
->> 1. "arm64: vdso: Substitute gettimeofday() with C implementation"
+>> Adding Vincenzo (who was the last one to mess with the VDSO).
 > 
-> Commit 28b1a824a4f4, merged in 5.3
+> @Marc
 > 
->> 2. "arm64: vdso: Explicitly add build-id option"
+> Thanks for this, my filters completely missed Jerome's request, I might have a
+> look and tighten them ;)
 > 
-> Commit 7a0a93c51799, merged in 5.2
+> [...]
 > 
->> 3. "arm64: arch_timer: Ensure counter register reads occur with seqlock
->>     held"
+> @Jerome
 > 
-> Commit 75a19a0202db, merged in 5.2.
-> 
->> 4. "arm64: vdso: Remove stale files from old assembly implementation"
-> 
-> Commit 37a5076098c1, merged in 5.4.
-> 
-> The above is a pretty random set of reverts that doesn't really help
-> pinpoint the issue.
-> 
-> Since 5.2 was the first kernel where the regression was noticed, could
-> you try reverting commit 75a19a0202db in 5.2 and try that specific
-> kernel version?
+> Could you please provide your .config? 
 
-Ends up with a kernel panic [1].
+.config for v5.4 [1], corresponds to boot log [2].
 
-> If this doesn't solve the issue, it may be simpler to
-> bisect only between 5.1 and 5.2 rather than across multiple kernel
-> versions.
+[1] https://pastebin.com/pWSYAshs
+[2] https://pastebin.com/sQTMQ8wu
 
-75a19a0202db is the first bad commit. Its parent: commit 2f1d4e24d91b
-("firmware: arm_sdei: Prohibit probing in '_sdei_handler'") boots fine
-[2]. Since reverting 75a19a0202db in v5.2 does not work, I suspect we're
-dealing with multiple problems. As I said, the set of reverts above is
-the best I could figure out, and believe me I spent several days trying
-to troubleshoot this :-/ (that being said, I know nothing about the VDSO
-or the arch timer so I could not try anything meaningful other than
-reverting some commits).
 
-[1] https://pastebin.com/U4iHLrc8
-[2] https://pastebin.com/bLgzJYwE
+> Another question are you bringing it over
+> or regenerating it for each version of the kernel your are testing?
 
+I am regenerating it each time from arch/arm64/configs/defconfig and a
+couple of local config fragments, using scripts/kconfig/merge_config.sh.
+
+Thanks,
 -- 
 Jerome
 
