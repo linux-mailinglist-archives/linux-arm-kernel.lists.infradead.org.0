@@ -2,65 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B6E01128C5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 11:00:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 977491128D6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 11:06:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QHxtKga4J5WEzswCF5svTvhvGFxWyS3j3/Z4pNicLZc=; b=rx2ABrnKO8sLOm
-	jDgDRHw2BplM0sC52w11C/b90EWDrl7dErxjpEOBaYXTJghJHNAmIsMlbuI1wFrnT0iRBoRtWmMH1
-	lCV43rCv3ZAeBLBhcC1RbgwI4oOvPIZC+2RLyJPpSw48vsoBRRPDJvJD5qXfpV6oAL5gOINrTlQr3
-	NOSMhUnuncZeses63iv/HjPdFyuMUlI4jd/3IWD6Rovvd4aHXGLPx0wsDJoKv+qgzAlHSHkPU3TYg
-	LD3NwKuhV4wBTZYb3HUfIBfwRIo9IHwBjizPnExXJav0wjEKQ1m+K444JzILWHYmJq9HflKX5FKYr
-	HV0lR4imTJyRR19YQcEA==;
+	List-Owner; bh=JkTJf80J2eKLhbGRXQqC1dvv66U/JA9Fj1PDL47+RSU=; b=oroDUcUn8QLLUc
+	LtISYsbLZ2x75bcz4xvdvtMO2bbXedYR7oYq5cj+HZE5bTgCrpZvlY7EoI/hUaPUv06eRp2A+Q72T
+	yDCoqI4NPR9NyC0SBRMD0lRHx50YgKcBzD7qPYI1XUIMU0+geJVZCu2pRLPEXY3JhGMiRIYybGFTr
+	RRt9dEVvy627uQnaSkxynnuZE8ty/kKxzymDxnVtx+0qLopPITczplaX8PoHRs1AlzhX+giQ58T6K
+	6mdTsD25jW4Qr8YMrHvGFS6rnoNXWFeSOWoYoh6ZsfIp9NcK2mq4EXu1waKnAIWQ5G2kI9ly5eeoa
+	RDqY17dya1kQZOBVUVHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icRSH-0000kS-75; Wed, 04 Dec 2019 10:00:21 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icRS7-0000fg-W8
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 10:00:13 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1icRS2-000533-CD; Wed, 04 Dec 2019 11:00:06 +0100
-Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <sha@pengutronix.de>)
- id 1icRS2-0005y6-0h; Wed, 04 Dec 2019 11:00:06 +0100
-Date: Wed, 4 Dec 2019 11:00:05 +0100
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: Biwen Li <biwen.li@nxp.com>
-Subject: Re: [v6] i2c: imx: support slave mode for imx I2C driver
-Message-ID: <20191204100005.r56huywxa7h3c6zr@pengutronix.de>
-References: <20191203114809.21226-1-biwen.li@nxp.com>
+	id 1icRXk-00032R-M6; Wed, 04 Dec 2019 10:06:00 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1icRXc-00031F-3C
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 10:05:53 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 04 Dec 2019 19:05:48 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 7D8B2603AB;
+ Wed,  4 Dec 2019 19:05:48 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Wed, 4 Dec 2019 19:06:21 +0900
+Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id E71B11A01CF;
+ Wed,  4 Dec 2019 19:05:47 +0900 (JST)
+Received: from [10.213.132.48] (unknown [10.213.132.48])
+ by yuzu.css.socionext.com (Postfix) with ESMTP id B6A79120456;
+ Wed,  4 Dec 2019 19:05:47 +0900 (JST)
+Date: Wed, 04 Dec 2019 19:05:47 +0900
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>
+Subject: Re: [PATCH 2/2] PCI: uniphier: Add checking whether PERST# is
+ deasserted
+In-Reply-To: <20191122205316.297B.4A936039@socionext.com>
+References: <20191121164705.GA14229@e121166-lin.cambridge.arm.com>
+ <20191122205316.297B.4A936039@socionext.com>
+Message-Id: <20191204190547.333C.4A936039@socionext.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191203114809.21226-1-biwen.li@nxp.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 10:53:58 up 149 days, 16:04, 138 users,  load average: 0.01, 0.10,
- 0.15
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-Mailer: Becky! ver. 2.70 [ja]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_020012_035016_0D5E7967 
-X-CRM114-Status: GOOD (  17.46  )
+X-CRM114-CacheID: sfid-20191204_020552_253755_BF4F43CD 
+X-CRM114-Status: GOOD (  24.31  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.248.49.38 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,133 +71,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, linux-arm-kernel@lists.infradead.org,
- wsa@the-dreams.de, shawnguo@kernel.org, xiaobo.xie@nxp.com, leoyang.li@nxp.com,
- o.rempel@pengutronix.de, xiaoning.wang@nxp.com, linux-imx@nxp.com,
- kernel@pengutronix.de, jiafei.pan@nxp.com, laurentiu.tudor@nxp.com,
- festevam@gmail.com, linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org
+Cc: Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Jassi Brar <jaswinder.singh@linaro.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Fri, 22 Nov 2019 20:53:16 +0900 <hayashi.kunihiko@socionext.com> wrote:
 
-The patch looks ok to me now, but I still do not like the #ifdeffery
-around CONFIG_I2C_SLAVE. With the patch I just sent (You are on Cc:)
-we could apply the following on your patch which makes it more readable
-and increases compile coverage.
+> Hello Lorenzo,
+> 
+> On Thu, 21 Nov 2019 16:47:05 +0000 <lorenzo.pieralisi@arm.com> wrote:
+> 
+> > On Fri, Nov 08, 2019 at 04:30:27PM +0900, Kunihiko Hayashi wrote:
+> > > > However, If I understand correctly, doesn't your solution only work some
+> > > > of the time? What happens if you boot both machines at the same time,
+> > > > and PERST# isn't asserted prior to the kernel booting?
+> > > 
+> > > I think it contains an annoying problem.
+> > > 
+> > > If PERST# isn't toggled prior to the kernel booting, PERST# remains asserted
+> > > and the RC driver can't access PCI bus.
+> > > 
+> > > As a result, this patch works and deasserts PERST# (and EP configuration will
+> > > be lost). So boot sequence needs to include deasserting PERST#.
+> > 
+> > I am sorry but I have lost you. Can you explain to us why checking
+> > that PERST# is deasserted guarantees you that:
+> > 
+> > - The EP has bootstrapped
+> > - It is safe not to toggle it again (and also skip
+> >   uniphier_pcie_ltssm_enable())
+> > 
+> > Please provide details of the HW configuration so that we understand
+> > what's actually supposed to happen and why this patch fixes the
+> > issue you are facing.
+> 
+> I tried to connect between the following boards, and do pci-epf-test:
+>  - "RC board": UniPhier ld20 board that has DWC RC controller
+>  - "EP board": UniPhier legacy board that has DWC EP controller
+> 
+> This EP has power-on-state configuration, but it's necessary to set
+> class ID, BAR sizes, etc. after starting up.
+> 
+> In case of that starting up RC board before EP board, the RC driver
+> can't establish link. So we need to boot EP board first.
 
-Wolfram, Biwen, what do you think?
+At that point, I've considered why RC can't establish link,
+and found that the waitng time was too short.
 
-Sascha
+- EP/RC: power on both boards
 
----------------------------8<------------------------------
+- RC: start up the kernel on RC board
 
-From 52f7c2bf59db61d4b27b59ca6404136e3ed77310 Mon Sep 17 00:00:00 2001
-From: Sascha Hauer <s.hauer@pengutronix.de>
-Date: Wed, 4 Dec 2019 10:56:34 +0100
-Subject: [PATCH] fixup! i2c: imx: support slave mode for imx I2C driver
+- RC: wait for link up (long time enough)
+
+- EP: start up the kernel on EP board
+
+- EP: configurate pci-epf-test
+
+When the endpoint  configuration is done and the EP driver enables LTSSM,
+the RC driver will quit from waiting for link up.
+
+Currently DWC RC driver calls dwc_pcie_wait_for_link(), however,
+the function tries to link up 10 times only, that is defined
+as LINK_WAIT_MAX_RETRIES in pcie-designware.h, it's too short
+to configurate the endpoint.
+
+Now the patch to bypass PERST# is not necessary.
+
+Instead for DWC RC drivers, I think that the number of retries
+should be changed according to the usage.
+And the same issue remains with other RC drivers.
+
+Thank you,
 
 ---
- drivers/i2c/busses/i2c-imx.c | 21 ++++++++++-----------
- 1 file changed, 10 insertions(+), 11 deletions(-)
+Best Regards,
+Kunihiko Hayashi
 
-diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
-index 40ccfca600bf..c5d9ae8226cd 100644
---- a/drivers/i2c/busses/i2c-imx.c
-+++ b/drivers/i2c/busses/i2c-imx.c
-@@ -203,9 +203,7 @@ struct imx_i2c_struct {
- 	struct pinctrl_state *pinctrl_pins_gpio;
- 
- 	struct imx_i2c_dma	*dma;
--#if IS_ENABLED(CONFIG_I2C_SLAVE)
- 	struct i2c_client	*slave;
--#endif
- };
- 
- static const struct imx_i2c_hwdata imx1_i2c_hwdata = {
-@@ -913,12 +911,10 @@ static int i2c_imx_xfer(struct i2c_adapter *adapter,
- 
- 	dev_dbg(&i2c_imx->adapter.dev, "<%s>\n", __func__);
- 
--#if IS_ENABLED(CONFIG_I2C_SLAVE)
- 	if (i2c_imx->slave) {
- 		dev_err(&i2c_imx->adapter.dev, "Please not do operations of master mode in slave mode");
- 		return -EBUSY;
- 	}
--#endif
- 
- 	result = pm_runtime_get_sync(i2c_imx->adapter.dev.parent);
- 	if (result < 0)
-@@ -1068,7 +1064,6 @@ static u32 i2c_imx_func(struct i2c_adapter *adapter)
- 		| I2C_FUNC_SMBUS_READ_BLOCK_DATA;
- }
- 
--#if IS_ENABLED(CONFIG_I2C_SLAVE)
- static int i2c_imx_slave_init(struct imx_i2c_struct *i2c_imx)
- {
- 	int temp;
-@@ -1159,6 +1154,10 @@ static int i2c_imx_reg_slave(struct i2c_client *client)
- {
- 	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(client->adapter);
- 	int ret;
-+
-+	if (!IS_ENABLED(CONFIG_I2C_SLAVE))
-+		return -EINVAL;
-+
- 	if (i2c_imx->slave)
- 		return -EBUSY;
- 
-@@ -1173,6 +1172,9 @@ static int i2c_imx_unreg_slave(struct i2c_client *client)
- {
- 	struct imx_i2c_struct *i2c_imx = i2c_get_adapdata(client->adapter);
- 
-+	if (!IS_ENABLED(CONFIG_I2C_SLAVE))
-+		return -EINVAL;
-+
- 	if (!i2c_imx->slave)
- 		return -EINVAL;
- 
-@@ -1188,15 +1190,12 @@ static int i2c_imx_unreg_slave(struct i2c_client *client)
- 
- 	return 0;
- }
--#endif
- 
- static const struct i2c_algorithm i2c_imx_algo = {
- 	.master_xfer	= i2c_imx_xfer,
- 	.functionality	= i2c_imx_func,
--#if IS_ENABLED(CONFIG_I2C_SLAVE)
- 	.reg_slave	= i2c_imx_reg_slave,
- 	.unreg_slave	= i2c_imx_unreg_slave,
--#endif
- };
- 
- static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
-@@ -1208,10 +1207,10 @@ static irqreturn_t i2c_imx_isr(int irq, void *dev_id)
- 
- 	if (status & I2SR_IIF) {
- 		i2c_imx_clr_if_bit(status, i2c_imx);
--#if IS_ENABLED(CONFIG_I2C_SLAVE)
--		if (i2c_imx->slave)
-+
-+		if (IS_ENABLED(CONFIG_I2C_SLAVE) && i2c_imx->slave)
- 			return i2c_imx_slave_isr(i2c_imx);
--#endif
-+
- 		i2c_imx->i2csr = status;
- 		return i2c_imx_master_isr(i2c_imx);
- 	}
--- 
-2.24.0
-
-
--- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
