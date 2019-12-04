@@ -2,52 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C1A9112C22
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 13:57:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CACC112C26
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 13:58:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IObuSPnyUrXQeaTdgS+tE52Tl8Hc148NZjGN2Rxy3Ro=; b=k68YnGD2lstVqu
-	I6Zy+JNQhQHoEovG+ZtL8ZdQJKLNG1yxrsQTakiyYRrUFG5wMI+FNjUn154W3dl6xFSEjhfuw2Xki
-	HOujL/xVVS3SObFR/rGRsXFUsxK0yKfZPgqGgR2WcOPYRchCdmU3Ilg6sxRCdjfVUAWVJcAWBHLiv
-	FSCXskwNSwqAmJadh+8WqBAUaIFAvcqJLtGb1oIOCU3LZHTDkI0eLa9jJNHVufHlhvMEFBogbLhTN
-	nwJ6Q2MKn5EnxndCJ33I8Ci2ipMWnTMfwVb5kSSs5uh5hL0TNVaWsTKQbo4ajEG4pfo6o+ksct6gj
-	/AcomNdY6XBneIluSmqQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=diQP0JO41q+RrhOTZyIPOh7iv+6AqD/OIzrZyW+7T/U=; b=HRZjY6vQPgOXNC
+	Ys5inMcoyI4TMtAqlvby/1rqCC6dUbpQwEQ0+Ua7Os4zEIOWtdi/kFM0Oq6iDBr6+plAjn/WI2zXk
+	/tYQHfMRKtcji3+leXaXmXMu/kShSQx25P8V5nKm5lhKCMFTv5xnV7pbGUU/jFZ9srjTX6eX9CXRH
+	IzniEe5AAXP/rWmo4PayP+n0VNAyq7rKOXz4pv/urlKvqID2w3k+sPytkgC/UsC34LgVdm2em/bX0
+	/gFoqizhxyNYIkDV14tJxfZ18BkHgu8WkqSZJ8GgPf26qNS6GwYAgeMK/Qv8fjVje9/FSE6/n7kkz
+	iGeseyPczz3Si/6RmTUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icUDD-00010I-VE; Wed, 04 Dec 2019 12:56:59 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1icUEA-0001gb-BP; Wed, 04 Dec 2019 12:57:58 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icUD2-0000zN-2m; Wed, 04 Dec 2019 12:56:52 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id DCDE2B35E;
- Wed,  4 Dec 2019 12:56:44 +0000 (UTC)
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Eric Anholt <eric@anholt.net>, Stefan Wahren <wahrenst@gmx.net>,
- Florian Fanelli <f.fainelli@gmail.com>
-Subject: [PATCH] ARM: dts: bcm2711: fix soc's node dma-ranges
-Date: Wed,  4 Dec 2019 13:56:33 +0100
-Message-Id: <20191204125633.27696-1-nsaenzjulienne@suse.de>
-X-Mailer: git-send-email 2.24.0
+ id 1icUDO-0001Fp-U0
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 12:57:13 +0000
+Received: by mail-wr1-x443.google.com with SMTP id w15so8505494wru.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Dec 2019 04:57:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=WX9DsnxjR1TLkIQAS0BjsZD23PSgQu93DSuzJlaRss8=;
+ b=CjK94ZRk2M/LKqEEX5rm/3WkZf/HiI3Q+vVXDbZOZxQNFGaqW6DwTHkkkx84vRfS+M
+ U4ORtkjPBA9iSMbi9wpu7YmMFTp+pNz3ylxcjalwvJv2KZQBId8X2noNPl++SsRNODK7
+ QHPvskaMNV5R762Lpb7nY4iTA+SdVhlMhJxfRgfvM6jxwD1ZNI97gcI1rUhzyzNaVE+Q
+ k0Bc2/yGbWtp6U/eTSBRlksg5lobZN4iEcrEFCI2rqfgwYhIgxNwI1rIPCeNNltPaVVM
+ rHvfdkl+vcc+QKkCwM59zcflNAcevYc8jww4nTJSaG3Zq6ZEE7D6XZBEvNXC3R/zck1W
+ +j6w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=WX9DsnxjR1TLkIQAS0BjsZD23PSgQu93DSuzJlaRss8=;
+ b=I7Z21o5Wtz4tuo9VDhlwUbZQkalyx6tzL8Tcg8bnIMzqDCOR3a5PGr6PLEmB+k1Vcn
+ NpJwPDLtUdL+g4cporXJNoMAeBMX/wGNY1rsBO5BEQORMSm6jfCrNU1xkGOh9Ke9lS9B
+ zoI6i2fQWnajaWxQgH/yxCgOwgz9QS7xJ7yhHXaiPxWrrsOICvDDi+Qo/G+WW83pJTbP
+ Llb9rqDrq10TUUs3pKFKG67teZABqpNAhT2FFFljP+fd4L8oJdbJ4P28lqDyiAuTzoTy
+ gAWTC3Cr+YzZFmAeYNacv1NIj3VCBLoUquXacpsINA7X55f/xNSk/k2lqSYouAnpsdjG
+ 58vA==
+X-Gm-Message-State: APjAAAVcexMl6qBsHSZ6qWbi0QH3QYjymARtrPRGU3foDkPzDZ1CS7J2
+ wJDuZ4ltcNpsSmgvD7+mNt4rdPQRd4N9XRLMP6s=
+X-Google-Smtp-Source: APXvYqzndsNueQS92Xe4B1d71REsjlvqx9ynvD8CvVkru+ORVDr1gVmjag6dLc6gMBN+1fpeYUjla8YjTCCO/YsvQMA=
+X-Received: by 2002:adf:dd52:: with SMTP id u18mr3950790wrm.131.1575464228649; 
+ Wed, 04 Dec 2019 04:57:08 -0800 (PST)
 MIME-Version: 1.0
+References: <20191204124816.1415359-1-colin.king@canonical.com>
+In-Reply-To: <20191204124816.1415359-1-colin.king@canonical.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Wed, 4 Dec 2019 14:56:57 +0200
+Message-ID: <CAEnQRZAEExdNS+=aSFb86OCgWfezEFHYvoAJBV4=DshEprRGrA@mail.gmail.com>
+Subject: Re: [PATCH] ASoC: SOF: imx8: fix memory allocation failure check on
+ priv->pd_dev
+To: Colin King <colin.king@canonical.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_045648_270745_DAF1DC1C 
-X-CRM114-Status: GOOD (  14.98  )
-X-Spam-Score: -1.8 (-)
+X-CRM114-CacheID: sfid-20191204_045711_009627_8E2A60C0 
+X-CRM114-Status: GOOD (  15.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.5 PDS_BTC_ID             FP reduced Bitcoin ID
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (daniel.baluta[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,57 +93,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- mbrugger@suse.com, phil@raspberrypi.org, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Daniel Baluta <daniel.baluta@nxp.com>,
+ Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ Linux-ALSA <alsa-devel@alsa-project.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ kernel-janitors@vger.kernel.org, Takashi Iwai <tiwai@suse.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Jaroslav Kysela <perex@perex.cz>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Raspberry Pi's firmware has a feature to select how much memory to
-reserve for its GPU called 'gpu_mem'. The possible values go from 16MB
-to 944MB, with a default of 64MB. This memory resides in the topmost
-part of the lower 1GB memory area and grows bigger expanding towards the
-begging of memory.
+On Wed, Dec 4, 2019 at 2:49 PM Colin King <colin.king@canonical.com> wrote:
+>
+> From: Colin Ian King <colin.king@canonical.com>
+>
+> The memory allocation failure check for priv->pd_dev is incorrectly
+> pointer checking priv instead of priv->pd_dev. Fix this.
+>
+> Addresses-Coverity: ("Logically dead code")
+> Fixes: 202acc565a1f ("ASoC: SOF: imx: Add i.MX8 HW support")
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
 
-It turns out that with low 'gpu_mem' values (16MB and 32MB) the size of
-the memory available to the system in the lower 1GB area can outgrow the
-interconnect's dma-range as its size was selected based on the maximum
-system memory available given the default gpu_mem configuration. This
-makes that memory slice unavailable for DMA. And may cause nasty kernel
-warnings if CMA happens to include it.
+Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
 
-Change soc's dma-ranges to really reflect it's HW limitation, which is
-being able to only DMA to the lower 1GB area.
+Good catch! Thanks Colin!
 
-Fixes: 7dbe8c62ceeb ("ARM: dts: Add minimal Raspberry Pi 4 support")
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
----
-
-NOTE: I'd appreciate if someone from the RPi foundation commented on
-this as it's something that I'll propose to be backported to their tree.
-
- arch/arm/boot/dts/bcm2711.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
-index 5b61cd915f2b..d6a0e350b7b4 100644
---- a/arch/arm/boot/dts/bcm2711.dtsi
-+++ b/arch/arm/boot/dts/bcm2711.dtsi
-@@ -43,7 +43,7 @@ soc {
- 			 <0x7c000000  0x0 0xfc000000  0x02000000>,
- 			 <0x40000000  0x0 0xff800000  0x00800000>;
- 		/* Emulate a contiguous 30-bit address range for DMA */
--		dma-ranges = <0xc0000000  0x0 0x00000000  0x3c000000>;
-+		dma-ranges = <0xc0000000  0x0 0x00000000  0x40000000>;
- 
- 		/*
- 		 * This node is the provider for the enable-method for
--- 
-2.24.0
-
+> ---
+>  sound/soc/sof/imx/imx8.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/sound/soc/sof/imx/imx8.c b/sound/soc/sof/imx/imx8.c
+> index cfefcfd92798..9d926b1df0d7 100644
+> --- a/sound/soc/sof/imx/imx8.c
+> +++ b/sound/soc/sof/imx/imx8.c
+> @@ -209,7 +209,7 @@ static int imx8_probe(struct snd_sof_dev *sdev)
+>
+>         priv->pd_dev = devm_kmalloc_array(&pdev->dev, priv->num_domains,
+>                                           sizeof(*priv->pd_dev), GFP_KERNEL);
+> -       if (!priv)
+> +       if (!priv->pd_dev)
+>                 return -ENOMEM;
+>
+>         priv->link = devm_kmalloc_array(&pdev->dev, priv->num_domains,
+> --
+> 2.24.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
