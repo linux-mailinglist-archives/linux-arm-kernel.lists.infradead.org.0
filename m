@@ -2,69 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35C6D11216F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 03:32:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C406711217D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 03:39:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=47JaAlg1N2YTto2nxDR1gETqeFOXLNZzFGYPBEiu2LM=; b=Rh1hN02KUu+llb
-	vRsiu85IpAu2bd4+3InBKc3TO59LW4AwQc4FcDZB9HcrJ+8+ZJZbFlDH7qwjuzi9nXqMdFFkjE9Mz
-	x2EWxBkhvGgwW222k/taA3psFcYKzCU4LLaUvaKM8tUbbT2RarDipwf5flSEKq9cb8ltfzYC8HPgG
-	ajIDpHd/LKalNDW4OJuEPMgrAF7uzbljzAv2sZJmfUuNOmOoN0jgxMyNbwuMo8qgtI3ut8LDZIixv
-	ImjPCHf18fZRwPCRcrvpEbtG0Gho9ttNLt6LW1eCnmWHONymkQlPp+1q6EundsQe5qUvGCVqxS+Nl
-	gA1ZD3+4xBlKFtX70msg==;
+	List-Owner; bh=wDhHBVOUp9Gud3PwUJ4aBrWQjw9BeN3mivszggmML9I=; b=JjBWQESR+ZD0sO
+	SUL89ug6cOlmc6+IiEyZwfaotzmQH+ywlenMFJM1S0BbOz3xqc4TLakzKWrna+MZf/aZFmms1jZSg
+	q9FEZ0LXv/MquVwHj1tQ4RsSbIYHTjJcD+w/fXViWNnVGv32iHfPlArMuEu4Q/Gno6pdBbYxi0UCu
+	3U+feVFqDvCsVhcXCXES2a/URjOmJt6xjY23C1A38C74FjhSirgfXPjpSnGV/XENnA3D+2kG4wIvq
+	h84ARvMWGLiuGj6m7acsTCr9gFg1WrI2ioS7yVuDRV0HzKT3SqsSJTqpg1Qp/KHd5hX38Gvq6El1H
+	oiqqWufCHY0ntQmKkCpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icKSw-0001OY-V5; Wed, 04 Dec 2019 02:32:34 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1icKZo-0003F4-MG; Wed, 04 Dec 2019 02:39:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icKSl-0001NL-QT; Wed, 04 Dec 2019 02:32:25 +0000
-X-UUID: fac4cf6271d546b7835ef9d060587002-20191203
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=gASy9TDuVsH5zwpxeW0BE8bxVb8mYW76DT6995xQhXA=; 
- b=QOHYHgfvSFD8m0DDWMic4GaD7zRffTP057Ws/SsQ1lzOhPCh3ga0IqjcmI/q4SbsWBKQZETxYEECbKtQFrKxv++xGGl9RZ7/J8ZXJdIbkji55JlP82QR1jYNIWi1oqgTPlTwy1VxLGwLqfEtrtULsmD3/Cv4N6yU+hnZYI5ienI=;
-X-UUID: fac4cf6271d546b7835ef9d060587002-20191203
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 764643841; Tue, 03 Dec 2019 18:32:19 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Dec 2019 18:23:06 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Dec 2019 10:22:03 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 4 Dec 2019 10:21:56 +0800
-Message-ID: <1575426135.31411.2.camel@mtksdaap41>
-Subject: Re: [PATCH] soc: mediatek: cmdq: avoid racing condition with mutex
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>, Jassi Brar
- <jassisinghbrar@gmail.com>
-Date: Wed, 4 Dec 2019 10:22:15 +0800
-In-Reply-To: <20191121072910.31665-1-bibby.hsieh@mediatek.com>
-References: <20191121072910.31665-1-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1icKZf-0003Ec-TM
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 02:39:34 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8642E20640;
+ Wed,  4 Dec 2019 02:39:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575427171;
+ bh=gzYyVFtj2t/t6DxxRUeD141hKdVGvS4D0XfbvzUCn3k=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=yXPip5TDdP4yZuS4AAiHPCD50dWrLL1pUnMg00G06iErfCaqOK0cAzlSSkxSnfOZc
+ 2ObTZdorEKBXOY0timyFw44f+soGrTj734MCby4EOOpzsUFgeFvPODVGLekueE8Jp1
+ yi8Tu1rARAUT7R6lWdPGHLSvvodk3VaBwz6DabRk=
+Date: Wed, 4 Dec 2019 10:39:21 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 3/3] ARM: dts: imx6sll: Add Rev A board support
+Message-ID: <20191204023920.GO9767@dragon>
+References: <1573033650-11848-1-git-send-email-Anson.Huang@nxp.com>
+ <1573033650-11848-3-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <1573033650-11848-3-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_183223_873078_5E67B11D 
-X-CRM114-Status: GOOD (  13.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191203_183931_969005_6C1A864A 
+X-CRM114-Status: GOOD (  16.57  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -72,8 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,96 +77,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nicolas
- Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
- linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Jassi:
-
-Are mbox_send_message() and mbox_client_txdone() thread-safe? If these
-two are thread-safe, this bug should be fixed in mailbox core not
-client.
-
-Regards,
-CK
-
-On Thu, 2019-11-21 at 15:29 +0800, Bibby Hsieh wrote:
-> If cmdq client is multi thread user, racing will occur without mutex
-> protection. It will make the C message queued in mailbox's queue
-> always need D message's triggering.
+On Wed, Nov 06, 2019 at 05:47:30PM +0800, Anson Huang wrote:
+> i.MX6SLL EVK Rev A board is same with latest i.MX6SLL EVK board except
+> eMMC can ONLY run at HS200 mode, add support for this board.
 > 
-> Thread A		Thread B		  Thread C		Thread D...
-> -----------------------------------------------------------------------------------
-> mbox_send_message()
-> 	send_data()
-> 			mbox_send_message()
-> 				*exit
-> 						mbox_send_message()
-> 							*exit
-> mbox_client_txdone()
-> 	tx_tick()
-> 			mbox_client_txdone()
-> 				tx_tick()
-> 						mbox_client_txdone()
-> 							tx_tick()
-> msg_submit()
-> 	send_data()
-> 			msg_submit()
-> 				*exit
-> 						msg_submit()
-> 							*exit
-> -----------------------------------------------------------------------------------
-> 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c | 3 +++
->  include/linux/soc/mediatek/mtk-cmdq.h  | 1 +
->  2 files changed, 4 insertions(+)
+>  arch/arm/boot/dts/Makefile             |  1 +
+>  arch/arm/boot/dts/imx6sll-evk-reva.dts | 12 ++++++++++++
+>  2 files changed, 13 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/imx6sll-evk-reva.dts
 > 
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index 9add0fd5fa6c..9e35e0beffaa 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -81,6 +81,7 @@ struct cmdq_client *cmdq_mbox_create(struct device *dev, int index, u32 timeout)
->  	client->client.dev = dev;
->  	client->client.tx_block = false;
->  	client->chan = mbox_request_channel(&client->client, index);
-> +	mutex_init(&client->mutex);
->  
->  	if (IS_ERR(client->chan)) {
->  		long err;
-> @@ -352,9 +353,11 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
->  		spin_unlock_irqrestore(&client->lock, flags);
->  	}
->  
-> +	mutex_lock(&client->mutex);
->  	mbox_send_message(client->chan, pkt);
->  	/* We can send next packet immediately, so just call txdone. */
->  	mbox_client_txdone(client->chan, 0);
-> +	mutex_unlock(&client->mutex);
->  
->  	return 0;
->  }
-> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> index a74c1d5acdf3..0f9071cd1bc7 100644
-> --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> @@ -28,6 +28,7 @@ struct cmdq_client {
->  	struct mbox_chan *chan;
->  	struct timer_list timer;
->  	u32 timeout_ms; /* in unit of microsecond */
-> +	struct mutex mutex;
->  };
->  
->  /**
+> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+> index 71f08e7..3845bbf 100644
+> --- a/arch/arm/boot/dts/Makefile
+> +++ b/arch/arm/boot/dts/Makefile
+> @@ -557,6 +557,7 @@ dtb-$(CONFIG_SOC_IMX6SL) += \
+>  	imx6sl-warp.dtb
+>  dtb-$(CONFIG_SOC_IMX6SLL) += \
+>  	imx6sll-evk.dtb \
+> +	imx6sll-evk-reva.dtb \
+>  	imx6sll-kobo-clarahd.dtb
+>  dtb-$(CONFIG_SOC_IMX6SX) += \
+>  	imx6sx-nitrogen6sx.dtb \
+> diff --git a/arch/arm/boot/dts/imx6sll-evk-reva.dts b/arch/arm/boot/dts/imx6sll-evk-reva.dts
+> new file mode 100644
+> index 0000000..7ca2563
+> --- /dev/null
+> +++ b/arch/arm/boot/dts/imx6sll-evk-reva.dts
+> @@ -0,0 +1,12 @@
+> +// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+> +/*
+> + * Copyright 2016 Freescale Semiconductor, Inc.
+> + * Copyright 2017-2019 NXP.
+> + *
+> + */
+> +
+> +#include "imx6sll-evk.dts"
+> +
+> +&usdhc2 {
+> +	compatible = "fsl,imx6sll-usdhc", "fsl,imx6sx-usdhc";
+
+It looks odd to me that we need to deal with a board level difference
+with a SoC level compatible.  The USDHC compatible should be solely
+determined by the IP programming model, not the board level capability.
+
+Shawn
+
+> +};
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
