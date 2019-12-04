@@ -2,85 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A7A7113555
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 20:01:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F75F1135AA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 20:25:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Eq4rL1E4lKJhTYaoME4CxTZrHAZL6T3X4rQNTuK2API=; b=RDT9rJuJMkUej9
-	yrv4bIwD9vNoBMb93+WJmVAIADLan4yJ7paOQV7Z8Wezy+pmYyZbUsgVaX5LxDrrr84cSSPaS5CDJ
-	+vdR19cBtWSV7s6zFOfDwh6HWBYXzV+qxQ+77VI7W914sWUsVbw+btiwU7lkMuqKwESnSAkkmTy8J
-	mLNz0IKdUlBqHLBwkfw6rmLg/YYxF/q2PhOXPDy3zQy2cKmTNBuLNXj0SxzdS4M5jwtNL9Ft3V05m
-	ZkQXrpZrs+hIMFDdLooXDZ93Q9YRcnbl0aEbLINpLHZk7I/7T1iRlKKwpyKa0GjAVRFcRgMw0zxtt
-	Xsdsg7f1nq9cIxYpEwLw==;
+	List-Owner; bh=NbquXVYEa5SWh486MMTyQjZos+uoUZiOuc+HYPTAD2A=; b=IPP9YPhWU47u6r
+	ckrLocI8y0munkHxywHv6tMXDAcQ7rZqkZ2lB32frtxeAmH6yYryjmqwQPsuEqJoNOdY396JCQvYB
+	DzRjOQEejqTqWLuDMTz82QvzOfwRLIcPb2Tkiy/HFzk5sMdySrGLYxaGCmb3tcNj1aYmS+GS4ED7J
+	Dh4imbbQD5QxkJVuRMMyllTjjDbiZUaa/awve/1qsul70+bYG8irZ9ofsgJ/4BrXwj/rwkJLV0WMf
+	wDEs+Qou6XV7b/+Zvf/1SmW3GjCCby6cWd/GLny/exKp27x1BwItGeV9EL/PEGE7AxaSWmZ+2M/s+
+	UC8QhFFbqvo/bDlod8NA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icZtx-0004cJ-JD; Wed, 04 Dec 2019 19:01:29 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1icaHW-00059i-Og; Wed, 04 Dec 2019 19:25:50 +0000
+Received: from mail-oi1-x231.google.com ([2607:f8b0:4864:20::231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icZtn-0004aQ-U2
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 19:01:21 +0000
-Received: by mail-oi1-f196.google.com with SMTP id a124so211734oii.13
+ id 1icaHN-00058V-Hh
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 19:25:43 +0000
+Received: by mail-oi1-x231.google.com with SMTP id i1so315857oie.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 11:01:19 -0800 (PST)
+ Wed, 04 Dec 2019 11:25:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=pFUOvAm3fm348kgwrvmev1YNw19TgoAC7QPtF9q0W9g=;
+ b=tavjmU/Q3DfvERF7bhd3q/fapLDjBaceWr0h20GkAqynBwFQMUwfUlK4JhVKg6DNba
+ YcTrdtYwr9rzEBR4ioJALzSV7YV3HPPFYHcud6qn6L+QOAR5ZZWOyyXYIc+k/MqSde7Q
+ KfnTP5KxI5P4mbTDuXUJp8Qyp6pBDieNXRGyaw6F2q4sBWmws/FiBMXMsX82JHHH7Ri2
+ zda5XYPi19vtq2GGB512vz3f72AXQfAZO7gQo89mrt/EjTshdpJ7t2GNV6x3qATQYnSo
+ e5CFH7FHMs+hgaDF/YiW2ZIpHhfzssyZNkz+XapRCUModCWBJN82m2lpiTFd5a6Q+IoE
+ wDRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=r+Knz4MyENgBauzAurW2Z6R5O7gCJrRGn09yM5JkLrg=;
- b=bRREiS04BSq2XdSfUhGOXV+PGzv9cNXEOciRb/Qy8cARaU1lEEaKwxkgexcVppkfNq
- MzvpHIZ4nGBLPyuovG/m25dFfPKNUak+kg3MhlRDExES4zMJ0ImR9O/0peCnpg/HGWTU
- b9BuOqlOXxgp9H2OJyy7mz+53SX7YE+aKhOugb+WDbisFw6ICTgwrFosPhuIuQgea6Qb
- ksZO1vSrCH6xRZNo7sZJLFF1jsteGv4+NtNhNr/qFCNObMKqnERExEFs2zUY0OS5/GSF
- 4Rb4NVSbFtdQt64S2upNEcNvdiwLnbH0gpTjGGwBgdm5R+ylTW/Oe/QSCzLeSmbrwSD6
- Fcww==
-X-Gm-Message-State: APjAAAVhh+P4XdD8Gw+NM5d6q0XmYcBgeeIM+XDhE8uePKjDUhuR+C2B
- 5/6VlYz+h/UvmdzuElPpiKQiUuA=
-X-Google-Smtp-Source: APXvYqyaHVSgRRfXaE/jHqQeLeMpOPe0UJG4spkvdr76QInpH+RixZhPrk28zWuEjpN8gLV0skGkqQ==
-X-Received: by 2002:aca:3755:: with SMTP id e82mr4116064oia.19.1575486078517; 
- Wed, 04 Dec 2019 11:01:18 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id b3sm2583051oie.25.2019.12.04.11.01.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 11:01:17 -0800 (PST)
-Date: Wed, 4 Dec 2019 13:01:17 -0600
-From: Rob Herring <robh@kernel.org>
-To: Stephan Gerhold <stephan@gerhold.net>
-Subject: Re: [PATCH v2 3/4] dt-bindings: vendor-prefixes: Add "calaosystems"
- for CALAO Systems SAS
-Message-ID: <20191204190117.GA29217@bogus>
-References: <20191120181857.97174-1-stephan@gerhold.net>
- <20191120181857.97174-3-stephan@gerhold.net>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=pFUOvAm3fm348kgwrvmev1YNw19TgoAC7QPtF9q0W9g=;
+ b=GCrFxVgOlSH3JYDtdAB58AsPu5PifyljsB/sdfyWly0sbtbK3YupCOGqM4hUapsjIg
+ S7ikrb4G0ijcqe6ouw/EuLZFk9ZPUq7BrKi/hxj7HOBJZaFuF6M/LwXTagkBwJPD+wZm
+ H2sVk8kOOpxMdjg6pcO59JSi1+10WAs98AC+mB7rkJAKFQfRY9DUcIW7zLKq4s8I84Es
+ lPeuKMC1kVmemBGO88XfD7+ivRsu5IWPDmrEmW9aPJ8nSxMeVdN7O9D0sKe14Ij8rHB9
+ DWMKeUUQ0DrI2ad2fjvcLvt4em9Z23FFw8VbJO1D/NGQpIIhoe/XIDCfvekGGyl+/Ok6
+ 1u+w==
+X-Gm-Message-State: APjAAAWbon8M4BtaMTQuHIW3K2fubPyq4eOv174aAPr06P0j9uPob7a0
+ smuKgEEuL8avPOXhSdPphO5P1xTCMBINLhc1GUo=
+X-Google-Smtp-Source: APXvYqygeXnEPPwtKFRW0Y36WS+lxc9iXT3BUpe6OWDmYYx7OmzTFEQc+TYv16vi+70aFchYa1GmHEKib44SVaBMTL0=
+X-Received: by 2002:aca:c3c6:: with SMTP id t189mr4090470oif.98.1575487535056; 
+ Wed, 04 Dec 2019 11:25:35 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191120181857.97174-3-stephan@gerhold.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <CAOuPNLh8dsSCq850afbj4OiHhZ2swBWZP=BTUrXrXhdpTjZs+A@mail.gmail.com>
+ <CAK7N6vpawfLSVcHCg_3aQ0M8L=j77ZeGfmUZ-J4hpUkWu0fkWA@mail.gmail.com>
+ <CAOuPNLii26WcDnwD7ZkMX6ux7VRspw7nMEKJK0QF+j95YCHPOw@mail.gmail.com>
+In-Reply-To: <CAOuPNLii26WcDnwD7ZkMX6ux7VRspw7nMEKJK0QF+j95YCHPOw@mail.gmail.com>
+From: anish singh <anish198519851985@gmail.com>
+Date: Wed, 4 Dec 2019 11:25:23 -0800
+Message-ID: <CAK7N6vrSKM8pU0+gquCu1x52GjBTaqFbwqtj_v8dzd+3-g4D1A@mail.gmail.com>
+Subject: Re: interrupt handler not getting called after resume
+To: Pintu Agarwal <pintu.ping@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_110119_980078_5428352C 
-X-CRM114-Status: GOOD (  12.20  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191204_112541_588145_F6964814 
+X-CRM114-Status: GOOD (  13.03  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:231 listed in]
+ [list.dnswl.org]
+ 0.0 FROM_LOCAL_DIGITS      From: localpart has long digit sequence
+ 0.3 FROM_LOCAL_HEX         From: localpart has long hexadecimal sequence
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
+ provider (anish198519851985[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ in digit (anish198519851985[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,33 +98,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Stephan Gerhold <stephan@gerhold.net>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-pm@vger.kernel.org, open list <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Kernelnewbies <kernelnewbies@kernelnewbies.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 20 Nov 2019 19:18:56 +0100, Stephan Gerhold wrote:
-> The Snowball SBC supported by arch/arm/boot/dts/ste-snowball.dts
-> was made by CALAO Systems and uses the "calaosystems,snowball-a9500"
-> compatible. Prepare for documenting the compatible by adding
-> "calaosystems" to the list of vendor prefixes.
-> 
-> Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
-> ---
-> Changes in v2: none
-> v1: https://lore.kernel.org/linux-devicetree/20191120121720.72845-2-stephan@gerhold.net/
-> ---
->  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
->  1 file changed, 2 insertions(+)
-> 
+On Wed, Dec 4, 2019 at 1:49 AM Pintu Agarwal <pintu.ping@gmail.com> wrote:
+>
+> On Wed, 4 Dec 2019 at 00:28, anish singh <anish198519851985@gmail.com> wrote:
+> >
+> > On Tue, Dec 3, 2019 at 6:12 AM Pintu Agarwal <pintu.ping@gmail.com> wrote:
+> > >
+> > > Hi All,
+> > >
+> > > I have one general query.
+> > >
+> > > If an interrupt handler is NOT getting called (for one device) after
+> > > the system resume (from snapshot image), then what could be the issue?
+> >
+> > Most likely during resume the interrupt was not enabled. So check
+> > irq status registers to see in the working and non working case.
+> >
+> Oh sorry, I forgot to mention one thing.
+> After resume, I can see that the interrupts are visible under /proc/interrupts.
+> # cat /proc/interrupts
+>            CPU0       CPU1
+> [...]
+> 416:          1          0       IPU  (null)
+> 417:          0          0       IPU  (null)
+> 418:          0          0       IPU  imx_drm  ===> HDMI
+> 419:       2242       2       IPU  imx_drm   ===> LCD
+> [...]
+>
+> The interrupts are coming only for LCD display and thus its irq
+> handler is getting called.
+> But the interrupts are not coming for HDMI case, thus HDMI gives
+> "vblank timeout issue".
 
-Applied, thanks.
+Is it something to do with MHL cable? Have you used scope
+to find out if the interrupt was actually triggered?
 
-Rob
+> Apart from this I also tried calling enable_irq(irq) after resume, but
+> it did not help much.
 
 _______________________________________________
 linux-arm-kernel mailing list
