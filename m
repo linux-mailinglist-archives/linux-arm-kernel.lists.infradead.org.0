@@ -2,82 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 744761127DD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 10:39:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EF2D112886
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 10:52:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wygLxeCHwLb69uY/K7YWnGAcjEYpdvrXZ5evyn10KXw=; b=WBoml7UFuIYjvf
-	fEgJJuxJVXQjeB6067n8dGLXyO6vI9W5NgbleGv9aPOzkK4rtgfA+gBrA/zpXFUD0HwQ4pHUWQnj5
-	6Zi016IQY5IaY3BYxOPN45vfMux1rY9jqznD6W2hUsPTvZ7F6oAbgAOVswXDMG5n0tVi9IsBWzOhg
-	HKlJc0qZLzaKohBr9T7xU1otN4qwSPV/EAxLyeDkXXKN7HDJC153+Ctxn3uF6S/EzgZyB6VCgEtrS
-	DAsz1caexhZ9SfZKLfDPMFzLdUXhc4K3ZtOxKc0CqOi2fpXirWOX2b8EHjnBmGOsPN3MvgUpttCNK
-	8AxafuTl6DNYQwVJqJmA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9+IAfmf/w0oPn/t9pNLL12vrLsPXaby65Ig7mBIgezg=; b=QADVFPDrbJci9s
+	PK5NEa+i9v7xEck75tr6VaJHfpdWB6o1BvBF6DxzrU9dDps/sZu/M+b2vJ0VE2kRMPXEvaO1neMMm
+	VwIqs38EI/y7PkMUE+MwiNTeuh6wCgxyXEeDitYKatVN0YOpPXAaqamMAyAZFKY9kFFWlnRIszMLD
+	g46BAy4EHnta65p5KsP0cKhRyoaIjKQkU4JwlN71f/fRMmV78H31HBfpAaYrLv8P6un38zQvOFYyZ
+	16kRQqztm6myY/VY0LzUB4kffoN0rEyk9cwIESWd4u1QG8FMCQAkXBJOH4h6c2ICHzzZ6smGYPKv1
+	1yG4iGPbK0SWvDBumhPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icR7d-0002nR-JB; Wed, 04 Dec 2019 09:39:01 +0000
-Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
+	id 1icRKf-0003CJ-86; Wed, 04 Dec 2019 09:52:29 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icR7W-0002mp-Rc
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 09:38:56 +0000
-Received: by mail-vk1-xa42.google.com with SMTP id g7so296141vkl.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 01:38:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=verdurent-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kBM+7sKdP9ujCe9ALp3o3fbTa5VggqfmCZsELUt7gmY=;
- b=KmCelkEDW//pN0sIHhURzAdIgLRrtV4W3ZvTphxbkEmsYa1UnJ8NBPQ6XL/j0Bldte
- kJyRTSZQ+yPMegb0hHGLLP/ToYjBXYveq8S5Swj1BjlkIp3xFREhO+MPg+AiRGAiqibI
- p1TqIRD0ZqDISySdUxlmYNiOhjm3vULrjvK394FDYqQym+DAcYdt61u2UBwvkjBm2J0V
- Yo4ZP5rt0xsVN6qBRHM4UkVQX/Qo2ZiEHo0Ipxym4ZMYrruHY2nBXI0odgsaghVkmVtV
- rsEMmkg4qNTOwmkU5ESS+kg0giexdzQjnQ9Qd2EAPb35bPQRkSChyoHVSMRHqmOKCPuG
- g3BA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kBM+7sKdP9ujCe9ALp3o3fbTa5VggqfmCZsELUt7gmY=;
- b=iaBPZwY5nrSwcQYJnEP1pZ4pjf/fgueelDXZ46wiSJtR8blwHz6z32VsADamN2/tcV
- JaD//hl/5ZWW54212R/RLkv21q24+NTBV362zcn/lrAvC+wzbbnMBl9yH0ILV5D8QE4P
- MxB4Q65oXdYVHSFkFDGj+BXite7KRe73aaHwwG54e2HI1FjpcWQQKIaPtdWcU4No9MWp
- T3lXnO7zKia6RwA0g6f+hPfqEy3VFkJbnmiH+0iOumE4rcHNyop74Q/Uc4YbxrVGTWYp
- End050upH9MCXGSO+AJx95d8Zl62xwqS0is+mTbGEMuTQRDR5cJTX7m2r/kkOvjHvhWX
- R/Dg==
-X-Gm-Message-State: APjAAAWKLi8nHk3ac4gzpV46sT0M+58rJnIDj5sID+K81hIRr3NM4nBm
- E+jvsgeki0mLnH5Y83dtnnLuiEIbBTnWKLT18rrQBQ==
-X-Google-Smtp-Source: APXvYqwiUoUoPZvgpG+ifopwxSLWwG1iOG5+9d9DmpNIKyb1VOCcZCyapnluKjwiXLoMcJdRA6EYd8bNW2NVGYtZ3eU=
-X-Received: by 2002:ac5:c4f8:: with SMTP id b24mr1401815vkl.79.1575452333245; 
- Wed, 04 Dec 2019 01:38:53 -0800 (PST)
+ id 1icRJW-00024m-No; Wed, 04 Dec 2019 09:51:21 +0000
+X-UUID: 257613a2801d4634b3e2bb1621c8e5b7-20191204
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=BIYIzFcwVh/HRz6vBoAKLLqHGE4W8/Vx4vvIlZQjGhI=; 
+ b=GZ6Zaj52GU8IIJ6Ru6ZjLsvkbloIRnEarZhMsHelUzeFOp0GXza4NoJMPQVVs2bmadBritUNBKOQYi9SR/+BXnqydW8OhNJ1mvp9q39JkVApBE1hPeZoNjIQQBYrugobrUcP4VC26V5zFTXS6x0hL6dMm5gleIqA2A/rfu5+h/s=;
+X-UUID: 257613a2801d4634b3e2bb1621c8e5b7-20191204
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <xia.jiang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 540617737; Wed, 04 Dec 2019 01:51:14 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Dec 2019 01:44:41 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Dec 2019 17:44:16 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 4 Dec 2019 17:44:01 +0800
+From: Xia Jiang <xia.jiang@mediatek.com>
+To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Mauro Carvalho Chehab
+ <mchehab+samsung@kernel.org>, Rob Herring <robh+dt@kernel.org>, "Matthias
+ Brugger" <matthias.bgg@gmail.com>, Rick Chang <rick.chang@mediatek.com>
+Subject: [PATCH v5 0/5] Add support for mt2701 JPEG ENC support
+Date: Wed, 4 Dec 2019 17:44:19 +0800
+Message-ID: <20191204094424.2562-1-xia.jiang@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-References: <20191030182132.25763-1-f.fainelli@gmail.com>
- <20191030182132.25763-7-f.fainelli@gmail.com>
-In-Reply-To: <20191030182132.25763-7-f.fainelli@gmail.com>
-From: Amit Kucheria <amit.kucheria@verdurent.com>
-Date: Wed, 4 Dec 2019 15:08:41 +0530
-Message-ID: <CAHLCerPyJxsLs5at4dQ7GdDXpC85UijNNhJbKSoDsdLW2do00w@mail.gmail.com>
-Subject: Re: [PATCH 6/6] thermal: brcmstb_thermal: Register different ops per
- process
-To: Florian Fainelli <f.fainelli@gmail.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_013854_894183_9FE77ED0 
-X-CRM114-Status: GOOD (  18.21  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191204_015118_783942_F39841AD 
+X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,89 +85,252 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- "open list:BROADCOM STB AVS TMON DRIVER" <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- LKML <linux-kernel@vger.kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, "maintainer:BROADCOM STB AVS TMON DRIVER"
- <bcm-kernel-feedback-list@broadcom.com>, Markus Mayer <mmayer@broadcom.com>,
- Zhang Rui <rui.zhang@intel.com>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
+ linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 30, 2019 at 11:52 PM Florian Fainelli <f.fainelli@gmail.com> wrote:
->
-> Since we do not have interrupts on BCM7216, we cannot have trip point
-> crossing, the thermal subsystem expects us to provide a NULL set_trips
-> operation in that case, so make it possible to provide per-process
-> thermal_zone_of_device_ops
->
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+This patchset add support for mt2701 JPEG ENC support.
 
-Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
+This is the compliance test result for jpeg dec and enc.
 
-> ---
->  drivers/thermal/broadcom/brcmstb_thermal.c | 13 ++++++++++---
->  1 file changed, 10 insertions(+), 3 deletions(-)
->
-> diff --git a/drivers/thermal/broadcom/brcmstb_thermal.c b/drivers/thermal/broadcom/brcmstb_thermal.c
-> index 64f715053ce9..a75a335d1bb3 100644
-> --- a/drivers/thermal/broadcom/brcmstb_thermal.c
-> +++ b/drivers/thermal/broadcom/brcmstb_thermal.c
-> @@ -96,6 +96,7 @@ static struct avs_tmon_trip avs_tmon_trips[] = {
->  struct brcmstb_thermal_params {
->         unsigned int offset;
->         unsigned int mult;
-> +       const struct thermal_zone_of_device_ops *of_ops;
->  };
->
->  struct brcmstb_thermal_priv {
-> @@ -278,19 +279,25 @@ static int brcmstb_set_trips(void *data, int low, int high)
->         return 0;
->  }
->
-> -static const struct thermal_zone_of_device_ops of_ops = {
-> +static const struct thermal_zone_of_device_ops brcmstb_16nm_of_ops = {
->         .get_temp       = brcmstb_get_temp,
-> -       .set_trips      = brcmstb_set_trips,
->  };
->
->  static const struct brcmstb_thermal_params brcmstb_16nm_params = {
->         .offset = 457829,
->         .mult   = 557,
-> +       .of_ops = &brcmstb_16nm_of_ops,
-> +};
-> +
-> +static const struct thermal_zone_of_device_ops brcmstb_28nm_of_ops = {
-> +       .get_temp       = brcmstb_get_temp,
-> +       .set_trips      = brcmstb_set_trips,
->  };
->
->  static const struct brcmstb_thermal_params brcmstb_28nm_params = {
->         .offset = 410040,
->         .mult   = 487,
-> +       .of_ops = &brcmstb_28nm_of_ops,
->  };
->
->  static const struct of_device_id brcmstb_thermal_id_table[] = {
-> @@ -329,7 +336,7 @@ static int brcmstb_thermal_probe(struct platform_device *pdev)
->         platform_set_drvdata(pdev, priv);
->
->         thermal = devm_thermal_zone_of_sensor_register(&pdev->dev, 0, priv,
-> -                                                      &of_ops);
-> +                                                      priv->temp_params.of_ops);
->         if (IS_ERR(thermal)) {
->                 ret = PTR_ERR(thermal);
->                 dev_err(&pdev->dev, "could not register sensor: %d\n", ret);
-> --
-> 2.17.1
->
+The JPEG dec log:
+------------------------------------------------------------
+v4l2-compliance -d /dev/video0
+v4l2-compliance SHA: af33cc5ef00177edbb45d466faf9061197767f2b, 32 bits
+
+Compliance test for mtk-jpeg device /dev/video0:
+
+Driver Info:
+        Driver name      : mtk-jpeg
+        Card type        : mtk-jpeg decoder
+        Bus info         : platform:15004000.jpegdec
+        Driver version   : 5.4.0
+        Capabilities     : 0x84204000
+                Video Memory-to-Memory Multiplanar
+                Streaming
+                Extended Pix Format
+                Device Capabilities
+        Device Caps      : 0x04204000
+                Video Memory-to-Memory Multiplanar
+                Streaming
+                Extended Pix Format
+        Detected JPEG Decoder
+
+Required ioctls:
+        test VIDIOC_QUERYCAP: OK
+
+Allow for multiple opens:
+        test second /dev/video0 open: OK
+        test VIDIOC_QUERYCAP: OK
+        test VIDIOC_G/S_PRIORITY: OK
+        test for unlimited opens: OK
+
+Debug ioctls:
+        test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
+        test VIDIOC_LOG_STATUS: OK (Not Supported)
+
+Input ioctls:
+        test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
+        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+        test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
+        test VIDIOC_ENUMAUDIO: OK (Not Supported)
+        test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)
+        test VIDIOC_G/S_AUDIO: OK (Not Supported)
+        Inputs: 0 Audio Inputs: 0 Tuners: 0
+
+Output ioctls:
+        test VIDIOC_G/S_MODULATOR: OK (Not Supported)
+        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+        test VIDIOC_ENUMAUDOUT: OK (Not Supported)
+        test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
+        test VIDIOC_G/S_AUDOUT: OK (Not Supported)
+        Outputs: 0 Audio Outputs: 0 Modulators: 0
+
+Input/Output configuration ioctls:
+        test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
+        test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
+        test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
+        test VIDIOC_G/S_EDID: OK (Not Supported)
+
+Control ioctls:
+        test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
+        test VIDIOC_QUERYCTRL: OK
+        test VIDIOC_G/S_CTRL: OK
+        test VIDIOC_G/S/TRY_EXT_CTRLS: OK
+        test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK (Not Supported)
+        test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
+        Standard Controls: 0 Private Controls: 0
+
+Format ioctls:
+        test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
+        test VIDIOC_G/S_PARM: OK (Not Supported)
+        test VIDIOC_G_FBUF: OK (Not Supported)
+        test VIDIOC_G_FMT: OK
+        test VIDIOC_TRY_FMT: OK
+        test VIDIOC_S_FMT: OK
+        test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
+        test Cropping: OK (Not Supported)
+        test Composing: OK
+        test Scaling: OK
+
+Codec ioctls:
+        test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
+        test VIDIOC_G_ENC_INDEX: OK (Not Supported)
+        test VIDIOC_(TRY_)DECODER_CMD: OK (Not Supported)
+
+Buffer ioctls:
+        test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
+        test VIDIOC_EXPBUF: OK
+        test Requests: OK (Not Supported)
+
+Total for mtk-jpeg device /dev/video0: 44, Succeeded: 44, Failed: 0, Warnings: 0
+------------------------------------------------------------
+
+The JPEG enc log:
+
+------------------------------------------------------------
+v4l2-compliance -d /dev/video1 
+v4l2-compliance SHA: af33cc5ef00177edbb45d466faf9061197767f2b, 32 bits
+
+Compliance test for mtk-jpeg device /dev/video1:
+
+Driver Info:
+        Driver name      : mtk-jpeg
+        Card type        : mtk-jpeg encoder
+        Bus info         : platform:1500a000.jpegenc
+        Driver version   : 5.4.0
+        Capabilities     : 0x84204000
+                Video Memory-to-Memory Multiplanar
+                Streaming
+                Extended Pix Format
+                Device Capabilities
+        Device Caps      : 0x04204000
+                Video Memory-to-Memory Multiplanar
+                Streaming
+                Extended Pix Format
+        Detected JPEG Encoder
+
+Required ioctls:
+        test VIDIOC_QUERYCAP: OK
+
+Allow for multiple opens:
+        test second /dev/video1 open: OK
+        test VIDIOC_QUERYCAP: OK
+        test VIDIOC_G/S_PRIORITY: OK
+        test for unlimited opens: OK
+
+Debug ioctls:
+        test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
+        test VIDIOC_LOG_STATUS: OK (Not Supported)
+
+Input ioctls:
+        test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
+        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+        test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
+        test VIDIOC_ENUMAUDIO: OK (Not Supported)
+        test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)
+        test VIDIOC_G/S_AUDIO: OK (Not Supported)
+        Inputs: 0 Audio Inputs: 0 Tuners: 0
+
+Output ioctls:
+        test VIDIOC_G/S_MODULATOR: OK (Not Supported)
+        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+        test VIDIOC_ENUMAUDOUT: OK (Not Supported)
+        test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
+        test VIDIOC_G/S_AUDOUT: OK (Not Supported)
+        Outputs: 0 Audio Outputs: 0 Modulators: 0
+
+Input/Output configuration ioctls:
+        test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
+        test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
+        test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
+        test VIDIOC_G/S_EDID: OK (Not Supported)
+
+Control ioctls:
+        test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
+        test VIDIOC_QUERYCTRL: OK
+        test VIDIOC_G/S_CTRL: OK
+        test VIDIOC_G/S/TRY_EXT_CTRLS: OK
+        test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
+        test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
+        Standard Controls: 4 Private Controls: 0
+
+Format ioctls:
+        test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
+        test VIDIOC_G/S_PARM: OK (Not Supported)
+        test VIDIOC_G_FBUF: OK (Not Supported)
+        test VIDIOC_G_FMT: OK
+        test VIDIOC_TRY_FMT: OK
+        test VIDIOC_S_FMT: OK
+        test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
+        test Cropping: OK
+        test Composing: OK (Not Supported)
+        test Scaling: OK (Not Supported)
+
+Codec ioctls:
+        test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
+        test VIDIOC_G_ENC_INDEX: OK (Not Supported)
+        test VIDIOC_(TRY_)DECODER_CMD: OK (Not Supported)
+
+Buffer ioctls:
+        test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
+        test VIDIOC_EXPBUF: OK
+        test Requests: OK (Not Supported)
+
+Total for mtk-jpeg device /dev/video1: 44, Succeeded: 44, Failed: 0, Warnings: 0
+------------------------------------------------------------
+
+Change compared to v4:
+-improve code quality for the orignal jpeg decode driver in separate patch.
+-support crop for jpeg encode and compose for jpeg decode separately.
+-delete jpeg_enc_param/mtk_jpeg_enc_param structure.
+-delete mtk_jpeg_set_param() for jpeg encode.
+-use clamp() to replace mtk_jpeg_bound_align_image() and round_up() to
+ replace mtk_jpeg_align().
+-move macro definition about hw to mtk_jpeg_enc_reg.h.
+-delete unnecessary V4L2 logs in driver.
+-cancel spin lock and unlock operation in deviec run function.
+-change jpeg enc register offset hex numberals from upercase to lowercase.
+
+Xia Jiang (5):
+  media: platform: Fix jpeg dec driver bug and improve code quality
+  media: dt-bindings: Add jpeg enc device tree node document
+  arm: dts: Add jpeg enc device tree node
+  media: platform: Rename jpeg dec file name
+  media: platform: Add jpeg dec/enc feature
+
+ .../bindings/media/mediatek-jpeg-encoder.txt  |  37 +
+ arch/arm/boot/dts/mt2701.dtsi                 |  13 +
+ drivers/media/platform/mtk-jpeg/Makefile      |   5 +-
+ .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 752 +++++++++++++-----
+ .../media/platform/mtk-jpeg/mtk_jpeg_core.h   |  50 +-
+ .../{mtk_jpeg_hw.c => mtk_jpeg_dec_hw.c}      |   8 +-
+ .../{mtk_jpeg_hw.h => mtk_jpeg_dec_hw.h}      |  14 +-
+ ...{mtk_jpeg_parse.c => mtk_jpeg_dec_parse.c} |   2 +-
+ ...{mtk_jpeg_parse.h => mtk_jpeg_dec_parse.h} |   2 +-
+ .../{mtk_jpeg_reg.h => mtk_jpeg_dec_reg.h}    |  19 +-
+ .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c | 271 +++++++
+ .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h |  86 ++
+ .../platform/mtk-jpeg/mtk_jpeg_enc_reg.h      |  78 ++
+ 13 files changed, 1100 insertions(+), 237 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/mediatek-jpeg-encoder.txt
+ rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_hw.c => mtk_jpeg_dec_hw.c} (98%)
+ rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_hw.h => mtk_jpeg_dec_hw.h} (89%)
+ rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_parse.c => mtk_jpeg_dec_parse.c} (98%)
+ rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_parse.h => mtk_jpeg_dec_parse.h} (92%)
+ rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_reg.h => mtk_jpeg_dec_reg.h} (77%)
+ create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
+ create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h
+ create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_reg.h
+
+-- 
+2.18.0
 
 _______________________________________________
 linux-arm-kernel mailing list
