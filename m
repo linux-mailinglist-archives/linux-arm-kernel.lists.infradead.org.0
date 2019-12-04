@@ -2,87 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B34A11383C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 00:31:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A867711383E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 00:31:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YGSes5u4aeEsx0sqS/Ep2szmhjwHe/ClMotv2WjgAPA=; b=PYL/kscRACYSH7
-	TrdLtpJz9kJ8fzQs6YmIE110f1IuxC3In/MdUJzN+Jjp3ihOsRftPC26gYnDBNN/MQTJQKLzzkklf
-	hNRAK3g3NglBO+Ou5uFa6w9+A3VT2DfJRu0Y2oKxzYKmjmp3Wb4pAk/xSSFk7OqtGmgu0XAI+vCuq
-	zzH+YozzyAyYS0hKh6FIPhhlz/L4W3Z71GYr3Y+Jkrhg799lw8dQ8Yrir080YHSf435r50AjwT5oT
-	n5tzBj66OsP1fnGQ9cuIoNtz4xSNfHFjA4uhb71wOVQ31RdDLflrmXzki6cjTIVvR/CoR4B9UwuTd
-	3QZcdC5NYRNQ6JwOCp/A==;
+	List-Owner; bh=8wB3CJtdLz+4HbAz+PL50QbjVZ6DFGqT2eHOiv738Kc=; b=To1gtwZNBAoFSX
+	u8hxk0e9Zp3Cr8HbqyxcUIO73r/mxJrBbU/vvCRavoO/PEZAD+UetAs2WqDwu+03Jecm2XEgQbk9t
+	uEbX7cpv3T6NlpLW15EprDuTsoLq+8EBv+0KgC5Frz75h2TxZ+oDX5rglZGtMh7lPGZia1F/HLEJI
+	UcK0lrhS6er6M4AoRHAMNVlnCT5hzmSTir4SuqyTGB3yFhvnAaK4eklTWIy9bosbMUMRVWdG1BWlw
+	7HZFpVxHFIHcNr9Fh5vBxiECdTwhB/6vSttgv5mzrpJ3/XpTGEo1c6DzFIeQy//8t616grym0I/q1
+	ER1KfJOxWcHN6UXFkZxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ice6k-0002QY-Lr; Wed, 04 Dec 2019 23:30:58 +0000
-Received: from mail-eopbgr750045.outbound.protection.outlook.com
- ([40.107.75.45] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
+	id 1ice71-0002fe-Fm; Wed, 04 Dec 2019 23:31:15 +0000
+Received: from mail-dm6nam12on2088.outbound.protection.outlook.com
+ ([40.107.243.88] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ice5V-0000DX-SL
+ id 1ice5X-0000DZ-3c
  for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 23:29:45 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=DhsUYZlfQKBXitU5MjQ37YZ+bjbrldXFxm67lhxsL16liK6kc1KE7quLxgQKt72ZdRoc/LNDN/cf7BPNs0wp5ec6G8IBJjCHp/J4HLfbClLrFiQZ6sHDZb6UmugmG+mbxlN9Y0AYUwbdsHBOr3LO7szCQOB/Om0V7xN35cV3701NChggb9enxoIJ/96zhXEihuMTC1/JCCKE50uTIGX7Qh+CePuz+lMTliSG4o378FvddG6aCmnXT4AKnGqBY2TXo5b2FFkOca/nS5VCusF+cscpMS5AB9OwmwjIssbE8U3YJpIP9cXyNxYdsdJrcLj+L0J8dVRiy2UfCdpDrs9Zuw==
+ b=lupwCQQsywKqGRKBCu/5+jk3bFgdRotUBnPJpPecEjGq2Q8TShM9blMcP/RLozW1IHxQM7ZX9kTIe24JLFXLWsOh2YZFp0eHAQM0qGk2lXsvaZEDHuyLtpVOLvxCq8vUAn9ke//vm8ndhEmwtUQzzT2YnyQ+Tl3FIp2eiSO8GA2n/asbhkAoiIcnZL+QJKeGfPLbA+d5Rf5ejSTkxDUje5siZG+dXu2QH6AM+B3q4lePuNsGPWVMsbjw20mU7h948QdlmSdwqnXmFMkzVLwChciafLwi2S2tLFFeI8S0HX14NriCL8yr0jVvQfqcsQ31DKTDd+U8cFJTfvVW2MD+lw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=C6ehSa67b2eRuoG+daJ6YIk5dss8v60v6CUqO5i+olg=;
- b=RMNm55tRnYRlwcl2rQn6uZjGjsZw26REvIP54APJzLUSdXBfN+DIIu9y0irWctaSmRvQIOUKLwEv7yZY8tHkvzVS5pHRzhu4UYBGIakbAGGjgkiNBQwkd9NeLTWqfklpwVZKHQJwkdVPC9jzA3rl55MSh3WJpxq+oaqfiCukhT4+vkQeYU8lzBCqzbnuA030ObejRjeKST+EDvskEkF1iC8bUcZLzsF1YHuNAd+oRgGIbQ0nju4miu8g4GVvTiM0EMzpaoL+RpRGt3tRRA8Nv0plj95oL8u7uwhy8abALrbA0cOZUTbk5rpfAcDJhAuLuklixNjaSqIRrNqBX2aIgQ==
+ bh=A3YQP68LJyymWuPbnb67Z3B2nv5ikzPivDfqLAz/Qs8=;
+ b=MVAZk3njaSD7GWqVSojTF/Gisog+BfYaAWYVy/WxFhzt9ucba7FI2Yy6v3aFs4Dt18R8ThaBJbTLZCOg5iN5VOSzmMW/ud8tGHixGon09RmKk6VPiyHujSEJTvRazmdO/0bQdIst7428DJxmy1B5tcd4ykZGiugfxOsm7eUkgwRXi6BSOsYypSD5XZ+iXzSvtf6uHJPIa9hGKtkEfOEWAlBvU28/cdqCYxTmgqIJQpgZKFJAtqxyE9rQAFbLtuGha4HA3JXEs17xYPGD7JumT3saF6lLMmrFl+ORPVyY217HShvuOBABkCl4oiZnbUyZPEt7aV+PLvi3xopU0PdxbQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ 149.199.60.83) smtp.rcpttodomain=aggios.com smtp.mailfrom=xilinx.com;
  dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
  not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=C6ehSa67b2eRuoG+daJ6YIk5dss8v60v6CUqO5i+olg=;
- b=jrkrkmSvDvIn+4BvgZP592iPO36IQlV4Qa86jA1cp/lsVIux+U+4vNfGeZNSy1j02FaXDo8eAJKMlmQlotF+/DMZoWAePk7Vs4f+s9XtXBnez/Yl/TZ4RiuovahCJPtXHqSvw1oBFS1hgvuhWbuWvy42Mka6UuYrF7Zt4GTik1g=
-Received: from CY4PR02CA0015.namprd02.prod.outlook.com (2603:10b6:903:18::25)
- by BYAPR02MB5512.namprd02.prod.outlook.com (2603:10b6:a03:9a::30)
+ bh=A3YQP68LJyymWuPbnb67Z3B2nv5ikzPivDfqLAz/Qs8=;
+ b=YkLJ6tx16HOLx60iV5YbRnt4xfA2bpAqcCDTZAKllO7+BEms7W64Vlk/FncvoUDnM1fbM5jFkomPCErPBZ56zU3+c5QCpADz4qYkBZWj0qBGggbHEX0p8eYs/PYzKp+3Jayl32TYKbumJydSXEj/NVfqCO1ROYktIxH0WZqPH3U=
+Received: from BN6PR02CA0045.namprd02.prod.outlook.com (2603:10b6:404:5f::31)
+ by MWHPR02MB2575.namprd02.prod.outlook.com (2603:10b6:300:46::18)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2516.12; Wed, 4 Dec
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2495.22; Wed, 4 Dec
  2019 23:29:37 +0000
-Received: from BL2NAM02FT032.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e46::209) by CY4PR02CA0015.outlook.office365.com
- (2603:10b6:903:18::25) with Microsoft SMTP Server (version=TLS1_2,
+Received: from BL2NAM02FT055.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e46::203) by BN6PR02CA0045.outlook.office365.com
+ (2603:10b6:404:5f::31) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2516.12 via Frontend
- Transport; Wed, 4 Dec 2019 23:29:37 +0000
+ Transport; Wed, 4 Dec 2019 23:29:36 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
- header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ smtp.mailfrom=xilinx.com; aggios.com; dkim=none (message not signed)
+ header.d=none;aggios.com; dmarc=bestguesspass action=none
  header.from=xilinx.com;
 Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.60.83 as permitted sender) receiver=protection.outlook.com;
  client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
 Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- BL2NAM02FT032.mail.protection.outlook.com (10.152.77.169) with Microsoft SMTP
+ BL2NAM02FT055.mail.protection.outlook.com (10.152.77.126) with Microsoft SMTP
  Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2474.17
- via Frontend Transport; Wed, 4 Dec 2019 23:29:36 +0000
+ via Frontend Transport; Wed, 4 Dec 2019 23:29:35 +0000
 Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
  by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1ice5P-0005aF-09; Wed, 04 Dec 2019 15:29:35 -0800
+ id 1ice5P-0005aG-9H; Wed, 04 Dec 2019 15:29:35 -0800
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1ice5J-00080R-TI; Wed, 04 Dec 2019 15:29:29 -0800
-Received: from xsj-pvapsmtp01 (xsj-smtp.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xB4NTREc024867; 
+ id 1ice5K-00080R-5q; Wed, 04 Dec 2019 15:29:30 -0800
+Received: from xsj-pvapsmtp01 (xsj-pvapsmtp01.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xB4NTRrD004749; 
  Wed, 4 Dec 2019 15:29:27 -0800
 Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <jolly.shah@xilinx.com>)
- id 1ice5H-000802-Hf; Wed, 04 Dec 2019 15:29:27 -0800
+ id 1ice5H-000802-Ki; Wed, 04 Dec 2019 15:29:27 -0800
 From: Jolly Shah <jolly.shah@xilinx.com>
 To: ard.biesheuvel@linaro.org, mingo@kernel.org, gregkh@linuxfoundation.org,
  matt@codeblueprint.co.uk, sudeep.holla@arm.com, hkallweit1@gmail.com,
  keescook@chromium.org, dmitry.torokhov@gmail.com, michal.simek@xilinx.com
-Subject: [PATCH 2/5] firmware: xilinx: Add sysfs interface
-Date: Wed,  4 Dec 2019 15:29:16 -0800
-Message-Id: <1575502159-11327-3-git-send-email-jolly.shah@xilinx.com>
+Subject: [PATCH 4/5] firmware: xilinx: Add sysfs to set shutdown scope
+Date: Wed,  4 Dec 2019 15:29:18 -0800
+Message-Id: <1575502159-11327-5-git-send-email-jolly.shah@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1575502159-11327-1-git-send-email-jolly.shah@xilinx.com>
 References: <1575502159-11327-1-git-send-email-jolly.shah@xilinx.com>
@@ -93,38 +93,38 @@ X-EOPAttributedMessage: 0
 X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
  SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(39860400002)(136003)(396003)(199004)(189003)(70586007)(5660300002)(11346002)(76176011)(30864003)(107886003)(81166006)(6636002)(51416003)(70206006)(7696005)(81156014)(478600001)(305945005)(50226002)(8936002)(2616005)(336012)(186003)(426003)(26005)(8676002)(7416002)(4326008)(316002)(356004)(9786002)(48376002)(16586007)(50466002)(14444005)(44832011)(54906003)(2906002)(36386004)(6666004)(36756003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB5512; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
+ SFS:(10009020)(4636009)(39860400002)(136003)(376002)(396003)(346002)(189003)(199004)(8936002)(5660300002)(48376002)(8676002)(44832011)(107886003)(36756003)(14444005)(478600001)(2906002)(26005)(36386004)(6636002)(16586007)(7696005)(336012)(305945005)(70206006)(50226002)(54906003)(186003)(316002)(2616005)(11346002)(4326008)(81156014)(9786002)(50466002)(51416003)(356004)(76176011)(6666004)(70586007)(426003)(7416002)(81166006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR02MB2575; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: fbf06d41-47d4-48e5-2d46-08d77911d3b7
-X-MS-TrafficTypeDiagnostic: BYAPR02MB5512:
-X-Microsoft-Antispam-PRVS: <BYAPR02MB551279574D13220DD798F5A7B85D0@BYAPR02MB5512.namprd02.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: d9dda446-b850-4d39-ce5f-08d77911d344
+X-MS-TrafficTypeDiagnostic: MWHPR02MB2575:
+X-Microsoft-Antispam-PRVS: <MWHPR02MB2575389CCDFF5DB9C2C7A4F8B85D0@MWHPR02MB2575.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:327;
+X-MS-Oob-TLC-OOBClassifiers: OLM:6790;
 X-Forefront-PRVS: 0241D5F98C
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: IVAiAs06neRB50URjcic5nVfyVtxAQXWgMdmtN2gyAz330O4OC+QoDiXdffMMS368dn/A6wPN2ndynPGqcaDr9PU66fz6yqIv4eZR4OADRmcs222OKPFokzgVa2XHKmd1CMAItYH7JLfD8GFi3bFbrmBnJ/4TGtL1PfDFiVoscVOmv0bmRWX+Drk1AczlO2RQEfpc2D7YlkiLtGnA/hp2EbiG1PkeDkxAyc+QkkdU9Chx1kRm5sX9yKo1aPi6k2AeG3b1O4cLy1g1p4N6QoFrwwrIsvE2JiaKtgaOKES0Tyh2QQxCho5Y3Dwf9hBEcrzbIDH8Il/moeBS06kFLrswMJN/K91sBCijesfc6SBOy9UbOzSiKvkL8tqD/+wO8jNu/aF088ckB3S8TIaAEb3N0XsjaTPHU6GD2ixpCmL3hzJG0zRTiPA8viURQ3W7Es3
+X-Microsoft-Antispam-Message-Info: FeCR3HLqa+V+/jp2L/7Fi5wHb9rmpP0v7ZGWz63P0OUEiVPBFXI+CmnaygNtSYZ+CrQ9vHHdw94JTofDu/cFHXIcmXmHqDByuJomHJP0ilaLqyHKggI8PUFgKPWLsAOkm5gamiBnba4+z4O4DT5CiJMTCaXSE2GNCpeNARSeqhBvrCY/yl1QPWsze3Km+EeLgR8Hiak1SwMTfCU3iOAeWwbYaAnlPjgTZfnulbtC1aNlWN7KYO3uOobBgfcicyK+0/oLAArpjY1PMppOdUBJVcAHL9nu+eC0n/8i+nSC3nsqYRqipR8lyE7NzhO+pypVFt9BRqijWJqP5cgcDwASgRBZaWwi+gbyawJjJ2ri8VNvcHrhdkKMAWzndRvY485T3CxpgGvVIErXZ8ggw4z+oBGwsw3+qTl+1NeDqeGTlYTPKLOud4fOSqgVL5D8tTab
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Dec 2019 23:29:36.6454 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: fbf06d41-47d4-48e5-2d46-08d77911d3b7
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Dec 2019 23:29:35.9279 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d9dda446-b850-4d39-ce5f-08d77911d344
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
  Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5512
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR02MB2575
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_152941_979001_705C9BBE 
-X-CRM114-Status: GOOD (  18.16  )
+X-CRM114-CacheID: sfid-20191204_152943_244454_FD39D6BB 
+X-CRM114-Status: GOOD (  19.01  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.75.45 listed in list.dnswl.org]
+ no trust [40.107.243.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -141,8 +141,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jolly Shah <jolly.shah@xilinx.com>, Rajan Vaja <rajan.vaja@xilinx.com>,
- rajanv@xilinx.com, linux-kernel@vger.kernel.org,
+Cc: Stefan Krsmanovic <stefan.krsmanovic@aggios.com>,
+ Rajan Vaja <rajan.vaja@xilinx.com>, linux-kernel@vger.kernel.org,
+ rajanv@xilinx.com, Jolly Shah <jolly.shah@xilinx.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -151,458 +152,246 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Rajan Vaja <rajan.vaja@xilinx.com>
 
-Add Firmware-ggs sysfs interface which provides read/write
-interface to global storage registers.
+The Linux shutdown functionality implemented via PSCI system_off does
+not include an option to set a scope, i.e. which parts of the system to
+shut down.
 
+This patch creates sysfs that allows to set the shutdown scope for the
+next shutdown request. When the next shutdown is performed, the platform
+specific portion of PSCI-system_off can use the chosen shutdown scope.
+
+Signed-off-by: Stefan Krsmanovic <stefan.krsmanovic@aggios.com>
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
 Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
 ---
- Documentation/ABI/stable/sysfs-firmware-zynqmp |  50 +++++
- drivers/firmware/xilinx/Makefile               |   2 +-
- drivers/firmware/xilinx/zynqmp-ggs.c           | 289 +++++++++++++++++++++++++
- drivers/firmware/xilinx/zynqmp.c               |  12 +
- include/linux/firmware/xlnx-zynqmp.h           |  10 +
- 5 files changed, 362 insertions(+), 1 deletion(-)
- create mode 100644 Documentation/ABI/stable/sysfs-firmware-zynqmp
- create mode 100644 drivers/firmware/xilinx/zynqmp-ggs.c
+ Documentation/ABI/stable/sysfs-firmware-zynqmp |  32 ++++++
+ drivers/firmware/xilinx/zynqmp.c               | 141 +++++++++++++++++++++++++
+ include/linux/firmware/xlnx-zynqmp.h           |  12 +++
+ 3 files changed, 185 insertions(+)
 
 diff --git a/Documentation/ABI/stable/sysfs-firmware-zynqmp b/Documentation/ABI/stable/sysfs-firmware-zynqmp
-new file mode 100644
-index 0000000..0a75812
---- /dev/null
+index 0a75812..13e4fd2 100644
+--- a/Documentation/ABI/stable/sysfs-firmware-zynqmp
 +++ b/Documentation/ABI/stable/sysfs-firmware-zynqmp
-@@ -0,0 +1,50 @@
-+What:		/sys/firmware/zynqmp/ggs*
-+Date:		January 2018
-+KernelVersion:	4.15.0
-+Contact:	"Jolly Shah" <jollys@xilinx.com>
-+Description:
-+		Read/Write PMU global general storage register value,
-+		GLOBAL_GEN_STORAGE{0:3}.
-+		Global general storage register that can be used
-+		by system to pass information between masters.
-+
-+		The register is reset during system or power-on
-+		resets. Three registers are used by the FSBL and
-+		other Xilinx software products: GLOBAL_GEN_STORAGE{4:6}.
-+
-+		Usage:
-+		# cat /sys/firmware/zynqmp/ggs0
-+		# echo <mask> <value> > /sys/firmware/zynqmp/ggs0
-+
-+		Example:
-+		# cat /sys/firmware/zynqmp/ggs0
-+		# echo 0xFFFFFFFF 0x1234ABCD > /sys/firmware/zynqmp/ggs0
-+
-+Users:		Xilinx
-+
-+What:		/sys/firmware/zynqmp/pggs*
-+Date:		January 2018
-+KernelVersion:	4.15.0
-+Contact:	"Jolly Shah" <jollys@xilinx.com>
-+Description:
-+		Read/Write PMU persistent global general storage register
-+		value, PERS_GLOB_GEN_STORAGE{0:3}.
-+		Persistent global general storage register that
-+		can be used by system to pass information between
-+		masters.
-+
-+		This register is only reset by the power-on reset
-+		and maintains its value through a system reset.
-+		Four registers are used by the FSBL and other Xilinx
-+		software products: PERS_GLOB_GEN_STORAGE{4:7}.
-+		Register is reset only by a POR reset.
-+
-+		Usage:
-+		# cat /sys/firmware/zynqmp/pggs0
-+		# echo <mask> <value> > /sys/firmware/zynqmp/pggs0
-+
-+		Example:
-+		# cat /sys/firmware/zynqmp/pggs0
-+		# echo 0xFFFFFFFF 0x1234ABCD > /sys/firmware/zynqmp/pggs0
-+
-+Users:		Xilinx
-diff --git a/drivers/firmware/xilinx/Makefile b/drivers/firmware/xilinx/Makefile
-index 875a537..1e8643c 100644
---- a/drivers/firmware/xilinx/Makefile
-+++ b/drivers/firmware/xilinx/Makefile
-@@ -1,5 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0
- # Makefile for Xilinx firmwares
+@@ -48,3 +48,35 @@ Description:
+ 		# echo 0xFFFFFFFF 0x1234ABCD > /sys/firmware/zynqmp/pggs0
  
--obj-$(CONFIG_ZYNQMP_FIRMWARE) += zynqmp.o
-+obj-$(CONFIG_ZYNQMP_FIRMWARE) += zynqmp.o zynqmp-ggs.o
- obj-$(CONFIG_ZYNQMP_FIRMWARE_DEBUG) += zynqmp-debug.o
-diff --git a/drivers/firmware/xilinx/zynqmp-ggs.c b/drivers/firmware/xilinx/zynqmp-ggs.c
-new file mode 100644
-index 0000000..42179ad
---- /dev/null
-+++ b/drivers/firmware/xilinx/zynqmp-ggs.c
-@@ -0,0 +1,289 @@
-+// SPDX-License-Identifier: GPL-2.0+
-+/*
-+ * Xilinx Zynq MPSoC Firmware layer
+ Users:		Xilinx
++
++What:		/sys/firmware/zynqmp/shutdown_scope
++Date:		February 2018
++KernelVersion:	4.15.6
++Contact:	"Jolly Shah" <jollys@xilinx.com>
++Description:
++		This sysfs interface allows to set the shutdown scope for the
++		next shutdown request. When the next shutdown is performed, the
++		platform specific portion of PSCI-system_off can use the chosen
++		shutdown scope.
++
++		Following are available shutdown scopes(subtypes):
++
++		subsystem:	Only the APU along with all of its peripherals
++				not used by other processing units will be
++				shut down. This may result in the FPD power
++				domain being shut down provided that no other
++				processing unit uses FPD peripherals or DRAM.
++		ps_only:	The complete PS will be shut down, including the
++				RPU, PMU, etc.  Only the PL domain (FPGA)
++				remains untouched.
++		system:		The complete system/device is shut down.
++
++		Usage:
++		# cat /sys/firmware/zynqmp/shutdown_scope
++		# echo <scope> > /sys/firmware/zynqmp/shutdown_scope
++
++		Example:
++		# cat /sys/firmware/zynqmp/shutdown_scope
++		# echo "subsystem" > /sys/firmware/zynqmp/shutdown_scope
++
++Users:		Xilinx
+diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
+index 8dcf5a4..b23bda4 100644
+--- a/drivers/firmware/xilinx/zynqmp.c
++++ b/drivers/firmware/xilinx/zynqmp.c
+@@ -746,6 +746,146 @@ const struct zynqmp_eemi_ops *zynqmp_pm_get_eemi_ops(void)
+ EXPORT_SYMBOL_GPL(zynqmp_pm_get_eemi_ops);
+ 
+ /**
++ * struct zynqmp_pm_shutdown_scope - Struct for shutdown scope
++ * @subtype:	Shutdown subtype
++ * @name:	Matching string for scope argument
 + *
-+ *  Copyright (C) 2014-2018 Xilinx, Inc.
-+ *
-+ *  Jolly Shah <jollys@xilinx.com>
-+ *  Rajan Vaja <rajanv@xilinx.com>
++ * This struct encapsulates mapping between shutdown scope ID and string.
 + */
++struct zynqmp_pm_shutdown_scope {
++	const enum zynqmp_pm_shutdown_subtype subtype;
++	const char *name;
++};
 +
-+#include <linux/compiler.h>
-+#include <linux/of.h>
-+#include <linux/init.h>
-+#include <linux/module.h>
-+#include <linux/uaccess.h>
-+#include <linux/slab.h>
-+#include <linux/firmware/xlnx-zynqmp.h>
++static struct zynqmp_pm_shutdown_scope shutdown_scopes[] = {
++	[ZYNQMP_PM_SHUTDOWN_SUBTYPE_SUBSYSTEM] = {
++		.subtype = ZYNQMP_PM_SHUTDOWN_SUBTYPE_SUBSYSTEM,
++		.name = "subsystem",
++	},
++	[ZYNQMP_PM_SHUTDOWN_SUBTYPE_PS_ONLY] = {
++		.subtype = ZYNQMP_PM_SHUTDOWN_SUBTYPE_PS_ONLY,
++		.name = "ps_only",
++	},
++	[ZYNQMP_PM_SHUTDOWN_SUBTYPE_SYSTEM] = {
++		.subtype = ZYNQMP_PM_SHUTDOWN_SUBTYPE_SYSTEM,
++		.name = "system",
++	},
++};
 +
-+static ssize_t read_register(char *buf, u32 ioctl_id, u32 reg)
++static struct zynqmp_pm_shutdown_scope *selected_scope =
++		&shutdown_scopes[ZYNQMP_PM_SHUTDOWN_SUBTYPE_SYSTEM];
++
++/**
++ * zynqmp_pm_is_shutdown_scope_valid - Check if shutdown scope string is valid
++ * @scope_string:	Shutdown scope string
++ *
++ * Return:		Return pointer to matching shutdown scope struct from
++ *			array of available options in system if string is valid,
++ *			otherwise returns NULL.
++ */
++static struct zynqmp_pm_shutdown_scope*
++		zynqmp_pm_is_shutdown_scope_valid(const char *scope_string)
 +{
-+	int ret;
-+	u32 ret_payload[PAYLOAD_ARG_CNT];
-+	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
++	int count;
 +
-+	if (!eemi_ops->ioctl)
-+		return -EFAULT;
++	for (count = 0; count < ARRAY_SIZE(shutdown_scopes); count++)
++		if (sysfs_streq(scope_string, shutdown_scopes[count].name))
++			return &shutdown_scopes[count];
 +
-+	ret = eemi_ops->ioctl(0, ioctl_id, reg, 0, ret_payload);
-+	if (ret)
-+		return ret;
-+
-+	return sprintf(buf, "0x%x\n", ret_payload[1]);
++	return NULL;
 +}
 +
-+static ssize_t write_register(const char *buf, size_t count, u32 read_ioctl,
-+			      u32 write_ioctl, u32 reg)
++/**
++ * shutdown_scope_show - Show shutdown_scope sysfs attribute
++ * @kobj:	Kobject structure
++ * @attr:	Kobject attribute structure
++ * @buf:	Requested available shutdown_scope attributes string
++ *
++ * User-space interface for viewing the available scope options for system
++ * shutdown. Scope option for next shutdown call is marked with [].
++ *
++ * Usage: cat /sys/firmware/zynqmp/shutdown_scope
++ *
++ * Return:	Number of bytes printed into the buffer.
++ */
++static ssize_t shutdown_scope_show(struct kobject *kobj,
++				   struct kobj_attribute *attr,
++				   char *buf)
 +{
-+	char *kern_buff, *inbuf, *tok;
-+	long mask, value;
++	int i;
++
++	for (i = 0; i < ARRAY_SIZE(shutdown_scopes); i++) {
++		if (&shutdown_scopes[i] == selected_scope) {
++			strcat(buf, "[");
++			strcat(buf, shutdown_scopes[i].name);
++			strcat(buf, "]");
++		} else {
++			strcat(buf, shutdown_scopes[i].name);
++		}
++		strcat(buf, " ");
++	}
++	strcat(buf, "\n");
++
++	return strlen(buf);
++}
++
++/**
++ * shutdown_scope_store - Store shutdown_scope sysfs attribute
++ * @kobj:	Kobject structure
++ * @attr:	Kobject attribute structure
++ * @buf:	User entered shutdown_scope attribute string
++ * @count:	Buffer size
++ *
++ * User-space interface for setting the scope for the next system shutdown.
++ * Usage: echo <scope> > /sys/firmware/zynqmp/shutdown_scope
++ *
++ * The Linux shutdown functionality implemented via PSCI system_off does not
++ * include an option to set a scope, i.e. which parts of the system to shut
++ * down.
++ *
++ * This API function allows to set the shutdown scope for the next shutdown
++ * request by passing it to the ATF running in EL3. When the next shutdown
++ * is performed, the platform specific portion of PSCI-system_off can use
++ * the chosen shutdown scope.
++ *
++ * subsystem:	Only the APU along with all of its peripherals not used by other
++ *		processing units will be shut down. This may result in the FPD
++ *		power domain being shut down provided that no other processing
++ *		unit uses FPD peripherals or DRAM.
++ * ps_only:	The complete PS will be shut down, including the RPU, PMU, etc.
++ *		Only the PL domain (FPGA) remains untouched.
++ * system:	The complete system/device is shut down.
++ *
++ * Return:	count argument if request succeeds, the corresponding error
++ *		code otherwise
++ */
++static ssize_t shutdown_scope_store(struct kobject *kobj,
++				    struct kobj_attribute *attr,
++				    const char *buf, size_t count)
++{
 +	int ret;
-+	u32 ret_payload[PAYLOAD_ARG_CNT];
-+	const struct zynqmp_eemi_ops *eemi_ops = zynqmp_pm_get_eemi_ops();
++	struct zynqmp_pm_shutdown_scope *scope;
 +
-+	if (!eemi_ops->ioctl)
-+		return -EFAULT;
++	scope = zynqmp_pm_is_shutdown_scope_valid(buf);
++	if (!scope)
++		return -EINVAL;
 +
-+	kern_buff = kzalloc(count, GFP_KERNEL);
-+	if (!kern_buff)
-+		return -ENOMEM;
-+
-+	ret = strlcpy(kern_buff, buf, count);
-+	if (ret < 0) {
-+		ret = -EFAULT;
-+		goto err;
-+	}
-+
-+	inbuf = kern_buff;
-+
-+	/* Read the write mask */
-+	tok = strsep(&inbuf, " ");
-+	if (!tok) {
-+		ret = -EFAULT;
-+		goto err;
-+	}
-+
-+	ret = kstrtol(tok, 16, &mask);
++	ret = zynqmp_pm_system_shutdown(ZYNQMP_PM_SHUTDOWN_TYPE_SETSCOPE_ONLY,
++					scope->subtype);
 +	if (ret) {
-+		ret = -EFAULT;
-+		goto err;
-+	}
-+
-+	/* Read the write value */
-+	tok = strsep(&inbuf, " ");
-+	if (!tok) {
-+		ret = -EFAULT;
-+		goto err;
-+	}
-+
-+	ret = kstrtol(tok, 16, &value);
-+	if (ret) {
-+		ret = -EFAULT;
-+		goto err;
-+	}
-+
-+	ret = eemi_ops->ioctl(0, read_ioctl, reg, 0, ret_payload);
-+	if (ret) {
-+		ret = -EFAULT;
-+		goto err;
-+	}
-+	ret_payload[1] &= ~mask;
-+	value &= mask;
-+	value |= ret_payload[1];
-+
-+	ret = eemi_ops->ioctl(0, write_ioctl, reg, value, NULL);
-+	if (ret)
-+		ret = -EFAULT;
-+
-+err:
-+	kfree(kern_buff);
-+	if (ret)
++		pr_err("unable to set shutdown scope %s\n", buf);
 +		return ret;
++	}
++
++	selected_scope = scope;
 +
 +	return count;
 +}
 +
-+/**
-+ * ggs_show - Show global general storage (ggs) sysfs attribute
-+ * @kobj: Kobject structure
-+ * @attr: Kobject attribute structure
-+ * @buf: Requested available shutdown_scope attributes string
-+ * @reg: Register number
-+ *
-+ * Return:Number of bytes printed into the buffer.
-+ *
-+ * Helper function for viewing a ggs register value.
-+ *
-+ * User-space interface for viewing the content of the ggs0 register.
-+ * cat /sys/firmware/zynqmp/ggs0
-+ */
-+static ssize_t ggs_show(struct kobject *kobj,
-+			struct kobj_attribute *attr,
-+			char *buf,
-+			u32 reg)
-+{
-+	return read_register(buf, IOCTL_READ_GGS, reg);
-+}
++static struct kobj_attribute zynqmp_attr_shutdown_scope =
++						__ATTR_RW(shutdown_scope);
 +
 +/**
-+ * ggs_store - Store global general storage (ggs) sysfs attribute
-+ * @kobj: Kobject structure
-+ * @attr: Kobject attribute structure
-+ * @buf: User entered shutdown_scope attribute string
-+ * @count: Size of buf
-+ * @reg: Register number
-+ *
-+ * Return: count argument if request succeeds, the corresponding
-+ * error code otherwise
-+ *
-+ * Helper function for storing a ggs register value.
-+ *
-+ * For example, the user-space interface for storing a value to the
-+ * ggs0 register:
-+ * echo 0xFFFFFFFF 0x1234ABCD > /sys/firmware/zynqmp/ggs0
-+ */
-+static ssize_t ggs_store(struct kobject *kobj,
-+			 struct kobj_attribute *attr,
-+			 const char *buf,
-+			 size_t count,
-+			 u32 reg)
-+{
-+	if (!kobj || !attr || !buf || !count || reg >= GSS_NUM_REGS)
-+		return -EINVAL;
-+
-+	return write_register(buf, count, IOCTL_READ_GGS, IOCTL_WRITE_GGS, reg);
-+}
-+
-+/* GGS register show functions */
-+#define GGS0_SHOW(N)						\
-+	ssize_t ggs##N##_show(struct kobject *kobj,		\
-+				struct kobj_attribute *attr,	\
-+				char *buf)			\
-+	{							\
-+		return ggs_show(kobj, attr, buf, N);		\
-+	}
-+
-+static GGS0_SHOW(0);
-+static GGS0_SHOW(1);
-+static GGS0_SHOW(2);
-+static GGS0_SHOW(3);
-+
-+/* GGS register store function */
-+#define GGS0_STORE(N)						\
-+	ssize_t ggs##N##_store(struct kobject *kobj,		\
-+				struct kobj_attribute *attr,	\
-+				const char *buf,		\
-+				size_t count)			\
-+	{							\
-+		return ggs_store(kobj, attr, buf, count, N);	\
-+	}
-+
-+static GGS0_STORE(0);
-+static GGS0_STORE(1);
-+static GGS0_STORE(2);
-+static GGS0_STORE(3);
-+
-+/**
-+ * pggs_show - Show persistent global general storage (pggs) sysfs attribute
-+ * @kobj: Kobject structure
-+ * @attr: Kobject attribute structure
-+ * @buf: Requested available shutdown_scope attributes string
-+ * @reg: Register number
-+ *
-+ * Return:Number of bytes printed into the buffer.
-+ *
-+ * Helper function for viewing a pggs register value.
-+ */
-+static ssize_t pggs_show(struct kobject *kobj,
-+			 struct kobj_attribute *attr,
-+			 char *buf,
-+			 u32 reg)
-+{
-+	return read_register(buf, IOCTL_READ_PGGS, reg);
-+}
-+
-+/**
-+ * pggs_store - Store persistent global general storage (pggs) sysfs attribute
-+ * @kobj: Kobject structure
-+ * @attr: Kobject attribute structure
-+ * @buf: User entered shutdown_scope attribute string
-+ * @count: Size of buf
-+ * @reg: Register number
-+ *
-+ * Return: count argument if request succeeds, the corresponding
-+ * error code otherwise
-+ *
-+ * Helper function for storing a pggs register value.
-+ */
-+static ssize_t pggs_store(struct kobject *kobj,
-+			  struct kobj_attribute *attr,
-+			  const char *buf,
-+			  size_t count,
-+			  u32 reg)
-+{
-+	return write_register(buf, count, IOCTL_READ_PGGS,
-+			      IOCTL_WRITE_PGGS, reg);
-+}
-+
-+#define PGGS0_SHOW(N)						\
-+	ssize_t pggs##N##_show(struct kobject *kobj,		\
-+				struct kobj_attribute *attr,	\
-+				char *buf)			\
-+	{							\
-+		return pggs_show(kobj, attr, buf, N);		\
-+	}
-+
-+#define PGGS0_STORE(N)						\
-+	ssize_t pggs##N##_store(struct kobject *kobj,		\
-+				   struct kobj_attribute *attr,	\
-+				   const char *buf,		\
-+				   size_t count)		\
-+	{							\
-+		return pggs_store(kobj, attr, buf, count, N);	\
-+	}
-+
-+/* PGGS register show functions */
-+static PGGS0_SHOW(0);
-+static PGGS0_SHOW(1);
-+static PGGS0_SHOW(2);
-+static PGGS0_SHOW(3);
-+
-+/* PGGS register store functions */
-+static PGGS0_STORE(0);
-+static PGGS0_STORE(1);
-+static PGGS0_STORE(2);
-+static PGGS0_STORE(3);
-+
-+/* GGS register attributes */
-+static struct kobj_attribute zynqmp_attr_ggs0 = __ATTR_RW(ggs0);
-+static struct kobj_attribute zynqmp_attr_ggs1 = __ATTR_RW(ggs1);
-+static struct kobj_attribute zynqmp_attr_ggs2 = __ATTR_RW(ggs2);
-+static struct kobj_attribute zynqmp_attr_ggs3 = __ATTR_RW(ggs3);
-+
-+/* PGGS register attributes */
-+static struct kobj_attribute zynqmp_attr_pggs0 = __ATTR_RW(pggs0);
-+static struct kobj_attribute zynqmp_attr_pggs1 = __ATTR_RW(pggs1);
-+static struct kobj_attribute zynqmp_attr_pggs2 = __ATTR_RW(pggs2);
-+static struct kobj_attribute zynqmp_attr_pggs3 = __ATTR_RW(pggs3);
-+
-+static struct attribute *attrs[] = {
-+	&zynqmp_attr_ggs0.attr,
-+	&zynqmp_attr_ggs1.attr,
-+	&zynqmp_attr_ggs2.attr,
-+	&zynqmp_attr_ggs3.attr,
-+	&zynqmp_attr_pggs0.attr,
-+	&zynqmp_attr_pggs1.attr,
-+	&zynqmp_attr_pggs2.attr,
-+	&zynqmp_attr_pggs3.attr,
-+	NULL,
-+};
-+
-+static const struct attribute_group attr_group = {
-+	.attrs = attrs,
-+	NULL,
-+};
-+
-+int zynqmp_pm_ggs_init(struct kobject *parent_kobj)
-+{
-+	return sysfs_create_group(parent_kobj, &attr_group);
-+}
-diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
-index 56431ad..9836174 100644
---- a/drivers/firmware/xilinx/zynqmp.c
-+++ b/drivers/firmware/xilinx/zynqmp.c
-@@ -475,6 +475,10 @@ static inline int zynqmp_is_valid_ioctl(u32 ioctl_id)
- 	case IOCTL_GET_PLL_FRAC_MODE:
- 	case IOCTL_SET_PLL_FRAC_DATA:
- 	case IOCTL_GET_PLL_FRAC_DATA:
-+	case IOCTL_WRITE_GGS:
-+	case IOCTL_READ_GGS:
-+	case IOCTL_WRITE_PGGS:
-+	case IOCTL_READ_PGGS:
- 		return 1;
- 	default:
- 		return 0;
-@@ -876,8 +880,16 @@ static int zynqmp_pm_sysfs_init(void)
- 	if (ret) {
- 		pr_err("%s() sysfs creation fail with error %d\n",
- 		       __func__, ret);
-+		goto err;
- 	}
+  * config_reg_store - Write config_reg sysfs attribute
+  * @kobj:	Kobject structure
+  * @attr:	Kobject attribute structure
+@@ -870,6 +1010,7 @@ static struct kobj_attribute zynqmp_attr_config_reg =
+ 					__ATTR_RW(config_reg);
  
-+	ret = zynqmp_pm_ggs_init(zynqmp_kobj);
-+	if (ret) {
-+		pr_err("%s() GGS init fail with error %d\n",
-+		       __func__, ret);
-+		goto err;
-+	}
-+err:
- 	return ret;
- }
- 
+ static struct attribute *attrs[] = {
++	&zynqmp_attr_shutdown_scope.attr,
+ 	&zynqmp_attr_config_reg.attr,
+ 	NULL,
+ };
 diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
-index 55561d0..bf6e9db 100644
+index b96ea5d..54061de 100644
 --- a/include/linux/firmware/xlnx-zynqmp.h
 +++ b/include/linux/firmware/xlnx-zynqmp.h
-@@ -13,6 +13,8 @@
- #ifndef __FIRMWARE_ZYNQMP_H__
- #define __FIRMWARE_ZYNQMP_H__
- 
-+#include <linux/device.h>
-+
- #define ZYNQMP_PM_VERSION_MAJOR	1
- #define ZYNQMP_PM_VERSION_MINOR	0
- 
-@@ -42,6 +44,8 @@
- 
- #define ZYNQMP_PM_MAX_QOS		100U
- 
-+#define GSS_NUM_REGS	(4)
-+
- /* Node capabilities */
- #define	ZYNQMP_PM_CAPABILITY_ACCESS	0x1U
- #define	ZYNQMP_PM_CAPABILITY_CONTEXT	0x2U
-@@ -98,6 +102,10 @@ enum pm_ioctl_id {
- 	IOCTL_GET_PLL_FRAC_MODE,
- 	IOCTL_SET_PLL_FRAC_DATA,
- 	IOCTL_GET_PLL_FRAC_DATA,
-+	IOCTL_WRITE_GGS,
-+	IOCTL_READ_GGS,
-+	IOCTL_WRITE_PGGS,
-+	IOCTL_READ_PGGS,
+@@ -277,6 +277,18 @@ enum pm_register_access_id {
+ 	CONFIG_REG_READ,
  };
  
- enum pm_query_id {
-@@ -319,6 +327,8 @@ struct zynqmp_eemi_ops {
- int zynqmp_pm_invoke_fn(u32 pm_api_id, u32 arg0, u32 arg1,
- 			u32 arg2, u32 arg3, u32 *ret_payload);
- 
-+int zynqmp_pm_ggs_init(struct kobject *parent_kobj);
++enum zynqmp_pm_shutdown_type {
++	ZYNQMP_PM_SHUTDOWN_TYPE_SHUTDOWN,
++	ZYNQMP_PM_SHUTDOWN_TYPE_RESET,
++	ZYNQMP_PM_SHUTDOWN_TYPE_SETSCOPE_ONLY,
++};
 +
- #if IS_REACHABLE(CONFIG_ARCH_ZYNQMP)
- const struct zynqmp_eemi_ops *zynqmp_pm_get_eemi_ops(void);
- #else
++enum zynqmp_pm_shutdown_subtype {
++	ZYNQMP_PM_SHUTDOWN_SUBTYPE_SUBSYSTEM,
++	ZYNQMP_PM_SHUTDOWN_SUBTYPE_PS_ONLY,
++	ZYNQMP_PM_SHUTDOWN_SUBTYPE_SYSTEM,
++};
++
+ /**
+  * struct zynqmp_pm_query_data - PM query data
+  * @qid:	query ID
 -- 
 2.7.4
 
