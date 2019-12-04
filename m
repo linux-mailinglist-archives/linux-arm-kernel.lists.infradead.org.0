@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D631112144
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 03:09:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BFCB11214B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 03:11:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pcISEDmIFcFYRRteeGPn8ugxNlPF9pQKzCiWYaKt7hA=; b=VP1DNQY+5i0Gx2
-	A04jPFIM5/MdZFOgjxGQbPTu2DlYth7gmrs0pqmld2o1mftLm283/jAkGTNXh2dBDOk5l7M1ivXKU
-	QYymAkKwuIMHv90ng0liE6+gmC3ygVm8Zd9ezu3ts9SCse+IvRZjB0zF2Jj8OWMoCHbrXlLLeI2Qs
-	QQa5oCsZ4EISwJtzfERaL7KjOips0fdb0gKbj/kX+NloIussA3wU2yyiG79RIAxRnBenLmD+7PO9R
-	FDUzzCy9rmhpYcw4AaQpeVK6d8MB03/9wnZW3pmJ1M5DOxBFvWLfImO9mDXgUC2dRibHIhsQ+jB4j
-	f6bJunwOGmHvgWKIOAnA==;
+	List-Owner; bh=LJVBDElPeoxd4BdhHdxXHTyc514nWaMQYcBo9k1EJJ8=; b=eUsH/KijnsoLjL
+	oV391nXYSwCxLoPSUMQmOQmQYvg3aHohRQIGGurYeBm0s4lBXBwE5R06QwHHWWD4al4QRpGseapjR
+	bgrS7hqjyisH5g6DJPVEM1S+9IKXGFDJa6vSctPkfiy86aS5QRcuKCVA3EyGe0XwU/QlDs1qKColC
+	ySr0T0oGkH0d0JEMEH7u77JeD9Dvdu3qQ1vdOVndKscQCk552TMxgr8WI+5ScFqUS+fSTasNSWwkP
+	YY3/2leJjVXWRENd9zbrW0FCZsWWGVFQHcEIVgXmNeSkBJ6f5TzXfYBlkXXgekL4EY7L8aXSLPRs9
+	0XVYvmGwBoBnvXsos2eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icK6U-0001Tl-DU; Wed, 04 Dec 2019 02:09:22 +0000
+	id 1icK8t-00033x-7J; Wed, 04 Dec 2019 02:11:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icK6M-0001TJ-Jr
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 02:09:17 +0000
+ id 1icK8l-00033L-1r
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 02:11:44 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A41BA2073F;
- Wed,  4 Dec 2019 02:09:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A74392073B;
+ Wed,  4 Dec 2019 02:11:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575425354;
- bh=MwqYo4RRZ92pnn9/A5na8fKFS1ws/KWULDNPnQH3x+k=;
+ s=default; t=1575425502;
+ bh=qAy1hN6YKBjhMpGjB5AiKNMsv5Q5YjwTmEYFHrcRW0Q=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=po6u/JHi9zBASwwE+8YDyFIbg/rFwu1WJZL2a1tTYogmpszh0d2ckfXBLNQQhsYrN
- VjMiSVlIKoOl24akSNljaTUoF6r/+WZB5LtgDhE7Jyt/A/p9TZezbqOq5KvTTZwAZu
- dYSGHZzqnKCic4QWpcjO4z8NH2p/Yk5gTGeGA+Po=
-Date: Wed, 4 Dec 2019 10:09:07 +0800
+ b=PHjT8SSfzvC09abV0WTQ/shpatoyLQpMGrbWV/o18FMjcM9Rdj0QIlX4hbCmFVOUv
+ 0Ph8w9m4TVX/nkU/2V0al9OuBXIephrzKxaVVhoxyEe+NRKVq1pY1n9olKS9veorJY
+ 6+c0xjDfMHR9YK+6EoGVeJPNuhgJWrll2fKzMuJM=
+Date: Wed, 4 Dec 2019 10:11:35 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Stefan Roese <sr@denx.de>
-Subject: Re: [PATCH v2] ARM: dts: imx6ul: imx6ul-14x14-evk.dtsi: Fix SPI NOR
- probing
-Message-ID: <20191204020905.GL9767@dragon>
-References: <20191105130456.9459-1-sr@denx.de>
+To: Adam Ford <aford173@gmail.com>
+Subject: Re: [PATCH] ARM: imx_v6_v7_defconfig: Enable TOUCHSCREEN_ILI210X
+Message-ID: <20191204021135.GM9767@dragon>
+References: <20191105134245.22568-1-aford173@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191105130456.9459-1-sr@denx.de>
+In-Reply-To: <20191105134245.22568-1-aford173@gmail.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_180914_668498_CE221B09 
-X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-CacheID: sfid-20191203_181143_118352_52F6137F 
+X-CRM114-Status: UNSURE (   8.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,24 +77,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>,
- Frieder Schrempf <frieder.schrempf@kontron.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: adam.ford@logicpd.com, Sascha Hauer <s.hauer@pengutronix.de>,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Nov 05, 2019 at 02:04:56PM +0100, Stefan Roese wrote:
-> Without this "jedec,spi-nor" compatible property, probing of the SPI NOR
-> does not work on the NXP i.MX6ULL EVK. Fix this by adding this
-> compatible property to the DT.
+On Tue, Nov 05, 2019 at 07:42:45AM -0600, Adam Ford wrote:
+> The imx6q-logicpd board supports an LCD with an ili2117
+> touchscreen controller.
 > 
-> Fixes: 7d77b8505aa9 ("ARM: dts: imx6ull: fix the imx6ull-14x14-evk configuration")
-> Signed-off-by: Stefan Roese <sr@denx.de>
-> Reviewed-by: Fabio Estevam <festevam@gmail.com>
-> Reviewed-by: Frieder Schrempf <frieder.schrempf@kontron.de>
-> Cc: Shawn Guo <shawnguo@kernel.org>
+> This patch enables the TOUCHSCREEN_ILI210X which will support
+> the ili2117.
+> 
+> Signed-off-by: Adam Ford <aford173@gmail.com>
 
 Applied, thanks.
 
