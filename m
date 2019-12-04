@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 944EE11213B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 03:02:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D631112144
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 03:09:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8cHnFXNLHpu9KVM9q6V0JAa0dZs5VAmqsyel2tcMvSw=; b=Bwyg/qxfvvLIvp
-	AbSDEMU4tnsTl8LBRklWSgWsJUyct3XEt4DPzfU0GP0zdL/+MJHFQqYN+pYZ5cvLfno5VBx9NfxN7
-	02LFFt/L1DwT8DORzFyXe5V/ACTVp78Apzu0hnqcfMGJu9lAFYVeGZntD2TpZ1ekvHx8worvtIuWa
-	9nCkZXLIGf9uDbfcmwXLCb/ws44nJmimfLGuHVQApeDGqYxia0dYmBWoG2rGaYK3R3MkpxI+NYZ+5
-	gbl7QOKJiMDXedaU1178pEGlhW9fr0re9a7POZy6eC2thqV90v/z2J5JoceXpXTkyZ8chW/bFNcx2
-	4cb1x2krv0Yvc0VJQi3Q==;
+	List-Owner; bh=pcISEDmIFcFYRRteeGPn8ugxNlPF9pQKzCiWYaKt7hA=; b=VP1DNQY+5i0Gx2
+	A04jPFIM5/MdZFOgjxGQbPTu2DlYth7gmrs0pqmld2o1mftLm283/jAkGTNXh2dBDOk5l7M1ivXKU
+	QYymAkKwuIMHv90ng0liE6+gmC3ygVm8Zd9ezu3ts9SCse+IvRZjB0zF2Jj8OWMoCHbrXlLLeI2Qs
+	QQa5oCsZ4EISwJtzfERaL7KjOips0fdb0gKbj/kX+NloIussA3wU2yyiG79RIAxRnBenLmD+7PO9R
+	FDUzzCy9rmhpYcw4AaQpeVK6d8MB03/9wnZW3pmJ1M5DOxBFvWLfImO9mDXgUC2dRibHIhsQ+jB4j
+	f6bJunwOGmHvgWKIOAnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icK0D-0007kT-GM; Wed, 04 Dec 2019 02:02:53 +0000
+	id 1icK6U-0001Tl-DU; Wed, 04 Dec 2019 02:09:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icK06-0007kA-Fp
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 02:02:48 +0000
+ id 1icK6M-0001TJ-Jr
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 02:09:17 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 741A12073B;
- Wed,  4 Dec 2019 02:02:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A41BA2073F;
+ Wed,  4 Dec 2019 02:09:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575424966;
- bh=6JGhp6hKDiAgsLbhCIIDGicEe/fmHWv0q/ZPw2vNp+A=;
+ s=default; t=1575425354;
+ bh=MwqYo4RRZ92pnn9/A5na8fKFS1ws/KWULDNPnQH3x+k=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=FVULFVOJUSyS1NR+SsbcWjV/cv/rpuOIfNNYzZ1AqVWzoEQ0JkJnLjeIWr9IERPD1
- dyI50ic2/u/Yfe/DBB/sqpLyva1fXVdKr96EhJesB8b51fHFzm4vyZS0uku63DKfmF
- Xeg2R4CQpaZTRrc/a2kLPqoV95VFdaO7p5fJrqPo=
-Date: Wed, 4 Dec 2019 10:02:37 +0800
+ b=po6u/JHi9zBASwwE+8YDyFIbg/rFwu1WJZL2a1tTYogmpszh0d2ckfXBLNQQhsYrN
+ VjMiSVlIKoOl24akSNljaTUoF6r/+WZB5LtgDhE7Jyt/A/p9TZezbqOq5KvTTZwAZu
+ dYSGHZzqnKCic4QWpcjO4z8NH2p/Yk5gTGeGA+Po=
+Date: Wed, 4 Dec 2019 10:09:07 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <anson.huang@nxp.com>,
- Vincent Guittot <vincent.guittot@linaro.org>
-Subject: Re: [PATCH] ARM: dts: imx7ulp: Add cpu clock-frequency property
-Message-ID: <20191204020236.GK9767@dragon>
-References: <1572918578-13544-1-git-send-email-Anson.Huang@nxp.com>
- <20191202134748.GB21897@dragon>
- <DB3PR0402MB39164DF380E6B13558E758E7F5420@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+To: Stefan Roese <sr@denx.de>
+Subject: Re: [PATCH v2] ARM: dts: imx6ul: imx6ul-14x14-evk.dtsi: Fix SPI NOR
+ probing
+Message-ID: <20191204020905.GL9767@dragon>
+References: <20191105130456.9459-1-sr@denx.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <DB3PR0402MB39164DF380E6B13558E758E7F5420@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <20191105130456.9459-1-sr@denx.de>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_180246_547444_4099FEAE 
-X-CRM114-Status: GOOD (  19.26  )
+X-CRM114-CacheID: sfid-20191203_180914_668498_CE221B09 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,67 +78,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Fabio Estevam <festevam@gmail.com>,
+ Frieder Schrempf <frieder.schrempf@kontron.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+ Vincent
+On Tue, Nov 05, 2019 at 02:04:56PM +0100, Stefan Roese wrote:
+> Without this "jedec,spi-nor" compatible property, probing of the SPI NOR
+> does not work on the NXP i.MX6ULL EVK. Fix this by adding this
+> compatible property to the DT.
+> 
+> Fixes: 7d77b8505aa9 ("ARM: dts: imx6ull: fix the imx6ull-14x14-evk configuration")
+> Signed-off-by: Stefan Roese <sr@denx.de>
+> Reviewed-by: Fabio Estevam <festevam@gmail.com>
+> Reviewed-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+> Cc: Shawn Guo <shawnguo@kernel.org>
 
-On Tue, Dec 03, 2019 at 01:09:22AM +0000, Anson Huang wrote:
-> 
-> > Subject: Re: [PATCH] ARM: dts: imx7ulp: Add cpu clock-frequency property
-> > 
-> > On Tue, Nov 05, 2019 at 09:49:38AM +0800, Anson Huang wrote:
-> > > Add "clock-frequency" property to avoid below warning on i.MX7ULP:
-> > >
-> > > [    0.011762] /cpus/cpu@0 missing clock-frequency property
-> > >
-> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > > ---
-> > >  arch/arm/boot/dts/imx7ulp.dtsi | 1 +
-> > >  1 file changed, 1 insertion(+)
-> > >
-> > > diff --git a/arch/arm/boot/dts/imx7ulp.dtsi
-> > > b/arch/arm/boot/dts/imx7ulp.dtsi index d37a192..87b2237 100644
-> > > --- a/arch/arm/boot/dts/imx7ulp.dtsi
-> > > +++ b/arch/arm/boot/dts/imx7ulp.dtsi
-> > > @@ -41,6 +41,7 @@
-> > >  			compatible = "arm,cortex-a7";
-> > >  			device_type = "cpu";
-> > >  			reg = <0>;
-> > > +			clock-frequency = <500210526>;
-> > 
-> > I cannot find the binding doc for this property.  What is the definition of it,
-> > the maximum frequency that the cpu could possibly run at?
-> 
-> 
-> The code is as below, maybe the property is missing from the beginning of this code,
-> this property should mean the current frequency of CPU running at I think:
-> 
-> arch/arm/kernel/topology.c
-> 
-> 122                 rate = of_get_property(cn, "clock-frequency", &len);
-> 123                 if (!rate || len != 4) {
-> 124                         pr_err("%pOF missing clock-frequency property\n", cn);
-> 125                         continue;
-> 126                 }
-
-Yes, I can find the code, but not bindings for it.  Considering
-frequency of a CPU can be scaled in a quite wide range, we need
-a clear understanding on this property.  IIUIC, the property is used to
-calculate the capacity of CPU, it should be the maximum frequency the
-CPU could possibly scale to?
-
-Shawn
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
