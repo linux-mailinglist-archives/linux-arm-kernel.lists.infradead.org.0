@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7091E1129BE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 11:59:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9F6F1129BF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 11:59:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=isVUAernCtOcMJADkmsF9WvCIf3ZtK7pusKp52hEtgU=; b=Dr6ZJieDFg6gbmKtbdJK63wbQq
-	7IKftDusLFSfUbovn1vcVhrZJIfBmC9+Me/K+wUz5XWHRFCeWCMA2LMDohnaJsTijv8Hm8rvBricd
-	GkBvYZ6RawlPyLXxS7ITxZ4yWtB2BrJ2bR9MMLCibrVB4cRofTuawUm6UzMyZaGnlo5Xi2Jugk0EH
-	+UfyPY2UrcPHQyO6hZDKryTdghIrYlLXyO0ZMXrI7q4CFEYcrM4c7sC0G5jyHiVTdgZRlage5S1nh
-	Yj4zEf2KiNjRMgEF2430EpUJy20EeCxBeA5Pt9PVCVAwsYECKVRvkKRewBcwRk8xlSNziTZ7PK12a
-	GSNX4QyA==;
+	bh=vYwYAFneciqIeLtjgq2r1tbYX53xN6IqZbU8FBLFU/k=; b=VCLHlBOXAbXTj42ImORsykPAEO
+	rnEbEgjfiGhoamcmVBqRkTPBC4luIb8PNamsUqQTUQdLMFioto6uLFkU+Qk3pWJ6zJMBlvMnv61SO
+	rS3YRW2mHZ2vbWsgKrczOGgX0xtWDjTT80x7RcCFGrNQwqL25cDMH12wxGA3LqilZleZCdPuCWhD8
+	sBctrlPzVZ4IxyjLCXm/dNiyX9dB9cclj5x2GaM/pzcZapv1FslIKMDeqY1KnNeK4zXW8IofjnXbB
+	vCy9Qwjq/W3YOtFPlPsQwWr4i84rfp6SqM27GuzkehT7tDuSj+ZLUjVJ1dJSweW8nhXZJTPIDOse1
+	pFryRq6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icSN8-0007er-Pf; Wed, 04 Dec 2019 10:59:06 +0000
+	id 1icSNO-0007tw-AV; Wed, 04 Dec 2019 10:59:22 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icSMd-0007G9-9m
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 10:58:36 +0000
+ id 1icSMd-0007GS-Es
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 10:58:38 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1157F20117A;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 24D41201174;
  Wed,  4 Dec 2019 11:58:34 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 51EFE201174;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 64B2A201177;
  Wed,  4 Dec 2019 11:58:30 +0100 (CET)
 Received: from lsv03124.swis.in-blr01.nxp.com (lsv03124.swis.in-blr01.nxp.com
  [92.120.146.121])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id C61E3402FB;
- Wed,  4 Dec 2019 18:58:23 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 5B04240305;
+ Wed,  4 Dec 2019 18:58:24 +0800 (SGT)
 From: Ashish Kumar <Ashish.Kumar@nxp.com>
 To: devicetree@vger.kernel.org, robh@kernel.org, mark.rutland@arm.com,
  shawnguo@kernel.org
-Subject: [Patch v2 3/5] arm64: dts: ls1046a: Update QSPI node properties of
- ls1046ardb
-Date: Wed,  4 Dec 2019 16:28:16 +0530
-Message-Id: <1575457098-18368-4-git-send-email-Ashish.Kumar@nxp.com>
+Subject: [Patch v2 4/5] arm64: dts: ls208x: Remove non-compatible driver
+ device from qspi node
+Date: Wed,  4 Dec 2019 16:28:17 +0530
+Message-Id: <1575457098-18368-5-git-send-email-Ashish.Kumar@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1575457098-18368-1-git-send-email-Ashish.Kumar@nxp.com>
 References: <1575457098-18368-1-git-send-email-Ashish.Kumar@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_025835_472968_16E50794 
-X-CRM114-Status: UNSURE (   7.92  )
+X-CRM114-CacheID: sfid-20191204_025835_633012_46DC8C11 
+X-CRM114-Status: UNSURE (   8.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,58 +78,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update the compatibles to use jedec,spi-nor.
-Also update the max-frequency to 50MHz and spi-tx-bus-width to 1.
-
-Align the QSPI node with other similar boards like(ls1088ardb,
-ls1046afrwy) as per bindings.
+Since device properties are different, so remove fsl, ls1021a-qspi.
+ls1021a-qspi is to be used only for Big-endian verion of QSPI controller
 
 Signed-off-by: Kuldeep Singh <kuldeep.singh@nxp.com>
 Signed-off-by: Ashish Kumar <Ashish.Kumar@nxp.com>
 ---
 v2:
 Rebased to top
-Use "jedec,spi-nor" in compatibles
 
- .../arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-index 0c742befb761..dbc23d6cd3b4 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
-@@ -101,23 +101,23 @@
- &qspi {
- 	status = "okay";
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi
+index 7a0be8eaa84a..8b2fd278844b 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls208xa.dtsi
+@@ -619,7 +619,7 @@
  
--	qflash0: flash@0 {
--		compatible = "spansion,m25p80";
-+	s25fs512s0: flash@0 {
-+		compatible = "jedec,spi-nor";
- 		#address-cells = <1>;
- 		#size-cells = <1>;
--		spi-max-frequency = <20000000>;
-+		spi-max-frequency = <50000000>;
- 		spi-rx-bus-width = <4>;
--		spi-tx-bus-width = <4>;
-+		spi-tx-bus-width = <1>;
- 		reg = <0>;
- 	};
- 
--	qflash1: flash@1 {
--		compatible = "spansion,m25p80";
-+	s25fs512s1: flash@1 {
-+		compatible = "jedec,spi-nor";
- 		#address-cells = <1>;
- 		#size-cells = <1>;
--		spi-max-frequency = <20000000>;
-+		spi-max-frequency = <50000000>;
- 		spi-rx-bus-width = <4>;
--		spi-tx-bus-width = <4>;
-+		spi-tx-bus-width = <1>;
- 		reg = <1>;
- 	};
- };
+ 		qspi: spi@20c0000 {
+ 			status = "disabled";
+-			compatible = "fsl,ls2080a-qspi", "fsl,ls1021a-qspi";
++			compatible = "fsl,ls2080a-qspi";
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
+ 			reg = <0x0 0x20c0000 0x0 0x10000>,
 -- 
 2.17.1
 
