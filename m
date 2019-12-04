@@ -2,69 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 392D8112CB6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 14:36:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2337A112CD9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Dec 2019 14:46:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gMPhL9eTk4rCBaOg13upfiY+PEW5ZYdNxpJG0+Ww44A=; b=Y2OqV3JQjxCnWie35O4HN3aJU
-	BrDJRArl/SMtGrd/poeLkJNrM4GEZp3mjx07V7xJsQL5im8mEtnl+693kgY2dVfzGaMuNVLZW+WDP
-	/A+xJTXhueRCKzZWaad9QyeFT5uhh8nFbsQPpxCrAWe2RZiadhVWjgMxKw4LeuGpdo6xL8uKNkPob
-	XN+APby6EmNZnw0XwBZACQ+09/ayjSPxmhb6nhQ/yRT2DkaYPYh1cN7JWg6lQE2j7wZKczosDVLDa
-	oeVTyocZHaGoLCVNvIpfnL1+/Hso0g/Ek53FT9anmtmPaogI9Me5T7p3UONiBxhGigBO/IJp/fQle
-	zmJWoOi0Q==;
+	 bh=sG5l86hZ/ili2AUldvqCBMb7bwRiUdoNHWyUD2Vxw3c=; b=RLc01ROaytglTlVz3U08DCRvo
+	crHs2BGxnTqz9AjKinMhz0SWdI1lr9gfTjbPaKK523uu2L1tFhoQAUxJ0GgHm8dffyScvy1pVWtwl
+	Y/rS7KOQTbgALlAnio1PK4Gy2rAIHr7k+HLwU+rDIOfsFcK9G7GS4Q94eeAqk6CjEFDqu70qmVQQF
+	59dBRcAf6Yj8HRbnspE+pPSY8/h3sdkpmZm8yGG3foB1YpdsulaW2UC4j5SoWgkHikuHoCSfh2DLE
+	XtT92v20gQHN8fXaEz9LaZO/ci+FnbVH1lxDDh4PpU/5QnvfODOxrOMTjJ7bHTbMShldg+tTBFKrW
+	yHXw7JwoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icUpA-0001yB-Q2; Wed, 04 Dec 2019 13:36:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1icUzP-0005lm-Ju; Wed, 04 Dec 2019 13:46:47 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icUp3-0001xl-Ov
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 13:36:07 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A1CA220803;
- Wed,  4 Dec 2019 13:36:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575466564;
- bh=hhS3x/nQokGlDFdYclj2m2H/jf3hjjXulqb9PxxX57Q=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=VM3bKeJVv1dMN6BeNojFvP27GvGyoglch+wwSXnXDFY/s5xnZYluPEgtqHP1pLHBI
- prruJCVl6wz31+G2JpEHajZiBcCrji9q39He3EbAsK9BXkpwSrx5p+SQ1JDEwO4TWm
- sgG9X/iJN40+bL1pbEAPl8nAtd7FykAUiOZeYSMg=
-Date: Wed, 4 Dec 2019 14:36:00 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Jagan Teki <jagan@amarulasolutions.com>
-Subject: Re: [PATCH v12 1/7] dt-bindings: sun6i-dsi: Document A64 MIPI-DSI
- controller
-Message-ID: <20191204133600.gnv6dnhk6upe7xod@gilmour.lan>
-References: <20191203134816.5319-1-jagan@amarulasolutions.com>
- <20191203134816.5319-2-jagan@amarulasolutions.com>
+ id 1icUzG-0005l2-SW
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Dec 2019 13:46:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ViQdiD3wVU6FIgxwAalhRGBEIqZeLZwd4vUTlshOCAA=; b=AbQgCinNELw75ahLFYpi+SBwU
+ 1arhNDg/VeUhIcE+d3iCkTYNd2/5K8TdqXygTYQgB/M92x5n4a68SqCy29TSgPNr5Gqu6rrIxfG7y
+ ZpdAGvJUmpyfqomy5ideB/u5ZvH+brfN7UxUqx2fSr9bkfQCsBDW2wgAhLGMyCY4CptC4=;
+Received: from fw-tnat-cam6.arm.com ([217.140.106.54]
+ helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1icUzA-0000ar-DG; Wed, 04 Dec 2019 13:46:32 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id 92FE3D003B4; Wed,  4 Dec 2019 13:46:31 +0000 (GMT)
+Date: Wed, 4 Dec 2019 13:46:31 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
+ selection documentation
+Message-ID: <20191204134631.GT1998@sirena.org.uk>
+References: <20191129172537.31410-1-m.felsch@pengutronix.de>
+ <20191129172537.31410-4-m.felsch@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <20191203134816.5319-2-jagan@amarulasolutions.com>
+In-Reply-To: <20191129172537.31410-4-m.felsch@pengutronix.de>
+X-Cookie: Cleanliness is next to impossible.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_053605_852786_7D07B183 
-X-CRM114-Status: GOOD (  18.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191204_054638_965212_E900CA60 
+X-CRM114-Status: GOOD (  11.27  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,122 +81,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, linux-sunxi <linux-sunxi@googlegroups.com>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>, michael@amarulasolutions.com,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============3512693852480245867=="
+Cc: devicetree@vger.kernel.org, support.opensource@diasemi.com,
+ linux-aspeed@lists.ozlabs.org, linux-gpio@vger.kernel.org, andrew@aj.id.au,
+ linus.walleij@linaro.org, lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
+ bgolaszewski@baylibre.com, robh+dt@kernel.org, joel@jms.id.au,
+ kernel@pengutronix.de, lee.jones@linaro.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4283351941782081758=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3512693852480245867==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="yzyy5rpvlreslc45"
+--===============4283351941782081758==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="MOeiELSuYwpLEKvX"
 Content-Disposition: inline
 
 
---yzyy5rpvlreslc45
+--MOeiELSuYwpLEKvX
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Tue, Dec 03, 2019 at 07:18:10PM +0530, Jagan Teki wrote:
-> The MIPI DSI controller in Allwinner A64 is similar to A33.
->
-> But unlike A33, A64 doesn't have DSI_SCLK gating so it is valid
-> to have separate compatible for A64 on the same driver.
->
-> DSI_SCLK uses mod clock-names on dt-bindings, so the same
-> is not required for A64.
->
-> On that note
-> - A64 require minimum of 1 clock like the bus clock
-> - A33 require minimum of 2 clocks like both bus, mod clocks
->
-> So, update dt-bindings so-that it can document both A33,
-> A64 bindings requirements.
->
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> ---
-> Changes for v12:
-> - Use 'enum' instead of oneOf+const
->
->  .../display/allwinner,sun6i-a31-mipi-dsi.yaml | 20 +++++++++++++++++--
->  1 file changed, 18 insertions(+), 2 deletions(-)
->
-> diff --git a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> index dafc0980c4fa..b91446475f35 100644
-> --- a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> +++ b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> @@ -15,7 +15,9 @@ properties:
->    "#size-cells": true
->
->    compatible:
-> -    const: allwinner,sun6i-a31-mipi-dsi
-> +    enum:
-> +      - allwinner,sun6i-a31-mipi-dsi
-> +      - allwinner,sun50i-a64-mipi-dsi
->
->    reg:
->      maxItems: 1
-> @@ -24,6 +26,8 @@ properties:
->      maxItems: 1
->
->    clocks:
-> +    minItems: 1
-> +    maxItems: 2
->      items:
->        - description: Bus Clock
->        - description: Module Clock
-> @@ -63,13 +67,25 @@ required:
->    - reg
->    - interrupts
->    - clocks
-> -  - clock-names
->    - phys
->    - phy-names
->    - resets
->    - vcc-dsi-supply
->    - port
->
-> +allOf:
-> +  - if:
-> +      properties:
-> +         compatible:
-> +           contains:
-> +             const: allwinner,sun6i-a31-mipi-dsi
-> +      then:
-> +        properties:
-> +          clocks:
-> +            minItems: 2
-> +        required:
-> +          - clock-names
-> +
+On Fri, Nov 29, 2019 at 06:25:34PM +0100, Marco Felsch wrote:
 
-Your else condition should check that the number of clocks items is 1
-on the A64
+> +  Optional regulator device-specific properties:
+> +  - dlg,vsel-sense-gpios : A GPIO reference to a local general purpose input,
+> +    the datasheet calls it GPI. The regulator sense the input signal and select
+> +    the active or suspend voltage settings. If the signal is active the
+> +    active-settings are applied else the suspend-settings are applied.
+> +    Attention: Sharing the same GPI for other purposes or across multiple
+> +    regulators is possible but the polarity setting must equal.
 
-Maxime
+I'm really confused by this.  As far as I understand it it seems
+to be doing pinmuxing on the chip using the GPIO bindings which
+is itself a bit odd and I don't see anything here that configures
+whatever sets the state of the pins.  Don't we need another GPIO
+to set the vsel-sense inputs on the PMIC?
 
---yzyy5rpvlreslc45
+--MOeiELSuYwpLEKvX
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXee2QAAKCRDj7w1vZxhR
-xRIbAPsHrDR0oltRHkGKak8qtw0Ade9i9chYBdVFnWgbieqG2gEAt+EUUqKul0A7
-TU9F3HI8vSkhOj8LTLq1pThpUu6Hcgo=
-=6XAi
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3nuLYACgkQJNaLcl1U
+h9B8RAf8DVq4ZX6Z0Svxmo1m2U0I4WvgeY9JnnhpeCAOUE6ILw5DFoy3RreO8x0X
+7QsCRigQAT3V+NA79pg9/49e2Xpz6a8UnPu/E6OsdT/GJwgZn+2Qyt6PFwS/sRzN
+7vnp0WKEQsClbGI1jBRMaI4SyZqtbET8XAoF24LHzdZFfamgsUqCgKVq53m9PjrW
+d8BHHSEh6gv+aVBeKb7tTpG3gAnRPnUTZSPBGIH+gNmqnNx0zO6Dq+fGXyeZLTLc
+2MPvW/hE/QUvSFshLtwgs1Te+vD7k2t1F3BmdwC1wnpNHs+XEsBtGu+IyZsB6TWL
+j7TDrp/slISRAbezy30W/na8SJNr9w==
+=gb7u
 -----END PGP SIGNATURE-----
 
---yzyy5rpvlreslc45--
+--MOeiELSuYwpLEKvX--
 
 
---===============3512693852480245867==
+--===============4283351941782081758==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -202,5 +147,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3512693852480245867==--
+--===============4283351941782081758==--
 
