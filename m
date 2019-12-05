@@ -2,84 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EBDA114704
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 19:40:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F59D11474A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 19:46:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=p/DxEWa3Fci1OFPW6hMN4FLj1Sg7SsINL4vBMcgS054=; b=CzP0a1pToEjll9IFjhdS44PyI
-	wZZzDkAMc4K1451UCignSbWuhuklEabt8gDVGOJIv2875TjyM87YboXe52gGdyPSNOnyo31NbBkl7
-	Nflky2iyCdBNZfvv2stUqVn0Ec99i/OyTP/GaSCNekfVvqhAq8IniNEOodR7ymHqA+72guHh4ecFw
-	3fdpnyB6y1poyLvZAYhCYSY0YuAH7FLrRXxDpG6VIbGENB2UVwN/DfeGiRQ+gcm/HerIs4Pl74xrm
-	z5iIaKitEKTsdQM48MDKa5Dto5gGw9uTJBH4TUOTnh33txkD90VFk69BCLk3msDA9mwaNiPEf9GtJ
-	JEFJ0ymOw==;
+	 bh=PDNQifcDwCmCXrriBx454RUwFKMaH1msJ2LRKw1y79s=; b=VlE1R/vlcQWZHv8w1LsK1cEG/
+	vX2GW672JzzCnBiLPKLIhGZMbxLuW+AIqrZXnGwMPHCJMnC4w0OMjH+Wj+V2ABJ4crFtIMuE0xKQy
+	FXjSkcnkhy/RHOAYWRy7m9kUVB4drKw5DpMlqZzAmt+McUjlOJSPKz7hs/T18QCo59EblsWe4frYr
+	3rAjiSrxp5kX+NZK26oj2LjOUoJQStdoRuNU+Kk0MEBQmvxDXzgu1+5RBYt3XKyKW2CzLZblZH1gv
+	QnGTw+iq2k7p1wOO0SmEvNei1e4oamV9oeGQwsETd2g0c+mJpn0Mn/HSdIHGgoRO2zzzGO0ApVmvi
+	dJYaSnQFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icw3b-0001Xi-OT; Thu, 05 Dec 2019 18:40:55 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1icw99-0003rj-Fn; Thu, 05 Dec 2019 18:46:39 +0000
+Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icw3Q-0001Vv-Ee
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 18:40:46 +0000
-Received: by mail-qk1-x743.google.com with SMTP id m188so4236863qkc.4
+ id 1icw8z-0003pt-Gu
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 18:46:31 +0000
+Received: by mail-qv1-xf43.google.com with SMTP id d17so1694399qvs.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Dec 2019 10:40:43 -0800 (PST)
+ Thu, 05 Dec 2019 10:46:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=ndufresne-ca.20150623.gappssmtp.com; s=20150623;
  h=message-id:subject:from:to:cc:date:in-reply-to:references
  :user-agent:mime-version;
- bh=qNywU4SuN1/j02xrDEkCFwu3QGTs/dxNT1LnQRfHtF8=;
- b=SWsbU0RX9ejp98wgbcUO3NGwdBv2+KoYM3HfmeqAgo8nCEfWewtIInTnZUSYZIek7X
- M6XLBVGdTI+ewA74G5hKH4aOqZoxm9bhxZaMBgR7hR/Xpfcs1mc2Yb+vAZjjJJTS7JQB
- QE32m7U20m4tLxwCDz9x056pCb686+kGalOthXrJgEY8Y4iTot3KxsG63fUJtg1GnOvk
- 6IQvCFh2GXQ8yVzWCma9yNbTgJXhTO3YhAblGG3QI6fSau/BCJucFOBrVzUI6k5FOgF6
- jzb2hIZwKpm4vSTl2GsTvp8lIJNh9p0LOdFTemNptMOly+ho6idb7VVmIR6bVJw9AYjR
- KjyQ==
+ bh=DBLlVwl81NMlb0aP3FcIvdKEYbuLkV1CdHBSyJ493Pw=;
+ b=hkc1cVscoLuLFyRuJErYLgh2SIH7MyXImjnoQDMRzfucBAKAVnTXQMUWrqGv9VK8wE
+ IncdntU0YY6F5Xi0Lq2zh6FFMhobPj5YBQgisevqR5dBAZcAgH4SVe5vBvhmq9C4EGto
+ Sz75EXzlcJ0Budgg2nGd0HvZNXbzYp9gAjdSUUqiw7/lQNgD8fVcfR5ZgTJZhnqEB57i
+ ATlcn8nS3D6fFiQL7G5rNkmLCOZdUMek2HBVXiOdSA/0+n198gVjRA14a1ntGg9N5O2Q
+ TteljOneIVYmbkJNhVESHKQONSl/hBvrUn2Ed6GNJZYuxHd1ZzHCr1k+ghOLJbDSSGTr
+ wRJg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
  :references:user-agent:mime-version;
- bh=qNywU4SuN1/j02xrDEkCFwu3QGTs/dxNT1LnQRfHtF8=;
- b=e4AsaAJbq4XnWEJRyyNoCm6gndza1ho3z8BGz+Fy6vPdOjx8hEQSiKnXQRtEBS1wTL
- gJF9+WJHfCq+du/ysYiwDiHjKui7dw3w/qHEokzy4rvETzZJS7nuAmLvo6E9XYn8T2kc
- OMEe5TbRw1Ug3sw3PYGrls8s10SzvKMCf41YgCVM4aEmtZsywoZJMojSWvqnX/khC+n8
- Sbyvc8VCd1ZIQBU1hVObls+iyXm2MxWpMgbtW2J0FJq5nq32AHoFNnDM0Mvxk+IQ6OOP
- AHFuxVy37sG3kNp2Zf8Bg783EDAtD2NIy3s5yYc0S60Z8iRlzLh1yuavX3mQtOPbPYL7
- HKuQ==
-X-Gm-Message-State: APjAAAXwrGehjYiJWTtXYWSa9Af7Mx4tHNoFKJgbTyKXMDhCc4FFmaRb
- U6mlaIitYf6D45Zp8fL8hLw7wg==
-X-Google-Smtp-Source: APXvYqysLcRjcDifiharFt6ZbX+CalXc/vNS0LASHBpDag8561+j3VZG6UcBTwQL3KvSwnUZvv7oEA==
-X-Received: by 2002:a05:620a:1366:: with SMTP id
- d6mr10102265qkl.86.1575571242801; 
- Thu, 05 Dec 2019 10:40:42 -0800 (PST)
+ bh=DBLlVwl81NMlb0aP3FcIvdKEYbuLkV1CdHBSyJ493Pw=;
+ b=i/S+XzMiA6gDQ5pRRdArWY3430tKhGuzPuVlGZoVpWVX6EP4r5POZlLBuy6HyQ7IAf
+ Ueuh2NHjrKtKhMpJ0r1JDfwUW07Xzxb+iVzQxjlTbWudyp1EzkBp5BmsdvpTT7Q/BnBr
+ ltKfx9I6d9hyZybVZqD+8+D0k97HWZX5kH2/KgnmqE1rFOZ5q5tX7YUfKVxGLPC6Hn98
+ hGEA/xu52yGvFVLxj9vvGGRS1genIuGjmTHP3YLetsWjjiH+z12yj/KkppogGHpPUzUc
+ nkFmtFh2NTzfbDH0e+sxBe3r/1ItcmgYeS3keljUC7bpG7bQm6BSdGNfRxPUaO4v1I5e
+ mnDw==
+X-Gm-Message-State: APjAAAW5ICvx/IPJ/DM0zIMVD/1kuYWy6Fg6/MgGOH1lPZcaaH3WJBlV
+ IxqOuWe2huiqXw1hFuHZBZW2rg==
+X-Google-Smtp-Source: APXvYqwZslsme8mZXtgHQTtywY/xfig2cTceccoRrNNrD7+BocXaGcGC6VS7isSrJm0ks1yPw/t9nQ==
+X-Received: by 2002:a0c:ff01:: with SMTP id w1mr8801425qvt.171.1575571586995; 
+ Thu, 05 Dec 2019 10:46:26 -0800 (PST)
 Received: from tpx230-nicolas ([2610:98:8005::650])
- by smtp.gmail.com with ESMTPSA id 13sm5118928qke.85.2019.12.05.10.40.41
+ by smtp.gmail.com with ESMTPSA id p35sm5349897qtd.12.2019.12.05.10.46.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 05 Dec 2019 10:40:41 -0800 (PST)
-Message-ID: <63a630f0760083d735ae02f5797ecd00530c7608.camel@ndufresne.ca>
-Subject: Re: [PATCH 4/5] media: meson: vdec: add VP9 input support
+ Thu, 05 Dec 2019 10:46:26 -0800 (PST)
+Message-ID: <1a570c6e07fcd0d0ddc401a3640dfca07f22304d.camel@ndufresne.ca>
+Subject: Re: [PATCH 0/5] media: meson: vdec: Add VP9 decoding support
 From: Nicolas Dufresne <nicolas@ndufresne.ca>
 To: Neil Armstrong <narmstrong@baylibre.com>, mchehab@kernel.org, 
  hans.verkuil@cisco.com
-Date: Thu, 05 Dec 2019 13:40:39 -0500
-In-Reply-To: <20191205092639.26330-1-narmstrong@baylibre.com>
+Date: Thu, 05 Dec 2019 13:46:24 -0500
+In-Reply-To: <60fa8f55-de40-13fa-b584-ad9f020cde12@baylibre.com>
 References: <20191205092454.26075-1-narmstrong@baylibre.com>
- <20191205092639.26330-1-narmstrong@baylibre.com>
+ <4ee20fdf5182b7bfe338e9ae044424b6125fed15.camel@ndufresne.ca>
+ <60fa8f55-de40-13fa-b584-ad9f020cde12@baylibre.com>
 User-Agent: Evolution 3.34.1 (3.34.1-1.fc31) 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_104044_637155_8D43D935 
-X-CRM114-Status: GOOD (  21.86  )
+X-CRM114-CacheID: sfid-20191205_104629_568829_A01C0522 
+X-CRM114-Status: GOOD (  24.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,257 +93,262 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Jourdan <mjourdan@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============9079864068627390907=="
+Cc: linux-amlogic@lists.infradead.org,
+ Stanimir Varbanov <stanimir.varbanov@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============7807764593397365987=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============9079864068627390907==
+--===============7807764593397365987==
 Content-Type: multipart/signed; micalg="pgp-sha1"; protocol="application/pgp-signature";
-	boundary="=-CCHdCL4ad1Oj02aHxg2r"
+	boundary="=-5ge5SRuKOXA9YMq6LNHq"
 
 
---=-CCHdCL4ad1Oj02aHxg2r
+--=-5ge5SRuKOXA9YMq6LNHq
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-Le jeudi 05 d=C3=A9cembre 2019 =C3=A0 10:26 +0100, Neil Armstrong a =C3=A9c=
+Le jeudi 05 d=C3=A9cembre 2019 =C3=A0 16:49 +0100, Neil Armstrong a =C3=A9c=
 rit :
-> From: Maxime Jourdan <mjourdan@baylibre.com>
+> On 05/12/2019 16:42, Nicolas Dufresne wrote:
+> > Hi Neil,
+> >=20
+> > Le jeudi 05 d=C3=A9cembre 2019 =C3=A0 10:24 +0100, Neil Armstrong a =C3=
+=A9crit :
+> > > Hello,
+> > >=20
+> > > This patchset aims to bring VP9 decoding support to Amlogic GXL, G12A=
+ & SM1
+> > > platforms for the amlogic stateful video decoder driver.
+> > >=20
+> > > With this, it passes v4l2-compliance with streaming on Amlogic G12A a=
+nd
+> > > Amlogic SM1 SoCs successfully using the stream at [1] with a fixed
+> > > pyv4l2compliance script for VP9 at [2].
+> > >=20
+> > > The original script kept the IVF headers in the stream, confusing the
+> > > decoder. The fixed script only extracts the payload from the IVF cont=
+ainer.
+> > >=20
+> > > The decoder has been tested using the Google CTS TestVectorsIttiam VP=
+9 yuv420
+> > > samples, passing 82 resolutions test streams, with 13 fails by pixel
+> > > differences and 3 timeouts.
+> >=20
+> > How do you handle resolution changes on delta frames ? It's a bit of a
+> > challenge since the reference frames are not at the same resolution as
+> > the frames to be decoded. This breaks the assumption for the resolution
+> > changes mechanism as described in the spec.
 >=20
-> Amlogic VP9 decoder requires an additional 16-byte payload before every
-> frame header.
+> I don't have a lot of experience on the subject, but in the vendor implem=
+entation,
+> they store the resolution along the reference frames and when loading all=
+ the
+> reference frames to the HW, the original resolution is also loaded.
+> But we don't handle it.
+>=20
+> > On stateless side, Boris is introducing DESTROY_BUFS, so we can free
+> > the references when they are not used anymore. But the reference are
+> > managed by userspace and are not queued. While on stateful side so far,
+> > it was assumed that references are queued, and the semantic of S_FMT is
+> > that it must apply to the entire set of queued buffer.
+>=20
+> yes
+>=20
+> > I think most streams will work and won't use this feature, but I'm
+> > worried that writing a compliant VP9 decoder is currently not possible.
+>=20
+> Indeed, but I don't have a clear enough view on the subject, and it doesn=
+'t seem
+> I have any test stream with such feature.
 
-When I first saw this patch, I assumed data_offset was to be used (like
-for venus), but I think what I'm reading is that the bitstream is
-bounce into another buffer (ring buffer ?) and for this reason such an
-offset is not needed. Maybe worth referring to how the header is being
-added (e.g. while copying the data) ?=20
+https://www.webmproject.org/vp9/levels/
+
+I believe in the performance suite, the FRM_RESIZE sample is what
+should exercise this.
 
 >=20
-> Signed-off-by: Maxime Jourdan <mjourdan@baylibre.com>
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> ---
->  drivers/staging/media/meson/vdec/esparser.c | 142 +++++++++++++++++++-
->  1 file changed, 138 insertions(+), 4 deletions(-)
+> Neil
 >=20
-> diff --git a/drivers/staging/media/meson/vdec/esparser.c b/drivers/stagin=
-g/media/meson/vdec/esparser.c
-> index adc5c1e81a4c..aeb68f6c732a 100644
-> --- a/drivers/staging/media/meson/vdec/esparser.c
-> +++ b/drivers/staging/media/meson/vdec/esparser.c
-> @@ -52,6 +52,7 @@
->  #define PARSER_VIDEO_HOLE	0x90
-> =20
->  #define SEARCH_PATTERN_LEN	512
-> +#define VP9_HEADER_SIZE		16
-> =20
->  static DECLARE_WAIT_QUEUE_HEAD(wq);
->  static int search_done;
-> @@ -74,14 +75,121 @@ static irqreturn_t esparser_isr(int irq, void *dev)
->  	return IRQ_HANDLED;
->  }
-> =20
-> +/**
-> + * VP9 frame headers need to be appended by a 16-byte long
+> > > This patchset depends on :
+> > > - G12A enablement at [3]
+> > > - SM1 enablement at [4]
+> > > - H.264 and compliance at [5]
+> > >=20
+> > > [1] https://github.com/superna9999/pyv4l2compliance/raw/tests/output/=
+Jellyfish_1080_10s_5MB.vp9.hdr
+> > > [2] https://github.com/superna9999/pyv4l2compliance
+> > > [3] https://lore.kernel.org/linux-media/20191120111430.29552-1-narmst=
+rong@baylibre.com
+> > > [4] https://lore.kernel.org/linux-media/20191121101429.23831-1-narmst=
+rong@baylibre.com
+> > > [5] https://lore.kernel.org/linux-media/20191126093733.32404-1-narmst=
+rong@baylibre.com
+> > >=20
+> > > The compliance log is:
+> > > # v4l2-compliance --stream-from-hdr Jellyfish_1080_10s_5MB.vp9.hdr -s=
+ 200
+> > > v4l2-compliance SHA: 7ead0e1856b89f2e19369af452bb03fd0cd16793, 64 bit=
+s
+> > >=20
+> > > Compliance test for meson-vdec device /dev/video0:
+> > >=20
+> > > Driver Info:
+> > > 	Driver name      : meson-vdec
+> > > 	Card type        : Amlogic Video Decoder
+> > > 	Bus info         : platform:meson-vdec
+> > > 	Driver version   : 5.4.0
+> > > 	Capabilities     : 0x84204000
+> > > 		Video Memory-to-Memory Multiplanar
+> > > 		Streaming
+> > > 		Extended Pix Format
+> > > 		Device Capabilities
+> > > 	Device Caps      : 0x04204000
+> > > 		Video Memory-to-Memory Multiplanar
+> > > 		Streaming
+> > > 		Extended Pix Format
+> > > 	Detected Stateful Decoder
+> > >=20
+> > > Required ioctls:
+> > > 	test VIDIOC_QUERYCAP: OK
+> > >=20
+> > > Allow for multiple opens:
+> > > 	test second /dev/video0 open: OK
+> > > 	test VIDIOC_QUERYCAP: OK
+> > > 	test VIDIOC_G/S_PRIORITY: OK
+> > > 	test for unlimited opens: OK
+> > >=20
+> > > Debug ioctls:
+> > > 	test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
+> > > 	test VIDIOC_LOG_STATUS: OK (Not Supported)
+> > >=20
+> > > Input ioctls:
+> > > 	test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
+> > > 	test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+> > > 	test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
+> > > 	test VIDIOC_ENUMAUDIO: OK (Not Supported)
+> > > 	test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)
+> > > 	test VIDIOC_G/S_AUDIO: OK (Not Supported)
+> > > 	Inputs: 0 Audio Inputs: 0 Tuners: 0
+> > >=20
+> > > Output ioctls:
+> > > 	test VIDIOC_G/S_MODULATOR: OK (Not Supported)
+> > > 	test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+> > > 	test VIDIOC_ENUMAUDOUT: OK (Not Supported)
+> > > 	test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
+> > > 	test VIDIOC_G/S_AUDOUT: OK (Not Supported)
+> > > 	Outputs: 0 Audio Outputs: 0 Modulators: 0
+> > >=20
+> > > Input/Output configuration ioctls:
+> > > 	test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
+> > > 	test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
+> > > 	test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
+> > > 	test VIDIOC_G/S_EDID: OK (Not Supported)
+> > >=20
+> > > Control ioctls:
+> > > 	test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
+> > > 	test VIDIOC_QUERYCTRL: OK
+> > > 	test VIDIOC_G/S_CTRL: OK
+> > > 	test VIDIOC_G/S/TRY_EXT_CTRLS: OK
+> > > 	test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
+> > > 	test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
+> > > 	Standard Controls: 2 Private Controls: 0
+> > >=20
+> > > Format ioctls:
+> > > 	test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
+> > > 	test VIDIOC_G/S_PARM: OK (Not Supported)
+> > > 	test VIDIOC_G_FBUF: OK (Not Supported)
+> > > 	test VIDIOC_G_FMT: OK
+> > > 	test VIDIOC_TRY_FMT: OK
+> > > 	test VIDIOC_S_FMT: OK
+> > > 	test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
+> > > 	test Cropping: OK (Not Supported)
+> > > 	test Composing: OK (Not Supported)
+> > > 	test Scaling: OK (Not Supported)
+> > >=20
+> > > Codec ioctls:
+> > > 	test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
+> > > 	test VIDIOC_G_ENC_INDEX: OK (Not Supported)
+> > > 	test VIDIOC_(TRY_)DECODER_CMD: OK
+> > >=20
+> > > Buffer ioctls:
+> > > 	test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
+> > > 	test VIDIOC_EXPBUF: OK
+> > > 	test Requests: OK (Not Supported)
+> > >=20
+> > > Test input 0:
+> > >=20
+> > > Streaming ioctls:
+> > > 	test read/write: OK (Not Supported)
+> > > 	test blocking wait: OK
+> > > 	Video Capture Multiplanar: Captured 200 buffers  =20
+> > > 	test MMAP (select): OK
+> > > 	Video Capture Multiplanar: Captured 200 buffers  =20
+> > > 	test MMAP (epoll): OK
+> > > 	test USERPTR (select): OK (Not Supported)
+> > > 	test DMABUF: Cannot test, specify --expbuf-device
+> > >=20
+> > > Total for meson-vdec device /dev/video0: 49, Succeeded: 49, Failed: 0=
+, Warnings: 0
+> > >=20
+> > > Maxime Jourdan (4):
+> > >   media: meson: vdec: add helpers for lossless framebuffer compressio=
+n
+> > >     buffers
+> > >   media: meson: vdec: add common HEVC decoder support
+> > >   media: meson: vdec: add VP9 input support
+> > >   media: meson: vdec: add VP9 decoder support
+> > >=20
+> > > Neil Armstrong (1):
+> > >   media: meson: vdec: align stride on 32 bytes
+> > >=20
+> > >  drivers/staging/media/meson/vdec/Makefile     |    4 +-
+> > >  .../media/meson/vdec/codec_hevc_common.c      |  285 ++++
+> > >  .../media/meson/vdec/codec_hevc_common.h      |   77 ++
+> > >  drivers/staging/media/meson/vdec/codec_vp9.c  | 1192 +++++++++++++++=
+++
+> > >  drivers/staging/media/meson/vdec/codec_vp9.h  |   13 +
+> > >  drivers/staging/media/meson/vdec/esparser.c   |  142 +-
+> > >  drivers/staging/media/meson/vdec/hevc_regs.h  |  218 +++
+> > >  drivers/staging/media/meson/vdec/vdec.c       |   10 +-
+> > >  .../staging/media/meson/vdec/vdec_helpers.c   |   31 +-
+> > >  .../staging/media/meson/vdec/vdec_helpers.h   |    4 +
+> > >  drivers/staging/media/meson/vdec/vdec_hevc.c  |  231 ++++
+> > >  drivers/staging/media/meson/vdec/vdec_hevc.h  |   13 +
+> > >  .../staging/media/meson/vdec/vdec_platform.c  |   38 +
+> > >  13 files changed, 2245 insertions(+), 13 deletions(-)
+> > >  create mode 100644 drivers/staging/media/meson/vdec/codec_hevc_commo=
+n.c
+> > >  create mode 100644 drivers/staging/media/meson/vdec/codec_hevc_commo=
+n.h
+> > >  create mode 100644 drivers/staging/media/meson/vdec/codec_vp9.c
+> > >  create mode 100644 drivers/staging/media/meson/vdec/codec_vp9.h
+> > >  create mode 100644 drivers/staging/media/meson/vdec/hevc_regs.h
+> > >  create mode 100644 drivers/staging/media/meson/vdec/vdec_hevc.c
+> > >  create mode 100644 drivers/staging/media/meson/vdec/vdec_hevc.h
+> > >=20
+>=20
+>=20
 
-nit: Maybe the use of "appending" is not appropriate as the header is
-documented in the commit as being "before every frame header" ?
-
-> + * Amlogic custom header
-> + */
-> +static int vp9_update_header(struct amvdec_core *core, struct vb2_buffer=
- *buf)
-> +{
-> +	u8 *dp;
-> +	u8 marker;
-> +	int dsize;
-> +	int num_frames, cur_frame;
-> +	int cur_mag, mag, mag_ptr;
-> +	int frame_size[8], tot_frame_size[8];
-> +	int total_datasize =3D 0;
-> +	int new_frame_size;
-> +	unsigned char *old_header =3D NULL;
-> +
-> +	dp =3D (uint8_t *)vb2_plane_vaddr(buf, 0);
-> +	dsize =3D vb2_get_plane_payload(buf, 0);
-> +
-> +	if (dsize =3D=3D vb2_plane_size(buf, 0)) {
-> +		dev_warn(core->dev, "%s: unable to update header\n", __func__);
-> +		return 0;
-> +	}
-> +
-> +	marker =3D dp[dsize - 1];
-> +	if ((marker & 0xe0) =3D=3D 0xc0) {
-> +		num_frames =3D (marker & 0x7) + 1;
-> +		mag =3D ((marker >> 3) & 0x3) + 1;
-> +		mag_ptr =3D dsize - mag * num_frames - 2;
-> +		if (dp[mag_ptr] !=3D marker)
-> +			return 0;
-> +
-> +		mag_ptr++;
-> +		for (cur_frame =3D 0; cur_frame < num_frames; cur_frame++) {
-> +			frame_size[cur_frame] =3D 0;
-> +			for (cur_mag =3D 0; cur_mag < mag; cur_mag++) {
-> +				frame_size[cur_frame] |=3D
-> +					(dp[mag_ptr] << (cur_mag * 8));
-> +				mag_ptr++;
-> +			}
-> +			if (cur_frame =3D=3D 0)
-> +				tot_frame_size[cur_frame] =3D
-> +					frame_size[cur_frame];
-> +			else
-> +				tot_frame_size[cur_frame] =3D
-> +					tot_frame_size[cur_frame - 1] +
-> +					frame_size[cur_frame];
-> +			total_datasize +=3D frame_size[cur_frame];
-> +		}
-> +	} else {
-> +		num_frames =3D 1;
-> +		frame_size[0] =3D dsize;
-> +		tot_frame_size[0] =3D dsize;
-> +		total_datasize =3D dsize;
-> +	}
-> +
-> +	new_frame_size =3D total_datasize + num_frames * VP9_HEADER_SIZE;
-> +
-> +	if (new_frame_size >=3D vb2_plane_size(buf, 0)) {
-> +		dev_warn(core->dev, "%s: unable to update header\n", __func__);
-> +		return 0;
-> +	}
-> +
-> +	for (cur_frame =3D num_frames - 1; cur_frame >=3D 0; cur_frame--) {
-> +		int framesize =3D frame_size[cur_frame];
-> +		int framesize_header =3D framesize + 4;
-> +		int oldframeoff =3D tot_frame_size[cur_frame] - framesize;
-> +		int outheaderoff =3D  oldframeoff + cur_frame * VP9_HEADER_SIZE;
-> +		u8 *fdata =3D dp + outheaderoff;
-> +		u8 *old_framedata =3D dp + oldframeoff;
-> +
-> +		memmove(fdata + VP9_HEADER_SIZE, old_framedata, framesize);
-> +
-> +		fdata[0] =3D (framesize_header >> 24) & 0xff;
-> +		fdata[1] =3D (framesize_header >> 16) & 0xff;
-> +		fdata[2] =3D (framesize_header >> 8) & 0xff;
-> +		fdata[3] =3D (framesize_header >> 0) & 0xff;
-> +		fdata[4] =3D ((framesize_header >> 24) & 0xff) ^ 0xff;
-> +		fdata[5] =3D ((framesize_header >> 16) & 0xff) ^ 0xff;
-> +		fdata[6] =3D ((framesize_header >> 8) & 0xff) ^ 0xff;
-> +		fdata[7] =3D ((framesize_header >> 0) & 0xff) ^ 0xff;
-> +		fdata[8] =3D 0;
-> +		fdata[9] =3D 0;
-> +		fdata[10] =3D 0;
-> +		fdata[11] =3D 1;
-> +		fdata[12] =3D 'A';
-> +		fdata[13] =3D 'M';
-> +		fdata[14] =3D 'L';
-> +		fdata[15] =3D 'V';
-> +
-> +		if (!old_header) {
-> +			/* nothing */
-> +		} else if (old_header > fdata + 16 + framesize) {
-> +			dev_dbg(core->dev, "%s: data has gaps, setting to 0\n",
-> +				__func__);
-> +			memset(fdata + 16 + framesize, 0,
-> +			       (old_header - fdata + 16 + framesize));
-> +		} else if (old_header < fdata + 16 + framesize) {
-> +			dev_err(core->dev, "%s: data overwritten\n", __func__);
-> +		}
-> +		old_header =3D fdata;
-> +	}
-> +
-> +	return new_frame_size;
-> +}
-> +
->  /* Pad the packet to at least 4KiB bytes otherwise the VDEC unit won't t=
-rigger
->   * ISRs.
->   * Also append a start code 000001ff at the end to trigger
->   * the ESPARSER interrupt.
->   */
-> -static u32 esparser_pad_start_code(struct amvdec_core *core, struct vb2_=
-buffer *vb)
-> +static u32 esparser_pad_start_code(struct amvdec_core *core,
-> +				   struct vb2_buffer *vb,
-> +				   u32 payload_size)
->  {
-> -	u32 payload_size =3D vb2_get_plane_payload(vb, 0);
->  	u32 pad_size =3D 0;
->  	u8 *vaddr =3D vb2_plane_vaddr(vb, 0);
-> =20
-> @@ -186,13 +294,27 @@ esparser_queue(struct amvdec_session *sess, struct =
-vb2_v4l2_buffer *vbuf)
->  	int ret;
->  	struct vb2_buffer *vb =3D &vbuf->vb2_buf;
->  	struct amvdec_core *core =3D sess->core;
-> +	struct amvdec_codec_ops *codec_ops =3D sess->fmt_out->codec_ops;
->  	u32 payload_size =3D vb2_get_plane_payload(vb, 0);
->  	dma_addr_t phy =3D vb2_dma_contig_plane_dma_addr(vb, 0);
-> +	u32 num_dst_bufs =3D 0;
->  	u32 offset;
->  	u32 pad_size;
-> =20
-> -	if (esparser_vififo_get_free_space(sess) < payload_size)
-> +	if (sess->fmt_out->pixfmt =3D=3D V4L2_PIX_FMT_VP9) {
-> +		if (codec_ops->num_pending_bufs)
-> +			num_dst_bufs =3D codec_ops->num_pending_bufs(sess);
-> +
-> +		num_dst_bufs +=3D v4l2_m2m_num_dst_bufs_ready(sess->m2m_ctx);
-> +		if (sess->fmt_out->pixfmt =3D=3D V4L2_PIX_FMT_VP9)
-> +			num_dst_bufs -=3D 2;
-> +
-> +		if (esparser_vififo_get_free_space(sess) < payload_size ||
-> +		    atomic_read(&sess->esparser_queued_bufs) >=3D num_dst_bufs)
-> +			return -EAGAIN;
-> +	} else if (esparser_vififo_get_free_space(sess) < payload_size) {
->  		return -EAGAIN;
-> +	}
-> =20
->  	v4l2_m2m_src_buf_remove_by_buf(sess->m2m_ctx, vbuf);
-> =20
-> @@ -206,7 +328,19 @@ esparser_queue(struct amvdec_session *sess, struct v=
-b2_v4l2_buffer *vbuf)
->  	vbuf->field =3D V4L2_FIELD_NONE;
->  	vbuf->sequence =3D sess->sequence_out++;
-> =20
-> -	pad_size =3D esparser_pad_start_code(core, vb);
-> +	if (sess->fmt_out->pixfmt =3D=3D V4L2_PIX_FMT_VP9) {
-> +		payload_size =3D vp9_update_header(core, vb);
-> +
-> +		/* If unable to alter buffer to add headers */
-> +		if (payload_size =3D=3D 0) {
-> +			amvdec_remove_ts(sess, vb->timestamp);
-> +			v4l2_m2m_buf_done(vbuf, VB2_BUF_STATE_ERROR);
-> +
-> +			return 0;
-> +		}
-> +	}
-> +
-> +	pad_size =3D esparser_pad_start_code(core, vb, payload_size);
->  	ret =3D esparser_write_data(core, phy, payload_size + pad_size);
-> =20
->  	if (ret <=3D 0) {
-
---=-CCHdCL4ad1Oj02aHxg2r
+--=-5ge5SRuKOXA9YMq6LNHq
 Content-Type: application/pgp-signature; name="signature.asc"
 Content-Description: This is a digitally signed message part
 Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iF0EABECAB0WIQSScpfJiL+hb5vvd45xUwItrAaoHAUCXelPKAAKCRBxUwItrAao
-HC3dAJ9ZJcMZtCud2LJf6EsofUzyD1VMDACgtXrUCNYTbD33BQoqjB8YK0nxcmU=
-=7K0z
+iF0EABECAB0WIQSScpfJiL+hb5vvd45xUwItrAaoHAUCXelQgAAKCRBxUwItrAao
+HBE7AKC1P8n2zO5GHM2HzTAgV2d83aMdCQCg1EYqRJk2Y+jJgBaVu5kEZaVYF8U=
+=SRoR
 -----END PGP SIGNATURE-----
 
---=-CCHdCL4ad1Oj02aHxg2r--
+--=-5ge5SRuKOXA9YMq6LNHq--
 
 
 
---===============9079864068627390907==
+--===============7807764593397365987==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -357,6 +359,6 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============9079864068627390907==--
+--===============7807764593397365987==--
 
 
