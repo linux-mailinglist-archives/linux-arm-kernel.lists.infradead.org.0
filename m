@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F13F114233
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 15:04:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CEFE11422E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 15:03:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C16VR391TBPCU/hU1leyE2Roh14rSIC+nJKby2yGGZY=; b=Z/T60Ti1OK4rEi
-	8tRH4qOUeK4bdXZ7jf8R7rrs8L+dS2bfwePaM3/usAlFaMws6o3vrf7id63hY/S2q+7p4W9sol6kI
-	LNi+0a098KIR6OIbN7gFnq0QX9CZnloHLwEj6ZkxIfUBMOCSHreVSuio1oMbraFkoedM0cQ6nqc8L
-	QZDwwQUCvO3dfg0KOWpztY03K+kbGy44eCKxBkovqo0/bcPIlYa470hA2qTtga0kQim1oE+bV9GuB
-	oMIEfv7ZPi2jJ3UCTW9rhpjnEFEryZAi7KcarXzXTUN3GlWYExdqV5eudd1GnaSrzgZ3UATPJf4/g
-	joWIE5D3ssYHmJg0WhkA==;
+	List-Owner; bh=onoM4i5vxHAF7nu1jG25K95WxBvKmWZV2SnFW40SvN8=; b=tSfhKklQdTlta7
+	NDoRS98R1t5M7qBC+l6DBd3srgMC/dHkaTjFE2O0EpRvEBT7PiMkHhlxa2ebRO17rZtfubRlKePVX
+	N3wlZ/yCIZg1v8Vxos+k7znC/dhOjwjrhg7LgDgqiUpIr7ZqleCIHyc1oL6cj17+IOdKLCmDf1uM1
+	ebuSpgsv4VZwrYiZSBvXPINeR2DKJvLMyHbmJBvpYohaDjVoZqC3VZQejmgJbAArDu5FDcWuIRQjX
+	fqyjtnJaQ9cPiuxnazUyB5QW1xRmMiIgXsSwhLkvxL+cC4FczweS2lWY9BZ3MmdJGVl9j807LVWVi
+	di93m2RgdGAJOo0En/DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icrjj-00034A-5u; Thu, 05 Dec 2019 14:04:07 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1icrjM-0002aA-Ps; Thu, 05 Dec 2019 14:03:44 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icrj6-0002WC-Ld
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 14:03:30 +0000
+ id 1icriz-0002Sa-DL
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 14:03:23 +0000
 X-Originating-IP: 90.65.102.129
 Received: from localhost (lfbn-1-1480-129.w90-65.abo.wanadoo.fr
  [90.65.102.129]) (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 27381240002;
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id D8EC9E0019;
  Thu,  5 Dec 2019 14:03:15 +0000 (UTC)
 From: Kamel Bouhara <kamel.bouhara@bootlin.com>
 To: Codrin.Ciubotariu@microchip.com
-Subject: [PATCH 1/3] dt-bindings: i2c: at91: document optional bus recovery
- properties
-Date: Thu,  5 Dec 2019 15:03:03 +0100
-Message-Id: <20191205140305.1144788-2-kamel.bouhara@bootlin.com>
+Subject: [PATCH 2/3] i2c: at91: implement i2c bus recovery
+Date: Thu,  5 Dec 2019 15:03:04 +0100
+Message-Id: <20191205140305.1144788-3-kamel.bouhara@bootlin.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191205140305.1144788-1-kamel.bouhara@bootlin.com>
 References: <20191205140305.1144788-1-kamel.bouhara@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_060328_864033_6C79276A 
-X-CRM114-Status: UNSURE (   9.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191205_060321_723612_2247363F 
+X-CRM114-Status: GOOD (  11.03  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ low trust [217.70.183.196 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.193 listed in wl.mailspike.net]
+ [217.70.183.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -74,45 +72,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The at91 I2C controller can support bus recovery by re-assigning SCL
-and SDA to gpios. Add the optional pinctrl and gpio properties to do
-so.
+Implement i2c bus recovery when slaves devices might hold SDA low.
+In this case re-assign SCL/SDA to gpios and issue 9 dummy clock pulses
+until the slave release SDA.
 
 Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
 ---
- Documentation/devicetree/bindings/i2c/i2c-at91.txt | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ drivers/i2c/busses/i2c-at91-master.c | 64 ++++++++++++++++++++++++++++
+ drivers/i2c/busses/i2c-at91.h        |  8 ++++
+ 2 files changed, 72 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/i2c/i2c-at91.txt b/Documentation/devicetree/bindings/i2c/i2c-at91.txt
-index b7cec17c3daf..8ea2ce5d8610 100644
---- a/Documentation/devicetree/bindings/i2c/i2c-at91.txt
-+++ b/Documentation/devicetree/bindings/i2c/i2c-at91.txt
-@@ -19,8 +19,13 @@ Optional properties:
-   capable I2C controllers.
- - i2c-sda-hold-time-ns: TWD hold time, only available for "atmel,sama5d4-i2c"
-   and "atmel,sama5d2-i2c".
-+- scl-gpios: specify the gpio related to SCL pin
-+- sda-gpios: specify the gpio related to SDA pin
-+- pinctrl: add extra pinctrl to configure i2c pins to gpio function for i2c
-+  bus recovery, call it "gpio" state
- - Child nodes conforming to i2c bus binding
+diff --git a/drivers/i2c/busses/i2c-at91-master.c b/drivers/i2c/busses/i2c-at91-master.c
+index a3fcc35ffd3b..e279129e6a76 100644
+--- a/drivers/i2c/busses/i2c-at91-master.c
++++ b/drivers/i2c/busses/i2c-at91-master.c
+@@ -18,11 +18,13 @@
+ #include <linux/dma-mapping.h>
+ #include <linux/dmaengine.h>
+ #include <linux/err.h>
++#include <linux/gpio/consumer.h>
+ #include <linux/i2c.h>
+ #include <linux/interrupt.h>
+ #include <linux/io.h>
+ #include <linux/of.h>
+ #include <linux/of_device.h>
++#include <linux/pinctrl/consumer.h>
+ #include <linux/platform_device.h>
+ #include <linux/platform_data/dma-atmel.h>
+ #include <linux/pm_runtime.h>
+@@ -554,6 +556,7 @@ static int at91_do_twi_transfer(struct at91_twi_dev *dev)
+ 	if (time_left == 0) {
+ 		dev->transfer_status |= at91_twi_read(dev, AT91_TWI_SR);
+ 		dev_err(dev->dev, "controller timed out\n");
++		i2c_recover_bus(&dev->adapter);
+ 		at91_init_twi_bus(dev);
+ 		ret = -ETIMEDOUT;
+ 		goto error;
+@@ -768,6 +771,63 @@ static int at91_twi_configure_dma(struct at91_twi_dev *dev, u32 phy_addr)
+ 	return ret;
+ }
  
++static void at91_prepare_twi_recovery(struct i2c_adapter *adap)
++{
++	struct at91_twi_dev *dev = i2c_get_adapdata(adap);
 +
- Examples :
++	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_gpio);
++}
++
++static void at91_unprepare_twi_recovery(struct i2c_adapter *adap)
++{
++	struct at91_twi_dev *dev = i2c_get_adapdata(adap);
++
++	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_default);
++}
++
++static int at91_init_twi_recovery_info(struct platform_device *pdev,
++				       struct at91_twi_dev *dev)
++{
++	struct i2c_bus_recovery_info *rinfo = &dev->rinfo;
++
++	dev->pinctrl = devm_pinctrl_get(&pdev->dev);
++	if (!dev->pinctrl || IS_ERR(dev->pinctrl)) {
++		dev_info(dev->dev, "can't get pinctrl, bus recovery not supported\n");
++		return PTR_ERR(dev->pinctrl);
++	}
++
++	dev->pinctrl_pins_default = pinctrl_lookup_state(dev->pinctrl,
++							 PINCTRL_STATE_DEFAULT);
++	dev->pinctrl_pins_gpio = pinctrl_lookup_state(dev->pinctrl,
++						      "gpio");
++	rinfo->sda_gpiod = devm_gpiod_get(&pdev->dev, "sda", GPIOD_IN);
++	if (PTR_ERR(rinfo->sda_gpiod) == -EPROBE_DEFER)
++		return -EPROBE_DEFER;
++
++	rinfo->scl_gpiod = devm_gpiod_get(&pdev->dev, "scl",
++					  GPIOD_OUT_HIGH_OPEN_DRAIN);
++	if (PTR_ERR(rinfo->scl_gpiod) == -EPROBE_DEFER)
++		return -EPROBE_DEFER;
++
++	if (IS_ERR(rinfo->sda_gpiod) ||
++	    IS_ERR(rinfo->scl_gpiod) ||
++	    IS_ERR(dev->pinctrl_pins_default) ||
++	    IS_ERR(dev->pinctrl_pins_gpio)) {
++		dev_info(&pdev->dev, "recovery information incomplete\n");
++		return -EINVAL;
++	}
++
++	dev_info(&pdev->dev, "using scl%s for recovery\n",
++		 rinfo->sda_gpiod ? ",sda" : "");
++
++	rinfo->prepare_recovery = at91_prepare_twi_recovery;
++	rinfo->unprepare_recovery = at91_unprepare_twi_recovery;
++	rinfo->recover_bus = i2c_generic_scl_recovery;
++	dev->adapter.bus_recovery_info = rinfo;
++
++	return 0;
++}
++
+ int at91_twi_probe_master(struct platform_device *pdev,
+ 			  u32 phy_addr, struct at91_twi_dev *dev)
+ {
+@@ -795,6 +855,10 @@ int at91_twi_probe_master(struct platform_device *pdev,
  
- i2c0: i2c@fff84000 {
-@@ -55,6 +60,11 @@ i2c0: i2c@f8034600 {
- 	clocks = <&flx0>;
- 	atmel,fifo-size = <16>;
- 	i2c-sda-hold-time-ns = <336>;
-+	pinctrl-names = "default", "gpio";
-+	pinctrl-0 = <&pinctrl_i2c0>;
-+	pinctrl-1 = <&pinctrl_i2c0_gpio>;
-+	sda-gpios = <&pioA 30 GPIO_ACTIVE_HIGH>;
-+	scl-gpios = <&pioA 31 GPIO_ACTIVE_HIGH>;
+ 	at91_calc_twi_clock(dev);
  
- 	wm8731: wm8731@1a {
- 		compatible = "wm8731";
++	rc = at91_init_twi_recovery_info(pdev, dev);
++	if (rc == -EPROBE_DEFER)
++		return rc;
++
+ 	dev->adapter.algo = &at91_twi_algorithm;
+ 	dev->adapter.quirks = &at91_twi_quirks;
+ 
+diff --git a/drivers/i2c/busses/i2c-at91.h b/drivers/i2c/busses/i2c-at91.h
+index 499b506f6128..b89dab55e776 100644
+--- a/drivers/i2c/busses/i2c-at91.h
++++ b/drivers/i2c/busses/i2c-at91.h
+@@ -141,6 +141,10 @@ struct at91_twi_dev {
+ 	u32 fifo_size;
+ 	struct at91_twi_dma dma;
+ 	bool slave_detected;
++	struct i2c_bus_recovery_info rinfo;
++	struct pinctrl *pinctrl;
++	struct pinctrl_state *pinctrl_pins_default;
++	struct pinctrl_state *pinctrl_pins_gpio;
+ #ifdef CONFIG_I2C_AT91_SLAVE_EXPERIMENTAL
+ 	unsigned smr;
+ 	struct i2c_client *slave;
+@@ -158,6 +162,10 @@ void at91_init_twi_bus_master(struct at91_twi_dev *dev);
+ int at91_twi_probe_master(struct platform_device *pdev, u32 phy_addr,
+ 			  struct at91_twi_dev *dev);
+ 
++void at91_twi_prepare_recovery(struct i2c_adapter *adap);
++void at91_twi_unprepare_recovery(struct i2c_adapter *adap);
++void at91_twi_init_recovery_info(struct at91_twi_dev *dev);
++
+ #ifdef CONFIG_I2C_AT91_SLAVE_EXPERIMENTAL
+ void at91_init_twi_bus_slave(struct at91_twi_dev *dev);
+ int at91_twi_probe_slave(struct platform_device *pdev, u32 phy_addr,
 -- 
 2.24.0
 
