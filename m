@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B07011421E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 15:00:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6986C114223
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 15:01:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,45 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=4XjDCApOb8UkJjCQTJWIrgQ9wlIMUH6zKVRtdr/8iww=; b=p5QuGszO8Rp5jz5MYmcjQ9OVDR
-	KO5sGiGZyPbFjiIMWMHCACZEM7P7r8imnpBd5QKUQHDYmB7gLTiS5IEFsz4aj/baPqyWAaUi9v1Wi
-	1XRKsvv0BDCO/uR5bb/JXslkPVaNbfZJzm9HjD2QGrUGJTs4Zsw37JJD599wWq8oR5rcVSR6oPCJo
-	Ng2Q+7Tk+Lptsu6aIHCN94I6Art5rjOpGojw7KqOUXj9yb2FFDDPaT/HpF8XxhBFK1ODXp4qU7pxj
-	YO0cBYP4BRT9svx5smSkkEMCBpF3l1JfY2ne0+LYfyoz1LQNPUUXn/jL88caWmhjBcfKFIM3gbt6a
-	tfk4CA0w==;
+	bh=jJvQ3cWRBzCIBE78w6wIMImWiMXiJVujVYS9MLYPVe0=; b=Oe8rbLlJRDwCmPiAW5WOXcl8Ws
+	dKTIFUdrEzDQbbK4B9+bfDHIC7AkLHUlrrOzgBVBlWjJ434nWfgZKnipUohZybr69xdiawyG8VBSY
+	tEoU1Qj6IU9Ld2CbkylfUZJGZOcBQc9l61B96D58WzWMuTuaaRAU/Svn4ymJMSmlFMivijbDcBvHe
+	lPXPXkLNxC4DCiDiTY0E9tBQ1luLGXj72hFmGEUx3bYkiP8Q3lAG94IC37qmFMoZc9RCkthXMzbAM
+	eAkAtDUvtFArA13a85lCCL8Yc3ttGJmqtp97oDjxSJULQ8FzqeCtCpOc3q+zg5FMfT5FwDctJ8Be4
+	/69CQNag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icrgB-0000sF-CU; Thu, 05 Dec 2019 14:00:27 +0000
-Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
+	id 1icrgz-0001lP-J5; Thu, 05 Dec 2019 14:01:17 +0000
+Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icrfW-0007g5-8X
+ id 1icrfW-0007g1-Qj
  for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 13:59:49 +0000
-Received: from ramsan ([84.195.182.253]) by albert.telenet-ops.be with bizsmtp
- id aDzY210055USYZQ06DzYMy; Thu, 05 Dec 2019 14:59:36 +0100
+Received: from ramsan ([84.195.182.253]) by xavier.telenet-ops.be with bizsmtp
+ id aDzY210085USYZQ01DzYBy; Thu, 05 Dec 2019 14:59:34 +0100
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1icrfI-0002Kx-3P; Thu, 05 Dec 2019 14:59:32 +0100
+ id 1icrfI-0002L2-4p; Thu, 05 Dec 2019 14:59:32 +0100
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1icrfI-0001xC-2B; Thu, 05 Dec 2019 14:59:32 +0100
+ id 1icrfI-0001xF-3C; Thu, 05 Dec 2019 14:59:32 +0100
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH 3/6] arm64: dts: renesas: r8a77961: Add RAVB node
-Date: Thu,  5 Dec 2019 14:59:27 +0100
-Message-Id: <20191205135930.7454-4-geert+renesas@glider.be>
+Subject: [PATCH 4/6] arm64: dts: renesas: r8a77961: Add SYS-DMAC nodes
+Date: Thu,  5 Dec 2019 14:59:28 +0100
+Message-Id: <20191205135930.7454-5-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191205135930.7454-1-geert+renesas@glider.be>
 References: <20191205135930.7454-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_055946_455626_69275863 
-X-CRM114-Status: GOOD (  10.83  )
+X-CRM114-CacheID: sfid-20191205_055947_021993_B3E83B0E 
+X-CRM114-Status: UNSURE (   9.14  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:110:4:0:0:f00:1a listed in]
+ low trust [2a02:1800:120:4:0:0:f00:14 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -76,72 +77,133 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a device node for the Ethernet AVB (RAVB) interface on the Renesas
-R-Car M3-W+ (r8a77961) SoC.
+Add device nodes for the System DMA Controllers (SYS-DMAC) on the
+Renesas R-Car M3-W+ (r8a77961) SoC.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
-Test procedure:
-  1. "ifconfig eth0 <A>.<B>.<C>.<D>",
-  2. "ping <gateway>".
+Test procedure (with "[PATCH 5/6] arm64: dts: renesas: r8a77961: Add i2c
+nodes"):
+  1. "hd /sys/devices/platform/soc/e60b0000.i2c/i2c-?/?-0050/eeprom",
+  2. See dma-controller interrupt count in /proc/interrupts has
+     increased.
 ---
- arch/arm64/boot/dts/renesas/r8a77961.dtsi | 40 ++++++++++++++++++++++-
- 1 file changed, 39 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/renesas/r8a77961.dtsi | 102 ++++++++++++++++++++++
+ 1 file changed, 102 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/renesas/r8a77961.dtsi b/arch/arm64/boot/dts/renesas/r8a77961.dtsi
-index 10e768ce2bc70e0c..4a7597cc07514c41 100644
+index 4a7597cc07514c41..7b2820e9c5dcbb97 100644
 --- a/arch/arm64/boot/dts/renesas/r8a77961.dtsi
 +++ b/arch/arm64/boot/dts/renesas/r8a77961.dtsi
-@@ -519,10 +519,48 @@
+@@ -518,6 +518,108 @@
+ 			/* placeholder */
  		};
  
- 		avb: ethernet@e6800000 {
-+			compatible = "renesas,etheravb-r8a77961",
-+				     "renesas,etheravb-rcar-gen3";
- 			reg = <0 0xe6800000 0 0x800>, <0 0xe6a00000 0 0x10000>;
-+			interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 46 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 58 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 59 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 60 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 61 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 62 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 63 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "ch0", "ch1", "ch2", "ch3",
-+					  "ch4", "ch5", "ch6", "ch7",
-+					  "ch8", "ch9", "ch10", "ch11",
-+					  "ch12", "ch13", "ch14", "ch15",
-+					  "ch16", "ch17", "ch18", "ch19",
-+					  "ch20", "ch21", "ch22", "ch23",
-+					  "ch24";
-+			clocks = <&cpg CPG_MOD 812>;
++		dmac0: dma-controller@e6700000 {
++			compatible = "renesas,dmac-r8a77961",
++				     "renesas,rcar-dmac";
++			reg = <0 0xe6700000 0 0x10000>;
++			interrupts = <GIC_SPI 199 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 200 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 201 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 202 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 203 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 204 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 205 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 206 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 207 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 208 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 209 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 210 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 211 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 212 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 213 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 214 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 215 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "error",
++					"ch0", "ch1", "ch2", "ch3",
++					"ch4", "ch5", "ch6", "ch7",
++					"ch8", "ch9", "ch10", "ch11",
++					"ch12", "ch13", "ch14", "ch15";
++			clocks = <&cpg CPG_MOD 219>;
++			clock-names = "fck";
 +			power-domains = <&sysc R8A77961_PD_ALWAYS_ON>;
-+			resets = <&cpg 812>;
-+			phy-mode = "rgmii";
- 			#address-cells = <1>;
- 			#size-cells = <0>;
--			/* placeholder */
-+			status = "disabled";
- 		};
- 
- 		pwm1: pwm@e6e31000 {
++			resets = <&cpg 219>;
++			#dma-cells = <1>;
++			dma-channels = <16>;
++		};
++
++		dmac1: dma-controller@e7300000 {
++			compatible = "renesas,dmac-r8a77961",
++				     "renesas,rcar-dmac";
++			reg = <0 0xe7300000 0 0x10000>;
++			interrupts = <GIC_SPI 220 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 216 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 217 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 218 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 219 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 308 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 309 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 310 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 311 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 313 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 314 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 315 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 316 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 317 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 318 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 319 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "error",
++					"ch0", "ch1", "ch2", "ch3",
++					"ch4", "ch5", "ch6", "ch7",
++					"ch8", "ch9", "ch10", "ch11",
++					"ch12", "ch13", "ch14", "ch15";
++			clocks = <&cpg CPG_MOD 218>;
++			clock-names = "fck";
++			power-domains = <&sysc R8A77961_PD_ALWAYS_ON>;
++			resets = <&cpg 218>;
++			#dma-cells = <1>;
++			dma-channels = <16>;
++		};
++
++		dmac2: dma-controller@e7310000 {
++			compatible = "renesas,dmac-r8a77961",
++				     "renesas,rcar-dmac";
++			reg = <0 0xe7310000 0 0x10000>;
++			interrupts = <GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 426 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 427 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 428 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 429 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 430 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 431 IRQ_TYPE_LEVEL_HIGH
++				      GIC_SPI 397 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "error",
++					"ch0", "ch1", "ch2", "ch3",
++					"ch4", "ch5", "ch6", "ch7",
++					"ch8", "ch9", "ch10", "ch11",
++					"ch12", "ch13", "ch14", "ch15";
++			clocks = <&cpg CPG_MOD 217>;
++			clock-names = "fck";
++			power-domains = <&sysc R8A77961_PD_ALWAYS_ON>;
++			resets = <&cpg 217>;
++			#dma-cells = <1>;
++			dma-channels = <16>;
++		};
++
+ 		avb: ethernet@e6800000 {
+ 			compatible = "renesas,etheravb-r8a77961",
+ 				     "renesas,etheravb-rcar-gen3";
 -- 
 2.17.1
 
