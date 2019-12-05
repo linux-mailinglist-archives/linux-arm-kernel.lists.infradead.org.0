@@ -2,91 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDBC1114914
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 23:11:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47AE011492B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 23:24:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LUk6d0/SlVFOKW9fG5Loc5mV+9IwbbiZ+90F0NvNPjU=; b=audGEzp09mqe0r
-	J9cc0HBvjmE738xAEN/stohU3i1VXh8Axlfb5nkSTd7iqJS4A9gpeZEh6I2npL6qc6Loog+S2wLRp
-	Zwa8mEuohX+mGlFV/J+dg2sqbRYMwQOt9Xg98hbgrxjJKfKxz1aESCqwoMiPdGAvasr5hbkgLQUUU
-	IP+5UfvUizM28wr4qITPLVYMyRLTOpttFTnZbKGfbf/3AJq3T/b+mJtHO1X9zcnLB6pgUUW9OYAkc
-	kdzU80eqc7YDqyMw7YhcsyNAHhONqafSchdANwKCJRzN8aj0hSem6JSLJ5ScobtBvWM6UluCDVcDE
-	ixLmuI2X7iZ3GtAs/tSg==;
+	List-Owner; bh=ue3sKIEATwPaoXU/gVkWwqIw+yBg6v9cHZpoZfhnmjU=; b=kO/jGFx9AD5ZBJ
+	5wszHNJoMYVUJzDWK132lOPrxgMCYbPYhzxt28sFhHmL9ekxXsL8V5ZMjaSeiSJBM8cHh1XiZTrDH
+	AOR66hTKA5Wms0QdYKzG9jJzWbponXs1NTQmfGD0glZhk/2vyw9P0lE8VGvfcclnzWUwm19ZSbEUW
+	iqeBhd3Yz6UTmAJStjXQYEcoIviKEfSZLQECIVK5iMAaCi9wYlQ4NUwDb+bGTFbhqqmTD3DL7wu5H
+	PzZVCz+zC6vTh3KUrH/+HSRigC0058pYt7qMQ41PWxc5/b31PNdVD0siXPf1QRbCtT1Gf/Xu+Qfr1
+	4mLdsxktlVjf8pgkqnWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iczLU-00007I-6a; Thu, 05 Dec 2019 22:11:36 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1iczXe-0003N5-Ff; Thu, 05 Dec 2019 22:24:10 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iczLM-00006p-Un
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 22:11:30 +0000
-Received: by mail-wr1-x444.google.com with SMTP id t2so5598729wrr.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Dec 2019 14:11:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=CUi98cwSoCKi/I/0JIIfMi/RPZNRK6SsahfPRECZalM=;
- b=UWwYuaEQz2jJLTXRR27FAvmeLUr7FTHVV1WSN3Z/262cU//30TQHE3UpyULyYYeywy
- q5uXuU2DurFK/gpxzvK4fazZJbM0Xn+QFk1k9UwwvwzX4E/2eVhRLx2CTO4RRVsiWnUj
- tPE2PS2zJEz8A3c40SVxU547YktUyuIx/5HW76ZGCDF33ghGJ3siOImXDwZUYbJq80GC
- klt/Ub6XkQGp/ge4Ue2soX9RcXgO+0TLY1aZuwhnv/rvo/ZLXxjiEefldBXH1AQShgGu
- /V+5lz3U4kXrSKAOAcTTZzYy1ip4g88OiRqzFiR1mbw76yH3zOwYxx6E/EZcuBvHPSpY
- VFqA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=CUi98cwSoCKi/I/0JIIfMi/RPZNRK6SsahfPRECZalM=;
- b=RTx2231wjAUsUG/k2oLx7yIR61uN9iwMn7aKLbhjq30BC0J4Qe/1tJozA4ldWJijsD
- pwFKQbZGm5kC9Jxu+hkxhwz2mJoQ9iAVLoXZCV6nq826cTnXwW493iMyx1qPKaS6MRcx
- TaCSIw41YJt/WBwAWgaj8h3DT9ukROvIM1uQtdMfW5S75ivXNFDCNpKX05nGZdaaycBk
- BAdHRecvyF2tsxnMoTmt4K2ijeS6G4QDNTLGqanhQiHylrk9dG/b2Yqav6Wif0kvx8GV
- U3bUXBlNgwQ9B0HqfRgV50wVh79OwquBFxShW742Mi0MU4U3INyLnQzLAHduSVeWmhvi
- pCUQ==
-X-Gm-Message-State: APjAAAX7+X30vroJ3+omDETQII7H9OK33xBb3zj8hZI/Cz7dyLff7EWB
- uDyRDWv6OOpsEOOVVGe5+LY=
-X-Google-Smtp-Source: APXvYqz1RLUsU0nkiHg33UXp6iDHMizIMj4ZHRsIh50USDPd8MMgZM/ReLIHHDN84SB7+V/LMsmYSw==
-X-Received: by 2002:a5d:4acb:: with SMTP id y11mr12710232wrs.106.1575583887033; 
- Thu, 05 Dec 2019 14:11:27 -0800 (PST)
-Received: from localhost.localdomain ([2a01:e0a:1f1:d0f0::42f0:c285])
- by smtp.gmail.com with ESMTPSA id r21sm1265490wmh.4.2019.12.05.14.11.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 05 Dec 2019 14:11:26 -0800 (PST)
-From: =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>
-To: Rob Herring <robh@kernel.org>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
- Steven Price <steven.price@arm.com>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
-Subject: [PATCH] drm/panfrost: no need to display probe deferred error
-Date: Thu,  5 Dec 2019 23:11:02 +0100
-Message-Id: <20191205221102.28248-1-peron.clem@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ id 1iczXV-0003MU-OX
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 22:24:04 +0000
+X-Originating-IP: 78.193.40.249
+Received: from localhost (unknown [78.193.40.249])
+ (Authenticated sender: kamel.bouhara@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 8E995E0007;
+ Thu,  5 Dec 2019 22:23:53 +0000 (UTC)
+From: Kamel Bouhara <kamel.bouhara@bootlin.com>
+To: Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH v2] ARM: dts: at91: rearrange kizbox dts using aliases nodes
+Date: Thu,  5 Dec 2019 23:23:44 +0100
+Message-Id: <20191205222344.1367147-1-kamel.bouhara@bootlin.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_141128_989049_415781B5 
-X-CRM114-Status: GOOD (  13.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191205_142402_071647_DA41C263 
+X-CRM114-Status: GOOD (  10.67  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,37 +64,236 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
- linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Kamel Bouhara <kamel.bouhara@bootlin.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-UGFuZnJvc3QgZHJpdmVyIGlzIHNob3V0aW5nIGFuIGVycm9yIGlmIHRoZSByZWd1bGF0b3IgaW5p
-dApyZXR1cm4gYW4gLUVQUk9CRV9ERUZGRVIuIFRoaXMgaXMgYSBub3QgYSByZWFsIGVycm9yIGFu
-ZAppdCBkb2Vzbid0IHJlcXVpcmUgdG8gYmUgZGlzcGxheS4KCkNoZWNrIGlmIHRoZSBlcnJvciBp
-cyBub3QgYW4gRVBST0JFX0RFRkZFUiBiZWZvcmUgZGlzcGxheWluZyBpdC4KClNpZ25lZC1vZmYt
-Ynk6IENsw6ltZW50IFDDqXJvbiA8cGVyb24uY2xlbUBnbWFpbC5jb20+Ci0tLQogZHJpdmVycy9n
-cHUvZHJtL3BhbmZyb3N0L3BhbmZyb3N0X2RldmljZS5jIHwgNiArKysrLS0KIDEgZmlsZSBjaGFu
-Z2VkLCA0IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVy
-cy9ncHUvZHJtL3BhbmZyb3N0L3BhbmZyb3N0X2RldmljZS5jIGIvZHJpdmVycy9ncHUvZHJtL3Bh
-bmZyb3N0L3BhbmZyb3N0X2RldmljZS5jCmluZGV4IDIzOGZiNmQ1NGRmNC4uMDBjZWYwNjJjMzVk
-IDEwMDY0NAotLS0gYS9kcml2ZXJzL2dwdS9kcm0vcGFuZnJvc3QvcGFuZnJvc3RfZGV2aWNlLmMK
-KysrIGIvZHJpdmVycy9ncHUvZHJtL3BhbmZyb3N0L3BhbmZyb3N0X2RldmljZS5jCkBAIC05Miw3
-ICs5Miw4IEBAIHN0YXRpYyBpbnQgcGFuZnJvc3RfcmVndWxhdG9yX2luaXQoc3RydWN0IHBhbmZy
-b3N0X2RldmljZSAqcGZkZXYpCiAJcGZkZXYtPnJlZ3VsYXRvciA9IGRldm1fcmVndWxhdG9yX2dl
-dChwZmRldi0+ZGV2LCAibWFsaSIpOwogCWlmIChJU19FUlIocGZkZXYtPnJlZ3VsYXRvcikpIHsK
-IAkJcmV0ID0gUFRSX0VSUihwZmRldi0+cmVndWxhdG9yKTsKLQkJZGV2X2VycihwZmRldi0+ZGV2
-LCAiZmFpbGVkIHRvIGdldCByZWd1bGF0b3I6ICVkXG4iLCByZXQpOworCQlpZiAocmV0ICE9IC1F
-UFJPQkVfREVGRVIpCisJCQlkZXZfZXJyKHBmZGV2LT5kZXYsICJmYWlsZWQgdG8gZ2V0IHJlZ3Vs
-YXRvcjogJWRcbiIsIHJldCk7CiAJCXJldHVybiByZXQ7CiAJfQogCkBAIC0xMzAsNyArMTMxLDgg
-QEAgaW50IHBhbmZyb3N0X2RldmljZV9pbml0KHN0cnVjdCBwYW5mcm9zdF9kZXZpY2UgKnBmZGV2
-KQogCiAJZXJyID0gcGFuZnJvc3RfcmVndWxhdG9yX2luaXQocGZkZXYpOwogCWlmIChlcnIpIHsK
-LQkJZGV2X2VycihwZmRldi0+ZGV2LCAicmVndWxhdG9yIGluaXQgZmFpbGVkICVkXG4iLCBlcnIp
-OworCQlpZiAoZXJyICE9IC1FUFJPQkVfREVGRVIpCisJCQlkZXZfZXJyKHBmZGV2LT5kZXYsICJy
-ZWd1bGF0b3IgaW5pdCBmYWlsZWQgJWRcbiIsIGVycik7CiAJCWdvdG8gZXJyX291dDA7CiAJfQog
-Ci0tIAoyLjIwLjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+Use aliases nodes to easy kizbox dts readability.
+
+Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+---
+Changes in v2:
+	- Fixed some missing aliases label from dtsi
+
+ arch/arm/boot/dts/at91-kizbox.dts  | 172 ++++++++++++++---------------
+ arch/arm/boot/dts/at91sam9260.dtsi |   2 +-
+ 2 files changed, 85 insertions(+), 89 deletions(-)
+
+diff --git a/arch/arm/boot/dts/at91-kizbox.dts b/arch/arm/boot/dts/at91-kizbox.dts
+index 90996eaf73b2..644009a157d6 100644
+--- a/arch/arm/boot/dts/at91-kizbox.dts
++++ b/arch/arm/boot/dts/at91-kizbox.dts
+@@ -28,85 +28,6 @@
+ 		};
+ 	};
+
+-	ahb {
+-		apb {
+-			tcb0: timer@fffa0000 {
+-				timer@0 {
+-					compatible = "atmel,tcb-timer";
+-					reg = <0>, <1>;
+-				};
+-
+-				timer@2 {
+-					compatible = "atmel,tcb-timer";
+-					reg = <2>;
+-				};
+-			};
+-
+-			macb0: ethernet@fffc4000 {
+-				phy-mode = "mii";
+-				pinctrl-0 = <&pinctrl_macb_rmii
+-				             &pinctrl_macb_rmii_mii_alt>;
+-				status = "okay";
+-			};
+-
+-			usart3: serial@fffd0000 {
+-				status = "okay";
+-			};
+-
+-			dbgu: serial@fffff200 {
+-				status = "okay";
+-			};
+-
+-			watchdog@fffffd40 {
+-				timeout-sec = <15>;
+-				atmel,max-heartbeat-sec = <16>;
+-				atmel,min-heartbeat-sec = <0>;
+-				status = "okay";
+-			};
+-		};
+-
+-		usb0: ohci@500000 {
+-			num-ports = <1>;
+-			status = "okay";
+-		};
+-
+-		ebi: ebi@10000000 {
+-			status = "okay";
+-
+-			nand_controller: nand-controller {
+-				status = "okay";
+-				pinctrl-0 = <&pinctrl_nand_cs &pinctrl_nand_rb>;
+-				pinctrl-names = "default";
+-
+-				nand@3 {
+-					reg = <0x3 0x0 0x800000>;
+-					rb-gpios = <&pioC 13 GPIO_ACTIVE_HIGH>;
+-					cs-gpios = <&pioC 14 GPIO_ACTIVE_HIGH>;
+-					nand-bus-width = <8>;
+-					nand-ecc-mode = "soft";
+-					nand-on-flash-bbt;
+-					label = "atmel_nand";
+-
+-					partitions {
+-						compatible = "fixed-partitions";
+-						#address-cells = <1>;
+-						#size-cells = <1>;
+-
+-						bootstrap@0 {
+-							label = "bootstrap";
+-							reg = <0x0 0x20000>;
+-						};
+-
+-						ubi@20000 {
+-							label = "ubi";
+-							reg = <0x20000 0x7fe0000>;
+-						};
+-					};
+-				};
+-			};
+-		};
+-	};
+-
+ 	gpio_keys {
+ 		compatible = "gpio-keys";
+ 		#address-cells = <1>;
+@@ -127,15 +48,6 @@
+ 		};
+ 	};
+
+-	i2c-gpio-0 {
+-		status = "okay";
+-
+-		rtc: pcf8563@51 {
+-			compatible = "nxp,pcf8563";
+-			reg = <0x51>;
+-		};
+-	};
+-
+ 	pwm_leds {
+ 		compatible = "pwm-leds";
+
+@@ -179,3 +91,87 @@
+ 			     &pinctrl_tcb1_tiob0>;
+ 	};
+ };
++
++&tcb0 {
++	timer@0 {
++		compatible = "atmel,tcb-timer";
++		reg = <0>, <1>;
++	};
++
++	timer@2 {
++		compatible = "atmel,tcb-timer";
++		reg = <2>;
++	};
++};
++
++&ebi {
++	status = "okay";
++};
++
++&nand_controller {
++	status = "okay";
++	pinctrl-0 = <&pinctrl_nand_cs &pinctrl_nand_rb>;
++	pinctrl-names = "default";
++
++	nand@3 {
++		reg = <0x3 0x0 0x800000>;
++		rb-gpios = <&pioC 13 GPIO_ACTIVE_HIGH>;
++		cs-gpios = <&pioC 14 GPIO_ACTIVE_HIGH>;
++		nand-bus-width = <8>;
++		nand-ecc-mode = "soft";
++		nand-on-flash-bbt;
++		label = "atmel_nand";
++
++		partitions {
++			compatible = "fixed-partitions";
++			#address-cells = <1>;
++			#size-cells = <1>;
++
++			bootstrap@0 {
++				label = "bootstrap";
++				reg = <0x0 0x20000>;
++			};
++
++			ubi@20000 {
++				label = "ubi";
++				reg = <0x20000 0x7fe0000>;
++			};
++		};
++	};
++};
++
++&macb0 {
++	phy-mode = "mii";
++	pinctrl-0 = <&pinctrl_macb_rmii
++		     &pinctrl_macb_rmii_mii_alt>;
++	status = "okay";
++};
++
++&usart3 {
++	status = "okay";
++};
++
++&dbgu {
++	status = "okay";
++};
++
++&watchdog {
++	timeout-sec = <15>;
++	atmel,max-heartbeat-sec = <16>;
++	atmel,min-heartbeat-sec = <0>;
++	status = "okay";
++};
++
++&usb0 {
++	num-ports = <1>;
++	status = "okay";
++};
++
++&i2c-gpio-0 {
++	status = "okay";
++
++	rtc: pcf8563@51 {
++		compatible = "nxp,pcf8563";
++		reg = <0x51>;
++	};
++};
+diff --git a/arch/arm/boot/dts/at91sam9260.dtsi b/arch/arm/boot/dts/at91sam9260.dtsi
+index dee9c0c8a096..9f9ee3cd7375 100644
+--- a/arch/arm/boot/dts/at91sam9260.dtsi
++++ b/arch/arm/boot/dts/at91sam9260.dtsi
+@@ -738,7 +738,7 @@
+ 				status = "disabled";
+ 			};
+
+-			watchdog@fffffd40 {
++			watchdog: watchdog@fffffd40 {
+ 				compatible = "atmel,at91sam9260-wdt";
+ 				reg = <0xfffffd40 0x10>;
+ 				interrupts = <1 IRQ_TYPE_LEVEL_HIGH 7>;
+--
+2.24.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
