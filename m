@@ -2,94 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99BBC1147A0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 20:30:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26C411147E7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 21:00:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qA/gfEkNvKa6AnP1gYZIldof0WQiVDbi+tTQZ5UkU60=; b=Dml9Bh3+bv44fq
-	nAW/C9mNZUPH9jU2TjoGsYiBfwaPoZmFTQmVdYZI0cZxu29j9bV5sSYDyXd8a5qzMufQtkUoXcdJ+
-	jqm3HaPHcH+LyUF1l/tsQgysP4YeR+8SxPXwibfBaDfI4yWzzi908mW2uSteB07hsJIqSxkNdGc9m
-	pNE08hWYJNOMqq9zQHDX4PtRKKMNDQiCWqSDys0Ft/KejJLS3qXSL7mtjlIDDbDRjC3fsQ5JOL9Am
-	ow6cHP8RVotalBhbONllyKh6RBNvkKGYVAXMTjpHlT/Vl0EuU1p2vTUNRAuuuoyognv3zC1F0vSIV
-	rUbMipGPkqDy7RDjR5Wg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Uf3AqlFC5SQILNGLEMh92dft50j+FjWcZgwK5/A9SLM=; b=ioTtG4mjKbtCsY
+	/7edGUHOeZgryOcJm0TJUdNc8zRgIoZGS45azNptAmiKnghZcob8pgVudZc/1p9co7tOueO5l4jIZ
+	04RrHlFHb8MHyeSNddVXECNMoB4Ps0TVd+KT1OCvzgNCoa0IcLbw5cLvSZJrjOt+zR8YSI1Q0wAVy
+	+zYUrEWOYiCVJGXtbyuO+EJsb3gK8+plJkzkal8t4tKRCfmCzapYbr1itDpTj7EczY8UruXdsZbcj
+	9LhrwtAF8RsXunHtKbuKQuh0qzdTsSzEEszEJlRhs4NgOU+zlV66/cmpJqw58ngm5JnRbdH8e9cUJ
+	h8TRSgBXq0XdJMCQjxFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icwpK-0002Rh-9U; Thu, 05 Dec 2019 19:30:14 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1icxIo-0000z8-KM; Thu, 05 Dec 2019 20:00:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icwp2-0002QJ-5p
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 19:29:58 +0000
-Received: by mail-il1-x141.google.com with SMTP id a7so4039189ild.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Dec 2019 11:29:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=designa-electronics-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=oweoeyLJ5wuv/O8nbELIS9WNEw6UaLFHl0XqAgUsqCk=;
- b=qFLBSr/uos0vfEJX9PkUP1c3pZE2qfX2+mmZJPagLOCjl+ieoEwHU/Tu5EUO0Zv1dD
- XKKa+PL2ASO0VWT28MaSiG8PuFESn/62tM5WII0RxCAd8qbZcFLid6/ZJKdJepT3jYwp
- N6FwgvtQ9ctpCtG8Ob5wjWA2uMrbj7QdgGnQvgMFGuYJu5J6By2k78qh9+R3bA07hknj
- WqvTUrQBDYl/kr/FeQa3RezvJYD9tDQhsDOrWLh6FS2g7cu1ZC57aiyzOsSsVNa+qwlw
- Fu6f4agw8YmWV3LNddb8gFqbN0D9GsCq56FTBcg/1J76UW4pQJ/5zmr8XWtvy295p2GH
- xtow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=oweoeyLJ5wuv/O8nbELIS9WNEw6UaLFHl0XqAgUsqCk=;
- b=NPGBSVp/er8oiCNfMOIsgoMNv+xlsTj7Jn9ev1Hz0nX/XPfVJW/mQCWp9t632LOIxC
- aNy7uBJkXJESjXhlluWrFt6OBzKdIfx9P896O/ruNVeS4hRbEnFIM8si9lu3e0Ohp0Wp
- wz57aHpqYVMWgvVHrAXwTLq9HFohtrajXW1skQXkv2s+4TEgS4FuZMtxM1zY+pr6fa6k
- JwczxvVdhY/uhWYER5nohuvkBcgrIezemQf9GDfuAFrOWurycgHgEMW8/AoBMsXs/nvn
- 64cDkQk9HFMUv8JMInKVktpFSOScJZ1jM60TlD+tnycfwBmNgLuuEeMlqpenO6kM7KNl
- T+qw==
-X-Gm-Message-State: APjAAAVTEpYzQ9hIG5iNc/vwgLXVBF3KuTpV9o/9jwPVlZaPAaxo8T3M
- 54PK5SY8P1yE/VU3gupO/YihxWODoScN0A==
-X-Google-Smtp-Source: APXvYqzwg4oBQc5OfgQnUqgZ2JLGXdA3PPq8IPIxAg8ICIqomxVcB36U7fGhNg+YQDcDpvMwcK+9lQ==
-X-Received: by 2002:a92:3b0c:: with SMTP id i12mr10304662ila.194.1575574193352; 
- Thu, 05 Dec 2019 11:29:53 -0800 (PST)
-Received: from mail-io1-f49.google.com (mail-io1-f49.google.com.
- [209.85.166.49])
- by smtp.gmail.com with ESMTPSA id o7sm3097712ilo.58.2019.12.05.11.29.51
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 05 Dec 2019 11:29:52 -0800 (PST)
-Received: by mail-io1-f49.google.com with SMTP id f82so4813653ioa.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Dec 2019 11:29:51 -0800 (PST)
-X-Received: by 2002:a6b:6c16:: with SMTP id a22mr7635979ioh.275.1575574191425; 
- Thu, 05 Dec 2019 11:29:51 -0800 (PST)
-MIME-Version: 1.0
-References: <CAEj2-1PyhkhEJ1+uRWio4vYxGuFOuR9mpZOdxmDDjGt_Az+3uA@mail.gmail.com>
- <20191202212948.c6dp7ifcvmjpwfhj@pengutronix.de>
-In-Reply-To: <20191202212948.c6dp7ifcvmjpwfhj@pengutronix.de>
-From: Andre Renaud <arenaud@designa-electronics.com>
-Date: Fri, 6 Dec 2019 08:29:40 +1300
-X-Gmail-Original-Message-ID: <CAEj2-1NPUyJ5WFM7hpQZmha=hmehuEOVppV_BQ4K6kcHUBnwpg@mail.gmail.com>
-Message-ID: <CAEj2-1NPUyJ5WFM7hpQZmha=hmehuEOVppV_BQ4K6kcHUBnwpg@mail.gmail.com>
-Subject: Re: iMX6/UART imprecise external abort
-To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+ id 1icxIM-0000nZ-EC
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 20:00:16 +0000
+Received: from localhost.localdomain (unknown [194.230.155.234])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D187224670;
+ Thu,  5 Dec 2019 20:00:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575576013;
+ bh=rqMWnns6lhszBfCz46NO49QQ35oB1L0mfuooUiga/ow=;
+ h=From:To:Subject:Date:From;
+ b=jrOvRfxGmHBT0rouyjK6iV3sHT/UR9SNVCiKTLjeC86rGy37hqks1vdXk6DB9/iCq
+ 5uEGDt0XfmedBwhHykDOrpdNHA0pOJMKyJAQNS9d/8OV0ghvCHsCbgO7RpWga5hQ+C
+ iM2ogEv5KqDS2T8F9QTU/QvdNTKAXczNlAIkgeJI=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Lukasz Luba <l.luba@partner.samsung.com>,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] ARM: exynos_defconfig: Bring back explicitly wanted options
+Date: Thu,  5 Dec 2019 21:00:06 +0100
+Message-Id: <20191205200006.5164-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_112956_397754_D6A75B0E 
-X-CRM114-Status: GOOD (  14.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191205_120014_506654_8402E979 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,43 +78,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@pengutronix.de,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBEZWMgMywgMjAxOSBhdCAxMDoyOSBBTSBVd2UgS2xlaW5lLUvDtm5pZwo8dS5rbGVp
-bmUta29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToKPiBJIHNhdyBhIHNpbWlsYXIgcHJvYmxl
-bSBzb21lIHRpbWUgYWdvIG9uIGEgNC4xNC42OSBhbmQgNC4xOS43MiB3aXRoIGEKPiBiYWNrcG9y
-dCBvZiB0aGUgVUFSVCBkcml2ZXIgZnJvbSBzb21lIG5ld2VyIHJlbGVhc2UgKGFyb3VuZCA1LjQt
-cmMxKQo+IHBsdXMgc29tZSByczQ4NSBpbXByb3ZtZW50cyBhbmQgdGhlIC1ydCBwYXRjaCBhcHBs
-aWVkLiBJIGdvdCBzb21lIGlucHV0Cj4gYnkgUk1LIG9uIHRoYXQgYW5kIHRoZSBzaXR1YXRpb24g
-aXMgZGlmZmljdWx0LiAgVGhlIGFkZHJlc3Mgd2hlcmUgdGhlCj4gZmF1bHQgaXMgcmVwb3J0ZWQg
-dG8gaGF2ZSBoYXBwZW5kIGRvZXNuJ3Qgc2F5IGFueXRoaW5nIGZvciBhbiBpbXByZWNpc2UKPiBl
-eHRlcm5hbCBhYm9ydC4KPgo+IE9uIG91ciBlbmQgdGhlIHByb2JsZW0gZG9lc24ndCByZXByb2R1
-Y2Ugc28gZWFzaWx5IHVwIHRvIG5vdy4KPgo+IEkgZGlkbid0IGNvbWUgYXJvdW5kIHRvIGRlYnVn
-IHRoaXMgcHJvYmxlbSwgeWV0LiBJIHdvdWxkIGRvIHNvbWUKPiBzaG9vdGluZyBpbiB0aGUgZGFy
-ayBhbmQgc3RhcnQgd2l0aDoKPgo+ICAtIGRpc2FibGUgRE1BIChkb2Vzbid0IGhlbHAgYWNjb3Jk
-aW5nIHRvIHlvdXIgcmVwb3J0KQo+ICAtIHJlcHJvZHVjZSB3aXRob3V0IC1ydCAoc3RpbGwgaGFw
-cGVucyBhY2NvcmRpbmcgdG8geW91ciByZXBvcnQpCj4gIC0ga2VlcCB0aGUgVUFSVCBjbG9ja3Mg
-b24uIChUcnkgcmVtb3ZpbmcKPiAgICAiY2xrX2Rpc2FibGVfdW5wcmVwYXJlKHNwb3J0LT5jbGtf
-aXBnKTsiIGZyb20gaW14X3VhcnRfcHJvYmUoKSkKCkNoYW5naW5nIHRoZSBjbG9ja2luZyBtYWRl
-IHRoZSBpc3N1ZSBoYXJkZXIgdG8gcmVwcm9kdWNlLCBidXQgaXQgZGlkCnN0aWxsIG9jY3VyIGV2
-ZW50dWFsbHkKCj4gIC0gdHJ5IHRvIHJlcHJvZHVjZSBpbiByczIzMiBtb2RlCj4gIC0gdHJ5IHRv
-IHJlY29yZCBzb21lIHRyYWNlcyBvZiB0aGUgcHJvYmxlbQo+ICAgIChpLmUuIGFkZCB0cmFjaW5n
-X29mZigpIHRvIHRoZSBmYXVsdCBoYW5kbGVyIGFuZCBlbmFibGUgZnRyYWNlIHdpdGggYQo+ICAg
-IGxhcmdlIGVub3VnaCB0cmFjZSBidWZmZXIuKQoKV2UgaGF2ZW4ndCB0cmllZCB0aGVzZSB5ZXQu
-CgpXZSBkaWQgdHJ5IGZpZGRsaW5nIHdpdGggdGhlIElSUSBhZmZpbml0eSAtIHdlIHB1c2hlZCB0
-aGUgYWZmaW5pdHkgZm9yCnRoZSBJUlEgaXRzZWxmIG9uIHRvIENQVSA0IChpZTogZWNobyA4ID4g
-L3Byb2MvaXJxLzY3L3NtcF9hZmZpbml0eSksCmFuZCB0aGVuIHdlIHJhbiBvdXIgdGVzdCBwcm9n
-cmFtIG9uIHRoZSBzYW1lIENQVSB3aXRoIHRhc2tzZXQgKGllOgp0YXNrc2V0IDggcnM0ODVfdGVz
-dCkuCgpVc2luZyB0aGlzIGNvbmZpZ3VyYXRpb24gSSBoYXZlIG5vdCBzZWVuIHRoZSBpc3N1ZSBy
-ZW9jY3VyIG9uIHRoZQo1LjQuMSBrZXJuZWwsIGFsdGhvdWdoIHRoZSBzYW1lIHNldHRpbmdzIGRv
-IG5vdCByZXNvbHZlIHRoZSBpc3N1ZSBvbgpvdXIgb2xkZXIgNC44IGtlcm5lbC4KClJlZ2FyZHMs
-CkFuZHJlCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1hcm0ta2VybmVsCg==
+Few options KALLSYMS_ALL, SCSI, PM_DEVFREQ and mutex/spinlock debugging
+were removed with savedefconfig because they were selected by other
+options.  However these are user-visible options and they might not be
+selected in the future.  Exactly this happened with commit 0e4a459f56c3
+("tracing: Remove unnecessary DEBUG_FS dependency") removing the
+dependency between DEBUG_FS and TRACING.
+
+To avoid losing these options in the future, explicitly mention them in
+defconfig.
+
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+---
+ arch/arm/configs/exynos_defconfig | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/arch/arm/configs/exynos_defconfig b/arch/arm/configs/exynos_defconfig
+index e7e4bb5ad8d5..026407101cf2 100644
+--- a/arch/arm/configs/exynos_defconfig
++++ b/arch/arm/configs/exynos_defconfig
+@@ -38,6 +38,7 @@ CONFIG_CRYPTO_SHA256_ARM=m
+ CONFIG_CRYPTO_SHA512_ARM=m
+ CONFIG_CRYPTO_AES_ARM_BS=m
+ CONFIG_CRYPTO_CHACHA20_NEON=m
++CONFIG_KALLSYMS_ALL=y
+ CONFIG_MODULES=y
+ CONFIG_MODULE_UNLOAD=y
+ CONFIG_PARTITION_ADVANCED=y
+@@ -92,6 +93,7 @@ CONFIG_BLK_DEV_LOOP=y
+ CONFIG_BLK_DEV_CRYPTOLOOP=y
+ CONFIG_BLK_DEV_RAM=y
+ CONFIG_BLK_DEV_RAM_SIZE=8192
++CONFIG_SCSI=y
+ CONFIG_BLK_DEV_SD=y
+ CONFIG_CHR_DEV_SG=y
+ CONFIG_ATA=y
+@@ -291,6 +293,7 @@ CONFIG_CROS_EC_SPI=y
+ CONFIG_COMMON_CLK_MAX77686=y
+ CONFIG_COMMON_CLK_S2MPS11=y
+ CONFIG_EXYNOS_IOMMU=y
++CONFIG_PM_DEVFREQ=y
+ CONFIG_DEVFREQ_GOV_PERFORMANCE=y
+ CONFIG_DEVFREQ_GOV_POWERSAVE=y
+ CONFIG_DEVFREQ_GOV_USERSPACE=y
+@@ -355,4 +358,7 @@ CONFIG_SOFTLOCKUP_DETECTOR=y
+ # CONFIG_DETECT_HUNG_TASK is not set
+ CONFIG_PROVE_LOCKING=y
+ CONFIG_DEBUG_ATOMIC_SLEEP=y
++CONFIG_DEBUG_RT_MUTEXES=y
++CONFIG_DEBUG_SPINLOCK=y
++CONFIG_DEBUG_MUTEXES=y
+ CONFIG_DEBUG_USER=y
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
