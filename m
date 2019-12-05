@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B77A113BC8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 07:37:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60F34113BD8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 07:39:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AlhnlRcoIHMUKh1tlZ4nAhAmHzCO7tHWQ2NoPrl/iUs=; b=igo3t9qUDjPcMS
-	tBeXxnaOvvDHY9GOG1dQwYGr4gzvjnJ82ttBap4gUqdj70hn8Qx20PNY8LJfitAnR/AAN4PTjvkji
-	TdwV4k1YF/3j2bvWanB0doWUKqmavmsN4npm+fULT7lT/yqFceF09Z+xOIv5omoJNaFyk2ZGZzBMk
-	oGOvp3Oy8AVprL45DgXo8Ny6sECWSqlkpRdTxLTLvsq3tMjRCqvzsj88N3zU4MxLBCa8H38ydFOAc
-	OM1h9t9C997z896nqzxBxB8yu6K/45LHFF4l8kCGxZ8CJ8FWmT6GeBTdXr31qy1oufGwYRUX+eA4y
-	thPpFBnbbMb08p3vysqQ==;
+	List-Owner; bh=fqpInA1+xlFiU8pH4r4NJ0OcZga2GBTiBhWg2hUSST4=; b=Q3SJLTIPNRvvL2
+	b5IaSOrTt/+ZIghvP/GNQxaekQ0H9tNDFIBrNLAWseIpJK3vifZoKYOBB8Mrve7nwna6ZSPqU0lQC
+	9WeJbXbLZ7r4pBjv4pL9OBg53dDRj2cD1GtGaVvcnHyl192IGoA82+4FOx5yVnpDkUWvYYtbznspH
+	hzsPwELgTTe6ud6CHkRTdp3/LJoNimvJQnsdRyTUrDZ2b6NpF4NlZ/aIEeE2kYK5y7W+FVj7noz/j
+	vBCOqyJe8eUKpaXxINEho3GFMfyNmTXBR1fa15uaD0jPrAXaI2bCH6AZgUfyqNThKfvI0YDAdTDTe
+	hiauUwYkLijh3mXU08UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icklq-0004F0-9W; Thu, 05 Dec 2019 06:37:50 +0000
-Received: from mail-eopbgr700061.outbound.protection.outlook.com
- ([40.107.70.61] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
+	id 1ickmw-0005Tp-EF; Thu, 05 Dec 2019 06:38:58 +0000
+Received: from mail-dm6nam11on2062.outbound.protection.outlook.com
+ ([40.107.223.62] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ickle-0004D6-7J
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 06:37:39 +0000
+ id 1ickle-0004DB-G7
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 06:37:41 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=e8hu840KSCk8imC9F0AQID4xymmV+yC3EJf2BedsxE/JWLrkzeGXE/IVJa5fPRrvzWGyVxgX5bu/FeF8PTPM7yX51y4yOmtHc8aJ1U3OLtrZd8+BlIYs4Io0K1jbL3AfR6lD7OrSiqRsbyw5VxCYW1hXJwl9uqsEZ1i/DXIBFBmhxxxganiY7P8hdTKWzT2J1ZbE8/M80xf4zNvLWs92Q7YihSmG4pyLs0dh+hkymlgoGtkJshZs3chl/IuuSLouGuYVVFULrQyZhhlrEvuJBOp5/CMhz0uesqHMaSbGblhpDD6RYSTUaLnQxQKD74mH+AO2SyqYoDbEeviM67gCcQ==
+ b=XiZfO6QfPOY4K6g9I4wWWvW8FewkB1/NvpJ0d/AQfNdryzYtFjY9OrUTYBNDnrv77H/DJeyEQ41XFXXr6cQJitM74NZ/D8BjwNTVb1BLZSLUNBz5QQwINfQbW3sAS4gU4PRz0pf8jQhhi4dvnMxsjO/xt/vL32SVXo8Sac+nbB4n3AJqgEKopZSPqebVZzJJENBeyiEQppiEaAdcct8e+QlcSsPTEeZfwps1Qba+xJmya7i88ldEZz0g4BAbKbe6/RtUjfs0w2u7SZHu1CTxEQ6zrOdo4SKpG7zXqNqNYlID6VvPwuT416Cm/kLCdWw3lZJVDSjXEIP8VilHCH3gSA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=E9CHQI/shtHh7y7xVKO9wv5ZGzwFahyHkg96iYSppKM=;
- b=cZ+it4umzxIZMpE6ZpjqqJc2e4LrrCvK/5o7OYIhK9OhkQqEV9pksWzlEB1TcWfgq/owSKEROBnGucn698hlZsCpTt9c2cTlV07jRsQrkKtUGH2zlKlMmvbnPHukn7MCqyHRYTJimHnozjExDvNGFICxYB52wPYaa1XLWWXZSqifCNToA4whIW3E0ZCx/5qTWSPexqSbLi4xBnhliPWyJAJgzQhepjhHCox3JerRDKqf/jvWWYQ96yh0Yv6oeKmkCEu47UrQSdp5nF3fRRl+hvIk4BhC3ODrrCpbxM5q75atHDbRyO1sZ5d7xWN+rQNm3yDQRqkHp7bUO5qZjKc3Dg==
+ bh=f2ZBg83lGfUj0DfhyWSb64nyUYJNXtQgQndPSIHkG7k=;
+ b=Bnyp7BbaKMdV6X+M/9/Un3kSPju37LjBR3dqtuwdzFXQirO6H8rBeKdb+Aa9Y80j5VCP+PVZBJ197fJI2LIaPcCxmeGS9y0L4ctVTY7slI0xpJ6RdZaw3EiyeIwR26pJX+I6QEhM3YYsDskbISK0BplYxmrvfd8HPTdVzhhkyV4nPtIAB7pp/3ejZue3GXghchQTULSQBvb6RRF4S5fTyRMipG8aakRRJUvfH+iGWAb0T0VqUjEoHdWDtSkS7W6ub9+KwmeFOwsMU8CX8ClO+79jWGVVpuBHim7g7TIg2awH3VgfnsL2JHLDdeEdaZ/VdUJEVU14hTWjzAa69USuzA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  149.199.60.83) smtp.rcpttodomain=lists.infradead.org
  smtp.mailfrom=xilinx.com; dmarc=bestguesspass action=none
@@ -38,18 +38,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=E9CHQI/shtHh7y7xVKO9wv5ZGzwFahyHkg96iYSppKM=;
- b=l1IwK6BnPGJTfJzXbfe890PqHvRuOBn9t0BquJN647rmtrH8qfPRVsZaYHgYbZMjPxk3giWtb1KeOHIoyamjrnaBB2US8fImydNs2DxkMK2oLqs137fS+BzeOulp7/OFPCNDDbrMfGT6RD11erE7ZNWpjDf8EWsSSaY/4B/fLX0=
-Received: from DM6PR02CA0138.namprd02.prod.outlook.com (2603:10b6:5:1b4::40)
- by MN2PR02MB6989.namprd02.prod.outlook.com (2603:10b6:208:20f::23) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2495.17; Thu, 5 Dec
- 2019 06:37:35 +0000
-Received: from CY1NAM02FT044.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e45::207) by DM6PR02CA0138.outlook.office365.com
- (2603:10b6:5:1b4::40) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2516.13 via Frontend
- Transport; Thu, 5 Dec 2019 06:37:35 +0000
+ bh=f2ZBg83lGfUj0DfhyWSb64nyUYJNXtQgQndPSIHkG7k=;
+ b=skXEWJ+HIoFZjAtDLv/0C8mMf/kSZ8OT1X73a0l9Ayy9aNsylHKgi6BfQSRCjrD+YmomPxS+w8nMdMk1l7LM3ZQMwKfH5qKx4zQ+ui2camKG/GzErJD/Dn0S8SZL42FpMu0ixnrQidn/XqYiYA5qmET9FfJ3XSlnq0QaiSof2CI=
+Received: from CY4PR02CA0040.namprd02.prod.outlook.com (2603:10b6:903:117::26)
+ by BN7PR02MB4211.namprd02.prod.outlook.com (2603:10b6:406:fc::23)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2495.18; Thu, 5 Dec
+ 2019 06:37:36 +0000
+Received: from CY1NAM02FT056.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e45::207) by CY4PR02CA0040.outlook.office365.com
+ (2603:10b6:903:117::26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2516.12 via Frontend
+ Transport; Thu, 5 Dec 2019 06:37:36 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.60.83)
  smtp.mailfrom=xilinx.com; lists.infradead.org; dkim=none (message not signed)
  header.d=none;lists.infradead.org; dmarc=bestguesspass action=none
@@ -58,32 +58,33 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.60.83 as permitted sender) receiver=protection.outlook.com;
  client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
 Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- CY1NAM02FT044.mail.protection.outlook.com (10.152.75.137) with Microsoft SMTP
+ CY1NAM02FT056.mail.protection.outlook.com (10.152.74.160) with Microsoft SMTP
  Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2474.17
- via Frontend Transport; Thu, 5 Dec 2019 06:37:34 +0000
+ via Frontend Transport; Thu, 5 Dec 2019 06:37:36 +0000
 Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
  by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
  (envelope-from <rajan.vaja@xilinx.com>)
- id 1ickla-0000xI-G7; Wed, 04 Dec 2019 22:37:34 -0800
+ id 1ickla-0000xJ-HF; Wed, 04 Dec 2019 22:37:34 -0800
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <rajan.vaja@xilinx.com>)
- id 1icklV-0000XV-CV; Wed, 04 Dec 2019 22:37:29 -0800
-Received: from xsj-pvapsmtp01 (smtp2.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xB56bJpk003539; 
+ id 1icklV-0000XV-E0; Wed, 04 Dec 2019 22:37:29 -0800
+Received: from xsj-pvapsmtp01 (xsj-smtp1.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xB56bJb4003541; 
  Wed, 4 Dec 2019 22:37:20 -0800
 Received: from [172.19.2.91] (helo=xsjjollys50.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <rajan.vaja@xilinx.com>)
- id 1icklL-0000WL-Qw; Wed, 04 Dec 2019 22:37:19 -0800
+ id 1icklL-0000WL-Sx; Wed, 04 Dec 2019 22:37:19 -0800
 From: Rajan Vaja <rajan.vaja@xilinx.com>
 To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
  mark.rutland@arm.com, michal.simek@xilinx.com, jolly.shah@xilinx.com,
  m.tretter@pengutronix.de, gustavo@embeddedor.com,
  tejas.patel@xilinx.com, nava.manne@xilinx.com, mdf@kernel.org
-Subject: [PATCH v3 2/6] clk: zynqmp: Extend driver for versal
-Date: Wed,  4 Dec 2019 22:35:55 -0800
-Message-Id: <1575527759-26452-3-git-send-email-rajan.vaja@xilinx.com>
+Subject: [PATCH v3 3/6] clk: zynqmp: Warn user if clock user are more than
+ allowed
+Date: Wed,  4 Dec 2019 22:35:56 -0800
+Message-Id: <1575527759-26452-4-git-send-email-rajan.vaja@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1575527759-26452-1-git-send-email-rajan.vaja@xilinx.com>
 References: <1574415814-19797-1-git-send-email-rajan.vaja@xilinx.com>
@@ -95,38 +96,38 @@ X-EOPAttributedMessage: 0
 X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
  SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(136003)(346002)(39860400002)(396003)(199004)(189003)(426003)(36756003)(70206006)(2616005)(2906002)(70586007)(51416003)(14444005)(26005)(44832011)(336012)(7696005)(11346002)(186003)(316002)(16586007)(5660300002)(4326008)(107886003)(305945005)(81156014)(81166006)(76176011)(36386004)(6666004)(8936002)(356004)(50466002)(478600001)(4744005)(8676002)(7416002)(9786002)(50226002)(48376002)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR02MB6989; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
+ SFS:(10009020)(4636009)(136003)(376002)(396003)(346002)(39860400002)(189003)(199004)(356004)(9786002)(50226002)(5660300002)(6666004)(51416003)(36756003)(16586007)(7696005)(2906002)(8936002)(81166006)(81156014)(8676002)(44832011)(426003)(2616005)(478600001)(11346002)(336012)(48376002)(26005)(70586007)(107886003)(14444005)(7416002)(316002)(70206006)(36386004)(76176011)(4326008)(305945005)(50466002)(186003)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN7PR02MB4211; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: bb32a81e-a208-49a9-fd25-08d7794d9d15
-X-MS-TrafficTypeDiagnostic: MN2PR02MB6989:
-X-Microsoft-Antispam-PRVS: <MN2PR02MB6989186B3E7FF90FC10C0E23B75C0@MN2PR02MB6989.namprd02.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: 7c1ad22b-481b-4231-00ef-08d7794d9db7
+X-MS-TrafficTypeDiagnostic: BN7PR02MB4211:
+X-Microsoft-Antispam-PRVS: <BN7PR02MB4211CDC677292EF18F50D2A0B75C0@BN7PR02MB4211.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:446;
+X-MS-Oob-TLC-OOBClassifiers: OLM:46;
 X-Forefront-PRVS: 02426D11FE
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: pY1Vcie4ejMmyJJk/LlT0RBNBCMTFsHYVmRCnQGWa0U7BtCaH/IKf+kaLajsD/aeOkEkQDGUY0q30qdpG0xg+ecYzzCUwYRHUtZbuzqIWIeEKA4I895DMmhA+CELDGzbjyZqo7V9qTGzyr/F+0woaL+HfwBGBKIvRrTFihRlJKeNIXu08jUHfwpuLyGlpvVcZLADsr7k13uwqyFgV51l2OPJrZfRghMnTJy9+qWkjPaexzCDyGKgJu3+Qh1f8NqxR5J9UGYTlh2gFh1QlVeqogL5FTDTD2aQGAfmjC/N1TjeaiKhm9h4EaKbCKg7f02GK2jwQ+Yo6s4us7wkk5NgxZlPaSvqDkvODO21ug3fBvxYQB0erUd9Xcg//NkSCwbhp/Hd42p6oBuq3RYRCYZfCvtk69S3FkoqWmXmpnSAmO3dH2FYsYHkS+3bBkRcZzvS9Ke+0hptYZXdnVe+kEgSISHhLi04J5Ovo0v4voxdtZADtFHEGUlix579pIxsFHLo
+X-Microsoft-Antispam-Message-Info: UH5uRED0BhVVNnFuM4DfjtIabJw3Urtd5yXbeWddBYGe820Rix6L176tLVroh28f1YToHMPp32QTewaKISzrgRwbG4lAVjnxrQT7BBtWKq6rpaqXo4HHEbeorSQoj+pAZttQzNPbOsd3wWB8x8TjpRw4Y4zIi+ebvKKZggDDM783GP4cWXIHkOaghK0kKNQ2WknFrAXyA97Pb5QAjRoLCuWsFdUG7wcsEFMEiZp/33na9HfvsfmgEeeJStragz6AhqONn/8v/p+rsbOQyqiFLDnNIsiyiYAwqlFiqncIjty4ItTAq93yIXE/WOUK7vgY6suJO3jhtzInZjFZ4tDfGhCWa9/UIthoUVZ+WZRgfmTJXwAyzBEoc6UPKFkXpmy2Nwe5UliwsqD6W71XJdpri+zbrRZlJfZuv8vhJxJogysgoCFl5h5inyIj4wl7XU0ysebGTXx+vihxjXAajdQpX9QOst0J0nSGkLOPobh95tm03xbKgBRVOZYHfDqdzVLo
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Dec 2019 06:37:34.9830 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: bb32a81e-a208-49a9-fd25-08d7794d9d15
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Dec 2019 06:37:36.0372 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7c1ad22b-481b-4231-00ef-08d7794d9db7
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
  Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR02MB6989
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR02MB4211
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_223738_267295_8950CF39 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20191204_223738_535571_2C8D0D16 
+X-CRM114-Status: GOOD (  14.85  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.70.61 listed in list.dnswl.org]
+ no trust [40.107.223.62 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -151,37 +152,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add Versal compatible string to support Versal
-binding.
+Warn user if clock is used by more than allowed devices.
+This check is done by firmware and returns respective
+error code. Upon receiving error code for excessive user,
+warn user for the same.
 
-Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
+This change is done to restrict VPLL use count. It is
+assumed that VPLL is used by one user only.
+
 Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
 ---
- drivers/clk/zynqmp/clkc.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+Changes in v2:
+ - Leave the existing warning as it is and print new warning in case of
+   -EUSERS instead of printing error and warning both.
+---
+ drivers/clk/zynqmp/pll.c             | 6 ++++--
+ drivers/firmware/xilinx/zynqmp.c     | 2 ++
+ include/linux/firmware/xlnx-zynqmp.h | 1 +
+ 3 files changed, 7 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/clk/zynqmp/clkc.c b/drivers/clk/zynqmp/clkc.c
-index a11f93e..10e89f2 100644
---- a/drivers/clk/zynqmp/clkc.c
-+++ b/drivers/clk/zynqmp/clkc.c
-@@ -2,7 +2,7 @@
- /*
-  * Zynq UltraScale+ MPSoC clock controller
-  *
-- *  Copyright (C) 2016-2018 Xilinx
-+ *  Copyright (C) 2016-2019 Xilinx
-  *
-  * Based on drivers/clk/zynq/clkc.c
-  */
-@@ -749,6 +749,7 @@ static int zynqmp_clock_probe(struct platform_device *pdev)
+diff --git a/drivers/clk/zynqmp/pll.c b/drivers/clk/zynqmp/pll.c
+index a541397..89b5995 100644
+--- a/drivers/clk/zynqmp/pll.c
++++ b/drivers/clk/zynqmp/pll.c
+@@ -188,10 +188,12 @@ static int zynqmp_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+ 		frac = (parent_rate * f) / FRAC_DIV;
  
- static const struct of_device_id zynqmp_clock_of_match[] = {
- 	{.compatible = "xlnx,zynqmp-clk"},
-+	{.compatible = "xlnx,versal-clk"},
- 	{},
+ 		ret = eemi_ops->clock_setdivider(clk_id, m);
+-		if (ret)
++		if (ret == -EUSERS)
++			WARN(1, "More than allowed devices are using the %s, which is forbidden\n",
++			     clk_name);
++		else if (ret)
+ 			pr_warn_once("%s() set divider failed for %s, ret = %d\n",
+ 				     __func__, clk_name, ret);
+-
+ 		eemi_ops->ioctl(0, IOCTL_SET_PLL_FRAC_DATA, clk_id, f, NULL);
+ 
+ 		return rate + frac;
+diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
+index 75bdfaa..74d9f13 100644
+--- a/drivers/firmware/xilinx/zynqmp.c
++++ b/drivers/firmware/xilinx/zynqmp.c
+@@ -48,6 +48,8 @@ static int zynqmp_pm_ret_code(u32 ret_status)
+ 		return -EACCES;
+ 	case XST_PM_ABORT_SUSPEND:
+ 		return -ECANCELED;
++	case XST_PM_MULT_USER:
++		return -EUSERS;
+ 	case XST_PM_INTERNAL:
+ 	case XST_PM_CONFLICT:
+ 	case XST_PM_INVALID_NODE:
+diff --git a/include/linux/firmware/xlnx-zynqmp.h b/include/linux/firmware/xlnx-zynqmp.h
+index adb14bc..a3b0a39 100644
+--- a/include/linux/firmware/xlnx-zynqmp.h
++++ b/include/linux/firmware/xlnx-zynqmp.h
+@@ -89,6 +89,7 @@ enum pm_ret_status {
+ 	XST_PM_INVALID_NODE,
+ 	XST_PM_DOUBLE_REQ,
+ 	XST_PM_ABORT_SUSPEND,
++	XST_PM_MULT_USER = 2008,
  };
- MODULE_DEVICE_TABLE(of, zynqmp_clock_of_match);
+ 
+ enum pm_ioctl_id {
 -- 
 2.7.4
 
