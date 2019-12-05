@@ -2,52 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5202A113D57
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 09:51:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CE53113D6D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 09:57:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bStADdmBzfRSujUbKEkdiITNpi5Gk3lwilcze/aDDXg=; b=a4W4rXQ4G/5xDp
-	KnwAUXkfjV7enA6uC/HU/GdlSWQC8AXcynYuAgBhayehR7ZAwFRr5fS254H12Tcz3abxrsU67X2j6
-	G7IK0S09nfEbMfIik48658re5qWbGm158H7Tl0O/YhF6v8gTmisH1X1HKP7XzrwsvpI1hT6wfHerQ
-	t74Hdywxzof/WB5oTRZt0RADKhG0PmznrePOlaMva7PEzOc6MQTXMtSNX2Bx3Cdb7aADxNpS6ic+o
-	0EXi0O/JjPn2Qs1vlMDriWkfYZ+NqKeuKqviGzWSsgh99XGcMUeou9PRshOjqCGBpvwV3jfRmjR9z
-	v7h/v3BXyRA8P9tNFPhg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wi3iWWj6IReQcnFqNlNNeLLGVT8wqhEuB4lEPNfugi4=; b=NHB9DaaNhhAL0D
+	O8bDBJW24qdM/93ycGzcHAlCI1yz0gM3Fbr5v6t2rGGu9IYol0Whz1B1yngFSThPkWFWOWspzKpTn
+	GaT1NJZ2WyUme192eNfeEMXX+DG3i3aVIErEIy+V3eNzx2Z+QPJS6t56GjeA6rhiwnrrseJ3bFoZC
+	txaW0v/9cvCgbAqAKxqTNvEp38Tgb2zz/4pouFsbm5b4y4VMx2M56VtwUcCW0c6D31Gc/Z8YTYfrL
+	DIlVLOJ/4Y0u7rzKE/jZ/s+SYYQjDWhvJd1OiFXtNzwPx7B36eSnmr3u1A+TyxLhMuoqGvCwiOz3O
+	t43/NwNEpqFp7GVCxt3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icmqn-0007wx-O3; Thu, 05 Dec 2019 08:51:05 +0000
+	id 1icmwr-0001kE-Ac; Thu, 05 Dec 2019 08:57:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icmqg-0007wH-UG
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 08:51:00 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4DB4F205ED;
- Thu,  5 Dec 2019 08:50:58 +0000 (UTC)
+ id 1icmwk-0001jp-I2
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 08:57:16 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 47CCA206DB;
+ Thu,  5 Dec 2019 08:57:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575535858;
- bh=jv3bVtccHNR/eO6WUrlGuplkynPeqmKgBox/+jgglmY=;
- h=From:To:Cc:Subject:Date:From;
- b=zJ2Pgng4JVDyPDNCnaCPVIuU4jWEK7fe+PHC7tvpnKoUvx93g75P4sFbdREl/Zw8p
- /bM6Ao3pHaM1MNS83wq5HStQHqVgS9QC7HkwRQM/Q82q0WsFYYTRjWadNWKsj/FWWK
- 2sWWQ1VmT1c9uzt3wrafhsOLLDYXqPNnwbzhpNkI=
-Received: by wens.tw (Postfix, from userid 1000)
- id C09F55FA9F; Thu,  5 Dec 2019 16:50:54 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Alessandro Zummo <a.zummo@towertech.it>, Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH] rtc: sun6i: Add support for RTC clocks on R40
-Date: Thu,  5 Dec 2019 16:50:54 +0800
-Message-Id: <20191205085054.6049-1-wens@kernel.org>
-X-Mailer: git-send-email 2.24.0
+ s=default; t=1575536234;
+ bh=cmGci16+e8W+TvooB/M7XV+9nSul3ZD6hI/4tXq0L6E=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=h98gp9hyV/ZoZYvTGLUPGRPBjdOb1iUHJt7OJIdj7BN2h7T/qooX7FadI8zclxPFK
+ ZFgSLsmq+ZJrZnIqkYQNbImIlwuHz6lJ/AOU0Ah7Q7rcSJWN1R8R9jOqF4GFqfpwOK
+ FgBwinMvzxkBDpkeSw/qIDN2JT+tRNJrcBVdcqZI=
+Date: Thu, 5 Dec 2019 08:57:10 +0000
+From: Will Deacon <will@kernel.org>
+To: Jerome Forissier <jerome@forissier.org>
+Subject: Re: Kernel v5.2+ on HiKey960?
+Message-ID: <20191205085709.GB8606@willie-the-truck>
+References: <f58c2c0e-ec82-6675-84e6-ad63fd93c8ff@forissier.org>
+ <20191204101851.GC13081@arrakis.emea.arm.com>
+ <1c5e497f-4be0-e1f3-4d6d-fed9470d0406@forissier.org>
+ <20191204142824.GB26730@arrakis.emea.arm.com>
+ <226a53f8-9404-1aa0-ed44-22e2157e4521@forissier.org>
+ <20191204175726.GA28736@willie-the-truck>
+ <d7481911-9f5f-7f52-0731-0b123c384b08@forissier.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <d7481911-9f5f-7f52-0731-0b123c384b08@forissier.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_005058_995534_C1A77455 
-X-CRM114-Status: GOOD (  16.04  )
+X-CRM114-CacheID: sfid-20191205_005714_638528_877EF449 
+X-CRM114-Status: GOOD (  24.08  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,68 +82,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, stable@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ maz@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
+On Thu, Dec 05, 2019 at 08:26:48AM +0100, Jerome Forissier wrote:
+> On 12/4/19 6:57 PM, Will Deacon wrote:
+> > On Wed, Dec 04, 2019 at 03:58:57PM +0100, Jerome Forissier wrote:
+> >> On 12/4/19 3:28 PM, Catalin Marinas wrote:
+> >>> On Wed, Dec 04, 2019 at 02:15:48PM +0100, Jerome Forissier wrote:
+> >>>> On 12/4/19 11:18 AM, Catalin Marinas wrote:
+> >>>>> On Tue, Dec 03, 2019 at 04:43:22PM +0100, Jerome Forissier wrote:
+> >>>>>> Has anyone successfully run kernel v5.2 or later on a HiKey960 board?
+> >>>>>>
+> >>>>>> For some reason, anything past v5.1 doesn't work for me and I could not
+> >>>>>> figure out why. The symptom is it never gets to the login prompt. The
+> >>>>>> root FS is a Buildroot-generated one, and prior to reaching the kernel
+> >>>>>> the board runs TF-A, OP-TEE, UEFI (edk2) and Grub.
+> >>>>>>
+> >>>>>> I tried replacing /init with a shell, in which case I can type a command
+> >>>>>> but whatever it is (even a simple "ls"), the command hangs on exit and I
+> >>>>>> never get back to the prompt.
+> >>>>>>
+> >>>>>> Then I started bisecting, that was quite painful but I found several
+> >>>>>> problematic commits. I ended up reverting the following (in this order)
+> >>>>>> to be able to boot v5.4:
+> >>> [...]
+> >>>> 75a19a0202db is the first bad commit. Its parent: commit 2f1d4e24d91b
+> >>>> ("firmware: arm_sdei: Prohibit probing in '_sdei_handler'") boots fine
+> >>>> [2]. Since reverting 75a19a0202db in v5.2 does not work, I suspect we're
+> >>>> dealing with multiple problems. As I said, the set of reverts above is
+> >>>> the best I could figure out, and believe me I spent several days trying
+> >>>> to troubleshoot this :-/ (that being said, I know nothing about the VDSO
+> >>>> or the arch timer so I could not try anything meaningful other than
+> >>>> reverting some commits).
+> >>>
+> >>> Thanks. There could as well be multiple issues. Since commit
+> >>> 75a19a0202db is cc stable, could you please apply it on top of 5.1 and
+> >>> see if it fails? I don't have a HiKey960 at hand to try this.
+> >>>
+> >>
+> >> Fails indeed (panic): https://pastebin.com/F0jpktii
+> > 
+> > Interesting. I followed your instructions and my board boots fine even
+> > after applying that patch, but then I see the following on shutdown:
+> > 
+> > [   83.022955] WARNING: CPU: 0 PID: 1995 at kernel/time/tick-broadcast.c:647 tick_handle_oneshot_broadcast+0x1c8/0x1e8
+> > [   83.033392] Modules linked in:
+> > [   83.036447] CPU: 0 PID: 1995 Comm: init Tainted: G S                5.1.0-253105-g2b41f6584d59 #3
+> 
+> That is not v5.1 plus one commit, is it?
 
-When support for the R40 in the rtc-sun6i driver was split out for a
-separate compatible string, only the RTC half was covered, and not the
-clock half. Unfortunately this results in the whole driver not working,
-as the RTC half expects the clock half to have been initialized.
+No, and I wasn't claiming that it was. I followed the instructions you
+pointed us to [1] and cherry-picked 75a19a0202db on top. If there's
+something different that I need to do in order to reproduce the problem,
+then please holler. My experience with Hikey960 has been 100% "bloody awful"
+so I don't have a good setup for simply building and running a kernel on it.
 
-Add support for the clock part as well. The clock part is like the H3,
-but does not need to export the internal oscillator, nor does it have
-a gateable LOSC external output.
+I also had to hack some of the EDK2 code in there to get it to compile, so
+it continues to live up to expectations.
 
-This fixes issues with WiFi and Bluetooth not working on the BPI M2U.
+My hunch is that we're somehow ending up in the vDSO code but with the A73
+workaround for erratum 858921 enabled. This shouldn't ever happen because
+the syscall fallback will be enabled in this case, so I'm also thinking that
+the SP804 clocksource is confusing things somehow. If we end up trapping to
+the kernel with the seqlock held then I could see userspace getting stuck in
+an infinite loop. Since I've been unable to reproduce the failure, could you
+see if it persists even with CONFIG_ARM64_ERRATUM_858921=n?
 
-Fixes: d6624cc75021 ("rtc: sun6i: Add R40 compatible")
-Cc: <stable@vger.kernel.org> # 5.3.x
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
+Will
 
-Please merge this for fixes.
-
----
- drivers/rtc/rtc-sun6i.c | 16 ++++++++++++++++
- 1 file changed, 16 insertions(+)
-
-diff --git a/drivers/rtc/rtc-sun6i.c b/drivers/rtc/rtc-sun6i.c
-index 5e2bd9f1d01e..fc32be687606 100644
---- a/drivers/rtc/rtc-sun6i.c
-+++ b/drivers/rtc/rtc-sun6i.c
-@@ -380,6 +380,22 @@ static void __init sun50i_h6_rtc_clk_init(struct device_node *node)
- CLK_OF_DECLARE_DRIVER(sun50i_h6_rtc_clk, "allwinner,sun50i-h6-rtc",
- 		      sun50i_h6_rtc_clk_init);
- 
-+/*
-+ * The R40 user manual is self-conflicting on whether the prescaler is
-+ * fixed or configurable. The clock diagram shows it as fixed, but there
-+ * is also a configurable divider in the RTC block.
-+ */
-+static const struct sun6i_rtc_clk_data sun8i_r40_rtc_data = {
-+	.rc_osc_rate = 16000000,
-+	.fixed_prescaler = 512,
-+};
-+static void __init sun8i_r40_rtc_clk_init(struct device_node *node)
-+{
-+	sun6i_rtc_clk_init(node, &sun8i_r40_rtc_data);
-+}
-+CLK_OF_DECLARE_DRIVER(sun8i_r40_rtc_clk, "allwinner,sun8i-r40-rtc",
-+		      sun8i_r40_rtc_clk_init);
-+
- static const struct sun6i_rtc_clk_data sun8i_v3_rtc_data = {
- 	.rc_osc_rate = 32000,
- 	.has_out_clk = 1,
--- 
-2.24.0
-
+[1] https://optee.readthedocs.io/en/latest/building/gits/build.html#get-and-build-the-solution
 
 _______________________________________________
 linux-arm-kernel mailing list
