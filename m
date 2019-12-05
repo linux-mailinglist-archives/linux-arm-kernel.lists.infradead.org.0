@@ -2,52 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8E7E1146A9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 19:13:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB1BE1146C7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 19:19:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NMIc2dQZumnr/P6JxIVPhdJzJ10ciGYkcrZWyT+Op/I=; b=oCmftWxaTBDXOU
-	1ZK8zLIg23M6g3EFi7OyQDNYHtTuhZZvgodcGPpvCnIZHMYg7HJjHz1RpYU/ZN4BlCVon/NjTiZBl
-	b0NQrEpr73uXa3aq+DnlJ/XknrfxUSPM4XiTWp90QllkFa/4/bdZkVrCfvhxiGfuMXGy7dFUG2FJ1
-	xrjmO29D96f1PZkeKx9eOYsJkHT8D4c7CF+LfX3vTSMlm6g+sQVMdVccyREcQ/Lg9ChTSF97Vmws9
-	WfjfW8oj8No5ku9SyovaqgILwX0Kz2Z6ltJnsQLyFcoBJI+kjZv9Ihk6SEjd29CruaGKAWNqE5qkM
-	wW1BpsgbuiOJX3V1abkA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CsNGNvKYxQ51o1SwfaatXL691nPfdu1PchJ96LHHs10=; b=VcthgiFdj4FWDm
+	VlwO8zWtNn10geMi6VOf7QeziwA1VYgv8KAVgaUb/KiqoxWTRGP3BoQXEJogotKVExyixEw3Q0BWA
+	+UBs+eC9gQKCeVOzWrjt2+bZKWvvY348MULXy7vSinaB8lzzxRiIeQSmk//4z4b5J7HxtHhvHSAV3
+	EAdfOTuP+7bEVQN0xmDd+mLbQIFbJHxdvvlo230Jf/4RxLEzkkugvwxotdBOoSNnSLE06f6janxEW
+	hhXikUdKIX6eQjXqmv5+YyXqCv0UAMbix4U/e4ogIJ6DMUuT19lplOboADgjOsFMRzASYBwD6UM7/
+	bK7+Xn9idIPjwMZv6alA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icvco-0006CS-Ss; Thu, 05 Dec 2019 18:13:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icvcf-00069w-Dp
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 18:13:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6F4D31B;
- Thu,  5 Dec 2019 10:13:02 -0800 (PST)
-Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 00DC53F718;
- Thu,  5 Dec 2019 10:13:01 -0800 (PST)
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: Validate tagged addresses in access_ok() called from
- kernel threads
-Date: Thu,  5 Dec 2019 18:12:58 +0000
-Message-Id: <20191205181258.27334-1-catalin.marinas@arm.com>
-X-Mailer: git-send-email 2.23.0
+	id 1icviQ-00012N-Ki; Thu, 05 Dec 2019 18:19:02 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1icviH-00011l-Ca
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 18:18:54 +0000
+Received: by mail-oi1-f196.google.com with SMTP id i1so3624626oie.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Dec 2019 10:18:51 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=g1S0bB1B3s1eiBmGGOq4Zd2xB9ghrSQ0W48kBREdYO8=;
+ b=WfEAZwuc25cGOnJczD4x5J1A5Zxyr3vbG8PL2Wr3rr+spciVCGkO19X9gbRJapbobt
+ zmQcqkVmVlNgpmyG7MgNpY8hUw8Ase41K9SsPAgg4rDEzI/vO7gCJPZnKeKk2lDIKFmF
+ EWxvcc8e2GRTahu0WndGwDvHMsz8JrMZfinHoQV2U2bRXQvE58HLfZ7LIRBZysdJ9vRa
+ egOovNbnNKzUKpaVsYmjD8/dtZOKO0P3+EjF9vcoa2maz5gS+oLSUyASQjQeOk/LegIG
+ F1JU9sSYLe0CUfMYohHHJaufVQaiBUgqMQKPV1QIlWZLYTQhxWII1vWSLn8fTK5hBkCo
+ qXBg==
+X-Gm-Message-State: APjAAAW3LjkWydUykpUYk7uIyd0ZfAQeocFTu8a9P81P7wTKwM0SKPG5
+ ZmpPxKolpo86D+nV3S+lDg==
+X-Google-Smtp-Source: APXvYqzCu+5P6svNk0Z7nvquQqpKEJ1EkYhRWPedOycu5KVB8CbYQCvP6n9kDHJ9yA3cvmpJvOwJrA==
+X-Received: by 2002:aca:aacf:: with SMTP id t198mr8671653oie.135.1575569930363; 
+ Thu, 05 Dec 2019 10:18:50 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id w123sm3752138oiw.47.2019.12.05.10.18.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 05 Dec 2019 10:18:49 -0800 (PST)
+Date: Thu, 5 Dec 2019 12:18:49 -0600
+From: Rob Herring <robh@kernel.org>
+To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+Subject: Re: [PATCH v2 1/2] dt-bindings: mxsfb: Add compatible for iMX8MQ
+Message-ID: <20191205181849.GA6827@bogus>
+References: <cover.1574693313.git.agx@sigxcpu.org>
+ <1e452d74454d550ec4134428994ad8559aaa587e.1574693313.git.agx@sigxcpu.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1e452d74454d550ec4134428994ad8559aaa587e.1574693313.git.agx@sigxcpu.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_101305_508393_429F4C29 
-X-CRM114-Status: GOOD (  11.90  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191205_101853_428775_2AEBEC09 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,57 +93,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, Evgenii Stepanov <eugenis@google.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Carlo Caione <ccaione@baylibre.com>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-__range_ok(), invoked from access_ok(), clears the tag of the user
-address only if CONFIG_ARM64_TAGGED_ADDR_ABI is enabled and the thread
-opted in to the relaxed ABI. The latter sets the TIF_TAGGED_ADDR thread
-flag. In the case of asynchronous I/O (e.g. io_submit()), the
-access_ok() may be called from a kernel thread. Since kernel threads
-don't have TIF_TAGGED_ADDR set, access_ok() will fail for valid tagged
-user addresses. Example from the ffs_user_copy_worker() thread:
+On Mon, 25 Nov 2019 15:50:06 +0100, =3D?UTF-8?q?Guido=3D20G=3DC3=3DBCnther?=
+=3D wrote:
+> NXP's iMX8MQ has an LCDIF as well.
+> =
 
-	use_mm(io_data->mm);
-	ret = ffs_copy_to_iter(io_data->buf, ret, &io_data->data);
-	unuse_mm(io_data->mm);
+> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
+> ---
+>  Documentation/devicetree/bindings/display/mxsfb.txt | 1 +
+>  1 file changed, 1 insertion(+)
+> =
 
-Relax the __range_ok() check to always untag the user address if called
-in the context of a kernel thread. The user pointers would have already
-been checked via aio_setup_rw() -> import_{single_range,iovec}() at the
-time of the asynchronous I/O request.
 
-Fixes: 63f0c6037965 ("arm64: Introduce prctl() options to control the tagged user addresses ABI")
-Cc: <stable@vger.kernel.org> # 5.4.x-
-Cc: Will Deacon <will@kernel.org>
-Reported-by: Evgenii Stepanov <eugenis@google.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
----
- arch/arm64/include/asm/uaccess.h | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
-
-diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index 097d6bfac0b7..cccb03e1ab1f 100644
---- a/arch/arm64/include/asm/uaccess.h
-+++ b/arch/arm64/include/asm/uaccess.h
-@@ -62,8 +62,13 @@ static inline unsigned long __range_ok(const void __user *addr, unsigned long si
- {
- 	unsigned long ret, limit = current_thread_info()->addr_limit;
- 
-+	/*
-+	 * Asynchronous I/O running in a kernel thread does not have the
-+	 * TIF_TAGGED_ADDR flag of the process owning the mm, so always untag
-+	 * the user address before checking.
-+	 */
- 	if (IS_ENABLED(CONFIG_ARM64_TAGGED_ADDR_ABI) &&
--	    test_thread_flag(TIF_TAGGED_ADDR))
-+	    (current->flags & PF_KTHREAD || test_thread_flag(TIF_TAGGED_ADDR)))
- 		addr = untagged_addr(addr);
- 
- 	__chk_user_ptr(addr);
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
