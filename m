@@ -2,88 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68858114147
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 14:15:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67CC0114157
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 14:19:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
-	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GVGb8HnyEw3WIo4RYPdTJtNlfri1vjtzCwyy8rDzaDU=; b=TzPgbk6mYcSapT
-	m9VtfXoRC00ZXpdUSNF3P2MZal9RivpmNvs1n0FYPNLdlchBbj9ZCCVF4Qfo3SFND9RR79iyXIrDF
-	mapAopCwypYh9JoQpMjc29jCZg4OYgFRQKJ7AbzGKi185LCUFkx8q+PB6dIJ+53bqWn3M65qjln00
-	z+Oki89ludbLQv6ElJ5AB9VieewiHBuq1YUL/Qd3uZt7XxFCWsuDW3VZT76WDNXlxG+31gEiLK/Aa
-	AIpxkQcbkCxLpj9FSN2HuZ+RQsAqq5K0/hwRnmWlYnalNuDxcNRNXUZYu7QIT8hUq1k781MYh2wHm
-	H3IRRSYZQ0EITj/O17wg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=okD/1wcAM0O3yRWNEVxrTRtbv1H1r/+0rUi5v2Bwy7Q=; b=Ne9
+	2AmZqsbK+6v95gir49k1K7KahQjJ/qU06xFZnCEfLEUY/Rr2kS2FPbtQQROyu1dp7lRuTRzg2KVUz
+	WCZ/zdJGQ+KoPFD2s4uLIbsy+ZsTQbm26JwWFs8hvqhbl1PdjAzR2ecBAryhECJDPBhPj4EspTEto
+	Uppd1YIYdqDgdqfbdmyUvRyk2ruCumq9YAQGVGbyB3yhjG0YMyrzorxorJR6ZCvuXwHttskSNkgZz
+	DkzhTm645iPXaXgEbxMAE1GfGlRDMvw2OaWXeuz1kRlC+xzCGoWYLHf1KM6p8O5Ov48Q/J3bI4MTZ
+	tFnMn6xTTn3SN/natJvNcqqAcgoBLuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icqyQ-0007oY-UH; Thu, 05 Dec 2019 13:15:14 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1icr2G-0001Hl-64; Thu, 05 Dec 2019 13:19:12 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icqyH-0007LD-2O
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 13:15:06 +0000
-Received: by mail-qt1-x843.google.com with SMTP id 14so3478105qtf.5
+ id 1icr28-0001H0-Aa
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 13:19:06 +0000
+Received: by mail-wm1-x344.google.com with SMTP id p17so3646174wmi.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Dec 2019 05:15:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=content-transfer-encoding:from:mime-version:subject:date:message-id
- :references:cc:in-reply-to:to;
- bh=ci+Il7R0z85hcBaZjDpG/Dx0n3gFLviKjHNEHX1Pepk=;
- b=TP6Rm1zOouE3WSPWD8apJn5tfIaeOGIdFpSt5bs/4GbVl6fN5nFf05kN/RyiB0tQgs
- 7+pi9+O0IfLFLMN8JyhbC64Lt69jKs1Hnn5YJhGDkGdML0trHHHwrv1UbYP1IHKxqfnT
- 1c+7haZO77OhJJlUBsroTbFcDMTVlmNYLaNrcTjZ8yFNbarKmA0vkrvweWmLQ3e2/3Rc
- j2a2sHFIkWwNYdvePdcsP03aplXXl5o0huznYeYuC8O0+k5xPRPE99hbTibY/s8WLnTW
- L//lt3nW/AocEgytxvAzk+kn1RBaE4xSlMrVH5iCVPlsoQElHKzU+CiVZKNYXHLQuTTw
- VOlg==
+ Thu, 05 Dec 2019 05:19:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=KAcKcn55ZC43+JsoEE9iyrk0uGRkJUBkt2eSWXtjjKo=;
+ b=z/AWAzgTX0lOM8lIimEzXZL7Es4PlvY117PPDM5y91/gJWLVNvax+sEu/s82VqZ440
+ vob2+6JF+W81MIZk3BFY/ujYte0tJHFGvhtjsJ5aQEWgBRhGSLcBSpMPJyxTH/Z1X1wm
+ 02JNXm9nfzqxdBG2ZUDfHA4bYU4Z9seReUmQGXD6yvef5qFTp3K/NHLw03EmWKng+OYB
+ ontBzr7W7OIfSh22VzC3Q1DBGidUhES8jJ10tkL2Jk9xhtWlPeVTP5tuHfQCgFUr2Y/M
+ 5LY1e+Ee7pi1Gkz2fx2dcPuClzq1yfjFK+JzEslYStsNBxf3B5kNQXPyK5M2/8/7eBr6
+ LUFw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:content-transfer-encoding:from:mime-version
- :subject:date:message-id:references:cc:in-reply-to:to;
- bh=ci+Il7R0z85hcBaZjDpG/Dx0n3gFLviKjHNEHX1Pepk=;
- b=DqoIMbI/1cLnV5mXNCBYZrMcXJW1jQQQWYbO9uF5DUHRFbfWiwnj/QGHNjX5afuQQG
- L9rzz9Um9hJ+kMSHWwvJDgiA7UNk+QhxyAmkz7wKL2OSM7j+TWSH/m5aF4N9NN/2C48F
- /zJTlZU1/2wLQcQTP/XbvMybNYe8liPB4V/rfc6AkftImOgbAVtNWl1TqLP6a49h7hzo
- cYB2+JIzu2MTZCUY6dFYLKpViQIJIPR2cclEqUkd2Lc1kRViC4EQcXX6InicawiFIFRE
- W+0XRAe3hi1An5Ynm5fgwFwkFNlhGlc6HFQLOcwItFJ/Supq8NhVB7LKT7ZzABOTZ9BH
- Mmzw==
-X-Gm-Message-State: APjAAAWqiE7XhxEa7IqjftLcSSaAQPKX+kZms0+8wjDk7NQRfCXB2+mK
- r15LRa1oXr2Z8EOJ/cPmILWrYPnGYoL0Rw==
-X-Google-Smtp-Source: APXvYqxHW8DGT/kKJL7N6FSy/ayvCsum2cTR7vYA5fykS6fEhOCjJRkFygAl+kF2HccA8SqNMAi0nQ==
-X-Received: by 2002:ac8:60cc:: with SMTP id i12mr7329084qtm.103.1575551703794; 
- Thu, 05 Dec 2019 05:15:03 -0800 (PST)
-Received: from [192.168.1.183] (pool-71-184-117-43.bstnma.fios.verizon.net.
- [71.184.117.43])
- by smtp.gmail.com with ESMTPSA id d134sm4917395qkc.42.2019.12.05.05.15.02
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 05 Dec 2019 05:15:02 -0800 (PST)
-From: Qian Cai <cai@lca.pw>
-Mime-Version: 1.0 (1.0)
-Subject: Re: [PATCH v15 00/23] Generic page walk and ptdump
-Date: Thu, 5 Dec 2019 08:15:02 -0500
-Message-Id: <A22DE6B7-23A1-41FA-AF82-9613778277C7@lca.pw>
-References: <20191204163235.GA1597@arm.com>
-In-Reply-To: <20191204163235.GA1597@arm.com>
-To: Steven Price <Steven.Price@arm.com>
-X-Mailer: iPhone Mail (17B111)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=KAcKcn55ZC43+JsoEE9iyrk0uGRkJUBkt2eSWXtjjKo=;
+ b=FjnhQlR6iHAnGQteeHJetnR02R31iwk/lvcT9pi8AlBz22izNAIYrAJ+Oou8HmB3jn
+ G49z8A41V5+XKFb7avStaHpBWY0MzJS2fXOR9BWNEFFyQqfBE1VVs5xvrBDDdDzvNTcS
+ /CpixJgM55mkgHGAoOKgndmB1/tnOnCK0eMg6LkfLNbBdbAIBR9lM3xP4n4PaOxKyCLl
+ AlF0q9PTcUfiD8iox6gHkeqJjlGNrY1J0qCkUUqwgKAnz4wOE3UIU2mTh0hEagahx3+b
+ 6TUY86NJ8rETtUiM1sfRSeye/bzcC88wl1WHedM/rVfd81isUwW1CgO33nxDnlVSbPlD
+ ziAA==
+X-Gm-Message-State: APjAAAWZHf9vt8ZqFv2mLsXtp5AXqSr7wMwJSeZ3Hc9sv3y+sW9IhFm7
+ 0GXX8euxKqBwGl5zoil/HFTjUA==
+X-Google-Smtp-Source: APXvYqyZesiIZmY7RGMT4MF4IpUnHfAqJR6vCTBVsLVzWRfkp34Mu3brQAC1PF+x3trPEIdHrmPcdA==
+X-Received: by 2002:a7b:cc0c:: with SMTP id f12mr5122129wmh.5.1575551942365;
+ Thu, 05 Dec 2019 05:19:02 -0800 (PST)
+Received: from glaroque-ThinkPad-T480.home
+ ([2a01:cb1d:6e7:d500:82a9:347a:43f3:d2ca])
+ by smtp.gmail.com with ESMTPSA id c4sm8333656wml.7.2019.12.05.05.19.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 05 Dec 2019 05:19:01 -0800 (PST)
+From: Guillaume La Roque <glaroque@baylibre.com>
+To: khilman@baylibre.com,
+	devicetree@vger.kernel.org
+Subject: [PATCH] arm64: dts: meson-sm1-sei610: add gpio bluetooth interrupt
+Date: Thu,  5 Dec 2019 14:19:00 +0100
+Message-Id: <20191205131900.2059-1-glaroque@baylibre.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_051505_143343_ADAEF14F 
-X-CRM114-Status: GOOD (  12.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191205_051904_416564_BA11A366 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -97,42 +91,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, David Hildenbrand <david@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Linux-MM <linux-mm@kvack.org>,
- "H. Peter Anvin" <hpa@zytor.com>, Will Deacon <will@kernel.org>, "Liang,
- Kan" <kan.liang@linux.intel.com>, Thomas Hellstrom <thellstrom@vmware.com>,
- the arch/x86 maintainers <x86@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- Arnd Bergmann <arnd@arndb.de>,
- =?utf-8?Q?J=C3=A9r=C3=B4me_Glisse?= <jglisse@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- James Morse <James.Morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIERlYyA0LCAyMDE5LCBhdCAxMTozMiBBTSwgU3RldmVuIFByaWNlIDxTdGV2ZW4uUHJp
-Y2VAYXJtLmNvbT4gd3JvdGU6Cj4gCj4gSSd2ZSBiaXNlY3RlZCB0aGlzIHByb2JsZW0gYW5kIGl0
-J3MgYSBtZXJnZSBjb25mbGljdCB3aXRoOgo+IAo+IGFjZTg4ZjEwMThiOCAoIm1tOiBwYWdld2Fs
-azogVGFrZSB0aGUgcGFnZXRhYmxlIGxvY2sgaW4gd2Fsa19wdGVfcmFuZ2UoKSIpCgpTaWdoLCBo
-b3cgZG9lcyB0aGF0IGNvbW1pdCBlbmQgdXAgbWVyZ2luZyBpbiB0aGUgbWFpbmxpbmUgd2l0aG91
-dCBnb2luZyB0aHJvdWdoIEFuZHJld+KAmXMgdHJlZSBhbmQgbWlzc2VkIGFsbCB0aGUgbGludXgt
-bmV4dCB0ZXN0aW5nPyBJdCB3YXMgbWVyZ2VkIGludG8gdGhlIG1haW5saW5lIE9jdCA0dGg/Cgo+
-IFJldmVydGluZyB0aGF0IGNvbW1pdCAiZml4ZXMiIHRoZSBwcm9ibGVtLiBUaGF0IGNvbW1pdCBh
-ZGRzIGEgY2FsbCB0bwo+IHB0ZV9vZmZzZXRfbWFwX2xvY2soKSwgaG93ZXZlciB0aGF0IGlzbid0
-IG5lY2Vzc2FyaWx5IHNhZmUgd2hlbgo+IGNvbnNpZGVyaW5nIGFuICJ1bnVzdWFsIiBtYXBwaW5n
-IGluIHRoZSBrZXJuZWwuIENvbWJpbmVkIHdpdGggbXkgcGF0Y2gKPiBzZXQgdGhpcyBsZWFkcyB0
-byB0aGUgQlVHIHdoZW4gd2Fsa2luZyB0aGUga2VybmVsJ3MgcGFnZSB0YWJsZXMuCj4gCj4gQXQg
-dGhpcyBzdGFnZSBJIHRoaW5rIGl0J3MgYmVzdCBpZiBBbmRyZXcgZHJvcHMgbXkgc2VyaWVzIGFu
-ZCBJJ2xsIHRyeQo+IHRvIHJld29yayBpdCBvbiB0b3AgLXJjMSBmaXhpbmcgdXAgdGhpcyBjb25m
-bGljdCBhbmQgdGhlIG90aGVyIHg4Ngo+IDMyLWJpdCBpc3N1ZSB0aGF0IGhhcyBjcm9wcGVkIHVw
-LgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+add gpio irq to support interrupt trigger mode.
+
+Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
+---
+hi,
+
+this patch depends of 
+https://lkml.org/lkml/2019/12/4/644
+
+Guillaume
+
+ arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
+index 2c90f4713d0e..a8bb3fa9fec9 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
+@@ -591,6 +591,8 @@
+ 
+ 	bluetooth {
+ 		compatible = "brcm,bcm43438-bt";
++		interrupt-parent = <&gpio_intc>;
++		interrupts = <95 IRQ_TYPE_LEVEL_HIGH>;
+ 		shutdown-gpios = <&gpio GPIOX_17 GPIO_ACTIVE_HIGH>;
+ 		max-speed = <2000000>;
+ 		clocks = <&wifi32k>;
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
