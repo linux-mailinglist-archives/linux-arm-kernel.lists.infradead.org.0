@@ -2,77 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 008A6114639
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 18:49:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98E2C114644
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 18:51:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1lR2Cj/90G21fnTaPFojJpD6bKzpa3WU9SMkamMKb1o=; b=LTDu7jl3AnVDAu
-	zvkkDX65c8WQSrS2PFeQNoQpEmCCObhxB1vdS6+Ibz5CAOoaVTIUb15QydzU+cGLImMmTioeuOLgz
-	aKleghPw9UaD3VpIk0eJNb/rvlmvxe7z8UBI98Z0Ez24Yjjtr7pKBgJ90ATiwePMYwt5kxguN3pPP
-	bGoBcOo8t6UYQUrn3C0Fhz1ClSUVHYeU0k+rAQ7XKvt4Nkqxj0WOPO3MUhuaaI4GT4IkJXolspFXj
-	H5LZ1ruD5NTyBKirCk4L3BVH/KiaV3rEgMa2r+My4/B/sqqkPnygPLTTxI5Bf6UZbQTHXccY1jqyW
-	Rq6Shjagce/gPQ2BQezw==;
+	List-Owner; bh=9Z4B7C8RCVormnHmv1S6C6rRt17ai53WvaYAb+6B56A=; b=tWhfea2GbEDWeQ
+	BhlVNT5s3y2+FVr8xqT5xQzG+2gwMZzaM12qKZjpA4+jjjyL84FaT3DeXQrbq4cXESiCbG/jpiVND
+	AdCg57EjInXjkArxxePoRsQmHjeKn5Zkd+esn9sVHze+Q5f9R8OeVRsL2k6LLQeVdUUJKhIE8xDcp
+	DLK/U8dmoCOztDUPOsHUg6V3ZdyssZ/KRKmK5CiW52SI/VbCf0/f/lsLx8ZyzALfphFKDRt+H5XHu
+	p11GeJE3Ph839XqVU2UPbDiSQlPGukPW4uPjjRXLYm4JgHdIJuCXoX+BvSN+xXFvSsL0YKTkE1CdS
+	MY5SMgSOrdCNlQmRbYuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icvFN-0003Iq-V8; Thu, 05 Dec 2019 17:49:01 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1icvHJ-00052m-Dr; Thu, 05 Dec 2019 17:51:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icvFD-0003Fu-F6
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 17:48:52 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id w23so1587141pjd.2
+ id 1icvHB-000529-FO
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 17:50:55 +0000
+Received: from mail-qv1-f48.google.com (mail-qv1-f48.google.com
+ [209.85.219.48])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4C48424653
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Dec 2019 09:48:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=I5d912MYAJV7WOySMZ2inDSLRZhcHr5jXA7MY3FsoXI=;
- b=X38JZEgX7yfJlOpqTqHrPssrpwQQEh60or9o8EzRxMIWmQHCiLCJ/zhQC/8L0EpNTV
- ICORf+RLfQiZPwWN/rPPp5/hRe8w4ASX5HAk1fiDUHIjKSwXkRvgOPD6N9EllVXDRXnX
- w7MRzx/XyYwKIDE5gzOLSHapHXI8zW4PP0btM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=I5d912MYAJV7WOySMZ2inDSLRZhcHr5jXA7MY3FsoXI=;
- b=S2TmN09kGv997ZuqO+Rvpyvt4oVmHT2SwaeLm7XmQP/R3l+ADfASAv+SxDWMYV5G7/
- Ir1IZIvkQJKG3O/J4cda2PjoJeA7wdAKBqYc8gv4LtRU+0pALkWhnpzVtfNa6YgrHf48
- L5WEfQtEIhki3fcZhJ+AgbT3/1Mjbh92kjKcuTgOHjnfxPzYnuslum+6ULx+/56EAr2v
- CmypcsanqxA5eKVKJAV58XTYmY3tW1h+ilehXr0LBEUQPEqgnQ2kokdRo2hEv+wDuyZY
- zVCPvzl2lmg1zhTvUrUmEbdJDmvM4pvYL62n9vQ0RVq+I2jvxNgUiGqxi5GgkgJMfLFE
- z8uA==
-X-Gm-Message-State: APjAAAXGmrSriapMVLTcSUTz1PlmY/4WtkJ56DxGB6UpZcB9GtCns4oT
- aiUnJPqNXBsX0GZfZjbsAbfq9Q==
-X-Google-Smtp-Source: APXvYqxfMUKZGT6P0TUfMuyW8oAlxX+Wy1kXyKhkiDjIudTd/T2t0aiQ+3RAHYm9wAj/+7FicLF9Iw==
-X-Received: by 2002:a17:902:8201:: with SMTP id
- x1mr10263704pln.193.1575568127950; 
- Thu, 05 Dec 2019 09:48:47 -0800 (PST)
-Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
- by smtp.gmail.com with ESMTPSA id a13sm2259865pfc.40.2019.12.05.09.48.47
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 05 Dec 2019 09:48:47 -0800 (PST)
-Date: Thu, 5 Dec 2019 09:48:46 -0800
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH v2 1/2] PM / devfreq: Add PM QoS support
-Message-ID: <20191205174846.GM228856@google.com>
-References: <cover.1575540224.git.leonard.crestez@nxp.com>
- <eaef2de34fed598a1b6ffecc9010e281c6f36318.1575540224.git.leonard.crestez@nxp.com>
+ Thu,  5 Dec 2019 17:50:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575568249;
+ bh=IEqN5jALA/tA1YwYPL5ex66SSXu8AQtHWEUKdGhqRN4=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=jv3ZvTVd98uAIGB6m+6El9AuZjrji4nvWOsrKMNDD8TiCO5nT87xnA3Yf1QeziTxN
+ lk5rB0wL3h59uQ5dhlTyHfKZ30ogmZebK3SrY2JPBgIediOyDtZPGo0FWQSZ4cDplx
+ RsASs/RLUC1ViKTYH7YovnPzW8ckzMXRL5RuTDgg=
+Received: by mail-qv1-f48.google.com with SMTP id o18so1620960qvf.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Dec 2019 09:50:49 -0800 (PST)
+X-Gm-Message-State: APjAAAUbZJUF+loMrbLuNX+qBNIk4P0czKjoJqO1aLyihreLD9hu5afB
+ s46m+DmQxYCw9bqjGHi87h3aEWcDMOTvor1c/A==
+X-Google-Smtp-Source: APXvYqxvPvfcZUTfd2X07Gu3YCHbfqmczpAcwIz+b4jGQZwl3ynTJkYLAYgYk4otbiDmIz2Cwk7T274xtOb2NDzSwfs=
+X-Received: by 2002:ad4:450a:: with SMTP id k10mr8183566qvu.136.1575568248163; 
+ Thu, 05 Dec 2019 09:50:48 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <eaef2de34fed598a1b6ffecc9010e281c6f36318.1575540224.git.leonard.crestez@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <cover.5630f63168ad5cddf02e9796106f8e086c196907.1575376664.git-series.andrew@aj.id.au>
+ <3da2492c244962c27b21aad87bfa6bf74f568f1d.1575376664.git-series.andrew@aj.id.au>
+ <CAL_Jsq+3qXJbTu9G42g11PLJH-A0XeSQmJKj0obO32QFna3dEA@mail.gmail.com>
+ <40d554c0-de62-4d45-bbcc-dd3a3aa12a65@www.fastmail.com>
+In-Reply-To: <40d554c0-de62-4d45-bbcc-dd3a3aa12a65@www.fastmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 5 Dec 2019 11:50:36 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLgmU8m-zT8-K=peENshJx7Gx2Hn9RoZ-zbnqLUmqBQpw@mail.gmail.com>
+Message-ID: <CAL_JsqLgmU8m-zT8-K=peENshJx7Gx2Hn9RoZ-zbnqLUmqBQpw@mail.gmail.com>
+Subject: Re: [PATCH 1/3] dt-bindings: ipmi: aspeed: Introduce a v2 binding for
+ KCS
+To: Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_094851_529468_9B504BA3 
-X-CRM114-Status: GOOD (  17.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191205_095053_561599_CEF411B5 
+X-CRM114-Status: GOOD (  23.84  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,90 +89,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Artur =?utf-8?B?xZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, linux-pm@vger.kernel.org,
- Viresh Kumar <viresh.kumar@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, NXP Linux Team <linux-imx@nxp.com>,
- Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Corey Minyard <minyard@acm.org>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-aspeed@lists.ozlabs.org, Joel Stanley <joel@jms.id.au>,
+ openipmi-developer@lists.sourceforge.net,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 05, 2019 at 12:05:06PM +0200, Leonard Crestez wrote:
-> Register notifiers with the PM QoS framework in order to respond to
-> requests for DEV_PM_QOS_MIN_FREQUENCY and DEV_PM_QOS_MAX_FREQUENCY.
-> 
-> No notifiers are added by this patch but PM QoS constraints can be
-> imposed externally (for example from other devices).
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
-> ---
->  drivers/devfreq/devfreq.c | 77 +++++++++++++++++++++++++++++++++++++++
->  include/linux/devfreq.h   |  5 +++
->  2 files changed, 82 insertions(+)
-> 
-> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-> index bdeb4189c978..e8b943fc4259 100644
-> --- a/drivers/devfreq/devfreq.c
-> +++ b/drivers/devfreq/devfreq.c
-> @@ -22,15 +22,18 @@
->  #include <linux/platform_device.h>
->  #include <linux/list.h>
->  #include <linux/printk.h>
->  #include <linux/hrtimer.h>
->  #include <linux/of.h>
-> +#include <linux/pm_qos.h>
->  #include "governor.h"
->  
->  #define CREATE_TRACE_POINTS
->  #include <trace/events/devfreq.h>
->  
-> +#define HZ_PER_KHZ	1000
-> +
->  static struct class *devfreq_class;
->  
->  /*
->   * devfreq core provides delayed work based load monitoring helper
->   * functions. Governors can use these or can implement their own
-> @@ -109,10 +112,11 @@ static unsigned long find_available_max_freq(struct devfreq *devfreq)
->  static void get_freq_range(struct devfreq *devfreq,
->  			   unsigned long *min_freq,
->  			   unsigned long *max_freq)
->  {
->  	unsigned long *freq_table = devfreq->profile->freq_table;
-> +	s32 qos_min_freq, qos_max_freq;
->  
->  	lockdep_assert_held(&devfreq->lock);
->  
->  	/*
->  	 * Initialize minimum/maximum frequency from freq table.
-> @@ -125,10 +129,20 @@ static void get_freq_range(struct devfreq *devfreq,
->  	} else {
->  		*min_freq = freq_table[devfreq->profile->max_state - 1];
->  		*max_freq = freq_table[0];
->  	}
->  
-> +	/* Apply constraints from PM QoS */
-> +	qos_min_freq = dev_pm_qos_read_value(devfreq->dev.parent,
-> +					     DEV_PM_QOS_MIN_FREQUENCY);
-> +	qos_max_freq = dev_pm_qos_read_value(devfreq->dev.parent,
-> +					     DEV_PM_QOS_MAX_FREQUENCY);
-> +	*min_freq = max(*min_freq, (unsigned long)HZ_PER_KHZ * qos_min_freq);
-> +	if (qos_max_freq != PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE)
+On Wed, Dec 4, 2019 at 11:12 PM Andrew Jeffery <andrew@aj.id.au> wrote:
+>
+>
+>
+> On Wed, 4 Dec 2019, at 01:01, Rob Herring wrote:
+> > On Tue, Dec 3, 2019 at 6:36 AM Andrew Jeffery <andrew@aj.id.au> wrote:
+> > >
+> > > The v2 binding utilises reg and renames some of the v1 properties.
+> > >
+> > > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> > > ---
+> > >  Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt | 20 +++++---
+> > >  1 file changed, 14 insertions(+), 6 deletions(-)
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt b/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
+> > > index d98a9bf45d6c..76b180ebbde4 100644
+> > > --- a/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
+> > > +++ b/Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt
+> > > @@ -1,9 +1,10 @@
+> > > -* Aspeed KCS (Keyboard Controller Style) IPMI interface
+> > > +# Aspeed KCS (Keyboard Controller Style) IPMI interface
+> > >
+> > >  The Aspeed SOCs (AST2400 and AST2500) are commonly used as BMCs
+> > >  (Baseboard Management Controllers) and the KCS interface can be
+> > >  used to perform in-band IPMI communication with their host.
+> > >
+> > > +## v1
+> > >  Required properties:
+> > >  - compatible : should be one of
+> > >      "aspeed,ast2400-kcs-bmc"
+> > > @@ -12,14 +13,21 @@ Required properties:
+> > >  - kcs_chan : The LPC channel number in the controller
+> > >  - kcs_addr : The host CPU IO map address
+> > >
+> > > +## v2
+> > > +Required properties:
+> > > +- compatible : should be one of
+> > > +    "aspeed,ast2400-kcs-bmc-v2"
+> > > +    "aspeed,ast2500-kcs-bmc-v2"
+> > > +- reg : The address and size of the IDR, ODR and STR registers
+> > > +- interrupts : interrupt generated by the controller
+> > > +- slave-reg : The host CPU IO map address
+> >
+> > aspeed,slave-reg
+>
+> I don't agree, as it's not an aspeed-specific behaviour. This property
+> controls where the device appears in the host's LPC IO address space,
+> which is a common problem for any LPC IO device exposed by the BMC
+> to the host.
 
-The condition shouldn't be needed anymore now that
-PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE is S32_MAX and not -1.
+Then document it as such. Common properties go into common binding documents.
 
-> +		*max_freq = min(*max_freq,
-> +				(unsigned long)HZ_PER_KHZ * qos_max_freq);
-> +
+> > >  Example:
+> > >
+> > > -    kcs3: kcs3@0 {
+> > > -        compatible = "aspeed,ast2500-kcs-bmc";
+> > > -        reg = <0x0 0x80>;
+> > > +    kcs3: kcs@24 {
+> > > +        compatible = "aspeed,ast2500-kcs-bmc-v2";
+> > > +        reg = <0x24 0x1>, <0x30 0x1>, <0x3c 0x1>;
+> >
+> > What are the other registers in this address space? I'm not so sure
+> > this is an improvement if you end up with a bunch of nodes with single
+> > registers.
+>
+> Put into practice the bindings give the following patch: on the AST2500:
 
-Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
-Tested-by: Matthias Kaehlcke <mka@chromium.org>
+Okay, that's an unfortunate interleaving, but seems fine.
+
+>
+> diff --git a/arch/arm/boot/dts/aspeed-g5.dtsi b/arch/arm/boot/dts/aspeed-g5.dtsi
+> index e8feb8b66a2f..5d51f469cbf0 100644
+> --- a/arch/arm/boot/dts/aspeed-g5.dtsi
+> +++ b/arch/arm/boot/dts/aspeed-g5.dtsi
+> @@ -399,22 +399,22 @@
+>                                         #size-cells = <1>;
+>                                         ranges = <0x0 0x0 0x80>;
+>
+> -                                       kcs1: kcs1@0 {
+> -                                               compatible = "aspeed,ast2500-kcs-bmc";
+> +                                       kcs1: kcs@24 {
+> +                                               compatible = "aspeed,ast2500-kcs-bmc-v2";
+> +                                               reg = <0x24 0x1>, <0x30 0x1>, <0x3c 0x1>;
+>                                                 interrupts = <8>;
+> -                                               kcs_chan = <1>;
+>                                                 status = "disabled";
+>                                         };
+> -                                       kcs2: kcs2@0 {
+> -                                               compatible = "aspeed,ast2500-kcs-bmc";
+> +                                       kcs2: kcs@28 {
+> +                                               compatible = "aspeed,ast2500-kcs-bmc-v2";
+> +                                               reg = <0x28 0x1>, <0x34 0x1>, <0x40 0x1>;
+>                                                 interrupts = <8>;
+> -                                               kcs_chan = <2>;
+>                                                 status = "disabled";
+>                                         };
+> -                                       kcs3: kcs3@0 {
+> -                                               compatible = "aspeed,ast2500-kcs-bmc";
+> +                                       kcs3: kcs@2c {
+> +                                               compatible = "aspeed,ast2500-kcs-bmc-v2";
+> +                                               reg = <0x2c 0x1>, <0x38 0x1>, <0x44 0x1>;
+>                                                 interrupts = <8>;
+> -                                               kcs_chan = <3>;
+>                                                 status = "disabled";
+>                                         };
+>                                 };
+> @@ -428,10 +428,10 @@
+>                                         #size-cells = <1>;
+>                                         ranges = <0x0 0x80 0x1e0>;
+>
+> -                                       kcs4: kcs4@0 {
+> -                                               compatible = "aspeed,ast2500-kcs-bmc";
+> +                                       kcs4: kcs@94 {
+> +                                               compatible = "aspeed,ast2500-kcs-bmc-v2";
+> +                                               reg = <0x94 0x1>, <0x98 0x1>, <0x9c 0x1>;
+>                                                 interrupts = <8>;
+> -                                               kcs_chan = <4>;
+>                                                 status = "disabled";
+>                                         };
+>
+> The aim is to fix these warnings which appear for every aspeed-based devicetree:
+>
+>         arch/arm/boot/dts/aspeed-g5.dtsi:376.19-381.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs1@0: node has a unit name, but no reg property
+>         arch/arm/boot/dts/aspeed-g5.dtsi:382.19-387.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs2@0: node has a unit name, but no reg property
+>         arch/arm/boot/dts/aspeed-g5.dtsi:388.19-393.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs3@0: node has a unit name, but no reg property
+>         arch/arm/boot/dts/aspeed-g5.dtsi:405.19-410.8: Warning (unit_address_vs_reg): /ahb/apb/lpc@1e789000/lpc-host@80/kcs4@0: node has a unit name, but no reg property
+>         arch/arm/boot/dts/aspeed-g5.dtsi:376.19-381.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs1@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs2@0)
+>         arch/arm/boot/dts/aspeed-g5.dtsi:376.19-381.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs1@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs3@0)
+>         arch/arm/boot/dts/aspeed-g5.dtsi:382.19-387.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs2@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-bmc@0/kcs3@0)
+>         arch/arm/boot/dts/aspeed-g5.dtsi:405.19-410.8: Warning (unique_unit_address): /ahb/apb/lpc@1e789000/lpc-host@80/kcs4@0: duplicate unit-address (also used in node /ahb/apb/lpc@1e789000/lpc-host@80/lpc-ctrl@0)
+>
+> Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
