@@ -2,91 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C30E511441D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 16:51:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D733114424
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 16:55:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L/Wz0ucNZXqnbkLUpQyTxHJlf8x8F9xhQPCB7KOxXmg=; b=X2wZtF/vH3YECZ
-	LXxwVvDsvXOj0ucB/1Nm0NoRTcXOX9KyAK5xeJJxwWGfPASoOhV9VOzZrGj8ZZdHNVNxQkpjoYzAP
-	uZrtS+tHTjr/T1I6VDq8Q8gz+8hXCzPQx4wASA5BtcmFApT1Abqq/QWMPFq3QTLz6c0yyaqMDDg+R
-	SccQwQetsdkggeKKAMOyuMHdJ5GZ5SmMC/9daJ5eVtgRDzAroAO967S/yMbjHuPByAzZmdLh2GA75
-	KEjSAtw5Odp6O2NSWYCcZ5bAc5Zgwe0aHDQ9QUa+EY7Lf1bilhMbVsVC5XKdo2BwVWMbMtDHICeEO
-	iug3q4LHOBq5YHROBdTQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=G8vJK2NMaOlmz63CRpiCyAP2BMQBY/Fn0src6HqsnxA=; b=IEZMcGt2N4+MgVRT+8fNg9Fbx
+	4GyYS9EOwy7udk+XA66DGefmOtkBkFO42Mz98xL+KEYdOxsi41UeeUw1r/SHWtxgHiEgfUWvoQP2o
+	eaGgPGdcqhsP+k2jTi/vUa9W/OXxJ1lBVkwOQgzTiZinjive8I9UzVj7Lfdw+qlCi89BOTcnV6nUJ
+	xB+APSWYYW/82ECy6tdnVaJ10sg+XneaAN5VTerhUXweVnOgSlBkCQleUT8DuLnD35LH+oWCUuWXm
+	QgJf6SEgxl/nkpHV/DxlGUdpcfs5pnYM4Btdi6IAyR0P1m4uOA5DgW12vkTqX0MLERkhhHE7IDLiT
+	tLZ5LVgAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ictPv-00046F-5I; Thu, 05 Dec 2019 15:51:47 +0000
-Received: from a27-185.smtp-out.us-west-2.amazonses.com ([54.240.27.185])
+	id 1ictTe-0005sR-R8; Thu, 05 Dec 2019 15:55:38 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ictPj-00045Q-Nv
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 15:51:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1575561093;
- h=Date:From:To:Cc:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To;
- bh=9pymZMREs0aDkOkin38Qg0017bN8aBp0lR9eje0eErE=;
- b=ilHwO3mzJNRYMmKb4BqBpjs+9gHLHKJOH/JDfQjkLTS5hU6rn+dDop8PO7S8L8CX
- IvIDvrE1OWnToL4DuoVTzFheHH/HPg6IXxp8rcf5Q6fgIo3n7/Xi62Dyea3g3nEbLIH
- NS5+VmXNkcuVROqUt7GJc2kJEwddgyt0hL1qlXvQ=
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1575561092;
- h=Date:From:To:Cc:Subject:Message-ID:References:MIME-Version:Content-Type:In-Reply-To:Feedback-ID;
- bh=9pymZMREs0aDkOkin38Qg0017bN8aBp0lR9eje0eErE=;
- b=aCYiV0xMTtzPQo6BEudn7r9pcmJOgwhavwdXnb9gAkGQVB03wmuA/fnqe/uwy5ez
- lTp24WcDqkaaaLwO6TOgiIrsQZTUSK/kGpiNiJlV6CBTHUnoViytxak1acIorhSFVbt
- kZ0Z7advnCApMIWiMbO0HUldQcNn4cQrCpYQ81Zw=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 17A40C447B1
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=jcrouse@codeaurora.org
-Date: Thu, 5 Dec 2019 15:51:32 +0000
-From: Jordan Crouse <jcrouse@codeaurora.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2 4/8] iommu/arm-smmu: Add split pagetables for Adreno
- IOMMU implementations
-Message-ID: <0101016ed6c25f11-06433521-6681-43bc-978d-a3fcc94f8dbd-000000@us-west-2.amazonses.com>
-Mail-Followup-To: Robin Murphy <robin.murphy@arm.com>,
- iommu@lists.linux-foundation.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Joerg Roedel <joro@8bytes.org>
-References: <1574465484-7115-1-git-send-email-jcrouse@codeaurora.org>
- <0101016e95752703-78491f46-41db-441c-b0fb-9a760e4d56cb-000000@us-west-2.amazonses.com>
- <2a43c49e-064e-1e95-6726-8d1e761f6749@arm.com>
+ id 1ictTW-0005rx-OB
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 15:55:32 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1ictTP-0000IK-0l; Thu, 05 Dec 2019 16:55:23 +0100
+To: John Garry <john.garry@huawei.com>
+Subject: Re: PSCI checker query
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2a43c49e-064e-1e95-6726-8d1e761f6749@arm.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-SES-Outgoing: 2019.12.05-54.240.27.185
-Feedback-ID: 1.us-west-2.CZuq2qbDmUIuT3qdvXlRHZZCpfZqZ4GtG9v3VKgRyF0=:AmazonSES
+Date: Thu, 05 Dec 2019 15:55:22 +0000
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <5c3c69bf-cae9-8ad5-9da2-c0af7a5932e7@huawei.com>
+References: <5c3c69bf-cae9-8ad5-9da2-c0af7a5932e7@huawei.com>
+Message-ID: <50f79699a2de7856eb201c8cc1dc51d7@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: john.garry@huawei.com, mark.rutland@arm.com,
+ lorenzo.pieralisi@arm.com, wanghuiqiang@huawei.com, linuxarm@huawei.com,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_075135_906439_41C29290 
-X-CRM114-Status: GOOD (  18.50  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191205_075530_936295_070D05D6 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.240.27.185 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,64 +66,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- will@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Linuxarm <linuxarm@huawei.com>,
+ wanghuiqiang <wanghuiqiang@huawei.com>, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 04, 2019 at 04:44:59PM +0000, Robin Murphy wrote:
-> On 22/11/2019 11:31 pm, Jordan Crouse wrote:
-> >Add implementation specific support to enable split pagetables for
-> >SMMU implementations attached to Adreno GPUs on Qualcomm targets.
-> >
-> >To enable split pagetables the driver will set an attribute on the domain.
-> >if conditions are correct, set up the hardware to support equally sized
-> >TTBR0 and TTBR1 regions and programs the domain pagetable to TTBR1 to make
-> >it available for global buffers while allowing the GPU the chance to
-> >switch the TTBR0 at runtime for per-context pagetables.
-> >
-> >After programming the context, the value of the domain attribute can be
-> >queried to see if split pagetables were successfully programmed. The
-> >domain geometry will be updated so that the caller can determine the
-> >start of the region to generate correct virtual addresses.
-> 
-> Why is any of this in impl? It all looks like perfectly generic
-> architectural TTBR1 setup to me. As long as DOMAIN_ATTR_SPLIT_TABLES is
-> explicitly an opt-in for callers, I'm OK with them having to trust that
-> SEP_UPSTREAM is good enough. Or, even better, make the value of
-> DOMAIN_ATTR_SPLIT_TABLES not a boolean but the actual split point, where the
-> default of 0 would logically mean "no split".
-
-(apologies if you get multiple copies of this email, I have tickets in with the
-CAF IT folks).
-
-I made it impl specific because my impression from the previous conversations
-was that setting up the T0 space but leaving TTBR0 un-programmed was a silly
-thing that was unique to the Adreno GPU. I don't mind moving it to the generic
-code since that saves us from some silly compatible string games.
-
-I like the idea of DOMAIN_ATTR_SPLIT_TABLES returning the split point but would
-we want to allow the user to try to specific a desired split point ahead of
-time? It is my impression that we only have a handful of valid SEP values and
-I'm not sure what the right response would be if the user specified an incorrect
-one.
-
-So far I've not found a use for anything except SEP_UPSTREAM but I have the
-extreme luxury of a SMMU with an actual 49 bit IAS.
-
-New patchset coming soon.
-
-Thanks,
-Jordan
-
--- 
-The Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum,
-a Linux Foundation Collaborative Project
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSm9obiwKCk9uIDIwMTktMTItMDUgMTI6MzgsIEpvaG4gR2Fycnkgd3JvdGU6Cj4gSGkgZ3V5
+cywKPgo+IEkgZW5hYmxlZCB0aGUga2VybmVsIFBTQ0kgY2hlY2tlciBhbmQgaXQga2lsbHMgbXkg
+SHVhd2VpIEQwNToKClsuLi5dCgo+IFsgICAxOC41MjE0NTldIENQVTUyOiBzaHV0ZG93bgo+IFsg
+ICAxOC41MjQyNTZdIHBzY2k6IENQVTUyIGtpbGxlZC4KPiBbICAgMTguNTI4NjM0XSBDUFU1Mzog
+c2h1dGRvd24KPiBbICAgMTguNTMxNDYxXSBwc2NpOiBDUFU1MyBraWxsZWQuCj4gWyAgIDE4LjUz
+NTg0N10gQ1BVNTQ6IHNodXRkb3duCj4gWyAgIDE4LjUzODY0NV0gcHNjaTogQ1BVNTQga2lsbGVk
+Lgo+IFsgICAxOC41NDI5NzddIENQVTU1OiBzaHV0ZG93bgo+IFsgICAxOC41NDU3NjFdIHBzY2k6
+IENQVTU1IGtpbGxlZC4KPiBbICAgMTguNTUwMDUwXSBDUFU1Njogc2h1dGRvd24KPiBbICAgMTgu
+NTUyODM2XSBwc2NpOiBDUFU1NiBraWxsZWQuCj4gWyAgIDE4LjU1NzA1OV0gQ1BVNTc6IHNodXRk
+b3duCj4gWyAgIDE4LjU1OTg1NV0gcHNjaTogQ1BVNTcga2lsbGVkLgo+IFsgICAxOC41NjQwMTJd
+IENQVTU4OiBzaHV0ZG93bgo+IFsgICAxOC41NjY4MDldIHBzY2k6IENQVTU4IGtpbGxlZC4KPiBb
+ICAgMTguNTcwOTQxXSBDUFU1OTogc2h1dGRvd24KPiBbICAgMTguNTczNzI1XSBwc2NpOiBDUFU1
+OSBraWxsZWQuCj4gWyAgIDE4LjU3Nzc3OF0gQ1BVNjA6IHNodXRkb3duCj4gWyAgIDE4LjU4MDU3
+Nl0gcHNjaTogQ1BVNjAga2lsbGVkLgo+IFsgICAxOC41ODQ1OTJdIENQVTYxOiBzaHV0ZG93bgo+
+IFsgICAxOC41ODc0MDBdIHBzY2k6IENQVTYxIGtpbGxlZC4KPiBbICAgMTguNTkxMzUxXSBDUFU2
+Mjogc2h1dGRvd24KPiBbICAgMTguNTk0MTQ4XSBwc2NpOiBDUFU2MiBraWxsZWQuCj4gWyAgIDE4
+LjU5Nzk5N10gdXNiIDEtMi4xOiBuZXcgZnVsbC1zcGVlZCBVU0IgZGV2aWNlIG51bWJlciA0IHVz
+aW5nCj4gZWhjaS1wbGF0Zm9ybQo+IHJ4eO+/vQo+ICAgICDvv71j77+977+9IO+/vSDvv73vv73v
+v73vv73vv73vv71hQ++/vUJW77+977+9IDgl77+977+9IO+/ve+/ve+/ve+/ve+/ve+/vSDvv73v
+v73vv73vv70gYu+/ve+/vVHvv73vv73vv73vv70+77+977+9eyjvv71aaEbvv70KPiAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiQO+/
+ve+/vXIg77+9Cj4g1YTvv73vv70g77+9QO+/ve+/ve+/vVEKPgo+Cj4gW2N1dCByZW1haW5pbmcg
+Z2FyYmFnZV0KCkkgZ2V0IHRoZSBzYW1lIGdhcmJhZ2UsIGFuZCBhIGNvdXBsZSBvZjoKClsgICAx
+MC45ODYzMDNdIENQVTA6IGZhaWxlZCB0byBjb21lIG9ubGluZQpbICAgMTAuOTg2NDA1XSBDUFUw
+OiBmYWlsZWQgaW4gdW5rbm93biBzdGF0ZSA6IDB4MApbICAgMTAuOTg2NTg1XSBwc2NpX2NoZWNr
+ZXI6IEVycm9yIG9jY3VycmVkICgtNSkgd2hpbGUgdHJ5aW5nIHRvIHBvd2VyIAp1cCBDUFUgMApb
+Li4uXQpbICAgMTIuNDY4ODY0XSAtLS0tLS0tLS0tLS1bIGN1dCBoZXJlIF0tLS0tLS0tLS0tLS0K
+WyAgIDEyLjQ2ODk5NV0gV0FSTklORzogQ1BVOiAyIFBJRDogMSBhdCAKZHJpdmVycy9maXJtd2Fy
+ZS9wc2NpL3BzY2lfY2hlY2tlci5jOjEzNSBkb3duX2FuZF91cF9jcHVzKzB4MWQ0LzB4MWY0Clsg
+ICAxMi40NjkyNDJdIE1vZHVsZXMgbGlua2VkIGluOgpbICAgMTIuNDY5MzI0XSBDUFU6IDIgUElE
+OiAxIENvbW06IHN3YXBwZXIvMCBUYWludGVkOiBHICAgICAgICBXICAgICAgICAKNS40LjAtMDAw
+NzktZzBhODgxY2E1ZGU5YSAjMjE0ClsgICAxMi40Njk1NTZdIEhhcmR3YXJlIG5hbWU6IEh1YXdl
+aSBUZWNobm9sb2dpZXMgQ28uLCBMdGQuIEQwNS9EMDUsIApCSU9TIEhpc2lsaWNvbiBEMDUgSVQy
+MSBOZW1vIDIuMCBSQzAgMDQvMTgvMjAxOApbICAgMTIuNDY5ODE2XSBwc3RhdGU6IDIwMDAwMDA1
+IChuekN2IGRhaWYgLVBBTiAtVUFPKQpbICAgMTIuNDY5OTM5XSBwYyA6IGRvd25fYW5kX3VwX2Nw
+dXMrMHgxZDQvMHgxZjQKWyAgIDEyLjQ3MDA1MV0gbHIgOiBkb3duX2FuZF91cF9jcHVzKzB4MWI0
+LzB4MWY0ClsgICAxMi40NzAxNjJdIHNwIDogZmZmZjgwMDAxMTcyYmNkMApbICAgMTIuNDcwMjQ2
+XSB4Mjk6IGZmZmY4MDAwMTE3MmJjZDAgeDI4OiBmZmZmODAwMDEwZDczMDEwClsgICAxMi40NzAz
+ODJdIHgyNzogZmZmZjAwMWZiNjUyNDY2MCB4MjY6IDAwMDAwMDAwMDAwMDAwMDEKWyAgIDEyLjQ3
+MDUxOF0geDI1OiBmZmZmODAwMDEwZDcyZWIwIHgyNDogZmZmZjgwMDAxMTM0YTM5MApbICAgMTIu
+NDcwNjU0XSB4MjM6IGZmZmY4MDAwMTE3MmJkOTggeDIyOiAwMDAwMDAwMDAwMDAwMTAwClsgICAx
+Mi40NzA3ODldIHgyMTogMDAwMDAwMDAwMDAwMDAwMCB4MjA6IDAwMDAwMDAwMDAwMDAwMDEKWyAg
+IDEyLjQ3MDkyNV0geDE5OiBmZmZmODAwMDExNzJiZDk4IHgxODogMDAwMDAwMDAwMDAwMDAwMQpb
+ICAgMTIuNDcxMDYxXSB4MTc6IDAwMDAwMDAwMDAwMDAwMDAgeDE2OiAwMDAwMDAwMDAwMDAwMDAw
+ClsgICAxMi40NzExOTZdIHgxNTogMDAwMDAwMDAwMDAwMDAwMCB4MTQ6IDAwMDAwMDAwMDAwMDAw
+MDAKWyAgIDEyLjQ3MTMzMV0geDEzOiAwMDAwMDAwMDAwMDAwMDAwIHgxMjogMDAwMDAwMDAwMDAw
+MDAwMApbICAgMTIuNDcxNDY3XSB4MTE6IDAwMDAwMDAwMDAwMDAwMDAgeDEwOiAwMDAwMDAwMDAw
+MDAwYTYwClsgICAxMi40NzE2MDJdIHg5IDogZmZmZjgwMDAxMTcyYjk0MCB4OCA6IGZmZmYwMDJm
+YjdlODE5NDAKWyAgIDEyLjQ3MTczN10geDcgOiAwMDAwMDAwMDAwMDAwMDAwIHg2IDogMDAwMDAw
+MDAwMDAwMDAwMQpbICAgMTIuNDcxODczXSB4NSA6IGZmZmY4MDAwMTEzNWMwZTggeDQgOiAwMDAw
+MDAwMDAwMDAwMDAwClsgICAxMi40NzIwMDhdIHgzIDogMDAwMDAwMDAwMDAwMDAwMCB4MiA6IDAw
+MDAwMDAwMDAwMDAxMDAKWyAgIDEyLjQ3MjE0M10geDEgOiAwMDAwMDAwMDAwMDAwMDQwIHgwIDog
+MDAwMDAwMDAwMDAwMDAzZgpbICAgMTIuNDcyMjc5XSBDYWxsIHRyYWNlOgpbICAgMTIuNDcyMzQ0
+XSAgZG93bl9hbmRfdXBfY3B1cysweDFkNC8weDFmNApbICAgMTIuNDcyNDUxXSAgcHNjaV9jaGVj
+a2VyKzB4MjUwLzB4NGNjClsgICAxMi40NzI1NDddICBkb19vbmVfaW5pdGNhbGwrMHg1NC8weDIy
+MApbICAgMTIuNDcyNjQ2XSAga2VybmVsX2luaXRfZnJlZWFibGUrMHgxZWMvMHgyYjQKWyAgIDEy
+LjQ3Mjc2MF0gIGtlcm5lbF9pbml0KzB4MTgvMHgxMDgKWyAgIDEyLjQ3Mjg1MV0gIHJldF9mcm9t
+X2ZvcmsrMHgxMC8weDE4ClsgICAxMi40NzI5NDJdIC0tLVsgZW5kIHRyYWNlIGMzMjg4MTVlYjM5
+ZmM1MDUgXS0tLQoKd2hlcmUgdGhlIHBzY2kgY2hlY2tlciBpcyB1bmhhcHB5IGFib3V0IHRoZSBu
+dW1iZXIgb2YgQ1BVcy4gU28gQ1BVMCAKZG9lc24ndApjb21lIGJhY2sgdXAsIGFuZCBwcm9iYWJs
+eSBoYXMgdGFrZW4gZG93biBhIGZldyB0aGluZ3Mgd2l0aCBpdC4KClRoZSBjb25zb2xlIHNlZW1z
+IHRvIGJlIG9uIGEgcmF0aGVyIGJpemFycmUgYmF1ZCByYXRlLCBhbmQgSSBjYW4ndCAKbWFuYWdl
+CnRvIHJlc2V0IGl0LiBPbiByZWJvb3QsIHRoZSBjb25zb2xlIHJlY292ZXJzIHRob3VnaCwgc28g
+dGhlIGZpcm13YXJlIGlzCmFibGUgdG8gcmVzdG9yZSBzb21lIGxldmVsIG9mIHNhbml0eSAoeWF5
+ISkuCgpZb3UgY2FuIGFsc28gcmVwcm9kdWNlIGl0IGFzOgoKcm9vdEBob3QtcG9vcDovaG9tZS9t
+YXojIGVjaG8gMCA+L3N5cy9kZXZpY2VzL3N5c3RlbS9jcHUvY3B1MC9vbmxpbmUKcm9vdEBob3Qt
+cG9vcDovaG9tZS9tYXojIGVjaG8gMSA+L3N5cy9kZXZpY2VzL3N5c3RlbS9jcHUvY3B1MC9vbmxp
+bmUKYmFzaDogZWNobzogd3JpdGUgZXJyb3I6IElucHV0L291dHB1dCBlcnJvcgoKVGhlIGtlcm5l
+bCBsb2cgc2F5czoKClsgICA0Ny4xNDUwMDZdIElSUSAyNTQ6IG5vIGxvbmdlciBhZmZpbmUgdG8g
+Q1BVMApbICAgNDcuMTQ5MzgwXSBJUlEgMzgyOiBubyBsb25nZXIgYWZmaW5lIHRvIENQVTAKWyAg
+IDQ3LjE1Mzg0NF0gQ1BVMDogc2h1dGRvd24KWyAgIDQ3LjE1NjU1MV0gcHNjaTogQ1BVMCBraWxs
+ZWQuClsgICA2MC45MDQ1MzFdIENQVTA6IGZhaWxlZCB0byBjb21lIG9ubGluZQpbICAgNjAuOTA0
+NjM0XSBDUFUwOiBmYWlsZWQgaW4gdW5rbm93biBzdGF0ZSA6IDB4MAoKYW5kIHRoZSBjb25zb2xl
+IGlzIGRlYWQuIEkgZ3Vlc3Mgbm9ib2R5IGV2ZXIgdHVybmVkIENQVTAgb2ZmLi4uIDotLwoKICAg
+ICAgICAgTS4KLS0gCkphenogaXMgbm90IGRlYWQuIEl0IGp1c3Qgc21lbGxzIGZ1bm55Li4uCgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
+a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
+bmVsCg==
