@@ -2,83 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8DE2114253
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 15:08:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3B16114266
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 15:15:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Cghw6ywK/5aqE3eONC0eET4z78Hkuxw7rMplw7e1D4U=; b=K88FpmCHLTSg7G
-	IA6CSI+EcTn+9zXPz/+vRpCtB2ojsfU3qT5GdBDizMOuDhemb7bQ7dV0dTcH3Vv1HzcsFt8DkdkPf
-	sLOIYJ4hcD1KaVgiGNtWNUbMJSYh5JmFug9SG5db3wYRnrNFzlClQOwfsAg2n9PYi4Q2p3iW0OWhU
-	nTbcGaeiZ+nnlvtwybkmV7oeBFhJX8CR2QdaXuOZp7xrGU1/8Xww/+MuSpJPGa+F/Oegrm93OOD0h
-	wgCltQ8CzIV983LGvmrQ5O0ubdWP9g6CDRGWRZ6dcbLpwcGYX96OIxTYnRdhH5tzm400m2j4BVqVu
-	bHmZ5K8OPo41cAP830YQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n1qe3cDGwVvd9vN5fP4DX0WLiwagTq+iGuB7emJ0uHw=; b=rq0YxgDlhP8piR
+	C8Wcf9R2HX0ccW5RHL8iE2dMBbfRnBDbcvne8zeZ+cBz9ft0sxnt80yHIVdhL7i91islpzhh4snGB
+	aQ76Q8Sm6AZ9bwBQTWYbOafnwOtVgqIkiW70AlNfs9OBtL34NF1LLARPDOeECmmlWDl/uQtWAPGuX
+	hrkgx5RCl1hY1LwRnY3NFZCbAe3gf3KskYh3GQHs762EEsZ0uNhSl4gAM8x1Pvt5sXWm0QXelQ69W
+	TVDpsK0Xr543NR8ltbS3W/NqB5zHa2xIotby+9RdN5VMLqCQB11G9SR/UsLpGmZjc7jMRly2C53mC
+	PlaFDd6hplkOOtFIfQIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icro2-0005Ld-16; Thu, 05 Dec 2019 14:08:34 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1icrul-0008O6-5S; Thu, 05 Dec 2019 14:15:31 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icrno-0005L4-Oz
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 14:08:22 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xB5DvoKD026399; Thu, 5 Dec 2019 15:08:11 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=ZunBs5XNBGkzdynuEgHyci3GLZOhq0qbk3yNCy97EIA=;
- b=cpTsspLdKyQwhA+MWFENbPsldOdIketC9u9kVm8fQl7+LCNhXWy4CgpMOuhjYTmPYX19
- qGd3Ple5TB0eIsGW4c+6FkKLK7EA48eBNKb0ooHeR4OAXZSUwqtN69kr4KwjoZRWA2l2
- x4bk3z/XYandsjXaQG7J/RQUD0iPzQOMefc9WPzUMm2+0r3YA1rSWSZ7e1yjADswDyS4
- Wi7XgiUF6PnbqXG3J493N3M35nmKP6+h75aTIJC3UZ0/ylK5ONhqVKhd37pPPjLzekbm
- iN2mvqcZxPXC3Wxw23yPOKruNtnDMJOHhoAgGTJ7k6aUuES1Rkbz0M7qBN9jTsRrRnxL hw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wkg6ku5yn-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 05 Dec 2019 15:08:11 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6C89F10002A;
- Thu,  5 Dec 2019 15:08:10 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 521C42A89F9;
- Thu,  5 Dec 2019 15:08:10 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG6NODE2.st.com (10.75.127.17)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Thu, 5 Dec 2019 15:08:09 +0100
-From: Pascal Paillet <p.paillet@st.com>
-To: Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Maxime
- Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
- <alexandre.torgue@st.com>,
- <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH v2] regulator: Convert stm32-pwr regulator to json-schema
-Date: Thu, 5 Dec 2019 15:08:09 +0100
-Message-ID: <20191205140809.19413-1-p.paillet@st.com>
-X-Mailer: git-send-email 2.17.1
+ id 1icrub-0008N8-6T
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 14:15:22 +0000
+Received: by mail-lf1-x141.google.com with SMTP id n25so2651385lfl.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Dec 2019 06:15:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Wzep174WCTcC1ylDAnxlMqZM1R1EhRXQds7swrstswI=;
+ b=eKN1cSEh0kd1WE7WXm3PmvW+zXtWnPq+tMxGojEk6pDa+uT8NehzL6Jehm6RSKxU1D
+ bJeruxzSsmoe4Zob+mCQbqLTadh4qBX2dDbdxDuUs9ifbwFV+wRo8U7Wes22mvsKEChd
+ dMwRAc+IKgdWva1j7jYXPnerw2g7qlnjDXgK3SWU8f1p5H62F/M1y1xs1Snqpy1IiIcQ
+ 7dSbBkZ6+SWcdImMUnu7i+vHdrYobbJzFIipc4veha56Jh7qWCbS4iyAoN//BKJGdRZx
+ 5Q7qqqDE0jDbrJu6f2WQkDgO1+n+FkiA1mq4F2xBSOL3nLbTLwvupluWaAWlpiAFrdoT
+ 6JZA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Wzep174WCTcC1ylDAnxlMqZM1R1EhRXQds7swrstswI=;
+ b=a9MGqgGeP9CGt3hWnV0+v6F58iBiP7ObdzKnzVeFY3y4EUh2giv8zWMzmNNwktm9vq
+ 7KmDbC0JANxPghfbuhMRkn5M5GV7S6AqVquzf7iSEW6fzzaAjFcERBoZV+3++ne2POly
+ oq8a2GbrToHEvKH0qgNhP1XM5ae7ivArlCcXDEroKvVcPqugbfNB+oxnKkEun2yE3+sK
+ tX4qCqBvZTfTdNxOMmD19Jxcu2lyqIjDVl19uBZpoNgTS88KBZLs2nOrGFvBNnfHEy69
+ KdMwehh1Yf54RDDWg8/w7VlVjkeOFDv6u4Kc4XqRyAmvAptQFxqtPGytdAfOx0xVJsyC
+ aq+g==
+X-Gm-Message-State: APjAAAWurmNGXnhIxZNeWLILUaiJB3E8B1THct4ZzMBsk61x8+sByFHW
+ a/1l8iPba/rVT6rvpdoj+/c=
+X-Google-Smtp-Source: APXvYqxDsjhSKWK+uSVzdnXGuwNFxGT3Omee51LOWQUVpNA82oYyAbz8BSHfqBLZ/hseHq/ttcy9vg==
+X-Received: by 2002:a19:c84:: with SMTP id 126mr5414925lfm.5.1575555317304;
+ Thu, 05 Dec 2019 06:15:17 -0800 (PST)
+Received: from [192.168.2.145] (79-139-233-37.dynamic.spd-mgts.ru.
+ [79.139.233.37])
+ by smtp.googlemail.com with ESMTPSA id s22sm5158466ljm.41.2019.12.05.06.15.15
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 05 Dec 2019 06:15:16 -0800 (PST)
+Subject: Re: [TEGRA194_CPUFREQ Patch 2/3] cpufreq: Add Tegra194 cpufreq driver
+To: Sumit Gupta <sumitg@nvidia.com>, rjw@rjwysocki.net,
+ viresh.kumar@linaro.org, catalin.marinas@arm.com, will@kernel.org,
+ thierry.reding@gmail.com, jonathanh@nvidia.com, talho@nvidia.com,
+ linux-pm@vger.kernel.org, linux-tegra@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <1575394348-17649-1-git-send-email-sumitg@nvidia.com>
+ <1575394348-17649-2-git-send-email-sumitg@nvidia.com>
+From: Dmitry Osipenko <digetx@gmail.com>
+Message-ID: <9b9eb84d-2d9a-8dbd-cbe6-1595ed1e7f4e@gmail.com>
+Date: Thu, 5 Dec 2019 17:15:15 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG7NODE1.st.com (10.75.127.19) To SFHDAG6NODE2.st.com
- (10.75.127.17)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-12-05_03:2019-12-04,2019-12-05 signatures=0
+In-Reply-To: <1575394348-17649-2-git-send-email-sumitg@nvidia.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_060821_266432_20E175C3 
-X-CRM114-Status: GOOD (  15.12  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191205_061521_242570_A625C414 
+X-CRM114-Status: GOOD (  25.57  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (digetx[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,154 +107,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: p.paillet@st.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: bbasu@nvidia.com, mperttunen@nvidia.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the stm32-pwr regulator binding to DT schema format using
-json-schema.
-
-Signed-off-by: Pascal Paillet <p.paillet@st.com>
----
-Changes since v1:
-- remove a regulator.yaml reference
-- add /schemas/types.yaml#/definitions/phandle-array for supply
-- fix indent below required
-
- .../regulator/st,stm32mp1-pwr-reg.txt         | 43 ------------
- .../regulator/st,stm32mp1-pwr-reg.yaml        | 66 +++++++++++++++++++
- 2 files changed, 66 insertions(+), 43 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.txt
- create mode 100644 Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.yaml
-
-diff --git a/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.txt b/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.txt
-deleted file mode 100644
-index e372dd3f0c8a..000000000000
---- a/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.txt
-+++ /dev/null
-@@ -1,43 +0,0 @@
--STM32MP1 PWR Regulators
-------------------------
--
--Available Regulators in STM32MP1 PWR block are:
--  - reg11 for regulator 1V1
--  - reg18 for regulator 1V8
--  - usb33 for the swtich USB3V3
--
--Required properties:
--- compatible: Must be "st,stm32mp1,pwr-reg"
--- list of child nodes that specify the regulator reg11, reg18 or usb33
--  initialization data for defined regulators. The definition for each of
--  these nodes is defined using the standard binding for regulators found at
--  Documentation/devicetree/bindings/regulator/regulator.txt.
--- vdd-supply: phandle to the parent supply/regulator node for vdd input
--- vdd_3v3_usbfs-supply: phandle to the parent supply/regulator node for usb33
--
--Example:
--
--pwr_regulators: pwr@50001000 {
--	compatible = "st,stm32mp1,pwr-reg";
--	reg = <0x50001000 0x10>;
--	vdd-supply = <&vdd>;
--	vdd_3v3_usbfs-supply = <&vdd_usb>;
--
--	reg11: reg11 {
--		regulator-name = "reg11";
--		regulator-min-microvolt = <1100000>;
--		regulator-max-microvolt = <1100000>;
--	};
--
--	reg18: reg18 {
--		regulator-name = "reg18";
--		regulator-min-microvolt = <1800000>;
--		regulator-max-microvolt = <1800000>;
--	};
--
--	usb33: usb33 {
--		regulator-name = "usb33";
--		regulator-min-microvolt = <3300000>;
--		regulator-max-microvolt = <3300000>;
--	};
--};
-diff --git a/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.yaml b/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.yaml
-new file mode 100644
-index 000000000000..cc66a7c91260
---- /dev/null
-+++ b/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.yaml
-@@ -0,0 +1,66 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/regulator/st,stm32mp1-pwr-reg.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: STM32MP1 PWR voltage regulators
-+
-+maintainers:
-+  - Pascal Paillet <p.paillet@st.com>
-+
-+properties:
-+  compatible:
-+    const: st,stm32mp1,pwr-reg
-+
-+  reg:
-+    maxItems: 1
-+
-+  vdd-supply:
-+    description: Input supply phandle(s) for vdd input
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+
-+  vdd_3v3_usbfs-supply:
-+    description: Input supply phandle(s) for vdd_3v3_usbfs input
-+    $ref: /schemas/types.yaml#/definitions/phandle-array
-+
-+patternProperties:
-+  "^(reg11|reg18|usb33)$":
-+    type: object
-+
-+    allOf:
-+      - $ref: "regulator.yaml#"
-+
-+required:
-+  - compatible
-+  - reg
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    pwr@50001000 {
-+      compatible = "st,stm32mp1,pwr-reg";
-+      reg = <0x50001000 0x10>;
-+      vdd-supply = <&vdd>;
-+      vdd_3v3_usbfs-supply = <&vdd_usb>;
-+
-+      reg11 {
-+        regulator-name = "reg11";
-+        regulator-min-microvolt = <1100000>;
-+        regulator-max-microvolt = <1100000>;
-+      };
-+
-+      reg18 {
-+        regulator-name = "reg18";
-+        regulator-min-microvolt = <1800000>;
-+        regulator-max-microvolt = <1800000>;
-+      };
-+
-+      usb33 {
-+        regulator-name = "usb33";
-+        regulator-min-microvolt = <3300000>;
-+        regulator-max-microvolt = <3300000>;
-+      };
-+    };
-+...
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+MDMuMTIuMjAxOSAyMDozMiwgU3VtaXQgR3VwdGEg0L/QuNGI0LXRgjoKPiBBZGQgc3VwcG9ydCBm
+b3IgQ1BVIGZyZXF1ZW5jeSBzY2FsaW5nIG9uIFRlZ3JhMTk0LiBUaGUgZnJlcXVlbmN5Cj4gb2Yg
+ZWFjaCBjb3JlIGNhbiBiZSBhZGp1c3RlZCBieSB3cml0aW5nIGEgY2xvY2sgZGl2aXNvciB2YWx1
+ZSB0bwo+IGFuIE1TUiBvbiB0aGUgY29yZS4gVGhlIHJhbmdlIG9mIHZhbGlkIGRpdmlzb3JzIGlz
+IHF1ZXJpZWQgZnJvbQo+IHRoZSBCUE1QLgo+IAo+IFNpZ25lZC1vZmYtYnk6IE1pa2tvIFBlcnR0
+dW5lbiA8bXBlcnR0dW5lbkBudmlkaWEuY29tPgo+IFNpZ25lZC1vZmYtYnk6IFN1bWl0IEd1cHRh
+IDxzdW1pdGdAbnZpZGlhLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9jcHVmcmVxL0tjb25maWcuYXJt
+ICAgICAgICB8ICAgNiArCj4gIGRyaXZlcnMvY3B1ZnJlcS9NYWtlZmlsZSAgICAgICAgICAgfCAg
+IDEgKwo+ICBkcml2ZXJzL2NwdWZyZXEvdGVncmExOTQtY3B1ZnJlcS5jIHwgNDIzICsrKysrKysr
+KysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiAgMyBmaWxlcyBjaGFuZ2VkLCA0MzAgaW5z
+ZXJ0aW9ucygrKQo+ICBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9jcHVmcmVxL3RlZ3JhMTk0
+LWNwdWZyZXEuYwo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2NwdWZyZXEvS2NvbmZpZy5hcm0g
+Yi9kcml2ZXJzL2NwdWZyZXEvS2NvbmZpZy5hcm0KPiBpbmRleCBhOTA1Nzk2Li40YmNkNDdjIDEw
+MDY0NAo+IC0tLSBhL2RyaXZlcnMvY3B1ZnJlcS9LY29uZmlnLmFybQo+ICsrKyBiL2RyaXZlcnMv
+Y3B1ZnJlcS9LY29uZmlnLmFybQo+IEBAIC0zMjAsNiArMzIwLDEyIEBAIGNvbmZpZyBBUk1fVEVH
+UkExODZfQ1BVRlJFUQo+ICAJaGVscAo+ICAJICBUaGlzIGFkZHMgdGhlIENQVUZyZXEgZHJpdmVy
+IHN1cHBvcnQgZm9yIFRlZ3JhMTg2IFNPQ3MuCj4gIAo+ICtjb25maWcgQVJNX1RFR1JBMTk0X0NQ
+VUZSRVEKPiArCXRyaXN0YXRlICJUZWdyYTE5NCBDUFVGcmVxIHN1cHBvcnQiCj4gKwlkZXBlbmRz
+IG9uIEFSQ0hfVEVHUkEgJiYgVEVHUkFfQlBNUAo+ICsJaGVscAo+ICsJICBUaGlzIGFkZHMgQ1BV
+IGZyZXF1ZW5jeSBkcml2ZXIgc3VwcG9ydCBmb3IgVGVncmExOTQgU09Dcy4KPiArCj4gIGNvbmZp
+ZyBBUk1fVElfQ1BVRlJFUQo+ICAJYm9vbCAiVGV4YXMgSW5zdHJ1bWVudHMgQ1BVRnJlcSBzdXBw
+b3J0Igo+ICAJZGVwZW5kcyBvbiBBUkNIX09NQVAyUExVUwo+IGRpZmYgLS1naXQgYS9kcml2ZXJz
+L2NwdWZyZXEvTWFrZWZpbGUgYi9kcml2ZXJzL2NwdWZyZXEvTWFrZWZpbGUKPiBpbmRleCA5YTlm
+NWNjLi40MzNkNDkyIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvY3B1ZnJlcS9NYWtlZmlsZQo+ICsr
+KyBiL2RyaXZlcnMvY3B1ZnJlcS9NYWtlZmlsZQo+IEBAIC04NSw2ICs4NSw3IEBAIG9iai0kKENP
+TkZJR19BUk1fVEFOR09fQ1BVRlJFUSkJCSs9IHRhbmdvLWNwdWZyZXEubwo+ICBvYmotJChDT05G
+SUdfQVJNX1RFR1JBMjBfQ1BVRlJFUSkJKz0gdGVncmEyMC1jcHVmcmVxLm8KPiAgb2JqLSQoQ09O
+RklHX0FSTV9URUdSQTEyNF9DUFVGUkVRKQkrPSB0ZWdyYTEyNC1jcHVmcmVxLm8KPiAgb2JqLSQo
+Q09ORklHX0FSTV9URUdSQTE4Nl9DUFVGUkVRKQkrPSB0ZWdyYTE4Ni1jcHVmcmVxLm8KPiArb2Jq
+LSQoQ09ORklHX0FSTV9URUdSQTE5NF9DUFVGUkVRKQkrPSB0ZWdyYTE5NC1jcHVmcmVxLm8KPiAg
+b2JqLSQoQ09ORklHX0FSTV9USV9DUFVGUkVRKQkJKz0gdGktY3B1ZnJlcS5vCj4gIG9iai0kKENP
+TkZJR19BUk1fVkVYUFJFU1NfU1BDX0NQVUZSRVEpCSs9IHZleHByZXNzLXNwYy1jcHVmcmVxLm8K
+PiAgCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvY3B1ZnJlcS90ZWdyYTE5NC1jcHVmcmVxLmMgYi9k
+cml2ZXJzL2NwdWZyZXEvdGVncmExOTQtY3B1ZnJlcS5jCj4gbmV3IGZpbGUgbW9kZSAxMDA2NDQK
+PiBpbmRleCAwMDAwMDAwLi45ZGYxMmY0Cj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2RyaXZlcnMv
+Y3B1ZnJlcS90ZWdyYTE5NC1jcHVmcmVxLmMKPiBAQCAtMCwwICsxLDQyMyBAQAo+ICsvLyBTUERY
+LUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMAo+ICsvKgo+ICsgKiBDb3B5cmlnaHQgKGMpIDIw
+MTksIE5WSURJQSBDT1JQT1JBVElPTi4gQWxsIHJpZ2h0cyByZXNlcnZlZAo+ICsgKi8KPiArCj4g
+KyNpbmNsdWRlIDxsaW51eC9jcHUuaD4KPiArI2luY2x1ZGUgPGxpbnV4L2NwdWZyZXEuaD4KPiAr
+I2luY2x1ZGUgPGxpbnV4L2RlbGF5Lmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9kbWEtbWFwcGluZy5o
+Pgo+ICsjaW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9vZi5oPgo+
+ICsjaW5jbHVkZSA8bGludXgvb2ZfcGxhdGZvcm0uaD4KPiArI2luY2x1ZGUgPGxpbnV4L3BsYXRm
+b3JtX2RldmljZS5oPgo+ICsjaW5jbHVkZSA8bGludXgvc2xhYi5oPgo+ICsKPiArI2luY2x1ZGUg
+PGFzbS9zbXBfcGxhdC5oPgo+ICsKPiArI2luY2x1ZGUgPHNvYy90ZWdyYS9icG1wLmg+Cj4gKyNp
+bmNsdWRlIDxzb2MvdGVncmEvYnBtcC1hYmkuaD4KPiArCj4gKyNkZWZpbmUgS0haICAgICAgICAg
+ICAgICAgICAgICAgMTAwMAo+ICsjZGVmaW5lIFJFRl9DTEtfTUhaICAgICAgICAgICAgIDQwOCAv
+KiA0MDggTUh6ICovCj4gKyNkZWZpbmUgVVNfREVMQVkgICAgICAgICAgICAgICAgMjAwMAo+ICsj
+ZGVmaW5lIFVTX0RFTEFZX01JTiAgICAgICAgICAgIDIKPiArI2RlZmluZSBDUFVGUkVRX1RCTF9T
+VEVQX0haICAgICAoNTAgKiBLSFogKiBLSFopCj4gKyNkZWZpbmUgTUFYX0NOVCAgICAgICAgICAg
+ICAgICAgfjBVCj4gKwo+ICsvKiBjcHVmcmVxIHRyYW5zaXNpdGlvbiBsYXRlbmN5ICovCj4gKyNk
+ZWZpbmUgVEVHUkFfQ1BVRlJFUV9UUkFOU0lUSU9OX0xBVEVOQ1kgKDMwMCAqIDEwMDApIC8qIHVu
+aXQgaW4gbmFub3NlY29uZHMgKi8KPiArCj4gK2VudW0gY2x1c3RlciB7Cj4gKwlDTFVTVEVSMCwK
+PiArCUNMVVNURVIxLAo+ICsJQ0xVU1RFUjIsCj4gKwlDTFVTVEVSMywKPiArCU1BWF9DTFVTVEVS
+UywKPiArfTsKPiArCj4gK3N0cnVjdCB0ZWdyYTE5NF9jcHVmcmVxX2RhdGEgewo+ICsJdm9pZCBf
+X2lvbWVtICpyZWdzOwo+ICsJc2l6ZV90IG51bV9jbHVzdGVyczsKPiArCXN0cnVjdCBjcHVmcmVx
+X2ZyZXF1ZW5jeV90YWJsZSAqKnRhYmxlczsKPiArfTsKPiArCj4gK3N0YXRpYyBERUZJTkVfTVVU
+RVgoY3B1ZnJlcV9sb2NrKTsKPiArCj4gK3N0cnVjdCB0ZWdyYV9jcHVfY3RyIHsKPiArCXUzMiBj
+cHU7Cj4gKwl1MzIgZGVsYXk7Cj4gKwl1MzIgY29yZWNsa19jbnQsIGxhc3RfY29yZWNsa19jbnQ7
+Cj4gKwl1MzIgcmVmY2xrX2NudCwgbGFzdF9yZWZjbGtfY250Owo+ICt9Owo+ICsKPiArc3RhdGlj
+IHN0cnVjdCB3b3JrcXVldWVfc3RydWN0ICpyZWFkX2NvdW50ZXJzX3dxOwo+ICtzdHJ1Y3QgcmVh
+ZF9jb3VudGVyc193b3JrIHsKPiArCXN0cnVjdCB3b3JrX3N0cnVjdCB3b3JrOwo+ICsJc3RydWN0
+IHRlZ3JhX2NwdV9jdHIgYzsKPiArfTsKPiArCj4gK3N0YXRpYyBlbnVtIGNsdXN0ZXIgZ2V0X2Nw
+dV9jbHVzdGVyKHU4IGNwdSkKPiArewo+ICsJcmV0dXJuIE1QSURSX0FGRklOSVRZX0xFVkVMKGNw
+dV9sb2dpY2FsX21hcChjcHUpLCAxKTsKPiArfQo+ICsKPiArLyoKPiArICogUmVhZCBwZXItY29y
+ZSBSZWFkLW9ubHkgc3lzdGVtIHJlZ2lzdGVyIE5WRlJFUV9GRUVEQkFDS19FTDEuCj4gKyAqIFRo
+ZSByZWdpc3RlciBwcm92aWRlcyBmcmVxdWVuY3kgZmVlZGJhY2sgaW5mb3JtYXRpb24gdG8KPiAr
+ICogZGV0ZXJtaW5lIHRoZSBhdmVyYWdlIGFjdHVhbCBmcmVxdWVuY3kgYSBjb3JlIGhhcyBydW4g
+YXQgb3Zlcgo+ICsgKiBhIHBlcmlvZCBvZiB0aW1lLgo+ICsgKglbMzE6MF0gUExMUCBjb3VudGVy
+OiBDb3VudHMgYXQgZml4ZWQgZnJlcXVlbmN5ICg0MDggTUh6KQo+ICsgKglbNjM6MzJdIENvcmUg
+Y2xvY2sgY291bnRlcjogY291bnRzIG9uIGV2ZXJ5IGNvcmUgY2xvY2sgY3ljbGUKPiArICoJCQl3
+aGVyZSB0aGUgY29yZSBpcyBhcmNoaXRlY3R1cmFsbHkgY2xvY2tpbmcKPiArICovCj4gK3N0YXRp
+YyB1NjQgcmVhZF9mcmVxX2ZlZWRiYWNrKHZvaWQpCj4gK3sKPiArCXU2NCB2YWwgPSAwOwo+ICsK
+PiArCWFzbSB2b2xhdGlsZSgibXJzICUwLCBzM18wX2MxNV9jMF81IiA6ICI9ciIgKHZhbCkgOiAp
+Owo+ICsKPiArCXJldHVybiB2YWw7Cj4gK30KPiArCj4gK3UxNiBtYXBfZnJlcV90b19uZGl2KHN0
+cnVjdCBtcnFfY3B1X25kaXZfbGltaXRzX3Jlc3BvbnNlICpubHRibCwgdTMyIGZyZXEpCj4gK3sK
+PiArCXJldHVybiBESVZfUk9VTkRfVVAoZnJlcSAqIG5sdGJsLT5wZGl2ICogbmx0YmwtPm1kaXYs
+Cj4gKwkJCSAgICBubHRibC0+cmVmX2Nsa19oeiAvIEtIWik7Cj4gK30KPiArCj4gK3N0YXRpYyBp
+bmxpbmUgdTMyIG1hcF9uZGl2X3RvX2ZyZXEoc3RydWN0IG1ycV9jcHVfbmRpdl9saW1pdHNfcmVz
+cG9uc2UKPiArCQkJCSAgICpubHRibCwgdTE2IG5kaXYpCj4gK3sKPiArCXJldHVybiBubHRibC0+
+cmVmX2Nsa19oeiAvIEtIWiAqIG5kaXYgLyAobmx0YmwtPnBkaXYgKiBubHRibC0+bWRpdik7Cj4g
+K30KPiArCj4gK3N0YXRpYyB2b2lkIHRlZ3JhX3JlYWRfY291bnRlcnMoc3RydWN0IHdvcmtfc3Ry
+dWN0ICp3b3JrKQo+ICt7Cj4gKwlzdHJ1Y3QgcmVhZF9jb3VudGVyc193b3JrICpyZWFkX2NvdW50
+ZXJzX3dvcms7Cj4gKwlzdHJ1Y3QgdGVncmFfY3B1X2N0ciAqYzsKPiArCXU2NCB2YWw7Cj4gKwo+
+ICsJLyoKPiArCSAqIHJlZl9jbGtfY291bnRlcigzMiBiaXQgY291bnRlcikgcnVucyBvbiBjb25z
+dGFudCBjbGssCj4gKwkgKiBwbGxfcCg0MDhNSHopLgo+ICsJICogSXQgd2lsbCB0YWtlID0gMiBe
+IDMyIC8gNDA4IE1IeiB0byBvdmVyZmxvdyByZWYgY2xrIGNvdW50ZXIKPiArCSAqICAgICAgICAg
+ICAgICA9IDEwNTI2ODgwIHVzZWMgPSAxMC41Mjcgc2VjIHRvIG92ZXJmbG93Cj4gKwkgKgo+ICsJ
+ICogTGlrZSB3aXNlIGNvcmVfY2xrX2NvdW50ZXIoMzIgYml0IGNvdW50ZXIpIHJ1bnMgb24gY29y
+ZSBjbG9jay4KPiArCSAqIEl0J3Mgc3luY2hyb25pemVkIHRvIGNyYWJfY2xrIChjcHVfY3JhYl9j
+bGspIHdoaWNoIHJ1bnMgYXQKPiArCSAqIGZyZXEgb2YgY2x1c3Rlci4gQXNzdW1pbmcgbWF4IGNs
+dXN0ZXIgY2xvY2sgfjIwMDBNSHosCj4gKwkgKiBJdCB3aWxsIHRha2UgPSAyIF4gMzIgLyAyMDAw
+IE1IeiB0byBvdmVyZmxvdyBjb3JlIGNsayBjb3VudGVyCj4gKwkgKiAgICAgICAgICAgICAgPSB+
+Mi4xNDcgc2VjIHRvIG92ZXJmbG93Cj4gKwkgKi8KPiArCXJlYWRfY291bnRlcnNfd29yayA9IGNv
+bnRhaW5lcl9vZih3b3JrLCBzdHJ1Y3QgcmVhZF9jb3VudGVyc193b3JrLAo+ICsJCQkJCSAgd29y
+ayk7Cj4gKwljID0gJnJlYWRfY291bnRlcnNfd29yay0+YzsKPiArCj4gKwl2YWwgPSByZWFkX2Zy
+ZXFfZmVlZGJhY2soKTsKPiArCWMtPmxhc3RfcmVmY2xrX2NudCA9IGxvd2VyXzMyX2JpdHModmFs
+KTsKPiArCWMtPmxhc3RfY29yZWNsa19jbnQgPSB1cHBlcl8zMl9iaXRzKHZhbCk7Cj4gKwl1ZGVs
+YXkoYy0+ZGVsYXkpOwo+ICsJdmFsID0gcmVhZF9mcmVxX2ZlZWRiYWNrKCk7Cj4gKwljLT5yZWZj
+bGtfY250ID0gbG93ZXJfMzJfYml0cyh2YWwpOwo+ICsJYy0+Y29yZWNsa19jbnQgPSB1cHBlcl8z
+Ml9iaXRzKHZhbCk7Cj4gK30KPiArCj4gKy8qCj4gKyAqIFJldHVybiBpbnN0YW50YW5lb3VzIGNw
+dSBzcGVlZAo+ICsgKiBJbnN0YW50YW5lb3VzIGZyZXEgaXMgY2FsY3VsYXRlZCBhcyAtCj4gKyAq
+IC1UYWtlcyBzYW1wbGUgb24gZXZlcnkgcXVlcnkgb2YgZ2V0dGluZyB0aGUgZnJlcS4KPiArICoJ
+LSBSZWFkIGNvcmUgYW5kIHJlZiBjbG9jayBjb3VudGVyczsKPiArICoJLSBEZWxheSBmb3IgWCB1
+cwo+ICsgKgktIFJlYWQgYWJvdmUgY3ljbGUgY291bnRlcnMgYWdhaW4KPiArICoJLSBDYWxjdWxh
+dGVzIGZyZXEgYnkgc3VidHJhY3RpbmcgY3VycmVudCBhbmQgcHJldmlvdXMgY291bnRlcnMKPiAr
+ICoJICBkaXZpZGVkIGJ5IHRoZSBkZWxheSB0aW1lIG9yIGVxdi4gb2YgcmVmX2Nsa19jb3VudGVy
+IGluIGRlbHRhIHRpbWUKPiArICoJLSBSZXR1cm4gS2N5Y2xlcy9zZWNvbmQsIGZyZXEgaW4gS0h6
+Cj4gKyAqCj4gKyAqCWRlbHRhIHRpbWUgcGVyaW9kID0geCBzZWMKPiArICoJCQkgID0gZGVsdGEg
+cmVmX2Nsa19jb3VudGVyIC8gKDQwOCAqIDEwXjYpIHNlYwo+ICsgKglmcmVxIGluIEh6ID0gY3lj
+bGVzL3NlYwo+ICsgKgkJICAgPSAoZGVsdGEgY3ljbGVzIC8geCBzZWMKPiArICoJCSAgID0gKGRl
+bHRhIGN5Y2xlcyAqIDQwOCAqIDEwXjYpIC8gZGVsdGEgcmVmX2Nsa19jb3VudGVyCj4gKyAqCWlu
+IEtIegkgICA9IChkZWx0YSBjeWNsZXMgKiA0MDggKiAxMF4zKSAvIGRlbHRhIHJlZl9jbGtfY291
+bnRlcgo+ICsgKgo+ICsgKiBAY3B1IC0gbG9naWNhbCBjcHUgd2hvc2UgZnJlcSB0byBiZSB1cGRh
+dGVkCj4gKyAqIFJldHVybnMgZnJlcSBpbiBLSHogb24gc3VjY2VzcywgMCBpZiBjcHUgaXMgb2Zm
+bGluZQo+ICsgKi8KPiArc3RhdGljIHVuc2lnbmVkIGludCB0ZWdyYTE5NF9nZXRfc3BlZWRfY29t
+bW9uKHUzMiBjcHUsIHUzMiBkZWxheSkKPiArewo+ICsJc3RydWN0IHJlYWRfY291bnRlcnNfd29y
+ayByZWFkX2NvdW50ZXJzX3dvcms7Cj4gKwlzdHJ1Y3QgdGVncmFfY3B1X2N0ciBjOwo+ICsJdTMy
+IGRlbHRhX3JlZmNudDsKPiArCXUzMiBkZWx0YV9jY250Owo+ICsJdTMyIHJhdGVfbWh6Owo+ICsK
+PiArCXJlYWRfY291bnRlcnNfd29yay5jLmNwdSA9IGNwdTsKPiArCXJlYWRfY291bnRlcnNfd29y
+ay5jLmRlbGF5ID0gZGVsYXk7Cj4gKwlJTklUX1dPUktfT05TVEFDSygmcmVhZF9jb3VudGVyc193
+b3JrLndvcmssIHRlZ3JhX3JlYWRfY291bnRlcnMpOwo+ICsJcXVldWVfd29ya19vbihjcHUsIHJl
+YWRfY291bnRlcnNfd3EsICZyZWFkX2NvdW50ZXJzX3dvcmsud29yayk7Cj4gKwlmbHVzaF93b3Jr
+KCZyZWFkX2NvdW50ZXJzX3dvcmsud29yayk7CgpXaGF0IHdpbGwgaGFwcGVuIGlmIENQVSBpcyBv
+ZmZsaW5lPwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYXJtLWtlcm5lbAo=
