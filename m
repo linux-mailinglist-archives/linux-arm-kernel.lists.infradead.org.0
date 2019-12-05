@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D75881139CE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 03:21:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74E881139D0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 03:21:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ewJFzC5nvAWXwbXA4K2QX2/lUrhJ3pPMhgc198hzN4w=; b=o4/N7SrHH9iu6u
-	whUf7LN3bE8AT++9D+8J2gLR8kwQUIuLkZ/DWmVCgaW/LXoBxEnZRQbef8Xz/UVzCMGCXMaIaKWGN
-	zgAX+yPTyze8sqAK0HEpGlGjA4rGjf3zZNqypJaD2HuLyAYPihiwR2ATsJ8lMWr1/fbr+UHDB3YAE
-	9qD+y0VFlj79nvyAC67I6ITwi6KXA2/dOoGWFX3OlihdozrmIVDWuxiEwbZbzyoIfi/6REw6vTn4v
-	Crax/8mZ+FL7183dVnXQC/swRsubX7//JQCuVJ7CqgouDoO1m0mAqKEcdanAG7oAnzn7hGhAiTG/s
-	1uHb+z4JygCF3k8HoAAg==;
+	List-Owner; bh=ccmGIf0vaUEJzcP2SPmvBSP/qgp/iMg0vkVkWj1JcQg=; b=meMzmgE6XLZWJr
+	GspjPzoPNWnvFsYULwj+0F4il5eIgxdtXBIHMj76xPQsTMxM/5n4BuEl0QikUKrqfJeHuAPmJD4mO
+	DQkimBdCn4415QUTE2R/O69beC3wxr4oK7+XC03U8bOmFkVvu35D5aU/wQUa3LZsZGkA1XUrIMVhg
+	98wSdLuhH5+Yhl8QT63UO4yff9CTaMx6lX/ygPJxY58yO93Z9JFY6bn059h1PU6P2FIflOtFulS+r
+	2bx6IB6wcCEjpb+xAJglYRU67OHs8vwiGrpT/vXpLI+fE1AHXCjOtkxMb8KWhP6vVVpBR/A9lRJmH
+	JmVAD4vAibC+3MVJoGzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icgla-0001pf-IO; Thu, 05 Dec 2019 02:21:18 +0000
-Received: from mail-yb1-xb41.google.com ([2607:f8b0:4864:20::b41])
+	id 1icglq-00022i-5R; Thu, 05 Dec 2019 02:21:34 +0000
+Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icgkA-00085p-NH
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 02:19:52 +0000
-Received: by mail-yb1-xb41.google.com with SMTP id v2so882377ybo.3
+ id 1icgkC-00088I-84
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 02:19:53 +0000
+Received: by mail-yb1-xb44.google.com with SMTP id d95so865344ybi.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 18:19:50 -0800 (PST)
+ Wed, 04 Dec 2019 18:19:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=oWN4pUn9h8kmkDUvNkkmAbykuZ7BWRxuHrNipagh7j4=;
- b=E7lbrt5LKKXPAltqBhYh1f/OR+N2z7JaAe5xBm+yMPOQ0AW79g2OoajbfGorwR8j+w
- 4+culxp+iCxTHyaHTrl0mPe72262t9aHSUdmIWbVQAyflEicAHLSc/KnkJ1uuO27G5sY
- /doMboiyQ2kccwqntyH12UTgFARKPBfi2XPzQ1NuAsECaYij/cDgGwPdpSI3wCosoWJL
- vAmOCf60G4fkyjk/b2fzFKHjQ+qQoocKkP23sTLSrVh5nJ4aA/2/qZ8IpVt/pjke3F+5
- 6djv+vG+ymwh+0g0cYBcriE9AK5gpdzNaBEZU6Tp2RUHumtuirmrG6xlMxEeQkVQtNxs
- NHhA==
+ bh=o8rdL81CA1/QSUatk5QZuPPaOIlwBprO0GQX2EhaRjM=;
+ b=W1C+dYywW8EEg+KrCR9sD3uflofMaz0LkxIaYVdl/6TGvx8BVp2HSq7vgphATgN2BI
+ 6XVVI9gBWLX8BXhgqJpIOEOnWlbOzToicgYJaS/tBb+dIxQ1BjfPhhjR5gxnTz7Uat/o
+ olvMTEB5EwL45/extiYTkrbyuMactGPuACcJrxIWL4klqMk8XGZCnS192UxkZBdXT3Y0
+ H7PaFjvvmjAs3+JJEbpefhzNYgO7SI7WRWgJa/jFqa9t7praVOIsTiPhgAQzyQGxX/im
+ 3p2rBbJFcte9jSQblW7252rhLust313ljInBl79Yz6S+TBhx6Z6itNRymzOs0EbLzHvI
+ OXcA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=oWN4pUn9h8kmkDUvNkkmAbykuZ7BWRxuHrNipagh7j4=;
- b=LAt7UOQblx38VXlUl3VfRNT/p+l48cDyzhLUfUE+9qALuP11QVHoLgQqMox7aKvF30
- 1Ln2kc6KflyF4m4VVbRKClvdBhOVDNHAX0is0jeX+QOpdvcs4AfHRVUOxpX1veFn1gPm
- bF/Y3HAZeas0vzU6Gmoi22cmzGcCLHhHul6ldVzj6ASx3QllElBEz3nIc5DR1TZwl4BQ
- S7+tVT2LhyCpUtyfKEnR4HDhlfEC3DxGliluH307VgQPGNZvpoh4s0yMIczai49N3If3
- DLVUw1X/8nPvV2Im0LqM7BpBbAMeOOm+z/CYMGt0trLH+VS0SvA8iB+8nrEh8iLPBCqK
- JsHQ==
-X-Gm-Message-State: APjAAAWjA4RlOtmrw97zC1F3fpk9gg0a2xzMiTZIrvW8S7s+WZdeW7fg
- BBOnY1kQPs1kd7aN+CTE3/6ru8F9
-X-Google-Smtp-Source: APXvYqwa9Nm6yYJ/6HOp8YPmf+4cLZwckeWQu0Kb3li5ZZGizpS8hlXIBirWYlS4HI7DdEYEOXg4bw==
-X-Received: by 2002:a25:4144:: with SMTP id o65mr4812334yba.11.1575512388942; 
- Wed, 04 Dec 2019 18:19:48 -0800 (PST)
+ bh=o8rdL81CA1/QSUatk5QZuPPaOIlwBprO0GQX2EhaRjM=;
+ b=Q6Skx+wTSdKVTjllp9fkPG/FSQhHRhcQ1wy+RsgYhydmg0Qj8cry6weRPH3195h/4P
+ wDoGhwTLFzIKW/w+0MTFuG32eDC/Fm5rTWcZkoF4kx65LV6sZzICcLBhaw85eEoVNFZ9
+ n/6XfwE+wQiu+YlEYdsc8QkSg3rH5NMI6Vrb07oupTg8tsgInE/ZYtPaPQV/2eg7wdR6
+ Dv/iMHDBpd69ZhuMcHM3xucXfEBg5jx8AZ9Wonx4FtFMXzTc1AgIMOKURpMadIduGgS0
+ Tqs6oFOPe/CBvf9juCGI1wDZCTl+e2CSZUVrsqekfWYaFgqMdUohYZDhAXJKoIpnoCrf
+ gJYA==
+X-Gm-Message-State: APjAAAVD3qhVk8KECfotonnlmX0IBJW4x4vnmBPX+f+qWaZo5+kiUzLy
+ dcDsFy+yeawItC82viK4dnRUFBS4
+X-Google-Smtp-Source: APXvYqwAD9YGInc+qgp3awEl6WpVlrReB1uKRLWOTxVKUwY1TL0YVhztXM3OkuWK1013hQExDq0WRQ==
+X-Received: by 2002:a25:d5:: with SMTP id 204mr4502582yba.165.1575512390970;
+ Wed, 04 Dec 2019 18:19:50 -0800 (PST)
 Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
  [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id l6sm4188449ywa.39.2019.12.04.18.19.47
+ by smtp.gmail.com with ESMTPSA id l6sm4188449ywa.39.2019.12.04.18.19.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 18:19:48 -0800 (PST)
+ Wed, 04 Dec 2019 18:19:50 -0800 (PST)
 From: Adam Ford <aford173@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 4/7] dt-bindings: imx-gpcv2: Update bindings to support i.MX8M
- Mini
-Date: Wed,  4 Dec 2019 20:19:20 -0600
-Message-Id: <20191205021924.25188-5-aford173@gmail.com>
+Subject: [PATCH 5/7] arm64: dts: imx8mm: add GPC power domains
+Date: Wed,  4 Dec 2019 20:19:21 -0600
+Message-Id: <20191205021924.25188-6-aford173@gmail.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191205021924.25188-1-aford173@gmail.com>
 References: <20191205021924.25188-1-aford173@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_181950_795169_04ABE4EA 
-X-CRM114-Status: GOOD (  14.48  )
+X-CRM114-CacheID: sfid-20191204_181952_377896_975B80DB 
+X-CRM114-Status: GOOD (  12.91  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -113,41 +112,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The with the recent additions to the driver, the GPCv2 driver can
-support the i.MX8M Mini, but it needs updated 'compatible' entry
-to use the proper table.
+There is a power domain controller on the i.XM8M Mini used for
+handling interrupts and controlling certain peripherals like
+USB OTG and PCIe, which are currently unavailable.
 
-This patch adds the i.MX8MM to the compatible list of devices.
+This patch enables support the controller itself to the help
+facilitate enabling additional peripherals.
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
 ---
- Documentation/devicetree/bindings/power/fsl,imx-gpcv2.txt | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 82 ++++++++++++++++++++++-
+ 1 file changed, 81 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/power/fsl,imx-gpcv2.txt b/Documentation/devicetree/bindings/power/fsl,imx-gpcv2.txt
-index 7c7e972aaa42..576a79097a4c 100644
---- a/Documentation/devicetree/bindings/power/fsl,imx-gpcv2.txt
-+++ b/Documentation/devicetree/bindings/power/fsl,imx-gpcv2.txt
-@@ -9,6 +9,7 @@ Required properties:
- - compatible: Should be one of:
- 	- "fsl,imx7d-gpc"
- 	- "fsl,imx8mq-gpc"
-+	- "fsl,imx8mm-gpc"
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index 23c8fad7932b..d05c5b617a4d 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -4,6 +4,7 @@
+  */
  
- - reg: should be register base and length as documented in the
-   datasheet
-@@ -24,8 +25,9 @@ which, in turn, is expected to contain the following:
- Required properties:
+ #include <dt-bindings/clock/imx8mm-clock.h>
++#include <dt-bindings/power/imx8m-power.h>
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+@@ -13,7 +14,7 @@
  
- - reg: Power domain index. Valid values are defined in
--  include/dt-bindings/power/imx7-power.h for fsl,imx7d-gpc and
--  include/dt-bindings/power/imx8m-power.h for fsl,imx8mq-gpc
-+  include/dt-bindings/power/imx7-power.h for fsl,imx7d-gpc,
-+  include/dt-bindings/power/imx8m-power.h for fsl,imx8mq-gpc, and
-+  include/dt-bindings/power/imx8m-power.h for fsl,imx8mm-gpc
+ / {
+ 	compatible = "fsl,imx8mm";
+-	interrupt-parent = <&gic>;
++	interrupt-parent = <&gpc>;
+ 	#address-cells = <2>;
+ 	#size-cells = <2>;
  
- - #power-domain-cells: Should be 0
+@@ -495,6 +496,85 @@
+ 				interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
+ 				#reset-cells = <1>;
+ 			};
++
++			gpc: gpc@303a0000 {
++				compatible = "fsl,imx8mm-gpc";
++				reg = <0x303a0000 0x10000>;
++				interrupt-parent = <&gic>;
++				interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <3>;
++
++				pgc {
++					#address-cells = <1>;
++					#size-cells = <0>;
++
++					pgc_mipi: power-domain@0 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_MIPI>;
++					};
++
++					pgc_pcie: power-domain@1 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_PCIE>;
++					};
++
++					pgc_otg1: power-domain@2 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_USB_OTG1>;
++					};
++
++					pgc_otg2: power-domain@3 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_USB_OTG2>;
++					};
++
++					pgc_ddr1: power-domain@4 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_DDR1>;
++					};
++
++					pgc_gpu2d: power-domain@5 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_GPU2D>;
++					};
++
++					pgc_gpu: power-domain@6 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_GPU>;
++					};
++
++					pgc_vpu: power-domain@7 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_VPU>;
++					};
++
++					pgc_gpu3d: power-domain@8 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_GPU3D>;
++					};
++
++					pgc_disp: power-domain@9 {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_DOMAIN_DISP>;
++					};
++
++					pgc_vpu_g1: power-domain@a {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_VPU_G1>;
++					};
++
++					pgc_vpu_g2: power-domain@b {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_VPU_G2>;
++					};
++
++					pgc_vpu_h1: power-domain@c {
++						#power-domain-cells = <0>;
++						reg = <IMX8MM_POWER_VPU_H1>;
++					};
++				};
++			};
+ 		};
  
+ 		aips2: bus@30400000 {
 -- 
 2.20.1
 
