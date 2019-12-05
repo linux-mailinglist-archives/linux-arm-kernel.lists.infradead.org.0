@@ -2,116 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C485B113D83
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 10:03:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD273113DD1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 10:25:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9NJKSCQX0wTYDOzkYMKtiVKPfKFGRzFn7TTNLBtNn7s=; b=ePAlCP21wYa1V4
-	ullqzxsCApW9jn2gGMD0G6TyOwYWd2RacMWwi7d8rdGUdVSQ81w85+vRyy8GN0yC66+YR/7XnO15b
-	d2nNUtavhuIKOyS+YL3JVYeQXsfxqpUQyuIpnikxlDqAXIVANgaMmqgPlEMbFPYjy9kHMV55Il0P0
-	I4eYEQR6h4KlWqDtygWe5PTkhCiUckAwCjUUcplBP3afTKn/fcZpCIDXQ32atsjxh2Eh2KoQtbLFJ
-	eWk+Uq0cM9ic1Y6S44gYj48RThUaqVOZpDK80xWXG0jDwaSw9JwQiAAz5AGJSO0rMi0W1MRGnA05d
-	v0h2JXnwoYRlMIvX3xhQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eQbUdetiGedrqK+RqanyMHgen3GJ6DySyZRbW8eWLAA=; b=AuMC02H/+2sk96
+	slExMdc6oR/3Y+qpqBTx6SJhb9doZjdMQTlXKfNz10+l0jZ3mtPLKmaGRqLbokxHkyutuQjVLdJTK
+	tBs7vv7/GSHxpJQMpmeRXcC7QYsdEIYk8LfDd5+/d3PWb4VaX6Gu/dfnOteOxQqUeDDyWVR2tjc2q
+	Jiq9TSPBORzRTq8jLY666OuIrnDgSzuc9TetW7H+I3SgIHUGVH9fApn23ZXr0AQb0LrfbqaGd/dho
+	eh35lR8Lbul3koeDXX2d0Ft40vV75A/1+dZcQyTa9Kj6gBEAp3JnJ63kActJ0SfBk1MulUcaAAJza
+	mldBqPgSsa/qWH1cytkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icn31-0004Au-Gh; Thu, 05 Dec 2019 09:03:43 +0000
-Received: from mail-eopbgr140057.outbound.protection.outlook.com
- ([40.107.14.57] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1icnNv-0002hq-1k; Thu, 05 Dec 2019 09:25:19 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icn2t-00049X-Ce
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 09:03:37 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kb/FB/n46DJAT6a08YhGTBVuH1pqB+2yq5E8ExJFBDHhoiYSJzVFeejpz2QBrdVldf4fE2q5Eeo2gll5cAHsvofKG90ziSI5rt0iPKl3QcT/XSYtmdEpvt5zK+dUJHhsCKR2Otso88+y9HJtcRD9v+dS1pCcIRtLQFGHtbDY5Q3JkCnLr+K5u4OPv4tZfPnjzjzeqDW0tQeApDZPlgUDRw7kDZAdJFYTDCNtN4CYM6lbD43r+lf4aiR7K4RN1vnCheEStQDsHdw+pcV5SPB+MVgwSsxDhBR+KUNVrZaUNtLQRpurT4uo9+YGP04UToYIywj64ISpyux5aBx3wSp/fw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OTAl8bpjfpkwKYCjP8Dp1QyItuQp9uDUzNgKgnr3Uvo=;
- b=GXNElzX7UqvbANx6+rjOUjjIss2NkZpB9gU10FiXRoZBG5f1IgYIpU0zeWNMApJpgm7kb94EDxda+rfpLZybNw6qkZ7rPAquJi3K89nYE69nwn9yfGXUhsRpH6Az6xg3I5lNSFr4akriM9kJpiBhVdt//j+s0EL1paiUBUrUdKp57udskpAhTT557unEx3vkYgMCbcAUAc3MdRvqu/eDFeJvid/cJCLEDTTgyDsLssAwc6nEYHYvrYmBz8mzGoHczXtn15HBhWvyAMMHIrymiJOEefVu24GuHTcItzLdvVvE6aq76mqvLRSPhHzF2pNZf06oKoFf8Hmo6Lw9TOddSA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OTAl8bpjfpkwKYCjP8Dp1QyItuQp9uDUzNgKgnr3Uvo=;
- b=EH31EScOK8JIUj918CHhd/nbLUiB3PPFYUBJK9NF+MH/aalm2wIuQz2COo+AqMZlU5+B6TAoN+yGPK9Tdsefhwejp+ZQbyWdvLySoliNdEMbcyawXKdlbjaRtzDDQAmRRrNV1vQiAyWYTdiHMmW9lfmKLdoTdoUkwsHvjofKaC8=
-Received: from DB7PR04MB4490.eurprd04.prod.outlook.com (52.135.138.150) by
- DB7PR04MB4364.eurprd04.prod.outlook.com (52.134.110.30) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2495.21; Thu, 5 Dec 2019 09:03:27 +0000
-Received: from DB7PR04MB4490.eurprd04.prod.outlook.com
- ([fe80::4182:4692:ffbd:43a0]) by DB7PR04MB4490.eurprd04.prod.outlook.com
- ([fe80::4182:4692:ffbd:43a0%6]) with mapi id 15.20.2516.014; Thu, 5 Dec 2019
- 09:03:27 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, Aisheng Dong <aisheng.dong@nxp.com>,
- "sboyd@kernel.org" <sboyd@kernel.org>
-Subject: RE: [PATCH] clk: imx: imx8qxp-lpcg: use devm_platform_ioremap_resource
-Thread-Topic: [PATCH] clk: imx: imx8qxp-lpcg: use
- devm_platform_ioremap_resource
-Thread-Index: AQHVqoum7IH7ZRFDgESKl5wnHnxd3aerQBcQ
-Date: Thu, 5 Dec 2019 09:03:26 +0000
-Message-ID: <DB7PR04MB4490D784508E59EC1C60B586885C0@DB7PR04MB4490.eurprd04.prod.outlook.com>
-References: <1575454349-5762-1-git-send-email-peng.fan@nxp.com>
- <VI1PR04MB7023E9790323200A4B122445EE5D0@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <AM0PR04MB4481FC4A8FD76A01242424B5885C0@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <VI1PR04MB70232C511E4F43360D7533C9EE5C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR04MB70232C511E4F43360D7533C9EE5C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.71]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: ed7ac84b-5d75-4404-8ae4-08d77961fdb8
-x-ms-traffictypediagnostic: DB7PR04MB4364:|DB7PR04MB4364:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB7PR04MB4364832DAFE9919974B3E6C5885C0@DB7PR04MB4364.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 02426D11FE
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(346002)(366004)(39860400002)(396003)(376002)(199004)(189003)(54906003)(44832011)(9686003)(55016002)(6306002)(110136005)(6246003)(478600001)(71200400001)(25786009)(229853002)(14454004)(966005)(71190400001)(99286004)(74316002)(186003)(2501003)(8936002)(52536014)(33656002)(3846002)(5660300002)(8676002)(4326008)(102836004)(26005)(81166006)(81156014)(86362001)(305945005)(2906002)(7696005)(11346002)(76116006)(316002)(64756008)(66446008)(66556008)(66946007)(14444005)(7736002)(76176011)(53546011)(6436002)(6116002)(6506007)(66476007)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4364;
- H:DB7PR04MB4490.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: OsetTLeZXtdnBXOEqvX2u+ObvOXgrHlnlZm0cx2XJ9cNNPBROzbmUgn85LqirxwScAWKita14uVS4v4QfJdYKvP6rPDZlgpcrHRyLPkMpih96FC4ha4R3m8N2OuTbDt6H0fa8TcGXruO8yHEgBuawFLL/olnPkVzQfQhe93WV8Y1QSLcj/QoP4kI4j9hQ11n+u3uIOP8XqcehuC+RGJLElKWQPqO3WYrcTnvEvf1McjOqYnb7rKaTRvcyUuFoEGPwZRR2bn/S9NFHRsqLwWRREtlm/6MVgZFsjmyY0Yqq5mMotqnfplQdva6d38Lnuycy0tyBzSxP5vIvKrZfVYenZrWeRUXVuqR+i3AqXcWT6i+q1cN5/8+jbb56JkZiuLZMaQw5dQpNAD8kuorH0Br5GnYePd2Tvpt4BF5Q59hukSSrSA4dSwS4W5iFM7g7+QwCmMK/iiC2K4g049ULT9k7AsDNc/kWZ3vBqd1+PfUi0htgV57/xuzchG9MyhNyL3Y0gBTF/Jq4aySQ7ctVaUWog==
+ id 1icnNa-0002Wo-OZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 09:25:01 +0000
+Received: by mail-wm1-x343.google.com with SMTP id b11so2797708wmj.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Dec 2019 01:24:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=mBF644RxUTBZva0im+niDbPkyL2AEsuC+ZFykTwNHIk=;
+ b=jvHufdfywsSJ0HvGIzqsFTbHETU81IekWnO0l26AzmkTTAa7gwuMH1lsx7yrrzARg8
+ mESZtima5ozmNO3vRaRMCjp15FqTL5zwSufZ6+Lfbd0KcpiBBAXTeTuc2su6FqnSLlzo
+ PkhJ86WNgNijHeqHvopJM7YcU5GL0nlg6JpSpR33XOA2e8tpTBl7vR22glskgdaArJDg
+ GKg+xOU7m/Z/8bKSfnM6G+McYokTd02Qw/YW3qwsArMn0EjzGZpsCcwfle7pXWXtVkGw
+ PUa3WZn+OJaJ7sO5gV1FgxQe0ZhiOLHZcN52wLkPCA0GTCipPXbUnVrbP3jrGVMnbptL
+ T1Dg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=mBF644RxUTBZva0im+niDbPkyL2AEsuC+ZFykTwNHIk=;
+ b=lXC/6uyyzulNPfnWqOunK47Tn4cL+m1Fdou6EIiC6+JO7WtwAjeNULAzuhMtCAORB/
+ xDmaPHnnYYz8wlNfjPpqwaz5jWadxUI5CSacWLA0jEqpHv6UDUBl4CCGuytrJKxQHNz7
+ pTqqkoquwfYQ91op6t5tfU2geoDj/Eta3cyTdnWqAWKLyYhC8EUxiK6FS++IMOd5Maa3
+ JUkf7CDfQdolXD5DVJqxy1ldNkDbme184CXuU+EwqTT4xoZY2cz4+s02E1WfYQ7gc/jZ
+ 94jVBR/wxeHO6DZxnrsJvEJgTdGDCCAhGDu7/LuT0LS2RqL1MpEBFwpNp+lHOhvnZ63X
+ ft+w==
+X-Gm-Message-State: APjAAAUufxiMUbH9FetMnY5EBieoHPWWKgBzTW6Ad5kMd+3WJOOioIdA
+ /Y6MGEwtvmqo/R/LWwhvZkFCgNrgVGjazA==
+X-Google-Smtp-Source: APXvYqzb9PZe4p/FaxkjRz+yIx4cEG1Ar/uArvNnrvahc13Bn+ryPAUa9ho0yU4y6s6dzxJC54jQkA==
+X-Received: by 2002:a05:600c:22c8:: with SMTP id
+ 8mr3810490wmg.178.1575537897038; 
+ Thu, 05 Dec 2019 01:24:57 -0800 (PST)
+Received: from bender.baylibre.local
+ (wal59-h01-176-150-251-154.dsl.sta.abo.bbox.fr. [176.150.251.154])
+ by smtp.gmail.com with ESMTPSA id t5sm11642620wrr.35.2019.12.05.01.24.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 05 Dec 2019 01:24:56 -0800 (PST)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: mchehab@kernel.org,
+	hans.verkuil@cisco.com
+Subject: [PATCH 0/5] media: meson: vdec: Add VP9 decoding support
+Date: Thu,  5 Dec 2019 10:24:49 +0100
+Message-Id: <20191205092454.26075-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ed7ac84b-5d75-4404-8ae4-08d77961fdb8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Dec 2019 09:03:26.9254 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: dpXgxSpG0otRlaEKzHLKngqRa2w4BuIbCDuKRdoetF1i5YkzJ37WDyVvQwJShqVQCv1eXLvw5xIpbcgUJd5W7w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4364
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_010335_434204_0022075C 
-X-CRM114-Status: GOOD (  17.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191205_012458_797398_B822F981 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.57 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -125,87 +95,179 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>, Alice Guo <alice.guo@nxp.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-amlogic@lists.infradead.org, linux-media@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: Re: [PATCH] clk: imx: imx8qxp-lpcg: use
-> devm_platform_ioremap_resource
-> 
-> On 2019-12-05 3:38 AM, Peng Fan wrote:
-> >> Subject: Re: [PATCH] clk: imx: imx8qxp-lpcg: use
-> >> devm_platform_ioremap_resource
-> >>
-> >> On 2019-12-04 12:14 PM, Peng Fan wrote:
-> >>> From: Peng Fan <peng.fan@nxp.com>
-> >>>
-> >>> devm_platform_ioremap_resource() wraps platform_get_resource() and
-> >>> devm_ioremap_resource(), we could use this API to simplify the code.
-> >>>
-> >>> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> >>
-> >> This patch has been posted before and it breaks uart on imx8qxp-mek
-> >> and possibly other things.
-> >>
-> >> The old and new paths are not equivalent:
-> >> devm_platform_ioremap_resource calls devm_ioremap_resource differs
-> >> from devm_ioremap by also calling devm_request_mem_region.
-> >>
-> >> This prevents other mappings in the area; this is not an issue for
-> >> most drivers but imx8qxp-lpcg maps whole subsystems. For example:
-> >>
-> >>                   adma_lpcg: clock-controller@59000000 {
-> >>                           compatible = "fsl,imx8qxp-lpcg-adma";
-> >>                           reg = <0x59000000 0x2000000>;
-> >>                           #clock-cells = <1>;
-> >>                   };
-> >>
-> >>                   adma_lpuart0: serial@5a060000 {
-> >>                           reg = <0x5a060000 0x1000>;
-> >> 			...
-> >> 		};
-> >>
-> >> Previously: https://patchwork.kernel.org/patch/10908807/
-> >
-> > Thanks. I think at least need to provide some comments in code.
-> 
-> Yes, comments would help. I think it's actually the 3rd time this incorrect
-> cleanup was posted.
-> 
-> But mapping entire subsystems (32mb at a time) for LPCG is deeply
-> flawed: the LPCG areas are each 64k and they're interspersed among the
-> peripherals. The correct solution is to have many small clock providers.
-> 
-> This is done by a series of patches from Aisheng, I think this is the latest one:
-> 
-> https://patchwork.kernel.org/patch/11248235/
-> 
-> If some aspects of that series are dubious perhaps they could be discussed
-> and maybe the series could be split into smaller chunks?
+Hello,
 
-That would be lots of lpcg nodes in device tree.
+This patchset aims to bring VP9 decoding support to Amlogic GXL, G12A & SM1
+platforms for the amlogic stateful video decoder driver.
 
-> 
-> That series does brings many essential improvements to imx8 clk support.
+With this, it passes v4l2-compliance with streaming on Amlogic G12A and
+Amlogic SM1 SoCs successfully using the stream at [1] with a fixed
+pyv4l2compliance script for VP9 at [2].
 
-Seems that pending for long time? What is the blocking point?
+The original script kept the IVF headers in the stream, confusing the
+decoder. The fixed script only extracts the payload from the IVF container.
 
-Regards,
-Peng.
+The decoder has been tested using the Google CTS TestVectorsIttiam VP9 yuv420
+samples, passing 82 resolutions test streams, with 13 fails by pixel
+differences and 3 timeouts.
 
-> 
-> --
-> Regards,
-> Leonard
+This patchset depends on :
+- G12A enablement at [3]
+- SM1 enablement at [4]
+- H.264 and compliance at [5]
+
+[1] https://github.com/superna9999/pyv4l2compliance/raw/tests/output/Jellyfish_1080_10s_5MB.vp9.hdr
+[2] https://github.com/superna9999/pyv4l2compliance
+[3] https://lore.kernel.org/linux-media/20191120111430.29552-1-narmstrong@baylibre.com
+[4] https://lore.kernel.org/linux-media/20191121101429.23831-1-narmstrong@baylibre.com
+[5] https://lore.kernel.org/linux-media/20191126093733.32404-1-narmstrong@baylibre.com
+
+The compliance log is:
+# v4l2-compliance --stream-from-hdr Jellyfish_1080_10s_5MB.vp9.hdr -s 200
+v4l2-compliance SHA: 7ead0e1856b89f2e19369af452bb03fd0cd16793, 64 bits
+
+Compliance test for meson-vdec device /dev/video0:
+
+Driver Info:
+	Driver name      : meson-vdec
+	Card type        : Amlogic Video Decoder
+	Bus info         : platform:meson-vdec
+	Driver version   : 5.4.0
+	Capabilities     : 0x84204000
+		Video Memory-to-Memory Multiplanar
+		Streaming
+		Extended Pix Format
+		Device Capabilities
+	Device Caps      : 0x04204000
+		Video Memory-to-Memory Multiplanar
+		Streaming
+		Extended Pix Format
+	Detected Stateful Decoder
+
+Required ioctls:
+	test VIDIOC_QUERYCAP: OK
+
+Allow for multiple opens:
+	test second /dev/video0 open: OK
+	test VIDIOC_QUERYCAP: OK
+	test VIDIOC_G/S_PRIORITY: OK
+	test for unlimited opens: OK
+
+Debug ioctls:
+	test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
+	test VIDIOC_LOG_STATUS: OK (Not Supported)
+
+Input ioctls:
+	test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
+	test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+	test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
+	test VIDIOC_ENUMAUDIO: OK (Not Supported)
+	test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)
+	test VIDIOC_G/S_AUDIO: OK (Not Supported)
+	Inputs: 0 Audio Inputs: 0 Tuners: 0
+
+Output ioctls:
+	test VIDIOC_G/S_MODULATOR: OK (Not Supported)
+	test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+	test VIDIOC_ENUMAUDOUT: OK (Not Supported)
+	test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
+	test VIDIOC_G/S_AUDOUT: OK (Not Supported)
+	Outputs: 0 Audio Outputs: 0 Modulators: 0
+
+Input/Output configuration ioctls:
+	test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
+	test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
+	test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
+	test VIDIOC_G/S_EDID: OK (Not Supported)
+
+Control ioctls:
+	test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
+	test VIDIOC_QUERYCTRL: OK
+	test VIDIOC_G/S_CTRL: OK
+	test VIDIOC_G/S/TRY_EXT_CTRLS: OK
+	test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
+	test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
+	Standard Controls: 2 Private Controls: 0
+
+Format ioctls:
+	test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
+	test VIDIOC_G/S_PARM: OK (Not Supported)
+	test VIDIOC_G_FBUF: OK (Not Supported)
+	test VIDIOC_G_FMT: OK
+	test VIDIOC_TRY_FMT: OK
+	test VIDIOC_S_FMT: OK
+	test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
+	test Cropping: OK (Not Supported)
+	test Composing: OK (Not Supported)
+	test Scaling: OK (Not Supported)
+
+Codec ioctls:
+	test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
+	test VIDIOC_G_ENC_INDEX: OK (Not Supported)
+	test VIDIOC_(TRY_)DECODER_CMD: OK
+
+Buffer ioctls:
+	test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
+	test VIDIOC_EXPBUF: OK
+	test Requests: OK (Not Supported)
+
+Test input 0:
+
+Streaming ioctls:
+	test read/write: OK (Not Supported)
+	test blocking wait: OK
+	Video Capture Multiplanar: Captured 200 buffers   
+	test MMAP (select): OK
+	Video Capture Multiplanar: Captured 200 buffers   
+	test MMAP (epoll): OK
+	test USERPTR (select): OK (Not Supported)
+	test DMABUF: Cannot test, specify --expbuf-device
+
+Total for meson-vdec device /dev/video0: 49, Succeeded: 49, Failed: 0, Warnings: 0
+
+Maxime Jourdan (4):
+  media: meson: vdec: add helpers for lossless framebuffer compression
+    buffers
+  media: meson: vdec: add common HEVC decoder support
+  media: meson: vdec: add VP9 input support
+  media: meson: vdec: add VP9 decoder support
+
+Neil Armstrong (1):
+  media: meson: vdec: align stride on 32 bytes
+
+ drivers/staging/media/meson/vdec/Makefile     |    4 +-
+ .../media/meson/vdec/codec_hevc_common.c      |  285 ++++
+ .../media/meson/vdec/codec_hevc_common.h      |   77 ++
+ drivers/staging/media/meson/vdec/codec_vp9.c  | 1192 +++++++++++++++++
+ drivers/staging/media/meson/vdec/codec_vp9.h  |   13 +
+ drivers/staging/media/meson/vdec/esparser.c   |  142 +-
+ drivers/staging/media/meson/vdec/hevc_regs.h  |  218 +++
+ drivers/staging/media/meson/vdec/vdec.c       |   10 +-
+ .../staging/media/meson/vdec/vdec_helpers.c   |   31 +-
+ .../staging/media/meson/vdec/vdec_helpers.h   |    4 +
+ drivers/staging/media/meson/vdec/vdec_hevc.c  |  231 ++++
+ drivers/staging/media/meson/vdec/vdec_hevc.h  |   13 +
+ .../staging/media/meson/vdec/vdec_platform.c  |   38 +
+ 13 files changed, 2245 insertions(+), 13 deletions(-)
+ create mode 100644 drivers/staging/media/meson/vdec/codec_hevc_common.c
+ create mode 100644 drivers/staging/media/meson/vdec/codec_hevc_common.h
+ create mode 100644 drivers/staging/media/meson/vdec/codec_vp9.c
+ create mode 100644 drivers/staging/media/meson/vdec/codec_vp9.h
+ create mode 100644 drivers/staging/media/meson/vdec/hevc_regs.h
+ create mode 100644 drivers/staging/media/meson/vdec/vdec_hevc.c
+ create mode 100644 drivers/staging/media/meson/vdec/vdec_hevc.h
+
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
