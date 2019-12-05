@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 950FE113E30
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 10:38:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92497113E32
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 10:38:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2tP9UmpJsKw+zpNljtbug1SvlgHAkYk2QnE3WfmbcWk=; b=QiruAhjSztvKMu
-	lu3hQgIK9z1m3T1f41+g9+qTW75YDbhtwaHDgkXAFL/Gzfxq3L1vcil9k+DHmYHiJTe8Caf1POxmK
-	3q9pxFGfW9+Z19F4JH4jhi2qZ6c07xF2r/9ZnqFI2wOA/3GHI2qG9vU+BVj4oNii7JJ2fr3YcMMsG
-	X6U4WXHSZMBiuWDAeoWmMt/21oXDp/ri1v0giKvSiPw96zz4Xcx1LFPZUCdr4+p+udEn4ZhTWZaYd
-	uVFirCk+/mU/3xji7P03AXYgS1WH0LyOaoP9ddz/o2QGAaUZlxEfM82OJH2A13b+7Dpn3U9M0tdPb
-	y5KE3nI5QzhUUEHC1A6g==;
+	List-Owner; bh=SIUG3uZtxT2Vxd1fYVZobg7U5Cw0u/5x0BDEB0pvDmI=; b=F6Mc4a7oGIMlyY
+	AxunybyQrF9v4IfSaXAHq6ARFN5IUxa0VHxFFrGKKrDYz/ofFPxVRya6eWUaxKrOcECQ2QpKzfEfD
+	zmg9aS+rnuiiIMGWHQM+bxOP0caS/9c+D0bghnyjdEohKCctufwfmwGQ+xaJrNA50KoSmpEdRK5Kk
+	i7JAC/q7t7jzhDAzg/LnWndZBGauT8UZsh3qA9Vx9rou8+qvm4j6NsvxCpiA9mdqgIpPahe7mr3N5
+	7HBHj8WkhPpmpAadVQeCaSWq/kAYuioM49xyIV0IudOm9Kj49SAHwf85PM4Sa29ACb6UD0YDHOP2g
+	t6vklTzdtmMgcXaU8Xxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icnaq-0002Gh-34; Thu, 05 Dec 2019 09:38:40 +0000
+	id 1icnb2-0002ab-SS; Thu, 05 Dec 2019 09:38:52 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icnaB-0001ka-NJ; Thu, 05 Dec 2019 09:38:01 +0000
-X-UUID: 03545762e4994b9585b24b1daa03b01f-20191205
+ id 1icnaC-0001kp-65; Thu, 05 Dec 2019 09:38:01 +0000
+X-UUID: 4d707bbecda24113930e2be4908b0c0c-20191205
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=3o3Wfx+85Ct3d0biiPy/482nOLIBAS/s4EBtF+buL3o=; 
- b=pwV7PxrHWQNubFymaeRFO42LW0Qb718AbtIcEpYF3i2SRUmf6TMZ3FpX/NG9pzGnaFWjE+EzeBy2uwl86woj6ehq4IAfS8RIwONE34VCRnEJ85ITOx7uaHaTLA2LkhCGApQrgxzId2t89x14rhySYoY+LF3D/zFuHVLI5xTcwO8=;
-X-UUID: 03545762e4994b9585b24b1daa03b01f-20191205
+ bh=sT8+poW4EDti9+9WpBz/VV2F6sEiz5U6298aIszT21w=; 
+ b=gkiabQWxPxWYD8F5BmkvGXmiJysOuGrLedcLsPNv10+zRrAEHwClWXZ9tsFB7Wkz0TtuNnnMylTcyFd/J2woQsHqO4U7DKITgiBW5NCEBw9Y9VHkOvMBJiMkZQQjfwVvXiwBpWtIYaNhtzZoXvnryZ1LAf5thAqMeRF+eyFiPpk=;
+X-UUID: 4d707bbecda24113930e2be4908b0c0c-20191205
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <bibby.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 391158662; Thu, 05 Dec 2019 01:37:52 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ with ESMTP id 1205919883; Thu, 05 Dec 2019 01:37:52 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Thu, 5 Dec 2019 01:28:45 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 5 Dec 2019 17:27:44 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Dec 2019 17:27:46 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Thu, 5 Dec 2019 17:26:52 +0800
@@ -46,17 +46,17 @@ From: Bibby Hsieh <bibby.hsieh@mediatek.com>
 To: David Airlie <airlied@linux.ie>, Matthias Brugger
  <matthias.bgg@gmail.com>, Daniel Vetter <daniel.vetter@ffwll.ch>,
  <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>
-Subject: [PATCH v4 4/7] drm/mediatek: disable all the planes in atomic_disable
-Date: Thu, 5 Dec 2019 17:27:46 +0800
-Message-ID: <20191205092749.4021-5-bibby.hsieh@mediatek.com>
+Subject: [PATCH v4 5/7] drm/mediatek: remove unused external function
+Date: Thu, 5 Dec 2019 17:27:47 +0800
+Message-ID: <20191205092749.4021-6-bibby.hsieh@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20191205092749.4021-1-bibby.hsieh@mediatek.com>
 References: <20191205092749.4021-1-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_013759_760918_36863BE0 
-X-CRM114-Status: UNSURE (   7.76  )
+X-CRM114-CacheID: sfid-20191205_013800_230639_E6F8AD8E 
+X-CRM114-Status: UNSURE (   7.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -99,26 +99,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Under shadow register case, we do not disable all the plane before
-disable all the hardwares. Fix it.
+layer_on and layer_off both are unused external function,
+remove them from mtk_ddp_comp_funcs structure.
 
 Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/gpu/drm/mediatek/mtk_disp_ovl.c     |  2 --
+ drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h | 16 ----------------
+ 2 files changed, 18 deletions(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index e887a6877bcd..e40c8cf7d74f 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -550,6 +550,7 @@ static void mtk_drm_crtc_atomic_disable(struct drm_crtc *crtc,
- 	}
- 	mtk_crtc->pending_planes = true;
+diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+index 722a5adb79dc..8a32248671c3 100644
+--- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
++++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+@@ -314,8 +314,6 @@ static const struct mtk_ddp_comp_funcs mtk_disp_ovl_funcs = {
+ 	.disable_vblank = mtk_ovl_disable_vblank,
+ 	.supported_rotations = mtk_ovl_supported_rotations,
+ 	.layer_nr = mtk_ovl_layer_nr,
+-	.layer_on = mtk_ovl_layer_on,
+-	.layer_off = mtk_ovl_layer_off,
+ 	.layer_check = mtk_ovl_layer_check,
+ 	.layer_config = mtk_ovl_layer_config,
+ 	.bgclr_in_on = mtk_ovl_bgclr_in_on,
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
+index 19a955ab0748..dbfb90e9b9cf 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
++++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
+@@ -81,8 +81,6 @@ struct mtk_ddp_comp_funcs {
+ 	void (*unprepare)(struct mtk_ddp_comp *comp);
+ 	unsigned int (*supported_rotations)(struct mtk_ddp_comp *comp);
+ 	unsigned int (*layer_nr)(struct mtk_ddp_comp *comp);
+-	void (*layer_on)(struct mtk_ddp_comp *comp, unsigned int idx);
+-	void (*layer_off)(struct mtk_ddp_comp *comp, unsigned int idx);
+ 	int (*layer_check)(struct mtk_ddp_comp *comp,
+ 			   unsigned int idx,
+ 			   struct mtk_plane_state *state);
+@@ -165,20 +163,6 @@ static inline unsigned int mtk_ddp_comp_layer_nr(struct mtk_ddp_comp *comp)
+ 	return 0;
+ }
  
-+	mtk_drm_crtc_hw_config(mtk_crtc);
- 	/* Wait for planes to be disabled */
- 	drm_crtc_wait_one_vblank(crtc);
- 
+-static inline void mtk_ddp_comp_layer_on(struct mtk_ddp_comp *comp,
+-					 unsigned int idx)
+-{
+-	if (comp->funcs && comp->funcs->layer_on)
+-		comp->funcs->layer_on(comp, idx);
+-}
+-
+-static inline void mtk_ddp_comp_layer_off(struct mtk_ddp_comp *comp,
+-					  unsigned int idx)
+-{
+-	if (comp->funcs && comp->funcs->layer_off)
+-		comp->funcs->layer_off(comp, idx);
+-}
+-
+ static inline int mtk_ddp_comp_layer_check(struct mtk_ddp_comp *comp,
+ 					   unsigned int idx,
+ 					   struct mtk_plane_state *state)
 -- 
 2.18.0
 _______________________________________________
