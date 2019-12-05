@@ -2,68 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 375031139A0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 03:14:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D4D11139C3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 03:20:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iCITiy3zqI16EpEDZp4PsdPUnPJcIQlcjjXulHr9SqI=; b=HQRs6jE8FpYR7r
-	UwZl/NiCGU88I28UldMUwXnr/J65Nfch/uOwp1gVh55i7ivHbXDD6SLE8JvLbJPZYlx0yffOeDaej
-	QlqHIpX7EkW4V1i2PqQnKIiMq1rKdKwd6Fqbog8siSf1l4q30+QJiyIyzZYgZtLpTCtVUVXcoEMIG
-	2BeJpwzlW6ihbYtJrMARsfj8nfEmWzMtD4Q/Wa4gwkVoEGMRkrlys91BJsHA3QmYL6HXcDg2hTw/8
-	T3VhxD+e4ExorFpY01Bxm/rE/YlmcnkPKVkj4kZn7Ylw/5DtOawiAOzIRQSsc6N+Wzm/Zkv0Z1WLO
-	5/vBp5Wo4/igHTQ5sdtw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=y4KeDIub0dy2PTEplnLZmJv9PlJbJoYI+MyPpt8Azkc=; b=nD22AnXPaRg2/I
+	c12omRKVK3B+mwD+fD9rLCbPsmHkkl7e+HwSS/YKSlDr/RP6uyb52YGpSzdlML2Gng1ZqAWq29xPm
+	Ztmay5GhaOu9DTpgjkNdWJd0yWAQzRU5rKUXnpKaxvED3w94v339lwxQk0q2V2xOXnghiZy23bmx2
+	WTN+G8PGMygdXeBOs6JxYv+NUO7atzDGJerGHY15zpDYV/FmKyiPAZz7LQFxN5tq6b6Na0N2/2Kd5
+	h4f6bEtogJKAEfj9KbAsJcz3nMEu9Cr4Y4Dn5zpsTU2Zlg1jU7qegNUVGvaTMYFZnsU/ElcoeRHY6
+	nGL1jKXgwtffP/0UQJjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icgeW-0005gt-3v; Thu, 05 Dec 2019 02:14:00 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1icgkF-00082H-SK; Thu, 05 Dec 2019 02:19:55 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icgeM-0005fb-LM; Thu, 05 Dec 2019 02:13:53 +0000
-X-UUID: f1c3a9df76eb4f98b342abcad244f141-20191204
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=BSLlyAQI/9rakotWHh5TPNBRZCYTmRUC1SW/9OQt5ko=; 
- b=KZVHaol6lQXh5ealAmDim3v8PMGCwsRdo6+P9EoNK5OgUh6lS1RIPLCaoOcqR6slLtUZNBwNkMtq0p4GMSO34o3wMIBRA1qUcRFK8IXecAFqJeB0XaR1kl3QcVj7HZ76XzSj/rzzK8YiOZUhFXIUO+WD7j36JXWEMPwIj8Rsrl4=;
-X-UUID: f1c3a9df76eb4f98b342abcad244f141-20191204
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 828524561; Wed, 04 Dec 2019 18:13:44 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Dec 2019 18:13:55 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 5 Dec 2019 10:13:29 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 5 Dec 2019 10:12:43 +0800
-Message-ID: <1575512021.24783.6.camel@mtksdaap41>
-Subject: Re: [PATCH v3 3/6] drm/mediatek: update cursors by using async
- atomic update
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Thu, 5 Dec 2019 10:13:41 +0800
-In-Reply-To: <20191204094441.5116-4-bibby.hsieh@mediatek.com>
-References: <20191204094441.5116-1-bibby.hsieh@mediatek.com>
- <20191204094441.5116-4-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1icgk4-000816-EK
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 02:19:45 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id i126so614820ywe.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Dec 2019 18:19:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=W0wipGAlhtFBkJDMjyVi53Belp9dZbF8qy8E6IHBmAc=;
+ b=kUT4K4VJ3i15DzpOkpq7fK7DgnWrHPwjdAGZyO4qBy5SBblwpIll3K/BimeM7GBf6S
+ h5JNbWRPQXOoa69Dgpc/c28ZfdA2zZcMDn0ptcRrinbBAdxWFeqjSD39G8OEV6MxyfPo
+ PhBieSaCbbvXKPLJ6qAQIXFDisK10uuc/bcHHVArpwGNERDLN3/DEsxnEDPPk6bkLhK5
+ 4elI7/lcLdf3xETQ+vSuio0Mj+v6HasE/Gc7/cO6p7ELWxy3WnuQltkRDKEdOnv9sY+q
+ 0wznrP/qzbKz5EgEONJ1NCajYAtvI2dS0XRUVEfYWxtywhIHwozZSWqL/NjgHP6dkISy
+ hyPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=W0wipGAlhtFBkJDMjyVi53Belp9dZbF8qy8E6IHBmAc=;
+ b=pALCFRqKUuZjYTlZzAgfoClshH1hr2xP8p0hOs3i1LAYuFBCcDSiJ+vOfJbG8pajge
+ mCO3Vvx9kIAm9sicHJt0ByujGYlMmjHpn0ej3qA7vWvB9b+eHRLyVCOXtR0/iLUp61lQ
+ hGsOXAKl1lOIy+J+qSAKyb9rG3PBKW36DnVyukageFBBEUX6J157mthT9JzFzkv3VtJO
+ qE20JC+/V4Uo+h8LBg5LxKgbzGaiu75RfbrUh9l5xAc+99KxmCbeW5FvEarZAkJTBDzb
+ vbx9gSwZN3fSZI7m769YiPfFTV6TbHcchWFuLM+eaWqAfWLlaLgjV8ERNJtO6NHq2bxe
+ lGOQ==
+X-Gm-Message-State: APjAAAUYQxu7/m05VwDLgcZ4mRGHnDM5jmClDuOPFx7V6JlxlkBt1S96
+ sVyT3OuCmzYP9FWwDJJRHfbpEeas
+X-Google-Smtp-Source: APXvYqwmA0tNypyxHFhWWBSeQmaZKBrbjW0ry33aUyY5ro4GqrUJGZqXbgcg/CTdfAPjgNHekXLwLQ==
+X-Received: by 2002:a0d:d5d5:: with SMTP id x204mr3846561ywd.283.1575512380930; 
+ Wed, 04 Dec 2019 18:19:40 -0800 (PST)
+Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
+ [73.37.219.234])
+ by smtp.gmail.com with ESMTPSA id l6sm4188449ywa.39.2019.12.04.18.19.39
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 04 Dec 2019 18:19:40 -0800 (PST)
+From: Adam Ford <aford173@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/7] soc: imx: Enable additional functionality of i.MX8M
+Date: Wed,  4 Dec 2019 20:19:16 -0600
+Message-Id: <20191205021924.25188-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_181350_979359_68F81F73 
-X-CRM114-Status: GOOD (  18.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191204_181944_482865_2451F6A6 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (aford173[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -71,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,274 +99,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, srv_heupstream@mediatek.com,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- tfiga@chromium.org, YT Shen <yt.shen@mediatek.com>,
- Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Fabio Estevam <festevam@gmail.com>, Adam Ford <aford173@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Bibby:
+The GPCv2 controller on the i.MX8M Mini is compatible with the driver
+used for the i.MX8MQ except for the register locations and names.
+The GPCv2 controller is used to enable additional periperals currently
+unavailable on the i.MX8M Mini.  In order to make them function,
+the GPCv2 needs to be adapted so the drivers can associate their
+power domain to the GPCv2 to enable them.
 
-On Wed, 2019-12-04 at 17:44 +0800, Bibby Hsieh wrote:
-> Support to async updates of cursors by using the new atomic
-> interface for that.
-> 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c  | 75 +++++++++++++++++-------
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.h  |  2 +
->  drivers/gpu/drm/mediatek/mtk_drm_plane.c | 50 ++++++++++++++++
->  drivers/gpu/drm/mediatek/mtk_drm_plane.h |  2 +
->  4 files changed, 108 insertions(+), 21 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> index 4bc52346093d..92b3b397c6c4 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> @@ -47,6 +47,9 @@ struct mtk_drm_crtc {
->  	struct mtk_disp_mutex		*mutex;
->  	unsigned int			ddp_comp_nr;
->  	struct mtk_ddp_comp		**ddp_comp;
-> +
-> +	/* lock for display hardware access */
-> +	struct mutex			hw_lock;
->  };
->  
->  struct mtk_crtc_state {
-> @@ -417,6 +420,41 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
->  	}
->  }
->  
-> +static void mtk_drm_crtc_hw_config(struct mtk_drm_crtc *mtk_crtc)
-> +{
-> +	struct drm_crtc *crtc = &mtk_crtc->base;
-> +	struct mtk_drm_private *priv = crtc->dev->dev_private;
-> +	unsigned int pending_planes = 0;
-> +	int i;
-> +
-> +	mutex_lock(&mtk_crtc->hw_lock);
-> +	for (i = 0; i < mtk_crtc->layer_nr; i++) {
-> +		struct drm_plane *plane = &mtk_crtc->planes[i];
-> +		struct mtk_plane_state *plane_state;
-> +
-> +		plane_state = to_mtk_plane_state(plane->state);
-> +		if (plane_state->pending.dirty) {
-> +			plane_state->pending.config = true;
-> +			plane_state->pending.dirty = false;
-> +			pending_planes |= BIT(i);
-> +		} else if (plane_state->pending.async_dirty) {
-> +			plane_state->pending.config = true;
-> +			plane_state->pending.async_update = false;
-> +			plane_state->pending.async_dirty = false;
-> +			pending_planes |= BIT(i);
-> +		}
+This series makes one include file slightly more generic,
+adds the iMX8M Mini entries, updates the bindings, adds them
+to the device tree, then associates the new power domain to
+both the OTG and PCIe controllers.
 
-I think the async plane break the atomic planes. For example, plane 0,
-plane 1, plane 2 are atomic planes and plane 3 is async plane. When
-plane 0, plane 1 , plane 2 would be dirty in sequence, and plane 0 get
-dirty first, but async plane update before plane 1 get dirty, these code
-would apply plane 0 and plane 3, so this would break the atomic.
+Adam Ford (7):
+  soc: imx: gpcv2: Rename imx8mq-power.h to imx8m-power.h
+  soc: imx: gpcv2: Update imx8m-power.h to include iMX8M Mini
+  soc: imx: gpcv2: add support for i.MX8M Mini SoC
+  dt-bindings: imx-gpcv2: Update bindings to support i.MX8M Mini
+  arm64: dts: imx8mm: add GPC power domains
+  ARM64: dts: imx8mm: Fix clocks and power domain for USB OTG
+  arm64: dts: imx8mm: Add PCIe support
 
-> +	}
-> +	if (pending_planes)
-> +		mtk_crtc->pending_planes = true;
-> +
-> +	if (priv->data->shadow_register) {
-> +		mtk_disp_mutex_acquire(mtk_crtc->mutex);
-> +		mtk_crtc_ddp_config(crtc);
-> +		mtk_disp_mutex_release(mtk_crtc->mutex);
-> +	}
-> +	mutex_unlock(&mtk_crtc->hw_lock);
-> +}
-> +
->  int mtk_drm_crtc_plane_check(struct drm_crtc *crtc, struct drm_plane *plane,
->  			     struct mtk_plane_state *state)
->  {
-> @@ -429,6 +467,20 @@ int mtk_drm_crtc_plane_check(struct drm_crtc *crtc, struct drm_plane *plane,
->  	return 0;
->  }
->  
-> +void mtk_drm_crtc_async_update(struct drm_crtc *crtc, struct drm_plane *plane,
-> +			       struct drm_plane_state *new_state)
-> +{
-> +	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> +	const struct drm_plane_helper_funcs *plane_helper_funcs =
-> +			plane->helper_private;
-> +
-> +	if (!mtk_crtc->enabled)
-> +		return;
-> +
-> +	plane_helper_funcs->atomic_update(plane, new_state);
-> +	mtk_drm_crtc_hw_config(mtk_crtc);
-> +}
-> +
->  static void mtk_drm_crtc_atomic_enable(struct drm_crtc *crtc,
->  				       struct drm_crtc_state *old_state)
->  {
-> @@ -510,34 +562,14 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
->  				      struct drm_crtc_state *old_crtc_state)
->  {
->  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> -	struct mtk_drm_private *priv = crtc->dev->dev_private;
-> -	unsigned int pending_planes = 0;
->  	int i;
->  
->  	if (mtk_crtc->event)
->  		mtk_crtc->pending_needs_vblank = true;
-> -	for (i = 0; i < mtk_crtc->layer_nr; i++) {
-> -		struct drm_plane *plane = &mtk_crtc->planes[i];
-> -		struct mtk_plane_state *plane_state;
-> -
-> -		plane_state = to_mtk_plane_state(plane->state);
-> -		if (plane_state->pending.dirty) {
-> -			plane_state->pending.config = true;
-> -			plane_state->pending.dirty = false;
-> -			pending_planes |= BIT(i);
-> -		}
-> -	}
-> -	if (pending_planes)
-> -		mtk_crtc->pending_planes = true;
->  	if (crtc->state->color_mgmt_changed)
->  		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
->  			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i], crtc->state);
-> -
-> -	if (priv->data->shadow_register) {
-> -		mtk_disp_mutex_acquire(mtk_crtc->mutex);
-> -		mtk_crtc_ddp_config(crtc);
-> -		mtk_disp_mutex_release(mtk_crtc->mutex);
-> -	}
-> +	mtk_drm_crtc_hw_config(mtk_crtc);
->  }
->  
->  static const struct drm_crtc_funcs mtk_crtc_funcs = {
-> @@ -729,6 +761,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
->  	drm_mode_crtc_set_gamma_size(&mtk_crtc->base, MTK_LUT_SIZE);
->  	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
->  	priv->num_pipes++;
-> +	mutex_init(&mtk_crtc->hw_lock);
->  
->  	return 0;
->  }
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
-> index 6afe1c19557a..a2b4677a451c 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
-> @@ -21,5 +21,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
->  			unsigned int path_len);
->  int mtk_drm_crtc_plane_check(struct drm_crtc *crtc, struct drm_plane *plane,
->  			     struct mtk_plane_state *state);
-> +void mtk_drm_crtc_async_update(struct drm_crtc *crtc, struct drm_plane *plane,
-> +			       struct drm_plane_state *plane_state);
->  
->  #endif /* MTK_DRM_CRTC_H */
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-> index cd7c97eb7ee6..6bdb42f068fb 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-> @@ -7,6 +7,7 @@
->  #include <drm/drm_atomic.h>
->  #include <drm/drm_atomic_helper.h>
->  #include <drm/drm_fourcc.h>
-> +#include <drm/drm_atomic_uapi.h>
->  #include <drm/drm_plane_helper.h>
->  #include <drm/drm_gem_framebuffer_helper.h>
->  
-> @@ -70,6 +71,50 @@ static void mtk_drm_plane_destroy_state(struct drm_plane *plane,
->  	kfree(to_mtk_plane_state(state));
->  }
->  
-> +static int mtk_plane_atomic_async_check(struct drm_plane *plane,
-> +					struct drm_plane_state *state)
-> +{
-> +	struct drm_crtc_state *crtc_state;
-> +
-> +	if (plane != state->crtc->cursor)
-> +		return -EINVAL;
-> +
-> +	if (!plane->state)
-> +		return -EINVAL;
-> +
-> +	if (!plane->state->fb)
-> +		return -EINVAL;
-> +
-> +	if (state->state)
-> +		crtc_state = drm_atomic_get_existing_crtc_state(state->state,
-> +								state->crtc);
-> +	else /* Special case for asynchronous cursor updates. */
-> +		crtc_state = state->crtc->state;
-> +
-> +	return drm_atomic_helper_check_plane_state(plane->state, crtc_state,
-> +						   DRM_PLANE_HELPER_NO_SCALING,
-> +						   DRM_PLANE_HELPER_NO_SCALING,
-> +						   true, true);
-> +}
-> +
-> +static void mtk_plane_atomic_async_update(struct drm_plane *plane,
-> +					  struct drm_plane_state *new_state)
-> +{
-> +	struct mtk_plane_state *state = to_mtk_plane_state(plane->state);
-> +
-> +	plane->state->crtc_x = new_state->crtc_x;
-> +	plane->state->crtc_y = new_state->crtc_y;
-> +	plane->state->crtc_h = new_state->crtc_h;
-> +	plane->state->crtc_w = new_state->crtc_w;
-> +	plane->state->src_x = new_state->src_x;
-> +	plane->state->src_y = new_state->src_y;
-> +	plane->state->src_h = new_state->src_h;
-> +	plane->state->src_w = new_state->src_w;
-> +	state->pending.async_update = true;
-> +
-> +	mtk_drm_crtc_async_update(new_state->crtc, plane, new_state);
-> +}
-> +
->  static const struct drm_plane_funcs mtk_plane_funcs = {
->  	.update_plane = drm_atomic_helper_update_plane,
->  	.disable_plane = drm_atomic_helper_disable_plane,
-> @@ -141,6 +186,9 @@ static void mtk_plane_atomic_update(struct drm_plane *plane,
->  	state->pending.rotation = plane->state->rotation;
->  	wmb(); /* Make sure the above parameters are set before update */
->  	state->pending.dirty = true;
-> +
-> +	if (state->pending.async_update)
-> +		state->pending.async_dirty = true;
+ .../bindings/power/fsl,imx-gpcv2.txt          |   6 +-
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi     | 129 ++++++++-
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi     |   2 +-
+ drivers/soc/imx/gpcv2.c                       | 246 +++++++++++++++++-
+ .../power/{imx8mq-power.h => imx8m-power.h}   |  14 +
+ 5 files changed, 389 insertions(+), 8 deletions(-)
+ rename include/dt-bindings/power/{imx8mq-power.h => imx8m-power.h} (57%)
 
-Why do you use two variable to state just one thing?
+-- 
+2.20.1
 
-Regards,
-CK
-
->  }
->  
->  static void mtk_plane_atomic_disable(struct drm_plane *plane,
-> @@ -158,6 +206,8 @@ static const struct drm_plane_helper_funcs mtk_plane_helper_funcs = {
->  	.atomic_check = mtk_plane_atomic_check,
->  	.atomic_update = mtk_plane_atomic_update,
->  	.atomic_disable = mtk_plane_atomic_disable,
-> +	.atomic_async_update = mtk_plane_atomic_async_update,
-> +	.atomic_async_check = mtk_plane_atomic_async_check,
->  };
->  
->  int mtk_plane_init(struct drm_device *dev, struct drm_plane *plane,
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.h b/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-> index 760885e35b27..41882465dd67 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.h
-> @@ -22,6 +22,8 @@ struct mtk_plane_pending_state {
->  	unsigned int			height;
->  	unsigned int			rotation;
->  	bool				dirty;
-> +	bool				async_dirty;
-> +	bool				async_update;
->  };
->  
->  struct mtk_plane_state {
 
 _______________________________________________
 linux-arm-kernel mailing list
