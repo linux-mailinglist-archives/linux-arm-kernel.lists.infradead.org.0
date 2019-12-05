@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA686114696
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 19:07:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 364DE114693
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 19:07:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=N8u3ewcB0ZxC7+d5wBZt24nTrcu0l4KF4rpAGRErS44=; b=TFU2ROr9cxnQzEYsq1lGg+raPv
-	v4Q0PzyaelyrlgeUpqwNwcDBfN4/WzYF191KcYh+CQl1yo1oCmfWkZJO1gKsPjzTXqxNI+znAcryP
-	WSuu6QrTIsHPHLQ9wPNAgzrckTRQpdgSjFNZxXVHJp3lVIMhdcUR9VRAqD2XN1QfYK7dAQ5wrxcSK
-	w4axeEkz6I57U3h9FtQLb+s1oxljuSUws+Mw5TT2MsEtPSCXsGouzHc/8KAVkSyzwmLau2vY6Irng
-	SgO5Kzrv9xufopk76rFOU1SWbXlWkhwKc/KJkZekDsKFSzc2TNUA0amF33RRwt3NKsK0s06t5vrw3
-	ZWD9LqmQ==;
+	bh=eVtK/A/Zm74bpeQFTZFLoZcCuk6DZNKpKGP+1YWJyH8=; b=ovjM0CEF3nlk5aElGSHj0s2t/s
+	0Hd4CndAoIOQRbW2iBk06GYxX688KZ7ouEZJMlAgSovnGkvb8iZkuVGMMXfHFH1LgnCw9pYwIXSXA
+	7/hyROBWW80akr9qUMHOVs7FvZDuKvURRqOQ4HqEUGjcL9u66RYM2Yax9agmBDcVHQUH9XnmI2e2Y
+	CexkNCk9gw4Ltw0UkWEN0knZgNrXeOur44RYJtf7rPqaTqSW92e5PTlrys4SpP4mREOi22GyCgJc5
+	qSZTho4IKX08RrtwllurCp8CCTcFmFxP/oCoVMejS3Fceav981SAOirB5F/I7zoXm35wRQW5mObS4
+	s8IQRMCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icvXX-0003xf-Kg; Thu, 05 Dec 2019 18:07:47 +0000
+	id 1icvXI-0003kQ-UH; Thu, 05 Dec 2019 18:07:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icvWp-0003WG-38
+ id 1icvWp-0003WY-83
  for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 18:07:11 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D12C0DA7;
- Thu,  5 Dec 2019 10:07:00 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 96BFD11D4;
+ Thu,  5 Dec 2019 10:07:02 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B74683F86C;
- Thu,  5 Dec 2019 10:06:59 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7CAEC3F718;
+ Thu,  5 Dec 2019 10:07:01 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] kvm/arm64: sanely ratelimit sysreg messages
-Date: Thu,  5 Dec 2019 18:06:51 +0000
-Message-Id: <20191205180652.18671-2-mark.rutland@arm.com>
+Subject: [PATCH 2/2] kvm/arm64: don't log IMP DEF sysreg traps
+Date: Thu,  5 Dec 2019 18:06:52 +0000
+Message-Id: <20191205180652.18671-3-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20191205180652.18671-1-mark.rutland@arm.com>
 References: <20191205180652.18671-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_100703_218817_192B79F0 
-X-CRM114-Status: GOOD (  12.65  )
+X-CRM114-CacheID: sfid-20191205_100703_327529_1CC367AC 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,15 +70,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently kvm_pr_unimpl() is ratelimited, so print_sys_reg_instr() won't
-spam the console. However, someof its callers try to print some
-contextual information with kvm_err(), which is not ratelimited. This
-means that in some cases the context may be printed without the sysreg
-encoding, which isn't all that useful.
-
-Let's ensure that both are consistently printed together and
-ratelimited, by refactoring print_sys_reg_instr() so that some callers
-can provide it with an arbitrary format string.
+We don't intend to support IMPLEMENATION DEFINED system registers, but
+have to trap them (and emulate them as UNDEFINED). These traps aren't
+interesting to the system administrator or to the KVM developers, so
+let's not bother logging when we do so.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
 Cc: Alexandru Elisei <alexandru.elisei@arm.com>
@@ -87,71 +83,35 @@ Cc: Marc Zyngier <maz@kernel.org>
 Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
 Cc: kvmarm@lists.cs.columbia.edu
 ---
- arch/arm64/kvm/sys_regs.c | 12 ++++++------
- arch/arm64/kvm/sys_regs.h | 17 +++++++++++++++--
- 2 files changed, 21 insertions(+), 8 deletions(-)
+ arch/arm64/kvm/sys_regs.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index 46822afc57e0..d128abd38656 100644
+index d128abd38656..61f019104841 100644
 --- a/arch/arm64/kvm/sys_regs.c
 +++ b/arch/arm64/kvm/sys_regs.c
-@@ -2098,9 +2098,9 @@ static void unhandled_cp_access(struct kvm_vcpu *vcpu,
- 		WARN_ON(1);
- 	}
- 
--	kvm_err("Unsupported guest CP%d access at: %08lx [%08lx]\n",
--		cp, *vcpu_pc(vcpu), *vcpu_cpsr(vcpu));
--	print_sys_reg_instr(params);
-+	print_sys_reg_msg(params,
-+			  "Unsupported guest CP%d access at: %08lx [%08lx]\n",
-+			  cp, *vcpu_pc(vcpu), *vcpu_cpsr(vcpu));
- 	kvm_inject_undefined(vcpu);
+@@ -2233,6 +2233,12 @@ int kvm_handle_cp14_32(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ 				NULL, 0);
  }
  
-@@ -2249,9 +2249,9 @@ static int emulate_sys_reg(struct kvm_vcpu *vcpu,
- 	if (likely(r)) {
- 		perform_access(vcpu, params, r);
- 	} else {
--		kvm_err("Unsupported guest sys_reg access at: %lx [%08lx]\n",
--			*vcpu_pc(vcpu), *vcpu_cpsr(vcpu));
--		print_sys_reg_instr(params);
-+		print_sys_reg_msg(params,
-+				  "Unsupported guest sys_reg access at: %lx [%08lx]\n",
-+				  *vcpu_pc(vcpu), *vcpu_cpsr(vcpu));
- 		kvm_inject_undefined(vcpu);
- 	}
- 	return 1;
-diff --git a/arch/arm64/kvm/sys_regs.h b/arch/arm64/kvm/sys_regs.h
-index 9bca0312d798..5a6fc30f5989 100644
---- a/arch/arm64/kvm/sys_regs.h
-+++ b/arch/arm64/kvm/sys_regs.h
-@@ -62,11 +62,24 @@ struct sys_reg_desc {
- #define REG_HIDDEN_USER		(1 << 0) /* hidden from userspace ioctls */
- #define REG_HIDDEN_GUEST	(1 << 1) /* hidden from guest */
- 
--static inline void print_sys_reg_instr(const struct sys_reg_params *p)
-+static __printf(2, 3)
-+inline void print_sys_reg_msg(const struct sys_reg_params *p,
-+				       char *fmt, ...)
- {
-+	va_list va;
-+
-+	va_start(va, fmt);
- 	/* Look, we even formatted it for you to paste into the table! */
--	kvm_pr_unimpl(" { Op0(%2u), Op1(%2u), CRn(%2u), CRm(%2u), Op2(%2u), func_%s },\n",
-+	kvm_pr_unimpl("%pV { Op0(%2u), Op1(%2u), CRn(%2u), CRm(%2u), Op2(%2u), func_%s },\n",
-+		      &(struct va_format){ fmt, &va },
- 		      p->Op0, p->Op1, p->CRn, p->CRm, p->Op2, p->is_write ? "write" : "read");
-+	va_end(va);
++static bool is_imp_def_sys_reg(struct sys_reg_params *params)
++{
++	// See ARM DDI 0487E.a, section D12.3.2
++	return params->Op0 == 3 && (params->CRn & 0b1011) == 0b1011;
 +}
 +
-+static inline void print_sys_reg_instr(const struct sys_reg_params *p)
-+{
-+	/* GCC warns on an empty format string */
-+	print_sys_reg_msg(p, "%s", "");
- }
+ static int emulate_sys_reg(struct kvm_vcpu *vcpu,
+ 			   struct sys_reg_params *params)
+ {
+@@ -2248,6 +2254,8 @@ static int emulate_sys_reg(struct kvm_vcpu *vcpu,
  
- static inline bool ignore_write(struct kvm_vcpu *vcpu,
+ 	if (likely(r)) {
+ 		perform_access(vcpu, params, r);
++	} else if (is_imp_def_sysreg(params)) {
++		kvm_inject_undefined(vcpu);
+ 	} else {
+ 		print_sys_reg_msg(params,
+ 				  "Unsupported guest sys_reg access at: %lx [%08lx]\n",
 -- 
 2.11.0
 
