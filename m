@@ -2,69 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB275113D7C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 10:02:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C485B113D83
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 10:03:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C6xEO6wEo6qSFdE+0/QSckCXf7YY7+ia2KUbwcRYDQk=; b=q7H7HBjf7e2KN7
-	aUAPOg1WSUVlEEUtepl1bdStoRSMucDgbJ4E32qD3M63xe0L1RbDFdKeOM2mYvbmywoDjvRH6GiKm
-	2rSSAXANVxXDQQpdlkcNKOfrs+q1uF4n76S6Up9J4smFENT5WQlasSJPGQhLNaROQmKvzsQ+3RcrY
-	nybxiJdaOTmwyglB/h8nBZL8reG/iSQgzFhJNo6nF1tkhaRHB7NNg/i/tfMeab14ya5oaZt4ByCgc
-	3GSGKtFHIrXLDOO4jQXsmHETjehCl1JXFdBsCTKoMONE2sdz7IxUfwb1MOTobrkBZH/zMHOsnd5Cx
-	T3+LT+DMe5mE0ROuPe2Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9NJKSCQX0wTYDOzkYMKtiVKPfKFGRzFn7TTNLBtNn7s=; b=ePAlCP21wYa1V4
+	ullqzxsCApW9jn2gGMD0G6TyOwYWd2RacMWwi7d8rdGUdVSQ81w85+vRyy8GN0yC66+YR/7XnO15b
+	d2nNUtavhuIKOyS+YL3JVYeQXsfxqpUQyuIpnikxlDqAXIVANgaMmqgPlEMbFPYjy9kHMV55Il0P0
+	I4eYEQR6h4KlWqDtygWe5PTkhCiUckAwCjUUcplBP3afTKn/fcZpCIDXQ32atsjxh2Eh2KoQtbLFJ
+	eWk+Uq0cM9ic1Y6S44gYj48RThUaqVOZpDK80xWXG0jDwaSw9JwQiAAz5AGJSO0rMi0W1MRGnA05d
+	v0h2JXnwoYRlMIvX3xhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icn1n-0003r5-6n; Thu, 05 Dec 2019 09:02:27 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1icn31-0004Au-Gh; Thu, 05 Dec 2019 09:03:43 +0000
+Received: from mail-eopbgr140057.outbound.protection.outlook.com
+ ([40.107.14.57] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icn1c-0003pM-6o; Thu, 05 Dec 2019 09:02:17 +0000
-X-UUID: bc85d1d2d7d34c008d24397adcb66233-20191205
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=BQlboLM9i0jWhGchARZHPdGw1XSxdRk80iBFjWnL64w=; 
- b=DZDGc0uukAjvGijc3Ed4qyLCSUpHOlloOpVxNy+s+3y/+TRPKYAKJ4bwVSwUlBkYMxwhT0eeJjg3oIoY9eaxZYGBaEDut8ravPVQJJaTEjhEwBWdzeGMkSuj5k86pA5z7RkCknJ24URByfgiFRNBGImi5NXLKEJwXj5Wiy2f0N8=;
-X-UUID: bc85d1d2d7d34c008d24397adcb66233-20191205
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <yongqiang.niu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1617769774; Thu, 05 Dec 2019 01:02:07 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 5 Dec 2019 01:02:20 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 5 Dec 2019 17:01:50 +0800
-Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 5 Dec 2019 17:01:44 +0800
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
- Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v3] drm/mediatek: Add ctm property support
-Date: Thu, 5 Dec 2019 17:02:03 +0800
-Message-ID: <1575536523-10605-1-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
+ id 1icn2t-00049X-Ce
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 09:03:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=kb/FB/n46DJAT6a08YhGTBVuH1pqB+2yq5E8ExJFBDHhoiYSJzVFeejpz2QBrdVldf4fE2q5Eeo2gll5cAHsvofKG90ziSI5rt0iPKl3QcT/XSYtmdEpvt5zK+dUJHhsCKR2Otso88+y9HJtcRD9v+dS1pCcIRtLQFGHtbDY5Q3JkCnLr+K5u4OPv4tZfPnjzjzeqDW0tQeApDZPlgUDRw7kDZAdJFYTDCNtN4CYM6lbD43r+lf4aiR7K4RN1vnCheEStQDsHdw+pcV5SPB+MVgwSsxDhBR+KUNVrZaUNtLQRpurT4uo9+YGP04UToYIywj64ISpyux5aBx3wSp/fw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OTAl8bpjfpkwKYCjP8Dp1QyItuQp9uDUzNgKgnr3Uvo=;
+ b=GXNElzX7UqvbANx6+rjOUjjIss2NkZpB9gU10FiXRoZBG5f1IgYIpU0zeWNMApJpgm7kb94EDxda+rfpLZybNw6qkZ7rPAquJi3K89nYE69nwn9yfGXUhsRpH6Az6xg3I5lNSFr4akriM9kJpiBhVdt//j+s0EL1paiUBUrUdKp57udskpAhTT557unEx3vkYgMCbcAUAc3MdRvqu/eDFeJvid/cJCLEDTTgyDsLssAwc6nEYHYvrYmBz8mzGoHczXtn15HBhWvyAMMHIrymiJOEefVu24GuHTcItzLdvVvE6aq76mqvLRSPhHzF2pNZf06oKoFf8Hmo6Lw9TOddSA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OTAl8bpjfpkwKYCjP8Dp1QyItuQp9uDUzNgKgnr3Uvo=;
+ b=EH31EScOK8JIUj918CHhd/nbLUiB3PPFYUBJK9NF+MH/aalm2wIuQz2COo+AqMZlU5+B6TAoN+yGPK9Tdsefhwejp+ZQbyWdvLySoliNdEMbcyawXKdlbjaRtzDDQAmRRrNV1vQiAyWYTdiHMmW9lfmKLdoTdoUkwsHvjofKaC8=
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com (52.135.138.150) by
+ DB7PR04MB4364.eurprd04.prod.outlook.com (52.134.110.30) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2495.21; Thu, 5 Dec 2019 09:03:27 +0000
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::4182:4692:ffbd:43a0]) by DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::4182:4692:ffbd:43a0%6]) with mapi id 15.20.2516.014; Thu, 5 Dec 2019
+ 09:03:27 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, Aisheng Dong <aisheng.dong@nxp.com>,
+ "sboyd@kernel.org" <sboyd@kernel.org>
+Subject: RE: [PATCH] clk: imx: imx8qxp-lpcg: use devm_platform_ioremap_resource
+Thread-Topic: [PATCH] clk: imx: imx8qxp-lpcg: use
+ devm_platform_ioremap_resource
+Thread-Index: AQHVqoum7IH7ZRFDgESKl5wnHnxd3aerQBcQ
+Date: Thu, 5 Dec 2019 09:03:26 +0000
+Message-ID: <DB7PR04MB4490D784508E59EC1C60B586885C0@DB7PR04MB4490.eurprd04.prod.outlook.com>
+References: <1575454349-5762-1-git-send-email-peng.fan@nxp.com>
+ <VI1PR04MB7023E9790323200A4B122445EE5D0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <AM0PR04MB4481FC4A8FD76A01242424B5885C0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <VI1PR04MB70232C511E4F43360D7533C9EE5C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR04MB70232C511E4F43360D7533C9EE5C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: ed7ac84b-5d75-4404-8ae4-08d77961fdb8
+x-ms-traffictypediagnostic: DB7PR04MB4364:|DB7PR04MB4364:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7PR04MB4364832DAFE9919974B3E6C5885C0@DB7PR04MB4364.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 02426D11FE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(346002)(366004)(39860400002)(396003)(376002)(199004)(189003)(54906003)(44832011)(9686003)(55016002)(6306002)(110136005)(6246003)(478600001)(71200400001)(25786009)(229853002)(14454004)(966005)(71190400001)(99286004)(74316002)(186003)(2501003)(8936002)(52536014)(33656002)(3846002)(5660300002)(8676002)(4326008)(102836004)(26005)(81166006)(81156014)(86362001)(305945005)(2906002)(7696005)(11346002)(76116006)(316002)(64756008)(66446008)(66556008)(66946007)(14444005)(7736002)(76176011)(53546011)(6436002)(6116002)(6506007)(66476007)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4364;
+ H:DB7PR04MB4490.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: OsetTLeZXtdnBXOEqvX2u+ObvOXgrHlnlZm0cx2XJ9cNNPBROzbmUgn85LqirxwScAWKita14uVS4v4QfJdYKvP6rPDZlgpcrHRyLPkMpih96FC4ha4R3m8N2OuTbDt6H0fa8TcGXruO8yHEgBuawFLL/olnPkVzQfQhe93WV8Y1QSLcj/QoP4kI4j9hQ11n+u3uIOP8XqcehuC+RGJLElKWQPqO3WYrcTnvEvf1McjOqYnb7rKaTRvcyUuFoEGPwZRR2bn/S9NFHRsqLwWRREtlm/6MVgZFsjmyY0Yqq5mMotqnfplQdva6d38Lnuycy0tyBzSxP5vIvKrZfVYenZrWeRUXVuqR+i3AqXcWT6i+q1cN5/8+jbb56JkZiuLZMaQw5dQpNAD8kuorH0Br5GnYePd2Tvpt4BF5Q59hukSSrSA4dSwS4W5iFM7g7+QwCmMK/iiC2K4g049ULT9k7AsDNc/kWZ3vBqd1+PfUi0htgV57/xuzchG9MyhNyL3Y0gBTF/Jq4aySQ7ctVaUWog==
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ed7ac84b-5d75-4404-8ae4-08d77961fdb8
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Dec 2019 09:03:26.9254 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: dpXgxSpG0otRlaEKzHLKngqRa2w4BuIbCDuKRdoetF1i5YkzJ37WDyVvQwJShqVQCv1eXLvw5xIpbcgUJd5W7w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4364
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_010216_261990_AB712406 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20191205_010335_434204_0022075C 
+X-CRM114-Status: GOOD (  17.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.14.57 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -72,8 +114,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,185 +125,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
+Cc: Abel Vesa <abel.vesa@nxp.com>, Alice Guo <alice.guo@nxp.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add ctm property support
+> Subject: Re: [PATCH] clk: imx: imx8qxp-lpcg: use
+> devm_platform_ioremap_resource
+> 
+> On 2019-12-05 3:38 AM, Peng Fan wrote:
+> >> Subject: Re: [PATCH] clk: imx: imx8qxp-lpcg: use
+> >> devm_platform_ioremap_resource
+> >>
+> >> On 2019-12-04 12:14 PM, Peng Fan wrote:
+> >>> From: Peng Fan <peng.fan@nxp.com>
+> >>>
+> >>> devm_platform_ioremap_resource() wraps platform_get_resource() and
+> >>> devm_ioremap_resource(), we could use this API to simplify the code.
+> >>>
+> >>> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> >>
+> >> This patch has been posted before and it breaks uart on imx8qxp-mek
+> >> and possibly other things.
+> >>
+> >> The old and new paths are not equivalent:
+> >> devm_platform_ioremap_resource calls devm_ioremap_resource differs
+> >> from devm_ioremap by also calling devm_request_mem_region.
+> >>
+> >> This prevents other mappings in the area; this is not an issue for
+> >> most drivers but imx8qxp-lpcg maps whole subsystems. For example:
+> >>
+> >>                   adma_lpcg: clock-controller@59000000 {
+> >>                           compatible = "fsl,imx8qxp-lpcg-adma";
+> >>                           reg = <0x59000000 0x2000000>;
+> >>                           #clock-cells = <1>;
+> >>                   };
+> >>
+> >>                   adma_lpuart0: serial@5a060000 {
+> >>                           reg = <0x5a060000 0x1000>;
+> >> 			...
+> >> 		};
+> >>
+> >> Previously: https://patchwork.kernel.org/patch/10908807/
+> >
+> > Thanks. I think at least need to provide some comments in code.
+> 
+> Yes, comments would help. I think it's actually the 3rd time this incorrect
+> cleanup was posted.
+> 
+> But mapping entire subsystems (32mb at a time) for LPCG is deeply
+> flawed: the LPCG areas are each 64k and they're interspersed among the
+> peripherals. The correct solution is to have many small clock providers.
+> 
+> This is done by a series of patches from Aisheng, I think this is the latest one:
+> 
+> https://patchwork.kernel.org/patch/11248235/
+> 
+> If some aspects of that series are dubious perhaps they could be discussed
+> and maybe the series could be split into smaller chunks?
 
-Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
----
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 10 ++++-
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 61 ++++++++++++++++++++++++++++-
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h | 11 ++++++
- 3 files changed, 80 insertions(+), 2 deletions(-)
+That would be lots of lpcg nodes in device tree.
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index 9340346..33e9604 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -748,6 +748,8 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 	int pipe = priv->num_pipes;
- 	int ret;
- 	int i;
-+	bool has_ctm = false;
-+	uint gamma_lut_size = 0;
- 
- 	if (!path)
- 		return 0;
-@@ -799,6 +801,12 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 		}
- 
- 		mtk_crtc->ddp_comp[i] = comp;
-+
-+		if (comp->funcs->ctm_set)
-+			has_ctm = true;
-+
-+		if (comp->funcs->gamma_set)
-+			gamma_lut_size = MTK_LUT_SIZE;
- 	}
- 
- 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
-@@ -820,7 +828,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 	if (ret < 0)
- 		return ret;
- 	drm_mode_crtc_set_gamma_size(&mtk_crtc->base, MTK_LUT_SIZE);
--	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
-+	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, has_ctm, gamma_lut_size);
- 	priv->num_pipes++;
- 	mutex_init(&mtk_crtc->hw_lock);
- 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-index e93e467..1da7d28 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-@@ -38,7 +38,15 @@
- #define CCORR_EN				BIT(0)
- #define DISP_CCORR_CFG				0x0020
- #define CCORR_RELAY_MODE			BIT(0)
-+#define CCORR_ENGINE_EN				BIT(1)
-+#define CCORR_GAMMA_OFF				BIT(2)
-+#define CCORR_WGAMUT_SRC_CLIP			BIT(3)
- #define DISP_CCORR_SIZE				0x0030
-+#define DISP_CCORR_COEF_0			0x0080
-+#define DISP_CCORR_COEF_1			0x0084
-+#define DISP_CCORR_COEF_2			0x0088
-+#define DISP_CCORR_COEF_3			0x008C
-+#define DISP_CCORR_COEF_4			0x0090
- 
- #define DISP_DITHER_EN				0x0000
- #define DITHER_EN				BIT(0)
-@@ -187,7 +195,7 @@ static void mtk_ccorr_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
- 	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_CCORR_SIZE);
--	mtk_ddp_write(cmdq_pkt, CCORR_RELAY_MODE, comp, DISP_CCORR_CFG);
-+	mtk_ddp_write(cmdq_pkt, CCORR_ENGINE_EN, comp, DISP_CCORR_CFG);
- }
- 
- static void mtk_ccorr_start(struct mtk_ddp_comp *comp)
-@@ -200,6 +208,56 @@ static void mtk_ccorr_stop(struct mtk_ddp_comp *comp)
- 	writel_relaxed(0x0, comp->regs + DISP_CCORR_EN);
- }
- 
-+/* Converts a DRM S31.32 value to the HW S0.11 format. */
-+static u16 mtk_ctm_s31_32_to_s0_11(u64 in)
-+{
-+	u16 r;
-+
-+	/* Sign bit. */
-+	r = in & BIT_ULL(63) ? BIT(11) : 0;
-+
-+	if ((in & GENMASK_ULL(62, 33)) > 0) {
-+		/* We have zero integer bits so we can only saturate here. */
-+		r |= GENMASK(10, 0);
-+	} else {
-+		/* Otherwise take the 9 most important fractional bits. */
-+		r |= (in >> 22) & GENMASK(10, 0);
-+	}
-+
-+	return r;
-+}
-+
-+static void mtk_ccorr_ctm_set(struct mtk_ddp_comp *comp,
-+			      struct drm_crtc_state *state,
-+			      struct cmdq_pkt *cmdq_pkt)
-+{
-+	struct drm_property_blob *blob = state->ctm;
-+	struct drm_color_ctm *ctm;
-+	const u64 *input;
-+	uint16_t coeffs[9] = { 0 };
-+	int i;
-+
-+	if (!blob)
-+		return;
-+
-+	ctm = (struct drm_color_ctm *)blob->data;
-+	input = ctm->matrix;
-+
-+	for (i = 0; i < ARRAY_SIZE(coeffs); i++)
-+		coeffs[i] = mtk_ctm_s31_32_to_s0_11(input[i]);
-+
-+	mtk_ddp_write(cmdq_pkt, coeffs[0] << 16 | coeffs[1],
-+		      comp, DISP_CCORR_COEF_0);
-+	mtk_ddp_write(cmdq_pkt, coeffs[2] << 16 | coeffs[3],
-+		      comp, DISP_CCORR_COEF_1);
-+	mtk_ddp_write(cmdq_pkt, coeffs[4] << 16 | coeffs[5],
-+		      comp, DISP_CCORR_COEF_2);
-+	mtk_ddp_write(cmdq_pkt, coeffs[6] << 16 | coeffs[7],
-+		      comp, DISP_CCORR_COEF_3);
-+	mtk_ddp_write(cmdq_pkt, coeffs[8] << 16,
-+		      comp, DISP_CCORR_COEF_4);
-+}
-+
- static void mtk_dither_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			      unsigned int h, unsigned int vrefresh,
- 			      unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
-@@ -270,6 +328,7 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
- 	.config = mtk_ccorr_config,
- 	.start = mtk_ccorr_start,
- 	.stop = mtk_ccorr_stop,
-+	.ctm_set = mtk_ccorr_ctm_set,
- };
- 
- static const struct mtk_ddp_comp_funcs ddp_dither = {
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-index 384abae..8fa8082 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-@@ -92,6 +92,9 @@ struct mtk_ddp_comp_funcs {
- 			  struct drm_crtc_state *state);
- 	void (*bgclr_in_on)(struct mtk_ddp_comp *comp);
- 	void (*bgclr_in_off)(struct mtk_ddp_comp *comp);
-+	void (*ctm_set)(struct mtk_ddp_comp *comp,
-+			struct drm_crtc_state *state,
-+			struct cmdq_pkt *cmdq_pkt);
- };
- 
- struct mtk_ddp_comp {
-@@ -205,6 +208,14 @@ static inline void mtk_ddp_comp_bgclr_in_off(struct mtk_ddp_comp *comp)
- 		comp->funcs->bgclr_in_off(comp);
- }
- 
-+static inline void mtk_ddp_ctm_set(struct mtk_ddp_comp *comp,
-+				   struct drm_crtc_state *state,
-+				   struct cmdq_pkt *cmdq_pkt)
-+{
-+	if (comp->funcs && comp->funcs->ctm_set)
-+		comp->funcs->ctm_set(comp, state, cmdq_pkt);
-+}
-+
- int mtk_ddp_comp_get_id(struct device_node *node,
- 			enum mtk_ddp_comp_type comp_type);
- int mtk_ddp_comp_init(struct device *dev, struct device_node *comp_node,
--- 
-1.8.1.1.dirty
+> 
+> That series does brings many essential improvements to imx8 clk support.
+
+Seems that pending for long time? What is the blocking point?
+
+Regards,
+Peng.
+
+> 
+> --
+> Regards,
+> Leonard
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
