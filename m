@@ -2,53 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF96F114948
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 23:30:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95DC2114953
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 23:31:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PlOHyKnzpEbeO7zCgfk+49MG1v+cUoaVMvuaCGJyXwg=; b=ca8HgL8kVPBi58
-	/aDPWI2ImnKhzFFtvsIV52hyrIrj/Y8lHSnYmgNGsSz6puLgBSdpC3UqC3HnrZA1SWo/vs3UIND45
-	q5TuoTYG0vpg2MGQaS4/cF+t1TDUGY/B+sg9tE8D5lLNDIGX2q8Cev8mIQOz1ijFuYqBjKxUJsr+p
-	3AdbaPFeqNyLPUkAOEyE4QYgWah0JtN+xsbXbf8dTAXxcHWaa7fMwbyYHi6U8+TzpSX/XhaUnGRNX
-	6L4+wDccHGEOpq7o5wjlgbYXDLobSpa/YZiiz7zbJBcRxiuVSyuzjDbs7D7D5RGLE0FntjPPxSjj5
-	nQlEeMf9+slLolLcDuQg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=1pC2AnGLp0MTykW2eBGpEyb/dRUgeKzws9xCb9w+e1Y=; b=PjazjCP37U9iQt
+	//v1LhZBhcRByRWdY6DjnSmorkO8NnC2AD6WaLApVo5AR7CEFZyMM5tpLJPzpzdc27nNlBhq6jGGf
+	/8m33BGyXrI5w4EZTs/VFM7c3nWNR9XkmciKfyCsmgtjSz7/2FQlfNtdQe9VqspAbax+HSSmG1nrt
+	RXJnFPZy6hp84upfHS+a5MwIGMXh1B1E7q+pLFyXi9xc/upPzWFa8O6ZmFpksYIfjFH/xd3FNoEyW
+	xLgFRjlbvRupGgmGe5t/F4yHhS9ef0pSgMXNK7lhzdbG4539rB0+JdAgBfd+HauA7PmMXlNCB7hN4
+	f5C86t4BW2kSYAgBrr6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iczdx-0007FB-LG; Thu, 05 Dec 2019 22:30:41 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1iczeN-0007gf-FO; Thu, 05 Dec 2019 22:31:07 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iczdp-0007Cj-LG
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 22:30:36 +0000
-Received: from localhost (unknown [78.193.40.249])
- (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id CF65F200005;
- Thu,  5 Dec 2019 22:30:23 +0000 (UTC)
-From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-To: Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v3] ARM: dts: at91: rearrange kizbox dts using aliases nodes
-Date: Thu,  5 Dec 2019 23:30:21 +0100
-Message-Id: <20191205223021.1370083-1-kamel.bouhara@bootlin.com>
-X-Mailer: git-send-email 2.24.0
+ id 1icze4-0007Z9-TL; Thu, 05 Dec 2019 22:30:50 +0000
+Received: from localhost (mobile-166-170-221-197.mycingular.net
+ [166.170.221.197])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 84F6520707;
+ Thu,  5 Dec 2019 22:30:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575585047;
+ bh=rwc2W/J/V58JZoKOWg2doRruK6KWPbQgM5Sb2F/Ai60=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=cliOZcUxDWzGZ1UQTKJkPsD++s/EPrjyE7H/snJuA3uqE7NURH520sOnVje6nd0Ts
+ Td38CmfeZyMBlRyr+Rypsepv/EG8hoAOa7B7sJiJzOVgMDkiBquX3yxdZnHzKOkS/c
+ BBv+wew7DxEj2QDNBsIebdp/nYnu0CS5l8OPwMaM=
+Date: Thu, 5 Dec 2019 16:30:44 -0600
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH v4 7/8] linux/log2.h: Fix 64bit calculations in
+ roundup/down_pow_two()
+Message-ID: <20191205223044.GA250573@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191203114743.1294-8-nsaenzjulienne@suse.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_143033_971549_D650B446 
-X-CRM114-Status: GOOD (  10.82  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191205_143049_068772_69E30AAE 
+X-CRM114-Status: GOOD (  10.77  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 FAKE_REPLY_C           No description available.
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,245 +76,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Kamel Bouhara <kamel.bouhara@bootlin.com>
+Cc: linux-pci@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-nfs@vger.kernel.org,
+ Edward Cree <ecree@solarflare.com>, linux-clk@vger.kernel.org,
+ f.fainelli@gmail.com, Herbert Xu <herbert@gondor.apana.org.au>,
+ Emilio =?iso-8859-1?Q?L=F3pez?= <emilio@elopez.com.ar>, maz@kernel.org,
+ Joerg Roedel <joro@8bytes.org>, phil@raspberrypi.org,
+ Doug Ledford <dledford@redhat.com>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Chen-Yu Tsai <wens@csie.org>, Chuck Lever <chuck.lever@oracle.com>,
+ Martin Habets <mhabets@solarflare.com>, wahrenst@gmx.net,
+ Tom Lendacky <thomas.lendacky@amd.com>, Jiri Pirko <jiri@resnulli.us>,
+ Solarflare linux maintainers <linux-net-drivers@solarflare.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-rpi-kernel@lists.infradead.org,
+ Anna Schumaker <anna.schumaker@netapp.com>,
+ Trond Myklebust <trond.myklebust@hammerspace.com>,
+ linux-arm-kernel@lists.infradead.org, Mirko Lindner <mlindner@marvell.com>,
+ Mike Marciniszyn <mike.marciniszyn@intel.com>, mbrugger@suse.com,
+ Stephen Boyd <sboyd@kernel.org>, netdev@vger.kernel.org,
+ Yishai Hadas <yishaih@mellanox.com>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ "David S. Miller" <davem@davemloft.net>,
+ Stephen Hemminger <stephen@networkplumber.org>, linux-rdma@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Moni Shoua <monis@mellanox.com>,
+ Eric Biederman <ebiederm@xmission.com>, james.quinlan@broadcom.com,
+ Thomas Graf <tgraf@suug.ch>, andrew.murray@arm.com,
+ Robin Murphy <robin.murphy@arm.con>, David Woodhouse <dwmw2@infradead.org>,
+ Dennis Dalessandro <dennis.dalessandro@intel.com>,
+ Lu Baolu <baolu.lu@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use aliases nodes to easy kizbox dts readability.
+You got the "n" on "down" in the subject, but still missing "of" ;)
 
-Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
----
-Changes in v3:
-	- Fixed missing i2c-gpio0 label in dtsi
-Changes in v2:
-	- Fixed some missing aliases label from dtsi
+On Tue, Dec 03, 2019 at 12:47:40PM +0100, Nicolas Saenz Julienne wrote:
+> Some users need to make sure their rounding function accepts and returns
+> 64bit long variables regardless of the architecture. Sadly
+> roundup/rounddown_pow_two() takes and returns unsigned longs. It turns
+> out ilog2() already handles 32/64bit calculations properly, and being
+> the building block to the round functions we can rework them as a
+> wrapper around it.
 
- arch/arm/boot/dts/at91-kizbox.dts  | 172 ++++++++++++++---------------
- arch/arm/boot/dts/at91sam9260.dtsi |   4 +-
- 2 files changed, 86 insertions(+), 90 deletions(-)
+Missing "of" in the function names here.
+s/a wrapper/wrappers/
 
-diff --git a/arch/arm/boot/dts/at91-kizbox.dts b/arch/arm/boot/dts/at91-kizbox.dts
-index 90996eaf73b2..7d938ccf71b0 100644
---- a/arch/arm/boot/dts/at91-kizbox.dts
-+++ b/arch/arm/boot/dts/at91-kizbox.dts
-@@ -28,85 +28,6 @@
- 		};
- 	};
+IIUC the point of this is that roundup_pow_of_two() returned
+"unsigned long", which can be either 32 or 64 bits (worth pointing
+out, I think), and many callers need something that returns
+"unsigned long long" (always 64 bits).
 
--	ahb {
--		apb {
--			tcb0: timer@fffa0000 {
--				timer@0 {
--					compatible = "atmel,tcb-timer";
--					reg = <0>, <1>;
--				};
--
--				timer@2 {
--					compatible = "atmel,tcb-timer";
--					reg = <2>;
--				};
--			};
--
--			macb0: ethernet@fffc4000 {
--				phy-mode = "mii";
--				pinctrl-0 = <&pinctrl_macb_rmii
--				             &pinctrl_macb_rmii_mii_alt>;
--				status = "okay";
--			};
--
--			usart3: serial@fffd0000 {
--				status = "okay";
--			};
--
--			dbgu: serial@fffff200 {
--				status = "okay";
--			};
--
--			watchdog@fffffd40 {
--				timeout-sec = <15>;
--				atmel,max-heartbeat-sec = <16>;
--				atmel,min-heartbeat-sec = <0>;
--				status = "okay";
--			};
--		};
--
--		usb0: ohci@500000 {
--			num-ports = <1>;
--			status = "okay";
--		};
--
--		ebi: ebi@10000000 {
--			status = "okay";
--
--			nand_controller: nand-controller {
--				status = "okay";
--				pinctrl-0 = <&pinctrl_nand_cs &pinctrl_nand_rb>;
--				pinctrl-names = "default";
--
--				nand@3 {
--					reg = <0x3 0x0 0x800000>;
--					rb-gpios = <&pioC 13 GPIO_ACTIVE_HIGH>;
--					cs-gpios = <&pioC 14 GPIO_ACTIVE_HIGH>;
--					nand-bus-width = <8>;
--					nand-ecc-mode = "soft";
--					nand-on-flash-bbt;
--					label = "atmel_nand";
--
--					partitions {
--						compatible = "fixed-partitions";
--						#address-cells = <1>;
--						#size-cells = <1>;
--
--						bootstrap@0 {
--							label = "bootstrap";
--							reg = <0x0 0x20000>;
--						};
--
--						ubi@20000 {
--							label = "ubi";
--							reg = <0x20000 0x7fe0000>;
--						};
--					};
--				};
--			};
--		};
--	};
--
- 	gpio_keys {
- 		compatible = "gpio-keys";
- 		#address-cells = <1>;
-@@ -127,15 +48,6 @@
- 		};
- 	};
+It's a nice simplification to remove the "__" variants.  Just as a
+casual reader of this commit message, I'd like to know why we had both
+the roundup and the __roundup versions in the first place, and why we
+no longer need both.
 
--	i2c-gpio-0 {
--		status = "okay";
--
--		rtc: pcf8563@51 {
--			compatible = "nxp,pcf8563";
--			reg = <0x51>;
--		};
--	};
--
- 	pwm_leds {
- 		compatible = "pwm-leds";
+> -#define roundup_pow_of_two(n)			\
+> -(						\
+> -	__builtin_constant_p(n) ? (		\
+> -		(n == 1) ? 1 :			\
+> -		(1UL << (ilog2((n) - 1) + 1))	\
+> -				   ) :		\
+> -	__roundup_pow_of_two(n)			\
+> - )
+> +#define roundup_pow_of_two(n)			  \
+> +(						  \
+> +	(__builtin_constant_p(n) && ((n) == 1)) ? \
+> +	1 : (1ULL << (ilog2((n) - 1) + 1))        \
+> +)
 
-@@ -179,3 +91,87 @@
- 			     &pinctrl_tcb1_tiob0>;
- 	};
- };
-+
-+&tcb0 {
-+	timer@0 {
-+		compatible = "atmel,tcb-timer";
-+		reg = <0>, <1>;
-+	};
-+
-+	timer@2 {
-+		compatible = "atmel,tcb-timer";
-+		reg = <2>;
-+	};
-+};
-+
-+&ebi {
-+	status = "okay";
-+};
-+
-+&nand_controller {
-+	status = "okay";
-+	pinctrl-0 = <&pinctrl_nand_cs &pinctrl_nand_rb>;
-+	pinctrl-names = "default";
-+
-+	nand@3 {
-+		reg = <0x3 0x0 0x800000>;
-+		rb-gpios = <&pioC 13 GPIO_ACTIVE_HIGH>;
-+		cs-gpios = <&pioC 14 GPIO_ACTIVE_HIGH>;
-+		nand-bus-width = <8>;
-+		nand-ecc-mode = "soft";
-+		nand-on-flash-bbt;
-+		label = "atmel_nand";
-+
-+		partitions {
-+			compatible = "fixed-partitions";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			bootstrap@0 {
-+				label = "bootstrap";
-+				reg = <0x0 0x20000>;
-+			};
-+
-+			ubi@20000 {
-+				label = "ubi";
-+				reg = <0x20000 0x7fe0000>;
-+			};
-+		};
-+	};
-+};
-+
-+&macb0 {
-+	phy-mode = "mii";
-+	pinctrl-0 = <&pinctrl_macb_rmii
-+		     &pinctrl_macb_rmii_mii_alt>;
-+	status = "okay";
-+};
-+
-+&usart3 {
-+	status = "okay";
-+};
-+
-+&dbgu {
-+	status = "okay";
-+};
-+
-+&watchdog {
-+	timeout-sec = <15>;
-+	atmel,max-heartbeat-sec = <16>;
-+	atmel,min-heartbeat-sec = <0>;
-+	status = "okay";
-+};
-+
-+&usb0 {
-+	num-ports = <1>;
-+	status = "okay";
-+};
-+
-+&i2c_gpio0 {
-+	status = "okay";
-+
-+	rtc: pcf8563@51 {
-+		compatible = "nxp,pcf8563";
-+		reg = <0x51>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/at91sam9260.dtsi b/arch/arm/boot/dts/at91sam9260.dtsi
-index dee9c0c8a096..c5c05b723976 100644
---- a/arch/arm/boot/dts/at91sam9260.dtsi
-+++ b/arch/arm/boot/dts/at91sam9260.dtsi
-@@ -738,7 +738,7 @@
- 				status = "disabled";
- 			};
+Should the resulting type of this expression always be a ULL, even
+when n==1, i.e., should it be this?
 
--			watchdog@fffffd40 {
-+			watchdog: watchdog@fffffd40 {
- 				compatible = "atmel,at91sam9260-wdt";
- 				reg = <0xfffffd40 0x10>;
- 				interrupts = <1 IRQ_TYPE_LEVEL_HIGH 7>;
-@@ -793,7 +793,7 @@
- 		};
- 	};
+  1ULL : (1ULL << (ilog2((n) - 1) + 1))        \
 
--	i2c-gpio-0 {
-+	i2c_gpio0: i2c-gpio-0 {
- 		compatible = "i2c-gpio";
- 		gpios = <&pioA 23 GPIO_ACTIVE_HIGH /* sda */
- 			 &pioA 24 GPIO_ACTIVE_HIGH /* scl */
---
-2.24.0
+Or maybe there's no case where that makes a difference?
 
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
