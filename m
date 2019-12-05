@@ -2,74 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86226113D3F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 09:44:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5202A113D57
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 09:51:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r3cCf8nJRIegmnDdf7HggGhEVW51mqoJgJXi1jEnIMY=; b=tuEnKu4SL2Luns
-	sdQEXMyt74g7NVy0bB+WKkIQ8Wn320QJk0tBPuVsNqFHZgmeHx4BdUbsghPO2q1rb22rCf5bLd/pL
-	YKQ9yvh6j17CiZhBEkkechyMmI8D+Qb30Ck69SnO1tIysg2RtaMYgCEm0xxWhcf8oWxU3zwYYOlF5
-	cu4PndBBlZ8/ApzBq1I/UTpJI9VtYawF38VyCm/O+X2JZUpmYaaYtmdht0vpyAoinWlZaPNFeh5M2
-	pvsnnkdVIYA1POFxhSRmL/MhMSDc7b2Hi0AsahfFmVTepeTM5ipkYsXKvV3l6jk61kdohAQmkuFps
-	4fwPCbjz8x8kNxgb3Nlg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bStADdmBzfRSujUbKEkdiITNpi5Gk3lwilcze/aDDXg=; b=a4W4rXQ4G/5xDp
+	KnwAUXkfjV7enA6uC/HU/GdlSWQC8AXcynYuAgBhayehR7ZAwFRr5fS254H12Tcz3abxrsU67X2j6
+	G7IK0S09nfEbMfIik48658re5qWbGm158H7Tl0O/YhF6v8gTmisH1X1HKP7XzrwsvpI1hT6wfHerQ
+	t74Hdywxzof/WB5oTRZt0RADKhG0PmznrePOlaMva7PEzOc6MQTXMtSNX2Bx3Cdb7aADxNpS6ic+o
+	0EXi0O/JjPn2Qs1vlMDriWkfYZ+NqKeuKqviGzWSsgh99XGcMUeou9PRshOjqCGBpvwV3jfRmjR9z
+	v7h/v3BXyRA8P9tNFPhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icmkd-0004LP-IJ; Thu, 05 Dec 2019 08:44:43 +0000
-Received: from mail-io1-xd34.google.com ([2607:f8b0:4864:20::d34])
+	id 1icmqn-0007wx-O3; Thu, 05 Dec 2019 08:51:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icmkO-0004JW-UA
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 08:44:30 +0000
-Received: by mail-io1-xd34.google.com with SMTP id z193so2786501iof.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Dec 2019 00:44:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wt9G2vozOpMT2hGMgKE0ip5uoYB13lnK1YvlPurVBq4=;
- b=mx51vNNmXng2Ai4iTAblfI1F6ComWE5BNDOYZ4xrxfULaKGleW01zww0J9E6sEvEGm
- lfLcgIvUw/0nKHL3PF9n6k428lWT/lZXzBTmVRVLyRjWQMqUnL/4r42HLnAkItilGkYS
- rEOKRmjE51Iy/fCKvADi2jVYm4ok8Pi5z2RxI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=wt9G2vozOpMT2hGMgKE0ip5uoYB13lnK1YvlPurVBq4=;
- b=SGumaSBW4Q7dYQA+G4YO4DhzbvMmwiQXmjR7KhO8DMydOdu+rlxfNfGlx+Ii5V4O8F
- J+GwzsYkjvzPb/wFzaWU+Xzzxa25qf8OETMV7S90uRkzg70LoaViRY/mdsiFulTPZrkq
- IflYz/QtHkk42TYOwHy25a3kbgZvqCo9L5yLCXT/JyYsqz7DCHOp0lUEBvuG/eVYuhDF
- zfMfywe0+UkIac6qJgtKB/APG21+0mlEvTrZbDeHATQrdWkMAh+u5r9zIYUuZvT+6b8C
- nztcrfSRPXmkPYI97HQiySde5YgHZFSZCFzpoF+mp8lM5ssbls5g2JN/oSixyF1iUdTS
- PUDg==
-X-Gm-Message-State: APjAAAU/GCuLQsvYGfJ/mDJs5W0Yl5P92ViXzGpp+Et8PBwa3KwIKneY
- AKw+eFnFjScVFTcLEiNiAIzLc6/nRIlxJk5BIZ0udg==
-X-Google-Smtp-Source: APXvYqzsTUeVlvYNSc46o8MgjJIitMPOpzSQhh53SIxsiMDq5akjwRzVyhJ8uX4NGcPMJOsXZfEjVH38FLKYx8LYJGo=
-X-Received: by 2002:a5d:8cd6:: with SMTP id k22mr5264840iot.283.1575535467112; 
- Thu, 05 Dec 2019 00:44:27 -0800 (PST)
+ id 1icmqg-0007wH-UG
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 08:51:00 +0000
+Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4DB4F205ED;
+ Thu,  5 Dec 2019 08:50:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575535858;
+ bh=jv3bVtccHNR/eO6WUrlGuplkynPeqmKgBox/+jgglmY=;
+ h=From:To:Cc:Subject:Date:From;
+ b=zJ2Pgng4JVDyPDNCnaCPVIuU4jWEK7fe+PHC7tvpnKoUvx93g75P4sFbdREl/Zw8p
+ /bM6Ao3pHaM1MNS83wq5HStQHqVgS9QC7HkwRQM/Q82q0WsFYYTRjWadNWKsj/FWWK
+ 2sWWQ1VmT1c9uzt3wrafhsOLLDYXqPNnwbzhpNkI=
+Received: by wens.tw (Postfix, from userid 1000)
+ id C09F55FA9F; Thu,  5 Dec 2019 16:50:54 +0800 (CST)
+From: Chen-Yu Tsai <wens@kernel.org>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Alessandro Zummo <a.zummo@towertech.it>, Maxime Ripard <mripard@kernel.org>
+Subject: [PATCH] rtc: sun6i: Add support for RTC clocks on R40
+Date: Thu,  5 Dec 2019 16:50:54 +0800
+Message-Id: <20191205085054.6049-1-wens@kernel.org>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-References: <1574817475-22378-2-git-send-email-yongqiang.niu@mediatek.com>
- <CAJMQK-iDnOWCYmxcREGschD=sDfU6yKpUu+koP3YDeO3MPCdhQ@mail.gmail.com>
- <1575529976.9400.4.camel@mhfsdcap03>
-In-Reply-To: <1575529976.9400.4.camel@mhfsdcap03>
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Thu, 5 Dec 2019 16:44:01 +0800
-Message-ID: <CAJMQK-jGTAm7YS3ov3ok0SkrH7dWEL4umC21O6RSchrfDs5omw@mail.gmail.com>
-Subject: Re: [v1,1/2] drm/mediatek: Fixup external display black screen issue
-To: Yongqiang Niu <yongqiang.niu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_004428_997675_105FC350 
-X-CRM114-Status: UNSURE (   7.53  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191205_005058_995534_C1A77455 
+X-CRM114-Status: GOOD (  16.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d34 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,30 +76,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
- lkml <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
- CK Hu <ck.hu@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-rtc@vger.kernel.org, stable@vger.kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 5, 2019 at 3:13 PM Yongqiang Niu <yongqiang.niu@mediatek.com> wrote:
->
-> please double confirm is this dump stack log is ruining on MT8173 real
-> IC or not.
-> if yes, that may caused ovl hang when disable layer not in blanking,
-> then cause vblank time out.
-> i will disable overlay with cmdq in next version.
->
-It is running on MT8173 acer chromebook. Error only happens when
-turning off display.
->
+From: Chen-Yu Tsai <wens@csie.org>
+
+When support for the R40 in the rtc-sun6i driver was split out for a
+separate compatible string, only the RTC half was covered, and not the
+clock half. Unfortunately this results in the whole driver not working,
+as the RTC half expects the clock half to have been initialized.
+
+Add support for the clock part as well. The clock part is like the H3,
+but does not need to export the internal oscillator, nor does it have
+a gateable LOSC external output.
+
+This fixes issues with WiFi and Bluetooth not working on the BPI M2U.
+
+Fixes: d6624cc75021 ("rtc: sun6i: Add R40 compatible")
+Cc: <stable@vger.kernel.org> # 5.3.x
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+---
+
+Please merge this for fixes.
+
+---
+ drivers/rtc/rtc-sun6i.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/drivers/rtc/rtc-sun6i.c b/drivers/rtc/rtc-sun6i.c
+index 5e2bd9f1d01e..fc32be687606 100644
+--- a/drivers/rtc/rtc-sun6i.c
++++ b/drivers/rtc/rtc-sun6i.c
+@@ -380,6 +380,22 @@ static void __init sun50i_h6_rtc_clk_init(struct device_node *node)
+ CLK_OF_DECLARE_DRIVER(sun50i_h6_rtc_clk, "allwinner,sun50i-h6-rtc",
+ 		      sun50i_h6_rtc_clk_init);
+ 
++/*
++ * The R40 user manual is self-conflicting on whether the prescaler is
++ * fixed or configurable. The clock diagram shows it as fixed, but there
++ * is also a configurable divider in the RTC block.
++ */
++static const struct sun6i_rtc_clk_data sun8i_r40_rtc_data = {
++	.rc_osc_rate = 16000000,
++	.fixed_prescaler = 512,
++};
++static void __init sun8i_r40_rtc_clk_init(struct device_node *node)
++{
++	sun6i_rtc_clk_init(node, &sun8i_r40_rtc_data);
++}
++CLK_OF_DECLARE_DRIVER(sun8i_r40_rtc_clk, "allwinner,sun8i-r40-rtc",
++		      sun8i_r40_rtc_clk_init);
++
+ static const struct sun6i_rtc_clk_data sun8i_v3_rtc_data = {
+ 	.rc_osc_rate = 32000,
+ 	.has_out_clk = 1,
+-- 
+2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
