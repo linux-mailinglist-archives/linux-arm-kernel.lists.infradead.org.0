@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 958851139CB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 03:20:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9502C1139CC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Dec 2019 03:20:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qUBY7AXgbx+Jn2QhnCeTY4+tFiiK3hpSTF0Fhm2ase0=; b=DSuXeI2qwmKbTI
-	7iVmLsTI4yiAqHj+Ua+ep/ip/hdeladwtAPJg4CCaPS9U9Ai2tMjkvdfhmSWtcowb/Y4NdxBzsfi1
-	dMLghY8XADcmN1Mjkmh8/QyMmPHhoUJZsm4wKlV/ccpUUhjXxd8hx7/A24ubiZS2ARmEfnpMygy+O
-	sy5Fee14p/ZvQehcOEerPEs1bsb/kgRhfE814vOR6tgWFmHkJOVMD1cBXUC3wL7E+eOCCPGrakCSy
-	BUHFGy1E9bV3VxdF4E78HRKnI9CqNMWbGMYGoC6dXbrenh8I5Bms+VhvBW9Fpm+g9NP5ZFLXmLg4y
-	89ZkO3l6HjBwdImGDGpw==;
+	List-Owner; bh=doUHWvAOY1cnScFw5BMv1b6c9cXHiXI8iPC2VHSuPKQ=; b=atv0KZTEfJUaSX
+	M0xGofnfwikjmcvxvLgQk8CKuwDKBrfLGQPZ6HZg+SKcfNJp635sxjbCciQvjPPlHgd1kGIpsEexo
+	1fntZWxXBaWAfc6JHrYdtFNabkG8iOEqjuPtB3SB+9m9MHuwS9h79Cfw9CLiSkDbhgzCzrM77fcAI
+	k0vdYI4LpU+WGkSTQIFqQd7Sm7Og2iL2Vb8rFjhyz+TdqIsRFIuTfhKbYc9u/5uCes/ZRNRsHbVbF
+	J94hfbo+Xf3fmQxa4yBGdLwCA3yrkpa+eXORcnQYnyFW9ttNCFmRt6p1lm9dUvshzoBYgzF5eDXRD
+	xxiYCMVYdkNEeFxobqIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icgkk-0008Iz-99; Thu, 05 Dec 2019 02:20:26 +0000
+	id 1icgl2-0001P2-03; Thu, 05 Dec 2019 02:20:44 +0000
 Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icgk4-000819-PY
+ id 1icgk6-00081h-2B
  for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 02:19:47 +0000
-Received: by mail-yb1-xb44.google.com with SMTP id v15so850538ybp.13
+Received: by mail-yb1-xb44.google.com with SMTP id v2so882329ybo.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Dec 2019 18:19:44 -0800 (PST)
+ Wed, 04 Dec 2019 18:19:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ihtlFABPBnoy2P/0nme6IxjB8k8abDvHtlVFp7u9UbU=;
- b=BDAh3g1xK+Dp/INnYnBHccAOCjdoDmNH2LUb6rnU1ddHgXY/FfDQcOHo+IZMytIrYY
- Iz707zpP3MFrvY9oUzNC+U6u+SRRU1mCidaJrbJe3Ws2wFreNL0ACLouRbtcBZSXcjiU
- DZgC48HC0ffaqLNfulk58wxYNEowiaTAC1AEH3be2v/H9BV5JuX7UUH9J+MGPwJLpfaK
- UvhHKENBybEbxXkNbaQeq1CTOavGJRIQTAZQnzWSPChQYgmRVhHQsEA7rXn17fHz5p5K
- IOC1Xh39Vo4PCMSjfP9JC/Q5f1bznBFhwTGOCjCKveo3D74IFP+6Sr5SQZtU37emCg35
- iyLg==
+ bh=Yd2Q7YPR11r5oinbUH01VXPynULLPCtlISudYlOMZyU=;
+ b=dZ7oQT4U2H+qzIRBhZmeTPi8Mt3dIMzOm7Hp5/V3r8x/h/EIO00FBZMSX3PlqoQSrv
+ Ua9Xjpp1MH/3vnT9HJSleKk0nsEdNYw2lowXV421mkLCgS39iX5Jzm22PS7aaHUprt/i
+ X6H+kHwAhaTA8H7ejrzXE2wLJsx8aP5vQtGEUbPBjBYwgdogL9oPNCFncN9gm80hAq3X
+ iHn8wiooFWAwTk8zF2gWozDTciPwZFgRBM5KS1I7eZo015WAKeazOlT8dqNq+qSFplj7
+ R13YpWnX6+BkhEdMFf/dgNMiwI5hD+QRrL2o2GqR2Hw5QuNk1eUIKtDuLC5ZmAAGTrDC
+ qIYA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ihtlFABPBnoy2P/0nme6IxjB8k8abDvHtlVFp7u9UbU=;
- b=p+frDuqDtnJ32g1y1vIG0mhMXzF5839VAryRC01cSB9gk3v5nv6Xsy4eZRyHCg8ysY
- 6zWtRC+hYqZGQpUU50i7sKN/KoAvfULpI/QdXTWXNfhZRJp83RqlGJM/Y+sVO4Z0QxG5
- 2ysBaYq85vw51rZy+FrQ5rja9Hu6tJrSpBvy5rZKzfeRNwl/izu3EqgajVGQmV/EnMZN
- QV3q6+fjWSqOmMHSliWF6JgIgajj8wiL4eHd9+IF5ZUOQqQlIvJ9rGWabA0d06v0JXjS
- tD4+EQbFT2iUJEcrwtQxw/3RDL5USsZ8tlKOr4kTm8f+q1q05Kw8iJrMNmMMz6bJQHB8
- pz6Q==
-X-Gm-Message-State: APjAAAXDtG1SIcbTOgDt/ZMSKLX0yQN810Y60EpF9ycIsw1FvWlKnWum
- f9lSC9XHVjQzbB7GG65Li+9e/SRO
-X-Google-Smtp-Source: APXvYqxF86DnJ8ZxbtvUU5bmlYrvbRlVOwxtkpTsyn3N9R3JEX3DO5SwegbiASSWbFKP3wcWDE/MGA==
-X-Received: by 2002:a25:5788:: with SMTP id l130mr4227810ybb.334.1575512382963; 
- Wed, 04 Dec 2019 18:19:42 -0800 (PST)
+ bh=Yd2Q7YPR11r5oinbUH01VXPynULLPCtlISudYlOMZyU=;
+ b=SveKzNpcT3oSPdWOD+lDwdbq7tB3APvhym/GiDL7LSbHGExufZWwLUMRMAJilL66St
+ yczi6Xt7Aw4SN4LmPyXghLAGP3nagderUoy+yWOpLfZcRVZjaJogfAtSNt/IhXtB5t7V
+ n9MXqRju+qjUioubeLd+hPrxXkoemAxKxZEqXY+NSFUI9YI4yRDkRGKTfTfvmYlf4Ki0
+ L2HfPvhprrnBQeC1r+pmmsOEwa8SketUgIy+eY7gqiMkKg8LKI4usqRs5XbH0+0ONDur
+ m4oCp+c5jHNJ6fxy0XRo0hP/XXQ31lheyjHZwzBTBoc3fSXWOzIXi9hONFZOCDdETUZI
+ tjKg==
+X-Gm-Message-State: APjAAAVBksA5HPUGUuekSDHxe9wZLI3fZcdby7xy8FO/tuTb1E6q4bsI
+ G5kjtdF4l6UP0ZCPnVXF0id9K12G
+X-Google-Smtp-Source: APXvYqyVdj3RzhMGiTatSwC3Khz8b2JenHZUs6hXCp8QeiH6aGTz3/PIkHDqKJsFHIjOWWrugZ0pgw==
+X-Received: by 2002:a25:d143:: with SMTP id i64mr4691585ybg.415.1575512384839; 
+ Wed, 04 Dec 2019 18:19:44 -0800 (PST)
 Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
  [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id l6sm4188449ywa.39.2019.12.04.18.19.41
+ by smtp.gmail.com with ESMTPSA id l6sm4188449ywa.39.2019.12.04.18.19.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Dec 2019 18:19:42 -0800 (PST)
+ Wed, 04 Dec 2019 18:19:44 -0800 (PST)
 From: Adam Ford <aford173@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/7] soc: imx: gpcv2: Rename imx8mq-power.h to imx8m-power.h
-Date: Wed,  4 Dec 2019 20:19:17 -0600
-Message-Id: <20191205021924.25188-2-aford173@gmail.com>
+Subject: [PATCH 2/7] soc: imx: gpcv2: Update imx8m-power.h to include iMX8M
+ Mini
+Date: Wed,  4 Dec 2019 20:19:18 -0600
+Message-Id: <20191205021924.25188-3-aford173@gmail.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191205021924.25188-1-aford173@gmail.com>
 References: <20191205021924.25188-1-aford173@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_181944_829264_3F6A09F1 
-X-CRM114-Status: GOOD (  13.39  )
+X-CRM114-CacheID: sfid-20191204_181946_101760_F3FAB247 
+X-CRM114-Status: GOOD (  10.36  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -112,48 +113,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation to add support for i.MX8M Mini, this renames
-the existing file to be more generic, so it doesn't become
-necessary to include multiple files to accomplish the same
-task in the future.
+In preparation for i.MX8M Mini support in the GPC driver, the
+include file used by both the device tree and the source needs to
+have the appropriate references for it.
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mq.dtsi                   | 2 +-
- drivers/soc/imx/gpcv2.c                                     | 2 +-
- include/dt-bindings/power/{imx8mq-power.h => imx8m-power.h} | 0
- 3 files changed, 2 insertions(+), 2 deletions(-)
+ include/dt-bindings/power/imx8m-power.h | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index 55a3d1c4bdf0..f73045539fb1 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -5,7 +5,7 @@
-  */
+diff --git a/include/dt-bindings/power/imx8m-power.h b/include/dt-bindings/power/imx8m-power.h
+index 8a513bd9166e..0054bba744b8 100644
+--- a/include/dt-bindings/power/imx8m-power.h
++++ b/include/dt-bindings/power/imx8m-power.h
+@@ -18,4 +18,18 @@
+ #define IMX8M_POWER_DOMAIN_MIPI_CSI2	9
+ #define IMX8M_POWER_DOMAIN_PCIE2	10
  
- #include <dt-bindings/clock/imx8mq-clock.h>
--#include <dt-bindings/power/imx8mq-power.h>
-+#include <dt-bindings/power/imx8m-power.h>
- #include <dt-bindings/reset/imx8mq-reset.h>
- #include <dt-bindings/gpio/gpio.h>
- #include "dt-bindings/input/input.h"
-diff --git a/drivers/soc/imx/gpcv2.c b/drivers/soc/imx/gpcv2.c
-index b0dffb06c05d..250f740d2314 100644
---- a/drivers/soc/imx/gpcv2.c
-+++ b/drivers/soc/imx/gpcv2.c
-@@ -15,7 +15,7 @@
- #include <linux/regmap.h>
- #include <linux/regulator/consumer.h>
- #include <dt-bindings/power/imx7-power.h>
--#include <dt-bindings/power/imx8mq-power.h>
-+#include <dt-bindings/power/imx8m-power.h>
- 
- #define GPC_LPCR_A_CORE_BSC			0x000
- 
-diff --git a/include/dt-bindings/power/imx8mq-power.h b/include/dt-bindings/power/imx8m-power.h
-similarity index 100%
-rename from include/dt-bindings/power/imx8mq-power.h
-rename to include/dt-bindings/power/imx8m-power.h
++#define IMX8MM_POWER_DOMAIN_MIPI	0
++#define IMX8MM_POWER_DOMAIN_PCIE	1
++#define IMX8MM_POWER_DOMAIN_USB_OTG1	2
++#define IMX8MM_POWER_DOMAIN_USB_OTG2	3
++#define IMX8MM_POWER_DOMAIN_DDR1	4
++#define IMX8MM_POWER_DOMAIN_GPU2D	5
++#define IMX8MM_POWER_DOMAIN_GPU	6
++#define IMX8MM_POWER_DOMAIN_VPU	7
++#define IMX8MM_POWER_DOMAIN_GPU3D	8
++#define IMX8MM_POWER_DOMAIN_DISP	9
++#define IMX8MM_POWER_VPU_G1		10
++#define IMX8MM_POWER_VPU_G2		11
++#define IMX8MM_POWER_VPU_H1		12
++
+ #endif
 -- 
 2.20.1
 
