@@ -2,133 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A802114BBF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 05:49:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DDB9114BD3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 06:02:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:To:From:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4ljQPVneopl48OQrA0EpLkcxfImk/2QV3+829hIdUZM=; b=nX0gjjbQDunWjE
-	ERpcb8b+wR6xZQUNdbyN3eqxkQ1cSeB6To2lgNy0/UfLIq0l8F260gVONc0llPsQSNVvQtMxDNgyZ
-	LytdFGUjcWv9Wyvf1mC649a/AvTsMYo8sOT5yWz37Y2QrpMZGshi+i89erXmqhefJe4HTgpuMqKE9
-	qXxQ3gWD+7SzLrUjPFo2fYfQB5Lp7Uacd/PLVTcj1Dcq0DGqoSbkQKC9pBzSJPZOFjin7lBJL8TD6
-	rBs3LRuUsB8UfsM5Jg/PSHaJ1vnppdP/DpWhA3wKd6u16QxYTKjjZLDpOqmlsrqZW4KoOmxslBDUp
-	JnzbfsvNzxjIsPCA4h0Q==;
+	List-Owner; bh=Yv+gnW3Y5VehkvIO1X+TgqmOEjvxZfGmjHux8/sf69c=; b=SgYM8zhNOgSWoW
+	cwKpOW7uiE7xY/+SXxXIm8F9ea7VaQi+Xfg9WnOJGIs4pd1AxtPTL+iR7p1Wbpha5eRS/GKq5LkB9
+	VBa/TnfltzEV4LylYOkx5VUruyNuy3V+muh62KgDafwGaPJ4Kwg7V0U82W+ZM3hxoE7fPxBFDR3Gq
+	33+JnCBcB+Em8J5SEQ/hXQ+dwdtXpZHRSVvY1+G/hlZ+a5yOmg4BtbskQp4FNXxfEPntfwL1rl31H
+	p/GAiVwAfDPki2TBH3a/EUtwz1+KGIOORJjDjg/eTznSKgL9durs5T8uQj812BelfWm2n2GHfy0db
+	3L9uo5UP1IgkpxBOrz/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1id5YE-0008LG-Lk; Fri, 06 Dec 2019 04:49:10 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1id5lF-0004Hw-Vn; Fri, 06 Dec 2019 05:02:37 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1id5Y6-0008Km-Ch
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 04:49:04 +0000
-Received: from epcas1p1.samsung.com (unknown [182.195.41.45])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20191206044857epoutp04fa56298e87b91f5fbda05e37c64ae3d3~druOTkc-i2911329113epoutp04f
+ id 1id5l6-0004HX-4N
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 05:02:29 +0000
+Received: by mail-pf1-x442.google.com with SMTP id y14so2697278pfm.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri,  6 Dec 2019 04:48:57 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20191206044857epoutp04fa56298e87b91f5fbda05e37c64ae3d3~druOTkc-i2911329113epoutp04f
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1575607737;
- bh=98EpzWRqTaw820CpOipjqLPhwdJjteNTaPAwmorOCQg=;
- h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=Mzh/QWXOJVKeZK3Zo2EQ6fsb9UIR2o58kMDYH3ppMun1BNmumC3KJAYwW8mlIJ9Aw
- 6RtvCz3v3GYOIof4sR7anDFzjreyQVkqBs5YntyTti7EchZlJmYDBLCImU7RcqvurP
- E+aiTTsoAlLR68+bMmJemsunaZWo2F03hqJUpQOs=
-Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
- epcas1p3.samsung.com (KnoxPortal) with ESMTP id
- 20191206044856epcas1p33344c60914a2bad71e11907e27087873~druN6S5oD1335313353epcas1p3D;
- Fri,  6 Dec 2019 04:48:56 +0000 (GMT)
-Received: from epsmges1p4.samsung.com (unknown [182.195.40.152]) by
- epsnrtp4.localdomain (Postfix) with ESMTP id 47Tg8l4bClzMqYkg; Fri,  6 Dec
- 2019 04:48:55 +0000 (GMT)
-Received: from epcas1p2.samsung.com ( [182.195.41.46]) by
- epsmges1p4.samsung.com (Symantec Messaging Gateway) with SMTP id
- 66.5D.48019.CADD9ED5; Fri,  6 Dec 2019 13:48:44 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p3.samsung.com (KnoxPortal) with ESMTPA id
- 20191206044844epcas1p355dd1e712879d6bd5a777cbb1f9cb55d~druCd4mpy1335313353epcas1p3k;
- Fri,  6 Dec 2019 04:48:44 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20191206044844epsmtrp1bcc63a8d5166779883bfe152a42b1deb~druCczyFj2461424614epsmtrp1Q;
- Fri,  6 Dec 2019 04:48:44 +0000 (GMT)
-X-AuditID: b6c32a38-257ff7000001bb93-db-5de9ddaceb0b
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- ED.66.10238.CADD9ED5; Fri,  6 Dec 2019 13:48:44 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191206044844epsmtip19d31e4afa69789fc7be1efa4da91c958~druCLLM5X1202412024epsmtip1_;
- Fri,  6 Dec 2019 04:48:44 +0000 (GMT)
-Subject: Re: [PATCH v2 0/2] PM / devfreq: Add dev_pm_qos support
-From: Chanwoo Choi <cw00.choi@samsung.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>, "Rafael J. Wysocki"
- <rafael@kernel.org>, Georgi Djakov <georgi.djakov@linaro.org>
-Organization: Samsung Electronics
-Message-ID: <8065d609-da24-76bc-8425-652d1fd83768@samsung.com>
-Date: Fri, 6 Dec 2019 13:54:57 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:59.0) Gecko/20100101
- Thunderbird/59.0
+ Thu, 05 Dec 2019 21:02:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=U4Lcf6OzjK9nHXk3oZTWYhDlkvR9rdJR4Wl3wSLyGro=;
+ b=qj/d8D9KI6xRGYKEQ+Vq0h9kmJIL1AKFwocLZa2hfCKDv8jrieiUvCEROLIM+d5Juq
+ J5qwPq6ztIP/hCk6mbgE7qgJ3vOVr1tjgR2DI6JOezi5sOAdUM91PBJiPfiYtc0DzZwe
+ 9Rhu8iN9XmZURwZgZDLhqr0HZqaYy2B+GVLykfJFCY/SKtrA2sXv4Gw7TQHcHOYQTcJc
+ P76BW+P856GdQQmfNZZobPLuR54fSkrR5FOtpfVuww/p4+NbaqClak4xN3btVL+gFpi3
+ G7dj2RNCKh9l8jREiLmefxL8zZwA/U11RbJpVIse87u1XdBH7s6Uil8lLHumoTA7Fv6Z
+ sQzw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=U4Lcf6OzjK9nHXk3oZTWYhDlkvR9rdJR4Wl3wSLyGro=;
+ b=E0TKHYuX8luJNY4OWcVUPOOlVZKD8tZQ8o9AFK8wB++H4yAjzLGUmjm24tsDq19+Xj
+ t+I6IZYsnEIUvWXiNbP4AMjhqlzWfJfEl/v+S52OCJGv1eMDAW6iYnN+6ykp39ARdThI
+ HS6LRm6kNuL0wNonI7ppPYp12wAW3sdO33fzlpc7njZCh0RkqYRbqPc7CfRWFEziqhBb
+ yvGoaWnzsJSzgRxJVeCil/eRB0tuImQzGsDDUCEo0UxuMlue0mvxdjIcOkvDivtxScH8
+ G7pmhM7Su7lclpARXv203g4EPURs6Gy7eQnV6V5w/iQFd/3BGRL/cj3sJwnH0k7cBZiO
+ N3Kw==
+X-Gm-Message-State: APjAAAVZD+2Ei9oh0intgd33CC359PG/ZtdyODdZxfS326YSsZUPiyIz
+ a3bvq5MFj0y4RmGoq8YOOsV8Ow==
+X-Google-Smtp-Source: APXvYqyGIC+8KPPt0G9cZQQRc1DGQeGGAWvehzmEKSWMFhU3kqQXiyPa1VFb9dKGGld5b5TznRyh7A==
+X-Received: by 2002:a63:ec0a:: with SMTP id j10mr1487160pgh.178.1575608546072; 
+ Thu, 05 Dec 2019 21:02:26 -0800 (PST)
+Received: from yoga (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id q6sm14341478pfl.140.2019.12.05.21.02.24
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 05 Dec 2019 21:02:25 -0800 (PST)
+Date: Thu, 5 Dec 2019 21:02:22 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Olof Johansson <olof@lixom.net>
+Subject: Re: [GIT PULL] Qualcomm ARM64 Defconfig updates for 5.5
+Message-ID: <20191206050222.GC289401@yoga>
+References: <1573068840-13098-1-git-send-email-agross@kernel.org>
+ <20191106220406.4aoq5suvwww6c3ov@localhost>
 MIME-Version: 1.0
-In-Reply-To: <f98b309f-028a-c78e-8698-765bbd52b204@samsung.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrDJsWRmVeSWpSXmKPExsWy7bCmnu6auy9jDabPNbU4dGwru8X9ea2M
- FtP3bmKzONv0ht1ixd2PrBabHl9jtej6tZLZ4nPvEUaLzxseM1rcblzBZrH63EE2i7lfpjJb
- nDl9idVi41cPBz6P2Q0XWTw2repk87hzbQ+bx+Yl9R4b3+1g8jj4bg+Tx5ar7SwefVtWMXp8
- 3iQXwBmVbZORmpiSWqSQmpecn5KZl26r5B0c7xxvamZgqGtoaWGupJCXmJtqq+TiE6DrlpkD
- dLuSQlliTilQKCCxuFhJ386mKL+0JFUhI7+4xFYptSAlp8CyQK84Mbe4NC9dLzk/18rQwMDI
- FKgwITvjz6ItTAWTlStOPuhkbGDskuti5OSQEDCReP/lHmMXIxeHkMAORokP79YwQzifGCVO
- b9sB5XxjlJjz8AcLTMu7r+uhWvYySix9tJINwnnPKLHu0D/2LkYODmEBB4k/LdIgDWwCWhL7
- X9wAqxERaGKU+Devhx3EYRZ4wyxxuecEK0gVv4CixNUfjxlBbF4BO4lnZ5aCrWMRUJHYv/IY
- mC0qECZxclsLVI2gxMmZT1hAlnEK2Eus2igFEmYW0JN4dmoWC4QtLnHryXwmCFteYvvbOcwQ
- Hxxil3h43RvCdpHobJzEBGELS7w6voUdwpaSeNnfBmVXS6w8eQTsAQmBDkaJLfsvsEIkjCX2
- L50M1awosfP3XEaIZXzAIOphBblNQoBXoqNNCKJEWeLyg7tQ5ZISi9s72SYwKs1C8s0sJC/M
- QvLCLCQvLGBkWcUollpQnJueWmxYYIIc35sYwSlby2IH455zPocYBTgYlXh4Z3x+ESvEmlhW
- XJl7iFGCg1lJhDed72WsEG9KYmVValF+fFFpTmrxIUZTYGhPZJYSTc4H5pO8knhDUyNjY2ML
- E0MzU0NDJXFejh8XY4UE0hNLUrNTUwtSi2D6mDg4pRoYF3BKOaffcJApZlGf3L7ScG1E+RS5
- rZdmr9/du0H734Y/b5dMWKz1Yn3dpL36dponJwddt17NF/3hmdeeHIPv359Oy5W4MJPzWsGa
- ghuJIq47/W7mL1Nw+iHjuPVIdfkyjWWL2IKF/d9+nnmp9tG2+VE6O1xlnm2eVHNlzknPpdOv
- fWw5KrVN20CJpTgj0VCLuag4EQA8OWnG7wMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrKIsWRmVeSWpSXmKPExsWy7bCSnO6auy9jDV4e5rc4dGwru8X9ea2M
- FtP3bmKzONv0ht1ixd2PrBabHl9jtej6tZLZ4nPvEUaLzxseM1rcblzBZrH63EE2i7lfpjJb
- nDl9idVi41cPBz6P2Q0XWTw2repk87hzbQ+bx+Yl9R4b3+1g8jj4bg+Tx5ar7SwefVtWMXp8
- 3iQXwBnFZZOSmpNZllqkb5fAlfFn0RamgsnKFScfdDI2MHbJdTFyckgImEi8+7qesYuRi0NI
- YDejRO/LDUwQCUmJaRePMncxcgDZwhKHDxdD1LxllFj15S0TSFxYwEHiT4s0SDmbgJbE/hc3
- 2EBqRARaGCX6Vq9mBXGYBd4xSyxobmSB6L7LJNH6di4jSAu/gKLE1R+PwWxeATuJZ2eWsoDY
- LAIqEvtXHgOzRQXCJHYuecwEUSMocXLmExaQzZwC9hKrNkqBhJkFdCTaPi9kgrDFJW49mQ9l
- y0tsfzuHeQKj8Cwk3bOQtMxC0jILScsCRpZVjJKpBcW56bnFhgWGeanlesWJucWleel6yfm5
- mxjBkauluYPx8pL4Q4wCHIxKPLwzPr+IFWJNLCuuzD3EKMHBrCTCm873MlaINyWxsiq1KD++
- qDQntfgQozQHi5I479O8Y5FCAumJJanZqakFqUUwWSYOTqkGxj73lToTrpXUNW6LOlrO4S3z
- ZK9PkE0GG/9dpl33P8UVVi9a5349M/T1qoi6nb3SQQc4Zq49pn5h+qEFDvGblq0v2Ca7eGuy
- JJ9ml3Zw882Jes72Sacso0p+tomwt7vOd7EtiJlvGbzmRv8SDl/3kK7D9wOEZU5vWhbw4cOW
- QMY9AY8ibJ/OV2Ipzkg01GIuKk4EAI8krerYAgAA
-X-CMS-MailID: 20191206044844epcas1p355dd1e712879d6bd5a777cbb1f9cb55d
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191205104541epcas1p13a7fb13df8ca6565e10ec558be535152
-References: <cover.1575540224.git.leonard.crestez@nxp.com>
- <CAJZ5v0jEuecAUS_BmxEWVdiMXEKh0ScxH1UW6udONxzqL+c3Vg@mail.gmail.com>
- <CGME20191205104541epcas1p13a7fb13df8ca6565e10ec558be535152@epcas1p1.samsung.com>
- <VI1PR04MB7023F70C008F07482DEFD9D5EE5C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <f98b309f-028a-c78e-8698-765bbd52b204@samsung.com>
+Content-Disposition: inline
+In-Reply-To: <20191106220406.4aoq5suvwww6c3ov@localhost>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_204902_858926_1102C111 
-X-CRM114-Status: GOOD (  22.60  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191205_210228_380594_81222AE5 
+X-CRM114-Status: GOOD (  15.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -136,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -148,112 +99,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, Linux PM <linux-pm@vger.kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- Matthias Kaehlcke <mka@chromium.org>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
+Cc: arm@kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-arm-msm@vger.kernel.org, Andy Gross <agross@kernel.org>,
+ Kevin Hilman <khilman@baylibre.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/6/19 12:27 PM, Chanwoo Choi wrote:
-> On 12/5/19 7:44 PM, Leonard Crestez wrote:
->> On 2019-12-05 12:13 PM, Rafael J. Wysocki wrote:
->>> On Thu, Dec 5, 2019 at 11:05 AM Leonard Crestez <leonard.crestez@nxp.com> wrote:
->>>>
->>>> Add dev_pm_qos notifiers to devfreq core in order to support frequency
->>>> limits via dev_pm_qos_add_request.
->>>>
->>>> Unlike the rest of devfreq the dev_pm_qos frequency is measured in kHz,
->>>> this is consistent with current dev_pm_qos usage for cpufreq and
->>>> allows frequencies above 2Ghz (pm_qos expresses limits as s32).
->>>>
->>>> Like with cpufreq the handling of min_freq/max_freq is moved to the
->>>> dev_pm_qos mechanism. Constraints from userspace are no longer clamped on
->>>> store, instead all values can be written and we only check against OPPs in a
->>>> new devfreq_get_freq_range function. This is consistent with the design of
->>>> dev_pm_qos.
->>>>
->>>> Notifiers from pm_qos are executed under a single global dev_pm_qos_mtx and
->>>> need to take devfreq->lock, this means that calls into dev_pm_qos while holding
->>>> devfreq->lock are not allowed (lockdep warns about possible deadlocks).
->>>>
->>>> Fix this by only adding the qos request and notifiers after devfreq->lock is
->>>> released inside devfreq_add_device. In theory this means sysfs writes
->>>> are possible before the min/max requests are initialized so we guard
->>>> against that explictly. The dev_pm_qos_update_request function would
->>>> otherwise print a big WARN splat.
->>>>
->>>> This series depends on recently accepted series restoring
->>>> DEV_PM_QOS_MIN/MAX_FREQUENCY inside the pm core:
->>>>
->>>>          https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fcover%2F11262633%2F&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7C265c079a936b4c2a9c6608d7796bbc16%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637111375932506745&amp;sdata=uI0if7aNnedxEsMlNQ4sCDOElVBxCp%2B%2BVGaeZC0DaMk%3D&amp;reserved=0
->>>>
->>>> It would be great for this to get into 5.5-rc1
->>>
->>> Not at this point.  The earliest realistic target can be -rc2.
->>>
->>> Does this still depend on anything which has not been included into
->>> the Linus' tree to date?
->>
->> This series depends on DEV_PM_QOS_MIN/MAX_FREQUENCY and that's already 
->> in. It also depends on a few other patches from devfreq-next:
->>
->> https://git.kernel.org/pub/scm/linux/kernel/git/chanwoo/linux.git/commit/?h=devfreq-next&id=1d81785fd070088c952fd9f0d8cb4c47c192122b
->> https://git.kernel.org/pub/scm/linux/kernel/git/chanwoo/linux.git/commit/?h=devfreq-next&id=a2b3d24b75036c44a5509e9ec3a5c14672e98c73
->> https://git.kernel.org/pub/scm/linux/kernel/git/chanwoo/linux.git/commit/?h=devfreq-next&id=0f68bfe7d58dfb49972f93768f9fdd97ce205844
-> 
-> And this patch depends on patch[1] in order to prevent the merge conflict.
-> [1] https://git.kernel.org/pub/scm/linux/kernel/git/chanwoo/linux.git/commit/?h=devfreq-fixes&id=6306ad828b335ba967d2f3c2cbfdb84ebda46cb8
-> 
-> For sending the devfreq pm-qos features for rc2 period,
-> - "devfreq-fixes" branch contains the required patches for devfreq pm-qos feature.
-> - "devfreq-testing-pm-qos" branch contains the devfreq pm-qos feature based on devfreq-fixes branch.
->   To prevent the build error, applied the following four patches picked from linux-pm.git.
-> 	PM / QoS: Restore DEV_PM_QOS_MIN/MAX_FREQUENCYdevfreq-testing-pm-qos
-> 	PM / QoS: Reorder pm_qos/freq_qos/dev_pm_qos structs
-> 	PM / QoS: Initial kunit test
-> 	PM / QoS: Redefine FREQ_QOS_MAX_DEFAULT_VALUE to S32_MAX
-> : https://git.kernel.org/pub/scm/linux/kernel/git/chanwoo/linux.git/log/?h=devfreq-testing
+On Wed 06 Nov 14:04 PST 2019, Olof Johansson wrote:
 
-I'm sorry. I wrote the wrong branch name previously.
-Write the correct url of "devfreq-testing-pm-qos" branch.
-: https://git.kernel.org/pub/scm/linux/kernel/git/chanwoo/linux.git/log/?h=devfreq-testing-pm-qos
-
+> On Wed, Nov 06, 2019 at 01:33:56PM -0600, Andy Gross wrote:
+> > The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
+> > 
+> >   Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
+> > 
+> > are available in the git repository at:
+> > 
+> >   git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-arm64-defconfig-for-5.5
+> > 
+> > for you to fetch changes up to a36612b7469cf76953cf237a2b9a62f6c97730bb:
+> > 
+> >   arm64: defconfig: Enable Qualcomm watchdog driver (2019-10-20 23:04:59 -0700)
+> > 
+> > ----------------------------------------------------------------
+> > Qualcomm ARM64 Based defconfig Updates for v5.5
+> > 
+> > * Enable Qualcomm cpufreq, watchdog, prng, socinfo, SPI, and QSPI controllers
+> > * Enable SN65DSI86 display bridge
+> > * Enable QCA Bluetooth over Uart
+> > * Enable various Qualcomm remoteproc dependencies
+> > 
+> > ----------------------------------------------------------------
+> > Bjorn Andersson (6):
+> >       arm64: defconfig: Enable Qualcomm remoteproc dependencies
+> >       arm64: defconfig: Enable Qualcomm SPI and QSPI controller
+> >       arm64: defconfig: Enable Qualcomm socinfo driver
+> >       arm64: defconfig: Enable Qualcomm CPUfreq HW driver
 > 
-> After released the v5.5-rc1, I'll send the devfreq pm-qos patches.
 > 
->>
->> It doesn't currently apply on torvalds/master
->>
->> There are some interconnect patches which depend on this for proper 
->> functionality but we can figure something out with icc maintainer.
->>
->> * https://patchwork.kernel.org/cover/11244421/
->> * https://patchwork.kernel.org/patch/11153917/
->>
->> I personally always test with linux-next so RC schedules don't affect me 
->> very much.
->>
->> --
->> Regards,
->> Leonard
->>
->>
-> 
+> Hi, this turns on the driver as =y, when the option is tristate. Other
+> cpufreq drivers are also modules. Is this driver truly needed to be
+> a built-in for a generic defconfig?
 > 
 
+I see Linus merged the arm defconfig PR today, but afaict the patches
+from this branch is missing. Please advice on how you would like us to
+proceed.
 
--- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
+Regards,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
