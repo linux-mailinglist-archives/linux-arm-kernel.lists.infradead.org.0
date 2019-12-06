@@ -2,153 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47C68115704
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 19:13:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD06411570B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 19:17:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZWQKVPGjAsabUOGyfDUp5ekgM5FYUTB4u3yJz0NkhnQ=; b=L8h/S1Ru+XtuZ9
-	Ge7ev4F0dsAz40i1zn4oKk29URQfL/eN16S2UXkKiq61prO+HO6j7VfIXlXMGFCARLzfxO+BQmzYm
-	BiQ5gKlpp0rmuuQzgkYBUpuihQQEfLXUm7sxKiVGQmUDpaiy4JVabql1Mz06JZeP9PZ3ZaMUhxOxA
-	Du6YT7y1bfNKWdwrqsa/8yQWV47rIoOKQkCH1ru+DDZvK8HwpJvbjXI3J65H1abEQ7D+vJXjzK7G+
-	V4f3iQ7B28pAnwHcQCpDptVydG2ediWrIsTcGDq28AyD+j4/69xHpYco6BQxjmzh2IPNTCgdzUMNK
-	0B0+cq1YsjCqGLqOUlag==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dXVMzlgTjFeXFifnot01+UaSsfJPWvPo9p4ZBMTNVmQ=; b=MYb8fNXrat+QYJ
+	EQJCH4MyWhgK7aKw2YLgXuXF3hDPscX2OSoc/OiF35RZ1VQNAAEkJaHsx/n2UOqI7LjgSnyVXa0sk
+	lyVAab/kcyTocxvVxBtJGtfUwHKkCvu7TaH1qS95Pab/c5wYAbWzNPT9dRE79eTApuCQCwLbGH3r8
+	NRidZaysQkIA89UtJWkcPDnbMqkURqiNEIxOeGtiXFGhTUpQam4m6EftxxKtAx2/Gs1W8STpjBE3I
+	80O7r1t34YUUf/hDntFm979wRWJcil8+7I9ZF6WRQQgIi5Xp0UBfzIzSe9YZ/tZzwOQ6Cr9pm0i4o
+	YXyFLPBnReUQnRjrQjZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idI6u-0007yG-Jn; Fri, 06 Dec 2019 18:13:48 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idI6m-0007xM-GA; Fri, 06 Dec 2019 18:13:41 +0000
-Received: by mail-pl1-x643.google.com with SMTP id s10so3048316plp.2;
- Fri, 06 Dec 2019 10:13:39 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=0YNz0hVx6IciSdYIB9m5KDRd3CHnbzuVt5KkF78bs1U=;
- b=K4h7VIDRCdFGeJCaaTKhor3t4yKEQXQKW1AHLmXT0/IfgG9+BXNCSkuHbIbE+4DTU6
- yW7Iktcr9JXHdnYTMqS1vOP7pBj/5OYRYffd5Fv9VQ8xfiGDEPvfRaZE5pnF1dvtdf60
- TQt0rwaG12DHy7UYbL3MhLz2s777yJiBTXoyrPy3J9lp/Vn0I0RgNY3lHU8/IB3XKcIa
- gswbVIvNnxugspu6E4lo+seyPGFU7K2gVA3Xipf4kB7MWRJtcFnek/P7MbGc6yx7PNT9
- 78uyDdwEYu8hG6vRJv+SbO4CxQSqN8Hc30SZSnSrmSaUSxn4/zy1q3FgnitKRjIO+zVO
- rHpg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=0YNz0hVx6IciSdYIB9m5KDRd3CHnbzuVt5KkF78bs1U=;
- b=CTtzUiF/qJRcsJQZfDMVQq/6cBpuV+CBELjERq9xDeSVrGVcKJ+a+4tkduVhO2iplv
- Wwzv/VXLwSzA1hEgBOhnKcydWEFMjadyM67uKwKZfnIviUIaDfKaTVEq8BeLYwqT/leJ
- Y/t6qqRRU91M587bUlwGBAu3Il2+gAH4j3EoaNh5019d1Wp7SmH3gmUzrsfxB1bDBkXx
- ndypi5C5WDSF+A5nBy85/tCyxowphTfy2guJh2vHg9lLBvYZD8Xs9d4RuLK6Dx7nNDx4
- pLe1kkuCXvofO4G+XyKHrbBGZz2Vu1nCN2zDfWxm7Y8ZLjM6fcestcYljrUTFHBZ9b5V
- AE+g==
-X-Gm-Message-State: APjAAAVzpaLXmHCkM+xm8s2RE+tTLH1giXpTuH4FRPF1XjrNlOGApo3H
- tvJh140pyMPFo7GF1DgFeps=
-X-Google-Smtp-Source: APXvYqzvz6ITi2aaHHeZ+uFIjexzpbRzAuwUIajkI8kKEC8rfxLBs87Tdh1wHoeIvtFtlzEQBWQ4Kg==
-X-Received: by 2002:a17:902:9a0b:: with SMTP id
- v11mr15892495plp.151.1575656019246; 
- Fri, 06 Dec 2019 10:13:39 -0800 (PST)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id d38sm15365156pgd.59.2019.12.06.10.13.37
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 06 Dec 2019 10:13:38 -0800 (PST)
-Subject: Re: [PATCH] ARM: dts: bcm2711: fix soc's node dma-ranges
-To: Phil Elwell <phil@raspberrypi.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Eric Anholt <eric@anholt.net>, Stefan Wahren <wahrenst@gmx.net>
-References: <20191204125633.27696-1-nsaenzjulienne@suse.de>
- <711470d3-e683-69d4-8f4e-791a76faab29@gmail.com>
- <e72de603-2ad9-5a3b-109e-8ee14bf3293c@raspberrypi.org>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <b778e086-378d-9271-6370-7fd4e60ae250@gmail.com>
-Date: Fri, 6 Dec 2019 10:13:36 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+	id 1idIAD-0001Ad-0W; Fri, 06 Dec 2019 18:17:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1idIA5-00019m-Kh
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 18:17:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BFE2931B;
+ Fri,  6 Dec 2019 10:17:02 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 895B93F52E;
+ Fri,  6 Dec 2019 10:17:01 -0800 (PST)
+Date: Fri, 6 Dec 2019 18:16:56 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Thomas Renninger <trenn@suse.de>
+Subject: Re: [PATCH v5 0/3] sysfs: add sysfs based cpuinfo
+Message-ID: <20191206181655.GA35318@lakrids.cambridge.arm.com>
+References: <20191206162421.15050-1-trenn@suse.de>
+ <20191206165803.GD21671@lakrids.cambridge.arm.com>
+ <2898795.Dnvf4huJ59@skinner.arch.suse.de>
 MIME-Version: 1.0
-In-Reply-To: <e72de603-2ad9-5a3b-109e-8ee14bf3293c@raspberrypi.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <2898795.Dnvf4huJ59@skinner.arch.suse.de>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_101340_563833_8572BC2A 
-X-CRM114-Status: GOOD (  15.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191206_101705_723137_E3396F78 
+X-CRM114-Status: GOOD (  13.44  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -160,50 +65,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mbrugger@suse.com, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, gregkh@linuxfoundation.org, x86@kernel.org,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
+ fschnitzlein@suse.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/6/19 2:16 AM, Phil Elwell wrote:
-> Hi Nicolas,
-> 
-> On 06/12/2019 00:08, Florian Fainelli wrote:
->> On 12/4/19 4:56 AM, Nicolas Saenz Julienne wrote:
->>> Raspberry Pi's firmware has a feature to select how much memory to
->>> reserve for its GPU called 'gpu_mem'. The possible values go from 16MB
->>> to 944MB, with a default of 64MB. This memory resides in the topmost
->>> part of the lower 1GB memory area and grows bigger expanding towards the
->>> begging of memory.
->>>
->>> It turns out that with low 'gpu_mem' values (16MB and 32MB) the size of
->>> the memory available to the system in the lower 1GB area can outgrow the
->>> interconnect's dma-range as its size was selected based on the maximum
->>> system memory available given the default gpu_mem configuration. This
->>> makes that memory slice unavailable for DMA. And may cause nasty kernel
->>> warnings if CMA happens to include it.
->>>
->>> Change soc's dma-ranges to really reflect it's HW limitation, which is
->>> being able to only DMA to the lower 1GB area.
->>>
->>> Fixes: 7dbe8c62ceeb ("ARM: dts: Add minimal Raspberry Pi 4 support")
->>> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->>> ---
->>>
->>> NOTE: I'd appreciate if someone from the RPi foundation commented on
->>> this as it's something that I'll propose to be backported to their tree.
-> 
-> The 0x3c000000 size was a mistake that arose from c0000000 + 3c000000 =
-> fc000000, but that is mixing apples and oranges (actually DMA addresses
-> and host physical addresses). Please correct it as you are proposing.
+On Fri, Dec 06, 2019 at 06:29:39PM +0100, Thomas Renninger wrote:
+> On Friday, December 6, 2019 5:58:03 PM CET Mark Rutland wrote:
+> > On Fri, Dec 06, 2019 at 05:24:18PM +0100, Thomas Renninger wrote:
 
-Do you want to add an Acked-by or Reviewed-by tag to make this statement
-official?
--- 
-Florian
+> > For arm64 we already expose the MIDR and REVIDR register values under
+> > /sys/devices/system/cpu/cpu*/regs/identification, and that's the bulk of
+> > the useful information above
+> 
+> I'd like to come up with an extra CONFIG which parses:
+> 
+> arch/arm64/include/asm/cputype.h:
+> 
+> #define ARM_CPU_PART_AEM_V8             0xD0F
+> #define ARM_CPU_PART_FOUNDATION         0xD00
+> #define ARM_CPU_PART_CORTEX_A57         0xD07
+> #define ARM_CPU_PART_CORTEX_A72         0xD08
+> 
+> and
+> 
+> #define ARM_CPU_IMP_ARM                 0x41
+> #define ARM_CPU_IMP_APM                 0x50
+> #define ARM_CPU_IMP_CAVIUM              0x43
+> #define ARM_CPU_IMP_BRCM                0x42
+> #define ARM_CPU_IMP_QCOM                0x51
+> #define ARM_CPU_IMP_NVIDIA              0x4E
+> 
+> and converts the defines to strings, same as here:
+
+A similar approach for /proc/cpuinfo has been NAK'd repeatedly in the
+past. While some arguments against that don't apply here, I don't think
+that we want to have to maintain an ever-growing list of strings that
+end up being ABI which we cannot manage in a forwards-compatible manner.
+
+When it is necessary to reliably and unambiguously identify a CPU, it'll
+always end up being necessary to look at the MIDR (and possibly REVIDR),
+so that's what applications should always do, and it's what users will
+necessarily have to do when the kernel doesn't have a string for a CPU,
+as is the case for all existing kernels.
+
+I don't think that in-kernel stringification of the MIDR is a good idea,
+and I would suggest not wasting your time on that.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
