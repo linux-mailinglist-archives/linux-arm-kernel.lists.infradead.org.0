@@ -2,79 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4571F115606
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 18:02:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39892115655
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 18:22:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oz/GADC20pMSbQqp0pO6LrKrBkPl/DFfp+iTGX4kJ+Y=; b=o6n6/CqqjEQmxI
-	YPWReDI/8/Ug601Y3JmPDleUw5fqpA3fFYWPSNN++CNO/ka6ReAJDgYfeN8msI5nASldZRWz7d3I3
-	YTbplCJywSh6bwn5+Zi4biT+yIlbRn0pHMJrvFKxAIEfUe7Ml7+x3nM3xBHjD+tA8ymeGXDAz0rHt
-	/75sjlS/PbTStELLAbnulJDlg0adS7fsdyxF1Phbaoyx03V1B+7zn6wjLJAtTafaDfizj2zJtaIPe
-	ulccNVjD0WP1hEa0Okbg01bstDx9+CcxVE19DIYEhont1R56KXmzlsePJFu6UUCD6dzgiZot4SKfT
-	1vunRcddLVOz9cIGrv9A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EmbGN7iUo2Qhdmdjlenlpo8XxHgmLBhGCkY0e9mU4IY=; b=Y3KP3M3UFdDrrg
+	EFI3+E4a92wiOgCXfNPIpWNx5+bHKwJkIZYXUOED1J3UcjZ1lpPe6L7aBOo3pASiwUz3kV6dRHDKS
+	dClmlu8GXnrMgl7P8G596JcHfVcGdVfL/bDhLofa5pFNdemnN4dnf5Pc2yHnDSAgBrN1dK3+Mj5ik
+	U0STpSgPfEp0hfErrBvPM04GYe955lU4hDgUeG5Rjn+OcU2QpCPVogK9tXWnmawGv4FU4OOF1JZHW
+	Mzt+g+hPcl4lPx76Fl2zY6spgQsKFzU+dn5CMyNkK8ozh3YZl3S9dmx56xn6dDsMjt3XDWJn6Sd1y
+	M1raeLOeqEOAYBlQ2KLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idH07-00040I-Lr; Fri, 06 Dec 2019 17:02:43 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1idHIo-0005S4-2q; Fri, 06 Dec 2019 17:22:02 +0000
+Received: from casper.infradead.org ([85.118.1.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idGzy-0003tK-Uc
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 17:02:37 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1idHIf-0005R3-2N
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 06 Dec 2019 17:21:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=ngzQkuCxfzW+KuASLQ3K3cpSgR7pHALvOMZfXSQgRYg=; b=a4HNAe4XUI5L2AIIpdIH6XRLHE
+ 0Bn8plZQzsdIUTsdtpr/WAuJBwiSPJj+vpTG3R/vGjxHby+oq+nCElkEJXIkT1CkzOrBdYXlB7gt9
+ yIxnXMMsHetq4zf5GHud1ETlUOjtdJwFm4ausHJ2VP34CjS2W7BHpXehnkqXy0iA7lMIVBEvnis8s
+ ChvfnOshszb9Exs/gw4dU9jU76blBUvg031D6sDL81jRsKgR1qrTUe8MTiDEcuu/9WW/7oOhKr4Wj
+ 28tVFiGYnjj/HG9GtgH8nGDLDU75Wrcj20oTgMzpnufWS3igYPA/V1YPMxY1LGOm28ZlOvGMPET6r
+ 8H8jFDaw==;
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1idHJ2-00037T-W3
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 17:22:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1575652876;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=ngzQkuCxfzW+KuASLQ3K3cpSgR7pHALvOMZfXSQgRYg=;
+ b=fGHQ7Z8uXBt/SVNChRLb28cQWwtnNuSJUz48Z2P1H+3lK2p3MshO1ejOazyfcI1G+Gr76L
+ RDTmiKSI+fV0HiLrpGeQ9G+iCZUGov2NQhf3cejvpI2QgvKyW2T9UN3GtEi3RWgpnby5ox
+ C2Nrml1MqURtPZJCxTHaoE4OASN+K78=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-37-AVosUFhhP_ul14nnJm9Z9w-1; Fri, 06 Dec 2019 12:21:12 -0500
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5C5BE205F4;
- Fri,  6 Dec 2019 17:02:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575651744;
- bh=dGwcvzm2Gt9n9ImlkiwdUIMKHX2aSowzRz7v4xwqoSI=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=vZAtV7VLNz7r2W+YCLLZINNgqqR4QWnP810+r9a/I9jQbTS9lGAldJiFJfxqAwIzY
- akwTvJqxf6IWPCS47cr3rk6zbJVr9xGG7EXZHjcNLEvmCnl1/OiZ0dUYs8MzzmEY5r
- SNTVekA3MSO1o4LQRseSFtwNGWfnqrNaO3OeWhho=
-Date: Fri, 6 Dec 2019 17:02:19 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
-Subject: Re: [PATCH] iio: at91-sama5d2_adc: fix
- iio_triggered_buffer_{predisable,postenable} positions
-Message-ID: <20191206170219.03923e32@archlinux>
-In-Reply-To: <3a1572b8d3411488da81292d33f7eb12d7ef42be.camel@analog.com>
-References: <20191023082508.17583-1-alexandru.ardelean@analog.com>
- <17cf55869cc418795d0013c0594ed8fc04381d46.camel@analog.com>
- <9df3d999-0ec6-a282-d24b-8f7df5f14f6d@microchip.com>
- <e43bf58f-223c-0b12-2912-6f353d866ec3@microchip.com>
- <74aabb41107ab162660f21e726c88a9dd40ecc5e.camel@analog.com>
- <60ce6ff9-ba06-2522-e9a0-55e6fd2731ec@microchip.com>
- <0075d7fc890b0986f2113664c664ff46931de432.camel@analog.com>
- <3a8ea46b-14d4-30d8-5766-02538cab8394@microchip.com>
- <b01afcee62e82e6965115a8a0ec7246f71488df1.camel@analog.com>
- <20191204084555.7gjyh23oywhruy7g@M43218.corp.atmel.com>
- <3a1572b8d3411488da81292d33f7eb12d7ef42be.camel@analog.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 619E3DB62;
+ Fri,  6 Dec 2019 17:21:09 +0000 (UTC)
+Received: from llong.remote.csb (ovpn-122-189.rdu2.redhat.com [10.10.122.189])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 15AD85D6BB;
+ Fri,  6 Dec 2019 17:21:05 +0000 (UTC)
+Subject: Re: [PATCH v7 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+To: Alex Kogan <alex.kogan@oracle.com>, linux@armlinux.org.uk,
+ peterz@infradead.org, mingo@redhat.com, will.deacon@arm.com, arnd@arndb.de,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
+ hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
+References: <20191125210709.10293-1-alex.kogan@oracle.com>
+ <20191125210709.10293-4-alex.kogan@oracle.com>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <ec048549-c522-27af-d638-789c8465a224@redhat.com>
+Date: Fri, 6 Dec 2019 12:21:05 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
+In-Reply-To: <20191125210709.10293-4-alex.kogan@oracle.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-MC-Unique: AVosUFhhP_ul14nnJm9Z9w-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_090235_038372_FDA93DA3 
-X-CRM114-Status: GOOD (  59.69  )
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+X-CRM114-CacheID: sfid-20191206_172217_198069_32247579 
+X-CRM114-Status: GOOD (  52.77  )
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-2.5 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -87,518 +114,236 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "lars@metafoo.de" <lars@metafoo.de>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "pmeerw@pmeerw.net" <pmeerw@pmeerw.net>, "knaack.h@gmx.de" <knaack.h@gmx.de>,
- "Eugen.Hristev@microchip.com" <Eugen.Hristev@microchip.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: rahul.x.yadav@oracle.com, dave.dice@oracle.com, steven.sistare@oracle.com,
+ daniel.m.jordan@oracle.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 4 Dec 2019 09:06:26 +0000
-"Ardelean, Alexandru" <alexandru.Ardelean@analog.com> wrote:
-
-> On Wed, 2019-12-04 at 09:45 +0100, Ludovic Desroches wrote:
-> > On Tue, Dec 03, 2019 at 01:40:34PM +0000, Ardelean, Alexandru wrote:  
-> > > EXTERNAL EMAIL: Do not click links or open attachments unless you know
-> > > the content is safe
-> > > 
-> > > On Tue, 2019-12-03 at 12:17 +0000, Eugen.Hristev@microchip.com wrote:  
-> > > > On 03.12.2019 14:04, Ardelean, Alexandru wrote:
-> > > >   
-> > > > > On Tue, 2019-12-03 at 09:49 +0000, Eugen.Hristev@microchip.com
-> > > > > wrote:  
-> > > > > > [External]
-> > > > > > 
-> > > > > > 
-> > > > > > 
-> > > > > > On 29.11.2019 09:02, Ardelean, Alexandru wrote:
-> > > > > >   
-> > > > > > > On Thu, 2019-11-28 at 15:19 +0000, Eugen.Hristev@microchip.com
-> > > > > > > wrote:
-> > > > > > > 
-> > > > > > > Hey,
-> > > > > > > 
-> > > > > > > Sorry for the late reply.
-> > > > > > > I'm also juggling a few things.
-> > > > > > >   
-> > > > > > > > On 28.11.2019 10:36, Eugen.Hristev@microchip.com wrote:
-> > > > > > > >   
-> > > > > > > > > On 25.11.2019 17:03, Ardelean, Alexandru wrote:  
-> > > > > > > > > > On Wed, 2019-10-23 at 11:25 +0300, Alexandru Ardelean
-> > > > > > > > > > wrote:  
-> > > > > > > > > > > The iio_triggered_buffer_{predisable,postenable}
-> > > > > > > > > > > functions
-> > > > > > > > > > > attach/detach
-> > > > > > > > > > > poll functions.
-> > > > > > > > > > > 
-> > > > > > > > > > > The iio_triggered_buffer_postenable() should be called
-> > > > > > > > > > > first to
-> > > > > > > > > > > attach
-> > > > > > > > > > > the
-> > > > > > > > > > > poll function, and then the driver can init the data to
-> > > > > > > > > > > be
-> > > > > > > > > > > triggered.
-> > > > > > > > > > > 
-> > > > > > > > > > > Similarly, iio_triggered_buffer_predisable() should be
-> > > > > > > > > > > called
-> > > > > > > > > > > last
-> > > > > > > > > > > to
-> > > > > > > > > > > first
-> > > > > > > > > > > disable the data (to be triggered) and then the poll
-> > > > > > > > > > > function
-> > > > > > > > > > > should be
-> > > > > > > > > > > detached.  
-> > > > > > > > > 
-> > > > > > > > > Hi Alexandru,
-> > > > > > > > > 
-> > > > > > > > > Sorry for this late reply,
-> > > > > > > > > 
-> > > > > > > > > I remember that by adding specific at91_adc code for
-> > > > > > > > > predisable/postenable , I was replacing the existing
-> > > > > > > > > standard
-> > > > > > > > > callback
-> > > > > > > > > with my own, and have my specific at91 code before
-> > > > > > > > > postenable
-> > > > > > > > > and
-> > > > > > > > > then
-> > > > > > > > > calling the subsystem postenable,
-> > > > > > > > > and in similar way, for predisable, first call the
-> > > > > > > > > subsystem
-> > > > > > > > > predisable
-> > > > > > > > > then doing my predisable code (in reverse order as in
-> > > > > > > > > postenable)
-> > > > > > > > > 
-> > > > > > > > > If you say the order should be reversed (basically have the
-> > > > > > > > > pollfunction
-> > > > > > > > > first), how is current code working ?
-> > > > > > > > > Should current code fail if the poll function is not
-> > > > > > > > > attached
-> > > > > > > > > in
-> > > > > > > > > time ?
-> > > > > > > > > Or there is a race between triggered data and the
-> > > > > > > > > attachment of
-> > > > > > > > > the
-> > > > > > > > > pollfunc ?
-> > > > > > > > > 
-> > > > > > > > > I am thinking that attaching the pollfunc later makes it
-> > > > > > > > > work
-> > > > > > > > > because
-> > > > > > > > > the DMA is not started yet. What happens if we have the
-> > > > > > > > > pollfunc
-> > > > > > > > > attached but DMA is not started (basically the trigger is
-> > > > > > > > > not
-> > > > > > > > > started)
-> > > > > > > > > ,
-> > > > > > > > > can this lead to unexpected behavior ? Like the pollfunc
-> > > > > > > > > polling
-> > > > > > > > > but no
-> > > > > > > > > trigger started/no DMA started.  
-> > > > > > > > 
-> > > > > > > > I looked a bit more into the code and in DMA case, using
-> > > > > > > > postenable
-> > > > > > > > first will lead to calling attach pollfunc, which will also
-> > > > > > > > enable
-> > > > > > > > the
-> > > > > > > > trigger, but the DMA is not yet started.
-> > > > > > > > Is this the desired effect ?  
-> > > > > > > 
-> > > > > > > Yes.  
-> > > > > > 
-> > > > > > How is this correct ? We start the trigger but have no buffer to
-> > > > > > carry
-> > > > > > to... what happens with the data ? -> I think we both have an
-> > > > > > answer
-> > > > > > to
-> > > > > > that, as you state below
-> > > > > >   
-> > > > > > > > Normally when using DMA I would say we
-> > > > > > > > would need to enable DMA first to be ready to carry data (and
-> > > > > > > > coherent
-> > > > > > > > area etc.) and then enable the trigger.  
-> > > > > > > 
-> > > > > > > So, there is a change in our tree [from some time ago].
-> > > > > > > See here:
-> > > > > > > https://github.com/analogdevicesinc/linux/commit/eee97d12665fef8cf429a1e5035b23ae969705b8
-> > > > > > > 
-> > > > > > > Particularly, what's interesting is around line:
-> > > > > > > https://github.com/analogdevicesinc/linux/commit/eee97d12665fef8cf429a1e5035b23ae969705b8#diff-0a87744ce945d2c1c89ea19f21fb35bbR722
-> > > > > > > And you may need to expand some stuff to see more of the
-> > > > > > > function-
-> > > > > > > body.
-> > > > > > > And some things may have changed in upstream IIO since that
-> > > > > > > change.
-> > > > > > > 
-> > > > > > > The change is to make the pollfunc attach/detach become part of
-> > > > > > > the
-> > > > > > > IIO
-> > > > > > > framework, because plenty of drivers just call
-> > > > > > > iio_triggered_buffer_postenable() &
-> > > > > > > iio_triggered_buffer_predisable()
-> > > > > > > to
-> > > > > > > manually attach/detach the pollfunc for triggered buffers.  
-> > > > > > 
-> > > > > > Okay, I understand this. at91-sama5d2_adc does not manually
-> > > > > > attach/detach the pollfunc. So why do we need to change anything
-> > > > > > here
-> > > > > > ?
-> > > > > > 
-> > > > > >   
-> > > > > > > That change is from 2015, and since then, some drivers were
-> > > > > > > added
-> > > > > > > that
-> > > > > > > just
-> > > > > > > manually attach/detach the pollfunc [and do nothing more with
-> > > > > > > the
-> > > > > > > postenable/predisable hooks].
-> > > > > > > 
-> > > > > > > I tried to upstream a more complete version of that patch a
-> > > > > > > while
-> > > > > > > ago
-> > > > > > > [u1].
-> > > > > > > https://patchwork.kernel.org/patch/10482167/
-> > > > > > > https://patchwork.kernel.org/patch/10737291/
-> > > > > > > 
-> > > > > > > The conclusion was to first fix the attach/detach pollfunc
-> > > > > > > order in
-> > > > > > > all
-> > > > > > > IIO
-> > > > > > > drivers, so that when patch [u1] is applied, there is no more
-> > > > > > > discussion
-> > > > > > > about the correct order for attach/detach pollfunc.  
-> > > > > > 
-> > > > > > Allright, what is required to be fixed regarding the order, in
-> > > > > > this
-> > > > > > specific case? We enable the DMA, and then we do the normal
-> > > > > > 'postenable'
-> > > > > > that was called anyway if we did not override the 'postenable' in
-> > > > > > the
-> > > > > > ops. Do you want to move this code to 'preenable' and keep
-> > > > > > 'postenable'
-> > > > > > to the standard subsystem one ?
-> > > > > > 
-> > > > > > The same applies to the predisable, we first call the subsystem
-> > > > > > 'predisable' then do the specific at91 stuff. You want to move
-> > > > > > this
-> > > > > > to
-> > > > > > the 'postdisable' ?
-> > > > > > 
-> > > > > > I think reverting the order inside the functions themselves is
-> > > > > > not
-> > > > > > good
-> > > > > > as we replace the order of starting trigger/DMA setup.
-> > > > > > So, coming to your question below...
-> > > > > >   
-> > > > > > > Coming back here [and to your question], my answer is: I don't
-> > > > > > > know
-> > > > > > > if
-> > > > > > > the
-> > > > > > > at91 DMA needs to be enabled/disabled before/after the pollfunc
-> > > > > > > attach/detach.
-> > > > > > > This sounds like specific stuff for at91 [which is fine].
-> > > > > > > 
-> > > > > > > It could be that some other hooks may need to used to enable
-> > > > > > > DMA
-> > > > > > > before/after the attach/detach pollfunc. Maybe
-> > > > > > > preenable()/postdisable() ?
-> > > > > > > 
-> > > > > > > In any case, what I would like [with this discussion], is to
-> > > > > > > resolve a
-> > > > > > > situation where we can get closer to moving the attach/pollfunc
-> > > > > > > code to
-> > > > > > > IIO
-> > > > > > > core. So, if AT91 requires a different ordering, I think you
-> > > > > > > would
-> > > > > > > be
-> > > > > > > more
-> > > > > > > appropriate to tell me, and propose an alternative to this
-> > > > > > > patch.  
-> > > > > > 
-> > > > > > ... yes, this looks more appropriate, to move things to
-> > > > > > 'preenable/postdisable', if you feel like 'postenable/predisable'
-> > > > > > is
-> > > > > > not
-> > > > > > the proper place to put them.
-> > > > > > But the order itself, first enable DMA then trigger, and disable
-> > > > > > in
-> > > > > > reverse order, I do not think there is anything wrong with that?
-> > > > > > Am I
-> > > > > > misunderstanding ?  
-> > > > > 
-> > > > > Should be good.
-> > > > >   
-> > > > > > If Jonathan or Ludovic have a different idea, please let me know.  
-> > > > > 
-> > > > > There is an alternative here [to this].
-> > > > > Maybe using the IIO Buffer DMA[Engine] integration that Lars wrote
-> > > > > [1].
-> > > > > This would avoid calling dmaengine_terminate_sync() and similar
-> > > > > hooks
-> > > > > in
-> > > > > the AT91 driver. That also preserves the correct order (start DMA
-> > > > > first,
-> > > > > then attach pollfunc ; and reverse on disable).
-> > > > > But that is more work; not on the patch itself, but more on the
-> > > > > testing.  
-> > > > 
-> > > > Initially, when I implemented the DMA part for this driver, this was
-> > > > the
-> > > > idea. However the DMA engine was not used at that time by anyone ,
-> > > > and I
-> > > > could not make it work properly. Jonathan advised at that moment to
-> > > > use
-> > > > this current framework.
-> > > >   
-> > > > > [1] Upstreaming more parts for the IIO Buffer DMA[Engine]
-> > > > > integration
-> > > > > is on
-> > > > > my to-do-list as well. I think there are still some patches that we
-> > > > > use,
-> > > > > but are not upstreamed yet.
-> > > > > 
-> > > > > I'll come-up a with a V2 for this with preenable()/postdisable()
-> > > > > alternative here.  
-> > > > 
-> > > > Ok, I will test it .
-> > > > 
-> > > > What I do not understand completely is why it bothers you to have
-> > > > at91
-> > > > specific code in postenable / predisable.
-> > > > The same thing will happen will happen with preenable/postdisable:
-> > > > specific at91 code will be called after subsystem preenable and
-> > > > before
-> > > > subsystem postdisable.  
-> > > 
-> > > Because I am preparing a framework change to IIO core and all IIO
-> > > drivers
-> > > in mainline need to be resolved when that change happens.
-> > > I am not sure if the change will break any driver, but at least we can
-> > > minimalize breakage.
-> > >   
-> > 
-> > Ok re-reading the thread I see what you want to achieve. It should be
-> > better to
-> > have your framework change (code factorization if I have well understood)
-> > in the
-> > patch serie or as an RFC:
-> > - it helps people to understand why you do these changes
-> > - if it's rejected or has to be rework, you have uselessly change the
-> >   drivers and introduce a potential breakage.
-> > 
-> > If it has already been discussed on the mailing list, forget what I am
-> > saying.  
-> 
-> It was discussed [well, somewhat; not a lot of people replied to it
-> initially].
-> 
-> RFC was 
-> https://patchwork.kernel.org/patch/10482167/
-> 
-> Then a follow-up:
-> https://patchwork.kernel.org/patch/10737291/
-> 
-> 
-> I don't mind re-discussing it :)
-
-It was a while back and I'm guessing we are down to the last few 'hard'
-drivers like this one.  Hence probably worth a repost.
-
-The very rough argument is that attaching the pollfunc is really not a driver
-specific thing so should be in the core.  It naturally fits at the point just
-before postenable as it's the real enable (previously we were just
-using the flag setting as the point of enablement).
-
-So hopefully simplifies the model somewhat.
-
-I asked Alex to do the precursor to the reorg separately as there was simply
-too much to discuss in the original patch as it made functional changes
-(such as this one!)
-
-Definitely worth a back reference in the patch descriptions though so
-the history is there.
-
-Jonathan
-
-> 
-> Thanks
-> Alex
-> 
-> > 
-> > Regards
-> > 
-> > Ludovic
-> >   
-> > > > > Thanks
-> > > > > Alex
-> > > > >   
-> > > > > > Also, I can test your patch to see if everything is fine.
-> > > > > > 
-> > > > > > Thanks,
-> > > > > > Eugen
-> > > > > >   
-> > > > > > > Thanks :)
-> > > > > > > Alex
-> > > > > > >   
-> > > > > > > > > > > For this driver, the predisable & postenable hooks are
-> > > > > > > > > > > also
-> > > > > > > > > > > need to
-> > > > > > > > > > > take
-> > > > > > > > > > > into consideration the touchscreen, so the hooks need
-> > > > > > > > > > > to be
-> > > > > > > > > > > put
-> > > > > > > > > > > in
-> > > > > > > > > > > places
-> > > > > > > > > > > that avoid the code for that cares about it.
-> > > > > > > > > > >   
-> > > > > > > > > > 
-> > > > > > > > > > ping here
-> > > > > > > > > >   
-> > > > > > > > > > > Signed-off-by: Alexandru Ardelean <  
-> > > > > > > > > > > alexandru.ardelean@analog.com>  
-> > > > > > > > > > > ---
-> > > > > > > > > > >      drivers/iio/adc/at91-sama5d2_adc.c | 19
-> > > > > > > > > > > ++++++++++--
-> > > > > > > > > > > -------
-> > > > > > > > > > >      1 file changed, 10 insertions(+), 9 deletions(-)
-> > > > > > > > > > > 
-> > > > > > > > > > > diff --git a/drivers/iio/adc/at91-sama5d2_adc.c
-> > > > > > > > > > > b/drivers/iio/adc/at91-
-> > > > > > > > > > > sama5d2_adc.c
-> > > > > > > > > > > index e1850f3d5cf3..ac3e5c4c9840 100644
-> > > > > > > > > > > --- a/drivers/iio/adc/at91-sama5d2_adc.c
-> > > > > > > > > > > +++ b/drivers/iio/adc/at91-sama5d2_adc.c
-> > > > > > > > > > > @@ -889,20 +889,24 @@ static int
-> > > > > > > > > > > at91_adc_buffer_postenable(struct
-> > > > > > > > > > > iio_dev *indio_dev)
-> > > > > > > > > > >           if (!(indio_dev->currentmode &
-> > > > > > > > > > > INDIO_ALL_TRIGGERED_MODES))
-> > > > > > > > > > >                   return -EINVAL;
-> > > > > > > > > > > 
-> > > > > > > > > > > +     ret = iio_triggered_buffer_postenable(indio_dev);
-> > > > > > > > > > > +     if (ret)
-> > > > > > > > > > > +             return ret;
-> > > > > > > > > > > +
-> > > > > > > > > > >           /* we continue with the triggered buffer */
-> > > > > > > > > > >           ret = at91_adc_dma_start(indio_dev);
-> > > > > > > > > > >           if (ret) {
-> > > > > > > > > > >                   dev_err(&indio_dev->dev, "buffer
-> > > > > > > > > > > postenable
-> > > > > > > > > > > failed\n");
-> > > > > > > > > > > +             iio_triggered_buffer_predisable(indio_dev
-> > > > > > > > > > > );
-> > > > > > > > > > >                   return ret;
-> > > > > > > > > > >           }
-> > > > > > > > > > > 
-> > > > > > > > > > > -     return
-> > > > > > > > > > > iio_triggered_buffer_postenable(indio_dev);
-> > > > > > > > > > > +     return 0;
-> > > > > > > > > > >      }
-> > > > > > > > > > > 
-> > > > > > > > > > >      static int at91_adc_buffer_predisable(struct
-> > > > > > > > > > > iio_dev
-> > > > > > > > > > > *indio_dev)
-> > > > > > > > > > >      {
-> > > > > > > > > > >           struct at91_adc_state *st =
-> > > > > > > > > > > iio_priv(indio_dev);
-> > > > > > > > > > > -     int ret;
-> > > > > > > > > > >           u8 bit;
-> > > > > > > > > > > 
-> > > > > > > > > > >           /* check if we are disabling triggered buffer
-> > > > > > > > > > > or
-> > > > > > > > > > > the
-> > > > > > > > > > > touchscreen */
-> > > > > > > > > > > @@ -916,13 +920,8 @@ static int
-> > > > > > > > > > > at91_adc_buffer_predisable(struct
-> > > > > > > > > > > iio_dev
-> > > > > > > > > > > *indio_dev)
-> > > > > > > > > > >           if (!(indio_dev->currentmode &
-> > > > > > > > > > > INDIO_ALL_TRIGGERED_MODES))
-> > > > > > > > > > >                   return -EINVAL;
-> > > > > > > > > > > 
-> > > > > > > > > > > -     /* continue with the triggered buffer */
-> > > > > > > > > > > -     ret = iio_triggered_buffer_predisable(indio_dev);
-> > > > > > > > > > > -     if (ret < 0)
-> > > > > > > > > > > -             dev_err(&indio_dev->dev, "buffer
-> > > > > > > > > > > predisable
-> > > > > > > > > > > failed\n");
-> > > > > > > > > > > -
-> > > > > > > > > > >           if (!st->dma_st.dma_chan)
-> > > > > > > > > > > -             return ret;
-> > > > > > > > > > > +             goto out;
-> > > > > > > > > > > 
-> > > > > > > > > > >           /* if we are using DMA we must clear
-> > > > > > > > > > > registers
-> > > > > > > > > > > and end
-> > > > > > > > > > > DMA
-> > > > > > > > > > > */
-> > > > > > > > > > >           dmaengine_terminate_sync(st-  
-> > > > > > > > > > > >dma_st.dma_chan);  
-> > > > > > > > > > > @@ -949,7 +948,9 @@ static int
-> > > > > > > > > > > at91_adc_buffer_predisable(struct
-> > > > > > > > > > > iio_dev
-> > > > > > > > > > > *indio_dev)
-> > > > > > > > > > > 
-> > > > > > > > > > >           /* read overflow register to clear possible
-> > > > > > > > > > > overflow
-> > > > > > > > > > > status
-> > > > > > > > > > > */
-> > > > > > > > > > >           at91_adc_readl(st, AT91_SAMA5D2_OVER);
-> > > > > > > > > > > -     return ret;
-> > > > > > > > > > > +
-> > > > > > > > > > > +out:  
-> > > > > > > > > 
-> > > > > > > > > I would prefer if this label is named with a function name
-> > > > > > > > > prefix,
-> > > > > > > > > otherwise 'out' is pretty generic and can collide with
-> > > > > > > > > other
-> > > > > > > > > things
-> > > > > > > > > in
-> > > > > > > > > the file... I want to avoid having an out2 , out3 later if
-> > > > > > > > > code
-> > > > > > > > > changes.
-> > > > > > > > >   
-> > > > > > > 
-> > > > > > > Sure.
-> > > > > > > Will do that.
-> > > > > > > 
-> > > > > > > I did not bother much with these labels, because after applying
-> > > > > > > [u1],
-> > > > > > > some
-> > > > > > > of them [maybe all] should go away.
-> > > > > > > 
-> > > > > > >   
-> > > > > > > > > Thanks for the patch,
-> > > > > > > > > Eugen
-> > > > > > > > >   
-> > > > > > > > > > > +     return
-> > > > > > > > > > > iio_triggered_buffer_predisable(indio_dev);
-> > > > > > > > > > >      }
-> > > > > > > > > > > 
-> > > > > > > > > > >      static const struct iio_buffer_setup_ops
-> > > > > > > > > > > at91_buffer_setup_ops =
-> > > > > > > > > > > {  
-> > > > > > > > > > _______________________________________________
-> > > > > > > > > > linux-arm-kernel mailing list
-> > > > > > > > > > linux-arm-kernel@lists.infradead.org
-> > > > > > > > > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > > > > > > > > >   
-> > > > > > > _______________________________________________
-> > > > > > > linux-arm-kernel mailing list
-> > > > > > > linux-arm-kernel@lists.infradead.org
-> > > > > > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > > > > > >   
-> > > _______________________________________________
-> > > linux-arm-kernel mailing list
-> > > linux-arm-kernel@lists.infradead.org
-> > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel  
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTEvMjUvMTkgNDowNyBQTSwgQWxleCBLb2dhbiB3cm90ZToKPiBJbiBDTkEsIHNwaW5uaW5n
+IHRocmVhZHMgYXJlIG9yZ2FuaXplZCBpbiB0d28gcXVldWVzLCBhIG1haW4gcXVldWUgZm9yCj4g
+dGhyZWFkcyBydW5uaW5nIG9uIHRoZSBzYW1lIG5vZGUgYXMgdGhlIGN1cnJlbnQgbG9jayBob2xk
+ZXIsIGFuZCBhCj4gc2Vjb25kYXJ5IHF1ZXVlIGZvciB0aHJlYWRzIHJ1bm5pbmcgb24gb3RoZXIg
+bm9kZXMuIEFmdGVyIGFjcXVpcmluZyB0aGUKPiBNQ1MgbG9jayBhbmQgYmVmb3JlIGFjcXVpcmlu
+ZyB0aGUgc3BpbmxvY2ssIHRoZSBsb2NrIGhvbGRlciBzY2FucyB0aGUKPiBtYWluIHF1ZXVlIGxv
+b2tpbmcgZm9yIGEgdGhyZWFkIHJ1bm5pbmcgb24gdGhlIHNhbWUgbm9kZSAocHJlLXNjYW4pLiBJ
+Zgo+IGZvdW5kIChjYWxsIGl0IHRocmVhZCBUKSwgYWxsIHRocmVhZHMgaW4gdGhlIG1haW4gcXVl
+dWUgYmV0d2VlbiB0aGUKPiBjdXJyZW50IGxvY2sgaG9sZGVyIGFuZCBUIGFyZSBtb3ZlZCB0byB0
+aGUgZW5kIG9mIHRoZSBzZWNvbmRhcnkgcXVldWUuCj4gSWYgc3VjaCBUIGlzIG5vdCBmb3VuZCwg
+d2UgbWFrZSBhbm90aGVyIHNjYW4gb2YgdGhlIG1haW4gcXVldWUgd2hlbgo+IHVubG9ja2luZyB0
+aGUgTUNTIGxvY2sgKHBvc3Qtc2NhbiksIHN0YXJ0aW5nIGF0IHRoZSBwb3NpdGlvbiB3aGVyZQo+
+IHByZS1zY2FuIHN0b3BwZWQuIElmIGJvdGggc2NhbnMgZmFpbCB0byBmaW5kIHN1Y2ggVCwgdGhl
+IE1DUyBsb2NrIGlzCj4gcGFzc2VkIHRvIHRoZSBmaXJzdCB0aHJlYWQgaW4gdGhlIHNlY29uZGFy
+eSBxdWV1ZS4gSWYgdGhlIHNlY29uZGFyeSBxdWV1ZQo+IGlzIGVtcHR5LCB0aGUgbG9jayBpcyBw
+YXNzZWQgdG8gdGhlIG5leHQgdGhyZWFkIGluIHRoZSBtYWluIHF1ZXVlLgo+IEZvciBtb3JlIGRl
+dGFpbHMsIHNlZSBodHRwczovL2FyeGl2Lm9yZy9hYnMvMTgxMC4wNTYwMC4KPgo+IE5vdGUgdGhh
+dCB0aGlzIHZhcmlhbnQgb2YgQ05BIG1heSBpbnRyb2R1Y2Ugc3RhcnZhdGlvbiBieSBjb250aW51
+b3VzbHkKPiBwYXNzaW5nIHRoZSBsb2NrIHRvIHRocmVhZHMgcnVubmluZyBvbiB0aGUgc2FtZSBu
+b2RlLiBUaGlzIGlzc3VlCj4gd2lsbCBiZSBhZGRyZXNzZWQgbGF0ZXIgaW4gdGhlIHNlcmllcy4K
+Pgo+IEVuYWJsaW5nIENOQSBpcyBjb250cm9sbGVkIHZpYSBhIG5ldyBjb25maWd1cmF0aW9uIG9w
+dGlvbgo+IChOVU1BX0FXQVJFX1NQSU5MT0NLUykuIEJ5IGRlZmF1bHQsIHRoZSBDTkEgdmFyaWFu
+dCBpcyBwYXRjaGVkIGluIGF0IHRoZQo+IGJvb3QgdGltZSBvbmx5IGlmIHdlIHJ1biBvbiBhIG11
+bHRpLW5vZGUgbWFjaGluZSBpbiBuYXRpdmUgZW52aXJvbm1lbnQgYW5kCj4gdGhlIG5ldyBjb25m
+aWcgaXMgZW5hYmxlZC4gKEZvciB0aGUgdGltZSBiZWluZywgdGhlIHBhdGNoaW5nIHJlcXVpcmVz
+Cj4gQ09ORklHX1BBUkFWSVJUX1NQSU5MT0NLUyB0byBiZSBlbmFibGVkIGFzIHdlbGwuIEhvd2V2
+ZXIsIHRoaXMgc2hvdWxkIGJlCj4gcmVzb2x2ZWQgb25jZSBzdGF0aWNfY2FsbCgpIGlzIGF2YWls
+YWJsZS4pIFRoaXMgZGVmYXVsdCBiZWhhdmlvciBjYW4gYmUKPiBvdmVycmlkZGVuIHdpdGggdGhl
+IG5ldyBrZXJuZWwgYm9vdCBjb21tYW5kLWxpbmUgb3B0aW9uCj4gIm51bWFfc3BpbmxvY2s9b24v
+b2ZmIiAoZGVmYXVsdCBpcyAiYXV0byIpLgo+Cj4gU2lnbmVkLW9mZi1ieTogQWxleCBLb2dhbiA8
+YWxleC5rb2dhbkBvcmFjbGUuY29tPgo+IFJldmlld2VkLWJ5OiBTdGV2ZSBTaXN0YXJlIDxzdGV2
+ZW4uc2lzdGFyZUBvcmFjbGUuY29tPgo+IC0tLQo+ICAuLi4vYWRtaW4tZ3VpZGUva2VybmVsLXBh
+cmFtZXRlcnMudHh0ICAgICAgICAgfCAgMTAgKwo+ICBhcmNoL3g4Ni9LY29uZmlnICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgfCAgMjAgKysKPiAgYXJjaC94ODYvaW5jbHVkZS9hc20vcXNw
+aW5sb2NrLmggICAgICAgICAgICAgIHwgICA0ICsKPiAgYXJjaC94ODYva2VybmVsL2FsdGVybmF0
+aXZlLmMgICAgICAgICAgICAgICAgIHwgIDQzICsrKwo+ICBrZXJuZWwvbG9ja2luZy9tY3Nfc3Bp
+bmxvY2suaCAgICAgICAgICAgICAgICAgfCAgIDIgKy0KPiAga2VybmVsL2xvY2tpbmcvcXNwaW5s
+b2NrLmMgICAgICAgICAgICAgICAgICAgIHwgIDM0ICsrLQo+ICBrZXJuZWwvbG9ja2luZy9xc3Bp
+bmxvY2tfY25hLmggICAgICAgICAgICAgICAgfCAyNjQgKysrKysrKysrKysrKysrKysrCj4gIDcg
+ZmlsZXMgY2hhbmdlZCwgMzcyIGluc2VydGlvbnMoKyksIDUgZGVsZXRpb25zKC0pCj4gIGNyZWF0
+ZSBtb2RlIDEwMDY0NCBrZXJuZWwvbG9ja2luZy9xc3BpbmxvY2tfY25hLmgKPgrCoCA6Cj4gZGlm
+ZiAtLWdpdCBhL2FyY2gveDg2L2tlcm5lbC9hbHRlcm5hdGl2ZS5jIGIvYXJjaC94ODYva2VybmVs
+L2FsdGVybmF0aXZlLmMKPiBpbmRleCA5ZDNhOTcxZWEzNjQuLjZhNGNjYmY0ZTA5YyAxMDA2NDQK
+PiAtLS0gYS9hcmNoL3g4Ni9rZXJuZWwvYWx0ZXJuYXRpdmUuYwo+ICsrKyBiL2FyY2gveDg2L2tl
+cm5lbC9hbHRlcm5hdGl2ZS5jCj4gQEAgLTY5OCw2ICs2OTgsMzMgQEAgc3RhdGljIHZvaWQgX19p
+bml0IGludDNfc2VsZnRlc3Qodm9pZCkKPiAgCXVucmVnaXN0ZXJfZGllX25vdGlmaWVyKCZpbnQz
+X2V4Y2VwdGlvbl9uYik7Cj4gIH0KPiAgCj4gKyNpZiBkZWZpbmVkKENPTkZJR19OVU1BX0FXQVJF
+X1NQSU5MT0NLUykKPiArLyoKPiArICogQ29uc3RhbnQgKGJvb3QtcGFyYW0gY29uZmlndXJhYmxl
+KSBmbGFnIHNlbGVjdGluZyB0aGUgTlVNQS1hd2FyZSB2YXJpYW50Cj4gKyAqIG9mIHNwaW5sb2Nr
+LiAgUG9zc2libGUgdmFsdWVzOiAtMSAob2ZmKSAvIDAgKGF1dG8sIGRlZmF1bHQpIC8gMSAob24p
+Lgo+ICsgKi8KPiArc3RhdGljIGludCBudW1hX3NwaW5sb2NrX2ZsYWc7Cj4gKwo+ICtzdGF0aWMg
+aW50IF9faW5pdCBudW1hX3NwaW5sb2NrX3NldHVwKGNoYXIgKnN0cikKPiArewo+ICsJaWYgKCFz
+dHJjbXAoc3RyLCAiYXV0byIpKSB7Cj4gKwkJbnVtYV9zcGlubG9ja19mbGFnID0gMDsKPiArCQly
+ZXR1cm4gMTsKPiArCX0gZWxzZSBpZiAoIXN0cmNtcChzdHIsICJvbiIpKSB7Cj4gKwkJbnVtYV9z
+cGlubG9ja19mbGFnID0gMTsKPiArCQlyZXR1cm4gMTsKPiArCX0gZWxzZSBpZiAoIXN0cmNtcChz
+dHIsICJvZmYiKSkgewo+ICsJCW51bWFfc3BpbmxvY2tfZmxhZyA9IC0xOwo+ICsJCXJldHVybiAx
+Owo+ICsJfQo+ICsKPiArCXJldHVybiAwOwo+ICt9Cj4gKwo+ICtfX3NldHVwKCJudW1hX3NwaW5s
+b2NrPSIsIG51bWFfc3BpbmxvY2tfc2V0dXApOwo+ICsKPiArI2VuZGlmCj4gKwoKVGhpcyBfX2lu
+aXQgZnVuY3Rpb24gc2hvdWxkIGJlIGluIHFzcGlubG9ja19jbmEuaC4gV2UgZ2VuZXJhbGx5IGxp
+a2UgdG8KcHV0IGFzIG11Y2ggcmVsYXRlZCBjb2RlIGludG8gYXMgZmV3IHBsYWNlcyBhcyBwb3Nz
+aWJsZSBpbnN0ZWFkIG9mCnNwcmVhZGluZyB0aGVtIGFyb3VuZCBpbiBkaWZmZXJlbnQgcGxhY2Vz
+LgoKPiAgdm9pZCBfX2luaXQgYWx0ZXJuYXRpdmVfaW5zdHJ1Y3Rpb25zKHZvaWQpCj4gIHsKPiAg
+CWludDNfc2VsZnRlc3QoKTsKPiBAQCAtNzM4LDYgKzc2NSwyMiBAQCB2b2lkIF9faW5pdCBhbHRl
+cm5hdGl2ZV9pbnN0cnVjdGlvbnModm9pZCkKPiAgCX0KPiAgI2VuZGlmCj4gIAo+ICsjaWYgZGVm
+aW5lZChDT05GSUdfTlVNQV9BV0FSRV9TUElOTE9DS1MpCj4gKwkvKgo+ICsJICogQnkgZGVmYXVs
+dCwgc3dpdGNoIHRvIHRoZSBOVU1BLWZyaWVuZGx5IHNsb3cgcGF0aCBmb3IKPiArCSAqIHNwaW5s
+b2NrcyB3aGVuIHdlIGhhdmUgbXVsdGlwbGUgTlVNQSBub2RlcyBpbiBuYXRpdmUgZW52aXJvbm1l
+bnQuCj4gKwkgKi8KPiArCWlmICgobnVtYV9zcGlubG9ja19mbGFnID09IDEpIHx8Cj4gKwkgICAg
+KG51bWFfc3BpbmxvY2tfZmxhZyA9PSAwICYmIG5yX25vZGVfaWRzID4gMSAmJgo+ICsJCSAgICBw
+dl9vcHMubG9jay5xdWV1ZWRfc3Bpbl9sb2NrX3Nsb3dwYXRoID09Cj4gKwkJCW5hdGl2ZV9xdWV1
+ZWRfc3Bpbl9sb2NrX3Nsb3dwYXRoKSkgewo+ICsJCXB2X29wcy5sb2NrLnF1ZXVlZF9zcGluX2xv
+Y2tfc2xvd3BhdGggPQo+ICsJCSAgICBfX2NuYV9xdWV1ZWRfc3Bpbl9sb2NrX3Nsb3dwYXRoOwo+
+ICsKPiArCQlwcl9pbmZvKCJFbmFibGluZyBDTkEgc3BpbmxvY2tcbiIpOwo+ICsJfQo+ICsjZW5k
+aWYKPiArCj4gIAlhcHBseV9wYXJhdmlydChfX3BhcmFpbnN0cnVjdGlvbnMsIF9fcGFyYWluc3Ry
+dWN0aW9uc19lbmQpOwoKRW5jYXBzdWxhdGUgdGhlIGxvZ2ljIGludG8gYW5vdGhlciBfX2luaXQg
+ZnVuY3Rpb24gaW4gcXNwaW5sb2NrX2NuYS5oCmFuZCBqdXN0IG1ha2UgYSBmdW5jdGlvbiBjYWxs
+IGhlcmUuIFlvdSBjYW4gZGVjbGFyZSB0aGUgZnVuY3Rpb24gaW4KYXJjaC94ODYvaW5jbHVkZS9h
+c20vcXNwaW5sb2NrLmguCgoKPiAgCj4gIAlyZXN0YXJ0X25taSgpOwo+IGRpZmYgLS1naXQgYS9r
+ZXJuZWwvbG9ja2luZy9tY3Nfc3BpbmxvY2suaCBiL2tlcm5lbC9sb2NraW5nL21jc19zcGlubG9j
+ay5oCj4gaW5kZXggNTJkMDZlYzZmNTI1Li5lNDBiOTUzOGI3OWYgMTAwNjQ0Cj4gLS0tIGEva2Vy
+bmVsL2xvY2tpbmcvbWNzX3NwaW5sb2NrLmgKPiArKysgYi9rZXJuZWwvbG9ja2luZy9tY3Nfc3Bp
+bmxvY2suaAo+IEBAIC0xNyw3ICsxNyw3IEBACj4gIAo+ICBzdHJ1Y3QgbWNzX3NwaW5sb2NrIHsK
+PiAgCXN0cnVjdCBtY3Nfc3BpbmxvY2sgKm5leHQ7Cj4gLQlpbnQgbG9ja2VkOyAvKiAxIGlmIGxv
+Y2sgYWNxdWlyZWQgKi8KPiArCXVuc2lnbmVkIGludCBsb2NrZWQ7IC8qIDEgaWYgbG9jayBhY3F1
+aXJlZCAqLwo+ICAJaW50IGNvdW50OyAgLyogbmVzdGluZyBjb3VudCwgc2VlIHFzcGlubG9jay5j
+ICovCj4gIH07Cj4gIAo+IGRpZmYgLS1naXQgYS9rZXJuZWwvbG9ja2luZy9xc3BpbmxvY2suYyBi
+L2tlcm5lbC9sb2NraW5nL3FzcGlubG9jay5jCj4gaW5kZXggYzA2ZDFlODA3NWQ5Li42ZDhjNGE1
+MmU0NGUgMTAwNjQ0Cj4gLS0tIGEva2VybmVsL2xvY2tpbmcvcXNwaW5sb2NrLmMKPiArKysgYi9r
+ZXJuZWwvbG9ja2luZy9xc3BpbmxvY2suYwo+IEBAIC0xMSw3ICsxMSw3IEBACj4gICAqICAgICAg
+ICAgIFBldGVyIFppamxzdHJhIDxwZXRlcnpAaW5mcmFkZWFkLm9yZz4KPiAgICovCj4gIAo+IC0j
+aWZuZGVmIF9HRU5fUFZfTE9DS19TTE9XUEFUSAo+ICsjaWYgIWRlZmluZWQoX0dFTl9QVl9MT0NL
+X1NMT1dQQVRIKSAmJiAhZGVmaW5lZChfR0VOX0NOQV9MT0NLX1NMT1dQQVRIKQo+ICAKPiAgI2lu
+Y2x1ZGUgPGxpbnV4L3NtcC5oPgo+ICAjaW5jbHVkZSA8bGludXgvYnVnLmg+Cj4gQEAgLTcwLDcg
+KzcwLDggQEAKPiAgLyoKPiAgICogT24gNjQtYml0IGFyY2hpdGVjdHVyZXMsIHRoZSBtY3Nfc3Bp
+bmxvY2sgc3RydWN0dXJlIHdpbGwgYmUgMTYgYnl0ZXMgaW4KPiAgICogc2l6ZSBhbmQgZm91ciBv
+ZiB0aGVtIHdpbGwgZml0IG5pY2VseSBpbiBvbmUgNjQtYnl0ZSBjYWNoZWxpbmUuIEZvcgo+IC0g
+KiBwdnFzcGlubG9jaywgaG93ZXZlciwgd2UgbmVlZCBtb3JlIHNwYWNlIGZvciBleHRyYSBkYXRh
+LiBUbyBhY2NvbW1vZGF0ZQo+ICsgKiBwdnFzcGlubG9jaywgaG93ZXZlciwgd2UgbmVlZCBtb3Jl
+IHNwYWNlIGZvciBleHRyYSBkYXRhLiBUaGUgc2FtZSBhbHNvCj4gKyAqIGFwcGxpZXMgZm9yIHRo
+ZSBOVU1BLWF3YXJlIHZhcmlhbnQgb2Ygc3BpbmxvY2tzIChDTkEpLiBUbyBhY2NvbW1vZGF0ZQo+
+ICAgKiB0aGF0LCB3ZSBpbnNlcnQgdHdvIG1vcmUgbG9uZyB3b3JkcyB0byBwYWQgaXQgdXAgdG8g
+MzIgYnl0ZXMuIElPVywgb25seQo+ICAgKiB0d28gb2YgdGhlbSBjYW4gZml0IGluIGEgY2FjaGVs
+aW5lIGluIHRoaXMgY2FzZS4gVGhhdCBpcyBPSyBhcyBpdCBpcyByYXJlCj4gICAqIHRvIGhhdmUg
+bW9yZSB0aGFuIDIgbGV2ZWxzIG9mIHNsb3dwYXRoIG5lc3RpbmcgaW4gYWN0dWFsIHVzZS4gV2Ug
+ZG9uJ3QKPiBAQCAtNzksNyArODAsNyBAQAo+ICAgKi8KPiAgc3RydWN0IHFub2RlIHsKPiAgCXN0
+cnVjdCBtY3Nfc3BpbmxvY2sgbWNzOwo+IC0jaWZkZWYgQ09ORklHX1BBUkFWSVJUX1NQSU5MT0NL
+Uwo+ICsjaWYgZGVmaW5lZChDT05GSUdfUEFSQVZJUlRfU1BJTkxPQ0tTKSB8fCBkZWZpbmVkKENP
+TkZJR19OVU1BX0FXQVJFX1NQSU5MT0NLUykKPiAgCWxvbmcgcmVzZXJ2ZWRbMl07Cj4gICNlbmRp
+Zgo+ICB9Owo+IEBAIC0xMDMsNiArMTA0LDggQEAgc3RydWN0IHFub2RlIHsKPiAgICogRXhhY3Rs
+eSBmaXRzIG9uZSA2NC1ieXRlIGNhY2hlbGluZSBvbiBhIDY0LWJpdCBhcmNoaXRlY3R1cmUuCj4g
+ICAqCj4gICAqIFBWIGRvdWJsZXMgdGhlIHN0b3JhZ2UgYW5kIHVzZXMgdGhlIHNlY29uZCBjYWNo
+ZWxpbmUgZm9yIFBWIHN0YXRlLgo+ICsgKiBDTkEgYWxzbyBkb3VibGVzIHRoZSBzdG9yYWdlIGFu
+ZCB1c2VzIHRoZSBzZWNvbmQgY2FjaGVsaW5lIGZvcgo+ICsgKiBDTkEtc3BlY2lmaWMgc3RhdGUu
+Cj4gICAqLwo+ICBzdGF0aWMgREVGSU5FX1BFUl9DUFVfQUxJR05FRChzdHJ1Y3QgcW5vZGUsIHFu
+b2Rlc1tNQVhfTk9ERVNdKTsKPiAgCj4gQEAgLTMxNiw3ICszMTksNyBAQCBzdGF0aWMgX19hbHdh
+eXNfaW5saW5lIHZvaWQgX19tY3NfcGFzc19sb2NrKHN0cnVjdCBtY3Nfc3BpbmxvY2sgKm5vZGUs
+Cj4gICNkZWZpbmUgdHJ5X2NsZWFyX3RhaWwJX190cnlfY2xlYXJfdGFpbAo+ICAjZGVmaW5lIG1j
+c19wYXNzX2xvY2sJCV9fbWNzX3Bhc3NfbG9jawo+ICAKPiAtI2VuZGlmIC8qIF9HRU5fUFZfTE9D
+S19TTE9XUEFUSCAqLwo+ICsjZW5kaWYgLyogX0dFTl9QVl9MT0NLX1NMT1dQQVRIICYmIF9HRU5f
+Q05BX0xPQ0tfU0xPV1BBVEggKi8KPiAgCj4gIC8qKgo+ICAgKiBxdWV1ZWRfc3Bpbl9sb2NrX3Ns
+b3dwYXRoIC0gYWNxdWlyZSB0aGUgcXVldWVkIHNwaW5sb2NrCj4gQEAgLTU4OCw2ICs1OTEsMjkg
+QEAgdm9pZCBxdWV1ZWRfc3Bpbl9sb2NrX3Nsb3dwYXRoKHN0cnVjdCBxc3BpbmxvY2sgKmxvY2ss
+IHUzMiB2YWwpCj4gIH0KPiAgRVhQT1JUX1NZTUJPTChxdWV1ZWRfc3Bpbl9sb2NrX3Nsb3dwYXRo
+KTsKPiAgCj4gKy8qCj4gKyAqIEdlbmVyYXRlIHRoZSBjb2RlIGZvciBOVU1BLWF3YXJlIHNwaW5s
+b2Nrcwo+ICsgKi8KPiArI2lmICFkZWZpbmVkKF9HRU5fQ05BX0xPQ0tfU0xPV1BBVEgpICYmIGRl
+ZmluZWQoQ09ORklHX05VTUFfQVdBUkVfU1BJTkxPQ0tTKQo+ICsjZGVmaW5lIF9HRU5fQ05BX0xP
+Q0tfU0xPV1BBVEgKPiArCj4gKyN1bmRlZiBwdl93YWl0X2hlYWRfb3JfbG9jawo+ICsjZGVmaW5l
+IHB2X3dhaXRfaGVhZF9vcl9sb2NrCQljbmFfcHJlX3NjYW4KPiArCj4gKyN1bmRlZiB0cnlfY2xl
+YXJfdGFpbAo+ICsjZGVmaW5lIHRyeV9jbGVhcl90YWlsCQkJY25hX3RyeV9jaGFuZ2VfdGFpbAo+
+ICsKPiArI3VuZGVmIG1jc19wYXNzX2xvY2sKPiArI2RlZmluZSBtY3NfcGFzc19sb2NrCQkJY25h
+X3Bhc3NfbG9jawo+ICsKPiArI3VuZGVmICBxdWV1ZWRfc3Bpbl9sb2NrX3Nsb3dwYXRoCj4gKyNk
+ZWZpbmUgcXVldWVkX3NwaW5fbG9ja19zbG93cGF0aAlfX2NuYV9xdWV1ZWRfc3Bpbl9sb2NrX3Ns
+b3dwYXRoCj4gKwo+ICsjaW5jbHVkZSAicXNwaW5sb2NrX2NuYS5oIgo+ICsjaW5jbHVkZSAicXNw
+aW5sb2NrLmMiCj4gKwo+ICsjZW5kaWYKPiArCj4gIC8qCj4gICAqIEdlbmVyYXRlIHRoZSBwYXJh
+dmlydCBjb2RlIGZvciBxdWV1ZWRfc3Bpbl91bmxvY2tfc2xvd3BhdGgoKS4KPiAgICovCj4gZGlm
+ZiAtLWdpdCBhL2tlcm5lbC9sb2NraW5nL3FzcGlubG9ja19jbmEuaCBiL2tlcm5lbC9sb2NraW5n
+L3FzcGlubG9ja19jbmEuaAo+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXggMDAwMDAwMDAw
+MDAwLi5hNjM4MzM2Zjk1NjAKPiAtLS0gL2Rldi9udWxsCj4gKysrIGIva2VybmVsL2xvY2tpbmcv
+cXNwaW5sb2NrX2NuYS5oCj4gQEAgLTAsMCArMSwyNjQgQEAKPiArLyogU1BEWC1MaWNlbnNlLUlk
+ZW50aWZpZXI6IEdQTC0yLjAgKi8KPiArI2lmbmRlZiBfR0VOX0NOQV9MT0NLX1NMT1dQQVRICj4g
+KyNlcnJvciAiZG8gbm90IGluY2x1ZGUgdGhpcyBmaWxlIgo+ICsjZW5kaWYKPiArCj4gKyNpbmNs
+dWRlIDxsaW51eC90b3BvbG9neS5oPgo+ICsKPiArLyoKPiArICogSW1wbGVtZW50IGEgTlVNQS1h
+d2FyZSB2ZXJzaW9uIG9mIE1DUyAoYWthIENOQSwgb3IgY29tcGFjdCBOVU1BLWF3YXJlIGxvY2sp
+Lgo+ICsgKgo+ICsgKiBJbiBDTkEsIHNwaW5uaW5nIHRocmVhZHMgYXJlIG9yZ2FuaXplZCBpbiB0
+d28gcXVldWVzLCBhIG1haW4gcXVldWUgZm9yCj4gKyAqIHRocmVhZHMgcnVubmluZyBvbiB0aGUg
+c2FtZSBOVU1BIG5vZGUgYXMgdGhlIGN1cnJlbnQgbG9jayBob2xkZXIsIGFuZCBhCj4gKyAqIHNl
+Y29uZGFyeSBxdWV1ZSBmb3IgdGhyZWFkcyBydW5uaW5nIG9uIG90aGVyIG5vZGVzLiBTY2hlbWF0
+aWNhbGx5LCBpdAo+ICsgKiBsb29rcyBsaWtlIHRoaXM6Cj4gKyAqCj4gKyAqICAgIGNuYV9ub2Rl
+Cj4gKyAqICAgKy0tLS0tLS0tLS0rICAgICstLS0tLS0tLSsgICAgICAgICstLS0tLS0tLSsKPiAr
+ICogICB8bWNzOm5leHQgIHwgLT4gfG1jczpuZXh0fCAtPiAuLi4gfG1jczpuZXh0fCAtPiBOVUxM
+ICAgICAgW01haW4gcXVldWVdCj4gKyAqICAgfG1jczpsb2NrZWR8IC0rICstLS0tLS0tLSsgICAg
+ICAgICstLS0tLS0tLSsKPiArICogICArLS0tLS0tLS0tLSsgIHwKPiArICogICAgICAgICAgICAg
+ICAgICstLS0tLS0tLS0tLS0tLS0tLS0tLS0tKwo+ICsgKiAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICBcLwo+ICsgKiAgICAgICAgICAgICAgICAgKy0tLS0tLS0tKyAgICAg
+ICAgICstLS0tLS0tLSsKPiArICogICAgICAgICAgICAgICAgIHxtY3M6bmV4dHwgLT4gLi4uICB8
+bWNzOm5leHR8ICAgICAgICAgIFtTZWNvbmRhcnkgcXVldWVdCj4gKyAqICAgICAgICAgICAgICAg
+ICArLS0tLS0tLS0rICAgICAgICAgKy0tLS0tLS0tKwo+ICsgKiAgICAgICAgICAgICAgICAgICAg
+IF4gICAgICAgICAgICAgICAgICAgIHwKPiArICogICAgICAgICAgICAgICAgICAgICArLS0tLS0t
+LS0tLS0tLS0tLS0tLS0rCj4gKyAqCj4gKyAqIE4uQi4gbG9ja2VkID0gMSBpZiBzZWNvbmRhcnkg
+cXVldWUgaXMgYWJzZW50LiBPdGhld3Jpc2UsIGl0IGNvbnRhaW5zIHRoZQo+ICsgKiBlbmNvZGVk
+IHBvaW50ZXIgdG8gdGhlIHRhaWwgb2YgdGhlIHNlY29uZGFyeSBxdWV1ZSwgd2hpY2ggaXMgb3Jn
+YW5pemVkIGFzIGEKPiArICogY2lyY3VsYXIgbGlzdC4KPiArICoKPiArICogQWZ0ZXIgYWNxdWly
+aW5nIHRoZSBNQ1MgbG9jayBhbmQgYmVmb3JlIGFjcXVpcmluZyB0aGUgc3BpbmxvY2ssIHRoZSBs
+b2NrCj4gKyAqIGhvbGRlciBzY2FucyB0aGUgbWFpbiBxdWV1ZSBsb29raW5nIGZvciBhIHRocmVh
+ZCBydW5uaW5nIG9uIHRoZSBzYW1lIG5vZGUKPiArICogKHByZS1zY2FuKS4gSWYgZm91bmQgKGNh
+bGwgaXQgdGhyZWFkIFQpLCBhbGwgdGhyZWFkcyBpbiB0aGUgbWFpbiBxdWV1ZQo+ICsgKiBiZXR3
+ZWVuIHRoZSBjdXJyZW50IGxvY2sgaG9sZGVyIGFuZCBUIGFyZSBtb3ZlZCB0byB0aGUgZW5kIG9m
+IHRoZSBzZWNvbmRhcnkKPiArICogcXVldWUuICBJZiBzdWNoIFQgaXMgbm90IGZvdW5kLCB3ZSBt
+YWtlIGFub3RoZXIgc2NhbiBvZiB0aGUgbWFpbiBxdWV1ZSB3aGVuCj4gKyAqIHVubG9ja2luZyB0
+aGUgTUNTIGxvY2sgKHBvc3Qtc2NhbiksIHN0YXJ0aW5nIGF0IHRoZSBub2RlIHdoZXJlIHByZS1z
+Y2FuCj4gKyAqIHN0b3BwZWQuIElmIGJvdGggc2NhbnMgZmFpbCB0byBmaW5kIHN1Y2ggVCwgdGhl
+IE1DUyBsb2NrIGlzIHBhc3NlZCB0byB0aGUKPiArICogZmlyc3QgdGhyZWFkIGluIHRoZSBzZWNv
+bmRhcnkgcXVldWUuIElmIHRoZSBzZWNvbmRhcnkgcXVldWUgaXMgZW1wdHksIHRoZQo+ICsgKiBs
+b2NrIGlzIHBhc3NlZCB0byB0aGUgbmV4dCB0aHJlYWQgaW4gdGhlIG1haW4gcXVldWUuCj4gKyAq
+Cj4gKyAqIEZvciBtb3JlIGRldGFpbHMsIHNlZSBodHRwczovL2FyeGl2Lm9yZy9hYnMvMTgxMC4w
+NTYwMC4KPiArICoKPiArICogQXV0aG9yczogQWxleCBLb2dhbiA8YWxleC5rb2dhbkBvcmFjbGUu
+Y29tPgo+ICsgKiAgICAgICAgICBEYXZlIERpY2UgPGRhdmUuZGljZUBvcmFjbGUuY29tPgo+ICsg
+Ki8KPiArCj4gK3N0cnVjdCBjbmFfbm9kZSB7Cj4gKwlzdHJ1Y3QgbWNzX3NwaW5sb2NrCW1jczsK
+PiArCWludAkJCW51bWFfbm9kZTsKPiArCXUzMgkJCWVuY29kZWRfdGFpbDsKPiArCXUzMgkJCXBy
+ZV9zY2FuX3Jlc3VsdDsgLyogMCBvciBlbmNvZGVkIHRhaWwgKi8KPiArfTsKPiArCj4gK3N0YXRp
+YyB2b2lkIF9faW5pdCBjbmFfaW5pdF9ub2Rlc19wZXJfY3B1KHVuc2lnbmVkIGludCBjcHUpCj4g
+K3sKPiArCXN0cnVjdCBtY3Nfc3BpbmxvY2sgKmJhc2UgPSBwZXJfY3B1X3B0cigmcW5vZGVzWzBd
+Lm1jcywgY3B1KTsKPiArCWludCBudW1hX25vZGUgPSBjcHVfdG9fbm9kZShjcHUpOwo+ICsJaW50
+IGk7Cj4gKwo+ICsJZm9yIChpID0gMDsgaSA8IE1BWF9OT0RFUzsgaSsrKSB7Cj4gKwkJc3RydWN0
+IGNuYV9ub2RlICpjbiA9IChzdHJ1Y3QgY25hX25vZGUgKilncmFiX21jc19ub2RlKGJhc2UsIGkp
+Owo+ICsKPiArCQljbi0+bnVtYV9ub2RlID0gbnVtYV9ub2RlOwo+ICsJCWNuLT5lbmNvZGVkX3Rh
+aWwgPSBlbmNvZGVfdGFpbChjcHUsIGkpOwo+ICsJCS8qCj4gKwkJICogQGVuY29kZWRfdGFpbCBo
+YXMgdG8gYmUgbGFyZ2VyIHRoYW4gMSwgc28gd2UgZG8gbm90IGNvbmZ1c2UKPiArCQkgKiBpdCB3
+aXRoIG90aGVyIHZhbGlkIHZhbHVlcyBmb3IgQGxvY2tlZCBvciBAcHJlX3NjYW5fcmVzdWx0Cj4g
+KwkJICogKDAgb3IgMSkKPiArCQkgKi8KPiArCQlXQVJOX09OKGNuLT5lbmNvZGVkX3RhaWwgPD0g
+MSk7Cj4gKwl9Cj4gK30KPiArCj4gK3N0YXRpYyBpbnQgX19pbml0IGNuYV9pbml0X25vZGVzKHZv
+aWQpCj4gK3sKPiArCXVuc2lnbmVkIGludCBjcHU7Cj4gKwo+ICsJLyoKPiArCSAqIHRoaXMgd2ls
+bCBicmVhayBvbiAzMmJpdCBhcmNoaXRlY3R1cmVzLCBzbyB3ZSByZXN0cmljdAo+ICsJICogdGhl
+IHVzZSBvZiBDTkEgdG8gNjRiaXQgb25seSAoc2VlIGFyY2gveDg2L0tjb25maWcpCj4gKwkgKi8K
+PiArCUJVSUxEX0JVR19PTihzaXplb2Yoc3RydWN0IGNuYV9ub2RlKSA+IHNpemVvZihzdHJ1Y3Qg
+cW5vZGUpKTsKPiArCS8qIHdlIHN0b3JlIGFuIGVjb2RlZCB0YWlsIHdvcmQgaW4gdGhlIG5vZGUn
+cyBAbG9ja2VkIGZpZWxkICovCj4gKwlCVUlMRF9CVUdfT04oc2l6ZW9mKHUzMikgPiBzaXplb2Yo
+dW5zaWduZWQgaW50KSk7Cj4gKwo+ICsJZm9yX2VhY2hfcG9zc2libGVfY3B1KGNwdSkKPiArCQlj
+bmFfaW5pdF9ub2Rlc19wZXJfY3B1KGNwdSk7Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArZWFy
+bHlfaW5pdGNhbGwoY25hX2luaXRfbm9kZXMpOwo+ICsKCkluY2x1ZGUgYSBjb21tZW50IGhlcmUg
+c2F5aW5nIHRoYXQgdGhlIGNuYV90cnlfY2hhbmdlX3RhaWwoKSBmdW5jdGlvbiBpcwpvbmx5IGNh
+bGxlZCB3aGVuIHRoZSBwcmltYXJ5IHF1ZXVlIGlzIGVtcHR5LiBUaGF0IHdpbGwgbWFrZSB0aGUg
+Y29kZQplYXNpZXIgdG8gcmVhZC4KCgo+ICtzdGF0aWMgaW5saW5lIGJvb2wgY25hX3RyeV9jaGFu
+Z2VfdGFpbChzdHJ1Y3QgcXNwaW5sb2NrICpsb2NrLCB1MzIgdmFsLAo+ICsJCQkJICAgICAgIHN0
+cnVjdCBtY3Nfc3BpbmxvY2sgKm5vZGUpCj4gK3sKPiArCXN0cnVjdCBtY3Nfc3BpbmxvY2sgKmhl
+YWRfMm5kLCAqdGFpbF8ybmQ7Cj4gKwl1MzIgbmV3Owo+ICsKPiArCS8qIElmIHRoZSBzZWNvbmRh
+cnkgcXVldWUgaXMgZW1wdHksIGRvIHdoYXQgTUNTIGRvZXMuICovCj4gKwlpZiAobm9kZS0+bG9j
+a2VkIDw9IDEpCj4gKwkJcmV0dXJuIF9fdHJ5X2NsZWFyX3RhaWwobG9jaywgdmFsLCBub2RlKTsK
+PiArCj4gKwkvKgo+ICsJICogVHJ5IHRvIHVwZGF0ZSB0aGUgdGFpbCB2YWx1ZSB0byB0aGUgbGFz
+dCBub2RlIGluIHRoZSBzZWNvbmRhcnkgcXVldWUuCj4gKwkgKiBJZiBzdWNjZXNzZnVsLCBwYXNz
+IHRoZSBsb2NrIHRvIHRoZSBmaXJzdCB0aHJlYWQgaW4gdGhlIHNlY29uZGFyeQo+ICsJICogcXVl
+dWUuIERvaW5nIHRob3NlIHR3byBhY3Rpb25zIGVmZmVjdGl2ZWx5IG1vdmVzIGFsbCBub2RlcyBm
+cm9tIHRoZQo+ICsJICogc2Vjb25kYXJ5IHF1ZXVlIGludG8gdGhlIG1haW4gb25lLgo+ICsJICov
+Cj4gKwl0YWlsXzJuZCA9IGRlY29kZV90YWlsKG5vZGUtPmxvY2tlZCk7Cj4gKwloZWFkXzJuZCA9
+IHRhaWxfMm5kLT5uZXh0Owo+ICsJbmV3ID0gKChzdHJ1Y3QgY25hX25vZGUgKil0YWlsXzJuZCkt
+PmVuY29kZWRfdGFpbCArIF9RX0xPQ0tFRF9WQUw7Cj4gKwo+ICsJaWYgKGF0b21pY190cnlfY21w
+eGNoZ19yZWxheGVkKCZsb2NrLT52YWwsICZ2YWwsIG5ldykpIHsKPiArCQkvKgo+ICsJCSAqIFRy
+eSB0byByZXNldCBAbmV4dCBpbiB0YWlsXzJuZCB0byBOVUxMLCBidXQgbm8gbmVlZCB0byBjaGVj
+awo+ICsJCSAqIHRoZSByZXN1bHQgLSBpZiBmYWlsZWQsIGEgbmV3IHN1Y2Nlc3NvciBoYXMgdXBk
+YXRlZCBpdC4KPiArCQkgKi8KPiArCQljbXB4Y2hnX3JlbGF4ZWQoJnRhaWxfMm5kLT5uZXh0LCBo
+ZWFkXzJuZCwgTlVMTCk7Cj4gKwkJYXJjaF9tY3NfcGFzc19sb2NrKCZoZWFkXzJuZC0+bG9ja2Vk
+LCAxKTsKPiArCQlyZXR1cm4gdHJ1ZTsKPiArCX0KPiArCj4gKwlyZXR1cm4gZmFsc2U7Cj4gK30K
+Q2hlZXJzLApMb25nbWFuCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
