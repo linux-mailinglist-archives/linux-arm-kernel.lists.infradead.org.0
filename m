@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 812F01151AC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 14:58:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 356611151AE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 14:58:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qeyiUSVoD9mkHyS/WH+aNn1fnJJEKRBc4eJCN2Ggx1E=; b=CFdESAg+ND/5Bz
-	EP3jcCMOOeWKFphvkZ68nNuFCvd8U4Duc6ud3OWHuE0pqBRJ9koLz/ThjOtNYwcXKLklzF6HiLadQ
-	xkcZsQQu5CRrG7Lwewp99+3WSgWzg6dNcC2eHxoYFw7bgDVpJAI5OCNvIpUm3VFM+dUvVJGSabBBx
-	9rk21AAkNZPLu851rvLurgK9hw/8adm8ts5AENo1WraZ1D/1atfn1x4T5Ki6tajQYYxN+IHMnxua6
-	NCOpvfxoojZFFmCyTu6I6wr6Ovi6lswvye+5R/sOBauvuc1mbtRNzRq06TMyrblTydXyf80WvfMzh
-	r48F4nT3i5pJdj+Icvag==;
+	List-Owner; bh=8uhGn2gQ9q9r8T4m5MBpmoRtoRtB3VHZwrkPvos4ipw=; b=h3STTnUC6g3xJu
+	kMCj82wsaHaQZe4e2Yup67XdcVUmkL5NZSXGkjOr45Q4TLtJzKniNo591kMqCnfUjGsj+izS6mhap
+	m91rYwiUH6Tkd19E8mIIyVVRuEs3ZIvWO1SDagDh3ZQOXHjxf7UYg+uTFtMoiakYXbAQTkeEJcxbC
+	1EOywxBZvtstW/cQFTS4VIg27mintLV7K1ojSwPBwjrtSGc2C6kno4dT/G1djcb++GVGc28gozpYu
+	XsDNMrTBSAYYvMG8dMYhPalrRLAE2mCFDnnBgT4l4IWzvw8HQg3lHjziAc+3fkZs7IlDhuNoVcj+E
+	GB30k49vyVySCRAgfu/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idE7G-0007Bm-KO; Fri, 06 Dec 2019 13:57:54 +0000
+	id 1idE7Z-0007RV-BF; Fri, 06 Dec 2019 13:58:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idE3q-00032B-B7
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 13:54:23 +0000
+ id 1idE3t-000365-55
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 13:54:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D42ED1FB;
- Fri,  6 Dec 2019 05:54:21 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 951F3113E;
+ Fri,  6 Dec 2019 05:54:24 -0800 (PST)
 Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
  [10.1.194.43])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 54C263F718;
- Fri,  6 Dec 2019 05:54:19 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 157723F718;
+ Fri,  6 Dec 2019 05:54:21 -0800 (PST)
 From: Steven Price <steven.price@arm.com>
 To: Andrew Morton <akpm@linux-foundation.org>,
 	linux-mm@kvack.org
-Subject: [PATCH v16 13/25] mm: pagewalk: Don't lock PTEs for
- walk_page_range_novma()
-Date: Fri,  6 Dec 2019 13:53:04 +0000
-Message-Id: <20191206135316.47703-14-steven.price@arm.com>
+Subject: [PATCH v16 14/25] mm: pagewalk: fix termination condition in
+ walk_pte_range()
+Date: Fri,  6 Dec 2019 13:53:05 +0000
+Message-Id: <20191206135316.47703-15-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191206135316.47703-1-steven.price@arm.com>
 References: <20191206135316.47703-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_055422_444962_DC162E59 
-X-CRM114-Status: GOOD (  14.31  )
+X-CRM114-CacheID: sfid-20191206_055425_301547_D06400CD 
+X-CRM114-Status: GOOD (  12.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -79,59 +79,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-walk_page_range_novma() can be used to walk page tables or the kernel or
-for firmware. These page tables may contain entries that are not backed
-by a struct page and so it isn't (in general) possible to take the PTE
-lock for the pte_entry() callback. So update walk_pte_range() to only
-take the lock when no_vma==false and add a comment explaining the
-difference to walk_page_range_novma().
+If walk_pte_range() is called with a 'end' argument that is beyond the
+last page of memory (e.g. ~0UL) then the comparison between 'addr' and
+'end' will always fail and the loop will be infinite. Instead change the
+comparison to >= while accounting for overflow.
 
 Signed-off-by: Steven Price <steven.price@arm.com>
 ---
- mm/pagewalk.c | 15 ++++++++++++---
- 1 file changed, 12 insertions(+), 3 deletions(-)
+ mm/pagewalk.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/mm/pagewalk.c b/mm/pagewalk.c
-index efa464cf079b..1b9a3ba24c51 100644
+index 1b9a3ba24c51..88104ab00a97 100644
 --- a/mm/pagewalk.c
 +++ b/mm/pagewalk.c
-@@ -10,9 +10,10 @@ static int walk_pte_range(pmd_t *pmd, unsigned long addr, unsigned long end,
- 	pte_t *pte;
- 	int err = 0;
- 	const struct mm_walk_ops *ops = walk->ops;
--	spinlock_t *ptl;
-+	spinlock_t *uninitialized_var(ptl);
- 
--	pte = pte_offset_map_lock(walk->mm, pmd, addr, &ptl);
-+	pte = walk->no_vma ? pte_offset_map(pmd, addr) :
-+			     pte_offset_map_lock(walk->mm, pmd, addr, &ptl);
- 	for (;;) {
+@@ -18,9 +18,9 @@ static int walk_pte_range(pmd_t *pmd, unsigned long addr, unsigned long end,
  		err = ops->pte_entry(pte, addr, addr + PAGE_SIZE, walk);
  		if (err)
-@@ -23,7 +24,9 @@ static int walk_pte_range(pmd_t *pmd, unsigned long addr, unsigned long end,
+ 		       break;
+-		addr += PAGE_SIZE;
+-		if (addr == end)
++		if (addr >= end - PAGE_SIZE)
+ 			break;
++		addr += PAGE_SIZE;
  		pte++;
  	}
  
--	pte_unmap_unlock(pte, ptl);
-+	if (!walk->no_vma)
-+		spin_unlock(ptl);
-+	pte_unmap(pte);
- 	return err;
- }
- 
-@@ -383,6 +386,12 @@ int walk_page_range(struct mm_struct *mm, unsigned long start,
- 	return err;
- }
- 
-+/*
-+ * Similar to walk_page_range() but can walk any page tables even if they are
-+ * not backed by VMAs. Because 'unusual' entries may be walked this function
-+ * will also not lock the PTEs for the pte_entry() callback. This is useful for
-+ * walking the kernel pages tables or page tables for firmware.
-+ */
- int walk_page_range_novma(struct mm_struct *mm, unsigned long start,
- 			  unsigned long end, const struct mm_walk_ops *ops,
- 			  void *private)
 -- 
 2.20.1
 
