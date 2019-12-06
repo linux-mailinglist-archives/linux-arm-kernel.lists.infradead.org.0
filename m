@@ -2,52 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D559B115686
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 18:29:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75369115696
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 18:36:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vlu2c6VaStgGxCpng0Uh4SpRXWSB8owdqcwZpONJLyc=; b=TB+0oXCgJk+nBB
-	gdzUPhXdX/ZrOTL8VISd4wtVf7zeE0+jjFm8J+aBZ4LV8+FXMrcohgBWtOyaiWonFFAkaH1hARDz1
-	Fv8mmbDGCIAHPtjhzs3e3hYrbb+87V+FmnsRUUqvGlif01WgcAkTQba+5WTIvRYOpzUmKd9e+YMTf
-	YIUW7Jsn4SM113wdM6ll28wkx4pOqZ6rxoWKfYnyvDInDQZq94mvAQKsXPqCc2OY9GDgu5mAmaTIy
-	AFs6uEwKHeeftZ21b9FrKHXMhhVjRYiCZCYBDsKyzH6rPousUFh5ezCOZNw53QEvOf/AzPQBFkKCO
-	Icg+LAy/RHtEa3IKtGUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VSpGvdEUKjxNyjxRqPfVp6/JBEzlzxgZn7q7BTM4nYg=; b=gfoPp+6hHnQJKK
+	lsbqUSm7oMf5m3ToPyRiKtbQ83aNbHZ/461V53U/P1dfmCBCK5JZeBThOk/fddltetTN83XT2nsXU
+	Gv4Ytjky3uIPbU6iaoWIhcGbjcu5BmirOLE9jMjNUGj1bNoeFpHA1SRObznYvoqlUZW75KTuZUt5B
+	hX2jgH1VV7N+GTZLlWapiKol/rCRwRWKFhqmOUvUh57WHte4czZ+//VUQetsoutGn7t9O3ky8p288
+	O3HRUUklWykXdg70hcRP/AngEU/uWVs7eIOpWMfC13FHPyB4gl5rg7GjF4ozIC7+Itr7EbkYbbofu
+	Pnb6XuX4QxnNFtLP4whA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idHQM-00087Y-8m; Fri, 06 Dec 2019 17:29:50 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1idHWR-00037X-Mw; Fri, 06 Dec 2019 17:36:07 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idHQD-00086e-Td
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 17:29:43 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id EE2E9ABC7;
- Fri,  6 Dec 2019 17:29:39 +0000 (UTC)
-From: Thomas Renninger <trenn@suse.de>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v5 0/3] sysfs: add sysfs based cpuinfo
-Date: Fri, 06 Dec 2019 18:29:39 +0100
-Message-ID: <2898795.Dnvf4huJ59@skinner.arch.suse.de>
-In-Reply-To: <20191206165803.GD21671@lakrids.cambridge.arm.com>
-References: <20191206162421.15050-1-trenn@suse.de>
- <20191206165803.GD21671@lakrids.cambridge.arm.com>
+ id 1idHWJ-0001ei-KW
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 17:36:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
+ Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=I5DvSSUq8kBmzZvYKJavtYFkUBKlP3+nbcIZ+mewhp8=; b=1VwSy8ykjbEMabTB7ELm4Qgpg
+ GpcDhQiyMp/9vzKyNtwmiFAntC1d4Heie8TuaYq9avhyZeeNU0qqGaf+p/rw1P0OHKRSqqr5+UkIA
+ SMtxLhU9/sYY4+ygfoOz5KAf833aZ26Jt9GZATurl4FR2IXkSrW/DsOsA57a2EQ/K2ynFxbNsN4qm
+ EgsAyuYIhe/bgqmREgvhrLrdMys0w+rHERM2Dm5G197Dt6gpBKDC6pynqqlpDh0oHFn0vJFlKtT7V
+ LYVpY9ppSnXHkDBM0ozxzL2xusCCw6thn4HE6m3eJ2331DA5qGJrCIU2i5wRy2/9dNC29Bsbx1Z/I
+ hMH7R++5Q==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:45226)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1idHU8-00020S-MW; Fri, 06 Dec 2019 17:33:44 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1idHU7-0000qM-If; Fri, 06 Dec 2019 17:33:43 +0000
+Date: Fri, 6 Dec 2019 17:33:43 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: pinctrl states vs pinmux vs gpio (i2c bus recovery)
+Message-ID: <20191206173343.GX25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_092942_245170_215B1A90 
-X-CRM114-Status: GOOD (  19.40  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191206_093559_832176_3D1D5BB0 
+X-CRM114-Status: GOOD (  11.51  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,149 +84,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, gregkh@linuxfoundation.org, x86@kernel.org,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
- fschnitzlein@suse.de, linux-arm-kernel@lists.infradead.org
+Cc: linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Friday, December 6, 2019 5:58:03 PM CET Mark Rutland wrote:
-> Hi Thomas,
-> 
-> On Fri, Dec 06, 2019 at 05:24:18PM +0100, Thomas Renninger wrote:
-> > I picked up Felix Schnizlein's work from 2017.
-> > 
-> > It was already reviewed by Greg-KH at this time and even
-> > pushed into linux-next tree, when it came out that the mails
-> > never reached lkml, even the list was added to CC.
-> > 
-> > ARM people then correctly complained that this needs more review
-> > by ARCH people. It got reverted, Felix had no time anymore and this
-> > nice patcheset was hanging around nowhere...
-> 
-> Can you please provide a rationale for this?
+Hi Linus,
 
-/proc moves to /sys. For years already, some data needs longer...
+There seems to be a problem in pinctrl land when pinctrls interact with
+GPIOs.
 
-If you compare /proc/cpuinfo between different archs, you realize
-that it is rather different and a huge mess of arbitrary info.
+If, for example, an I2C driver wants to attempt bus recovery, and needs
+to use GPIO mode to control the I2C bus pins to do this, then one may
+expect code such as found in i2c_imx_init_recovery_info() to work.
 
-It would be great if people think a bit more about this...
-What else could show up on which architecture to avoid different
-interfaces (sys files) with the same info across architectures.
+However, consider that devm_gpiod_get() may invoke
+pinctrl_gpio_request(), which changes the pinmux settings independently
+of the pinctrl layer.
 
-I'd like to have general CPU identification, and other info like
-bugs, flags or whatever info that exists across architectures in one
-sysfs file/directory.
+The result is that after devm_gpiod_get() has completed, the I2C bus
+pins are in GPIO mode.
 
-arch=$(uname -m)
-case $arch in
-   x86_64)
-      cat /sys/devices/system/cpu/cpu0/info/name
-      ;;
-   aarch64)
-      cat /sys/devices/system/cpu/cpu0/regs/identification
-      ::
-   ...
-esac
+One may expect:
 
-This is better than grepping on different identifiers in huge /proc/cpuinfo,
-but it still is lame.
+	pinctrl_select_state(i2c_imx->pinctrl, i2c_imx->pinctrl_pins_default);
 
-Ideal would be:
-/sys/devices/system/cpu/cpu0/info/{name,vendor,flags,bugs,base_freq,...}
-being avail for all CPUs on all archs.
+to change them back to the default state, but that would be incorrect.
+The first thing that pinctrl_select_state() does is check whether
 
-if it does not exist yet..., it should at least show up there if it gets
-implemented at some point of time.
+	p->state == state
 
-> there's some data in /proc/cpuinfo that I think makes no sense to try to
-> export export in a structured way (e.g. bogomips).
+which it will do, as the pinctrl layer hasn't been informed of the
+change that has happened behind its back at the pinmux level.
 
-I'd be happy to remove bogomips if nobody needs this.
+The result is, one needs to switch the state to gpio mode, and then
+back to default to ensure that the pins are muxed back to the I2C
+controller while the I2C controller is supposed to be operational.
 
-> 
-> > Tested on aarch64:
-> > 
-> > /sys/devices/system/cpu/cpu1/info/:[0]# ls
-> > architecture  bogomips  flags  implementer  part  revision  variant
-> > 
-> > ------------------------------------------------------------
-> > 
-> > for file in *;do echo $file; cat $file;echo;done
-> > architecture
-> > 8
-> > 
-> > bogomips
-> > 40.00
-> > 
-> > flags
-> > fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid asimdrdm
-> > 
-> > implementer
-> > 0x51
-> > 
-> > part
-> > 0xc00
-> > 
-> > revision
-> > 1
-> > 
-> > variant
-> > 0x0
-> 
-> For arm64 we already expose the MIDR and REVIDR register values under
-> /sys/devices/system/cpu/cpu*/regs/identification, and that's the bulk of
-> the useful information above
+GPIO mode is only used to recover the bus when a bus hang has happened
+due to a slave device holding SDA low - and the only way that can be
+recovered is by toggling the SCL signal. If the controller provides no
+means to do this other than switching to GPIO mode, the above is
+necessary.
 
-I'd like to come up with an extra CONFIG which parses:
+I spotted this while trying out this method of i2c bus recovery on a
+different I2C controller.
 
-arch/arm64/include/asm/cputype.h:
-
-#define ARM_CPU_PART_AEM_V8             0xD0F
-#define ARM_CPU_PART_FOUNDATION         0xD00
-#define ARM_CPU_PART_CORTEX_A57         0xD07
-#define ARM_CPU_PART_CORTEX_A72         0xD08
-
-and
-
-#define ARM_CPU_IMP_ARM                 0x41
-#define ARM_CPU_IMP_APM                 0x50
-#define ARM_CPU_IMP_CAVIUM              0x43
-#define ARM_CPU_IMP_BRCM                0x42
-#define ARM_CPU_IMP_QCOM                0x51
-#define ARM_CPU_IMP_NVIDIA              0x4E
-
-and converts the defines to strings, same as here:
-
-arch/x86/include/asm/intel-family.h
-
-#define INTEL_FAM6_SKYLAKE_L            0x4E
-#define INTEL_FAM6_SKYLAKE              0x5E
-#define INTEL_FAM6_SKYLAKE_X            0x55
-#define INTEL_FAM6_KABYLAKE_L           0x8E
-#define INTEL_FAM6_KABYLAKE             0x9E
-
-and provide the model name (and for ARM the vendor name)
-compiled in a module.
-
-At least for aarch64 and x86 it seem to be possible
-to get a vendor/model string from the same defined file:
-/sys/devices/system/cpu/cpu0/info/{model_name,vendor}
-
-
-> (aside from the flags/hwcaps).
-
-which make sense to add there, right?
-
-Thanks,
-
-      Thomas
-
-
-
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
