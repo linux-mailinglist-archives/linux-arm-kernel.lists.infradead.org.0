@@ -2,49 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52555115162
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 14:52:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22449115170
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 14:54:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AthwlHkbpX2NMxcngKpqiSqL2mOi22cMrY+6f2gavw0=; b=dxuToOA2emPexz
-	a7mSYErl0HtA1fUQvWUgflmz2Fh8x45u/dQB8txgErz1EvdZJShgJkYYJvq5UK2Fdz8s6w4nUxSUU
-	ERlJHk3183/h3B2uJuJyfFGUD6BQkYEHZT9k2Sps5MpuaR/rmZ0WSusIjjewuKAEwLdn5WuCqCo13
-	vJjcjRMc88t3WcbhsyDxBmLd1aWLYoBKXG5KMCCaqkzpLqS6pLpH11umFj63tUHcMcFn0eFXCZ4JV
-	QN/Rnt1YZaCLHQvHfAC9A80U4vNGsLIrnfspmiDhB5stQ43fdWmmMjKXeUzZVyVdYCsk9ItQ2LP8A
-	GcvE+gPMa0Kfni8qmWEg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KUZZqh73mq83JY1dy35HjhAi9iibEYrzRsmu2D0pnk8=; b=jQv+W63A+DNVLO
+	Rbsgng7MqS2RTuDka6AKt8dtstBiib6Th9lUkAiGOQnxn+8Bj3UiwjjFp+0AavNbJ6fKadu4mEISC
+	w3nFWd0f2nrQn48D16FOWi8vjAeiOTzzPfTACmHLb4RRF+PZCFbOadaVTlzJiUehJEyYsi9X/yzWG
+	NZppTgZXnuN0Au+DahEq0VS6o+LweAbs2l7ET7RpmwGgox6kui38fZsyNb9iveicBMcmopX0D1pT+
+	oHVl1Uluss4P1qvQi+4VGOmTl0D1Uc4exPaleEpyuNKqDyFkaRmvCAtxj4/kwdtsH9kHNazlAi11/
+	HoqkSyHMi5tTur2M1Jgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idE1z-0001wG-8I; Fri, 06 Dec 2019 13:52:27 +0000
+	id 1idE3M-0002Me-RY; Fri, 06 Dec 2019 13:53:52 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idE1n-0001vX-Cg; Fri, 06 Dec 2019 13:52:18 +0000
+ id 1idE3D-0002M4-DT
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 13:53:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5A82C1FB;
- Fri,  6 Dec 2019 05:52:14 -0800 (PST)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B257F3F718;
- Fri,  6 Dec 2019 05:52:10 -0800 (PST)
-Date: Fri, 6 Dec 2019 13:52:01 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Enric Balletbo Serra <eballetbo@gmail.com>
-Subject: Re: [PATCH v3 10/25] PCI: rockchip: Use
- pci_parse_request_of_pci_ranges()
-Message-ID: <20191206135151.GA26562@e121166-lin.cambridge.arm.com>
-References: <20191028163256.8004-1-robh@kernel.org>
- <20191028163256.8004-11-robh@kernel.org>
- <CAFqH_51-BMWSGGBpoKxA3UK+yPHSpPgok5i=daSC0KS5oc5ueA@mail.gmail.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F0A49DA7;
+ Fri,  6 Dec 2019 05:53:42 -0800 (PST)
+Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
+ [10.1.194.43])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6DCDF3F718;
+ Fri,  6 Dec 2019 05:53:40 -0800 (PST)
+From: Steven Price <steven.price@arm.com>
+To: Andrew Morton <akpm@linux-foundation.org>,
+	linux-mm@kvack.org
+Subject: [PATCH v16 00/25] Generic page walk and ptdump
+Date: Fri,  6 Dec 2019 13:52:51 +0000
+Message-Id: <20191206135316.47703-1-steven.price@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAFqH_51-BMWSGGBpoKxA3UK+yPHSpPgok5i=daSC0KS5oc5ueA@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_055215_521424_8E8FB03C 
-X-CRM114-Status: GOOD (  24.21  )
+X-CRM114-CacheID: sfid-20191206_055343_543523_7A6E3E5B 
+X-CRM114-Status: GOOD (  25.43  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,140 +59,227 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
- Rob Herring <robh@kernel.org>, Ryder Lee <ryder.lee@mediatek.com>,
- Michal Simek <michal.simek@xilinx.com>, Christoph Hellwig <hch@infradead.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- bcm-kernel-feedback-list@broadcom.com,
- Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
- Hou Zhiqiang <Zhiqiang.Hou@nxp.com>, Simon Horman <horms@verge.net.au>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Ley Foon Tan <lftan@altera.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Scott Branden <sbranden@broadcom.com>, Jingoo Han <jingoohan1@gmail.com>,
- rfi@lists.rocketboards.org, linux-renesas-soc@vger.kernel.org,
- Tom Joseph <tjoseph@cadence.com>, Srinath Mannam <srinath.mannam@broadcom.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Andrew Murray <andrew.murray@arm.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
+ Steven Price <steven.price@arm.com>,
+ =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org, "Liang,
+ Kan" <kan.liang@linux.intel.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBEZWMgMDUsIDIwMTkgYXQgMDY6NTY6MDFQTSArMDEwMCwgRW5yaWMgQmFsbGV0Ym8g
-U2VycmEgd3JvdGU6Cj4gSGkgUm9iLAo+IAo+IE1pc3NhdGdlIGRlIFJvYiBIZXJyaW5nIDxyb2Jo
-QGtlcm5lbC5vcmc+IGRlbCBkaWEgZGwuLCAyOCBk4oCZb2N0LiAyMDE5Cj4gYSBsZXMgMTc6Mzg6
-Cj4gPgo+ID4gQ29udmVydCB0aGUgUm9ja2NoaXAgaG9zdCBicmlkZ2UgdG8gdXNlIHRoZSBjb21t
-b24KPiA+IHBjaV9wYXJzZV9yZXF1ZXN0X29mX3BjaV9yYW5nZXMoKS4KPiA+Cj4gPiBUaGVyZSdz
-IG5vIG5lZWQgdG8gYXNzaWduIHRoZSByZXNvdXJjZXMgdG8gYSB0ZW1wb3JhcnkgbGlzdCBmaXJz
-dC4gSnVzdAo+ID4gdXNlIGJyaWRnZS0+d2luZG93cyBkaXJlY3RseSBhbmQgcmVtb3ZlIGFsbCB0
-aGUgdGVtcG9yYXJ5IGxpc3QgaGFuZGxpbmcuCj4gPgo+ID4gQ2M6IFNoYXduIExpbiA8c2hhd24u
-bGluQHJvY2stY2hpcHMuY29tPgo+ID4gQ2M6IExvcmVuem8gUGllcmFsaXNpIDxsb3JlbnpvLnBp
-ZXJhbGlzaUBhcm0uY29tPgo+ID4gQ2M6IEFuZHJldyBNdXJyYXkgPGFuZHJldy5tdXJyYXlAYXJt
-LmNvbT4KPiA+IENjOiBCam9ybiBIZWxnYWFzIDxiaGVsZ2Fhc0Bnb29nbGUuY29tPgo+ID4gQ2M6
-IEhlaWtvIFN0dWVibmVyIDxoZWlrb0BzbnRlY2guZGU+Cj4gPiBDYzogbGludXgtcm9ja2NoaXBA
-bGlzdHMuaW5mcmFkZWFkLm9yZwo+ID4gU2lnbmVkLW9mZi1ieTogUm9iIEhlcnJpbmcgPHJvYmhA
-a2VybmVsLm9yZz4KPiA+IC0tLQo+IAo+IEkganVzdCB0ZXN0ZWQgbWFpbmxpbmUgb24gbXkgU2Ft
-c3VuZyBDaHJvbWVib29rIFBsdXMsIGFuZCBzaW5jZQo+IHllc3RlcmRheSBJJ20gZ2V0dGluZyBh
-ICJzeW5jaHJvbm91cyBleHRlcm5hbCBhYm9ydCIgWzFdLiBBZnRlciBhCj4gYmlzZWN0aW9uLCBJ
-IGZvdW5kIHRoYXQgdGhpcyBwYXRjaCB0cmlnZ2VycyB0aGUgaXNzdWUgKHRoaXMgcGF0Y2ggd2Fz
-Cj4gbWVyZ2VkIHllc3RlcmRheSkKPiAKPiBJIGRpZG4ndCBsb29rIGluIGRldGFpbCB5ZXQsIGJ1
-dCBpZiB5b3UgaGF2ZSBhbnkgaWRlYSBvZiB3aGF0IGNvdWxkIGJlCj4gdGhlIHByb2JsZW0sIHRo
-YXQgd291bGQgYmUgZ3JlYXQuCj4gCj4gVGhhbmtzLAo+ICBFbnJpYwo+IAo+IFsxXSBodHRwczov
-L2hhc3RlYmluLmNvbS9hZGFzZWdpaGl3LnJiCgpDb3VsZCB5b3UgcGxlYXNlIHBvc3QgdGhlIGtl
-cm5lbCBsb2cgYWdhaW4gPwoKTG9yZW56bwoKPiA+ICBkcml2ZXJzL3BjaS9jb250cm9sbGVyL3Bj
-aWUtcm9ja2NoaXAtaG9zdC5jIHwgMzYgKysrKy0tLS0tLS0tLS0tLS0tLS0tCj4gPiAgMSBmaWxl
-IGNoYW5nZWQsIDcgaW5zZXJ0aW9ucygrKSwgMjkgZGVsZXRpb25zKC0pCj4gPgo+ID4gZGlmZiAt
-LWdpdCBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpZS1yb2NrY2hpcC1ob3N0LmMgYi9kcml2
-ZXJzL3BjaS9jb250cm9sbGVyL3BjaWUtcm9ja2NoaXAtaG9zdC5jCj4gPiBpbmRleCBlZjhlNjc3
-Y2U5ZDEuLjhkMmU2ZjJlMTQxZSAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xs
-ZXIvcGNpZS1yb2NrY2hpcC1ob3N0LmMKPiA+ICsrKyBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIv
-cGNpZS1yb2NrY2hpcC1ob3N0LmMKPiA+IEBAIC05NTAsMTQgKzk1MCwxMCBAQCBzdGF0aWMgaW50
-IHJvY2tjaGlwX3BjaWVfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiA+ICAg
-ICAgICAgc3RydWN0IGRldmljZSAqZGV2ID0gJnBkZXYtPmRldjsKPiA+ICAgICAgICAgc3RydWN0
-IHBjaV9idXMgKmJ1cywgKmNoaWxkOwo+ID4gICAgICAgICBzdHJ1Y3QgcGNpX2hvc3RfYnJpZGdl
-ICpicmlkZ2U7Cj4gPiArICAgICAgIHN0cnVjdCByZXNvdXJjZSAqYnVzX3JlczsKPiA+ICAgICAg
-ICAgc3RydWN0IHJlc291cmNlX2VudHJ5ICp3aW47Cj4gPiAtICAgICAgIHJlc291cmNlX3NpemVf
-dCBpb19iYXNlOwo+ID4gLSAgICAgICBzdHJ1Y3QgcmVzb3VyY2UgKm1lbTsKPiA+IC0gICAgICAg
-c3RydWN0IHJlc291cmNlICppbzsKPiA+ICAgICAgICAgaW50IGVycjsKPiA+Cj4gPiAtICAgICAg
-IExJU1RfSEVBRChyZXMpOwo+ID4gLQo+ID4gICAgICAgICBpZiAoIWRldi0+b2Zfbm9kZSkKPiA+
-ICAgICAgICAgICAgICAgICByZXR1cm4gLUVOT0RFVjsKPiA+Cj4gPiBAQCAtOTk1LDI5ICs5OTEs
-MjAgQEAgc3RhdGljIGludCByb2NrY2hpcF9wY2llX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZp
-Y2UgKnBkZXYpCj4gPiAgICAgICAgIGlmIChlcnIgPCAwKQo+ID4gICAgICAgICAgICAgICAgIGdv
-dG8gZXJyX2RlaW5pdF9wb3J0Owo+ID4KPiA+IC0gICAgICAgZXJyID0gZGV2bV9vZl9wY2lfZ2V0
-X2hvc3RfYnJpZGdlX3Jlc291cmNlcyhkZXYsIDAsIDB4ZmYsCj4gPiAtICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJnJlcywgJmlvX2Jhc2UpOwo+ID4g
-KyAgICAgICBlcnIgPSBwY2lfcGFyc2VfcmVxdWVzdF9vZl9wY2lfcmFuZ2VzKGRldiwgJmJyaWRn
-ZS0+d2luZG93cywgJmJ1c19yZXMpOwo+ID4gICAgICAgICBpZiAoZXJyKQo+ID4gICAgICAgICAg
-ICAgICAgIGdvdG8gZXJyX3JlbW92ZV9pcnFfZG9tYWluOwo+ID4KPiA+IC0gICAgICAgZXJyID0g
-ZGV2bV9yZXF1ZXN0X3BjaV9idXNfcmVzb3VyY2VzKGRldiwgJnJlcyk7Cj4gPiAtICAgICAgIGlm
-IChlcnIpCj4gPiAtICAgICAgICAgICAgICAgZ290byBlcnJfZnJlZV9yZXM7Cj4gPiArICAgICAg
-IHJvY2tjaGlwLT5yb290X2J1c19uciA9IGJ1c19yZXMtPnN0YXJ0Owo+ID4KPiA+ICAgICAgICAg
-LyogR2V0IHRoZSBJL08gYW5kIG1lbW9yeSByYW5nZXMgZnJvbSBEVCAqLwo+ID4gLSAgICAgICBy
-ZXNvdXJjZV9saXN0X2Zvcl9lYWNoX2VudHJ5KHdpbiwgJnJlcykgewo+ID4gKyAgICAgICByZXNv
-dXJjZV9saXN0X2Zvcl9lYWNoX2VudHJ5KHdpbiwgJmJyaWRnZS0+d2luZG93cykgewo+ID4gICAg
-ICAgICAgICAgICAgIHN3aXRjaCAocmVzb3VyY2VfdHlwZSh3aW4tPnJlcykpIHsKPiA+ICAgICAg
-ICAgICAgICAgICBjYXNlIElPUkVTT1VSQ0VfSU86Cj4gPiAgICAgICAgICAgICAgICAgICAgICAg
-ICBpbyA9IHdpbi0+cmVzOwo+ID4gICAgICAgICAgICAgICAgICAgICAgICAgaW8tPm5hbWUgPSAi
-SS9PIjsKPiA+ICAgICAgICAgICAgICAgICAgICAgICAgIHJvY2tjaGlwLT5pb19zaXplID0gcmVz
-b3VyY2Vfc2l6ZShpbyk7Cj4gPiAgICAgICAgICAgICAgICAgICAgICAgICByb2NrY2hpcC0+aW9f
-YnVzX2FkZHIgPSBpby0+c3RhcnQgLSB3aW4tPm9mZnNldDsKPiA+IC0gICAgICAgICAgICAgICAg
-ICAgICAgIGVyciA9IHBjaV9yZW1hcF9pb3NwYWNlKGlvLCBpb19iYXNlKTsKPiA+IC0gICAgICAg
-ICAgICAgICAgICAgICAgIGlmIChlcnIpIHsKPiA+IC0gICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgZGV2X3dhcm4oZGV2LCAiZXJyb3IgJWQ6IGZhaWxlZCB0byBtYXAgcmVzb3VyY2UgJXBS
-XG4iLAo+ID4gLSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlcnIsIGlv
-KTsKPiA+IC0gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29udGludWU7Cj4gPiAtICAg
-ICAgICAgICAgICAgICAgICAgICB9Cj4gPiAgICAgICAgICAgICAgICAgICAgICAgICByb2NrY2hp
-cC0+aW8gPSBpbzsKPiA+ICAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrOwo+ID4gICAgICAg
-ICAgICAgICAgIGNhc2UgSU9SRVNPVVJDRV9NRU06Cj4gPiBAQCAtMTAyNiw5ICsxMDEzLDYgQEAg
-c3RhdGljIGludCByb2NrY2hpcF9wY2llX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBk
-ZXYpCj4gPiAgICAgICAgICAgICAgICAgICAgICAgICByb2NrY2hpcC0+bWVtX3NpemUgPSByZXNv
-dXJjZV9zaXplKG1lbSk7Cj4gPiAgICAgICAgICAgICAgICAgICAgICAgICByb2NrY2hpcC0+bWVt
-X2J1c19hZGRyID0gbWVtLT5zdGFydCAtIHdpbi0+b2Zmc2V0Owo+ID4gICAgICAgICAgICAgICAg
-ICAgICAgICAgYnJlYWs7Cj4gPiAtICAgICAgICAgICAgICAgY2FzZSBJT1JFU09VUkNFX0JVUzoK
-PiA+IC0gICAgICAgICAgICAgICAgICAgICAgIHJvY2tjaGlwLT5yb290X2J1c19uciA9IHdpbi0+
-cmVzLT5zdGFydDsKPiA+IC0gICAgICAgICAgICAgICAgICAgICAgIGJyZWFrOwo+ID4gICAgICAg
-ICAgICAgICAgIGRlZmF1bHQ6Cj4gPiAgICAgICAgICAgICAgICAgICAgICAgICBjb250aW51ZTsK
-PiA+ICAgICAgICAgICAgICAgICB9Cj4gPiBAQCAtMTAzNiwxNSArMTAyMCwxNCBAQCBzdGF0aWMg
-aW50IHJvY2tjaGlwX3BjaWVfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiA+
-Cj4gPiAgICAgICAgIGVyciA9IHJvY2tjaGlwX3BjaWVfY2ZnX2F0dShyb2NrY2hpcCk7Cj4gPiAg
-ICAgICAgIGlmIChlcnIpCj4gPiAtICAgICAgICAgICAgICAgZ290byBlcnJfdW5tYXBfaW9zcGFj
-ZTsKPiA+ICsgICAgICAgICAgICAgICBnb3RvIGVycl9yZW1vdmVfaXJxX2RvbWFpbjsKPiA+Cj4g
-PiAgICAgICAgIHJvY2tjaGlwLT5tc2dfcmVnaW9uID0gZGV2bV9pb3JlbWFwKGRldiwgcm9ja2No
-aXAtPm1zZ19idXNfYWRkciwgU1pfMU0pOwo+ID4gICAgICAgICBpZiAoIXJvY2tjaGlwLT5tc2df
-cmVnaW9uKSB7Cj4gPiAgICAgICAgICAgICAgICAgZXJyID0gLUVOT01FTTsKPiA+IC0gICAgICAg
-ICAgICAgICBnb3RvIGVycl91bm1hcF9pb3NwYWNlOwo+ID4gKyAgICAgICAgICAgICAgIGdvdG8g
-ZXJyX3JlbW92ZV9pcnFfZG9tYWluOwo+ID4gICAgICAgICB9Cj4gPgo+ID4gLSAgICAgICBsaXN0
-X3NwbGljZV9pbml0KCZyZXMsICZicmlkZ2UtPndpbmRvd3MpOwo+ID4gICAgICAgICBicmlkZ2Ut
-PmRldi5wYXJlbnQgPSBkZXY7Cj4gPiAgICAgICAgIGJyaWRnZS0+c3lzZGF0YSA9IHJvY2tjaGlw
-Owo+ID4gICAgICAgICBicmlkZ2UtPmJ1c25yID0gMDsKPiA+IEBAIC0xMDU0LDcgKzEwMzcsNyBA
-QCBzdGF0aWMgaW50IHJvY2tjaGlwX3BjaWVfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAq
-cGRldikKPiA+Cj4gPiAgICAgICAgIGVyciA9IHBjaV9zY2FuX3Jvb3RfYnVzX2JyaWRnZShicmlk
-Z2UpOwo+ID4gICAgICAgICBpZiAoZXJyIDwgMCkKPiA+IC0gICAgICAgICAgICAgICBnb3RvIGVy
-cl91bm1hcF9pb3NwYWNlOwo+ID4gKyAgICAgICAgICAgICAgIGdvdG8gZXJyX3JlbW92ZV9pcnFf
-ZG9tYWluOwo+ID4KPiA+ICAgICAgICAgYnVzID0gYnJpZGdlLT5idXM7Cj4gPgo+ID4gQEAgLTEw
-NjgsMTAgKzEwNTEsNiBAQCBzdGF0aWMgaW50IHJvY2tjaGlwX3BjaWVfcHJvYmUoc3RydWN0IHBs
-YXRmb3JtX2RldmljZSAqcGRldikKPiA+ICAgICAgICAgcGNpX2J1c19hZGRfZGV2aWNlcyhidXMp
-Owo+ID4gICAgICAgICByZXR1cm4gMDsKPiA+Cj4gPiAtZXJyX3VubWFwX2lvc3BhY2U6Cj4gPiAt
-ICAgICAgIHBjaV91bm1hcF9pb3NwYWNlKHJvY2tjaGlwLT5pbyk7Cj4gPiAtZXJyX2ZyZWVfcmVz
-Ogo+ID4gLSAgICAgICBwY2lfZnJlZV9yZXNvdXJjZV9saXN0KCZyZXMpOwo+ID4gIGVycl9yZW1v
-dmVfaXJxX2RvbWFpbjoKPiA+ICAgICAgICAgaXJxX2RvbWFpbl9yZW1vdmUocm9ja2NoaXAtPmly
-cV9kb21haW4pOwo+ID4gIGVycl9kZWluaXRfcG9ydDoKPiA+IEBAIC0xMDk3LDcgKzEwNzYsNiBA
-QCBzdGF0aWMgaW50IHJvY2tjaGlwX3BjaWVfcmVtb3ZlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2Ug
-KnBkZXYpCj4gPgo+ID4gICAgICAgICBwY2lfc3RvcF9yb290X2J1cyhyb2NrY2hpcC0+cm9vdF9i
-dXMpOwo+ID4gICAgICAgICBwY2lfcmVtb3ZlX3Jvb3RfYnVzKHJvY2tjaGlwLT5yb290X2J1cyk7
-Cj4gPiAtICAgICAgIHBjaV91bm1hcF9pb3NwYWNlKHJvY2tjaGlwLT5pbyk7Cj4gPiAgICAgICAg
-IGlycV9kb21haW5fcmVtb3ZlKHJvY2tjaGlwLT5pcnFfZG9tYWluKTsKPiA+Cj4gPiAgICAgICAg
-IHJvY2tjaGlwX3BjaWVfZGVpbml0X3BoeXMocm9ja2NoaXApOwo+ID4gLS0KPiA+IDIuMjAuMQo+
-ID4KPiA+Cj4gPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-Xwo+ID4gTGludXgtbWVkaWF0ZWsgbWFpbGluZyBsaXN0Cj4gPiBMaW51eC1tZWRpYXRla0BsaXN0
-cy5pbmZyYWRlYWQub3JnCj4gPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LW1lZGlhdGVrCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Since this series is still in linux-next and causing problems I'm
+sending this out before -rc1.
+
+This version adds two new patches over the previous series (v15):
+ 13: mm: pagewalk: Don't lock PTEs for walk_page_range_novma()
+ 14: mm: pagewalk: fix termination condition in walk_pte_range()
+
+Patch 13 solves the conflict with ace88f1018b8 ("mm: pagewalk: Take the
+pagetable lock in walk_pte_range()") by not taking the lock for the
+_novma() version of the function.
+
+Patch 14 fixes an existing issue with walk_pte_range() whereby if the
+end address isn't aligned to PAGE_SIZE the loop will be infinite. This
+starts to trigger on some x86 32 bit configurations with the generic
+ptdump support because there is a page in the last PMD which means that
+the end address is ~0UL.
+
+I've posted these patches separately as I think they do stand alone (and
+shouldn't cause bisection problems) - but 13/14 could potentially be
+squashed into 12.
+
+Patch 12 ("mm: pagewalk: Allow walking without vma") has also been
+updated from v15 to include the p*d_present() check that was posted[1]
+after v15 and Andrew squashed into the commit.
+
+Patch 21 ("mm: Add generic ptdump") also has the fix from Qian Cai
+squashed in to fix the order of "static const".
+
+[1] https://lore.kernel.org/lkml/16da6118-ac4d-a165-6202-0731a776ac72@arm.com/
+
+Previous description for the series:
+
+Many architectures current have a debugfs file for dumping the kernel
+page tables. Currently each architecture has to implement custom
+functions for this because the details of walking the page tables used
+by the kernel are different between architectures.
+
+This series extends the capabilities of walk_page_range() so that it can
+deal with the page tables of the kernel (which have no VMAs and can
+contain larger huge pages than exist for user space). A generic PTDUMP
+implementation is the implemented making use of the new functionality of
+walk_page_range() and finally arm64 and x86 are switch to using it,
+removing the custom table walkers.
+
+To enable a generic page table walker to walk the unusual mappings of
+the kernel we need to implement a set of functions which let us know
+when the walker has reached the leaf entry. After a suggestion from Will
+Deacon I've chosen the name p?d_leaf() as this (hopefully) describes
+the purpose (and is a new name so has no historic baggage). Some
+architectures have p?d_large macros but this is easily confused with
+"large pages".
+
+This series ends with a generic PTDUMP implemention for arm64 and x86.
+
+Mostly this is a clean up and there should be very little functional
+change. The exceptions are:
+
+* arm64 PTDUMP debugfs now displays pages which aren't present (patch 22).
+
+* arm64 has the ability to efficiently process KASAN pages (which
+  previously only x86 implemented). This means that the combination of
+  KASAN and DEBUG_WX is now useable.
+
+Also available as a git tree:
+git://linux-arm.org/linux-sp.git walk_page_range/v16
+
+Changes since v15:
+https://lore.kernel.org/lkml/20191101140942.51554-1-steven.price@arm.com/
+ * Rebased onto Linus' tree, which includes the conflicting commit:
+   ace88f1018b8 ("mm: pagewalk: Take the pagetable lock in walk_pte_range()")
+ * New patch fixing conflict with above patch
+ * Squashed in fix for ordering of "static const"
+ * Squashed in fix checking p*d_present()
+ * New patch fixing termination condition for walk_pte_range()
+
+Changes since v14:
+https://lore.kernel.org/lkml/20191028135910.33253-1-steven.price@arm.com/
+ * Switch walk_page_range() into two functions, the existing
+   walk_page_range() now still requires VMAs (and treats areas without a
+   VMA as a 'hole'). The new walk_page_range_novma() ignores VMAs and
+   will report the actual page table layout. This fixes the previous
+   breakage of /proc/<pid>/pagemap
+ * New patch at the end of the series which reduces the 'level' numbers
+   by 1 to simplify the code slightly
+ * Added tags
+
+Changes since v13:
+https://lore.kernel.org/lkml/20191024093716.49420-1-steven.price@arm.com/
+ * Fixed typo in arc definition of pmd_leaf() spotted by the kbuild test
+   robot
+ * Added tags
+
+Changes since v12:
+https://lore.kernel.org/lkml/20191018101248.33727-1-steven.price@arm.com/
+ * Correct code format in riscv pud_leaf()/pmd_leaf()
+ * v12 may not have reached everyone because of mail server problems
+   (which are now hopefully resolved!)
+
+Changes since v11:
+https://lore.kernel.org/lkml/20191007153822.16518-1-steven.price@arm.com/
+ * Use "-1" as dummy depth parameter in patch 14.
+
+Changes since v10:
+https://lore.kernel.org/lkml/20190731154603.41797-1-steven.price@arm.com/
+ * Rebased to v5.4-rc1 - mainly various updates to deal with the
+   splitting out of ops from struct mm_walk.
+ * Deal with PGD_LEVEL_MULT not always being constant on x86.
+
+Changes since v9:
+https://lore.kernel.org/lkml/20190722154210.42799-1-steven.price@arm.com/
+ * Moved generic macros to first page in the series and explained the
+   macro naming in the commit message.
+ * mips: Moved macros to pgtable.h as they are now valid for both 32 and 64
+   bit
+ * x86: Dropped patch which changed the debugfs output for x86, instead
+   we have...
+ * new patch adding 'depth' parameter to pte_hole. This is used to
+   provide the necessary information to output lines for 'holes' in the
+   debugfs files
+ * new patch changing arm64 debugfs output to include holes to match x86
+ * generic ptdump KASAN handling has been simplified and now works with
+   CONFIG_DEBUG_VIRTUAL.
+
+Changes since v8:
+https://lore.kernel.org/lkml/20190403141627.11664-1-steven.price@arm.com/
+ * Rename from p?d_large() to p?d_leaf()
+ * Dropped patches migrating arm64/x86 custom walkers to
+   walk_page_range() in favour of adding a generic PTDUMP implementation
+   and migrating arm64/x86 to that instead.
+ * Rebased to v5.3-rc1
+
+Steven Price (25):
+  mm: Add generic p?d_leaf() macros
+  arc: mm: Add p?d_leaf() definitions
+  arm: mm: Add p?d_leaf() definitions
+  arm64: mm: Add p?d_leaf() definitions
+  mips: mm: Add p?d_leaf() definitions
+  powerpc: mm: Add p?d_leaf() definitions
+  riscv: mm: Add p?d_leaf() definitions
+  s390: mm: Add p?d_leaf() definitions
+  sparc: mm: Add p?d_leaf() definitions
+  x86: mm: Add p?d_leaf() definitions
+  mm: pagewalk: Add p4d_entry() and pgd_entry()
+  mm: pagewalk: Allow walking without vma
+  mm: pagewalk: Don't lock PTEs for walk_page_range_novma()
+  mm: pagewalk: fix termination condition in walk_pte_range()
+  mm: pagewalk: Add test_p?d callbacks
+  mm: pagewalk: Add 'depth' parameter to pte_hole
+  x86: mm: Point to struct seq_file from struct pg_state
+  x86: mm+efi: Convert ptdump_walk_pgd_level() to take a mm_struct
+  x86: mm: Convert ptdump_walk_pgd_level_debugfs() to take an mm_struct
+  x86: mm: Convert ptdump_walk_pgd_level_core() to take an mm_struct
+  mm: Add generic ptdump
+  x86: mm: Convert dump_pagetables to use walk_page_range
+  arm64: mm: Convert mm/dump.c to use walk_page_range()
+  arm64: mm: Display non-present entries in ptdump
+  mm: ptdump: Reduce level numbers by 1 in note_page()
+
+ arch/arc/include/asm/pgtable.h               |   1 +
+ arch/arm/include/asm/pgtable-2level.h        |   1 +
+ arch/arm/include/asm/pgtable-3level.h        |   1 +
+ arch/arm64/Kconfig                           |   1 +
+ arch/arm64/Kconfig.debug                     |  19 +-
+ arch/arm64/include/asm/pgtable.h             |   2 +
+ arch/arm64/include/asm/ptdump.h              |   8 +-
+ arch/arm64/mm/Makefile                       |   4 +-
+ arch/arm64/mm/dump.c                         | 148 +++-----
+ arch/arm64/mm/mmu.c                          |   4 +-
+ arch/arm64/mm/ptdump_debugfs.c               |   2 +-
+ arch/mips/include/asm/pgtable.h              |   5 +
+ arch/powerpc/include/asm/book3s/64/pgtable.h |  30 +-
+ arch/riscv/include/asm/pgtable-64.h          |   7 +
+ arch/riscv/include/asm/pgtable.h             |   7 +
+ arch/s390/include/asm/pgtable.h              |   2 +
+ arch/sparc/include/asm/pgtable_64.h          |   2 +
+ arch/x86/Kconfig                             |   1 +
+ arch/x86/Kconfig.debug                       |  20 +-
+ arch/x86/include/asm/pgtable.h               |  10 +-
+ arch/x86/mm/Makefile                         |   4 +-
+ arch/x86/mm/debug_pagetables.c               |   8 +-
+ arch/x86/mm/dump_pagetables.c                | 343 +++++--------------
+ arch/x86/platform/efi/efi_32.c               |   2 +-
+ arch/x86/platform/efi/efi_64.c               |   4 +-
+ drivers/firmware/efi/arm-runtime.c           |   2 +-
+ fs/proc/task_mmu.c                           |   4 +-
+ include/asm-generic/pgtable.h                |  20 ++
+ include/linux/pagewalk.h                     |  42 ++-
+ include/linux/ptdump.h                       |  22 ++
+ mm/Kconfig.debug                             |  21 ++
+ mm/Makefile                                  |   1 +
+ mm/hmm.c                                     |   8 +-
+ mm/migrate.c                                 |   5 +-
+ mm/mincore.c                                 |   1 +
+ mm/pagewalk.c                                | 145 ++++++--
+ mm/ptdump.c                                  | 151 ++++++++
+ 37 files changed, 600 insertions(+), 458 deletions(-)
+ create mode 100644 include/linux/ptdump.h
+ create mode 100644 mm/ptdump.c
+
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
