@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46BA71151B4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 14:59:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB7D11151B6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 14:59:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1SmrPHsHaZFrx15rfF7NiIet2eJa0HMCpbD7YeCo3HQ=; b=cKqTfMYHKbcMoT
-	OvlrI3YMTNmGPpK6S/tRYG9enoOEo3LEcxHmT/ztxZTLKQkguBUhFPP6A84N2KNhclxilfCs/2V2x
-	jJMKA8NLb9lROEN4vsEtfbfa4RMUlH3W3mrBASWPXbuQo6XYLqG3S09jIlHU+2u5//w1ZbUFOrdFS
-	xGwX+0FDOaxOakCZQFgNEZVVEISu41M5Q1yowmkIlsnvvUPttV2mhwaN6POVgUnQtHrQAe47tby2I
-	fF0GXy/31y4s8qC7z6HbE1i++c3nq02F7o7rUlHexgFL1Kgap0AExzgtJob4cMmgFC/jSGm9rfZ85
-	gGeTzS3WIUR1OPdQCDtg==;
+	List-Owner; bh=5CpTFX+DeDDj5jrnJcR2/Tf7CJTUbjJtUNb11qNUk3Q=; b=irU/44lG7RIjCm
+	37hno0vrTbzz1K8n9sDkFUHaVYXtg7fslyOE8xOuZPvzRBSm9Ee7dfxh0JsJiQITx1spdudhCKuq2
+	KrfENwWXkrHOcv0biTOXc6OP1/5pVK+9f6WR1rw5ip/XdYeyESyLlQersUIerIv0jOyw5Gxxn+w4/
+	wO+jYfjAYrk5XenwQKMjtOAioWpjXlqgAclK9Y+uks7t58GjU5yj9B9h7XdX5ZIYgklOIbqh/eson
+	PuiGyfmDUirh7oagipT/JAPhe+pJK/I8M/egF6nS9wHab8cAdJb5MBzXKen92dDlAUPCmSF+A685Y
+	9JlPpyI7UdieMlDWKc3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idE8a-0008RM-3l; Fri, 06 Dec 2019 13:59:16 +0000
+	id 1idE9B-0000Ub-Gu; Fri, 06 Dec 2019 13:59:53 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idE47-0003JV-76
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 13:54:41 +0000
+ id 1idE49-0003Lq-TG
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 13:54:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A0AB71396;
- Fri,  6 Dec 2019 05:54:38 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 61D891FB;
+ Fri,  6 Dec 2019 05:54:41 -0800 (PST)
 Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
  [10.1.194.43])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1FA5B3F718;
- Fri,  6 Dec 2019 05:54:36 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D65EB3F718;
+ Fri,  6 Dec 2019 05:54:38 -0800 (PST)
 From: Steven Price <steven.price@arm.com>
 To: Andrew Morton <akpm@linux-foundation.org>,
 	linux-mm@kvack.org
-Subject: [PATCH v16 19/25] x86: mm: Convert ptdump_walk_pgd_level_debugfs() to
+Subject: [PATCH v16 20/25] x86: mm: Convert ptdump_walk_pgd_level_core() to
  take an mm_struct
-Date: Fri,  6 Dec 2019 13:53:10 +0000
-Message-Id: <20191206135316.47703-20-steven.price@arm.com>
+Date: Fri,  6 Dec 2019 13:53:11 +0000
+Message-Id: <20191206135316.47703-21-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191206135316.47703-1-steven.price@arm.com>
 References: <20191206135316.47703-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_055439_464296_C4C8F160 
-X-CRM114-Status: GOOD (  13.49  )
+X-CRM114-CacheID: sfid-20191206_055442_055279_484DA1C7 
+X-CRM114-Status: GOOD (  14.70  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -79,114 +79,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To enable x86 to use the generic walk_page_range() function, the
-callers of ptdump_walk_pgd_level_debugfs() need to pass in the mm_struct.
+An mm_struct is needed to enable x86 to use of the generic
+walk_page_range() function.
 
-This means that ptdump_walk_pgd_level_core() is now always passed a
-valid pgd, so drop the support for pgd==NULL.
+In the case of walking the user page tables (when
+CONFIG_PAGE_TABLE_ISOLATION is enabled), it is necessary to create a
+fake_mm structure because there isn't an mm_struct with a pointer
+to the pgd of the user page tables. This fake_mm structure is
+initialised with the minimum necessary for the generic page walk code.
 
 Signed-off-by: Steven Price <steven.price@arm.com>
 ---
- arch/x86/include/asm/pgtable.h |  3 ++-
- arch/x86/mm/debug_pagetables.c |  8 ++++----
- arch/x86/mm/dump_pagetables.c  | 14 ++++++--------
- 3 files changed, 12 insertions(+), 13 deletions(-)
+ arch/x86/mm/dump_pagetables.c | 36 ++++++++++++++++++++---------------
+ 1 file changed, 21 insertions(+), 15 deletions(-)
 
-diff --git a/arch/x86/include/asm/pgtable.h b/arch/x86/include/asm/pgtable.h
-index 5a30bf58156e..7e118660bbd9 100644
---- a/arch/x86/include/asm/pgtable.h
-+++ b/arch/x86/include/asm/pgtable.h
-@@ -30,7 +30,8 @@ extern pgd_t early_top_pgt[PTRS_PER_PGD];
- int __init __early_make_pgtable(unsigned long address, pmdval_t pmd);
- 
- void ptdump_walk_pgd_level(struct seq_file *m, struct mm_struct *mm);
--void ptdump_walk_pgd_level_debugfs(struct seq_file *m, pgd_t *pgd, bool user);
-+void ptdump_walk_pgd_level_debugfs(struct seq_file *m, struct mm_struct *mm,
-+				   bool user);
- void ptdump_walk_pgd_level_checkwx(void);
- void ptdump_walk_user_pgd_level_checkwx(void);
- 
-diff --git a/arch/x86/mm/debug_pagetables.c b/arch/x86/mm/debug_pagetables.c
-index 39001a401eff..d0efec713c6c 100644
---- a/arch/x86/mm/debug_pagetables.c
-+++ b/arch/x86/mm/debug_pagetables.c
-@@ -7,7 +7,7 @@
- 
- static int ptdump_show(struct seq_file *m, void *v)
- {
--	ptdump_walk_pgd_level_debugfs(m, NULL, false);
-+	ptdump_walk_pgd_level_debugfs(m, &init_mm, false);
- 	return 0;
- }
- 
-@@ -17,7 +17,7 @@ static int ptdump_curknl_show(struct seq_file *m, void *v)
- {
- 	if (current->mm->pgd) {
- 		down_read(&current->mm->mmap_sem);
--		ptdump_walk_pgd_level_debugfs(m, current->mm->pgd, false);
-+		ptdump_walk_pgd_level_debugfs(m, current->mm, false);
- 		up_read(&current->mm->mmap_sem);
- 	}
- 	return 0;
-@@ -30,7 +30,7 @@ static int ptdump_curusr_show(struct seq_file *m, void *v)
- {
- 	if (current->mm->pgd) {
- 		down_read(&current->mm->mmap_sem);
--		ptdump_walk_pgd_level_debugfs(m, current->mm->pgd, true);
-+		ptdump_walk_pgd_level_debugfs(m, current->mm, true);
- 		up_read(&current->mm->mmap_sem);
- 	}
- 	return 0;
-@@ -43,7 +43,7 @@ DEFINE_SHOW_ATTRIBUTE(ptdump_curusr);
- static int ptdump_efi_show(struct seq_file *m, void *v)
- {
- 	if (efi_mm.pgd)
--		ptdump_walk_pgd_level_debugfs(m, efi_mm.pgd, false);
-+		ptdump_walk_pgd_level_debugfs(m, &efi_mm, false);
- 	return 0;
- }
- 
 diff --git a/arch/x86/mm/dump_pagetables.c b/arch/x86/mm/dump_pagetables.c
-index 24fe76325b31..2f5f32f21f81 100644
+index 2f5f32f21f81..3632be89ec99 100644
 --- a/arch/x86/mm/dump_pagetables.c
 +++ b/arch/x86/mm/dump_pagetables.c
-@@ -518,16 +518,12 @@ static inline bool is_hypervisor_range(int idx)
- static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
+@@ -107,8 +107,6 @@ static struct addr_marker address_markers[] = {
+ 	[END_OF_SPACE_NR]	= { -1,			NULL }
+ };
+ 
+-#define INIT_PGD	((pgd_t *) &init_top_pgt)
+-
+ #else /* CONFIG_X86_64 */
+ 
+ enum address_markers_idx {
+@@ -143,8 +141,6 @@ static struct addr_marker address_markers[] = {
+ 	[END_OF_SPACE_NR]	= { -1,			NULL }
+ };
+ 
+-#define INIT_PGD	(swapper_pg_dir)
+-
+ #endif /* !CONFIG_X86_64 */
+ 
+ /* Multipliers for offsets within the PTEs */
+@@ -515,10 +511,10 @@ static inline bool is_hypervisor_range(int idx)
+ #endif
+ }
+ 
+-static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
++static void ptdump_walk_pgd_level_core(struct seq_file *m, struct mm_struct *mm,
  				       bool checkwx, bool dmesg)
  {
--	pgd_t *start = INIT_PGD;
-+	pgd_t *start = pgd;
+-	pgd_t *start = pgd;
++	pgd_t *start = mm->pgd;
  	pgprotval_t prot, eff;
  	int i;
  	struct pg_state st = {};
+@@ -565,39 +561,49 @@ static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
  
--	if (pgd) {
--		start = pgd;
--		st.to_dmesg = dmesg;
--	}
--
-+	st.to_dmesg = dmesg;
- 	st.check_wx = checkwx;
- 	st.seq = m;
- 	if (checkwx)
-@@ -572,8 +568,10 @@ void ptdump_walk_pgd_level(struct seq_file *m, struct mm_struct *mm)
- 	ptdump_walk_pgd_level_core(m, mm->pgd, false, true);
+ void ptdump_walk_pgd_level(struct seq_file *m, struct mm_struct *mm)
+ {
+-	ptdump_walk_pgd_level_core(m, mm->pgd, false, true);
++	ptdump_walk_pgd_level_core(m, mm, false, true);
  }
  
--void ptdump_walk_pgd_level_debugfs(struct seq_file *m, pgd_t *pgd, bool user)
-+void ptdump_walk_pgd_level_debugfs(struct seq_file *m, struct mm_struct *mm,
-+				   bool user)
++#ifdef CONFIG_PAGE_TABLE_ISOLATION
++static void ptdump_walk_pgd_level_user_core(struct seq_file *m,
++					    struct mm_struct *mm,
++					    bool checkwx, bool dmesg)
++{
++	struct mm_struct fake_mm = {
++		.pgd = kernel_to_user_pgdp(mm->pgd)
++	};
++	init_rwsem(&fake_mm.mmap_sem);
++	ptdump_walk_pgd_level_core(m, &fake_mm, checkwx, dmesg);
++}
++#endif
++
+ void ptdump_walk_pgd_level_debugfs(struct seq_file *m, struct mm_struct *mm,
+ 				   bool user)
  {
-+	pgd_t *pgd = mm->pgd;
+-	pgd_t *pgd = mm->pgd;
  #ifdef CONFIG_PAGE_TABLE_ISOLATION
  	if (user && boot_cpu_has(X86_FEATURE_PTI))
- 		pgd = kernel_to_user_pgdp(pgd);
-@@ -599,7 +597,7 @@ void ptdump_walk_user_pgd_level_checkwx(void)
+-		pgd = kernel_to_user_pgdp(pgd);
++		ptdump_walk_pgd_level_user_core(m, mm, false, false);
++	else
+ #endif
+-	ptdump_walk_pgd_level_core(m, pgd, false, false);
++		ptdump_walk_pgd_level_core(m, mm, false, false);
+ }
+ EXPORT_SYMBOL_GPL(ptdump_walk_pgd_level_debugfs);
+ 
+ void ptdump_walk_user_pgd_level_checkwx(void)
+ {
+ #ifdef CONFIG_PAGE_TABLE_ISOLATION
+-	pgd_t *pgd = INIT_PGD;
+-
+ 	if (!(__supported_pte_mask & _PAGE_NX) ||
+ 	    !boot_cpu_has(X86_FEATURE_PTI))
+ 		return;
+ 
+ 	pr_info("x86/mm: Checking user space page tables\n");
+-	pgd = kernel_to_user_pgdp(pgd);
+-	ptdump_walk_pgd_level_core(NULL, pgd, true, false);
++	ptdump_walk_pgd_level_user_core(NULL, &init_mm, true, false);
+ #endif
+ }
  
  void ptdump_walk_pgd_level_checkwx(void)
  {
--	ptdump_walk_pgd_level_core(NULL, NULL, true, false);
-+	ptdump_walk_pgd_level_core(NULL, INIT_PGD, true, false);
+-	ptdump_walk_pgd_level_core(NULL, INIT_PGD, true, false);
++	ptdump_walk_pgd_level_core(NULL, &init_mm, true, false);
  }
  
  static int __init pt_dump_init(void)
