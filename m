@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2DA511558A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 17:36:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C22D11558C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 17:37:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QUPX03inBJXuv0HA4UtMePsBWvWxVwIwLTL8mReLwRI=; b=sj6i63Sp5AEU2E
-	yoXtwCYpBkFepwBDMceCT7IEwf8dX1pwjKTnE88CqOwfjFWp4GTxD2bB9BgXxEgNPxXh80bLR/krV
-	WKLRKHEkszUfNwZEHpfNv9SMfBaVRFms7JVdMcqxeB5W95YMmWZU6CWVcXBLtv1xOymLVIvYfVVjo
-	ixZYNqY8VWduZHel48kB5Lw0Kxx9LQ+9e6fpzdHewGYSzOqp6kkUr0+ucutJeOu6PU23JC4b0bHCX
-	IzmHzaxShvpKsnQTZf26kCly92j+IDWIA+FqDKFMGv56OX9QUm1zQZVCzD/pkVbboEIAhvLcIJ/UK
-	nglg13X9qKM8lvMcQABQ==;
+	List-Owner; bh=1xAE6llt4SXRKmC+5ULO8vF0/b3jMBOdVMtL/B/Q1N0=; b=tGfl1w0tiRcPag
+	ykwlgaks1/nkBa+Nvllkpue/MvXRWM/lbuXQSFB9C5hxe1GJW13NJ5wgSyTySOcdp6HZvWgB9hgq4
+	Oh9u05jGA6CJnmVofjrBxJSttjaMdwgDcVAFcbM48APqXOaCFIUTgPLrZKehPUhk1QEPpYsR0i6iu
+	GHAZk2J6MyO1b6zSuZFA0hTADcOChrdRCX45d9/SiH3yqPoRqgjywVkU57Rf6njSjHiU5B8AUEj4E
+	m7LCEXkL6bmq/BFFtaDcUKtVn++vEy2W1NDUyuk9/8HovkWsPNMPK2TH4nHqX5adb6dfeL0B7OZT9
+	z8mpTMhZJGsLdfeJeugw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idGax-0001IX-3N; Fri, 06 Dec 2019 16:36:43 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1idGb9-0001Vz-Mn; Fri, 06 Dec 2019 16:36:55 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idGab-00017r-Ve
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 16:36:23 +0000
-Received: by mail-lj1-x242.google.com with SMTP id e28so8277695ljo.9
+ id 1idGae-0001AB-1b
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 16:36:25 +0000
+Received: by mail-lj1-x244.google.com with SMTP id r19so8331457ljg.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Dec 2019 08:36:21 -0800 (PST)
+ Fri, 06 Dec 2019 08:36:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=Do9Ixinmx7DWrqug5u9w6tASXApuWJdCd8LeAbdsBIQ=;
- b=TsZ6bc64rxzpqunpmQ9zZj07Ax4iRTEptSrLKQ+dpVUS7CBbthGk73RbR1sKm/ihVS
- Eiu+u06rthCiI6Gi7wf98K8KH8EWHvaP55qYJ0K04+L5SVwB+3JbhhE3zfvQOBdm3lBQ
- NJvk6wvXUxT1Wq8K6Re8tvnM9+Fq8zS+NOsTDH2SWIMDRPbfTbWoDpZVKislSid2cofB
- 3uFp3q8ehVxp+1Kolsh0EWEkVcd3Qvjw/RKIsL9kVkDaFj9yalOgX5VDEszCHN6R/g3F
- uuNno5rQX5O07PJ3HvM0q5RCl3TYwMUHEfwXJJLchW8zq4VPmq+uqNeE1sCRKru0fuSL
- ed4Q==
+ bh=HnJtFpZ6jjWosnNm58PnBnTv4VRgmN3wB8xLAynPWog=;
+ b=KluAb/4Mo3kTzHDHB3oCfFJIyJBu6He1LR/O65SLLuUB9MPFPJAiBR0pO+r3CrCW7v
+ 6YVIYTkVHKctyppN/7wPW8ZYOXmyb0z9UMQB4A4X7m/Y3F0kKJcubdldYDgNxET/Fu1F
+ fMDZRWhaTvY+91BOkXyCjg/uuJHFidRBW2L8tZAbaedFND0dVGbqEtB5X5ukXrjy37W1
+ 3w1JI0dTRUW/nWqofMzbhGACVJyHZg0hTW3/d8o8zpgO7pCicaFf3+CUPBERbyXYseSJ
+ erfkuCG93rFUr7pqDa4HllSD8UUDZ13s+T51wrs5CKV5TBKfFzIgi0UllRgHfQqErnRj
+ NeDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Do9Ixinmx7DWrqug5u9w6tASXApuWJdCd8LeAbdsBIQ=;
- b=j6pTtEdgDRHHNddrtULcMdr9+Gb0HWoeea8ND22gMDWwOifsob1hFcrq+dBN90T1xy
- EGF439v20LNTpvO1f7z5ubIfLK2GUG5yItpod2Ac3LqDaLniD+gc0RJiAw9AoxAUbrT4
- Aipe6FQda3D8YoMoMRNHKAsFR3/1y3H4idrT3U6UrAYGOenE+zlTUDqUz8wkxgdoiXYh
- KE+Bkow9frxW1rznm13188om+cNRooFxdKlYcZ0ybhCWJBqKbVznNA/KM9x3CDLQxNvk
- GYRDzSPoctNHnHTkwuqP+8dDfVDD+Gyq3yX+3YbcMzImBKXz2Cip6llXvG0rfJO7DzKE
- K21Q==
-X-Gm-Message-State: APjAAAXvXf56T0Q32J/jG/4mDGKXnAk8FNPJZ+YqmjLWSJSorMCBTuLJ
- QwCNyfEjOA11pBEDfbW0K4/F3Q==
-X-Google-Smtp-Source: APXvYqzFPZuwpYdyHCsG+D27+XkuBdXIZhP2CbCq8CsSbLiJU4568yp5Ua0bb5hzl4F2nEum2wccHg==
-X-Received: by 2002:a2e:9b52:: with SMTP id o18mr8955227ljj.205.1575650179665; 
- Fri, 06 Dec 2019 08:36:19 -0800 (PST)
+ bh=HnJtFpZ6jjWosnNm58PnBnTv4VRgmN3wB8xLAynPWog=;
+ b=TdBF8VPkrlWuzc460CTOkHfSgasgupxsJv3rpgnLpeCohb6BtX3lus9WE5IB8+/yO8
+ 8bsaIN5PjrVpCgq2Uipafz1fFJVDEzKwZ+QG0j9HU48PT5cin2l6dbyOFZGkVRCdJVGJ
+ wUuaga63d2/ul/qEaQZOxVb6wE+GVR9RpMuXNBcW9yrC4rAwlKFDkVrHHmTLGFWBCX5f
+ 2VoHB3vnPsJKOj4YSI1LaOuhqhcE8FrQPAWjb7DMOSBMYdqq0cm8A/TuuI/KyKqCk6kZ
+ B0AxYf5RIU6fb7tCMfliFQ/Jq7WAzKl6cM04iTf4vrca6WcBECyBv8skqxYV1ygB3tx7
+ qE4Q==
+X-Gm-Message-State: APjAAAV/c9b5DjDwI0tkbdnEsBpI8p8EngLFlp7/oRMMEJBR+Xy3ipdJ
+ hPu7XfhvOdzH9zZLY6epd+eOVw==
+X-Google-Smtp-Source: APXvYqwKWoNwsDw4lLlo6f+cwU2nrcz+ksaYea+IvWUnWl3JsguNTfwQAjFoWHJlaoF6xdIzrn9wxA==
+X-Received: by 2002:a2e:1f12:: with SMTP id f18mr8959769ljf.11.1575650181787; 
+ Fri, 06 Dec 2019 08:36:21 -0800 (PST)
 Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id k5sm2572559lfd.86.2019.12.06.08.36.18
+ by smtp.gmail.com with ESMTPSA id w19sm6748148lfl.55.2019.12.06.08.36.20
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 06 Dec 2019 08:36:18 -0800 (PST)
-Date: Fri, 6 Dec 2019 08:29:19 -0800
+ Fri, 06 Dec 2019 08:36:20 -0800 (PST)
+Date: Fri, 6 Dec 2019 08:32:37 -0800
 From: Olof Johansson <olof@lixom.net>
-To: Jens Wiklander <jens.wiklander@linaro.org>
-Subject: Re: [GIT PULL] tee subsys fixes for v5.4 (take two)
-Message-ID: <20191206162919.vilrybgbiewdl4d2@localhost>
-References: <20191115105353.GA26176@jax>
- <20191116234048.oas2rlfwxlz65jvp@localhost>
- <CAHUa44EQ-1SUd0dDBp43_EGPMPArq_g8=1hSKZ3EC0uELUKH_A@mail.gmail.com>
- <CAHUa44FaxiMrGwOLPrej_zMrVFyBExfPTqeHfYfocpc8x8LzLg@mail.gmail.com>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Subject: Re: [GIT PULL] Qualcomm ARM64 Defconfig updates for 5.5
+Message-ID: <20191206163237.t4ohf7fviz4ywkck@localhost>
+References: <1573068840-13098-1-git-send-email-agross@kernel.org>
+ <20191106220406.4aoq5suvwww6c3ov@localhost>
+ <20191206050222.GC289401@yoga>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAHUa44FaxiMrGwOLPrej_zMrVFyBExfPTqeHfYfocpc8x8LzLg@mail.gmail.com>
+In-Reply-To: <20191206050222.GC289401@yoga>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_083622_099468_1A495DD4 
-X-CRM114-Status: GOOD (  20.90  )
+X-CRM114-CacheID: sfid-20191206_083624_114389_C30E2EF2 
+X-CRM114-Status: GOOD (  17.91  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -97,53 +96,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: soc@kernel.org, arm-soc <arm@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: arm@kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-arm-msm@vger.kernel.org, Andy Gross <agross@kernel.org>,
+ Kevin Hilman <khilman@baylibre.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 06, 2019 at 10:57:47AM +0100, Jens Wiklander wrote:
-> Hi Olof,
+On Thu, Dec 05, 2019 at 09:02:22PM -0800, Bjorn Andersson wrote:
+> On Wed 06 Nov 14:04 PST 2019, Olof Johansson wrote:
 > 
-> On Sun, Nov 17, 2019 at 3:22 PM Jens Wiklander
-> <jens.wiklander@linaro.org> wrote:
-> >
-> > On Sun, Nov 17, 2019 at 12:45 AM Olof Johansson <olof@lixom.net> wrote:
-> > >
-> > > On Fri, Nov 15, 2019 at 11:53:53AM +0100, Jens Wiklander wrote:
-> > > > Hello arm-soc maintainers,
-> > > >
-> > > > Please pull these OP-TEE driver fixes. There's one user-after-free issue if
-> > > > in the error handling path when the OP-TEE driver is initializing. There's
-> > > > also one fix to to register dynamically allocated shared memory needed by
-> > > > kernel clients communicating with secure world via memory references.
-> > > >
-> > > > "tee: optee: Fix dynamic shm pool allocations" is now from version 2 which
-> > > > includes a fix up with a small but vital dependency.
-> > > >
-> > > > If you think it's too late for v5.4 please queue this for v5.5 instead.
-> > >
-> > > Hi,
-> > >
-> > > I noticed you based this on -rc3 -- all our other branches are on -rc2 or
-> > > older.
-> >
-> > I'm sorry, I thought -rc3 was old enough. I'll stick to -rc2 or older
-> > in next time.
-> >
-> > >
-> > > Anyway, I brought this in to the fixes branch, it's the only thing we have
-> > > queued up at this time so I'll give it a few days in -next before I send it in.
+> > On Wed, Nov 06, 2019 at 01:33:56PM -0600, Andy Gross wrote:
+> > > The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
+> > > 
+> > >   Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
+> > > 
+> > > are available in the git repository at:
+> > > 
+> > >   git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-arm64-defconfig-for-5.5
+> > > 
+> > > for you to fetch changes up to a36612b7469cf76953cf237a2b9a62f6c97730bb:
+> > > 
+> > >   arm64: defconfig: Enable Qualcomm watchdog driver (2019-10-20 23:04:59 -0700)
+> > > 
+> > > ----------------------------------------------------------------
+> > > Qualcomm ARM64 Based defconfig Updates for v5.5
+> > > 
+> > > * Enable Qualcomm cpufreq, watchdog, prng, socinfo, SPI, and QSPI controllers
+> > > * Enable SN65DSI86 display bridge
+> > > * Enable QCA Bluetooth over Uart
+> > > * Enable various Qualcomm remoteproc dependencies
+> > > 
+> > > ----------------------------------------------------------------
+> > > Bjorn Andersson (6):
+> > >       arm64: defconfig: Enable Qualcomm remoteproc dependencies
+> > >       arm64: defconfig: Enable Qualcomm SPI and QSPI controller
+> > >       arm64: defconfig: Enable Qualcomm socinfo driver
+> > >       arm64: defconfig: Enable Qualcomm CPUfreq HW driver
+> > 
+> > 
+> > Hi, this turns on the driver as =y, when the option is tristate. Other
+> > cpufreq drivers are also modules. Is this driver truly needed to be
+> > a built-in for a generic defconfig?
+> > 
 > 
-> It looks like the two patches in this pull request
-> (https://git.linaro.org/people/jens.wiklander/linux-tee.git/tag/?h=tee-fixes-for-v5.4)
-> are still in -next and haven't got any further. Is there anything
-> wrong? Something I should fix?
+> I see Linus merged the arm defconfig PR today, but afaict the patches
+> from this branch is missing. Please advice on how you would like us to
+> proceed.
 
-They were in our fixes branch and didn't go in yet, but will shortly.
+I think I was waiting on the promised validation of using =m for the cpufreq
+drivers and an updated pull request.
 
 
 -Olof
