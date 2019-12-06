@@ -2,89 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C628B115809
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 20:56:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C3FE11585A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 21:55:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XCfJDCOpkrIOYFkj6vHZY8vzwJiYGG4gbOOKqaZ64rw=; b=PH5qQW2KvM1fqc
-	rq7JBq5TfYC3hQFYOGe3+U+2TjOP/SlcI10QNxp4FZmdGP6Cnsys5HjmPMANbheVg1TXn7JtGAsAy
-	F18owL58rv9ox+dBeCDEEWk861qXVnyQK/DD2BDH6IAjTS0o8pwpjqVFIPvAE5dmAVs32R2suTUVT
-	vqZ1OmZRfF4OC5lGBSTkQ/WFSalXDm8dKJrhOYI7ohQh8cymcn3ju0p8Lprw1DwEVb4/G3gB1Izy7
-	tE6ec1icCYVNsXcR51rmVvPEcrRJML/J9auQfGl2UNb5PgssrpomGc2H15SEGc/X2jI5hgF0Fq4WG
-	p1/T/MVOhXVX1zdsesYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wZuQB+5b1BsWJsFXsXhepUEnyagMt3GhE95Z1EJMTsI=; b=iTXxoljhhdqVuU
+	OR8vxNwfimsNSZlLrtmA2zaOd/iJzQ7RqGfagvPIZIMoXhC7vQ/kelzjzjLYoFmyX6v5XhsF5Ptji
+	b5yZM1ITc+L5s7d54VKHFiX+cQxc6VH6C9EtxDTTVnUwWHn0FfUf7nj5QkJxuenHlKCK6/AJ4Eib5
+	+rpfvu173L41heCa6k5xIme3lho90cZEh0SbFMWeGRJ0KawzEBKJqtIz+vF5SOgg7MPw+PHGGukUW
+	p1iG7lutnbYyq+jTDiRWHEuQq18nSJvZyO89YXsIRPfpGX5xX6t7Nd4HEb2gX2/rLqExHuzVCDntS
+	yXTD+jZkhOz1MSlIoN6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idJhw-0002CR-Oh; Fri, 06 Dec 2019 19:56:08 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1idKdK-0006zt-Iw; Fri, 06 Dec 2019 20:55:26 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idJhk-00020i-3T
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 19:55:57 +0000
-Received: by mail-il1-x141.google.com with SMTP id t9so7290542iln.4
+ id 1idKdC-0006zJ-Ep
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 20:55:20 +0000
+Received: by mail-lj1-x242.google.com with SMTP id e10so9072041ljj.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Dec 2019 11:55:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=DTgSv4IR0PpwmqQTfS7L4oC63RYA+jjFi0H391aqaRo=;
- b=FoabJm/VAHEA72IkwsIyNnv2Lb0OAfzfxwsi0xcKcZSGC/zIOq4hoVvRBGyq823LgA
- 5QvG4cpHa9qGCS74ERmwipoNQna4LCng8AHcMhbc9m4BhXQOHxQ6mvZZKk2bfFIAgEz5
- yCdmoq909w9OxHbSYp6/VZGJWug7Qzv815CNhPRhlrmZQyJsut/ofMwtRpnhdfr7L7wq
- e3kd9xPjIxAq2hPa/iqD9PA8SldEqPRF8KjCeHFmqZPRC67+2/7pHKP/RieCINQwe0Sq
- slOAoDOnpoUgeBlKBoO7eu77aInhlnhWoBvQWjxkNfgsBIjtEme8zib6OybCBex/+M/j
- 8jrQ==
+ Fri, 06 Dec 2019 12:55:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=dDOgMHYCPqZmG8t2SDXruDukUJ9qiXPdNP9vyd0xDfY=;
+ b=ugKs6D08RnBJ4kkK3PkSVwkWgzxu1j3EYwx3fUTwwhRb3uQzVoENq///0waI2SAuPI
+ ikI6naEo3ZKIJ3AJBmM3u0A8FZ/8hWc5rwuX3JGKZJVmV876aqid6qdMaz9JUBBAguw5
+ MvoaBZpcz2KNXOXPqPccpFtHduSylbTIEdRagvxcf7zcxKduRzbgvRqaeZFoLKsJ+0hL
+ /FHvCFKzPisWEsXc7YR8DoWaTnSGMHKBD+uXs5i/aF+KQAdZ6HkQH243zxDbpX2q2LfI
+ 7NMFIKkkDzqYAemktQvPIAvYXKsyF8wh/cbj6odSVzjqAXpAVetDHawsaL1kzAtoxOnT
+ b7hA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DTgSv4IR0PpwmqQTfS7L4oC63RYA+jjFi0H391aqaRo=;
- b=ks/zt3E8URkhp5HJGDa8wOnh+ocYeJFrE0RvKkZe4uXJK2irUvkgZsCWESNrVaBPMi
- p43x24MgIxgmL+O5eEFlxjp4Mb9zODb9T4O/9sYcFPKfRBfm5a1dgcCUvguLPVToZ0dc
- +FH+CVUO1BlziA51boTFldZ7/8J2yPfm6qn1c9yhvR3Cle3KZd4SRJkZulZXmHltBlj3
- PReMs2xCBTI+nYUaWBLGqNzmegWo6LN40sRBH+NWPxG2Plip8KFMz0EAwo7eMHaLoNub
- gyV/ePkjSPmKeKzrl6Y8ubPByXLuEJ4jqZqF+IjlduvCx/Y6HLs5/zeYOctwNiFG2Ycw
- GbJA==
-X-Gm-Message-State: APjAAAXa37hABbtNB07/uKWpPRfkicJ/m4LRT3i1L5Opb6+cxlPAwNOd
- HbsGOTOClvAIK+lSZVlTZR+m4s3kHFx46x2iGpM=
-X-Google-Smtp-Source: APXvYqxfst5CvLGkDYX1hM+1pCwvA12wTlx4CfhcmvnK7rSdpwqjzuJODINqQZ2f1SUQGfzkdM7TqkiZnSP6UkBHKvE=
-X-Received: by 2002:a92:1588:: with SMTP id 8mr15690935ilv.276.1575662154375; 
- Fri, 06 Dec 2019 11:55:54 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=dDOgMHYCPqZmG8t2SDXruDukUJ9qiXPdNP9vyd0xDfY=;
+ b=uGpEfBk75iqAIboAzePNZXKcweZtP38CxYTlIAGH5WsOcUAV4PBF5e3EqvmRbSdr5k
+ WgEUOhqmYzxQUz2aAxJ7NjH60x35RD9DGhEfrvgBOHXKjJ/9lbXDRa6G1Lpr5OGPQZJG
+ pYkmp8k3OPYJkVGaKUcL2zJlwPJRga0J1HC88IBePfSXyj5kXayHT58KwQE7+FHgoT1r
+ 1mUayADXSueLxe3sPM38fJ8DdpoP0QJr3N4SrHw+JMTsTfz4UkGSkPwo3gGR3GR3CGUM
+ VPPaaeKgAOaQtNP6wUE66ZCDIzTgFzJ92Dw2gjvfFwLVddfZIsAuwEK++XJSNoK1fKnn
+ ee7Q==
+X-Gm-Message-State: APjAAAWAieo04ZMrW6i7feocSZn8TVBifjhqzOSx/peTFtlw6M3RWC+U
+ tXBUSgNfHoBPOcJg336drrjVTg==
+X-Google-Smtp-Source: APXvYqw4IaZruuvC13wHL2WCQ7RC6Rt1umv+ac2nLMyugbm7EJr4gUIgnD1N0pEo+OTgyBjSCC6U9Q==
+X-Received: by 2002:a2e:b4f6:: with SMTP id s22mr9927985ljm.218.1575665715945; 
+ Fri, 06 Dec 2019 12:55:15 -0800 (PST)
+Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
+ by smtp.gmail.com with ESMTPSA id k24sm8331931ljj.27.2019.12.06.12.55.13
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 06 Dec 2019 12:55:13 -0800 (PST)
+Date: Fri, 6 Dec 2019 12:53:58 -0800
+From: Olof Johansson <olof@lixom.net>
+To: torvalds@linux-foundation.org
+Subject: [GIT PULL] ARM: SoC fixes
+Message-ID: <20191206205358.aifwgtflryjf6iao@localhost>
 MIME-Version: 1.0
-References: <20191130225153.30111-1-aford173@gmail.com>
- <e8e429dd-4508-9835-fd01-825d2de8871e@kontron.de>
-In-Reply-To: <e8e429dd-4508-9835-fd01-825d2de8871e@kontron.de>
-From: Adam Ford <aford173@gmail.com>
-Date: Fri, 6 Dec 2019 13:55:43 -0600
-Message-ID: <CAHCN7xLkV1WC=9ACj1Mi8+uE8kRCEjCEe+Y36pXwkNeNrgrNVg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] crypto: caam: Change the i.MX8MQ check support all
- i.MX8M variants
-To: Schrempf Frieder <frieder.schrempf@kontron.de>
+Content-Disposition: inline
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_115556_417495_3B0F95EF 
-X-CRM114-Status: GOOD (  21.42  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191206_125518_638275_91351EC6 
+X-CRM114-Status: GOOD (  16.39  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,86 +91,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Aymen Sghaier <aymen.sghaier@nxp.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- =?UTF-8?Q?Horia_Geant=C4=83?= <horia.geanta@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- NXP Linux Team <linux-imx@nxp.com>
+Cc: olof@lixom.net, soc@kernel.org, arm@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 4, 2019 at 5:38 AM Schrempf Frieder
-<frieder.schrempf@kontron.de> wrote:
->
-> Hi Adam,
->
-> On 30.11.19 23:51, Adam Ford wrote:
-> > The i.MX8M Mini uses the same crypto engine as the i.MX8MQ, but
-> > the driver is restricting the check to just the i.MX8MQ.
-> >
-> > This patch lets the driver support all i.MX8M Variants if enabled.
-> >
-> > Signed-off-by: Adam Ford <aford173@gmail.com>
->
-> What about the following lines in run_descriptor_deco0()? Does this
-> condition also apply to i.MX8MM?
+Hi Linus,
 
-I think that's a question for NXP.  I am not seeing that in the NXP
-Linux Release, and I don't have an 8MQ to compare.
+The following changes since commit b08baef02b26cf7c2123e4a24a2fa1fb7a593ffb:
 
-I was able to get the driver working on the i.MXMM with the patch.
+  Merge tag 'armsoc-defconfig' of git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc (2019-12-05 12:14:19 -0800)
 
-NXP  Team,
+are available in the Git repository at:
 
-Do you have any opinions on this?
+  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-fixes
 
-adam
->
-> drivers/crypto/caam/ctrl.c:
->
->         if (ctrlpriv->virt_en == 1 ||
->             /*
->              * Apparently on i.MX8MQ it doesn't matter if virt_en == 1
->              * and the following steps should be performed regardless
->              */
->             of_machine_is_compatible("fsl,imx8mq")) {
->                 clrsetbits_32(&ctrl->deco_rsr, 0, DECORSR_JR0);
->
->                 while (!(rd_reg32(&ctrl->deco_rsr) & DECORSR_VALID) &&
->                        --timeout)
->                         cpu_relax();
->
->                 timeout = 100000;
->         }
->
-> Regards,
-> Frieder
->
-> >
-> > diff --git a/drivers/crypto/caam/ctrl.c b/drivers/crypto/caam/ctrl.c
-> > index db22777d59b4..1ce03f8961b6 100644
-> > --- a/drivers/crypto/caam/ctrl.c
-> > +++ b/drivers/crypto/caam/ctrl.c
-> > @@ -527,7 +527,7 @@ static const struct soc_device_attribute caam_imx_soc_table[] = {
-> >       { .soc_id = "i.MX6UL", .data = &caam_imx6ul_data },
-> >       { .soc_id = "i.MX6*",  .data = &caam_imx6_data },
-> >       { .soc_id = "i.MX7*",  .data = &caam_imx7_data },
-> > -     { .soc_id = "i.MX8MQ", .data = &caam_imx7_data },
-> > +     { .soc_id = "i.MX8M*", .data = &caam_imx7_data },
-> >       { .family = "Freescale i.MX" },
-> >       { /* sentinel */ }
-> >   };
-> >
+for you to fetch changes up to 30f55eae47e4ad1b64d692865e6a4277447a33df:
+
+  Merge tag 'arm-soc/for-5.5/devicetree-part2' of https://github.com/Broadcom/stblinux into arm/fixes (2019-12-06 08:29:56 -0800)
+
+----------------------------------------------------------------
+ARM: SoC fixes
+
+A set of fixes that we've merged late, but for the most part that have
+been sitting in -next for a while through platform maintainer trees.
+
+ + Fixes to suspend/resume on Tegra, caused by the added features
+   this merge window
+
+ + Cleanups and minor fixes to TI additions this merge window
+
+ + Tee fixes queued up late before the merge window, included here.
+
+ + A handful of other fixlets
+
+There's also a refresh of the shareed config files (multi_v* on 32-bit,
+and defconfig on 64-bit), to avoid conflicts when we get new
+contributions.
+
+----------------------------------------------------------------
+Adam Ford (2):
+      ARM: dts: logicpd-torpedo-baseboard:  Enable HDQ
+      ARM: dts: logicpd-torpedo: Remove unnecessary notes/comments
+
+Andre Przywara (1):
+      arm64: dts: juno: Fix UART frequency
+
+Bibby Hsieh (1):
+      soc: mediatek: cmdq: fixup wrong input order of write api
+
+Dmitry Osipenko (1):
+      memory: tegra30-emc: Fix panic on suspend
+
+Faiz Abbas (1):
+      ARM: dts: am57xx-beagle-x15: Update pinmux name to ddr_3_3v
+
+Grygorii Strashko (1):
+      ARM: dts: dra7: fix cpsw mdio fck clock
+
+Jan Glauber (1):
+      MAINTAINERS: update Cavium ThunderX drivers
+
+Jarkko Nikula (1):
+      ARM: dts: omap3-tao3530: Fix incorrect MMC card detection GPIO polarity
+
+Jens Wiklander (1):
+      tee: optee: fix device enumeration error handling
+
+Linus Walleij (1):
+      ARM: pxa: Fix resource properties
+
+Luc Van Oostenryck (1):
+      soc: aspeed: Fix snoop_file_poll()'s return type
+
+Marek Szyprowski via Linux.Kernel.Org (1):
+      ARM: multi_v7_defconfig: Restore debugfs support
+
+Markus Elfring (1):
+      bus: ti-sysc: Adjust exception handling in sysc_child_add_named_clock()
+
+Nicolas Saenz Julienne (1):
+      ARM: dts: bcm2711: force CMA into first GB of memory
+
+Olof Johansson (14):
+      Merge tag 'tee-fixes-for-v5.4' of git://git.linaro.org/people/jens.wiklander/linux-tee into arm/fixes
+      Merge tag 'arm-soc/for-5.5/maintainers-part2' of https://github.com/Broadcom/stblinux into arm/fixes
+      Merge tag 'juno-fixes-5.5' of git://git.kernel.org/.../sudeep.holla/linux into arm/fixes
+      Merge tag 'scmi-fix-5.5-2' of git://git.kernel.org/.../sudeep.holla/linux into arm/fixes
+      Merge mainline/master into arm/fixes
+      arm64: defconfig: re-run savedefconfig
+      ARM: defconfig: re-run savedefconfig on multi_v* configs
+      Merge tag 'omap-for-v5.5/ti-sysc-late-signed' of git://git.kernel.org/.../tmlind/linux-omap into arm/fixes
+      Merge tag 'omap-for-v5.5/dt-fixes-merge-window-signed' of git://git.kernel.org/.../tmlind/linux-omap into arm/fixes
+      Merge tag 'socfpga_update_for_v5.5' of git://git.kernel.org/.../dinguyen/linux into arm/fixes
+      Merge tag 'tegra-for-5.5-cpufreq' of git://git.kernel.org/.../tegra/linux into arm/fixes
+      Merge tag 'tegra-for-5.5-soc-fixes' of git://git.kernel.org/.../tegra/linux into arm/fixes
+      Merge tag 'tegra-for-5.5-memory-fixes' of git://git.kernel.org/.../tegra/linux into arm/fixes
+      Merge tag 'arm-soc/for-5.5/devicetree-part2' of https://github.com/Broadcom/stblinux into arm/fixes
+
+Robert Richter (1):
+      MAINTAINERS: Switch to Marvell addresses
+
+Simon Goldschmidt (1):
+      arm: socfpga: execute cold reboot by default
+
+Sowjanya Komatineni (1):
+      cpufreq: tegra124: Add suspend and resume support
+
+Stefan Wahren (2):
+      ARM: dts: bcm2711-rpi-4: Enable GENET support
+      MAINTAINERS: Make Nicolas Saenz Julienne the new bcm2835 maintainer
+
+Sudeep Holla (1):
+      Revert "arm64: dts: juno: add dma-ranges property"
+
+Sumit Garg (1):
+      tee: optee: Fix dynamic shm pool allocations
+
+Thierry Reding (3):
+      soc/tegra: pmc: Use lower-case for hexadecimal literals
+      soc/tegra: pmc: Add missing IRQ callbacks on Tegra194
+      soc/tegra: pmc: Add reset sources and levels on Tegra194
+
+Tony Lindgren (6):
+      bus: ti-sysc: Add module enable quirk for audio AESS
+      ARM: OMAP2+: Drop useless gptimer option for omap4
+      Merge tag 'omap-for-v5.5/soc-late-signed' into omap-for-v5.5/ti-sysc-late
+      Merge branches 'omap-for-v5.5/soc' and 'omap-for-v5.5/ti-sysc' into omap-for-v5.5/ti-sysc-late
+      ARM: dts: Fix vcsi regulator to be always-on for droid4 to prevent hangs
+      ARM: dts: Fix sgx sysconfig register for omap4
+
+Wen Yang (1):
+      firmware: arm_scmi: Avoid double free in error flow
+
+ .mailmap                                           |  3 ++
+ MAINTAINERS                                        | 40 +++++++--------
+ arch/arm/boot/dts/am57xx-beagle-x15-revb1.dts      |  2 +-
+ arch/arm/boot/dts/am57xx-beagle-x15-revc.dts       |  2 +-
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts              | 17 +++++++
+ arch/arm/boot/dts/bcm2711.dtsi                     | 46 +++++++++++++++++
+ arch/arm/boot/dts/dra7-l4.dtsi                     |  2 +-
+ .../boot/dts/logicpd-torpedo-37xx-devkit-28.dts    |  1 -
+ arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi   | 13 ++++-
+ arch/arm/boot/dts/motorola-cpcap-mapphone.dtsi     |  4 +-
+ arch/arm/boot/dts/omap3-tao3530.dtsi               |  2 +-
+ arch/arm/boot/dts/omap4.dtsi                       |  4 +-
+ arch/arm/configs/multi_v4t_defconfig               | 13 ++---
+ arch/arm/configs/multi_v5_defconfig                | 24 ++++-----
+ arch/arm/configs/multi_v7_defconfig                | 32 +++++-------
+ arch/arm/mach-omap2/timer.c                        |  4 +-
+ arch/arm/mach-pxa/icontrol.c                       |  6 +--
+ arch/arm/mach-socfpga/socfpga.c                    | 12 ++---
+ arch/arm64/boot/dts/arm/juno-base.dtsi             |  1 -
+ arch/arm64/boot/dts/arm/juno-clocks.dtsi           |  4 +-
+ arch/arm64/configs/defconfig                       | 36 ++++---------
+ drivers/bus/ti-sysc.c                              | 21 ++++++--
+ drivers/cpufreq/tegra124-cpufreq.c                 | 59 ++++++++++++++++++++++
+ drivers/firmware/arm_scmi/bus.c                    |  8 +--
+ drivers/memory/tegra/tegra30-emc.c                 |  2 +-
+ drivers/soc/aspeed/aspeed-lpc-snoop.c              |  4 +-
+ drivers/soc/mediatek/mtk-cmdq-helper.c             |  2 +-
+ drivers/soc/tegra/pmc.c                            | 47 ++++++++++++++++-
+ drivers/tee/optee/call.c                           |  7 +++
+ drivers/tee/optee/core.c                           | 20 +++++---
+ drivers/tee/optee/shm_pool.c                       | 12 ++++-
+ include/linux/platform_data/ti-sysc.h              |  1 +
+ 32 files changed, 312 insertions(+), 139 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
