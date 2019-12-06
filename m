@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A54B115937
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 23:16:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDB0111593A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 23:16:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=weFdT5VpFABA7p7oQPn+sGVJ/qIcyqY3ae4LWKEj9aM=; b=BtNgmw2qBiiNgZ
-	rVaStejGgc8fTtyFTl2oTuw/lbkIdLzLToH8XuhHDYiVpUgF1soL5lzEcv0qUGLbW14ZKTWCsz+LC
-	7DNFQi6J7cTVXuY2YZNnu/t0Y4SJv/+GRU7GR9qa9GikIUsVllENq1wR8gqX2Z35dPO/lQdOQFfLf
-	hdyrHe2I1FPnQcC8QilgTsWLJKGcr0PVi/+PYEiAcNB+YAIT+pIOSauG2B1oeNmrjtcf6HHgXjmhW
-	9yWbkRkip5aEKbcnAKLJQCwP4+bam2z9NvqV3SHIiRV8XdphrlUxvNFxB9bIi2BK89bYDaB8ihtIl
-	tyB47NiRtPcP9RVrLZ5Q==;
+	List-Owner; bh=QWlq8ch+tXw65p8mtNCHwvdUQthqPTaHYWHGIrWgy6c=; b=cM9z4XA20Pyqti
+	PnUih6ACcYeXRDFAGXzdQJLioBUqzXmhsL/611p4oAk2Sxg/UnocZ7B+T3EvZ3JthpF1L7AY5vp4p
+	cjHuF/wOKRXqjbYm0GT1zX5lgt2gM7F2Z+oQks7BSEPOYoc6sXNDo1w2J82M2+2OHVHJanRApRTN+
+	Ko7eA59PUkSkg/2q5mCqAZkH8r6hQL4gUrMo0u5ZDDFV8FCdT6uPhWIScwvyDeZmUU/PPUqcPiCXM
+	90G3lOCF8PqJEQLRBkjdVBYkxKNnTXC7IMmwp/y0G4b7LZfdeFQdUa1hnPvtbtlIYu6w9dY+2WQT3
+	3V+2p4QuFcMejk8kq7Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idLtE-0000kc-21; Fri, 06 Dec 2019 22:15:56 +0000
-Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
+	id 1idLtT-0000zL-DJ; Fri, 06 Dec 2019 22:16:11 +0000
+Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idLrZ-0006cJ-O1
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 22:14:15 +0000
-Received: by mail-pg1-x54a.google.com with SMTP id i21so4532361pgm.21
+ id 1idLrb-0006eW-LG
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 22:14:17 +0000
+Received: by mail-pf1-x449.google.com with SMTP id h22so4782149pfo.18
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Dec 2019 14:14:12 -0800 (PST)
+ Fri, 06 Dec 2019 14:14:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=2NAd6y4qah1xjfOWgEwpdzIyhOs1qjeDK6sFpv82Xfk=;
- b=nleTFJgRsrFntSKtaTSiELZAJh4L62n5MZ39M4LNipLMCXmGAfN+QbNLE9JWVDNoUf
- FZeGDFV2R/AF33xnTgrIX5xjnCWJVFZRyTk8S+GG2mohQlZMLcvRe2iURNjMn+aIN/og
- bfwgPaN9/saum6UK50jtpf3YpT9BXijJTmvlKEOOPFgAq6IT8xd+3XqS/piglnxvV3Lg
- HDplbyhHrPdi/L4Hy1988EmrJKJabf6LPGSLYuq3BG/Dr7HeGQfO2fyQJqMplXbKLnV4
- mPGbF+SAnjxCad9nRgJLhDQm4R3cVNWjefLoFKhefXmz+/SdA+LcVY17pkNRUdnrDniD
- O7fA==
+ :cc; bh=dSkqIg9MhTEqSRuUPD+wLwf3dmJwcSH5rhdG+lQGY0Y=;
+ b=SXuPCZw5St6pvwTst8kmf5KElVFLKMFMp+CAkmkUaQLus5cyU/8kqr6V5JxAIwmDV8
+ RWdDAn+WZ18vV4T9eqQoonAjHW3Rzl/rq+nVdoOiKpP2KO897WS7qgb0uHjTrgJkEo1F
+ 0w2fuPU7iE//Mhmc1AStldjXFL0gQujdjqFyhIQqo0PX3BYn+fe6w0aILNtXks9GiWbX
+ y15Zqo4dF7akKdP8o3QHjsZgpRBi+Vh9QT2pwFLxPBRKjS+x9TmrUCopcszBpJQvv4wL
+ EQLbAdHZz6TZ6uqyOto/Ft9UcaQoXc6w3u8Hni2mOOXu4O7zVJWi0IlEALO+ifSUBL0a
+ F4QA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=2NAd6y4qah1xjfOWgEwpdzIyhOs1qjeDK6sFpv82Xfk=;
- b=fP8pwpU5J3sSzytKMttRcjy8YKWOYDTtjPWvmCwWCKlj4vwp6nMa1YARI9ohRKz2Tv
- fs+a14teuhRKXp8raIB+ccoUeINdjZbBsXkYeSjQYhiiQwmQcSa1yFkeMBcHq3+0orv6
- Ze9iP4j764cTyblShKJqPeakS8ENQAugf8FIqETbauAZ5r79fi2d1X3XKPOx0Z3l1xd/
- 584KXaXTa5SiowAOHxy943irw/PWmOf3Z90m7CTLc1zVrqh90UDXLi2+ffhyIHSxJC4k
- uRfPIgtABQq/wn6DYQqbgaZ9gzfxYIdRu3JDTcRzfDCuhKdQfZ34PQ0hUp301K9c0g45
- 7qQQ==
-X-Gm-Message-State: APjAAAW2acGCLNHs8RmlA/AKcQi4Djs8MjVyIlkgEXxy9K2Yua/oqavl
- dyx68OJm/srSrVJQlP76Yz/mhI/jAJ3aJkY6j8A=
-X-Google-Smtp-Source: APXvYqwPxKr5F59QI/IUrMyssHf1PoCaUN+YE2r4dert42cYlVgcHlWDeG9U9dYm6ovwVN+Ig08oGuZ7xRI0KQJlkmM=
-X-Received: by 2002:a65:64d0:: with SMTP id t16mr6176894pgv.427.1575670451581; 
- Fri, 06 Dec 2019 14:14:11 -0800 (PST)
-Date: Fri,  6 Dec 2019 14:13:42 -0800
+ bh=dSkqIg9MhTEqSRuUPD+wLwf3dmJwcSH5rhdG+lQGY0Y=;
+ b=BhETv0eChnbxZKkkG1sm9bztHT0qWC0CJD8g9ql5aiD5N24k5l70d9d7dryV1gF9Bg
+ Xon3aSaOXhbi3iQxXTlPzbzXOlpObqdm0KCUWD2OAjis9GiLXijfxSqSY2YnQavMalBZ
+ xwSCG9y2gzLkiV51IUIA9dCP3UQSP7OGJegpSSapatuTgCsoF5rTBxsPteRhSN8ol3F7
+ q4hBpIOOgTxYXn48vNg1le8yTFTxFpfX7K5LXO5UVD63hrcM2mtCZeWLJQ6yX/lspgQY
+ /nWkpL7iXO2y4VnymLsy7xET1tUxIrgBnZkHP5WFpHVmL3IRQgHXHHV2Pe6xHRsGQ8om
+ yWxA==
+X-Gm-Message-State: APjAAAWMQqRPqFHnmMGKyvMyp5O5BUPRquatQJuyFzkK3zh68oqlZ9HA
+ ubFDHL789QU9EX9eoPZaZwPao5uQ/20SuHNCeUk=
+X-Google-Smtp-Source: APXvYqwr9gV3C2U9Vw8KNYzBqn9JcBiVcajDSJ2lm7uPyamXFOot36lh81Wh0+CfZKTc60xlWZW4gj6RW7XavjkgTmE=
+X-Received: by 2002:a63:4b52:: with SMTP id k18mr5960727pgl.371.1575670454000; 
+ Fri, 06 Dec 2019 14:14:14 -0800 (PST)
+Date: Fri,  6 Dec 2019 14:13:43 -0800
 In-Reply-To: <20191206221351.38241-1-samitolvanen@google.com>
-Message-Id: <20191206221351.38241-7-samitolvanen@google.com>
+Message-Id: <20191206221351.38241-8-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191206221351.38241-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.24.0.393.g34dc348eaf-goog
-Subject: [PATCH v6 06/15] scs: add accounting
+Subject: [PATCH v6 07/15] scs: add support for stack usage debugging
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, 
  Ard Biesheuvel <ard.biesheuvel@linaro.org>, Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_141413_819182_1959AF53 
-X-CRM114-Status: GOOD (  11.97  )
+X-CRM114-CacheID: sfid-20191206_141415_709446_BF409397 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,176 +112,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This change adds accounting for the memory allocated for shadow stacks.
+Implements CONFIG_DEBUG_STACK_USAGE for shadow stacks. When enabled,
+also prints out the highest shadow stack usage per process.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
 ---
- drivers/base/node.c    |  6 ++++++
- fs/proc/meminfo.c      |  4 ++++
- include/linux/mmzone.h |  3 +++
- kernel/scs.c           | 20 ++++++++++++++++++++
- mm/page_alloc.c        |  6 ++++++
- mm/vmstat.c            |  3 +++
- 6 files changed, 42 insertions(+)
+ kernel/scs.c | 39 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
 
-diff --git a/drivers/base/node.c b/drivers/base/node.c
-index 98a31bafc8a2..874a8b428438 100644
---- a/drivers/base/node.c
-+++ b/drivers/base/node.c
-@@ -415,6 +415,9 @@ static ssize_t node_read_meminfo(struct device *dev,
- 		       "Node %d AnonPages:      %8lu kB\n"
- 		       "Node %d Shmem:          %8lu kB\n"
- 		       "Node %d KernelStack:    %8lu kB\n"
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+		       "Node %d ShadowCallStack:%8lu kB\n"
-+#endif
- 		       "Node %d PageTables:     %8lu kB\n"
- 		       "Node %d NFS_Unstable:   %8lu kB\n"
- 		       "Node %d Bounce:         %8lu kB\n"
-@@ -438,6 +441,9 @@ static ssize_t node_read_meminfo(struct device *dev,
- 		       nid, K(node_page_state(pgdat, NR_ANON_MAPPED)),
- 		       nid, K(i.sharedram),
- 		       nid, sum_zone_node_page_state(nid, NR_KERNEL_STACK_KB),
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+		       nid, sum_zone_node_page_state(nid, NR_KERNEL_SCS_BYTES) / 1024,
-+#endif
- 		       nid, K(sum_zone_node_page_state(nid, NR_PAGETABLE)),
- 		       nid, K(node_page_state(pgdat, NR_UNSTABLE_NFS)),
- 		       nid, K(sum_zone_node_page_state(nid, NR_BOUNCE)),
-diff --git a/fs/proc/meminfo.c b/fs/proc/meminfo.c
-index 8c1f1bb1a5ce..49768005a79e 100644
---- a/fs/proc/meminfo.c
-+++ b/fs/proc/meminfo.c
-@@ -103,6 +103,10 @@ static int meminfo_proc_show(struct seq_file *m, void *v)
- 	show_val_kb(m, "SUnreclaim:     ", sunreclaim);
- 	seq_printf(m, "KernelStack:    %8lu kB\n",
- 		   global_zone_page_state(NR_KERNEL_STACK_KB));
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+	seq_printf(m, "ShadowCallStack:%8lu kB\n",
-+		   global_zone_page_state(NR_KERNEL_SCS_BYTES) / 1024);
-+#endif
- 	show_val_kb(m, "PageTables:     ",
- 		    global_zone_page_state(NR_PAGETABLE));
- 
-diff --git a/include/linux/mmzone.h b/include/linux/mmzone.h
-index 89d8ff06c9ce..dfeb8a5a7f7e 100644
---- a/include/linux/mmzone.h
-+++ b/include/linux/mmzone.h
-@@ -200,6 +200,9 @@ enum zone_stat_item {
- 	NR_MLOCK,		/* mlock()ed pages found and moved off LRU */
- 	NR_PAGETABLE,		/* used for pagetables */
- 	NR_KERNEL_STACK_KB,	/* measured in KiB */
-+#if IS_ENABLED(CONFIG_SHADOW_CALL_STACK)
-+	NR_KERNEL_SCS_BYTES,	/* measured in bytes */
-+#endif
- 	/* Second 128 byte cacheline */
- 	NR_BOUNCE,
- #if IS_ENABLED(CONFIG_ZSMALLOC)
 diff --git a/kernel/scs.c b/kernel/scs.c
-index 28abed21950c..5245e992c692 100644
+index 5245e992c692..ad74d13f2c0f 100644
 --- a/kernel/scs.c
 +++ b/kernel/scs.c
-@@ -12,6 +12,7 @@
- #include <linux/scs.h>
- #include <linux/slab.h>
- #include <linux/vmalloc.h>
-+#include <linux/vmstat.h>
- #include <asm/scs.h>
- 
- static inline void *__scs_base(struct task_struct *tsk)
-@@ -89,6 +90,11 @@ static void scs_free(void *s)
- 	vfree_atomic(s);
- }
- 
-+static struct page *__scs_page(struct task_struct *tsk)
-+{
-+	return vmalloc_to_page(__scs_base(tsk));
-+}
-+
- static int scs_cleanup(unsigned int cpu)
- {
- 	int i;
-@@ -135,6 +141,11 @@ static inline void scs_free(void *s)
- 	kmem_cache_free(scs_cache, s);
- }
- 
-+static struct page *__scs_page(struct task_struct *tsk)
-+{
-+	return virt_to_page(__scs_base(tsk));
-+}
-+
- void __init scs_init(void)
- {
- 	scs_cache = kmem_cache_create("scs_cache", SCS_SIZE, SCS_SIZE,
-@@ -153,6 +164,12 @@ void scs_task_reset(struct task_struct *tsk)
- 	task_set_scs(tsk, __scs_base(tsk));
- }
- 
-+static void scs_account(struct task_struct *tsk, int account)
-+{
-+	mod_zone_page_state(page_zone(__scs_page(tsk)), NR_KERNEL_SCS_BYTES,
-+		account * SCS_SIZE);
-+}
-+
- int scs_prepare(struct task_struct *tsk, int node)
- {
- 	void *s;
-@@ -162,6 +179,8 @@ int scs_prepare(struct task_struct *tsk, int node)
- 		return -ENOMEM;
- 
- 	task_set_scs(tsk, s);
-+	scs_account(tsk, 1);
-+
+@@ -184,6 +184,44 @@ int scs_prepare(struct task_struct *tsk, int node)
  	return 0;
  }
  
-@@ -182,6 +201,7 @@ void scs_release(struct task_struct *tsk)
++#ifdef CONFIG_DEBUG_STACK_USAGE
++static inline unsigned long scs_used(struct task_struct *tsk)
++{
++	unsigned long *p = __scs_base(tsk);
++	unsigned long *end = scs_magic(p);
++	unsigned long s = (unsigned long)p;
++
++	while (p < end && READ_ONCE_NOCHECK(*p))
++		p++;
++
++	return (unsigned long)p - s;
++}
++
++static void scs_check_usage(struct task_struct *tsk)
++{
++	static DEFINE_SPINLOCK(lock);
++	static unsigned long highest;
++	unsigned long used = scs_used(tsk);
++
++	if (used <= highest)
++		return;
++
++	spin_lock(&lock);
++
++	if (used > highest) {
++		pr_info("%s (%d): highest shadow stack usage: %lu bytes\n",
++			tsk->comm, task_pid_nr(tsk), used);
++		highest = used;
++	}
++
++	spin_unlock(&lock);
++}
++#else
++static inline void scs_check_usage(struct task_struct *tsk)
++{
++}
++#endif
++
+ bool scs_corrupted(struct task_struct *tsk)
+ {
+ 	unsigned long *magic = scs_magic(__scs_base(tsk));
+@@ -200,6 +238,7 @@ void scs_release(struct task_struct *tsk)
+ 		return;
  
  	WARN_ON(scs_corrupted(tsk));
++	scs_check_usage(tsk);
  
-+	scs_account(tsk, -1);
+ 	scs_account(tsk, -1);
  	task_set_scs(tsk, NULL);
- 	scs_free(s);
- }
-diff --git a/mm/page_alloc.c b/mm/page_alloc.c
-index 4785a8a2040e..6073556fc99a 100644
---- a/mm/page_alloc.c
-+++ b/mm/page_alloc.c
-@@ -5365,6 +5365,9 @@ void show_free_areas(unsigned int filter, nodemask_t *nodemask)
- 			" managed:%lukB"
- 			" mlocked:%lukB"
- 			" kernel_stack:%lukB"
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+			" shadow_call_stack:%lukB"
-+#endif
- 			" pagetables:%lukB"
- 			" bounce:%lukB"
- 			" free_pcp:%lukB"
-@@ -5387,6 +5390,9 @@ void show_free_areas(unsigned int filter, nodemask_t *nodemask)
- 			K(zone_managed_pages(zone)),
- 			K(zone_page_state(zone, NR_MLOCK)),
- 			zone_page_state(zone, NR_KERNEL_STACK_KB),
-+#ifdef CONFIG_SHADOW_CALL_STACK
-+			zone_page_state(zone, NR_KERNEL_SCS_BYTES) / 1024,
-+#endif
- 			K(zone_page_state(zone, NR_PAGETABLE)),
- 			K(zone_page_state(zone, NR_BOUNCE)),
- 			K(free_pcp),
-diff --git a/mm/vmstat.c b/mm/vmstat.c
-index 78d53378db99..d0650391c8c1 100644
---- a/mm/vmstat.c
-+++ b/mm/vmstat.c
-@@ -1119,6 +1119,9 @@ const char * const vmstat_text[] = {
- 	"nr_mlock",
- 	"nr_page_table_pages",
- 	"nr_kernel_stack",
-+#if IS_ENABLED(CONFIG_SHADOW_CALL_STACK)
-+	"nr_shadow_call_stack_bytes",
-+#endif
- 	"nr_bounce",
- #if IS_ENABLED(CONFIG_ZSMALLOC)
- 	"nr_zspages",
 -- 
 2.24.0.393.g34dc348eaf-goog
 
