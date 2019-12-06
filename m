@@ -2,89 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BD87114D7D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 09:19:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB204114DA8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 09:29:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GHaahLLgn7mYyOFa1DZV5R743Ouh+TfbYCipvzliXmI=; b=gIqHHAAaGp6d5SHBtE+pflVWH
-	+yRJS4oLhWP+Aq4BgFXElOMJSkaP5UNYbYQLXzAQjg37ETQ7ab2WwHCr7VSYqSYKLsdkse+Vz+Wmg
-	+OlEyvn47Eyxcl+Y3JHJs93RQ76/nlCnojh3gVMTpZnAc8NiHV6VE2Z7qW9DV9IdMrZiy4rEkw3SO
-	Iy4WTfev5F1KDbc4vphmNH6HJ973uwAMUiHTaTXqVBieps0FmYdF+Ggj2V4QkJ+oG1Zl0QNhVSsBO
-	pGpFkDOHpjZszn7ujRLud68CbEXdetpq0JoOcKXJ1IyuVmZ/MO80+YILlpB97li3fbpI9KTLstPyA
-	pEuieiShQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=laXCPhGprkaKGmOMnU6IGw/e6aIg77fzlKx+wWCk34Q=; b=T45D+ICpCsugyY
+	zXG7dJ255aY03cMC/QyC9rBCLPjSqE3PsiO7sgTP0dbDHriFdFvoAfWpZnE0qkYtljQZojEUbN7po
+	DouF0aXeGHG3bcifxm2JxLwa1RMtOBjukmIrXvhQ7w61gsFRc6BukkCreZpB2tCnzn6NqT38/Uvtf
+	PRLOmfIANBU18d/elYQJvDtfksvEtrV1Uz7kH8C588w+DnNsv5yzvn4OpdWJFrB+7mPXf2AA9rR6S
+	j+s20F6Y40P3vZQoYRUFZopzJZDozRl0pjufLJF9horGL4QhznRKqy7FMJYc2w7itdP3oguzE4LfT
+	ntZflIgnaydhB7bUjncw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1id8pp-0000BT-Jl; Fri, 06 Dec 2019 08:19:33 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1id8pg-0000Av-On
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 08:19:26 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xB68HKZ8029511; Fri, 6 Dec 2019 09:19:16 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=6vcNVWFrHn/SvqVY9StBuo/jTuPFzfRjFOoFMP+jKUU=;
- b=NwOAavXGFLkqdSgokTDPjp9XTHmJVfeSnH2AB/3N+M4tdXmreX35BQJjvk+22xXiibJN
- T0KSl8UtuyEb7K10bXWiDDI16i/F5ZOADisRT4UXywZtU5N3KpzlqIy3NJVEy5WbcCOH
- hxbrczOeUeNigf4ctd/E+5lOnLSzUPT+bQMiGjKwJ9y3KhZur9WZKqeYZHlAbiiZpgg3
- 3LRKOKb9Zc7WyKfzZAeFjoEJ8eKK5IhU7E9dAsr1d88iydrVL7lJNOpvt4r8r/gXEyga
- vKDZJRVqKWuXU3zmh53DqFbtQXG8tpGG8dcTTeg7qYhSw8xJoZRGQ1gTxPsQkY20v9o3 8w== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2wkf2y7a2x-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 06 Dec 2019 09:19:16 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3AFDB100034;
- Fri,  6 Dec 2019 09:19:16 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1F14C2A68A1;
- Fri,  6 Dec 2019 09:19:16 +0100 (CET)
-Received: from lmecxl0995.lme.st.com (10.75.127.50) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 6 Dec
- 2019 09:19:15 +0100
-Subject: Re: [PATCH] rtc: stm32: add missed clk_disable_unprepare in error
- path of resume
-To: Chuhong Yuan <hslester96@gmail.com>
-References: <20191205160655.32188-1-hslester96@gmail.com>
-From: Amelie DELAUNAY <amelie.delaunay@st.com>
-Message-ID: <521207d1-4537-fda9-ca03-4f952b505d03@st.com>
-Date: Fri, 6 Dec 2019 09:19:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+	id 1id8zM-0003ud-0W; Fri, 06 Dec 2019 08:29:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1id8zA-0003tu-BT
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 08:29:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 94BCC31B;
+ Fri,  6 Dec 2019 00:29:08 -0800 (PST)
+Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 76F653F718;
+ Fri,  6 Dec 2019 00:32:18 -0800 (PST)
+Date: Fri, 6 Dec 2019 09:29:06 +0100
+From: Christoffer Dall <christoffer.dall@arm.com>
+To: Jia He <justin.he@arm.com>
+Subject: Re: [PATCH] KVM: arm: remove excessive permission check in
+ kvm_arch_prepare_memory_region
+Message-ID: <20191206082906.GA2749@e113682-lin.lund.arm.com>
+References: <20191206020802.196108-1-justin.he@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20191205160655.32188-1-hslester96@gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG2NODE3.st.com (10.75.127.6) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-12-06_01:2019-12-04,2019-12-06 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20191206020802.196108-1-justin.he@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_001925_209143_F3DBC782 
-X-CRM114-Status: GOOD (  19.54  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191206_002912_438942_18760EAD 
+X-CRM114-Status: GOOD (  18.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,45 +61,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, Marc Zyngier <maz@kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/5/19 5:06 PM, Chuhong Yuan wrote:
-> The resume() forgets to call clk_disable_unprepare() when failed.
-> Add the missed call to fix it.
+On Fri, Dec 06, 2019 at 10:08:02AM +0800, Jia He wrote:
+> In kvm_arch_prepare_memory_region, arm kvm regards the memory region as
+> writable if the flag has no KVM_MEM_READONLY, and the vm is readonly if
+> !VM_WRITE.
 > 
-> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
-> ---
->   drivers/rtc/rtc-stm32.c | 5 ++++-
->   1 file changed, 4 insertions(+), 1 deletion(-)
+> But there is common usage for setting kvm memory region as follows:
+> e.g. qemu side (see the PROT_NONE flag)
+> 1. mmap(NULL, size, PROT_NONE, MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
+>    memory_region_init_ram_ptr()
+> 2. re mmap the above area with read/write authority.
 > 
-> diff --git a/drivers/rtc/rtc-stm32.c b/drivers/rtc/rtc-stm32.c
-> index 781cabb2afca..d774aa18f57a 100644
-> --- a/drivers/rtc/rtc-stm32.c
-> +++ b/drivers/rtc/rtc-stm32.c
-> @@ -897,8 +897,11 @@ static int stm32_rtc_resume(struct device *dev)
->   	}
->   
->   	ret = stm32_rtc_wait_sync(rtc);
-> -	if (ret < 0)
-> +	if (ret < 0) {
-> +		if (rtc->data->has_pclk)
-> +			clk_disable_unprepare(rtc->pclk);
->   		return ret;
-> +	}
->   
->   	if (device_may_wakeup(dev))
->   		return disable_irq_wake(rtc->irq_alarm);
+> Such example is used in virtio-fs qemu codes which hasn't been upstreamed
+> [1]. But seems we can't forbid this example.
 > 
+> Without this patch, it will cause an EPERM during kvm_set_memory_region()
+> and cause qemu boot crash.
+> 
+> As told by Ard, "the underlying assumption is incorrect, i.e., that the
+> value of vm_flags at this point in time defines how the VMA is used
+> during its lifetime. There may be other cases where a VMA is created
+> with VM_READ vm_flags that are changed to VM_READ|VM_WRITE later, and
+> we are currently rejecting this use case as well."
+> 
+> [1] https://gitlab.com/virtio-fs/qemu/blob/5a356e/hw/virtio/vhost-user-fs.c#L488
 
-Reviewed-by: Amelie Delaunay <amelie.delaunay@st.com>
+Reviewed-by: Christoffer Dall <christoffer.dall@arm.com>
+
+> 
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Suggested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Signed-off-by: Jia He <justin.he@arm.com>
+> ---
+>  virt/kvm/arm/mmu.c | 9 ---------
+>  1 file changed, 9 deletions(-)
+> 
+> diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+> index 38b4c910b6c3..a48994af70b8 100644
+> --- a/virt/kvm/arm/mmu.c
+> +++ b/virt/kvm/arm/mmu.c
+> @@ -2301,15 +2301,6 @@ int kvm_arch_prepare_memory_region(struct kvm *kvm,
+>  		if (!vma || vma->vm_start >= reg_end)
+>  			break;
+>  
+> -		/*
+> -		 * Mapping a read-only VMA is only allowed if the
+> -		 * memory region is configured as read-only.
+> -		 */
+> -		if (writable && !(vma->vm_flags & VM_WRITE)) {
+> -			ret = -EPERM;
+> -			break;
+> -		}
+> -
+>  		/*
+>  		 * Take the intersection of this VMA with the memory region
+>  		 */
+> -- 
+> 2.17.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
