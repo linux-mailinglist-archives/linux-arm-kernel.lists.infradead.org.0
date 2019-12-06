@@ -2,132 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCA8B114AED
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 03:32:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EDE2114B48
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 03:55:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GXrpEcW8jbySOEJOF8I4s2PfQk2uKgnbjivaX9SUf58=; b=L/objPrtiMKI6N
-	LOScAKi4/B0BkE5l57dc7MZ7DlYKoexaPUez7/tRtpDaQeYLXERHoFVT0Tne8XjrfFlzN2HDCf0fW
-	1QUZX6dvfc4WeXAlh1TyFLj+Wkht726ktm9we2V2tGWKVYHn2DAROnM2L4Bj6iQZFvAJ69Wn4CbOm
-	cRdc+LxGeO/iXCz8fK0ACtNN8mj31acmv5Mt5yWqjF+h9WOueL+YX9TyTlgPMcCbmBsTmuZKXvypW
-	ZiS6C0pJ9fs8hOYVHKv1ygvlBLzw/ql7wUu53NsUGkd6DdBb61Jt0NyMZyfIwikSWf2XM5ymip9KA
-	5hIcnAZPpMa//AJ/EQxQ==;
+	List-Owner; bh=SYyDHzCigx15cq3OcGl99iskUoO7sVbcOIl5OpgQUQI=; b=i//BBKosdh7Kb2
+	klzNIfzuNyASzO3rTFbSv365byYUvY99y19j0l+ctm01zw4HixewInzqOj/jAX7hzJh1Oo0G0R/hY
+	igbOKraSH6y2nJOba4rzhbrZ18X+4r67T/MR9CdhcRomTVsV5PI0tT193t+LPVNJgQfwG16fX3IxO
+	2Y810M5JxKpIP/kZfZGPs/wrgrtMUIuv0OQ4eIyvP4RYu6mHsuXrPrHTBHX4Rku8zTMmmaoli1TCJ
+	HI36gLZAljSNnpqWYUxpmoi8pDgDvjSNIzy0Kh0ztFYgjWYclF0yeibnHF3Hl6g3rA63vt66lr4li
+	uSHOzDc8J3YEQa1cpOkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1id3Q9-0000Bv-Up; Fri, 06 Dec 2019 02:32:41 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1id3m6-0000ha-7Z; Fri, 06 Dec 2019 02:55:22 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1id3Q1-0000BN-Pw
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 02:32:35 +0000
-Received: from epcas1p2.samsung.com (unknown [182.195.41.46])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20191206023228epoutp03fdcf3e00f11107ed6a20edd6c22429c3~dp3EPOsor0782007820epoutp03n
- for <linux-arm-kernel@lists.infradead.org>;
- Fri,  6 Dec 2019 02:32:28 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20191206023228epoutp03fdcf3e00f11107ed6a20edd6c22429c3~dp3EPOsor0782007820epoutp03n
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1575599548;
- bh=GPrZ3xgNX3ydCZrc90XnmqkNs+soFlKcYaSr3BFOHJQ=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=Wat/IBte0jijSXBFDfINMHltz+TIRTYIAGgW3nf1tmghdiKUpU8msvgJWWWWaW1EB
- dq59ArISni9rwsFPndZmRe0gOM5ADJ4iyryUQjS4fntwjy0InFdTme/dbcSnBqQlKI
- NW1er0DUDmQUHqEQm2dRm2X799hv4Sbu+vhPxqg0=
-Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTP id
- 20191206023228epcas1p4389209cb243ef812d8a59257b75e0502~dp3DvKhAa1568015680epcas1p4-;
- Fri,  6 Dec 2019 02:32:28 +0000 (GMT)
-Received: from epsmges1p4.samsung.com (unknown [182.195.40.155]) by
- epsnrtp1.localdomain (Postfix) with ESMTP id 47Tc7D6d9hzMqYlt; Fri,  6 Dec
- 2019 02:32:24 +0000 (GMT)
-Received: from epcas1p1.samsung.com ( [182.195.41.45]) by
- epsmges1p4.samsung.com (Symantec Messaging Gateway) with SMTP id
- AA.23.48019.3BDB9ED5; Fri,  6 Dec 2019 11:32:19 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
- 20191206023218epcas1p4a433888be987b966a73de814c736f47e~dp27K2pmP2489224892epcas1p45;
- Fri,  6 Dec 2019 02:32:18 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20191206023218epsmtrp152f5ba1c7e64e3aec78f8fa3fa8a24a5~dp27KBLvW1446314463epsmtrp1V;
- Fri,  6 Dec 2019 02:32:18 +0000 (GMT)
-X-AuditID: b6c32a38-257ff7000001bb93-62-5de9bdb37d44
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- D0.6E.10238.2BDB9ED5; Fri,  6 Dec 2019 11:32:18 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191206023218epsmtip1e9c48596faaba27e5d1ca19b645809d2~dp262nUs90041300413epsmtip1l;
- Fri,  6 Dec 2019 02:32:18 +0000 (GMT)
-Subject: Re: [PATCH v2 2/2] PM / devfreq: Use PM QoS for sysfs min/max_freq
-To: Matthias Kaehlcke <mka@chromium.org>, Leonard Crestez
- <leonard.crestez@nxp.com>
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <129c11ff-f808-654e-d571-6248c887c973@samsung.com>
-Date: Fri, 6 Dec 2019 11:38:31 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:59.0) Gecko/20100101
- Thunderbird/59.0
+ id 1id3lx-0000YC-Uj; Fri, 06 Dec 2019 02:55:16 +0000
+X-UUID: d625fe20304a4f3db0697edc4ccd42b2-20191205
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=+m0881iTlxWLsLEeydzi6ozs1V2dNGB1CpLzB3Z+JSE=; 
+ b=i0LWQ+BHy0VCdjk3SADTwVtO7KBv5aPsls+cJ0E6hRYE0C2bMcHEfiIGgeWUu0iVO9wO+FsOqqjdOzo+Usdl5ZnwUQ7IZuusNw18tHxOWHFb6qUZs00+DDpR9GLuovKIXT430VlONCpN9RGy1boHke0IrBhuZ6czMkd65R5BYvg=;
+X-UUID: d625fe20304a4f3db0697edc4ccd42b2-20191205
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 778458383; Thu, 05 Dec 2019 18:55:05 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Dec 2019 18:55:52 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 6 Dec 2019 10:54:57 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 6 Dec 2019 10:54:27 +0800
+Message-ID: <1575600902.6328.11.camel@mtksdaap41>
+Subject: Re: [PATCH v4 7/7] drm/mediatek: apply CMDQ control flow
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Fri, 6 Dec 2019 10:55:02 +0800
+In-Reply-To: <20191205092749.4021-8-bibby.hsieh@mediatek.com>
+References: <20191205092749.4021-1-bibby.hsieh@mediatek.com>
+ <20191205092749.4021-8-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20191205180253.GN228856@google.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrFJsWRmVeSWpSXmKPExsWy7bCmru7mvS9jDf5e4rU4dGwru8X0vZvY
- LM42vWG3WHH3I6vFpsfXWC26fq1ktvjce4TR4vOGx4wWtxtXsFmsPneQzeLM6UusFhu/ejjw
- eMxuuMjicefaHjaPzUvqPTa+28HkcfDdHiaPLVfbWTz6tqxi9Pi8SS6AIyrbJiM1MSW1SCE1
- Lzk/JTMv3VbJOzjeOd7UzMBQ19DSwlxJIS8xN9VWycUnQNctMwfoWCWFssScUqBQQGJxsZK+
- nU1RfmlJqkJGfnGJrVJqQUpOgWWBXnFibnFpXrpecn6ulaGBgZEpUGFCdsbsR4uYC3aoV2y8
- epe9gXGmQhcjJ4eEgInEqg/XWbsYuTiEBHYwSmzrO8cO4XxilPh97DIbhPONUWLyssksMC0P
- n35gBbGFBPYySpybWgtR9J5RouPQfMYuRg4OYQFvie6V/iA1IgKhEr1bv7OA1DALzGOW6Fp3
- hxEkwSagJbH/xQ02EJtfQFHi6o/HYHFeATuJ1u4JYHEWARWJ65c/M4HYogJhEie3tUDVCEqc
- nPkE7CBOAUOJy+dmsIPYzALiEreezGeCsOUltr+dwwyyWEJgE7vEkb/T2ECOkxBwkbi8KBzi
- GWGJV8e3sEPYUhIv+9ug7GqJlSePsEH0djBKbNl/gRUiYSyxf+lkJpA5zAKaEut36UOEFSV2
- /p7LCLGXT+Ld1x5WiFW8Eh1tQhAlyhKXH9xlgrAlJRa3d7JNYFSaheSbWUg+mIXkg1kIyxYw
- sqxiFEstKM5NTy02LDBBjuxNjOB0rGWxg3HPOZ9DjAIcjEo8vDM+v4gVYk0sK67MPcQowcGs
- JMKbzvcyVog3JbGyKrUoP76oNCe1+BCjKTCwJzJLiSbnA3NFXkm8oamRsbGxhYmhmamhoZI4
- L8ePi7FCAumJJanZqakFqUUwfUwcnFINjLE6gRs6xIxVq33/Hbj3JCb7msXUu4pnJ2Xldyh+
- sLzwPtVQOodLVNDm+o2t+hPWZmilmn0tL9S+I6dgEB16KvVHqWDLLpPM56kiMiucA+U+hi2q
- dz4mIlNQmufE+az4Tcqulw4zezfPec4ygyd90Wq59HVC0t9LSnzYRQ/Xc1UZ3n3I7NqgxFKc
- kWioxVxUnAgAEjf0090DAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrKIsWRmVeSWpSXmKPExsWy7bCSnO6mvS9jDRr69S0OHdvKbjF97yY2
- i7NNb9gtVtz9yGqx6fE1VouuXyuZLT73HmG0+LzhMaPF7cYVbBarzx1kszhz+hKrxcavHg48
- HrMbLrJ43Lm2h81j85J6j43vdjB5HHy3h8ljy9V2Fo++LasYPT5vkgvgiOKySUnNySxLLdK3
- S+DKmP1oEXPBDvWKjVfvsjcwzlToYuTkkBAwkXj49ANrFyMXh5DAbkaJqdfbmCASkhLTLh5l
- 7mLkALKFJQ4fLoaoecsoMWvDHiaQuLCAt0T3Sn+QchGBUInP/RvZQWqYBRYwS0y/cZQVJCEk
- 0MkkseqYBojNJqAlsf/FDTYQm19AUeLqj8eMIDavgJ1Ea/cEsDiLgIrE9cufwW4QFQiT2Lnk
- MRNEjaDEyZlPWEBsTgFDicvnZrCD2MwC6hJ/5l1ihrDFJW49mc8EYctLbH87h3kCo/AsJO2z
- kLTMQtIyC0nLAkaWVYySqQXFuem5xYYFhnmp5XrFibnFpXnpesn5uZsYwZGppbmD8fKS+EOM
- AhyMSjy8Mz6/iBViTSwrrsw9xCjBwawkwpvO9zJWiDclsbIqtSg/vqg0J7X4EKM0B4uSOO/T
- vGORQgLpiSWp2ampBalFMFkmDk6pBsYJDG/Dwpubv/+sr8iUL5BetWuJ+fdz7m41B7RbH3I/
- eZh9wenUB4GSyedfb9Eo5vGfKyweli8ddEvqolNjmWNl3B2Buo7mKa0X57DV6pjo/025OFHy
- S9ezSSd2alWvq529p1pcxi5me6PJssV8/4O//dmdIW1fHFx5uyTS/dxHIdf2zdN1TyqxFGck
- GmoxFxUnAgD+2cWYyAIAAA==
-X-CMS-MailID: 20191206023218epcas1p4a433888be987b966a73de814c736f47e
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191205180259epcas4p3cf54efb95fc13f55b79c1e27c9a9ae0c
-References: <cover.1575540224.git.leonard.crestez@nxp.com>
- <2b9eeb4e576c45269c01826f13c7811b876faa57.1575540224.git.leonard.crestez@nxp.com>
- <CGME20191205180259epcas4p3cf54efb95fc13f55b79c1e27c9a9ae0c@epcas4p3.samsung.com>
- <20191205180253.GN228856@google.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_183234_095105_FF2ED7B4 
-X-CRM114-Status: GOOD (  24.21  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191205_185514_000334_F7C2A760 
+X-CRM114-Status: GOOD (  16.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.33 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -135,7 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,153 +85,179 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, linux-pm@vger.kernel.org,
- Viresh Kumar <viresh.kumar@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, NXP Linux Team <linux-imx@nxp.com>,
- Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: drinkcat@chromium.org, Yongqiang Niu <yongqiang.niu@mediatek.com>,
+ srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, tfiga@chromium.org,
+ YT Shen <yt.shen@mediatek.com>, Thierry Reding <thierry.reding@gmail.com>,
+ linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/6/19 3:02 AM, Matthias Kaehlcke wrote:
-> On Thu, Dec 05, 2019 at 12:05:07PM +0200, Leonard Crestez wrote:
->> Switch the handling of min_freq and max_freq from sysfs to use the
->> dev_pm_qos_request interface.
->>
->> Since PM QoS handles frequencies as kHz this change reduces the
->> precision of min_freq and max_freq. This shouldn't introduce problems
->> because frequencies which are not an integer number of kHz are likely
->> not an integer number of Hz either.
->>
->> Try to ensure compatibility by rounding min values down and rounding
->> max values up.
->>
->> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
->> Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
->> ---
->>  drivers/devfreq/devfreq.c | 76 ++++++++++++++++++++++++++++++---------
->>  include/linux/devfreq.h   |  9 ++---
->>  2 files changed, 64 insertions(+), 21 deletions(-)
->>
->> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
->> index e8b943fc4259..bcb286509547 100644
->> --- a/drivers/devfreq/devfreq.c
->> +++ b/drivers/devfreq/devfreq.c
->> @@ -139,14 +139,10 @@ static void get_freq_range(struct devfreq *devfreq,
->>  	*min_freq = max(*min_freq, (unsigned long)HZ_PER_KHZ * qos_min_freq);
->>  	if (qos_max_freq != PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE)
->>  		*max_freq = min(*max_freq,
->>  				(unsigned long)HZ_PER_KHZ * qos_max_freq);
->>  
->> -	/* Apply constraints from sysfs */
->> -	*min_freq = max(*min_freq, devfreq->min_freq);
->> -	*max_freq = min(*max_freq, devfreq->max_freq);
->> -
->>  	/* Apply constraints from OPP interface */
->>  	*min_freq = max(*min_freq, devfreq->scaling_min_freq);
->>  	*max_freq = min(*max_freq, devfreq->scaling_max_freq);
->>  
->>  	if (*min_freq > *max_freq)
->> @@ -703,10 +699,23 @@ static void devfreq_dev_release(struct device *dev)
->>  					 DEV_PM_QOS_MIN_FREQUENCY);
->>  	if (err && err != -ENOENT)
->>  		dev_warn(dev->parent,
->>  			"Failed to remove min_freq notifier: %d\n", err);
->>  
->> +	if (dev_pm_qos_request_active(&devfreq->user_max_freq_req)) {
->> +		err = dev_pm_qos_remove_request(&devfreq->user_max_freq_req);
->> +		if (err)
->> +			dev_warn(dev->parent,
->> +				"Failed to remove max_freq request: %d\n", err);
->> +	}
->> +	if (dev_pm_qos_request_active(&devfreq->user_min_freq_req)) {
->> +		err = dev_pm_qos_remove_request(&devfreq->user_min_freq_req);
->> +		if (err)
->> +			dev_warn(dev->parent,
->> +				"Failed to remove min_freq request: %d\n", err);
->> +	}
->> +
->>  	if (devfreq->profile->exit)
->>  		devfreq->profile->exit(devfreq->dev.parent);
->>  
->>  	mutex_destroy(&devfreq->lock);
->>  	kfree(devfreq);
->> @@ -776,19 +785,17 @@ struct devfreq *devfreq_add_device(struct device *dev,
->>  	if (!devfreq->scaling_min_freq) {
->>  		mutex_unlock(&devfreq->lock);
->>  		err = -EINVAL;
->>  		goto err_dev;
->>  	}
->> -	devfreq->min_freq = devfreq->scaling_min_freq;
->>  
->>  	devfreq->scaling_max_freq = find_available_max_freq(devfreq);
->>  	if (!devfreq->scaling_max_freq) {
->>  		mutex_unlock(&devfreq->lock);
->>  		err = -EINVAL;
->>  		goto err_dev;
->>  	}
->> -	devfreq->max_freq = devfreq->scaling_max_freq;
->>  
->>  	devfreq->suspend_freq = dev_pm_opp_get_suspend_opp_freq(dev);
->>  	atomic_set(&devfreq->suspend_count, 0);
->>  
->>  	dev_set_name(&devfreq->dev, "devfreq%d",
->> @@ -825,10 +832,20 @@ struct devfreq *devfreq_add_device(struct device *dev,
->>  
->>  	srcu_init_notifier_head(&devfreq->transition_notifier_list);
->>  
->>  	mutex_unlock(&devfreq->lock);
->>  
->> +	err = dev_pm_qos_add_request(dev, &devfreq->user_min_freq_req,
->> +				     DEV_PM_QOS_MIN_FREQUENCY, 0);
->> +	if (err < 0)
->> +		goto err_devfreq;
->> +	err = dev_pm_qos_add_request(dev, &devfreq->user_max_freq_req,
->> +				     DEV_PM_QOS_MAX_FREQUENCY,
->> +				     PM_QOS_MAX_FREQUENCY_DEFAULT_VALUE);
->> +	if (err < 0)
->> +		goto err_devfreq;
->> +
->>  	devfreq->nb_min.notifier_call = qos_min_notifier_call;
->>  	err = dev_pm_qos_add_notifier(devfreq->dev.parent, &devfreq->nb_min,
->>  				      DEV_PM_QOS_MIN_FREQUENCY);
->>  	if (err)
->>  		goto err_devfreq;
->> @@ -1418,18 +1435,26 @@ static ssize_t min_freq_store(struct device *dev, struct device_attribute *attr,
->>  {
->>  	struct devfreq *df = to_devfreq(dev);
->>  	unsigned long value;
->>  	int ret;
->>  
->> +	/*
->> +	 * Protect against theoretical sysfs writes between
->> +	 * device_add and dev_pm_qos_add_request
->> +	 */
->> +	if (!dev_pm_qos_request_active(&df->user_min_freq_req))
->> +		return -EINVAL;
-> 
-> The error code -EINVAL is a bit misleading. I guess it's not super
-> important, especially since this is a very rare case. In case you
-> re-spin you could consider returning -EAGAIN ('Resource temporarily
-> unavailable') in this case from min/max_freq_store/show()
+Hi, Bibby:
 
-I agree. -EAGAIN is better than -EINVAL. I'll change it by myself.
-
+On Thu, 2019-12-05 at 17:27 +0800, Bibby Hsieh wrote:
+> Unlike other SoCs, MT8183 does not have "shadow"
+> registers for performaing an atomic video mode
+> set or page flip at vblank/vsync.
 > 
-> Reviewed-by: Matthias Kaehlcke <mka@chromium.org>
-> Tested-by: Matthias Kaehlcke <mka@chromium.org>
-> 
-> 
+> The CMDQ (Commend Queue) in MT8183 is used to help
+> update all relevant display controller registers
+> with critical time limation.
 
-
--- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> 
+> Signed-off-by: YT Shen <yt.shen@mediatek.com>
+> Signed-off-by: CK Hu <ck.hu@mediatek.com>
+> Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 56 +++++++++++++++++++++----
+>  1 file changed, 49 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index 8c6231ed6f55..496dffe962af 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -12,6 +12,8 @@
+>  #include <drm/drm_plane_helper.h>
+>  #include <drm/drm_probe_helper.h>
+>  #include <drm/drm_vblank.h>
+> +#include <linux/of_address.h>
+> +#include <linux/soc/mediatek/mtk-cmdq.h>
+>  
+>  #include "mtk_drm_drv.h"
+>  #include "mtk_drm_crtc.h"
+> @@ -43,6 +45,9 @@ struct mtk_drm_crtc {
+>  	bool				pending_planes;
+>  	bool				pending_async_planes;
+>  
+> +	struct cmdq_client		*cmdq_client;
+> +	u32				cmdq_event;
+> +
+>  	void __iomem			*config_regs;
+>  	const struct mtk_mmsys_reg_data *mmsys_reg_data;
+>  	struct mtk_disp_mutex		*mutex;
+> @@ -234,6 +239,13 @@ struct mtk_ddp_comp *mtk_drm_ddp_comp_for_plane(struct drm_crtc *crtc,
+>  	return NULL;
+>  }
+>  
+> +#ifdef CONFIG_MTK_CMDQ
+> +static void ddp_cmdq_cb(struct cmdq_cb_data data)
+> +{
+> +	cmdq_pkt_destroy(data.data);
+> +}
+> +#endif
+> +
+>  static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+>  {
+>  	struct drm_crtc *crtc = &mtk_crtc->base;
+> @@ -378,7 +390,8 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+>  	}
+>  }
+>  
+> -static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+> +static void mtk_crtc_ddp_config(struct drm_crtc *crtc,
+> +				struct cmdq_pkt *cmdq_handle)
+>  {
+>  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+>  	struct mtk_crtc_state *state = to_mtk_crtc_state(mtk_crtc->base.state);
+> @@ -394,7 +407,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  	if (state->pending_config) {
+>  		mtk_ddp_comp_config(comp, state->pending_width,
+>  				    state->pending_height,
+> -				    state->pending_vrefresh, 0, NULL);
+> +				    state->pending_vrefresh, 0,
+> +				    cmdq_handle);
+>  
+>  		state->pending_config = false;
+>  	}
+> @@ -414,7 +428,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  
+>  			if (comp)
+>  				mtk_ddp_comp_layer_config(comp, local_layer,
+> -							  plane_state, NULL);
+> +							  plane_state,
+> +							  cmdq_handle);
+>  			plane_state->pending.config = false;
+>  		}
+>  		mtk_crtc->pending_planes = false;
+> @@ -435,7 +450,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  
+>  			if (comp)
+>  				mtk_ddp_comp_layer_config(comp, local_layer,
+> -							  plane_state, NULL);
+> +							  plane_state,
+> +							  cmdq_handle);
+>  			plane_state->pending.async_config = false;
+>  		}
+>  		mtk_crtc->pending_async_planes = false;
+> @@ -444,6 +460,7 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  
+>  static void mtk_drm_crtc_hw_config(struct mtk_drm_crtc *mtk_crtc)
+>  {
+> +	struct cmdq_pkt *cmdq_handle;
+>  	struct drm_crtc *crtc = &mtk_crtc->base;
+>  	struct mtk_drm_private *priv = crtc->dev->dev_private;
+>  	unsigned int pending_planes = 0, pending_async_planes = 0;
+> @@ -472,9 +489,18 @@ static void mtk_drm_crtc_hw_config(struct mtk_drm_crtc *mtk_crtc)
+>  
+>  	if (priv->data->shadow_register) {
+>  		mtk_disp_mutex_acquire(mtk_crtc->mutex);
+> -		mtk_crtc_ddp_config(crtc);
+> +		mtk_crtc_ddp_config(crtc, NULL);
+>  		mtk_disp_mutex_release(mtk_crtc->mutex);
+>  	}
+> +#ifdef CONFIG_MTK_CMDQ
+> +	if (mtk_crtc->cmdq_client) {
+> +		cmdq_handle = cmdq_pkt_create(mtk_crtc->cmdq_client, PAGE_SIZE);
+> +		cmdq_pkt_clear_event(cmdq_handle, mtk_crtc->cmdq_event);
+> +		cmdq_pkt_wfe(cmdq_handle, mtk_crtc->cmdq_event);
+> +		mtk_crtc_ddp_config(crtc, cmdq_handle);
+> +		cmdq_pkt_flush_async(cmdq_handle, ddp_cmdq_cb, cmdq_handle);
+> +	}
+> +#endif
+>  	mutex_unlock(&mtk_crtc->hw_lock);
+>  }
+>  
+> @@ -643,8 +669,8 @@ void mtk_crtc_ddp_irq(struct drm_crtc *crtc, struct mtk_ddp_comp *comp)
+>  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+>  	struct mtk_drm_private *priv = crtc->dev->dev_private;
+>  
+> -	if (!priv->data->shadow_register)
+> -		mtk_crtc_ddp_config(crtc);
+> +	if (!priv->data->shadow_register && !mtk_crtc->cmdq_client)
+> +		mtk_crtc_ddp_config(crtc, NULL);
+>  
+>  	mtk_drm_finish_page_flip(mtk_crtc);
+>  }
+> @@ -787,5 +813,21 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+>  	priv->num_pipes++;
+>  	mutex_init(&mtk_crtc->hw_lock);
+>  
+> +#ifdef CONFIG_MTK_CMDQ
+> +	mtk_crtc->cmdq_client =
+> +			cmdq_mbox_create(dev, drm_crtc_index(&mtk_crtc->base),
+> +					 2000);
+> +	if (IS_ERR(mtk_crtc->cmdq_client)) {
+> +		dev_dbg(dev, "mtk_crtc %d failed to create mailbox client, writing register by CPU now\n",
+> +			drm_crtc_index(&mtk_crtc->base));
+> +		mtk_crtc->cmdq_client = NULL;
+> +	}
+> +	ret = of_property_read_u32_index(dev->of_node, "mediatek,gce-events",
+> +					 drm_crtc_index(&mtk_crtc->base),
+> +					 &mtk_crtc->cmdq_event);
+> +	if (ret)
+> +		dev_dbg(dev, "mtk_crtc %d failed to get mediatek,gce-events property\n",
+> +			drm_crtc_index(&mtk_crtc->base));
+> +#endif
+>  	return 0;
+>  }
 
 _______________________________________________
 linux-arm-kernel mailing list
