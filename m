@@ -2,66 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7BDE0114A23
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 01:10:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0D10114A32
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 01:22:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lpcRGdYdhxhGAlh990bbI5n415LYBOZv12+la3L8efw=; b=ZLDKSvW6+DHzcW
-	7SiRaLMtgcITSUF3mLRo0rb2OLAuDakjWFXENBmqqT/jyyE0Vvrplg7k15/CLmlFY7+A+YHGK0n+S
-	vbKZRq0JeBHA4RtMURVaw2Wkm7aYGaB//4Wkv/9JD8qLqfWN1ZjU2p/dBjwGN7I8suRC0i2AdvlBE
-	9GnPr7SBQGSzjg9oZ0FMG5hkx0Kz7CVq+UiVHmLOdUfjw6ji0hyOrE4wbHSwvH1cRVZWd5IAnlINN
-	6KE1Vm94UggoynSMUQPFjb/En3QmsGy/Um+5ySvR3xbyqDeIl+NaxcDzHENsdwGQGkC6ehfAsSvpS
-	/CjSz8UEkq3By4GOH2vQ==;
+	List-Owner; bh=y+ld3KY+JiD6BV423+kZmm7vwitzqcaH81geT3H053Q=; b=lL1L6Ngk6SZtXF
+	4QEHgCcYKFugeKsKuLRseEVR5Q4JSzegBRJocBzUI64o+Usg5PrAvR4E8bAgwvOhmNr4ATrhPd/Z0
+	ZpKJUi9PpZMwNbYyhpRzlyyqFykbHOpANqM64xAdeb0SmjKC9zCCHAZ5zxtrOZw7Sy4tKTt1hXWkk
+	YtFAQo++CM+XYn1/ISff2tO62xk3Ilv0eCImK7AfesprnHDWfl2XfgnJHOmi8pBM7KdVtWKJa5cde
+	rU995+Opfked2sbis/TDCMd7IVxNxCTXwlycRgYw7RHFFZ0Biqn3DFIAT9g2tU5deuPOlfd+VZcom
+	N/2fJvyrmKjNroK1IEOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1id1CA-00058p-Dn; Fri, 06 Dec 2019 00:10:06 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1id1OZ-0001Ke-D4; Fri, 06 Dec 2019 00:22:55 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1id1By-00058U-1o
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 00:09:55 +0000
-Received: by mail-ed1-x543.google.com with SMTP id j17so4329183edp.3
+ id 1id1OO-0001Jr-SN
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 00:22:46 +0000
+Received: by mail-ed1-x541.google.com with SMTP id i6so3187311edr.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Dec 2019 16:09:53 -0800 (PST)
+ Thu, 05 Dec 2019 16:22:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Pu7aZrCRpmbK9eIe5VfBppycurruZf1/Fg8oPrOmz5w=;
- b=dUfAUSF3rN9GOZKG6L738lHqvfLhWP7D3l3q8HabmB/Q19pH1Zm2WmRf2gsukMZ0b4
- kmdQoNOac/RjKeM+NUqzxBxixVEbzr9z1WUQheWM/NVseOfrvwfBgfxhm19KX6JSnWTn
- 8BKH1Jb8fTcUyUmNCut4nStLy/+Jnv1UIbtWfPqPtkkXyWqB70z0FPFjPlvpT3rdxkp/
- VBP/iw7ks6/QwXJiyZ1BEBsbpDVYA/LBMAcQLToSxB0+hrJA05/P4J64gfQY2ub3QR/e
- tfl/83XdOZEZFwOmP8efU+yBB3YJi1LwpUAMy/N5oY4JXmA7/XVzb8U78y1GCiybGhka
- jWEg==
+ bh=HVEngqNE+n/9b4VUg5UGRzlN7Ot2kbLWrq3boRtIV5I=;
+ b=cYYF3XwM9qP5vPXClZMz2i3tp3pvYkhLKHLMk5N5NuKHrKy5PWIFn72/czidLwdTuz
+ njwte+qyIOscbDPRii6RnWKdnOe8RNwLLx7l8jUVRQUiRQ/sfsZUkff3sNMeTzfQ0d38
+ n6elSn1mCIaSlSx0PswgXyMPfIIV98Kon/VAt0dWUXgjpfc1vxZ+OuYg1Z8gjUrEOT71
+ hKfJd0IwvU+VqFivrFFLH92zZXG29t8do8OuFlfHf30LnvBs55KI/F2M8ddZd5Ewbqk5
+ 82NsU5YmR7XZtasvHvduAfjnJ0EH2+EcJ74YX9bsQzoiXstscogtV5ZmZfdHlCflOnSy
+ RRIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=Pu7aZrCRpmbK9eIe5VfBppycurruZf1/Fg8oPrOmz5w=;
- b=BGkxvvtxPnqT78YEq3LkB2pDJw6XP8s64iE//wZluSliiLiOi1+On3EJbSOCmRLxD/
- eFsB3yh5tqORJmViGTPhuSTYFKADmV3WtP73i2lknmch0lpSU8yZnPzEMa4fxAioS6qx
- U3RjmzLvsSOWBml2SY521ywneznoS0wWidos3+yrNXr858lh6cF/mziwlZmhvjZ6DAfO
- iZTvDkRzmDCiYAKbjd0kAFxT45Qu15IBneoxMwFrnVaJpm4F0cUjhEmg6mjTFrA1FSiu
- TU5JKxzLftOOK9ITRpJMqTzwBNFQZ7fnAHDQHI6euqKU75ZTezG3JlHIU3sHG12t0k5v
- wYpA==
-X-Gm-Message-State: APjAAAWiNqBWRVO0TO6DXWZJ02dZlbnKZFlKy+8RkNFWovEGIEou1QEb
- iLN7Vvq38RtlCnBnGxBZziY=
-X-Google-Smtp-Source: APXvYqyrKCmObwIrxCughrq6gD80iLhJ2CFPGdEFQyBC+9iOmemQL2sVfeAqxlw3KYi/fFhqNlDzDQ==
-X-Received: by 2002:aa7:c701:: with SMTP id i1mr13463950edq.247.1575590992681; 
- Thu, 05 Dec 2019 16:09:52 -0800 (PST)
+ bh=HVEngqNE+n/9b4VUg5UGRzlN7Ot2kbLWrq3boRtIV5I=;
+ b=BkFat+muQgr0gQ5b2Q6LkaWg2r0IyFBb8Xf6oVZchKvGxH3DtdNclQZcCENwBeuyZ/
+ GCu74w2Mwur6Hv+2VmA68le04SpDoFJmc9yuDdVU4tfef26SVhEVY8aw+rxzgAswBuID
+ VW+X7BeaLoABeH5HA8i4ljoifK4yViwEBjj6tHEflLYUZ9o0Gn/lcmwLnR8j2mHiub/L
+ 5tBMuMausQ2r2lOgetfCJvwMvyONK7FtSX0TK0dX3HE/bYSdwetq3RNMAYxy+rPc6VGZ
+ AkDSu0z8maYSH/+NFqq6rZRP2VTr62UykjDIqvRSqchf9uyiMV9/yMg+MO86gQP22z4H
+ hLYA==
+X-Gm-Message-State: APjAAAXzNzJPdiJwD1o0L7MNAmbL9cSIkCIHW3kVeT4i7jtAFzyMBL0J
+ sBmGZm+SRXxa2rIGVgjzEz4=
+X-Google-Smtp-Source: APXvYqwj/YV3hU8I5FQqoLnfFROxjn81FACe+B9HETblKOYse6Ggfb6LzNs4d3o8WfLF58CGLnHNoQ==
+X-Received: by 2002:a17:906:339a:: with SMTP id
+ v26mr12571251eja.2.1575591758851; 
+ Thu, 05 Dec 2019 16:22:38 -0800 (PST)
 Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id w5sm140974eje.14.2019.12.05.16.09.50
+ by smtp.googlemail.com with ESMTPSA id f7sm452380edu.38.2019.12.05.16.22.36
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 05 Dec 2019 16:09:51 -0800 (PST)
-Subject: Re: [PATCH 1/2] dt-bindings: soc: Add binding doc for iProc IDM device
+ Thu, 05 Dec 2019 16:22:38 -0800 (PST)
+Subject: Re: [PATCH 2/2] soc: bcm: iproc: Add Broadcom iProc IDM driver
 To: Ray Jui <ray.jui@broadcom.com>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>
 References: <20191202233127.31160-1-ray.jui@broadcom.com>
- <20191202233127.31160-2-ray.jui@broadcom.com>
+ <20191202233127.31160-3-ray.jui@broadcom.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -117,28 +118,28 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <62254bbb-168e-c0ad-a72d-bd659a2c23fa@gmail.com>
-Date: Thu, 5 Dec 2019 16:09:48 -0800
+Message-ID: <955f1d22-a1df-377a-1ed9-7fdaa4309b33@gmail.com>
+Date: Thu, 5 Dec 2019 16:22:35 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191202233127.31160-2-ray.jui@broadcom.com>
+In-Reply-To: <20191202233127.31160-3-ray.jui@broadcom.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_160954_130217_4DDE2072 
-X-CRM114-Status: GOOD (  20.45  )
+X-CRM114-CacheID: sfid-20191205_162244_923947_8846CAD4 
+X-CRM114-Status: GOOD (  18.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -166,71 +167,132 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 12/2/19 3:31 PM, Ray Jui wrote:
-> Add binding document for iProc based IDM devices.
+> Add Broadcom iProc IDM driver that controls that IDM devices available
+> on various iProc based SoCs for bus transaction timeout monitoring and
+> error logging.
 > 
 > Signed-off-by: Ray Jui <ray.jui@broadcom.com>
-
-Looks good to me, it's 2019, nearly 2020, maybe make this a YAML
-compatible binding since it is a new one?
-
+> Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 > ---
->  .../bindings/soc/bcm/brcm,iproc-idm.txt       | 44 +++++++++++++++++++
->  1 file changed, 44 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt b/Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt
-> new file mode 100644
-> index 000000000000..388c6b036d7e
+
+Looks good to me, just a few suggestions below
+
+[snip]
+
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt
-> @@ -0,0 +1,44 @@
-> +Broadcom iProc Interconnect Device Management (IDM) device
-> +
-> +The Broadcom iProc IDM device allows control and monitoring of ASIC internal
-> +bus transactions. Most importantly, it can be configured to detect bus
-> +transaction timeout. In such case, critical information such as transaction
-> +address that caused the error, bus master ID of the transaction that caused
-> +the error, and etc., are made available from the IDM device.
-> +
-> +-------------------------------------------------------------------------------
-> +
-> +Required properties for IDM device node:
-> +- compatible: must be "brcm,iproc-idm"
-> +- reg: base address and length of the IDM register space
-> +- interrupt: IDM interrupt number
-> +- brcm,iproc-idm-bus: IDM bus string
-> +
-> +Optional properties for IDM device node:
-> +- brcm,iproc-idm-elog: phandle to the device node of the IDM logging device
-> +
-> +-------------------------------------------------------------------------------
-> +
-> +Required properties for IDM error logging device node:
-> +- compatible: must be "brcm,iproc-idm-elog";
-> +- reg: base address and length of reserved memory location where IDM error
-> +  events can be saved
-> +
-> +-------------------------------------------------------------------------------
-> +
-> +Example:
-> +
-> +idm {
-> +	idm-elog {
-> +		compatible = "brcm,iproc-idm-elog";
-> +		reg = <0x8f221000 0x1000>;
-> +	};
-> +
-> +	idm-mhb-paxc-axi {
-> +		compatible = "brcm,iproc-idm";
-> +		reg = <0x60406900 0x200>;
-> +		interrupt = <GIC_SPI 516 IRQ_TYPE_LEVEL_HIGH>;
-> +		brcm,iproc-idm-bus = "idm-mhb-paxc-axi";
-> +		brcm,iproc-idm-elog = <&idm-elog>;
-> +	};
-> +};
-> 
+> +++ b/drivers/soc/bcm/iproc/Kconfig
+> @@ -0,0 +1,6 @@
 
+You would want an
 
+if SOC_BRCM_IPROC
+
+> +config IPROC_IDM
+> +	bool "Broadcom iProc IDM driver"
+> +	depends on (ARCH_BCM_IPROC || COMPILE_TEST) && OF
+> +	default ARCH_BCM_IPROC
+> +	help
+> +	  Enables support for iProc Interconnect and Device Management (IDM) control and monitoring
+
+and endif here to make this a nice menu.
+
+[snip]
+
+> +
+> +static int iproc_idm_dev_probe(struct platform_device *pdev)
+> +{
+> +	struct device *dev = &pdev->dev;
+> +	struct device_node *np = dev->of_node;
+> +	struct platform_device *elog_pdev;
+> +	struct device_node *elog_np;
+> +	struct iproc_idm *idm;
+> +	const char *name;
+> +	int ret;
+> +	u32 val;
+> +
+> +	idm = devm_kzalloc(dev, sizeof(*idm), GFP_KERNEL);
+> +	if (!idm)
+> +		return -ENOMEM;
+> +
+> +	ret = of_property_read_string(np, "brcm,iproc-idm-bus", &name);
+> +	if (ret) {
+> +		dev_err(dev, "Unable to parse IDM bus name\n");
+> +		return ret;
+> +	}
+> +	idm->name = name;
+> +
+> +	platform_set_drvdata(pdev, idm);
+> +	idm->dev = dev;
+> +
+> +	idm->base = of_iomap(np, 0);
+> +	if (!idm->base) {
+> +		dev_err(dev, "Unable to map I/O\n");
+> +		ret = -ENOMEM;
+> +		goto err_exit;
+> +	}
+> +
+> +	ret = of_irq_get(np, 0);
+> +	if (ret <= 0) {
+> +		dev_err(dev, "Unable to find IRQ number. ret=%d\n", ret);
+> +		goto err_iounmap;
+> +	}
+
+Since this is a standard platform device, you can use the standard
+platform_get_resource() and platform_get_irq(). If you ever needed to
+support ACPI in the future, that would make it transparent and almost
+already ready.
+
+> +
+> +	ret = devm_request_irq(dev, ret, iproc_idm_irq_handler, IRQF_SHARED,
+> +			       idm->name, idm);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Unable to request irq. ret=%d\n", ret);
+> +		goto err_iounmap;
+> +	}
+> +
+> +	/*
+> +	 * ELOG phandle is optional. If ELOG phandle is specified, it indicates
+> +	 * ELOG logging needs to be enabled
+> +	 */
+> +	elog_np = of_parse_phandle(dev->of_node, ELOG_IDM_COMPAT_STR, 0);
+> +	if (elog_np) {
+> +		elog_pdev = of_find_device_by_node(elog_np);
+> +		if (!elog_pdev) {
+> +			dev_err(dev, "Unable to find IDM ELOG device\n");
+> +			ret = -ENODEV;
+> +			goto err_iounmap;
+> +		}
+> +
+> +		idm->elog = platform_get_drvdata(elog_pdev);
+> +		if (!idm->elog) {
+> +			dev_err(dev, "Unable to get IDM ELOG driver data\n");
+> +			ret = -EINVAL;
+> +			goto err_iounmap;
+> +		}
+> +	}
+> +
+> +	/* enable IDM timeout and its interrupt */
+> +	val = readl(idm->base + IDM_CTRL_OFFSET);
+> +	val |= IDM_CTRL_TIMEOUT_EXP_MASK | IDM_CTRL_TIMEOUT_ENABLE |
+> +	       IDM_CTRL_TIMEOUT_IRQ;
+> +	writel(val, idm->base + IDM_CTRL_OFFSET);
+> +
+> +	ret = device_create_file(dev, &dev_attr_no_panic);
+> +	if (ret < 0)
+> +		goto err_iounmap;
+> +
+> +	of_node_put(np);
+
+Did not you intend to drop the reference count on elog_np here?
+
+[snip]
+
+> +static struct platform_driver iproc_idm_driver = {
+> +	.probe = iproc_idm_probe,
+
+Do not you need a remove function in order to unregister the sysfs file
+that you created in iproc_idm_dev_probe() to avoid bind/unbind (or
+rmmod/modprobe) to spit out an existing sysfs entry warning?
 -- 
 Florian
 
