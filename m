@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8DC31149F8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 00:46:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9F25114A20
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 01:08:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Le5YKzkuuhcAglmi6KryKjz6tLswg7Vzbp1ZvOYrgFo=; b=uYCWuc8huO6l+3
-	dXhgX02A7eI7fxRWlK2PW1OxDKZ7/L5WSHa59fKEEc+tX6isQJqNJTtJyltuH4k3/uAli4wDcpW+7
-	rqEBxtoxls+qy5QdAN+6DA4muBNr76BUUnjPkt5YbHtahuRNCJqOjAEnO2Uh3Yq5gCferuL/HgdrO
-	mTuLROV5iIDHd/32OghGC1+/gzKTAsIGREEcPRw+U4GiksOVSKgEJQT3L8Uc7Cw4536cWyyh8o9/C
-	wmdnk0M1GkWP+haolpKg5V+2kQpsMQST3XDStBzUWl7qcXIdb3OKQ7Od+AZttCyaGgZSkbTyBdvvp
-	TADUCVfhXyWEv4etIJlQ==;
+	List-Owner; bh=9m7geDc8A+XXpqVe9vdXlPg8A4hBIwwciF4ZpyV9UBY=; b=LruKOMWxfXejI9
+	qk5YRSpu+WLjLbE1scLf9tjOX9NllergTYutjpSRhS5i9/9EuDjjYkV7avPEQbz3hl5f5CeCvkq0Q
+	VAxu1fMmKnRw6bo+GwLEapTHwelgaYvxq+kbhnC32/+Ojai7yalrdjfD7p/0VIhIrStNWZPFP9E9K
+	ks4XE152xkoQ0A4I/jMJBaXB2RP3njqjQieMc9gqmaUBVsvYHekdM97bF1oju78+z3uQ7x1sF86ug
+	34Pnm0D6jAG+FvkbB1v7ci/0JijFu0KF9T1cCJSAR15d7RiEF/2G0HcGI5gMISRP3ArM99ooiD8B4
+	naMOQYH5iV1OyZKrDxjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1id0pJ-0006rN-Vw; Thu, 05 Dec 2019 23:46:29 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1id1AU-0004lP-AB; Fri, 06 Dec 2019 00:08:22 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1id0pD-0006q6-F7
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Dec 2019 23:46:24 +0000
-Received: by mail-ed1-x543.google.com with SMTP id cm12so4236554edb.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Dec 2019 15:46:20 -0800 (PST)
+ id 1id1AM-0004kt-Rl; Fri, 06 Dec 2019 00:08:16 +0000
+Received: by mail-ed1-x542.google.com with SMTP id dc19so4268733edb.10;
+ Thu, 05 Dec 2019 16:08:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=X3UHinnr4q1+PBywuillgYBwtIiPsjLR3mv6xEMPmeU=;
- b=i1e9u5DKyLCeVEEaz9SqMKZUA+bxMsI/lKCG+Aa3F1o1gBtBXn3/ng1CDx/pHZgzhB
- zHJTGJFPWHL9IJiwlHE2wtqIwzcsiBHct8CNzCeGj+P+o33kvYXWedbF5snPD4bBOVWI
- CymOZcAz/zore/U59+Uffzkr87BW+MEDHlCVWBmtOVSVIW0UD/odV8uTZ/+TXoBAIgA/
- 8SGF0IuqBZnl8oN0G+Hjm4rwH7+M7RXCuby+Dn3V47dT4tQpC2YHv6g3SET/UxhW1SyC
- GK/ZkBFqrJirX7b9w4PcWxpgy58bDT2qNPgv8HmQxe+oB1n+tNpSpevhB81F44iu6rAp
- jNrQ==
+ bh=mG6Q2op0uXAzpICHZXmmP8kiFDhmWFEmMXJj5AJuK7s=;
+ b=Fs8dWx5uZqrU94sFUdCA6ODW3/4LjbT0duyk0n//yF0m9AsV/iatXNrQ546dw6+UCD
+ Wkc7Lbl1Vm9bFquXiDYr4jKA03Ai/cGP3EWDQLCUhO7Wcdi9pk3G1uj/BVXLWwaTnpWH
+ yOW0oSuYRqd8adG+X7s9Aq+k5x7/xY4WeoHFSiQW2+8QF30y6Nug5UqpumWc/M+HEe07
+ v2QDqqk4m9f5IhV179nQyY/E5Kg4K6zjIQXUOMN+pV4Uj8KbJKsZDQlxk2UhCBIKU4nJ
+ cwMC0qEMfEaf75UOAkd4bp/+yz6M6r8QW8gvMDPf7V4znfWvuB4T3KPw41U939CJ+MBY
+ 18kg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=X3UHinnr4q1+PBywuillgYBwtIiPsjLR3mv6xEMPmeU=;
- b=jumBtV6XVyIgPmQkbr2rcbc75FSvafRbwaxExteerIW+uBDE0zIA9fS0VA8XuZcZTf
- NDz582iplLnmp8ouhaogl1Sd2+AlG95AKPS1mMAUc1AfuViDgLq4cXFieMe8NkQyAfDz
- GzGyur3LM2eCXliqI5Gu3cZzEAmStE5U8Cmd0WcaTNL7j72LCs9OQhupaK8P6ATlSAFL
- Bj4cb6OZsyqnapogeND6zvMnx7ntKp+E8BPwWZ/BwOIPmhhvo4mBMmLWh4egx6gHfzkU
- LJgYTwQlfsh2mfvRDXs7wFaE1MQ3MQUB/vLDZt4hWGU9cWAewT+KSJU/7Jlenyy3u4aD
- 7m5g==
-X-Gm-Message-State: APjAAAWjPGXN00B0z3QbvmR5G/z/fBfrLlGVMWTCrDlz0k1xpoXjebbo
- l+3PtwMxTJxTFL6YzKVHhe4gtICF
-X-Google-Smtp-Source: APXvYqyWu2bj9aHfGtKqxZinpMqW8X9dpU95fIEyTdSV783cMmS5i+972Yj3VMYhWC46Rhq3yH7C3Q==
-X-Received: by 2002:a05:6402:149a:: with SMTP id
- e26mr13519867edv.198.1575589579142; 
- Thu, 05 Dec 2019 15:46:19 -0800 (PST)
+ bh=mG6Q2op0uXAzpICHZXmmP8kiFDhmWFEmMXJj5AJuK7s=;
+ b=lHgDGW8I38Hf3K+bTS0DIp9IW1qp2FnlxUE2WxgURwV8YuWGzcZpOzcu+jpB11kZEv
+ JWWSRS+fKBLDTU3V6cNA8MK/JY7dua9/TLFfu1d2zNDCEau8/Jmt7/Y6Bb7slphTXN6m
+ BbdH1eiwk/wNaTtrcZwwkFdHEO1xdWBYUgT4UBv2EDxP0x6LCCxnuH1G+3WrSlbCUWVQ
+ JUJeUNeUGjHArzrxuyhsGovON0eYyMC8MLDPaDFV74mF6vkWDk67EBhx4pcskUhCu/0P
+ kAGJo2/pQqKGy9DA05JuRH5RxPThepUraRtqoES8P8KWgGpygPt8nnhyJJRbpS8PQh53
+ 3KEw==
+X-Gm-Message-State: APjAAAVws9bvyB0rJAGrkU6btPn/v7Wf7e+TwAfSGXLV9HxXhYWaeEMz
+ jx/mVz0kVcPFMkd9Nv4wgSk=
+X-Google-Smtp-Source: APXvYqzslYNqNXPwdCaqnjsAI7Qn+mWRNDaeGN9HcRuQdYRZMeBfkuyTE37YjQpFPdHNXDEpgwdbHA==
+X-Received: by 2002:a50:f612:: with SMTP id c18mr13766642edn.285.1575590893191; 
+ Thu, 05 Dec 2019 16:08:13 -0800 (PST)
 Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id h8sm372358edw.91.2019.12.05.15.46.15
+ by smtp.googlemail.com with ESMTPSA id dj21sm413959edb.55.2019.12.05.16.08.09
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 05 Dec 2019 15:46:17 -0800 (PST)
-Subject: Re: [PATCH v2 00/13] phy: usb: Updates to Broadcom STB USB PHY driver
-To: Al Cooper <alcooperx@gmail.com>, linux-kernel@vger.kernel.org
-References: <20191115184223.41504-1-alcooperx@gmail.com>
+ Thu, 05 Dec 2019 16:08:12 -0800 (PST)
+Subject: Re: [PATCH] ARM: dts: bcm2711: fix soc's node dma-ranges
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Eric Anholt <eric@anholt.net>, Stefan Wahren <wahrenst@gmx.net>,
+ Florian Fanelli <f.fainelli@gmail.com>
+References: <20191204125633.27696-1-nsaenzjulienne@suse.de>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -116,25 +116,25 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <434eb83c-894a-3f0e-c89c-484c2c15ec24@gmail.com>
-Date: Thu, 5 Dec 2019 15:46:14 -0800
+Message-ID: <711470d3-e683-69d4-8f4e-791a76faab29@gmail.com>
+Date: Thu, 5 Dec 2019 16:08:08 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191115184223.41504-1-alcooperx@gmail.com>
+In-Reply-To: <20191204125633.27696-1-nsaenzjulienne@suse.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_154623_532403_DB3857CF 
-X-CRM114-Status: GOOD (  14.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191205_160814_900747_656FBE1B 
+X-CRM114-Status: GOOD (  23.68  )
+X-Spam-Score: 2.8 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -144,7 +144,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ valid 0.5 PDS_BTC_ID             FP reduced Bitcoin ID
+ 2.5 BITCOIN_SPAM_02        BitCoin spam pattern 02
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -156,49 +157,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com,
- Srinath Mannam <srinath.mannam@broadcom.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, mbrugger@suse.com, phil@raspberrypi.org,
+ linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/15/19 10:42 AM, Al Cooper wrote:
-> This patchset contains various updates to the Broadcom STB USB Driver.
-> The updates include:
-> - Add support for 7216 and 7211 Broadcom SoCs which use the new
->   Synopsis USB Controller.
-> - Add support for USB Wake
-> - Add various bug fixes.
+On 12/4/19 4:56 AM, Nicolas Saenz Julienne wrote:
+> Raspberry Pi's firmware has a feature to select how much memory to
+> reserve for its GPU called 'gpu_mem'. The possible values go from 16MB
+> to 944MB, with a default of 64MB. This memory resides in the topmost
+> part of the lower 1GB memory area and grows bigger expanding towards the
+> begging of memory.
 > 
-> v2 - Changes based on review feedback
-> - Add vendor prefix to DT property "syscon-piarbctl"
-> - Use standard "wakeup" instead of "wake" for DT "interrupt-names"
+> It turns out that with low 'gpu_mem' values (16MB and 32MB) the size of
+> the memory available to the system in the lower 1GB area can outgrow the
+> interconnect's dma-range as its size was selected based on the maximum
+> system memory available given the default gpu_mem configuration. This
+> makes that memory slice unavailable for DMA. And may cause nasty kernel
+> warnings if CMA happens to include it.
 > 
+> Change soc's dma-ranges to really reflect it's HW limitation, which is
+> being able to only DMA to the lower 1GB area.
 > 
-> Al Cooper (13):
->   phy: usb: EHCI DMA may lose a burst of DMA data for 7255xA0 family
->   phy: usb: Get all drivers that use USB clks using correct
->     enable/disable
->   phy: usb: Put USB phys into IDDQ on suspend to save power in S2 mode
->   phy: usb: Add "wake on" functionality
->   phy: usb: Restructure in preparation for adding 7216 USB support
->   dt-bindings: Add Broadcom STB USB PHY binding document
->   phy: usb: Add support for new Synopsis USB controller on the 7216
->   phy: usb: Add support for new Synopsis USB controller on the 7211b0
->   phy: usb: fix driver to defer on clk_get defer
->   phy: usb: PHY's MDIO registers not accessible without device installed
->   phy: usb: bdc: Fix occasional failure with BDC on 7211
->   phy: usb: USB driver is crashing during S3 resume on 7216
->   phy: usb: Add support for wake and USB low power mode for 7211 S2/S5
+> Fixes: 7dbe8c62ceeb ("ARM: dts: Add minimal Raspberry Pi 4 support")
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> ---
+> 
+> NOTE: I'd appreciate if someone from the RPi foundation commented on
+> this as it's something that I'll propose to be backported to their tree.
 
-For what it's worth:
+I don't think our additional DTS changes will be merged until -rc1 is
+cut, so we have some time to figure this one out. Thanks
 
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+> 
+>  arch/arm/boot/dts/bcm2711.dtsi | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
+> index 5b61cd915f2b..d6a0e350b7b4 100644
+> --- a/arch/arm/boot/dts/bcm2711.dtsi
+> +++ b/arch/arm/boot/dts/bcm2711.dtsi
+> @@ -43,7 +43,7 @@ soc {
+>  			 <0x7c000000  0x0 0xfc000000  0x02000000>,
+>  			 <0x40000000  0x0 0xff800000  0x00800000>;
+>  		/* Emulate a contiguous 30-bit address range for DMA */
+> -		dma-ranges = <0xc0000000  0x0 0x00000000  0x3c000000>;
+> +		dma-ranges = <0xc0000000  0x0 0x00000000  0x40000000>;
+>  
+>  		/*
+>  		 * This node is the provider for the enable-method for
+> 
+
+
 -- 
 Florian
 
