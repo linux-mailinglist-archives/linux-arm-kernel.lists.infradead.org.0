@@ -2,82 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E74011574F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 19:46:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2684211575B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 19:46:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MQ7Wc9sdWL+6SQdQH5+a0WBx+ybu5jjvUPGtCf0zFRM=; b=eEAzHaplEqRTRI
-	BVfgU8eBo+np5Qad1osCOY0Wfkn5qDGEb+F0XEbkoxi2Gzm1/5UfgCpXiUx/2GQSx+vIy7d23uD7A
-	VjyF9g+1hxH6Ps+sMPKNWMgJioL/zWJ5gyi03CZjyOfErzxIGkBm46MWu+lU0TodV9lSQXNAUe/iD
-	eRh0Z24hqEpWvftBW6Ly1giWMtrbPLj/BQpmXqMdZo9tt+oU/poURhULVFsQCmlmwRO+jetSIqqnX
-	CvcYZRuVgvR3krKRu17OYNf5qfrGVVpsFB6eizdZaGnJoKcy/U1AGotCNxBWMDzpcd1qHxjsA2vFS
-	rfka20UNJuVHHdNO1ADg==;
+	List-Owner; bh=Bbajlg9tGuijfaj9iedCGsQXrVUgrxhtLXi7srKUIjE=; b=sQCYjd6zmPZ1AV
+	0hoPmaW1ewi//3p0Q8tuazXk70N6nzB9OnR0CVHzBIZOb4sMtbW33xpmnabLp3RF+6dAte+BxWzyf
+	NB7nbi45nAB4XqsqptYExfPanGFL6eiPFbyWi4izuxeMirjHXnt/6UhShJoTRemA2DYtVLJK+hY00
+	idcJq9Z5JlmEFGzaGyiknJzJjw7sdAnEEk/Vx3iJZErtQ+FouBUBAw/NbuXSiSBL0QxxcpBoji+YU
+	bGvTgKGBBtOfX/2A5c3Haip/tznCN3CrQa+/+tZiZ+UiqpPNWUFExDj0WMkd070WBfLCeNo6rzX7C
+	vKX/jtQMixqGdBL0LpoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idIca-0003HV-Sr; Fri, 06 Dec 2019 18:46:32 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1idIcx-0003Wt-Fq; Fri, 06 Dec 2019 18:46:55 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idIcP-0003H0-98; Fri, 06 Dec 2019 18:46:22 +0000
-Received: by mail-pl1-x643.google.com with SMTP id w7so3061050plz.12;
- Fri, 06 Dec 2019 10:46:21 -0800 (PST)
+ id 1idIcT-0003IC-4Y; Fri, 06 Dec 2019 18:46:26 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id s35so3093841pjb.7;
+ Fri, 06 Dec 2019 10:46:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=B8pAzxJiWSzLWTkMhjf7LFuYSquj8IkeZocPiiwyPjA=;
- b=KQsBqJKww9wIJwvFg/b3yL0EaiIZoK35YdLFO7U244cS+Zqo2uiiPnJNrKQZuw1dCG
- TWo2Qtssjro+Z8Xr93ozkvK7Of5o+GkBtYoOfVZFLXvPGPLWeL+oo8SG6ZN25Cihu/pV
- 4EPiiMS+kxXDvLOX6V1Iheumcue78XEQ1iQfrn6YOC1VpzK3WxAUxRYDiKk6nZuyd28A
- yg/q7eSgrgrVRKTdGf+lB8E1nED3Lki39mY3BwJZdgiy7Tc/Fu/9LgbtjoUFC7CIGp90
- 2ozw0jGqp7djMeTCzf7pFjhMgJCBRucJGhHv/Iqh+YsXuYrYY4BdKTX0/IBUd3iX6Mat
- tBpQ==
+ bh=4ALlNtT9n//klMFnTtfFii4pRLMXyJbBsPcMcF/Rqyk=;
+ b=TFnRVyhtoot/cjUc7zbP9FvPleB1QnRt3VHm+kqU/jL/ZbvvLAn9EI3E2YIwpPSCLk
+ 5PDSszs2xes7VZVCLdoO3pqAHdhQQYcAZGZvOFw+Z6GpQ7u7m88VSk6SmhR35XRSzJYU
+ M3aZikNJQXwd3v2bHXNTzOdYqQztoqEtQC2MPLyXl6vEepcbp0H4Gu3RKIbl55iMu1H6
+ qx5uo1c/l/6cunCIiBsdsCtqczGhl51GDRotV1Ch+k0PHQfy8fF6SeAmxCBWKvovIORw
+ XvL3GKPqE5m0E/h+m4fmj7Oz6oy8MGNktXXjlzipi43R5RmCX16MPjYQIHnsRy6bz7Mc
+ w1DQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=B8pAzxJiWSzLWTkMhjf7LFuYSquj8IkeZocPiiwyPjA=;
- b=jAoJCNqo0YR8QGwCl/x1yU7scMkETdHCNDRtL+WA9+0vbfHuICvkxikvmVVqXsGNTS
- jE/Q14h+pyap5uZ+Fq9jjHJVI6x1LDb8YCZIquPQGXUjBFAQCX2K0bj6ZKlFctAgKV1s
- UMkHpLm/jHUu/i9v/Tx3MB/jZ3GgrTeCc+Xsxv4reombmgjF8iBMBXYXMnCoQh3ltjKw
- JnyGwsTGrnP6ZRt3uCA6SRGa/bbr36O520tsxysIm5k9Pmd6K69N+fALdUBV4HPm5kWr
- 0Zi0ViAX+E0em43U1U6m069c5VNUitKl6lAbdCJDlRgcZpqJNiiAKP8yH3QbgzFbB9ad
- Mvww==
-X-Gm-Message-State: APjAAAW/hLJrTbTbtMWGvoZ9nIVBpuIXcMABS0ED263Ug+4UbuLkzKB1
- /niDiBGIJR2tpISiEzBb7rI=
-X-Google-Smtp-Source: APXvYqzZcLwMJtzwcSHxWJGWN6EAUVCNFcYOu++yCa37tyO+1b3rjKFjqxj1edX+4F/17amIegyK9A==
-X-Received: by 2002:a17:902:d708:: with SMTP id
- w8mr16244989ply.280.1575657980698; 
- Fri, 06 Dec 2019 10:46:20 -0800 (PST)
+ bh=4ALlNtT9n//klMFnTtfFii4pRLMXyJbBsPcMcF/Rqyk=;
+ b=mwOphnmd4tIiNxsxWGCD0QZJW9yaX5r5hRJCqehnf0q5L2GG6+M5I1P74R2pWFwWK3
+ AdRB3VjQZkDP3AOyBFEXjMu8kzqt15xLGqWJYtbRQePUeAc52yxd5WJFxXSHUnoTsJrw
+ muio+2OEdPiuxIKXQH+j9S67o5GGj17k9hNINjUEbhQ/fMCfMmcG2tIw1qZIwfmUTyQ+
+ Whuhf2xUoi0HLOhJpsUndebnjTf64CADD1Q0VNlnwa3EPDFmzPjkYnuCPRdXx64vhbAM
+ uruhHATckUtoWsdHxopThXtWDnNyaBekWZiWjekZVkSyLhzZkv2z+SR9z7efSmOP5BRk
+ U8vQ==
+X-Gm-Message-State: APjAAAXroxwjXdxWcXYhNidVYRYLXNgz63DVbqDhm15Wl7DObAmPxzBB
+ hR8NTcrA/QD5kTeZ5luPwUg=
+X-Google-Smtp-Source: APXvYqwJ3vW/5vn+8PO8lIFvDhxoxtwWhq8ZXvm66ph4wqJuhTiFgpU20jDmqQHprCawpSALC+Vcqg==
+X-Received: by 2002:a17:902:fe91:: with SMTP id
+ x17mr15451025plm.50.1575657984312; 
+ Fri, 06 Dec 2019 10:46:24 -0800 (PST)
 Received: from localhost.localdomain ([103.51.73.190])
- by smtp.gmail.com with ESMTPSA id p4sm16777039pfb.157.2019.12.06.10.46.12
+ by smtp.gmail.com with ESMTPSA id p4sm16777039pfb.157.2019.12.06.10.46.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 Dec 2019 10:46:20 -0800 (PST)
+ Fri, 06 Dec 2019 10:46:23 -0800 (PST)
 From: Anand Moon <linux.amoon@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
  Robin Murphy <robin.murphy@arm.com>, Daniel Schultz <d.schultz@phytec.de>
-Subject: [RFCv1 1/8] mfd: rk808: Refactor shutdown functions
-Date: Fri,  6 Dec 2019 18:45:29 +0000
-Message-Id: <20191206184536.2507-2-linux.amoon@gmail.com>
+Subject: [RFCv1 2/8] mfd: rk808: use syscore for RK805 PMIC shutdown
+Date: Fri,  6 Dec 2019 18:45:30 +0000
+Message-Id: <20191206184536.2507-3-linux.amoon@gmail.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191206184536.2507-1-linux.amoon@gmail.com>
 References: <20191206184536.2507-1-linux.amoon@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_104621_322647_B016ADC1 
-X-CRM114-Status: GOOD (  16.44  )
+X-CRM114-CacheID: sfid-20191206_104625_221165_237B4337 
+X-CRM114-Status: GOOD (  12.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -107,180 +104,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Daniel Schultz <d.schultz@phytec.de>
+Use common syscore_shutdown for RK805 PMIC to do
+clean I2C shutdown, drop the unused pm_pwroff_prep_fn
+and pm_pwroff_fn function pointers.
 
-Since all shutdown functions have almost the same code, all logic
-from the shutdown functions can be refactored to a new function
-"rk808_update_bits", which can update a register by a given address
-and bitmask and value.
-
-link: https://lore.kernel.org/patchwork/patch/937404/
 Cc: Heiko Stuebner <heiko@sntech.de>
-Signed-off-by: Daniel Schultz <d.schultz@phytec.de>
 Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 ---
-[rebased on latest kernel]
-Modified the API to set the value.
-This changes were submited with below patch.
-[0] https://lore.kernel.org/patchwork/patch/937404/
----
- drivers/mfd/rk808.c | 87 ++++++++++++++-------------------------------
- 1 file changed, 26 insertions(+), 61 deletions(-)
+ drivers/mfd/rk808.c | 33 +++++++++++++++++----------------
+ 1 file changed, 17 insertions(+), 16 deletions(-)
 
 diff --git a/drivers/mfd/rk808.c b/drivers/mfd/rk808.c
-index a69a6742ecdc..e637f5bcc8bb 100644
+index e637f5bcc8bb..713d989064ba 100644
 --- a/drivers/mfd/rk808.c
 +++ b/drivers/mfd/rk808.c
-@@ -449,81 +449,52 @@ static const struct regmap_irq_chip rk818_irq_chip = {
- 
- static struct i2c_client *rk808_i2c_client;
+@@ -467,16 +467,6 @@ static void rk808_update_bits(unsigned int reg, unsigned int mask,
+ 			"can't write to register 0x%x: %x!\n", reg, ret);
+ }
  
 -static void rk805_device_shutdown(void)
-+static void rk808_update_bits(unsigned int reg, unsigned int mask,
-+		unsigned int value)
- {
--	int ret;
- 	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
-+	int ret;
- 
--	if (!rk808)
-+	if (!rk808) {
-+		dev_warn(&rk808_i2c_client->dev,
-+			"have no rk805/rk808/rk817/rk818, so do nothing here\n");
- 		return;
-+	}
- 
--	ret = regmap_update_bits(rk808->regmap,
--				 RK805_DEV_CTRL_REG,
--				 DEV_OFF, DEV_OFF);
-+	ret = regmap_update_bits(rk808->regmap,	reg, mask, value);
- 	if (ret)
--		dev_err(&rk808_i2c_client->dev, "Failed to shutdown device!\n");
-+		dev_err(&rk808_i2c_client->dev,
-+			"can't write to register 0x%x: %x!\n", reg, ret);
- }
- 
--static void rk805_device_shutdown_prepare(void)
-+static void rk805_device_shutdown(void)
- {
--	int ret;
--	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
+-{
+-	rk808_update_bits(RK805_DEV_CTRL_REG, DEV_OFF, DEV_OFF);
+-}
 -
--	if (!rk808)
--		return;
-+	rk808_update_bits(RK805_DEV_CTRL_REG, DEV_OFF, DEV_OFF);
-+}
- 
--	ret = regmap_update_bits(rk808->regmap,
--				 RK805_GPIO_IO_POL_REG,
--				 SLP_SD_MSK, SHUTDOWN_FUN);
--	if (ret)
--		dev_err(&rk808_i2c_client->dev, "Failed to shutdown device!\n");
-+static void rk805_device_shutdown_prepare(void)
-+{
-+	rk808_update_bits(RK805_GPIO_IO_POL_REG, SLP_SD_MSK, SHUTDOWN_FUN);
- }
- 
+-static void rk805_device_shutdown_prepare(void)
+-{
+-	rk808_update_bits(RK805_GPIO_IO_POL_REG, SLP_SD_MSK, SHUTDOWN_FUN);
+-}
+-
  static void rk808_device_shutdown(void)
  {
--	int ret;
--	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
--
--	if (!rk808)
--		return;
--
--	ret = regmap_update_bits(rk808->regmap,
--				 RK808_DEVCTRL_REG,
--				 DEV_OFF_RST, DEV_OFF_RST);
--	if (ret)
--		dev_err(&rk808_i2c_client->dev, "Failed to shutdown device!\n");
-+	rk808_update_bits(RK808_DEVCTRL_REG, DEV_OFF_RST, DEV_OFF_RST);
- }
- 
- static void rk818_device_shutdown(void)
- {
--	int ret;
--	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
--
--	if (!rk808)
--		return;
--
--	ret = regmap_update_bits(rk808->regmap,
--				 RK818_DEVCTRL_REG,
--				 DEV_OFF, DEV_OFF);
--	if (ret)
--		dev_err(&rk808_i2c_client->dev, "Failed to shutdown device!\n");
-+	rk808_update_bits(RK818_DEVCTRL_REG, DEV_OFF, DEV_OFF);
- }
- 
- static void rk8xx_syscore_shutdown(void)
+ 	rk808_update_bits(RK808_DEVCTRL_REG, DEV_OFF_RST, DEV_OFF_RST);
+@@ -491,10 +481,23 @@ static void rk8xx_syscore_shutdown(void)
  {
  	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
--	int ret;
  
- 	if (system_state == SYSTEM_POWER_OFF &&
- 	    (rk808->variant == RK809_ID || rk808->variant == RK817_ID)) {
--		ret = regmap_update_bits(rk808->regmap,
--					 RK817_SYS_CFG(3),
--					 RK817_SLPPIN_FUNC_MSK,
--					 SLPPIN_DN_FUN);
--		if (ret) {
--			dev_warn(&rk808_i2c_client->dev,
--				 "Cannot switch to power down function\n");
--		}
-+		rk808_update_bits(RK817_SYS_CFG(3), RK817_SLPPIN_FUNC_MSK,
-+				SLPPIN_DN_FUN);
+-	if (system_state == SYSTEM_POWER_OFF &&
+-	    (rk808->variant == RK809_ID || rk808->variant == RK817_ID)) {
+-		rk808_update_bits(RK817_SYS_CFG(3), RK817_SLPPIN_FUNC_MSK,
+-				SLPPIN_DN_FUN);
++	if (system_state == SYSTEM_POWER_OFF) {
++		dev_info(&rk808_i2c_client->dev, "System Shutdown Event\n");
++
++		switch (rk808->variant) {
++		case RK805_ID:
++			rk808_update_bits(RK805_GPIO_IO_POL_REG,
++					SLP_SD_MSK, SHUTDOWN_FUN);
++			rk808_update_bits(RK805_DEV_CTRL_REG, DEV_OFF, DEV_OFF);
++			break;
++		case RK809_ID:
++		case RK817_ID:
++			rk808_update_bits(RK817_SYS_CFG(3),
++					RK817_SLPPIN_FUNC_MSK, SLPPIN_DN_FUN);
++			break;
++		default:
++			break;
++		}
  	}
  }
  
-@@ -720,41 +691,35 @@ static int rk808_remove(struct i2c_client *client)
- static int __maybe_unused rk8xx_suspend(struct device *dev)
- {
- 	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
--	int ret = 0;
- 
- 	switch (rk808->variant) {
- 	case RK809_ID:
- 	case RK817_ID:
--		ret = regmap_update_bits(rk808->regmap,
--					 RK817_SYS_CFG(3),
--					 RK817_SLPPIN_FUNC_MSK,
--					 SLPPIN_SLP_FUN);
-+		rk808_update_bits(RK817_SYS_CFG(3), RK817_SLPPIN_FUNC_MSK,
-+				SLPPIN_SLP_FUN);
+@@ -565,8 +568,6 @@ static int rk808_probe(struct i2c_client *client,
+ 		nr_pre_init_regs = ARRAY_SIZE(rk805_pre_init_reg);
+ 		cells = rk805s;
+ 		nr_cells = ARRAY_SIZE(rk805s);
+-		rk808->pm_pwroff_fn = rk805_device_shutdown;
+-		rk808->pm_pwroff_prep_fn = rk805_device_shutdown_prepare;
  		break;
- 	default:
- 		break;
- 	}
- 
--	return ret;
-+	return 0;
- }
- 
- static int __maybe_unused rk8xx_resume(struct device *dev)
- {
- 	struct rk808 *rk808 = i2c_get_clientdata(rk808_i2c_client);
--	int ret = 0;
- 
- 	switch (rk808->variant) {
- 	case RK809_ID:
- 	case RK817_ID:
--		ret = regmap_update_bits(rk808->regmap,
--					 RK817_SYS_CFG(3),
--					 RK817_SLPPIN_FUNC_MSK,
--					 SLPPIN_NULL_FUN);
-+		rk808_update_bits(RK817_SYS_CFG(3), RK817_SLPPIN_FUNC_MSK,
-+				SLPPIN_NULL_FUN);
- 		break;
- 	default:
- 		break;
- 	}
- 
--	return ret;
-+	return 0;
- }
- static SIMPLE_DEV_PM_OPS(rk8xx_pm_ops, rk8xx_suspend, rk8xx_resume);
- 
+ 	case RK808_ID:
+ 		rk808->regmap_cfg = &rk808_regmap_config;
 -- 
 2.24.0
 
