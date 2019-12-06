@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDB0111593A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 23:16:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CF1111593D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 23:16:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QWlq8ch+tXw65p8mtNCHwvdUQthqPTaHYWHGIrWgy6c=; b=cM9z4XA20Pyqti
-	PnUih6ACcYeXRDFAGXzdQJLioBUqzXmhsL/611p4oAk2Sxg/UnocZ7B+T3EvZ3JthpF1L7AY5vp4p
-	cjHuF/wOKRXqjbYm0GT1zX5lgt2gM7F2Z+oQks7BSEPOYoc6sXNDo1w2J82M2+2OHVHJanRApRTN+
-	Ko7eA59PUkSkg/2q5mCqAZkH8r6hQL4gUrMo0u5ZDDFV8FCdT6uPhWIScwvyDeZmUU/PPUqcPiCXM
-	90G3lOCF8PqJEQLRBkjdVBYkxKNnTXC7IMmwp/y0G4b7LZfdeFQdUa1hnPvtbtlIYu6w9dY+2WQT3
-	3V+2p4QuFcMejk8kq7Cw==;
+	List-Owner; bh=Xm8cYk0AEQziUzfEfo/gQ4z1mTVf8SAcsGxtDNIeVSM=; b=VaKwgp4smAstQh
+	Sj5yw9G79/hul8+ahBvryyrThKjIAjXdXRPWwMZaVnWPQNbfIDnVU99yje3PBnKKvK0gcPR4mC4f3
+	r/wcJuDAfr7uV820LoMZBXs/KQAOdBWq2y/B0aUhgvKH7mf+Iv2mPbx63WndZE8qJUoYyP7b5NGZC
+	rvlcja1LyyDljXnlfop6gCnt5KqxZsBhtK53ro+zEH+qGSIQc82RteckpSmtb8daWhNoGrXcwHx8O
+	MCSPidHCMGQTr1FC0Q1Fggl2kcGGh9OeWvONWPNx0G/OVDzWiIu/RUdF6S4q/jLdrogUyyrCB37UN
+	4HdY6NoLWn7rsLriG8Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idLtT-0000zL-DJ; Fri, 06 Dec 2019 22:16:11 +0000
-Received: from mail-pf1-x449.google.com ([2607:f8b0:4864:20::449])
+	id 1idLtm-0001I5-VX; Fri, 06 Dec 2019 22:16:30 +0000
+Received: from mail-pl1-x64a.google.com ([2607:f8b0:4864:20::64a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idLrb-0006eW-LG
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 22:14:17 +0000
-Received: by mail-pf1-x449.google.com with SMTP id h22so4782149pfo.18
+ id 1idLre-0006gL-LO
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 22:14:20 +0000
+Received: by mail-pl1-x64a.google.com with SMTP id p11so3259436plo.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Dec 2019 14:14:14 -0800 (PST)
+ Fri, 06 Dec 2019 14:14:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=dSkqIg9MhTEqSRuUPD+wLwf3dmJwcSH5rhdG+lQGY0Y=;
- b=SXuPCZw5St6pvwTst8kmf5KElVFLKMFMp+CAkmkUaQLus5cyU/8kqr6V5JxAIwmDV8
- RWdDAn+WZ18vV4T9eqQoonAjHW3Rzl/rq+nVdoOiKpP2KO897WS7qgb0uHjTrgJkEo1F
- 0w2fuPU7iE//Mhmc1AStldjXFL0gQujdjqFyhIQqo0PX3BYn+fe6w0aILNtXks9GiWbX
- y15Zqo4dF7akKdP8o3QHjsZgpRBi+Vh9QT2pwFLxPBRKjS+x9TmrUCopcszBpJQvv4wL
- EQLbAdHZz6TZ6uqyOto/Ft9UcaQoXc6w3u8Hni2mOOXu4O7zVJWi0IlEALO+ifSUBL0a
- F4QA==
+ :cc; bh=l4zxu+Ve1HL3tnwJkQPbvyP6wBLrUpssPL9/jgnN43M=;
+ b=Ndn1mcggyHBtKAX2XvpEyO1cvzn5t5Rt5EL74f5oQNI8xON9HZdOIOpGfCHheh4ROb
+ ZMN247KbIgaMPUDc6e3RJ7DYNG8PST7u+oWWP+k1N+jSEe2J/d2Hj+oq/JPjyElDDN0s
+ 1bajoDV+ePEiqhlZBkx0JT+WTHRbNVJ9xUb/RgEkuqCSSWGQ87CELue3gJUsVkVLLj1/
+ jMc9JOE96jedSwbK6Jh+owxavogPTbBQc3Lm1+HVnkCfDUu1/SEqZVkaAo5gGN3APpx7
+ /ziJCrqylxkp6ltt8RGxlVAjAuQ46tyN3U7+ZPVlmKLcHn2gKg0ggIkQts840wwlTABV
+ 1Rpw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=dSkqIg9MhTEqSRuUPD+wLwf3dmJwcSH5rhdG+lQGY0Y=;
- b=BhETv0eChnbxZKkkG1sm9bztHT0qWC0CJD8g9ql5aiD5N24k5l70d9d7dryV1gF9Bg
- Xon3aSaOXhbi3iQxXTlPzbzXOlpObqdm0KCUWD2OAjis9GiLXijfxSqSY2YnQavMalBZ
- xwSCG9y2gzLkiV51IUIA9dCP3UQSP7OGJegpSSapatuTgCsoF5rTBxsPteRhSN8ol3F7
- q4hBpIOOgTxYXn48vNg1le8yTFTxFpfX7K5LXO5UVD63hrcM2mtCZeWLJQ6yX/lspgQY
- /nWkpL7iXO2y4VnymLsy7xET1tUxIrgBnZkHP5WFpHVmL3IRQgHXHHV2Pe6xHRsGQ8om
- yWxA==
-X-Gm-Message-State: APjAAAWMQqRPqFHnmMGKyvMyp5O5BUPRquatQJuyFzkK3zh68oqlZ9HA
- ubFDHL789QU9EX9eoPZaZwPao5uQ/20SuHNCeUk=
-X-Google-Smtp-Source: APXvYqwr9gV3C2U9Vw8KNYzBqn9JcBiVcajDSJ2lm7uPyamXFOot36lh81Wh0+CfZKTc60xlWZW4gj6RW7XavjkgTmE=
-X-Received: by 2002:a63:4b52:: with SMTP id k18mr5960727pgl.371.1575670454000; 
- Fri, 06 Dec 2019 14:14:14 -0800 (PST)
-Date: Fri,  6 Dec 2019 14:13:43 -0800
+ bh=l4zxu+Ve1HL3tnwJkQPbvyP6wBLrUpssPL9/jgnN43M=;
+ b=XE6kiGK5lTxkDeUHlDvRhBnI2lLspMG7I9KfUH5BRjNwW0v8zrQGgUbv4InGw5ey4+
+ KjZMTaKog1PGNhUzlElU8yxGDPytODFWIeoTXg5PwBrM9dgiPqTBHRRMEvOg7YGwNiq8
+ CaSgTlwHdE7lCMWSt6GeIJXMW0Z1erQ2sfc+96CxSHpbh9u3d+hhY4TsaT8K7iQRnePY
+ DSvZEs4x3Bu89qmlFZDnw3BbjhbB9d7LS5eWT6Aiw2nroKLWPzYnZzkMa3TWSpNDicG6
+ AQSALjBsWynpOTgG6gBYvic0Zsa+yQb3qUqwI4iElZwfjRmJ1ZfiNpOn+hW8br+g/X0E
+ tKZw==
+X-Gm-Message-State: APjAAAWvZ4B/fAsuvRpl9LIPytNm5KPnzVxsMJj26F/+wL3L0t7uGEV0
+ sN/uV98+o51xabs77FTYYtoDrmnHgZ9wg8OFbUU=
+X-Google-Smtp-Source: APXvYqxNGRCIoJl/pi6uCzgUEQ/oTKWPk8JXk9O2ag4WW88WJwvi2rvTurqocnD02MdVkQxGa8htdlPNVJwyO2G3YuU=
+X-Received: by 2002:a65:4345:: with SMTP id k5mr6095564pgq.252.1575670456528; 
+ Fri, 06 Dec 2019 14:14:16 -0800 (PST)
+Date: Fri,  6 Dec 2019 14:13:44 -0800
 In-Reply-To: <20191206221351.38241-1-samitolvanen@google.com>
-Message-Id: <20191206221351.38241-8-samitolvanen@google.com>
+Message-Id: <20191206221351.38241-9-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20191206221351.38241-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.24.0.393.g34dc348eaf-goog
-Subject: [PATCH v6 07/15] scs: add support for stack usage debugging
+Subject: [PATCH v6 08/15] arm64: disable function graph tracing with SCS
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
  Masami Hiramatsu <mhiramat@kernel.org>, 
  Ard Biesheuvel <ard.biesheuvel@linaro.org>, Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_141415_709446_BF409397 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191206_141418_721018_5827DD04 
+X-CRM114-Status: GOOD (  11.86  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:449 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:64a listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,72 +111,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Implements CONFIG_DEBUG_STACK_USAGE for shadow stacks. When enabled,
-also prints out the highest shadow stack usage per process.
+The graph tracer hooks returns by modifying frame records on the
+(regular) stack, but with SCS the return address is taken from the
+shadow stack, and the value in the frame record has no effect. As we
+don't currently have a mechanism to determine the corresponding slot
+on the shadow stack (and to pass this through the ftrace
+infrastructure), for now let's disable the graph tracer when SCS is
+enabled.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 ---
- kernel/scs.c | 39 +++++++++++++++++++++++++++++++++++++++
- 1 file changed, 39 insertions(+)
+ arch/arm64/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/kernel/scs.c b/kernel/scs.c
-index 5245e992c692..ad74d13f2c0f 100644
---- a/kernel/scs.c
-+++ b/kernel/scs.c
-@@ -184,6 +184,44 @@ int scs_prepare(struct task_struct *tsk, int node)
- 	return 0;
- }
- 
-+#ifdef CONFIG_DEBUG_STACK_USAGE
-+static inline unsigned long scs_used(struct task_struct *tsk)
-+{
-+	unsigned long *p = __scs_base(tsk);
-+	unsigned long *end = scs_magic(p);
-+	unsigned long s = (unsigned long)p;
-+
-+	while (p < end && READ_ONCE_NOCHECK(*p))
-+		p++;
-+
-+	return (unsigned long)p - s;
-+}
-+
-+static void scs_check_usage(struct task_struct *tsk)
-+{
-+	static DEFINE_SPINLOCK(lock);
-+	static unsigned long highest;
-+	unsigned long used = scs_used(tsk);
-+
-+	if (used <= highest)
-+		return;
-+
-+	spin_lock(&lock);
-+
-+	if (used > highest) {
-+		pr_info("%s (%d): highest shadow stack usage: %lu bytes\n",
-+			tsk->comm, task_pid_nr(tsk), used);
-+		highest = used;
-+	}
-+
-+	spin_unlock(&lock);
-+}
-+#else
-+static inline void scs_check_usage(struct task_struct *tsk)
-+{
-+}
-+#endif
-+
- bool scs_corrupted(struct task_struct *tsk)
- {
- 	unsigned long *magic = scs_magic(__scs_base(tsk));
-@@ -200,6 +238,7 @@ void scs_release(struct task_struct *tsk)
- 		return;
- 
- 	WARN_ON(scs_corrupted(tsk));
-+	scs_check_usage(tsk);
- 
- 	scs_account(tsk, -1);
- 	task_set_scs(tsk, NULL);
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index b1b4476ddb83..49e5f94ff4af 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -149,7 +149,7 @@ config ARM64
+ 	select HAVE_FTRACE_MCOUNT_RECORD
+ 	select HAVE_FUNCTION_TRACER
+ 	select HAVE_FUNCTION_ERROR_INJECTION
+-	select HAVE_FUNCTION_GRAPH_TRACER
++	select HAVE_FUNCTION_GRAPH_TRACER if !SHADOW_CALL_STACK
+ 	select HAVE_GCC_PLUGINS
+ 	select HAVE_HW_BREAKPOINT if PERF_EVENTS
+ 	select HAVE_IRQ_TIME_ACCOUNTING
 -- 
 2.24.0.393.g34dc348eaf-goog
 
