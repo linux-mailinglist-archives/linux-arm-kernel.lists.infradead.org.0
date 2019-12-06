@@ -2,65 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9F25114A20
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 01:08:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BDE0114A23
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 01:10:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9m7geDc8A+XXpqVe9vdXlPg8A4hBIwwciF4ZpyV9UBY=; b=LruKOMWxfXejI9
-	qk5YRSpu+WLjLbE1scLf9tjOX9NllergTYutjpSRhS5i9/9EuDjjYkV7avPEQbz3hl5f5CeCvkq0Q
-	VAxu1fMmKnRw6bo+GwLEapTHwelgaYvxq+kbhnC32/+Ojai7yalrdjfD7p/0VIhIrStNWZPFP9E9K
-	ks4XE152xkoQ0A4I/jMJBaXB2RP3njqjQieMc9gqmaUBVsvYHekdM97bF1oju78+z3uQ7x1sF86ug
-	34Pnm0D6jAG+FvkbB1v7ci/0JijFu0KF9T1cCJSAR15d7RiEF/2G0HcGI5gMISRP3ArM99ooiD8B4
-	naMOQYH5iV1OyZKrDxjA==;
+	List-Owner; bh=lpcRGdYdhxhGAlh990bbI5n415LYBOZv12+la3L8efw=; b=ZLDKSvW6+DHzcW
+	7SiRaLMtgcITSUF3mLRo0rb2OLAuDakjWFXENBmqqT/jyyE0Vvrplg7k15/CLmlFY7+A+YHGK0n+S
+	vbKZRq0JeBHA4RtMURVaw2Wkm7aYGaB//4Wkv/9JD8qLqfWN1ZjU2p/dBjwGN7I8suRC0i2AdvlBE
+	9GnPr7SBQGSzjg9oZ0FMG5hkx0Kz7CVq+UiVHmLOdUfjw6ji0hyOrE4wbHSwvH1cRVZWd5IAnlINN
+	6KE1Vm94UggoynSMUQPFjb/En3QmsGy/Um+5ySvR3xbyqDeIl+NaxcDzHENsdwGQGkC6ehfAsSvpS
+	/CjSz8UEkq3By4GOH2vQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1id1AU-0004lP-AB; Fri, 06 Dec 2019 00:08:22 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1id1CA-00058p-Dn; Fri, 06 Dec 2019 00:10:06 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1id1AM-0004kt-Rl; Fri, 06 Dec 2019 00:08:16 +0000
-Received: by mail-ed1-x542.google.com with SMTP id dc19so4268733edb.10;
- Thu, 05 Dec 2019 16:08:14 -0800 (PST)
+ id 1id1By-00058U-1o
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 00:09:55 +0000
+Received: by mail-ed1-x543.google.com with SMTP id j17so4329183edp.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Dec 2019 16:09:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=mG6Q2op0uXAzpICHZXmmP8kiFDhmWFEmMXJj5AJuK7s=;
- b=Fs8dWx5uZqrU94sFUdCA6ODW3/4LjbT0duyk0n//yF0m9AsV/iatXNrQ546dw6+UCD
- Wkc7Lbl1Vm9bFquXiDYr4jKA03Ai/cGP3EWDQLCUhO7Wcdi9pk3G1uj/BVXLWwaTnpWH
- yOW0oSuYRqd8adG+X7s9Aq+k5x7/xY4WeoHFSiQW2+8QF30y6Nug5UqpumWc/M+HEe07
- v2QDqqk4m9f5IhV179nQyY/E5Kg4K6zjIQXUOMN+pV4Uj8KbJKsZDQlxk2UhCBIKU4nJ
- cwMC0qEMfEaf75UOAkd4bp/+yz6M6r8QW8gvMDPf7V4znfWvuB4T3KPw41U939CJ+MBY
- 18kg==
+ bh=Pu7aZrCRpmbK9eIe5VfBppycurruZf1/Fg8oPrOmz5w=;
+ b=dUfAUSF3rN9GOZKG6L738lHqvfLhWP7D3l3q8HabmB/Q19pH1Zm2WmRf2gsukMZ0b4
+ kmdQoNOac/RjKeM+NUqzxBxixVEbzr9z1WUQheWM/NVseOfrvwfBgfxhm19KX6JSnWTn
+ 8BKH1Jb8fTcUyUmNCut4nStLy/+Jnv1UIbtWfPqPtkkXyWqB70z0FPFjPlvpT3rdxkp/
+ VBP/iw7ks6/QwXJiyZ1BEBsbpDVYA/LBMAcQLToSxB0+hrJA05/P4J64gfQY2ub3QR/e
+ tfl/83XdOZEZFwOmP8efU+yBB3YJi1LwpUAMy/N5oY4JXmA7/XVzb8U78y1GCiybGhka
+ jWEg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=mG6Q2op0uXAzpICHZXmmP8kiFDhmWFEmMXJj5AJuK7s=;
- b=lHgDGW8I38Hf3K+bTS0DIp9IW1qp2FnlxUE2WxgURwV8YuWGzcZpOzcu+jpB11kZEv
- JWWSRS+fKBLDTU3V6cNA8MK/JY7dua9/TLFfu1d2zNDCEau8/Jmt7/Y6Bb7slphTXN6m
- BbdH1eiwk/wNaTtrcZwwkFdHEO1xdWBYUgT4UBv2EDxP0x6LCCxnuH1G+3WrSlbCUWVQ
- JUJeUNeUGjHArzrxuyhsGovON0eYyMC8MLDPaDFV74mF6vkWDk67EBhx4pcskUhCu/0P
- kAGJo2/pQqKGy9DA05JuRH5RxPThepUraRtqoES8P8KWgGpygPt8nnhyJJRbpS8PQh53
- 3KEw==
-X-Gm-Message-State: APjAAAVws9bvyB0rJAGrkU6btPn/v7Wf7e+TwAfSGXLV9HxXhYWaeEMz
- jx/mVz0kVcPFMkd9Nv4wgSk=
-X-Google-Smtp-Source: APXvYqzslYNqNXPwdCaqnjsAI7Qn+mWRNDaeGN9HcRuQdYRZMeBfkuyTE37YjQpFPdHNXDEpgwdbHA==
-X-Received: by 2002:a50:f612:: with SMTP id c18mr13766642edn.285.1575590893191; 
- Thu, 05 Dec 2019 16:08:13 -0800 (PST)
+ bh=Pu7aZrCRpmbK9eIe5VfBppycurruZf1/Fg8oPrOmz5w=;
+ b=BGkxvvtxPnqT78YEq3LkB2pDJw6XP8s64iE//wZluSliiLiOi1+On3EJbSOCmRLxD/
+ eFsB3yh5tqORJmViGTPhuSTYFKADmV3WtP73i2lknmch0lpSU8yZnPzEMa4fxAioS6qx
+ U3RjmzLvsSOWBml2SY521ywneznoS0wWidos3+yrNXr858lh6cF/mziwlZmhvjZ6DAfO
+ iZTvDkRzmDCiYAKbjd0kAFxT45Qu15IBneoxMwFrnVaJpm4F0cUjhEmg6mjTFrA1FSiu
+ TU5JKxzLftOOK9ITRpJMqTzwBNFQZ7fnAHDQHI6euqKU75ZTezG3JlHIU3sHG12t0k5v
+ wYpA==
+X-Gm-Message-State: APjAAAWiNqBWRVO0TO6DXWZJ02dZlbnKZFlKy+8RkNFWovEGIEou1QEb
+ iLN7Vvq38RtlCnBnGxBZziY=
+X-Google-Smtp-Source: APXvYqyrKCmObwIrxCughrq6gD80iLhJ2CFPGdEFQyBC+9iOmemQL2sVfeAqxlw3KYi/fFhqNlDzDQ==
+X-Received: by 2002:aa7:c701:: with SMTP id i1mr13463950edq.247.1575590992681; 
+ Thu, 05 Dec 2019 16:09:52 -0800 (PST)
 Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id dj21sm413959edb.55.2019.12.05.16.08.09
+ by smtp.googlemail.com with ESMTPSA id w5sm140974eje.14.2019.12.05.16.09.50
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 05 Dec 2019 16:08:12 -0800 (PST)
-Subject: Re: [PATCH] ARM: dts: bcm2711: fix soc's node dma-ranges
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Eric Anholt <eric@anholt.net>, Stefan Wahren <wahrenst@gmx.net>,
- Florian Fanelli <f.fainelli@gmail.com>
-References: <20191204125633.27696-1-nsaenzjulienne@suse.de>
+ Thu, 05 Dec 2019 16:09:51 -0800 (PST)
+Subject: Re: [PATCH 1/2] dt-bindings: soc: Add binding doc for iProc IDM device
+To: Ray Jui <ray.jui@broadcom.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+References: <20191202233127.31160-1-ray.jui@broadcom.com>
+ <20191202233127.31160-2-ray.jui@broadcom.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -116,23 +117,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <711470d3-e683-69d4-8f4e-791a76faab29@gmail.com>
-Date: Thu, 5 Dec 2019 16:08:08 -0800
+Message-ID: <62254bbb-168e-c0ad-a72d-bd659a2c23fa@gmail.com>
+Date: Thu, 5 Dec 2019 16:09:48 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191204125633.27696-1-nsaenzjulienne@suse.de>
+In-Reply-To: <20191202233127.31160-2-ray.jui@broadcom.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_160814_900747_656FBE1B 
-X-CRM114-Status: GOOD (  23.68  )
-X-Spam-Score: 2.8 (++)
+X-CRM114-CacheID: sfid-20191205_160954_130217_4DDE2072 
+X-CRM114-Status: GOOD (  20.45  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -144,8 +145,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.5 PDS_BTC_ID             FP reduced Bitcoin ID
- 2.5 BITCOIN_SPAM_02        BitCoin spam pattern 02
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,58 +157,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mbrugger@suse.com, phil@raspberrypi.org,
- linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/4/19 4:56 AM, Nicolas Saenz Julienne wrote:
-> Raspberry Pi's firmware has a feature to select how much memory to
-> reserve for its GPU called 'gpu_mem'. The possible values go from 16MB
-> to 944MB, with a default of 64MB. This memory resides in the topmost
-> part of the lower 1GB memory area and grows bigger expanding towards the
-> begging of memory.
+On 12/2/19 3:31 PM, Ray Jui wrote:
+> Add binding document for iProc based IDM devices.
 > 
-> It turns out that with low 'gpu_mem' values (16MB and 32MB) the size of
-> the memory available to the system in the lower 1GB area can outgrow the
-> interconnect's dma-range as its size was selected based on the maximum
-> system memory available given the default gpu_mem configuration. This
-> makes that memory slice unavailable for DMA. And may cause nasty kernel
-> warnings if CMA happens to include it.
-> 
-> Change soc's dma-ranges to really reflect it's HW limitation, which is
-> being able to only DMA to the lower 1GB area.
-> 
-> Fixes: 7dbe8c62ceeb ("ARM: dts: Add minimal Raspberry Pi 4 support")
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Signed-off-by: Ray Jui <ray.jui@broadcom.com>
+
+Looks good to me, it's 2019, nearly 2020, maybe make this a YAML
+compatible binding since it is a new one?
+
 > ---
+>  .../bindings/soc/bcm/brcm,iproc-idm.txt       | 44 +++++++++++++++++++
+>  1 file changed, 44 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt
 > 
-> NOTE: I'd appreciate if someone from the RPi foundation commented on
-> this as it's something that I'll propose to be backported to their tree.
-
-I don't think our additional DTS changes will be merged until -rc1 is
-cut, so we have some time to figure this one out. Thanks
-
-> 
->  arch/arm/boot/dts/bcm2711.dtsi | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
-> index 5b61cd915f2b..d6a0e350b7b4 100644
-> --- a/arch/arm/boot/dts/bcm2711.dtsi
-> +++ b/arch/arm/boot/dts/bcm2711.dtsi
-> @@ -43,7 +43,7 @@ soc {
->  			 <0x7c000000  0x0 0xfc000000  0x02000000>,
->  			 <0x40000000  0x0 0xff800000  0x00800000>;
->  		/* Emulate a contiguous 30-bit address range for DMA */
-> -		dma-ranges = <0xc0000000  0x0 0x00000000  0x3c000000>;
-> +		dma-ranges = <0xc0000000  0x0 0x00000000  0x40000000>;
->  
->  		/*
->  		 * This node is the provider for the enable-method for
+> diff --git a/Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt b/Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt
+> new file mode 100644
+> index 000000000000..388c6b036d7e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt
+> @@ -0,0 +1,44 @@
+> +Broadcom iProc Interconnect Device Management (IDM) device
+> +
+> +The Broadcom iProc IDM device allows control and monitoring of ASIC internal
+> +bus transactions. Most importantly, it can be configured to detect bus
+> +transaction timeout. In such case, critical information such as transaction
+> +address that caused the error, bus master ID of the transaction that caused
+> +the error, and etc., are made available from the IDM device.
+> +
+> +-------------------------------------------------------------------------------
+> +
+> +Required properties for IDM device node:
+> +- compatible: must be "brcm,iproc-idm"
+> +- reg: base address and length of the IDM register space
+> +- interrupt: IDM interrupt number
+> +- brcm,iproc-idm-bus: IDM bus string
+> +
+> +Optional properties for IDM device node:
+> +- brcm,iproc-idm-elog: phandle to the device node of the IDM logging device
+> +
+> +-------------------------------------------------------------------------------
+> +
+> +Required properties for IDM error logging device node:
+> +- compatible: must be "brcm,iproc-idm-elog";
+> +- reg: base address and length of reserved memory location where IDM error
+> +  events can be saved
+> +
+> +-------------------------------------------------------------------------------
+> +
+> +Example:
+> +
+> +idm {
+> +	idm-elog {
+> +		compatible = "brcm,iproc-idm-elog";
+> +		reg = <0x8f221000 0x1000>;
+> +	};
+> +
+> +	idm-mhb-paxc-axi {
+> +		compatible = "brcm,iproc-idm";
+> +		reg = <0x60406900 0x200>;
+> +		interrupt = <GIC_SPI 516 IRQ_TYPE_LEVEL_HIGH>;
+> +		brcm,iproc-idm-bus = "idm-mhb-paxc-axi";
+> +		brcm,iproc-idm-elog = <&idm-elog>;
+> +	};
+> +};
 > 
 
 
