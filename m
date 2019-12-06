@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE16511552C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 17:25:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CA2A11552D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 17:25:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=85eU0xxPSxJfmXzdSRdStVb1VFXcqj4FOIoU94WvpYo=; b=k8Gowr0FTHzFRa
-	8IkXjul+jE411Wy+vd0RFbDpQn61S2uBVS5tYKOB/hxgT0dwP7KWZ0t8xtjkKSfO+xNpsRKNJ35IH
-	p0/HAWvKJMK6rJj04+dIU9JzMvNRMWVmwWdCMeMQoovrkrPh5pRWUvqxnZEQ6G8tCr4bbWkbAvT8Z
-	lcjp6lbqSl4pS/gHkhsLdoMJ7ZmWs75DaI338wegqF9BWlLNIQHjgzhR6X5ss24BCmgvjwQY/umC1
-	dKTmWVKCGA8+bcmy2PoEFAoPSTha2RHBdcsuLzYCc0lVYL2Z65N8YqBCKB+HJPdtN4mCYr7Q/v19M
-	ER6NpAc+UMuBNaf4XfMw==;
+	List-Owner; bh=v4z4PIYZoFJHW30VOcWQXkeVhouQjQRe0JyyOaBI4Cc=; b=DqeOs5vmsSHkKN
+	4Yi590syWzMr7EFFz628x2Wayz6PHfWPmALh3Fc8Ys6UuBaY98ltuwpEUsHCXSr4Sn1pAcxqn1K0c
+	HOnJP2GOn7ZzQfWDPPEsAr2lEXvmXvCXfw5DPJAB9mKKqaZuTHxtbRiBb/5NtloYlkwOZA9AKiu4g
+	f4SHAsjb6HOGFT6SNJef1g3movxyBFd6vcFWKMDtIwLmI3FCYFwgLbsCyocWkCLJBcIAft4aZYJpI
+	ARwYziJLHjsmp5uJ0322sptVJs512J02QES5xkS7fLirq7uWyeYtbIQvEelug8Df+ZEdkAw57xZDP
+	VzKcVy4yAqJxBelVJMvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idGPr-0003ZD-Di; Fri, 06 Dec 2019 16:25:15 +0000
+	id 1idGQ4-00058k-59; Fri, 06 Dec 2019 16:25:28 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idGPG-0003Nb-VN
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 16:24:40 +0000
+ id 1idGPH-0003Na-A3
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 16:24:42 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id A57EBB1AA;
+ by mx1.suse.de (Postfix) with ESMTP id A9EB4B1D2;
  Fri,  6 Dec 2019 16:24:35 +0000 (UTC)
 From: Thomas Renninger <trenn@suse.de>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 2/3] x86 cpuinfo: implement sysfs nodes for x86
-Date: Fri,  6 Dec 2019 17:24:20 +0100
-Message-Id: <20191206162421.15050-3-trenn@suse.de>
+Subject: [PATCH 3/3] arm64 cpuinfo: implement sysfs nodes for arm64
+Date: Fri,  6 Dec 2019 17:24:21 +0100
+Message-Id: <20191206162421.15050-4-trenn@suse.de>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191206162421.15050-1-trenn@suse.de>
 References: <20191206162421.15050-1-trenn@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_082439_304133_FF7DC761 
-X-CRM114-Status: GOOD (  17.47  )
+X-CRM114-CacheID: sfid-20191206_082439_637829_2AFF25DA 
+X-CRM114-Status: GOOD (  13.17  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,8 +62,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: linux-arch@vger.kernel.org, Felix Schnizlein <fschnizlein@suse.de>,
  Felix Schnizlein <fschnizlein@suse.com>, gregkh@linuxfoundation.org,
  x86@kernel.org, will.deacon@arm.com, linux@armlinux.org.uk,
- Thomas Renninger <trenn@suse.com>, fschnitzlein@suse.de, trenn@suse.de,
- linux-arm-kernel@lists.infradead.org
+ fschnitzlein@suse.de, trenn@suse.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -71,166 +70,125 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Felix Schnizlein <fschnizlein@suse.de>
 
-Enable sysfs cpuinfo for x86 based cpus.
-Export often used cpu information to sysfs:
-stepping, flags, bugs, bogomips, family, vendor_id,
-model, and model_name are exported.
+Export all information from /proc/cpuinfo to sysfs:
+implementer, architecture, variant, part, revision,
+bogomips and flags are exported.
 
-Sysfs documentation is updated to reflect changes.
-
-Example (on a kvm instance running no an intel cpu):
+Example:
 /sys/devices/system/cpu/cpu1/info/:[0]# head *
+==> architecture <==
+8
+
 ==> bogomips <==
-5187.72
-
-==> bugs <==
-cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
-
-==> cpu_family <==
-6
+40.00
 
 ==> flags <==
-fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti ssbd ibrs ibpb fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt arat umip
+fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid asimdrdm
 
-==> model <==
-60
+==> implementer <==
+0x51
 
-==> model_name <==
-Intel Core Processor (Haswell, no TSX, IBRS)
+==> part <==
+0xc00
 
-==> stepping <==
+==> revision <==
 1
 
-==> vendor_id <==
-GenuineIntel
+==> variant <==
+0x0
 
+Signed-off-by: Thomas Renninger <trenn@suse.de>
 Signed-off-by: Felix Schnizlein <fschnizlein@suse.com>
-Signed-off-by: Thomas Renninger <trenn@suse.com>
 ---
- Documentation/ABI/testing/sysfs-devices-system-cpu | 23 +++++
- arch/x86/Kconfig                                   |  1 +
- arch/x86/kernel/Makefile                           |  2 +
- arch/x86/kernel/cpuinfo.c                          | 99 ++++++++++++++++++++++
- 4 files changed, 125 insertions(+)
- create mode 100644 arch/x86/kernel/cpuinfo.c
+ Documentation/ABI/testing/sysfs-devices-system-cpu | 22 +++++++++
+ arch/arm64/Kconfig                                 |  1 +
+ arch/arm64/kernel/cpuinfo.c                        | 55 ++++++++++++++++++++++
+ 3 files changed, 78 insertions(+)
 
 diff --git a/Documentation/ABI/testing/sysfs-devices-system-cpu b/Documentation/ABI/testing/sysfs-devices-system-cpu
-index 84c324773b36..791390ab66d5 100644
+index 791390ab66d5..b6a167cd0beb 100644
 --- a/Documentation/ABI/testing/sysfs-devices-system-cpu
 +++ b/Documentation/ABI/testing/sysfs-devices-system-cpu
-@@ -581,3 +581,26 @@ Contact:	Linux kernel mailing list <linux-kernel@vger.kernel.org>
- Description:	Various information about the online cpu. Which attributes are
- 		available depends on the architecture, kernel configuration and
- 		cpu model.
+@@ -604,3 +604,25 @@ Description:	Expose information about x86 cpu information.
+ 		flags: Extended capabilities supported by the cpu
+ 		bugs: Known bugs by cpu
+ 		bogomips: calculated bogomips
++
 +
 +What:		/sys/devices/system/cpu/cpu#/info/
-+		/sys/devices/system/cpu/cpu#/info/vendor_id
-+		/sys/devices/system/cpu/cpu#/info/cpu_family
-+		/sys/devices/system/cpu/cpu#/info/model
-+		/sys/devices/system/cpu/cpu#/info/model_name
-+		/sys/devices/system/cpu/cpu#/info/stepping
++		/sys/devices/system/cpu/cpu#/info/implementer
++		/sys/devices/system/cpu/cpu#/info/architecture
++		/sys/devices/system/cpu/cpu#/info/variant
++		/sys/devices/system/cpu/cpu#/info/part
++		/sys/devices/system/cpu/cpu#/info/revision
 +		/sys/devices/system/cpu/cpu#/info/flags
-+		/sys/devices/system/cpu/cpu#/info/bugs
 +		/sys/devices/system/cpu/cpu#/info/bogomips
-+Date:		June 2017
++Date:		August 2017
 +Contact:	Linux kernel mailing list <linux-kernel@vger.kernel.org>
-+Description:	Expose information about x86 cpu information.
++Description:	Expose information about arm64 cpu.
 +
-+		vendor_id,
-+		cpu_family,
-+		model,
-+		model_name,
-+		stepping: Cpu identification depending on each vendor
++		implementer,
++		architecture,
++		variant,
++		part,
++		revision: Cpu identification depending on each vendor
 +
 +		flags: Extended capabilities supported by the cpu
-+		bugs: Known bugs by cpu
 +		bogomips: calculated bogomips
-diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
-index 8529a9dbd5ca..29fadd69d541 100644
---- a/arch/x86/Kconfig
-+++ b/arch/x86/Kconfig
-@@ -154,6 +154,7 @@ config X86
- 	select HAVE_CMPXCHG_LOCAL
- 	select HAVE_CONTEXT_TRACKING		if X86_64
- 	select HAVE_COPY_THREAD_TLS
-+	select HAVE_CPUINFO_SYSFS		if SYSFS
- 	select HAVE_C_RECORDMCOUNT
- 	select HAVE_DEBUG_KMEMLEAK
- 	select HAVE_DMA_CONTIGUOUS
-diff --git a/arch/x86/kernel/Makefile b/arch/x86/kernel/Makefile
-index ccb13271895d..ccf1a338bc37 100644
---- a/arch/x86/kernel/Makefile
-+++ b/arch/x86/kernel/Makefile
-@@ -146,6 +146,8 @@ obj-$(CONFIG_UNWINDER_ORC)		+= unwind_orc.o
- obj-$(CONFIG_UNWINDER_FRAME_POINTER)	+= unwind_frame.o
- obj-$(CONFIG_UNWINDER_GUESS)		+= unwind_guess.o
- 
-+obj-$(CONFIG_CPUINFO_SYSFS)		+= cpuinfo.o
-+
- ###
- # 64 bit specific files
- ifeq ($(CONFIG_X86_64),y)
-diff --git a/arch/x86/kernel/cpuinfo.c b/arch/x86/kernel/cpuinfo.c
-new file mode 100644
-index 000000000000..3b772faf9f5f
---- /dev/null
-+++ b/arch/x86/kernel/cpuinfo.c
-@@ -0,0 +1,99 @@
-+/*
-+ * Copyright (C) 2017 SUSE Linux GmbH
-+ * Written by: Felix Schnizlein <fschnizlein@suse.com>
-+ *
-+ * This program is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU General Public License version
-+ * 2 as published by the Free Software Foundation.
-+ *
-+ * This program is distributed in the hope that it will be useful, but
-+ * WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * General Public License for more details.
-+ *
-+ */
-+
-+#include <linux/cpu.h>
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 43aa1de727f4..0e8f7733e8c3 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -169,6 +169,7 @@ config ARM64
+ 	select HAVE_KPROBES
+ 	select HAVE_KRETPROBES
+ 	select HAVE_GENERIC_VDSO
++	select HAVE_CPUINFO_SYSFS if SYSFS
+ 	select IOMMU_DMA if IOMMU_SUPPORT
+ 	select IRQ_DOMAIN
+ 	select IRQ_FORCED_THREADING
+diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
+index 56bba746da1c..d142e2d37ead 100644
+--- a/arch/arm64/kernel/cpuinfo.c
++++ b/arch/arm64/kernel/cpuinfo.c
+@@ -24,6 +24,7 @@
+ #include <linux/sched.h>
+ #include <linux/smp.h>
+ #include <linux/delay.h>
 +#include <linux/cpuinfo.h>
-+#include <linux/cpufreq.h>
-+#include <linux/smp.h>
+ 
+ /*
+  * In case the boot CPU is hotpluggable, we record its initial state and
+@@ -33,6 +34,8 @@
+ DEFINE_PER_CPU(struct cpuinfo_arm64, cpu_data);
+ static struct cpuinfo_arm64 boot_cpu_data;
+ 
++#define cpu_data(cpu)			per_cpu(cpu_data, cpu)
 +
-+static ssize_t cpuinfo_stepping(unsigned int c, char *buf)
-+{
-+	if (cpu_data(c).x86_stepping || cpu_data(c).cpuid_level >= 0)
-+		return sprintf(buf, "%d\n", cpu_data(c).x86_stepping);
-+	return sprintf(buf, "unknown\n");
-+}
+ static const char *icache_policy_str[] = {
+ 	[0 ... ICACHE_POLICY_PIPT]	= "RESERVED/UNKNOWN",
+ 	[ICACHE_POLICY_VIPT]		= "VIPT",
+@@ -285,6 +288,58 @@ static int cpuid_cpu_offline(unsigned int cpu)
+ 	return 0;
+ }
+ 
++#ifdef CONFIG_HAVE_CPUINFO_SYSFS
++
++#define cpuinfo_implementer(cpu)	MIDR_IMPLEMENTOR(cpu_data(cpu).reg_midr)
++#define cpuinfo_architecture(cpu)	"8"
++#define cpuinfo_variant(cpu)		MIDR_VARIANT(cpu_data(cpu).reg_midr)
++#define cpuinfo_part(cpu)		MIDR_PARTNUM(cpu_data(cpu).reg_midr)
++#define cpuinfo_revision(cpu)		MIDR_REVISION(cpu_data(cpu).reg_midr)
 +
 +static ssize_t cpuinfo_flags(unsigned int c, char *buf)
 +{
-+	struct cpuinfo_x86 *cpu = &cpu_data(c);
 +	unsigned int i;
 +	ssize_t len = 0;
 +
-+	for (i = 0; i < (32 * NCAPINTS); i++) {
-+		if (cpu_has(cpu, i) && x86_cap_flags[i] != NULL)
++	for (i = 0; hwcap_str[i]; i++) {
++		if (cpu_have_feature(i))
 +			len += sprintf(buf+len, len == 0 ? "%s" : " %s",
-+				       x86_cap_flags[i]);
-+	}
-+	if (!len)
-+		return 0;
-+	return len + sprintf(buf+len, "\n");
-+}
-+
-+static ssize_t cpuinfo_bugs(unsigned int c, char *buf)
-+{
-+	struct cpuinfo_x86 *cpu = &cpu_data(c);
-+	unsigned int i;
-+	ssize_t len = 0;
-+
-+	for (i = 0; i < 32*NBUGINTS; i++) {
-+		unsigned int bug_bit = 32*NCAPINTS + i;
-+
-+		if (cpu_has_bug(cpu, bug_bit) && x86_bug_flags[i])
-+			len += sprintf(buf+len, len == 0 ? "%s" : " %s",
-+				       x86_bug_flags[i]);
++				       hwcap_str[i]);
 +	}
 +	if (!len)
 +		return 0;
@@ -239,42 +197,36 @@ index 000000000000..3b772faf9f5f
 +
 +static ssize_t cpuinfo_bogomips(unsigned int c, char *buf)
 +{
-+	struct cpuinfo_x86 cpu = cpu_data(c);
++	return sprintf(buf, "%lu.%02lu\n", loops_per_jiffy / (500000 / HZ),
++		       (loops_per_jiffy / (5000 / HZ)) % 100);
 +
-+	return sprintf(buf, "%lu.%02lu\n", cpu.loops_per_jiffy / (500000 / HZ),
-+		       (cpu.loops_per_jiffy / (5000 / HZ)) % 100);
 +}
 +
-+#define cpuinfo_cpu_family(cpu)		cpu_data(cpu).x86
-+#define cpuinfo_model(cpu)		cpu_data(cpu).x86_model
++CPUINFO_DEFINE_ATTR(implementer, "0x%02x");
++CPUINFO_DEFINE_ATTR(architecture, "%s");
++CPUINFO_DEFINE_ATTR(variant, "0x%x");
++CPUINFO_DEFINE_ATTR(part, "0x%03x");
++CPUINFO_DEFINE_ATTR(revision, "%d");
 +
-+#define cpuinfo_vendor_id(cpu)		cpu_data(cpu).x86_vendor_id[0] ?\
-+	cpu_data(cpu).x86_vendor_id : "unknown"
-+
-+#define cpuinfo_model_name(cpu)		cpu_data(cpu).x86_model_id[0] ? \
-+	cpu_data(cpu).x86_model_id : "unknown"
-+
-+CPUINFO_DEFINE_ATTR(cpu_family, "%d");
-+CPUINFO_DEFINE_ATTR(model, "%u");
-+CPUINFO_DEFINE_ATTR(vendor_id, "%s");
-+CPUINFO_DEFINE_ATTR(model_name, "%s");
-+
-+CPUINFO_DEFINE_ATTR_FUNC(stepping);
-+CPUINFO_DEFINE_ATTR_FUNC(flags);
-+CPUINFO_DEFINE_ATTR_FUNC(bugs);
 +CPUINFO_DEFINE_ATTR_FUNC(bogomips);
++CPUINFO_DEFINE_ATTR_FUNC(flags);
 +
 +struct attribute *cpuinfo_attrs[] = {
-+	CPUINFO_ATTR(vendor_id),
-+	CPUINFO_ATTR(cpu_family),
-+	CPUINFO_ATTR(model),
-+	CPUINFO_ATTR(model_name),
-+	CPUINFO_ATTR(stepping),
-+	CPUINFO_ATTR(flags),
-+	CPUINFO_ATTR(bugs),
++	CPUINFO_ATTR(implementer),
++	CPUINFO_ATTR(architecture),
++	CPUINFO_ATTR(variant),
++	CPUINFO_ATTR(part),
++	CPUINFO_ATTR(revision),
 +	CPUINFO_ATTR(bogomips),
++	CPUINFO_ATTR(flags),
 +	NULL
 +};
++#endif /* CONFIG_HAVE_CPUINFO_SYSFS */
++
++
+ static int __init cpuinfo_regs_init(void)
+ {
+ 	int cpu, ret;
 -- 
 2.16.4
 
