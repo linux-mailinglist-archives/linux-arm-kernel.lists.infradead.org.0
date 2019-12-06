@@ -2,76 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77186114DE4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 10:00:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57194114E3B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 10:35:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=N08iivuAKXqASHSdFnuOtCOQEZuxIxJfcS74pr4ZFGc=; b=KqlsmVEpVVGoNp5cDcTXuewTI
-	Q7cjdVhPYltlAiS1vdNCJKbnhJ1Ba9Um26IiivUgl5Z1/k7pURgCZxxZOEfDHX9ZpVEWzLmF88KYQ
-	71aFag89qryrYJQ1gKAs/7l5wSqLv/vSbqr7zwZ2dLbDX0nY7KUG7YXb/7QtWpVVySvUWSL8H03kg
-	k8X6AFQILMpsgGZCeFd4j0bDstzaDr6B3zetPtpEGPALr+Ulg6zxJwrzwmxJ3o7h0+DZGWQCtY7yI
-	QVxkXlz/9KfkmWJlDZxNG35nJ1A0rIzP+caMFi1hWRygJ4j35rweDwJpFnaNA4Cx3mu+wUqV/nPSs
-	pLLvPI7gQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3S4d63n2oYzvxPGo5RLgCs8Jua3Rsx5DDoGXKpKOwvM=; b=SvpddmJJNCvN7b
+	HXoUdI2mv8Wi1uZ9XHZMeF3j9/aA+bDIvIx85f8Qy7knOf1d86FDhr8oGk38+smBByzhdYsQ/y/zZ
+	WidPAKTfRt/rnpgBWqDreSC6aM5ExbtdzvCBJNLY9Vb4udZH3LL2UFWsET8xsp+bMkcWk/yT3j30J
+	VkX7A0rExD3qxv/zTdyJXTL2v5CMwHX5HJBriiJ8gmzQkgf/8ZhqRzAzRrGaUhHTFlL8JUKr+wPt9
+	M2QTbxH/9Ex1s0zdBLG4o5IldqOeW/ryBvpAgkJJV6qqYOrl1o72V92IOzu2nQECzVZiwsQyIFNO0
+	Uol39ranWvTVdgkZFdLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1id9TQ-000702-VR; Fri, 06 Dec 2019 09:00:28 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1idA1e-0001As-T5; Fri, 06 Dec 2019 09:35:50 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1id9TI-0006Lg-6B
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 09:00:21 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xB6909uV013502;
- Fri, 6 Dec 2019 03:00:09 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1575622809;
- bh=uaXzZSsyNHO08tIpDkwGwrPMYqYLJBO4Gfc7A2K13E8=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=FMFmLosuuKCZW7AkF/X81qsrzdSuoDgsdXMsFUJvHqsyR+1VnlWmM7j5QT4OOjdp2
- dzcJxHcO3S8QSl3MrPUvOEmpt8AtPnO4FnvWZWCI3BrJLrsCWPE6J8GJOVpxjLv9Ck
- Bji9mz06imCSMz2qHvoTQDvRPBfp6JiZt4dZyJJ0=
-Received: from DLEE112.ent.ti.com (dlee112.ent.ti.com [157.170.170.23])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xB6909YR100000;
- Fri, 6 Dec 2019 03:00:09 -0600
-Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE112.ent.ti.com
- (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 6 Dec
- 2019 03:00:09 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 6 Dec 2019 03:00:09 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xB6906vX023816;
- Fri, 6 Dec 2019 03:00:07 -0600
-Subject: Re: [PATCH 2/2] PCI: uniphier: Add checking whether PERST# is
- deasserted
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-References: <20191204190547.333C.4A936039@socionext.com>
- <c40da2f3-ea5d-b1fc-0190-f90f031eef4c@ti.com>
- <20191206175813.E6B2.4A936039@socionext.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <6b288f46-452d-6f92-728c-56c4100028cf@ti.com>
-Date: Fri, 6 Dec 2019 14:31:17 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1idA1T-00018u-J7; Fri, 06 Dec 2019 09:35:40 +0000
+X-UUID: 53829ed671054a31b02ef0970f3a8bd5-20191206
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=vR5+TmnGL8k18O3RfwhBu/Xl8JNbLQTJoi3SA28TkwA=; 
+ b=IT0M4fxlf04vCZUmXKfd8p6Z8eU6EiLiGcyUDVQ6sv7ieEMEZWYZffaAQqurBHjuGJcLBxwn14KQrJrLgxSP+PGNPcr/2MEROwY97f8qMMA1huT6oSkCJkH1RlJfhQa4kDm6cPr3ey97YuPFT+Ejf+U7rMeffl/Mcgl9aq6hA2Q=;
+X-UUID: 53829ed671054a31b02ef0970f3a8bd5-20191206
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <michael.kao@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 143918802; Fri, 06 Dec 2019 01:35:33 -0800
+Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 6 Dec 2019 01:36:20 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 6 Dec 2019 17:35:27 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 6 Dec 2019 17:34:50 +0800
+Message-ID: <1575624927.1631.7.camel@mtksdccf07>
+Subject: Re: [PATCH v2 7/8] thermal: mediatek: add another get_temp ops for
+ thermal sensors
+From: Michael Kao <michael.kao@mediatek.com>
+To: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Fri, 6 Dec 2019 17:35:27 +0800
+In-Reply-To: <CAJMQK-ivho3T1hnD9axV2EMKT3Srs_5zAXLqwts8nojY15fBGg@mail.gmail.com>
+References: <1557494826-6044-1-git-send-email-michael.kao@mediatek.com>
+ <1557494826-6044-8-git-send-email-michael.kao@mediatek.com>
+ <CAJMQK-ivho3T1hnD9axV2EMKT3Srs_5zAXLqwts8nojY15fBGg@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20191206175813.E6B2.4A936039@socionext.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-TM-SNTS-SMTP: B074D70E04D46F7F6E1F3B63CE826B399628CA35CC3E3E458B7FA485D552647E2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_010020_333730_C92E7468 
-X-CRM114-Status: GOOD (  20.73  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191206_013539_639495_2F6650A5 
+X-CRM114-Status: GOOD (  15.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,7 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,94 +86,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Jassi Brar <jaswinder.singh@linaro.org>,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Devicetree List <devicetree@vger.kernel.org>, linux-pm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ lkml <linux-kernel@vger.kernel.org>, Eduardo Valentin <edubezval@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 06/12/19 2:28 pm, Kunihiko Hayashi wrote:
-> Hi Kishon,
+On Thu, 2019-11-21 at 15:00 +0800, Hsin-Yi Wang wrote:
+> On Fri, May 10, 2019 at 9:27 PM michael.kao <michael.kao@mediatek.com> wrote:
 > 
-> On Fri, 6 Dec 2019 12:28:29 +0530 <kishon@ti.com> wrote:
+> > -       tzdev = devm_thermal_zone_of_sensor_register(&pdev->dev, 0, mt,
+> > -                                                    &mtk_thermal_ops);
+> > -       if (IS_ERR(tzdev)) {
+> > -               ret = PTR_ERR(tzdev);
+> > -               goto err_disable_clk_peri_therm;
+> > +       for (i = 0; i < mt->conf->num_sensors + 1; i++) {
+> > +               tz = kmalloc(sizeof(*tz), GFP_KERNEL);
+> > +               if (!tz)
+> > +                       return -ENOMEM;
+> > +
+> > +               tz->mt = mt;
+> > +               tz->id = i;
+> > +
+> > +               tzdev = devm_thermal_zone_of_sensor_register(&pdev->dev, i,
+> > +                               tz, (i == 0) ?
+> > +                               &mtk_thermal_ops : &mtk_thermal_sensor_ops);
+> > +
+> > +               if (IS_ERR(tzdev)) {
+> > +                       if (IS_ERR(tzdev) != -EACCES) {
+>                                 PTR_ERR(tzdev)
 > 
->> Hi,
->>
->> On 04/12/19 3:35 pm, Kunihiko Hayashi wrote:
->>> On Fri, 22 Nov 2019 20:53:16 +0900 <hayashi.kunihiko@socionext.com> wrote:
->>>>> Hello Lorenzo,
->>>>
->>>> On Thu, 21 Nov 2019 16:47:05 +0000 <lorenzo.pieralisi@arm.com> wrote:
->>>>
->>>>> On Fri, Nov 08, 2019 at 04:30:27PM +0900, Kunihiko Hayashi wrote:
->>>>>>> However, If I understand correctly, doesn't your solution only work some
->>>>>>> of the time? What happens if you boot both machines at the same time,
->>>>>>> and PERST# isn't asserted prior to the kernel booting?
->>>>>>
->>>>>> I think it contains an annoying problem.
->>>>>>
->>>>>> If PERST# isn't toggled prior to the kernel booting, PERST# remains asserted
->>>>>> and the RC driver can't access PCI bus.
->>>>>>
->>>>>> As a result, this patch works and deasserts PERST# (and EP configuration will
->>>>>> be lost). So boot sequence needs to include deasserting PERST#.
->>>>>
->>>>> I am sorry but I have lost you. Can you explain to us why checking
->>>>> that PERST# is deasserted guarantees you that:
->>>>>
->>>>> - The EP has bootstrapped
->>>>> - It is safe not to toggle it again (and also skip
->>>>>     uniphier_pcie_ltssm_enable())
->>>>>
->>>>> Please provide details of the HW configuration so that we understand
->>>>> what's actually supposed to happen and why this patch fixes the
->>>>> issue you are facing.
->>>>
->>>> I tried to connect between the following boards, and do pci-epf-test:
->>>>    - "RC board": UniPhier ld20 board that has DWC RC controller
->>>>    - "EP board": UniPhier legacy board that has DWC EP controller
->>>>
->>>> This EP has power-on-state configuration, but it's necessary to set
->>>> class ID, BAR sizes, etc. after starting up.
->>>>
->>>> In case of that starting up RC board before EP board, the RC driver
->>>> can't establish link. So we need to boot EP board first.
->>>> At that point, I've considered why RC can't establish link,
->>> and found that the waitng time was too short.
->>>> - EP/RC: power on both boards
->>>> - RC: start up the kernel on RC board
->>>> - RC: wait for link up (long time enough)
->>>> - EP: start up the kernel on EP board
->>>> - EP: configurate pci-epf-test
->>>> When the endpoint  configuration is done and the EP driver enables LTSSM,
->>> the RC driver will quit from waiting for link up.
->>>> Currently DWC RC driver calls dwc_pcie_wait_for_link(), however,
->>> the function tries to link up 10 times only, that is defined
->>> as LINK_WAIT_MAX_RETRIES in pcie-designware.h, it's too short
->>> to configurate the endpoint.
->>>> Now the patch to bypass PERST# is not necessary.
->>>> Instead for DWC RC drivers, I think that the number of retries
->>> should be changed according to the usage.
->>> And the same issue remains with other RC drivers.
->>
->> If EP is configured using Linux, then PERST# cannot be used as it's difficult to boot linux and initialize EP within the specified time interval. Can't you prevent PERST from being propagated at all?
+> > +                               ret = PTR_ERR(tzdev);
+> > +                               goto err_disable_clk_peri_therm;
+> > +                       }
+> > +               }
 > 
-> Surely it might be difficult for RC to decide the time to wait for EP.
-> Since RC almost toggles PERST# in boot time, I'd like to think about
-> how to prevent from first PERST# at least.
+> This for loop adding thermal zone sensors will not work for mt8173. It
+> assumes that thermal-zones in dts have subnodes (eg. cpu_thermal,
+> tzts..) amount equal to num_sensors+1. Otherwise tzdev would be
+> -ENODEV and thermal failed to be probed.
+> In mt8183 this is fine, since each thermal zone only has one sensor,
+> but in mt8173, some sensor appears in multiple thermal zones.
+> 
+> In order to let the change also works for 8173, I think if the error
+> is -ENODEV, and the id is not 0 (0 is cpu_thermal), prompt a warning
+> instead of failing. Eg.
+> 
+>                 if (IS_ERR(tzdev)) {
+> +                       if (i > 0 && PTR_ERR(tzdev) == -ENODEV) {
+> +                               dev_warn(&pdev->dev, "can't find
+> thermal sensor %d\n", i);
+> +                               continue;
+> +                       }
+>                         if (PTR_ERR(tzdev) != -EACCES) {
 
-It can be prevented in the HW (If that's possible). I modify the cable 
-connecting RC and EP to not propagate PERST#.
-
-Thanks
-Kishon
-
+OK, I will update this patch.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
