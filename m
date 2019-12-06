@@ -2,84 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C3FE11585A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 21:55:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9FCE1158EA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Dec 2019 23:01:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wZuQB+5b1BsWJsFXsXhepUEnyagMt3GhE95Z1EJMTsI=; b=iTXxoljhhdqVuU
-	OR8vxNwfimsNSZlLrtmA2zaOd/iJzQ7RqGfagvPIZIMoXhC7vQ/kelzjzjLYoFmyX6v5XhsF5Ptji
-	b5yZM1ITc+L5s7d54VKHFiX+cQxc6VH6C9EtxDTTVnUwWHn0FfUf7nj5QkJxuenHlKCK6/AJ4Eib5
-	+rpfvu173L41heCa6k5xIme3lho90cZEh0SbFMWeGRJ0KawzEBKJqtIz+vF5SOgg7MPw+PHGGukUW
-	p1iG7lutnbYyq+jTDiRWHEuQq18nSJvZyO89YXsIRPfpGX5xX6t7Nd4HEb2gX2/rLqExHuzVCDntS
-	yXTD+jZkhOz1MSlIoN6g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IfIY0Kfan5OeGDn0YaYzl9QWlO/mH1sPIhAy6NiWo4U=; b=FhyFQgh5hrVY5H
+	pyPq+8UU6gyX3V7sq4yvAPY7TbKkCfOO/dBQhIBXdbuLL1yT5RMvssHnxATIH+9TUdBca6iG7NPTi
+	/ru6jX0ioSas91cY0/keyyvtZTBTeoL0zhxqO2lgw6CySC4JAlUue/+/RiEAZZ61XA6ClgqEmJUB/
+	RUlzt27ZI/lo5KdaJKYxnNVhM9wB5+qV1y1tLqAIL4h4rbhaeOJ10XWphtq8XNZw3PtJM7EfdMBgG
+	gnQWkPLbgXRwbB3SJUvJdJGlN958wYubSMggI9gqM8/Jbuzl3BcoBaxpJOueLfT6RRovaxrHPZAGC
+	JJD9eYhkPmIvUYZX8++w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idKdK-0006zt-Iw; Fri, 06 Dec 2019 20:55:26 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1idLeZ-0002yI-T4; Fri, 06 Dec 2019 22:00:47 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idKdC-0006zJ-Ep
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 20:55:20 +0000
-Received: by mail-lj1-x242.google.com with SMTP id e10so9072041ljj.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Dec 2019 12:55:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=dDOgMHYCPqZmG8t2SDXruDukUJ9qiXPdNP9vyd0xDfY=;
- b=ugKs6D08RnBJ4kkK3PkSVwkWgzxu1j3EYwx3fUTwwhRb3uQzVoENq///0waI2SAuPI
- ikI6naEo3ZKIJ3AJBmM3u0A8FZ/8hWc5rwuX3JGKZJVmV876aqid6qdMaz9JUBBAguw5
- MvoaBZpcz2KNXOXPqPccpFtHduSylbTIEdRagvxcf7zcxKduRzbgvRqaeZFoLKsJ+0hL
- /FHvCFKzPisWEsXc7YR8DoWaTnSGMHKBD+uXs5i/aF+KQAdZ6HkQH243zxDbpX2q2LfI
- 7NMFIKkkDzqYAemktQvPIAvYXKsyF8wh/cbj6odSVzjqAXpAVetDHawsaL1kzAtoxOnT
- b7hA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=dDOgMHYCPqZmG8t2SDXruDukUJ9qiXPdNP9vyd0xDfY=;
- b=uGpEfBk75iqAIboAzePNZXKcweZtP38CxYTlIAGH5WsOcUAV4PBF5e3EqvmRbSdr5k
- WgEUOhqmYzxQUz2aAxJ7NjH60x35RD9DGhEfrvgBOHXKjJ/9lbXDRa6G1Lpr5OGPQZJG
- pYkmp8k3OPYJkVGaKUcL2zJlwPJRga0J1HC88IBePfSXyj5kXayHT58KwQE7+FHgoT1r
- 1mUayADXSueLxe3sPM38fJ8DdpoP0QJr3N4SrHw+JMTsTfz4UkGSkPwo3gGR3GR3CGUM
- VPPaaeKgAOaQtNP6wUE66ZCDIzTgFzJ92Dw2gjvfFwLVddfZIsAuwEK++XJSNoK1fKnn
- ee7Q==
-X-Gm-Message-State: APjAAAWAieo04ZMrW6i7feocSZn8TVBifjhqzOSx/peTFtlw6M3RWC+U
- tXBUSgNfHoBPOcJg336drrjVTg==
-X-Google-Smtp-Source: APXvYqw4IaZruuvC13wHL2WCQ7RC6Rt1umv+ac2nLMyugbm7EJr4gUIgnD1N0pEo+OTgyBjSCC6U9Q==
-X-Received: by 2002:a2e:b4f6:: with SMTP id s22mr9927985ljm.218.1575665715945; 
- Fri, 06 Dec 2019 12:55:15 -0800 (PST)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id k24sm8331931ljj.27.2019.12.06.12.55.13
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 06 Dec 2019 12:55:13 -0800 (PST)
-Date: Fri, 6 Dec 2019 12:53:58 -0800
-From: Olof Johansson <olof@lixom.net>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] ARM: SoC fixes
-Message-ID: <20191206205358.aifwgtflryjf6iao@localhost>
+ id 1idLeS-0002xQ-HB
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Dec 2019 22:00:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1575669636;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=/0/B4QknTAb7E38S4ntzDLzqFl82ozvbtLJr1dzGMzA=;
+ b=KZivGncxr9Vth5iL+7adlVA8XiMBWuj/HdxTQ8tFdwnPr1+88sIdwXDaAVY0aYNNuR0lfc
+ jtPLBr2miEIrLoDYFAmkm9GsStEmL+eCq+yll5BHaZpHyCX9rZhBTsWzyOenMTwVllTtmK
+ zVt4dOaRCvNpQFLi+PfJniGlx6i7s6w=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-320-ffAl0DcwMdSijUYqFRNtlA-1; Fri, 06 Dec 2019 17:00:31 -0500
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id C9C791005512;
+ Fri,  6 Dec 2019 22:00:27 +0000 (UTC)
+Received: from llong.remote.csb (ovpn-122-189.rdu2.redhat.com [10.10.122.189])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id B73515C1D4;
+ Fri,  6 Dec 2019 22:00:24 +0000 (UTC)
+Subject: Re: [PATCH v7 5/5] locking/qspinlock: Introduce the shuffle reduction
+ optimization into CNA
+To: Alex Kogan <alex.kogan@oracle.com>, linux@armlinux.org.uk,
+ peterz@infradead.org, mingo@redhat.com, will.deacon@arm.com, arnd@arndb.de,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
+ hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
+References: <20191125210709.10293-1-alex.kogan@oracle.com>
+ <20191125210709.10293-6-alex.kogan@oracle.com>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <1fce5ebf-7f80-fb9e-92b1-74062a6611a5@redhat.com>
+Date: Fri, 6 Dec 2019 17:00:24 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20191125210709.10293-6-alex.kogan@oracle.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-MC-Unique: ffAl0DcwMdSijUYqFRNtlA-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_125518_638275_91351EC6 
-X-CRM114-Status: GOOD (  16.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191206_140040_643833_B2B3749B 
+X-CRM114-Status: GOOD (  17.25  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.61 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,176 +98,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: olof@lixom.net, soc@kernel.org, arm@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: rahul.x.yadav@oracle.com, dave.dice@oracle.com, steven.sistare@oracle.com,
+ daniel.m.jordan@oracle.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
-
-The following changes since commit b08baef02b26cf7c2123e4a24a2fa1fb7a593ffb:
-
-  Merge tag 'armsoc-defconfig' of git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc (2019-12-05 12:14:19 -0800)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-fixes
-
-for you to fetch changes up to 30f55eae47e4ad1b64d692865e6a4277447a33df:
-
-  Merge tag 'arm-soc/for-5.5/devicetree-part2' of https://github.com/Broadcom/stblinux into arm/fixes (2019-12-06 08:29:56 -0800)
-
-----------------------------------------------------------------
-ARM: SoC fixes
-
-A set of fixes that we've merged late, but for the most part that have
-been sitting in -next for a while through platform maintainer trees.
-
- + Fixes to suspend/resume on Tegra, caused by the added features
-   this merge window
-
- + Cleanups and minor fixes to TI additions this merge window
-
- + Tee fixes queued up late before the merge window, included here.
-
- + A handful of other fixlets
-
-There's also a refresh of the shareed config files (multi_v* on 32-bit,
-and defconfig on 64-bit), to avoid conflicts when we get new
-contributions.
-
-----------------------------------------------------------------
-Adam Ford (2):
-      ARM: dts: logicpd-torpedo-baseboard:  Enable HDQ
-      ARM: dts: logicpd-torpedo: Remove unnecessary notes/comments
-
-Andre Przywara (1):
-      arm64: dts: juno: Fix UART frequency
-
-Bibby Hsieh (1):
-      soc: mediatek: cmdq: fixup wrong input order of write api
-
-Dmitry Osipenko (1):
-      memory: tegra30-emc: Fix panic on suspend
-
-Faiz Abbas (1):
-      ARM: dts: am57xx-beagle-x15: Update pinmux name to ddr_3_3v
-
-Grygorii Strashko (1):
-      ARM: dts: dra7: fix cpsw mdio fck clock
-
-Jan Glauber (1):
-      MAINTAINERS: update Cavium ThunderX drivers
-
-Jarkko Nikula (1):
-      ARM: dts: omap3-tao3530: Fix incorrect MMC card detection GPIO polarity
-
-Jens Wiklander (1):
-      tee: optee: fix device enumeration error handling
-
-Linus Walleij (1):
-      ARM: pxa: Fix resource properties
-
-Luc Van Oostenryck (1):
-      soc: aspeed: Fix snoop_file_poll()'s return type
-
-Marek Szyprowski via Linux.Kernel.Org (1):
-      ARM: multi_v7_defconfig: Restore debugfs support
-
-Markus Elfring (1):
-      bus: ti-sysc: Adjust exception handling in sysc_child_add_named_clock()
-
-Nicolas Saenz Julienne (1):
-      ARM: dts: bcm2711: force CMA into first GB of memory
-
-Olof Johansson (14):
-      Merge tag 'tee-fixes-for-v5.4' of git://git.linaro.org/people/jens.wiklander/linux-tee into arm/fixes
-      Merge tag 'arm-soc/for-5.5/maintainers-part2' of https://github.com/Broadcom/stblinux into arm/fixes
-      Merge tag 'juno-fixes-5.5' of git://git.kernel.org/.../sudeep.holla/linux into arm/fixes
-      Merge tag 'scmi-fix-5.5-2' of git://git.kernel.org/.../sudeep.holla/linux into arm/fixes
-      Merge mainline/master into arm/fixes
-      arm64: defconfig: re-run savedefconfig
-      ARM: defconfig: re-run savedefconfig on multi_v* configs
-      Merge tag 'omap-for-v5.5/ti-sysc-late-signed' of git://git.kernel.org/.../tmlind/linux-omap into arm/fixes
-      Merge tag 'omap-for-v5.5/dt-fixes-merge-window-signed' of git://git.kernel.org/.../tmlind/linux-omap into arm/fixes
-      Merge tag 'socfpga_update_for_v5.5' of git://git.kernel.org/.../dinguyen/linux into arm/fixes
-      Merge tag 'tegra-for-5.5-cpufreq' of git://git.kernel.org/.../tegra/linux into arm/fixes
-      Merge tag 'tegra-for-5.5-soc-fixes' of git://git.kernel.org/.../tegra/linux into arm/fixes
-      Merge tag 'tegra-for-5.5-memory-fixes' of git://git.kernel.org/.../tegra/linux into arm/fixes
-      Merge tag 'arm-soc/for-5.5/devicetree-part2' of https://github.com/Broadcom/stblinux into arm/fixes
-
-Robert Richter (1):
-      MAINTAINERS: Switch to Marvell addresses
-
-Simon Goldschmidt (1):
-      arm: socfpga: execute cold reboot by default
-
-Sowjanya Komatineni (1):
-      cpufreq: tegra124: Add suspend and resume support
-
-Stefan Wahren (2):
-      ARM: dts: bcm2711-rpi-4: Enable GENET support
-      MAINTAINERS: Make Nicolas Saenz Julienne the new bcm2835 maintainer
-
-Sudeep Holla (1):
-      Revert "arm64: dts: juno: add dma-ranges property"
-
-Sumit Garg (1):
-      tee: optee: Fix dynamic shm pool allocations
-
-Thierry Reding (3):
-      soc/tegra: pmc: Use lower-case for hexadecimal literals
-      soc/tegra: pmc: Add missing IRQ callbacks on Tegra194
-      soc/tegra: pmc: Add reset sources and levels on Tegra194
-
-Tony Lindgren (6):
-      bus: ti-sysc: Add module enable quirk for audio AESS
-      ARM: OMAP2+: Drop useless gptimer option for omap4
-      Merge tag 'omap-for-v5.5/soc-late-signed' into omap-for-v5.5/ti-sysc-late
-      Merge branches 'omap-for-v5.5/soc' and 'omap-for-v5.5/ti-sysc' into omap-for-v5.5/ti-sysc-late
-      ARM: dts: Fix vcsi regulator to be always-on for droid4 to prevent hangs
-      ARM: dts: Fix sgx sysconfig register for omap4
-
-Wen Yang (1):
-      firmware: arm_scmi: Avoid double free in error flow
-
- .mailmap                                           |  3 ++
- MAINTAINERS                                        | 40 +++++++--------
- arch/arm/boot/dts/am57xx-beagle-x15-revb1.dts      |  2 +-
- arch/arm/boot/dts/am57xx-beagle-x15-revc.dts       |  2 +-
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts              | 17 +++++++
- arch/arm/boot/dts/bcm2711.dtsi                     | 46 +++++++++++++++++
- arch/arm/boot/dts/dra7-l4.dtsi                     |  2 +-
- .../boot/dts/logicpd-torpedo-37xx-devkit-28.dts    |  1 -
- arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi   | 13 ++++-
- arch/arm/boot/dts/motorola-cpcap-mapphone.dtsi     |  4 +-
- arch/arm/boot/dts/omap3-tao3530.dtsi               |  2 +-
- arch/arm/boot/dts/omap4.dtsi                       |  4 +-
- arch/arm/configs/multi_v4t_defconfig               | 13 ++---
- arch/arm/configs/multi_v5_defconfig                | 24 ++++-----
- arch/arm/configs/multi_v7_defconfig                | 32 +++++-------
- arch/arm/mach-omap2/timer.c                        |  4 +-
- arch/arm/mach-pxa/icontrol.c                       |  6 +--
- arch/arm/mach-socfpga/socfpga.c                    | 12 ++---
- arch/arm64/boot/dts/arm/juno-base.dtsi             |  1 -
- arch/arm64/boot/dts/arm/juno-clocks.dtsi           |  4 +-
- arch/arm64/configs/defconfig                       | 36 ++++---------
- drivers/bus/ti-sysc.c                              | 21 ++++++--
- drivers/cpufreq/tegra124-cpufreq.c                 | 59 ++++++++++++++++++++++
- drivers/firmware/arm_scmi/bus.c                    |  8 +--
- drivers/memory/tegra/tegra30-emc.c                 |  2 +-
- drivers/soc/aspeed/aspeed-lpc-snoop.c              |  4 +-
- drivers/soc/mediatek/mtk-cmdq-helper.c             |  2 +-
- drivers/soc/tegra/pmc.c                            | 47 ++++++++++++++++-
- drivers/tee/optee/call.c                           |  7 +++
- drivers/tee/optee/core.c                           | 20 +++++---
- drivers/tee/optee/shm_pool.c                       | 12 ++++-
- include/linux/platform_data/ti-sysc.h              |  1 +
- 32 files changed, 312 insertions(+), 139 deletions(-)
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMTEvMjUvMTkgNDowNyBQTSwgQWxleCBLb2dhbiB3cm90ZToKPiBAQCAtMjM0LDEyICsyNjMs
+MTMgQEAgX19hbHdheXNfaW5saW5lIHUzMiBjbmFfcHJlX3NjYW4oc3RydWN0IHFzcGlubG9jayAq
+bG9jaywKPiAgCXN0cnVjdCBjbmFfbm9kZSAqY24gPSAoc3RydWN0IGNuYV9ub2RlICopbm9kZTsK
+PiAgCj4gIAkvKgo+IC0JICogc2V0dGluZyBAcHJlX3NjYW5fcmVzdWx0IHRvIDEgaW5kaWNhdGVz
+IHRoYXQgbm8gcG9zdC1zY2FuCj4gKwkgKiBzZXR0aW5nIEBwcmVfc2Nhbl9yZXN1bHQgdG8gMSBv
+ciAyIGluZGljYXRlcyB0aGF0IG5vIHBvc3Qtc2Nhbgo+ICAJICogc2hvdWxkIGJlIG1hZGUgaW4g
+Y25hX3Bhc3NfbG9jaygpCj4gIAkgKi8KPiAgCWNuLT5wcmVfc2Nhbl9yZXN1bHQgPQo+IC0JCWNu
+LT5pbnRyYV9jb3VudCA9PSBpbnRyYV9ub2RlX2hhbmRvZmZfdGhyZXNob2xkID8KPiAtCQkJMSA6
+IGNuYV9zY2FuX21haW5fcXVldWUobm9kZSwgbm9kZSk7Cj4gKwkJKG5vZGUtPmxvY2tlZCA8PSAx
+ICYmIHByb2JhYmx5KFNIVUZGTEVfUkVEVUNUSU9OX1BST0JfQVJHKSkgPwo+ICsJCQkxIDogY24t
+PmludHJhX2NvdW50ID09IGludHJhX25vZGVfaGFuZG9mZl90aHJlc2hvbGQgPwo+ICsJCQkyIDog
+Y25hX3NjYW5fbWFpbl9xdWV1ZShub2RlLCBub2RlKTsKPiAgCj4gIAlyZXR1cm4gMDsKPiAgfQo+
+IEBAIC0yNTMsMTIgKzI4MywxNSBAQCBzdGF0aWMgaW5saW5lIHZvaWQgY25hX3Bhc3NfbG9jayhz
+dHJ1Y3QgbWNzX3NwaW5sb2NrICpub2RlLAo+ICAKPiAgCXUzMiBzY2FuID0gY24tPnByZV9zY2Fu
+X3Jlc3VsdDsKPiAgCj4gKwlpZiAoc2NhbiA9PSAxKQo+ICsJCWdvdG8gcGFzc19sb2NrOwo+ICsK
+PiAgCS8qCj4gIAkgKiBjaGVjayBpZiBhIHN1Y2Nlc3NvciBmcm9tIHRoZSBzYW1lIG51bWEgbm9k
+ZSBoYXMgbm90IGJlZW4gZm91bmQgaW4KPiAgCSAqIHByZS1zY2FuLCBhbmQgaWYgc28sIHRyeSB0
+byBmaW5kIGl0IGluIHBvc3Qtc2NhbiBzdGFydGluZyBmcm9tIHRoZQo+ICAJICogbm9kZSB3aGVy
+ZSBwcmUtc2NhbiBzdG9wcGVkIChzdG9yZWQgaW4gQHByZV9zY2FuX3Jlc3VsdCkKPiAgCSAqLwo+
+IC0JaWYgKHNjYW4gPiAxKQo+ICsJaWYgKHNjYW4gPiAyKQo+ICAJCXNjYW4gPSBjbmFfc2Nhbl9t
+YWluX3F1ZXVlKG5vZGUsIGRlY29kZV90YWlsKHNjYW4pKTsKPiAgCj4gIAlpZiAoIXNjYW4pIHsg
+LyogaWYgZm91bmQgYSBzdWNjZXNzb3IgZnJvbSB0aGUgc2FtZSBudW1hIG5vZGUgKi8KPiBAQCAt
+MjgxLDUgKzMxNCw2IEBAIHN0YXRpYyBpbmxpbmUgdm9pZCBjbmFfcGFzc19sb2NrKHN0cnVjdCBt
+Y3Nfc3BpbmxvY2sgKm5vZGUsCj4gIAkJdGFpbF8ybmQtPm5leHQgPSBuZXh0Owo+ICAJfQo+ICAK
+PiArcGFzc19sb2NrOgo+ICAJYXJjaF9tY3NfcGFzc19sb2NrKCZuZXh0X2hvbGRlci0+bG9ja2Vk
+LCB2YWwpOwo+ICB9CgpJIHRoaW5rIHlvdSBtaWdodCBoYXZlIG1pc2hhbmRsZWQgdGhlIHByb3Bl
+ciBhY2NvdW50aW5nIG9mIGludHJhX2NvdW50LgpIb3cgYWJvdXQgc29tZXRoaW5nIGxpa2U6Cgpk
+aWZmIC0tZ2l0IGEva2VybmVsL2xvY2tpbmcvcXNwaW5sb2NrX2NuYS5oIGIva2VybmVsL2xvY2tp
+bmcvcXNwaW5sb2NrX2NuYS5oCmluZGV4IGYxZWVmNmJlY2U3Yi4uMDNmOGZkZWMyYjgwIDEwMDY0
+NAotLS0gYS9rZXJuZWwvbG9ja2luZy9xc3BpbmxvY2tfY25hLmgKKysrIGIva2VybmVsL2xvY2tp
+bmcvcXNwaW5sb2NrX2NuYS5oCkBAIC0yNjgsNyArMjY4LDcgQEAgX19hbHdheXNfaW5saW5lIHUz
+MiBjbmFfcHJlX3NjYW4oc3RydWN0IHFzcGlubG9jayAqbG9jaywKwqDCoMKgwqDCoMKgwqDCoCAq
+LwrCoMKgwqDCoMKgwqDCoCBjbi0+cHJlX3NjYW5fcmVzdWx0ID0KwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgIChub2RlLT5sb2NrZWQgPD0gMSAmJgpwcm9iYWJseShTSFVGRkxFX1JFRFVD
+VElPTl9QUk9CX0FSRykpID8KLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgIDEgOiBjbi0+aW50cmFfY291bnQgPT0KaW50cmFfbm9kZV9oYW5kb2ZmX3RocmVzaG9s
+ZCA/CivCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAxIDogY24t
+PmludHJhX2NvdW50ID49CmludHJhX25vZGVfaGFuZG9mZl90aHJlc2hvbGQgPwrCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIDIgOiBjbmFfc2Nhbl9tYWluX3F1
+ZXVlKG5vZGUsIG5vZGUpOwrCoArCoMKgwqDCoMKgwqDCoCByZXR1cm4gMDsKQEAgLTI4Myw5ICsy
+ODMsNiBAQCBzdGF0aWMgaW5saW5lIHZvaWQgY25hX3Bhc3NfbG9jayhzdHJ1Y3QgbWNzX3NwaW5s
+b2NrCipub2RlLArCoArCoMKgwqDCoMKgwqDCoCB1MzIgc2NhbiA9IGNuLT5wcmVfc2Nhbl9yZXN1
+bHQ7CsKgCi3CoMKgwqDCoMKgwqAgaWYgKHNjYW4gPT0gMSkKLcKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgZ290byBwYXNzX2xvY2s7Ci0KwqDCoMKgwqDCoMKgwqAgLyoKwqDCoMKgwqDCoMKg
+wqDCoCAqIGNoZWNrIGlmIGEgc3VjY2Vzc29yIGZyb20gdGhlIHNhbWUgbnVtYSBub2RlIGhhcyBu
+b3QgYmVlbgpmb3VuZCBpbgrCoMKgwqDCoMKgwqDCoMKgICogcHJlLXNjYW4sIGFuZCBpZiBzbywg
+dHJ5IHRvIGZpbmQgaXQgaW4gcG9zdC1zY2FuIHN0YXJ0aW5nCmZyb20gdGhlCkBAIC0yOTQsNyAr
+MjkxLDEzIEBAIHN0YXRpYyBpbmxpbmUgdm9pZCBjbmFfcGFzc19sb2NrKHN0cnVjdAptY3Nfc3Bp
+bmxvY2sgKm5vZGUsCsKgwqDCoMKgwqDCoMKgIGlmIChzY2FuID4gMikKwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgIHNjYW4gPSBjbmFfc2Nhbl9tYWluX3F1ZXVlKG5vZGUsIGRlY29kZV90
+YWlsKHNjYW4pKTsKwqAKLcKgwqDCoMKgwqDCoCBpZiAoIXNjYW4pIHsgLyogaWYgZm91bmQgYSBz
+dWNjZXNzb3IgZnJvbSB0aGUgc2FtZSBudW1hIG5vZGUgKi8KK8KgwqDCoMKgwqDCoCBpZiAoc2Nh
+biA8PSAxKSB7IC8qIGlmIGZvdW5kIGEgc3VjY2Vzc29yIGZyb20gdGhlIHNhbWUgbnVtYSBub2Rl
+ICovCivCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC8qIGluYyBAaW50cmFfY291bnQgaWYg
+dGhlIHNlY29uZGFyeSBxdWV1ZSBpcyBub3QgZW1wdHkgKi8KK8KgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgKChzdHJ1Y3QgY25hX25vZGUgKiluZXh0X2hvbGRlciktPmludHJhX2NvdW50ID0K
+K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNuLT5pbnRyYV9j
+b3VudCArIChub2RlLT5sb2NrZWQgPiAxKTsKK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
+aWYgKChzY2FuID09IDEpCivCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCBnb3RvIHBhc3NfbG9jazsKKwrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgbmV4
+dF9ob2xkZXIgPSBub2RlLT5uZXh0OwrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLyoK
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKiB3ZSB1bmxvY2sgc3VjY2Vzc29yIGJ5
+IHBhc3NpbmcgYSBub24temVybyB2YWx1ZSwKQEAgLTMwMiw5ICszMDUsNiBAQCBzdGF0aWMgaW5s
+aW5lIHZvaWQgY25hX3Bhc3NfbG9jayhzdHJ1Y3QgbWNzX3NwaW5sb2NrCipub2RlLArCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAqIGlmIHdlIGFjcXVpcmVkIHRoZSBNQ1MgbG9jayB3
+aGVuIGl0cyBxdWV1ZSB3YXMgZW1wdHkKwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
+Ki8KwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHZhbCA9IG5vZGUtPmxvY2tlZCA/IG5v
+ZGUtPmxvY2tlZCA6IDE7Ci3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC8qIGluYyBAaW50
+cmFfY291bnQgaWYgdGhlIHNlY29uZGFyeSBxdWV1ZSBpcyBub3QgZW1wdHkgKi8KLcKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAgKChzdHJ1Y3QgY25hX25vZGUgKiluZXh0X2hvbGRlciktPmlu
+dHJhX2NvdW50ID0KLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IGNuLT5pbnRyYV9jb3VudCArIChub2RlLT5sb2NrZWQgPiAxKTsKwqDCoMKgwqDCoMKgwqAgfSBl
+bHNlIGlmIChub2RlLT5sb2NrZWQgPiAxKSB7wqDCoMKgIC8qIGlmIHNlY29uZGFyeSBxdWV1ZSBp
+cyBub3QKZW1wdHkgKi8KwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC8qIG5leHQgaG9s
+ZGVyIHdpbGwgYmUgdGhlIGZpcnN0IG5vZGUgaW4gdGhlIHNlY29uZGFyeQpxdWV1ZSAqLwrCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgdGFpbF8ybmQgPSBkZWNvZGVfdGFpbChub2RlLT5s
+b2NrZWQpOwoKVGhlIG1lYW5pbmcgb2Ygc2NhbiB2YWx1ZToKCjAgLSBwYXNzIHRvIG5leHQgY25h
+IG5vZGUsIHdoaWNoIGlzIGluIHRoZSBzYW1lIG51bWEgbm9kZS4gQWRkaXRpb25hbApjbmEgbm9k
+ZSBtYXkgb3IgbWF5IG5vdCBiZSBhZGRlZCB0byB0aGUgc2Vjb25kYXJ5IHF1ZXVlCgoxIC0gcGFz
+cyB0byBuZXh0IGNuYSBub2RlLCB3aGljaCBtYXkgbm90IGJlIGluIHRoZSBzYW1lIG51bWEgbm9k
+ZS4gTm8KY2hhbmdlIHRvIHNlY29uZGFyeSBxdWV1ZQoKMiAtIGV4Y2VlZCBpbnRyYSBub2RlIGhh
+bmRvZmYgdGhyZXNob2xkLCB1bmNvbmRpdGlvbmFsbHkgbWVyZ2UgYmFjayB0aGUKc2Vjb25kYXJ5
+IHF1ZXVlIGNuYSBub2RlcywgaWYgYXZhaWxhYmxlCgo+MiBubyBjbmEgbm9kZSBvZiB0aGUgc2Ft
+ZSBudW1hIG5vZGUgZm91bmQsIHVuY29uZGl0aW9uYWxseSBtZXJnZSBiYWNrCnRoZSBzZWNvbmRh
+cnkgcXVldWUgY25hIG5vZGVzLCBpZiBhdmFpbGFibGUKClRoZSBjb2RlIHdpbGwgYmUgZWFzaWVy
+IHRvIHJlYWQgaWYgc3ltYm9saWMgbmFtZXMgaW5zdGVhZCBvZiBqdXN0IG51bWJlcnMuCgpDaGVl
+cnMsCkxvbmdtYW4KCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtYXJtLWtlcm5lbAo=
