@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53BB4115FB0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 23:50:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 608E2115FB2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 23:51:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yem4DkkJOCoKJac4PUHgo0VN0mRX2H5f7kR/7WxEiSc=; b=B7Fj8GBI04qRGj
-	SQvpBmIqWsWEt27kDAHwOtNE/TBtqF612qtIFp2lUIiLGsaGCfEucw6YQYupfb5toogT3pLp9MN6j
-	SdVx8WYWm7GsuVVoeHj7poS7TUXscJ1JFTpmLPTfA30Kbrmh56dvfrF7XDXQ/YL0FE2LPBxY/DraY
-	v1NpHRktIvxOfKU41qQcgi9bN1ToShTiomnzHT+VgkPE+Mgw1ob7P1b1dfah03Izz1bYQXVwNSqSV
-	UinqaTr47GbIGu9OpY1uCqSLayH5718i7LnYGCbk7wGeDyWQXU6leYSBKn8XMcGLDANOJfGiSjklv
-	Safuhl3FnmmmC9x5Xqpw==;
+	List-Owner; bh=PKGsN22rSRR53e/b6I9+ZgXoiMw1YDWaY2wH2ThoTE8=; b=MqewnEqLTuFanA
+	KMEQdjju7QRQ8clnK0UGkcIi2hSfQyWJN8bidPXlPLASX/V3QLafViIlt9pPbeVDtzb37V/tvaUDg
+	u+3UAN0DlTM5bkmO+SB3QhD7+88d/tIfuRUaMLskk3iwE+pL5kcSVDIbXjrhgsIV8PUG4i7vSRm2U
+	37WHSh2XRaKkfySOlWEaMJZvTF355y8xU91TCpLeSA+mvgogxYgEJziDkYhT/Ug7L65mephG0ZeoL
+	29Fcj8UHP+VS3X8B3nMc/QlKd0S8UI8iB1mlj2z703/uh9+yHQApbLUu3CWN7cPJVDN04PRVQ0/Td
+	S2rs8iYsQT4VQ7V8+PBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idiuF-0006S4-B6; Sat, 07 Dec 2019 22:50:31 +0000
+	id 1idiuW-0006iT-NT; Sat, 07 Dec 2019 22:50:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idisQ-0003WY-Qf; Sat, 07 Dec 2019 22:48:40 +0000
+ id 1idisW-0003bL-2L; Sat, 07 Dec 2019 22:48:45 +0000
 Received: from ziggy.de (unknown [95.169.229.25])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8CB2B2467D;
- Sat,  7 Dec 2019 22:48:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A49C924683;
+ Sat,  7 Dec 2019 22:48:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575758918;
- bh=auWyY9ONWyopnTa7jwZEHJgz7lHXT4cKj+bG2jBUqvU=;
+ s=default; t=1575758923;
+ bh=TiW6KdtW/ar4YbEgXwuzvM2malWSh9JMEZcRb2LrTeE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Q9AB2uaGjUGVaAu/hrxjaHiMFp5gwlOjJ+TcGlwUYwGRWQQe04sZRIA5LlDtLfOYn
- ZCJ1i/cxlauRwdhfThk21ZZ3E7/CEnjGshfPwK4Oido7fmRgpZs5l3oU/Wpgy+/zSF
- 3rcww1J08OVRy8RuEENpoIHB58+lzRXhjl69CPQA=
+ b=Hux5QYpp3mkEwbFwe+Kii29sd+ioU4lhHyQ0rKFT5mU4jtTxwGU6AFkcyMdeEhuFX
+ xDCs4tBbHV59MO1GJZUGjjegMqsYKGlbC8MQ/+UOWmAUvNKT7omB0+gblSCmjcY/f4
+ PaSo7GrV/K88iRpIRWGzTfueHmuv7BhxtvWYtEDo=
 From: matthias.bgg@kernel.org
 To: robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
  p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
  sboyd@kernel.org, ulrich.hecht+renesas@gmail.com,
  laurent.pinchart@ideasonboard.com, enric.balletbo@collabora.com
-Subject: [resend PATCH v6 07/12] clk: mediatek: mt2712e: switch to platform
- device probing
-Date: Sat,  7 Dec 2019 23:47:35 +0100
-Message-Id: <20191207224740.24536-8-matthias.bgg@kernel.org>
+Subject: [resend PATCH v6 08/12] clk: mediatek: mt6779: switch mmsys to
+ platform device probing
+Date: Sat,  7 Dec 2019 23:47:36 +0100
+Message-Id: <20191207224740.24536-9-matthias.bgg@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191207224740.24536-1-matthias.bgg@kernel.org>
 References: <20191207224740.24536-1-matthias.bgg@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_144838_944430_25F1708B 
-X-CRM114-Status: GOOD (  12.22  )
+X-CRM114-CacheID: sfid-20191207_144844_201480_4470AF6A 
+X-CRM114-Status: GOOD (  11.51  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -94,45 +94,50 @@ From: Matthias Brugger <mbrugger@suse.com>
 Switch probing for the MMSYS to support invocation to a
 plain paltform device. The driver will be probed by the DRM subsystem.
 
-Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+Singed-off-by: Matthias Brugger <mbrugger@suse.com>
 ---
- drivers/clk/mediatek/clk-mt2712-mm.c | 39 +++++++++++++++++++---------
- 1 file changed, 27 insertions(+), 12 deletions(-)
+ drivers/clk/mediatek/clk-mt6779-mm.c | 41 +++++++++++++++++++---------
+ 1 file changed, 28 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/clk/mediatek/clk-mt2712-mm.c b/drivers/clk/mediatek/clk-mt2712-mm.c
-index 1c5948be35f3..d018db568263 100644
---- a/drivers/clk/mediatek/clk-mt2712-mm.c
-+++ b/drivers/clk/mediatek/clk-mt2712-mm.c
-@@ -4,14 +4,20 @@
-  * Author: Weiyi Lu <weiyi.lu@mediatek.com>
+diff --git a/drivers/clk/mediatek/clk-mt6779-mm.c b/drivers/clk/mediatek/clk-mt6779-mm.c
+index fb5fbb8e3e41..439ec460c166 100644
+--- a/drivers/clk/mediatek/clk-mt6779-mm.c
++++ b/drivers/clk/mediatek/clk-mt6779-mm.c
+@@ -4,13 +4,19 @@
+  * Author: Wendell Lin <wendell.lin@mediatek.com>
   */
  
 +#include <linux/module.h>
  #include <linux/clk-provider.h>
  #include <linux/platform_device.h>
+ #include <dt-bindings/clock/mt6779-clk.h>
 +#include <linux/slab.h>
  
  #include "clk-mtk.h"
  #include "clk-gate.h"
  
- #include <dt-bindings/clock/mt2712-clk.h>
- 
-+struct clk_mt2712_mm_priv {
++struct clk_mt6779_mm_priv {
 +	struct clk_onecell_data *clk_data;
 +};
 +
  static const struct mtk_gate_regs mm0_cg_regs = {
- 	.set_ofs = 0x104,
- 	.clr_ofs = 0x108,
-@@ -128,16 +134,22 @@ static const struct mtk_gate mm_clks[] = {
+ 	.set_ofs = 0x0104,
+ 	.clr_ofs = 0x0108,
+@@ -84,30 +90,39 @@ static const struct mtk_gate mm_clks[] = {
+ 	GATE_MM1(CLK_MM_DISP_OVL_FBDC, "mm_disp_ovl_fbdc", "mm_sel", 16),
+ };
  
- static int clk_mt2712_mm_probe(struct platform_device *pdev)
+-static const struct of_device_id of_match_clk_mt6779_mm[] = {
+-	{ .compatible = "mediatek,mt6779-mmsys", },
+-	{}
+-};
+-
+ static int clk_mt6779_mm_probe(struct platform_device *pdev)
  {
 -	struct clk_onecell_data *clk_data;
- 	int r;
 -	struct device_node *node = pdev->dev.of_node;
++	struct clk_mt6779_mm_priv *private;
 +	struct device_node *node = pdev->dev.parent->of_node;
-+	struct clk_mt2712_mm_priv *private;
 +
 +	private = devm_kzalloc(&pdev->dev, sizeof(*private), GFP_KERNEL);
 +	if (!private)
@@ -143,43 +148,34 @@ index 1c5948be35f3..d018db568263 100644
 +	platform_set_drvdata(pdev, private);
  
  	mtk_clk_register_gates(node, mm_clks, ARRAY_SIZE(mm_clks),
--			clk_data);
-+			private->clk_data);
+-			       clk_data);
++			       private->clk_data);
  
--	r = of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
-+	r = of_clk_add_provider(node, of_clk_src_onecell_get,
-+			private->clk_data);
- 
- 	if (r != 0)
- 		pr_err("%s(): could not register clock provider: %d\n",
-@@ -146,17 +158,20 @@ static int clk_mt2712_mm_probe(struct platform_device *pdev)
- 	return r;
- }
- 
--static const struct of_device_id of_match_clk_mt2712_mm[] = {
--	{ .compatible = "mediatek,mt2712-mmsys", },
--	{}
--};
-+static int clk_mt2712_mm_remove(struct platform_device *pdev)
+-	return of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
++	return of_clk_add_provider(node, of_clk_src_onecell_get,
++						private->clk_data);
++}
++
++static int clk_mt6779_mm_remove(struct platform_device *pdev)
 +{
-+	struct clk_mt2712_mm_priv *private = platform_get_drvdata(pdev);
++	struct clk_mt6779_mm_priv *private = platform_get_drvdata(pdev);
 +
 +	kfree(private->clk_data);
 +
 +	return 0;
-+}
+ }
  
- static struct platform_driver clk_mt2712_mm_drv = {
- 	.probe = clk_mt2712_mm_probe,
-+	.remove = clk_mt2712_mm_remove,
+ static struct platform_driver clk_mt6779_mm_drv = {
+ 	.probe = clk_mt6779_mm_probe,
++	.remove = clk_mt6779_mm_remove,
  	.driver = {
- 		.name = "clk-mt2712-mm",
--		.of_match_table = of_match_clk_mt2712_mm,
+ 		.name = "clk-mt6779-mm",
+-		.of_match_table = of_match_clk_mt6779_mm,
  	},
  };
 -
--builtin_platform_driver(clk_mt2712_mm_drv);
-+module_platform_driver(clk_mt2712_mm_drv);
+-builtin_platform_driver(clk_mt6779_mm_drv);
++module_platform_driver(clk_mt6779_mm_drv);
 -- 
 2.24.0
 
