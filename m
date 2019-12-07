@@ -2,66 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22D96115DD1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 18:41:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90274115DDA
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 18:52:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5SCqs1gHaeBSnvxqyLDAr0DWEU90ut0sQ4LWiyJJuTY=; b=L9ezXGE8s57Csn
-	Dc4BqgHNKhJqAXcZG8fAjRj9n8ouU7tj9Vi9N/PA70h0kDPhrGGKhkbytp9xkzU4vVIiOKFUt/CK/
-	0V3lK/PL2sKMghit2igt5E2irGs1TeGnPsU6saf8HTn5YfsYHWa0/K/NZo8upS3uqXx1rSuYMYk/q
-	mxuOxK+BmsngARtDAm89ZGOmjVsLQpekzYJEO+CEKhH/d60lkw/OIVZMXR3gdvnP4QSWucAcjF9Df
-	5F0SxhK1QRdzu1bysDf+Lci+t9ohzq58ogj9atvV/WNVGZISVWOT+ioZLrL/BN9b1uxn0XOiq7GPI
-	6AI9pZJGMAjXe7HPgGmA==;
+	List-Owner; bh=//s/W5dh3hDm8ywwtz3nuQe4oY5n860VIXIOC9AaLC4=; b=r1h/kJ41WETdLR
+	C3KDWHH4zMb32u+3tnXKEeQUxe9deOckTjOW3pry+3RG2bWohTIx5azOK+RNxzVi/8J6F4rXn4pe+
+	PFjMusRHNkWGefwU6XuGlKrDWsjirYNi2OSGhfMpFJoYMLsilI9aYbZ5MjuZSx42NOOUXLS1RoJuD
+	DnnzWP1vt3R7h9zZzMQPSAAUVKy7nERRfUibdJ3PBVYBEsy0jdOETBANG8zZgUh5KyfHnAoqXrn1d
+	Qk8bZcKHkGoZthwdWr+RA1FTppK82emBcdBKPakbAfDSYd6aEmS1NObxuv+6pXD5LCC84vdpcLCbS
+	6eiQL4RdziBrMnI/F8HA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ide4p-0005OY-OY; Sat, 07 Dec 2019 17:41:07 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1ideFl-0008PB-SH; Sat, 07 Dec 2019 17:52:25 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ide4g-0005O7-Rg; Sat, 07 Dec 2019 17:41:01 +0000
-Received: by mail-wm1-x344.google.com with SMTP id g206so11149393wme.1;
- Sat, 07 Dec 2019 09:40:57 -0800 (PST)
+ id 1ideFd-0008Oq-18
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Dec 2019 17:52:18 +0000
+Received: by mail-wm1-x341.google.com with SMTP id f4so12120488wmj.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 07 Dec 2019 09:52:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=XWwT/3ogQ6rGrEobO2Upqy/lS3fg7UcDxUX8zTsD8pc=;
- b=LbLbnbNFZ6qBx8SQshxglO+vBt22nV1nB+fX0JezMPPh5C3/0PSwRQemIXZXrqUISS
- P78N/Fg3cb8ugQkBdpjNHcQhKz53flM5z6KXqab5owLC/KCe4yVkXyfBO99Ij72ljFi+
- fr85XTKJKnOyS4qYM5VZURmVBhPps18fbyPM6xlin9NsN/5CT/DeSU2aFiIGX0xgpM5N
- D5FCiZOWFbt22ZCUXPb4k3i/cMDUP6VG3b9+1Bf77t2wv25dIWL+JpBNxbq0aUZfM4C8
- 6tkalqIIUhSeJazQfIld8vm8G2ax3WwFCj8pZ3dcjcWTT8OcN78gm/AJEY73Bp+iNbBP
- PcoA==
+ bh=8enLPStD+vaxI/d3dF4PyuF9xUik6NT4dN5npIUcvbU=;
+ b=rTqPsrAhZFf1RQcw36h07dYzMirZzBXQFsdcXuxDzRD7twdTiwdLAwq/5QG9MTszhN
+ UYGvTIsYGbswHFAKrx4GxB8t02KgS1Nsbb3SN1fosaNY3yDRx4/K/stX67Qnd3EFNDpN
+ ERcMIatoDDyka2jjUetSrR8jSXRFNidMlDAKxSOMQFEiVSBuWNCOCC0XkGXeL3nxz/IT
+ A5MXeMIUTjUcqpugr8/KcNXTDeZ+Ij+4mu6roP6kovIXmlGJX5Xemz697teEMco9b7J9
+ c+hBIMVbDxR+zWha48tS6M5Du9vcLfmZ3k01lIaICB817/UKJCFTBWpvcTTHEyp4DCFz
+ BOKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=XWwT/3ogQ6rGrEobO2Upqy/lS3fg7UcDxUX8zTsD8pc=;
- b=FgXExJdKoRK4mxmlLP6dm7bDKAvPuht9j4xC5JDieL1JcBetcM2NopFeiD+TQDSJ2T
- zfByW9iDXcLMhySEvAL72qnHJ91tKwB1IyVh3fslIpN9a1ycyDOD9081UV32/Kt0lgX0
- vQjdKxtIy5/OeSY/6FAdU6cuDTvH+8g8IOvqp+PyCh5knWVvQmYyoJu4QlsaWM81ZwCf
- 72oLOw9lxgrUYxibMv8dhBX/DTmA/ScFEx2rT/PYyk60JJ6lGSrbZsGMW/yGe6cfcQe9
- L6NqHG+xL78+gUmDGIuXaeHY4xy6OW9aaWkY31uu/d4egOw/8eu4nV2AvJ9DrqjDt1VG
- hZFg==
-X-Gm-Message-State: APjAAAUp2Pe8s2cK0qNkF2e0Ty6JAZyMuBp9tWjPiEYzhhQQcM40VA0y
- kG9fOOb5Cj0wx4oDXQmicYQ=
-X-Google-Smtp-Source: APXvYqwJ+qC7mo54CJO+CCdS8/RVfJCb9SBx9boiNBk6M1Ldf2Y1M26EAdM9JxTIAlpcKeUSVLaZ+A==
-X-Received: by 2002:a1c:dc82:: with SMTP id
- t124mr10085650wmg.122.1575740456068; 
- Sat, 07 Dec 2019 09:40:56 -0800 (PST)
+ bh=8enLPStD+vaxI/d3dF4PyuF9xUik6NT4dN5npIUcvbU=;
+ b=lvbOKtN6YDVn4gn6QejwHtlXTIpKP+lJm76Ta890tMe74lcQaNaNM7Va4NV9VSiOHi
+ m4shSZRg+I9nwuWhMGe2EAUlFtD/PFpFoNWm4MG1+B5BtlBTVJfDKcv6nGyEwb7OhB8v
+ uP+dbVw/Nv0QIf23VZl0UeflCc8a/Qx7RdHCEQDcyA5RQhTDsx15OASKUwux3Y0sHSGf
+ fZeY2Qi4m9UNCAll7skLW6vHNzDbosKs9ekgOtat0Ss9BVMu06to7P8bn4hP6jyBvaAc
+ tcnE0X+xeWmfY5/Ax9v7sIXMR09CTUxvq9xTQvROGd04xLwsYPEe9cJgxIevRxG5IhhJ
+ ACaA==
+X-Gm-Message-State: APjAAAUOby5EBWSigvJmNoRVMkwNQgOFEoGiVehCOe8YnYMClK9VQTJW
+ OneSKF0Oj0TD7mBNAUkIQ83p/GkI
+X-Google-Smtp-Source: APXvYqwMpf0ApYOkDtzSo2cdrCUJ7ZxSr4XqImTC1c7cP9yQlctm4XBGrvnw7aQZp/ozIIgGUUJwaA==
+X-Received: by 2002:a05:600c:290e:: with SMTP id
+ i14mr16189844wmd.126.1575741134899; 
+ Sat, 07 Dec 2019 09:52:14 -0800 (PST)
 Received: from [10.230.28.123] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id r21sm7164740wmh.4.2019.12.07.09.40.51
+ by smtp.gmail.com with ESMTPSA id f12sm7109137wmf.28.2019.12.07.09.52.11
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 07 Dec 2019 09:40:55 -0800 (PST)
-Subject: Re: [PATCH v1 1/2] soc: mediatek: add header for SiP service interface
-To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
- martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
- pedrom.sousa@synopsys.com, jejb@linux.ibm.com, matthias.bgg@gmail.com
-References: <1575700748-28191-1-git-send-email-stanley.chu@mediatek.com>
- <1575700748-28191-2-git-send-email-stanley.chu@mediatek.com>
+ Sat, 07 Dec 2019 09:52:13 -0800 (PST)
+Subject: Re: [PATCH 2/2] soc: bcm: iproc: Add Broadcom iProc IDM driver
+To: Ray Jui <ray.jui@broadcom.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+References: <20191202233127.31160-1-ray.jui@broadcom.com>
+ <20191202233127.31160-3-ray.jui@broadcom.com>
+ <955f1d22-a1df-377a-1ed9-7fdaa4309b33@gmail.com>
+ <d4740de9-52b2-a4f8-7a4b-4f523c61cb9c@broadcom.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -117,23 +120,23 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <b3c568f1-d57b-f3f3-b1da-4b312c595fc8@gmail.com>
-Date: Sat, 7 Dec 2019 09:40:50 -0800
+Message-ID: <2fed95d6-72a0-328e-806c-ba214b52ff11@gmail.com>
+Date: Sat, 7 Dec 2019 09:52:11 -0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <1575700748-28191-2-git-send-email-stanley.chu@mediatek.com>
+In-Reply-To: <d4740de9-52b2-a4f8-7a4b-4f523c61cb9c@broadcom.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_094058_921745_B699AC4C 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20191207_095217_098878_676EDF7A 
+X-CRM114-Status: GOOD (  15.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -157,71 +160,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: leon.chen@mediatek.com, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 12/6/2019 10:39 PM, Stanley Chu wrote:
-> Add a header for the SiP service interface defined to access
-> the UFSHCI controller handling secure commands in MediaTek Chipsets.
-> 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> ---
->  include/linux/soc/mediatek/mtk_sip_svc.h | 26 ++++++++++++++++++++++++
->  1 file changed, 26 insertions(+)
->  create mode 100644 include/linux/soc/mediatek/mtk_sip_svc.h
-> 
-> diff --git a/include/linux/soc/mediatek/mtk_sip_svc.h b/include/linux/soc/mediatek/mtk_sip_svc.h
-> new file mode 100644
-> index 000000000000..7b69aa06f58d
-> --- /dev/null
-> +++ b/include/linux/soc/mediatek/mtk_sip_svc.h
-> @@ -0,0 +1,26 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * Copyright (C) 2019 MediaTek Inc.
-> + */
-> +
-> +#ifndef __MTK_SIP_SVC_H
-> +#define __MTK_SIP_SVC_H
-> +
-> +/* Error Code */
-> +#define SIP_SVC_E_SUCCESS               0
-> +#define SIP_SVC_E_NOT_SUPPORTED         -1
-> +#define SIP_SVC_E_INVALID_PARAMS        -2
-> +#define SIP_SVC_E_INVALID_RANGE         -3
-> +#define SIP_SVC_E_PERMISSION_DENIED     -4
-> +
-> +#ifdef CONFIG_ARM64
-> +#define MTK_SIP_SMC_AARCH_BIT           0x40000000
-> +#else
-> +#define MTK_SIP_SMC_AARCH_BIT           0x00000000
-> +#endif
-
-Cannot you use the definitions from include/linux/arm-smccc.h and use
-ARM_SMCCC_CALL_CONV_SHIFT here and associated helpers?
-
-> +
-> +/* UFS related SMC call */
-> +#define MTK_SIP_UFS_CONTROL \
-> +	(0x82000276 | MTK_SIP_SMC_AARCH_BIT)
-
-Does bit 31 map to the fast vs. slow call of the ARM SMCCC convention or
-does it have a different meaning (should not). Likewise bit 25 would be
-ARM_SMMCCC_OWNER_SIP no?
-
-That would leave us with only 0x276 which is a valid function number.
--- 
-Florian
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAxMi82LzIwMTkgNToxNSBQTSwgUmF5IEp1aSB3cm90ZToKPj4KPj4gRGlkIG5vdCB5b3Ug
+aW50ZW5kIHRvIGRyb3AgdGhlIHJlZmVyZW5jZSBjb3VudCBvbiBlbG9nX25wIGhlcmU/Cj4+Cj4g
+Cj4gU29ycnksIEknbSBub3QgZm9sbG93aW5nIHRoaXMgY29tbWVudC4gQ291bGQgeW91IHBsZWFz
+ZSBoZWxwIHRvIGNsYXJpZnkKPiBmb3IgbWUgYSBiaXQgbW9yZT8gVGhhbmtzIQoKSSBtZWFudCB0
+aGF0IHlvdSBkcm9wIHRoZSByZWZlcmVuY2UgY291bnQgb24gJ25wJyBidXQgeW91IGNhbGxlZApm
+dW5jdGlvbnMgdGhhdCBpbmNyZW1lbnRlZCB0aGUgcmVmZXJlbmNlIGNvdW50IG9uICdlbG9nX25w
+Jywgc28gbWF5YmUKeW91IGFyZSBub3QgZG9pbmcgdGhlIG9mX25vZGVfcHV0KCkgb24gdGhlIGFw
+cHJvcHJpYXRlIGRldmljZV9ub2RlCnJlZmVyZW5jZT8KCj4gCj4+IFtzbmlwXQo+Pgo+Pj4gK3N0
+YXRpYyBzdHJ1Y3QgcGxhdGZvcm1fZHJpdmVyIGlwcm9jX2lkbV9kcml2ZXIgPSB7Cj4+PiArwqDC
+oMKgIC5wcm9iZSA9IGlwcm9jX2lkbV9wcm9iZSwKPj4KPj4gRG8gbm90IHlvdSBuZWVkIGEgcmVt
+b3ZlIGZ1bmN0aW9uIGluIG9yZGVyIHRvIHVucmVnaXN0ZXIgdGhlIHN5c2ZzIGZpbGUKPj4gdGhh
+dCB5b3UgY3JlYXRlZCBpbiBpcHJvY19pZG1fZGV2X3Byb2JlKCkgdG8gYXZvaWQgYmluZC91bmJp
+bmQgKG9yCj4+IHJtbW9kL21vZHByb2JlKSB0byBzcGl0IG91dCBhbiBleGlzdGluZyBzeXNmcyBl
+bnRyeSB3YXJuaW5nPwo+Pgo+IAo+IFRoaXMgZHJpdmVyIHNob3VsZCBuZXZlciBiZSBjb21waWxl
+ZCBhcyBhIG1vZHVsZS4gSXQncyBtZWFudCB0byBiZQo+IGFsd2F5cyB0aGVyZSB0byBjYXB0dXJl
+IElETSBidXMgdGltZW91dHMuCj4gCj4gQnV0IHlvdSBhcmUgcmlnaHQgdGhhdCBJIGNhbm5vdCBw
+cmV2ZW50IHVzZXIgZnJvbSB0cnlpbmcgdG8gdW5iaW5kIGl0Cj4gZm9yIHdoYXRldmVyIHJlYXNv
+bi4gSSdsbCBhZGQgYSByZW1vdmUgcm91dGluZSB0byB0YWtlIGNhcmUgb2YgdGhpcy4KCllvdSBj
+YW4gYWxzbyBzZXQgc3VwcHJlc3NfYmluZF9hdHRycyB0byB5b3VyIHBsYXRmb3JtX2RyaXZlciBz
+dHJ1Y3R1cmUKdG8gcHJldmVudCB1bmJpbmQvYmluZCBmcm9tIGhhcHBlbmluZy4KLS0gCkZsb3Jp
+YW4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
