@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6413D115CF9
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 15:11:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F5F0115CF5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 15:10:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l+b2fRVHaPQJgkybbWPsSqjZlk3z6NbeZtA8YTqqb1c=; b=X/JZssmIA1zAQ0
-	Iawr72WsTaZbwtP0JljUumCC3MD+ipjolJsrW+IQB2WB+UYOE/nIAawyI/P2ChdKj6+yEfSx748bg
-	4n2XufA5RGtL7iaScqxeqE3BuJXAPaAJblv0csS2T8qwZm7uQadv3cwD5uA9vtmjC6Q9sYC8Hyh7+
-	Qr57chQWbu1hnodLVpn7YQnOCN+8A4Y9zoZT2+ulBcZh11CNPy3KTF6Eqsxa6DksFXH6LX00sSRY1
-	G7pr6kfch59YH/mcMpZhCRWv2V0M7GFIrewsfYiJkcDtqeJJ4SnXdL1RNCAZ/LLRpWYpocBcG9F5h
-	RP2Mw9QMJmkYncOO/utg==;
+	List-Owner; bh=c6xf2P4tON+GDwIZ93/glZ0zkTuHDyndMnYiBgNmvAQ=; b=AXiDEXBaXIGYeh
+	Z/rkLnh/EsUgtLqUVABB3tQwZqATAch3uD9iRdgoA8xefZmeNTLUyhKvVTUik+nBTS/J9aAJETKbR
+	Wgmf5ZuevEkiMWjcOlrERZ2pkaVgI6fKGUMhcmDQUkN+fmWqTaN5gp0mAWjx+i88ci15V+hlb66br
+	DmNBG+QeKYgUfF4Vd74K8mcxUPz+vLGTvGYUsHUIpak+nsjbwBv7JENgnEiyaFC8ppRq9KRbaf693
+	NFDMVYrF7Y8U9GWqtyZmpOZaBa/UMMUk13muxcuHBEAVeD0NDhz0CxniZzvRXmWgaf4I2r4DU2ad1
+	/Ui3yUnWCafr1Ry0LZFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idans-0005Zu-0u; Sat, 07 Dec 2019 14:11:24 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1idanQ-0005DF-5U; Sat, 07 Dec 2019 14:10:56 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idahQ-0005r6-Cj; Sat, 07 Dec 2019 14:04:47 +0000
-Received: by mail-lj1-x244.google.com with SMTP id e10so10697481ljj.6;
- Sat, 07 Dec 2019 06:04:44 -0800 (PST)
+ id 1idahR-0005sZ-UJ; Sat, 07 Dec 2019 14:04:48 +0000
+Received: by mail-lj1-x241.google.com with SMTP id j6so10737685lja.2;
+ Sat, 07 Dec 2019 06:04:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=FyzdtrGlFpa66vBX6d0CokXkZKTeTI49fgevppwlQZg=;
- b=OxXSoMt5KqlihAHzAB1tJW/fsjhsEVaVIHQaxDsigHnPvpF+WpEYROGZBvnoIyXDMc
- iTKm69RRPHv7BTKCbm9ObKOcHrT32z/UPlc/Glf9bUIo528EwwWmQZx7GAt+6Jsb10Om
- fcHNr+GJBKvKi5S1pnU9KrJ02ERnGk7w1kOORaWMN1Pt+X1ZEfJpsICzjXkuyzSIz8pZ
- NpVBk28gMihwGzY1CDV9Y0LcT2EqA6Iu9DV3egrmbtWVtlPTTyxQw05se5aFkzoao3yl
- Crfxl/Rn3rB20oEjkeD7xmWORzd3XpiPpJBrpwgakGE9FpVGwYL10TAsQFhHJysyftoA
- +tMw==
+ bh=e7mwo6xIwy/U2XO5N1RPHN+wQVnB1gT7AErUd+pEX6s=;
+ b=msAonKM+50sxoUWm6s+q2esLV9oiyaLLag111TzDTz8SQ+I/uiTt4rgjySC6KQ24ZP
+ fXT8q42NVcWNBBOldzoyC2oxgwuojTx+oMy8sGrVOxFJc+sIFep2xsKxiGPLGuvCUOQb
+ +DehKKaI9EjFDPgvxBfkGTlkJ6+EeOEQ26qQrsfCpTK5BlwPzwkP21+KBhAIynRdYqh0
+ Jw7CBJeqjUi/cNctV7ufzixPmO4vWRS6LCKWGG3X/IuYWOWD+ogcWxss+SUNRHoQhGxd
+ rb3/XNYedJL3zRiwMkBCAYztTMbOApa0sT+M+ObavSMPtvRbjj3Ie40+20QGBlMIpb2P
+ +9bQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=FyzdtrGlFpa66vBX6d0CokXkZKTeTI49fgevppwlQZg=;
- b=jBKS3w5jyPxkUHflPgfLFif7iBDbDRD/zpXftFUVsP1EAD8PkEW9O0e3cIDd3YvjSP
- iJ5o0UUou1CqQ5mqgleAyZGmHBPS61eCuSSrqIfP3BIGPjuoy/yCCsQyw4EfgSZUK6QW
- GHBo6Za0ktjaUYq+geOAW5pnK9+NhTHDFx4FSozuFsIhKAr/VbmTdjqRoryfXLYP4v9A
- c7TNMpgAG7s4YSUKXk64GHdJZ4aUuMaOqG9vpIvg9jEy1N6T2OXhegbSPjYWiYXJA5T5
- oiFlK9cQO6uBjvvNdgme23uNKZVga/y9zZ0+kSxOnAEYMi11B0nsen6GoGoavhOrlX9t
- gBew==
-X-Gm-Message-State: APjAAAVtySnA/YO25Bv0PL+tjOcUzL8wcUtDkai4sPMrObbmXXUpdTvu
- dlHOwC1Inn8vxSeiQsBH5KA=
-X-Google-Smtp-Source: APXvYqzmbqgsvM4MYLG+23AC8GtnbZ5+HS2M1nUpn3JGh1VQ6K7SA75id3AxcVjTkWFzhcRKBys3yw==
-X-Received: by 2002:a2e:9194:: with SMTP id f20mr11614068ljg.154.1575727482524; 
- Sat, 07 Dec 2019 06:04:42 -0800 (PST)
+ bh=e7mwo6xIwy/U2XO5N1RPHN+wQVnB1gT7AErUd+pEX6s=;
+ b=DYAgPdcs7dxph6DW+gE0nJUSLzi128WudQ/7fFyTVpnmzpvJp9Caf6fRMbUQEMadtP
+ j5jQWQyo67KIPn2dj5jLLCNuJw9s4pQZPMB5Ibsy+x6mI9D1cxyO7vTIOoCWNV99nYRg
+ KV6TdvPbF7Mmryzd1gu/0J7TxUATdE5uU9Uh+Y/4c6jwCpdh6i0fZCxEHo5dzCK0H7/y
+ Ak82N6miCzL/VwV6a4UALriQSTRp+8LuwesXWZwt5Ts2EePfrpItHdZBIpCVrsZzBlKS
+ CiMuIWKRkajy+zb1r2C7z0AY3UU78cl2niVMINjHewH2bNL9EOXz7Flylvz8TnNPa++b
+ GWkg==
+X-Gm-Message-State: APjAAAVx13GrWr9R2xj8Ug8+Xn4p8p/IQsGm4M9Lk+985c+E0rJM3/cP
+ Z3jV//iOlgfvPQ2PeDrh708=
+X-Google-Smtp-Source: APXvYqwmQQwd5PYZLccoPw95nR8Lj7iniKv3EdQE4SgC0FhGKWQQgOWwqa3PijSftjOtij17f88rLg==
+X-Received: by 2002:a2e:2d11:: with SMTP id t17mr3482709ljt.177.1575727484353; 
+ Sat, 07 Dec 2019 06:04:44 -0800 (PST)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- w17sm5644188lfn.22.2019.12.07.06.04.40
+ w17sm5644188lfn.22.2019.12.07.06.04.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 07 Dec 2019 06:04:42 -0800 (PST)
+ Sat, 07 Dec 2019 06:04:43 -0800 (PST)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Linus Walleij <linus.walleij@linaro.org>, Sam Ravnborg <sam@ravnborg.org>
-Subject: [PATCH v2 18/25] drm/panel: ronbo-rb070d30: use drm_panel backlight
+Subject: [PATCH v2 19/25] drm/panel: seiko-43wvf1g: use drm_panel backlight
  support
-Date: Sat,  7 Dec 2019 15:03:46 +0100
-Message-Id: <20191207140353.23967-19-sam@ravnborg.org>
+Date: Sat,  7 Dec 2019 15:03:47 +0100
+Message-Id: <20191207140353.23967-20-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191207140353.23967-1-sam@ravnborg.org>
 References: <20191207140353.23967-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_060444_645565_3DE3DB9C 
-X-CRM114-Status: GOOD (  12.21  )
+X-CRM114-CacheID: sfid-20191207_060446_145335_33589481 
+X-CRM114-Status: GOOD (  12.59  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -129,67 +129,108 @@ Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 Cc: Thierry Reding <thierry.reding@gmail.com>
 Cc: Sam Ravnborg <sam@ravnborg.org>
 ---
- drivers/gpu/drm/panel/panel-ronbo-rb070d30.c | 19 +++----------------
- 1 file changed, 3 insertions(+), 16 deletions(-)
+ drivers/gpu/drm/panel/panel-seiko-43wvf1g.c | 36 ++++-----------------
+ 1 file changed, 6 insertions(+), 30 deletions(-)
 
-diff --git a/drivers/gpu/drm/panel/panel-ronbo-rb070d30.c b/drivers/gpu/drm/panel/panel-ronbo-rb070d30.c
-index 746a3a221100..ef18559e237e 100644
---- a/drivers/gpu/drm/panel/panel-ronbo-rb070d30.c
-+++ b/drivers/gpu/drm/panel/panel-ronbo-rb070d30.c
-@@ -7,7 +7,6 @@
-  * This file based on panel-ilitek-ili9881c.c
+diff --git a/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c b/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
+index 18e745104aaf..40fcbbbacb2c 100644
+--- a/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
++++ b/drivers/gpu/drm/panel/panel-seiko-43wvf1g.c
+@@ -6,7 +6,6 @@
+  * Based on Panel Simple driver by Thierry Reding <treding@nvidia.com>
   */
  
 -#include <linux/backlight.h>
  #include <linux/delay.h>
- #include <linux/device.h>
- #include <linux/err.h>
-@@ -29,7 +28,6 @@
- struct rb070d30_panel {
- 	struct drm_panel panel;
- 	struct mipi_dsi_device *dsi;
+ #include <linux/module.h>
+ #include <linux/of.h>
+@@ -46,7 +45,6 @@ struct seiko_panel {
+ 	bool prepared;
+ 	bool enabled;
+ 	const struct seiko_panel_desc *desc;
 -	struct backlight_device *backlight;
- 	struct regulator *supply;
+ 	struct regulator *dvdd;
+ 	struct regulator *avdd;
+ };
+@@ -127,12 +125,6 @@ static int seiko_panel_disable(struct drm_panel *panel)
+ 	if (!p->enabled)
+ 		return 0;
  
- 	struct {
-@@ -84,22 +82,13 @@ static int rb070d30_panel_enable(struct drm_panel *panel)
- 	if (ret)
- 		return ret;
- 
--	ret = backlight_enable(ctx->backlight);
--	if (ret)
--		goto out;
--
- 	return 0;
--
--out:
--	mipi_dsi_dcs_enter_sleep_mode(ctx->dsi);
--	return ret;
- }
- 
- static int rb070d30_panel_disable(struct drm_panel *panel)
- {
- 	struct rb070d30_panel *ctx = panel_to_rb070d30_panel(panel);
- 
--	backlight_disable(ctx->backlight);
- 	return mipi_dsi_dcs_enter_sleep_mode(ctx->dsi);
- }
- 
-@@ -208,11 +197,9 @@ static int rb070d30_panel_dsi_probe(struct mipi_dsi_device *dsi)
- 		return PTR_ERR(ctx->gpios.shlr);
- 	}
- 
--	ctx->backlight = devm_of_find_backlight(&dsi->dev);
--	if (IS_ERR(ctx->backlight)) {
--		DRM_DEV_ERROR(&dsi->dev, "Couldn't get our backlight\n");
--		return PTR_ERR(ctx->backlight);
+-	if (p->backlight) {
+-		p->backlight->props.power = FB_BLANK_POWERDOWN;
+-		p->backlight->props.state |= BL_CORE_FBBLANK;
+-		backlight_update_status(p->backlight);
 -	}
-+	ret = drm_panel_of_backlight(&ctx->panel);
-+	if (ret)
-+		return ret;
+-
+ 	p->enabled = false;
  
- 	ret = drm_panel_add(&ctx->panel);
- 	if (ret < 0)
+ 	return 0;
+@@ -196,12 +188,6 @@ static int seiko_panel_enable(struct drm_panel *panel)
+ 	if (p->enabled)
+ 		return 0;
+ 
+-	if (p->backlight) {
+-		p->backlight->props.state &= ~BL_CORE_FBBLANK;
+-		p->backlight->props.power = FB_BLANK_UNBLANK;
+-		backlight_update_status(p->backlight);
+-	}
+-
+ 	p->enabled = true;
+ 
+ 	return 0;
+@@ -245,7 +231,6 @@ static const struct drm_panel_funcs seiko_panel_funcs = {
+ static int seiko_panel_probe(struct device *dev,
+ 					const struct seiko_panel_desc *desc)
+ {
+-	struct device_node *backlight;
+ 	struct seiko_panel *panel;
+ 	int err;
+ 
+@@ -265,18 +250,13 @@ static int seiko_panel_probe(struct device *dev,
+ 	if (IS_ERR(panel->avdd))
+ 		return PTR_ERR(panel->avdd);
+ 
+-	backlight = of_parse_phandle(dev->of_node, "backlight", 0);
+-	if (backlight) {
+-		panel->backlight = of_find_backlight_by_node(backlight);
+-		of_node_put(backlight);
+-
+-		if (!panel->backlight)
+-			return -EPROBE_DEFER;
+-	}
+-
+ 	drm_panel_init(&panel->base, dev, &seiko_panel_funcs,
+ 		       DRM_MODE_CONNECTOR_DPI);
+ 
++	err = drm_panel_of_backlight(&panel->base);
++	if (err)
++		return err;
++
+ 	err = drm_panel_add(&panel->base);
+ 	if (err < 0)
+ 		return err;
+@@ -291,11 +271,7 @@ static int seiko_panel_remove(struct platform_device *pdev)
+ 	struct seiko_panel *panel = dev_get_drvdata(&pdev->dev);
+ 
+ 	drm_panel_remove(&panel->base);
+-
+-	seiko_panel_disable(&panel->base);
+-
+-	if (panel->backlight)
+-		put_device(&panel->backlight->dev);
++	drm_panel_disable(&panel->base);
+ 
+ 	return 0;
+ }
+@@ -304,7 +280,7 @@ static void seiko_panel_shutdown(struct platform_device *pdev)
+ {
+ 	struct seiko_panel *panel = dev_get_drvdata(&pdev->dev);
+ 
+-	seiko_panel_disable(&panel->base);
++	drm_panel_disable(&panel->base);
+ }
+ 
+ static const struct display_timing seiko_43wvf1g_timing = {
 -- 
 2.20.1
 
