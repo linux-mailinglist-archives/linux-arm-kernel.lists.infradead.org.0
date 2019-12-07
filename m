@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B85ED115F3E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 23:26:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8B7D115F41
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 23:27:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gS9iO7mznjA9ZLfPW7xgT8lNtoTav+mnsLolouvqm1w=; b=j5L7cdBLNp4gSO
-	AMXWVJC2OHFt6EgNg3Hnn4IrF8+kzZIWotJ3w5nlAbPKxYwiow8P6nJVDlAZPOB4a2NBlEYN8JtSI
-	lYU22w6CBNvAIh97/Lvf7VmEZI5SOysqpDinf3jQix5o4ByPiBORV8F+xdMs0iW4Jr8fUOChfLuDR
-	qh11wA00IX/78zVb2w1RlJl0OnwLPlE/jgoqV4HiVWtlLGvWk0lJZ7DQEaNiM6A4/O8/qJQYRBTaR
-	N3XDQtmG9n+1BGS85h8OS6mecEIq7mjWVLA6O+i91WTEN+8LdamX/ojq0QHM01bEN3Q3BLis7P7lF
-	5guTiQL2NZ1UxEiWAh3A==;
+	List-Owner; bh=EcoV0j95tsjYsZiqpkedXDHw1Jnb+e4kD7LxYkCZkIk=; b=h9uuFNpxKxvWYJ
+	Vznmg5kCtNDXX62xOMwKooO+Zpbxwb7asxQKmEbB9S4oDRWjjN0ucXcTY97t9/32KkiuLCQGSEBLp
+	i0dffClvHuTFjnfXN4LGNE1Ts0pvBGwnNUC571oSQ+TssopldqTSJjXq0+fIPoDgeSJKW2Cup4joG
+	gHM62a8BVhY3Jq3p+OApgWz3vvBWMwqvCLMd8Fn6E1dZTNNj/xAQ/qtpr9DINk5klbU9n0LSjqY++
+	HggsbnQODbqCaZjspbc6r76waiK8kwIhHg6HT1vmzgiB/1jYppL3BU/sa9WK2OKNxlvlXEMHW586H
+	NG9dupe7kXtpR8iITEYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idiWu-0001oB-PG; Sat, 07 Dec 2019 22:26:24 +0000
+	id 1idiXT-0002Rt-EL; Sat, 07 Dec 2019 22:26:59 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idiVR-0007tD-OP; Sat, 07 Dec 2019 22:24:55 +0000
+ id 1idiVW-0007xn-M4; Sat, 07 Dec 2019 22:25:02 +0000
 Received: from ziggy.de (unknown [95.169.229.25])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0B2722467D;
- Sat,  7 Dec 2019 22:24:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0B76424677;
+ Sat,  7 Dec 2019 22:24:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575757492;
- bh=T3/4wZPL9p7tEA69OL6cyT7PPtrc6Pr84n3ts0k0Pfo=;
+ s=default; t=1575757497;
+ bh=FAUVKc3LCu1hHsC00k/MW/ZDjSgvalsHfSMYXaOWuAo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=uxXS1VAMa98HE9acicpZKn+v42FOxv/RwEn0KlvGqCpmFiXQQB+VvpdNB5J8kHNgY
- mDI3JrWQOHNThSTkpfpxL4P459FvdL1qqJs5C3u+VHcJ+bV+D/fWZiNoow7ajO+EHM
- HZ2Sg2xGCo4X8lW1mO/BssttoEDiRv2hrD4cqwH4=
+ b=UCVT5Frm8oiSOjPjJKrImLyQEpqFfMP8vThjy4aI+HDoqMfBvL/8fW7yAHmREc3B7
+ 3xcR1NB4HWwCpSByUSFtBqAW3UiTK+w2Jpr/5PqJBd5w02bnTc/HKuZeLFjWIusSVi
+ gUtwIoaskz72ss8TxMvE+pjXyDQnlJuKv2F95rCw=
 From: matthias.bgg@kernel.org
 To: robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
  p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
  sboyd@codeaurora.org, ulrich.hecht+renesas@gmail.com,
  laurent.pinchart@ideasonboard.com, enric.balletbo@collabora.com
-Subject: [PATCH v6 05/12] media: mtk-mdp: Check return value of of_clk_get
-Date: Sat,  7 Dec 2019 23:23:42 +0100
-Message-Id: <20191207222349.23161-6-matthias.bgg@kernel.org>
+Subject: [PATCH v6 06/12] clk: mediatek: mt2701: switch mmsys to platform
+ device probing
+Date: Sat,  7 Dec 2019 23:23:43 +0100
+Message-Id: <20191207222349.23161-7-matthias.bgg@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191207222349.23161-1-matthias.bgg@kernel.org>
 References: <20191207222349.23161-1-matthias.bgg@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_142453_869869_C3975325 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191207_142458_802681_0400E67E 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,31 +91,99 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Matthias Brugger <mbrugger@suse.com>
 
-Check the return value of of_clk_get and print an error
-message if not EPROBE_DEFER.
+Switch probing for the MMSYS to support invocation to a plain
+paltform device. The driver will be probed by the DRM subsystem.
 
 Signed-off-by: Matthias Brugger <mbrugger@suse.com>
 ---
- drivers/media/platform/mtk-mdp/mtk_mdp_comp.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/clk/mediatek/clk-mt2701-mm.c | 41 ++++++++++++++++++++--------
+ 1 file changed, 29 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c b/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
-index 9afe8161a8c0..4e2fc1337b80 100644
---- a/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
-+++ b/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
-@@ -110,6 +110,12 @@ int mtk_mdp_comp_init(struct device *dev, struct device_node *node,
+diff --git a/drivers/clk/mediatek/clk-mt2701-mm.c b/drivers/clk/mediatek/clk-mt2701-mm.c
+index 054b597d4a73..4a9433c2b2b8 100644
+--- a/drivers/clk/mediatek/clk-mt2701-mm.c
++++ b/drivers/clk/mediatek/clk-mt2701-mm.c
+@@ -4,14 +4,20 @@
+  * Author: Shunli Wang <shunli.wang@mediatek.com>
+  */
  
- 	for (i = 0; i < ARRAY_SIZE(comp->clk); i++) {
- 		comp->clk[i] = of_clk_get(node, i);
-+		if (IS_ERR(comp->clk[i])i) {
-+			if (PTR_ERR(comp->clk[i] != -EPROBE_DEFER)
-+					dev_err(dev, "Failed to get clock\n");
++#include <linux/module.h>
+ #include <linux/clk-provider.h>
+ #include <linux/platform_device.h>
++#include <linux/slab.h>
+ 
+ #include "clk-mtk.h"
+ #include "clk-gate.h"
+ 
+ #include <dt-bindings/clock/mt2701-clk.h>
+ 
++struct clk_mt2701_mm_priv {
++	struct clk_onecell_data *clk_data;
++};
 +
-+			return PTR_ERR(comp->clk[i]);
-+		}
+ static const struct mtk_gate_regs disp0_cg_regs = {
+ 	.set_ofs = 0x0104,
+ 	.clr_ofs = 0x0108,
+@@ -79,23 +85,25 @@ static const struct mtk_gate mm_clks[] = {
+ 	GATE_DISP1(CLK_MM_TVE_FMM, "mm_tve_fmm", "mm_sel", 14),
+ };
  
- 		/* Only RDMA needs two clocks */
- 		if (comp->type != MTK_MDP_RDMA)
+-static const struct of_device_id of_match_clk_mt2701_mm[] = {
+-	{ .compatible = "mediatek,mt2701-mmsys", },
+-	{}
+-};
+-
+ static int clk_mt2701_mm_probe(struct platform_device *pdev)
+ {
+-	struct clk_onecell_data *clk_data;
+ 	int r;
+-	struct device_node *node = pdev->dev.of_node;
++	struct device_node *node = pdev->dev.parent->of_node;
++	struct clk_mt2701_mm_priv *private;
++
++	private = devm_kzalloc(&pdev->dev, sizeof(*private), GFP_KERNEL);
++	if (!private)
++		return -ENOMEM;
+ 
+-	clk_data = mtk_alloc_clk_data(CLK_MM_NR);
++	private->clk_data = mtk_alloc_clk_data(CLK_MM_NR);
++
++	platform_set_drvdata(pdev, private);
+ 
+ 	mtk_clk_register_gates(node, mm_clks, ARRAY_SIZE(mm_clks),
+-						clk_data);
++					private->clk_data);
+ 
+-	r = of_clk_add_provider(node, of_clk_src_onecell_get, clk_data);
++	r = of_clk_add_provider(node, of_clk_src_onecell_get,
++					private->clk_data);
+ 	if (r)
+ 		dev_err(&pdev->dev,
+ 			"could not register clock provider: %s: %d\n",
+@@ -104,12 +112,21 @@ static int clk_mt2701_mm_probe(struct platform_device *pdev)
+ 	return r;
+ }
+ 
++static int clk_mt2701_mm_remove(struct platform_device *pdev)
++{
++	struct clk_mt2701_mm_priv *private = platform_get_drvdata(pdev);
++
++	kfree(private->clk_data);
++
++	return 0;
++}
++
+ static struct platform_driver clk_mt2701_mm_drv = {
+ 	.probe = clk_mt2701_mm_probe,
++	.remove = clk_mt2701_mm_remove,
+ 	.driver = {
+ 		.name = "clk-mt2701-mm",
+-		.of_match_table = of_match_clk_mt2701_mm,
+ 	},
+ };
+ 
+-builtin_platform_driver(clk_mt2701_mm_drv);
++module_platform_driver(clk_mt2701_mm_drv);
 -- 
 2.24.0
 
