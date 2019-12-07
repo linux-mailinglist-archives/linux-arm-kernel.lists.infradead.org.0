@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D62E9115C4A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 14:01:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8A6F115C52
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 14:07:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9yzssJzjCc0lSmec/hPNua0d6o5Gyk7ujPTIQHE5Vkc=; b=q6fQip5GarQHi7KErVElAikaK3
-	SXn/FFiWstN9ZnL6umHmRuDVdat1qIUplZzpRCZKUQGWmLzKZftqVCg0+gCqxeoTRXvNXq1791KCx
-	a+Xr+hEZpEZ1kf7IiA5A7D480B9+CrjEC7MxVqH8YgRzuaCPzVQtH3lTAX3pKnb/I/LAe2quR4rPa
-	u9wtQJHb+r6Lj425aAqPfjJni3PlG+npR2vwwxNfYOZN5TDPzAl7YR9i3BQzWi9/vGhY58s8OKRRc
-	ukPsD7/1kQcoxzo55AMSc5kxcWQ7uaZ1f1qx4AUTVQ3t8UZiJQ6xRkE/1xNBhoSknqEPLlNw1X+9p
-	2/mLnWPw==;
+	bh=QM5KUk0OyFNyBCT0oXgb1EudLOZ26HXNZxmnso4VXNg=; b=Ir3qWiD9zfU+m5rl01mQLaInVv
+	87zZ0WtmgcQC/kEX3SYF1Ng1fBug6aT313Of006ga79iAFqB3F4FNPc8clxLJoPBtCFdTcRfh3l9a
+	Nd4JRtDMVesJIumMiEv2aAMk0gwbrIekZufooA55AHvhrhZWpYR5NdN0xgaK+ruuu6W4OhCK0GOtf
+	kjjnEiQElP5ItgpjI3mTGTlCw2K0GZVNYBwDVuXJVwrf0zAUabG6vg8sliVBudRg5/pdApG+7YIdH
+	/6TX8z1+B1cPh0FRXV73IiCJaCmi7K1m7Q+Vwmj3JPmOs/CgzXakG2yOXmKTxQs6wOTdueUtVfrEu
+	srgwxWzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idZiI-0001jt-C4; Sat, 07 Dec 2019 13:01:34 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1idZoP-0003me-Mz; Sat, 07 Dec 2019 13:07:53 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idZi6-0001el-JH
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Dec 2019 13:01:23 +0000
-Received: by mail-pf1-x443.google.com with SMTP id n13so4830528pff.1
+ id 1idZoK-0003mH-1w
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Dec 2019 13:07:49 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 2so4814836pfx.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 07 Dec 2019 05:01:22 -0800 (PST)
+ Sat, 07 Dec 2019 05:07:47 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=dG8vxX7uZglDTdab2aKg6N47zqValFwiCvXmsp/VnHc=;
- b=dKihn8JERK6MPaKyRKVunDCCS+72eAMzM0U++7ADDGPUSgHz+FlDa6R/xkFq23ujtD
- okzoaNRMQ7Uw5xku1m0ONEItGidb46BDIJ5vfDc7J8UBWL3BEjYV13yHOlXV5YEb1uSj
- 6pYtjz8lB9gOl913KrqhTFCZq8RMOmVZhoXFbbFqUxQIt1A6fxYTMUmTrkeCGe83EhKS
- GTjy4TivYDJWQXs1W05QZ69pFlBmJ28I1LmqfJY3tYNeACSpiv/V6X/krR8tT4imPSVD
- dOrl2ZxnRjXVPCbm7DJjkLyKJjlBUE7tUxfCPtHwKmxGwmAxEgk30o8J9aCjgTvQ5Kt+
- VcAQ==
+ bh=6PpUMK/fvtT3W2NQbLvKL8csxRNa6vIgk1xEDsjC6bI=;
+ b=NNVCAAj6R1V5V7V/PSONAwkW8RVZXFNsA2TQMJ+6ukcPGpSKS1R+wfpBcVK1pVwUoj
+ /+760sCtrKCwXlJs3i0aJCUkOVG/Q1lLAOZmkAZ6TdOrzsThSeaaNvleTRL54tjCfOJw
+ ueAc0J7rKPwUgZx5HF1RweVYqwrF+C+vh38sfBYx3SBHsXVmSRS1DNgjhX5/0gwH20HZ
+ YpzQfa4+IUeV+b5UIshvK7vUgFvpwrfI6JUBpH8ztGpsjM9hFlk61XWc9UaVmHcA8sD4
+ hfyqyk+9r6CfafJU/UaApak6CKqsRmQYSonhj8zpigXMVTdcMRe+LLWdmRTRLeTuDLGw
+ L1dA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=dG8vxX7uZglDTdab2aKg6N47zqValFwiCvXmsp/VnHc=;
- b=gh9+bTXf3lZU9/6k0HPLHX7tg9Yj1ph5f05teslwFeQvH8gsBIbE0gRQUttRSVu6IN
- 0YpCEaMsxYaQijM3bBKwDKE9TJg8yrBt5YylgQ9JVZ8lmQLl9d+G6tKzz66wVFb3XjJj
- v7PM0/2qJ3DFMxmMsY19qsBFVELnhCEUrjhnDeZIQJOKgaMxP5ZZZhJ/hOXqwqtH86ZR
- 0zBoDbvfQfdJfsRmHFowXstnfrIKJ6rJC/YW91UWuqSyhHrOE/ej6fTY1URC+SEpv8At
- 8n4m383vVHueN+chLKvs6VfmJkvFPQgutkxbknK5vtNwLxDXy+qLzpAlyalQWRJpX6JI
- PSMA==
-X-Gm-Message-State: APjAAAVpSYAlckEOUVULynGBMlrmll7GkiVJyQt9jFhpZfyYOEObftnf
- Uap+/ie3L2Eq4s9RF8HMd0c=
-X-Google-Smtp-Source: APXvYqz+k3c87NitGmT2B9GRr1u3gfx0IO0f+nvexgDJ2siS9kivL7lqN+FrZVU/+FSSz+hMdFFSxw==
-X-Received: by 2002:aa7:8f05:: with SMTP id x5mr19707044pfr.86.1575723681648; 
- Sat, 07 Dec 2019 05:01:21 -0800 (PST)
+ bh=6PpUMK/fvtT3W2NQbLvKL8csxRNa6vIgk1xEDsjC6bI=;
+ b=g0LIY84YykJxrbWCv/ASuNq1Fr+bPqbnFxpjp1qJ/X9AHQWP14WT+GMO6TOn8kHQeM
+ rG8iZB39+EvSY1xA80+V6Z3b1ctVmj5GsWsXZ4UqVm7CuIYnnJr9rC0FRY1MyFuDgWbu
+ m7qydLDazr+3nslAkyW3MxLjaMven8QkXSaghHlqep/GXfUmVOSfDlx/nptQbuP4rSn/
+ JW5z2ATS9csB71FvOHupc4VdSTOqxpDKQKp77n9ma35pHIN8BtCJeK7YixSvJQwYWgXW
+ skkdiLThMwgpC/apHJCr1AtZKl9SubOr1LJo/SaXwX5i6dGIN6eyquXLOQInUaL4qFq8
+ YkNg==
+X-Gm-Message-State: APjAAAU1pv5WFp6v2NPeYTz01tT13YWQa2QXyPnDC0ziezyeabrlNuA7
+ pYwBgOw6qWJphvg9JONRacqnmZEB
+X-Google-Smtp-Source: APXvYqydIZpADSEqCwmvzLGTWJiUvwkFpQSPAm7NlY/5F6LhMpTJQm9IS4Mbyu5EgU42L7avFhDItQ==
+X-Received: by 2002:a63:4757:: with SMTP id w23mr8748703pgk.366.1575723688187; 
+ Sat, 07 Dec 2019 05:01:28 -0800 (PST)
 Received: from localhost.localdomain ([211.243.117.64])
- by smtp.gmail.com with ESMTPSA id f7sm10241246pfk.183.2019.12.07.05.01.18
+ by smtp.gmail.com with ESMTPSA id f7sm10241246pfk.183.2019.12.07.05.01.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 07 Dec 2019 05:01:21 -0800 (PST)
+ Sat, 07 Dec 2019 05:01:27 -0800 (PST)
 From: Hyunki Koo <hyunki00.koo@gmail.com>
 To: linux@armlinux.org.uk, kgene@kernel.org, krzk@kernel.org,
  tglx@linutronix.de, jason@lakedaemon.net, maz@kernel.org
-Subject: [PATCH 1/2] irqchip: define EXYNOS_IRQ_COMBINER
-Date: Sat,  7 Dec 2019 22:00:48 +0900
-Message-Id: <20191207130049.27533-2-hyunki00.koo@gmail.com>
+Subject: [PATCH 2/2] ARM: exynos: add select EXYNOS_IRQ_COMBINER
+Date: Sat,  7 Dec 2019 22:00:49 +0900
+Message-Id: <20191207130049.27533-3-hyunki00.koo@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191207130049.27533-1-hyunki00.koo@gmail.com>
 References: <20191207130049.27533-1-hyunki00.koo@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_050122_658031_C8B1C9AF 
-X-CRM114-Status: GOOD (  12.35  )
+X-CRM114-CacheID: sfid-20191207_050748_097237_6A8779EF 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,44 +110,26 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Hyunki Koo <hyunki00.koo@samsung.com>
 
-Not all exynos device have IRQ_COMBINER.
-Thus add the config for EXYNOS_IRQ_COMBINER.
+This patch add select EXYNOS_IRQ_COMBINER
+on aarch32 Exynos devices
 
 Signed-off-by: Hyunki Koo <hyunki00.koo@samsung.com>
 ---
- drivers/irqchip/Kconfig  | 7 +++++++
- drivers/irqchip/Makefile | 2 +-
- 2 files changed, 8 insertions(+), 1 deletion(-)
+ arch/arm/mach-exynos/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/irqchip/Kconfig b/drivers/irqchip/Kconfig
-index ba152954324b..3ed7b7f2ae26 100644
---- a/drivers/irqchip/Kconfig
-+++ b/drivers/irqchip/Kconfig
-@@ -499,4 +499,11 @@ config SIFIVE_PLIC
- 
- 	   If you don't know what to do here, say Y.
- 
-+config EXYNOS_IRQ_COMBINER
-+	bool "Samsung Exynos IRQ combiner support"
-+	depends on ARCH_EXYNOS
-+	help
-+	  Say yes here to add support for the IRQ combiner devices embedded
-+	  in Samsung Exynos chips.
-+
- endmenu
-diff --git a/drivers/irqchip/Makefile b/drivers/irqchip/Makefile
-index e806dda690ea..60d7c7260fc3 100644
---- a/drivers/irqchip/Makefile
-+++ b/drivers/irqchip/Makefile
-@@ -9,7 +9,7 @@ obj-$(CONFIG_ARCH_BCM2835)		+= irq-bcm2835.o
- obj-$(CONFIG_ARCH_BCM2835)		+= irq-bcm2836.o
- obj-$(CONFIG_DAVINCI_AINTC)		+= irq-davinci-aintc.o
- obj-$(CONFIG_DAVINCI_CP_INTC)		+= irq-davinci-cp-intc.o
--obj-$(CONFIG_ARCH_EXYNOS)		+= exynos-combiner.o
-+obj-$(CONFIG_EXYNOS_IRQ_COMBINER)	+= exynos-combiner.o
- obj-$(CONFIG_FARADAY_FTINTC010)		+= irq-ftintc010.o
- obj-$(CONFIG_ARCH_HIP04)		+= irq-hip04.o
- obj-$(CONFIG_ARCH_LPC32XX)		+= irq-lpc32xx.o
+diff --git a/arch/arm/mach-exynos/Kconfig b/arch/arm/mach-exynos/Kconfig
+index 4ef56571145b..c0efd544501e 100644
+--- a/arch/arm/mach-exynos/Kconfig
++++ b/arch/arm/mach-exynos/Kconfig
+@@ -18,6 +18,7 @@ menuconfig ARCH_EXYNOS
+ 	select EXYNOS_THERMAL
+ 	select EXYNOS_PMU
+ 	select EXYNOS_SROM
++	select EXYNOS_IRQ_COMBINER
+ 	select EXYNOS_PM_DOMAINS if PM_GENERIC_DOMAINS
+ 	select GPIOLIB
+ 	select HAVE_ARM_ARCH_TIMER if ARCH_EXYNOS5 && VIRTUALIZATION
 -- 
 2.17.1
 
