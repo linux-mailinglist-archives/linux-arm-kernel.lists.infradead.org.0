@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 081C4115CD6
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 15:06:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 212A3115CD8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 15:06:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fdL5l3TonNP50Q9MExoQiQD1avM/G+kTLr/EJDH73QQ=; b=R8ETZDYgcV+Gfx
-	lzKAFnVo/nXolptF0FkBKs2/MiTBI2JirTZu31Gx9cAkhgcwcZQ2imBX+bCnerSlboUNBVo3PWBe4
-	YKXSAyu9go8FSgTAVg5memUj8Vm0nBTf/aJLHPA2QqitSv50pbM6Vy6WykzAkWN7LxLrYyS9OuPSu
-	03FDBU4wRJE4hf5rRnsEn0ZDFnZgIRP1SYbq7xlkT8RUnpAodaYqShHchx+X0gxAwIXc4+AlQ3FKS
-	kaZKRvgDA7evlkfQG905rIRsrGlxpM8YYZrp31INnhmQeNo39yhpGdrO6wRu5RFt0E75RJ5BqU9Ek
-	VcTdg1DWUJfv6YKAmXjw==;
+	List-Owner; bh=bZGjv9JiHMIGYnxVLLuQN5oV2JuKdelrym+HTe5sYY8=; b=Emw7YhbNdhBPu/
+	OnzI7aFYg2qrXRAl418B0099RB8D49wPWMLucDHi82qiS8MRUOiQ6TBxW/NRImF/l7yg3HTEUKCWw
+	Kbt4I5a/TT2pAAshnlrApfwI1xF7xHnh6U0dsz1uZaI3nmZxfVzQ/wl9JcUjdRTye3oXyEkhJUL6+
+	pIeYu/80VX1i5vweyesZ1fioKFkS5ruMIRek0OF2RJGXQaFMHMzNpFAT4pUFeBHUwl8f/UoKgC6un
+	jNBBcUtMH1Y/uhW8oBlTgzofroIErb0dUs2mX6Zj4cDhiEDINuPWJcj5QRNARZaUN19iAIh7CcyCW
+	4QmAw/qs4kLKNhh6OH0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idaij-0007zv-Bw; Sat, 07 Dec 2019 14:06:05 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1idaj1-0008Ou-Ep; Sat, 07 Dec 2019 14:06:23 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idagx-0005WC-MR; Sat, 07 Dec 2019 14:04:17 +0000
-Received: by mail-lj1-x242.google.com with SMTP id z17so10642414ljk.13;
- Sat, 07 Dec 2019 06:04:15 -0800 (PST)
+ id 1idagz-0005Xu-8n; Sat, 07 Dec 2019 14:04:19 +0000
+Received: by mail-lj1-x244.google.com with SMTP id m6so10742415ljc.1;
+ Sat, 07 Dec 2019 06:04:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=5vCTCmVJSztZsLx2nB6Og8LCjqNM0f0O19o9JcKr1ls=;
- b=ONroKxMumL+T3hvdkZI9e/yngpNuwwNxZSNxYiSryJEsMLtAe08ansnBJYorWhKfZO
- hVxGTK2d5XzQTs8G3iaYWtW4eIP7t++joPvMvZ9rSfhLyN+JT1RLt4tHwxWfEyZyoH9j
- QXs8wv0edFhdDrvcFEx22LoEeo6VKaIKfwlNsuEuFVMvRLRADKza27bYBGswsFjyb1z2
- OlztirgxOS/7wTCauSPPhVgG9IzKDrijbHgtAk3sZzkcM0BKmxNUnTec0/Tntd9plCv7
- 1r6rCHD4mCSj8KACmxzLunlleNO7X71r0qZBSW7VPzO+aElZICNRbynzkYzyzCsNrMO+
- EXrw==
+ bh=gDEv0RS9u1sLbcP7aKD5NbZuatHNrJrYBV8mFE5d35g=;
+ b=kStv8JKNews1ASDw7z7ddDiOlhdDEBCUGAHaTsm2tqKG4s4k0usHJl0qikxyLF9l9i
+ b+pAsI3DhJaJ4XzVpar+XAqSpOTNRuZt5OzO/ynvbcmOcibfSycfMibvGO8KC0Racviq
+ WDgEemyCuEarftv/+KvkNawtDborBcOYRqnGjIv5g1chot9s2DDqXvAJ/i8SLatpn3gu
+ /befl/LXxlDAYDEaCocPaBINxBC+2eQ9QuiKj0lqbRFuYFoMycJZb4CpUXGuURBnuJ8D
+ Mp0RLVdvzCvOakf/ZYceQr9QM6xIbMwxYbXvZbnsuwdSKukz28Dn1/CgjJC0NItO/h1P
+ +fjQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=5vCTCmVJSztZsLx2nB6Og8LCjqNM0f0O19o9JcKr1ls=;
- b=sDQpDcc/XPcbiF33MlueBvwLTXdTH1JiK1EspjtBV+5ed8gu3K0+8sqxVeEWyb13He
- I0aJmpw9Hv6wnrQQ9lD6J1B8ZxpeboGwf+1qvVIFzAVPZw4GvUKiYIYz9jneC1lRpIa0
- PV0wme+Q4WwnwsE7wcja799efjmCrAh5CsfTptxOTu2OD3usO0xiWh2xTo+imuUXJ+WO
- PwIu4mnCWPLulJBOEvNx12M1PXfVvCDcRp7sVPgA59dROqVRenCZg2Ds+h7G7UGbWKvo
- VEWnBg5Qw3ntyq/OQQYlpfk5TNiPLunll3fQydypMDwpYNT7V1YVM+C/FAzVB/5auRFp
- qmCA==
-X-Gm-Message-State: APjAAAVPefbVgLuNYSYbLsD9I8F/W4N33G9lGi5KapXtG0m9SXqeToxQ
- SZMf3kDOsrVPTPiJ1HHB+3E=
-X-Google-Smtp-Source: APXvYqw1rMaDJY7zRGC5Q0+tQaHvY5zBV064KItUGg2cwityxaKTBr2l0hHLdZAMNVa/CibXuS1pdw==
-X-Received: by 2002:a2e:9899:: with SMTP id b25mr11320230ljj.70.1575727453898; 
- Sat, 07 Dec 2019 06:04:13 -0800 (PST)
+ bh=gDEv0RS9u1sLbcP7aKD5NbZuatHNrJrYBV8mFE5d35g=;
+ b=oNfC09f5WbMU4c9PV8THZJBCdYQXAM5xuvlaHnAgZrvb8xWFV3WJsX0LNRDNtGM4E7
+ ADooi5Mb4BHWtZ5ak0HGPENhbYKnEe+0qppEB0w+fuHrY/gD/UtLuDfjK5dzs+7CZmdq
+ 9DySJyToYQh6p6KDfYb3T1KMsAd49nxqQ0IJUFSvT/SEVnk8TKN2FJufLTot0ZQFGm4F
+ /UuRcHRkIL3/oaaFsnU7VyR1ODmTJaQ1OOU0R09dNJsCxSK2M9dUIIT5O6ZwsaQu5Zt1
+ aEAfm3ihdHOAsL/dAB33H6jz5GqpXRUnVzLSkhWtjT76vDi6Py+vN9rsA/ri0xiiUGoC
+ QolQ==
+X-Gm-Message-State: APjAAAUeXeR+Aop5CP6vJalrx3QY1ZGMWYZ2tD3KBaj6L3PBCCY0hTMp
+ t/GUI5HuaRSVbl3nlPUhM+A=
+X-Google-Smtp-Source: APXvYqzZ+jdskQadQ/ngsbumGhCcPqqfliYALT5+d2ISdCnkwPth2IL1jzPJ+7K6rUHJWF2qX8vUWw==
+X-Received: by 2002:a05:651c:1110:: with SMTP id
+ d16mr11870528ljo.86.1575727455771; 
+ Sat, 07 Dec 2019 06:04:15 -0800 (PST)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- w17sm5644188lfn.22.2019.12.07.06.04.12
+ w17sm5644188lfn.22.2019.12.07.06.04.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 07 Dec 2019 06:04:13 -0800 (PST)
+ Sat, 07 Dec 2019 06:04:15 -0800 (PST)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Linus Walleij <linus.walleij@linaro.org>, Sam Ravnborg <sam@ravnborg.org>
-Subject: [PATCH v2 03/25] drm/panel: simple: use drm_panel backlight support
-Date: Sat,  7 Dec 2019 15:03:31 +0100
-Message-Id: <20191207140353.23967-4-sam@ravnborg.org>
+Subject: [PATCH v2 04/25] drm: get drm_bridge_panel connector via helper
+Date: Sat,  7 Dec 2019 15:03:32 +0100
+Message-Id: <20191207140353.23967-5-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191207140353.23967-1-sam@ravnborg.org>
 References: <20191207140353.23967-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_060415_765769_94998FEF 
-X-CRM114-Status: GOOD (  13.42  )
+X-CRM114-CacheID: sfid-20191207_060417_461673_13222915 
+X-CRM114-Status: GOOD (  13.38  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,17 +104,20 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
  Stefan Agner <stefan@agner.ch>, Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
  Benjamin Gaignard <benjamin.gaignard@linaro.org>,
  linux-samsung-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
  Tomi Valkeinen <tomi.valkeinen@ti.com>,
  Jagan Teki <jagan@amarulasolutions.com>, NXP Linux Team <linux-imx@nxp.com>,
  Jitao Shi <jitao.shi@mediatek.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Jonas Karlman <jonas@kwiboo.se>,
  Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
  Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
  Abhinav Kumar <abhinavk@codeaurora.org>, linux-tegra@vger.kernel.org,
  Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org,
- Purism Kernel Team <kernel@puri.sm>, linux-renesas-soc@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, Purism Kernel Team <kernel@puri.sm>,
+ Eric Anholt <eric@anholt.net>, linux-renesas-soc@vger.kernel.org,
  Boris Brezillon <boris.brezillon@collabora.com>,
  Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
@@ -121,154 +125,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use drm_panel infrastructure for backlight.
-Replace direct calls with drm_panel_*() calls
-to utilize the drm_panel support.
+The drm_connector created by drm_panel_bridge was accessed
+via drm_panel.connector.
+Avoid the detour around drm_panel by providing a simple get method.
+This avoids direct access to the connector field in drm_panel in
+the two users.
+
+The change is done in preparation for removal of drm_panel.connector.
+
+Update pl111 and tve200 to use the new helper.
 
 Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
 Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: Thierry Reding <thierry.reding@gmail.com>
-Cc: Sam Ravnborg <sam@ravnborg.org>
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Cc: Andrzej Hajda <a.hajda@samsung.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>
+Cc: Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Cc: Jonas Karlman <jonas@kwiboo.se>
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>
+Cc: Eric Anholt <eric@anholt.net>
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
+Cc: Maxime Ripard <mripard@kernel.org>
+Cc: David Airlie <airlied@linux.ie>
+Cc: Daniel Vetter <daniel@ffwll.ch>
 ---
- drivers/gpu/drm/panel/panel-simple.c | 50 ++++++----------------------
- 1 file changed, 11 insertions(+), 39 deletions(-)
+ drivers/gpu/drm/bridge/panel.c      | 17 +++++++++++++++++
+ drivers/gpu/drm/pl111/pl111_drv.c   |  2 +-
+ drivers/gpu/drm/tve200/tve200_drv.c |  2 +-
+ include/drm/drm_bridge.h            |  1 +
+ 4 files changed, 20 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/panel/panel-simple.c b/drivers/gpu/drm/panel/panel-simple.c
-index 72f69709f349..a5df6d6dd455 100644
---- a/drivers/gpu/drm/panel/panel-simple.c
-+++ b/drivers/gpu/drm/panel/panel-simple.c
-@@ -21,7 +21,6 @@
-  * DEALINGS IN THE SOFTWARE.
-  */
- 
--#include <linux/backlight.h>
- #include <linux/delay.h>
- #include <linux/gpio/consumer.h>
- #include <linux/module.h>
-@@ -105,7 +104,6 @@ struct panel_simple {
- 
- 	const struct panel_desc *desc;
- 
--	struct backlight_device *backlight;
- 	struct regulator *supply;
- 	struct i2c_adapter *ddc;
- 
-@@ -236,12 +234,6 @@ static int panel_simple_disable(struct drm_panel *panel)
- 	if (!p->enabled)
- 		return 0;
- 
--	if (p->backlight) {
--		p->backlight->props.power = FB_BLANK_POWERDOWN;
--		p->backlight->props.state |= BL_CORE_FBBLANK;
--		backlight_update_status(p->backlight);
--	}
--
- 	if (p->desc->delay.disable)
- 		msleep(p->desc->delay.disable);
- 
-@@ -307,12 +299,6 @@ static int panel_simple_enable(struct drm_panel *panel)
- 	if (p->desc->delay.enable)
- 		msleep(p->desc->delay.enable);
- 
--	if (p->backlight) {
--		p->backlight->props.state &= ~BL_CORE_FBBLANK;
--		p->backlight->props.power = FB_BLANK_UNBLANK;
--		backlight_update_status(p->backlight);
--	}
--
- 	p->enabled = true;
- 
- 	return 0;
-@@ -414,9 +400,9 @@ static void panel_simple_parse_panel_timing_node(struct device *dev,
- 
- static int panel_simple_probe(struct device *dev, const struct panel_desc *desc)
- {
--	struct device_node *backlight, *ddc;
- 	struct panel_simple *panel;
- 	struct display_timing dt;
-+	struct device_node *ddc;
- 	int err;
- 
- 	panel = devm_kzalloc(dev, sizeof(*panel), GFP_KERNEL);
-@@ -442,24 +428,13 @@ static int panel_simple_probe(struct device *dev, const struct panel_desc *desc)
- 		return err;
- 	}
- 
--	backlight = of_parse_phandle(dev->of_node, "backlight", 0);
--	if (backlight) {
--		panel->backlight = of_find_backlight_by_node(backlight);
--		of_node_put(backlight);
--
--		if (!panel->backlight)
--			return -EPROBE_DEFER;
--	}
--
- 	ddc = of_parse_phandle(dev->of_node, "ddc-i2c-bus", 0);
- 	if (ddc) {
- 		panel->ddc = of_find_i2c_adapter_by_node(ddc);
- 		of_node_put(ddc);
- 
--		if (!panel->ddc) {
--			err = -EPROBE_DEFER;
--			goto free_backlight;
--		}
-+		if (!panel->ddc)
-+			return -EPROBE_DEFER;
- 	}
- 
- 	if (!of_get_display_timing(dev->of_node, "panel-timing", &dt))
-@@ -468,6 +443,10 @@ static int panel_simple_probe(struct device *dev, const struct panel_desc *desc)
- 	drm_panel_init(&panel->base, dev, &panel_simple_funcs,
- 		       desc->connector_type);
- 
-+	err = drm_panel_of_backlight(&panel->base);
-+	if (err)
-+		goto free_ddc;
+diff --git a/drivers/gpu/drm/bridge/panel.c b/drivers/gpu/drm/bridge/panel.c
+index f4e293e7cf64..554da47f6d62 100644
+--- a/drivers/gpu/drm/bridge/panel.c
++++ b/drivers/gpu/drm/bridge/panel.c
+@@ -289,3 +289,20 @@ struct drm_bridge *devm_drm_panel_bridge_add_typed(struct device *dev,
+ 	return bridge;
+ }
+ EXPORT_SYMBOL(devm_drm_panel_bridge_add_typed);
 +
- 	err = drm_panel_add(&panel->base);
- 	if (err < 0)
- 		goto free_ddc;
-@@ -479,9 +458,6 @@ static int panel_simple_probe(struct device *dev, const struct panel_desc *desc)
- free_ddc:
- 	if (panel->ddc)
- 		put_device(&panel->ddc->dev);
--free_backlight:
--	if (panel->backlight)
--		put_device(&panel->backlight->dev);
++/**
++ * drm_panel_bridge_connector - return the connector for the panel bridge
++ *
++ * drm_panel_bridge creates the connector.
++ * This function gives external access to the connector.
++ *
++ * Returns: Pointer to drm_connector
++ */
++struct drm_connector *drm_panel_bridge_connector(struct drm_bridge *bridge)
++{
++	struct panel_bridge *panel_bridge;
++
++	panel_bridge = drm_bridge_to_panel_bridge(bridge);
++
++	return &panel_bridge->connector;
++}
+diff --git a/drivers/gpu/drm/pl111/pl111_drv.c b/drivers/gpu/drm/pl111/pl111_drv.c
+index 63dfcda04147..aa8aa8d9e405 100644
+--- a/drivers/gpu/drm/pl111/pl111_drv.c
++++ b/drivers/gpu/drm/pl111/pl111_drv.c
+@@ -166,7 +166,7 @@ static int pl111_modeset_init(struct drm_device *dev)
+ 	priv->bridge = bridge;
+ 	if (panel) {
+ 		priv->panel = panel;
+-		priv->connector = panel->connector;
++		priv->connector = drm_panel_bridge_connector(bridge);
+ 	}
  
- 	return err;
- }
-@@ -491,16 +467,12 @@ static int panel_simple_remove(struct device *dev)
- 	struct panel_simple *panel = dev_get_drvdata(dev);
+ 	ret = pl111_display_init(dev);
+diff --git a/drivers/gpu/drm/tve200/tve200_drv.c b/drivers/gpu/drm/tve200/tve200_drv.c
+index 954b09c948eb..00ba9e5ce130 100644
+--- a/drivers/gpu/drm/tve200/tve200_drv.c
++++ b/drivers/gpu/drm/tve200/tve200_drv.c
+@@ -110,7 +110,7 @@ static int tve200_modeset_init(struct drm_device *dev)
+ 	}
  
- 	drm_panel_remove(&panel->base);
--
--	panel_simple_disable(&panel->base);
--	panel_simple_unprepare(&panel->base);
-+	drm_panel_disable(&panel->base);
-+	drm_panel_unprepare(&panel->base);
+ 	priv->panel = panel;
+-	priv->connector = panel->connector;
++	priv->connector = drm_panel_bridge_connector(bridge);
+ 	priv->bridge = bridge;
  
- 	if (panel->ddc)
- 		put_device(&panel->ddc->dev);
+ 	dev_info(dev->dev, "attached to panel %s\n",
+diff --git a/include/drm/drm_bridge.h b/include/drm/drm_bridge.h
+index c0a2286a81e9..9a4902accfe5 100644
+--- a/include/drm/drm_bridge.h
++++ b/include/drm/drm_bridge.h
+@@ -438,6 +438,7 @@ struct drm_bridge *devm_drm_panel_bridge_add(struct device *dev,
+ struct drm_bridge *devm_drm_panel_bridge_add_typed(struct device *dev,
+ 						   struct drm_panel *panel,
+ 						   u32 connector_type);
++struct drm_connector *drm_panel_bridge_connector(struct drm_bridge *bridge);
+ #endif
  
--	if (panel->backlight)
--		put_device(&panel->backlight->dev);
--
- 	return 0;
- }
- 
-@@ -508,8 +480,8 @@ static void panel_simple_shutdown(struct device *dev)
- {
- 	struct panel_simple *panel = dev_get_drvdata(dev);
- 
--	panel_simple_disable(&panel->base);
--	panel_simple_unprepare(&panel->base);
-+	drm_panel_disable(&panel->base);
-+	drm_panel_unprepare(&panel->base);
- }
- 
- static const struct drm_display_mode ampire_am_480272h3tmqw_t01h_mode = {
+ #endif
 -- 
 2.20.1
 
