@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32BAA115CDF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 15:07:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97590115CE2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 15:08:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tL39lk8h9DOxHdWbfsnUlaJQ377Z2FGWBbcSb6pL7ZQ=; b=lNI5TUBH9XQcFY
-	DIuDMfxw1jbaiH2w5ovvQEbFT8Dp/haFj22AF/jIPgGEcB1v45h9bfRnBg99pnF3Sx30T7Herzb8O
-	udlLZTq/y4HiNppsRlfK81NKZcizBHk0gkhkxUJ4/Yig7QrNxvsBIzdB8spQ4HqBW6xPX1RchJSSP
-	rXwIEUAE2+Z2De9QDm/TZWKOPF2L1UhRi+q6CzAbVp9cwoZ7eW6ssSk7kK1ETYfHRauGB6ePCVcAe
-	lNeYcBKh2T20T5gbr9qcr2ZfhntE7KV9jMKR/DUlTcAVMDDMmQnp0g1cSTKuB9ZhwpVQSkCd0OEbL
-	qzLeezxmQ1acRfkcNUrw==;
+	List-Owner; bh=uY2hq7s055o/FQDRgG/anQL+KSGNSxKA0SxVrb3/fVw=; b=Hm83/a83iNtNba
+	8BD0LgvnMs1381qMdiH331XkR3lBINTAVR/UEDKg+eX3stTe80EX8qftx0h28UiMHS4iMwPfcHS5e
+	KW47UKpltaR++qL0VO4xjO80RpJi1hQwQfG1JsaBqa5v4JLhWWielRJ2QJScPJrLrDpizWPTzCr0H
+	81CNO4ob+D5lLnVp8P9QOFiOTp96Z/GQ925Ho836SKjhABxNiQCYl9uJiyO8sVRMecQx61AcwwGsd
+	pjPHuXiuVNQwPNs0TwuPxmV/ARi4m0RwVKWlrCfyokIIjE4e/DOaTKrX86/6ECZxMx8Is/rrJjJGU
+	F1kRsnsNlyyPcODBIKog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idajv-0000k3-8e; Sat, 07 Dec 2019 14:07:19 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1idakU-0001DU-C3; Sat, 07 Dec 2019 14:07:54 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idah8-0005eT-1n; Sat, 07 Dec 2019 14:04:28 +0000
-Received: by mail-lj1-x244.google.com with SMTP id u17so10723622lja.4;
- Sat, 07 Dec 2019 06:04:25 -0800 (PST)
+ id 1idahA-0005g6-G1; Sat, 07 Dec 2019 14:04:30 +0000
+Received: by mail-lj1-x242.google.com with SMTP id a13so10680932ljm.10;
+ Sat, 07 Dec 2019 06:04:27 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=a/X1ku96PJtMOzhRmVeY8hbSu7FlKPaZgSc8fbXe+3Q=;
- b=euqtqE1pfc3hrle5JL0T16PR1L5s+gJEwTWJzevgh0O7PZ66Jv2B50bf0spx1cau+t
- QePMKRl0lP8NMT/G0y+Ypfpy91xuYEAdflY9cuxYUJR/0OtX6NIbaI0Er2rS3gOxnFdt
- tg16hWbgLAlhru+jIbcRH4wTMqohJwkGHXeWOqt1JIFNw5fgO/4JyanxyGnXsyCZDap7
- wtYXIJhQABWszpbteIBw62xqiMfEYV29xOzGzGBNS/teKsSMj9y40x3IcYVfhxsgzd1u
- w/xEqE68bfhC3Sm5xv8oSO/g158a13sKqoy5QP+n5wZILCXOqSVde3mfFu4Il/I6sGtq
- bLbg==
+ bh=63FAYeXHOLWZvE39+BvFTQvx8rk1mNWwTMgVp4w9KIs=;
+ b=HqZQqzcXLz6qqDnZBbtAncz09h4HHdF2Rkf9L00gHYZQMGeLF4pATtZsOyBRySDv3s
+ Bl3agh2QBKbOWCqCed3xKaiQ1hIYC4wfRE3lkCWQUbcCp2hc82VNbjrgwBfWtPlyOUUj
+ TJPJwwUs5scJ4AZ3yh3dgLIhOcFzhQCvGwbnLzxnHt909E9Zlma812SMN43OXAbuKxhA
+ TH6UiuR0tJW2YyO2/ggmZGxM7VQ+KvuhI20nEw/+PuNfy6SuD4QeOEzWmGd6pbg/zb+1
+ IKovefo+w7fUJoUZPp71KIiPRelS6vNLmT9JDbi+oRq5TSvBn3wWF86rEoCCs2oWMu1x
+ V6Sw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=a/X1ku96PJtMOzhRmVeY8hbSu7FlKPaZgSc8fbXe+3Q=;
- b=SMTRQzUQ0bev2upJ2aW7Z/EF6XXHbb2mcfmHYT/e1W7dbgUtsqIoUEUnaf+VtI1Y/Y
- S8yVhdbLiR4Kg8cKS1RBqA8pQ0lbaKL+2p0Az3elxzUqpQOKStPAQO2IGJrMKU5pziRj
- gNUfu2rhM7AIVKtXKQ4WsEP7qx36CsTCuWAjJVZIr+PPr/0fulOuT4fZwUUnwWwRAsn8
- ++YysI3Qy5Ft5/AWlC5EUpgkjbbD9pvcQP7ybNO6F2C8ggVB55/Potd1qbUeTfBXMk8d
- e8CCMaaPJSyCPBu1Q8AbFXPKeGZ7c3B945B/MPJZbWOeTzEt5Gm75p3ko7oblTu/vLJB
- H6Tw==
-X-Gm-Message-State: APjAAAXU+/dNfoFQs/6eo9qN4E49dTbHvsAWUXKMd/Cx9FWnkVyzGj6t
- 2Z+L4HMxfchE7S22N+FQKpI=
-X-Google-Smtp-Source: APXvYqwFENSCVyDVwakZNKkQAOC32yhJVErz1ubaDfyLjZVYnCk6bftAg9IioG6emITjn57KtG6AsQ==
-X-Received: by 2002:a2e:2e0e:: with SMTP id u14mr11617285lju.106.1575727464491; 
- Sat, 07 Dec 2019 06:04:24 -0800 (PST)
+ bh=63FAYeXHOLWZvE39+BvFTQvx8rk1mNWwTMgVp4w9KIs=;
+ b=a847/VLfA7Yjm26J7oX8PiVacVlJ88GPwHCTzDLq/3J3PZWWO2q2u8f/hqtOHv9MJu
+ 7ZTrMp7Dm0fCODJtDpJ642ADRq+Rv2UjwJ3cF9UlCBHW/blddMy+Wkkdb9UhwNdt1vcE
+ LXJJYuV6ySGeNZyaYmXMOrAPyRcdK5J4r7dhI76/aPcwqnosoIJawSlE7ormwBT3EC7R
+ YI5Oji0IdlA4sjn+rwdj+/s3uOUzb6ZkK2IerTPRLtfNFrFJuCMExPfRmoiQevlf1mGs
+ EUZlMRheZ0edk3QlgbPUPruXGWzbxPLRwZ+rZzofskjcF6eDA5f/o5K1sLrv+l8JYQJP
+ SlcA==
+X-Gm-Message-State: APjAAAUl/10Nb1zbP9FQGFsIMHcIUBeObFVbpywfga4jOFuwQ+sCFnfU
+ rhZqX6CPZoWU75GtdsxI7iw=
+X-Google-Smtp-Source: APXvYqwCXvyDmoKVIc4zlBB2XBU0M9Y6CN9iEAOB/MhVUE9gB+QmdDrvfL6CdFab3+wa1LcGnDUevg==
+X-Received: by 2002:a2e:548:: with SMTP id 69mr11532790ljf.67.1575727466338;
+ Sat, 07 Dec 2019 06:04:26 -0800 (PST)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- w17sm5644188lfn.22.2019.12.07.06.04.22
+ w17sm5644188lfn.22.2019.12.07.06.04.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 07 Dec 2019 06:04:24 -0800 (PST)
+ Sat, 07 Dec 2019 06:04:25 -0800 (PST)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Linus Walleij <linus.walleij@linaro.org>, Sam Ravnborg <sam@ravnborg.org>
-Subject: [PATCH v2 08/25] drm/panel: feiyang-fy07024di26a30d: use drm_panel
- backlight support
-Date: Sat,  7 Dec 2019 15:03:36 +0100
-Message-Id: <20191207140353.23967-9-sam@ravnborg.org>
+Subject: [PATCH v2 09/25] drm/panel: ilitek-ili9881c: use drm_panel backlight
+ support
+Date: Sat,  7 Dec 2019 15:03:37 +0100
+Message-Id: <20191207140353.23967-10-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191207140353.23967-1-sam@ravnborg.org>
 References: <20191207140353.23967-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_060426_138836_334AE6A8 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20191207_060428_764536_CBAC9315 
+X-CRM114-Status: GOOD (  13.36  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -126,62 +126,84 @@ Use the backlight support in drm_panel to simplify the driver
 
 Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
 Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Cc: Jagan Teki <jagan@amarulasolutions.com>
 Cc: Thierry Reding <thierry.reding@gmail.com>
 Cc: Sam Ravnborg <sam@ravnborg.org>
 ---
- drivers/gpu/drm/panel/panel-feiyang-fy07024di26a30d.c | 10 +++-------
- 1 file changed, 3 insertions(+), 7 deletions(-)
+ drivers/gpu/drm/panel/panel-ilitek-ili9881c.c | 19 +++----------------
+ 1 file changed, 3 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/gpu/drm/panel/panel-feiyang-fy07024di26a30d.c b/drivers/gpu/drm/panel/panel-feiyang-fy07024di26a30d.c
-index 0157d1844e3e..95b789ab9d29 100644
---- a/drivers/gpu/drm/panel/panel-feiyang-fy07024di26a30d.c
-+++ b/drivers/gpu/drm/panel/panel-feiyang-fy07024di26a30d.c
-@@ -9,7 +9,6 @@
- #include <drm/drm_panel.h>
- #include <drm/drm_print.h>
+diff --git a/drivers/gpu/drm/panel/panel-ilitek-ili9881c.c b/drivers/gpu/drm/panel/panel-ilitek-ili9881c.c
+index 31e5a4e67750..f54077c216a3 100644
+--- a/drivers/gpu/drm/panel/panel-ilitek-ili9881c.c
++++ b/drivers/gpu/drm/panel/panel-ilitek-ili9881c.c
+@@ -3,7 +3,6 @@
+  * Copyright (C) 2017-2018, Bootlin
+  */
  
 -#include <linux/backlight.h>
- #include <linux/gpio/consumer.h>
  #include <linux/delay.h>
- #include <linux/module.h>
-@@ -22,7 +21,6 @@ struct feiyang {
+ #include <linux/device.h>
+ #include <linux/err.h>
+@@ -25,7 +24,6 @@ struct ili9881c {
  	struct drm_panel	panel;
  	struct mipi_dsi_device	*dsi;
  
--	struct backlight_device	*backlight;
- 	struct regulator	*dvdd;
- 	struct regulator	*avdd;
+-	struct backlight_device *backlight;
+ 	struct regulator	*power;
  	struct gpio_desc	*reset;
-@@ -102,7 +100,6 @@ static int feiyang_enable(struct drm_panel *panel)
- 	msleep(200);
+ };
+@@ -348,7 +346,6 @@ static int ili9881c_enable(struct drm_panel *panel)
+ 	msleep(120);
  
  	mipi_dsi_dcs_set_display_on(ctx->dsi);
 -	backlight_enable(ctx->backlight);
  
  	return 0;
  }
-@@ -111,7 +108,6 @@ static int feiyang_disable(struct drm_panel *panel)
+@@ -357,7 +354,6 @@ static int ili9881c_disable(struct drm_panel *panel)
  {
- 	struct feiyang *ctx = panel_to_feiyang(panel);
+ 	struct ili9881c *ctx = panel_to_ili9881c(panel);
  
 -	backlight_disable(ctx->backlight);
  	return mipi_dsi_dcs_set_display_off(ctx->dsi);
  }
  
-@@ -225,9 +221,9 @@ static int feiyang_dsi_probe(struct mipi_dsi_device *dsi)
+@@ -423,7 +419,6 @@ static const struct drm_panel_funcs ili9881c_funcs = {
+ 
+ static int ili9881c_dsi_probe(struct mipi_dsi_device *dsi)
+ {
+-	struct device_node *np;
+ 	struct ili9881c *ctx;
+ 	int ret;
+ 
+@@ -448,14 +443,9 @@ static int ili9881c_dsi_probe(struct mipi_dsi_device *dsi)
  		return PTR_ERR(ctx->reset);
  	}
  
--	ctx->backlight = devm_of_find_backlight(&dsi->dev);
--	if (IS_ERR(ctx->backlight))
--		return PTR_ERR(ctx->backlight);
+-	np = of_parse_phandle(dsi->dev.of_node, "backlight", 0);
+-	if (np) {
+-		ctx->backlight = of_find_backlight_by_node(np);
+-		of_node_put(np);
+-
+-		if (!ctx->backlight)
+-			return -EPROBE_DEFER;
+-	}
 +	ret = drm_panel_of_backlight(&ctx->panel);
 +	if (ret)
 +		return ret;
  
  	ret = drm_panel_add(&ctx->panel);
  	if (ret < 0)
+@@ -475,9 +465,6 @@ static int ili9881c_dsi_remove(struct mipi_dsi_device *dsi)
+ 	mipi_dsi_detach(dsi);
+ 	drm_panel_remove(&ctx->panel);
+ 
+-	if (ctx->backlight)
+-		put_device(&ctx->backlight->dev);
+-
+ 	return 0;
+ }
+ 
 -- 
 2.20.1
 
