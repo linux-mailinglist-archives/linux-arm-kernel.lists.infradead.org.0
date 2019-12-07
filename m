@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9F29115D12
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 15:13:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02363115D14
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 15:13:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3SnER77sm+Ax3SVglz6e5s2ugmZ6ajU2eU8DrwwKS5A=; b=SnMQaMUPLt/Bbr
-	cCYpirYK0oWSnsiM7C1sCduZ5IBqRIwFGImmbXEe9YMNKE0FmK1hgJlwCKXxfQejwcak7Jq7e44e2
-	3dgvnO8UjoaphfcA02JPzvaB6G3S7GsFbwWOpQqK8BN8W+xsIP0ReWn6pRo/Kivockcj2mRIiZhcO
-	WX1VPV6KnN3bPwp4HqyANKn93norYg+SDfQuUEgvhzlh2xey8cDtZPAGzbQSeun5ZRM/xFDjBY/xG
-	D6h6xqNMiFIvIMTD55iHNkT6iEeeK9VYajAVwTnNkZSS9pnqxXFpyvVmeF2T4WnWWLZl+SifzXui+
-	YS1apVfFvfUU6zyKSqvQ==;
+	List-Owner; bh=ReL50pIfYGuMurHp0PVfxhXpaKTFch2C7UzG+8rAY+Q=; b=oMaPtUjyQvl0XJ
+	xhSR0F08DoCi/IdQ9pTHwYXSZmtyCcMcX/oYR5eKGsaEDScFTHFxnQxu8h9wScytj47RuwceWjQzS
+	OIxo4Is6rd5N/bgEd8eInzxwag8TNl6iNXGPfxCK3aQ5/7gRfyauxzAcAAj3nqLHnwTNx/YDgiHQi
+	FRoVgGpGquJ7yL7u6Yu4WWfCXXWmLAeWyzUiGslD6mfmCH+J777zfFfdEdB+s0kk+lG13DAWaTf92
+	GBDLYvNZWzw4pdQp1thgQmpHhfggrXWT3/sSi6eLyf//DKt8aqNgDKEUj170IqCj97z4QrzcLhTrV
+	iYJJUn/KTVohEOJQSayA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idapY-0007RR-12; Sat, 07 Dec 2019 14:13:08 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1idapn-0007hD-Ap; Sat, 07 Dec 2019 14:13:23 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idaha-0005yY-5n; Sat, 07 Dec 2019 14:04:55 +0000
-Received: by mail-lj1-x242.google.com with SMTP id d20so10660139ljc.12;
- Sat, 07 Dec 2019 06:04:53 -0800 (PST)
+ id 1idahc-0005zp-2v; Sat, 07 Dec 2019 14:04:57 +0000
+Received: by mail-lj1-x244.google.com with SMTP id e10so10697853ljj.6;
+ Sat, 07 Dec 2019 06:04:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=SbAZsoLI4xe9I1FggVPS6JxgD/wZYj776xJ1KOhYNIk=;
- b=DCzX7740hQWDvyui4A8ga8DkYDCncQFz4GDyBUZdgaMJdfBOLfab/YXEKbqNxeNt15
- 3tHZkpiTr/zuL6N3ZElvYBLM+CewDl04mfT5TD53GI0I0rsUs+yrDHc7ZwmEvlvVgLcn
- Sh1p51fhuIU9LaCeS7pZRZt/EGRmsq2zDF56PCT8PQX0dh0SOe7piwguDWq3xVxCh+1+
- YOynvNp9Vpl9YGZRC9ZB1L8Oc0/NBQNlmtAoxgBtKnG2Tg2IZcYjOkRp8hVxt0WChfIi
- 9FaIqOlPVaofR8kankX4QZE3AbRYT2FdIbF6MztPJ6s25nfdKHjJFl1UwUOdY5WHme4Q
- 2ixg==
+ bh=Ax5u03O4GlUXYUvsqNfWqp3nl/wfPRGvWRKaUynTqzE=;
+ b=MOsjEX8G2hTD3/Fqw0NAaEC1u+eRNTD8YHbsDUThxCNZ0y7lK+EPqSY7l0iB0EIoBu
+ WR15mn/7DrpvWuejz3eWKvcRkQgfLwrUvNhSp1gY7/7ZlXFmSX2+iE1tyP4SKPER/keM
+ AWg11mGYe7VbBl0OhcfPXQafEzJMP7xS6RJ2GlKsZ4uct5p4piuCX67LTXP/8Cavq5ES
+ rNHvpjQTrS87tvX0PN23KywnIG3H2tBDf13yBTNiJ0TVC23/BCL2XGnKZMCACyg0zM7l
+ GYvBqeAxr9/24mGWgBOXYagq5hgYuZyDuiQQqr+zUDXeJdI4Dsy103KEw0gG1d9kuI+p
+ w8/A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
  :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=SbAZsoLI4xe9I1FggVPS6JxgD/wZYj776xJ1KOhYNIk=;
- b=jreXZKCfnb4his6rTt7U32lEdwNt9POdwewef184GyOeLx359wrJQoJnmFbRDWtLTg
- qd/iagr/PDmzgLtzmBFaNhkzEejsrSI1gtqA+OAxCdPMKm11WR4gktjmP14B7rUiZj34
- 3+/wX2+mfs0GqmuoxnKo77V/yecDXoZZDIRf0djwzfGLPnzouwVSYbrj5+WXA7Gt4G0j
- PVllufKBKkonDMcEx6H6LjgAlUayidHmMqfsYWe9y+HsfiETeLb6ap18olwwMkH4KqWt
- 9LXxRK83KJcsHiDZ/I5UjSYP1jsECpkeU7Oo8T6h+qBV7Ej2doiH/kHntjkczeuEr7Z4
- tY1Q==
-X-Gm-Message-State: APjAAAXWWhIwqEsgqHdD7S4eTSqs2VWFW6J/i6/pRYvDs2TJqdmTbUze
- u7UxqFXuGxpP0XeMuZ0oGN8=
-X-Google-Smtp-Source: APXvYqyueXqxzfVF1B9uqOsm+QnSO4hj8wBzhQU9+hnmAtFQMkiDT971EwDtMKEqiCRZcigJkrKh8A==
-X-Received: by 2002:a2e:9e16:: with SMTP id e22mr4087572ljk.220.1575727492532; 
- Sat, 07 Dec 2019 06:04:52 -0800 (PST)
+ bh=Ax5u03O4GlUXYUvsqNfWqp3nl/wfPRGvWRKaUynTqzE=;
+ b=FQiO6JSmDvLqEx+CvKT3nB2TVHGNVYIFJMRd8X+kgjjitYzWOXlt611CJ1Q4z1FgAG
+ PdPzq9tlt49F2geFjpaHcsgKPEoV273J1Dh6cy+QgWWqnvP9i3YqHYeWy5PFOpBEJP4B
+ nZkX3s0re8uUBwSgiobj5fh2bx1vY1EQBKB1WRPn6FQ4Z8xe1rotoC6sNN467PrfZYxo
+ zAcBVIp8ELBPFBNcHeaKn03sF6zy+bDmTD93n6aUrP2GqAjZ1WY70Blo/hGgxrwotynk
+ cITcz/FbrCnNDlvt7Sq7r17hnDxRVFK4SjMRIgh1WP4U/hKTjA7xP3Ob46+AV195OZ1I
+ 7lnw==
+X-Gm-Message-State: APjAAAVWXHvv3k6lacs6DkbkDsVhwjADp37ulzUmA3x709llo35fbMjI
+ rrCrYrySZLCYRcefS6T8YHc=
+X-Google-Smtp-Source: APXvYqwuVFG+u6wmnSLIj8XDvpMwmzMMOJBAB41245Fellx5JQ1423tL59LT5rneoJWV6nyNmS7r1A==
+X-Received: by 2002:a05:651c:1b5:: with SMTP id
+ c21mr12024851ljn.115.1575727494401; 
+ Sat, 07 Dec 2019 06:04:54 -0800 (PST)
 Received: from saturn.lan (18.158-248-194.customer.lyse.net. [158.248.194.18])
  by smtp.gmail.com with ESMTPSA id
- w17sm5644188lfn.22.2019.12.07.06.04.50
+ w17sm5644188lfn.22.2019.12.07.06.04.52
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 07 Dec 2019 06:04:52 -0800 (PST)
+ Sat, 07 Dec 2019 06:04:53 -0800 (PST)
 From: Sam Ravnborg <sam@ravnborg.org>
 To: dri-devel@lists.freedesktop.org, Thierry Reding <thierry.reding@gmail.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Linus Walleij <linus.walleij@linaro.org>, Sam Ravnborg <sam@ravnborg.org>
-Subject: [PATCH v2 24/25] drm/panel: tpo-td028ttec1: use drm_panel backlight
+Subject: [PATCH v2 25/25] drm/panel: tpo-tpg110: use drm_panel backlight
  support
-Date: Sat,  7 Dec 2019 15:03:52 +0100
-Message-Id: <20191207140353.23967-25-sam@ravnborg.org>
+Date: Sat,  7 Dec 2019 15:03:53 +0100
+Message-Id: <20191207140353.23967-26-sam@ravnborg.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191207140353.23967-1-sam@ravnborg.org>
 References: <20191207140353.23967-1-sam@ravnborg.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_060454_330077_256AFBC5 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20191207_060456_270435_405E09A7 
+X-CRM114-Status: GOOD (  12.39  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -125,73 +126,87 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Use the backlight support in drm_panel to simplify the driver
 
 Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Cc: Linus Walleij <linus.walleij@linaro.org>
 Cc: Thierry Reding <thierry.reding@gmail.com>
 Cc: Sam Ravnborg <sam@ravnborg.org>
 ---
- drivers/gpu/drm/panel/panel-tpo-td028ttec1.c | 14 ++++----------
- 1 file changed, 4 insertions(+), 10 deletions(-)
+ drivers/gpu/drm/panel/panel-tpo-tpg110.c | 20 ++++++--------------
+ 1 file changed, 6 insertions(+), 14 deletions(-)
 
-diff --git a/drivers/gpu/drm/panel/panel-tpo-td028ttec1.c b/drivers/gpu/drm/panel/panel-tpo-td028ttec1.c
-index 37252590b541..cf29405a2dbe 100644
---- a/drivers/gpu/drm/panel/panel-tpo-td028ttec1.c
-+++ b/drivers/gpu/drm/panel/panel-tpo-td028ttec1.c
-@@ -17,7 +17,6 @@
-  * H. Nikolaus Schaller <hns@goldelico.com>
-  */
+diff --git a/drivers/gpu/drm/panel/panel-tpo-tpg110.c b/drivers/gpu/drm/panel/panel-tpo-tpg110.c
+index bee213ea1a42..8472d018c16f 100644
+--- a/drivers/gpu/drm/panel/panel-tpo-tpg110.c
++++ b/drivers/gpu/drm/panel/panel-tpo-tpg110.c
+@@ -14,13 +14,13 @@
+ #include <drm/drm_panel.h>
+ #include <drm/drm_print.h>
  
 -#include <linux/backlight.h>
+ #include <linux/bitops.h>
  #include <linux/delay.h>
+ #include <linux/gpio/consumer.h>
+ #include <linux/init.h>
+ #include <linux/kernel.h>
  #include <linux/module.h>
++#include <linux/of.h>
+ #include <linux/platform_device.h>
  #include <linux/spi/spi.h>
-@@ -83,7 +82,6 @@ struct td028ttec1_panel {
+ 
+@@ -76,10 +76,6 @@ struct tpg110 {
+ 	 * @panel: the DRM panel instance for this device
+ 	 */
  	struct drm_panel panel;
- 
- 	struct spi_device *spi;
+-	/**
+-	 * @backlight: backlight for this panel
+-	 */
 -	struct backlight_device *backlight;
- };
+ 	/**
+ 	 * @panel_type: the panel mode as detected
+ 	 */
+@@ -356,8 +352,6 @@ static int tpg110_disable(struct drm_panel *panel)
+ 	val &= ~TPG110_CTRL2_PM;
+ 	tpg110_write_reg(tpg, TPG110_CTRL2_PM, val);
  
- #define to_td028ttec1_device(p) container_of(p, struct td028ttec1_panel, panel)
-@@ -243,8 +241,6 @@ static int td028ttec1_enable(struct drm_panel *panel)
- 	if (ret)
- 		return ret;
- 
--	backlight_enable(lcd->backlight);
+-	backlight_disable(tpg->backlight);
 -
  	return 0;
  }
  
-@@ -252,8 +248,6 @@ static int td028ttec1_disable(struct drm_panel *panel)
- {
- 	struct td028ttec1_panel *lcd = to_td028ttec1_device(panel);
+@@ -366,8 +360,6 @@ static int tpg110_enable(struct drm_panel *panel)
+ 	struct tpg110 *tpg = to_tpg110(panel);
+ 	u8 val;
  
--	backlight_disable(lcd->backlight);
+-	backlight_enable(tpg->backlight);
 -
- 	jbt_ret_write_0(lcd, JBT_REG_DISPLAY_OFF, NULL);
+ 	/* Take chip out of standby */
+ 	val = tpg110_read_reg(tpg, TPG110_CTRL2_PM);
+ 	val |= TPG110_CTRL2_PM;
+@@ -432,11 +424,6 @@ static int tpg110_probe(struct spi_device *spi)
+ 	if (ret)
+ 		DRM_DEV_ERROR(dev, "no panel height specified\n");
  
- 	return 0;
-@@ -334,10 +328,6 @@ static int td028ttec1_probe(struct spi_device *spi)
- 	spi_set_drvdata(spi, lcd);
- 	lcd->spi = spi;
- 
--	lcd->backlight = devm_of_find_backlight(&spi->dev);
--	if (IS_ERR(lcd->backlight))
--		return PTR_ERR(lcd->backlight);
+-	/* Look for some optional backlight */
+-	tpg->backlight = devm_of_find_backlight(dev);
+-	if (IS_ERR(tpg->backlight))
+-		return PTR_ERR(tpg->backlight);
 -
- 	spi->mode = SPI_MODE_3;
- 	spi->bits_per_word = 9;
+ 	/* This asserts the GRESTB signal, putting the display into reset */
+ 	tpg->grestb = devm_gpiod_get(dev, "grestb", GPIOD_OUT_HIGH);
+ 	if (IS_ERR(tpg->grestb)) {
+@@ -459,6 +446,11 @@ static int tpg110_probe(struct spi_device *spi)
  
-@@ -350,6 +340,10 @@ static int td028ttec1_probe(struct spi_device *spi)
- 	drm_panel_init(&lcd->panel, &lcd->spi->dev, &td028ttec1_funcs,
+ 	drm_panel_init(&tpg->panel, dev, &tpg110_drm_funcs,
  		       DRM_MODE_CONNECTOR_DPI);
- 
-+	ret = drm_panel_of_backlight(&lcd->panel);
++
++	ret = drm_panel_of_backlight(&tpg->panel);
 +	if (ret)
 +		return ret;
 +
- 	return drm_panel_add(&lcd->panel);
- }
+ 	spi_set_drvdata(spi, tpg);
  
+ 	return drm_panel_add(&tpg->panel);
 -- 
 2.20.1
 
