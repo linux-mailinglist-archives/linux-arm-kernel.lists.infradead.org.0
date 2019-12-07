@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEF21115F18
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 23:25:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9177115F31
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 23:25:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fFtTqCEPArL7TYNgku3VVX9L0momgxcKAoXkVW1r0kE=; b=B5IX2xlRc2bxA6
-	mVrAN5mSArv+s96gIGNHHWinPJQKsTT+DLRhByTrUY71j0YxVla9ih92g3456udm2ZdbX+rGjDvYn
-	KClDEaXwZ8zp+YvcOPIXMztJ+enQMOm+VKgwwZrXIfiScXX2FzrYfRPWTM5AkBtWurU2WJTcy7yoF
-	1EPIDdPtVN8iGpx8B3A5SE0hZbY/mnVJd/Q53BOKd9KULC5OiDfZdiY8pJyUY6yDXbPb8FB6F1eh3
-	JdJ94WG2tKq2HfS3dtUspO0SN1TqS+QrMHTV8fIa2DG8x6QJB93fDIhqnmhW++fQRSn0HZl7AwcNi
-	ivKjZOOQn4Y5jj9IY4zA==;
+	List-Owner; bh=hkNXpXUnX5faYpAAATASafN6GaohJd2j2VxWIsJY7Os=; b=uTd+1wjhhdkNoa
+	/1Ad69s77Bs8HEbGWHzD3BrkgAYSxtqX8rWjPgZiJ7KE10ZTERbuYxa0I6Y5VmqppzhbdNbItIH7e
+	xJSrARNKy9R1TAL1O07XSr3u+d3M8/oY7RqSR8Y6nnqGskm7KWVZJlpxYB+Kz9buwPminwG2nAdXZ
+	00Qx4d6+AnVL72JhOcf+WQqfkM8dIt3m2NiJJB/X0NK7DccrXy5rewrK3s7QTDQdK4bJN04goKXuv
+	zMDnE0E6g4kB9S6l/hTrOd22TFLHtniBFe8Om+PzUxrE1u2G4Zx5SgkWiaR/RweESo5cPJOlSjjE0
+	Jt8pV3Rpqgy+p0Iejlhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idiVX-0007fn-QK; Sat, 07 Dec 2019 22:24:59 +0000
+	id 1idiVz-0000Y3-7C; Sat, 07 Dec 2019 22:25:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idiV7-0007WB-25; Sat, 07 Dec 2019 22:24:34 +0000
+ id 1idiVC-0007bY-FE; Sat, 07 Dec 2019 22:24:39 +0000
 Received: from ziggy.de (unknown [95.169.229.25])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0A9622467B;
- Sat,  7 Dec 2019 22:24:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0A99D2467A;
+ Sat,  7 Dec 2019 22:24:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575757472;
- bh=yS94gpuqS6tiHsqCJmY/O8oa8kDut8tm51xSNkTZ76A=;
+ s=default; t=1575757477;
+ bh=fQiHeTSkXa+q0MUHJbEeA+eMFm4vY8RORCB2PwtjnWI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=E88N+dHr4B9LMmu2YL5b4Ufwkb7SxzGaIEKT07wumDn+KHCXw47y38Y0PM5Dst7Ux
- TncGVS8eTiDlA6u47fYhj+JunvHahIwg9D6V/xDbhs+AZs1xDOjJGJMcmTswxeF/fq
- krvJEijvc6e6lNxuHKxt3P/eTdyhfWOIgr9Zm83c=
+ b=i+jFxMOVR/Le+CyeFYT+Ny2XxmxO2U0qaZL/Aoa39NcnJnz9E7CyJ//4HpjjngsG5
+ ap3WFeB76HRfSis+IWf8QafhdlI8yFQU7wR4svAj3i5wwSSEdKDqPHZbdYNofPFZKK
+ GCJlxe7j4QUFU2uYTDOKCSHnT1WFT7ADNsL68wE8=
 From: matthias.bgg@kernel.org
 To: robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
  p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
  sboyd@codeaurora.org, ulrich.hecht+renesas@gmail.com,
  laurent.pinchart@ideasonboard.com, enric.balletbo@collabora.com
-Subject: [PATCH v6 01/12] dt-bindings: display: mediatek: Add mmsys binding
- description
-Date: Sat,  7 Dec 2019 23:23:38 +0100
-Message-Id: <20191207222349.23161-2-matthias.bgg@kernel.org>
+Subject: [PATCH v6 02/12] dt-bindings: mediatek: Add compatible for mt7623
+Date: Sat,  7 Dec 2019 23:23:39 +0100
+Message-Id: <20191207222349.23161-3-matthias.bgg@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191207222349.23161-1-matthias.bgg@kernel.org>
 References: <20191207222349.23161-1-matthias.bgg@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_142433_177401_8ABB1078 
-X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-CacheID: sfid-20191207_142438_567146_19AE6DB8 
+X-CRM114-Status: UNSURE (   7.82  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -92,55 +91,27 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Matthias Brugger <mbrugger@suse.com>
 
-The MediaTek DRM has a block called mmsys, which sets
-the routing and enalbes the different blocks.
-This patch adds one line for the mmsys bindings description.
+MediaTek mt7623 uses the mt2701 binings as fallback.
+Document this in the binding description.
 
 Signed-off-by: Matthias Brugger <mbrugger@suse.com>
 ---
- .../display/mediatek/mediatek,disp.txt        | 28 ++++++++++---------
- 1 file changed, 15 insertions(+), 13 deletions(-)
+ .../devicetree/bindings/display/mediatek/mediatek,disp.txt      | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
-index 8469de510001..c71c8a4b73ff 100644
+index c71c8a4b73ff..a747895574f1 100644
 --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
 +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
-@@ -27,20 +27,22 @@ Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt.
- 
- Required properties (all function blocks):
- - compatible: "mediatek,<chip>-disp-<function>", one of
--	"mediatek,<chip>-disp-ovl"   - overlay (4 layers, blending, csc)
--	"mediatek,<chip>-disp-rdma"  - read DMA / line buffer
--	"mediatek,<chip>-disp-wdma"  - write DMA
--	"mediatek,<chip>-disp-color" - color processor
--	"mediatek,<chip>-disp-aal"   - adaptive ambient light controller
--	"mediatek,<chip>-disp-gamma" - gamma correction
--	"mediatek,<chip>-disp-merge" - merge streams from two RDMA sources
--	"mediatek,<chip>-disp-split" - split stream to two encoders
--	"mediatek,<chip>-disp-ufoe"  - data compression engine
--	"mediatek,<chip>-dsi"        - DSI controller, see mediatek,dsi.txt
--	"mediatek,<chip>-dpi"        - DPI controller, see mediatek,dpi.txt
--	"mediatek,<chip>-disp-mutex" - display mutex
--	"mediatek,<chip>-disp-od"    - overdrive
-+	"mediatek,<chip>-disp-ovl"		- overlay (4 layers, blending, csc)
-+	"mediatek,<chip>-disp-rdma"		- read DMA / line buffer
-+	"mediatek,<chip>-disp-wdma"		- write DMA
-+	"mediatek,<chip>-disp-color"		- color processor
-+	"mediatek,<chip>-disp-aal"		- adaptive ambient light controller
-+	"mediatek,<chip>-disp-gamma"		- gamma correction
-+	"mediatek,<chip>-disp-merge"		- merge streams from two RDMA sources
-+	"mediatek,<chip>-disp-split"		- split stream to two encoders
-+	"mediatek,<chip>-disp-ufoe"		- data compression engine
-+	"mediatek,<chip>-dsi"			- DSI controller, see mediatek,dsi.txt
-+	"mediatek,<chip>-dpi"			- DPI controller, see mediatek,dpi.txt
-+	"mediatek,<chip>-disp-mutex"		- display mutex
-+	"mediatek,<chip>-disp-od"		- overdrive
-+	"mediatek,<chip>-mmsys", "syscon"	- provide clocks and components management
+@@ -42,6 +42,8 @@ Required properties (all function blocks):
+ 	"mediatek,<chip>-disp-od"		- overdrive
+ 	"mediatek,<chip>-mmsys", "syscon"	- provide clocks and components management
    the supported chips are mt2701, mt2712 and mt8173.
-+
++  For mt7623, compatible must be:
++        "mediatek,mt7623-<component>" , "mediatek,mt2701-<component>"
+ 
  - reg: Physical base address and length of the function block register space
  - interrupts: The interrupt signal from the function block (required, except for
-   merge and split function blocks).
 -- 
 2.24.0
 
