@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C103115A6F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 01:54:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C5CB115A89
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 02:09:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Vfq5oetHuoApjVoBPOT1sJUIf0Yg7W+zAmgyU7QPA88=; b=T4D/XaegSDZz3/G8zD4y0PtqU
-	tazqRvIrEe/ss5DltrDV3OJcfi0KI0n0NlfoQlSgjUIViLQ0Kr9lEIOuKB7dGYlfyQFfvyqK+ijz9
-	b6NEgG+Vl2Kdnx3roL2c96DzahXGmZDGS42posvjbEAJkAATEA2sfzlCPWI0ZElhlaS3pwXeCeewj
-	mt1rtMJsE3EON4aZhuZoSy1Mv2O98iI4FTbZ9peN0EZula6H8IOXhZIPiW8z3R2U+xWctW+2XzSK6
-	wPqv4JEjRuUL/F1ypTy4qCKjICbAOHN44z2hZ5W+tDf+ERETX2FLpL5iKKgtsHUzyUhJbyzfMZnwB
-	Glhrp+M0w==;
+	 bh=8OZ3qwVmTC61QE8TjozmRJiF8qitujxfROTMOlrjm9U=; b=hDh4ntrC5ajaGaM3CIt+7GWAN
+	sIdfSCHazME47Oy9UIgrVC2cAB/2BE8xFBbdo0bemnekvgVh/l9vAJwa3Zq3PSPDW2pWJQd+yfFU3
+	9amv8x2339noJRrP23pBxDhRRZRptWGGd8oJ7e7VajM9hAgJmF70hWWnqM+OjrGyQ+dXyGgzJ44Bf
+	Fj7IINrP2ORRcxUFHyFCOguvnMADNrTvfg6nnNOAfBGias3o97t+xOoEmNDwfdOKbiRpgbYVMebn/
+	V7XqAH/4aKdMsV7gcfC6lew5mJgbmZEFBjtEiRS+dZMXAs2HVn/todWwDqnbLuwxLCN4BxXTSYVLS
+	hWexX8wbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idOMo-0002rB-P9; Sat, 07 Dec 2019 00:54:38 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1idObY-0007X7-SQ; Sat, 07 Dec 2019 01:09:52 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idOMh-0002qm-0o
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Dec 2019 00:54:32 +0000
-Received: by mail-wr1-x441.google.com with SMTP id b6so9714076wrq.0
+ id 1idObO-0007Wb-8E
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Dec 2019 01:09:43 +0000
+Received: by mail-wm1-x342.google.com with SMTP id c20so7638080wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Dec 2019 16:54:30 -0800 (PST)
+ Fri, 06 Dec 2019 17:09:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=YyHqnh3RgU+jkragtEYCmywD+W1GeJPYa5pDIp3hGtA=;
- b=FcTHjpXtuWKl1ktGy/jvKmj2CEIxaOGf7WtJh22SSUSCoRnxI007b1epPMs2yzPAU6
- 8XKVC+aUUW4HrvmDIskh7Faxk/Hkh/OBnV3BQ53u77XgaJZ944tnynobm08sy3X5HTGy
- p9ox1+HGbfpaQpNgvjmcoidglRxGol+snYZog=
+ bh=yD+Kc1w68swJeTB/Vxg8esU+QpTKf/Y2rxrM02hsM8E=;
+ b=erVUUFtB6mpxaavF/Ysp04B0vSbTaHZdphEw6PTLPxx4Jh1Lr2T0Jk8GcojtMGgxI3
+ DBrW0+V6iZJe3f8YfhDCKupEhidu6nFRAn3EgPh/iKNjplr7NjNrVYW9yeieGHE8n8B6
+ 82lbOmdaJ/+WYpSO8E560+uoe6p3ly2WEZ9B4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=YyHqnh3RgU+jkragtEYCmywD+W1GeJPYa5pDIp3hGtA=;
- b=OLQ03crpF3au3purxeI8bvAXh8ABQS6MOvs0tvzNmTWOUnVOXY4N6LDDvl4QF3BA4S
- kaAeqZrShTwdZ+QvilOfs7HXczxzxd2FIDHZ+IPIdd83ls2Z+2+2HYZtL3E8duJj7rHJ
- 2np6QDdHJ7QGbdIt3Ctnay8kB4IvwZrCfbkXpZ5pA2bIkGhFR/ZnZzmQ+jn/U3fIJy5l
- 6MXj8UD0YC6Ykdg5S+mFtfc7jkconXDI2qcxmtPyzcpL9hq5M4UxgR3WyFDYejqj/eVA
- lp5V6tBn5WBku0zPTcpZQTIxq4htmwoZvEDPUQE0tSj5GLpEngIutG/puRQlNNovYGkx
- y9aQ==
-X-Gm-Message-State: APjAAAWHdv1ky7ST0KHct5q0fz9HhJi2a5UkdhdVA8uhzaSfRxYvQdGN
- B4B3uW/GT+B42YNIc9iF5sLrhQ==
-X-Google-Smtp-Source: APXvYqycLhNIOEqhQ1FJre7Q/J/PU8EfKeYG6wG58YToIgr2m9pkiKsbRjmM2iUnZ/GXddXke7yIhQ==
-X-Received: by 2002:a5d:540f:: with SMTP id g15mr17461759wrv.86.1575680069042; 
- Fri, 06 Dec 2019 16:54:29 -0800 (PST)
+ bh=yD+Kc1w68swJeTB/Vxg8esU+QpTKf/Y2rxrM02hsM8E=;
+ b=mbdqRj2EcxGTA7nMfdZX5NylHKOP0Q4FdB4sRNmb9CASwiiN9el7k3ppAe5tfXA3j5
+ TBP9R3OnlvhkK/soLdyOw421fP9nJBQhDJHEaaaQmwBJxHPB4w+BT5rTMaVdzl8vMc0T
+ ZVi7cGwfOQ/kq5UVMNCuyHtpV917UZJpmXUEp6GP3BdRqA+vhYPrJfxO5a2fsHH5ZqIx
+ NeS0TqTCB7oKkB6P6hgO4MMn53yY7DxMGbxZMCW1jPwMO73/ChhcHkUZLnXywmBUHH2r
+ SruY/vZaYp4PFf9IGiIanKCvjaWsl0q06ubCd2iXurUp6GPnplGifX2ZVLutnbnUmRj7
+ gvlQ==
+X-Gm-Message-State: APjAAAUM/pE9laqcz2VZj1yPnLP5Rmusa67YBitAM3iGrv614TzkZlK9
+ mU/Yjv+1rOHzBbFL2WeYKhVL7IK4WTLo5Q==
+X-Google-Smtp-Source: APXvYqxObGo3CZK1oMZD8K04TAdbPkiFZl31iS0EfNlkm/zzbTK+0LJdmEc/w156VyiqFzklzdlVMA==
+X-Received: by 2002:a7b:cbc4:: with SMTP id n4mr12296535wmi.118.1575680980554; 
+ Fri, 06 Dec 2019 17:09:40 -0800 (PST)
 Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id h97sm19347000wrh.56.2019.12.06.16.54.24
+ by smtp.gmail.com with ESMTPSA id d14sm18881353wru.9.2019.12.06.17.09.37
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 06 Dec 2019 16:54:28 -0800 (PST)
-Subject: Re: [PATCH] ARM: dts: Cygnus: Fix MDIO node address/size cells
-To: Florian Fainelli <f.fainelli@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20191206181909.10962-1-f.fainelli@gmail.com>
+ Fri, 06 Dec 2019 17:09:39 -0800 (PST)
+Subject: Re: [PATCH 1/2] dt-bindings: soc: Add binding doc for iProc IDM device
+To: Florian Fainelli <f.fainelli@gmail.com>, Rob Herring
+ <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+References: <20191202233127.31160-1-ray.jui@broadcom.com>
+ <20191202233127.31160-2-ray.jui@broadcom.com>
+ <62254bbb-168e-c0ad-a72d-bd659a2c23fa@gmail.com>
 From: Ray Jui <ray.jui@broadcom.com>
-Message-ID: <86e8fbec-f9e5-28d8-cc58-c12ce53a18e9@broadcom.com>
-Date: Fri, 6 Dec 2019 16:54:22 -0800
+Message-ID: <0f0e965b-2e57-8b6b-0c72-1a1008497793@broadcom.com>
+Date: Fri, 6 Dec 2019 17:09:34 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191206181909.10962-1-f.fainelli@gmail.com>
+In-Reply-To: <62254bbb-168e-c0ad-a72d-bd659a2c23fa@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191206_165431_065966_A5282BE5 
-X-CRM114-Status: GOOD (  18.36  )
+X-CRM114-CacheID: sfid-20191206_170942_293780_50D62865 
+X-CRM114-Status: GOOD (  18.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -98,12 +100,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, andrew@lunn.ch, grygorii.strashko@ti.com,
- Scott Branden <sbranden@broadcom.com>, devicetree@vger.kernel.org,
- simon.horman@netronome.com, open list <linux-kernel@vger.kernel.org>,
- Ray Jui <rjui@broadcom.com>, Eric Anholt <eric@anholt.net>, robh+dt@kernel.org,
- bcm-kernel-feedback-list@broadcom.com, netdev@vger.kernel.org,
- rafal@milecki.pl, davem@davemloft.net
+Cc: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -111,37 +110,84 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 12/6/19 10:19 AM, Florian Fainelli wrote:
-> The MDIO node on Cygnus had an reversed #address-cells and
->   #size-cells properties, correct those.
+On 12/5/19 4:09 PM, Florian Fainelli wrote:
+> On 12/2/19 3:31 PM, Ray Jui wrote:
+>> Add binding document for iProc based IDM devices.
+>>
+>> Signed-off-by: Ray Jui <ray.jui@broadcom.com>
 > 
-> Fixes: 40c26d3af60a ("ARM: dts: Cygnus: Add the ethernet switch and ethernet PHY")
-> Reported-by: Simon Horman <simon.horman@netronome.com>
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> ---
->   arch/arm/boot/dts/bcm-cygnus.dtsi | 4 ++--
->   1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/arch/arm/boot/dts/bcm-cygnus.dtsi b/arch/arm/boot/dts/bcm-cygnus.dtsi
-> index 2dac3efc7640..1bc45cfd5453 100644
-> --- a/arch/arm/boot/dts/bcm-cygnus.dtsi
-> +++ b/arch/arm/boot/dts/bcm-cygnus.dtsi
-> @@ -174,8 +174,8 @@
->   		mdio: mdio@18002000 {
->   			compatible = "brcm,iproc-mdio";
->   			reg = <0x18002000 0x8>;
-> -			#size-cells = <1>;
-> -			#address-cells = <0>;
-> +			#size-cells = <0>;
-> +			#address-cells = <1>;
->   			status = "disabled";
->   
->   			gphy0: ethernet-phy@0 {
+> Looks good to me, it's 2019, nearly 2020, maybe make this a YAML
+> compatible binding since it is a new one?
 > 
 
-Looks good! Thanks!
+Sorry I am not aware of this YAML requirement until now.
 
-Reviewed-by: Ray Jui <ray.jui@broadcom.com>
+Is this a new requirement that new DT binding document should be made 
+with YAML format?
+
+Thanks,
+
+Ray
+
+
+>> ---
+>>   .../bindings/soc/bcm/brcm,iproc-idm.txt       | 44 +++++++++++++++++++
+>>   1 file changed, 44 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt
+>>
+>> diff --git a/Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt b/Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt
+>> new file mode 100644
+>> index 000000000000..388c6b036d7e
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/soc/bcm/brcm,iproc-idm.txt
+>> @@ -0,0 +1,44 @@
+>> +Broadcom iProc Interconnect Device Management (IDM) device
+>> +
+>> +The Broadcom iProc IDM device allows control and monitoring of ASIC internal
+>> +bus transactions. Most importantly, it can be configured to detect bus
+>> +transaction timeout. In such case, critical information such as transaction
+>> +address that caused the error, bus master ID of the transaction that caused
+>> +the error, and etc., are made available from the IDM device.
+>> +
+>> +-------------------------------------------------------------------------------
+>> +
+>> +Required properties for IDM device node:
+>> +- compatible: must be "brcm,iproc-idm"
+>> +- reg: base address and length of the IDM register space
+>> +- interrupt: IDM interrupt number
+>> +- brcm,iproc-idm-bus: IDM bus string
+>> +
+>> +Optional properties for IDM device node:
+>> +- brcm,iproc-idm-elog: phandle to the device node of the IDM logging device
+>> +
+>> +-------------------------------------------------------------------------------
+>> +
+>> +Required properties for IDM error logging device node:
+>> +- compatible: must be "brcm,iproc-idm-elog";
+>> +- reg: base address and length of reserved memory location where IDM error
+>> +  events can be saved
+>> +
+>> +-------------------------------------------------------------------------------
+>> +
+>> +Example:
+>> +
+>> +idm {
+>> +	idm-elog {
+>> +		compatible = "brcm,iproc-idm-elog";
+>> +		reg = <0x8f221000 0x1000>;
+>> +	};
+>> +
+>> +	idm-mhb-paxc-axi {
+>> +		compatible = "brcm,iproc-idm";
+>> +		reg = <0x60406900 0x200>;
+>> +		interrupt = <GIC_SPI 516 IRQ_TYPE_LEVEL_HIGH>;
+>> +		brcm,iproc-idm-bus = "idm-mhb-paxc-axi";
+>> +		brcm,iproc-idm-elog = <&idm-elog>;
+>> +	};
+>> +};
+>>
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
