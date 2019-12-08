@@ -2,61 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD5BB115FBC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Dec 2019 23:52:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F26B51160FF
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Dec 2019 06:47:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nXV2t0HtKpkUaJyb9T5SeON7kF2acl7zmQWxRyXWElk=; b=GQFmi8hCPHi+8Y
-	8fJlMZjIGxSpGmFP7H2aK6YInd1dSP/gf6qKL/Za8e398CzJivKHCK5jvrKdLeR+xcDTsGS72+kx2
-	zpW7pjj0t7JCMrP4vLdONKNt9hDGYzAyYNxjbtdi5eBDe1sMWEMeWGkdQRBlhImpS1S7LqrYDRrwW
-	07O54E412nAurZ6uMroqC5/XINgIkvRBJts91KAFMECmuMOT2yr1ApV1Y4Zg1agKaimqi8xwcf+au
-	+VoNzdy7hs9W+Aob2G2GaqZPmYU7uwu4jBlOiff12vzwg0VRa+YKH2AYYPrzeyamdMIZdcU5x1AxM
-	UCAp+5KXvnRJxBask6jw==;
+	List-Owner; bh=gmIs3Tp87ngkAwDYW9JWxm163OFj2qsf0oVumhuidFE=; b=iJRXIx/KZpxrMt
+	HzA7MzQ2MAfz+yDdpL3lS+mx8SdOcBy24WZyY6zZyJsOQO8U2DpIRYYS42fA/BBChGNOtfrwwUks/
+	eVvNAZhswVjfEgbP4dnIPL6KC//TqHOds5l29fpugbxAc7XZ5wvq25D7/S0ChQwEEMBGthjGDiMXA
+	k3bp8PHVQRrKb6A8jqFVN6YTkEIWEd7h0EQlpkBcJvWrlVDPp023AZiWlPuorhGrPqYetuFNLh/rt
+	fbNXutgmcNLK0gaYQSs4C1i7G2/fuIDIMRpRWNjmfa5L/eIb0ZLCwoOFFKFpSzIfwlGbyp2XDRzKQ
+	GKNudntyYSwhBk9iDd2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1idivb-0007tY-Bw; Sat, 07 Dec 2019 22:51:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1idpPw-0007VZ-DS; Sun, 08 Dec 2019 05:47:40 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1idisq-0003ud-A3; Sat, 07 Dec 2019 22:49:06 +0000
-Received: from ziggy.de (unknown [95.169.229.25])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 105EB2467E;
- Sat,  7 Dec 2019 22:48:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575758943;
- bh=2c1gUv8XKvS1eMqQrdyjBwQRMHyDf9x2WLP/L/N/oYk=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Ex+aJfRsACjZ28NTdSFjpsnEX8XGNmUrxtA8psb1ayWYzB3TuieejguY2nD2Roc2F
- G6kC8Ox+SbgCLvviz1viCFs0nmHzWSfR8Ay8XHFq9B4CjOP9/gbN2zjTyRHbss9zB3
- DbBUR8OiMXk4Q4QZ1Hale5vP6GR60CkbihW9mY4M=
-From: matthias.bgg@kernel.org
-To: robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
- p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
- sboyd@kernel.org, ulrich.hecht+renesas@gmail.com,
- laurent.pinchart@ideasonboard.com, enric.balletbo@collabora.com
-Subject: [resend PATCH v6 12/12] drm/mediatek: Add support for mmsys through a
- pdev
-Date: Sat,  7 Dec 2019 23:47:40 +0100
-Message-Id: <20191207224740.24536-13-matthias.bgg@kernel.org>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191207224740.24536-1-matthias.bgg@kernel.org>
-References: <20191207224740.24536-1-matthias.bgg@kernel.org>
+ id 1idpPo-0007V8-VY; Sun, 08 Dec 2019 05:47:34 +0000
+X-UUID: e95f7419130c4ddc8fcbfbd97754565c-20191207
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=JnqPU30kEl4+RpNJnlGsN4JNwgLzMQ4oKfpMLvPeckU=; 
+ b=Wx4Tj8SkDAmVgSADeTZy0I0iQMYfQUfD4ImYPfqwkxZId2c/djEFQMadPwSIHoHW/s5p3n92jMT4jml6TZGekZSeo5753Zminh/jgJuFvIP3GpDBYLp6/MJFwXetqWxAIejdQkEtNakgQn5z2FxgWKxVIyMmVzenZLSdYG1BLOI=;
+X-UUID: e95f7419130c4ddc8fcbfbd97754565c-20191207
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 277587663; Sat, 07 Dec 2019 21:47:27 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 7 Dec 2019 21:38:18 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 8 Dec 2019 13:37:00 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Sun, 8 Dec 2019 13:36:37 +0800
+Message-ID: <1575783443.12066.1.camel@mtkswgap22>
+Subject: Re: [PATCH v1 1/2] soc: mediatek: add header for SiP service interface
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Date: Sun, 8 Dec 2019 13:37:23 +0800
+In-Reply-To: <b3c568f1-d57b-f3f3-b1da-4b312c595fc8@gmail.com>
+References: <1575700748-28191-1-git-send-email-stanley.chu@mediatek.com>
+ <1575700748-28191-2-git-send-email-stanley.chu@mediatek.com>
+ <b3c568f1-d57b-f3f3-b1da-4b312c595fc8@gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: ABB0BF249B6939E6F146B64C56060BDB722E71EF5051679CF21468003F6AF5F42000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191207_144904_420374_2E7E9589 
-X-CRM114-Status: GOOD (  12.36  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191207_214733_022767_4AD8782C 
+X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -66,7 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,114 +86,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: matthias.bgg@kernel.org, devicetree@vger.kernel.org, rdunlap@infradead.org,
- frank-w@public-files.de, sean.wang@mediatek.com, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, sean.wang@kernel.org, wens@csie.org,
- drinkcat@chromium.org, linux-mediatek@lists.infradead.org, mbrugger@suse.com,
- hsinyi@chromium.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+ Leon Chen =?UTF-8?Q?=28=E9=99=B3=E6=96=87=E9=8F=98=29?=
+ <Leon.Chen@mediatek.com>, "Andy
+ Teng \($B{}G!9\(\(B\)" <Andy.Teng@mediatek.com>,
+ "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ Chun-Hung Wu =?UTF-8?Q?=28=E5=B7=AB=E9=A7=BF=E5=AE=8F=29?=
+ <Chun-hung.Wu@mediatek.com>,
+ Kuohong Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=8B=E9=B4=BB=29?=
+ <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "avri.altman@wdc.com" <avri.altman@wdc.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Peter Wang =?UTF-8?Q?=28=E7=8E=8B=E4=BF=A1=E5=8F=8B=29?=
+ <peter.wang@mediatek.com>, "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Matthias Brugger <mbrugger@suse.com>
+Hi Florian,
 
-The MMSYS subsystem includes clocks and drm components.
-This patch adds an initailization path through a platform device
-for the clock part, so that both drivers get probed from the same
-device tree compatible.
+On Sun, 2019-12-08 at 01:40 +0800, Florian Fainelli wrote:
 
-Signed-off-by: Matthias Brugger <mbrugger@suse.com>
----
- drivers/gpu/drm/mediatek/mtk_drm_drv.c | 24 ++++++++++++++++++++++++
- drivers/gpu/drm/mediatek/mtk_drm_drv.h |  2 ++
- 2 files changed, 26 insertions(+)
+> > +#ifdef CONFIG_ARM64
+> > +#define MTK_SIP_SMC_AARCH_BIT           0x40000000
+> > +#else
+> > +#define MTK_SIP_SMC_AARCH_BIT           0x00000000
+> > +#endif
+> 
+> Cannot you use the definitions from include/linux/arm-smccc.h and use
+> ARM_SMCCC_CALL_CONV_SHIFT here and associated helpers?
+> 
+> > +
+> > +/* UFS related SMC call */
+> > +#define MTK_SIP_UFS_CONTROL \
+> > +	(0x82000276 | MTK_SIP_SMC_AARCH_BIT)
+> 
+> Does bit 31 map to the fast vs. slow call of the ARM SMCCC convention or
+> does it have a different meaning (should not). Likewise bit 25 would be
+> ARM_SMMCCC_OWNER_SIP no?
+> 
+> That would leave us with only 0x276 which is a valid function number.
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-index 210455e9f46c..5ada74d8d0c9 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-@@ -186,6 +186,7 @@ static const struct mtk_mmsys_driver_data mt2701_mmsys_driver_data = {
- 	.ext_path = mt2701_mtk_ddp_ext,
- 	.ext_len = ARRAY_SIZE(mt2701_mtk_ddp_ext),
- 	.shadow_register = true,
-+	.clk_drv_name = "clk-mt2701-mm",
- };
- 
- static const struct mtk_mmsys_driver_data mt2712_mmsys_driver_data = {
-@@ -195,6 +196,7 @@ static const struct mtk_mmsys_driver_data mt2712_mmsys_driver_data = {
- 	.ext_len = ARRAY_SIZE(mt2712_mtk_ddp_ext),
- 	.third_path = mt2712_mtk_ddp_third,
- 	.third_len = ARRAY_SIZE(mt2712_mtk_ddp_third),
-+	.clk_drv_name = "clk-mt2712-mm",
- };
- 
- static const struct mtk_mmsys_driver_data mt8173_mmsys_driver_data = {
-@@ -202,6 +204,7 @@ static const struct mtk_mmsys_driver_data mt8173_mmsys_driver_data = {
- 	.main_len = ARRAY_SIZE(mt8173_mtk_ddp_main),
- 	.ext_path = mt8173_mtk_ddp_ext,
- 	.ext_len = ARRAY_SIZE(mt8173_mtk_ddp_ext),
-+	.clk_drv_name = "clk-mt8173-mm",
- };
- 
- static int mtk_drm_kms_init(struct drm_device *drm)
-@@ -499,6 +502,24 @@ static int mtk_drm_probe(struct platform_device *pdev)
- 	INIT_WORK(&private->commit.work, mtk_atomic_work);
- 	private->data = of_device_get_match_data(dev);
- 
-+	/*
-+	 * MMSYS includes apart from components management a block providing
-+	 * clocks for the subsystem. We probe this clock driver via a platform
-+	 * device.
-+	 */
-+	if (private->data->clk_drv_name) {
-+		private->clk_dev = platform_device_register_data(dev,
-+						private->data->clk_drv_name, -1,
-+						NULL, 0);
-+
-+		if (IS_ERR(private->clk_dev)) {
-+			dev_err(dev, "failed to register %s platform device\n",
-+				private->data->clk_drv_name);
-+
-+			return PTR_ERR(private->clk_dev);
-+		}
-+	}
-+
- 	private->config_regs = syscon_node_to_regmap(dev->of_node);
- 	if (IS_ERR(private->config_regs))
- 		return PTR_ERR(private->config_regs);
-@@ -605,6 +626,9 @@ static int mtk_drm_remove(struct platform_device *pdev)
- 	for (i = 0; i < DDP_COMPONENT_ID_MAX; i++)
- 		of_node_put(private->comp_node[i]);
- 
-+	if (private->clk_dev)
-+		platform_device_unregister(private->clk_dev);
-+
- 	return 0;
- }
- 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-index 63a121577dcb..8fe9136adc38 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-@@ -29,11 +29,13 @@ struct mtk_mmsys_driver_data {
- 	unsigned int third_len;
- 
- 	bool shadow_register;
-+	const char *clk_drv_name;
- };
- 
- struct mtk_drm_private {
- 	struct drm_device *drm;
- 	struct device *dma_dev;
-+	struct platform_device *clk_dev;
- 
- 	unsigned int num_pipes;
- 
--- 
-2.24.0
+Thanks so much for these comments.
+I'll try to use suitable definitions instead in next version.
 
+Stanley
 
 _______________________________________________
 linux-arm-kernel mailing list
