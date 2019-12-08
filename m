@@ -2,86 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 611E31163F3
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Dec 2019 23:08:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B9E51163FD
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Dec 2019 23:38:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BWPc39wa9AnsvYgb7CE5jGkouD0CcBpnCSbt6JzzWBk=; b=UlNun4dnYPMknm
-	T9ibfBCx7PPfRk3jQdpYe7umJ0/OTR+8y6AfOKg4z4fB+nXU3OYE4a4Q8oNjGPnzkXY5mSghXbSQj
-	Ov4uQPQHGOZnmdvr0ts3ykykpt2bti8JlArsavmStq4bdCSa5IBfIK7T7KDMje1wIr3vrEAqZyxtI
-	NNLYarBzGonSIVzwROJ2xtZ00iG9gIdgNLy04PrmatGgyaiZTrf35EI43FCJUav5BoRawVt8Vv0LD
-	FXybaSCmyWVXPxbj5STM03o2ixWYqk0+To5Z8EM01+Pp90e71Pk5vjlO5eRNocjpfPBHFYXrwjNB/
-	b9ZUkpLLxBrUpAzYfAjw==;
+	List-Owner; bh=tmJeIUDQvnphjiBsGlWJ/Xt7I5BUfTPQZEBjPA0NUnw=; b=aPpmfozwxFVMar
+	iGTJKapHDEWI5/hpg9zKpcLq0z9jr582YzEKbkGaNkhiyyjqwfr4ATJL/X+++EkHHFJ7hgAKnJAR9
+	dJRvn5uz3TZtpsN+kV9TFyoxRi4CFyvQi7ZBo9QEU0niR9zepDvhfzI2QP0/9e1ZCVjezSFT/VaNS
+	hEe77Huuj1CZZPbpE2scYKUPSF2e2AbqvMaqIgu/yrJNxG1T42uIogdBZFSnO7JXLD/UpUIKhQNil
+	R4pdzg0RE/MkpvyaTmUmFZaK/klDNOeIsD2YSlf4wwJOc5LkwZBt5RG4RgIdPfIoYKZ9uYRixfIZl
+	FONqB5A0V0nSibImbOMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ie4j2-0005HW-5S; Sun, 08 Dec 2019 22:08:24 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1ie5C7-0005gK-GD; Sun, 08 Dec 2019 22:38:27 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ie4iq-0005Fy-AA; Sun, 08 Dec 2019 22:08:13 +0000
-Received: by mail-oi1-x243.google.com with SMTP id v140so4692002oie.0;
- Sun, 08 Dec 2019 14:08:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6LcpecxJCuptWnky/wBInRHW7dBWZyoNDO8ejqGqya4=;
- b=JiUPaF+aLz6TU175q9IIuAWCfbj1Dp34A44ajwK6wWjJuU4qAW6BB4WFznxCnlrz+m
- 11aV+yzG5hho4KnFOHqZ4MdNh0vO5men3cU1qp5cZ4yKlf8NYCo/WlL3zH/9Us1l56E2
- zaiUI5IFBXi84lF7T6fkfCSTwUxRB+6DMpcPrFgw+839cVtn7VvEd/tz1YJlMGKUMrFv
- cMVvpXHbsEhI+l1VNNoyP/3w2xVFStHfFJ1IDsQzMBaQj74boPcUBmJpW+MuWdDWAp4S
- z91RVykEF70X975kRocmzBBOXgC3eOuH0yxBwNCsUrxB0bkqd2TIjaIXJztFPi8M4KID
- 6zPQ==
+ id 1ie5C0-0005fg-8g
+ for linux-arm-kernel@lists.infradead.org; Sun, 08 Dec 2019 22:38:21 +0000
+Received: by mail-pl1-x644.google.com with SMTP id o9so4956486plk.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 08 Dec 2019 14:38:16 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=MnvBbRT5iVZH0+Nzu+hGknTgiT+FwnkKwwLBbL9Zn4g=;
+ b=oJoEzkbGwyMIJYmVqOV2vuz/nVqn5wdKUiDyDWQnIBOMICxwbI9aDzJfCuB9Y5iz7A
+ cYjrttcvemVXPD6YhJnYemHbQ/Naq7G9isQY0oR6+07H8S2b4eBvagZc9RclbtVo5Oxt
+ EEtgMLcfs3J/3c7VT8SDTP1NT7EG5oWzUt6oghdywy2GuZgCnU0DBs9lHL3YueZxCnll
+ opyw7vdw3nGJ0w3W/tQsa3eFJx47fu5QCfnzoGRI1NK5i0R/BNV9XbBvqda9vMcGJmJV
+ RUEUm6WbjWXlqrwxY6MUbY7tVH+4k0/AzXb47fspet8I73nnbz2lmJO3yvHxVkHo66SO
+ GwXg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6LcpecxJCuptWnky/wBInRHW7dBWZyoNDO8ejqGqya4=;
- b=uaFykxfGiG5E12oMyXtvOoXLtWs/1IHPIRJOIsbR6NElyF4PRJtYfal/riu3STgjt2
- mkkwR3rw2NXb3J+5NilxtQEz/JUhqZ2F9ALCdu7RfLWk6Kd1HsrAazj1mcpEUuVAXoqA
- TZgcMw3GpUibNwt3RqpsayYltDjQjMtw5F3U+kRHq4kzXSjg+a9ToI7T2GXNGlVH4VZD
- MmP0nByy1oTSsdJoMJVo+G/0LLN28NDslSD1UlGXHPJRp2HPEgljY5xhhShLl0RntPhe
- ZvcYMEOtNkbnJRL1GjuqcTJl9koS2C+1LS1W3rS7HjObwOCvwZQ5AGVN01cBuErcEQDn
- BhNg==
-X-Gm-Message-State: APjAAAWzdrNQRxs1K1KQlPjRZnrW4qe52WB4a3EDgoZpmVB5JFSaSu7a
- M7FHdhvLm5hmX0Z3Fqy2eSc0PNFW1QC0klEIEXU=
-X-Google-Smtp-Source: APXvYqyhNhm0JNicy/loq8RdAT4DHahKdfAG1UNTU2pTEGoRTXZgPhgK9yLqIJ8epqm1nERlorhDJkru2+6iVkzYho0=
-X-Received: by 2002:a54:401a:: with SMTP id x26mr21795889oie.15.1575842888488; 
- Sun, 08 Dec 2019 14:08:08 -0800 (PST)
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=MnvBbRT5iVZH0+Nzu+hGknTgiT+FwnkKwwLBbL9Zn4g=;
+ b=GykXNV868j9QRtbmcNnlq2wEh5LEmBjXaxmxhoNncBmfVy537ExNIaYwGcfawCF7iR
+ liHyW4gxpdOt4va9MfU2CdX68CobRF26QeRK4XL11E4oDbLlHrsuduxDwqHFxSgsaxHn
+ E0I1lHaikLZoJKvQZm75CD3mbItBP4yz1aawQu6b4hm+87k2vFJOlPFvi9oKPAas/JvN
+ QwRoRTw8PGXSws94pGNbAXEcVx72FH1HdqO4lutEiEf52mCaiXuR5gbpWdUVi48rZPrI
+ MoMvUniC1qhD+QwxRQxLRIoyuW2FPPLaEIbNFVF9VCFZ3bvJEYt+5Trv2lNdXDTD+9nA
+ bu1A==
+X-Gm-Message-State: APjAAAWyHK9De+pU9rFQR16oadaU37CXKPhmyW7P20oDgvW4T98QBnwa
+ 0bALaTwExGa9vWlUvJcD7Ms2k5uJ
+X-Google-Smtp-Source: APXvYqyTH+955DDw+6USZnKhGT30ibfdBdfKpDWuHsUCEHkmZ+v1u36m47xK1OHv9GIbrg7P55OpWA==
+X-Received: by 2002:a17:902:c58e:: with SMTP id
+ p14mr26026826plx.202.1575844696307; 
+ Sun, 08 Dec 2019 14:38:16 -0800 (PST)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id u2sm22210820pgc.19.2019.12.08.14.38.14
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 08 Dec 2019 14:38:15 -0800 (PST)
+Date: Sun, 8 Dec 2019 14:38:14 -0800
+From: Guenter Roeck <linux@roeck-us.net>
+To: Michael Tretter <m.tretter@pengutronix.de>
+Subject: Re: [PATCH 1/5] arm64: zynqmp: Add firmware DT node
+Message-ID: <20191208223814.GA21260@roeck-us.net>
+References: <20191018160735.15658-1-m.tretter@pengutronix.de>
+ <20191018160735.15658-2-m.tretter@pengutronix.de>
 MIME-Version: 1.0
-References: <20191208210320.15539-1-repk@triplefau.lt>
- <20191208210320.15539-2-repk@triplefau.lt>
-In-Reply-To: <20191208210320.15539-2-repk@triplefau.lt>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sun, 8 Dec 2019 23:07:57 +0100
-Message-ID: <CAFBinCA7Tnc2M=4jxYYS_RuoLnGNprUOFDrZG_G6fhQCyb3Cig@mail.gmail.com>
-Subject: Re: [PATCH 1/2] clk: meson: axg: add pcie pll cml gating
-To: Remi Pommarel <repk@triplefau.lt>
+Content-Disposition: inline
+In-Reply-To: <20191018160735.15658-2-m.tretter@pengutronix.de>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_140812_377015_89A962F3 
-X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-CacheID: sfid-20191208_143820_330028_F4D96F80 
+X-CRM114-Status: UNSURE (   9.62  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ provider (groeck7[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,45 +106,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Neil Armstrong <narmstrong@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Yue Wang <yue.wang@amlogic.com>, linux-pci@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Rajan Vaja <rajan.vaja@xilinx.com>, michal.simek@xilinx.com,
+ qemu-devel@nongnu.org, Rajan Vaja <rajanv@xilinx.com>, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Remi,
+On Fri, Oct 18, 2019 at 06:07:31PM +0200, Michael Tretter wrote:
+> From: Rajan Vaja <rajan.vaja@xilinx.com>
+> 
+> Add firmware DT node in ZynqMP device tree. This node
+> uses bindings as per new firmware interface driver.
+> 
+> Signed-off-by: Rajan Vaja <rajanv@xilinx.com>
+> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+> Signed-off-by: Michael Tretter <m.tretter@pengutronix.de>
 
-On Sun, Dec 8, 2019 at 9:56 PM Remi Pommarel <repk@triplefau.lt> wrote:
-[...]
-> +static MESON_GATE(axg_pcie_pll_cml_enable, HHI_MIPI_CNTL0, 26);
-we already have CLKID_PCIE_CML_EN0
-do you know how this new one is related (in terms of clock hierarchy)
-to the existing one?
+With this patch applied in the mainline kernel, the qemu xlnx-zcu102
+emulation crashes (see below). Any idea what it might take to get
+qemu back to working ?
 
-[...]
-> --- a/include/dt-bindings/clock/axg-clkc.h
-> +++ b/include/dt-bindings/clock/axg-clkc.h
-> @@ -72,5 +72,6 @@
->  #define CLKID_PCIE_CML_EN1                     80
->  #define CLKID_MIPI_ENABLE                      81
->  #define CLKID_GEN_CLK                          84
-> +#define CLKID_PCIE_PLL_CML_ENABLE              91
-this has to be a separate patch if you want the .dts patch to go into
-the same cycle
-the .dts change depends on this one. what we typically do is to apply
-the dt-bindings patches to a separate clock branch, create an
-immutable tag and then Kevin pulls that into his dt64 branch.
-the clock controller changes go into a separate patch in the
-clk-meson/drivers branch to avoid conflicts with other driver changes
+Thanks,
+Guenter
 
-
-Martin
+---
+[   30.719268] ------------[ cut here ]------------
+[   30.719403] kernel BUG at arch/arm64/kernel/traps.c:406!
+[   30.719971] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
+[   30.720358] Modules linked in:
+[   30.720741] CPU: 3 PID: 1 Comm: swapper/0 Not tainted 5.4.0-13331-g9455d25f4e3b #1
+[   30.720852] Hardware name: ZynqMP ZCU102 Rev1.0 (DT)
+[   30.721157] pstate: 00000005 (nzcv daif -PAN -UAO)
+[   30.721261] pc : do_undefinstr+0x2f4/0x318
+[   30.721336] lr : do_undefinstr+0x1fc/0x318
+[   30.721410] sp : ffff80001003b930
+[   30.721486] x29: ffff80001003b930 x28: ffff00007d178040
+[   30.721597] x27: 0000000000000000 x26: ffff8000117d0514
+[   30.721683] x25: ffff8000118c90d0 x24: 0000000000000000
+[   30.721769] x23: 0000000040000005 x22: 00000000d4000003
+[   30.721854] x21: ffff800011e1c850 x20: ffff80001003b990
+[   30.721940] x19: ffff800011e0fa08 x18: 0000000000000001
+[   30.722025] x17: ffff800010c0f1d8 x16: ffff800010c11fb8
+[   30.722111] x15: ffffffffffffffff x14: ffffffffffffffff
+[   30.722196] x13: 0000000000000018 x12: 0101010101010101
+[   30.722281] x11: 0000000000000000 x10: 00000000628e21fa
+[   30.722384] x9 : ffff00007d178858 x8 : ffff00007d178880
+[   30.722471] x7 : ffff80001003b8b0 x6 : 0000000000000001
+[   30.722560] x5 : 0000000000000001 x4 : 0000000000000001
+[   30.722646] x3 : 0000000000000000 x2 : 00000000000174b1
+[   30.722730] x1 : ffff00007d178040 x0 : 0000000040000005
+[   30.722913] Call trace:
+[   30.722993]  do_undefinstr+0x2f4/0x318
+[   30.723070]  el1_sync_handler+0xb0/0x108
+[   30.723138]  el1_sync+0x7c/0x100
+[   30.723201]  __arm_smccc_smc+0x0/0x2c
+[   30.723272]  zynqmp_pm_get_api_version.part.1+0x40/0x68
+[   30.723352]  zynqmp_firmware_probe+0xbc/0x298
 
 _______________________________________________
 linux-arm-kernel mailing list
