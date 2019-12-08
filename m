@@ -2,45 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D80BB1163C9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Dec 2019 21:55:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B6C51163D5
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Dec 2019 22:14:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0scoVDep/tDcCz4Cpzoxyuv2y75dcy6wZo/f9/RoqVU=; b=dLjIqZGd76PZQw
-	MCpx7CtdgnHIviMRvhNrq1ANkh25UhRamSmpGKWuLquK50d3ktHGsE9nQUgZE74zAP6nGr/nEvkNq
-	B77UUH32xmfVg62OdVDkDMbvxsXsn9yXaDQD2+wEGBwaaiuMEz5IJ64kB+8rFIc6Rj8DGBiC5x93U
-	7qWSY3k5hRyGFcqj53xOTAUd3SlaSBwm/3Ni8X1vH8/tXQ+sBCbZ1FcTes2v9a4dZbz55xTmdTSBc
-	B/XIMOXVZdi8XeDLWxmLqz8uqwUceQsGmQDp8sx3pP3OHPqEJzUdmuS7QjWQjCZ6L77V2L18tPjDL
-	vCjOLXsyDRO0r26PLbmA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lU1LL9uPV2m2QWDyggsxnFOUWWV6mOtcgfQUpFIWbls=; b=os7CTMTipuHipB
+	mRrsm1/Ie/DWJBGNNY01sUC+UkOBEayEXDqB2xC2WBN3jF2BueMOKDQAHdGaHIXaAGyEHYC8Vxn3A
+	5tkNXyEunSaFfQgN9Cp47/o7fCvYCz0bh/yJQga3NcpQvzyjRhSUiRg5woUv5hYcB3J0PRkzoX03b
+	WJ9zEHXub3V9LqNhO3BIuCaQ/rvg/HSfUOLTJzhhkVdDJM+Y+ASUjPPEzSMs5gaXfzll1po9aJ2sJ
+	18h4HVfiZesVBznh/tjkqKwnCCGm9Xw2uMGF0jFXzHYGPCe4MvdW42jHmJP5hHgk3ufTxegBsxi7o
+	QvPlUgCvr2qimSjuwk/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ie3aq-0006YO-Lm; Sun, 08 Dec 2019 20:55:52 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1ie3sW-0003l2-Si; Sun, 08 Dec 2019 21:14:08 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ie3aT-0006M4-B3; Sun, 08 Dec 2019 20:55:30 +0000
-X-Originating-IP: 88.190.179.123
+ id 1ie3sL-0003ii-7h; Sun, 08 Dec 2019 21:13:58 +0000
 Received: from localhost (unknown [88.190.179.123])
  (Authenticated sender: repk@triplefau.lt)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id DE367C0003;
- Sun,  8 Dec 2019 20:55:22 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 4C24A200006;
+ Sun,  8 Dec 2019 21:13:41 +0000 (UTC)
 From: Remi Pommarel <repk@triplefau.lt>
 To: Neil Armstrong <narmstrong@baylibre.com>,
- Jerome Brunet <jbrunet@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
- Yue Wang <yue.wang@Amlogic.com>
-Subject: [PATCH 2/2] PCI: amlogic: Use PCIe pll gate when available
-Date: Sun,  8 Dec 2019 22:03:20 +0100
-Message-Id: <20191208210320.15539-3-repk@triplefau.lt>
+ Jerome Brunet <jbrunet@baylibre.com>
+Subject: [PATCH] clk: meson: pll: Fix by 0 division in __pll_params_to_rate()
+Date: Sun,  8 Dec 2019 22:22:06 +0100
+Message-Id: <20191208212206.16808-1-repk@triplefau.lt>
 X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191208210320.15539-1-repk@triplefau.lt>
-References: <20191208210320.15539-1-repk@triplefau.lt>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_125529_531425_DD21C602 
-X-CRM114-Status: UNSURE (   9.11  )
+X-CRM114-CacheID: sfid-20191208_131357_411338_3CBC5D23 
+X-CRM114-Status: UNSURE (   6.52  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -48,7 +44,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
+ low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,8 +58,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Stephen Boyd <sboyd@kernel.org>, linux-pci@vger.kernel.org,
+Cc: Stephen Boyd <sboyd@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
  Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
  Remi Pommarel <repk@triplefau.lt>, linux-amlogic@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
@@ -72,39 +67,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to get PCIe working reliably on some AXG platforms, PCIe pll
-cml needs to be enabled. This is done by using the PCIE_PLL_CML_ENABLE
-clock gate.
+Some meson pll registers can be initialized with 0 as N value, introducing
+the following division by 0 when computing rate :
 
-This clock gate is optional, so do not fail if it is missing in the
-devicetree.
+  UBSAN: Undefined behaviour in drivers/clk/meson/clk-pll.c:75:9
+  division by zero
+  CPU: 0 PID: 1 Comm: swapper/0 Not tainted 5.4.0-rc3-608075-g86c9af8630e1-dirty #400
+  Call trace:
+   dump_backtrace+0x0/0x1c0
+   show_stack+0x14/0x20
+   dump_stack+0xc4/0x100
+   ubsan_epilogue+0x14/0x68
+   __ubsan_handle_divrem_overflow+0x98/0xb8
+   __pll_params_to_rate+0xdc/0x140
+   meson_clk_pll_recalc_rate+0x278/0x3a0
+   __clk_register+0x7c8/0xbb0
+   devm_clk_hw_register+0x54/0xc0
+   meson_eeclkc_probe+0xf4/0x1a0
+   platform_drv_probe+0x54/0xd8
+   really_probe+0x16c/0x438
+   driver_probe_device+0xb0/0xf0
+   device_driver_attach+0x94/0xa0
+   __driver_attach+0x70/0x108
+   bus_for_each_dev+0xd8/0x128
+   driver_attach+0x30/0x40
+   bus_add_driver+0x1b0/0x2d8
+   driver_register+0xbc/0x1d0
+   __platform_driver_register+0x78/0x88
+   axg_driver_init+0x18/0x20
+   do_one_initcall+0xc8/0x24c
+   kernel_init_freeable+0x2b0/0x344
+   kernel_init+0x10/0x128
+   ret_from_fork+0x10/0x18
 
+This checks if N is null before doing the division.
+
+Fixes: 8289aafa4f36 ("clk: meson: improve pll driver results with frac")
 Signed-off-by: Remi Pommarel <repk@triplefau.lt>
 ---
- drivers/pci/controller/dwc/pci-meson.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/clk/meson/clk-pll.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/drivers/pci/controller/dwc/pci-meson.c b/drivers/pci/controller/dwc/pci-meson.c
-index 3772b02a5c55..32b70ea9a426 100644
---- a/drivers/pci/controller/dwc/pci-meson.c
-+++ b/drivers/pci/controller/dwc/pci-meson.c
-@@ -89,6 +89,7 @@ struct meson_pcie_clk_res {
- 	struct clk *mipi_gate;
- 	struct clk *port_clk;
- 	struct clk *general_clk;
-+	struct clk *pll_cml_gate;
- };
+diff --git a/drivers/clk/meson/clk-pll.c b/drivers/clk/meson/clk-pll.c
+index ddb1e5634739..6649659f216a 100644
+--- a/drivers/clk/meson/clk-pll.c
++++ b/drivers/clk/meson/clk-pll.c
+@@ -66,6 +66,10 @@ static unsigned long __pll_params_to_rate(unsigned long parent_rate,
+ 					 (1 << pll->frac.width));
+ 	}
  
- struct meson_pcie_rc_reset {
-@@ -300,6 +301,10 @@ static int meson_pcie_probe_clocks(struct meson_pcie *mp)
- 	if (IS_ERR(res->clk))
- 		return PTR_ERR(res->clk);
- 
-+	res->pll_cml_gate = meson_pcie_probe_clock(dev, "pll_cml_en", 0);
-+	if (IS_ERR(res->pll_cml_gate))
-+		res->pll_cml_gate = NULL;
++	/* Avoid by zero division */
++	if (n == 0)
++		return 0;
 +
- 	return 0;
+ 	return DIV_ROUND_UP_ULL(rate, n);
  }
  
 -- 
