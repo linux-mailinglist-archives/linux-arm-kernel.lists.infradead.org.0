@@ -2,53 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E80EF1163C8
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Dec 2019 21:55:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A73741163CB
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Dec 2019 21:56:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Y6QMucVX3HNHIDY1abfqZpt+UkMbIVp0uKrob9o/UDg=; b=i54KJ9kefGF9G3
-	PJ2to0cpsfgZ4eeFg1fEyS7L1hVjyJvjjmAeL04G3YY00z4TiVRWwvwaVL4JUZIYBIuF4V7wuBsaM
-	/z2wJsvnMUt+f1FSrJJ2fBF106lPguFUX5SfUd8soj0dwRgkB6CHk33LV9bjpa5QLFJq0Fx2j+l/T
-	F6IESciB+rtKG5C/qwtCJV96JrY2IgbjaxPHqHRF5kjNy0dCkjg3UuGGtiFQ9YSaQALwUfQYOJQEE
-	RA6bJjyQLgNDx1yMSGpKbFXC7Fp2UzQJ80E8i8ThB07GLzWdtXHs+dWAeMEPu+WEK92f4VLGPtVEs
-	zsWz4xKoO3qwMaypFZ/A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MOc/5Yha8ezFEgHPncq6QfjD/kh5A2Q3wrvNGQRc1ik=; b=c3P5XWn/0RY+A+
+	T+mROKbvvaebgRPYTGT9BQX2aLOJfxxGCZDZ4+/GxNpmddPcsuZT2FujYZ+aoQqznwxrg2TNwxroZ
+	eimw05hHGxVYvRrK/fKmiqMm+skJSp4dVTmGBIlupdXfzwUDx1h05vAoN7Y0Dv7I3MhZlKKd83WY9
+	ygVHB4swWYG2p/2qsnJy4ar8Hw3BTDPelv3qNF+qbicN6DZ4HMNS0uKmEx3ICZsGry8qR/4C7Ecrl
+	C89XIzysBBDCoCCfjZ1Rha+XWWcHqjX7VMfaMR+JuLz6awLKMe9YOMSC8UUA71mTs1c55VGyZfbXT
+	EXi3sHWkmJWpBR6IijXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ie3aa-0006NG-NX; Sun, 08 Dec 2019 20:55:36 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1ie3b9-0006v4-2H; Sun, 08 Dec 2019 20:56:11 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ie3aQ-0006Lo-Qb; Sun, 08 Dec 2019 20:55:28 +0000
+ id 1ie3az-0006tS-9Y; Sun, 08 Dec 2019 20:56:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=7hKGw58ILqckxLS6Lqao62LAcoLIpMmoX9aFw/dvBCE=; b=KM/zNa/clE8J0Y3OeUGpK/I6bj
+ PdwCKbvlLRzNjmcnMLqJmyg5P2kphUmpWeyJ8RXFsSxzJZPD8sjhm6cpXDBnBjGlPr7fIa5B8GmmC
+ SVWgTOMoZ/+pg+BDSbKGrX7lKaPMo9K01m8V6GfBbtkyjJReEndwzeb7I6eelHJ9TCssizEO/eFZX
+ E1fD8nC4dYTWgIQP0zy8aqXOyTLKRf5DpUPigVdIWPc3ozXY7GdgvaNCEJ8F3+E1BRnf+/xdMnas2
+ PgAPkX3samKAGxSjSSfPjCUFW+ZlNv6QVqD8xGyeYToezLcgNz+2l4ZfX+oLMFQ3YUliqC7X5wE5G
+ 2yBSDDFA==;
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ie3bO-0005CV-O3; Sun, 08 Dec 2019 20:56:28 +0000
 X-Originating-IP: 88.190.179.123
 Received: from localhost (unknown [88.190.179.123])
  (Authenticated sender: repk@triplefau.lt)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id E6B7AC0005;
- Sun,  8 Dec 2019 20:55:07 +0000 (UTC)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 56DA720005;
+ Sun,  8 Dec 2019 20:55:18 +0000 (UTC)
 From: Remi Pommarel <repk@triplefau.lt>
 To: Neil Armstrong <narmstrong@baylibre.com>,
  Jerome Brunet <jbrunet@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
  Yue Wang <yue.wang@Amlogic.com>
-Subject: [PATCH 0/2] PCI: amlogic: Make PCIe working reliably on AXG platforms
-Date: Sun,  8 Dec 2019 22:03:18 +0100
-Message-Id: <20191208210320.15539-1-repk@triplefau.lt>
+Subject: [PATCH 1/2] clk: meson: axg: add pcie pll cml gating
+Date: Sun,  8 Dec 2019 22:03:19 +0100
+Message-Id: <20191208210320.15539-2-repk@triplefau.lt>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191208210320.15539-1-repk@triplefau.lt>
+References: <20191208210320.15539-1-repk@triplefau.lt>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_125526_996493_A4F27984 
-X-CRM114-Status: UNSURE (   7.09  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191208_205626_843031_32AF72E6 
+X-CRM114-Status: GOOD (  11.43  )
 X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-0.7 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,42 +86,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PCIe device probing failures have been seen on some AXG platforms and were
-due to unreliable clock signal output. Setting HHI_MIPI_CNTL0[26] bit
-solved the problem. After being contacted about this, vendor reported that
-this bit was linked to PCIe PLL CML output.
+PCIE_PLL_CML_ENABLE is used to enable or disable pcie clock PAD
+output reliably on AXG platforms.
 
-This serie adds a way to set this bit through AXG clock gating logic.
-Platforms having this kind of issue could make use of this gating by
-applying a patch to their devicetree similar to:
+Signed-off-by: Remi Pommarel <repk@triplefau.lt>
+---
+ drivers/clk/meson/axg.c              | 3 +++
+ drivers/clk/meson/axg.h              | 2 +-
+ include/dt-bindings/clock/axg-clkc.h | 1 +
+ 3 files changed, 5 insertions(+), 1 deletion(-)
 
-                clocks = <&clkc CLKID_USB
-                        &clkc CLKID_MIPI_ENABLE
-                        &clkc CLKID_PCIE_A
--                       &clkc CLKID_PCIE_CML_EN0>;
-+                       &clkc CLKID_PCIE_CML_EN0
-+                       &clkc CLKID_PCIE_PLL_CML_ENABLE>;
-                clock-names = "pcie_general",
-                                "pcie_mipi_en",
-                                "pcie",
--                               "port";
-+                               "port",
-+                               "pll_cml_en";
-                resets = <&reset RESET_PCIE_PHY>,
-                        <&reset RESET_PCIE_A>,
-                        <&reset RESET_PCIE_APB>;
-
-
-Remi Pommarel (2):
-  clk: meson: axg: add pcie pll cml gating
-  PCI: amlogic: Use PCIe pll gate when available
-
- drivers/clk/meson/axg.c                | 3 +++
- drivers/clk/meson/axg.h                | 2 +-
- drivers/pci/controller/dwc/pci-meson.c | 5 +++++
- include/dt-bindings/clock/axg-clkc.h   | 1 +
- 4 files changed, 10 insertions(+), 1 deletion(-)
-
+diff --git a/drivers/clk/meson/axg.c b/drivers/clk/meson/axg.c
+index 13fc0006f63d..ac9ab7f75ee8 100644
+--- a/drivers/clk/meson/axg.c
++++ b/drivers/clk/meson/axg.c
+@@ -1142,6 +1142,7 @@ static MESON_GATE(axg_vpu_intr, HHI_GCLK_MPEG2, 25);
+ static MESON_GATE(axg_sec_ahb_ahb3_bridge, HHI_GCLK_MPEG2, 26);
+ static MESON_GATE(axg_gic, HHI_GCLK_MPEG2, 30);
+ static MESON_GATE(axg_mipi_enable, HHI_MIPI_CNTL0, 29);
++static MESON_GATE(axg_pcie_pll_cml_enable, HHI_MIPI_CNTL0, 26);
+ 
+ /* Always On (AO) domain gates */
+ 
+@@ -1246,6 +1247,7 @@ static struct clk_hw_onecell_data axg_hw_onecell_data = {
+ 		[CLKID_HIFI_PLL_DCO]		= &axg_hifi_pll_dco.hw,
+ 		[CLKID_PCIE_PLL_DCO]		= &axg_pcie_pll_dco.hw,
+ 		[CLKID_PCIE_PLL_OD]		= &axg_pcie_pll_od.hw,
++		[CLKID_PCIE_PLL_CML_ENABLE]	= &axg_pcie_pll_cml_enable.hw,
+ 		[NR_CLKS]			= NULL,
+ 	},
+ 	.num = NR_CLKS,
+@@ -1341,6 +1343,7 @@ static struct clk_regmap *const axg_clk_regmaps[] = {
+ 	&axg_hifi_pll_dco,
+ 	&axg_pcie_pll_dco,
+ 	&axg_pcie_pll_od,
++	&axg_pcie_pll_cml_enable,
+ };
+ 
+ static const struct meson_eeclkc_data axg_clkc_data = {
+diff --git a/drivers/clk/meson/axg.h b/drivers/clk/meson/axg.h
+index 0431dabac629..d65670d6c607 100644
+--- a/drivers/clk/meson/axg.h
++++ b/drivers/clk/meson/axg.h
+@@ -140,7 +140,7 @@
+ #define CLKID_PCIE_PLL_DCO			89
+ #define CLKID_PCIE_PLL_OD			90
+ 
+-#define NR_CLKS					91
++#define NR_CLKS					92
+ 
+ /* include the CLKIDs that have been made part of the DT binding */
+ #include <dt-bindings/clock/axg-clkc.h>
+diff --git a/include/dt-bindings/clock/axg-clkc.h b/include/dt-bindings/clock/axg-clkc.h
+index fd1f938c38d1..218a05ff508d 100644
+--- a/include/dt-bindings/clock/axg-clkc.h
++++ b/include/dt-bindings/clock/axg-clkc.h
+@@ -72,5 +72,6 @@
+ #define CLKID_PCIE_CML_EN1			80
+ #define CLKID_MIPI_ENABLE			81
+ #define CLKID_GEN_CLK				84
++#define CLKID_PCIE_PLL_CML_ENABLE		91
+ 
+ #endif /* __AXG_CLKC_H */
 -- 
 2.24.0
 
