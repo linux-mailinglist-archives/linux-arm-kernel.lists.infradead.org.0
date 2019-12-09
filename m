@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38933116510
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 03:37:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE11F116524
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 03:54:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ly8Bri0ffQVXRwAdC1//jogNksy6jU8P8nj6KzftxZA=; b=f7uhDHnPq/+YNu
-	uNiG0S4eCOaIjQ1dwxCtA8Bu+5yyRgDKCfXYexnqVuWfasm3mS2Dw7IXppSGN/7TFi1LHOuI19r0D
-	nYaUBOINWAtrsgN2As6SZmsTHhxcQPpP1MV3LgfLaEa7DVUy8xfqbLtK29p4JYr45bH+kP0fn0U21
-	wuE/7N+GQNCtPGmrIfORJjFjMM5XLCXrPIBnZFDtwn+S4X27xDjb3wMM5N6Y7C5ca/WSyGWuxxSTM
-	viLx6QYeBzsFKazRSSRVqUqCNYMUY9GJXfLQbGy6b2T2jXPMGmlucQ/b7jPoz92qqFaZ2HCTttBcU
-	O6kR6SfqhHhOQ+jLgyWw==;
+	List-Owner; bh=khOYYa5ig8NSyShfpgofJkCB3tF7c9XhbcXkt5rxtTw=; b=o3dFOdXZFr+/U4
+	sZh0IDglcARV6ohZIDpngdn4PvLLpDdB17q7ToKpaXnFWWCXdQHbsCEXNa5QXZdfyPgcQfr9sCpao
+	2FdYxcem3BXz1dy391kf55ZdE0WYau1gJCR6H/6wgcUGK+d7Ut+YER9/mro5zvrjmhoKlaxwulndP
+	RFtdAGezuIGl85xfxjVB5lBXRvejb+Ej0Lsa3+W2G6MYU6epLu+JNRt1l+OVMzbXiXrXuf5ParPSt
+	b2Vinp8U5Ogrqye0qxiaZAeU1YH8Z+nyqShv9Q1e4JYPwQtjBwkjILGJbEZSYLiULYrf/8E5fMODF
+	L/qo2eVvDkbmIZClfKWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ie8vH-0006Ns-U9; Mon, 09 Dec 2019 02:37:19 +0000
+	id 1ie9CF-00037Y-6c; Mon, 09 Dec 2019 02:54:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ie8v9-0006NJ-Ac
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 02:37:12 +0000
+ id 1ie9C5-00037G-Vw
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 02:54:43 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EED5A206F4;
- Mon,  9 Dec 2019 02:37:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CD05E20692;
+ Mon,  9 Dec 2019 02:54:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575859030;
- bh=KwTcMhxxQxSTWeCjOkeJmE5iBWvBtzmK8AUbPh94n54=;
+ s=default; t=1575860081;
+ bh=IiKeChNrtz/p4Aq7d3yVyybl+heL9RFk0ZAzNPQG1Gw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hjNX6VXVtN71ykx9twRtu+K3Dmxs+V5KGy0KHaoNRZt9mlE8F1rVMdOQYoWho7vQt
- 3bPSfCjK9ydbcg3gVZYf+tfuMGtyoXd6ukg+kcZtlnHiWBggrFbdlD21VMatYDS1KJ
- 0vFpHs8w1mWve8L2qYeg5e7NFlDMp3Bkrb+yy+zE=
-Date: Mon, 9 Dec 2019 10:36:54 +0800
+ b=JaetPVHtG558XXBCJass8k6qiJ2BAGyXNmZtm1j9zhSpZ590C4I6hV2eqsEbd7gqQ
+ Cu2pdg2Ryk5JWHQ2HaKYGZPyDOoSwwmWPBQebOho2kHB9eTRiblJuxWxc5om6CVOq2
+ EVMDdWutnd6DYlz4q0vXjHTQvKb/tgOy9G7/zJ1Y=
+Date: Mon, 9 Dec 2019 10:54:26 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH] clk: imx8m: Suppress bind attrs
-Message-ID: <20191209023653.GV3365@dragon>
-References: <ce34606bb3876f7506f483db7623fcba6da04810.1574344160.git.leonard.crestez@nxp.com>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH] clk: imx: clk-imx7ulp: Add missing sentinel of
+ ulp_div_table
+Message-ID: <20191209025425.GW3365@dragon>
+References: <1574402986-11117-1-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ce34606bb3876f7506f483db7623fcba6da04810.1574344160.git.leonard.crestez@nxp.com>
+In-Reply-To: <1574402986-11117-1-git-send-email-peng.fan@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_183711_391369_F42C3A07 
-X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-CacheID: sfid-20191208_185442_053214_F753147F 
+X-CRM114-Status: UNSURE (   8.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,32 +78,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Abel Vesa <abel.vesa@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-imx@nxp.com, kernel@pengutronix.de,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jacky Bai <ping.bai@nxp.com>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Alice Guo <alice.guo@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 21, 2019 at 03:52:17PM +0200, Leonard Crestez wrote:
-> The clock drivers on imx8m series are registered as platform devices and
-> this opens the possibility of reloading the driver at runtime.
+On Fri, Nov 22, 2019 at 06:11:42AM +0000, Peng Fan wrote:
+> From: Peng Fan <peng.fan@nxp.com>
 > 
-> This doesn't actually work: clocks are never removed and attempting to
-> bind again results in registration errors and a crash. Almost all
-> devices depend on clocks anyway so rebinding is unlikely to ever be
-> useful
+> There should be a sentinel of ulp_div_table, otherwise _get_table_div
+> may access data out of the array.
 > 
-> Fix this by explicitly suppressing bind attrs like several other
-> clock drivers.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> Reviewed-by: Peng Fan <peng.fan@nxp.com>
+> Fixes: b1260067ac3d ("clk: imx: add imx7ulp clk driver")
+> Signed-off-by: Peng Fan <peng.fan@nxp.com>
 
 Applied, thanks.
 
