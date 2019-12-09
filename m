@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC76F117516
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 20:00:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3610611751F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 20:00:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=NvyOmcpC2hewO0cjdt8LdfbI7ol/a16uchoRW0a6E14=; b=WFi
-	TFr0/4/BDYpFyrgYmnsnGmv7jShm9CumFI/f1P1sn9H0Pji6V+BgNK0L4bFvMwbLCBJgCJn+kc7z9
-	TB4JdM9rLwkcc4awg9lZ3Ggpz9oAvNMjbVfzZFdYyIqI/B6qWXiteY63M5zK7KEJF7Ih3PNt+AomJ
-	DmjZB3a+JP+WwXjMVbKtW1KNNzpukGi3drBxnOnPY5eKp7zNTq9qdtvfmeXgPXvSBEMMPbMJBx3N/
-	EbZB7w6Lrhtm/vrDVxGEMu9gQWW46GvV/ol2KVPbkmKzMCgmKNUS0s9B63lzCsbyat//k8s0lf6g/
-	+0chO3CowY0AtB9b/PXWTabHsY46/gQ==;
+	References:List-Owner; bh=pbHpE3S2vYqCeFF2RtIxTg9p3kKzn9V9a469ysExel0=; b=C7r
+	Uu7fJ4LsMEGL4rgxZ2kLFImtZnWpZbe8Dp/XwmMk3qYgxA7o4crv93VPc1pBrl1v7QRRIta5OsrM7
+	qsz2+DQ3cuUco78hxhEYdZCWzNPobqkp5cCqpM9rx2A2cI3FvuZBCqlGx8JxosmdUiOksXr7qyH1P
+	jIW3Yq2Yxe95uw62+kbHiqGgfSTYvEyOqx9JiOegil9Wy9qcxIMhjmNSFUsgmWZBpjd+Gkn/N/2Er
+	bFRp+0WPhA9ATK967vudgOQwjOb+8h2fVDV3ZPBh7e6TSgOHORiZkDeYthqLfry++Mmjf5y4225st
+	R7wtiNIGfT+16FYwwDN1/moRUteXzxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieOGf-0002Af-F7; Mon, 09 Dec 2019 19:00:25 +0000
+	id 1ieOH0-0002OV-Hv; Mon, 09 Dec 2019 19:00:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieOGK-0001zt-Lh
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 19:00:06 +0000
+ id 1ieOGN-000226-6X
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 19:00:09 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 36BCA328;
- Mon,  9 Dec 2019 11:00:04 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D771E328;
+ Mon,  9 Dec 2019 11:00:06 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A8BC53F6CF;
- Mon,  9 Dec 2019 11:00:03 -0800 (PST)
-Date: Mon, 09 Dec 2019 19:00:02 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 48C263F6CF;
+ Mon,  9 Dec 2019 11:00:06 -0800 (PST)
+Date: Mon, 09 Dec 2019 19:00:04 +0000
 From: Mark Brown <broonie@kernel.org>
-To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Applied "dt-bindings: regulator: Convert stm32 booster bindings to
- json-schema" to the regulator tree
-In-Reply-To: <20191122104536.20283-1-benjamin.gaignard@st.com>
-Message-Id: <applied-20191122104536.20283-1-benjamin.gaignard@st.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Applied "regulator: rk808: Lower log level on optional GPIOs being
+ not available" to the regulator tree
+In-Reply-To: <20191203164709.11127-1-miquel.raynal@bootlin.com>
+Message-Id: <applied-20191203164709.11127-1-miquel.raynal@bootlin.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_110004_798649_4E12796C 
-X-CRM114-Status: GOOD (  15.45  )
+X-CRM114-CacheID: sfid-20191209_110007_302879_AA297E5B 
+X-CRM114-Status: GOOD (  18.43  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -63,10 +63,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: u.kleine-koenig@pengutronix.de, Mark Brown <broonie@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -75,7 +74,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   dt-bindings: regulator: Convert stm32 booster bindings to json-schema
+   regulator: rk808: Lower log level on optional GPIOs being not available
 
 has been applied to the regulator tree at
 
@@ -100,102 +99,43 @@ to this mail.
 Thanks,
 Mark
 
-From 681700c38f3e989a3da940d0120b0268c25c54d8 Mon Sep 17 00:00:00 2001
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-Date: Fri, 22 Nov 2019 11:45:35 +0100
-Subject: [PATCH] dt-bindings: regulator: Convert stm32 booster bindings to
- json-schema
+From b8a039d37792067c1a380dc710361905724b9b2f Mon Sep 17 00:00:00 2001
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+Date: Tue, 3 Dec 2019 17:47:09 +0100
+Subject: [PATCH] regulator: rk808: Lower log level on optional GPIOs being not
+ available
 
-Convert the STM32 regulator booster binding to DT schema format using json-schema
+RK808 can leverage a couple of GPIOs to tweak the ramp rate during DVS
+(Dynamic Voltage Scaling). These GPIOs are entirely optional but a
+dev_warn() appeared when cleaning this driver to use a more up-to-date
+gpiod API. At least reduce the log level to 'info' as it is totally
+fine to not populate these GPIO on a hardware design.
 
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-CC: Fabrice Gasnier <fabrice.gasnier@st.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
-Link: https://lore.kernel.org/r/20191122104536.20283-1-benjamin.gaignard@st.com
+This change is trivial but it is worth not polluting the logs during
+bringup phase by having real warnings and errors sorted out
+correctly.
+
+Fixes: a13eaf02e2d6 ("regulator: rk808: make better use of the gpiod API")
+Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Link: https://lore.kernel.org/r/20191203164709.11127-1-miquel.raynal@bootlin.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- .../bindings/regulator/st,stm32-booster.txt   | 18 --------
- .../bindings/regulator/st,stm32-booster.yaml  | 46 +++++++++++++++++++
- 2 files changed, 46 insertions(+), 18 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/regulator/st,stm32-booster.txt
- create mode 100644 Documentation/devicetree/bindings/regulator/st,stm32-booster.yaml
+ drivers/regulator/rk808-regulator.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/regulator/st,stm32-booster.txt b/Documentation/devicetree/bindings/regulator/st,stm32-booster.txt
-deleted file mode 100644
-index 479ad4c8758e..000000000000
---- a/Documentation/devicetree/bindings/regulator/st,stm32-booster.txt
-+++ /dev/null
-@@ -1,18 +0,0 @@
--STM32 BOOSTER - Booster for ADC analog input switches
--
--Some STM32 devices embed a 3.3V booster supplied by Vdda, that can be used
--to supply ADC analog input switches.
--
--Required properties:
--- compatible: Should be one of:
--  "st,stm32h7-booster"
--  "st,stm32mp1-booster"
--- st,syscfg: Phandle to system configuration controller.
--- vdda-supply: Phandle to the vdda input analog voltage.
--
--Example:
--	booster: regulator-booster {
--		compatible = "st,stm32mp1-booster";
--		st,syscfg = <&syscfg>;
--		vdda-supply = <&vdda>;
--	};
-diff --git a/Documentation/devicetree/bindings/regulator/st,stm32-booster.yaml b/Documentation/devicetree/bindings/regulator/st,stm32-booster.yaml
-new file mode 100644
-index 000000000000..64f1183ce841
---- /dev/null
-+++ b/Documentation/devicetree/bindings/regulator/st,stm32-booster.yaml
-@@ -0,0 +1,46 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/regulator/st,stm32-booster.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: STMicroelectronics STM32 booster for ADC analog input switches bindings
-+
-+maintainers:
-+  - Fabrice Gasnier <fabrice.gasnier@st.com>
-+
-+description: |
-+  Some STM32 devices embed a 3.3V booster supplied by Vdda, that can be used
-+  to supply ADC analog input switches.
-+
-+allOf:
-+  - $ref: "regulator.yaml#"
-+
-+properties:
-+  compatible:
-+    enum:
-+      - st,stm32h7-booster
-+      - st,stm32mp1-booster
-+
-+  st,syscfg:
-+    allOf:
-+      - $ref: "/schemas/types.yaml#/definitions/phandle-array"
-+    description: phandle to system configuration controller.
-+
-+  vdda-supply:
-+    description: phandle to the vdda input analog voltage.
-+
-+required:
-+  - compatible
-+  - st,syscfg
-+  - vdda-supply
-+
-+examples:
-+  - |
-+    regulator-booster {
-+      compatible = "st,stm32mp1-booster";
-+      st,syscfg = <&syscfg>;
-+      vdda-supply = <&vdda>;
-+    };
-+
-+...
+diff --git a/drivers/regulator/rk808-regulator.c b/drivers/regulator/rk808-regulator.c
+index 5b4003226484..31f79fda3238 100644
+--- a/drivers/regulator/rk808-regulator.c
++++ b/drivers/regulator/rk808-regulator.c
+@@ -1282,7 +1282,7 @@ static int rk808_regulator_dt_parse_pdata(struct device *dev,
+ 		}
+ 
+ 		if (!pdata->dvs_gpio[i]) {
+-			dev_warn(dev, "there is no dvs%d gpio\n", i);
++			dev_info(dev, "there is no dvs%d gpio\n", i);
+ 			continue;
+ 		}
+ 
 -- 
 2.20.1
 
