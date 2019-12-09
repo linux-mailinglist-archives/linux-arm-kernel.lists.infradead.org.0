@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEEA51178C9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 22:46:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2051C1178CD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 22:47:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=wYFCeaWfr8rrjXVOzLPBBFuZDVlSe8uewS+PZd5+SW0=; b=MZkfEZAurTQJuJTX43SeEoSE2+
-	T6lti6YukmECTFN7qs0K9XC7F5kUJg3rI7cWuLpNXV6jsvNwlqh//VTVKFmxiVpCgatOfpKUUPUE6
-	IZq+24N+YWhKV7gwOKhOJ2urBZXA7nfWXqJEEBrEt8vvDgWvzSF7OI2yJexAZmvIdSVvwOwO6dORr
-	UEufKFWbAMu2VfuxYd8sm3btCqaB77L5o1JBv2hXMPLsF09r/HbbdTpWom7CmX2dvdNl65lN+M0g8
-	qtPhugJgdFN3Pix81gWW/WL1MvJLfWYOAZJTlhit2COL/291hYcqwqcMCkt0Ke/dOOEhGr5mqpYrS
-	SEJxKxBQ==;
+	bh=RBeNdZ5HoXtmHiw9zl+hzoiz17QmI2lc1nH2yc4I0gs=; b=PF/DgL7Qy1vTepbjcWW0nLFGC6
+	nt0xD+NpNS2u1uj1fHESDpyvJ5+Z/Savfcy3QG/S0g17+y7Yj8zBOFFVoZ54wKlGX3y5keEGWvFpj
+	it39Q03BCt+9BsVykDRSDdF6s8/FxkfvmgqY7VYSqeowXvbgc8euoxrNxjeHXGxBpDNJQU2LIlVzu
+	sheMTBCHWUsxEArsQ8+AIIBQ3lLphaUE+6ECg8KSBqM4/vBYK5dZ2lsxFmy3qMsy/51hP9JY/Y5S2
+	uqUiUpmXb/7Ei6u1Pn1izvI1X9W2EAFO29/D62KN1ARpFj2wqhrssfSC5lhiNBbDu4s2pIYDXFe37
+	JTH0+9Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieQrG-00031C-Ej; Mon, 09 Dec 2019 21:46:22 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1ieQri-0003Un-SK; Mon, 09 Dec 2019 21:46:50 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieQpB-0008Dj-5j
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 21:44:14 +0000
-Received: by mail-wr1-x443.google.com with SMTP id a15so17794822wrf.9
+ id 1ieQpD-0008FJ-5q
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 21:44:16 +0000
+Received: by mail-wm1-x342.google.com with SMTP id p17so929553wma.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Dec 2019 13:44:13 -0800 (PST)
+ Mon, 09 Dec 2019 13:44:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=RT3uMjCTNXctwL3ki3eO315EjLjo+qSfc5PPzuNqLtA=;
- b=j6gWVo88AgDxvn8Yg1lfCN5H7CC1Ea+lVXlph5sRy19Lt4qYZl6aawRuIylGJJPYJf
- GPwfGrshGktY58zsulGkoiQIxbcJocv3r2qimlFTGT4h1ZCevNkmownscbhDEJtfiz3M
- aJA3rAZu35QT5flOX3Vj6X0RNi9+fQjfr8rZK+Iy+HvDZWfWOgCMSRh5sLfFmnncUN3M
- dADuTVjvJRbYa/BHWLikRJaDRTvt4XKCHu/R8ZvdQGN63qWfnaSKf5PUhONSLx3s+qIw
- hv8HI0o5hNB5squ5hEYcALwvMI7kkfDCMa97gH6Enc+pgMV2WtCFnya5iroVHPt4fJZa
- RFSg==
+ bh=44lDiZC/HyWHizJUTFlT+jmrIvxAJf5o2GDXJq7Fi20=;
+ b=NgdntmBjBBI7US/R8tQl9uYXTQr/3n2UwD+ASgV5d10EsibdIvI3Yo2xWBOK2JZGC0
+ VSvP9nitBOAADTY5KKwBWnkcx3ADbR4uMJDh4F4aW7GGex5dFBNS3KfP/iynk4baKZF8
+ 0uTQhnNkTPhorbEUxDAhb0b6plLaUedcyWca5RDus++kDJKdE/RPxy853xrDmSad2SaT
+ kIDEwVecCWDzrqPCgBy7eSzsdzibyEpVH/1MW65aVkTVSIe+DKudP5+capDKPT41agrT
+ ssxkUpDdksUpHcO3tLySr3fx2bvLTNaKX+V6VKKf/Nb7ALYJ/B9svms03W2dQCELd5g4
+ WFRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=RT3uMjCTNXctwL3ki3eO315EjLjo+qSfc5PPzuNqLtA=;
- b=C4ehxlYKASmIc5pbSoP4RoiQiF7xjbO5+tJjHxMTMspGii4MZuY6f40rrv9fx5piC9
- /2QLxrhE60xCmo8a/vCFcGiXZuPgadinQlwjAK5wlnsfkKE4vWdbXsfZTuZXwHoV3HZU
- FDaLTXieAoauyZb+i+UHuDFs7S3nerhAcv9R5fN14RA3hKwzEGM2AlXGOrkhsHS8FPz2
- abNvev7QoH6NRa/B1FSnT0qHZWKtC7nceC8BAJmo5jVvhme/yiRPjk0VZU7Xg++yNxC6
- C90FhYlDwJ+GWp2M8JyFccBXFChqSJUbVLQ1OQPPvqZ5XmnwveHb1y3ACLN+kLRbSn2z
- V3bg==
-X-Gm-Message-State: APjAAAVswBuGpQNDNRffAAub2k1gbvdT6nviDAtnQp0IDC4hDB018tjS
- Y2vWBXrxt6BDLLnO9F34j1c=
-X-Google-Smtp-Source: APXvYqzHKNJxhsgEgBmDpf6YDlxQL4fag49V+/Mo6/Q7hSiO06N+Z+cQhgXoLCPxrONDXyr3WVpr7w==
-X-Received: by 2002:a5d:4984:: with SMTP id r4mr4154420wrq.137.1575927851869; 
- Mon, 09 Dec 2019 13:44:11 -0800 (PST)
+ bh=44lDiZC/HyWHizJUTFlT+jmrIvxAJf5o2GDXJq7Fi20=;
+ b=FYCP3vB0gtvLEX/02ymwNr3FC9hiIYsVEP1ODmx0W30CSlVI3Eqs876SnmTcW1loLt
+ 6YU2enY3tPL+es5NJbAvBVgzJ/aKILCplLheMdn5ksBGSto6TvzDEvtzGzxV4r8liyhK
+ W2VpzcEw5LlANLf+iSQqG9iD+yMeT/Jo61v/DBhhck0OY1wmHBeqlSs/f+eeLOYOqTzD
+ zjKboymWuWHpt9wylvf5uyHwE6ZUxOXUFusZinMe5DgG3hougJvrlmJ0jh6l9D4ffxGO
+ RfTZuS0c0lhnD58yuQHZ8CA2Tk1pvppMBgS3A7FvBtSc+rdsbMY+seuXimLr0r/xfbm8
+ vwHA==
+X-Gm-Message-State: APjAAAVW8lsr8gsUsYt0gkvyTnAJdaDB+BJNAlPMk1RMkZc0afww2idV
+ m05BqSwWA8ohgqFmZhqWSss=
+X-Google-Smtp-Source: APXvYqy43EGY0bmWLyYnSp0se8lx2Ly4EXqffgmg01xOU1mzl0LzhGx9k8wzdlWFatOlTMcGtckElw==
+X-Received: by 2002:a1c:a984:: with SMTP id s126mr1225626wme.146.1575927853828; 
+ Mon, 09 Dec 2019 13:44:13 -0800 (PST)
 Received: from stbsrv-and-01.and.broadcom.net ([192.19.231.250])
- by smtp.gmail.com with ESMTPSA id z6sm757714wmz.12.2019.12.09.13.44.10
+ by smtp.gmail.com with ESMTPSA id z6sm757714wmz.12.2019.12.09.13.44.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 09 Dec 2019 13:44:11 -0800 (PST)
+ Mon, 09 Dec 2019 13:44:13 -0800 (PST)
 From: Al Cooper <alcooperx@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 resend 09/13] phy: usb: fix driver to defer on clk_get defer
-Date: Mon,  9 Dec 2019 16:42:45 -0500
-Message-Id: <20191209214249.41137-10-alcooperx@gmail.com>
+Subject: [PATCH v2 resend 10/13] phy: usb: PHY's MDIO registers not accessible
+ without device installed
+Date: Mon,  9 Dec 2019 16:42:46 -0500
+Message-Id: <20191209214249.41137-11-alcooperx@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191209214249.41137-1-alcooperx@gmail.com>
 References: <20191209214249.41137-1-alcooperx@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_134413_278958_3B12A9B2 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20191209_134415_309890_2CCB0550 
+X-CRM114-Status: GOOD (  13.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (alcooperx[at]gmail.com)
@@ -109,45 +110,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Handle defer on clk_get because the new SCMI clock driver comes
-up after this driver.
+When there is no device connected and FSM is enabled, the XHCI puts
+the PHY into suspend mode.  When the PHY is put into suspend mode
+the USB LDO powers down the PHY. This causes the MDIO to be
+inaccessible and its registers reset to default. The fix is to
+disable FSM.
 
 Signed-off-by: Al Cooper <alcooperx@gmail.com>
 ---
- drivers/phy/broadcom/phy-brcm-usb.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
-index 5f7bfa09494d..c82d7ec15334 100644
---- a/drivers/phy/broadcom/phy-brcm-usb.c
-+++ b/drivers/phy/broadcom/phy-brcm-usb.c
-@@ -341,6 +341,8 @@ static int brcm_usb_phy_dvr_init(struct platform_device *pdev,
+diff --git a/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c b/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
+index bf138867efb1..fe3f653c64a7 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
++++ b/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
+@@ -56,6 +56,7 @@
+ #define USB_PHY_PLL_LDO_CTL		0x08
+ #define   USB_PHY_PLL_LDO_CTL_AFE_CORERDY_MASK		0x00000004
+ #define USB_PHY_UTMI_CTL_1		0x04
++#define   USB_PHY_UTMI_CTL_1_POWER_UP_FSM_EN_MASK	0x00000800
+ #define   USB_PHY_UTMI_CTL_1_PHY_MODE_MASK		0x0000000c
+ #define   USB_PHY_UTMI_CTL_1_PHY_MODE_SHIFT		2
+ #define USB_PHY_STATUS			0x20
+@@ -229,6 +230,14 @@ static void usb_init_common_7211b0(struct brcm_usb_init_params *params)
  
- 	priv->usb_20_clk = of_clk_get_by_name(dn, "sw_usb");
- 	if (IS_ERR(priv->usb_20_clk)) {
-+		if (PTR_ERR(priv->usb_20_clk) == -EPROBE_DEFER)
-+			return -EPROBE_DEFER;
- 		dev_info(dev, "Clock not found in Device Tree\n");
- 		priv->usb_20_clk = NULL;
- 	}
-@@ -371,6 +373,8 @@ static int brcm_usb_phy_dvr_init(struct platform_device *pdev,
+ 	usb_init_common(params);
  
- 		priv->usb_30_clk = of_clk_get_by_name(dn, "sw_usb3");
- 		if (IS_ERR(priv->usb_30_clk)) {
-+			if (PTR_ERR(priv->usb_30_clk) == -EPROBE_DEFER)
-+				return -EPROBE_DEFER;
- 			dev_info(dev,
- 				 "USB3.0 clock not found in Device Tree\n");
- 			priv->usb_30_clk = NULL;
-@@ -382,6 +386,8 @@ static int brcm_usb_phy_dvr_init(struct platform_device *pdev,
++	/*
++	 * Disable FSM, otherwise the PHY will auto suspend when no
++	 * device is connected and will be reset on resume.
++	 */
++	reg = brcm_usb_readl(usb_phy + USB_PHY_UTMI_CTL_1);
++	reg &= ~USB_PHY_UTMI_CTL_1_POWER_UP_FSM_EN_MASK;
++	brcm_usb_writel(reg, usb_phy + USB_PHY_UTMI_CTL_1);
++
+ 	usb2_eye_fix_7211b0(params);
+ }
  
- 	priv->suspend_clk = clk_get(dev, "usb0_freerun");
- 	if (IS_ERR(priv->suspend_clk)) {
-+		if (PTR_ERR(priv->suspend_clk) == -EPROBE_DEFER)
-+			return -EPROBE_DEFER;
- 		dev_err(dev, "Suspend Clock not found in Device Tree\n");
- 		priv->suspend_clk = NULL;
- 	}
 -- 
 2.17.1
 
