@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D41EB117514
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 20:00:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC76F117516
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 20:00:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=vWSzgyQX66nTyBfk7PM1hONZjsmJ/wy9l+IiaZMWgtg=; b=N0W
-	oTzJrr5nAK3quN1qh8XXjdqaOJTRGWzUnFxtAR6mUOdbxfwguvc8S2EnV1WQsbfu0F5Nha26Gei7D
-	THwjR0byIOwdhwYoxQqeIDTW0UdOd94FCZxvBhcaXWgtR2DEFFvyuymvum5R2sHgC9xw/drj6LO0b
-	KdA0RSWmRIjj4WV/jCw9cLJ/qEHyzkTrW2Ezgc83EjsJwoN3kSQMZaXFESZ4o4Jv5EEjM2tycjE+G
-	bL/t5SyUt2vCy0v7nZIh0RiqLnYhk+tIYG0TepCQP4Um7ww82cdh3GGLstYOk+c9I19LVhGoLoWLI
-	kqkAE2ZAD3erGpPmOjKpgVDre1hR4dA==;
+	References:List-Owner; bh=NvyOmcpC2hewO0cjdt8LdfbI7ol/a16uchoRW0a6E14=; b=WFi
+	TFr0/4/BDYpFyrgYmnsnGmv7jShm9CumFI/f1P1sn9H0Pji6V+BgNK0L4bFvMwbLCBJgCJn+kc7z9
+	TB4JdM9rLwkcc4awg9lZ3Ggpz9oAvNMjbVfzZFdYyIqI/B6qWXiteY63M5zK7KEJF7Ih3PNt+AomJ
+	DmjZB3a+JP+WwXjMVbKtW1KNNzpukGi3drBxnOnPY5eKp7zNTq9qdtvfmeXgPXvSBEMMPbMJBx3N/
+	EbZB7w6Lrhtm/vrDVxGEMu9gQWW46GvV/ol2KVPbkmKzMCgmKNUS0s9B63lzCsbyat//k8s0lf6g/
+	+0chO3CowY0AtB9b/PXWTabHsY46/gQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieOGT-00020D-Q4; Mon, 09 Dec 2019 19:00:13 +0000
+	id 1ieOGf-0002Af-F7; Mon, 09 Dec 2019 19:00:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieOGI-0001yr-CP
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 19:00:04 +0000
+ id 1ieOGK-0001zt-Lh
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 19:00:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A89B013FD;
- Mon,  9 Dec 2019 11:00:01 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 36BCA328;
+ Mon,  9 Dec 2019 11:00:04 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 268113F6CF;
- Mon,  9 Dec 2019 11:00:01 -0800 (PST)
-Date: Mon, 09 Dec 2019 18:59:59 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A8BC53F6CF;
+ Mon,  9 Dec 2019 11:00:03 -0800 (PST)
+Date: Mon, 09 Dec 2019 19:00:02 +0000
 From: Mark Brown <broonie@kernel.org>
 To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Applied "dt-bindings: regulator: Convert stm32 vrefbuf bindings to
+Subject: Applied "dt-bindings: regulator: Convert stm32 booster bindings to
  json-schema" to the regulator tree
-In-Reply-To: <20191122104536.20283-2-benjamin.gaignard@st.com>
-Message-Id: <applied-20191122104536.20283-2-benjamin.gaignard@st.com>
+In-Reply-To: <20191122104536.20283-1-benjamin.gaignard@st.com>
+Message-Id: <applied-20191122104536.20283-1-benjamin.gaignard@st.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_110002_514087_360A5995 
-X-CRM114-Status: GOOD (  15.24  )
+X-CRM114-CacheID: sfid-20191209_110004_798649_4E12796C 
+X-CRM114-Status: GOOD (  15.45  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -75,7 +75,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   dt-bindings: regulator: Convert stm32 vrefbuf bindings to json-schema
+   dt-bindings: regulator: Convert stm32 booster bindings to json-schema
 
 has been applied to the regulator tree at
 
@@ -100,110 +100,102 @@ to this mail.
 Thanks,
 Mark
 
-From 21b2c47161449c44e5a70eab646260aaeceb331c Mon Sep 17 00:00:00 2001
+From 681700c38f3e989a3da940d0120b0268c25c54d8 Mon Sep 17 00:00:00 2001
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
-Date: Fri, 22 Nov 2019 11:45:36 +0100
-Subject: [PATCH] dt-bindings: regulator: Convert stm32 vrefbuf bindings to
+Date: Fri, 22 Nov 2019 11:45:35 +0100
+Subject: [PATCH] dt-bindings: regulator: Convert stm32 booster bindings to
  json-schema
 
-Convert the STM32 regulator vrefbuf binding to DT schema format using json-schema
+Convert the STM32 regulator booster binding to DT schema format using json-schema
 
 Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 CC: Fabrice Gasnier <fabrice.gasnier@st.com>
 Reviewed-by: Rob Herring <robh@kernel.org>
-Link: https://lore.kernel.org/r/20191122104536.20283-2-benjamin.gaignard@st.com
+Link: https://lore.kernel.org/r/20191122104536.20283-1-benjamin.gaignard@st.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- .../bindings/regulator/st,stm32-vrefbuf.txt   | 20 -------
- .../bindings/regulator/st,stm32-vrefbuf.yaml  | 52 +++++++++++++++++++
- 2 files changed, 52 insertions(+), 20 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.txt
- create mode 100644 Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.yaml
+ .../bindings/regulator/st,stm32-booster.txt   | 18 --------
+ .../bindings/regulator/st,stm32-booster.yaml  | 46 +++++++++++++++++++
+ 2 files changed, 46 insertions(+), 18 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/regulator/st,stm32-booster.txt
+ create mode 100644 Documentation/devicetree/bindings/regulator/st,stm32-booster.yaml
 
-diff --git a/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.txt b/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.txt
+diff --git a/Documentation/devicetree/bindings/regulator/st,stm32-booster.txt b/Documentation/devicetree/bindings/regulator/st,stm32-booster.txt
 deleted file mode 100644
-index 5ddb8500a929..000000000000
---- a/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.txt
+index 479ad4c8758e..000000000000
+--- a/Documentation/devicetree/bindings/regulator/st,stm32-booster.txt
 +++ /dev/null
-@@ -1,20 +0,0 @@
--STM32 VREFBUF - Voltage reference buffer
+@@ -1,18 +0,0 @@
+-STM32 BOOSTER - Booster for ADC analog input switches
 -
--Some STM32 devices embed a voltage reference buffer which can be used as
--voltage reference for ADCs, DACs and also as voltage reference for external
--components through the dedicated VREF+ pin.
+-Some STM32 devices embed a 3.3V booster supplied by Vdda, that can be used
+-to supply ADC analog input switches.
 -
 -Required properties:
--- compatible:		Must be "st,stm32-vrefbuf".
--- reg:			Offset and length of VREFBUF register set.
--- clocks:		Must contain an entry for peripheral clock.
+-- compatible: Should be one of:
+-  "st,stm32h7-booster"
+-  "st,stm32mp1-booster"
+-- st,syscfg: Phandle to system configuration controller.
+-- vdda-supply: Phandle to the vdda input analog voltage.
 -
 -Example:
--	vrefbuf: regulator@58003c00 {
--		compatible = "st,stm32-vrefbuf";
--		reg = <0x58003C00 0x8>;
--		clocks = <&rcc VREF_CK>;
--		regulator-min-microvolt = <1500000>;
--		regulator-max-microvolt = <2500000>;
+-	booster: regulator-booster {
+-		compatible = "st,stm32mp1-booster";
+-		st,syscfg = <&syscfg>;
 -		vdda-supply = <&vdda>;
 -	};
-diff --git a/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.yaml b/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.yaml
+diff --git a/Documentation/devicetree/bindings/regulator/st,stm32-booster.yaml b/Documentation/devicetree/bindings/regulator/st,stm32-booster.yaml
 new file mode 100644
-index 000000000000..33cdaeb25aee
+index 000000000000..64f1183ce841
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.yaml
-@@ -0,0 +1,52 @@
++++ b/Documentation/devicetree/bindings/regulator/st,stm32-booster.yaml
+@@ -0,0 +1,46 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/regulator/st,stm32-vrefbuf.yaml#
++$id: http://devicetree.org/schemas/regulator/st,stm32-booster.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: STMicroelectronics STM32 Voltage reference buffer bindings
-+
-+description: |
-+  Some STM32 devices embed a voltage reference buffer which can be used as
-+  voltage reference for ADCs, DACs and also as voltage reference for external
-+  components through the dedicated VREF+ pin.
++title: STMicroelectronics STM32 booster for ADC analog input switches bindings
 +
 +maintainers:
 +  - Fabrice Gasnier <fabrice.gasnier@st.com>
++
++description: |
++  Some STM32 devices embed a 3.3V booster supplied by Vdda, that can be used
++  to supply ADC analog input switches.
 +
 +allOf:
 +  - $ref: "regulator.yaml#"
 +
 +properties:
 +  compatible:
-+    const: st,stm32-vrefbuf
++    enum:
++      - st,stm32h7-booster
++      - st,stm32mp1-booster
 +
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    maxItems: 1
++  st,syscfg:
++    allOf:
++      - $ref: "/schemas/types.yaml#/definitions/phandle-array"
++    description: phandle to system configuration controller.
 +
 +  vdda-supply:
 +    description: phandle to the vdda input analog voltage.
 +
 +required:
 +  - compatible
-+  - reg
-+  - clocks
++  - st,syscfg
 +  - vdda-supply
 +
 +examples:
 +  - |
-+    #include <dt-bindings/clock/stm32mp1-clks.h>
-+    vrefbuf@50025000 {
-+      compatible = "st,stm32-vrefbuf";
-+      reg = <0x50025000 0x8>;
-+      regulator-min-microvolt = <1500000>;
-+      regulator-max-microvolt = <2500000>;
-+      clocks = <&rcc VREF>;
++    regulator-booster {
++      compatible = "st,stm32mp1-booster";
++      st,syscfg = <&syscfg>;
 +      vdda-supply = <&vdda>;
 +    };
 +
 +...
-+
 -- 
 2.20.1
 
