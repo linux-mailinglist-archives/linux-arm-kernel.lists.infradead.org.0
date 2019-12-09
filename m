@@ -2,50 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 753C2116948
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 10:27:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3829F116954
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 10:30:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8fVUhE/zcP+oiDRN170iXFbOd71Ug5eNiFB1lMhcrSg=; b=fF139InfDWw/iJ
-	LyCF27UKWDCTBHJe2q0s/2xytOH9Cc3h6BZZ01FZJZEhbfCf5iet0O8xfqdAjeAUYy9KcAYhNAqy7
-	jx9kP9+x2jUn/euBlHqD64upOZ2F9X+XIeiAUv07ruQGu8cRqCimrTop731ggxF2i+ucCNt2unxO+
-	dpSTWLWx6i7C3iEyy1FL079UrPRsGhYRszbQrhlYp8WMVYy5fBpszS3uZiMH7PMZRgE7TI4kWP0mO
-	GjNqtQGf2trqVlcn6RXtKLBQL89limaX6uR+Mlfysoebl5OSWsDkk0ncojLoSb7yYR4NuUhdmrKRk
-	ObmbwUsSN3GxGjYJLk7Q==;
+	List-Owner; bh=gpeQwKq9NqXKplGU6cfeK6xqOA0P7VIDMsm3/mb6kTE=; b=tuCiJ2Zwoficwb
+	nw8YSfQX+WzkIPAypM5X0g27PU+jKsgPaxJFfCemBhEidUwQyL5sVBQlAOeA5odsI9IQALbM7h1yW
+	CELsamCwevuX2tTaD8pQZlGqZe54T+pl+hKSFlMxtcTMca+sigufUeiAZi8BmNOIiFUZnGx9aNu5t
+	AbHSnuI1pjbgR1AVUQxH92fevZXSQSueJ72iRagWHoVWpB/iRgyvEagygsMteYGE7DKnTRCULqabZ
+	6Hzwg7z8JMpPKDiy5mlrdI4a801iPK91t0JJWQR/FKjoK1ADzIvyANRwYCVDHNH3UwNI6i2pexXzk
+	1bhMYxKiXE59fM9jCG9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieFKU-0003xQ-Pk; Mon, 09 Dec 2019 09:27:46 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1ieFMl-0004pr-9S; Mon, 09 Dec 2019 09:30:07 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieFKN-0003wN-S4; Mon, 09 Dec 2019 09:27:41 +0000
-Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
- helo=diego.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1ieFKD-0007vX-2a; Mon, 09 Dec 2019 10:27:29 +0100
-From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
-To: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>, kishon@ti.com
-Subject: Re: [PATCH 1/2] dt-bindings: phy: drop #clock-cells from rockchip,
- px30-dsi-dphy
-Date: Mon, 09 Dec 2019 10:27:28 +0100
-Message-ID: <2785558.xRCxUMSmLi@diego>
-In-Reply-To: <20191108000640.8775-1-heiko.stuebner@theobroma-systems.com>
-References: <20191108000640.8775-1-heiko.stuebner@theobroma-systems.com>
+ id 1ieFMS-0004oh-Ec
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 09:29:53 +0000
+Received: by mail-oi1-f194.google.com with SMTP id x14so5692247oic.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Dec 2019 01:29:45 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1gULj/UHb6CAUs/AsGazsmlKOk9MdWHJvdvd6WmLJ/U=;
+ b=OiQ7fBpXgm3esSzMXfLbStzfpV31i1Yni7IVUjYd9/OHqGhMFc+67PThbxtZEZGslv
+ agURnej8z5RR49VwuPj4D0CCeca2c5MgauqQKY2mr7KnLW9vAhK5r4x5uPGHOjppTi1f
+ d4ggPfFo9kd4fNWLSu5LmNVIUhdc9m7Xx1Oqm1MzICAPxtdWWp3RYeO359SgH49o50PH
+ cf8z+O1diRbXxie/JxiUQlaxh9MBp7Oj585rl+ABOIRWWQ47N/5hnZmGIev0rZMsliX1
+ 52/GRjRuZOBruZFT+dm/5CusDyHG1D7B1lvfVz2wzLYsUsYtgewm6PNfd3z1aPAxkJLk
+ sZHA==
+X-Gm-Message-State: APjAAAWzvDp2VO1aYR7YGaqoclqbJIN7jiyS15/C5U1reS0rYE1AhO9x
+ oWE0XIIw/meFyxgulPmTpo7gf64NOLPZUYMHQ5Q=
+X-Google-Smtp-Source: APXvYqwhw1FYzw4YPddtUo6DIlvGABZ3x2lom006suf84ck1j4ZXpOiChOtD0P3hN28a/6SGLQerqc9J9q3hGAiDOu8=
+X-Received: by 2002:aca:4e87:: with SMTP id
+ c129mr22496549oib.153.1575883784546; 
+ Mon, 09 Dec 2019 01:29:44 -0800 (PST)
 MIME-Version: 1.0
+References: <CGME20191206125123eucas1p1c1652484cbccef8d8df37e09affe4e25@eucas1p1.samsung.com>
+ <20191206125112.11006-1-m.szyprowski@samsung.com>
+In-Reply-To: <20191206125112.11006-1-m.szyprowski@samsung.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 9 Dec 2019 10:29:32 +0100
+Message-ID: <CAMuHMdUsRa2QTDw4oM8SGUqfmsGt3-Mc=AnZoPV8RSqehUxyrg@mail.gmail.com>
+Subject: Re: [PATCH] arm: multi_v7_config: Restore debugfs support
+To: Marek Szyprowski <m.szyprowski@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_012740_057359_30D92334 
-X-CRM114-Status: GOOD (  17.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191209_012952_370385_80DF80E7 
+X-CRM114-Status: GOOD (  10.62  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,83 +83,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, bivvy.bi@rock-chips.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org,
- christoph.muellner@theobroma-systems.com
+Cc: linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Kusanagi Kouichi <slash@ac.auone-net.jp>, Arnd Bergmann <arnd@arndb.de>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Olof Johansson <olof@lixom.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Kishon,
+Hi Marek,
 
-Am Freitag, 8. November 2019, 01:06:39 CET schrieb Heiko Stuebner:
-> Further review of the dsi components for the px30 revealed that the
-> phy shouldn't expose the pll as clock but instead handle settings
-> via phy parameters.
-> 
-> As the phy binding is new and not used anywhere yet, just drop them
-> so they don't get used.
-> 
-> Fixes: 3817c7961179 ("dt-bindings: phy: add yaml binding for rockchip,px30-dsi-dphy")
-> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> ---
-> Hi Kishon,
-> 
-> this should ideally get into 5.5 as a fix for the previous change
-> so that the binding doesn't accidentially get used.
+On Fri, Dec 6, 2019 at 1:51 PM Marek Szyprowski
+<m.szyprowski@samsung.com> wrote:
+> Commit fd7d58f0dbc3 ("ARM: multi_v7_defconfig: renormalize based on recent
+> additions") removed explicit enable line for CONFIG_DEBUG_FS, because
+> that feature has been selected by other enabled options: CONFIG_TRACING,
+> which were enabled by CONFIG_PERF_EVENTS.
+>
+> In meantime, commit 0e4a459f56c3 ("tracing: Remove unnecessary DEBUG_FS
+> dependency") removed the dependency between CONFIG_DEBUG_FS and
+> CONFIG_TRACING, so CONFIG_DEBUG_FS is no longer enabled in default builds.
+>
+> Enable it again explicitly, as debugfs support is essential for various
+> automated testing tools.
 
-Could you take a look at these 2 changes for the newly added dsi-phy
-for some Rockchip SoCs? From a dt-binding-hardliner standpoint, it should
-ideally get fixed in 5.5, so that the (wrong) binding doesn't get released
-with a full kernel release.
+... and for systemd :-(
 
-But as it is very much Rockchip-specific and doesn't touch other part,
-5.6 would also be ok I guess ;-)
+E.g. with Debian 9 nfsroot:
 
+    [FAILED] Failed to mount /sys/kernel/debug.
+    See 'systemctl status sys-kernel-debug.mount' for details.
+    [DEPEND] Dependency failed for Local File Systems.
+    ...
+    You are in emergGive root password for maintenance
+    (or press Control-D to continue):
 
-Thanks
-Heiko
+> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
 
->  .../devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml      | 5 -----
->  1 file changed, 5 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml b/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
-> index bb0da87bcd84..476c56a1dc8c 100644
-> --- a/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
-> +++ b/Documentation/devicetree/bindings/phy/rockchip,px30-dsi-dphy.yaml
-> @@ -13,9 +13,6 @@ properties:
->    "#phy-cells":
->      const: 0
->  
-> -  "#clock-cells":
-> -    const: 0
-> -
->    compatible:
->      enum:
->        - rockchip,px30-dsi-dphy
-> @@ -49,7 +46,6 @@ properties:
->  
->  required:
->    - "#phy-cells"
-> -  - "#clock-cells"
->    - compatible
->    - reg
->    - clocks
-> @@ -66,7 +62,6 @@ examples:
->          reg = <0x0 0xff2e0000 0x0 0x10000>;
->          clocks = <&pmucru 13>, <&cru 12>;
->          clock-names = "ref", "pclk";
-> -        #clock-cells = <0>;
->          resets = <&cru 12>;
->          reset-names = "apb";
->          #phy-cells = <0>;
-> 
+Thank you!
 
+Acked-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
+This is gonna bite lots of people (and defconfigs)...
 
+Gr{oetje,eeting}s,
 
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
