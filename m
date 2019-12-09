@@ -2,60 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEBD6116712
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 07:44:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8EA2116722
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 07:56:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9YIjMBjDdHqcOUwVC4hZK5Qm2yDxVRjmopf1Q28LvnM=; b=ZfYUsYrb2ykOn4
-	4WNo2d7bO22c92gYrZy2DuvKFEM9+JbUYekNY19NQk8N4MIAC4DSKT0gT3IETnH+DuaGcBCCdMHxB
-	4iDRT+MoPpLwZVWvRzAUgTvIYuoIZKR8qks1NreCm+f53UYR2ECCQCdfNUxRJTkcZCSIYzp122qyT
-	5YkBNwCf9S4rHQ0R/w7VveSPEzqxBdQ9BdGvBI15RTJmYTmY6v2Yfw/XH2XhgBfq6ijOaPmqHOfEv
-	UChLtloRuYoVooyLp2weII2IOIiwvWtL56b5oW4BSpx1gYvSsydDWBSi+Zv/KVjGNYwQxj9V/oUNu
-	I8l9Z/COzbv4l68FpcWQ==;
+	List-Owner; bh=cWiuHdaiMgosKqSLKrxnRSrYDG/fM8LepqpTmXIqp3I=; b=igt7DTw/pKKIYF
+	Sbl6BS6Z8IzmuOP8wPFUy7JR3Bb7uCrhlNNqXcykYiPFZ2o3oUMJ01VHDfhU79iPEoN9gVpqPp8Nx
+	ombJq63tlRLbyREWYusyHWLuRx0aKXpDkkoqp8otpHDifQxKyoG85uhIHDk7SRwOn1AJpkCbPYJ1l
+	Xk5sV7O2KlHbKFdy0TZDbaNOmHtim4ViZqyYYGsa+EUPp4orN+fziK27bljYLW/VNYVjWDV8jwHpf
+	DbAAXwXvM9V3wMxVOcrxI04/8NS5WsZYBQ4FnR+BIlMojaoTr103H93+SCsovNFDI3FwbH7OpHRCA
+	CR6RAyk21xWG1TS9F1Iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieCmN-0007a5-PE; Mon, 09 Dec 2019 06:44:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ieCyT-0003ns-L7; Mon, 09 Dec 2019 06:56:53 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieCmE-0007Zf-17
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 06:44:15 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B136C206E0;
- Mon,  9 Dec 2019 06:44:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575873853;
- bh=satcp7pvBEkmw0YjKfECaSFQJOr6tyXzvyx3YGw6ZHk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=DmNA/+/H631bjUIVQXGdULprDWxbrnAXnICRc5ZyYbq9W1cKvGzdbnY0XHmvHLZeJ
- UX2HeP56Vz3bcchoj3GyJaoyLG0Wy7neBtnFHkBukXMqA6MskNEevrBkx2woEKu1Su
- qCVkFVPhz2FMiafNBnuWo7fziZ0TsHn8KhCrznFw=
-Date: Mon, 9 Dec 2019 14:43:58 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Michael Walle <michael@walle.cc>
-Subject: Re: [PATCH 4/4] arm64: dts: freescale: add Kontron sl28 support
-Message-ID: <20191209064356.GD3365@dragon>
-References: <20191123201317.25861-1-michael@walle.cc>
- <20191123201317.25861-5-michael@walle.cc>
+ id 1ieCyC-0003mL-Vo; Mon, 09 Dec 2019 06:56:38 +0000
+X-UUID: 4d62a2cee3ed436daab271754322b8ea-20191208
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=NwH/k4QAq6ojuaZ3B597ruNnoEUu3cfO5mIjHS2A7mk=; 
+ b=dCdt6VmW1ml8+g0J7GCb8+8uCfDrTihs4sHdfKOu4jE3qYDSrudSyRpFQ2s0n+IpXUe6xgmbjmRefh68qbOyWPU2A6GWJ3QsGAjJtlLGsvD5DpzmIDFQrAy/qNQwImac0F75HChW3Lno2JpuowWt7wasbvmvmr1KcWcMzU4r3Ko=;
+X-UUID: 4d62a2cee3ed436daab271754322b8ea-20191208
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <andrew-sh.cheng@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1585875982; Sun, 08 Dec 2019 22:56:32 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 8 Dec 2019 22:57:25 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 9 Dec 2019 14:56:04 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 9 Dec 2019 14:56:13 +0800
+Message-ID: <1575874588.13494.4.camel@mtksdaap41>
+Subject: Re: [v5, PATCH 4/5] cpufreq: mediatek: add opp notification for SVS
+ support
+From: andrew-sh.cheng <andrew-sh.cheng@mediatek.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Date: Mon, 9 Dec 2019 14:56:28 +0800
+In-Reply-To: <20191127083619.etocnhpyyut3hzwq@vireshk-i7>
+References: <1574769046-28449-1-git-send-email-andrew-sh.cheng@mediatek.com>
+ <1574769046-28449-5-git-send-email-andrew-sh.cheng@mediatek.com>
+ <20191127083619.etocnhpyyut3hzwq@vireshk-i7>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191123201317.25861-5-michael@walle.cc>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+X-TM-SNTS-SMTP: 055794366DCA413A558EB6AF1AA4D139DE65065F2E78E9C27BA2A86B749303B62000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_224414_112666_EF61CC45 
-X-CRM114-Status: GOOD (  18.47  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191208_225637_055262_61BBD2B8 
+X-CRM114-Status: GOOD (  21.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -65,7 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,381 +86,208 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+ devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ linux-pm@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org, Chanwoo
+ Choi <cw00.choi@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, fan.chen@mediatek.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Nov 23, 2019 at 09:13:17PM +0100, Michael Walle wrote:
-> Add device tree files for the Kontron SMARC-sAL28 board and its
-> carriers.
+On Wed, 2019-11-27 at 14:06 +0530, Viresh Kumar wrote:
+> On 26-11-19, 19:50, Andrew-sh.Cheng wrote:
+> > diff --git a/drivers/cpufreq/mediatek-cpufreq.c b/drivers/cpufreq/mediatek-cpufreq.c
+> > index 4b0cc50dd93b..7c37ab31230a 100644
+> > --- a/drivers/cpufreq/mediatek-cpufreq.c
+> > +++ b/drivers/cpufreq/mediatek-cpufreq.c
+> > @@ -42,6 +42,10 @@ struct mtk_cpu_dvfs_info {
+> >  	struct list_head list_head;
+> >  	int intermediate_voltage;
+> >  	bool need_voltage_tracking;
+> > +	struct mutex lock; /* avoid notify and policy race condition */
 > 
-> Signed-off-by: Michael Walle <michael@walle.cc>
-> ---
->  arch/arm64/boot/dts/freescale/Makefile        |   4 +
->  .../fsl-ls1028a-kontron-kbox-a-230-ls.dts     |  27 +++
->  .../fsl-ls1028a-kontron-sl28-var3-ads2.dts    |  73 ++++++++
->  .../fsl-ls1028a-kontron-sl28-var4.dts         |  34 ++++
->  .../freescale/fsl-ls1028a-kontron-sl28.dts    | 158 ++++++++++++++++++
->  5 files changed, 296 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
->  create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
->  create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var4.dts
->  create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
+> Will a read-write lock be better suited here for performance reasons ?
+Thank you for advice, I will check it.
 > 
-> diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
-> index 93fce8f0c66d..080c5a59d6bd 100644
-> --- a/arch/arm64/boot/dts/freescale/Makefile
-> +++ b/arch/arm64/boot/dts/freescale/Makefile
-> @@ -4,6 +4,10 @@ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1012a-frwy.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1012a-oxalis.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1012a-qds.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1012a-rdb.dtb
-> +dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-kbox-a-230-ls.dtb
-> +dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-sl28.dtb
-> +dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-sl28-var3-ads2.dtb
-> +dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-sl28-var4.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-qds.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-rdb.dtb
->  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1043a-qds.dtb
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-> new file mode 100644
-> index 000000000000..97e72c94b7fc
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-> @@ -0,0 +1,27 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Device Tree File for the Kontron KBox A-230-LS.
-> + *
-> + * This consists of a Kontron SMARC-sAL28 (Dual PHY) and a special
-> + * carrier (s1914).
-> + *
-> + * Copyright (C) 2019 Michael Walle <michael@walle.cc>
-> + *
-> + */
-> +
-> +/dts-v1/;
-> +#include "fsl-ls1028a-kontron-sl28-var4.dts"
-> +
-> +/ {
-> +	model = "Kontron KBox A-230-LS";
-> +	compatible = "kontron,kbox-a-230-ls", "kontron,sl28-var3",
-> +		     "kontron,sl28", "fsl,ls1028a";
-
-Any new compatible needs to be documented.
-
-> +};
-> +
-> +&i2c4 {
-> +	eeprom@50 {
-> +		compatible = "atmel,24c32";
-> +		reg = <0x50>;
-> +		pagesize = <32>;
-> +	};
-> +};
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
-> new file mode 100644
-> index 000000000000..a4640e6b3928
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
-> @@ -0,0 +1,73 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Device Tree file for the Kontron SMARC-sAL28 board on a SMARC Eval 2.0
-> + * carrier (ADS2).
-> + *
-> + * Copyright (C) 2019 Michael Walle <michael@walle.cc>
-> + *
-> + */
-> +
-> +/dts-v1/;
-> +#include "fsl-ls1028a-kontron-sl28.dts"
-> +
-> +/ {
-> +	model = "Kontron SMARC-sAL28 (Single PHY) on SMARC Eval 2.0 carrier";
-> +	compatible = "kontron,sl28-var3-ads2", "kontron,sl28", "fsl,ls1028a";
-> +
-> +	sound {
-> +		compatible = "simple-audio-card";
-> +		simple-audio-card,format = "i2s";
-> +		simple-audio-card,widgets =
-> +			"Headphone", "Headphone Jack",
-> +			"Line", "Line Out Jack";
-> +		simple-audio-card,routing =
-> +			"Line Out Jack", "LINEOUTR",
-> +			"Line Out Jack", "LINEOUTL",
-> +			"Headphone Jack", "HPOUTR",
-> +			"Headphone Jack", "HPOUTL";
-> +		simple-audio-card,mclk-fs = <256>;
-> +
-> +		simple-audio-card,cpu {
-> +			sound-dai = <&sai6>;
-> +		};
-> +
-> +		simple-audio-card,codec {
-> +			sound-dai = <&wm8904>;
-> +			frame-master;
-> +			bitclock-master;
-> +		};
-> +	};
-> +};
-> +
-> +&i2c4 {
-> +	status = "okay";
-> +
-> +	wm8904: wm8904@1a {
-
-audio-codec for node name.
-
-> +		#sound-dai-cells = <0>;
-> +		compatible = "wlf,wm8904";
-> +		reg = <0x1a>;
-> +		clocks = <&wm8904_mclk>;
-> +		clock-names = "mclk";
-> +		assigned-clocks = <&wm8904_mclk>;
-> +		assigned-clock-rates = <1250000>;
-> +	};
-> +
-> +	eeprom@50 {
-> +		compatible = "atmel,24c32";
-> +		reg = <0x50>;
-> +		pagesize = <32>;
-> +	};
-> +};
-> +
-> +&sai6 {
-> +	status = "okay";
-> +};
-> +
-> +&soc {
-> +	wm8904_mclk: wm8904-mclk@f130080 {
-> +		compatible = "fsl,vf610-sai-clock";
-
-Unsupported/undocumented binding?
-
-> +		reg = <0x0 0xf130080 0x0 0x80>;
-> +		clocks = <&clockgen 4 1>;
-> +		#clock-cells = <0>;
-> +	};
-> +};
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var4.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var4.dts
-> new file mode 100644
-> index 000000000000..5c8b13108e4d
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var4.dts
-> @@ -0,0 +1,34 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Device Tree file for the Kontron SMARC-sAL28 board.
-> + *
-> + * This is for the network variant 4 which has two ethernet ports. It
-> + * extends the base and provides one more port connected via RGMII.
-> + *
-> + * Copyright (C) 2019 Michael Walle <michael@walle.cc>
-> + *
-> + */
-> +
-> +/dts-v1/;
-> +#include "fsl-ls1028a-kontron-sl28.dts"
-> +
-> +/ {
-> +	model = "Kontron SMARC-sAL28 (Dual PHY)";
-> +	compatible = "kontron,sl28-var4", "kontron,sl28", "fsl,ls1028a";
-> +};
-> +
-> +&enetc_port1 {
-> +	phy-handle = <&phy1>;
-> +	phy-connection-type = "rgmii-id";
-> +
-> +	mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		phy1: ethernet-phy@4 {
-> +			reg = <0x4>;
-> +			eee-broken-1000t;
-> +			eee-broken-100tx;
-> +		};
-> +	};
-> +};
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
-> new file mode 100644
-> index 000000000000..a18cb4395ad0
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
-> @@ -0,0 +1,158 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Device Tree file for the Kontron SMARC-sAL28 board.
-> + *
-> + * Copyright (C) 2019 Michael Walle <michael@walle.cc>
-> + *
-> + */
-> +
-> +/dts-v1/;
-> +#include "fsl-ls1028a.dtsi"
-> +
-> +/ {
-> +	model = "Kontron SMARC-sAL28";
-> +	compatible = "kontron,sl28", "fsl,ls1028a";
-> +
-> +	aliases {
-> +		crypto = &crypto;
-> +		serial0 = &duart0;
-> +		serial1 = &duart1;
-> +	};
-> +
-> +	chosen {
-> +		stdout-path = "serial0:115200n8";
-> +	};
-> +};
-> +
-> +&duart0 {
-> +	status = "okay";
-> +};
-> +
-> +&duart1 {
-> +	status = "okay";
-> +};
-> +
-> +&enetc_port0 {
-> +	phy-handle = <&phy0>;
-> +	phy-connection-type = "sgmii";
-> +
-> +	mdio {
-> +		#address-cells = <1>;
-> +		#size-cells = <0>;
-> +
-> +		phy0: ethernet-phy@5 {
-> +			reg = <0x5>;
-> +			eee-broken-1000t;
-> +			eee-broken-100tx;
-> +		};
-> +	};
-> +};
-> +
-> +&esdhc {
-> +	sd-uhs-sdr104;
-> +	sd-uhs-sdr50;
-> +	sd-uhs-sdr25;
-> +	sd-uhs-sdr12;
-> +	status = "okay";
-> +};
-> +
-> +&esdhc1 {
-> +	mmc-hs200-1_8v;
-> +	mmc-hs400-1_8v;
-> +	bus-width = <8>;
-> +	status = "okay";
-> +};
-> +
-> +&fspi {
-> +	status = "okay";
-> +
-> +	w25q32jw@0 {
-
-Use a generic node name.
-
-> +		#address-cells = <1>;
-> +		#size-cells = <1>;
-> +		compatible = "w25q32jw", "jedec,spi-nor";
-
-Is "w25q32jw" documented somewhere?
-
-Shawn
-
-> +		m25p,fast-read;
-> +		spi-max-frequency = <133000000>;
-> +		reg = <0>;
-> +		/* The following setting enables 1-1-2 (CMD-ADDR-DATA) mode */
-> +		spi-rx-bus-width = <2>; /* 2 SPI Rx lines */
-> +		spi-tx-bus-width = <1>; /* 1 SPI Tx line */
-> +
-> +		partition@0 {
-> +			reg = <0x000000 0x010000>;
-> +			label = "rcw";
-> +			read-only;
-> +		};
-> +
-> +		partition@10000 {
-> +			reg = <0x010000 0x0f0000>;
-> +			label = "failsafe bootloader";
-> +			read-only;
-> +		};
-> +
-> +		partition@100000 {
-> +			reg = <0x100000 0x040000>;
-> +			label = "failsafe DP firmware";
-> +			read-only;
-> +		};
-> +
-> +		partition@140000 {
-> +			reg = <0x140000 0x0a0000>;
-> +			label = "failsafe trusted firmware";
-> +			read-only;
-> +		};
-> +
-> +		partition@1e0000 {
-> +			reg = <0x1e0000 0x020000>;
-> +			label = "reserved";
-> +			read-only;
-> +		};
-> +
-> +		partition@200000 {
-> +			reg = <0x200000 0x010000>;
-> +			label = "configuration store";
-> +		};
-> +
-> +		partition@210000 {
-> +			reg = <0x210000 0x0f0000>;
-> +			label = "bootloader";
-> +		};
-> +
-> +		partition@300000 {
-> +			reg = <0x300000 0x040000>;
-> +			label = "DP firmware";
-> +		};
-> +
-> +		partition@340000 {
-> +			reg = <0x340000 0x0a0000>;
-> +			label = "trusted firmware";
-> +		};
-> +
-> +		partition@3e0000 {
-> +			reg = <0x3e0000 0x020000>;
-> +			label = "bootloader environment";
-> +		};
-> +	};
-> +};
-> +
-> +&i2c0 {
-> +	status = "okay";
-> +
-> +	rtc@32 {
-> +		compatible = "microcrystal,rv8803";
-> +		reg = <0x32>;
-> +	};
-> +
-> +	eeprom@50 {
-> +		compatible = "atmel,24c32";
-> +		reg = <0x50>;
-> +		pagesize = <32>;
-> +	};
-> +};
-> +
-> +&i2c3 {
-> +	status = "okay";
-> +};
-> +
-> +&i2c4 {
-> +	status = "okay";
-> +};
-> -- 
-> 2.20.1
+> > +	struct notifier_block opp_nb;
+> > +	int opp_cpu;
+> > +	unsigned long opp_freq;
+> >  };
+> >  
+> >  static LIST_HEAD(dvfs_info_list);
+> > @@ -231,6 +235,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+> >  	vproc = dev_pm_opp_get_voltage(opp);
+> >  	dev_pm_opp_put(opp);
+> >  
+> > +	mutex_lock(&info->lock);
+> >  	/*
+> >  	 * If the new voltage or the intermediate voltage is higher than the
+> >  	 * current voltage, scale up voltage first.
+> > @@ -242,6 +247,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+> >  			pr_err("cpu%d: failed to scale up voltage!\n",
+> >  			       policy->cpu);
+> >  			mtk_cpufreq_set_voltage(info, old_vproc);
+> > +			mutex_unlock(&info->lock);
+> >  			return ret;
+> >  		}
+> >  	}
+> > @@ -253,6 +259,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+> >  		       policy->cpu);
+> >  		mtk_cpufreq_set_voltage(info, old_vproc);
+> >  		WARN_ON(1);
+> > +		mutex_unlock(&info->lock);
+> >  		return ret;
+> >  	}
+> >  
+> > @@ -263,6 +270,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+> >  		       policy->cpu);
+> >  		clk_set_parent(cpu_clk, armpll);
+> >  		mtk_cpufreq_set_voltage(info, old_vproc);
+> > +		mutex_unlock(&info->lock);
+> >  		return ret;
+> >  	}
+> >  
+> > @@ -273,6 +281,7 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+> >  		       policy->cpu);
+> >  		mtk_cpufreq_set_voltage(info, inter_vproc);
+> >  		WARN_ON(1);
+> > +		mutex_unlock(&info->lock);
+> >  		return ret;
+> >  	}
+> >  
+> > @@ -288,15 +297,75 @@ static int mtk_cpufreq_set_target(struct cpufreq_policy *policy,
+> >  			clk_set_parent(cpu_clk, info->inter_clk);
+> >  			clk_set_rate(armpll, old_freq_hz);
+> >  			clk_set_parent(cpu_clk, armpll);
+> > +			mutex_unlock(&info->lock);
+> >  			return ret;
+> >  		}
+> >  	}
+> >  
+> > +	info->opp_freq = freq_hz;
+> > +	mutex_unlock(&info->lock);
+> > +
+> >  	return 0;
+> >  }
+> >  
+> >  #define DYNAMIC_POWER "dynamic-power-coefficient"
+> >  
+> > +static int mtk_cpufreq_opp_notifier(struct notifier_block *nb,
+> > +				    unsigned long event, void *data)
+> > +{
+> > +	struct dev_pm_opp *opp = data;
+> > +	struct dev_pm_opp *opp_item;
+> > +	struct mtk_cpu_dvfs_info *info =
+> > +		container_of(nb, struct mtk_cpu_dvfs_info, opp_nb);
+> 
+> Do the assignment after all definitions, instead of awkwardly breaking
+> the line here.
+Got it, will change it.
+> 
+> > +	unsigned long freq, volt;
+> > +	struct cpufreq_policy *policy;
+> > +	int ret = 0;
+> > +
+> > +	if (event == OPP_EVENT_ADJUST_VOLTAGE) {
+> > +		freq = dev_pm_opp_get_freq(opp);
+> > +
+> > +		mutex_lock(&info->lock);
+> > +		if (info->opp_freq == freq) {
+> > +			volt = dev_pm_opp_get_voltage(opp);
+> > +			ret = mtk_cpufreq_set_voltage(info, volt);
+> > +			if (ret)
+> > +				dev_err(info->cpu_dev, "failed to scale voltage: %d\n",
+> > +					ret);
+> > +		}
+> > +		mutex_unlock(&info->lock);
+> > +	} else if (event == OPP_EVENT_DISABLE) {
+> > +		freq = info->opp_freq;
+> > +		opp_item = dev_pm_opp_find_freq_ceil(info->cpu_dev, &freq);
+> 
+> name it new_opp instead of opp_item.
+Got it, will change it.
+> 
+> > +		if (!IS_ERR(opp_item))
+> > +			dev_pm_opp_put(opp_item);
+> > +		else
+> > +			freq = 0;
+> > +
+> 
+> What is the purpose of the above code ?
+When dev_pm_opp_find_freq_ceil() doesn't find matching opp item, freq
+value won't be set.
+Set it as 0 for below checking
+> 
+> > +		/* case of current opp is disabled */
+> > +		if (freq == 0 || freq != info->opp_freq) {
+> > +			// find an enable opp item
+> 
+> Use proper commenting style please.
+Got it, will change it.
+> 
+> > +			freq = 1;
+> > +			opp_item = dev_pm_opp_find_freq_ceil(info->cpu_dev,
+> > +							     &freq);
+> > +			if (!IS_ERR(opp_item)) {
+> > +				dev_pm_opp_put(opp_item);
+> > +				policy = cpufreq_cpu_get(info->opp_cpu);
+> > +				if (policy) {
+> > +					cpufreq_driver_target(policy,
+> > +						freq / 1000,
+> > +						CPUFREQ_RELATION_L);
+> 
+> Why don't you simply call this instead of all the code in the else
+> block ?
+These else code is used to check "current opp item is disabled or not".
+If not, do nothing.
+If current opp item is disabled, need to find an not-disabled opp item,
+and set frequency to it.
+> 
+> > +					cpufreq_cpu_put(policy);
+> > +				}
+> > +			} else {
+> > +				pr_err("%s: all opp items are disabled\n",
+> > +				       __func__);
+> > +			}
+> > +		}
+> > +	}
+> > +
+> > +	return notifier_from_errno(ret);
+> > +}
+> > +
+> >  static int mtk_cpu_dvfs_info_init(struct mtk_cpu_dvfs_info *info, int cpu)
+> >  {
+> >  	struct device *cpu_dev;
+> > @@ -383,11 +452,21 @@ static int mtk_cpu_dvfs_info_init(struct mtk_cpu_dvfs_info *info, int cpu)
+> >  	info->intermediate_voltage = dev_pm_opp_get_voltage(opp);
+> >  	dev_pm_opp_put(opp);
+> >  
+> > +	info->opp_cpu = cpu;
+> > +	info->opp_nb.notifier_call = mtk_cpufreq_opp_notifier;
+> > +	ret = dev_pm_opp_register_notifier(cpu_dev, &info->opp_nb);
+> > +	if (ret) {
+> > +		pr_warn("cannot register opp notification\n");
+> > +		goto out_free_opp_table;
+> > +	}
+> > +
+> > +	mutex_init(&info->lock);
+> >  	info->cpu_dev = cpu_dev;
+> >  	info->proc_reg = proc_reg;
+> >  	info->sram_reg = IS_ERR(sram_reg) ? NULL : sram_reg;
+> >  	info->cpu_clk = cpu_clk;
+> >  	info->inter_clk = inter_clk;
+> > +	info->opp_freq = clk_get_rate(cpu_clk);
+> >  
+> >  	/*
+> >  	 * If SRAM regulator is present, software "voltage tracking" is needed
+> > -- 
+> > 2.12.5
 > 
 
 _______________________________________________
