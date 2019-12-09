@@ -2,88 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1A2E117A92
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 23:56:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF373117B36
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 00:08:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=90Cpl1XSNaaAAkOA1Fed/2JrxnHsARPVbEP90msUgZ4=; b=Bq3NNJOSvkVrDL
-	immq+LHtdT6GZ1GIgAICPVcJrft8jiJtLUWCKeKhUIeeMBR17wT5YxbTvWwE7x+e67EinwMS49Hhm
-	1ws3R7lni8VasybWNI2ltlg1RAof5djxxGmE29fIkQ2NyBmQRIgtC3XRLv88+NGbPubpivV449Djp
-	+ymNj+ULUbndhtwCx3ihrTN0VV+nfKEw2KX5+d+a4qPrMgmfL5Jrth/zv2uqs3FaqtU3oeceeWV+t
-	/bXpgwZe7g4ENhgmECIV52t+eWz/KLT3HDyrTT8nuDTrFcdacOyLnx/TAzcLLoorVeNtoo2IAEMy/
-	TN8gn3h1DvS0XnEwPbRg==;
+	List-Owner; bh=CbTZ5Oj2ejrGcwlD0GB4T9CKu+ALhSENoWw+rCOnELY=; b=mx/5EUpYYWhTq+
+	cVlp4Qn4oI3wCwRpjJbxdD65xsXTpTdvzf5u4HO/AZFY9xDdA7NMBcsdy3lbyYiWXNFthUWEzifhr
+	JBAokBPTwX9rBYCNuCV5YZcZIbHp4dvaec7DMlfFYsHO6tKrxeabyxhbDonuU6Cit2gcTF4MhPP9I
+	N10UisjWzMuCC+E7blpmgYliNGbfJ/enQ1u2MJlIU88PmJa0yYATrWpT21pI3S6mHggm8qxdvgzoS
+	mDrRcyCBz7y4/i33W8egRieHqmEee/NBSWEOW2t8GfIeNgH+YVVPzkfradKj+JrONeAIiGoT5Xruf
+	hvU/gmD9k5KJSKepMSgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieRxM-0007kN-7q; Mon, 09 Dec 2019 22:56:44 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1ieS99-0003sI-Gc; Mon, 09 Dec 2019 23:08:55 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieRxC-0007jF-SA
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 22:56:36 +0000
-Received: by mail-pl1-x642.google.com with SMTP id w7so6412172plz.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Dec 2019 14:56:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=A4KHxg3gak/AwtAzed2CDRcu2q9WfrU2oLQqZp0iE2c=;
- b=JgkAL/tQtnHUIJMXDnJ5JRXCF1Z71qc3TDDuhsTpEFP3RllanM9RKF62rKGTwwyE/r
- 3F+sOGcm/Qoo6PW/gV1WjGbEzl/FeQLN+9Cq8B6o/Q5lXLaIFwTagn+oFLmSHZSxT5wq
- b6JzhAPMN4dgoOvUd1T3L/akyP5q6rTfPhBp8ysDtUbavt46I8knRWQ1TyRgkUNuONAt
- qVaaz5V4bS8bcd0C+ZgUiZqe9VyiD+g9s7SdS3JyZKfqnWVaMR7XIgdMTaMdsMH6huO/
- MRbO40lHiN8iUZ5O6HRQubJqB+jrkEfqlDhDNoF58bhwN74s2mubGrtzDOFQSagWQg9K
- 07zQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=A4KHxg3gak/AwtAzed2CDRcu2q9WfrU2oLQqZp0iE2c=;
- b=VDUBkSr++VlyYfbQWhv8jbdM2Ib6BIi0f4fb6x8uzsWqPYiFixF8jlZ27C/8JDysea
- v/U+fzbLkMmR9mnZ3q1pw/rfLeq9rMH50sqLtJTjo4tGdQbU0iLnuh3UZJDmBh/+aUEh
- 6ZaQEdoXI8sKZJ7CNli8CNcAXjF/rdwaoyUMrs/NtHzoSq6ZfXjvMJQcAi0R0WDtLgbC
- j/X5SKNv9RI0ol8qBmTa4dKB0Wyk9n0QOw4lXu36T5l3mIFYuZR/ILgzxvtaph7gPgEA
- heE2umSEshQBholkvRa9LqY9DlYKnCls5BxiVKniHUzy/RV+8bWJlF1huRE7LzP6Suef
- UfHg==
-X-Gm-Message-State: APjAAAUJZAF6fkkOUJVdsRKCGkdZVyJCeMUDMmi4vYZJNygzIiASYHdY
- HIO49g0s9lK0hDdZLRjwRZUO5g==
-X-Google-Smtp-Source: APXvYqwfy57KUmDE1VA2LS08T92dACffdsdnOJYy9Qvwq4eLq3TN5C71lFIUbtBnAecTSV5jsNQ1Bg==
-X-Received: by 2002:a17:902:7884:: with SMTP id
- q4mr30505852pll.285.1575932193897; 
- Mon, 09 Dec 2019 14:56:33 -0800 (PST)
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
- [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id g19sm504235pfh.134.2019.12.09.14.56.33
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 09 Dec 2019 14:56:33 -0800 (PST)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Xingyu Chen <xingyu.chen@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: Re: [PATCH] arm64: dts: a1: add saradc controller
-In-Reply-To: <1575358332-44866-1-git-send-email-xingyu.chen@amlogic.com>
-References: <1575358332-44866-1-git-send-email-xingyu.chen@amlogic.com>
-Date: Mon, 09 Dec 2019 14:56:32 -0800
-Message-ID: <7hpngxqfa7.fsf@baylibre.com>
+ id 1ieS92-0003rQ-RQ; Mon, 09 Dec 2019 23:08:50 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1ieS8r-0003WX-Uy; Tue, 10 Dec 2019 00:08:37 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Soeren Moch <smoch@web.de>
+Subject: Re: [PATCH 8/8] arm64: dts: rockchip: RockPro64: enable wifi module
+ at sdio0
+Date: Tue, 10 Dec 2019 00:08:37 +0100
+Message-ID: <2668270.pdtvSLGib8@diego>
+In-Reply-To: <20191209223822.27236-8-smoch@web.de>
+References: <20191209223822.27236-1-smoch@web.de>
+ <20191209223822.27236-8-smoch@web.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_145634_913888_A410DEF9 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20191209_150849_036684_E23CE22F 
+X-CRM114-Status: GOOD (  19.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,50 +58,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Qianggui Song <qianggui.song@amlogic.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jianxin Pan <jianxin.pan@amlogic.com>,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, linux-amlogic@lists.infradead.org,
- Jonathan Cameron <jic23@kernel.org>, Jerome Brunet <jbrunet@baylibre.com>
+Cc: brcm80211-dev-list.pdl@broadcom.com, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Kalle Valo <kvalo@codeaurora.org>,
+ brcm80211-dev-list@cypress.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Xingyu Chen <xingyu.chen@amlogic.com> writes:
+Hi Soeren,
 
-> The saradc controller in Meson-A1 is the same as the Meson-G12 series SoCs,
-> so we use the same compatible string.
->
-> Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
->
+Am Montag, 9. Dezember 2019, 23:38:22 CET schrieb Soeren Moch:
+> RockPro64 supports an Ampak AP6359SA based wifi/bt combo module.
+> The BCM4359/9 wifi controller in this module is connected to sdio0,
+> enable this interface.
+> 
+> Signed-off-by: Soeren Moch <smoch@web.de>
 > ---
-> This patch is based on A1 clock patchset at [0].
->
-> [0] https://lore.kernel.org/linux-amlogic/20191129144605.182774-1-jian.hu@amlogic.com
+> Not sure where to place exactly the sdio0 node in the dts because
+> existing sd nodes are not sorted alphabetically.
+> 
+> This last patch in this brcmfmac patch series probably should be picked
+> up by Heiko independently of the rest of this series. It was sent together
+> to show how this brcmfmac extension for 4359-sdio support with RSDB is
+> used and tested.
+
+node placement looks good so I can apply it, just a general questions
+I only got patch 8/8 are patches 1-7 relevant for this one and what are they?
+
+Thanks
+Heiko
+
+
+> 
+> Cc: Heiko Stuebner <heiko@sntech.de>
+> Cc: Kalle Valo <kvalo@codeaurora.org>
+> Cc: linux-wireless@vger.kernel.org
+> Cc: brcm80211-dev-list.pdl@broadcom.com
+> Cc: brcm80211-dev-list@cypress.com
+> Cc: netdev@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-rockchip@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
 > ---
->  arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-> index 7210ad0..cad1756 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-> +++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-> @@ -93,6 +93,21 @@
->  				clock-names = "xtal", "pclk", "baud";
->  				status = "disabled";
->  			};
+>  .../boot/dts/rockchip/rk3399-rockpro64.dts    | 21 ++++++++++++-------
+>  1 file changed, 14 insertions(+), 7 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> index 7f4b2eba31d4..9fa92790d6e0 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+> @@ -71,13 +71,6 @@
+>  		clock-names = "ext_clock";
+>  		pinctrl-names = "default";
+>  		pinctrl-0 = <&wifi_enable_h>;
+> -
+> -		/*
+> -		 * On the module itself this is one of these (depending
+> -		 * on the actual card populated):
+> -		 * - SDIO_RESET_L_WL_REG_ON
+> -		 * - PDN (power down when low)
+> -		 */
+>  		reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
+>  	};
+> 
+> @@ -650,6 +643,20 @@
+>  	status = "okay";
+>  };
+> 
+> +&sdio0 {
+> +	bus-width = <4>;
+> +	cap-sd-highspeed;
+> +	cap-sdio-irq;
+> +	disable-wp;
+> +	keep-power-in-suspend;
+> +	mmc-pwrseq = <&sdio_pwrseq>;
+> +	non-removable;
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
+> +	sd-uhs-sdr104;
+> +	status = "okay";
+> +};
 > +
-> +			saradc: adc@2c00 {
-> +				compatible = "amlogic,meson-g12a-saradc",
-> +					     "amlogic,meson-saradc";
-> +				reg = <0x0 0x2c00 0x0 0x48>;
+>  &sdmmc {
+>  	bus-width = <4>;
+>  	cap-sd-highspeed;
+> --
+> 2.17.1
+> 
 
-Why 0x48 here?  AXG uses 0x38 and you're not adding any more registers
-to this driver.
 
-Kevin
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
