@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F4D4116F19
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 15:38:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33751116F2A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 15:39:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yiieVS4NwclQFrp+hd5CpzwCs/vFsrDrQKjqhuj/iJo=; b=nupa5Pv9QiXw4C
-	8O/16BNClpz8A2BGaK7OyUn+OthiWgL6snTWHtAVFxDZeFG9URRKFNLOjr/Jh4mP94y3GWciMQ0mW
-	a3EpPwdj4AJ521uCTJOccug1QUUIUVevq5YjOdhbtTY0InOX4SiN87p5yb9uIguifRk70G44zNOak
-	4gvHY1fBUNHeRcVPY92JLgQbITij4Lriv/kh1r6mDwvDyEOfLk11+Bc4pqR1KVVEV4/bLWa/gMgGX
-	JvY971A3L/IFFg4KH5iWhZWF1//mabRGURQdjUzmMiT9A+XxOrZY6lrS+3TkOtrxvQBzjuRnnRrqb
-	zoqK41COdgqibvsmc3VQ==;
+	List-Owner; bh=aHR9VpBDx7VHAiUMFinZlWNpiPKlkBoSOirV3cyOclw=; b=fJEVuzOJxq0B0j
+	lcT3LVv2C3fXrJdps4xrZpQ/dwh685L/o/ij/HQjN6KjFFeMLGmAQhKGP+is0dNQ8IA4HklMYogw6
+	MFmmTV++yYlVGsnVGwvKBSqcboKknxcKGNOHaj2EdbFVeG4nfa12V1BrKEMZMBfbv6jAjKaP4kn9E
+	ZckcFh7s7Op5FY1uA/ba0sq+YferbI+ax2ttHccz03M0X4OK1FiWbeuBV4HMBURajZJF+XuC3voM9
+	A2VlbMD0+Uixe2Od3j7JQm2eRQVVc73e0g0PSK4a+zTon9pWr9ZZeUeeKgvQPT2JU+MsmVxZLAOwt
+	T+ICh22ci8EqiBvyuAMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieKBH-0001dl-62; Mon, 09 Dec 2019 14:38:35 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1ieKBl-000261-QJ; Mon, 09 Dec 2019 14:39:05 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieKB9-0001cs-HP
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 14:38:29 +0000
-X-Originating-IP: 90.65.102.129
+ id 1ieKBW-0001wz-Lo
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 14:38:52 +0000
 Received: from localhost (lfbn-1-1480-129.w90-65.abo.wanadoo.fr
  [90.65.102.129]) (Authenticated sender: gregory.clement@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 3DFECE0012;
- Mon,  9 Dec 2019 14:38:11 +0000 (UTC)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 9A5F224000A;
+ Mon,  9 Dec 2019 14:38:41 +0000 (UTC)
 From: Gregory CLEMENT <gregory.clement@bootlin.com>
 To: Russell King <rmk+kernel@armlinux.org.uk>,
  Vladimir Vid <vladimir.vid@sartura.hr>
-Subject: Re: [PATCH 2/2] arm64: dts: uDPU: remove i2c-fast-mode
-In-Reply-To: <E1iVvuv-0002sk-Sw@rmk-PC.armlinux.org.uk>
-References: <E1iVvuv-0002sk-Sw@rmk-PC.armlinux.org.uk>
-Date: Mon, 09 Dec 2019 15:38:10 +0100
-Message-ID: <87lfrlh8dp.fsf@FE-laptop>
+Subject: Re: [PATCH] arm64: dts: uDPU: SFP cages support 3W modules
+In-Reply-To: <E1iXCMq-00040q-Bm@rmk-PC.armlinux.org.uk>
+References: <E1iXCMq-00040q-Bm@rmk-PC.armlinux.org.uk>
+Date: Mon, 09 Dec 2019 15:38:41 +0100
+Message-ID: <87immph8cu.fsf@FE-laptop>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_063827_709538_9B068574 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20191209_063850_922922_8093DD9D 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
+ low trust [217.70.178.230 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,8 +70,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Russell King <rmk+kernel@armlinux.org.uk> writes:
 
-> The I2C bus violates the timing specifications when run in fast mode
-> on the uDPU, so switch to 100kHz mode.
+> The SFP cages are designed to support up to 3W modules, such as G.hn,
+> G.fast and MoCA modules. Although there is no way for such modules to
+> declare to software that they consume 3W, we document in DT that this
+> is the designed power level for these cages.
 >
 > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 
@@ -87,24 +88,25 @@ Gregory
 >  1 file changed, 2 insertions(+)
 >
 > diff --git a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-> index e31813a4f972..2ac1d9ae1e25 100644
+> index 2ac1d9ae1e25..7eb6c1796cef 100644
 > --- a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
 > +++ b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
-> @@ -119,12 +119,14 @@
->  	status = "okay";
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&i2c1_pins>;
-> +	/delete-property/mrvl,i2c-fast-mode;
+> @@ -69,6 +69,7 @@
+>  		mod-def0-gpio = <&gpiosb 3 GPIO_ACTIVE_LOW>;
+>  		tx-disable-gpio = <&gpiosb 4 GPIO_ACTIVE_HIGH>;
+>  		tx-fault-gpio = <&gpiosb 5 GPIO_ACTIVE_HIGH>;
+> +		maximum-power-milliwatt = <3000>;
+>  	};
+>  
+>  	sfp_eth1: sfp-eth1 {
+> @@ -78,6 +79,7 @@
+>  		mod-def0-gpio = <&gpiosb 8 GPIO_ACTIVE_LOW>;
+>  		tx-disable-gpio = <&gpiosb 9 GPIO_ACTIVE_HIGH>;
+>  		tx-fault-gpio = <&gpiosb 10 GPIO_ACTIVE_HIGH>;
+> +		maximum-power-milliwatt = <3000>;
+>  	};
 >  };
 >  
->  &i2c1 {
->  	status = "okay";
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&i2c2_pins>;
-> +	/delete-property/mrvl,i2c-fast-mode;
->  
->  	lm75@48 {
->  		status = "okay";
 > -- 
 > 2.20.1
 >
