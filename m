@@ -2,59 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B97F117153
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 17:16:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 281B611716E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 17:22:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PVu7fYYctyaPb1ey8yiEo+pizGEg2nHMx+jIkJrd5TU=; b=tovkIJiUfoJb7F1Kdj1OdelRd
-	t+f5q7UIdYcDYesp6QzNsX3rWIIQbgzvsIW9OMrhx0AvxZCt29+eWzw1fSbyqILcvub0pmnK1Fjjh
-	g7Fmh6ohz0pdQZxtzrGika4MIphoakfovVizfTEbZv3wvEGWZDOok0ck3oyxtMEkcQQvYomM4mIW6
-	TpcN/AKO2SuABIbYsKDf4G3D+E2HLXLhsXFEP1rcodCRaMFxyremucWmSEY/jw4t1KMxffDL/IRBD
-	ayhKaRPsVV0xv4JmS5+O4TdSooIbpsyz7549+ZC1/bbDRrPauV1CI3QPjZ7Y8J/LAeJMlss/AQZRe
-	RWgbTENNw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Fi3e8AMSagiQftCvUIudbbLNiNWGmOtdOlzhFsK26QY=; b=MQKpW2FQU1aj8V
+	s9fIA4wtZ4GcyYBTTMTXOR1G84ondeeTr2F4lGQYncTxKc12qpsvwsqcgpauQ6swUF/XiAi2T1wmg
+	qxGXYDoApsZIRq+FpOZLe2qU0Vj0Su2lNTtzYY8Zg7ck/WHaetvpmiSAgldb8HXgO4ovri/ENS4Dv
+	VD5yJ+58QPtCCNGdJJzG/e/zwMeFQ+lUHl2YoxstM+Vacskwhj94UOcG7KvSSP/UKCp5KzQyDBZel
+	Dc3mJGG2crU1APbOARtGzTsM2e5B1ouNEWRPHowgtk6dtEdf95h0o99lrYYGZ0aE6sDFq/V/FRoAk
+	E9RENGeGPunGw/GRkFXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieLi4-0000Jk-LE; Mon, 09 Dec 2019 16:16:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieLgw-0007hS-7p
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 16:15:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ABD781FB;
- Mon,  9 Dec 2019 08:15:19 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 23FCE3F718;
- Mon,  9 Dec 2019 08:15:18 -0800 (PST)
-Date: Mon, 9 Dec 2019 16:15:17 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Richard Henderson <richard.henderson@linaro.org>
-Subject: Re: [PATCH v7] arm64: Implement archrandom.h for ARMv8.5-RNG
-Message-ID: <20191209161517.GB5483@sirena.org.uk>
-References: <20191114113932.26186-1-richard.henderson@linaro.org>
- <20191114142512.GC37865@lakrids.cambridge.arm.com>
- <3b1d5f2a-5a8d-0c33-176a-f1c35b8356de@linaro.org>
+	id 1ieLnS-0002jb-Bb; Mon, 09 Dec 2019 16:22:06 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieLnI-0002ij-Cf
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 16:21:57 +0000
+Received: by mail-pf1-x442.google.com with SMTP id s18so7488269pfm.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Dec 2019 08:21:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=70oqW20/DJHzjlf28vSOcRGe1yLG+Cg2RK6l9FagL/c=;
+ b=OBnrp6ldO9XdylaMgI5/cr9oWs8jDGq/zWcPAWIaikmOEPJNw2qdUzxC+/YcmlCw0V
+ Y7KjpfRCnIiqe4G9IETiAXRW4MdRb6JSDi2Y54sI7QlifOqE9qZMcdFJa5WvGx4BxAMl
+ 9GHwbSrvo3NucwGJMFvAO6p1185lyaPrLhYyp4RTkczwBUxwiEsMtcPaqEthZcF8WJcY
+ 5h2ymoCBeGF0lgkNF+t49yVm9wv85bei0UJcbmN0704g+/lar2QVoYbNoGWs5VrbIKRj
+ Vqvmx3WAqPB7xEdOQkDYggvY72KwgxBMFuMu68zFaDcz93Vi2h71iTgjGulOyAhXNg0Z
+ wbpw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=70oqW20/DJHzjlf28vSOcRGe1yLG+Cg2RK6l9FagL/c=;
+ b=DYySwIjgUBGARTn+dUTTRBXy409CQQUFdKI82nsQOaS9lY0JWoKiUQJcclS+v9Ji9F
+ ar/Mb2WB0YM1YP1GzhVSlfGu8yd7NecPeeXU+7sCHWQz10a7x0ft1dowhsknqW9WD5Ym
+ hx1uq55nimUeACm//aoHiIOXd9QtgXThnsy2drjh4bYMqfKPHSavcf7VIj8OOREvYIno
+ uu0RBzphiMnanX3OT7nDqVBOMlmKjAUlEYWhgUesRHcNRF8i+x+AaB/e6wyVSxh8zji/
+ XWTG7Mp204U30yhCtTY6uLu9n141j4b/DSNOoQZsQhoKsN/fRzSalq7ebXCfQpu3Rbzo
+ YEgg==
+X-Gm-Message-State: APjAAAUE4XJOFpTVnqIQx4nPixlOVdb0Q6kldaXDS8a/phGbF44AUx01
+ o0gkDSwXHlWgHyEDpQn3dfc=
+X-Google-Smtp-Source: APXvYqwo9qI45m5jDokO8HihKyUyIE6CPbZT1X7EJ7Eh7j/3O3eilTlx22kkYK4520v5d9URHJbPxg==
+X-Received: by 2002:a62:ac15:: with SMTP id v21mr30819253pfe.48.1575908514461; 
+ Mon, 09 Dec 2019 08:21:54 -0800 (PST)
+Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
+ by smtp.gmail.com with ESMTPSA id o8sm202614pjo.7.2019.12.09.08.21.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 09 Dec 2019 08:21:53 -0800 (PST)
+From: Chuhong Yuan <hslester96@gmail.com>
+To: 
+Subject: [PATCH v4 resend] crypto: picoxcell: adjust the position of
+ tasklet_init and fix missed tasklet_kill
+Date: Tue, 10 Dec 2019 00:21:44 +0800
+Message-Id: <20191209162144.14877-1-hslester96@gmail.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-In-Reply-To: <3b1d5f2a-5a8d-0c33-176a-f1c35b8356de@linaro.org>
-X-Cookie: We read to say that we have read.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_081523_794041_B77CE1A8 
-X-CRM114-Status: GOOD (  18.64  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191209_082156_435542_5E69B1DF 
+X-CRM114-Status: GOOD (  11.70  )
+X-Spam-Score: 1.6 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (hslester96[at]gmail.com)
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [202.120.40.82 listed in dnsbl.sorbs.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (hslester96[at]gmail.com)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,98 +101,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-crypto@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, ard.biesheuvel@linaro.org
-Content-Type: multipart/mixed; boundary="===============8988537889145914821=="
+Cc: Herbert Xu <herbert@gondor.apana.org.au>,
+ Chuhong Yuan <hslester96@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-crypto@vger.kernel.org, Jamie Iles <jamie@jamieiles.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Since tasklet is needed to be initialized before registering IRQ
+handler, adjust the position of tasklet_init to fix the wrong order.
 
---===============8988537889145914821==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="K8nIJk4ghYZn606h"
-Content-Disposition: inline
+Besides, to fix the missed tasklet_kill, this patch adds a helper
+function and uses devm_add_action to kill the tasklet automatically.
 
+Fixes: ce92136843cb ("crypto: picoxcell - add support for the picoxcell crypto engines")
+Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+---
+Changes in v4:
+  - Use devm_add_action instead of devm_add_action_or_reset.
 
---K8nIJk4ghYZn606h
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+ drivers/crypto/picoxcell_crypto.c | 15 +++++++++++++--
+ 1 file changed, 13 insertions(+), 2 deletions(-)
 
-On Thu, Nov 14, 2019 at 07:11:29PM +0100, Richard Henderson wrote:
-> On 11/14/19 3:25 PM, Mark Rutland wrote:
+diff --git a/drivers/crypto/picoxcell_crypto.c b/drivers/crypto/picoxcell_crypto.c
+index 29da449b3e9e..d187312b9864 100644
+--- a/drivers/crypto/picoxcell_crypto.c
++++ b/drivers/crypto/picoxcell_crypto.c
+@@ -1595,6 +1595,11 @@ static const struct of_device_id spacc_of_id_table[] = {
+ MODULE_DEVICE_TABLE(of, spacc_of_id_table);
+ #endif /* CONFIG_OF */
+ 
++static void spacc_tasklet_kill(void *data)
++{
++	tasklet_kill(data);
++}
++
+ static int spacc_probe(struct platform_device *pdev)
+ {
+ 	int i, err, ret;
+@@ -1637,6 +1642,14 @@ static int spacc_probe(struct platform_device *pdev)
+ 		return -ENXIO;
+ 	}
+ 
++	tasklet_init(&engine->complete, spacc_spacc_complete,
++		     (unsigned long)engine);
++
++	ret = devm_add_action(&pdev->dev, spacc_tasklet_kill,
++			      &engine->complete);
++	if (ret)
++		return ret;
++
+ 	if (devm_request_irq(&pdev->dev, irq->start, spacc_spacc_irq, 0,
+ 			     engine->name, engine)) {
+ 		dev_err(engine->dev, "failed to request IRQ\n");
+@@ -1694,8 +1707,6 @@ static int spacc_probe(struct platform_device *pdev)
+ 	INIT_LIST_HEAD(&engine->completed);
+ 	INIT_LIST_HEAD(&engine->in_progress);
+ 	engine->in_flight = 0;
+-	tasklet_init(&engine->complete, spacc_spacc_complete,
+-		     (unsigned long)engine);
+ 
+ 	platform_set_drvdata(pdev, engine);
+ 
+-- 
+2.24.0
 
-> > As I asked previously, please separate the common case and the boot-cpu
-> > init-time case into separate functions.
-
-> Ok, beyond just making arch_get_random_seed_long be a function pointer, how?
-
-> I honestly don't understand how what you want is different from what's here.
-
-I believe that what Mark is saying when he says you should change the
-arch hooks is that you should change the interface between the core code
-and the architecture code to separate the runtime and early init
-interfaces with the goal of making it clear the separation between the
-two.
-
-> > Any boot-time seeding should be in a separate function that external
-> > callers cannot invoke at runtime. Either have an arch function that the
-> > common random code calls at init time on the boot CPU, or have some
-> > arch_add_foo_entropy() function that the arm64 code can call somewhere
-> > around setup_arch().
-
-> What "external callers" are you talking about?
-
-Again Mark can correct me if I'm wrong here but anything that isn't
-the arch code or the core random code.
-
-> As for arch_add_boot_entropy() or whatnot... you're now you're asking for
-> non-trivial changes to the common drivers/char/random.c code.  I'm not keen on
-> designing such a thing when I really don't know what the requirements are.  In
-> particular, how it would differ from what I have.
-
-The biggest issue here is one of reviewability and maintainability
-around early use of the capabilities code.  Without being really up to
-speed on those interfaces it can be hard to tell what conditions are
-true when and what interfaces are safe to use at any given point in boot
-which makes things harder to work with.  This is especially true when we
-start to mix in things like preemption disables which also need a lot of
-attention.  Avoiding mixing code that needs to run in both init and
-normal runtime contexts in the same function makes things easier to
-understand.
-
-Looking briefly at the random code you may find that the existing
-add_device_randomness() is already close to the arch_add_foo_entropy()
-suggested by Mark if not actually good enough, data injected with that
-is not going to be credited as entropy but it will feed into the pool.
-
---K8nIJk4ghYZn606h
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEyBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3ucxQACgkQJNaLcl1U
-h9Abygf49pMSCQEuwmazZxHMTjuxhxEpfwh8KxNQDPNroTdxIPUxHHL+ifeGMh1y
-StafJtieoAWSeUWc/G+A44wB6BITr+nNVu9NlU2/l0wLULpOznjn+X51InqQKKdq
-mLNtHpMDE0TsPwNCX+vk78eYCI2FO4Vje5n0MghcQLuYFCsdkgmQ/jQJLsdku3/f
-zLbC0Hs3/yhTRW386Ypk9jXOBNkSFAUuL0nKXBFBUn7CTrNRzHM6Zeo4RJHBq2Bq
-bG4IjYTJattDDOWf17DiiiTRYP0vPu+DtBYsETZzaTm2VRotPOKn0OP98kDfdHlk
-ONtKIWf8ArfiV69l7ix4sd5DTRzW
-=Lyx1
------END PGP SIGNATURE-----
-
---K8nIJk4ghYZn606h--
-
-
---===============8988537889145914821==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8988537889145914821==--
-
