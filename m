@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28FF6117194
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 17:27:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB9101171F7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 17:40:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=enNOZpBT0O3Ze8GihtJLIRjrMmg6KIvRYTJCogU82U4=; b=bqYSlSWIf641V+
-	Ww/RGwSVmIFy7i4n7VN479RkATF+F8EKKpDs2ZDAkkgbTcfiq3C3ueI2nrq9lm8kE5Gt9fe8Dg2co
-	D6uqkYNACuBSmZcAzhQ4OVWvW4GuDAFkX0p8FW+R8+/Thau6Yhvy2ny5NYBPqzU3D3WhkWdkdScVw
-	vToTZjzURFLqer3X165h/kPM5JsR0as2vgrvPuPAJNEHXaZ4BqQAtbFjAktWdqJSZCdtTuC/1Y+C/
-	a3RhqA3TUjXBX+ytT+M34ZM4fetQxwMSKPt7xBzQqlPqVKm7poARj79xQLoxX4mK3c7Zy4YSI4Rj7
-	2wUDUMfKmQuvAAoBSg7Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WHDVW6IOXUUQVxp43Susl0nwv7trFjMGqdC4m4RQsHk=; b=l5KbrdOWHBHgC3
+	w1WFwNifxEHoFhfUVNO/ufadVWsyLFUuYGksAJ+Fool6o8aOk2Tv9MIgAlaXH9zLtfbeZ/Uobn5C2
+	YM+e07Bn6G6MFuRnez/MJYeh84yecVgwWddPL8xuVcQu1J+rnnHdxKA2B2p2nPw3/9PwbFDXUipZp
+	FaBXDtbsIalsnIZ4qScg2C85RdSNk/3tt1PemtXtqxz2dbn7mAs0mhUHoDHzJvxO8BIhaLSkjK9aZ
+	GLC8vHGsn7T7ZkUCvneGiKLoZUikFeZOOe1RFQZ9jHxtj2KQy9idnqFX0kFDyDY//7ip8sivybERd
+	7cIqHDDePEdM0mFXloZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieLsE-0004rV-E9; Mon, 09 Dec 2019 16:27:02 +0000
+	id 1ieM51-0000IA-CK; Mon, 09 Dec 2019 16:40:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieLs4-0004qd-I9
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 16:26:54 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 839772080D;
- Mon,  9 Dec 2019 16:26:49 +0000 (UTC)
+ id 1ieM4k-0000G1-UF
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 16:40:00 +0000
+Received: from localhost.localdomain (unknown [194.230.155.234])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D54AB2073D;
+ Mon,  9 Dec 2019 16:39:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575908811;
- bh=XmMuS1tdYvjAP/dOf3MN6vwqugHg0P62ECl8srBnh14=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=zOU+VVGKwRrsQ0D+daeQ+x/xsP+ATGq5Wl9RqLMP25OEiY225038UWy37UJhw427c
- daPKborkT9vmKrlKEnjdHU05mgGRcG8eVRcpb/wMvX8g9vmrQcTXv0EFF7BeKw12Kf
- l0lhHe8IOzGxUjarOFoGOoeadP8wDld7a054/8Sc=
-Date: Mon, 9 Dec 2019 16:26:46 +0000
-From: Will Deacon <will@kernel.org>
-To: Andre Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH] pcie: Add quirk for the Arm Neoverse N1SDP platform
-Message-ID: <20191209162645.GA7489@willie-the-truck>
-References: <20191209160638.141431-1-andre.przywara@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191209160638.141431-1-andre.przywara@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ s=default; t=1575909592;
+ bh=w9Sb/6dMUCxgREqcD9P7iVvBO/1GQPO5B5saW6CSudQ=;
+ h=From:To:Subject:Date:From;
+ b=NKxKUezgv1sFsiYSyLQjY3QWOVYz488cmYuzAKiODsQBA+c+JK+i57r1sNqjj4h18
+ rl/GlFZJFCv0GP7uL0mXvlM5Xu1PYFBofTgplAfk/GKhRC0VE7x9LSi/o0l2/cI2DI
+ lGQcUxYGGcEALq/j3LeQwJLpzOUYZN/P9chYc0PM=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Tomasz Figa <tomasz.figa@gmail.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] pinctrl: samsung: Enable compile test for build coverage
+Date: Mon,  9 Dec 2019 17:39:36 +0100
+Message-Id: <20191209163937.8156-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_082652_622852_07505F32 
-X-CRM114-Status: GOOD (  15.97  )
+X-CRM114-CacheID: sfid-20191209_083958_994755_5A46F366 
+X-CRM114-Status: GOOD (  10.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,62 +76,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- linux-acpi@vger.kernel.org, linux-pci@vger.kernel.org,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 09, 2019 at 04:06:38PM +0000, Andre Przywara wrote:
-> From: Deepak Pandey <Deepak.Pandey@arm.com>
-> 
-> The Arm N1SDP SoC suffers from some PCIe integration issues, most
-> prominently config space accesses to not existing BDFs being answered
-> with a bus abort, resulting in an SError.
+The Samsung pinctrl drivers require only GPIOLIB and OF for building.
+The should be buildable on all architectures so enable COMPILE_TEST.
 
-"Do as I say, not as I do"?
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+---
+ drivers/pinctrl/samsung/Kconfig | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-> To mitigate this, the firmware scans the bus before boot (catching the
-> SErrors) and creates a table with valid BDFs, which acts as a filter for
-> Linux' config space accesses.
-> 
-> Add code consulting the table as an ACPI PCIe quirk, also register the
-> corresponding device tree based description of the host controller.
-> Also fix the other two minor issues on the way, namely not being fully
-> ECAM compliant and config space accesses being restricted to 32-bit
-> accesses only.
-> 
-> This allows the Arm Neoverse N1SDP board to boot Linux without crashing
-> and to access *any* devices (there are no platform devices except UART).
-> 
-> Signed-off-by: Deepak Pandey <Deepak.Pandey@arm.com>
-> [Sudipto: extend to cover the CCIX root port as well]
-> Signed-off-by: Sudipto Paul <sudipto.paul@arm.com>
-> [Andre: fix coding style issues, rewrite some parts, add DT support]
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> ---
->  arch/arm64/configs/defconfig        |   1 +
->  drivers/acpi/pci_mcfg.c             |   7 +
->  drivers/pci/controller/Kconfig      |  11 ++
->  drivers/pci/controller/Makefile     |   1 +
->  drivers/pci/controller/pcie-n1sdp.c | 196 ++++++++++++++++++++++++++++
->  include/linux/pci-ecam.h            |   2 +
->  6 files changed, 218 insertions(+)
->  create mode 100644 drivers/pci/controller/pcie-n1sdp.c
+diff --git a/drivers/pinctrl/samsung/Kconfig b/drivers/pinctrl/samsung/Kconfig
+index 425fadd6c346..cbf1ce48fddb 100644
+--- a/drivers/pinctrl/samsung/Kconfig
++++ b/drivers/pinctrl/samsung/Kconfig
+@@ -9,7 +9,8 @@ config PINCTRL_SAMSUNG
+ 
+ config PINCTRL_EXYNOS
+ 	bool "Pinctrl driver data for Samsung EXYNOS SoCs"
+-	depends on OF && GPIOLIB && (ARCH_EXYNOS || ARCH_S5PV210)
++	depends on OF && GPIOLIB
++	depends on ARCH_EXYNOS || ARCH_S5PV210 || COMPILE_TEST
+ 	select PINCTRL_SAMSUNG
+ 	select PINCTRL_EXYNOS_ARM if ARM && (ARCH_EXYNOS || ARCH_S5PV210)
+ 	select PINCTRL_EXYNOS_ARM64 if ARM64 && ARCH_EXYNOS
+@@ -24,10 +25,11 @@ config PINCTRL_EXYNOS_ARM64
+ 
+ config PINCTRL_S3C24XX
+ 	bool "Samsung S3C24XX SoC pinctrl driver"
+-	depends on ARCH_S3C24XX && OF
++	depends on OF
++	depends on ARCH_S3C24XX || COMPILE_TEST
+ 	select PINCTRL_SAMSUNG
+ 
+ config PINCTRL_S3C64XX
+ 	bool "Samsung S3C64XX SoC pinctrl driver"
+-	depends on ARCH_S3C64XX
++	depends on ARCH_S3C64XX || COMPILE_TEST
+ 	select PINCTRL_SAMSUNG
+-- 
+2.17.1
 
-Where can I buy one of these? They're "unreleased" according to:
-
-https://community.arm.com/developer/tools-software/oss-platforms/w/docs/440/neoverse-n1-sdp
-
-and I don't think we should wreck upstream because of a platform that
-doesn't exist.
-
-Will
 
 _______________________________________________
 linux-arm-kernel mailing list
