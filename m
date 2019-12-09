@@ -2,92 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CF78116EAE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 15:10:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19597116F04
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 15:33:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Sf1Qnz/nO5BzqKq3P2t/s9iq0vTXkgZok25R0teuESA=; b=WLN81WouGjUmi2Y2J67KW4vzB
-	KM4sOxjJUv7wePdFNn9YQty/P/1OuWJakgkcrl0xW546zwoKoaN8p2byEDS7PNXQ1czTwXu0WUSES
-	3tQUV+xfjf0p5kqQQAnYai44oRXAf2mlMm2VWeu399aIthAdGUhOV5OrO4GI5FDa+UPgbwsrHQj0G
-	SaHKtCZdYptKWYwmDZSeviNvOlVcvabIOCs/vKowR4nNLMtmLE32oMckhM+JRq0HgbMTcL1Ndm6FG
-	x5wzNCrpOOVa6wxZWukc03N7ugwA8bdDS6MM03WvmQGziyk2WjcJb79cBjJRhWbZSrb65jB/uUb/C
-	I4nboJLig==;
+	 bh=3g/S2UKRsdGByI6Q21ZbCzViWTbJETH2/t4LLuR9psw=; b=qCyzDZj2+5PraHqLTAuMFSMf/
+	AvZD2kMjJDmjZ6ez9e2Ogdo9duPc9E9fqeGh/hlCtMB2w9+L54E4qOpYwLa6kxwm/IFhWf/+zUsS8
+	m8BtOwM2B91r+s5t1WQqP5armvXrx7Nwt/mseCI+nsWiCJRzBz55xDVMitOn8tdBynQySSJIWTpnH
+	XYIYbjkyUZuv59EbOur6P8KVRRBEttVljbiYwDeGUxhDg6uPHtNoKyr00yxeObvIreZ3vEt6dnjDx
+	4dAY9wNyY6IDlpJGGDhuwkVhmznhQp0gQ+2oCnkty4IHo07cM+pfHbRy3iAQ/66IDp5FC92iInruS
+	6FS0Fkq1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieJjq-0006EQ-4d; Mon, 09 Dec 2019 14:10:14 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1ieK5z-0006xw-18; Mon, 09 Dec 2019 14:33:07 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieJjb-00068w-5l
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 14:10:00 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xB9E7mbB028360; Mon, 9 Dec 2019 15:09:54 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=rMgFRcSFtiFbgW/awEUZ3ybc8wwxYOXSNEv2yL+9lZM=;
- b=yyZilLo1hu8fgeyo6uWmmNN+6Gkswci+Ye6OWQbHolQQsyU5pNaTs54lPyNLE4tqA2Xk
- eFVdyzJU88XeR66RFT1Ysq46A1t+PRCta5+T/jil3V3NMcJSLWeXS9MrtxHO2GiXA2Kw
- M3sC6OjMrP08bftjKCLJb/R9MKqPbbCNlPLBO0OYl8JBYo8HtQ28Ad5AvtokY0R57ujd
- PAsK0cT2KlWdLBzMpy1VuH8DLyZJl6elCbtIRGGQ5U57Hg/if1AlpS2LZEDULmcBm+VI
- a4gtU0eaXEa3aoPSOheeoUhTyGk5stdooxRI33m3oWcUctDyaWHkq0D5pZBtt4V9h3Wk Jg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wrbrf7k08-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 09 Dec 2019 15:09:54 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9954110002A;
- Mon,  9 Dec 2019 15:09:53 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8A66520DAFE;
- Mon,  9 Dec 2019 15:09:53 +0100 (CET)
-Received: from lmecxl0912.lme.st.com (10.75.127.51) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 9 Dec
- 2019 15:09:53 +0100
-Subject: Re: [PATCH 2/3] ARM: dts: stm32: remove useless clock-names from RTC
- node on stm32f746
-To: Benjamin Gaignard <benjamin.gaignard@st.com>, <robh+dt@kernel.org>,
- <mark.rutland@arm.com>
-References: <20191202145604.28872-1-benjamin.gaignard@st.com>
- <20191202145604.28872-2-benjamin.gaignard@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <e1c2fe53-1b63-9b66-b48f-0c4dcc5e84ae@st.com>
-Date: Mon, 9 Dec 2019 15:09:52 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1ieK5s-0006xQ-Ii
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 14:33:02 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id w23so5992536pjd.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Dec 2019 06:33:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=uGbO5eA/EvkEthYW5iN8u16ydFfTV3nGR0kns1YSEq8=;
+ b=P+6OgH3wRjDpQ2U5Q0rrRheWAfDz6brjGOolhAYrfI+XHpr9AJQXkrzLt5mnTANHHe
+ 6kjX5lrvWFn+Kzh7mCA2waxwenvqV2z7zOjWnVxPg5kZzDGIzdDBKdauuIKS687GFel4
+ lK7kd6xWyU7bCZUz7nx79DGRRGBGE8rneh8ccRlEgXlT9lqhlgFzNMThTeTMquZgkga1
+ 77j618VNUcC6v9kkNAgOgrstKBJQc/7I2f1rcIHJiSrZfm+by5G7EgSWAtKROXXhSxqu
+ kN/3KOK/W8oKCvmZHZjenE/aAPytUZ0+q/o31lIBe87UNs4W3H4i0sbAltwNvF26dfMu
+ VmmA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=uGbO5eA/EvkEthYW5iN8u16ydFfTV3nGR0kns1YSEq8=;
+ b=ZzHlxPAvrz0Wx3IwmbwliY9ea0/4BtKWMCAJn+SFdbOcsD2d49MiAWyhD93lURCTpM
+ ysC5U+Zu5wSxQ5LNm6yJy6qTHYbU60g8aieqdAodavPegWVR193wkavMKvBj7AzLIswZ
+ j7QvXA63Rl7nGHh6BfOOKVMJGV9w69lmpam2qV7LZeySaaW5F4rKW6TFbIzX3qzr3Y/A
+ LR2RDNV1fu8vWUmpOJltJhaSLvHEOWXCukqzLlzHMSCvKRJgr9plvDOYTMwrRC9gnaYj
+ 3E8WFHBvFlm+vj1MEMoriV65VwyZPLVDlsW0tv4vzfn8cwnOmzl0gSs724RyJWnnduHL
+ EnAw==
+X-Gm-Message-State: APjAAAWmJ2FVmX+KxplD+2pJHOopq/srCgrsPdtdodaNpAFmhMXq+ykv
+ 7inm/c7L4xTW/eSqhEtMQkI=
+X-Google-Smtp-Source: APXvYqy4RVacHM5VEz6sKAsm+VK1Q9vv8Q+gX/BUj6bRNoFploDMVpcSqufihDBKA8rygFotaghXYQ==
+X-Received: by 2002:a17:90b:8c6:: with SMTP id
+ ds6mr18053912pjb.33.1575901980001; 
+ Mon, 09 Dec 2019 06:33:00 -0800 (PST)
+Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id
+ h3sm12682121pfr.15.2019.12.09.06.32.57
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 09 Dec 2019 06:32:58 -0800 (PST)
+Subject: Re: [PATCH 1/5] arm64: zynqmp: Add firmware DT node
+To: "Edgar E. Iglesias" <edgar.iglesias@xilinx.com>
+References: <20191018160735.15658-1-m.tretter@pengutronix.de>
+ <20191018160735.15658-2-m.tretter@pengutronix.de>
+ <20191208223814.GA21260@roeck-us.net>
+ <dbba2a25-cbf7-60f4-99f7-056512e28d00@xilinx.com>
+ <4821742f-2d60-b722-b954-263de975bf2e@roeck-us.net>
+ <20191209074840.GP32392@toto>
+From: Guenter Roeck <linux@roeck-us.net>
+Message-ID: <d2e63acb-c076-7bfb-c492-0355ec106cbf@roeck-us.net>
+Date: Mon, 9 Dec 2019 06:32:56 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191202145604.28872-2-benjamin.gaignard@st.com>
+In-Reply-To: <20191209074840.GP32392@toto>
 Content-Language: en-US
-X-Originating-IP: [10.75.127.51]
-X-ClientProxiedBy: SFHDAG2NODE3.st.com (10.75.127.6) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-12-09_04:2019-12-09,2019-12-09 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_060959_497636_BD259FE7 
-X-CRM114-Status: GOOD (  16.27  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191209_063300_643153_4D0FEF6A 
+X-CRM114-Status: GOOD (  14.58  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,41 +109,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Rajan Vaja <rajan.vaja@xilinx.com>, qemu-devel@nongnu.org,
+ Michal Simek <michal.simek@xilinx.com>,
+ Michael Tretter <m.tretter@pengutronix.de>, Edgar Iglesias <edgari@xilinx.com>,
+ robh+dt@kernel.org, Rajan Vaja <rajanv@xilinx.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Benjamin,
-
-On 12/2/19 3:56 PM, Benjamin Gaignard wrote:
-> On stm32f7 family RTC node doesn't need clock-names property.
+On 12/8/19 11:48 PM, Edgar E. Iglesias wrote:
+> On Sun, Dec 08, 2019 at 11:19:33PM -0800, Guenter Roeck wrote:
+>> On 12/8/19 10:42 PM, Michal Simek wrote:
+>>> Hi, +Edgar
+>>>
+>>>
+>>> On 08. 12. 19 23:38, Guenter Roeck wrote:
+>>>> On Fri, Oct 18, 2019 at 06:07:31PM +0200, Michael Tretter wrote:
+>>>>> From: Rajan Vaja <rajan.vaja@xilinx.com>
+>>>>>
+>>>>> Add firmware DT node in ZynqMP device tree. This node
+>>>>> uses bindings as per new firmware interface driver.
+>>>>>
+>>>>> Signed-off-by: Rajan Vaja <rajanv@xilinx.com>
+>>>>> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+>>>>> Signed-off-by: Michael Tretter <m.tretter@pengutronix.de>
+>>>>
+>>>> With this patch applied in the mainline kernel, the qemu xlnx-zcu102
+>>>> emulation crashes (see below). Any idea what it might take to get
+>>>> qemu back to working ?
+>>>
+>>> Driver talks through ATF to PMU unit(microblaze). I don't think A53+MB
+>>> concept is working with mainline qemu. But crash is too hard. It should
 > 
-> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> ---
->   arch/arm/boot/dts/stm32f746.dtsi | 1 -
->   1 file changed, 1 deletion(-)
+> Yes, QEMU doesn't support the Cortex-A53s along with the PMU MicroBlaze.
 > 
-> diff --git a/arch/arm/boot/dts/stm32f746.dtsi b/arch/arm/boot/dts/stm32f746.dtsi
-> index d26f93f8b9c2..3a8e2dc1978c 100644
-> --- a/arch/arm/boot/dts/stm32f746.dtsi
-> +++ b/arch/arm/boot/dts/stm32f746.dtsi
-> @@ -300,7 +300,6 @@
->   			compatible = "st,stm32-rtc";
->   			reg = <0x40002800 0x400>;
->   			clocks = <&rcc 1 CLK_RTC>;
-> -			clock-names = "ck_rtc";
->   			assigned-clocks = <&rcc 1 CLK_RTC>;
->   			assigned-clock-parents = <&rcc 1 CLK_LSE>;
->   			interrupt-parent = <&exti>;
+> My workaround when using upstream QEMU is a modified DT without the PMU firmware
+> and with fixed-clock nodes.
 > 
 
-Applied on stm32-next.
+I can't do that for my boot tests. Normally I would just disable ZYNQMP_FIRMWARE,
+but that is hard enabled with ARCH_ZYNQMP. I'll have to drop those tests,
+unfortunately, if the firmware driver is considered mandatory.
 
-Thanks.
-Alex
+Guenter
 
 _______________________________________________
 linux-arm-kernel mailing list
