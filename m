@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89107117912
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 23:09:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7944911791A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 23:13:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nX7VdQokKlAHwXMU54v/RcVC2Mo0q2SpnlRsHyXBWVY=; b=FGGZ1WA3Ia35en
-	pR9IjuCJje/Cuyyg7F829MPyQZJ+4EA0+U/kyRpnw1q06GMsDA2KdR8GkJYgBulzvxFwCG1bdglFC
-	tHctK3unntO2I8bkM2zDYfb7wnc0Dunmo1erajeSeabdEuzAyIqD7fJGyn3dZp6vAssEUkkkbIULc
-	3CSxCOjnv+l9UH8goIUq0LlZoNYJE5ac6k2tNbUvaYW5TNKIlMKbElHU0WfbmslcXiaVzV7owuG9u
-	7mFfAge6f+TL/Qyj5yzkhCXAPDn9Hy03RaXb26hldHZ6e/HG4f/XNgExmpq9gTuHZ8YL2kuNqf2JE
-	75eipomFWZQXZlw34zXw==;
+	List-Owner; bh=QKulsWfONYkqFdkmddFUTzJLiV2J4MoQLlte+nqPiZw=; b=uTdGW1ZOqk/uWG
+	WyG0oYLghZ5Ap3NkRHafM2u575uY+TWKTRnq7lN2A5kSKEmS8jqvnLlnrGNKQ3mMYEWuVp5k6X+UC
+	7U8fv5z5WRIVcFyVknBF24cfp/BXiz2d9WdrjwTMyfqdh5tODdHmBFL33k+/tX5VM818iNEdujbdS
+	GJsvM2oy+4KPvpPrXu6Qz+EvWqZK1Ajd5xtq+7oSyRaU8i0SoJJI/ksKkPq7S4T9OxywWiz/OV21T
+	8xjerkJJEJDQFze5EETiXRlel/t2wNgJRBfMxkf4toREW8UfZrFx31rJ7BL46skhO62WlFj7KEmqS
+	LVJGCBto+0CyZPeIozxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieRDn-00059m-Tz; Mon, 09 Dec 2019 22:09:39 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1ieRGt-0006xu-V8; Mon, 09 Dec 2019 22:12:51 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieRDf-00058p-V9
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 22:09:33 +0000
-Received: by mail-pg1-x541.google.com with SMTP id q127so7803500pga.4
+ id 1ieRGg-0006va-RB
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 22:12:41 +0000
+Received: by mail-pl1-x642.google.com with SMTP id x13so6368324plr.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Dec 2019 14:09:31 -0800 (PST)
+ Mon, 09 Dec 2019 14:12:38 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=aH72KfB+jd8LoZ9WTIWQOhLHCco482dBV+3OetYANfk=;
- b=yqoI3WedmSPPH5+3eZ7ga+cYHKCC4gNQ3D5kXpyDlprI0f6kbGLO4sdxrvrd0bN8k6
- H9qxWAzCI63pOPBlXKaTLeqU5rDqkz+dDqurJLkSfXa5POqq7j7/3RCRlj3SWjbYfYlj
- V6fgcjE05Z6hk/oqlEos0KLQXDYHS5i8jbMMcwI/6LZbiYj8f/bEqhulSs28L8lYz78u
- 3palGsGJGhkY3UHlFO+5WmaNEN26K/BQ+1wS+TOLDS0qIjD9erVYn15kMlV+PhJjo/Kw
- lJFkuo6zDnOlNNAD8C9OmuvUXdiBHsPiRwOonBcrcwrbyUwcuozDGVu4y0jM8K4xGXOf
- 1ekA==
+ :mime-version; bh=ItZ6nMPESHqLIASUC8LoX6fE4/wm+TwTGtRQ1RnKUZ0=;
+ b=PLTuiULkvl88lhZJ7eXEZyEeyBFYh9ogHEt4KRJu32M2cSkg+0HS26NQbqT2+JfAs8
+ dFf9qlMcSwGgR4627eFALudbNGexXTuCa6SEd7v3Hx7SK9dSKEmEDuk0v3Y9NsZMgpq/
+ mxKlvx6opX6J7hpzmDQ29YK/mcz6eYhMYpvY7riVO3pCebZFVxPLkDvLO1gjPrP4dbl0
+ qw0SWvQc7uOLp3QQ6G2B5Umx3KsUyg6T/YMGTRGxF0aoJzaXX7Q/e5NoJnusYIyu4tta
+ Y4nffcrao80vVYOpikWwtkLJbMFNjwwLDRDUfSTT/wF3gKdXO1iPaFge9FbUtvSWhNtK
+ rqrg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
  :message-id:mime-version;
- bh=aH72KfB+jd8LoZ9WTIWQOhLHCco482dBV+3OetYANfk=;
- b=bdrTwm1wH9jb0cd0cJdKmz2Eh0nHS0XaB++m/1Lb+fXFzwv1cFNgpKt1kfH2lBAH4p
- ZbxbG84XZkkG5o8ohM+vNk8kiVD4rzejjlmpM4ej/qWbl2w+zwPBnlzfpnzvpCJ/SSRR
- gcpIk+E14vX35oGHNuozatJuj6ZL3NTioD0//I+k6z66sa09oy/ypEFu7ZnAi9hnCMDl
- eUFQZRxkXZu+ikMkXt9F0dkGmDdrjat/Vaog6fbUL6OAcT4HpPHNeSZR3IwF2XJUdNxD
- 2IU6+EgVGvmOHzfJo4WvZocHC+pgwn1ufaN7Uo/jJaiGK3oY5dsaAHCY0wTSU6eWh8OO
- dYaQ==
-X-Gm-Message-State: APjAAAWch2E9GOaBiCM57ByxlaJ1aN4Ivs1rj3cZ1g0jrv+3PqpSaYQR
- Fx3X6ejOnFK2zQIZ1rhiqG1agOIaa1X6Tw==
-X-Google-Smtp-Source: APXvYqw9VHnx8+RwX5no7IWuPVs1FzEgFK1TIEbb0vRSourFalI7XV39vudP3wtb+25GxinvpiQYEw==
-X-Received: by 2002:a62:8456:: with SMTP id k83mr17928443pfd.29.1575929371147; 
- Mon, 09 Dec 2019 14:09:31 -0800 (PST)
+ bh=ItZ6nMPESHqLIASUC8LoX6fE4/wm+TwTGtRQ1RnKUZ0=;
+ b=aah1oIrwkzX2/qr2jJdMnMD54lTTb430xExG3w9+LA0nm8W2BUUat4wyvousIvWURu
+ KgH8l6sTazmXyv5FfqwGj39jl8LAuNAqc1uElsd9/OSH4ailxLBUjuRzURBfp2bPFOeo
+ baVE3n40Vw1YKLi2G2HuALI5gU6ukbBfJw0HppGNLb89hNszknS5RLX/9nZiY0oaZ5e1
+ 2rP++/teldl3v4FjIDCLf/tDWs1Pcfctb6bGi9qHT2YVou4ndBXnBTKm38kPJEw+bl1U
+ S/PGVrAuoxxGji1qQikuBfrJY9x13C9FZb9fPqsL44JzqGjMVmnc1vn3+mNUXIVs8X4l
+ rFsw==
+X-Gm-Message-State: APjAAAXe1o65r5juRT7601dmcYqTV7SsMF3GvVHrNnYnsh0h63sAlaRq
+ 8AVEfG9dybxDChQ6HTHq5V+I+w==
+X-Google-Smtp-Source: APXvYqx22xb5jLxK6hTsSuOBQ53SZCEaDbusHD9ujqDQUXDe6tywX359eNJglK+iOHzOxi2uui8Ynw==
+X-Received: by 2002:a17:902:a614:: with SMTP id
+ u20mr31864485plq.107.1575929557672; 
+ Mon, 09 Dec 2019 14:12:37 -0800 (PST)
 Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
  [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id j14sm501754pgs.57.2019.12.09.14.09.30
+ by smtp.gmail.com with ESMTPSA id q13sm345574pjc.4.2019.12.09.14.12.36
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 09 Dec 2019 14:09:30 -0800 (PST)
+ Mon, 09 Dec 2019 14:12:37 -0800 (PST)
 From: Kevin Hilman <khilman@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v3 0/9] drm/meson: add AFBC support
-In-Reply-To: <20191021091509.3864-1-narmstrong@baylibre.com>
-References: <20191021091509.3864-1-narmstrong@baylibre.com>
-Date: Mon, 09 Dec 2019 14:09:30 -0800
-Message-ID: <7hk175rw11.fsf@baylibre.com>
+To: Anand Moon <linux.amoon@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [RFC-next 0/1] Odroid C2: Enable DVFS for cpu
+In-Reply-To: <20191101143126.2549-1-linux.amoon@gmail.com>
+References: <20191101143126.2549-1-linux.amoon@gmail.com>
+Date: Mon, 09 Dec 2019 14:12:36 -0800
+Message-ID: <7hfthtrvvv.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_140932_000183_84FF4C1B 
-X-CRM114-Status: GOOD (  17.26  )
+X-CRM114-CacheID: sfid-20191209_141238_912301_A1E1B4B1 
+X-CRM114-Status: GOOD (  10.03  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,84 +95,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, ayan.halder@arm.com,
- linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Neil Armstrong <narmstrong@baylibre.com> writes:
+Anand Moon <linux.amoon@gmail.com> writes:
 
-> This adds support for the ARM Framebuffer Compression decoders found
-> in the Amlogic GXM and G12A SoCs.
+> Some how this patch got lost, so resend this again.
 >
-> This patchset is a merge of v2 "drm/meson: add AFBC support" at [3] and v2
-> "drm/meson: implement RDMA for AFBC reset on vsync" at [4].
+> [0] https://patchwork.kernel.org/patch/11136545/
+>
+> This patch enable DVFS on GXBB Odroid C2.
+>
+> DVFS has been tested by running the arm64 cpuburn
+> [1] https://github.com/ssvb/cpuburn-arm/blob/master/cpuburn-a53.S
+> PM-QA testing
+> [2] https://git.linaro.org/power/pm-qa.git [cpufreq testcase]
+>
+> Tested on latest U-Boot 2019.07-1 (Aug 01 2019 - 23:58:01 +0000) Arch Linux ARM
 
-Oops, replied to the wrong series earlier...
+Have you tested with the Harkernel u-boot?
 
-> The VPU embeds a "Register DMA" that can write a sequence of registers
-> on the VPU AHB bus, either manually or triggered by an internal IRQ
-> event like VSYNC or a line input counter.
->
-> The Amlogic GXM and G12A AFBC decoder are totally different, the GXM only
-> handling only the AFBC v1.0 modes and the G12A decoder handling the
-> AFBC v1.2 modes.
->
-> The G12A AFBC decoder is an external IP integrated in the video pipeline,
-> and the GXM AFBC decoder seems to the an Amlogic custom decoder more
-> tighly integrated in the video pipeline.
->
-> The GXM AFBC decoder can handle only one AFBC plane for 2 available
-> OSD planes available in HW, and the G12A AFBC decoder can handle up
-> to 4 AFBC planes for up to 3 OSD planes available in HW.
->
-> The Amlogic GXM supports 16x16 SPARSE and 16x16 SPLIT AFBC buffers up
-> to 4k.
->
-> On the other side, for G12A SPLIT is mandatory in 16x16 block mode, but
-> for 4k modes 32x8+SPLIT AFBC buffers is manadatory for performances reasons.
->
-> The Amlogic GXM and G12A AFBC decoders are integrated very differently.
->
-> The Amlogic GXM has a direct output path to the OSD1 VIU pixel input,
-> because the GXM AFBC decoder seem to be a custom IP developed by Amlogic.
->
-> On the other side, the Amlogic G12A AFBC decoder seems to be an external
-> IP that emit pixels on an AXI master hooked to a "Mali Unpack" block
-> feeding the OSD1 VIU pixel input.
-> This uses a weird "0x1000000" internal HW physical address on both
-> sides to transfer the pixels.
->
-> For Amlogic GXM, the supported pixel formats are the same as the normal
-> linear OSD1 mode.
->
-> On the other side, Amlogic added support for all AFBC v1.2 formats for
-> the G12A AFBC integration.
->
-> The initial RDMA implementation handles a single channel (over 8), triggered
-> by the VSYNC irq and does not handle the RDMA irq.
->
-> The RDMA will be usefull to reset and program the AFBC decoder unit
-> on each vsync without involving the interrupt handler that can
-> be masked for a long period of time, producing display glitches.
->
-> For this we use the meson_rdma_writel_sync() which adds the register
-> write tuple (VPU register offset and register value) to the RDMA buffer
-> and write the value to the HW.
->
-> When enabled, the RDMA is enabled to rewritte the same sequence at the
-> next VSYNC event, until a new buffer is committed to the OSD plane.
->
-> For testing, the only available AFBC buffer generation is the Android
-> Yukawa Dvalin Android Mali blobs found at [1].
->
-> Both SoCs has been tested using buffers generated under AOSP, but only
-> G12A was tested using a runtime stream of AFBC buffers, GXM was only
-> tested using static buffers loaded from files.
+Last I remember, enabling CPUfreq will cause system hangs with the
+Hardkernel u-boot because of improperly enabled frequencies, so I'm not
+terribly inclined to merge this patch.
 
-Reviewed-by: Kevin Hilman <khilman@baylibre.com>
+> Patch based on my next-20191031 for 5.5.x kernel.
+> Hope this is not late entry.
+
+Re: "too late".  FYI... when you post things as RFC, it means you're
+looking for comments (Request For Comment) but that it's not intended
+for merging.
+
+I didn't see any comments on this, but I also didn't see a non-RFC
+follow-up, so I didn't queue it for v5.5.
 
 Kevin
 
