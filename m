@@ -2,87 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9E97117742
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 21:18:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E6E2117745
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 21:19:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jcxPApRXdYrhEuBz4B/jpP0rq+OHOAdyuScBXY/CSpM=; b=Ut1NaA5JHfRsGy
-	qzO6jUam0CMHvskncKUFiqunuefcOBkVxnqOw7jwDAUiJHp7rYHG+7pAZ1E9nq9GhoRWM/nO0NVmU
-	SbjVvYpAQ/6ghrMnReK+sMBuUpah1Vscz3FCMJJg/JWODQcuX0VWLG9GxUTDvZ9aW3Pu5e9N0fku1
-	EeMQzVNdXk1VOJ1Ne0Zl7+SFOCNPGQjPxxeyFtDSHeZCjR07zyEIdEFYnCFysuWRf3w9e4YQm7gqC
-	DJyECw1TlQPJP8o83E/pf404Mm9hmXDIaEqe9wleEhB3YYhkFnAu4ZBXrHX5MdvnrQGffZtTAbX9w
-	UnHYh7i7/EXF57vUOxnA==;
+	List-Owner; bh=2HLlDodlRS9MvCMnH3M/mqhFcXcN84U57NmHqEHFQMo=; b=Mxjom8zNYoM1K/
+	IQOzu2EmzJci3oWUtmje7U6qOvUFVodsUcMk9B28IvDhGa6tHQpEvTQBWD9T8xTNTkk5eM7C8ZfUy
+	V5Kfp22Q28YFFHI/0Ov9oaAQxheYts36X9+6g+i7BMulrXdihrUmxNioUTS9SY4sVgaWpcm02oAAu
+	zrUi1eJxyv/LrFLld/jfpZzlwVD6SX4NqenSD9w+6/hntJv7QOHA9WFWRRDf2ckfsSz8AYiobREYT
+	CcLXHnZ0AK/3Qeef2zvK4gCRyiA//POpG/1/JjaBKOqhmO+c/UuDZm+wIBoehLDbDm0kPDhCyEmxA
+	xNfDhRM68VyHrHhNtPOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iePUW-0002tD-Ap; Mon, 09 Dec 2019 20:18:48 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1iePUw-000394-PJ; Mon, 09 Dec 2019 20:19:14 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iePUQ-0002sK-A8
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 20:18:44 +0000
-Received: by mail-oi1-f193.google.com with SMTP id v140so7621225oie.0
+ id 1iePUn-00037h-Db
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 20:19:07 +0000
+Received: by mail-lj1-x243.google.com with SMTP id k8so17134103ljh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Dec 2019 12:18:41 -0800 (PST)
+ Mon, 09 Dec 2019 12:19:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:date:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=n1EdrnRTVcraROl5/h8aaMtwkvgNtthE6B0nadUQmNM=;
+ b=YyWaTa3gnmdIYwVKVbmo7iBU4bN5OGGRfD/62puTS0gNvrMO2Gn52AUyhSnCwq8CMd
+ wR03rB0TUPJbC5zMlN44+k7hjCwO+baR8t4mgLtW40gBXm/sehCBVm5s5M+xKBVhoGhr
+ W/ev/YydmL+HcKZLZvpcF7/hBtf/4WOgcYSrxRDzXmzCDtgZVbXlj5Dnl38zVEgiPBMC
+ S5Ar3nDEgmaur+OOaj3gG60Pb+KKkNB1wit28dY2jcQhMKrG3TL3IQkdm520wfV07mtg
+ J4SGJavVx2XoiPZWucDtJiYVUC0192OwXrhD/noBjLMJGN5Fw2PeTQfe6oUeJoGpxhzF
+ SS9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=m7V0G8JfUu86bq/RP6YxmwxwHbYcUhJINxbxqczRAcM=;
- b=G/RlXYDLSKiIHLukU/vlkM7ci9AaWfcjwS7O35jh3DNr9nVB9gT+u14HNruO/kI27e
- vJUjuGjkwO1Ceubisf3kxG+skIlF2pK/Xu1Zn8cl4xvB70G68HeRiOs5/U28ron1oY3+
- n7Jdn8YBAB4DheVl9MGgQGqpsZOB1HxXZgJ0fsIcYdp84HeCHEFvr8TIdYQrvDODJLhO
- ihdeDqMMn+01CulpfD9d8HSfWBsytC+Sr9+TAIPq/U2CxK55lYAedKsLD5cbFjj3kxKA
- lguY/tbZbJepF3+q8JPhiS72B4XQ0S4P/XNmXzCtbQOVxOZJ1x0FaK4wPd947y92Rq4R
- h9sw==
-X-Gm-Message-State: APjAAAVfSKyZSYsgd8YvqmQHitkATGGGia8w21oUmGz/h5r6mSl14PQ+
- 2v9xkJ/GuWCG+Z8F+oIEQS3bMsrx
-X-Google-Smtp-Source: APXvYqxmlhRR5o8pttNPburN97vPracEV5WrVNdmcKdU9DagVOcWadGTI046n16jKZ/8NI7rNlm4jA==
-X-Received: by 2002:aca:af54:: with SMTP id y81mr821583oie.154.1575922720300; 
- Mon, 09 Dec 2019 12:18:40 -0800 (PST)
-Received: from mail-ot1-f53.google.com (mail-ot1-f53.google.com.
- [209.85.210.53])
- by smtp.gmail.com with ESMTPSA id b15sm357899oti.23.2019.12.09.12.18.39
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 09 Dec 2019 12:18:39 -0800 (PST)
-Received: by mail-ot1-f53.google.com with SMTP id 66so13393878otd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Dec 2019 12:18:39 -0800 (PST)
-X-Received: by 2002:a05:6830:11c3:: with SMTP id
- v3mr24197866otq.74.1575922719436; 
- Mon, 09 Dec 2019 12:18:39 -0800 (PST)
+ h=x-gm-message-state:from:date:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=n1EdrnRTVcraROl5/h8aaMtwkvgNtthE6B0nadUQmNM=;
+ b=QP/CmpLklsi19KxC3xHIxS98PyusCqUCDqHn5p+bV3HdT4vO40S/BeJJ7YQj9psMic
+ +eeIhas9ZnZ18YW9cPK7QjYwxPyBAGRDO3PPSdzXVvAfFKPcVsn3ht9+rGb8EHcG7xYc
+ MySzqe3PWfxjputy8s2SXDGiG8YrGk3hZ7/t94KqYqAg8ptrppARpWtNJX81rUD1zHtW
+ kZDwtw+iYKr/GzByK6viUDpSa76+Ba/lTMMro5QsUk9npATh+9v7JjMlqbcxeBDatmXB
+ 9mC4+tsmJH9j5wk4UVEBvdjykgnPBnXos6t+bKGkl20wDWpum2aWltDdsctRO8X1G+3w
+ li3w==
+X-Gm-Message-State: APjAAAVi97nu8JHrpdZY+W4EUlabkN+HX+HnLYDrnWBtw977P9BetnBV
+ kSUYHj3bIluwUrC/LrfaI7c=
+X-Google-Smtp-Source: APXvYqyfu7gL7wbNI0OOFWaQIsqDNwc4LTHSY9AuWl7rOPaR/iVf8RbBzzn3iTnZxmGFFwaacn/o1A==
+X-Received: by 2002:a2e:5751:: with SMTP id r17mr18245968ljd.254.1575922742313; 
+ Mon, 09 Dec 2019 12:19:02 -0800 (PST)
+Received: from rikard (h-158-174-187-196.NA.cust.bahnhof.se. [158.174.187.196])
+ by smtp.gmail.com with ESMTPSA id i19sm237269lfj.17.2019.12.09.12.19.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 09 Dec 2019 12:19:01 -0800 (PST)
+From: Rikard Falkeborn <rikard.falkeborn@gmail.com>
+X-Google-Original-From: Rikard Falkeborn <rikard.falkeborn>
+Date: Mon, 9 Dec 2019 21:18:58 +0100
+To: Rikard Falkeborn <rikard.falkeborn@gmail.com>, kishon@ti.com
+Subject: Re: [PATCH v2] phy: allwinner: Fix GENMASK misuse
+Message-ID: <20191209201858.GA1223@rikard>
+References: <20191020134229.1216351-3-megous@megous.com>
+ <20191110124355.1569-1-rikard.falkeborn@gmail.com>
 MIME-Version: 1.0
-References: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
-In-Reply-To: <20191128145554.1297-1-linux@rasmusvillemoes.dk>
-From: Li Yang <leoyang.li@nxp.com>
-Date: Mon, 9 Dec 2019 14:18:27 -0600
-X-Gmail-Original-Message-ID: <CADRPPNQBucGPaG0p5SDneVQYt9Wqgv8PuqFF0HFmj2LD8wybtA@mail.gmail.com>
-Message-ID: <CADRPPNQBucGPaG0p5SDneVQYt9Wqgv8PuqFF0HFmj2LD8wybtA@mail.gmail.com>
-Subject: Re: [PATCH v6 00/49] QUICC Engine support on ARM, ARM64, PPC64
-To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Content-Disposition: inline
+In-Reply-To: <20191110124355.1569-1-rikard.falkeborn@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_121842_348075_873A6D89 
-X-CRM114-Status: GOOD (  24.98  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191209_121905_470601_7BAE8EF6 
+X-CRM114-Status: GOOD (  12.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pku.leo[at]gmail.com)
+ provider (rikard.falkeborn[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,172 +100,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>, Timur Tabi <timur@kernel.org>,
- lkml <linux-kernel@vger.kernel.org>, Scott Wood <oss@buserror.net>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Qiang Zhao <qiang.zhao@nxp.com>
+Cc: megous@megous.com, devicetree@vger.kernel.org, arnd@arndb.de,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ kishon@ti.com, paul.kocialkowski@bootlin.com, linux-sunxi@googlegroups.com,
+ robh+dt@kernel.org, mark.rutland@arm.com, wens@csie.org, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org, icenowy@aosc.io
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Nov 28, 2019 at 8:59 AM Rasmus Villemoes
-<linux@rasmusvillemoes.dk> wrote:
->
-> There have been several attempts in the past few years to allow
-> building the QUICC engine drivers for platforms other than PPC32. This
-> is yet another attempt.
->
-> v5 can be found here: https://lore.kernel.org/lkml/20191118112324.22725-1-linux@rasmusvillemoes.dk/
->
-> Changes in v6:
->
-> - add various R-b, A-b tags
->
-> - add a patch (48/49) fixing a build issue on ARM with CONFIG_SMP=y
->
-> I added that patch last in the series, apart from the "allow to build
-> on ARM" Kconfig change, to preserve the enumeration of the other
-> patches from v5.
->
-> 1-5 are about replacing in_be32 etc. in the core QE code (drivers/soc/fsl/qe).
->
-> 6-8 handle miscellaneous other ppcisms.
->
-> 9-21 deal with qe_ic: Simplifying the driver significantly by removing
-> unused code, and removing the platform-specific initialization from
-> arch/powerpc/.
->
-> 22-25 deal with raw access to devicetree properties in native endianness.
->
-> 26-34 makes drivers/tty/serial/ucc_uart.c (CONFIG_SERIAL_QE) ready to build on non-ppc.
->
-> 35-46 deal with IS_ERR_VALUE() and some other things found while
-> digging around that part of the code.
->
-> 47 adds a PPC32 dependency to UCC_GETH - it has some of the same
-> issues that have been fixed in the ucc_uart and ucc_hdlc cases. Nobody
-> has requested that I allow that driver to be built for arm{,64} and
-> reportedly, the hardware has only ever shipped on PPC SOCs. So instead
-> of growing this series even bigger, I kept that addition. It's trivial
-> to remove if somebody cares enough to fix the build errors/warnings
-> and actually has a platform to test the result on.
->
-> 48 fixes a build issue on ARM reported by the kbuild bot.
->
-> Finally patch 49 lifts the PPC32 restriction from QUICC_ENGINE. At the
-> request of Li Yang, it doesn't remove the PPC32 dependency but instead
-> changes it to PPC|| ARM || ARM64 (or COMPILE_TEST), i.e. listing
-> the platforms that may have a QE.
->
-> The series has been built and booted on both an mpc8309-based platform
-> (ppc) as well as an ls1021a-based platform (arm). The core QE code is
-> exercised on both, while I could only test the ucc_uart on arm, since
-> the uarts are not wired up on our mpc8309 board. Qiang Zhao reports
-> that the ucc_hdlc driver does indeed work on a ls1043ardb (arm64)
-> board.
+On Sun, Nov 10, 2019 at 01:43:55PM +0100, Rikard Falkeborn wrote:
+> Arguments are supposed to be ordered high then low.
+> 
+> Fixes: a228890f9458 ("phy: allwinner: add phy driver for USB3 PHY on Allwinner H6 SoC")
+> Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
+> Tested-by: Ondrej Jirman <megous@megous.com>
+> ---
+> v1->v2: Add fixes tax. Add Ondrejs Tested-by. No functional change.
+> 
+>  drivers/phy/allwinner/phy-sun50i-usb3.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/phy/allwinner/phy-sun50i-usb3.c b/drivers/phy/allwinner/phy-sun50i-usb3.c
+> index 1169f3e83a6f..b1c04f71a31d 100644
+> --- a/drivers/phy/allwinner/phy-sun50i-usb3.c
+> +++ b/drivers/phy/allwinner/phy-sun50i-usb3.c
+> @@ -49,7 +49,7 @@
+>  #define SUNXI_LOS_BIAS(n)		((n) << 3)
+>  #define SUNXI_LOS_BIAS_MASK		GENMASK(5, 3)
+>  #define SUNXI_TXVBOOSTLVL(n)		((n) << 0)
+> -#define SUNXI_TXVBOOSTLVL_MASK		GENMASK(0, 2)
+> +#define SUNXI_TXVBOOSTLVL_MASK		GENMASK(2, 0)
+>  
+>  struct sun50i_usb3_phy {
+>  	struct phy *phy;
+> -- 
+> 2.24.0
+> 
 
-Series applied for next on my soc tree.  Thanks!
-
-Regards,
-Leo
->
-> Rasmus Villemoes (49):
->   soc: fsl: qe: remove space-before-tab
->   soc: fsl: qe: drop volatile qualifier of struct qe_ic::regs
->   soc: fsl: qe: rename qe_(clr/set/clrset)bit* helpers
->   soc: fsl: qe: introduce qe_io{read,write}* wrappers
->   soc: fsl: qe: avoid ppc-specific io accessors
->   soc: fsl: qe: replace spin_event_timeout by readx_poll_timeout_atomic
->   soc: fsl: qe: qe.c: guard use of pvr_version_is() with CONFIG_PPC32
->   soc: fsl: qe: drop unneeded #includes
->   soc: fsl: qe: drop assign-only high_active in qe_ic_init
->   soc: fsl: qe: remove pointless sysfs registration in qe_ic.c
->   soc: fsl: qe: use qe_ic_cascade_{low,high}_mpic also on 83xx
->   soc: fsl: qe: move calls of qe_ic_init out of arch/powerpc/
->   powerpc/83xx: remove mpc83xx_ipic_and_qe_init_IRQ
->   powerpc/85xx: remove mostly pointless mpc85xx_qe_init()
->   soc: fsl: qe: move qe_ic_cascade_* functions to qe_ic.c
->   soc: fsl: qe: rename qe_ic_cascade_low_mpic -> qe_ic_cascade_low
->   soc: fsl: qe: remove unused qe_ic_set_* functions
->   soc: fsl: qe: don't use NO_IRQ in qe_ic.c
->   soc: fsl: qe: make qe_ic_get_{low,high}_irq static
->   soc: fsl: qe: simplify qe_ic_init()
->   soc: fsl: qe: merge qe_ic.h headers into qe_ic.c
->   soc: fsl: qe: qe.c: use of_property_read_* helpers
->   soc: fsl: qe: qe_io.c: don't open-code of_parse_phandle()
->   soc: fsl: qe: qe_io.c: access device tree property using be32_to_cpu
->   soc: fsl: qe: qe_io.c: use of_property_read_u32() in par_io_init()
->   soc: fsl: move cpm.h from powerpc/include/asm to include/soc/fsl
->   soc/fsl/qe/qe.h: update include path for cpm.h
->   serial: ucc_uart: explicitly include soc/fsl/cpm.h
->   serial: ucc_uart: replace ppc-specific IO accessors
->   serial: ucc_uart: factor out soft_uart initialization
->   serial: ucc_uart: stub out soft_uart_init for !CONFIG_PPC32
->   serial: ucc_uart: use of_property_read_u32() in ucc_uart_probe()
->   serial: ucc_uart: limit brg-frequency workaround to PPC32
->   serial: ucc_uart: access __be32 field using be32_to_cpu
->   soc: fsl: qe: change return type of cpm_muram_alloc() to s32
->   soc: fsl: qe: make cpm_muram_free() return void
->   soc: fsl: qe: make cpm_muram_free() ignore a negative offset
->   soc: fsl: qe: drop broken lazy call of cpm_muram_init()
->   soc: fsl: qe: refactor cpm_muram_alloc_common to prevent BUG on error
->     path
->   soc: fsl: qe: avoid IS_ERR_VALUE in ucc_slow.c
->   soc: fsl: qe: drop use of IS_ERR_VALUE in qe_sdma_init()
->   soc: fsl: qe: drop pointless check in qe_sdma_init()
->   soc: fsl: qe: avoid IS_ERR_VALUE in ucc_fast.c
->   net/wan/fsl_ucc_hdlc: avoid use of IS_ERR_VALUE()
->   net/wan/fsl_ucc_hdlc: fix reading of __be16 registers
->   net/wan/fsl_ucc_hdlc: reject muram offsets above 64K
->   net: ethernet: freescale: make UCC_GETH explicitly depend on PPC32
->   soc: fsl: qe: remove unused #include of asm/irq.h from ucc.c
->   soc: fsl: qe: remove PPC32 dependency from CONFIG_QUICC_ENGINE
->
->  arch/powerpc/include/asm/cpm.h                | 172 +-------
->  arch/powerpc/platforms/83xx/km83xx.c          |   3 +-
->  arch/powerpc/platforms/83xx/misc.c            |  23 --
->  arch/powerpc/platforms/83xx/mpc832x_mds.c     |   3 +-
->  arch/powerpc/platforms/83xx/mpc832x_rdb.c     |   3 +-
->  arch/powerpc/platforms/83xx/mpc836x_mds.c     |   3 +-
->  arch/powerpc/platforms/83xx/mpc836x_rdk.c     |   3 +-
->  arch/powerpc/platforms/83xx/mpc83xx.h         |   7 -
->  arch/powerpc/platforms/85xx/common.c          |  23 --
->  arch/powerpc/platforms/85xx/corenet_generic.c |  12 -
->  arch/powerpc/platforms/85xx/mpc85xx.h         |   2 -
->  arch/powerpc/platforms/85xx/mpc85xx_mds.c     |  28 --
->  arch/powerpc/platforms/85xx/mpc85xx_rdb.c     |  18 -
->  arch/powerpc/platforms/85xx/twr_p102x.c       |  16 -
->  drivers/net/ethernet/freescale/Kconfig        |   2 +-
->  drivers/net/wan/fsl_ucc_hdlc.c                |  23 +-
->  drivers/net/wan/fsl_ucc_hdlc.h                |   2 +-
->  drivers/soc/fsl/qe/Kconfig                    |   3 +-
->  drivers/soc/fsl/qe/gpio.c                     |  34 +-
->  drivers/soc/fsl/qe/qe.c                       | 104 ++---
->  drivers/soc/fsl/qe/qe_common.c                |  50 +--
->  drivers/soc/fsl/qe/qe_ic.c                    | 285 ++++++-------
->  drivers/soc/fsl/qe/qe_ic.h                    |  99 -----
->  drivers/soc/fsl/qe/qe_io.c                    |  70 ++--
->  drivers/soc/fsl/qe/qe_tdm.c                   |   8 +-
->  drivers/soc/fsl/qe/ucc.c                      |  27 +-
->  drivers/soc/fsl/qe/ucc_fast.c                 |  86 ++--
->  drivers/soc/fsl/qe/ucc_slow.c                 |  60 ++-
->  drivers/soc/fsl/qe/usb.c                      |   2 +-
->  drivers/tty/serial/ucc_uart.c                 | 385 +++++++++---------
->  include/soc/fsl/cpm.h                         | 171 ++++++++
->  include/soc/fsl/qe/qe.h                       |  59 ++-
->  include/soc/fsl/qe/qe_ic.h                    | 135 ------
->  include/soc/fsl/qe/ucc_fast.h                 |   4 +-
->  include/soc/fsl/qe/ucc_slow.h                 |   6 +-
->  35 files changed, 775 insertions(+), 1156 deletions(-)
->  delete mode 100644 drivers/soc/fsl/qe/qe_ic.h
->  create mode 100644 include/soc/fsl/cpm.h
->  delete mode 100644 include/soc/fsl/qe/qe_ic.h
->
-> --
-> 2.23.0
->
+Ping.
 
 _______________________________________________
 linux-arm-kernel mailing list
