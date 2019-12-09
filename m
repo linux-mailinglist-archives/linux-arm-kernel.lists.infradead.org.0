@@ -2,58 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 002DF1164A8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 01:56:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DEC81164AC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 01:57:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GGDksl0OuOnuAh69bx340PQPojt82O2aR5LWRx1MVhQ=; b=ZY2lPwvr3LaHOc
-	EFUVlqHo6PjpKdt8aTKsJJgZMjGOqCfg1ti3C7KmynO1zO9RbdGLI1Xuou3Fb0gyKeVlRDvy8D0AR
-	0k3bq9zB3V5/nksee4nSAHI905v/oJVP0PYWOfeBacunAFjuEjMttacraP43in7wNYkBWDPIHI/WN
-	OvN9wikHYB2WynAr3gDBw0vQmov0Hi7oyWw2Pg+QAZgldyQwz560+YIWJM7uSO7h0C3l5/4ex79/U
-	5GCl/AoEwiVEw95XubhCj9YJVOUeIssYRz+Gw/F0ARuu016J9/1CI4VN8tK9UP66QFz0zl5HVa+s3
-	S6R/pga8pRnOFXNXU8Ug==;
+	List-Owner; bh=Pblj4LzBq9IhFlvF7ZXl3w7MnKnKIE+sFjA1rwmf0z8=; b=aGALRmuIrn3hg2
+	vUUpgFC5jCNyeJbaDbu67QdbhZRGCUezw9UpRwXLKXEWzJQ37WVXpTp1sI/RwNGrRp3wQDQlqRHw4
+	jR4gpiTwfVAAuFJeOaI5zbdjd4WDBoNQ4C/yrvnmuoAOO5aNhdHpSkZBw1s+wHfLHV+W6JY5JExHE
+	uryabQW+lniK1d9xjV/HMbU2QQhJYjowvZhCO8aZl1VdIWJzLRzT89+NNjFPUBUvuxSl9hLtdrE0T
+	FdDVpru33JnImBMQKQ8pOfya35zMbW3rMGEO9J14r/IUI6Xgje6Xmi/aNcw9DI3J+Nq/5RJNgkzQW
+	b8i9KuuIblsMSTYFyFsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ie7Lf-0007L3-4b; Mon, 09 Dec 2019 00:56:27 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1ie7M6-0007kw-6P; Mon, 09 Dec 2019 00:56:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ie7LH-00077B-6j; Mon, 09 Dec 2019 00:56:05 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id E011752B;
- Mon,  9 Dec 2019 01:56:00 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1575852961;
- bh=J6yIt17nBqwPKwVZXRtdxjHrhpUgI8Kou5WpdOIZ5YE=;
+ id 1ie7Lu-0007jx-VQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 00:56:44 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 97F3B206DB;
+ Mon,  9 Dec 2019 00:56:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575853001;
+ bh=el/OTbphV9HjIKRMZ2QKo2lfvib9RuNgPJS+Z3thZog=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=T5cbUBsZJFEm8iBpxpsDzOaQbbEBdWh0bc55kfLncjhrFA90srpzIJTF5ep242mQO
- b5t70DxIKO2bWncxDKMv8rEKTqbMGB6Wc4rf0t1JrZ0hGjCETsQDuEAh6St3IsX09H
- Vk/pTQgLD1qS5KsBNhE3mVt1u8/X3js4Qn7p822U=
-Date: Mon, 9 Dec 2019 02:55:54 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Sam Ravnborg <sam@ravnborg.org>
-Subject: Re: [PATCH v2 02/25] drm/panel: add backlight support
-Message-ID: <20191209005554.GK14311@pendragon.ideasonboard.com>
-References: <20191207140353.23967-1-sam@ravnborg.org>
- <20191207140353.23967-3-sam@ravnborg.org>
+ b=c9hAO1IfDZP+nrTOhuZ0GOxHHLzXnHkYhn2wCFOWaTPBcARl2uQSPFeKkPVcTmMUF
+ lSIYNs+VxtvZXxSo5aQO9RkHIC+UF4KLBlIjolglbr899AF/w6eurnY0M6lHPri63X
+ jp5olO3T97dRFMojqvojRCxYmfvgi7oGs1uQQDmc=
+Date: Mon, 9 Dec 2019 08:56:26 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Andreas Kemnade <andreas@kemnade.info>
+Subject: Re: [PATCH] ARM: dts: e60k02: fix power button
+Message-ID: <20191209005621.GO3365@dragon>
+References: <20191111202959.24189-1-andreas@kemnade.info>
+ <20191204123645.GL3365@dragon>
+ <20191205070612.27204646@kemnade.info>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191207140353.23967-3-sam@ravnborg.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191205070612.27204646@kemnade.info>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_165603_554460_19BA7985 
-X-CRM114-Status: GOOD (  31.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191208_165643_042215_7B8D2F40 
+X-CRM114-Status: GOOD (  16.56  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -62,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,261 +78,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
- Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Stefan Agner <stefan@agner.ch>, linux-samsung-soc@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Tomi Valkeinen <tomi.valkeinen@ti.com>,
- NXP Linux Team <linux-imx@nxp.com>, Jagan Teki <jagan@amarulasolutions.com>,
- Jitao Shi <jitao.shi@mediatek.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>, linux-mediatek@lists.infradead.org,
- Abhinav Kumar <abhinavk@codeaurora.org>, linux-tegra@vger.kernel.org,
- Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org, Purism Kernel Team <kernel@puri.sm>,
- linux-renesas-soc@vger.kernel.org,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ "H . Nikolaus Schaller" <hns@goldelico.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sam,
-
-Thank you for the patch.
-
-On Sat, Dec 07, 2019 at 03:03:30PM +0100, Sam Ravnborg wrote:
-> Panels often supports backlight as specified in a device tree.
-
-s/supports/support/
-
-> Update the drm_panel infrastructure to support this to
-> simplify the drivers.
+On Thu, Dec 05, 2019 at 07:06:12AM +0100, Andreas Kemnade wrote:
+> On Wed, 4 Dec 2019 20:36:47 +0800
+> Shawn Guo <shawnguo@kernel.org> wrote:
 > 
-> With this the panel driver just needs to add the following to the
-> probe() function:
+> > On Mon, Nov 11, 2019 at 09:29:59PM +0100, Andreas Kemnade wrote:
+> > > The power button was only producing irqs, but no key events,
+> > > Forced power down with long key press works, so probably
+> > > only a short spike arrives at the SoC.
+> > > Further investigation shows that LDORTC2 is off after boot
+> > > of the vendor kernel. LDORTC2 is shared with a GPIO at the pmic
+> > > which probably transfers the button press to the SoC.
+> > > That regulator off at boot, so "regulator-boot-on" is definitively
+> > > wrong. So remove that.
+> > > 
+> > > Reported-by: H. Nikolaus Schaller <hns@goldelico.com>
+> > > Signed-off-by: Andreas Kemnade <andreas@kemnade.info>  
+> > 
+> > Do you want this go into 5.5-rc as a fix?  In that case, we may need a
+> > Fixes tag here.
+> > 
+> well, now there is 
+> regulator: core: Let boot-on regulators be powered off
+> so the power button should work after regulator_late_cleanup()
+> is called but that is usually some time after userspace has started,
+> so it would be better to have that in. And of course dt should
+> correctly describe the hardware. That would be
 > 
->     err = drm_panel_of_backlight(panel);
->     if (err)
->             return err;
+> Fixes: c100ea86e6ab ("ARM: dts: add Netronix E60K02 board common file")
+
+Applied with the tag.
+
 > 
-> Then drm_panel will handle all the rest.
-> 
-> There is one caveat with the backlight support.
-> If drm_panel_(enable|disable) are called multiple times
-> in row then backlight_(enable|disable) will be called multiple times.
+> BTW: I have not seen your 5.5 stuff in Linus' tree yet. Seems that Olof
+> has not sent his pull request yet or is there bigger trouble?
 
-s/in row/in a row/
+Now they are in v5.5-rc1.
 
-> The above will happen when a panel drivers unconditionally
-> calls drm_panel_disable() in their shutdown() function,
-> whan the panel is already disabled and then shutdown() is called.
-> 
-> Reading the backlight code it seems safe to call
-> the backlight_(enable|disable) several times.
-> 
-> v3:
-> - Improve comments, fix grammar (Laurent)
-> - Do not fail in drm_panel_of_backlight() if no DT support (Laurent)
-> - Log if backlight_(enable|disable) fails (Laurent)
-> - Improve drm_panel_of_backlight() docs
-> - Updated changelog with backlight analysis (triggered by Laurent)
-> 
-> v2:
-> - Drop test of CONFIG_DRM_PANEL in header-file (Laurent)
-> - do not enable backlight if ->enable() returns an error
-> 
-> Signed-off-by: Sam Ravnborg <sam@ravnborg.org>
-> Cc: Thierry Reding <thierry.reding@gmail.com>
-> Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-> Cc: Maarten Lankhorst <maarten.lankhorst@linux.intel.com>
-> Cc: Maxime Ripard <maxime.ripard@bootlin.com>
-> Cc: Sean Paul <sean@poorly.run>
-> Cc: David Airlie <airlied@linux.ie>
-> Cc: Daniel Vetter <daniel@ffwll.ch>
-> ---
->  drivers/gpu/drm/drm_panel.c | 58 ++++++++++++++++++++++++++++++++++++-
->  include/drm/drm_panel.h     | 25 ++++++++++++++++
->  2 files changed, 82 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/gpu/drm/drm_panel.c b/drivers/gpu/drm/drm_panel.c
-> index 4ab7229fb22b..c312d5eb214d 100644
-> --- a/drivers/gpu/drm/drm_panel.c
-> +++ b/drivers/gpu/drm/drm_panel.c
-> @@ -21,11 +21,13 @@
->   * DEALINGS IN THE SOFTWARE.
->   */
->  
-> +#include <linux/backlight.h>
->  #include <linux/err.h>
->  #include <linux/module.h>
->  
->  #include <drm/drm_crtc.h>
->  #include <drm/drm_panel.h>
-> +#include <drm/drm_print.h>
->  
->  static DEFINE_MUTEX(panel_lock);
->  static LIST_HEAD(panel_list);
-> @@ -196,11 +198,20 @@ EXPORT_SYMBOL(drm_panel_unprepare);
->   */
->  int drm_panel_enable(struct drm_panel *panel)
->  {
-> +	int ret = 0;
-> +
->  	if (!panel)
->  		return -EINVAL;
->  
->  	if (panel->funcs && panel->funcs->enable)
-> -		return panel->funcs->enable(panel);
-> +		ret = panel->funcs->enable(panel);
-> +
-> +	if (ret < 0)
-> +		return ret;
-
-You can move this within the above if () block and avoid initializing
-ret to 0:
-
-	if (panel->funcs && panel->funcs->enable) {
-		ret = panel->funcs->enable(panel);
-		if (ret < 0)
-			return ret;
-	}
-
-With these small issues addressed,
-
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-> +	ret = backlight_enable(panel->backlight);
-> +	if (ret < 0)
-> +		DRM_DEV_INFO(panel->dev, "failed to enable backlight: %d\n", ret);
->  
->  	return 0;
->  }
-> @@ -218,9 +229,15 @@ EXPORT_SYMBOL(drm_panel_enable);
->   */
->  int drm_panel_disable(struct drm_panel *panel)
->  {
-> +	int ret;
-> +
->  	if (!panel)
->  		return -EINVAL;
->  
-> +	ret = backlight_disable(panel->backlight);
-> +	if (ret < 0)
-> +		DRM_DEV_INFO(panel->dev, "failed to disable backlight: %d\n", ret);
-> +
->  	if (panel->funcs && panel->funcs->disable)
->  		return panel->funcs->disable(panel);
->  
-> @@ -289,6 +306,45 @@ struct drm_panel *of_drm_find_panel(const struct device_node *np)
->  EXPORT_SYMBOL(of_drm_find_panel);
->  #endif
->  
-> +#ifdef CONFIG_BACKLIGHT_CLASS_DEVICE
-> +/**
-> + * drm_panel_of_backlight - use backlight device node for backlight
-> + * @panel: DRM panel
-> + *
-> + * Use this function to enable backlight handling if your panel
-> + * uses device tree and has a backlight phandle.
-> + *
-> + * When the panel is enabled backlight will be enabled after a
-> + * successfull call to &drm_panel_funcs.enable()
-> + *
-> + * When the panel is disabled backlight will be disabled before the
-> + * call to &drm_panel_funcs.disable().
-> + *
-> + * A typical implementation for a panel driver supporting device tree
-> + * will call this function at probe time. Backlight will then be handled
-> + * transparently without requiring any intervention from the driver.
-> + * drm_panel_of_backlight() must be called after the call to drm_panel_init().
-> + *
-> + * Return: 0 on success or a negative error code on failure.
-> + */
-> +int drm_panel_of_backlight(struct drm_panel *panel)
-> +{
-> +	struct backlight_device *backlight;
-> +
-> +	if (!panel || !panel->dev)
-> +		return -EINVAL;
-> +
-> +	backlight = devm_of_find_backlight(panel->dev);
-> +
-> +	if (IS_ERR(backlight))
-> +                return PTR_ERR(backlight);
-> +
-> +	panel->backlight = backlight;
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL(drm_panel_of_backlight);
-> +#endif
-> +
->  MODULE_AUTHOR("Thierry Reding <treding@nvidia.com>");
->  MODULE_DESCRIPTION("DRM panel infrastructure");
->  MODULE_LICENSE("GPL and additional rights");
-> diff --git a/include/drm/drm_panel.h b/include/drm/drm_panel.h
-> index d71655b2634c..c751c9b17df0 100644
-> --- a/include/drm/drm_panel.h
-> +++ b/include/drm/drm_panel.h
-> @@ -28,6 +28,7 @@
->  #include <linux/errno.h>
->  #include <linux/list.h>
->  
-> +struct backlight_device;
->  struct device_node;
->  struct drm_connector;
->  struct drm_device;
-> @@ -59,6 +60,10 @@ struct display_timing;
->   *
->   * To save power when no video data is transmitted, a driver can power down
->   * the panel. This is the job of the .unprepare() function.
-> + *
-> + * Backlight can be handled automatically if configured using
-> + * drm_panel_of_backlight(). Then the driver does not need to implement the
-> + * functionality to enable/disable backlight.
->   */
->  struct drm_panel_funcs {
->  	/**
-> @@ -146,6 +151,17 @@ struct drm_panel {
->  	 */
->  	struct device *dev;
->  
-> +	/**
-> +	 * @backlight:
-> +	 *
-> +	 * Backlight device, used to turn on backlight after the call
-> +	 * to enable(), and to turn off backlight before the call to
-> +	 * disable().
-> +	 * backlight is set by drm_panel_of_backlight() and drivers
-> +	 * shall not assign it.
-> +	 */
-> +	struct backlight_device *backlight;
-> +
->  	/**
->  	 * @funcs:
->  	 *
-> @@ -197,4 +213,13 @@ static inline struct drm_panel *of_drm_find_panel(const struct device_node *np)
->  }
->  #endif
->  
-> +#if IS_ENABLED(CONFIG_BACKLIGHT_CLASS_DEVICE)
-> +int drm_panel_of_backlight(struct drm_panel *panel);
-> +#else
-> +static inline int drm_panel_of_backlight(struct drm_panel *panel)
-> +{
-> +	return 0;
-> +}
-> +#endif
-> +
->  #endif
-
--- 
-Regards,
-
-Laurent Pinchart
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
