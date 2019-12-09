@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A990A11661E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 06:17:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 954D711666F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 06:29:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n6cssy2mHK5pSzuEwldgqStU4qmlTGMjMrK0rILnU3I=; b=FFcF5WM18jY2Og
-	1bTC8Wl4HsemMB0kLwzaKnvdVXymbD8TApPZUTnP0pclqLZBWWLdOonPtoxmfy/2Uc557PjcgewL5
-	DYqMQGFF4xOy21zkapbGrKp4jNIKaBHgIThhGc8RiHgBM+pUxaSN1sKqx8yF8XRdS55tKwuvf6uLK
-	MBSjSOeMRl8Yo1RWS3rOHnWUZQcR1PrGeJvwrPyibyV+HRFCw960+7mMRHFCKsxirD7X0zlE7oyz1
-	ZWkFCHoxUuF7WUZRLt67ySHb49JBfpL8v66CNKYRJHeJrKNovWn/BAlfAWiuOhpCicEqwrz1cp6q+
-	U/mvUF7x/ebRy5yNBFEA==;
+	List-Owner; bh=JxUNc8xLnqPhfyk7D50JtkOIzsU8mrOBC3aWnYXedsw=; b=XezMOAXliOOHnP
+	nEoWsj9nrg4kUla4oI6RiInxNCLCGdhB53av+FsIeLNeFubJBxql2k5YrxDizKCCFm19e3nK+6s9d
+	6zvb6O/GA5/jR41olgg6lWKZtxUyJYGgdRfyqS91ZkMkec9BVQFEG8ZTM3ed1R65dFvj8Lwbwd8BU
+	zhzapC1z3Nugchr0/CCmECdb+EQ+5Z9Ip0qat67jRDqE0/2lqwiB/mtNupeBWGjtQoLmxJtbv3C2v
+	6Sq7EW+1eqzmIjYKWIhma+52qAbJdK3tvpa9uxh3+ngEre1XijYxzzyfE7J0Mo6IbzOEczOZsO8a1
+	GNEGHA69cZI1v2s2bIiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieBPm-0007tb-5M; Mon, 09 Dec 2019 05:16:58 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ieBbo-0002mh-8j; Mon, 09 Dec 2019 05:29:24 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieBPY-0007sE-0B; Mon, 09 Dec 2019 05:16:46 +0000
-X-UUID: 6f4a2e17f9a044f7a97295bdac02cd62-20191208
+ id 1ieBbf-0002le-PA; Mon, 09 Dec 2019 05:29:18 +0000
+X-UUID: 46916c96969d4fb08260827b8177c7ec-20191208
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=/iuyPvsaVdzjThz3ynKNy7lY5Ed2c8DFHT3fXKOUa5U=; 
- b=Z1dNkRmEe2z2l3kOcK9d8FTlDJw2ubJAmeq9VbT0g6x/0Y5I6m/etRAN4dKLpnxbmRupuoOhhpWSPHelafy+lvt3zFUk/taVJWkSfE133bQN62ck7CCe6eMrfPmrIyGXtyLdzrKdTd/9tVVxaifMMKYx9IbqjvkNmb3pmO+IBFA=;
-X-UUID: 6f4a2e17f9a044f7a97295bdac02cd62-20191208
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ bh=1kPa4zJHOSGaYA23yBBwBHLWH3hbtYiGylkDOLzCaCs=; 
+ b=RW5WN56e4ZEmzyodValrlYVVgY8rihf9F+AcOz2mBQoOZRhGppamwzP0uo7q3C7E1aex4aMUX2aGz+GR/ciKs1LQ8vMbdKBFJ9aqv36iBfa/N4B0LYrLqA23yB06BiYi1/gJEAHGIGWGaqnPQKprr7rXeP4KtWE+gKHR/cWgCXE=;
+X-UUID: 46916c96969d4fb08260827b8177c7ec-20191208
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <ck.hu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1544962341; Sun, 08 Dec 2019 21:16:41 -0800
+ with ESMTP id 1137832282; Sun, 08 Dec 2019 21:29:12 -0800
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 8 Dec 2019 21:16:53 -0800
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 8 Dec 2019 21:20:11 -0800
 Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 9 Dec 2019 13:16:01 +0800
-Message-ID: <1575868591.7013.5.camel@mtksdaap41>
-Subject: Re: [resend PATCH v6 03/12] drm/mediatek: Use regmap for register
- access
+ Transport; Mon, 9 Dec 2019 13:18:39 +0800
+Message-ID: <1575868749.7013.6.camel@mtksdaap41>
+Subject: Re: [resend PATCH v6 04/12] drm: mediatek: Omit warning on probe
+ defers
 From: CK Hu <ck.hu@mediatek.com>
 To: <matthias.bgg@kernel.org>
-Date: Mon, 9 Dec 2019 13:16:31 +0800
-In-Reply-To: <20191207224740.24536-4-matthias.bgg@kernel.org>
+Date: Mon, 9 Dec 2019 13:19:09 +0800
+In-Reply-To: <20191207224740.24536-5-matthias.bgg@kernel.org>
 References: <20191207224740.24536-1-matthias.bgg@kernel.org>
- <20191207224740.24536-4-matthias.bgg@kernel.org>
+ <20191207224740.24536-5-matthias.bgg@kernel.org>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_211644_047851_FA95C4BB 
-X-CRM114-Status: GOOD (  17.25  )
+X-CRM114-CacheID: sfid-20191208_212915_829004_7146994C 
+X-CRM114-Status: GOOD (  13.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -101,199 +103,163 @@ Hi, Matthias:
 On Sat, 2019-12-07 at 23:47 +0100, matthias.bgg@kernel.org wrote:
 > From: Matthias Brugger <mbrugger@suse.com>
 > 
-> The mmsys memory space is shared between the drm and the
-> clk driver. Use regmap to access it.
+> It can happen that the mmsys clock drivers aren't probed before the
+> platform driver gets invoked. The platform driver used to print a warning
+> that the driver failed to get the clocks. Omit this error on
+> the defered probe path.
 
 Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
 > 
 > Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-> Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
 > ---
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c |  4 +-
->  drivers/gpu/drm/mediatek/mtk_drm_ddp.c  | 50 +++++++++++--------------
->  drivers/gpu/drm/mediatek/mtk_drm_ddp.h  |  4 +-
->  drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 13 ++-----
->  drivers/gpu/drm/mediatek/mtk_drm_drv.h  |  2 +-
->  5 files changed, 30 insertions(+), 43 deletions(-)
+>  drivers/gpu/drm/mediatek/mtk_disp_color.c |  5 ++++-
+>  drivers/gpu/drm/mediatek/mtk_disp_ovl.c   |  5 ++++-
+>  drivers/gpu/drm/mediatek/mtk_disp_rdma.c  |  5 ++++-
+>  drivers/gpu/drm/mediatek/mtk_dpi.c        | 12 +++++++++---
+>  drivers/gpu/drm/mediatek/mtk_drm_ddp.c    |  4 +++-
+>  drivers/gpu/drm/mediatek/mtk_dsi.c        |  8 ++++++--
+>  drivers/gpu/drm/mediatek/mtk_hdmi.c       |  4 +++-
+>  7 files changed, 33 insertions(+), 10 deletions(-)
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> index 34a731755791..259e2f4fa5fa 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> @@ -27,7 +27,7 @@
->   * @enabled: records whether crtc_enable succeeded
->   * @planes: array of 4 drm_plane structures, one for each overlay plane
->   * @pending_planes: whether any plane has pending changes to be applied
-> - * @config_regs: memory mapped mmsys configuration register space
-> + * @config_regs: regmap mapped mmsys configuration register space
->   * @mutex: handle to one of the ten disp_mutex streams
->   * @ddp_comp_nr: number of components in ddp_comp
->   * @ddp_comp: array of pointers the mtk_ddp_comp structures used by this crtc
-> @@ -43,7 +43,7 @@ struct mtk_drm_crtc {
->  	unsigned int			layer_nr;
->  	bool				pending_planes;
+> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_color.c b/drivers/gpu/drm/mediatek/mtk_disp_color.c
+> index 59de2a46aa49..8f0fc96ef7bc 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_disp_color.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_disp_color.c
+> @@ -118,7 +118,10 @@ static int mtk_disp_color_probe(struct platform_device *pdev)
+>  	ret = mtk_ddp_comp_init(dev, dev->of_node, &priv->ddp_comp, comp_id,
+>  				&mtk_disp_color_funcs);
+>  	if (ret) {
+> -		dev_err(dev, "Failed to initialize component: %d\n", ret);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_err(dev, "Failed to initialize component: %d\n",
+> +				ret);
+> +
+>  		return ret;
+>  	}
 >  
-> -	void __iomem			*config_regs;
-> +	struct regmap			*config_regs;
->  	struct mtk_disp_mutex		*mutex;
->  	unsigned int			ddp_comp_nr;
->  	struct mtk_ddp_comp		**ddp_comp;
+> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> index 21851756c579..7487b0182c05 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> @@ -285,7 +285,10 @@ static int mtk_disp_ovl_probe(struct platform_device *pdev)
+>  	ret = mtk_ddp_comp_init(dev, dev->of_node, &priv->ddp_comp, comp_id,
+>  				&mtk_disp_ovl_funcs);
+>  	if (ret) {
+> -		dev_err(dev, "Failed to initialize component: %d\n", ret);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_err(dev, "Failed to initialize component: %d\n",
+> +				ret);
+> +
+>  		return ret;
+>  	}
+>  
+> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
+> index 405afef31407..835ea8f8dab9 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
+> @@ -287,7 +287,10 @@ static int mtk_disp_rdma_probe(struct platform_device *pdev)
+>  	ret = mtk_ddp_comp_init(dev, dev->of_node, &priv->ddp_comp, comp_id,
+>  				&mtk_disp_rdma_funcs);
+>  	if (ret) {
+> -		dev_err(dev, "Failed to initialize component: %d\n", ret);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_err(dev, "Failed to initialize component: %d\n",
+> +				ret);
+> +
+>  		return ret;
+>  	}
+>  
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> index be6d95c5ff25..9ed32470ad02 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dpi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
+> @@ -700,21 +700,27 @@ static int mtk_dpi_probe(struct platform_device *pdev)
+>  	dpi->engine_clk = devm_clk_get(dev, "engine");
+>  	if (IS_ERR(dpi->engine_clk)) {
+>  		ret = PTR_ERR(dpi->engine_clk);
+> -		dev_err(dev, "Failed to get engine clock: %d\n", ret);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_err(dev, "Failed to get engine clock: %d\n", ret);
+> +
+>  		return ret;
+>  	}
+>  
+>  	dpi->pixel_clk = devm_clk_get(dev, "pixel");
+>  	if (IS_ERR(dpi->pixel_clk)) {
+>  		ret = PTR_ERR(dpi->pixel_clk);
+> -		dev_err(dev, "Failed to get pixel clock: %d\n", ret);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_err(dev, "Failed to get pixel clock: %d\n", ret);
+> +
+>  		return ret;
+>  	}
+>  
+>  	dpi->tvd_clk = devm_clk_get(dev, "pll");
+>  	if (IS_ERR(dpi->tvd_clk)) {
+>  		ret = PTR_ERR(dpi->tvd_clk);
+> -		dev_err(dev, "Failed to get tvdpll clock: %d\n", ret);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_err(dev, "Failed to get tvdpll clock: %d\n", ret);
+> +
+>  		return ret;
+>  	}
+>  
 > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> index 8106a71a7404..b765181223e6 100644
+> index b765181223e6..6054e2b675f9 100644
 > --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
 > +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
-> @@ -331,61 +331,53 @@ static unsigned int mtk_ddp_sel_in(enum mtk_ddp_comp_id cur,
->  	return value;
->  }
+> @@ -558,7 +558,9 @@ static int mtk_ddp_probe(struct platform_device *pdev)
 >  
-> -static void mtk_ddp_sout_sel(void __iomem *config_regs,
-> +static void mtk_ddp_sout_sel(struct regmap *config_regs,
->  			     enum mtk_ddp_comp_id cur,
->  			     enum mtk_ddp_comp_id next)
->  {
->  	if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DSI0) {
-> -		writel_relaxed(BLS_TO_DSI_RDMA1_TO_DPI1,
-> -			       config_regs + DISP_REG_CONFIG_OUT_SEL);
-> +		regmap_write(config_regs, DISP_REG_CONFIG_OUT_SEL,
-> +				BLS_TO_DSI_RDMA1_TO_DPI1);
->  	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DPI0) {
-> -		writel_relaxed(BLS_TO_DPI_RDMA1_TO_DSI,
-> -			       config_regs + DISP_REG_CONFIG_OUT_SEL);
-> -		writel_relaxed(DSI_SEL_IN_RDMA,
-> -			       config_regs + DISP_REG_CONFIG_DSI_SEL);
-> -		writel_relaxed(DPI_SEL_IN_BLS,
-> -			       config_regs + DISP_REG_CONFIG_DPI_SEL);
-> +		regmap_write(config_regs, DISP_REG_CONFIG_OUT_SEL,
-> +				BLS_TO_DPI_RDMA1_TO_DSI);
-> +		regmap_write(config_regs, DISP_REG_CONFIG_DSI_SEL,
-> +				DSI_SEL_IN_RDMA);
-> +		regmap_write(config_regs, DISP_REG_CONFIG_DPI_SEL,
-> +				DPI_SEL_IN_BLS);
+>  	ddp->clk = devm_clk_get(dev, NULL);
+>  	if (IS_ERR(ddp->clk)) {
+> -		dev_err(dev, "Failed to get clock\n");
+> +		if (PTR_ERR(ddp->clk) != -EPROBE_DEFER)
+> +			dev_err(dev, "Failed to get clock\n");
+> +
+>  		return PTR_ERR(ddp->clk);
 >  	}
->  }
 >  
-> -void mtk_ddp_add_comp_to_path(void __iomem *config_regs,
-> +void mtk_ddp_add_comp_to_path(struct regmap *config_regs,
->  			      enum mtk_ddp_comp_id cur,
->  			      enum mtk_ddp_comp_id next)
->  {
-> -	unsigned int addr, value, reg;
-> +	unsigned int addr, value;
+> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> index 4332563df952..66d5b0fdd678 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
+> @@ -1110,14 +1110,18 @@ static int mtk_dsi_probe(struct platform_device *pdev)
+>  	dsi->engine_clk = devm_clk_get(dev, "engine");
+>  	if (IS_ERR(dsi->engine_clk)) {
+>  		ret = PTR_ERR(dsi->engine_clk);
+> -		dev_err(dev, "Failed to get engine clock: %d\n", ret);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_err(dev, "Failed to get engine clock: %d\n", ret);
+> +
+>  		return ret;
+>  	}
 >  
->  	value = mtk_ddp_mout_en(cur, next, &addr);
-> -	if (value) {
-> -		reg = readl_relaxed(config_regs + addr) | value;
-> -		writel_relaxed(reg, config_regs + addr);
-> -	}
-> +	if (value)
-> +		regmap_update_bits(config_regs, addr, value, value);
+>  	dsi->digital_clk = devm_clk_get(dev, "digital");
+>  	if (IS_ERR(dsi->digital_clk)) {
+>  		ret = PTR_ERR(dsi->digital_clk);
+> -		dev_err(dev, "Failed to get digital clock: %d\n", ret);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_err(dev, "Failed to get digital clock: %d\n", ret);
+> +
+>  		return ret;
+>  	}
 >  
->  	mtk_ddp_sout_sel(config_regs, cur, next);
+> diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+> index ce91b61364eb..62f9ca2308ee 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+> @@ -1447,7 +1447,9 @@ static int mtk_hdmi_dt_parse_pdata(struct mtk_hdmi *hdmi,
 >  
->  	value = mtk_ddp_sel_in(cur, next, &addr);
-> -	if (value) {
-> -		reg = readl_relaxed(config_regs + addr) | value;
-> -		writel_relaxed(reg, config_regs + addr);
-> -	}
-> +	if (value)
-> +		regmap_update_bits(config_regs, addr, value, value);
->  }
+>  	ret = mtk_hdmi_get_all_clk(hdmi, np);
+>  	if (ret) {
+> -		dev_err(dev, "Failed to get clocks: %d\n", ret);
+> +		if (ret != -EPROBE_DEFER)
+> +			dev_err(dev, "Failed to get clocks: %d\n", ret);
+> +
+>  		return ret;
+>  	}
 >  
-> -void mtk_ddp_remove_comp_from_path(void __iomem *config_regs,
-> +void mtk_ddp_remove_comp_from_path(struct regmap *config_regs,
->  				   enum mtk_ddp_comp_id cur,
->  				   enum mtk_ddp_comp_id next)
->  {
-> -	unsigned int addr, value, reg;
-> +	unsigned int addr, value;
->  
->  	value = mtk_ddp_mout_en(cur, next, &addr);
-> -	if (value) {
-> -		reg = readl_relaxed(config_regs + addr) & ~value;
-> -		writel_relaxed(reg, config_regs + addr);
-> -	}
-> +	if (value)
-> +		regmap_update_bits(config_regs, addr, value, 0);
->  
->  	value = mtk_ddp_sel_in(cur, next, &addr);
-> -	if (value) {
-> -		reg = readl_relaxed(config_regs + addr) & ~value;
-> -		writel_relaxed(reg, config_regs + addr);
-> -	}
-> +	if (value)
-> +		regmap_update_bits(config_regs, addr, value, 0);
->  }
->  
->  struct mtk_disp_mutex *mtk_disp_mutex_get(struct device *dev, unsigned int id)
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
-> index 827be424a148..01ff8b68881f 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.h
-> @@ -12,10 +12,10 @@ struct regmap;
->  struct device;
->  struct mtk_disp_mutex;
->  
-> -void mtk_ddp_add_comp_to_path(void __iomem *config_regs,
-> +void mtk_ddp_add_comp_to_path(struct regmap *config_regs,
->  			      enum mtk_ddp_comp_id cur,
->  			      enum mtk_ddp_comp_id next);
-> -void mtk_ddp_remove_comp_from_path(void __iomem *config_regs,
-> +void mtk_ddp_remove_comp_from_path(struct regmap *config_regs,
->  				   enum mtk_ddp_comp_id cur,
->  				   enum mtk_ddp_comp_id next);
->  
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> index 352b81a7a670..210455e9f46c 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> @@ -6,6 +6,7 @@
->  
->  #include <linux/component.h>
->  #include <linux/iommu.h>
-> +#include <linux/mfd/syscon.h>
->  #include <linux/module.h>
->  #include <linux/of_address.h>
->  #include <linux/of_platform.h>
-> @@ -485,7 +486,6 @@ static int mtk_drm_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
->  	struct mtk_drm_private *private;
-> -	struct resource *mem;
->  	struct device_node *node;
->  	struct component_match *match = NULL;
->  	int ret;
-> @@ -499,14 +499,9 @@ static int mtk_drm_probe(struct platform_device *pdev)
->  	INIT_WORK(&private->commit.work, mtk_atomic_work);
->  	private->data = of_device_get_match_data(dev);
->  
-> -	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	private->config_regs = devm_ioremap_resource(dev, mem);
-> -	if (IS_ERR(private->config_regs)) {
-> -		ret = PTR_ERR(private->config_regs);
-> -		dev_err(dev, "Failed to ioremap mmsys-config resource: %d\n",
-> -			ret);
-> -		return ret;
-> -	}
-> +	private->config_regs = syscon_node_to_regmap(dev->of_node);
-> +	if (IS_ERR(private->config_regs))
-> +		return PTR_ERR(private->config_regs);
->  
->  	/* Iterate over sibling DISP function blocks */
->  	for_each_child_of_node(dev->of_node->parent, node) {
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> index e03fea12ff59..63a121577dcb 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> @@ -39,7 +39,7 @@ struct mtk_drm_private {
->  
->  	struct device_node *mutex_node;
->  	struct device *mutex_dev;
-> -	void __iomem *config_regs;
-> +	struct regmap *config_regs;
->  	struct device_node *comp_node[DDP_COMPONENT_ID_MAX];
->  	struct mtk_ddp_comp *ddp_comp[DDP_COMPONENT_ID_MAX];
->  	const struct mtk_mmsys_driver_data *data;
 
 _______________________________________________
 linux-arm-kernel mailing list
