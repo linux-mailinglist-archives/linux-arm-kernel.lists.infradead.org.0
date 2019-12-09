@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97755117795
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 21:41:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19BCB1177A5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 21:44:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ilxTUGOOLBBBNEjwmVC44EraBhcb/mMoCyD+JlYbKJQ=; b=lqBelfRYYiLUDm
-	Tew8qCjlUktPtfRMYLWx1+A8gq4YXWQItXe0r3IKKKzfwrB71bz7qG7aMtQxfLMVT6p1R9P+NMj6S
-	Xfd6GsNp4EiZxGQwx3BA/KO93V0DllG5vjsCcn4RQGj2pC70CkNFszelSxmEk2UOhM1NsAJIQl+am
-	LmQv9amK7WwRpNT+o7nbZV3tgE9++og0M9f7KJrq3hL9RTJFfJdRkHfY6je2QFNunxJTySxHh/By3
-	bDb8U3J/uFTx4t4TUgx7Bba6sFmagTdRXBOB7mi1oHWT/Wd0uPJ/cXWUjZ7+/wurVfeiEnCS1nbzj
-	5eDGbLj8cF9L2vD9Jevw==;
+	List-Owner; bh=L775YofNeHKKp9Zf2w8FlplS181JIBqYxJyzk2pfV+Y=; b=oPBvsxWNoFdJjp
+	s703eo41Cc2yMV/ISBI9X2U1dXgZRt56nGz5HpJF+JdPdy12ejc1h7LtCaZnTTjrHDgRRKo2htjDm
+	PEBAidF5Qiv1bDURhJPXmQrWr7VpAcoqTF5xYV8+LhZ1wL9afxR2blOFze5qwkv/tJGADejJhB3qR
+	KgSdBLg9NAYWepBXs9f4ELcWxiVXrgknB5H6DcEfYmmG1VuVa+MxP2FxaawXowx1TEW0Xv42wZU6H
+	ijGzOtf75NCKTzhvGWkzb57KB84/Z75fP7g0Rn8MBjrfLd9hhs+dEuamtHtMZdK/KiU8tf79ztvzJ
+	pEuqDzf2H2Ap0u03w5EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iePqi-0004ru-SL; Mon, 09 Dec 2019 20:41:44 +0000
-Received: from mail-wm1-f68.google.com ([209.85.128.68])
+	id 1iePt7-0005eA-IE; Mon, 09 Dec 2019 20:44:13 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iePqX-0004rN-1B
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 20:41:34 +0000
-Received: by mail-wm1-f68.google.com with SMTP id f129so757937wmf.2
+ id 1iePsn-0005Up-Jp
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 20:43:55 +0000
+Received: by mail-oi1-x243.google.com with SMTP id v140so7691837oie.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Dec 2019 12:41:32 -0800 (PST)
+ Mon, 09 Dec 2019 12:43:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=intel-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=plZMhK84PEv4yWmkyRgS9pvtlaQ95b7dai3GHtutF3U=;
+ b=s8JcQPtbr+nVe651d3RxZBcB1lXgZKfKVFhn/ShuBpwGBroXkMdV+1srYkcwwzCfi/
+ 3AdkcPWeiO2eE4Vph0qmLnpLEA8qPwiUkiQSbuWv9LS1KxvGK3AP4uCAh+EMErUq8k74
+ L494AbumcLYt4cMYgyYMcdh6j0zlFuGJ8ZPSO2PxzpS4hTMg0sQG1PNOFwBWl5Zzp6eP
+ Hwu+hbiTpbKnoLj6CsAujCqJSlm6zAkwyEntNz5bxfqTJjvUbj59ZsDept7jCzKEEbgY
+ DvR3hVrw+BRWOH7VlzK3NLFoCEF6jALh7nekxLiYRnJ0XVoNr+Z9wuJ3vSGrSPuKoOPd
+ 615w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=oSbUiS7EP2tldG1YzNxaAsQzPlJ8BCKd2KYUFJ680IM=;
- b=IkRae24mdL6tPiQg37b2d/4ucHTIUHJ4dYfHJhfxWxtyJeDwv9L/0UwIEqDzKZnjIH
- q6ofCyj3Xms5tUr2PtnjQD94g3LLXJgHZ/ofJB6lyQHSXT2okNeFQIt3YhRY8eV2CBbU
- kH1raaII9kONxF2DDG22rKuV2Bwl3Ozk69hgziXZdA+tsZuNwh2k7kZA13WY4xvzb4u5
- USpJQjgdJ3B8IY1YMrFImNHOjYKqcQDfuUSe0r9pGzyxoFFIlwYOZlLnZjB3q0OeX9B7
- PJREbDEnXDtGRhsn2SWE3a2mAVa8TPuHPcHLryHOkCQ9MNoJbI0GLLXa4FNVi40gXc21
- P/PQ==
-X-Gm-Message-State: APjAAAWVnj9Nvx65w4elxymY80lR6mq55QFOCPNYnAOY3gnJw/Onoouv
- pyidHUbI75KzJrsVfv/jQ74=
-X-Google-Smtp-Source: APXvYqyLft4TxSNFH48B5L3G63KfAdrp5DrYOJ1M1gqSEHOOdcj01DiA+cYxABOqwwT0LyX2UQKe5g==
-X-Received: by 2002:a05:600c:cd:: with SMTP id
- u13mr1018119wmm.24.1575924091072; 
- Mon, 09 Dec 2019 12:41:31 -0800 (PST)
-Received: from localhost (ip-37-188-170-11.eurotel.cz. [37.188.170.11])
- by smtp.gmail.com with ESMTPSA id p5sm668853wrt.79.2019.12.09.12.41.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 09 Dec 2019 12:41:30 -0800 (PST)
-Date: Mon, 9 Dec 2019 21:41:28 +0100
-From: Michal Hocko <mhocko@kernel.org>
-To: Logan Gunthorpe <logang@deltatee.com>
-Subject: Re: [PATCH 5/6] mm, memory_hotplug: Provide argument for the
- pgprot_t in arch_add_memory()
-Message-ID: <20191209204128.GC7658@dhcp22.suse.cz>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=plZMhK84PEv4yWmkyRgS9pvtlaQ95b7dai3GHtutF3U=;
+ b=T0jrQ1fIjI/jM4FiH11dv0q3wSIfpAbT4/dKRI71dPZsH1WbMF3MECaAWjbIZiWcj4
+ FrMU5v+KhV/EQc4h8HhruCXvzLzPNDW+raLJLSRZEWVSMEQ/P1gMcGyT8IQKauln5bSU
+ Mrvv0AFztsP7Jj2aMD13D6qP7GuNsegc7nv7CEXBZRSzqea1I5Tb7AM04hTDTRLWLM6/
+ DiISN37jjRBiN+qGJlgFZ6wRbscdDAVzdpH6dXSEdfUq96HueAOg3igkHG6w8nDbkXR+
+ 9nwecjllZjfmUDhNpfH5AmezSOmF8LfA/YCF6NlLFkq/SS7ULLWk7uEZUlR6VAer0pkI
+ Xk4w==
+X-Gm-Message-State: APjAAAWs6QFwV04reNYKXkMtvomQMcE0gL2HvERhk1yrlZJ/NMakDara
+ /wHN7KD1Ac8TtHQlZOlWrBOiNrToRphgaAapowwqhA==
+X-Google-Smtp-Source: APXvYqyeRHkHv/ywCxrBIm5A7egnQ5ryTQgyKvJL2kpqRDm3KyRgnulA7iNcBuX+BkZigYY9JneBtT9sFsmo5jtdPMY=
+X-Received: by 2002:aca:4850:: with SMTP id v77mr913881oia.70.1575924231490;
+ Mon, 09 Dec 2019 12:43:51 -0800 (PST)
+MIME-Version: 1.0
 References: <20191209191346.5197-1-logang@deltatee.com>
  <20191209191346.5197-6-logang@deltatee.com>
  <ce50d9da-c60e-05a1-a86b-3bb3629de502@redhat.com>
  <f34a4c52-cc95-15ed-8a72-c05ab4fd6d33@deltatee.com>
-MIME-Version: 1.0
-Content-Disposition: inline
 In-Reply-To: <f34a4c52-cc95-15ed-8a72-c05ab4fd6d33@deltatee.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+From: Dan Williams <dan.j.williams@intel.com>
+Date: Mon, 9 Dec 2019 12:43:40 -0800
+Message-ID: <CAPcyv4hpXCZxV5p7WaeGgE7ceujBBa5NOz9Z8fepDHOt6zHO2A@mail.gmail.com>
+Subject: Re: [PATCH 5/6] mm, memory_hotplug: Provide argument for the pgprot_t
+ in arch_add_memory()
+To: Logan Gunthorpe <logang@deltatee.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_124133_077088_72A6ECC7 
-X-CRM114-Status: GOOD (  24.25  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191209_124353_712473_0F6AAE72 
+X-CRM114-Status: GOOD (  21.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (mstsxfx[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.68 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,26 +91,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Dave Hansen <dave.hansen@linux.intel.com>,
- linux-ia64@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+Cc: linux-s390 <linux-s390@vger.kernel.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, linux-ia64@vger.kernel.org,
  Will Deacon <will@kernel.org>, David Hildenbrand <david@redhat.com>,
  Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-sh@vger.kernel.org,
- linux-kernel@vger.kernel.org, platform-driver-x86@vger.kernel.org,
- linux-mm@kvack.org, Ingo Molnar <mingo@redhat.com>,
- Thomas Gleixner <tglx@linutronix.de>, Andy Lutomirski <luto@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Linux-sh <linux-sh@vger.kernel.org>,
+ Michal Hocko <mhocko@suse.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ platform-driver-x86@vger.kernel.org, Linux MM <linux-mm@kvack.org>,
+ Ingo Molnar <mingo@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Andy Lutomirski <luto@kernel.org>,
  Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Borislav Petkov <bp@alien8.de>, Dan Williams <dan.j.williams@intel.com>,
- linuxppc-dev@lists.ozlabs.org, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org
+ Borislav Petkov <bp@alien8.de>, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>, Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 09-12-19 13:24:19, Logan Gunthorpe wrote:
-> 
-> 
+On Mon, Dec 9, 2019 at 12:24 PM Logan Gunthorpe <logang@deltatee.com> wrote:
+>
+>
+>
 > On 2019-12-09 12:23 p.m., David Hildenbrand wrote:
 > > On 09.12.19 20:13, Logan Gunthorpe wrote:
 > >> devm_memremap_pages() is currently used by the PCI P2PDMA code to create
@@ -158,33 +160,24 @@ On Mon 09-12-19 13:24:19, Logan Gunthorpe wrote:
 > >> +++ b/arch/arm64/mm/mmu.c
 > >> @@ -1050,7 +1050,7 @@ int p4d_free_pud_page(p4d_t *p4d, unsigned long addr)
 > >>  }
-> >>  
+> >>
 > >>  #ifdef CONFIG_MEMORY_HOTPLUG
 > >> -int arch_add_memory(int nid, u64 start, u64 size,
 > >> +int arch_add_memory(int nid, u64 start, u64 size, pgprot_t prot,
-> >>  			struct mhp_restrictions *restrictions)
-> > 
+> >>                      struct mhp_restrictions *restrictions)
+> >
 > > Can we fiddle that into "struct mhp_restrictions" instead?
-> 
+>
 > Yes, if that's what people want, it's pretty trivial to do. I chose not
 > to do it that way because it doesn't get passed down to add_pages() and
 > it's not really a "restriction". If I don't hear any objections, I will
 > do that for v2.
 
-I do agree that restriction is not the best fit. But I consider prot
-argument to complicate the API to all users even though it is not really
-clear whether we are going to have many users really benefiting from it.
-Look at the vmalloc API and try to find how many users of __vmalloc do
-not use PAGE_KERNEL.
-
-So I can see two options. One of them is to add arch_add_memory_prot
-that would allow to have give and extra prot argument or simply call
-an arch independent API to change the protection after arch_add_memory.
-The later sounds like much less code. The memory shouldn't be in use by
-anybody at that stage yet AFAIU. Maybe there even is an API like that.
--- 
-Michal Hocko
-SUSE Labs
++1 to storing this information alongside the altmap in that structure.
+However, I agree struct mhp_restrictions, with the MHP_MEMBLOCK_API
+flag now gone, has lost all of its "restrictions". How about dropping
+the 'flags' property and renaming the struct to 'struct
+mhp_modifiers'?
 
 _______________________________________________
 linux-arm-kernel mailing list
