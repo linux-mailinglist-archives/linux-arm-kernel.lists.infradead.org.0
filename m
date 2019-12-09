@@ -2,91 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9DE61173E4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 19:17:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4EB21173E6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 19:17:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=2s8tP4sqAEHy56O3mzlouitjnVVQfGegNDOCqjkp6WQ=; b=MEo4nIwjqeoX21lwC+L8vx/I6q
-	Pcb2N6EBYybkJjAB57xOfI7w6uIrUA5LRWqu3CcShP27Tj3MUosQgrvXk+hjFR9FwnnPi5y7R2j1G
-	yqVTTmUu8TC9koBuEVbBa0DI1P6oRn1wVLXHOkpvwLYD33xqelstcZQPygATD96HdUcYKGgLTG2x2
-	Ekn1oN60blpV5ZGhkyEqL5tyin9xynC527E4qVZ5Cs2VYm287YW0NYKcz3I2sG+gOOknOQMeGfEku
-	lrxnVd+ZgLa9c71vecvawNJQD1PvQvd0RnTGvqWzJn1E4cyd+xO7F3U/y3I/CWABXew4YKSzGP1RN
-	x7OgRqHg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VZrLFFZSnTCRkvwux9IF7quXBmw6b4JQBB8Mqra4q+c=; b=Fww1jRulpveEDt
+	nMjNzb5PP5hSf4uBjfbfYHz+4liY4uz6A3yi3bnGkGihdjU9Fro449VMxwemSEC7om0oUdDZbIv/X
+	WBpLdySOv/1rRXGdCzRhg7W65SY/g9YM8xvdo3DIMgukZvrMdbNHJIWnhrfCGkZ7yJ9oHzQrGn+bm
+	pnBcd6IGk5Zs4cFxPUpTz37ji1i8OyPx2xhYbIVQoX8g6sVgccKlgkexNf7IEH3i2FXFHeiH9ib8C
+	uRYgcnn4PTGDkXbrlvQPXXP+zIIOiIfuraHd+ElPdL6kCbVZURtcC8OnrWD6lHLE7AH9+V9XvXxF3
+	neEAwkoEtx6t/XJExxGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieNaw-0002MG-1N; Mon, 09 Dec 2019 18:17:18 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieNWo-0005dP-ET; Mon, 09 Dec 2019 18:13:03 +0000
-Received: by mail-wr1-x443.google.com with SMTP id t2so17326093wrr.1;
- Mon, 09 Dec 2019 10:13:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/Lzf1hIoDU/ZjVff0Ob50B/u4dz41ExonvLP+obnOrY=;
- b=veU94l/2yneEs2+AYnPRfypLrEwv/lHOSPvX2FqK4ks4WOdsJkkhAm4704nkBZ/6Mi
- lazIXl2B9ITEC8ee2XmyffCUC6U1UxH6gR89nd73H2hk9MND/KGz0gFcIDaoU59+mrNe
- s4vvhZNA0EcQumdairxyFg8FSbETavWj4ki9o6CcpeoxWnWox79TQtPOcnpnJQek4G1R
- WrFcNF+8ArAqMgIYmMiIF6YjptIwS/YnvFwU64wa67dKt4UvGQNRP3Oc1V+GG1r37M1p
- dlLjbhoiVa8aQS2KZXvMnQga8nB+XqTaw/IdkyHaxjVt5G6qK6/Im8JtyYoUxV5L2iZm
- YoqA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=/Lzf1hIoDU/ZjVff0Ob50B/u4dz41ExonvLP+obnOrY=;
- b=bGUvmK2C59GzjqTWlqxTSFEysZZa35+W1U8SF5++xUlIMyp7ac2vy0h+bQ22V68PJg
- gKr+SweIBEBQXN0TGh1M+6fMrfq0PwclNRyz/STPdb052fcHw5UNH9YRu4K9ykAjPI3u
- PQBweYM5yDsJwyuIrrij9eaQK6c5/+ofU4XYngqRqYEHB6xak3BC+ruOuRGexSZvNuDW
- EjymqAjwJe5vcQ3TjcdrEH4RKq5dyU3nt8mt5uI4CP5/DhfZH0c6qXZHvukOOjfZxCH5
- GBYZpBLBAEZZDex+NEzLnCc5L89CVR8xZkeMCu566+c9wMtJPDioNzlsvn+TnWXhiK+P
- GohQ==
-X-Gm-Message-State: APjAAAWi7TewHXZ3+qO5RYIFTV46tlGy0h3a2pP6iA8N0ir+s/hRUXcb
- On6UK52Y4afee601++Gu4zE=
-X-Google-Smtp-Source: APXvYqz09GH7IbLXL1n86qn2SJ7Z7dx3lAnu4LcZ3gQ+++4bhQhZLSjmbqLnsv9mnd/KlGDUZHcj5A==
-X-Received: by 2002:a5d:5308:: with SMTP id e8mr3599909wrv.77.1575915181066;
- Mon, 09 Dec 2019 10:13:01 -0800 (PST)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id g21sm219800wmh.17.2019.12.09.10.12.58
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 09 Dec 2019 10:13:00 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Eric Anholt <eric@anholt.net>, Stefan Wahren <wahrenst@gmx.net>
-Subject: Re: [PATCH] ARM: dts: bcm2711: fix soc's node dma-ranges
-Date: Mon,  9 Dec 2019 10:12:56 -0800
-Message-Id: <20191209181256.5854-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191204125633.27696-1-nsaenzjulienne@suse.de>
-References: <20191204125633.27696-1-nsaenzjulienne@suse.de>
+	id 1ieNbE-0002aL-NP; Mon, 09 Dec 2019 18:17:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieNXA-0005z7-1h
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 18:13:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A90081045;
+ Mon,  9 Dec 2019 10:13:20 -0800 (PST)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AC9453F6CF;
+ Mon,  9 Dec 2019 10:13:19 -0800 (PST)
+Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
+ transport type
+To: Viresh Kumar <viresh.kumar@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>
+References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <71417ba8-b844-ac96-bcad-4bf48fa8b869@arm.com>
+Date: Mon, 9 Dec 2019 18:13:18 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
+MIME-Version: 1.0
+In-Reply-To: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_101302_567072_902F488F 
-X-CRM114-Status: GOOD (  13.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191209_101324_199759_B60491BF 
+X-CRM114-Status: GOOD (  19.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,39 +64,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mbrugger@suse.com, phil@raspberrypi.org,
- linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: linux-arm-kernel@lists.infradead.org, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed,  4 Dec 2019 13:56:33 +0100, Nicolas Saenz Julienne <nsaenzjulienne@suse.de> wrote:
-> Raspberry Pi's firmware has a feature to select how much memory to
-> reserve for its GPU called 'gpu_mem'. The possible values go from 16MB
-> to 944MB, with a default of 64MB. This memory resides in the topmost
-> part of the lower 1GB memory area and grows bigger expanding towards the
-> begging of memory.
-> 
-> It turns out that with low 'gpu_mem' values (16MB and 32MB) the size of
-> the memory available to the system in the lower 1GB area can outgrow the
-> interconnect's dma-range as its size was selected based on the maximum
-> system memory available given the default gpu_mem configuration. This
-> makes that memory slice unavailable for DMA. And may cause nasty kernel
-> warnings if CMA happens to include it.
-> 
-> Change soc's dma-ranges to really reflect it's HW limitation, which is
-> being able to only DMA to the lower 1GB area.
-> 
-> Fixes: 7dbe8c62ceeb ("ARM: dts: Add minimal Raspberry Pi 4 support")
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> ---
+Hi
 
-Applied to devicetree/fixes, thanks!
---
-Florian
+a one minor nit, and one question about scmi_desc usage in this new transport
+independent driver.
+
+On 29/11/2019 09:31, Viresh Kumar wrote:
+> The SCMI specification is fairly independent of the transport protocol,
+> which can be a simple mailbox (already implemented) or anything else.
+> The current Linux implementation however is very much dependent of the
+> mailbox transport layer.
+> 
+> This patch makes the SCMI core code (driver.c) independent of the
+> mailbox transport layer and moves all mailbox related code to a new
+> file: mailbox.c.
+> 
+> We can now implement more transport protocols to transport SCMI
+> messages.
+> 
+> The transport protocols just need to provide struct scmi_transport_ops,
+> with its version of the callbacks to enable exchange of SCMI messages.
+> 
+> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+> ---
+>  drivers/firmware/arm_scmi/Makefile  |   3 +-
+>  drivers/firmware/arm_scmi/common.h  |  39 ++++++++
+>  drivers/firmware/arm_scmi/driver.c  | 143 ++++++++++-----------------
+>  drivers/firmware/arm_scmi/mailbox.c | 146 ++++++++++++++++++++++++++++
+>  4 files changed, 236 insertions(+), 95 deletions(-)
+>  create mode 100644 drivers/firmware/arm_scmi/mailbox.c
+> 
+
+[snip]
+
+>  /**
+>   * struct scmi_info - Structure representing a SCMI instance
+>   *
+> @@ -128,6 +109,7 @@ struct scmi_chan_info {
+>  struct scmi_info {
+>  	struct device *dev;
+>  	const struct scmi_desc *desc;
+> +	struct scmi_transport_ops *transport_ops;
+>  	struct scmi_revision_info version;
+>  	struct scmi_handle handle;
+>  	struct scmi_xfers_info tx_minfo;
+> @@ -138,7 +120,6 @@ struct scmi_info {
+>  	int users;
+>  };
+>  
+
+Could we add also the related @transport_ops in the above comment block ?
+
+> -#define client_to_scmi_chan_info(c) container_of(c, struct scmi_chan_info, cl)
+>  #define handle_to_scmi_info(h)	container_of(h, struct scmi_info, handle)
+>  
+>  /*
+
+[snip]
+
+> +
+>  static int scmi_probe(struct platform_device *pdev)
+>  {
+>  	int ret;
+> @@ -833,12 +800,6 @@ static int scmi_probe(struct platform_device *pdev)
+>  	struct device *dev = &pdev->dev;
+>  	struct device_node *child, *np = dev->of_node;
+>  
+> -	/* Only mailbox method supported, check for the presence of one */
+> -	if (scmi_mailbox_check(np, 0)) {
+> -		dev_err(dev, "no mailbox found in %pOF\n", np);
+> -		return -EINVAL;
+> -	}
+> -
+>  	desc = of_device_get_match_data(dev);
+>  	if (!desc)
+>  		return -EINVAL;
+
+This scmi_desc struct descriptor is retrieved from  of_match_table .data and points to
+the driver-provided scmi_generic_desc
+
+static const struct scmi_desc scmi_generic_desc = {
+        .max_rx_timeout_ms = 30,        /* We may increase this if required */
+        .max_msg = 20,          /* Limited by MBOX_TX_QUEUE_LEN */
+        .max_msg_size = 128,
+};
+
+Is not this kind of information possibly (maybe partially) related to the selected
+transport, and as such it should be also provided dynamically by the chosen transport
+layer at probe time, like the transport_ops, instead of being hard-coded in
+this driver ?
+
+Thanks
+
+Cristian
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
