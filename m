@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 506351166DF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 07:25:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E7451166F2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 07:31:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WKg3VU2A1iIXSU/aACRexX3jG0duI2xJyQwM4PwGjKs=; b=nkrb2UoUwLcYMl
-	Bv7ArbvyyX5TiTXO31V3sVjaSTew5rj81r22NE60oALPGdDqAhW5NK+ruzrjmuSbIWsrzoQP6yUq9
-	r4+Dau6W47PKuDLs5J3vu61VUoqTuG4+zDsJiZ9g81SQQRo0a3RfxEXD3ObHknHFWIXbjxDF1EiSK
-	e0Q5bqRfY+XmF+uiGlu8hI230LEuONeFpmGhT1K3u16WSanrRg6C5WK5mhEqXXE6Rfr1QFGgKRuLD
-	DlSyQbg6qZPxxTOwSfIizLQnVnr6IToNJGcZxnwXmzLOGKlwyNG32gyB70dM01mp38XUhzOg/Gub7
-	Oa4MnB97Z1PkVM3z476Q==;
+	List-Owner; bh=mh5oRPHEf5oK/A29je5MvM85YqtXlNXOmAKJawJdLpM=; b=jecdl5L949k6FN
+	Dt35i3tninRaIlAhPuwCdpI8owZVhH8ldTO3oUHdV8NfY1pp7ScIkunN7wSPNcHuzYr1uA9OxC5zx
+	lOKUfqpMz0s3u7GtAPWA6gSzLngrYIR/nBlnTh5AUk8sFh3Fs3ULcJpptLc9/0R8qU89Hk8QlwV7Q
+	omp5TB0H5pqrvbVNGHcbvs+GWgOkudNieNlTs57VVtZN9r2/9hwKVcQOrEf+Bl6pl3wEBWrRv4qPS
+	BZPFtxkbyWV7/XeR5mUgw0RJkX/K5/ld4IQswh7/Tp/5lSSib7RgyY3WW74ZmnWkxElkQs5v8LLmi
+	sIdEok5KrTllLD19pC5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieCTc-0007We-Iz; Mon, 09 Dec 2019 06:25:00 +0000
+	id 1ieCaG-0002bg-C0; Mon, 09 Dec 2019 06:31:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieCTV-0007W1-B4
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 06:24:54 +0000
+ id 1ieCa8-0002ah-M5
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 06:31:45 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BB27C206D3;
- Mon,  9 Dec 2019 06:24:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A72FE206D3;
+ Mon,  9 Dec 2019 06:31:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575872693;
- bh=NvleXuUnPknYKUhTVZzMMKvbLBOUqsyyrdsMf7qmcsQ=;
+ s=default; t=1575873104;
+ bh=JNkb10Pp1zc5am3FaANhCosXMk76s6PelvibBjYsbEY=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=rBW1x5yG8jYDoDPIRBN/OWZV1Y616bQ2ge84/I4SZA1MT5dD/LkqCrpWb6+r3YqVS
- X7uvQlQGiMSa0xtCmmRn3jcm3kG3w3mGSo3bJSdg2Vs0bbrJIfkJxvodbwkEogTq0x
- eVjzuPHoyqAblOE3sWjuo6J33uY2L8uNHYy+1QaU=
-Date: Mon, 9 Dec 2019 14:24:37 +0800
+ b=Jv7TDuaJMLzYAplOE7S/vegyKqXBl777tgut/yWVB777Oc75VcrOu/z40SOYG8q0H
+ /LWCB8Okp1KJ4T1qTAscOO67lW/j7LEPxs09U61Yb0+bNpXdIh5IIuQrfxT1wmdDlN
+ es01oTBnJhrAlNGZZes3u1spL6M4crN53P9fA3VI=
+Date: Mon, 9 Dec 2019 14:31:29 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Michael Walle <michael@walle.cc>, Yuantian Tang <andy.tang@nxp.com>
-Subject: Re: [PATCH 1/4] arm64: dts: ls1028a: fix typo in TMU calibration data
-Message-ID: <20191209062436.GB3365@dragon>
+To: Michael Walle <michael@walle.cc>
+Subject: Re: [PATCH 2/4] arm64: dts: ls1028a: add missing sai nodes
+Message-ID: <20191209063128.GC3365@dragon>
 References: <20191123201317.25861-1-michael@walle.cc>
- <20191123201317.25861-2-michael@walle.cc>
+ <20191123201317.25861-3-michael@walle.cc>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191123201317.25861-2-michael@walle.cc>
+In-Reply-To: <20191123201317.25861-3-michael@walle.cc>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_222453_399934_0DA9BB50 
-X-CRM114-Status: GOOD (  13.38  )
+X-CRM114-CacheID: sfid-20191208_223144_744704_EFAA17A3 
+X-CRM114-Status: GOOD (  14.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,35 +85,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+ Yuantian Tang, who is the author of existing code.
-
-On Sat, Nov 23, 2019 at 09:13:14PM +0100, Michael Walle wrote:
-> This was tested on a custom board.
-
-Can you add more info about why this is an error and how it is being
-identified?
-
-Shawn
-
+On Sat, Nov 23, 2019 at 09:13:15PM +0100, Michael Walle wrote:
+> The LS1028A has six SAI cores.
 > 
 > Signed-off-by: Michael Walle <michael@walle.cc>
 > ---
->  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  .../arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 42 +++++++++++++++++++
+>  1 file changed, 42 insertions(+)
 > 
 > diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> index dc75534a4754..f2e71fd57b20 100644
+> index f2e71fd57b20..6730922c2d47 100644
 > --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
 > +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> @@ -573,7 +573,7 @@
->  					       0x00010004 0x0000003d
->  					       0x00010005 0x00000045
->  					       0x00010006 0x0000004d
-> -					       0x00010007 0x00000045
-> +					       0x00010007 0x00000055
->  					       0x00010008 0x0000005e
->  					       0x00010009 0x00000066
->  					       0x0001000a 0x0000006e
+> @@ -534,6 +534,20 @@
+>  			status = "disabled";
+>  		};
+>  
+> +		sai3: audio-controller@f120000 {
+> +			#sound-dai-cells = <0>;
+> +			compatible = "fsl,vf610-sai";
+> +			reg = <0x0 0xf120000 0x0 0x10000>;
+> +			interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&clockgen 4 1>, <&clockgen 4 1>,
+> +				 <&clockgen 4 1>, <&clockgen 4 1>;
+> +			clock-names = "bus", "mclk1", "mclk2", "mclk3";
+> +			dma-names = "tx", "rx";
+> +			dmas = <&edma0 1 8>,
+> +			       <&edma0 1 7>;
+> +			status = "disabled";
+> +		};
+> +
+>  		sai4: audio-controller@f130000 {
+>  			#sound-dai-cells = <0>;
+>  			compatible = "fsl,vf610-sai";
+> @@ -548,6 +562,34 @@
+>  			status = "disabled";
+>  		};
+>  
+> +		sai5: audio-controller@f140000 {
+> +			#sound-dai-cells = <0>;
+> +			compatible = "fsl,vf610-sai";
+> +			reg = <0x0 0xf140000 0x0 0x10000>;
+> +			interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&clockgen 4 1>, <&clockgen 4 1>,
+> +				 <&clockgen 4 1>, <&clockgen 4 1>;
+> +			clock-names = "bus", "mclk1", "mclk2", "mclk3";
+> +			dma-names = "tx", "rx";
+> +			dmas = <&edma0 1 12>,
+> +			       <&edma0 1 11>;
+> +			status = "disabled";
+> +		};
+> +
+> +		sai6: audio-controller@f150000 {
+> +			#sound-dai-cells = <0>;
+> +			compatible = "fsl,vf610-sai";
+> +			reg = <0x0 0xf150000 0x0 0x10000>;
+> +			interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&clockgen 4 1>, <&clockgen 4 1>,
+> +				 <&clockgen 4 1>, <&clockgen 4 1>;
+> +			clock-names = "bus", "mclk1", "mclk2", "mclk3";
+> +			dma-names = "tx", "rx";
+> +			dmas = <&edma0 1 14>,
+> +			       <&edma0 1 13>;
+> +			status = "disabled";
+> +		};
+> +
+>  		tmu: tmu@1f00000 {
+
+Not sure what your base is, but I have tmu@1f80000.  And that makes
+the patch applying fail here.
+
+Shawn
+
+>  			compatible = "fsl,qoriq-tmu";
+>  			reg = <0x0 0x1f80000 0x0 0x10000>;
 > -- 
 > 2.20.1
 > 
