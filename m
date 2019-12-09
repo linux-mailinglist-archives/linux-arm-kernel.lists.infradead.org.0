@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1556116E71
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 15:02:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A93CD116E97
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 15:07:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SceyqwqrGOZKrmCaM0KLG0zyDXCjfltad+iBBmPcAnI=; b=JGC62X5fqyYnF/EvkDy3RLOfq
-	u8kDvr7HvM3CH8BwSRKhW7MTTxa0LRV5cWU3AEoNbZEAFfloD8QQhGb+ODinDJFnI8CyRGtMI3biX
-	gQ5u5Bj9G1BYVEs1dM40LIAS+qg6x7KZCud6WbDxY7v66H7EACWg+QRz/GihzKL8Yw92t6o8xLDln
-	XM/rNDzR7d9QkN1X4dl2/QkEAcOqRNP2UnJHF4GSxsSljW95TDVmvUTRyseCJuC/nJhUkUxS9Gslw
-	Vx2T+NcyMUR8l0p6ju6mXjGfeS5NB2lic+9Y4hZ5gKgNcyyM+v+LSIxsN+abEs2wNEBkiXHGdCepW
-	MhFc2vatg==;
+	 bh=/IQHUjVCvHlxTcNZsT/ro455VfjabLvxLOpW1hSDYTY=; b=VIMPonWFlE3jTdgjFCC7DvQG+
+	x/7eJtlKQ9xqSZ3T6iGFx+82WptOLqBw8gpMLbVP1sg9xgE+u+wGoiMOL8KJISbpfjBBUlh/GhE+T
+	4AiSFl/hsh43WjAVUvTpeWOCvR7AKZXBsNBjIDeF1bUDqfvAa0zHNbHqvhQ53dqDpLqpyfl6qYfQB
+	nYDzI6WtNC6jdJEPBh+x/XmENcm263S1rmRKG/n9GygxUtkgjG8IqWw8TmHaceXu3faKvy0bjtSW0
+	WS6hoa9ex9JZMG88tIV+tZN7BbnYn+1RKtY7G7MNDjuLMu9mI5wJVt6tjcH2kCQQaGaZkZnLH6Ddy
+	GLBScZlhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieJcZ-0003eh-Lb; Mon, 09 Dec 2019 14:02:43 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1ieJhZ-0005cR-96; Mon, 09 Dec 2019 14:07:53 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieJcO-0003dw-Cd
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 14:02:34 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xB9E17Rh002940; Mon, 9 Dec 2019 15:02:23 +0100
+ id 1ieJhQ-0005bh-0m
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 14:07:45 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xB9E2Z3K029711; Mon, 9 Dec 2019 15:07:36 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=subject : to : cc :
  references : from : message-id : date : mime-version : in-reply-to :
  content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=h0NDLxS3j9GuxtUF4CHpY+EnFaY9d7pHHOIkb2OZAns=;
- b=TL77VmqZ6PBbQBR4bgNU6G/GBf+MokTel3SnHpeiyO76m2Aa3yPOTu6R+dB+zSNQdVf0
- vauYvasBECN30yo6TxYqKQQWZIAjO6aZidp1Miyn5dm7zEWYrzX0LLw2LpqMCzO1pos9
- KJRAYmhEXNe1B1gOAAXspNV0Cy4WsPV/7NUjWRQRHndTlGhOVyyZMOjNbcS/mD9rQUWr
- ik1MGKkBCkcVpz7MfGAvXqQdG9MJ6Oj8taMOoEYbToFfKpy4x2iZ1MOdqkVFKI7T47s6
- ssFGg7FczNryUw10RQfmhakYWkoaQxq48dqQYUmJPo8bBeSB12lJkAw793nSRfnyjG5a FQ== 
+ bh=BCWX5NNeDVU6wpFJD/S/N/1xkElQUKoGoGtgt/DzrE4=;
+ b=aV9aeettm48PTkUp9/ucH7YOznx3hKtPa+AWvQmxejzR2VuSZTQ9H5x8KN77eI03s+2z
+ ZuiltkGyccdCzDLjexMNNgfG23S1jsTpd5BLde2r6UsQng/2rQSV+lVtUTYICZV4ADQ4
+ 9viHA+aY3v7oOs8x/fQQIzoOe7TsSbVeWmSbujMv0E+YQABtmTJvpf6Qx4UOkJg0KgOv
+ ew3yusQ5uJeahQKJcxiY1EzadTzDatDdnxFVEMndtatphfI8Riw67u4fBVeCxAX6uZGi
+ 8g4EZBZzw58S/ETFVA/fXKhHyldHBtiZG6YYRE7feX3sr5xYeV/iy3jep5q9QcaPKwdX qg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2wrapxfpn1-1
+ by mx08-00178001.pphosted.com with ESMTP id 2wraq3qshq-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 09 Dec 2019 15:02:23 +0100
+ Mon, 09 Dec 2019 15:07:36 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1606D100038;
- Mon,  9 Dec 2019 15:02:21 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 075AB100034;
+ Mon,  9 Dec 2019 15:07:35 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EACFA2FF5F7;
- Mon,  9 Dec 2019 15:02:20 +0100 (CET)
-Received: from lmecxl0912.lme.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id CE10A20DAFE;
+ Mon,  9 Dec 2019 15:07:35 +0100 (CET)
+Received: from lmecxl0912.lme.st.com (10.75.127.50) by SFHDAG3NODE2.st.com
  (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 9 Dec
- 2019 15:02:20 +0100
-Subject: Re: [PATCH V4 net-next 0/4] net: ethernet: stmmac: cleanup clock and
- optimization
-To: Christophe Roullier <christophe.roullier@st.com>, <robh@kernel.org>,
- <davem@davemloft.net>, <joabreu@synopsys.com>, <mark.rutland@arm.com>,
- <mcoquelin.stm32@gmail.com>, <peppe.cavallaro@st.com>
-References: <20191107084757.17910-1-christophe.roullier@st.com>
+ 2019 15:07:35 +0100
+Subject: Re: [PATCH 1/3] ARM: dts: stm32: remove useless clock-names from RTC
+ node on stm32f429
+To: Benjamin Gaignard <benjamin.gaignard@st.com>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>
+References: <20191202145604.28872-1-benjamin.gaignard@st.com>
 From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <5b1774f4-c0ec-030d-90a8-65b714545b9b@st.com>
-Date: Mon, 9 Dec 2019 15:02:19 +0100
+Message-ID: <49d3e0c4-7e0d-0c5f-524c-4f2f9f197582@st.com>
+Date: Mon, 9 Dec 2019 15:07:35 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191107084757.17910-1-christophe.roullier@st.com>
+In-Reply-To: <20191202145604.28872-1-benjamin.gaignard@st.com>
 Content-Language: en-US
-X-Originating-IP: [10.75.127.48]
+X-Originating-IP: [10.75.127.50]
 X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
  definitions=2019-12-09_04:2019-12-09,2019-12-09 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_060232_925011_27078BBF 
-X-CRM114-Status: GOOD (  14.12  )
+X-CRM114-CacheID: sfid-20191209_060744_351678_76876528 
+X-CRM114-Status: GOOD (  16.49  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -98,38 +98,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, andrew@lunn.ch, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Christophe
+Hi Benjamin,
 
-On 11/7/19 9:47 AM, Christophe Roullier wrote:
-> Some improvements:
->   - manage syscfg as optional clock,
->   - update slew rate of ETH_MDIO pin,
->   - Enable gating of the MAC TX clock during TX low-power mode
+On 12/2/19 3:56 PM, Benjamin Gaignard wrote:
+> On stm32f4 family RTC node doesn't need clock-names property.
 > 
-> V4: Update with Andrew Lunn remark
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+> ---
+>   arch/arm/boot/dts/stm32f429.dtsi | 1 -
+>   1 file changed, 1 deletion(-)
 > 
-> Christophe Roullier (4):
->    net: ethernet: stmmac: Add support for syscfg clock
->    ARM: dts: stm32: remove syscfg clock on stm32mp157c ethernet
->    ARM: dts: stm32: adjust slew rate for Ethernet
->    ARM: dts: stm32: Enable gating of the MAC TX clock during TX low-power
->      mode on stm32mp157c
+> diff --git a/arch/arm/boot/dts/stm32f429.dtsi b/arch/arm/boot/dts/stm32f429.dtsi
+> index 5c8a826b3195..ac9caaf4cf51 100644
+> --- a/arch/arm/boot/dts/stm32f429.dtsi
+> +++ b/arch/arm/boot/dts/stm32f429.dtsi
+> @@ -318,7 +318,6 @@
+>   			compatible = "st,stm32-rtc";
+>   			reg = <0x40002800 0x400>;
+>   			clocks = <&rcc 1 CLK_RTC>;
+> -			clock-names = "ck_rtc";
+>   			assigned-clocks = <&rcc 1 CLK_RTC>;
+>   			assigned-clock-parents = <&rcc 1 CLK_LSE>;
+>   			interrupt-parent = <&exti>;
 > 
->   arch/arm/boot/dts/stm32mp157-pinctrl.dtsi     |  9 ++++++--
->   arch/arm/boot/dts/stm32mp157c.dtsi            |  7 +++---
->   .../net/ethernet/stmicro/stmmac/dwmac-stm32.c | 23 +++++++------------
->   3 files changed, 18 insertions(+), 21 deletions(-)
-> 
-
-For DT patches:
 
 Applied on stm32-next.
 
