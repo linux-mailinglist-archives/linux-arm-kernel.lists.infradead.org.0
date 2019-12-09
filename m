@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2E74117509
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 19:59:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D41EB117514
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 20:00:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=koiDfST+rCsUB7tTXURFwvHRxYdzBq1SS3f+/QWGoQE=; b=nSG
-	8MghFSqcXuSZToz2I1JdXUZDQI98KBJFNjsw0AlVyWye0XIxkoP2PBs0LwtQ7GeP5z83LmT3ZHq3g
-	e3aF+RW1BTeRDEul7APBgXWg1wGQtW2pxYS/thL5FnQieXWz+BrpXxw6iGI92qrblfq0PNXbx8+C/
-	s1Jah1CZECEQ5bLQ2R3pZ2lyXs1oJwTRgduqPZ913tOGYi0d/V+KYbxHBvSYvZFxEzsBVXoQbzpEk
-	hWVrIRBcicnqG84T5QA2cFCTx0Qy/DseFEk6fPajDwWT4QtN1Zxv3guVPyKBUpQcw1Ruov4kfpIrY
-	p07XWW56A+BrxOis7WIUv/c8dAEJStg==;
+	References:List-Owner; bh=vWSzgyQX66nTyBfk7PM1hONZjsmJ/wy9l+IiaZMWgtg=; b=N0W
+	oTzJrr5nAK3quN1qh8XXjdqaOJTRGWzUnFxtAR6mUOdbxfwguvc8S2EnV1WQsbfu0F5Nha26Gei7D
+	THwjR0byIOwdhwYoxQqeIDTW0UdOd94FCZxvBhcaXWgtR2DEFFvyuymvum5R2sHgC9xw/drj6LO0b
+	KdA0RSWmRIjj4WV/jCw9cLJ/qEHyzkTrW2Ezgc83EjsJwoN3kSQMZaXFESZ4o4Jv5EEjM2tycjE+G
+	bL/t5SyUt2vCy0v7nZIh0RiqLnYhk+tIYG0TepCQP4Um7ww82cdh3GGLstYOk+c9I19LVhGoLoWLI
+	kqkAE2ZAD3erGpPmOjKpgVDre1hR4dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieOFk-0001cp-5f; Mon, 09 Dec 2019 18:59:28 +0000
+	id 1ieOGT-00020D-Q4; Mon, 09 Dec 2019 19:00:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieOFb-0001bm-8p
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 18:59:20 +0000
+ id 1ieOGI-0001yr-CP
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 19:00:04 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 706BA11D4;
- Mon,  9 Dec 2019 10:59:18 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A89B013FD;
+ Mon,  9 Dec 2019 11:00:01 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E354C3F6CF;
- Mon,  9 Dec 2019 10:59:17 -0800 (PST)
-Date: Mon, 09 Dec 2019 18:59:16 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 268113F6CF;
+ Mon,  9 Dec 2019 11:00:01 -0800 (PST)
+Date: Mon, 09 Dec 2019 18:59:59 +0000
 From: Mark Brown <broonie@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: cs42l51: add dac mux widget in codec routes" to the
- asoc tree
-In-Reply-To: <20191203141627.29471-1-olivier.moysan@st.com>
-Message-Id: <applied-20191203141627.29471-1-olivier.moysan@st.com>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Subject: Applied "dt-bindings: regulator: Convert stm32 vrefbuf bindings to
+ json-schema" to the regulator tree
+In-Reply-To: <20191122104536.20283-2-benjamin.gaignard@st.com>
+Message-Id: <applied-20191122104536.20283-2-benjamin.gaignard@st.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_105919_404393_5ED13859 
-X-CRM114-Status: GOOD (  14.06  )
+X-CRM114-CacheID: sfid-20191209_110002_514087_360A5995 
+X-CRM114-Status: GOOD (  15.24  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -63,11 +63,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, olivier.moysan@st.com, alexandre.torgue@st.com,
- tiwai@suse.com, lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, mcoquelin.stm32@gmail.com,
- apatard@mandriva.com, perex@perex.cz, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -76,11 +75,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: cs42l51: add dac mux widget in codec routes
+   dt-bindings: regulator: Convert stm32 vrefbuf bindings to json-schema
 
-has been applied to the asoc tree at
+has been applied to the regulator tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.6
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-5.6
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -101,57 +100,110 @@ to this mail.
 Thanks,
 Mark
 
-From abe3b6727b653307c27870a2d4ecbf9de4e914a5 Mon Sep 17 00:00:00 2001
-From: Olivier Moysan <olivier.moysan@st.com>
-Date: Tue, 3 Dec 2019 15:16:27 +0100
-Subject: [PATCH] ASoC: cs42l51: add dac mux widget in codec routes
+From 21b2c47161449c44e5a70eab646260aaeceb331c Mon Sep 17 00:00:00 2001
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+Date: Fri, 22 Nov 2019 11:45:36 +0100
+Subject: [PATCH] dt-bindings: regulator: Convert stm32 vrefbuf bindings to
+ json-schema
 
-Add "DAC mux" DAPM widget in CS42l51 audio codec routes,
-to support DAC mux control and to remove error trace
-"DAC Mux has no paths" at widget creation.
-Note: ADC path of DAC mux is not routed in this patch.
+Convert the STM32 regulator vrefbuf binding to DT schema format using json-schema
 
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Link: https://lore.kernel.org/r/20191203141627.29471-1-olivier.moysan@st.com
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+CC: Fabrice Gasnier <fabrice.gasnier@st.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Link: https://lore.kernel.org/r/20191122104536.20283-2-benjamin.gaignard@st.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/codecs/cs42l51.c | 16 ++++++++++------
- 1 file changed, 10 insertions(+), 6 deletions(-)
+ .../bindings/regulator/st,stm32-vrefbuf.txt   | 20 -------
+ .../bindings/regulator/st,stm32-vrefbuf.yaml  | 52 +++++++++++++++++++
+ 2 files changed, 52 insertions(+), 20 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.txt
+ create mode 100644 Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.yaml
 
-diff --git a/sound/soc/codecs/cs42l51.c b/sound/soc/codecs/cs42l51.c
-index 55408c8fcb4e..e47758e4fb36 100644
---- a/sound/soc/codecs/cs42l51.c
-+++ b/sound/soc/codecs/cs42l51.c
-@@ -214,12 +214,10 @@ static const struct snd_soc_dapm_widget cs42l51_dapm_widgets[] = {
- 	SND_SOC_DAPM_ADC_E("Right ADC", "Right HiFi Capture",
- 		CS42L51_POWER_CTL1, 2, 1,
- 		cs42l51_pdn_event, SND_SOC_DAPM_PRE_POST_PMD),
--	SND_SOC_DAPM_DAC_E("Left DAC", "Left HiFi Playback",
--		CS42L51_POWER_CTL1, 5, 1,
--		cs42l51_pdn_event, SND_SOC_DAPM_PRE_POST_PMD),
--	SND_SOC_DAPM_DAC_E("Right DAC", "Right HiFi Playback",
--		CS42L51_POWER_CTL1, 6, 1,
--		cs42l51_pdn_event, SND_SOC_DAPM_PRE_POST_PMD),
-+	SND_SOC_DAPM_DAC_E("Left DAC", NULL, CS42L51_POWER_CTL1, 5, 1,
-+			   cs42l51_pdn_event, SND_SOC_DAPM_PRE_POST_PMD),
-+	SND_SOC_DAPM_DAC_E("Right DAC", NULL, CS42L51_POWER_CTL1, 6, 1,
-+			   cs42l51_pdn_event, SND_SOC_DAPM_PRE_POST_PMD),
- 
- 	/* analog/mic */
- 	SND_SOC_DAPM_INPUT("AIN1L"),
-@@ -255,6 +253,12 @@ static const struct snd_soc_dapm_route cs42l51_routes[] = {
- 	{"HPL", NULL, "Left DAC"},
- 	{"HPR", NULL, "Right DAC"},
- 
-+	{"Right DAC", NULL, "DAC Mux"},
-+	{"Left DAC", NULL, "DAC Mux"},
+diff --git a/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.txt b/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.txt
+deleted file mode 100644
+index 5ddb8500a929..000000000000
+--- a/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.txt
++++ /dev/null
+@@ -1,20 +0,0 @@
+-STM32 VREFBUF - Voltage reference buffer
+-
+-Some STM32 devices embed a voltage reference buffer which can be used as
+-voltage reference for ADCs, DACs and also as voltage reference for external
+-components through the dedicated VREF+ pin.
+-
+-Required properties:
+-- compatible:		Must be "st,stm32-vrefbuf".
+-- reg:			Offset and length of VREFBUF register set.
+-- clocks:		Must contain an entry for peripheral clock.
+-
+-Example:
+-	vrefbuf: regulator@58003c00 {
+-		compatible = "st,stm32-vrefbuf";
+-		reg = <0x58003C00 0x8>;
+-		clocks = <&rcc VREF_CK>;
+-		regulator-min-microvolt = <1500000>;
+-		regulator-max-microvolt = <2500000>;
+-		vdda-supply = <&vdda>;
+-	};
+diff --git a/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.yaml b/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.yaml
+new file mode 100644
+index 000000000000..33cdaeb25aee
+--- /dev/null
++++ b/Documentation/devicetree/bindings/regulator/st,stm32-vrefbuf.yaml
+@@ -0,0 +1,52 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/regulator/st,stm32-vrefbuf.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+	{"DAC Mux", "Direct PCM", "Playback"},
-+	{"DAC Mux", "DSP PCM", "Playback"},
++title: STMicroelectronics STM32 Voltage reference buffer bindings
 +
- 	{"Left ADC", NULL, "Left PGA"},
- 	{"Right ADC", NULL, "Right PGA"},
- 
++description: |
++  Some STM32 devices embed a voltage reference buffer which can be used as
++  voltage reference for ADCs, DACs and also as voltage reference for external
++  components through the dedicated VREF+ pin.
++
++maintainers:
++  - Fabrice Gasnier <fabrice.gasnier@st.com>
++
++allOf:
++  - $ref: "regulator.yaml#"
++
++properties:
++  compatible:
++    const: st,stm32-vrefbuf
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  vdda-supply:
++    description: phandle to the vdda input analog voltage.
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - vdda-supply
++
++examples:
++  - |
++    #include <dt-bindings/clock/stm32mp1-clks.h>
++    vrefbuf@50025000 {
++      compatible = "st,stm32-vrefbuf";
++      reg = <0x50025000 0x8>;
++      regulator-min-microvolt = <1500000>;
++      regulator-max-microvolt = <2500000>;
++      clocks = <&rcc VREF>;
++      vdda-supply = <&vdda>;
++    };
++
++...
++
 -- 
 2.20.1
 
