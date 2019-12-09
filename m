@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D66D71169F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 10:47:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04E3B1169FD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 10:47:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CVo+FIStjmdoUmW2a8jLJT3hI1xDC7YhQGZawLSP790=; b=A9Y/kCGfsrzvVv
-	hKCrULtWPvqVMl5mFXxfp6v84mfnap7S1TnFFQOtzW4wTKkiSzTAWPLjIaAxh6lbiQtTWiX/hs+8H
-	56OUEwkg7PPXBwXiFqiDwtxSDe0Hnuh04R9xCb0EWE0VYB9quqypJvUFpxpUXBRS/tyJtY+zAsgXe
-	pgGur0DUaYgt7vse6Cy8qD5QoBk5Js+5UjAjPqKfW2bhJge7oRixYEDW3V5VH/rQPjTBtiE3UvqS/
-	IkgoqfkFqRkckDOmFH5b3UybHgdTXnmLThKfFZoHzQBUAzwR5Lb9xtYyydo0SqVtYK+XcvNcqAhKi
-	ND+JIdZbz/5nXRxM2f2A==;
+	List-Owner; bh=2p0+DIc0OJzfaiPFOM8Td/jtITmF+3iztJYPWYjTxzs=; b=TjfmkEV+qKChbM
+	8XWWafcDAE3avHzcRZkgDDLEdBBLXDI4HEcX8u5aItgGrNzhSy5P9tfLevSiyiYF3eTXML/Uu2U3R
+	W0cVhG0ky/eJcDTxkqBs3W5kF7nTBme6ZU3C2F3LzWPn4IhnJo6kij4jJn0foS9t/ICfj7DDUtj+R
+	QfRF3sgY4rTP4R0xbynaHpvefdFEl3RQeSP2YFrNjLnEwm8Vn93Tc7KibWtxQmorUuVG9kaQne8jp
+	cpwCDJ/KiOe0XBagSfRo6hssyiZXLgDMa6iRlythY5/G2C/3y81nXZPDvtxYxBViDlrgUpK6060vW
+	Lk153GkT7HcrW2J7sEow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieFd8-0000Ly-0C; Mon, 09 Dec 2019 09:47:02 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1ieFdO-0000aa-1F; Mon, 09 Dec 2019 09:47:18 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieFaU-0005QT-6p
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 09:44:21 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xB99iEM1033284;
- Mon, 9 Dec 2019 03:44:14 -0600
+ id 1ieFaZ-0005UX-6b
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 09:44:25 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xB99iJ6N108696;
+ Mon, 9 Dec 2019 03:44:19 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1575884654;
- bh=k8zlie3vgjn4WO7EA2Hs+7MNYJ/pD0HQW1aRzR1mgkk=;
+ s=ti-com-17Q1; t=1575884659;
+ bh=WLIFq7NRcnOQ5VrrQVld4qrMZ5LO0r2DacFF2Nqd75g=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Mtcy7GappiVQy6Zw67leO3jv5qLpKTPsaJY5HY7DC/sHORpYrCvxCFgbdwOe+0HqF
- XhTj+HRAfRg9FdGXgil1aXi2+fPY2pm1uTH6ykCPBoBSWnsSb3TvZ0+/STZ36WnP2v
- /7WFm+aBhY6ZlIHBnWRWZ5RLCoWk0TDNPDbTuIHU=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xB99iEIT077723
+ b=lPZPSKztLyHDhZKS4X3DYLyPRgStoxw7ECMb/BEvkkXKbB+O5KSFm/rI0kyDit7vN
+ tMx02pMFm1PTixuWfoVUYFEi+yNR6ey7B7F3vwSa78WOCtzSWMfFXnTIDXCLb+KhCc
+ MG3Kw/n6UQnbij5DEswm/2H0kyJV+WjkyKTyhypk=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xB99iJ0q100211
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 9 Dec 2019 03:44:14 -0600
-Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 9 Dec 2019 03:44:19 -0600
+Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 9 Dec
- 2019 03:44:14 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ 2019 03:44:18 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 9 Dec 2019 03:44:14 -0600
+ Frontend Transport; Mon, 9 Dec 2019 03:44:18 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xB99hOWs080263;
- Mon, 9 Dec 2019 03:44:10 -0600
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xB99hOWt080263;
+ Mon, 9 Dec 2019 03:44:14 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <vkoul@kernel.org>, <robh+dt@kernel.org>, <nm@ti.com>,
  <ssantosh@kernel.org>
-Subject: [PATCH v7 11/12] firmware: ti_sci: rm: Add support for tx_tdtype
- parameter for tx channel
-Date: Mon, 9 Dec 2019 11:43:31 +0200
-Message-ID: <20191209094332.4047-12-peter.ujfalusi@ti.com>
+Subject: [PATCH v7 12/12] dmaengine: ti: k3-udma: Wait for peer teardown
+ completion if supported
+Date: Mon, 9 Dec 2019 11:43:32 +0200
+Message-ID: <20191209094332.4047-13-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191209094332.4047-1-peter.ujfalusi@ti.com>
 References: <20191209094332.4047-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_014418_495595_5CA57F9F 
-X-CRM114-Status: GOOD (  12.74  )
+X-CRM114-CacheID: sfid-20191209_014423_356122_36629678 
+X-CRM114-Status: GOOD (  13.10  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -100,83 +100,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The system controller's resource manager have support for configuring the
-TDTYPE of TCHAN_CFG register on j721e.
-With this parameter the teardown completion can be controlled:
-TDTYPE == 0: Return without waiting for peer to complete the teardown
-TDTYPE == 1: Wait for peer to complete the teardown
+Set the TDTYPE if it is supported on the platform (j721e) which will cause
+UDMAP to wait for the remote peer to finish the teardown before returning
+the teardown completed message.
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- drivers/firmware/ti_sci.c              | 1 +
- drivers/firmware/ti_sci.h              | 7 +++++++
- include/linux/soc/ti/ti_sci_protocol.h | 2 ++
- 3 files changed, 10 insertions(+)
+ drivers/dma/ti/k3-udma.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
-index 4126be9e3216..f13e4a96f3b7 100644
---- a/drivers/firmware/ti_sci.c
-+++ b/drivers/firmware/ti_sci.c
-@@ -2412,6 +2412,7 @@ static int ti_sci_cmd_rm_udmap_tx_ch_cfg(const struct ti_sci_handle *handle,
- 	req->fdepth = params->fdepth;
- 	req->tx_sched_priority = params->tx_sched_priority;
- 	req->tx_burst_size = params->tx_burst_size;
-+	req->tx_tdtype = params->tx_tdtype;
+diff --git a/drivers/dma/ti/k3-udma.c b/drivers/dma/ti/k3-udma.c
+index 48933689f790..58239b53ba35 100644
+--- a/drivers/dma/ti/k3-udma.c
++++ b/drivers/dma/ti/k3-udma.c
+@@ -85,6 +85,7 @@ struct udma_rchan {
  
- 	ret = ti_sci_do_xfer(info, xfer);
- 	if (ret) {
-diff --git a/drivers/firmware/ti_sci.h b/drivers/firmware/ti_sci.h
-index f0d068c03944..255327171dae 100644
---- a/drivers/firmware/ti_sci.h
-+++ b/drivers/firmware/ti_sci.h
-@@ -910,6 +910,7 @@ struct rm_ti_sci_msg_udmap_rx_flow_opt_cfg {
-  *   12 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_credit_count
-  *   13 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::fdepth
-  *   14 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_burst_size
-+ *   15 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_tdtype
-  *
-  * @nav_id: SoC device ID of Navigator Subsystem where tx channel is located
-  *
-@@ -973,6 +974,11 @@ struct rm_ti_sci_msg_udmap_rx_flow_opt_cfg {
-  *
-  * @tx_burst_size: UDMAP transmit channel burst size configuration to be
-  * programmed into the tx_burst_size field of the TCHAN_TCFG register.
-+ *
-+ * @tx_tdtype: UDMAP transmit channel teardown type configuration to be
-+ * programmed into the tdtype field of the TCHAN_TCFG register:
-+ * 0 - Return immediately
-+ * 1 - Wait for completion message from remote peer
-  */
- struct ti_sci_msg_rm_udmap_tx_ch_cfg_req {
- 	struct ti_sci_msg_hdr hdr;
-@@ -994,6 +1000,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg_req {
- 	u16 fdepth;
- 	u8 tx_sched_priority;
- 	u8 tx_burst_size;
-+	u8 tx_tdtype;
- } __packed;
+ #define UDMA_FLAG_PDMA_ACC32		BIT(0)
+ #define UDMA_FLAG_PDMA_BURST		BIT(1)
++#define UDMA_FLAG_TDTYPE		BIT(2)
  
- /**
-diff --git a/include/linux/soc/ti/ti_sci_protocol.h b/include/linux/soc/ti/ti_sci_protocol.h
-index 9531ec823298..f3aed0b91564 100644
---- a/include/linux/soc/ti/ti_sci_protocol.h
-+++ b/include/linux/soc/ti/ti_sci_protocol.h
-@@ -342,6 +342,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
- #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_SUPR_TDPKT_VALID        BIT(11)
- #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_CREDIT_COUNT_VALID      BIT(12)
- #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_FDEPTH_VALID            BIT(13)
-+#define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_TDTYPE_VALID            BIT(15)
- 	u16 nav_id;
- 	u16 index;
- 	u8 tx_pause_on_err;
-@@ -359,6 +360,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
- 	u16 fdepth;
- 	u8 tx_sched_priority;
- 	u8 tx_burst_size;
-+	u8 tx_tdtype;
- };
- 
- /**
+ struct udma_match_data {
+ 	u32 psil_base;
+@@ -1586,7 +1587,8 @@ static int udma_tisci_tx_channel_config(struct udma_chan *uc)
+ 	req_tx.tx_supr_tdpkt = uc->notdpkt;
+ 	req_tx.tx_fetch_size = fetch_size >> 2;
+ 	req_tx.txcq_qnum = tc_ring;
+-	if (uc->ep_type == PSIL_EP_PDMA_XY) {
++	if (uc->ep_type == PSIL_EP_PDMA_XY &&
++	    ud->match_data->flags & UDMA_FLAG_TDTYPE) {
+ 		/* wait for peer to complete the teardown for PDMAs */
+ 		req_tx.valid_params |=
+ 				TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_TDTYPE_VALID;
+@@ -3032,7 +3034,7 @@ static struct udma_match_data am654_mcu_data = {
+ static struct udma_match_data j721e_main_data = {
+ 	.psil_base = 0x1000,
+ 	.enable_memcpy_support = true,
+-	.flags = UDMA_FLAG_PDMA_ACC32 | UDMA_FLAG_PDMA_BURST,
++	.flags = UDMA_FLAG_PDMA_ACC32 | UDMA_FLAG_PDMA_BURST | UDMA_FLAG_TDTYPE,
+ 	.statictr_z_mask = GENMASK(23, 0),
+ 	.rchan_oes_offset = 0x400,
+ 	.tpl_levels = 3,
+@@ -3046,7 +3048,7 @@ static struct udma_match_data j721e_main_data = {
+ static struct udma_match_data j721e_mcu_data = {
+ 	.psil_base = 0x6000,
+ 	.enable_memcpy_support = false, /* MEM_TO_MEM is slow via MCU UDMA */
+-	.flags = UDMA_FLAG_PDMA_ACC32 | UDMA_FLAG_PDMA_BURST,
++	.flags = UDMA_FLAG_PDMA_ACC32 | UDMA_FLAG_PDMA_BURST | UDMA_FLAG_TDTYPE,
+ 	.statictr_z_mask = GENMASK(23, 0),
+ 	.rchan_oes_offset = 0x400,
+ 	.tpl_levels = 2,
 -- 
 Peter
 
