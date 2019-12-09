@@ -2,59 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8392211668D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 06:49:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7DC91166C6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 07:20:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DzpdFkpmIqHt+HOrVATeTOSORau0cApfyQTsQL7JkDI=; b=at8820xCSIj0bb
-	4x5qJv6CxgJ8S9wmAlfwST+xxWDJZFqoqElAYPiI2PvKKtD5XzPp3tcYoXWz6k7s9/NiauPp8YL9l
-	DKTw2YzSjohCl94oKfq5kSuZNH0QCPSUbhuAkYoDoBJDFQ4SgYhS498YOK7VMXMRwzTQNcAxAAZtO
-	ymPjHdtWbK1fHI6fN+K5kjWY2hsQaNpr9l3hll9ayuvZeFHo4QWidCQ6yE7peeuSu30/7N8QgVNSS
-	xW5b/X80WD/RznAGLp2tRH6OvnamPqSk3Evnwt/MkCbItBfgYPiRXGPvL//dQ8f0mFBJAraH23Tdx
-	G4VIlH91Zmm1SB+YabeA==;
+	List-Owner; bh=vZjrwYjzj/rm0LJJNodbSnYTrqCk/GkXCgs2mhiLWIg=; b=X28/wt+Hae6wtz
+	94vdB+jfBeJreDEm1iwd8IXfDg/kGwvZNUc2/QwgFF4vY6fLesrT3W1EVKDPcCNEbnu1n4zdCQero
+	zrlO2bePqSekS1GJwzY3J2NngXqOr1iNy9cjUbJCPp/0LVmcyzMxqFtPfJp82SHkVRXAR/HZaJvVY
+	wh88G6QG/7fV/vZZFvhgrv1xkRSDHvYVJFhr0IbP7SJOYXivNqBDUPW8mNlzcHaYoFvCxKvLE6FQ/
+	omps9XnWWlWFsxKFIK2i1TSaz6+vQCW12qTkwO4SAP+VizE/3vJV6NPFRLdPvjdoOLgFcdL18IwoP
+	N1WAOf8QOQUgEdoweFog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieBv4-0002yo-Fk; Mon, 09 Dec 2019 05:49:18 +0000
+	id 1ieCPc-0005wx-0C; Mon, 09 Dec 2019 06:20:52 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieBuw-0002yH-IK; Mon, 09 Dec 2019 05:49:11 +0000
-X-UUID: 7dfd98404e724f388f27a43bbaead681-20191208
+ id 1ieCPG-0005mO-Dp; Mon, 09 Dec 2019 06:20:32 +0000
+X-UUID: 784f4cde3d1e4f76ae8ef552247e3b31-20191208
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=zK5djuSKYwqaaHgHxdED8AbROBXJzib5e6bG7MyafoQ=; 
- b=T0rnmY1g38CZXStFCH3SSNkP+iHjXCP0tF0EoP6CwBeQoRi4n9o1pk9Ho96wxCubp9pWELGxyyXm0HKFcEPuSoXA/wPFmg8ZanRnFpTpvrgHuTigNbrghjq+bWzQ2KFTzoGJE5E4XRp9r8kKGYpTxsJrJfRmd+eCOr66WRNRnJ0=;
-X-UUID: 7dfd98404e724f388f27a43bbaead681-20191208
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
+ bh=qnw6wE33vyzkOMWjMb+vL2f0wAVHY35hnYQicUwyzko=; 
+ b=ER4i4QeOr71Np0UaWIiuK/TuNVDZXCt5r8/Pl1Fui0N7Hy8Fx7gEEABi5EHetapjGfTOhHdyV75x8YtYsnwxrsc1SHukRNGpKMzoFRVyjV5CP25Aqn14UUvKaEV4FcV2j9pqEWoX7b4ouny/Kr0x9IPF1xGISZERGRvPqL1DEfQ=;
+X-UUID: 784f4cde3d1e4f76ae8ef552247e3b31-20191208
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <ming-fan.chen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 916638455; Sun, 08 Dec 2019 21:49:06 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ with ESMTP id 1855380284; Sun, 08 Dec 2019 22:20:21 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 8 Dec 2019 21:49:07 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 9 Dec 2019 13:48:43 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ 15.0.1395.4; Sun, 8 Dec 2019 22:20:34 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 9 Dec 2019 14:20:05 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 9 Dec 2019 13:48:36 +0800
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>, Thomas Gleixner
- <tglx@linutronix.de>, Alexander Potapenko <glider@google.com>, Josh Poimboeuf
- <jpoimboe@redhat.com>
-Subject: [PATCH] lib/stackdepot: Fix global out-of-bounds in stackdepot
-Date: Mon, 9 Dec 2019 13:48:49 +0800
-Message-ID: <20191209054849.26756-1-walter-zh.wu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ Frontend Transport; Mon, 9 Dec 2019 14:20:10 +0800
+From: Ming-Fan Chen <ming-fan.chen@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v2] memory: mtk-smi: Add bandwidth initial setting for MT6779
+Date: Mon, 9 Dec 2019 14:19:28 +0800
+Message-ID: <1575872371-671-1-git-send-email-ming-fan.chen@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_214910_608738_E45FE5BC 
-X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-CacheID: sfid-20191208_222030_470462_162CE0CC 
+X-CRM114-Status: UNSURE (   5.50  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -85,49 +83,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Walter Wu <walter-zh.wu@mediatek.com>, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- wsd_upstream <wsd_upstream@mediatek.com>
+Cc: devicetree@vger.kernel.org, Joerg
+ Roedel <jroedel@suse.de>, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
+ linux-mediatek@lists.infradead.org, Yong Wu <yong.wu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If the depot_index = STACK_ALLOC_MAX_SLABS - 2, then it will cause
-array out-of-bounds access, so that we should modify the detection
-to avoid this array out-of-bounds bug.
+This patch add description and bandwidth initial golden setting for MT6779 SMI.
+The setting make better performance of memory control for multimedia modules.
 
-Consider following call flow sequence:
+changelog since v1:
+-add description of GALS for mt6779 into smi-common documentation
+-remove unused define
+-rename structure member to correspond to related registers
+-replace pointer of array with single pointer to reduce intention
 
-stack_depot_save()
-   depot_alloc_stack()
-      if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) //pass
-      depot_index++  //depot_index = STACK_ALLOC_MAX_SLABS - 1
 
-stack_depot_save()
-   init_stack_slab()
-      stack_slabs[depot_index + 1]  //here get global out-of-bounds
+Ming-Fan Chen (2):
+  dt-bindings: mediatek: Add binding for MT6779 SMI
+  memory: mtk-smi: Add bandwidth initial golden setting for MT6779
 
-Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
----
- lib/stackdepot.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/lib/stackdepot.c b/lib/stackdepot.c
-index ed717dd08ff3..7e8a15e41600 100644
---- a/lib/stackdepot.c
-+++ b/lib/stackdepot.c
-@@ -106,7 +106,7 @@ static struct stack_record *depot_alloc_stack(unsigned long *entries, int size,
- 	required_size = ALIGN(required_size, 1 << STACK_ALLOC_ALIGN);
- 
- 	if (unlikely(depot_offset + required_size > STACK_ALLOC_SIZE)) {
--		if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) {
-+		if (unlikely(depot_index + 2 >= STACK_ALLOC_MAX_SLABS)) {
- 			WARN_ONCE(1, "Stack depot reached limit capacity");
- 			return NULL;
- 		}
--- 
-2.18.0
+ .../memory-controllers/mediatek,smi-common.txt     |    5 +-
+ .../memory-controllers/mediatek,smi-larb.txt       |    3 +-
+ drivers/memory/mtk-smi.c                           |  143 +++++++++++++++++++-
+ 3 files changed, 147 insertions(+), 4 deletions(-)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
