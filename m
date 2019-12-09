@@ -2,83 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21C4911790D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 23:08:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89107117912
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 23:09:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qPW1f++Ak5QkeDAvaSMftL945CoqdfBXYRXbhK1fhrE=; b=s/5cfauDQbSOAx
-	ozhXP5MJrd90DspWmeb+tHVCnJhdJ/1wNL+RB7MMnsJdp1+bXoOdIlx0/3D7cvL50f/BZx9Ep2Fqx
-	zPtkb91NKgILLdpGky58L8YiTxe0jmyDCTU3GkmvVorMse75BDquXAIIgXG/pPqp/3+gZugam11I1
-	6K7yMOKlqn5HO8VOFAV34bKms3dXnjm4CfmX2YkMzehOJ2lJ7Vlswrl8+EufouQs+zDPkr7QJs/Xa
-	ZnJp3y6F8iVAIsIJXQ7CQsMit++Nta9PpR4BPSma1nwa/POvXfaW2yWvcaLYtiOjsQlptod5ApAUB
-	ZDgfjIHkV5YPyk/26V7g==;
+	List-Owner; bh=nX7VdQokKlAHwXMU54v/RcVC2Mo0q2SpnlRsHyXBWVY=; b=FGGZ1WA3Ia35en
+	pR9IjuCJje/Cuyyg7F829MPyQZJ+4EA0+U/kyRpnw1q06GMsDA2KdR8GkJYgBulzvxFwCG1bdglFC
+	tHctK3unntO2I8bkM2zDYfb7wnc0Dunmo1erajeSeabdEuzAyIqD7fJGyn3dZp6vAssEUkkkbIULc
+	3CSxCOjnv+l9UH8goIUq0LlZoNYJE5ac6k2tNbUvaYW5TNKIlMKbElHU0WfbmslcXiaVzV7owuG9u
+	7mFfAge6f+TL/Qyj5yzkhCXAPDn9Hy03RaXb26hldHZ6e/HG4f/XNgExmpq9gTuHZ8YL2kuNqf2JE
+	75eipomFWZQXZlw34zXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieRCC-0004eW-6d; Mon, 09 Dec 2019 22:08:00 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1ieRDn-00059m-Tz; Mon, 09 Dec 2019 22:09:39 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieRC5-0004cx-Dy
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 22:07:54 +0000
-Received: by mail-pl1-x641.google.com with SMTP id o9so6370141plk.6
+ id 1ieRDf-00058p-V9
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 22:09:33 +0000
+Received: by mail-pg1-x541.google.com with SMTP id q127so7803500pga.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Dec 2019 14:07:53 -0800 (PST)
+ Mon, 09 Dec 2019 14:09:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=XV8tPDcRTX7RtlSDootkVo/0R7BkBqzFzuFusm8kdK8=;
- b=mCUG2mkefXUTSWgvB3xbkzIgqLcBXpg6xtwMaVhJcJn3hsuIc/8+Aptv75kjetgmYE
- sPhCvJmw3tdGhyPHcHphJ7WIGYzMB7HQtXa14FTFA4law3xUy2s6fHqDuQmuTGwAQjd/
- kYqm38zCX6wKpg0cAqIfQ1xvtT2jv/81RdI13YWhFixxkX+4WhTKkItSY/POk1qgKoJD
- YvEaxEMQJjFi0RyiKcGb+g/CUDY5dDAqWOIHMUtZS2uOqtxnKt6XwNlPDgZ6URWC4oWA
- fl0cuWe+Tk9i7biEczXXxbcRdo3WxA+mYfuxj6CUInFjbgFrHPp44atsS1kh3GEmTK4l
- x+Cw==
+ :mime-version; bh=aH72KfB+jd8LoZ9WTIWQOhLHCco482dBV+3OetYANfk=;
+ b=yqoI3WedmSPPH5+3eZ7ga+cYHKCC4gNQ3D5kXpyDlprI0f6kbGLO4sdxrvrd0bN8k6
+ H9qxWAzCI63pOPBlXKaTLeqU5rDqkz+dDqurJLkSfXa5POqq7j7/3RCRlj3SWjbYfYlj
+ V6fgcjE05Z6hk/oqlEos0KLQXDYHS5i8jbMMcwI/6LZbiYj8f/bEqhulSs28L8lYz78u
+ 3palGsGJGhkY3UHlFO+5WmaNEN26K/BQ+1wS+TOLDS0qIjD9erVYn15kMlV+PhJjo/Kw
+ lJFkuo6zDnOlNNAD8C9OmuvUXdiBHsPiRwOonBcrcwrbyUwcuozDGVu4y0jM8K4xGXOf
+ 1ekA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
  :message-id:mime-version;
- bh=XV8tPDcRTX7RtlSDootkVo/0R7BkBqzFzuFusm8kdK8=;
- b=UZBv0v+ey3ePqU+XN/PyNxneJjhbzLrFxf0D1GF5WTjGFTvUhxPq6g4zg5EktFRGtg
- 5NxNYpHFf5KtEOaakUILQEy5mF3gVGZNMYLiBCXnCTIvBLsuzb3QN9A5t/UoxdE2L+VL
- azpJCHhKrSXzEIR/h2AD2whJ6O9wo1xyoJh3G6ygnO+l8aLwgx7cOKZMjq6ltrKj6Fvn
- 7Xltdd3nym5/nfGii5T5KrEohSbk2blfiwDbRFAx3h7CuAyz18bZ6wlvqtdmw9rYwo6X
- xEQDK4iNmzT/s55wkK2TidRNxR/wDW1lI6RnpHRT1nFult135sQnu+cfDMjTrExFhkzF
- GbnA==
-X-Gm-Message-State: APjAAAW8lZJqp8IMml3FQTkp3n3OnsVmt/bfy94taNIhGoU303+a1d+X
- jUWX9GLc3UILeHIFisd3+6b4W8z524Kn0g==
-X-Google-Smtp-Source: APXvYqzyU6Xr2TUx9phu+0FjC0f8dtT+zfBB23R48rlsA4j6FU2F18WTjQ2d+qhgny05GK+RGN86MQ==
-X-Received: by 2002:a17:902:bcc8:: with SMTP id
- o8mr31506662pls.81.1575929272543; 
- Mon, 09 Dec 2019 14:07:52 -0800 (PST)
+ bh=aH72KfB+jd8LoZ9WTIWQOhLHCco482dBV+3OetYANfk=;
+ b=bdrTwm1wH9jb0cd0cJdKmz2Eh0nHS0XaB++m/1Lb+fXFzwv1cFNgpKt1kfH2lBAH4p
+ ZbxbG84XZkkG5o8ohM+vNk8kiVD4rzejjlmpM4ej/qWbl2w+zwPBnlzfpnzvpCJ/SSRR
+ gcpIk+E14vX35oGHNuozatJuj6ZL3NTioD0//I+k6z66sa09oy/ypEFu7ZnAi9hnCMDl
+ eUFQZRxkXZu+ikMkXt9F0dkGmDdrjat/Vaog6fbUL6OAcT4HpPHNeSZR3IwF2XJUdNxD
+ 2IU6+EgVGvmOHzfJo4WvZocHC+pgwn1ufaN7Uo/jJaiGK3oY5dsaAHCY0wTSU6eWh8OO
+ dYaQ==
+X-Gm-Message-State: APjAAAWch2E9GOaBiCM57ByxlaJ1aN4Ivs1rj3cZ1g0jrv+3PqpSaYQR
+ Fx3X6ejOnFK2zQIZ1rhiqG1agOIaa1X6Tw==
+X-Google-Smtp-Source: APXvYqw9VHnx8+RwX5no7IWuPVs1FzEgFK1TIEbb0vRSourFalI7XV39vudP3wtb+25GxinvpiQYEw==
+X-Received: by 2002:a62:8456:: with SMTP id k83mr17928443pfd.29.1575929371147; 
+ Mon, 09 Dec 2019 14:09:31 -0800 (PST)
 Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
  [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id a10sm456847pfc.35.2019.12.09.14.07.51
+ by smtp.gmail.com with ESMTPSA id j14sm501754pgs.57.2019.12.09.14.09.30
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 09 Dec 2019 14:07:51 -0800 (PST)
+ Mon, 09 Dec 2019 14:09:30 -0800 (PST)
 From: Kevin Hilman <khilman@baylibre.com>
 To: Neil Armstrong <narmstrong@baylibre.com>, dri-devel@lists.freedesktop.org
-Subject: Re: [PATCH v3 8/9] drm/meson: hold 32 lines after vsync to give time
- for AFBC start
-In-Reply-To: <20191021091509.3864-9-narmstrong@baylibre.com>
+Subject: Re: [PATCH v3 0/9] drm/meson: add AFBC support
+In-Reply-To: <20191021091509.3864-1-narmstrong@baylibre.com>
 References: <20191021091509.3864-1-narmstrong@baylibre.com>
- <20191021091509.3864-9-narmstrong@baylibre.com>
-Date: Mon, 09 Dec 2019 14:07:51 -0800
-Message-ID: <7hmuc1rw3s.fsf@baylibre.com>
+Date: Mon, 09 Dec 2019 14:09:30 -0800
+Message-ID: <7hk175rw11.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_140753_473080_F3D3E17C 
-X-CRM114-Status: UNSURE (   6.52  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191209_140932_000183_84FF4C1B 
+X-CRM114-Status: GOOD (  17.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,20 +101,77 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Neil Armstrong <narmstrong@baylibre.com> writes:
 
-> When using an AFBC encoded frame, the AFBC Decoder must be resetted,
-
-minor grammar nit: s/resetted/reset/
-
-> configured and enabled at each vsync IRQ.
+> This adds support for the ARM Framebuffer Compression decoders found
+> in the Amlogic GXM and G12A SoCs.
 >
-> To leave time for that, use the maximum lines hold time to give time
-> for AFBC setup and avoid visual glitches.
->
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> This patchset is a merge of v2 "drm/meson: add AFBC support" at [3] and v2
+> "drm/meson: implement RDMA for AFBC reset on vsync" at [4].
 
-otherwise...
+Oops, replied to the wrong series earlier...
+
+> The VPU embeds a "Register DMA" that can write a sequence of registers
+> on the VPU AHB bus, either manually or triggered by an internal IRQ
+> event like VSYNC or a line input counter.
+>
+> The Amlogic GXM and G12A AFBC decoder are totally different, the GXM only
+> handling only the AFBC v1.0 modes and the G12A decoder handling the
+> AFBC v1.2 modes.
+>
+> The G12A AFBC decoder is an external IP integrated in the video pipeline,
+> and the GXM AFBC decoder seems to the an Amlogic custom decoder more
+> tighly integrated in the video pipeline.
+>
+> The GXM AFBC decoder can handle only one AFBC plane for 2 available
+> OSD planes available in HW, and the G12A AFBC decoder can handle up
+> to 4 AFBC planes for up to 3 OSD planes available in HW.
+>
+> The Amlogic GXM supports 16x16 SPARSE and 16x16 SPLIT AFBC buffers up
+> to 4k.
+>
+> On the other side, for G12A SPLIT is mandatory in 16x16 block mode, but
+> for 4k modes 32x8+SPLIT AFBC buffers is manadatory for performances reasons.
+>
+> The Amlogic GXM and G12A AFBC decoders are integrated very differently.
+>
+> The Amlogic GXM has a direct output path to the OSD1 VIU pixel input,
+> because the GXM AFBC decoder seem to be a custom IP developed by Amlogic.
+>
+> On the other side, the Amlogic G12A AFBC decoder seems to be an external
+> IP that emit pixels on an AXI master hooked to a "Mali Unpack" block
+> feeding the OSD1 VIU pixel input.
+> This uses a weird "0x1000000" internal HW physical address on both
+> sides to transfer the pixels.
+>
+> For Amlogic GXM, the supported pixel formats are the same as the normal
+> linear OSD1 mode.
+>
+> On the other side, Amlogic added support for all AFBC v1.2 formats for
+> the G12A AFBC integration.
+>
+> The initial RDMA implementation handles a single channel (over 8), triggered
+> by the VSYNC irq and does not handle the RDMA irq.
+>
+> The RDMA will be usefull to reset and program the AFBC decoder unit
+> on each vsync without involving the interrupt handler that can
+> be masked for a long period of time, producing display glitches.
+>
+> For this we use the meson_rdma_writel_sync() which adds the register
+> write tuple (VPU register offset and register value) to the RDMA buffer
+> and write the value to the HW.
+>
+> When enabled, the RDMA is enabled to rewritte the same sequence at the
+> next VSYNC event, until a new buffer is committed to the OSD plane.
+>
+> For testing, the only available AFBC buffer generation is the Android
+> Yukawa Dvalin Android Mali blobs found at [1].
+>
+> Both SoCs has been tested using buffers generated under AOSP, but only
+> G12A was tested using a runtime stream of AFBC buffers, GXM was only
+> tested using static buffers loaded from files.
 
 Reviewed-by: Kevin Hilman <khilman@baylibre.com>
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
