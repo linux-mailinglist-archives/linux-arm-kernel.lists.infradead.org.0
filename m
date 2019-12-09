@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7F401176F6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 21:03:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BBE611770A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 21:10:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zDwbBkXeXsxLXGIc5VK3CPEzFoTgEO5gYXfCmAk5wjI=; b=KBnaBpGhHgKBFh
-	2fTiZl/2kRdxldzwImBJKncrATYu6/kgL7HD4NXolGsm1DxZZXhllvNbgs3PZZkvCZEFwexqS5lhq
-	Xnz0r/gfTimBLo1YaeRI6xLHAY4uU3jQTP3pvt7VTzJPF3sJOumYMllY5RZ+GV4tub8g03PvovA+d
-	idoFPgz1Iya5CHVAwjGObiJDc13t+RIFmgBxo0lvzwWxYGIVmJrNp5GLqJy9Ulb2AW3X7huLu9qTt
-	yWSsw51nPY93pnEWaw6Ohrnkj04MCEhCvh6nrMoH9EaJGT+Ak0gAOufjqsiRGOZSYAZ/7a1XYegOe
-	YPikDs2n/2V4tDvUcfAw==;
+	List-Owner; bh=WI6JSKKTO8Y+CjGmbyo4zMAPB43TET1U+ytyWrftDZk=; b=aionxj0nyk2s3A
+	v89FBm3GY17YWBC+JCjVVGbhr2WYD7nPRb73aHRX2q7mLyKv4LRlLhZNiIVLyYMu1zmUMSZ0V6AHn
+	WlWMia7YTLA4s2KfvspiXaJVk1n4+nsT4AMYyRrEejiyz1r3TXYBPuIyq/LjQpI7ZKXSdv111xOWl
+	uldhgJXzN+bP/fjQM3Kveea4lrIrBfkzDSBbrFoayeOYOZ4Hb1HNMY5h2Iti5/hAKAFeVY/wQrbLs
+	vFjZliU5wPDvUstsL9zRoRChmFec3hfg+z39LQZIHNhx0rBfwMf/Vbn0Agp+G6y2jyz3Z3hj2BWU+
+	tAKVfEUccXrsj+mCAfPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iePFs-0005JR-Dc; Mon, 09 Dec 2019 20:03:40 +0000
+	id 1iePMG-0000BE-SZ; Mon, 09 Dec 2019 20:10:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iePFl-0005IP-BG
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 20:03:34 +0000
+ id 1iePM6-0008FK-7L
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 20:10:07 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0E3072073D;
- Mon,  9 Dec 2019 20:03:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2B75E214D8;
+ Mon,  9 Dec 2019 20:10:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575921812;
- bh=A0I5xt4XVITb5z+wlWL8aR+iy4vFVHNdEWorhG4GJ/Q=;
+ s=default; t=1575922205;
+ bh=Diy0RAMb2nmCr+FApInTdUlXJLEjOPXITAFoPxtK6Lw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=EpZ4LttEWn+/f/Y3V6o4s1cgDDhtTtCGT82reKJT064VK/o1My1nkUMsM79YglWwX
- R7Zwgd0VkHepPrARH41qnKM9B8sdt7DnN0/1mdbe7Br1ZnU0EkMZJMmGOnbSfTt+AE
- hkqHJWZVKPdB6H94t2fQDteb8ikwRSiClkiVHGK0=
-Date: Mon, 9 Dec 2019 20:31:12 +0100
+ b=sZFLl1YErRFnSKRSMXOxm4n5/u2qhnNLjtgxyrohyoLZ+o8nhFndXIBnXQsAU+MM2
+ /0gsZJcFQhNPp305wZejd1Lh83xdrq+035ePlZU9W2siegqsB+I00VwRzR+OyCEFWq
+ FERNlByejYl2Jd5EifpsZNDR2TjecUkM4vsyRe9g=
+Date: Mon, 9 Dec 2019 20:37:29 +0100
 From: Maxime Ripard <mripard@kernel.org>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH] arm64: dts: allwinner: a64: set GPU clock to 432 MHz
-Message-ID: <20191209193112.qr6un5ryhyxwu6a5@hendrix.lan>
-References: <20191203021420.164129-1-anarsoul@gmail.com>
+To: Alistair Francis <alistair@alistair23.me>
+Subject: Re: [PATCH] arm64: allwinner: Enable Bluetooth and WiFi on sopine
+ baseboard
+Message-ID: <20191209193729.jfw2z4iqlhrzohse@hendrix.lan>
+References: <20191207192249.8346-1-alistair@alistair23.me>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191203021420.164129-1-anarsoul@gmail.com>
+In-Reply-To: <20191207192249.8346-1-alistair@alistair23.me>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_120333_409247_0BB866E8 
-X-CRM114-Status: GOOD (  14.28  )
+X-CRM114-CacheID: sfid-20191209_121006_330968_5318F2D6 
+X-CRM114-Status: GOOD (  15.23  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -75,40 +76,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, wens@csie.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, alistair23@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Mon, Dec 02, 2019 at 06:14:20PM -0800, Vasily Khoruzhick wrote:
-> That's what BSP kernel sets it to and it seems to work fine.
+On Sat, Dec 07, 2019 at 11:22:49AM -0800, Alistair Francis wrote:
+> The sopine board has an optional RTL8723BS WiFi + BT module that can be
+> connected to UART1. Add this to the device tree so that it will work for
+> users if connected.
 >
-> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> Signed-off-by: Alistair Francis <alistair@alistair23.me>
 > ---
->  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 3 +++
->  1 file changed, 3 insertions(+)
+>  .../dts/allwinner/sun50i-a64-sopine-baseboard.dts  | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
 >
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> index 27e48234f1c2..0051f39b3d98 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> @@ -976,6 +976,9 @@ mali: gpu@1c40000 {
->  			clocks = <&ccu CLK_BUS_GPU>, <&ccu CLK_GPU>;
->  			clock-names = "bus", "core";
->  			resets = <&ccu RST_BUS_GPU>;
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+> index 920103ec0046..0a91f9d8ed47 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-sopine-baseboard.dts
+> @@ -214,6 +214,20 @@ &uart0 {
+>  	status = "okay";
+>  };
+>
+> +&uart1 {
+> +        pinctrl-names = "default";
+> +        pinctrl-0 = <&uart1_pins>, <&uart1_rts_cts_pins>;
+> +        status = "okay";
 > +
-> +			assigned-clocks = <&ccu CLK_GPU>;
-> +			assigned-clock-rates = <432000000>;
->  		};
+> +        bluetooth {
+> +                compatible = "realtek,rtl8723bs-bt";
+> +                reset-gpios = <&r_pio 0 4 GPIO_ACTIVE_LOW>; /* PL4 */
+> +                device-wake-gpios = <&r_pio 0 5 GPIO_ACTIVE_HIGH>; /* PL5 */
+> +                host-wake-gpios = <&r_pio 0 6 GPIO_ACTIVE_HIGH>; /* PL6 */
+> +                firmware-postfix = "pine64";
+> +        };
+> +};
+> +
 
-This doesn't really guarantee anything. If the GPU needs to remain at
-that rate, it should be set in the driver. I just saw that you did
-send a PR in github, I just merged it.
+Output from checkpatch:
+total: 10 errors, 11 warnings, 0 checks, 20 lines checked
+
+More importantly, that binding isn't documented, and doesn't have a
+driver either.
+
+I guess you want to have a look at:
+https://www.spinics.net/lists/arm-kernel/msg771488.html
 
 Maxime
 
