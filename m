@@ -2,84 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C75FA116FC6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 15:57:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 837C4116FF5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 16:10:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ooFGqWjgUf/WcPR6pPG5Y2H0Iq0rS0gR0HfBl0KRgpk=; b=Tf2yf6dj5AJCZK
-	2PDmbW+3/dP4gSkG7Rys9Xl1qwuWKdY5y8QhuTD3E2SqMVFhhwgrFfGc4ib5FXHpMGOtOxTInU/1D
-	XVXD4nq1BAZ6BD2hr9zV1/1OUZ/KH37pnKYzUeTmyIyHTuGHMwTgEFUN4f6RWZqaO5eU8+/hy/lDL
-	S3+FkcGfnd+uGyO1st/LC/6JF/r7SiLDVROuyg1A1MN7vIQOjocBfpglUTW/JGEXDEpxizIGrPY8A
-	0SMKccREs4t9DX0A+5zeGJHbjgPNdToM0aPHNoHXig1EAPwLZRcGggkvizEvh5g8QrjiXUvZThIZy
-	dcO6zYcbhSm2qqyHxe0A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IExr1/IS03FLKVdhpo7o6M666fM/oG6qFO+81eoHUHY=; b=LA6PcWqKfY+Onx7C4c/gWH/Ug
+	vfTTox8149oAo2dCr8c4FlhWM6XRfPhKi4tPETkPbIGBXPxsyu9nehg05qK48kLV+/dElUY0Nv120
+	QmTNpUCkmZqkguboRuhIwBQL/+eKsTWCcjfvjRjlcQELvhJSJ5lv2gSU9hOaZa6+1nQUoj1q4IO51
+	a56YEElC0dOtw94WYbkecfbJwf28aoU7ruzIa4J+HELkYGs2CenX1+/gKTmZwC4/TRYX/bY/ajm4a
+	JHxw3Frp2saEDwulcWB2yo6g7XBGFthqlajUz+V4ATDlVGl0nMOl/myRzch3+7m7n8bs0PAsTJI5/
+	XXRMA2Jug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieKTD-0003QB-FD; Mon, 09 Dec 2019 14:57:07 +0000
-Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1ieKfx-0000cX-1a; Mon, 09 Dec 2019 15:10:17 +0000
+Received: from mail.manjaro.org ([176.9.38.148] helo=manjaro.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieKT3-0003Oh-5q; Mon, 09 Dec 2019 14:56:58 +0000
-Received: by mail-il1-x142.google.com with SMTP id f6so12943645ilh.9;
- Mon, 09 Dec 2019 06:56:54 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GZjkca3Zp9sYYYIS/QPCEF0H2DGmE3kQodC7U7RI6jg=;
- b=Jo1DFtbfEqbVJQq5XZ5LYzCv5LfIMXre5rs2IBqXAEswSM4ZyGHTOACUpAWl/JxobF
- HLX/pPfXm0RL9M3l645yavzaROmAbjPrumBgCxOs+qt0jECTLvAP2saRGhxDiE4oVabe
- x5ksCotFtF8bz+kAXYWj99jBeJUme6AdylQlFhZHK5Pd5Gk1t3eZiddRZuYK0LK40RxD
- YSVYDjyxUtLqzzIQK4xOZoi+glaFkyr5SiLcxWGHnk44UhVVdqwlxJe//NV2RaRGPTNP
- gl8tmVv118OmwBXVwaHHpaVbbEq1vi6cVvltYUcazpnix7+plbZ6LF5IODbwmjQ4/C3R
- 9miQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GZjkca3Zp9sYYYIS/QPCEF0H2DGmE3kQodC7U7RI6jg=;
- b=CQnoLY2AIiinvXXOJHg20vyTFgScMhGs/G42CXO+rhE369Qj2EYDU/AIEmP/u3/O+x
- +UrcUyYxMmnf6dj+uqPUXNOfud6k2GX+B/v26A+Lnpy9B5kcp4yS++bXDdRt6xnNzs7V
- kyXqZTnQmUsPQUTa8zLFVG7ahUu0zkzQSibntUamn05d90b2FItihEQgA44uwFGr78PM
- YT6HNuHyI99rr9RVK4SwA/UK26/2bl0p8zwLW41uURNfSDcBKXP3rsnyKjDxWcuv0vRE
- hkVnmaMkcOW1LnmUsqSXvtxIpLtcJLlS4hpDBgyl8yM7dorjjKHPGu+OkovJJGLKHXPo
- OIAQ==
-X-Gm-Message-State: APjAAAWEAuQV5+3be/JmJfnylYvaPsfZ0RdXVDp2Jt9hcxZxMFY2O+kJ
- /SH1+WUovBd1ZT0VhjWtVP9tTZ4tI73tFnG5CJY=
-X-Google-Smtp-Source: APXvYqxlvrvi0P/1yFULp5Ov9uTz23XUXUnTAB4CPJ8ux5bZ/ALMike0pN8bBYyFrKhz/ds6VBHl/XO9ocuzIVo34UE=
-X-Received: by 2002:a92:3919:: with SMTP id g25mr10786954ila.221.1575903414183; 
- Mon, 09 Dec 2019 06:56:54 -0800 (PST)
-MIME-Version: 1.0
+ id 1ieKfm-0007yd-LO; Mon, 09 Dec 2019 15:10:08 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by manjaro.org (Postfix) with ESMTP id ED77136E3C6B;
+ Mon,  9 Dec 2019 15:52:06 +0100 (CET)
+X-Virus-Scanned: Debian amavisd-new at manjaro.org
+Received: from manjaro.org ([127.0.0.1])
+ by localhost (manjaro.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id ROUn39D3oXYX; Mon,  9 Dec 2019 15:52:04 +0100 (CET)
+From: Tobias Schramm <t.schramm@manjaro.org>
+Subject: Re: [RFCv1 0/8] RK3399 clean shutdown issue
+To: Peter Geis <pgwipeout@gmail.com>, Robin Murphy <robin.murphy@arm.com>
 References: <20191206184536.2507-1-linux.amoon@gmail.com>
  <724aa7db-3838-16f9-d344-1789ae2a5746@arm.com>
-In-Reply-To: <724aa7db-3838-16f9-d344-1789ae2a5746@arm.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Mon, 9 Dec 2019 20:26:42 +0530
-Message-ID: <CANAwSgTPrP5FS3xb7SadZ+BwASWQxfO8rBmno8ZW0JzAxcqWKA@mail.gmail.com>
-Subject: Re: [RFCv1 0/8] RK3399 clean shutdown issue
-To: Robin Murphy <robin.murphy@arm.com>
+ <CAMdYzYoZY5gau=DGtPhk9CPV_WcyM4wjR9o+rPyaQfOzoy2Y=Q@mail.gmail.com>
+Message-ID: <5baf8423-8aa6-21a4-b066-71e3d12330cd@manjaro.org>
+Date: Mon, 9 Dec 2019 15:51:04 +0100
+MIME-Version: 1.0
+In-Reply-To: <CAMdYzYoZY5gau=DGtPhk9CPV_WcyM4wjR9o+rPyaQfOzoy2Y=Q@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_065657_254599_EDD3D2AE 
-X-CRM114-Status: GOOD (  14.16  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191209_071006_862005_F0ABCC49 
+X-CRM114-Status: GOOD (  15.19  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (linux.amoon[at]gmail.com)
+ no trust [176.9.38.148 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,70 +63,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Daniel Schultz <d.schultz@phytec.de>,
- Heiko Stuebner <heiko@sntech.de>, Linux Kernel <linux-kernel@vger.kernel.org>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Daniel Schultz <d.schultz@phytec.de>, Heiko Stuebner <heiko@sntech.de>,
+ linux-kernel@vger.kernel.org,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
  Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin,
+Hi,
 
-On Mon, 9 Dec 2019 at 18:59, Robin Murphy <robin.murphy@arm.com> wrote:
+> On Mon, Dec 9, 2019 at 8:29 AM Robin Murphy <robin.murphy@arm.com> wrote:
+>> On 06/12/2019 6:45 pm, Anand Moon wrote:
+>>> Most of the RK3399 SBC boards do not perform clean
+>>> shutdown and clean reboot.
+>> FWIW reboot problems on RK3399 have been tracked down to issues in
+>> upstream ATF, and are unrelated to the PMIC.
+>>
+>>> These patches try to help resolve the issue with proper
+>>> shutdown by turning off the PMIC.
+>> As mentioned elsewhere[1], although this is what the BSP kernel seems to
+>> do, and in practice it's unlikely to matter for the majority of devboard
+>> users like you and me, I still feel a bit uncomfortable with this
+>> solution for systems using ATF as in principle the secure world might
+>> want to know about orderly shutdowns, and this effectively makes every
+>> shutdown an unexpected power loss from secure software's point of view.
+>>
+>> Robin.
+> Since ATF is operating completely in volatile memory, and shouldn't be
+> touching hardware once it passes off control to the kernel anyways,
+> what is the harm of pulling the rug out from under it?
+> If this idea is to prevent issues in the future, such as if ATF does
+> gain the ability to preempt hardware control, then at that time ATF
+> will need to be able to handle actually powering off devices using the
+> same functionality.
+
+As far as I know ATF implements PSCI, doesn't it? Thus I would assume 
+that it should most definitely handle power off for all platforms as 
+indicated by the presence of platform handlers in [1].
+
+> But as we discussed previously, ATF doesn't have this capability, so
+> in this case any board without a dedicated power-off gpio will be
+> unable to power off at all.
+> Also it seems that giving ATF this functionality, with the current
+> state of ATF, would be cost prohibitive.
 >
-> On 06/12/2019 6:45 pm, Anand Moon wrote:
-> > Most of the RK3399 SBC boards do not perform clean
-> > shutdown and clean reboot.
->
-> FWIW reboot problems on RK3399 have been tracked down to issues in
-> upstream ATF, and are unrelated to the PMIC.
+> I personally feel that allowing the kernel to do this is a solution to
+> the problem we have now.
 
-Yes I am aware of this changes.
-But, I have tired to study *RK808 datasheet V1.4* [0] below section
-*5.2.3 Power Channel Control/Monitor Registers*
-for clean reboot I was going to try disable some bit in below
-into reboot handle in the future patch.
+Maybe I'm missing something here but I'd suggest that implementing an 
+i2c driver in the rockchip platform part of ATF using libfdt to find the 
+PMIC from the devicetree would be the way to go.
 
-DCDC_EN_REG
-SLEEP_SET_OFF_REG1
-SLEEP_SET_OFF_REG2
-DCDC_UV_STS_REG
+[1] 
+https://github.com/ARM-software/arm-trusted-firmware/blob/master/lib/psci/psci_system_off.c#L31
 
-I was going see if this helps to do clean reboot.
-further more use this in suspend/resume operation.
-
-[0] http://rockchip.fr/RK808%20datasheet%20V1.4.pdf
-
-But I feed that their is some more issue with related to mmc or PCIe
-not able to cleanly release the resources while reboot which caused
-then to disable after reboot.
-
->
-> > These patches try to help resolve the issue with proper
-> > shutdown by turning off the PMIC.
->
-> As mentioned elsewhere[1], although this is what the BSP kernel seems to
-> do, and in practice it's unlikely to matter for the majority of devboard
-> users like you and me, I still feel a bit uncomfortable with this
-> solution for systems using ATF as in principle the secure world might
-> want to know about orderly shutdowns, and this effectively makes every
-> shutdown an unexpected power loss from secure software's point of view.
->
-> Robin.
->
-> [1]
-> http://lists.infradead.org/pipermail/linux-rockchip/2019-December/028183.html
->
-
-Yes I have follow the mailing list and I read this thread.
-I am not aware of ATF complete architecture.
-
--Anand
 
 _______________________________________________
 linux-arm-kernel mailing list
