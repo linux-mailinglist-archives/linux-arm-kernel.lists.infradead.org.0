@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DEC81164AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 01:57:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6414A1164B4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 02:06:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pblj4LzBq9IhFlvF7ZXl3w7MnKnKIE+sFjA1rwmf0z8=; b=aGALRmuIrn3hg2
-	vUUpgFC5jCNyeJbaDbu67QdbhZRGCUezw9UpRwXLKXEWzJQ37WVXpTp1sI/RwNGrRp3wQDQlqRHw4
-	jR4gpiTwfVAAuFJeOaI5zbdjd4WDBoNQ4C/yrvnmuoAOO5aNhdHpSkZBw1s+wHfLHV+W6JY5JExHE
-	uryabQW+lniK1d9xjV/HMbU2QQhJYjowvZhCO8aZl1VdIWJzLRzT89+NNjFPUBUvuxSl9hLtdrE0T
-	FdDVpru33JnImBMQKQ8pOfya35zMbW3rMGEO9J14r/IUI6Xgje6Xmi/aNcw9DI3J+Nq/5RJNgkzQW
-	b8i9KuuIblsMSTYFyFsA==;
+	List-Owner; bh=eijQa501aQftPxpVjpG8wznBIynNWgkg+hhLI3Tb8SQ=; b=WfEp93IA5/OcOj
+	/IXKaEPlOKT017af6rpDXeLdUDn0JeDn41lbaGtgxqeZ4zjoBqGezqsfuyFq+YQzHNG0rnR5AlGFh
+	q2Aknl3hXa/2BtP6qaSNgNz9tU2LXfbXLohBINIzR5K66LLv42ZhfL7Hkw0AajEn0yorqzaGffgcL
+	F53/z6KLzLjPDzade3qGVAutdKir3yPhOJQ3FFERV/miDh4xQEUgBnNY+KKteHMUbdGsG/KuXt2lq
+	3wsypI9HKuIUBU4O5OOTkFz3QzNgoRGvOu7PLtzQgMk1Qrc8/F42NlBeU6VnYlCWnv3zOHckgDAKW
+	QBCpTrwziTv2VrXnSQRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ie7M6-0007kw-6P; Mon, 09 Dec 2019 00:56:54 +0000
+	id 1ie7VD-0002az-UN; Mon, 09 Dec 2019 01:06:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ie7Lu-0007jx-VQ
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 00:56:44 +0000
+ id 1ie7V6-0002aR-MK
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 01:06:14 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 97F3B206DB;
- Mon,  9 Dec 2019 00:56:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DB68A2070A;
+ Mon,  9 Dec 2019 01:06:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575853001;
- bh=el/OTbphV9HjIKRMZ2QKo2lfvib9RuNgPJS+Z3thZog=;
+ s=default; t=1575853572;
+ bh=diImKIxWYiCfkVFDpFphmhIAKhSJkzitOSJh3ppOi8c=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=c9hAO1IfDZP+nrTOhuZ0GOxHHLzXnHkYhn2wCFOWaTPBcARl2uQSPFeKkPVcTmMUF
- lSIYNs+VxtvZXxSo5aQO9RkHIC+UF4KLBlIjolglbr899AF/w6eurnY0M6lHPri63X
- jp5olO3T97dRFMojqvojRCxYmfvgi7oGs1uQQDmc=
-Date: Mon, 9 Dec 2019 08:56:26 +0800
+ b=JXD0FoNc+Hf9Pd51Sg5TFhXQdy/jILHk2oxaKvx8nNkgYUTogvLeifcwjg2FefGpu
+ FzzScTc/MEMZtXZ3xiDSD8l7ZrVSWXeWD4vJE+XtTnMutj0mA1p614qMS5TZuADRYg
+ zPnqBm3su8c94kAu9k4IZ5Ac3q0m7mrpYaFcdEQk=
+Date: Mon, 9 Dec 2019 09:05:55 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Andreas Kemnade <andreas@kemnade.info>
-Subject: Re: [PATCH] ARM: dts: e60k02: fix power button
-Message-ID: <20191209005621.GO3365@dragon>
-References: <20191111202959.24189-1-andreas@kemnade.info>
- <20191204123645.GL3365@dragon>
- <20191205070612.27204646@kemnade.info>
+To: Abel Vesa <abel.vesa@nxp.com>
+Subject: Re: [PATCH 1/3] dt-bindings: imx8-clock: Add ADMA clock ids
+Message-ID: <20191209010031.GP3365@dragon>
+References: <1573647909-31081-1-git-send-email-abel.vesa@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191205070612.27204646@kemnade.info>
+In-Reply-To: <1573647909-31081-1-git-send-email-abel.vesa@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_165643_042215_7B8D2F40 
-X-CRM114-Status: GOOD (  16.56  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191208_170612_772233_D74C3411 
+X-CRM114-Status: GOOD (  13.23  )
+X-Spam-Score: -4.4 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-4.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
@@ -66,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -78,52 +77,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org,
- "H . Nikolaus Schaller" <hns@goldelico.com>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Stephen Boyd <sboyd@kernel.org>, "S.j. Wang" <shengjiu.wang@nxp.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 05, 2019 at 07:06:12AM +0100, Andreas Kemnade wrote:
-> On Wed, 4 Dec 2019 20:36:47 +0800
-> Shawn Guo <shawnguo@kernel.org> wrote:
+On Wed, Nov 13, 2019 at 12:25:13PM +0000, Abel Vesa wrote:
+> According to the RM, the Audio and DMA (ADMA) subsystem is a collection
+> of audio peripherals and some system modules.
+> Add the ADMA specific clock ids to the dt-bindings clock file.
 > 
-> > On Mon, Nov 11, 2019 at 09:29:59PM +0100, Andreas Kemnade wrote:
-> > > The power button was only producing irqs, but no key events,
-> > > Forced power down with long key press works, so probably
-> > > only a short spike arrives at the SoC.
-> > > Further investigation shows that LDORTC2 is off after boot
-> > > of the vendor kernel. LDORTC2 is shared with a GPIO at the pmic
-> > > which probably transfers the button press to the SoC.
-> > > That regulator off at boot, so "regulator-boot-on" is definitively
-> > > wrong. So remove that.
-> > > 
-> > > Reported-by: H. Nikolaus Schaller <hns@goldelico.com>
-> > > Signed-off-by: Andreas Kemnade <andreas@kemnade.info>  
-> > 
-> > Do you want this go into 5.5-rc as a fix?  In that case, we may need a
-> > Fixes tag here.
-> > 
-> well, now there is 
-> regulator: core: Let boot-on regulators be powered off
-> so the power button should work after regulator_late_cleanup()
-> is called but that is usually some time after userspace has started,
-> so it would be better to have that in. And of course dt should
-> correctly describe the hardware. That would be
+> Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
+> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+> ---
+>  include/dt-bindings/clock/imx8-clock.h | 96 +++++++++++++++++++++++++++++++++-
+>  1 file changed, 94 insertions(+), 2 deletions(-)
 > 
-> Fixes: c100ea86e6ab ("ARM: dts: add Netronix E60K02 board common file")
+> diff --git a/include/dt-bindings/clock/imx8-clock.h b/include/dt-bindings/clock/imx8-clock.h
+> index 673a8c6..6e0c752 100644
+> --- a/include/dt-bindings/clock/imx8-clock.h
+> +++ b/include/dt-bindings/clock/imx8-clock.h
+> @@ -131,7 +131,60 @@
+>  #define IMX_ADMA_PWM_CLK				188
+>  #define IMX_ADMA_LCD_CLK				189
+>  
+> -#define IMX_SCU_CLK_END					190
+> +#define IMX_ADMA_AUD_PLL0				190
+> +#define IMX_ADMA_AUD_PLL1				191
+> +
+> +#define IMX_ADMA_AUD_PLL_DIV_CLK0_CLK			192
+> +#define IMX_ADMA_AUD_PLL_DIV_CLK1_CLK			193
+> +#define IMX_ADMA_AUD_REC_CLK0_CLK			194
+> +#define IMX_ADMA_AUD_REC_CLK1_CLK			195
+> +
+> +/* CM40 SS */
+> +#define IMX_CM40_IPG_CLK				196
+> +#define IMX_CM40_I2C_DIV				197
 
-Applied with the tag.
-
-> 
-> BTW: I have not seen your 5.5 stuff in Linus' tree yet. Seems that Olof
-> has not sent his pull request yet or is there bigger trouble?
-
-Now they are in v5.5-rc1.
+These two don't look like ADMA clock.
 
 Shawn
+
+> +
+> +#define IMX_SCU_CLK_END					198
+> +
+> +#define IMX_ADMA_ACM_AUD_CLK0_SEL			0
+> +#define IMX_ADMA_ACM_AUD_CLK0_CLK			1
+> +#define IMX_ADMA_ACM_AUD_CLK1_SEL			2
+> +#define IMX_ADMA_ACM_AUD_CLK1_CLK			3
+> +#define IMX_ADMA_ACM_MCLKOUT0_SEL			4
+> +#define IMX_ADMA_ACM_MCLKOUT1_SEL			5
+> +#define IMX_ADMA_ACM_ESAI0_MCLK_SEL			6
+> +#define IMX_ADMA_ACM_GPT0_MUX_CLK_SEL			7
+> +#define IMX_ADMA_ACM_GPT1_MUX_CLK_SEL			8
+> +#define IMX_ADMA_ACM_GPT2_MUX_CLK_SEL			9
+> +#define IMX_ADMA_ACM_GPT3_MUX_CLK_SEL			10
+> +#define IMX_ADMA_ACM_GPT4_MUX_CLK_SEL			11
+> +#define IMX_ADMA_ACM_GPT5_MUX_CLK_SEL			12
+> +#define IMX_ADMA_ACM_SAI0_MCLK_SEL			13
+> +#define IMX_ADMA_ACM_SAI1_MCLK_SEL			14
+> +#define IMX_ADMA_ACM_SAI2_MCLK_SEL			15
+> +#define IMX_ADMA_ACM_SAI3_MCLK_SEL			16
+> +#define IMX_ADMA_ACM_SAI4_MCLK_SEL			17
+> +#define IMX_ADMA_ACM_SAI5_MCLK_SEL			18
+> +#define IMX_ADMA_ACM_SPDIF0_TX_CLK_SEL			19
+> +#define IMX_ADMA_ACM_MQS_TX_CLK_SEL			20
+> +#define IMX_ADMA_ACM_ASRC0_MUX_CLK_SEL			21
+> +#define IMX_ADMA_ACM_ASRC1_MUX_CLK_SEL			22
+> +
+> +#define IMX_ADMA_EXT_AUD_MCLK0				23
+> +#define IMX_ADMA_EXT_AUD_MCLK1				24
+> +#define IMX_ADMA_ESAI0_RX_CLK				25
+> +#define IMX_ADMA_ESAI0_RX_HF_CLK			26
+> +#define IMX_ADMA_ESAI0_TX_CLK				27
+> +#define IMX_ADMA_ESAI0_TX_HF_CLK			28
+> +#define IMX_ADMA_SPDIF0_RX				29
+> +#define IMX_ADMA_SAI0_RX_BCLK				30
+> +#define IMX_ADMA_SAI0_TX_BCLK				31
+> +#define IMX_ADMA_SAI1_RX_BCLK				32
+> +#define IMX_ADMA_SAI1_TX_BCLK				33
+> +#define IMX_ADMA_SAI2_RX_BCLK				34
+> +#define IMX_ADMA_SAI3_RX_BCLK				35
+> +#define IMX_ADMA_SAI4_RX_BCLK				36
+> +
+> +#define IMX_ADMA_ACM_CLK_END				37
+>  
+>  /* LPCG clocks */
+>  
+> @@ -287,7 +340,46 @@
+>  #define IMX_ADMA_LPCG_DSP_IPG_CLK			42
+>  #define IMX_ADMA_LPCG_DSP_CORE_CLK			43
+>  #define IMX_ADMA_LPCG_OCRAM_IPG_CLK			44
+> +#define IMX_ADMA_LPCG_AMIX_IPG_CLK			45
+> +#define IMX_ADMA_LPCG_ESAI_0_IPG_CLK			46
+> +#define IMX_ADMA_LPCG_ESAI_0_EXTAL_CLK			47
+> +#define IMX_ADMA_LPCG_SAI_0_IPG_CLK			48
+> +#define IMX_ADMA_LPCG_SAI_0_MCLK			49
+> +#define IMX_ADMA_LPCG_SAI_1_IPG_CLK			50
+> +#define IMX_ADMA_LPCG_SAI_1_MCLK			51
+> +#define IMX_ADMA_LPCG_SAI_2_IPG_CLK			52
+> +#define IMX_ADMA_LPCG_SAI_2_MCLK			53
+> +#define IMX_ADMA_LPCG_SAI_3_IPG_CLK			54
+> +#define IMX_ADMA_LPCG_SAI_3_MCLK			55
+> +#define IMX_ADMA_LPCG_SAI_4_IPG_CLK			56
+> +#define IMX_ADMA_LPCG_SAI_4_MCLK			57
+> +#define IMX_ADMA_LPCG_SAI_5_IPG_CLK			58
+> +#define IMX_ADMA_LPCG_SAI_5_MCLK			59
+> +#define IMX_ADMA_LPCG_MQS_IPG_CLK			60
+> +#define IMX_ADMA_LPCG_MQS_MCLK				61
+> +#define IMX_ADMA_LPCG_GPT5_IPG_CLK			62
+> +#define IMX_ADMA_LPCG_GPT5_CLKIN			63
+> +#define IMX_ADMA_LPCG_GPT6_IPG_CLK			64
+> +#define IMX_ADMA_LPCG_GPT6_CLKIN			65
+> +#define IMX_ADMA_LPCG_GPT7_IPG_CLK			66
+> +#define IMX_ADMA_LPCG_GPT7_CLKIN			67
+> +#define IMX_ADMA_LPCG_GPT8_IPG_CLK			68
+> +#define IMX_ADMA_LPCG_GPT8_CLKIN			69
+> +#define IMX_ADMA_LPCG_GPT9_IPG_CLK			70
+> +#define IMX_ADMA_LPCG_GPT9_CLKIN			71
+> +#define IMX_ADMA_LPCG_GPT10_IPG_CLK			72
+> +#define IMX_ADMA_LPCG_GPT10_CLKIN			73
+> +#define IMX_ADMA_LPCG_MCLKOUT0				74
+> +#define IMX_ADMA_LPCG_MCLKOUT1				75
+> +#define IMX_ADMA_LPCG_SPDIF_0_TX_CLK			76
+> +#define IMX_ADMA_LPCG_SPDIF_0_GCLKW			77
+> +#define IMX_ADMA_LPCG_ASRC_0_IPG_CLK			79
+> +#define IMX_ADMA_LPCG_ASRC_1_IPG_CLK			80
+> +#define IMX_ADMA_LPCG_AUD_PLL_DIV_CLK0_CLK		81
+> +#define IMX_ADMA_LPCG_AUD_PLL_DIV_CLK1_CLK		82
+> +#define IMX_ADMA_LPCG_AUD_REC_CLK0_CLK			83
+> +#define IMX_ADMA_LPCG_AUD_REC_CLK1_CLK			84
+>  
+> -#define IMX_ADMA_LPCG_CLK_END				45
+> +#define IMX_ADMA_LPCG_CLK_END				85
+>  
+>  #endif /* __DT_BINDINGS_CLOCK_IMX_H */
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
