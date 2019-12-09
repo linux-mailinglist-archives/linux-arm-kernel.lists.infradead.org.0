@@ -2,137 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 175E911670F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 07:43:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEBD6116712
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 07:44:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pnbmiDxxP0XIInpgFd1Ggj+FmXoWKrLjmaBPWYmGmsI=; b=KfNQf0MQ5o0O6S
-	ygC3L7aJq5X5VIUfFs9gBCuYdA+NZTfN/mXB4G034UOHv3Au6vlnayvndWQCVjcVplmY04ABktABI
-	GaNl0s0t/XO9kYI0y840i/X4BqK73XshqMQep+DDzAM2EY2WX63MIuPM4G9c8LAP/AVHtBIFPW4U5
-	IO5z/+iynJGgcn57Lys1nNbPyHZwBLBfAwlH0OmA4IIb1MDtjwF3UwoLJ25IglBf6wG8LJjhL7DX3
-	LCUIHOytgO6tDosBJLh8n8EtR7DP3s55TVf3uUrK+FB2BiKVtUyqPToZ0VdHYVUeBrjz5SZOyWMvy
-	QEolrapP5NPQ9uTe5qmg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9YIjMBjDdHqcOUwVC4hZK5Qm2yDxVRjmopf1Q28LvnM=; b=ZfYUsYrb2ykOn4
+	4WNo2d7bO22c92gYrZy2DuvKFEM9+JbUYekNY19NQk8N4MIAC4DSKT0gT3IETnH+DuaGcBCCdMHxB
+	4iDRT+MoPpLwZVWvRzAUgTvIYuoIZKR8qks1NreCm+f53UYR2ECCQCdfNUxRJTkcZCSIYzp122qyT
+	5YkBNwCf9S4rHQ0R/w7VveSPEzqxBdQ9BdGvBI15RTJmYTmY6v2Yfw/XH2XhgBfq6ijOaPmqHOfEv
+	UChLtloRuYoVooyLp2weII2IOIiwvWtL56b5oW4BSpx1gYvSsydDWBSi+Zv/KVjGNYwQxj9V/oUNu
+	I8l9Z/COzbv4l68FpcWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieClj-0007Dn-4C; Mon, 09 Dec 2019 06:43:43 +0000
-Received: from mail-mw2nam10on2087.outbound.protection.outlook.com
- ([40.107.94.87] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
+	id 1ieCmN-0007a5-PE; Mon, 09 Dec 2019 06:44:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieCl7-0006uu-CV
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 06:43:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=I5FCFC7uXNGc3qZa8N+qoclEOOjtuYDX63pX8Zbvudql8dgbbGU55heuPQOStT7icyi1mcoNFumpqK5QsFwCo+i0oIxvgn771gSq04vhVduvvX3biJV+3xyHISxxj6wZ/WXHkjn8OQKYs5XWul/FDEFSaGosQwbK5VVMhXKExCl7paL3p57G4WL9bZNcFBpgdgccHqMmKPDlJt3+/OGvyBZlUD0690A8nQWHJ/3jAqH10A98YYkJ2/L6eZ/W7en9LgYMKLzy+G2YguxVb+gHDPfzBhcNz37mpfLt37boJsdl087bUSyK7gOK7XBiWoFTh7lm4DZKmQqBypTPrZI97Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=apPILfMRueEB1z7Fh68u4wPtwBgtf5coUL8hAfR6K1Q=;
- b=Z4qYmkBK8NXZRi6kYTz+VvA06Jzjzh8CF0ff1GkN57mx5taU6C+q8r9ePaONwHQCRwZ7vyIgWo37On+uRZj2CaBfLIc3NUeWD788spDlX8cQNQD94mu4MnZAZ10diDEJ2H/6P6XQtHmshKI3vcf2YXQSfst8qjjvwasioglNbrE1o5dnv3kqQ6Dh8Hdm848fH9SBJdjVvLY/uwFkBho4bPZZFJrU0WeHm0iHVim5sVtaBSQ3nQx2qkGZe+4MMTOH6dcwYIOJeK2tRhKhN4VtrIGKul7WNZnRglHodGwiC2+tfiJyDCT79wcKd+XZ9VHotzSB0Ycr7lw+zuaA4ePx0Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=roeck-us.net smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=apPILfMRueEB1z7Fh68u4wPtwBgtf5coUL8hAfR6K1Q=;
- b=EMlHPcYKCST1uBo8AUxoNUTPbFbAwmOI8IGQtRnZcHVP0Qzd9RhP3UqpMgFaOKA+/mL9F8iTSMXctWBivqi0bAM/5gMOkQ4SzcZaSnVPlEXljBhlr5eo6OPSxxPGgE03bKimMYTg+//2x6nUZD8xoO6H4NUGMFmWf7gQb+CX//g=
-Received: from BL0PR02CA0011.namprd02.prod.outlook.com (2603:10b6:207:3c::24)
- by DM6PR02MB5372.namprd02.prod.outlook.com (2603:10b6:5:44::31) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2516.18; Mon, 9 Dec
- 2019 06:43:01 +0000
-Received: from SN1NAM02FT015.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::204) by BL0PR02CA0011.outlook.office365.com
- (2603:10b6:207:3c::24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2516.12 via Frontend
- Transport; Mon, 9 Dec 2019 06:43:01 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; roeck-us.net; dkim=none (message not signed)
- header.d=none;roeck-us.net; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT015.mail.protection.outlook.com (10.152.72.109) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2495.26
- via Frontend Transport; Mon, 9 Dec 2019 06:43:01 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1ieCl2-0004cG-Ky; Sun, 08 Dec 2019 22:43:00 -0800
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1ieCkx-0004TM-I0; Sun, 08 Dec 2019 22:42:55 -0800
-Received: from xsj-pvapsmtp01 (maildrop.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xB96gk0x010978; 
- Sun, 8 Dec 2019 22:42:46 -0800
-Received: from [172.30.17.107] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1ieCko-0004ME-Hm; Sun, 08 Dec 2019 22:42:46 -0800
-Subject: Re: [PATCH 1/5] arm64: zynqmp: Add firmware DT node
-To: Guenter Roeck <linux@roeck-us.net>,
- Michael Tretter <m.tretter@pengutronix.de>,
- Edgar Iglesias <edgari@xilinx.com>
-References: <20191018160735.15658-1-m.tretter@pengutronix.de>
- <20191018160735.15658-2-m.tretter@pengutronix.de>
- <20191208223814.GA21260@roeck-us.net>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <dbba2a25-cbf7-60f4-99f7-056512e28d00@xilinx.com>
-Date: Mon, 9 Dec 2019 07:42:43 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1ieCmE-0007Zf-17
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 06:44:15 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B136C206E0;
+ Mon,  9 Dec 2019 06:44:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575873853;
+ bh=satcp7pvBEkmw0YjKfECaSFQJOr6tyXzvyx3YGw6ZHk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=DmNA/+/H631bjUIVQXGdULprDWxbrnAXnICRc5ZyYbq9W1cKvGzdbnY0XHmvHLZeJ
+ UX2HeP56Vz3bcchoj3GyJaoyLG0Wy7neBtnFHkBukXMqA6MskNEevrBkx2woEKu1Su
+ qCVkFVPhz2FMiafNBnuWo7fziZ0TsHn8KhCrznFw=
+Date: Mon, 9 Dec 2019 14:43:58 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Michael Walle <michael@walle.cc>
+Subject: Re: [PATCH 4/4] arm64: dts: freescale: add Kontron sl28 support
+Message-ID: <20191209064356.GD3365@dragon>
+References: <20191123201317.25861-1-michael@walle.cc>
+ <20191123201317.25861-5-michael@walle.cc>
 MIME-Version: 1.0
-In-Reply-To: <20191208223814.GA21260@roeck-us.net>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(136003)(39860400002)(346002)(396003)(199004)(189003)(4744005)(65956001)(8676002)(4326008)(229853002)(336012)(5660300002)(426003)(31696002)(305945005)(81156014)(81166006)(36756003)(186003)(9786002)(2616005)(230700001)(44832011)(70206006)(316002)(2906002)(50466002)(76176011)(478600001)(70586007)(966005)(6636002)(26005)(36386004)(31686004)(54906003)(8936002)(58126008)(110136005)(356004)(6666004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB5372; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 2f65465d-ab4a-46cd-bac2-08d77c730915
-X-MS-TrafficTypeDiagnostic: DM6PR02MB5372:
-X-Microsoft-Antispam-PRVS: <DM6PR02MB5372358791F62B42F7A6C2DFC6580@DM6PR02MB5372.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
-X-Forefront-PRVS: 02462830BE
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: VTKNCu+9lnes7fCcSi6pVbG5fDCD0nI15fm05Reb8ifJx7PEPitf1TNBQpyrVxQt/2D87AStNrUH/B7wNJbJdDYZ2jlRk8H7DwkLWA7MS9VVH6Tl4jnWJBL4Scfe+DAs6NRJL5wWwjCC1a3vi7i7OZ70ZF9JSd8noVFUzhCDbh+fx40GBfhQEqCNPdC2QwA+ih9GZibA36XnSn6nYQxwJMmipBelmPqo5gRhzdKcLsmzyjKxBNY3LqhMw/cM0cQuhBvwCdPYmtuucx2iJXZ4ErN9zxUYl0iWo5VZN/Ajd9eLN28JrNvxBD4a1nHF2JPEC1x9PlpzK8qftFNL1qArtYTfXUfjBCoA2R326/KfH0SF9bTeo99XBIdz+tzY2AErpCOtagLnsXoWxdo4uyHXkLgI4t9fK85XWbG98KwKb1oqLf5bC0Fhf8pn8v4pdHjSFJOlUZ5Cq5u7UILmHeuxSTzRunsQ6im8t+rhIalnmWs=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Dec 2019 06:43:01.0595 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2f65465d-ab4a-46cd-bac2-08d77c730915
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB5372
+Content-Disposition: inline
+In-Reply-To: <20191123201317.25861-5-michael@walle.cc>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_224305_438483_862D9EE7 
-X-CRM114-Status: GOOD (  11.63  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191208_224414_112666_EF61CC45 
+X-CRM114-Status: GOOD (  18.47  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.94.87 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,42 +77,382 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Rajan Vaja <rajan.vaja@xilinx.com>, michal.simek@xilinx.com,
- qemu-devel@nongnu.org, Rajan Vaja <rajanv@xilinx.com>, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, +Edgar
-
-
-On 08. 12. 19 23:38, Guenter Roeck wrote:
-> On Fri, Oct 18, 2019 at 06:07:31PM +0200, Michael Tretter wrote:
->> From: Rajan Vaja <rajan.vaja@xilinx.com>
->>
->> Add firmware DT node in ZynqMP device tree. This node
->> uses bindings as per new firmware interface driver.
->>
->> Signed-off-by: Rajan Vaja <rajanv@xilinx.com>
->> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
->> Signed-off-by: Michael Tretter <m.tretter@pengutronix.de>
+On Sat, Nov 23, 2019 at 09:13:17PM +0100, Michael Walle wrote:
+> Add device tree files for the Kontron SMARC-sAL28 board and its
+> carriers.
 > 
-> With this patch applied in the mainline kernel, the qemu xlnx-zcu102
-> emulation crashes (see below). Any idea what it might take to get
-> qemu back to working ?
+> Signed-off-by: Michael Walle <michael@walle.cc>
+> ---
+>  arch/arm64/boot/dts/freescale/Makefile        |   4 +
+>  .../fsl-ls1028a-kontron-kbox-a-230-ls.dts     |  27 +++
+>  .../fsl-ls1028a-kontron-sl28-var3-ads2.dts    |  73 ++++++++
+>  .../fsl-ls1028a-kontron-sl28-var4.dts         |  34 ++++
+>  .../freescale/fsl-ls1028a-kontron-sl28.dts    | 158 ++++++++++++++++++
+>  5 files changed, 296 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
+>  create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
+>  create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var4.dts
+>  create mode 100644 arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
+> index 93fce8f0c66d..080c5a59d6bd 100644
+> --- a/arch/arm64/boot/dts/freescale/Makefile
+> +++ b/arch/arm64/boot/dts/freescale/Makefile
+> @@ -4,6 +4,10 @@ dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1012a-frwy.dtb
+>  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1012a-oxalis.dtb
+>  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1012a-qds.dtb
+>  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1012a-rdb.dtb
+> +dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-kbox-a-230-ls.dtb
+> +dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-sl28.dtb
+> +dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-sl28-var3-ads2.dtb
+> +dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-kontron-sl28-var4.dtb
+>  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-qds.dtb
+>  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1028a-rdb.dtb
+>  dtb-$(CONFIG_ARCH_LAYERSCAPE) += fsl-ls1043a-qds.dtb
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
+> new file mode 100644
+> index 000000000000..97e72c94b7fc
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
+> @@ -0,0 +1,27 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Device Tree File for the Kontron KBox A-230-LS.
+> + *
+> + * This consists of a Kontron SMARC-sAL28 (Dual PHY) and a special
+> + * carrier (s1914).
+> + *
+> + * Copyright (C) 2019 Michael Walle <michael@walle.cc>
+> + *
+> + */
+> +
+> +/dts-v1/;
+> +#include "fsl-ls1028a-kontron-sl28-var4.dts"
+> +
+> +/ {
+> +	model = "Kontron KBox A-230-LS";
+> +	compatible = "kontron,kbox-a-230-ls", "kontron,sl28-var3",
+> +		     "kontron,sl28", "fsl,ls1028a";
 
-Driver talks through ATF to PMU unit(microblaze). I don't think A53+MB
-concept is working with mainline qemu. But crash is too hard. It should
-be no response from PMU and then this panic.
-https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/firmware/xilinx/zynqmp.c?h=v5.5-rc1#n728
+Any new compatible needs to be documented.
 
-Edgar: can you please comment this?
+> +};
+> +
+> +&i2c4 {
+> +	eeprom@50 {
+> +		compatible = "atmel,24c32";
+> +		reg = <0x50>;
+> +		pagesize = <32>;
+> +	};
+> +};
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
+> new file mode 100644
+> index 000000000000..a4640e6b3928
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
+> @@ -0,0 +1,73 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Device Tree file for the Kontron SMARC-sAL28 board on a SMARC Eval 2.0
+> + * carrier (ADS2).
+> + *
+> + * Copyright (C) 2019 Michael Walle <michael@walle.cc>
+> + *
+> + */
+> +
+> +/dts-v1/;
+> +#include "fsl-ls1028a-kontron-sl28.dts"
+> +
+> +/ {
+> +	model = "Kontron SMARC-sAL28 (Single PHY) on SMARC Eval 2.0 carrier";
+> +	compatible = "kontron,sl28-var3-ads2", "kontron,sl28", "fsl,ls1028a";
+> +
+> +	sound {
+> +		compatible = "simple-audio-card";
+> +		simple-audio-card,format = "i2s";
+> +		simple-audio-card,widgets =
+> +			"Headphone", "Headphone Jack",
+> +			"Line", "Line Out Jack";
+> +		simple-audio-card,routing =
+> +			"Line Out Jack", "LINEOUTR",
+> +			"Line Out Jack", "LINEOUTL",
+> +			"Headphone Jack", "HPOUTR",
+> +			"Headphone Jack", "HPOUTL";
+> +		simple-audio-card,mclk-fs = <256>;
+> +
+> +		simple-audio-card,cpu {
+> +			sound-dai = <&sai6>;
+> +		};
+> +
+> +		simple-audio-card,codec {
+> +			sound-dai = <&wm8904>;
+> +			frame-master;
+> +			bitclock-master;
+> +		};
+> +	};
+> +};
+> +
+> +&i2c4 {
+> +	status = "okay";
+> +
+> +	wm8904: wm8904@1a {
 
-Thanks,
-Michal
+audio-codec for node name.
+
+> +		#sound-dai-cells = <0>;
+> +		compatible = "wlf,wm8904";
+> +		reg = <0x1a>;
+> +		clocks = <&wm8904_mclk>;
+> +		clock-names = "mclk";
+> +		assigned-clocks = <&wm8904_mclk>;
+> +		assigned-clock-rates = <1250000>;
+> +	};
+> +
+> +	eeprom@50 {
+> +		compatible = "atmel,24c32";
+> +		reg = <0x50>;
+> +		pagesize = <32>;
+> +	};
+> +};
+> +
+> +&sai6 {
+> +	status = "okay";
+> +};
+> +
+> +&soc {
+> +	wm8904_mclk: wm8904-mclk@f130080 {
+> +		compatible = "fsl,vf610-sai-clock";
+
+Unsupported/undocumented binding?
+
+> +		reg = <0x0 0xf130080 0x0 0x80>;
+> +		clocks = <&clockgen 4 1>;
+> +		#clock-cells = <0>;
+> +	};
+> +};
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var4.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var4.dts
+> new file mode 100644
+> index 000000000000..5c8b13108e4d
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var4.dts
+> @@ -0,0 +1,34 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Device Tree file for the Kontron SMARC-sAL28 board.
+> + *
+> + * This is for the network variant 4 which has two ethernet ports. It
+> + * extends the base and provides one more port connected via RGMII.
+> + *
+> + * Copyright (C) 2019 Michael Walle <michael@walle.cc>
+> + *
+> + */
+> +
+> +/dts-v1/;
+> +#include "fsl-ls1028a-kontron-sl28.dts"
+> +
+> +/ {
+> +	model = "Kontron SMARC-sAL28 (Dual PHY)";
+> +	compatible = "kontron,sl28-var4", "kontron,sl28", "fsl,ls1028a";
+> +};
+> +
+> +&enetc_port1 {
+> +	phy-handle = <&phy1>;
+> +	phy-connection-type = "rgmii-id";
+> +
+> +	mdio {
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +
+> +		phy1: ethernet-phy@4 {
+> +			reg = <0x4>;
+> +			eee-broken-1000t;
+> +			eee-broken-100tx;
+> +		};
+> +	};
+> +};
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
+> new file mode 100644
+> index 000000000000..a18cb4395ad0
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
+> @@ -0,0 +1,158 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Device Tree file for the Kontron SMARC-sAL28 board.
+> + *
+> + * Copyright (C) 2019 Michael Walle <michael@walle.cc>
+> + *
+> + */
+> +
+> +/dts-v1/;
+> +#include "fsl-ls1028a.dtsi"
+> +
+> +/ {
+> +	model = "Kontron SMARC-sAL28";
+> +	compatible = "kontron,sl28", "fsl,ls1028a";
+> +
+> +	aliases {
+> +		crypto = &crypto;
+> +		serial0 = &duart0;
+> +		serial1 = &duart1;
+> +	};
+> +
+> +	chosen {
+> +		stdout-path = "serial0:115200n8";
+> +	};
+> +};
+> +
+> +&duart0 {
+> +	status = "okay";
+> +};
+> +
+> +&duart1 {
+> +	status = "okay";
+> +};
+> +
+> +&enetc_port0 {
+> +	phy-handle = <&phy0>;
+> +	phy-connection-type = "sgmii";
+> +
+> +	mdio {
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +
+> +		phy0: ethernet-phy@5 {
+> +			reg = <0x5>;
+> +			eee-broken-1000t;
+> +			eee-broken-100tx;
+> +		};
+> +	};
+> +};
+> +
+> +&esdhc {
+> +	sd-uhs-sdr104;
+> +	sd-uhs-sdr50;
+> +	sd-uhs-sdr25;
+> +	sd-uhs-sdr12;
+> +	status = "okay";
+> +};
+> +
+> +&esdhc1 {
+> +	mmc-hs200-1_8v;
+> +	mmc-hs400-1_8v;
+> +	bus-width = <8>;
+> +	status = "okay";
+> +};
+> +
+> +&fspi {
+> +	status = "okay";
+> +
+> +	w25q32jw@0 {
+
+Use a generic node name.
+
+> +		#address-cells = <1>;
+> +		#size-cells = <1>;
+> +		compatible = "w25q32jw", "jedec,spi-nor";
+
+Is "w25q32jw" documented somewhere?
+
+Shawn
+
+> +		m25p,fast-read;
+> +		spi-max-frequency = <133000000>;
+> +		reg = <0>;
+> +		/* The following setting enables 1-1-2 (CMD-ADDR-DATA) mode */
+> +		spi-rx-bus-width = <2>; /* 2 SPI Rx lines */
+> +		spi-tx-bus-width = <1>; /* 1 SPI Tx line */
+> +
+> +		partition@0 {
+> +			reg = <0x000000 0x010000>;
+> +			label = "rcw";
+> +			read-only;
+> +		};
+> +
+> +		partition@10000 {
+> +			reg = <0x010000 0x0f0000>;
+> +			label = "failsafe bootloader";
+> +			read-only;
+> +		};
+> +
+> +		partition@100000 {
+> +			reg = <0x100000 0x040000>;
+> +			label = "failsafe DP firmware";
+> +			read-only;
+> +		};
+> +
+> +		partition@140000 {
+> +			reg = <0x140000 0x0a0000>;
+> +			label = "failsafe trusted firmware";
+> +			read-only;
+> +		};
+> +
+> +		partition@1e0000 {
+> +			reg = <0x1e0000 0x020000>;
+> +			label = "reserved";
+> +			read-only;
+> +		};
+> +
+> +		partition@200000 {
+> +			reg = <0x200000 0x010000>;
+> +			label = "configuration store";
+> +		};
+> +
+> +		partition@210000 {
+> +			reg = <0x210000 0x0f0000>;
+> +			label = "bootloader";
+> +		};
+> +
+> +		partition@300000 {
+> +			reg = <0x300000 0x040000>;
+> +			label = "DP firmware";
+> +		};
+> +
+> +		partition@340000 {
+> +			reg = <0x340000 0x0a0000>;
+> +			label = "trusted firmware";
+> +		};
+> +
+> +		partition@3e0000 {
+> +			reg = <0x3e0000 0x020000>;
+> +			label = "bootloader environment";
+> +		};
+> +	};
+> +};
+> +
+> +&i2c0 {
+> +	status = "okay";
+> +
+> +	rtc@32 {
+> +		compatible = "microcrystal,rv8803";
+> +		reg = <0x32>;
+> +	};
+> +
+> +	eeprom@50 {
+> +		compatible = "atmel,24c32";
+> +		reg = <0x50>;
+> +		pagesize = <32>;
+> +	};
+> +};
+> +
+> +&i2c3 {
+> +	status = "okay";
+> +};
+> +
+> +&i2c4 {
+> +	status = "okay";
+> +};
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
