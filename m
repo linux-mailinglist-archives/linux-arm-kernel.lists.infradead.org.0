@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3B25116969
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 10:35:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 342F811696B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 10:35:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+qqLNV2kKyz0AXl6/zaUM1zek3d4Y+5QGlp7jHCsU8I=; b=Twp+1QsabfP6a3
-	iR1qj7D1frbbL45/kU7SmZXf4FKEXjzX1ZVyYWcLTUmohmAnHfk4ynNc9vrjvWUR5aKPW9n05X5u/
-	hV1zIoxtldss9NxJsGXq5lqmgAZNk478yJ0PKpnZ8HUsqIYrQOpzrMeJnRm2EyGfQ+6dy+lXcGtKe
-	K/kjMW/2V0vIDrav8Jg25sRk2tNDbADVoEvPdd5WddexDh0MuVJkb1UDHLMSYVB4sFAZlKTNTnvsh
-	5ELUgA5kTWzAmsYdRmBbcKR70PPrJSjxFNU46d2+/g/FRgAkGAv6ZnRB/8xkGyuAM9tUjLIqUwW/f
-	yI80cOufEegtJavSWWOg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Bni8zkqv8Q3lveUBeaQ/tW1rISWliu+LTJdvvSfB+JI=; b=EZkJi8KbqOTRmR
+	xdXdUa9EDKTLxqds85SwdYuXi6tH7dJHEsn+Rpw+hYi5fhtrEEsjhEFrFhIOHiOn56QjJOOGuL3VC
+	aWE+Q3AJ6f9/nPjAqp1CO58Gnt4wlDMkcNS2AL9av7vd6U1Lsozg0hCbeb/wWnWLzS2fvzeHDZAEd
+	ChYV8oKsM72Fwb3i+X4LIDZBuMNWBLmfJ9s7qixuNh4M9+uA57eQvkwxpqR8+eHfh1u0r50EHdl2c
+	dG4mbQrMext1EtTc/ty/Fk7Ym14i6kBBqAl8DNhZ21UhujIfsnAv2UYVjeyOr7tSFgqeDep52o192
+	09aArhreNiEAoMKKHFkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieFRT-0007th-Hc; Mon, 09 Dec 2019 09:34:59 +0000
+	id 1ieFRo-00084M-2Q; Mon, 09 Dec 2019 09:35:20 +0000
 Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieFRH-0007rs-KC
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 09:34:49 +0000
+ id 1ieFRK-0007tL-36
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 09:34:51 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id B87D22283F;
- Mon,  9 Dec 2019 04:34:46 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Mon, 09 Dec 2019 04:34:46 -0500
+ by mailout.nyi.internal (Postfix) with ESMTP id 7BAE3228A2;
+ Mon,  9 Dec 2019 04:34:49 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Mon, 09 Dec 2019 04:34:49 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm1; bh=3mO1RRmUnAaSlAkrt54tKHrUx+
- M1Fqww5Jl4YKVu7Qs=; b=TyJIRtksI/5wFa2kv7dEtblFaCxc3nTZh4lROWA1/v
- p9Q9/5JqVRVQJfbex242y8G6y2Md13TiI1fjZm2tDmu3xp/um8munqFDWWDjPoLA
- PFxcW4JOLvZXtaj0XmsdQo7ZVFwgDFdb5ofE+Er+aRDWZKEt0rxQWmCjBYh6mILb
- 78z6aLW02K5idgqqlQ1falZmJU/r6gn0aOXtT+Ehll9rSq/Qb64TC0p4dYPyhY02
- 29PCZBwW7VG8R7ms3qTf1IvNe/QDgimg+xWXnRkzvRt6rHicMBhKlWQ01l9L9GZN
- s+F+3HaVGgaCwWOgQKIfFM46gcozxDKmxQHRV4zCpuXg==
+ from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm1; bh=mKPUX87mu/fBK
+ Hm6UpGd87kix2+aso87ZbphQBUSJ0g=; b=n9qLyvJ027c8MM0s2e9x8V6nYdEVE
+ 1i5wvw0LrX5h9ETBcVIidFEQ/IrTF0w5TOyrIf1eFLmOUjKDLqCuLZ/H08tlwSjy
+ JMeZFFrLPm+US1n2H8mWNMjkRJaHhI35mQuA7/Hn+O/exp19cFs/HewJkhGyiObo
+ n8/zTNWCX2vcJH9S1PFgHhxeQtxKtlRgA5OnVsEPrdvWpiG+vnxmIVKX6x9Gt/zc
+ q/aSyMYhKFRdK3MTR1eToXDa8/twamWNsx+hL56ADK+2dI7os2AkTAP8exqvxvaa
+ VpaUkkCISpHmob96deM3PPLoYZjErUZD51yOrmVe9DZRDcMFNI1AZFanQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=3mO1RRmUnAaSlAkrt
- 54tKHrUx+M1Fqww5Jl4YKVu7Qs=; b=vLU8FDUudhxbb7kAVrGetuK/+NMr4KwDQ
- fElW2QCkRRXO4zI3JNsuTP55Oqw1GefjKoPvSfchNiFkiUjj8jNqRoWp/7+4xQLp
- ZHGeVsVG+6DZtn4wKlFu6LF4C3wfyjBRNL9YiBDj/Roh9GQZ6JpNMm5a+gWR1DdB
- LRlUHMnUiTxNF7xTO92PRGEVkKaycIakjvgVBCwFC2Bimol4ybz3dx1BxoBL06am
- 4pAFQngMjzw1261h67b7G3mX8DK6qMK4L1mzay8PR0as3NSohxIRNTC4C2PymBCM
- p/s5WwUFQtPHRQuQhaxO8tM2BYHk6JIJNuS99zwPgcBqOwYWxMYEg==
-X-ME-Sender: <xms:NhXuXTm2LKIoGo1rAzE9Qt3IK0uD8mLdv0W_d7X8HcOnyu7zdUuwAA>
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm1; bh=mKPUX87mu/fBKHm6UpGd87kix2+aso87ZbphQBUSJ0g=; b=HDGVEXps
+ Doo3ncZigmq4LeE3IgrmPwfE6wkNtispHA6IgQXCBSYGjPI2rXlpwP+WCNGRvKjL
+ saIIG2gxDcLgeWDIIkih+/BSVfs0nNgqXdx4MSoCZ+1OKcpY4GKIBZjZBK5/gFFq
+ tHt2RkWoYb8wIj9ghvck9MJ7WePqUA/r7wlvvet5OHKcnCQxMV3HD7AELSAuNen0
+ jhW/p3t9Uql9sZ397toVcGpPlrrt6zSHOel0JjY7KAppy1bY5ONXz9TLSdNzsTuG
+ S1dqjAfYKmlDJioum5bjQzcXdvrBP4fZWKNjArd3gJapsAghZIWvPBnTnL4KE123
+ OdQkxrcuLKHBKQ==
+X-ME-Sender: <xms:ORXuXXSNuxz6kO7E6TX9kjrXy0DPlXpojWamlRGt-PklqZrlVhqqlA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudeltddgtdehucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhephffvufffkffoggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhmvgcu
- tfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltddrke
- elrdeikedrjeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhn
- ohdrthgvtghhnecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:NhXuXSsbUH_OulYrJW-KXqcNjklVN9EPCoywjdv4VVXlmTs1wX7bHw>
- <xmx:NhXuXVIaPIzL5w12_HeYvqv3l-4QR_L6PAAligbe3txj8e1MzT3ozQ>
- <xmx:NhXuXfjKR2jzBX26er4x_xDmBA5rrmTYPevLmfcGmTCh6SFJSjTQhw>
- <xmx:NhXuXTwzGyzr6KqALU7336NjDj5O2Ww-POi8MoenDK7PGGX-ArguDw>
+ cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggv
+ rhhnohdrthgvtghhnecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:ORXuXbTIjnTIWrsPo068HUEaywVux-AdVsBas1Lvv7C3bDgy795KYQ>
+ <xmx:ORXuXc-JF_-RU38L4hhoGLx1t1UHNeqVFeH5yWLpBAQLbw2_pgxuKg>
+ <xmx:ORXuXZ8fBif_nZUoZDHnoE8syONvj3I0ID0LqaeRGj3vZNvR8vQHbQ>
+ <xmx:ORXuXa2xDW5TYNsCpE9YGukNO3faPZS5-qD4xTNQyaieDKbJQOaATA>
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 4D3408005B;
- Mon,  9 Dec 2019 04:34:46 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 19D1630600A8;
+ Mon,  9 Dec 2019 04:34:49 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>
-Subject: [PATCH 1/4] dt-bindings: sram: Allow for the childs nodes to be
- called sections
-Date: Mon,  9 Dec 2019 10:34:38 +0100
-Message-Id: <20191209093441.50694-1-maxime@cerno.tech>
+Subject: [PATCH 2/4] dt-bindings: sram: Allow for more specific compatibles
+Date: Mon,  9 Dec 2019 10:34:39 +0100
+Message-Id: <20191209093441.50694-2-maxime@cerno.tech>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20191209093441.50694-1-maxime@cerno.tech>
+References: <20191209093441.50694-1-maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_013447_825740_77D32F38 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20191209_013450_270430_F37596D5 
+X-CRM114-Status: GOOD (  10.23  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -109,30 +111,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The generic SRAM binding currently only allows for child nodes of an SRAM
-to be called sram too. However, these are also called sections in a number
-of device tree, which seems a bit more accurate.
+Even though the generic mmio-sram binding has a list of the sections
+compatible allowed, most device trees have more specific compatibles
+attached to those generic ones.
 
-Let's change the name pattern to allow both.
+This creates warnings at the moment, and we don't really want to cripple
+the generic binding with all the vendor specific combinations that would
+prove to be hard to maintain.
+
+Let's allow additional compatibles for the sections, and then we can have
+the vendor-specific bindings to reduce the scope of what's allowed exactly.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- Documentation/devicetree/bindings/sram/sram.yaml | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .../devicetree/bindings/sram/sram.yaml        | 19 ++++++++++---------
+ 1 file changed, 10 insertions(+), 9 deletions(-)
 
 diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-index ee2287a1b14d..83e3bc64d6fc 100644
+index 83e3bc64d6fc..9ffef983510b 100644
 --- a/Documentation/devicetree/bindings/sram/sram.yaml
 +++ b/Documentation/devicetree/bindings/sram/sram.yaml
-@@ -55,7 +55,7 @@ properties:
-     type: boolean
+@@ -64,15 +64,16 @@ patternProperties:
+         description:
+           Should contain a vendor specific string in the form
+           <vendor>,[<device>-]<usage>
+-        enum:
+-          - allwinner,sun9i-a80-smp-sram
+-          - amlogic,meson8-smp-sram
+-          - amlogic,meson8b-smp-sram
+-          - renesas,smp-sram
+-          - rockchip,rk3066-smp-sram
+-          - samsung,exynos4210-sysram
+-          - samsung,exynos4210-sysram-ns
+-          - socionext,milbeaut-smp-sram
++        contains:
++          enum:
++            - allwinner,sun9i-a80-smp-sram
++            - amlogic,meson8-smp-sram
++            - amlogic,meson8b-smp-sram
++            - renesas,smp-sram
++            - rockchip,rk3066-smp-sram
++            - samsung,exynos4210-sysram
++            - samsung,exynos4210-sysram-ns
++            - socionext,milbeaut-smp-sram
  
- patternProperties:
--  "^([a-z]*-)?sram@[a-f0-9]+$":
-+  "^([a-z]*-)?sram(-section)?@[a-f0-9]+$":
-     type: object
-     description:
-       Each child of the sram node specifies a region of reserved memory.
+       reg:
+         description:
 -- 
 2.23.0
 
