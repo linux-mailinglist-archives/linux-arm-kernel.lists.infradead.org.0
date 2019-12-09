@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85C4A116CC1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 13:00:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F60B116CC9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 13:01:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=70tFhzkcV7NDYwsH0JqRtb17TWkfPN6xQk+ucyigqMc=; b=XIUublwhlrafcR
-	jPGVdqIkx97HNrXAOGMn6pQVrKiV0Lp+zuGqsHUTl7ybAs4GmEPpmCOHoWFv+4p3/CIHQcRosg+3E
-	NnVW1MY4vTca30vCTYRPQmQxpdddHnwU6K3NqkVh521OCUZtkR9IcW0L1oRNlc7VlIOzYRJNmRO3Y
-	+WcnQ46ORexZbMKbDErx+48JDy7ce6Lzm4JC+m6eWVTWgBNLkJZKR9Wvzkw7TvTiK3ZKwGWdZmw4L
-	9zfyR4Gf2oActFhnPUMSAo3W1K/8RCQ/rrBBW/DI1sSMeQqhttEJLBWJ7+W9SPauFDInP7wPnyTEo
-	+VcUR9Kl17xvijXcsXRA==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
+	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cDu5ojYHiPGxat1GpVUh4HbL5P62hnCELnM4918tdxM=; b=RYMdepk4f9AFPj
+	8/gcO1jyWohwSfRGJOKTUP2cIcRnmHw85l1tOi7Au7XLR/p0kDoRYMLnZVkAvCYBqa62IhJ63CJBf
+	CqlbGKj9dMXeCY8ZVLTIGQp3qqtfmRaDg+AZ8/18trVeOOaGJ/wYc4IxUU8dEMb2JSPjLecqezYnP
+	YBsQNwy8LF8dWBB6Ru0ErhPBmFyR5ONbDwGY07iqyMHsciiX/OIo31UIsUVWT6EdsJG7bC6uITT0W
+	TpY2XxPuwC6D7UBLN7TfHqqqakljTNP/V3sqsQcflscMbpUv+AK1rR5y63A7cCl/P6DwZayHWdKoM
+	S/czh7M/ll589jul/gDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieHiM-00052k-OB; Mon, 09 Dec 2019 12:00:34 +0000
+	id 1ieHio-0005Lx-E4; Mon, 09 Dec 2019 12:01:02 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieHiG-00051Y-8D
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 12:00:29 +0000
+ id 1ieHif-0005KU-G6
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 12:00:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
- Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=4YwiwvH475Z3NuX8CMnfHl5RhAhrmqF/AqKk4N2sZNY=; b=rV9YVbIy2lBBpoSQEO/WXxedh
- S3WYAwXJzII1a20UL5DOZ0zgWt2aBJkCYP9VncMPDgdTQT16NLCck22X28dNyeTFyZtV+mCkFiXHP
- 9tWi4d/aSO9fZdVQQtyJNeqwNJnfGXceh5ZHoURc/Q0cd5EDtm1iZRTuJ7GWEUVTf1ec1raWlUyoB
- DlAHxV97htRgELZKaqMsPw1gwbOgKhBtWOL76JxUuTCU5jp3CG+QidEQVmYTjzwpf8z/wqq7TNrhO
- 3jlB/kxexhX78wvuOKWNi0DYYmKmvkbkbtsT1TLWsLJw5KFgc/Q9UPbFgNmqdcwAc7ciCI6iXwGoS
- RljTTj7EA==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:50584)
+ d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
+ Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
+ In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=8+8thKURUzCP/k4obrtyjj4C8ur3ZSOeZBOtDAyzwxs=; b=exPaQpSiFLPjwQonUDlLKUHfA3
+ rkYWjOKfHN9+DZIeQzZpbQULbTTD8ymHqY8hawcmSwdkIphnx9mKFptQ8fdzCi+OepEnejiECBX7t
+ tPbaIXho9p30yIHEZw9zPxHf+zr4gTrsq1m85P5UhbYE9s6YSJzgaUOcIXCMZbZAJWHvXs9PP9pUs
+ wgjB41paa4S5qZXS9wDXpMob1LdnctKpeXbRHjdHQwWNcGwKlSbbbmwQvPy48rqsemWm77J+g4mt2
+ ESbuPYT+qM3YfjU8d9bADRs842COo5mNGrmFDDQ+SOJvh8qmlwy1Vaw/7RK+WWsLO7qX3D6z6dFQw
+ RntejQGw==;
+Received: from e0022681537dd.dyn.armlinux.org.uk
+ ([2002:4e20:1eda:1:222:68ff:fe15:37dd]:49966 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1ieHi2-0002na-W3; Mon, 09 Dec 2019 12:00:15 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1ieHhy-0003c3-Ol; Mon, 09 Dec 2019 12:00:10 +0000
-Date: Mon, 9 Dec 2019 12:00:10 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1ieHiQ-0002ns-25; Mon, 09 Dec 2019 12:00:38 +0000
+Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1ieHiP-0004wT-2O; Mon, 09 Dec 2019 12:00:37 +0000
+In-Reply-To: <20191209120010.GG25745@shell.armlinux.org.uk>
+References: <20191209120010.GG25745@shell.armlinux.org.uk>
+From: Russell King <rmk+kernel@armlinux.org.uk>
 To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH 0/2] Add support for Solidrun CEX7 platforms
-Message-ID: <20191209120010.GG25745@shell.armlinux.org.uk>
+Subject: [PATCH 1/2] arm64: dts: lx2160a: add MDIO descriptions
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Message-Id: <E1ieHiP-0004wT-2O@rmk-PC.armlinux.org.uk>
+Date: Mon, 09 Dec 2019 12:00:37 +0000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_040028_297787_0C8CFC8C 
-X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-CacheID: sfid-20191209_040053_566928_ECAC356A 
+X-CRM114-Status: UNSURE (   7.24  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -94,28 +95,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Add MDIO descriptions to the lx2160a dtsi file, so we can use them in
+the SolidRun Clearfog CX platform.
 
-This series adds support for the Solidrun Clearfog CX and Honeycomb
-platforms that various developers have access to.
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+---
+ .../arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 20 +++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
- arch/arm64/boot/dts/freescale/Makefile             |   2 +
- .../arm64/boot/dts/freescale/fsl-lx2160a-cex7.dtsi | 123 +++++++++++++++++++++
- .../boot/dts/freescale/fsl-lx2160a-clearfog-cx.dts |  15 +++
- .../dts/freescale/fsl-lx2160a-clearfog-itx.dtsi    |  57 ++++++++++
- .../boot/dts/freescale/fsl-lx2160a-honeycomb.dts   |  15 +++
- arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi     |  20 ++++
- 6 files changed, 232 insertions(+)
- create mode 100644 arch/arm64/boot/dts/freescale/fsl-lx2160a-cex7.dtsi
- create mode 100644 arch/arm64/boot/dts/freescale/fsl-lx2160a-clearfog-cx.dts
- create mode 100644 arch/arm64/boot/dts/freescale/fsl-lx2160a-clearfog-itx.dtsi
- create mode 100644 arch/arm64/boot/dts/freescale/fsl-lx2160a-honeycomb.dts
-
-
+diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+index 0bd98f179bfa..617e1f1a2339 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+@@ -863,6 +863,26 @@
+ 			fsl,extts-fifo;
+ 		};
+ 
++		emdio1: mdio@8b96000 {
++			compatible = "fsl,fman-memac-mdio";
++			reg = <0x00 0x8b96000 0x00 0x1000>;
++			interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
++			little-endian;
++			#address-cells = <0x01>;
++			#size-cells = <0x00>;
++			status = "disabled";
++		};
++
++		emdio2: mdio@8b97000 {
++			compatible = "fsl,fman-memac-mdio";
++			reg = <0x00 0x8b97000 0x00 0x1000>;
++			interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>;
++			little-endian;
++			#address-cells = <0x01>;
++			#size-cells = <0x00>;
++			status = "disabled";
++		};
++
+ 		fsl_mc: fsl-mc@80c000000 {
+ 			compatible = "fsl,qoriq-mc";
+ 			reg = <0x00000008 0x0c000000 0 0x40>,
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
