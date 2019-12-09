@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8664D116F10
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 15:35:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CD6C116F11
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 15:36:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JFVoedY41hGv8ESNzOZaGZ8K9ji64M5l7MoNx9Ccb/s=; b=OxZjOqv8NoNsjn
-	EFFOUDUHlIprFvK+RIu5Zz7AVTM1AeYmyEOH0qeA9YHpqG6tfKId1ffxEzDIDKs+b5ZAg67hJnZWw
-	pxsEtZjdqwrIGMJsyCk0UrGhuMTZzhz6ucEO8iyCG02tJ8MyJEOHYq1w+bWuUfzHoMc8HIdQsPpTx
-	7q0x+Kx6zgUGNcubbdlyAdK8gk22CQyoojpok5mGoutk74C4AyMqa+Z4oRGXI5ml2jXMPKQjbdgky
-	HoP2GwZV3R3I+6LIj3LTMHqiuAYBVKV9537dEylWWRnsIMfsvR/r2bm6T1cscFx7vZ+q4JPWpAMhv
-	u5TTe9qQ6lReuWL1dILw==;
+	List-Owner; bh=SRuKKTnEs+PfjwqjbeQxzLbWzHwn4cKe4iRZ/TGdz+s=; b=h7NaNtDx0I5BBZ
+	awYtvJq2f06nedt9u41b1afTQ3XshHn86J+mjs3De0FbFIpr5vsFjEskyGqRiGZPw3H2yrwOQU2VW
+	ZoEGlQCDWsZ65deBuyq4+/HcFkArtFIa+Oty8cSFXj9fl1gBovfFL+a3mSZCPaHlv26XdpV5wSaBH
+	oeA1/oH8NCWM8PZNlDaVCNOHNKfaDq9Kji7otk8E8yIYB4cRD3H5Y9a/bvL39dWLDj9rPkv59KySH
+	fCFskrtWKgiOzf8k+BybFuUxtt2qeONIbRlqK7k9imwhFoQr1bT2QSM1eenM1nTx+Wsp7iC/mtPLT
+	KKeJB350EZNk+gRTn5wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieK8j-0000d2-Vy; Mon, 09 Dec 2019 14:35:57 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1ieK90-0000vM-2g; Mon, 09 Dec 2019 14:36:14 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieK8G-0000EZ-SL
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 14:35:30 +0000
-Received: by mail-wr1-x442.google.com with SMTP id w15so16522984wru.4
+ id 1ieK8I-0000G5-IU
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 14:35:31 +0000
+Received: by mail-wr1-x441.google.com with SMTP id c14so16448141wrn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Dec 2019 06:35:28 -0800 (PST)
+ Mon, 09 Dec 2019 06:35:30 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=w+/up9hfq8p4ACSSdrH1ZXd7EiQBLXwMXcYJzFgJaOc=;
- b=HNvyAgdEOD2w1gDlLb7eiaFWs4FgSrRvV87ajeNqAR6zqxVbc1EtNYsigYA/Re5VyY
- 81BwPZ6odmVs/63pWoUXexjgYemn9M+NIaeVFVY8O11FoZQo56m9p6GU0GY/4Omh/fwW
- CzIV052dK4C6tpfyQxONgseQzFYtdIFGeHi0lMk8TXhJiOhep9+Lv+uPeGIiEPZg53H+
- 2EGKsoz9vDoSd2sLVOxejGewI86bw2FxJXpMM3agj0W2mc7f3/qqUk7eOIWvpIUnfpKo
- TRMqIet8S1BNW0i06AJruQ+gp4uqhT+g15r2yjIqLh6B6Q2oHCAsaali4t+bDnd6ntrY
- iI5Q==
+ bh=ttm9JDpQfFdaivyu5BbcV+zimIykT6JMxYV6nznS1UA=;
+ b=gCjs4EjhPSHYsAW88CXORy+zE44wsE1lTpQx0OWcgaWmqOXLNvziJCiN58M091OZDV
+ yO00e7ux0J89OhF3MXEF7m36zVfOajSaxdedZKJ7CpT2aSj+MULxVucYhvARR23lpOYg
+ T41N0lk4apBmJEvmAjP45oCVT3GfA8D+K4gGz7Ht+Sk39r9W9nRy5YuTlariruguAi9A
+ zGSL0oEAEOwOkw8VWuF+iH+pQcaLrVL1vL/SpMhI2IM2rptnNBvgVd0z+fT5ZFuHTPeG
+ gRMuc+rO/EqDnYee1TYVZZpd9IYaTBFv9q45wAbZOlj0bFykM+4AHk1FV55kqP45DS/y
+ yDqg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=w+/up9hfq8p4ACSSdrH1ZXd7EiQBLXwMXcYJzFgJaOc=;
- b=Y9q2FD3Z6ITW6OzYGCSsv1mk6MG07ejfrl7hkVB973TT0xGRWlwWTv0mW/0Yiu/XsJ
- RmkZPdvLN7aso6VGVCXE3W9u/3gXfLtiT4CL5a9BG3acW1ln1E3g8hocD/GMzvWQdTzw
- xs925Y2fgyvhSFdAzNawjZQIY5rwAKNVad/qjif3Er4xuyQy+wBCjX9LaeDRlpHmLhIg
- 4HQ7L4+BvrhvqKZOZXT1kpsz+JpxgMUeMp4FrK3+GuqsEVXKK24RLfGrx3kgr9Qmfand
- 074KQSFe2POxrg4XucFp463+Hwdm7Zp7qZFpTfnphXprIxiiDZaZ8GSNMV3ApAlljci2
- R2Dg==
-X-Gm-Message-State: APjAAAVvzLfxle9z7FnWPdZqiWrb9cMZSZOC3xqSQjr4Z6IRM5cnn8Lf
- CqiDXRTkqg1fjhPFfhm2KU5r8yBq
-X-Google-Smtp-Source: APXvYqyKds5tu0qb4MmQnhm021ZUXsdo14wPOu8h0clSObyGcgp7AspA9k6XyVybEIAt3zuxM5Qtsw==
-X-Received: by 2002:adf:e6c6:: with SMTP id y6mr2574017wrm.284.1575902127288; 
- Mon, 09 Dec 2019 06:35:27 -0800 (PST)
+ bh=ttm9JDpQfFdaivyu5BbcV+zimIykT6JMxYV6nznS1UA=;
+ b=MVcb7K1dGkU650VNOGf13WnZZ434CQp1jAPjJHrxbAIoPXhdhJ6DJsx9si8HMX9NwX
+ EdyRg5qvLY0Mq9n7w78oi5yMUKkaCzufDb/wOYxy6zqZWeJbwfrZ6myTlXswPBirbZv1
+ xPTLu3KxUA87Sz41LqEUAZEu++am2rqgQovK1e0iNdxerpsjUSuST7biIjoAvQbUG2iG
+ hhR+cRByle3HBlbbXaBO7ftsmz6pOTWGokDmlpwTf2SeX8LQqu+0CK2qJ+KUfpCzkHtg
+ zFY3kIN/sCzTIUvdHc/u5VeS/LVhgflEk6XVmK11CyGHF39UAURUizBz4SGVz1kwXp9n
+ 9mFQ==
+X-Gm-Message-State: APjAAAUXH5XwUDYEdbFHH3ZDnz3RZOn5JZ4bOyoGubH/ak3h0XKY09Cc
+ ucNaIZmQB57EBg9Vnp01vnQ=
+X-Google-Smtp-Source: APXvYqxEVg1sv/FHoGnDe5fHFym5HGmdl2utN2KLxOQtPTp1zpgBVVbM7HzmeOIkpx8OV4eNkdzDmg==
+X-Received: by 2002:a05:6000:cf:: with SMTP id
+ q15mr2417471wrx.393.1575902129270; 
+ Mon, 09 Dec 2019 06:35:29 -0800 (PST)
 Received: from localhost (pD9E518ED.dip0.t-ipconnect.de. [217.229.24.237])
- by smtp.gmail.com with ESMTPSA id q6sm28906963wrx.72.2019.12.09.06.35.26
+ by smtp.gmail.com with ESMTPSA id a186sm14283943wmd.41.2019.12.09.06.35.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 09 Dec 2019 06:35:26 -0800 (PST)
+ Mon, 09 Dec 2019 06:35:28 -0800 (PST)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 3/4] memory: tegra: Extract memory client SID programming
-Date: Mon,  9 Dec 2019 15:35:20 +0100
-Message-Id: <20191209143521.2357178-3-thierry.reding@gmail.com>
+Subject: [PATCH 4/4] memory: tegra: Add system sleep support
+Date: Mon,  9 Dec 2019 15:35:21 +0100
+Message-Id: <20191209143521.2357178-4-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191209143521.2357178-1-thierry.reding@gmail.com>
 References: <20191209143521.2357178-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_063528_922818_F7DA709B 
-X-CRM114-Status: GOOD (  13.07  )
+X-CRM114-CacheID: sfid-20191209_063530_627907_856A3C2C 
+X-CRM114-Status: GOOD (  11.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -106,89 +107,49 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-Move programming of the memory client to SID mapping into a separate
-function so that it can be reused from multiple call sites.
+Add system suspend/resume support for the memory controller found on
+Tegra186 and later. This is required so that the SID registers can be
+reprogrammed after their content was lost during system sleep.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/memory/tegra/tegra186.c | 49 ++++++++++++++++++---------------
- 1 file changed, 27 insertions(+), 22 deletions(-)
+ drivers/memory/tegra/tegra186.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
 diff --git a/drivers/memory/tegra/tegra186.c b/drivers/memory/tegra/tegra186.c
-index ad5c353dba6e..57895116c8e5 100644
+index 57895116c8e5..77a313f1bf0e 100644
 --- a/drivers/memory/tegra/tegra186.c
 +++ b/drivers/memory/tegra/tegra186.c
-@@ -32,6 +32,32 @@ struct tegra186_mc {
- 	const struct tegra186_mc_soc *soc;
+@@ -602,10 +602,29 @@ static const struct of_device_id tegra186_mc_of_match[] = {
  };
+ MODULE_DEVICE_TABLE(of, tegra186_mc_of_match);
  
-+static void tegra186_mc_program_sid(struct tegra186_mc *mc)
++static int tegra186_mc_suspend(struct device *dev)
 +{
-+	unsigned int i;
-+
-+	for (i = 0; i < mc->soc->num_clients; i++) {
-+		const struct tegra186_mc_client *client = &mc->soc->clients[i];
-+		u32 override, security;
-+
-+		override = readl(mc->regs + client->regs.override);
-+		security = readl(mc->regs + client->regs.security);
-+
-+		dev_dbg(mc->dev, "client %s: override: %x security: %x\n",
-+			client->name, override, security);
-+
-+		dev_dbg(mc->dev, "setting SID %u for %s\n", client->sid,
-+			client->name);
-+		writel(client->sid, mc->regs + client->regs.override);
-+
-+		override = readl(mc->regs + client->regs.override);
-+		security = readl(mc->regs + client->regs.security);
-+
-+		dev_dbg(mc->dev, "client %s: override: %x security: %x\n",
-+			client->name, override, security);
-+	}
++	return 0;
 +}
 +
- static const struct tegra186_mc_client tegra186_mc_clients[] = {
- 	{
- 		.name = "ptcr",
-@@ -549,7 +575,6 @@ static int tegra186_mc_probe(struct platform_device *pdev)
- {
- 	struct tegra186_mc *mc;
- 	struct resource *res;
--	unsigned int i;
- 	int err;
- 
- 	mc = devm_kzalloc(&pdev->dev, sizeof(*mc), GFP_KERNEL);
-@@ -565,28 +590,8 @@ static int tegra186_mc_probe(struct platform_device *pdev)
- 
- 	mc->dev = &pdev->dev;
- 
--	for (i = 0; i < mc->soc->num_clients; i++) {
--		const struct tegra186_mc_client *client = &mc->soc->clients[i];
--		u32 override, security;
--
--		override = readl(mc->regs + client->regs.override);
--		security = readl(mc->regs + client->regs.security);
--
--		dev_dbg(&pdev->dev, "client %s: override: %x security: %x\n",
--			client->name, override, security);
--
--		dev_dbg(&pdev->dev, "setting SID %u for %s\n", client->sid,
--			client->name);
--		writel(client->sid, mc->regs + client->regs.override);
--
--		override = readl(mc->regs + client->regs.override);
--		security = readl(mc->regs + client->regs.security);
--
--		dev_dbg(&pdev->dev, "client %s: override: %x security: %x\n",
--			client->name, override, security);
--	}
--
- 	platform_set_drvdata(pdev, mc);
++static int tegra186_mc_resume(struct device *dev)
++{
++	struct tegra186_mc *mc = dev_get_drvdata(dev);
++
 +	tegra186_mc_program_sid(mc);
- 
- 	return err;
- }
++
++	return 0;
++}
++
++static const struct dev_pm_ops tegra186_mc_pm_ops = {
++	SET_SYSTEM_SLEEP_PM_OPS(tegra186_mc_suspend, tegra186_mc_resume)
++};
++
+ static struct platform_driver tegra186_mc_driver = {
+ 	.driver = {
+ 		.name = "tegra186-mc",
+ 		.of_match_table = tegra186_mc_of_match,
++		.pm = &tegra186_mc_pm_ops,
+ 		.suppress_bind_attrs = true,
+ 	},
+ 	.prevent_deferred_probe = true,
 -- 
 2.23.0
 
