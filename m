@@ -2,88 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4419E1174D2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 19:47:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2E74117509
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Dec 2019 19:59:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ssTRh5OEPulnmr2b3BH3uigS6Jj6EKDu7aWk7YJ92hg=; b=OTpgkPaKznK9Zc
-	uVAnQoRe7h9OAtuULVPqc9if/o5EspZGyxk4BrfSq7syH4MXOB/xVnYhe9B34ZQrji2Mdt+5Kq6qR
-	JX1DnE4IWjYVL21pbcufHW6X3cOm3/7lctGqb8pj8AUqc63b0NIXDj8O6exJTcNhKvve1XRWtieJi
-	XiMexHlrDu/EDr9eSeweKM5vJFqemDRYOvuQAZUkdoGjbnyew//+WKtehnkv3YbPzPf07/ovsEdmZ
-	4QqTZh8efoWNi34lkiVGddhWCXGqOYiZUzAlaP5eSmzwhJUkpGr7BQWRQ6GbybZ+EetYnaQXh1sYD
-	Y0z6XGSbw/CsZw5vMThA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=koiDfST+rCsUB7tTXURFwvHRxYdzBq1SS3f+/QWGoQE=; b=nSG
+	8MghFSqcXuSZToz2I1JdXUZDQI98KBJFNjsw0AlVyWye0XIxkoP2PBs0LwtQ7GeP5z83LmT3ZHq3g
+	e3aF+RW1BTeRDEul7APBgXWg1wGQtW2pxYS/thL5FnQieXWz+BrpXxw6iGI92qrblfq0PNXbx8+C/
+	s1Jah1CZECEQ5bLQ2R3pZ2lyXs1oJwTRgduqPZ913tOGYi0d/V+KYbxHBvSYvZFxEzsBVXoQbzpEk
+	hWVrIRBcicnqG84T5QA2cFCTx0Qy/DseFEk6fPajDwWT4QtN1Zxv3guVPyKBUpQcw1Ruov4kfpIrY
+	p07XWW56A+BrxOis7WIUv/c8dAEJStg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieO42-00066d-Is; Mon, 09 Dec 2019 18:47:22 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieO3v-00065q-Mg
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 18:47:17 +0000
-Received: from apollo.fritz.box (unknown
- [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
- SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id BE9BD23D22;
- Mon,  9 Dec 2019 19:47:07 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1575917228;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding;
- bh=NDR2feZKRhfs3JyP+Ven7VtS8P6Uc4egVats5EaWKwI=;
- b=WM/F0AlW16B4ujvetmPKXrnbnbcnIQB9QcMMt3wZH+zrE8mybt/upwGktTxG4w1uXOvqco
- ZD8W/LuUK7Dun9nrI+dsG+rvmtsvkgHsKFgGuZ8IX5RKjNjLezKISFoGDQoL+I3C1thKLK
- KC6ZFMBfuun39LBJJkYlDk6B9e1misE=
-From: Michael Walle <michael@walle.cc>
-To: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v2] arm64: dts: ls1028a: fix reboot node
-Date: Mon,  9 Dec 2019 19:46:44 +0100
-Message-Id: <20191209184644.14057-1-michael@walle.cc>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
-X-Spamd-Bar: ++++++
-X-Spam-Level: ******
-X-Rspamd-Server: web
-X-Spam-Status: Yes, score=6.40
-X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: BE9BD23D22
-X-Spamd-Result: default: False [6.40 / 15.00]; ARC_NA(0.00)[];
- FROM_HAS_DN(0.00)[]; TO_DN_SOME(0.00)[];
- R_MISSING_CHARSET(2.50)[]; TO_MATCH_ENVRCPT_ALL(0.00)[];
- TAGGED_RCPT(0.00)[dt]; MIME_GOOD(-0.10)[text/plain];
- BROKEN_CONTENT_TYPE(1.50)[]; DKIM_SIGNED(0.00)[];
- RCPT_COUNT_SEVEN(0.00)[8]; MID_CONTAINS_FROM(1.00)[];
- NEURAL_HAM(-0.00)[-0.689]; RCVD_COUNT_ZERO(0.00)[0];
- FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
- ASN(0.00)[asn:31334, ipnet:2a02:810c::/31, country:DE];
- SUSPICIOUS_RECIPS(1.50)[]
-X-Spam: Yes
+	id 1ieOFk-0001cp-5f; Mon, 09 Dec 2019 18:59:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieOFb-0001bm-8p
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Dec 2019 18:59:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 706BA11D4;
+ Mon,  9 Dec 2019 10:59:18 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E354C3F6CF;
+ Mon,  9 Dec 2019 10:59:17 -0800 (PST)
+Date: Mon, 09 Dec 2019 18:59:16 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Olivier Moysan <olivier.moysan@st.com>
+Subject: Applied "ASoC: cs42l51: add dac mux widget in codec routes" to the
+ asoc tree
+In-Reply-To: <20191203141627.29471-1-olivier.moysan@st.com>
+Message-Id: <applied-20191203141627.29471-1-olivier.moysan@st.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_104715_897388_C42A15BD 
-X-CRM114-Status: GOOD (  10.42  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191209_105919_404393_5ED13859 
+X-CRM114-Status: GOOD (  14.06  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,55 +63,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michael Walle <michael@walle.cc>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Li Yang <leoyang.li@nxp.com>
+Cc: alsa-devel@alsa-project.org, olivier.moysan@st.com, alexandre.torgue@st.com,
+ tiwai@suse.com, lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, mcoquelin.stm32@gmail.com,
+ apatard@mandriva.com, perex@perex.cz, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The reboot register isn't located inside the DCFG controller, but in its
-own RST controller. Fix it.
+The patch
 
-Fixes: 8897f3255c9c ("arm64: dts: Add support for NXP LS1028A SoC")
-Signed-off-by: Michael Walle <michael@walle.cc>
+   ASoC: cs42l51: add dac mux widget in codec routes
+
+has been applied to the asoc tree at
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.6
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From abe3b6727b653307c27870a2d4ecbf9de4e914a5 Mon Sep 17 00:00:00 2001
+From: Olivier Moysan <olivier.moysan@st.com>
+Date: Tue, 3 Dec 2019 15:16:27 +0100
+Subject: [PATCH] ASoC: cs42l51: add dac mux widget in codec routes
+
+Add "DAC mux" DAPM widget in CS42l51 audio codec routes,
+to support DAC mux control and to remove error trace
+"DAC Mux has no paths" at widget creation.
+Note: ADC path of DAC mux is not routed in this patch.
+
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+Link: https://lore.kernel.org/r/20191203141627.29471-1-olivier.moysan@st.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
+ sound/soc/codecs/cs42l51.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
 
-changes since v1:
- - add fixes tag
- - remove "ls1028a-rst" compatible string, because there is no actual
-   driver for it. It just use the syscon driver.
-
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
-
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 8b28fda2ca20..7825550b7cef 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -88,7 +88,7 @@
+diff --git a/sound/soc/codecs/cs42l51.c b/sound/soc/codecs/cs42l51.c
+index 55408c8fcb4e..e47758e4fb36 100644
+--- a/sound/soc/codecs/cs42l51.c
++++ b/sound/soc/codecs/cs42l51.c
+@@ -214,12 +214,10 @@ static const struct snd_soc_dapm_widget cs42l51_dapm_widgets[] = {
+ 	SND_SOC_DAPM_ADC_E("Right ADC", "Right HiFi Capture",
+ 		CS42L51_POWER_CTL1, 2, 1,
+ 		cs42l51_pdn_event, SND_SOC_DAPM_PRE_POST_PMD),
+-	SND_SOC_DAPM_DAC_E("Left DAC", "Left HiFi Playback",
+-		CS42L51_POWER_CTL1, 5, 1,
+-		cs42l51_pdn_event, SND_SOC_DAPM_PRE_POST_PMD),
+-	SND_SOC_DAPM_DAC_E("Right DAC", "Right HiFi Playback",
+-		CS42L51_POWER_CTL1, 6, 1,
+-		cs42l51_pdn_event, SND_SOC_DAPM_PRE_POST_PMD),
++	SND_SOC_DAPM_DAC_E("Left DAC", NULL, CS42L51_POWER_CTL1, 5, 1,
++			   cs42l51_pdn_event, SND_SOC_DAPM_PRE_POST_PMD),
++	SND_SOC_DAPM_DAC_E("Right DAC", NULL, CS42L51_POWER_CTL1, 6, 1,
++			   cs42l51_pdn_event, SND_SOC_DAPM_PRE_POST_PMD),
  
- 	reboot {
- 		compatible ="syscon-reboot";
--		regmap = <&dcfg>;
-+		regmap = <&rst>;
- 		offset = <0xb0>;
- 		mask = <0x02>;
- 	};
-@@ -178,6 +178,12 @@
- 			little-endian;
- 		};
+ 	/* analog/mic */
+ 	SND_SOC_DAPM_INPUT("AIN1L"),
+@@ -255,6 +253,12 @@ static const struct snd_soc_dapm_route cs42l51_routes[] = {
+ 	{"HPL", NULL, "Left DAC"},
+ 	{"HPR", NULL, "Right DAC"},
  
-+		rst: syscon@1e60000 {
-+			compatible = "syscon";
-+			reg = <0x0 0x1e60000 0x0 0x10000>;
-+			little-endian;
-+		};
++	{"Right DAC", NULL, "DAC Mux"},
++	{"Left DAC", NULL, "DAC Mux"},
 +
- 		scfg: syscon@1fc0000 {
- 			compatible = "fsl,ls1028a-scfg", "syscon";
- 			reg = <0x0 0x1fc0000 0x0 0x10000>;
++	{"DAC Mux", "Direct PCM", "Playback"},
++	{"DAC Mux", "DSP PCM", "Playback"},
++
+ 	{"Left ADC", NULL, "Left PGA"},
+ 	{"Right ADC", NULL, "Right PGA"},
+ 
 -- 
 2.20.1
 
