@@ -2,134 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49F9E11847C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 11:10:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4BAE11848F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 11:12:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QHE3oWeRPbnsJTQq1T1qY/A5C+39257KsKcI+8rlpM8=; b=U3oyxY1H7rL8dg
-	1df4RJU+630dkySnLRB4uCqyBJJ/bes6VUZqBJNKVISu4w6BvL2LBGD4sYlu52UbbxZGiT3DuDxTv
-	PHVdxPAqCs8UOLnBClOe0lFhheP5hjFDph6uwb2xSFw7dWP1WQWcwy7s0VtwSQ/dscV6pvxvxoLsQ
-	Fu97RX1uo+9gd3ovJU9+djvM+GqCiJ0F4vGip6R+hSa9lquZG0hhQ5KRV6jqoUBLZmGjOYbiBDXZZ
-	0GIHIPARM4cTZSc4xnQANi4Tj7p76eO5vcCOSh7WjaT84aaCag9grIQG+wSvP7pOrtTCL25SwqiIr
-	3+c50zkUwTUNZyWMm+Eg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Zbx4vQhsH93DDxrjRoDSrd9Giz1j3vqUc6bWme0ZNME=; b=E8R4yscYXnDfHO
+	sshvBCkA9XyWd0rtYvDlAaN8iphYJ8CPNygy3ODhhE3ilz8ossp6GcIifBsFt013K2KE6J5+V3b/C
+	SAyK1iW/huAi/hrmlj/ZDuOBEskrFm9r8dBd/vxEUE7QcA/oTyz/u/axVibptB2/g9zFGWBbRuD2W
+	V2v2k2TSfkbEyqljoxWjWRV2lINiZBD74O4Rjagx1snVKzjXwExMoGK0Enap0ap9zvWdxcu3+wWTB
+	2IJPPUW1n477JMAZlXfVg5gz63VtnvJBa4H6Y9R3qBP/KzfU/EuIFz4nv4ZYGXMn2Jf70aVQCLSKI
+	dh3uQwA6FFPuxmEWuRKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iecTA-0004uk-Mc; Tue, 10 Dec 2019 10:10:16 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iecVW-00065W-V3; Tue, 10 Dec 2019 10:12:42 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iecSx-0003zU-VW
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 10:10:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1575972601;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=v3NGxEioBAM2Z0unmIijntydgEaz/erFCSWjh/UwusQ=;
- b=Gtd3mkW2yI1xRn8Eq1c+7zA+ADYTfuJUS6o9+tiHoxPX3teTx3QY7WOj8aneuJS18iJn99
- W/QXUAoz4PZx92uOu1hTPFx2X1a/CF87u0eZKT00Wvn+dUbw8xg4x3jqRGVavSxuiAT9Lt
- K6yFOIUV7+myg4+hAVovPdQQNbLmyK4=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-395-K8SsI06KMaeNStx8_04beQ-1; Tue, 10 Dec 2019 05:09:56 -0500
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 27D681005512;
- Tue, 10 Dec 2019 10:09:53 +0000 (UTC)
-Received: from [10.36.117.222] (ovpn-117-222.ams2.redhat.com [10.36.117.222])
- by smtp.corp.redhat.com (Postfix) with ESMTP id BB17C1001B07;
- Tue, 10 Dec 2019 10:09:47 +0000 (UTC)
-Subject: Re: [PATCH 5/6] mm, memory_hotplug: Provide argument for the pgprot_t
- in arch_add_memory()
-To: Michal Hocko <mhocko@kernel.org>, Dan Williams <dan.j.williams@intel.com>
-References: <20191209191346.5197-1-logang@deltatee.com>
- <20191209191346.5197-6-logang@deltatee.com>
- <ce50d9da-c60e-05a1-a86b-3bb3629de502@redhat.com>
- <f34a4c52-cc95-15ed-8a72-c05ab4fd6d33@deltatee.com>
- <CAPcyv4hpXCZxV5p7WaeGgE7ceujBBa5NOz9Z8fepDHOt6zHO2A@mail.gmail.com>
- <20191210100432.GC10404@dhcp22.suse.cz>
-From: David Hildenbrand <david@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
- dBrn+lhhOYjjNefFQou6478faXE6o2AhmebqT4KiQoUQFV4R7y1KMEKoSyy8hQaK1umALTdL
- QZLQMzNE74ap+GDK0wnacPQFpcG1AE9RMq3aeErY5tujekBS32jfC/7AnH7I0v1v1TbbK3Gp
- XNeiN4QroO+5qaSr0ID2sz5jtBLRb15RMre27E1ImpaIv2Jw8NJgW0k/D1RyKCwaTsgRdwuK
- Kx/Y91XuSBdz0uOyU/S8kM1+ag0wvsGlpBVxRR/xw/E8M7TEwuCZQArqqTCmkG6HGcXFT0V9
- PXFNNgV5jXMQRwU0O/ztJIQqsE5LsUomE//bLwzj9IVsaQpKDqW6TAPjcdBDPLHvriq7kGjt
- WhVhdl0qEYB8lkBEU7V2Yb+SYhmhpDrti9Fq1EsmhiHSkxJcGREoMK/63r9WLZYI3+4W2rAc
- UucZa4OT27U5ZISjNg3Ev0rxU5UH2/pT4wJCfxwocmqaRr6UYmrtZmND89X0KigoFD/XSeVv
- jwBRNjPAubK9/k5NoRrYqztM9W6sJqrH8+UWZ1Idd/DdmogJh0gNC0+N42Za9yBRURfIdKSb
- B3JfpUqcWwE7vUaYrHG1nw54pLUoPG6sAA7Mehl3nd4pZUALHwARAQABtCREYXZpZCBIaWxk
- ZW5icmFuZCA8ZGF2aWRAcmVkaGF0LmNvbT6JAlgEEwEIAEICGwMFCQlmAYAGCwkIBwMCBhUI
- AgkKCwQWAgMBAh4BAheAFiEEG9nKrXNcTDpGDfzKTd4Q9wD/g1oFAl3pImkCGQEACgkQTd4Q
- 9wD/g1o+VA//SFvIHUAvul05u6wKv/pIR6aICPdpF9EIgEU448g+7FfDgQwcEny1pbEzAmiw
- zAXIQ9H0NZh96lcq+yDLtONnXk/bEYWHHUA014A1wqcYNRY8RvY1+eVHb0uu0KYQoXkzvu+s
- Dncuguk470XPnscL27hs8PgOP6QjG4jt75K2LfZ0eAqTOUCZTJxA8A7E9+XTYuU0hs7QVrWJ
- jQdFxQbRMrYz7uP8KmTK9/Cnvqehgl4EzyRaZppshruKMeyheBgvgJd5On1wWq4ZUV5PFM4x
- II3QbD3EJfWbaJMR55jI9dMFa+vK7MFz3rhWOkEx/QR959lfdRSTXdxs8V3zDvChcmRVGN8U
- Vo93d1YNtWnA9w6oCW1dnDZ4kgQZZSBIjp6iHcA08apzh7DPi08jL7M9UQByeYGr8KuR4i6e
- RZI6xhlZerUScVzn35ONwOC91VdYiQgjemiVLq1WDDZ3B7DIzUZ4RQTOaIWdtXBWb8zWakt/
- ztGhsx0e39Gvt3391O1PgcA7ilhvqrBPemJrlb9xSPPRbaNAW39P8ws/UJnzSJqnHMVxbRZC
- Am4add/SM+OCP0w3xYss1jy9T+XdZa0lhUvJfLy7tNcjVG/sxkBXOaSC24MFPuwnoC9WvCVQ
- ZBxouph3kqc4Dt5X1EeXVLeba+466P1fe1rC8MbcwDkoUo65Ag0EVcufkQEQAOfX3n0g0fZz
- Bgm/S2zF/kxQKCEKP8ID+Vz8sy2GpDvveBq4H2Y34XWsT1zLJdvqPI4af4ZSMxuerWjXbVWb
- T6d4odQIG0fKx4F8NccDqbgHeZRNajXeeJ3R7gAzvWvQNLz4piHrO/B4tf8svmRBL0ZB5P5A
- 2uhdwLU3NZuK22zpNn4is87BPWF8HhY0L5fafgDMOqnf4guJVJPYNPhUFzXUbPqOKOkL8ojk
- CXxkOFHAbjstSK5Ca3fKquY3rdX3DNo+EL7FvAiw1mUtS+5GeYE+RMnDCsVFm/C7kY8c2d0G
- NWkB9pJM5+mnIoFNxy7YBcldYATVeOHoY4LyaUWNnAvFYWp08dHWfZo9WCiJMuTfgtH9tc75
- 7QanMVdPt6fDK8UUXIBLQ2TWr/sQKE9xtFuEmoQGlE1l6bGaDnnMLcYu+Asp3kDT0w4zYGsx
- 5r6XQVRH4+5N6eHZiaeYtFOujp5n+pjBaQK7wUUjDilPQ5QMzIuCL4YjVoylWiBNknvQWBXS
- lQCWmavOT9sttGQXdPCC5ynI+1ymZC1ORZKANLnRAb0NH/UCzcsstw2TAkFnMEbo9Zu9w7Kv
- AxBQXWeXhJI9XQssfrf4Gusdqx8nPEpfOqCtbbwJMATbHyqLt7/oz/5deGuwxgb65pWIzufa
- N7eop7uh+6bezi+rugUI+w6DABEBAAGJAiUEGAECAA8FAlXLn5ECGwwFCQlmAYAACgkQTd4Q
- 9wD/g1qA6w/+M+ggFv+JdVsz5+ZIc6MSyGUozASX+bmIuPeIecc9UsFRatc91LuJCKMkD9Uv
- GOcWSeFpLrSGRQ1Z7EMzFVU//qVs6uzhsNk0RYMyS0B6oloW3FpyQ+zOVylFWQCzoyyf227y
- GW8HnXunJSC+4PtlL2AY4yZjAVAPLK2l6mhgClVXTQ/S7cBoTQKP+jvVJOoYkpnFxWE9pn4t
- H5QIFk7Ip8TKr5k3fXVWk4lnUi9MTF/5L/mWqdyIO1s7cjharQCstfWCzWrVeVctpVoDfJWp
- 4LwTuQ5yEM2KcPeElLg5fR7WB2zH97oI6/Ko2DlovmfQqXh9xWozQt0iGy5tWzh6I0JrlcxJ
- ileZWLccC4XKD1037Hy2FLAjzfoWgwBLA6ULu0exOOdIa58H4PsXtkFPrUF980EEibUp0zFz
- GotRVekFAceUaRvAj7dh76cToeZkfsjAvBVb4COXuhgX6N4pofgNkW2AtgYu1nUsPAo+NftU
- CxrhjHtLn4QEBpkbErnXQyMjHpIatlYGutVMS91XTQXYydCh5crMPs7hYVsvnmGHIaB9ZMfB
- njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
- FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
-Organization: Red Hat GmbH
-Message-ID: <6da2b279-6a6d-d89c-a34c-962ed021d91d@redhat.com>
-Date: Tue, 10 Dec 2019 11:09:46 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.1
+ id 1iecVP-00064u-N8
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 10:12:37 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iecVL-00015W-G5; Tue, 10 Dec 2019 11:12:31 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iecVK-0005Q1-2t; Tue, 10 Dec 2019 11:12:30 +0100
+Date: Tue, 10 Dec 2019 11:12:29 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: walter harms <wharms@bfs.de>
+Subject: Re: [PATCH] pwm: sun4i: Narrow scope of local variable
+Message-ID: <20191210101229.rvqelc2hanisd2cp@pengutronix.de>
+References: <20191002101624.gljyf7g4nia2rcbx@pengutronix.de>
+ <20191205072404.6858-1-u.kleine-koenig@pengutronix.de>
+ <5DE8C1E3.4080204@bfs.de>
 MIME-Version: 1.0
-In-Reply-To: <20191210100432.GC10404@dhcp22.suse.cz>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-MC-Unique: K8SsI06KMaeNStx8_04beQ-1
-X-Mimecast-Spam-Score: 0
+Content-Disposition: inline
+In-Reply-To: <5DE8C1E3.4080204@bfs.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_021004_104538_E28A1B06 
-X-CRM114-Status: GOOD (  16.86  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191210_021235_753146_BC369584 
+X-CRM114-Status: GOOD (  10.50  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,77 +69,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Gleixner <tglx@linutronix.de>,
- linux-s390 <linux-s390@vger.kernel.org>, linux-ia64@vger.kernel.org,
- Will Deacon <will@kernel.org>, Linux-sh <linux-sh@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Logan Gunthorpe <logang@deltatee.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- platform-driver-x86@vger.kernel.org, Linux MM <linux-mm@kvack.org>,
- Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Andy Lutomirski <luto@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Borislav Petkov <bp@alien8.de>, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>, Christoph Hellwig <hch@lst.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Dan Carpenter <dan.carpenter@oracle.com>, kernel@pengutronix.de,
+ Colin King <colin.king@canonical.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10.12.19 11:04, Michal Hocko wrote:
-> On Mon 09-12-19 12:43:40, Dan Williams wrote:
->> On Mon, Dec 9, 2019 at 12:24 PM Logan Gunthorpe <logang@deltatee.com> wrote:
->>>
->>>
->>>
->>> On 2019-12-09 12:23 p.m., David Hildenbrand wrote:
->>>> On 09.12.19 20:13, Logan Gunthorpe wrote:
-> [...]
->>>>>  #ifdef CONFIG_MEMORY_HOTPLUG
->>>>> -int arch_add_memory(int nid, u64 start, u64 size,
->>>>> +int arch_add_memory(int nid, u64 start, u64 size, pgprot_t prot,
->>>>>                      struct mhp_restrictions *restrictions)
->>>>
->>>> Can we fiddle that into "struct mhp_restrictions" instead?
->>>
->>> Yes, if that's what people want, it's pretty trivial to do. I chose not
->>> to do it that way because it doesn't get passed down to add_pages() and
->>> it's not really a "restriction". If I don't hear any objections, I will
->>> do that for v2.
->>
->> +1 to storing this information alongside the altmap in that structure.
->> However, I agree struct mhp_restrictions, with the MHP_MEMBLOCK_API
->> flag now gone, has lost all of its "restrictions". How about dropping
->> the 'flags' property and renaming the struct to 'struct
->> mhp_modifiers'?
-> 
-> Hmm, this email somehow didn't end up in my inbox so I have missed it
-> before replying.
-> 
-> Well, mhp_modifiers makes some sense and it would reduce the API
-> proliferation but how do you expect the prot part to be handled?
-> I really do not want people to think about PAGE_KERNEL or which
-> protection to use because my experience tells that this will get copied
-> without much thinking or simply will break with some odd usecases.
-> So how exactly this would be used?
+Hello Walter,
 
-I was thinking about exactly the same "issue".
+On Thu, Dec 05, 2019 at 09:37:55AM +0100, walter harms wrote:
+> Am 05.12.2019 08:24, schrieb Uwe Kleine-K=F6nig:
+> > +			unsigned int pval;
+> > +
+> >  			if (!prescaler_table[prescaler])
+> >  				continue;
+> >  			pval =3D prescaler_table[prescaler];
+> =
 
-1. default initialization via a function
+> =
 
-memhp_modifier_default_init(&modified);
+> nit picking:
+> Doing the assignment first would remove the only use
+> of prescaler_table[prescaler].
 
-2. a flag that unlocks the prot field (default:0). Without the flag, it
-is ignored. We can keep the current initialization then.
+nit picking: it would be reduced to a single use?!
 
-Other ideas?
+> unsigned int pval =3D prescaler_table[prescaler];
+> if ( ! pval )
+>   continue;
 
--- 
-Thanks,
+Right, will send a v2 with that.
 
-David / dhildenb
+> if you feel adventures you could also replace the for() for a while()
+> since we know that prescaler =3D=3D 0.
+> =
 
+> while ( prescaler < PWM_PRESCAL_MASK )
+> {
+> unsigned int pval =3D prescaler_table[prescaler++];
+> ....
+
+That however has some side effects as prescaler is used after leaving
+the loop.
+
+Best regards
+Uwe
+
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
