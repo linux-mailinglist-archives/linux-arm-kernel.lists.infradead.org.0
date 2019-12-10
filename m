@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23FD61192AB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:04:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7957C1192BD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:05:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DUDfCuZ6XsLhzfegQZDcLYU0xTe/m8ZV4K/IJWHsAgQ=; b=bdpgVDMJBMaWrO
-	bymnoEaMfO5vIo6JCGZsdOPyvc+7Ht0ZFl90gnJslGuVb55p2sDKakaBcmhSijyWNSkOnYe4D06fE
-	GNqniLrR4ULEeHknvgvdPZbpKVaSR+ALhtcRZYWTb1F/S0koLK8MF45CAHnHCfgmhELBoQKq5+Xyy
-	A6gKuyxkOYs8MO0Nj96rt6xqaw5WhtCSnOacmSpVgmsByennBDuglODjQfwn8i+fbY3aEZ7t60+8L
-	irFTwxX8mBCHEQ0Ug50IYs3iCM8b8vNVMQ1vjwFmHmoUWh7duTbGW2elSEEAL4akW81omdASBAUfW
-	UPfz+L2K+HcIv3IDwdYA==;
+	List-Owner; bh=/kXQZorRC0cPr200l4uWE5mnbkCnoWC9f60KDyU0gxo=; b=iBuNg45HgaFJPL
+	Ithsf9cHZUCYuHxV0tUBwZB7EHxAgmq2t6vDAeersCYZ6SIHW35GvnYbvs9BV+W5j0h09qwFPJam3
+	jenuyAfEq1GDsnwC7MVetbeANpIRLBAIuS88CTPAH+Yh4eln4lN7UL0IurCotnMti0VdbI4LYrhWo
+	ZRzJxIvs3yYliDXsqUd4ac0ituig1e3EVnrbWTmXlQA2MopNTK7slP070ha0AXar0HcWgc5Q3XZvm
+	Zn3ozDGzHwDqCw/J++4BIdXo3JqhGzmn+phGXUlaKd74VjhcLa6dra9YYzq0z/JXy4k/Sbtx28KlO
+	nMlbYqP/3lRfoQDHBT7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iemg6-0006q5-BE; Tue, 10 Dec 2019 21:04:18 +0000
+	id 1iemgt-0007RP-T3; Tue, 10 Dec 2019 21:05:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iemfz-0006p4-FW
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:04:13 +0000
+ id 1iemgX-0007NF-5W
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:04:47 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EBCAB24653;
- Tue, 10 Dec 2019 21:04:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B29532468A;
+ Tue, 10 Dec 2019 21:04:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576011850;
- bh=ceSWH49Z1fn5M+WPTJEUWplL1sTDSb98CQd+itGpjPg=;
+ s=default; t=1576011884;
+ bh=OnbJqA0+frurLx+b+snX4US2vZhw+RxCrJhg7CIcF2M=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=agBOGRizH/AKsUvFqUmZ7sqt8iwDVhKFq+iBBRfRC5mqImcD8YjYl44yjrSRKF+08
- SKeu7mAu+GiAgA6zMbPIZnD1df1bKKDAoXZ8LPFjT3Lmsk7n1mmAjWqzXnn543ledc
- r06OXxwzVAIg/gCn0CbdXqwO6nX/PqBeeK6yjySI=
+ b=YGH0r0roU+BMV17w7ah5yIiDmRVV9xNK+w4oijGgHq7Y8mHrArMTa/0Lhu8jmBS7q
+ SGewc1MyO3+uEK3fxY+IZT427yjDOW4lOTB9a792FrytVhe6FcKPJQNK4WiK1lDnwh
+ 0GgLWl9kNpuFudWxd8M9lx2tenggMJskmi8Y43qs=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 006/350] drm: exynos: exynos_hdmi: use
- cec_notifier_conn_(un)register
-Date: Tue, 10 Dec 2019 15:58:18 -0500
-Message-Id: <20191210210402.8367-6-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 035/350] media: cedrus: fill in bus_info for media
+ device
+Date: Tue, 10 Dec 2019 15:58:47 -0500
+Message-Id: <20191210210402.8367-35-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191210210402.8367-1-sashal@kernel.org>
 References: <20191210210402.8367-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_130411_558719_2F2E9CB3 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20191210_130445_276527_19B39B49 
+X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,136 +81,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Dariusz Marcinkiewicz <darekm@google.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devel@driverdev.osuosl.org, Sasha Levin <sashal@kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dariusz Marcinkiewicz <darekm@google.com>
+From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 
-[ Upstream commit 71137bfd98973efb7b762ba168df077b87b34311 ]
+[ Upstream commit ae0688f659adb17ae6ae5710c886b20b5406e5c4 ]
 
-Use the new cec_notifier_conn_(un)register() functions to
-(un)register the notifier for the HDMI connector, and fill in
-the cec_connector_info.
+Fixes this compliance warning:
 
-Changes since v7:
-	- err_runtime_disable -> err_rpm_disable
-Changes since v2:
-	- removed unnecessary call to invalidate phys address before
-	deregistering the notifier,
-	- use cec_notifier_phys_addr_invalidate instead of setting
-	invalid address on a notifier.
+$ v4l2-compliance -m0
+v4l2-compliance SHA: b514d615166bdc0901a4c71261b87db31e89f464, 32 bits
 
-Signed-off-by: Dariusz Marcinkiewicz <darekm@google.com>
-Tested-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-[hverkuil-cisco@xs4all.nl: use 'if (!hdata->notifier)' instead of '== NULL']
+Compliance test for cedrus device /dev/media0:
+
+Media Driver Info:
+        Driver name      : cedrus
+        Model            : cedrus
+        Serial           :
+        Bus info         :
+        Media version    : 5.3.0
+        Hardware revision: 0x00000000 (0)
+        Driver version   : 5.3.0
+
+Required ioctls:
+                warn: v4l2-test-media.cpp(51): empty bus_info
+        test MEDIA_IOC_DEVICE_INFO: OK
+
 Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Link: https://patchwork.freedesktop.org/patch/msgid/20190828123415.139441-1-darekm@google.com
+Reviewed-by: Jernej Skrabec <jernej.skrabec@siol.net>
+Signed-off-by: Mauro Carvalho Chehab <mchehab+samsung@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/exynos/exynos_hdmi.c | 31 ++++++++++++++++------------
- 1 file changed, 18 insertions(+), 13 deletions(-)
+ drivers/staging/media/sunxi/cedrus/cedrus.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/drivers/gpu/drm/exynos/exynos_hdmi.c b/drivers/gpu/drm/exynos/exynos_hdmi.c
-index bc1565f1822ab..09aa73c0f2add 100644
---- a/drivers/gpu/drm/exynos/exynos_hdmi.c
-+++ b/drivers/gpu/drm/exynos/exynos_hdmi.c
-@@ -852,6 +852,10 @@ static enum drm_connector_status hdmi_detect(struct drm_connector *connector,
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
+index 2d3ea8b74dfdc..3439f6ad63380 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
+@@ -357,6 +357,8 @@ static int cedrus_probe(struct platform_device *pdev)
  
- static void hdmi_connector_destroy(struct drm_connector *connector)
- {
-+	struct hdmi_context *hdata = connector_to_hdmi(connector);
-+
-+	cec_notifier_conn_unregister(hdata->notifier);
-+
- 	drm_connector_unregister(connector);
- 	drm_connector_cleanup(connector);
- }
-@@ -935,6 +939,7 @@ static int hdmi_create_connector(struct drm_encoder *encoder)
- {
- 	struct hdmi_context *hdata = encoder_to_hdmi(encoder);
- 	struct drm_connector *connector = &hdata->connector;
-+	struct cec_connector_info conn_info;
- 	int ret;
+ 	dev->mdev.dev = &pdev->dev;
+ 	strscpy(dev->mdev.model, CEDRUS_NAME, sizeof(dev->mdev.model));
++	strscpy(dev->mdev.bus_info, "platform:" CEDRUS_NAME,
++		sizeof(dev->mdev.bus_info));
  
- 	connector->interlace_allowed = true;
-@@ -957,6 +962,15 @@ static int hdmi_create_connector(struct drm_encoder *encoder)
- 			DRM_DEV_ERROR(hdata->dev, "Failed to attach bridge\n");
- 	}
- 
-+	cec_fill_conn_info_from_drm(&conn_info, connector);
-+
-+	hdata->notifier = cec_notifier_conn_register(hdata->dev, NULL,
-+						     &conn_info);
-+	if (!hdata->notifier) {
-+		ret = -ENOMEM;
-+		DRM_DEV_ERROR(hdata->dev, "Failed to allocate CEC notifier\n");
-+	}
-+
- 	return ret;
- }
- 
-@@ -1528,8 +1542,8 @@ static void hdmi_disable(struct drm_encoder *encoder)
- 		 */
- 		mutex_unlock(&hdata->mutex);
- 		cancel_delayed_work(&hdata->hotplug_work);
--		cec_notifier_set_phys_addr(hdata->notifier,
--					   CEC_PHYS_ADDR_INVALID);
-+		if (hdata->notifier)
-+			cec_notifier_phys_addr_invalidate(hdata->notifier);
- 		return;
- 	}
- 
-@@ -2006,12 +2020,6 @@ static int hdmi_probe(struct platform_device *pdev)
- 		}
- 	}
- 
--	hdata->notifier = cec_notifier_get(&pdev->dev);
--	if (hdata->notifier == NULL) {
--		ret = -ENOMEM;
--		goto err_hdmiphy;
--	}
--
- 	pm_runtime_enable(dev);
- 
- 	audio_infoframe = &hdata->audio.infoframe;
-@@ -2023,7 +2031,7 @@ static int hdmi_probe(struct platform_device *pdev)
- 
- 	ret = hdmi_register_audio_device(hdata);
- 	if (ret)
--		goto err_notifier_put;
-+		goto err_rpm_disable;
- 
- 	ret = component_add(&pdev->dev, &hdmi_component_ops);
- 	if (ret)
-@@ -2034,8 +2042,7 @@ static int hdmi_probe(struct platform_device *pdev)
- err_unregister_audio:
- 	platform_device_unregister(hdata->audio.pdev);
- 
--err_notifier_put:
--	cec_notifier_put(hdata->notifier);
-+err_rpm_disable:
- 	pm_runtime_disable(dev);
- 
- err_hdmiphy:
-@@ -2054,12 +2061,10 @@ static int hdmi_remove(struct platform_device *pdev)
- 	struct hdmi_context *hdata = platform_get_drvdata(pdev);
- 
- 	cancel_delayed_work_sync(&hdata->hotplug_work);
--	cec_notifier_set_phys_addr(hdata->notifier, CEC_PHYS_ADDR_INVALID);
- 
- 	component_del(&pdev->dev, &hdmi_component_ops);
- 	platform_device_unregister(hdata->audio.pdev);
- 
--	cec_notifier_put(hdata->notifier);
- 	pm_runtime_disable(&pdev->dev);
- 
- 	if (!IS_ERR(hdata->reg_hdmi_en))
+ 	media_device_init(&dev->mdev);
+ 	dev->mdev.ops = &cedrus_m2m_media_ops;
 -- 
 2.20.1
 
