@@ -2,56 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86D5D117DEC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 03:46:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D3B8117DF1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 03:50:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=v4JcB+uwA0olqoWHDSNSezs64ncp6sG5zcCyrU3vfc8=; b=pyh1NfPNgeUN8KEQ3Pj/+qpFi
-	1IRkZQclDOme++ZJHlpVtpcruPsjfolsiMACdxhU4FDf8cKJ0APwUkkW423SljIV/tcnjmeHCGEFJ
-	+yey6dA8zgWjRT8ZRV5lDjwPV/fnSruh//TIvOjrRy55SPsyeI0D7tiYWrwlUuMiZJ8+gb+BKPqfQ
-	YsfggBFhgIIW+Q4dy31Kl+oMcYk3Y7IKUNbDXUCIf83CsyJUx4MaW2EfxJXd7dnF8JNJKQb13egoH
-	oik1yJUHGT5qTZXF7j40j/33Rc3xh9cXazHuUK2UGWjVjwXOM7nvc0X4Qo556N8iIxYsDnPcEL/h3
-	8d09QyW+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WP4s3tQU8kvMO7ik1eNwJoUcI4kIdOOag/Ue+fsah3A=; b=hXg19VNwPkDQvb
+	AwRUdNuQMgNfFCVUMbO1Bl8WtRzfFEjay19G9UJfFIuMmIT4wpYZfFMipgvc561ye5IJ/+0vYEBd2
+	Aub3G0d3XvMP0PRHse3G47g6pFSdMINtnsB8csXEJz9IBqSWpJDan/1V8CdVx8MukiHR1PRXZCwOQ
+	gbbYU4UCl/7aVMXNPhLnc1NRkSn7PgcvineKr9kxIkvSJwhrRLcQLPeYHilxp9I7mjMeRLu19BRg2
+	QJgzDtNPO1WzGgzh+I3DMRMEa2P6wKZt5Ma4/sM+HjSgJIZAhjSV/pUqR/bW9adGY49DWtc6epHYx
+	UIhQQ1jR+tNI/s0m1wvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieVXZ-0003Df-Ht; Tue, 10 Dec 2019 02:46:21 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1ieVb6-0003ol-Jw; Tue, 10 Dec 2019 02:50:00 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieVXP-0003Cs-VY; Tue, 10 Dec 2019 02:46:13 +0000
-Received: from [10.28.39.99] (10.28.39.99) by mail-sz.amlogic.com (10.28.11.5)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Tue, 10 Dec
- 2019 10:46:42 +0800
-Subject: Re: [PATCH] arm64: dts: meson-a1: add I2C nodes
-To: Kevin Hilman <khilman@baylibre.com>, Jerome Brunet <jbrunet@baylibre.com>, 
- Neil Armstrong <narmstrong@baylibre.com>
-References: <20191202111253.94872-1-jian.hu@amlogic.com>
- <7hsgltqfdx.fsf@baylibre.com>
-From: Jian Hu <jian.hu@amlogic.com>
-Message-ID: <e90e00e1-c868-ce09-6f79-deb62da72b43@amlogic.com>
-Date: Tue, 10 Dec 2019 10:46:41 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1ieVax-0003nk-QK; Tue, 10 Dec 2019 02:49:53 +0000
+X-UUID: 34ab6c951bf5449ba283ed0b46683a43-20191209
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=3p9xe1k8UZpHU7V65IFk3agqCgquUJjR9B/HHNjxoE4=; 
+ b=iXHtkFlw5EqtcJGCRYIPyntinI+xVifE0nr4IvDgZRIl/aq4thDe3nIk9dpHgyrYFJW1BHUFdu3st2/sl8tVzGiUPavST++VF5LAuVQzb6fGTE398Cc8hjl+iNhjcQaiS6tIBarGU632FVV3ao18dQPePtT+3mScB4p/kRiohKo=;
+X-UUID: 34ab6c951bf5449ba283ed0b46683a43-20191209
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1123243309; Mon, 09 Dec 2019 18:49:44 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 9 Dec 2019 18:50:39 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 10 Dec 2019 10:49:20 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 10 Dec 2019 10:49:09 +0800
+Message-ID: <1575946181.16676.4.camel@mtksdaap41>
+Subject: Re: [PATCH v2 04/14] mailbox: mediatek: cmdq: clear task in channel
+ before shutdown
+From: CK Hu <ck.hu@mediatek.com>
+To: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+Date: Tue, 10 Dec 2019 10:49:41 +0800
+In-Reply-To: <1574819937-6246-6-git-send-email-dennis-yc.hsieh@mediatek.com>
+References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1574819937-6246-6-git-send-email-dennis-yc.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <7hsgltqfdx.fsf@baylibre.com>
-Content-Language: en-US
-X-Originating-IP: [10.28.39.99]
-X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
- (10.28.11.5)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_184612_018247_30FEF196 
-X-CRM114-Status: GOOD (  15.74  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191209_184951_865964_6B25D45E 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,136 +84,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Jianxin Pan <jianxin.pan@amlogic.com>, Wolfram Sang <wsa@the-dreams.de>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, linux-i2c@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Kevin
+Hi, Dennis:
 
-Thanks for your review
+On Wed, 2019-11-27 at 09:58 +0800, Dennis YC Hsieh wrote:
+> Do success callback in channel when shutdown. For those task not finish,
+> callback with error code thus client has chance to cleanup or reset.
+> 
+> Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> ---
+>  drivers/mailbox/mtk-cmdq-mailbox.c | 26 ++++++++++++++++++++++++++
+>  1 file changed, 26 insertions(+)
+> 
+> diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
+> index fd519b6f518b..c12a768d1175 100644
+> --- a/drivers/mailbox/mtk-cmdq-mailbox.c
+> +++ b/drivers/mailbox/mtk-cmdq-mailbox.c
+> @@ -450,6 +450,32 @@ static int cmdq_mbox_startup(struct mbox_chan *chan)
+>  
+>  static void cmdq_mbox_shutdown(struct mbox_chan *chan)
+>  {
+> +	struct cmdq_thread *thread = (struct cmdq_thread *)chan->con_priv;
+> +	struct cmdq *cmdq = dev_get_drvdata(chan->mbox->dev);
+> +	struct cmdq_task *task, *tmp;
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&thread->chan->lock, flags);
+> +	if (list_empty(&thread->task_busy_list))
+> +		goto done;
+> +
+> +	WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
+> +
+> +	/* make sure executed tasks have success callback */
+> +	cmdq_thread_irq_handler(cmdq, thread);
+> +	if (list_empty(&thread->task_busy_list))
+> +		goto done;
+> +
+> +	list_for_each_entry_safe(task, tmp, &thread->task_busy_list,
+> +				 list_entry) {
+> +		cmdq_task_exec_done(task, -ECONNABORTED);
+> +		kfree(task);
+> +	}
+> +
+> +	cmdq_thread_disable(cmdq, thread);
+> +	clk_disable(cmdq->clock);
+> +done:
 
-On 2019/12/10 6:54, Kevin Hilman wrote:
-> Hi Jian,
-> 
-> Jian Hu <jian.hu@amlogic.com> writes:
-> 
->> There are four I2C controllers in A1 series,
->> Share the same comptible with AXG.The I2C nodes
->> depend on pinmux and clock controller.
->>
->> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
->> ---
->>   arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 149 ++++++++++++++++++++++
->>   1 file changed, 149 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
->> index eab2ecd36aa8..d0a73d953f5e 100644
->> --- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
->> +++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
->> @@ -16,6 +16,13 @@
->>   	#address-cells = <2>;
->>   	#size-cells = <2>;
->>   
->> +	aliases {
->> +		i2c0 = &i2c0;
->> +		i2c1 = &i2c1;
->> +		i2c2 = &i2c2;
->> +		i2c3 = &i2c3;
->> +	};
->> +
->>   	cpus {
->>   		#address-cells = <2>;
->>   		#size-cells = <0>;
->> @@ -117,6 +124,46 @@
->>   				};
->>   			};
->>   
->> +			i2c0: i2c@1400 {
->> +				compatible = "amlogic,meson-axg-i2c";
->> +				reg = <0x0 0x1400 0x0 0x24>;
-> 
-> The AXG DT files use 0x20 for the length.  You are using 0x24.  I don't
-> see any additional registers added to the driver, so this doesn't look right.
-In fact, For G12 series and A1, the length should be 0x24. A new 
-register is added, And it is for IRQ handler timeout. If the 
-transmission is exceeding a limited time, it will abort the 
-transmission.Now the function is not used, There is completion to deal 
-the timeout in the driver. I will set the length 0x20 becouse of the new 
-register is not used.
-> 
->> +				interrupts = <GIC_SPI 32 IRQ_TYPE_EDGE_RISING>;
->> +				#address-cells = <1>;
->> +				#size-cells = <0>;
->> +				clocks = <&clkc_periphs CLKID_I2C_M_A>;
->> +				status = "disabled";
->> +			};
->> +
->> +			i2c1: i2c@5c00 {
->> +				compatible = "amlogic,meson-axg-i2c";
->> +				reg = <0x0 0x5c00 0x0 0x24>;
->> +				interrupts = <GIC_SPI 68 IRQ_TYPE_EDGE_RISING>;
->> +				#address-cells = <1>;
->> +				#size-cells = <0>;
->> +				clocks = <&clkc_periphs CLKID_I2C_M_B>;
->> +				status = "disabled";
->> +			};
->> +
->> +			i2c2: i2c@6800 {
->> +				compatible = "amlogic,meson-axg-i2c";
->> +				reg = <0x0 0x6800 0x0 0x24>;
->> +				interrupts = <GIC_SPI 76 IRQ_TYPE_EDGE_RISING>;
->> +				#address-cells = <1>;
->> +				#size-cells = <0>;
->> +				clocks = <&clkc_periphs CLKID_I2C_M_C>;
->> +				status = "disabled";
->> +			};
->> +
->> +			i2c3: i2c@6c00 {
->> +				compatible = "amlogic,meson-axg-i2c";
->> +				reg = <0x0 0x6c00 0x0 0x24>;
->> +				interrupts = <GIC_SPI 78 IRQ_TYPE_EDGE_RISING>;
->> +				#address-cells = <1>;
->> +				#size-cells = <0>;
->> +				clocks = <&clkc_periphs CLKID_I2C_M_D>;
->> +				status = "disabled";
->> +			};
->> +
->>   			uart_AO: serial@1c00 {
->>   				compatible = "amlogic,meson-gx-uart",
->>   					     "amlogic,meson-ao-uart";
->> @@ -171,3 +218,105 @@
->>   		#clock-cells = <0>;
->>   	};
->>   };
->> +
->> +&periphs_pinctrl {
->> +	i2c0_f11_pins:i2c0-f11 {
->> +		mux {
->> +			groups = "i2c0_sck_f11",
->> +				"i2c0_sda_f12";
->> +			function = "i2c0";
->> +			bias-pull-up;
->> +			drive-strength-microamp = <3000>;
-> 
-> Can you also add some comment to the changelog about the need for
-> drive-strength compared to AXG.
-OK, Drive strength function is added for GPIO pins from G12 series.
-So does A1 series.
-> 
->> +		};
->> +	};
-> 
-> Kevin
-> 
-> .
-> 
+cmdq_thread_resume(thread);
+
+Regards,
+CK
+
+> +	spin_unlock_irqrestore(&thread->chan->lock, flags);
+>  }
+>  
+>  static const struct mbox_chan_ops cmdq_mbox_chan_ops = {
 
 _______________________________________________
 linux-arm-kernel mailing list
