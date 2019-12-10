@@ -2,75 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46634119F7E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 00:35:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D72AF119F8E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 00:35:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tjm511Vn0Fzr9IWIjArlzb9gqgus26gn7wCecJskwIk=; b=TZU
-	HXBrGnqFeiRIoINZSDXwWL9cn3K2X54la4/NDJuq++aZE1ad9r3Ynk3T6qmmUQQrPaR5wt6pFKPuX
-	603P8IWsNMUFLLPBUXUo0MfFwGujHe3+Ie/87EggdBTo0rzZOId1dJEUhhXWV4MxkyIpHMBJFmsLx
-	KJIJMGJqPASpT1xY3Y7wGjc5TZ1TvEID//T85NwKIZ8nClSUZG9MA2/ulayI2w/nTD+YCpvgK6PGp
-	bdaz351G87+hYdhmHUEFaiz0Ntboz1cVQl6y2thSPAhRxp2p/9eaU+GLgNyKDVRc/RhukM+NTwH6U
-	tTKZ709CZ08LvWcDq3YRbjelNVnvSgg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=wiSmqYaHSMihWdyL3YYM5Q7voM6jlLUIJMlIkr8jkiU=; b=CoubVZSo9YXEdj14RE5j15e8f2
+	DnKhQud+fm11LuS7db3IWsI9tg2671L+F9c2WalVvQmPqTsO69H2Oxye1+BEKGiGJeH4xp6zMBS6C
+	Y72PbhRBY9WRJrg5joGbIq/Wpu4nemRyFGpxiTIHWvocuM/9PRvdbIBtuwXvqR2ZAnPPW6LsmFekD
+	ikkjRrpp5Yqdu5WA7WwFUgBp9ABfpxLgjAJb5oPSpHDnfgpH5vRb+k+GVxa6VHKZ3erISs3xyyL/+
+	pkZdPfTYqdMs6dx/tIJNcA9k9ZMtJBUrN3I5lGY5m+gqftHlzxb0dCX6TAmhHLglPSfcIfjZToe1V
+	4uCe8z9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iep2S-00031r-1u; Tue, 10 Dec 2019 23:35:32 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iep2i-0003E1-NN; Tue, 10 Dec 2019 23:35:48 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iep2G-00030Q-3V
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 23:35:21 +0000
-Received: by mail-wm1-x344.google.com with SMTP id d5so3521428wmb.4
+ id 1iep2H-000316-8j
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 23:35:22 +0000
+Received: by mail-wr1-x442.google.com with SMTP id y11so21997393wrt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 15:35:19 -0800 (PST)
+ Tue, 10 Dec 2019 15:35:21 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=aPVFdQIWNj16ZK5RdjBKbqDPawIqCxaDmrjeIuzNinU=;
- b=adPF2rXzMF8gO757e5fLYqNf/NWfsMRveDYLbZkuTCkMirY9OWNWSontRZyC2R75eI
- wNd2hHSyTgz6mMFoW1mcQcjch/WjkWGndnjPV4RHaOlukq8MDxL0eSelvQT92CXnve4R
- oZ/XdQOoceuTnnMnGlswiJiP7Mj85DOuBAnr/1LE3xvVosSTeST0eRfA1MSxxnhKilEJ
- 557jja9A+qKYnGrcFE7FBKawYUjsjTEnd7O1KfRTyTMpPgAmCnv/oRLerMKQi9pEKcyd
- 1wd+y4izFFTi1tzuQ5bQmXi7XFBUxDb1wcnd9yyoAnY2C6x3hYHmefS8Vb6DyDsMS2hj
- uLTQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=G+wCCxELpXTMTODBtQxVzlpdhMD07gWVo3Cm9lJtjRg=;
+ b=KyUwBS4pGPDF7wvXMOV4I8Bbg7GmXjcDAQLZx0u8OVKG64bmRKIGHYBBXSJc8Xworg
+ hsnIATXlUfKzWMusOYK+x4+C0foj4yr1wsGXOLiY4expytTXmErFF2bUihjVFmYonXCS
+ a0ghcSjKfN8sAheTzFtJ2axa3UtGlHelsw6sTqiL2J5e9uJw7UGcJecxsAzRi6+aKolu
+ uI2QLs+Qog0RponIvXvV5GRYZ0OU7QAOw3zX7llKtT2S4XeaJ2Ga4IodKo9aT0FoxMeW
+ 0T7NuSNoLHv0sfBTm82knjIfLB/Y3NY5fpSCTwJN3fKD+wqvkEv8TD/Zi7WQYqpW/TWV
+ AOew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=aPVFdQIWNj16ZK5RdjBKbqDPawIqCxaDmrjeIuzNinU=;
- b=ZGXwnLPs496DlH4ilEITfzkqJ9i4VHO2hhroLDZYwIL5nuPgIf5OCu7SyrKH8Cdden
- tM5VumFKJ3NE1jGBTduYU2WWk2WZfyoohp3hLmg3R9a4S3b+svbguZx6MwXajEdQ7OIc
- U8uX2E7hz15lI3x5k4Hj/Us54Pm8/Lm3Zl2srndAxJg+HG0s8gaOaecN3vsmj+CTPmF0
- B1Zh9iuC0NcjNSIq4Q7XaiRd4U+ykKxtyKAAIXRADZ6mr+E/BLlpIqnoKurjT8QiOwUZ
- 3Ybn6DaBfRqb7EbeO3x+bR6+Eyv3/pkl4FPB8PwRXuV9jCG+pjNLOwiep0OVbVYm3boq
- Dcjw==
-X-Gm-Message-State: APjAAAXM6G7/bd5F0VXigzTpfBc+yrihxWh2N2wDd3OcQCBRQvdDiwzA
- lJ7EQloRBj+Tl0hMDx8v6MF3Oorm
-X-Google-Smtp-Source: APXvYqy8Ksgy0PPntHDhclphM607VPHVR5PA0lJyIgfy7XCtzEZHiOuGylmR1rQ3R47lf1vDApknGA==
-X-Received: by 2002:a1c:a9c2:: with SMTP id s185mr1046723wme.119.1576020917919; 
- Tue, 10 Dec 2019 15:35:17 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=G+wCCxELpXTMTODBtQxVzlpdhMD07gWVo3Cm9lJtjRg=;
+ b=oAEeqa5lo0ls39QKwN8X8VLVd7jwW2rgo7q0VyeqAsbiQa2C1HHRNwLS0INW6mBdaF
+ XeE6YmOV6NT6PiqeTN+bZYbKTzSj7wCu9GU6Rp0AsCIkzJ8u6er+Vs7YaRHpIjj9o9zN
+ +6OBYdJ4mmYBeGpXnEmRLknBcCJZAiuHu9cNd5mfI1LuERm6vXOF4/vwWD14vhArP3f+
+ izfskLrc3Jdm38Nrqfo9TDkToZMm6rBBuGKvhJbdGkC3X7qwI2mXoVfaz07gxFO1O8FJ
+ rxG/XnddjyLdXhc1z7AZrbi7qyiGFvGyN09/Ceb9SE9G0CpgsFEjIvC5DJK7Wzk2V/ml
+ uhzA==
+X-Gm-Message-State: APjAAAW+A9arVATPIevsLB1wyl2Mr5GAQE2c0o+648i1j/mJ5BKug6sZ
+ f3COVLtddd5ugzM0EwzeAn2TvQC3
+X-Google-Smtp-Source: APXvYqwyWZunvJHNmDlzFLYRDzl6HUS6mGqymy/cjcjhWsvhQk9251cWu6yixsBoNAwx5r6W26Vjbg==
+X-Received: by 2002:adf:dd4d:: with SMTP id u13mr120700wrm.394.1576020919711; 
+ Tue, 10 Dec 2019 15:35:19 -0800 (PST)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id n16sm59478wro.88.2019.12.10.15.35.16
+ by smtp.gmail.com with ESMTPSA id n16sm59478wro.88.2019.12.10.15.35.18
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Dec 2019 15:35:17 -0800 (PST)
+ Tue, 10 Dec 2019 15:35:19 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/4] soc: bcm: brcmstb: biuctrl updates
-Date: Tue, 10 Dec 2019 15:30:39 -0800
-Message-Id: <20191210233043.15193-1-f.fainelli@gmail.com>
+Subject: [PATCH 1/4] soc: bcm: brcmstb: biuctrl: Tune 7260 BIU interface
+Date: Tue, 10 Dec 2019 15:30:40 -0800
+Message-Id: <20191210233043.15193-2-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191210233043.15193-1-f.fainelli@gmail.com>
+References: <20191210233043.15193-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_153520_185906_662CE721 
-X-CRM114-Status: UNSURE (   8.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191210_153521_307486_EE9C5944 
+X-CRM114-Status: GOOD (  13.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -104,21 +107,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+7260A0 and B0 are both supported, and 7260A0 has a small difference in
+that it does not support the write-back control register, which is why
+we have a different array of registers. Update the comment above
+b53_cpubiuctrl_no_wb_regs to denote that difference.
 
-This patch series updates the Broadcom STB BIUCTRL register code to
-support the latest and greatest chips (7255, 7216, 7211) and also fixes
-the 7260A0 and B0 chips to use the correct tuning parameters.
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ drivers/soc/bcm/brcmstb/biuctrl.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-Florian Fainelli (4):
-  soc: bcm: brcmstb: biuctrl: Tune 7260 BIU interface
-  soc: bcm: brcmstb: biuctrl: Tune interface for 7255 and 7216
-  soc: bcm: brcmstb: biuctrl: Update layout for A72 on 7211
-  soc: bcm: brcmstb: biuctrl: Update programming for 7211
-
- drivers/soc/bcm/brcmstb/biuctrl.c | 30 ++++++++++++++++++++++--------
- 1 file changed, 22 insertions(+), 8 deletions(-)
-
+diff --git a/drivers/soc/bcm/brcmstb/biuctrl.c b/drivers/soc/bcm/brcmstb/biuctrl.c
+index d326915e0f40..6be975392590 100644
+--- a/drivers/soc/bcm/brcmstb/biuctrl.c
++++ b/drivers/soc/bcm/brcmstb/biuctrl.c
+@@ -63,7 +63,7 @@ static const int b15_cpubiuctrl_regs[] = {
+ 	[CPU_WRITEBACK_CTRL_REG] = -1,
+ };
+ 
+-/* Odd cases, e.g: 7260 */
++/* Odd cases, e.g: 7260A0 */
+ static const int b53_cpubiuctrl_no_wb_regs[] = {
+ 	[CPU_CREDIT_REG] = 0x0b0,
+ 	[CPU_MCP_FLOW_REG] = 0x0b4,
+@@ -102,6 +102,7 @@ static int __init mcp_write_pairing_set(void)
+ }
+ 
+ static const u32 b53_mach_compat[] = {
++	0x7260,
+ 	0x7268,
+ 	0x7271,
+ 	0x7278,
+@@ -157,6 +158,7 @@ static void __init mcp_b53_set(void)
+ static int __init setup_hifcpubiuctrl_regs(struct device_node *np)
+ {
+ 	struct device_node *cpu_dn;
++	u32 family_id;
+ 	int ret = 0;
+ 
+ 	cpubiuctrl_base = of_iomap(np, 0);
+@@ -185,7 +187,8 @@ static int __init setup_hifcpubiuctrl_regs(struct device_node *np)
+ 	}
+ 	of_node_put(cpu_dn);
+ 
+-	if (BRCM_ID(brcmstb_get_family_id()) == 0x7260)
++	family_id = brcmstb_get_family_id();
++	if (BRCM_ID(family_id) == 0x7260 && BRCM_REV(family_id) == 0)
+ 		cpubiuctrl_regs = b53_cpubiuctrl_no_wb_regs;
+ out:
+ 	of_node_put(np);
 -- 
 2.17.1
 
