@@ -2,93 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A69E119213
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 21:33:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5900211921D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 21:34:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Q6QEVZHr+gXAJGgoHv26WpArVpASWuQutHaPezt8o/8=; b=JAFr4gEmOkxTrY9TKJ2edZVFbn
-	ufC5LxMEk4nzMOv1S4d7fBV82P7VEf/BYRQ8YzJluze9n4BwvXj5h8ZcAM++yWBwgQ457YP0WuAuF
-	z78TdH04qPzx7I41IRpPNoV6G2KLWkd4Mf37dxJ42iesmtLQWTxlDeRo3sNApKJXA+kWxIo0Hn7FS
-	hJYNd1dstDZKd4r6dR+zZIydSaVaE8NRywefuBcLbBOYxKmRV+ejuFSNaUCeDm8T1GktPoIfdO5Bk
-	hDTZ9qL93XoM1VS542KozEtmuMF0C412jYGDEg7XEVDXGgIqs7mO0D+dcf9Y3aQPVO63LakfG2zZv
-	7WGWQaOA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=s1kTenVg79cYfAuqEXp8fDjoEtVUEudu3ory/mJ420o=; b=RbUzdiS794Amjv
+	aLOvRo6baT84qFFB9IRLDPwlnJi8hYsrsBSwnDonXGsjrM/RfQwteNI2jtzTY9JIpPqbw8NIG4KkZ
+	y5XtcgkI4hsmjVYohk2o3lqQX5VOGK0PKIRjrp5yMghYQzxJWilSwh5ZviOCxKF2TI2NvsZoV8S6u
+	8hlAnWdmFIlQClqAc5RX++cBFEIGB+PO/7oQhR/bR8E3oolYKqYE2eDKd7kK0IEj0OomQLL/BY/1B
+	RDRijS2PIQR9SB0tG+lB/gtsSPL6rD1bObkb9gNFLCvfGhDfYAIS8o1rynM5d0VqpXWoxXEQL1TMm
+	ev957FTgZt9h7Ve0lqLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iemC0-00022J-A3; Tue, 10 Dec 2019 20:33:12 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iemCl-0002Ro-Ks; Tue, 10 Dec 2019 20:33:59 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iemAu-0000yU-UY; Tue, 10 Dec 2019 20:32:06 +0000
-Received: by mail-pg1-x542.google.com with SMTP id a33so9218225pgm.5;
- Tue, 10 Dec 2019 12:32:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=YFx2eeL+mMfvTTf1lfSUrY023GFsFEPvhm+wP8s61nE=;
- b=SBWiep0YvtZPWNzdZjLGonPbi9n/uBVRyUymQTVSTLhY9kWFbpUUomQ2NP+HJpHC6Y
- wn4KC5VcDJwJtEzcVIHxzfaTaz5BuaEiap31NcVRZ2Q6ELoAdUwy+XFshLt5l6/bkjHU
- zFmIfX4GM+CVFaavy5frhpYe8RYvztIsU1v+U2C4XrKmEtcHlzN4FcoYwSZTSo3J5qXU
- gdLgGKY7AMQams6+9gyArIEcDwvX7l31ejau5nY9vokwSY5QblStrk7OsKRSWVTVEypD
- RMTg2Bupob+7C/0kxZ6PN1pPd1/a9EW+TKfzMm6QwDr+nGt2vSADC5vGP7B94+AgwYhz
- 80DQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=YFx2eeL+mMfvTTf1lfSUrY023GFsFEPvhm+wP8s61nE=;
- b=IlZskxcsgom91oWzI1qHKDRTvboDDmB+HSwahSn/2Uaj4UJE+bIkEMZzCTCOXeI7YF
- EaSV2Ssk19/VfgIvtmD1kL21ShW1jiv75red1A3TS30kBaW/0qjL3HM8YXhMmJyORjwG
- 9Rwx4rtIJLnfC00os0ZUJdc2CaAkBdcU2mkAzRjjlnS+Lls3u0GwMXWE+UdgdzINH3xE
- wqjKEjrmJ8SdE412ncvZgtLvtVcsYL1OPvqjZpL7Z6SCBypvcaieEm17wbIrH0Zf1S4T
- +vVulu1IStAMN7r+GnqcEaDcXalJvDb+cl1AG6VvxHc0u8jEQ3wp+yMpYvidEq/+nYgS
- UAXg==
-X-Gm-Message-State: APjAAAXlehPfi3nAdvRvDAqqOSZr+4DNHcL3idbcwE42+QjgacNJuJTi
- 77SZbTBWAzq4IvOHgT8wDNY=
-X-Google-Smtp-Source: APXvYqz0RhGoHF4qhZt0cmp90qwcWKRuRuKFQWCZVCoKkL/hxwYPB5yhwE3N4YwcmAmyN923ReuvJw==
-X-Received: by 2002:a62:ed0b:: with SMTP id u11mr36347939pfh.46.1576009924303; 
- Tue, 10 Dec 2019 12:32:04 -0800 (PST)
-Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id l14sm2360727pgt.42.2019.12.10.12.32.03
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 10 Dec 2019 12:32:03 -0800 (PST)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: gregkh@linuxfoundation.org, rafael@kernel.org,
- srinivas.kandagatla@linaro.org, vz@mleia.com, khilman@baylibre.com,
- mripard@kernel.org, wens@csie.org, andriy.shevchenko@linux.intel.com,
- mchehab+samsung@kernel.org, mans@mansr.com, treding@nvidia.com,
- suzuki.poulose@arm.com, bgolaszewski@baylibre.com, tglx@linutronix.de
-Subject: [PATCH 4/5] nvmem: bcm-ocotp: convert to
- devm_platform_ioremap_resource
-Date: Tue, 10 Dec 2019 20:31:49 +0000
-Message-Id: <20191210203149.7115-5-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191210203149.7115-1-tiny.windzz@gmail.com>
-References: <20191210203149.7115-1-tiny.windzz@gmail.com>
+ id 1iemCd-0002RD-0V
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 20:33:52 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue010 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1MTiDV-1iI4HB3JXx-00U2pg; Tue, 10 Dec 2019 21:33:40 +0100
+From: Arnd Bergmann <arnd@arndb.de>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Subject: [PATCH] coresight: etm4x: fix unused function warning
+Date: Tue, 10 Dec 2019 21:33:19 +0100
+Message-Id: <20191210203339.2830960-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
+MIME-Version: 1.0
+X-Provags-ID: V03:K1:PZv6Q0/vdlVSHBHJn7T1gpGLlPiQ8u4vxmASJnEyI/W8tB+C7Ve
+ 47L8q68zl+iwEznlpWRUChe6lxKnFsHUwqYKFHYEIbeSXPS+U0RIGw0vMzPYEzLaO7TqSw0
+ micRDY7OOQhNERdJ52106PBe9uWQunzsjC2rIFxPS12ZjkU/3nYpBC8aWen4FX9z1M4w13Z
+ 3YVYvWnRVPTW02f6K7rng==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:5PIKYtZ1FQM=:89IFv7vKvpz0RD/0CpqeCv
+ CcwCoqI74Hf/TI75aRAaX6frcGQMdlMQQFv+H1sU3tbdLh52LAaW9L8WVvdSILT5SY667EkZ/
+ rs9T7Q4W3kJ52a520xcjkbj5k5q1heM6KFdnk5cdhGywyNK11fDinVVg4UNN/9zeYC3HY+rMP
+ JExZUgsk/GPyjEXOdgTD8RvH2vhEdFqrAdLt7IlJsD0YYeX6ErlWIlPuBl58N9vZM3NJezznO
+ 1GE5RW7AFRScIp9pDOr9n+PMJfvAMZbQMM5O6HdPxem05lmVgLSUUZrOqza0XXkkxQ3hSYCIK
+ Bt7vQWLwGd62u/71ZHM2gGcqCn5rkZb16m0jwPnW4VAzteFoZzaopTL447obA2u9JNmmwvslF
+ j0TVFDS6ESa6YbaI2uq/+K6KRteoXwOGwYgudAz1diRzJsD2YZX6jS3qIQW6SdWiXd3JaQnDG
+ KliVjSAWHp+N+9DhCAJHDExMgq4EuJKoowG6l4nnmIdi6pMZNUL/juWD0ATdyBeYTHdlJa2TV
+ JrA9xj/jh67RhmrkQF7qCl3gFVd+d6UoBBsW0YUkQr6hgF2YTpZkCLY/l79PbnLJ3ONScq+Km
+ IjtT6V8NbE9zJUM184uQbDybo29+z3uhgzzwvKQB4siR5Za5e47jg9MEt+IXf12FD1LO8xleO
+ iWVanHRw/O8zcZflJbjHMSFGMZ3ApihHX8X+D8IHSlTh23XIO+rKrhYRn0W8BXEPQ5hvCo5F9
+ +UOnbMA49lZzR9+fNdooTbOM9gC4Rx/fgcmG6nSj/bCpXKWKiypegOyJ4zFV2aaMDWjUgvORM
+ 4RQcNeyHcNjN2m8FJxOdu2U6DbSado1gqiJsL2w28u1Rf/W+jUtCcfLoKBqnMJml6vpbCr7RM
+ 1wa7mhMTFhNyS+VcZWAw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_123205_016100_B8E24E63 
-X-CRM114-Status: GOOD (  10.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191210_123351_353002_05F4884E 
+X-CRM114-Status: GOOD (  12.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,45 +76,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yangtao Li <tiny.windzz@gmail.com>, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Arnd Bergmann <arnd@arndb.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify code.
+Some of the newly added code in the etm4x driver is inside of an #ifdef,
+and some other code is outside of it, leading to a harmless warning when
+CONFIG_CPU_PM is disabled:
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+drivers/hwtracing/coresight/coresight-etm4x.c:68:13: error: 'etm4_os_lock' defined but not used [-Werror=unused-function]
+ static void etm4_os_lock(struct etmv4_drvdata *drvdata)
+             ^~~~~~~~~~~~
+
+To avoid the warning and simplify the the #ifdef checks, use
+IS_ENABLED() instead, so the compiler can drop the unused functions
+without complaining.
+
+Fixes: f188b5e76aae ("coresight: etm4x: Save/restore state across CPU low power states")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- drivers/nvmem/bcm-ocotp.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/hwtracing/coresight/coresight-etm4x.c | 13 ++++++-------
+ 1 file changed, 6 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/nvmem/bcm-ocotp.c b/drivers/nvmem/bcm-ocotp.c
-index a8097511582a..87b7198a7676 100644
---- a/drivers/nvmem/bcm-ocotp.c
-+++ b/drivers/nvmem/bcm-ocotp.c
-@@ -254,7 +254,6 @@ MODULE_DEVICE_TABLE(acpi, bcm_otpc_acpi_ids);
- static int bcm_otpc_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
--	struct resource *res;
- 	struct otpc_priv *priv;
- 	struct nvmem_device *nvmem;
- 	int err;
-@@ -269,8 +268,7 @@ static int bcm_otpc_probe(struct platform_device *pdev)
- 		return -ENODEV;
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index dc3f507e7562..a90d757f7043 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -1132,7 +1132,6 @@ static void etm4_init_trace_id(struct etmv4_drvdata *drvdata)
+ 	drvdata->trcid = coresight_get_trace_id(drvdata->cpu);
+ }
  
- 	/* Get OTP base address register. */
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	priv->base = devm_ioremap_resource(dev, res);
-+	priv->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(priv->base)) {
- 		dev_err(dev, "unable to map I/O memory\n");
- 		return PTR_ERR(priv->base);
+-#ifdef CONFIG_CPU_PM
+ static int etm4_cpu_save(struct etmv4_drvdata *drvdata)
+ {
+ 	int i, ret = 0;
+@@ -1402,17 +1401,17 @@ static struct notifier_block etm4_cpu_pm_nb = {
+ 
+ static int etm4_cpu_pm_register(void)
+ {
+-	return cpu_pm_register_notifier(&etm4_cpu_pm_nb);
++	if (IS_ENABLED(CONFIG_CPU_PM))
++		return cpu_pm_register_notifier(&etm4_cpu_pm_nb);
++
++	return 0;
+ }
+ 
+ static void etm4_cpu_pm_unregister(void)
+ {
+-	cpu_pm_unregister_notifier(&etm4_cpu_pm_nb);
++	if (IS_ENABLED(CONFIG_CPU_PM))
++		cpu_pm_unregister_notifier(&etm4_cpu_pm_nb);
+ }
+-#else
+-static int etm4_cpu_pm_register(void) { return 0; }
+-static void etm4_cpu_pm_unregister(void) { }
+-#endif
+ 
+ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+ {
 -- 
-2.17.1
+2.20.0
 
 
 _______________________________________________
