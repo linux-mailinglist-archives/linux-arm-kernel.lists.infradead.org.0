@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67781119459
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:16:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2FB6119478
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:16:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iER0njJPRFyZVCpb8/whSw22vDA3a+MQx2o2jC6SXU4=; b=KZi2Eo940KKye0
-	XZ2jjRp3NsR7z7VNGjDWHoCfvlUAGPQGPT+JbkEnDThVniIukcZAoDUf8oKgDRVIP+P5FVCQ+5P3r
-	HTNcU+oJ4i41tzjVVmkRuTe9Tumw/vmYUoWxMy49JkWV4S33N8HwgbRozBKv4XcJ3RWDkO+kQUxKL
-	+6BmNg4+xc7NMVAREtzIpvSnIQF2WlVZ3BjySsi3z+PLuc2ia5NTWXVE42nY1PPdYVAalkxNnh3gR
-	WHmBdFfODnDhKX37g5+sGLSEf0zuQTh/qPcvVOPZE4zUytt94CDY7qimAs6U7Uha5iBJ+/88T0hME
-	cuzLNT2ecImZPh9ruLUQ==;
+	List-Owner; bh=5UiOFAPBe36t0I+djyF5/fniS7q3ysbb/kJavFFSw8o=; b=dgt58otJZegmbt
+	D6mB3Alu8kl/LdfZHEnjLVAN31cckpoqAZWx7YsIk6HuaOt6qDYxQ3KIzM8iPlIBJwUo7w+kqM45/
+	b5x4Xo1+2dQ14b+xEGC9NHfl5lAY+G6Ag2YWZQbKAOl74MdfenIBCyHG64asUVLwsYP2hcL29N3ON
+	lJkjjPk8z2RJerzK1C3Xc/NpMK2Lg3XZoDj4mrCv82duZ/w0JAmpSe1Bpx8hAVCkPKuiLFpfoShKn
+	5vBxpmz3K0r92iXfHIbt29EwNpAQHryyyoOzpr+Jy0AIBX53JiDXzqPV7pdlWd4DBGQvqi3q77oKM
+	ZMpdyAkqH7wYMChg0nxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iemrT-0001yv-S4; Tue, 10 Dec 2019 21:16:03 +0000
+	id 1iemrd-0002H5-Vu; Tue, 10 Dec 2019 21:16:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iemow-0007DY-M5; Tue, 10 Dec 2019 21:13:30 +0000
+ id 1iemp2-0007JS-Ce
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:13:34 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F2110214AF;
- Tue, 10 Dec 2019 21:13:24 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 43A4B2467F;
+ Tue, 10 Dec 2019 21:13:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576012405;
- bh=qLpA8Hj/Bemhj0QN8KheWl81yCIKzadDZCnWM+wT4+o=;
+ s=default; t=1576012412;
+ bh=nb5yFAF53BWgm75qXbUF4VqZi6/1osmYFffo1aDSVAI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=YWTPuRBRL9oqkiZsne/R6P40FbVQJsAhf44cR38Ypa/s9F6PzUnC+jmbnIp0ExGjU
- YjU/YQFBwb5zWE5P3e6Uj7bs1w6zrftrePRgAGUhEs2vwV0R5b5WTptKTwNqXJRPFo
- khOH5MrfjQ686J8ltzFHiEPiOO3HGTT285+1tRzE=
+ b=W80mPfBXffffsDyZom/UOQkWaAqVJIEgKRSzKo1FnPWnrwHZPJPIO4KRS7HLe0AL2
+ 0/MEbnJIw7eXOe9syJ/hZdD8yVoXa6N+8lAl7uASMlm10FdY+Q+tQ2RDTsiu5YkjB+
+ S+SeLd1c9reT+M5VOT1vhkoRbx47VvNQf1IkYMzk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 324/350] mt76: fix possible out-of-bound access in
- mt7615_fill_txs/mt7603_fill_txs
-Date: Tue, 10 Dec 2019 16:07:09 -0500
-Message-Id: <20191210210735.9077-285-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 329/350] crypto: sun4i-ss - Fix 64-bit size_t
+ warnings
+Date: Tue, 10 Dec 2019 16:07:14 -0500
+Message-Id: <20191210210735.9077-290-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191210210735.9077-1-sashal@kernel.org>
 References: <20191210210735.9077-1-sashal@kernel.org>
@@ -49,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_131326_845415_7BAAF185 
-X-CRM114-Status: UNSURE (   9.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191210_131332_474344_F92A5C62 
+X-CRM114-Status: GOOD (  13.23  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,64 +80,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Lorenzo Bianconi <lorenzo@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Felix Fietkau <nbd@nbd.name>
+Cc: Sasha Levin <sashal@kernel.org>, Corentin Labbe <clabbe.montjoie@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, linux-arm-kernel@lists.infradead.org,
+ linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lorenzo Bianconi <lorenzo@kernel.org>
+From: Herbert Xu <herbert@gondor.apana.org.au>
 
-[ Upstream commit e8b970c8e367e85fab9b8ac4f36080e5d653c38e ]
+[ Upstream commit d6e9da21ee8246b5e556b3b153401ab045adb986 ]
 
-Fix possible out-of-bound access of status rates array in
-mt7615_fill_txs/mt7603_fill_txs routines
+If you try to compile this driver on a 64-bit platform then you
+will get warnings because it mixes size_t with unsigned int which
+only works on 32-bit.
 
-Fixes: c5211e997eca ("mt76: mt7603: rework and fix tx status reporting")
-Fixes: 4af81f02b49c ("mt76: mt7615: sync with mt7603 rate control changes")
-Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
+This patch fixes all of the warnings.
+
+Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+Acked-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+Tested-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/mediatek/mt76/mt7603/mac.c | 4 +++-
- drivers/net/wireless/mediatek/mt76/mt7615/mac.c | 4 +++-
- 2 files changed, 6 insertions(+), 2 deletions(-)
+ drivers/crypto/sunxi-ss/sun4i-ss-cipher.c | 22 ++++++++++++++--------
+ 1 file changed, 14 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/mac.c b/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
-index c328192307c48..ff3f3d98b6252 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7603/mac.c
-@@ -1032,8 +1032,10 @@ mt7603_fill_txs(struct mt7603_dev *dev, struct mt7603_sta *sta,
- 		if (idx && (cur_rate->idx != info->status.rates[i].idx ||
- 			    cur_rate->flags != info->status.rates[i].flags)) {
- 			i++;
--			if (i == ARRAY_SIZE(info->status.rates))
-+			if (i == ARRAY_SIZE(info->status.rates)) {
-+				i--;
- 				break;
-+			}
+diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
+index 6536fd4bee657..7e5e092a23b3c 100644
+--- a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
++++ b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
+@@ -72,7 +72,8 @@ static int noinline_for_stack sun4i_ss_opti_poll(struct skcipher_request *areq)
+ 	oi = 0;
+ 	oo = 0;
+ 	do {
+-		todo = min3(rx_cnt, ileft, (mi.length - oi) / 4);
++		todo = min(rx_cnt, ileft);
++		todo = min_t(size_t, todo, (mi.length - oi) / 4);
+ 		if (todo) {
+ 			ileft -= todo;
+ 			writesl(ss->base + SS_RXFIFO, mi.addr + oi, todo);
+@@ -87,7 +88,8 @@ static int noinline_for_stack sun4i_ss_opti_poll(struct skcipher_request *areq)
+ 		rx_cnt = SS_RXFIFO_SPACES(spaces);
+ 		tx_cnt = SS_TXFIFO_SPACES(spaces);
  
- 			info->status.rates[i] = *cur_rate;
- 			info->status.rates[i].count = 0;
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/mac.c b/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-index e07ce2c100133..111e38ff954a2 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/mac.c
-@@ -914,8 +914,10 @@ static bool mt7615_fill_txs(struct mt7615_dev *dev, struct mt7615_sta *sta,
- 		if (idx && (cur_rate->idx != info->status.rates[i].idx ||
- 			    cur_rate->flags != info->status.rates[i].flags)) {
- 			i++;
--			if (i == ARRAY_SIZE(info->status.rates))
-+			if (i == ARRAY_SIZE(info->status.rates)) {
-+				i--;
- 				break;
-+			}
- 
- 			info->status.rates[i] = *cur_rate;
- 			info->status.rates[i].count = 0;
+-		todo = min3(tx_cnt, oleft, (mo.length - oo) / 4);
++		todo = min(tx_cnt, oleft);
++		todo = min_t(size_t, todo, (mo.length - oo) / 4);
+ 		if (todo) {
+ 			oleft -= todo;
+ 			readsl(ss->base + SS_TXFIFO, mo.addr + oo, todo);
+@@ -239,7 +241,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
+ 			 * todo is the number of consecutive 4byte word that we
+ 			 * can read from current SG
+ 			 */
+-			todo = min3(rx_cnt, ileft / 4, (mi.length - oi) / 4);
++			todo = min(rx_cnt, ileft / 4);
++			todo = min_t(size_t, todo, (mi.length - oi) / 4);
+ 			if (todo && !ob) {
+ 				writesl(ss->base + SS_RXFIFO, mi.addr + oi,
+ 					todo);
+@@ -253,8 +256,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
+ 				 * we need to be able to write all buf in one
+ 				 * pass, so it is why we min() with rx_cnt
+ 				 */
+-				todo = min3(rx_cnt * 4 - ob, ileft,
+-					    mi.length - oi);
++				todo = min(rx_cnt * 4 - ob, ileft);
++				todo = min_t(size_t, todo, mi.length - oi);
+ 				memcpy(buf + ob, mi.addr + oi, todo);
+ 				ileft -= todo;
+ 				oi += todo;
+@@ -274,7 +277,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
+ 		spaces = readl(ss->base + SS_FCSR);
+ 		rx_cnt = SS_RXFIFO_SPACES(spaces);
+ 		tx_cnt = SS_TXFIFO_SPACES(spaces);
+-		dev_dbg(ss->dev, "%x %u/%u %u/%u cnt=%u %u/%u %u/%u cnt=%u %u\n",
++		dev_dbg(ss->dev,
++			"%x %u/%zu %u/%u cnt=%u %u/%zu %u/%u cnt=%u %u\n",
+ 			mode,
+ 			oi, mi.length, ileft, areq->cryptlen, rx_cnt,
+ 			oo, mo.length, oleft, areq->cryptlen, tx_cnt, ob);
+@@ -282,7 +286,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
+ 		if (!tx_cnt)
+ 			continue;
+ 		/* todo in 4bytes word */
+-		todo = min3(tx_cnt, oleft / 4, (mo.length - oo) / 4);
++		todo = min(tx_cnt, oleft / 4);
++		todo = min_t(size_t, todo, (mo.length - oo) / 4);
+ 		if (todo) {
+ 			readsl(ss->base + SS_TXFIFO, mo.addr + oo, todo);
+ 			oleft -= todo * 4;
+@@ -308,7 +313,8 @@ static int sun4i_ss_cipher_poll(struct skcipher_request *areq)
+ 				 * no more than remaining buffer
+ 				 * no need to test against oleft
+ 				 */
+-				todo = min(mo.length - oo, obl - obo);
++				todo = min_t(size_t,
++					     mo.length - oo, obl - obo);
+ 				memcpy(mo.addr + oo, bufo + obo, todo);
+ 				oleft -= todo;
+ 				obo += todo;
 -- 
 2.20.1
 
