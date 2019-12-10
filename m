@@ -2,82 +2,141 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A257118F43
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 18:47:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C00A8118F58
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 18:52:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=bktek1i7Hv3QjxQMYdYwH0RziMTFFS+mxhCkgneb3mQ=; b=mZfjJ54GqaI38N
-	jQmx2A+i0/AxgAeA6FAXzItWnk85yKkrLV1w4hedejWJsmzgOB/fr3GmOqKqN1gw93ahb/oELx1eL
-	eZF1r5DchFGiUURmXmhlKcYCJ2N2uOMLlFmFla27sCAYbmIdU41/IjTRJ0bwIgt6SqKf/58xmReIe
-	wbgOETvXEmBUDM/Jjhkf0xrfnHjSAyLHsoCq/TCLCPwWcLYl5qFS/RBQ/jq3KjauF5XyHG1Wd2Qh2
-	AKIWhs+CGlBHSaYbMRmHbJ1dxYBj5lz8Fk6eKHF5vYLH1ZJio7rybXdigxZJRnPISoDoyEO5n3SKI
-	yQFvGZlRxXcmzX1sokNw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FJoFCN6RAxpTncEzJivsWsQdrMw7Nmx3t/QbQGhF854=; b=HlAn9bawHBC8xr
+	Gcm+HSxIjw2jONjgq+LnYVppLvmMxxIpJ+5Zgb/9KYczLC24RUTwX04D5iVZTvOiPf6MLIUgBB7x+
+	uhXkL2jcxo+vh5O8KRgVAbHWbG3P7HZIlkhkREYRgSmxkrLqtRmgJHI0cSjGlq9IRP+A5W69urnUx
+	0e6AfhLwFpzMYafFxqmLXaiIjOisPDAcjFZtH85u/QbLHx1CZp7SJSF9cDYnq2nqrZHYZ7pMeLuF2
+	qXF5IWVHW3op9kj9HJkwWrL2WQTU6RzRiYxB7szqA5vqzk8evXZx06yUCbLppWWcWAznQMiHmxcWH
+	gLxSPEEmVVIDjGFF3tVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iejbk-0006n7-OQ; Tue, 10 Dec 2019 17:47:36 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iejgE-00007L-HM; Tue, 10 Dec 2019 17:52:14 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iejbb-0006mf-Ow
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 17:47:29 +0000
-Received: by mail-wr1-x442.google.com with SMTP id d16so21075443wre.10
+ id 1iejg4-00006d-By
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 17:52:05 +0000
+Received: by mail-ed1-x544.google.com with SMTP id v16so16747235edy.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 09:47:27 -0800 (PST)
+ Tue, 10 Dec 2019 09:52:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=pB5aeFO1410E6SGmKnOdXbn7rGZMrphLj2vjpPn/Q54=;
- b=tZLox4/DcbVLjr0GuKmEUZ40aNSAzAUtXPNsdWDCbuh/YucUzlcc3IO9PvmIXMJrwT
- KInAl4ad0Xe1fZrHkiU98FAJCxGyMhGD+vv5Cn/3E5cC8BML1uGijPRDCYIA1p8GMu8K
- mQLsTGnCnRAow9YGWhSDdbXybSYxkyiibX9TOBXC/s4mjNX4JzuBQ1uG65w6jPdGBMIB
- DGwqFkiCMaZc/iQCqAs8xblVQgkP4h5bt5BSv76IGx8OW0aXyXsiP/B9e/9eKCJMesbH
- pKx6nSMO4ihtGy7UlpzVcgyOq/OTaESIt/Qp0AROW4eCHHXaEJgoDFefn4e8ybgFfTGf
- 5TFg==
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=wQCy8ynvHFscUmzOGqeaNWyMRPeyT0GgcD6In5jOnkM=;
+ b=gKJ02JEeAROeyRbkkLj6APxHcp6swZRz4k76XBQMV/pKpLY82KanP9ME6AqpZ7eUOS
+ 1VE3dMsdWajVnXWTqqvboQoBPQ8LZAMd1MMD07XefkoXq7STexPZ8eMusSUQ4svDqy2G
+ QCVOIpMNpXcM1VW+Jm1nABmwRpdoTGpBALGqgl7eB8Lg7jwZ8XwA39tLrnLIQiH8w4cE
+ vFe5Xq6/tiDfJbvMcWLYuTO8PQBSkva5X+K2tDrUSxc3UlgEYgHwcpQaa5Vl5X1mghwl
+ 5TReleDlzRyWGx+8nZlfH8t8NXDRQ74RjEDYZ+FQuoi5SXmV1Q0I1TuAEDRJs4fBzN+h
+ pE9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=pB5aeFO1410E6SGmKnOdXbn7rGZMrphLj2vjpPn/Q54=;
- b=WqF/lHrC7fiFo2MesaQ80LhhihVFKIjtl8BhZPqJUnSK+SO6G2TsHzzQJsW7FtdyeH
- hAPIDJOLAeWrR63zGoZ4IfTgXEWotgPECLU3ohsnLRsGH5o4cjmByweIXpXem8OOBu0a
- +iaZBOHpVi3HAVuVFMXGlUq8qONfyc9fPLIsBQU6yhw9/bvNuBEpyUf5azd20CI1+een
- LIKvqJoQVUYTP4ugei1vRwiTseF5NayMZ2VfgORyTVPfVZ1vyzryS+vuTQIj3r1300N1
- TjNJiN3pxXouF8c4S+ZR/ehqSWxmGbRvYQTtQ3ia43cqbyoIn3xo2+9xgZR5Jm4efzdb
- BZiA==
-X-Gm-Message-State: APjAAAUIt4J9RUXgWTsrzG8zlJGifLnPyH7+gwqI78Q203tBKOmjYJd6
- YcSf0S1vOgl9v57dlFZ9BNs=
-X-Google-Smtp-Source: APXvYqz/yJP6QpGzZqSAc9mGuduUlZcsBSpQ40KMnzjM4er7cgiFR/7ZbB/7mnLGr6iMRnmun5xyEA==
-X-Received: by 2002:adf:f990:: with SMTP id f16mr4772626wrr.185.1576000046349; 
- Tue, 10 Dec 2019 09:47:26 -0800 (PST)
-Received: from clement-Latitude-7490.outsight.local
- (lputeaux-656-1-11-33.w82-127.abo.wanadoo.fr. [82.127.142.33])
- by smtp.gmail.com with ESMTPSA id s8sm3966040wrt.57.2019.12.10.09.47.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Dec 2019 09:47:25 -0800 (PST)
-From: =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>
-To: Rob Herring <robh@kernel.org>,
-	Maxime Ripard <maxime@cerno.tech>
-Subject: [PATCH] dt-bindings: pwm: allwinner: Fix missing header in H6 example
-Date: Tue, 10 Dec 2019 18:47:10 +0100
-Message-Id: <20191210174710.10649-1-peron.clem@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=wQCy8ynvHFscUmzOGqeaNWyMRPeyT0GgcD6In5jOnkM=;
+ b=AxA8mYkNpgDIEK5OIT0JSi8rVYFXt5Bp/ERwuynOWe+S+q0f6h/+BnZkM2fnBxUldB
+ 5S6UhhRMu2smfdLcC5plSG4Oc5dHddS1jDPeTzTN/9KvHVeMTwdwNdrxIwGv1eTX5ZdY
+ rXpuC8SJjuHVme6AX2j/EhLbJqVKDBf8z2nzMcszEkI0MxsBEL8FLn53i+xRslJWR/cE
+ p9PW+dk1LoNc+0iy2lQeaR8tSnqB3YURNlp1krESh79d0CA04o2r4CVSg7LPCpm7/zez
+ 1Zkbh1iNWeJ2e5YPMmNw+/4KtyzinPFCrYIC7ExD3Rlg7L1WhNtHfF0y6k/M9uj9Oyv7
+ VPSQ==
+X-Gm-Message-State: APjAAAVkw4gqQWL2cWdTa/gRGQQun5lDB+YBkl0SrOJN6+CVIuVPzJGG
+ 4zdn7+psgQqkznDtsT4OGY4=
+X-Google-Smtp-Source: APXvYqwBvLc/EQQkt19VqMdtDrJ8c1RqbCl9f9SkpY/cmquGH8O4YHV+IVLZjyzZsV8jVMztCfA4hw==
+X-Received: by 2002:a50:9203:: with SMTP id i3mr27791265eda.146.1576000322268; 
+ Tue, 10 Dec 2019 09:52:02 -0800 (PST)
+Received: from [10.67.50.53] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id i25sm94014edx.72.2019.12.10.09.51.58
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 10 Dec 2019 09:52:01 -0800 (PST)
+Subject: Re: [PATCH 0/2] Couple of reset-brcmstb fixes
+To: Philipp Zabel <p.zabel@pengutronix.de>,
+ Florian Fainelli <f.fainelli@gmail.com>, linux-arm-kernel@lists.infradead.org
+References: <20191104181502.15679-1-f.fainelli@gmail.com>
+ <159380b7ec799f15269a4a6e8f2482a02748e6fd.camel@pengutronix.de>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
+Message-ID: <ccb1a422-21a0-88b3-0874-67b7c6c54d4a@gmail.com>
+Date: Tue, 10 Dec 2019 09:51:57 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
+In-Reply-To: <159380b7ec799f15269a4a6e8f2482a02748e6fd.camel@pengutronix.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_094727_809029_98677288 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20191210_095204_434166_BDADFC79 
+X-CRM114-Status: GOOD (  13.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (peron.clem[at]gmail.com)
+ provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -98,40 +157,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Thierry Reding <thierry.reding@gmail.com>,
- =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TGF0ZXN0IGxpbnV4LW5leHQgZG9lc24ndCBidWlsZCBkdWUgdG8gdGhlIGZvbGxvd2luZyBlcnJv
-cjoKCkVycm9yOiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcHdtL2FsbHdpbm5l
-cixzdW40aS1hMTAtcHdtLmV4YW1wbGUuZHRzOjM1LjM3LTM4CnN5bnRheCBlcnJvcgpGQVRBTCBF
-UlJPUjogVW5hYmxlIHRvIHBhcnNlIGlucHV0IHRyZWUKbWFrZVsxXTogKioqIFtEb2N1bWVudGF0
-aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcHdtL2FsbHdpbm5lcixzdW40aS1hMTAtcHdtLmV4YW1w
-bGUuZHQueWFtbF0KRXJyb3IgMQoKVGhpcyBpcyBkdWUgdG8gbWlzc2luZyBoZWFkZXIgaW4gdGhl
-IGRldmljZS10cmVlIHlhbWwgZXhhbXBsZS4KCkZpeCB0aGlzIGJ5IGFkZGluZyB0aGUgbWlzc2lu
-ZyBoZWFkZXJzLgoKRml4ZXM6IDRlZTkyOWIzZjA4ZSAoImR0LWJpbmRpbmdzOiBwd206IGFsbHdp
-bm5lcjogQWRkIEg2IFBXTSBkZXNjcmlwdGlvbiIpClJlcG9ydGVkLWJ5OiBSb2IgSGVycmluZyA8
-cm9iaCtkdEBrZXJuZWwub3JnPgpTaWduZWQtb2ZmLWJ5OiBDbMOpbWVudCBQw6lyb24gPHBlcm9u
-LmNsZW1AZ21haWwuY29tPgotLS0KIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL3B3bS9hbGx3aW5u
-ZXIsc3VuNGktYTEwLXB3bS55YW1sICAgICAgIHwgMyArKysKIDEgZmlsZSBjaGFuZ2VkLCAzIGlu
-c2VydGlvbnMoKykKCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
-Z3MvcHdtL2FsbHdpbm5lcixzdW40aS1hMTAtcHdtLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2Rldmlj
-ZXRyZWUvYmluZGluZ3MvcHdtL2FsbHdpbm5lcixzdW40aS1hMTAtcHdtLnlhbWwKaW5kZXggYTdk
-YzE5ZmMzNDdhLi5mYWI4OWYwNTI0NTAgMTAwNjQ0Ci0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNl
-dHJlZS9iaW5kaW5ncy9wd20vYWxsd2lubmVyLHN1bjRpLWExMC1wd20ueWFtbAorKysgYi9Eb2N1
-bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcHdtL2FsbHdpbm5lcixzdW40aS1hMTAtcHdt
-LnlhbWwKQEAgLTkzLDYgKzkzLDkgQEAgZXhhbXBsZXM6CiAgICAgfTsKIAogICAtIHwKKyAgICAj
-aW5jbHVkZSA8ZHQtYmluZGluZ3MvY2xvY2svc3VuNTBpLWg2LWNjdS5oPgorICAgICNpbmNsdWRl
-IDxkdC1iaW5kaW5ncy9yZXNldC9zdW41MGktaDYtY2N1Lmg+CisKICAgICBwd21AMzAwYTAwMCB7
-CiAgICAgICBjb21wYXRpYmxlID0gImFsbHdpbm5lcixzdW41MGktaDYtcHdtIjsKICAgICAgIHJl
-ZyA9IDwweDAzMDBhMDAwIDB4NDAwPjsKLS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 11/6/19 1:01 AM, Philipp Zabel wrote:
+> Hi Florian,
+> 
+> On Mon, 2019-11-04 at 10:15 -0800, Florian Fainelli wrote:
+>> Hi Philipp,
+>>
+>> This series replaces the previously submitted fixes to the reset-brcmstb
+>> driver and also fix the dt binding example.
+>>
+>> Thank you!
+> 
+> Thank you. Both applied to reset/fixes.
+
+Philipp, when do you expect these patches to hit Linus' tree? Thanks!
+-- 
+Florian
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
