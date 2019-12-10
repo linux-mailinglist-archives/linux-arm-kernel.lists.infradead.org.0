@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0288117F2F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 05:48:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE62B117F30
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 05:48:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XQ40ppTpNrzNIr/s6I8gYJAyD03Zc+QcCNlKsOKyLz0=; b=KpFGH6iZ71UDvW
-	AWDhLBE2I1fYeh/THqEQruN/aq6qR1TO9AXrpeK5yg3aAX+jznImn0g9C/mNdxk9ZH+rs1KA/HIu/
-	m1U2osB0LmlkJe3x+JbYvSLxsVgg7PVeeYjlwH/M1DY1jupIGfOkRslWBUjUBEeEjb/xF7z5VqCEU
-	HMExPVJEmsJoSoU2VVtn2IfMSS/raSrVIWLCj8JBEpbwODmADCDXxFX0QZ0ZGLWYGUqSm0t5tPiSB
-	KvZRLzTGXu75jF3efvcGT420TLv/brPcMllQe39E33bBuAZjSNtRp4vckMtYUBwHIWOmALNdm+4fb
-	ftQSDky/OILVhyyGyjjw==;
+	List-Owner; bh=8N6ugigGe/xDelMiZkgj/z18GOIqjXM4coSrjj5FkIQ=; b=XcV4FTQP2Q1/Rd
+	mppWXglg+V8LXEj2ShlgrtLSZRhI7KBeMev6FyjAYZgaBnNVm9m7LhRK54R47P66SrtOV/EBhjkBN
+	wHc9pw2q5kBzBl6LbbEVY6fPIzoYwOBLbpRVFswMYlc8bfcxENoECD2me5Mur0iwIuIpEAIvm36J3
+	H07yUzx60ChIixQNsUbMi5WVUYeuK1kxCBs6VwHBzEgJeRc+gx6zaX4m3DXEs+5ozIMn6uWxdVnFN
+	7Y5FS4A+SFQbKbsY5+iqy/tmCRXJirroZnhQ8Zw2kSySb+Bd+X4BxAVEoOz+dgd3meRTrqxoWVDS2
+	Hr18RkVNQ5if8jaGWAnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieXRZ-0004ZM-Qg; Tue, 10 Dec 2019 04:48:17 +0000
+	id 1ieXRn-0004sY-I0; Tue, 10 Dec 2019 04:48:31 +0000
 Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieXQx-0004Cm-D3
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 04:47:41 +0000
-Received: by mail-pf1-x441.google.com with SMTP id b19so8409405pfo.2
+ id 1ieXR1-0004IQ-S3
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 04:47:45 +0000
+Received: by mail-pf1-x441.google.com with SMTP id y14so8379659pfm.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Dec 2019 20:47:39 -0800 (PST)
+ Mon, 09 Dec 2019 20:47:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axtens.net; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=txq3LAFK3wOGlutPVrH/f5MoWKzx5UG/2rHrSgg8Ef0=;
- b=Twub/7dfkfSLtOLxrE276ihuEuvporLf72DEUs3hin3WvhA/s1IXbcI8fgn6bYfEap
- gu6iY9yK9ZBPgRRsp2Dndk9mrhs3BC8P/iXi7D2zWdBwrEIU3AYdLX3FjoTgwxeJb6n1
- dheXIk9ucGRFhy5Zr5/DR0A350BnDT96IS57E=
+ bh=EiQDn6/0oRuwTLnfNvzdiHGZKSMrLbDZhPom2rMZn7o=;
+ b=WI2BC14zZiQ98S0DzLqneHxoV18dt5gpqrlVywoE5oHdg5Nlck/8qvJGmFxuUzZ160
+ kjo1gTrn0FS/5oKF8n1ZyXpA2/u2Ffzxnhl4fBdAsjpQ5rGl9rvtZ7NjL/26AIget8jj
+ UTKZNquTzxwyrmTm1IXBllkukRs5NwAkynJ+A=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=txq3LAFK3wOGlutPVrH/f5MoWKzx5UG/2rHrSgg8Ef0=;
- b=K0ZMhxIr7Uqq+hM27KEUf9cnycH/gjq+936ZC/W1GsXVQdI8/g1/VwdtfT7fDYAugV
- c3amBo/ByzzSy43F2HH8fXItmPJam+HotSBTzdF3r/s5YL1Lv15nfMZpbrAHz2Rv4SC9
- ZAd3Pvwpqi2pMnx0oNsu6zDNItTGgJw/PwkdjX+uFcUgXTBPkgBciJiO+KV1RJNH7Y9t
- L+3Elm7RhTYC8B03FoFkNtCDgh67Um/rrCpvixPykzNU5OnWHGqPwgaj7ffuRXgZklxG
- hE3T2dtBmccwRtpNngzqkNQ85GtTaugrQoY9YwT1IorL+Uu3FxCjrOqL4bmfyb1gG8Jl
- XPcQ==
-X-Gm-Message-State: APjAAAWBI8OaRfys5URO1vxwyO2AwDEnUktTdCVvhLndeeLDwAVwahbb
- aRdcAeR8OPnB+1QFlL2ZWRZwqg==
-X-Google-Smtp-Source: APXvYqwo4BmaQbSIu9CGUWSB47DJ4jc+UUxqneRNCNhT2QgM4Y9U0WXwRELaH6aJYlTs5Hvw2Ghozg==
-X-Received: by 2002:aa7:8f16:: with SMTP id x22mr33786940pfr.120.1575953258528; 
- Mon, 09 Dec 2019 20:47:38 -0800 (PST)
+ bh=EiQDn6/0oRuwTLnfNvzdiHGZKSMrLbDZhPom2rMZn7o=;
+ b=RedOHy5NtQAef3z5b7feCnUy+svfdUdWYeIVTlzrAKEsGMIqM2jKjgt6DE8P8ZwphU
+ T+oi+wark5IXWe/xF1Tnx891Z8EOCo6ETjPYpecpKnuIM8RyrL1K5DasUcyy3xV4GmBp
+ VkBHa5H5/YCakS2GWG+sfkwheve7AHPVUIiKhpSDivPGCLN0E86vIwMAXouUmHNhr+Jn
+ /8lcGMDkgobjHT8TprZkdBmk6MPkM1pNLhtGtENJse49WSzPEuDLezif0GApSPzRv87M
+ Omna6Od68RwY/gIZZCIgGogF+uJ/ymSpOIZJCTmafNb8EK1u9eHgHJadl1RKcokKiNZX
+ Du/A==
+X-Gm-Message-State: APjAAAWaQ9xWgqOlAb4xPqTIIBpnpefP5B54pkN6F3gQVEoS50fuK8h8
+ FYov0tPaFrBE7t5VXxyciEtUrA==
+X-Google-Smtp-Source: APXvYqwENZz+Juyen/2aq5gIiV77utFbr37CGrm9NGV3YB5/lvZeMjOVCPCut/3HTEKuNdLqG8oHmw==
+X-Received: by 2002:a63:5d03:: with SMTP id r3mr22623144pgb.306.1575953263265; 
+ Mon, 09 Dec 2019 20:47:43 -0800 (PST)
 Received: from localhost
  (2001-44b8-1113-6700-e460-0b66-7007-c654.static.ipv6.internode.on.net.
  [2001:44b8:1113:6700:e460:b66:7007:c654])
- by smtp.gmail.com with ESMTPSA id c184sm1185254pfa.39.2019.12.09.20.47.35
+ by smtp.gmail.com with ESMTPSA id r6sm1166225pfh.91.2019.12.09.20.47.41
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 09 Dec 2019 20:47:37 -0800 (PST)
+ Mon, 09 Dec 2019 20:47:42 -0800 (PST)
 From: Daniel Axtens <dja@axtens.net>
 To: linux-kernel@vger.kernel.org, linux-mm@kvack.org,
  linuxppc-dev@lists.ozlabs.org, linux-s390@vger.kernel.org,
  linux-xtensa@linux-xtensa.org, linux-arch@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, kasan-dev@googlegroups.com,
  christophe.leroy@c-s.fr, aneesh.kumar@linux.ibm.com, bsingharora@gmail.com
-Subject: [PATCH v2 2/4] kasan: use MAX_PTRS_PER_* for early shadow
-Date: Tue, 10 Dec 2019 15:47:12 +1100
-Message-Id: <20191210044714.27265-3-dja@axtens.net>
+Subject: [PATCH v2 3/4] kasan: Document support on 32-bit powerpc
+Date: Tue, 10 Dec 2019 15:47:13 +1100
+Message-Id: <20191210044714.27265-4-dja@axtens.net>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191210044714.27265-1-dja@axtens.net>
 References: <20191210044714.27265-1-dja@axtens.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_204739_459459_6B2C66A8 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20191209_204743_962091_6C0AD6E9 
+X-CRM114-Status: GOOD (  12.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,64 +105,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This helps with powerpc support, and should have no effect on
-anything else.
+KASAN is supported on 32-bit powerpc and the docs should reflect this.
 
 Suggested-by: Christophe Leroy <christophe.leroy@c-s.fr>
 Signed-off-by: Daniel Axtens <dja@axtens.net>
 ---
- include/linux/kasan.h | 6 +++---
- mm/kasan/init.c       | 6 +++---
- 2 files changed, 6 insertions(+), 6 deletions(-)
+ Documentation/dev-tools/kasan.rst |  3 ++-
+ Documentation/powerpc/kasan.txt   | 12 ++++++++++++
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/powerpc/kasan.txt
 
-diff --git a/include/linux/kasan.h b/include/linux/kasan.h
-index e18fe54969e9..d2f2a4ffcb12 100644
---- a/include/linux/kasan.h
-+++ b/include/linux/kasan.h
-@@ -15,9 +15,9 @@ struct task_struct;
- #include <asm/pgtable.h>
+diff --git a/Documentation/dev-tools/kasan.rst b/Documentation/dev-tools/kasan.rst
+index e4d66e7c50de..4af2b5d2c9b4 100644
+--- a/Documentation/dev-tools/kasan.rst
++++ b/Documentation/dev-tools/kasan.rst
+@@ -22,7 +22,8 @@ global variables yet.
+ Tag-based KASAN is only supported in Clang and requires version 7.0.0 or later.
  
- extern unsigned char kasan_early_shadow_page[PAGE_SIZE];
--extern pte_t kasan_early_shadow_pte[PTRS_PER_PTE];
--extern pmd_t kasan_early_shadow_pmd[PTRS_PER_PMD];
--extern pud_t kasan_early_shadow_pud[PTRS_PER_PUD];
-+extern pte_t kasan_early_shadow_pte[MAX_PTRS_PER_PTE];
-+extern pmd_t kasan_early_shadow_pmd[MAX_PTRS_PER_PMD];
-+extern pud_t kasan_early_shadow_pud[MAX_PTRS_PER_PUD];
- extern p4d_t kasan_early_shadow_p4d[MAX_PTRS_PER_P4D];
+ Currently generic KASAN is supported for the x86_64, arm64, xtensa and s390
+-architectures, and tag-based KASAN is supported only for arm64.
++architectures. It is also supported on 32-bit powerpc kernels. Tag-based KASAN
++is supported only on arm64.
  
- int kasan_populate_early_shadow(const void *shadow_start,
-diff --git a/mm/kasan/init.c b/mm/kasan/init.c
-index ce45c491ebcd..8b54a96d3b3e 100644
---- a/mm/kasan/init.c
-+++ b/mm/kasan/init.c
-@@ -46,7 +46,7 @@ static inline bool kasan_p4d_table(pgd_t pgd)
- }
- #endif
- #if CONFIG_PGTABLE_LEVELS > 3
--pud_t kasan_early_shadow_pud[PTRS_PER_PUD] __page_aligned_bss;
-+pud_t kasan_early_shadow_pud[MAX_PTRS_PER_PUD] __page_aligned_bss;
- static inline bool kasan_pud_table(p4d_t p4d)
- {
- 	return p4d_page(p4d) == virt_to_page(lm_alias(kasan_early_shadow_pud));
-@@ -58,7 +58,7 @@ static inline bool kasan_pud_table(p4d_t p4d)
- }
- #endif
- #if CONFIG_PGTABLE_LEVELS > 2
--pmd_t kasan_early_shadow_pmd[PTRS_PER_PMD] __page_aligned_bss;
-+pmd_t kasan_early_shadow_pmd[MAX_PTRS_PER_PMD] __page_aligned_bss;
- static inline bool kasan_pmd_table(pud_t pud)
- {
- 	return pud_page(pud) == virt_to_page(lm_alias(kasan_early_shadow_pmd));
-@@ -69,7 +69,7 @@ static inline bool kasan_pmd_table(pud_t pud)
- 	return false;
- }
- #endif
--pte_t kasan_early_shadow_pte[PTRS_PER_PTE] __page_aligned_bss;
-+pte_t kasan_early_shadow_pte[MAX_PTRS_PER_PTE] __page_aligned_bss;
- 
- static inline bool kasan_pte_table(pmd_t pmd)
- {
+ Usage
+ -----
+diff --git a/Documentation/powerpc/kasan.txt b/Documentation/powerpc/kasan.txt
+new file mode 100644
+index 000000000000..a85ce2ff8244
+--- /dev/null
++++ b/Documentation/powerpc/kasan.txt
+@@ -0,0 +1,12 @@
++KASAN is supported on powerpc on 32-bit only.
++
++32 bit support
++==============
++
++KASAN is supported on both hash and nohash MMUs on 32-bit.
++
++The shadow area sits at the top of the kernel virtual memory space above the
++fixmap area and occupies one eighth of the total kernel virtual memory space.
++
++Instrumentation of the vmalloc area is not currently supported, but modules
++are.
 -- 
 2.20.1
 
