@@ -2,89 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91B171183A6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 10:35:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B5C01183AC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 10:35:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BTV+6S35u0Jl0+sVxnFjLPzokqkn9rJbjm2RVPvZdR0=; b=Ci2fE9QW5Nsl27
-	a3f5uTyzKX0MzXqF1yCbpXZLJJ6uQMMNXjqg9ddhzjtB0U5mdTRVTzcAn6l8lxgjeKuORtG3uWrbx
-	nuGORKK0GJ4XscZk/YbUiTeHnuKInZvABGuGwhMw11oiaDyfa7i2eP+EJcc3YOHGKj60eBd2mqv4Z
-	Kxvw98+tnbE2+Ri93/wPSc+nU44a0BT3OzRSBeR4X3adzPTmG0F06xp3W//X+rNnL3ovuHyuFiBn1
-	KoKUOng8sRwq58XE9jUxXAopPFfbUT6kSiAgD5gRbNbJDwLvdzp1Q0UydTHiuCbVMQ8tIdu9rkAZx
-	mILXJWj70Ew3NDk2+bcQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=xQl+u4TFl8LIiIv8t+RlUd5em/HOUw57jLwoW3eXDro=; b=L4sX8wl9nWoPuebMLjG9FYUWzA
+	t3WFvWeHrSdZHHAhm0LhMWhZ8NEAYsu/UkWtDqwxFYNvfldWK3RDo0TnLt0Z/UGAmDci7owe7sRUr
+	eugwkto7WSjW2PxTZayH7YwMyY72VnFThAe4yku2XkifmCnLe5pbYx54R9StV7jx06fEFKghPrIAJ
+	QRChAZkIy3hn4RPyWOkoHLHYg+WBsuBppYLsS1orAjqp8qUjPLnI0lJXQZLqcSX6nQ3b3AUdZlT76
+	ZG84XoGsKhL2B9XDB9rtzR27gOInPl0wjKA+pijaiT+aidH0UAhuLI6ztfGQ1v+VyoK6iAR+Vpu6b
+	azzaNECQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iebvJ-0005zf-O1; Tue, 10 Dec 2019 09:35:17 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1iebvm-0006WG-Sy; Tue, 10 Dec 2019 09:35:46 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iebv7-0005H6-PP
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 09:35:07 +0000
-Received: by mail-ed1-f68.google.com with SMTP id i6so14218479edr.5
+ id 1iebvb-0006Vn-EF
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 09:35:36 +0000
+Received: by mail-lf1-x142.google.com with SMTP id 9so13127367lfq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 01:35:04 -0800 (PST)
+ Tue, 10 Dec 2019 01:35:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=sPqiW8fjJ6bClKJe5WkINQ65vkoeIkKhHU7yZhPYmGg=;
+ b=ABNDcXBaBSFTY1MBOuehy4WQ2SFh6x6aVPCz/0w0olzbOzjmzqV5odtrNM5JpBQtjJ
+ 9yVNHZYJ+hXqU9+/ETxhdBza83LPN/PRKXds16dNfcf9TTYEf9CyjvF5L98Jae+Wc19O
+ IIiOY/fNFDogBF/Qk0JhyV3/RVe0p0oRK8TFL2jmzqXdbMog4rxb7aAQFIA4b/UxfOvo
+ cjXEKKsu2cnN2A4AescnBek882x0vlYO15PHe5wRgyTWW41pATbeTF+ttmU2UFRbaCok
+ KRa6NF+JMCG9iUjkwZDsbU0r5+0k5eVzKKwIzLflfdCV2LgN2kV0nBUgi+Hmv5uIBHn8
+ 2ajA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RH04wiz8V0hoWb27QqHxPfCqkEIpOrBir1lGd6+fDNE=;
- b=CL1RfKTFLc28TqYm3ABAZmRjx1ysadaOolsVqQOZyfKYlfpGYqJ+aMeVgOWwd3/wkP
- j3a5EGCkvNxglP1Viw/s+YUDUJXWRBL3p9KadMbChex4839WVM+6sIWbLeabnpl0MtFF
- 0S+DFiTL3pjqwXJ4/O6MVriCLbp4gdzPSzPNWtYajHQuKtkSgu0O1imhmzPe2hWsoCfT
- hG6Z4HJ1GPhRWFgyRqY2UG+wqKTdgrvdDVX/veGrz53tOhZzNaCS21T4r9c+6QXzq2Yw
- q8+JSriwsydsgzncn+cqywIgvBHn02RkD3+oPeTxno0Kjghs7O6a6NkOp+o+Arj+berr
- e/RQ==
-X-Gm-Message-State: APjAAAX9XPDdkerspNOBpyFO6dq0s5RhWCUbhcGvDRIZxfAKDQAevDlN
- 8xdnbHG6765+v/Hvn5UakLp1N6rAeHw=
-X-Google-Smtp-Source: APXvYqyENgik0EphQMNXy2nmmTx9ozFCM83ysLMTsypPlu69O7oxCruAas/rOtXjVArJbP0480xmaw==
-X-Received: by 2002:a17:906:6d58:: with SMTP id
- a24mr2475955ejt.153.1575970502945; 
- Tue, 10 Dec 2019 01:35:02 -0800 (PST)
-Received: from mail-wr1-f52.google.com (mail-wr1-f52.google.com.
- [209.85.221.52])
- by smtp.gmail.com with ESMTPSA id b72sm52203edf.68.2019.12.10.01.35.02
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 10 Dec 2019 01:35:02 -0800 (PST)
-Received: by mail-wr1-f52.google.com with SMTP id z3so19224204wru.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 01:35:02 -0800 (PST)
-X-Received: by 2002:adf:81e3:: with SMTP id 90mr2041259wra.23.1575970502213;
- Tue, 10 Dec 2019 01:35:02 -0800 (PST)
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=sPqiW8fjJ6bClKJe5WkINQ65vkoeIkKhHU7yZhPYmGg=;
+ b=DHl6j5bb1xH4Lmts48pZmM3cXQiHREmnf0/Fzv+9rYreyVdeRLNqXs9n+RCtDdvU7V
+ ujMKrnI1YoKWmaUVIbm9r5gu1ZjJaB7lBPkMwAP2nzwJe8Jv8BhguzDj/BTsEhHEIa7r
+ UCOsLGGrvd/qnby0NkkUPRqHAY+g+bGuM0oIIhNghUPQA2eKFv/yD/9l09Tq9Cn/N7UN
+ ZKzGdya+qg1SuBq59HmftvyxwU2MGJN/FI6NzGs75ms55m2Q5y4HAW+olBJ+1fJQXjOJ
+ K1bk8mnUOLLmZj3ykCz0Bzn3NzaJu6nWyCp/f1z5Mf2PCW7TjhVL5IiZaGiSfjH4jwQR
+ Iswg==
+X-Gm-Message-State: APjAAAU+kpL0zE8z0GfuVKlYy1DR2x6nuUP+XL++e+AEbTsUhXF1LuGf
+ aElAYOG/cWNJ+H1/Ok91OgI=
+X-Google-Smtp-Source: APXvYqwioSlPYO6hoFk7LGARsxqMyzh3CVbgGfmrhGJmH3QfKEy1cMr4MWEHUZicpl9ULfHvpu8eWw==
+X-Received: by 2002:ac2:4316:: with SMTP id l22mr2852226lfh.115.1575970533025; 
+ Tue, 10 Dec 2019 01:35:33 -0800 (PST)
+Received: from [192.168.68.106] ([193.119.54.228])
+ by smtp.gmail.com with ESMTPSA id 140sm1193677lfk.78.2019.12.10.01.35.27
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 10 Dec 2019 01:35:32 -0800 (PST)
+Subject: Re: [PATCH v2 1/4] mm: define MAX_PTRS_PER_{PTE,PMD,PUD}
+To: Daniel Axtens <dja@axtens.net>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, linuxppc-dev@lists.ozlabs.org,
+ linux-s390@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kasan-dev@googlegroups.com, christophe.leroy@c-s.fr,
+ aneesh.kumar@linux.ibm.com
+References: <20191210044714.27265-1-dja@axtens.net>
+ <20191210044714.27265-2-dja@axtens.net>
+From: Balbir Singh <bsingharora@gmail.com>
+Message-ID: <50ac061a-caa9-ed4e-c9a4-1f86bb0552bd@gmail.com>
+Date: Tue, 10 Dec 2019 20:35:22 +1100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <1575970087-11667-1-git-send-email-clabbe@baylibre.com>
-In-Reply-To: <1575970087-11667-1-git-send-email-clabbe@baylibre.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 10 Dec 2019 17:34:50 +0800
-X-Gmail-Original-Message-ID: <CAGb2v66x0CLPBj_BJv0QzKXi-p61dqcKSjCrT=XO-vkEXR1YFw@mail.gmail.com>
-Message-ID: <CAGb2v66x0CLPBj_BJv0QzKXi-p61dqcKSjCrT=XO-vkEXR1YFw@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: allwinner: restore hdmi_con_in node
-To: Corentin Labbe <clabbe@baylibre.com>
+In-Reply-To: <20191210044714.27265-2-dja@axtens.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_013505_874901_DC9ABB2A 
-X-CRM114-Status: GOOD (  15.36  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191210_013535_476041_8979FE5B 
+X-CRM114-Status: GOOD (  22.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
+ provider (bsingharora[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,63 +108,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, aleksandr.aleksandrov@emlid.com,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>,
- Georgii Staroselskii <georgii.staroselskii@emlid.com>,
- Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 10, 2019 at 5:28 PM Corentin Labbe <clabbe@baylibre.com> wrote:
->
-> Compiling today next (20191210) fail to build with
-> arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts:53.25-55.4: ERROR (phandle_references): /soc/hdmi@1ee0000/ports/port@1/endpoint: Reference to non-existent node or label "hdmi_con_in"
 
 
-Patch subject should read:
+On 10/12/19 3:47 pm, Daniel Axtens wrote:
+> powerpc has boot-time configurable PTRS_PER_PTE, PMD and PUD. The
+> values are selected based on the MMU under which the kernel is
+> booted. This is much like how 4 vs 5-level paging on x86_64 leads to
+> boot-time configurable PTRS_PER_P4D.
+> 
+> So far, this hasn't leaked out of arch/powerpc. But with KASAN, we
+> have static arrays based on PTRS_PER_*, so for powerpc support must
+> provide constant upper bounds for generic code.
+> 
+> Define MAX_PTRS_PER_{PTE,PMD,PUD} for this purpose.
+> 
+> I have configured these constants:
+>  - in asm-generic headers
+>  - on arches that implement KASAN: x86, s390, arm64, xtensa and powerpc
+> 
+> I haven't wired up any other arches just yet - there is no user of
+> the constants outside of the KASAN code I add in the next patch, so
+> missing the constants on arches that don't support KASAN shouldn't
+> break anything.
 
-arm64: dts: allwinner: h5: emlid-neutis-n5-devboard: Restore hdmi_in_con node
+I would suggest limiting this to powerpc for now and use
 
-ChenYu
+#ifndef MAX_PTRS_PER_PUD
+#define MAX_PTRS_PER_PUD	PTRS_PER_PUD
+#endif
 
-> This patch fixes the build by restoring this node.
->
-> Fixes: b120a822ef10 ("ARM: dts: allwinner: Split out non-SoC specific parts of Neutis N5")
-> Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
+style code in KASAN. It just keeps the change surface to a limited
+value, till other arch's see value in migrating to support it.
+
+> 
+> Suggested-by: Christophe Leroy <christophe.leroy@c-s.fr>
+> Signed-off-by: Daniel Axtens <dja@axtens.net>
 > ---
->  .../allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts  | 11 +++++++++++
->  1 file changed, 11 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts b/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts
-> index fb96d356055e..d6cc6592cfa3 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dts
-> @@ -15,6 +15,17 @@
->                      "emlid,neutis-n5",
->                      "allwinner,sun50i-h5";
->
-> +       connector {
-> +               compatible = "hdmi-connector";
-> +               type = "a";
+>  arch/arm64/include/asm/pgtable-hwdef.h       | 3 +++
+>  arch/powerpc/include/asm/book3s/64/hash.h    | 4 ++++
+>  arch/powerpc/include/asm/book3s/64/pgtable.h | 7 +++++++
+>  arch/powerpc/include/asm/book3s/64/radix.h   | 5 +++++
+>  arch/s390/include/asm/pgtable.h              | 3 +++
+>  arch/x86/include/asm/pgtable_types.h         | 5 +++++
+>  arch/xtensa/include/asm/pgtable.h            | 1 +
+>  include/asm-generic/pgtable-nop4d-hack.h     | 9 +++++----
+>  include/asm-generic/pgtable-nopmd.h          | 9 +++++----
+>  include/asm-generic/pgtable-nopud.h          | 9 +++++----
+>  10 files changed, 43 insertions(+), 12 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
+> index d9fbd433cc17..485e1f3c5c6f 100644
+> --- a/arch/arm64/include/asm/pgtable-hwdef.h
+> +++ b/arch/arm64/include/asm/pgtable-hwdef.h
+> @@ -41,6 +41,7 @@
+>  #define ARM64_HW_PGTABLE_LEVEL_SHIFT(n)	((PAGE_SHIFT - 3) * (4 - (n)) + 3)
+>  
+>  #define PTRS_PER_PTE		(1 << (PAGE_SHIFT - 3))
+> +#define MAX_PTRS_PER_PTE	PTRS_PER_PTE
+>  
+>  /*
+>   * PMD_SHIFT determines the size a level 2 page table entry can map.
+> @@ -50,6 +51,7 @@
+>  #define PMD_SIZE		(_AC(1, UL) << PMD_SHIFT)
+>  #define PMD_MASK		(~(PMD_SIZE-1))
+>  #define PTRS_PER_PMD		PTRS_PER_PTE
+> +#define MAX_PTRS_PER_PMD	PTRS_PER_PMD
+>  #endif
+>  
+>  /*
+> @@ -60,6 +62,7 @@
+>  #define PUD_SIZE		(_AC(1, UL) << PUD_SHIFT)
+>  #define PUD_MASK		(~(PUD_SIZE-1))
+>  #define PTRS_PER_PUD		PTRS_PER_PTE
+> +#define MAX_PTRS_PER_PUD	PTRS_PER_PUD
+>  #endif
+>  
+>  /*
+> diff --git a/arch/powerpc/include/asm/book3s/64/hash.h b/arch/powerpc/include/asm/book3s/64/hash.h
+> index 2781ebf6add4..fce329b8452e 100644
+> --- a/arch/powerpc/include/asm/book3s/64/hash.h
+> +++ b/arch/powerpc/include/asm/book3s/64/hash.h
+> @@ -18,6 +18,10 @@
+>  #include <asm/book3s/64/hash-4k.h>
+>  #endif
+>  
+> +#define H_PTRS_PER_PTE		(1 << H_PTE_INDEX_SIZE)
+> +#define H_PTRS_PER_PMD		(1 << H_PMD_INDEX_SIZE)
+> +#define H_PTRS_PER_PUD		(1 << H_PUD_INDEX_SIZE)
 > +
-> +               port {
-> +                       hdmi_con_in: endpoint {
-> +                               remote-endpoint = <&hdmi_out_con>;
-> +                       };
-> +               };
-> +       };
+>  /* Bits to set in a PMD/PUD/PGD entry valid bit*/
+>  #define HASH_PMD_VAL_BITS		(0x8000000000000000UL)
+>  #define HASH_PUD_VAL_BITS		(0x8000000000000000UL)
+> diff --git a/arch/powerpc/include/asm/book3s/64/pgtable.h b/arch/powerpc/include/asm/book3s/64/pgtable.h
+> index b01624e5c467..209817235a44 100644
+> --- a/arch/powerpc/include/asm/book3s/64/pgtable.h
+> +++ b/arch/powerpc/include/asm/book3s/64/pgtable.h
+> @@ -231,6 +231,13 @@ extern unsigned long __pmd_frag_size_shift;
+>  #define PTRS_PER_PUD	(1 << PUD_INDEX_SIZE)
+>  #define PTRS_PER_PGD	(1 << PGD_INDEX_SIZE)
+>  
+> +#define MAX_PTRS_PER_PTE	((H_PTRS_PER_PTE > R_PTRS_PER_PTE) ? \
+> +				  H_PTRS_PER_PTE : R_PTRS_PER_PTE)
+> +#define MAX_PTRS_PER_PMD	((H_PTRS_PER_PMD > R_PTRS_PER_PMD) ? \
+> +				  H_PTRS_PER_PMD : R_PTRS_PER_PMD)
+> +#define MAX_PTRS_PER_PUD	((H_PTRS_PER_PUD > R_PTRS_PER_PUD) ? \
+> +				  H_PTRS_PER_PUD : R_PTRS_PER_PUD)
 > +
->         vdd_cpux: gpio-regulator {
->                 compatible = "regulator-gpio";
->                 regulator-name = "vdd-cpux";
-> --
-> 2.23.0
->
+
+How about reusing max
+
+#define MAX_PTRS_PER_PTE  max(H_PTRS_PER_PTE, R_PTRS_PER_PTE)
+#define MAX_PTRS_PER_PMD  max(H_PTRS_PER_PMD, R_PTRS_PER_PMD)
+#define MAX_PTRS_PER_PUD  max(H_PTRS_PER_PUD, R_PTRS_PER_PUD)
+
+Balbir Singh.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
