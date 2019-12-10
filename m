@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2516119399
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:14:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B42811939A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:14:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XaemB4i97lbFkBmJrl3idnW+NfiRLcvPnysY1Clv4Cs=; b=W9Og0momR9U4tE
-	pW1Fc8mjnby/qe4R/I6F8JH4d48Kt6Qlj1d7Xj43/NK6PXHfvJNtt5nCGXmypVaqezKnQlEccBm1z
-	j1B6lJ6xCLe0L+9uvh0bfr+R42iR6P/edbFpdMnjyu8KdibLb2nF7wjjhgy+7+ypG6hiC5i/D8Ju9
-	ht9G8NYM/PIPMGpz4JaIlPnha6xLuq2EMq9qQBV43hr1iczJitMAWdRWQ3KVMmNB/6AerQBiCgiRu
-	fhugZ57REShKKC0B2JkKClhkxgTnKPvoYAUAsdUc86m1j6sccfxgsOjs8CIxNHnTWThal24F7z584
-	ewkLHhDXNnnxQUknvX1w==;
+	List-Owner; bh=J6QtrzEn2BC0avzIhZUyXveSuHd4qOfkPsa9v/Keqgk=; b=TCpLJQMFajdrd5
+	eBe2XxxUNTxwA+NUt3LNsCxaLeTHyDWE27zpzeoM//pt2DN6qVVs2pNlqywotOudWgntUpFb7jdaQ
+	radwsk5RkA0uKybkaiSyXFfN8XyhHHXgJ7SnA4W2c/6n9cGMOwqhiheQj80UzHLG/OXnweirvd9r8
+	NgJMdAEJ6aD19xmyduFjP1L3dKT2bPF1c+HjWJUbj7i7Z73H05W2+/VpSrNugUupRn3pmrhP3H58/
+	38QYzVkf4zkLugrGUSsGYB/T9ee/nn5Fl6/NPR3XkhNYXHjkyDOD4Mf78zK0ePfVE+o7rD952XTM9
+	NX5fI/Q/fO6Jo7Qp3ewQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iempR-0007UO-7d; Tue, 10 Dec 2019 21:13:57 +0000
+	id 1iempl-0007hx-3F; Tue, 10 Dec 2019 21:14:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iemnZ-0005xs-8K
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:12:03 +0000
+ id 1iemne-00061z-AS
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:12:07 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0E718246AA;
- Tue, 10 Dec 2019 21:11:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AEAEE246B4;
+ Tue, 10 Dec 2019 21:12:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576012320;
- bh=8YueWeiyPjHFoKErqtZ0QScw+0iYHoNybihygGv1PZ8=;
+ s=default; t=1576012325;
+ bh=alF0iVCcCKNzMmvm++PJFTaNJLFbEjzDjBZ5N5Wh7Ik=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=sTInnoSCgzU2MixyVlyNfH3VlMygnfH7MV4pEdxLncoSuXZR/uTdLoLChZ2sumZSz
- 2up+qg9YITCgV2UBwI79o1wSinOsFwPlhnJZCpAI4Qphtz8mrq/RLHZve1Ydc+Fufs
- B1mjgkc8yQPBcSuBG0GS9llUvpHgmhnbKKfbcdWU=
+ b=c6ogMpVVVNXNkM3gHTDPez/XuK+/xjvVC6G7wk32griTt20HMUm/fHq7oA6n5ptV3
+ kSYMNfvy7dABNHOUqVBcZDPPsFIxmcKbOaUZ3dNmNgTXPh8HFAJ0bGcuEGnFq69XK5
+ DGGr/C43+LutRINGQA7fhA2JpZhdlBVqjG8m7Pww=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 254/350] crypto: atmel - Fix authenc support when
- it is set to m
-Date: Tue, 10 Dec 2019 16:05:59 -0500
-Message-Id: <20191210210735.9077-215-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 258/350] media: cedrus: Use helpers to access
+ capture queue
+Date: Tue, 10 Dec 2019 16:06:03 -0500
+Message-Id: <20191210210735.9077-219-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191210210735.9077-1-sashal@kernel.org>
 References: <20191210210735.9077-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_131201_404389_BB79FD0E 
-X-CRM114-Status: GOOD (  12.90  )
+X-CRM114-CacheID: sfid-20191210_131206_488987_2D6592D5 
+X-CRM114-Status: GOOD (  11.58  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,142 +80,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-crypto@vger.kernel.org,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-arm-kernel@lists.infradead.org,
- Tudor Ambarus <tudor.ambarus@microchip.com>
+Cc: Sasha Levin <sashal@kernel.org>, devel@driverdev.osuosl.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Herbert Xu <herbert@gondor.apana.org.au>
+From: Jernej Skrabec <jernej.skrabec@siol.net>
 
-[ Upstream commit 1520c72596dde7f22b8bd6bed3ef7df2b8b7ef39 ]
+[ Upstream commit 1fd50a2c294457508f06b8b631d01a58de81cdd2 ]
 
-As it is if CONFIG_CRYPTO_DEV_ATMEL_AUTHENC is set to m it is in
-effect disabled.  This patch fixes it by using IS_ENABLED instead
-of ifdef.
+Accessing capture queue structue directly is not safe. Use helpers for
+that.
 
-Fixes: 89a82ef87e01 ("crypto: atmel-authenc - add support to...")
-Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
-Reviewed-by: Tudor Ambarus <tudor.ambarus@microchip.com>
-Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+Acked-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Signed-off-by: Mauro Carvalho Chehab <mchehab@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/crypto/atmel-aes.c     | 18 +++++++++---------
- drivers/crypto/atmel-authenc.h |  2 +-
- drivers/crypto/atmel-sha.c     |  2 +-
- 3 files changed, 11 insertions(+), 11 deletions(-)
+ drivers/staging/media/sunxi/cedrus/cedrus.h      | 8 ++++++--
+ drivers/staging/media/sunxi/cedrus/cedrus_h264.c | 8 ++++++--
+ 2 files changed, 12 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/crypto/atmel-aes.c b/drivers/crypto/atmel-aes.c
-index 026f193556f9d..b85a516614d86 100644
---- a/drivers/crypto/atmel-aes.c
-+++ b/drivers/crypto/atmel-aes.c
-@@ -145,7 +145,7 @@ struct atmel_aes_xts_ctx {
- 	u32			key2[AES_KEYSIZE_256 / sizeof(u32)];
- };
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
+index 2f017a6518486..3758a1c4e2d05 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus.h
++++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
+@@ -179,12 +179,16 @@ static inline dma_addr_t cedrus_buf_addr(struct vb2_buffer *buf,
+ static inline dma_addr_t cedrus_dst_buf_addr(struct cedrus_ctx *ctx,
+ 					     int index, unsigned int plane)
+ {
+-	struct vb2_buffer *buf;
++	struct vb2_buffer *buf = NULL;
++	struct vb2_queue *vq;
  
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- struct atmel_aes_authenc_ctx {
- 	struct atmel_aes_base_ctx	base;
- 	struct atmel_sha_authenc_ctx	*auth;
-@@ -157,7 +157,7 @@ struct atmel_aes_reqctx {
- 	u32			lastc[AES_BLOCK_SIZE / sizeof(u32)];
- };
+ 	if (index < 0)
+ 		return 0;
  
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- struct atmel_aes_authenc_reqctx {
- 	struct atmel_aes_reqctx	base;
- 
-@@ -486,13 +486,13 @@ static inline bool atmel_aes_is_encrypt(const struct atmel_aes_dev *dd)
- 	return (dd->flags & AES_FLAGS_ENCRYPT);
+-	buf = ctx->fh.m2m_ctx->cap_q_ctx.q.bufs[index];
++	vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, V4L2_BUF_TYPE_VIDEO_CAPTURE);
++	if (vq)
++		buf = vb2_get_buffer(vq, index);
++
+ 	return buf ? cedrus_buf_addr(buf, &ctx->dst_fmt, plane) : 0;
  }
  
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- static void atmel_aes_authenc_complete(struct atmel_aes_dev *dd, int err);
- #endif
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+index d6a782703c9b0..08c6c9c410cc3 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
+@@ -96,7 +96,7 @@ static void cedrus_write_frame_list(struct cedrus_ctx *ctx,
+ 	const struct v4l2_ctrl_h264_decode_params *decode = run->h264.decode_params;
+ 	const struct v4l2_ctrl_h264_slice_params *slice = run->h264.slice_params;
+ 	const struct v4l2_ctrl_h264_sps *sps = run->h264.sps;
+-	struct vb2_queue *cap_q = &ctx->fh.m2m_ctx->cap_q_ctx.q;
++	struct vb2_queue *cap_q;
+ 	struct cedrus_buffer *output_buf;
+ 	struct cedrus_dev *dev = ctx->dev;
+ 	unsigned long used_dpbs = 0;
+@@ -104,6 +104,8 @@ static void cedrus_write_frame_list(struct cedrus_ctx *ctx,
+ 	unsigned int output = 0;
+ 	unsigned int i;
  
- static inline int atmel_aes_complete(struct atmel_aes_dev *dd, int err)
++	cap_q = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, V4L2_BUF_TYPE_VIDEO_CAPTURE);
++
+ 	memset(pic_list, 0, sizeof(pic_list));
+ 
+ 	for (i = 0; i < ARRAY_SIZE(decode->dpb); i++) {
+@@ -167,12 +169,14 @@ static void _cedrus_write_ref_list(struct cedrus_ctx *ctx,
+ 				   enum cedrus_h264_sram_off sram)
  {
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- 	if (dd->ctx->is_aead)
- 		atmel_aes_authenc_complete(dd, err);
- #endif
-@@ -1973,7 +1973,7 @@ static struct crypto_alg aes_xts_alg = {
- 	}
- };
+ 	const struct v4l2_ctrl_h264_decode_params *decode = run->h264.decode_params;
+-	struct vb2_queue *cap_q = &ctx->fh.m2m_ctx->cap_q_ctx.q;
++	struct vb2_queue *cap_q;
+ 	struct cedrus_dev *dev = ctx->dev;
+ 	u8 sram_array[CEDRUS_MAX_REF_IDX];
+ 	unsigned int i;
+ 	size_t size;
  
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- /* authenc aead functions */
++	cap_q = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, V4L2_BUF_TYPE_VIDEO_CAPTURE);
++
+ 	memset(sram_array, 0, sizeof(sram_array));
  
- static int atmel_aes_authenc_start(struct atmel_aes_dev *dd);
-@@ -2460,7 +2460,7 @@ static void atmel_aes_unregister_algs(struct atmel_aes_dev *dd)
- {
- 	int i;
- 
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- 	if (dd->caps.has_authenc)
- 		for (i = 0; i < ARRAY_SIZE(aes_authenc_algs); i++)
- 			crypto_unregister_aead(&aes_authenc_algs[i]);
-@@ -2507,7 +2507,7 @@ static int atmel_aes_register_algs(struct atmel_aes_dev *dd)
- 			goto err_aes_xts_alg;
- 	}
- 
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- 	if (dd->caps.has_authenc) {
- 		for (i = 0; i < ARRAY_SIZE(aes_authenc_algs); i++) {
- 			err = crypto_register_aead(&aes_authenc_algs[i]);
-@@ -2519,7 +2519,7 @@ static int atmel_aes_register_algs(struct atmel_aes_dev *dd)
- 
- 	return 0;
- 
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- 	/* i = ARRAY_SIZE(aes_authenc_algs); */
- err_aes_authenc_alg:
- 	for (j = 0; j < i; j++)
-@@ -2709,7 +2709,7 @@ static int atmel_aes_probe(struct platform_device *pdev)
- 
- 	atmel_aes_get_cap(aes_dd);
- 
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- 	if (aes_dd->caps.has_authenc && !atmel_sha_authenc_is_ready()) {
- 		err = -EPROBE_DEFER;
- 		goto iclk_unprepare;
-diff --git a/drivers/crypto/atmel-authenc.h b/drivers/crypto/atmel-authenc.h
-index cbd37a2edadaf..d6de810df44fe 100644
---- a/drivers/crypto/atmel-authenc.h
-+++ b/drivers/crypto/atmel-authenc.h
-@@ -12,7 +12,7 @@
- #ifndef __ATMEL_AUTHENC_H__
- #define __ATMEL_AUTHENC_H__
- 
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- 
- #include <crypto/authenc.h>
- #include <crypto/hash.h>
-diff --git a/drivers/crypto/atmel-sha.c b/drivers/crypto/atmel-sha.c
-index 84cb8748a7959..d32626458e67c 100644
---- a/drivers/crypto/atmel-sha.c
-+++ b/drivers/crypto/atmel-sha.c
-@@ -2212,7 +2212,7 @@ static struct ahash_alg sha_hmac_algs[] = {
- },
- };
- 
--#ifdef CONFIG_CRYPTO_DEV_ATMEL_AUTHENC
-+#if IS_ENABLED(CONFIG_CRYPTO_DEV_ATMEL_AUTHENC)
- /* authenc functions */
- 
- static int atmel_sha_authenc_init2(struct atmel_sha_dev *dd);
+ 	for (i = 0; i < num_ref; i++) {
 -- 
 2.20.1
 
