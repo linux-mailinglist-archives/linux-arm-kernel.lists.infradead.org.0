@@ -2,76 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3CCD117E21
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 04:24:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56528117E4E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 04:40:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NrBSUuMXnp4Jd0xJdufMrYOVSAwXTkEm2UqbwndjA9U=; b=SGpFYW2dQavn7b
-	NUUjAz8KnRJVuga+5bwdKnfLQuZDxNx1UgaY0Dy9/XP0tU/nd4LF07ZJrsYzEx1RCVL+AgFBos0Bf
-	zuBCA68s0nIwKvyZRx1QmvxcWL/GiGUxhHUDIurCUXkpXYOe32EScKHLU7PoSTKA8ARPljV3umMMf
-	cguvQ3x36suPKxWS2lU42aIYr3aW+AbLRF1CzBd/GYRsdfQrBWq5fBrq6EQPqh82FSEtngxkpWkoV
-	q/5Dvk8LDM4+R9w66qn2Mj9/bRW4EGd9pip8Hju3UG9lfnA5UarDfdD8nCJ7DXYbHgw2eUOowfL8k
-	Yel5eN+kbdarS7KBqbMQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=7Nx2YIIMiQOFsPzDror3/DrudHS/Hw/kbhiqo8vRsw8=; b=dTG
+	3k3FxSAz8ZhPIwZOTBGSztSQbnS1oK1k+kyAP1Y+ATVA51LWwBlsM2XBR0Xwk6/hCtZWcbOZK2EZY
+	g9w8oMWceGBIzPL232VVLlvI7ugpT5eCig45dl7vWhpSeN7FTrDnmtxSsZi9/vJgGzNhZuDStGxon
+	ofAlAqGBDrv9fi5DTtnBFzzKl7zUPvO/KPK1G/hzujaV7RWX5R+wm3LCYmmGfG6aQ1mu1XfvqvQ/O
+	1P4x9O3XZ/t1Hv5JlEHFtvwcoFRJGG3fbhzrifa55wY8lhbtNCS4N7tnUoJeaApbNpqewTXrcisus
+	Nv4mbGhL0zp/6sV4nNMz05vPDZ6VjfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieW8J-0007Jq-HF; Tue, 10 Dec 2019 03:24:19 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieW8D-0007JR-K9; Tue, 10 Dec 2019 03:24:15 +0000
-X-UUID: 65d4073e61784bc09d8fd026dceebeb7-20191209
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=N2521TvN7lGfbMtCwquz/uaxFLQnHeWy5RUtdl0dTwM=; 
- b=QTLKkzN1s1QAbU82SxZhyEb1RMZB1gojbsBr3Ns6L9ViA560aiskVJcXvGpIOXE/1k6Pmg7ZcaBXCcxgE7mDjlMXObUMZgwisn3FIP47BT91bQomth+zaqfsacXgW17xfP84W+ld67EDpf7AJrO7vFDe2Ic64QQafFHoFiB+zjY=;
-X-UUID: 65d4073e61784bc09d8fd026dceebeb7-20191209
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2107416275; Mon, 09 Dec 2019 19:24:10 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 9 Dec 2019 19:25:11 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 10 Dec 2019 11:23:44 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 10 Dec 2019 11:23:35 +0800
-Message-ID: <1575948247.9195.0.camel@mtksdaap41>
-Subject: Re: [PATCH v2 07/14] soc: mediatek: cmdq: add assign function
-From: CK Hu <ck.hu@mediatek.com>
-To: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-Date: Tue, 10 Dec 2019 11:24:07 +0800
-In-Reply-To: <1574819937-6246-9-git-send-email-dennis-yc.hsieh@mediatek.com>
-References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1574819937-6246-9-git-send-email-dennis-yc.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
-MIME-Version: 1.0
-X-MTK: N
+	id 1ieWOI-0005V6-R0; Tue, 10 Dec 2019 03:40:50 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieWOA-0005Tn-Sz
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 03:40:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 592601FB;
+ Mon,  9 Dec 2019 19:40:39 -0800 (PST)
+Received: from entos-d05.shanghai.arm.com (entos-d05.shanghai.arm.com
+ [10.169.40.35])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 27C973F52E;
+ Mon,  9 Dec 2019 19:40:33 -0800 (PST)
+From: Jianyong Wu <jianyong.wu@arm.com>
+To: netdev@vger.kernel.org, yangbo.lu@nxp.com, john.stultz@linaro.org,
+ tglx@linutronix.de, pbonzini@redhat.com, sean.j.christopherson@intel.com,
+ maz@kernel.org, richardcochran@gmail.com, Mark.Rutland@arm.com,
+ will@kernel.org, suzuki.poulose@arm.com, steven.price@arm.com
+Subject: [RFC PATCH v9 0/8] Enable ptp_kvm for arm64
+Date: Tue, 10 Dec 2019 11:40:18 +0800
+Message-Id: <20191210034026.45229-1-jianyong.wu@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_192413_669505_66E5FDAA 
-X-CRM114-Status: GOOD (  16.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191209_194043_024223_40E5D061 
+X-CRM114-Status: GOOD (  12.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,134 +62,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: justin.he@arm.com, kvm@vger.kernel.org, Steve.Capper@arm.com,
+ jianyong.wu@arm.com, linux-kernel@vger.kernel.org, Kaly.Xin@arm.com,
+ nd@arm.com, kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Dennis:
+kvm ptp targets to provide high precision time sync between guest
+and host in virtualization environment. Here, we enable kvm ptp
+for arm64.
+This patch set base on [1][2][3]
 
-On Wed, 2019-11-27 at 09:58 +0800, Dennis YC Hsieh wrote:
-> Add assign function in cmdq helper which assign constant value into
-> internal register by index.
-> 
-> Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-> ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c   | 24 +++++++++++++++++++++++-
->  include/linux/mailbox/mtk-cmdq-mailbox.h |  1 +
->  include/linux/soc/mediatek/mtk-cmdq.h    | 18 ++++++++++++++++++
->  3 files changed, 42 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index 8421b4090304..9cc234f08ec5 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -14,6 +14,7 @@
->  #define CMDQ_EOC_IRQ_EN		BIT(0)
->  #define CMDQ_EOC_CMD		((u64)((CMDQ_CODE_EOC << CMDQ_OP_CODE_SHIFT)) \
->  				<< 32 | CMDQ_EOC_IRQ_EN)
-> +#define CMDQ_REG_TYPE		1
->  
->  struct cmdq_instruction {
->  	union {
-> @@ -23,8 +24,17 @@ struct cmdq_instruction {
->  	union {
->  		u16 offset;
->  		u16 event;
-> +		u16 reg_dst;
-> +	};
-> +	union {
-> +		u8 subsys;
-> +		struct {
-> +			u8 sop:5;
-> +			u8 arg_c_t:1;
-> +			u8 arg_b_t:1;
-> +			u8 dst_t:1;
-> +		};
->  	};
-> -	u8 subsys;
->  	u8 op;
->  };
->  
-> @@ -279,6 +289,18 @@ int cmdq_pkt_poll_mask(struct cmdq_pkt *pkt, u8 subsys,
->  }
->  EXPORT_SYMBOL(cmdq_pkt_poll_mask);
->  
-> +int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value)
-> +{
-> +	struct cmdq_instruction inst = { {0} };
-> +
-> +	inst.op = CMDQ_CODE_LOGIC;
-> +	inst.dst_t = CMDQ_REG_TYPE;
-> +	inst.reg_dst = reg_idx;
-> +	inst.value = value;
-> +	return cmdq_pkt_append_command(pkt, inst);
-> +}
-> +EXPORT_SYMBOL(cmdq_pkt_assign);
-> +
->  static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
->  {
->  	struct cmdq_client *cl = pkt->cl;
-> diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> index dfe5b2eb85cc..121c3bb6d3de 100644
-> --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
-> +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> @@ -59,6 +59,7 @@ enum cmdq_code {
->  	CMDQ_CODE_JUMP = 0x10,
->  	CMDQ_CODE_WFE = 0x20,
->  	CMDQ_CODE_EOC = 0x40,
-> +	CMDQ_CODE_LOGIC = 0xa0,
->  };
->  
->  enum cmdq_cb_status {
-> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> index a74c1d5acdf3..c66b3a0da2a2 100644
-> --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> @@ -12,6 +12,10 @@
->  #include <linux/timer.h>
->  
->  #define CMDQ_NO_TIMEOUT		0xffffffffu
-> +#define CMDQ_SPR_TEMP		0
-> +#define CMDQ_SPR1		1
-> +#define CMDQ_SPR2		2
-> +#define CMDQ_SPR3		3
+change log:
 
-These does not relate to assign function, so remove them.
+from v8 to v9:
+	(1) move ptp_kvm.h to driver/ptp/
+	(2) replace license declaration of ptp_kvm.h the same with other
+header files in the same directory.
 
-Regards,
-CK
+from v7 to v8:
+        (1) separate adding clocksource id for arm_arch_counter as a
+single patch.
+        (2) update commit message for patch 4/8.
+        (3) refine patch 7/8 and patch 8/8 to make them more independent.
 
->  
->  struct cmdq_pkt;
->  
-> @@ -152,6 +156,20 @@ int cmdq_pkt_poll(struct cmdq_pkt *pkt, u8 subsys,
->   */
->  int cmdq_pkt_poll_mask(struct cmdq_pkt *pkt, u8 subsys,
->  		       u16 offset, u32 value, u32 mask);
-> +
-> +/**
-> + * cmdq_pkt_assign() - Append logic assign command to the CMDQ packet, ask GCE
-> + *		       to execute an instruction that set a constant value into
-> + *		       internal register and use as value, mask or address in
-> + *		       read/write instruction.
-> + * @pkt:	the CMDQ packet
-> + * @reg_idx:	the CMDQ internal register ID
-> + * @value:	the specified value
-> + *
-> + * Return: 0 for success; else the error code is returned
-> + */
-> +int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value);
-> +
->  /**
->   * cmdq_pkt_flush_async() - trigger CMDQ to asynchronously execute the CMDQ
->   *                          packet and call back at the end of done packet
+from v6 to v7:
+        (1) include the omitted clocksource_id.h in last version.
+        (2) reorder the header file in patch.
+        (3) refine some words in commit message to make it more impersonal.
+
+from v5 to v6:
+        (1) apply Mark's patch[4] to get SMCCC conduit.
+        (2) add mechanism to recognize current clocksource by add
+clocksouce_id value into struct clocksource instead of method in patch-v5.
+        (3) rename kvm_arch_ptp_get_clock_fn into
+kvm_arch_ptp_get_crosststamp.
+
+from v4 to v5:
+        (1) remove hvc delay compensasion as it should leave to userspace.
+        (2) check current clocksource in hvc call service.
+        (3) expose current clocksource by adding it to
+system_time_snapshot.
+        (4) add helper to check if clocksource is arm_arch_counter.
+        (5) rename kvm_ptp.c to ptp_kvm_common.c
+
+from v3 to v4:
+        (1) fix clocksource of ptp_kvm to arch_sys_counter.
+        (2) move kvm_arch_ptp_get_clock_fn into arm_arch_timer.c
+        (3) subtract cntvoff before return cycles from host.
+        (4) use ktime_get_snapshot instead of getnstimeofday and
+get_current_counterval to return time and counter value.
+        (5) split ktime and counter into two 32-bit block respectively
+to avoid Y2038-safe issue.
+        (6) set time compensation to device time as half of the delay of
+hvc call.
+        (7) add ARM_ARCH_TIMER as dependency of ptp_kvm for
+arm64.
+
+from v2 to v3:
+        (1) fix some issues in commit log.
+        (2) add some receivers in send list.
+
+from v1 to v2:
+        (1) move arch-specific code from arch/ to driver/ptp/
+        (2) offer mechanism to inform userspace if ptp_kvm service is
+available.
+        (3) separate ptp_kvm code for arm64 into hypervisor part and
+guest part.
+        (4) add API to expose monotonic clock and counter value.
+        (5) refine code: remove no necessary part and reconsitution.
+
+[1]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
+commit/?h=kvm/hvc&id=125ea89e4a21e2fc5235410f966a996a1a7148bf
+[2]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
+commit/?h=kvm/hvc&id=464f5a1741e5959c3e4d2be1966ae0093b4dce06
+[3]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
+commit/?h=kvm/hvc&id=6597490e005d0eeca8ed8c1c1d7b4318ee014681
+[4]https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/
+commit/?h=for-next/smccc-conduit-cleanup&id=6b7fe77c334ae59fed9500140e08f4f896b36871
+
+Jianyong Wu (6):
+  psci: let arm_smccc_1_1_invoke available by modules
+  ptp: Reorganize ptp_kvm modules to make it arch-independent.
+  clocksource: Add clocksource id for arm arch counter
+  psci: Add hvc call service for ptp_kvm.
+  ptp: arm64: Enable ptp_kvm for arm64
+  kvm: arm64: Add capability check extension for ptp_kvm
+
+Mark Rutland (1):
+  arm/arm64: smccc/psci: add arm_smccc_1_1_get_conduit()
+
+Thomas Gleixner (1):
+  time: Add mechanism to recognize clocksource in time_get_snapshot
+
+ drivers/clocksource/arm_arch_timer.c        | 24 ++++++
+ drivers/firmware/psci/psci.c                | 16 ++++
+ drivers/ptp/Kconfig                         |  2 +-
+ drivers/ptp/Makefile                        |  1 +
+ drivers/ptp/ptp_kvm.h                       | 11 +++
+ drivers/ptp/ptp_kvm_arm64.c                 | 53 +++++++++++++
+ drivers/ptp/{ptp_kvm.c => ptp_kvm_common.c} | 77 +++++-------------
+ drivers/ptp/ptp_kvm_x86.c                   | 87 +++++++++++++++++++++
+ include/linux/arm-smccc.h                   | 30 ++++++-
+ include/linux/clocksource.h                 |  6 ++
+ include/linux/clocksource_ids.h             | 13 +++
+ include/linux/timekeeping.h                 | 12 +--
+ include/uapi/linux/kvm.h                    |  1 +
+ kernel/time/clocksource.c                   |  3 +
+ kernel/time/timekeeping.c                   |  1 +
+ virt/kvm/arm/arm.c                          |  1 +
+ virt/kvm/arm/psci.c                         | 22 ++++++
+ 17 files changed, 294 insertions(+), 66 deletions(-)
+ create mode 100644 drivers/ptp/ptp_kvm.h
+ create mode 100644 drivers/ptp/ptp_kvm_arm64.c
+ rename drivers/ptp/{ptp_kvm.c => ptp_kvm_common.c} (63%)
+ create mode 100644 drivers/ptp/ptp_kvm_x86.c
+ create mode 100644 include/linux/clocksource_ids.h
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
