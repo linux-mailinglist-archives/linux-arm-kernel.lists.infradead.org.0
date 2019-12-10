@@ -2,81 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05D07117C1C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 01:06:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E48D3117C48
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 01:19:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L/1hKcsOxzm6pdGA1YShNUQ2qNIJBnsrcJ5ol/BNISU=; b=jaMgv+fSv3BxTM
-	bAaV9/bVWffYOEFnFjOs2MyxRrTzjs0UvpuwPeRfOFEBfGqziFYqkJk85wy7O3XdXuNDytc3sVEnH
-	eGveRUP92ofn1iVjm7t+A7WUNsjSbsOREUh8LE0bMoEYHupwvIa2203tSPeRPxGfu9VizSP6a0I+8
-	tU2Aj1H2qy0Zf5rPiTly2fUqk6qVMIGxOeLEJBACCfF1VRlRpFiwsNp5fNRaJUssjQVUf0saA+6Zi
-	gj6kAgOkmJUPfAyhu9DZIOIsoTAif2/zvH+5SSO1rIHMYf76ZSSJUQZQ2Hvt9Dd9upCQdf27AGzgo
-	ml9W7mpE1YGVrQxNsOkg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=X4ZU46zeT/EVBuxl9ux42rqjtip7N3ytbJLGpRD1VvU=; b=DMYGYM9MoKYusK/bJnsJnlBzt
+	PyHnQbWROi/YBmyr0/22Ika7RD4qc6rGTQsJUr3rjWVvMAf4p9lFrIHRKUkJ/5DpkJfOmK7efO7Yv
+	8aNBO5jKQtSO81nqbhn1rBbNG8EGA8lb/GiYNp5NavP+M4jmg2drY0HHEKRmylm52Jm1ozNzk+J9b
+	EA7Ln4BqkMQ2SK0yCEL0W5pS4GnEgx7e5QH9VkMzf12YsVa3yHXk/IJmBHNFZRzNp4cOpO4aGqq9L
+	0A4NCUxLOEzCXJDM1epB9qup1IftXfpVg4QZl9PfZabKwxUh6STWXbCLkUCr9FKaEUPGh7SLdU3iN
+	AhRANddNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieT38-0001Qg-Q5; Tue, 10 Dec 2019 00:06:46 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1ieTFK-0005Es-JP; Tue, 10 Dec 2019 00:19:22 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieT32-0001QI-9u
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 00:06:41 +0000
-Received: from apollo.fritz.box (unknown
- [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
- SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 3DB0D2304C;
- Tue, 10 Dec 2019 01:06:37 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1575936398;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=SQSB7aaTDeosGfScfkElLltHtjKOhiB3ySxyA9Xk4pM=;
- b=LUb2ArSKFj734DrOu29xTCX5VFhRmcC3RSuas9H1v/tSYzhwBSW1kMjgdhtDLqHIG7dFAn
- PyiSvI3s+28kf1XW5HIv9jMMMn+s9bFSG8hOBc1DXqRC2K75rCMD/hLVHIOTqeSQEOeKhh
- 2YmXlEbmCsCeHfJKLa1JCJZEBJLbIxU=
-From: Michael Walle <michael@walle.cc>
-To: yinbo.zhu@nxp.com
-Subject: Re: [PATCH v1 3/4] arm64: dts: ls1028a: fix little-big endian issue
- for dcfg
-Date: Tue, 10 Dec 2019 01:06:23 +0100
-Message-Id: <20191210000623.22321-1-michael@walle.cc>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190814072649.8237-3-yinbo.zhu@nxp.com>
-References: <20190814072649.8237-3-yinbo.zhu@nxp.com>
+ id 1ieTFA-0005EX-8z
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 00:19:13 +0000
+Received: by mail-wm1-x342.google.com with SMTP id c20so1229596wmb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Dec 2019 16:19:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=7SQNMrH3FWLOHx8P5+nc/Y/vfFqnbuXwKn95w6eAgao=;
+ b=SwCeGizoute6aM8WBuWO5aqLXZvlBE9LQkiA01eogphBriUxjYU5BxsC+cYroUmZE8
+ tqi0jLBqvVR7I87fm/QGOxMkRFn8sICZntbBTvgffbv8ooc6M63WJ+CKxFd+/tP/SSSK
+ UQucOxuaOq96ykIy8qxsmP526hqGxid+/SVSw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=7SQNMrH3FWLOHx8P5+nc/Y/vfFqnbuXwKn95w6eAgao=;
+ b=r9EgwO5o4+MLzror/FTrnYjacWP/0ihsxuoMcgYnoItPIWKzWx/4bXpur10GVf/c41
+ ejoX22uSXD+9ZeMSLkt3ysjeYT7vteN+RU7HZOMGCJXlm1UO0uI50Xil9B+MqVHsdxOw
+ AnQEDhDRytLoyvgoBAZptoI3kEa6Cduh/BuiMrPy5UtHPgUB8PmWoi76u90BUNVDbg4t
+ LIdRC31B08HElp5M/jl9tEqxTVC/yltIqPE83eLS33Ld220X+KrpQhw3wY1wp+vMwauZ
+ 2/dNqcFlSwwKbSyYcF9L8n5QQO5yvl7ekopBo/mp2QWrnFA8H0Q6wqvRcZzmC4Lb94WI
+ vjzA==
+X-Gm-Message-State: APjAAAVpo52HBjBy9KTxzoWl56f/OhgfHsfAdHYi9v26IvsTLMasOEjM
+ tljbRVP4R0OGyV7NSENPkbQA/cri4knW6N/N65Jkh0UQYXqZZhOXwATvvmnPe/RIFcwTBSlJt88
+ K56Ji3y6pCcHgto5QKqOpFWZ5QQUMgzp8E8BE454EbKoxKwRB9JFoVcM9W0q4rJLd06k6idUTrZ
+ 3D8umNp2dms64=
+X-Google-Smtp-Source: APXvYqxzOk0JdZlf+46jK9Xp8GhKR0K8LVhI3QZ5He8BwBXVH+OKWm/me7LNc/zlPupDn98PkoD4/Q==
+X-Received: by 2002:a1c:a750:: with SMTP id q77mr1645652wme.76.1575937149108; 
+ Mon, 09 Dec 2019 16:19:09 -0800 (PST)
+Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id b17sm1229259wrp.49.2019.12.09.16.19.05
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 09 Dec 2019 16:19:07 -0800 (PST)
+Subject: Re: [PATCH 0/2] Add iProc IDM device support
+To: Marc Zyngier <maz@kernel.org>
+References: <20191202233127.31160-1-ray.jui@broadcom.com>
+ <20191207173914.353f768d@why>
+ <bd90ba80-9aac-e406-9066-64e975e5b10b@broadcom.com>
+ <20191209183636.6d708bfd@why>
+From: Ray Jui <ray.jui@broadcom.com>
+Message-ID: <69ff3b8a-e99e-7128-a02a-1cac1da3eb66@broadcom.com>
+Date: Mon, 9 Dec 2019 16:19:02 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-X-Spamd-Bar: ++++++
-X-Spam-Level: ******
-X-Rspamd-Server: web
-X-Spam-Status: Yes, score=6.40
-X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: 3DB0D2304C
-X-Spamd-Result: default: False [6.40 / 15.00]; ARC_NA(0.00)[];
- FROM_HAS_DN(0.00)[]; TO_DN_SOME(0.00)[];
- R_MISSING_CHARSET(2.50)[]; TO_MATCH_ENVRCPT_ALL(0.00)[];
- TAGGED_RCPT(0.00)[dt]; MIME_GOOD(-0.10)[text/plain];
- BROKEN_CONTENT_TYPE(1.50)[]; DKIM_SIGNED(0.00)[];
- RCPT_COUNT_TWELVE(0.00)[21]; MID_CONTAINS_FROM(1.00)[];
- NEURAL_HAM(-0.00)[-0.685]; RCVD_COUNT_ZERO(0.00)[0];
- FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
- ASN(0.00)[asn:31334, ipnet:2a02:810c::/31, country:DE];
- SUSPICIOUS_RECIPS(1.50)[]
-X-Spam: Yes
+In-Reply-To: <20191209183636.6d708bfd@why>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_160640_494707_EC5B736C 
-X-CRM114-Status: GOOD (  10.56  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191209_161912_319795_250B21D1 
+X-CRM114-Status: GOOD (  16.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -86,6 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,45 +102,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, amit.jain_1@nxp.com,
- linux-kernel@vger.kernel.org, rajesh.bhagat@nxp.com, alison.wang@nxp.com,
- alexandru.marginean@nxp.com, catalin.horghidan@nxp.com, Ashish.Kumar@nxp.com,
- xiaobo.xie@nxp.com, claudiu.manoil@nxp.com, robh+dt@kernel.org,
- rajat.srivastava@nxp.com, vabhav.sharma@nxp.com, yangbo.lu@nxp.com,
- jiafei.pan@nxp.com, leoyang.li@nxp.com, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, Michael Walle <michael@walle.cc>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> dcfg use little endian that SoC register value will be correct
+
+
+On 12/9/19 10:36 AM, Marc Zyngier wrote:
+> On Mon, 9 Dec 2019 10:02:53 -0800
+> Ray Jui <ray.jui@broadcom.com> wrote:
 > 
-> Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
-> ---
->  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-
-This patch is still missing. Any news?
-
-Tested-by: Michael Walle <michael@walle.cc>
-
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> index b0d4f8916ede..5538e8e354b2 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> @@ -162,7 +162,7 @@
->  		dcfg: syscon@1e00000 {
->  			compatible = "fsl,ls1028a-dcfg", "syscon";
->  			reg = <0x0 0x1e00000 0x0 0x10000>;
-> -			big-endian;
-> +			little-endian;
->  		};
->  
->  		scfg: syscon@1fc0000 {
-> -- 
-> 2.17.1
+>> On 12/7/19 9:39 AM, Marc Zyngier wrote:
+>>> On Mon,  2 Dec 2019 15:31:25 -0800
+>>> Ray Jui <ray.jui@broadcom.com> wrote:
+>>>    
+>>>> The Broadcom iProc IDM device allows control and monitoring of ASIC internal
+>>>> bus transactions. Most importantly, it can be configured to detect bus
+>>>> transaction timeout. In such case, critical information such as transaction
+>>>> address that caused the error, bus master ID of the transaction that caused
+>>>> the error, and etc., are made available from the IDM device.
+>>>
+>>> This seems to have many of the features of an EDAC device reporting
+>>> uncorrectable errors.
+>>>
+>>> Is there any reason why it is not implemented as such?
+>>>
+>>> Thanks,
+>>>
+>>> 	M.
+>>>    
+>>
+>> I thought EDAC errors (in fact, in our case, that's fatal rather than
+>> uncorrectable) are mostly for DDR. Is my understanding incorrect?
 > 
+> No, they are for HW errors in general. There is no real limitation of
+> scope, as far as I understand. Recently, the Annapurna guys came up
+> with a similar HW block, and were convinced to make it an EDAC device.
+> 
+> See [1] for details.
+> 
+> Thanks,
+> 
+> 	M.
+> 
+> [1] https://lore.kernel.org/linux-devicetree/1570707681-865-1-git-send-email-talel@amazon.com/
+> 
+
+Ah I see. It looks like memory controllers are the primary devices 
+supported by EDAC. In addition to that, EDAC also does seem to provide a 
+generic data structure to support other types of HW devices and error 
+events. I'll look into this and get back.
+
+Thanks,
+
+Ray
 
 _______________________________________________
 linux-arm-kernel mailing list
