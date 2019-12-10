@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E94E3118B2D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:38:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72739118B2E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:38:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FBtlFrsWxww/Ecg9iwA/Ng6QCkJozx5/uMOaom0pvu0=; b=bnDELjaeapjXnW
-	LnJ9tOANtpL3TZ9tsRgqJ1wrmBPkIbDgU/2mRizP9ew2oey/ccL01uBgF2aggH/EKQ58pLjghebCe
-	CSf/F01EE5EK+8QO075FoyBio49hb4ZEyIGzNDVTbKmyXuHzG4tudLnZN7t+msoUiyyYtctmxs9lY
-	ZmKFItbWGJmgEV/pEe7ia1VsHTanTW8J93AKMSO6mgxg6vSSYshldezkYshu2PXfS2BP4mbcwL3GA
-	f5HFpqr6z+MrbXGSx383lsWGpkurE2Lv4bEHZJNMsIajgb0ScuKjQyKid3dcwLE7YYK0dp+FY3iJz
-	WUNI4zCsSjzJLLUGvBag==;
+	List-Owner; bh=jZidcYWCbhf2/bRlw99dXZEr86h0k2J5J5KurO/3qZw=; b=SinUdSlWhdwSw8
+	sWJRKWRtAZlVIAm6ggOXrCtBpwsu534VILkm4vocaRpa3GO606fa2NlcpmtbHL7vAnUHVFX4EmEod
+	mQB7Q+WyA6tUa2vd+THk2JINV3OnqP80OZg8uuub2zUAYhpyXef4IPSXYW0PeqFRfcBEPp3iHZlkJ
+	2xyuJ0cCYZprXs5EK7WjmxS5bMz3cnud64RZ/heCrqKn2T6b/If0rhf50DIv4vJj4Njb31QQFrYOT
+	qa6aXBUr/pE1CpdhGX6UDr59wgGS1DdPHQXW5xvFd8Q89bSrVOR+/na476/FYEf6fG13VXZnoqA5z
+	KVFecaT4P9LQobrSrRzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iegeW-0004xB-ED; Tue, 10 Dec 2019 14:38:16 +0000
+	id 1iegek-0005CC-4x; Tue, 10 Dec 2019 14:38:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iegdj-00046c-T1
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:37:30 +0000
+ id 1iegdm-0004A5-Bm
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:37:32 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 159E420663;
- Tue, 10 Dec 2019 14:37:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5A87420637;
+ Tue, 10 Dec 2019 14:37:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575988647;
- bh=EB9ChD0hXmG5xdPjCrhg5MAtFSmavgKATxmIiH5oyrQ=;
+ s=default; t=1575988649;
+ bh=Jj+kqL3oDpAOi3xZ9oFO5W6Gd+sw+qlOruuOifJ0chM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=oaZIBfVhoxrb0bPGi+HmOCcQWvZuNi7S4YBDyn1sWgzZlHs4IudRF/17WuvrlPr8Y
- jGynrj3b3XkU866mQz0DUMgxuNs5vvGfNwT/QCc/mxzBOlNSrqGVH6WZhgjdiamREL
- q35DZMIHYUi75Bp+q2RcTNye2HqHTwNvj5E/yvOw=
+ b=tIGN0/mdbwR7DhlORTEopy1cIB7Yf1k+QLNhgfHWLjjqA0JJRGuDwRXbQstYIQDi/
+ ROhlY/yaEFiLm8BbJlg0dUB1Qjv24Xr/TK+vcwD43gTnhrBHpEqKVwZw32UIe3s/kv
+ O7KAD9/QbQTM1yHFzIIDnPIhPQESZw7rKatnKucs=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-serial@vger.kernel.org
-Subject: [PATCH 05/10] tty: serial: samsung_tty: delete samsung.h
-Date: Tue, 10 Dec 2019 15:37:01 +0100
-Message-Id: <20191210143706.3928480-5-gregkh@linuxfoundation.org>
+Subject: [PATCH 06/10] tty: serial: samsung_tty: drop unneded dbg() calls
+Date: Tue, 10 Dec 2019 15:37:02 +0100
+Message-Id: <20191210143706.3928480-6-gregkh@linuxfoundation.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
 References: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_063727_992932_269B3CA1 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20191210_063730_453830_10987819 
+X-CRM114-Status: GOOD (  13.40  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -83,8 +83,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no need for a .h file for a single .c file, so just move all of
-the content of samsung.h into samsung_tty.c
+Now that the kernel has ftrace, any debugging calls that just do "made
+it to this function!" and "leaving this function!" can be removed.
+
+On the quest to move the samsung_tty driver over to use the standard
+kernel debugging functions, drop these unneeded calls.
 
 Cc: Kukjin Kim <kgene@kernel.org>
 Cc: Krzysztof Kozlowski <krzk@kernel.org>
@@ -98,314 +101,98 @@ Cc: linux-serial@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- drivers/tty/serial/samsung.h     | 144 -------------------------------
- drivers/tty/serial/samsung_tty.c | 133 +++++++++++++++++++++++++++-
- 2 files changed, 130 insertions(+), 147 deletions(-)
- delete mode 100644 drivers/tty/serial/samsung.h
+ drivers/tty/serial/samsung_tty.c | 22 ----------------------
+ 1 file changed, 22 deletions(-)
 
-diff --git a/drivers/tty/serial/samsung.h b/drivers/tty/serial/samsung.h
-deleted file mode 100644
-index 7255ef287857..000000000000
---- a/drivers/tty/serial/samsung.h
-+++ /dev/null
-@@ -1,144 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--#ifndef __SAMSUNG_H
--#define __SAMSUNG_H
--
--/*
-- * Driver for Samsung SoC onboard UARTs.
-- *
-- * Ben Dooks, Copyright (c) 2003-2008 Simtec Electronics
-- *	http://armlinux.simtec.co.uk/
-- */
--
--#include <linux/dmaengine.h>
--
--struct s3c24xx_uart_info {
--	char			*name;
--	unsigned int		type;
--	unsigned int		fifosize;
--	unsigned long		rx_fifomask;
--	unsigned long		rx_fifoshift;
--	unsigned long		rx_fifofull;
--	unsigned long		tx_fifomask;
--	unsigned long		tx_fifoshift;
--	unsigned long		tx_fifofull;
--	unsigned int		def_clk_sel;
--	unsigned long		num_clks;
--	unsigned long		clksel_mask;
--	unsigned long		clksel_shift;
--
--	/* uart port features */
--
--	unsigned int		has_divslot:1;
--};
--
--struct s3c24xx_serial_drv_data {
--	struct s3c24xx_uart_info	*info;
--	struct s3c2410_uartcfg		*def_cfg;
--	unsigned int			fifosize[CONFIG_SERIAL_SAMSUNG_UARTS];
--};
--
--struct s3c24xx_uart_dma {
--	unsigned int			rx_chan_id;
--	unsigned int			tx_chan_id;
--
--	struct dma_slave_config		rx_conf;
--	struct dma_slave_config		tx_conf;
--
--	struct dma_chan			*rx_chan;
--	struct dma_chan			*tx_chan;
--
--	dma_addr_t			rx_addr;
--	dma_addr_t			tx_addr;
--
--	dma_cookie_t			rx_cookie;
--	dma_cookie_t			tx_cookie;
--
--	char				*rx_buf;
--
--	dma_addr_t			tx_transfer_addr;
--
--	size_t				rx_size;
--	size_t				tx_size;
--
--	struct dma_async_tx_descriptor	*tx_desc;
--	struct dma_async_tx_descriptor	*rx_desc;
--
--	int				tx_bytes_requested;
--	int				rx_bytes_requested;
--};
--
--struct s3c24xx_uart_port {
--	unsigned char			rx_claimed;
--	unsigned char			tx_claimed;
--	unsigned int			pm_level;
--	unsigned long			baudclk_rate;
--	unsigned int			min_dma_size;
--
--	unsigned int			rx_irq;
--	unsigned int			tx_irq;
--
--	unsigned int			tx_in_progress;
--	unsigned int			tx_mode;
--	unsigned int			rx_mode;
--
--	struct s3c24xx_uart_info	*info;
--	struct clk			*clk;
--	struct clk			*baudclk;
--	struct uart_port		port;
--	struct s3c24xx_serial_drv_data	*drv_data;
--
--	/* reference to platform data */
--	struct s3c2410_uartcfg		*cfg;
--
--	struct s3c24xx_uart_dma		*dma;
--
--#ifdef CONFIG_ARM_S3C24XX_CPUFREQ
--	struct notifier_block		freq_transition;
--#endif
--};
--
--/* conversion functions */
--
--#define s3c24xx_dev_to_port(__dev) dev_get_drvdata(__dev)
--
--/* register access controls */
--
--#define portaddr(port, reg) ((port)->membase + (reg))
--#define portaddrl(port, reg) \
--	((unsigned long *)(unsigned long)((port)->membase + (reg)))
--
--#define rd_regb(port, reg) (readb_relaxed(portaddr(port, reg)))
--#define rd_regl(port, reg) (readl_relaxed(portaddr(port, reg)))
--
--#define wr_regb(port, reg, val) writeb_relaxed(val, portaddr(port, reg))
--#define wr_regl(port, reg, val) writel_relaxed(val, portaddr(port, reg))
--
--/* Byte-order aware bit setting/clearing functions. */
--
--static inline void s3c24xx_set_bit(struct uart_port *port, int idx,
--				   unsigned int reg)
--{
--	unsigned long flags;
--	u32 val;
--
--	local_irq_save(flags);
--	val = rd_regl(port, reg);
--	val |= (1 << idx);
--	wr_regl(port, reg, val);
--	local_irq_restore(flags);
--}
--
--static inline void s3c24xx_clear_bit(struct uart_port *port, int idx,
--				     unsigned int reg)
--{
--	unsigned long flags;
--	u32 val;
--
--	local_irq_save(flags);
--	val = rd_regl(port, reg);
--	val &= ~(1 << idx);
--	wr_regl(port, reg, val);
--	local_irq_restore(flags);
--}
--
--#endif
 diff --git a/drivers/tty/serial/samsung_tty.c b/drivers/tty/serial/samsung_tty.c
-index 67c5a84d0a26..1a3bf5879344 100644
+index 1a3bf5879344..37749f09066d 100644
 --- a/drivers/tty/serial/samsung_tty.c
 +++ b/drivers/tty/serial/samsung_tty.c
-@@ -44,11 +44,8 @@
- #include <linux/clk.h>
- #include <linux/cpufreq.h>
- #include <linux/of.h>
+@@ -1136,9 +1136,6 @@ static int s3c24xx_serial_startup(struct uart_port *port)
+ 	struct s3c24xx_uart_port *ourport = to_ourport(port);
+ 	int ret;
+ 
+-	dbg("s3c24xx_serial_startup: port=%p (%08llx,%p)\n",
+-	    port, (unsigned long long)port->mapbase, port->membase);
 -
- #include <asm/irq.h>
+ 	rx_enabled(port) = 1;
  
--#include "samsung.h"
+ 	ret = request_irq(ourport->rx_irq, s3c24xx_serial_rx_chars, 0,
+@@ -1165,8 +1162,6 @@ static int s3c24xx_serial_startup(struct uart_port *port)
+ 
+ 	ourport->tx_claimed = 1;
+ 
+-	dbg("s3c24xx_serial_startup ok\n");
 -
- #if	defined(CONFIG_SERIAL_SAMSUNG_DEBUG) &&	\
- 	!defined(MODULE)
+ 	/* the port reset code should have done the correct
+ 	 * register setup for the port controls */
  
-@@ -89,6 +86,136 @@ static void dbg(const char *fmt, ...)
- /* flag to ignore all characters coming in */
- #define RXSTAT_DUMMY_READ (0x10000000)
+@@ -1184,9 +1179,6 @@ static int s3c64xx_serial_startup(struct uart_port *port)
+ 	unsigned int ufcon;
+ 	int ret;
  
-+struct s3c24xx_uart_info {
-+	char			*name;
-+	unsigned int		type;
-+	unsigned int		fifosize;
-+	unsigned long		rx_fifomask;
-+	unsigned long		rx_fifoshift;
-+	unsigned long		rx_fifofull;
-+	unsigned long		tx_fifomask;
-+	unsigned long		tx_fifoshift;
-+	unsigned long		tx_fifofull;
-+	unsigned int		def_clk_sel;
-+	unsigned long		num_clks;
-+	unsigned long		clksel_mask;
-+	unsigned long		clksel_shift;
-+
-+	/* uart port features */
-+
-+	unsigned int		has_divslot:1;
-+};
-+
-+struct s3c24xx_serial_drv_data {
-+	struct s3c24xx_uart_info	*info;
-+	struct s3c2410_uartcfg		*def_cfg;
-+	unsigned int			fifosize[CONFIG_SERIAL_SAMSUNG_UARTS];
-+};
-+
-+struct s3c24xx_uart_dma {
-+	unsigned int			rx_chan_id;
-+	unsigned int			tx_chan_id;
-+
-+	struct dma_slave_config		rx_conf;
-+	struct dma_slave_config		tx_conf;
-+
-+	struct dma_chan			*rx_chan;
-+	struct dma_chan			*tx_chan;
-+
-+	dma_addr_t			rx_addr;
-+	dma_addr_t			tx_addr;
-+
-+	dma_cookie_t			rx_cookie;
-+	dma_cookie_t			tx_cookie;
-+
-+	char				*rx_buf;
-+
-+	dma_addr_t			tx_transfer_addr;
-+
-+	size_t				rx_size;
-+	size_t				tx_size;
-+
-+	struct dma_async_tx_descriptor	*tx_desc;
-+	struct dma_async_tx_descriptor	*rx_desc;
-+
-+	int				tx_bytes_requested;
-+	int				rx_bytes_requested;
-+};
-+
-+struct s3c24xx_uart_port {
-+	unsigned char			rx_claimed;
-+	unsigned char			tx_claimed;
-+	unsigned int			pm_level;
-+	unsigned long			baudclk_rate;
-+	unsigned int			min_dma_size;
-+
-+	unsigned int			rx_irq;
-+	unsigned int			tx_irq;
-+
-+	unsigned int			tx_in_progress;
-+	unsigned int			tx_mode;
-+	unsigned int			rx_mode;
-+
-+	struct s3c24xx_uart_info	*info;
-+	struct clk			*clk;
-+	struct clk			*baudclk;
-+	struct uart_port		port;
-+	struct s3c24xx_serial_drv_data	*drv_data;
-+
-+	/* reference to platform data */
-+	struct s3c2410_uartcfg		*cfg;
-+
-+	struct s3c24xx_uart_dma		*dma;
-+
-+#ifdef CONFIG_ARM_S3C24XX_CPUFREQ
-+	struct notifier_block		freq_transition;
-+#endif
-+};
-+
-+/* conversion functions */
-+
-+#define s3c24xx_dev_to_port(__dev) dev_get_drvdata(__dev)
-+
-+/* register access controls */
-+
-+#define portaddr(port, reg) ((port)->membase + (reg))
-+#define portaddrl(port, reg) \
-+	((unsigned long *)(unsigned long)((port)->membase + (reg)))
-+
-+#define rd_regb(port, reg) (readb_relaxed(portaddr(port, reg)))
-+#define rd_regl(port, reg) (readl_relaxed(portaddr(port, reg)))
-+
-+#define wr_regb(port, reg, val) writeb_relaxed(val, portaddr(port, reg))
-+#define wr_regl(port, reg, val) writel_relaxed(val, portaddr(port, reg))
-+
-+/* Byte-order aware bit setting/clearing functions. */
-+
-+static inline void s3c24xx_set_bit(struct uart_port *port, int idx,
-+				   unsigned int reg)
-+{
-+	unsigned long flags;
-+	u32 val;
-+
-+	local_irq_save(flags);
-+	val = rd_regl(port, reg);
-+	val |= (1 << idx);
-+	wr_regl(port, reg, val);
-+	local_irq_restore(flags);
-+}
-+
-+static inline void s3c24xx_clear_bit(struct uart_port *port, int idx,
-+				     unsigned int reg)
-+{
-+	unsigned long flags;
-+	u32 val;
-+
-+	local_irq_save(flags);
-+	val = rd_regl(port, reg);
-+	val &= ~(1 << idx);
-+	wr_regl(port, reg, val);
-+	local_irq_restore(flags);
-+}
-+
- static inline struct s3c24xx_uart_port *to_ourport(struct uart_port *port)
- {
- 	return container_of(port, struct s3c24xx_uart_port, port);
+-	dbg("s3c64xx_serial_startup: port=%p (%08llx,%p)\n",
+-	    port, (unsigned long long)port->mapbase, port->membase);
+-
+ 	wr_regl(port, S3C64XX_UINTM, 0xf);
+ 	if (ourport->dma) {
+ 		ret = s3c24xx_serial_request_dma(ourport);
+@@ -1224,7 +1216,6 @@ static int s3c64xx_serial_startup(struct uart_port *port)
+ 	/* Enable Rx Interrupt */
+ 	s3c24xx_clear_bit(port, S3C64XX_UINTM_RXD, S3C64XX_UINTM);
+ 
+-	dbg("s3c64xx_serial_startup ok\n");
+ 	return ret;
+ }
+ 
+@@ -1870,8 +1861,6 @@ static int s3c24xx_serial_init_port(struct s3c24xx_uart_port *ourport,
+ 	struct resource *res;
+ 	int ret;
+ 
+-	dbg("s3c24xx_serial_init_port: port=%p, platdev=%p\n", port, platdev);
+-
+ 	if (platdev == NULL)
+ 		return -ENODEV;
+ 
+@@ -2011,8 +2000,6 @@ static int s3c24xx_serial_probe(struct platform_device *pdev)
+ 			index = ret;
+ 	}
+ 
+-	dbg("s3c24xx_serial_probe(%p) %d\n", pdev, index);
+-
+ 	if (index >= ARRAY_SIZE(s3c24xx_serial_ports)) {
+ 		dev_err(&pdev->dev, "serial%d out of range\n", index);
+ 		return -EINVAL;
+@@ -2273,10 +2260,6 @@ s3c24xx_serial_get_options(struct uart_port *port, int *baud,
+ 	ucon   = rd_regl(port, S3C2410_UCON);
+ 	ubrdiv = rd_regl(port, S3C2410_UBRDIV);
+ 
+-	dbg("s3c24xx_serial_get_options: port=%p\n"
+-	    "registers: ulcon=%08x, ucon=%08x, ubdriv=%08x\n",
+-	    port, ulcon, ucon, ubrdiv);
+-
+ 	if (s3c24xx_port_configured(ucon)) {
+ 		switch (ulcon & S3C2410_LCON_CSMASK) {
+ 		case S3C2410_LCON_CS5:
+@@ -2334,9 +2317,6 @@ s3c24xx_serial_console_setup(struct console *co, char *options)
+ 	int parity = 'n';
+ 	int flow = 'n';
+ 
+-	dbg("s3c24xx_serial_console_setup: co=%p (%d), %s\n",
+-	    co, co->index, options);
+-
+ 	/* is this a valid port */
+ 
+ 	if (co->index == -1 || co->index >= CONFIG_SERIAL_SAMSUNG_UARTS)
+@@ -2351,8 +2331,6 @@ s3c24xx_serial_console_setup(struct console *co, char *options)
+ 
+ 	cons_uart = port;
+ 
+-	dbg("s3c24xx_serial_console_setup: port=%p (%d)\n", port, co->index);
+-
+ 	/*
+ 	 * Check whether an invalid uart number has been specified, and
+ 	 * if so, search for the first available port that does have
 -- 
 2.24.0
 
