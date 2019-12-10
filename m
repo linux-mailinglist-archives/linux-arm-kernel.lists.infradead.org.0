@@ -2,57 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE452117EA0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 04:57:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 271A9117EB0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 05:04:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6oE21TQlzHYQGCR5ArRZNx8+d4RRbU1eO3wy4y1UNT4=; b=rgputBHgAQuP8UgMR6HgjPMhG
-	RT7SfwrWAVH5ALCKSCrTS1pJvT+m7kBnLdmAuEYPWVFTx9ORpxT/x2XGNXLmi+yiwyKQ0u6RYdPYq
-	yAT52CvUkJfUr72oLyppf/RdLa5rJ/TI3nCtyByXDAAWR9jBemcTrvLjZyJTrwHpoGUnrnMCliGci
-	cgJuvLqTpaMqhE0N46+93gSK+wJ+Qz4B+7d+L0OLbhSWlo0U9RSo2m+oGh3DoLL2HhWxWmabwqevi
-	2Mb1CUftBwChqf1KZ3/5aX9ZLYCZ7QE967Q47yF9XSugvNaLYZ0Q1OKXWWjEK1aq4JIccHiIeIgMu
-	WqYRU1Vfg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ywbaA7W1wB2nc0BAjaI/e9Xhklyf6bQgG8326hfnEhE=; b=PbEs32nexg88jV
+	doWzxxYcynpdDBywtuUMsuIj9xri8WZafWp7uVNZtM+/+bbHr6Q1r51078fvfDSIOp5IsHUX+G+NF
+	qilty0aoZ8+eo7L/YzLJcK49xVkQq1X4syG4HY2tH3Ntcev8YuC0tpt+J0Hx6JjwwTw8VVCHi/fZa
+	S6NgLPu+zfUeDlWKY8m8E7QOaSWFVTkgCHS/MbMUBL9ZQu3B2wE3AZyrPBjWA34wNw69yS+5bBIJt
+	+Sd7NVFAbOqooL0+ZVP8wMZhYeEdpNTgam39yRXiL55kO+2Z8vK68NQrzqx4RbywvCg0NzsYYQ1NI
+	ssDhFTneR4Yyxwp8BnLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieWeM-0004JJ-76; Tue, 10 Dec 2019 03:57:26 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1ieWkk-0006HM-96; Tue, 10 Dec 2019 04:04:02 +0000
+Received: from mail-io1-xd35.google.com ([2607:f8b0:4864:20::d35])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieWeC-0004If-T9; Tue, 10 Dec 2019 03:57:18 +0000
-Received: from [10.28.19.135] (10.28.19.135) by mail-sz.amlogic.com
- (10.28.11.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Tue, 10 Dec
- 2019 11:57:40 +0800
-Subject: Re: [PATCH] arm64: dts: a1: add saradc controller
-To: Kevin Hilman <khilman@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>, Martin Blumenstingl
- <martin.blumenstingl@googlemail.com>
-References: <1575358332-44866-1-git-send-email-xingyu.chen@amlogic.com>
- <7hpngxqfa7.fsf@baylibre.com>
-From: Xingyu Chen <xingyu.chen@amlogic.com>
-Message-ID: <9a2ddfa3-28f3-7d15-bb25-5b84078b77c7@amlogic.com>
-Date: Tue, 10 Dec 2019 11:57:39 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1ieWkb-0006Gt-NX
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 04:03:55 +0000
+Received: by mail-io1-xd35.google.com with SMTP id k24so17305506ioc.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Dec 2019 20:03:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=designa-electronics-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hVDrDHwmqD2zYNWHJbvkgMoTD53av9OSr7U3BYl5BR8=;
+ b=ViCjngt8EyA33k26+ZMnoFUJuwA+28kl8gg+qB2/Z79E6Bqna2J20d15i2V0LTQfCr
+ 6SnDdmoIiDibruAorNbdm51o6bBoAUIuOAGfyIPKRYby7tV6B9HXp2btWvqYPN/RP5oJ
+ /rhr2+n7CusXF0X38TjD66CqqhZoygfbLytJ9csZcRYTYkcAnmizvwfGIyCwRth8c5Nz
+ +WGe3R/Ytw4Hp+0UiL0VCLwyBu0EUQ+etthxck4GVgb9g1lrROjvckSnzU2oWDX/V1Bp
+ eX1GDHge2NkiwRTY6dXc+oV7ZdS2YQR3cwXs5ZMblaEBSHuJPailqgVulp3Q0fbrGEUf
+ AaVQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hVDrDHwmqD2zYNWHJbvkgMoTD53av9OSr7U3BYl5BR8=;
+ b=m+Opi9YQXr1a/GgfxkBsLwhiw5Uta/f/JNbLjzzoKo0/d1AwWM1uXtiQY9kBWVeb+i
+ xvU56KpfiI9TK5R2zzvcRZeefrKJRw/0ZSkWguuLlh37xTgUxT/a/8OlR+KTZLzBkhfd
+ KQUEv2+bqBgcIiYqNihDYLwB5T4EiVo7fxS3C20iPctJ7dbCETOGuVm/Ayr/G+4Jc6Xu
+ ylzHzJNB3CgBANaSgCYBdXMUvyUHbqB30eWTc6qkJCSxm65T6Os3q2+5ouaanXGwV4Sb
+ 6geASR33v4rrc98cZTbpIEHmuUIbA2qp4i9iEEAOBoSVBEUeT6oldH2Qw0LEeyILCJp1
+ PxvQ==
+X-Gm-Message-State: APjAAAWuT76PYCRBmFFZ0wAqsDoQjGZkXKw1poShhhGHM+OmUuGXLOBz
+ ylIFeWSz9mwU039+T4KkkvYV62d0eFM=
+X-Google-Smtp-Source: APXvYqxRgP4K2UOLR+nWR/MXiel6nu7fsQlkxFnpFjOEN8grWQDArVTJYZOaWwqk4yMjOsbvXHwihQ==
+X-Received: by 2002:a05:6638:404:: with SMTP id
+ q4mr24658966jap.115.1575950629503; 
+ Mon, 09 Dec 2019 20:03:49 -0800 (PST)
+Received: from mail-il1-f182.google.com (mail-il1-f182.google.com.
+ [209.85.166.182])
+ by smtp.gmail.com with ESMTPSA id k11sm477878ilf.84.2019.12.09.20.03.48
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 09 Dec 2019 20:03:48 -0800 (PST)
+Received: by mail-il1-f182.google.com with SMTP id u17so14900830ilq.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Dec 2019 20:03:48 -0800 (PST)
+X-Received: by 2002:a92:5d88:: with SMTP id e8mr24582012ilg.106.1575950627866; 
+ Mon, 09 Dec 2019 20:03:47 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <7hpngxqfa7.fsf@baylibre.com>
-Content-Language: en-GB
-X-Originating-IP: [10.28.19.135]
-X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
- (10.28.11.5)
+References: <CAEj2-1PyhkhEJ1+uRWio4vYxGuFOuR9mpZOdxmDDjGt_Az+3uA@mail.gmail.com>
+ <CAOMZO5AxvuWETvubZU1Tu=0-SeoSzJs=LZcj-JJFE1+4O6-FxA@mail.gmail.com>
+In-Reply-To: <CAOMZO5AxvuWETvubZU1Tu=0-SeoSzJs=LZcj-JJFE1+4O6-FxA@mail.gmail.com>
+From: Andre Renaud <arenaud@designa-electronics.com>
+Date: Tue, 10 Dec 2019 17:03:37 +1300
+X-Gmail-Original-Message-ID: <CAEj2-1M6950NxK0mOBzdc4qz3b=eBzD8NdLKE55aas5WN0iZkA@mail.gmail.com>
+Message-ID: <CAEj2-1M6950NxK0mOBzdc4qz3b=eBzD8NdLKE55aas5WN0iZkA@mail.gmail.com>
+Subject: Re: iMX6/UART imprecise external abort
+To: Fabio Estevam <festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_195716_942770_85EF09D1 
-X-CRM114-Status: GOOD (  11.67  )
+X-CRM114-CacheID: sfid-20191209_200353_913912_46C42AF4 
+X-CRM114-Status: GOOD (  10.21  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d35 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,64 +101,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Qianggui Song <qianggui.song@amlogic.com>, devicetree@vger.kernel.org,
- Jianxin Pan <jianxin.pan@amlogic.com>, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Jian Hu <jian.hu@amlogic.com>, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, Jonathan Cameron <jic23@kernel.org>,
- Jerome Brunet <jbrunet@baylibre.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Fugang Duan <fugang.duan@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIEtldmluCgpPbiAyMDE5LzEyLzEwIDY6NTYsIEtldmluIEhpbG1hbiB3cm90ZToKPiBYaW5n
-eXUgQ2hlbiA8eGluZ3l1LmNoZW5AYW1sb2dpYy5jb20+IHdyaXRlczoKPgo+PiBUaGUgc2FyYWRj
-IGNvbnRyb2xsZXIgaW4gTWVzb24tQTEgaXMgdGhlIHNhbWUgYXMgdGhlIE1lc29uLUcxMiBzZXJp
-ZXMgU29DcywKPj4gc28gd2UgdXNlIHRoZSBzYW1lIGNvbXBhdGlibGUgc3RyaW5nLgo+Pgo+PiBT
-aWduZWQtb2ZmLWJ5OiBYaW5neXUgQ2hlbiA8eGluZ3l1LmNoZW5AYW1sb2dpYy5jb20+Cj4+Cj4+
-IC0tLQo+PiBUaGlzIHBhdGNoIGlzIGJhc2VkIG9uIEExIGNsb2NrIHBhdGNoc2V0IGF0IFswXS4K
-Pj4KPj4gWzBdIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LWFtbG9naWMvMjAxOTExMjkx
-NDQ2MDUuMTgyNzc0LTEtamlhbi5odUBhbWxvZ2ljLmNvbQo+PiAtLS0KPj4gICBhcmNoL2FybTY0
-L2Jvb3QvZHRzL2FtbG9naWMvbWVzb24tYTEuZHRzaSB8IDE1ICsrKysrKysrKysrKysrKwo+PiAg
-IDEgZmlsZSBjaGFuZ2VkLCAxNSBpbnNlcnRpb25zKCspCj4+Cj4+IGRpZmYgLS1naXQgYS9hcmNo
-L2FybTY0L2Jvb3QvZHRzL2FtbG9naWMvbWVzb24tYTEuZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9k
-dHMvYW1sb2dpYy9tZXNvbi1hMS5kdHNpCj4+IGluZGV4IDcyMTBhZDAuLmNhZDE3NTYgMTAwNjQ0
-Cj4+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYW1sb2dpYy9tZXNvbi1hMS5kdHNpCj4+ICsr
-KyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYW1sb2dpYy9tZXNvbi1hMS5kdHNpCj4+IEBAIC05Myw2
-ICs5MywyMSBAQAo+PiAgIAkJCQljbG9jay1uYW1lcyA9ICJ4dGFsIiwgInBjbGsiLCAiYmF1ZCI7
-Cj4+ICAgCQkJCXN0YXR1cyA9ICJkaXNhYmxlZCI7Cj4+ICAgCQkJfTsKPj4gKwo+PiArCQkJc2Fy
-YWRjOiBhZGNAMmMwMCB7Cj4+ICsJCQkJY29tcGF0aWJsZSA9ICJhbWxvZ2ljLG1lc29uLWcxMmEt
-c2FyYWRjIiwKPj4gKwkJCQkJICAgICAiYW1sb2dpYyxtZXNvbi1zYXJhZGMiOwo+PiArCQkJCXJl
-ZyA9IDwweDAgMHgyYzAwIDB4MCAweDQ4PjsKPiBXaHkgMHg0OCBoZXJlPyAgQVhHIHVzZXMgMHgz
-OCBhbmQgeW91J3JlIG5vdCBhZGRpbmcgYW55IG1vcmUgcmVnaXN0ZXJzCj4gdG8gdGhpcyBkcml2
-ZXIuCgpUaGFua3MgZm9yIHlvdSByZXZpZXcuCgpUaGUgc2FyYWRjIGludHJvZHVjZXMgNCBuZXcg
-cmVnaXN0ZXJzIChhcyBzaG93biBiZWxvdykgYmVnaW4gd2l0aCBnMTJhIApwbGF0Zm9ybSwgYW5k
-IHRoZXNlIHJlZ2lzdGVycyBhcmUgdXNlZAp0byBzYXZlIHRoZSBzYW1wbGluZyB2YWx1ZSBvZiBj
-b3JyZXNwb25kaW5nIGNoYW5uZWwuIEluIG90aGVyIHdvcmRzLCB3ZSAKY2FuIGNob29zZSBmaWZv
-IG9yIG5ldyByZWdpc3RlcnMgdG8gc2F2ZQpzYW1wbGluZyB2YWx1ZSwgYnV0IGl0IGlzIG5vdCBz
-dXBwb3J0ZWQgYnkgdGhlIGN1cnJlbnQgZHJpdmVyLgoKZG91dCByZWdpc3RlcsKgIHwtLS0+IGZp
-Zm8KIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8LS0t
-PiBjaGFubmVsIHJlZ3MgLXwKIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgIHwtLS0gY2hhbm5lbC0wCiDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8LS0tIGNoYW5uZWwtMQog
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqAgfCAuLi4KIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIHwgLS0tIGNoYW5uZWwtNwoKQU9fU0FSX0FEQ19DSE5MMDHvvJpzYXZpbmcg
-c2FtcGxpbmcgZGF0YSBvZiBjaGFubmVsIDAvMQpBT19TQVJfQURDX0NITkwyMzrCoMKgIHNhdmlu
-ZyBzYW1wbGluZyBkYXRhIG9mIGNoYW5uZWwgMi8zCkFPX1NBUl9BRENfQ0hOTDQ1OsKgwqAgc2F2
-aW5nIHNhbXBsaW5nIGRhdGEgb2YgY2hhbm5lbCA0LzUKQU9fU0FSX0FEQ19DSE5MNjc6wqDCoCBz
-YXZpbmcgc2FtcGxpbmcgZGF0YSBvZiBjaGFubmVsIDYvNwoKClRoaXMgcGF0Y2ggdXNlIHRoZSAw
-eDQ4IHRvIGRlc2NyaWJlIHRoZSByZWdpc3RlcnMgbGVuZ3RoIGp1c3QgZm9sbG93IHRoZSAKZmls
-ZSBtZXNvbi1nMTItY29tbW9uLmR0c2kuIGFuZCBpdCBkb2Vzbid0CmFmZmVjdCB0aGUgZHJpdmVy
-IGJlY2F1c2Ugb2YgdGhlIG1hcHBlZCByZWdpdGVyIGxlbmd0aCBpcyBsaW1pdGVkIGJ5IAptYXhf
-cmVnaXN0ZXIgbWVtYmVyIGluIHN0cnVjdCByZWdtYXBfY29uZmlnLgoKSSBjYW4gcmVwbGFjZSAw
-eDQ4IHdpdGggMHgzOCBpbiBuZXh0IHBhdGNoIGlmIG5lY2Vzc2FyeS4KCj4gS2V2aW4KPgo+IC4K
-PgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+Hello Fabio,
+
+On Tue, Dec 3, 2019 at 9:56 AM Fabio Estevam <festevam@gmail.com> wrote:
+> Could you please try a vanilla 5.4.1 kernel?
+
+We have confirmed that this happens on the standard 5.4.1 board, but
+only when the RS485 ioctls and corresponding device tree entries are
+enabled.
+We have tried it on different hardware (the Wandboard iMX6Q), with
+just a minor change to the device tree - the addition of
+uart-has-rtscts, and rts-gpio.
+&uart3 {
+    pinctrl-names = "default";
+    pinctrl-0 = <&pinctrl_uart3>;
+    uart-has-rtscts;
+    rts-gpio = <&gpio3 23 GPIO_ACTIVE_LOW>;
+    status = "okay";
+};
+
+Then if we enable RS485 mode using the ioctl:
+    struct serial_rs485 rs485;
+    rs485.flags = SER_RS485_ENABLED | SER_RS485_RTS_ON_SEND;
+    ioctl(fd, TIOCSRS485, &rs485);
+
+This will cause it to panic fairly quickly (in a few minutes).
+
+This is with the SDMA peripheral disabled. If we enable the SDMA
+peripheral, then after a while we stop receiving data, and the unit
+locks up, although there is no panic output.
+
+Regards,
+Andre
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
