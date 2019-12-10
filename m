@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59DA21189C1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 14:27:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 367C61189C2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 14:28:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ams1V4YSFycyRKTldFNXUNWJ+Jxs4U1mSfM1bJgGR9E=; b=Lzr5mfbOPhPeiW
-	4TAd+WnN/HDjWLUNFEqIj8R5fXu7y8MR6mBQ0DZOjNDNmiIJqnh/lZFQhyXCj3EeXVFq5s85YUgW1
-	IUOwjk+8rLdMWsORjH/y19hbxvRdr1MuYTpNYEhPF6a2wbsT+7fmeQhlILI/Qhxovvoqig1Czcv6x
-	e/kHM6G0vs4eez1/ui0xEr/fTzMrh6Z/P0m3oHbweWeiMZu7Jz4g1lC0EYJTX+DyJ2GEunhqMJWrt
-	6kACHaVE4K++p5EEFp3vXy4yOYBVkmoN06Pw/+Th6m2Y/Q3ISblUnROEgCaV8KImUKr2yxlDNsyOn
-	BJhbxQQZG2aX4H4eMWrg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pR0Fb2ymfIR2qnluu00H4WVw5efmrtlKFYeZNR3TMlM=; b=GfSVP5v1NCdWHK
+	BBclg4LT0y8RtmlE7Zj6hi6uDYMnfEwZLArxecXDAPJzlqDq3Cp4oyCYMarIvjQSjmbqJH1hQaMJx
+	SnaW7y+rn8QpGly0xI3h3i2LZs20XRKxvyXdUR1euz7Vb534XQW1KoS4BZcoJLUBwOlMuv7XyuK2X
+	trEUY+uV5kOneKSy6wxX/6zU1x/7XURrG4wWDFkqix4Tz9026RASqeajiy+eZb2U6SI7Sb5aiBxyn
+	R1ObVATuel1gx3GmBm0pKqo6l88EOQc2ztHC221zz+5rIxbz/grzTKDxQOQw7UEvuhzMorbC9y4LK
+	jMjhy8cq/K5/u8fJKUug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iefYG-0006TI-BM; Tue, 10 Dec 2019 13:27:44 +0000
+	id 1iefYS-0006eV-Bm; Tue, 10 Dec 2019 13:27:56 +0000
 Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iefVZ-0002na-Jm
+ id 1iefVd-0002qd-5u
  for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 13:25:04 +0000
 Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
@@ -45,37 +45,39 @@ Authentication-Results: esa3.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 4wxkjymyrvYDtaXLV3wnwWnmM7qbBQlkZel1+UbW6Ixk6YfU4GFTmtHWThX180tLfzzCHb0ZC6
- b6KWrHSWCpgQPokrJtJ9XX58ZcGLAA5sLqjJU6+Aq8FizLFmem5lJ+DntbqUXi8Rsg72u/JXGa
- EMTreU98lD3HBJd1p4C+11FUSZNtSjcqAeRuUVCvaFKfCkg4l5/obxIwsRllGXfiEyDykG+ocI
- LOl3JIvw9JY0MG7PtTW5kfFf8JAaU8W19PwmDKA2Gexev0142/KBOkAm1EHey/2j7aD9RpYMiY
- V+M=
-X-IronPort-AV: E=Sophos;i="5.69,299,1571727600"; d="scan'208";a="59845981"
+IronPort-SDR: vtl0h2bOnzLNBLGr60vwLu0D99FU+fmZ4BZhGZvCFJkDpisYfwZm+AGAUTe4OJvxWVu65D1vUx
+ WGX0gYCCANV4ImRaP0pzXOJuHZpanVQCR/AudJ2CFC878XlcYi+HTywhtFVuNyMXoCFU32G5d0
+ aC3xdu4UojPwUjjwQZo/1kEXx+tW6MOS+v/eMrbXDqQMDE/S2E5sZmw73p+x5nA0xkPvjjznMR
+ YJI9LKzxs9pR3pf6nA3RCcMR5COYC0jPCRRtruiqoAL0QP0gulEYSGtFWIIrWr4gQ4CEbaSht/
+ 2KQ=
+X-IronPort-AV: E=Sophos;i="5.69,299,1571727600"; d="scan'208";a="59845989"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 10 Dec 2019 06:24:56 -0700
+ 10 Dec 2019 06:24:59 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 10 Dec 2019 06:24:55 -0700
+ 15.1.1713.5; Tue, 10 Dec 2019 06:24:59 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 10 Dec 2019 06:24:56 -0700
+ 15.1.1713.5 via Frontend Transport; Tue, 10 Dec 2019 06:25:00 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <sam@ravnborg.org>, <bbrezillon@kernel.org>, <airlied@linux.ie>,
  <daniel@ffwll.ch>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>,
  <lee.jones@linaro.org>
-Subject: [PATCH 0/5] fixes for atmel-hlcdc
-Date: Tue, 10 Dec 2019 15:24:42 +0200
-Message-ID: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 1/5] drm: atmel-hlcdc: use double rate for pixel clock only if
+ supported
+Date: Tue, 10 Dec 2019 15:24:43 +0200
+Message-ID: <1575984287-26787-2-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
+References: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_052457_681227_1B808D50 
-X-CRM114-Status: UNSURE (   5.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191210_052501_251520_0CD9FA1C 
+X-CRM114-Status: GOOD (  10.08  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -104,29 +106,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Doubled system clock should be used as pixel cock source only if this
+is supported. This is emphasized by the value of
+atmel_hlcdc_crtc::dc::desc::fixed_clksrc.
 
-I have few fixes for atmel-hlcdc driver in this series as well
-as two reverts.
-Revert "drm: atmel-hlcdc: enable sys_clk during initalization." is
-due to the fix in in patch 2/5.
+Fixes: a6eca2abdd42 ("drm: atmel-hlcdc: add config option for clock selection")
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+---
+ drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-Thank you,
-Claudiu Beznea
-
-Claudiu Beznea (5):
-  drm: atmel-hlcdc: use double rate for pixel clock only if supported
-  drm: atmel-hlcdc: enable clock before configuring timing engine
-  mfd: atmel-hlcdc: return in case of error
-  Revert "drm/atmel-hlcdc: allow selecting a higher pixel-clock than
-    requested"
-  Revert "drm: atmel-hlcdc: enable sys_clk during initalization."
-
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 26 ++++++++++----------------
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c   | 19 +------------------
- drivers/mfd/atmel-hlcdc.c                      | 14 ++++++++++----
- 3 files changed, 21 insertions(+), 38 deletions(-)
-
+diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+index f2e73e6d46b8..5040ed8d0871 100644
+--- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
++++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+@@ -95,14 +95,14 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
+ 		     (adj->crtc_hdisplay - 1) |
+ 		     ((adj->crtc_vdisplay - 1) << 16));
+ 
++	prate = clk_get_rate(crtc->dc->hlcdc->sys_clk);
++	mode_rate = adj->crtc_clock * 1000;
+ 	if (!crtc->dc->desc->fixed_clksrc) {
++		prate *= 2;
+ 		cfg |= ATMEL_HLCDC_CLKSEL;
+ 		mask |= ATMEL_HLCDC_CLKSEL;
+ 	}
+ 
+-	prate = 2 * clk_get_rate(crtc->dc->hlcdc->sys_clk);
+-	mode_rate = adj->crtc_clock * 1000;
+-
+ 	div = DIV_ROUND_UP(prate, mode_rate);
+ 	if (div < 2) {
+ 		div = 2;
 -- 
 2.7.4
 
