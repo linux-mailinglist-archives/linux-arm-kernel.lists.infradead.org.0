@@ -2,54 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CC34118319
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 10:10:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47D30118315
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 10:09:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=I3RtP5jB/NShcPZjI1ez6f5FjCldvwm7KxU0xZe7KXA=; b=IL+XiK+CXAwNGZ4jEy3Zhfl2+D
-	h/Lcr0qyDwC86xRN+a0HomxnU1AOXnbpypkPp4vj389rYFXZtQtwUWPEOArDbA2Ok9tcgDggYiL2e
-	jEVCSvJn4ocWEddfW58biJQEhmSAouU8gsjuH/4+TSWyZH0d710bDEgEjsQIed2FaoKVdI0WPY9Cy
-	rXHdd6Z58F/f8NI5DbHseDnlqhPD65W47HAxsvzZKETJxbyx9Wba/SKtRoB/NEVMFogryCIGKfKA/
-	Oj2kyylYlu9NI7D/4aS1PaOJUG2KGD5ij1vyisZIW7H0sDT6cnMZ5Std14KYuOhl75enb5JGi7U8J
-	OHW2LQWA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NZ0l3o7w0cUG35JHFImM9LgHOhycnrsakgKmhj/ZKmk=; b=p3GAnFmTTa3B5P
+	dWZObYJFVRWKNjhacW6fnv4E3khXYlkJgYOAazW+x1xoe8KcUIwn4R+/NIjKUZk1vdraoxxDR1X3Q
+	bQzS2kRAwmsoWD0C6Lxnn1JPaKRZQG+Ay85OALtJvRiXpz9JBLdfiUh0QRde9oxGhp49yiN+x00kt
+	8NOx7U08gytEVPt5OvzN9XawYSnA3cUvbQ9ri59NzQGBFtaG7PjzQ0jJU1xGclkjv/NrIXeJdSL5/
+	GN1PiIO7QWosB/18G3+e66B1h+2n5dLWj7V9T9wfrwegl04hVzvzUgHfxtZwzZG8YoubZPQRytv31
+	wWV3evY4tMWcLgjCK5Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iebWp-0003SH-IS; Tue, 10 Dec 2019 09:09:59 +0000
-Received: from comms.puri.sm ([159.203.221.185])
+	id 1iebWU-0003E0-FQ; Tue, 10 Dec 2019 09:09:38 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iebWc-0003Ps-GG
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 09:09:49 +0000
-Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id 16C30E10EC;
- Tue, 10 Dec 2019 01:09:37 -0800 (PST)
-Received: from comms.puri.sm ([127.0.0.1])
- by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id s3CwpN2XUNh5; Tue, 10 Dec 2019 01:09:36 -0800 (PST)
-From: Martin Kepplinger <martin.kepplinger@puri.sm>
-To: robh@kernel.org,
-	mark.rutland@arm.com
-Subject: [PATCH] arm64: dts: imx8mq-librem5-devkit: use correct interrupt for
- the magnetometer
-Date: Tue, 10 Dec 2019 10:08:57 +0100
-Message-Id: <20191210090857.10663-1-martin.kepplinger@puri.sm>
-In-Reply-To: <20191203130336.18763-1-martin.kepplinger@puri.sm>
-References: <20191203130336.18763-1-martin.kepplinger@puri.sm>
+ id 1iebWK-0003DM-Ns
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 09:09:30 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iebWE-00044S-1m; Tue, 10 Dec 2019 10:09:22 +0100
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1iebWC-0003tR-QV; Tue, 10 Dec 2019 10:09:20 +0100
+Date: Tue, 10 Dec 2019 10:09:20 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Stefan =?iso-8859-1?Q?Riedm=FCller?= <s.riedmueller@phytec.de>
+Subject: Re: [PATCH 2/3] ARM: dts: imx6: phycore-som: fix emmc supply
+Message-ID: <20191210090920.a5aswmgihjzvsk25@pengutronix.de>
+References: <20191129164859.15632-1-m.felsch@pengutronix.de>
+ <20191129164859.15632-2-m.felsch@pengutronix.de>
+ <6eece2d7-4695-ef2a-7376-cff39aaef8be@phytec.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <6eece2d7-4695-ef2a-7376-cff39aaef8be@phytec.de>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 09:44:40 up 25 days, 3 min, 31 users,  load average: 0.00, 0.00, 0.00
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_010946_562210_88FFDC8A 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191210_010928_777736_5C86C7D0 
+X-CRM114-Status: GOOD (  19.17  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [159.203.221.185 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,53 +75,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kernel@puri.sm,
- Martin Kepplinger <martin.kepplinger@puri.sm>,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: s.christ@phytec.de, chf.fritz@googlemail.com, robh+dt@kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, c.hemp@phytec.de,
+ shawnguo@kernel.org, festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Angus Ainslie (Purism)" <angus@akkea.ca>
+Hi Stefan,
 
-The LSM9DS1 uses a high level interrupt.
+On 19-12-05 13:00, Stefan Riedm=FCller wrote:
+> Hi Marco,
+> =
 
-Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
-Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
----
+> On 29.11.19 17:48, Marco Felsch wrote:
+> > Currently the vmmc is supplied by the 1.8V pmic rail but this is wrong.
+> > The 1.8V pmic rail is connected to the emmc vccq (vqmmc).
+> =
 
-Any objections or questions about the previously sent accelerometer DT
-description? It and this follow-up bugfix is what we're running for
-quite some time now.
+> I just checked the schematics again and actually both VCC and VCCQ are
+> connected to the 3.3V power rail. VCCQ can be connected to the 1.8V PMIC
+> power rail by solder jumper but default is 3.3V.
 
-thanks,
+That's right.
 
-                             martin
+> So I think either both should be connected to a fixed 3.3V regulator or
+> removed, since the default system does not support switching these voltag=
+es.
+
+The question is why the regulator output isn't the default case and
+setting regulator-max-microvolt to 3.3V and regulator-min-microvolt to
+1.8V? The PMIC LDO4 supports output voltages up to 3.6V so this should
+be okay.
+
+Anyway dropping both regulators and using dummy-regulators should be
+fine too. I only want to remove this issue.
+
+Regards,
+  Marco =
 
 
+> Regards,
+> Stefan
+> =
 
- arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> > =
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-index 2834d273bfdf..8de24a2d5234 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-@@ -429,7 +429,7 @@
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&pinctrl_imu>;
- 		interrupt-parent = <&gpio3>;
--		interrupts = <19 IRQ_TYPE_LEVEL_LOW>;
-+		interrupts = <19 IRQ_TYPE_LEVEL_HIGH>;
- 		vdd-supply = <&reg_3v3_p>;
- 		vddio-supply = <&reg_3v3_p>;
- 	};
--- 
-2.20.1
+> > Fixes: ddec5d1c0047 ("ARM: dts: imx6: Add initial support for phyCORE-i=
+.MX 6 SOM")
+> > Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+> > ---
+> >   arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 2 +-
+> >   1 file changed, 1 insertion(+), 1 deletion(-)
+> > =
 
+> > diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi b/arch/a=
+rm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > index 46d4953c5588..44e333848b4d 100644
+> > --- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > +++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
+> > @@ -183,7 +183,7 @@
+> >   	pinctrl-0 =3D <&pinctrl_usdhc4>;
+> >   	bus-width =3D <8>;
+> >   	non-removable;
+> > -	vmmc-supply =3D <&vdd_emmc_1p8>;
+> > +	vqmmc-supply =3D <&vdd_emmc_1p8>;
+> >   	status =3D "disabled";
+> >   };
+> > =
+
+> =
+
+
+-- =
+
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
