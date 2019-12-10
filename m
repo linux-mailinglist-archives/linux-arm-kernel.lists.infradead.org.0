@@ -2,128 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2DD2118A82
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:12:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41CBB118A92
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:15:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ABi+nBSaV9d0znaDwgu5VPDRCvDs0El7RsDKpxym3PU=; b=nKmE94A+66Pfhz
-	vWK1m30KrjLjis6gR19PYOC+oD5XlQ9qWLJiVEYbTHQxg3VUTKIKnDj6yrsHgtCqmX+pKD/GHYvTo
-	//plFs+XSCuAozIoMpTdC30uN0ojS1cNkaTBdMl/7+bv7oXQP21yemzqu//1AzTTm+gZP+EtG4eBl
-	LYqM9dBXDTZ9QDBsgZszxQjtVVLNF9ZbfoSeJfxery8rY3EREM1FZHpjvvX+fCa8iua2q3gaR/mlM
-	thgJliFDgoeUKum7LTm5w4AegWmFEp3m7g9TGXBOfEs5oKPGxAC/bfBqhWzNQuJ01Lpfo1pde2UtR
-	rSEFYq65adroe5XdwV2Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1FFPnq1X0/A8V58fqtFkkUvL8BOMj13UpBW1s2i4rkQ=; b=ZuQRZPwsNmWv6r
+	Bm4+Um3YoYv/LNd4xe1YmuuOzeXe6soBXFmX8kUAR3M6SFjJydV9B1Dj9MpP+3AwWkecRD7I3FnaF
+	5HPtSlHHY/XS0y6j3eXFHk4zPUpRsQFXytjfdxHu7BdzXoXwzjGBw08VBPfUvf8l0zWlJNC0d9kMc
+	OxES0I4T8bEdvHL36yOuY7UiYjnVFjDZYHegHO5Rrcqks313vT7MBVMV5Z/lslXHIJrzye31jEZfZ
+	NZsZ0inOM/OElTTubMPb/zy2mbHgVH6BHqUiPxH8v442b8wb1m6FlFnpWIgr1qEZE4DKDBwUSipkk
+	79Y5nhyBPsGTVQ4QCGJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iegEy-0000Ar-TP; Tue, 10 Dec 2019 14:11:52 +0000
-Received: from mail-eopbgr10123.outbound.protection.outlook.com
- ([40.107.1.123] helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1iegIW-0002mg-W0; Tue, 10 Dec 2019 14:15:33 +0000
+Received: from skedge03.snt-world.com ([91.208.41.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iegEr-00009z-6E
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:11:46 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=H/gb4A0x5jrXXvFU7/2iRyVL0b+h0DBHJNLNUhH5bDJ3U0yFgoNeuQfpJ8h+/N9ZplyHAN0MxPi86esVfClCSfmh/jx7fHmKmtCMwqrdLz2nwSOLJKu/l+C7mDemyPyNKzPESYdXkmMqOHYaU9z2Hv/vlY1hJnchzRLAiy9+rAysqheoiOd3QrPBB89TFq60dJwcgKDiTnUzji5vHBiSXRvZCKUoy8N4ZZePcdCuDGHxglsrsOAikPPCM5jU5zJRxdRQSfUrsUwLYUpectrUK/B/8sd2PZfMQ0d0lOKyiB8givVPC39+3LnJtcc44qithFQEDUUuf6PTXHu2d/rM/A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Qvrvq8CaDXNQ9H+KopgVoVi5iINM1NaNrife4f9usCg=;
- b=MbmjK9FkTcjjT7JMN3zplyOHA/tP9jpWLdhLSDHfgKzV45xMTvcIyv3zvmm547rw+A0v6xrTyXBtB93Qih6Fom3HkJQ5lqeC3gol/40dDgR4MD1aIZkEEbhzw0SuIFuYcIWCnm9e/9QxUemxpT6u3JviY3mnVddrgpkf17iTDJ/w7dVls/9DEM+BvlcbJKKbq++Gl1t2dLx/Y3IS8u1igJ0tVmWMsqb4OtZ1+f+Jw1Zd2ie4qgp1edSgMHonQVs7lqrlJxzymr7kiVmPxT31vgLjPwVU0Ond3vniEqxKQ++5ZKgxUehoi3mA0/GQoD/HwMSfkolbSHRXzojA2Sguyw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
- dkim=pass header.d=axentia.se; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Qvrvq8CaDXNQ9H+KopgVoVi5iINM1NaNrife4f9usCg=;
- b=M2Synzj9fviy4cdNQtbHPsIsH5Ps9/Ou+uhHuAnHfUklim6uOvdh/CZ/BdvtCOd5XqR2ElqDwX/nd7pRyuOGMS+dfV+IEF6ceZkLuQRISVzxFlZAyvzenLlP9UpTSgHlfmpfUzpqMmLEnlMR6GORy2aPilMvpiB8XQgliqcSYmw=
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
- DB3PR0202MB3308.eurprd02.prod.outlook.com (52.134.66.159) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2538.15; Tue, 10 Dec 2019 14:11:40 +0000
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::446e:c4f8:7e59:1c6d]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::446e:c4f8:7e59:1c6d%7]) with mapi id 15.20.2516.018; Tue, 10 Dec 2019
- 14:11:40 +0000
-From: Peter Rosin <peda@axentia.se>
-To: Claudiu Beznea <claudiu.beznea@microchip.com>, "sam@ravnborg.org"
- <sam@ravnborg.org>, "bbrezillon@kernel.org" <bbrezillon@kernel.org>,
- "airlied@linux.ie" <airlied@linux.ie>, "daniel@ffwll.ch" <daniel@ffwll.ch>,
- "nicolas.ferre@microchip.com" <nicolas.ferre@microchip.com>,
- "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "lee.jones@linaro.org" <lee.jones@linaro.org>
-Subject: Re: [PATCH 4/5] Revert "drm/atmel-hlcdc: allow selecting a higher
- pixel-clock than requested"
-Thread-Topic: [PATCH 4/5] Revert "drm/atmel-hlcdc: allow selecting a higher
- pixel-clock than requested"
-Thread-Index: AQHVr11DyxIz9S+dLEWyrkArJlSyg6ezaL2A
-Date: Tue, 10 Dec 2019 14:11:40 +0000
-Message-ID: <4c3ffc48-7aa5-1e48-b0e9-a50c4eea7c38@axentia.se>
-References: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
- <1575984287-26787-5-git-send-email-claudiu.beznea@microchip.com>
-In-Reply-To: <1575984287-26787-5-git-send-email-claudiu.beznea@microchip.com>
-Accept-Language: en-US, sv-SE
+ id 1iegIP-0002lW-G2
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:15:27 +0000
+Received: from sntmail14r.snt-is.com (unknown [10.203.32.184])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge03.snt-world.com (Postfix) with ESMTPS id 2C77867A918;
+ Tue, 10 Dec 2019 15:15:18 +0100 (CET)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail14r.snt-is.com
+ (10.203.32.184) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 10 Dec
+ 2019 15:15:17 +0100
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1713.004; Tue, 10 Dec 2019 15:15:17 +0100
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, Sascha Hauer
+ <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH] arm64: dts: imx8mm: Add missing mux options for UART1 and
+ UART2 signals
+Thread-Topic: [PATCH] arm64: dts: imx8mm: Add missing mux options for UART1
+ and UART2 signals
+Thread-Index: AQHVr2Q/ATuBSnMk+E+vlzmoNWKRXQ==
+Date: Tue, 10 Dec 2019 14:15:17 +0000
+Message-ID: <20191210141516.6983-1-frieder.schrempf@kontron.de>
+Accept-Language: de-DE, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
-x-originating-ip: [213.112.138.100]
-x-clientproxiedby: HE1PR05CA0270.eurprd05.prod.outlook.com
- (2603:10a6:3:fc::22) To DB3PR0202MB3434.eurprd02.prod.outlook.com
- (2603:10a6:8:5::30)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peda@axentia.se; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 3e50c755-22b3-45c4-74b8-08d77d7ae08a
-x-ms-traffictypediagnostic: DB3PR0202MB3308:
-x-microsoft-antispam-prvs: <DB3PR0202MB3308F4AE247A89CE60F74E17BC5B0@DB3PR0202MB3308.eurprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3631;
-x-forefront-prvs: 02475B2A01
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(346002)(136003)(376002)(39830400003)(396003)(366004)(189003)(199004)(4326008)(81166006)(31686004)(81156014)(8676002)(6512007)(7416002)(6486002)(2906002)(64756008)(66446008)(36756003)(8936002)(186003)(66476007)(26005)(66946007)(5660300002)(66556008)(31696002)(53546011)(6506007)(86362001)(110136005)(508600001)(316002)(4001150100001)(2616005)(52116002)(54906003)(71200400001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3308;
- H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: axentia.se does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: q4EvAuHaAQdvD6ziEE3XbKAt8mT4satyB9J1v7FnuVcKwoG+XHt2fUSvLdNMoIwk3BUpMKVIKpTvTV2CBPCNMyJFLzDXyRzsorlfrndXeE4SsCIxpEYtr28R9NkDzycyNsVqIKHBRkCJOy9h1sjX88HIHdzQ8U3YHa1orX8zuT+74rzbphxy/CUjnD6T/+4ZV3DgSJKlRg6K5lZa0NKX28jybLvAevI+S+egmJiHBH+cQHCerGaQ0z/LCNT3KCO8JFDQSsWpVqyvnlga8cfwbFmUTAMpsC2rwQ+rQIVXNDmHJ3p6xXdgWuLRhrJXadpfigX6UXH7k1snYz5GBDa38kcY0R1VWaitjCurAQcl3nJrM3e19px4Um633kmomfRkDS27ojF94LTaEVhvtFUdKAVdliuCy55gT4Qwv+toEzy6BFk5Mx4bpizsrnLYOMgk
-x-ms-exchange-transport-forked: True
-Content-ID: <432D8DF437FB454DBA44BABA59C50F33@eurprd02.prod.outlook.com>
+x-mailer: git-send-email 2.17.1
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
 MIME-Version: 1.0
-X-OriginatorOrg: axentia.se
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3e50c755-22b3-45c4-74b8-08d77d7ae08a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Dec 2019 14:11:40.4695 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 32cSkY93M5SVwRzmoy+/2P6MBw12UNBPZq+16FWrHVdU6yPStdDObjOwTGWK6HRJ
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3308
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: 2C77867A918.A01D5
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: devicetree@vger.kernel.org, festevam@gmail.com,
+ kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-imx@nxp.com, linux-kernel@vger.kernel.org,
+ s.hauer@pengutronix.de, shawnguo@kernel.org
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_061145_432560_1C099AA9 
-X-CRM114-Status: GOOD (  15.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191210_061525_866895_6FC77190 
+X-CRM114-Status: UNSURE (   7.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.123 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [91.208.41.68 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -135,69 +89,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
  <linux-arm-kernel@lists.infradead.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ Schrempf Frieder <frieder.schrempf@kontron.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-10 14:24, Claudiu Beznea wrote:
-> This reverts commit f6f7ad3234613f6f7f27c25036aaf078de07e9b0.
-> ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
-> because allowing selecting a higher pixel clock may overclock
-> LCD devices, not all of them being capable of this.
+From: Frieder Schrempf <frieder.schrempf@kontron.de>
 
-Without this patch, there are panels that are *severly* underclocked (on the
-magnitude of 40MHz instead of 65MHz or something like that, I don't remember
-the exact figures). And they are of course not capable of that. All panels
-have *some* slack as to what frequencies are supported, and the patch was
-written under the assumption that the preferred frequency of the panel was
-requested, which should leave at least a *little* headroom.
+According to the reference manual and the "Pins Tool" from NXP, the
+signals for UART1 and UART2 can be muxed to the SAI2 and SAI3 pads
+respectively. Let's add the missing options.
 
-So, I'm curious as to what panel regressed. Or rather, what pixel-clock it needs
-and what it gets with/without the patch?
+Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+---
+ arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
 
-Or is the revert based on some theory of a perceived risk of toasting a panel?
-
-In short, this revert regresses my use case and I would like at least a hook to
-re-enable the removed logic.
-
-Cheers,
-Peter
-
-> Cc: Peter Rosin <peda@axentia.se>
-> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-> ---
->  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 12 ------------
->  1 file changed, 12 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> index 721fa88bf71d..1a70dff1a417 100644
-> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> @@ -117,18 +117,6 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
->  		div = DIV_ROUND_UP(prate, mode_rate);
->  		if (ATMEL_HLCDC_CLKDIV(div) & ~ATMEL_HLCDC_CLKDIV_MASK)
->  			div = ATMEL_HLCDC_CLKDIV_MASK;
-> -	} else {
-> -		int div_low = prate / mode_rate;
-> -
-> -		if (div_low >= 2 &&
-> -		    ((prate / div_low - mode_rate) <
-> -		     10 * (mode_rate - prate / div)))
-> -			/*
-> -			 * At least 10 times better when using a higher
-> -			 * frequency than requested, instead of a lower.
-> -			 * So, go with that.
-> -			 */
-> -			div = div_low;
->  	}
->  
->  	cfg |= ATMEL_HLCDC_CLKDIV(div);
-> 
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h b/arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h
+index cffa8991880d..5ccc4cc91959 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h
++++ b/arch/arm64/boot/dts/freescale/imx8mm-pinfunc.h
+@@ -430,18 +430,26 @@
+ #define MX8MM_IOMUXC_SAI1_MCLK_SIM_M_HRESP                                  0x1AC 0x414 0x000 0x7 0x0
+ #define MX8MM_IOMUXC_SAI2_RXFS_SAI2_RX_SYNC                                 0x1B0 0x418 0x000 0x0 0x0
+ #define MX8MM_IOMUXC_SAI2_RXFS_SAI5_TX_SYNC                                 0x1B0 0x418 0x4EC 0x1 0x2
++#define MX8MM_IOMUXC_SAI2_RXFS_UART1_DCE_TX                                 0x1B0 0x418 0x000 0x4 0x0
++#define MX8MM_IOMUXC_SAI2_RXFS_UART1_DTE_RX                                 0x1B0 0x418 0x4F4 0x4 0x2
+ #define MX8MM_IOMUXC_SAI2_RXFS_GPIO4_IO21                                   0x1B0 0x418 0x000 0x5 0x0
+ #define MX8MM_IOMUXC_SAI2_RXFS_SIM_M_HSIZE0                                 0x1B0 0x418 0x000 0x7 0x0
+ #define MX8MM_IOMUXC_SAI2_RXC_SAI2_RX_BCLK                                  0x1B4 0x41C 0x000 0x0 0x0
+ #define MX8MM_IOMUXC_SAI2_RXC_SAI5_TX_BCLK                                  0x1B4 0x41C 0x4E8 0x1 0x2
++#define MX8MM_IOMUXC_SAI2_RXC_UART1_DCE_RX                                  0x1B4 0x41C 0x4F4 0x4 0x3
++#define MX8MM_IOMUXC_SAI2_RXC_UART1_DTE_TX                                  0x1B4 0x41C 0x000 0x4 0x0
+ #define MX8MM_IOMUXC_SAI2_RXC_GPIO4_IO22                                    0x1B4 0x41C 0x000 0x5 0x0
+ #define MX8MM_IOMUXC_SAI2_RXC_SIM_M_HSIZE1                                  0x1B4 0x41C 0x000 0x7 0x0
+ #define MX8MM_IOMUXC_SAI2_RXD0_SAI2_RX_DATA0                                0x1B8 0x420 0x000 0x0 0x0
+ #define MX8MM_IOMUXC_SAI2_RXD0_SAI5_TX_DATA0                                0x1B8 0x420 0x000 0x1 0x0
++#define MX8MM_IOMUXC_SAI2_RXD0_UART1_DCE_RTS_B                              0x1B8 0x420 0x4F0 0x4 0x2
++#define MX8MM_IOMUXC_SAI2_RXD0_UART1_DTE_CTS_B                              0x1B8 0x420 0x000 0x4 0x0
+ #define MX8MM_IOMUXC_SAI2_RXD0_GPIO4_IO23                                   0x1B8 0x420 0x000 0x5 0x0
+ #define MX8MM_IOMUXC_SAI2_RXD0_SIM_M_HSIZE2                                 0x1B8 0x420 0x000 0x7 0x0
+ #define MX8MM_IOMUXC_SAI2_TXFS_SAI2_TX_SYNC                                 0x1BC 0x424 0x000 0x0 0x0
+ #define MX8MM_IOMUXC_SAI2_TXFS_SAI5_TX_DATA1                                0x1BC 0x424 0x000 0x1 0x0
++#define MX8MM_IOMUXC_SAI2_TXFS_UART1_DCE_CTS_B                              0x1BC 0x424 0x000 0x4 0x0
++#define MX8MM_IOMUXC_SAI2_TXFS_UART1_DTE_RTS_B                              0x1BC 0x424 0x4F0 0x4 0x3
+ #define MX8MM_IOMUXC_SAI2_TXFS_GPIO4_IO24                                   0x1BC 0x424 0x000 0x5 0x0
+ #define MX8MM_IOMUXC_SAI2_TXFS_SIM_M_HWRITE                                 0x1BC 0x424 0x000 0x7 0x0
+ #define MX8MM_IOMUXC_SAI2_TXC_SAI2_TX_BCLK                                  0x1C0 0x428 0x000 0x0 0x0
+@@ -464,21 +472,29 @@
+ #define MX8MM_IOMUXC_SAI3_RXC_SAI3_RX_BCLK                                  0x1D0 0x438 0x000 0x0 0x0
+ #define MX8MM_IOMUXC_SAI3_RXC_GPT1_CLK                                      0x1D0 0x438 0x000 0x1 0x0
+ #define MX8MM_IOMUXC_SAI3_RXC_SAI5_RX_BCLK                                  0x1D0 0x438 0x4D0 0x2 0x2
++#define MX8MM_IOMUXC_SAI3_RXC_UART2_DCE_CTS_B                               0x1D0 0x438 0x000 0x4 0x0
++#define MX8MM_IOMUXC_SAI3_RXC_UART2_DTE_RTS_B                               0x1D0 0x438 0x4F8 0x4 0x2
+ #define MX8MM_IOMUXC_SAI3_RXC_GPIO4_IO29                                    0x1D0 0x438 0x000 0x5 0x0
+ #define MX8MM_IOMUXC_SAI3_RXC_TPSMP_HTRANS1                                 0x1D0 0x438 0x000 0x7 0x0
+ #define MX8MM_IOMUXC_SAI3_RXD_SAI3_RX_DATA0                                 0x1D4 0x43C 0x000 0x0 0x0
+ #define MX8MM_IOMUXC_SAI3_RXD_GPT1_COMPARE1                                 0x1D4 0x43C 0x000 0x1 0x0
+ #define MX8MM_IOMUXC_SAI3_RXD_SAI5_RX_DATA0                                 0x1D4 0x43C 0x4D4 0x2 0x2
++#define MX8MM_IOMUXC_SAI3_RXD_UART2_DCE_RTS_B                               0x1D4 0x43C 0x4F8 0x4 0x3
++#define MX8MM_IOMUXC_SAI3_RXD_UART2_DTE_CTS_B                               0x1D4 0x43C 0x000 0x4 0x0
+ #define MX8MM_IOMUXC_SAI3_RXD_GPIO4_IO30                                    0x1D4 0x43C 0x000 0x5 0x0
+ #define MX8MM_IOMUXC_SAI3_RXD_TPSMP_HDATA0                                  0x1D4 0x43C 0x000 0x7 0x0
+ #define MX8MM_IOMUXC_SAI3_TXFS_SAI3_TX_SYNC                                 0x1D8 0x440 0x000 0x0 0x0
+ #define MX8MM_IOMUXC_SAI3_TXFS_GPT1_CAPTURE2                                0x1D8 0x440 0x000 0x1 0x0
+ #define MX8MM_IOMUXC_SAI3_TXFS_SAI5_RX_DATA1                                0x1D8 0x440 0x4D8 0x2 0x2
++#define MX8MM_IOMUXC_SAI3_TXFS_UART2_DCE_RX                                 0x1D8 0x440 0x4Fc 0x4 0x2
++#define MX8MM_IOMUXC_SAI3_TXFS_UART2_DTE_TX                                 0x1D8 0x440 0x000 0x4 0x0
+ #define MX8MM_IOMUXC_SAI3_TXFS_GPIO4_IO31                                   0x1D8 0x440 0x000 0x5 0x0
+ #define MX8MM_IOMUXC_SAI3_TXFS_TPSMP_HDATA1                                 0x1D8 0x440 0x000 0x7 0x0
+ #define MX8MM_IOMUXC_SAI3_TXC_SAI3_TX_BCLK                                  0x1DC 0x444 0x000 0x0 0x0
+ #define MX8MM_IOMUXC_SAI3_TXC_GPT1_COMPARE2                                 0x1DC 0x444 0x000 0x1 0x0
+ #define MX8MM_IOMUXC_SAI3_TXC_SAI5_RX_DATA2                                 0x1DC 0x444 0x4DC 0x2 0x2
++#define MX8MM_IOMUXC_SAI3_TXC_UART2_DCE_TX                                  0x1DC 0x444 0x000 0x4 0x0
++#define MX8MM_IOMUXC_SAI3_TXC_UART2_DTE_RX                                  0x1DC 0x444 0x4Fc 0x4 0x3
+ #define MX8MM_IOMUXC_SAI3_TXC_GPIO5_IO0                                     0x1DC 0x444 0x000 0x5 0x0
+ #define MX8MM_IOMUXC_SAI3_TXC_TPSMP_HDATA2                                  0x1DC 0x444 0x000 0x7 0x0
+ #define MX8MM_IOMUXC_SAI3_TXD_SAI3_TX_DATA0                                 0x1E0 0x448 0x000 0x0 0x0
+-- 
+2.17.1
 
 _______________________________________________
 linux-arm-kernel mailing list
