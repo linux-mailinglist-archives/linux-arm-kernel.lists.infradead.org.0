@@ -2,82 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49F3A118B6C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:47:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0F4A118B70
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:47:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+OZ2hcv1XmFFBI/EloSpBoNABW1GvH4mN3QmjYC8Ojs=; b=D+3CgylcmsHoCA
-	ogqNOVQyE21PT+E7a9xs0wlI+x+AevgfsPaSfVXq1vvICcd1IEgxLHSBK3O/3A1Q7XSMLOjZ8ndOG
-	3lGl3RJ238u5fxG9J52nCJQ9RemnPMgaUQmECHLPqodXvS1YQHgK+ZtU+HDxuVxkgpprJEZwAPGfE
-	RJjjxzSO1UGEbEdcp39Jy/ngFwx8HdhLVTK6WPpy/4jDsXoO5Yk80aPnGG+UT/TH63Req+IiZzvbc
-	IleKiYd0KlH719NPpVL0QR1agaAEuWNrzC6Q3BccQquCG/AIJ6Kd/zu5MbiFFXTlPn9ncC7sXVOTY
-	r8nRdEGRzIKW7/6m5jIg==;
+	List-Owner; bh=TJYs/4KT/junH2M64eDoscxiZfW3T7xE8MX/sMphZtU=; b=uUkltvZLI1g6Ki
+	qYZSBNPikrlRgCqtDMp87p+o4fWoLQiHA1xqG75a/bCt+Ut31pcPvB0J8JKka2X0Eumte9qEe1WjY
+	npkmQP10kBjlSd04eLbJIce3GuqawJRcQ/YhglOBydRyk7cN76Ox3EABfCQoe5yOmoiH8XwuXK+O2
+	QUpHBbXQEJ7J8zy+FEDMvYoFOxFkrNaGAFPS4+rqWr/kPnoX4Yvg+1qUuUB5Z0wJgtQk0DLCOyBhj
+	x3ay6zLmsjq/DnNTpUgJZHPlNwX3L//nxt/WvXZs/UBHg578/tRaTVlqsUuM00xwMEQBlS0ZJsCjh
+	Vlp8JI6/mK5cDNu5y7sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iegnB-000246-Dr; Tue, 10 Dec 2019 14:47:13 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1iegnl-0002PK-Sf; Tue, 10 Dec 2019 14:47:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iegmz-00022r-2w
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:47:02 +0000
-Received: by mail-ed1-f68.google.com with SMTP id cm12so16162278edb.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 06:47:00 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=YhaZZr/VtnLO8eSaQcdnch7Ah/fM7ZqN8a+3yLWOzB0=;
- b=l0FHKErWI4qajzb75NoNYdPNkxgj/rgJZxwk6kRlposiUl3I5QH2p58qWyZzbXcgBL
- b6XBnMTZZBRuZX1kCHDoRsoew0Z3vkmn8Y7AwfkUfpUjAdQdwU49WR030q0HQtTd+bmf
- 5So3DJUyBN/RERJMBQXgVhSpUkiQSfPImKj5dBGeiMSLeEpceV0GfY+0Bo1MoePb+38w
- zNoIUdaKUApclzDDUgSBcdu2u83MxIfO+yUoV31LzxV937/cLC4FubD/ums6KUkRtyFz
- Y0b608pZly/PlVoQ/iy0OvHsahjLxI9FuPDGE2QTRU1iiXTajB0stwNYfHo3PTgVrE0/
- ivMw==
-X-Gm-Message-State: APjAAAU0T+3Y6irNv5l5uM6a92YaooZpWqOtjxoXdKf1/7Y8bKQu7rEv
- zMQiuKce/xACam/Zz8Qkdz4=
-X-Google-Smtp-Source: APXvYqzN26AGf6Gq95ol7usng2Lc94cprpK12qzMUmBicV9faXvBpRLDu6WMkpMOaxtC2z0oN0dWEg==
-X-Received: by 2002:a17:906:5957:: with SMTP id
- g23mr4155261ejr.187.1575989219144; 
- Tue, 10 Dec 2019 06:46:59 -0800 (PST)
-Received: from pi3 ([194.230.155.234])
- by smtp.googlemail.com with ESMTPSA id p14sm110628ejr.40.2019.12.10.06.46.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Dec 2019 06:46:58 -0800 (PST)
-Date: Tue, 10 Dec 2019 15:46:56 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH 01/10] tty: serial: samsung: allow driver to be built by
- anyone
-Message-ID: <20191210144656.GA11222@pi3>
-References: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
+ id 1iegnc-0002Om-Au
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:47:41 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3581120637;
+ Tue, 10 Dec 2019 14:47:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575989259;
+ bh=t9mW6I2dr+Dg2/7uKgcBKKAq/tKRT4xQ0h18PE3NDVU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=kb15QnBe5+/0sGZPyfGV8xt6u5BKJLLdRfMUCmYQcSGRu4ORb3O4vWwvAc/HQNWMy
+ c13OUy+ybJRy5GsVg1p/JFFwTSvpcNhidAzGa0Nbd8uHjkaH89Td880BBGrk8Vj1j3
+ E5rdW5bkfTd3idM8bNpf5rTqvLYbpcqxcWg68C3s=
+Date: Tue, 10 Dec 2019 15:47:37 +0100
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Thomas Renninger <trenn@suse.de>
+Subject: Re: [PATCH 3/3] arm64 cpuinfo: implement sysfs nodes for arm64
+Message-ID: <20191210144737.GB3975980@kroah.com>
+References: <20191206162421.15050-1-trenn@suse.de>
+ <25032400.G9DUGnJgnc@skinner.arch.suse.de>
+ <20191209173804.GD7489@willie-the-truck>
+ <11195456.EmMzWPVPDU@skinner.arch.suse.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <11195456.EmMzWPVPDU@skinner.arch.suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_064701_132310_85DAB6E3 
-X-CRM114-Status: GOOD (  17.18  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191210_064740_397120_1E91C6BC 
+X-CRM114-Status: GOOD (  11.46  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,62 +75,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Shinbeom Choi <sbeom.choi@samsung.com>, Hyunki Koo <kkoos00@naver.com>,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- HYUN-KI KOO <hyunki00.koo@samsung.com>
+Cc: linux-arch@vger.kernel.org, Felix Schnizlein <fschnizlein@suse.de>,
+ Felix Schnizlein <fschnizlein@suse.com>, x86@kernel.org, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 10, 2019 at 03:36:57PM +0100, Greg Kroah-Hartman wrote:
-> There is no need to tie this driver to only the OMAP platform,
-
-s/OMAP/Exynos/
-
-Beside that:
-Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
-
-Best regards,
-Krzysztof
-
-
-> especially for build testing.  So add COMPILE_TEST as an option allowing
-> it to be built on any platform.
+On Tue, Dec 10, 2019 at 02:33:07PM +0100, Thomas Renninger wrote:
+> On Monday, December 9, 2019 6:38:05 PM CET Will Deacon wrote:
+> > On Mon, Dec 09, 2019 at 12:28:44PM +0100, Thomas Renninger wrote:
+> > > On Monday, December 9, 2019 11:31:11 AM CET Will Deacon wrote:
+> > > > On Fri, Dec 06, 2019 at 05:24:21PM +0100, Thomas Renninger wrote:
+> > > > > From: Felix Schnizlein <fschnizlein@suse.de>
+> > > > > 
+> > > > > Export all information from /proc/cpuinfo to sysfs:
+> > > > > implementer, architecture, variant, part, revision,
+> > > > > bogomips and flags are exported.
+> > > > > 
+> > > > > Example:
+> > > > > /sys/devices/system/cpu/cpu1/info/:[0]# head *
+> > > 
+> > > ...
+> > > 
+> > > > > ==> flags <==
+> > > > > fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid asimdrdm
+> > > 
+> > > ...
+> > > 
+> > > > I don't understand why we need this on arm64
 > 
-> Cc: Kukjin Kim <kgene@kernel.org>
-> Cc: Krzysztof Kozlowski <krzk@kernel.org>
-> Cc: Hyunki Koo <kkoos00@naver.com>
-> Cc: HYUN-KI KOO <hyunki00.koo@samsung.com>
-> Cc: Shinbeom Choi <sbeom.choi@samsung.com>
-> Cc: Jiri Slaby <jslaby@suse.com>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-samsung-soc@vger.kernel.org
-> Cc: linux-serial@vger.kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> ---
->  drivers/tty/serial/Kconfig | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-> index 99f5da3bf913..c835e10bd97e 100644
-> --- a/drivers/tty/serial/Kconfig
-> +++ b/drivers/tty/serial/Kconfig
-> @@ -237,7 +237,7 @@ config SERIAL_CLPS711X_CONSOLE
->  
->  config SERIAL_SAMSUNG
->  	tristate "Samsung SoC serial support"
-> -	depends on PLAT_SAMSUNG || ARCH_EXYNOS
-> +	depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
->  	select SERIAL_CORE
->  	help
->  	  Support for the on-chip UARTs on the Samsung S3C24XX series CPUs,
-> -- 
-> 2.24.0
-> 
+> Again: proc is moving to sys.
+
+No.  New stuff is to be added to /sys/, don't add new things to /proc
+unless it deals with processes.
+
+There is no mass-migration of existing /proc files to sysfs for no good
+reason.
+
+> You probably export feature flags in /proc/cpuinfo for a good reason.
+> So where in sysfs should this show up?
+
+Why does it have to live in sysfs if it is already in /proc and parsed
+properly by tools?
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
