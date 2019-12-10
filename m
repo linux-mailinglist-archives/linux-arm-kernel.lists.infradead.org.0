@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 052E2119790
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:34:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A2201197A9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:34:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+8spOCOXGXLlsZ4MTfSAiMylEonkG35iLRg4qQbCkNE=; b=cSqLkyc58bufV5
-	Pw7zw09mwEmamCSe82D7+rJtFW20uuRc7iQt/xQHTiUks+RbE6E2Ugy6y8A/nUH+9gMiLsjVVy4B1
-	C6PWV+Uqquz9MC2oHS51w2MCKtZ+PuRLWxVvyH+34SbrqutZc3EjEg7dnfQInuxUoaVOH74rnuuh9
-	XrJAF9tak5TkiuzP7vD/5DJJYaxti12GsFOncboiQDrs41HSmhWNxzh5ypiEau0r3xaI/cf9UjVwn
-	pUER2xtHq0sTtz0ovwZnaCJK/bsjLzwhnnErd2SUDy4bvDPgaPVeE0x07rrAZSwuIW86LlcGVDd0A
-	5PP8gDGf1YjYJd+DByxg==;
+	List-Owner; bh=Mu5fS/A2hMrn2ngbZ5ChCCHKf0X+EQgxmyl3+hnUgLQ=; b=oHBUFwrIf9CwcG
+	CJjjVh18Eu/uJLAELpK1qQzgUrvuT/U6vGWMqXW18fHB0ir7Sz4rptlLp/vBfSWC/evSLXJ7CBPkm
+	b6pEJn9jZbdKvS8E9ny6QJMiIyUMlramh+eBd6lNsiDXuZiUhn0SM++k2oWFNvDVlacf4prnO60O9
+	25iVmO90QkSwgYmV7E2c9eSQzZJyBu0lhz13xLL/Mg0rTgXfHxIMX56/vWvj/c26iBVBakJSaI91p
+	q9Jf4icm3LpcxBPwPKe4RKT288gxw0lWlPKAbEpGpF1jeG2lWlh5jBJkhp/WKQzVVDAa1RWdJB1Jn
+	mUoSkWPs5UyMRgcwQsPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ien8u-0002ID-HS; Tue, 10 Dec 2019 21:34:04 +0000
+	id 1ien9U-0002qC-9W; Tue, 10 Dec 2019 21:34:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ien8m-0002HR-9z
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:33:57 +0000
+ id 1ien9F-0002jn-Gc
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:34:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 48BE42464B;
- Tue, 10 Dec 2019 21:33:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3A09C22464;
+ Tue, 10 Dec 2019 21:34:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576013636;
- bh=W1rixHlRglZalpJ3fSvD2qz0lSsb15o4abLzRwMrYYo=;
+ s=default; t=1576013665;
+ bh=BaOJLlsaJCuwyylSLKMNeU454E8WKcHKVG/Ej1RBeow=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=yuVLOMtshUStSrF78o3JcEG6YkypQyNx8fn5nhcSYHylp7eYzbZtoQOSlERpUp4RO
- 9TrBaqeH+eOf6kajS0BanWztuyeYDTlYHMqDxroIMEGKVXpA3/dimA+TXr4zIT752O
- Z175vrCm3l7oHTxzj0QAyxD8+X2QDswFVIfigcn4=
+ b=et2Ys//IG+GzwStFn7P/tad0zhDqBmKUZjpwfveO4NTs8Lzp/Cx0WCHbWY5ATWNF+
+ 5LrxVnJG4eli+LX4lkSRHp1M/NYptX0Fmu8qNtdnTousvlYkkpVM1MO5cOj5qPq9Nn
+ SM3N1ZPGXi2tWtPt3untK0DW8yWCJpMW2Q6HVBYs=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 076/177] arm64: psci: Reduce the waiting time for
- cpu_psci_cpu_kill()
-Date: Tue, 10 Dec 2019 16:30:40 -0500
-Message-Id: <20191210213221.11921-76-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 102/177] nvmem: imx-ocotp: reset error status on
+ probe
+Date: Tue, 10 Dec 2019 16:31:06 -0500
+Message-Id: <20191210213221.11921-102-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191210213221.11921-1-sashal@kernel.org>
 References: <20191210213221.11921-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_133356_366500_745C45E8 
-X-CRM114-Status: GOOD (  13.59  )
+X-CRM114-CacheID: sfid-20191210_133425_593583_0660217D 
+X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,79 +81,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org, Yunfeng Ye <yeyunfeng@huawei.com>,
- Sudeep Holla <sudeep.holla@arm.com>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yunfeng Ye <yeyunfeng@huawei.com>
+From: Lucas Stach <l.stach@pengutronix.de>
 
-[ Upstream commit bfcef4ab1d7ee8921bc322109b1692036cc6cbe0 ]
+[ Upstream commit c33c585f1b3a99d53920bdac614aca461d8db06f ]
 
-In cases like suspend-to-disk and suspend-to-ram, a large number of CPU
-cores need to be shut down. At present, the CPU hotplug operation is
-serialised, and the CPU cores can only be shut down one by one. In this
-process, if PSCI affinity_info() does not return LEVEL_OFF quickly,
-cpu_psci_cpu_kill() needs to wait for 10ms. If hundreds of CPU cores
-need to be shut down, it will take a long time.
+If software running before the OCOTP driver is loaded left the
+controller with the error status pending, the driver will never
+be able to complete the read timing setup. Reset the error status
+on probe to make sure the controller is in usable state.
 
-Normally, there is no need to wait 10ms in cpu_psci_cpu_kill(). So
-change the wait interval from 10 ms to max 1 ms and use usleep_range()
-instead of msleep() for more accurate timer.
-
-In addition, reducing the time interval will increase the messages
-output, so remove the "Retry ..." message, instead, track time and
-output to the the sucessful message.
-
-Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
-Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+Signed-off-by: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Link: https://lore.kernel.org/r/20191029114240.14905-6-srinivas.kandagatla@linaro.org
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/kernel/psci.c | 15 +++++++++------
- 1 file changed, 9 insertions(+), 6 deletions(-)
+ drivers/nvmem/imx-ocotp.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
-index e8edbf13302aa..3856d51c645b5 100644
---- a/arch/arm64/kernel/psci.c
-+++ b/arch/arm64/kernel/psci.c
-@@ -84,7 +84,8 @@ static void cpu_psci_cpu_die(unsigned int cpu)
+diff --git a/drivers/nvmem/imx-ocotp.c b/drivers/nvmem/imx-ocotp.c
+index afb429a417fe0..926d9cc080cf4 100644
+--- a/drivers/nvmem/imx-ocotp.c
++++ b/drivers/nvmem/imx-ocotp.c
+@@ -466,6 +466,10 @@ static int imx_ocotp_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->clk))
+ 		return PTR_ERR(priv->clk);
  
- static int cpu_psci_cpu_kill(unsigned int cpu)
- {
--	int err, i;
-+	int err;
-+	unsigned long start, end;
- 
- 	if (!psci_ops.affinity_info)
- 		return 0;
-@@ -94,16 +95,18 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
- 	 * while it is dying. So, try again a few times.
- 	 */
- 
--	for (i = 0; i < 10; i++) {
-+	start = jiffies;
-+	end = start + msecs_to_jiffies(100);
-+	do {
- 		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
- 		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
--			pr_info("CPU%d killed.\n", cpu);
-+			pr_info("CPU%d killed (polled %d ms)\n", cpu,
-+				jiffies_to_msecs(jiffies - start));
- 			return 0;
- 		}
- 
--		msleep(10);
--		pr_info("Retrying again to check for CPU kill\n");
--	}
-+		usleep_range(100, 1000);
-+	} while (time_before(jiffies, end));
- 
- 	pr_warn("CPU%d may not have shut down cleanly (AFFINITY_INFO reports %d)\n",
- 			cpu, err);
++	clk_prepare_enable(priv->clk);
++	imx_ocotp_clr_err_if_set(priv->base);
++	clk_disable_unprepare(priv->clk);
++
+ 	priv->params = of_device_get_match_data(&pdev->dev);
+ 	imx_ocotp_nvmem_config.size = 4 * priv->params->nregs;
+ 	imx_ocotp_nvmem_config.dev = dev;
 -- 
 2.20.1
 
