@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7AB2B1188B0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 13:45:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EEA961188B7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 13:45:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
 	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=A1wfDT/YT7jOHbxlNxDqluqL8xNGRfmee4MTTB/zo3M=; b=M/KTf4Ek5HCulM
-	JRawNeke3tGnZVQb21NQvnRWo4AtNoHJnJ/3Vz2rH2ZNoGXWfKaybxdu+0LQ7RUqbweAvpIh9M1Ay
-	YlQgPOwCpd3owkTxvr+NsHMQUDRdCGC4GVNRMvMAUcsuYQU0jbBQ0shcyVWF+rKfmiXKCzJSTfYo6
-	y+9GLUgL7gMeGbzqVoINl2gFIJCG5JZxL98aIwGzTkwKn+NNnc8/tCn3jfhtBHP7BdIObz3eV5ue2
-	qR3XV/RBUWMWUkK1G5hyt7Sz7NaQSNWo6O5KXEtJDy2ojEsn8u5yDX/Gm/RMP2Qd1RfYBR4mrUyy3
-	Z2kdM+SkRVkCdF+glyhg==;
+	List-Owner; bh=7SJnU7PI/vyOtyPtkOhcMRWkoUdVMa0ycCyHkEfaLV8=; b=tpOvLz4r3uu7BL
+	fqRF40B0yinn8w3tDaOCf/PvsRm0v1RgkHO3Pz3Ugr0bWN3WX0fDAV+s1E08q11Sx2iA/9qP/yq0t
+	2twetpMD4CN+USCWIcgybpOUwAwFJZ+seswjrm1KNB9+NtL813LPUHt/3t7YR4Ju+z2Ho1D7+fxwE
+	QCXeUZViGgjDDzcd7Z2ctNy8Lzp/FjFE2IyXjApSgQo2gJnSKdibI7vHUy3vaZJLw3iHkaXvkiGiE
+	dL62h0837xe0CjhinrQK5YIEZ1xA5lWVjm/brfb1QNydd84nbwC+aII9BpoTnYQ0rJBNPiJrKKIVA
+	fliUIx9yrxr5Zlvggojg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieesp-0002rm-Ny; Tue, 10 Dec 2019 12:44:55 +0000
+	id 1ieetF-0003iE-7V; Tue, 10 Dec 2019 12:45:21 +0000
 Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieesh-0002r5-HH; Tue, 10 Dec 2019 12:44:49 +0000
+ id 1ieet1-0003Cw-8D; Tue, 10 Dec 2019 12:45:08 +0000
 Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
  (helo=hermes.fivetechno.de); authenticated
  by wp126.webpack.hosteurope.de running ExIM with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- id 1ieesZ-0004w5-Vj; Tue, 10 Dec 2019 13:44:40 +0100
+ id 1ieesx-00054G-9u; Tue, 10 Dec 2019 13:45:03 +0100
 X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
  linuxbbg.five-lan.de
 Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
  [80.152.217.152]) (authenticated bits=0)
  by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
- xBACicTS005661
+ xBACj2Fp005769
  (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
- Tue, 10 Dec 2019 13:44:38 +0100
+ Tue, 10 Dec 2019 13:45:02 +0100
 From: Markus Reichl <m.reichl@fivetechno.de>
-Subject: [PATCH 1/3] arm64: dts: rockchip: Remove always-on properties from
- regulator nodes on rk3399-roc-pc.
+Subject: [PATCH 2/3] arm64: dts: rockchip: Enable PD for USB-C-Port on
+ rk3399-roc-pc.
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
  Markus Reichl <m.reichl@fivetechno.de>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org,
  linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
 Organization: five technologies GmbH
-Message-ID: <f985665c-86c0-1657-14f8-f77e2ce5a3f7@fivetechno.de>
-Date: Tue, 10 Dec 2019 13:44:38 +0100
+Message-ID: <678df227-38be-47af-7ee3-741a391a196c@fivetechno.de>
+Date: Tue, 10 Dec 2019 13:45:02 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
 Content-Language: de-DE
-X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1575981887;
- 6836b884; 
-X-HE-SMSGID: 1ieesZ-0004w5-Vj
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1575981907;
+ d34a8f31; 
+X-HE-SMSGID: 1ieesx-00054G-9u
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_044447_719252_A05154CF 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20191210_044507_470853_1B995FF0 
+X-CRM114-Status: GOOD (  14.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -79,57 +79,69 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some regulators don't need the always-on property, remove it.
+USB-C-Port 0 on rk3399-roc-pc is designed to supply the board.
+To meet the power requirements of up to 45W a power delivery (PD)
+compatible supply is needed. To configure the PD the node of the
+fusb302 needs a connector property with desired PD description.
 
 Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
 ---
-  arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts | 2 --
-  arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi          | 3 ---
-  2 files changed, 5 deletions(-)
+Presently the board in mainline has to be powered from a 12V supply,
+connected to two pins on the expansion header as the standard 5V
+delivered by the unconfigured USB-C plug is not enough for higher
+loads or peripherals on USB or M.2.
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
-index 2c9c13a0fca9..2db9d32ad54a 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
-@@ -32,8 +32,6 @@ vcc3v3_pcie: vcc3v3-pcie {
-  		gpio = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
-  		pinctrl-names = "default";
-  		pinctrl-0 = <&vcc3v3_pcie_en>;
--		regulator-always-on;
--		regulator-boot-on;
-  		regulator-min-microvolt = <3300000>;
-  		regulator-max-microvolt = <3300000>;
-  		vin-supply = <&dc_12v>;
+With this patch the board requests 15V from the PD and runs fine
+on high loads with NVME SSD, Ethernet, SDIO WLAN and USB peripherals.
+During boot the 12V supply is still needed for some seconds,
+as the fusb302 shuts down or resets the PD shortly when initializing (BUG?).
+
+The board's 12V line is running presently on 5V, the default output
+voltage of the MP8859 on I2C-7, for wich no mainline kernel driver exists yet.
+---
+  arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi | 16 ++++++++++++++--
+  1 file changed, 14 insertions(+), 2 deletions(-)
+
 diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-index 9a1ce3a4ae12..8e01b04144b7 100644
+index 8e01b04144b7..90783b2b1d1f 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
 +++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
-@@ -176,7 +176,6 @@ vcc5v0_host: vcc5v0-host-regulator {
+@@ -6,6 +6,7 @@
+  /dts-v1/;
+  #include <dt-bindings/input/linux-event-codes.h>
+  #include <dt-bindings/pwm/pwm.h>
++#include <dt-bindings/usb/pd.h>
+  #include "rk3399.dtsi"
+  #include "rk3399-opp.dtsi"
+  
+@@ -540,11 +541,22 @@ fusb0: usb-typec@22 {
+  		compatible = "fcs,fusb302";
+  		reg = <0x22>;
+  		interrupt-parent = <&gpio1>;
+-		interrupts = <2 IRQ_TYPE_LEVEL_LOW>;
++		interrupts = <RK_PA2 IRQ_TYPE_LEVEL_LOW>;
   		pinctrl-names = "default";
-  		pinctrl-0 = <&vcc5v0_host_en &hub_rst>;
-  		regulator-name = "vcc5v0_host";
--		regulator-always-on;
-  		vin-supply = <&vcc_sys>;
+  		pinctrl-0 = <&fusb0_int>;
+  		vbus-supply = <&vcc_vbus_typec0>;
+-		status = "okay";
++
++		usb_con: connector {
++			compatible = "usb-c-connector";
++			label = "USB-C-0";
++			power-role = "dual";
++			try-power-role = "sink";
++			source-pdos = <PDO_FIXED(5000, 3000, PDO_FIXED_USB_COMM)>;
++			sink-pdos = <PDO_FIXED(5000, 3000, PDO_FIXED_USB_COMM)
++				     PDO_VAR(5000, 15000, 3000)
++				     PDO_PPS_APDO(5000, 15000, 3000)>;
++			op-sink-microwatt = <45000000>;
++		};
   	};
+  };
   
-@@ -198,7 +197,6 @@ vcc_sys: vcc-sys {
-  		pinctrl-names = "default";
-  		pinctrl-0 = <&vcc_sys_en>;
-  		regulator-name = "vcc_sys";
--		regulator-always-on;
-  		regulator-boot-on;
-  		regulator-min-microvolt = <5000000>;
-  		regulator-max-microvolt = <5000000>;
-@@ -392,7 +390,6 @@ regulator-state-mem {
-  
-  			vcc_sdio: LDO_REG4 {
-  				regulator-name = "vcc_sdio";
--				regulator-always-on;
-  				regulator-boot-on;
-  				regulator-min-microvolt = <1800000>;
-  				regulator-max-microvolt = <3000000>;
 -- 
 2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
