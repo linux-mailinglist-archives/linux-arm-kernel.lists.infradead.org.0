@@ -2,68 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5868119130
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 20:56:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFD9C11916F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 21:02:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=KEgRODblw5V7Nl5lcmGrBMnef8BrfYgVEWXrF8wRNNY=; b=JS8eapX02vBgPQf1h7pcHKirBh
-	cxF5uQfz5bpADTSayF2yjr7luKEc5+V4+JxFz36fE+po9k/KXgJus0idlrMM7cFnPv+S5cfmyIXJl
-	xH7lz6hasP+eWw05ikXMs78Jtv0NyisbbMFpsft1oO171jTYJvLPZC9rGJKLnV0b+9htXz5nGlMN3
-	hhqjFBqvX1lZ4x8ud8Dlet4w/Hepi8kTRBlMumbFKasTOE3Bpwr09bJc1CnJfRzRXGI02nheFBeif
-	PZuxbfzHl+sLvnIIyrOJRVbflmQNf4KYsfR7vG5JTXnhlSGSx7H2XIAQOw7CUrgUBhnT7fgpt6guq
-	EKqT9Kzw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=2Ykco0LqP0unZAuVpMPubDYevVRZUN+ysKdmedNtF5Y=; b=BUj
+	U/P/btbd6yQm38pDGo/2WBbYMgcaOwj+Gb/P/uioPowvKQwjyINwohcnAiNELE+sHb7RWnBnMQyEp
+	gdwedHpMgRm1fH/UpTXxIA1Ic+oy9gKp78n9uYz7+6XPneU5jwtzl2va+sNFXQGxPGnm4a6wDnwFW
+	dFbvJuj8QgO91Ki2oteViSH9Rrwlu1RXsA2GayTLmDcM420YUpnGwy7LH8tBQiuJEfRkI5kyJ8qH0
+	GMlFzxja+mW7XU+SmU06tp76cnaoTM79l+lT2QC5MFyZMW8q4vmCr9uaMcfIesXIK2XsA5JPxRFxG
+	X9uJmBVVmQGXqQo9qfrK2XgCKD+X+RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ielc9-0000P8-Nq; Tue, 10 Dec 2019 19:56:09 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
- helo=smtprelay-out1.synopsys.com)
+	id 1ieliL-0005CQ-Qt; Tue, 10 Dec 2019 20:02:33 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ielb2-0006tG-Sb
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 19:55:05 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A6479C0BAE;
- Tue, 10 Dec 2019 19:54:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576007700; bh=hNPVGvX287G7j1Ei3yz/c7/UqEe5MnMoip2YipLhq5U=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=U9hq47q1iMdEyMX+3VnklyHCIXlIgvWug9GktDJSFvNJNsC+qQ0wR2CqAfhF81A2/
- kjMvMSZ3hOasUNBQWU7rCM5FVag4ZonIFq8gB6A+0yostVFV/0DymsnRDptvaQhpOe
- ea/zXLgrAvTg3nizaJQv+LzIz8Qk4xkN/+nM7aG1aG5ooE4iPWLkA1nfyUinOkk+tO
- 151YiC1ft2NygPLCtjc0sjGKw/+MH7S0DHtsqiM5qojzv1POlbyv3XohxXbSEOWrPx
- iX3GYjdTIKt2z3+wTnOOJ/gXCH7SVfwfZOVRm66+WXnfq4zcE3vAvO2OPC/BV6DPV8
- GC4ANFcVGBaxQ==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 518D4A00A4;
- Tue, 10 Dec 2019 19:54:58 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net-next 4/4] net: stmmac: Always use TX coalesce timer value
- when rescheduling
-Date: Tue, 10 Dec 2019 20:54:44 +0100
-Message-Id: <23c0ff1feddcc690ee66adebefdc3b10031afe1b.1576007149.git.Jose.Abreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1576007149.git.Jose.Abreu@synopsys.com>
-References: <cover.1576007149.git.Jose.Abreu@synopsys.com>
-In-Reply-To: <cover.1576007149.git.Jose.Abreu@synopsys.com>
-References: <cover.1576007149.git.Jose.Abreu@synopsys.com>
+ id 1ielhR-0004FS-VN
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 20:01:39 +0000
+Received: by mail-wr1-x443.google.com with SMTP id z3so21553685wru.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Dec 2019 12:01:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=Po2VpYcFa8arMmQElIzg8ts/l2BOi8KtBQ9ifjUcxhc=;
+ b=GDFNbiRDmc/Dx0anO4WL3fjzLKs4732xpj4XHB1kaCfw7QsLKpI10VoQDGfsh8nYqQ
+ wVjdpXxOYoAzgmBUZ7qUpXK9DgZUl3bLqEL+pAXpJGN7YT1im/AoyqxEtD3ZSVFVKVnK
+ ilvtCk704/3OakKf0M6cB8BX/qe17kuJ4WrGZtOH2gZF3thtRkp9hj6r2Gx4VSGAOvB5
+ mCy2ry3zZYZG4JyRoOawymXy1CHXIGnzK/DwTK2bFVZsjwFOIlLxJdUbfj4UbXvfan8k
+ pRuWw0NpEcV/lbv2SAfQXORb2keGKJHFF/drxsM9kcquS5ZeV4kFhJ1FpMF+BlvD5pxK
+ JDdw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Po2VpYcFa8arMmQElIzg8ts/l2BOi8KtBQ9ifjUcxhc=;
+ b=L9kpuh1apeo45CQRSxCdMiJPBI7LO1DLZdORGPjGcZglax0ZEKrJgc2FfeEfqJl2xI
+ D6IySNEeSgfq78XLVevh6x5uvS1qEXDQ4MmJ5Fo/7pdtYEHvpKi6U4Fn38pfGPjfBBgV
+ NRAUKDWtdf3+R5VBG0d8+Xwo/n3GL93PoEdfgNu/TLDnMGkQ2IqccpFszdbJ9/yfD82Z
+ uycC4nBUMfc6f+VxsrEmOL3u4qmHLKM7DJgilJAQm9NkXxuVaaIOp8d7I+av2tugALC/
+ vAef71Xyu4Xe9hVkT9m24LC1YTTWR1o1lSm4ClkDCvkkRiD1EwcmEmzZ2ybGnYcqdSxq
+ 6WCw==
+X-Gm-Message-State: APjAAAVYinLB124YE9+C5psE4KWv9p3uCWehOYhWMNq/0+bxd2DSES47
+ 90rAeIiuU9V1ZG7C2e6+GkQfRIlx
+X-Google-Smtp-Source: APXvYqzHTERxcshg/vkN601hSQ1Og9RLmRmiJZXYHOg0oIRC+4FLYahrnRQMGu9ST/L2H0XnpS9jwg==
+X-Received: by 2002:adf:e812:: with SMTP id o18mr5050154wrm.127.1576008096684; 
+ Tue, 10 Dec 2019 12:01:36 -0800 (PST)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id z6sm4352255wmz.12.2019.12.10.12.01.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 10 Dec 2019 12:01:35 -0800 (PST)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 0/2] reset: Add Broadcom STB RESCAL reset controller
+Date: Tue, 10 Dec 2019 11:59:01 -0800
+Message-Id: <20191210195903.24127-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_115501_000254_B8FA8426 
-X-CRM114-Status: GOOD (  12.39  )
+X-CRM114-CacheID: sfid-20191210_120138_019466_842A3B23 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -84,53 +93,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Jim Quinlan <jim2101024@gmail.com>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When we have pending packets we re-arm the TX timer with a magic value.
-Change this from the hardcoded value to the pre-defined TX coalesce
-timer value.
+Hi Philipp,
 
-Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
+This patch series adds support for the BCM7216 RESCAL reset controller
+which is necessary to initialize SATA and PCIe0/1 on that chip.
 
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Please let us know if you have any comments. Thanks!
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index f61780ae30ac..726a17d9cc35 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -1975,7 +1975,7 @@ static int stmmac_tx_clean(struct stmmac_priv *priv, int budget, u32 queue)
- 
- 	/* We still have pending packets, let's call for a new scheduling */
- 	if (tx_q->dirty_tx != tx_q->cur_tx)
--		mod_timer(&tx_q->txtimer, STMMAC_COAL_TIMER(10));
-+		mod_timer(&tx_q->txtimer, STMMAC_COAL_TIMER(priv->tx_coal_timer));
- 
- 	__netif_tx_unlock_bh(netdev_get_tx_queue(priv->dev, queue));
- 
+Jim Quinlan (2):
+  dt-bindings: reset: Document BCM7216 RESCAL reset controller
+  reset: Add Broadcom STB RESCAL reset controller
+
+ .../reset/brcm,bcm7216-pcie-sata-rescal.txt   |  26 ++++
+ drivers/reset/Kconfig                         |   7 +
+ drivers/reset/Makefile                        |   1 +
+ drivers/reset/reset-brcmstb-rescal.c          | 124 ++++++++++++++++++
+ 4 files changed, 158 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/reset/brcm,bcm7216-pcie-sata-rescal.txt
+ create mode 100644 drivers/reset/reset-brcmstb-rescal.c
+
 -- 
-2.7.4
+2.17.1
 
 
 _______________________________________________
