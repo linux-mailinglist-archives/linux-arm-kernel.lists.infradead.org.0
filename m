@@ -2,92 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D82B1183C0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 10:37:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02CD61183C7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 10:39:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=MdWnr2O53RI2p1grkYP9xi9draWL5lV4LMhv8PNW3yA=; b=HrdsCZjVNAL2zhogYixjPvBrC9
-	G8g57/NHNIJVERo5030HFYljiqNH3pXG9NSFOIQ+tImlYL9ks6rmlytiFLLWsV4LK8fDPaz+nu8+Y
-	hdtOm6V3MuVMNRc+W9ddpSUqZlCsjyRBBXXjl505gyOCLQuhcdiXyhiV4uxLomUQiJiUxY75cPO/Q
-	F5Jfem+IsHBIPNnrf97OHXSNaXpjWs0UPlnfPctmrXdYNwwxZlVh3ZNt+cccKs9hOz/RYIN2UKpiu
-	UphxNK9nz12sIiKw0xpTqmEBRkv67E1Ex7ZI8l04W4yGzg+vi90Yb0Rnb81m7Yry/+ohvZEubrQ3O
-	L5ob2gaw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PngGLutHpCcnl52l0hJB5j2ojwMSqyU8pRJJjByuB88=; b=O2QiyEtSDnbUsV
+	UqmbDdbSkqhJz2vZKxIe42mvZW4mQ9lPEhjhWjX52rY6trpNLjEJPTDY0HLJpl0ih3usZ9wC5eUei
+	V4zZ7Y3Fb+DIQgCdNYa1sZxeKZBE+Z0So17guVI6yHSpePdi1tq3ciP6zhla8gba3N/GHjgHHK2xK
+	EhkS22oLBsRHL9d9xhLaEdOeD8LCOMtGb3uKfsbrNjqm/BJfkPU7mYHUT/7N/bCee1a+aoekvkA+A
+	OH/K+AdUrByFnnZGZueiV+W3+K1lVhSsx2HgA7VeawclwL3rD0VTfMkdsnzOmnJ0o99vjzFrpwr3z
+	uzuCqVZ8ckG44PB3hdmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iebwt-0007Lz-8b; Tue, 10 Dec 2019 09:36:55 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1iebyq-0007m1-TA; Tue, 10 Dec 2019 09:38:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iebwY-000788-Oe
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 09:36:38 +0000
-Received: by mail-lj1-x241.google.com with SMTP id u17so19075446lja.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 01:36:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-language:content-transfer-encoding;
- bh=gXjxkm88DEjZBFBOVgYS/nXq7WpsnAwIahBe1LGrB6M=;
- b=UBiVzNjP9aLMEiA7IC7YrACjXTaPDc9hQMibmR6mvQ2w5h2mcCTC9EkN995AN07C3h
- dbarlfB4UYV1kmfgjxkEetgiW/0lmCFZPD1RV2yf7SMmHbmt5kWl3v8fKQ2C/Tom/sZc
- 1A5J74odxics4FORavwIVtIBailZYZvoG6ESd6ppFoWRQ/b6ORBJ5uCeCcEYX6Qdmc5x
- x/g7FCVHEhjHGf7+XfjwozXLtrf0kaajg/vIYnqw9H71l4SuFOrtDO/lztKSviCuXmNj
- 2OR9+EoTAXh63GHszKYj1+zJxtYsT8ForpsjXGRBO4gxper4nFuzQ3A5G53npQ/hCq+g
- H1zQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=gXjxkm88DEjZBFBOVgYS/nXq7WpsnAwIahBe1LGrB6M=;
- b=HXLhlPaexplQQWvCxw8kKJUMUyfS/qmrmvt7HrrAt1zhmiC4hxu6EPHZ6KjlQaprfN
- em7tUU2hXRSu8uBL8z02q42av/bQWafrozJRS/FoDwGQNkt1D6igusK/FkRSyaKJ5RXU
- b/TPpdr93RhM5kZcCgm2wYefe3U1b4/0Y8EgPVTAjlANoNQitM66a4xYC7SVkHEk8lib
- 55ih7ryszCXeSrvYyzXSfHufwCsQ6fNHfEJrS+C6VcZ3+2HWT8IjG90al7eHcRS3/f57
- S0qMuYwZLxosZhjHTzqBm0v8OJFudMeERY4C4XWXbD8KUf6mjFY11hhyT1iStjpvmfND
- pZhw==
-X-Gm-Message-State: APjAAAXKk+6Ovo+WlW55ikQpS7rZ37kZk9OV0vHcg6hB1vQ9f23xnRBt
- IZ3HuZ57y2AjJepyc5vULYA=
-X-Google-Smtp-Source: APXvYqzgHWnb8WU25vCn8dceHQNUvqh7F9YCfgdEcTPnY24QYOgLeeWBuTndcT1N2jJAkfd3EaJ+zA==
-X-Received: by 2002:a2e:9015:: with SMTP id h21mr3537646ljg.69.1575970592330; 
- Tue, 10 Dec 2019 01:36:32 -0800 (PST)
-Received: from [192.168.68.106] ([193.119.54.228])
- by smtp.gmail.com with ESMTPSA id m21sm1186222lfh.53.2019.12.10.01.36.27
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 10 Dec 2019 01:36:31 -0800 (PST)
-Subject: Re: [PATCH v2 2/4] kasan: use MAX_PTRS_PER_* for early shadow
-To: Daniel Axtens <dja@axtens.net>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, linuxppc-dev@lists.ozlabs.org,
- linux-s390@vger.kernel.org, linux-xtensa@linux-xtensa.org,
- linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- kasan-dev@googlegroups.com, christophe.leroy@c-s.fr,
- aneesh.kumar@linux.ibm.com
-References: <20191210044714.27265-1-dja@axtens.net>
- <20191210044714.27265-3-dja@axtens.net>
-From: Balbir Singh <bsingharora@gmail.com>
-Message-ID: <a31459ee-2019-2f7b-0dc1-235374579508@gmail.com>
-Date: Tue, 10 Dec 2019 20:36:24 +1100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iebyh-0007lU-4a
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 09:38:48 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D4C8420663;
+ Tue, 10 Dec 2019 09:38:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575970726;
+ bh=x8aJSKAR2dIcqW/3ygcQgBy7sFiK4/Pal+Rxa3TK9bs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=G2wZbUfdFX5wnoE/mSAwvP5ItTCOw02h6V/j2Gvd9/c8HLEU97Tsgd2+g7rQjFO2G
+ JalyFsWwXq63jgAWnCu23skt6W7K1HVeyXNiBWfQ7jkmrMfjq82r7XnlWn4mZiMCuA
+ Cy5tHjk+7PtkNt/w35f+OckD5so4qhG66KVaBaBo=
+Date: Tue, 10 Dec 2019 10:38:43 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v2 2/3] arm64: dts: allwinner: Convert license to SPDX
+ identifier
+Message-ID: <20191210093843.qoypomttr4b7kbep@gilmour.lan>
+References: <20191209182024.20509-1-peron.clem@gmail.com>
+ <20191209182024.20509-2-peron.clem@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20191210044714.27265-3-dja@axtens.net>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191209182024.20509-2-peron.clem@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_013634_869478_B102A1EE 
-X-CRM114-Status: GOOD (  15.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191210_013847_219747_F1E10A4D 
+X-CRM114-Status: GOOD (  24.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (bsingharora[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,78 +77,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Cl=E9ment,
 
-
-On 10/12/19 3:47 pm, Daniel Axtens wrote:
-> This helps with powerpc support, and should have no effect on
-> anything else.
-> 
-> Suggested-by: Christophe Leroy <christophe.leroy@c-s.fr>
-> Signed-off-by: Daniel Axtens <dja@axtens.net>
-
-If you follow the recommendations by Christophe and I, you don't need this patch
-
-Balbir Singh.
-
+On Mon, Dec 09, 2019 at 07:20:23PM +0100, Cl=E9ment P=E9ron wrote:
+> Use a shorter SPDX identifier instead of pasting the
+> whole license.
+>
+> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
 > ---
->  include/linux/kasan.h | 6 +++---
->  mm/kasan/init.c       | 6 +++---
->  2 files changed, 6 insertions(+), 6 deletions(-)
-> 
-> diff --git a/include/linux/kasan.h b/include/linux/kasan.h
-> index e18fe54969e9..d2f2a4ffcb12 100644
-> --- a/include/linux/kasan.h
-> +++ b/include/linux/kasan.h
-> @@ -15,9 +15,9 @@ struct task_struct;
->  #include <asm/pgtable.h>
->  
->  extern unsigned char kasan_early_shadow_page[PAGE_SIZE];
-> -extern pte_t kasan_early_shadow_pte[PTRS_PER_PTE];
-> -extern pmd_t kasan_early_shadow_pmd[PTRS_PER_PMD];
-> -extern pud_t kasan_early_shadow_pud[PTRS_PER_PUD];
-> +extern pte_t kasan_early_shadow_pte[MAX_PTRS_PER_PTE];
-> +extern pmd_t kasan_early_shadow_pmd[MAX_PTRS_PER_PMD];
-> +extern pud_t kasan_early_shadow_pud[MAX_PTRS_PER_PUD];
->  extern p4d_t kasan_early_shadow_p4d[MAX_PTRS_PER_P4D];
->  
->  int kasan_populate_early_shadow(const void *shadow_start,
-> diff --git a/mm/kasan/init.c b/mm/kasan/init.c
-> index ce45c491ebcd..8b54a96d3b3e 100644
-> --- a/mm/kasan/init.c
-> +++ b/mm/kasan/init.c
-> @@ -46,7 +46,7 @@ static inline bool kasan_p4d_table(pgd_t pgd)
->  }
->  #endif
->  #if CONFIG_PGTABLE_LEVELS > 3
-> -pud_t kasan_early_shadow_pud[PTRS_PER_PUD] __page_aligned_bss;
-> +pud_t kasan_early_shadow_pud[MAX_PTRS_PER_PUD] __page_aligned_bss;
->  static inline bool kasan_pud_table(p4d_t p4d)
->  {
->  	return p4d_page(p4d) == virt_to_page(lm_alias(kasan_early_shadow_pud));
-> @@ -58,7 +58,7 @@ static inline bool kasan_pud_table(p4d_t p4d)
->  }
->  #endif
->  #if CONFIG_PGTABLE_LEVELS > 2
-> -pmd_t kasan_early_shadow_pmd[PTRS_PER_PMD] __page_aligned_bss;
-> +pmd_t kasan_early_shadow_pmd[MAX_PTRS_PER_PMD] __page_aligned_bss;
->  static inline bool kasan_pmd_table(pud_t pud)
->  {
->  	return pud_page(pud) == virt_to_page(lm_alias(kasan_early_shadow_pmd));
-> @@ -69,7 +69,7 @@ static inline bool kasan_pmd_table(pud_t pud)
->  	return false;
->  }
->  #endif
-> -pte_t kasan_early_shadow_pte[PTRS_PER_PTE] __page_aligned_bss;
-> +pte_t kasan_early_shadow_pte[MAX_PTRS_PER_PTE] __page_aligned_bss;
->  
->  static inline bool kasan_pte_table(pmd_t pmd)
->  {
-> 
+>  arch/arm64/boot/dts/allwinner/axp803.dtsi     | 39 +------------------
+>  .../dts/allwinner/sun50i-a64-bananapi-m64.dts | 39 +------------------
+>  .../dts/allwinner/sun50i-a64-nanopi-a64.dts   | 39 +------------------
+>  .../dts/allwinner/sun50i-a64-olinuxino.dts    | 39 +------------------
+>  .../dts/allwinner/sun50i-a64-orangepi-win.dts | 39 +------------------
+>  .../dts/allwinner/sun50i-a64-pine64-plus.dts  | 39 +------------------
+>  .../boot/dts/allwinner/sun50i-a64-pine64.dts  | 39 +------------------
+>  .../allwinner/sun50i-a64-sopine-baseboard.dts | 39 +------------------
+>  .../boot/dts/allwinner/sun50i-a64-sopine.dtsi | 39 +------------------
+>  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 39 +------------------
+>  .../allwinner/sun50i-h5-nanopi-neo-plus2.dts  | 39 +------------------
+>  .../dts/allwinner/sun50i-h5-nanopi-neo2.dts   | 39 +------------------
+>  .../dts/allwinner/sun50i-h5-orangepi-pc2.dts  | 39 +------------------
+>  .../allwinner/sun50i-h5-orangepi-prime.dts    | 39 +------------------
+>  .../sun50i-h5-orangepi-zero-plus2.dts         | 39 +------------------
+>  arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi  | 39 +------------------
+>  16 files changed, 16 insertions(+), 608 deletions(-)
+>
+> diff --git a/arch/arm64/boot/dts/allwinner/axp803.dtsi b/arch/arm64/boot/=
+dts/allwinner/axp803.dtsi
+> index f0349ef4bfdd..0e13e75132ac 100644
+> --- a/arch/arm64/boot/dts/allwinner/axp803.dtsi
+> +++ b/arch/arm64/boot/dts/allwinner/axp803.dtsi
+> @@ -1,43 +1,6 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR X11)
+>  /*
+>   * Copyright 2017 Icenowy Zheng <icenowy@aosc.xyz>
+> - *
+> - * This file is dual-licensed: you can use it either under the terms
+> - * of the GPL or the X11 license, at your option. Note that this dual
+> - * licensing only applies to this file, and not this project as a
+> - * whole.
+> - *
+> - *  a) This file is free software; you can redistribute it and/or
+> - *     modify it under the terms of the GNU General Public License as
+> - *     published by the Free Software Foundation; either version 2 of the
+> - *     License, or (at your option) any later version.
+> - *
+> - *     This file is distributed in the hope that it will be useful,
+> - *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+> - *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> - *     GNU General Public License for more details.
+> - *
+> - * Or, alternatively,
+> - *
+> - *  b) Permission is hereby granted, free of charge, to any person
+> - *     obtaining a copy of this software and associated documentation
+> - *     files (the "Software"), to deal in the Software without
+> - *     restriction, including without limitation the rights to use,
+> - *     copy, modify, merge, publish, distribute, sublicense, and/or
+> - *     sell copies of the Software, and to permit persons to whom the
+> - *     Software is furnished to do so, subject to the following
+> - *     conditions:
+> - *
+> - *     The above copyright notice and this permission notice shall be
+> - *     included in all copies or substantial portions of the Software.
+> - *
+> - *     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+> - *     EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+> - *     OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+> - *     NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+> - *     HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> - *     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+> - *     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+> - *     OTHER DEALINGS IN THE SOFTWARE.
+>   */
+
+Thanks for sending a new iteration of this. I had a look at the
+licenses texts associated to the SPDX tag in the LICENSES folder, and
+it turns out that the tag we should be using for that text is
+MIT. While we mention X11 in the header, the text associated to the
+X11 license isn't the one we have in our headers.
+
+I guess we should make very clear in the commit log that even though
+the tag now reports MIT, this maps to the same license text and is not
+therefore a license change.
+
+Thanks!
+Maxime
 
 _______________________________________________
 linux-arm-kernel mailing list
