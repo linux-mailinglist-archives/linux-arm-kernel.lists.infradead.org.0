@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEBED118BBC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:56:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBA6F118BBF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:56:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=JhCizEtVPEMrZS0x9gkNcdblCfMNkcXudPWkTuZWcac=; b=WjjsL/mo5kfdF4LeOWpYXVdsZ1
-	rkrqbDuygjPCNi+dA3RWdLHgU8Hti4wwc5RZzXUhpOOLJYODGmdwKtfDPtASA7hKkcf+BCrtpGy+M
-	E+EOiaotoIjXGel03GJg/sImxZJnovCHpSsjH/exdIdu0wfqHlZ0s9sY9K5D3cARNhjaGdBEHQ3Gk
-	n7zjjNJx9uMqMyk4/IsekGRKD7qsSt5UmvssieOfKY+33vcaES03AE0JRCwtmNaWAb6mdmkecYkKf
-	FolcijwmOTpcc1VUWvRa4WX8Jchz27968Z9jGPDdjZZy7Pi4kWRG1zVgB/rGthjlBgGALZrFfs7cd
-	+OSHyctw==;
+	bh=Uq7iJ/rpEfSu0VwAGyts6pgZedRdBm4RSYXHCyVyC/k=; b=VXzAtXUGXjUbWqghtgWxd5Dc5Y
+	HEzHoScv95wg2NIcLXqbCr4mv7eI75kibD6/LMHcijtU6hJJMWEGB7XV1xphBquMlBaiajch9s575
+	GG0RpQcqJ+4Ej3/byt6vTCaNLnE7v+8S56TzH0nTED5fsbfx0tkhICa1ETLsaUNT2kQkV2vuwmrrD
+	cPNn51obdPvfIKbx0I9O3km3NEV/2v09R+sSdbe9fesFRuKJNXzjv2OFg3oXrK9n84QNs1bczmUH9
+	UNZlQZ5OiLJYLe7uZYMkmPH8jnqhufEo4F2DDmH/v233WuZqezKfeT62gC9UG4v8nIPcYv2c/pZrc
+	7pwi4pew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iegw1-0000dr-4p; Tue, 10 Dec 2019 14:56:21 +0000
+	id 1iegwU-00017q-Rv; Tue, 10 Dec 2019 14:56:50 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iegtu-00064F-LT
+ id 1iegtv-000652-N6
  for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:54:15 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2668D113E;
- Tue, 10 Dec 2019 06:54:10 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0900A1045;
+ Tue, 10 Dec 2019 06:54:11 -0800 (PST)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 776E63F67D;
- Tue, 10 Dec 2019 06:54:09 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5A4BF3F67D;
+ Tue, 10 Dec 2019 06:54:10 -0800 (PST)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 06/15] firmware: arm_scmi: Update scmi_prot_init_fn_t to use
- device instead of handle
-Date: Tue, 10 Dec 2019 14:53:36 +0000
-Message-Id: <20191210145345.11616-7-sudeep.holla@arm.com>
+Subject: [PATCH 07/15] firmware: arm_scmi: Stash version in protocol init
+ functions
+Date: Tue, 10 Dec 2019 14:53:37 +0000
+Message-Id: <20191210145345.11616-8-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191210145345.11616-1-sudeep.holla@arm.com>
 References: <20191210145345.11616-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_065410_869475_E0F027C5 
-X-CRM114-Status: GOOD (  13.76  )
+X-CRM114-CacheID: sfid-20191210_065411_882432_12CAEBAE 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,152 +72,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The scmi bus now supports multiple device per protocol. So, in order to
-initialise each device and it's attributes, it's better to pass scmi_device
-pointer to the protocol initialise function rather than scmi_handle.
-scmi_handle can be still fetched from the scmi_device pointer.
+In order to avoid querying the individual protocol versions multiple
+time with more that one device created for each protocol, we can simple
+store the copy in the protocol specific private data and use them whenever
+required.
 
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/bus.c     | 6 +++---
- drivers/firmware/arm_scmi/clock.c   | 3 ++-
- drivers/firmware/arm_scmi/perf.c    | 3 ++-
- drivers/firmware/arm_scmi/power.c   | 3 ++-
- drivers/firmware/arm_scmi/reset.c   | 3 ++-
- drivers/firmware/arm_scmi/sensors.c | 3 ++-
- include/linux/scmi_protocol.h       | 2 +-
- 7 files changed, 14 insertions(+), 9 deletions(-)
-
-diff --git a/drivers/firmware/arm_scmi/bus.c b/drivers/firmware/arm_scmi/bus.c
-index 3714e6307b05..f619da2634a6 100644
---- a/drivers/firmware/arm_scmi/bus.c
-+++ b/drivers/firmware/arm_scmi/bus.c
-@@ -51,13 +51,13 @@ static int scmi_dev_match(struct device *dev, struct device_driver *drv)
- 	return 0;
- }
-
--static int scmi_protocol_init(int protocol_id, struct scmi_handle *handle)
-+static int scmi_protocol_init(int protocol_id, struct scmi_device *dev)
- {
- 	scmi_prot_init_fn_t fn = idr_find(&scmi_protocols, protocol_id);
-
- 	if (unlikely(!fn))
- 		return -EINVAL;
--	return fn(handle);
-+	return fn(dev);
- }
-
- static int scmi_dev_probe(struct device *dev)
-@@ -74,7 +74,7 @@ static int scmi_dev_probe(struct device *dev)
- 	if (!scmi_dev->handle)
- 		return -EPROBE_DEFER;
-
--	ret = scmi_protocol_init(scmi_dev->protocol_id, scmi_dev->handle);
-+	ret = scmi_protocol_init(scmi_dev->protocol_id, scmi_dev);
- 	if (ret)
- 		return ret;
+ drivers/firmware/arm_scmi/clock.c   | 2 ++
+ drivers/firmware/arm_scmi/perf.c    | 2 ++
+ drivers/firmware/arm_scmi/power.c   | 2 ++
+ drivers/firmware/arm_scmi/reset.c   | 2 ++
+ drivers/firmware/arm_scmi/sensors.c | 2 ++
+ 5 files changed, 10 insertions(+)
 
 diff --git a/drivers/firmware/arm_scmi/clock.c b/drivers/firmware/arm_scmi/clock.c
-index 922b22aaaf84..6c24eb8a4e68 100644
+index 6c24eb8a4e68..b567ec03f711 100644
 --- a/drivers/firmware/arm_scmi/clock.c
 +++ b/drivers/firmware/arm_scmi/clock.c
-@@ -310,11 +310,12 @@ static struct scmi_clk_ops clk_ops = {
- 	.disable = scmi_clock_disable,
+@@ -65,6 +65,7 @@ struct scmi_clock_set_rate {
  };
 
--static int scmi_clock_protocol_init(struct scmi_handle *handle)
-+static int scmi_clock_protocol_init(struct scmi_device *dev)
- {
- 	u32 version;
- 	int clkid, ret;
- 	struct clock_info *cinfo;
-+	struct scmi_handle *handle = dev->handle;
+ struct clock_info {
++	u32 version;
+ 	int num_clocks;
+ 	int max_async_req;
+ 	atomic_t cur_async_req;
+@@ -344,6 +345,7 @@ static int scmi_clock_protocol_init(struct scmi_device *dev)
+ 			scmi_clock_describe_rates_get(handle, clkid, clk);
+ 	}
 
- 	if (handle->clk_ops && handle->clk_priv)
- 		return 0; /* initialised already for the first device */
++	cinfo->version = version;
+ 	handle->clk_ops = &clk_ops;
+ 	handle->clk_priv = cinfo;
+
 diff --git a/drivers/firmware/arm_scmi/perf.c b/drivers/firmware/arm_scmi/perf.c
-index 55c2a4c21ccb..4f02bfba98ba 100644
+index 4f02bfba98ba..b1de6197f61c 100644
 --- a/drivers/firmware/arm_scmi/perf.c
 +++ b/drivers/firmware/arm_scmi/perf.c
-@@ -704,11 +704,12 @@ static struct scmi_perf_ops perf_ops = {
- 	.est_power_get = scmi_dvfs_est_power_get,
+@@ -145,6 +145,7 @@ struct perf_dom_info {
  };
 
--static int scmi_perf_protocol_init(struct scmi_handle *handle)
-+static int scmi_perf_protocol_init(struct scmi_device *dev)
- {
- 	int domain;
- 	u32 version;
- 	struct scmi_perf_info *pinfo;
-+	struct scmi_handle *handle = dev->handle;
+ struct scmi_perf_info {
++	u32 version;
+ 	int num_domains;
+ 	bool power_scale_mw;
+ 	u64 stats_addr;
+@@ -740,6 +741,7 @@ static int scmi_perf_protocol_init(struct scmi_device *dev)
+ 			scmi_perf_domain_init_fc(handle, domain, &dom->fc_info);
+ 	}
 
- 	if (handle->perf_ops && handle->perf_priv)
- 		return 0; /* initialised already for the first device */
++	pinfo->version = version;
+ 	handle->perf_ops = &perf_ops;
+ 	handle->perf_priv = pinfo;
+
 diff --git a/drivers/firmware/arm_scmi/power.c b/drivers/firmware/arm_scmi/power.c
-index 9a7593238b8f..5a8faa369d82 100644
+index 5a8faa369d82..d11c6cd6bbab 100644
 --- a/drivers/firmware/arm_scmi/power.c
 +++ b/drivers/firmware/arm_scmi/power.c
-@@ -179,11 +179,12 @@ static struct scmi_power_ops power_ops = {
- 	.state_get = scmi_power_state_get,
+@@ -50,6 +50,7 @@ struct power_dom_info {
  };
 
--static int scmi_power_protocol_init(struct scmi_handle *handle)
-+static int scmi_power_protocol_init(struct scmi_device *dev)
- {
- 	int domain;
- 	u32 version;
- 	struct scmi_power_info *pinfo;
-+	struct scmi_handle *handle = dev->handle;
+ struct scmi_power_info {
++	u32 version;
+ 	int num_domains;
+ 	u64 stats_addr;
+ 	u32 stats_size;
+@@ -211,6 +212,7 @@ static int scmi_power_protocol_init(struct scmi_device *dev)
+ 		scmi_power_domain_attributes_get(handle, domain, dom);
+ 	}
 
- 	if (handle->power_ops && handle->power_priv)
- 		return 0; /* initialised already for the first device */
++	pinfo->version = version;
+ 	handle->power_ops = &power_ops;
+ 	handle->power_priv = pinfo;
+
 diff --git a/drivers/firmware/arm_scmi/reset.c b/drivers/firmware/arm_scmi/reset.c
-index 809dc8faee1e..438d74a2c80a 100644
+index 438d74a2c80a..dce103781b3f 100644
 --- a/drivers/firmware/arm_scmi/reset.c
 +++ b/drivers/firmware/arm_scmi/reset.c
-@@ -189,11 +189,12 @@ static struct scmi_reset_ops reset_ops = {
- 	.deassert = scmi_reset_domain_deassert,
+@@ -48,6 +48,7 @@ struct reset_dom_info {
  };
 
--static int scmi_reset_protocol_init(struct scmi_handle *handle)
-+static int scmi_reset_protocol_init(struct scmi_device *dev)
- {
- 	int domain;
- 	u32 version;
- 	struct scmi_reset_info *pinfo;
-+	struct scmi_handle *handle = dev->handle;
+ struct scmi_reset_info {
++	u32 version;
+ 	int num_domains;
+ 	struct reset_dom_info *dom_info;
+ };
+@@ -221,6 +222,7 @@ static int scmi_reset_protocol_init(struct scmi_device *dev)
+ 		scmi_reset_domain_attributes_get(handle, domain, dom);
+ 	}
 
- 	if (handle->reset_ops && handle->reset_priv)
- 		return 0; /* initialised already for the first device */
++	pinfo->version = version;
+ 	handle->reset_ops = &reset_ops;
+ 	handle->reset_priv = pinfo;
+
 diff --git a/drivers/firmware/arm_scmi/sensors.c b/drivers/firmware/arm_scmi/sensors.c
-index b7f92c37c8a4..afa51bedfa5d 100644
+index afa51bedfa5d..aac0243e2880 100644
 --- a/drivers/firmware/arm_scmi/sensors.c
 +++ b/drivers/firmware/arm_scmi/sensors.c
-@@ -271,10 +271,11 @@ static struct scmi_sensor_ops sensor_ops = {
- 	.reading_get = scmi_sensor_reading_get,
+@@ -68,6 +68,7 @@ struct scmi_msg_sensor_reading_get {
  };
 
--static int scmi_sensors_protocol_init(struct scmi_handle *handle)
-+static int scmi_sensors_protocol_init(struct scmi_device *dev)
- {
- 	u32 version;
- 	struct sensors_info *sinfo;
-+	struct scmi_handle *handle = dev->handle;
+ struct sensors_info {
++	u32 version;
+ 	int num_sensors;
+ 	int max_requests;
+ 	u64 reg_addr;
+@@ -298,6 +299,7 @@ static int scmi_sensors_protocol_init(struct scmi_device *dev)
 
- 	if (handle->sensor_ops && handle->sensor_priv)
- 		return 0; /* initialised already for the first device */
-diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
-index 5c873a59b387..b676825e6eb0 100644
---- a/include/linux/scmi_protocol.h
-+++ b/include/linux/scmi_protocol.h
-@@ -316,6 +316,6 @@ static inline void scmi_driver_unregister(struct scmi_driver *driver) {}
- #define module_scmi_driver(__scmi_driver)	\
- 	module_driver(__scmi_driver, scmi_register, scmi_unregister)
+ 	scmi_sensor_description_get(handle, sinfo);
 
--typedef int (*scmi_prot_init_fn_t)(struct scmi_handle *);
-+typedef int (*scmi_prot_init_fn_t)(struct scmi_device *);
- int scmi_protocol_register(int protocol_id, scmi_prot_init_fn_t fn);
- void scmi_protocol_unregister(int protocol_id);
++	sinfo->version = version;
+ 	handle->sensor_ops = &sensor_ops;
+ 	handle->sensor_priv = sinfo;
+
 --
 2.17.1
 
