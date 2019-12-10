@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CEA31189C3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 14:28:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F26CB1189C7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 14:28:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M9MzqtaQRP8XyX5lFCGX1QzfmEE8Ove1WgIYI9MHuxY=; b=MuVuiBHy5OA/4u
-	Ej7LfmZzJ1XxpiMyPEtQKgFZ0YJWdhxtCj1d5rwKw59NU4qcfKyxa/+m4dsBDKv0haua+Rsj4t2Qr
-	K0MWZsJi85b7cY8L/KwZxKsiJdxKf3F332qnwE3YWpD4SnRqhKhe0NgO3dsz5DUGSWoZnD72IhQ+c
-	UVddWZm84BcuTdINH/pZprUQ6P20W6Ebq2UNrbTj5aw/I3PjOmNalGAB9dD9helPrJ7o+0CIC+Im2
-	4xuGXFl2BZKHUtjw3bHm0jczQq2Ux0BC7g+lAU6ODte2Ve6+iDG3qxZ/g8FVlZ8E7WQW1hCAXe7u7
-	ikO+MXRf71D08pOnBPKA==;
+	List-Owner; bh=WMvamJojm44Q2iPU5oet6bhb8P+dj4FTPkSxbTPfkio=; b=qgluf4dVyTCBJd
+	BEMWi/UGfcXMqbDuD6Fd86AiylysPcDiA57+qSK1lIN6IY5JrBNaZJt4uRL7XyEC7HxD5J8XoxJ5J
+	6vUOZNCsgxuaXegX1aI99UYZl3qkiNNHKC9A4c+TlIjUVCzby5NVVIUptg3EW43hgDXakEnzAJAzE
+	PrrRwBjFUdWIrKkyrIXK2tTTJAxq+GAH3rC6a3Ml52NcyZGmOe9WReJ5X7XXm2UxSZKCPhSWhh4Hz
+	Hm/4eKvqxz9p6gyJxOr/vtIqYiXRmMQwXHjEDcZrjSLLCCRYk72XmdcXsGlhFNgFoGKULTTfpqiLS
+	8eKAE2GBIE/DjV2LZjDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iefYg-0006sM-HV; Tue, 10 Dec 2019 13:28:10 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+	id 1iefZH-0007RP-2c; Tue, 10 Dec 2019 13:28:47 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iefVg-000339-NG
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 13:25:06 +0000
-Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
+ id 1iefVn-0003Yg-Bw
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 13:25:13 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,50 +34,49 @@ Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
  a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
  include:servers.mcsv.net include:mktomail.com
  include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa3.microchip.iphmx.com: no sender
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa3.microchip.iphmx.com;
+Authentication-Results: esa2.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: q2BpUB2EIl1tZPtsuj6SU+eCjbhPG/3B/lmKcttQtAuWiuhuQCH6HhHMhpDSRJULQfJQS5YDYY
- zJ8BSQEkxM6xZXli8OJxsdKn+kmtJf4DypfMlmi7/POLunMRIl8v4XzM6XRi5qW4r0VWhoc3J3
- toii4YJHdvnF85UkahExZM/qDIH8A0R6r159gpM/7EmJeqk/NifgbC5dRcswQCaQzy0Xqbp6mh
- 1YVd7ECIpp81afD651zcrOzscZBmHPCF+/nUI/QWvpLEbIbIw73Ax4USNz4wHQsXbhNenutcyA
- smU=
-X-IronPort-AV: E=Sophos;i="5.69,299,1571727600"; d="scan'208";a="59845999"
+IronPort-SDR: hnRNOKiQG+WcQ2REtTRs0HF9PluczubB0dOz2SJEh6gMvibIra3FXVMK32FY8x4RR/L9l0qrLj
+ WMBhNKk5d+h+TNUTmQ2wbVaTKRNlW8mrLYGEWVyND67jCb0r8lzOwCrBbPn5DJrTedKEGRtdgp
+ AC+z0XS7OAJQeYBvX8xhKvD6ISPCfr0uPhMQhN78FKoulyew8XbmHkP7J75Jd9H/5Eae1VLaJZ
+ lsMOanVYgXEBfqPZ+6tq434rMlH4AX5nkiEPpBvWSMEF5F8wu+QCvZmEoEg0P6NqnAQQrLIYVz
+ /so=
+X-IronPort-AV: E=Sophos;i="5.69,299,1571727600"; d="scan'208";a="59325118"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 10 Dec 2019 06:25:03 -0700
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 10 Dec 2019 06:25:07 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 10 Dec 2019 06:25:03 -0700
+ 15.1.1713.5; Tue, 10 Dec 2019 06:25:06 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 10 Dec 2019 06:25:04 -0700
+ 15.1.1713.5 via Frontend Transport; Tue, 10 Dec 2019 06:25:08 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <sam@ravnborg.org>, <bbrezillon@kernel.org>, <airlied@linux.ie>,
  <daniel@ffwll.ch>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>,
  <lee.jones@linaro.org>
-Subject: [PATCH 2/5] drm: atmel-hlcdc: enable clock before configuring timing
- engine
-Date: Tue, 10 Dec 2019 15:24:44 +0200
-Message-ID: <1575984287-26787-3-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 3/5] mfd: atmel-hlcdc: return in case of error
+Date: Tue, 10 Dec 2019 15:24:45 +0200
+Message-ID: <1575984287-26787-4-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_052505_042450_D93633B9 
-X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-CacheID: sfid-20191210_052511_488658_43E689D7 
+X-CRM114-Status: UNSURE (   9.02  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -85,7 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -107,46 +106,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Changing pixel clock source without having this clock source enabled
-will block the timing engine and the next operations after (in this case
-setting ATMEL_HLCDC_CFG(5) settings in atmel_hlcdc_crtc_mode_set_nofb()
-will fail). It is recomended (although in datasheet this is not present)
-to actually enabled pixel clock source before doing any changes on timing
-enginge (only SAM9X60 datasheet specifies that the peripheral clock and
-pixel clock must be enabled before using LCD controller).
+For HLCDC timing engine configurations bit ATMEL_HLCDC_SIP of
+ATMEL_HLCDC_SR needs to checked if it is equal with zero before applying
+new configuration to timing engine. In case of timeout there is no
+indicator about this, so, return with error in case of timeout in
+regmap_atmel_hlcdc_reg_write() and also print a message about this.
 
-Fixes: 1a396789f65a ("drm: add Atmel HLCDC Display Controller support")
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ drivers/mfd/atmel-hlcdc.c | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-index 5040ed8d0871..721fa88bf71d 100644
---- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-+++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-@@ -73,7 +73,11 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
- 	unsigned long prate;
- 	unsigned int mask = ATMEL_HLCDC_CLKDIV_MASK | ATMEL_HLCDC_CLKPOL;
- 	unsigned int cfg = 0;
--	int div;
-+	int div, ret;
-+
-+	ret = clk_prepare_enable(crtc->dc->hlcdc->sys_clk);
-+	if (ret)
-+		return;
+diff --git a/drivers/mfd/atmel-hlcdc.c b/drivers/mfd/atmel-hlcdc.c
+index 64013c57a920..19f1dbeb8bcd 100644
+--- a/drivers/mfd/atmel-hlcdc.c
++++ b/drivers/mfd/atmel-hlcdc.c
+@@ -39,10 +39,16 @@ static int regmap_atmel_hlcdc_reg_write(void *context, unsigned int reg,
  
- 	vm.vfront_porch = adj->crtc_vsync_start - adj->crtc_vdisplay;
- 	vm.vback_porch = adj->crtc_vtotal - adj->crtc_vsync_end;
-@@ -147,6 +151,8 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
- 			   ATMEL_HLCDC_VSPSU | ATMEL_HLCDC_VSPHO |
- 			   ATMEL_HLCDC_GUARDTIME_MASK | ATMEL_HLCDC_MODE_MASK,
- 			   cfg);
+ 	if (reg <= ATMEL_HLCDC_DIS) {
+ 		u32 status;
+-
+-		readl_poll_timeout_atomic(hregmap->regs + ATMEL_HLCDC_SR,
+-					  status, !(status & ATMEL_HLCDC_SIP),
+-					  1, 100);
++		int ret;
 +
-+	clk_disable_unprepare(crtc->dc->hlcdc->sys_clk);
- }
++		ret = readl_poll_timeout_atomic(hregmap->regs + ATMEL_HLCDC_SR,
++						status,
++						!(status & ATMEL_HLCDC_SIP),
++						1, 100);
++		if (ret) {
++			pr_err("Timeout waiting for ATMEL_HLCDC_SIP\n");
++			return ret;
++		}
+ 	}
  
- static enum drm_mode_status
+ 	writel(val, hregmap->regs + reg);
 -- 
 2.7.4
 
