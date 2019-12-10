@@ -2,51 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6793118D7D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 17:24:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD968118D7A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 17:24:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=basjecnRELxDb/1pGNpUhZZMs9BUMIKHObQedt2YSCw=; b=V33Gm0yNJ3Grs/
-	1TKv8afrCUE5LHAWsmgoGMA3bBn49DtuodN1B3284o2JouHplLrcQujI2hIHFeTsW4KAO4hb2c8V4
-	em44luQ8jdzzR5H1GiCmLkZfZsHnrA2NHCM8wPrOJHYZmne0+Fs/07whA/LF/TU5NjnT05BgsxJFz
-	MGOXEGdBAE8ySCXZlcfNE7IXZeuraAB3BPhYCI1xBJCE6w5t/1u6s8i0UkEDzSQ9SpV+21A+1FNeh
-	kyYhY4C8tWXDRcUYL0GvmU9wm+3P17LVBzBN2V1u596T+Mv1HvK04PJkxFimqKPGyTgoXO/AM78HX
-	Xhe+nXoZhiyUWpwyYLng==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kMklLhFCaK0259xxGysWN2vwVeauLLbhLB8I9yBh+cg=; b=My15/peZN5tkpA
+	F3rcvspjZhbdMYHCiOXvhzdh4VIgpaeIXvaNZsjNA0v4qBPkX3B87UvdDRyzKBgYN5/nt/LVrJb/0
+	MRCud0vXlvxKR2odYSYuJYonsaXJz4t3VZXlVXoBAyHRG3GWE76qNtEkMxnkeZmyGz/bLMtLr/D31
+	2zVwZbEOsU51yxR21hh9HBYtclDFScNFw64ALZcWKITcvlo3UVjUJxg3UzogOrnWDWZa6NRP8YpZk
+	kobdqD3STi6ObojJRgXBgDfFZY5uZdpkVTyAYdGQGXEJV+zgsKBpd/BTq4B84yiVUD4PkeevK5qI9
+	9oosqcWgwJhq7smrYgjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieiJU-0005PJ-CY; Tue, 10 Dec 2019 16:24:40 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieiJL-0005OY-W8
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 16:24:33 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 3B3C9AC2F;
- Tue, 10 Dec 2019 16:24:30 +0000 (UTC)
-From: Thomas Renninger <trenn@suse.de>
-To: Greg KH <gregkh@linuxfoundation.org>
-Subject: Re: [PATCH 3/3] arm64 cpuinfo: implement sysfs nodes for arm64
-Date: Tue, 10 Dec 2019 17:24:29 +0100
-Message-ID: <2363489.ZvMXcgbkLu@skinner.arch.suse.de>
-In-Reply-To: <20191210144737.GB3975980@kroah.com>
-References: <20191206162421.15050-1-trenn@suse.de>
- <11195456.EmMzWPVPDU@skinner.arch.suse.de>
- <20191210144737.GB3975980@kroah.com>
+	id 1ieiJ8-0005B1-Ba; Tue, 10 Dec 2019 16:24:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieiIz-0005AZ-SU
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 16:24:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6DB381FB;
+ Tue, 10 Dec 2019 08:24:06 -0800 (PST)
+Received: from [10.37.12.119] (unknown [10.37.12.119])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2A85C3F67D;
+ Tue, 10 Dec 2019 08:24:04 -0800 (PST)
+Subject: Re: Kernel v5.2+ on HiKey960?
+To: Jerome Forissier <jerome@forissier.org>, Will Deacon <will@kernel.org>
+References: <f58c2c0e-ec82-6675-84e6-ad63fd93c8ff@forissier.org>
+ <20191204101851.GC13081@arrakis.emea.arm.com>
+ <1c5e497f-4be0-e1f3-4d6d-fed9470d0406@forissier.org>
+ <20191204142824.GB26730@arrakis.emea.arm.com>
+ <226a53f8-9404-1aa0-ed44-22e2157e4521@forissier.org>
+ <20191204175726.GA28736@willie-the-truck>
+ <d7481911-9f5f-7f52-0731-0b123c384b08@forissier.org>
+ <20191205085709.GB8606@willie-the-truck>
+ <e3ac6a90-c6e7-460e-087a-880e3735051e@forissier.org>
+ <20191206160955.GA27982@willie-the-truck>
+ <740865eb-a993-d1dd-ad2e-84529e2012ee@forissier.org>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Message-ID: <3523c365-62a0-1504-9b99-d5d030e000fd@arm.com>
+Date: Tue, 10 Dec 2019 16:26:41 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <740865eb-a993-d1dd-ad2e-84529e2012ee@forissier.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_082432_176400_5DFEDA46 
-X-CRM114-Status: GOOD (  13.27  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191210_082409_965295_B3E5CA16 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,93 +74,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Felix Schnizlein <fschnizlein@suse.de>,
- Felix Schnizlein <fschnizlein@suse.com>, x86@kernel.org, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, maz@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tuesday, December 10, 2019 3:47:37 PM CET Greg KH wrote:
-> On Tue, Dec 10, 2019 at 02:33:07PM +0100, Thomas Renninger wrote:
-> > On Monday, December 9, 2019 6:38:05 PM CET Will Deacon wrote:
-> > > On Mon, Dec 09, 2019 at 12:28:44PM +0100, Thomas Renninger wrote:
-> > > > On Monday, December 9, 2019 11:31:11 AM CET Will Deacon wrote:
-> > > > > On Fri, Dec 06, 2019 at 05:24:21PM +0100, Thomas Renninger wrote:
-> > > > > > From: Felix Schnizlein <fschnizlein@suse.de>
-> > > > > > 
-> > > > > > Export all information from /proc/cpuinfo to sysfs:
-> > > > > > implementer, architecture, variant, part, revision,
-> > > > > > bogomips and flags are exported.
-> > > > > > 
-> > > > > > Example:
-> > > > > > /sys/devices/system/cpu/cpu1/info/:[0]# head *
-> > > > 
-> > > > ...
-> > > > 
-> > > > > > ==> flags <==
-> > > > > > fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid asimdrdm
-> > > > 
-> > > > ...
-> > > > 
-> > > > > I don't understand why we need this on arm64
-> > 
-> > Again: proc is moving to sys.
+Hi Jerome,
+
+On 12/10/19 4:20 PM, Jerome Forissier wrote:
+> Now if you check the SHA1 hashes of arch/arm64/kernel/vdso/vdso.o in
+> various scenarios:
 > 
-> No.  New stuff is to be added to /sys/, don't add new things to /proc
-> unless it deals with processes.
-> 
-> There is no mass-migration of existing /proc files to sysfs for no good
-> reason.
-> 
-> > You probably export feature flags in /proc/cpuinfo for a good reason.
-> > So where in sysfs should this show up?
-> 
-> Why does it have to live in sysfs if it is already in /proc and parsed
-> properly by tools?
+> - v5.4, no ccache:
+> b82810f6e9495eb8e787e82b4080654ce4afc30a
+> - v5.4, with ccache, built from a clean cache:
+> b82810f6e9495eb8e787e82b4080654ce4afc30a
+> - v5.1, no ccache:
+> 8c09a2f25969e2bf74799d6b3fb52d0fbc3d58a8
+> - v5.4, with ccache, after building v5.1 (step 3 above):
+> 8c09a2f25969e2bf74799d6b3fb52d0fbc3d58a8
 
-Parsing /proc/cpuinfo is the best example why we have sysfs...
-Most important things have already been ported:
+This clearly explains the issue and why you were suspecting the vdso library.
+Happy that you figured it out.
 
-microcode       : 0x10
-cat /sys/devices/system/cpu/cpu1/microcode/version
-0x10
-
-physical id     : 0
-siblings        : 8
-core id         : 1
-cpu cores       : 4
-...
-/sys/devices/system/cpu/cpu1/topology/
-
-clflush size    : 64
-cache_alignment : 64
-...
-/sys/devices/system/cpu/cpu1/cache/
-
-
-Only missing important info which still is needed is family/model/stepping, 
-name, bugs and flags
-cpufreq also got ported to sysfs quite some time ago already.
-
-I am aware that /proc/cpuinfo won't vanish...
-...the next decade. Still I am confident I will still see this.
-
-Still relevant info which is accessed by (newly written) userspace tools 
-should read out info via sysfs.
-
-Beside microcode, topology, cache, cpufreq,...
-info, there now is also family, model, stepping, bugs, flags and name
-
-There rest is (from my perspective) really old ugly stuff and not needed 
-anymore by recent tools.
-
-
-   Thomas
-
-
+-- 
+Regards,
+Vincenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
