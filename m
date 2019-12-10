@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 174C4118787
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 13:02:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55ADF118788
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 13:02:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eLIb+oBwSpdw7Q32dQz6JI5yeGw6z6JqzG+wcu10TU8=; b=CYowb9ti1yqiyj
-	1Rq+5yAtt6mjPmRwhT8L3/1Ue9UloZHVHiJsorXNmEsQry5uvpUMvLWDz7M6TH/w7s864PZQqd/mp
-	JgrkQJkvAoQRI9ci0+Y0HUbv+P7Kpri6p3Uk5S5Acse8CjYDzGCb1g1tc+Uhsw/YB/aJWh5tiWWE3
-	aYsKikvC5PCekABm6dLtJdnkZkIu6wrpah4lz3j+HXo+zlNMrhZ6vUUZkAZT1L02DdV42StcQksoY
-	9zy9C0v/PXl86n9at4QrvDK41Uo6wbynv2pq5AQXvzCnNzaOgxstUBR2ZCFEtbbJgIJOYgQQ1oyWD
-	cNB3/1adeJh58m7PHmMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3e1ijZm5AaFbJGiJGHOxY893m77eYlQSkEQqUVeaHNk=; b=lz+S15o/BPvcPn
+	1RXw6sApNxMnKsPwoi4Wng9O8KP79BYkRTNogWnwqYV9hzKpNfjb1N862lDqj3bY1IqTVi5VXkk9c
+	Ezm9UsPEPrO1eFnAzKMmCsNflpL8OvIgOUExxZhlQcqegS/9VP6Tcy/Az/JldXcrXiOM7j0vyLgIX
+	wc6eilvdvMeXnUHRFtOdxJGqd9zIlz/oxxV4kODrmyLCfRNXDn04aL3Pq725ajzz/Rl4OkcOpaoKg
+	JYufwbaME9iMSU/XvjsjXC/qYODZA9DzKnsdeOUfh/TCAgcLVo0HYze3MGKr5m6KfearfGoLR0O11
+	c+r+amK+hi2FtYaBfO2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieeDL-0003iq-Hq; Tue, 10 Dec 2019 12:02:03 +0000
+	id 1ieeDU-0003pu-1i; Tue, 10 Dec 2019 12:02:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieeDD-0003hx-6C
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 12:01:56 +0000
+ id 1ieeDD-0003hy-QH
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 12:01:57 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 582851FB;
- Tue, 10 Dec 2019 04:01:52 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 01A591045;
+ Tue, 10 Dec 2019 04:01:54 -0800 (PST)
 Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 05AB33F6CF;
- Tue, 10 Dec 2019 04:01:50 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A576E3F6CF;
+ Tue, 10 Dec 2019 04:01:52 -0800 (PST)
 From: Andrew Murray <andrew.murray@arm.com>
 To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Marc Zyngier <maz@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 0/3] arm64: perf: Add support for ARMv8.5-PMU 64-bit
- counters
-Date: Tue, 10 Dec 2019 12:01:43 +0000
-Message-Id: <20191210120146.2942-1-andrew.murray@arm.com>
+Subject: [PATCH v2 1/3] arm64: cpufeature: Extract capped fields
+Date: Tue, 10 Dec 2019 12:01:44 +0000
+Message-Id: <20191210120146.2942-2-andrew.murray@arm.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20191210120146.2942-1-andrew.murray@arm.com>
+References: <20191210120146.2942-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_040155_271161_4128701C 
-X-CRM114-Status: GOOD (  10.27  )
+X-CRM114-CacheID: sfid-20191210_040155_890801_17FD5332 
+X-CRM114-Status: GOOD (  10.63  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,43 +68,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-At present ARMv8 event counters are limited to 32-bits, though by
-using the CHAIN event it's possible to combine adjacent counters to
-achieve 64-bits. The perf config1:0 bit can be set to use such a
-configuration.
+When emulating ID registers there is often a need to cap the version
+bits of a feature such that the guest will not use features that do
+not yet exist.
 
-With the introduction of ARMv8.5-PMU support, all event counters can
-now be used as 64-bit counters. Let's add support for 64-bit event
-counters.
+Let's add a helper that extracts a field and caps the version to a
+given value.
 
-As KVM doesn't yet support 64-bit event counters, we also trap
-and emulate the Debug Feature Registers to limit the PMU version a
-guest sees to PMUv3 for ARMv8.4.
+Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+---
+ arch/arm64/include/asm/cpufeature.h | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
-Tested by running the following perf command on both guest and host
-and ensuring that the figures are very similar:
-
-perf stat -e armv8_pmuv3/inst_retired,long=1/ \
-          -e armv8_pmuv3/inst_retired,long=0/ -e cycles
-
-Changes since v1:
-
- - Rebased onto v5.5-rc1
-
-
-Andrew Murray (3):
-  arm64: cpufeature: Extract capped fields
-  KVM: arm64: limit PMU version to ARMv8.4
-  arm64: perf: Add support for ARMv8.5-PMU 64-bit counters
-
- arch/arm64/include/asm/cpufeature.h | 15 +++++
- arch/arm64/include/asm/perf_event.h |  3 +-
- arch/arm64/include/asm/sysreg.h     |  4 ++
- arch/arm64/kernel/perf_event.c      | 86 +++++++++++++++++++++++------
- arch/arm64/kvm/sys_regs.c           | 36 +++++++++++-
- include/linux/perf/arm_pmu.h        |  1 +
- 6 files changed, 125 insertions(+), 20 deletions(-)
-
+diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
+index 4261d55e8506..19f051ec1610 100644
+--- a/arch/arm64/include/asm/cpufeature.h
++++ b/arch/arm64/include/asm/cpufeature.h
+@@ -447,6 +447,21 @@ cpuid_feature_extract_unsigned_field(u64 features, int field)
+ 	return cpuid_feature_extract_unsigned_field_width(features, field, 4);
+ }
+ 
++static inline u64 __attribute_const__
++cpuid_feature_cap_signed_field_width(u64 features, int field, int width,
++				     s64 cap)
++{
++	s64 val = cpuid_feature_extract_signed_field_width(features, field,
++							   width);
++
++	if (val > cap) {
++		features &= ~GENMASK_ULL(field + width - 1, field);
++		features |= cap << field;
++	}
++
++	return features;
++}
++
+ static inline u64 arm64_ftr_mask(const struct arm64_ftr_bits *ftrp)
+ {
+ 	return (u64)GENMASK(ftrp->shift + ftrp->width - 1, ftrp->shift);
 -- 
 2.21.0
 
