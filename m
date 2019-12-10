@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 244931189B4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 14:26:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BE231189B5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 14:26:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,63 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=RBeNdZ5HoXtmHiw9zl+hzoiz17QmI2lc1nH2yc4I0gs=; b=JMiOglfB7KTBU975nQ36pTbFVx
-	aDRDiaVT1u6GrBxTi+hPtT7YfcAJ1aB01AVMlWfGyohDpTFnXytiGc0gC32orqevTKe5N1BydVv0n
-	RvrvXVuZRjiDFjGFEoItAfDskSCj0MzOshCSRVqvLj4bDT5xGNFlp5AnSxpMExNjd+FuacTlp9lKt
-	WcROs7bXHQsSN4puzc6woGjRmmPZE2Y20ZTg6gJyEZMywxFz4IeqHU8V4VC+KDqWKHj+WXEdAYWpI
-	q66GDSNnTIq1F6auL6eIYo6PW2zwZFDfKvubw33J3RHd1Dt4vX0OzNYro5mZ3CO5CJGJ8JkCb9r7x
-	vs0IBEKw==;
+	bh=Xeze2Iyz2qvk4vw/Ri/xmTmj7IWRb7QO2nC1c51pIHQ=; b=AiUt190/BW5AgLk1GjWP8YSlHz
+	w5gGlM1kEgP4uoNzfUhCy2gfgIHXud8kOnqevw78FtZIxNOfV3bGDcmxXemG/dO5bNTzv4tXYW3rk
+	BAuSMtWDrIr/QGaNsId8eKbos0yZnbpTl7y4dzwQIs/CDv0qnkg7rgj93qiQZaKCuh4Czf2xur6aO
+	om9W26LqsQYtfcAbcr38UI/m7PZvUFTD2RDAj6JqjY7XaKWHhiYjiw+rZIecXPEGUBaLM/worIu0s
+	0B0Q+PoJBN/1AnY7kaSOAoFu1xr9JuHtFiM8s0RE29DjE0lZrwMxXLg+Uwo0YqWtrH1fY4YTOwTMZ
+	rgTrqEEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iefXE-0005Kn-EY; Tue, 10 Dec 2019 13:26:40 +0000
+	id 1iefXQ-0005WU-Jq; Tue, 10 Dec 2019 13:26:52 +0000
 Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iefUT-0001Yg-Vj
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 13:23:51 +0000
-Received: by mail-wm1-x343.google.com with SMTP id p17so3169518wmi.3
+ id 1iefUW-0001b7-8l
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 13:23:54 +0000
+Received: by mail-wm1-x343.google.com with SMTP id p17so3169643wmi.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 05:23:49 -0800 (PST)
+ Tue, 10 Dec 2019 05:23:51 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=44lDiZC/HyWHizJUTFlT+jmrIvxAJf5o2GDXJq7Fi20=;
- b=kRroJBzAKKKmAwcsbcJbG1rZ0JkCkHxhTkdOKioiUAMuPjh/HBjgLoQWuWYrK6j5Q9
- sVPTcPcH5rbznIta+7bl4SP2LqWratl0CzfeG2r/Gq2bKo8byY4rm4TchnEoMQqGgxUg
- FdzoCuBxAv+hASweuy3TmPPl/qWYWAM7bLr7T+3I0NqqWnjJ3p/I5igo8fApZCabLsFf
- OpaZcxNRFEqhOf1d17RDE6Ed8UIy+w48SjWowAfLE8/j8Ttf4Tnat6Szuep7aiFJK1HH
- DEuveC8cEhqAvhSS/VzcOCbov+Q/PlbAl8cfUytepmzh6yywgzzvU00SMl39Qod71vGO
- lQBw==
+ bh=pO7CX2h6bc5jrjRKBOU4iSh8aQsjCPRKe6WfJsN0L1c=;
+ b=blBCPXydNqyvOS2Lo/SKeJ69Mb7Fv0T50o3WoUPo5RPcMaqtYuhIcDt1DZqT+xEay/
+ P8l6dYghN5utyZFHERNeFCPbSe+BRIeUdQMeyNWfTEcUDWTPtrkcj9lIpZ1wXIBMT6Jt
+ NAi57KrErqzGQk/95S9aUdDIqKnWSeJouiR5m2wV7vsBCd4vFik5CbCNGeZ0bhJ+yLyV
+ Je8EdKWh0c5VS9rRypZTPeFnWd0gb6y6cgVfkdvAy3A/eZPvR2B3zcZC3pK26C+cTDFA
+ NL8KJ48pTdzyNiXc//xCz0VkiBeTxxPcOZ8EHNqdtiac8NsPPbBHTA0DfUP08uM/eh9Q
+ 4c+g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=44lDiZC/HyWHizJUTFlT+jmrIvxAJf5o2GDXJq7Fi20=;
- b=ByLNwMYGxKvn7oMXu/TbIin8ibOHP9CuvMpCFD1qZFQg9LpGl72y1EZd6MPdAxOv6e
- n3wDBAvu8iue1cayf/Bs7xDmdev9o6Wr/IeeBzGLBypUcqM5AnYvgNvNsSGhaIiZhdSm
- R5j3jzRWqTil4JmKnr2YatVlF006TNBwNeLGgGtR29jm+uN+ei8xR90FKK/QFXHkYPUc
- dI8IsAuKbB95ogNtBwTM+rDKK8CdB/u7nQlzExpkYjY35eoRsOTmIhZUrNtVq/+zSu8/
- TjQRsn4rizT5QeUib5gdrooQIo5gA4VGlilfZAh+F9HwWTx5YZr5T/Y7z6+fI3t0EY6/
- nNhA==
-X-Gm-Message-State: APjAAAXO5zx3ZjO0s4eZBfVL7EZB8x+CfLStfyHtuCRlTHtLHGc5QglF
- ZEq5TFEX7OYWhyjll1zTiPM=
-X-Google-Smtp-Source: APXvYqyyhMv4dbY67TEy7fz96u1SdwGMd0d3PmwQHFiJc/qOd/h/a645zpLfwEz3nMOQpl3YdRBMGA==
-X-Received: by 2002:a7b:cd83:: with SMTP id y3mr4937677wmj.168.1575984228426; 
- Tue, 10 Dec 2019 05:23:48 -0800 (PST)
+ bh=pO7CX2h6bc5jrjRKBOU4iSh8aQsjCPRKe6WfJsN0L1c=;
+ b=CETncpcesBOY4y21Ej7Z1EOeLG8jIloE1yXxOe7SB76QIDpb/VplvIm9AnHtvzoNmk
+ H7NnYuPwqgbusdgZa2u/bd7dh414nP6/6DeMWXVnjWcmxvvOFKst59ilEZISxJBITOkE
+ V/cwUJeaf9naJ1EjG6Mj1YzHr+j/MpisjnfGVI2k6/TO62Po4bYO5XDLWQGw25By7ZOu
+ 0v2A+GeFUYDYcrB4OkeMmzxJOmOv0c80ioAe29R8G3jzYupCNW96JhmIAl74s+PFD4el
+ 6G9dCxWbw6IsPFseG/A5Y7kSU241v6EHPETeCp165B6sDKAmtfnX8s44yB/9LSk33wh+
+ GXJg==
+X-Gm-Message-State: APjAAAVMOQUVRFfgxnPv6c9B7LU4zF9LdvHjB3iwtbKimrXbOn7wVh0u
+ 2yQHvY2VCxI2wXPX/3kuBFU=
+X-Google-Smtp-Source: APXvYqxKhwhx8nq0RuNK8GZsRAvAr1gaNp1wZa97T5tCIWV890RQ+fkXCk9Riuo8HENFIAkHgwxarA==
+X-Received: by 2002:a05:600c:d5:: with SMTP id
+ u21mr5042692wmm.85.1575984230543; 
+ Tue, 10 Dec 2019 05:23:50 -0800 (PST)
 Received: from stbsrv-and-01.and.broadcom.net ([192.19.231.250])
- by smtp.gmail.com with ESMTPSA id s82sm3101680wms.28.2019.12.10.05.23.46
+ by smtp.gmail.com with ESMTPSA id s82sm3101680wms.28.2019.12.10.05.23.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Dec 2019 05:23:47 -0800 (PST)
+ Tue, 10 Dec 2019 05:23:50 -0800 (PST)
 From: Al Cooper <alcooperx@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 10/13] phy: usb: PHY's MDIO registers not accessible
- without device installed
-Date: Tue, 10 Dec 2019 08:21:29 -0500
-Message-Id: <20191210132132.41509-11-alcooperx@gmail.com>
+Subject: [PATCH v3 11/13] phy: usb: bdc: Fix occasional failure with BDC on
+ 7211
+Date: Tue, 10 Dec 2019 08:21:30 -0500
+Message-Id: <20191210132132.41509-12-alcooperx@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191210132132.41509-1-alcooperx@gmail.com>
 References: <20191210132132.41509-1-alcooperx@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_052350_079336_7F9453A2 
-X-CRM114-Status: GOOD (  13.34  )
+X-CRM114-CacheID: sfid-20191210_052352_331273_85667870 
+X-CRM114-Status: GOOD (  18.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -110,44 +111,140 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When there is no device connected and FSM is enabled, the XHCI puts
-the PHY into suspend mode.  When the PHY is put into suspend mode
-the USB LDO powers down the PHY. This causes the MDIO to be
-inaccessible and its registers reset to default. The fix is to
-disable FSM.
+The BDC "Read Transaction Size" needs to be changed from 1024
+bytes to 256 bytes to prevent occasional transaction failures.
 
 Signed-off-by: Al Cooper <alcooperx@gmail.com>
 ---
- drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ .../phy/broadcom/phy-brcm-usb-init-synopsis.c | 18 +++++++++++++++
+ drivers/phy/broadcom/phy-brcm-usb-init.h      |  1 +
+ drivers/phy/broadcom/phy-brcm-usb.c           | 23 +++++++++++++++----
+ 3 files changed, 38 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c b/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
-index bf138867efb1..fe3f653c64a7 100644
+index fe3f653c64a7..c6504649d307 100644
 --- a/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
 +++ b/drivers/phy/broadcom/phy-brcm-usb-init-synopsis.c
-@@ -56,6 +56,7 @@
- #define USB_PHY_PLL_LDO_CTL		0x08
- #define   USB_PHY_PLL_LDO_CTL_AFE_CORERDY_MASK		0x00000004
- #define USB_PHY_UTMI_CTL_1		0x04
-+#define   USB_PHY_UTMI_CTL_1_POWER_UP_FSM_EN_MASK	0x00000800
- #define   USB_PHY_UTMI_CTL_1_PHY_MODE_MASK		0x0000000c
- #define   USB_PHY_UTMI_CTL_1_PHY_MODE_SHIFT		2
- #define USB_PHY_STATUS			0x20
-@@ -229,6 +230,14 @@ static void usb_init_common_7211b0(struct brcm_usb_init_params *params)
+@@ -70,6 +70,11 @@
+ #define USB_GMDIOCSR	0
+ #define USB_GMDIOGEN	4
+ 
++/* Register definitions for the BDC EC block in 7211b0 */
++#define BDC_EC_AXIRDA			0x0c
++#define   BDC_EC_AXIRDA_RTS_MASK			0xf0000000
++#define   BDC_EC_AXIRDA_RTS_SHIFT			28
++
+ 
+ static void usb_mdio_write_7211b0(struct brcm_usb_init_params *params,
+ 				  uint8_t addr, uint16_t data)
+@@ -198,6 +203,7 @@ static void usb_init_common_7211b0(struct brcm_usb_init_params *params)
+ {
+ 	void __iomem *ctrl = params->regs[BRCM_REGS_CTRL];
+ 	void __iomem *usb_phy = params->regs[BRCM_REGS_USB_PHY];
++	void __iomem *bdc_ec = params->regs[BRCM_REGS_BDC_EC];
+ 	int timeout_ms = PHY_LOCK_TIMEOUT_MS;
+ 	u32 reg;
+ 
+@@ -230,6 +236,18 @@ static void usb_init_common_7211b0(struct brcm_usb_init_params *params)
  
  	usb_init_common(params);
  
 +	/*
-+	 * Disable FSM, otherwise the PHY will auto suspend when no
-+	 * device is connected and will be reset on resume.
++	 * The BDC controller will get occasional failures with
++	 * the default "Read Transaction Size" of 6 (1024 bytes).
++	 * Set it to 4 (256 bytes).
 +	 */
-+	reg = brcm_usb_readl(usb_phy + USB_PHY_UTMI_CTL_1);
-+	reg &= ~USB_PHY_UTMI_CTL_1_POWER_UP_FSM_EN_MASK;
-+	brcm_usb_writel(reg, usb_phy + USB_PHY_UTMI_CTL_1);
++	if ((params->mode != USB_CTLR_MODE_HOST) && bdc_ec) {
++		reg = brcm_usb_readl(bdc_ec + BDC_EC_AXIRDA);
++		reg &= ~BDC_EC_AXIRDA_RTS_MASK;
++		reg |= (0x4 << BDC_EC_AXIRDA_RTS_SHIFT);
++		brcm_usb_writel(reg, bdc_ec + BDC_EC_AXIRDA);
++	}
 +
- 	usb2_eye_fix_7211b0(params);
- }
+ 	/*
+ 	 * Disable FSM, otherwise the PHY will auto suspend when no
+ 	 * device is connected and will be reset on resume.
+diff --git a/drivers/phy/broadcom/phy-brcm-usb-init.h b/drivers/phy/broadcom/phy-brcm-usb-init.h
+index 2ea81daf295e..4cdd9cc1c5a3 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb-init.h
++++ b/drivers/phy/broadcom/phy-brcm-usb-init.h
+@@ -19,6 +19,7 @@ enum brcmusb_reg_sel {
+ 	BRCM_REGS_XHCI_GBL,
+ 	BRCM_REGS_USB_PHY,
+ 	BRCM_REGS_USB_MDIO,
++	BRCM_REGS_BDC_EC,
+ 	BRCM_REGS_MAX
+ };
  
+diff --git a/drivers/phy/broadcom/phy-brcm-usb.c b/drivers/phy/broadcom/phy-brcm-usb.c
+index c82d7ec15334..cc5763ace3ad 100644
+--- a/drivers/phy/broadcom/phy-brcm-usb.c
++++ b/drivers/phy/broadcom/phy-brcm-usb.c
+@@ -36,6 +36,7 @@ struct value_to_name_map {
+ struct match_chip_info {
+ 	void *init_func;
+ 	u8 required_regs[BRCM_REGS_MAX + 1];
++	u8 optional_reg;
+ };
+ 
+ static struct value_to_name_map brcm_dr_mode_to_name[] = {
+@@ -71,7 +72,7 @@ struct brcm_usb_phy_data {
+ };
+ 
+ static s8 *node_reg_names[BRCM_REGS_MAX] = {
+-	"crtl", "xhci_ec", "xhci_gbl", "usb_phy", "usb_mdio"
++	"crtl", "xhci_ec", "xhci_gbl", "usb_phy", "usb_mdio", "bdc_ec"
+ };
+ 
+ static irqreturn_t brcm_usb_phy_wake_isr(int irq, void *dev_id)
+@@ -271,6 +272,7 @@ static struct match_chip_info chip_info_7211b0 = {
+ 		BRCM_REGS_USB_MDIO,
+ 		-1,
+ 	},
++	.optional_reg = BRCM_REGS_BDC_EC,
+ };
+ 
+ static struct match_chip_info chip_info_7445 = {
+@@ -300,7 +302,8 @@ static const struct of_device_id brcm_usb_dt_ids[] = {
+ 
+ static int brcm_usb_get_regs(struct platform_device *pdev,
+ 			     enum brcmusb_reg_sel regs,
+-			     struct  brcm_usb_init_params *ini)
++			     struct  brcm_usb_init_params *ini,
++			     bool optional)
+ {
+ 	struct resource *res;
+ 
+@@ -317,7 +320,13 @@ static int brcm_usb_get_regs(struct platform_device *pdev,
+ 				return 0;
+ 		}
+ 		if (res == NULL) {
+-			dev_err(&pdev->dev, "can't get %s base address\n",
++			if (optional) {
++				dev_dbg(&pdev->dev,
++					"Optional reg %s not found\n",
++					node_reg_names[regs]);
++				return 0;
++			}
++			dev_err(&pdev->dev, "can't get %s base addr\n",
+ 				node_reg_names[regs]);
+ 			return 1;
+ 		}
+@@ -460,7 +469,13 @@ static int brcm_usb_phy_probe(struct platform_device *pdev)
+ 			break;
+ 
+ 		err = brcm_usb_get_regs(pdev, info->required_regs[x],
+-					&priv->ini);
++					&priv->ini, false);
++		if (err)
++			return -EINVAL;
++	}
++	if (info->optional_reg) {
++		err = brcm_usb_get_regs(pdev, info->optional_reg,
++					&priv->ini, true);
+ 		if (err)
+ 			return -EINVAL;
+ 	}
 -- 
 2.17.1
 
