@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B42811939A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:14:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8686711939B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:14:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J6QtrzEn2BC0avzIhZUyXveSuHd4qOfkPsa9v/Keqgk=; b=TCpLJQMFajdrd5
-	eBe2XxxUNTxwA+NUt3LNsCxaLeTHyDWE27zpzeoM//pt2DN6qVVs2pNlqywotOudWgntUpFb7jdaQ
-	radwsk5RkA0uKybkaiSyXFfN8XyhHHXgJ7SnA4W2c/6n9cGMOwqhiheQj80UzHLG/OXnweirvd9r8
-	NgJMdAEJ6aD19xmyduFjP1L3dKT2bPF1c+HjWJUbj7i7Z73H05W2+/VpSrNugUupRn3pmrhP3H58/
-	38QYzVkf4zkLugrGUSsGYB/T9ee/nn5Fl6/NPR3XkhNYXHjkyDOD4Mf78zK0ePfVE+o7rD952XTM9
-	NX5fI/Q/fO6Jo7Qp3ewQ==;
+	List-Owner; bh=e428nInFJJ3dHEI7aFj6eaWy/1jfmGEhI9EtHUcVrKU=; b=uv8fNhD5E9FYLP
+	IXW78uLBb8QyGYma+jNv96iBphVxEWqcnHGJWznF0ubZUsgnhN9w2/d2meyLCbmP4w9WdGGxsY7u9
+	SKC4BIn28/EQw1TTZqqk6M9JvduUoqy5TDZhiRIpIN8/eoHvz1jyUgz9JA5U8XUHN7ELcGH7T3j55
+	fuSR6eK/X/BcIOjbkCbThv7w8UX68g/QOm1ljmGQ6SNo4/j3Yawx1E6LUv3JxyJmiGNgb4DFhArYT
+	PjZTDaQtsG5zpyUbVnrLlOnvlp06h5LIV5hir8h1mQNYfhT6MKNZFQEbsoJ2GSlqGd4gbNto/iXQo
+	Br60ZdKGAw6YdZYW+ywQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iempl-0007hx-3F; Tue, 10 Dec 2019 21:14:17 +0000
+	id 1iempx-00080d-JY; Tue, 10 Dec 2019 21:14:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iemne-00061z-AS
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:12:07 +0000
+ id 1iemnl-00068Z-4Z
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:12:16 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AEAEE246B4;
- Tue, 10 Dec 2019 21:12:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8515B246C3;
+ Tue, 10 Dec 2019 21:12:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576012325;
- bh=alF0iVCcCKNzMmvm++PJFTaNJLFbEjzDjBZ5N5Wh7Ik=;
+ s=default; t=1576012332;
+ bh=pHpn+rzuC6YQTRftAIk78Kki8xbXONoabqYa5T6oz6k=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=c6ogMpVVVNXNkM3gHTDPez/XuK+/xjvVC6G7wk32griTt20HMUm/fHq7oA6n5ptV3
- kSYMNfvy7dABNHOUqVBcZDPPsFIxmcKbOaUZ3dNmNgTXPh8HFAJ0bGcuEGnFq69XK5
- DGGr/C43+LutRINGQA7fhA2JpZhdlBVqjG8m7Pww=
+ b=Qs7mbRYTY3h4uMw7WZUBwhxVuSfJLJ7x6ETZrgaPQM/+1/HKwNefkWu9RGx2IYQZz
+ 5FoHNIqd2FZpHi0hl80v2SNSK4ynRAPZvUypaTbKz8+djYvO/ZcowHqIn/XfJ6VtZw
+ vN54vSOIRplR0RJm9LCUZDjsDKdo9IGdJ2FT4aEM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 258/350] media: cedrus: Use helpers to access
- capture queue
-Date: Tue, 10 Dec 2019 16:06:03 -0500
-Message-Id: <20191210210735.9077-219-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 264/350] spi: pxa2xx: Add missed security checks
+Date: Tue, 10 Dec 2019 16:06:09 -0500
+Message-Id: <20191210210735.9077-225-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191210210735.9077-1-sashal@kernel.org>
 References: <20191210210735.9077-1-sashal@kernel.org>
@@ -50,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_131206_488987_2D6592D5 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20191210_131213_300331_C356081D 
+X-CRM114-Status: UNSURE (   8.44  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,95 +80,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devel@driverdev.osuosl.org,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, Mark Brown <broonie@kernel.org>,
+ Chuhong Yuan <hslester96@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-spi@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jernej Skrabec <jernej.skrabec@siol.net>
+From: Chuhong Yuan <hslester96@gmail.com>
 
-[ Upstream commit 1fd50a2c294457508f06b8b631d01a58de81cdd2 ]
+[ Upstream commit 5eb263ef08b5014cfc2539a838f39d2fd3531423 ]
 
-Accessing capture queue structue directly is not safe. Use helpers for
-that.
+pxa2xx_spi_init_pdata misses checks for devm_clk_get and
+platform_get_irq.
+Add checks for them to fix the bugs.
 
-Acked-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Signed-off-by: Mauro Carvalho Chehab <mchehab@kernel.org>
+Since ssp->clk and ssp->irq are used in probe, they are mandatory here.
+So we cannot use _optional() for devm_clk_get and platform_get_irq.
+
+Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+Link: https://lore.kernel.org/r/20191109080943.30428-1-hslester96@gmail.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/staging/media/sunxi/cedrus/cedrus.h      | 8 ++++++--
- drivers/staging/media/sunxi/cedrus/cedrus_h264.c | 8 ++++++--
- 2 files changed, 12 insertions(+), 4 deletions(-)
+ drivers/spi/spi-pxa2xx.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
-index 2f017a6518486..3758a1c4e2d05 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus.h
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
-@@ -179,12 +179,16 @@ static inline dma_addr_t cedrus_buf_addr(struct vb2_buffer *buf,
- static inline dma_addr_t cedrus_dst_buf_addr(struct cedrus_ctx *ctx,
- 					     int index, unsigned int plane)
- {
--	struct vb2_buffer *buf;
-+	struct vb2_buffer *buf = NULL;
-+	struct vb2_queue *vq;
+diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
+index 068c210376799..452cef367696d 100644
+--- a/drivers/spi/spi-pxa2xx.c
++++ b/drivers/spi/spi-pxa2xx.c
+@@ -1565,7 +1565,13 @@ pxa2xx_spi_init_pdata(struct platform_device *pdev)
+ #endif
  
- 	if (index < 0)
- 		return 0;
- 
--	buf = ctx->fh.m2m_ctx->cap_q_ctx.q.bufs[index];
-+	vq = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, V4L2_BUF_TYPE_VIDEO_CAPTURE);
-+	if (vq)
-+		buf = vb2_get_buffer(vq, index);
+ 	ssp->clk = devm_clk_get(&pdev->dev, NULL);
++	if (IS_ERR(ssp->clk))
++		return NULL;
 +
- 	return buf ? cedrus_buf_addr(buf, &ctx->dst_fmt, plane) : 0;
- }
- 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-index d6a782703c9b0..08c6c9c410cc3 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-@@ -96,7 +96,7 @@ static void cedrus_write_frame_list(struct cedrus_ctx *ctx,
- 	const struct v4l2_ctrl_h264_decode_params *decode = run->h264.decode_params;
- 	const struct v4l2_ctrl_h264_slice_params *slice = run->h264.slice_params;
- 	const struct v4l2_ctrl_h264_sps *sps = run->h264.sps;
--	struct vb2_queue *cap_q = &ctx->fh.m2m_ctx->cap_q_ctx.q;
-+	struct vb2_queue *cap_q;
- 	struct cedrus_buffer *output_buf;
- 	struct cedrus_dev *dev = ctx->dev;
- 	unsigned long used_dpbs = 0;
-@@ -104,6 +104,8 @@ static void cedrus_write_frame_list(struct cedrus_ctx *ctx,
- 	unsigned int output = 0;
- 	unsigned int i;
- 
-+	cap_q = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, V4L2_BUF_TYPE_VIDEO_CAPTURE);
+ 	ssp->irq = platform_get_irq(pdev, 0);
++	if (ssp->irq < 0)
++		return NULL;
 +
- 	memset(pic_list, 0, sizeof(pic_list));
- 
- 	for (i = 0; i < ARRAY_SIZE(decode->dpb); i++) {
-@@ -167,12 +169,14 @@ static void _cedrus_write_ref_list(struct cedrus_ctx *ctx,
- 				   enum cedrus_h264_sram_off sram)
- {
- 	const struct v4l2_ctrl_h264_decode_params *decode = run->h264.decode_params;
--	struct vb2_queue *cap_q = &ctx->fh.m2m_ctx->cap_q_ctx.q;
-+	struct vb2_queue *cap_q;
- 	struct cedrus_dev *dev = ctx->dev;
- 	u8 sram_array[CEDRUS_MAX_REF_IDX];
- 	unsigned int i;
- 	size_t size;
- 
-+	cap_q = v4l2_m2m_get_vq(ctx->fh.m2m_ctx, V4L2_BUF_TYPE_VIDEO_CAPTURE);
-+
- 	memset(sram_array, 0, sizeof(sram_array));
- 
- 	for (i = 0; i < num_ref; i++) {
+ 	ssp->type = type;
+ 	ssp->pdev = pdev;
+ 	ssp->port_id = pxa2xx_spi_get_port_id(adev);
 -- 
 2.20.1
 
