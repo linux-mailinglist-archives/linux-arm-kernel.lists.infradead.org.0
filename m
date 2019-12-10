@@ -2,104 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FBF9117FCD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 06:35:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFA90117FEA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 06:47:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TsEnu1nDIQSDsrE9UziT6RME+UfAU5YbugfksKilbfA=; b=l/mYTBtyiyePQI
-	EcThnQrkZzrUqoWj+I43Wd7/o5zY6Tg9pttOLu+6H1T3laiDX+1k3QbATWH5hh/brg884yblqfIOp
-	O9o2Xdxn1Qbsbekh/Qn/iaZ2EBwjB4tTZyE9rJue/X6aQLOLic1fwFGHJAIDYmjo+NnuqIcGYPOC2
-	Y2D9OYIU6ToWkIQth6aohcxmPgeX9c+qhyrAEq3XtQDr+98WRKLPZxjvVnEfqraRbWVoaoSIJnfXH
-	YGj7viJQr9YItmZE3HbEXy19cPaWWIohUcAZWgx5+cspS9u8TtkjhIjog+DK7Jjbs2vLowD1tVKnp
-	aagA8gKUMpTYambkMZFw==;
+	List-Owner; bh=4eKMSvjny+O3hn3YjiqGwF5NWOHDdGTXe3OgATpxe5g=; b=TLfMQfI/OFX/mq
+	uI5hG0xP44UZmaO/4lp+piUxIx0aNSPAm/xXPQvePBjP9zBN9zYqPJiYVs/KxMJ9sWqVthuuG8tCO
+	/SuvfYhcFZ6H3+yzEkX6WKuDrClfT7uZ+lOj0w2+4iuvedgOJIgvhzCWrQEE2CNpWHD/pOn5yviVt
+	KR5R5QpFlVLpa9L4GDwp9ztY1APNsYp8qbovqYikyl0zwfwKhilqdMlTLyVf2zSHh4qz1F0qRdgRP
+	OwmnXSRNqWvrxmPk8F/PNf0N8T9UMICjc5yxfYNmqerguFBmn0F7LunBPl3IDMExS7c7+sSDjEQ11
+	+yabWQUS7THP7MfEdcqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieYBW-0007I6-F5; Tue, 10 Dec 2019 05:35:46 +0000
-Received: from mail-eopbgr130085.outbound.protection.outlook.com
- ([40.107.13.85] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1ieYMK-0002Pl-Tz; Tue, 10 Dec 2019 05:46:56 +0000
+Received: from mail-eopbgr130082.outbound.protection.outlook.com
+ ([40.107.13.82] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieYBL-0007Gt-4X
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 05:35:37 +0000
+ id 1ieYMB-0002Om-Vk
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 05:46:49 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=g74MvtDMUrGS0OKT2BHFt5/5ARzsGdLvqGxSNxttmgxcMEwbK+j9V1Zuwej/d/C6YgKJyuXSbbiUJs2coRqtoTUFujdLxM/hcB6ewKgJTJrwAI+SFYBy3i3mtlePVyXlPd6IpK26eYudpfvzLK82TcB200ftS0gWZJTEgu609aY6rG/c48Dbv9wSx3a6eF2ujOVh0wtSkhSsnnbmN2c4ugupsip7/oc3XVTX6VIMOwDv6dje6fdGFUTt5yUla6LaKStfszth6rgDL63+LrUOHLK9ubSTatNKPmvpVUscxDM5J42tjD7nsKnq5xHv8bMS1H0JhGcaVjB0OvpE8URjew==
+ b=Ps/mRYkdlDOnqaUHAtr5KE7BU+5ZAH6+zwYtwXXcn7dMchrTIKpeAdIKtHqi/sPDAnKbFWWaG5V7XhiV1rQG1iikD5tj1JtKuXYq00i23k4XOFiwM6Xmlc5tZuOOCri9hABOz/9GhCCC3h3eEcW3px7i7Joyi3Ygjz/JG6PLRqQLEjzY+042v8eUa7d3xwRMdPpA8HnpZWCLgbHesJcJ0kiYAj6kCBZMkPfTdHNtQ1tv/lxianB8sUhGFyBlhCELQD3jH+OUPX9pzwPHStKK9YuACHk0dGGWWfSrrzhcjAQ93j5p3QQ+TsJAhUtu59nzErcl4Hh5VqBts0uhbhaiPQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=eoLphrgcIgUvwXIyNEiif2G62B+fBFXDJLcg6FTi+sY=;
- b=nUi37zhFwa0h9vYQAojwSn1sYhBRNWs/UMlNupiBAstErkExCQPzr51v7qMNyEW7c4wQm/y4ugVXgUtJuaRCOjfR/njDdE9brf+30ioVugMP1NU8J5w1iQZbs6+VI6SPP8LFsna3qasr+n+QO/3Zn9ERgDgcDxKcNlBgJlKi7tfb1zpF2wQsir/rJvuaQeoOezcoDWJ4+WX1CphY+iX5RaBU/rNRW6ZYggi+LQXOxHBQUgkck7rc8PqYVUyYTsoyUwBp16MTuPYHMprOOgRzDTDNpI2KttzDN+0r8dsUNNczT/bl5gJ8WmbszZyBo29s5tmNEOJQZDSJsnukH2h6HA==
+ bh=EEGQqb41bj64/UuA4ycviSypehWaggeln7sKfUll6cw=;
+ b=jTDFsIUfur5NI5wFklEX6qjq/k/n5VIlgGOo3n8wY58yi7l4vSUK8TRu0IiUYggX/JiXlzrBPtEVcUEYMWBXzoMK1xvBPeCCz+t6HAPyFIydZxK4mn0ulJmtdSWW/AYXj5k44lGJ+45b2LiexZYT9LrX2am/siNCU2t3O2UvhjKQ5ZDviWApOeYll8o8teyWdKfykpUTrSfxMATHjNOBoUPwkIy8pWMVIfspdKVaAwYfzFS0eHAaMHAnd0rmhgccHuHzuSNEGT3+/4+S+Z8b8HDxgnfQQZB2a+4srDF+UWAlgByukaJ+8GD7gJtFwfWdBhPNc6IwCJxlHNLS6djJ1g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=eoLphrgcIgUvwXIyNEiif2G62B+fBFXDJLcg6FTi+sY=;
- b=bKCVfVBRkyU+yNypt2A8mKYII+Xx8X1fo7AoQ6jb/ga0ZorrfIpCePCis42EhGy5RPooI3/P5GdagpxnXBqkoIJ6e+/npzDSREfhPANFAik72prZ092RmT2xUMYVXINqkStSMPB3uYMUgRKS73quQNdK3otxojRvd5ekrFKqcWA=
-Received: from VI1PR04MB4062.eurprd04.prod.outlook.com (52.133.12.32) by
- VI1PR04MB5359.eurprd04.prod.outlook.com (20.178.122.92) with Microsoft SMTP
+ bh=EEGQqb41bj64/UuA4ycviSypehWaggeln7sKfUll6cw=;
+ b=Rvp5Ve2emZsCcjX9Wr6oQ/RJe/wC+Yg7Qy73TdsNfApP3Sbm0CeHrxoG0GBpS76Dkg7wHBia70V/6kQOTakm1XIoF4GZzIwg9KH/NfLAD2AFcjGwbLnmgUBlhgfArY+gLvx8xBoN0mcxj0u5xkgX3+odLOGcNrwfzkOFBa0EJj8=
+Received: from VI1PR0402MB3600.eurprd04.prod.outlook.com (52.134.3.146) by
+ VI1PR0402MB2799.eurprd04.prod.outlook.com (10.175.20.144) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2516.17; Tue, 10 Dec 2019 05:35:28 +0000
-Received: from VI1PR04MB4062.eurprd04.prod.outlook.com
- ([fe80::20fe:3e38:4eec:ea03]) by VI1PR04MB4062.eurprd04.prod.outlook.com
- ([fe80::20fe:3e38:4eec:ea03%7]) with mapi id 15.20.2516.018; Tue, 10 Dec 2019
- 05:35:28 +0000
-From: Alison Wang <alison.wang@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Michael Walle <michael@walle.cc>
-Subject: RE: [EXT] Re: [PATCH] arm64: dts: ls1028a: put SAIs into async mode
-Thread-Topic: [EXT] Re: [PATCH] arm64: dts: ls1028a: put SAIs into async mode
-Thread-Index: AQHVrnBLtaYchIru+E6aNXw66ImuFqeyq8zw
-Date: Tue, 10 Dec 2019 05:35:27 +0000
-Message-ID: <VI1PR04MB4062D212996FE37A72DE3557F45B0@VI1PR04MB4062.eurprd04.prod.outlook.com>
-References: <20191129210937.26808-1-michael@walle.cc>
- <20191209090840.GL3365@dragon>
-In-Reply-To: <20191209090840.GL3365@dragon>
+ 15.20.2516.14; Tue, 10 Dec 2019 05:46:39 +0000
+Received: from VI1PR0402MB3600.eurprd04.prod.outlook.com
+ ([fe80::30e0:6638:e97c:e625]) by VI1PR0402MB3600.eurprd04.prod.outlook.com
+ ([fe80::30e0:6638:e97c:e625%7]) with mapi id 15.20.2516.018; Tue, 10 Dec 2019
+ 05:46:39 +0000
+From: Andy Duan <fugang.duan@nxp.com>
+To: Andre Renaud <arenaud@designa-electronics.com>, Fabio Estevam
+ <festevam@gmail.com>
+Subject: RE: [EXT] Re: iMX6/UART imprecise external abort
+Thread-Topic: [EXT] Re: iMX6/UART imprecise external abort
+Thread-Index: AQHVqVLo4K9VUksIR0CZH5d48DlS+qeyyvKAgAAcIyA=
+Date: Tue, 10 Dec 2019 05:46:39 +0000
+Message-ID: <VI1PR0402MB3600DD7A4C9BFFE8E2805378FF5B0@VI1PR0402MB3600.eurprd04.prod.outlook.com>
+References: <CAEj2-1PyhkhEJ1+uRWio4vYxGuFOuR9mpZOdxmDDjGt_Az+3uA@mail.gmail.com>
+ <CAOMZO5AxvuWETvubZU1Tu=0-SeoSzJs=LZcj-JJFE1+4O6-FxA@mail.gmail.com>
+ <CAEj2-1M6950NxK0mOBzdc4qz3b=eBzD8NdLKE55aas5WN0iZkA@mail.gmail.com>
+In-Reply-To: <CAEj2-1M6950NxK0mOBzdc4qz3b=eBzD8NdLKE55aas5WN0iZkA@mail.gmail.com>
 Accept-Language: zh-CN, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=alison.wang@nxp.com; 
-x-originating-ip: [119.31.174.73]
+ smtp.mailfrom=fugang.duan@nxp.com; 
+x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 1e3008b5-fd42-4342-93ee-08d77d32c39f
-x-ms-traffictypediagnostic: VI1PR04MB5359:|VI1PR04MB5359:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB53591C543D580D327FFAD9BCF45B0@VI1PR04MB5359.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3631;
+x-ms-office365-filtering-correlation-id: 28638e04-7cd6-4d43-67ac-08d77d3453fa
+x-ms-traffictypediagnostic: VI1PR0402MB2799:
+x-microsoft-antispam-prvs: <VI1PR0402MB27992C5734C7DDAD18F6BF55FF5B0@VI1PR0402MB2799.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
 x-forefront-prvs: 02475B2A01
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(366004)(39860400002)(136003)(396003)(376002)(13464003)(199004)(189003)(8676002)(86362001)(81156014)(81166006)(54906003)(44832011)(9686003)(305945005)(53546011)(66946007)(66446008)(4326008)(66556008)(6506007)(71190400001)(71200400001)(66476007)(33656002)(64756008)(76116006)(186003)(26005)(52536014)(478600001)(5660300002)(110136005)(316002)(2906002)(7696005)(229853002)(55016002)(8936002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5359;
- H:VI1PR04MB4062.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(4636009)(376002)(396003)(366004)(346002)(39860400002)(136003)(199004)(189003)(4326008)(186003)(26005)(55016002)(76116006)(9686003)(8936002)(53546011)(81166006)(7696005)(2906002)(8676002)(33656002)(110136005)(305945005)(66446008)(478600001)(81156014)(52536014)(6506007)(86362001)(316002)(71190400001)(64756008)(66556008)(66946007)(5660300002)(71200400001)(229853002)(66476007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB2799;
+ H:VI1PR0402MB3600.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: T6bJhkiIitZn93LDTn8JTu6iUIHPOy+erWCHoHNSYOuIv8QRdQWv1mL+Lml2MxrMOjAZdsMqv6PiwZhhTaFElRZebTjZrtGeuzEvrkAZTlRhjn2zZYbrBOI3dGCkznQpArntvSCa5c0T24XHB7JlgxybZeZSqhah9Vtl7JIIyTsaA3QwJ0J7A0IrD78h3qwvixAQGmMtX0rYd8oB0rJE3kiUA90MHkKfR6tsrpNEuv2o6AfdxfuzvFJ6qaLV834FgRwnikp0E7dSWVZhbBa1pV1jjeK3JEtRLKXBbKfLPy7YCd1nujfo0vy6Ap2G9wA2+S3DzFo3slRA7Z3vRHGKXtxrsy+k8ksPGIIfa/vBara+R3TzAO9SCNPtIdNgnrp93bw2dUhfOAN2+8pcMC9lKwPisWkOkYsKFcenWq8pUToj4DbRXbEmFzVNhyHFXbEPwwJjwN57lBzoU5qbI/Ol+0ZEtkm7fFNiuJnxPJHWa9JYdKALIy8yacuBJQTWUf5I
+x-microsoft-antispam-message-info: wHoSKGKxgXKB4xgNADO5c1ztGiNYjirL7qbDnKi5KqIZUl7KuyHt/nTa5cWpP5f6q6F3Sc2qh2sQL+mIOIywQXjEhoaJugAtfqfe1YZj6IyATYchpa0oGsvPopa6fuPKDfRXAnfQ+wVspqbeuYHjCQgtgSru88klcfXZSXi21dQD17YNLrsRLoVOdcTau4E4MHwExRY+KARTYULfPluLqT/gf4StPAEBX8bGcQ85Ql9ROaKmErYzFdefe+0j569M7a3Gs6WUMGnMmAs+MjpcIXaCQhi0WVDz0yOlQB2KdRSyy9X+LWa+9jGoj8O6U7Zu/WLjwL4FX6bnFv8adBJzx7CLITcJpzOkZ3Gm5rK9QgRq68fGr0j7b5AOVUmtw+/3bci5ishleZo1sQ0yNvi2Z8ZfxBcuD6mOH8D0L00EmARkyiNZKb8jROt7Pn62pJYT
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1e3008b5-fd42-4342-93ee-08d77d32c39f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Dec 2019 05:35:27.8357 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 28638e04-7cd6-4d43-67ac-08d77d3453fa
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Dec 2019 05:46:39.5136 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: DzKc3oyDR4oVUyzpANVD7YIJN1KAmiAqelwh2qzO0srqf5JQhSwT/j2deauIO0it0ORoN2IctfAZeUXIuogROQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5359
+X-MS-Exchange-CrossTenant-userprincipalname: 0a2EUAQTME0HRJs8Mx5IW3PaOqI7deOcISL6I+dO04cTqSoJYnyx5GqWwfhDjhSGMCOGAysTOl6oFynjYXtUkg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB2799
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_213535_426743_369A79A0 
-X-CRM114-Status: GOOD (  19.52  )
+X-CRM114-CacheID: sfid-20191209_214648_022556_2B7798E2 
+X-CRM114-Status: GOOD (  14.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.13.85 listed in list.dnswl.org]
+ no trust [40.107.13.82 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -120,115 +122,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Michael,
+From: Andre Renaud <arenaud@designa-electronics.com> Sent: Tuesday, December 10, 2019 12:04 PM
+> Hello Fabio,
+> 
+> On Tue, Dec 3, 2019 at 9:56 AM Fabio Estevam <festevam@gmail.com>
+> wrote:
+> > Could you please try a vanilla 5.4.1 kernel?
+> 
+> We have confirmed that this happens on the standard 5.4.1 board, but only
+> when the RS485 ioctls and corresponding device tree entries are enabled.
+> We have tried it on different hardware (the Wandboard iMX6Q), with just a
+> minor change to the device tree - the addition of uart-has-rtscts, and rts-gpio.
+Documentation/devicetree/bindings/serial/fsl-imx-uart.txt
+Note that for RS485 you must enable either the "uart-has-rtscts" or the "rts-gpios" properties.
 
-In most of our cases, TX and RX are using the same BCLK and SYNC clocks. So the default synchronous mode (sync Rx with Tx) is used, which means both transmitter and receiver will send and receive data by following clocks of transmitter. It is verified on our boards.
+And please note rts-gpio should be the pin for CTS_B.
 
-
-Best Regards,
-Alison Wang
-
-> -----Original Message-----
-> From: Shawn Guo <shawnguo@kernel.org>
-> Sent: Monday, December 9, 2019 5:09 PM
-> To: Michael Walle <michael@walle.cc>; Alison Wang <alison.wang@nxp.com>
-> Cc: linux-arm-kernel@lists.infradead.org; devicetree@vger.kernel.org;
-> linux-kernel@vger.kernel.org; Leo Li <leoyang.li@nxp.com>; Rob Herring
-> <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>
-> Subject: [EXT] Re: [PATCH] arm64: dts: ls1028a: put SAIs into async mode
+> &uart3 {
+>     pinctrl-names = "default";
+>     pinctrl-0 = <&pinctrl_uart3>;
+>     uart-has-rtscts;
+>     rts-gpio = <&gpio3 23 GPIO_ACTIVE_LOW>;
+>     status = "okay";
+> };
 > 
-> Caution: EXT Email
+> Then if we enable RS485 mode using the ioctl:
+>     struct serial_rs485 rs485;
+>     rs485.flags = SER_RS485_ENABLED | SER_RS485_RTS_ON_SEND;
+>     ioctl(fd, TIOCSRS485, &rs485);
 > 
-> + Alison Wang
+> This will cause it to panic fairly quickly (in a few minutes).
 > 
-> On Fri, Nov 29, 2019 at 10:09:37PM +0100, Michael Walle wrote:
-> > The LS1028A SoC has only unidirectional SAIs. Therefore, it doesn't
-> > make sense to have the RX and TX part synchronous. Even worse, the RX
-> > part wont work out of the box because by default it is configured as
-> > synchronous to the TX part. And as said before, the pinmux of the SoC
-> > can only be configured to route either the RX or the TX signals to the
-> > SAI but never both at the same time. Thus configure the asynchronous
-> > mode by default.
-> >
-> > Signed-off-by: Michael Walle <michael@walle.cc>
+> This is with the SDMA peripheral disabled. If we enable the SDMA peripheral,
+> then after a while we stop receiving data, and the unit locks up, although
+> there is no panic output.
 > 
-> Alison, Leo,
-> 
-> Looks good to you?
-> 
-> Shawn
-> 
-> > ---
-> >  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 6 ++++++
-> >  1 file changed, 6 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> > b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> > index 379913756e90..9be33426e5ce 100644
-> > --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> > @@ -637,6 +637,7 @@
-> >                       dma-names = "tx", "rx";
-> >                       dmas = <&edma0 1 4>,
-> >                              <&edma0 1 3>;
-> > +                     fsl,sai-asynchronous;
-> >                       status = "disabled";
-> >               };
-> >
-> > @@ -651,6 +652,7 @@
-> >                       dma-names = "tx", "rx";
-> >                       dmas = <&edma0 1 6>,
-> >                              <&edma0 1 5>;
-> > +                     fsl,sai-asynchronous;
-> >                       status = "disabled";
-> >               };
-> >
-> > @@ -665,6 +667,7 @@
-> >                       dma-names = "tx", "rx";
-> >                       dmas = <&edma0 1 8>,
-> >                              <&edma0 1 7>;
-> > +                     fsl,sai-asynchronous;
-> >                       status = "disabled";
-> >               };
-> >
-> > @@ -679,6 +682,7 @@
-> >                       dma-names = "tx", "rx";
-> >                       dmas = <&edma0 1 10>,
-> >                              <&edma0 1 9>;
-> > +                     fsl,sai-asynchronous;
-> >                       status = "disabled";
-> >               };
-> >
-> > @@ -693,6 +697,7 @@
-> >                       dma-names = "tx", "rx";
-> >                       dmas = <&edma0 1 12>,
-> >                              <&edma0 1 11>;
-> > +                     fsl,sai-asynchronous;
-> >                       status = "disabled";
-> >               };
-> >
-> > @@ -707,6 +712,7 @@
-> >                       dma-names = "tx", "rx";
-> >                       dmas = <&edma0 1 14>,
-> >                              <&edma0 1 13>;
-> > +                     fsl,sai-asynchronous;
-> >                       status = "disabled";
-> >               };
-> >
-> > --
-> > 2.20.1
-> >
-
+> Regards,
+> Andre
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
