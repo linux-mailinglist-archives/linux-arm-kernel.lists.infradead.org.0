@@ -2,59 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA9A31191BA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 21:19:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30F401191D6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 21:25:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mkk/Z3ShZdTmsjMU+pdYJFhRK9N873bDtutk6bPw9n4=; b=RPVLyrhZWKyrtY
-	ZO5FxX78sIK1hvnMTaFIqWnOCilJiVaQ5yiOZJuACVF+lwC3AkHjDTmlyIzmMFwhcHRqqviJWbexO
-	OczrNbfzJ3m6W7QJ/ZbUTC4froqLjFwdPKgMbqGcGb2zY4WzQM5mdvpm1w20sQp/kjd1K0w146zwd
-	qMNq7F6kld7y5GEpZTkLbB+9p4+aNH/MrNOn3L5NtJjLxIF/nzw46jyc0YXtpgEkGlkpzwk7Fg0tw
-	SfJ6aoa+XQo4PVaPurtcSXK8/6GRLfgfh9LaA9MVDGpq5Gk1JzaC8pRJDe2+g1NRI0yQOHGHAggDo
-	sJxWFDC6NsF1nobYcO6Q==;
+	List-Owner; bh=v1zWuL70i7n4mwd0tPBDEOBOczEMQKswz4zwLYJXRtw=; b=ME5+v+WtdvCh+2
+	zoU7oJLh/RJmJz/6KCy5dIQM/A2XLq7/EpD3iEGi9b3lY1MjmzANf/ZSbg9g4FGchJ9akLqgMdHMj
+	0MVy/ICXfmX81vaXanBaLw/Zfyq+kVxVijuTjGNQHRL/F4NmBLu6d9MaIUJiT0qgdwfRuvOzJ4GIo
+	9qoS0hDBWthmKSbj+xBQ36u1x1wQhygtjZhr6o9MombofuPc23fQ9h7zCnJFu9nL5aaKnh5IeX1s6
+	wTQiaA99gyT5LwnoV8XgYa8ArrSn0lmrmmykqWWXV/amKhMFw6+xM2ydaPioYUru61tKqtRrwIFR3
+	nH5ruGb7U9eTfEXMwG3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ielyI-0003Ga-Do; Tue, 10 Dec 2019 20:19:02 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
+	id 1iem3z-0005Ns-72; Tue, 10 Dec 2019 20:24:55 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ielyA-0003Fa-49
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 20:18:55 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
+ id 1iem3p-0005Mk-FB
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 20:24:47 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id 25A422008B;
- Tue, 10 Dec 2019 21:18:46 +0100 (CET)
-Date: Tue, 10 Dec 2019 21:18:45 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Re: [PATCH 2/5] drm: atmel-hlcdc: enable clock before configuring
- timing engine
-Message-ID: <20191210201845.GA24756@ravnborg.org>
-References: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
- <1575984287-26787-3-git-send-email-claudiu.beznea@microchip.com>
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id C48BE806B6;
+ Wed, 11 Dec 2019 09:24:38 +1300 (NZDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1576009478;
+ bh=cCJ4IOUErdRXpS39JIAoWUSB/QOu2X0QuS4VhmhhzYk=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To;
+ b=ivCMbiiPoyvBkAbJvQMZus7eq8oDUJHfmIBM1N7NGCtQqpKVHsA/ajVC3uOdTstzz
+ jgn0EURerQBdDjnuUlyfyJtmjN599ppzwyI+I1IIVOCHaHl35SNN+Xe7RvWvCPmihJ
+ AWYNw3dF0IARL5nL4XIWO9B0skzGA6/6ArtZQIjr0QLx7fwcnCwgihTX12HbDhRefy
+ o8nuxg4JEPB2pFG5s541HgcoxEN20nwiWNOgxwK3kRXwn/oRaMWSMDsfgJ5hKXIrvH
+ +CUX1Ap9W9ZY8ZYldbOP+/jRD8eNuG/IKy63zPYFayK47MMCA9YmuA11o3yufWD3wQ
+ Yv9kAOoM8yP9g==
+Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
+ mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5defff000000>; Wed, 11 Dec 2019 09:24:37 +1300
+Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8:409d:36f5:8899:92e8)
+ by svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8:409d:36f5:8899:92e8) with
+ Microsoft SMTP Server (TLS) id 15.0.1156.6; Wed, 11 Dec 2019 09:24:33 +1300
+Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
+ svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
+ 15.00.1156.000; Wed, 11 Dec 2019 09:24:33 +1300
+From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+To: "arnd@arndb.de" <arnd@arndb.de>, "linus.walleij@linaro.org"
+ <linus.walleij@linaro.org>, "bgolaszewski@baylibre.com"
+ <bgolaszewski@baylibre.com>
+Subject: Re: [PATCH] gpio: xgs-iproc: remove __exit annotation for
+ iproc_gpio_remove
+Thread-Topic: [PATCH] gpio: xgs-iproc: remove __exit annotation for
+ iproc_gpio_remove
+Thread-Index: AQHVr5OrBiJXFgirdU+/MD3yYsX4TKey9pWA
+Date: Tue, 10 Dec 2019 20:24:33 +0000
+Message-ID: <01669f6c5d0e40c7a410da2dcce6c9e825e4a1d4.camel@alliedtelesis.co.nz>
+References: <20191210195414.705239-1-arnd@arndb.de>
+In-Reply-To: <20191210195414.705239-1-arnd@arndb.de>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [2001:df5:b000:22:8c06:5a00:1627:6912]
+Content-ID: <E290714BFDB0144FA4F4989701784D39@atlnz.lc>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1575984287-26787-3-git-send-email-claudiu.beznea@microchip.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=XYAwZIGsAAAA:8
- a=3T0gCXIu3ADAjCj7PMoA:9 a=CjuIK1q_8ugA:10 a=E8ToXWR_bxluHZ7gmE-Z:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_121854_349222_62C93590 
-X-CRM114-Status: GOOD (  17.73  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191210_122446_069145_3C36632C 
+X-CRM114-Status: GOOD (  16.60  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.36.163.20 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,77 +100,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, bbrezillon@kernel.org, airlied@linux.ie,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- ludovic.desroches@microchip.com, daniel@ffwll.ch, lee.jones@linaro.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "scott.branden@broadcom.com" <scott.branden@broadcom.com>,
+ "rjui@broadcom.com" <rjui@broadcom.com>,
+ "yoshihiro.shimoda.uh@renesas.com" <yoshihiro.shimoda.uh@renesas.com>,
+ "yuehaibing@huawei.com" <yuehaibing@huawei.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "broonie@kernel.org" <broonie@kernel.org>,
+ "bcm-kernel-feedback-list@broadcom.com"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Claudiu.
-
-On Tue, Dec 10, 2019 at 03:24:44PM +0200, Claudiu Beznea wrote:
-> Changing pixel clock source without having this clock source enabled
-> will block the timing engine and the next operations after (in this case
-> setting ATMEL_HLCDC_CFG(5) settings in atmel_hlcdc_crtc_mode_set_nofb()
-> will fail). It is recomended (although in datasheet this is not present)
-> to actually enabled pixel clock source before doing any changes on timing
-> enginge (only SAM9X60 datasheet specifies that the peripheral clock and
-> pixel clock must be enabled before using LCD controller).
+On Tue, 2019-12-10 at 20:54 +0100, Arnd Bergmann wrote:
+> When built into the kernel, the driver causes a link problem:
 > 
-> Fixes: 1a396789f65a ("drm: add Atmel HLCDC Display Controller support")
-> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+> `iproc_gpio_remove' referenced in section `.data' of drivers/gpio/gpio-xgs-iproc.o: defined in discarded section `.exit.text' of drivers/gpio/gpio-xgs-iproc.o
+> 
+> Remove the incorrect annotation.
+> 
+> Fixes: 6a41b6c5fc20 ("gpio: Add xgs-iproc driver")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 
-We already had a remotely similar fix.
-See 262d67e73f9a920a20bd75278761400404a82de0
-("drm: atmel-hlcdc: enable sys_clk during initalization.")
+Reviewed-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
 
-In this patch sys_clk is only enabled if we have a fixed_clk.
-Maybe we should do this unconditionally in
-atmel_hlcdc_dc_load()?
-
-Then we do not need this enable(disable in the mode_set_nofb
-implementation.
-
-Have you considered this way to fix it?
-
-	Sam
+What's the current best practice w.r.t.__init and __exit? I seem to
+have messed this up on multiple fronts.
 
 > ---
->  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 8 +++++++-
->  1 file changed, 7 insertions(+), 1 deletion(-)
+>  drivers/gpio/gpio-xgs-iproc.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> index 5040ed8d0871..721fa88bf71d 100644
-> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> @@ -73,7 +73,11 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
->  	unsigned long prate;
->  	unsigned int mask = ATMEL_HLCDC_CLKDIV_MASK | ATMEL_HLCDC_CLKPOL;
->  	unsigned int cfg = 0;
-> -	int div;
-> +	int div, ret;
-> +
-> +	ret = clk_prepare_enable(crtc->dc->hlcdc->sys_clk);
-> +	if (ret)
-> +		return;
->  
->  	vm.vfront_porch = adj->crtc_vsync_start - adj->crtc_vdisplay;
->  	vm.vback_porch = adj->crtc_vtotal - adj->crtc_vsync_end;
-> @@ -147,6 +151,8 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
->  			   ATMEL_HLCDC_VSPSU | ATMEL_HLCDC_VSPHO |
->  			   ATMEL_HLCDC_GUARDTIME_MASK | ATMEL_HLCDC_MODE_MASK,
->  			   cfg);
-> +
-> +	clk_disable_unprepare(crtc->dc->hlcdc->sys_clk);
+> diff --git a/drivers/gpio/gpio-xgs-iproc.c b/drivers/gpio/gpio-xgs-iproc.c
+> index 773e5c24309e..b21c2e436b61 100644
+> --- a/drivers/gpio/gpio-xgs-iproc.c
+> +++ b/drivers/gpio/gpio-xgs-iproc.c
+> @@ -280,7 +280,7 @@ static int iproc_gpio_probe(struct platform_device *pdev)
+>  	return 0;
 >  }
 >  
->  static enum drm_mode_status
-> -- 
-> 2.7.4
-
+> -static int __exit iproc_gpio_remove(struct platform_device *pdev)
+> +static int iproc_gpio_remove(struct platform_device *pdev)
+>  {
+>  	struct iproc_gpio_chip *chip;
+>  
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
