@@ -2,72 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBED01183BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 10:36:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D82B1183C0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 10:37:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rxe325yvKjFLBhylxuQrJNe4O0cH95HGzLcIuzES8M0=; b=JaXUBjLD0LH/5m
-	lF/6Ob355aALM8y8hckKjHcSSAvgqwR6VNHmChIIbT970vt4JSu8sFRn0XoN+4v8FfKgsp5w5wUBX
-	y5mDzvI9aAHdG7VOOQ7qShb5WUm8vIdDVl/Lu207QhGF5dD3pZ25z/cl3p4FJLRj4YzeCzTToNLnc
-	s1MiUmF15+WxdwoMGiNnUFphIIVGvm+rBax1MifY1KXsdetmpcoAxp+WQ8WO+qLQSFgPRWUj32NCg
-	6dnmjaKaawto4r1B2ihSdODDMv9j/i6ItvtDTngIQsq34kk+6w0beulWH2a0LhHzEnY04RC/RcUgs
-	S4E8J84LscF7zl9jqcjw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=MdWnr2O53RI2p1grkYP9xi9draWL5lV4LMhv8PNW3yA=; b=HrdsCZjVNAL2zhogYixjPvBrC9
+	G8g57/NHNIJVERo5030HFYljiqNH3pXG9NSFOIQ+tImlYL9ks6rmlytiFLLWsV4LK8fDPaz+nu8+Y
+	hdtOm6V3MuVMNRc+W9ddpSUqZlCsjyRBBXXjl505gyOCLQuhcdiXyhiV4uxLomUQiJiUxY75cPO/Q
+	F5Jfem+IsHBIPNnrf97OHXSNaXpjWs0UPlnfPctmrXdYNwwxZlVh3ZNt+cccKs9hOz/RYIN2UKpiu
+	UphxNK9nz12sIiKw0xpTqmEBRkv67E1Ex7ZI8l04W4yGzg+vi90Yb0Rnb81m7Yry/+ohvZEubrQ3O
+	L5ob2gaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iebwd-0006zt-0e; Tue, 10 Dec 2019 09:36:39 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1iebwt-0007Lz-8b; Tue, 10 Dec 2019 09:36:55 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iebwC-0006mX-HD
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 09:36:14 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBA9aAi7130979;
- Tue, 10 Dec 2019 03:36:10 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1575970570;
- bh=uWER0qb6H5Cf0hNtns4SWA9SPJe2wvekXab6TK1FJts=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=tJ3H+WLlIxHX6Xqz1ljZfOS1xsQNYkaVZsbp6MHg1MFBmyBGLix6zNDfiyeP+Mhmu
- aaikRRr2UQzcaCV7hOwuZ6d2z37ehciM+UtFNDAsctPoYg93HSu+PDW/wHrvTYyOvo
- jJPvAaLyOCJ5/+6ZiDhnTLZMt5GOjGRIMIXQ1bSI=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBA9aAfc107589
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 10 Dec 2019 03:36:10 -0600
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 10
- Dec 2019 03:36:10 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 10 Dec 2019 03:36:10 -0600
-Received: from a0132425.dhcp.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBA9a5iN014629; 
- Tue, 10 Dec 2019 03:36:08 -0600
-From: Vignesh Raghavendra <vigneshr@ti.com>
-To: Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>
-Subject: [PATCH 2/2] arm64: dts: ti: k3-am65: Add OSPI DT node
-Date: Tue, 10 Dec 2019 15:06:19 +0530
-Message-ID: <20191210093619.22481-2-vigneshr@ti.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191210093619.22481-1-vigneshr@ti.com>
-References: <20191210093619.22481-1-vigneshr@ti.com>
+ id 1iebwY-000788-Oe
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 09:36:38 +0000
+Received: by mail-lj1-x241.google.com with SMTP id u17so19075446lja.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Dec 2019 01:36:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=gXjxkm88DEjZBFBOVgYS/nXq7WpsnAwIahBe1LGrB6M=;
+ b=UBiVzNjP9aLMEiA7IC7YrACjXTaPDc9hQMibmR6mvQ2w5h2mcCTC9EkN995AN07C3h
+ dbarlfB4UYV1kmfgjxkEetgiW/0lmCFZPD1RV2yf7SMmHbmt5kWl3v8fKQ2C/Tom/sZc
+ 1A5J74odxics4FORavwIVtIBailZYZvoG6ESd6ppFoWRQ/b6ORBJ5uCeCcEYX6Qdmc5x
+ x/g7FCVHEhjHGf7+XfjwozXLtrf0kaajg/vIYnqw9H71l4SuFOrtDO/lztKSviCuXmNj
+ 2OR9+EoTAXh63GHszKYj1+zJxtYsT8ForpsjXGRBO4gxper4nFuzQ3A5G53npQ/hCq+g
+ H1zQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=gXjxkm88DEjZBFBOVgYS/nXq7WpsnAwIahBe1LGrB6M=;
+ b=HXLhlPaexplQQWvCxw8kKJUMUyfS/qmrmvt7HrrAt1zhmiC4hxu6EPHZ6KjlQaprfN
+ em7tUU2hXRSu8uBL8z02q42av/bQWafrozJRS/FoDwGQNkt1D6igusK/FkRSyaKJ5RXU
+ b/TPpdr93RhM5kZcCgm2wYefe3U1b4/0Y8EgPVTAjlANoNQitM66a4xYC7SVkHEk8lib
+ 55ih7ryszCXeSrvYyzXSfHufwCsQ6fNHfEJrS+C6VcZ3+2HWT8IjG90al7eHcRS3/f57
+ S0qMuYwZLxosZhjHTzqBm0v8OJFudMeERY4C4XWXbD8KUf6mjFY11hhyT1iStjpvmfND
+ pZhw==
+X-Gm-Message-State: APjAAAXKk+6Ovo+WlW55ikQpS7rZ37kZk9OV0vHcg6hB1vQ9f23xnRBt
+ IZ3HuZ57y2AjJepyc5vULYA=
+X-Google-Smtp-Source: APXvYqzgHWnb8WU25vCn8dceHQNUvqh7F9YCfgdEcTPnY24QYOgLeeWBuTndcT1N2jJAkfd3EaJ+zA==
+X-Received: by 2002:a2e:9015:: with SMTP id h21mr3537646ljg.69.1575970592330; 
+ Tue, 10 Dec 2019 01:36:32 -0800 (PST)
+Received: from [192.168.68.106] ([193.119.54.228])
+ by smtp.gmail.com with ESMTPSA id m21sm1186222lfh.53.2019.12.10.01.36.27
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 10 Dec 2019 01:36:31 -0800 (PST)
+Subject: Re: [PATCH v2 2/4] kasan: use MAX_PTRS_PER_* for early shadow
+To: Daniel Axtens <dja@axtens.net>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, linuxppc-dev@lists.ozlabs.org,
+ linux-s390@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kasan-dev@googlegroups.com, christophe.leroy@c-s.fr,
+ aneesh.kumar@linux.ibm.com
+References: <20191210044714.27265-1-dja@axtens.net>
+ <20191210044714.27265-3-dja@axtens.net>
+From: Balbir Singh <bsingharora@gmail.com>
+Message-ID: <a31459ee-2019-2f7b-0dc1-235374579508@gmail.com>
+Date: Tue, 10 Dec 2019 20:36:24 +1100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20191210044714.27265-3-dja@axtens.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_013612_666594_C2065D18 
-X-CRM114-Status: GOOD (  14.39  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191210_013634_869478_B102A1EE 
+X-CRM114-Status: GOOD (  15.33  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (bsingharora[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -77,7 +97,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,154 +108,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Vignesh Raghavendra <vigneshr@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-AM654 SoC has two Cadence OSPI controller instances under Flash
-subsystem (FSS). Add DT nodes for the same.
 
-Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
----
- arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi       | 38 +++++++++++++++++++
- arch/arm64/boot/dts/ti/k3-am65.dtsi           | 11 +++++-
- .../arm64/boot/dts/ti/k3-am654-base-board.dts | 36 ++++++++++++++++++
- 3 files changed, 83 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi b/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
-index 7bdf5342f58f..aec720f35578 100644
---- a/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
-@@ -95,4 +95,42 @@ adc {
- 			compatible = "ti,am654-adc", "ti,am3359-adc";
- 		};
- 	};
-+
-+	fss: fss@47000000 {
-+		compatible = "simple-bus";
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		ospi0: spi@47040000 {
-+			compatible = "ti,am654-ospi", "cdns,qspi-nor";
-+			reg = <0x0 0x47040000 0x0 0x100>,
-+				<0x5 0x00000000 0x1 0x0000000>;
-+			interrupts = <GIC_SPI 552 IRQ_TYPE_LEVEL_HIGH>;
-+			cdns,fifo-depth = <256>;
-+			cdns,fifo-width = <4>;
-+			cdns,trigger-address = <0x50000000>;
-+			clocks = <&k3_clks 55 5>;
-+			assigned-clocks = <&k3_clks 55 5>;
-+			assigned-clock-parents = <&k3_clks 55 7>;
-+			assigned-clock-rates = <166666666>;
-+			power-domains = <&k3_pds 55 TI_SCI_PD_EXCLUSIVE>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
-+		ospi1: spi@47050000 {
-+			compatible = "ti,am654-ospi", "cdns,qspi-nor";
-+			reg = <0x0 0x47050000 0x0 0x100>,
-+				<0x7 0x00000000 0x1 0x00000000>;
-+			interrupts = <GIC_SPI 553 IRQ_TYPE_LEVEL_HIGH>;
-+			cdns,fifo-depth = <256>;
-+			cdns,fifo-width = <4>;
-+			cdns,trigger-address = <0x58000000>;
-+			clocks = <&k3_clks 55 16>;
-+			power-domains = <&k3_pds 55 TI_SCI_PD_EXCLUSIVE>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+	};
- };
-diff --git a/arch/arm64/boot/dts/ti/k3-am65.dtsi b/arch/arm64/boot/dts/ti/k3-am65.dtsi
-index 6dfccd5d56c8..d38720bc2551 100644
---- a/arch/arm64/boot/dts/ti/k3-am65.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-am65.dtsi
-@@ -80,7 +80,11 @@ cbass_main: interconnect@100000 {
- 			 <0x00 0x42040000 0x00 0x42040000 0x00 0x03ac2400>,
- 			 <0x00 0x45100000 0x00 0x45100000 0x00 0x00c24000>,
- 			 <0x00 0x46000000 0x00 0x46000000 0x00 0x00200000>,
--			 <0x00 0x47000000 0x00 0x47000000 0x00 0x00068400>;
-+			 <0x00 0x47000000 0x00 0x47000000 0x00 0x00068400>,
-+			 <0x00 0x50000000 0x00 0x50000000 0x00 0x8000000>,
-+			 <0x00 0x70000000 0x00 0x70000000 0x00 0x200000>,
-+			 <0x05 0x00000000 0x05 0x00000000 0x01 0x0000000>,
-+			 <0x07 0x00000000 0x07 0x00000000 0x01 0x0000000>;
- 
- 		cbass_mcu: interconnect@28380000 {
- 			compatible = "simple-bus";
-@@ -94,7 +98,10 @@ cbass_mcu: interconnect@28380000 {
- 				 <0x00 0x42040000 0x00 0x42040000 0x00 0x03ac2400>, /* WKUP */
- 				 <0x00 0x45100000 0x00 0x45100000 0x00 0x00c24000>, /* MMRs, remaining NAVSS */
- 				 <0x00 0x46000000 0x00 0x46000000 0x00 0x00200000>, /* CPSW */
--				 <0x00 0x47000000 0x00 0x47000000 0x00 0x00068400>; /* OSPI space 1 */
-+				 <0x00 0x47000000 0x00 0x47000000 0x00 0x00068400>, /* OSPI space 1 */
-+				 <0x00 0x50000000 0x00 0x50000000 0x00 0x8000000>, /*  FSS OSPI0 data region 1 */
-+				 <0x05 0x00000000 0x05 0x00000000 0x01 0x0000000>, /* FSS OSPI0 data region 3*/
-+				 <0x07 0x00000000 0x07 0x00000000 0x01 0x0000000>; /* FSS OSPI1 data region 3*/
- 
- 			cbass_wakeup: interconnect@42040000 {
- 				compatible = "simple-bus";
-diff --git a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-index 8a85b482ad31..94bec7aa9baf 100644
---- a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-+++ b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-@@ -69,6 +69,22 @@ AM65X_WKUP_IOPAD(0x0030, PIN_INPUT, 7) /* (R5) WKUP_GPIO0_24 */
- 			AM65X_WKUP_IOPAD(0x003c, PIN_INPUT, 7) /* (P2) WKUP_GPIO0_27 */
- 		>;
- 	};
-+
-+	mcu_fss0_ospi0_pins_default: mcu-fss0-ospi0-pins_default {
-+		pinctrl-single,pins = <
-+			AM65X_WKUP_IOPAD(0x0000, PIN_OUTPUT, 0) /* (V1) MCU_OSPI0_CLK */
-+			AM65X_WKUP_IOPAD(0x0008, PIN_INPUT, 0)	 /* (U2) MCU_OSPI0_DQS */
-+			AM65X_WKUP_IOPAD(0x000c, PIN_INPUT, 0)  /* (U4) MCU_OSPI0_D0 */
-+			AM65X_WKUP_IOPAD(0x0010, PIN_INPUT, 0)  /* (U5) MCU_OSPI0_D1 */
-+			AM65X_WKUP_IOPAD(0x0014, PIN_INPUT, 0)  /* (T2) MCU_OSPI0_D2 */
-+			AM65X_WKUP_IOPAD(0x0018, PIN_INPUT, 0)  /* (T3) MCU_OSPI0_D3 */
-+			AM65X_WKUP_IOPAD(0x001c, PIN_INPUT, 0)  /* (T4) MCU_OSPI0_D4 */
-+			AM65X_WKUP_IOPAD(0x0020, PIN_INPUT, 0)  /* (T5) MCU_OSPI0_D5 */
-+			AM65X_WKUP_IOPAD(0x0024, PIN_INPUT, 0)  /* (R2) MCU_OSPI0_D6 */
-+			AM65X_WKUP_IOPAD(0x0028, PIN_INPUT, 0)  /* (R3) MCU_OSPI0_D7 */
-+			AM65X_WKUP_IOPAD(0x002c, PIN_OUTPUT, 0) /* (R4) MCU_OSPI0_CSn0 */
-+		>;
-+	};
- };
- 
- &main_pmx0 {
-@@ -339,3 +355,23 @@ &mailbox0_cluster10 {
- &mailbox0_cluster11 {
- 	status = "disabled";
- };
-+
-+&ospi0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&mcu_fss0_ospi0_pins_default>;
-+
-+	flash@0{
-+		compatible = "jedec,spi-nor";
-+		reg = <0x0>;
-+		spi-tx-bus-width = <1>;
-+		spi-rx-bus-width = <8>;
-+		spi-max-frequency = <40000000>;
-+		cdns,tshsl-ns = <60>;
-+		cdns,tsd2d-ns = <60>;
-+		cdns,tchsh-ns = <60>;
-+		cdns,tslch-ns = <60>;
-+		cdns,read-delay = <0>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+	};
-+};
--- 
-2.24.0
+On 10/12/19 3:47 pm, Daniel Axtens wrote:
+> This helps with powerpc support, and should have no effect on
+> anything else.
+> 
+> Suggested-by: Christophe Leroy <christophe.leroy@c-s.fr>
+> Signed-off-by: Daniel Axtens <dja@axtens.net>
 
+If you follow the recommendations by Christophe and I, you don't need this patch
+
+Balbir Singh.
+
+> ---
+>  include/linux/kasan.h | 6 +++---
+>  mm/kasan/init.c       | 6 +++---
+>  2 files changed, 6 insertions(+), 6 deletions(-)
+> 
+> diff --git a/include/linux/kasan.h b/include/linux/kasan.h
+> index e18fe54969e9..d2f2a4ffcb12 100644
+> --- a/include/linux/kasan.h
+> +++ b/include/linux/kasan.h
+> @@ -15,9 +15,9 @@ struct task_struct;
+>  #include <asm/pgtable.h>
+>  
+>  extern unsigned char kasan_early_shadow_page[PAGE_SIZE];
+> -extern pte_t kasan_early_shadow_pte[PTRS_PER_PTE];
+> -extern pmd_t kasan_early_shadow_pmd[PTRS_PER_PMD];
+> -extern pud_t kasan_early_shadow_pud[PTRS_PER_PUD];
+> +extern pte_t kasan_early_shadow_pte[MAX_PTRS_PER_PTE];
+> +extern pmd_t kasan_early_shadow_pmd[MAX_PTRS_PER_PMD];
+> +extern pud_t kasan_early_shadow_pud[MAX_PTRS_PER_PUD];
+>  extern p4d_t kasan_early_shadow_p4d[MAX_PTRS_PER_P4D];
+>  
+>  int kasan_populate_early_shadow(const void *shadow_start,
+> diff --git a/mm/kasan/init.c b/mm/kasan/init.c
+> index ce45c491ebcd..8b54a96d3b3e 100644
+> --- a/mm/kasan/init.c
+> +++ b/mm/kasan/init.c
+> @@ -46,7 +46,7 @@ static inline bool kasan_p4d_table(pgd_t pgd)
+>  }
+>  #endif
+>  #if CONFIG_PGTABLE_LEVELS > 3
+> -pud_t kasan_early_shadow_pud[PTRS_PER_PUD] __page_aligned_bss;
+> +pud_t kasan_early_shadow_pud[MAX_PTRS_PER_PUD] __page_aligned_bss;
+>  static inline bool kasan_pud_table(p4d_t p4d)
+>  {
+>  	return p4d_page(p4d) == virt_to_page(lm_alias(kasan_early_shadow_pud));
+> @@ -58,7 +58,7 @@ static inline bool kasan_pud_table(p4d_t p4d)
+>  }
+>  #endif
+>  #if CONFIG_PGTABLE_LEVELS > 2
+> -pmd_t kasan_early_shadow_pmd[PTRS_PER_PMD] __page_aligned_bss;
+> +pmd_t kasan_early_shadow_pmd[MAX_PTRS_PER_PMD] __page_aligned_bss;
+>  static inline bool kasan_pmd_table(pud_t pud)
+>  {
+>  	return pud_page(pud) == virt_to_page(lm_alias(kasan_early_shadow_pmd));
+> @@ -69,7 +69,7 @@ static inline bool kasan_pmd_table(pud_t pud)
+>  	return false;
+>  }
+>  #endif
+> -pte_t kasan_early_shadow_pte[PTRS_PER_PTE] __page_aligned_bss;
+> +pte_t kasan_early_shadow_pte[MAX_PTRS_PER_PTE] __page_aligned_bss;
+>  
+>  static inline bool kasan_pte_table(pmd_t pmd)
+>  {
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
