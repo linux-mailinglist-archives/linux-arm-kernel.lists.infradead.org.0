@@ -2,86 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BABB118F17
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 18:34:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 799B1118F22
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 18:36:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7VqsiYM5rqDXbIcwXa0jP0gvfhbzwIttRUGFPN3pOzU=; b=q0NYivn45mYtnP
-	qbYQEF1BhKMD88o4/fPHCFz3xelzOFnmgYLjG5uOAiaCttXHyZAu1fun1/VD4mG0ceSF0BrP46j2d
-	jFVGMCBvhSfdMDy6sMxB2vE3XNYA1NEqvf6jLtp+hje8xldluyAxrGlMFjfuX/lQgLHFAtGm6gZ3+
-	+cUZlGjxO4wrsgcp6urBoSeKVwyenQbPDkaOUGFg5hynhVcL5ELsVaC2FLAbZHcouCf+FbNcsx06g
-	1PEeL/iihr9WfpfS0mNf109ORZZvDOtyBb2XnuG+EFeKCpdZXK7v4YNUesBEfh+71TlUlivDLHY3T
-	SEJfEuEYwCe8nsuIVQEA==;
+	List-Owner; bh=kA2WEmquO88FqeS3zJSFl+jyMOBgdAzJ5dzuuT1KSqc=; b=rMob2Vz5fGb0JH
+	DyFe523fSx/OCcFAk/kUh6Jq5CbiA50PBq+iM4oIEh/oj1LdHF/I5xEMLrWu3dtZLwC3zVBthNnmz
+	WJWzhXiWezLsHaCa2wwMBxrMb9yF+NZapngUKuPcMBHp9ZqyDM0UuwApNTJUm2Gw4B32rgEoJbry6
+	7bgL01LNbr43QRGjn1fBPBBT+jBuyVgggzvoq3Ba2YlD4rSXw4rWWg8vUqyd2lFqEVoa3p2p3JtlZ
+	geULx3yJgoSEwyH0HhPLmQfE9zKEMEYH8i4M99vH8cgtF+1fbQo42QXCdmk5ggXB6OZHJiDogCMt0
+	+eypeFXyP0Z2xtxM1bJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iejOh-00013X-Nb; Tue, 10 Dec 2019 17:34:07 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1iejQw-0002pC-AS; Tue, 10 Dec 2019 17:36:26 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iejOQ-0000wc-JY; Tue, 10 Dec 2019 17:33:53 +0000
-Received: by mail-qt1-x844.google.com with SMTP id i12so2344528qtp.6;
- Tue, 10 Dec 2019 09:33:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1iejQl-0002nY-SW
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 17:36:17 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id x123so13674373vsc.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Dec 2019 09:36:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=verdurent-com.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bynIErLNBlB92x5ntLmPPlvU7muN8l4GAC/bEBaefYo=;
- b=O9qgebLMf8mkxzuEi3jcRh8lUhC+or6jckvWtxxYK2f5ovrd3xuQ9vVwXezxLvwNH9
- RVBpaCKIOOxBsH+m1f1FuOMxyPUC7ZsaP71k9sU1iNxpB3IYwkoPuHGWv3XIbfAIxWTr
- PBlnI7vDMXZYgZ45x0SSjQmGzRx/7jMSy8MorehCjY7cPXAkqIlAhTnmD/Qm/pIOZtnr
- qS8OrFzUqTnkSbxW65sm4GLZTFosVbQe2VV0wR4gC3z/IFdcuWN3eDZdlk5wCUp9CmQs
- linjEtobGzCedSTTF9k9ZBkftyg09rJcN8NfwCBbFCIFIgWTqERmFLPGAw+mJXYKUJCf
- esSg==
+ :cc; bh=LF0NUs/gTAbnPh3P7c8Oln5jd1snr+9Etxa+YYjvbv0=;
+ b=dl6WuCKFsUS31yk49Inxc+5dHDgOn52SzlNfT/7dg+1I9qaCNTBCwNCCKAKKv5A7Li
+ Ay1z4j3MBsFKfYnfh6TAdmG7cTRkUf9somwN+9q44jT3L8VZvZFwd9ybu2MrXOlpkDC3
+ IgEEHFW8OOkvaKCoqcV1sdlJeqDsqOUD3JJxESAsE1NzAEN+KIC/kym/qNJlTwFBhEzL
+ 4FF0JAjwEgxbq3VRnWZI8Yid6QLfbMv1+4jxKRe309K7+fJwHG7ODyEeRnGUHZqiM1VX
+ h5+BI8i2v5NH/K5rvCuSU2hBmOW3byyeDXZLSOxPtBwoW5cmbw/WzRHs48GCULg1skiW
+ DNIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=bynIErLNBlB92x5ntLmPPlvU7muN8l4GAC/bEBaefYo=;
- b=RqbT0PNP5d41SPRKfEz8HSrrW/4zCVE03CtT6J8A5YJ6fvAdOiaB9AICjq0qf9FgkR
- XgC9jGVb9jdyLYUQ3VWWHc0rv/y/pMyK8ZSWUtaDaCsqG9/EO0ks6MaV4z1eltiXiif7
- uL8OpuNexh7Qy0/pw+Na6v0Fl/MbDNHJRBHWfzSpJvwW6jBYbICyzsI0nwev7eqDPmvp
- LRH9a9FYTOx6qhFIEYtHeqK0rVa2Zv2/wUo+jLW3pKjSjHY5O2VwRnNxBObrafavHoDv
- q7qfd6bACmBvioNgQtUdcbv+Idr08ba0BIgES69wo5Z/LI49dlq9CQ+j/ey//K78R0NG
- Gwcw==
-X-Gm-Message-State: APjAAAWd4zyUDEx9IJU2QtR208W1/43LF14PHWIVuCbvg3S//ww+AGfl
- fM8cyJunJDSjQ1IlETPXXsXzniEQg/e4eoouwXk=
-X-Google-Smtp-Source: APXvYqyvf2ncQmsBuOdQcfUdcDXLi4gyc8GHOcsttBii5RgFwT7Lu6CMRWNBWntvdYfl3VkyWSrtOunBnuovVP0XaKY=
-X-Received: by 2002:aed:3fb7:: with SMTP id s52mr5722106qth.311.1575999227782; 
- Tue, 10 Dec 2019 09:33:47 -0800 (PST)
+ bh=LF0NUs/gTAbnPh3P7c8Oln5jd1snr+9Etxa+YYjvbv0=;
+ b=E/t3f9l9uUirl3k/uxoA0tuHyWdF0duDTbRJRO3ibC6pNRiw2ky4Oa7dRZLARWOHhD
+ qp7QvERr51XRnAtFj8UZ66WLA+88DM9OcLOHtY0o55KvMymQbhUPWdzO8TJwrg2cbzts
+ uN8+K8Z0fcwmLKsU9AWQ5U7YkS7env973OM1uVsuhDurdREXnGcjJHOEmKlWfZomFYcK
+ bTTdOkhmI2kKVByVUlLoqD/W7JeQtM4AeQUFLy9rUy1t6kJ6vqnfKMfAS2GaiUMWNg1N
+ ExMo71E4GcWeCNsECNtPNlX6B9FIn26pBVLm+npjBAfesEy+P30g3RGyWk0SzWJZV6dJ
+ jmGg==
+X-Gm-Message-State: APjAAAW6zJ2KY9/fP2j23893lTuXoVLz7rPMBiPP5Qe5s+qwwqpUbyw4
+ DOzZAyD/Om+v2JqjRntnVlhWS+N0iwnS9fe8YWs5qA==
+X-Google-Smtp-Source: APXvYqzFz6yoFGEfW03gURGMxzSAkxQY/YFTYE5kw7PmONkGWJkCKN3lGIhJ7kLEYxYUXYGbEDxHiBIBu8xebUTWbew=
+X-Received: by 2002:a67:fb41:: with SMTP id e1mr18789486vsr.159.1575999374197; 
+ Tue, 10 Dec 2019 09:36:14 -0800 (PST)
 MIME-Version: 1.0
-References: <20191028163256.8004-1-robh@kernel.org>
- <20191028163256.8004-12-robh@kernel.org>
- <20191206153633.GA18142@e121166-lin.cambridge.arm.com>
-In-Reply-To: <20191206153633.GA18142@e121166-lin.cambridge.arm.com>
-From: Enric Balletbo Serra <eballetbo@gmail.com>
-Date: Tue, 10 Dec 2019 18:33:36 +0100
-Message-ID: <CAFqH_53nX74vD6-T2ao0x540wq_NbN671H5i2fwbo6NaCgc4KQ@mail.gmail.com>
-Subject: Re: [PATCH v3 11/25] PCI: rockchip: Drop storing driver private
- outbound resource data
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+References: <1573068840-13098-1-git-send-email-agross@kernel.org>
+ <1573068840-13098-2-git-send-email-agross@kernel.org>
+ <CAHLCerN7buq82RmmFkoSi_n8g8sSe9VO2utcXuEGM3xG3HcRTg@mail.gmail.com>
+ <20191108031854.GA12993@hector.lan> <20191210105737.GB228968@gerhold.net>
+In-Reply-To: <20191210105737.GB228968@gerhold.net>
+From: Amit Kucheria <amit.kucheria@verdurent.com>
+Date: Tue, 10 Dec 2019 23:06:03 +0530
+Message-ID: <CAHLCerPs8+Fp1N-x7cQ2ETQ8d+fHN5b08V-jVFyFdQLYDndoBA@mail.gmail.com>
+Subject: Re: [GIT PULL] Qualcomm ARM64 DT updates for 5.5
+To: Stephan Gerhold <stephan@gerhold.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_093350_692483_E5CCA669 
-X-CRM114-Status: GOOD (  24.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191210_093615_961659_DF966D8E 
+X-CRM114-Status: GOOD (  17.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (eballetbo[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,217 +90,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>,
- Karthikeyan Mitran <m.karthikeyan@mobiveil.co.in>, linux-pci@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Toan Le <toan@os.amperecomputing.com>, Will Deacon <will@kernel.org>,
- Rob Herring <robh@kernel.org>, Ryder Lee <ryder.lee@mediatek.com>,
- Michal Simek <michal.simek@xilinx.com>, Christoph Hellwig <hch@infradead.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- bcm-kernel-feedback-list@broadcom.com, Shawn Lin <shawn.lin@rock-chips.com>,
- Ray Jui <rjui@broadcom.com>, Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
- Simon Horman <horms@verge.net.au>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Andrew Murray <andrew.murray@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Scott Branden <sbranden@broadcom.com>, Jingoo Han <jingoohan1@gmail.com>,
- rfi@lists.rocketboards.org, linux-renesas-soc@vger.kernel.org,
- Tom Joseph <tjoseph@cadence.com>, Srinath Mannam <srinath.mannam@broadcom.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Ley Foon Tan <lftan@altera.com>
+Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Andy Gross <agross@kernel.org>, lakml <linux-arm-kernel@lists.infradead.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Lorenzo,
+On Tue, Dec 10, 2019 at 4:27 PM Stephan Gerhold <stephan@gerhold.net> wrote:
+>
+> On Thu, Nov 07, 2019 at 09:18:54PM -0600, Andy Gross wrote:
+> > On Thu, Nov 07, 2019 at 07:36:03PM +0530, Amit Kucheria wrote:
+> > > (Removing arm-soc)
+> > >
+> > > Hi Andy,
+> > >
+> > > On Thu, Nov 7, 2019 at 1:04 AM Andy Gross <agross@kernel.org> wrote:
+> > > >
+> > > > Arnd, Olof, and Kevin,
+> > > >
+> > > > I have one slight faux paux in this pull request.  A drivers: soc change got
+> > > > into my arm64 DTS branch and while it is innocuous, it wasn't easy to fix
+> > > > without messing up a lot of people who depend on the SHAs not changing.  So I'm
+> > > > sorry for this inclusion.  I'll scrub this better next time.
+> > > >
+> > > > Andy
+> > >
+> > > > ----------------------------------------------------------------
+> > > > Amit Kucheria (5):
+> > > >       arm64: dts: qcs404: thermal: Add interrupt support
+> > > >       arm64: dts: msm8998: thermal: Add interrupt support
+> > > >       arm64: dts: msm8996: thermal: Add interrupt support
+> > > >       arm64: dts: sdm845: thermal: Add interrupt support
+> > > >       arm64: dts: msm8916: thermal: Fixup HW ids for cpu sensors
+> > >
+> > > One of my patches to add interrupt support to msm8916 tsens is missing
+> > > here. Specifically this one:
+> > > https://patchwork.kernel.org/patch/11201853/
+> > >
+> > > Will there be a second PR this cycle?
+> >
+> > I can work up another and throw it on top.
+> >
+>
+> FYI, the patch seems to be still missing in 5.5-rc1.
+> tsens now fails to probe on MSM8916 with:
+>
+>   qcom-tsens 4a9000.thermal-sensor: IRQ uplow not found
+>
+> Can you queue up the patch as fix for 5.5?
 
-Many thanks to look at this.
+Indeed. Andy/Bjorn, let me know if you need anything from me to get
+this into -rc2.
 
-Missatge de Lorenzo Pieralisi <lorenzo.pieralisi@arm.com> del dia dv.,
-6 de des. 2019 a les 16:36:
->
-> [+Eric]
->
-> On Mon, Oct 28, 2019 at 11:32:42AM -0500, Rob Herring wrote:
-> > The Rockchip host bridge driver doesn't need to store outboard resources
-> > in its private struct as they are already stored in struct
-> > pci_host_bridge.
-> >
-> > Cc: Shawn Lin <shawn.lin@rock-chips.com>
-> > Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > Cc: Andrew Murray <andrew.murray@arm.com>
-> > Cc: Bjorn Helgaas <bhelgaas@google.com>
-> > Cc: Heiko Stuebner <heiko@sntech.de>
-> > Cc: linux-rockchip@lists.infradead.org
-> > Signed-off-by: Rob Herring <robh@kernel.org>
-> > ---
-> >  drivers/pci/controller/pcie-rockchip-host.c | 54 +++++++++------------
-> >  drivers/pci/controller/pcie-rockchip.h      |  5 --
-> >  2 files changed, 23 insertions(+), 36 deletions(-)
-> >
-> > diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
-> > index 8d2e6f2e141e..f375e55ea02e 100644
-> > --- a/drivers/pci/controller/pcie-rockchip-host.c
-> > +++ b/drivers/pci/controller/pcie-rockchip-host.c
-> > @@ -806,19 +806,28 @@ static int rockchip_pcie_prog_ib_atu(struct rockchip_pcie *rockchip,
-> >  static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
-> >  {
-> >       struct device *dev = rockchip->dev;
-> > +     struct pci_host_bridge *bridge = pci_host_bridge_from_priv(rockchip);
-> > +     struct resource_entry *entry;
-> > +     u64 pci_addr, size;
-> >       int offset;
-> >       int err;
-> >       int reg_no;
-> >
-> >       rockchip_pcie_cfg_configuration_accesses(rockchip,
-> >                                                AXI_WRAPPER_TYPE0_CFG);
-> > +     entry = resource_list_first_type(&bridge->windows, IORESOURCE_MEM);
-> > +     if (!entry)
-> > +             return -ENODEV;
-> > +
-> > +     size = resource_size(entry->res);
-> > +     pci_addr = entry->res->start - entry->offset;
-> > +     rockchip->msg_bus_addr = pci_addr;
-> >
-> > -     for (reg_no = 0; reg_no < (rockchip->mem_size >> 20); reg_no++) {
-> > +     for (reg_no = 0; reg_no < (size >> 20); reg_no++) {
-> >               err = rockchip_pcie_prog_ob_atu(rockchip, reg_no + 1,
-> >                                               AXI_WRAPPER_MEM_WRITE,
-> >                                               20 - 1,
-> > -                                             rockchip->mem_bus_addr +
-> > -                                             (reg_no << 20),
-> > +                                             pci_addr + (reg_no << 20),
-> >                                               0);
-> >               if (err) {
-> >                       dev_err(dev, "program RC mem outbound ATU failed\n");
-> > @@ -832,14 +841,20 @@ static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
-> >               return err;
-> >       }
-> >
-> > -     offset = rockchip->mem_size >> 20;
-> > -     for (reg_no = 0; reg_no < (rockchip->io_size >> 20); reg_no++) {
-> > +     entry = resource_list_first_type(&bridge->windows, IORESOURCE_IO);
-> > +     if (!entry)
-> > +             return -ENODEV;
-> > +
-> > +     size = resource_size(entry->res);
-> > +     pci_addr = entry->res->start - entry->offset;
-> > +
-> > +     offset = size >> 20;
->
-> Just trying to find what triggers:
->
-> https://lore.kernel.org/linux-pci/CAFqH_52BiQJzNEzd_0pB3K+JmzVOVikYQo0xfiC0J-DwiXdtqw@mail.gmail.com/T/#u
->
-> I think this offset calculation changed the behaviour:
->
-> Before:
->
-> > -     offset = rockchip->mem_size >> 20;
->
-> Now:
->
-> > +     offset = size >> 20;
->
-> size must be the IORESOURCE_MEM resource size instead we are using the
-> IORESOURCE_IO size so IIUC the ATU window setup may be compromised.
->
-
-Are you suggesting that something like this [1] fixes the issue?
-
-Indeed,I don't see the warning with this applied and wifi which is
-connected via pcie is working. But I don't get why the offset should
-be from the MEM resource instead of the IO resource.
-
-[1] https://pastebin.com/FBj95gNR
-
-Thanks,
- Enric
-
-> Lorenzo
->
-> > +     for (reg_no = 0; reg_no < (size >> 20); reg_no++) {
-> >               err = rockchip_pcie_prog_ob_atu(rockchip,
-> >                                               reg_no + 1 + offset,
-> >                                               AXI_WRAPPER_IO_WRITE,
-> >                                               20 - 1,
-> > -                                             rockchip->io_bus_addr +
-> > -                                             (reg_no << 20),
-> > +                                             pci_addr + (reg_no << 20),
-> >                                               0);
-> >               if (err) {
-> >                       dev_err(dev, "program RC io outbound ATU failed\n");
-> > @@ -852,8 +867,7 @@ static int rockchip_pcie_cfg_atu(struct rockchip_pcie *rockchip)
-> >                                 AXI_WRAPPER_NOR_MSG,
-> >                                 20 - 1, 0, 0);
-> >
-> > -     rockchip->msg_bus_addr = rockchip->mem_bus_addr +
-> > -                                     ((reg_no + offset) << 20);
-> > +     rockchip->msg_bus_addr += ((reg_no + offset) << 20);
-> >       return err;
-> >  }
-> >
-> > @@ -951,7 +965,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
-> >       struct pci_bus *bus, *child;
-> >       struct pci_host_bridge *bridge;
-> >       struct resource *bus_res;
-> > -     struct resource_entry *win;
-> >       int err;
-> >
-> >       if (!dev->of_node)
-> > @@ -997,27 +1010,6 @@ static int rockchip_pcie_probe(struct platform_device *pdev)
-> >
-> >       rockchip->root_bus_nr = bus_res->start;
-> >
-> > -     /* Get the I/O and memory ranges from DT */
-> > -     resource_list_for_each_entry(win, &bridge->windows) {
-> > -             switch (resource_type(win->res)) {
-> > -             case IORESOURCE_IO:
-> > -                     io = win->res;
-> > -                     io->name = "I/O";
-> > -                     rockchip->io_size = resource_size(io);
-> > -                     rockchip->io_bus_addr = io->start - win->offset;
-> > -                     rockchip->io = io;
-> > -                     break;
-> > -             case IORESOURCE_MEM:
-> > -                     mem = win->res;
-> > -                     mem->name = "MEM";
-> > -                     rockchip->mem_size = resource_size(mem);
-> > -                     rockchip->mem_bus_addr = mem->start - win->offset;
-> > -                     break;
-> > -             default:
-> > -                     continue;
-> > -             }
-> > -     }
-> > -
-> >       err = rockchip_pcie_cfg_atu(rockchip);
-> >       if (err)
-> >               goto err_remove_irq_domain;
-> > diff --git a/drivers/pci/controller/pcie-rockchip.h b/drivers/pci/controller/pcie-rockchip.h
-> > index 8e87a059ce73..bef42a803b56 100644
-> > --- a/drivers/pci/controller/pcie-rockchip.h
-> > +++ b/drivers/pci/controller/pcie-rockchip.h
-> > @@ -304,13 +304,8 @@ struct rockchip_pcie {
-> >       struct  irq_domain *irq_domain;
-> >       int     offset;
-> >       struct pci_bus *root_bus;
-> > -     struct resource *io;
-> > -     phys_addr_t io_bus_addr;
-> > -     u32     io_size;
-> >       void    __iomem *msg_region;
-> > -     u32     mem_size;
-> >       phys_addr_t msg_bus_addr;
-> > -     phys_addr_t mem_bus_addr;
-> >       bool is_rc;
-> >       struct resource *mem_res;
-> >  };
-> > --
-> > 2.20.1
-> >
+Regards,
+Amit
 
 _______________________________________________
 linux-arm-kernel mailing list
