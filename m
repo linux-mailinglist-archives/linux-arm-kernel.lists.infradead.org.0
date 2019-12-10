@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B864117F6A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 06:09:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F7EA117F8B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 06:18:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nf9/R7fc8w/eme2zFX6JXP41uotDDt3PT/acq/9ijXU=; b=ImWDrO/DdHYdih
-	bzh/ZZ9QVh/FpJKmxBDTaWuigwyaiky6sOpbfPQn4HfILo9mRswiHNONuPInByEPIPwl9OtCgInwC
-	AT/XoyrVsLgSgo78FgKPulp9qfDDMGHUkKVfK2QvyqtQ7yGtFD5wdD3NKrhsE6OuHsqpRcj76FCY9
-	wT7Rkqw7O4HWSCz3Cnfg8Bg0qj6XiDYHrlbQwZo/rMpI1prAPQJVv6ENkbOJ0IaDgPlIDXoYANbn1
-	0rvSPBPNCBxwh7qd4AZpbHfnuj/PUqWgEpZ+uS/B1QL0n24Y1uPRVnV1GIxxyIJzsSSIqZqMWXq2B
-	Z/gTli9nPbDp6QoZcsNA==;
+	List-Owner; bh=FFQOEVftEneIUedywLMvbUwlCKkrylWOO1tjuryBerg=; b=qkxmf9Ddb+BqeQ
+	z4CaHFAs0rDmHT639P6Hp40iepabYCQyBLAYXOAIMbemE7QyDA7x8mp5mYER477we5pr11nawj+HE
+	/MuNEpVu+dq+yPrBbGl533uQZBceada8g35Q+yGJmhvTQLw35wRBASaGga3zoQzLm5r1eRBfm50AB
+	E+DujGgv2Xf8bLFZ4DCXcC+W+MkSsWHcd32XTsJlBzk6yPJLDG/895KlYVyQDxSZCf8HKtnXlNp32
+	PbzaVcrUQZeAMTEltYsWbqrrSgfCZbfuyxkZpN5wt078ZEFr1STxjfBATzMkHQGx9uUFgYlaqg2f/
+	hZkYh64PnRM6PvCso4yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieXli-0003uC-A8; Tue, 10 Dec 2019 05:09:06 +0000
+	id 1ieXuv-0000QV-Fq; Tue, 10 Dec 2019 05:18:37 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieXlG-0003gO-6g; Tue, 10 Dec 2019 05:08:39 +0000
-X-UUID: 1fe8733c9a9e44259f53ae94ef459581-20191209
+ id 1ieXuo-0000PZ-1L; Tue, 10 Dec 2019 05:18:31 +0000
+X-UUID: ee288fb1aa5d440f886f8862e024b5e7-20191209
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=AdxFy+I7i2jJN+rN5zx7RX8ff9ZkwUeUYe2wFRnYZxg=; 
- b=ltyfZqajvcF/5KVrFhmpV1GQAmj7Im9w9LIDXZa1p3uJF4xMwCz8j4k7u4bGNfpEZS9E/1zwdUk8DALeXKlVAJQLXXtIdGabqiIh/bdh2ytrFTHOirjU9yyW5wZhEmtl+5CWyhPSQFe+pUnYJJVf2FbJQtcDppypHgvn+wR+G1c=;
-X-UUID: 1fe8733c9a9e44259f53ae94ef459581-20191209
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=U5dn9iiS6Lkny5IY/aF5ZMW3uyg18odEyEQls0K5nvY=; 
+ b=qyd8AjmdbjWrwWMz26LJC1Y0teT8iupvnBZhwcdqezVOyapKuZ6JuPGHwB5lJ6OCUd0ND2MzXmjqO1/6kcSU3SRRJ6PcUlVmsYdtA9CaZw8+Te+6SFz7r7vCKWlNTVGA+RerLfZYQ9QrGmO727OeofMwRSW3msB5i1qnXiESX+U=;
+X-UUID: ee288fb1aa5d440f886f8862e024b5e7-20191209
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <bibby.hsieh@mediatek.com>)
+ (envelope-from <ck.hu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 808245841; Mon, 09 Dec 2019 21:08:35 -0800
+ with ESMTP id 560084488; Mon, 09 Dec 2019 21:18:27 -0800
 Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 9 Dec 2019 21:06:34 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 9 Dec 2019 21:18:41 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
  mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 10 Dec 2019 13:04:33 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 10 Dec 2019 13:05:22 +0800
-From: Bibby Hsieh <bibby.hsieh@mediatek.com>
-To: David Airlie <airlied@linux.ie>, Matthias Brugger
- <matthias.bgg@gmail.com>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>
-Subject: [PATCH v5 7/7] drm/mediatek: apply CMDQ control flow
-Date: Tue, 10 Dec 2019 13:05:26 +0800
-Message-ID: <20191210050526.4437-8-bibby.hsieh@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20191210050526.4437-1-bibby.hsieh@mediatek.com>
-References: <20191210050526.4437-1-bibby.hsieh@mediatek.com>
+ 15.0.1395.4; Tue, 10 Dec 2019 13:17:28 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 10 Dec 2019 13:18:28 +0800
+Message-ID: <1575955103.31262.10.camel@mtksdaap41>
+Subject: Re: [PATCH v2 08/14] soc: mediatek: cmdq: add write_s function
+From: CK Hu <ck.hu@mediatek.com>
+To: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+Date: Tue, 10 Dec 2019 13:18:23 +0800
+In-Reply-To: <1574819937-6246-10-git-send-email-dennis-yc.hsieh@mediatek.com>
+References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1574819937-6246-10-git-send-email-dennis-yc.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: AEEBE7D522D0684789C27698D7E9A0893C29132C1A89D92F4F2366B10B5230492000:8
+X-TM-SNTS-SMTP: 19114C2D8273052152C91583BBC66896FDADFDC8BD073E8DD6DB629FEDD384B22000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_210838_246427_3BB2F091 
-X-CRM114-Status: GOOD (  12.44  )
+X-CRM114-CacheID: sfid-20191209_211830_084553_D1BDB49D 
+X-CRM114-Status: GOOD (  18.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -65,8 +64,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,175 +84,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
- srv_heupstream@mediatek.com, Yongqiang Niu <yongqiang.niu@mediatek.com>,
- linux-kernel@vger.kernel.org, tfiga@chromium.org, CK Hu <ck.hu@mediatek.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, YT Shen <yt.shen@mediatek.com>,
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Unlike other SoCs, MT8183 does not have "shadow"
-registers for performaing an atomic video mode
-set or page flip at vblank/vsync.
+Hi, Dennis:
 
-The CMDQ (Commend Queue) in MT8183 is used to help
-update all relevant display controller registers
-with critical time limation.
+On Wed, 2019-11-27 at 09:58 +0800, Dennis YC Hsieh wrote:
+> add write_s function in cmdq helper functions which
+> writes value contains in internal register to address
+> with large dma access support.
+> 
+> Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> ---
+>  drivers/soc/mediatek/mtk-cmdq-helper.c   | 40 ++++++++++++++++++++++++
+>  include/linux/mailbox/mtk-cmdq-mailbox.h |  2 ++
+>  include/linux/soc/mediatek/mtk-cmdq.h    | 12 +++++++
+>  3 files changed, 54 insertions(+)
+> 
+> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> index 9cc234f08ec5..2edbc0954d97 100644
+> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> @@ -15,11 +15,18 @@
+>  #define CMDQ_EOC_CMD		((u64)((CMDQ_CODE_EOC << CMDQ_OP_CODE_SHIFT)) \
+>  				<< 32 | CMDQ_EOC_IRQ_EN)
+>  #define CMDQ_REG_TYPE		1
+> +#define CMDQ_ADDR_HIGH(addr)	((u32)(((addr) >> 16) & GENMASK(31, 0)))
+> +#define CMDQ_ADDR_LOW_BIT	BIT(1)
+> +#define CMDQ_ADDR_LOW(addr)	((u16)(addr) | CMDQ_ADDR_LOW_BIT)
+>  
+>  struct cmdq_instruction {
+>  	union {
+>  		u32 value;
+>  		u32 mask;
+> +		struct {
+> +			u16 arg_c;
+> +			u16 arg_b;
+> +		};
+>  	};
+>  	union {
+>  		u16 offset;
+> @@ -224,6 +231,39 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_write_mask);
+>  
+> +int cmdq_pkt_write_s(struct cmdq_pkt *pkt, phys_addr_t addr, u16 reg_idx,
+> +		     u32 mask)
+> +{
+> +	struct cmdq_instruction inst = { {0} };
+> +	const u16 dst_reg_idx = CMDQ_SPR_TEMP;
+> +	int err;
+> +
+> +	if (mask != U32_MAX) {
+> +		inst.op = CMDQ_CODE_MASK;
+> +		inst.mask = ~mask;
+> +		err = cmdq_pkt_append_command(pkt, inst);
+> +		if (err < 0)
+> +			return err;
+> +
+> +		inst.mask = 0;
+> +		inst.op = CMDQ_CODE_WRITE_S_MASK;
+> +	} else {
+> +		inst.op = CMDQ_CODE_WRITE_S;
+> +	}
+> +
+> +	err = cmdq_pkt_assign(pkt, dst_reg_idx, CMDQ_ADDR_HIGH(addr));
 
-Signed-off-by: YT Shen <yt.shen@mediatek.com>
-Signed-off-by: CK Hu <ck.hu@mediatek.com>
-Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
-Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
----
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 56 +++++++++++++++++++++----
- 1 file changed, 49 insertions(+), 7 deletions(-)
+You combine assign and write_s in this function, so you always occupy
+register CMDQ_SPR_TEMP for this purpose, client could not use
+CMDQ_SPR_TEMP for other purpose. So I would like you just do write_s in
+this function. So the code in client would be:
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index 5b3e24a7ef6c..ca4fc4735f9a 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -12,6 +12,8 @@
- #include <drm/drm_plane_helper.h>
- #include <drm/drm_probe_helper.h>
- #include <drm/drm_vblank.h>
-+#include <linux/of_address.h>
-+#include <linux/soc/mediatek/mtk-cmdq.h>
- 
- #include "mtk_drm_drv.h"
- #include "mtk_drm_crtc.h"
-@@ -43,6 +45,9 @@ struct mtk_drm_crtc {
- 	bool				pending_planes;
- 	bool				pending_async_planes;
- 
-+	struct cmdq_client		*cmdq_client;
-+	u32				cmdq_event;
-+
- 	void __iomem			*config_regs;
- 	const struct mtk_mmsys_reg_data *mmsys_reg_data;
- 	struct mtk_disp_mutex		*mutex;
-@@ -234,6 +239,13 @@ struct mtk_ddp_comp *mtk_drm_ddp_comp_for_plane(struct drm_crtc *crtc,
- 	return NULL;
- }
- 
-+#if IS_ENABLED(CONFIG_MTK_CMDQ)
-+static void ddp_cmdq_cb(struct cmdq_cb_data data)
-+{
-+	cmdq_pkt_destroy(data.data);
-+}
-+#endif
-+
- static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
- {
- 	struct drm_crtc *crtc = &mtk_crtc->base;
-@@ -375,7 +387,8 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
- 	}
- }
- 
--static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
-+static void mtk_crtc_ddp_config(struct drm_crtc *crtc,
-+				struct cmdq_pkt *cmdq_handle)
- {
- 	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
- 	struct mtk_crtc_state *state = to_mtk_crtc_state(mtk_crtc->base.state);
-@@ -391,7 +404,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
- 	if (state->pending_config) {
- 		mtk_ddp_comp_config(comp, state->pending_width,
- 				    state->pending_height,
--				    state->pending_vrefresh, 0, NULL);
-+				    state->pending_vrefresh, 0,
-+				    cmdq_handle);
- 
- 		state->pending_config = false;
- 	}
-@@ -411,7 +425,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
- 
- 			if (comp)
- 				mtk_ddp_comp_layer_config(comp, local_layer,
--							  plane_state, NULL);
-+							  plane_state,
-+							  cmdq_handle);
- 			plane_state->pending.config = false;
- 		}
- 		mtk_crtc->pending_planes = false;
-@@ -432,7 +447,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
- 
- 			if (comp)
- 				mtk_ddp_comp_layer_config(comp, local_layer,
--							  plane_state, NULL);
-+							  plane_state,
-+							  cmdq_handle);
- 			plane_state->pending.async_config = false;
- 		}
- 		mtk_crtc->pending_async_planes = false;
-@@ -441,6 +457,7 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
- 
- static void mtk_drm_crtc_hw_config(struct mtk_drm_crtc *mtk_crtc)
- {
-+	struct cmdq_pkt *cmdq_handle;
- 	struct drm_crtc *crtc = &mtk_crtc->base;
- 	struct mtk_drm_private *priv = crtc->dev->dev_private;
- 	unsigned int pending_planes = 0, pending_async_planes = 0;
-@@ -469,9 +486,18 @@ static void mtk_drm_crtc_hw_config(struct mtk_drm_crtc *mtk_crtc)
- 
- 	if (priv->data->shadow_register) {
- 		mtk_disp_mutex_acquire(mtk_crtc->mutex);
--		mtk_crtc_ddp_config(crtc);
-+		mtk_crtc_ddp_config(crtc, NULL);
- 		mtk_disp_mutex_release(mtk_crtc->mutex);
- 	}
-+#if IS_ENABLED(CONFIG_MTK_CMDQ)
-+	if (mtk_crtc->cmdq_client) {
-+		cmdq_handle = cmdq_pkt_create(mtk_crtc->cmdq_client, PAGE_SIZE);
-+		cmdq_pkt_clear_event(cmdq_handle, mtk_crtc->cmdq_event);
-+		cmdq_pkt_wfe(cmdq_handle, mtk_crtc->cmdq_event);
-+		mtk_crtc_ddp_config(crtc, cmdq_handle);
-+		cmdq_pkt_flush_async(cmdq_handle, ddp_cmdq_cb, cmdq_handle);
-+	}
-+#endif
- 	mutex_unlock(&mtk_crtc->hw_lock);
- }
- 
-@@ -640,8 +666,8 @@ void mtk_crtc_ddp_irq(struct drm_crtc *crtc, struct mtk_ddp_comp *comp)
- 	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
- 	struct mtk_drm_private *priv = crtc->dev->dev_private;
- 
--	if (!priv->data->shadow_register)
--		mtk_crtc_ddp_config(crtc);
-+	if (!priv->data->shadow_register && !mtk_crtc->cmdq_client)
-+		mtk_crtc_ddp_config(crtc, NULL);
- 
- 	mtk_drm_finish_page_flip(mtk_crtc);
- }
-@@ -784,5 +810,21 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 	priv->num_pipes++;
- 	mutex_init(&mtk_crtc->hw_lock);
- 
-+#if IS_ENABLED(CONFIG_MTK_CMDQ)
-+	mtk_crtc->cmdq_client =
-+			cmdq_mbox_create(dev, drm_crtc_index(&mtk_crtc->base),
-+					 2000);
-+	if (IS_ERR(mtk_crtc->cmdq_client)) {
-+		dev_dbg(dev, "mtk_crtc %d failed to create mailbox client, writing register by CPU now\n",
-+			drm_crtc_index(&mtk_crtc->base));
-+		mtk_crtc->cmdq_client = NULL;
-+	}
-+	ret = of_property_read_u32_index(dev->of_node, "mediatek,gce-events",
-+					 drm_crtc_index(&mtk_crtc->base),
-+					 &mtk_crtc->cmdq_event);
-+	if (ret)
-+		dev_dbg(dev, "mtk_crtc %d failed to get mediatek,gce-events property\n",
-+			drm_crtc_index(&mtk_crtc->base));
-+#endif
- 	return 0;
- }
--- 
-2.18.0
+cmdq_pkt_assign(pkt, high_addr_reg_idx, CMDQ_ADDR_HIGH(addr));
+cmdq_pkt_write_s(pkt, high_addr_reg_idx, CMDQ_ADDR_LOW(addr),
+src_reg_idx, mask);
+
+Let client to decide which register for high address.
+
+Another benefit of not combining instruction is that client driver owner
+would be more clear about which command is in command buffer and it's
+easier for them to debug.
+
+> +	if (err < 0)
+> +		return err;
+> +
+> +	inst.arg_b_t = CMDQ_REG_TYPE;
+> +	inst.sop = dst_reg_idx;
+> +	inst.offset = CMDQ_ADDR_LOW(addr);
+> +	inst.arg_b = reg_idx;
+
+I seems arg_b has a meaningful name.
+
+Regards,
+CK
+
+> +
+> +	return cmdq_pkt_append_command(pkt, inst);
+> +}
+> +EXPORT_SYMBOL(cmdq_pkt_write_s);
+> +
+>  int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
+>  {
+>  	struct cmdq_instruction inst = { {0} };
+> diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
+> index 121c3bb6d3de..8ef87e1bd03b 100644
+> --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
+> +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
+> @@ -59,6 +59,8 @@ enum cmdq_code {
+>  	CMDQ_CODE_JUMP = 0x10,
+>  	CMDQ_CODE_WFE = 0x20,
+>  	CMDQ_CODE_EOC = 0x40,
+> +	CMDQ_CODE_WRITE_S = 0x90,
+> +	CMDQ_CODE_WRITE_S_MASK = 0x91,
+>  	CMDQ_CODE_LOGIC = 0xa0,
+>  };
+>  
+> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> index c66b3a0da2a2..56ff1970197c 100644
+> --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> @@ -106,6 +106,18 @@ int cmdq_pkt_write(struct cmdq_pkt *pkt, u8 subsys, u16 offset, u32 value);
+>  int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
+>  			u16 offset, u32 value, u32 mask);
+>  
+> +/**
+> + * cmdq_pkt_write_s_mask() - append write_s command to the CMDQ packet
+> + * @pkt:	the CMDQ packet
+> + * @addr:	the physical address of register or dma
+> + * @reg_idx:	the CMDQ internal register ID which cache source value
+> + * @mask:	the specified target register mask
+> + *
+> + * Return: 0 for success; else the error code is returned
+> + */
+> +int cmdq_pkt_write_s(struct cmdq_pkt *pkt, phys_addr_t addr, u16 reg_idx,
+> +		     u32 mask);
+> +
+>  /**
+>   * cmdq_pkt_wfe() - append wait for event command to the CMDQ packet
+>   * @pkt:	the CMDQ packet
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
