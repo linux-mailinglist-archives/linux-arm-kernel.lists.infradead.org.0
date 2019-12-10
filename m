@@ -2,57 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D7E611912A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 20:55:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2A1C119131
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 20:56:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=LlPS3eMUWlCAhhXSI8Wy5/Xdn/66MmnBbRcrse+8k8k=; b=b0f
-	fScBTgFZCvaXQM6xxslsrzAnwSeY5noSNpdpfs9aofbEOIMoKPpO1uPTLM/iD1tLcqUxVY3G9mCa8
-	qglXd6kuuQ/nyEzi9+IsDweEYksgf9Y8jriA5V4DEepKxk9Z2AAxReEnNHFnTMz09OMEFFhAaE10T
-	DyCTiSCmOlYVJ2f3Cc6tyDTHzW0c4w/Eh1ILUTkEdJVfbS1vC5ofY8WV/yh9H+3D7eJ1TDqAqODsj
-	DKlPWAjysiSxY6D+2QOH4pkUrqtSSIbwCE8nKhi7Dr7qJsvdSwrpf3Vg/Weq84X8Rk+G39dmj4FPP
-	FAP8mYabiI7lYn+JB4GZSL0eF5GTncA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=eQ9A3Mm4ZAMIWuZ7uTODyjpMw8/AKW9MisaD6hLzqvg=; b=c9RUIhGuQvlyB9hF4TWiyvuoBi
+	34GDU1rBwCg6gM458UEwd0lY+2fodJXEX2cYHkCydaPz02bGj5fDi4PHZwecAQy0Xrb5izUNuaugJ
+	2YVGa1RE79EIbWWqnxkG/kw9YXG42tbQx05qLaAGGjiehhz3QLU5AMSV4iDrKWqIIcbF3d5UuBqip
+	/4RLgvXkM7ZUgrIR29oBRaHNxUsqQEnLQ5TlaZpsXIhhyU53rUOTfjHstWUDfi6ZUGyKshERfEFl7
+	MJHTtal6SDnIKB6CVQWlBdLWJ6B3ur8i+3AgOQqLX0MRarIxViUmjkr2d6yUAU/jspyIi+aAtsZwp
+	exObuLrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ielbv-00008S-PU; Tue, 10 Dec 2019 19:55:55 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
- helo=smtprelay-out1.synopsys.com)
+	id 1ielcJ-0000eG-Sh; Tue, 10 Dec 2019 19:56:19 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ielb2-0006tB-Ic
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 19:55:02 +0000
+ id 1ielb2-0006tE-Nk
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 19:55:05 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 79420C0B80;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 97F0FC0BAB;
  Tue, 10 Dec 2019 19:54:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576007700; bh=M/cwTD418HXN3ZYDrXvm66mfCePGTem77sm0VuzRvnI=;
- h=From:To:Cc:Subject:Date:From;
- b=Uu7ur+tWnfQV7PBhydZCGLaul9JV7TkAP4j6Q7kW6D+wOeM4sfpJedSnSUPmomo4y
- aZAbLKUccL9eBeU7xQhw8LdfRFd5kLM+Vw1b7zp3JPYN12EXU+PRKrpqmFmSDv46dc
- Gkn5ngK7H5Zwmwwq8BlsMfKO9tq9bEllJhLbCFXyWW++bTt7R421HGWXuBQUm39Z9G
- eBcjvwAzzy8DUTyMox9SCXCagWENJJgtx6xN4iuXdlUF56qTi3UUxQQN0FqBiiEXix
- eOT1HvArWJVJJN0XfyvB6HCCuyzFwIoYt9Out3ANHAfVDj770bXsGnYjiZyHZii24G
- FUJH4SsyatvJg==
+ t=1576007700; bh=5mtu7yITJVT2TTodVcu6zBjkvQJQ1FB1PHMfa6Ozs5s=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
+ References:From;
+ b=MvHxEbDwSJShps8YBfW4GhQvh36OTzaWPemnMAmKx15O7V8nGCtzf0jPBfsLlalU8
+ 076s0Qox8nPrCtVsI8ei8gRDv0iBCCaIK4rus23wDUWDAvMHUc9Ky1VZxC5RrTXC3S
+ 09UvFFbsPtHIBPhhS0sVbRro9QFvhlj4sRj96zo50YK+VAcxdx6DIPgtKDI8dQRMSP
+ bKY+ZLEmOx3tmit9oXej3f2Mp5kiA94NpFPBmuLrj5pFZjUU2sdaT4p4lmEcZ1Zoas
+ HAWHW1gDv38X8HsIJ6/BQFBvGvLmRaZq+/xa0Vhq0LwEdOiahqQPRY4w/ABaxmk5n6
+ WoFB6XUVAou3w==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 214B7A005D;
- Tue, 10 Dec 2019 19:54:57 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id 0EAB1A0082;
+ Tue, 10 Dec 2019 19:54:58 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 0/4] net: stmmac: Improvements for -next
-Date: Tue, 10 Dec 2019 20:54:40 +0100
-Message-Id: <cover.1576007149.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next 1/4] net: stmmac: Print more information in DebugFS
+ DMA Capabilities file
+Date: Tue, 10 Dec 2019 20:54:41 +0100
+Message-Id: <cca3045069b6f667e8ff5a812a6ddd9b4565f65d.1576007149.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <cover.1576007149.git.Jose.Abreu@synopsys.com>
+References: <cover.1576007149.git.Jose.Abreu@synopsys.com>
+In-Reply-To: <cover.1576007149.git.Jose.Abreu@synopsys.com>
+References: <cover.1576007149.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_115500_655777_930F7B9B 
-X-CRM114-Status: UNSURE (   8.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191210_115500_865345_F459D4DE 
+X-CRM114-Status: GOOD (  10.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -80,8 +85,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
  Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
- Chen-Yu Tsai <wens@csie.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
  Giuseppe Cavallaro <peppe.cavallaro@st.com>,
  "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
@@ -90,50 +95,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Improvements for stmmac.
+DMA Capabilites have grown but the DebugFS that shows this info has not
+been updated. Lets add the missing information.
 
-1) Adds more information regarding HW Caps in the DebugFS file.
-
-2) Prevents incostant bandwidth because of missing interrupts.
-
-3) Allows interrupts to be independently enabled or disabled so that we don't
-have to schedule both TX and RX NAPIs.
-
-4) Stops using a magic number in coalesce timer re-arm.
+Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
 Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
 Cc: Alexandre Torgue <alexandre.torgue@st.com>
 Cc: Jose Abreu <joabreu@synopsys.com>
 Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Ripard <mripard@kernel.org>
-Cc: Chen-Yu Tsai <wens@csie.org>
 Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
 Cc: netdev@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 31 ++++++++++++++++++++++-
+ 1 file changed, 30 insertions(+), 1 deletion(-)
 
-Jose Abreu (4):
-  net: stmmac: Print more information in DebugFS DMA Capabilities file
-  net: stmmac: Always arm TX Timer at end of transmission start
-  net: stmmac: Let TX and RX interrupts be independently
-    enabled/disabled
-  net: stmmac: Always use TX coalesce timer value when rescheduling
-
- drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c  | 24 +++++-
- drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h   | 11 ++-
- drivers/net/ethernet/stmicro/stmmac/dwmac4_lib.c   | 47 +++++++++--
- drivers/net/ethernet/stmicro/stmmac/dwmac_dma.h    |  6 +-
- drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c    | 22 ++++-
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     |  2 +
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c | 24 +++++-
- drivers/net/ethernet/stmicro/stmmac/hwif.h         |  6 +-
- drivers/net/ethernet/stmicro/stmmac/stmmac.h       |  1 +
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  | 94 +++++++++++++++-------
- 10 files changed, 183 insertions(+), 54 deletions(-)
-
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+index bbc65bd332a8..41d4188fc7bc 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -4238,9 +4238,38 @@ static int stmmac_dma_cap_show(struct seq_file *seq, void *v)
+ 		   priv->dma_cap.number_rx_channel);
+ 	seq_printf(seq, "\tNumber of Additional TX channel: %d\n",
+ 		   priv->dma_cap.number_tx_channel);
++	seq_printf(seq, "\tNumber of Additional RX queues: %d\n",
++		   priv->dma_cap.number_rx_queues);
++	seq_printf(seq, "\tNumber of Additional TX queues: %d\n",
++		   priv->dma_cap.number_tx_queues);
+ 	seq_printf(seq, "\tEnhanced descriptors: %s\n",
+ 		   (priv->dma_cap.enh_desc) ? "Y" : "N");
+-
++	seq_printf(seq, "\tTX Fifo Size: %d\n", priv->dma_cap.tx_fifo_size);
++	seq_printf(seq, "\tRX Fifo Size: %d\n", priv->dma_cap.rx_fifo_size);
++	seq_printf(seq, "\tHash Table Size: %d\n", priv->dma_cap.hash_tb_sz);
++	seq_printf(seq, "\tTSO: %s\n", priv->dma_cap.tsoen ? "Y" : "N");
++	seq_printf(seq, "\tNumber of PPS Outputs: %d\n",
++		   priv->dma_cap.pps_out_num);
++	seq_printf(seq, "\tSafety Features: %s\n",
++		   priv->dma_cap.asp ? "Y" : "N");
++	seq_printf(seq, "\tFlexible RX Parser: %s\n",
++		   priv->dma_cap.frpsel ? "Y" : "N");
++	seq_printf(seq, "\tEnhanced Addressing: %d\n",
++		   priv->dma_cap.addr64);
++	seq_printf(seq, "\tReceive Side Scaling: %s\n",
++		   priv->dma_cap.rssen ? "Y" : "N");
++	seq_printf(seq, "\tVLAN Hash Filtering: %s\n",
++		   priv->dma_cap.vlhash ? "Y" : "N");
++	seq_printf(seq, "\tSplit Header: %s\n",
++		   priv->dma_cap.sphen ? "Y" : "N");
++	seq_printf(seq, "\tVLAN TX Insertion: %s\n",
++		   priv->dma_cap.vlins ? "Y" : "N");
++	seq_printf(seq, "\tDouble VLAN: %s\n",
++		   priv->dma_cap.dvlan ? "Y" : "N");
++	seq_printf(seq, "\tNumber of L3/L4 Filters: %d\n",
++		   priv->dma_cap.l3l4fnum);
++	seq_printf(seq, "\tARP Offloading: %s\n",
++		   priv->dma_cap.arpoffsel ? "Y" : "N");
+ 	return 0;
+ }
+ DEFINE_SHOW_ATTRIBUTE(stmmac_dma_cap);
 -- 
 2.7.4
 
