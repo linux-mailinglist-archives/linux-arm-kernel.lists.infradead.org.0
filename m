@@ -2,27 +2,27 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 367C61189C2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 14:28:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CEA31189C3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 14:28:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pR0Fb2ymfIR2qnluu00H4WVw5efmrtlKFYeZNR3TMlM=; b=GfSVP5v1NCdWHK
-	BBclg4LT0y8RtmlE7Zj6hi6uDYMnfEwZLArxecXDAPJzlqDq3Cp4oyCYMarIvjQSjmbqJH1hQaMJx
-	SnaW7y+rn8QpGly0xI3h3i2LZs20XRKxvyXdUR1euz7Vb534XQW1KoS4BZcoJLUBwOlMuv7XyuK2X
-	trEUY+uV5kOneKSy6wxX/6zU1x/7XURrG4wWDFkqix4Tz9026RASqeajiy+eZb2U6SI7Sb5aiBxyn
-	R1ObVATuel1gx3GmBm0pKqo6l88EOQc2ztHC221zz+5rIxbz/grzTKDxQOQw7UEvuhzMorbC9y4LK
-	jMjhy8cq/K5/u8fJKUug==;
+	List-Owner; bh=M9MzqtaQRP8XyX5lFCGX1QzfmEE8Ove1WgIYI9MHuxY=; b=MuVuiBHy5OA/4u
+	Ej7LfmZzJ1XxpiMyPEtQKgFZ0YJWdhxtCj1d5rwKw59NU4qcfKyxa/+m4dsBDKv0haua+Rsj4t2Qr
+	K0MWZsJi85b7cY8L/KwZxKsiJdxKf3F332qnwE3YWpD4SnRqhKhe0NgO3dsz5DUGSWoZnD72IhQ+c
+	UVddWZm84BcuTdINH/pZprUQ6P20W6Ebq2UNrbTj5aw/I3PjOmNalGAB9dD9helPrJ7o+0CIC+Im2
+	4xuGXFl2BZKHUtjw3bHm0jczQq2Ux0BC7g+lAU6ODte2Ve6+iDG3qxZ/g8FVlZ8E7WQW1hCAXe7u7
+	ikO+MXRf71D08pOnBPKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iefYS-0006eV-Bm; Tue, 10 Dec 2019 13:27:56 +0000
+	id 1iefYg-0006sM-HV; Tue, 10 Dec 2019 13:28:10 +0000
 Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iefVd-0002qd-5u
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 13:25:04 +0000
+ id 1iefVg-000339-NG
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 13:25:06 +0000
 Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -45,39 +45,40 @@ Authentication-Results: esa3.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: vtl0h2bOnzLNBLGr60vwLu0D99FU+fmZ4BZhGZvCFJkDpisYfwZm+AGAUTe4OJvxWVu65D1vUx
- WGX0gYCCANV4ImRaP0pzXOJuHZpanVQCR/AudJ2CFC878XlcYi+HTywhtFVuNyMXoCFU32G5d0
- aC3xdu4UojPwUjjwQZo/1kEXx+tW6MOS+v/eMrbXDqQMDE/S2E5sZmw73p+x5nA0xkPvjjznMR
- YJI9LKzxs9pR3pf6nA3RCcMR5COYC0jPCRRtruiqoAL0QP0gulEYSGtFWIIrWr4gQ4CEbaSht/
- 2KQ=
-X-IronPort-AV: E=Sophos;i="5.69,299,1571727600"; d="scan'208";a="59845989"
+IronPort-SDR: q2BpUB2EIl1tZPtsuj6SU+eCjbhPG/3B/lmKcttQtAuWiuhuQCH6HhHMhpDSRJULQfJQS5YDYY
+ zJ8BSQEkxM6xZXli8OJxsdKn+kmtJf4DypfMlmi7/POLunMRIl8v4XzM6XRi5qW4r0VWhoc3J3
+ toii4YJHdvnF85UkahExZM/qDIH8A0R6r159gpM/7EmJeqk/NifgbC5dRcswQCaQzy0Xqbp6mh
+ 1YVd7ECIpp81afD651zcrOzscZBmHPCF+/nUI/QWvpLEbIbIw73Ax4USNz4wHQsXbhNenutcyA
+ smU=
+X-IronPort-AV: E=Sophos;i="5.69,299,1571727600"; d="scan'208";a="59845999"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 10 Dec 2019 06:24:59 -0700
+ 10 Dec 2019 06:25:03 -0700
 Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 10 Dec 2019 06:24:59 -0700
+ 15.1.1713.5; Tue, 10 Dec 2019 06:25:03 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 10 Dec 2019 06:25:00 -0700
+ 15.1.1713.5 via Frontend Transport; Tue, 10 Dec 2019 06:25:04 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <sam@ravnborg.org>, <bbrezillon@kernel.org>, <airlied@linux.ie>,
  <daniel@ffwll.ch>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>,
  <lee.jones@linaro.org>
-Subject: [PATCH 1/5] drm: atmel-hlcdc: use double rate for pixel clock only if
- supported
-Date: Tue, 10 Dec 2019 15:24:43 +0200
-Message-ID: <1575984287-26787-2-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 2/5] drm: atmel-hlcdc: enable clock before configuring timing
+ engine
+Date: Tue, 10 Dec 2019 15:24:44 +0200
+Message-ID: <1575984287-26787-3-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_052501_251520_0CD9FA1C 
-X-CRM114-Status: GOOD (  10.08  )
+X-CRM114-CacheID: sfid-20191210_052505_042450_D93633B9 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -106,38 +107,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Doubled system clock should be used as pixel cock source only if this
-is supported. This is emphasized by the value of
-atmel_hlcdc_crtc::dc::desc::fixed_clksrc.
+Changing pixel clock source without having this clock source enabled
+will block the timing engine and the next operations after (in this case
+setting ATMEL_HLCDC_CFG(5) settings in atmel_hlcdc_crtc_mode_set_nofb()
+will fail). It is recomended (although in datasheet this is not present)
+to actually enabled pixel clock source before doing any changes on timing
+enginge (only SAM9X60 datasheet specifies that the peripheral clock and
+pixel clock must be enabled before using LCD controller).
 
-Fixes: a6eca2abdd42 ("drm: atmel-hlcdc: add config option for clock selection")
+Fixes: 1a396789f65a ("drm: add Atmel HLCDC Display Controller support")
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-index f2e73e6d46b8..5040ed8d0871 100644
+index 5040ed8d0871..721fa88bf71d 100644
 --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
 +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-@@ -95,14 +95,14 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
- 		     (adj->crtc_hdisplay - 1) |
- 		     ((adj->crtc_vdisplay - 1) << 16));
+@@ -73,7 +73,11 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
+ 	unsigned long prate;
+ 	unsigned int mask = ATMEL_HLCDC_CLKDIV_MASK | ATMEL_HLCDC_CLKPOL;
+ 	unsigned int cfg = 0;
+-	int div;
++	int div, ret;
++
++	ret = clk_prepare_enable(crtc->dc->hlcdc->sys_clk);
++	if (ret)
++		return;
  
-+	prate = clk_get_rate(crtc->dc->hlcdc->sys_clk);
-+	mode_rate = adj->crtc_clock * 1000;
- 	if (!crtc->dc->desc->fixed_clksrc) {
-+		prate *= 2;
- 		cfg |= ATMEL_HLCDC_CLKSEL;
- 		mask |= ATMEL_HLCDC_CLKSEL;
- 	}
+ 	vm.vfront_porch = adj->crtc_vsync_start - adj->crtc_vdisplay;
+ 	vm.vback_porch = adj->crtc_vtotal - adj->crtc_vsync_end;
+@@ -147,6 +151,8 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
+ 			   ATMEL_HLCDC_VSPSU | ATMEL_HLCDC_VSPHO |
+ 			   ATMEL_HLCDC_GUARDTIME_MASK | ATMEL_HLCDC_MODE_MASK,
+ 			   cfg);
++
++	clk_disable_unprepare(crtc->dc->hlcdc->sys_clk);
+ }
  
--	prate = 2 * clk_get_rate(crtc->dc->hlcdc->sys_clk);
--	mode_rate = adj->crtc_clock * 1000;
--
- 	div = DIV_ROUND_UP(prate, mode_rate);
- 	if (div < 2) {
- 		div = 2;
+ static enum drm_mode_status
 -- 
 2.7.4
 
