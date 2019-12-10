@@ -2,144 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14C6F118DA7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 17:35:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E81A4118DB5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 17:37:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Date:Message-ID:
-	From:References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p4GARl0H+js1maYXXrzYuOdnqcrFcpUE76hFq6Qm11Y=; b=fe+qTp7DqOjkuD
-	qRYkS1rGJWj4XG40JtuDPjs1BaospywpukRkIiSmGtwMD6SPf3MmIIGfrsqwi6GMxkmCDlMAqRu09
-	I/WLvxzCNLzI22+xYTjDfZ9EAUcXycU+VK2mHQO6GivtmQdECRoHNXQ4B/3FThzPYe6TeD7Rw/Dfy
-	gQ0pjsy7YUx2CVD2oGYm28h4LXdpTOzdAakkEtipElNcIoW8m5t5tnRSwHl1Ug9Ml4EsUiyq7OFgR
-	wM/2k2QO+O6qaQNAj2jHYmYTG7xtZ+rBebHdESIk0gmv9DG0gWR9c1iO2yJyGolCAvbVnSLWe+2Za
-	lur1SgGxJZVgSXqqwvIA==;
+	List-Owner; bh=4WvSytKOsu0PHFbq0Pn1x06aEDbB1CDiSGE150yW3sE=; b=KBaZA8jvWQZtl6
+	3KnJv/1vIljiVBwE5BFeROAszDm6ZRri0NfBOrJVStwcUXT4/2UmJLvM35FhEK1qTX/2YjNsel8rK
+	C8pBVvPteMBe58mbHxG/7hNRYb048JwVB235aPLFDi/5ELu6MkW6Gg7i5QOS5QLqlxTfw4VyA3mv9
+	e1UnDEYOpcX8h1g78FVSE3lhKTXJgzYx7YAbbHc7qvbxxDjV/1UdqXz4eUlcgYXZ7aympfOdF1Lmu
+	2bP5yMh4IdyoFQI1BGEtp0EzZe8gYoKlkNNvuyWy3b3HTNXKGrYRnMackEGVzR8rwZYtX4+a51sLq
+	6Im7nFzQYSoRnmeTJ86g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieiUA-0001Pz-RU; Tue, 10 Dec 2019 16:35:42 +0000
-Received: from comms.puri.sm ([159.203.221.185])
+	id 1ieiW9-0001uB-QO; Tue, 10 Dec 2019 16:37:45 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieiU2-0001Ol-Ta
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 16:35:36 +0000
-Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id 89DB6E030B;
- Tue, 10 Dec 2019 08:34:57 -0800 (PST)
-Received: from comms.puri.sm ([127.0.0.1])
- by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id UYA3g613ONG3; Tue, 10 Dec 2019 08:34:56 -0800 (PST)
-Subject: Re: [PATCH v8 2/2] drm/bridge: Add NWL MIPI DSI host controller
- support
-To: =?UTF-8?Q?Guido_G=c3=bcnther?= <agx@sigxcpu.org>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Jonas Karlman <jonas@kwiboo.se>, Jernej Skrabec <jernej.skrabec@siol.net>,
- Lee Jones <lee.jones@linaro.org>, dri-devel@lists.freedesktop.org,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, Robert Chiras <robert.chiras@nxp.com>,
- Sam Ravnborg <sam@ravnborg.org>, Arnd Bergmann <arnd@arndb.de>
-References: <cover.1575315215.git.agx@sigxcpu.org>
- <cf9957498dd6d26015d8f39f47189b0df047ffc4.1575315215.git.agx@sigxcpu.org>
-From: Martin Kepplinger <martin.kepplinger@puri.sm>
-Autocrypt: addr=martin.kepplinger@puri.sm; keydata=
- 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
- ekMtxgNYb/8oDry09UFHbGHLsWn6oBo=
-Message-ID: <9a70e57b-b2f5-1ee0-72c0-38556d17303a@puri.sm>
-Date: Tue, 10 Dec 2019 17:34:49 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-In-Reply-To: <cf9957498dd6d26015d8f39f47189b0df047ffc4.1575315215.git.agx@sigxcpu.org>
-Content-Language: en-US
+ id 1ieiW3-0001tz-Hz
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 10 Dec 2019 16:37:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=6db9343SFTPQev9ZuOYUBJv5oalrvJlNCQGZKQHORtI=; b=pdlIzm/BCjs9D/Vy6dzo8dueuw
+ S56p89Q8LD91e41YpaE3KdO0lX9ZeoiDCRgy+9ovsRAXMNMiRsLiCCWXMOPkcpgttys1jaJ6Ts7Z5
+ Sdn3wFXK/JLQ/BHL8thUFLY6IBf0XjLSG17Wp6QtCmfPzQ8FGCIdeJW56gpF6ePMKS1DmTht4NR1c
+ 2WA8PGlh0L5NxrP7avPQiHjACDzqyiTkHBHRPyQ8BjSW6Kj1Zmsy0EEBdxxbivikVHvvcTM3oMhMd
+ 0Pi8YyyCwvcanDqU7yBsH5aYkF87/7RY0DbE7kSum8Zm6YyTB7JuMOa75hAIKxQSJmqIZGi9I8pGL
+ eO571y5A==;
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieiWT-0000Sg-CP
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 16:38:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1575995825;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=6db9343SFTPQev9ZuOYUBJv5oalrvJlNCQGZKQHORtI=;
+ b=UnLytYo+BV7hDKyVGJQk3o3eQTLLD/TLveCylg0zPUp2r+laDt9nNi//3MAbzwLVAZfncD
+ u9azp06+c8ywJY2IQS8smoraHgygMn8vYgdpGCaC1f/+mDj70IolaXklG5Exfm0SnL+d+3
+ pu8ZGBni4BAh4sL7oRP9ideW+UO3blU=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-135-3I51-E7bM8KjPNGQslJ8hQ-1; Tue, 10 Dec 2019 11:37:02 -0500
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 41569107ACC4;
+ Tue, 10 Dec 2019 16:37:00 +0000 (UTC)
+Received: from krava (unknown [10.43.17.106])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id CA314600F0;
+ Tue, 10 Dec 2019 16:36:57 +0000 (UTC)
+Date: Tue, 10 Dec 2019 17:36:55 +0100
+From: Jiri Olsa <jolsa@redhat.com>
+To: John Garry <john.garry@huawei.com>
+Subject: Re: perf top for arm64?
+Message-ID: <20191210163655.GG14123@krava>
+References: <1573045254-39833-1-git-send-email-john.garry@huawei.com>
+ <20191106140036.GA6259@kernel.org>
+ <418023e7-a50d-cb6f-989f-2e6d114ce5d8@huawei.com>
+MIME-Version: 1.0
+In-Reply-To: <418023e7-a50d-cb6f-989f-2e6d114ce5d8@huawei.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-MC-Unique: 3I51-E7bM8KjPNGQslJ8hQ-1
+X-Mimecast-Spam-Score: 0
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_083534_975986_FBB07B67 
-X-CRM114-Status: GOOD (  12.01  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-CRM114-CacheID: sfid-20191210_163805_511909_7A743663 
+X-CRM114-Status: GOOD (  25.41  )
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
+ Content analysis details:   (-2.5 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [159.203.221.185 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,29 +107,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, peterz@infradead.org, Linuxarm <linuxarm@huawei.com>,
+ Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
+ linux-kernel@vger.kernel.org,
+ "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, namhyung@kernel.org,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDIuMTIuMTkgMjA6MzUsIEd1aWRvIEfDvG50aGVyIHdyb3RlOgo+IFRoaXMgYWRkcyBpbml0
-aWFsIHN1cHBvcnQgZm9yIHRoZSBOV0wgTUlQSSBEU0kgSG9zdCBjb250cm9sbGVyIGZvdW5kIG9u
-Cj4gaS5NWDggU29Dcy4KPiAKPiBJdCBhZGRzIHN1cHBvcnQgZm9yIHRoZSBpLk1YOE1RIGJ1dCB0
-aGUgc2FtZSBJUCBjYW4gYmUgZm91bmQgb24KPiBlLmcuIHRoZSBpLk1YOFFYUC4KPiAKPiBJdCBo
-YXMgYmVlbiB0ZXN0ZWQgb24gdGhlIExpYnJlbSA1IGRldmtpdCB1c2luZyBteHNmYi4KPiAKPiBT
-aWduZWQtb2ZmLWJ5OiBHdWlkbyBHw7xudGhlciA8YWd4QHNpZ3hjcHUub3JnPgo+IENvLWRldmVs
-b3BlZC1ieTogUm9iZXJ0IENoaXJhcyA8cm9iZXJ0LmNoaXJhc0BueHAuY29tPgo+IFNpZ25lZC1v
-ZmYtYnk6IFJvYmVydCBDaGlyYXMgPHJvYmVydC5jaGlyYXNAbnhwLmNvbT4KPiBUZXN0ZWQtYnk6
-IFJvYmVydCBDaGlyYXMgPHJvYmVydC5jaGlyYXNAbnhwLmNvbT4KPiAtLS0KClJ1bm5pbmcgb24g
-dGhlIGxpYnJlbTUtZGV2a2l0IHdpdGggc29tZSBvZiB0aGVzZSBtc3hmYiBmaXhlcyBvbiB0b3A6
-Cmh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xpbnV4LWFybS1rZXJuZWwvMTU2NzA3ODIxNS0zMTYw
-MS0xLWdpdC1zZW5kLWVtYWlsLXJvYmVydC5jaGlyYXNAbnhwLmNvbS8KCnRoZSB0cmVlIEknbSBy
-dW5uaW5nLCBzdGFydGluZyB3aXRoIHRoaXMgcGF0Y2g6Cmh0dHBzOi8vc291cmNlLnB1cmkuc20v
-bWFydGluLmtlcHBsaW5nZXIvbGludXgtbmV4dC9jb21taXRzL25leHQtMjAxOTEyMTAvbGlicmVt
-NV9ud2xfbWlwaV9kc2lfdGVzdGluZwpzbzoKClRlc3RlZC1ieTogTWFydGluIEtlcHBsaW5nZXIg
-PG1hcnRpbi5rZXBwbGluZ2VyQHB1cmkuc20+Cgp0aGFua3MsCiAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgIG1hcnRpbgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Tue, Dec 10, 2019 at 04:13:49PM +0000, John Garry wrote:
+> Hi all,
+> 
+> I find to my surprise that "perf top" does not work for arm64:
+> 
+> root@ubuntu:/home/john/linux# tools/perf/perf top
+> Couldn't read the cpuid for this machine: No such file or directory
+
+there was recent change that check on cpuid and quits:
+  608127f73779 perf top: Initialize perf_env->cpuid, needed by the per arch annotation init routine
+
+Arnaldo,
+maybe this should be just a warning/info, because it seems to be related
+to annotations only..?
+
+get_cpuid is defined only for s390/x86/powerpc, so I guess it won't work
+on the rest as well
+
+jirka
+
+> 
+> That's v5.5-rc1 release.
+> 
+> It seems that we are just missing an arm64 version of get_cpuid() - with the
+> patch below, I now get as hoped:
+> 
+>    PerfTop:   32857 irqs/sec  kernel:85.0%  exact:  0.0% lost: 0/0 drop: 0/0
+> [4000Hz cycles],  (all, 64 CPUs)
+> -------------------------------------------------------------------------------
+> 
+>      8.99%  [kernel]          [k] arm_smmu_cmdq_issue_cmdlist
+>      5.80%  [kernel]          [k] __softirqentry_text_start
+>      4.49%  [kernel]          [k] _raw_spin_unlock_irqrestore
+>      3.48%  [kernel]          [k] el0_svc_common.constprop.2
+>      3.37%  [kernel]          [k] _raw_write_lock_irqsave
+>      3.28%  [kernel]          [k] __local_bh_enable_ip
+>      3.05%  [kernel]          [k] __blk_complete_request
+>      2.07%  [kernel]          [k] queued_spin_lock_slowpath
+>      1.93%  [vdso]            [.] 0x0000000000000484
+> 
+> 
+> Was this just missed? Or is there a good reason to omit?
+> 
+> Thanks,
+> John
+> 
+> --->8---
+> 
+> Subject: [PATCH] perf: Add perf top support for arm64
+> 
+> Copied from get_cpuid_str() essentially...
+> 
+> Signed-off-by: John Garry <john.garry@huawei.com>
+> 
+> diff --git a/tools/perf/arch/arm64/util/header.c
+> b/tools/perf/arch/arm64/util/header.c
+> index a32e4b72a98f..ecd1f86e29cc 100644
+> --- a/tools/perf/arch/arm64/util/header.c
+> +++ b/tools/perf/arch/arm64/util/header.c
+> @@ -1,10 +1,12 @@
+>  #include <stdio.h>
+>  #include <stdlib.h>
+>  #include <perf/cpumap.h>
+> +#include <util/cpumap.h>
+>  #include <internal/cpumap.h>
+>  #include <api/fs/fs.h>
+>  #include "debug.h"
+>  #include "header.h"
+> +#include <errno.h>
+> 
+>  #define MIDR "/regs/identification/midr_el1"
+>  #define MIDR_SIZE 19
+> @@ -12,6 +14,59 @@
+>  #define MIDR_VARIANT_SHIFT      20
+>  #define MIDR_VARIANT_MASK       (0xf << MIDR_VARIANT_SHIFT)
+> 
+> +int
+> +get_cpuid(char *buffer, size_t sz)
+> +{
+> +	char *buf = NULL;
+> +	char path[PATH_MAX];
+> +	const char *sysfs = sysfs__mountpoint();
+> +	int cpu;
+> +	u64 midr = 0;
+> +	FILE *file;
+> +
+> +	if (!sysfs)
+> +		return EINVAL;
+> +
+> +	buf = malloc(MIDR_SIZE);
+> +	if (!buf)
+> +		return EINVAL;
+> +
+> +	/* read midr from list of cpus mapped to this pmu */
+> +	for (cpu = 0; cpu < cpu__max_present_cpu(); cpu++) {
+> +		scnprintf(path, sz, "%s/devices/system/cpu/cpu%d"MIDR,
+> +				sysfs, cpu);
+> +
+> +		file = fopen(path, "r");
+> +		if (!file) {
+> +			pr_debug("fopen failed for file %s\n", path);
+> +			continue;
+> +		}
+> +
+> +		if (!fgets(buf, MIDR_SIZE, file)) {
+> +			fclose(file);
+> +			continue;
+> +		}
+> +		fclose(file);
+> +
+> +		/* Ignore/clear Variant[23:20] and
+> +		 * Revision[3:0] of MIDR
+> +		 */
+> +		midr = strtoul(buf, NULL, 16);
+> +		midr &= (~(MIDR_VARIANT_MASK | MIDR_REVISION_MASK));
+> +		scnprintf(buffer, MIDR_SIZE, "0x%016lx", midr);
+> +		/* got midr break loop */
+> +		break;
+> +	}
+> +
+> +	if (!midr) {
+> +		pr_err("failed to get cpuid string\n");
+> +		free(buf);
+> +		return EINVAL;
+> +	}
+> +	return 0;
+> +}
+> +
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
