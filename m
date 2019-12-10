@@ -2,54 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2582F118179
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 08:44:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDFF1118194
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 08:54:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wk+j1t85kgdgQ+/rDP0fe0H1YFtywMD5PxOuMvxDhfw=; b=rBWlsaAmJn7FIv
-	lIkmcuFrReuUI5QeHgVXs32l2z0J3DV8JyTV+14zUUMxOq+be/CQJ7Q/Uzij9UtSr55E8u1bMMQTp
-	KLYC46ZeDqk4TXTkXAjNyrEW4UEKwUnlfWsfOD8zJyr9O7q1QOIX90SDyGbYbyPjqkbsSQu19/9zH
-	uClPOUNvjGsITtPCdxX8IjKmT0bjPegPz51cb4Mmq23hbhnrNanTEDXwRhOu9z64LrCp7rsJyyOck
-	eEFTfvuTHq6J8R/1VpJVKKMjy8qdeXrFaDUxtGCGrY41imTyurVhJOI7C8sAqNMiMa6pcw+/G1nN3
-	y6S1sNt1M9yN0VJxyHeA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tHcdV1VEeYqJ1dC5mxCBIH6179IVK0RG/Ad5eu7s0Mw=; b=nmvFFsd+8nYNBQiOtu/s7oho3
+	4oDNBHFBWFI0IgvotHNOwxX/qHbSYgQM19LPSnZzc322IAK54x6/6GZUDzqEfvkY3RLliwKmgeTiO
+	Vcyr6sgB3vbJK/b7oJRBB4wL1+KaU7Cx9OKIxfL+75KOe6fhq+NdP4yuFH6H2KW+0EVyedvBxKtbI
+	v040OoWtrb09c4AleZbnSpgQfXzGHxEnnltv0fIsMHhpGCgseZzf4hwYzROA5D/NJwGTMPb6H2tVF
+	ygvfgKdRRG/cFLrNaz9ub1k3MvGHOdS6t+dP/od4clNIiLrFPPs8RAqzs4yv0R5jWJgY9YV3sobWN
+	Bt07jdqMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieaBy-0005Yg-MQ; Tue, 10 Dec 2019 07:44:22 +0000
-Received: from coyote.holtmann.net ([212.227.132.17] helo=mail.holtmann.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieaBs-0005YF-HM; Tue, 10 Dec 2019 07:44:18 +0000
-Received: from marcel-macbook.fritz.box (p4FF9F0D1.dip0.t-ipconnect.de
- [79.249.240.209])
- by mail.holtmann.org (Postfix) with ESMTPSA id 9618DCED2A;
- Tue, 10 Dec 2019 08:53:16 +0100 (CET)
-Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3601.0.10\))
-Subject: Re: [PATCH v2 1/1] ARM: dts: rockchip: Add brcm bluetooth for
- rk3288-veyron
-From: Marcel Holtmann <marcel@holtmann.org>
-In-Reply-To: <1788857.Va9C3Z3akr@diego>
-Date: Tue, 10 Dec 2019 08:44:05 +0100
-Message-Id: <B42F187B-C289-4140-841D-D1BF219E72D7@holtmann.org>
-References: <20191127223909.253873-1-abhishekpandit@chromium.org>
- <20191127223909.253873-2-abhishekpandit@chromium.org>
- <61639BAF-5AA0-4264-906F-E24E2A30088D@holtmann.org>
- <1788857.Va9C3Z3akr@diego>
-To: =?utf-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>
-X-Mailer: Apple Mail (2.3601.0.10)
+	id 1ieaLr-0000RR-25; Tue, 10 Dec 2019 07:54:35 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieaLj-0000Qh-0i
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 07:54:28 +0000
+Received: from soja.hi.pengutronix.de ([2001:67c:670:100:3ad5:47ff:feaf:13da])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <o.rempel@pengutronix.de>)
+ id 1ieaLf-0006sK-B5; Tue, 10 Dec 2019 08:54:23 +0100
+Subject: Re: [PATCH v1] ARM i.MX6q: make sure PHY fixup for KSZ9031 is applied
+ only on one board
+To: Andrew Lunn <andrew@lunn.ch>
+References: <20191209084430.11107-1-o.rempel@pengutronix.de>
+ <20191209171508.GD9099@lunn.ch>
+ <20191209173952.qnkzfrbixjgi2jfy@pengutronix.de>
+ <20191209175119.GK9099@lunn.ch>
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+Message-ID: <416bc3a5-a134-f78b-a0d4-bcf1c635acaa@pengutronix.de>
+Date: Tue, 10 Dec 2019 08:54:21 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
+MIME-Version: 1.0
+In-Reply-To: <20191209175119.GK9099@lunn.ch>
+Content-Language: en-US
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:13da
+X-SA-Exim-Mail-From: o.rempel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_234416_725869_212C9257 
-X-CRM114-Status: UNSURE (   7.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191209_235427_059139_C89C65CA 
+X-CRM114-Status: GOOD (  12.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.132.17 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,45 +69,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, linux-rockchip@lists.infradead.org,
- Douglas Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
- BlueZ <linux-bluetooth@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Abhishek Pandit-Subedi <abhishekpandit@chromium.org>,
+Cc: netdev@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Heiko,
 
->>> This enables the Broadcom uart bluetooth driver on uart0 and gives it
->>> ownership of its gpios. In order to use this, you must enable the
->>> following kconfig options:
->>> - CONFIG_BT_HCIUART_BCM
->>> - CONFIG_SERIAL_DEV
->>> 
->>> This is applicable to rk3288-veyron series boards that use the bcm43540
->>> wifi+bt chips.
->>> 
->>> As part of this change, also refactor the pinctrl across the various
->>> boards. All the boards using broadcom bluetooth shouldn't touch the
->>> bt_dev_wake pin.
->> 
->> so have these changes being merged?
+
+On 09.12.19 18:51, Andrew Lunn wrote:
+>> Yes. all of them are broken.
+>> I just trying to not wake all wasp at one time. Most probably there are
+>> board working by accident. So, it will be good to have at least separate
+>> patches for each fixup.
 > 
-> not yet
-> 
-> Doug wanted to give a Reviewed-by, once the underlying bluetooth
-> changes got merged - not sure what the status is though.
+> I agree about a patch per fixup. Can you try to generate such patches?
+> See if there is enough history in git to determine which boards
+> actually need these fixups?
 
-the Bluetooth changes have been merged into net-next.
+Ok,
 
-Regards
+then please ignore this patch. I'll prepare a series of patches related to imx phy fixups.
 
-Marcel
+Kind regards,
+Oleksij Rempel
 
+-- 
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
