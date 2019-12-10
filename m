@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0A3F196799
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 17:45:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9802E1967A9
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Mar 2020 17:46:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Date:
 	From:Message-Id:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=OxFlM/dEyO6h8oho0oyL2snATyieOkKTxDThhE1H5+g=; b=jzP
-	cj/gf81Kla1wQjv/WerzYcacbqaD2dGpHk24En0qNN7Qp+/bPWAXZn8MS6vzmBrY4YfkkTNAvQcFz
-	rqRCL2psyrpC3CzFDHE8Q/uI3wTig6kxfkR/vzF3Oad+F65rPvLisjiVw72T5mLYrUZN94G6aqm9N
-	Hys6I6aV4p07XtlCbDTSKRPTs9ZouX6pVhEjbK0wmMXsZY18u44kDlDY/hrnK+ovseJ/iyKv4sSgJ
-	3sm59Z0J9HsraXyI8qWH5kq2KNNQ5UMweikC03MTKFhrnRMslV8LTy+Yf1l1ZJWYgoKUPzLDu+1JH
-	DfHA/wntg0ry73FajrqvKcI2VqMQlTw==;
+	References:List-Owner; bh=B4e7EIeWjkzklHd/blRRvS5qAkEAMOczLd8Dem1cYFo=; b=mey
+	jObDVHxmyK9ZtmMskHjrcpZTIb2nok3qoeZGGIQDYP+TXquMD7CMWHUu7vxjV3bWwbnbTLeH+vUSZ
+	iwBGA4VeRJWt6R7wisGornaUn18c7VslLWRzdd/+WOpIlZGnNKblbOk1cYCyKEoKIXBpmkW6L5S+m
+	3/LSopcbo5r9mbkBV7vLqOKXCry7UScYEZhIHv342yOMRku5zO1AaTAWHww6wt9Ppt2SNLCCpWNlW
+	yU/Bbk9yzusQbJL2Vduo3M8ZxyrD44HNwwHsXgQz3xmD66I8uYr6vob/Pc2ME3J/e2Z+qcDtKvCgz
+	ZuuPebMpjNAI3VbkK5lWlPqTlMb9bFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIEaV-00063u-2T; Sat, 28 Mar 2020 16:45:35 +0000
+	id 1jIEb0-0006Vo-PI; Sat, 28 Mar 2020 16:46:06 +0000
 Received: from mx.sdf.org ([205.166.94.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIEaJ-00062d-V8
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 16:45:27 +0000
+ id 1jIEah-0006Ox-VM
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Mar 2020 16:45:50 +0000
 Received: from sdf.org (IDENT:lkml@sdf.lonestar.org [205.166.94.16])
- by mx.sdf.org (8.15.2/8.14.5) with ESMTPS id 02SGhObs019651
+ by mx.sdf.org (8.15.2/8.14.5) with ESMTPS id 02SGhMAI029531
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits) verified NO);
- Sat, 28 Mar 2020 16:43:24 GMT
+ Sat, 28 Mar 2020 16:43:22 GMT
 Received: (from lkml@localhost)
- by sdf.org (8.15.2/8.12.8/Submit) id 02SGhOi3016886;
- Sat, 28 Mar 2020 16:43:24 GMT
-Message-Id: <202003281643.02SGhOi3016886@sdf.org>
+ by sdf.org (8.15.2/8.12.8/Submit) id 02SGhMtr029198;
+ Sat, 28 Mar 2020 16:43:22 GMT
+Message-Id: <202003281643.02SGhMtr029198@sdf.org>
 From: George Spelvin <lkml@sdf.org>
-Date: Tue, 10 Dec 2019 07:15:55 -0500
-Subject: [RFC PATCH v1 44/50] arm64: ptr auth: Use get_random_u64 instead of
- _bytes
+Date: Tue, 10 Dec 2019 10:45:27 -0500
+Subject: [RFC PATCH v1 39/50] arm: kexec_file: Avoid temp buffer for RNG seed
 To: linux-kernel@vger.kernel.org, lkml@sdf.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200328_094526_415969_97B930C6 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20200328_094548_102662_E3305CD7 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 2.1 (++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (2.1 points)
@@ -62,151 +62,51 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+ linux-arm-kernel@lists.infradead.org, Hsin-Yi Wang <hsinyi@chromium.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since these are authentication keys, stored in the kernel as long
-as they're important, get_random_u64 is fine.  In particular,
-get_random_bytes has significant per-call overhead, so five
-separate calls is painful.
+After using get_random_bytes(), you want to wipe the buffer
+afterward so the seed remains secret.
 
-This ended up being a more extensive change, since the previous
-code was unrolled and 10 calls to get_random_u64() seems excessive.
-So the code was rearranged to have smaller object size.
-
-Currently fields[i] = { 1 << i, 16 * i } for all i could be computed
-rather than looked up, but the table seemed more future-proof.
-
-For ptrauth_keys_switch(), the MSR instructions must be unrolled and
-are much faster than get_random, so although a similar flags-based
-interface is possible, it's probably not worth it.
+In this case, we can eliminate the temporary buffer entirely.
+fdt_setprop_placeholder returns a pointer to the property value
+buffer, allowing us to put the random data directy in there without
+using a temporary buffer at all.  Faster and less stack all in one.
 
 Signed-off-by: George Spelvin <lkml@sdf.org>
+Cc: Hsin-Yi Wang <hsinyi@chromium.org>
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
 Cc: linux-arm-kernel@lists.infradead.org
 ---
- arch/arm64/include/asm/pointer_auth.h | 20 +++++----
- arch/arm64/kernel/pointer_auth.c      | 62 +++++++++++++++------------
- 2 files changed, 46 insertions(+), 36 deletions(-)
+ arch/arm64/kernel/machine_kexec_file.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
-index 7a24bad1a58b8..b7ef71362a3ae 100644
---- a/arch/arm64/include/asm/pointer_auth.h
-+++ b/arch/arm64/include/asm/pointer_auth.h
-@@ -30,17 +30,19 @@ struct ptrauth_keys {
- 	struct ptrauth_key apga;
- };
+diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
+index 7b08bf9499b6b..69e25bb96e3fb 100644
+--- a/arch/arm64/kernel/machine_kexec_file.c
++++ b/arch/arm64/kernel/machine_kexec_file.c
+@@ -106,12 +106,12 @@ static int setup_dtb(struct kimage *image,
  
-+static inline unsigned long ptrauth_keys_supported(void)
-+{
-+	return (system_supports_address_auth() ?
-+			PR_PAC_APIAKEY | PR_PAC_APIBKEY |
-+			PR_PAC_APDAKEY | PR_PAC_APDBKEY : 0) |
-+	       (system_supports_generic_auth() ? PR_PAC_APGAKEY : 0);
-+}
-+
-+void ptrauth_keys_generate(struct ptrauth_keys *keys, unsigned long flags);
-+
- static inline void ptrauth_keys_init(struct ptrauth_keys *keys)
- {
--	if (system_supports_address_auth()) {
--		get_random_bytes(&keys->apia, sizeof(keys->apia));
--		get_random_bytes(&keys->apib, sizeof(keys->apib));
--		get_random_bytes(&keys->apda, sizeof(keys->apda));
--		get_random_bytes(&keys->apdb, sizeof(keys->apdb));
--	}
--
--	if (system_supports_generic_auth())
--		get_random_bytes(&keys->apga, sizeof(keys->apga));
-+	ptrauth_keys_generate(keys, ptrauth_keys_supported());
- }
- 
- #define __ptrauth_key_install(k, v)				\
-diff --git a/arch/arm64/kernel/pointer_auth.c b/arch/arm64/kernel/pointer_auth.c
-index c507b584259d0..1604ed246128c 100644
---- a/arch/arm64/kernel/pointer_auth.c
-+++ b/arch/arm64/kernel/pointer_auth.c
-@@ -7,40 +7,48 @@
- #include <asm/cpufeature.h>
- #include <asm/pointer_auth.h>
- 
-+/*
-+ * Generating crypto-quality random numbers is expensive enough that
-+ * there's no point unrolling this.
-+ */
-+void ptrauth_keys_generate(struct ptrauth_keys *keys, unsigned long flags)
-+{
-+	size_t i;
-+	static const struct {
-+		/*
-+		 * 8 bits is enough for now.  Compiler will complain
-+		 * if/when we need more.
-+		 */
-+		unsigned char flag, offset;
-+	} fields[] = {
-+		{ PR_PAC_APIAKEY, offsetof(struct ptrauth_keys, apia) },
-+		{ PR_PAC_APIBKEY, offsetof(struct ptrauth_keys, apib) },
-+		{ PR_PAC_APDAKEY, offsetof(struct ptrauth_keys, apda) },
-+		{ PR_PAC_APDBKEY, offsetof(struct ptrauth_keys, apdb) },
-+		{ PR_PAC_APGAKEY, offsetof(struct ptrauth_keys, apga) }
-+	};
-+
-+	for (i = 0; i < ARRAY_SIZE(fields); i++) {
-+		if (flags & fields[i].flag) {
-+			struct ptrauth_key *k = (void *)keys + fields[i].offset;
-+			k->lo = get_random_u64();
-+			k->hi = get_random_u64();
-+		}
-+	}
-+}
-+
- int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
- {
-+	unsigned long supported = ptrauth_keys_supported();
- 	struct ptrauth_keys *keys = &tsk->thread.keys_user;
--	unsigned long addr_key_mask = PR_PAC_APIAKEY | PR_PAC_APIBKEY |
--				      PR_PAC_APDAKEY | PR_PAC_APDBKEY;
--	unsigned long key_mask = addr_key_mask | PR_PAC_APGAKEY;
- 
--	if (!system_supports_address_auth() && !system_supports_generic_auth())
-+	if (!supported || arg & ~supported)
- 		return -EINVAL;
- 
--	if (!arg) {
--		ptrauth_keys_init(keys);
--		ptrauth_keys_switch(keys);
--		return 0;
--	}
--
--	if (arg & ~key_mask)
--		return -EINVAL;
--
--	if (((arg & addr_key_mask) && !system_supports_address_auth()) ||
--	    ((arg & PR_PAC_APGAKEY) && !system_supports_generic_auth()))
--		return -EINVAL;
--
--	if (arg & PR_PAC_APIAKEY)
--		get_random_bytes(&keys->apia, sizeof(keys->apia));
--	if (arg & PR_PAC_APIBKEY)
--		get_random_bytes(&keys->apib, sizeof(keys->apib));
--	if (arg & PR_PAC_APDAKEY)
--		get_random_bytes(&keys->apda, sizeof(keys->apda));
--	if (arg & PR_PAC_APDBKEY)
--		get_random_bytes(&keys->apdb, sizeof(keys->apdb));
--	if (arg & PR_PAC_APGAKEY)
--		get_random_bytes(&keys->apga, sizeof(keys->apga));
-+	if (!arg)
-+		arg = supported;
- 
-+	ptrauth_keys_generate(keys, arg);
- 	ptrauth_keys_switch(keys);
- 
- 	return 0;
+ 	/* add rng-seed */
+ 	if (rng_is_initialized()) {
+-		u8 rng_seed[RNG_SEED_SIZE];
+-		get_random_bytes(rng_seed, RNG_SEED_SIZE);
+-		ret = fdt_setprop(dtb, off, FDT_PROP_RNG_SEED, rng_seed,
+-				RNG_SEED_SIZE);
++		void *rng_seed;
++		ret = fdt_setprop_placeholder(dtb, off, FDT_PROP_RNG_SEED,
++				RNG_SEED_SIZE, &rng_seed);
+ 		if (ret)
+ 			goto out;
++		get_random_bytes(rng_seed, RNG_SEED_SIZE);
+ 	} else {
+ 		pr_notice("RNG is not initialised: omitting \"%s\" property\n",
+ 				FDT_PROP_RNG_SEED);
 -- 
 2.26.0
 
