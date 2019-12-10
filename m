@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DC211187ED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 13:19:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 355E61187F7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 13:21:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VydD3THIHtgQZK1yFfLAQZ0OWAOObu3FyMhhJKdUMxc=; b=NsC0DHyxOe64Y8
-	L2cHjEGPqQghZc3z5XoQPdvgBFYfiKf4X15U3fEm/43kqE3HHGVzqvyPBgU6oR2VlBf7Refxy5RJI
-	qDpNpOxi2FNwPQFUEOBEueykAhf6q0DXh+vbOkEQjGiDs4AghZmIKw2+va/c6W9YNhDcZqIhkuoLA
-	+liTtFecwG2ev00/X87kHvIVHYVPHh3/MIG9uX5TrWTtOmSpfW9uhJdKQOHEl9rEVHq+KJFZoUF4L
-	IWb8HyJmMwksZGr/bzkEDtCJlWJsqBipr26hkyToCHeswvPft40B8RsfqyC4y6MkwvNo1wpPDSozG
-	WIGH7M/8mcJyZiGCAX+A==;
+	List-Owner; bh=7/46vD0cA54piAwoNN4mxVwDA6OlCXw/Tg0kt0xjcuE=; b=ZNUdGL2IMsycvz
+	xchjdF34QcSvEwcj+oroab/USMeh2pBPvIOXH+AKm7cnihgXfvCtBISK7ueQ156PnzWkXZLJ3PIuI
+	Ak+91v+tcDXrIYrbB1Ym0gKqmLf5EsID+icIg72T6CRfSQWFdmIFhO8pH4J4hChj5UVZUwuEU3GVy
+	UQD5j3HTGhiaIxrAwpz7mmlGhXRU9u8R5naIm2ebY0nLZTokROipUsuLO/DOKwZWoicufAKWpzSkY
+	5o6XtTYYI6kLbUUicSz+v7FFkr8E1gDcbRMNGdBSeGc7yVwlu/q+dowl5cwstzsvEKVk67k31IQq7
+	kWUt0LLckp9efstPNnWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieeUP-0001ct-Ly; Tue, 10 Dec 2019 12:19:41 +0000
-Received: from mail-lj1-x22a.google.com ([2a00:1450:4864:20::22a])
+	id 1ieeVk-0003EG-89; Tue, 10 Dec 2019 12:21:04 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieeUG-0001cU-Ct
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 12:19:33 +0000
-Received: by mail-lj1-x22a.google.com with SMTP id z17so19565085ljk.13
+ id 1ieeVb-0003Dj-Hq
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 12:20:56 +0000
+Received: by mail-ua1-x941.google.com with SMTP id q22so3418644uam.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 04:19:31 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Tue, 10 Dec 2019 04:20:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mZr/+6HpSIONAz05WKaRqDWYK5bxI03ma7Dp4hXBj4Y=;
- b=nMUGE9ojdwfx0CYOyowero9vGQjdbfF89mEUclB2RMCR99DXXtRTKdjAe9UYrHCXl+
- yMd9U8yaKIpJHa/pzllZRZm3WZvZeiI/65EemTHFHEqwtx/7QGrssXMNS8tCkhb0qJyy
- SOo72CzR9bc5QntEM6TCY5c84vgzQ2/+JwHwCvlr6Ez8e7P7pfQiNmK/gNeJFso3heF6
- UF3H7O83XG6Yx5JR+uWjto0uCIURwxn4ndrt+ajjQwiy5mifPQ8hhTMCXdBIZatE4sCJ
- H1nANPPM5+5XL0zZi+MTgE28Zkep3Y4GSdRMsEET/FY6wWlfBto/AArG3dJHlBJSr8xY
- gzLg==
+ :cc; bh=+GXCkz0A083CnW2Auy3zOSjwo1M0I1o2oKHeSL9F3ck=;
+ b=KyH5SEa3abXaiGToIC3ZdQDJPjQz7ehlNHa1ewyHS05ElloLcTSWUH0+HHxGSpmv35
+ 0zlWrNuW20o6rR7byo5kwkQGHdbqOsjtqAk71j96a9o1pdQ8ZalAOazL9CCburkIWQg3
+ QHXevI2feYkETt3mDJ6WQBTmj6EZ2zjN/PiP6GJdTkujIbnhuW6Vce6LMqVPlCwGIfJt
+ E8byyo1vnZ1FiSNFISAIBbopXvRnZtV3tsqzNmLNKEya3TQpuE8vYslVfw1+wssR+kLR
+ KxGH+irE1aFPt39ROF9djLlen7lWYJ9nXFdNXFLZ3P2/XbWfdiiOcvpQVQe4QFLEAp4n
+ WPaw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=mZr/+6HpSIONAz05WKaRqDWYK5bxI03ma7Dp4hXBj4Y=;
- b=Y6r12LMpzJszOUh/EjwBrIrv5gwGrIybeFzIyNoURymyodOf9VtjoBMnfSfm8wfVkf
- SVLzONGAHrJIJIZ6Kfdd1/BSeStozFLzNAYcft8aY1ktcV+G23HfnwqK1O0gK8WAQtmT
- gnAxkFIpY2eqBrbWC7Dgx0t0rsHPMnoJ3S98InJkm29q/1N4WuLmawabr+xx2MUwpGKh
- FUZduOu4TmG7Dh2jiUpMO8OFfqdy4TghC/zVcjDT7NROj+Ud/hQQltiCds2miUZuJ+uy
- qLGM8R+sw4wLlnxjpE1ErOXxrdMtcm8Vpgk5VP3c+U3E6ghTuQzsgzlr6ovA5XMA9jO/
- iD1w==
-X-Gm-Message-State: APjAAAXGb1VlpZpxIz6iSBnX2MVfiUnKIxWw2Cq6ozj691QndNvKofhI
- wHtUGjYh9Ga4u7OV6QGni06C5fVJzy0vis2fY+M=
-X-Google-Smtp-Source: APXvYqww+mmoqgVXNIbfcua+rHzXuSgDDkoZs8OWbxCzt9D+f/gPdFAfoXdomnkfJO5QwjZfHhzqKWF9QGxZRgLWfY0=
-X-Received: by 2002:a2e:6e10:: with SMTP id j16mr20421893ljc.202.1575980369201; 
- Tue, 10 Dec 2019 04:19:29 -0800 (PST)
+ bh=+GXCkz0A083CnW2Auy3zOSjwo1M0I1o2oKHeSL9F3ck=;
+ b=rSQIG8cie5KQxsLyM6jLQlleTbemfibj9mrig65pB6HRmSWovBPxRNupDJazSlKJUM
+ HGUlu+Q7pgYohQCBYJiYwTxz2+1pZ8Bzfq9eXZpdtUffZKFc4GTRJPrgHsKQN1ESdjgU
+ 3YYySvzLpx1ViHIwcrZP7lIEoSMDLzcx3AvFj7H5fBbsdcqptsHfA9raAw+NfHNeCFmw
+ gpHPtzYbHgprIMt8bZidugWLZ6Uhg04ldybcwdBiYDktoPvdN0KiB0RbLtl+Zh2TlJcW
+ seYJ7VrfH6/c8vEkVQRtekAmlWrAy60L0LLPo7R4U5pFIYL3h1u3a4SKgTslD9NRIHZK
+ u5Lg==
+X-Gm-Message-State: APjAAAWoUgVIdzB/2D5khCdHM0M+m6C+JxHgoLl4xkFl5kCyvrN0BPGT
+ DSElVpkTYfX+yNQMvcz2sXYvhbDaFByQgsmZ3XsDkA==
+X-Google-Smtp-Source: APXvYqyXodp8MezisX2Ogin4ZbF5PMroS3cE2mukEBRUXULiSnp8AsW1NNU4k9XYdJLiuEsKDM0ea9YUPKV0ekMZ3NQ=
+X-Received: by 2002:ab0:4ea6:: with SMTP id l38mr29080701uah.129.1575980453850; 
+ Tue, 10 Dec 2019 04:20:53 -0800 (PST)
 MIME-Version: 1.0
-References: <08794fde-cdd0-287c-62bf-e2e3b8c80686@gmail.com>
- <20191203101509.wte47aad5k4mqu2y@pengutronix.de>
- <CAOMZO5Cn993y9VeFN6hPO3-cfNnUKiuFd_rqAZ8htz=dO6t6ig@mail.gmail.com>
- <CAOMZO5BniszDhWKkoWY=P62kv9cY160r9P=pjpbSOZasxJvdBA@mail.gmail.com>
- <77fff313-3f40-6b5e-fe30-5a65a189bdff@gmail.com>
-In-Reply-To: <77fff313-3f40-6b5e-fe30-5a65a189bdff@gmail.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Tue, 10 Dec 2019 09:19:18 -0300
-Message-ID: <CAOMZO5Ay6opfhb2cOOFHsbC_kgwreG=0TBAwtwwxM6PVE6tK6w@mail.gmail.com>
-Subject: Re: Issue with imx_get_temp()
-To: Igor Plyatov <plyatov@gmail.com>
+References: <20191113172514.19052-1-ludovic.Barre@st.com>
+ <CAPDyKFooSJUn6UCE6QkFmJOCovm00ehz_nAPbiNQM3AcJT_bJQ@mail.gmail.com>
+ <c8311933-d129-4618-b81b-aa627b7b6de0@st.com>
+ <e80f76d3-0414-4f65-c2eb-4b09aaba3840@st.com>
+In-Reply-To: <e80f76d3-0414-4f65-c2eb-4b09aaba3840@st.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Tue, 10 Dec 2019 13:20:17 +0100
+Message-ID: <CAPDyKFpkkqb3nr1wm7hjMqJCxH7QHArxSm_oWV=M55ga9+0FKw@mail.gmail.com>
+Subject: Re: [Linux-stm32] [PATCH 1/1] mmc: mmci: add threaded irq to abort
+ DPSM of non-functional state
+To: Ludovic BARRE <ludovic.barre@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_041932_459303_D5175BF5 
-X-CRM114-Status: UNSURE (   8.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191210_042055_603237_44B063AF 
+X-CRM114-Status: GOOD (  13.21  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,9 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:22a listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,37 +94,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Amit Kucheria <amit.kucheria@verdurent.com>, linux-pm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Marco Felsch <m.felsch@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Eduardo Valentin <edubezval@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: DTML <devicetree@vger.kernel.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Igor,
+Hi Ludovic,
 
-On Tue, Dec 3, 2019 at 11:36 AM Igor Plyatov <plyatov@gmail.com> wrote:
+On Thu, 28 Nov 2019 at 15:06, Ludovic BARRE <ludovic.barre@st.com> wrote:
 >
-> Dear Fabio,
+> hi Ulf
 >
-> > Does the following patch help?
-> > http://code.bulix.org/l3rz2e-982595
+> just a gentleman ping about this thread.
 >
-> Thank you!
+> small summarize:
+> This patch return an IRQ_WAKE_THREAD only when the variant is
+> busy_timeout capable and a datatimeout occurs on R1B request.
 >
-> Patch applied and will be tested.
->
-> I will inform you about results.
+> So the threaded irq is called only to treat this specific error.
+> Normally, there is no impact on HW flow control or for legacy variants.
 
-How did your tests go?
+Yes, this should work.
+
+>
+> In your previous message, you seem to suggest using threaded irq to
+> manage HW flow control (pio mode). But Like you mention below, the mmci
+> legacy could timing sensitive.
+>
+> For the moment, I prefer to use the threaded irq just to manage this
+> error. If needed, the irq threade could be extended later.
+>
+> What do you think about that?
+
+Yes, that's fine!
+
+I have another minor comment on the code, though, but posting that separately.
+
+[...]
+
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
