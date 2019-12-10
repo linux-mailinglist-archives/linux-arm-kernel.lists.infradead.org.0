@@ -2,73 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0C18119CC9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 23:34:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A52F119C77
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 23:32:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aYLx8uqIUPf5X68J/9piFWqzTjvHd6xQJixWfLwpESM=; b=kkmkr4hwBus1b5
-	ZrzbbIJdQzPzFkUBzSq00izcsI6Jrot/KFvEtnCQOX6rkkHvUCxPjQKbcFMA0+F5CMZzveoD4061e
-	Er2kKtqHlVS120mUexXzx4UnhTFlLZnLCDvMx1oasnP15jChPZNROFlOu5FB5tq1ulajYs/8ZchqC
-	3GR74dJWut/1B6V9UdeqEAHR3jpBEFEKAc75eDVCwA1WccfxCknP/4SFaODuiYgcm2LzPS8zQdokU
-	AAWmSR5OZC9gn8CQeC7fTq7odbSqwn0NDECroyqi+Iyqe1fBZlgIIDUWtzD8IkOTv0cBT/6SNRVyZ
-	eCukdixBYvaPJ4zmhU8Q==;
+	List-Owner; bh=jTA5kkYGosIdSGv8qhjR9/68ubDyfZsDx74IUn5YGdk=; b=ieGmnbJxuXk1tA
+	Q5ZjvnaYK3DJR5r8Ni+jOgZbXZeeAHN2ECaulkiTr7lcGhI/bcpq1BfxWRHKGarw0D0Zg867vqujv
+	XfXsXfRWCeA2XDZov2Sac44GPqLoOvl2vgF2/DPYAeM647Lv+0WY83z06FW+hOV0ZeUqPnUcLMVfJ
+	t1Hqdr9nN7VGLKE9BrOM8ViUXoipPFwonr9DkhVgjUIGSxZnC2ZWiT1RfZaPB5+asQhNXo1KNTFh9
+	QO+BlCw5JEpahgYn+K+Mr9pNK49NvglrewuoEr4NoRbC/Cf13hdh5kinp1br6F15jGFQpoFst4NN0
+	4LNooVrRbRoQpiJ8O1SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieo4y-0005PL-VX; Tue, 10 Dec 2019 22:34:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ieo3s-0004xy-IQ; Tue, 10 Dec 2019 22:32:56 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieo4p-0005Op-82
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 22:33:56 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 32E6B207FF;
- Tue, 10 Dec 2019 22:33:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576017234;
- bh=KTnAKvILCardkPueMWJQLeWMrlCrn0p7kS17N3X9WQg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=bnRWiJPE9uU53+Ni+28LEzIS0ppT1245V1o9MAtkRpZQ5cYM+T7xoUfY6F6wBwFWz
- WsIjnGC3jgfGu8BmZJBYQeDnVUH/RZo017eRWjjXXvTwSGcWXed02GXdVp1ideRRgj
- xurHHvdCmuZCDEfBLh4jD/vWlyrm94c9NnU1Eq/U=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 32/71] arm64: psci: Reduce the waiting time for
- cpu_psci_cpu_kill()
-Date: Tue, 10 Dec 2019 17:32:37 -0500
-Message-Id: <20191210223316.14988-32-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191210223316.14988-1-sashal@kernel.org>
-References: <20191210223316.14988-1-sashal@kernel.org>
+ id 1ieo3h-0004w4-BQ; Tue, 10 Dec 2019 22:32:47 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1ieo3b-0001KO-MX; Tue, 10 Dec 2019 23:32:39 +0100
+From: Heiko Stuebner <heiko@sntech.de>
+To: Abhishek Pandit-Subedi <abhishekpandit@chromium.org>
+Subject: Re: [PATCH v2 1/1] ARM: dts: rockchip: Add brcm bluetooth for
+ rk3288-veyron
+Date: Tue, 10 Dec 2019 23:32:38 +0100
+Message-ID: <4093066.yl7jOIBBcd@phil>
+In-Reply-To: <20191127223909.253873-2-abhishekpandit@chromium.org>
+References: <20191127223909.253873-1-abhishekpandit@chromium.org>
+ <20191127223909.253873-2-abhishekpandit@chromium.org>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_143355_312722_FB74182C 
-X-CRM114-Status: GOOD (  13.70  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191210_143245_536215_A501E849 
+X-CRM114-Status: GOOD (  12.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,81 +58,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org, Yunfeng Ye <yeyunfeng@huawei.com>,
- Sudeep Holla <sudeep.holla@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, dianders@chromium.org,
+ linux-kernel@vger.kernel.org, linux-bluetooth@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yunfeng Ye <yeyunfeng@huawei.com>
+Am Mittwoch, 27. November 2019, 23:39:09 CET schrieb Abhishek Pandit-Subedi:
+> This enables the Broadcom uart bluetooth driver on uart0 and gives it
+> ownership of its gpios. In order to use this, you must enable the
+> following kconfig options:
+> - CONFIG_BT_HCIUART_BCM
+> - CONFIG_SERIAL_DEV
+> 
+> This is applicable to rk3288-veyron series boards that use the bcm43540
+> wifi+bt chips.
+> 
+> As part of this change, also refactor the pinctrl across the various
+> boards. All the boards using broadcom bluetooth shouldn't touch the
+> bt_dev_wake pin.
+> 
+> Signed-off-by: Abhishek Pandit-Subedi <abhishekpandit@chromium.org>
 
-[ Upstream commit bfcef4ab1d7ee8921bc322109b1692036cc6cbe0 ]
+applied for 5.6 with Matthias' Rb.
 
-In cases like suspend-to-disk and suspend-to-ram, a large number of CPU
-cores need to be shut down. At present, the CPU hotplug operation is
-serialised, and the CPU cores can only be shut down one by one. In this
-process, if PSCI affinity_info() does not return LEVEL_OFF quickly,
-cpu_psci_cpu_kill() needs to wait for 10ms. If hundreds of CPU cores
-need to be shut down, it will take a long time.
+Thanks
+Heiko
 
-Normally, there is no need to wait 10ms in cpu_psci_cpu_kill(). So
-change the wait interval from 10 ms to max 1 ms and use usleep_range()
-instead of msleep() for more accurate timer.
-
-In addition, reducing the time interval will increase the messages
-output, so remove the "Retry ..." message, instead, track time and
-output to the the sucessful message.
-
-Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
-Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm64/kernel/psci.c | 15 +++++++++------
- 1 file changed, 9 insertions(+), 6 deletions(-)
-
-diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
-index f67f35b6edb12..e6ad81556575c 100644
---- a/arch/arm64/kernel/psci.c
-+++ b/arch/arm64/kernel/psci.c
-@@ -151,7 +151,8 @@ static void cpu_psci_cpu_die(unsigned int cpu)
- 
- static int cpu_psci_cpu_kill(unsigned int cpu)
- {
--	int err, i;
-+	int err;
-+	unsigned long start, end;
- 
- 	if (!psci_ops.affinity_info)
- 		return 0;
-@@ -161,16 +162,18 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
- 	 * while it is dying. So, try again a few times.
- 	 */
- 
--	for (i = 0; i < 10; i++) {
-+	start = jiffies;
-+	end = start + msecs_to_jiffies(100);
-+	do {
- 		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
- 		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
--			pr_info("CPU%d killed.\n", cpu);
-+			pr_info("CPU%d killed (polled %d ms)\n", cpu,
-+				jiffies_to_msecs(jiffies - start));
- 			return 0;
- 		}
- 
--		msleep(10);
--		pr_info("Retrying again to check for CPU kill\n");
--	}
-+		usleep_range(100, 1000);
-+	} while (time_before(jiffies, end));
- 
- 	pr_warn("CPU%d may not have shut down cleanly (AFFINITY_INFO reports %d)\n",
- 			cpu, err);
--- 
-2.20.1
 
 
 _______________________________________________
