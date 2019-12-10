@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7D2D119F96
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 00:36:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66D01119F97
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 00:36:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WDDBQ5YTXDe8biv3lrOsRacREz2TWcz1PyhKQnrBehA=; b=XCoomztNO/KCi09XscSfknHrLu
-	x9QbYk7pflFqQgP13GSIRqeaHj2B4Lt+UeQneD22deWaqGQbtjyj/csZDqIqhiE+q1cdRBZJNDFk9
-	Wj7u+LsQWshc3wHOA17Kafwd4+vT1eDvGNY3zGO7rD/Bfi1PvnqvP7dg5Jqpvbw6ng6RFmy698THs
-	7zBl0g1mPMGSc8fr0HKG+VE4veJhTu6nh5xe+jltMI1+CgZYmjnsbqeUS1aNNSyMDum9xn9RZGhTF
-	GUQFwkaEFYP2NwFsiVXV2SMp6FBLuZiCieOLiI5vBgpARGYwV0nG2/ZvaofmNxaJ2d4+C8d5znN+6
-	8/YpeE9g==;
+	bh=hQ1KEvv/cK1IuUaDtpB9lNvaj2zFsGjeoXYmPCK/QH4=; b=A0EJvXQPZi4U6cZGLTRx3k+0Q8
+	F/IjsLgAYFbfHpinDhn5/YJy0gdxRRcE/ZQ2gu66FVqBMdtzcjQ2zG6J7IXH/2BXp6VbEdl3B9iMO
+	3UllL96rQKLLTKDmYdreWqmnH3Apd0AB2M1hUVYRhuOSpGeq0t6oL+NzIALp72NKrDkyD3zKSdroV
+	pbPZ47lyYr6o7wTjo36mhqX3G4s4ywX5TzkKfYo64vpCdfvwVHk/LQloJ0M+S9u/bLzv7FniLuOoC
+	t8U8veCeo5e+kXl1OjicplApXXSq26R89cCLdgh43xz8QhWpR+viSSfMrt86XdNVpr/Zqu5+bx5dk
+	uRV0aX3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iep3H-0003mr-HI; Tue, 10 Dec 2019 23:36:23 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1iep3W-00040k-Ot; Tue, 10 Dec 2019 23:36:38 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iep2L-00033t-1a
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 23:35:26 +0000
-Received: by mail-wr1-x442.google.com with SMTP id z3so22054972wru.3
+ id 1iep2N-00036K-1j
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 23:35:28 +0000
+Received: by mail-wr1-x444.google.com with SMTP id d16so21991911wre.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 15:35:24 -0800 (PST)
+ Tue, 10 Dec 2019 15:35:26 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=0AbeKPvputP0xfRxnZJSwgiY+uW70IA/d2ji/wViVTY=;
- b=Zh+f0RshI4RE2pJIb0dWo5JI2bI2b2fH2FCW8o8Jon4Efb4BPKHxohC5VFUN3YJMtn
- u+EAUGXIW+j4U4lNYtKn4yMkaG+mB/YK7beB6COSfoS1HeS/+DJb6uaDuJm7LOkl7067
- tCmuOpB6QnUIZMFbvq1p1oYzvw20u01vOcRUDqtsFKSYURoAfB+lQz9CRpDcFhIxJVBT
- vP3MYgYT+Z63v0+LCSLrqPxG5woVPdSfC25IgTTgbO1gtrljhMaoMKGvOVU2IzP17A0D
- vaixSLO5cOwSDuxO/rb0CiJYa8G6RBwyA/1nAUV3gMEAQu7HMuBQ7FN9hfgR8J+txshk
- PqIg==
+ bh=bz/VQlnz1v5AapS+5W6yfHgO6/GtfVjJurkUMo3Qj+c=;
+ b=XMiO3uR/UOvB8/0OkYcGo0WzEqQthD3zK9VQDl1SgddDSMaOSCwhiuLqBrm5kd2LDq
+ LCvn5ToNLJXtSnw1XMcptooNxusKlNCtsIbm3VgOfIx3Z/Rs6/KdC9/f67x8YYFarIJY
+ 8AiQIBM2DvN+jLNA+pMpQoJ0m6Ruj3zlMSM+/vDcKu25b97NDbSG4TOJp7dqJKkT4I3I
+ Vz7nvOQ8ZvgLcUTFUY4d75hKbjjUYtL1y09agbpek9YYyq9xH/ozZskvupcHIMOCaCRa
+ kjNR1yRdDlw8Ow4sorCd+JTxm0+OAyVPZtRTYaZKE5G1Stk8SEAvE0z/ul2rGUl0uqBF
+ O1og==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=0AbeKPvputP0xfRxnZJSwgiY+uW70IA/d2ji/wViVTY=;
- b=D1urQsHgSBJuVUNUqPqygmmknUIQMEHBw49/8WDmANTs4zOl+1tP6JzaE68BJ92dw2
- AbbdPnijhvX88Mr9wcJ7GsYz0dEclg4w4rZyPIbN+otpyN6JgG+5qzyRQiZcLQ6ELET/
- TH9mJFsy71cDH52foDCGex1Yfh/nYDg/b0RJj8LegTI0alvsGBpLOe+pAWUdAJU0JN/h
- +K8v3SazEhp6lcY4e6pZHPYVMEaDrLF6N4CQq1EIXJCRYNRk9wHrHrs/3WJHltnoUIIE
- np+adrLylITUrjuQuCW84SaoFCMYVjZebpXxWKdYdeg7l+Xm5qTDF90HuIza2ouA1tmU
- 1CfQ==
-X-Gm-Message-State: APjAAAVsbm2GTb64quMq8jEFpFrLYoW+um0QkJ/WhBSvCoD4NGEFy6Ky
- 5w4FaVINmz55Lhez1TGvCFrMwfvn
-X-Google-Smtp-Source: APXvYqyKbyikos4S3uOhLBceay26ubCp5ltWoiUqgKrmVRP4FNig87kIVi6vDTVlQkNOKMn1nBZ/4g==
-X-Received: by 2002:a5d:6b88:: with SMTP id n8mr133901wrx.288.1576020923297;
- Tue, 10 Dec 2019 15:35:23 -0800 (PST)
+ bh=bz/VQlnz1v5AapS+5W6yfHgO6/GtfVjJurkUMo3Qj+c=;
+ b=Gz05ZbaM5uxy/W7pCxLIiLZhIT/0dsMw+GqbT90zHj+cBqL55fEYoUMJnXwXf3uLLb
+ 4sM5+O8XqgMYgvpqbUpKJ7bCV8+9kx190YNabscEpvHIpbeNT869TXXTPMS5CchXb891
+ OkZgONleZI8r133Zrn3rLm42BCyVCaMG2YSPlNaiHpTqx0gyi/vM/o5kkEiKsBA9Gq5k
+ U1r4AjYHACllew/YqX1OqHSV+u3OosXhPn71nabZsBQlj66JIhB92mH4mQeP7ovWWHyx
+ MbLOffYOc9qi1SBQr11cZ7DXMjQ6cTwkHrhMHTK6YwfUj5rNTISGRz6SW8KgE/dK4QQ4
+ RVMg==
+X-Gm-Message-State: APjAAAVwzLi4WCXl4fwcrK2br0ORJZFUK0Wb9ysSyTNnV4AVYj5EOeSl
+ K1oTVtD1G3srq4kddWygoWYYmZxd
+X-Google-Smtp-Source: APXvYqwIv3ahhcp5oA0qthC+C2oIZVWxnkywGlQdzWkYiCi0KoHVvw+BTTuKL/H1IUVai4VYIn36Uw==
+X-Received: by 2002:adf:ebc1:: with SMTP id v1mr85673wrn.351.1576020925098;
+ Tue, 10 Dec 2019 15:35:25 -0800 (PST)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id n16sm59478wro.88.2019.12.10.15.35.21
+ by smtp.gmail.com with ESMTPSA id n16sm59478wro.88.2019.12.10.15.35.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Dec 2019 15:35:22 -0800 (PST)
+ Tue, 10 Dec 2019 15:35:24 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/4] soc: bcm: brcmstb: biuctrl: Update layout for A72 on 7211
-Date: Tue, 10 Dec 2019 15:30:42 -0800
-Message-Id: <20191210233043.15193-4-f.fainelli@gmail.com>
+Subject: [PATCH 4/4] soc: bcm: brcmstb: biuctrl: Update programming for 7211
+Date: Tue, 10 Dec 2019 15:30:43 -0800
+Message-Id: <20191210233043.15193-5-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191210233043.15193-1-f.fainelli@gmail.com>
 References: <20191210233043.15193-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_153525_172428_5C4A4AD0 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20191210_153527_105934_62EF43DE 
+X-CRM114-Status: GOOD (  13.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -107,41 +107,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The BIUCTRL layout is a little different on 7211 which is equipped with
-a Cortex-A72, account for those register offset differences. We will
-match 7211 specifically in a subsequent commit.
+Add a matching entry for 7211 which can be programmed with the same
+BIUCTRL settings as other Brahma-B53 based SoCs. While at it, rename the
+function to include a72 in the name to reflect this applies to both
+types of 64-bit capable CPUs that we support (Brahma-B53 and
+Cortex-A72).
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- drivers/soc/bcm/brcmstb/biuctrl.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ drivers/soc/bcm/brcmstb/biuctrl.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/soc/bcm/brcmstb/biuctrl.c b/drivers/soc/bcm/brcmstb/biuctrl.c
-index 978cf52be664..d766577bc5d4 100644
+index d766577bc5d4..61731e01f94b 100644
 --- a/drivers/soc/bcm/brcmstb/biuctrl.c
 +++ b/drivers/soc/bcm/brcmstb/biuctrl.c
-@@ -76,6 +76,12 @@ static const int b53_cpubiuctrl_regs[] = {
- 	[CPU_WRITEBACK_CTRL_REG] = 0x22c,
+@@ -107,7 +107,8 @@ static int __init mcp_write_pairing_set(void)
+ 	return 0;
+ }
+ 
+-static const u32 b53_mach_compat[] = {
++static const u32 a72_b53_mach_compat[] = {
++	0x7211,
+ 	0x7216,
+ 	0x7255,
+ 	0x7260,
+@@ -116,19 +117,19 @@ static const u32 b53_mach_compat[] = {
+ 	0x7278,
  };
  
-+static const int a72_cpubiuctrl_regs[] = {
-+	[CPU_CREDIT_REG] = 0x18,
-+	[CPU_MCP_FLOW_REG] = 0x1c,
-+	[CPU_WRITEBACK_CTRL_REG] = 0x20,
-+};
-+
- #define NUM_CPU_BIUCTRL_REGS	3
+-static void __init mcp_b53_set(void)
++static void __init mcp_a72_b53_set(void)
+ {
+ 	unsigned int i;
+ 	u32 reg;
  
- static int __init mcp_write_pairing_set(void)
-@@ -183,6 +189,8 @@ static int __init setup_hifcpubiuctrl_regs(struct device_node *np)
- 		cpubiuctrl_regs = b15_cpubiuctrl_regs;
- 	else if (of_device_is_compatible(cpu_dn, "brcm,brahma-b53"))
- 		cpubiuctrl_regs = b53_cpubiuctrl_regs;
-+	else if (of_device_is_compatible(cpu_dn, "arm,cortex-a72"))
-+		cpubiuctrl_regs = a72_cpubiuctrl_regs;
- 	else {
- 		pr_err("unsupported CPU\n");
- 		ret = -EINVAL;
+ 	reg = brcmstb_get_family_id();
+ 
+-	for (i = 0; i < ARRAY_SIZE(b53_mach_compat); i++) {
+-		if (BRCM_ID(reg) == b53_mach_compat[i])
++	for (i = 0; i < ARRAY_SIZE(a72_b53_mach_compat); i++) {
++		if (BRCM_ID(reg) == a72_b53_mach_compat[i])
+ 			break;
+ 	}
+ 
+-	if (i == ARRAY_SIZE(b53_mach_compat))
++	if (i == ARRAY_SIZE(a72_b53_mach_compat))
+ 		return;
+ 
+ 	/* Set all 3 MCP interfaces to 8 credits */
+@@ -261,7 +262,7 @@ static int __init brcmstb_biuctrl_init(void)
+ 		return ret;
+ 	}
+ 
+-	mcp_b53_set();
++	mcp_a72_b53_set();
+ #ifdef CONFIG_PM_SLEEP
+ 	register_syscore_ops(&brcmstb_cpu_credit_syscore_ops);
+ #endif
 -- 
 2.17.1
 
