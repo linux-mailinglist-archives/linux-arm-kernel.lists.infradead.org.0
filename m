@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2510311858C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 11:51:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9356C1185A2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 11:58:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=W5vo4u2aimfjycLoMjbOeLEGmEL1vE6aBgGayUtZbYA=; b=CtcOX5ah8On7i7
-	L4obOe+VoxOxtCK/ciPUhfSS+fhXLU9pEHxK01OVqGka2qKnXzfDGBMSpET3UR3T8mIE6q7uxtIBd
-	zTerd6gD+Dkr0WggXUI1iarXVR8kWIsliIeervbTN9vZCtBJvjyqzKP1uLmq/uCYWrRlq/zrDF+3p
-	Cb/QGL+JGguyQu/dc1tfD0dM+mwo3D1l1vmgXGxlqJyGXoZEzhH4jd2EO/7RwoUxa/5ZkLxMUryLA
-	EHy0eZ/3osbIv4Jb9LW/MHmc/omVjgnSmvw9AElJRnNT4McGN6/4RCXSR23KGXRBBz5aLliJGSNtO
-	eX+6/sWvcyfe+EShg3zA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/x2YVmv5O+T+fRFGcqt3JGaa4Y/VX8wUH68fJah3flQ=; b=IJFGNwUjwaOBy/
+	EmY57sv5pIuncjEnU9RTgoCy3sLgXDJPowR53ojMQVZZ9AegsWCcFhfqe++xHCAEuVM5hoRh2yzon
+	fadsQdLfsMnwXH4mTD1iLOz/tFtCowRif402z24NUH9+o2UhnwhBakF4pmEO/WKEJcnCg+S8b7Ksm
+	rD1iI97pPp9hxTbfpS/AOs2/G6I9zN3FYNKWqYZsljZtdpNOGUpNvZBfsqK7ibGlTgPg0YhmIyJ8u
+	zPM+H3zyzmqI1J2flzZN6UMYTPJyoQAbLmNuK3yibMKR3AKh4lqvsjoJ/2S0mUnfDWpPRt6K8DE+K
+	JOvhYWX1FU0vA2wWlQ/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ied77-0006lL-Ih; Tue, 10 Dec 2019 10:51:33 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iedD8-0000RA-Mz; Tue, 10 Dec 2019 10:57:46 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ied70-0006jC-AG
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 10:51:27 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 52738FFCA710602A1368;
- Tue, 10 Dec 2019 18:51:14 +0800 (CST)
-Received: from linux-ibm.site (10.175.102.37) by
- DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
- 14.3.439.0; Tue, 10 Dec 2019 18:51:05 +0800
-From: Hanjun Guo <guohanjun@huawei.com>
-To: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH] perf/smmuv3: Remove the leftover put_cpu() in error path
-Date: Tue, 10 Dec 2019 18:46:24 +0800
-Message-ID: <1575974784-55046-1-git-send-email-guohanjun@huawei.com>
-X-Mailer: git-send-email 1.7.12.4
+ id 1iedCz-0000Pc-9p
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 10:57:39 +0000
+Received: from localhost (136.112.broadband15.iol.cz [90.182.112.136])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id EF415100016;
+ Tue, 10 Dec 2019 10:57:21 +0000 (UTC)
+Date: Tue, 10 Dec 2019 11:57:19 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Ingo van Lil <inguin@gmx.de>
+Subject: Re: [PATCH] ARM: dts: at91: Reenable UART TX pull-ups
+Message-ID: <20191210105719.GF1463890@piout.net>
+References: <20191203142147.875227-1-inguin@gmx.de>
 MIME-Version: 1.0
-X-Originating-IP: [10.175.102.37]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20191203142147.875227-1-inguin@gmx.de>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_025126_551290_A2C526E5 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191210_025737_478008_E5D105A6 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,39 +60,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Hanjun Guo <guohanjun@huawei.com>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org,
- Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>,
- linux-kernel@vger.kernel.org
+Cc: Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Peter Rosin <peda@axentia.se>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In smmu_pmu_probe(), there is put_cpu() in the error path,
-which is wrong because we use raw_smp_processor_id() to
-get the cpu ID, not get_cpu(), remove it.
+On 03/12/2019 15:21:47+0100, Ingo van Lil wrote:
+> Pull-ups for SAM9 UART/USART TX lines were disabled in a previous
+> commit. However, several chips in the SAM9 family require pull-ups to
+> prevent the TX lines from falling (and causing an endless break
+> condition) when the transceiver is disabled.
+> 
+> From the SAM9G20 datasheet, 32.5.1: "To prevent the TXD line from
+> falling when the USART is disabled, the use of an internal pull up
+> is mandatory.". This commit reenables the pull-ups for all chips having
+> that sentence in their datasheets.
+> 
+> Fixes: 5e04822f7db5 ("ARM: dts: at91: fixes uart pinctrl, set pullup on rx, clear pullup on tx")
+> Signed-off-by: Ingo van Lil <inguin@gmx.de>
+> Cc: Peter Rosin <peda@axentia.se>
+> ---
+>  arch/arm/boot/dts/at91sam9260.dtsi | 12 ++++++------
+>  arch/arm/boot/dts/at91sam9261.dtsi |  6 +++---
+>  arch/arm/boot/dts/at91sam9263.dtsi |  6 +++---
+>  arch/arm/boot/dts/at91sam9g45.dtsi |  8 ++++----
+>  arch/arm/boot/dts/at91sam9rl.dtsi  |  8 ++++----
+>  5 files changed, 20 insertions(+), 20 deletions(-)
+> 
+Applied, thanks.
 
-Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
----
- drivers/perf/arm_smmuv3_pmu.c | 1 -
- 1 file changed, 1 deletion(-)
-
-diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
-index 773128f..fd1d46a 100644
---- a/drivers/perf/arm_smmuv3_pmu.c
-+++ b/drivers/perf/arm_smmuv3_pmu.c
-@@ -834,7 +834,6 @@ static int smmu_pmu_probe(struct platform_device *pdev)
- out_unregister:
- 	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &smmu_pmu->node);
- out_cpuhp_err:
--	put_cpu();
- 	return err;
- }
- 
 -- 
-1.7.12.4
-
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
