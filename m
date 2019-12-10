@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 799B1118F22
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 18:36:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B96F6118F2C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 18:41:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kA2WEmquO88FqeS3zJSFl+jyMOBgdAzJ5dzuuT1KSqc=; b=rMob2Vz5fGb0JH
-	DyFe523fSx/OCcFAk/kUh6Jq5CbiA50PBq+iM4oIEh/oj1LdHF/I5xEMLrWu3dtZLwC3zVBthNnmz
-	WJWzhXiWezLsHaCa2wwMBxrMb9yF+NZapngUKuPcMBHp9ZqyDM0UuwApNTJUm2Gw4B32rgEoJbry6
-	7bgL01LNbr43QRGjn1fBPBBT+jBuyVgggzvoq3Ba2YlD4rSXw4rWWg8vUqyd2lFqEVoa3p2p3JtlZ
-	geULx3yJgoSEwyH0HhPLmQfE9zKEMEYH8i4M99vH8cgtF+1fbQo42QXCdmk5ggXB6OZHJiDogCMt0
-	+eypeFXyP0Z2xtxM1bJA==;
+	List-Owner; bh=uXtEBVwUPqfy3O15aq2Kt18aBYFQP3QQFX2JF/bBEPw=; b=F7Iuby6DIWnN46
+	SSSUcFPyAAorJgD6hbx9CD0FMFIlG9KQ2QNNNR3gPZS4wLpzbAvEr+WhFTb3Hx+gW352xADD8awTH
+	HkaofLGx9gkO0Hlzfh8twr2EexDgAwzVIGGOFnzDR3KDsx8SzdcYYwNQ2IrfLX6stjkihuXdN6w0Q
+	XA0UDbo1BaIdFnwYhbVKl7wc7yXV9ks0C9ASAWyYyYwrNLf/x+Q7uMW3f6kQUvJ6UThYEWCTNv4vF
+	zUJ6rI0uuyrqAwurF51nF5+li79hYPxHqMgio9ShVL50/pOvdWUPpocUgwcXqIAtUuOJEyWl0EHje
+	+Ka3spVfjl4bF6fj2ftg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iejQw-0002pC-AS; Tue, 10 Dec 2019 17:36:26 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1iejVJ-0004m7-Oi; Tue, 10 Dec 2019 17:40:57 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iejQl-0002nY-SW
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 17:36:17 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id x123so13674373vsc.2
+ id 1iejVA-0004lO-RL
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 17:40:50 +0000
+Received: from mail-qt1-f173.google.com (mail-qt1-f173.google.com
+ [209.85.160.173])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F259C207FF
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 09:36:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=verdurent-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LF0NUs/gTAbnPh3P7c8Oln5jd1snr+9Etxa+YYjvbv0=;
- b=dl6WuCKFsUS31yk49Inxc+5dHDgOn52SzlNfT/7dg+1I9qaCNTBCwNCCKAKKv5A7Li
- Ay1z4j3MBsFKfYnfh6TAdmG7cTRkUf9somwN+9q44jT3L8VZvZFwd9ybu2MrXOlpkDC3
- IgEEHFW8OOkvaKCoqcV1sdlJeqDsqOUD3JJxESAsE1NzAEN+KIC/kym/qNJlTwFBhEzL
- 4FF0JAjwEgxbq3VRnWZI8Yid6QLfbMv1+4jxKRe309K7+fJwHG7ODyEeRnGUHZqiM1VX
- h5+BI8i2v5NH/K5rvCuSU2hBmOW3byyeDXZLSOxPtBwoW5cmbw/WzRHs48GCULg1skiW
- DNIg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=LF0NUs/gTAbnPh3P7c8Oln5jd1snr+9Etxa+YYjvbv0=;
- b=E/t3f9l9uUirl3k/uxoA0tuHyWdF0duDTbRJRO3ibC6pNRiw2ky4Oa7dRZLARWOHhD
- qp7QvERr51XRnAtFj8UZ66WLA+88DM9OcLOHtY0o55KvMymQbhUPWdzO8TJwrg2cbzts
- uN8+K8Z0fcwmLKsU9AWQ5U7YkS7env973OM1uVsuhDurdREXnGcjJHOEmKlWfZomFYcK
- bTTdOkhmI2kKVByVUlLoqD/W7JeQtM4AeQUFLy9rUy1t6kJ6vqnfKMfAS2GaiUMWNg1N
- ExMo71E4GcWeCNsECNtPNlX6B9FIn26pBVLm+npjBAfesEy+P30g3RGyWk0SzWJZV6dJ
- jmGg==
-X-Gm-Message-State: APjAAAW6zJ2KY9/fP2j23893lTuXoVLz7rPMBiPP5Qe5s+qwwqpUbyw4
- DOzZAyD/Om+v2JqjRntnVlhWS+N0iwnS9fe8YWs5qA==
-X-Google-Smtp-Source: APXvYqzFz6yoFGEfW03gURGMxzSAkxQY/YFTYE5kw7PmONkGWJkCKN3lGIhJ7kLEYxYUXYGbEDxHiBIBu8xebUTWbew=
-X-Received: by 2002:a67:fb41:: with SMTP id e1mr18789486vsr.159.1575999374197; 
- Tue, 10 Dec 2019 09:36:14 -0800 (PST)
+ Tue, 10 Dec 2019 17:40:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575999648;
+ bh=whY+UczReApYurdxQ/i4Wyw13rqi5K2A0iRjpnJiQXU=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=RSLM2wWovn5TjinsaHi4oXldr2FYpJfczva1XSQczXHZXcVtTmuJMeI3o/2qVvxrg
+ CWCcB8LWB6w3lF46eJOj9whirJqaigBHXXBUwLcA6g5S9jtwZA5NEY5CkFji3C/+m6
+ SxJYRaoVWYZJo8AvidxxNbtlyCWGOsRLffmC0KyI=
+Received: by mail-qt1-f173.google.com with SMTP id q8so3508941qtr.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Dec 2019 09:40:47 -0800 (PST)
+X-Gm-Message-State: APjAAAWUbXoOuLJwHmnfMRCUHDSfjKphHG3leY4OAgSEnzDX8eOxmKBH
+ wGMBO8B2t7rKneQiW2kBUa1a5+cZWnYswJ/dMQ==
+X-Google-Smtp-Source: APXvYqyzyYY82vf1hRBGQbrkKaCwyz61tPWJCZ5gDYUZdarnDGl6QMWtYZm4OY3BWhQ7GfEcsKv3xMQ+0OMymbZUAcE=
+X-Received: by 2002:ac8:5513:: with SMTP id j19mr31095838qtq.143.1575999647203; 
+ Tue, 10 Dec 2019 09:40:47 -0800 (PST)
 MIME-Version: 1.0
-References: <1573068840-13098-1-git-send-email-agross@kernel.org>
- <1573068840-13098-2-git-send-email-agross@kernel.org>
- <CAHLCerN7buq82RmmFkoSi_n8g8sSe9VO2utcXuEGM3xG3HcRTg@mail.gmail.com>
- <20191108031854.GA12993@hector.lan> <20191210105737.GB228968@gerhold.net>
-In-Reply-To: <20191210105737.GB228968@gerhold.net>
-From: Amit Kucheria <amit.kucheria@verdurent.com>
-Date: Tue, 10 Dec 2019 23:06:03 +0530
-Message-ID: <CAHLCerPs8+Fp1N-x7cQ2ETQ8d+fHN5b08V-jVFyFdQLYDndoBA@mail.gmail.com>
-Subject: Re: [GIT PULL] Qualcomm ARM64 DT updates for 5.5
-To: Stephan Gerhold <stephan@gerhold.net>
+References: <20191120145536.17884-1-robh@kernel.org>
+ <20191210110419.GI1463890@piout.net>
+ <0ea488f6-adf9-d2fe-ef55-373a70cf04fe@axentia.se>
+ <20191210111452.GJ1463890@piout.net>
+In-Reply-To: <20191210111452.GJ1463890@piout.net>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 10 Dec 2019 11:40:36 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKjiFG0oi22iTa4m9rdZY_d8mepdhrQT0czcGX=EryheA@mail.gmail.com>
+Message-ID: <CAL_JsqKjiFG0oi22iTa4m9rdZY_d8mepdhrQT0czcGX=EryheA@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: arm: Remove leftover axentia.txt
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_093615_961659_DF966D8E 
-X-CRM114-Status: GOOD (  17.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191210_094048_913209_C65BD7C6 
+X-CRM114-Status: GOOD (  12.10  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,62 +88,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Andy Gross <agross@kernel.org>, lakml <linux-arm-kernel@lists.infradead.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Peter Rosin <peda@axentia.se>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 10, 2019 at 4:27 PM Stephan Gerhold <stephan@gerhold.net> wrote:
+On Tue, Dec 10, 2019 at 5:15 AM Alexandre Belloni
+<alexandre.belloni@bootlin.com> wrote:
 >
-> On Thu, Nov 07, 2019 at 09:18:54PM -0600, Andy Gross wrote:
-> > On Thu, Nov 07, 2019 at 07:36:03PM +0530, Amit Kucheria wrote:
-> > > (Removing arm-soc)
-> > >
-> > > Hi Andy,
-> > >
-> > > On Thu, Nov 7, 2019 at 1:04 AM Andy Gross <agross@kernel.org> wrote:
-> > > >
-> > > > Arnd, Olof, and Kevin,
-> > > >
-> > > > I have one slight faux paux in this pull request.  A drivers: soc change got
-> > > > into my arm64 DTS branch and while it is innocuous, it wasn't easy to fix
-> > > > without messing up a lot of people who depend on the SHAs not changing.  So I'm
-> > > > sorry for this inclusion.  I'll scrub this better next time.
-> > > >
-> > > > Andy
-> > >
-> > > > ----------------------------------------------------------------
-> > > > Amit Kucheria (5):
-> > > >       arm64: dts: qcs404: thermal: Add interrupt support
-> > > >       arm64: dts: msm8998: thermal: Add interrupt support
-> > > >       arm64: dts: msm8996: thermal: Add interrupt support
-> > > >       arm64: dts: sdm845: thermal: Add interrupt support
-> > > >       arm64: dts: msm8916: thermal: Fixup HW ids for cpu sensors
-> > >
-> > > One of my patches to add interrupt support to msm8916 tsens is missing
-> > > here. Specifically this one:
-> > > https://patchwork.kernel.org/patch/11201853/
-> > >
-> > > Will there be a second PR this cycle?
+> On 10/12/2019 11:10:33+0000, Peter Rosin wrote:
+> > On 2019-12-10 12:04, Alexandre Belloni wrote:
+> > > On 20/11/2019 08:55:36-0600, Rob Herring wrote:
+> > >> The bindings described in axentia.txt are already covered by
+> > >> atmel-at91.yaml, so remove the file.
+> > >>
+> > >> Cc: Peter Rosin <peda@axentia.se>
+> > >> Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
+> > >> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> > >> Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
+> > >> Signed-off-by: Rob Herring <robh@kernel.org>
+> > > Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 > >
-> > I can work up another and throw it on top.
+> > Right, this one fell of out of my memory due to overload. Sorry.
+> >
+> > Acked-by: Peter Rosin <peda@axentia.se>
 > >
 >
-> FYI, the patch seems to be still missing in 5.5-rc1.
-> tsens now fails to probe on MSM8916 with:
->
->   qcom-tsens 4a9000.thermal-sensor: IRQ uplow not found
->
-> Can you queue up the patch as fix for 5.5?
+> Rob, I assume you are going to apply it in your tree. If you want that
+> to go through arm-soc, tell me, I can apply it too.
 
-Indeed. Andy/Bjorn, let me know if you need anything from me to get
-this into -rc2.
+It's already in v5.5-rc1.
 
-Regards,
-Amit
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
