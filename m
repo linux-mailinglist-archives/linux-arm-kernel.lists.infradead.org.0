@@ -2,87 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E544118532
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 11:35:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 389A3118541
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 11:37:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SRces7lphHZHfLm0b2h837PXaJo5fKiYAclaPL8dVXw=; b=uOXH2VGc6DyWxk
-	UAhXtp3uo7dF1eMV5c+XkPEHG4iRWKcw7inxROEGTBz73yBE0Krbr0f+5AxtvZbxuwowtKI08YrLE
-	wRkQrIRtzgVXagoJvoA+flPD7UhzPZLM2U9IxC07M5c20gq+1tkpS/XHe/or1JckjHv1XaA1T14G5
-	V9+XT62CeBob32bPKJyeaHRqEUd/J0CdCyn1ZfGm8dz87eM5QWeVYPk9TEimRgaulxxGNIUs4lbF0
-	9E15Af+efVzkBDcQbnmIy4K5+Kof0ugfyKkQgDAXxpdrgyf0ncb7z7b571yNPgyQdxhjFzr697xwG
-	LaX2lBl7hns0YVkUKyOQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Nb6wv9BpDEFrCkSqHsQXLbOIX2Wpa6c1OF3G8A0Xvd8=; b=BB79AIOVrm35x2
+	bTAP9SS6haYG8EYNVRATJ9Ub59vogCQTjhUmCgWlZOQ4w/RNJ0X5FttOmAUH1SoGfXKT0bmvY5VZO
+	O02J97PIMOSgV2Cnp8s/64AnkMy/++c2cO7p0XwKTDtPSryR670zZM/WZOLtgI1eMybrN91MYQMGG
+	30xPHUlFulLpUC3DFMXFz/Kz0rK2SZ85DqcqIrP15ckzCK6y4P9bghEEGNy7bMV3HOcEfjV24n1W3
+	OWCGXYDh23LFPPRGf21vTHjdt/1p3co3B/mPipSdKvxNZrMlYX5AQQBrYRedmFUsM6Zp4vvLBt5wO
+	nh1fnsF+jqfCp+y0DcSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iecrI-00069K-QH; Tue, 10 Dec 2019 10:35:12 +0000
-Received: from mail-wr1-f68.google.com ([209.85.221.68])
+	id 1iectW-00083q-9u; Tue, 10 Dec 2019 10:37:30 +0000
+Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iecr1-00068m-My
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 10:34:57 +0000
-Received: by mail-wr1-f68.google.com with SMTP id d16so19377129wre.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 02:34:54 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=uizXfprRj8fjney4P3afQoTDUjaSaVYSy+09p97UTek=;
- b=oM1eBwu3sDRvf6ULE/cx4fJ96iWoKpfEgcCfMrOTaFk83KYf1dI0lL+JaAnwWZPQjC
- hZHLls4Kj4/qL75iOSDqMvjIg69SQ0SkcjmgZL+tlgmqPK2JHAQVE0sETjn44W9kCsXg
- GTqAlY0lXH2t+LKdcZWAEZ0BocpDOc89bDH5KBwsLKRFoO6T8XGe/YuJLTAGrL3TuEvy
- QGzh2Ublu88XpAkwwTzjjUcwE/MOI94LOO2kdpzN5DCgGcCGYoDFWzg2EzxcMeCNEjpe
- If9IFKgHm7LEy4iEzmmnWmadfo4wiEr9T8Z63TFcpc33uH03a6MreW56ESqEPZByniRr
- nVqA==
-X-Gm-Message-State: APjAAAVHXp0Rg06T/o1if3Ahvt+hyeFAwMj6WG3vluGV4jOAVFuX0NdV
- TrtP44HaHEJniHOcgUEcvrQ=
-X-Google-Smtp-Source: APXvYqz7NYibGMgFhBlmpiRw0nMRfb/8UeyOuRHFJOPIT/McfGwDtjqDvzf1agsTzUpbWsC0n1vSRQ==
-X-Received: by 2002:adf:8297:: with SMTP id 23mr2231156wrc.379.1575974093765; 
- Tue, 10 Dec 2019 02:34:53 -0800 (PST)
-Received: from localhost (prg-ext-pat.suse.com. [213.151.95.130])
- by smtp.gmail.com with ESMTPSA id t1sm2693672wma.43.2019.12.10.02.34.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Dec 2019 02:34:52 -0800 (PST)
-Date: Tue, 10 Dec 2019 11:34:52 +0100
-From: Michal Hocko <mhocko@kernel.org>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH 5/6] mm, memory_hotplug: Provide argument for the
- pgprot_t in arch_add_memory()
-Message-ID: <20191210103452.GF10404@dhcp22.suse.cz>
-References: <20191209191346.5197-1-logang@deltatee.com>
- <20191209191346.5197-6-logang@deltatee.com>
- <ce50d9da-c60e-05a1-a86b-3bb3629de502@redhat.com>
- <f34a4c52-cc95-15ed-8a72-c05ab4fd6d33@deltatee.com>
- <CAPcyv4hpXCZxV5p7WaeGgE7ceujBBa5NOz9Z8fepDHOt6zHO2A@mail.gmail.com>
- <20191210100432.GC10404@dhcp22.suse.cz>
- <6da2b279-6a6d-d89c-a34c-962ed021d91d@redhat.com>
+ id 1iectO-000839-5q
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 10:37:23 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5def755a0000>; Tue, 10 Dec 2019 02:37:14 -0800
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Tue, 10 Dec 2019 02:37:20 -0800
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Tue, 10 Dec 2019 02:37:20 -0800
+Received: from HQMAIL101.nvidia.com (172.20.187.10) by HQMAIL111.nvidia.com
+ (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 10 Dec
+ 2019 10:37:20 +0000
+Received: from rnnvemgw01.nvidia.com (10.128.109.123) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via
+ Frontend Transport; Tue, 10 Dec 2019 10:37:19 +0000
+Received: from moonraker.nvidia.com (Not Verified[10.21.133.51]) by
+ rnnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5def755e0000>; Tue, 10 Dec 2019 02:37:19 -0800
+From: Jon Hunter <jonathanh@nvidia.com>
+To: Thierry Reding <thierry.reding@gmail.com>
+Subject: [PATCH] ARM: tegra: Fix restoration of PLLM when exiting suspend
+Date: Tue, 10 Dec 2019 10:37:08 +0000
+Message-ID: <20191210103708.7023-1-jonathanh@nvidia.com>
+X-Mailer: git-send-email 2.17.1
+X-NVConfidentiality: public
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6da2b279-6a6d-d89c-a34c-962ed021d91d@redhat.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1575974234; bh=2bGXIui0+FPjeaGKMP85enM+3xE9shkh4uRgDhLWIV0=;
+ h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+ X-NVConfidentiality:MIME-Version:Content-Type;
+ b=T2piNd8sMrVICKOs4tAJ50+s504S/hb8hERQS0OnRIU8BzamwR04nZYnCf079dC/P
+ wz+IKt4vo3ch7IwNWDDsp0DbeJcGiq/KFPFPUd5fBMgtp2s08IIKECbFgVmIE5OtSk
+ tnGZa4KZSy5DpAZpzOlrOjeMKpPwlWzw3Vqy/wk51UYfC+3EpYmx6s5u5dikqYYJ9x
+ X+XiMCOAqHkfsy3wt/Zhr5RTTVEtyWp44d7RR1dhwTDKy8LDGLr1/TWQDB5BhZV3AF
+ QrdgwVxIPzGIZNjenlwQwfTogGHyXeg4KpkgCr+LYna2BEpzjsnA9M4WFYgIftbqdc
+ woIJF3ISFwo5g==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_023455_749596_56F12C61 
-X-CRM114-Status: GOOD (  19.38  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191210_023722_238175_BFDB4CDA 
+X-CRM114-Status: GOOD (  14.32  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (mstsxfx[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,79 +89,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Gleixner <tglx@linutronix.de>,
- linux-s390 <linux-s390@vger.kernel.org>, linux-ia64@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- Linux-sh <linux-sh@vger.kernel.org>, Peter Zijlstra <peterz@infradead.org>,
- Logan Gunthorpe <logang@deltatee.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- platform-driver-x86@vger.kernel.org, Linux MM <linux-mm@kvack.org>,
- Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Andy Lutomirski <luto@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Borislav Petkov <bp@alien8.de>, Dan Williams <dan.j.williams@intel.com>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>, Christoph Hellwig <hch@lst.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-tegra@vger.kernel.org, stable@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue 10-12-19 11:09:46, David Hildenbrand wrote:
-> On 10.12.19 11:04, Michal Hocko wrote:
-> > On Mon 09-12-19 12:43:40, Dan Williams wrote:
-> >> On Mon, Dec 9, 2019 at 12:24 PM Logan Gunthorpe <logang@deltatee.com> wrote:
-> >>>
-> >>>
-> >>>
-> >>> On 2019-12-09 12:23 p.m., David Hildenbrand wrote:
-> >>>> On 09.12.19 20:13, Logan Gunthorpe wrote:
-> > [...]
-> >>>>>  #ifdef CONFIG_MEMORY_HOTPLUG
-> >>>>> -int arch_add_memory(int nid, u64 start, u64 size,
-> >>>>> +int arch_add_memory(int nid, u64 start, u64 size, pgprot_t prot,
-> >>>>>                      struct mhp_restrictions *restrictions)
-> >>>>
-> >>>> Can we fiddle that into "struct mhp_restrictions" instead?
-> >>>
-> >>> Yes, if that's what people want, it's pretty trivial to do. I chose not
-> >>> to do it that way because it doesn't get passed down to add_pages() and
-> >>> it's not really a "restriction". If I don't hear any objections, I will
-> >>> do that for v2.
-> >>
-> >> +1 to storing this information alongside the altmap in that structure.
-> >> However, I agree struct mhp_restrictions, with the MHP_MEMBLOCK_API
-> >> flag now gone, has lost all of its "restrictions". How about dropping
-> >> the 'flags' property and renaming the struct to 'struct
-> >> mhp_modifiers'?
-> > 
-> > Hmm, this email somehow didn't end up in my inbox so I have missed it
-> > before replying.
-> > 
-> > Well, mhp_modifiers makes some sense and it would reduce the API
-> > proliferation but how do you expect the prot part to be handled?
-> > I really do not want people to think about PAGE_KERNEL or which
-> > protection to use because my experience tells that this will get copied
-> > without much thinking or simply will break with some odd usecases.
-> > So how exactly this would be used?
-> 
-> I was thinking about exactly the same "issue".
-> 
-> 1. default initialization via a function
-> 
-> memhp_modifier_default_init(&modified);
-> 
-> 2. a flag that unlocks the prot field (default:0). Without the flag, it
-> is ignored. We can keep the current initialization then.
-> 
-> Other ideas?
+The suspend entry and exit code for 32-bit Tegra devices assumes that
+the PLLM (which is used to provide the clock for external memory)
+is always enabled on entry to suspend. Hence, the current code always
+disables the PLLM on entry to suspend and re-enables the PLLM on exit
+from suspend.
 
-3. a prot mask to apply on top of PAGE_KERNEL? Or would that be
-insufficient/clumsy?
+Since the introduction of the Tegra124 EMC driver by commit 73a7f0a90641
+("memory: tegra: Add EMC (external memory controller) driver"), which is
+used to scale the EMC frequency, PLLM may not be the current clock
+source for the EMC on entry to suspend and hence may not be enabled.
+Always enabling the PLLM on exit from suspend can cause the actual
+status on the PLL to be different from that reported by the common clock
+framework.
+
+On kernels prior to v4.5, the code to set the rate of the PLLM had a
+test to verify if the PLL was enabled and if the PLL was enabled,
+setting the rate would fail. Since commit 267b62a96951
+("clk: tegra: pll: Update PLLM handling") the test to see if PLLM is
+enabled was removed.
+
+With these earlier kernels, if the PLLM is disabled on entering suspend
+and the EMC driver attempts to set the parent of the EMC clock to the
+PLLM on exiting suspend, then the set rate for the PLLM will fail and in
+turn cause the resume to fail.
+
+We should not be re-enabling the PLLM on resume from suspend unless it
+was enabled on entry to suspend. Therefore, fix this by saving the state
+of PLLM on entry to suspend and only re-enable it, if it was already
+enabled.
+
+Fixes: 73a7f0a90641 ("memory: tegra: Add EMC (external memory controller) driver")
+Cc: stable@vger.kernel.org
+
+Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
+---
+ arch/arm/mach-tegra/sleep-tegra30.S | 33 +++++++++++++++++++++++------
+ 1 file changed, 27 insertions(+), 6 deletions(-)
+
+diff --git a/arch/arm/mach-tegra/sleep-tegra30.S b/arch/arm/mach-tegra/sleep-tegra30.S
+index 3341a12bbb9c..c2f0793a424f 100644
+--- a/arch/arm/mach-tegra/sleep-tegra30.S
++++ b/arch/arm/mach-tegra/sleep-tegra30.S
+@@ -337,26 +337,42 @@ ENTRY(tegra30_lp1_reset)
+ 	add	r1, r1, #2
+ 	wait_until r1, r7, r3
+ 
+-	/* enable PLLM via PMC */
++	/* restore PLLM state */
+ 	mov32	r2, TEGRA_PMC_BASE
++	adr	r7, tegra_pllm_status
++	ldr	r1, [r7]
++	cmp	r2, #(1 << 12)
++	bne	_skip_pllm
++
+ 	ldr	r1, [r2, #PMC_PLLP_WB0_OVERRIDE]
+ 	orr	r1, r1, #(1 << 12)
+ 	str	r1, [r2, #PMC_PLLP_WB0_OVERRIDE]
+ 
+ 	pll_enable r1, r0, CLK_RESET_PLLM_BASE, 0
++	pll_locked r1, r0, CLK_RESET_PLLM_BASE
++
++_skip_pllm:
+ 	pll_enable r1, r0, CLK_RESET_PLLC_BASE, 0
+ 	pll_enable r1, r0, CLK_RESET_PLLX_BASE, 0
+ 
+ 	b	_pll_m_c_x_done
+ 
+ _no_pll_iddq_exit:
+-	/* enable PLLM via PMC */
++	/* restore PLLM state */
+ 	mov32	r2, TEGRA_PMC_BASE
++	adr	r7, tegra_pllm_status
++	ldr	r1, [r7]
++	cmp	r2, #(1 << 12)
++	bne	_skip_pllm_no_iddq
++
+ 	ldr	r1, [r2, #PMC_PLLP_WB0_OVERRIDE]
+ 	orr	r1, r1, #(1 << 12)
+ 	str	r1, [r2, #PMC_PLLP_WB0_OVERRIDE]
+ 
+ 	pll_enable r1, r0, CLK_RESET_PLLM_BASE, CLK_RESET_PLLM_MISC
++	pll_locked r1, r0, CLK_RESET_PLLM_BASE
++
++_skip_pllm_no_iddq:
+ 	pll_enable r1, r0, CLK_RESET_PLLC_BASE, CLK_RESET_PLLC_MISC
+ 	pll_enable r1, r0, CLK_RESET_PLLX_BASE, CLK_RESET_PLLX_MISC
+ 
+@@ -364,7 +380,6 @@ _pll_m_c_x_done:
+ 	pll_enable r1, r0, CLK_RESET_PLLP_BASE, CLK_RESET_PLLP_MISC
+ 	pll_enable r1, r0, CLK_RESET_PLLA_BASE, CLK_RESET_PLLA_MISC
+ 
+-	pll_locked r1, r0, CLK_RESET_PLLM_BASE
+ 	pll_locked r1, r0, CLK_RESET_PLLP_BASE
+ 	pll_locked r1, r0, CLK_RESET_PLLA_BASE
+ 	pll_locked r1, r0, CLK_RESET_PLLC_BASE
+@@ -526,6 +541,8 @@ __no_dual_emc_chanl:
+ ENDPROC(tegra30_lp1_reset)
+ 
+ 	.align	L1_CACHE_SHIFT
++tegra_pllm_status:
++	.word	0
+ tegra30_sdram_pad_address:
+ 	.word	TEGRA_EMC_BASE + EMC_CFG				@0x0
+ 	.word	TEGRA_EMC_BASE + EMC_ZCAL_INTERVAL			@0x4
+@@ -624,10 +641,14 @@ tegra30_switch_cpu_to_clk32k:
+ 	add	r1, r1, #2
+ 	wait_until r1, r7, r9
+ 
+-	/* disable PLLM via PMC in LP1 */
++	/* disable PLLM, if enabled, via PMC in LP1 */
++	adr	r1, tegra_pllm_status
+ 	ldr	r0, [r4, #PMC_PLLP_WB0_OVERRIDE]
+-	bic	r0, r0, #(1 << 12)
+-	str	r0, [r4, #PMC_PLLP_WB0_OVERRIDE]
++	and	r2, r0, #(1 << 12)
++	str     r2, [r1]
++	cmp	r2, #(1 << 12)
++	biceq	r0, r0, #(1 << 12)
++	streq	r0, [r4, #PMC_PLLP_WB0_OVERRIDE]
+ 
+ 	/* disable PLLP, PLLA, PLLC and PLLX */
+ 	ldr	r0, [r5, #CLK_RESET_PLLP_BASE]
 -- 
-Michal Hocko
-SUSE Labs
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
