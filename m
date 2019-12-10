@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82CFD1185C9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 12:04:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC7641185CA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 12:05:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d1wxNNXXBvL0E9QV8dxxLJTqC2s6rMAxwBQ9tuV/jRk=; b=DMXMxjBIEnGeLa
-	3+dTSOMyxsYxUZEdSlVWOCCP2MeaYrESESIUlI2mOEi3c4qtrTw0UqEw/PUE5xfCEoErINta5viGy
-	cu2dCMFsQaq+BH4jCrSLtXDsZVKTlbXpRTOOvxn9W6Shb8dGQj46j0GQ1ygD/TTRD5oR4ZdZt9SlT
-	YkD5245HuVQW2vU04IfC2FzxRH1edhc3XOJxi7jzWaPznCe9ltkiu1W/exVXOxxFrIlrvKNkJxrYU
-	8v+zFLVlQXdZQpzbO6YYPI0C+Qn/aaSDa1KuSt/PwLGKu0fo3SY/fwqIdaf1LE+oCPg65j/+lZubA
-	XE/AZEgMmLOBWVlXYvlQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=khH81otLrReeg7DvSUWzQbBPTwcBorbzsI8e+P+B/rw=; b=nkQ4OBFmv1a315N4zXElTdqqv
+	sXysl6dZlDvTNJtSjxKuSOgKQq0WoB2dvc3qSWC0UlVFZOxITppaF522VyylQ2zleMo4zU4hBcsvL
+	VY1UR7FOOEdS5+KetXVSp/BFBxmuWQP/y3xnHHOZYRRPzqjINbt+IL9zH466jfXKICxKibaW5cAdG
+	YKbK5ZVh0oTe+NcMuqOy/eqbH3oI0MiPqFlh++D22TQVYaGCWqCFvpLl05up870KBW47MQXSqf/NZ
+	EMKxux4+4gvJZDPltY6YshtdedfCgMU4SMV9UBuxTqLakyMt6mWm4hv3YlxvtbPjHztEHWMrcbJJZ
+	WA7QlwULw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iedJu-0004OV-Ik; Tue, 10 Dec 2019 11:04:46 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iedJl-0004Ne-KJ
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 11:04:39 +0000
-X-Originating-IP: 90.182.112.136
-Received: from localhost (136.112.broadband15.iol.cz [90.182.112.136])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 0C0A6FF802;
- Tue, 10 Dec 2019 11:04:21 +0000 (UTC)
-Date: Tue, 10 Dec 2019 12:04:19 +0100
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH] dt-bindings: arm: Remove leftover axentia.txt
-Message-ID: <20191210110419.GI1463890@piout.net>
-References: <20191120145536.17884-1-robh@kernel.org>
+	id 1iedK4-0004X7-Q6; Tue, 10 Dec 2019 11:04:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iedJo-0004OB-CC
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 11:04:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 246AA1FB;
+ Tue, 10 Dec 2019 03:04:38 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 15EF83F6CF;
+ Tue, 10 Dec 2019 03:04:36 -0800 (PST)
+Subject: Re: [PATCH] perf/smmuv3: Remove the leftover put_cpu() in error path
+To: Hanjun Guo <guohanjun@huawei.com>, Mark Rutland <mark.rutland@arm.com>,
+ Will Deacon <will@kernel.org>
+References: <1575974784-55046-1-git-send-email-guohanjun@huawei.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <9b32a687-5553-dc3f-da6c-2d5c88b7e311@arm.com>
+Date: Tue, 10 Dec 2019 11:04:36 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191120145536.17884-1-robh@kernel.org>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <1575974784-55046-1-git-send-email-guohanjun@huawei.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_030437_804607_AFDFA497 
-X-CRM114-Status: GOOD (  13.62  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191210_030440_458644_6062688D 
+X-CRM114-Status: GOOD (  16.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,85 +64,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Peter Rosin <peda@axentia.se>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-kernel@lists.infradead.org,
+ Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>,
+ linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20/11/2019 08:55:36-0600, Rob Herring wrote:
-> The bindings described in axentia.txt are already covered by
-> atmel-at91.yaml, so remove the file.
-> 
-> Cc: Peter Rosin <peda@axentia.se>
-> Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
-> Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
-> Signed-off-by: Rob Herring <robh@kernel.org>
-Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+On 10/12/2019 10:46 am, Hanjun Guo wrote:
+> In smmu_pmu_probe(), there is put_cpu() in the error path,
+> which is wrong because we use raw_smp_processor_id() to
+> get the cpu ID, not get_cpu(), remove it.
 
+Bah, somehow that slipped through the last round of review :)
+
+Acked-by: Robin Murphy <robin.murphy@arm.com>
+
+> Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
 > ---
->  .../devicetree/bindings/arm/axentia.txt       | 28 -------------------
->  MAINTAINERS                                   |  1 -
->  2 files changed, 29 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/arm/axentia.txt
+>   drivers/perf/arm_smmuv3_pmu.c | 1 -
+>   1 file changed, 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/axentia.txt b/Documentation/devicetree/bindings/arm/axentia.txt
-> deleted file mode 100644
-> index de58f2463880..000000000000
-> --- a/Documentation/devicetree/bindings/arm/axentia.txt
-> +++ /dev/null
-> @@ -1,28 +0,0 @@
-> -Device tree bindings for Axentia ARM devices
-> -============================================
-> -
-> -Linea CPU module
-> -----------------
-> -
-> -Required root node properties:
-> -compatible = "axentia,linea",
-> -	     "atmel,sama5d31", "atmel,sama5d3", "atmel,sama5";
-> -and following the rules from atmel-at91.txt for a sama5d31 SoC.
-> -
-> -
-> -Nattis v2 board with Natte v2 power board
-> ------------------------------------------
-> -
-> -Required root node properties:
-> -compatible = "axentia,nattis-2", "axentia,natte-2", "axentia,linea",
-> -	     "atmel,sama5d31", "atmel,sama5d3", "atmel,sama5";
-> -and following the rules from above for the axentia,linea CPU module.
-> -
-> -
-> -TSE-850 v3 board
-> -----------------
-> -
-> -Required root node properties:
-> -compatible = "axentia,tse850v3", "axentia,linea",
-> -	     "atmel,sama5d31", "atmel,sama5d3", "atmel,sama5";
-> -and following the rules from above for the axentia,linea CPU module.
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 97b28c913813..8d711f764dfb 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -2859,7 +2859,6 @@ AXENTIA ARM DEVICES
->  M:	Peter Rosin <peda@axentia.se>
->  L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
->  S:	Maintained
-> -F:	Documentation/devicetree/bindings/arm/axentia.txt
->  F:	arch/arm/boot/dts/at91-linea.dtsi
->  F:	arch/arm/boot/dts/at91-natte.dtsi
->  F:	arch/arm/boot/dts/at91-nattis-2-natte-2.dts
-> -- 
-> 2.20.1
+> diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
+> index 773128f..fd1d46a 100644
+> --- a/drivers/perf/arm_smmuv3_pmu.c
+> +++ b/drivers/perf/arm_smmuv3_pmu.c
+> @@ -834,7 +834,6 @@ static int smmu_pmu_probe(struct platform_device *pdev)
+>   out_unregister:
+>   	cpuhp_state_remove_instance_nocalls(cpuhp_state_num, &smmu_pmu->node);
+>   out_cpuhp_err:
+> -	put_cpu();
+>   	return err;
+>   }
+>   
 > 
-
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
