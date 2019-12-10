@@ -2,69 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8906118EBF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 18:18:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDFE7118ECA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 18:20:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PGgnVBXjGFbwXUpEoIIz4I3vgxKcsehqIXrTrpu5iLg=; b=fzFCfHN03tCG1h3nfkaQXdGOH
-	/ZqoZvATXkJC6R1QaIzFj3H6sFXIx1Z5yd64YBpCtdXnBEJEIhK+sb6UVxjFtaLOTV0AOpJUkP/bj
-	26liZLH0Q+KEHH40D5leEeg5Ocdffd5XvgacNGgFAc9fKiUJqsvAJKwgvpsANvIxB3SwM95seTfGl
-	2pkjYxtRg98dsBPnddQ2iSx0n06+/QFx+ZAy3HNHUL6iXQkmvdUyLr/cw8czoATlxSvjtB1xWRG1q
-	w70Y+Z0HCGWvWlCrCMdeeNDO4pVJM+g9SeDeh9T6ZP1G81XulMGW/eX24CSpjatM4e2oYgLM8hCCg
-	QESe8JUaQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LKAR8yVGAQksQOFxf259o0gq/A74is6uKL4p7gfcpI8=; b=DZa1oZ1f1L2fF+
+	ooL4ulSYSe+vjL9crxu2SS/0a7jZ/i5o97tYcbTiCv2mOh1Kd/2Se17qxlqpAwnx6V0fb5cWMWSOS
+	3qwwxeGKhCuaz20ssPj1vp4+iFHsiyu92diia6pKA1vrsUiRe4OGG6TJQHI7X+950j6+Pk8HADTKI
+	EdlychdggNYiFKBT6P58siV9Mr5/CUp2Fo+FEv1DK1irdSsJeCgkVIgFQ3qB8oQYP342HXeGUTcjX
+	vG5ky5+ya5k7sBJJK+XhiJQZwxKDmM0NlzM1pSaCb3bMMHfrBWW63Ai8HAmJrzZPVuU3b6dIXwoAN
+	5jypzXZoRICxG/xucPVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iej9F-0003j4-Oz; Tue, 10 Dec 2019 17:18:09 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1iejBi-0005LM-RR; Tue, 10 Dec 2019 17:20:42 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iej98-0003hb-Qv
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 17:18:04 +0000
-Received: from lhreml705-cah.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id 21CB27D2E1888597DC07;
- Tue, 10 Dec 2019 17:17:58 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- lhreml705-cah.china.huawei.com (10.201.108.46) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 10 Dec 2019 17:17:57 +0000
-Received: from [127.0.0.1] (10.202.226.46) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 10 Dec
- 2019 17:17:57 +0000
-Subject: Re: perf top for arm64?
-To: Jiri Olsa <jolsa@redhat.com>
-References: <1573045254-39833-1-git-send-email-john.garry@huawei.com>
- <20191106140036.GA6259@kernel.org>
- <418023e7-a50d-cb6f-989f-2e6d114ce5d8@huawei.com>
- <20191210163655.GG14123@krava>
- <952dc484-2739-ee65-f41c-f0198850ab10@huawei.com>
- <20191210170841.GA23357@krava>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <9a31536b-f266-e305-1107-2f745d0a33e3@huawei.com>
-Date: Tue, 10 Dec 2019 17:17:56 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1iejBb-0005L3-RI
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 17:20:37 +0000
+Received: by mail-wm1-x344.google.com with SMTP id q9so4122509wmj.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Dec 2019 09:20:35 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=vXNgKnKakq//mqsjHx2g+hBYoldB3gxR/8Kku6DLL+U=;
+ b=CZ0bHp90mZ89RJhZ5yeN2D65NblE7wKE0cp66lieBBsxBZc5lAmTZuxm5C9j8z2ddz
+ d7XTirSpIozZ8RuBDecQ10Zi1Pde6T4J9Bh0mj6TFDaIYi0frSMXMUNE8ZEVMhgrhi2m
+ L+OkGfKViJ6zdA76ZinbMbuxJ5BTebyhU84OQlBQ1VPCmXudz4wr0Nc6FpWzeCx/aXG7
+ BHT6H2167RZV1xAk//4oWSW/Jp6w/Kra1N47pxDGvFTvnJoklLfZIpWVi652VFVARlZT
+ VuEkS8l8aVU7Enz09V2pFbMok3B7iPSpMDEk6KTYZHx5uqs6+OW3gtj/BfnhmpVqA8ky
+ ncUw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=vXNgKnKakq//mqsjHx2g+hBYoldB3gxR/8Kku6DLL+U=;
+ b=W3zgJCimV+NZfE5PN9DZNA/OwKFNg3A5eJJAw7Oo40RzpkoPV42TrYjbAZRVNVGivp
+ orZ6meAfUKZdb4ZTuZognPWCqyfOOElnge6Nzu6shvEZYS0LXAz3Fvu2RtvOPrBcFwwB
+ HujPUSbigmt6ozQnAqB5H7G1rRiXatbv25qCtGbUpayKAlVkEz1CHCEqwbreHrQwkIz8
+ cj1oe30S2ybRFwoQrYQhZAwYkF6KnjXLRZ8zTq8YlYRaqguoUlBmSSHmnxnUxXpd0eY3
+ T34tsnR1FaS5YsSgid4Bq7UkR8VOXlKs2SMlkaomIQ4qO2DjmjDBmZdJr4WB2ntLxUv9
+ f1qA==
+X-Gm-Message-State: APjAAAVgUaFf25SL2OrWSe361CF3jnsAM3jOnR4JpxiFwEXRLngygfho
+ +pSrhJA/chiAlFiQiwusAi5j1tEMIjNN8eBn4fM=
+X-Google-Smtp-Source: APXvYqzq2LF8lClRiVJknmho7Xph1Cns7f+NRbX50kA9+PcdLQvbd5vJqhRZzwD+i28IAUbyBTJ6d0Se3jofTsXHQ4I=
+X-Received: by 2002:a1c:a7c8:: with SMTP id q191mr6114178wme.176.1575998434072; 
+ Tue, 10 Dec 2019 09:20:34 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191210170841.GA23357@krava>
-Content-Language: en-US
-X-Originating-IP: [10.202.226.46]
-X-ClientProxiedBy: lhreml728-chm.china.huawei.com (10.201.108.79) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+References: <20191119175319.16561-1-peron.clem@gmail.com>
+ <20191121072408.GE4345@gilmour.lan>
+ <CAL_JsqJevcG2qv+BYKTnP=out0jPxuEcdYuLq7idxK04Q05fag@mail.gmail.com>
+In-Reply-To: <CAL_JsqJevcG2qv+BYKTnP=out0jPxuEcdYuLq7idxK04Q05fag@mail.gmail.com>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Tue, 10 Dec 2019 18:20:22 +0100
+Message-ID: <CAJiuCcd3ttm_DxBrpB8b+yWAZLbvP1zAEp=vL4iNXD8cD=Zxyw@mail.gmail.com>
+Subject: Re: [PATCH v7 0/8] Add support for H6 PWM
+To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_091803_019169_D42744EC 
-X-CRM114-Status: GOOD (  13.87  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191210_092035_884283_C9494550 
+X-CRM114-Status: GOOD (  16.99  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (peron.clem[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,57 +95,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, Linuxarm <linuxarm@huawei.com>,
- Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
- linux-kernel@vger.kernel.org,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, namhyung@kernel.org,
- will@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Linux PWM List <linux-pwm@vger.kernel.org>,
+ devicetree <devicetree@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Maxime Ripard <maxime@cerno.tech>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Philipp Zabel <pza@pengutronix.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/12/2019 17:08, Jiri Olsa wrote:
-> On Tue, Dec 10, 2019 at 04:52:52PM +0000, John Garry wrote:
->> On 10/12/2019 16:36, Jiri Olsa wrote:
->>> On Tue, Dec 10, 2019 at 04:13:49PM +0000, John Garry wrote:
->>>> Hi all,
->>>>
->>>> I find to my surprise that "perf top" does not work for arm64:
->>>>
->>>> root@ubuntu:/home/john/linux# tools/perf/perf top
->>>> Couldn't read the cpuid for this machine: No such file or directory
->>>
->>
->> Hi Jirka,
->>
->>> there was recent change that check on cpuid and quits:
->>>     608127f73779 perf top: Initialize perf_env->cpuid, needed by the per arch annotation init routine
->>>
->>
->> ok, this is new code. I obviously didn't check the git history...
->>
->> But, apart from this, there are many other places where get_cpuid() is
->> called. I wonder what else we're missing out on, and whether we should still
->> add it.
-> 
-> right, I was just wondering how come vendor events are working for you,
-> but realized we have get_cpuid_str being called in there ;-)
-> 
-> I think we should add it as you have it prepared already,
-> could you post it with bigger changelog that would explain
-> where it's being used for arm?
-
-ok, I can look to do that.
-
-But, as you know, we still need to fix perf top for other architectures 
-affected.
-
-Thanks,
-John
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUm9iLAoKT24gVHVlLCAxMCBEZWMgMjAxOSBhdCAxNzo0OCwgUm9iIEhlcnJpbmcgPHJvYmgr
+ZHRAa2VybmVsLm9yZz4gd3JvdGU6Cj4KPiBPbiBUaHUsIE5vdiAyMSwgMjAxOSBhdCAxOjI0IEFN
+IE1heGltZSBSaXBhcmQgPG1heGltZUBjZXJuby50ZWNoPiB3cm90ZToKPiA+Cj4gPiBPbiBUdWUs
+IE5vdiAxOSwgMjAxOSBhdCAwNjo1MzoxMVBNICswMTAwLCBDbMOpbWVudCBQw6lyb24gd3JvdGU6
+Cj4gPiA+IEhpLAo+ID4gPgo+ID4gPiBUaGlzIGlzIGEgcmV3b3JrIG9mIEplcm5laidzIHByZXZp
+b3VzIHdvcmtbMV0gdGFraW5nIGFjY291bnQgYWxsIHRoZQo+ID4gPiBwcmV2aW91cyByZW1hcmtz
+Lgo+ID4gPgo+ID4gPiBCaW5kaW5ncyBpcyBzdGlsbCBzdHJpY3QgYnV0IHByb2JlIGluIHRoZSBk
+cml2ZXIgYXJlIG5vdyBvcHRpb25uYWxzLgo+ID4gPgo+ID4gPiBJZiBzb21lb25lIGNvdWxkIGNv
+bmZpcm0gdGhhdCB0aGUgUFdNIGlzIG5vdCBicm9rZW4sIGFzIG15IGJvYXJkCj4gPiA+IGRvZXNu
+J3Qgb3V0cHV0IGl0Lgo+ID4gPgo+ID4gPiBJIGRpZG4ndCBhZGQgdGhlIGFja2VkLXRhZ3MgYXMg
+dGhlcmUgYXJlIGJpZyBjaGFuZ2VzLgo+ID4KPiA+IEFwcGxpZWQgMSBhbmQgNyBmb3IgNS42LCB0
+aGFua3MhCj4KPiBJIGJlbGlldmUgcGF0Y2ggNyBicmVha3MgbGludXgtbmV4dDoKClNvcnJ5IGZv
+ciB0aGF0LAoKPgo+IEVycm9yOiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcHdt
+L2FsbHdpbm5lcixzdW40aS1hMTAtcHdtLmV4YW1wbGUuZHRzOjM1LjM3LTM4Cj4gc3ludGF4IGVy
+cm9yCj4gRkFUQUwgRVJST1I6IFVuYWJsZSB0byBwYXJzZSBpbnB1dCB0cmVlCj4gbWFrZVsxXTog
+KioqIFtEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcHdtL2FsbHdpbm5lcixzdW40
+aS1hMTAtcHdtLmV4YW1wbGUuZHQueWFtbF0KPiBFcnJvciAxCj4KPiBVc3VhbGx5IHRoYXQncyBk
+dWUgdG8gYSBtaXNzaW5nIGluY2x1ZGUuCkluZGVlZCBpbmNsdWRlIGFyZSBtaXNzaW5nLgoKSSB3
+aWxsIHNlbmQgYSBwYXRjaCBBU0FQIHdpdGggYSBmaXhlcyB0YWcuCgpUaGFua3MgZm9yIHRoZSBy
+ZXBvcnQsCkNsw6ltZW50Cgo+Cj4gUm9iCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
