@@ -2,73 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CE59119AA5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 23:05:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87936119AAB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 23:07:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+wFfOiTTpflBTTg96VM8rIPdPECzPjmWzLuWdaPGT2E=; b=GeqTSCsps7A97g
-	MxyFedk0pTHttLAkJYeAD1QZxvr9dqSb0lYKmDTXfFcGDWZzFXR7Pjsi5N8k0+NlaI7azOSp4rrvx
-	ZeU7bzK4GyPihdcJFSk6sWIFmtNZjIdxQUnsSLGXWjnzX5cWwQICTqY1QAumc7jJuwJqD5lVuja4W
-	ufAetH16W0ngNtXJeptHpxZ8itmIN8WWxy+pgAFsRcq8UnWK32giGgYfMU/2a7zYb9pKjSslflyS0
-	Q+2lvsICYJhluUUhJDJXgOE3S7hfQVPuL6rGQMgg68tuf7GvJzNflTT6D9MtJzlvdvMXzgT/4FJTu
-	zt/VRRLBHmSagWuij1RA==;
+	List-Owner; bh=xT9pzb3+9yu2lCgQmOouxAHud4FTDf702H49Rl96MgU=; b=PR7oItyz6Y0VF3
+	JUUeMUUqebrU7Emziwa/Ib6rD4XULJmhjyqAlvrvO24DBBybHM6X8tYbAFnsq3WRGcL24FEEtklb3
+	nObUJSj4Nf5JRNJLzhZh7Z289igsiNZrEsEBH6duO0f4uUsldnQ8r5zVFwQ3vbeWml70s8T3ul6MQ
+	l1VEO1/U3wkvBymKGTKu1EYfdKXITlVULs3mwhjRz+9lqc0I3DKOqVvyWySrNp2XNwN8U4a8XbGkd
+	CrzSYRYpUacl4OJfArcoc1qTKuiLdatdFlEnLCHTmMGyhAadflx6XpMKc7IhQbVlsI0+kdLzpmifz
+	XtN/WHoj7IXnJr5HrZBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iendi-0002gV-QG; Tue, 10 Dec 2019 22:05:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ienfT-0003Pf-GQ; Tue, 10 Dec 2019 22:07:43 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iendI-0002Uk-T7
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 22:05:30 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BC74E2073B;
- Tue, 10 Dec 2019 22:05:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576015528;
- bh=xOjvESlAu0kjzv34q3tlMNMsGyLyCYHNFtq4N7/Nq24=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=b4GaUp1m6VVOckbrKXpJgbrvV0fSgkVCbIOHwnzWP4WwpnmhEZ+SG55jnrrIi9YYp
- g7wf4i5L5F6LdLY8OQIECE+1krM6ZHzltt9YMhr5M01QXRvpbJhz05v0045r3/VtGP
- AODOXlRtOSNcEa1AFvUOpu+r6JuPanaCCgCjosJs=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 123/130] crypto: sun4i-ss - Fix 64-bit size_t
- warnings on sun4i-ss-hash.c
-Date: Tue, 10 Dec 2019 17:02:54 -0500
-Message-Id: <20191210220301.13262-123-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191210220301.13262-1-sashal@kernel.org>
-References: <20191210220301.13262-1-sashal@kernel.org>
+ id 1ienfK-0003N8-La
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 22:07:36 +0000
+Received: by mail-il1-x142.google.com with SMTP id g12so17607555ild.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Dec 2019 14:07:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=designa-electronics-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FxtClUPhWogZgqarh/LbJKZguLziOJSbb+JTZXkQarU=;
+ b=yngDbAp4xdu7JIwtyTT15r6/+XAd9Emxo2L6forWXbj+j80VYXNx230Hc17U7phZaB
+ 0uLW46KygmWXlJf9PhRWYXN0mPF2Ly0L8EOLHXfmeEeF3Aa630zMHYfcULEhAjpy6rSB
+ BsMeDPDjT1TdgaGeAAg+4k39lz1LcRxi2ZNGLkH0sMwExKPa8CnGjI45PXSa92ubUUvT
+ aDcMfRXBgWc/clPyVtK9bkyu7wN2TobTljybdGqGWwcl+6mDxQ8Ni14ddzR4t07Mipmb
+ a2F0lGkdzY7LuGCfV6lNAXy3ova2gRiUgJML3hFJt9dqRE9F+121IqfnHsXugcKjGHy2
+ mLAA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FxtClUPhWogZgqarh/LbJKZguLziOJSbb+JTZXkQarU=;
+ b=swElhm/oCwx43w0BO2+rvw/hZ1hkUPGOLEUYbwUr7UQ+yxDUVgC02uAPqsIgZqB+Vv
+ ewqRTH0yXacnK4HUYV/G6uuxaZBH4CXKkvb4lbIbwfZ78JqaNc591fj9vu+fmi98wGg0
+ O08V/t67qrHKxTQ7lKupHN5dEfJsPXjC2XmW1FAj0Fwi4xNVABWbprSxuhjgOwG2cMYW
+ uztuQxHqAApXDDKLGGmkJYHFKExyOyvnawW7u1equKvm1cvx5b0o/gfcTMq+oj7g5l+h
+ GDqMPQ344Mnu/m8sI47cGDL+UjYkp6mBPbbXKwOlQi/PdAUvxt6a4fmWdgSF+JUXIWql
+ aT8g==
+X-Gm-Message-State: APjAAAXYlwbkvn8czyBtv9dG+8Hc0QZ5c2BWO7AIWxmGeLuFTfupJ0rl
+ WMhaEt3aDPMGlOx5rq/J16UHrQObtpoVYg==
+X-Google-Smtp-Source: APXvYqxtLSZ7fNpjY8aanr31Y8KSnrz4EBcJxpd6fpzX7jhpMEz8phGWcL2yx2s8sgWF1I+3JRGIdA==
+X-Received: by 2002:a92:8395:: with SMTP id p21mr22850220ilk.285.1576015653110; 
+ Tue, 10 Dec 2019 14:07:33 -0800 (PST)
+Received: from mail-il1-f173.google.com (mail-il1-f173.google.com.
+ [209.85.166.173])
+ by smtp.gmail.com with ESMTPSA id c73sm59386ila.9.2019.12.10.14.07.31
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 10 Dec 2019 14:07:32 -0800 (PST)
+Received: by mail-il1-f173.google.com with SMTP id r81so17622171ilk.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Dec 2019 14:07:31 -0800 (PST)
+X-Received: by 2002:a92:5d88:: with SMTP id e8mr29002681ilg.106.1576015651464; 
+ Tue, 10 Dec 2019 14:07:31 -0800 (PST)
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+References: <CAEj2-1PyhkhEJ1+uRWio4vYxGuFOuR9mpZOdxmDDjGt_Az+3uA@mail.gmail.com>
+ <CAOMZO5AxvuWETvubZU1Tu=0-SeoSzJs=LZcj-JJFE1+4O6-FxA@mail.gmail.com>
+ <CAEj2-1M6950NxK0mOBzdc4qz3b=eBzD8NdLKE55aas5WN0iZkA@mail.gmail.com>
+ <VI1PR0402MB3600DD7A4C9BFFE8E2805378FF5B0@VI1PR0402MB3600.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR0402MB3600DD7A4C9BFFE8E2805378FF5B0@VI1PR0402MB3600.eurprd04.prod.outlook.com>
+From: Andre Renaud <arenaud@designa-electronics.com>
+Date: Wed, 11 Dec 2019 11:07:20 +1300
+X-Gmail-Original-Message-ID: <CAEj2-1PCDWSiP98ZN9ufa-Nws_4KSgX7Jf8gK1+TM1zEuU3SKw@mail.gmail.com>
+Message-ID: <CAEj2-1PCDWSiP98ZN9ufa-Nws_4KSgX7Jf8gK1+TM1zEuU3SKw@mail.gmail.com>
+Subject: Re: [EXT] Re: iMX6/UART imprecise external abort
+To: Andy Duan <fugang.duan@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_140528_989662_6DFFE188 
-X-CRM114-Status: GOOD (  10.66  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191210_140734_887105_9B80E08C 
+X-CRM114-Status: GOOD (  14.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,70 +102,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Corentin Labbe <clabbe.montjoie@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org
+Cc: Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
+Hi Andry
 
-[ Upstream commit a7126603d46fe8f01aeedf589e071c6aaa6c6c39 ]
+On Tue, Dec 10, 2019 at 6:46 PM Andy Duan <fugang.duan@nxp.com> wrote:
+> > We have confirmed that this happens on the standard 5.4.1 board, but only
+> > when the RS485 ioctls and corresponding device tree entries are enabled.
+> > We have tried it on different hardware (the Wandboard iMX6Q), with just a
+> > minor change to the device tree - the addition of uart-has-rtscts, and rts-gpio.
+> Documentation/devicetree/bindings/serial/fsl-imx-uart.txt
+> Note that for RS485 you must enable either the "uart-has-rtscts" or the "rts-gpios" properties.
+>
+> And please note rts-gpio should be the pin for CTS_B.
 
-If you try to compile this driver on a 64-bit platform then you
-will get warnings because it mixes size_t with unsigned int which
-only works on 32-bit.
+Thanks - we did have this wrong. However even after correcting this it
+still fails in the same way. This is what we're trying:
+diff --git a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
+b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
+index 2cfb4112a467..5f2d3dfafcec 100644
+--- a/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-wandboard.dtsi
+@@ -219,6 +219,14 @@
+  >;
+  };
++ pinctrl_uart2: uart2grp {
++ fsl,pins = <
++        MX6QDL_PAD_SD4_DAT7__UART2_TX_DATA 0x1b0b1
++        MX6QDL_PAD_SD4_DAT4__UART2_RX_DATA 0x1b0b1
++        MX6QDL_PAD_SD4_DAT5__UART2_CTS_B    0x1b0b1
++ >;
++ };
++
+  pinctrl_uart3: uart3grp {
+  fsl,pins = <
+  MX6QDL_PAD_EIM_D24__UART3_TX_DATA 0x1b0b1
+@@ -313,13 +321,18 @@
+  status = "okay";
+ };
+-&uart3 {
++&uart2 {
+  pinctrl-names = "default";
+- pinctrl-0 = <&pinctrl_uart3>;
++ pinctrl-0 = <&pinctrl_uart2>;
+  uart-has-rtscts;
++  linux,rs485-enabled-at-boot-time;
+  status = "okay";
+ };
++&uart3 {
++ status = "disabled";
++};
++
+ &usbh1 {
+  status = "okay";
+ };
 
-This patch fixes all of the warnings on sun4i-ss-hash.c.
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
-Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/crypto/sunxi-ss/sun4i-ss-hash.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-hash.c b/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
-index f6936bb3b7be4..1a724263761bc 100644
---- a/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
-+++ b/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
-@@ -276,8 +276,8 @@ static int sun4i_hash(struct ahash_request *areq)
- 			 */
- 			while (op->len < 64 && i < end) {
- 				/* how many bytes we can read from current SG */
--				in_r = min3(mi.length - in_i, end - i,
--					    64 - op->len);
-+				in_r = min(end - i, 64 - op->len);
-+				in_r = min_t(size_t, mi.length - in_i, in_r);
- 				memcpy(op->buf + op->len, mi.addr + in_i, in_r);
- 				op->len += in_r;
- 				i += in_r;
-@@ -297,8 +297,8 @@ static int sun4i_hash(struct ahash_request *areq)
- 		}
- 		if (mi.length - in_i > 3 && i < end) {
- 			/* how many bytes we can read from current SG */
--			in_r = min3(mi.length - in_i, areq->nbytes - i,
--				    ((mi.length - in_i) / 4) * 4);
-+			in_r = min_t(size_t, mi.length - in_i, areq->nbytes - i);
-+			in_r = min_t(size_t, ((mi.length - in_i) / 4) * 4, in_r);
- 			/* how many bytes we can write in the device*/
- 			todo = min3((u32)(end - i) / 4, rx_cnt, (u32)in_r / 4);
- 			writesl(ss->base + SS_RXFIFO, mi.addr + in_i, todo);
-@@ -324,8 +324,8 @@ static int sun4i_hash(struct ahash_request *areq)
- 	if ((areq->nbytes - i) < 64) {
- 		while (i < areq->nbytes && in_i < mi.length && op->len < 64) {
- 			/* how many bytes we can read from current SG */
--			in_r = min3(mi.length - in_i, areq->nbytes - i,
--				    64 - op->len);
-+			in_r = min(areq->nbytes - i, 64 - op->len);
-+			in_r = min_t(size_t, mi.length - in_i, in_r);
- 			memcpy(op->buf + op->len, mi.addr + in_i, in_r);
- 			op->len += in_r;
- 			i += in_r;
--- 
-2.20.1
-
+Regards,
+Andre
 
 _______________________________________________
 linux-arm-kernel mailing list
