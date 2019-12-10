@@ -2,60 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5900211921D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 21:34:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FB36119223
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 21:34:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=s1kTenVg79cYfAuqEXp8fDjoEtVUEudu3ory/mJ420o=; b=RbUzdiS794Amjv
-	aLOvRo6baT84qFFB9IRLDPwlnJi8hYsrsBSwnDonXGsjrM/RfQwteNI2jtzTY9JIpPqbw8NIG4KkZ
-	y5XtcgkI4hsmjVYohk2o3lqQX5VOGK0PKIRjrp5yMghYQzxJWilSwh5ZviOCxKF2TI2NvsZoV8S6u
-	8hlAnWdmFIlQClqAc5RX++cBFEIGB+PO/7oQhR/bR8E3oolYKqYE2eDKd7kK0IEj0OomQLL/BY/1B
-	RDRijS2PIQR9SB0tG+lB/gtsSPL6rD1bObkb9gNFLCvfGhDfYAIS8o1rynM5d0VqpXWoxXEQL1TMm
-	ev957FTgZt9h7Ve0lqLQ==;
+	List-Owner; bh=QCFl/VO/D96Xt0n2Qxrc3LVdhH2stSnVBTzf4Z0xt5k=; b=ksExEEBQ/zzItG
+	CKHohoN0qT7YPi7yr9X/V5Usn2oc2VKua6lGQbslsWIVTorGweX6KMLa2fKXRkQr47zxARAyz+VDb
+	uJ70+2Ya4wbniTp0pDjX/VSqOVu7e+PlR771Nw5QBYy9RqYYLp6adR3c//Gzh0tHuLNchbtFc5Fur
+	oRswobmCrBLQfQJPohwCZze8q5pc1Wu7OlClgQhIq7AW/46+uBx9sQYKvyQhmoqCZIHMjIW7H7p0g
+	T8TGGzyTraUXyD3H/nJKDFByeyvAb4w/XJNzsRXChTBQ9a8Tv7mf7hKIJcR7BFsTTIxAWy0e4WbQ4
+	owAE57AyTzpHmPlczWNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iemCl-0002Ro-Ks; Tue, 10 Dec 2019 20:33:59 +0000
+	id 1iemD9-0002jo-EI; Tue, 10 Dec 2019 20:34:23 +0000
 Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iemCd-0002RD-0V
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 20:33:52 +0000
+ id 1iemD0-0002j2-3T
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 20:34:15 +0000
 Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue010 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MTiDV-1iI4HB3JXx-00U2pg; Tue, 10 Dec 2019 21:33:40 +0100
+ (mreue011 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1M8hlZ-1iafTh1vDF-004kr7; Tue, 10 Dec 2019 21:34:12 +0100
 From: Arnd Bergmann <arnd@arndb.de>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Subject: [PATCH] coresight: etm4x: fix unused function warning
-Date: Tue, 10 Dec 2019 21:33:19 +0100
-Message-Id: <20191210203339.2830960-1-arnd@arndb.de>
+To: Lubomir Rintel <lkundrak@v3.sk>
+Subject: [PATCH] ARM: mmp: include the correct cputype.h
+Date: Tue, 10 Dec 2019 21:34:00 +0100
+Message-Id: <20191210203409.2875880-1-arnd@arndb.de>
 X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:PZv6Q0/vdlVSHBHJn7T1gpGLlPiQ8u4vxmASJnEyI/W8tB+C7Ve
- 47L8q68zl+iwEznlpWRUChe6lxKnFsHUwqYKFHYEIbeSXPS+U0RIGw0vMzPYEzLaO7TqSw0
- micRDY7OOQhNERdJ52106PBe9uWQunzsjC2rIFxPS12ZjkU/3nYpBC8aWen4FX9z1M4w13Z
- 3YVYvWnRVPTW02f6K7rng==
+X-Provags-ID: V03:K1:TYAVyXZgBYEko4NYVCn4X559DV/JN37TG56E9DTOSjQgKZUotME
+ +7SX6MDl243LqHXqdDvEgumQAYCErDA36xAmLWEj8PUEy9hunzEkslRwnZA2MRQu4Ce4ch2
+ i8QQfAihBHYBxnm348B+iQdREe+NBDyg3AXlxUQRt1UxEQHRaYV4cOSKTwu4wbyFEKAt/kp
+ vWWIx6wXTp+ZXCJIEngNA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:5PIKYtZ1FQM=:89IFv7vKvpz0RD/0CpqeCv
- CcwCoqI74Hf/TI75aRAaX6frcGQMdlMQQFv+H1sU3tbdLh52LAaW9L8WVvdSILT5SY667EkZ/
- rs9T7Q4W3kJ52a520xcjkbj5k5q1heM6KFdnk5cdhGywyNK11fDinVVg4UNN/9zeYC3HY+rMP
- JExZUgsk/GPyjEXOdgTD8RvH2vhEdFqrAdLt7IlJsD0YYeX6ErlWIlPuBl58N9vZM3NJezznO
- 1GE5RW7AFRScIp9pDOr9n+PMJfvAMZbQMM5O6HdPxem05lmVgLSUUZrOqza0XXkkxQ3hSYCIK
- Bt7vQWLwGd62u/71ZHM2gGcqCn5rkZb16m0jwPnW4VAzteFoZzaopTL447obA2u9JNmmwvslF
- j0TVFDS6ESa6YbaI2uq/+K6KRteoXwOGwYgudAz1diRzJsD2YZX6jS3qIQW6SdWiXd3JaQnDG
- KliVjSAWHp+N+9DhCAJHDExMgq4EuJKoowG6l4nnmIdi6pMZNUL/juWD0ATdyBeYTHdlJa2TV
- JrA9xj/jh67RhmrkQF7qCl3gFVd+d6UoBBsW0YUkQr6hgF2YTpZkCLY/l79PbnLJ3ONScq+Km
- IjtT6V8NbE9zJUM184uQbDybo29+z3uhgzzwvKQB4siR5Za5e47jg9MEt+IXf12FD1LO8xleO
- iWVanHRw/O8zcZflJbjHMSFGMZ3ApihHX8X+D8IHSlTh23XIO+rKrhYRn0W8BXEPQ5hvCo5F9
- +UOnbMA49lZzR9+fNdooTbOM9gC4Rx/fgcmG6nSj/bCpXKWKiypegOyJ4zFV2aaMDWjUgvORM
- 4RQcNeyHcNjN2m8FJxOdu2U6DbSado1gqiJsL2w28u1Rf/W+jUtCcfLoKBqnMJml6vpbCr7RM
- 1wa7mhMTFhNyS+VcZWAw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:3HiHdPJVe7M=:7cSklzDdqM2TTJj0lOR2Ub
+ 2g5KEPlXreb/mo5YWw7e3DVba9pcj81DkjylhmMqGnz4i35x2eIAm3o/wiB3HnQ0YucEQAqqV
+ PgRljNhR+iQv8AYEwnq5r63vcNRM6or9YaVlsW0QCatE+5s5IozH1nX9CPmNEWcN8AkffFrmH
+ NiLx601YlWIsRvDdWhjRpErHvQ80OeY1dV98Mv3Fs/ZGxJP/4rD6fVQOBYUMFb7x+J3mo9E5Q
+ JVpc9UHwAt41sUhd2TV55lZsyz2+xQPcbjtR+cyBLmi75bhiF6c/6qjIaRRFGRJ/q3i1+9VI2
+ PsOWOxdkQooTTJh0SdhkH4/5z/8FqcYp2SSzHnN6yW4PVoYpM8Y4dZ7xVVC5SAHZXNDTsjxXM
+ Ra4La6NPVq1fNGyf1VYV7f6FhA59mynJv1DwwTSVGfGlYyVYFxbULfFZUC3qJ6gLpkULO+LYn
+ YJ2XcksLuN6cIDwp+ZFIUSPEzP8Q3duijvExGPXSh1sp4v928MHbgtzRrk8I2F7atpp87I1oU
+ gKUMfPIRlXLHQsMkPsG2R3c5OFBn7r+NmH+VPK+BU3v2vT695goh/1C69Vk7XrDv6Bl1m3eg1
+ sRQMMxgU/O8tq6vwpovXbGoTAjioMKz3GRP2hOXGpN0rl1nJ7tNGZ3BWGwsDuoVYhQdgP+yb+
+ 9hBS9C3rNAfH7Y87iTmbvzY3gK405RMJIk/NmjGRfOmQ48SZQshU+YN1rW1CVJnx+4gzBzPRm
+ YizD6uevSC6aIaZbC+DjiM3i9a7BThnXuy6De6uA3iF7cjlJYgWTlSpF/e4I581SD6aqub1s3
+ p+8R7biP43pV2Y7UiAFxkoi5ny8QD6ylcNSo/UJO6OsKsYSFz3mKE3LCtJvFigIeZwUGOdqz7
+ BNmP5NPjKu3Bbh9kxTBA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_123351_353002_05F4884E 
-X-CRM114-Status: GOOD (  12.84  )
+X-CRM114-CacheID: sfid-20191210_123414_434088_69936F56 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,70 +75,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Arnd Bergmann <arnd@arndb.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Andrew Murray <andrew.murray@arm.com>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
+Cc: soc@kernel.org, linux-arm-kernel@lists.infradead.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some of the newly added code in the etm4x driver is inside of an #ifdef,
-and some other code is outside of it, leading to a harmless warning when
-CONFIG_CPU_PM is disabled:
+The file was moved, causing a build error:
 
-drivers/hwtracing/coresight/coresight-etm4x.c:68:13: error: 'etm4_os_lock' defined but not used [-Werror=unused-function]
- static void etm4_os_lock(struct etmv4_drvdata *drvdata)
-             ^~~~~~~~~~~~
+In file included from /git/arm-soc/arch/arm/mach-mmp/pxa168.c:28:
+arch/arm/mach-mmp/pxa168.h:22:10: fatal error: cputype.h: No such file or directory
 
-To avoid the warning and simplify the the #ifdef checks, use
-IS_ENABLED() instead, so the compiler can drop the unused functions
-without complaining.
+Include it from the new location.
 
-Fixes: f188b5e76aae ("coresight: etm4x: Save/restore state across CPU low power states")
+Fixes: 32adcaa010fa ("ARM: mmp: move cputype.h to include/linux/soc/")
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- drivers/hwtracing/coresight/coresight-etm4x.c | 13 ++++++-------
- 1 file changed, 6 insertions(+), 7 deletions(-)
+ arch/arm/mach-mmp/pxa168.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index dc3f507e7562..a90d757f7043 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -1132,7 +1132,6 @@ static void etm4_init_trace_id(struct etmv4_drvdata *drvdata)
- 	drvdata->trcid = coresight_get_trace_id(drvdata->cpu);
- }
+diff --git a/arch/arm/mach-mmp/pxa168.h b/arch/arm/mach-mmp/pxa168.h
+index 6dd17986e360..34f907cd165a 100644
+--- a/arch/arm/mach-mmp/pxa168.h
++++ b/arch/arm/mach-mmp/pxa168.h
+@@ -17,9 +17,9 @@ extern void pxa168_clear_keypad_wakeup(void);
+ #include <linux/platform_data/keypad-pxa27x.h>
+ #include <linux/pxa168_eth.h>
+ #include <linux/platform_data/mv_usb.h>
++#include <linux/soc/mmp/cputype.h>
  
--#ifdef CONFIG_CPU_PM
- static int etm4_cpu_save(struct etmv4_drvdata *drvdata)
- {
- 	int i, ret = 0;
-@@ -1402,17 +1401,17 @@ static struct notifier_block etm4_cpu_pm_nb = {
+ #include "devices.h"
+-#include "cputype.h"
  
- static int etm4_cpu_pm_register(void)
- {
--	return cpu_pm_register_notifier(&etm4_cpu_pm_nb);
-+	if (IS_ENABLED(CONFIG_CPU_PM))
-+		return cpu_pm_register_notifier(&etm4_cpu_pm_nb);
-+
-+	return 0;
- }
- 
- static void etm4_cpu_pm_unregister(void)
- {
--	cpu_pm_unregister_notifier(&etm4_cpu_pm_nb);
-+	if (IS_ENABLED(CONFIG_CPU_PM))
-+		cpu_pm_unregister_notifier(&etm4_cpu_pm_nb);
- }
--#else
--static int etm4_cpu_pm_register(void) { return 0; }
--static void etm4_cpu_pm_unregister(void) { }
--#endif
- 
- static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
- {
+ extern struct mmp_device_desc pxa168_device_uart1;
+ extern struct mmp_device_desc pxa168_device_uart2;
 -- 
 2.20.0
 
