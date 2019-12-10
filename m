@@ -2,63 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 530B91197D7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:37:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 903AB119794
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:34:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+wFfOiTTpflBTTg96VM8rIPdPECzPjmWzLuWdaPGT2E=; b=JmMZ/KxHu648Bi
-	C+DKncmMQxilf5gwfvEfzApoy/lg86EwkiTBsNZjYvFPQ+Q/nqLUQxrh80S1zs2NfLZT0lR2ANxWj
-	ZXEJl+5OmyWZiapLat+O8L40bkIkaD3D7Sp/BavfYHPs4StMIspfEOPKQL9oCb+Ac3s0NNJdGeHBf
-	FQMyoXSb+0CyOOS96MGqjCMHlpFJd96E98lNH05lVDfBDWXgjpRRsefK2oi0a/+XqnnK6O9pM37DP
-	LFqXnWDPFpa5BxELctnDTt3ZMn7vSYAe90D0kVCbMijVcBtRQFD2/ibhGzmlfnvfl3nCSR087uTlA
-	di4uP0vXMlxMc5udkigg==;
+	List-Owner; bh=yuzI8QNakEwLOWw/tWzhDmbezH8hDYCro03hPVdaMQ8=; b=CM+SRtiVpDAPdR
+	teQwDPuAtIphySogyxFKyZPdCYvctiY+w1Q/kaDdXbcF60CFB4KMpiNy+sTnX+O8AvMLLzQJsj2k/
+	A2mpkCHEp+piSmyCkG/izdA8GV/oos1WhGtPkS0l4Lzhv1q32qKoTvdGAtNnUSoibWgWHsLWNbpyG
+	Z0AhnUz7wm1/023cROlsM6enoQJHufzDM5ay9gsjes+JcvcOdaWraH4CVrgA4cqyypoHG0BoBpxbr
+	dw+54Sxzffp6TuMIJdwwuzP7BMAD/MaEwt26oMHRJsuZEIG4zDs3CmW7at+vqCK3KejbsUZlkQVDT
+	7e68YvfQsxi0fxYoZw1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ienBp-0005zu-Ut; Tue, 10 Dec 2019 21:37:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ien9H-0002Tg-Kv; Tue, 10 Dec 2019 21:34:27 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ienAa-0005B3-Bk
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:35:50 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A31AD2467C;
- Tue, 10 Dec 2019 21:35:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576013747;
- bh=xOjvESlAu0kjzv34q3tlMNMsGyLyCYHNFtq4N7/Nq24=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Yqwb/NSl1uTTFjxbIaBDToVzG9F53FZv/fNU/mnB+dTVd7JcIX/myQKq4rc4z5cda
- GOzrZqP0on3xu7L2euXkw3vLjRXGn24eVxWsLwZ7gIwDitlkPBrc96vt4Lj0yJbsWd
- ca2ct4bDq8YCgKfonN3qdHoJfsuc3v+lsEMVYZi0=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 169/177] crypto: sun4i-ss - Fix 64-bit size_t
- warnings on sun4i-ss-hash.c
-Date: Tue, 10 Dec 2019 16:32:13 -0500
-Message-Id: <20191210213221.11921-169-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191210213221.11921-1-sashal@kernel.org>
-References: <20191210213221.11921-1-sashal@kernel.org>
+ id 1ien8r-0002JV-Aj
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:34:02 +0000
+Received: by mail-lj1-x244.google.com with SMTP id h23so21553154ljc.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Dec 2019 13:34:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=sfwPNW+0w7SYOVN5vzqnBaCzSrm1enkZiO9HCQzgqjc=;
+ b=ELDYffyPwLTppPAGsVU3YxNSQOLOcATsg+IC8f7KpshW1lI8HVOS/LPhBAsT3ufSID
+ fT8v7xNJc4kv0wTGrieBMQqsRE05FMAqAlQlWeqPYjlA6ow0ox6lVlQeD3a0gHQCNpvO
+ UQuarskxChn5qju4s1+DdsIwkp9B7GHuVeF6VYnrRLMyisteUJaHFhFjU/S8KbDGs+wP
+ PxqBkBxPJ4ttyp+Sef34gOKwQPC9beuKUBnoGOn5XjUWMEO9A2EEJEl1u9PnSr5O44Lx
+ VMiuT+azPKHva2915rPrbzbWb1+RwsYjjYQJPUWnIZz+Df5kMzfE10XKxc8RFFUbhxa5
+ icmA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=sfwPNW+0w7SYOVN5vzqnBaCzSrm1enkZiO9HCQzgqjc=;
+ b=KnscFxQAqQYw4nI9BujFCIICzB0v+bvuPM9PVRRuJDoReAKhzbh/xXjHFwhTMcUgb8
+ ha8kQY5kYpTLIfBHYDSTSjtKYYDPp75f1HW2uPk8eEHOzkR09akZxV1d4Ed5huyz1/tZ
+ 5teaeqM3V3j5lcB0hA78+ylirccL24fgEae9UqIcggRyXpQfWWiDENipzWod10F6w/mu
+ CaLpQi3IWRmdvhTQYAiOm/FgoOsf4iw1kOGrRuM02xHVoJW6qtL98y9lUC6XU2QIdjJx
+ kN9MFH3e/Az8a+a7QWtTSreUPPSPZlTYZIOw10gZauuQx5UWcym/6v9as+i8nKj19iwV
+ whUA==
+X-Gm-Message-State: APjAAAUrdchsbPZ2iURhq5zg2Y+yMETviI25qaMyPi65xmG2IOtvQmag
+ buG+6nKUzGIbiPd6ff+VAp0Xy5UoRJhA/g/4uUcPxQ==
+X-Google-Smtp-Source: APXvYqxlNtTXCGGpW9eRPgRQxUIXYH1CqIcL6wpo3KqsA4rHt7y1htGJhYXnIDuRbtBsJbNT4EJP7YmxbMU5QzD97u0=
+X-Received: by 2002:a2e:9587:: with SMTP id w7mr21298405ljh.42.1576013639357; 
+ Tue, 10 Dec 2019 13:33:59 -0800 (PST)
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+References: <20191202193230.21310-1-sam@ravnborg.org>
+ <20191202193230.21310-8-sam@ravnborg.org>
+ <20191203074659.ilsyv4yx7pzw5vax@gilmour.lan>
+ <CACRpkdZrReQs08+bXS7s7eJ-K76nMGvRgQ-L-1-baunEtiF40g@mail.gmail.com>
+ <20191204081650.4n4ehbub4n7pxdom@gilmour.lan>
+In-Reply-To: <20191204081650.4n4ehbub4n7pxdom@gilmour.lan>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 10 Dec 2019 22:33:48 +0100
+Message-ID: <CACRpkdZ7jg7JwNk12m9pGXOVBxHRta8nBWmpdqFvfQHB=8LptA@mail.gmail.com>
+Subject: Re: [PATCH v1 07/26] drm/panel: remove get_timings
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_133548_492351_11C40A43 
-X-CRM114-Status: GOOD (  10.66  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191210_133401_387538_909B7BCF 
+X-CRM114-Status: GOOD (  14.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -68,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,70 +94,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Corentin Labbe <clabbe.montjoie@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org
+Cc: Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Sam Ravnborg <sam@ravnborg.org>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Jagan Teki <jagan@amarulasolutions.com>, Jitao Shi <jitao.shi@mediatek.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Abhinav Kumar <abhinavk@codeaurora.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Stefan Agner <stefan@agner.ch>, linux-tegra@vger.kernel.org,
+ Sean Paul <sean@poorly.run>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Purism Kernel Team <kernel@puri.sm>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
+On Wed, Dec 4, 2019 at 9:16 AM Maxime Ripard <mripard@kernel.org> wrote:
+> On Tue, Dec 03, 2019 at 04:20:24PM +0100, Linus Walleij wrote:
 
-[ Upstream commit a7126603d46fe8f01aeedf589e071c6aaa6c6c39 ]
+> > On the DSI displays in video mode there is also this EOL area
+> > which seems to be where the logic is normally just idling for a
+> > while, that can be adjusted on some hardware as well, but
+> > I don't quite understand it admittedly. Sometimes I wonder if
+> > anyone really understands DSI... :/
+>
+> I'm not aware of any EOL area in MIPI-DSI that would make the hardware
+> idle, don't you mean LP-11?
 
-If you try to compile this driver on a 64-bit platform then you
-will get warnings because it mixes size_t with unsigned int which
-only works on 32-bit.
+I think in the spec the bubble used for this is tagged "BLLP"
+Blanking-Line-Low-Power or something.
 
-This patch fixes all of the warnings on sun4i-ss-hash.c.
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
-Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/crypto/sunxi-ss/sun4i-ss-hash.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+IIUC it is possible for displays to either receive continuous NULL
+packets or blanking packets or go to LP mode in this area.
 
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-hash.c b/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
-index f6936bb3b7be4..1a724263761bc 100644
---- a/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
-+++ b/drivers/crypto/sunxi-ss/sun4i-ss-hash.c
-@@ -276,8 +276,8 @@ static int sun4i_hash(struct ahash_request *areq)
- 			 */
- 			while (op->len < 64 && i < end) {
- 				/* how many bytes we can read from current SG */
--				in_r = min3(mi.length - in_i, end - i,
--					    64 - op->len);
-+				in_r = min(end - i, 64 - op->len);
-+				in_r = min_t(size_t, mi.length - in_i, in_r);
- 				memcpy(op->buf + op->len, mi.addr + in_i, in_r);
- 				op->len += in_r;
- 				i += in_r;
-@@ -297,8 +297,8 @@ static int sun4i_hash(struct ahash_request *areq)
- 		}
- 		if (mi.length - in_i > 3 && i < end) {
- 			/* how many bytes we can read from current SG */
--			in_r = min3(mi.length - in_i, areq->nbytes - i,
--				    ((mi.length - in_i) / 4) * 4);
-+			in_r = min_t(size_t, mi.length - in_i, areq->nbytes - i);
-+			in_r = min_t(size_t, ((mi.length - in_i) / 4) * 4, in_r);
- 			/* how many bytes we can write in the device*/
- 			todo = min3((u32)(end - i) / 4, rx_cnt, (u32)in_r / 4);
- 			writesl(ss->base + SS_RXFIFO, mi.addr + in_i, todo);
-@@ -324,8 +324,8 @@ static int sun4i_hash(struct ahash_request *areq)
- 	if ((areq->nbytes - i) < 64) {
- 		while (i < areq->nbytes && in_i < mi.length && op->len < 64) {
- 			/* how many bytes we can read from current SG */
--			in_r = min3(mi.length - in_i, areq->nbytes - i,
--				    64 - op->len);
-+			in_r = min(areq->nbytes - i, 64 - op->len);
-+			in_r = min_t(size_t, mi.length - in_i, in_r);
- 			memcpy(op->buf + op->len, mi.addr + in_i, in_r);
- 			op->len += in_r;
- 			i += in_r;
--- 
-2.20.1
+And since that is not there for e.g. DPI displays I feel it adds
+another layer of confusion to timings.
 
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
