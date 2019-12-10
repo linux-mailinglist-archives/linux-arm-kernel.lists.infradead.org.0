@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40BE411936B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:11:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A0C511936D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:11:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B0KyN7S0F85aOs+BEpfsn2DTI1Ni9UHCJM19rGAA9CM=; b=NB1VEFmpWcBhDX
-	zjBoSm3e/61fQ/KALApqpjwnspsKsGYkfKz+C7YqdxYe1c/ZjnisK9sHauNfjKV5nOoqRxzPAaZHx
-	+U7Fk6A9OtOsXYHF10pdTeveOR5FHzn+cm10LIJOMcYjM6H907D2mJG31IqV9L475gvzm0YflZW8T
-	sPHLVINcGC1mxIFkiWFborlR6q4xMNOIyhDM2K/s0y/suAO+pUarBLIc9Qzm7soEwV+mRT3Ks2S/O
-	JqSEQE2VdKhC5Dt64B/A90xPw8ujSuaDbjRPTlsDC4vACY7iCv9ntdSF/5GbnqZw41xaM/XWqyU68
-	iqWXuNtDuDDCmiiaxV0w==;
+	List-Owner; bh=ee/KDw+jbEkxwFcq9j2VulX2LIijCA66aW+zmc8zS74=; b=D/pN2HrBNocB21
+	TuPT6FoPYPznZVV5GUFGdhNTt+NfoY2R6jloNu1RsdZUnkX+JcYF4gyzdrLcc87LV9pb/8ELti6Bk
+	5t8vQjKQQTvCiEBMs8g6jILpiGfhUeDVEST026z2iANvNDEfZj0m0R1koQI5lUORSAw8mWCPT01ML
+	ztBYArq/3IW2qhKGghMJDIBrA592CMHk0L3kvNRGj6VGQOBE3q3iCkriuH2hywMIeaxlejud+aUB2
+	TYMhDkK6t4PZV7FCyA1X0aIXXwGP6lhioF03DOPPcjec68B88uXgz1SpODtRpKxII0KRusB/uy1AU
+	sau+jY73mQQTC/VxUNGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iemn7-0005N2-Sq; Tue, 10 Dec 2019 21:11:33 +0000
+	id 1iemnN-0005bL-IW; Tue, 10 Dec 2019 21:11:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iemmQ-0004rR-1J
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:10:51 +0000
+ id 1iemmV-0004xd-2D
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:10:56 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E5C0D246AE;
- Tue, 10 Dec 2019 21:10:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 99D51246AE;
+ Tue, 10 Dec 2019 21:10:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576012249;
- bh=stqJirSBigCjUNifC1OoMutB1fJmmXeU1I9ydq6AYUs=;
+ s=default; t=1576012254;
+ bh=iKHzYfg2mi5+rXn4bwwSLeTeA/Prirx9XvsHR+GrqNA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=dlbFKKgn2thnft8UuIIwlYj0GXTEJh2YQtSYCnf+aKbhjhyW9qagx12qytufVjgOD
- VkMg/oCjnsM+sW+3nYq9VxNqjzswS2vyUi9QQHJJeG6PuHZeHrPNMnxeJv+bq9lesl
- Jde12IFb8TKLFNHQkNw78PYreD3oqSM+rwjSs/rA=
+ b=B4sagRIvW9990KfUKB6onyejIIjyx/Xi3LNSViu1NLzmTPHrslZQizeYb0lUdOc7E
+ bsvtQgtwhOsn2x5VF/JTf8zDKhVt8gJTFplzgB1bbshq+qaXxyeuS1EblgP/lvJsn/
+ K5kWwtJF77fnLA3YCVIsTcBbUE66aaJCyjNp8uQQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 197/350] ASoC: SOF: imx: fix reverse
- CONFIG_SND_SOC_SOF_OF dependency
-Date: Tue, 10 Dec 2019 16:05:02 -0500
-Message-Id: <20191210210735.9077-158-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 201/350] cpufreq: sun50i: Fix CPU speed bin
+ detection
+Date: Tue, 10 Dec 2019 16:05:06 -0500
+Message-Id: <20191210210735.9077-162-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191210210735.9077-1-sashal@kernel.org>
 References: <20191210210735.9077-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_131050_102494_2B6FD60B 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20191210_131055_210726_C3982B59 
+X-CRM114-Status: GOOD (  14.61  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,65 +80,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- Arnd Bergmann <arnd@arndb.de>,
- Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Ondrej Jirman <megous@megous.com>, Sasha Levin <sashal@kernel.org>,
+ linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
+From: Ondrej Jirman <megous@megous.com>
 
-[ Upstream commit f9ad75468453b019b92c5296e6a04bf7c37f49e4 ]
+[ Upstream commit c23734487fb44ee16c1b007ba72d793c085e4ec4 ]
 
-updated solution to the problem reported with randconfig:
+I have observed failures to boot on Orange Pi 3, because this driver
+determined that my SoC is from the normal bin, but my SoC only works
+reliably with the OPP values for the slowest bin.
 
-CONFIG_SND_SOC_SOF_IMX depends on CONFIG_SND_SOC_SOF, but is in
-turn referenced by the sof-of-dev driver. This creates a reverse
-dependency that manifests in a link error when CONFIG_SND_SOC_SOF_OF
-is built-in but CONFIG_SND_SOC_SOF_IMX=m:
+By querying H6 owners, it was found that e-fuse values found in the wild
+are in the range of 1-3, value of 7 was not reported, yet. From this and
+from unused defines in BSP code, it can be assumed that meaning of efuse
+values on H6 actually is:
 
-sound/soc/sof/sof-of-dev.o:(.data+0x118): undefined reference to `sof_imx8_ops'
+- 1 = slowest bin
+- 2 = normal bin
+- 3 = fastest bin
 
-use def_trisate to propagate the right settings without select.
+Vendor code actually treats 0 and 2 as invalid efuse values, but later
+treats all invalid values as a normal bin. This looks like a mistake in
+bin detection code, that was plastered over by a hack in cpufreq code,
+so let's not repeat it here. It probably only works because there are no
+SoCs in the wild with efuse value of 0, and fast bin SoCs are made to
+use normal bin OPP tables, which is also safe.
 
-Fixes: f4df4e4042b0 ("ASoC: SOF: imx8: Fix COMPILE_TEST error")
-Fixes: 202acc565a1f ("ASoC: SOF: imx: Add i.MX8 HW support")
-Suggested-by: Arnd Bergmann <arnd@arndb.de>
-Signed-off-by: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
-Link: https://lore.kernel.org/r/20191101173045.27099-6-pierre-louis.bossart@linux.intel.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Let's play it safe and interpret 0 as the slowest bin, but fix detection
+of other bins to match this research. More research will be done before
+actual OPP tables are merged.
+
+Fixes: f328584f7bff ("cpufreq: Add sun50i nvmem based CPU scaling driver")
+Acked-by: Maxime Ripard <mripard@kernel.org>
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- sound/soc/sof/imx/Kconfig | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ drivers/cpufreq/sun50i-cpufreq-nvmem.c | 25 ++++++++++---------------
+ 1 file changed, 10 insertions(+), 15 deletions(-)
 
-diff --git a/sound/soc/sof/imx/Kconfig b/sound/soc/sof/imx/Kconfig
-index 5acae75f5750d..71f318bc2c74f 100644
---- a/sound/soc/sof/imx/Kconfig
-+++ b/sound/soc/sof/imx/Kconfig
-@@ -11,8 +11,8 @@ config SND_SOC_SOF_IMX_TOPLEVEL
+diff --git a/drivers/cpufreq/sun50i-cpufreq-nvmem.c b/drivers/cpufreq/sun50i-cpufreq-nvmem.c
+index eca32e443716c..9907a165135b7 100644
+--- a/drivers/cpufreq/sun50i-cpufreq-nvmem.c
++++ b/drivers/cpufreq/sun50i-cpufreq-nvmem.c
+@@ -25,7 +25,7 @@
+ static struct platform_device *cpufreq_dt_pdev, *sun50i_cpufreq_pdev;
  
- if SND_SOC_SOF_IMX_TOPLEVEL
+ /**
+- * sun50i_cpufreq_get_efuse() - Parse and return efuse value present on SoC
++ * sun50i_cpufreq_get_efuse() - Determine speed grade from efuse value
+  * @versions: Set to the value parsed from efuse
+  *
+  * Returns 0 if success.
+@@ -69,21 +69,16 @@ static int sun50i_cpufreq_get_efuse(u32 *versions)
+ 		return PTR_ERR(speedbin);
  
--config SND_SOC_SOF_IMX8
--	tristate "SOF support for i.MX8"
-+config SND_SOC_SOF_IMX8_SUPPORT
-+	bool "SOF support for i.MX8"
- 	depends on IMX_SCU
- 	depends on IMX_DSP
- 	help
-@@ -20,4 +20,8 @@ config SND_SOC_SOF_IMX8
-           Say Y if you have such a device.
-           If unsure select "N".
- 
-+config SND_SOC_SOF_IMX8
-+	def_tristate SND_SOC_SOF_OF
-+	depends on SND_SOC_SOF_IMX8_SUPPORT
+ 	efuse_value = (*speedbin >> NVMEM_SHIFT) & NVMEM_MASK;
+-	switch (efuse_value) {
+-	case 0b0001:
+-		*versions = 1;
+-		break;
+-	case 0b0011:
+-		*versions = 2;
+-		break;
+-	default:
+-		/*
+-		 * For other situations, we treat it as bin0.
+-		 * This vf table can be run for any good cpu.
+-		 */
 +
- endif ## SND_SOC_SOF_IMX_IMX_TOPLEVEL
++	/*
++	 * We treat unexpected efuse values as if the SoC was from
++	 * the slowest bin. Expected efuse values are 1-3, slowest
++	 * to fastest.
++	 */
++	if (efuse_value >= 1 && efuse_value <= 3)
++		*versions = efuse_value - 1;
++	else
+ 		*versions = 0;
+-		break;
+-	}
+ 
+ 	kfree(speedbin);
+ 	return 0;
 -- 
 2.20.1
 
