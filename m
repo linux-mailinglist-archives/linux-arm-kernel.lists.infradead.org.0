@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D99B118B33
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:39:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05F69118B36
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:39:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A6bdKcUA4IuJ9cbc7891vWKEsYcRCGClIcpcdiApgYE=; b=O+JPlOZWRRyQu4
-	UE5CfR4DHUGoSJFWrGgxSm9YbIynkfslKTY+ozuyVCl5U7uL9TKphqzCdlLv9oo797s8DvU6y5VBe
-	hgRLunUveaWW95SRIArrplox46ftE5cyWctltI7flrYI4NUbh8PaVUdMJMGucLNHt+q61GwbY4Aaw
-	f8q8LaXt2VcMfKdWEV6pC6N+lhK7FhlQH81tubRsp1Sa9c0cpG+p2UflVS9aws9CsusGpILq8mVhp
-	AKaIpiz+v4JNn6OFbd7YgWWl8/X1AZ8izDF18UtTQQZae1szYR5ENiKgyoZYQXPUv4yUEZzcWbqzU
-	Nj9C1W5BK/Dx8iMXRmPA==;
+	List-Owner; bh=Es212wlX/345Dv698j+sBccTZi8Ya89w4Gx1IVf2Fxs=; b=GMwUVicCLA4gq+
+	03eQoZqQbkRjH5RWp4BpHYyvjXhs+TOosnTteyi0GVeAvA0sLCI7NTn4/7TEAr0qTW+7sjryciEE8
+	n7n0MwfwPiycgfHmVWBzky3nNGvLDZFMmQ8IeaSBetxo0GfNTWIa8hg4xE/5Je7Qd1OukENGgg1Lp
+	3oyJuYjU6U8hzyYX/vSAM2gMH939bjNFpGs/jesLoVXNYRs6ZqlKzRw/N9wWd2geCj6+orPgIxVwy
+	tapGydquZeXBIZWYDd9D+nyvGa7G2bxNNLZl4tkSmjucWw90z4aIGbiFzU7133NoS/O50YWxEPs3O
+	dPHybNQUndJjRl+zbIKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iegfE-0005kA-4P; Tue, 10 Dec 2019 14:39:00 +0000
+	id 1iegfa-0006EG-MO; Tue, 10 Dec 2019 14:39:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iegdt-0004HK-5i
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:37:40 +0000
+ id 1iegdw-0004Jy-7n
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:37:42 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 551EA20836;
- Tue, 10 Dec 2019 14:37:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 20FCB2077B;
+ Tue, 10 Dec 2019 14:37:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575988656;
- bh=5F9He/JTjS47XRoiu2ueFi9Y8ZrlEGSvSIqSGl6ur+o=;
+ s=default; t=1575988659;
+ bh=ZZu6g4CiDeZIBwN4xUg7j+IL9wGtec4FD9ThMJUWWyY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Asj3mXXjQdygob6rd9S0uaev96tViCJSG8p4cN9zI4oMsQ1wB7nKWDAYyabUyFk7I
- XVtgyQ+Ehm1I7KehZv7JqaqD3aqnuFHXt8iTy8vfD5VAVwar70lN7Zx+dej4dFMekh
- 16OUcNKotDz2Z4U4vyFgN3G5Ed8EaNzxNvNAa9ic=
+ b=pyVsl2AwF+Rb+dIKagy9ZSrdqWe8rtMZlGi5PL+0o/xJIQXw9ft9eVi4Fu5yj6DvG
+ P47DJ8vavR+vbU3NaJwJRJK+9tkEodLUTSv9iSUzchyepYgHc3XEkKE/oAwh9evvHA
+ +CtUSn845z8GZ/5mJ8qti1oD1GYcDa9C061zVE+M=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-serial@vger.kernel.org
-Subject: [PATCH 09/10] tty: serial: samsung_tty: fix up minor comment
- formatting
-Date: Tue, 10 Dec 2019 15:37:05 +0100
-Message-Id: <20191210143706.3928480-9-gregkh@linuxfoundation.org>
+Subject: [PATCH 10/10] tty: serial: samsung_tty: fix blank line checkpatch
+ warning
+Date: Tue, 10 Dec 2019 15:37:06 +0100
+Message-Id: <20191210143706.3928480-10-gregkh@linuxfoundation.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
 References: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_063737_274450_C654995A 
-X-CRM114-Status: GOOD (  14.75  )
+X-CRM114-CacheID: sfid-20191210_063740_316605_F8C7D191 
+X-CRM114-Status: GOOD (  12.14  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -84,8 +84,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix up some minor formatting of comment blocks to make checkpatch
-happier and to make things look more uniform.
+checkpatch is giving a bunch of:
+	WARNING: Missing a blank line after declarations
+messages on this file, so fix up all instances of that issue.
 
 Cc: Kukjin Kim <kgene@kernel.org>
 Cc: Krzysztof Kozlowski <krzk@kernel.org>
@@ -99,78 +100,37 @@ Cc: linux-serial@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- drivers/tty/serial/samsung_tty.c | 16 +++++++++-------
- 1 file changed, 9 insertions(+), 7 deletions(-)
+ drivers/tty/serial/samsung_tty.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/drivers/tty/serial/samsung_tty.c b/drivers/tty/serial/samsung_tty.c
-index 3dfb4f37ec69..4aebed241068 100644
+index 4aebed241068..d5c75d288498 100644
 --- a/drivers/tty/serial/samsung_tty.c
 +++ b/drivers/tty/serial/samsung_tty.c
-@@ -4,7 +4,7 @@
-  *
-  * Ben Dooks, Copyright (c) 2003-2008 Simtec Electronics
-  *	http://armlinux.simtec.co.uk/
--*/
-+ */
+@@ -1543,6 +1543,7 @@ static void s3c24xx_serial_release_port(struct uart_port *port)
+ static int s3c24xx_serial_request_port(struct uart_port *port)
+ {
+ 	const char *name = s3c24xx_serial_portname(port);
++
+ 	return request_mem_region(port->mapbase, MAP_SIZE, name) ? 0 : -EBUSY;
+ }
  
- /* Hote on 2410 error handling
-  *
-@@ -19,7 +19,7 @@
-  * and change the policy on BREAK
-  *
-  * BJD, 04-Nov-2004
--*/
-+ */
- 
- #if defined(CONFIG_SERIAL_SAMSUNG_CONSOLE) && defined(CONFIG_MAGIC_SYSRQ)
- #define SUPPORT_SYSRQ
-@@ -838,7 +838,7 @@ static irqreturn_t s3c24xx_serial_tx_chars(int irq, void *id)
- 
- 	/* if there isn't anything more to transmit, or the uart is now
- 	 * stopped, disable the uart and exit
--	*/
-+	 */
- 
- 	if (uart_circ_empty(xmit) || uart_tx_stopped(port)) {
- 		s3c24xx_serial_stop_tx(port);
-@@ -1142,7 +1142,8 @@ static int s3c24xx_serial_startup(struct uart_port *port)
- 	ourport->tx_claimed = 1;
- 
- 	/* the port reset code should have done the correct
--	 * register setup for the port controls */
-+	 * register setup for the port controls
-+	 */
- 
- 	return ret;
- 
-@@ -1242,7 +1243,7 @@ static void s3c24xx_serial_pm(struct uart_port *port, unsigned int level,
-  * baud clocks (and the resultant actual baud rates) and then tries to
-  * pick the closest one and select that.
-  *
--*/
-+ */
- 
- #define MAX_CLK_NAME_LENGTH 15
- 
-@@ -1683,7 +1684,7 @@ s3c24xx_serial_ports[CONFIG_SERIAL_SAMSUNG_UARTS] = {
- /* s3c24xx_serial_resetport
-  *
-  * reset the fifos and other the settings.
--*/
-+ */
- 
- static void s3c24xx_serial_resetport(struct uart_port *port,
- 				   struct s3c2410_uartcfg *cfg)
-@@ -1737,7 +1738,8 @@ static int s3c24xx_serial_cpufreq_transition(struct notifier_block *nb,
- 
- 	if (val == CPUFREQ_PRECHANGE) {
- 		/* we should really shut the port down whilst the
--		 * frequency change is in progress. */
-+		 * frequency change is in progress.
-+		 */
- 
- 	} else if (val == CPUFREQ_POSTCHANGE) {
- 		struct ktermios *termios;
+@@ -1963,6 +1964,7 @@ static inline struct s3c24xx_serial_drv_data *s3c24xx_get_driver_data(
+ #ifdef CONFIG_OF
+ 	if (pdev->dev.of_node) {
+ 		const struct of_device_id *match;
++
+ 		match = of_match_node(s3c24xx_uart_dt_match, pdev->dev.of_node);
+ 		return (struct s3c24xx_serial_drv_data *)match->data;
+ 	}
+@@ -2109,6 +2111,7 @@ static int s3c24xx_serial_resume_noirq(struct device *dev)
+ 		/* restore IRQ mask */
+ 		if (s3c24xx_serial_has_interrupt_mask(port)) {
+ 			unsigned int uintm = 0xf;
++
+ 			if (tx_enabled(port))
+ 				uintm &= ~S3C64XX_UINTM_TXD_MSK;
+ 			if (rx_enabled(port))
 -- 
 2.24.0
 
