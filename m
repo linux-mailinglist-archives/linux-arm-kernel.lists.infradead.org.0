@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1462C118B21
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:37:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9356B118B16
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:37:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dQGbomcbhzI/TJlyb2fnkNjoh7ulwuypRmJdfPI6Cbg=; b=CShuEMmVorfoup
-	uNAFsl3VMiJQwn/xZstraPopbZBZ7C77r0GexKBq4UcVxLTw1IM9VESrjLMnd8Ci2PkoQjIqsCamQ
-	j//Kw46JBCWcR2n/GdJ1/xZG6BahPWLyeNPVWVokCVU/ysLtOWyLwXjVVM2DD0hZMTPX6a4bSBcAQ
-	kJc8BvCVpE6HwUADmjFJ98y1e8vq8jlGyY45uabz5ETm2XWONRRKYR5XWsKO2neIH32NRvS6/A0lo
-	h2ymis8FxfdjPK9/kyFONmC0Z8PtJtRX4LoRpu8gbhS2iQtmdf1O6YyqwsAGdO8Mj0qbYmPQAa182
-	sKOdvIrTBu83s7GOi6Jg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2aRts0L6H0yK/C2B+KkroLKz1kOhuEQqVFF+cWuH8Gw=; b=KH5+Hd//6rgqLv
+	pFwb7HSIWnAPrsrQ1DKLWSZzCshJKCGWFKKfyV6PTaYgYFcwbVLjsCRItRpNzxGSaho3Zz4J2Qtwe
+	5XoVQqu6sBj1vgl+i2KVxGNgo+wtftDerrbvWRywa+uDvxTMbVZ69ZEDch1fLWmOLVobh2L6r/L63
+	ehsJ7HRCunwbqu30P0ZH94s7bx8pV+/eN2zqFjdT41jh9BpwJPIYTuWciJmjovdn+qsv3btizKw30
+	yAs9DWpPgabmqRPHdF/Gb00jvyH084XcsJ+wsFSvuXWORashju6iWKCHRvMvv9UPx8x43Pm/jPfBt
+	tYzS5qNM8z0foCrT2SyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iegdz-00043H-JK; Tue, 10 Dec 2019 14:37:43 +0000
+	id 1iegdh-0003vd-9v; Tue, 10 Dec 2019 14:37:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iegda-0003v2-Cg
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:37:19 +0000
+ id 1iegdZ-0003ug-DM
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:37:18 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A249E24655;
- Tue, 10 Dec 2019 14:37:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4820520637;
+ Tue, 10 Dec 2019 14:37:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575988638;
- bh=0o81+/DwQ1E9CQg0+86DRp/+qNeIsAJJL/aYZVvQR90=;
- h=From:To:Cc:Subject:Date:From;
- b=AQZnhfymLwdRXIbRGLlp1aZ4/1FZ59IQ1AwK0a1KFKH4u4RhmLIF4CnGMMfaFlg9l
- mXi6J/2MFp5Fo7ETLxWKfb972aQN4OJxEWBec/V8rS8wwqJv4S8VsQbQVucitaWe/t
- zUOGpauZ7Ng677xq7WmNvSRgeR8PkR71Kqz/xg+Y=
+ s=default; t=1575988635;
+ bh=Htiw4KHrUr8tUURx+VNiZ7ZXYqZqdNLrXH1hUZlmBvw=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=j9+R5XOzhrVdFcS0cua2tqkoQtmc/F4BwJbaSD8veBmF+iaa5GGPxlbzQzXNr7pyI
+ OGnjYDUBaDauVTIPjqxPY3ogsvFBrXdgG/tO1dNPAOFdzIGGvqog6qLJ/XI4LjMkpP
+ Ae1GLD0gAZqsUW7ELcNcnjAJcGU9Lr+E+m0Tp5hM=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-serial@vger.kernel.org
-Subject: [PATCH 01/10] tty: serial: samsung: allow driver to be built by anyone
-Date: Tue, 10 Dec 2019 15:36:57 +0100
-Message-Id: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
+Subject: [PATCH 02/10] tty: serial: samsung_tty: fix build warning
+Date: Tue, 10 Dec 2019 15:36:58 +0100
+Message-Id: <20191210143706.3928480-2-gregkh@linuxfoundation.org>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
+References: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_063718_447622_51F7DF0E 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20191210_063717_470477_EA15ACF9 
+X-CRM114-Status: GOOD (  10.11  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -81,9 +83,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no need to tie this driver to only the OMAP platform,
-especially for build testing.  So add COMPILE_TEST as an option allowing
-it to be built on any platform.
+Fix a build warning on systems that do not have CONFIG_OF enabled.
 
 Cc: Kukjin Kim <kgene@kernel.org>
 Cc: Krzysztof Kozlowski <krzk@kernel.org>
@@ -97,22 +97,24 @@ Cc: linux-serial@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- drivers/tty/serial/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/tty/serial/samsung_tty.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-index 99f5da3bf913..c835e10bd97e 100644
---- a/drivers/tty/serial/Kconfig
-+++ b/drivers/tty/serial/Kconfig
-@@ -237,7 +237,7 @@ config SERIAL_CLPS711X_CONSOLE
+diff --git a/drivers/tty/serial/samsung_tty.c b/drivers/tty/serial/samsung_tty.c
+index 83fd51607741..67c5a84d0a26 100644
+--- a/drivers/tty/serial/samsung_tty.c
++++ b/drivers/tty/serial/samsung_tty.c
+@@ -1851,7 +1851,10 @@ static int s3c24xx_serial_init_port(struct s3c24xx_uart_port *ourport,
  
- config SERIAL_SAMSUNG
- 	tristate "Samsung SoC serial support"
--	depends on PLAT_SAMSUNG || ARCH_EXYNOS
-+	depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
- 	select SERIAL_CORE
- 	help
- 	  Support for the on-chip UARTs on the Samsung S3C24XX series CPUs,
+ /* Device driver serial port probe */
+ 
++#ifdef CONFIG_OF
+ static const struct of_device_id s3c24xx_uart_dt_match[];
++#endif
++
+ static int probe_index;
+ 
+ static inline struct s3c24xx_serial_drv_data *s3c24xx_get_driver_data(
 -- 
 2.24.0
 
