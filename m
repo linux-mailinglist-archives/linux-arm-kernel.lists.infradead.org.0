@@ -2,85 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD90F1188AA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 13:43:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AB2B1188B0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 13:45:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pE0FbEvxLjEQxmuhnxXQwaWHxnwp8HUcRJLEtOHMkyI=; b=e/Jtk8yteUp72Y
-	UJUsy1RHzK1QVNWv7Vqt8G2niI0SqbPFWChRW0NKT0DUn7TpN66ImCmaZkKJBH3ZrQNqTi17AtwO6
-	IQCUXBgCWik2B14d4MRvEdY/JbtyFEGFDZkPr7BlFPOEjuMMXDjeu7wS/dCeMPj1kjekyloWxwhlw
-	dUJGH3A2YMctTPolcaO+4lcvSrT6myOF8fskZLOtTBwi3+tu8EEdgXD6vaSG2USvF+49Cv6Y6T4WV
-	hHXs9Z5x0QpaJ4MxJycQX2n/oID0/UVtVRDlnHxJuaREJB8nzBUMakqIaaP8kd5XzkESb+rcVt7ZH
-	pb5TWFDrGEkpPPanJ+LQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject:From:
+	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=A1wfDT/YT7jOHbxlNxDqluqL8xNGRfmee4MTTB/zo3M=; b=M/KTf4Ek5HCulM
+	JRawNeke3tGnZVQb21NQvnRWo4AtNoHJnJ/3Vz2rH2ZNoGXWfKaybxdu+0LQ7RUqbweAvpIh9M1Ay
+	YlQgPOwCpd3owkTxvr+NsHMQUDRdCGC4GVNRMvMAUcsuYQU0jbBQ0shcyVWF+rKfmiXKCzJSTfYo6
+	y+9GLUgL7gMeGbzqVoINl2gFIJCG5JZxL98aIwGzTkwKn+NNnc8/tCn3jfhtBHP7BdIObz3eV5ue2
+	qR3XV/RBUWMWUkK1G5hyt7Sz7NaQSNWo6O5KXEtJDy2ojEsn8u5yDX/Gm/RMP2Qd1RfYBR4mrUyy3
+	Z2kdM+SkRVkCdF+glyhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieerU-0002M5-5Y; Tue, 10 Dec 2019 12:43:32 +0000
-Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
+	id 1ieesp-0002rm-Ny; Tue, 10 Dec 2019 12:44:55 +0000
+Received: from wp126.webpack.hosteurope.de ([2a01:488:42:1000:50ed:8485::])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieerL-0002LP-6A
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 12:43:24 +0000
-Received: by mail-vk1-xa42.google.com with SMTP id p191so5543443vkf.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 04:43:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=rmEiSSp96CqMy1Ppsk8W6nnDKAAqnPQ9Fp0EYBdV+7E=;
- b=SjVyZzwl1gFe4ZV18t5rV4aLho7lO9k6u7FJV6ZAqeuFB7bj2OpZ7m0NdHHPB5P/9J
- F1GRcZF8vBqkPBqBMbXJp1yuJ+IAcubDftWI51y+mNDpGrT6YxHSHu3zzeoVuKOXTUL6
- ofai+5OMyCUrw7aMsKCreGKjupSo3Hr8MQseWJ2xCsncPzWOMFL/Zih9GO6A6c/ZjqzK
- JyQZpoeWVRpPl0H1oX5XjRDyHL02eQQ9+RL/TZcZdazLKImnbYsdmtz0DQPBGEJMtLj3
- 8uxieE2T+RpsIhE9/Ytd6ACKGxx+oh90ka0loPrxuxNct8VjQ+3Ll7M3kAKlYy5U84kC
- DmBw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=rmEiSSp96CqMy1Ppsk8W6nnDKAAqnPQ9Fp0EYBdV+7E=;
- b=hT7WofbbKxoLPCDgKkn/2SGinr9L7iVG67mPRCdl3JFrX5qVZosodNqfIF6IYfkcGG
- NsN1YgRXemb2n0Ay/seHf2mk04EcejkKsUWcHvctdLfMwG8xdaEjZdjJKzl0iUchn2a3
- t3djNBtng3rSYiQFrtKC6kvdlNPFhFN8ApHyiWARCHFSZC5/qZMYZB7KbHbSSWtH4cX6
- mndlzMoy7nSP9CyjhAagZu11WY5qRPMo/dX7ABdKbjWul2eWp1+fS64efq3RUvUq1kB/
- OqtcUm1U04MhG/DNd5p/MUkOwq4cITHuZRI95Gm3PJaxRpme99DCk3DZP4Wf2n6uxfKy
- OLYQ==
-X-Gm-Message-State: APjAAAUC5Iq2Kfb9HqLfo89HCu4ohHdSJ8oYdhUtzTM39zeHah51smuP
- bBkLmFfgvi1xvlNjpE2a/0g16NpSRo011ywcmOuBLQ==
-X-Google-Smtp-Source: APXvYqwYeuWm53/m5Bq2qBEuOXIjm6v1jerpImsqqYFfOVtKgHeSeKsZzlwtHErJOzdB13a85RtG6b5LG2BU3bpzpc4=
-X-Received: by 2002:a1f:4541:: with SMTP id s62mr8918335vka.59.1575981801902; 
- Tue, 10 Dec 2019 04:43:21 -0800 (PST)
+ id 1ieesh-0002r5-HH; Tue, 10 Dec 2019 12:44:49 +0000
+Received: from [2003:a:659:3f00:1e6f:65ff:fe31:d1d5]
+ (helo=hermes.fivetechno.de); authenticated
+ by wp126.webpack.hosteurope.de running ExIM with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ id 1ieesZ-0004w5-Vj; Tue, 10 Dec 2019 13:44:40 +0100
+X-Virus-Scanned: by amavisd-new 2.11.1 using newest ClamAV at
+ linuxbbg.five-lan.de
+Received: from [192.168.34.101] (p5098d998.dip0.t-ipconnect.de
+ [80.152.217.152]) (authenticated bits=0)
+ by hermes.fivetechno.de (8.15.2/8.14.5/SuSE Linux 0.8) with ESMTPSA id
+ xBACicTS005661
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Tue, 10 Dec 2019 13:44:38 +0100
+From: Markus Reichl <m.reichl@fivetechno.de>
+Subject: [PATCH 1/3] arm64: dts: rockchip: Remove always-on properties from
+ regulator nodes on rk3399-roc-pc.
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, Jagan Teki <jagan@amarulasolutions.com>,
+ Markus Reichl <m.reichl@fivetechno.de>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org
+Organization: five technologies GmbH
+Message-ID: <f985665c-86c0-1657-14f8-f77e2ce5a3f7@fivetechno.de>
+Date: Tue, 10 Dec 2019 13:44:38 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-References: <20191204071958.18553-1-chaotian.jing@mediatek.com>
- <CAPDyKFo9Z2yj7zC5VOS-iX_LyavPp1A4n73eAp7VD-Q+dpoqpw@mail.gmail.com>
- <1575979419.7714.1.camel@mhfsdcap03>
-In-Reply-To: <1575979419.7714.1.camel@mhfsdcap03>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 10 Dec 2019 13:42:45 +0100
-Message-ID: <CAPDyKFpCjzpxOLi+bfawgHJNXve16tkJmg-Z0Jqjf3zJ5UxV_g@mail.gmail.com>
-Subject: Re: [PATCH] mmc: mediatek: fix CMD_TA to 2 for MT8173 HS200/HS400 mode
-To: Chaotian Jing <chaotian.jing@mediatek.com>
+Content-Language: de-DE
+X-bounce-key: webpack.hosteurope.de; m.reichl@fivetechno.de; 1575981887;
+ 6836b884; 
+X-HE-SMSGID: 1ieesZ-0004w5-Vj
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_044323_241692_34D558CB 
-X-CRM114-Status: GOOD (  16.71  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191210_044447_719252_A05154CF 
+X-CRM114-Status: GOOD (  11.95  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,42 +74,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: srv_heupstream <srv_heupstream@mediatek.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- hsinyi@google.com, Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 10 Dec 2019 at 13:03, Chaotian Jing <chaotian.jing@mediatek.com> wrote:
->
-> On Tue, 2019-12-10 at 10:51 +0100, Ulf Hansson wrote:
-> > On Wed, 4 Dec 2019 at 08:20, Chaotian Jing <chaotian.jing@mediatek.com> wrote:
-> > >
-> > > there is a chance that always get response CRC error after HS200 tuning,
-> > > the reason is that need set CMD_TA to 2. this modification is only for
-> > > MT8173.
-> > >
-> > > Signed-off-by: Chaotian Jing <chaotian.jing@mediatek.com>
-> >
-> > I have applied this for fixes, however it seems like this should also
-> > be tagged for stable, right?
-> > Yes! should be tagged for stable.
-> > Is there a specific commit this fixes or should we just find the
-> > version it applies to?
-> >
->  this patch should be a fix to commit:
-> 1ede5cb88a29bba1aad1b68965c5fc8e00b20ed9
+Some regulators don't need the always-on property, remove it.
 
-Perfect, I add that!
+Signed-off-by: Markus Reichl <m.reichl@fivetechno.de>
+---
+  arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts | 2 --
+  arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi          | 3 ---
+  2 files changed, 5 deletions(-)
 
-[...]
-
-Kind regards
-Uffe
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+index 2c9c13a0fca9..2db9d32ad54a 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc-mezzanine.dts
+@@ -32,8 +32,6 @@ vcc3v3_pcie: vcc3v3-pcie {
+  		gpio = <&gpio1 RK_PC1 GPIO_ACTIVE_HIGH>;
+  		pinctrl-names = "default";
+  		pinctrl-0 = <&vcc3v3_pcie_en>;
+-		regulator-always-on;
+-		regulator-boot-on;
+  		regulator-min-microvolt = <3300000>;
+  		regulator-max-microvolt = <3300000>;
+  		vin-supply = <&dc_12v>;
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+index 9a1ce3a4ae12..8e01b04144b7 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3399-roc-pc.dtsi
+@@ -176,7 +176,6 @@ vcc5v0_host: vcc5v0-host-regulator {
+  		pinctrl-names = "default";
+  		pinctrl-0 = <&vcc5v0_host_en &hub_rst>;
+  		regulator-name = "vcc5v0_host";
+-		regulator-always-on;
+  		vin-supply = <&vcc_sys>;
+  	};
+  
+@@ -198,7 +197,6 @@ vcc_sys: vcc-sys {
+  		pinctrl-names = "default";
+  		pinctrl-0 = <&vcc_sys_en>;
+  		regulator-name = "vcc_sys";
+-		regulator-always-on;
+  		regulator-boot-on;
+  		regulator-min-microvolt = <5000000>;
+  		regulator-max-microvolt = <5000000>;
+@@ -392,7 +390,6 @@ regulator-state-mem {
+  
+  			vcc_sdio: LDO_REG4 {
+  				regulator-name = "vcc_sdio";
+-				regulator-always-on;
+  				regulator-boot-on;
+  				regulator-min-microvolt = <1800000>;
+  				regulator-max-microvolt = <3000000>;
+-- 
+2.24.0
 
 _______________________________________________
 linux-arm-kernel mailing list
