@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14006119377
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:12:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2384F119384
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 22:12:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MsOk9zJiFVkdyPirZo4I8FrMff+Y0SjBrvbA07e5JlI=; b=fMUm8/HlgGYBxg
-	e10VI1VKmxCUEMhSy+PZca0NVWDVvjlHSpR7c/V6gR/lWVpiS7tMSe1deiYYxqF6etUPN8lCk63Er
-	ttXyEJxFYqkbwM2I7qWD0sffN7VMg3U60porzt7ziEXoJAu8697Jsz3ZoftWopCCmdZZqxk1nAtqO
-	LJdtRDzyPE5ZxDMWIPLVIA9/mhJimGWkLgfX/MLyokIPZPur3+ZbfKczW8MmeCgkiQVm/KjXpCOD6
-	4qw5i/P4T44nkwRtOdslNCosMExiOrtjZ9P5PRd+6Q7IXfoWiSYN372n1rmCx11+VuganMQGmDkb4
-	eFVHD9j7eR7Z59qkZ+1Q==;
+	List-Owner; bh=4dJmmia7a6eycibMl75wWmCF6vzsRiaOy8tQCI52Pgw=; b=VWWD0JQhZbYwkg
+	XvHVJNxpOlcdbirIilsPacoAue/lgPAR6XgG9SHKQ0CRNjo55dJIduTRMRgJzBZQfXYCm8bgoxHTm
+	JydC27CivlAjjJm2Ppp/G69k2z+5yeeJKWP9cnIk5lIwZDUzilN5GBn46nraa4JQmoG24mSU7oUQB
+	9tM4XJg204x5PwdmTUGTAb2Exip2W/2VL2dyqnYnfjW7gE2vabLqwU4psb1bJdSJXWQ8zl9Ex/NU7
+	gdaeukuLDc7DVGlh6wHFhoAzDSV5vlcMfxYrdh+OhTfZoZcJqNnlVeScC2YIDQ5CO1cSAD5Xr4q8m
+	dtBEBv+EADhy+WhJXpyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iemnw-00061C-9V; Tue, 10 Dec 2019 21:12:24 +0000
+	id 1iemoD-0006I5-8Q; Tue, 10 Dec 2019 21:12:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iemma-00051r-S3
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:11:03 +0000
+ id 1iemmb-00052i-W4
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 21:11:05 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9241B246B8;
- Tue, 10 Dec 2019 21:10:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D763824680;
+ Tue, 10 Dec 2019 21:10:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576012259;
- bh=4AT+BhJk04uH2Tcdyxf4+IP04hgHCY4zWu3WRrHazF0=;
+ s=default; t=1576012260;
+ bh=S13FeBSZPT7/Oj8p8PgiFWgFs3YS3U63TWxg6lY1ldY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fziFEhL0rEKr08sgpZ/w3Ha1aiwS8uDZgXMnOyWheyn+4ZKHTE5ZFMHt2Io6mZRX5
- 3ItYlQAVmcX1ztNAY5eYKyPjl2P13ve7A7pbntB/uoiK2nazvWtkzMcC5/oWF9B8Zd
- wx3sdrX1BldUpVWCqsn3XqsuqHOWcVEt3hvsFlVA=
+ b=tyJKiTF4/qpu8glRwESoLINBjNqOmVEkR7mwfph+r7Rwqx/a+NZMEajhsuLPPkAq/
+ xWeI3HCbh3RJYXQ3TgvQSh5xEysTC50JdqacViGtDjViHBR1j4Zjk8v2f8NlUpSMq/
+ n33imH+61jUeyAkIGx9TzJrASFx2PyuYqGyrhHjo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 205/350] media: staging/imx: Use a shorter name
- for driver
-Date: Tue, 10 Dec 2019 16:05:10 -0500
-Message-Id: <20191210210735.9077-166-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 206/350] nvmem: imx-ocotp: reset error status on
+ probe
+Date: Tue, 10 Dec 2019 16:05:11 -0500
+Message-Id: <20191210210735.9077-167-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191210210735.9077-1-sashal@kernel.org>
 References: <20191210210735.9077-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_131101_090337_A01F177D 
-X-CRM114-Status: GOOD (  10.11  )
+X-CRM114-CacheID: sfid-20191210_131102_146555_946304DB 
+X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,65 +81,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devel@driverdev.osuosl.org,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Fabio Estevam <festevam@gmail.com>
+From: Lucas Stach <l.stach@pengutronix.de>
 
-[ Upstream commit ce22c6f242b6d7b5e0318da2c92b5b00b5bbc698 ]
+[ Upstream commit c33c585f1b3a99d53920bdac614aca461d8db06f ]
 
-Currently v4l2-compliance tool returns the following output:
+If software running before the OCOTP driver is loaded left the
+controller with the error status pending, the driver will never
+be able to complete the read timing setup. Reset the error status
+on probe to make sure the controller is in usable state.
 
-Compliance test for imx-media-captu device /dev/video0:
-
-Driver Info:
-        Driver name      : imx-media-captu
-        Card type        : imx-media-capture
-...
-
-The driver name string is limited to 16 characters, so provide
-a shorter name so that we can have a better output.
-
-While at it, use the same shorter name for driver and card.
-
-Signed-off-by: Fabio Estevam <festevam@gmail.com>
-Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Signed-off-by: Mauro Carvalho Chehab <mchehab@kernel.org>
+Signed-off-by: Lucas Stach <l.stach@pengutronix.de>
+Signed-off-by: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Link: https://lore.kernel.org/r/20191029114240.14905-6-srinivas.kandagatla@linaro.org
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/staging/media/imx/imx-media-capture.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/nvmem/imx-ocotp.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/drivers/staging/media/imx/imx-media-capture.c b/drivers/staging/media/imx/imx-media-capture.c
-index b33a07bc9105d..46576e32581f0 100644
---- a/drivers/staging/media/imx/imx-media-capture.c
-+++ b/drivers/staging/media/imx/imx-media-capture.c
-@@ -26,6 +26,8 @@
- #include <media/imx.h>
- #include "imx-media.h"
+diff --git a/drivers/nvmem/imx-ocotp.c b/drivers/nvmem/imx-ocotp.c
+index dff2f3c357f56..fc40555ca4cdd 100644
+--- a/drivers/nvmem/imx-ocotp.c
++++ b/drivers/nvmem/imx-ocotp.c
+@@ -521,6 +521,10 @@ static int imx_ocotp_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->clk))
+ 		return PTR_ERR(priv->clk);
  
-+#define IMX_CAPTURE_NAME "imx-capture"
++	clk_prepare_enable(priv->clk);
++	imx_ocotp_clr_err_if_set(priv->base);
++	clk_disable_unprepare(priv->clk);
 +
- struct capture_priv {
- 	struct imx_media_video_dev vdev;
- 
-@@ -69,8 +71,8 @@ static int vidioc_querycap(struct file *file, void *fh,
- {
- 	struct capture_priv *priv = video_drvdata(file);
- 
--	strscpy(cap->driver, "imx-media-capture", sizeof(cap->driver));
--	strscpy(cap->card, "imx-media-capture", sizeof(cap->card));
-+	strscpy(cap->driver, IMX_CAPTURE_NAME, sizeof(cap->driver));
-+	strscpy(cap->card, IMX_CAPTURE_NAME, sizeof(cap->card));
- 	snprintf(cap->bus_info, sizeof(cap->bus_info),
- 		 "platform:%s", priv->src_sd->name);
- 
+ 	priv->params = of_device_get_match_data(&pdev->dev);
+ 	imx_ocotp_nvmem_config.size = 4 * priv->params->nregs;
+ 	imx_ocotp_nvmem_config.dev = dev;
 -- 
 2.20.1
 
