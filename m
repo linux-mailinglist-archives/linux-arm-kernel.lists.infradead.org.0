@@ -2,67 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBBA1118E34
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 17:53:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15D46118E77
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 18:03:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dZBnmee+UC0xT517FydNUvPTrH1NCqi+gUJZU3BEuzE=; b=t6hTYLfAih/yZZnb/+tgK1xgr
-	RX29j5PRYWMuVzJ5hwELj6RsMZDds3AOfIYWqQ6bp59XPdC+FfBgAD1KNx5x+vHQckuzyv9d4WrbS
-	A7NatzgYn0Tv0aMobCuWIVpPC4ULm19X6DSguZrnCrj3JxtVwmYFz0Gh0XEPfIJFTwBJFe5hg36mu
-	j9XQk9Jd369VlTKdObIGeLDaUOa2XohoJDb0LSKQyjwWAqBf9WfmYGeF/jZQ0mLvcfJLX+BCUDv8L
-	HfHrUSXHiha1kjPo6OGnxqlz01T4RqkrOArN0lyCzLdXULemYHssFqixrsOqmEMq0JhTH7oKh1fpJ
-	frTetJ/8w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=BR1d9qGzSPMmblvEa9Rls2GrpAwYdaSn7PU0x1Nvus8=; b=PfIck2nZq2vRSgPmXMRMU9800e
+	/KUOcAcDZ3gBj/RAnckrG1uiCsQw59QG/EOBOrbFPD/XD2P5012pl3t70xsXSfx96RTNFZt70BrG/
+	2QkcDkJjyC/s59Ms220px/DdxfFsH1DXPDbeP62YlDGbtur7jpCiXn1CQ6ziDwmD9+08AxgvdKkfX
+	I3uWSOL0b1mk5i/OuVN9jpXm4WBPl77aS5bla6IS9NFPDZYxqGS0qI4NVw/J1bkpC0vXNROIyFrol
+	QPBBKKNlYL8EH70wLGq0bB8AH16oddzcNoyDEWw1+YH97t1UjgwMq8o4p/xVVBeOXFclB8CYwC61a
+	JSwp3H0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieikz-00015z-QK; Tue, 10 Dec 2019 16:53:05 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieikr-00015I-Kh
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 16:52:59 +0000
-Received: from lhreml701-cah.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id 7DC06A37E7AD78E2535D;
- Tue, 10 Dec 2019 16:52:54 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- lhreml701-cah.china.huawei.com (10.201.108.42) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 10 Dec 2019 16:52:53 +0000
-Received: from [127.0.0.1] (10.202.226.46) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 10 Dec
- 2019 16:52:53 +0000
-Subject: Re: perf top for arm64?
-To: Jiri Olsa <jolsa@redhat.com>
-References: <1573045254-39833-1-git-send-email-john.garry@huawei.com>
- <20191106140036.GA6259@kernel.org>
- <418023e7-a50d-cb6f-989f-2e6d114ce5d8@huawei.com>
- <20191210163655.GG14123@krava>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <952dc484-2739-ee65-f41c-f0198850ab10@huawei.com>
-Date: Tue, 10 Dec 2019 16:52:52 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+	id 1ieiui-00054H-1T; Tue, 10 Dec 2019 17:03:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ieiua-00053M-Ql
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 17:03:02 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E93101FB;
+ Tue, 10 Dec 2019 09:02:59 -0800 (PST)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 79C833F6CF;
+ Tue, 10 Dec 2019 09:02:59 -0800 (PST)
+Subject: Re: [PATCH 01/15] firmware: arm_scmi: Add support for multiple device
+ per protocol
+To: Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20191210145345.11616-1-sudeep.holla@arm.com>
+ <20191210145345.11616-2-sudeep.holla@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <3d3a3b53-dc2e-bcac-66c6-9537ffaf7be1@arm.com>
+Date: Tue, 10 Dec 2019 17:02:58 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191210163655.GG14123@krava>
+In-Reply-To: <20191210145345.11616-2-sudeep.holla@arm.com>
 Content-Language: en-US
-X-Originating-IP: [10.202.226.46]
-X-ClientProxiedBy: lhreml728-chm.china.huawei.com (10.201.108.79) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_085257_824946_55D78B8C 
-X-CRM114-Status: GOOD (  18.89  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191210_090300_959306_58635C1D 
+X-CRM114-Status: GOOD (  21.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,162 +67,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, Linuxarm <linuxarm@huawei.com>,
- Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
- linux-kernel@vger.kernel.org,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, namhyung@kernel.org,
- will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/12/2019 16:36, Jiri Olsa wrote:
-> On Tue, Dec 10, 2019 at 04:13:49PM +0000, John Garry wrote:
->> Hi all,
->>
->> I find to my surprise that "perf top" does not work for arm64:
->>
->> root@ubuntu:/home/john/linux# tools/perf/perf top
->> Couldn't read the cpuid for this machine: No such file or directory
+Hi Sudeep,
+
+On 10/12/2019 14:53, Sudeep Holla wrote:
+> Currently only one scmi device is created for each protocol enumerated.
+> However, there is requirement to make use of some procotols by multiple
+> kernel subsystems/frameworks. One such example is SCMI PERFORMANCE
+> protocol which can be used by both cpufreq and devfreq drivers.
+> Similarly, SENSOR protocol may be used by hwmon and iio subsystems,
+> and POWER protocol may be used by genpd and regulator drivers.
+> 
+> In order to achieve that, let us extend the scmi bus to match based
+> not only protocol id but also the scmi device name if one is available.
+> 
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> ---
+>  drivers/firmware/arm_scmi/bus.c    | 20 +++++++++++++++++---
+>  drivers/firmware/arm_scmi/driver.c |  6 +++---
+>  include/linux/scmi_protocol.h      |  5 ++++-
+>  3 files changed, 24 insertions(+), 7 deletions(-)
 > 
 
-Hi Jirka,
+Looks good to me.
 
-> there was recent change that check on cpuid and quits:
->    608127f73779 perf top: Initialize perf_env->cpuid, needed by the per arch annotation init routine
-> 
+Reviewed-by: Cristian Marussi <cristian.marussi@arm.com>
 
-ok, this is new code. I obviously didn't check the git history...
+Cheers
 
-But, apart from this, there are many other places where get_cpuid() is 
-called. I wonder what else we're missing out on, and whether we should 
-still add it.
+Cristian
 
-Thanks,
-John
-
-> Arnaldo,
-> maybe this should be just a warning/info, because it seems to be related
-> to annotations only..?
+> diff --git a/drivers/firmware/arm_scmi/bus.c b/drivers/firmware/arm_scmi/bus.c
+> index 7a30952b463d..3714e6307b05 100644
+> --- a/drivers/firmware/arm_scmi/bus.c
+> +++ b/drivers/firmware/arm_scmi/bus.c
+> @@ -28,8 +28,12 @@ scmi_dev_match_id(struct scmi_device *scmi_dev, struct scmi_driver *scmi_drv)
+>  		return NULL;
 > 
-> get_cpuid is defined only for s390/x86/powerpc, so I guess it won't work
-> on the rest as well
+>  	for (; id->protocol_id; id++)
+> -		if (id->protocol_id == scmi_dev->protocol_id)
+> -			return id;
+> +		if (id->protocol_id == scmi_dev->protocol_id) {
+> +			if (!id->name)
+> +				return id;
+> +			else if (!strcmp(id->name, scmi_dev->name))
+> +				return id;
+> +		}
 > 
-> jirka
+>  	return NULL;
+>  }
+> @@ -125,7 +129,8 @@ static void scmi_device_release(struct device *dev)
+>  }
 > 
->>
->> That's v5.5-rc1 release.
->>
->> It seems that we are just missing an arm64 version of get_cpuid() - with the
->> patch below, I now get as hoped:
->>
->>     PerfTop:   32857 irqs/sec  kernel:85.0%  exact:  0.0% lost: 0/0 drop: 0/0
->> [4000Hz cycles],  (all, 64 CPUs)
->> -------------------------------------------------------------------------------
->>
->>       8.99%  [kernel]          [k] arm_smmu_cmdq_issue_cmdlist
->>       5.80%  [kernel]          [k] __softirqentry_text_start
->>       4.49%  [kernel]          [k] _raw_spin_unlock_irqrestore
->>       3.48%  [kernel]          [k] el0_svc_common.constprop.2
->>       3.37%  [kernel]          [k] _raw_write_lock_irqsave
->>       3.28%  [kernel]          [k] __local_bh_enable_ip
->>       3.05%  [kernel]          [k] __blk_complete_request
->>       2.07%  [kernel]          [k] queued_spin_lock_slowpath
->>       1.93%  [vdso]            [.] 0x0000000000000484
->>
->>
->> Was this just missed? Or is there a good reason to omit?
->>
->> Thanks,
->> John
->>
->> --->8---
->>
->> Subject: [PATCH] perf: Add perf top support for arm64
->>
->> Copied from get_cpuid_str() essentially...
->>
->> Signed-off-by: John Garry <john.garry@huawei.com>
->>
->> diff --git a/tools/perf/arch/arm64/util/header.c
->> b/tools/perf/arch/arm64/util/header.c
->> index a32e4b72a98f..ecd1f86e29cc 100644
->> --- a/tools/perf/arch/arm64/util/header.c
->> +++ b/tools/perf/arch/arm64/util/header.c
->> @@ -1,10 +1,12 @@
->>   #include <stdio.h>
->>   #include <stdlib.h>
->>   #include <perf/cpumap.h>
->> +#include <util/cpumap.h>
->>   #include <internal/cpumap.h>
->>   #include <api/fs/fs.h>
->>   #include "debug.h"
->>   #include "header.h"
->> +#include <errno.h>
->>
->>   #define MIDR "/regs/identification/midr_el1"
->>   #define MIDR_SIZE 19
->> @@ -12,6 +14,59 @@
->>   #define MIDR_VARIANT_SHIFT      20
->>   #define MIDR_VARIANT_MASK       (0xf << MIDR_VARIANT_SHIFT)
->>
->> +int
->> +get_cpuid(char *buffer, size_t sz)
->> +{
->> +	char *buf = NULL;
->> +	char path[PATH_MAX];
->> +	const char *sysfs = sysfs__mountpoint();
->> +	int cpu;
->> +	u64 midr = 0;
->> +	FILE *file;
->> +
->> +	if (!sysfs)
->> +		return EINVAL;
->> +
->> +	buf = malloc(MIDR_SIZE);
->> +	if (!buf)
->> +		return EINVAL;
->> +
->> +	/* read midr from list of cpus mapped to this pmu */
->> +	for (cpu = 0; cpu < cpu__max_present_cpu(); cpu++) {
->> +		scnprintf(path, sz, "%s/devices/system/cpu/cpu%d"MIDR,
->> +				sysfs, cpu);
->> +
->> +		file = fopen(path, "r");
->> +		if (!file) {
->> +			pr_debug("fopen failed for file %s\n", path);
->> +			continue;
->> +		}
->> +
->> +		if (!fgets(buf, MIDR_SIZE, file)) {
->> +			fclose(file);
->> +			continue;
->> +		}
->> +		fclose(file);
->> +
->> +		/* Ignore/clear Variant[23:20] and
->> +		 * Revision[3:0] of MIDR
->> +		 */
->> +		midr = strtoul(buf, NULL, 16);
->> +		midr &= (~(MIDR_VARIANT_MASK | MIDR_REVISION_MASK));
->> +		scnprintf(buffer, MIDR_SIZE, "0x%016lx", midr);
->> +		/* got midr break loop */
->> +		break;
->> +	}
->> +
->> +	if (!midr) {
->> +		pr_err("failed to get cpuid string\n");
->> +		free(buf);
->> +		return EINVAL;
->> +	}
->> +	return 0;
->> +}
->> +
->>
+>  struct scmi_device *
+> -scmi_device_create(struct device_node *np, struct device *parent, int protocol)
+> +scmi_device_create(struct device_node *np, struct device *parent, int protocol,
+> +		   const char *name)
+>  {
+>  	int id, retval;
+>  	struct scmi_device *scmi_dev;
+> @@ -134,8 +139,15 @@ scmi_device_create(struct device_node *np, struct device *parent, int protocol)
+>  	if (!scmi_dev)
+>  		return NULL;
 > 
-> .
+> +	scmi_dev->name = kstrdup_const(name ?: "unknown", GFP_KERNEL);
+> +	if (!scmi_dev->name) {
+> +		kfree(scmi_dev);
+> +		return NULL;
+> +	}
+> +
+>  	id = ida_simple_get(&scmi_bus_id, 1, 0, GFP_KERNEL);
+>  	if (id < 0) {
+> +		kfree_const(scmi_dev->name);
+>  		kfree(scmi_dev);
+>  		return NULL;
+>  	}
+> @@ -154,6 +166,7 @@ scmi_device_create(struct device_node *np, struct device *parent, int protocol)
+> 
+>  	return scmi_dev;
+>  put_dev:
+> +	kfree_const(scmi_dev->name);
+>  	put_device(&scmi_dev->dev);
+>  	ida_simple_remove(&scmi_bus_id, id);
+>  	return NULL;
+> @@ -161,6 +174,7 @@ scmi_device_create(struct device_node *np, struct device *parent, int protocol)
+> 
+>  void scmi_device_destroy(struct scmi_device *scmi_dev)
+>  {
+> +	kfree_const(scmi_dev->name);
+>  	scmi_handle_put(scmi_dev->handle);
+>  	ida_simple_remove(&scmi_bus_id, scmi_dev->id);
+>  	device_unregister(&scmi_dev->dev);
+> diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+> index 3eb0382491ce..dee7ce3bd815 100644
+> --- a/drivers/firmware/arm_scmi/driver.c
+> +++ b/drivers/firmware/arm_scmi/driver.c
+> @@ -803,11 +803,11 @@ scmi_mbox_txrx_setup(struct scmi_info *info, struct device *dev, int prot_id)
+> 
+>  static inline void
+>  scmi_create_protocol_device(struct device_node *np, struct scmi_info *info,
+> -			    int prot_id)
+> +			    int prot_id, const char *name)
+>  {
+>  	struct scmi_device *sdev;
+> 
+> -	sdev = scmi_device_create(np, info->dev, prot_id);
+> +	sdev = scmi_device_create(np, info->dev, prot_id, name);
+>  	if (!sdev) {
+>  		dev_err(info->dev, "failed to create %d protocol device\n",
+>  			prot_id);
+> @@ -892,7 +892,7 @@ static int scmi_probe(struct platform_device *pdev)
+>  			continue;
+>  		}
+> 
+> -		scmi_create_protocol_device(child, info, prot_id);
+> +		scmi_create_protocol_device(child, info, prot_id, NULL);
+>  	}
+> 
+>  	return 0;
+> diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
+> index 881fea47c83d..5c873a59b387 100644
+> --- a/include/linux/scmi_protocol.h
+> +++ b/include/linux/scmi_protocol.h
+> @@ -257,6 +257,7 @@ enum scmi_std_protocol {
+>  struct scmi_device {
+>  	u32 id;
+>  	u8 protocol_id;
+> +	const char *name;
+>  	struct device dev;
+>  	struct scmi_handle *handle;
+>  };
+> @@ -264,11 +265,13 @@ struct scmi_device {
+>  #define to_scmi_dev(d) container_of(d, struct scmi_device, dev)
+> 
+>  struct scmi_device *
+> -scmi_device_create(struct device_node *np, struct device *parent, int protocol);
+> +scmi_device_create(struct device_node *np, struct device *parent, int protocol,
+> +		   const char *name);
+>  void scmi_device_destroy(struct scmi_device *scmi_dev);
+> 
+>  struct scmi_device_id {
+>  	u8 protocol_id;
+> +	const char *name;
+>  };
+> 
+>  struct scmi_driver {
+> --
+> 2.17.1
 > 
 
 
