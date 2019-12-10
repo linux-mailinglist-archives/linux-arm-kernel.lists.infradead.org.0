@@ -2,98 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE8D0118F81
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 19:07:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B95A6118F8D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 19:13:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=klB1A022tXTR2gI4HnqhbJOg32I80oHljrJYY6EWwM4=; b=D1rPcbw/5kjd2N
-	fDA3H2Oh8hRXXFULMN1czEac46DEAA9HFThrJTe1jxBuHeVS1+eY18lKhhR+5UNhsfhcqVnbIU/26
-	2hQMMQfGZqTBzLC6KTQaLtoYUX6ZS6XyLH7ZzkNLkK/VUQB9kwb9drbsuRO9hX7lgEuPvPOd3v9wC
-	CtUV6DQB83RZ6nYD5ZA9/e3k31Cu96ISeRmaBI86QQW3RQ2V1f94ev+dQUKxavRwTUm7glac2vCuV
-	+C5GEqaa2/YaLQGiKpkO1AfNAg9Ps6qbsP6hlHk3CtaCZlc02PbhGKe/pPn++8qml3pPQ8WdI1ch7
-	KJf4L6eh2kWEMfqtwoGg==;
+	List-Owner; bh=Qz3rTKp1QCCSoS3U1MxLeflkCi8OExqLI24WFM/BQ34=; b=tbmMFIXbub21vz
+	383Z6OoR58pGtN6+fUm8zVs6K871kDxosjmLAicQ08zffqrk64yYLEcKwDt8iKz83a1jr6FJyq3Rk
+	7cGsz2wzuZ49xv7CNuStq1ZQ9tK+WAr0iLDu+egGBT4SmWKvmK1uC0rtJoJJlV7JPOpd1vyL3o5ol
+	eUXbkPsvXuNxfZaMGWFTo0N4hk+FG1KbtymBYfGrGnP3/9flbmZp5ULCh4HPS1GR2bc4YAui+yudR
+	HmysM+vrSKmugXNxIklwKgWtPm8FOrCSYDn+WYmw6nPXUHfdZa9ZDkA6lmgIy/wbyXshvnzHMyDI1
+	JjS7Uc1mZ6YJp5VS8F+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iejuP-0006Kz-Si; Tue, 10 Dec 2019 18:06:53 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iek0q-00006S-16; Tue, 10 Dec 2019 18:13:32 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iejuI-0006Js-RS
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 18:06:48 +0000
-Received: by mail-pg1-x542.google.com with SMTP id s64so2544235pgb.9
+ id 1iek0f-000051-7F
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 18:13:23 +0000
+Received: by mail-pl1-x644.google.com with SMTP id bd4so176990plb.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 10:06:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=x7cIa0Gzn0+ggjSlshOSNWW2DeHmjBusnX3y5xYnnNA=;
- b=mUlhrTXes8jVFg4L6+rLWVW26Lh2269clAptABJVM2oyEg8udRfNi2y73zs4hHISPb
- 7Bb/SguG1CqWrG3WJLs6q+xjK4+RIfHiuofgTGhDCvukpoGMmA5eumAtAum/4gibEjyg
- aA0oocBZNx1VzdngLJaVlOzUErI65h1c999OMuHxGdyawbnxg972nEmf4XzSkSB1w4bU
- Gn/gfU00vo0/z98UGEaaCYLFovqPk0vTPX0akm4m11RbNiB8eW+AZ+HdhJtHOJxyfHfz
- THJQ9THOAYmU5lz1BhVweTfx1hV4q8aWQFu/YTs1DdV+XzWeVVKihofX5mwAytXS0BEW
- cSGw==
+ Tue, 10 Dec 2019 10:13:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=4lLGRmsliIpZ0UpKU0IEWW602jVUv7+6lHITbij3O5Y=;
+ b=Ax41RgSauchkK4JBfY5KiQhx0ZqAGsHlTIabiht9+ufmYPy0A/k6fzpIOehD7/e1BZ
+ rVNN9fQqcCTUysbKXiB+vDRvErr1DyzQPtKiTYcJqj2GHjmATSk3qucVeOLVRCkOhEIu
+ K5dAVffJQTTNp4WTUL3ki2V3LvaaviZN1KCbOON0El12ZWTLGoM+UwftSpRs5Plgaxb3
+ JVbzGapJbO730NFVsQnawfZ+KVkgcjfTaxggwi194/nxW0zjNi9K7TZVjJ07vcCzE4r5
+ L/qmEmEiYuVsMLunBZzzlhPYONXzzXDmajP/VEpXPY6582YOziMrl931APa+/HAqnF5W
+ wXGg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=x7cIa0Gzn0+ggjSlshOSNWW2DeHmjBusnX3y5xYnnNA=;
- b=oczttFgPm3tuLsQTJuZVYXFJbrTtwZBmvrPuRv6BClcN7Qp+h8kLmI1NAUtO4CdS60
- KZ/QMBrkeeB/2i1e+juta7ZBQQKVYFFGS16sJ79tKVLXPMrO8ds2BLGPURhjt7Xplzwm
- rPQDnifYOtVhQ4UUTERAdTOXwa7xQ7eX9T1y1qSgb5/LNN9D9gXIVo6AQAuUb5uranP/
- ZIecHvpOJ7DQdIKkS/9YY8LxLxtM+++2leF4oVvl4mJ/jUD08jspKljtLFdx91d3V0KZ
- WP5WEZITK5JS7EGmWx6A5ayZp3UFeksmA9kmgNtvShfTliPPlSM2HFakCzx/jrlo6w8G
- ib2A==
-X-Gm-Message-State: APjAAAV/63zD32w7bWOgEpoeXOM6NmRIu6hc4VyKL/eLqkhVmKDrSkEW
- BgPo9CcHUr7wI3NHKS/p0MM=
-X-Google-Smtp-Source: APXvYqxzzdfr2oH3/kuV7D4wmhCdZY4HFSokyE6BHuOFh2/Njgmy1jZsyEVBEBDBISMut4upwDfKrQ==
-X-Received: by 2002:a63:f814:: with SMTP id n20mr25713115pgh.318.1576001205971; 
- Tue, 10 Dec 2019 10:06:45 -0800 (PST)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id p16sm4068546pgm.8.2019.12.10.10.06.44
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=4lLGRmsliIpZ0UpKU0IEWW602jVUv7+6lHITbij3O5Y=;
+ b=PDcO9uvHZnT7u0b/5n0/Y3AiN/OlznO/A6gw9NDo435j0XAbXaqQMcs9veklEAcDeq
+ ASIX0/FKs/aNoXpknw8lBMbthkCEHyRgMh3XR98JomYNX3bRWJzEzfSco3KW0DTEShGn
+ RzUDILQHuWB5YuhkPN8DfM2RcbyIGSlCg19Rm20Ek5FhNSGUItvnPuPC2s+zpgvg+zXT
+ Yk1IEtzbNUVpa92ncI5RFN9BWlMp/XYQ6/Qd5uv5N2uk8xN89ILid49Ude3qquBZfzQ3
+ Zj8BozyeW5NF6RpXvm6Uu99nNWGdxE1cfXIyPicPE2d67We9ZsUfs9pelxEsb/HHU821
+ sAQg==
+X-Gm-Message-State: APjAAAVNro/1S8HbTcUpGs7pdUOY/O8cEUOEwv1cAl9dZskBOCG5/ZI8
+ 4l93jN58VGbVPqhJ66rZbsNhhJqWzrbNkw==
+X-Google-Smtp-Source: APXvYqxJRm4sHGA5uWrmJ+2D9cTFf8Qb8j2tRTkfuT9957FR3ONic55nbNNuLrP58IxTnaW0jHeS9g==
+X-Received: by 2002:a17:902:b611:: with SMTP id
+ b17mr22648668pls.210.1576001599750; 
+ Tue, 10 Dec 2019 10:13:19 -0800 (PST)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id u123sm1382107pfb.109.2019.12.10.10.13.18
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 10 Dec 2019 10:06:44 -0800 (PST)
-Date: Tue, 10 Dec 2019 10:06:43 -0800
-From: Guenter Roeck <linux@roeck-us.net>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH 14/15] hwmon: (scmi-hwmon) Match scmi device by both name
- and protocol id
-Message-ID: <20191210180643.GA10944@roeck-us.net>
-References: <20191210145345.11616-1-sudeep.holla@arm.com>
- <20191210145345.11616-15-sudeep.holla@arm.com>
+ Tue, 10 Dec 2019 10:13:18 -0800 (PST)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Anand Moon <linux.amoon@gmail.com>,
+ Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [RFC-next 0/1] Odroid C2: Enable DVFS for cpu
+In-Reply-To: <CANAwSgQx3LjQe60TGgKyk6B5BD5y1caS2tA+O+GFES7=qCFeKg@mail.gmail.com>
+References: <20191101143126.2549-1-linux.amoon@gmail.com>
+ <7hfthtrvvv.fsf@baylibre.com>
+ <c89791de-0a46-3ce2-b3e2-3640c364cd0f@baylibre.com>
+ <CANAwSgQx3LjQe60TGgKyk6B5BD5y1caS2tA+O+GFES7=qCFeKg@mail.gmail.com>
+Date: Tue, 10 Dec 2019 10:13:18 -0800
+Message-ID: <7hfthsqcap.fsf@baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191210145345.11616-15-sudeep.holla@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_100646_913744_1764760A 
-X-CRM114-Status: GOOD (  20.56  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191210_101321_263381_8D3597A7 
+X-CRM114-Status: GOOD (  14.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,56 +97,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hwmon@vger.kernel.org, Jean Delvare <jdelvare@suse.com>,
- Cristian Marussi <cristian.marussi@arm.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-amlogic@lists.infradead.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 10, 2019 at 02:53:44PM +0000, Sudeep Holla wrote:
-> The scmi bus now has support to match the driver with devices not only
-> based on their protocol id but also based on their device name if one is
-> available. This was added to cater the need to support multiple devices
-> and drivers for the same protocol.
-> 
-> Let us add the name "hwmon" to scmi_device_id table in the driver so
-> that in matches only with device with the same name and protocol id
-> SCMI_PROTOCOL_SENSOR. This will help to add IIO support in parallel if
-> needed.
+Anand Moon <linux.amoon@gmail.com> writes:
 
-If you are planning to re-implement the driver as iio driver, it would
-make more sense to drop the hwmon driver entirely and use the iio->hwmon
-bridge to access the sensors as hwmon devices if needed.
+> Hi Neil / Kevin,
+>
+> On Tue, 10 Dec 2019 at 14:13, Neil Armstrong <narmstrong@baylibre.com> wrote:
+>>
+>> On 09/12/2019 23:12, Kevin Hilman wrote:
+>> > Anand Moon <linux.amoon@gmail.com> writes:
+>> >
+>> >> Some how this patch got lost, so resend this again.
+>> >>
+>> >> [0] https://patchwork.kernel.org/patch/11136545/
+>> >>
+>> >> This patch enable DVFS on GXBB Odroid C2.
+>> >>
+>> >> DVFS has been tested by running the arm64 cpuburn
+>> >> [1] https://github.com/ssvb/cpuburn-arm/blob/master/cpuburn-a53.S
+>> >> PM-QA testing
+>> >> [2] https://git.linaro.org/power/pm-qa.git [cpufreq testcase]
+>> >>
+>> >> Tested on latest U-Boot 2019.07-1 (Aug 01 2019 - 23:58:01 +0000) Arch Linux ARM
+>> >
+>> > Have you tested with the Harkernel u-boot?
+>> >
+>> > Last I remember, enabling CPUfreq will cause system hangs with the
+>> > Hardkernel u-boot because of improperly enabled frequencies, so I'm not
+>> > terribly inclined to merge this patch.
+>
+> HK u-boot have many issue with loading the kernel, with load address
+> *it's really hard to build the kernel for HK u-boot*,
+> to get the configuration correctly.
+>
+> Well I have tested with mainline u-boot with latest ATF .
+> I would prefer mainline u-boot for all the Amlogic SBC, since
+> they sync with latest driver changes.
 
-Guenter
+Yes, we would all prefer mainline u-boot, but the mainline kernel needs
+to support the vendor u-boot that is shipping with the boards.  So
+until Hardkernel (and other vendors) switch to mainline u-boot we do not
+want to have upstream kernel defaults that will not boot with the vendor
+u-boot.
 
-> 
-> Cc: Jean Delvare <jdelvare@suse.com>
-> Cc: Guenter Roeck <linux@roeck-us.net>
-> Cc: linux-hwmon@vger.kernel.org
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> ---
->  drivers/hwmon/scmi-hwmon.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/hwmon/scmi-hwmon.c b/drivers/hwmon/scmi-hwmon.c
-> index 8a7732c0bef3..286d3cfda7de 100644
-> --- a/drivers/hwmon/scmi-hwmon.c
-> +++ b/drivers/hwmon/scmi-hwmon.c
-> @@ -259,7 +259,7 @@ static int scmi_hwmon_probe(struct scmi_device *sdev)
->  }
-> 
->  static const struct scmi_device_id scmi_id_table[] = {
-> -	{ SCMI_PROTOCOL_SENSOR },
-> +	{ SCMI_PROTOCOL_SENSOR, "hwmon" },
->  	{ },
->  };
->  MODULE_DEVICE_TABLE(scmi, scmi_id_table);
-> --
-> 2.17.1
-> 
+We can always support these features, but they just cannot be enabled
+by default.
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
