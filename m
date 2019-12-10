@@ -2,81 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECB3A119171
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 21:03:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF911119151
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 21:01:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=YdOW5NJKrk7veuvl/wJGaIyNGipZzRwmt6GCHyTffDw=; b=QDJBD+p/PnrkFGXZPcdqTNUHdu
-	MOUj7KbGbmqdCAQDkC9B8/vZkUJ3pPEkIa38ysFmDZVYovK8G4SIWyiw/tadNFt2voe0VgKUqqO6U
-	fAG9DdOcgHhhszQiNMM2J9bezhnEP/mD4g7+AEuGjlnx8ITkcctnxJ7wEDyst20bE20B0gVz6GLyk
-	WtxLRiAKGIk2bMnd7uUr51A1MjYKQQs8N9CZ3DED153Sw94cqk3bKXj/60pWe+IIhpj5Lt6TkrAI8
-	9z15rlEUTMwfHqC63yBTbx8YgvzHQbae0Eryfyagki5vUlKtkprLKS+/E3zBxhI2Vm8ycKqVtQRAs
-	SAhWC+bw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kTxDdBIUnPPeVfru6j983D84nOgv8z2MQcpjuRF3R1c=; b=kwGEwKy3iQw5hHXBxxUT0+9Ef
+	/U2c8zHk1ObHDX3CHbP4oTSkeklSW9FRlQKnZ6WE+rjfUaBMTo4HK83Hze69bQvwmO55cGKzt08+0
+	T5uQR0i3D1WB7kzk3698xn6zAb/Xn534397+dZAU1fyYF6Dx7fmy8eQcum2ANXBic0E4nvhzNAEfW
+	L8QFHjQ2KirxNj1xs3DWwpzjPLXRwHrABcsorTb1PS9vOGbvNsNAoKH4oDzbF2ewfBPd26gl8JuHi
+	YZ4jZMHunVDgYecNNYLZ8i/tC3MazKp1nS6SgtQtsHrKNdHjvSGq5GfVQby9rAF3BR0g9JhBLMccT
+	+fsdYMnuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ielin-0005bt-Fs; Tue, 10 Dec 2019 20:03:01 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1ielgr-0003Y2-C3; Tue, 10 Dec 2019 20:01:01 +0000
+Received: from mail-vs1-xe2d.google.com ([2607:f8b0:4864:20::e2d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ielhY-0004MU-EK
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 20:01:49 +0000
-Received: by mail-wr1-x441.google.com with SMTP id y17so21538570wrh.5
+ id 1ielgI-0003Gn-3x
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 20:00:37 +0000
+Received: by mail-vs1-xe2d.google.com with SMTP id m5so14050171vsj.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 12:01:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=gXxjPhJ3Q7lu/30NWGeVZetMfJAJiDa+9jYWsXuiNY4=;
- b=QwyahkVI/O2HXvXv01ZnNh5RjagGtwlxGoPp97Kvt1FjORtnBVkybPbcIdhn/TT4z9
- McqMXz5y0280tJFMD4jzZbp5PXxqILyf876XCWN5b5V5dHyuGFyzXa3XXzmmxrWIoKAp
- jYwQlKE0XDAUaToLLRYvNuSvinUnoRCe7oM5GH1p6hCA0wvwAxFz1Dv9Ut6yBC9HHfZ9
- rjFW1blGL6I6LVWNSP9WJftoxojZ0GhrJeq5BY56psiNI871Wws7yWtsZYoLgVUlgt7h
- mab0mv0siqcdJXH+b6f0XxC1m/eWIoe+e9pxTmjcowk09VrNsPmte+xFOwqsdKp1RhuG
- B4jQ==
+ Tue, 10 Dec 2019 12:00:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=hGS0DyHs+p91cXo2Vhnqlta9bUxgKM13usegMvdNEvE=;
+ b=Iqbgzy4UB2Tblpry9DNaz7zkgnBLzF/YASc2wU/LWsmvrt32+uf0rQrC/5XC6DJmOO
+ EqzOz6xp5Wl1QCDzWBZ+pOWlfVRSUsHl7hgBIAeUpZiZeiHe1yPd1svkEx9E24StT2cf
+ hSM2Uh1RXBOCCxjgixpv816+8lcpc5WjhGLQRvSbYxUQoTI41mz+So66w/U1F/AjVJIk
+ wUyBwMojWAVU4l3kxvYQz2SGI0GGBG8X5IPSn50vIDkKIFwWdxKcQ1IlXjTqagkKbNPv
+ C16NdjH/4ROCYyMmCpl++u7406wUsWOrdVJOh1kBDHlKLDhGzxID0OCKtijyGS0NBfvL
+ Pe3Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=gXxjPhJ3Q7lu/30NWGeVZetMfJAJiDa+9jYWsXuiNY4=;
- b=SYYq7xPalLUlCm2YzK/7V2zBdFrGnm6FU/DDWckE/AZUus3XCp/Rj9QsJRIEcd3ZQp
- 62j2n2XQZpAgrOgjGoaqcrEIgMrdPhHsJLfy+m7TR7MIRPd0CvbAvonz7cgDDlj2y4az
- LWc+qBLWv5jMoa++MJ6F354nqTl2igOkyRontn1d3zAQU7nNiWLAk29lF/TZJKHImT8R
- ppt1iY89OswT6fi5fjWHE1xw7ESlvYiIbhinxSZBDTDqepkunS6b+W0L7uSoxBcUDpPu
- 5GXG78PEfuonzmfV8k+vfA8jvxCDQBie0xw5bU/zCqljJTY2JTbBPN3rYhHGVn3uG7h1
- VasA==
-X-Gm-Message-State: APjAAAXBUKf6OJvh2l/dtR27N8J7NfvmZItzt8BWAga4utcoEW4Gj6DH
- OvLWTMmRI5o6j58fTIGmBO4=
-X-Google-Smtp-Source: APXvYqzlwL2JVvC24iFfkTJHpiYHh759+P/FnYILdCUDrTo3HueHBW1pbEbI79hKMfNAMaulXP3iHA==
-X-Received: by 2002:a5d:65c5:: with SMTP id e5mr5190052wrw.311.1576008102576; 
- Tue, 10 Dec 2019 12:01:42 -0800 (PST)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id z6sm4352255wmz.12.2019.12.10.12.01.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Dec 2019 12:01:41 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 2/2] reset: Add Broadcom STB RESCAL reset controller
-Date: Tue, 10 Dec 2019 11:59:03 -0800
-Message-Id: <20191210195903.24127-3-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191210195903.24127-1-f.fainelli@gmail.com>
-References: <20191210195903.24127-1-f.fainelli@gmail.com>
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=hGS0DyHs+p91cXo2Vhnqlta9bUxgKM13usegMvdNEvE=;
+ b=hPG8e4wwgw8ZTMsZTpw2MqxBGJ/AqXEEgMdTrDU+shJqsaeFymO3BQ04UPGfjkzXu+
+ s2u+nQ12Xxx4aUKjx0XUlIR8V15oBflClta6MWf3w4tYnFXahoRmdQ+ASZvRxLMI/1e2
+ JZTelDGJ2otOZIcVhFS/eKWhXsoSWi/nmKSYqRRENd/OxM7g/C2JkDZMVJGXqVmiwuFu
+ 1Vje705ucKlcd+D3Rg7ksOzAvyHeZDAn6SCdx4ZDN9JAe97ezD2fD8XBsvLjnW0fpDhG
+ I8glAUB3l4Hgi+hTFKvWI2AxPWrJf/qumJAQYhQTwonWQR6hEDg0fmN3g2j1ZGdaMDW0
+ iU8A==
+X-Gm-Message-State: APjAAAXlLzW3lSuyPtRpaTuaTi3H38Op4+NMaMDwSLckoNRyXDcdL/mm
+ Ex98qNYvw1j+zkWQesQtJURnr0eInWQ=
+X-Google-Smtp-Source: APXvYqx+qk7sUAqpaCm+NlM7pcI0WXNAoBiob+JOFkBBaXKkEne5EJ2kVjaxeTms4KifR0wyFawXfA==
+X-Received: by 2002:a67:cd85:: with SMTP id r5mr7098555vsl.79.1576008022628;
+ Tue, 10 Dec 2019 12:00:22 -0800 (PST)
+Received: from [192.168.15.21] ([189.111.86.232])
+ by smtp.gmail.com with ESMTPSA id e16sm2679840vso.32.2019.12.10.12.00.19
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 10 Dec 2019 12:00:21 -0800 (PST)
+Subject: Re: [arm64, debug] PTRACE_SINGLESTEP does not single-step a valid
+ instruction
+From: Luis Machado <luis.machado@linaro.org>
+To: Will Deacon <will@kernel.org>
+References: <1eed6d69-d53d-9657-1fc9-c089be07f98c@linaro.org>
+ <20191118131525.GA4180@willie-the-truck>
+ <b3a9ae7e-8a45-7c14-7bc6-1d3b62728a0c@linaro.org>
+ <307ece3d-4e9d-21c4-0abf-9f4f3b313e74@linaro.org>
+Message-ID: <82cb3dea-db82-1c71-3b08-957102b85c93@linaro.org>
+Date: Tue, 10 Dec 2019 17:00:18 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <307ece3d-4e9d-21c4-0abf-9f4f3b313e74@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_120144_696948_749C78F4 
-X-CRM114-Status: GOOD (  19.16  )
+X-CRM114-CacheID: sfid-20191210_120026_488312_86000A62 
+X-CRM114-Status: GOOD (  25.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e2d listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,202 +103,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Jim Quinlan <im2101024@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Jim Quinlan <jim2101024@gmail.com>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jim Quinlan <jim2101024@gmail.com>
-
-On BCM7216 there is a special purpose reset controller named RESCAL
-(reset calibration) which is necessary for SATA and PCIe0/1 to operate
-correctly. This commit adds support for such a reset controller to be
-available.
-
-Signed-off-by: Jim Quinlan <im2101024@gmail.com>
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- drivers/reset/Kconfig                |   7 ++
- drivers/reset/Makefile               |   1 +
- drivers/reset/reset-brcmstb-rescal.c | 124 +++++++++++++++++++++++++++
- 3 files changed, 132 insertions(+)
- create mode 100644 drivers/reset/reset-brcmstb-rescal.c
-
-diff --git a/drivers/reset/Kconfig b/drivers/reset/Kconfig
-index 12f5c897788d..b7cc0a2049d9 100644
---- a/drivers/reset/Kconfig
-+++ b/drivers/reset/Kconfig
-@@ -49,6 +49,13 @@ config RESET_BRCMSTB
- 	  This enables the reset controller driver for Broadcom STB SoCs using
- 	  a SUN_TOP_CTRL_SW_INIT style controller.
- 
-+config RESET_BRCMSTB_RESCAL
-+	bool "Broadcom STB RESCAL reset controller"
-+	default ARCH_BRCMSTB || COMPILE_TEST
-+	help
-+	  This enables the RESCAL reset controller for SATA, PCIe0, or PCIe1 on
-+	  BCM7216.
-+
- config RESET_HSDK
- 	bool "Synopsys HSDK Reset Driver"
- 	depends on HAS_IOMEM
-diff --git a/drivers/reset/Makefile b/drivers/reset/Makefile
-index 00767c03f5f2..1e4291185c52 100644
---- a/drivers/reset/Makefile
-+++ b/drivers/reset/Makefile
-@@ -8,6 +8,7 @@ obj-$(CONFIG_RESET_ATH79) += reset-ath79.o
- obj-$(CONFIG_RESET_AXS10X) += reset-axs10x.o
- obj-$(CONFIG_RESET_BERLIN) += reset-berlin.o
- obj-$(CONFIG_RESET_BRCMSTB) += reset-brcmstb.o
-+obj-$(CONFIG_RESET_BRCMSTB_RESCAL) += reset-brcmstb-rescal.o
- obj-$(CONFIG_RESET_HSDK) += reset-hsdk.o
- obj-$(CONFIG_RESET_IMX7) += reset-imx7.o
- obj-$(CONFIG_RESET_LANTIQ) += reset-lantiq.o
-diff --git a/drivers/reset/reset-brcmstb-rescal.c b/drivers/reset/reset-brcmstb-rescal.c
-new file mode 100644
-index 000000000000..58a30e624a14
---- /dev/null
-+++ b/drivers/reset/reset-brcmstb-rescal.c
-@@ -0,0 +1,124 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/* Copyright (C) 2018 Broadcom */
-+
-+
-+#include <linux/delay.h>
-+#include <linux/device.h>
-+#include <linux/io.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset-controller.h>
-+#include <linux/types.h>
-+
-+#define BRCM_RESCAL_START	0
-+#define	BRCM_RESCAL_START_BIT	BIT(0)
-+#define BRCM_RESCAL_CTRL	4
-+#define BRCM_RESCAL_STATUS	8
-+#define BRCM_RESCAL_STATUS_BIT	BIT(0)
-+
-+struct brcm_rescal_reset {
-+	void __iomem	*base;
-+	struct device *dev;
-+	struct reset_controller_dev rcdev;
-+};
-+
-+static int brcm_rescal_reset_assert(struct reset_controller_dev *rcdev,
-+				      unsigned long id)
-+{
-+	return 0;
-+}
-+
-+static int brcm_rescal_reset_deassert(struct reset_controller_dev *rcdev,
-+				      unsigned long id)
-+{
-+	struct brcm_rescal_reset *data =
-+		container_of(rcdev, struct brcm_rescal_reset, rcdev);
-+	void __iomem *base = data->base;
-+	const int NUM_RETRIES = 10;
-+	u32 reg;
-+	int i;
-+
-+	reg = readl(base + BRCM_RESCAL_START);
-+	writel(reg | BRCM_RESCAL_START_BIT, base + BRCM_RESCAL_START);
-+	reg = readl(base + BRCM_RESCAL_START);
-+	if (!(reg & BRCM_RESCAL_START_BIT)) {
-+		dev_err(data->dev, "failed to start sata/pcie rescal\n");
-+		return -EIO;
-+	}
-+
-+	reg = readl(base + BRCM_RESCAL_STATUS);
-+	for (i = NUM_RETRIES; i >= 0 &&  !(reg & BRCM_RESCAL_STATUS_BIT); i--) {
-+		udelay(100);
-+		reg = readl(base + BRCM_RESCAL_STATUS);
-+	}
-+	if (!(reg & BRCM_RESCAL_STATUS_BIT)) {
-+		dev_err(data->dev, "timedout on sata/pcie rescal\n");
-+		return -ETIMEDOUT;
-+	}
-+
-+	reg = readl(base + BRCM_RESCAL_START);
-+	writel(reg ^ BRCM_RESCAL_START_BIT, base + BRCM_RESCAL_START);
-+	reg = readl(base + BRCM_RESCAL_START);
-+	dev_dbg(data->dev, "sata/pcie rescal success\n");
-+
-+	return 0;
-+}
-+
-+static int brcm_rescal_reset_xlate(struct reset_controller_dev *rcdev,
-+				   const struct of_phandle_args *reset_spec)
-+{
-+	/* This is needed if #reset-cells == 0. */
-+	return 0;
-+}
-+
-+static const struct reset_control_ops brcm_rescal_reset_ops = {
-+	.assert = brcm_rescal_reset_assert,
-+	.deassert = brcm_rescal_reset_deassert,
-+};
-+
-+static int brcm_rescal_reset_probe(struct platform_device *pdev)
-+{
-+	struct brcm_rescal_reset *data;
-+	struct resource *res;
-+
-+	data = devm_kzalloc(&pdev->dev, sizeof(*data), GFP_KERNEL);
-+	if (!data)
-+		return -ENOMEM;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	data->base = devm_ioremap_resource(&pdev->dev, res);
-+
-+	if (IS_ERR(data->base))
-+		return PTR_ERR(data->base);
-+
-+	platform_set_drvdata(pdev, data);
-+
-+	data->rcdev.owner = THIS_MODULE;
-+	data->rcdev.nr_resets = 1;
-+	data->rcdev.ops = &brcm_rescal_reset_ops;
-+	data->rcdev.of_node = pdev->dev.of_node;
-+	data->rcdev.of_xlate = brcm_rescal_reset_xlate;
-+	data->dev = &pdev->dev;
-+
-+	return devm_reset_controller_register(&pdev->dev, &data->rcdev);
-+}
-+
-+static const struct of_device_id brcm_rescal_reset_of_match[] = {
-+	{ .compatible = "brcm,bcm7216-pcie-sata-rescal" },
-+	{ },
-+};
-+MODULE_DEVICE_TABLE(of, brcm_rescal_reset_of_match);
-+
-+static struct platform_driver brcm_rescal_reset_driver = {
-+	.probe = brcm_rescal_reset_probe,
-+	.driver = {
-+		.name	= "brcm-rescal-reset",
-+		.of_match_table	= brcm_rescal_reset_of_match,
-+	}
-+};
-+module_platform_driver(brcm_rescal_reset_driver);
-+
-+MODULE_AUTHOR("Broadcom");
-+MODULE_DESCRIPTION("Broadcom Sata/PCIe rescal reset controller");
-+MODULE_LICENSE("GPL v2");
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+V2lsbCwgTWFyaywKCkRvIHlvdSBoYXZlIGFueSBpbnB1dCByZWdhcmRpbmcgdGhpcyBwYXJ0aWN1
+bGFyIHNpdHVhdGlvbj8KCkl0IHdvdWxkIGJlIG5pY2UgdG8gZ2V0IHRoaXMgZml4ZWQgYmVmb3Jl
+IHRoZSByZWxlYXNlIG9mIGFub3RoZXIgR0RCIAp2ZXJzaW9uLCBpZiB0aGUgZml4IGlzIHRvIGxp
+dmUgaW4gR0RCIGl0c2VsZi4KCk9uIDExLzI2LzE5IDE6MzUgUE0sIEx1aXMgTWFjaGFkbyB3cm90
+ZToKPiBwaW5nPwo+IAo+IE9uIDExLzE4LzE5IDExOjU0IEFNLCBMdWlzIE1hY2hhZG8gd3JvdGU6
+Cj4+IEhpIFdpbGwsCj4+Cj4+IFRoYW5rcyBmb3IgdGhlIHRob3JvdWdoIGV4cGxhbmF0aW9uLgo+
+Pgo+PiBPbiAxMS8xOC8xOSAxMDoxNSBBTSwgV2lsbCBEZWFjb24gd3JvdGU6Cj4+PiBIaSBMdWlz
+LAo+Pj4KPj4+IFsrTWFyayBmb3IgdGhlIHZhbGlkX3VzZXJfcmVncygpIHBhcnRdCj4+Pgo+Pj4g
+T24gVHVlLCBOb3YgMTIsIDIwMTkgYXQgMDg6MjI6MTBQTSAtMDMwMCwgTHVpcyBNYWNoYWRvIHdy
+b3RlOgo+Pj4+IEkndmUgbm90aWNlZCwgdW5kZXIgdmVyeSBzcGVjaWZpYyBjb25kaXRpb25zLCB0
+aGF0IGEgUFRSQUNFX1NJTkdMRVNURVAKPj4+PiByZXF1ZXN0IGJ5IEdEQiB3b24ndCBleGVjdXRl
+IHRoZSB1bmRlcmx5aW5nIGluc3RydWN0aW9uLiBBcyBhIAo+Pj4+IGNvbnNlcXVlbmNlLAo+Pj4+
+IHRoZSBQQyBkb2Vzbid0IG1vdmUsIGJ1dCB3ZSByZXR1cm4gYSBTSUdUUkFQIGp1c3QgbGlrZSB3
+ZSB3b3VsZCBmb3IgYQo+Pj4+IHJlZ3VsYXIgc3VjY2Vzc2Z1bCBQVFJBQ0VfU0lOR0xFU1RFUCBy
+ZXF1ZXN0Lgo+Pj4+Cj4+Pj4gU2luY2UgdGhlcmUgYXJlIG5vIHNvZnR3YXJlIGJyZWFrcG9pbnRz
+IGluc2VydGVkIGF0IFBDICh3ZSBhcmUgYWN0dWFsbHkKPj4+PiBzdGVwcGluZyBvdmVyIGEgYnJl
+YWtwb2ludCwgc28gR0RCIHJlbW92ZXMgdGhlIGJyZWFrcG9pbnQgYXQgUEMgYmVmb3JlCj4+Pj4g
+aXNzdWluZyBhIFBUUkFDRV9TSU5HTEVTVEVQIHJlcXVlc3QpLCB0aGlzIGlzIGFuIG9kZCBiZWhh
+dmlvci4KPj4+Pgo+Pj4+IFRob3VnaCBub3QgdG9vIGhhcm1mdWwsIGkgc2VlIHRoaXMgbWFuaWZl
+c3RpbmcgaW4gdGhlIEdEQiB0ZXN0c3VpdGUKPj4+PiAoZ2RiLnJldmVyc2UvaW5zbi1yZXZlcnNl
+LmV4cCksIHdoaWNoIHRocm93cyB0aGUgdGVzdCBvZmYgYnkgbWFraW5nIEdEQgo+Pj4+IHRoaW5r
+IGl0IGlzIGZ1cnRoZXIgaW4gdGhlIGluc3RydWN0aW9uIHN0cmVhbSB0aGFuIGl0IHJlYWxseSBp
+cy4gSW4gCj4+Pj4gZmFjdCwgd2UKPj4+PiBnZXQgbHVja3kgaGVyZSBhbmQgbm8gRkFJTCdzIHNo
+b3cgdXAsIG9ubHkgbWFueSBtb3JlIHNwdXJpb3VzIFBBU1Nlcy4KPj4+Cj4+PiBJIG1hbmFnZWQg
+dG8gcmVwcm9kdWNlIHRoaXMgbG9jYWxseSBhbmQgSSB0aGluayBJJ3ZlIGZpZ3VyZWQgb3V0IHdo
+YXQncwo+Pj4gZ29pbmcgb24sIGFsdGhvdWdoIEknbSBub3Qgc3VyZSB0aGF0IHRoZSBrZXJuZWwg
+aXMgdGhlIGJlc3QgcGxhY2UgdG8gZml4Cj4+PiBpdC4KPj4+Cj4+PiBMb29raW5nIGF0IHRoZSBz
+cGVjaWZpYyByZXByb2R1Y2VyOgo+Pj4KPj4+PiBFeGVjdXRlIGdkYiBsaWtlIHNvOgo+Pj4+Cj4+
+Pj4gZ2RiIC1leCAic2V0IGRpc3BsYWNlZC1zdGVwcGluZyBvZmYiIC1leCAiYiBsb2FkIiAtZXgg
+InJ1biIgLWV4IAo+Pj4+ICJyZWNvcmQiIC1leAo+Pj4+ICJzaSIgLWV4ICJyc2kiIC1leCAicmVj
+b3JkIHN0b3AiIGluc24tcmV2ZXJzZQo+Pj4KPj4+IFNvIHdlJ3ZlIGdvdCBhIGNvdXBsZSBvZiBp
+bnN0cnVjdGlvbnMgYXMgZm9sbG93cyAoaXQgZG9lc24ndCBhY3R1YWxseSAKPj4+IG1hdHRlcgo+
+Pj4gd2hhdCB0aGV5IGFyZSwgc28gSSd2ZSBjaGFuZ2VkIHRoZSBMRDEgaW4geW91ciBiaW5hcnkg
+Zm9yIGEgTk9QIGluIAo+Pj4gb3JkZXIgdG8KPj4+IGF2b2lkIGNvbmZ1c2lvbiB3aXRoIHRoZSAi
+bG9hZCIgbGFiZWwgbm90IGFjdHVhbGx5IHBvaW50aW5nIGF0IGEgbG9hZCk6Cj4+Pgo+Pj4gwqDC
+oMKgwqAweDdiODrCoMKgwqDCoMKgwqDCoCBtb3bCoMKgwqAgLy8gImxvYWQiCj4+PiDCoMKgwqDC
+oDB4N2JjOsKgwqDCoMKgwqDCoMKgIG5vcAo+Pj4KPj4+ICJiIGxvYWQiIHBsYWNlcyBhIGJyZWFr
+cG9pbnQgYXQgMHg3Yjg6Cj4+Pgo+Pj4gwqDCoMKgwqBwdHJhY2UoUFRSQUNFX1BPS0VEQVRBLCA2
+NjIsIDB4YWFhYWFhYWFhN2I4LCAweGQ1MDMyMDFmZDQyMDAwMDApID0gMAo+Pj4KPj4+IFdlIHJ1
+biB0byBhIHNvZnR3YXJlIGJyZWFrcG9pbnQgb24gImxvYWQiICh0aGUgbW92IGluc3RydWN0aW9u
+KS4gV2UgdGFrZQo+Pj4gdGhlIHRyYXAgYW5kIHRyeSB0byBleGVjdXRlIHRoZSAic2kiLCB3aGlj
+aCBtZWFucyB3ZSBuZWVkIHRvIHJlbW92ZSB0aGUKPj4+IGJyZWFrcG9pbnQgd2hpbGUgd2Ugc3Rl
+cCBvdmVyIGl0Ogo+Pj4KPj4+IMKgwqDCoMKgcHRyYWNlKFBUUkFDRV9QT0tFREFUQSwgNjYyLCAw
+eGFhYWFhYWFhYTdiOCwgMHhkNTAzMjAxZjkxMDAwM2UwKSA9IDAKPj4+IMKgwqDCoMKgWy4uLl0K
+Pj4+IMKgwqDCoMKgcHRyYWNlKFBUUkFDRV9TSU5HTEVTVEVQLCA2NjIsIDB4MSwgMCnCoCA9IDAK
+Pj4+Cj4+PiBUaGlzIGNhdXNlcyB0aGUga2VybmVsIHRvIGFybSB0aGUgc2luZ2xlLXN0ZXAgc3Rh
+dGUgbWFjaGluZSBzbyB0aGF0Cj4+PiBNRFNDUl9FTDEuU1MgPT0gU1BTUl9FTDEuU1MgPT0gMSAo
+a25vd24gYXMgImFjdGl2ZS1ub3QtcGVuZGluZyIpLiAKPj4+IFJ1bm5pbmcKPj4+IGFuIGluc3Ry
+dWN0aW9uIGluIHVzZXJzcGFjZSB3aWxsIHRyYW5zaXRpb24gdG8gTURTQ1JfRUwxLlNTID09MSBh
+bmQKPj4+IFNQU1JfRUwxLlNTID09IDAgKGtub3duIGFzICJhY3RpdmUtcGVuZGluZyIpLCB3aGlj
+aCB3aWxsIGNhdXNlIHRoZSAKPj4+IHRyYXAgdG8KPj4+IHRyaWdnZXIsIGF0IHdoaWNoIHBvaW50
+IGdkYiBwdXRzIHRoZSBicmVha3BvaW50IGluc3RydWN0aW9uIGJhY2sgCj4+PiBzaW5jZSB0aGUK
+Pj4+IHN0ZXAgaXMgY29tcGxldGU6Cj4+Cj4+IFNvLCBqdXN0IHRvIGNvbmZpcm0gbXkgdW5kZXJz
+dGFuZGluZywgd2UgaGF2ZSBhIGNvdXBsZSBiaXRzIAo+PiBjb250cm9sbGluZyBzaW5nbGUtc3Rl
+cHBpbmcgaW4gdGhlIGtlcm5lbCwgb25lIGluIE1EU0NSX0VMMSBhbmQgCj4+IGFub3RoZXIgaW4g
+U1BTUl9FTDEuIEdEQiBkb2Vzbid0IGhhdmUgZGlyZWN0IGFjY2VzcyB0byBhbnkgb2YgdGhvc2Us
+IAo+PiBjb3JyZWN0Pwo+Pgo+PiBJbnN0ZWFkLCBHREIgaGFzIGFjY2VzcyB0byBhIFNTIGJpdCBp
+biB0aGUgcmVzZXJ2ZWQgMjF+MjIgcmFuZ2Ugb2YgQ1BTUi4KPj4KPj4gVGhlIHRyYW5zaXRpb24g
+ZnJvbSBhY3RpdmUtbm90LXBlbmRpbmcgdG8gYWN0aXZlLXBlbmRpbmcgdGFrZXMgcGxhY2UgCj4+
+IHZpYSBhIHNpbmdsZSBQVFJBQ0VfU0lOR0xFU1RFUCByZXF1ZXN0PyBJcyB0aGF0IGNvcnJlY3Q/
+Cj4+Cj4+Pgo+Pj4gwqDCoMKgwqBwdHJhY2UoUFRSQUNFX1BPS0VEQVRBLCA2NjIsIDB4YWFhYWFh
+YWFhN2I4LCAweGQ1MDMyMDFmZDQyMDAwMDApID0gMAo+Pj4KPj4+IFRoaXMgaXMgd2hlcmUgdGhp
+bmdzIHN0YXJ0IHRvIGdvIHdyb25nLiBUaGUgInJzaSIgY29tbWFuZCBhdHRlbXB0cyB0bwo+Pj4g
+cGVyZm9ybSBhIHJldmVyc2Ugc3RlcCwgd2hpY2ggbWVhbnMgcmVzdG9yaW5nIHRoZSBvbGQgc3Rh
+dGUgd2hlbiB3ZSB3ZXJlCj4+PiBwcmV2aW91c2x5IGV4ZWN1dGluZyBhdCAweDdiOC4gSXQgc3Rh
+cnRzIGJ5IHJlbW92aW5nIHRoZSBicmVha3BvaW50IAo+Pj4gYWdhaW4sCj4+PiBzaW5jZSB3ZSd2
+ZSBhbHJlYWR5IGhpdCB0aGF0Ogo+Pj4KPj4+IMKgwqDCoMKgcHRyYWNlKFBUUkFDRV9QT0tFREFU
+QSwgNjYyLCAweGFhYWFhYWFhYTdiOCwgMHhkNTAzMjAxZjkxMDAwM2UwKSA9IDAKPj4+Cj4+PiBh
+bmQgdGhlbiByZXNldHMgdGhlIENQVSByZWdpc3RlcnMgdG8gdGhlaXIgb2xkIHZhbHVlczoKPj4+
+Cj4+PiDCoMKgwqDCoChJIGRvbid0IGtub3cgd2h5IGl0IGRvZXMgdGhpcyB0aHJlZSB0aW1lcykK
+Pj4+IMKgwqDCoMKgcHRyYWNlKFBUUkFDRV9TRVRSRUdTRVQsIDY2MiwgTlRfUFJTVEFUVVMsIAo+
+Pj4gW3tpb3ZfYmFzZT0weGZmZmZmZjY0YjNjOCwgaW92X2xlbj0yNzJ9XSkgPSAwCj4+PiDCoMKg
+wqDCoHB0cmFjZShQVFJBQ0VfU0VUUkVHU0VULCA2NjIsIE5UX1BSU1RBVFVTLCAKPj4+IFt7aW92
+X2Jhc2U9MHhmZmZmZmY2NGIzYzgsIGlvdl9sZW49MjcyfV0pID0gMAo+Pj4gwqDCoMKgwqBwdHJh
+Y2UoUFRSQUNFX1NFVFJFR1NFVCwgNjYyLCBOVF9QUlNUQVRVUywgCj4+PiBbe2lvdl9iYXNlPTB4
+ZmZmZmZmNjRiM2M4LCBpb3ZfbGVuPTI3Mn1dKSA9IDAKPj4+Cj4+PiBUaGUgcHJvYmxlbSB3aXRo
+IHRoaXMgaXMgdGhhdCB3ZSBoYXZlIG1vdmVkIHRoZSBQQyBiYWNrIHRvIDB4N2I4IGJ1dCAKPj4+
+IHdlIGhhdmUKPj4+IGFsc28gY2xlYXJlZCBTUFNSX0VMMS5TUyB0byAwLiBJbnRlcm5hbGx5LCB0
+aGUga2VybmVsIGhhc24ndCBzZWVuIAo+Pj4gc3RlcHBpbmcKPj4+IGdldCBkaXNhYmxlZCAodGhp
+cyB1c3VhbGx5IGhhcHBlbnMgYnkgUFRSQUNFX0NPTlQgY2FsbGluZwo+Pj4gdXNlcl9kaXNhYmxl
+X3NpbmdsZV9zdGVwKCkpIHdoaWNoIG1lYW5zIHRoYXQgTURTQ1JfRUwxLlNTIHJlbWFpbnMgc2V0
+IAo+Pj4gdG8gMQo+Pj4gYW5kIHdlJ3JlIGluIHRoZSBhY3RpdmUtcGVuZGluZyBzdGF0ZSEgQ29u
+c2VxdWVudGx5LCB3ZSBpbW1lZGlhdGVseSAKPj4+IHRha2UgYQo+Pj4gc3RlcCBleGNlcHRpb24g
+aWYgYSBzdGVwIG9wZXJhdGlvbiBpcyBhdHRlbXB0ZWQgPgo+Pgo+PiBXaGlsZSB0cnlpbmcgdG8g
+cmVwcm9kdWNlIHRoaXMsIGkgd2FzIHBheWluZyBhdHRlbnRpb24gdG8gdGhlIFNTIGJpdCAKPj4g
+Y29taW5nIGFuZCBnb2luZy4gQnV0IGluIHRoZSBwYXJ0aWN1bGFyIHNlcXVlbmNlIG9mIHNpL3Jz
+aSwgd2l0aGluIHRoZSAKPj4gcmVjb3JkIGJvdW5kYXJpZXMsIGkgc2VlIEdEQiBqdXN0IHJlc3Rv
+cmVkIHRoZSBvcmlnaW5hbCBDUFNSIHZhbHVlIHRvIAo+PiB3aGF0IGl0IHdhcyBiZWZvcmUgd2Ug
+cHJvY2Vzc2VkIHRoZSBzaSBjb21tYW5kLgo+Pgo+PiDCoEZyb20gR0RCJ3MgUE9WIGFsbCBzdGF0
+ZSB3YXMgcmVzdG9yZSB0byB0aGUgd2F5IGl0IHdhcyBiZWZvcmUgYW5kIAo+PiB3ZSdyZSBnb29k
+IHRvIGdvLgo+Pgo+PiBJcyB0aGlzIG5vdCBlbm91Z2ggdG8gcmVzdG9yZSBzdGF0ZSBrZXJuZWwt
+d2lzZT8KPj4KPj4+IE5vdywgd2UgKmNvdWxkKiBjb25zaWRlciBoYWNraW5nIHRoZSBUSUZfU0lO
+R0xFU1RFUCBjaGVjayBpbgo+Pj4gdmFsaWRfdXNlcl9yZWdzKCkgc28gdGhhdCBTUFNSX0VMMS5T
+UyBpcyBwcmVzZXJ2ZWQgd2hlbiBzdGVwcGluZyBpcyAKPj4+IGFjdGl2ZQo+Pj4gYnV0IHRoaXMg
+aXMgYSB1c2VyLXZpc2libGUgY2hhbmdlIGFuZCBtYXkgYnJlYWsgdGhpbmdzIGxpa2Ugc3RlcHBp
+bmcgCj4+PiBvdXQgb2YKPj4+IHNpZ25hbCBoYW5kbGVycy4gSSB3b3VsZCBwcmVmZXIgdGhhdCBH
+REIgbWFuYWdlcyB0aGUgU1MgYml0IAo+Pj4gZXhwbGljaXRseSBpbgo+Pj4gdGhpcyBzY2VuYXJp
+bywgYnkgc2V0dGluZyBpdCB0byAxIHdoZW4gcmVzdG9yaW5nIHRoZSBvbGQgc3RhdGUgaW4gdGhl
+Cj4+PiByZXZlcnNlIHN0ZXAsIGEgYml0IGxpa2Ugd2hlbiBpdCBkaXNhYmxlcyB0aGUgb2xkIGJy
+ZWFrcG9pbnQuIFlvdSBjYW4KPj4+IGVtdWxhdGUgdGhpcyBieSBkb2luZzoKPj4KPj4gSSB0aGlu
+ayB3ZSBjb3VsZCBsZXQgR0RCIGNvbnRyb2wgdGhpcyB3aGVuIHJlcXVpcmVkLCBidXQgSSdtIHRy
+eWluZyB0byAKPj4gdW5kZXJzdGFuZCB0aGUgcmFtaWZpY2F0aW9ucyBvZiBsZXR0aW5nIEdEQiBk
+byBzby4KPj4KPj4gRm9yIGV4YW1wbGUsIHdoYXQgaWYgdGhlIHVzZXIgZGVjaWRlcyB0byBhbHRl
+ciB0aGUgUEMgaGVyZSBhbmQgdGhlcmUsIAo+PiBmb3IgZGVidWdnaW5nIHB1cnBvc2VzLiBUaGF0
+IGlzIGEgdXNlIGNhc2UgdGhhdCBoYXBwZW5zIG9mdGVuLCBpbiAKPj4gb3JkZXIgdG8gZ28gYmFj
+ayBvciBza2lwIHNvbWUgcGFydHMgb2YgdGhlIGNvZGUuCj4+Cj4+IFdvdWxkIHdlIG5lZWQgdG8g
+cGF5IGF0dGVudGlvbiB0byB0aGUgU1MgYml0IGluIHRob3NlIGNhc2VzIGFzIHdlbGw/Cj4+Cj4+
+Pgo+Pj4gwqDCoMKgwqAoZ2RiKSBzZXQgJGNwc3IgfD0gKDE8PDIxKQo+Pgo+PiBJbiBwYXJ0aWN1
+bGFyLCB3aGF0IGRvZXMgdGhlIHN3aXRjaGluZyBvZiB0aGlzIGJpdCBhY2NvbXBsaXNoZXMgaW4g
+dGhlIAo+PiBrZXJuZWw/IFdvdWxkIHdlIGJlIGJldHRlciBvZmYgZm9yY2luZyB0aGUgU1MgYml0
+IGV2ZXJ5IHRpbWUgd2UgZG8gYSAKPj4gc2luZ2xlLXN0ZXAgb3BlcmF0aW9uLCBmb3IgZXhhbXBs
+ZT8KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
