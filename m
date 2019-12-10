@@ -2,95 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A40C118DCA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 17:40:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25E83118DE6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 17:42:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zRsWDMa1dbuAcPYx0bX322RaM6yMfrSuL+Fleo81hBo=; b=echslJl7ZfEjYU
-	lxsJhURfBhy+Aot9EaHQ8NitR72fxSNxO8i6oP7jRFwhjxVHXgeOEe8ZOcbaCTH+Nu2Llc+x2hc0n
-	sX8yTB+JFg/qfY1erRFghgmyINKgp7xV5dwH0NyGaIJTYIS3rRw46iI9GS2hUTWDIxZdg7hx87POE
-	xaLMirvsOMNIemfCTabp30OM0ce085iGZoMSmOV3OMX0KchDVcSh+8YeHj6ehMJXyfuZnIjAuw8ZZ
-	/ljSHOv7MNEwMdfTfu2RAqQuKz4L/8vUTIxFCPwcw1PB/UQhPEAH5f78knbZ56oOU6oXoi7RQdTzI
-	c2G7Pn8CnhN1RQNqyiAA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aGUW5asSbMRk2hOimhbvgxXXkX33QE0TVHLrX+ghi1g=; b=L/OgEYVRHjgC4Q
+	hl5fBM65eOJibNELkJHYpsTlGaQZwe3tO1u5SaQUe5ssVTQOmeXHaEns/VUyZaMlXX4BcI2rLLBaV
+	/uiIfoiaod4ry1t397d5HAt9GCJ0UU9IRzNUm88/s4Bp71D2MfvRhOQKePivOfiE9lSTrm41aBNLz
+	uib5EvBkD//A0taE04bd6Au1qqlezhhgs8Hem8tCjHhzcDRINQU1GfHgMVWIDB4E3pt7PjrXXS2K3
+	BYb+DtNq+3IiB+TGD0rtSMJ0kPU+DpNlQxCzAQQ8zIul9M4S6PxiBTJvoSb9gVKctA1CqFFHEFE/H
+	lkdLXKZLk5OuRYfuQXhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieiZ8-0003dm-9A; Tue, 10 Dec 2019 16:40:50 +0000
-Received: from mout.web.de ([212.227.17.12])
+	id 1ieiad-0004L2-6K; Tue, 10 Dec 2019 16:42:23 +0000
+Received: from relay8-d.mail.gandi.net ([217.70.183.201])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieiYx-0003cY-9P; Tue, 10 Dec 2019 16:40:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1575996028;
- bh=jvBxKea/ywk876Ln2ZWd62u/vI+Q343YD2tWSrxYKzo=;
- h=X-UI-Sender-Class:From:Subject:To:Cc:References:Date:In-Reply-To;
- b=UDDkrkcqOe82YGqnL8KMAliw3/RAYRM8kL7Vb2cZwYv4wFp1oUxXtigj+DnDTeNuy
- ity8UB/0HQJ7z50igmjBQXoc+t7jhLgzE5SNjT8jdGYv5gy5bcYxfWIuKKWtH2fZeZ
- BJ2pI0mtcmvPFRngmfZ62AElsvvRRFsDWBOImfQ4=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.58.50] ([80.130.119.216]) by smtp.web.de (mrweb101
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0LoHTx-1i7JkD19hJ-00gFDK; Tue, 10
- Dec 2019 17:40:28 +0100
-From: Soeren Moch <smoch@web.de>
-Subject: Re: [PATCH] mfd: rk808: Always use poweroff when requested
-To: Markus Reichl <m.reichl@fivetechno.de>, Anand Moon <linux.amoon@gmail.com>
-References: <20191209115746.12953-1-smoch@web.de>
- <CANAwSgS9ixhyOE2QYQ3CetA=BUVebMan2=9xBKF=U3YXAwCHNQ@mail.gmail.com>
- <6e380c0a-007d-22db-af26-19defaf1ae83@fivetechno.de>
-Message-ID: <8377b8d6-8b4d-0605-4c61-fb61b4aebf91@web.de>
-Date: Tue, 10 Dec 2019 17:40:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1ieiaE-00048P-98; Tue, 10 Dec 2019 16:42:00 +0000
+X-Originating-IP: 90.182.112.136
+Received: from localhost (136.112.broadband15.iol.cz [90.182.112.136])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay8-d.mail.gandi.net (Postfix) with ESMTPSA id B3FC01BF21B;
+ Tue, 10 Dec 2019 16:41:42 +0000 (UTC)
+Date: Tue, 10 Dec 2019 17:41:39 +0100
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+Subject: Re: [PATCH v6 5/6] rtc: mt6397: fix alarm register overwrite
+Message-ID: <20191210164139.GT1463890@piout.net>
+References: <1575639183-17606-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <1575639183-17606-6-git-send-email-hsin-hsiung.wang@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <6e380c0a-007d-22db-af26-19defaf1ae83@fivetechno.de>
-Content-Language: en-US
-X-Provags-ID: V03:K1:Z7alPqcTNnZPzmAqXbSiNaJsfhw/zO+XCpFIPrik5MOlI9lE4+y
- WjG2xzstnsVWIGNcww2X19uNcaPUkG8rpQzFDl7jiBZF3F1A1PN4MkUHAnULynA948vc8Px
- pm9qjIYnlJC+FO8e96jXrfHvZlfD6Z7JiUWmSUblT2mv/M7r+7ePDwIWMZG4BY3eYzri4MT
- qDrD2FxMiNj1uW1YmSs0w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Rya/UKPottQ=:9ljsoHZATbr6EpFHf6Q9Ej
- t8V3aNaSA3nxzvUo9aWLxAUOUUEf5UdMx8sjW7vwGYVxfS2n45NqPwuR/F7CTz97m9r8KKovB
- OYcVk8WXtBcbO7TInZn8P4YiBwOErP19LIpVCCopvZYqzelM4XgsUZnNe9nncTLLGZ5NJUr3k
- O0jDTCDJ8a5LLOuZ01GBlTuWFQif3ZOJpoX7t8q0Z/MPxFIspBEk//iLcAPYMh1btAUt6Z8gK
- AaCJIRDmd1BF1DoFeUIU1JCDe/WBYUCyQbr/37+Xufz1QWQygJICt5BbSFeQEPydmtQFe8lVS
- R7hlSuWOubKVZjnUySgJeqoFkYbXf6eLtln4SDXBIqxFyQZGq0E0pY4Ne42mIwUtce7aLm0d4
- osKfwHGGC9RWxqJEBvOHI3J0wegaw7iI+1T0HNOQBcgFEW2lVCneoAMC2xFx1RT/Zo4cBoxbz
- ricLl8nt9tMn4XvhNpVx5yXsRw8TK3fs3mNumiEou3zXerh6V7rdmfXyclza7GC0JsrtsUBMf
- GFzyEcI/2FR4xQczarEeA6+BXIu+IdeqFEboKLzJ8tGdIscgH6vQtic97WWLFfeR8/DM+LySt
- jqGVCyiDw1aBzgwsBbg+BbyMXL7O9pADPno4Fldejsn6h21/xbUteqqQ5gdsh0/rOUC+/bpFL
- 2bXLKHOMGtcoCj4D4hZYCsNZ5dSXsPAcZBulRnjTbRK3jIaqVYTIPpIC5aoyeRwvj50DbuDTk
- EhCRvX6kIgPYvv2XWM7tQaAcrEerCNUAw/HyRQf/0CB+ILYlm5JoSBn9We+6p9w6zsbU7tF95
- R1mDM1ypBMkdvA9AWe1tHhQXewuXet5tA4DygLv7R0f3oE1H2APRkducp02KNV4GTm56fCr7J
- oG3+bXpmJzzeJv2spp2jObRANP2hjcsNT1Jg1JAtr8cLyNlVwEZZmAdcHNvUl59sPrIPmyDlN
- X3gEDB7b0QAdkkMhBD15eG0PJ3vEfwIeMf+jU3ck/Ulh4bdTVwJqNm29UWh92bJtrXpBjCsYM
- i8xHO1veQZ8Wqpo+1aoGSmhAzToRG6+r7B7iN8Y9ylk62kZEIgW/m3H52fDWrfCvnJPEYhg53
- E38XnTYvZBRvCfnOLMq/TbUAznuXYCK85jQ406IpG4aJaHWKZ/r3BIbGsE6rytzi4DbF6D9tv
- pa/t9jQyuBGUUp9sMKaDVPWlL+Aq+0OS5Vku4Gg+zclqJ2eWkUh69sPJujmAs3z0KtaxiygFR
- 8xQgEfTAjARTww1XeoK24OsV34fqJ8ec0hah/Xg==
+Content-Disposition: inline
+In-Reply-To: <1575639183-17606-6-git-send-email-hsin-hsiung.wang@mediatek.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_084039_663569_A361CDA7 
-X-CRM114-Status: GOOD (  16.70  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191210_084158_593581_D36FCD3E 
+X-CRM114-Status: GOOD (  16.78  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.12 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (smoch[at]web.de)
+ low trust [217.70.183.201 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,128 +61,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, Lee Jones <lee.jones@linaro.org>,
- Heiko Stuebner <heiko@sntech.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Kernel <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>, srv_heupstream@mediatek.com,
+ devicetree@vger.kernel.org, Ran Bi <ran.bi@mediatek.com>,
+ Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Eddie Huang <eddie.huang@mediatek.com>, Lee Jones <lee.jones@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAxMC4xMi4xOSAxMzo1NSwgTWFya3VzIFJlaWNobCB3cm90ZToKPiBIaSBBbmFuZCwKPgo+
-IEFtIDEwLjEyLjE5IHVtIDEzOjQyIHNjaHJpZWIgQW5hbmQgTW9vbjoKPj4gSGkgU29lcmVuLAo+
-Pgo+PiBPbiBNb24sIDkgRGVjIDIwMTkgYXQgMTc6MjgsIFNvZXJlbiBNb2NoIDxzbW9jaEB3ZWIu
-ZGU+IHdyb3RlOgo+Pj4KPj4+IFdpdGggdGhlIGRldmljZSB0cmVlIHByb3BlcnR5ICJyb2NrY2hp
-cCxzeXN0ZW0tcG93ZXItY29udHJvbGxlciIgd2UKPj4+IGV4cGxpY2l0bHkgcmVxdWVzdCB0byB1
-c2UgdGhpcyBQTUlDIHRvIHBvd2VyIG9mZiB0aGUgc3lzdGVtLiBTbyBhbHdheXMKPj4+IHJlZ2lz
-dGVyIG91ciBwb3dlcm9mZiBmdW5jdGlvbiwgZXZlbiBpZiBzb21lIG90aGVyIGhhbmRsZXIgKHBy
-b2JhYmx5Cj4+PiBQU0NJIHBvd2Vyb2ZmKSB3YXMgcmVnaXN0ZXJlZCBiZWZvcmUuCj4+Pgo+Pj4g
-U2lnbmVkLW9mZi1ieTogU29lcmVuIE1vY2ggPHNtb2NoQHdlYi5kZT4KPj4+IC0tLQo+Pj4gQ2M6
-IExlZSBKb25lcyA8bGVlLmpvbmVzQGxpbmFyby5vcmc+Cj4+PiBDYzogSGVpa28gU3R1ZWJuZXIg
-PGhlaWtvQHNudGVjaC5kZT4KPj4+IENjOiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKPj4+IENjOiBsaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+PiBDYzog
-bGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZwo+Pj4gLS0tCj4+PiDCoGRyaXZlcnMvbWZkL3Jr
-ODA4LmMgfCAxMSArKy0tLS0tLS0tLQo+Pj4gwqAxIGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRpb25z
-KCspLCA5IGRlbGV0aW9ucygtKQo+Pj4KPj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21mZC9yazgw
-OC5jIGIvZHJpdmVycy9tZmQvcms4MDguYwo+Pj4gaW5kZXggYTY5YTY3NDJlY2RjLi42MTZlNDRl
-N2VmOTggMTAwNjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL21mZC9yazgwOC5jCj4+PiArKysgYi9kcml2
-ZXJzL21mZC9yazgwOC5jCj4+PiBAQCAtNTUwLDcgKzU1MCw3IEBAIHN0YXRpYyBpbnQgcms4MDhf
-cHJvYmUoc3RydWN0IGkyY19jbGllbnQgKmNsaWVudCwKPj4+IMKgwqDCoMKgwqDCoMKgIGNvbnN0
-IHN0cnVjdCBtZmRfY2VsbCAqY2VsbHM7Cj4+PiDCoMKgwqDCoMKgwqDCoCBpbnQgbnJfcHJlX2lu
-aXRfcmVnczsKPj4+IMKgwqDCoMKgwqDCoMKgIGludCBucl9jZWxsczsKPj4+IC3CoMKgwqDCoMKg
-wqAgaW50IHBtX29mZiA9IDAsIG1zYiwgbHNiOwo+Pj4gK8KgwqDCoMKgwqDCoCBpbnQgbXNiLCBs
-c2I7Cj4+PiDCoMKgwqDCoMKgwqDCoCB1bnNpZ25lZCBjaGFyIHBtaWNfaWRfbXNiLCBwbWljX2lk
-X2xzYjsKPj4+IMKgwqDCoMKgwqDCoMKgIGludCByZXQ7Cj4+PiDCoMKgwqDCoMKgwqDCoCBpbnQg
-aTsKPj4+IEBAIC02NzQsMTYgKzY3NCw5IEBAIHN0YXRpYyBpbnQgcms4MDhfcHJvYmUoc3RydWN0
-IGkyY19jbGllbnQgKmNsaWVudCwKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBn
-b3RvIGVycl9pcnE7Cj4+PiDCoMKgwqDCoMKgwqDCoCB9Cj4+Pgo+Pj4gLcKgwqDCoMKgwqDCoCBw
-bV9vZmYgPSBvZl9wcm9wZXJ0eV9yZWFkX2Jvb2wobnAsCj4+PiAtwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICJyb2NrY2hpcCxzeXN0
-ZW0tcG93ZXItY29udHJvbGxlciIpOwo+Pj4gLcKgwqDCoMKgwqDCoCBpZiAocG1fb2ZmICYmICFw
-bV9wb3dlcl9vZmYpIHsKPj4+ICvCoMKgwqDCoMKgwqAgaWYgKG9mX3Byb3BlcnR5X3JlYWRfYm9v
-bChucCwKPj4+ICJyb2NrY2hpcCxzeXN0ZW0tcG93ZXItY29udHJvbGxlciIpKSB7Cj4+PiDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcms4MDhfaTJjX2NsaWVudCA9IGNsaWVudDsKPj4+
-IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwbV9wb3dlcl9vZmYgPSByazgwOC0+cG1f
-cHdyb2ZmX2ZuOwo+Pj4gLcKgwqDCoMKgwqDCoCB9Cj4+PiAtCj4+PiAtwqDCoMKgwqDCoMKgIGlm
-IChwbV9vZmYgJiYgIXBtX3Bvd2VyX29mZl9wcmVwYXJlKSB7Cj4+PiAtwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCBpZiAoIXJrODA4X2kyY19jbGllbnQpCj4+PiAtwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcms4MDhfaTJjX2NsaWVudCA9IGNsaWVudDsK
-Pj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBwbV9wb3dlcl9vZmZfcHJlcGFyZSA9
-IHJrODA4LT5wbV9wd3JvZmZfcHJlcF9mbjsKPj4+IMKgwqDCoMKgwqDCoMKgIH0KPj4+Cj4+Cj4+
-IEkgZ2F2ZSB0aGlzIGEgdHJ5IG9uIG15IFJvY2s5NjAgYW5kIE9kcm9pZCBOMQo+PiBib3RoIGdv
-dCBrZXJuZWwgcGFuaWMgYmVsb3cuCj4KPiBJIHNlZSB0aGUgc2FtZSBvbiByazMzOTktcm9jLXBj
-LgpUaGlzIGlzIG5vIHBhbmljLCBpdCdzIGEgaGFybWxlc3Mgd2FybmluZy4KVGhlIGkyYyBjb3Jl
-IG5vd2FkYXlzIGV4cGVjdHMgYSBzcGVjaWFsbHkgbWFya2VkIGkyYyB0cmFuc2ZlciBmdW5jdGlv
-bgpsYXRlIGluIHRoZSBwb3dlcmRvd24gY3ljbGU6CgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9pMmMv
-YnVzc2VzL2kyYy1yazN4LmMgYi9kcml2ZXJzL2kyYy9idXNzZXMvaTJjLXJrM3guYwppbmRleCAx
-YTMzMDA3YjAzZTkuLmNlYzExNWUwYWZhNCAxMDA2NDQKLS0tIGEvZHJpdmVycy9pMmMvYnVzc2Vz
-L2kyYy1yazN4LmMKKysrIGIvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1yazN4LmMKQEAgLTExMjYs
-NiArMTEyNiw3IEBAIHN0YXRpYyB1MzIgcmszeF9pMmNfZnVuYyhzdHJ1Y3QgaTJjX2FkYXB0ZXIg
-KmFkYXApCsKgCsKgc3RhdGljIGNvbnN0IHN0cnVjdCBpMmNfYWxnb3JpdGhtIHJrM3hfaTJjX2Fs
-Z29yaXRobSA9IHsKwqDCoMKgwqAgLm1hc3Rlcl94ZmVywqDCoMKgIMKgwqDCoCA9IHJrM3hfaTJj
-X3hmZXIsCivCoMKgwqAgLm1hc3Rlcl94ZmVyX2F0b21pY8KgwqDCoCA9IHJrM3hfaTJjX3hmZXIs
-IC8qIHVzYWJsZSBmb3IgUE1JQyBwb3dlcm9mZiAqLwrCoMKgwqDCoCAuZnVuY3Rpb25hbGl0ecKg
-wqDCoCDCoMKgwqAgPSByazN4X2kyY19mdW5jLArCoH07CsKgCi0tLQpJdCBpcyBvbmx5IHVzZWQg
-Zm9yIHBvd2VyZG93bi4gVGhlIHJlZ3VsYXIgaTJjIHhmZXIgZnVuY3Rpb24gd29ya3MuCgpIZWlr
-bywgc2hvdWxkIEkgc2VuZCBhIGZvcm1hbCBwYXRjaCBmb3IgdGhhdD8KClNvZXJlbgoKPgo+Pgo+
-PiBbwqDCoCA1OC4zMDU4NjhdIHhoY2ktaGNkIHhoY2ktaGNkLjAuYXV0bzogVVNCIGJ1cyA1IGRl
-cmVnaXN0ZXJlZAo+PiBbwqDCoCA1OC4zMDY3NDddIHJlYm9vdDogUG93ZXIgZG93bgo+PiBbwqDC
-oCA1OC4zMDcxMDZdIC0tLS0tLS0tLS0tLVsgY3V0IGhlcmUgXS0tLS0tLS0tLS0tLQo+PiBbwqDC
-oCA1OC4zMDc1MTBdIE5vIGF0b21pYyBJMkMgdHJhbnNmZXIgaGFuZGxlciBmb3IgJ2kyYy0wJwo+
-PiBbwqDCoCA1OC4zMDgwMDddIFdBUk5JTkc6IENQVTogMCBQSUQ6IDEgYXQgZHJpdmVycy9pMmMv
-aTJjLWNvcmUuaDo0MQo+PiBpMmNfdHJhbnNmZXIrMHhlNC8weGY4Cj4+IFvCoMKgIDU4LjMwODY5
-Nl0gTW9kdWxlcyBsaW5rZWQgaW46IHNuZF9zb2NfaGRtaV9jb2RlYyBkd19oZG1pX2kyc19hdWRp
-bwo+PiByb2NrY2hpcGRybSBhbmFsb2dpeF9kcCBicmNtZm1hYyBudm1lIGR3X21pcGlfZHNpIG52
-bWVfY29yZSBkd19oZG1pCj4+IHBhbmZyb3N0IGNlYyBicmNtdXRpbCBkcm1fa21zX2hlbHBlciBn
-cHVfc2NoZWQgY2ZnODAyMTEgaGNpX3VhcnQgZHJtCj4+IGJ0YmNtIGNyY3QxMGRpZl9jZSBzbmRf
-c29jX3NpbXBsZV9jYXJkIGJsdWV0b290aCBzbmRfc29jX3JvY2tjaGlwX2kycwo+PiBzbmRfc29j
-X3NpbXBsZV9jYXJkX3V0aWxzIHNuZF9zb2Nfcm9ja2NoaXBfcGNtIHBoeV9yb2NrY2hpcF9wY2ll
-Cj4+IGVjZGhfZ2VuZXJpYyBydGNfcms4MDggZWNjIHBjaWVfcm9ja2NoaXBfaG9zdCByZmtpbGwg
-cm9ja2NoaXBfdGhlcm1hbAo+PiBpcF90YWJsZXMgeF90YWJsZXMgaXB2NiBuZl9kZWZyYWdfaXB2
-Ngo+PiBbwqDCoCA1OC4zMTIxNTBdIENQVTogMCBQSUQ6IDEgQ29tbTogc2h1dGRvd24gTm90IHRh
-aW50ZWQKPj4gNS41LjAtcmMxLWRpcnR5ICMxCj4+IFvCoMKgIDU4LjMxMjcyNV0gSGFyZHdhcmUg
-bmFtZTogOTZib2FyZHMgUm9jazk2MCAoRFQpCj4+IFvCoMKgIDU4LjMxMzEzMV0gcHN0YXRlOiA2
-MDAwMDA4NSAoblpDdiBkYUlmIC1QQU4gLVVBTykKPj4gW8KgwqAgNTguMzEzNTUxXSBwYyA6IGky
-Y190cmFuc2ZlcisweGU0LzB4ZjgKPj4gW8KgwqAgNTguMzEzODg5XSBsciA6IGkyY190cmFuc2Zl
-cisweGU0LzB4ZjgKPj4gW8KgwqAgNTguMzE0MjI1XSBzcCA6IGZmZmY4MDAwMTAwNGJiMDAKPj4g
-W8KgwqAgNTguMzE0NTE2XSB4Mjk6IGZmZmY4MDAwMTAwNGJiMDAgeDI4OiBmZmZmMDAwMDdkMjA4
-MDAwCj4+IFvCoMKgIDU4LjMxNDk4MV0geDI3OiAwMDAwMDAwMDAwMDAwMDAwIHgyNjogMDAwMDAw
-MDAwMDAwMDAwMAo+PiBbwqDCoCA1OC4zMTU0NDZdIHgyNTogMDAwMDAwMDAwMDAwMDAwMCB4MjQ6
-IDAwMDAwMDAwMDAwMDAwMDgKPj4gW8KgwqAgNTguMzE1OTEwXSB4MjM6IDAwMDAwMDAwMDAwMDAw
-MDAgeDIyOiBmZmZmODAwMDEwMDRiYzc0Cj4+IFvCoMKgIDU4LjMxNjM3NV0geDIxOiAwMDAwMDAw
-MDAwMDAwMDAyIHgyMDogZmZmZjgwMDAxMDA0YmI1OAo+PiBbwqDCoCA1OC4zMTY4NDFdIHgxOTog
-ZmZmZjAwMDA3ODRmMDg4MCB4MTg6IDAwMDAwMDAwMDAwMDAwMTAKPj4gW8KgwqAgNTguMzE3MzA1
-XSB4MTc6IDAwMDAwMDAwMDAwMDAwMDEgeDE2OiAwMDAwMDAwMDAwMDAwMDE5Cj4+IFvCoMKgIDU4
-LjMxNzc3MF0geDE1OiBmZmZmZmZmZmZmZmZmZmZmIHgxNDogZmZmZjgwMDAxMTgzOThjOAo+PiBb
-wqDCoCA1OC4zMTgyMzZdIHgxMzogZmZmZjgwMDA5MDA0Yjg2NyB4MTI6IGZmZmY4MDAwMTAwNGI4
-NmYKPj4gW8KgwqAgNTguMzE4NzAxXSB4MTE6IGZmZmY4MDAwMTE4NTEwMDAgeDEwOiBmZmZmODAw
-MDEwMDRiN2YwCj4+IFvCoMKgIDU4LjMxOTE2Nl0geDkgOiAwMDAwMDAwMGZmZmZmZmQwIHg4IDog
-ZmZmZjgwMDAxMDY5OWFkOAo+PiBbwqDCoCA1OC4zMTk2MzFdIHg3IDogMDAwMDAwMDAwMDAwMDI2
-NSB4NiA6IGZmZmY4MDAwMTFhMjBiZTkKPj4gW8KgwqAgNTguMzIwMDk2XSB4NSA6IDAwMDAwMDAw
-MDAwMDAwMDAgeDQgOiAwMDAwMDAwMDAwMDAwMDAwCj4+IFvCoMKgIDU4LjMyMDU2MV0geDMgOiAw
-MDAwMDAwMGZmZmZmZmZmIHgyIDogZmZmZjgwMDAxMTg1MWFiOAo+PiBbwqDCoCA1OC4zMjEwMjZd
-IHgxIDogZDM3NWMwZDRmNDc1MWYwMCB4MCA6IDAwMDAwMDAwMDAwMDAwMDAKPj4gW8KgwqAgNTgu
-MzIxNDkxXSBDYWxsIHRyYWNlOgo+PiBbwqDCoCA1OC4zMjE3MTBdwqAgaTJjX3RyYW5zZmVyKzB4
-ZTQvMHhmOAo+PiBbwqDCoCA1OC4zMjIwMjBdwqAgcmVnbWFwX2kyY19yZWFkKzB4NWMvMHg5OAo+
-PiBbwqDCoCA1OC4zMjIzNTBdwqAgX3JlZ21hcF9yYXdfcmVhZCsweGNjLzB4MTM4Cj4+IFvCoMKg
-IDU4LjMyMjY5NF3CoCBfcmVnbWFwX2J1c19yZWFkKzB4M2MvMHg3MAo+PiBbwqDCoCA1OC4zMjMw
-MzRdwqAgX3JlZ21hcF9yZWFkKzB4NjAvMHhlMAo+PiBbwqDCoCA1OC4zMjMzNDFdwqAgX3JlZ21h
-cF91cGRhdGVfYml0cysweGM4LzB4MTA4Cj4+IFvCoMKgIDU4LjMyMzcwN13CoCByZWdtYXBfdXBk
-YXRlX2JpdHNfYmFzZSsweDYwLzB4OTAKPj4gW8KgwqAgNTguMzI0MDk5XcKgIHJrODA4X2Rldmlj
-ZV9zaHV0ZG93bisweDM4LzB4NTAKPj4gW8KgwqAgNTguMzI0NDc2XcKgIG1hY2hpbmVfcG93ZXJf
-b2ZmKzB4MjQvMHgzMAo+PiBbwqDCoCA1OC4zMjQ4MjNdwqAga2VybmVsX3Bvd2VyX29mZisweDY0
-LzB4NzAKPj4gW8KgwqAgNTguMzI1MTU5XcKgIF9fZG9fc3lzX3JlYm9vdCsweDE1Yy8weDI0MAo+
-PiBbwqDCoCA1OC4zMjU1MDRdwqAgX19hcm02NF9zeXNfcmVib290KzB4MjAvMHgyOAo+PiBbwqDC
-oCA1OC4zMjU4NThdwqAgZWwwX3N2Y19jb21tb24uY29uc3Rwcm9wLjIrMHg4OC8weDE1MAo+PiBb
-wqDCoCA1OC4zMjYyNzldwqAgZWwwX3N2Y19oYW5kbGVyKzB4MjAvMHg4MAo+PiBbwqDCoCA1OC4z
-MjY2MDddwqAgZWwwX3N5bmNfaGFuZGxlcisweDExOC8weDE4OAo+PiBbwqDCoCA1OC4zMjY5NjBd
-wqAgZWwwX3N5bmMrMHgxNDAvMHgxODAKPj4gW8KgwqAgNTguMzI3MjUxXSAtLS1bIGVuZCB0cmFj
-ZSBiMWRlMzlkMDNkNzI0ZDAxIF0tLS0KPj4KPj4gLUFuYW5kCj4+Cj4+IF9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4+IExpbnV4LXJvY2tjaGlwIG1haWxp
-bmcgbGlzdAo+PiBMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4+IGh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtcm9ja2NoaXAKPj4KPgo+
-IEdydcOfLAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+Hi,
+
+On 06/12/2019 21:33:02+0800, Hsin-Hsiung Wang wrote:
+> From: Ran Bi <ran.bi@mediatek.com>
+> 
+> Alarm registers high byte was reserved for other functions.
+> This add mask in alarm registers operation functions.
+> This also fix error condition in interrupt handler.
+> 
+> Fixes: fc2979118f3f ("rtc: mediatek: Add MT6397 RTC driver")
+> 
+> Signed-off-by: Ran Bi <ran.bi@mediatek.com>
+> Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+> ---
+>  drivers/rtc/rtc-mt6397.c | 47 +++++++++++++++++++++++++++++++++--------------
+>  1 file changed, 33 insertions(+), 14 deletions(-)
+> 
+
+Can you rebase that one on top of v5.5-rc1 soon? I'll include it in -fixes.
+
+> diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
+> index 704229e..b216bdc 100644
+> --- a/drivers/rtc/rtc-mt6397.c
+> +++ b/drivers/rtc/rtc-mt6397.c
+> @@ -47,6 +47,14 @@
+>  
+>  #define RTC_AL_SEC		0x0018
+>  
+> +#define RTC_AL_SEC_MASK		0x003f
+> +#define RTC_AL_MIN_MASK		0x003f
+> +#define RTC_AL_HOU_MASK		0x001f
+> +#define RTC_AL_DOM_MASK		0x001f
+> +#define RTC_AL_DOW_MASK		0x0007
+> +#define RTC_AL_MTH_MASK		0x000f
+> +#define RTC_AL_YEA_MASK		0x007f
+> +
+>  #define RTC_PDN2		0x002e
+>  #define RTC_PDN2_PWRON_ALARM	BIT(4)
+>  
+> @@ -103,7 +111,7 @@ static irqreturn_t mtk_rtc_irq_handler_thread(int irq, void *data)
+>  		irqen = irqsta & ~RTC_IRQ_EN_AL;
+>  		mutex_lock(&rtc->lock);
+>  		if (regmap_write(rtc->regmap, rtc->addr_base + RTC_IRQ_EN,
+> -				 irqen) < 0)
+> +				 irqen) == 0)
+>  			mtk_rtc_write_trigger(rtc);
+>  		mutex_unlock(&rtc->lock);
+>  
+> @@ -225,12 +233,12 @@ static int mtk_rtc_read_alarm(struct device *dev, struct rtc_wkalrm *alm)
+>  	alm->pending = !!(pdn2 & RTC_PDN2_PWRON_ALARM);
+>  	mutex_unlock(&rtc->lock);
+>  
+> -	tm->tm_sec = data[RTC_OFFSET_SEC];
+> -	tm->tm_min = data[RTC_OFFSET_MIN];
+> -	tm->tm_hour = data[RTC_OFFSET_HOUR];
+> -	tm->tm_mday = data[RTC_OFFSET_DOM];
+> -	tm->tm_mon = data[RTC_OFFSET_MTH];
+> -	tm->tm_year = data[RTC_OFFSET_YEAR];
+> +	tm->tm_sec = data[RTC_OFFSET_SEC] & RTC_AL_SEC_MASK;
+> +	tm->tm_min = data[RTC_OFFSET_MIN] & RTC_AL_MIN_MASK;
+> +	tm->tm_hour = data[RTC_OFFSET_HOUR] & RTC_AL_HOU_MASK;
+> +	tm->tm_mday = data[RTC_OFFSET_DOM] & RTC_AL_DOM_MASK;
+> +	tm->tm_mon = data[RTC_OFFSET_MTH] & RTC_AL_MTH_MASK;
+> +	tm->tm_year = data[RTC_OFFSET_YEAR] & RTC_AL_YEA_MASK;
+>  
+>  	tm->tm_year += RTC_MIN_YEAR_OFFSET;
+>  	tm->tm_mon--;
+> @@ -251,14 +259,25 @@ static int mtk_rtc_set_alarm(struct device *dev, struct rtc_wkalrm *alm)
+>  	tm->tm_year -= RTC_MIN_YEAR_OFFSET;
+>  	tm->tm_mon++;
+>  
+> -	data[RTC_OFFSET_SEC] = tm->tm_sec;
+> -	data[RTC_OFFSET_MIN] = tm->tm_min;
+> -	data[RTC_OFFSET_HOUR] = tm->tm_hour;
+> -	data[RTC_OFFSET_DOM] = tm->tm_mday;
+> -	data[RTC_OFFSET_MTH] = tm->tm_mon;
+> -	data[RTC_OFFSET_YEAR] = tm->tm_year;
+> -
+>  	mutex_lock(&rtc->lock);
+> +	ret = regmap_bulk_read(rtc->regmap, rtc->addr_base + RTC_AL_SEC,
+> +			       data, RTC_OFFSET_COUNT);
+> +	if (ret < 0)
+> +		goto exit;
+> +
+> +	data[RTC_OFFSET_SEC] = ((data[RTC_OFFSET_SEC] & ~(RTC_AL_SEC_MASK)) |
+> +				(tm->tm_sec & RTC_AL_SEC_MASK));
+> +	data[RTC_OFFSET_MIN] = ((data[RTC_OFFSET_MIN] & ~(RTC_AL_MIN_MASK)) |
+> +				(tm->tm_min & RTC_AL_MIN_MASK));
+> +	data[RTC_OFFSET_HOUR] = ((data[RTC_OFFSET_HOUR] & ~(RTC_AL_HOU_MASK)) |
+> +				(tm->tm_hour & RTC_AL_HOU_MASK));
+> +	data[RTC_OFFSET_DOM] = ((data[RTC_OFFSET_DOM] & ~(RTC_AL_DOM_MASK)) |
+> +				(tm->tm_mday & RTC_AL_DOM_MASK));
+> +	data[RTC_OFFSET_MTH] = ((data[RTC_OFFSET_MTH] & ~(RTC_AL_MTH_MASK)) |
+> +				(tm->tm_mon & RTC_AL_MTH_MASK));
+> +	data[RTC_OFFSET_YEAR] = ((data[RTC_OFFSET_YEAR] & ~(RTC_AL_YEA_MASK)) |
+> +				(tm->tm_year & RTC_AL_YEA_MASK));
+> +
+>  	if (alm->enabled) {
+>  		ret = regmap_bulk_write(rtc->regmap,
+>  					rtc->addr_base + RTC_AL_SEC,
+> -- 
+> 2.6.4
+
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
