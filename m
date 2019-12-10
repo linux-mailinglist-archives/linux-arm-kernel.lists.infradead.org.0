@@ -2,88 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BDAC118AF3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:33:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1462C118B21
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:37:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qsf8RYMLzhpY0jcxTh9i79CEaAPL6ALClN9737TJwDA=; b=DHhtcvPk3xcvE7
-	qZhXEAYEbOUa0KnQdLp3ZOAid79mKJylv3xtkHG0olkeooQtqztgi0EbAROEdOUqkFp9I7rnfgl38
-	QSXtVG0DadHFKhz32a/jgo4oz2B52KWMXko9gelnQpmKWr51qxwPZ9of+56pGDUcRQDCQn85UzqOU
-	eXT6+gvS4nqsvlV3muA0PpctODyn17rkFRV9mRWgTyAmGiTHco2/9FTcxJFk7eWPiSC1vZVj6O91r
-	pIYnb+7HK1Hj7frfNrfsowM/UIh+wKwk4l7lxPbbMmN9b5zykJQwS5+cfxbWgOto+zXYzTmKaDGj/
-	zpMnpH4OLoZLEe5L0PFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dQGbomcbhzI/TJlyb2fnkNjoh7ulwuypRmJdfPI6Cbg=; b=CShuEMmVorfoup
+	uNAFsl3VMiJQwn/xZstraPopbZBZ7C77r0GexKBq4UcVxLTw1IM9VESrjLMnd8Ci2PkoQjIqsCamQ
+	j//Kw46JBCWcR2n/GdJ1/xZG6BahPWLyeNPVWVokCVU/ysLtOWyLwXjVVM2DD0hZMTPX6a4bSBcAQ
+	kJc8BvCVpE6HwUADmjFJ98y1e8vq8jlGyY45uabz5ETm2XWONRRKYR5XWsKO2neIH32NRvS6/A0lo
+	h2ymis8FxfdjPK9/kyFONmC0Z8PtJtRX4LoRpu8gbhS2iQtmdf1O6YyqwsAGdO8Mj0qbYmPQAa182
+	sKOdvIrTBu83s7GOi6Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iegZH-0001yh-Sw; Tue, 10 Dec 2019 14:32:51 +0000
-Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
+	id 1iegdz-00043H-JK; Tue, 10 Dec 2019 14:37:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iegZA-0001yE-7a
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:32:45 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5defac770000>; Tue, 10 Dec 2019 06:32:23 -0800
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Tue, 10 Dec 2019 06:32:43 -0800
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Tue, 10 Dec 2019 06:32:43 -0800
-Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 10 Dec
- 2019 14:32:43 +0000
-Received: from [10.21.133.51] (10.124.1.5) by DRHQMAIL107.nvidia.com
- (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 10 Dec
- 2019 14:32:42 +0000
-Subject: Re: [PATCH] ARM: tegra: Fix restoration of PLLM when exiting suspend
-From: Jon Hunter <jonathanh@nvidia.com>
-To: Thierry Reding <thierry.reding@gmail.com>
-References: <20191210103708.7023-1-jonathanh@nvidia.com>
- <20191210120909.GA2703785@ulmo>
- <8bf12fcd-02c7-4dc0-90e6-30009ab9f8e7@nvidia.com>
-Message-ID: <cd2aaa4a-c0de-a6e7-ca93-06901f5bb142@nvidia.com>
-Date: Tue, 10 Dec 2019 14:32:40 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1iegda-0003v2-Cg
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:37:19 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A249E24655;
+ Tue, 10 Dec 2019 14:37:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575988638;
+ bh=0o81+/DwQ1E9CQg0+86DRp/+qNeIsAJJL/aYZVvQR90=;
+ h=From:To:Cc:Subject:Date:From;
+ b=AQZnhfymLwdRXIbRGLlp1aZ4/1FZ59IQ1AwK0a1KFKH4u4RhmLIF4CnGMMfaFlg9l
+ mXi6J/2MFp5Fo7ETLxWKfb972aQN4OJxEWBec/V8rS8wwqJv4S8VsQbQVucitaWe/t
+ zUOGpauZ7Ng677xq7WmNvSRgeR8PkR71Kqz/xg+Y=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: linux-serial@vger.kernel.org
+Subject: [PATCH 01/10] tty: serial: samsung: allow driver to be built by anyone
+Date: Tue, 10 Dec 2019 15:36:57 +0100
+Message-Id: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-In-Reply-To: <8bf12fcd-02c7-4dc0-90e6-30009ab9f8e7@nvidia.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
- DRHQMAIL107.nvidia.com (10.27.9.16)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1575988343; bh=ZztB0uubCfN04mux0kLM32BK0EExqmJdekMbzYpGL5k=;
- h=X-PGP-Universal:Subject:From:To:CC:References:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
- X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=f9z8iPkOuQGIaU36MLSWe9RWM89Az+FxjeKt6bQE/cYWtlEcwAiLZpFRXKVf1pCax
- 3MtLfTmFIb85auowc5ldNI8DRxthz4aGeGWmeuQDcVbPCQIPgoqjiXoHuAZXCm9qtr
- HA3yzhqoU38BSO++X3M0WuJszlrR3+jQLNqLLwAuoKDJcLhgHC43BqiXHbOfq1kHO5
- PdW2ts87OFs+shtB17tpJsJxF5yhT557OEV3nMNHMR3ccyOVTiPy7/2chzKwVoA0HF
- J8BOcadPqclAH7VmMOD3IQaZqxOjez32/KTwFnU1ycQ05SMtdT+zAWJAisXYv25x5I
- /k6e7vWRI76qQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_063244_280146_A2387B9F 
-X-CRM114-Status: GOOD (  16.41  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191210_063718_447622_51F7DF0E 
+X-CRM114-Status: GOOD (  12.38  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -96,70 +70,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, stable@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Shinbeom Choi <sbeom.choi@samsung.com>,
+ Hyunki Koo <kkoos00@naver.com>, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Jiri Slaby <jslaby@suse.com>,
+ HYUN-KI KOO <hyunki00.koo@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+There is no need to tie this driver to only the OMAP platform,
+especially for build testing.  So add COMPILE_TEST as an option allowing
+it to be built on any platform.
 
+Cc: Kukjin Kim <kgene@kernel.org>
+Cc: Krzysztof Kozlowski <krzk@kernel.org>
+Cc: Hyunki Koo <kkoos00@naver.com>
+Cc: HYUN-KI KOO <hyunki00.koo@samsung.com>
+Cc: Shinbeom Choi <sbeom.choi@samsung.com>
+Cc: Jiri Slaby <jslaby@suse.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-samsung-soc@vger.kernel.org
+Cc: linux-serial@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+---
+ drivers/tty/serial/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-On 10/12/2019 14:29, Jon Hunter wrote:
-> 
-> On 10/12/2019 12:09, Thierry Reding wrote:
->> On Tue, Dec 10, 2019 at 10:37:08AM +0000, Jon Hunter wrote:
->>> The suspend entry and exit code for 32-bit Tegra devices assumes that
->>> the PLLM (which is used to provide the clock for external memory)
->>> is always enabled on entry to suspend. Hence, the current code always
->>> disables the PLLM on entry to suspend and re-enables the PLLM on exit
->>> from suspend.
->>>
->>> Since the introduction of the Tegra124 EMC driver by commit 73a7f0a90641
->>> ("memory: tegra: Add EMC (external memory controller) driver"), which is
->>> used to scale the EMC frequency, PLLM may not be the current clock
->>> source for the EMC on entry to suspend and hence may not be enabled.
->>> Always enabling the PLLM on exit from suspend can cause the actual
->>> status on the PLL to be different from that reported by the common clock
->>> framework.
->>>
->>> On kernels prior to v4.5, the code to set the rate of the PLLM had a
->>> test to verify if the PLL was enabled and if the PLL was enabled,
->>> setting the rate would fail. Since commit 267b62a96951
->>> ("clk: tegra: pll: Update PLLM handling") the test to see if PLLM is
->>> enabled was removed.
->>>
->>> With these earlier kernels, if the PLLM is disabled on entering suspend
->>> and the EMC driver attempts to set the parent of the EMC clock to the
->>> PLLM on exiting suspend, then the set rate for the PLLM will fail and in
->>> turn cause the resume to fail.
->>>
->>> We should not be re-enabling the PLLM on resume from suspend unless it
->>> was enabled on entry to suspend. Therefore, fix this by saving the state
->>> of PLLM on entry to suspend and only re-enable it, if it was already
->>> enabled.
->>>
->>> Fixes: 73a7f0a90641 ("memory: tegra: Add EMC (external memory controller) driver")
->>> Cc: stable@vger.kernel.org
->>>
->>> Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
->>> ---
->>>  arch/arm/mach-tegra/sleep-tegra30.S | 33 +++++++++++++++++++++++------
->>>  1 file changed, 27 insertions(+), 6 deletions(-)
->>
->> Looks good to me. If I understand correctly we really only need this on
->> v4.4 and earlier because the issue doesn't happen on later kernels
->> because of that PLLM handling update change that you mentioned, right?
-> 
-> Yes.
-
-However, although we don't see any failures so far on mainline, it is
-possible for the CCF status for PLLM to be incorrect following suspend.
-
-Jon
-
+diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
+index 99f5da3bf913..c835e10bd97e 100644
+--- a/drivers/tty/serial/Kconfig
++++ b/drivers/tty/serial/Kconfig
+@@ -237,7 +237,7 @@ config SERIAL_CLPS711X_CONSOLE
+ 
+ config SERIAL_SAMSUNG
+ 	tristate "Samsung SoC serial support"
+-	depends on PLAT_SAMSUNG || ARCH_EXYNOS
++	depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
+ 	select SERIAL_CORE
+ 	help
+ 	  Support for the on-chip UARTs on the Samsung S3C24XX series CPUs,
 -- 
-nvpublic
+2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
