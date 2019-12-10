@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04569117E71
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 04:42:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB056117E73
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 04:42:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Hl2jBUAGt6ucbzlOfTX64ITLxKyQyt4GNFc/RlZBK0U=; b=B33tQILvfZGi+Ujs6kodOgew+p
-	CN45rA4D4OCsfm48riBFrlIk4BlQ7NL8aXIwsO4Dvzgv2hX5A/CkszYi02nkg93J4jKY4NhoZpiA2
-	welUEGj5le3v9kJTpHb33DLCMcV74cm/GXWbRYbs/17eho1OtBDHn+J/uUtOwdjj/74s3kxFC03Nq
-	NJYUIMf6wGUOCh8V0mxVubQqH9j7tMmZRkM6KiFCiGkmH2HxnTpA59G7xNChFgpakUlF74jZr1w0a
-	Cf0WuGn6katQn4ickrSDgStaPvXz5rlk35i9yrMQDK2/LyFCOM8B5ANMXCWF6CQiBfZDl4bwqP6qp
-	5cvXcggA==;
+	bh=iSehbgv/qTcBnTCfgupq7Y+XDm2q0nvR5rA9QztEIPw=; b=Cd59RQfzPxfQdt2NPLNwYoT1xd
+	lYevx49oH34Tasv1bfTG4ngXiFpGy8NhoITbb6zHWkZbPqt5cTFElsEbqFlDk0ki8v8eOcdaqV+3M
+	4qpZYznJlJfTgvOgHToAmBLnPvL96mIyo8sDP5GWOJa17OPIw8JHw3vRmhaPxpYWU8vO/IqJ8/7BQ
+	Iogf/adr9St9pOi9dFV+IGhi+kXnVejHzW18oIBBKRcrJyDlM48iprqQeYzeqQCFK8rhJNX3i+FZX
+	Q07wJo8NTgOYiRBQwED+Zgias0W43ik8wTP43V/ZyK6vmg98SqXO64MK9wvcaIdMJp13K+YPYt8J3
+	i0UMxUzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieWPX-0006mA-TE; Tue, 10 Dec 2019 03:42:07 +0000
+	id 1ieWPo-0006yn-0I; Tue, 10 Dec 2019 03:42:24 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieWOa-0005xW-H1
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 03:41:10 +0000
+ id 1ieWOf-000654-TI
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 03:41:15 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CED8C1045;
- Mon,  9 Dec 2019 19:41:07 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4F7071FB;
+ Mon,  9 Dec 2019 19:41:13 -0800 (PST)
 Received: from entos-d05.shanghai.arm.com (entos-d05.shanghai.arm.com
  [10.169.40.35])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A6BD03F52E;
- Mon,  9 Dec 2019 19:41:02 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 437C73F52E;
+ Mon,  9 Dec 2019 19:41:08 -0800 (PST)
 From: Jianyong Wu <jianyong.wu@arm.com>
 To: netdev@vger.kernel.org, yangbo.lu@nxp.com, john.stultz@linaro.org,
  tglx@linutronix.de, pbonzini@redhat.com, sean.j.christopherson@intel.com,
  maz@kernel.org, richardcochran@gmail.com, Mark.Rutland@arm.com,
  will@kernel.org, suzuki.poulose@arm.com, steven.price@arm.com
-Subject: [RFC PATCH v9 5/8] clocksource: Add clocksource id for arm arch
- counter
-Date: Tue, 10 Dec 2019 11:40:23 +0800
-Message-Id: <20191210034026.45229-6-jianyong.wu@arm.com>
+Subject: [RFC PATCH v9 6/8] psci: Add hvc call service for ptp_kvm.
+Date: Tue, 10 Dec 2019 11:40:24 +0800
+Message-Id: <20191210034026.45229-7-jianyong.wu@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191210034026.45229-1-jianyong.wu@arm.com>
 References: <20191210034026.45229-1-jianyong.wu@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191209_194108_643749_A245608A 
-X-CRM114-Status: UNSURE (   9.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191209_194114_054700_10303ED9 
+X-CRM114-Status: GOOD (  10.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,47 +74,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add clocksource id for arm arch counter to let it be identified easily and
-elegantly in ptp_kvm implementation for arm.
+ptp_kvm modules will call hvc to get this service.
+The service offers real time and counter cycle of host for guest.
 
 Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
 ---
- drivers/clocksource/arm_arch_timer.c | 2 ++
- include/linux/clocksource_ids.h      | 1 +
- 2 files changed, 3 insertions(+)
+ include/linux/arm-smccc.h | 12 ++++++++++++
+ virt/kvm/arm/psci.c       | 22 ++++++++++++++++++++++
+ 2 files changed, 34 insertions(+)
 
-diff --git a/drivers/clocksource/arm_arch_timer.c b/drivers/clocksource/arm_arch_timer.c
-index 07e57a49d1e8..277846decd33 100644
---- a/drivers/clocksource/arm_arch_timer.c
-+++ b/drivers/clocksource/arm_arch_timer.c
-@@ -16,6 +16,7 @@
- #include <linux/cpu_pm.h>
- #include <linux/clockchips.h>
- #include <linux/clocksource.h>
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index 6f82c87308ed..aafb6bac167d 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -94,6 +94,7 @@
+ 
+ /* KVM "vendor specific" services */
+ #define ARM_SMCCC_KVM_FUNC_FEATURES		0
++#define ARM_SMCCC_KVM_PTP			1
+ #define ARM_SMCCC_KVM_FUNC_FEATURES_2		127
+ #define ARM_SMCCC_KVM_NUM_FUNCS			128
+ 
+@@ -103,6 +104,17 @@
+ 			   ARM_SMCCC_OWNER_VENDOR_HYP,			\
+ 			   ARM_SMCCC_KVM_FUNC_FEATURES)
+ 
++/*
++ * This ID used for virtual ptp kvm clock and it will pass second value
++ * and nanosecond value of host real time and system counter by vcpu
++ * register to guest.
++ */
++#define ARM_SMCCC_VENDOR_HYP_KVM_PTP_FUNC_ID				\
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
++			   ARM_SMCCC_SMC_32,				\
++			   ARM_SMCCC_OWNER_VENDOR_HYP,			\
++			   ARM_SMCCC_KVM_PTP)
++
+ #ifndef __ASSEMBLY__
+ 
+ #include <linux/linkage.h>
+diff --git a/virt/kvm/arm/psci.c b/virt/kvm/arm/psci.c
+index 0debf49bf259..682d892d6717 100644
+--- a/virt/kvm/arm/psci.c
++++ b/virt/kvm/arm/psci.c
+@@ -9,6 +9,7 @@
+ #include <linux/kvm_host.h>
+ #include <linux/uaccess.h>
+ #include <linux/wait.h>
 +#include <linux/clocksource_ids.h>
- #include <linux/interrupt.h>
- #include <linux/of_irq.h>
- #include <linux/of_address.h>
-@@ -187,6 +188,7 @@ static u64 arch_counter_read_cc(const struct cyclecounter *cc)
  
- static struct clocksource clocksource_counter = {
- 	.name	= "arch_sys_counter",
-+	.id	= CSID_ARM_ARCH_COUNTER,
- 	.rating	= 400,
- 	.read	= arch_counter_read,
- 	.mask	= CLOCKSOURCE_MASK(56),
-diff --git a/include/linux/clocksource_ids.h b/include/linux/clocksource_ids.h
-index 5595ab843c3d..93bec8426c44 100644
---- a/include/linux/clocksource_ids.h
-+++ b/include/linux/clocksource_ids.h
-@@ -5,6 +5,7 @@
- /* Enum to give clocksources a unique identifier */
- enum clocksource_ids {
- 	CSID_GENERIC		= 0,
-+	CSID_ARM_ARCH_COUNTER,
- 	CSID_MAX,
- };
+ #include <asm/cputype.h>
+ #include <asm/kvm_emulate.h>
+@@ -389,6 +390,8 @@ static int kvm_psci_call(struct kvm_vcpu *vcpu)
  
+ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+ {
++	struct system_time_snapshot systime_snapshot;
++	u64 cycles;
+ 	u32 func_id = smccc_get_function(vcpu);
+ 	u32 val[4] = {};
+ 	u32 option;
+@@ -431,6 +434,25 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+ 	case ARM_SMCCC_VENDOR_HYP_KVM_FEATURES_FUNC_ID:
+ 		val[0] = BIT(ARM_SMCCC_KVM_FUNC_FEATURES);
+ 		break;
++	/*
++	 * This will used for virtual ptp kvm clock. three
++	 * values will be passed back.
++	 * reg0 stores high 32-bit host ktime;
++	 * reg1 stores low 32-bit host ktime;
++	 * reg2 stores high 32-bit difference of host cycles and cntvoff;
++	 * reg3 stores low 32-bit difference of host cycles and cntvoff.
++	 */
++	case ARM_SMCCC_VENDOR_HYP_KVM_PTP_FUNC_ID:
++		ktime_get_snapshot(&systime_snapshot);
++		if (systime_snapshot.cs_id != CSID_ARM_ARCH_COUNTER)
++			return kvm_psci_call(vcpu);
++		val[0] = systime_snapshot.real >> 32;
++		val[1] = systime_snapshot.real << 32 >> 32;
++		cycles = systime_snapshot.cycles -
++			 vcpu_vtimer(vcpu)->cntvoff;
++		val[2] = cycles >> 32;
++		val[3] = cycles << 32 >> 32;
++		break;
+ 	default:
+ 		return kvm_psci_call(vcpu);
+ 	}
 -- 
 2.17.1
 
