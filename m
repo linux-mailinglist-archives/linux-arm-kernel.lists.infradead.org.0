@@ -2,71 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D98BE118AD6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:29:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BDAC118AF3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 15:33:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KTCWcDFigbWT1sLXxGpcP10mi6tovzeY6tCYEIIQo54=; b=biNm5NQVHzOjDk
-	izzKuN4aixUoEmNE6q//cupes8aqfIOembhvn3LNc4XY2bUFTog74qgKjV2t/5kNSuF3H8rl1gX7t
-	dsIDRMZAudmD7HBwTk1BwfFwiWK5vsFa7uFGrmBRea1l5Utsh/6NSeughz6srnHdQ79SJnRa0MHD8
-	DJEHKZpZFDbnEPWsfwibJTmMO2pjaFXtRTNEXtgzpGOYISPY9sA7xBVypdA7SZ/ZJKsbYDomTCqDB
-	739se8OARGGZPMaGJpsXMI2SuL6PeMzC5MWBkww7oL2LLjCAzitA5+VOAhK3gt8BmWxRWrhdK9U6D
-	CKXETdkZitHbVmhyadow==;
+	List-Owner; bh=qsf8RYMLzhpY0jcxTh9i79CEaAPL6ALClN9737TJwDA=; b=DHhtcvPk3xcvE7
+	qZhXEAYEbOUa0KnQdLp3ZOAid79mKJylv3xtkHG0olkeooQtqztgi0EbAROEdOUqkFp9I7rnfgl38
+	QSXtVG0DadHFKhz32a/jgo4oz2B52KWMXko9gelnQpmKWr51qxwPZ9of+56pGDUcRQDCQn85UzqOU
+	eXT6+gvS4nqsvlV3muA0PpctODyn17rkFRV9mRWgTyAmGiTHco2/9FTcxJFk7eWPiSC1vZVj6O91r
+	pIYnb+7HK1Hj7frfNrfsowM/UIh+wKwk4l7lxPbbMmN9b5zykJQwS5+cfxbWgOto+zXYzTmKaDGj/
+	zpMnpH4OLoZLEe5L0PFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iegW3-0008Va-So; Tue, 10 Dec 2019 14:29:31 +0000
+	id 1iegZH-0001yh-Sw; Tue, 10 Dec 2019 14:32:51 +0000
 Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iegVw-0008Uw-KU
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:29:26 +0000
+ id 1iegZA-0001yE-7a
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 14:32:45 +0000
 Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
  hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5defabae0000>; Tue, 10 Dec 2019 06:29:02 -0800
+ id <B5defac770000>; Tue, 10 Dec 2019 06:32:23 -0800
 Received: from hqmail.nvidia.com ([172.20.161.6])
  by hqpgpgate101.nvidia.com (PGP Universal service);
- Tue, 10 Dec 2019 06:29:23 -0800
+ Tue, 10 Dec 2019 06:32:43 -0800
 X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Tue, 10 Dec 2019 06:29:23 -0800
-Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL111.nvidia.com
- (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 10 Dec
- 2019 14:29:22 +0000
+ by hqpgpgate101.nvidia.com on Tue, 10 Dec 2019 06:32:43 -0800
+Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 10 Dec
+ 2019 14:32:43 +0000
 Received: from [10.21.133.51] (10.124.1.5) by DRHQMAIL107.nvidia.com
  (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 10 Dec
- 2019 14:29:21 +0000
+ 2019 14:32:42 +0000
 Subject: Re: [PATCH] ARM: tegra: Fix restoration of PLLM when exiting suspend
+From: Jon Hunter <jonathanh@nvidia.com>
 To: Thierry Reding <thierry.reding@gmail.com>
 References: <20191210103708.7023-1-jonathanh@nvidia.com>
  <20191210120909.GA2703785@ulmo>
-From: Jon Hunter <jonathanh@nvidia.com>
-Message-ID: <8bf12fcd-02c7-4dc0-90e6-30009ab9f8e7@nvidia.com>
-Date: Tue, 10 Dec 2019 14:29:19 +0000
+ <8bf12fcd-02c7-4dc0-90e6-30009ab9f8e7@nvidia.com>
+Message-ID: <cd2aaa4a-c0de-a6e7-ca93-06901f5bb142@nvidia.com>
+Date: Tue, 10 Dec 2019 14:32:40 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191210120909.GA2703785@ulmo>
+In-Reply-To: <8bf12fcd-02c7-4dc0-90e6-30009ab9f8e7@nvidia.com>
 X-Originating-IP: [10.124.1.5]
 X-ClientProxiedBy: HQMAIL101.nvidia.com (172.20.187.10) To
  DRHQMAIL107.nvidia.com (10.27.9.16)
 Content-Language: en-US
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1575988142; bh=IRe6MY+3DRGHo5Au+IrCebqeGNCPq72U22T59CMWvmg=;
- h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ t=1575988343; bh=ZztB0uubCfN04mux0kLM32BK0EExqmJdekMbzYpGL5k=;
+ h=X-PGP-Universal:Subject:From:To:CC:References:Message-ID:Date:
  User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
  X-ClientProxiedBy:Content-Type:Content-Language:
  Content-Transfer-Encoding;
- b=Nl8S70F0mXaZ/CbV+Ygw2fr71GH0T0vxiO8SmFa2ke0bEnQ6bXvXRxVTo41WRnATI
- rPorag22QIrrmoqdSGKYWgQXlxfxtPAwlUZwxVqr0UFdDCmRb1SJvJiC6cEktUXQ7w
- AqAdYL8faUWE2w3eheHYtIWuXl9NjHdDtiLd6/uhSgh1Oy9zTp5qMru7EqCNH1I3du
- lEE63+PY3zOtzTySEARFWzxZEK9o85+S5CHxn7kRZ8anlcSsx6+FWRClUUVynojuEd
- +XZqNY9j4zi+znojryHdOF5LbxD34DMSIl41NrUWLUfqKfesSrHe3vTjXNy9pgH6st
- kRFBg8385xzWw==
+ b=f9z8iPkOuQGIaU36MLSWe9RWM89Az+FxjeKt6bQE/cYWtlEcwAiLZpFRXKVf1pCax
+ 3MtLfTmFIb85auowc5ldNI8DRxthz4aGeGWmeuQDcVbPCQIPgoqjiXoHuAZXCm9qtr
+ HA3yzhqoU38BSO++X3M0WuJszlrR3+jQLNqLLwAuoKDJcLhgHC43BqiXHbOfq1kHO5
+ PdW2ts87OFs+shtB17tpJsJxF5yhT557OEV3nMNHMR3ccyOVTiPy7/2chzKwVoA0HF
+ J8BOcadPqclAH7VmMOD3IQaZqxOjez32/KTwFnU1ycQ05SMtdT+zAWJAisXYv25x5I
+ /k6e7vWRI76qQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_062924_681463_F6340711 
-X-CRM114-Status: GOOD (  20.38  )
+X-CRM114-CacheID: sfid-20191210_063244_280146_A2387B9F 
+X-CRM114-Status: GOOD (  16.41  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,67 +104,58 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-On 10/12/2019 12:09, Thierry Reding wrote:
-> On Tue, Dec 10, 2019 at 10:37:08AM +0000, Jon Hunter wrote:
->> The suspend entry and exit code for 32-bit Tegra devices assumes that
->> the PLLM (which is used to provide the clock for external memory)
->> is always enabled on entry to suspend. Hence, the current code always
->> disables the PLLM on entry to suspend and re-enables the PLLM on exit
->> from suspend.
->>
->> Since the introduction of the Tegra124 EMC driver by commit 73a7f0a90641
->> ("memory: tegra: Add EMC (external memory controller) driver"), which is
->> used to scale the EMC frequency, PLLM may not be the current clock
->> source for the EMC on entry to suspend and hence may not be enabled.
->> Always enabling the PLLM on exit from suspend can cause the actual
->> status on the PLL to be different from that reported by the common clock
->> framework.
->>
->> On kernels prior to v4.5, the code to set the rate of the PLLM had a
->> test to verify if the PLL was enabled and if the PLL was enabled,
->> setting the rate would fail. Since commit 267b62a96951
->> ("clk: tegra: pll: Update PLLM handling") the test to see if PLLM is
->> enabled was removed.
->>
->> With these earlier kernels, if the PLLM is disabled on entering suspend
->> and the EMC driver attempts to set the parent of the EMC clock to the
->> PLLM on exiting suspend, then the set rate for the PLLM will fail and in
->> turn cause the resume to fail.
->>
->> We should not be re-enabling the PLLM on resume from suspend unless it
->> was enabled on entry to suspend. Therefore, fix this by saving the state
->> of PLLM on entry to suspend and only re-enable it, if it was already
->> enabled.
->>
->> Fixes: 73a7f0a90641 ("memory: tegra: Add EMC (external memory controller) driver")
->> Cc: stable@vger.kernel.org
->>
->> Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
->> ---
->>  arch/arm/mach-tegra/sleep-tegra30.S | 33 +++++++++++++++++++++++------
->>  1 file changed, 27 insertions(+), 6 deletions(-)
+
+On 10/12/2019 14:29, Jon Hunter wrote:
 > 
-> Looks good to me. If I understand correctly we really only need this on
-> v4.4 and earlier because the issue doesn't happen on later kernels
-> because of that PLLM handling update change that you mentioned, right?
-
-Yes.
-
-> At the same time, this is the correct thing to do even on more recent
-> kernels because we currently rely on the PLLM status check being absent
-> for this to work.
-
-Yes exactly.
-
-> So it seems like the safest option going forward is to apply this patch
-> to all versions, so that we don't rely on any assumptions.
+> On 10/12/2019 12:09, Thierry Reding wrote:
+>> On Tue, Dec 10, 2019 at 10:37:08AM +0000, Jon Hunter wrote:
+>>> The suspend entry and exit code for 32-bit Tegra devices assumes that
+>>> the PLLM (which is used to provide the clock for external memory)
+>>> is always enabled on entry to suspend. Hence, the current code always
+>>> disables the PLLM on entry to suspend and re-enables the PLLM on exit
+>>> from suspend.
+>>>
+>>> Since the introduction of the Tegra124 EMC driver by commit 73a7f0a90641
+>>> ("memory: tegra: Add EMC (external memory controller) driver"), which is
+>>> used to scale the EMC frequency, PLLM may not be the current clock
+>>> source for the EMC on entry to suspend and hence may not be enabled.
+>>> Always enabling the PLLM on exit from suspend can cause the actual
+>>> status on the PLL to be different from that reported by the common clock
+>>> framework.
+>>>
+>>> On kernels prior to v4.5, the code to set the rate of the PLLM had a
+>>> test to verify if the PLL was enabled and if the PLL was enabled,
+>>> setting the rate would fail. Since commit 267b62a96951
+>>> ("clk: tegra: pll: Update PLLM handling") the test to see if PLLM is
+>>> enabled was removed.
+>>>
+>>> With these earlier kernels, if the PLLM is disabled on entering suspend
+>>> and the EMC driver attempts to set the parent of the EMC clock to the
+>>> PLLM on exiting suspend, then the set rate for the PLLM will fail and in
+>>> turn cause the resume to fail.
+>>>
+>>> We should not be re-enabling the PLLM on resume from suspend unless it
+>>> was enabled on entry to suspend. Therefore, fix this by saving the state
+>>> of PLLM on entry to suspend and only re-enable it, if it was already
+>>> enabled.
+>>>
+>>> Fixes: 73a7f0a90641 ("memory: tegra: Add EMC (external memory controller) driver")
+>>> Cc: stable@vger.kernel.org
+>>>
+>>> Signed-off-by: Jon Hunter <jonathanh@nvidia.com>
+>>> ---
+>>>  arch/arm/mach-tegra/sleep-tegra30.S | 33 +++++++++++++++++++++++------
+>>>  1 file changed, 27 insertions(+), 6 deletions(-)
+>>
+>> Looks good to me. If I understand correctly we really only need this on
+>> v4.4 and earlier because the issue doesn't happen on later kernels
+>> because of that PLLM handling update change that you mentioned, right?
 > 
-> Do you agree?
+> Yes.
 
-Yes, my feeling is that we should apply to mainline and then it should
-be picked-up for stable.
+However, although we don't see any failures so far on mainline, it is
+possible for the CCF status for PLLM to be incorrect following suspend.
 
-Cheers
 Jon
 
 -- 
