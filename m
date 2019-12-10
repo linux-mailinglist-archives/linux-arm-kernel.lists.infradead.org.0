@@ -2,57 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DC171190C8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 20:35:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC9631190C4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 20:35:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tmRDyY2AYzi0xqNmAXIR1k9i3GQCkeHjPguVP6HnGiE=; b=grg
-	wWdh/HYlYPWcKR4ALmirnZjXzD/1ceQvkavRBAql4LwX3Ps8x8PTYXcshLjAZ0/RY1NlKh8dRYy+1
-	Pvx9JOXU6rEaIDpXldZ3rKRx1rQfQmVu54DCg/ptMKAP+TJGKo98V5Fo3SjgeW9dyUpRnEDOyAnlg
-	kQqBlfZKyPwDjO+XzqS/I/uKa2n1rYWlXMmkbaKy5H6i6HCR/cjWVPKZsO5kX74N9U4NO/SuPCLdL
-	mgj4dlgTzpYpogpVjrR+tiib9Pyll3cpheScqnz8jpuYWi8uDTKd3kLEjPSLcuk0Skdv6Qdpj/CVX
-	wBXSqnfVD9fm18FEX7b1AVDBy9N/yAA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=pR6SK3tu73ZhSCsvOBvA5XoNW96a7v9YqNibaIDEsig=; b=jfVC8j3h9nKsCe8ebOoqAHKTnb
+	McFy7vY+fbSjaRpJu9cBFY1FZA6RTUBDSOoS6GxcpqAe45DnPCtQq/++9NSbNe92sOGAcLipu1TLW
+	fIq8DIGDE7zH9nrUVFWAr+whm1cXSbCJFX8m1IWdW8U9CFd1IIbsOuF4Nk+Phg5BH5aEaLszrzpuT
+	qfXEG76DdhIJ9KAVH1x4EfYaGosKz+gQCVNGlR9Yi8G4EBWYpjQq/2/44zDDKiVKKJ6PwBFuuKAqc
+	LVM/AHcQMR4pJs9+CghKXNLnKnrYpFrW6ZgHfKhgynLoXVEQd25SBxENwNscLT74RcyHjIC35aNJ2
+	sYbclOmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ielIG-0007Uw-B6; Tue, 10 Dec 2019 19:35:36 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
- helo=smtprelay-out1.synopsys.com)
+	id 1ielHk-0005nz-Gt; Tue, 10 Dec 2019 19:35:04 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ielGr-00058o-6a
+ id 1ielGr-00058s-6b
  for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 19:34:11 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 34008C0990;
- Tue, 10 Dec 2019 19:34:06 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 46D8DC0BAE;
+ Tue, 10 Dec 2019 19:34:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576006448; bh=pTLBDat5GXwXcAV+v7xD9330ZsqiJnxHPQ17KK1C5l0=;
- h=From:To:Cc:Subject:Date:From;
- b=D9WcEMo5eCjfxge950LRW2FuRYFLNYEyqJFO/VCMlrrUVx33XgnslNDLOX3JjX+5D
- lOR2LeqZg8bmM3/xNY1kZ+tgO24EeInuaxMgP5w8opFAEpffKl8fuIbLv/lb6iypeS
- ysj8vIET/5+hpfrlet/ryFEWQHMG/DEYxOiCQ9TArAFJB8+RIEblJnXkhGS3g0NSpg
- WBK9B+xhb6nb51rEvMa16ll5yRFJyh4ul+bC43Q/KDLlqLkLCXIP7hNGLOHkSgllqY
- 7Lt3HuA1Pul+kGOpkCrVYEsYeTS8vcvSUyLV0/Rtq29EWmhhSksLwF7GVTmojElcZo
- bAGu/m1vNIHwg==
+ t=1576006448; bh=h/CjT0nniLwD8021Mvebnoqg8LgNjSOmOhHnz7vKuzU=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
+ References:From;
+ b=B10lF3eUJD81W2sL6qyW2Wen8W35x/EGOaa32JSlnXAF+7Zmaa2pmdgJN3hvdqemH
+ f0uojvR3GTEaK6tRc+Uh5BoVv9lu6Po8Hx1QZS52NDF1jbb5NnCvf+0rHkkr1stzFu
+ sxERtMR5yA2x3aMfjVGkhyqYf+ho518sWNlYHrVfDAXVZt8mQNulSIgH5HQqeqNGQY
+ JH8YuM61WDViC0e8BNA0jH0zvGKOG0PCzxpH4ph3ShwtHhVecMe7V58M/yjIOTu8LQ
+ vsVGx1917i9/YZYm8ny2DSXTu49xbgmtn4uG7Da5jWpVQt9V9zlF8b5v88CO5IAHQk
+ Mr9CqZ8qEP/8g==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 080D5A005C;
- Tue, 10 Dec 2019 19:34:04 +0000 (UTC)
+ by mailhost.synopsys.com (Postfix) with ESMTP id C498FA0089;
+ Tue, 10 Dec 2019 19:34:05 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net 0/8] net: stmmac: Fixes for -net
-Date: Tue, 10 Dec 2019 20:33:52 +0100
-Message-Id: <cover.1576005975.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net 1/8] net: stmmac: selftests: Needs to check the number of
+ Multicast regs
+Date: Tue, 10 Dec 2019 20:33:53 +0100
+Message-Id: <7e123ba7db1e4913c93dc0d8c9e3061fad27083d.1576005975.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <cover.1576005975.git.Jose.Abreu@synopsys.com>
+References: <cover.1576005975.git.Jose.Abreu@synopsys.com>
+In-Reply-To: <cover.1576005975.git.Jose.Abreu@synopsys.com>
+References: <cover.1576005975.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_113409_320451_5CBA25D5 
-X-CRM114-Status: UNSURE (   8.54  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191210_113409_310698_32E72F4B 
+X-CRM114-Status: GOOD (  10.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -90,24 +95,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fixes for stmmac.
+When running the MC and UC filter tests we setup a multicast address
+that its expected to be blocked. If the number of available multicast
+registers is zero, driver will always pass the multicast packets which
+will fail the test.
 
-1) Fixes the filtering selftests (again) for cases when the number of multicast
-filters are not enough.
+Check if available multicast addresses is enough before running the
+tests.
 
-2) Fixes SPH feature for MTU > default.
-
-3) Fixes the behavior of accepting invalid MTU values.
-
-4) Fixes FCS stripping for multi-descriptor packets.
-
-5) Fixes the change of RX buffer size in XGMAC.
-
-6) Fixes RX buffer size alignment.
-
-7) Fixes the 16KB buffer alignment.
-
-8) Fixes the enabling of 16KB buffer size feature.
+Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
 Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
@@ -120,24 +116,31 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
+ drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-Jose Abreu (8):
-  net: stmmac: selftests: Needs to check the number of Multicast regs
-  net: stmmac: Determine earlier the size of RX buffer
-  net: stmmac: Do not accept invalid MTU values
-  net: stmmac: Only the last buffer has the FCS field
-  net: stmmac: xgmac: Clear previous RX buffer size
-  net: stmmac: RX buffer size must be 16 byte aligned
-  net: stmmac: 16KB buffer must be 16 byte aligned
-  net: stmmac: Enable 16KB buffer size
-
- drivers/net/ethernet/stmicro/stmmac/common.h       |  5 +--
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     |  2 +
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c |  3 +-
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  | 45 ++++++++++++++--------
- .../net/ethernet/stmicro/stmmac/stmmac_selftests.c |  4 ++
- 5 files changed, 38 insertions(+), 21 deletions(-)
-
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+index f3d8b9336b8e..13227909287c 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+@@ -624,6 +624,8 @@ static int stmmac_test_mcfilt(struct stmmac_priv *priv)
+ 		return -EOPNOTSUPP;
+ 	if (netdev_uc_count(priv->dev) >= priv->hw->unicast_filter_entries)
+ 		return -EOPNOTSUPP;
++	if (netdev_mc_count(priv->dev) >= priv->hw->multicast_filter_bins)
++		return -EOPNOTSUPP;
+ 
+ 	while (--tries) {
+ 		/* We only need to check the mc_addr for collisions */
+@@ -666,6 +668,8 @@ static int stmmac_test_ucfilt(struct stmmac_priv *priv)
+ 
+ 	if (stmmac_filter_check(priv))
+ 		return -EOPNOTSUPP;
++	if (netdev_uc_count(priv->dev) >= priv->hw->unicast_filter_entries)
++		return -EOPNOTSUPP;
+ 	if (netdev_mc_count(priv->dev) >= priv->hw->multicast_filter_bins)
+ 		return -EOPNOTSUPP;
+ 
 -- 
 2.7.4
 
