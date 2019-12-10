@@ -2,64 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 383DD118C2F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 16:12:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2369D118C3E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 16:14:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Weg/Fp17bwv2exjchrJVf7pvw7+yYG2uDA8EES7jGow=; b=n4WGJQjSe7AgG+
-	stfdzoviLyYsoclz2YEEUiwMSxTp4e7L/R+B4EQukySF4S0IAcSvw4AmpLmv+FT0y+gREX8ZGtreJ
-	KndgUKP725nlhldDs465AlvK4/J3dGCXxVUlp0Dp9CsUN1UAMye1a+fSI7IUGphQ8k964UWdSHV1B
-	FHjtItuoP3Wu8to7id9ndpMkZRp0Uvd1DPH/mwqV5w+U62PjWFXN99Kau9A4RdaZYEh/ZeKeXWPiA
-	3hhSojTdFbrjSW+73sxtKcRXLHFf6DDFBnKVxueRZfT1WWo0RMry3k8IuZfYtFLgsYpMuC91cwjh5
-	+i0ljFpO5rfO/aDdStyw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PdOX3PhLDJaz0zMzNIycNZc1P1onwzkGYM6aT2W4Ruc=; b=FJgv93rgaD4ZPz
+	f503AQHsLrqvGP2pGgnTDVW2U+57hyrKVuTDM5xtXSwf+bq2ACE715GkPQlqAEGm8gQOAGoSzfgiF
+	XHFV/ZHtkLIzoH6Dv7Otzt1lOs6OW2LBWYOsqQtECl1YMlGuQ0Md91JhR3uZ70ZnnNeknkNvi7V5J
+	R4I/0XxXn//tIzbFGaJPdo8vlGRBqWpNjnV9WM6AnRCtO+yClyLpa6mr0qMiv1zfS8d7vgan25LGB
+	PmA3xmpqMq/0N7xyZs5zNqLBhxGrbCsBAMLsunYtTqqVvWAT0N9sotXMyOgUTmzuBV+ysRXmyi8bg
+	K+Y7HvceVfoBKst3kC2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iehBi-0001Fr-Le; Tue, 10 Dec 2019 15:12:34 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iehDC-0001pm-Pp; Tue, 10 Dec 2019 15:14:06 +0000
+Received: from mail-ed1-f67.google.com ([209.85.208.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iehBN-000177-C0
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 15:12:15 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 2CE1E20714;
- Tue, 10 Dec 2019 16:12:08 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 085FF20425;
- Tue, 10 Dec 2019 16:12:08 +0100 (CET)
-Subject: Re: [PATCH 08/10] tty: serial: samsung_tty: use 'unsigned int' not
- 'unsigned'
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-serial <linux-serial@vger.kernel.org>
+ id 1iehCw-0001pK-8l
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 15:13:51 +0000
+Received: by mail-ed1-f67.google.com with SMTP id dc19so16240281edb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Dec 2019 07:13:50 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=+WKlQUPo72dT+6gRaE8wTfxIyY3yTGzZswBT0iRb62I=;
+ b=DkvqVzhqO+HK9ajQ6yFTPN0gG0+Qb1MVAVIkAzAWlzyE6CI3uFXMZ0awSJQs255OH7
+ pX4c1mZVyhMKKFv2hlRrVhxPm+6SaVFe7uPo/QD5UBlzYc5WeUwYNNc/w643qJBRdmpg
+ 4Hq+fC/D75x5MoJEXUBAGBXanMQh8UaC50c/CmWZlb6obz5G9G2odEi/DC+t1/LqA/NP
+ mdXgEMPAyF41SGhg9jTFreV2Rhi0CV2dGFzxexgv6QumBIxboUe9793O4npLW8g05vI+
+ C64tpsdQ4ClIcjf0Krjg57BY9ylCP2MN/jfE6//H9UeVsP7h1soZo07xOc8SwRvdVdft
+ 0frg==
+X-Gm-Message-State: APjAAAW0mFMVmW1ZNdy3/Di+Ksy1WtkmdTGZT+4hgQ+vn3K8WV+CrS7w
+ rnKSLMs/lk+q6gvSzCH+kEc=
+X-Google-Smtp-Source: APXvYqyHYKpKtamdeJS3QNFEyTBoL2rxQ9sXdvJZCyjpdDzv+arjgS3g0x4xyx8CWZsUYi2fp7VhMQ==
+X-Received: by 2002:aa7:d78b:: with SMTP id s11mr40051088edq.240.1575990828937; 
+ Tue, 10 Dec 2019 07:13:48 -0800 (PST)
+Received: from pi3 ([194.230.155.234])
+ by smtp.googlemail.com with ESMTPSA id y17sm70501edq.69.2019.12.10.07.13.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 10 Dec 2019 07:13:48 -0800 (PST)
+Date: Tue, 10 Dec 2019 16:13:45 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: Re: [PATCH 10/10] tty: serial: samsung_tty: fix blank line
+ checkpatch warning
+Message-ID: <20191210151345.GI11222@pi3>
 References: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
- <20191210143706.3928480-8-gregkh@linuxfoundation.org>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <eb3cf8f9-3606-c2d6-ad90-4388a52c320b@free.fr>
-Date: Tue, 10 Dec 2019 16:12:07 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ <20191210143706.3928480-10-gregkh@linuxfoundation.org>
 MIME-Version: 1.0
-In-Reply-To: <20191210143706.3928480-8-gregkh@linuxfoundation.org>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Tue Dec 10 16:12:08 2019 +0100 (CET)
+Content-Disposition: inline
+In-Reply-To: <20191210143706.3928480-10-gregkh@linuxfoundation.org>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_071213_569681_9E160447 
-X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-CacheID: sfid-20191210_071350_334696_26638409 
+X-CRM114-Status: UNSURE (   8.69  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.67 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ provider (k.kozlowski.k[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.67 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,31 +90,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: LKML <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, Jiri Slaby <jslaby@suse.com>
+Cc: linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Shinbeom Choi <sbeom.choi@samsung.com>, Hyunki Koo <kkoos00@naver.com>,
+ Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+ HYUN-KI KOO <hyunki00.koo@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ Trim recipients list ]
+On Tue, Dec 10, 2019 at 03:37:06PM +0100, Greg Kroah-Hartman wrote:
+> checkpatch is giving a bunch of:
+> 	WARNING: Missing a blank line after declarations
+> messages on this file, so fix up all instances of that issue.
 
-On 10/12/2019 15:37, Greg Kroah-Hartman wrote:
+I would prefer to squash it with previous. These are not bugs, just
+minor coding style violations so there is no point to split it per
+patch. Too much churn.
 
-> The function uart_console_write() expects an unsigned int, so use that
-> variable type, not 'unsigned', which is generally frowned apon in the
-> kernel now.
-
-"frowned upon"
-
-Wait, what?!
-
-'unsigned' and 'unsigned int' are the same type, if I remember my C
-lessons correctly.
-
-Is this a uniformization issue?
-
-Regards.
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
