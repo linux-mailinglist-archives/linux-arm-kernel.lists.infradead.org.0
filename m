@@ -2,76 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFAD81190BF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 20:35:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78334119100
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Dec 2019 20:48:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=al3Wc8dLddqXVH+ENIUh2/HELnQCCoEt03EoE6Gl4V4=; b=n29uO7S0IDeiiS0t0KT3icDfGS
-	rsBhF0fXnFaIjyH7moLgRMdLG2ATMFsly87Sru/pEm9vMC/wZvplyVxt+4YSyBiTtb7YX6CQWRpP+
-	Z0SY0E9lVtRcnl4iAuLSmRyunXESXo8Lyk6C86WboKitnmrFSxiJbv4O55iy7aJkSGlo0ak2zOsi8
-	n8oYqqf9WGAVlMbixZnxjedNq5kWeSqL/ERObOLwEoiQ3zUUZhsS+ug7mh0IaQsruJRSkljEQKUe3
-	3RQsWNQ7MrZzQNrDBVpvVARHP8+GdjlM/PuWRmIbARlOmv/ENyVS+R9EREARDIiPoi5T5dXYvnf9/
-	M33jIulQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OwpXQmbT8w5kMQDI2Ngu9gMmSgQPyQq9k5CxlFa/6o0=; b=Ru1AOfqdxLK4gu
+	Kkq6PXg2q6t+SOrF0AHBVjDCSE1KUfBUI56hlbPPqcPtPMymc9snQ9+2CZ6OG4w9BKqAvRQBMm1Ny
+	n7KYDzdOVSazO3KfxaBpN3tfpEI1yd/kGAZltgsMxu4iWBZALcgAAXC0tZrVUIJPw89RZQ9J8TnsV
+	UfahYWfmbmNERvgcij1fdLSbDnfsnrvzWIsccrXEB54PpWQ/FPw+xHYyc27bsPIPbfCnanrAhwwbK
+	zzb0t57Eb3lMhvLiFT+rWQ+K4QrYiV/6Cp3tRDXTcU4TN3/lJF1zWyZp5BDXXg0latY8tZYsjE1MK
+	9VMaq4kxYErgSPj1Eryw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ielHV-0005Zz-07; Tue, 10 Dec 2019 19:34:49 +0000
-Received: from sv2-smtprelay2.synopsys.com ([149.117.73.133]
- helo=smtprelay-out1.synopsys.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ielGq-00058L-GC
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Dec 2019 19:34:11 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
- [10.225.0.209])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 7930742D2F;
- Tue, 10 Dec 2019 19:34:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576006447; bh=ApVBmx2KWyDu+9JlAqCGu/P/oYZTvPOSvPl95YD+VN4=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=CCRc7j1FOrPu3OM+KY7AEdB+FVdDf9Wzn/tsLVfW1KojAcO1MJQ0k8hzczXx6SEHI
- oQ/X0Gwa5u7Iq4xJePmrepC4jc4h6mbYe5TzfpayGh0A1Ckkmqbt3MZZCNPqPU+ddC
- V3zT3d+utGuAKHKc0ukT8RMccpSCN5leqBsfroAsxSmoikbpgpWOcAPCyIZzrruE20
- pJR5Z626I44Rvs60mNFc5IHEho+MFlDRH51eMtofZv03dQhbO5AwwCV4fOum1td9QB
- XPYKlluJQZydwuziTQ3+NQc6FGved5uTICuvrDz/OknIkFm1AW5FbuGIiYuZUXrwzV
- R0fC8F95vxq5w==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 2F616A00A7;
- Tue, 10 Dec 2019 19:34:06 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net 8/8] net: stmmac: Enable 16KB buffer size
-Date: Tue, 10 Dec 2019 20:34:00 +0100
-Message-Id: <e485da318ef9ec0059d5a6124d7ce24f237fc9b5.1576005975.git.Jose.Abreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1576005975.git.Jose.Abreu@synopsys.com>
-References: <cover.1576005975.git.Jose.Abreu@synopsys.com>
-In-Reply-To: <cover.1576005975.git.Jose.Abreu@synopsys.com>
-References: <cover.1576005975.git.Jose.Abreu@synopsys.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_113408_568912_AD662D37 
-X-CRM114-Status: GOOD (  11.79  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+	id 1ielUn-0003hD-LV; Tue, 10 Dec 2019 19:48:33 +0000
+Received: from 179-240-167-103.3g.claro.net.br ([179.240.167.103]
+ helo=quaco.ghostprotocols.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ielUj-0003gg-Kl; Tue, 10 Dec 2019 19:48:29 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id CBA0140352; Tue, 10 Dec 2019 16:48:25 -0300 (-03)
+Date: Tue, 10 Dec 2019 16:48:25 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Jiri Olsa <jolsa@redhat.com>
+Subject: Re: perf top for arm64?
+Message-ID: <20191210194825.GC13965@kernel.org>
+References: <1573045254-39833-1-git-send-email-john.garry@huawei.com>
+ <20191106140036.GA6259@kernel.org>
+ <418023e7-a50d-cb6f-989f-2e6d114ce5d8@huawei.com>
+ <20191210163655.GG14123@krava>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191210163655.GG14123@krava>
+X-Url: http://acmel.wordpress.com
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,55 +49,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, peterz@infradead.org,
+ John Garry <john.garry@huawei.com>, Linuxarm <linuxarm@huawei.com>,
+ Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>,
+ linux-kernel@vger.kernel.org,
+ "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, namhyung@kernel.org,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-XGMAC supports maximum MTU that can go to 16KB. Lets add this check in
-the calculation of RX buffer size.
+Em Tue, Dec 10, 2019 at 05:36:55PM +0100, Jiri Olsa escreveu:
+> On Tue, Dec 10, 2019 at 04:13:49PM +0000, John Garry wrote:
+> > Hi all,
+> > 
+> > I find to my surprise that "perf top" does not work for arm64:
+> > 
+> > root@ubuntu:/home/john/linux# tools/perf/perf top
+> > Couldn't read the cpuid for this machine: No such file or directory
+> 
+> there was recent change that check on cpuid and quits:
+>   608127f73779 perf top: Initialize perf_env->cpuid, needed by the per arch annotation init routine
+> 
+> Arnaldo,
+> maybe this should be just a warning/info, because it seems to be related
+> to annotations only..?
 
-Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
+Right, my bad, I'll look into making this just a debug message and then
+check in the annotation code when this is really needed to show an
+error/popup window :-\
 
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index eb31d7fb321c..082eeff9f54b 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -1109,7 +1109,9 @@ static int stmmac_set_bfsize(int mtu, int bufsize)
- {
- 	int ret = bufsize;
+- Arnaldo
  
--	if (mtu >= BUF_SIZE_4KiB)
-+	if (mtu >= BUF_SIZE_8KiB)
-+		ret = BUF_SIZE_16KiB;
-+	else if (mtu >= BUF_SIZE_4KiB)
- 		ret = BUF_SIZE_8KiB;
- 	else if (mtu >= BUF_SIZE_2KiB)
- 		ret = BUF_SIZE_4KiB;
--- 
-2.7.4
+> get_cpuid is defined only for s390/x86/powerpc, so I guess it won't work
+> on the rest as well
+> 
+> jirka
+> 
+> > 
+> > That's v5.5-rc1 release.
+> > 
+> > It seems that we are just missing an arm64 version of get_cpuid() - with the
+> > patch below, I now get as hoped:
+> > 
+> >    PerfTop:   32857 irqs/sec  kernel:85.0%  exact:  0.0% lost: 0/0 drop: 0/0
+> > [4000Hz cycles],  (all, 64 CPUs)
+> > -------------------------------------------------------------------------------
+> > 
+> >      8.99%  [kernel]          [k] arm_smmu_cmdq_issue_cmdlist
+> >      5.80%  [kernel]          [k] __softirqentry_text_start
+> >      4.49%  [kernel]          [k] _raw_spin_unlock_irqrestore
+> >      3.48%  [kernel]          [k] el0_svc_common.constprop.2
+> >      3.37%  [kernel]          [k] _raw_write_lock_irqsave
+> >      3.28%  [kernel]          [k] __local_bh_enable_ip
+> >      3.05%  [kernel]          [k] __blk_complete_request
+> >      2.07%  [kernel]          [k] queued_spin_lock_slowpath
+> >      1.93%  [vdso]            [.] 0x0000000000000484
+> > 
+> > 
+> > Was this just missed? Or is there a good reason to omit?
+> > 
+> > Thanks,
+> > John
+> > 
+> > --->8---
+> > 
+> > Subject: [PATCH] perf: Add perf top support for arm64
+> > 
+> > Copied from get_cpuid_str() essentially...
+> > 
+> > Signed-off-by: John Garry <john.garry@huawei.com>
+> > 
+> > diff --git a/tools/perf/arch/arm64/util/header.c
+> > b/tools/perf/arch/arm64/util/header.c
+> > index a32e4b72a98f..ecd1f86e29cc 100644
+> > --- a/tools/perf/arch/arm64/util/header.c
+> > +++ b/tools/perf/arch/arm64/util/header.c
+> > @@ -1,10 +1,12 @@
+> >  #include <stdio.h>
+> >  #include <stdlib.h>
+> >  #include <perf/cpumap.h>
+> > +#include <util/cpumap.h>
+> >  #include <internal/cpumap.h>
+> >  #include <api/fs/fs.h>
+> >  #include "debug.h"
+> >  #include "header.h"
+> > +#include <errno.h>
+> > 
+> >  #define MIDR "/regs/identification/midr_el1"
+> >  #define MIDR_SIZE 19
+> > @@ -12,6 +14,59 @@
+> >  #define MIDR_VARIANT_SHIFT      20
+> >  #define MIDR_VARIANT_MASK       (0xf << MIDR_VARIANT_SHIFT)
+> > 
+> > +int
+> > +get_cpuid(char *buffer, size_t sz)
+> > +{
+> > +	char *buf = NULL;
+> > +	char path[PATH_MAX];
+> > +	const char *sysfs = sysfs__mountpoint();
+> > +	int cpu;
+> > +	u64 midr = 0;
+> > +	FILE *file;
+> > +
+> > +	if (!sysfs)
+> > +		return EINVAL;
+> > +
+> > +	buf = malloc(MIDR_SIZE);
+> > +	if (!buf)
+> > +		return EINVAL;
+> > +
+> > +	/* read midr from list of cpus mapped to this pmu */
+> > +	for (cpu = 0; cpu < cpu__max_present_cpu(); cpu++) {
+> > +		scnprintf(path, sz, "%s/devices/system/cpu/cpu%d"MIDR,
+> > +				sysfs, cpu);
+> > +
+> > +		file = fopen(path, "r");
+> > +		if (!file) {
+> > +			pr_debug("fopen failed for file %s\n", path);
+> > +			continue;
+> > +		}
+> > +
+> > +		if (!fgets(buf, MIDR_SIZE, file)) {
+> > +			fclose(file);
+> > +			continue;
+> > +		}
+> > +		fclose(file);
+> > +
+> > +		/* Ignore/clear Variant[23:20] and
+> > +		 * Revision[3:0] of MIDR
+> > +		 */
+> > +		midr = strtoul(buf, NULL, 16);
+> > +		midr &= (~(MIDR_VARIANT_MASK | MIDR_REVISION_MASK));
+> > +		scnprintf(buffer, MIDR_SIZE, "0x%016lx", midr);
+> > +		/* got midr break loop */
+> > +		break;
+> > +	}
+> > +
+> > +	if (!midr) {
+> > +		pr_err("failed to get cpuid string\n");
+> > +		free(buf);
+> > +		return EINVAL;
+> > +	}
+> > +	return 0;
+> > +}
+> > +
+> > 
 
+-- 
+
+- Arnaldo
 
 _______________________________________________
 linux-arm-kernel mailing list
