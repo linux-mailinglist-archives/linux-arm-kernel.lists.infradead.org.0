@@ -2,74 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1B4411BE22
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 21:44:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48BD111BFA4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 23:09:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=95K5RtNqNd/2vZe7EEY5/GIl4oXN8ndIOFoLy+8dslk=; b=spem3d3AO3WkoW
-	Fjrdz9Eaq2epmou7Bx4TaAfHesswVL6r7UUooreDYJ85Om5a/LHvd0vwtExJ/18130rSjbyzEhJVt
-	Egn9+7xX8QbceQBlXE4sEY5yRmdJRtAWQ9c3bNd215BU9a9W7KwV0BssCi/X2wtKrJJlWxpSyNZnM
-	xE1p0dWYxL8c6D3eV8ig/Icg5OV5WmZRj6n9aqfn/XlxtHMHc2xQ3gAqmBB2d3ACW9O4sI/avGvWA
-	7EUoPcEx6rDHBjRuCl/nlQ9LNTH8jS+5QhEoNqwDqEEEBKFMZH03iQp0JyXfgufL0TqKBSzvsVv20
-	5dDtGpmMS1VLoPbnFdTg==;
+	List-Owner; bh=yxSeW+mb6MYhLgxK3y/wxsUJdHiZAgxqf+QfQ7DMyhY=; b=lE03PDuMwY3Tfm
+	r1vqz4RL4j3FKtR+A7ai7K7rVsqs6WYXxW+UXEbiLeAZ4EGS8is9H05d5VGFPVuvevpFqV1QEZHfB
+	6R8MJ27aliWQqQhz10aPrCeWWXCX6xwjDq3RVOuMcvKQDdN7cvqsBsWhzx5WIdNsvmlj+L8zOJA8c
+	q9r1vhqjQioQuXrw+rhZG4OxelyVaciU4Azje+2UvkHN9kZNpILUPChuzEkP8INJmGEbqAUo+zj/a
+	/HSmhjhWC7tCI0TEJqGf14mpa90YeCVkTlaV44sFSw/loVAtzzK/Ekg2lLw+37d6/Tp836H/ih5vX
+	n/BlS8Z7nUaOZOoD8tbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if8qT-0005GC-GO; Wed, 11 Dec 2019 20:44:29 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
+	id 1ifAAn-0001RM-0x; Wed, 11 Dec 2019 22:09:33 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if8qM-0005Fm-C2
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 20:44:23 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue108 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1M8hR1-1iaRs43tkf-004kEW; Wed, 11 Dec 2019 21:44:06 +0100
-From: Arnd Bergmann <arnd@arndb.de>
-To: Jens Axboe <axboe@kernel.dk>, "James E.J. Bottomley" <jejb@linux.ibm.com>,
- "Martin K. Petersen" <martin.petersen@oracle.com>,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH 01/24] compat: ARM64: always include asm-generic/compat.h
-Date: Wed, 11 Dec 2019 21:42:35 +0100
-Message-Id: <20191211204306.1207817-2-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
-In-Reply-To: <20191211204306.1207817-1-arnd@arndb.de>
-References: <20191211204306.1207817-1-arnd@arndb.de>
+ id 1ifAAd-0001PU-8v
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 22:09:25 +0000
+Received: by mail-qt1-x841.google.com with SMTP id 5so452984qtz.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Dec 2019 14:09:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=k7d7WsbP3LoU75+WuemV9UlLvjwYU63WdP9k7hHQzFM=;
+ b=S60IcC8q2ZKHlkDtHhETX2BprZm1KILkOpTxAFaysmnH1ZUe5PKiDzDAbQA0+L2aG5
+ jGoaV42u5oEaJmjpcsbN+sT+pm6ZJSgih5K4iICnmqQ7Ofcygc/D7shmAAtbrZH8Vanz
+ iz2lsJhsiZjz0UfO25zlNcbayx9quiDGiIur4=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=k7d7WsbP3LoU75+WuemV9UlLvjwYU63WdP9k7hHQzFM=;
+ b=o6q35RqV1psjLV3cGKAcS5CshT/OuM73QN0ZmBgFsVLaeW9FV1pZWNcvpuB2VBFpyc
+ tVef+xYQvSOGpUR77U3RKQSLsxPiACx2aInctsdPlzDYQ6sQDIm1fOl2uO5YNCC8vk7/
+ 1beBHBXC1V+XO9d/aqJJ9vPBdKyxI+q4bnMjh44C9dkxU1PmUxz41PP49gwpD8aNtOOT
+ 7GpCJPx5sNyaVNwxlFmzB74j0pRNqw5a2DJQExH1qw42k5VZb41uSp0V3bZqIHymFfwv
+ MSVWsugp8TBJlRudNKhltsX/afXmI2ASSd55neQqRonXiZBa0zguTsEHVWmRlQsHWyu0
+ GPRQ==
+X-Gm-Message-State: APjAAAXjtCcdhtSOUPZ3icvKJyGx1BC/8m4hoSUsX4tN3tvW1XT6ybf8
+ kjRKFBH4yYVTsA5G+Ed5v7NvatTRqK7E1PlQqQmv2A==
+X-Google-Smtp-Source: APXvYqzIan/p6MBZBXr7KxGgHZna/XiKYTqTn0jrIbFub78HgMIxWvp4zsQZYS6tItRiacNkgg/lWajfwPljnjTUUZI=
+X-Received: by 2002:ac8:3946:: with SMTP id t6mr4934746qtb.278.1576102161712; 
+ Wed, 11 Dec 2019 14:09:21 -0800 (PST)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:mz5wMeP1mI7KLnX+L9TZUVo6MIfdhwfA5AkmOs+OaphdklUbCnv
- X7MrRZI2R9VJWf66NRTLnVoMD6/5RMLHE3sUWVfolxdjEhWoRD3hstmd5OvxofRbJrFFUNM
- U0inFOTcxWdr9e0WR63XsUOuZLnDnhZ1/cLHTwAuxz2imLLI2AkfpqGZDH2tXHJueqlDJrw
- WzwJOQaA0tpR0khCs2klQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:5jcoHq9nJuQ=:BcHub+UBDAq7thiTpDno2w
- hSkCw8JTpuGlDJ57SmOUvV7vYHfSYEnIJSeWHWCp+bdDSoMCLrwMoJ7odEpI7WPtvB/ScsCvX
- VeNcQSKHIGcbiNr6/sqYv0LUIPEo7hppvFJSEtqOF37EVMjvgPUKUtF4HBXCpk0Qv2gnFmh91
- Q5AnpgUNMu7WOZYqE9pKT2CGY1GEijsATykSiXwT1JyYR87rhdQZcEhx1tuppOD1KC0MDCJK5
- x1wrBONVLyazD0Q/wnklpJPW2Mms4LzT3Ort5hQVmp/MItiaBcxs85dOHOFiDvuob622PfNOV
- PEDjts6WgUADfTCBpFPWOcw7WwWbSDqRM3PmRgqEGkxmu5bKOMfVqbq6n9+3N4dptgwE6fDOn
- /A4T6BKSblu+oPkGFGBZQjDyC1SMwpWBPHvrOdyPnIPMfIs5ULnIkxOJBty5xLKC0e0meDH9+
- b4tf89eeCRcctW9EV6YKAfobJs2SwCW83Tslrp46TVUCeQz4qUEPW3KwdgALLQ5tSZRT2r2hK
- Tbsc9JsabSWTA+wBNM/jL/actcRW5K9G+qn2EDyqMD4Xkf57Y0GRmBpmX+YUXOr5//J6q5O3P
- i8mzTH1iwJ78Ki3iKyPadTRxzutFG4fEZc9C9WpSjQSU9PGBW9Wdd+YaY565zaJFLYICgy/IG
- sYzvlRm9IEK780kxN1oEFgawAcIXTryC1iAO4mWE1E+146mOi7CPZOufM4oztTZtaRV0Q7HHr
- /LiW6o/Juxdn0noEDDvQ3Br5nYMzuo6xUUfowN5iAd8VF+A3ACDBsRdAgeWsRBDRdCwDTjHr2
- wDcgxTwXMlZAe8sjLiqZVYp2RC5Krc9DwXkwsg1nmKODL7eO+4vgb38hZWP/qBtq1KbRCaAit
- lAicoBqmZ4Snql/Awy/Q==
+References: <20191121015410.18852-1-bibby.hsieh@mediatek.com>
+In-Reply-To: <20191121015410.18852-1-bibby.hsieh@mediatek.com>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Wed, 11 Dec 2019 14:09:10 -0800
+Message-ID: <CANMq1KCTJQL+GFqo8HYM8cEpzXJmebJ=9ju4CzHLwyuQfbZEAA@mail.gmail.com>
+Subject: Re: [PATCH v17 0/6] support gce on mt8183 platform
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_124422_701479_47BD016E 
-X-CRM114-Status: UNSURE (   9.79  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_140923_340080_186DE788 
+X-CRM114-Status: GOOD (  11.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,50 +88,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: y2038@lists.linaro.org, linux-kernel@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, srv_heupstream <srv_heupstream@mediatek.com>,
+ lkml <linux-kernel@vger.kernel.org>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, CK HU <ck.hu@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to use compat_* type defininitions in device drivers
-outside of CONFIG_COMPAT, move the inclusion of asm-generic/compat.h
-ahead of the #ifdef.
+Hi Matthias,
 
-All other architectures already do this.
+Quick question, any reason you picked only patches 2+3+6 from this
+series, and not the 3 others?
 
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- arch/arm64/include/asm/compat.h | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+Thanks.
 
-diff --git a/arch/arm64/include/asm/compat.h b/arch/arm64/include/asm/compat.h
-index b0d53a265f1d..7b4172ce497c 100644
---- a/arch/arm64/include/asm/compat.h
-+++ b/arch/arm64/include/asm/compat.h
-@@ -4,6 +4,9 @@
-  */
- #ifndef __ASM_COMPAT_H
- #define __ASM_COMPAT_H
-+
-+#include <asm-generic/compat.h>
-+
- #ifdef CONFIG_COMPAT
- 
- /*
-@@ -13,8 +16,6 @@
- #include <linux/sched.h>
- #include <linux/sched/task_stack.h>
- 
--#include <asm-generic/compat.h>
--
- #define COMPAT_USER_HZ		100
- #ifdef __AARCH64EB__
- #define COMPAT_UTS_MACHINE	"armv8b\0\0"
--- 
-2.20.0
-
+On Wed, Nov 20, 2019 at 5:54 PM Bibby Hsieh <bibby.hsieh@mediatek.com> wrote:
+>
+> Changes since v16:
+>  - naming the poll mask enable bit
+>  - add a patch to fiup the input order of write api
+>
+> Changes since v15:
+>  - rebase onto 5.4-rc1
+>  - rollback the v14 change
+>  - add a patch to fixup the combination of return value
+>
+> Changes since v14:
+>  - change input argument as pointer in append_commend()
+>
+> Changes since v13:
+>  - separate poll function as poll w/ & w/o mask function
+>  - directly pass inst into append_command function instead
+>    of returns a pointer
+>  - fixup coding style
+>  - rebase onto 5.3-rc1
+>
+> [... snip ...]
+>
+> Bibby Hsieh (6):
+>   soc: mediatek: cmdq: fixup wrong input order of write api
+>   soc: mediatek: cmdq: remove OR opertaion from err return
+>   soc: mediatek: cmdq: define the instruction struct
+>   soc: mediatek: cmdq: add polling function
+>   soc: mediatek: cmdq: add cmdq_dev_get_client_reg function
+>   arm64: dts: add gce node for mt8183
+>
+>  arch/arm64/boot/dts/mediatek/mt8183.dtsi |  10 ++
+>  drivers/soc/mediatek/mtk-cmdq-helper.c   | 147 +++++++++++++++++++----
+>  include/linux/mailbox/mtk-cmdq-mailbox.h |  11 ++
+>  include/linux/soc/mediatek/mtk-cmdq.h    |  53 ++++++++
+>  4 files changed, 195 insertions(+), 26 deletions(-)
+>
+> --
+> 2.18.0
 
 _______________________________________________
 linux-arm-kernel mailing list
