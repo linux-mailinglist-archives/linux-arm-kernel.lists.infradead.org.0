@@ -2,73 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB1D811B110
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:28:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DE4211B11B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:28:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u5DOi43SwM3d/4xO8SEKcOy71M2qkVaupHVGkuNizvs=; b=jQUKOfVxb4cAlk
-	35m5RyMVZPvSXMrJz30shpGM1ECT+YXBFV3oJr3jY3Em1VGCxDVH5kv4EXE3Q5AQeDfKGCkkKSmFz
-	tcnVEI2LuZshk7qQbwvCRQ5NskAPQRuyuJh7D5S4h3lNp1+Ui+Z6rFFAbpnQtqBJys488scyDgQjd
-	Mhcqf4lGrzCQgKuejDV9XVhn6gZJMcliEsOod3wX0BiFqiEfOnuHyeAo7lrhK5uZp7aCJc3O+fMQJ
-	Q3agcIfGV67RVtXaDNZ0AsqNhp1mDYou5FokWjJ3i/UI215lLwgq/kRqtE303dhbxC1s5u1OMmud3
-	v5W0dxZBIV7zMWvru7yg==;
+	List-Owner; bh=S71XSJqOUuqUW4S5EhH32UpQIOTmVuJenlZXKvPL9fQ=; b=MrV8SHezVZkXmK
+	JS/z4GdcQsgFhjduI8nEw6mXBPgtQ6tW824kjcpk4qhrn6zRCOh8rgYNq+/F75j/3322YoEixbx8k
+	70EAiNkEsNxAM3mlTncNXSXI6Ezpux1isk5LspeSh+ZWgvP8ZGrLRWLWQMvcS/zhcAcDY3pfYyZ+t
+	IIEOhviPiMnzqGd8t7U1gcb9i9eL5mwJjfzOcVTHvEezjlp14fpEQxVKycOYsEi0UcDFGGtqSBfUM
+	47o7/7NF0MGf/TMJkUPHNV5WyVvleaYyJlSNHTjCzETeBQWh4fXQE3vBBfbiNYRXUQLhxVVEnD6KT
+	JcMkMpDeL6j+47jilVVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if3uQ-0004oe-No; Wed, 11 Dec 2019 15:28:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if3uG-0004n4-9O
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:28:05 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 42330222C4;
- Wed, 11 Dec 2019 15:28:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576078084;
- bh=nOm+tV4ZUwxfkY1cs2BzzyQcL1QNwQg1T6MXmVbtODE=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pENIiWEFF7s0zb+vXLey5+M7hJV/axRsEbOP32w2LngFIjclW8ImWWysAJhR0YQWP
- HZv1cXDwZkl8P7TMCMA6de5D47IeHx6ChI4vN2B5Cr6YjBZ9fdQFdtjMFApHajehXC
- oYXYTUgIrXQoBWj6zss2og1BViY5SyGLVh/lQMR4=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 74/79] libfdt: define INT32_MAX and UINT32_MAX in
- libfdt_env.h
-Date: Wed, 11 Dec 2019 10:26:38 -0500
-Message-Id: <20191211152643.23056-74-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191211152643.23056-1-sashal@kernel.org>
-References: <20191211152643.23056-1-sashal@kernel.org>
+	id 1if3up-0005D3-3d; Wed, 11 Dec 2019 15:28:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1if3uI-0004nG-1v
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:28:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 133C630E;
+ Wed, 11 Dec 2019 07:28:04 -0800 (PST)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 487413F52E;
+ Wed, 11 Dec 2019 07:28:03 -0800 (PST)
+Date: Wed, 11 Dec 2019 15:28:01 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Philipp Zabel <p.zabel@pengutronix.de>
+Subject: Re: [PATCH 15/15] reset: reset-scmi: Match scmi device by both name
+ and protocol id
+Message-ID: <20191211152801.GB28474@bogus>
+References: <20191210145345.11616-1-sudeep.holla@arm.com>
+ <20191210145345.11616-16-sudeep.holla@arm.com>
+ <9d8fd7d89e035c41a3be7d5a5fa2e370b32910f1.camel@pengutronix.de>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+Content-Disposition: inline
+In-Reply-To: <9d8fd7d89e035c41a3be7d5a5fa2e370b32910f1.camel@pengutronix.de>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_072804_343252_C7D06DDB 
-X-CRM114-Status: GOOD (  11.26  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191211_072806_137515_28912D5C 
+X-CRM114-Status: GOOD (  22.79  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,93 +65,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, Rob Herring <robh@kernel.org>
+Cc: Cristian Marussi <cristian.marussi@arm.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
+On Wed, Dec 11, 2019 at 10:51:41AM +0100, Philipp Zabel wrote:
+> Hi Sudeep,
+>
+> On Tue, 2019-12-10 at 14:53 +0000, Sudeep Holla wrote:
+> > The scmi bus now has support to match the driver with devices not only
+> > based on their protocol id but also based on their device name if one is
+> > available. This was added to cater the need to support multiple devices
+> > and drivers for the same protocol.
+> >
+> > Let us add the name "reset" to scmi_device_id table in the driver so
+> > that in matches only with device with the same name and protocol id
+> > SCMI_PROTOCOL_RESET.
+> >
+> > Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> > ---
+> >  drivers/reset/reset-scmi.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/reset/reset-scmi.c b/drivers/reset/reset-scmi.c
+> > index b46df80ec6c3..8d3a858e3b19 100644
+> > --- a/drivers/reset/reset-scmi.c
+> > +++ b/drivers/reset/reset-scmi.c
+> > @@ -108,7 +108,7 @@ static int scmi_reset_probe(struct scmi_device *sdev)
+> >  }
+> >
+> >  static const struct scmi_device_id scmi_id_table[] = {
+> > -	{ SCMI_PROTOCOL_RESET },
+> > +	{ SCMI_PROTOCOL_RESET, "reset" },
+> >  	{ },
+> >  };
+> >  MODULE_DEVICE_TABLE(scmi, scmi_id_table);
+> > --
+> > 2.17.1
+>
+> I can't speak to the correctness of this approach, but in case the rest
+> of the series passes review, this patch is
+>
 
-[ Upstream commit a8de1304b7df30e3a14f2a8b9709bb4ff31a0385 ]
+I understand that and completely depends on the review of the patches
+implementing it.
 
-The DTC v1.5.1 added references to (U)INT32_MAX.
+> Acked-by: Philipp Zabel <p.zabel@pengutronix.de>
+>
+> to be merged together with the other patches.
+>
 
-This is no problem for user-space programs since <stdint.h> defines
-(U)INT32_MAX along with (u)int32_t.
+Thanks.
 
-For the kernel space, libfdt_env.h needs to be adjusted before we
-pull in the changes.
-
-In the kernel, we usually use s/u32 instead of (u)int32_t for the
-fixed-width types.
-
-Accordingly, we already have S/U32_MAX for their max values.
-So, we should not add (U)INT32_MAX to <linux/limits.h> any more.
-
-Instead, add them to the in-kernel libfdt_env.h to compile the
-latest libfdt.
-
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-Signed-off-by: Rob Herring <robh@kernel.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/boot/compressed/libfdt_env.h | 4 +++-
- arch/powerpc/boot/libfdt_env.h        | 2 ++
- include/linux/libfdt_env.h            | 3 +++
- 3 files changed, 8 insertions(+), 1 deletion(-)
-
-diff --git a/arch/arm/boot/compressed/libfdt_env.h b/arch/arm/boot/compressed/libfdt_env.h
-index b36c0289a308e..6a0f1f524466e 100644
---- a/arch/arm/boot/compressed/libfdt_env.h
-+++ b/arch/arm/boot/compressed/libfdt_env.h
-@@ -2,11 +2,13 @@
- #ifndef _ARM_LIBFDT_ENV_H
- #define _ARM_LIBFDT_ENV_H
- 
-+#include <linux/limits.h>
- #include <linux/types.h>
- #include <linux/string.h>
- #include <asm/byteorder.h>
- 
--#define INT_MAX			((int)(~0U>>1))
-+#define INT32_MAX	S32_MAX
-+#define UINT32_MAX	U32_MAX
- 
- typedef __be16 fdt16_t;
- typedef __be32 fdt32_t;
-diff --git a/arch/powerpc/boot/libfdt_env.h b/arch/powerpc/boot/libfdt_env.h
-index 2abc8e83b95e9..9757d4f6331e7 100644
---- a/arch/powerpc/boot/libfdt_env.h
-+++ b/arch/powerpc/boot/libfdt_env.h
-@@ -6,6 +6,8 @@
- #include <string.h>
- 
- #define INT_MAX			((int)(~0U>>1))
-+#define UINT32_MAX		((u32)~0U)
-+#define INT32_MAX		((s32)(UINT32_MAX >> 1))
- 
- #include "of.h"
- 
-diff --git a/include/linux/libfdt_env.h b/include/linux/libfdt_env.h
-index edb0f0c309044..1adf54aad2df1 100644
---- a/include/linux/libfdt_env.h
-+++ b/include/linux/libfdt_env.h
-@@ -7,6 +7,9 @@
- 
- #include <asm/byteorder.h>
- 
-+#define INT32_MAX	S32_MAX
-+#define UINT32_MAX	U32_MAX
-+
- typedef __be16 fdt16_t;
- typedef __be32 fdt32_t;
- typedef __be64 fdt64_t;
--- 
-2.20.1
-
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
