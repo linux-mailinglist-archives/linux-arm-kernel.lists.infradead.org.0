@@ -2,157 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B84D811AA21
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 12:45:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C51811AA26
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 12:45:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=btUivXtziw8BfaBuaAqV7oYqtogp0dyAbOYVIF45xRo=; b=q4P6YdEA5tpWDE
-	yLl9lSTZ8I5igKC0XzZqdfpCnzxjzopKD/7PupssmE8yFjxKqu5eRpiWS4JvRAQAT+rI6eVJG2LBc
-	9lFs87Ate/G5cgsgtPwD8vG8iECX6HGpDB3yqOdXMHlSfJjulkO0jwMJWmQG1nzZd+0qaSIXguP3E
-	/NzGYyEzPinJ5J/wf9jx7/I3WxbJ9jQM3J8LTuXfKily3Vv5bGlkpx1XBcPrKAES26oMX5WBDBnvP
-	KOU0skHRIJr2nzAYgyZE394rH23NVQsEG2ajb/gCqAaKFk0nz728X8DYPpeVARkmELvKRrnwsyEf3
-	YJyooV1rhbCriVwxRPmg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NKI4/g0DNQVDpQqbH03R5erlesyWFmmFZ+J+ir3+9Qg=; b=DYtH2QtbYDywxJIt0zltHwJ5S
+	7LZuLrYPZRBCWKwCzrKOTqjiPh3nFW4AeBsdYajeyaKmPo0HjJxp7wjdrIU4O1Utwvj0y+PRz1Kvu
+	Tiavyr7yCk93vnMdTvPE+VOnIfTom+AIAM5kyriSCEjjrl7oxOb86CYzBHrRh7ejsr9KBmKCv6a/X
+	KfbL9NbKKvPWuKyxMKwQgjsuOlV7egAVLF+4VkZVYQ+Qa7qut5M1TwjyZ5WJ22BgyfpAOCgjCTM8X
+	BxkBZG48J5hDFQClj3HfhVFS1UOhtbZyvIEMqdmj4+PSKdphsZUcPEEZrtEVIFkm3a2jvbjBdPR7p
+	USxushB6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if0Qg-0008PB-4q; Wed, 11 Dec 2019 11:45:18 +0000
-Received: from esa1.microchip.iphmx.com ([68.232.147.91])
+	id 1if0R2-0000C5-Qq; Wed, 11 Dec 2019 11:45:40 +0000
+Received: from a27-186.smtp-out.us-west-2.amazonses.com ([54.240.27.186])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if0QW-0008Dv-4G
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 11:45:09 +0000
-Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa1.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa1.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: DfIdp8VjNltaXMRNXaJvTbFNoYSAYsak/0q7gywIDKwfvwNMXFlLYJB+0ebbv+fuJui3kCv97x
- 4dZtOKVKOf3KYCQZvtN0WHxtqZmVAnO0tBtKkcsoFgTc6qol9UAwrLUMvItsomH5ml647urKUf
- X8meClyxFD4rntHwwbnVv+29Ct8WH85f3k6D5PUd1z7fYVEPCqIfErepcnIwwwQIYir3Y8azol
- zfi/P0BmipMENlC3Lha4rTdiriDtZxPIuYZt0zqplVXdw6Dp7jdevG4GPP1Mep4q6PMdTSRHdI
- hy0=
-X-IronPort-AV: E=Sophos;i="5.69,301,1571727600"; d="scan'208";a="61351831"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 11 Dec 2019 04:45:07 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 11 Dec 2019 04:45:15 -0700
-Received: from NAM12-MW2-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Wed, 11 Dec 2019 04:45:06 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LhfiQ88WkCgs6bPefm720P/efqK+HzlF/OuAZKx7wcRVXbvpwRQlVRLQh7FID78t2I7u9uG3LN1nK1+oNOs7aEvn4U2ilysbmBJHYr1ArtSXARhEO0XhKbeB8muvmvDZ0p087MTQJp8BF+OBiMZgsNBh6OMg4ZIQnNi603cBDegwDcKDuwnCsWzwwXJ6DjwRWP8ZOWw+KxxAGKCI56DYiwl+mzJYO5PHRWUunvw+ldv6Vm+J2Y/MwRN5ZY/OiQ+fvp/WHiJx9xPjXA7H/BEcjJgRdY9YkJXxHjF79eKAngx2xzZpWRTiXvf5x4b3aq3vkQMp0A29IxXAkppWNglzxQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UGPxMDefpO3kz7dNeiCxXgFkQB0e2YiUbEwYP5llBFQ=;
- b=M6zct/8ZvaG09sTSWFgkJkkci/tWGK7Hc/kC0zaubSYRPaJRuXCcgRlljCYHeYT9ZM0w9nio3Z4JXdYNeCl3/bJbhYepsK1yeZYe+UdcpjopHBcvPFoN0uKKvRqmgwKtuHTHR5em+f99KrDAzytJ0LJEDU/2x3F1XMyzGWtoJFj7pubq30b/j9RObYO+1to/kOI/9NSyv6zWiaeJyY876ab2X7E5Tiya9NgRZo8WvsJOBsw28QN2GJf+28diW+6UxoRXo2FS6ZrLeYbqXSWWlXvyy3aX8iP3VrH3CmMIrjNdKkWkAoHJiTPCkTTs67ioA8/9sMSUd+pLgBAsEAEqtQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UGPxMDefpO3kz7dNeiCxXgFkQB0e2YiUbEwYP5llBFQ=;
- b=mzXudpHod5i76Pk0dkEOadN0aKigNOX77V5NzBRfk9ud/HRgG0yhewhahAP44Uw8g92soA3ggia9uHoLboqvaHJYBES4IZOYYa88e3CVjZoykIcMGDMReTU/BfM6FZPkZJYFiir3vlfOAQt5Q9ZzJhSuRyxlPaeZpej6viwp/qc=
-Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.224) by
- DM6PR11MB2860.namprd11.prod.outlook.com (20.176.96.140) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2516.12; Wed, 11 Dec 2019 11:45:05 +0000
-Received: from DM6PR11MB3225.namprd11.prod.outlook.com
- ([fe80::ed7d:d06f:7d55:cbe2]) by DM6PR11MB3225.namprd11.prod.outlook.com
- ([fe80::ed7d:d06f:7d55:cbe2%6]) with mapi id 15.20.2538.012; Wed, 11 Dec 2019
- 11:45:05 +0000
-From: <Claudiu.Beznea@microchip.com>
-To: <peda@axentia.se>, <sam@ravnborg.org>, <bbrezillon@kernel.org>,
- <airlied@linux.ie>, <daniel@ffwll.ch>, <Nicolas.Ferre@microchip.com>,
- <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>,
- <lee.jones@linaro.org>
-Subject: Re: [PATCH 4/5] Revert "drm/atmel-hlcdc: allow selecting a higher
- pixel-clock than requested"
-Thread-Topic: [PATCH 4/5] Revert "drm/atmel-hlcdc: allow selecting a higher
- pixel-clock than requested"
-Thread-Index: AQHVr11ICLJHO/IKjE+yoyNQ0RZUOA==
-Date: Wed, 11 Dec 2019 11:45:05 +0000
-Message-ID: <167cb87e-b189-71fd-0a79-adf89336d1f3@microchip.com>
-References: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
- <1575984287-26787-5-git-send-email-claudiu.beznea@microchip.com>
- <4c3ffc48-7aa5-1e48-b0e9-a50c4eea7c38@axentia.se>
- <5fbad2cd-0dbe-0be5-833a-f7a612d48012@microchip.com>
- <2272669c-38ee-1928-9563-46755574897c@axentia.se>
-In-Reply-To: <2272669c-38ee-1928-9563-46755574897c@axentia.se>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: AM3PR04CA0146.eurprd04.prod.outlook.com (2603:10a6:207::30)
- To DM6PR11MB3225.namprd11.prod.outlook.com
- (2603:10b6:5:5b::32)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tagtoolbar-keys: D20191211134458152
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 149f0763-8673-458a-b75b-08d77e2f90bc
-x-ms-traffictypediagnostic: DM6PR11MB2860:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR11MB28601B518B922837437AECFD875A0@DM6PR11MB2860.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 024847EE92
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(136003)(366004)(346002)(396003)(39860400002)(376002)(189003)(199004)(7416002)(36756003)(86362001)(81166006)(66556008)(110136005)(6512007)(31686004)(2616005)(6486002)(31696002)(66946007)(66476007)(316002)(8676002)(2906002)(71200400001)(5660300002)(478600001)(66446008)(4001150100001)(64756008)(6506007)(8936002)(4326008)(52116002)(186003)(26005)(81156014)(54906003)(53546011);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB2860;
- H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: wQkHWgJnnt+YTqNaa30cXX0QFg3UqsNjy7/Uirpu/KMSYz1aBkALWqAlTvSUcHGl+WKHiaFQIkche8ZcgJkgpV59x6QvZoy59E1I72p3p1xmEoN6DHVj1ygVre9zQoiDxhimC8LsMcU8s3JPfiUVZchQQkuYE8YJ6jRXGrsozfSORJXUhGaZFamJKJlDe7lLHGNzocFku7GAhrtkIfTubryrTZ1mwd5XBUdrQdEnWK/TnItAGraatUMHw6pWAwZEasi5pyzc/qyMWCOFPTwloICUKdirJCOiscOd7PnuylZt1HkKKoSDw5NWMrY59dCIJhIQIFxtfSkCr/fPhqKfm/7CHnN2HRH8lI1b0auVX1YxfoSQ8FGrR3cksZ0HDdxV2kwp2g2w+eSgWJ12zhUnrMNR9q3G5vtpYwDrv+VdxEjA/zpTcyZA+Vu8vr3Bfvob
-Content-ID: <DB250B37A69CC644BC5A8E6C8C0A9EBD@namprd11.prod.outlook.com>
+ id 1if0Qr-0000B4-19
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 11:45:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1576064726;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Date:From:To:Cc:Subject:In-Reply-To:References:Message-ID;
+ bh=JiPXq/eUqhlCbHe6rPsNhUYA8v5Xs7QVIRqJ0vKWarc=;
+ b=fXN4FApCyzpYH+jGkoZMd3AoDBHhb0fiqNEH5v0E3bxc5fc5ghXOCOoP6ocNFW3t
+ AgLGs/FHGSeys1tqf/00RjOUVlFWwEBZPmkiZPPoLQCQj44wo/kgMLf0PRtIreuac9Q
+ 4fNioTbMxB1Durk29gnVnb9n85FzTSAFysaZnR/Y=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1576064726;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Date:From:To:Cc:Subject:In-Reply-To:References:Message-ID:Feedback-ID;
+ bh=JiPXq/eUqhlCbHe6rPsNhUYA8v5Xs7QVIRqJ0vKWarc=;
+ b=fTGBGD8t1LOmetyW8j8CRHRWrg6kWPuB/pziQkrANjLmWcKgFLOQZqARKlGnITSz
+ vPM9TLYSlzj9Uomclm9FYBvAAJnWa/p+h6wmnmgHQyLpw4l1ce/GnOgouP4uu1KKhjl
+ BLrxrAFBZY253DM0pNYxv7X7qW3zlF+EkrH3odRI=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 149f0763-8673-458a-b75b-08d77e2f90bc
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Dec 2019 11:45:05.3973 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Z3o+U/JYA8x8EZnCGpZXuYefdU8kmI8IqLZ7tqPxJyPuYOkcPE+MJB7rE0cx1EfJZCRUqWfl0z30yyKXiYVnl2qO/jeKsJMfkKknntX1HtQ=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB2860
+Date: Wed, 11 Dec 2019 11:45:26 +0000
+From: cang@codeaurora.org
+To: Avri Altman <Avri.Altman@wdc.com>
+Subject: Re: [PATCH v2 3/3] arm64: defconfig: Compile ufs-bsg as a module
+In-Reply-To: <MN2PR04MB6991B27D797044D8FFDFAE8FFC5A0@MN2PR04MB6991.namprd04.prod.outlook.com>
+References: <0101016ef43c56d3-c7064a44-6025-4349-afd4-a2c91a9d9ffe-000000@us-west-2.amazonses.com>
+ <MN2PR04MB6991B27D797044D8FFDFAE8FFC5A0@MN2PR04MB6991.namprd04.prod.outlook.com>
+Message-ID: <0101016ef4c73698-50725cfc-fa64-4570-a6ad-de7af22df302-000000@us-west-2.amazonses.com>
+X-Sender: cang@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
+X-SES-Outgoing: 2019.12.11-54.240.27.186
+Feedback-ID: 1.us-west-2.CZuq2qbDmUIuT3qdvXlRHZZCpfZqZ4GtG9v3VKgRyF0=:AmazonSES
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_034508_193287_D0C444C7 
-X-CRM114-Status: GOOD (  29.85  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191211_034529_096648_1208E508 
+X-CRM114-Status: GOOD (  10.80  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.147.91 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [54.240.27.186 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -167,122 +87,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, rnayak@codeaurora.org,
+ linux-scsi@vger.kernel.org, saravanak@google.com,
+ Anson Huang <Anson.Huang@nxp.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ nguyenb@codeaurora.org, Maxime Ripard <mripard@kernel.org>,
+ open list <linux-kernel@vger.kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Dinh Nguyen <dinguyen@kernel.org>, Will Deacon <will@kernel.org>,
+ =?UTF-8?Q?Cl=C3=A9ment_P=C3=A9ron?= <peron.clem@gmail.com>,
+ Arnd Bergmann <arnd@arndb.de>,
+ "moderated list:ARM64 PORT \(AARCH64 ARCHITECTURE\)"
+ <linux-arm-kernel@lists.infradead.org>, Olof Johansson <olof@lixom.net>,
+ Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
+ kernel-team@android.com, salyzyn@google.com, asutoshd@codeaurora.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 2019-12-11 19:11, Avri Altman wrote:
+>> 
+>> Compiling ufs-bsg as a module to improve flexibility of its usage.
+>> 
+>> Signed-off-by: Can Guo <cang@codeaurora.org>
+> Not sure we want to make it loadable by default.
+> The platform vendor should decide if this module is available or not,
+> Don't you think?
+> 
+> 
 
+Agree, I will remove this change from patchset in next versioin of it.
 
-On 10.12.2019 19:22, Peter Rosin wrote:
-> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
-> 
-> On 2019-12-10 15:59, Claudiu.Beznea@microchip.com wrote:
->>
->>
->> On 10.12.2019 16:11, Peter Rosin wrote:
->>> On 2019-12-10 14:24, Claudiu Beznea wrote:
->>>> This reverts commit f6f7ad3234613f6f7f27c25036aaf078de07e9b0.
->>>> ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
->>>> because allowing selecting a higher pixel clock may overclock
->>>> LCD devices, not all of them being capable of this.
->>>
->>> Without this patch, there are panels that are *severly* underclocked (on the
->>> magnitude of 40MHz instead of 65MHz or something like that, I don't remember
->>> the exact figures).
->>
->> With patch that switches by default to 2xsystem clock for pixel clock, if
->> using 133MHz system clock (as you specified in the patch I proposed for
->> revert here) that would go, without this patch at 53MHz if 65MHz is
->> requested. Correct me if I'm wrong.
-> 
-> It might have been 53MHz, whatever it was it was too low for things to work.
-> 
->>> And they are of course not capable of that. All panels
->>> have *some* slack as to what frequencies are supported, and the patch was
->>> written under the assumption that the preferred frequency of the panel was
->>> requested, which should leave at least a *little* headroom.
->>
->> I see, but from my point of view, the upper layers should decide what
->> frequency settings should be done on the LCD controller and not let this at
->>  the driver's latitude.
-> 
-> Right, but the upper layers do not support negotiating a frequency from
-> ranges. At least the didn't when the patch was written, and implementing
-> *that* seemed like a huge undertaking.
-> 
->>>
->>> So, I'm curious as to what panel regressed. Or rather, what pixel-clock it needs
->>> and what it gets with/without the patch?
->>
->> I have 2 use cases:
->> 1/ system clock = 200MHz and requested pixel clock (mode_rate) ~71MHz. With
->> the reverted patch the resulted computed pixel clock would be 80MHz.
->> Previously it was at 66MHz
-> 
-> I don't see how that's possible.
-> 
-> [doing some calculation by hand]
-> 
-> Arrgh. *blush*
-> 
-> The code does not do what I intended for it to do.
-> Can you please try this instead of reverting?
-> 
-> Cheers,
-> Peter
-> 
-> From b3e86d55b8d107a5c07e98f879c67f67120c87a6 Mon Sep 17 00:00:00 2001
-> From: Peter Rosin <peda@axentia.se>
-> Date: Tue, 10 Dec 2019 18:11:28 +0100
-> Subject: [PATCH] drm/atmel-hlcdc: prefer a lower pixel-clock than requested
-> 
-> The intention was to only select a higher pixel-clock rate than the
-> requested, if a slight overclocking would result in a rate significantly
-> closer to the requested rate than if the conservative lower pixel-clock
-> rate is selected. The fixed patch has the logic the other way around and
-> actually prefers the higher frequency. Fix that.
-> 
-> Fixes: f6f7ad323461 ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
-> Reported-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-> Signed-off-by: Peter Rosin <peda@axentia.se>
-> ---
->  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> index 9e34bce089d0..03691845d37a 100644
-> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
-> @@ -120,8 +120,8 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
->                 int div_low = prate / mode_rate;
-> 
->                 if (div_low >= 2 &&
-> -                   ((prate / div_low - mode_rate) <
-> -                    10 * (mode_rate - prate / div)))
-> +                   (10 * (prate / div_low - mode_rate) <
-> +                    (mode_rate - prate / div)))
+Thanks,
 
-I tested it on my setup (I have only one of those specified above) and it
-is OK. Doing some math for the other setup it should also be OK.
+Can Guo.
 
-As a whole, I'm OK with this at the moment (let's hope it will work for all
-use-cases) but still I am not OK with selecting here, in the driver,
-something that might work. Although I am not familiar with how other DRM
-drivers are handling this kind of scenarios. Maybe you and/or other DRM
-guys knows more about it.
+>> ---
+>>  arch/arm64/configs/defconfig | 1 +
+>>  1 file changed, 1 insertion(+)
+>> 
+>> diff --git a/arch/arm64/configs/defconfig 
+>> b/arch/arm64/configs/defconfig index
+>> 8e05c39..169a6e6 100644
+>> --- a/arch/arm64/configs/defconfig
+>> +++ b/arch/arm64/configs/defconfig
+>> @@ -227,6 +227,7 @@ CONFIG_SCSI_UFSHCD=y
+>> CONFIG_SCSI_UFSHCD_PLATFORM=y  CONFIG_SCSI_UFS_QCOM=m
+>> CONFIG_SCSI_UFS_HISI=y
+>> +CONFIG_SCSI_UFS_BSG=m
+>>  CONFIG_ATA=y
+>>  CONFIG_SATA_AHCI=y
+>>  CONFIG_SATA_AHCI_PLATFORM=y
+>> --
+>> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora 
+>> Forum,
+>> a Linux Foundation Collaborative Project
 
-Just as a notice, it may worth adding a print message saying what was
-frequency was requested and what frequency has been setup by driver.
-
->                         /*
->                          * At least 10 times better when using a higher
->                          * frequency than requested, instead of a lower.
-> --
-> 2.20.1
-> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
