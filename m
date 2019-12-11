@@ -2,48 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4567111A83C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:51:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60E1F11A841
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:51:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I5fWLbCUgGWd+28pIYZ2Tz+l9lU/G5xwJGE8tjci8sM=; b=Ym2Bz5SyMSBPgX
-	N0ujkOpNf8/hiiDyViwG5Yko5qkRidnSfhylavOmDUWiHrNllg4yBHyoYYkp/vmsLoLUtjBs/f5sf
-	g65N9VgpL4BlZ5f9u69c8ZKU0/RWfxj9AuD30mKXU7KcnFSsiSCw/Yinl+WP1g/oNnJfMRdd6Tdrb
-	4lY23zyTkmIc1ylUFhNBjWTWJ34TqiZz5qvMn+f3Uk5f50quYIhcV22+01q3hrkXOuP1884B7mbiZ
-	U+gbvFA/fBE9cXkS2UUlQ+90oriDSJFq1DooagZknhgoQAcaO7SCPrd85TdBk2Ivqn+l0xKFNHASy
-	b/cF2PgDJvgAtDgZJIIQ==;
+	List-Owner; bh=WGkmzD9tsyKIYenLCb69PyMy5bKA2E3W91DGuZwEosA=; b=AGTOGoDOO9Ot5L
+	EtNeSyGhWc6No96lPIbxi1fQiB/G3dxadnMEQDrJzXzffAi0aIncTxpx5KkrDC2y5dvwZI+Ayee7d
+	CtfIRfbpntdQH6ipZmrIyI6RjPQqkxu8KD+ZuPZBcj5YLevyOcv5vcSK1295ELaxX6F6bRcJwe9zs
+	MfxoDDwPBchWGcVX5duXec3VbP+jwFQoQI26vobKq1AifYm1oTO+ErqNXg6AYLinhJ4Rp/CoIv7CR
+	oyZPwCUHnUcVPhTC359HonNARKyeCdY4mWdz+vwYZ0WlNWhpsrXdWzD4M8bgvgGnHbZlwiqQyzvX5
+	oJxRWzlcsyfQzVQatZag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieye6-00074m-FL; Wed, 11 Dec 2019 09:51:02 +0000
-Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
+	id 1ieyet-0007MY-EZ; Wed, 11 Dec 2019 09:51:51 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieydy-000745-5h; Wed, 11 Dec 2019 09:50:55 +0000
-Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
- by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1ieydq-0000iP-RW; Wed, 11 Dec 2019 17:50:46 +0800
-Received: from herbert by gondobar with local (Exim 4.89)
- (envelope-from <herbert@gondor.apana.org.au>)
- id 1ieydn-0006eC-Cu; Wed, 11 Dec 2019 17:50:43 +0800
-Date: Wed, 11 Dec 2019 17:50:43 +0800
-From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Anand Moon <linux.amoon@gmail.com>
-Subject: Re: [PATCHv1 0/3] Enable crypto module on Amlogic GXBB SoC platform
-Message-ID: <20191211095043.3kngq7wh77xvadge@gondor.apana.org.au>
-References: <20191211084112.971-1-linux.amoon@gmail.com>
- <a4610efc-844a-2d43-5db1-cf813102e701@baylibre.com>
- <CANAwSgQOTA0mSvFW5otaCzFPHidhY7VFcrXZHjCD-1XkQpcx3w@mail.gmail.com>
+ id 1ieyel-0007MF-9q
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:51:45 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1ieyek-00028x-1P; Wed, 11 Dec 2019 10:51:42 +0100
+Message-ID: <9d8fd7d89e035c41a3be7d5a5fa2e370b32910f1.camel@pengutronix.de>
+Subject: Re: [PATCH 15/15] reset: reset-scmi: Match scmi device by both name
+ and protocol id
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org,  linux-kernel@vger.kernel.org
+Date: Wed, 11 Dec 2019 10:51:41 +0100
+In-Reply-To: <20191210145345.11616-16-sudeep.holla@arm.com>
+References: <20191210145345.11616-1-sudeep.holla@arm.com>
+ <20191210145345.11616-16-sudeep.holla@arm.com>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CANAwSgQOTA0mSvFW5otaCzFPHidhY7VFcrXZHjCD-1XkQpcx3w@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_015054_365121_8519B8C8 
-X-CRM114-Status: UNSURE (   4.50  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_015144_133117_42864263 
+X-CRM114-Status: GOOD (  18.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,63 +66,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Corentin Labbe <clabbe@baylibre.com>, linux-amlogic@lists.infradead.org,
- "David S . Miller" <davem@davemloft.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-crypto@vger.kernel.org
+Cc: Cristian Marussi <cristian.marussi@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 03:07:53PM +0530, Anand Moon wrote:
->
-> name         : ecb(aes)
-> driver       : ecb-aes-gxl
-> module       : kernel
-> priority     : 400
-> refcnt       : 1
-> selftest     : passed
-> internal     : no
-> type         : skcipher
-> async        : yes
-> blocksize    : 16
-> min keysize  : 16
-> max keysize  : 32
-> ivsize       : 0
-> chunksize    : 16
-> walksize     : 16
+Hi Sudeep,
+
+On Tue, 2019-12-10 at 14:53 +0000, Sudeep Holla wrote:
+> The scmi bus now has support to match the driver with devices not only
+> based on their protocol id but also based on their device name if one is
+> available. This was added to cater the need to support multiple devices
+> and drivers for the same protocol.
 > 
-> name         : cbc(aes)
-> driver       : cbc-aes-gxl
-> module       : kernel
-> priority     : 400
-> refcnt       : 1
-> selftest     : passed
-> internal     : no
-> type         : skcipher
-> async        : yes
-> blocksize    : 16
-> min keysize  : 16
-> max keysize  : 32
-> ivsize       : 16
-> chunksize    : 16
-> walksize     : 16
+> Let us add the name "reset" to scmi_device_id table in the driver so
+> that in matches only with device with the same name and protocol id
+> SCMI_PROTOCOL_RESET.
+> 
+> Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> ---
+>  drivers/reset/reset-scmi.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/reset/reset-scmi.c b/drivers/reset/reset-scmi.c
+> index b46df80ec6c3..8d3a858e3b19 100644
+> --- a/drivers/reset/reset-scmi.c
+> +++ b/drivers/reset/reset-scmi.c
+> @@ -108,7 +108,7 @@ static int scmi_reset_probe(struct scmi_device *sdev)
+>  }
+> 
+>  static const struct scmi_device_id scmi_id_table[] = {
+> -	{ SCMI_PROTOCOL_RESET },
+> +	{ SCMI_PROTOCOL_RESET, "reset" },
+>  	{ },
+>  };
+>  MODULE_DEVICE_TABLE(scmi, scmi_id_table);
+> --
+> 2.17.1
 
-Oh so you did actually get them loaded.  You need to run tcrypt with
-mode=500 instead of 200 to test the async ciphers.  Does that work?
+I can't speak to the correctness of this approach, but in case the rest
+of the series passes review, this patch is
 
-Thanks,
--- 
-Email: Herbert Xu <herbert@gondor.apana.org.au>
-Home Page: http://gondor.apana.org.au/~herbert/
-PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
+Acked-by: Philipp Zabel <p.zabel@pengutronix.de>
+
+to be merged together with the other patches.
+
+regards
+Philipp
+
 
 _______________________________________________
 linux-arm-kernel mailing list
