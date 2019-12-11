@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6288511BBFE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:41:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D05AB11BBFF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:42:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gLV1d0V4g8yThzq8QdHQwyPM20lpALh+tq4xXy3dD0c=; b=phN7TjhKTk7zkK
-	R/IudhRvldbmlEjUS42TGRNEcRmW88gqvNd9VNxrSVSHaNATyj3YCj0ZVZHgbH7ne4yydW+1+vZDA
-	ZtGz7HbKtrlREmfZKr8u9wIlTTrFtPJuSI8DklT7NBJGI7v6F/VU6SCYwC9VjNkxDPaVM5qDxaxoN
-	/fhdi1uj3tZl8HmmljcGBC/g4PTCPZgE4CnqXa4vOovIBnkqqe80W1MBHFul+I4PjhRbNy/Mx0qvO
-	/OboYcwcZPnYE65Sz9RSrVUiKyAkMz1NN1OHC6/8UMWY9bBIOMpmOYaUkdmqxcug5tnPC7ghwxDfu
-	iQGMPphITkZa/rBF6izg==;
+	List-Owner; bh=NgEUX/BqSykiN7J88ICRb46yxrT+wBk/chVf0q15Gk4=; b=oVwlNxmrRHPN3D
+	cePBFWuw6MxIPrQZ/jsZq1LMsaizs0Uplqfzp117JqeXrPrZFOx87fkdqamzbKW5em+GxWL45mQv/
+	2KYeXOnUvWVGcbX39FcysgRtECHhyGnacflDspLdZZfGtGTDbff18JIyvvVjz6yh1EKkipP9o2TYM
+	t9PLBuJenH5GiDujDBQ9WXWb8xtoii9FNrAE/fRdPk+/W1bvz7emAFy6ylBBcC7v/sz82oVg3Hs5z
+	S6cvj+kLsEU0/vfNbm6Mg2Ie/7Q2WfkK2M4prYaWJycEs2RxpdWWsuD2g4Wptjk4cxAw5BtQdx7fd
+	O74yIl8ThQDP63RvdA2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if6vf-0003hC-D3; Wed, 11 Dec 2019 18:41:43 +0000
+	id 1if6vs-0003wT-K4; Wed, 11 Dec 2019 18:41:56 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if6ug-00037L-6d
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:40:43 +0000
+ id 1if6uh-000383-6d
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:40:44 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 091551045;
- Wed, 11 Dec 2019 10:40:41 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A5DE5106F;
+ Wed, 11 Dec 2019 10:40:42 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4461F3F6CF;
- Wed, 11 Dec 2019 10:40:39 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3CDB93F6CF;
+ Wed, 11 Dec 2019 10:40:41 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 02/22] kbuild: Add support for 'as-instr' to be used in
- Kconfig files
-Date: Wed, 11 Dec 2019 18:40:07 +0000
-Message-Id: <20191211184027.20130-3-catalin.marinas@arm.com>
+Subject: [PATCH 03/22] arm64: alternative: Allow alternative_insn to always
+ issue the first instruction
+Date: Wed, 11 Dec 2019 18:40:08 +0000
+Message-Id: <20191211184027.20130-4-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191211184027.20130-1-catalin.marinas@arm.com>
 References: <20191211184027.20130-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_104042_281506_BFFCE71A 
-X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-CacheID: sfid-20191211_104043_295324_F268CBC6 
+X-CRM114-Status: UNSURE (   9.82  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -65,51 +65,51 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Vladimir Murzin <vladimir.murzin@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
  Szabolcs Nagy <szabolcs.nagy@arm.com>, Marc Zyngier <maz@kernel.org>,
  Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
  Andrey Konovalov <andreyknvl@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-kbuild@vger.kernel.org
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Similar to 'cc-option' or 'ld-option', it is occasionally necessary to
-check whether the assembler supports certain ISA extensions. In the
-arm64 code we currently do this in Makefile with an additional define:
+There are situations where we do not want to disable the whole block
+based on a config option, only the alternative part while keeping the
+first instruction. Improve the alternative_insn assembler macro to take
+a 'first_insn' argument, default 0 to preserve the current behaviour.
 
-lseinstr := $(call as-instr,.arch_extension lse,-DCONFIG_AS_LSE=1)
-
-Add the 'as-instr' option so that it can be used in Kconfig directly:
-
-	def_bool $(as-instr,.arch_extension lse)
-
-Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
-Cc: linux-kbuild@vger.kernel.org
-Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- scripts/Kconfig.include | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/include/asm/alternative.h | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
-diff --git a/scripts/Kconfig.include b/scripts/Kconfig.include
-index d4adfbe42690..9d07e59cbdf7 100644
---- a/scripts/Kconfig.include
-+++ b/scripts/Kconfig.include
-@@ -31,6 +31,10 @@ cc-option = $(success,$(CC) -Werror $(CLANG_FLAGS) $(1) -E -x c /dev/null -o /de
- # Return y if the linker supports <flag>, n otherwise
- ld-option = $(success,$(LD) -v $(1))
+diff --git a/arch/arm64/include/asm/alternative.h b/arch/arm64/include/asm/alternative.h
+index b9f8d787eea9..b4d3ffe16ca6 100644
+--- a/arch/arm64/include/asm/alternative.h
++++ b/arch/arm64/include/asm/alternative.h
+@@ -101,7 +101,11 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
+ 	.byte \alt_len
+ .endm
  
-+# $(as-instr,<instr>)
-+# Return y if the assembler supports <instr>, n otherwise
-+as-instr = $(success,printf "%b\n" "$(1)" | $(CC) $(CLANG_FLAGS) -c -x assembler -o /dev/null -)
-+
- # check if $(CC) and $(LD) exist
- $(error-if,$(failure,command -v $(CC)),compiler '$(CC)' not found)
- $(error-if,$(failure,command -v $(LD)),linker '$(LD)' not found)
+-.macro alternative_insn insn1, insn2, cap, enable = 1
++/*
++ * Disable the whole block if enable == 0, unless first_insn == 1 in which
++ * case insn1 will always be issued but without an alternative insn2.
++ */
++.macro alternative_insn insn1, insn2, cap, enable = 1, first_insn = 0
+ 	.if \enable
+ 661:	\insn1
+ 662:	.pushsection .altinstructions, "a"
+@@ -112,6 +116,8 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
+ 664:	.popsection
+ 	.org	. - (664b-663b) + (662b-661b)
+ 	.org	. - (662b-661b) + (664b-663b)
++	.elseif \first_insn
++	\insn1
+ 	.endif
+ .endm
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
