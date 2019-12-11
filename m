@@ -2,60 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1688E11ABF1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:21:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF8B711ABFD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:22:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=bNHQAhAlowLfvxjTvGxbkJgdmYCQBcu1lDDwtn8/aGk=; b=Scyz8TBinsed7Ym3zXKPDpyCQg
-	U/8r2aWuTQ4xfdbsePSiwPKv+r0zqYIHrXwyH3C4/mLDzoeQMi12niqGXWL4R7ZKI/Z569lneFYYz
-	PTlkaktQrpC7k29hwCyKdeU5dPNYQ+O2jXUfdK/yBU9cJUThZNjaS5SG3zVzyZZxjRfcDb/X3htdr
-	fdXdEkYwt9sTmpvjbwXUNq0sW/s6+CGjgI4YkMV3tYcJfJ7mtLYhKEE8SxdFx8RzWormVkKr4X6Ap
-	SzXDIdozSpNexXJQtRrCvpg56DKh3wm6Eglj1jTgIWpucTwG6a88A6HJOU8apsWuvh/d0c91BKhiZ
-	zawKgRqg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hoK1umw3vQUZ5eB7cWR8CGpfN+SZ2ZyFuo3d7fhy5JI=; b=tPs/L8s52ahHOs
+	nGccDXr/BrHEDSCs4dQhBZLNGNIlJz7FFCRKK0pPYAquvpPU5lpBXbLGPoZUj2Gq248+TlkDpK6EA
+	OV118utoRiCgT97FEYiW5weqG+G1yZIGpcqgCU3H6RwDsCqDcJ9jYZXMRbznWgE9f/S3uSMoKEL0F
+	YOBPBA/Xbgoh8jmeDOr+fmZJ1JShyS2vvpwC7EyKFSgeyHOWXvW9mGjPFURrGnUrev5Z/lEK0ht2x
+	Zp82T1ezh8oOO1k9zbDu4j7WoxkzREoC+51Q0vRj8+e7pnTeWOpZn2CbQCDhkY/cnntSaRqGal+vQ
+	VubBuE2V1OE6CAudYZEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if1vh-0004kp-Kf; Wed, 11 Dec 2019 13:21:25 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if1vZ-0004iz-TE
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:21:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C66521FB;
- Wed, 11 Dec 2019 05:21:14 -0800 (PST)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 562E43F6CF;
- Wed, 11 Dec 2019 05:21:14 -0800 (PST)
-Subject: Re: [PATCH 05/15] firmware: arm_scmi: Add versions and identifier
- attributes using dev_groups
-To: Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20191210145345.11616-1-sudeep.holla@arm.com>
- <20191210145345.11616-6-sudeep.holla@arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <91d5617d-85da-b3a3-1ef3-2438baa93ba7@arm.com>
-Date: Wed, 11 Dec 2019 13:21:13 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+	id 1if1wc-00051y-RH; Wed, 11 Dec 2019 13:22:22 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1if1wU-00050e-JD
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:22:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=IH1s0cjqyMsMpDY0+X+5G2W/GuMaf647MqSabKEwRKo=; b=bQRr4DxFM0gt0AuX9H05e77AW
+ xgPpIGWbqfMS4ylNcIEq+CMuRYAaDbAgSuxEOTzGDjBNtvFqDmSZHKr9TW3aBVZh6kjrjOQR3dYKE
+ VDe6mTh10Gs0IO7KCuGTjqKnYC2g5hgKQhl0RqC2mI0dal0xeLLSEPXPDf8M2yfDcMVWQ3uPjCGar
+ c0dh28JYhvwJ44PfqRMoMq6jrEPItwvjZ3SLGfiJUmyjDAt5zEqswbRBW/aW7mcYQL7JZIE2yPF7x
+ QDWYcJh6BBorRBrlz1/b62nCMJ56zU9naKqHhGr/3FwQkMXIxbPfBM+uUGOO7M5pkxHW6NYQxhP5p
+ Tp3bxfHnQ==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:47408)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1if1wM-00009W-6l; Wed, 11 Dec 2019 13:22:06 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1if1wJ-0005sr-ND; Wed, 11 Dec 2019 13:22:03 +0000
+Date: Wed, 11 Dec 2019 13:22:03 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: Trying to understand basic concepts about GPIO reset pin
+Message-ID: <20191211132203.GD25745@shell.armlinux.org.uk>
+References: <e8b645da-9921-0436-ccfa-9abf4ae5b9d6@free.fr>
 MIME-Version: 1.0
-In-Reply-To: <20191210145345.11616-6-sudeep.holla@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <e8b645da-9921-0436-ccfa-9abf4ae5b9d6@free.fr>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_052117_989451_7DF9E80E 
-X-CRM114-Status: GOOD (  17.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_052214_770683_380A9140 
+X-CRM114-Status: GOOD (  22.00  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,101 +86,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: GPIO <linux-gpio@vger.kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/12/2019 14:53, Sudeep Holla wrote:
-> Platform drivers now have the option to have the platform core create
-> and remove any needed sysfs attribute files. Using the same, let's add
-> the scmi firmware and protocol version attributes as well as vendor and
-> sub-vendor identifiers to sysfs.
-> 
-> It helps to identify the firmware details from the sysfs entries similar
-> to ARM SCPI implementation.
-> 
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> ---
->  drivers/firmware/arm_scmi/driver.c | 47 ++++++++++++++++++++++++++++++
->  1 file changed, 47 insertions(+)
-> 
-> diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-> index 0bbdc7c9eb0f..26b2c438bd59 100644
-> --- a/drivers/firmware/arm_scmi/driver.c
-> +++ b/drivers/firmware/arm_scmi/driver.c
-> @@ -979,6 +979,52 @@ static int scmi_remove(struct platform_device *pdev)
->  	return ret;
->  }
-> 
-> +static ssize_t protocol_version_show(struct device *dev,
-> +				     struct device_attribute *attr, char *buf)
-> +{
-> +	struct scmi_info *info = dev_get_drvdata(dev);
-> +
-> +	return sprintf(buf, "%u.%u\n", info->version.major_ver,
-> +		       info->version.minor_ver);
-> +}
-> +static DEVICE_ATTR_RO(protocol_version);
-> +
-> +static ssize_t firmware_version_show(struct device *dev,
-> +				     struct device_attribute *attr, char *buf)
-> +{
-> +	struct scmi_info *info = dev_get_drvdata(dev);
-> +
-> +	return sprintf(buf, "0x%x\n", info->version.impl_ver);
-> +}
-> +static DEVICE_ATTR_RO(firmware_version);
-> +
-> +static ssize_t vendor_id_show(struct device *dev,
-> +			      struct device_attribute *attr, char *buf)
-> +{
-> +	struct scmi_info *info = dev_get_drvdata(dev);
-> +
-> +	return sprintf(buf, "%s\n", info->version.vendor_id);
-> +}
-> +static DEVICE_ATTR_RO(vendor_id);
-> +
-> +static ssize_t sub_vendor_id_show(struct device *dev,
-> +				  struct device_attribute *attr, char *buf)
-> +{
-> +	struct scmi_info *info = dev_get_drvdata(dev);
-> +
-> +	return sprintf(buf, "%s\n", info->version.sub_vendor_id);
-> +}
-> +static DEVICE_ATTR_RO(sub_vendor_id);
-> +
-> +static struct attribute *versions_attrs[] = {
-> +	&dev_attr_firmware_version.attr,
-> +	&dev_attr_protocol_version.attr,
-> +	&dev_attr_vendor_id.attr,
-> +	&dev_attr_sub_vendor_id.attr,
-> +	NULL,
-> +};
-> +ATTRIBUTE_GROUPS(versions);
-> +
->  static const struct scmi_desc scmi_generic_desc = {
->  	.max_rx_timeout_ms = 30,	/* We may increase this if required */
->  	.max_msg = 20,		/* Limited by MBOX_TX_QUEUE_LEN */
-> @@ -997,6 +1043,7 @@ static struct platform_driver scmi_driver = {
->  	.driver = {
->  		   .name = "arm-scmi",
->  		   .of_match_table = scmi_of_match,
-> +		   .dev_groups = versions_groups,
->  		   },
->  	.probe = scmi_probe,
->  	.remove = scmi_remove,
-> --
-> 2.17.1
-> 
+On Wed, Dec 11, 2019 at 02:05:45PM +0100, Marc Gonzalez wrote:
+> Hello,
+> =
 
-LGTM.
+> I've asked linusw a few times on IRC, and every time, I /think/ I underst=
+and,
+> then I get confused again later. So I'm trying to understand once and for=
+ all.
+> =
 
-Reviewed-by: Cristian Marussi <cristian.marussi@arm.com>
+> Please do not hesitate to correct any mistake/misconception below.
+> =
 
+> I want to discuss a "simple" GPIO reset pin.
+> =
 
-Cristian
+> 1) When a reset pin is ACTIVE, the corresponding circuit is "held" in res=
+et.
+> In other words, when a reset pin is ACTIVE, the circuit is DISABLED / doe=
+s not
+> receive power, clocks don't tick, nothing changes state.
 
+Not necessarily.  Whether a circuit is powered or clocked has nothing
+really to do with whether it is in reset or not.  Many devices specify
+that power and clocks must be applied prior to reset being released,
+which is sensible because it allows the reset to set the initial state
+of the circuitry.
+
+> 2a) If a signal is ACTIVE HIGH, that means the signal is ACTIVE when the =
+voltage
+> on the line is HIGH (e.g. 3.3V or 5V)
+
+Correct.
+
+> 2b) If a signal is ACTIVE LOW, that means the signal is ACTIVE when the v=
+oltage
+> on the line is LOW (e.g. 0V, connected to ground)
+
+Correct.
+
+> 3) Usually(?) a reset signal is ACTIVE LOW. That way, when the SoC is com=
+ing up,
+> and current has not propagated everywhere, LOW voltage on the reset pin m=
+eans
+> the circuit is "held" in reset, until we are ready to set voltage HIGH on=
+ the
+> reset pin to disable the reset, and enable the circuit.
+
+I don't think there's a "usually" about it.  Some devices take an
+active high reset, others take an active low reset.
+
+> Suppose a circuit's HW description states:
+> =
+
+> RESET_N:
+> External Reset.
+> Active LOW reset signal to the device.
+> See Figure 4.6 on page 21 for reset timing requirements.
+> Figure 4.6 shows the minimum timing interval for RESET_N.
+> RESET_N must be driven LOW for at least the period of 200 =B5s before acc=
+essing registers.
+> =
+
+> =
+
+> 4) The DT node for this device should describe the reset pin as GPIO_ACTI=
+VE_LOW:
+> =
+
+> 	reset-gpios =3D <&tlmm 12 GPIO_ACTIVE_LOW>;
+
+I would say so - the reset is active low, so specifying it as active low
+in DT seems entirely sensible.
+
+> OK, now we're getting into the parts of the GPIO API I don't understand w=
+ell.
+> =
+
+> If I just call
+> =
+
+> 	devm_gpiod_get_optional(dev, "reset", GPIOD_OUT_LOW);
+> =
+
+> then I am able to interact with the device. How can that be?
+
+This is where things get complicated.  GPIOD_OUT_LOW is
+GPIOD_FLAGS_BIT_DIR_SET | GPIOD_FLAGS_BIT_DIR_OUT without
+GPIOD_FLAGS_BIT_DIR_VAL.  The above will therefore call:
+
+	gpiod_direction_output(gpiod, !!(dflags & GPIOD_FLAGS_BIT_DIR_VAL));
+
+which will be zero.  gpiod_direction_output() respects the inversion
+that GPIO_ACTIVE_LOW specified in DT.  So, GPIOD_OUT_LOW will set
+the reset signal _high_.
+
+I don't blame you for thinking this is confusing - the terminology
+adopted in the kernel certainly is.
+
+Thnk of whatever you give to the non-raw functions as "low means
+inactive, high means active".
+
+> =
+
+> Is GPIOD_OUT_LOW a /logical/ low?
+> In other words, does the call above really set the line HIGH
+> =3D> RESET INACTIVE =3D> CIRCUIT ENABLED ?
+
+Correct.
+
+> The problem is that it does not guarantee that the line was LOW for 200 =
+=B5s
+> before being set HIGH, right?
+
+Correct.
+
+> It would appear that the correct sequence of calls for my circuit should =
+be:
+> =
+
+> a)	reset =3D devm_gpiod_get_optional(dev, "reset", GPIOD_OUT_HIGH);
+> b)	usleep_range(200, 300);
+> c)	gpiod_set_value_cansleep(reset, 0);
+
+Correct.
+
+> If I understand correctly:
+> a) configures the pin as an output, and sets it to LOGICAL HIGH, i.e. PHY=
+SICAL LOW
+> b) keeps the RESET_N signal at PHYSICAL LOW for 200-300 =B5s
+> c) sets the pin to LOGICAL 0/LOW =3D PHYSICAL HIGH
+
+-- =
+
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps =
+up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
