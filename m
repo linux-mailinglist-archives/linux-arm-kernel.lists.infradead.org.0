@@ -2,80 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B532111A68F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:14:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA0B211A692
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:15:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LraccdV1j3/29zYr/G0YiTQ4cQwWPJVneG+MkK1ue6U=; b=VKrmZmOfrQAuV7
-	mOinkAbXBpzgGemAbEp+qK0sgbW4ZvKfLA6zWOvOdkcz4CTmjv5oyHRAux8+7pHKMXINoLPskV3gY
-	rU4E8JNjCABf9gEswH4m67j1s/N8rjlIM5H3SMChzGfitnocR40frnl3eQjGn7bn+qv2/RIyFZTgu
-	AXNmmzVdygaeFqbIQVAwNLCfLVY6Hemt4HIN5quaViwjxLNyT/5MA5IZUv2MtKvPOcUSjeiING6t0
-	z6HpNLmEZ0+H5YGSGBdxdloYov8luK+51+hNu3RwTwoGXG2jYhL+sIpHEvN6r62bi+2Jh+5yT6QUx
-	aUUQvxxcTVNsDrGv7bXg==;
+	List-Owner; bh=ddcP+IgvvXXEmkr0Lw+Sw20ztApk5KtVYAhmZYV2dNQ=; b=KZ9rp+viEI1KgI
+	qu3hpVjKotMuqtzt8tPlLAKw4PLCn4CKiBQdmdfcl3RfFkJaBcIm7y55HEUHWdWFwWtz/jHV06C1H
+	BYQtAU562x4Qljhbct76irBflv67Xq2ks+sqQY5ribuTTxTsgBrpSdDlaw20MXwHl1OrllN6IyV5N
+	Djht7rEhqcFWO4n0QE4zw47kuDpMk5dyDQYs2kv5RUpJBFGQj3Htl4Fk0wjYClIOKi9bZu/ihWQtl
+	imGhMCrEwRsfj3S4WS95AnRKASZe0otnybpeEPSBtWY6Xm5l/9Gofi3kRQ25FIeaS2ak8S4wGWJhG
+	uZtR/e6sz/gYMiPSHZtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iey4s-0000zQ-Hz; Wed, 11 Dec 2019 09:14:38 +0000
-Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
+	id 1iey5E-0001HU-Re; Wed, 11 Dec 2019 09:15:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iey4k-0000yj-4V
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:14:32 +0000
-Received: by mail-qv1-xf44.google.com with SMTP id t7so5428770qve.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 01:14:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=r0gVQXuC6a8DJTUTEo5suxWb6NqvG3m1Y5eO4L17BxU=;
- b=bNjp2CSwAwJBRkHlE21fA2+oQHaa1seGpALK5gMpFZBRUweh616cc6A6NjuV3+jP7t
- g+avl1kCd9byKb6OLRWoCARmcnjUMCDWZEVNMYHwcwq2N14q+0Zs5gKmbn2v8QLkXlTu
- qYT1j3fhiE+HvHPvq+5C8dY3pDcfH8rPaHt6qHrXYFCzpU3tQuLtDKmRQXWEU0wL1bu3
- XD9Fpr5nzGis98WDLXJ2dEtgi9E9jwJki0nduViVaSEEfNJCDk7B2WzJW4nUmbeKRtSE
- EwrMoY4b/3ywG1wFw8EbFjXcoFkI0JmL0qp722LB/JC0izmuz7ikSSrBNnztdHuLMnYW
- 93cQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=r0gVQXuC6a8DJTUTEo5suxWb6NqvG3m1Y5eO4L17BxU=;
- b=RpOcwr/cSO78Rl6Qh/q8ZxdhBxHwOjrumU2OEkdLAaKlgXJYT1FYzsmUznQXVsHvix
- BNYADbdwrK5Bpf0RYu8gsQjVrVOUYrh0hYL/fL6iyxca3C7erF+76a5BI+bz3pCiovJj
- qEwEgyC0AO8DdVt3Sn8smE4hEu/1dLhsFgZxOkxDBrU+a7I3lU/xhldy5nie4LWCreVX
- SKm30K1TrNA/ps9/A4M//U7/o/O4hqPQwHMSb0FCqYerVdLcx8Y0Qs1isefOCt3vJDDC
- u/G3o3/ZEVmLjallPWFnUXSymx8/M1rC6qMA8SPATckTXUj4U4qjF2XBdn8ntskBFEML
- PYIw==
-X-Gm-Message-State: APjAAAXxWlDT4eV/3u8yFU4HSRX64SbLWdMofay4z02WUTcPVV7/b6uh
- 8GPr6r1P9tNo9ZaTRLrOiR8SJkkOutuCKTPd0tL/cQ==
-X-Google-Smtp-Source: APXvYqzjKg+vHur/oJLRJqO8JGriJMPsHU3Yxw2c45bVX3cqASfK5p6p7v8TgWUig6+CE+I07XNmKBR7AxR/u500qXY=
-X-Received: by 2002:a0c:f990:: with SMTP id t16mr1951160qvn.134.1576055669090; 
- Wed, 11 Dec 2019 01:14:29 -0800 (PST)
+ id 1iey53-0001GF-Ob
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:14:51 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C3CD2214AF;
+ Wed, 11 Dec 2019 09:14:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576055689;
+ bh=sWqE+PcnhDwEJHLDzeVDWNdfl/id8Y+dl/d6YHFPhmA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=mKolWP6/zNkaJDAq1mr0n9oO24i8kaPsJRDd3Dp/NZYOY7F9QumKj2uIhdgdsLMQu
+ VZ+HrToPi4ZuQeae+gCZnhKKsFTFQTeETG9LbIfEuldpN/50LPbIfDXyawdzRESIsw
+ fhqzZ4d6Md+Phzj1BzeVO5L+MidMps2jm/E3xrCM=
+Date: Wed, 11 Dec 2019 17:14:35 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: "Y.b. Lu" <yangbo.lu@nxp.com>
+Subject: Re: [PATCH v1 3/4] arm64: dts: ls1028a: fix little-big endian issue
+ for dcfg
+Message-ID: <20191211091433.GU15858@dragon>
+References: <20190814072649.8237-3-yinbo.zhu@nxp.com>
+ <20191210000623.22321-1-michael@walle.cc>
+ <VI1PR0401MB2237D2D6708807511BDB8788F85B0@VI1PR0401MB2237.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <20191210195414.705239-1-arnd@arndb.de>
- <01669f6c5d0e40c7a410da2dcce6c9e825e4a1d4.camel@alliedtelesis.co.nz>
-In-Reply-To: <01669f6c5d0e40c7a410da2dcce6c9e825e4a1d4.camel@alliedtelesis.co.nz>
-From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Date: Wed, 11 Dec 2019 10:14:18 +0100
-Message-ID: <CAMpxmJVuN5vqA1j0ddpctJQJJMPu1EnakduO2rJnBo3Ao==Enw@mail.gmail.com>
-Subject: Re: [PATCH] gpio: xgs-iproc: remove __exit annotation for
- iproc_gpio_remove
-To: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+Content-Disposition: inline
+In-Reply-To: <VI1PR0401MB2237D2D6708807511BDB8788F85B0@VI1PR0401MB2237.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_011430_333457_D02DCD5D 
-X-CRM114-Status: GOOD (  10.63  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_011449_834923_6EB09E46 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,37 +80,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "arnd@arndb.de" <arnd@arndb.de>,
- "scott.branden@broadcom.com" <scott.branden@broadcom.com>,
- "rjui@broadcom.com" <rjui@broadcom.com>,
- "yoshihiro.shimoda.uh@renesas.com" <yoshihiro.shimoda.uh@renesas.com>,
- "yuehaibing@huawei.com" <yuehaibing@huawei.com>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "Amit Jain \(aj\)" <amit.jain_1@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "broonie@kernel.org" <broonie@kernel.org>,
- "bcm-kernel-feedback-list@broadcom.com"
- <bcm-kernel-feedback-list@broadcom.com>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ Rajesh Bhagat <rajesh.bhagat@nxp.com>, Alison Wang <alison.wang@nxp.com>,
+ Alexandru Marginean <alexandru.marginean@nxp.com>,
+ "catalin.horghidan@nxp.com" <catalin.horghidan@nxp.com>,
+ Ashish Kumar <ashish.kumar@nxp.com>, Xiaobo Xie <xiaobo.xie@nxp.com>,
+ Claudiu Manoil <claudiu.manoil@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "rajat.srivastava@nxp.com" <rajat.srivastava@nxp.com>,
+ Vabhav Sharma <vabhav.sharma@nxp.com>, Michael Walle <michael@walle.cc>,
+ Jiafei Pan <jiafei.pan@nxp.com>, Leo Li <leoyang.li@nxp.com>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ Yinbo Zhu <yinbo.zhu@nxp.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-d3QuLCAxMCBncnUgMjAxOSBvIDIxOjI0IENocmlzIFBhY2toYW0KPENocmlzLlBhY2toYW1AYWxs
-aWVkdGVsZXNpcy5jby5uej4gbmFwaXNhxYIoYSk6Cj4KPiBPbiBUdWUsIDIwMTktMTItMTAgYXQg
-MjA6NTQgKzAxMDAsIEFybmQgQmVyZ21hbm4gd3JvdGU6Cj4gPiBXaGVuIGJ1aWx0IGludG8gdGhl
-IGtlcm5lbCwgdGhlIGRyaXZlciBjYXVzZXMgYSBsaW5rIHByb2JsZW06Cj4gPgo+ID4gYGlwcm9j
-X2dwaW9fcmVtb3ZlJyByZWZlcmVuY2VkIGluIHNlY3Rpb24gYC5kYXRhJyBvZiBkcml2ZXJzL2dw
-aW8vZ3Bpby14Z3MtaXByb2MubzogZGVmaW5lZCBpbiBkaXNjYXJkZWQgc2VjdGlvbiBgLmV4aXQu
-dGV4dCcgb2YgZHJpdmVycy9ncGlvL2dwaW8teGdzLWlwcm9jLm8KPiA+Cj4gPiBSZW1vdmUgdGhl
-IGluY29ycmVjdCBhbm5vdGF0aW9uLgo+ID4KPiA+IEZpeGVzOiA2YTQxYjZjNWZjMjAgKCJncGlv
-OiBBZGQgeGdzLWlwcm9jIGRyaXZlciIpCj4gPiBTaWduZWQtb2ZmLWJ5OiBBcm5kIEJlcmdtYW5u
-IDxhcm5kQGFybmRiLmRlPgo+Cj4gUmV2aWV3ZWQtYnk6IENocmlzIFBhY2toYW0gPGNocmlzLnBh
-Y2toYW1AYWxsaWVkdGVsZXNpcy5jby5uej4KPgo+IFdoYXQncyB0aGUgY3VycmVudCBiZXN0IHBy
-YWN0aWNlIHcuci50Ll9faW5pdCBhbmQgX19leGl0PyBJIHNlZW0gdG8KPiBoYXZlIG1lc3NlZCB0
-aGlzIHVwIG9uIG11bHRpcGxlIGZyb250cy4KPgoKQXBwbGllZCBmb3IgZml4ZXMuCgpCYXJ0b3N6
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+On Tue, Dec 10, 2019 at 02:34:30AM +0000, Y.b. Lu wrote:
+> + Shawn,
+> 
+> > -----Original Message-----
+> > From: Michael Walle <michael@walle.cc>
+> > Sent: Tuesday, December 10, 2019 8:06 AM
+> > To: Yinbo Zhu <yinbo.zhu@nxp.com>
+> > Cc: Ashish Kumar <ashish.kumar@nxp.com>; Alexandru Marginean
+> > <alexandru.marginean@nxp.com>; Alison Wang <alison.wang@nxp.com>;
+> > Amit Jain (aj) <amit.jain_1@nxp.com>; catalin.horghidan@nxp.com; Claudiu
+> > Manoil <claudiu.manoil@nxp.com>; devicetree@vger.kernel.org; Jiafei Pan
+> > <jiafei.pan@nxp.com>; Leo Li <leoyang.li@nxp.com>;
+> > linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org;
+> > linuxppc-dev@lists.ozlabs.org; mark.rutland@arm.com;
+> > rajat.srivastava@nxp.com; Rajesh Bhagat <rajesh.bhagat@nxp.com>;
+> > robh+dt@kernel.org; Vabhav Sharma <vabhav.sharma@nxp.com>; Xiaobo Xie
+> > <xiaobo.xie@nxp.com>; Y.b. Lu <yangbo.lu@nxp.com>; Michael Walle
+> > <michael@walle.cc>
+> > Subject: Re: [PATCH v1 3/4] arm64: dts: ls1028a: fix little-big endian issue for
+> > dcfg
+> > 
+> 
+> [Y.b. Lu] Acked-by: Yangbo Lu <yangbo.lu@nxp.com>
+> 
+> Hi Shawn, could you help to review and merge the two dts patches of this patch-set?
+> Thanks.
+
+Please resend them with me on recipients.
+
+Shawn
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
