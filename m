@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2842C11A698
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:16:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2010A11A69C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:17:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QKCzYyP+zNbyMhJeJKEMJQrdHiyBOGP+pMsop2tZhKY=; b=i8qLAiTk24cuZN
-	ES9V/hXzcpEhR2LPElGwOFZou/sNf4tbk52FDNVU8xl71dYQalf+MY/6XxlpA3ZEnI26qbxasQiG+
-	Zip19I+4sPMPsvJshBiWhKRbEg3CEqrI1A5DiBsr8VfbGH+dv1Vssz7dIQcOZ24SJboj+EiwVjasC
-	dk/bELzbO6tff6BMTuEfdIwqHtI3Ihdbb4vWq0pWBa//Jo4Ovd+BRG9SIUxUgjUusLtsGn0npIggJ
-	d0BRkeyBJ9jG7gD2ngwx3FvvNNRLI1Lf92Wi6tgh3uTAHb+MoJ35IoCKiwWCBjZos9eJOiwX52ka/
-	rAoFycUu1aXvZP5IxzmA==;
+	List-Owner; bh=xGaVMXNkhIecSIR/jsT64gjNMTjUP9DREDMAi0opZeA=; b=osZ5ZT1KhGmy/7
+	qT+dRAiFh/92Us4tgxUwirnH98qpLvzOcgfLiTR2CnC1ydGlcwcNhtxWh12IB8wH4n1ek4ZurSFE1
+	5ZSE1T15zv5w+kjIFDVKVEh0WzconaR5vZuHgZKqeFjPNfemWXt2eJjaKahg6CBjmuDf+obAThFFx
+	v8xo3LXmWvHD/eI4ZqYMlXF8agIuQAuiMtfAx/vxBFWBEZgrfHrjghPR1CxLdfckLOUQb5rIhscqW
+	jra98qx0GR0Bk+D0Spr62c3nUHYp/KFtYIvF3rXmnefsi7dZRvm6oq6qsUzYPbsh3fWhaZAB/j1+4
+	o9zDKQORikXWjK28PyOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iey6y-0003Ew-Uk; Wed, 11 Dec 2019 09:16:48 +0000
+	id 1iey7J-0003Um-J6; Wed, 11 Dec 2019 09:17:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iey6q-0003EE-JH
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:16:41 +0000
+ id 1iey79-0003Tn-Fe
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:17:00 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3CE58214AF;
- Wed, 11 Dec 2019 09:16:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CA294214AF;
+ Wed, 11 Dec 2019 09:16:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576055800;
- bh=kOERCDjA00aG8Ioga+ne2Tj7EeKJabiHflhZVyi4e10=;
+ s=default; t=1576055819;
+ bh=kj+qx89zaMyUD9oKXKDD+HUhzoTArIEgWz6C9wC7zmU=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=QCuTKGDstLhwyH6nYr4xaDdAtGMJHSs3zygvBjfCESAPG1VH0oEh7xCT0xUFent04
- ltKTQTEWfkcdZe+a0Gbcc0ETgWEbaKXazF5vaTslmStBrW1KcQwlpVoCf8B0KB3+rG
- 6lYgkRrsYWCvoJBn3dGPb8m8gq+Ax4WVPFC42sPM=
-Date: Wed, 11 Dec 2019 17:16:30 +0800
+ b=UP4FUUL+vK4L0G6KVpix9Cu83sXXr3LhOX75HqqwfyZJdiIqZ2nxINgjgJQTFtQ0g
+ XyPTM3m8duiAKuetKlnjzRxmUyXSOpwqqYKBszj2ONjRN/ulR5TwCkkIHNWvdjqcsC
+ RYGUhxOKFHMmOL6AJt81RihL9VxD04513YFRPOAA=
+Date: Wed, 11 Dec 2019 17:16:50 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Michael Walle <michael@walle.cc>
-Subject: Re: [PATCH v2 1/5] arm64: dts: ls1028a: fix typo in TMU calibration
- data
-Message-ID: <20191211091630.GV15858@dragon>
+Subject: Re: [PATCH v2 2/5] arm64: dts: ls1028a: add missing sai nodes
+Message-ID: <20191211091649.GW15858@dragon>
 References: <20191209234350.18994-1-michael@walle.cc>
- <20191209234350.18994-2-michael@walle.cc>
+ <20191209234350.18994-3-michael@walle.cc>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191209234350.18994-2-michael@walle.cc>
+In-Reply-To: <20191209234350.18994-3-michael@walle.cc>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_011640_660006_A0B17BB1 
-X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-CacheID: sfid-20191211_011659_541219_AAF0F08B 
+X-CRM114-Status: UNSURE (   7.41  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -88,16 +87,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 10, 2019 at 12:43:46AM +0100, Michael Walle wrote:
-> The temperature sensor may jump backwards because there is a wrong
-> calibration value. Both values have to be monotonically increasing.
-> Fix it.
+On Tue, Dec 10, 2019 at 12:43:47AM +0100, Michael Walle wrote:
+> The LS1028A has six SAI cores.
 > 
-> This was tested on a custom board.
-> 
-> Fixes: 571cebfe8e2b ("arm64: dts: ls1028a: Add Thermal Monitor Unit node")
 > Signed-off-by: Michael Walle <michael@walle.cc>
-> Acked-by: Tang Yuantian <andy.tang@nxp.com>
 
 Applied, thanks.
 
