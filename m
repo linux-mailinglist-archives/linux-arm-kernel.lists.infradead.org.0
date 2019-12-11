@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C01B311A13B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 03:17:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3E2611A13E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 03:17:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+POxbjk4uMCdcErjOvU2H+DfuDa72XgtKBqXF/kAmgA=; b=WpzkX0wWTkfJE3YNjMouSO1nV
-	lmLv/KxCwNJ/bcQE5/6YUxHbIoN7ynnq31qnW2w590QATDIII3g6cu1dMWbsGugQE8xi4LsrhRX+4
-	9tS23HuXnJD6cEK7nEPYwcYOruJf3Ee31wwT4owllz8DBjkSuSBoBxU+DfgYtx/qT5Biqkzj/msWA
-	5o+G41g0/6gsTLjv86M038lcasdUUBVDWxVnn7cSFt7UTB4RqAXl6MOrA46Esyb61JZODJD98U7qs
-	7lmw4bR7A5kAM0VPeMuGcDuMMYGzEZjmM5opRhXFxdozpeBdNztRMZ76fsT84LnuZ2gqXeTHOnhqX
-	tb/wX3x7Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JN186AwUOJCjZUH0S4AtZVXJJnyWuRICf8n+2HEFzBc=; b=j8nkxkoCJqSleP
+	0b/6X8sD62kJd/C13MUqVFZBSAtuVzBXVsRXPAyviXH63NgY9R1kulgknx+Q3EuN6KRcDOResTPjg
+	MLd6BuyRFpJ8xWzDXgUdBg2aHSB05Wc+G++DFUOtZ84gvooIcrAvyHX2WKyQrZh8pnaqdZKIGtUpU
+	PN0x51K/CNCU+wJo/hwWI/suSzYk/uh0oOj5C2pYdM7isw6sDELdHppEC9fSao6GG/EqAfdf16RVk
+	oHrg0WvWSknai1R5+e5OAxOraDXq6tUN2WN/JvuIFHQKFeTeyhYl5Xw6nY/h20ZVlZzIZ9oI0eA7y
+	bsKtV6XWFLDrblmPN3lQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ierYc-000748-1O; Wed, 11 Dec 2019 02:16:54 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1ierZW-0007P5-C4; Wed, 11 Dec 2019 02:17:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ierYR-00073X-Ru; Wed, 11 Dec 2019 02:16:45 +0000
-Received: from [10.28.39.99] (10.28.39.99) by mail-sz.amlogic.com (10.28.11.5)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Wed, 11 Dec
- 2019 10:17:13 +0800
-Subject: Re: [PATCH] arm64: dts: meson-a1: add I2C nodes
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-References: <20191202111253.94872-1-jian.hu@amlogic.com>
- <1j8snkh4cz.fsf@starbuckisacylon.baylibre.com>
-From: Jian Hu <jian.hu@amlogic.com>
-Message-ID: <be7f27d2-5601-0d0c-9c62-7206e7de0411@amlogic.com>
-Date: Wed, 11 Dec 2019 10:17:12 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1ierZN-0007OV-L2
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 02:17:42 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8B743206EC;
+ Wed, 11 Dec 2019 02:17:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576030660;
+ bh=nsAKjl153J0JJUCjGK9PiMgZyuqUToi/dFZG+kBnD8Q=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=FB4e1hbKhPhj0z40cj0Hmp0JwXqAAWSkrUd6Gu3DIpVTKk9P0tLagZQwdKff4I755
+ HdwmwRM+w1AUJZ1p0iOldxPBwPpgWx65e0HyRMuogibSzFwMcudvXh9e0y/QTzyvnS
+ p+BpHxjJP5i7DLd9syIB+TI0U5bZebie0jVv3s7k=
+Date: Wed, 11 Dec 2019 10:17:23 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Michael Walle <michael@walle.cc>
+Subject: Re: [PATCH] arm64: dts: ls1028a: fix reboot node
+Message-ID: <20191211021722.GA15858@dragon>
+References: <20191123000709.13162-1-michael@walle.cc>
+ <20191209034722.GZ3365@dragon>
+ <67346b48fa7e236ea31e3ecb1a108f28@walle.cc>
 MIME-Version: 1.0
-In-Reply-To: <1j8snkh4cz.fsf@starbuckisacylon.baylibre.com>
-Content-Language: en-US
-X-Originating-IP: [10.28.39.99]
-X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
- (10.28.11.5)
+Content-Disposition: inline
+In-Reply-To: <67346b48fa7e236ea31e3ecb1a108f28@walle.cc>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_181643_904229_BEA396EC 
-X-CRM114-Status: GOOD (  10.94  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191210_181741_709640_0F9D4473 
+X-CRM114-Status: GOOD (  11.98  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,59 +78,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Jianxin Pan <jianxin.pan@amlogic.com>, Wolfram Sang <wsa@the-dreams.de>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, linux-i2c@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi jerome
+On Mon, Dec 09, 2019 at 10:02:02AM +0100, Michael Walle wrote:
+> Am 2019-12-09 04:47, schrieb Shawn Guo:
+> >On Sat, Nov 23, 2019 at 01:07:09AM +0100, Michael Walle wrote:
+> >>The reboot register isn't located inside the DCFG controller,
+> >>but in its
+> >>own RST controller. Fix it.
+> >>
+> >>Signed-off-by: Michael Walle <michael@walle.cc>
+> >>---
+> >> arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 8 +++++++-
+> >> 1 file changed, 7 insertions(+), 1 deletion(-)
+> >>
+> >>diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> >>b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> >>index 72b9a75976a1..dc75534a4754 100644
+> >>--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> >>+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+> >>@@ -102,7 +102,7 @@
+> >>
+> >> 	reboot {
+> >> 		compatible ="syscon-reboot";
+> >>-		regmap = <&dcfg>;
+> >>+		regmap = <&rst>;
+> >> 		offset = <0xb0>;
+> >> 		mask = <0x02>;
+> >> 	};
+> >>@@ -161,6 +161,12 @@
+> >> 			big-endian;
+> >> 		};
+> >>
+> >>+		rst: syscon@1e60000 {
+> >>+			compatible = "fsl,ls1028a-rst", "syscon";
+> >
+> >Compatible "fsl,ls1028a-rst" seems undocumented?
+> 
+> it is the same with fsl,ls1028a-scfg and fsl,ls1028a-dcfg. So maybe
+> I should just drop the "fsl,ls1028a-rst". What do you think?
 
-Thanks for your review
+Drop it or document it.  I'm fine with either way.
 
-On 2019/12/10 18:17, Jerome Brunet wrote:
-> 
-> On Mon 02 Dec 2019 at 12:12, Jian Hu <jian.hu@amlogic.com> wrote:
-> 
->> There are four I2C controllers in A1 series,
->> Share the same comptible with AXG.The I2C nodes
->> depend on pinmux and clock controller.
->>
->> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
->> ---
->>   arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 149 ++++++++++++++++++++++
->>   1 file changed, 149 insertions(+)
->>
->> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
->> index eab2ecd36aa8..d0a73d953f5e 100644
->> --- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
->> +++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
->> @@ -16,6 +16,13 @@
->>   	#address-cells = <2>;
->>   	#size-cells = <2>;
->>   
->> +	aliases {
->> +		i2c0 = &i2c0;
->> +		i2c1 = &i2c1;
->> +		i2c2 = &i2c2;
->> +		i2c3 = &i2c3;
->> +	};
->> +
-> 
-> I wonder if assigning i2c bus alias in the SoC dtsi is such a good idea.
-> 
-> Such aliases are usually assigned as needed by each board design:
-> meson-a1-ad401.dts in your case.
-> 
-You are right, I will set i2c bus alias in dts file.
-> .
-> 
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
