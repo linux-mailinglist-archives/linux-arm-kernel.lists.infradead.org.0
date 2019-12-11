@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E13C211BDF9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 21:32:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D78E311BDFB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 21:33:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=l5J8+otcrXd1oNEUWIF+btEMw/JMNGVTgETYm0woWTA=; b=L0XLuRv8xJVNlb2BzfLP4iHMLj
-	97t+c1pYcH+5eXzR+GxZeROHoSRpuYSn52EQP4SyuZfdmTFysfyaWoSUZBC6sVnpf770QTOv9GAuT
-	yd+P4w5KECuWfR28hDabzdqrxMSmr41mlrS2HpABdeOZxv8ar8xiX3F4rzNcqOyGorAmrW2Mo0pPz
-	G+kkGaZR3npZXR+wGLTTVoU5kl4fZDPwiWmOkhSIv9KY++fwYB9z77NLbOi/+7vB1N/EpAryeMUgJ
-	wiuDU3jqSCZU+dTE3BI4Ntv8QZzLEK5RJZxcZaNUIUPB4Z5nxK152MjUcGdJeP+DEzqirTrZGYZ5d
-	nkduNMrw==;
+	bh=wa0xY/rSwxEQpv9t5wXyEnNYpd6A0gCJTr2FoWoyv4Y=; b=qDA/ICApJ3hUcrKgwJs3VvBctm
+	87+tiyHpuYgr9eyN/LcZYfNF/DbqUeoyIP+B+2DpBSyQOIeckCubnxjekmOpkLwmOGUcd46uYXNl0
+	I1QT+pucO5BQuSNG4PViQBJci9suzQE+GHPtlE9ItNW9V79tgCRz6XAon4zn/8ZdNaDUw+Dgv8GoB
+	lDJjWO3nNIjZWX7DfhS6N/9fm1swAGGtHo+AJ8dUZ1trw6ZiyIgQloshTNhVvwNIBt2cJkOFl3KLA
+	AtO+KBsXiqjh6Zd1VzkjsOl9NG3/uOvmfG8Vz9roRYecEqCKxWchwJY8iurAZTuLZO+GIM/lUHy/M
+	5ROzkj4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if8fH-0000Ti-Mu; Wed, 11 Dec 2019 20:32:55 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1if8fX-0000jY-1u; Wed, 11 Dec 2019 20:33:11 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if8eO-0008G0-VR
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 20:32:02 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id ep17so40772pjb.4
+ id 1if8eP-0008HL-VM
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 20:32:03 +0000
+Received: by mail-pl1-x644.google.com with SMTP id a17so39181pls.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 12:32:00 -0800 (PST)
+ Wed, 11 Dec 2019 12:32:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/SGLTAdZJn5EJy2JzHgzjK5/AJ+qkCVgDvB3ahQxnHQ=;
- b=b7yOoaL4G/ALvz/vNUlr2OeqNIasR8tlfumfduHUCFAHMOnxwtwF3SoUwldWsEaQ4R
- LvW812GkycQioVyIoAeViSehBhLN1Q1fYMklkMS1CLAqfAfhQa7oJFT7DMvMrZaKAb7j
- NmDSJEeyjRRMw6m2gmWMK31DqM0KmM1u85/KojBSQKtdXCVhFcQZgfC3jqKuJ9EC8KLf
- eG1TR6a96w3YAz3FtgejTRo7Cs4j71tlDnUpbI3criKCOOGkRDoPZfN/+hysMy4D7IAw
- CMLHltGp9hLhs0O75keqJ074R+i9CYm6esB68cymsYt+Q3mKtu4NS5r/EJ7VPoC6ETh0
- o+og==
+ bh=0+ZNbiTOOC7n+yoMJbbexSm1sD8dYoDxAphQh0Gx9Wk=;
+ b=d3b4d/7L2CRwAcKwGLpCgZrLZuRldlGySqCDYcmTnmibFchSRNNwAe7x7V6NddqiPJ
+ 5NFe62AAv65r+m12799xKg1D3Mh1FE8rlX4zHOv20aiXeTHZY/+33M1hdRr2WOaty65b
+ qG/302JAWhNiUoRLmvPzejIC/SGjfeTnftDEdJ9BRtM20rdVBgdoa1DBS3rozw64+JXa
+ pfkfOB7g4AeaG3GkIwCswaU2qGHUQDzfe374bAtDVaTfsRQeE68qBUYVKjvyvy/VzRC2
+ EdiqMeu8hGJXgENSI31l/9Ihsh05XnY6GJ8GF8C4xaNoVqIE2S+r3H06obBppYHud4G+
+ nTtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=/SGLTAdZJn5EJy2JzHgzjK5/AJ+qkCVgDvB3ahQxnHQ=;
- b=b8bDrVh35MA/ZlrZtMau29wFLipPTqWj7jgNMkkIWJTkYCjO9yZscTKJE4Yves8URu
- kXERdVa3m0BiwwHqWpNlRSUeujGZ0S/UIN3GseST6l0TPnyJ8380bVtT1FnCms+iv9kS
- O2eW388C4WJrRcZggSNaESeM1TIzh4Y0sQttH98hE7JDvEQ70RwZeXTOp4mxgR3wnBcK
- jaVCIpDceYiBRm9I/p83aekEOER86JbluhqNu3WBFUxY374bQ5b7Usia5HXWXNbFtyRD
- OUUdaLzXqlbp0Mgxlb/LonjwYcXVqfxUbkiKdET4wL8JXTtX3UNoKOVpXDsDXBq7bQoQ
- nydQ==
-X-Gm-Message-State: APjAAAWa5DUvclsnV6PQSLoNhrCB0L4WWF6pt393kLnDwh7hPTtPuLsI
- J4qsp9XEZwTUDfWCLAQ2PbUHvZ9r
-X-Google-Smtp-Source: APXvYqx/G7SPF+0fLJkFR2jINi/QVILifYW6VvhXLrfs0TC+JDl93K7sIkMmJpc9bSFgNrKj/zRX8g==
-X-Received: by 2002:a17:90a:7bc3:: with SMTP id
- d3mr5804634pjl.86.1576096319788; 
- Wed, 11 Dec 2019 12:31:59 -0800 (PST)
+ bh=0+ZNbiTOOC7n+yoMJbbexSm1sD8dYoDxAphQh0Gx9Wk=;
+ b=H++OPvPz45ZdG91xxxd0WdlQofvyu2Tw+zqIBqiXAu/KUe7qU1GeVPNJ+6HfmzqAjp
+ GpyUaldwP0qF2SMVkU6bzC9Rc0uC2avUda83sajmvE2FyWmBODVDHSOr56dMp3R9cPsu
+ zK9M03KB+/DkyAz1ylO1+/ruE/opnIV/U6+BDIOStA5OZ3GSz+McDj+taRlnb4fJOz/i
+ 9km1bE/gJ+QgNiFMBiWVEybv89xitzlQpxptlNi2JMpZpms7xtCWD+WA4N3cHXUxdD+I
+ h3vgc7zpQ95cSAlLP1ktDGM4hhE2dlQn3FevatjZ80W/yUXuxyEaf8yK1BydXI6QbBq7
+ 3Log==
+X-Gm-Message-State: APjAAAVUBrauXjB+5REPmscvCAAzBLBwcNr0ADHxIk187IBfQ3Cjgiwk
+ YOaoCtpPSaXB6jQYaZ9U7Aq051+E
+X-Google-Smtp-Source: APXvYqwoG0SV8AaTyS0uTCKYn3q7bdAhdrRAzF28+g5XNW0W8G5/JNPvA8EVwJ6sRjadcY5I6QQaSA==
+X-Received: by 2002:a17:902:222:: with SMTP id
+ 31mr5308114plc.117.1576096321068; 
+ Wed, 11 Dec 2019 12:32:01 -0800 (PST)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id a19sm917570pju.11.2019.12.11.12.31.58
+ by smtp.gmail.com with ESMTPSA id a19sm917570pju.11.2019.12.11.12.31.59
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Dec 2019 12:31:59 -0800 (PST)
+ Wed, 11 Dec 2019 12:32:00 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org,
 	daniel.lezcano@linaro.org
-Subject: [PATCH v2 3/6] dt-bindings: thermal: Define BCM7216 thermal sensor
- compatible
-Date: Wed, 11 Dec 2019 12:31:40 -0800
-Message-Id: <20191211203143.2952-4-f.fainelli@gmail.com>
+Subject: [PATCH v2 4/6] thermal: brcmstb_thermal: Add 16nm process thermal
+ parameters
+Date: Wed, 11 Dec 2019 12:31:41 -0800
+Message-Id: <20191211203143.2952-5-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191211203143.2952-1-f.fainelli@gmail.com>
 References: <20191211203143.2952-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_123201_069662_53D58300 
-X-CRM114-Status: GOOD (  11.15  )
+X-CRM114-CacheID: sfid-20191211_123202_075517_980DB60F 
+X-CRM114-Status: GOOD (  11.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (f.fainelli[at]gmail.com)
@@ -113,35 +116,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BCM7216 is a 16nm process STB chip, which requires a different
-compatible string to differentiate different temperature formulas.
+Match the 7216 compatible string in order to derive the correct 16nm
+process thermal parameters to obtain correct readings.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../devicetree/bindings/thermal/brcm,avs-tmon.txt         | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ drivers/thermal/broadcom/brcmstb_thermal.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/thermal/brcm,avs-tmon.txt b/Documentation/devicetree/bindings/thermal/brcm,avs-tmon.txt
-index 43a9ed545944..74a9ef09db8b 100644
---- a/Documentation/devicetree/bindings/thermal/brcm,avs-tmon.txt
-+++ b/Documentation/devicetree/bindings/thermal/brcm,avs-tmon.txt
-@@ -3,9 +3,13 @@
- Thermal management core, provided by the AVS TMON hardware block.
+diff --git a/drivers/thermal/broadcom/brcmstb_thermal.c b/drivers/thermal/broadcom/brcmstb_thermal.c
+index 68f89f7c7e7f..74d94f01b1b9 100644
+--- a/drivers/thermal/broadcom/brcmstb_thermal.c
++++ b/drivers/thermal/broadcom/brcmstb_thermal.c
+@@ -292,12 +292,18 @@ static const struct thermal_zone_of_device_ops of_ops = {
+ 	.set_trips	= brcmstb_set_trips,
+ };
  
- Required properties:
--- compatible: must be "brcm,avs-tmon" and/or "brcm,avs-tmon-bcm7445"
-+- compatible: must be one of:
-+	"brcm,avs-tmon-bcm7216"
-+	"brcm,avs-tmon-bcm7445"
-+	"brcm,avs-tmon"
- - reg: address range for the AVS TMON registers
--- interrupts: temperature monitor interrupt, for high/low threshold triggers
-+- interrupts: temperature monitor interrupt, for high/low threshold triggers,
-+	      required except for "brcm,avs-tmon-bcm7216"
- - interrupt-names: should be "tmon"
++static const struct brcmstb_thermal_params brcmstb_16nm_params = {
++	.offset	= 457829,
++	.mult	= 557,
++};
++
+ static const struct brcmstb_thermal_params brcmstb_28nm_params = {
+ 	.offset	= 410040,
+ 	.mult	= 487,
+ };
  
- Example:
+ static const struct of_device_id brcmstb_thermal_id_table[] = {
++	{ .compatible = "brcm,avs-tmon-bcm7216", .data = &brcmstb_16nm_params },
+ 	{ .compatible = "brcm,avs-tmon", .data = &brcmstb_28nm_params },
+ 	{},
+ };
 -- 
 2.17.1
 
