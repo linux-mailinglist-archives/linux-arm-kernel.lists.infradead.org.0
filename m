@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C03B511B0E6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:27:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 682A311B0FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:27:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rPYSDQxJEb0iXwv3F/Zzs0od1FT5iKKWCEjPi4ElUYo=; b=Ufzgd2mVqjhKcM
-	mtbaZiBJ3PKCiu6h3tXnnQrhwQwbEcevrOqsXEgzbPCG7SDQKjeQMx5n1xNLBoQ4NUViYgrhFc8+i
-	P8Htfver+wxuZEnYGN8kdEnXniGriSY1rFQZkhiWyXruaxzm0j8grN5v2nnmmxFRmVzQu87OvkOVw
-	WUt8RyrXw3HOoFGBdSJU4eKEXcGe2oFmaEMRRwV239hgG9FKVCqmD1BH6OUT+jaeZULF5BtG7mcnd
-	laG/CNdm/GEA436u853jru8ypsL8uJi/vjd5fT+a14CmcL83XpwqqJcvpuI5MtEEFNbGaNBmmY8Mv
-	//P5IW57igpCbW3emwjQ==;
+	List-Owner; bh=RPVQQ7pMJ0vPrJ7nAUEHcLNeWz/gYNfAp7auKvTbBUA=; b=scGw5Rgwez/DgS
+	dVfgi/d8g7iuibHB4en/E2jkXluAtunaff/lZ5RMtqJNwcTPgpwds+mx954GYqkaVzb4SPfJqn2Hr
+	9ixI1oXW+C3bJsH3aV/vW2EVZVkTuAEmvDSuhKhn4tBDWZDd4u5QgeRHt4iU+nq2ZR+QSdeS/8Gov
+	5ZMTwNg+8Upz1KoI6EF5K78q7NQ1tltvb3QsHYaw2+zKMtnW5Ona19UdgR5ZgWzBxvnNZLJpKduqA
+	at/Qe8WYl436uynBa1LxZAMLLXqdBGqlaaIqSk9Yl0Qj2rXNHnqCkjJfR5AMShEaX9otIBY2Y23ut
+	QRDM7/R9WuD8CdccWZ+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if3tR-0003wh-OY; Wed, 11 Dec 2019 15:27:13 +0000
+	id 1if3tx-0004Oz-5j; Wed, 11 Dec 2019 15:27:45 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if3t7-0003kv-Kl
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:26:55 +0000
+ id 1if3tq-0004Nf-05
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:27:39 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 883792465A;
- Wed, 11 Dec 2019 15:26:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F1C06222C4;
+ Wed, 11 Dec 2019 15:27:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576078013;
- bh=vJYi5Cf3RhKaYquMOGw3LcJjHTdtvE0fu1/DA1QsneE=;
+ s=default; t=1576078057;
+ bh=lQByssjgqWaVZWGX1nyIVM5aR1JZ2it8lsG75l/CR1s=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=GAAm8DKx/uATzMHfP2SgwoUL2RftKh9yJjAcdYdkSWfmpnzsLmZwVMghR21H0FU8t
- dhWR+/t9OZ232HvX/t4eY06ShKEqFxgXm6JursYxFx6BQgH4g7Km+Rhbu6W79+pmjh
- LqK0fljuvFHXfH1wjYEmkMpfXd4q9Rv+eWUYg7xA=
+ b=fyEz/ekuPm0VAL/5WLsJHwdJ6Til5jgeiDkmw63ddywzu5+GERJaLs7SR2ksf0ltW
+ YJUCtDlAX/L9KNlX69HULSdg4z0ovU9Kc1Xnps+tXzOeRFmnRTNj3T34ZzIV6rK2OO
+ vx6vviJSjsh+A19WIYWC0zbcF9HCw7Mwz1mfLb9U=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 08/79] dmaengine: xilinx_dma: Clear
- desc_pendingcount in xilinx_dma_reset
-Date: Wed, 11 Dec 2019 10:25:32 -0500
-Message-Id: <20191211152643.23056-8-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 50/79] ARM: 8937/1: spectre-v2: remove Brahma-B53
+ from hardening
+Date: Wed, 11 Dec 2019 10:26:14 -0500
+Message-Id: <20191211152643.23056-50-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191211152643.23056-1-sashal@kernel.org>
 References: <20191211152643.23056-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_072653_697123_11C67218 
-X-CRM114-Status: UNSURE (   9.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_072738_064979_D1F4BD30 
+X-CRM114-Status: GOOD (  10.94  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,50 +80,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- Vinod Koul <vkoul@kernel.org>, dmaengine@vger.kernel.org,
- Nicholas Graumann <nick.graumann@gmail.com>,
+Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Doug Berger <opendmb@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Nicholas Graumann <nick.graumann@gmail.com>
+From: Doug Berger <opendmb@gmail.com>
 
-[ Upstream commit 8a631a5a0f7d4a4a24dba8587d5d9152be0871cc ]
+[ Upstream commit 4ae5061a19b550dfe25397843427ed2ebab16b16 ]
 
-Whenever we reset the channel, we need to clear desc_pendingcount
-along with desc_submitcount. Otherwise when a new transaction is
-submitted, the irq coalesce level could be programmed to an incorrect
-value in the axidma case.
+When the default processor handling was added to the function
+cpu_v7_spectre_init() it only excluded other ARM implemented processor
+cores. The Broadcom Brahma B53 core is not implemented by ARM so it
+ended up falling through into the set of processors that attempt to use
+the ARM_SMCCC_ARCH_WORKAROUND_1 service to harden the branch predictor.
 
-This behavior can be observed when terminating pending transactions
-with xilinx_dma_terminate_all() and then submitting new transactions
-without releasing and requesting the channel.
+Since this workaround is not necessary for the Brahma-B53 this commit
+explicitly checks for it and prevents it from applying a branch
+predictor hardening workaround.
 
-Signed-off-by: Nicholas Graumann <nick.graumann@gmail.com>
-Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Link: https://lore.kernel.org/r/1571150904-3988-8-git-send-email-radhey.shyam.pandey@xilinx.com
-Signed-off-by: Vinod Koul <vkoul@kernel.org>
+Fixes: 10115105cb3a ("ARM: spectre-v2: add firmware based hardening")
+Signed-off-by: Doug Berger <opendmb@gmail.com>
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/dma/xilinx/xilinx_dma.c | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/mm/proc-v7-bugs.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/dma/xilinx/xilinx_dma.c b/drivers/dma/xilinx/xilinx_dma.c
-index 8aec137b4fcaa..d56b6b0e22a84 100644
---- a/drivers/dma/xilinx/xilinx_dma.c
-+++ b/drivers/dma/xilinx/xilinx_dma.c
-@@ -1427,6 +1427,7 @@ static int xilinx_dma_reset(struct xilinx_dma_chan *chan)
+diff --git a/arch/arm/mm/proc-v7-bugs.c b/arch/arm/mm/proc-v7-bugs.c
+index 9a07916af8dd2..a6554fdb56c54 100644
+--- a/arch/arm/mm/proc-v7-bugs.c
++++ b/arch/arm/mm/proc-v7-bugs.c
+@@ -65,6 +65,9 @@ static void cpu_v7_spectre_init(void)
+ 		break;
  
- 	chan->err = false;
- 	chan->idle = true;
-+	chan->desc_pendingcount = 0;
- 	chan->desc_submitcount = 0;
- 
- 	return err;
+ #ifdef CONFIG_ARM_PSCI
++	case ARM_CPU_PART_BRAHMA_B53:
++		/* Requires no workaround */
++		break;
+ 	default:
+ 		/* Other ARM CPUs require no workaround */
+ 		if (read_cpuid_implementor() == ARM_CPU_IMP_ARM)
 -- 
 2.20.1
 
