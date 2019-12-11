@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06D5211C0FD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 00:55:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4FA2711C0E5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 00:54:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x7NM3G6yVu9TNuec3wBoP1WQ6/4hBqOsrZFxzsSn7V8=; b=KiE/2tPtU7Wn5i
-	YvLDijNUimtSvJZT9tipfzPNUbnx4ODbbGmxvgSKCY8DbO1GOenkt8OxTJe5cno5P3fWWiJFQRVmw
-	xNbAF90TahtVSHcpSnPBU7yg3LORUG4ImKzsq81ENyqtJbI8c1310ar6NFm4h5uY4XutwhnZn557t
-	zRJPQtFyNmPx3gscCCEKPIIh4oAZKNq0OQ9zazDke1KOGT9X5HmOUrrbZgpGuBlaCdJvnzGG6V+QN
-	bcZv9qrUgwLSSTiapuZk1y73GEcJYCkuihJKg16U24JWvKwXqpiwEBo98NAIWtU6X3DMFNSvprxcm
-	FKFRtAwsdkk5h5H+LCsA==;
+	List-Owner; bh=HAoiXxfVt8smAqIOzCIsFajWDSM7IucOzuDv9sEl3UY=; b=Se3wFJ+/XLkho0
+	hCsFffEsvSjik+9AktHL/ME8cb6SVcNzJED5z36scnbKxSgip2FeCUeXX/b+Q6jNYTbUZTKuILeM+
+	QkCvtS7PMFUfv/IwpOpcGn4+6ZojtUpe6d0rqxHYPELOH2gsQ32eDaleY/BZmoIX8ngBBycX6o9CF
+	vSExlF3MMCNKNsom2zMDkhBzodlCETOLjNWF53z+VQZ27SeLXJ98yN2L/k5c0OxJubwklBehVZDNP
+	WUFnrWzFRfFoQ1zvBc8eNyjkJOuu2ttW23CWRN003EjxFHsUU/yUutS9hHw/uc4AErrFAycy+MQO0
+	AgnFHk7N1GfVxWqj/ATQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifBp5-0002P9-Bu; Wed, 11 Dec 2019 23:55:15 +0000
-Received: from mout.web.de ([212.227.17.11])
+	id 1ifBnq-00016a-BE; Wed, 11 Dec 2019 23:53:58 +0000
+Received: from mout.web.de ([217.72.192.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifBnI-0000sK-Ew; Wed, 11 Dec 2019 23:53:28 +0000
+ id 1ifBnF-0000sG-98; Wed, 11 Dec 2019 23:53:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1576108389;
- bh=Jw3d/3FG5d2fs3pbP5cmR9tz+imTkB9FfgldNiz16/M=;
+ s=dbaedf251592; t=1576108391;
+ bh=4up7UPdrXKf7f4RHv1AgVYW/yVkK9as9YFQa80qMoKU=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=QHfjrJCvhmuCCnSf1F/RiTE3u7NdGsOyiro4sUDoDIQ+BV6PzAODPhHh1Cl7rbGB8
- 8g2zq0CxIlQxFOZ0mVoVjj+Q1dN150ZDpr5DsCsqGUV2gw/Iy4detaBikD0SXnkeal
- jfU6VBuWfOIv7zxNJOfScJziWrGpu8ob2L2xUIF0=
+ b=Gu0wgLpKWDiMw/KjGhRNXZ9fgdBWNCo60e8XriKrwIng+KPeNqpb/kEhnfL61n8xU
+ y5uala2/lTNOlXb13l0+YYMpnYRQXNnxT+eF5/UJuF6VzvntIVODJG/yru99dgUhdx
+ grgsKlgO5zws0iRjvX+lUFlh/JJwtKWBbhs5reT0=
 X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
 Received: from localhost.localdomain ([89.204.139.166]) by smtp.web.de
  (mrweb101 [213.165.67.124]) with ESMTPSA (Nemesis) id
- 0Mhlmh-1iJYJC0mhf-00MwBd; Thu, 12 Dec 2019 00:53:09 +0100
+ 0M5fsK-1hm9Ms2iPg-00xdVy; Thu, 12 Dec 2019 00:53:10 +0100
 From: Soeren Moch <smoch@web.de>
 To: Kalle Valo <kvalo@codeaurora.org>,
 	Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2 2/9] brcmfmac: set F2 blocksize and watermark for 4359
-Date: Thu, 12 Dec 2019 00:52:46 +0100
-Message-Id: <20191211235253.2539-3-smoch@web.de>
+Subject: [PATCH v2 3/9] brcmfmac: fix rambase for 4359/9
+Date: Thu, 12 Dec 2019 00:52:47 +0100
+Message-Id: <20191211235253.2539-4-smoch@web.de>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191211235253.2539-1-smoch@web.de>
 References: <20191211235253.2539-1-smoch@web.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:vMAckOgNBxG6cLi2IX3dVxNnAjzrN9nQcd36iOgEGjn7lSyOXK0
- nMmPQF96FpuS9n/OnUjpHNPcWxW8ctz5fO3ibNoNVUPj3EW+6zvheCwlxSOOoWs2gDf+gmY
- p4EirClUV1rcJdk7pgxNeOvTWz8mX1eiqcst5vCJFqdAHlgxEYhaMFLTEBK2i2tiRaxBzO3
- pyg4nxvbZPxpAHrGgvnZQ==
+X-Provags-ID: V03:K1:J+qJb/2Nw7OkPT3SxGUR8foewlU/Godf2lJr2WJR7yAVKyzHMHD
+ qqJRwEwFwDhjVM4go/USRgAOn7yIJ7hgH0ExeEB8svnzBOJMvZm9v/oljINQkZksxz9yNOA
+ nZNEOx3OYiAWZsAF9XCEJRfKHyQj1eGGSJYFqKM4drCj450VoEt1a3CZfYDmSsgUY/TjIq9
+ kDe/TDllVqMrz07yDQuvA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Jm6PikBj8do=:bhZOh8ji0Cm3PXLd8vpAhB
- c7KTXi1ITKNxCijfIlhgJKvVQDYDAgkGWFdQSKy8WVmVRRXjzTWL5dkSRcpZbYZT/kCdMcv5E
- cNSQdgYK9OoY0+QUPV9M6+5lAymFlzhjrWU0y/umHkgscJK/l68t/ge+xV3POxR16m3yKl7gd
- T0AU3Mgz18RmHQkB4gvRZQFaVjhOpjZSkEALjU6Iy7ZaupVXQdtoVYtU7YSe/9KFNOlYkj/Qe
- O3mcXMoWArV1bPPx17Q3cKaW2i6ChTMC/jQ72Yvi6YRe0EhXtioF3tmX/LSJ39ooaE4pAImRG
- ndHMqmA/IRXkgv3jlUo15fPBeexloNFrLg3B5pbHm93CtWSEHTVAcBzKAltK62RA5mMEr4+cO
- Y4BXPf/v13ZlWDcYmg1w82o7cNvdfTY8EFaOBLDjqK1jJUescVSc8NRlVyhsoJIPvUcXOzfmU
- WzR3GUagJ3/fyh7xa9+SNFjYsFJHVcQHB3nidL3DRYLpLXFYNKR/n4YJU5ijEFPDW7xkN7t1l
- DWfMyWI1bptx9yK9LIxdqp0fFTQN8cD/qhsYm8bhpwK5Pn6FRvDdGpat8Waa63I0pwwcopikT
- cAsvWGN4c1iPzgGFNE/qOtxMMrqL/l3Hls/oPoSnV4uixQnBxq/Sr5iLaFUiv2pP8z1H88nmb
- AarpNGmk52LtFUOR0qKhO+BbhVIWbXCbb5ZGHxF9GA5nDR3dcRXWmNiUvxCTUYEoU6hFIw8jQ
- 8TvU7ShRQGjZP+vkv2XBVSzzui4MdrIRyLF8OZh0UgLbWB9tZY+inDhGDa9InOmK6Zn5mCzKs
- kDs4RY/KRp/OvNeOSDgnGuP3yGa06aWA08lfMkhnGYrbLdRRNvcrXLc2RjcbtD/T1WAGZdD3L
- LFYaaq+YmEHK8+AnSb8rmAbor0ynGp0bLYpo02c3kKEVKToJ4QvjbzROrOmiNYn/bhdxIn2ML
- ku8R3r/eRwZzOMVfVoAR/soNZiV2eXN5VWj5aPvRwpCKiy0Xieo30PYkIvapF8asgJ/IoD9bQ
- 1ho9MkOstO/z4yfARCHWHePoYq2FaymEsO0tKpr+J5FMbsC7lPoPoVKvq3FfHUFDbWfyz/j08
- YcpsQ05Po3tDeao9xyk0cO2kZ2kA25ic2TeifPRDQow9ogTTTSYhJCrREBtQ3wljTE9g0MG0L
- 9N2Rw16Oitu46gwY4aR3zUIlM6itQMAuZF1Imj1Zrbj2dk1Ha00y/U9Id/PqaUSR1JB4ifYan
- N5MNtNk3cmZwBbpmRKtsp9azFnviVwGUl/Yy3vw==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:eZTTKvKqCQQ=:6Ufks9S8uTxW4FlPFgpy0Q
+ 71OY5XEmQ3puqHczlBr9G3y68a7jVmC4MRrtYw/khbu/oi4xTOfBxnEuLUSNqWDo5NuVfk6YQ
+ WapEexeYcScN7aZ1zXFZbAu1f7Z7M4qtsmXLA6jGSufrsxzQfVP3IN1pf3GaPnizWcWf/bNIj
+ O4Gh2od3tRllFMrzAJdr8VKhEJMr2Ct1LUDHAzGpmpxDF3l68Ma2mGBWlo0wvsOitYg04hQal
+ mO8Eo9Rt9R1xJyzlXy/2jXuQ1/jDClhLabD+H4vfdQUJinP2q5mmcYFYQwq1EqczeTe71+v6+
+ k4z9DtxSPIgIGV2ONgBvabwQz3Vw/fpTi22AkUNPF3f6FqsafoDnyMVBPfkQC99sjZ7TEAhHZ
+ VUNXg92gOV7gPf8vWr8Kv6y/szKOGKrnYTDqPN2DVdrE4uSwNUTSxE/Hz11G+iAtBhVew+wH6
+ I1sgG0LtAVJ+nN18k5MePHtETVFCploNouuXpHmwfChr55+hQG1KbUPh2vQdp7dvJtCiLjzGv
+ kXsh0eKa3Sdv11WGjk4jads0yY5UjX9LYzYVJ+P4Kcn6i/0yhRVIYpY1b7J/QsENZy1TOr/XW
+ VNiHhyOYcy7SzHKPMbtVaQF4W0V/377BbepKwymrnartfDkj9XPp/W62Hp9wG+hMKwigsg3Sb
+ ifpkVeyAMdTzFM5xL+EgqNgKXkW/AsS+pa7dPhrINbc1vsd9gVCSk7pNPAh0JSGogpsic3+i8
+ VKiKUU7PunL1Lpji2UjNO6nt9vgFFkPbD981hlsERwu2nxMtAfydLD6YhcP8qR5rHqB7eYeyV
+ JJX3v7lJfobutiPHvkc1n9f9ePG1U0pU8LNfQ8f6CY93mp3RZEuM+wuyLDoMxncbmz7mhXStd
+ ru1xsPWf+ZgsEnGCFQL+aH7X0JgJjXDPVg6x3vc0Zbr4WJw2MMqfC7qsFscAx7sqoyfMPPn06
+ Nil6mLEGhUEM/W6x1H43WXV9MBqFoN6p+FWFm0N/MyfAeE+PqKqKL1CH75ZtoZ6LYDbQFFqq9
+ 9zSDIiIkd9pWD7Nsbr4Qu2MzWw0a0YIQXBXDh2btzsroEe34y0fvhfHrsdeeuIk8nHdlRsKx5
+ cHHk+V8QTPrsRo4NowK3YbQDhTB+mNQo2qu7m7l9MWj+m5Jbm7LJyS7+jDLP4KJaDER5YPpCV
+ I5QlQfPw7W77CbOXYX/IbQEl1hswoCQ0UwhOKTml+ue5HgLic42YIXpinn1+Sdh/oCLZdFPsM
+ ayYpBwmhI8hqkatdtbKb/ugFIcs9ed3ldOf+M2Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_155324_808753_6E01E1A8 
-X-CRM114-Status: UNSURE (   9.89  )
+X-CRM114-CacheID: sfid-20191211_155321_657539_7C0F358D 
+X-CRM114-Status: UNSURE (   8.41  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.11 listed in list.dnswl.org]
+ low trust [217.72.192.78 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (smoch[at]web.de)
@@ -101,8 +101,7 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: brcm80211-dev-list.pdl@broadcom.com,
- Arend van Spriel <arend.vanspriel@broadcom.com>,
- Chung-Hsien Hsu <stanley.hsu@cypress.com>, netdev@vger.kernel.org,
+ Arend van Spriel <arend.vanspriel@broadcom.com>, netdev@vger.kernel.org,
  Chi-Hsien Lin <chi-hsien.lin@cypress.com>, linux-wireless@vger.kernel.org,
  Hante Meuleman <hante.meuleman@broadcom.com>, linux-kernel@vger.kernel.org,
  linux-rockchip@lists.infradead.org, Soeren Moch <smoch@web.de>,
@@ -113,19 +112,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chung-Hsien Hsu <stanley.hsu@cypress.com>
+Newer 4359 chip revisions need a different rambase address.
+This fixes firmware download on such devices which fails otherwise.
 
-Set F2 blocksize to 256 bytes and watermark to 0x40 for 4359. Also
-enable and configure F1 MesBusyCtrl. It fixes DMA error while having
-UDP bi-directional traffic.
-
-Signed-off-by: Chung-Hsien Hsu <stanley.hsu@cypress.com>
-[slightly adapted for rebase on mainline linux]
 Signed-off-by: Soeren Moch <smoch@web.de>
-Reviewed-by: Chi-Hsien Lin <chi-hsien.lin@cypress.com>
 ---
-changes in v2:
-- add review tag received for v1
+changes in v2: none
 
 Cc: Kalle Valo <kvalo@codeaurora.org>
 Cc: Heiko Stuebner <heiko@sntech.de>
@@ -142,74 +134,30 @@ Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-rockchip@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- .../wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c |  6 +++++-
- .../wireless/broadcom/brcm80211/brcmfmac/sdio.c   | 15 +++++++++++++++
- 2 files changed, 20 insertions(+), 1 deletion(-)
+ drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c
-index 96fd8e2bf773..68baf0189305 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c
-@@ -43,6 +43,7 @@
-
- #define SDIO_FUNC1_BLOCKSIZE		64
- #define SDIO_FUNC2_BLOCKSIZE		512
-+#define SDIO_4359_FUNC2_BLOCKSIZE	256
- /* Maximum milliseconds to wait for F2 to come up */
- #define SDIO_WAIT_F2RDY	3000
-
-@@ -903,6 +904,7 @@ static void brcmf_sdiod_host_fixup(struct mmc_host *host)
- static int brcmf_sdiod_probe(struct brcmf_sdio_dev *sdiodev)
- {
- 	int ret = 0;
-+	unsigned int f2_blksz = SDIO_FUNC2_BLOCKSIZE;
-
- 	sdio_claim_host(sdiodev->func1);
-
-@@ -912,7 +914,9 @@ static int brcmf_sdiod_probe(struct brcmf_sdio_dev *sdiodev)
- 		sdio_release_host(sdiodev->func1);
- 		goto out;
- 	}
--	ret = sdio_set_block_size(sdiodev->func2, SDIO_FUNC2_BLOCKSIZE);
-+	if (sdiodev->func2->device == SDIO_DEVICE_ID_BROADCOM_4359)
-+		f2_blksz = SDIO_4359_FUNC2_BLOCKSIZE;
-+	ret = sdio_set_block_size(sdiodev->func2, f2_blksz);
- 	if (ret) {
- 		brcmf_err("Failed to set F2 blocksize\n");
- 		sdio_release_host(sdiodev->func1);
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-index 264ad63232f8..21e535072f3f 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-@@ -42,6 +42,8 @@
- #define DEFAULT_F2_WATERMARK    0x8
- #define CY_4373_F2_WATERMARK    0x40
- #define CY_43012_F2_WATERMARK    0x60
-+#define CY_4359_F2_WATERMARK	0x40
-+#define CY_4359_F1_MESBUSYCTRL	(CY_4359_F2_WATERMARK | SBSDIO_MESBUSYCTRL_ENAB)
-
- #ifdef DEBUG
-
-@@ -4205,6 +4207,19 @@ static void brcmf_sdio_firmware_callback(struct device *dev, int err,
- 			brcmf_sdiod_writeb(sdiod, SBSDIO_DEVICE_CTL, devctl,
- 					   &err);
- 			break;
-+		case SDIO_DEVICE_ID_BROADCOM_4359:
-+			brcmf_dbg(INFO, "set F2 watermark to 0x%x*4 bytes\n",
-+				  CY_4359_F2_WATERMARK);
-+			brcmf_sdiod_writeb(sdiod, SBSDIO_WATERMARK,
-+					   CY_4359_F2_WATERMARK, &err);
-+			devctl = brcmf_sdiod_readb(sdiod, SBSDIO_DEVICE_CTL,
-+						   &err);
-+			devctl |= SBSDIO_DEVCTL_F2WM_ENAB;
-+			brcmf_sdiod_writeb(sdiod, SBSDIO_DEVICE_CTL, devctl,
-+					   &err);
-+			brcmf_sdiod_writeb(sdiod, SBSDIO_FUNC1_MESBUSYCTRL,
-+					   CY_4359_F1_MESBUSYCTRL, &err);
-+			break;
- 		default:
- 			brcmf_sdiod_writeb(sdiod, SBSDIO_WATERMARK,
- 					   DEFAULT_F2_WATERMARK, &err);
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
+index 0b5fbe5d8270..baf72e3984fc 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
+@@ -712,7 +712,6 @@ static u32 brcmf_chip_tcm_rambase(struct brcmf_chip_priv *ci)
+ 	case BRCM_CC_43569_CHIP_ID:
+ 	case BRCM_CC_43570_CHIP_ID:
+ 	case BRCM_CC_4358_CHIP_ID:
+-	case BRCM_CC_4359_CHIP_ID:
+ 	case BRCM_CC_43602_CHIP_ID:
+ 	case BRCM_CC_4371_CHIP_ID:
+ 		return 0x180000;
+@@ -722,6 +721,8 @@ static u32 brcmf_chip_tcm_rambase(struct brcmf_chip_priv *ci)
+ 	case BRCM_CC_4366_CHIP_ID:
+ 	case BRCM_CC_43664_CHIP_ID:
+ 		return 0x200000;
++	case BRCM_CC_4359_CHIP_ID:
++		return (ci->pub.chiprev < 9) ? 0x180000 : 0x160000;
+ 	case CY_CC_4373_CHIP_ID:
+ 		return 0x160000;
+ 	default:
 --
 2.17.1
 
