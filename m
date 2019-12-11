@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6218B11AC76
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:52:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AA6311AC77
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:53:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fvBkvw8lqDgNdr+r+fUwmUe1JXaNDADZ5IOLD5EM/rE=; b=fKvJuXFq0TwUkSqW1vSSK+RxAR
-	EMWCZk55SFAsuelJ+EFmlu7kXtSPt8lU2YoFxljc2Tuc5xnd7QVsaf+QFWeWqmsC+ioXE1Kw9s2fT
-	EGTvqQZA7KSWlbopA47e008XegrVljwnhBEOFoTL2BTERS485s/GdCcFGxQkmC5gVscPg84wqPnmw
-	TfMOJFpXJMWrFic4SGBdImyyEJ0JXzr6S511FQlpCESMQIWh4X20JHm3rvSso3jhkP3yAam09CXf8
-	PxjuPCFyfSmC1e1163XCDrXM4iGTlItsfUpppojyIj87LagoxxF32A5hfAG8tdIcHTJdCDyswbgjA
-	hhelYdSA==;
+	bh=WbSPmnELqsHe0JpkKvjqe7yWNyq4Fbe0/BY9D99u0rE=; b=ePNW2CGmkJupfFg7IR/geTSsTL
+	B17fP6MWFXm1l63RoqM/JE+kIVyCqgVSBPaY4sCQ+irrUOhOamXLXQ3UPcCQiu3ksH1DMwIs+CknM
+	298SfOQmwWLzgCawEKRgwqd7TvLBW37QNwXiayPECy4nmX3dmGyJc6nCFvEbZ6llk2tMI6ikGBoOQ
+	2lZcDaHpcNSbrkK1SPuQ3JZR+QVuT+ehWnAi2dqxsVefnHvK6qoAN2r2SjI17UgPO8O7iqmzso9Is
+	HEcufQEpkdjy3D0VSE/tVcV32jO4Ux3nUmSeINNtTzzYjmMCs/1KOpY01/y3OMw4Fy0mS209/t2Sj
+	MTLjSVhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if2Pv-0001t1-NH; Wed, 11 Dec 2019 13:52:39 +0000
+	id 1if2Q8-00021t-Le; Wed, 11 Dec 2019 13:52:52 +0000
 Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if2Pm-0001qh-Am
+ id 1if2Pm-0001qf-Ak
  for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:52:32 +0000
 Received: from ramsan ([84.195.182.253])
  by baptiste.telenet-ops.be with bizsmtp
- id cdsP2100G5USYZQ01dsPb9; Wed, 11 Dec 2019 14:52:23 +0100
+ id cdsP2100H5USYZQ01dsPbA; Wed, 11 Dec 2019 14:52:23 +0100
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1if2Pf-00014G-NI; Wed, 11 Dec 2019 14:52:23 +0100
+ id 1if2Pf-00014I-O7; Wed, 11 Dec 2019 14:52:23 +0100
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1if2Pf-0006yd-M1; Wed, 11 Dec 2019 14:52:23 +0100
+ id 1if2Pf-0006yh-N0; Wed, 11 Dec 2019 14:52:23 +0100
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH v2 2/4] ARM: dts: sh73a0: Add device node for ARM global timer
-Date: Wed, 11 Dec 2019 14:52:20 +0100
-Message-Id: <20191211135222.26770-3-geert+renesas@glider.be>
+Subject: [PATCH v2 3/4] ARM: dts: r8a7779: Add device node for ARM global timer
+Date: Wed, 11 Dec 2019 14:52:21 +0100
+Message-Id: <20191211135222.26770-4-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191211135222.26770-1-geert+renesas@glider.be>
 References: <20191211135222.26770-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_055230_536973_714F26D4 
-X-CRM114-Status: UNSURE (   8.42  )
+X-CRM114-CacheID: sfid-20191211_055230_537149_5FC55540 
+X-CRM114-Status: UNSURE (   9.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,7 +80,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Add a device node for the global timer, which is part of the Cortex-A9
 MPCore.
 
-The global timer can serve as an accurate (3 ns) clock source for
+The global timer can serve as an accurate (4 ns) clock source for
 scheduling and delay loops.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
@@ -88,22 +88,23 @@ Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 v2:
   - No changes.
 ---
- arch/arm/boot/dts/sh73a0.dtsi | 7 +++++++
- 1 file changed, 7 insertions(+)
+ arch/arm/boot/dts/r8a7779.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sh73a0.dtsi b/arch/arm/boot/dts/sh73a0.dtsi
-index 9093b3b9fc0cbd1d..7efe33c4d041a524 100644
---- a/arch/arm/boot/dts/sh73a0.dtsi
-+++ b/arch/arm/boot/dts/sh73a0.dtsi
-@@ -39,6 +39,13 @@
- 		};
+diff --git a/arch/arm/boot/dts/r8a7779.dtsi b/arch/arm/boot/dts/r8a7779.dtsi
+index ebf5b7cfe21599c6..63341635bddf873f 100644
+--- a/arch/arm/boot/dts/r8a7779.dtsi
++++ b/arch/arm/boot/dts/r8a7779.dtsi
+@@ -68,6 +68,14 @@
+ 		      <0xf0000100 0x100>;
  	};
  
 +	timer@f0000200 {
 +		compatible = "arm,cortex-a9-global-timer";
 +		reg = <0xf0000200 0x100>;
-+		interrupts = <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(2) | IRQ_TYPE_EDGE_RISING)>;
-+		clocks = <&periph_clk>;
++		interrupts = <GIC_PPI 11
++			(GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_EDGE_RISING)>;
++		clocks = <&cpg_clocks R8A7779_CLK_ZS>;
 +	};
 +
  	timer@f0000600 {
