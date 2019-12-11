@@ -2,86 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E7F011A8D2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 11:25:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3B8C11A8D7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 11:26:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=o1B/XxxfpLq3TI+AxCtppbV875i8h3DaruNWHcT9aNE=; b=UJ+1p7An+pzs5E/LLHt0s8fny
-	Jm75VL7mpcmqrQqSi8Te6gNhNEQ1cTP7wWkjAWpy61OxHVMm9QRFyUOfH+8YtM1Dx3D/+s55Kibxw
-	S5ZGNO5lwFQPFMmxVUbCdE8DvTx+RR3qV+Ir+kHiHF1X0aP/uVt3uSJATmJdvL4yLtYGPmmiK1C3W
-	zH4cFs3kXGMB4jeSPB41QI+5JVUGLLoaZO+sCPLIxrw9j/gpqeIs0gxPjh+KVHZsXSj/0ODY0/aOb
-	mLWfc23mAKFg8YD3Ozna0V2IdcbIVWUKkSuve4ieiDMVTBzgIjc+wajPO8BWHMcHnD+2mSQw1ZudZ
-	2sZK67KxA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CM32k7kFEW6Bi03b2mMtjkIJZgeOHAr2G/kbWHPyC2E=; b=KmtK3uFWAIqUfq
+	Due2fA651GNMo4c6i4YpMbVw+vJ+2MXwf1d0RsltEuebvHRFXawWb2aJXJ5W0oFP0GoklJ9Cw2EmS
+	vO8ulfOxPf6QCzz/V6BZKBbh4JEFg18aHx2gR1kw6DKVJYmVoXRTJvE041TlmwsR3uUPZdGD4Ug2m
+	cSd+4rMtOPu0lNsH3NnxWPToJY6NYaRgj2Xg/LhpFspPhDIe6iVfQWcOBqKYBoISf/UEHUM4GhisD
+	uNlZXPejmJaApBrWREIUR7g+oNkXNEIgQA4s15R5gZitTEwzcKiBtJBgoyZFAKPk/AMOgRViROH5j
+	eLo9nYmFu2TX3J0RP61w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iezB0-0005Qx-Op; Wed, 11 Dec 2019 10:25:02 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iezBu-00071e-KV; Wed, 11 Dec 2019 10:25:58 +0000
+Received: from securetransport.cubewerk.de ([178.254.23.77])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iezAr-0005QT-Ht
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 10:24:55 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBBAOj8Q115655;
- Wed, 11 Dec 2019 04:24:45 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576059885;
- bh=W+RMFciMhRgB2xiAH7N3KcyPOaKYa0Y2g73Ycx9qJBU=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=AlEFjwGweVEw8qSb+hWRM560R4gcZ7LdQZ7uT5KGIJsgTrfW8NMyt7CLxYaIfAK7/
- 9i+s5zTdbewcepjqroGmDL/g963+nLlM7PN4rIUCzTtx7AnaFGJ6YvBuMudA2LnFlu
- E9LCQFxJqBv/nvaI1HudJqEX0eIujtBgobWH2jN8=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBBAOjKf030751;
- Wed, 11 Dec 2019 04:24:45 -0600
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 11
- Dec 2019 04:24:43 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 11 Dec 2019 04:24:43 -0600
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBBAOeLj096803;
- Wed, 11 Dec 2019 04:24:40 -0600
-Subject: Re: [PATCH v7 11/12] firmware: ti_sci: rm: Add support for tx_tdtype
- parameter for tx channel
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <vkoul@kernel.org>,
- <robh+dt@kernel.org>, <nm@ti.com>, <ssantosh@kernel.org>
-References: <20191209094332.4047-1-peter.ujfalusi@ti.com>
- <20191209094332.4047-12-peter.ujfalusi@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <3d3a4f1d-e449-88d6-ec5a-5ce516faf436@ti.com>
-Date: Wed, 11 Dec 2019 12:24:39 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1iezBX-0006ss-QT
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 10:25:37 +0000
+Received: from DHPWEX01.DH-ELECTRONICS.ORG
+ (ipbcc07e02.dynamic.kabel-deutschland.de [188.192.126.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by securetransport.cubewerk.de (Postfix) with ESMTPSA id 947E7140480;
+ Wed, 11 Dec 2019 11:25:18 +0100 (CET)
+Received: from DHPWEX01.DH-ELECTRONICS.ORG (10.64.2.30) by
+ DHPWEX01.DH-ELECTRONICS.ORG (10.64.2.30) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.2.397.3; 
+ Wed, 11 Dec 2019 11:25:17 +0100
+Received: from DHPWEX01.DH-ELECTRONICS.ORG ([fe80::6ced:fa7f:9a9c:e579]) by
+ DHPWEX01.DH-ELECTRONICS.ORG ([fe80::6ced:fa7f:9a9c:e579%3]) with mapi id
+ 15.02.0397.003; Wed, 11 Dec 2019 11:25:17 +0100
+X-secureTransport-forwarded: yes
+From: Christoph Niedermaier <cniedermaier@dh-electronics.com>
+Complaints-To: abuse@cubewerk.de
+To: Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo
+ <shawnguo@kernel.org>, Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 1/2] ARM: imx: Fix boot crash if ocotp is not found
+Thread-Topic: [PATCH 1/2] ARM: imx: Fix boot crash if ocotp is not found
+Thread-Index: AQHVr6PCvreW8z4vMUG4BQIA+eyiDKe0uhOw
+Date: Wed, 11 Dec 2019 10:25:17 +0000
+Message-ID: <516ff238856842b887d1d673d7e5dac6@dh-electronics.com>
+References: <cover.1576014367.git.leonard.crestez@nxp.com>
+ <68b9e3bc9c60c89017648bf3abe150fd0abbde86.1576014367.git.leonard.crestez@nxp.com>
+In-Reply-To: <68b9e3bc9c60c89017648bf3abe150fd0abbde86.1576014367.git.leonard.crestez@nxp.com>
+Accept-Language: de-DE, en-US
+Content-Language: de-DE
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.64.3.50]
 MIME-Version: 1.0
-In-Reply-To: <20191209094332.4047-12-peter.ujfalusi@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_022453_671611_2F437D3F 
-X-CRM114-Status: GOOD (  19.95  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191211_022536_003702_DABA6B67 
+X-CRM114-Status: GOOD (  18.50  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [178.254.23.77 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,105 +78,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, vigneshr@ti.com,
- lokeshvutla@ti.com, j-keerthy@ti.com, linux-kernel@vger.kernel.org,
- tony@atomide.com, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Fabio Estevam <fabio.estevam@nxp.com>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 09/12/2019 11:43, Peter Ujfalusi wrote:
-> The system controller's resource manager have support for configuring the
-> TDTYPE of TCHAN_CFG register on j721e.
-> With this parameter the teardown completion can be controlled:
-> TDTYPE == 0: Return without waiting for peer to complete the teardown
-> TDTYPE == 1: Wait for peer to complete the teardown
-> 
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-
-Hi Peter,
-
-You somehow dropped my reviewed by tag from this patch, this appears 
-identical to the v6 one. So,
-
-Reviewed-by: Tero Kristo <t-kristo@ti.com>
-
+From: Leonard Crestez <leonard.crestez@nxp.com>
+Sent: Tuesday, December 10, 2019 10:49 PM
+> The imx_soc_device_init functions tries to fetch the ocotp regmap in
+> order to soc serial number. If regmap fetch fails then a message is
+> printed but regmap_read is called anyway and the system crashes.
+>
+> Failing to lookup ocotp regmap shouldn't be a fatal boot error so check
+> that the pointer is valid.
+>
+> Only side-effect of ocotp lookup failure now is that serial number will
+> be reported as all-zeros which is acceptable.
+>
+> Cc: stable@vger.kernel.org
+> Fixes: 8267ff89b713 ("ARM: imx: Add serial number support for i.MX6/7 SoCs")
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 > ---
->   drivers/firmware/ti_sci.c              | 1 +
->   drivers/firmware/ti_sci.h              | 7 +++++++
->   include/linux/soc/ti/ti_sci_protocol.h | 2 ++
->   3 files changed, 10 insertions(+)
-> 
-> diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
-> index 4126be9e3216..f13e4a96f3b7 100644
-> --- a/drivers/firmware/ti_sci.c
-> +++ b/drivers/firmware/ti_sci.c
-> @@ -2412,6 +2412,7 @@ static int ti_sci_cmd_rm_udmap_tx_ch_cfg(const struct ti_sci_handle *handle,
->   	req->fdepth = params->fdepth;
->   	req->tx_sched_priority = params->tx_sched_priority;
->   	req->tx_burst_size = params->tx_burst_size;
-> +	req->tx_tdtype = params->tx_tdtype;
->   
->   	ret = ti_sci_do_xfer(info, xfer);
->   	if (ret) {
-> diff --git a/drivers/firmware/ti_sci.h b/drivers/firmware/ti_sci.h
-> index f0d068c03944..255327171dae 100644
-> --- a/drivers/firmware/ti_sci.h
-> +++ b/drivers/firmware/ti_sci.h
-> @@ -910,6 +910,7 @@ struct rm_ti_sci_msg_udmap_rx_flow_opt_cfg {
->    *   12 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_credit_count
->    *   13 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::fdepth
->    *   14 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_burst_size
-> + *   15 - Valid bit for @ref ti_sci_msg_rm_udmap_tx_ch_cfg::tx_tdtype
->    *
->    * @nav_id: SoC device ID of Navigator Subsystem where tx channel is located
->    *
-> @@ -973,6 +974,11 @@ struct rm_ti_sci_msg_udmap_rx_flow_opt_cfg {
->    *
->    * @tx_burst_size: UDMAP transmit channel burst size configuration to be
->    * programmed into the tx_burst_size field of the TCHAN_TCFG register.
-> + *
-> + * @tx_tdtype: UDMAP transmit channel teardown type configuration to be
-> + * programmed into the tdtype field of the TCHAN_TCFG register:
-> + * 0 - Return immediately
-> + * 1 - Wait for completion message from remote peer
->    */
->   struct ti_sci_msg_rm_udmap_tx_ch_cfg_req {
->   	struct ti_sci_msg_hdr hdr;
-> @@ -994,6 +1000,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg_req {
->   	u16 fdepth;
->   	u8 tx_sched_priority;
->   	u8 tx_burst_size;
-> +	u8 tx_tdtype;
->   } __packed;
->   
->   /**
-> diff --git a/include/linux/soc/ti/ti_sci_protocol.h b/include/linux/soc/ti/ti_sci_protocol.h
-> index 9531ec823298..f3aed0b91564 100644
-> --- a/include/linux/soc/ti/ti_sci_protocol.h
-> +++ b/include/linux/soc/ti/ti_sci_protocol.h
-> @@ -342,6 +342,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
->   #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_SUPR_TDPKT_VALID        BIT(11)
->   #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_CREDIT_COUNT_VALID      BIT(12)
->   #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_FDEPTH_VALID            BIT(13)
-> +#define TI_SCI_MSG_VALUE_RM_UDMAP_CH_TX_TDTYPE_VALID            BIT(15)
->   	u16 nav_id;
->   	u16 index;
->   	u8 tx_pause_on_err;
-> @@ -359,6 +360,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
->   	u16 fdepth;
->   	u8 tx_sched_priority;
->   	u8 tx_burst_size;
-> +	u8 tx_tdtype;
->   };
->   
->   /**
+>  arch/arm/mach-imx/cpu.c | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+>
+> diff --git a/arch/arm/mach-imx/cpu.c b/arch/arm/mach-imx/cpu.c
+> index d70b6fc72b35..484bf6cdb363 100644
+> --- a/arch/arm/mach-imx/cpu.c
+> +++ b/arch/arm/mach-imx/cpu.c
+> @@ -87,11 +87,11 @@ struct device * __init imx_soc_device_init(void)
+>  {
+>  	struct soc_device_attribute *soc_dev_attr;
+>  	const char *ocotp_compat = NULL;
+>  	struct soc_device *soc_dev;
+>  	struct device_node *root;
+> -	struct regmap *ocotp;
+> +	struct regmap *ocotp = NULL;
+>  	const char *soc_id;
+>  	u64 soc_uid = 0;
+>  	u32 val;
+>  	int ret;
+>  
+> @@ -179,11 +179,13 @@ struct device * __init imx_soc_device_init(void)
+>  
+>  	if (ocotp_compat) {
+>  		ocotp = syscon_regmap_lookup_by_compatible(ocotp_compat);
+>  		if (IS_ERR(ocotp))
+>  			pr_err("%s: failed to find %s regmap!\n", __func__, ocotp_compat);
+> +	}
+>  
+> +	if (!IS_ERR_OR_NULL(ocotp)) {
+>  		if (__mxc_cpu_type == MXC_CPU_IMX7ULP) {
+>  			regmap_read(ocotp, OCOTP_ULP_UID_4, &val);
+>  			soc_uid = val & 0xffff;
+>  			regmap_read(ocotp, OCOTP_ULP_UID_3, &val);
+>  			soc_uid <<= 16;
 > 
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Tested-by: Christoph Niedermaier <cniedermaier@dh-electronics.com>
+
+Best regards,
+Christoph
 
 _______________________________________________
 linux-arm-kernel mailing list
