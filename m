@@ -2,67 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B01011BC5D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 20:00:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7C6611BC9B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 20:12:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FCQIvRLA4kaIqHh6Y2iQS32ksK4UnD73+u8X6lQiy+Y=; b=hY8wtCfHIY5ldE
-	2HUNAf7JdS2QpDnOioo0FUeI+YrN0YIjMDLQBFIaEe/Hkp+ybu/OkRifFkx6U1O3jgEzADa7h1Ztc
-	t1dhqGko5KSg4BgTtyqTHZa8BNUTS9YQWP1EkfEGQ+aNHMC0jzcRw+OFkB+JxonMEf4InTqYzorxj
-	WplK25wRVYcZegBcZtGTkKI2nY1dar6BhykuhQGBbLdKcViLJEQh+jtTCxy+/vpfFL1VBMyjjpRK8
-	mM3Os4ovm9wHm5kaCMOTgv8qhxrZoi1MBJf3dUu1hhfapWpadD7YYGq58qUfeBNYbYyNIbZjJHD72
-	zedfLZ+9Azz5dNpvhctg==;
+	List-Owner; bh=zMkMJ9y6GVfzrBLM87BkaFpH5KK12KmetrnMITfOVew=; b=eT7nWUc07plGdl
+	CKNSeiztSzb4d+VMUBeUpi+fIlO/FB3tqfI0kPMeLjqvr2Qg78fWpMJyfpq94kWBY8TDwdd6VsnYI
+	F9jGdeqQzF1JMnJwVYfT4KXEYYaCef7xIzYAUgvTWt8UHsA4BnzOqGtluJUz/mJTeKA4qIWGfvit3
+	0KDxB5HRXDXNpd6nDPdzuy6E9tZ6+8Y8liouRu6Mm8uDbYxjHIYPSbOkDJ0vINYdPHWU9O7GkkTOw
+	kQavlwckJG0Yp6hQyERBoi+vb6ifa4CmNBYkCDAy5rhFjLC/zd1C+1qgil5qMNznHtUW85rAMgV6I
+	sFyLI6shQIzTQU+i5E0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if7Dd-0006CH-18; Wed, 11 Dec 2019 19:00:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if7DL-0006BD-RS; Wed, 11 Dec 2019 19:00:01 +0000
-Received: from ziggy.de (unknown [37.223.145.31])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6B1E021556;
- Wed, 11 Dec 2019 18:59:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576090798;
- bh=hqq+Okvmhd0TylWeXh60gyJ3vSjlTdLelZ7PE8Ug21k=;
- h=From:To:Cc:Subject:Date:From;
- b=b1YmR+VDIE7YYArcIxAzAR0HGn13WHEBHaF490Eb7/vrsXP6IW/G/PqEYwnUc+Nwm
- J5bKaUosGKX6uhBNPo7PAYKaMmvQ1xSTfliaLcS2uIshpig3f45gqEimnSWr4gj1ax
- OPXAhGspktCmVPbgjEKxDa/P5qp3jZl+z4TBRTIA=
-From: matthias.bgg@kernel.org
-To: bibby.hsieh@mediatek.com,
-	matthias.bgg@kernel.org
-Subject: [PATCH] soc: mediatek: cmdq: delete not used define
-Date: Wed, 11 Dec 2019 19:59:50 +0100
-Message-Id: <20191211185950.31358-1-matthias.bgg@kernel.org>
-X-Mailer: git-send-email 2.24.0
+	id 1if7PJ-0002kS-QF; Wed, 11 Dec 2019 19:12:22 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1if7P9-0002jE-CH
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 19:12:12 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id EC55C80FA;
+ Wed, 11 Dec 2019 19:12:49 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: linux-omap@vger.kernel.org
+Subject: [PATCH 00/13] Drop more legacy platform data for omaps
+Date: Wed, 11 Dec 2019 11:11:53 -0800
+Message-Id: <20191211191206.12190-1-tony@atomide.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_105959_904259_F67EBB82 
-X-CRM114-Status: UNSURE (   7.65  )
+X-CRM114-CacheID: sfid-20191211_111211_457978_41DA1649 
+X-CRM114-Status: UNSURE (   5.98  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,41 +57,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <matthias.bgg@gmail.com>,
- Matthias Brugger <mbrugger@suse.com>, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Keerthy <j-keerthy@ti.com>, Sebastian Reichel <sre@kernel.org>,
+ Benoit Parrot <bparrot@ti.com>, Bin Liu <b-liu@ti.com>,
+ linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Matthias Brugger <mbrugger@suse.com>
+Hi all,
 
-Define CMDQ_EOC_CMD was actually never used. Delete it.
+Here are more patches to drop legacy platform data for v5.6,
+please test.
 
-Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+To make testing easier, I've pushed out all the related patches
+I've posted over past few days into omap-for-5.6/ti-sysc-testing
+branch at [0][1].
 
----
+Regards,
 
- drivers/soc/mediatek/mtk-cmdq-helper.c | 2 --
- 1 file changed, 2 deletions(-)
+Tony
 
-diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-index 3c82de5f9417..1127c19c4e91 100644
---- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-+++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-@@ -12,8 +12,6 @@
- #define CMDQ_ARG_A_WRITE_MASK	0xffff
- #define CMDQ_WRITE_ENABLE_MASK	BIT(0)
- #define CMDQ_EOC_IRQ_EN		BIT(0)
--#define CMDQ_EOC_CMD		((u64)((CMDQ_CODE_EOC << CMDQ_OP_CODE_SHIFT)) \
--				<< 32 | CMDQ_EOC_IRQ_EN)
- 
- static void cmdq_client_timeout(struct timer_list *t)
- {
+[0] git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap.git omap-for-5.6/ti-sysc-testing
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap.git/log/?h=omap-for-5.6/ti-sysc-testing
+
+
+Tony Lindgren (13):
+  ARM: OMAP2+: Drop legacy platform data for am4 ocp2scp
+  ARM: OMAP2+: Drop legacy platform data for omap4 ocp2scp
+  ARM: OMAP2+: Drop legacy platform data for omap5 ocp2scp
+  ARM: OMAP2+: Drop legacy platform data for dra7 ocp2scp
+  ARM: OMAP2+: Drop legacy platform data for am4 vpfe
+  ARM: OMAP2+: Drop legacy platform data for omap4 hsi
+  ARM: OMAP2+: Drop legacy platform data for omap4 smartreflex
+  ARM: OMAP2+: Drop legacy platform data for dra7 smartreflex
+  ARM: OMAP2+: Drop legacy platform data for omap4 kbd
+  ARM: OMAP2+: Drop legacy platform data for omap5 kbd
+  ARM: OMAP2+: Drop legacy platform data for omap4 slimbus
+  ARM: OMAP2+: Drop legacy platform data for dra7 rtcss
+  ARM: OMAP2+: Drop legacy platform data for omap4 fdif
+
+ arch/arm/boot/dts/am437x-l4.dtsi           |   4 -
+ arch/arm/boot/dts/dra7-l4.dtsi             |   5 -
+ arch/arm/boot/dts/omap4-l4.dtsi            |   8 -
+ arch/arm/boot/dts/omap4.dtsi               |   1 -
+ arch/arm/boot/dts/omap5-l4.dtsi            |   3 -
+ arch/arm/mach-omap2/omap_hwmod_43xx_data.c | 115 ------
+ arch/arm/mach-omap2/omap_hwmod_44xx_data.c | 423 ---------------------
+ arch/arm/mach-omap2/omap_hwmod_54xx_data.c | 117 ------
+ arch/arm/mach-omap2/omap_hwmod_7xx_data.c  | 194 ----------
+ 9 files changed, 870 deletions(-)
+
 -- 
-2.24.0
-
+2.24.1
 
 _______________________________________________
 linux-arm-kernel mailing list
