@@ -2,69 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A80A911A92F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 11:43:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3219A11A92C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 11:42:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6e5oJ5yPVro24CS+9peXg3iNqvz5GRVKaH//l2W6Z8M=; b=X1rPyovym7IlSV
-	bEzT3LW2+W3z6YXzGut0iuY/5NB80v7UI/b44+sR/pBsEWxIEhM/9EjKWeUtVJl0nXyGp4WrbXk8R
-	PTifbn7RTDg7+kqFbeSiOJ7mG69xIpoPNjftY25Rra/ghB7l7AuhegPIe93+QmLr3hOCN/We3nXPa
-	DwparlqV0Um3oIW3d0pqlgQojInYN+p9nDSzrgY11wH1E2MDSXJ25ly9YVbqpKK5TUsVr8+Twp8lm
-	yQwyx1VBNvx/dR861ccHTkLHhNOj5t0XnFBvggk+5n9skYoYCzd/QNVvNY7nosuMTg6G+aUKhMi9o
-	6VzHSmtr2oMhh4LHqWiQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kOPKonH99FiY5hzUXgLL8CW1RZ551kC6rQnwGLyvuXM=; b=ML7gvlzefBp1Yt
+	JejtE/5mRKn7Hu3erw8FSjRQo1TyOgFmoUzNPZRnJwIpcBbkKeC45KnKmfZRyfGuT5lh9OqzwK3Qp
+	r0eGEgjwb8KWNKzKDMgSYRMee0dfd3fwZbWBUh6yaWiloiVmZPAztGviTe1W3ST9l3mrki5ZJwbp/
+	SnYgNu8hycS5brOQSYEv1MGiaTaqS1teL0DLfu80v8Fb7NLb1HJEPM5QVgwAmNEdVDSf7BgVzsPC+
+	pybxlUYJe067+8muddjoophS/OvPqGVeHBrRE1nvAD1Cjxlbi9o9VnuqQg5OoyKP2TyJUeBwWqdwq
+	bFB7X7vj/8vwPDiXy6eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iezSa-0006iA-Sp; Wed, 11 Dec 2019 10:43:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iezSH-0006Oj-LD; Wed, 11 Dec 2019 10:42:53 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iezSO-0006fe-Nb
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 10:43:03 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 681BD206A5;
- Wed, 11 Dec 2019 10:42:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576060979;
- bh=NwJI8msRaERbqP+3FROGHItAhebPYHeQra0pErfd+Qg=;
- h=From:To:Cc:Subject:Date:From;
- b=YJ3TyVj4V42lqastwnlH3q7SPKVkxsHtkR/zNjNbXIgUeX/zx4hjAkPvV0xZiRTqj
- TKFGpfbZJT+J+2a5UnSsMLXsqKbj2JqewlFqPK8Pv8zCDZ+1JTJCsgDrEYUYRmIHCy
- 1mU3k8vai7etAb4HZK3bwXiyuEQ9/9/Km6hnYzIM=
-Received: by wens.tw (Postfix, from userid 1000)
- id C74DB5FCD1; Wed, 11 Dec 2019 18:42:56 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Russell King <linux@armlinux.org.uk>
-Subject: [PATCH] ARM: dma-api: fix max_pfn off-by-one error in
- __dma_supported()
-Date: Wed, 11 Dec 2019 18:41:52 +0800
-Message-Id: <20191211104152.26496-1-wens@kernel.org>
-X-Mailer: git-send-email 2.24.0
+ id 1iezS2-0006Jw-2M
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 10:42:40 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 376F6B13E;
+ Wed, 11 Dec 2019 10:42:36 +0000 (UTC)
+From: Thomas Renninger <trenn@suse.de>
+To: Thomas Gleixner <tglx@linutronix.de>,
+ Felix Schnizlein <fschnizlein@suse.com>
+Subject: Re: [PATCH 2/3] x86 cpuinfo: implement sysfs nodes for x86
+Date: Wed, 11 Dec 2019 11:42:35 +0100
+Message-ID: <4737004.4U1sY2OxSp@skinner.arch.suse.de>
+In-Reply-To: <87sglroqix.fsf@nanos.tec.linutronix.de>
+References: <20191206162421.15050-1-trenn@suse.de>
+ <20191206163656.GC86904@kroah.com> <87sglroqix.fsf@nanos.tec.linutronix.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_024300_816807_9263A80E 
-X-CRM114-Status: GOOD (  18.20  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191211_024238_428371_4637F3CD 
+X-CRM114-Status: GOOD (  19.01  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,84 +60,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arch@vger.kernel.org, Felix Schnizlein <fschnizlein@suse.de>,
+ Greg KH <gregkh@linuxfoundation.org>, x86@kernel.org, will.deacon@arm.com,
+ linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
-
-max_pfn, as set in arch/arm/mm/init.c:
-
-    static void __init find_limits(unsigned long *min,
-				   unsigned long *max_low,
-				   unsigned long *max_high)
-    {
-	    *max_low = PFN_DOWN(memblock_get_current_limit());
-	    *min = PFN_UP(memblock_start_of_DRAM());
-	    *max_high = PFN_DOWN(memblock_end_of_DRAM());
-    }
-
-with memblock_end_of_DRAM() pointing to the next byte after DRAM. As
-such, max_pfn points to the PFN after the end of DRAM.
-
-Thus when using max_pfn to check DMA masks, we should subtract one
-when checking DMA ranges against it.
-
-Commit 8bf1268f48ad ("ARM: dma-api: fix off-by-one error in
-__dma_supported()") fixed the same issue, but missed this spot.
-
-This issue was found while working on the sun4i-csi v4l2 driver on the
-Allwinner R40 SoC. On Allwinner SoCs, DRAM is offset at 0x40000000,
-and we are starting to use of_dma_configure() with the "dma-ranges"
-property in the device tree to have the DMA API handle the offset.
-
-In this particular instance, dma-ranges was set to the same range as
-the actual available (2 GiB) DRAM. The following error appeared when
-the driver attempted to allocate a buffer:
-
-    sun4i-csi 1c09000.csi: Coherent DMA mask 0x7fffffff (pfn 0x40000-0xc0000)
-    covers a smaller range of system memory than the DMA zone pfn 0x0-0xc0001
-    sun4i-csi 1c09000.csi: dma_alloc_coherent of size 307200 failed
-
-Fixing the off-by-one error makes things work.
-
-Fixes: 11a5aa32562e ("ARM: dma-mapping: check DMA mask against available memory")
-Fixes: 9f28cde0bc64 ("ARM: another fix for the DMA mapping checks")
-Fixes: ab746573c405 ("ARM: dma-mapping: allow larger DMA mask than supported")
-Cc: <stable@vger.kernel.org>
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
- arch/arm/mm/dma-mapping.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
-index e822af0d9219..f4daafdbac56 100644
---- a/arch/arm/mm/dma-mapping.c
-+++ b/arch/arm/mm/dma-mapping.c
-@@ -227,12 +227,12 @@ static int __dma_supported(struct device *dev, u64 mask, bool warn)
- 	 * Translate the device's DMA mask to a PFN limit.  This
- 	 * PFN number includes the page which we can DMA to.
- 	 */
--	if (dma_to_pfn(dev, mask) < max_dma_pfn) {
-+	if (dma_to_pfn(dev, mask) < max_dma_pfn - 1) {
- 		if (warn)
- 			dev_warn(dev, "Coherent DMA mask %#llx (pfn %#lx-%#lx) covers a smaller range of system memory than the DMA zone pfn 0x0-%#lx\n",
- 				 mask,
- 				 dma_to_pfn(dev, 0), dma_to_pfn(dev, mask) + 1,
--				 max_dma_pfn + 1);
-+				 max_dma_pfn);
- 		return 0;
- 	}
- 
--- 
-2.24.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlc2RheSwgRGVjZW1iZXIgMTAsIDIwMTkgOTo0ODo1NCBQTSBDRVQgVGhvbWFzIEdsZWl4
+bmVyIHdyb3RlOgo+IEdyZWcgS0ggPGdyZWdraEBsaW51eGZvdW5kYXRpb24ub3JnPiB3cml0ZXM6
+Cj4gPiBPbiBGcmksIERlYyAwNiwgMjAxOSBhdCAwNToyNDoyMFBNICswMTAwLCBUaG9tYXMgUmVu
+bmluZ2VyIHdyb3RlOgo+ID4+IEZyb206IEZlbGl4IFNjaG5pemxlaW4gPGZzY2huaXpsZWluQHN1
+c2UuZGU+Cj4gPj4gPT0+IGZsYWdzIDw9PQo+ID4+IGZwdSB2bWUgZGUgcHNlIHRzYyBtc3IgcGFl
+IG1jZSBjeDggYXBpYyBzZXAgbXRyciBwZ2UgbWNhIGNtb3YgcGF0IHBzZTM2Cj4gPj4gY2xmbHVz
+aCBtbXggZnhzciBzc2Ugc3NlMiBzcyBzeXNjYWxsIG54IHBkcGUxZ2IgcmR0c2NwIGxtIGNvbnN0
+YW50X3RzYwo+ID4+IHJlcF9nb29kIG5vcGwgeHRvcG9sb2d5IGNwdWlkIHRzY19rbm93bl9mcmVx
+IHBuaSBwY2xtdWxxZHEgc3NzZTMgZm1hCj4gPj4gY3gxNiBwY2lkIHNzZTRfMSBzc2U0XzIgeDJh
+cGljIG1vdmJlIHBvcGNudCB0c2NfZGVhZGxpbmVfdGltZXIgYWVzIHhzYXZlCj4gPj4gYXZ4IGYx
+NmMgcmRyYW5kIGh5cGVydmlzb3IgbGFoZl9sbSBhYm0gY3B1aWRfZmF1bHQgaW52cGNpZF9zaW5n
+bGUgcHRpCj4gPj4gc3NiZCBpYnJzIGlicGIgZnNnc2Jhc2UgdHNjX2FkanVzdCBibWkxIGF2eDIg
+c21lcCBibWkyIGVybXMgaW52cGNpZAo+ID4+IHhzYXZlb3B0IGFyYXQgdW1pcD4gCj4gPiBPbmUg
+ZmlsZSB3aXRoIGFsbCBvZiB0aGF0PyAgV2UgYXJlIGdvaW5nIHRvIHJ1biBpbnRvIHByb2JsZW1z
+Cj4gPiBldmVudHVhbGx5LCB0aGF0IHNob3VsZCBiZSBzcGxpdCB1cC4KPiA+IAo+ID4gSnVzdCBs
+aWtlIGJ1Z3MsIHRoYXQncyBnb2luZyB0byBqdXN0IGdyb3cgb3ZlciB0aW1lIGFuZCBldmVudHVh
+bGx5Cj4gPiBvdmVyZmxvdyBQQUdFX1NJWkUgOigKPiA+IAo+ID4gTWFrZSB0aGlzOgo+ID4gICDi
+lJzilIDilIAgZmxhZ3MKPiA+ICAg4pSCICAg4pSc4pSA4pSAIGZwdQo+ID4gICDilIIgICDilJzi
+lIDilIAgdm1lCj4gPiAKPiA+IC4uLgo+ID4gCj4gPiBNdWNoIHNpbXBsZXIgdG8gcGFyc2UsIHJp
+Z2h0Pwo+IAo+IFdlbGwsIEknbSBub3QgcmVhbGx5IHN1cmUgd2hldGhlciAxMDArIGZpbGVzIGFy
+ZSBzaW1wbGVyIHRvIHBhcnNlLgo+IAo+IEFzaWRlIG9mIHRoYXQgSSByZWFsbHkgZG9uJ3Qgc2Vl
+IHRoZSB2YWx1ZSBmb3IgMTAwKyBmaWxlcyBwZXIgQ1BVIHdoaWNoCj4gYXJlIGp1c3QgcmV0dXJu
+aW5nIDEgb3IgVHJ1ZSBvciB3aGF0ZXZlciBhcyBsb25nIGFzIHlvdSBhcmUgbm90Cj4gc3VnZ2Vz
+dGluZyB0byBwcm92aWRlIHJlYWwgZmVhdHVyZSBmaWxlcyB3aGljaCBoYXZlIDAvMSBvciBUcnVl
+L0ZhbHNlCj4gY29udGVudC4KCkkgYWxzbyBkbyBub3QgbGlrZSB0aGUgb25lIGZpbGUgcGVyIGNw
+dSBmbGFnIGFwcHJvYWNoLgpUaGlzIHN0aWxsIGlzIG9uZSAiZGF0YSIvImluZm8iIHBlciBzeXNm
+cyBmaWxlLgpTaW1pbGFyIHRvOgpjcHUvY3B1ZnJlcS9wb2xpY3kxL3NjYWxpbmdfYXZhaWxhYmxl
+X2dvdmVybm9ycwphbmQgcHJvYmFibHkgYSBsb3Qgb3RoZXJzLiBJZiBQQUdFX1NJWkUgb3ZlcmZs
+b3cgaGFzIHRvIGJlIGNhcmVkIGZvciwgdGhlbiBiZSAKaXQuCiAKPiBCdXQgSSBzdGlsbCBkb24n
+dCBnZXQgdGhlIHdob2xlIHRoaW5nLiBUaGUgb25seSAiYXJndW1lbnQiIEkndmUgc2VlbiBzbwo+
+IGZhciBpcyB0aGUgJ3Byb2MgbW92ZXMgdG8gc3lzJyBtYW50cmEsIGJ1dCB0aGF0IGRvZXMgbm90
+IG1ha2UgaXQgYW55Cj4gYmV0dGVyLgo+IAo+IFdlIHdvbid0IGdldCByaWQgb2YgL3Byb2MvY3B1
+aW5mbyBmb3IgYSB2ZXJ5IGxvbmcgdGltZSBzaW1wbHkgYmVjYXVzZQo+IHRvbyBtdWNoIHVzZXJz
+cGFjZSB1c2VzIGl0LgoKVGhlIHJlYXNvbiB3ZSB3aWxsIG5ldmVyIGdldCByaWQgb2YgaXQgaXM6
+Ck5ld2x5IHdyaXR0ZW4gdXNlcnNwYWNlIHRvb2xzIHN0aWxsIChoYXZlIHRvKSBtYWtlIHVzZSBp
+dC4KVGhpcyBpcyBiZWNhdXNlIG9mIGEgc21hbGwgc2V0IG9mIHJlbWFpbmluZyBpbmZvIHdoaWNo
+IGlzIGNvbnZlbmllbnQKdG8gaGF2ZSBpbiB1c2Vyc3BhY2UgYnV0IHdoaWNoIGlzIG5vdCBhdmFp
+bCBpbiBzeXNmcyB5ZXQuCgpUaGVyZWZvcmUgb25seSB4IG9mIHRoZSAyNiAvcHJvYy9jcHVpbmZv
+IGRhdGEgaGFzIGJlZW4gcGlja2VkIHVwLgoKRm9yIGRlY2FkZXMgdW51c2VkIGluZm8gbGlrZToK
+ZnB1ICAgICAgICAgICAgIDogeWVzCmZwdV9leGNlcHRpb24gICA6IHllcwpjcHVpZCBsZXZlbCAg
+ICAgOiAxMwp3cCAgICAgICAgICAgICAgOiB5ZXMKcG93ZXIgbWFuYWdlbWVudDoKCnNoYWxsIGRp
+ZSBhdCAobG9uZyBidXQpIHNvbWUgcG9pbnQgb2YgdGltZS4KCkl0J3MgcXVpdGUgc29tZSB5ZWFy
+cyBhZ28gd2hlbiBhY3BpIGFuZCBjcHVmcmVxIHByb2MgaW5mbyBmaXJzdCBnb3QKZGVwcmVjYXRl
+ZCBhbmQgZHVwbGljYXRlZCBpbiBzeXMuCkl0IGhhcyBiZWVuIHNhaWQgdGhhdCBpdCBuZWVkcyB5
+ZWFycyBvZiBkZXByZWNhdGlvbiB0aGF0IHRoZSBldmVudCBmaWxlCm9uIHdoaWNoIGRhbW9ucyB3
+ZXJlIGxpc3RlbmluZyBmb3IgYWNwaSBldmVudHMgY2FuIGV2ZXIgYmUgcmVtb3ZlZC4uLgpJdCBo
+YXMgYmVlbiAyMDEzIHdoZW4gdGhlIHJlbW92YWwgaGFzIGJlZW4gZG9uZSwgbW9yZSB0aGFuIDUg
+eWVhcnMgYWdvOgoxNjk2ZDlkYzU3ZTA2MmNlNTIwMGY2YTQyYTZhYWFkYTE1YjQzNGJiCkFDUEk6
+IFJlbW92ZSB0aGUgb2xkIC9wcm9jL2FjcGkvZXZlbnQgaW50ZXJmYWNlCgovcHJvYy9jcHVpbmZv
+IG1heSBuZWVkIHNvbWUgeWVhcnMgbW9yZSwgYnV0IHRoZXJlIHNob3VsZCBiZSBubwpyZWFzb24g
+aXQgaXMgc3RpbGwgZ2V0dGluZyB1c2VkLgoKPiBJbnRyb2R1Y2luZyBhIG1lc3MgaW4gL3N5cy8g
+aW4gcGFyYWxsZWwganVzdAo+IGZvciBmb2xsb3dpbmcgdGhlIG1hbnRyYSBkb2VzIG5vdCBoZWxw
+IG11Y2guCiAKPiBBbHNvIElGIHdlIGV2ZXIgZXhwb3NlIGZlYXR1cmUgZmxhZ3MgaW4gc3lzIHRo
+ZW4gdGhpcyBuZWVkcyB0byBiZSBhCj4gc3BsaXQgaW5vCj4gCj4gICBjcHUvY29tbW9uX2ZlYXR1
+cmVzCj4gCj4gYW5kCj4gCj4gICBjcHUvQ1BVJE4vdW5pcXVlX2ZlYXR1cmVzCgpNYWtlcyBzZW5z
+ZS4KZmVhdHVyZSAod2l0aG91dCBjb21tb24vdW5pcXVlKSBpcyBhbHNvIGEgYmV0dGVyIG5hbWlu
+ZyB0aGFuIGZsYWdzLgoKSWYgR3JlZyAoYW5kIG90aGVycykgYXJlIG9rLCBJIHdvdWxkIGFkZCAi
+cGFnZSBzaXplIGV4Y2VlZGluZyIgaGFuZGxpbmcuCkhtLCBxdWljayBzZWFyY2hpbmcgZm9yIGFu
+IGV4YW1wbGUgSSByZWFsaXplIHRoYXQgZGVidWdmcyBjYW4gZXhjZWVkIHBhZ2UgCnNpemUuIElz
+IGl0IHRoYXQgaGFyZCB0byBleHBvc2UgYSBzeXNmcyBmaWxlIGxhcmdlciB0aGFuIHBhZ2Ugc2l6
+ZT8KCj4gT24gbW9zdCBzeXN0ZW1zIHVuaXF1ZV9mZWF0dXJlcyB3b250IGV4aXN0LCBidXQgdGhl
+cmUgaXMgc3VjaCBzdHVmZiBvbgo+IHRoZSBob3Jpem9uLgoKSSBzdGlsbCB3YWl0IGEgYml0IGJl
+Zm9yZSBkb2luZyB3b3JrIGZvciBub3RoaW5nLgpJIGhvcGUgZXZlcnlib2R5IGFncmVlcywgdGhh
+dCByZW1haW5pbmcgdXNlZnVsIGluZm8gaW4gL3Byb2MvY3B1aW5mbyBzaG91bGQKc2hvdyB1cCBp
+biAvc3lzIGlmIHRoYXQgZGlkIG5vdCBoYXBwZW4geWV0LiBBbmQgdGhhdCB1c2Vyc3BhY2UgdG9v
+bHMgc2hvdWxkCm5vdCAobmVlZCB0bykgbWFrZSB1c2Ugb2YgL3Byb2MvY3B1aW5mbyBhbnltb3Jl
+LgoKICAgIFRob21hcwoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
