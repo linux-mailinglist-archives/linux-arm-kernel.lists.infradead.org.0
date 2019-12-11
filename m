@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC4F211A177
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 03:39:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2875C11A192
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 03:44:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CDdZZyURH4f2V+8FHfZDWEZJPitiT4sfpowIeCu1YNo=; b=e58wjMa1IegCsy
-	RwFt5+3sCUZPuPCD+/oPHMs1nA0UoaiUzY8Xt3YuS/XIvwH11RjFng9SBiduiBQwqpzRUeVdX1Qxm
-	26iQI/SBWMvK/JjFurbd0w6M3CZ/dI7KNCDfgW84OtsD23xPU0dBEnA2kvGVFk321gZGZXMPADvrV
-	OA4C35gY1o6rugk43X2fLxDmdSq42EF48Au4kJFTvCN5SJiQVT6FbbQ0/w+nXt25MfITFHRvGp/ZC
-	ewgC51u3L0fc7muLRcFF4Sf9nPohPjxr06JiLN8PmKxsPunIhPyM4p6F9yQ9t6nCHRlGQMS+okF7u
-	2aNdW5VNhk4/GAQyQ6jg==;
+	List-Owner; bh=/WscshEfaQqX84xV17/Umn+PgDf0vj326Bf37fYz3OQ=; b=DB3DdU50P9vSfo
+	uN5FRyPz4UCseGxXqxOInyLPjvqH1dC8YDm2+G6BTsSarQ8tT1wqekSLOUeQzKpTNEE69CJ5knhPI
+	8+sInbCoCYpgYJ/9ARgyYcpB3X3RpF+9AZkgD17y53YpXV2OvpY9BAWftrhNRh0zgPmx6/v+cqgFF
+	esqoNk79KxjvNsS1RN8+4FXdkFEnPH1ovi4l0qe1RWbiXiJjjaauUsVCDHmf2Y8WrR26MBqC/qtw/
+	1EH1GeX2n4j/9vMmTVNGP3mzIfDjhwI+tmcuZKUn4AQ8mlLsK2j5kmOmX1IvvPlKkPngVSiP+rqPh
+	7KOLJYqRnxCNzj3t/cgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieruK-0007n6-LX; Wed, 11 Dec 2019 02:39:20 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1ieryj-00016j-Iv; Wed, 11 Dec 2019 02:43:53 +0000
+Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieruC-0007mW-UW
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 02:39:14 +0000
-Received: by mail-pf1-x443.google.com with SMTP id y14so977980pfm.13
+ id 1ierya-00016Q-8Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 02:43:45 +0000
+Received: by mail-pf1-x42e.google.com with SMTP id x184so1006566pfb.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 18:39:12 -0800 (PST)
+ Tue, 10 Dec 2019 18:43:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=lkeETUhQ3f8lWNeTP8ytVN52+By7QmgfsOQEQVp/5Bk=;
- b=QiQikR6kEHX9KZ1Ty8ohFw4WHZKRp4hr1Qd30w5/P5llrwO/ghQvr5AVO96DGVV/iQ
- zUlSw9bd3ZcVlEopdECizjka55M5lzl/Wf/45NGHMMsJQLOW/TrmVP788fJsQQ70A7T0
- xBSdCDZV8jPuHHsFDM3Mssemmmu/UydbPzPAKKrV9z67P+iaSLPmDdiQn77BrVmU88TZ
- r5yjmGbkbcMEBx5HFS6LgJll/Z8K9vMyK4PlxQEBw7UQ2BYt+cNA6N9u36EVxMZWWjM+
- txxz4bz5rM3o1QfR4C+p67D6MKRGg9p85mESLdzx0CPcdazh5iyhqbaWgD1TJ8gFWqG1
- 8dHg==
+ bh=f2PKZ0IX3cZC2NpOSYKVLllzL+7nLw+rKkD8S3WmyZA=;
+ b=w8GhQ+CZvgLHTTZwFdTQUSqsAyRFyIGpQ5AUhBq6xKd+opcy9MSsH7kHo+Oithf6uo
+ KjLD6yMvJw8AbCOEsfTqbTrt53AS62NGCorl/kwrMwEh3TEmsPt8ZFyjX1CCEyIhWvIe
+ q+uuuytgH4DO2LDHDTQr+60x2isx64yxsQPcL6vd8TJeWJey5lYT7rfW/Ts6E9f8EbJX
+ f5ReBR0lnDgN0ds1RUuEpfBF/mpGRluv/iYG87x+U3A+1gg4vaWepMj2IRX6A9b81YGb
+ tlrwwNlnTdavD2qbzgQ2Kbz2hZSDoSbVjnNBJqtEpHCT8GIZvMaGObuvpI9DwXriRJW3
+ lY+w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=lkeETUhQ3f8lWNeTP8ytVN52+By7QmgfsOQEQVp/5Bk=;
- b=lh9tKjQm1A4bje4SAXyGVnejpRehZZc/wDciSK8S0Ler7zYegR7aBPEiDFdaMX1vgL
- c3yl4tJYLCxGSMFV+t+G8wE7sE6iq1f50Ogwy7/2VcmIuhD1fJadEFm2+2GRKaY9uduk
- YbyM8ypp7ohI8yDw/OCcZ+ORUyQRoseckNBPdiuE6hf1Simye8sPWWrp+RXAMXzX3elf
- VSabLz14tWohOTgjr5s3hr2s5Wu2FtD6b5nBU+LLcJnUX/PqyQjqvxAazjlpSk5456s9
- DMaiKwzKfIyyydaKtM9kjZfGeXkZzTLwWKiZbEW/Q+tcnFRlMevJPeMLEDQc0o11nF1r
- sAbg==
-X-Gm-Message-State: APjAAAVeqCc0ENIQhglYTjYmkWtqhANs6HiiSWamWMUiecykHXSLYTG1
- IjJjKl4Zu8AcSXzszLyT4gHuAAM4OkM=
-X-Google-Smtp-Source: APXvYqwv4FD7npjWh+xM8yEtWzQSvRX+xQWGcV0kVvGQhmKaR0MAmXhCirrzY7eQKyfmK8n6ahuV9g==
-X-Received: by 2002:a63:364d:: with SMTP id d74mr1504299pga.408.1576031951864; 
- Tue, 10 Dec 2019 18:39:11 -0800 (PST)
+ bh=f2PKZ0IX3cZC2NpOSYKVLllzL+7nLw+rKkD8S3WmyZA=;
+ b=c0DN2ylvD3NwSsNfXlTzTDCnWH718qn2O82d/fALBmBNCGK/SPqrrXNnN90c6ocpBB
+ Fr4RNVLJ4zNKjdw3WN9nVtEXOr8Z81YeA+jmYjnhZIkM/vHEH87pgkm73gUV9QNqIg2x
+ BtplluD58EOx0TZpcdY9kK8mTulIO9t4emt5ksM1oxZmZi5/LYbw3PMN1b9oQ3IMuhzO
+ 3RqFt9fcX+iInNoFjYsxK8Msg9TZmLe1MHQ2PjMufwCWGnx4oiBmVAwH6VTbRa9N7kYE
+ Ob488FVA6ZK3x6vimgqhW1vM/4eZ4Le3H+wPcxZCZzYkHW47H2vFVai3vi3Wzay+iJ8g
+ gkJg==
+X-Gm-Message-State: APjAAAXIxFPwvSYyUhybkuJuSBZhnVmGl2+1WO8J26uh7KO7fqWRDiBk
+ YwtSpVwILI/pb6HxmRwCtEwmkg==
+X-Google-Smtp-Source: APXvYqyVfjbcgqNdmMEHFYrJYcZxzszIKGFxppXi7nDzyRsAewfcHmU5EQL6U0AI1uYiJYJ4dueq4w==
+X-Received: by 2002:a62:5290:: with SMTP id g138mr1269727pfb.54.1576032223182; 
+ Tue, 10 Dec 2019 18:43:43 -0800 (PST)
 Received: from localhost ([122.171.112.123])
- by smtp.gmail.com with ESMTPSA id 200sm398800pfz.121.2019.12.10.18.39.10
+ by smtp.gmail.com with ESMTPSA id x13sm416889pfc.171.2019.12.10.18.43.42
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 10 Dec 2019 18:39:11 -0800 (PST)
-Date: Wed, 11 Dec 2019 08:09:09 +0530
+ Tue, 10 Dec 2019 18:43:42 -0800 (PST)
+Date: Wed, 11 Dec 2019 08:13:40 +0530
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH 13/15] cpufreq: scmi: Match scmi device by both name and
- protocol id
-Message-ID: <20191211023909.7iun7kdk6pjkync6@vireshk-i7>
-References: <20191210145345.11616-1-sudeep.holla@arm.com>
- <20191210145345.11616-14-sudeep.holla@arm.com>
+Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
+ transport type
+Message-ID: <20191211024340.cvwalbr7tmvfqbrc@vireshk-i7>
+References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
+ <71417ba8-b844-ac96-bcad-4bf48fa8b869@arm.com>
+ <20191210053448.ugjzbp2puzvnm37f@vireshk-i7>
+ <20191210184633.GC20962@bogus>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191210145345.11616-14-sudeep.holla@arm.com>
+In-Reply-To: <20191210184633.GC20962@bogus>
 User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_183913_014426_CD8B139E 
-X-CRM114-Status: GOOD (  18.66  )
+X-CRM114-CacheID: sfid-20191210_184344_310420_BA218FA2 
+X-CRM114-Status: GOOD (  11.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:42e listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -99,47 +101,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Cristian Marussi <cristian.marussi@arm.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Cc: Arnd Bergmann <arnd@arndb.de>, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Cristian Marussi <cristian.marussi@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10-12-19, 14:53, Sudeep Holla wrote:
-> The scmi bus now has support to match the driver with devices not only
-> based on their protocol id but also based on their device name if one is
-> available. This was added to cater the need to support multiple devices
-> and drivers for the same protocol.
+On 10-12-19, 18:46, Sudeep Holla wrote:
+> May be to some/small extent.
 > 
-> Let us add the name "cpufreq" to scmi_device_id table in the driver so
-> that in matches only with device with the same name and protocol id
-> SCMI_PROTOCOL_PERF. This will help to add "devfreq" device/driver.
+> 1. max_rx_timeout_ms is firmware dependent, maximum time it expects to
+>    complete a synchronous request or acknowledge async request(worst case value).
+> 2. max_msg_size is maximum size of the buffer we need to allocate, mostly
+>    based on the specification and we don't have any more that 0x80. But
+>    the custom/vendor specific protocols may wary and hence I thought of
+>    keeping it configurable for platforms.
+> 3. max_msg is the maximum number of messages the transport can support.
+>    This is currently based on the mailbox layer. For SMC/HVC we can have
+>    upto nr_cpus, something different for spci/optee. We must be able to
+>    make it transport independent if required.
 > 
-> Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-> Cc: Viresh Kumar <viresh.kumar@linaro.org>
-> Cc: linux-pm@vger.kernel.org
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> ---
->  drivers/cpufreq/scmi-cpufreq.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/cpufreq/scmi-cpufreq.c b/drivers/cpufreq/scmi-cpufreq.c
-> index e6182c89df79..61623e2ff149 100644
-> --- a/drivers/cpufreq/scmi-cpufreq.c
-> +++ b/drivers/cpufreq/scmi-cpufreq.c
-> @@ -261,7 +261,7 @@ static void scmi_cpufreq_remove(struct scmi_device *sdev)
->  }
-> 
->  static const struct scmi_device_id scmi_id_table[] = {
-> -	{ SCMI_PROTOCOL_PERF },
-> +	{ SCMI_PROTOCOL_PERF, "cpufreq" },
->  	{ },
->  };
->  MODULE_DEVICE_TABLE(scmi, scmi_id_table);
+>    This is mainly used to pre-allocate number of (tx/rx) buffers.
 
-Applied. Thanks.
+So we can only move max_msg to mailbox file and read it along with ops, right ?
 
 -- 
 viresh
