@@ -2,66 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BEAD11AEAA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:06:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 219A011AF30
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:12:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kRLjXveorF1252sG6QgMwXhf6X/OLGLxMKsii74vuoY=; b=O0keFeigqwq1b3
-	iw/5Dj/xUY1Vfj3960hzZJXFT3uham9giXnxxoNAqrXDydVKCJFJM8sEeN9Vv7j2AC2LijQzJT/7n
-	QD9et+9oxlBKIgc8zsHh6vEDIpKs/sUFzIBZL70iEdgR0vk9WmRWJuafvKeTiG4Ila8tTD3l7Mpm8
-	zOCNn5w19bdfplcjO0ngezzRGo+EQOZy4GR9Cn9Jk45anZMjs/bWi0uV9WZOZuazDDHj/2gpT1V02
-	DuMhqf2iMUf15mKWzr7UVYsLL4dxOglokHeft+MAVMvWcX2Q5y8z5qnFsMzVggMs3F5t1aJjXfXmv
-	zCf6VwYVdk8htBnt1ODw==;
+	List-Owner; bh=0P/l/CDBtigLRHB+FMUo4wiQYkqFtBfnM1aaE5o6bug=; b=LDBAHjGKsnx/AS
+	2omA54klRMDJ2toG82HxmXeS0NTC8bfn4ixm/4Q1WBV31qUL68QneriifCjb6OS0Sh8PB3XLKLvUs
+	66+dOcPgJbUyKiExiiJ00UpSv7A/Vbx/iG5qkZJugGUlNhUl3Cge6KFc7PBFj/e5lXfSAiKpkfMrD
+	r5abrpG7qF2y0p5Dug5D3kWPiiqA2R0mlGiU9IepW0kOsbcoL0v9qmoN5AGes0RrAdlKHaBHTCBRf
+	oPLLR/Kp8/GrgHFiR1G5PHadf53wtEnRQFDE8SKxnvI1TKuEQOI3fbZ7PtW5FdK/4arsaoQ0/4Pfk
+	089bjmxNTtBYQ/EycDKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if3Za-0008GX-EO; Wed, 11 Dec 2019 15:06:42 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1if3ez-00028J-G3; Wed, 11 Dec 2019 15:12:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if3ZT-0008G3-Ly
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:06:37 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1if3ZM-0001Gp-9U; Wed, 11 Dec 2019 16:06:28 +0100
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1if3ZI-0001J8-Sm; Wed, 11 Dec 2019 16:06:24 +0100
-Date: Wed, 11 Dec 2019 16:06:24 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH v2] ARM: dts: imx6ul-evk: Fix peripheral regulator
-Message-ID: <20191211150624.prlxpsfqcys5jc7m@pengutronix.de>
-References: <3dbf3c6b01b4c372544127d61746e2d9b62108d7.1576076393.git.leonard.crestez@nxp.com>
+ id 1if3eo-00027k-L7; Wed, 11 Dec 2019 15:12:07 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2F5C724658;
+ Wed, 11 Dec 2019 15:12:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576077126;
+ bh=IEDH//bhdQztlOqOo+cfwWB4wM8CT2ZDR64ODrpGXpU=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=ASfCZsr8aNmgPSL1M+6kupNFfLQJvSZgKsM//pdyMqHr1sDp/5vZb7GauO0pEltxE
+ 7H1gJwjf/cng57mgJFVyGVCowkZrx8HoMgglqGjQmgPom2nTTxVg+RAByr3/PNkkeL
+ V0vRDMZlBUgiZtzbv9e9MOQCM6l7v2sryYUu260k=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.4 014/134] iommu: rockchip: Free domain on
+ .domain_free
+Date: Wed, 11 Dec 2019 10:09:50 -0500
+Message-Id: <20191211151150.19073-14-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191211151150.19073-1-sashal@kernel.org>
+References: <20191211151150.19073-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3dbf3c6b01b4c372544127d61746e2d9b62108d7.1576076393.git.leonard.crestez@nxp.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 16:04:18 up 26 days,  6:22, 33 users,  load average: 0.05, 0.05, 0.01
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_070635_717444_26569A46 
-X-CRM114-Status: GOOD (  19.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_071206_711466_CD38DF3A 
+X-CRM114-Status: GOOD (  12.45  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,148 +79,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, Fabio Estevam <fabio.estevam@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Joerg Roedel <jroedel@suse.de>,
+ Heiko Stuebner <heiko@sntech.de>, Ezequiel Garcia <ezequiel@collabora.com>,
+ linux-rockchip@lists.infradead.org, iommu@lists.linux-foundation.org,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-12-11 17:02, Leonard Crestez wrote:
-> Many peripherals are affected by gpio5/2, not just sensors. One of those
-> is ethernet phy so network boot is current broken.
-> 
-> Fix by renaming reg_sensors and marking it as "always on". Also add a
-> comment asking for careful testing if this is to be made dynamic in the
-> future.
-> 
-> The "peri_3v3" naming is similar to imx6sx-sdb and regulator-name is
-> same string as in schematics (VPERI_3V3).
-> 
-> Fixes: 09e2b1048954 ("ARM: dts: imx6ul-14x14-evk: Add sensors' GPIO regulator")
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+From: Ezequiel Garcia <ezequiel@collabora.com>
 
-Reviewed-by: Marco Felsch <m.felsch@pengutronix.de> 
+[ Upstream commit 42bb97b80f2e3bf592e3e99d109b67309aa1b30e ]
 
-> ---
-> Changes since v1:
-> * Properly set phy-supply so that ethernet works even without
-> regulator-always-on
-> * Change regulator-name to VPERI_3V3 to match pdf schematics
-> * List affected peripherals in comment
+IOMMU domain resource life is well-defined, managed
+by .domain_alloc and .domain_free.
 
-Thanks :)
+Therefore, domain-specific resources shouldn't be tied to
+the device life, but instead to its domain.
 
-Regards,
-  Marco 
+Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+Acked-by: Heiko Stuebner <heiko@sntech.de>
+Signed-off-by: Joerg Roedel <jroedel@suse.de>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/iommu/rockchip-iommu.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
 
-> Link to v1: https://patchwork.kernel.org/patch/11284851/
-> 
-> It seems the wm8960 doesn't have regulator support so making this
-> work dynamically might also require changes in sound drivers.
-> 
->  arch/arm/boot/dts/imx6ul-14x14-evk.dtsi | 26 +++++++++++++++++++------
->  1 file changed, 20 insertions(+), 6 deletions(-)
-> 
-> diff --git a/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi b/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-> index e5dafb49ef12..212144511b66 100644
-> --- a/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-> +++ b/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-> @@ -28,18 +28,30 @@
->  		regulator-max-microvolt = <3300000>;
->  		gpio = <&gpio1 9 GPIO_ACTIVE_HIGH>;
->  		enable-active-high;
->  	};
->  
-> -	reg_sensors: regulator-sensors {
-> +	reg_peri_3v3: regulator-peri-3v3 {
->  		compatible = "regulator-fixed";
->  		pinctrl-names = "default";
-> -		pinctrl-0 = <&pinctrl_sensors_reg>;
-> -		regulator-name = "sensors-supply";
-> +		pinctrl-0 = <&pinctrl_peri_3v3>;
-> +		regulator-name = "VPERI_3V3";
->  		regulator-min-microvolt = <3300000>;
->  		regulator-max-microvolt = <3300000>;
->  		gpio = <&gpio5 2 GPIO_ACTIVE_LOW>;
-> +		/*
-> +		 * If you want to want to make this dynamic please
-> +		 * check schematics and test all affected peripherals:
-> +		 *
-> +		 * - sensors
-> +		 * - ethernet phy
-> +		 * - can
-> +		 * - bluetooth
-> +		 * - wm8960 audio codec
-> +		 * - ov5640 camera
-> +		 */
-> +		regulator-always-on;
->  	};
->  
->  	reg_can_3v3: regulator-can-3v3 {
->  		compatible = "regulator-fixed";
->  		regulator-name = "can-3v3";
-> @@ -138,18 +150,20 @@
->  &fec1 {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet1>;
->  	phy-mode = "rmii";
->  	phy-handle = <&ethphy0>;
-> +	phy-supply = <&reg_peri_3v3>;
->  	status = "okay";
->  };
->  
->  &fec2 {
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_enet2>;
->  	phy-mode = "rmii";
->  	phy-handle = <&ethphy1>;
-> +	phy-supply = <&reg_peri_3v3>;
->  	status = "okay";
->  
->  	mdio {
->  		#address-cells = <1>;
->  		#size-cells = <0>;
-> @@ -191,12 +205,12 @@
->  	status = "okay";
->  
->  	magnetometer@e {
->  		compatible = "fsl,mag3110";
->  		reg = <0x0e>;
-> -		vdd-supply = <&reg_sensors>;
-> -		vddio-supply = <&reg_sensors>;
-> +		vdd-supply = <&reg_peri_3v3>;
-> +		vddio-supply = <&reg_peri_3v3>;
->  	};
->  };
->  
->  &lcdif {
->  	assigned-clocks = <&clks IMX6UL_CLK_LCDIF_PRE_SEL>;
-> @@ -460,11 +474,11 @@
->  			MX6UL_PAD_JTAG_TMS__SAI2_MCLK		0x17088
->  			MX6UL_PAD_SNVS_TAMPER4__GPIO5_IO04	0x17059
->  		>;
->  	};
->  
-> -	pinctrl_sensors_reg: sensorsreggrp {
-> +	pinctrl_peri_3v3: peri3v3grp {
->  		fsl,pins = <
->  			MX6UL_PAD_SNVS_TAMPER2__GPIO5_IO02	0x1b0b0
->  		>;
->  	};
->  
-> -- 
-> 2.17.1
-> 
-> 
-
+diff --git a/drivers/iommu/rockchip-iommu.c b/drivers/iommu/rockchip-iommu.c
+index 4dcbf68dfda43..0df091934361b 100644
+--- a/drivers/iommu/rockchip-iommu.c
++++ b/drivers/iommu/rockchip-iommu.c
+@@ -980,13 +980,13 @@ static struct iommu_domain *rk_iommu_domain_alloc(unsigned type)
+ 	if (!dma_dev)
+ 		return NULL;
+ 
+-	rk_domain = devm_kzalloc(dma_dev, sizeof(*rk_domain), GFP_KERNEL);
++	rk_domain = kzalloc(sizeof(*rk_domain), GFP_KERNEL);
+ 	if (!rk_domain)
+ 		return NULL;
+ 
+ 	if (type == IOMMU_DOMAIN_DMA &&
+ 	    iommu_get_dma_cookie(&rk_domain->domain))
+-		return NULL;
++		goto err_free_domain;
+ 
+ 	/*
+ 	 * rk32xx iommus use a 2 level pagetable.
+@@ -1021,6 +1021,8 @@ err_free_dt:
+ err_put_cookie:
+ 	if (type == IOMMU_DOMAIN_DMA)
+ 		iommu_put_dma_cookie(&rk_domain->domain);
++err_free_domain:
++	kfree(rk_domain);
+ 
+ 	return NULL;
+ }
+@@ -1049,6 +1051,7 @@ static void rk_iommu_domain_free(struct iommu_domain *domain)
+ 
+ 	if (domain->type == IOMMU_DOMAIN_DMA)
+ 		iommu_put_dma_cookie(&rk_domain->domain);
++	kfree(rk_domain);
+ }
+ 
+ static int rk_iommu_add_device(struct device *dev)
 -- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
