@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFBFC11BC1B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:45:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FB3C11BC12
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:45:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Y8K7D/wA4nV5NiTnzzpTMxE3XFQgSvWRW8Vw6+H2eE=; b=IpNY7lTUUNFq4o
-	rym6Sr9XLBLhTE+rDydCCMuSU7T7BhP3e7BqqVXR0O6bJGwR630UOCuE5DzCSt0xzh7PRnV6fxg+q
-	g7ClNl8dw2Ci5c+uDORdhpSC5XQpz6lzPvDW2hcjOgU6shVODWesdKKvjkXmnq4prDCBe/NOtuoAc
-	dRHDmgfSf8XGy/THKBVw59w80qeyZsCuVteC01XKCaE+iTgjSPXKjVsJM27SL4djCcnvsYJb2VHCB
-	j2rcRb3yH54bXNqcw3JkzfBEdH8mRyIpQhdFxRVqeVp70BT51mbbQbltTtQXKNyEPwfcuPMyOwvLs
-	FN4pn7Nnh1mxFgD/1Puw==;
+	List-Owner; bh=BN5gPtm5DWkKle4lKLiUr3x6hFc4ppoEkcMRgL+LTdE=; b=WdjzjhQkivZz19
+	8TYZ2zBCT3R9ZCmw3c9pcbqtmCQiRl/zAS6/F9+1GNSNhQ6lfcONwKjJBjVj3ys1WIIDPjXQeFzLH
+	7Mw0Y058xGOZSGP8Gbyg1yzR3fdeUrUkscxrACiM+rz4YEzLNkHdrcU8zoynG0hy9Ct/vWRyVBKyH
+	uaYciMtX9rHmwzwe5wrHBwSDzPLKq22HwnTkBEZOQcfXqU+zvlMm/QwqQqibO0pckvaSzACalycR8
+	pPY9wsHKR+NLPiCRZWvy6MAmGb2DXSJTpWt+1YhtciBHsyw1su+QqGzJ9sJpV9Ncjx1JyZ2iTNiRR
+	Uej0AMLy9SwDLWsVDaGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if6zL-0000Ep-H9; Wed, 11 Dec 2019 18:45:31 +0000
+	id 1if6zC-0008I9-9O; Wed, 11 Dec 2019 18:45:22 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if6v4-0003RU-Lj
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:41:08 +0000
+ id 1if6v5-0003HM-RL
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:41:09 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E52FC1480;
- Wed, 11 Dec 2019 10:41:05 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 963BD14BF;
+ Wed, 11 Dec 2019 10:41:07 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7C6503F6CF;
- Wed, 11 Dec 2019 10:41:04 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 24D543F6CF;
+ Wed, 11 Dec 2019 10:41:06 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 17/22] arm64: mte: Validate the PROT_MTE request via
- arch_validate_flags()
-Date: Wed, 11 Dec 2019 18:40:22 +0000
-Message-Id: <20191211184027.20130-18-catalin.marinas@arm.com>
+Subject: [PATCH 18/22] mm: Allow arm64 mmap(PROT_MTE) on RAM-based files
+Date: Wed, 11 Dec 2019 18:40:23 +0000
+Message-Id: <20191211184027.20130-19-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191211184027.20130-1-catalin.marinas@arm.com>
 References: <20191211184027.20130-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_104106_759619_A92657EA 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20191211_104107_945806_A45C83DA 
+X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,47 +73,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make use of the newly introduced arch_validate_flags() hook to
-sanity-check the PROT_MTE request passed to mmap() and mprotect(). If
-the mapping does not support MTE, these syscalls will return -EINVAL.
+Since arm64 memory (allocation) tags can only be stored in RAM, mapping
+files with PROT_MTE is not allowed by default. RAM-based files like
+those in a tmpfs mount or memfd_create() can support memory tagging, so
+update the vm_flags accordingly in shmem_mmap().
 
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/include/asm/mman.h | 16 +++++++++++++++-
- 1 file changed, 15 insertions(+), 1 deletion(-)
+ mm/shmem.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/include/asm/mman.h b/arch/arm64/include/asm/mman.h
-index c77a23869223..5c356d1ca266 100644
---- a/arch/arm64/include/asm/mman.h
-+++ b/arch/arm64/include/asm/mman.h
-@@ -44,7 +44,11 @@ static inline unsigned long arch_calc_vm_flag_bits(unsigned long flags)
+diff --git a/mm/shmem.c b/mm/shmem.c
+index 165fa6332993..1b1753f90e2d 100644
+--- a/mm/shmem.c
++++ b/mm/shmem.c
+@@ -2225,6 +2225,9 @@ static int shmem_mmap(struct file *file, struct vm_area_struct *vma)
+ 			vma->vm_flags &= ~(VM_MAYWRITE);
+ 	}
  
- static inline pgprot_t arch_vm_get_page_prot(unsigned long vm_flags)
- {
--	return (vm_flags & VM_MTE) && (vm_flags & VM_MTE_ALLOWED) ?
-+	/*
-+	 * Checking for VM_MTE only is sufficient since arch_validate_flags()
-+	 * does not permit (VM_MTE & !VM_MTE_ALLOWED).
-+	 */
-+	return (vm_flags & VM_MTE) ?
- 		__pgprot(PTE_ATTRINDX(MT_NORMAL_TAGGED)) :
- 		__pgprot(0);
- }
-@@ -61,4 +65,14 @@ static inline bool arch_validate_prot(unsigned long prot, unsigned long addr)
- }
- #define arch_validate_prot arch_validate_prot
- 
-+static inline bool arch_validate_flags(unsigned long flags)
-+{
-+	if (!system_supports_mte())
-+		return true;
++	/* arm64 - allow memory tagging on RAM-based files */
++	vma->vm_flags |= VM_MTE_ALLOWED;
 +
-+	/* only allow VM_MTE if VM_MTE_ALLOWED has been set previously */
-+	return !(flags & VM_MTE) || (flags & VM_MTE_ALLOWED);
-+}
-+#define arch_validate_flags arch_validate_flags
-+
- #endif /* !__ASM_MMAN_H__ */
+ 	file_accessed(file);
+ 	vma->vm_ops = &shmem_vm_ops;
+ 	if (IS_ENABLED(CONFIG_TRANSPARENT_HUGE_PAGECACHE) &&
 
 _______________________________________________
 linux-arm-kernel mailing list
