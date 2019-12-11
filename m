@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0117D11AE34
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 15:47:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3197611AE2F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 15:47:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,104 +11,104 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=vpaxZEP2L9iVXm3QW+ONV65eD6vpc7qyGzBuyoCY8H0=; b=A63BeejQLwdACDaVziZYXsFDz8
-	4KLRCAEgFuXg3O94VSxfrHTcJhOmAhNvpE5UXXxnlWxQGLtTOAOhQWyDS9SZa8RbLlDptHitDQQoI
-	4J1vi0DGH5Un7+Ok0/y2HGI7AwoYqp+TVu0y8KnFk5jYRV/fsTy5UCN7Iiis+LhVL1OpZjDHZIaoJ
-	mT64Zg7n5O5wQaFpqCgfGwgapQvr9ao/uxJxQQ1+l1WcstjceSOf/sWOV4jAH7/BEpJtDAqU/mGtz
-	s6xqoqkz+a9WjciwJez+GRsCVzCzP12CsG1DoLH+3nAL2yaMLbIOf2EHkq3a17BE67OGamQ35hdkU
-	ZeMSCz7w==;
+	bh=2PGfIWf2r+9WktcLr3XLy1umcZRjVF4gPh5ybFcm3oo=; b=sj6pKTUzveB/iEOzIVmDupBIhb
+	A2EeKFxocX5WQZC8/ZrbEhNVTK5NhfOAm1SZgpZKM2WVrSNcn+68Vciu8ZEthKBoQsXQK7aQLVaGq
+	o+aEU78SL82DD945q5tBAJAwvYjVhG07ejL8MP/tK5fWRqJkSUiEBqWvg8Cu4v1fKjdIoTaUL3S1b
+	hqfWy+AR1vw2eSPp3SM4BUOI6jzkHzSA4j7cP3O1HHmGlm8yg0F1mejMbUS90hNlbQO2YtLLbUxlF
+	q1x/dYfxdrw/fVteEgbrPm8pnEcLQTsO9gixdQloj2fwLH9vlIhQedZV5wsqFzm525xpNJ8PqzO+V
+	Y5TWNlEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if3HH-0003s3-3B; Wed, 11 Dec 2019 14:47:47 +0000
+	id 1if3Gq-0003OR-IF; Wed, 11 Dec 2019 14:47:20 +0000
 Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if3GO-00039M-K8
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 14:46:57 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ id 1if3GO-00039c-K9
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 14:46:54 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
  by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20191211144649euoutp02b29763737460e703a6e7b43399ae5724~fWGqYJB5o1029810298euoutp02F
+ 20191211144650euoutp02684c22763921bd50452ff77109a53a89~fWGrR0b0C1096710967euoutp02T
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 14:46:49 +0000 (GMT)
+ Wed, 11 Dec 2019 14:46:50 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20191211144649euoutp02b29763737460e703a6e7b43399ae5724~fWGqYJB5o1029810298euoutp02F
+ 20191211144650euoutp02684c22763921bd50452ff77109a53a89~fWGrR0b0C1096710967euoutp02T
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1576075609;
- bh=6yPCbgLPq9lCGS66YYBtZYi6Uzkol1G5zMpyUCDGzKk=;
+ s=mail20170921; t=1576075610;
+ bh=qTaGKuC9cCAB+1j7GCP6On5IHmid3yqkEWyTajSdyOk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EmnrUMMcH5XNif7pvCvVPYLVpnPabTH4EaVo4rgAbtalSKf7ITfDl9doCe2eAS8dN
- LWFT2sjmZUw1db9kdWvOnwqteKDmPJtzA1o4FUj4xviiKIFerULZzmNdAdgvclRfVP
- J4jeEIY9MnEYXwSJuExiCHBxWonGpcoAq4GCKS/4=
+ b=Rs85drgLpVj2uyoqmt/9tZLkFzB9W3qW4usI43aCwWTvXYFVNryQguA06YfAwd6XA
+ 7Pt0OLc+o7NpuvkOuJrrX1WJlt6Zr8zQ6suSygzuyhTatg1v73ddBMvmqyCiIaQDTT
+ g0gcNte8vnb6EqOR2lbyFSBkP7Ia49t8rjEZ8x1U=
 Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20191211144649eucas1p2304a23219d0b5fed15aa82ee8b2ab5a7~fWGqB0q0T2855628556eucas1p2Y;
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20191211144649eucas1p10daab46774e3fe745a10ea188a13a1e2~fWGq2ACyk3190531905eucas1p1E;
  Wed, 11 Dec 2019 14:46:49 +0000 (GMT)
 Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 3A.0E.60698.85101FD5; Wed, 11
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id FB.0E.60698.95101FD5; Wed, 11
  Dec 2019 14:46:49 +0000 (GMT)
 Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20191211144648eucas1p2065aac523ce190a5c0e6e2b5b11bd5ce~fWGpoDUOw3050630506eucas1p2K;
- Wed, 11 Dec 2019 14:46:48 +0000 (GMT)
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20191211144649eucas1p1b882634306383e225dbab70629d2f222~fWGqTXSmH1750817508eucas1p1a;
+ Wed, 11 Dec 2019 14:46:49 +0000 (GMT)
 Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
  eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20191211144648eusmtrp2d3ecab1613505b685bb325903dde0a11~fWGpnXy2A0169801698eusmtrp21;
- Wed, 11 Dec 2019 14:46:48 +0000 (GMT)
-X-AuditID: cbfec7f5-a0fff7000001ed1a-a1-5df10158cbdd
+ 20191211144649eusmtrp2f9accd69be9afcf8a453ba1f947b6715~fWGqSsvuR0169801698eusmtrp26;
+ Wed, 11 Dec 2019 14:46:49 +0000 (GMT)
+X-AuditID: cbfec7f5-a29ff7000001ed1a-a8-5df101596e99
 Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id CD.9A.07950.85101FD5; Wed, 11
- Dec 2019 14:46:48 +0000 (GMT)
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id BF.9A.07950.95101FD5; Wed, 11
+ Dec 2019 14:46:49 +0000 (GMT)
 Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
  eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191211144647eusmtip15998910aa904bd33dab89c66ced87407~fWGo9_zTD0944809448eusmtip1n;
- Wed, 11 Dec 2019 14:46:47 +0000 (GMT)
+ 20191211144648eusmtip1fe02aa74fd490787f74d96f1003eafb3~fWGpmIbrv0888708887eusmtip18;
+ Wed, 11 Dec 2019 14:46:48 +0000 (GMT)
 From: Marek Szyprowski <m.szyprowski@samsung.com>
 To: linux-usb@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
  linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 1/4] ARM: dts: exynos: Correct USB3503 GPIOs polarity
-Date: Wed, 11 Dec 2019 15:46:35 +0100
-Message-Id: <20191211144638.24676-2-m.szyprowski@samsung.com>
+Subject: [PATCH v2 2/4] ARM: dts: qcom: Correct USB3503 GPIOs polarity
+Date: Wed, 11 Dec 2019 15:46:36 +0100
+Message-Id: <20191211144638.24676-3-m.szyprowski@samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191211144638.24676-1-m.szyprowski@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA0VSaUiTYRzv2XtuNX2dgg8aGeuwAi/mh4e8CoJeiMIP9aFg6NI3tXTKpqYS
- ZM40LUvFcpmWU1Px2ppH3lfmCGUeSytQIQ1EwSNMyyzN+WZ9+53/Hzw8NCbpJpzoCGUsp1Iq
- IqWkCG/qXze7XQZf5Z5jhQCZZzZw9EqrJ9BA1yKO0juLcKQp1ZNoaMhAIePMOIEsrYUksmhG
- ANIOdQpQSfldDNX2TVIoJVWG0jLKCVRfl06h9d4hwSmGLf0+hbGG6WqCbSmYpFhjVQbJToy3
- k2xXUQ3F1pfdZlPfdeHsw4YqwK4YDwSKroh8Q7nIiHhO5eEfLApPKZsAMXV2CXey3wuSwbBN
- JhDSkPGGxvyXZCYQ0RKmEkDzWz1hNSTMNwDvb53kjRUAJ9pyBLuNmeHGv40KAEf6dRRPthtL
- T+Z36iTjBTMXMndSDkwNgBtZWtxKMMaMwSLNCG5N2TMs7DSU7DRw5gi0VM5iVixm/OBw5SDJ
- 77nAakP3tk7TQsYf5vUkWu9AZpSCbe1G3KpD5gzMn7vAx+3hvKmB4vF+uNXyQsDnNQB+NtdS
- PHkAoCVFC/iUD3xjGiGshzDmONS3evDyaThteSbg79vAjwt2VhnbhrlN+Rgvi+G9NAmfPgoL
- THX/ZnuGRzEes3CpK5ngHygHwK2ObjIbuBT8HysGoAo4cnHqqDBOLVNyN93Viih1nDLMPSQ6
- ygi2/9XApmm1GXT+utoLGBpI94mLXy/JJYQiXp0Y1QsgjUkdxKa0RblEHKpITOJU0UGquEhO
- 3QucaVzqKJaVzMklTJgilrvBcTGcatcV0EKnZEA1A5vl2MPnbJ10a7N5jw4dQ03XK2UJISsL
- 16rPPncpFvqdb7j1wTXYfW1Pm6cmqWT1x5YbHtGx7t1aU+0xKaN8Ls0X5n+Zt91rdg1w+zSV
- 8FjYEuv0e8kcFLg8cTHXx/lpgc7XXe6/8TOrok+nlLCawUbZizGfqYOFweMBm1p/Ka4OV3id
- wFRqxR9W36iMUwMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrIIsWRmVeSWpSXmKPExsVy+t/xu7oRjB9jDe6uUrY49/g3i8XGGetZ
+X-Brightmail-Tracker: H4sIAAAAAAAAA0WSbUhTURzGObv3bneryfUqeLRIHGkU5gtW3siiIPTWh+qDvVmSKy822qbt
+ qrmiEudLLpPs1VbLpaH5smlqL0q5XOGQaHNKYuJGtaA0VMQ0ytKcd9q35//8f895OIeDI+Qr
+ LAiXKTMZlVIql/BF6NOuX7b1h8FEctTARCxlc8+g1OPyRox6ax5DqaIOPUppqhr5lN3eJKCa
+ 3f0Y1dd+j0/1aRyAKrd38KjK6gKEMr5xCqi8/BiqsLgao1pMRQLql8XO207QVT9dCN30uR6j
+ 23ROAd1cV8ynh/pf8GmzvkFAtzy8SOd3m1G6tLUO0JPNq/aJkkRxqYxcls2oIreliE7aSjrR
+ jC5hTs/kNJoLfgu0QIhDYgN88HUc0QIRThKPANTon2Dc8APAgjtazEORxCSA0xMJi4mBXIMX
+ qgGw57Wbt5QY1OkXEnwiGmpHtXzPwp9oAHDmSjnqGRDChkC9xoF6KD8iHhqccwsaJUKhecCI
+ eLSY2AqHLn/nc33BsL7p1byP40JiG7zRqfacA4leAXTXOQDH7IQzbh2P035wxNrqvd1KONdW
+ weMCGgA/2YwCbigBsC+v3JveAl9bHZinASHWwsb2SM7eAX/O2ReKIeEDB0Z9PTYyL689ve21
+ xfBSIcnRYVBnNS3Vdvb0ehEalr0/zz1QGYCTw0XgKgjW/e8yAFAHApgsVpHGsDFK5kwEK1Ww
+ Wcq0iBPpimYw/6/ezlqnnoOOP8ctgMCBZLnY8Gw8mcSk2axaYQEQRyT+YmvhWDIpTpWqzzKq
+ 9GOqLDnDWsAKHJUEiGMqh5NJIk2ayZximAxGtbjl4cKgXCDcVSpyyffWpoAW/601um9pCmfC
+ 7Idwzf4LgflJ6kSTqfr0CUtnuG+D8133rT2bZ/8Orgm8bz/qcBVc1z8bLz7wsd73rtInsfWl
+ MUI33Goita7Q6KmbIQcPVeSsjpOpN4bEK87trm0rtnwJ2BQbFlUkG1Ee8c9f1vWkp5slXVUB
+ EpQ9KY1eh6hY6T+XuXA6UwMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrIIsWRmVeSWpSXmKPExsVy+t/xu7qRjB9jDbatFrQ49/g3i8XGGetZ
  LU7vf8di0b5vLotF8+L1bBbnz29gt9j0+BqrxeVdc9gsLjdfZLSYcX4fk8WiZa3MFmuP3GW3
  aGoxtmjrXMZqsXldO7vFz0PnmRwEPBZ/v8fsseHRalaPnbPusntsWtXJ5nHn2h42j/1z17B7
  bF5S79Fycj+LR9+WVYwenzfJBXBF6dkU5ZeWpCpk5BeX2CpFG1oY6RlaWugZmVjqGRqbx1oZ
- mSrp29mkpOZklqUW6dsl6GU0LbnDWLBOsKJxwhWmBsYLfF2MnBwSAiYSjy9sZeti5OIQEljK
- KPGv5xQbREJG4uS0BlYIW1jiz7UuqKJPjBInvlxlAkmwCRhKdL2FSIgIbGCUOPP+CQtIglng
- GrPEss3SILawgIfEvg2LwCaxCKhKXF7xnBnE5hWwlbiw4gzUNnmJ1RsOAMU5ODgF7CSmHKwE
- CQsBldybdIhtAiPfAkaGVYwiqaXFuem5xUZ6xYm5xaV56XrJ+bmbGIHRs+3Yzy07GLveBR9i
- FOBgVOLhXbD9fawQa2JZcWXuIUYJDmYlEd7jbe9ihXhTEiurUovy44tKc1KLDzGaAt00kVlK
- NDkfGNl5JfGGpobmFpaG5sbmxmYWSuK8HQIHY4QE0hNLUrNTUwtSi2D6mDg4pRoYvV3a5jn/
- l1IQu8GmPonp8MHrH6c84PnqM8G5dJ2Nh9jxRzMkDqysTr7kYMBUKseysKj77V61v7o9x6//
- OKoQxhAcXTctskgrdt+8TX+/ZOa4ZWVskXMXOLnYUc7V42jc7dB0xYWrF5llhR7lyDv7vd6o
- knVj9E+5WlFhz9vRLzi4BD+XcXEosRRnJBpqMRcVJwIA3Caj6rQCAAA=
-X-CMS-MailID: 20191211144648eucas1p2065aac523ce190a5c0e6e2b5b11bd5ce
+ mSrp29mkpOZklqUW6dsl6GWc6znIUnCMs+LC528sDYy/2LsYOTkkBEwkbjQsYO1i5OIQEljK
+ KLHxxAcmiISMxMlpDawQtrDEn2tdbBBFnxgl3v7tZQZJsAkYSnS9hUiICGxglDjz/gkLSIJZ
+ 4BqzxLLN0iC2sICbxIK7/8HiLAKqEvtvrAVr5hWwlbjT/ZoNYoO8xOoNB4DiHBycAnYSUw5W
+ goSFgEruTTrENoGRbwEjwypGkdTS4tz03GIjveLE3OLSvHS95PzcTYzA6Nl27OeWHYxd74IP
+ MQpwMCrx8C7Y/j5WiDWxrLgy9xCjBAezkgjv8bZ3sUK8KYmVValF+fFFpTmpxYcYTYFumsgs
+ JZqcD4zsvJJ4Q1NDcwtLQ3Njc2MzCyVx3g6BgzFCAumJJanZqakFqUUwfUwcnFINjFO1musL
+ BC/ktvr3/e54rRS+YF3rX+OUIo+uI00a7LFZB6Y5VxvMvlzcsMhL39MroITrwV0FjyVX3lSx
+ eMw8+dlPol7PxEfblMVKjbP4l+eb4x8uiP49NC3i5CX+2azJvLVfl1vFfhI3c11ppT1383uO
+ 18dULFb1JOs5tl91nFS44v3zfskLSizFGYmGWsxFxYkAD5/F+bQCAAA=
+X-CMS-MailID: 20191211144649eucas1p1b882634306383e225dbab70629d2f222
 X-Msg-Generator: CA
-X-RootMTR: 20191211144648eucas1p2065aac523ce190a5c0e6e2b5b11bd5ce
+X-RootMTR: 20191211144649eucas1p1b882634306383e225dbab70629d2f222
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20191211144648eucas1p2065aac523ce190a5c0e6e2b5b11bd5ce
+X-CMS-RootMailID: 20191211144649eucas1p1b882634306383e225dbab70629d2f222
 References: <20191211144638.24676-1-m.szyprowski@samsung.com>
- <CGME20191211144648eucas1p2065aac523ce190a5c0e6e2b5b11bd5ce@eucas1p2.samsung.com>
+ <CGME20191211144649eucas1p1b882634306383e225dbab70629d2f222@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_064652_883615_1865A6F8 
-X-CRM114-Status: GOOD (  14.59  )
+X-CRM114-CacheID: sfid-20191211_064652_860086_8BEF477A 
+X-CRM114-Status: GOOD (  15.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -162,50 +162,22 @@ polarity from DT.
 
 Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
 ---
- arch/arm/boot/dts/exynos4412-odroid-common.dtsi | 2 +-
- arch/arm/boot/dts/exynos5250-arndale.dts        | 2 +-
- arch/arm/boot/dts/exynos5410-odroidxu.dts       | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ arch/arm/boot/dts/qcom-mdm9615-wp8548-mangoh-green.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/exynos4412-odroid-common.dtsi b/arch/arm/boot/dts/exynos4412-odroid-common.dtsi
-index ea55f377d17c..9c39e82e4ecb 100644
---- a/arch/arm/boot/dts/exynos4412-odroid-common.dtsi
-+++ b/arch/arm/boot/dts/exynos4412-odroid-common.dtsi
-@@ -267,7 +267,7 @@
- 
- 		intn-gpios = <&gpx3 0 GPIO_ACTIVE_HIGH>;
- 		connect-gpios = <&gpx3 4 GPIO_ACTIVE_HIGH>;
--		reset-gpios = <&gpx3 5 GPIO_ACTIVE_HIGH>;
-+		reset-gpios = <&gpx3 5 GPIO_ACTIVE_LOW>;
- 		initial-mode = <1>;
- 	};
- 
-diff --git a/arch/arm/boot/dts/exynos5250-arndale.dts b/arch/arm/boot/dts/exynos5250-arndale.dts
-index d6c85efdb465..3eddf5dbcf7b 100644
---- a/arch/arm/boot/dts/exynos5250-arndale.dts
-+++ b/arch/arm/boot/dts/exynos5250-arndale.dts
-@@ -154,7 +154,7 @@
- 		compatible = "smsc,usb3503a";
- 
- 		reset-gpios = <&gpx3 5 GPIO_ACTIVE_LOW>;
--		connect-gpios = <&gpd1 7 GPIO_ACTIVE_LOW>;
-+		connect-gpios = <&gpd1 7 GPIO_ACTIVE_HIGH>;
- 	};
- };
- 
-diff --git a/arch/arm/boot/dts/exynos5410-odroidxu.dts b/arch/arm/boot/dts/exynos5410-odroidxu.dts
-index e0db251e253f..4f9297ae0763 100644
---- a/arch/arm/boot/dts/exynos5410-odroidxu.dts
-+++ b/arch/arm/boot/dts/exynos5410-odroidxu.dts
-@@ -170,7 +170,7 @@
- 
- 		intn-gpios = <&gpx0 7 GPIO_ACTIVE_HIGH>;
- 		connect-gpios = <&gpx0 6 GPIO_ACTIVE_HIGH>;
--		reset-gpios = <&gpx1 4 GPIO_ACTIVE_HIGH>;
-+		reset-gpios = <&gpx1 4 GPIO_ACTIVE_LOW>;
- 		initial-mode = <1>;
- 
- 		clock-names = "refclk";
+diff --git a/arch/arm/boot/dts/qcom-mdm9615-wp8548-mangoh-green.dts b/arch/arm/boot/dts/qcom-mdm9615-wp8548-mangoh-green.dts
+index 26160c324802..942e3a2cac35 100644
+--- a/arch/arm/boot/dts/qcom-mdm9615-wp8548-mangoh-green.dts
++++ b/arch/arm/boot/dts/qcom-mdm9615-wp8548-mangoh-green.dts
+@@ -143,7 +143,7 @@
+ 				compatible = "smsc,usb3503a";
+ 				reg = <0x8>;
+ 				connect-gpios = <&gpioext2 1 GPIO_ACTIVE_HIGH>;
+-				intn-gpios = <&gpioext2 0 GPIO_ACTIVE_LOW>;
++				intn-gpios = <&gpioext2 0 GPIO_ACTIVE_HIGH>;
+ 				initial-mode = <1>;
+ 			};
+ 		};
 -- 
 2.17.1
 
