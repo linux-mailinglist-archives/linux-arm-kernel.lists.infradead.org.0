@@ -2,86 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B92F611A875
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 11:00:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F2A711A87A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 11:01:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fyE1rBrvRz5Kn5dcp6VnrFKvFIjJfGc4wEQX08SSJpk=; b=Ux0TrDOoLjHLh/
-	/HrwhZUg5GsKzXKFWHKVDUEVKivbpAdPxqICigqLYrZ7LWnRRj0wAIz5L1cKFm8zpdx5MkNOeQoVL
-	D3tnOJtTkwOnYOW3qPs5uVRThOE/hr1COSw8m65tuEmP/qoxCntpqSUsVriM1+7xRBAgzydodKB5/
-	UnFZ70WdAd4ogTcg5ePyhfiIpRgNDlwz3hO5UWaUr1rzTDMaC2d71k3S3BKiovifyxRbB54PuPKsp
-	CM2vEJHIH+8LL1XabKQP1ulmEPyiYvS05acnrQAdl1jeuX8ESkYyxuh6Zl5TQo75Y37+j4FvEHBxV
-	TTzGG5bh0eixbd3KU/Lw==;
+	List-Owner; bh=Jd8sj5wJ4u5RZjuRlnYmALVjtdCAeDXXYhVU7ycy8Mg=; b=Pa5YE4iI1jgEIs
+	RyAn7m6hNdLu82M8neqYCr4PZ87ngnT3xzx44lQecWDn1QXQdJemQSoHIg1WmGV0PZVzpz4ZX3W6n
+	OdyggWex3V7BFGnWV3h+4eFFsKecimOfpsMqJJ7w75kZMN7KdmPZQFliaqiuM6d1oP82iGzSfoE9T
+	eLY+quuFJAcbve5+wDxLE9X2Jpv+FYWBSuumg3c/U9IGWe0Yw4sCCz6MjB7eMXKGANHSRcHloMR42
+	2XQXU5HSvJ35Us0TSneSaKAdiwpBl6jftvcR+FXaGi2y6dEvtdeqQxydu8OB7KH3jVTY4fMuJrOTE
+	1tvZidtj4KleaRbFmCdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieyne-0003x3-S7; Wed, 11 Dec 2019 10:00:54 +0000
-Received: from mail-ua1-x932.google.com ([2607:f8b0:4864:20::932])
+	id 1ieyo6-0004KV-75; Wed, 11 Dec 2019 10:01:22 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieynU-0003vk-FQ
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 10:00:46 +0000
-Received: by mail-ua1-x932.google.com with SMTP id d8so3234978uak.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 02:00:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=verdurent-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=GPHN1AYuunZqO/oxGQmIHjw9s2N+wk7NQPQ24v17qUM=;
- b=dGrmOjNR7baqiE2L5L/Ybgc7o6d7FBSsYshMAu12KnMmgEXtcHtpUrD/oD+H+OnY+V
- anlCviiva6XzZMibzlxDTK15C+HOkJ3bhkU7BA3GfOob4wcHYNvyKKp2tOO3O1jfaUeI
- 0ITFfsHqBYZatXLd5rW3ZRJV8j3zROBpm3VGeIevq58B5D09uGoHw0m0mxiAMUx+7yh4
- sfGnslmsuqyjuJ1MX3/btt3HN8nKWOMy+E33e1/lEHI8HL5KBH+4NXh4aDu81m7BbLIb
- +Qu+QPsgdk/5kKugf3YeogdikHfPlUYM1VL9V02TxyagIg8itcDg0pweUqkbKrQGD3VK
- vDQQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GPHN1AYuunZqO/oxGQmIHjw9s2N+wk7NQPQ24v17qUM=;
- b=jWmIUgZ82q54w676GVnvZ/HEQgsCpBqkRmbFIh1j1Tw8mlk74R5kF3TWKaa427zDLB
- EIh6oJI07d7Pie/BoHDrQIRHsv3QJcm3mZN2hVxPZiQ8bq8EsIOUMQBaEXgS7vusHP83
- 5hcYRbym+xHdzh58h2/2kXN6bhW7D2tN77Gnrj9seHxTv6+fbSB82Dc+iKc/uYiIJE4K
- cnQHI4/sP5QznDG3tzkNbswayb6v9Uhxt2RKap3++FOpDpbsEIx6R6O4X2+50qFMOAdD
- DzX6/sYQaXYwElmDG7MsNLfrWDX8gtlr4D6TDL6Q35TnWRmuWlAn6ATnTby5EKNst8oO
- XFVw==
-X-Gm-Message-State: APjAAAWpsRKhZY6fkeNFqyp6jEKKhPzNPR+DSb6XmrDznlRvPUYkdRfo
- Qcdkn7OOplIb1d5wYK5BLZDSBnMPp5atYOyB7ntACQ==
-X-Google-Smtp-Source: APXvYqwlsnaNq951yteb1PwTdfkJJKYihJ7CwyOE/btAs9WN7+ZCke/5ntTlGoE1GZnJV/cHfBxqmwkKwhXt46MAt+w=
-X-Received: by 2002:ab0:7352:: with SMTP id k18mr2032094uap.77.1576058442748; 
- Wed, 11 Dec 2019 02:00:42 -0800 (PST)
+ id 1ieynm-0004AI-Ld
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 10:01:04 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1ieynh-0002xu-4L; Wed, 11 Dec 2019 11:00:57 +0100
+Message-ID: <c5fcb87bb36831776d17101e0e6e0e99b86f434c.camel@pengutronix.de>
+Subject: Re: [PATCH] ARM: davinci: select CONFIG_RESET_CONTROLLER
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Bartosz Golaszewski <bgolaszewski@baylibre.com>, Arnd Bergmann
+ <arnd@arndb.de>
+Date: Wed, 11 Dec 2019 11:00:56 +0100
+In-Reply-To: <CAMpxmJX0jAa4-52pT0rutPz9naRHb4nnZ=cDdvCMLxGh=3m_=A@mail.gmail.com>
+References: <20191210195202.622734-1-arnd@arndb.de>
+ <CAMpxmJX0jAa4-52pT0rutPz9naRHb4nnZ=cDdvCMLxGh=3m_=A@mail.gmail.com>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
-References: <1573068840-13098-1-git-send-email-agross@kernel.org>
- <1573068840-13098-2-git-send-email-agross@kernel.org>
- <CAHLCerN7buq82RmmFkoSi_n8g8sSe9VO2utcXuEGM3xG3HcRTg@mail.gmail.com>
- <20191108031854.GA12993@hector.lan> <20191210105737.GB228968@gerhold.net>
- <CAHLCerPs8+Fp1N-x7cQ2ETQ8d+fHN5b08V-jVFyFdQLYDndoBA@mail.gmail.com>
- <20191210181725.GD314059@yoga>
- <CAOesGMiiMG8kND=ZGv93t525B4L3ogA7py+3fdw2F6XaZspw_w@mail.gmail.com>
-In-Reply-To: <CAOesGMiiMG8kND=ZGv93t525B4L3ogA7py+3fdw2F6XaZspw_w@mail.gmail.com>
-From: Amit Kucheria <amit.kucheria@verdurent.com>
-Date: Wed, 11 Dec 2019 15:30:30 +0530
-Message-ID: <CAHLCerPsxhhLTN2bD8J97iQD=DzGzJrb=tV8jZ1t_xohj2PWxg@mail.gmail.com>
-Subject: Re: [GIT PULL] Qualcomm ARM64 DT updates for 5.5
-To: Olof Johansson <olof@lixom.net>
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_020045_104038_F072E959 
-X-CRM114-Status: GOOD (  22.84  )
+X-CRM114-CacheID: sfid-20191211_020102_756074_EFE0C571 
+X-CRM114-Status: GOOD (  11.02  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:932 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,90 +65,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Andy Gross <agross@kernel.org>, lakml <linux-arm-kernel@lists.infradead.org>,
- Stephan Gerhold <stephan@gerhold.net>,
- Bjorn Andersson <bjorn.andersson@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Sekhar Nori <nsekhar@ti.com>, David Lechner <david@lechnology.com>,
+ "Stable # 4 . 20+" <stable@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 2:31 AM Olof Johansson <olof@lixom.net> wrote:
->
-> On Tue, Dec 10, 2019 at 10:17 AM Bjorn Andersson
-> <bjorn.andersson@linaro.org> wrote:
-> >
-> > On Tue 10 Dec 09:36 PST 2019, Amit Kucheria wrote:
-> >
-> > > On Tue, Dec 10, 2019 at 4:27 PM Stephan Gerhold <stephan@gerhold.net> wrote:
-> > > >
-> > > > On Thu, Nov 07, 2019 at 09:18:54PM -0600, Andy Gross wrote:
-> > > > > On Thu, Nov 07, 2019 at 07:36:03PM +0530, Amit Kucheria wrote:
-> > > > > > (Removing arm-soc)
-> > > > > >
-> > > > > > Hi Andy,
-> > > > > >
-> > > > > > On Thu, Nov 7, 2019 at 1:04 AM Andy Gross <agross@kernel.org> wrote:
-> > > > > > >
-> > > > > > > Arnd, Olof, and Kevin,
-> > > > > > >
-> > > > > > > I have one slight faux paux in this pull request.  A drivers: soc change got
-> > > > > > > into my arm64 DTS branch and while it is innocuous, it wasn't easy to fix
-> > > > > > > without messing up a lot of people who depend on the SHAs not changing.  So I'm
-> > > > > > > sorry for this inclusion.  I'll scrub this better next time.
-> > > > > > >
-> > > > > > > Andy
-> > > > > >
-> > > > > > > ----------------------------------------------------------------
-> > > > > > > Amit Kucheria (5):
-> > > > > > >       arm64: dts: qcs404: thermal: Add interrupt support
-> > > > > > >       arm64: dts: msm8998: thermal: Add interrupt support
-> > > > > > >       arm64: dts: msm8996: thermal: Add interrupt support
-> > > > > > >       arm64: dts: sdm845: thermal: Add interrupt support
-> > > > > > >       arm64: dts: msm8916: thermal: Fixup HW ids for cpu sensors
-> > > > > >
-> > > > > > One of my patches to add interrupt support to msm8916 tsens is missing
-> > > > > > here. Specifically this one:
-> > > > > > https://patchwork.kernel.org/patch/11201853/
-> > > > > >
-> > > > > > Will there be a second PR this cycle?
-> > > > >
-> > > > > I can work up another and throw it on top.
-> > > > >
-> > > >
-> > > > FYI, the patch seems to be still missing in 5.5-rc1.
-> > > > tsens now fails to probe on MSM8916 with:
-> > > >
-> > > >   qcom-tsens 4a9000.thermal-sensor: IRQ uplow not found
-> > > >
-> > > > Can you queue up the patch as fix for 5.5?
-> > >
-> > > Indeed. Andy/Bjorn, let me know if you need anything from me to get
-> > > this into -rc2.
-> > >
-> >
-> > I'm pulling in some fixes for a rc-pull, so I could add it there.
-> >
-> > But why are we breaking backwards compatibility with existing dtbs to
-> > add a new (optional) feature? Shouldn't there be a rc-fix in the driver
-> > for this regression?
->
-> 100% agreed.
->
-> Driver shouldn't require the DT update to continue to function. It
-> needs to fill in the previous behavior as default.
->
-> As a matter of fact, based on that I don't want to see that DT patch
-> as a fix, please queue it up for 5.6 instead.
-
-I've posted a fix for -rc2 to allow the driver to continue to work
-with old DTBs. Please consider for -rc2.
-
-Regards,
-Amit
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAyMDE5LTEyLTExIGF0IDEwOjE0ICswMTAwLCBCYXJ0b3N6IEdvbGFzemV3c2tpIHdy
+b3RlOgo+IHd0LiwgMTAgZ3J1IDIwMTkgbyAyMDo1MiBBcm5kIEJlcmdtYW5uIDxhcm5kQGFybmRi
+LmRlPiBuYXBpc2HFgihhKToKPiA+IFNlbGVjdGluZyBSRVNFVF9DT05UUk9MTEVSIGlzIGFjdHVh
+bGx5IHJlcXVpcmVkLCBvdGhlcndpc2Ugd2UKPiA+IGNhbiBnZXQgYSBsaW5rIGZhaWx1cmUgaW4g
+dGhlIGNsb2NrIGRyaXZlcjoKPiA+IAo+ID4gZHJpdmVycy9jbGsvZGF2aW5jaS9wc2MubzogSW4g
+ZnVuY3Rpb24gYF9fZGF2aW5jaV9wc2NfcmVnaXN0ZXJfY2xvY2tzJzoKPiA+IHBzYy5jOigudGV4
+dCsweDlhMCk6IHVuZGVmaW5lZCByZWZlcmVuY2UgdG8gYGRldm1fcmVzZXRfY29udHJvbGxlcl9y
+ZWdpc3RlcicKPiA+IGRyaXZlcnMvY2xrL2RhdmluY2kvcHNjLWRhODUwLm86IEluIGZ1bmN0aW9u
+IGBkYTg1MF9wc2MwX2luaXQnOgo+ID4gcHNjLWRhODUwLmM6KC50ZXh0KzB4MjQpOiB1bmRlZmlu
+ZWQgcmVmZXJlbmNlIHRvIGByZXNldF9jb250cm9sbGVyX2FkZF9sb29rdXAnCj4gPiAKPiA+IEZp
+eGVzOiBmOTYyMzk2Y2UyOTIgKCJBUk06IGRhdmluY2k6IHN1cHBvcnQgbXVsdGlwbGF0Zm9ybSBi
+dWlsZCBmb3IgQVJNIHY1IikKPiA+IENjOiA8c3RhYmxlQHZnZXIua2VybmVsLm9yZz4gIyB2NS40
+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBBcm5kIEJlcmdtYW5uIDxhcm5kQGFybmRiLmRlPgo+ID4gLS0t
+Cj4gPiAgYXJjaC9hcm0vbWFjaC1kYXZpbmNpL0tjb25maWcgfCAxICsKPiA+ICAxIGZpbGUgY2hh
+bmdlZCwgMSBpbnNlcnRpb24oKykKPiA+IAo+IAo+IFJldmlld2VkLWJ5OiBCYXJ0b3N6IEdvbGFz
+emV3c2tpIDxiZ29sYXN6ZXdza2lAYmF5bGlicmUuY29tPgoKUmV2aWV3ZWQtYnk6IFBoaWxpcHAg
+WmFiZWwgPHAuemFiZWxAcGVuZ3V0cm9uaXguZGU+CgpyZWdhcmRzClBoaWxpcHAKCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
