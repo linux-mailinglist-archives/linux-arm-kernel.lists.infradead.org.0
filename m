@@ -2,49 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFA3011AC03
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:24:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9C6411AC0D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:28:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SP2EQwf10p/4jVsQI6q+BosXpGuoj7PAY8dWImCHlpQ=; b=aTw0Rb9nk8eM/6
-	2qCL6SrHhP0ZTtqjhP089bYo/ltLZwK0my8di7VoHcapgWF1DYcwDC6fuP5b3Pu/5/ziqp7F90Aob
-	lcaJUDp3d+vJM8TZyJl6fnJ94TfxFqWTD5w+40606ti0l2Qke94jarixeXmnqzu93WvKpuNqrr+v+
-	DUlnvWKdIqesNErGff1Bv9z76wDUoQq6S+7SgBxdkGJXOuBR0ia4Yrf5L3KB6mXDkRuEnH6uISHkH
-	a4DT23CIO9DEti7ztsx5DkQcGl8eJ4+dx7ToCYaHiv9/zD3QI2Q9NdifHweZgMpF5n6r6XeANRaRq
-	y6jO1tIGsJhcTcQtZ1AA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vPgow/ehlFJR5Tl6g8aI9E7ANLVmaENStwsubeZ5EyI=; b=sGkcHt5JUz0lal
+	JlWrlknXykQz15rUIM0MPE8n6jpZ1WGETE+m80WRdgpacTaFCgBrMoHdgt2b3PwmdZdI3wg49lfGO
+	7a41Qp/NC81jG1eiGKFwNIWxpHvuvQMjh6fakPrXd++qUHy9xlvTwqDylcwwu2FFZ2cJ2Zny1uYXJ
+	KdYXcKZ3S2bbUqGODqX4zYipOMIIJYqZs4ooUdo4imqBtiUK4dXsSlFLAcM6tU5skf0mL+ySJBO4B
+	EuObSh8U87pus4mUFRl8q5iST1xS/+w/m/+c5ISkCGLSmHVR4ftFd/DGmMfIt+zvw1sOYtDM/P4Tp
+	Bf/Fo5xsKJ9WGdRo8HjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if1yZ-0005tm-3n; Wed, 11 Dec 2019 13:24:23 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1if22i-0007vE-1d; Wed, 11 Dec 2019 13:28:40 +0000
+Received: from mail-eopbgr80100.outbound.protection.outlook.com
+ ([40.107.8.100] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if1yR-0005tC-Kw; Wed, 11 Dec 2019 13:24:17 +0000
-Received: from droid15-sz.amlogic.com (10.28.8.25) by mail-sz.amlogic.com
- (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10; Wed, 11 Dec 2019
- 21:24:35 +0800
-From: Jian Hu <jian.hu@amlogic.com>
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-Subject: [PATCH v2] arm64: dts: meson: add A1 periphs and PLL clock nodes
-Date: Wed, 11 Dec 2019 21:23:59 +0800
-Message-ID: <20191211132359.53647-1-jian.hu@amlogic.com>
-X-Mailer: git-send-email 2.24.0
+ id 1if22Y-0007ug-Ht
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:28:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=JzO70vcgwCF41Eb3KWf/e7vjCkskQ4V4PzFc9+iIQOjolnaCGPCeGzGASYe87cQxFy7PkdlPWw6+1etuJZjL9f8wAG6a7USci+ESKAXdw4XIas/v+EZOIHxGe3N5EtqedH8Mr4y380lT/hDwsKESJMXazm3Jaw26Fnbib1ghOgQv9vXAHq63l4rOpjPAlD8wdZtmd+IHuvytaz8HLJ+Hr/Yl1LeJDnM64Etge0gEi6OtK2acX+OIQmW6z/tJM1l6IJD2Zeh+MQcF4HbFkYnF9psdwpFJWRrrxiHCE9Srzf9IlL16tIm4Utd/gmwrOb8+wpfdMkTObvMPRehgSsRuIA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fobG7iXK3Vnr71c7kmaI6NzpYuDTJLkcz2urF3IzLjU=;
+ b=WqwnreWWlQnrBJeKZqJRtBaNwx82XQv9HB/RqLk7DjplD7XZ8SSGcV+0lIux4KbnKkZvlqdY1H7MAYyGVSaKGgqyJGyvJTFdO9HQcA4hHtqNnvgMCFoSP+zdHUOae6GWGDZ7eOy8oNS4kLYkNJdRvNoKxE5bBfkDH5YK/buhBjX7kpBzPf9/bK8yFkoqyQuMU5+19zAHUPoRB94BHYgeLSu5fdu5/+YZK4EyuEdvl0LlATu9xpuPFoa2h/GOltOE4bipcPni5i3xvBByEzgj0Kd1T7iYPAMLJSsY7Pfxggj4HSeSuQBpYc/1QlfAZviCWiq1KLz1iXFLWNpXmm5/tQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
+ dkim=pass header.d=axentia.se; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fobG7iXK3Vnr71c7kmaI6NzpYuDTJLkcz2urF3IzLjU=;
+ b=S8QhF5CyTKNL9pfss6+YfhH/j+aARhqqsvWsQq1hQx+SRZ+fK/UANdiwzHqVH+bCeUCr/PeISCpvXfS8G1VPpWBPLsRi3MFQ7dym7vTMze6jESlUZBt20szUvl2Nxt47KoHG2Rwr68XehEG70SFSybyzP4e1yCxtzQqZp1Vzreg=
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
+ DB3PR0202MB3451.eurprd02.prod.outlook.com (52.134.72.14) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2538.15; Wed, 11 Dec 2019 13:28:24 +0000
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::446e:c4f8:7e59:1c6d]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::446e:c4f8:7e59:1c6d%7]) with mapi id 15.20.2516.019; Wed, 11 Dec 2019
+ 13:28:24 +0000
+From: Peter Rosin <peda@axentia.se>
+To: "Claudiu.Beznea@microchip.com" <Claudiu.Beznea@microchip.com>,
+ "sam@ravnborg.org" <sam@ravnborg.org>, "bbrezillon@kernel.org"
+ <bbrezillon@kernel.org>, "airlied@linux.ie" <airlied@linux.ie>,
+ "daniel@ffwll.ch" <daniel@ffwll.ch>, "Nicolas.Ferre@microchip.com"
+ <Nicolas.Ferre@microchip.com>, "alexandre.belloni@bootlin.com"
+ <alexandre.belloni@bootlin.com>, "Ludovic.Desroches@microchip.com"
+ <Ludovic.Desroches@microchip.com>, "lee.jones@linaro.org"
+ <lee.jones@linaro.org>
+Subject: Re: [PATCH 4/5] Revert "drm/atmel-hlcdc: allow selecting a higher
+ pixel-clock than requested"
+Thread-Topic: [PATCH 4/5] Revert "drm/atmel-hlcdc: allow selecting a higher
+ pixel-clock than requested"
+Thread-Index: AQHVr11DyxIz9S+dLEWyrkArJlSyg6ezeYGA///8moCAADjaAIABIyyAgAAc2oA=
+Date: Wed, 11 Dec 2019 13:28:24 +0000
+Message-ID: <b5ea01da-5345-05cf-9f89-b7123dbbb893@axentia.se>
+References: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
+ <1575984287-26787-5-git-send-email-claudiu.beznea@microchip.com>
+ <4c3ffc48-7aa5-1e48-b0e9-a50c4eea7c38@axentia.se>
+ <5fbad2cd-0dbe-0be5-833a-f7a612d48012@microchip.com>
+ <2272669c-38ee-1928-9563-46755574897c@axentia.se>
+ <167cb87e-b189-71fd-0a79-adf89336d1f3@microchip.com>
+In-Reply-To: <167cb87e-b189-71fd-0a79-adf89336d1f3@microchip.com>
+Accept-Language: en-US, sv-SE
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
+x-originating-ip: [213.112.138.100]
+x-clientproxiedby: HE1PR05CA0285.eurprd05.prod.outlook.com
+ (2603:10a6:7:93::16) To DB3PR0202MB3434.eurprd02.prod.outlook.com
+ (2603:10a6:8:5::30)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peda@axentia.se; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 10076e51-e796-4c5e-18c8-08d77e3dff8a
+x-ms-traffictypediagnostic: DB3PR0202MB3451:
+x-microsoft-antispam-prvs: <DB3PR0202MB34519BCF7196AC79E6F700C9BC5A0@DB3PR0202MB3451.eurprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 024847EE92
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(366004)(136003)(396003)(346002)(39830400003)(376002)(199004)(189003)(7416002)(81166006)(81156014)(6486002)(66446008)(64756008)(6512007)(66946007)(4001150100001)(31686004)(66476007)(66556008)(8676002)(5660300002)(2906002)(186003)(2616005)(36756003)(8936002)(6506007)(71200400001)(52116002)(110136005)(54906003)(316002)(86362001)(53546011)(26005)(31696002)(4326008)(508600001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3451;
+ H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: axentia.se does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 1DeSgWEvYFuSFysNUIoAfzx9XIYylvJD9zTflE7YSxgU5G+gJhapKXqSdzZXnzfTswxlDfF9Lh5eQaS2jCDNZsWygZygVpe7WzU0BdlApl3V2+KB+qddD6Q9u9FzBuQDALn/0PEogtVy0SiTz0PQNAsGLgvmHigCt9lPz3RTtvuO8YRMXfUyrFyvqonwI0fUgipr5DHdc15Rin8v1XxOf0rik1oQk495OXlXd5pB7kB5DeUMDWp8kAlwkhW/ejXpPUCYTP5MTwcHp+KOhr7ZvSFYuQNWRNvtymv5LGlbZ9IlCJqen4pchUsEjLR4ckrnc4Uphuq2uu2/P4yK7ik9mXvysAuoqWnUwPvIg99b8IsPkJwwKIMcGmshZ9kNwSkDCVQQxrikPaU85LzY4+2fz1sTlHACtFcAHyGlDN2jnL1RX9IZnPx4Fq/fP/rfJ31S
+x-ms-exchange-transport-forked: True
+Content-ID: <6EA23D3E9801C6479DB9954F58F85094@eurprd02.prod.outlook.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.28.8.25]
+X-OriginatorOrg: axentia.se
+X-MS-Exchange-CrossTenant-Network-Message-Id: 10076e51-e796-4c5e-18c8-08d77e3dff8a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Dec 2019 13:28:24.3048 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: sk7yPS9LhC1PGTHv8YujCt8ZuUvCQEegprgQ65677S4Nb4s6Z9uc/DdZyYHcMaR9
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3451
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_052415_687641_50FD804A 
-X-CRM114-Status: UNSURE (   8.20  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_052830_977769_FE8A7E43 
+X-CRM114-Status: GOOD (  30.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.8.100 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,101 +140,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>, devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
- linux-arm-kernel@lists.infradead.org, Qiufang Dai <qiufang.dai@amlogic.com>,
- linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
- Chandle Zou <chandle.zou@amlogic.com>
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add A1 periphs and PLL clock controller nodes, Some clocks
-in periphs controller are the parents of PLL clocks, Meanwhile
-some clocks in PLL controller are those of periphs clocks.
-They rely on each other.
+On 2019-12-11 12:45, Claudiu.Beznea@microchip.com wrote:
+> 
+> 
+> On 10.12.2019 19:22, Peter Rosin wrote:
+>> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
+>>
+>> On 2019-12-10 15:59, Claudiu.Beznea@microchip.com wrote:
+>>>
+>>>
+>>> On 10.12.2019 16:11, Peter Rosin wrote:
+>>>> On 2019-12-10 14:24, Claudiu Beznea wrote:
+>>>>> This reverts commit f6f7ad3234613f6f7f27c25036aaf078de07e9b0.
+>>>>> ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
+>>>>> because allowing selecting a higher pixel clock may overclock
+>>>>> LCD devices, not all of them being capable of this.
+>>>>
+>>>> Without this patch, there are panels that are *severly* underclocked (on the
+>>>> magnitude of 40MHz instead of 65MHz or something like that, I don't remember
+>>>> the exact figures).
+>>>
+>>> With patch that switches by default to 2xsystem clock for pixel clock, if
+>>> using 133MHz system clock (as you specified in the patch I proposed for
+>>> revert here) that would go, without this patch at 53MHz if 65MHz is
+>>> requested. Correct me if I'm wrong.
+>>
+>> It might have been 53MHz, whatever it was it was too low for things to work.
+>>
+>>>> And they are of course not capable of that. All panels
+>>>> have *some* slack as to what frequencies are supported, and the patch was
+>>>> written under the assumption that the preferred frequency of the panel was
+>>>> requested, which should leave at least a *little* headroom.
+>>>
+>>> I see, but from my point of view, the upper layers should decide what
+>>> frequency settings should be done on the LCD controller and not let this at
+>>>  the driver's latitude.
+>>
+>> Right, but the upper layers do not support negotiating a frequency from
+>> ranges. At least the didn't when the patch was written, and implementing
+>> *that* seemed like a huge undertaking.
+>>
+>>>>
+>>>> So, I'm curious as to what panel regressed. Or rather, what pixel-clock it needs
+>>>> and what it gets with/without the patch?
+>>>
+>>> I have 2 use cases:
+>>> 1/ system clock = 200MHz and requested pixel clock (mode_rate) ~71MHz. With
+>>> the reverted patch the resulted computed pixel clock would be 80MHz.
+>>> Previously it was at 66MHz
+>>
+>> I don't see how that's possible.
+>>
+>> [doing some calculation by hand]
+>>
+>> Arrgh. *blush*
+>>
+>> The code does not do what I intended for it to do.
+>> Can you please try this instead of reverting?
+>>
+>> Cheers,
+>> Peter
+>>
+>> From b3e86d55b8d107a5c07e98f879c67f67120c87a6 Mon Sep 17 00:00:00 2001
+>> From: Peter Rosin <peda@axentia.se>
+>> Date: Tue, 10 Dec 2019 18:11:28 +0100
+>> Subject: [PATCH] drm/atmel-hlcdc: prefer a lower pixel-clock than requested
+>>
+>> The intention was to only select a higher pixel-clock rate than the
+>> requested, if a slight overclocking would result in a rate significantly
+>> closer to the requested rate than if the conservative lower pixel-clock
+>> rate is selected. The fixed patch has the logic the other way around and
+>> actually prefers the higher frequency. Fix that.
+>>
+>> Fixes: f6f7ad323461 ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
+>> Reported-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+>> Signed-off-by: Peter Rosin <peda@axentia.se>
+>> ---
+>>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 4 ++--
+>>  1 file changed, 2 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+>> index 9e34bce089d0..03691845d37a 100644
+>> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+>> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+>> @@ -120,8 +120,8 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
+>>                 int div_low = prate / mode_rate;
+>>
+>>                 if (div_low >= 2 &&
+>> -                   ((prate / div_low - mode_rate) <
+>> -                    10 * (mode_rate - prate / div)))
+>> +                   (10 * (prate / div_low - mode_rate) <
+>> +                    (mode_rate - prate / div)))
+> 
+> I tested it on my setup (I have only one of those specified above) and it
+> is OK. Doing some math for the other setup it should also be OK.
 
-Signed-off-by: Jian Hu <jian.hu@amlogic.com>
----
-Compared with the previous series, the register region
-is only for the clock. So syscon is not used in A1.
+Glad to hear it, and thanks for testing/verifying!
 
-This patch depends on A1 clock patchset at [0]
+> As a whole, I'm OK with this at the moment (let's hope it will work for all
+> use-cases) but still I am not OK with selecting here, in the driver,
+> something that might work.
 
-Changes since v1 at [1]:
--remove the compared message in commit description,
- And put it after the '---'
--reorder order the includes
--reorder the clock node
--change the clock node name
+The driver has to select *something*. If it can deliver the exact requested
+frequency, fine. Otherwise? What should it do? Bail out? Why is 53MHz better
+and more likely to produce a picture than 66MHz, when 65MHz is requested?
+That's of course an impossible question for the driver to answer.
 
-[0] https://lkml.kernel.org/r/20191206074052.15557-1-jian.hu@amlogic.com
-[1] https://lkml.kernel.org/r/20191211070835.83489-1-jian.hu@amlogic.com
+So, if you are not ok with that, you need to implement something that uses
+the min/max fields from the various fields inside struct display_timing
+instead of only looking at the typ field. E.g. the panel_lvds driver calls
+videomode_from_timings() and the result is a single possible mode with only
+the typical timings, with no negotiation of the best option within the
+given ranges with the other drivers involved with the pipe. I think the
+panel-simple driver also makes this one-sided decision of only making use
+of the typ field for each given timing range. Having dabbled a bit in what
+the sound stack does to negotiate the sample rate, sample format and
+channel count etc, I can only predict that retrofitting something like that
+for video modes will be ... interesting. Which is probably why it's not
+done at all, at least not in the general case.
 
----
----
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 26 +++++++++++++++++++++++
- 1 file changed, 26 insertions(+)
+And yes, I agree, the current mechanics are less than ideal. But I have no
+time to do anything about it.
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-index 7210ad049d1d..48ba3eba547d 100644
---- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -3,6 +3,8 @@
-  * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-  */
- 
-+#include <dt-bindings/clock/a1-pll-clkc.h>
-+#include <dt-bindings/clock/a1-clkc.h>
- #include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- 
-@@ -74,6 +76,21 @@
- 			#size-cells = <2>;
- 			ranges = <0x0 0x0 0x0 0xfe000000 0x0 0x1000000>;
- 
-+			clkc_periphs: clock-controller@800 {
-+				compatible = "amlogic,a1-periphs-clkc";
-+				#clock-cells = <1>;
-+				reg = <0 0x800 0 0x104>;
-+				clocks = <&clkc_pll CLKID_FCLK_DIV2>,
-+					 <&clkc_pll CLKID_FCLK_DIV3>,
-+					 <&clkc_pll CLKID_FCLK_DIV5>,
-+					 <&clkc_pll CLKID_FCLK_DIV7>,
-+					 <&clkc_pll CLKID_HIFI_PLL>,
-+					 <&xtal>;
-+				clock-names = "fclk_div2", "fclk_div3",
-+					      "fclk_div5", "fclk_div7",
-+					      "hifi_pll", "xtal";
-+			};
-+
- 			uart_AO: serial@1c00 {
- 				compatible = "amlogic,meson-gx-uart",
- 					     "amlogic,meson-ao-uart";
-@@ -93,6 +110,15 @@
- 				clock-names = "xtal", "pclk", "baud";
- 				status = "disabled";
- 			};
-+
-+			clkc_pll: clock-controller@7c80 {
-+				compatible = "amlogic,a1-pll-clkc";
-+				#clock-cells = <1>;
-+				reg = <0 0x7c80 0 0x21c>;
-+				clocks = <&clkc_periphs CLKID_XTAL_FIXPLL>,
-+					 <&clkc_periphs CLKID_XTAL_HIFIPLL>;
-+				clock-names = "xtal_fixpll", "xtal_hifipll";
-+			};
- 		};
- 
- 		gic: interrupt-controller@ff901000 {
--- 
-2.24.0
+>                            Although I am not familiar with how other DRM
+> drivers are handling this kind of scenarios. Maybe you and/or other DRM
+> guys knows more about it.
 
+I don't know (and I mean it literally), but maybe these chips are special
+as they typically end up with very small dividers and thus large frequency
+steps? BTW, I do not consider myself a DRM guy, I have only tried to
+fix that which did not work out for our needs...
+
+> Just as a notice, it may worth adding a print message saying what was
+> frequency was requested and what frequency has been setup by driver.
+
+I have no problem with that.
+
+Cheers,
+Peter
+
+> 
+>>                         /*
+>>                          * At least 10 times better when using a higher
+>>                          * frequency than requested, instead of a lower.
+>> --
+>> 2.20.1
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
