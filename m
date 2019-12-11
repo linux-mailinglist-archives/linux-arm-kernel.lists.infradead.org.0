@@ -2,87 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A03F11A96E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 11:59:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9865111A977
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 12:00:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CavK8Gpx6M792gk23Wa4JFA0UKwnYCcdte+y6pdupPQ=; b=dfHpG8MqvoIA82
-	sVtNoW8ehmxIonM9jQvIVXQyBQCMyu0zV0xGSXZJVc3VtN9RU7JifbngYOXhS9MGuMnF7jLQtO2N0
-	nE5aS2We9WIb916yhS+7pAw0o06v5lN5zVM9mM3pGhcCvDFZsaploHHApg9ivxSPCSH614wEWao4R
-	xvB5UZtG8BpbR+1tCniFEBXt6O13THlbyaiZJdrKIaxSkSoJEtMqTn3bK25RP2Klgpm6d0HDtnH6O
-	Txkq4NuG0/x5R+v9pPIWrHy2ss0oD1JcEUu5gRB4PIVoFK/WYRHHRkg1FzaE6n3NXw8HwsmPyLr0u
-	/LIVIul9kVO+aFLUMdbA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UDvY6WiPJafiV1jsC/ggNJuuSb6zVifTKveZwJAEV/U=; b=txrqELSzQ1zpHd
+	x6vTSOX/wvZ3JscWgPontmfR2TstXdqiAubE883+0iS86mlxRhmyKI3DucGKpLbYUWBi8X7qA1hfJ
+	bWPylz3ZcwctohHXUhDCw/du9qVf/l+asdGmM93eG2eJotSC/Dgok77XUYbNVVCrjVJYed0uBhWMK
+	5s7u26Eb3Gdk6N0/yX0xMebDuGElm5WQUrxm3HMSlm08D+iFERUMGBlh1+uu9RnL103EhzoxJUbki
+	aIKgP3YCr803KiaWQJDFunel/Uwo6Lz/NQrO+XGo+TDAvivGflRSaaUdv10V/8LPJ4cbkBoFcohNS
+	UhFciPDp7TBXCJaJ/XHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieziM-00049E-9j; Wed, 11 Dec 2019 10:59:30 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1iezjU-0006Fe-4b; Wed, 11 Dec 2019 11:00:40 +0000
+Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iezi9-00048W-Ba
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 10:59:18 +0000
-Received: by mail-wr1-x443.google.com with SMTP id q6so2038196wro.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 02:59:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=ZJ6q3Z6ceKXrm+SRlu2SJJixCZ2doGfehevk1AA5ByM=;
- b=K1ojBJTpeL2Wboiq1cJE1Qq1n1g2bh/8V9dHPWgDVEGYy3w7g72D4KX55XVKKdXmbK
- twQeRiS4RHTOb+jek8lMpidtbUZHZ56k/3uCiXXG5/+Hkw/rxpi9nXFgX2fFiuSZt9gx
- 33t0fTYw2WNQcXFMUfbK17IUcJIqUG/f7ENFXDkP/+HZFFhEV/HUUyHXlqyaRHTlZqP+
- W1hQAb3DcSM8/OMvm51Xzaphnh3Jfeo+cHO0F9nvSfAt5q5JciBAe7LhcaGyG570Cgc+
- 6ckP1RX5m9u+nWZ060GCRdifB5D99LuUhnhQKM7RWCVZCXEGwohrxalOaTxi1DYQbRQS
- L75Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=ZJ6q3Z6ceKXrm+SRlu2SJJixCZ2doGfehevk1AA5ByM=;
- b=Hklw1qij3TLZsnkE0aMX5jvWRpOPZWYZ6pJgjqHuCH2DJwFAiPNf9xWxKwafyvPi2R
- avGaixOmRpT3FI4xjYMJOeo18/IAuV2nvVk8mKknicFscK5DEufFjueqgBX1cqZs+w4E
- iRETBzvYVFJM7A91xyiaNwb2cdokqGg+42iseGFqTXFI1rknMZoSq10KreuVYx5IkG3J
- hhW8kG/bDdgHdeQy2Z0DeYE+XBd1mdfy3PC1oyrlJ60lHUVLMEfDEB//Su3uLVgYUJ67
- AJS3JLTAJo1UlT7IY2kdEqp9alFxbvA/tZUS9OshTHTdj160UWoxiygqKsXVSiv1v3Yb
- NxnQ==
-X-Gm-Message-State: APjAAAVzgGDF7y4upt1SXGT0juf5PSjCdXZi1rwpKShuR8qENTluqHrt
- KKbY/Sv+5/JD0dSpWI5xVsA=
-X-Google-Smtp-Source: APXvYqzYgisCayrNKaxODP8N7xFYdT2hZz1hxEtmhPqbWlMtOUVzxlgJNwPz8lQm54UI/lwzuPutcw==
-X-Received: by 2002:adf:dc86:: with SMTP id r6mr3304746wrj.68.1576061953285;
- Wed, 11 Dec 2019 02:59:13 -0800 (PST)
-Received: from arch-thunder.localdomain (a109-49-46-234.cpe.netcabo.pt.
- [109.49.46.234])
- by smtp.gmail.com with ESMTPSA id o19sm1215640wmc.18.2019.12.11.02.59.10
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Dec 2019 02:59:12 -0800 (PST)
-Date: Wed, 11 Dec 2019 10:59:08 +0000
-From: Rui Miguel Silva <rmfrfs@gmail.com>
-To: Chuhong Yuan <hslester96@gmail.com>
-Subject: Re: [PATCH] media: imx7-mipi-csis: Add the missed
- v4l2_async_notifier_cleanup in remove
-Message-ID: <20191211105908.dw4lnuble3ejlnil@arch-thunder.localdomain>
-References: <20191209085828.16183-1-hslester96@gmail.com>
+ id 1iezis-0004rL-HH; Wed, 11 Dec 2019 11:00:15 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5df0cc260000>; Wed, 11 Dec 2019 02:59:52 -0800
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Wed, 11 Dec 2019 02:59:59 -0800
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Wed, 11 Dec 2019 02:59:59 -0800
+Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 11 Dec
+ 2019 10:59:57 +0000
+Received: from [10.26.11.206] (10.124.1.5) by DRHQMAIL107.nvidia.com
+ (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 11 Dec
+ 2019 10:59:53 +0000
+Subject: Re: [PATCH] ASoC: rt5677: add SPI_MASTER dependency
+To: Arnd Bergmann <arnd@arndb.de>, Mark Brown <broonie@kernel.org>
+References: <20191210195333.648018-1-arnd@arndb.de>
+From: Jon Hunter <jonathanh@nvidia.com>
+Message-ID: <d739240f-aaa6-c310-9c68-16c1a08ce759@nvidia.com>
+Date: Wed, 11 Dec 2019 10:59:51 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191209085828.16183-1-hslester96@gmail.com>
+In-Reply-To: <20191210195333.648018-1-arnd@arndb.de>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
+ DRHQMAIL107.nvidia.com (10.27.9.16)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1576061992; bh=MQK8ZVgrVvXj2CCi28ItwK2/xlFo7vqiSDqFxR2ycEA=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
+ X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=XYF0uUIPrfVZWGpMaViwy03efYcRVbDgtnOcU0FZmQogsvCRIi7nl5qF7oHsMi1cB
+ UR126BMNKqOpTLRdnWGkSTzRk1y76Gg2XyJutGSZDP55Kvi80aBdQ2MWCt2l+Wm0QJ
+ EKxVYbjxVxz/Bowr/qYlCXOlVyTcB0405ASX3VXwZJkuLpNzthrWpF8LH4dGkoMbD6
+ 2ZCio9eSOkANH2ysYs0lWfvl3zyd8Ck/BoCTPNDZSVOBwAcZTUp01vLexN1vtHDq50
+ jhnyS/6aeYyuK7icmpNbnibMOIX9aTAM19weFl61QAtNC+aaUb7XGGeOforRV9Wm11
+ FJug7rWvb8ObQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_025917_423334_B6E361B1 
-X-CRM114-Status: GOOD (  15.80  )
-X-Spam-Score: 1.4 (+)
+X-CRM114-CacheID: sfid-20191211_030002_675233_F093DB96 
+X-CRM114-Status: GOOD (  11.92  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 1.0 HK_RANDOM_FROM         From username looks random
- 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.64 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rmfrfs[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -91,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,53 +93,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Fabio Estevam <festevam@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Steve Longerbeam <slongerbeam@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ Cezary Rojewski <cezary.rojewski@intel.com>, linux-tegra@vger.kernel.org,
+ Charles Keepax <ckeepax@opensource.cirrus.com>, alsa-devel@alsa-project.org,
+ linux-kernel@vger.kernel.org, Jie Yang <yang.jie@linux.intel.com>,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Ben Zhang <benzh@chromium.org>, Thierry Reding <thierry.reding@gmail.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Curtis Malainey <cujomalainey@chromium.org>, Jaroslav
+ Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
+ KaiChieh Chuang <kaichieh.chuang@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Chuhong,
-Thanks for the patch.
 
-On Mon, Dec 09, 2019 at 04:58:28PM +0800, Chuhong Yuan wrote:
-> All drivers in imx call v4l2_async_notifier_cleanup() after unregistering
-> the notifier except this driver.
-> This should be a miss and we need to add the call to fix it.
+On 10/12/2019 19:52, Arnd Bergmann wrote:
+> When CONFIG_SPI is disabled, the newly added code for the DSP
+> firmware loading fails to link:
 > 
-> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+> ERROR: "rt5677_spi_hotword_detected" [sound/soc/codecs/snd-soc-rt5677.ko] undefined!
+> ERROR: "rt5677_spi_write" [sound/soc/codecs/snd-soc-rt5677.ko] undefined!
 
-Reviewed-by: Rui Miguel Silva <rmfrfs@gmail.com>
+Would it be better if the above functions or the functions that call
+these are conditional on CONFIG_SND_SOC_RT5677_SPI?
 
-------
-Cheers,
-     Rui
-> ---
->  drivers/staging/media/imx/imx7-mipi-csis.c | 1 +
->  1 file changed, 1 insertion(+)
+> Add a dependency to prevent this configuration.
 > 
-> diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
-> index 99166afca071..2bfa85bb84e7 100644
-> --- a/drivers/staging/media/imx/imx7-mipi-csis.c
-> +++ b/drivers/staging/media/imx/imx7-mipi-csis.c
-> @@ -1105,6 +1105,7 @@ static int mipi_csis_remove(struct platform_device *pdev)
->  	mipi_csis_debugfs_exit(state);
->  	v4l2_async_unregister_subdev(&state->mipi_sd);
->  	v4l2_async_notifier_unregister(&state->subdev_notifier);
-> +	v4l2_async_notifier_cleanup(&state->subdev_notifier);
->  
->  	pm_runtime_disable(&pdev->dev);
->  	mipi_csis_pm_suspend(&pdev->dev, true);
-> -- 
-> 2.24.0
-> 
+> Note: the does not work with the DT probing, as there is no binding
+
+Are you missing 'SPI' or something here?
+
+> for the SPI half of the driver, but nothing seems to be using that
+> with the mainline kernel anyway.
+
+From a Tegra perspective, given that we don't use SPI in conjunction
+with the rt5677 codec, only I2C so far, I am not sure we should make the
+tegra_rt5677 driver dependent upon it. We should be able to operate
+without the SPI bits enabled.
+
+Cheers
+Jon
+
+-- 
+nvpublic
 
 _______________________________________________
 linux-arm-kernel mailing list
