@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F343211BC11
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:44:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFBFC11BC1B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:45:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cGgA5u4tV3FK6M7edreVg8mtwIsoY7gAdEZcj5sjUjE=; b=nMs/z2LOA6WDYe
-	l4it3SOTvpuI4mbUrqVwGzdMl7UeBFLWDMc/816I+nJYiEjugWn8eVjVuDFCtE7bk9y3h4G3y9+lT
-	wB2wSqbKph4H5flVtRn/MJsPcME7LK71PqBHDd2eVgSXyLVIyDxFupbqc62EvXG4e7p+0WioVoMot
-	M/TJCP8PTCmadnIj7RbAqNui4R1/m+vfwYii0jfF7CU9OBOv+EOvXOO39I+WWXz367zWNf9BfFRhz
-	QxvJq61sxu0uLDB/t8LUV7H1mXvfNN0LRWIzcKx7hrhEAtjMaTuicXPg23PxvvS9pF5I4RBZekXne
-	MO2lFq2VHap61WfMu8wA==;
+	List-Owner; bh=1Y8K7D/wA4nV5NiTnzzpTMxE3XFQgSvWRW8Vw6+H2eE=; b=IpNY7lTUUNFq4o
+	rym6Sr9XLBLhTE+rDydCCMuSU7T7BhP3e7BqqVXR0O6bJGwR630UOCuE5DzCSt0xzh7PRnV6fxg+q
+	g7ClNl8dw2Ci5c+uDORdhpSC5XQpz6lzPvDW2hcjOgU6shVODWesdKKvjkXmnq4prDCBe/NOtuoAc
+	dRHDmgfSf8XGy/THKBVw59w80qeyZsCuVteC01XKCaE+iTgjSPXKjVsJM27SL4djCcnvsYJb2VHCB
+	j2rcRb3yH54bXNqcw3JkzfBEdH8mRyIpQhdFxRVqeVp70BT51mbbQbltTtQXKNyEPwfcuPMyOwvLs
+	FN4pn7Nnh1mxFgD/1Puw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if6ye-0006pv-1A; Wed, 11 Dec 2019 18:44:48 +0000
+	id 1if6zL-0000Ep-H9; Wed, 11 Dec 2019 18:45:31 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if6v2-0003OE-DV
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:41:06 +0000
+ id 1if6v4-0003RU-Lj
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:41:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 48A84147A;
- Wed, 11 Dec 2019 10:41:04 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E52FC1480;
+ Wed, 11 Dec 2019 10:41:05 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D3D583F6CF;
- Wed, 11 Dec 2019 10:41:02 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7C6503F6CF;
+ Wed, 11 Dec 2019 10:41:04 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 16/22] mm: Introduce arch_validate_flags()
-Date: Wed, 11 Dec 2019 18:40:21 +0000
-Message-Id: <20191211184027.20130-17-catalin.marinas@arm.com>
+Subject: [PATCH 17/22] arm64: mte: Validate the PROT_MTE request via
+ arch_validate_flags()
+Date: Wed, 11 Dec 2019 18:40:22 +0000
+Message-Id: <20191211184027.20130-18-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191211184027.20130-1-catalin.marinas@arm.com>
 References: <20191211184027.20130-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_104104_523506_433137FC 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20191211_104106_759619_A92657EA 
+X-CRM114-Status: GOOD (  10.49  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,84 +73,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Similarly to arch_validate_prot() called from do_mprotect_pkey(), an
-architecture may need to sanity-check the new vm_flags.
-
-Define a dummy function always returning true. In addition to
-do_mprotect_pkey(), also invoke it from mmap_region() prior to updating
-vma->vm_page_prot to allow the architecture code to veto potentially
-inconsistent vm_flags.
+Make use of the newly introduced arch_validate_flags() hook to
+sanity-check the PROT_MTE request passed to mmap() and mprotect(). If
+the mapping does not support MTE, these syscalls will return -EINVAL.
 
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- include/linux/mman.h | 13 +++++++++++++
- mm/mmap.c            |  9 +++++++++
- mm/mprotect.c        |  8 ++++++++
- 3 files changed, 30 insertions(+)
+ arch/arm64/include/asm/mman.h | 16 +++++++++++++++-
+ 1 file changed, 15 insertions(+), 1 deletion(-)
 
-diff --git a/include/linux/mman.h b/include/linux/mman.h
-index c53b194c11a1..686fa6c98ce7 100644
---- a/include/linux/mman.h
-+++ b/include/linux/mman.h
-@@ -103,6 +103,19 @@ static inline bool arch_validate_prot(unsigned long prot, unsigned long addr)
- #define arch_validate_prot arch_validate_prot
- #endif
+diff --git a/arch/arm64/include/asm/mman.h b/arch/arm64/include/asm/mman.h
+index c77a23869223..5c356d1ca266 100644
+--- a/arch/arm64/include/asm/mman.h
++++ b/arch/arm64/include/asm/mman.h
+@@ -44,7 +44,11 @@ static inline unsigned long arch_calc_vm_flag_bits(unsigned long flags)
  
-+#ifndef arch_validate_flags
-+/*
-+ * This is called from mprotect() with the updated vma->vm_flags.
-+ *
-+ * Returns true if the VM_* flags are valid.
-+ */
+ static inline pgprot_t arch_vm_get_page_prot(unsigned long vm_flags)
+ {
+-	return (vm_flags & VM_MTE) && (vm_flags & VM_MTE_ALLOWED) ?
++	/*
++	 * Checking for VM_MTE only is sufficient since arch_validate_flags()
++	 * does not permit (VM_MTE & !VM_MTE_ALLOWED).
++	 */
++	return (vm_flags & VM_MTE) ?
+ 		__pgprot(PTE_ATTRINDX(MT_NORMAL_TAGGED)) :
+ 		__pgprot(0);
+ }
+@@ -61,4 +65,14 @@ static inline bool arch_validate_prot(unsigned long prot, unsigned long addr)
+ }
+ #define arch_validate_prot arch_validate_prot
+ 
 +static inline bool arch_validate_flags(unsigned long flags)
 +{
-+	return true;
++	if (!system_supports_mte())
++		return true;
++
++	/* only allow VM_MTE if VM_MTE_ALLOWED has been set previously */
++	return !(flags & VM_MTE) || (flags & VM_MTE_ALLOWED);
 +}
 +#define arch_validate_flags arch_validate_flags
-+#endif
 +
- /*
-  * Optimisation macro.  It is equivalent to:
-  *      (x & bit1) ? bit2 : 0
-diff --git a/mm/mmap.c b/mm/mmap.c
-index 9c648524e4dc..433355c5bdf1 100644
---- a/mm/mmap.c
-+++ b/mm/mmap.c
-@@ -1804,6 +1804,15 @@ unsigned long mmap_region(struct file *file, unsigned long addr,
- 		vma_set_anonymous(vma);
- 	}
- 
-+	/* Allow architectures to sanity-check the vm_flags */
-+	if (!arch_validate_flags(vma->vm_flags)) {
-+		error = -EINVAL;
-+		if (file)
-+			goto unmap_and_free_vma;
-+		else
-+			goto free_vma;
-+	}
-+
- 	vma_link(mm, vma, prev, rb_link, rb_parent);
- 	/* Once vma denies write, undo our temporary denial count */
- 	if (file) {
-diff --git a/mm/mprotect.c b/mm/mprotect.c
-index 7a8e84f86831..787b071bcbfd 100644
---- a/mm/mprotect.c
-+++ b/mm/mprotect.c
-@@ -543,6 +543,14 @@ static int do_mprotect_pkey(unsigned long start, size_t len,
- 			goto out;
- 		}
- 
-+		/*
-+		 * Allow architectures to sanity-check the new flags.
-+		 */
-+		if (!arch_validate_flags(newflags)) {
-+			error = -EINVAL;
-+			goto out;
-+		}
-+
- 		error = security_file_mprotect(vma, reqprot, prot);
- 		if (error)
- 			goto out;
+ #endif /* !__ASM_MMAN_H__ */
 
 _______________________________________________
 linux-arm-kernel mailing list
