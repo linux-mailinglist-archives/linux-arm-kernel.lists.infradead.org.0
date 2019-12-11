@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 610B611A102
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 03:05:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D81811A103
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 03:05:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SI2uOQzui152sX0EYEoiVQ9EqxNYpAcXcUcwQ65ZcFY=; b=Y7UZSHjjbqfHEC
-	sFU4L/p1jfsAqeC+6x2mnALhdFibeRs7u/e/EVEW2DLW4NLCcL2dAoG2euV1LY1PKz88eUqyip4iM
-	aphCMxq4uaSzBb7Wa1xtd0kW5G4/OMgZzkWD1wG+D6y8EVJd7H/OeXkW21mVpdo7/usekf+yFYgzD
-	WA3EORK8+x47zPGfJbb5Z90+F+zFh7dxSSm9MyD38lZAdUQ2b5Og4TAmiVojzRl/bjyECEpWHfaEY
-	OGrmer+Kw7RKrOPnaae57FwK9jIMc9GF3mg//NIz+QQlFiTRS4R98ZCP6aU5fDxLUBnTQB4g9HdFa
-	1n92p+PFSAlbTXoytbtw==;
+	List-Owner; bh=3Czkuaw/oMCQf3bD45fmkdF0ztd5S4sZKt5HMwhcyAc=; b=eOwBCJS7UYX2AJ
+	8/sBy5Tb48rN5w/dlw6+5Aiv7JEmPY5qgI6ts4JMubG4gabUMfKxlD4G0+Df01jQE/LRRNMW8KbfG
+	eAx5/RRUJZ6QDHbQKdnTbtuaKaIW/OkwMBCOirGGvwKr8g7dRi3d+KLa/QwdjMngpvv/bxAercuR7
+	BUJyQA4mY/foQ8UnvFRxoRU+UTa89IRioGVYAJqeHnIu089sBHy+8lJ719pmKwKEPlbeN1rE7gVre
+	off3LkFONYHpR4NLF0UR8trhpWc1dVCj2H3F/Po2weLbu7jijQv660taMfsEGs5yr+XsmeaXMWwYc
+	gOGi/nF4BahaMnbRAeDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ierNb-0002cB-DW; Wed, 11 Dec 2019 02:05:31 +0000
+	id 1ierNp-0002ov-Fj; Wed, 11 Dec 2019 02:05:45 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ierN7-00019b-G8; Wed, 11 Dec 2019 02:05:03 +0000
-X-UUID: c1fdb0f51dd24dd884e2e9f0068988ca-20191210
+ id 1ierN8-000197-5G; Wed, 11 Dec 2019 02:05:04 +0000
+X-UUID: b86acd92d5b64e3ea8613310bb10939c-20191210
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=9HrUhTi78f5xP0jry51zQs2YAQuyV98mbQ++goxlMsg=; 
- b=cyPeNpoYaODWGr+Utgu2FeP9WTiP4aKtka1Cye6zRqevSF4oSVCJKuPoV+JUfLQMPtgN3yjDX7ldj/SmIgCY0GY8gwjharFUNaQH+z8FJe2aiIar7djR8cvcubo6ndMY3ZGSN68cosVStc5M56xMVsAhPjTwxvg3AwDg9fo6YIM=;
-X-UUID: c1fdb0f51dd24dd884e2e9f0068988ca-20191210
+ bh=2LVIlkRutdZ1YsoqtSNAMNODO/3+N41XB7AwwCF2ckQ=; 
+ b=fakCLrg/M0KrYJzZMIdo3YR7ggFWG8OznTxqyGgwxc8CKOhdp5MepHpoKgqaZwoGE+1jGLX+FdYC9y80PiIhfbwDPdXVZ6wm4z3K8mJKaBtZis2iVbaDFxQbtAuh6+BdTZWUYYAaAGovtGrJW4fJnIeB/IsKUQhjto5sjrmngBk=;
+X-UUID: b86acd92d5b64e3ea8613310bb10939c-20191210
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <min.guo@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 701229230; Tue, 10 Dec 2019 18:04:58 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ with ESMTP id 293033198; Tue, 10 Dec 2019 18:04:58 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 10 Dec 2019 17:56:03 -0800
+ 15.0.1395.4; Tue, 10 Dec 2019 17:56:09 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Dec 2019 09:53:59 +0800
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Dec 2019 09:54:54 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 11 Dec 2019 09:54:50 +0800
+ Transport; Wed, 11 Dec 2019 09:54:53 +0800
 From: <min.guo@mediatek.com>
 To: Bin Liu <b-liu@ti.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v9 3/6] usb: musb: Add get/set toggle hooks
-Date: Wed, 11 Dec 2019 09:54:43 +0800
-Message-ID: <20191211015446.11477-4-min.guo@mediatek.com>
+Subject: [PATCH v9 5/6] usb: musb: Add musb_clearb/w() interface
+Date: Wed, 11 Dec 2019 09:54:45 +0800
+Message-ID: <20191211015446.11477-6-min.guo@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20191211015446.11477-1-min.guo@mediatek.com>
 References: <20191211015446.11477-1-min.guo@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: FB2895EDD654822D40F138DF16C63129CE844CA87D732564AD51AE561924C7122000:8
+X-TM-SNTS-SMTP: D11EFE24E0F8A7AEA1B750D1BF120767F9E77C1B9862F2508723C09706023F2C2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_180501_586087_C639FA3D 
-X-CRM114-Status: GOOD (  14.90  )
+X-CRM114-CacheID: sfid-20191210_180502_243740_770D64FA 
+X-CRM114-Status: GOOD (  12.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,9 +99,9 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Min Guo <min.guo@mediatek.com>
 
-Add get/set toggle hooks in struct musb_io and struct musb_platform_ops
-for special platform; remove function musb_save_toggle, use the set/get
-callback to handle toggle.
+Delete the const attribute of addr parameter in readb/w/l hooks, these
+changes are for implementing clearing W1C registers.
+Replace musb_readb/w with musb_clearb/w to clear the interrupt status.
 
 Signed-off-by: Min Guo <min.guo@mediatek.com>
 ---
@@ -118,231 +118,209 @@ changes in v6:
 1. no changes
 
 changes in v5:
-1. no changes
+1. Replace musb_readb() with musb_clearb() to clear dma pending interrupts
 
 new patch based on v4:
 ---
- drivers/usb/musb/musb_core.c | 42 ++++++++++++++++++++++++++++++++
- drivers/usb/musb/musb_core.h |  5 ++++
- drivers/usb/musb/musb_host.c | 46 ++++++++----------------------------
- drivers/usb/musb/musb_io.h   |  4 ++++
- 4 files changed, 61 insertions(+), 36 deletions(-)
+ drivers/usb/musb/musb_core.c | 32 +++++++++++++++++++++++---------
+ drivers/usb/musb/musb_core.h |  8 ++++++--
+ drivers/usb/musb/musb_io.h   |  8 +++++---
+ drivers/usb/musb/musbhsdma.c |  2 +-
+ drivers/usb/musb/sunxi.c     |  4 ++--
+ drivers/usb/musb/tusb6010.c  |  2 +-
+ 6 files changed, 38 insertions(+), 18 deletions(-)
 
 diff --git a/drivers/usb/musb/musb_core.c b/drivers/usb/musb/musb_core.c
-index 15cca912c53e..32c00652e1a2 100644
+index 32c00652e1a2..8e3c14e3afab 100644
 --- a/drivers/usb/musb/musb_core.c
 +++ b/drivers/usb/musb/musb_core.c
-@@ -274,6 +274,38 @@ static void musb_default_writew(void __iomem *addr, unsigned offset, u16 data)
- 	__raw_writew(data, addr + offset);
+@@ -246,7 +246,7 @@ static u32 musb_default_busctl_offset(u8 epnum, u16 offset)
+ 	return 0x80 + (0x08 * epnum) + offset;
  }
  
-+static u16 musb_default_get_toggle(struct musb_qh *qh, int is_out)
-+{
-+	void __iomem *epio = qh->hw_ep->regs;
-+	u16 csr;
-+
-+	if (is_out)
-+		csr = musb_readw(epio, MUSB_TXCSR) & MUSB_TXCSR_H_DATATOGGLE;
-+	else
-+		csr = musb_readw(epio, MUSB_RXCSR) & MUSB_RXCSR_H_DATATOGGLE;
-+
-+	return csr;
-+}
-+
-+static u16 musb_default_set_toggle(struct musb_qh *qh, int is_out,
-+				   struct urb *urb)
-+{
-+	u16 csr;
-+	u16 toggle;
-+
-+	toggle = usb_gettoggle(urb->dev, qh->epnum, is_out);
-+
-+	if (is_out)
-+		csr = toggle ? (MUSB_TXCSR_H_WR_DATATOGGLE
-+				| MUSB_TXCSR_H_DATATOGGLE)
-+				: MUSB_TXCSR_CLRDATATOG;
-+	else
-+		csr = toggle ? (MUSB_RXCSR_H_WR_DATATOGGLE
-+				| MUSB_RXCSR_H_DATATOGGLE) : 0;
-+
-+	return csr;
-+}
-+
- /*
-  * Load an endpoint's FIFO
-  */
-@@ -2271,6 +2303,16 @@ musb_init_controller(struct device *dev, int nIrq, void __iomem *ctrl)
- 	else
- 		musb->io.write_fifo = musb_default_write_fifo;
+-static u8 musb_default_readb(const void __iomem *addr, unsigned offset)
++static u8 musb_default_readb(void __iomem *addr, unsigned offset)
+ {
+ 	u8 data =  __raw_readb(addr + offset);
  
-+	if (musb->ops->get_toggle)
-+		musb->io.get_toggle = musb->ops->get_toggle;
-+	else
-+		musb->io.get_toggle = musb_default_get_toggle;
+@@ -260,7 +260,7 @@ static void musb_default_writeb(void __iomem *addr, unsigned offset, u8 data)
+ 	__raw_writeb(data, addr + offset);
+ }
+ 
+-static u16 musb_default_readw(const void __iomem *addr, unsigned offset)
++static u16 musb_default_readw(void __iomem *addr, unsigned offset)
+ {
+ 	u16 data = __raw_readw(addr + offset);
+ 
+@@ -396,19 +396,25 @@ static void musb_default_read_fifo(struct musb_hw_ep *hw_ep, u16 len, u8 *dst)
+ /*
+  * Old style IO functions
+  */
+-u8 (*musb_readb)(const void __iomem *addr, unsigned offset);
++u8 (*musb_readb)(void __iomem *addr, unsigned offset);
+ EXPORT_SYMBOL_GPL(musb_readb);
+ 
+ void (*musb_writeb)(void __iomem *addr, unsigned offset, u8 data);
+ EXPORT_SYMBOL_GPL(musb_writeb);
+ 
+-u16 (*musb_readw)(const void __iomem *addr, unsigned offset);
++u8 (*musb_clearb)(void __iomem *addr, unsigned int offset);
++EXPORT_SYMBOL_GPL(musb_clearb);
 +
-+	if (musb->ops->set_toggle)
-+		musb->io.set_toggle = musb->ops->set_toggle;
-+	else
-+		musb->io.set_toggle = musb_default_set_toggle;
++u16 (*musb_readw)(void __iomem *addr, unsigned offset);
+ EXPORT_SYMBOL_GPL(musb_readw);
+ 
+ void (*musb_writew)(void __iomem *addr, unsigned offset, u16 data);
+ EXPORT_SYMBOL_GPL(musb_writew);
+ 
+-u32 musb_readl(const void __iomem *addr, unsigned offset)
++u16 (*musb_clearw)(void __iomem *addr, unsigned int offset);
++EXPORT_SYMBOL_GPL(musb_clearw);
 +
- 	if (!musb->xceiv->io_ops) {
- 		musb->xceiv->io_dev = musb->controller;
- 		musb->xceiv->io_priv = musb->mregs;
++u32 musb_readl(void __iomem *addr, unsigned offset)
+ {
+ 	u32 data = __raw_readl(addr + offset);
+ 
+@@ -1047,7 +1053,6 @@ static irqreturn_t musb_stage0_irq(struct musb *musb, u8 int_usb,
+ static void musb_disable_interrupts(struct musb *musb)
+ {
+ 	void __iomem	*mbase = musb->mregs;
+-	u16	temp;
+ 
+ 	/* disable interrupts */
+ 	musb_writeb(mbase, MUSB_INTRUSBE, 0);
+@@ -1057,9 +1062,9 @@ static void musb_disable_interrupts(struct musb *musb)
+ 	musb_writew(mbase, MUSB_INTRRXE, 0);
+ 
+ 	/*  flush pending interrupts */
+-	temp = musb_readb(mbase, MUSB_INTRUSB);
+-	temp = musb_readw(mbase, MUSB_INTRTX);
+-	temp = musb_readw(mbase, MUSB_INTRRX);
++	musb_clearb(mbase, MUSB_INTRUSB);
++	musb_clearw(mbase, MUSB_INTRTX);
++	musb_clearw(mbase, MUSB_INTRRX);
+ }
+ 
+ static void musb_enable_interrupts(struct musb *musb)
+@@ -2278,10 +2283,19 @@ musb_init_controller(struct device *dev, int nIrq, void __iomem *ctrl)
+ 		musb_readb = musb->ops->readb;
+ 	if (musb->ops->writeb)
+ 		musb_writeb = musb->ops->writeb;
++	if (musb->ops->clearb)
++		musb_clearb = musb->ops->clearb;
++	else
++		musb_clearb = musb_readb;
++
+ 	if (musb->ops->readw)
+ 		musb_readw = musb->ops->readw;
+ 	if (musb->ops->writew)
+ 		musb_writew = musb->ops->writew;
++	if (musb->ops->clearw)
++		musb_clearw = musb->ops->clearw;
++	else
++		musb_clearw = musb_readw;
+ 
+ #ifndef CONFIG_MUSB_PIO_ONLY
+ 	if (!musb->ops->dma_init || !musb->ops->dma_exit) {
 diff --git a/drivers/usb/musb/musb_core.h b/drivers/usb/musb/musb_core.h
-index 04203b7126d5..9f5a69c2d73b 100644
+index 9f5a69c2d73b..0d9a35fe82d5 100644
 --- a/drivers/usb/musb/musb_core.h
 +++ b/drivers/usb/musb/musb_core.h
-@@ -27,6 +27,7 @@
- struct musb;
- struct musb_hw_ep;
- struct musb_ep;
-+struct musb_qh;
- 
- /* Helper defines for struct musb->hwvers */
- #define MUSB_HWVERS_MAJOR(x)	((x >> 10) & 0x1f)
-@@ -123,6 +124,8 @@ struct musb_io;
+@@ -120,8 +120,10 @@ struct musb_io;
+  * @fifo_offset: returns the fifo offset
+  * @readb:	read 8 bits
+  * @writeb:	write 8 bits
++ * @clearb:	could be clear-on-readb or W1C
+  * @readw:	read 16 bits
   * @writew:	write 16 bits
++ * @clearw:	could be clear-on-readw or W1C
   * @read_fifo:	reads the fifo
   * @write_fifo:	writes to fifo
-+ * @get_toggle:	platform specific get toggle function
-+ * @set_toggle:	platform specific set toggle function
-  * @dma_init:	platform specific dma init function
-  * @dma_exit:	platform specific dma exit function
-  * @init:	turns on clocks, sets up platform-specific registers, etc
-@@ -167,6 +170,8 @@ struct musb_platform_ops {
+  * @get_toggle:	platform specific get toggle function
+@@ -164,10 +166,12 @@ struct musb_platform_ops {
+ 	u16	fifo_mode;
+ 	u32	(*fifo_offset)(u8 epnum);
+ 	u32	(*busctl_offset)(u8 epnum, u16 offset);
+-	u8	(*readb)(const void __iomem *addr, unsigned offset);
++	u8	(*readb)(void __iomem *addr, unsigned offset);
+ 	void	(*writeb)(void __iomem *addr, unsigned offset, u8 data);
+-	u16	(*readw)(const void __iomem *addr, unsigned offset);
++	u8	(*clearb)(void __iomem *addr, unsigned int offset);
++	u16	(*readw)(void __iomem *addr, unsigned offset);
  	void	(*writew)(void __iomem *addr, unsigned offset, u16 data);
++	u16	(*clearw)(void __iomem *addr, unsigned int offset);
  	void	(*read_fifo)(struct musb_hw_ep *hw_ep, u16 len, u8 *buf);
  	void	(*write_fifo)(struct musb_hw_ep *hw_ep, u16 len, const u8 *buf);
-+	u16	(*get_toggle)(struct musb_qh *qh, int is_out);
-+	u16	(*set_toggle)(struct musb_qh *qh, int is_out, struct urb *urb);
- 	struct dma_controller *
- 		(*dma_init) (struct musb *musb, void __iomem *base);
- 	void	(*dma_exit)(struct dma_controller *c);
-diff --git a/drivers/usb/musb/musb_host.c b/drivers/usb/musb/musb_host.c
-index 5a44b70372d9..886c9b602f8c 100644
---- a/drivers/usb/musb/musb_host.c
-+++ b/drivers/usb/musb/musb_host.c
-@@ -286,26 +286,6 @@ __acquires(musb->lock)
- 	spin_lock(&musb->lock);
- }
- 
--/* For bulk/interrupt endpoints only */
--static inline void musb_save_toggle(struct musb_qh *qh, int is_in,
--				    struct urb *urb)
--{
--	void __iomem		*epio = qh->hw_ep->regs;
--	u16			csr;
--
--	/*
--	 * FIXME: the current Mentor DMA code seems to have
--	 * problems getting toggle correct.
--	 */
--
--	if (is_in)
--		csr = musb_readw(epio, MUSB_RXCSR) & MUSB_RXCSR_H_DATATOGGLE;
--	else
--		csr = musb_readw(epio, MUSB_TXCSR) & MUSB_TXCSR_H_DATATOGGLE;
--
--	usb_settoggle(urb->dev, qh->epnum, !is_in, csr ? 1 : 0);
--}
--
- /*
-  * Advance this hardware endpoint's queue, completing the specified URB and
-  * advancing to either the next URB queued to that qh, or else invalidating
-@@ -320,6 +300,7 @@ static void musb_advance_schedule(struct musb *musb, struct urb *urb,
- 	struct musb_hw_ep	*ep = qh->hw_ep;
- 	int			ready = qh->is_ready;
- 	int			status;
-+	u16			toggle;
- 
- 	status = (urb->status == -EINPROGRESS) ? 0 : urb->status;
- 
-@@ -327,7 +308,8 @@ static void musb_advance_schedule(struct musb *musb, struct urb *urb,
- 	switch (qh->type) {
- 	case USB_ENDPOINT_XFER_BULK:
- 	case USB_ENDPOINT_XFER_INT:
--		musb_save_toggle(qh, is_in, urb);
-+		toggle = musb->io.get_toggle(qh, !is_in);
-+		usb_settoggle(urb->dev, qh->epnum, !is_in, toggle ? 1 : 0);
- 		break;
- 	case USB_ENDPOINT_XFER_ISOC:
- 		if (status == 0 && urb->error_count)
-@@ -772,13 +754,8 @@ static void musb_ep_program(struct musb *musb, u8 epnum,
- 					);
- 			csr |= MUSB_TXCSR_MODE;
- 
--			if (!hw_ep->tx_double_buffered) {
--				if (usb_gettoggle(urb->dev, qh->epnum, 1))
--					csr |= MUSB_TXCSR_H_WR_DATATOGGLE
--						| MUSB_TXCSR_H_DATATOGGLE;
--				else
--					csr |= MUSB_TXCSR_CLRDATATOG;
--			}
-+			if (!hw_ep->tx_double_buffered)
-+				csr |= musb->io.set_toggle(qh, is_out, urb);
- 
- 			musb_writew(epio, MUSB_TXCSR, csr);
- 			/* REVISIT may need to clear FLUSHFIFO ... */
-@@ -860,17 +837,12 @@ static void musb_ep_program(struct musb *musb, u8 epnum,
- 
- 	/* IN/receive */
- 	} else {
--		u16	csr;
-+		u16 csr = 0;
- 
- 		if (hw_ep->rx_reinit) {
- 			musb_rx_reinit(musb, qh, epnum);
-+			csr |= musb->io.set_toggle(qh, is_out, urb);
- 
--			/* init new state: toggle and NYET, maybe DMA later */
--			if (usb_gettoggle(urb->dev, qh->epnum, 0))
--				csr = MUSB_RXCSR_H_WR_DATATOGGLE
--					| MUSB_RXCSR_H_DATATOGGLE;
--			else
--				csr = 0;
- 			if (qh->type == USB_ENDPOINT_XFER_INT)
- 				csr |= MUSB_RXCSR_DISNYET;
- 
-@@ -933,6 +905,7 @@ static void musb_bulk_nak_timeout(struct musb *musb, struct musb_hw_ep *ep,
- 	void __iomem		*epio = ep->regs;
- 	struct musb_qh		*cur_qh, *next_qh;
- 	u16			rx_csr, tx_csr;
-+	u16			toggle;
- 
- 	musb_ep_select(mbase, ep->epnum);
- 	if (is_in) {
-@@ -970,7 +943,8 @@ static void musb_bulk_nak_timeout(struct musb *musb, struct musb_hw_ep *ep,
- 			urb->actual_length += dma->actual_len;
- 			dma->actual_len = 0L;
- 		}
--		musb_save_toggle(cur_qh, is_in, urb);
-+		toggle = musb->io.get_toggle(cur_qh, !is_in);
-+		usb_settoggle(urb->dev, cur_qh->epnum, !is_in, toggle ? 1 : 0);
- 
- 		if (is_in) {
- 			/* move cur_qh to end of queue */
+ 	u16	(*get_toggle)(struct musb_qh *qh, int is_out);
 diff --git a/drivers/usb/musb/musb_io.h b/drivers/usb/musb/musb_io.h
-index 8058a58092cf..8179334f405b 100644
+index 8179334f405b..7200596a388f 100644
 --- a/drivers/usb/musb/musb_io.h
 +++ b/drivers/usb/musb/musb_io.h
-@@ -22,6 +22,8 @@
-  * @read_fifo:	platform specific function to read fifo
-  * @write_fifo:	platform specific function to write fifo
-  * @busctl_offset: platform specific function to get busctl offset
-+ * @get_toggle: platform specific function to get toggle
-+ * @set_toggle: platform specific function to set toggle
-  */
- struct musb_io {
- 	u32	(*ep_offset)(u8 epnum, u16 offset);
-@@ -30,6 +32,8 @@ struct musb_io {
- 	void	(*read_fifo)(struct musb_hw_ep *hw_ep, u16 len, u8 *buf);
- 	void	(*write_fifo)(struct musb_hw_ep *hw_ep, u16 len, const u8 *buf);
- 	u32	(*busctl_offset)(u8 epnum, u16 offset);
-+	u16	(*get_toggle)(struct musb_qh *qh, int is_out);
-+	u16	(*set_toggle)(struct musb_qh *qh, int is_out, struct urb *urb);
+@@ -37,11 +37,13 @@ struct musb_io {
  };
  
  /* Do not add new entries here, add them the struct musb_io instead */
+-extern u8 (*musb_readb)(const void __iomem *addr, unsigned offset);
++extern u8 (*musb_readb)(void __iomem *addr, unsigned offset);
+ extern void (*musb_writeb)(void __iomem *addr, unsigned offset, u8 data);
+-extern u16 (*musb_readw)(const void __iomem *addr, unsigned offset);
++extern u8 (*musb_clearb)(void __iomem *addr, unsigned int offset);
++extern u16 (*musb_readw)(void __iomem *addr, unsigned offset);
+ extern void (*musb_writew)(void __iomem *addr, unsigned offset, u16 data);
+-extern u32 musb_readl(const void __iomem *addr, unsigned offset);
++extern u16 (*musb_clearw)(void __iomem *addr, unsigned int offset);
++extern u32 musb_readl(void __iomem *addr, unsigned offset);
+ extern void musb_writel(void __iomem *addr, unsigned offset, u32 data);
+ 
+ #endif
+diff --git a/drivers/usb/musb/musbhsdma.c b/drivers/usb/musb/musbhsdma.c
+index d549c0b83366..975c61ee4e6a 100644
+--- a/drivers/usb/musb/musbhsdma.c
++++ b/drivers/usb/musb/musbhsdma.c
+@@ -284,7 +284,7 @@ irqreturn_t dma_controller_irq(int irq, void *private_data)
+ 
+ 	spin_lock_irqsave(&musb->lock, flags);
+ 
+-	int_hsdma = musb_readb(mbase, MUSB_HSDMA_INTR);
++	int_hsdma = musb_clearb(mbase, MUSB_HSDMA_INTR);
+ 
+ 	if (!int_hsdma) {
+ 		musb_dbg(musb, "spurious DMA irq");
+diff --git a/drivers/usb/musb/sunxi.c b/drivers/usb/musb/sunxi.c
+index 832a41f9ee7d..2c1bbaa832dd 100644
+--- a/drivers/usb/musb/sunxi.c
++++ b/drivers/usb/musb/sunxi.c
+@@ -407,7 +407,7 @@ static u32 sunxi_musb_busctl_offset(u8 epnum, u16 offset)
+ 	return SUNXI_MUSB_TXFUNCADDR + offset;
+ }
+ 
+-static u8 sunxi_musb_readb(const void __iomem *addr, unsigned offset)
++static u8 sunxi_musb_readb(void __iomem *addr, unsigned offset)
+ {
+ 	struct sunxi_glue *glue;
+ 
+@@ -520,7 +520,7 @@ static void sunxi_musb_writeb(void __iomem *addr, unsigned offset, u8 data)
+ 		(int)(addr - sunxi_musb->mregs));
+ }
+ 
+-static u16 sunxi_musb_readw(const void __iomem *addr, unsigned offset)
++static u16 sunxi_musb_readw(void __iomem *addr, unsigned offset)
+ {
+ 	if (addr == sunxi_musb->mregs) {
+ 		/* generic control or fifo control reg access */
+diff --git a/drivers/usb/musb/tusb6010.c b/drivers/usb/musb/tusb6010.c
+index 39453287b5c3..cfb94f9467a3 100644
+--- a/drivers/usb/musb/tusb6010.c
++++ b/drivers/usb/musb/tusb6010.c
+@@ -142,7 +142,7 @@ static void tusb_ep_select(void __iomem *mbase, u8 epnum)
+ /*
+  * TUSB6010 doesn't allow 8-bit access; 16-bit access is the minimum.
+  */
+-static u8 tusb_readb(const void __iomem *addr, unsigned offset)
++static u8 tusb_readb(void __iomem *addr, unsigned offset)
+ {
+ 	u16 tmp;
+ 	u8 val;
 -- 
 2.24.0
 _______________________________________________
