@@ -2,85 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2875C11A192
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 03:44:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8633011A196
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 03:44:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/WscshEfaQqX84xV17/Umn+PgDf0vj326Bf37fYz3OQ=; b=DB3DdU50P9vSfo
-	uN5FRyPz4UCseGxXqxOInyLPjvqH1dC8YDm2+G6BTsSarQ8tT1wqekSLOUeQzKpTNEE69CJ5knhPI
-	8+sInbCoCYpgYJ/9ARgyYcpB3X3RpF+9AZkgD17y53YpXV2OvpY9BAWftrhNRh0zgPmx6/v+cqgFF
-	esqoNk79KxjvNsS1RN8+4FXdkFEnPH1ovi4l0qe1RWbiXiJjjaauUsVCDHmf2Y8WrR26MBqC/qtw/
-	1EH1GeX2n4j/9vMmTVNGP3mzIfDjhwI+tmcuZKUn4AQ8mlLsK2j5kmOmX1IvvPlKkPngVSiP+rqPh
-	7KOLJYqRnxCNzj3t/cgg==;
+	List-Owner; bh=bzWmJtSLT/NnnoRVMyECeFH7LhR+ah30Tgzo3DMMK8Y=; b=QcCB3xcidErla+
+	6rx9W9Z63LUjGyEapfrgd4KNAE07gxw6QVmPPhC4JsjmC8U+b0mfhV7ITpy/TF1qbr8a9O1pk9XOo
+	TSEw/r6worQBuh5TTE6oX5tdSZOe7hLJz3LOnlXtZ5J9DP0aB7E6EK3dTnjsu+HVzJ/c4otfXYdcZ
+	TK1p5dj4khVIrfx0OrHwZAgMa0aKeKHGBSQFeRu5GvCOYROJyj8ZplCoPQIO4tx3wLIq640aALoBg
+	Oo3tWpUcWgMFN29e/PRwRRz9R3t3P5srSRrCLMwYM6ZEdX/QvLj+Fh+DRKbW+g4tQAzbU/4iwTUEe
+	FaGnWL4SN9RqBhVCconA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieryj-00016j-Iv; Wed, 11 Dec 2019 02:43:53 +0000
-Received: from mail-pf1-x42e.google.com ([2607:f8b0:4864:20::42e])
+	id 1ierzQ-0001M2-7d; Wed, 11 Dec 2019 02:44:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ierya-00016Q-8Z
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 02:43:45 +0000
-Received: by mail-pf1-x42e.google.com with SMTP id x184so1006566pfb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 18:43:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=f2PKZ0IX3cZC2NpOSYKVLllzL+7nLw+rKkD8S3WmyZA=;
- b=w8GhQ+CZvgLHTTZwFdTQUSqsAyRFyIGpQ5AUhBq6xKd+opcy9MSsH7kHo+Oithf6uo
- KjLD6yMvJw8AbCOEsfTqbTrt53AS62NGCorl/kwrMwEh3TEmsPt8ZFyjX1CCEyIhWvIe
- q+uuuytgH4DO2LDHDTQr+60x2isx64yxsQPcL6vd8TJeWJey5lYT7rfW/Ts6E9f8EbJX
- f5ReBR0lnDgN0ds1RUuEpfBF/mpGRluv/iYG87x+U3A+1gg4vaWepMj2IRX6A9b81YGb
- tlrwwNlnTdavD2qbzgQ2Kbz2hZSDoSbVjnNBJqtEpHCT8GIZvMaGObuvpI9DwXriRJW3
- lY+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=f2PKZ0IX3cZC2NpOSYKVLllzL+7nLw+rKkD8S3WmyZA=;
- b=c0DN2ylvD3NwSsNfXlTzTDCnWH718qn2O82d/fALBmBNCGK/SPqrrXNnN90c6ocpBB
- Fr4RNVLJ4zNKjdw3WN9nVtEXOr8Z81YeA+jmYjnhZIkM/vHEH87pgkm73gUV9QNqIg2x
- BtplluD58EOx0TZpcdY9kK8mTulIO9t4emt5ksM1oxZmZi5/LYbw3PMN1b9oQ3IMuhzO
- 3RqFt9fcX+iInNoFjYsxK8Msg9TZmLe1MHQ2PjMufwCWGnx4oiBmVAwH6VTbRa9N7kYE
- Ob488FVA6ZK3x6vimgqhW1vM/4eZ4Le3H+wPcxZCZzYkHW47H2vFVai3vi3Wzay+iJ8g
- gkJg==
-X-Gm-Message-State: APjAAAXIxFPwvSYyUhybkuJuSBZhnVmGl2+1WO8J26uh7KO7fqWRDiBk
- YwtSpVwILI/pb6HxmRwCtEwmkg==
-X-Google-Smtp-Source: APXvYqyVfjbcgqNdmMEHFYrJYcZxzszIKGFxppXi7nDzyRsAewfcHmU5EQL6U0AI1uYiJYJ4dueq4w==
-X-Received: by 2002:a62:5290:: with SMTP id g138mr1269727pfb.54.1576032223182; 
- Tue, 10 Dec 2019 18:43:43 -0800 (PST)
-Received: from localhost ([122.171.112.123])
- by smtp.gmail.com with ESMTPSA id x13sm416889pfc.171.2019.12.10.18.43.42
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 10 Dec 2019 18:43:42 -0800 (PST)
-Date: Wed, 11 Dec 2019 08:13:40 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH] firmware: arm_scmi: Make scmi core independent of
- transport type
-Message-ID: <20191211024340.cvwalbr7tmvfqbrc@vireshk-i7>
-References: <5c545c2866ba075ddb44907940a1dae1d823b8a1.1575019719.git.viresh.kumar@linaro.org>
- <71417ba8-b844-ac96-bcad-4bf48fa8b869@arm.com>
- <20191210053448.ugjzbp2puzvnm37f@vireshk-i7>
- <20191210184633.GC20962@bogus>
+ id 1ierzF-0001LX-HC
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 02:44:26 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id ECCE3205ED;
+ Wed, 11 Dec 2019 02:44:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576032265;
+ bh=8qaUnn5f1bStSxxUCek0D44SmTQ2zG8abc6aCt9cWFk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=M9QafYOPVucohpc7g/4HFb+IQqTOr81zM6xoIsZZswbzpERCi7ycKiWoD1z50dig/
+ kIFZOOodyicPyV2SBACli5JO0irzQdO6ew5wxYEZtowAeEcz1CDH0ohQDmdFHTNISs
+ RaqQbCyhxcAcKtA7ZNEe0+9EnmGU0+BJYdfruHEA=
+Date: Wed, 11 Dec 2019 10:44:14 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH] ARM: imx: Enable ARM_ERRATA_814220 for i.MX6UL and i.MX7D
+Message-ID: <20191211024413.GF15858@dragon>
+References: <1575358720-27624-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191210184633.GC20962@bogus>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <1575358720-27624-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_184344_310420_BA218FA2 
-X-CRM114-Status: GOOD (  11.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191210_184425_592688_C671F4F1 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:42e listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,34 +76,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Jassi Brar <jassisinghbrar@gmail.com>,
- linux-kernel@vger.kernel.org, Cristian Marussi <cristian.marussi@arm.com>,
+Cc: aisheng.dong@nxp.com, arnd@arndb.de, s.hauer@pengutronix.de,
+ linux@armlinux.org.uk, linux-kernel@vger.kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, tglx@linutronix.de, festevam@gmail.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10-12-19, 18:46, Sudeep Holla wrote:
-> May be to some/small extent.
-> 
-> 1. max_rx_timeout_ms is firmware dependent, maximum time it expects to
->    complete a synchronous request or acknowledge async request(worst case value).
-> 2. max_msg_size is maximum size of the buffer we need to allocate, mostly
->    based on the specification and we don't have any more that 0x80. But
->    the custom/vendor specific protocols may wary and hence I thought of
->    keeping it configurable for platforms.
-> 3. max_msg is the maximum number of messages the transport can support.
->    This is currently based on the mailbox layer. For SMC/HVC we can have
->    upto nr_cpus, something different for spci/optee. We must be able to
->    make it transport independent if required.
-> 
->    This is mainly used to pre-allocate number of (tx/rx) buffers.
+On Tue, Dec 03, 2019 at 03:38:40PM +0800, Anson Huang wrote:
+> i.MX6UL and i.MX7D have Cortex-A7 inside, need to enable ARM_ERRATA_814220
+> for proper workaround.
 
-So we can only move max_msg to mailbox file and read it along with ops, right ?
+Can we briefly describe the ARM_ERRATA_814220 in the commit log?
 
--- 
-viresh
+Shawn
+
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  arch/arm/mach-imx/Kconfig | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/arch/arm/mach-imx/Kconfig b/arch/arm/mach-imx/Kconfig
+> index 593bf15..4326c8f 100644
+> --- a/arch/arm/mach-imx/Kconfig
+> +++ b/arch/arm/mach-imx/Kconfig
+> @@ -520,6 +520,7 @@ config SOC_IMX6UL
+>  	bool "i.MX6 UltraLite support"
+>  	select PINCTRL_IMX6UL
+>  	select SOC_IMX6
+> +	select ARM_ERRATA_814220
+>  
+>  	help
+>  	  This enables support for Freescale i.MX6 UltraLite processor.
+> @@ -556,6 +557,7 @@ config SOC_IMX7D
+>  	select PINCTRL_IMX7D
+>  	select SOC_IMX7D_CA7 if ARCH_MULTI_V7
+>  	select SOC_IMX7D_CM4 if ARM_SINGLE_ARMV7M
+> +	select ARM_ERRATA_814220
+>  	help
+>  		This enables support for Freescale i.MX7 Dual processor.
+>  
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
