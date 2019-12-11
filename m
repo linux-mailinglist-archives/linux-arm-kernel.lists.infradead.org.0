@@ -2,61 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2061A11AC78
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:53:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8907311AC8F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:56:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=72dw/nfQka/46LZubzMcqgOyD7PK6yUIYGFDvAhe3mo=; b=kVwY+3nSvTENKEUQOl+Sws+nPz
-	7ogGfg1PAFKL1PaauWC6y+enPyOrOxKiwjG1HeaajispPKkPIeiVTT1GO0DMWrbWlF3VgVWmy9NNd
-	HuXrVoH3JdUOVHyGSyXZ0UNZpwGj6Ggc8DSHRi0TDTBo9oES0HdxVsBRA1f7FcDpQPmMtdH7gbBwq
-	VWdPyIVZxuIanTeaRPTtIryVBNUS5TdcbiPXAOM2r9ajriijEyGdOxWgeC6GWTTDyuBS4ed0ko8Mk
-	GGE9DjBkULpHgFHSs5Nsk2Mg991vkJQOd/xCY9bA0PZb7wLspiv6+bs6N3d/f/H/ssoPdIvh3iHb3
-	b54MxySQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QKTdnoeGwRiUUvaf3NqCwg1yCPef8d5A8wEzp+2/kxg=; b=JXkjXJKJDCzQ67
+	zEVVo87HoCWRRQDbAy7nkKWtWAWNAG5OLl5TPi13qUWbBJSGCePasboCLPyzLijYNd8gQlsnfvBRB
+	YURkTRZanG3ktWm77BipzbnVHUr+7xIzG1ffYRjS9u+Xk3aSiHu4x5G00LPGcVePAamLGOQdoVzIV
+	RCSgJ4tKhAF1lkdqQGwJficY0a+PacZTbHwFF6SM+VrZbsufpsFNqx5YAI7s78SK09goddjywFQ0B
+	ZApFE4SfnVrAsHteuGRkC7m4SjEHs2OGw5nd3vz1oicUVBqn2JDGo+33snYAaFk71Nzd4UYmlhndh
+	6KVp4tYWnNcgXDQh8BiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if2QN-0002OY-JK; Wed, 11 Dec 2019 13:53:07 +0000
-Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
+	id 1if2Ti-00053I-Gk; Wed, 11 Dec 2019 13:56:34 +0000
+Received: from www62.your-server.de ([213.133.104.62])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if2Pm-0001qg-Ak
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:52:33 +0000
-Received: from ramsan ([84.195.182.253])
- by baptiste.telenet-ops.be with bizsmtp
- id cdsP2100J5USYZQ01dsPbB; Wed, 11 Dec 2019 14:52:23 +0100
-Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1if2Pf-00014M-PC; Wed, 11 Dec 2019 14:52:23 +0100
-Received: from geert by rox.of.borg with local (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1if2Pf-0006yk-Nz; Wed, 11 Dec 2019 14:52:23 +0100
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH v2 4/4] ARM: shmobile: Enable ARM_GLOBAL_TIMER on Cortex-A9
- MPCore SoCs
-Date: Wed, 11 Dec 2019 14:52:22 +0100
-Message-Id: <20191211135222.26770-5-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191211135222.26770-1-geert+renesas@glider.be>
-References: <20191211135222.26770-1-geert+renesas@glider.be>
+ id 1if2Ta-00052S-HR
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:56:27 +0000
+Received: from [2001:1620:665:0:5795:5b0a:e5d5:5944] (helo=localhost)
+ by www62.your-server.de with esmtpsa (TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256)
+ (Exim 4.89_1) (envelope-from <daniel@iogearbox.net>)
+ id 1if2TP-0007p8-I9; Wed, 11 Dec 2019 14:56:15 +0100
+Date: Wed, 11 Dec 2019 14:56:15 +0100
+From: Daniel Borkmann <daniel@iogearbox.net>
+To: Russell King <rmk+kernel@armlinux.org.uk>
+Subject: Re: [PATCH] ARM: net: bpf: improve prologue code sequence
+Message-ID: <20191211135615.GA25011@linux.fritz.box>
+References: <E1ieH2g-0004ih-Rb@rmk-PC.armlinux.org.uk>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <E1ieH2g-0004ih-Rb@rmk-PC.armlinux.org.uk>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Authenticated-Sender: daniel@iogearbox.net
+X-Virus-Scanned: Clear (ClamAV 0.101.4/25660/Wed Dec 11 10:47:07 2019)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_055230_540956_3747DB9A 
-X-CRM114-Status: GOOD (  10.24  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20191211_055626_577244_1AD820B3 
+X-CRM114-Status: UNSURE (   7.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:13 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.133.104.62 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,85 +63,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Song Liu <songliubraving@fb.com>, netdev@vger.kernel.org,
+ Alexei Starovoitov <ast@kernel.org>,
+ Shubham Bansal <illusionist.neo@gmail.com>, Yonghong Song <yhs@fb.com>,
+ bpf@vger.kernel.org, Andrii Nakryiko <andriin@fb.com>,
+ Martin KaFai Lau <kafai@fb.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SH-Mobile AG5 and R-Car H1 SoCs are based on the Cortex-A9 MPCore, which
-includes a global timer.
+On Mon, Dec 09, 2019 at 11:17:30AM +0000, Russell King wrote:
+> Improve the prologue code sequence to be able to take advantage of
+> 64-bit stores, changing the code from:
+> 
+>   push    {r4, r5, r6, r7, r8, r9, fp, lr}
+>   mov     fp, sp
+>   sub     ip, sp, #80     ; 0x50
+>   sub     sp, sp, #600    ; 0x258
+>   str     ip, [fp, #-100] ; 0xffffff9c
+>   mov     r6, #0
+>   str     r6, [fp, #-96]  ; 0xffffffa0
+>   mov     r4, #0
+>   mov     r3, r4
+>   mov     r2, r0
+>   str     r4, [fp, #-104] ; 0xffffff98
+>   str     r4, [fp, #-108] ; 0xffffff94
+> 
+> to the tighter:
+> 
+>   push    {r4, r5, r6, r7, r8, r9, fp, lr}
+>   mov     fp, sp
+>   mov     r3, #0
+>   sub     r2, sp, #80     ; 0x50
+>   sub     sp, sp, #600    ; 0x258
+>   strd    r2, [fp, #-100] ; 0xffffff9c
+>   mov     r2, #0
+>   strd    r2, [fp, #-108] ; 0xffffff94
+>   mov     r2, r0
+> 
+> resulting in a saving of three instructions.
+> 
+> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 
-Enable the ARM global timer on these SoCs, which will be used for:
-  - the scheduler clock, improving scheduler accuracy from 10 ms to 3 or
-    4 ns,
-  - delay loops, allowing removal of calls to shmobile_init_delay() from
-    the corresponding machine vectors.
-
-Note that when using an old DTB lacking the global timer, the kernel
-will still work.  However, loops-per-jiffies will no longer be preset,
-and the delay loop will need to be calibrated during boot.
-
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
-v2:
-  - Rebased
----
- arch/arm/mach-shmobile/setup-r8a7779.c | 1 -
- arch/arm/mach-shmobile/setup-sh73a0.c  | 1 -
- drivers/soc/renesas/Kconfig            | 2 ++
- 3 files changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm/mach-shmobile/setup-r8a7779.c b/arch/arm/mach-shmobile/setup-r8a7779.c
-index b13ec9088ce5354c..86406e3f9b22e31f 100644
---- a/arch/arm/mach-shmobile/setup-r8a7779.c
-+++ b/arch/arm/mach-shmobile/setup-r8a7779.c
-@@ -72,7 +72,6 @@ static const char *const r8a7779_compat_dt[] __initconst = {
- DT_MACHINE_START(R8A7779_DT, "Generic R8A7779 (Flattened Device Tree)")
- 	.smp		= smp_ops(r8a7779_smp_ops),
- 	.map_io		= r8a7779_map_io,
--	.init_early	= shmobile_init_delay,
- 	.init_irq	= r8a7779_init_irq_dt,
- 	.init_late	= shmobile_init_late,
- 	.dt_compat	= r8a7779_compat_dt,
-diff --git a/arch/arm/mach-shmobile/setup-sh73a0.c b/arch/arm/mach-shmobile/setup-sh73a0.c
-index 4b7d07a36a24aa75..cac92edd2b8879cc 100644
---- a/arch/arm/mach-shmobile/setup-sh73a0.c
-+++ b/arch/arm/mach-shmobile/setup-sh73a0.c
-@@ -56,7 +56,6 @@ static const char *const sh73a0_boards_compat_dt[] __initconst = {
- DT_MACHINE_START(SH73A0_DT, "Generic SH73A0 (Flattened Device Tree)")
- 	.smp		= smp_ops(sh73a0_smp_ops),
- 	.map_io		= sh73a0_map_io,
--	.init_early	= shmobile_init_delay,
- 	.init_machine	= sh73a0_generic_init,
- 	.init_late	= shmobile_init_late,
- 	.dt_compat	= sh73a0_boards_compat_dt,
-diff --git a/drivers/soc/renesas/Kconfig b/drivers/soc/renesas/Kconfig
-index 2d10e34cdbe4d117..f87a7466171c5eba 100644
---- a/drivers/soc/renesas/Kconfig
-+++ b/drivers/soc/renesas/Kconfig
-@@ -116,6 +116,7 @@ config ARCH_R8A7779
- 	bool "R-Car H1 (R8A77790)"
- 	select ARCH_RCAR_GEN1
- 	select ARM_ERRATA_754322
-+	select ARM_GLOBAL_TIMER
- 	select HAVE_ARM_SCU if SMP
- 	select HAVE_ARM_TWD if SMP
- 	select SYSC_R8A7779
-@@ -163,6 +164,7 @@ config ARCH_SH73A0
- 	bool "SH-Mobile AG5 (R8A73A00)"
- 	select ARCH_RMOBILE
- 	select ARM_ERRATA_754322
-+	select ARM_GLOBAL_TIMER
- 	select HAVE_ARM_SCU if SMP
- 	select HAVE_ARM_TWD if SMP
- 	select RENESAS_INTC_IRQPIN
--- 
-2.17.1
-
+Applied, thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
