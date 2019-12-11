@@ -2,133 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9C6411AC0D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:28:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C47F11AC1C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:33:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vPgow/ehlFJR5Tl6g8aI9E7ANLVmaENStwsubeZ5EyI=; b=sGkcHt5JUz0lal
-	JlWrlknXykQz15rUIM0MPE8n6jpZ1WGETE+m80WRdgpacTaFCgBrMoHdgt2b3PwmdZdI3wg49lfGO
-	7a41Qp/NC81jG1eiGKFwNIWxpHvuvQMjh6fakPrXd++qUHy9xlvTwqDylcwwu2FFZ2cJ2Zny1uYXJ
-	KdYXcKZ3S2bbUqGODqX4zYipOMIIJYqZs4ooUdo4imqBtiUK4dXsSlFLAcM6tU5skf0mL+ySJBO4B
-	EuObSh8U87pus4mUFRl8q5iST1xS/+w/m/+c5ISkCGLSmHVR4ftFd/DGmMfIt+zvw1sOYtDM/P4Tp
-	Bf/Fo5xsKJ9WGdRo8HjQ==;
+	List-Owner; bh=nA4L1MhkJf/3E8EAkdO8JVH4rMWKVKQn+Qit7wIi+pg=; b=d1VDSEFqPiaahT
+	VNVs+nPebuePVeNv+a7WSxCbDUYmuM84IpZVTxJnSbNy7hAQV7d3mjN0j2P2VnVNWQDLG1C2B6nZ9
+	DtWSxnfZgMAburn9rWXwL5XMUE67rHY5dwSr1x1Y/o/3FX8NZjJ6KqyVI0SaGlUiRg0suek5joOpC
+	JxtJ9pgDmAGch3w17+DGYgIKhy3EFnOR9Iz7ynX+v3jIpUf2QQDjrdrVVuFEamTLuPI3NLWHvmO0W
+	KemM1NiTv22iWwtwuCa8uE9zAJ0P5jpDwjMCeqcazISTiMVZGszuPb/jsylplvwRgcZ1qTAfWCxKO
+	IApoEXPNP1d2CtoLwUpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if22i-0007vE-1d; Wed, 11 Dec 2019 13:28:40 +0000
-Received: from mail-eopbgr80100.outbound.protection.outlook.com
- ([40.107.8.100] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if22Y-0007ug-Ht
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:28:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JzO70vcgwCF41Eb3KWf/e7vjCkskQ4V4PzFc9+iIQOjolnaCGPCeGzGASYe87cQxFy7PkdlPWw6+1etuJZjL9f8wAG6a7USci+ESKAXdw4XIas/v+EZOIHxGe3N5EtqedH8Mr4y380lT/hDwsKESJMXazm3Jaw26Fnbib1ghOgQv9vXAHq63l4rOpjPAlD8wdZtmd+IHuvytaz8HLJ+Hr/Yl1LeJDnM64Etge0gEi6OtK2acX+OIQmW6z/tJM1l6IJD2Zeh+MQcF4HbFkYnF9psdwpFJWRrrxiHCE9Srzf9IlL16tIm4Utd/gmwrOb8+wpfdMkTObvMPRehgSsRuIA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fobG7iXK3Vnr71c7kmaI6NzpYuDTJLkcz2urF3IzLjU=;
- b=WqwnreWWlQnrBJeKZqJRtBaNwx82XQv9HB/RqLk7DjplD7XZ8SSGcV+0lIux4KbnKkZvlqdY1H7MAYyGVSaKGgqyJGyvJTFdO9HQcA4hHtqNnvgMCFoSP+zdHUOae6GWGDZ7eOy8oNS4kLYkNJdRvNoKxE5bBfkDH5YK/buhBjX7kpBzPf9/bK8yFkoqyQuMU5+19zAHUPoRB94BHYgeLSu5fdu5/+YZK4EyuEdvl0LlATu9xpuPFoa2h/GOltOE4bipcPni5i3xvBByEzgj0Kd1T7iYPAMLJSsY7Pfxggj4HSeSuQBpYc/1QlfAZviCWiq1KLz1iXFLWNpXmm5/tQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
- dkim=pass header.d=axentia.se; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fobG7iXK3Vnr71c7kmaI6NzpYuDTJLkcz2urF3IzLjU=;
- b=S8QhF5CyTKNL9pfss6+YfhH/j+aARhqqsvWsQq1hQx+SRZ+fK/UANdiwzHqVH+bCeUCr/PeISCpvXfS8G1VPpWBPLsRi3MFQ7dym7vTMze6jESlUZBt20szUvl2Nxt47KoHG2Rwr68XehEG70SFSybyzP4e1yCxtzQqZp1Vzreg=
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
- DB3PR0202MB3451.eurprd02.prod.outlook.com (52.134.72.14) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2538.15; Wed, 11 Dec 2019 13:28:24 +0000
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::446e:c4f8:7e59:1c6d]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::446e:c4f8:7e59:1c6d%7]) with mapi id 15.20.2516.019; Wed, 11 Dec 2019
- 13:28:24 +0000
-From: Peter Rosin <peda@axentia.se>
-To: "Claudiu.Beznea@microchip.com" <Claudiu.Beznea@microchip.com>,
- "sam@ravnborg.org" <sam@ravnborg.org>, "bbrezillon@kernel.org"
- <bbrezillon@kernel.org>, "airlied@linux.ie" <airlied@linux.ie>,
- "daniel@ffwll.ch" <daniel@ffwll.ch>, "Nicolas.Ferre@microchip.com"
- <Nicolas.Ferre@microchip.com>, "alexandre.belloni@bootlin.com"
- <alexandre.belloni@bootlin.com>, "Ludovic.Desroches@microchip.com"
- <Ludovic.Desroches@microchip.com>, "lee.jones@linaro.org"
- <lee.jones@linaro.org>
-Subject: Re: [PATCH 4/5] Revert "drm/atmel-hlcdc: allow selecting a higher
- pixel-clock than requested"
-Thread-Topic: [PATCH 4/5] Revert "drm/atmel-hlcdc: allow selecting a higher
- pixel-clock than requested"
-Thread-Index: AQHVr11DyxIz9S+dLEWyrkArJlSyg6ezeYGA///8moCAADjaAIABIyyAgAAc2oA=
-Date: Wed, 11 Dec 2019 13:28:24 +0000
-Message-ID: <b5ea01da-5345-05cf-9f89-b7123dbbb893@axentia.se>
-References: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
- <1575984287-26787-5-git-send-email-claudiu.beznea@microchip.com>
- <4c3ffc48-7aa5-1e48-b0e9-a50c4eea7c38@axentia.se>
- <5fbad2cd-0dbe-0be5-833a-f7a612d48012@microchip.com>
- <2272669c-38ee-1928-9563-46755574897c@axentia.se>
- <167cb87e-b189-71fd-0a79-adf89336d1f3@microchip.com>
-In-Reply-To: <167cb87e-b189-71fd-0a79-adf89336d1f3@microchip.com>
-Accept-Language: en-US, sv-SE
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
-x-originating-ip: [213.112.138.100]
-x-clientproxiedby: HE1PR05CA0285.eurprd05.prod.outlook.com
- (2603:10a6:7:93::16) To DB3PR0202MB3434.eurprd02.prod.outlook.com
- (2603:10a6:8:5::30)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peda@axentia.se; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 10076e51-e796-4c5e-18c8-08d77e3dff8a
-x-ms-traffictypediagnostic: DB3PR0202MB3451:
-x-microsoft-antispam-prvs: <DB3PR0202MB34519BCF7196AC79E6F700C9BC5A0@DB3PR0202MB3451.eurprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 024847EE92
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(136003)(396003)(346002)(39830400003)(376002)(199004)(189003)(7416002)(81166006)(81156014)(6486002)(66446008)(64756008)(6512007)(66946007)(4001150100001)(31686004)(66476007)(66556008)(8676002)(5660300002)(2906002)(186003)(2616005)(36756003)(8936002)(6506007)(71200400001)(52116002)(110136005)(54906003)(316002)(86362001)(53546011)(26005)(31696002)(4326008)(508600001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3451;
- H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: axentia.se does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 1DeSgWEvYFuSFysNUIoAfzx9XIYylvJD9zTflE7YSxgU5G+gJhapKXqSdzZXnzfTswxlDfF9Lh5eQaS2jCDNZsWygZygVpe7WzU0BdlApl3V2+KB+qddD6Q9u9FzBuQDALn/0PEogtVy0SiTz0PQNAsGLgvmHigCt9lPz3RTtvuO8YRMXfUyrFyvqonwI0fUgipr5DHdc15Rin8v1XxOf0rik1oQk495OXlXd5pB7kB5DeUMDWp8kAlwkhW/ejXpPUCYTP5MTwcHp+KOhr7ZvSFYuQNWRNvtymv5LGlbZ9IlCJqen4pchUsEjLR4ckrnc4Uphuq2uu2/P4yK7ik9mXvysAuoqWnUwPvIg99b8IsPkJwwKIMcGmshZ9kNwSkDCVQQxrikPaU85LzY4+2fz1sTlHACtFcAHyGlDN2jnL1RX9IZnPx4Fq/fP/rfJ31S
-x-ms-exchange-transport-forked: True
-Content-ID: <6EA23D3E9801C6479DB9954F58F85094@eurprd02.prod.outlook.com>
+	id 1if27N-0001Ak-Tx; Wed, 11 Dec 2019 13:33:29 +0000
+Received: from [179.97.35.50] (helo=quaco.ghostprotocols.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1if27H-0001Ac-9G; Wed, 11 Dec 2019 13:33:23 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id 697A640352; Wed, 11 Dec 2019 10:33:19 -0300 (-03)
+Date: Wed, 11 Dec 2019 10:33:19 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: John Garry <john.garry@huawei.com>, Jiri Olsa <jolsa@redhat.com>
+Subject: [PATCHES] Fix 'perf top' breakage on architectures not providing
+ get_cpuid() Re: perf top for arm64?
+Message-ID: <20191211133319.GA15181@kernel.org>
+References: <1573045254-39833-1-git-send-email-john.garry@huawei.com>
+ <20191106140036.GA6259@kernel.org>
+ <418023e7-a50d-cb6f-989f-2e6d114ce5d8@huawei.com>
+ <20191210163655.GG14123@krava>
+ <952dc484-2739-ee65-f41c-f0198850ab10@huawei.com>
+ <20191210170841.GA23357@krava>
+ <9a31536b-f266-e305-1107-2f745d0a33e3@huawei.com>
+ <20191210195113.GD13965@kernel.org>
 MIME-Version: 1.0
-X-OriginatorOrg: axentia.se
-X-MS-Exchange-CrossTenant-Network-Message-Id: 10076e51-e796-4c5e-18c8-08d77e3dff8a
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Dec 2019 13:28:24.3048 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: sk7yPS9LhC1PGTHv8YujCt8ZuUvCQEegprgQ65677S4Nb4s6Z9uc/DdZyYHcMaR9
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3451
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_052830_977769_FE8A7E43 
-X-CRM114-Status: GOOD (  30.97  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.100 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+Content-Disposition: inline
+In-Reply-To: <20191210195113.GD13965@kernel.org>
+X-Url: http://acmel.wordpress.com
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -140,161 +53,173 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: mark.rutland@arm.com, Peter Zijlstra <peterz@infradead.org>,
+ linux-kernel@vger.kernel.org, Linuxarm <linuxarm@huawei.com>,
+ linux-perf-users@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Namhyung Kim <namhyung@kernel.org>, will@kernel.org,
+ Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-11 12:45, Claudiu.Beznea@microchip.com wrote:
-> 
-> 
-> On 10.12.2019 19:22, Peter Rosin wrote:
->> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
->>
->> On 2019-12-10 15:59, Claudiu.Beznea@microchip.com wrote:
->>>
->>>
->>> On 10.12.2019 16:11, Peter Rosin wrote:
->>>> On 2019-12-10 14:24, Claudiu Beznea wrote:
->>>>> This reverts commit f6f7ad3234613f6f7f27c25036aaf078de07e9b0.
->>>>> ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
->>>>> because allowing selecting a higher pixel clock may overclock
->>>>> LCD devices, not all of them being capable of this.
->>>>
->>>> Without this patch, there are panels that are *severly* underclocked (on the
->>>> magnitude of 40MHz instead of 65MHz or something like that, I don't remember
->>>> the exact figures).
->>>
->>> With patch that switches by default to 2xsystem clock for pixel clock, if
->>> using 133MHz system clock (as you specified in the patch I proposed for
->>> revert here) that would go, without this patch at 53MHz if 65MHz is
->>> requested. Correct me if I'm wrong.
->>
->> It might have been 53MHz, whatever it was it was too low for things to work.
->>
->>>> And they are of course not capable of that. All panels
->>>> have *some* slack as to what frequencies are supported, and the patch was
->>>> written under the assumption that the preferred frequency of the panel was
->>>> requested, which should leave at least a *little* headroom.
->>>
->>> I see, but from my point of view, the upper layers should decide what
->>> frequency settings should be done on the LCD controller and not let this at
->>>  the driver's latitude.
->>
->> Right, but the upper layers do not support negotiating a frequency from
->> ranges. At least the didn't when the patch was written, and implementing
->> *that* seemed like a huge undertaking.
->>
->>>>
->>>> So, I'm curious as to what panel regressed. Or rather, what pixel-clock it needs
->>>> and what it gets with/without the patch?
->>>
->>> I have 2 use cases:
->>> 1/ system clock = 200MHz and requested pixel clock (mode_rate) ~71MHz. With
->>> the reverted patch the resulted computed pixel clock would be 80MHz.
->>> Previously it was at 66MHz
->>
->> I don't see how that's possible.
->>
->> [doing some calculation by hand]
->>
->> Arrgh. *blush*
->>
->> The code does not do what I intended for it to do.
->> Can you please try this instead of reverting?
->>
->> Cheers,
->> Peter
->>
->> From b3e86d55b8d107a5c07e98f879c67f67120c87a6 Mon Sep 17 00:00:00 2001
->> From: Peter Rosin <peda@axentia.se>
->> Date: Tue, 10 Dec 2019 18:11:28 +0100
->> Subject: [PATCH] drm/atmel-hlcdc: prefer a lower pixel-clock than requested
->>
->> The intention was to only select a higher pixel-clock rate than the
->> requested, if a slight overclocking would result in a rate significantly
->> closer to the requested rate than if the conservative lower pixel-clock
->> rate is selected. The fixed patch has the logic the other way around and
->> actually prefers the higher frequency. Fix that.
->>
->> Fixes: f6f7ad323461 ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
->> Reported-by: Claudiu Beznea <claudiu.beznea@microchip.com>
->> Signed-off-by: Peter Rosin <peda@axentia.se>
->> ---
->>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 4 ++--
->>  1 file changed, 2 insertions(+), 2 deletions(-)
->>
->> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
->> index 9e34bce089d0..03691845d37a 100644
->> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
->> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
->> @@ -120,8 +120,8 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
->>                 int div_low = prate / mode_rate;
->>
->>                 if (div_low >= 2 &&
->> -                   ((prate / div_low - mode_rate) <
->> -                    10 * (mode_rate - prate / div)))
->> +                   (10 * (prate / div_low - mode_rate) <
->> +                    (mode_rate - prate / div)))
-> 
-> I tested it on my setup (I have only one of those specified above) and it
-> is OK. Doing some math for the other setup it should also be OK.
+Em Tue, Dec 10, 2019 at 04:51:13PM -0300, Arnaldo Carvalho de Melo escreveu:
+> Em Tue, Dec 10, 2019 at 05:17:56PM +0000, John Garry escreveu:
+> > On 10/12/2019 17:08, Jiri Olsa wrote:
+> > > On Tue, Dec 10, 2019 at 04:52:52PM +0000, John Garry wrote:
+> > > > On 10/12/2019 16:36, Jiri Olsa wrote:
+> > > > > On Tue, Dec 10, 2019 at 04:13:49PM +0000, John Garry wrote:
+> > > > > > I find to my surprise that "perf top" does not work for arm64:
 
-Glad to hear it, and thanks for testing/verifying!
+> > > > > > root@ubuntu:/home/john/linux# tools/perf/perf top
+> > > > > > Couldn't read the cpuid for this machine: No such file or directory
 
-> As a whole, I'm OK with this at the moment (let's hope it will work for all
-> use-cases) but still I am not OK with selecting here, in the driver,
-> something that might work.
+> > > > > there was recent change that check on cpuid and quits:
+> > > > >     608127f73779 perf top: Initialize perf_env->cpuid, needed by the per arch annotation init routine
 
-The driver has to select *something*. If it can deliver the exact requested
-frequency, fine. Otherwise? What should it do? Bail out? Why is 53MHz better
-and more likely to produce a picture than 66MHz, when 65MHz is requested?
-That's of course an impossible question for the driver to answer.
+> > > > ok, this is new code. I obviously didn't check the git history...
 
-So, if you are not ok with that, you need to implement something that uses
-the min/max fields from the various fields inside struct display_timing
-instead of only looking at the typ field. E.g. the panel_lvds driver calls
-videomode_from_timings() and the result is a single possible mode with only
-the typical timings, with no negotiation of the best option within the
-given ranges with the other drivers involved with the pipe. I think the
-panel-simple driver also makes this one-sided decision of only making use
-of the typ field for each given timing range. Having dabbled a bit in what
-the sound stack does to negotiate the sample rate, sample format and
-channel count etc, I can only predict that retrofitting something like that
-for video modes will be ... interesting. Which is probably why it's not
-done at all, at least not in the general case.
+> > > > But, apart from this, there are many other places where get_cpuid() is
+> > > > called. I wonder what else we're missing out on, and whether we should still
+> > > > add it.
 
-And yes, I agree, the current mechanics are less than ideal. But I have no
-time to do anything about it.
+> > > right, I was just wondering how come vendor events are working for you,
+> > > but realized we have get_cpuid_str being called in there ;-)
 
->                            Although I am not familiar with how other DRM
-> drivers are handling this kind of scenarios. Maybe you and/or other DRM
-> guys knows more about it.
+> > > I think we should add it as you have it prepared already,
+> > > could you post it with bigger changelog that would explain
+> > > where it's being used for arm?
 
-I don't know (and I mean it literally), but maybe these chips are special
-as they typically end up with very small dividers and thus large frequency
-steps? BTW, I do not consider myself a DRM guy, I have only tried to
-fix that which did not work out for our needs...
+> > ok, I can look to do that.
 
-> Just as a notice, it may worth adding a print message saying what was
-> frequency was requested and what frequency has been setup by driver.
+> > But, as you know, we still need to fix perf top for other architectures
+> > affected.
 
-I have no problem with that.
+> Right, I need to make that just a pr_debug() message and then check in
+> the annotation code when that is needed to see if it is set, if not,
+> then show a popup error message and refuse to do whatever annotation
+> feature requires that.
 
-Cheers,
-Peter
+> Anyway, your patch should make sense and provide info that the ARM64
+> annotation may use now or in the future.
 
-> 
->>                         /*
->>                          * At least 10 times better when using a higher
->>                          * frequency than requested, instead of a lower.
->> --
->> 2.20.1
->>
+So can you take a look at the two patches below and provide me Acked-by
+and/or Reviewed-by and/or Tested-by?
+
+
+From 53c6cde6a71a1a9283763bd2e938b229b50c2cd5 Mon Sep 17 00:00:00 2001
+From: Arnaldo Carvalho de Melo <acme@redhat.com>
+Date: Wed, 11 Dec 2019 10:09:24 -0300
+Subject: [PATCH 1/2] perf arch: Make the default get_cpuid() return compatible
+ error
+
+Some of the functions calling get_cpuid() propagate back the error it
+returns, and all are using errno (positive) values, make the weak
+default get_cpuid() function return ENOSYS to be consistent and to allow
+checking if this is an arch not providing this function or if a provided
+one is having trouble getting the cpuid, to decide if the warning should
+be provided to the user or just a debug message should be emitted.
+
+Cc: Adrian Hunter <adrian.hunter@intel.com>
+Cc: Jiri Olsa <jolsa@kernel.org>
+Cc: John Garry <john.garry@huawei.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Will Deacon <will@kernel.org>
+Link: https://lkml.kernel.org/n/tip-lxwjr0cd2eggzx04a780ffrv@git.kernel.org
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+---
+ tools/perf/util/header.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tools/perf/util/header.c b/tools/perf/util/header.c
+index becc2d109423..4d39a75551a0 100644
+--- a/tools/perf/util/header.c
++++ b/tools/perf/util/header.c
+@@ -850,7 +850,7 @@ int __weak strcmp_cpuid_str(const char *mapcpuid, const char *cpuid)
+  */
+ int __weak get_cpuid(char *buffer __maybe_unused, size_t sz __maybe_unused)
+ {
+-	return -1;
++	return ENOSYS; /* Not implemented */
+ }
+ 
+ static int write_cpuid(struct feat_fd *ff,
+-- 
+2.21.0
+
+From c6c6a3e2eb6982e37294abcac389effd298cf730 Mon Sep 17 00:00:00 2001
+From: Arnaldo Carvalho de Melo <acme@redhat.com>
+Date: Wed, 11 Dec 2019 10:21:59 -0300
+Subject: [PATCH 2/2] perf top: Do not bail out when perf_env__read_cpuid()
+ returns ENOSYS
+
+'perf top' stopped working on hw architectures that do not provide a
+get_cpuid() implementation and thus fallback to the weak get_cpuid()
+default function.
+
+This is done because at annotation time we may need it in the arch
+specific annotation init routine, but that is only being used by arches
+that do provide a get_cpuid() implementation:
+
+  $ find tools/  -name "*.[ch]" | xargs grep 'evlist->env'
+  tools/perf/builtin-top.c:	top.evlist->env = &perf_env;
+  tools/perf/util/evsel.c:		return evsel->evlist->env;
+  tools/perf/util/s390-cpumsf.c:	sf->machine_type = s390_cpumsf_get_type(session->evlist->env->cpuid);
+  tools/perf/util/header.c:	session->evlist->env = &header->env;
+  tools/perf/util/sample-raw.c:	const char *arch_pf = perf_env__arch(evlist->env);
+  $
+
+  $ find tools/perf/arch  -name "*.[ch]" | xargs grep -w get_cpuid
+  tools/perf/arch/x86/util/auxtrace.c:	ret = get_cpuid(buffer, sizeof(buffer));
+  tools/perf/arch/x86/util/header.c:get_cpuid(char *buffer, size_t sz)
+  tools/perf/arch/powerpc/util/header.c:get_cpuid(char *buffer, size_t sz)
+  tools/perf/arch/s390/util/header.c: * Implementation of get_cpuid().
+  tools/perf/arch/s390/util/header.c:int get_cpuid(char *buffer, size_t sz)
+  tools/perf/arch/s390/util/header.c:	if (buf && get_cpuid(buf, 128))
+  $
+
+For 'report' or 'script', i.e. tools working on perf.data files, that is
+setup while reading the header, its just top that needs to explicitely
+read it at tool start.
+
+Reported-by: John Garry <john.garry@huawei.com>
+Analysed-by: Jiri Olsa <jolsa@kernel.org>
+Cc: Adrian Hunter <adrian.hunter@intel.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Will Deacon <will@kernel.org>
+Link: https://lkml.kernel.org/n/tip-lxwjr0cd2eggzx04a780ffrv@git.kernel.org
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+---
+ tools/perf/builtin-top.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/tools/perf/builtin-top.c b/tools/perf/builtin-top.c
+index dc80044bc46f..795e353de095 100644
+--- a/tools/perf/builtin-top.c
++++ b/tools/perf/builtin-top.c
+@@ -1568,9 +1568,13 @@ int cmd_top(int argc, const char **argv)
+ 	 */
+ 	status = perf_env__read_cpuid(&perf_env);
+ 	if (status) {
+-		pr_err("Couldn't read the cpuid for this machine: %s\n",
+-		       str_error_r(errno, errbuf, sizeof(errbuf)));
+-		goto out_delete_evlist;
++		/*
++		 * Some arches do not provide a get_cpuid(), so just use pr_debug, otherwise
++		 * warn the user explicitely.
++		 */
++		eprintf(status == ENOSYS ? 1 : 0, verbose,
++			"Couldn't read the cpuid for this machine: %s\n",
++			str_error_r(errno, errbuf, sizeof(errbuf)));
+ 	}
+ 	top.evlist->env = &perf_env;
+ 
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
