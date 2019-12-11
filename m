@@ -2,82 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 752EA11A4E2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 08:10:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7E8911A4E4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 08:11:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3IYcq8H1HhOArOvSOBF9PBLwTB3c6OintMNfDQmThL0=; b=nNnG4OnNQxGauoPfnafzHqoyt
-	DRj7zI/TZpvaAfzRWVTE91PtuMqOWsfXpExm2rTgNHW+I3I2zhx5hfQod2G0OIUNzPH+Fz74qhYET
-	SP1eu1KivjlyPKgXWcto7QihoROnlScVXxehqAd+4NRQ7xNdYnGvwKk8IClFofxQT/lqJYyCqf8cz
-	1rjl66Ci4xeDBL/XYuXnyvHtJdwLuHbG6/6amvspe3Z63+nXrBcXsosX8k0XeVmxnvtAZl0Odqfr5
-	wQgdHNUgw1tSD1kOJg+Ltrniyq7B5h3rpE+oBrxO0IPzSZSvwELyf629AW2y34uYtHMEf/7H+WOr9
-	5vhfngt4A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d4K5tL3xnfD0UkBoAPMgi4r5m/cdABIhNGPiAEgWupE=; b=Ejn3f/js6CCqDm
+	uwM8r/khm433Sa6UXj1HvLBOeCle+Mg/G92GHssBQm/EUqxi70YKVgqF9MjhAfFHeFqdm3PBOw0bu
+	gAJ4EpM1S0NfdPls6VvuDJsTjGGcWTi41i7jnf9lvhVq7XzImOzSFKnl2ilHFYmFv9HZMt2CYT0um
+	UpXqzTIxHCJWSwLrc/X7Kj+WsIxE22v/U0Ah5BrZlLHP58o+ywDc/dgMWPTJOMGNiA3F34CK8pu1p
+	aQWTLKzSb92HJVeWC6SBCxAcEyyL3bRkTFfaL6eaIlTATfG4Uv55XoCzUxQjujf9pfw57/+lEZPBU
+	Caezxoaapuo0gYV+/96w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iew8W-0002c7-C7; Wed, 11 Dec 2019 07:10:16 +0000
-Received: from a27-186.smtp-out.us-west-2.amazonses.com ([54.240.27.186])
+	id 1iew9a-0003QN-Ew; Wed, 11 Dec 2019 07:11:22 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iew8J-0001r7-UO
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 07:10:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1576048200;
- h=MIME-Version:Content-Type:Content-Transfer-Encoding:Date:From:To:Cc:Subject:In-Reply-To:References:Message-ID;
- bh=mHGxYoR3gp9GoBg7R0dzI6EbViXJjFdJH4ruGbJEZe4=;
- b=pGhrDxKXxQLGO7LywQ2wIAcf7z/n2gYwJMnA5HGzI5nPL3JfSHZszrxK+vDSLZ7K
- lWbpV05hKQIIlCB0KIfqnZQQ/8fyojbUYA5MwY+WAZi4frQzMghR5mkGuw8KnT0n9rk
- SiyswE7LkKT1xHcrQhofNdS0THuppWHcrW3ahVWM=
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1576048200;
- h=MIME-Version:Content-Type:Content-Transfer-Encoding:Date:From:To:Cc:Subject:In-Reply-To:References:Message-ID:Feedback-ID;
- bh=mHGxYoR3gp9GoBg7R0dzI6EbViXJjFdJH4ruGbJEZe4=;
- b=Jz9Mw33wr2DpUoItKk3PCZT2FJMgiNiVoUWAToZz05bPXYz2lP9Xc3wOSdMazokN
- L3aFkSHj7419zB+WWiP04W41ylCERV0r5dO3eclhGQP3NEQr4rzwiTK7VEKIQ2zLe2S
- lW6ims1E6daEGlQnCO6AB7gRCjrz2E+oOoh/FIdA=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
+ id 1iew9Q-0003PY-8d
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 07:11:16 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iew9M-0005Px-B5; Wed, 11 Dec 2019 08:11:08 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iew9L-0007vc-6u; Wed, 11 Dec 2019 08:11:07 +0100
+Date: Wed, 11 Dec 2019 08:11:07 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH] bus: ts-nbus: remove bus driver without user
+Message-ID: <20191211071107.ogyuxnwphlw5txe3@pengutronix.de>
+References: <20190107194523.2772-1-u.kleine-koenig@pengutronix.de>
+ <CACRpkdbYizVLtQxh8_ZXWC-d6+E-k0T6Zq67qRJ7ascFGWTXig@mail.gmail.com>
+ <20190111150441.rsmize5dudrmgu52@pengutronix.de>
+ <CACRpkdbY=ZS0hb2wQfLQMr_=vNAGuMUGnAmwgwZi-hZ-fNdD=Q@mail.gmail.com>
+ <20191210171524.dg4vkqp3dhupsgbm@pengutronix.de>
+ <CACRpkdb3dZ0WKtReMcmt2boRy3ooh+yj-QKTG3vRR8=4G7w9nw@mail.gmail.com>
+ <20191210212758.jppjwepnxpwez5r2@pengutronix.de>
+ <CACRpkdb5L9S1McY41FUivZD7DUPOtbvTPVgVOvcVWr114GuzPw@mail.gmail.com>
 MIME-Version: 1.0
-Date: Wed, 11 Dec 2019 07:10:00 +0000
-From: saiprakash.ranjan@codeaurora.org
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: Re: [PATCH 0/3] Add DT nodes for watchdog and llcc for SC7180 and
- SM8150 SoCs
-In-Reply-To: <20191211070216.GF3143381@builder>
-References: <0101016ef3391259-59ec5f0a-2ae7-45a8-881e-edc2d0bf7b26-000000@us-west-2.amazonses.com>
- <20191211070216.GF3143381@builder>
-Message-ID: <0101016ef3cb0b8c-e0a0c552-b148-473a-b247-e633912fcf09-000000@us-west-2.amazonses.com>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
-X-SES-Outgoing: 2019.12.11-54.240.27.186
-Feedback-ID: 1.us-west-2.CZuq2qbDmUIuT3qdvXlRHZZCpfZqZ4GtG9v3VKgRyF0=:AmazonSES
+Content-Disposition: inline
+In-Reply-To: <CACRpkdb5L9S1McY41FUivZD7DUPOtbvTPVgVOvcVWr114GuzPw@mail.gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_231004_022638_9FF48FF3 
-X-CRM114-Status: UNSURE (   7.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191210_231113_354345_5085E15A 
+X-CRM114-Status: GOOD (  14.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.240.27.186 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,35 +74,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>,
- Andy Gross <agross@kernel.org>, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Arnd Bergmann <arnd@arndb.de>, Thierry Reding <thierry.reding@gmail.com>,
+ kernel <kernel@savoirfairelinux.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Jerome Oufella <jerome.oufella@savoirfairelinux.com>,
+ Sebastien Bourdelin <sebastien.bourdelin@savoirfairelinux.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-11 12:32, Bjorn Andersson wrote:
-> On Tue 10 Dec 20:30 PST 2019, Sai Prakash Ranjan wrote:
-> 
->> This series adds device tree node for watchdog on SC7180 and SM8150.
->> It also adds a node for LLCC (Last level cache controller) on SC7180.
->> 
->> Patch 3 depends on the dt binding change to LLCC node name:
->>  - https://patchwork.kernel.org/patch/11246055/
->> 
-> 
-> Series applied
-> 
+Hello Linus,
 
-Thanks Bjorn !!
+On Wed, Dec 11, 2019 at 12:08:14AM +0100, Linus Walleij wrote:
+> On Tue, Dec 10, 2019 at 10:28 PM Uwe Kleine-K=F6nig
+> <u.kleine-koenig@pengutronix.de> wrote:
+> > On Tue, Dec 10, 2019 at 10:19:55PM +0100, Linus Walleij wrote:
+> =
 
---
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+> > > So I would rather ask: who is hurt by it being around?
+> >
+> > It's one of the legacy PWM API users, and when I worked at improving
+> > it Thierry wondered if it's worth keeping the driver given it has no
+> > users[1].
+> >
+> > I don't care much either way, but if we keep the driver "looks dead"
+> > shouldn't be an excuse to not take cleanup patches.
+> =
 
+> Hm are cleanup patches not getting applied?
+> Isn't the real problem (my halfguess) that drivers/bus/* is a bit
+> orphaned?
+> =
+
+> Whenever I want to change something there I just send the patches
+> to the [ARM] SoC maintainers and ask them to apply it.
+> arm@kernel.org soc@kernel.org
+> =
+
+> If it means that you'd have to do tons of cleanups for nonexisting
+> or ungrateful users I'd say send a patch to delete it.
+
+OK, I will readd that driver to my (already long) todo list and send
+patches to them when I come around to work in that area again.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
