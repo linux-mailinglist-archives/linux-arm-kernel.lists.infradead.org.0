@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BBED11A44B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 07:06:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F39F211A449
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 07:05:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5FN6dACGzgJ9mvWebDm/Kp/LO7DxlUj90J0gI3Fp4lY=; b=B8VEuhviBoLHCT
-	6eWHwlhCQ2k/FVbCXX+Pc1xcKDQtyjhgFhV3hoFIPKxMH1v3Hf5FyZeYNjPOSP5tnSrnuEbB99a+a
-	Uet+na6HDC9xv2tRnlOEzUUHTDoAHwP+VhReLKLBEAyqoKZNJTM7XqnXKD5Wf6yJfeIZ4E7YXyKRk
-	626Z2YyAbf0l3aRliOhLtin9ZIw96K758xe3HqzRCmes7QNbXQv465nRvTHxclfoACmEUv5ja44hv
-	/97Bv0aQpaeFv6tIsKJDjz6Jn7ogxJYSPYStSwck8t95hrb9LTFSRm1mj+AomIPfxOVnZJk9TCTYn
-	/GnodYkQnqqLqKyxnYXg==;
+	List-Owner; bh=xeASfGSBaNU9/cGT+KOttda4rDLhG3vS2hDRYswwEaU=; b=Mcr6Rd3WLp7kSH
+	dCQXn32QzKAk11Hz3iXnC+NV/sKY8J5lcjBglmX1kzm8DVEtF2LAg1kiyM8GW/co+JePwlO6+AUVT
+	zZvW57qJi9mODdhN+VbBFQKYqh3Cz1QIE1NoKs7h4atb5yau5491g08yeCVFXLhMGnMKZiIBF3S+l
+	bAOwHJmKawU8Vv+83dR4M6b2iKJ5H8lVbTQ8lqu59B9+ZvVYi4LTKl9h5yRXDTzihlHByBKiB9DIZ
+	JYNWkQ1BrQlB1EBh4/Thigs0z315mo573gcPQ+Cm2y/Bp7ATYsO8bpXPssPzIIvwZuIg2CW7r/YgU
+	NeYuTWbe480AYD2r1w2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iev8a-0005wY-Mo; Wed, 11 Dec 2019 06:06:16 +0000
+	id 1iev84-0005Qr-QD; Wed, 11 Dec 2019 06:05:44 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iev7H-0003e0-ME; Wed, 11 Dec 2019 06:04:57 +0000
-X-UUID: 9ab1394afef04861b3ce095d62f1314e-20191210
+ id 1iev7G-0003ce-CN; Wed, 11 Dec 2019 06:04:55 +0000
+X-UUID: 66dc5317afd0416891a3eee7b83ac1e8-20191210
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=LJDVcR2SAcZk3iqycmeYvlBCWvpND3jjXyNcWGnWUEM=; 
- b=Nf8cKdLgDxIAth9HXEypWFFNjMVkJsUVUYHw0l1J10GZ0ppGgX9Nqp7ubq2kyTgT9jIL2np2Ojrh6Msqa78dVugUeL0kUTtF9WWYCqNH3tyQp7Dhga4m8LtXl899nrfFYryz94Vb5oBezm/WvFCOnrcP0s24Wm4cZpBc5bDzvYg=;
-X-UUID: 9ab1394afef04861b3ce095d62f1314e-20191210
+ bh=bGOiBo8UsCQP2pWWgLyPzgbBIX20HC4dwHtdo02etrI=; 
+ b=ep7xk4GYDsyKD9xp3Z+EExpku2RPOkckb+99ivOgNZFshjCYD3RXUP5nZhlL3twSey6DpN22xDriUkZELY18G1MDk98/2yLBhBenpiwNi3UPwN1ZplJ0r6j8/w7QdiwgFVCeW/VVfX2pgKCsyOKt693ycuEVDUH6kv5CQmJANDU=;
+X-UUID: 66dc5317afd0416891a3eee7b83ac1e8-20191210
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1239864979; Tue, 10 Dec 2019 22:04:51 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 10 Dec 2019 21:55:55 -0800
+ with ESMTP id 385962300; Tue, 10 Dec 2019 22:04:47 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 10 Dec 2019 21:55:50 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Dec 2019 13:54:35 +0800
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Dec 2019 13:54:41 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 11 Dec 2019 13:54:41 +0800
+ Transport; Wed, 11 Dec 2019 13:54:43 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>
-Subject: [PATCH v5 04/11] dt-bindings: phy-mtk-tphy: add a new reference clock
-Date: Wed, 11 Dec 2019 13:54:16 +0800
-Message-ID: <1576043663-14240-4-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH v5 05/11] dt-bindings: phy-mtk-tphy: add the properties about
+ address mapping
+Date: Wed, 11 Dec 2019 13:54:17 +0800
+Message-ID: <1576043663-14240-5-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1576043663-14240-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1576043663-14240-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 5EA98D63D6E1B44A954B71921064B906453A20D26BA268F81B4087B7B640843D2000:8
+X-TM-SNTS-SMTP: B460AA0BFF4E72BC7B7F8C602940F06412E8EBCBAB5A88572525C73B5F0966292000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_220455_756437_C0EB6A5C 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20191210_220454_424527_C2750659 
+X-CRM114-Status: GOOD (  11.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,43 +98,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Usually the digital and analog phys use the same reference clock,
-but on some platforms, they are separated, so add another optional
-clock to support it.
-In order to keep the clock names consistent with PHY IP's, use
-the da_ref for analog phy and ref clock for digital phy.
+Add three required properties about the address mapping, including
+'#address-cells', '#size-cells' and 'ranges'
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 ---
-v4~v5: no changes
+v3~v5: no changes
 
-v3: add acked-by Rob
-
-v2: fix typo of analog and needed
+v2: add Reviewed-by Rob
 ---
- Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-index 48bc1a2e9299..a859b0db4051 100644
+index a859b0db4051..dd75b676b71d 100644
 --- a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
 +++ b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-@@ -41,9 +41,12 @@ Optional properties (PHY_TYPE_USB2 port (child) node):
- - clocks	: a list of phandle + clock-specifier pairs, one for each
- 		  entry in clock-names
- - clock-names	: may contain
--		  "ref": 48M reference clock for HighSpeed anolog phy; and 26M
--			reference clock for SuperSpeed anolog phy, sometimes is
-+		  "ref": 48M reference clock for HighSpeed (digital) phy; and 26M
-+			reference clock for SuperSpeed (digital) phy, sometimes is
- 			24M, 25M or 27M, depended on platform.
-+		  "da_ref": the reference clock of analog phy, used if the clocks
-+			of analog and digital phys are separated, otherwise uses
-+			"ref" clock only if needed.
+@@ -14,6 +14,16 @@ Required properties (controller (parent) node):
+ 		  make use of "mediatek,generic-tphy-v1" on mt2701 instead and
+ 		  "mediatek,generic-tphy-v2" on mt2712 instead.
  
- - mediatek,eye-src	: u32, the value of slew rate calibrate
- - mediatek,eye-vrt	: u32, the selection of VRT reference voltage
++- #address-cells:	the number of cells used to represent physical
++		base addresses.
++- #size-cells:	the number of cells used to represent the size of an address.
++- ranges:	the address mapping relationship to the parent, defined with
++		- empty value: if optional 'reg' is used.
++		- non-empty value: if optional 'reg' is not used. should set
++			the child's base address to 0, the physical address
++			within parent's address space, and the length of
++			the address map.
++
+ Required nodes	: a sub-node is required for each port the controller
+ 		  provides. Address range information including the usual
+ 		  'reg' property is used inside these nodes to describe
 -- 
 2.24.0
 _______________________________________________
