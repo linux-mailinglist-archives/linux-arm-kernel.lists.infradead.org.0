@@ -2,61 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DB0E11A105
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 03:06:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 610B611A102
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 03:05:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b33vfyvStkBulRIReV4Ck/ChKj9IeCOOCdBQbD5gG7c=; b=IgT8XkZrAh/3Js
-	FeGVqghwm0X7p2i/WqCwuUXx9Wvvr2CgfLGMLxqM7zibMKdOXpbZrqLLinIxM4SnaYSgqh2qixnQj
-	6hcyF2et7yZSPN1IoHJhLKjWVjB1i9YJJmsKaMJV3+cnSeSGJQ+iqPubshNw1JSm3AxlPelxYraJW
-	NumI34SKOlPI5IY6fExH7ucOknJhkbgtX75upUBGNg6WVKIetqmvpsu4vvU1oKHr4TDLyRNGfKE6L
-	QP/EtBxiO0XVltfdA2dlyb+cFZGw6u5+SQFCKGiSArM3Wn6c4B1iD5wODJ3E17hZ4Axpf7hUCEP2V
-	cLzzyIdmwjYUC91A0GtA==;
+	List-Owner; bh=SI2uOQzui152sX0EYEoiVQ9EqxNYpAcXcUcwQ65ZcFY=; b=Y7UZSHjjbqfHEC
+	sFU4L/p1jfsAqeC+6x2mnALhdFibeRs7u/e/EVEW2DLW4NLCcL2dAoG2euV1LY1PKz88eUqyip4iM
+	aphCMxq4uaSzBb7Wa1xtd0kW5G4/OMgZzkWD1wG+D6y8EVJd7H/OeXkW21mVpdo7/usekf+yFYgzD
+	WA3EORK8+x47zPGfJbb5Z90+F+zFh7dxSSm9MyD38lZAdUQ2b5Og4TAmiVojzRl/bjyECEpWHfaEY
+	OGrmer+Kw7RKrOPnaae57FwK9jIMc9GF3mg//NIz+QQlFiTRS4R98ZCP6aU5fDxLUBnTQB4g9HdFa
+	1n92p+PFSAlbTXoytbtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ierO9-00035s-52; Wed, 11 Dec 2019 02:06:05 +0000
+	id 1ierNb-0002cB-DW; Wed, 11 Dec 2019 02:05:31 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ierN9-00019b-T0; Wed, 11 Dec 2019 02:05:05 +0000
-X-UUID: 6a6760cf0a2045d29eaec91fd6751dc6-20191210
+ id 1ierN7-00019b-G8; Wed, 11 Dec 2019 02:05:03 +0000
+X-UUID: c1fdb0f51dd24dd884e2e9f0068988ca-20191210
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=lAQh/3jyq3mvyY+gOwkzOpTAME8Gd1I+NZkj+CC0GEg=; 
- b=dX8TOOraNVJ0QETa89HU0VjFLTfimmzy2R8Os2o11JrlTDBxEv4LfyQimBIw+xbu46JqAgAT815kJCxjLVSpj3s85m1398sF1EXgP3KXFDLn/D+6kY2yH1h0Oz/m8I1AQrjQt1zaCPszqYjtV8nb5PghDRklba6R4Kw0p5XuRRY=;
-X-UUID: 6a6760cf0a2045d29eaec91fd6751dc6-20191210
+ bh=9HrUhTi78f5xP0jry51zQs2YAQuyV98mbQ++goxlMsg=; 
+ b=cyPeNpoYaODWGr+Utgu2FeP9WTiP4aKtka1Cye6zRqevSF4oSVCJKuPoV+JUfLQMPtgN3yjDX7ldj/SmIgCY0GY8gwjharFUNaQH+z8FJe2aiIar7djR8cvcubo6ndMY3ZGSN68cosVStc5M56xMVsAhPjTwxvg3AwDg9fo6YIM=;
+X-UUID: c1fdb0f51dd24dd884e2e9f0068988ca-20191210
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <min.guo@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1506138500; Tue, 10 Dec 2019 18:04:58 -0800
+ with ESMTP id 701229230; Tue, 10 Dec 2019 18:04:58 -0800
 Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 10 Dec 2019 17:56:02 -0800
+ 15.0.1395.4; Tue, 10 Dec 2019 17:56:03 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
  MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Dec 2019 09:53:58 +0800
+ 15.0.1395.4; Wed, 11 Dec 2019 09:53:59 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 11 Dec 2019 09:54:49 +0800
+ Transport; Wed, 11 Dec 2019 09:54:50 +0800
 From: <min.guo@mediatek.com>
 To: Bin Liu <b-liu@ti.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v9 2/6] arm: dts: mt2701: Add usb2 device nodes
-Date: Wed, 11 Dec 2019 09:54:42 +0800
-Message-ID: <20191211015446.11477-3-min.guo@mediatek.com>
+Subject: [PATCH v9 3/6] usb: musb: Add get/set toggle hooks
+Date: Wed, 11 Dec 2019 09:54:43 +0800
+Message-ID: <20191211015446.11477-4-min.guo@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20191211015446.11477-1-min.guo@mediatek.com>
 References: <20191211015446.11477-1-min.guo@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: FC16D426DBA9743DC58F80509F27FDF9172F803E31924DF38809DE3A7882573C2000:8
+X-TM-SNTS-SMTP: FB2895EDD654822D40F138DF16C63129CE844CA87D732564AD51AE561924C7122000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_180504_025122_8031BABB 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191210_180501_586087_C639FA3D 
+X-CRM114-Status: GOOD (  14.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -100,127 +99,250 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Min Guo <min.guo@mediatek.com>
 
-Add musb nodes and usb2 phy nodes for MT2701
+Add get/set toggle hooks in struct musb_io and struct musb_platform_ops
+for special platform; remove function musb_save_toggle, use the set/get
+callback to handle toggle.
 
 Signed-off-by: Min Guo <min.guo@mediatek.com>
 ---
 changes in v9:
-1. Add usb-role-switch
-2. Remove label of usb connector child node
-3. Change usb connector child node compatible as "gpio-usb-b-connector", "usb-b-connector";
+1. no changes
 
 changes in v8:
 1. no changes
 
 changes in v7:
-1. Change usb connector child node compatible as "gpio-usb-b-connector" 
+1. no changes
 
 changes in v6:
-1. Modify usb connector child node
+1. no changes
 
 changes in v5:
-1. Add usb connector child node
-
-changes in v4:
 1. no changes
 
-changes in v3:
-1. no changes
-
-changes in v2:
-1. Remove phy-names
+new patch based on v4:
 ---
- arch/arm/boot/dts/mt2701-evb.dts | 21 ++++++++++++++++++++
- arch/arm/boot/dts/mt2701.dtsi    | 33 ++++++++++++++++++++++++++++++++
- 2 files changed, 54 insertions(+)
+ drivers/usb/musb/musb_core.c | 42 ++++++++++++++++++++++++++++++++
+ drivers/usb/musb/musb_core.h |  5 ++++
+ drivers/usb/musb/musb_host.c | 46 ++++++++----------------------------
+ drivers/usb/musb/musb_io.h   |  4 ++++
+ 4 files changed, 61 insertions(+), 36 deletions(-)
 
-diff --git a/arch/arm/boot/dts/mt2701-evb.dts b/arch/arm/boot/dts/mt2701-evb.dts
-index be0edb3dae6c..844ed3f971fe 100644
---- a/arch/arm/boot/dts/mt2701-evb.dts
-+++ b/arch/arm/boot/dts/mt2701-evb.dts
-@@ -6,6 +6,7 @@
+diff --git a/drivers/usb/musb/musb_core.c b/drivers/usb/musb/musb_core.c
+index 15cca912c53e..32c00652e1a2 100644
+--- a/drivers/usb/musb/musb_core.c
++++ b/drivers/usb/musb/musb_core.c
+@@ -274,6 +274,38 @@ static void musb_default_writew(void __iomem *addr, unsigned offset, u16 data)
+ 	__raw_writew(data, addr + offset);
+ }
+ 
++static u16 musb_default_get_toggle(struct musb_qh *qh, int is_out)
++{
++	void __iomem *epio = qh->hw_ep->regs;
++	u16 csr;
++
++	if (is_out)
++		csr = musb_readw(epio, MUSB_TXCSR) & MUSB_TXCSR_H_DATATOGGLE;
++	else
++		csr = musb_readw(epio, MUSB_RXCSR) & MUSB_RXCSR_H_DATATOGGLE;
++
++	return csr;
++}
++
++static u16 musb_default_set_toggle(struct musb_qh *qh, int is_out,
++				   struct urb *urb)
++{
++	u16 csr;
++	u16 toggle;
++
++	toggle = usb_gettoggle(urb->dev, qh->epnum, is_out);
++
++	if (is_out)
++		csr = toggle ? (MUSB_TXCSR_H_WR_DATATOGGLE
++				| MUSB_TXCSR_H_DATATOGGLE)
++				: MUSB_TXCSR_CLRDATATOG;
++	else
++		csr = toggle ? (MUSB_RXCSR_H_WR_DATATOGGLE
++				| MUSB_RXCSR_H_DATATOGGLE) : 0;
++
++	return csr;
++}
++
+ /*
+  * Load an endpoint's FIFO
   */
+@@ -2271,6 +2303,16 @@ musb_init_controller(struct device *dev, int nIrq, void __iomem *ctrl)
+ 	else
+ 		musb->io.write_fifo = musb_default_write_fifo;
  
- /dts-v1/;
-+#include <dt-bindings/gpio/gpio.h>
- #include "mt2701.dtsi"
- 
- / {
-@@ -60,6 +61,15 @@ backlight_lcd: backlight_lcd {
- 		>;
- 		default-brightness-level = <9>;
- 	};
++	if (musb->ops->get_toggle)
++		musb->io.get_toggle = musb->ops->get_toggle;
++	else
++		musb->io.get_toggle = musb_default_get_toggle;
 +
-+	usb_vbus: regulator@0 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "usb_vbus";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		gpio = <&pio 45 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
++	if (musb->ops->set_toggle)
++		musb->io.set_toggle = musb->ops->set_toggle;
++	else
++		musb->io.set_toggle = musb_default_set_toggle;
++
+ 	if (!musb->xceiv->io_ops) {
+ 		musb->xceiv->io_dev = musb->controller;
+ 		musb->xceiv->io_priv = musb->mregs;
+diff --git a/drivers/usb/musb/musb_core.h b/drivers/usb/musb/musb_core.h
+index 04203b7126d5..9f5a69c2d73b 100644
+--- a/drivers/usb/musb/musb_core.h
++++ b/drivers/usb/musb/musb_core.h
+@@ -27,6 +27,7 @@
+ struct musb;
+ struct musb_hw_ep;
+ struct musb_ep;
++struct musb_qh;
+ 
+ /* Helper defines for struct musb->hwvers */
+ #define MUSB_HWVERS_MAJOR(x)	((x >> 10) & 0x1f)
+@@ -123,6 +124,8 @@ struct musb_io;
+  * @writew:	write 16 bits
+  * @read_fifo:	reads the fifo
+  * @write_fifo:	writes to fifo
++ * @get_toggle:	platform specific get toggle function
++ * @set_toggle:	platform specific set toggle function
+  * @dma_init:	platform specific dma init function
+  * @dma_exit:	platform specific dma exit function
+  * @init:	turns on clocks, sets up platform-specific registers, etc
+@@ -167,6 +170,8 @@ struct musb_platform_ops {
+ 	void	(*writew)(void __iomem *addr, unsigned offset, u16 data);
+ 	void	(*read_fifo)(struct musb_hw_ep *hw_ep, u16 len, u8 *buf);
+ 	void	(*write_fifo)(struct musb_hw_ep *hw_ep, u16 len, const u8 *buf);
++	u16	(*get_toggle)(struct musb_qh *qh, int is_out);
++	u16	(*set_toggle)(struct musb_qh *qh, int is_out, struct urb *urb);
+ 	struct dma_controller *
+ 		(*dma_init) (struct musb *musb, void __iomem *base);
+ 	void	(*dma_exit)(struct dma_controller *c);
+diff --git a/drivers/usb/musb/musb_host.c b/drivers/usb/musb/musb_host.c
+index 5a44b70372d9..886c9b602f8c 100644
+--- a/drivers/usb/musb/musb_host.c
++++ b/drivers/usb/musb/musb_host.c
+@@ -286,26 +286,6 @@ __acquires(musb->lock)
+ 	spin_lock(&musb->lock);
+ }
+ 
+-/* For bulk/interrupt endpoints only */
+-static inline void musb_save_toggle(struct musb_qh *qh, int is_in,
+-				    struct urb *urb)
+-{
+-	void __iomem		*epio = qh->hw_ep->regs;
+-	u16			csr;
+-
+-	/*
+-	 * FIXME: the current Mentor DMA code seems to have
+-	 * problems getting toggle correct.
+-	 */
+-
+-	if (is_in)
+-		csr = musb_readw(epio, MUSB_RXCSR) & MUSB_RXCSR_H_DATATOGGLE;
+-	else
+-		csr = musb_readw(epio, MUSB_TXCSR) & MUSB_TXCSR_H_DATATOGGLE;
+-
+-	usb_settoggle(urb->dev, qh->epnum, !is_in, csr ? 1 : 0);
+-}
+-
+ /*
+  * Advance this hardware endpoint's queue, completing the specified URB and
+  * advancing to either the next URB queued to that qh, or else invalidating
+@@ -320,6 +300,7 @@ static void musb_advance_schedule(struct musb *musb, struct urb *urb,
+ 	struct musb_hw_ep	*ep = qh->hw_ep;
+ 	int			ready = qh->is_ready;
+ 	int			status;
++	u16			toggle;
+ 
+ 	status = (urb->status == -EINPROGRESS) ? 0 : urb->status;
+ 
+@@ -327,7 +308,8 @@ static void musb_advance_schedule(struct musb *musb, struct urb *urb,
+ 	switch (qh->type) {
+ 	case USB_ENDPOINT_XFER_BULK:
+ 	case USB_ENDPOINT_XFER_INT:
+-		musb_save_toggle(qh, is_in, urb);
++		toggle = musb->io.get_toggle(qh, !is_in);
++		usb_settoggle(urb->dev, qh->epnum, !is_in, toggle ? 1 : 0);
+ 		break;
+ 	case USB_ENDPOINT_XFER_ISOC:
+ 		if (status == 0 && urb->error_count)
+@@ -772,13 +754,8 @@ static void musb_ep_program(struct musb *musb, u8 epnum,
+ 					);
+ 			csr |= MUSB_TXCSR_MODE;
+ 
+-			if (!hw_ep->tx_double_buffered) {
+-				if (usb_gettoggle(urb->dev, qh->epnum, 1))
+-					csr |= MUSB_TXCSR_H_WR_DATATOGGLE
+-						| MUSB_TXCSR_H_DATATOGGLE;
+-				else
+-					csr |= MUSB_TXCSR_CLRDATATOG;
+-			}
++			if (!hw_ep->tx_double_buffered)
++				csr |= musb->io.set_toggle(qh, is_out, urb);
+ 
+ 			musb_writew(epio, MUSB_TXCSR, csr);
+ 			/* REVISIT may need to clear FLUSHFIFO ... */
+@@ -860,17 +837,12 @@ static void musb_ep_program(struct musb *musb, u8 epnum,
+ 
+ 	/* IN/receive */
+ 	} else {
+-		u16	csr;
++		u16 csr = 0;
+ 
+ 		if (hw_ep->rx_reinit) {
+ 			musb_rx_reinit(musb, qh, epnum);
++			csr |= musb->io.set_toggle(qh, is_out, urb);
+ 
+-			/* init new state: toggle and NYET, maybe DMA later */
+-			if (usb_gettoggle(urb->dev, qh->epnum, 0))
+-				csr = MUSB_RXCSR_H_WR_DATATOGGLE
+-					| MUSB_RXCSR_H_DATATOGGLE;
+-			else
+-				csr = 0;
+ 			if (qh->type == USB_ENDPOINT_XFER_INT)
+ 				csr |= MUSB_RXCSR_DISNYET;
+ 
+@@ -933,6 +905,7 @@ static void musb_bulk_nak_timeout(struct musb *musb, struct musb_hw_ep *ep,
+ 	void __iomem		*epio = ep->regs;
+ 	struct musb_qh		*cur_qh, *next_qh;
+ 	u16			rx_csr, tx_csr;
++	u16			toggle;
+ 
+ 	musb_ep_select(mbase, ep->epnum);
+ 	if (is_in) {
+@@ -970,7 +943,8 @@ static void musb_bulk_nak_timeout(struct musb *musb, struct musb_hw_ep *ep,
+ 			urb->actual_length += dma->actual_len;
+ 			dma->actual_len = 0L;
+ 		}
+-		musb_save_toggle(cur_qh, is_in, urb);
++		toggle = musb->io.get_toggle(cur_qh, !is_in);
++		usb_settoggle(urb->dev, cur_qh->epnum, !is_in, toggle ? 1 : 0);
+ 
+ 		if (is_in) {
+ 			/* move cur_qh to end of queue */
+diff --git a/drivers/usb/musb/musb_io.h b/drivers/usb/musb/musb_io.h
+index 8058a58092cf..8179334f405b 100644
+--- a/drivers/usb/musb/musb_io.h
++++ b/drivers/usb/musb/musb_io.h
+@@ -22,6 +22,8 @@
+  * @read_fifo:	platform specific function to read fifo
+  * @write_fifo:	platform specific function to write fifo
+  * @busctl_offset: platform specific function to get busctl offset
++ * @get_toggle: platform specific function to get toggle
++ * @set_toggle: platform specific function to set toggle
+  */
+ struct musb_io {
+ 	u32	(*ep_offset)(u8 epnum, u16 offset);
+@@ -30,6 +32,8 @@ struct musb_io {
+ 	void	(*read_fifo)(struct musb_hw_ep *hw_ep, u16 len, u8 *buf);
+ 	void	(*write_fifo)(struct musb_hw_ep *hw_ep, u16 len, const u8 *buf);
+ 	u32	(*busctl_offset)(u8 epnum, u16 offset);
++	u16	(*get_toggle)(struct musb_qh *qh, int is_out);
++	u16	(*set_toggle)(struct musb_qh *qh, int is_out, struct urb *urb);
  };
  
- &auxadc {
-@@ -229,3 +239,14 @@ pins1 {
- &uart0 {
- 	status = "okay";
- };
-+
-+&usb2 {
-+	status = "okay";
-+	usb-role-switch;
-+	connector{
-+		compatible = "gpio-usb-b-connector", "usb-b-connector";
-+		type = "micro";
-+		id-gpios = <&pio 44 GPIO_ACTIVE_HIGH>;
-+		vbus-supply = <&usb_vbus>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/mt2701.dtsi b/arch/arm/boot/dts/mt2701.dtsi
-index 180377e56ef4..a6b1434e83fb 100644
---- a/arch/arm/boot/dts/mt2701.dtsi
-+++ b/arch/arm/boot/dts/mt2701.dtsi
-@@ -670,6 +670,39 @@ u3port1: usb-phy@1a244900 {
- 		};
- 	};
- 
-+	usb2: usb@11200000 {
-+		compatible = "mediatek,mt2701-musb",
-+			     "mediatek,mtk-musb";
-+		reg = <0 0x11200000 0 0x1000>;
-+		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_LOW>;
-+		interrupt-names = "mc";
-+		phys = <&u2port2 PHY_TYPE_USB2>;
-+		dr_mode = "otg";
-+		clocks = <&pericfg CLK_PERI_USB0>,
-+			 <&pericfg CLK_PERI_USB0_MCU>,
-+			 <&pericfg CLK_PERI_USB_SLV>;
-+		clock-names = "main","mcu","univpll";
-+		power-domains = <&scpsys MT2701_POWER_DOMAIN_IFR_MSC>;
-+		status = "disabled";
-+	};
-+
-+	u2phy0: usb-phy@11210000 {
-+		compatible = "mediatek,generic-tphy-v1";
-+		reg = <0 0x11210000 0 0x0800>;
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+		status = "okay";
-+
-+		u2port2: usb-phy@1a1c4800 {
-+			reg = <0 0x11210800 0 0x0100>;
-+			clocks = <&topckgen CLK_TOP_USB_PHY48M>;
-+			clock-names = "ref";
-+			#phy-cells = <1>;
-+			status = "okay";
-+		};
-+	};
-+
- 	ethsys: syscon@1b000000 {
- 		compatible = "mediatek,mt2701-ethsys", "syscon";
- 		reg = <0 0x1b000000 0 0x1000>;
+ /* Do not add new entries here, add them the struct musb_io instead */
 -- 
 2.24.0
 _______________________________________________
