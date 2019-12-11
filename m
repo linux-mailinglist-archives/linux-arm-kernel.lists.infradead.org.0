@@ -2,71 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECA5D11B522
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:52:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B166D11B52A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:52:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HypRzD7x79x9Rt4UTS/kcK8XnEczk8BHLPJGMgwQbbY=; b=hK0iAq77GfhX6o
-	2Q68BZ3olpSfZBTwEzDLtcAQiiYnMczZ9wXJFqjUk9U/AC+vXbXqNz97iEbCDZvZZFMO0xu/T0NCk
-	sj2XA5Wj1r0Ppq78/RYmByx6NFwj5+oVP4YxbbSVWfBk4CMNLUQp+BtBV5vfHL4wpGH3+kjQ8EBzw
-	xB+mgywZx13rBm9CKFS4lbkLKs0VN0BY1ectjONPplIHdvANiymphEWK9r2CQCpQt8nowaCkeOylE
-	oS5UkWBfd6Ceprf/WwLB2ebhtebn/CRz+Hh1Dlz+rFeC8Jy8BV2MITnWYmXmL+IhcCRGxtzaX7unQ
-	az8oLGsvnaQRpEuTNWyw==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mik3S25QcpVjiW0CY8DFMA5rw62zp5blj7BEhF84fWQ=; b=J7n13HZ59SfS0I
+	j9+wKPdwbdsniXHQrySaw9Xt1c0njTSWg2g11uedh+UQ6c8qt5+os1PnvVtqorpyKTPMvXXf4y24z
+	hZCh0atWuMebgfeAju8fquZfA+mTpB7qqvWcOYSOWlOIB9apoRiZ7uqZ0tR+r77/eVMDKcAzXg+Ud
+	I/RTgUuPMpavOOVw5TqlkDWuVPzzUtYFGkuGbwfrOX5Qcuf1EmcmttbyyQuOlCHdru/+cPxY/WIrj
+	byvq6NsOImfddWspaSOX0E1ypeVbD6gFYczwCBC3WuVDL2M2QuLDYCZ90afkgf7w+BMFjJf32+C6Q
+	Rb8BoCHlfkitA2AUV1dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if4HY-0000yq-F4; Wed, 11 Dec 2019 15:52:08 +0000
-Received: from mail-yw1-xc49.google.com ([2607:f8b0:4864:20::c49])
+	id 1if4Hl-0001Ga-Fa; Wed, 11 Dec 2019 15:52:21 +0000
+Received: from mail-qt1-x849.google.com ([2607:f8b0:4864:20::849])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if4Em-00050m-I6
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:49:18 +0000
-Received: by mail-yw1-xc49.google.com with SMTP id l12so17569870ywk.6
+ id 1if4Eq-00055E-3a
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:49:22 +0000
+Received: by mail-qt1-x849.google.com with SMTP id 42so4617291qtc.19
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 07:49:14 -0800 (PST)
+ Wed, 11 Dec 2019 07:49:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=+84MmMAoxZMowKg1LejiSRn+LGavX3XL0RXX6IMOW+w=;
- b=m2NiP0CnGnotNR/yMx/w5OIeIfCUnZkQxMGnHlJQgBxOA/FXbl7y2EYygJSnUU7MrL
- kJ3L4rLG6BKMC6Kw7F601lW847yaNWWQzxCbN9s1MYJ/eu1LeC5BesWLk3yZ3tt2FePN
- 92VLc8xSfXsMFhJ4ItMCqBRqc7K/K40iD+AjeKs7eASl25E05/A0xRwMtATFIE75BGE0
- P6839NDZrpb/tdJSU3vkmmUS+e7YjYoAGICMyToI9z5hc49ilIEE5SPTUDNcmV8niTEb
- HhHa8oIT6pJcepbPvKt2SuJctQ0v2091Cw9qWrvd7TEfd5roezf2Rd0FvxgpGZFv/pLU
- wWkg==
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=L3bqEDJc/83H6XSH4dKpp4Sz+uUocCwUuCh066ZPD24=;
+ b=T7tmarUt73QPvvzsmlX8joprU84Bgn+q+g3Bub5VpNuPOkJ2OMgW/GR2NfK7AzKClC
+ TVaQfOgipbhJkxSaBENCKqcs/xBqhcht6ipt8vpVxU8N0K7LDCJSrRC/1rsFS9tb+m1i
+ xrDG46KfHWOx7stN/zivVYevObR3Lt28+6MPEh3++sYAWKHfWyyPtHWT99FEvqBwKUsk
+ /2L6mMknwQVjBCXY2SHvUs9Tq7wghQ+mqZ1/jCay1ViVuWUsLkq7UxOQEwPovdQGJZDZ
+ bvwP7rUww+runAY6qHX8Fl4Plmaut9fSbirsX6AWRHXQ1HGlqeCzE2/4WMjMeqTZd74Z
+ Ssjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=+84MmMAoxZMowKg1LejiSRn+LGavX3XL0RXX6IMOW+w=;
- b=T93vSohgsmpF63vr9B+YWHW7aqjVLpOAEeeUrSo/LfU2kzIRd+SKDN88BGMAaJoUn0
- T9c7zIBlRyol86LAnEfvZ/zkJL1bjK+1fvkIxl5J0JSPCW2fYlXS8Ayt32hepANnbATG
- 4xgqqgDO5SY0zjyfrEvioTPtm14idHw/bsqW73/MifG1cQh8GdnIrPu0i0iXX6i6tDSu
- NMvRPkKju9hpatC42971XtXLj6lfdMggwCkHVrmJQnFQyPqTf5wNKM3Tjz61eY9j8TBd
- SdgDyoPTx9VLhpTcyejemSoeOuCUad/Snk3Fe1gmEC9aw8y0sBFhXGfPHNsMZ0TJns1G
- 63Kw==
-X-Gm-Message-State: APjAAAUAvsISgLn3GnEy4KJzQdfg52uvaNirnZC0x8MCLvxKbRIpSK9O
- oONfxhfjY+FZBQt1dzTYbXwjNYm5b5DKYII9
-X-Google-Smtp-Source: APXvYqzgag2uEK1TrKN/WHaL/XtHsyuWNO7uPzN29U6f0LWDaOKfxY1Ep76cMLNac+NAL6BSwAjUWiYDY6LG4QTQ
-X-Received: by 2002:a0d:d247:: with SMTP id u68mr297158ywd.1.1576079353136;
- Wed, 11 Dec 2019 07:49:13 -0800 (PST)
-Date: Wed, 11 Dec 2019 10:49:00 -0500
-Message-Id: <20191211154901.176256-1-markyacoub@google.com>
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=L3bqEDJc/83H6XSH4dKpp4Sz+uUocCwUuCh066ZPD24=;
+ b=D0S9LsWgQmcxyDXQSrTudBxBPcYWSTCXZlHLFmfvZvnCKJuW0UbLyF2kac6KoRzWw2
+ +WGRtgJPnHfM0d0gkNveGfnIVp4zBJet4rrvKeEl83c/KwVRo3ez4Kijat6+IWQQX/eg
+ s+hfzAMkzNxKLasPexWSAClnUocx46hQ773EamMpqJBTHf4SbphTFycWOY4y1Ze8A9I9
+ xPp60tu7h2qFZz/OESPoK/WXtbmWesdrG5bLnDooMITAZYSPiqEKtPoyW4Q/xWFbILRR
+ 53t6kWYsfpNk5ZxWli21iqH8lKKlAS+4Oh85pRsL8+XlxnwkFqkyMVrZ1C2W+lCzM+Nz
+ lFIw==
+X-Gm-Message-State: APjAAAX3TT1SqZXrC8sK1YstB2s2xbn6L9noQB6y+aFzed8cIi9hf5CU
+ c/xNHJgiWRm4Q2yISCP4WRcUEFCfkyU10yMb
+X-Google-Smtp-Source: APXvYqzWVPRzbCutVlIWkKgo8ZdWbTIe/i8BsJDaINwYPE1tnMGWPJw4+4d/x/wDNk8QtVgjgmAdkZUNDVCj/ebY
+X-Received: by 2002:a0c:d0f1:: with SMTP id b46mr3637071qvh.188.1576079357145; 
+ Wed, 11 Dec 2019 07:49:17 -0800 (PST)
+Date: Wed, 11 Dec 2019 10:49:01 -0500
+In-Reply-To: <20191211154901.176256-1-markyacoub@google.com>
+Message-Id: <20191211154901.176256-2-markyacoub@google.com>
 Mime-Version: 1.0
+References: <20191211154901.176256-1-markyacoub@google.com>
 X-Mailer: git-send-email 2.24.0.525.g8f36a354ae-goog
-Subject: [PATCH 1/2] Return from mtk_ovl_layer_config after mtk_ovl_layer_off
+Subject: [PATCH 2/2] Turn off Alpha bit when plane format has no alpha
 From: Mark Yacoub <markyacoub@google.com>
 To: CK Hu <ck.hu@mediatek.com>, dri-devel@lists.freedesktop.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_074916_671670_34C4AE1D 
-X-CRM114-Status: GOOD (  12.04  )
+X-CRM114-CacheID: sfid-20191211_074920_172134_4FEE8056 
+X-CRM114-Status: GOOD (  12.06  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c49 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:849 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -100,12 +103,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-drm/mediatek: return if plane pending state is disabled.
+drm/mediatek: Add OVL_CON_ALPHA only when the plane format has_alpha.
 
-If the plane pending state is disabled, call mtk_ovl_layer_off then
-return.
-This guarantees that that the state is valid for all operations when the
-pending state is enabled.
+This change enables XR24 format to be displayed as an overlay on top of
+the primary plane.
 
 Suggested-by: Sean Paul <seanpaul@chromium.org>
 To: CK Hu <ck.hu@mediatek.com>
@@ -119,35 +120,22 @@ Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-mediatek@lists.infradead.org
 Signed-off-by: Mark Yacoub <markyacoub@google.com>
 ---
- drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-index 4a55bb6e2213..526b595eeff9 100644
+index 526b595eeff9..a7851756dddf 100644
 --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
 +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-@@ -260,8 +260,10 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
- 	unsigned int src_size = (pending->height << 16) | pending->width;
- 	unsigned int con;
- 
--	if (!pending->enable)
-+	if (!pending->enable) {
- 		mtk_ovl_layer_off(comp, idx);
-+		return;
-+	}
+@@ -266,7 +266,7 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
+ 	}
  
  	con = ovl_fmt_convert(ovl, fmt);
- 	if (idx != 0)
-@@ -283,8 +285,7 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
- 	writel_relaxed(offset, comp->regs + DISP_REG_OVL_OFFSET(idx));
- 	writel_relaxed(addr, comp->regs + DISP_REG_OVL_ADDR(ovl, idx));
+-	if (idx != 0)
++	if (state->base.fb->format->has_alpha)
+ 		con |= OVL_CON_AEN | OVL_CON_ALPHA;
  
--	if (pending->enable)
--		mtk_ovl_layer_on(comp, idx);
-+	mtk_ovl_layer_on(comp, idx);
- }
- 
- static void mtk_ovl_bgclr_in_on(struct mtk_ddp_comp *comp)
+ 	if (pending->rotation & DRM_MODE_REFLECT_Y) {
 -- 
 2.24.0.525.g8f36a354ae-goog
 
