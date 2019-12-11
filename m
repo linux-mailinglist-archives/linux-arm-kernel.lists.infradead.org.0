@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D08511AF4B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:12:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDFAC11AF4E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:13:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qE3jfs7OmlDuZRvWrWxeaKAJVPWHAuviUOFn/ufQbps=; b=UZd83i4UIzZh4N
-	W6u4CafI4JxPdPOpSOYdNXNIkqlPxNNWhjJzpnjXQHPh7eoc3sAp7WE7D+z2dBa8OFzUtkaKmVeNC
-	noBP8nBP89Flj1cUe55NLjxl667xO8qSm5AA1zFw76+Hul+rQypNCPPsDl6mxGSxXPCisLgnV2FrH
-	HBJxSYIsecEKs1H2S/TXoHjyyEo5vraii5TVfR/BdX1il9WTc7LTftv+PQzvejJ9m/UcP81kyU5qY
-	BT9WSXm9eZY+x6xaZHNj3tViTBZyuFtbFglRNB5kbKSvHHEsQ7QXhXchszTfHwsPdxyWfd64ziNnU
-	M5L6rAhIpcjouUNCS30Q==;
+	List-Owner; bh=5TxU/kdiOXQN4CM0slWb5ZxiC9rc03Q65iTPl8OwKxg=; b=GEYo7Y32iLfSKc
+	NiR49V/gu/GOrTQ/T87N7iIZMyooisQM760D8wG+tnVXjpP00Ewju72YEa1W/iOVBLaNk/JUjLbpk
+	Jb7sjEe5WUzjqsaUX+aco7sgJhizKkjd2calXtXTloMgOr7nQVaWACno1UqPRbGkyABUqOi6fLZer
+	VnJpsWyP5qvPJdvwFPDaPvaeJ13sAAtLEip/kbOEqiXoAnKjTHrK3OZYWQGNdv940tBDpL/GBHV9P
+	tvxrVdPCPEJudQl6JkY0DNfS2vamvK/ebtE2jWHnrFn3/nr7Tu9xMEOzcTypAoA1UwIJZwMfK7qE2
+	MaIbfaOtgBRIclKpoCVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if3fQ-0002cF-Mj; Wed, 11 Dec 2019 15:12:44 +0000
+	id 1if3fh-0002xS-VF; Wed, 11 Dec 2019 15:13:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if3f6-0002Rn-NS
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:12:27 +0000
+ id 1if3fY-0002vx-Kb
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:12:54 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 82CD62465C;
- Wed, 11 Dec 2019 15:12:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7D03924681;
+ Wed, 11 Dec 2019 15:12:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576077143;
- bh=hlOVCucT8KQDZPTtqqt3AstmcgO+lKwoR7CKhjwYEB0=;
+ s=default; t=1576077172;
+ bh=ziHd0qwLt1CVoQnQwHS/GZeFprg96768/sHE5CZAjPs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=jOyXABVWuCmej/AdhwfremDRhxsxbHAuKHhOak0wu5XuVssEVk+Io2D3Yd2/4kgz0
- Ht3dhLMjZoXUgjqVRsOncIOcQ3MCSh+Hiih4+RWj2N07bp+FKNQM84Yt184al5bEkC
- nvWApzPnTGPO6QBmZrrCBMfh6OJ37/unQLQ3Ptw0=
+ b=bOgHLnETcOln1S0IoBPv1WoItLd07F0aM2ASat8ap5pBuW4TZC93Y5l7PSUSZ1akM
+ 3dH2VsEk3ia9oDbNeO/hAyf1XoyWQZhDlJmkCfst8vGUW7pVMDylX2p1Ln+A+C4DwM
+ HC7U0FEpsVPFucZdzaQpRI9AgZOXZ9LEsaQp7yHo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 030/134] dma-mapping: fix handling of dma-ranges
- for reserved memory (again)
-Date: Wed, 11 Dec 2019 10:10:06 -0500
-Message-Id: <20191211151150.19073-30-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 057/134] iommu/arm-smmu-v3: Don't display an error
+ when IRQ lines are missing
+Date: Wed, 11 Dec 2019 10:10:33 -0500
+Message-Id: <20191211151150.19073-57-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191211151150.19073-1-sashal@kernel.org>
 References: <20191211151150.19073-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_071225_001457_937EA97B 
-X-CRM114-Status: GOOD (  12.23  )
+X-CRM114-CacheID: sfid-20191211_071252_700035_A4E2CD92 
+X-CRM114-Status: GOOD (  11.58  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,123 +80,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Vladimir Murzin <vladimir.murzin@arm.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Daniele Alessandrelli <daniele.alessandrelli@gmail.com>,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ Joerg Roedel <jroedel@suse.de>, iommu@lists.linux-foundation.org,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Vladimir Murzin <vladimir.murzin@arm.com>
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 
-[ Upstream commit a445e940ea686fc60475564009821010eb213be3 ]
+[ Upstream commit f7aff1a93f52047739af31072de0ad8d149641f3 ]
 
-Daniele reported that issue previously fixed in c41f9ea998f3
-("drivers: dma-coherent: Account dma_pfn_offset when used with device
-tree") reappear shortly after 43fc509c3efb ("dma-coherent: introduce
-interface for default DMA pool") where fix was accidentally dropped.
+Since commit 7723f4c5ecdb ("driver core: platform: Add an error message
+to platform_get_irq*()"), platform_get_irq_byname() displays an error
+when the IRQ isn't found. Since the SMMUv3 driver uses that function to
+query which interrupt method is available, the message is now displayed
+during boot for any SMMUv3 that doesn't implement the combined
+interrupt, or that implements MSIs.
 
-Lets put fix back in place and respect dma-ranges for reserved memory.
+[   20.700337] arm-smmu-v3 arm-smmu-v3.7.auto: IRQ combined not found
+[   20.706508] arm-smmu-v3 arm-smmu-v3.7.auto: IRQ eventq not found
+[   20.712503] arm-smmu-v3 arm-smmu-v3.7.auto: IRQ priq not found
+[   20.718325] arm-smmu-v3 arm-smmu-v3.7.auto: IRQ gerror not found
 
-Fixes: 43fc509c3efb ("dma-coherent: introduce interface for default DMA pool")
+Use platform_get_irq_byname_optional() to avoid displaying a spurious
+error.
 
-Reported-by: Daniele Alessandrelli <daniele.alessandrelli@gmail.com>
-Tested-by: Daniele Alessandrelli <daniele.alessandrelli@gmail.com>
-Tested-by: Alexandre Torgue <alexandre.torgue@st.com>
-Signed-off-by: Vladimir Murzin <vladimir.murzin@arm.com>
-Signed-off-by: Christoph Hellwig <hch@lst.de>
+Fixes: 7723f4c5ecdb ("driver core: platform: Add an error message to platform_get_irq*()")
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Acked-by: Will Deacon <will@kernel.org>
+Signed-off-by: Joerg Roedel <jroedel@suse.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/mm/dma-mapping-nommu.c |  2 +-
- include/linux/dma-mapping.h     |  4 ++--
- kernel/dma/coherent.c           | 16 +++++++++-------
- 3 files changed, 12 insertions(+), 10 deletions(-)
+ drivers/iommu/arm-smmu-v3.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/mm/dma-mapping-nommu.c b/arch/arm/mm/dma-mapping-nommu.c
-index db92478983005..287ef898a55e1 100644
---- a/arch/arm/mm/dma-mapping-nommu.c
-+++ b/arch/arm/mm/dma-mapping-nommu.c
-@@ -35,7 +35,7 @@ static void *arm_nommu_dma_alloc(struct device *dev, size_t size,
- 				 unsigned long attrs)
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 8da93e730d6fd..ed90361b84dc7 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -3611,19 +3611,19 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
  
- {
--	void *ret = dma_alloc_from_global_coherent(size, dma_handle);
-+	void *ret = dma_alloc_from_global_coherent(dev, size, dma_handle);
+ 	/* Interrupt lines */
  
- 	/*
- 	 * dma_alloc_from_global_coherent() may fail because:
-diff --git a/include/linux/dma-mapping.h b/include/linux/dma-mapping.h
-index 0aad641d662c3..4d450672b7d66 100644
---- a/include/linux/dma-mapping.h
-+++ b/include/linux/dma-mapping.h
-@@ -162,7 +162,7 @@ int dma_release_from_dev_coherent(struct device *dev, int order, void *vaddr);
- int dma_mmap_from_dev_coherent(struct device *dev, struct vm_area_struct *vma,
- 			    void *cpu_addr, size_t size, int *ret);
+-	irq = platform_get_irq_byname(pdev, "combined");
++	irq = platform_get_irq_byname_optional(pdev, "combined");
+ 	if (irq > 0)
+ 		smmu->combined_irq = irq;
+ 	else {
+-		irq = platform_get_irq_byname(pdev, "eventq");
++		irq = platform_get_irq_byname_optional(pdev, "eventq");
+ 		if (irq > 0)
+ 			smmu->evtq.q.irq = irq;
  
--void *dma_alloc_from_global_coherent(ssize_t size, dma_addr_t *dma_handle);
-+void *dma_alloc_from_global_coherent(struct device *dev, ssize_t size, dma_addr_t *dma_handle);
- int dma_release_from_global_coherent(int order, void *vaddr);
- int dma_mmap_from_global_coherent(struct vm_area_struct *vma, void *cpu_addr,
- 				  size_t size, int *ret);
-@@ -172,7 +172,7 @@ int dma_mmap_from_global_coherent(struct vm_area_struct *vma, void *cpu_addr,
- #define dma_release_from_dev_coherent(dev, order, vaddr) (0)
- #define dma_mmap_from_dev_coherent(dev, vma, vaddr, order, ret) (0)
+-		irq = platform_get_irq_byname(pdev, "priq");
++		irq = platform_get_irq_byname_optional(pdev, "priq");
+ 		if (irq > 0)
+ 			smmu->priq.q.irq = irq;
  
--static inline void *dma_alloc_from_global_coherent(ssize_t size,
-+static inline void *dma_alloc_from_global_coherent(struct device *dev, ssize_t size,
- 						   dma_addr_t *dma_handle)
- {
- 	return NULL;
-diff --git a/kernel/dma/coherent.c b/kernel/dma/coherent.c
-index 545e3869b0e32..551b0eb7028a3 100644
---- a/kernel/dma/coherent.c
-+++ b/kernel/dma/coherent.c
-@@ -123,8 +123,9 @@ int dma_declare_coherent_memory(struct device *dev, phys_addr_t phys_addr,
- 	return ret;
- }
- 
--static void *__dma_alloc_from_coherent(struct dma_coherent_mem *mem,
--		ssize_t size, dma_addr_t *dma_handle)
-+static void *__dma_alloc_from_coherent(struct device *dev,
-+				       struct dma_coherent_mem *mem,
-+				       ssize_t size, dma_addr_t *dma_handle)
- {
- 	int order = get_order(size);
- 	unsigned long flags;
-@@ -143,7 +144,7 @@ static void *__dma_alloc_from_coherent(struct dma_coherent_mem *mem,
- 	/*
- 	 * Memory was found in the coherent area.
- 	 */
--	*dma_handle = mem->device_base + (pageno << PAGE_SHIFT);
-+	*dma_handle = dma_get_device_base(dev, mem) + (pageno << PAGE_SHIFT);
- 	ret = mem->virt_base + (pageno << PAGE_SHIFT);
- 	spin_unlock_irqrestore(&mem->spinlock, flags);
- 	memset(ret, 0, size);
-@@ -175,17 +176,18 @@ int dma_alloc_from_dev_coherent(struct device *dev, ssize_t size,
- 	if (!mem)
- 		return 0;
- 
--	*ret = __dma_alloc_from_coherent(mem, size, dma_handle);
-+	*ret = __dma_alloc_from_coherent(dev, mem, size, dma_handle);
- 	return 1;
- }
- 
--void *dma_alloc_from_global_coherent(ssize_t size, dma_addr_t *dma_handle)
-+void *dma_alloc_from_global_coherent(struct device *dev, ssize_t size,
-+				     dma_addr_t *dma_handle)
- {
- 	if (!dma_coherent_default_memory)
- 		return NULL;
- 
--	return __dma_alloc_from_coherent(dma_coherent_default_memory, size,
--			dma_handle);
-+	return __dma_alloc_from_coherent(dev, dma_coherent_default_memory, size,
-+					 dma_handle);
- }
- 
- static int __dma_release_from_coherent(struct dma_coherent_mem *mem,
+-		irq = platform_get_irq_byname(pdev, "gerror");
++		irq = platform_get_irq_byname_optional(pdev, "gerror");
+ 		if (irq > 0)
+ 			smmu->gerr_irq = irq;
+ 	}
 -- 
 2.20.1
 
