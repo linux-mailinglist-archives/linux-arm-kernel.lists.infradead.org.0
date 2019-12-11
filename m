@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2921911C0FC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 00:55:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BCD211C105
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 00:56:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9JV0vs4GyRhnzV7HgOmTnxrbR9fU3QK8NpIGzb0eieY=; b=oJbVAVELzWctyY
-	reJy8KgCx/TJ2YDC5hNrjp6bUzQ0k5iZyMdadOz8OUwGyHVT7clF4Q7JTPUnvVP10I2vuvOF2pTr5
-	JY1Z0dwDag08LAwcdY8VvJtsC2GUwm3dML2i8GtWRgWR8C78TNa2LOrnkil64aDwwMXbBIBkZ8aVe
-	BqGI0Ce9iNwo5y91icewBqn98gyNwsjkhhXapaFYVmErrwS6CDrrFmjGtz27vRlKiOb9m6tngzfX0
-	rYHWXf98a64NosIvBK+M4hmof1xGM6SyRLd/sOWz0aSG7w3DLCHyrOXcvJ62bKPUWh4XluBhDmciG
-	IVjwZJsUCUiucc2fXBiA==;
+	List-Owner; bh=77nNhtLBZf6t3XsA8HVcE9vOn9eiHsnKyQSaeBv4eH4=; b=erqPQqzwTJqJG5
+	Fkijlaup3CqeKK5MPaTHG0DT31sFIvJMRiblV3upMGO3WxWvh2k8Lc+a2YhihAv04g6dsDg2yYyR2
+	+6ePEWdHbKvONSmQjNCEuF4Kc9MSGPSupG6Pp4Cd1hVh7906wfwtrWuR6B3X6zZoXfP+df6Hw3CmM
+	7ux/6pFDQL7bGFu+KyYzJbpK9RzZJwaBVrYpBc0hMJELGzOmX/+Y1cU2i5Qe6sCSJytJn8ykajbRr
+	iqABA0/BOpnebcHr9ZBKzYJeYg0sdcwW/HETvvzV9vgw4+JOxGeOKa74FCSXKuo7BJOTcnbjK1fAy
+	a+VpXkHQ+2HfFH+3NKvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifBok-000261-Lf; Wed, 11 Dec 2019 23:54:54 +0000
-Received: from mout.web.de ([217.72.192.78])
+	id 1ifBqD-0004oE-6p; Wed, 11 Dec 2019 23:56:25 +0000
+Received: from mout.web.de ([212.227.17.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifBnG-0000sN-LK; Wed, 11 Dec 2019 23:53:24 +0000
+ id 1ifBnK-0000vD-If; Wed, 11 Dec 2019 23:53:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1576108398;
- bh=K8Vc5xH9CLUyhrYV9Z9NpTgYitA6qCYeXvgl/cznLdk=;
+ s=dbaedf251592; t=1576108399;
+ bh=vpmcxnQM8xeIOrgf/nLMbY75MJAw3JLGxT3wkvLPkbo=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=ZhH62FngPLmTZ+IdrSHvMTvuAiMhumBY/SSyMoqsurhoPfd3fZXaEoxerGDMPlHjc
- RGGgLowA8MYk0+FXeCMWwDc/e7/etUgg+Rm0lQGOXje99HVfuqJFRZLzVM4cvsk4c5
- WNIBYFcBe6Huwt27d8GE4Fxc9fUdRatekxMjDJtc=
+ b=BzrHW2OM7bnwDihbgxHzNh8UPyn71b0KWUeLA7jUPedIlK3QHYVlS0idBZM47pmbx
+ u/s2Oorz8KhTT7wAZjxE29vQzv+lZoxVuVp4hoCqQLSOFesdNtpM70cAoxjkN8VesG
+ 2tWns90UzykDW0PtQzGz1+jRSE3N5Me3UUJVdcqs=
 X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
 Received: from localhost.localdomain ([89.204.139.166]) by smtp.web.de
  (mrweb101 [213.165.67.124]) with ESMTPSA (Nemesis) id
- 0Lvjiy-1heUNt3nx6-017VQ6; Thu, 12 Dec 2019 00:53:18 +0100
+ 0LmLoU-1i6PGv079u-00Zwng; Thu, 12 Dec 2019 00:53:19 +0100
 From: Soeren Moch <smoch@web.de>
 To: Kalle Valo <kvalo@codeaurora.org>,
 	Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2 8/9] arm64: dts: rockchip: RockPro64: enable wifi module at
- sdio0
-Date: Thu, 12 Dec 2019 00:52:52 +0100
-Message-Id: <20191211235253.2539-9-smoch@web.de>
+Subject: [PATCH v2 9/9] arm64: dts: rockchip: RockPro64: hook up bluetooth at
+ uart0
+Date: Thu, 12 Dec 2019 00:52:53 +0100
+Message-Id: <20191211235253.2539-10-smoch@web.de>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191211235253.2539-1-smoch@web.de>
 References: <20191211235253.2539-1-smoch@web.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:L21aj6hQ1G9ozqVXJyR+jL3/TO5bynJLSxDfhNGSe1Rw8oAm7Wh
- SVbp+ikLF/2EPn0nZmcvm5YIG1HCByn4xEDa6rPlPUysF3CFVxpvW50QQTgeJolHioJK8a+
- vdtFIORtgibmAbPh71fTBffw+MK2aNpzNorAtB3WPMz41+9VonHT7at7a9EV1JZncEZYKD9
- RngAU5nMIJf2AKSkXN0KA==
+X-Provags-ID: V03:K1:5PDFH2F0gjxlcHEJO1q+UhhYMk5qrPh+R32KnEj09Ga2cRHNb6a
+ WRvTk6+wPGns5t79V6A5yoGWG8mUNT8/17s9oA0//bPLHcW6hDWVFW/oVkXNIt2bhpPEv0K
+ lJgNfkZq5I4mKhPg5g5ld/AlrjfJATF9j+BESdBC3KhzSqzdzaYD6z9e2CNWxmPy1A8KAmw
+ LisOj0yPMWY6dMp/VuCwA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:YSBqNQLYU1g=:j8cAXIxiWNNd35q6LT3OgX
- GeM/7AHZpfcEVoLkEe0tdIkPDboYEbx/M6sCY/dFFjl/xi5QWOsUGg5Mtl9vpb3w8V61El126
- 6ciCK/PWyuYSXsg5t5NKcZNeP6zqNDAu6w6NBnWjC1YPkMSCaMLmXCENzVoxQTm5XiV2KtbKa
- hlt/w9GlUq9hBprFAIsIQEamSJ6LTXNfbVm21xplliLvq0qQw1wKEoEh9OQMcVdDARFOUvhQw
- ONmNaMTaTQ0zy3RN1lEKVCHcmykRAnmPKlwRULsUy6b3NG/J04bDlSSp/5311GpYSRI8TCTHp
- 9WrHbOdmI9sV/Oq6TAapfArLVtA7SySEELnaaA/It6/YyyIzqkm5ah24+1rrvFy5uKx2UdZIg
- +RC5KFBVqGkUN8gLqZrJgg6xb3gsLJgYPecb0Q9az1mZjoqH90hyUDsofJGDFkJ101FQwYfcx
- 3G2941vByhX8BLwnpI3Z4NmUqe4kk/JNuV5zzoShWAhKgPQcnxv3HfFq5gozRJGQQslgQlWrJ
- VEIAv0fvnCWyKkIGuoJhSiqLKScs5BoGqrhpkAcJQ8N8Wt3Q+hLsoEMw0tCXz8FXbp1iScb1c
- ZAEbXhR/9ekLXIEQJI2wQYahmWk8+l/lN76Nka4NLxxXds4RsHT8hWBbvDKtCSC98KJRdN9VW
- b2bUPH129AepFZWXvVbDJE9VlTg48F4b2J/bEk3uwgvdoPlMArK2NV+i5p9gYQp8vpH9Bz+ab
- lVQn7AGzRcroUWIr/SjYVm58CRjtTXR4w1LP5q4jDl0wzZULOMDgH1l9vVgTtjIcDhUO0tGD/
- FgJwFX6JpW7eyPltGaXd3oxs3wPuNPaeJuRwI/59N9TViAzNpNjuwTQQRxZCvIOTXXw6Ijx+i
- dIyyAZyTFUTjKJxqCharuCPksb49t5hXGDWd/4H8zhr05gldjjNXJyGFLQiCcGUoTwKtj4WMO
- 8vjeAgaV1S5ZrCyZ/phs4zowE5RI9e/SK5of3G3rnuO+LnorAm1C9zU0vO+FBh5m96e1AhNN6
- 8rxHhOolIq5XgOCLE+LY4FGU2LrkWy6N88hYlH+S9wxT+e1YMJ2D8bT7ogEFOrRjnxUrKn6BO
- 79fvSsbso36Q3YyJtWMP8mQ65M7FlfDE912iCJ2NJkZ4iejDoP6SVcXJAU6HEc7YUCp1cqt3+
- iJFon6kjMAfrt4C1HCGRy50OtqZYYXkeu5FeVrrvuk9+r8u2vT8v/Oq0aRQLoyg0MESknOIQQ
- f14pcRgZltqtlGM4+1o8kmNR/eYGRFzOoLYk//Q==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:tpVInoJ1RDg=:TY0Y8jY4BRFGaskvGFkBNh
+ jwQgF+B6L5pOwcYFelXXSOSs3JUoLAzMJmi3lQHZG3zagTYa5ec3EmFKy2zWyjjkqDUYmfbxM
+ SklKG+S9WrhxwukxqP48U1AB/c/nkv8Ff2Xxxxb/v4YznBy5PI9OANBHdeperFGLIG2D117rG
+ RKU4govznHCUe4vzIx50qc3MBAAnQ4k2axKbCjCdQU0KZy+HjR1nMtaVUrRwb1ea0HyzBwg0v
+ 2oCg2XkNnBcaXqHeWTlqOG+FGoqnL19Syz4pKB+6GznH9jaSzQ49pjSd0q5JW5aw0gpCIqDdB
+ q9HHB2tBJnKWHpvNmU7FfDZLZfcQPmWdK9owN/pIZOECF3V5KEXziEn6mZqordxnGDC/EInQq
+ Lc4ISJgfJXU01ERmUroP2kb44G08JMtDG/qID9OWX9Gl74/gmZYYw8gCDf+xFPfg7ne6iZAqC
+ nac05Sz6FjuQUc3H2J4BQcykdjrcBmF8s5qPACTOr5o86gvN90J8gCo87hR1QOGBaw1o/hHXh
+ C20wpBWRlzCZSb81nOVbKt8H387nsw9GoYEnXJ3Ib3laZ4zoX1Zuk81CECo4zINJuY1ZTzkVb
+ DHyJrRg5Tizk1YhMJ6y4BK+AgXsuWHS/7hG65fBo1U9e2+rWKIdrPb0ik4QJfDN01a1Ze9IpZ
+ lZiM5ydyw6NLK9fS4k8cOWwAEE68qFwCMz5otMcDMUqA35FbAGlyfa12OmyhuNpOH8bNZfuCU
+ S7kgGnpZm3AvTqOyKfJRic/h9o8vQtE5hSm7PAePDr8nPLp3PttDhdzcURTllw1Nhm77lMKTk
+ q8h8HiV8VS7tg4nviLnyDNvrXDnDmiBB0fGzrRCyEjLQlg4wNk8r+WEXd64pLBrrYZYLr5UKy
+ gFlIeqT6utsFoLYYGvAEkLXzJgj3ByToaly7FQr1YJej5cze5QoWGV3qAAfUBCnwXk8cBurre
+ Il3LMG4GJKHlRMmtui9X93CJgjPhpYIwZ3FjYfOkDvlTs6Jz9IrOM7Dyd7gXPNGtpHxY8ZRPZ
+ wZYfDyXjuZ7Ttli5eXTV6CgECOYT3ldVewSf8S96IRRbruiTZ43w8oe7R04a0mxVwh30YbRTS
+ EZBwgktnaiZGCVaau1310BTCnvJMj0zHgswDCshOMY/l8q6kzKyWK4+ZSNbj25ChQuw5CBa6N
+ W8cppyIDzVq9kBEvrDAiEUoq3h94zApYs2Lgs2Rb3fUbwaQqcf4n0XEpjL8FdAxA6sYX4gwGK
+ viCgHHeD+54tWUevFFwkG18p6Ilf+g0GP4UA1Mw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_155322_994241_6C9DE567 
-X-CRM114-Status: GOOD (  10.65  )
+X-CRM114-CacheID: sfid-20191211_155326_940100_45C9934E 
+X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.72.192.78 listed in list.dnswl.org]
+ low trust [212.227.17.12 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (smoch[at]web.de)
@@ -109,21 +110,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RockPro64 supports an Ampak AP6359SA based wifi/bt combo module.
-The BCM4359/9 wifi controller in this module is connected to sdio0,
-enable this interface.
+With enabled wifi support (required for firmware loading) for the
+Ampak AP6359SA based wifi/bt combo module we now also can enable
+the bluetooth part.
 
-Use the in-band sdio irq instead of the out-of-band wifi_host_wake_l
-signal since the latter is not working reliably on this board (probably
-due to it's PCIe WAKE# connection).
-
+Suggested-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Soeren Moch <smoch@web.de>
 ---
 changes in v2:
-- add comment about irq in commit message
-
-Not sure where to place exactly the sdio0 node in the dts because
-existing sd nodes are not sorted alphabetically.
+- new patch
 
 Cc: Heiko Stuebner <heiko@sntech.de>
 Cc: Kalle Valo <kvalo@codeaurora.org>
@@ -135,48 +130,57 @@ Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-rockchip@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- .../boot/dts/rockchip/rk3399-rockpro64.dts    | 21 ++++++++++++-------
- 1 file changed, 14 insertions(+), 7 deletions(-)
+ .../boot/dts/rockchip/rk3399-rockpro64.dts    | 29 ++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-index 7f4b2eba31d4..9fa92790d6e0 100644
+index 9fa92790d6e0..94cc462e234d 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
 +++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-@@ -71,13 +71,6 @@
- 		clock-names = "ext_clock";
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&wifi_enable_h>;
--
--		/*
--		 * On the module itself this is one of these (depending
--		 * on the actual card populated):
--		 * - SDIO_RESET_L_WL_REG_ON
--		 * - PDN (power down when low)
--		 */
- 		reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
- 	};
-
-@@ -650,6 +643,20 @@
- 	status = "okay";
+@@ -561,6 +561,20 @@
  };
 
-+&sdio0 {
-+	bus-width = <4>;
-+	cap-sd-highspeed;
-+	cap-sdio-irq;
-+	disable-wp;
-+	keep-power-in-suspend;
-+	mmc-pwrseq = <&sdio_pwrseq>;
-+	non-removable;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&sdio0_bus4 &sdio0_cmd &sdio0_clk>;
-+	sd-uhs-sdr104;
-+	status = "okay";
-+};
+ &pinctrl {
++	bt {
++		bt_enable_h: bt-enable-h {
++			rockchip,pins = <0 RK_PB1 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
 +
- &sdmmc {
- 	bus-width = <4>;
- 	cap-sd-highspeed;
++		bt_host_wake_l: bt-host-wake-l {
++			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO &pcfg_pull_down>;
++		};
++
++		bt_wake_l: bt-wake-l {
++			rockchip,pins = <2 RK_PD3 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
+ 	buttons {
+ 		pwrbtn: pwrbtn {
+ 			rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>;
+@@ -729,8 +743,21 @@
+
+ &uart0 {
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&uart0_xfer &uart0_cts>;
++	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
+ 	status = "okay";
++
++	bluetooth {
++		compatible = "brcm,bcm43438-bt";
++		clocks = <&rk808 1>;
++		clock-names = "extclk";
++		device-wakeup-gpios = <&gpio2 RK_PD3 GPIO_ACTIVE_HIGH>;
++		host-wakeup-gpios = <&gpio0 RK_PA4 GPIO_ACTIVE_HIGH>;
++		shutdown-gpios = <&gpio0 RK_PB1 GPIO_ACTIVE_HIGH>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&bt_host_wake_l &bt_wake_l &bt_enable_h>;
++		vbat-supply = <&vcc3v3_sys>;
++		vddio-supply = <&vcc_1v8>;
++	};
+ };
+
+ &uart2 {
 --
 2.17.1
 
