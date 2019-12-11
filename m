@@ -2,65 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B0F911B863
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 17:17:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77FBB11B893
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 17:23:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WExDVB1cDTez4cO2PJcxRmsqZOt0wgg3cngwZltD5pE=; b=B/ofCc1cSHrlqD
-	+XmHk3gpeJ+bKfjjKRpbSudaJ8EpfBGWhHZwly/NCM2Rb+IXW5BIiqZ7zM6zVevK6iUIOMxX3gb5M
-	fXzSrF5xlIVhVLN0OjmnD1tQPfq1FwdYKH84TtM/bRhZbYJunibb8GeognYk8snEUFkLEdsImXwrk
-	SsNZRsNUEmSrjpnzALZ9xOAE8sLIrP5qhD6EI4Sd6dDwhpdtlVGlFa1A/Ah2hCjksom3L9vUZc6HM
-	dfmv2HagBCQarh+dsG2WdVBMDZKpGb3OEZrlnpigkGkInJZjjhFGfH+FksSnJdnaHN10+1maQI5Cd
-	r8+yvBbiABcgnll7GePQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ekuxrVSgpk73cTzCEedbVwowA/9+mGFjypjo3nDW8tM=; b=ZFGfbda3gY5jps
+	35ecO859Ph57EJ51sSeMpGq8Esn2mB69V55NDMvLH1vA5bEgbsAIDok4L49aglD5TdR9V2S33hCM+
+	UOdJHz4gycWk94TthPIQkFGubnCuZCJD+DGp9T9DKAs+Ww0NWWRA+ZxTU8GSuc1otGuFtoYmDUKAh
+	3+sHip6PTCUfVlb8EA48mLLGy1ec8X1LjUkcgBqKOCAVcrZs2TNJ3QO2X1rij/eI1BTGIOA8DrIOQ
+	7UgSy4XTX+ZgfjFL3/F4ZLoZAmVI8k8EP33RH8xTkx62rCt0q1+sgn17FW0vZe0cYg5qm33N5zklu
+	BAFRaj2ad8Ns3a+MPV5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if4gJ-0004SX-T3; Wed, 11 Dec 2019 16:17:43 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1if4lv-0006qr-WC; Wed, 11 Dec 2019 16:23:32 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if4gA-0004QX-6K
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 16:17:36 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 6989D20348;
- Wed, 11 Dec 2019 17:17:28 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 3EDE020159;
- Wed, 11 Dec 2019 17:17:28 +0100 (CET)
-Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
- API
-To: Robin Murphy <robin.murphy@arm.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>
-References: <3d8a58bf-0814-1ec1-038a-10a20b9646ad@free.fr>
- <20191128185630.GK82109@yoga> <20191202014237.GR248138@dtor-ws>
- <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
- <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
-Date: Wed, 11 Dec 2019 17:17:28 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1if4lU-0006gw-2C; Wed, 11 Dec 2019 16:23:05 +0000
+X-UUID: d45729a5826648458fe6a46fb9dbd44e-20191211
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=iimza8cqkvrV1lF7V0mYtKiaYJScHBfp3AjzMCxE4gQ=; 
+ b=CTpH30TN4MmOSrnL9IVid5HNqTGghWnqq9dsYcUVwkjXzAKx1Z1fdk6SNy1brspl32QzavMWw+uizFf1w2kxZvnngpm24ZChzD7x8oKBSL6b6wgHHlMeuj6+wcLVXvtLhESq9N2kdimZYolQ9BaDoLgPdEpd8KQID1dvWKZu/Hc=;
+X-UUID: d45729a5826648458fe6a46fb9dbd44e-20191211
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <jiaxin.yu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 816953848; Wed, 11 Dec 2019 08:22:58 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Dec 2019 08:23:12 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Dec 2019 00:22:23 +0800
+Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 12 Dec 2019 00:22:06 +0800
+From: Jiaxin Yu <jiaxin.yu@mediatek.com>
+To: <yong.liang@mediatek.com>, <wim@linux-watchdog.org>, <linux@roeck-us.net>, 
+ <p.zabel@pengutronix.de>, <matthias.bgg@gmail.com>,
+ <linux-watchdog@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
+ <devicetree@vger.kernel.org>
+Subject: [PATCH v6 0/2] ASoC: mt8183: fix audio playback slowly after playback
+Date: Thu, 12 Dec 2019 00:22:34 +0800
+Message-ID: <1576081356-18298-1-git-send-email-jiaxin.yu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
-In-Reply-To: <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Wed Dec 11 17:17:28 2019 +0100 (CET)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_081734_528757_8BF27322 
-X-CRM114-Status: GOOD (  20.31  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191211_082304_113937_EEDC2428 
+X-CRM114-Status: UNSURE (   7.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,136 +89,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-clk <linux-clk@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>
+Cc: sboyd@kernel.org, yingjoe.chen@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/12/2019 14:51, Robin Murphy wrote:
+From: "yong.liang" <yong.liang@mediatek.com>
 
-> On 02/12/2019 9:25 am, Marc Gonzalez wrote:
->
->> On 02/12/2019 02:42, Dmitry Torokhov wrote:
->>
->>> On Thu, Nov 28, 2019 at 10:56:30AM -0800, Bjorn Andersson wrote:
->>>
->>>> On Tue 26 Nov 08:13 PST 2019, Marc Gonzalez wrote:
->>>>
->>>>> Date: Tue, 26 Nov 2019 13:56:53 +0100
->>>>>
->>>>> Using devm_add_action_or_reset() produces simpler code and smaller
->>>>> object size:
->>>>>
->>>>> 1 file changed, 16 insertions(+), 46 deletions(-)
->>>>>
->>>>>      text	   data	    bss	    dec	    hex	filename
->>>>> -   1797	     80	      0	   1877	    755	drivers/clk/clk-devres.o
->>>>> +   1499	     56	      0	   1555	    613	drivers/clk/clk-devres.o
->>>>>
->>>>> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
->>>>
->>>> Looks neat
->>>>
->>>> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
->>>
->>> This however increases the runtime costs as each custom action cost us
->>> an extra pointer. Given that in a system we likely have many clocks
->>> managed by devres, I am not sure that this code savings is actually
->>> gives us overall win. It might still, I just want to understand how we
->>> are allocating/packing devres structures.
->>
->> I'm not 100% sure what you are saying.
-> 
-> You reduce the text size by a constant amount, at the cost of allocating 
-> twice as much runtime data per clock (struct action_devres  vs. void*). 
-> Assuming 64-bit pointers, that means that in principle your ~320-byte 
-> saving would be cancelled out at ~40 managed clocks. However, that's 
-> also assuming that the minimum allocation granularity is no larger than 
-> a single pointer, which generally isn't true, so in reality it depends 
-> on whether the difference in data pushes the total struct devres 
-> allocation over the next ARCH_KMALLOC_MINALIGN boundary - if it doesn't, 
-> the difference comes entirely for free; if it does, the memory cost 
-> tradeoff gets even worse.
+This series patches add reset controller for MT8183, and audio will use it in 
+machine driver during bootup, they depend on the for-next.
 
-Aaah... memory overhead. Thanks for pointing it out.
+v6 changes:
+	1. Simplify toprug_reset_assert() & toprug_reset_deassert().
+	2. Add members for mt2712_data & mt8183_data.
 
-BEFORE
+v5 changes:
+	1. Add Signed-off-by tag and Reviewed-by tag.
 
-devm_clk_get()
-  -> devres_alloc(devm_clk_release, sizeof(*ptr), GFP_KERNEL);
-     allocates space for a struct devres + a pointer
+v4 changes:
+	1. Fixed wrong signed-off as correct mail suffix.
+	2. Fixed patch subject that add patch version.
 
-struct devres {
-	struct devres_node		node;
-	/*
-	 * Some archs want to perform DMA into kmalloc caches
-	 * and need a guaranteed alignment larger than
-	 * the alignment of a 64-bit integer.
-	 * Thus we use ARCH_KMALLOC_MINALIGN here and get exactly the same
-	 * buffer alignment as if it was allocated by plain kmalloc().
-	 */
-	u8 __aligned(ARCH_KMALLOC_MINALIGN) data[];
-};
+v3 changes:
+	1. https://patchwork.kernel.org/patch/11164283/ and 
+	   https://patchwork.kernel.org/patch/11164305/ has been merged.
+	2. Change the name of mtk_wdt_compatible to mtk_wdt_data.
+	3. Remove toprgu_reset struct and use mtk_wdt_dev instead.
+	4. Get the value of sw_rst_num from .h file.
+	5. Adddd mt2712-resets.h for mt2712.
+	6. Improve commit message.
 
-Not sure what it means for a flexible array member to be X-aligned...
+v2 changes:
+	1. remove "WIP" that in the title of patches
+	2. add hyper link for the patch that depends on
+	3. patchwork list:
+		https://patchwork.kernel.org/cover/11164285/
+		https://patchwork.kernel.org/patch/11164295/
+		https://patchwork.kernel.org/patch/11164299/
+		https://patchwork.kernel.org/patch/11164283/
+		https://patchwork.kernel.org/patch/11164305/
 
-(Since the field's address depends on the start address, which is only
-determined at run-time...)
+v1 changes:
+	1. patchwork list:
+		https://patchwork.kernel.org/cover/11164173/
+		https://patchwork.kernel.org/patch/11164181/
+		https://patchwork.kernel.org/patch/11164185/
+		https://patchwork.kernel.org/patch/11164187/
+		https://patchwork.kernel.org/patch/11164175/
 
-For example, on arm64, ARCH_KMALLOC_MINALIGN appears to be 128 (sometimes).
+yong.liang (2):
+  arm64: dts: mt8183: Add reset-cells in infracfg
+  clk: reset: Modify reset-controller driver
 
-/*
- * Memory returned by kmalloc() may be used for DMA, so we must make
- * sure that all such allocations are cache aligned. Otherwise,
- * unrelated code may cause parts of the buffer to be read into the
- * cache before the transfer is done, causing old data to be seen by
- * the CPU.
- */
-#define ARCH_DMA_MINALIGN	(128)
+ .../devicetree/bindings/watchdog/mtk-wdt.txt  |  10 +-
+ drivers/watchdog/Kconfig                      |   1 +
+ drivers/watchdog/mtk_wdt.c                    | 109 +++++++++++++++++-
+ .../reset-controller/mt2712-resets.h          |  22 ++++
+ .../reset-controller/mt8183-resets.h          |  17 +++
+ 5 files changed, 155 insertions(+), 4 deletions(-)
+ create mode 100644 include/dt-bindings/reset-controller/mt2712-resets.h
 
-
-Unless the strict alignment is also imposed on kmalloc?
-
-So basically, a struct devres starts on a multiple-of-128 address,
-first the devres_node member, then padding to the next 128, then the
-data member?
-
-
-/*
- * Some archs want to perform DMA into kmalloc caches and need a guaranteed
- * alignment larger than the alignment of a 64-bit integer.
- * Setting ARCH_KMALLOC_MINALIGN in arch headers allows that.
- */
-#if defined(ARCH_DMA_MINALIGN) && ARCH_DMA_MINALIGN > 8
-#define ARCH_KMALLOC_MINALIGN ARCH_DMA_MINALIGN
-#define KMALLOC_MIN_SIZE ARCH_DMA_MINALIGN
-#define KMALLOC_SHIFT_LOW ilog2(ARCH_DMA_MINALIGN)
-#else
-#define ARCH_KMALLOC_MINALIGN __alignof__(unsigned long long)
-#endif
-
-
-A devres_node boils down to 2 object pointers + 1 function pointer.
-
-Are there architectures supported by Linux where a function pointer
-is not the same size as an object pointer? (ia64 maybe?)
-
-
-
-OK, I will give this patch some more thought.
-
-But I need to ask: what is the rationale for the devm_add_action API?
-
-Regards.
-
+-- 
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
