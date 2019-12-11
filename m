@@ -2,80 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA37311A090
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 02:36:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE96911A0E5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 02:58:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+5mRR+vDErUoNMDAnIh+qlZNMHhnBeMiys7+fOXxOdM=; b=RuW5vR5hXFgJJJ
-	VJnlSMVcMX8qFAxzAPGOov3CxSrClTwfAWM5qzB1Vz+Ika5BpojpYKXXlMa1GF+nMmxX+1YX3kFdB
-	D/T9Xl4IqHRG/u+WYYHqvNpyGHkcSLtTL5joX31XR0uRvtAq3UYprNyWTWVIcYuhDhSo6KOJaInq9
-	uhS3EaRTqlM3fzvEN0KcDytBSMonrFZOjeiNliVV+honYBIXsLfoK90ghSOhw4X925c/vz8tSJX1L
-	fO8JlwP8HkQs9MPKRwuyd4PZ7JGwsR41uli0o6uhF2Sm2IZloLQrWCzagqeUOlgNcwdIPVep7y2kA
-	3REdQ8+lOMHHuA9H+K8Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1l1zZaO7ETjlQ32GgnBGZCS3ni3w8ykMss8QzEUUUkM=; b=TJtpJwcH+WmIyK
+	I2sW7DMmqY7u1U5cOcmEHI3AxR1K5v6j3Vr4OQum1xV+iHV/Ij1KNwnNI67ZXqMx1hhXQA4/qc7Bz
+	MsNA5aRFYtCFhG4zzKbIIx4lBy90RDK2w8v1A4DAURiyA1jVLWsZu8nePxuFNNRXn5iPQMQ00BopU
+	ZskbW0yuuGknMApZmfJim4/tL862Z9slwaCL9hiA7249PQlQQnvZdi7aINvNwIWF910Jh4ZPPHboD
+	x/WVwjx4IgD4rY7hl4EFCU/ceJF4rOZn/nNqQ0XnTXjVizGVCX5nq84Pj8FcsQAJW2pvhVQsQCcv7
+	UKOLWqHCP759JIy4MOLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieqvI-0007HN-SP; Wed, 11 Dec 2019 01:36:16 +0000
-Received: from mail-pg1-f171.google.com ([209.85.215.171])
+	id 1ierGv-0006aD-RQ; Wed, 11 Dec 2019 01:58:37 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieqv5-0007Gi-S7
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 01:36:08 +0000
-Received: by mail-pg1-f171.google.com with SMTP id b1so9896181pgq.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Dec 2019 17:36:03 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=aKAag7StJwHjJgF4Iw4j8lQcbdLUNDm8myg04kTxn9k=;
- b=kLIPunHnVUuvmbW9rXg8zTkCFy+zFvtKaf+EIzYrzUee733a+UTrVMm4iRUSWZioE9
- iuEYr417qqGylIkB3kzgp1tv7G8nQf+NTq6JtF6i+fnj1FKwXzpSwb41Ia9BLu26uh3P
- CftzWInsz7AvZOuTPNBYQzrXCBnfSjnMLpuliUi2RNO9TisT4dOJQc7geiEZef8E7G1U
- Bpz7OlP9zjb2lBATSW4SyuBKjRJd9eTpQYB1wH5is3SqQFupejYXjSYXtAvgVE10eSn/
- eJ8S4sspV86jMqTCZj558GCaj5nLAC202blgKAtG+6MflHnezgMk3tHHWyEGIHY7iadK
- cG4w==
-X-Gm-Message-State: APjAAAVfaKj9vpwmS9O4m3y4/nKXQ9xJzFZ4J16A4DcrJKlgWJmB9qO2
- FtdnCwsTg3S3cqz6J24AKsQP1w==
-X-Google-Smtp-Source: APXvYqwrGUBp108UvPwXHDmx5v8fUZA+4Tr3JPZOJ5FOBq+sDk9+AEXogckf+I+WbeS1IcnPb8FLJw==
-X-Received: by 2002:a65:578e:: with SMTP id b14mr1264107pgr.444.1576028162332; 
- Tue, 10 Dec 2019 17:36:02 -0800 (PST)
-Received: from [192.168.43.25] (210-54-242-39.adsl.xtra.co.nz. [210.54.242.39])
- by smtp.gmail.com with ESMTPSA id c8sm297591pfj.106.2019.12.10.17.35.59
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 10 Dec 2019 17:36:01 -0800 (PST)
-Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3601.0.10\))
-Subject: Re: [EXT] iMX6/UART imprecise external abort
-From: Andre Renaud <arenaud@designa-electronics.com>
-In-Reply-To: <CAOMZO5AP4F3fMwbx7TbnJ-xNPRh6r+3=TccWasVJER=cjLkgjA@mail.gmail.com>
-Date: Wed, 11 Dec 2019 14:35:56 +1300
-Message-Id: <789B91A2-6416-4906-AD32-BD66BDF879B3@designa-electronics.com>
-References: <CAEj2-1PyhkhEJ1+uRWio4vYxGuFOuR9mpZOdxmDDjGt_Az+3uA@mail.gmail.com>
- <CAOMZO5AxvuWETvubZU1Tu=0-SeoSzJs=LZcj-JJFE1+4O6-FxA@mail.gmail.com>
- <CAEj2-1M6950NxK0mOBzdc4qz3b=eBzD8NdLKE55aas5WN0iZkA@mail.gmail.com>
- <VI1PR0402MB3600DD7A4C9BFFE8E2805378FF5B0@VI1PR0402MB3600.eurprd04.prod.outlook.com>
- <CAEj2-1PCDWSiP98ZN9ufa-Nws_4KSgX7Jf8gK1+TM1zEuU3SKw@mail.gmail.com>
- <CAOMZO5AP4F3fMwbx7TbnJ-xNPRh6r+3=TccWasVJER=cjLkgjA@mail.gmail.com>
-To: Fabio Estevam <festevam@gmail.com>
-X-Mailer: Apple Mail (2.3601.0.10)
+ id 1ierGl-0006Z8-FL; Wed, 11 Dec 2019 01:58:28 +0000
+X-UUID: d14fe9ff70be47ef943df9b1bb420cd5-20191210
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=sqQ1DVfAQShEvzPrqHNKDy4tI0jEIAeICULZI5AfwMw=; 
+ b=J/FSAdTOdRqXo7TTzVE34BYBc4wdpei3wrEjp4ZrZ4tWUmyLj3hfU2WD5XeFQ3BjnGLV9iU7wqen75AIcpgCTPb1y1En+WaetQ0Wx69XyOzA1PPfkA+TaSRI+Pln38xVpl/ktdKMPQI/+2UMy35SdwQZhEOO56SyMyMvJY9G9fM=;
+X-UUID: d14fe9ff70be47ef943df9b1bb420cd5-20191210
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1956746249; Tue, 10 Dec 2019 17:58:23 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 10 Dec 2019 17:48:36 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Dec 2019 09:47:21 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 11 Dec 2019 09:48:14 +0800
+Message-ID: <1576028899.19653.5.camel@mtksdaap41>
+Subject: Re: [PATCH v2 12/14] soc: mediatek: cmdq: add loop function
+From: CK Hu <ck.hu@mediatek.com>
+To: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+Date: Wed, 11 Dec 2019 09:48:19 +0800
+In-Reply-To: <1574819937-6246-14-git-send-email-dennis-yc.hsieh@mediatek.com>
+References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1574819937-6246-14-git-send-email-dennis-yc.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: A5230DE48B16A267340064E1455F9D274E3E4DE6A9287E6E0E4EC648793AA9F82000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_173603_915112_C125979D 
-X-CRM114-Status: GOOD (  10.24  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20191210_175827_521221_7E2E32EF 
+X-CRM114-Status: GOOD (  14.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.215.171 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.215.171 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,27 +84,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Youxin Su <suyouxin@sporelab.io>, Andy Duan <fugang.duan@nxp.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgRmFiaW8sCj4gT24gMTEvMTIvMjAxOSwgYXQgMToyNyBQTSwgRmFiaW8gRXN0ZXZhbSA8ZmVz
-dGV2YW1AZ21haWwuY29tPiB3cm90ZToKPj4gVGhhbmtzIC0gd2UgZGlkIGhhdmUgdGhpcyB3cm9u
-Zy4gSG93ZXZlciBldmVuIGFmdGVyIGNvcnJlY3RpbmcgdGhpcyBpdAo+PiBzdGlsbCBmYWlscyBp
-biB0aGUgc2FtZSB3YXkuIFRoaXMgaXMgd2hhdCB3ZSdyZSB0cnlpbmc6Cj4gCj4gSSB0cmllZCB5
-b3VyIHBhdGNoIG9uIG15IGlteDZxcCB3YW5kYm9hcmQgYW5kIGRpZCBub3QgcmVwcm9kdWNlIHRo
-ZSBlcnJvci4KPiAKPiBBcyB5b3UgYWN0aXZhdGVkIHVhcnQyIEkgY2hhbmdlZCB5b3VyIGNvZGUg
-dG8gdXNlIHR0eW14YzEgaW5zdGVhZC4KPiAKPiBEbyB5b3UgY29ubmVjdCBVQVJUMiB0byB0aGUg
-UEMgYW5kIGFsc28gc2VuZCBjb21tYW5kIGZyb20gdGhlIFBDIHRvIHRoZSBib2FyZD8KClllcywg
-d2UgY29ubmVjdCBpdCB0byBhIFBDIGFuZCBiYXNpY2FsbHkgc3RyZWFtIGRhdGEgaW4gYm90aCBk
-aXJlY3Rpb25zIGJldHdlZW4gdGhlIHR3by4KCk9uIHRoZSBQQyBpdOKAmXMgYXMgc2ltcGxlIGFz
-Ogp3aGlsZSA6IDsgZG8gZWNobyB0ZXN0ID4gL2Rldi90dHlVU0IxIDsgc2xlZXAgMC4wNSA7IGRv
-bmUKCkl0IGRvZXMgbmVlZCBiaS1kaXJlY3Rpb25hbCB0cmFmZmljIHRvIHRyaWdnZXIuCgpSZWdh
-cmRzLApBbmRyZQogIApfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+Hi, Dennis:
+
+On Wed, 2019-11-27 at 09:58 +0800, Dennis YC Hsieh wrote:
+> Add finalize loop function in cmdq helper functions which loop whole pkt
+> in gce hardware thread without cpu operation.
+> 
+> Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> ---
+>  drivers/soc/mediatek/mtk-cmdq-helper.c | 22 ++++++++++++++++++++++
+>  include/linux/soc/mediatek/mtk-cmdq.h  |  8 ++++++++
+>  2 files changed, 30 insertions(+)
+> 
+> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> index 38e0c13e1922..10a9b4481e58 100644
+> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> @@ -414,6 +414,28 @@ int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_finalize);
+>  
+> +int cmdq_pkt_finalize_loop(struct cmdq_pkt *pkt)
+> +{
+> +	struct cmdq_client *cl = pkt->cl;
+> +	struct cmdq_instruction inst = { {0} };
+> +	int err;
+> +
+> +	/* insert EOC and generate IRQ for each command iteration */
+> +	inst.op = CMDQ_CODE_EOC;
+> +	err = cmdq_pkt_append_command(pkt, inst);
+> +	if (err < 0)
+> +		return err;
+
+It looks like you want a pkt execute command repeatedly, but why do you
+repeatedly trigger IRQ? This IRQ would do nothing because this pkt would
+never finish.
+
+> +
+> +	/* JUMP abaolute to begin */
+> +	inst.op = CMDQ_CODE_JUMP;
+> +	inst.offset = 1;
+> +	inst.value = pkt->pa_base >> cmdq_mbox_shift(cl->chan);
+> +	err = cmdq_pkt_append_command(pkt, inst);
+
+Why not just export this function as cmdq_pkt_jump()? Let client decide
+where to jump would be more flexible.
+
+Regards,
+CK
+
+> +
+> +	return err;
+> +}
+> +EXPORT_SYMBOL(cmdq_pkt_finalize_loop);
+> +
+>  static void cmdq_pkt_flush_async_cb(struct cmdq_cb_data data)
+>  {
+>  	struct cmdq_pkt *pkt = (struct cmdq_pkt *)data.data;
+> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> index 998bc90f9da9..d15d8c941992 100644
+> --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> @@ -212,6 +212,14 @@ int cmdq_pkt_assign(struct cmdq_pkt *pkt, u16 reg_idx, u32 value);
+>   */
+>  int cmdq_pkt_finalize(struct cmdq_pkt *pkt);
+>  
+> +/**
+> + * cmdq_pkt_finalize_loop() - Append EOC and jump command to loop pkt.
+> + * @pkt:	the CMDQ packet
+> + *
+> + * Return: 0 for success; else the error code is returned
+> + */
+> +int cmdq_pkt_finalize_loop(struct cmdq_pkt *pkt);
+> +
+>  /**
+>   * cmdq_pkt_flush_async() - trigger CMDQ to asynchronously execute the CMDQ
+>   *                          packet and call back at the end of done packet
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
