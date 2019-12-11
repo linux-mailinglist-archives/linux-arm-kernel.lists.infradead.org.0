@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B18911BB1F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:10:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A76911BB27
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:10:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,25 +11,25 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yk4DRCCE5EYWqdwWn9lmVxH2yTBCHiNbiVM4xqOGkqU=; b=bGt0gmdTR06o0yNh6BNZZYGlIG
-	BBGOsfV7kz7BlCKJLz+mMTb6rMBtuvTCIfBngO0nFhc3y+frSC2lf8OleAw/8ma2Wmpw4P3M9asS5
-	m5Kj/r8WQJmpNfxSoX7pKsZMPpe29FRB9bvjWlUBsOBKIlcksQXv9NIU6Q0TBl+XmEAps/nGgYpVN
-	YnaU57/FHsFJyJPtBZ3ECVOTZ1eb0C7uKzUojWuciQXN3zfzF+QcRrkeuYQzGSwFQ7NlIHSTORq1c
-	v0V0t75t07vzi86kuQwyXDBK4HYH+VtHjH7PR75lH0pbD9KMZUQuHB8ZtyXXtMD3/sZaZCvKXucoi
-	iUr5Jlpg==;
+	bh=cbul7k/kRQJow6+VFqU5NhU3vTUY15NoKTk4i1VMqUs=; b=WGIfTC9XrYy0TjwWZwHaKETady
+	Reg3MYyqfghAAyWoTC/anDfgdAUrz58G7CStZz+nKjk3/g8vfwe3IL3dVAIS1uEaH9eD5kwXgvldr
+	2Iiy+mNfdtw8hTQUNN9V/1qGnfz6KkxlZgKnu10f65yxLA/gnQEdEo+tFvkaLwd4saaNp93tSIMAT
+	H1mipt8MSGtLfS8Ggwf6bnbLmFIGYSPv01UsIjmEMX1344ff3AvKfpJxUd1COuB+eL5akb+HIxkK2
+	KYF9WUb+W1r3gPFE6Srfvqc73ihxsOrIJ0/+CCDSUPIfLLnwCn0O1/5KXkwL8EQFX2a2YQdzTd5D+
+	6pEjG0Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if6RQ-0006jz-R4; Wed, 11 Dec 2019 18:10:28 +0000
+	id 1if6Ri-00072b-OU; Wed, 11 Dec 2019 18:10:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if6Qw-0005Jt-LN
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:10:00 +0000
+ id 1if6RT-0006yQ-4G
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:10:35 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9F5C031B;
- Wed, 11 Dec 2019 10:09:57 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 83F7431B;
+ Wed, 11 Dec 2019 10:10:30 -0800 (PST)
 Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2A3C63F6CF;
- Wed, 11 Dec 2019 10:09:57 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 014073F6CF;
+ Wed, 11 Dec 2019 10:10:29 -0800 (PST)
 Subject: Re: [PATCH 11/15] firmware: arm_scmi: Match scmi device by both name
  and protocol id
 To: Sudeep Holla <sudeep.holla@arm.com>,
@@ -37,15 +37,15 @@ To: Sudeep Holla <sudeep.holla@arm.com>,
 References: <20191210145345.11616-1-sudeep.holla@arm.com>
  <20191210145345.11616-12-sudeep.holla@arm.com>
 From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <75b53cc5-1052-de65-dbd6-a2e32c7bed21@arm.com>
-Date: Wed, 11 Dec 2019 18:09:56 +0000
+Message-ID: <9f30c06f-df22-a1cd-5ed2-c382348162a0@arm.com>
+Date: Wed, 11 Dec 2019 18:10:28 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
 In-Reply-To: <20191210145345.11616-12-sudeep.holla@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_100958_767606_98BA25DF 
+X-CRM114-CacheID: sfid-20191211_101031_238175_142EFAAF 
 X-CRM114-Status: GOOD (  18.65  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -84,7 +84,6 @@ On 10/12/2019 14:53, Sudeep Holla wrote:
 > 
 > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 > ---
-
 >  drivers/firmware/arm_scmi/scmi_pm_domain.c | 2 +-
 >  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
@@ -104,7 +103,12 @@ On 10/12/2019 14:53, Sudeep Holla wrote:
 > --
 > 2.17.1
 > 
+LGTM.
 
+Reviewed-by: Cristian Marussi <cristian.marussi@arm.com>
+
+
+Cristian
 
 _______________________________________________
 linux-arm-kernel mailing list
