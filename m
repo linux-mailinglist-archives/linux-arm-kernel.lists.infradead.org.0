@@ -2,90 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CC4F11BFC9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 23:28:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6B4911BFCD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 23:33:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:To:Subject:From:References:
+	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8wP2E4OzFo+F059L3aCon9E9JwgHDB8ZeUoRnrFs0+A=; b=uKd0p4KJKILafs
-	7/iXyi5VVXOtpp1mVkZUfz3OAiyocConL77RC2Ms8nAvbJm0F7taZLwDcvMNgejGUor5Pjfrf9bo5
-	Z4xNi6zs00Qw5kKmoC+aDnn+Ir6MzscGEXclIrZGipaSNHT5UE6Nwt1+TFkXrnVD8VQpV3C9fxuS2
-	NE7RpdKBZDw8BaWgflWdS1zu5KWavkTgNn/oRSH3gWKg26fWYqVrnmtmwAaYIWH9exs/nwAUboyGx
-	aPYiBOP0zhrqniLVYumVfrv0JfP8A5/xUi+YGxRPAca2zUJjM8rgMyrJdKm5A47ynycO3N8T+6bF5
-	HdyvusDLM+hx/OingdKQ==;
+	List-Owner; bh=OXi7bYqpj4t5EflB47CW8mOZV06upaw8XFwAV6tboes=; b=ax0rSX41jVwgX7
+	kT2nlBzvk0jF8YZFh7ZnMnb+5ZkIiJ4bT0rCFyc7+k3bzn9yuJclfWvR53Vv97AA6wp1xoc5wZYny
+	1ErNanCuBke6++V8dZCX6gqmYayx3GXZYgoOxniLmDMY2sOn9L4q3VTHCkq8SF6XAW7De0bJtJM0Y
+	GTbpnNdq7rkdIBgasgjDt/PzDEUlIhDniJKtzV8hbBN1sHAL3YRDpqKPNHSajMZgvvA+kVxtn7YdN
+	Va7xwcY5Zzy98JfxKI5zlKZ14h9QXWfSSG+Q0Jjl9UtOC6daHet8FxugSGLMbvPiymOcv8ohIdrSK
+	aT01FokX1XlmFo2XfZEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifATK-0000Ds-He; Wed, 11 Dec 2019 22:28:42 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1ifAYG-0002Ve-Mw; Wed, 11 Dec 2019 22:33:48 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifATD-0000DI-4c
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 22:28:36 +0000
-Received: by mail-pg1-x544.google.com with SMTP id s64so49006pgb.9
+ id 1ifAY7-0002Uv-7c
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 22:33:40 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 2so22407pfx.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 14:28:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=TUyXHjX3PYUM9nKm/LBHXohlHydzz+X5MYoM1R3UKnk=;
- b=DlIrY07nZUpFfOZumiYwfvGQsjWziSLuLYYk0u7cfTR9mrbgjKyuMd5nIFIc64yhuW
- GcRRxJf3NkABfPegZhceytl5qOyYrvDrDV/aBhiBTXeS6v6u5sPY5TSPRvjkx4q2Oi/i
- eRaSMr5jcGPDX0kq73qvnAtMLsMwSEKlDbSv3QNbkWh1AR8bEHgwnOfa/wJWqxHMKgxL
- VjL6DCJjVRR0f4QNVAPMTJm1iKH2z8oJiCjGd3nRZZqQ5jMtHsW4qIrqkRn4TgU/fmGT
- FBZOqHzbhmqPfZxERKkpoIek+rADA3KSeICpHN+4g4y4asHuvsgyuTPi6ZyGijl9aQZK
- a6yQ==
+ Wed, 11 Dec 2019 14:33:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=message-id:mime-version:content-transfer-encoding:in-reply-to
+ :references:from:cc:subject:to:user-agent:date;
+ bh=GLfOWzQemc1h78t5DYJGe0qF4KG3PrqnQX9OD2KMkVg=;
+ b=EGqh+SNe7tJoJVYFDX9MbYa6fdPkZdf0Iqkt6HqFkw6pk2B69j+S+dBuZduDI2Htu/
+ 53Z55YSB8pygPZfnCm6Rw8bOJMZMVxGq9DOuytHQQJTS5RLX6nYY4Y3p9fVrb6/3TvJz
+ 3WkvJ74EWUgoWVwJ84+5hC+YoHp0+i5fpnHQg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=TUyXHjX3PYUM9nKm/LBHXohlHydzz+X5MYoM1R3UKnk=;
- b=YQtyZB27h3c4kThByfJrIrmXuY7k1hULvscOp1dsb4G9HuWCE4QxxAYp5XyT/xaxmJ
- jkiM1O67nuw+rIrvXohkTeqtydUCa75KvGEGXA6eAvhRmLQyKVzmlEFUfSah83pqhoGP
- Auyi+kBIu3e9igz9hSC22Hs4n6DQZ+tq0V9t/R+FHePO0mKw+j5Hn3DzGqYmkeZn4RVz
- XH0FyDOI+5GF4L20OalHAKtX/TNQ+EmfootsShoNYot85JTXKboiM8KFDlVY7yFZWulK
- wuRyschdC+FfpE8nj76jcd2KZt5VlNreUFjLAUCXKYvzUjVb5YjqGW6za86zc6VwHBf6
- 43Xw==
-X-Gm-Message-State: APjAAAVS8wyJ7pZa/6MDc9HdgKjjSp7TSIM+NYvBwvihyNJlQ5Lf+Lpx
- VlpOkncbLUHPAWTQnhYn9GA=
-X-Google-Smtp-Source: APXvYqxwKjD3h+li5pd06Ogk9jgvc7NsUBZEri5ZUl/uWZW2mQ2IR6/uARTmg9E9Edg/X5XISeramg==
-X-Received: by 2002:a63:d00f:: with SMTP id z15mr6780305pgf.143.1576103312802; 
- Wed, 11 Dec 2019 14:28:32 -0800 (PST)
-Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id z23sm3844841pgj.43.2019.12.11.14.28.31
+ h=x-gm-message-state:message-id:mime-version
+ :content-transfer-encoding:in-reply-to:references:from:cc:subject:to
+ :user-agent:date;
+ bh=GLfOWzQemc1h78t5DYJGe0qF4KG3PrqnQX9OD2KMkVg=;
+ b=KZqOy+rWNInRTdk/GXvhyPi5b3VCTmdmzQfy98TWYXnhdQJIQdBNb6AXBNIwA8O7S0
+ wSlF8Lbyckosl0ayheDseGc8vv3nUqQMyvPaeWasQrX45sKTAYTCH2PYZltYBsm3Viv+
+ ShMItS6w5ozEHesXVsPGQ003H2/0iHk9nJllpOOGNgLH1e77gzZrIudMDngTvxlrLfZE
+ 3/fslZ47o3bFm28npGJnjV824jgDgc5sVdBNLkhNANZm592KWvYiLPVVMN8i1vsPzdKg
+ jFEEAKyU8j4sXmZy9CgRzCLg/uvMjcjU7i+hwA2I8VjKa2e/ojXgMvgTSjXNspJYEQSZ
+ r2rw==
+X-Gm-Message-State: APjAAAXz0NliibS4a9XqAEcCjU1lrMij0lDKJOo7TM6cAH2chUyS2um1
+ l3efg42/1R73gu7CSnObfV9E1A==
+X-Google-Smtp-Source: APXvYqxOh2exbuJZ713PVPhR7LotYIkz2slbPtyOuv4ICDUsQ7Oc7Uw9ampebPmIPXRLwFcw28pqHg==
+X-Received: by 2002:a63:1f21:: with SMTP id f33mr6886509pgf.91.1576103615577; 
+ Wed, 11 Dec 2019 14:33:35 -0800 (PST)
+Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
+ by smtp.gmail.com with ESMTPSA id e16sm4065103pgk.77.2019.12.11.14.33.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Dec 2019 14:28:32 -0800 (PST)
-Date: Wed, 11 Dec 2019 14:28:29 -0800
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
- API
-Message-ID: <20191211222829.GV50317@dtor-ws>
-References: <3d8a58bf-0814-1ec1-038a-10a20b9646ad@free.fr>
- <20191128185630.GK82109@yoga> <20191202014237.GR248138@dtor-ws>
- <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
- <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
- <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
+ Wed, 11 Dec 2019 14:33:34 -0800 (PST)
+Message-ID: <5df16ebe.1c69fb81.6481f.a011@mx.google.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAE=gft5JvCegmrjkKuxYr9dgASPFCkgy97O1XGRyKDF6xT=BMA@mail.gmail.com>
+References: <cover.1575529553.git.saiprakash.ranjan@codeaurora.org>
+ <0101016ed57a6311-e815485c-4b77-4342-a3de-203673941602-000000@us-west-2.amazonses.com>
+ <CAE=gft5JvCegmrjkKuxYr9dgASPFCkgy97O1XGRyKDF6xT=BMA@mail.gmail.com>
+From: Stephen Boyd <swboyd@chromium.org>
+Subject: Re: [PATCH 2/2] drivers: edac: Add EDAC support for Kryo CPU caches
+To: Evan Green <evgreen@chromium.org>,
+ Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+User-Agent: alot/0.8.1
+Date: Wed, 11 Dec 2019 14:33:33 -0800
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_142835_181177_D9C5D90D 
-X-CRM114-Status: UNSURE (   8.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_143339_298310_E5B0E616 
+X-CRM114-Status: GOOD (  12.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dmitry.torokhov[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -94,6 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,31 +98,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-clk <linux-clk@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS
+ <devicetree@vger.kernel.org>, Tony Luck <tony.luck@intel.com>,
+ psodagud@codeaurora.org, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ tsoni@codeaurora.org, LKML <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Robert Richter <rrichter@marvell.com>, Andy Gross <agross@kernel.org>,
+ Borislav Petkov <bp@alien8.de>, James Morse <james.morse@arm.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-edac@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 05:17:28PM +0100, Marc Gonzalez wrote:
-> But I need to ask: what is the rationale for the devm_add_action API?
+Quoting Evan Green (2019-12-11 11:32:37)
+> Hi Sai,
+> 
+> On Thu, Dec 5, 2019 at 1:53 AM Sai Prakash Ranjan
+> <saiprakash.ranjan@codeaurora.org> wrote:
+> > diff --git a/drivers/edac/qcom_kryo_edac.c b/drivers/edac/qcom_kryo_edac.c
+> > new file mode 100644
+> > index 000000000000..05b60ad3cb0e
+> > --- /dev/null
+> > +++ b/drivers/edac/qcom_kryo_edac.c
+> > @@ -0,0 +1,679 @@
+[...]
+> > +static const struct error_record serror_record[] = {
+> > +       { 0x1,  "Errors due to fault injection"         },
+> > +       { 0x2,  "ECC error from internal data buffer"   },
+> > +       { 0x6,  "ECC error on cache data RAM"           },
+> > +       { 0x7,  "ECC error on cache tag or dirty RAM"   },
+> > +       { 0x8,  "Parity error on TLB data RAM"          },
+> > +       { 0x9,  "Parity error on TLB tag RAM"           },
+> > +       { 0x12, "Error response for a cache copyback"   },
+> > +       { 0x15, "Deferred error not supported"          },
+> > +};
+> > +
+> > +static const struct error_type err_type[] = {
+> > +       { edac_device_handle_ce, "Kryo L1 Corrected Error"      },
+> > +       { edac_device_handle_ue, "Kryo L1 Uncorrected Error"    },
+> > +       { edac_device_handle_ue, "Kryo L1 Deferred Error"       },
+> > +       { edac_device_handle_ce, "Kryo L2 Corrected Error"      },
+> > +       { edac_device_handle_ue, "Kryo L2 Uncorrected Error"    },
+> > +       { edac_device_handle_ue, "Kryo L2 Deferred Error"       },
+> > +       { edac_device_handle_ce, "L3 Corrected Error"           },
+> > +       { edac_device_handle_ue, "L3 Uncorrected Error"         },
+> > +       { edac_device_handle_ue, "L3 Deferred Error"            },
+> > +};
+> 
+> A comment is warranted to indicate that err_type is indexed by the
+> enum, as this would be easy to mess up in later changes.
 
-For one-off and maybe complex unwind actions in drivers that wish to use
-devm API (as mixing devm and manual release is verboten). Also is often
-used when some core subsystem does not provide enough devm APIs.
+Instead of a comment please use array indexing.
 
-Thanks.
+	[KRYO_L1_CE] = { edac_device_handle_ce, "Kryo L1..." },
+	...
 
--- 
-Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
