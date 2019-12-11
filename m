@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FCCB11B98F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 18:04:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B09111B991
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 18:04:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iFRAvOqxn/3XxqMuziZjvciZDXGVI8ykBVMLgog1Ovc=; b=HpN1SYdW2V2ocI
-	LMRxhGQKdXJTsbdx4SYnp9mT97SlbIaO6UhmYkX33fiGWylclyVQ901pNXJYLFOy3qhemzNhqQYZS
-	weFnK5Q/oEuEag1pnHvN0F8AwfjXC5PEOXjuZ9btvX3turcr2phxlRhUCjNgVWGTblexVv01YEj9g
-	O05pSEYFqUgJQykR67QVsS5tTR0VLMrlcxt/Bl0blekLX8hFZnuOXCZkyjB11U2NZNp3+2g7c3Ka7
-	EtnPlVOvKgfq/ut/lfgONTIT+h95jQ3TRniIIwGka/Dy8TPq17j2GLF2we5ZbVoslhPXcaN8GPRax
-	4uCjETB2j/IhCn5hwgKA==;
+	List-Owner; bh=J4e0f9wO/qXKYVv2ibj4NVnt4HulLkqMIoJ4TT8/e2A=; b=IJiUJoDK8aZ+Wf
+	NBB5KUQTuf+GyPf/T0VjhNux3QVYPk7u+IEbBVY/ySfBH0MGQ0A69/15bXFEKc1JRI/jsS0rfHGKT
+	i78/fjN+dSL5Nq4ItNgOO/SGTiBilrqhyR62y8+6Hu6926Xn1mBRYJe7uZisFzJO2Ea4RTFGUo/Bm
+	274HPBBR81Ai6fOn9upk7jKOpLNWQhLzynpRlD+v9aEz5casEYO95opbt2pGW7GMzqmY6E1S8pyKN
+	Uizn1kgzWRGBKH2XeOeXfLRtv8s9Opra34ohvSMj9aobuEYq504D7QOMZGgyNjjwi72NLYmEu7JT3
+	Ya7nAXBJLmiY/PZCtngQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if5PX-0006m7-JC; Wed, 11 Dec 2019 17:04:27 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1if5Pn-00070q-W8; Wed, 11 Dec 2019 17:04:44 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if5P9-0006Y3-QO
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 17:04:05 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBBH40Hr041635;
- Wed, 11 Dec 2019 11:04:00 -0600
+ id 1if5PC-0006Yx-7I
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 17:04:07 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBBH43dG093381;
+ Wed, 11 Dec 2019 11:04:03 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576083840;
- bh=wVVRgibfC5BNyQGOh9TdK/N/SacZl9ZNoAs+4MfeaN4=;
+ s=ti-com-17Q1; t=1576083843;
+ bh=2q7+lDu/00Dro2as6TEZvbW2Mo8FYkswNwEaKXoLaGc=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=kzOZyeXaf0QQzjSxcV/boWXtDDkg+95YTq13FAbjPv03osxkhraA/j+8n7Y0TABuE
- 3HDm3ta0L2+TCcDIcgaJ1L4KdrlDeL27ttb8qhgumBBMj6D5d0ztSja38tTCSqHGGY
- GZxOwzMVGZf1NBUtHvnJQzeH+JeSJosIpJQfK7ww=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBBH40n5109197
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 11 Dec 2019 11:04:00 -0600
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ b=HD2TeEeD8rV95xAm+hnw8E7Um8xDpyYi4Uo/mvWdlZ5u32W/UERVeCGa8j6d7IZQF
+ BMVo7W/uMUchDFg2jUIum9How2Slu2oGuxzdiY6FNE0077oHTFjdnNSYrfPegiNt8v
+ 9maS6mXMdnOd3o13tY7s3Q0BH1zJUbPeFdqIZksU=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBBH43V7130518;
+ Wed, 11 Dec 2019 11:04:03 -0600
+Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 11
- Dec 2019 11:04:00 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 11:04:02 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 11 Dec 2019 11:04:00 -0600
+ Frontend Transport; Wed, 11 Dec 2019 11:04:02 -0600
 Received: from a0132425.dhcp.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBBH3s6g099151; 
- Wed, 11 Dec 2019 11:03:58 -0600
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBBH3s6h099151; 
+ Wed, 11 Dec 2019 11:04:00 -0600
 From: Vignesh Raghavendra <vigneshr@ti.com>
 To: Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>
-Subject: [PATCH v2 2/3] arm64: dts: ti: k3-am65: Add OSPI DT node
-Date: Wed, 11 Dec 2019 22:34:13 +0530
-Message-ID: <20191211170414.7026-2-vigneshr@ti.com>
+Subject: [PATCH v2 3/3] arm64: dts: k3-am654-base-board: Add IRQ line for GPIO
+ expander
+Date: Wed, 11 Dec 2019 22:34:14 +0530
+Message-ID: <20191211170414.7026-3-vigneshr@ti.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191211170414.7026-1-vigneshr@ti.com>
 References: <20191211170414.7026-1-vigneshr@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_090403_938470_47658178 
-X-CRM114-Status: GOOD (  13.85  )
+X-CRM114-CacheID: sfid-20191211_090406_340469_F1914648 
+X-CRM114-Status: GOOD (  13.77  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,147 +97,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-AM654 SoC has two Cadence OSPI controller instances under Flash
-subsystem (FSS). Add DT nodes for the same.
+Add IRQ line for IO expander present on wkup_i2c bus on  AM654 EVM
 
 Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
 ---
 v2:
 
-Update OSPI Device IDs and OSPI trigger address
+New patch
 
- arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi       | 38 +++++++++++++++++++
- arch/arm64/boot/dts/ti/k3-am65.dtsi           | 11 +++++-
- .../arm64/boot/dts/ti/k3-am654-base-board.dts | 36 ++++++++++++++++++
- 3 files changed, 83 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/ti/k3-am654-base-board.dts | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi b/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
-index 7bdf5342f58f..b9d886c4b837 100644
---- a/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
-@@ -95,4 +95,42 @@ adc {
- 			compatible = "ti,am654-adc", "ti,am3359-adc";
- 		};
- 	};
-+
-+	fss: fss@47000000 {
-+		compatible = "simple-bus";
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		ospi0: spi@47040000 {
-+			compatible = "ti,am654-ospi", "cdns,qspi-nor";
-+			reg = <0x0 0x47040000 0x0 0x100>,
-+				<0x5 0x00000000 0x1 0x0000000>;
-+			interrupts = <GIC_SPI 552 IRQ_TYPE_LEVEL_HIGH>;
-+			cdns,fifo-depth = <256>;
-+			cdns,fifo-width = <4>;
-+			cdns,trigger-address = <0x0>;
-+			clocks = <&k3_clks 248 0>;
-+			assigned-clocks = <&k3_clks 248 0>;
-+			assigned-clock-parents = <&k3_clks 248 2>;
-+			assigned-clock-rates = <166666666>;
-+			power-domains = <&k3_pds 248 TI_SCI_PD_EXCLUSIVE>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+
-+		ospi1: spi@47050000 {
-+			compatible = "ti,am654-ospi", "cdns,qspi-nor";
-+			reg = <0x0 0x47050000 0x0 0x100>,
-+				<0x7 0x00000000 0x1 0x00000000>;
-+			interrupts = <GIC_SPI 553 IRQ_TYPE_LEVEL_HIGH>;
-+			cdns,fifo-depth = <256>;
-+			cdns,fifo-width = <4>;
-+			cdns,trigger-address = <0x0>;
-+			clocks = <&k3_clks 249 6>;
-+			power-domains = <&k3_pds 249 TI_SCI_PD_EXCLUSIVE>;
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+		};
-+	};
- };
-diff --git a/arch/arm64/boot/dts/ti/k3-am65.dtsi b/arch/arm64/boot/dts/ti/k3-am65.dtsi
-index 6dfccd5d56c8..d38720bc2551 100644
---- a/arch/arm64/boot/dts/ti/k3-am65.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-am65.dtsi
-@@ -80,7 +80,11 @@ cbass_main: interconnect@100000 {
- 			 <0x00 0x42040000 0x00 0x42040000 0x00 0x03ac2400>,
- 			 <0x00 0x45100000 0x00 0x45100000 0x00 0x00c24000>,
- 			 <0x00 0x46000000 0x00 0x46000000 0x00 0x00200000>,
--			 <0x00 0x47000000 0x00 0x47000000 0x00 0x00068400>;
-+			 <0x00 0x47000000 0x00 0x47000000 0x00 0x00068400>,
-+			 <0x00 0x50000000 0x00 0x50000000 0x00 0x8000000>,
-+			 <0x00 0x70000000 0x00 0x70000000 0x00 0x200000>,
-+			 <0x05 0x00000000 0x05 0x00000000 0x01 0x0000000>,
-+			 <0x07 0x00000000 0x07 0x00000000 0x01 0x0000000>;
- 
- 		cbass_mcu: interconnect@28380000 {
- 			compatible = "simple-bus";
-@@ -94,7 +98,10 @@ cbass_mcu: interconnect@28380000 {
- 				 <0x00 0x42040000 0x00 0x42040000 0x00 0x03ac2400>, /* WKUP */
- 				 <0x00 0x45100000 0x00 0x45100000 0x00 0x00c24000>, /* MMRs, remaining NAVSS */
- 				 <0x00 0x46000000 0x00 0x46000000 0x00 0x00200000>, /* CPSW */
--				 <0x00 0x47000000 0x00 0x47000000 0x00 0x00068400>; /* OSPI space 1 */
-+				 <0x00 0x47000000 0x00 0x47000000 0x00 0x00068400>, /* OSPI space 1 */
-+				 <0x00 0x50000000 0x00 0x50000000 0x00 0x8000000>, /*  FSS OSPI0 data region 1 */
-+				 <0x05 0x00000000 0x05 0x00000000 0x01 0x0000000>, /* FSS OSPI0 data region 3*/
-+				 <0x07 0x00000000 0x07 0x00000000 0x01 0x0000000>; /* FSS OSPI1 data region 3*/
- 
- 			cbass_wakeup: interconnect@42040000 {
- 				compatible = "simple-bus";
 diff --git a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-index 8a85b482ad31..94bec7aa9baf 100644
+index 94bec7aa9baf..a634dceaa964 100644
 --- a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
 +++ b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-@@ -69,6 +69,22 @@ AM65X_WKUP_IOPAD(0x0030, PIN_INPUT, 7) /* (R5) WKUP_GPIO0_24 */
- 			AM65X_WKUP_IOPAD(0x003c, PIN_INPUT, 7) /* (P2) WKUP_GPIO0_27 */
+@@ -85,6 +85,13 @@ AM65X_WKUP_IOPAD(0x0028, PIN_INPUT, 0)  /* (R3) MCU_OSPI0_D7 */
+ 			AM65X_WKUP_IOPAD(0x002c, PIN_OUTPUT, 0) /* (R4) MCU_OSPI0_CSn0 */
  		>;
  	};
 +
-+	mcu_fss0_ospi0_pins_default: mcu-fss0-ospi0-pins_default {
++	wkup_pca554_default: wkup_pca554_default {
 +		pinctrl-single,pins = <
-+			AM65X_WKUP_IOPAD(0x0000, PIN_OUTPUT, 0) /* (V1) MCU_OSPI0_CLK */
-+			AM65X_WKUP_IOPAD(0x0008, PIN_INPUT, 0)	 /* (U2) MCU_OSPI0_DQS */
-+			AM65X_WKUP_IOPAD(0x000c, PIN_INPUT, 0)  /* (U4) MCU_OSPI0_D0 */
-+			AM65X_WKUP_IOPAD(0x0010, PIN_INPUT, 0)  /* (U5) MCU_OSPI0_D1 */
-+			AM65X_WKUP_IOPAD(0x0014, PIN_INPUT, 0)  /* (T2) MCU_OSPI0_D2 */
-+			AM65X_WKUP_IOPAD(0x0018, PIN_INPUT, 0)  /* (T3) MCU_OSPI0_D3 */
-+			AM65X_WKUP_IOPAD(0x001c, PIN_INPUT, 0)  /* (T4) MCU_OSPI0_D4 */
-+			AM65X_WKUP_IOPAD(0x0020, PIN_INPUT, 0)  /* (T5) MCU_OSPI0_D5 */
-+			AM65X_WKUP_IOPAD(0x0024, PIN_INPUT, 0)  /* (R2) MCU_OSPI0_D6 */
-+			AM65X_WKUP_IOPAD(0x0028, PIN_INPUT, 0)  /* (R3) MCU_OSPI0_D7 */
-+			AM65X_WKUP_IOPAD(0x002c, PIN_OUTPUT, 0) /* (R4) MCU_OSPI0_CSn0 */
++			AM65X_WKUP_IOPAD(0x0034, PIN_INPUT, 7) /* (T1) MCU_OSPI1_CLK.WKUP_GPIO0_25 */
++
 +		>;
 +	};
  };
  
  &main_pmx0 {
-@@ -339,3 +355,23 @@ &mailbox0_cluster10 {
- &mailbox0_cluster11 {
- 	status = "disabled";
+@@ -180,6 +187,12 @@ pca9554: gpio@39 {
+ 		reg = <0x39>;
+ 		gpio-controller;
+ 		#gpio-cells = <2>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&wkup_pca554_default>;
++		interrupt-parent = <&wkup_gpio0>;
++		interrupts = <25 IRQ_TYPE_EDGE_FALLING>;
++		interrupt-controller;
++		#interrupt-cells = <2>;
+ 	};
  };
-+
-+&ospi0 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&mcu_fss0_ospi0_pins_default>;
-+
-+	flash@0{
-+		compatible = "jedec,spi-nor";
-+		reg = <0x0>;
-+		spi-tx-bus-width = <1>;
-+		spi-rx-bus-width = <8>;
-+		spi-max-frequency = <40000000>;
-+		cdns,tshsl-ns = <60>;
-+		cdns,tsd2d-ns = <60>;
-+		cdns,tchsh-ns = <60>;
-+		cdns,tslch-ns = <60>;
-+		cdns,read-delay = <0>;
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+	};
-+};
+ 
 -- 
 2.24.0
 
