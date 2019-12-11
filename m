@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6516F11BC0C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:43:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 987E211BC09
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:43:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VAZ9sn4TCEWSr928VDJW6vYmjWbrT0oClprNJxeQIGQ=; b=DUrAThUqPpXHRi
-	ls3booHMNqlamdKTNQLN8fKYxJdGrLbZ+y+scCnKU7Yn6U3cdobgdOrqRKGjdklPBUAbVAUJpAYys
-	A2gVKH90H2/MQwiEpuRMPRt410fJGt1cgfHSHKPx+bnXBh4K0luNjxefJncwIFsKojAAbw99jOphV
-	a0wEtP8tPMUqAaFmZBWBFWpKUUEVnzd4zUt2iL5IAOxX3KIpa3bXO36KcpUrRPm0yG7mqNXmwlwXD
-	JSH/H88BdFQVkXyY8U1RkHlM6dMNis1f4YfvsiOghqzh5Hu6ufyXzC3FuABlK6rJ/B+mScGYYgE5a
-	1OxDB8pmrFp++rCR5ypQ==;
+	List-Owner; bh=6cxJJ9Ow4C6HRNz0ZiEtPW7UbIVZ3W4FeWEpb/B/b90=; b=lW/U6BeMWHmREF
+	kiCc8ZKKBf/MSZy4mBM+sCAbl0YLB0jl7MzliLIDSX7fwsr7UjuIdtxqwFUqpwI+HoAyp0+xldlBi
+	rCuF53GG9ynPExERwdggHdaC2Ax3Ze6HcdxsvhiyNkkLKCpDkg3HRVBEKQfidvifhS0UFALG9Ba+o
+	VpFIwq2F64by4r86dRx0z/xNztP6jZk+Pl6C0B5IM8EMidAfwASpdR5xwN24iIN0zqkgpg8G+Jliu
+	ZPain9c0NMLzaQPrXruZTZD4u0xZd6QRJxB40p2Eq1XTe/stmZc97HJTaDr9XfTa3DLTlyXDBA66x
+	8+PpmnztX0dlFmIeQ5sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if6xi-0005sV-0Q; Wed, 11 Dec 2019 18:43:50 +0000
+	id 1if6x5-0005C8-Pi; Wed, 11 Dec 2019 18:43:11 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if6ur-0003HM-0N
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:40:55 +0000
+ id 1if6us-0003E1-Kz
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:40:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9467A1435;
- Wed, 11 Dec 2019 10:40:52 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 46349143B;
+ Wed, 11 Dec 2019 10:40:54 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 218BA3F6CF;
- Wed, 11 Dec 2019 10:40:51 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C8DE03F6CF;
+ Wed, 11 Dec 2019 10:40:52 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 09/22] arm64: mte: Tags-aware clear_page() implementation
-Date: Wed, 11 Dec 2019 18:40:14 +0000
-Message-Id: <20191211184027.20130-10-catalin.marinas@arm.com>
+Subject: [PATCH 10/22] arm64: mte: Tags-aware copy_page() implementation
+Date: Wed, 11 Dec 2019 18:40:15 +0000
+Message-Id: <20191211184027.20130-11-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191211184027.20130-1-catalin.marinas@arm.com>
 References: <20191211184027.20130-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_104053_139806_579B08B7 
-X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-CacheID: sfid-20191211_104054_752525_FBA156D7 
+X-CRM114-Status: UNSURE (   8.11  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -75,45 +75,53 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 
-When the Memory Tagging Extension is enabled, the tags need to be set to
-zero a page is cleared as they are visible to the user.
+When the Memory Tagging Extension is enabled, the tags need to be
+preserved across page copy (e.g. for copy-on-write).
 
-Introduce an MTE-aware clear_page() which clears the tags in addition to
-data.
+Introduce MTE-aware copy_page() which preserves the tags across page
+copy.
 
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 Co-developed-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/lib/clear_page.S | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ arch/arm64/lib/copy_page.S | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
 
-diff --git a/arch/arm64/lib/clear_page.S b/arch/arm64/lib/clear_page.S
-index 78a9ef66288a..575cea03f68a 100644
---- a/arch/arm64/lib/clear_page.S
-+++ b/arch/arm64/lib/clear_page.S
-@@ -5,7 +5,9 @@
+diff --git a/arch/arm64/lib/copy_page.S b/arch/arm64/lib/copy_page.S
+index bbb8562396af..970b7a20da70 100644
+--- a/arch/arm64/lib/copy_page.S
++++ b/arch/arm64/lib/copy_page.S
+@@ -25,6 +25,29 @@ alternative_if ARM64_HAS_NO_HW_PREFETCH
+ 	prfm	pldl1strm, [x1, #384]
+ alternative_else_nop_endif
  
- #include <linux/linkage.h>
- #include <linux/const.h>
-+#include <asm/alternative.h>
- #include <asm/assembler.h>
-+#include <asm/cpufeature.h>
- #include <asm/page.h>
- 
- /*
-@@ -19,8 +21,9 @@ ENTRY(clear_page)
- 	and	w1, w1, #0xf
- 	mov	x2, #4
- 	lsl	x1, x2, x1
--
--1:	dc	zva, x0
++#ifdef CONFIG_ARM64_MTE
++alternative_if_not ARM64_MTE
++	b	2f
++alternative_else_nop_endif
++	/*
++	 * Copy tags if MTE has been enabled.
++	 */
++	mov	x2, x0
++	mov	x3, x1
++
++	multitag_transfer_size x7, x5
 +1:
-+alternative_insn "dc zva, x0", "stzgm xzr, [x0]", \
-+			 ARM64_MTE, IS_ENABLED(CONFIG_ARM64_MTE), 1
- 	add	x0, x0, x1
- 	tst	x0, #(PAGE_SIZE - 1)
- 	b.ne	1b
++	ldgm	x4, [x3]
++	stgm	x4, [x2]
++
++	add	x2, x2, x7
++	add	x3, x3, x7
++
++	tst	x2, #(PAGE_SIZE - 1)
++	b.ne	1b
++2:
++#endif
++
+ 	ldp	x2, x3, [x1]
+ 	ldp	x4, x5, [x1, #16]
+ 	ldp	x6, x7, [x1, #32]
 
 _______________________________________________
 linux-arm-kernel mailing list
