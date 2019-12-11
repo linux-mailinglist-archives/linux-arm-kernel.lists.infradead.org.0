@@ -2,68 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A2AA11AC90
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:56:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26B8C11AC9C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:58:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6gGuwB7mPKDWMFaB426jMQs4JLvzSA2sa3jN2R2n5BM=; b=RjSb0+vYWn7mMw
-	bD1P7i1blacaWHgeagTFuAGi2//9Bne1KviIX1dTn9OowJwInzgyIpXiiAqxqc1bawimOE7XIcytx
-	Cm87mAte0SKUVjzaz6R62ziMOINRmDDS3GUCR9QQFt+55T1DnZdx2vdB2mJm6TyjULRmVqvXXipr0
-	TPg2V5LAeoeH3mK5rt1QPZGof77O5HI23uYmu69HmU+xZcyhhBk0RDFGpsELz6g2wu3DaZSvUcH+b
-	uVkpEw4hWEmvnimTUJ7E36UaQ+wWU9TImKOPxpDFS/QhAuJabkUP+t16KQjDgg4UsBSxDNm2ZoDzd
-	B2HclXc2Grc8ahfuwfPw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=eo7K6ZHhnGheSfOtsUuTsXBqnQkr5CjjsYQyGggu334=; b=gcBiFtZHduYMZrrpsfcx1XaPB
+	Ae14XA3VeDNvGyV6lTkvaAtvBRNysky1klT/ffwmATfWmluLRRwTO3WisgV5hypvfgKuYP7HX9SeR
+	dlbXWfXBKy/u/vyRRCGOmJO1UliIozr5Vhjvygqknvehv2yG6oOdDksk3IVWRd3PSnYzdJ+DHmupn
+	E6To1vRYHfASede9E4rZs79zJvad5/o13SYkjf6iZ6ZMjCQSP6vFOgDw/gpFOOIleOQLsuXEYnNsh
+	g4Vc0/K8+cGIIkMrDbQvfgel/JD25vvEgZ4QNmf1cNO7pEn9dK90N7OpbXGRQy+KWWXY4bsnWzXlH
+	UdIkWjiJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if2Tw-0005C4-6T; Wed, 11 Dec 2019 13:56:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if2Tc-00053J-Qd
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:56:30 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AC557214D8;
- Wed, 11 Dec 2019 13:56:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576072588;
- bh=dWkqILqfAhjEvyhCKPXISYgfOfSC3OtngOei9pUlZ5w=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=enaEjm3qhz+GbI1C7GZdbjUVp+Li+O9XxQqiaGueU8xTWyFJi3xOAs08wqOcxr99A
- TjmdjHoIohXmbLhvAqKCb708/vwcxCf5WQ+UYx2BMRwMzocjhZQpyBHCi1+hTg2dJV
- 4lSTU4jvrB9a4wmcTqpHvJGg5DZ7YKEwkIIzpHRU=
-Date: Wed, 11 Dec 2019 14:56:19 +0100
-From: Greg KH <gregkh@linuxfoundation.org>
-To: Thomas Renninger <trenn@suse.de>
-Subject: Re: [PATCH 2/3] x86 cpuinfo: implement sysfs nodes for x86
-Message-ID: <20191211135619.GA538980@kroah.com>
-References: <20191206162421.15050-1-trenn@suse.de>
- <20191206163656.GC86904@kroah.com>
- <87sglroqix.fsf@nanos.tec.linutronix.de>
- <4737004.4U1sY2OxSp@skinner.arch.suse.de>
+	id 1if2VL-0005cJ-VC; Wed, 11 Dec 2019 13:58:15 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1if2VD-0005bj-9W
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:58:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 25FC31FB;
+ Wed, 11 Dec 2019 05:58:05 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 83FF83F67D;
+ Wed, 11 Dec 2019 05:58:04 -0800 (PST)
+Date: Wed, 11 Dec 2019 13:58:03 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH v3 02/12] ELF: Add ELF program property parsing support
+Message-ID: <20191211135803.GD3870@sirena.org.uk>
+References: <1571419545-20401-1-git-send-email-Dave.Martin@arm.com>
+ <1571419545-20401-3-git-send-email-Dave.Martin@arm.com>
+ <201910291611.69822D5E04@keescook>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4737004.4U1sY2OxSp@skinner.arch.suse.de>
+In-Reply-To: <201910291611.69822D5E04@keescook>
+X-Cookie: NOBODY EXPECTS THE SPANISH INQUISITION!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_055628_913119_8BFE121D 
-X-CRM114-Status: GOOD (  10.17  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191211_055807_376010_07513CF3 
+X-CRM114-Status: GOOD (  11.91  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,30 +66,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Felix Schnizlein <fschnizlein@suse.de>,
- Felix Schnizlein <fschnizlein@suse.com>, x86@kernel.org, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Andrew Jones <drjones@redhat.com>,
+ Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arch@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Eugene Syromiatnikov <esyr@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, "H.J. Lu" <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Florian Weimer <fweimer@redhat.com>, linux-kernel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
+Content-Type: multipart/mixed; boundary="===============5711769912752509715=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 11:42:35AM +0100, Thomas Renninger wrote:
-> If Greg (and others) are ok, I would add "page size exceeding" handling.
-> Hm, quick searching for an example I realize that debugfs can exceed page 
-> size. Is it that hard to expose a sysfs file larger than page size?
 
-No, there is a simple way to do it, but I'm not going to show you how as
-it is NOT how to use sysfs at all :)
+--===============5711769912752509715==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="3Gf/FFewwPeBMqCJ"
+Content-Disposition: inline
 
-Why are you wanting to dump this whole mess into one file and then parse
-it, it's no different from having 100+ different sysfs files and then
-doing a readdir(3) on the thing, right?
 
-greg k-h
+--3Gf/FFewwPeBMqCJ
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Tue, Oct 29, 2019 at 04:14:47PM -0700, Kees Cook wrote:
+> On Fri, Oct 18, 2019 at 06:25:35PM +0100, Dave Martin wrote:
+
+A bit of a delay, sorry - I've taken this series over from Dave and
+wasn't on the CC so only just saw this.
+
+> > +#ifndef ELF_COMPAT
+> > +#define ELF_COMPAT 0
+> > +#endif
+
+> Why is "compat" interesting for the arch_ callback? Shouldn't just the
+> unsigned long size be needed?
+
+The set of properties handled or how they should be handled may vary
+depending on the ABI.  For example arm64 supports BTI only for AArch64
+but not for AArch32 so we should only handle the property for BTI for
+AArch64 binaries.
+
+--3Gf/FFewwPeBMqCJ
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3w9eoACgkQJNaLcl1U
+h9BmBgf+NNNCMclmwLDa2ZSVlL0/OBQcMH0ymsvXlLz6O8/LVbh/6UcTv2gnLRbZ
+4/onE8sI1dHBBZCYuiHk3LVyQElzoci7ntsEO96/Ej4HGEGddSJcy841btZcJF+o
+qJD7ZnkU9MR6mk+9QNiJ1Op5JbHinr42IhFw7jdgMDzjc3/BRzOCATyUibraciEN
+bocm5+nKJVPYNXiWolMgRER+8JH8w7I52Agj6Ob0zjZOZi9SBuxFIXTMzVqrvnyX
+iLIi/RIUpxLAdnb0ZRnyowuwgMFQdX38HKBxi6WLO2hcK4HUtytWbgez6KjRpnga
+K5oQP5sxINKD2ERveqnVOuVM/CNbJA==
+=RBvh
+-----END PGP SIGNATURE-----
+
+--3Gf/FFewwPeBMqCJ--
+
+
+--===============5711769912752509715==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5711769912752509715==--
+
