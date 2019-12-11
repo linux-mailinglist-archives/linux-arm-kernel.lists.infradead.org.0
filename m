@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4321711A679
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:08:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 966E711A68A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:14:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=td4iCnsOQKqLfWc0qr0n1aUOJSTJWuy/y8DGdOA+J24=; b=tY6nYcK2oRhnTo
-	7TguufGgO18M9zsNjX+IMn5JwRSHwHA93hpDNmuJMJYYQ2BI0ho/SHIVKUFpc1RTSam/VA7U55NnJ
-	Co46rqctMsvIvv+YEgtogfPumdl4y5wM6zRzkoBIyX9dYj3azpAt1rTGXF/A/ZXGkjLrSgDnIRsqR
-	jgshXHI41G55ZzGzPQxhhvZDZ6vYJmYYPDkudTYoJK1ZUZ3eMaWn25PLrkS9bidrGSgys6/KO+HaN
-	/HqE1o6dyHsE43OBfv5Hjpl0jtOv8cje3eQ8Zk5ZjcUavsdEfF0tNkWNlzsKUzjXo6YmIYVf2opNa
-	XPlZvHsHtXh77b7iKQmw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=SIDXMXA9yold+Jpu+8qXGeYhR3XnQpbxRjAtMP7icnk=; b=Cxn
+	h5aGNRFTkFVcXFGb3LJEtsTRwDg6KbXR/0B0SkaBxiqXJb0eb+bIGuXLvv7qBhJYhYZDSpoiOC+ve
+	AGgcDuKcMJwTeL7WDBDO2KDj0e6Dq+a0EPP0T2DpQiZiPuzF/p65AFvDV1Y6fziTbn7bUJ1VPG0jO
+	CE+irzJp58UfYgoDA9MX+m0+L/TLxD7PcvkBvyi+UMVL4DrFKEjLM57Qbnyqzs73DGppqoTx0hHoM
+	rln/U8Dgw5BHa1lKXIcfJArH734xEvPV/FkFAusaBCo4HzUguF2N9gEVSrvzRAgkeotkNROPxHgu6
+	tscAn07+PeejOSrBQ3Bj9NOLnvEUUKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iexyb-00073e-Qm; Wed, 11 Dec 2019 09:08:09 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1iey4D-0000jc-6X; Wed, 11 Dec 2019 09:13:57 +0000
+Received: from a27-187.smtp-out.us-west-2.amazonses.com ([54.240.27.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iexyT-00072l-5V
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:08:02 +0000
-Received: by mail-qk1-x741.google.com with SMTP id w127so7228185qkb.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 01:07:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=+1+2OzonF8JaI5zb2TCQGTWjY1hWFqWalCfMdztL7bw=;
- b=S60wH1RHuXQ8mOnPL0RhPKzQIGXltV0Cv9h00AH+VYro56n5frUBSr4jG3994daVvT
- V+vThx0M+M5TKEPRP7rKgYkWR9SLOxLfctebgbS4/teJyPdNqlqYK9Sqae4OYe3pOZfj
- RbOKuXYBl+rwcuW9scJiI3DZUILjSRdRChb2cUjEMEG/J6gALdSSdCrSN73Zs+Oaq7Ld
- ncsVZLJRCCbXDi37Bkc0aQABg2eiqLVtoela5xrLAMI6eSLhlktSHK/xO5UF2xLQLYer
- yMxhiSsTvhVSoG04ZT4mwPZHx/2a+Y7mdi6v2EwwgKDOC/A2904us+0B2fJX/ZY9l4Bm
- hO1Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=+1+2OzonF8JaI5zb2TCQGTWjY1hWFqWalCfMdztL7bw=;
- b=VC3P8XXEPjVxHd+9nEIr1jH2pLOYrbSTsRY/zuplS7Fv91X3do9ZDyiZJIpGXZOb8i
- nfiP3AEMcpNjudPCuLgRTU1+W9XBFcGhFI/euOywrmtj9ZkanbgUY3s6wIjGjWC0ke+A
- rPsRELrfO8ooZZus9EUCqpDAn9q26e5BIypBenM1d2XTzEoZdX2IKqSFra7NvkKChrRP
- ufCeqwmcW9fXmMFGhxKeT56ksW1o6WEr0TPSnphsQw8NM9mDmS5SmEXo5AHeTYgKq9JC
- uXYBgxBWIopBKEV9dy4TUOrHqXmM3J5+h5BYUFUas3LyivHhM3EbE353+PszVoa8Uz/N
- MOOg==
-X-Gm-Message-State: APjAAAXyBjDHTLWEmZoiGD48QhCkBAEs1lR7FEhI4Fv7zMbwm6AriKn+
- ye/9z2do/bQUUuikaC4MlD+soKCCwuWLvtt8aAdJ1A==
-X-Google-Smtp-Source: APXvYqxo51nvYaIkggIMq8ITtXp9gbKNulM8Wmtc5DRGjuFLLqvLJhg/1ssY8su+0/x7Vipo/ClbnBGeVsB5uoQ3mKs=
-X-Received: by 2002:a37:6255:: with SMTP id w82mr1919216qkb.330.1576055278589; 
- Wed, 11 Dec 2019 01:07:58 -0800 (PST)
-MIME-Version: 1.0
-References: <20191210202842.2546758-1-arnd@arndb.de>
- <f6a514d1-44cb-4577-af07-fd2f3fefc974@www.fastmail.com>
-In-Reply-To: <f6a514d1-44cb-4577-af07-fd2f3fefc974@www.fastmail.com>
-From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Date: Wed, 11 Dec 2019 10:07:47 +0100
-Message-ID: <CAMpxmJUD8A1qtmZmOxAq3XojFG5LHu_DS94LC7orinz_O9zY=A@mail.gmail.com>
-Subject: Re: [PATCH] gpio: aspeed: avoid return type warning
-To: Andrew Jeffery <andrew@aj.id.au>
+ id 1iey44-0000hy-Mm
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:13:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1576055625;
+ h=From:To:Cc:Subject:Date:Message-Id;
+ bh=42yNDIrjy8vmTGZpCOEq/aiq1nTIM3d9+rZoTsv/drQ=;
+ b=JbDsSTFUOspNEL5NWIb5nHIiKdWGey4DnSZRJceOIczzM1VnXEiEZ3rPGbAibXrR
+ 31fOezRtYffjMT6Vk48BhWGq5m7EzA/RZbX/zIzqeHTCrDnbTkbLqMKdnfDTJFXSNhR
+ l6l9H65HYeEdnGyPB9Y3rtMyXOQkPVTR/hIQxJ/o=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+ s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1576055625;
+ h=From:To:Cc:Subject:Date:Message-Id:Feedback-ID;
+ bh=42yNDIrjy8vmTGZpCOEq/aiq1nTIM3d9+rZoTsv/drQ=;
+ b=Bc7K3y/PSGohVafLyS3A0BeQz7AmYVA14oVNFD4vntjQHqVsIEmgwTwQxkrPJ/VW
+ EpXOZbmfBPInNuqRne0AdD7JAO6xMC/AwRA29XLmo0nvm+HaWx8fVLBhXPIsu3+AkYB
+ 9h6aX8Rw5BHk1XlbOFZagtuNWuGX/+JTTSf53m1U=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 4B186C4479C
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=cang@codeaurora.org
+From: Can Guo <cang@codeaurora.org>
+To: asutoshd@codeaurora.org, nguyenb@codeaurora.org, rnayak@codeaurora.org,
+ linux-scsi@vger.kernel.org, kernel-team@android.com, saravanak@google.com,
+ salyzyn@google.com, cang@codeaurora.org
+Subject: [PATCH v2 3/3] arm64: defconfig: Compile ufs-bsg as a module
+Date: Wed, 11 Dec 2019 09:13:45 +0000
+Message-ID: <0101016ef43c5629-fe6d95bf-cca1-4e31-9383-447998cdb9fd-000000@us-west-2.amazonses.com>
+X-Mailer: git-send-email 1.9.1
+X-SES-Outgoing: 2019.12.11-54.240.27.187
+Feedback-ID: 1.us-west-2.CZuq2qbDmUIuT3qdvXlRHZZCpfZqZ4GtG9v3VKgRyF0=:AmazonSES
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_010801_207567_6F9F053B 
-X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-CacheID: sfid-20191211_011348_781826_8116824D 
+X-CRM114-Status: UNSURE (   8.64  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
+ no trust [54.240.27.187 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -90,28 +90,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, Arnd Bergmann <arnd@arndb.de>,
- Linus Walleij <linus.walleij@linaro.org>, LKML <linux-kernel@vger.kernel.org>,
- linux-gpio <linux-gpio@vger.kernel.org>, Joel Stanley <joel@jms.id.au>,
- Hongwei Zhang <hongweiz@ami.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
+ Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Dinh Nguyen <dinguyen@kernel.org>,
+ =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
+ Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
+ "moderated list:ARM64 PORT AARCH64 ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-d3QuLCAxMCBncnUgMjAxOSBvIDIzOjEwIEFuZHJldyBKZWZmZXJ5IDxhbmRyZXdAYWouaWQuYXU+
-IG5hcGlzYcWCKGEpOgo+Cj4KPgo+IE9uIFdlZCwgMTEgRGVjIDIwMTksIGF0IDA2OjU4LCBBcm5k
-IEJlcmdtYW5uIHdyb3RlOgo+ID4gZ2NjIGhhcyBhIGhhcmQgdGltZSB0cmFja2luZyB3aGV0aGVy
-IEJVR19PTigxKSBlbmRzCj4gPiBleGVjdXRpb24gb3Igbm90Ogo+ID4KPiA+IGRyaXZlcnMvZ3Bp
-by9ncGlvLWFzcGVlZC1zZ3Bpby5jOiBJbiBmdW5jdGlvbiAnYmFua19yZWcnOgo+ID4gZHJpdmVy
-cy9ncGlvL2dwaW8tYXNwZWVkLXNncGlvLmM6MTEyOjE6IGVycm9yOiBjb250cm9sIHJlYWNoZXMg
-ZW5kIG9mCj4gPiBub24tdm9pZCBmdW5jdGlvbiBbLVdlcnJvcj1yZXR1cm4tdHlwZV0KPiA+Cj4g
-PiBVc2UgdGhlIHNpbXBsZXIgQlVHKCkgdGhhdCBnY2Mga25vd3MgY2Fubm90IGNvbnRpbnVlLgo+
-ID4KPiA+IEZpeGVzOiBmOGI0MTBlMzY5NWEgKCJncGlvOiBhc3BlZWQtc2dwaW86IFJlbmFtZSBh
-bmQgYWRkIEtjb25maWcvTWFrZWZpbGUiKQo+ID4gU2lnbmVkLW9mZi1ieTogQXJuZCBCZXJnbWFu
-biA8YXJuZEBhcm5kYi5kZT4KPgo+IEFja2VkLWJ5OiBBbmRyZXcgSmVmZmVyeSA8YW5kcmV3QGFq
-LmlkLmF1PgoKQXBwbGllZCBmb3IgZml4ZXMuCgpCYXJ0b3N6CgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Compiling ufs-bsg as a module to improve flexibility of its usage.
+
+Signed-off-by: Can Guo <cang@codeaurora.org>
+---
+ arch/arm64/configs/defconfig | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 8e05c39..169a6e6 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -227,6 +227,7 @@ CONFIG_SCSI_UFSHCD=y
+ CONFIG_SCSI_UFSHCD_PLATFORM=y
+ CONFIG_SCSI_UFS_QCOM=m
+ CONFIG_SCSI_UFS_HISI=y
++CONFIG_SCSI_UFS_BSG=m
+ CONFIG_ATA=y
+ CONFIG_SATA_AHCI=y
+ CONFIG_SATA_AHCI_PLATFORM=y
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
