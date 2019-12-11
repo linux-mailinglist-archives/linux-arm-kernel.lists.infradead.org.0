@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FB3C11BC12
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:45:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C5F211BC21
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:45:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BN5gPtm5DWkKle4lKLiUr3x6hFc4ppoEkcMRgL+LTdE=; b=WdjzjhQkivZz19
-	8TYZ2zBCT3R9ZCmw3c9pcbqtmCQiRl/zAS6/F9+1GNSNhQ6lfcONwKjJBjVj3ys1WIIDPjXQeFzLH
-	7Mw0Y058xGOZSGP8Gbyg1yzR3fdeUrUkscxrACiM+rz4YEzLNkHdrcU8zoynG0hy9Ct/vWRyVBKyH
-	uaYciMtX9rHmwzwe5wrHBwSDzPLKq22HwnTkBEZOQcfXqU+zvlMm/QwqQqibO0pckvaSzACalycR8
-	pPY9wsHKR+NLPiCRZWvy6MAmGb2DXSJTpWt+1YhtciBHsyw1su+QqGzJ9sJpV9Ncjx1JyZ2iTNiRR
-	Uej0AMLy9SwDLWsVDaGQ==;
+	List-Owner; bh=LSz75fcMYmrE+28a6yj+UdIV77sCQQlnJelAZGnPeTE=; b=AA0z9EOCiL/uDZ
+	+QzVIaGTgHzEzirTTKWEzDMklBC03gz2FXbMpPNHMOFLgjRGmxwVAIMDyb0GKRghtqcR/uZDeXXr4
+	FV+uv8lpTcqsupw/QDiV6K7RCR9uU4jhgDduMV4lwl3NbWSFon9BMiJ0WnZ2Foax+O7Aazp9zqmoe
+	o0pthr4oFwFp79LKCwmJ0QcGoKgDe2tjudg0gHkDsoDmiPTkK/kHUb2yX/iwHQiYgpypbGnkYg3xr
+	hEoPistAr6SUs/GI2kQPgE3DstsKOh/dn7GKDlzJ2qh9dxdOgNbWsNlaTrnUhThGYiqRqDstgrx1P
+	O4cwqDymn9kkc7Lu5LWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if6zC-0008I9-9O; Wed, 11 Dec 2019 18:45:22 +0000
+	id 1if6zW-0000UH-EB; Wed, 11 Dec 2019 18:45:42 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if6v5-0003HM-RL
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:41:09 +0000
+ id 1if6v7-0003RU-GE
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:41:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 963BD14BF;
- Wed, 11 Dec 2019 10:41:07 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3EC2E14F6;
+ Wed, 11 Dec 2019 10:41:09 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 24D543F6CF;
- Wed, 11 Dec 2019 10:41:06 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CA4783F6CF;
+ Wed, 11 Dec 2019 10:41:07 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 18/22] mm: Allow arm64 mmap(PROT_MTE) on RAM-based files
-Date: Wed, 11 Dec 2019 18:40:23 +0000
-Message-Id: <20191211184027.20130-19-catalin.marinas@arm.com>
+Subject: [PATCH 19/22] arm64: mte: Allow user control of the tag check mode
+ via prctl()
+Date: Wed, 11 Dec 2019 18:40:24 +0000
+Message-Id: <20191211184027.20130-20-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191211184027.20130-1-catalin.marinas@arm.com>
 References: <20191211184027.20130-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_104107_945806_A45C83DA 
-X-CRM114-Status: UNSURE (   9.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_104109_847034_0CBBEE5F 
+X-CRM114-Status: GOOD (  18.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,30 +73,238 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since arm64 memory (allocation) tags can only be stored in RAM, mapping
-files with PROT_MTE is not allowed by default. RAM-based files like
-those in a tmpfs mount or memfd_create() can support memory tagging, so
-update the vm_flags accordingly in shmem_mmap().
+By default, even if PROT_MTE is set on a memory range, there is no tag
+check fault reporting (SIGSEGV). Introduce a set of option to the
+exiting prctl(PR_SET_TAGGED_ADDR_CTRL) to allow user control of the tag
+check fault mode:
+
+  PR_MTE_TCF_NONE  - no reporting (default)
+  PR_MTE_TCF_SYNC  - synchronous tag check fault reporting
+  PR_MTE_TCF_ASYNC - asynchronous tag check fault reporting
+
+These options translate into the corresponding SCTLR_EL1.TCF0 bitfield,
+context-switched by the kernel. Note that uaccess done by the kernel is
+not checked and cannot be configured by the user.
 
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- mm/shmem.c | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm64/include/asm/processor.h |   3 +
+ arch/arm64/kernel/process.c        | 119 +++++++++++++++++++++++++++--
+ include/uapi/linux/prctl.h         |   6 ++
+ 3 files changed, 123 insertions(+), 5 deletions(-)
 
-diff --git a/mm/shmem.c b/mm/shmem.c
-index 165fa6332993..1b1753f90e2d 100644
---- a/mm/shmem.c
-+++ b/mm/shmem.c
-@@ -2225,6 +2225,9 @@ static int shmem_mmap(struct file *file, struct vm_area_struct *vma)
- 			vma->vm_flags &= ~(VM_MAYWRITE);
- 	}
+diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+index 5ba63204d078..91aa270afc7d 100644
+--- a/arch/arm64/include/asm/processor.h
++++ b/arch/arm64/include/asm/processor.h
+@@ -148,6 +148,9 @@ struct thread_struct {
+ #ifdef CONFIG_ARM64_PTR_AUTH
+ 	struct ptrauth_keys	keys_user;
+ #endif
++#ifdef CONFIG_ARM64_MTE
++	u64			sctlr_tcf0;
++#endif
+ };
  
-+	/* arm64 - allow memory tagging on RAM-based files */
-+	vma->vm_flags |= VM_MTE_ALLOWED;
+ static inline void arch_thread_struct_whitelist(unsigned long *offset,
+diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+index dd98d539894e..47ce98f47253 100644
+--- a/arch/arm64/kernel/process.c
++++ b/arch/arm64/kernel/process.c
+@@ -317,11 +317,22 @@ static void flush_tagged_addr_state(void)
+ 		clear_thread_flag(TIF_TAGGED_ADDR);
+ }
+ 
++#ifdef CONFIG_ARM64_MTE
++static void flush_mte_state(void)
++{
++	if (!system_supports_mte())
++		return;
 +
- 	file_accessed(file);
- 	vma->vm_ops = &shmem_vm_ops;
- 	if (IS_ENABLED(CONFIG_TRANSPARENT_HUGE_PAGECACHE) &&
++	/* clear any pending asynchronous tag fault */
++	clear_thread_flag(TIF_MTE_ASYNC_FAULT);
++	/* disable tag checking */
++	current->thread.sctlr_tcf0 = 0;
++}
++#else
+ static void flush_mte_state(void)
+ {
+-	if (system_supports_mte())
+-		clear_thread_flag(TIF_MTE_ASYNC_FAULT);
+ }
++#endif
+ 
+ void flush_thread(void)
+ {
+@@ -484,6 +495,29 @@ static void ssbs_thread_switch(struct task_struct *next)
+ 		set_ssbs_bit(regs);
+ }
+ 
++#ifdef CONFIG_ARM64_MTE
++static void update_sctlr_el1_tcf0(u64 tcf0)
++{
++	/* no need for ISB since this only affects EL0, implicit with ERET */
++	sysreg_clear_set(sctlr_el1, SCTLR_EL1_TCF0_MASK, tcf0);
++}
++
++/* Handle MTE thread switch */
++static void mte_thread_switch(struct task_struct *next)
++{
++	if (!system_supports_mte())
++		return;
++
++	/* avoid expensive SCTLR_EL1 accesses if no change */
++	if (current->thread.sctlr_tcf0 != next->thread.sctlr_tcf0)
++		update_sctlr_el1_tcf0(next->thread.sctlr_tcf0);
++}
++#else
++static void mte_thread_switch(struct task_struct *next)
++{
++}
++#endif
++
+ /*
+  * We store our current task in sp_el0, which is clobbered by userspace. Keep a
+  * shadow copy so that we can restore this upon entry from userspace.
+@@ -514,6 +548,7 @@ __notrace_funcgraph struct task_struct *__switch_to(struct task_struct *prev,
+ 	uao_thread_switch(next);
+ 	ptrauth_thread_switch(next);
+ 	ssbs_thread_switch(next);
++	mte_thread_switch(next);
+ 
+ 	/*
+ 	 * Complete any pending TLB or cache maintenance on this CPU in case
+@@ -574,6 +609,67 @@ void arch_setup_new_exec(void)
+ 	ptrauth_thread_init_user(current);
+ }
+ 
++#ifdef CONFIG_ARM64_MTE
++static long set_mte_ctrl(unsigned long arg)
++{
++	u64 tcf0;
++
++	if (!system_supports_mte())
++		return 0;
++
++	switch (arg & PR_MTE_TCF_MASK) {
++	case PR_MTE_TCF_NONE:
++		tcf0 = 0;
++		break;
++	case PR_MTE_TCF_SYNC:
++		tcf0 = SCTLR_EL1_TCF0_SYNC;
++		break;
++	case PR_MTE_TCF_ASYNC:
++		tcf0 = SCTLR_EL1_TCF0_ASYNC;
++		break;
++	default:
++		return -EINVAL;
++	}
++
++	/*
++	 * mte_thread_switch() checks current->thread.sctlr_tcf0 as an
++	 * optimisation. Disable preemption so that it does not see
++	 * the variable update before the SCTLR_EL1.TCF0 one.
++	 */
++	preempt_disable();
++	current->thread.sctlr_tcf0 = tcf0;
++	update_sctlr_el1_tcf0(tcf0);
++	preempt_enable();
++
++	return 0;
++}
++
++static long get_mte_ctrl(void)
++{
++	if (!system_supports_mte())
++		return 0;
++
++	switch (current->thread.sctlr_tcf0) {
++	case SCTLR_EL1_TCF0_SYNC:
++		return PR_MTE_TCF_SYNC;
++	case SCTLR_EL1_TCF0_ASYNC:
++		return PR_MTE_TCF_ASYNC;
++	}
++
++	return 0;
++}
++#else
++static long set_mte_ctrl(unsigned long arg)
++{
++	return 0;
++}
++
++static long get_mte_ctrl(void)
++{
++	return 0;
++}
++#endif
++
+ #ifdef CONFIG_ARM64_TAGGED_ADDR_ABI
+ /*
+  * Control the relaxed ABI allowing tagged user addresses into the kernel.
+@@ -582,9 +678,15 @@ static unsigned int tagged_addr_disabled;
+ 
+ long set_tagged_addr_ctrl(unsigned long arg)
+ {
++	unsigned long valid_mask = PR_TAGGED_ADDR_ENABLE;
++
+ 	if (is_compat_task())
+ 		return -EINVAL;
+-	if (arg & ~PR_TAGGED_ADDR_ENABLE)
++
++	if (system_supports_mte())
++		valid_mask |= PR_MTE_TCF_MASK;
++
++	if (arg & ~valid_mask)
+ 		return -EINVAL;
+ 
+ 	/*
+@@ -594,6 +696,9 @@ long set_tagged_addr_ctrl(unsigned long arg)
+ 	if (arg & PR_TAGGED_ADDR_ENABLE && tagged_addr_disabled)
+ 		return -EINVAL;
+ 
++	if (set_mte_ctrl(arg) != 0)
++		return -EINVAL;
++
+ 	update_thread_flag(TIF_TAGGED_ADDR, arg & PR_TAGGED_ADDR_ENABLE);
+ 
+ 	return 0;
+@@ -601,13 +706,17 @@ long set_tagged_addr_ctrl(unsigned long arg)
+ 
+ long get_tagged_addr_ctrl(void)
+ {
++	long ret = 0;
++
+ 	if (is_compat_task())
+ 		return -EINVAL;
+ 
+ 	if (test_thread_flag(TIF_TAGGED_ADDR))
+-		return PR_TAGGED_ADDR_ENABLE;
++		ret = PR_TAGGED_ADDR_ENABLE;
+ 
+-	return 0;
++	ret |= get_mte_ctrl();
++
++	return ret;
+ }
+ 
+ /*
+diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
+index 7da1b37b27aa..5e9323e66a38 100644
+--- a/include/uapi/linux/prctl.h
++++ b/include/uapi/linux/prctl.h
+@@ -233,5 +233,11 @@ struct prctl_mm_map {
+ #define PR_SET_TAGGED_ADDR_CTRL		55
+ #define PR_GET_TAGGED_ADDR_CTRL		56
+ # define PR_TAGGED_ADDR_ENABLE		(1UL << 0)
++/* MTE tag check fault modes */
++# define PR_MTE_TCF_SHIFT		1
++# define PR_MTE_TCF_NONE		(0UL << PR_MTE_TCF_SHIFT)
++# define PR_MTE_TCF_SYNC		(1UL << PR_MTE_TCF_SHIFT)
++# define PR_MTE_TCF_ASYNC		(2UL << PR_MTE_TCF_SHIFT)
++# define PR_MTE_TCF_MASK		(3UL << PR_MTE_TCF_SHIFT)
+ 
+ #endif /* _LINUX_PRCTL_H */
 
 _______________________________________________
 linux-arm-kernel mailing list
