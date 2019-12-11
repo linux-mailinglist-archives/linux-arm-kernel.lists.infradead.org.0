@@ -2,69 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4144811A515
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 08:27:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECE7B11A522
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 08:33:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mc2qhnNxdWw6QpsCw+66H9+/DYynsV/PO97sLKU/a3g=; b=TcEqG3mxbPplfH
-	52oNmUOx2VUExQeO6xf8tyj5byNEZ9wztIPR26ri9TKkO7O8JR+3rCS7Kbiy1iOOJj9RXSFkkApoX
-	2Ji6llXq9oedFpd2Ow2NsIr0RGxanhC1cXg8u/RbPBh9GqBbzhLk4dz8kmOhXJukN9p8NjBzl8C9E
-	Q11pbvoX88SyML4aNbGbmqWf/leSJP0iOAwRbvLZ6wcoWGS1BNCNvyCDczD9aFXydQOM5NZmdg5PH
-	UEh5/XQxbpJhy3+Q90d0+6w7gYV4KLWde69MvJ9XD1l5B7YSrlSNMxW4QYbUxhbyVp8udQuMEMjLh
-	8AKQG4tgIpdq0RKruyZg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tEoWOv8e0E5LfLvPgIikFrN54oPK9o/8+RcLIIT8QFc=; b=denmXRhh/2goGl
+	v/88VM0HgzEeFnOX3JDiawxjR/XpiMLBPZZ4SeSr7XJo78tkOV4Vm9NZ/Qf+7FPbmbwRzUBBPBTTU
+	7F4Tu3IkvxqPm1DFXvjwmaIAwzYgHIdWHDypveSzmB2RzgyZB+aYdxwdySk1JkobgTtBPp7xcBHUt
+	LGS+tYRZHc3PzklIeLs3ol8pVkGvSTktH+YXv2djxNKzsh8dXEq7L45UsF0Npvzox14ks0kcyrnq+
+	7ODKtI9g/FQT9M9Nd2u6SvTyYD33V0H+MUcqzX7IEhJPxU9RJBtXHKyKvTtGyx2ACyfYrMRRd845Y
+	IjEOjHym6OaNDYHl6E+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iewPN-0000yB-04; Wed, 11 Dec 2019 07:27:41 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iewUV-0003DQ-Po; Wed, 11 Dec 2019 07:32:59 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iewPE-0000xK-Et
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 07:27:33 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1iewP4-0006T3-E2; Wed, 11 Dec 2019 08:27:22 +0100
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1iewP3-0004Eh-6N; Wed, 11 Dec 2019 08:27:21 +0100
-Date: Wed, 11 Dec 2019 08:27:21 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH 1/3] ARM: dts: imx6ul-14x14-evk: Add sensors' GPIO
- regulator
-Message-ID: <20191211072721.ze6yn2felxyae5eb@pengutronix.de>
-References: <1571906920-29966-1-git-send-email-Anson.Huang@nxp.com>
- <VI1PR04MB7023CD288FCC57806F067FD9EE5B0@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <DB3PR0402MB3916D3DB4C0CE0017FC2D4B1F55A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ id 1iewUO-0003CL-3E
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 07:32:53 +0000
+Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 107B07834A358239494C;
+ Wed, 11 Dec 2019 15:32:40 +0800 (CST)
+Received: from linux-ibm.site (10.175.102.37) by
+ DGGEMS403-HUB.china.huawei.com (10.3.19.203) with Microsoft SMTP Server id
+ 14.3.439.0; Wed, 11 Dec 2019 15:32:32 +0800
+From: Hanjun Guo <guohanjun@huawei.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Subject: [PATCH] arm64: armv8_deprecated: update the comments of
+ armv8_deprecated_init()
+Date: Wed, 11 Dec 2019 15:27:33 +0800
+Message-ID: <1576049253-60950-1-git-send-email-guohanjun@huawei.com>
+X-Mailer: git-send-email 1.7.12.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <DB3PR0402MB3916D3DB4C0CE0017FC2D4B1F55A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 08:22:06 up 25 days, 22:40, 33 users,  load average: 0.00, 0.00, 0.00
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-Originating-IP: [10.175.102.37]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_232732_498675_B0C071A3 
-X-CRM114-Status: GOOD (  16.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191210_233252_306155_00BC58C1 
+X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,71 +63,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Hanjun Guo <guohanjun@huawei.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-12-11 01:06, Anson Huang wrote:
-> 
-> 
-> > Subject: Re: [PATCH 1/3] ARM: dts: imx6ul-14x14-evk: Add sensors' GPIO
-> > regulator
-> > 
-> > On 24.10.2019 11:51, Anson Huang wrote:
-> > > On i.MX6UL 14x14 EVK board, sensors' power are controlled by
-> > > GPIO5_IO02, add GPIO regulator for sensors to manage their power.
-> > >
-> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > 
-> > For me this breaks network boot on imx6ul evk, relevant log snippet is this:
-> > 
-> >      fec 20b4000.ethernet eth0: Unable to connect to phy
-> >      IP-Config: Failed to open eth0
-> > 
-> > Looking at schematics (SPF-28616_C2.pdf) I see that SNVS_TAMPER2 pin is
-> > connected to PERI_PWREN which controls VPERI_3V3 which is used across
-> > the board:
-> >   * Sensors (VSENSOR_3V3)
-> >   * Ethernet (VENET_3V3)
-> >   * Bluetooth
-> >   * CAN
-> >   * Arduino header
-> >   * Camera
-> > 
-> > Maybe there are board revision differences? As far as I can tell this regulator
-> > is not specific to sensors so it should be always on.
-> 
-> You are correct, this regulator controls many other peripherals, I should make it always ON for now
-> to make sure NOT break other peripheral, and after all other peripherals controlled
-> by this regulator have added this regulator management, then the always ON can be
-> removed.
+In commit c0d8832e78cb ("arm64: Ensure the instruction emulation is
+ready for userspace"), armv8_deprecated_init() was promoted to
+core_initcall() but the comments were left unchanged, update it now.
 
-IMHO marking the regulator as always on shouldn't be the fix. Is it to
-much work to add all required regulators? At least please add a comment
-which describes the need of the always-on property.
+Spotted by some random reading of the code.
 
-Regards,
-  Marco 
+Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
+---
+ arch/arm64/kernel/armv8_deprecated.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-> Thanks,
-> Anson
-
+diff --git a/arch/arm64/kernel/armv8_deprecated.c b/arch/arm64/kernel/armv8_deprecated.c
+index ca158be..3f6fcf2 100644
+--- a/arch/arm64/kernel/armv8_deprecated.c
++++ b/arch/arm64/kernel/armv8_deprecated.c
+@@ -618,7 +618,8 @@ static int t16_setend_handler(struct pt_regs *regs, u32 instr)
+ };
+ 
+ /*
+- * Invoked as late_initcall, since not needed before init spawned.
++ * Invoked as core_initcall, which can guarantee that the instruction
++ * emulation is ready for userspace.
+  */
+ static int __init armv8_deprecated_init(void)
+ {
 -- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+1.7.12.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
