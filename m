@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 623B611C0DE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 00:53:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24FB711C0F3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 00:54:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aOygE1e0iG/KRvEZ8fh+dDiQ5VmxAYjNNw0wrFJpCIo=; b=V9S5NZUCUyKPEf
-	QToTPg4QLacr6YDtAXyF1AxrgBzTvX5IgsfcaeVDb0PnIFIrw6Z2A7KV65De8gzsBIIHHipDqJhGo
-	kl9+4nJt/wujIwTV4M9YDusPvslbPRbKKlYDdykw3XeR4w+fQ3+VZALLon5pnPU/nLA1UccdoyH4g
-	dK1sxV3kjWXfh6il1bq7thgg4ZKrHrGFHKoJtKXtCOprAmCjXlXTw4cMBOuK1zTsJhxg8WK8MvLju
-	8s4a4WVy3cmJ7tijKU9mdf/bX0Au2tlSHoiYKpbl740Vwvs18OsixK0Zxz0HB7SgCuKxQeXN6alxK
-	AkTaH7XgjN+OAMpRdxqQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lVeLJStOm6J2b1LTtkyJAJkhyv/8g/pJAD/0UMp7Fxc=; b=bMvjxLP/bDFh51
+	KQgHPIjMe90AB6ChSedzRzaoaxewqiibm+QBQLErhDd071gqxU9pzWQ4XZfuKMntY+TGjSj9YjX3O
+	S91lq/YTGytOqpEjDpKUOXd9usqMNx+vOGyVEX6H2mXrlrgn250JIF5xWHT1iOEcBA6yVCdOfTRvu
+	sl1r9OrBu6l1YQs0baV77XsMoT6j8HLcevRJLkn3QAlmxUAg3xXw6Mq5QTYNGpxN3mJSidRchE9hw
+	BbqVJwxNIvL4BvoMiWi4Zvd7+2qAgMaj+4BgGE1eeWuwCx89ZK1IFKNLkokcEvodbctPEbeE9hmEb
+	dmpKGMk3JvRpJVpKfz0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifBnV-0000vC-OD; Wed, 11 Dec 2019 23:53:37 +0000
+	id 1ifBoB-0001Z2-2C; Wed, 11 Dec 2019 23:54:19 +0000
 Received: from mout.web.de ([217.72.192.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifBnF-0000sB-9C; Wed, 11 Dec 2019 23:53:23 +0000
+ id 1ifBnF-0000sC-M9; Wed, 11 Dec 2019 23:53:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1576108386;
- bh=SHwEKS5HfPBsQhvwUPeNKlfOw3SLEczu2hmisG7j3I0=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
- b=aIqzyFzwBvAIkbawHJWO72Fzh/mqzDnJ47gjo+yrZ0emK3xg0COqzKQvdofPbG6W1
- d7UTORKsKVPB8mlcfk9JMtDGKMUW+dFPP6LlKDo6mwJFdQ55GLNRf73sIIj++11RuN
- PlgBQIehl0VmRhZV/cTxU5lHqFlyVkQsgnPN7mnU=
+ s=dbaedf251592; t=1576108388;
+ bh=QrCQqilrTouTgYj7yPQjXnTFJOK16++5KJ6q9dqCzuQ=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=OZLDxo+YhfcGWOq2ZjW1XGmkZRwtMEa9B9St7EgXLEOMeHEizbtlijhXFLk/N0qoz
+ 1+fJdbnjKSi2k+kVhlRJ+Ddd/mmBmYMibz10dF+1OBg6WKTPhoSbiod9KOofyA948D
+ emoZkjekJmVExY4VLQIVrf0OqIDqpZSxTWz1g1NQ=
 X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
 Received: from localhost.localdomain ([89.204.139.166]) by smtp.web.de
  (mrweb101 [213.165.67.124]) with ESMTPSA (Nemesis) id
- 0LhNjo-1hshso0mnI-00mXj0; Thu, 12 Dec 2019 00:53:06 +0100
+ 0MRl5x-1iGpH02iS1-00SxXf; Thu, 12 Dec 2019 00:53:07 +0100
 From: Soeren Moch <smoch@web.de>
 To: Kalle Valo <kvalo@codeaurora.org>,
 	Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2 0/9] brcmfmac: add support for BCM4359 SDIO chipset
-Date: Thu, 12 Dec 2019 00:52:44 +0100
-Message-Id: <20191211235253.2539-1-smoch@web.de>
+Subject: [PATCH v2 1/9] brcmfmac: reset two D11 cores if chip has two D11 cores
+Date: Thu, 12 Dec 2019 00:52:45 +0100
+Message-Id: <20191211235253.2539-2-smoch@web.de>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191211235253.2539-1-smoch@web.de>
+References: <20191211235253.2539-1-smoch@web.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:wlune+MBVxnnPbtH/WJuKIHVW5Kt4Bh3x2TSi6jf84eE1oZeOVU
- dmIZckdKvEOp6T4MOEtvJQgRx77JwjPoOcGEySs5ql5yqY1cwslVBk26J6vh1rviiwMAuad
- k1NAwnKUmVgu/TQ6URsFElTL0U9+2DgdvYs6zDvLSawYziqCa9ESz6goH4pbemoW/JI1hWJ
- z0wb2ZsezZhRj/yGPwUfQ==
+X-Provags-ID: V03:K1:Us4gcuk0RbKR4HQNOPkL/oiRL4tAdmkHERdAxq/8Wll6xa5unY6
+ vc4ERbkOO1hBhlxdSovkzPZ9KF6ywGdKRjYa7y55CjUt/ifWRWTIps60cr3cl9ahlVyaxpL
+ Nq2iiB7gOeo62Y4PROt4/1e7GCvb4gO+errOwi4IcUJX42eqY0n9VdPINUEI8dW7lXJf2ye
+ Y8lk7+vzq15It0JcqoSFg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:5h+qvYh+xgc=:yPWTesPFkaFZunR1Eod+lF
- 2qKdRZ6DCppLTdhLkqMCYqcFmh8UYXKNnRvrmKane6YZKwhFfqgEOFl/wkxwBd6/7wBoIqRGy
- M5W26qWzPxoBqkP1917hy1u72p+UuZdttRBNGM2iV/+xPXJ7XxnSQycad14nt73x6LMKLapY7
- SdsLP60IVD7h6kuu2E4pEXaI1kByLxetc3+DUaVkkYA8grZLbAp7faZZbFKO1TVIzS5aUAxeY
- eFgmLd4U4re5UZLqyd9YgKHj5x5KISZl8Me2v5CB9dvUeYmpHU5/YDkpdDUpThQ4CoeuzS+5g
- UMWMcGM1g7uNZd1t5QtF7nqf40zxtEukWAaPj4v2sUNAja7dryceVeaFddB9THb6/jx8rvDCv
- DWu/9wXZFD877mjmALV3pAWCH793Yf4DBwlSdszpRTiJC8IysS1FIA8NPLfhpD01VKk480Hc6
- M1XB/ydwHTCHMUOZeVHBNQ93h+9XBCkyri+v3ciXp09Z7h42XFiwkqZ874Iva0xa7Qr+o2w4k
- iYOweRTYoSsnKn8CaguvO+qrguwzvSm9ltwA9fyFctTLQv4yBW8WHBxVwPoZBky0qjGWwZDHB
- kACE+SY9SyxUUL+2Lc7SHZB3uenG7XO1A+8U/LGLdvT0O2NTw5J2coJNUONG2KLEwVjaCCy2Q
- +pBQbiKvDiKhUGfv6nUTtkbr9Xn9rfiI5yU7FadQKcnCpKudCGGqFcE4WzkGHLS0+RshMKfhi
- 60qRJZKqUe3/iQzBamiZmg8b4dpXKgil74k/F9tJcNTrLFbMh5sI6lBu0PHP5Pq5mUKR0i/nM
- f2/T/YeZmT9cmtduo6fhV719mFpRLw63HL2VLYsXT1nYkDFKa3aL/UF8gUETQWazXe0SqYEgv
- 1ojGnYZs7WH6VEwQRtDMMcOCxOk+lxKU8EI/TaazwCfDYtUl6W8ecsTta9ZHlNCnyITs2O55O
- C/34cfSS94RetB76ivOVnf/QPCDOHC15FSjuMjHfL4QyjsaQH2ntkqh91NsAb1rM0aiQ8zYzO
- h+n05fHcVMzuByU/O94zRRwLjgHKjvD1PbNT4e5WWazigCvn1NBbA1yOkOkhknZ7QDJR0dNYF
- nYckdKT5YEsrgvE+3Wl5fb9II3K9SLV45+YjpNHQR6/WltwL8ceJ2ZGHXPQO6tmg6Sn7ZOIyD
- Hcu79rZlBnFVFLxRz1X6kWQbSkBool9oS21KSLY1AT637q30RFrPBmZUwe5Bc7+xMnZfPMAlz
- grHTBdSenszURSwg2PPqMcX8zA22rNMMdZ/RAzA==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:+88Ev/9dDg4=:z2IeWqdpeb4UiDzDXawSBY
+ aGmsNDovtHG8mwxFuNhrq9OyZ/gUQOmAMlwyeiqOiyPVeKvbYpHS2WclK7O062I6pN8MQ9Sx1
+ Lrk3EG8jTIo6Ba5x7E6hFNkE2JUhdwQ7Z1K6ymRWvLcUK3ANocVW7z3dP2ejwLfzA45hgoPi1
+ F5Wokbc3wTCW/W8+HsaYOBz3Ik7EAtpcfFYqyqRrw/kCb/L9nI91b407JafIRdnt/duekI6sq
+ X8mHk07N6xi3McZ/dWZUilbZtNjFx0/B7kVt5RqhTrci+V0fPZDqr8BJf9VjhzIDNFRW1PGYt
+ b2HGNFBGluMKTldZNDT8phfSSIss1QfXdyMarIlZmMgXGvA/MLeQWfNQXlf6g5MFc5ve4TFnI
+ QeAToxom+TMk/gj8D243yCeDGpIIdWvOvDqYhoJDlR+ibB8bpwy47rlVufYIB1yWm+iV7UlYZ
+ RvcSS72+FN7QSNP4EkU0CKuSv9btbKC1tqWm2jgTeqWQAnQnCwX26MoPvjI9+vB/FFYclzVkM
+ MksltDd3e6/MIHxNMPSVwHBomyucLipRt2jgMSgL8gUifILepUSLN9oDAUIudTOfMb3b1p2oM
+ U5n8Z8Lh8ABCnFlb+6CG0miBqC2HrSTgvmaM2onU5MRHSCUopNuiyk83DdU9CCkgYT639e0O7
+ L8XcjRvSa0TxsUu3h+0JdOu1BDpD4ZlckIvTXU+5UmEFCUokIeoRN4scySgqaINUOlAk5kB8+
+ Q9BKn/9VgwWMfQYAwBdcsR/SpqdspfkCT7b5SarpkvQzHU3x7npAHgQZ2bIy37vf/d32lDufe
+ dLPvVjb5ZhulNO5nTrWfe6jIvNdxBXCMR24ODnJ85EXh0RHJy1sV2j5zf8VXeh/2e7i34Gw4U
+ 2R4jE3mwPBIKKZp6mUa5dE1DVyCGE7Pw10cVbAe2a4c5vhd/I24f7w55RFChaNLGEhXG7J/Bq
+ lRsI+1yABHbXTL28NG8zSLRboH9GN9gpfZreuzSZEPThPKv2QW9lzUs6gN3sNHYxdIs/rYpte
+ nsCQ4rY5l9gAslr1HMDnnbPujEkpM3/bBS5aJ9TChVjVs/BNfDv6mCB5IJ2KCggfoIPRhQRFG
+ uqCE/eToDktOZ1czy6n/wQyM3yTWFH5zu0gr54Gu5MHpHv4hx3A0M+uVM+9lzeLaHI9ore98M
+ fDZU3r2s0muCJ7UC1rNn+e+zQ5ZQAPnzrQUADrdWJaJdtexNlcig2I+VuvRxnFLfTwFgXq1t9
+ di3sCBWONCqTgyshjaj1kaT2cFCc/oDCh/9NYVQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_155321_657528_E502F29D 
-X-CRM114-Status: UNSURE (   8.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_155322_017512_F97150C6 
+X-CRM114-Status: GOOD (  12.66  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -98,50 +99,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: brcm80211-dev-list.pdl@broadcom.com, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+Cc: brcm80211-dev-list.pdl@broadcom.com,
+ Arend van Spriel <arend.vanspriel@broadcom.com>, netdev@vger.kernel.org,
+ Chi-Hsien Lin <chi-hsien.lin@cypress.com>, linux-wireless@vger.kernel.org,
+ Hante Meuleman <hante.meuleman@broadcom.com>, linux-kernel@vger.kernel.org,
  linux-rockchip@lists.infradead.org, Soeren Moch <smoch@web.de>,
- brcm80211-dev-list@cypress.com, linux-arm-kernel@lists.infradead.org
+ Wright Feng <wright.feng@cypress.com>, brcm80211-dev-list@cypress.com,
+ linux-arm-kernel@lists.infradead.org, Franky Lin <franky.lin@broadcom.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for the BCM4359 chipset with SDIO interface and RSDB support
-to the brcmfmac wireless network driver in patches 1-7.
+From: Wright Feng <wright.feng@cypress.com>
 
-Enhance devicetree of the RockPro64 arm64/rockchip board to use an
-AP6359SA based wifi/bt combo module with this chipset in patches 8-9.
+There are two D11 cores in RSDB chips like 4359. We have to reset two
+D11 cores simutaneously before firmware download, or the firmware may
+not be initialized correctly and cause "fw initialized failed" error.
 
-
-Chung-Hsien Hsu (1):
-  brcmfmac: set F2 blocksize and watermark for 4359
-
-Soeren Moch (5):
-  brcmfmac: fix rambase for 4359/9
-  brcmfmac: make errors when setting roaming parameters non-fatal
-  brcmfmac: add support for BCM4359 SDIO chipset
-  arm64: dts: rockchip: RockPro64: enable wifi module at sdio0
-  arm64: dts: rockchip: RockPro64: hook up bluetooth at uart0
-
-Wright Feng (3):
-  brcmfmac: reset two D11 cores if chip has two D11 cores
-  brcmfmac: add RSDB condition when setting interface combinations
-  brcmfmac: not set mbss in vif if firmware does not support MBSS
-
- .../boot/dts/rockchip/rk3399-rockpro64.dts    | 50 +++++++++++---
- .../broadcom/brcm80211/brcmfmac/bcmsdh.c      |  8 ++-
- .../broadcom/brcm80211/brcmfmac/cfg80211.c    | 68 +++++++++++++++----
- .../broadcom/brcm80211/brcmfmac/chip.c        | 54 ++++++++++++++-
- .../broadcom/brcm80211/brcmfmac/chip.h        |  1 +
- .../broadcom/brcm80211/brcmfmac/pcie.c        |  2 +-
- .../broadcom/brcm80211/brcmfmac/sdio.c        | 17 +++++
- include/linux/mmc/sdio_ids.h                  |  2 +
- 8 files changed, 176 insertions(+), 26 deletions(-)
-
+Signed-off-by: Wright Feng <wright.feng@cypress.com>
+Signed-off-by: Soeren Moch <smoch@web.de>
+Reviewed-by: Chi-Hsien Lin <chi-hsien.lin@cypress.com>
 ---
+changes in v2:
+- add missing s-o-b
+- add review tag received for v1
+
 Cc: Kalle Valo <kvalo@codeaurora.org>
 Cc: Heiko Stuebner <heiko@sntech.de>
+Cc: Arend van Spriel <arend.vanspriel@broadcom.com>
+Cc: Franky Lin <franky.lin@broadcom.com>
+Cc: Hante Meuleman <hante.meuleman@broadcom.com>
+Cc: Chi-Hsien Lin <chi-hsien.lin@cypress.com>
+Cc: Wright Feng <wright.feng@cypress.com>
 Cc: linux-wireless@vger.kernel.org
 Cc: brcm80211-dev-list.pdl@broadcom.com
 Cc: brcm80211-dev-list@cypress.com
@@ -149,6 +139,119 @@ Cc: netdev@vger.kernel.org
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-rockchip@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
+---
+ .../broadcom/brcm80211/brcmfmac/chip.c        | 50 +++++++++++++++++++
+ .../broadcom/brcm80211/brcmfmac/chip.h        |  1 +
+ .../broadcom/brcm80211/brcmfmac/pcie.c        |  2 +-
+ 3 files changed, 52 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
+index a795d781b4c5..0b5fbe5d8270 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
+@@ -433,11 +433,25 @@ static void brcmf_chip_ai_resetcore(struct brcmf_core_priv *core, u32 prereset,
+ {
+ 	struct brcmf_chip_priv *ci;
+ 	int count;
++	struct brcmf_core *d11core2 = NULL;
++	struct brcmf_core_priv *d11priv2 = NULL;
+
+ 	ci = core->chip;
+
++	/* special handle two D11 cores reset */
++	if (core->pub.id == BCMA_CORE_80211) {
++		d11core2 = brcmf_chip_get_d11core(&ci->pub, 1);
++		if (d11core2) {
++			brcmf_dbg(INFO, "found two d11 cores, reset both\n");
++			d11priv2 = container_of(d11core2,
++						struct brcmf_core_priv, pub);
++		}
++	}
++
+ 	/* must disable first to work for arbitrary current core state */
+ 	brcmf_chip_ai_coredisable(core, prereset, reset);
++	if (d11priv2)
++		brcmf_chip_ai_coredisable(d11priv2, prereset, reset);
+
+ 	count = 0;
+ 	while (ci->ops->read32(ci->ctx, core->wrapbase + BCMA_RESET_CTL) &
+@@ -449,9 +463,30 @@ static void brcmf_chip_ai_resetcore(struct brcmf_core_priv *core, u32 prereset,
+ 		usleep_range(40, 60);
+ 	}
+
++	if (d11priv2) {
++		count = 0;
++		while (ci->ops->read32(ci->ctx,
++				       d11priv2->wrapbase + BCMA_RESET_CTL) &
++				       BCMA_RESET_CTL_RESET) {
++			ci->ops->write32(ci->ctx,
++					 d11priv2->wrapbase + BCMA_RESET_CTL,
++					 0);
++			count++;
++			if (count > 50)
++				break;
++			usleep_range(40, 60);
++		}
++	}
++
+ 	ci->ops->write32(ci->ctx, core->wrapbase + BCMA_IOCTL,
+ 			 postreset | BCMA_IOCTL_CLK);
+ 	ci->ops->read32(ci->ctx, core->wrapbase + BCMA_IOCTL);
++
++	if (d11priv2) {
++		ci->ops->write32(ci->ctx, d11priv2->wrapbase + BCMA_IOCTL,
++				 postreset | BCMA_IOCTL_CLK);
++		ci->ops->read32(ci->ctx, d11priv2->wrapbase + BCMA_IOCTL);
++	}
+ }
+
+ char *brcmf_chip_name(u32 id, u32 rev, char *buf, uint len)
+@@ -1109,6 +1144,21 @@ void brcmf_chip_detach(struct brcmf_chip *pub)
+ 	kfree(chip);
+ }
+
++struct brcmf_core *brcmf_chip_get_d11core(struct brcmf_chip *pub, u8 unit)
++{
++	struct brcmf_chip_priv *chip;
++	struct brcmf_core_priv *core;
++
++	chip = container_of(pub, struct brcmf_chip_priv, pub);
++	list_for_each_entry(core, &chip->cores, list) {
++		if (core->pub.id == BCMA_CORE_80211) {
++			if (unit-- == 0)
++				return &core->pub;
++		}
++	}
++	return NULL;
++}
++
+ struct brcmf_core *brcmf_chip_get_core(struct brcmf_chip *pub, u16 coreid)
+ {
+ 	struct brcmf_chip_priv *chip;
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.h b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.h
+index 7b00f6a59e89..8fa38658e727 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.h
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.h
+@@ -74,6 +74,7 @@ struct brcmf_chip *brcmf_chip_attach(void *ctx,
+ 				     const struct brcmf_buscore_ops *ops);
+ void brcmf_chip_detach(struct brcmf_chip *chip);
+ struct brcmf_core *brcmf_chip_get_core(struct brcmf_chip *chip, u16 coreid);
++struct brcmf_core *brcmf_chip_get_d11core(struct brcmf_chip *pub, u8 unit);
+ struct brcmf_core *brcmf_chip_get_chipcommon(struct brcmf_chip *chip);
+ struct brcmf_core *brcmf_chip_get_pmu(struct brcmf_chip *pub);
+ bool brcmf_chip_iscoreup(struct brcmf_core *core);
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
+index f64ce5074a55..7ac72804e285 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/pcie.c
+@@ -78,7 +78,7 @@ static const struct brcmf_firmware_mapping brcmf_pcie_fwnames[] = {
+ 	BRCMF_FW_ENTRY(BRCM_CC_4371_CHIP_ID, 0xFFFFFFFF, 4371),
+ };
+
+-#define BRCMF_PCIE_FW_UP_TIMEOUT		2000 /* msec */
++#define BRCMF_PCIE_FW_UP_TIMEOUT		5000 /* msec */
+
+ #define BRCMF_PCIE_REG_MAP_SIZE			(32 * 1024)
 
 --
 2.17.1
