@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 682A311B0FE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:27:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB1D811B110
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:28:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RPVQQ7pMJ0vPrJ7nAUEHcLNeWz/gYNfAp7auKvTbBUA=; b=scGw5Rgwez/DgS
-	dVfgi/d8g7iuibHB4en/E2jkXluAtunaff/lZ5RMtqJNwcTPgpwds+mx954GYqkaVzb4SPfJqn2Hr
-	9ixI1oXW+C3bJsH3aV/vW2EVZVkTuAEmvDSuhKhn4tBDWZDd4u5QgeRHt4iU+nq2ZR+QSdeS/8Gov
-	5ZMTwNg+8Upz1KoI6EF5K78q7NQ1tltvb3QsHYaw2+zKMtnW5Ona19UdgR5ZgWzBxvnNZLJpKduqA
-	at/Qe8WYl436uynBa1LxZAMLLXqdBGqlaaIqSk9Yl0Qj2rXNHnqCkjJfR5AMShEaX9otIBY2Y23ut
-	QRDM7/R9WuD8CdccWZ+w==;
+	List-Owner; bh=u5DOi43SwM3d/4xO8SEKcOy71M2qkVaupHVGkuNizvs=; b=jQUKOfVxb4cAlk
+	35m5RyMVZPvSXMrJz30shpGM1ECT+YXBFV3oJr3jY3Em1VGCxDVH5kv4EXE3Q5AQeDfKGCkkKSmFz
+	tcnVEI2LuZshk7qQbwvCRQ5NskAPQRuyuJh7D5S4h3lNp1+Ui+Z6rFFAbpnQtqBJys488scyDgQjd
+	Mhcqf4lGrzCQgKuejDV9XVhn6gZJMcliEsOod3wX0BiFqiEfOnuHyeAo7lrhK5uZp7aCJc3O+fMQJ
+	Q3agcIfGV67RVtXaDNZ0AsqNhp1mDYou5FokWjJ3i/UI215lLwgq/kRqtE303dhbxC1s5u1OMmud3
+	v5W0dxZBIV7zMWvru7yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if3tx-0004Oz-5j; Wed, 11 Dec 2019 15:27:45 +0000
+	id 1if3uQ-0004oe-No; Wed, 11 Dec 2019 15:28:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if3tq-0004Nf-05
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:27:39 +0000
+ id 1if3uG-0004n4-9O
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:28:05 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F1C06222C4;
- Wed, 11 Dec 2019 15:27:36 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 42330222C4;
+ Wed, 11 Dec 2019 15:28:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576078057;
- bh=lQByssjgqWaVZWGX1nyIVM5aR1JZ2it8lsG75l/CR1s=;
+ s=default; t=1576078084;
+ bh=nOm+tV4ZUwxfkY1cs2BzzyQcL1QNwQg1T6MXmVbtODE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fyEz/ekuPm0VAL/5WLsJHwdJ6Til5jgeiDkmw63ddywzu5+GERJaLs7SR2ksf0ltW
- YJUCtDlAX/L9KNlX69HULSdg4z0ovU9Kc1Xnps+tXzOeRFmnRTNj3T34ZzIV6rK2OO
- vx6vviJSjsh+A19WIYWC0zbcF9HCw7Mwz1mfLb9U=
+ b=pENIiWEFF7s0zb+vXLey5+M7hJV/axRsEbOP32w2LngFIjclW8ImWWysAJhR0YQWP
+ HZv1cXDwZkl8P7TMCMA6de5D47IeHx6ChI4vN2B5Cr6YjBZ9fdQFdtjMFApHajehXC
+ oYXYTUgIrXQoBWj6zss2og1BViY5SyGLVh/lQMR4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 50/79] ARM: 8937/1: spectre-v2: remove Brahma-B53
- from hardening
-Date: Wed, 11 Dec 2019 10:26:14 -0500
-Message-Id: <20191211152643.23056-50-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 74/79] libfdt: define INT32_MAX and UINT32_MAX in
+ libfdt_env.h
+Date: Wed, 11 Dec 2019 10:26:38 -0500
+Message-Id: <20191211152643.23056-74-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191211152643.23056-1-sashal@kernel.org>
 References: <20191211152643.23056-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_072738_064979_D1F4BD30 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20191211_072804_343252_C7D06DDB 
+X-CRM114-Status: GOOD (  11.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,51 +80,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Russell King <rmk+kernel@armlinux.org.uk>, Doug Berger <opendmb@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org, Rob Herring <robh@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Doug Berger <opendmb@gmail.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
 
-[ Upstream commit 4ae5061a19b550dfe25397843427ed2ebab16b16 ]
+[ Upstream commit a8de1304b7df30e3a14f2a8b9709bb4ff31a0385 ]
 
-When the default processor handling was added to the function
-cpu_v7_spectre_init() it only excluded other ARM implemented processor
-cores. The Broadcom Brahma B53 core is not implemented by ARM so it
-ended up falling through into the set of processors that attempt to use
-the ARM_SMCCC_ARCH_WORKAROUND_1 service to harden the branch predictor.
+The DTC v1.5.1 added references to (U)INT32_MAX.
 
-Since this workaround is not necessary for the Brahma-B53 this commit
-explicitly checks for it and prevents it from applying a branch
-predictor hardening workaround.
+This is no problem for user-space programs since <stdint.h> defines
+(U)INT32_MAX along with (u)int32_t.
 
-Fixes: 10115105cb3a ("ARM: spectre-v2: add firmware based hardening")
-Signed-off-by: Doug Berger <opendmb@gmail.com>
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+For the kernel space, libfdt_env.h needs to be adjusted before we
+pull in the changes.
+
+In the kernel, we usually use s/u32 instead of (u)int32_t for the
+fixed-width types.
+
+Accordingly, we already have S/U32_MAX for their max values.
+So, we should not add (U)INT32_MAX to <linux/limits.h> any more.
+
+Instead, add them to the in-kernel libfdt_env.h to compile the
+latest libfdt.
+
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+Signed-off-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/mm/proc-v7-bugs.c | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm/boot/compressed/libfdt_env.h | 4 +++-
+ arch/powerpc/boot/libfdt_env.h        | 2 ++
+ include/linux/libfdt_env.h            | 3 +++
+ 3 files changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/mm/proc-v7-bugs.c b/arch/arm/mm/proc-v7-bugs.c
-index 9a07916af8dd2..a6554fdb56c54 100644
---- a/arch/arm/mm/proc-v7-bugs.c
-+++ b/arch/arm/mm/proc-v7-bugs.c
-@@ -65,6 +65,9 @@ static void cpu_v7_spectre_init(void)
- 		break;
+diff --git a/arch/arm/boot/compressed/libfdt_env.h b/arch/arm/boot/compressed/libfdt_env.h
+index b36c0289a308e..6a0f1f524466e 100644
+--- a/arch/arm/boot/compressed/libfdt_env.h
++++ b/arch/arm/boot/compressed/libfdt_env.h
+@@ -2,11 +2,13 @@
+ #ifndef _ARM_LIBFDT_ENV_H
+ #define _ARM_LIBFDT_ENV_H
  
- #ifdef CONFIG_ARM_PSCI
-+	case ARM_CPU_PART_BRAHMA_B53:
-+		/* Requires no workaround */
-+		break;
- 	default:
- 		/* Other ARM CPUs require no workaround */
- 		if (read_cpuid_implementor() == ARM_CPU_IMP_ARM)
++#include <linux/limits.h>
+ #include <linux/types.h>
+ #include <linux/string.h>
+ #include <asm/byteorder.h>
+ 
+-#define INT_MAX			((int)(~0U>>1))
++#define INT32_MAX	S32_MAX
++#define UINT32_MAX	U32_MAX
+ 
+ typedef __be16 fdt16_t;
+ typedef __be32 fdt32_t;
+diff --git a/arch/powerpc/boot/libfdt_env.h b/arch/powerpc/boot/libfdt_env.h
+index 2abc8e83b95e9..9757d4f6331e7 100644
+--- a/arch/powerpc/boot/libfdt_env.h
++++ b/arch/powerpc/boot/libfdt_env.h
+@@ -6,6 +6,8 @@
+ #include <string.h>
+ 
+ #define INT_MAX			((int)(~0U>>1))
++#define UINT32_MAX		((u32)~0U)
++#define INT32_MAX		((s32)(UINT32_MAX >> 1))
+ 
+ #include "of.h"
+ 
+diff --git a/include/linux/libfdt_env.h b/include/linux/libfdt_env.h
+index edb0f0c309044..1adf54aad2df1 100644
+--- a/include/linux/libfdt_env.h
++++ b/include/linux/libfdt_env.h
+@@ -7,6 +7,9 @@
+ 
+ #include <asm/byteorder.h>
+ 
++#define INT32_MAX	S32_MAX
++#define UINT32_MAX	U32_MAX
++
+ typedef __be16 fdt16_t;
+ typedef __be32 fdt32_t;
+ typedef __be64 fdt64_t;
 -- 
 2.20.1
 
