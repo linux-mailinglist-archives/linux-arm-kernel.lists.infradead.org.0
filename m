@@ -2,49 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E78C511A6F0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:26:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABCE611A6FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:27:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tCQXc+2KCzPWHsglxGivf1ilceA0omfGEwrLjBPOIb4=; b=eX3
-	nvXWX6QBaAIUeJovqkrsYgIXHgQ8cCWPCUZPMUBbjQeuEeclUkYoEmgHsPuGm1IkXAfIKZ7NeVfcm
-	M7/iTzS9IuYsI9/z9FvPsUCKWBbKHb4XsZfHF9snh3IUU9A9S9W9nI3vZPRRypCWWMUgCp3R+wOK4
-	bTxpsdcoW/OdnFO3mD5hC0vjNLNSBgmezW/ilx/d8g/X8YO0rwXzHoUZJ2LDweJhRU5SRHsmrLyug
-	5edLV5pRNsRLfeRDWfIF+yWAiiy0uBe9YVr7/oko486SrvwDpCIs7m+vZE0P3O+qeLdEPz8RP+BeR
-	a2mSWXQNU/0jdoxJuvo5Feslm9q0oDA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=FmqbJcEAt5Rx9j7X6PHpOCubyX6mW54a3im373ydKzA=; b=dw7nNw4a5oUslVinJMAQAuTcM9
+	P8wVoI+sLKi5/ictbdgLLAiYJ8Zx4pjlPqMg+VqNkV4zUvzUL8JcjIhrWTbf82OVXtiyKoVwOGPXN
+	sCTEwrRaS+FvxnFxPWcpFfyLygk457cNUUez2b99NANLWERhcu0r70W5HCJwA3i6gvCMJWUTSuGG8
+	hsXQyMCM62eGdrPEiQkC37E6iGhfi4Z4fgXqxuxSfvQMG9Ttxx8m5oMGJ+hvyRrNehAiDGDcDAk6c
+	u74DMk2qZxxnttCaYcQUu+i9UELqaUsu0JNbYAQ1+cpP0LNEAsVaE3S0uKYd/JsdttNNmAQfaoKzN
+	HqiVOOcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieyGB-0007GH-Hm; Wed, 11 Dec 2019 09:26:19 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1ieyHH-0008Dn-V6; Wed, 11 Dec 2019 09:27:27 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieyFy-0007Dp-HE
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:26:07 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 295812008DD;
+ id 1ieyFz-0007Dq-5V
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:26:10 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B092D1A05EB;
  Wed, 11 Dec 2019 10:26:02 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1B830200987;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A29721A0C28;
  Wed, 11 Dec 2019 10:26:02 +0100 (CET)
 Received: from fsr-ub1664-175.ea.freescale.net
  (fsr-ub1664-175.ea.freescale.net [10.171.82.40])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 9715620568;
- Wed, 11 Dec 2019 10:26:01 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 29E1920568;
+ Wed, 11 Dec 2019 10:26:02 +0100 (CET)
 From: Abel Vesa <abel.vesa@nxp.com>
 To: Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
  Sascha Hauer <kernel@pengutronix.de>
-Subject: [RESEND v2 00/11] clk: imx: Trivial cleanups for clk_hw based API
-Date: Wed, 11 Dec 2019 11:25:39 +0200
-Message-Id: <1576056350-20715-1-git-send-email-abel.vesa@nxp.com>
+Subject: [RESEND v2 01/11] clk: imx: Add correct failure handling for clk
+ based helpers
+Date: Wed, 11 Dec 2019 11:25:40 +0200
+Message-Id: <1576056350-20715-2-git-send-email-abel.vesa@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1576056350-20715-1-git-send-email-abel.vesa@nxp.com>
+References: <1576056350-20715-1-git-send-email-abel.vesa@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_012606_708305_0FB946C4 
-X-CRM114-Status: UNSURE (   5.53  )
+X-CRM114-CacheID: sfid-20191211_012607_479268_5E9736D6 
+X-CRM114-Status: UNSURE (   8.21  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -52,7 +56,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,38 +82,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Shawn, just rebased on your clk/imx branch as requested.
+If the clk_hw based API returns an error, trying to return the clk from
+hw will end up in a NULL pointer dereference. So adding the to_clk
+checker and using it inside every clk based macro helper we handle that
+case correctly.
 
-Abel Vesa (11):
-  clk: imx: Add correct failure handling for clk based helpers
-  clk: imx: Rename the SCCG to SSCG
-  clk: imx: Replace all the clk based helpers with macros
-  clk: imx: pllv1: Switch to clk_hw based API
-  clk: imx: pllv2: Switch to clk_hw based API
-  clk: imx: imx7ulp composite: Rename to show is clk_hw based
-  clk: imx: Rename sccg and frac pll register to suggest clk_hw
-  clk: imx: Rename the imx_clk_pllv4 to imply it's clk_hw based
-  clk: imx: Rename the imx_clk_pfdv2 to imply it's clk_hw based
-  clk: imx: Rename the imx_clk_divider_gate to imply it's clk_hw based
-  clk: imx7up: Rename the clks to hws
+This to_clk is also temporary and will go away along with the clk based
+macro helpers once there is no user that need them anymore.
 
- drivers/clk/imx/Makefile             |   2 +-
- drivers/clk/imx/clk-composite-7ulp.c |   2 +-
- drivers/clk/imx/clk-divider-gate.c   |   2 +-
- drivers/clk/imx/clk-frac-pll.c       |   7 +-
- drivers/clk/imx/clk-imx7ulp.c        | 182 ++++++------
- drivers/clk/imx/clk-imx8mq.c         |   6 +-
- drivers/clk/imx/clk-pfdv2.c          |   2 +-
- drivers/clk/imx/clk-pllv1.c          |  14 +-
- drivers/clk/imx/clk-pllv2.c          |  14 +-
- drivers/clk/imx/clk-pllv4.c          |   2 +-
- drivers/clk/imx/clk-sccg-pll.c       | 549 -----------------------------------
- drivers/clk/imx/clk-sscg-pll.c       | 549 +++++++++++++++++++++++++++++++++++
- drivers/clk/imx/clk.h                | 102 ++++---
- 13 files changed, 724 insertions(+), 709 deletions(-)
- delete mode 100644 drivers/clk/imx/clk-sccg-pll.c
- create mode 100644 drivers/clk/imx/clk-sscg-pll.c
+Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+---
+ drivers/clk/imx/clk.h | 37 ++++++++++++++++++++++---------------
+ 1 file changed, 22 insertions(+), 15 deletions(-)
 
+diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
+index 81122c9..00ec481 100644
+--- a/drivers/clk/imx/clk.h
++++ b/drivers/clk/imx/clk.h
+@@ -55,48 +55,48 @@ extern struct imx_pll14xx_clk imx_1443x_pll;
+ extern struct imx_pll14xx_clk imx_1443x_dram_pll;
+ 
+ #define imx_clk_cpu(name, parent_name, div, mux, pll, step) \
+-	imx_clk_hw_cpu(name, parent_name, div, mux, pll, step)->clk
++	to_clk(imx_clk_hw_cpu(name, parent_name, div, mux, pll, step))
+ 
+ #define clk_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
+ 				cgr_val, clk_gate_flags, lock, share_count) \
+-	clk_hw_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
+-				cgr_val, clk_gate_flags, lock, share_count)->clk
++	to_clk(clk_hw_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
++				cgr_val, clk_gate_flags, lock, share_count))
+ 
+ #define imx_clk_pllv3(type, name, parent_name, base, div_mask) \
+-	imx_clk_hw_pllv3(type, name, parent_name, base, div_mask)->clk
++	to_clk(imx_clk_hw_pllv3(type, name, parent_name, base, div_mask))
+ 
+ #define imx_clk_pfd(name, parent_name, reg, idx) \
+-	imx_clk_hw_pfd(name, parent_name, reg, idx)->clk
++	to_clk(imx_clk_hw_pfd(name, parent_name, reg, idx))
+ 
+ #define imx_clk_gate_exclusive(name, parent, reg, shift, exclusive_mask) \
+-	imx_clk_hw_gate_exclusive(name, parent, reg, shift, exclusive_mask)->clk
++	to_clk(imx_clk_hw_gate_exclusive(name, parent, reg, shift, exclusive_mask))
+ 
+ #define imx_clk_fixed_factor(name, parent, mult, div) \
+-	imx_clk_hw_fixed_factor(name, parent, mult, div)->clk
++	to_clk(imx_clk_hw_fixed_factor(name, parent, mult, div))
+ 
+ #define imx_clk_divider2(name, parent, reg, shift, width) \
+-	imx_clk_hw_divider2(name, parent, reg, shift, width)->clk
++	to_clk(imx_clk_hw_divider2(name, parent, reg, shift, width))
+ 
+ #define imx_clk_gate_dis(name, parent, reg, shift) \
+-	imx_clk_hw_gate_dis(name, parent, reg, shift)->clk
++	to_clk(imx_clk_hw_gate_dis(name, parent, reg, shift))
+ 
+ #define imx_clk_gate2(name, parent, reg, shift) \
+-	imx_clk_hw_gate2(name, parent, reg, shift)->clk
++	to_clk(imx_clk_hw_gate2(name, parent, reg, shift))
+ 
+ #define imx_clk_gate2_flags(name, parent, reg, shift, flags) \
+-	imx_clk_hw_gate2_flags(name, parent, reg, shift, flags)->clk
++	to_clk(imx_clk_hw_gate2_flags(name, parent, reg, shift, flags))
+ 
+ #define imx_clk_gate2_shared2(name, parent, reg, shift, share_count) \
+-	imx_clk_hw_gate2_shared2(name, parent, reg, shift, share_count)->clk
++	to_clk(imx_clk_hw_gate2_shared2(name, parent, reg, shift, share_count))
+ 
+ #define imx_clk_gate3(name, parent, reg, shift) \
+-	imx_clk_hw_gate3(name, parent, reg, shift)->clk
++	to_clk(imx_clk_hw_gate3(name, parent, reg, shift))
+ 
+ #define imx_clk_gate4(name, parent, reg, shift) \
+-	imx_clk_hw_gate4(name, parent, reg, shift)->clk
++	to_clk(imx_clk_hw_gate4(name, parent, reg, shift))
+ 
+ #define imx_clk_mux(name, reg, shift, width, parents, num_parents) \
+-	imx_clk_hw_mux(name, reg, shift, width, parents, num_parents)->clk
++	to_clk(imx_clk_hw_mux(name, reg, shift, width, parents, num_parents))
+ 
+ struct clk *imx_clk_pll14xx(const char *name, const char *parent_name,
+ 		 void __iomem *base, const struct imx_pll14xx_clk *pll_clk);
+@@ -199,6 +199,13 @@ struct clk_hw *imx_clk_hw_fixup_mux(const char *name, void __iomem *reg,
+ 			      u8 shift, u8 width, const char * const *parents,
+ 			      int num_parents, void (*fixup)(u32 *val));
+ 
++static inline struct clk *to_clk(struct clk_hw *hw)
++{
++	if (IS_ERR_OR_NULL(hw))
++		return ERR_CAST(hw);
++	return hw->clk;
++}
++
+ static inline struct clk *imx_clk_fixed(const char *name, int rate)
+ {
+ 	return clk_register_fixed_rate(NULL, name, NULL, 0, rate);
 -- 
 2.7.4
 
