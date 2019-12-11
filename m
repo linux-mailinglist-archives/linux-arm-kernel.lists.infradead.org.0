@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 219A011AF30
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:12:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 059A211AF4A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:12:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0P/l/CDBtigLRHB+FMUo4wiQYkqFtBfnM1aaE5o6bug=; b=LDBAHjGKsnx/AS
-	2omA54klRMDJ2toG82HxmXeS0NTC8bfn4ixm/4Q1WBV31qUL68QneriifCjb6OS0Sh8PB3XLKLvUs
-	66+dOcPgJbUyKiExiiJ00UpSv7A/Vbx/iG5qkZJugGUlNhUl3Cge6KFc7PBFj/e5lXfSAiKpkfMrD
-	r5abrpG7qF2y0p5Dug5D3kWPiiqA2R0mlGiU9IepW0kOsbcoL0v9qmoN5AGes0RrAdlKHaBHTCBRf
-	oPLLR/Kp8/GrgHFiR1G5PHadf53wtEnRQFDE8SKxnvI1TKuEQOI3fbZ7PtW5FdK/4arsaoQ0/4Pfk
-	089bjmxNTtBYQ/EycDKw==;
+	List-Owner; bh=mbHjE56PnWVWvYRRaFQi7s40utGPojGq8LYW5wcYYSs=; b=VijqhcvGDy/i4J
+	+e9uHAw6BWPP+ruKZyZPzhzO3VcXXbD+cSOCxY9q8tGZRrrDqUPgzinPyuVjllUqjKqphStzNkSL8
+	FW6eJ7o3yUTshVc3rP1lZaVLaPyv8F2P/4yjZfKegIk8kj2WsZ7vpPZw4cufJ0viW2ke+LEAI73as
+	wRE0Bu6Ckik/bCizHXWjij3G17Iz4UvMVabSBSfH4mGJpIqTpedLXYlz3N6f3CJGW4bggXuF+DN+m
+	Y8zsfSALh9MmNioDw2h5OjyAcTbMNEH8ijY7oMWdIDot9DfLwcfehvMNsTBWJxMKwwj60RWXA4lQY
+	64TJtTolcDFxATHeiZdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if3ez-00028J-G3; Wed, 11 Dec 2019 15:12:17 +0000
+	id 1if3fD-0002MC-G8; Wed, 11 Dec 2019 15:12:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if3eo-00027k-L7; Wed, 11 Dec 2019 15:12:07 +0000
+ id 1if3eq-00028D-MJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:12:10 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2F5C724658;
- Wed, 11 Dec 2019 15:12:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 90F2C208C3;
+ Wed, 11 Dec 2019 15:12:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576077126;
- bh=IEDH//bhdQztlOqOo+cfwWB4wM8CT2ZDR64ODrpGXpU=;
+ s=default; t=1576077128;
+ bh=I2kL1eyh/q9jqbz6IjKwTQx2WHD3sCRx/+BtxzJk3T0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ASfCZsr8aNmgPSL1M+6kupNFfLQJvSZgKsM//pdyMqHr1sDp/5vZb7GauO0pEltxE
- 7H1gJwjf/cng57mgJFVyGVCowkZrx8HoMgglqGjQmgPom2nTTxVg+RAByr3/PNkkeL
- V0vRDMZlBUgiZtzbv9e9MOQCM6l7v2sryYUu260k=
+ b=nrmKqAIPxUiWWw+o928mlB+seHZmtt1pWFIwFBRNTqndVI2vdnd+ba6sLKlnFkO3t
+ 7Vdl3ECgmgSU6y8IBNJcICejomPOEstp9QzBt2kYI847N7uS4DynTtXr8T6NbXEPaT
+ j3RRQow0rd43W6O+3CKPmSd9+7qlSoWLNJcXoobw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 014/134] iommu: rockchip: Free domain on
- .domain_free
-Date: Wed, 11 Dec 2019 10:09:50 -0500
-Message-Id: <20191211151150.19073-14-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 016/134] dmaengine: xilinx_dma: Clear
+ desc_pendingcount in xilinx_dma_reset
+Date: Wed, 11 Dec 2019 10:09:52 -0500
+Message-Id: <20191211151150.19073-16-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191211151150.19073-1-sashal@kernel.org>
 References: <20191211151150.19073-1-sashal@kernel.org>
@@ -49,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_071206_711466_CD38DF3A 
-X-CRM114-Status: GOOD (  12.45  )
+X-CRM114-CacheID: sfid-20191211_071208_761443_4F9B6F50 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,71 +81,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Joerg Roedel <jroedel@suse.de>,
- Heiko Stuebner <heiko@sntech.de>, Ezequiel Garcia <ezequiel@collabora.com>,
- linux-rockchip@lists.infradead.org, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ Vinod Koul <vkoul@kernel.org>, dmaengine@vger.kernel.org,
+ Nicholas Graumann <nick.graumann@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ezequiel Garcia <ezequiel@collabora.com>
+From: Nicholas Graumann <nick.graumann@gmail.com>
 
-[ Upstream commit 42bb97b80f2e3bf592e3e99d109b67309aa1b30e ]
+[ Upstream commit 8a631a5a0f7d4a4a24dba8587d5d9152be0871cc ]
 
-IOMMU domain resource life is well-defined, managed
-by .domain_alloc and .domain_free.
+Whenever we reset the channel, we need to clear desc_pendingcount
+along with desc_submitcount. Otherwise when a new transaction is
+submitted, the irq coalesce level could be programmed to an incorrect
+value in the axidma case.
 
-Therefore, domain-specific resources shouldn't be tied to
-the device life, but instead to its domain.
+This behavior can be observed when terminating pending transactions
+with xilinx_dma_terminate_all() and then submitting new transactions
+without releasing and requesting the channel.
 
-Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
-Acked-by: Heiko Stuebner <heiko@sntech.de>
-Signed-off-by: Joerg Roedel <jroedel@suse.de>
+Signed-off-by: Nicholas Graumann <nick.graumann@gmail.com>
+Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
+Link: https://lore.kernel.org/r/1571150904-3988-8-git-send-email-radhey.shyam.pandey@xilinx.com
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/iommu/rockchip-iommu.c | 7 +++++--
- 1 file changed, 5 insertions(+), 2 deletions(-)
+ drivers/dma/xilinx/xilinx_dma.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/iommu/rockchip-iommu.c b/drivers/iommu/rockchip-iommu.c
-index 4dcbf68dfda43..0df091934361b 100644
---- a/drivers/iommu/rockchip-iommu.c
-+++ b/drivers/iommu/rockchip-iommu.c
-@@ -980,13 +980,13 @@ static struct iommu_domain *rk_iommu_domain_alloc(unsigned type)
- 	if (!dma_dev)
- 		return NULL;
+diff --git a/drivers/dma/xilinx/xilinx_dma.c b/drivers/dma/xilinx/xilinx_dma.c
+index 5d56f1e4d332c..43acba2a1c0ee 100644
+--- a/drivers/dma/xilinx/xilinx_dma.c
++++ b/drivers/dma/xilinx/xilinx_dma.c
+@@ -1433,6 +1433,7 @@ static int xilinx_dma_reset(struct xilinx_dma_chan *chan)
  
--	rk_domain = devm_kzalloc(dma_dev, sizeof(*rk_domain), GFP_KERNEL);
-+	rk_domain = kzalloc(sizeof(*rk_domain), GFP_KERNEL);
- 	if (!rk_domain)
- 		return NULL;
+ 	chan->err = false;
+ 	chan->idle = true;
++	chan->desc_pendingcount = 0;
+ 	chan->desc_submitcount = 0;
  
- 	if (type == IOMMU_DOMAIN_DMA &&
- 	    iommu_get_dma_cookie(&rk_domain->domain))
--		return NULL;
-+		goto err_free_domain;
- 
- 	/*
- 	 * rk32xx iommus use a 2 level pagetable.
-@@ -1021,6 +1021,8 @@ err_free_dt:
- err_put_cookie:
- 	if (type == IOMMU_DOMAIN_DMA)
- 		iommu_put_dma_cookie(&rk_domain->domain);
-+err_free_domain:
-+	kfree(rk_domain);
- 
- 	return NULL;
- }
-@@ -1049,6 +1051,7 @@ static void rk_iommu_domain_free(struct iommu_domain *domain)
- 
- 	if (domain->type == IOMMU_DOMAIN_DMA)
- 		iommu_put_dma_cookie(&rk_domain->domain);
-+	kfree(rk_domain);
- }
- 
- static int rk_iommu_add_device(struct device *dev)
+ 	return err;
 -- 
 2.20.1
 
