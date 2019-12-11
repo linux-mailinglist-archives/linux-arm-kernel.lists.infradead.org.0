@@ -2,92 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69C0411AD6E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 15:27:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8915A11AD9A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 15:36:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p6C8nqxSGkb30RGZBEruQo2zTSQCLUMAwJ+2se72vOc=; b=ife38szIlfiLNq
-	aFFTZbntC9/zNhSNgASMbvslm4DrHwVRlC6vZGFOgJncdVkJnm88iQL438nWz59WR0nJ5ml6En/bY
-	MmtbHq0cNRCBuZik+Kn5DLryrqC+rivsNQVo4pznmRhF6ZP6nYH9m0tEiDK9tbcSHrxySbiHvsa77
-	xM9/5Y69m91VSRs86EiANJb4MsTbyTO3SGortTzUlTohM1uxUcZGP9PiVzqNIatcJnAzO8JVIv3nJ
-	BuJg3NzpCOl1vj9q4CdQTFTTaDII0df+BtofP1K6AAIKvuyOCknYSCDzqJGyGcONu/2HjehW+4fxf
-	tlQq+qdAZKoDB2ElsTVQ==;
+	List-Owner; bh=hoR2WkClfzVRXIollTvVC3r4dVlx/DAsYE8mIKK+feE=; b=CDpxEABZygXN2F
+	UgQ7/cTVlTubypWxsO0y++AXqudz0dofGZD7EiHi/xxQ0CQZW0i5MTyrVgsaddcHpo5U4hNU97Plq
+	gDjICST9VDZVml/ZbkYVHJnbPg0gBKI/pi73mR+62dxDJ3/FhO8jElQxuKHsiIZTQVKDAoR9btBER
+	7G/iwaHrV8Q5yPvozj+lD2cMoz3Ho/hrXHkf4qz6TwZghwxiMblsOOOLOJXAF0QDItfelfNKOV1Tl
+	ZQ1jpn+zdQ4SjFHMnh3rMrmPvQOJjhjaj80h9FAK46lDr+hY99NSMrO4dJwPyehuJv2TYX8sm9+1h
+	Z+lNEi0UhjZBq3/QuEXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if2xn-0001eJ-TB; Wed, 11 Dec 2019 14:27:39 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1if36V-0005WD-Of; Wed, 11 Dec 2019 14:36:39 +0000
+Received: from skedge04.snt-world.com ([91.208.41.69])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if2xc-0001d5-Or
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 14:27:30 +0000
-Received: by mail-io1-xd44.google.com with SMTP id c16so22830384ioh.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 06:27:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Faypt5jJbaNtCoHXofsWRZ8YINuZgK4fs840LJrVspY=;
- b=Z2KBVcOsCkR47+VmQPOkiHjj7vFKRPOwy8osTvnKM5r/Tg62TU0sG4hmG5auAO9PZe
- mT3KzbzHQZKrbW7H1sBHn51ECGZQXzKZ6DswDgLHURVFuKGX0g7bBcZnzTtUZYNkvZ8x
- QXSt91qZVnoaJYMbx7l7ka77oIwQHZygkf3v1c3dyplmmWAEnvf4xeHjhaFvYq3UI38b
- gCSLKK8Kg220Qm1z/EFRy0ZgQ6rwpu+IfjUWOhxaOFdVBfZoQ01vbMst+Vb0yFXnLBjW
- eJQx6reBYP4mBhH+XKM3CdRjGPxu05kHF2l4cRFsA5M47SwLRxr36WDyLnhB+dhQb7vU
- aIXQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Faypt5jJbaNtCoHXofsWRZ8YINuZgK4fs840LJrVspY=;
- b=RMOyELZxL/FEVYmL7lR3bon1eOUtnlnnP31ADLbWBefnEVzmNdj/DUTh8S9TsbUY/W
- yRvcciqi0t/Ywcd1kvNPQr+eCclekQb2juHUz60Ko/+tcceRI4VWhIww+OzVmphciD78
- yQIWuEA1DsIa+8gbMju/nDvpg5Yp249tjPQvuwNYKLmPANjWIoPamarsgy0BT+AUUOJw
- hDtcV4c4PhqRfwIpcRylr1iDLcewSUXnV4J/jJrOGBF9iVEPFZad1dbe5924gyZGSRjV
- 0p/qV+tJEkLkkxXv2xMgcNnynw0VxF4nYGR5la21tfUENEzTYc4JJ3pqtGYk8LtGVK+P
- B45w==
-X-Gm-Message-State: APjAAAUyp297JXJ8OjdjDPdx1Xbp65ulXznk5S4WjzMfOfZR+lMd9vXZ
- eweABOHPTe9m/qLDdTjA2V4kXa+cPJwTdmL7T3XraA==
-X-Google-Smtp-Source: APXvYqx25zJakF+83vcjU/NrLZyb4Iyh7/msBEZNeWy88VfcZLcy4mMeUD6cBebcI8aP42hW4L9Hbh1Z30BrvhjsLXQ=
-X-Received: by 2002:a6b:c9ca:: with SMTP id z193mr2766932iof.276.1576074446612; 
- Wed, 11 Dec 2019 06:27:26 -0800 (PST)
-MIME-Version: 1.0
+ id 1if36O-0005VD-78
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 14:36:34 +0000
+Received: from sntmail14r.snt-is.com (unknown [10.203.32.184])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge04.snt-world.com (Postfix) with ESMTPS id 51D1D6285B9;
+ Wed, 11 Dec 2019 15:36:25 +0100 (CET)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail14r.snt-is.com
+ (10.203.32.184) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 11 Dec
+ 2019 15:36:24 +0100
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1713.004; Wed, 11 Dec 2019 15:36:24 +0100
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: Adam Ford <aford173@gmail.com>, Horia Geanta <horia.geanta@nxp.com>
+Subject: Re: [PATCH 2/2] arm64: dts: imx8mm: Add Crypto CAAM support
+Thread-Topic: [PATCH 2/2] arm64: dts: imx8mm: Add Crypto CAAM support
+Thread-Index: AQHVp9OTS5mnZfHbzke4GpMb7fpZMqeyADMAgAMAHAA=
+Date: Wed, 11 Dec 2019 14:36:24 +0000
+Message-ID: <fd146818-98c9-7092-5d49-a985db5900c7@kontron.de>
 References: <20191130225153.30111-1-aford173@gmail.com>
- <e8e429dd-4508-9835-fd01-825d2de8871e@kontron.de>
- <CAHCN7xLkV1WC=9ACj1Mi8+uE8kRCEjCEe+Y36pXwkNeNrgrNVg@mail.gmail.com>
- <VI1PR0402MB34857B8C5560B912B34674AB985B0@VI1PR0402MB3485.eurprd04.prod.outlook.com>
- <d82428e3-326b-db80-2e40-4ef1bdbca060@kontron.de>
-In-Reply-To: <d82428e3-326b-db80-2e40-4ef1bdbca060@kontron.de>
-From: Adam Ford <aford173@gmail.com>
-Date: Wed, 11 Dec 2019 08:27:16 -0600
-Message-ID: <CAHCN7xKUSQQeGt984L9FXmXw7XFMqUvR+9RFqn-zv9q-zQdSSg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] crypto: caam: Change the i.MX8MQ check support all
- i.MX8M variants
-To: Schrempf Frieder <frieder.schrempf@kontron.de>
+ <20191130225153.30111-2-aford173@gmail.com>
+ <VI1PR0402MB348586BEDA9BE13CEB10C75698580@VI1PR0402MB3485.eurprd04.prod.outlook.com>
+ <CAHCN7x+roEAmteNLT9KkLxPvL6AFFHMUW=J_cLcSdE50kODZQQ@mail.gmail.com>
+In-Reply-To: <CAHCN7x+roEAmteNLT9KkLxPvL6AFFHMUW=J_cLcSdE50kODZQQ@mail.gmail.com>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+Content-ID: <ACEAAA732C76144993E26E2C6A1682CB@snt-world.com>
+MIME-Version: 1.0
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: 51D1D6285B9.A01DE
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: aford173@gmail.com, aymen.sghaier@nxp.com,
+ davem@davemloft.net, devicetree@vger.kernel.org, festevam@gmail.com,
+ herbert@gondor.apana.org.au, horia.geanta@nxp.com,
+ kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-crypto@vger.kernel.org, linux-imx@nxp.com,
+ linux-kernel@vger.kernel.org, mark.rutland@arm.com,
+ robh+dt@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_062728_812668_15B930D3 
-X-CRM114-Status: GOOD (  31.69  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191211_063632_588863_D6FABF2D 
+X-CRM114-Status: GOOD (  19.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
+ no trust [91.208.41.69 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,14 +94,14 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Aymen Sghaier <aymen.sghaier@nxp.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Horia Geanta <horia.geanta@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Aymen Sghaier <aymen.sghaier@nxp.com>, Herbert
+ Xu <herbert@gondor.apana.org.au>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Rob Herring <robh+dt@kernel.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, "David S. Miller" <davem@davemloft.net>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>, Pengutronix
+ Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, "David
+ S. Miller" <davem@davemloft.net>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
  dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
@@ -116,100 +109,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 8:23 AM Schrempf Frieder
-<frieder.schrempf@kontron.de> wrote:
->
-> On 10.12.19 08:56, Horia Geanta wrote:
-> > On 12/6/2019 9:55 PM, Adam Ford wrote:
-> >> On Wed, Dec 4, 2019 at 5:38 AM Schrempf Frieder
-> >> <frieder.schrempf@kontron.de> wrote:
-> >>>
-> >>> Hi Adam,
-> >>>
-> >>> On 30.11.19 23:51, Adam Ford wrote:
-> >>>> The i.MX8M Mini uses the same crypto engine as the i.MX8MQ, but
-> >>>> the driver is restricting the check to just the i.MX8MQ.
-> >>>>
-> >>>> This patch lets the driver support all i.MX8M Variants if enabled.
-> >>>>
-> >>>> Signed-off-by: Adam Ford <aford173@gmail.com>
-> >>>
-> >>> What about the following lines in run_descriptor_deco0()? Does this
-> >>> condition also apply to i.MX8MM?
-> >>
-> >> I think that's a question for NXP.  I am not seeing that in the NXP
-> >> Linux Release, and I don't have an 8MQ to compare.
-> >>
-> > IIRC the i.MX BSP releases use the JRI for initializing the RNG,
-> > and not the DECO register interface.
-> >
-> >> I was able to get the driver working on the i.MXMM with the patch.
-> >>
-> > You are probably using a newer U-boot, which includes
-> > commit dfaec76029f2 ("crypto/fsl: instantiate all rng state handles")
-> >
-> >> NXP  Team,
-> >>
-> >> Do you have any opinions on this?
-> >>
-> > Since current U-boot initializes both RNG state handles, practically
-> > instantiate_rng() is a no-op.
-> >
-> > A simple experiment is to "lie" about the state_handle_mask, to exercise
-> > the DECO acquire code (or, as mentioned above, to run with an older U-boot):
-> >
-> > @@ -268,12 +272,19 @@ static int instantiate_rng(struct device *ctrldev, int state_handle_mask,
-> >          struct caam_ctrl __iomem *ctrl;
-> >          u32 *desc, status = 0, rdsta_val;
-> >          int ret = 0, sh_idx;
-> > +       static int force_init = 1;
-> >
-> >          ctrl = (struct caam_ctrl __iomem *)ctrlpriv->ctrl;
-> >          desc = kmalloc(CAAM_CMD_SZ * 7, GFP_KERNEL);
-> >          if (!desc)
-> >                  return -ENOMEM;
-> >
-> > +       if (force_init && (state_handle_mask == 0x3)) {
-> > +               dev_err(ctrldev, "Forcing reinit of RNG state handle 0!\n");
-> > +               force_init = 0;
-> > +               state_handle_mask = 0x2;
-> > +       }
-> > +
-> >          for (sh_idx = 0; sh_idx < RNG4_MAX_HANDLES; sh_idx++) {
-> >                  /*
-> >                   * If the corresponding bit is set, this state handle
-> >
-> > In this case boot log confirms the DECO cannot be acquired:
-> > [    2.137101] caam 30900000.crypto: Forcing reinit of RNG state handle 0!
-> > [    2.172293] caam 30900000.crypto: failed to acquire DECO 0
-> > [    2.177786] caam 30900000.crypto: failed to instantiate RNG
-> >
-> > To sum up, writing to DECORSR is mandatory.
->
-> Thanks Horia for providing the details.
+Hi Adam,
 
-I appreciate it too.
+On 09.12.19 17:47, Adam Ford wrote:
+> On Mon, Dec 9, 2019 at 10:23 AM Horia Geanta <horia.geanta@nxp.com> wrote:
+>>
+>> On 12/1/2019 12:52 AM, Adam Ford wrote:
+>>> The i.MX8M Mini supports the same crypto engine as what is in
+>>> the i.MX8MQ, but it is not currently present in the device tree,
+>>> because it may be resricted by security features.
+>>>
+>> What exactly are you referring to?
+> 
+> I don't know this hardware very well, but on a different platform, we
+> needed to make the crypto engines as disabled if they were being
+> accessed through secure operations which made it unavailable to Linux
+> without using some special barriers. I didn't have the special
+> hardware on the other platform that required it that way, so I can't
+> really explain it well.  I know on those special cases, because some
+> people were accessing these registers through other means, the devices
+> had to be marked as 'disabled' so to avoid breaking something.  Since
+> I wasn't sure if this was left out of the i.MX8M Mini on purpose, I
+> let this disabled just in case this hardware platform was also
+> affected in a similar and people wanting to use it could mark it as
+> 'okay'
 
->
-> Adam, can you update your patch to enable the code in
-> run_descriptor_deco0() for i.MX8MM?
+I don't know enough about this to understand the problem you're 
+describing. It seems like most SoCs have the CAAM enabled by default in 
+the devicetree. On first glance I could only find fsl-lx2160a.dtsi that 
+has it disabled.
 
-I will work on that.  I have been trying to get the mainline U-Boot to
-start correctly, because I wanted to see if/how this interacted. I'll
-try to get a V2 pushed today.
+> 
+> adam
+> 
+>>
+>>> This patch places in into the device tree and marks it as disabled,
+>>> but anyone not restricting the CAAM with secure mode functions
+>>> can mark it as enabled.
+>>>
+>> Even if - due to export control regulations - CAAM is "trimmed down",
+>> it loses only the encryption capabilities (hashing etc. still working).
 
->
-> If I understand this correctly, this is necessary to have the RNG
-> initialize correctly no matter what version of U-Boot is used.
+I don't know much about this, but as Horia said the CAAM might have 
+limited capabilities in some cases but would still work.
 
-That makes sense based on Horia's feedback.  With the holidays this
-month, my spare time and weekends have been full.
+Therefore I think the CAAM should be enabled by default as it already is 
+done for most other SoCs.
 
-adam
->
-> Thanks,
-> Frieder
+Regards,
+Frieder
 
+>>
+>> Again, please clarify what you mean by "secure mode functions",
+>> "security features" etc.
+>>
+>> Horia
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
