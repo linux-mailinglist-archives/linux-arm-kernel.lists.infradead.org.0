@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D487C11A37E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 05:31:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0EA811A37F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 05:31:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F2+awrE7ETz4nK/n4Ewv+GDaXy3zp9R+kDr0zIRBI4Q=; b=niaN7Okz98ynFA
-	5dE8SJXGjmFSl7n9WvMCj0SPm56XVuE4BU8gPU7vk/1hKtoNVog2Z8ZCi9SDflrThXX5rR0EPw/DM
-	PZyEhyKXMfYBmm7I1yXZNz4yEoFAKmkHSV7OqHdz9q32QMpBm1AALiQrBIQD9/BIqM4c/i3o4apbs
-	7oquOlsNojEdSnAqzi5kmBgO7S1+yRsLVcE7f05t3yMo0+vHeK/uUogWSCrxDNmsZmhxf2TpFgAO/
-	klyal+rWBgzs6zriCysSPT9ghBU9I3fiDqQJ6RCCeEEWeWP4HVBNxKRoW2Nck7cWoNcoMr5yd/Ulh
-	yYM/2909Zq60n3cDLOcA==;
+	List-Owner; bh=tdEFVtPu48SX/z5dmtvWFLoCmzW8S500P4U9KJOmRYA=; b=WfGSnKeh+dL+hN
+	imoqzww9OtoIxOHSFA0XBACoyrqTXDD5ztsnEq7miHQxs6RGgRUTfNZQ8p/ioLU/wepX+xRKsKsEZ
+	KugCkYnJ/spSvKAS9lUchTXGxH97XHtpNiiccmYTIHlMkfAFcz/qnZkjoKjfD2S4DGf9szjkF8xgq
+	Qycqtp3pFsQR8Nub4dqkbMLcjjT/JaDZaxIOrnjn0dqcEZ/IaflGzGPWM1AgQSNAlSsIRxGu9TaST
+	6k7eXQp12T6u4lk2PQUqPZCvOuR0S3RJPNdnzPG3kK6G4iIl8B6CLXHzi8dW1lN4A4HI6fpfKHzLw
+	jXZIC/uCpBR3RqeICesQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieteX-0005Vj-VM; Wed, 11 Dec 2019 04:31:09 +0000
-Received: from a27-186.smtp-out.us-west-2.amazonses.com ([54.240.27.186])
+	id 1ietet-0005md-VZ; Wed, 11 Dec 2019 04:31:31 +0000
+Received: from a27-10.smtp-out.us-west-2.amazonses.com ([54.240.27.10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iete5-0005GG-Er
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 04:30:42 +0000
+ id 1iete8-0005Hh-CI
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 04:30:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1576038637;
+ s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1576038642;
  h=From:To:Cc:Subject:Date:Message-Id:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding;
- bh=vBkSyd+L/9+aFsq0yEaaSAgcpJYswDbSFdawPaQtLm8=;
- b=hV3CMzlVpcSh9ZaDnn0ukhMaKeVPdpok8e/WCXfN5Ig/1Zy3+DAghIxlAdT7a7a2
- Ny4aNnYaHRH8AH/6/N2dlldHsLf1OIlhlQkuMqWKuXs/SGhCWOViNV/YhpNdReetfjz
- dKRAmmKmkyT7dwSNVbyl2DbfS+v7L6X3CUP9ufjI=
+ bh=yUbcOQmZnB3OF8BOmjR64gfOmdhpbWHdIpUAKU7lamw=;
+ b=eLgN3G3o5g4FpqQmEQYzR8aBjBc9Ko5ipr4PLAUXCK+ZAvd2+yLpVJi05dhwK6RS
+ osivVNl/bxIzn/pOeUzq5qBMDZ+uFMcRy6cumUOFJ0/vX3bjZYVfC/OFv11mjlgrkD2
+ oiGaC/4ryQOW4WvTfEDE1bJgIDfAAjC1aHaBTPhE=
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1576038637;
+ s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1576038642;
  h=From:To:Cc:Subject:Date:Message-Id:In-Reply-To:References:MIME-Version:Content-Transfer-Encoding:Feedback-ID;
- bh=vBkSyd+L/9+aFsq0yEaaSAgcpJYswDbSFdawPaQtLm8=;
- b=f3hCUfMpvTANTbd7YQMF8SwgD7fYtS5JPiQRRwBxXBOdsq7WgO+8mYJCcwzY92re
- bjbeemXMM8R2Goc92s9rMIwdpJ2o4MbV1pgwZbb5qcWsbqrL9BDR6bHV6v2PkxTOSc8
- b8o9UnJTd1EJg4HJ4vmgTHsSL/EToZA/fZpgEJ3g=
+ bh=yUbcOQmZnB3OF8BOmjR64gfOmdhpbWHdIpUAKU7lamw=;
+ b=gLTCBiCsOg25q1TRo34jSVCLxbpoHGVzcITZglwwPIrgLjIjtsZdXffolMidZvjq
+ hE5B6NeZAzVKz7kSUpikE580ankqp0rqL/GgBR0fKXNNfAXCXNdGdxd9XteokUbaut8
+ 9vmS5M4zzsMV9XnVu8l+oMgWLR7PIl85Uw0sQHs4=
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
 X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=ham autolearn_force=no version=3.4.0
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 564A7C8F103
+ autolearn=unavailable autolearn_force=no version=3.4.0
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org D9142C447A4
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
@@ -50,18 +50,18 @@ Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
 From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 To: Andy Gross <agross@kernel.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: [PATCH 1/3] arm64: dts: qcom: sc7180: Add APSS watchdog node
-Date: Wed, 11 Dec 2019 04:30:36 +0000
-Message-ID: <0101016ef3391ce3-438cca2f-458c-47d9-a62a-381f1c6bfb15-000000@us-west-2.amazonses.com>
+Subject: [PATCH 2/3] arm64: dts: qcom: sm8150: Add APSS watchdog node
+Date: Wed, 11 Dec 2019 04:30:41 +0000
+Message-ID: <0101016ef33930db-a904595b-cfa3-46fd-b508-62f589a96a62-000000@us-west-2.amazonses.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <cover.1576037078.git.saiprakash.ranjan@codeaurora.org>
 References: <cover.1576037078.git.saiprakash.ranjan@codeaurora.org>
 MIME-Version: 1.0
-X-SES-Outgoing: 2019.12.11-54.240.27.186
+X-SES-Outgoing: 2019.12.11-54.240.27.10
 Feedback-ID: 1.us-west-2.CZuq2qbDmUIuT3qdvXlRHZZCpfZqZ4GtG9v3VKgRyF0=:AmazonSES
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_203041_525755_43D93471 
-X-CRM114-Status: UNSURE (   8.58  )
+X-CRM114-CacheID: sfid-20191210_203044_456799_8A2EA8E6 
+X-CRM114-Status: UNSURE (   8.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -69,7 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.240.27.186 listed in list.dnswl.org]
+ no trust [54.240.27.10 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -103,28 +103,28 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Add APSS (Application Processor Subsystem) watchdog
-DT node for SC7180 SoC.
+DT node for SM8150 SoC.
 
 Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 ---
- arch/arm64/boot/dts/qcom/sc7180.dtsi | 6 ++++++
+ arch/arm64/boot/dts/qcom/sm8150.dtsi | 6 ++++++
  1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-index 666e9b92c7ad..a6773ad3738b 100644
---- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-@@ -1038,6 +1038,12 @@
- 			};
+diff --git a/arch/arm64/boot/dts/qcom/sm8150.dtsi b/arch/arm64/boot/dts/qcom/sm8150.dtsi
+index 8f23fcadecb8..4224f6474a9d 100644
+--- a/arch/arm64/boot/dts/qcom/sm8150.dtsi
++++ b/arch/arm64/boot/dts/qcom/sm8150.dtsi
+@@ -387,6 +387,12 @@
+ 			#mbox-cells = <1>;
  		};
  
 +		watchdog@17c10000 {
-+			compatible = "qcom,apss-wdt-sc7180", "qcom,kpss-wdt";
++			compatible = "qcom,apss-wdt-sm8150", "qcom,kpss-wdt";
 +			reg = <0 0x17c10000 0 0x1000>;
 +			clocks = <&sleep_clk>;
 +		};
 +
- 		timer@17c20000{
+ 		timer@17c20000 {
  			#address-cells = <2>;
  			#size-cells = <2>;
 -- 
