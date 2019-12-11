@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4E5E11BBFB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:41:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6288511BBFE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:41:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6IlbTFOfKI3uzbvm9QNO+qJrYVSYhjkziMAN/c/ysmA=; b=uFBNbZ/gvKDf3C
-	R1R9CVE4cD2TyxBmAb7J5WdNZneIhRnJnvHNO5n8Q9nd9tf0IRph18f5VPX7eDTN6CnJMdBN9kM7f
-	LJ2YRQ5TYsGyqGMKIdH0Wp2tSJmtUZyIPuj15WwqQqt0/LBrz75TJv/H7V6jZ7ywMzCJ/BCDrMgDE
-	MknQfBpOE8xGyUDf8zsiVgrzzCVVLLIaz3KzbHk1Y0YEaShuGohYSv6t6gKNzmFYAiZydrHIcxJ0v
-	VG9YlVVmwtCSPyjBc2gcVwrp8nVnjVGynBN6wc0ZOrF7QjcTReX86Sl32b+kvdQ8ET0Bvv6ODClZB
-	325TWLzs+14Q728uP5qg==;
+	List-Owner; bh=gLV1d0V4g8yThzq8QdHQwyPM20lpALh+tq4xXy3dD0c=; b=phN7TjhKTk7zkK
+	R/IudhRvldbmlEjUS42TGRNEcRmW88gqvNd9VNxrSVSHaNATyj3YCj0ZVZHgbH7ne4yydW+1+vZDA
+	ZtGz7HbKtrlREmfZKr8u9wIlTTrFtPJuSI8DklT7NBJGI7v6F/VU6SCYwC9VjNkxDPaVM5qDxaxoN
+	/fhdi1uj3tZl8HmmljcGBC/g4PTCPZgE4CnqXa4vOovIBnkqqe80W1MBHFul+I4PjhRbNy/Mx0qvO
+	/OboYcwcZPnYE65Sz9RSrVUiKyAkMz1NN1OHC6/8UMWY9bBIOMpmOYaUkdmqxcug5tnPC7ghwxDfu
+	iQGMPphITkZa/rBF6izg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if6vN-0003Rg-Cg; Wed, 11 Dec 2019 18:41:25 +0000
+	id 1if6vf-0003hC-D3; Wed, 11 Dec 2019 18:41:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if6uf-00036f-0Q
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:40:42 +0000
+ id 1if6ug-00037L-6d
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:40:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 104B7328;
- Wed, 11 Dec 2019 10:40:39 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 091551045;
+ Wed, 11 Dec 2019 10:40:41 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 662103F6CF;
- Wed, 11 Dec 2019 10:40:37 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4461F3F6CF;
+ Wed, 11 Dec 2019 10:40:39 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 01/22] mm: Reserve asm-generic prot flags 0x10 and 0x20 for
- arch use
-Date: Wed, 11 Dec 2019 18:40:06 +0000
-Message-Id: <20191211184027.20130-2-catalin.marinas@arm.com>
+Subject: [PATCH 02/22] kbuild: Add support for 'as-instr' to be used in
+ Kconfig files
+Date: Wed, 11 Dec 2019 18:40:07 +0000
+Message-Id: <20191211184027.20130-3-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191211184027.20130-1-catalin.marinas@arm.com>
 References: <20191211184027.20130-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_104041_088770_8CC9E17B 
-X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-CacheID: sfid-20191211_104042_281506_BFFCE71A 
+X-CRM114-Status: UNSURE (   9.53  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -65,47 +65,51 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Marc Zyngier <maz@kernel.org>, Kevin Brodsky <kevin.brodsky@arm.com>,
- linux-mm@kvack.org, Andrey Konovalov <andreyknvl@google.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Andrey Konovalov <andreyknvl@google.com>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>
+ linux-kbuild@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dave Martin <Dave.Martin@arm.com>
+Similar to 'cc-option' or 'ld-option', it is occasionally necessary to
+check whether the assembler supports certain ISA extensions. In the
+arm64 code we currently do this in Makefile with an additional define:
 
-The asm-generic/mman.h definitions are used by a few architectures that
-also define arch-specific PROT flags with value 0x10 and 0x20. This
-currently applies to sparc and powerpc for 0x10, while arm64 will soon
-join with 0x10 and 0x20.
+lseinstr := $(call as-instr,.arch_extension lse,-DCONFIG_AS_LSE=1)
 
-To help future maintainers, document the use of this flag in the
-asm-generic header too.
+Add the 'as-instr' option so that it can be used in Kconfig directly:
 
-Cc: Arnd Bergmann <arnd@arndb.de>
-Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-[catalin.marinas@arm.com: reserve 0x20 as well]
+	def_bool $(as-instr,.arch_extension lse)
+
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+Cc: linux-kbuild@vger.kernel.org
+Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- include/uapi/asm-generic/mman-common.h | 2 ++
- 1 file changed, 2 insertions(+)
+ scripts/Kconfig.include | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/include/uapi/asm-generic/mman-common.h b/include/uapi/asm-generic/mman-common.h
-index c160a5354eb6..f94f65d429be 100644
---- a/include/uapi/asm-generic/mman-common.h
-+++ b/include/uapi/asm-generic/mman-common.h
-@@ -11,6 +11,8 @@
- #define PROT_WRITE	0x2		/* page can be written */
- #define PROT_EXEC	0x4		/* page can be executed */
- #define PROT_SEM	0x8		/* page may be used for atomic ops */
-+/*			0x10		   reserved for arch-specific use */
-+/*			0x20		   reserved for arch-specific use */
- #define PROT_NONE	0x0		/* page can not be accessed */
- #define PROT_GROWSDOWN	0x01000000	/* mprotect flag: extend change to start of growsdown vma */
- #define PROT_GROWSUP	0x02000000	/* mprotect flag: extend change to end of growsup vma */
+diff --git a/scripts/Kconfig.include b/scripts/Kconfig.include
+index d4adfbe42690..9d07e59cbdf7 100644
+--- a/scripts/Kconfig.include
++++ b/scripts/Kconfig.include
+@@ -31,6 +31,10 @@ cc-option = $(success,$(CC) -Werror $(CLANG_FLAGS) $(1) -E -x c /dev/null -o /de
+ # Return y if the linker supports <flag>, n otherwise
+ ld-option = $(success,$(LD) -v $(1))
+ 
++# $(as-instr,<instr>)
++# Return y if the assembler supports <instr>, n otherwise
++as-instr = $(success,printf "%b\n" "$(1)" | $(CC) $(CLANG_FLAGS) -c -x assembler -o /dev/null -)
++
+ # check if $(CC) and $(LD) exist
+ $(error-if,$(failure,command -v $(CC)),compiler '$(CC)' not found)
+ $(error-if,$(failure,command -v $(LD)),linker '$(LD)' not found)
 
 _______________________________________________
 linux-arm-kernel mailing list
