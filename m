@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 177B711C103
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 00:55:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0165B11C0F8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 00:54:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AI3LFiM8DeCvLFJSGPgGMKZqNpDYQ7auQ7PiM+Ca6YA=; b=D71+wSIy233NBY
-	fASLZDU4npZiP2CUaO5GuuDjOMqIwqSnzumcxf1ZBMRock7jQvNkNTOy9ANRSOG/C09qRrPdfu/fO
-	LdsyI4rJ2QtPB7GIJATn4vFqM89aL6kTJwkwTQxY1vmREyWE9VifHwtVWeXiegwlBvzD3yNWC1MWE
-	dxSnSPcg137+bsumuzHMUmu/cI0AbJ91omwc+tyCqZZtLfYDIs3B+tsIuBIeI3Ix0VtIZCIjfz8C2
-	onkPCMmFeWlK60Ff6+j1CBVJ22cuRvEq056h8/5gB31wQRzN0WbnvgOwBkXxIg9PNawq3kNaFfQUe
-	x8huw7uJ9ULsD5liVtWQ==;
+	List-Owner; bh=1WTHblXjC38KjytusMXaD1Hw6N1M6SKrB6VOM3Dz208=; b=L+KIHHVD0TeHTe
+	W/EdOuTItIkrEADsADRzFXRj0MwtCO1DUnbR5I/NeJSvYwJn+poi4qJr/JdUX6iLhX9MX4zaZ0x9f
+	EN9w2PUfZdsSGioj8yS+czW7jo5/CESKFU1qDBPrea3cYYnca0XVBdiSpcaHMkMJBeNociqFiETlq
+	EU76l/j/o9x4XAdkeRrox24i6dCqJmTCLgf3YLBSfQUqZac7TzQEi2mgHwz0mAVyXJJv6IFd0/JQ0
+	cEyeQOTb8cwU8DG3PluxertnO8XmrbIn4BPNC3cvIm64XAysESmhbGa22A15LDIRsdzWo9KwGvtJY
+	yPj/89nDZIErzc/Vr7Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifBpl-0004HK-8d; Wed, 11 Dec 2019 23:55:57 +0000
-Received: from mout.web.de ([212.227.17.12])
+	id 1ifBoQ-0001n9-O1; Wed, 11 Dec 2019 23:54:34 +0000
+Received: from mout.web.de ([217.72.192.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifBnI-0000sM-3p; Wed, 11 Dec 2019 23:53:28 +0000
+ id 1ifBnF-0000sJ-Dt; Wed, 11 Dec 2019 23:53:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1576108394;
- bh=UIfQ1uEbBM7aRcsCELoWupsxNBU1uTnrfPC1GXuP4k0=;
+ s=dbaedf251592; t=1576108395;
+ bh=bqrfzn03Wk5A81+Bxtr6JafRDf0LDppSY0FopstiOWU=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=k+FurcGv4TqMLZ609jRprB6gFKo66ccff7+ww9DBPhQA3+MY2E9cemTMAeF/mQc/D
- W6mrMnD79QAA2/sbWWE2G2YVn6SF27stpEQioQHz7idLthLgPOqFKLURomtcw4zBW6
- A0dwfZFmfTDMlWbvEf+eQ+ZgKgNxW2vyvlTXLj8o=
+ b=LrNnwQUqQrR0y8v6QbdwFWGQreRkC4UnLS5vcVMOJWqrggruA85WPRuDtsut44XCJ
+ yEqnecDjdVWTJLbeEBdKSRro6bhl4HlystbX32DXbG0J+16xNcdgo0pzXbUjQ/Rumx
+ VmqU5cVabbZFYa0qgNLQtUwVMzEIAshhpw5rpgtU=
 X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
 Received: from localhost.localdomain ([89.204.139.166]) by smtp.web.de
  (mrweb101 [213.165.67.124]) with ESMTPSA (Nemesis) id
- 0LopiJ-1i3xMg2sFn-00gnU9; Thu, 12 Dec 2019 00:53:13 +0100
+ 0M6E6g-1hmhaz0h0k-00yBkG; Thu, 12 Dec 2019 00:53:15 +0100
 From: Soeren Moch <smoch@web.de>
 To: Kalle Valo <kvalo@codeaurora.org>,
 	Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2 5/9] brcmfmac: add support for BCM4359 SDIO chipset
-Date: Thu, 12 Dec 2019 00:52:49 +0100
-Message-Id: <20191211235253.2539-6-smoch@web.de>
+Subject: [PATCH v2 6/9] brcmfmac: add RSDB condition when setting interface
+ combinations
+Date: Thu, 12 Dec 2019 00:52:50 +0100
+Message-Id: <20191211235253.2539-7-smoch@web.de>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191211235253.2539-1-smoch@web.de>
 References: <20191211235253.2539-1-smoch@web.de>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:fbFLsfS9zJn7W1W+geLYLgL2xgrwq0iSOy4xXpjyJpvWZaUoD4E
- Y0N/HgtLWYoCW//RMA1C56H/2QGtRXUt7FI3e+QfgKv7AbY7WZfIYaL0vqoEDdrNw1A7fou
- Bda7+OfEDfs76gdEzVQB+VO+mAGdy7KGqTxlpNipT/MSTqPXjhnbcFMvToySJY3i9bvbqSG
- zaec0MLD5YciT9kes7SPg==
+X-Provags-ID: V03:K1:sObgus2FDRoa5HGMYXoHjJ8dLBCTgL7OufE2JZLV/N7PtqNDME2
+ YuQXbzzDjKtPnQsO7f8f9MzJSbdmoMqCb/6c4H24QSLEbLJ8AUwZUsdhGOh3NKpytNJMIhG
+ hXxgebyZByKXqYQJn7hWvI2FVd66BOnDCk39Fi8sBq+VoW4dZHw85R6jVOnpy5jpfvCvUlo
+ Tx1C7zBeV/t96cuCIyhhA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:QcQIpKAkuMw=:9dXi2isuR2bE8ZA7lkpXK3
- JHnpknUmYgsJHS5jpFZlGrfzeS79/ygdKCK4CMI6KkJ+cVRcXPzAUWkAB9l3jho2xXKh28c1x
- 2la10ALczojxXFDuCCWb6G02C5ESFJzE02HTX6oTcZnhVabr7HU96rtlUN6spKEZ9Bd7My17/
- RRZ7KSsMH9JlQ80JiNuKsD/tLHHTwi5PzmmrcUfmv9yTWf2/ZBE8J20R2S7YOBu6xecdLVR2Y
- IA17+ZWAzHh/GkSAmMHPiBInLGgT2yx1UvbY0MOFTC7RserBpyOBRle8UPkdaqNy88G3M/7aZ
- oGtNIxEQ4t9lRgFZNZHI0S2yPi+CJHroCCxriCTfwj1QIlLaNhXDVWjLqARRywmd8y1r2B+Lv
- cmWYt+sGIETyVYvpMZdyHY/fw8R5KB4QhcaCe3iQCDO7rxU+XEuDQMZiqkMD4z+pPygugXB8Y
- ulCRhlEO0rqXz7FmPUll2EB2WOLRSc6UM/D8Hlv7enz7jA/Pdaf7C+rK4dbygEYmeJ/ccjvbc
- RfsTH4pxCBAdm7K4MPdyMbiDXQwJLFt9fQokHZC/54Ie8ksTJBkFRpAUp4lXmnOYgtVQ1DJk2
- HXmMuxF14xwckRovEh1YrUooaKUKZxP9euxJndIiOj6mIiO7A1kay3hTsw3iHIJXbokxFamWm
- MPLyy0lWyGeaRaceNUnEhJRx6MKPHg0dagULvbAW5U2i+I6I5weUdMgrl7khiQoGUtuh+FQQf
- nPJ+YDQXQqJsCY/uJxA57bCiWSMdcpJP+SzhHnMEA31M1pHw3R+wY0RQ+N4a+4JRxS+JX5Gkj
- i77aPu5fIUgq44nCPD0yAdlz0ynMseQ2+TXC/YcxvBuFuVXIxG1PYaLmgsf3UHapxiFtJxQ0t
- xDOdJsSgozVtIoGS+hbAFeDBEHIXbbwMfoQ5lxaSdhw1pl1aCtHMO/4tywzCB96nrpcsz/y+S
- o44ZdGQOPgQvu5D8ynByIHNb6wsTTFUoHLPm5oLV54KoWXgD7R3ZVZynCwJsPMd8E3oHfMgI7
- 0ziSq7RMTogMHgJSJfUOEJPJJscLHXoNWBAb79IyhFi6gxNAf072nSSDJJC/pd1NPCabwiL3g
- E9gtYKllSBhDz6qQdMn1S7pTrXincYqaWcTS8efzUSMV6aG/Djcza10dAmR7ulFD9cqj4qtF4
- 1Ud9C6FJxZYLebDfwFMc+hCGGyZJel9btqgRw27Pej+UBZ5LR5DOPU8kHhD3U01yDQmOMUdV1
- RSQtIOcuYrpDFvTyIO46ZygLtElFl8ANvmhoupA==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:l+RZ/qB1OXc=:NPKGOTlEvEQpnntq6ydHAz
+ fHl0SEXZuE6K9NBqv4Lht5uPB32IkQoru8VRv4/YD+JhRqRzu+tcMxC2gZ5IB67lWwyUdySCm
+ uBnJwQR+zq8SQmwMwXiVtWbbYaPtxcQ0OPwiJgkN35EtVWAdo18b1j2o3Y6eiXAgb+yTDfEO4
+ QPc4Xh7ZV7/Ozn0gxYjPVXPBRJV+m5jNdO0gT+LKNmb/axMJrSIBvPmuqB+IXexqXIFAxwPhO
+ DdJ49akvIGJuQq/h7m3KcOo0bUrki08Pi9KFUo6INuqAEup9RxYJZjrRH4K5fZ18kZOuiIfx7
+ Jtjz0ht7DMIP7XJ0gbAdp+aFbgq9mieu/1OzKTp4r15FJLEwXbY+x+VFvN7YuMruvhAlgDN/f
+ uydFFv0xu0FTYf0XcqEWIsTOrwK18uAoRBDUb36QwOqZJq3+XAFsCuy6P9Y6IWqnGE4lHlav+
+ 4yBD7vYaRJWj1eNLqmi8QqSLSaYQ+kNKY40IK+eiTiyjwCumX2WEdTlTpPsvD3REp6CyYJgHt
+ wVKBHcBh0uGmpU+PjdLDvaLjeXLSS9NTMXZHTmywifF9gbLon8IKH2GfjUjbfpio0uItVKhOp
+ +qKdcNo33fS1f+dpD7kGF0KSy1XTMgfbblzY4yDs4twfxdRxU5RWo0kGPsdf4NxT3XV7gZWMD
+ 76dZ6dQ0cQxRxmWS6Ebl6SXx/kNq2ih0ox1/gK6awP7WmV5bZP4XwMiRmvVLtwsKtv4BuvMWv
+ 0JfZf0gFBagGgAEVGPPd0nlodPWZ8OlHGbxBThsTUdS51d265/UdnYQkKigcGBPY3JnBxDis3
+ UwLBb5gwrG+zDOOdAAwxZuS7qdnmFlUniQXAFFOf+/JTYJ4X8WdMX1JxCLMzSEhxlWCKELgLK
+ 4zcMN76iTCWG/YWMnUtvX7w4zL1r/adcNOG4vs4TTum2DsZEkwEWP3bB/b6TyaNGzQhIWwSUN
+ yiQrAwsPKj06psAXb7PTg2pinbvSX3REtejpZkkJZJRtYE75gKujsDDaEkaUtXYeSH7LzBSK0
+ S9XH6EFM0BNYJ3o8DS7HpcYPyi5Lt8TBZ5V70l/aHBAIHVCfvN9gqXoQQt+7nLCq68jMwQpDC
+ r0JrD16e3CTTvuHUKgb4rtUf2H3PGBDRcU/BrKAV4gZPgXqqjS93FL5H7bBWm7EZOGa/K34Uk
+ 4B+zsViWMt89PTi2nQ0qlYivNwmqGEkMQivWWOSNzkk5qg+vpBFP7lxMoMi8XdZ+Qu3oa1zNw
+ tPGbo/eu0kB/3JzBN69//WDdupLb2MjoLAududA==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_155324_468924_6B6C9432 
-X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-CacheID: sfid-20191211_155321_768318_FA4EC9ED 
+X-CRM114-Status: UNSURE (   9.54  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.12 listed in list.dnswl.org]
+ low trust [217.72.192.78 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (smoch[at]web.de)
@@ -112,16 +113,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BCM4359 is a 2x2 802.11 abgn+ac Dual-Band HT80 combo chip and it
-supports Real Simultaneous Dual Band feature.
+From: Wright Feng <wright.feng@cypress.com>
 
-Based on a similar patch by: Wright Feng <wright.feng@cypress.com>
+With firmware RSDB feature
+1. The maximum support interface is four.
+2. The maximum difference channel is two.
+3. The maximum interfaces of {station/p2p client/AP} are two.
+4. The maximum interface of p2p device is one.
 
+Signed-off-by: Wright Feng <wright.feng@cypress.com>
 Signed-off-by: Soeren Moch <smoch@web.de>
+Reviewed-by: Chi-Hsien Lin <chi-hsien.lin@cypress.com>
 ---
 changes in v2:
-- add SDIO_DEVICE_ID_CYPRESS_89359 as requested
-  by Chi-Hsien Lin <chi-hsien.lin@cypress.com>
+- add missing s-o-b
+- add review tag received for v1
 
 Cc: Kalle Valo <kvalo@codeaurora.org>
 Cc: Heiko Stuebner <heiko@sntech.de>
@@ -138,74 +144,121 @@ Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-rockchip@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c | 2 ++
- drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c   | 1 +
- drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c   | 2 ++
- include/linux/mmc/sdio_ids.h                              | 2 ++
- 4 files changed, 7 insertions(+)
+ .../broadcom/brcm80211/brcmfmac/cfg80211.c    | 54 ++++++++++++++++---
+ 1 file changed, 46 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c
-index 68baf0189305..f4c53ab46058 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c
-@@ -973,8 +973,10 @@ static const struct sdio_device_id brcmf_sdmmc_ids[] = {
- 	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_BROADCOM_43455),
- 	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_BROADCOM_4354),
- 	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_BROADCOM_4356),
-+	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_BROADCOM_4359),
- 	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_CYPRESS_4373),
- 	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_CYPRESS_43012),
-+	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_CYPRESS_89359),
- 	{ /* end: all zeroes */ }
- };
- MODULE_DEVICE_TABLE(sdio, brcmf_sdmmc_ids);
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
-index baf72e3984fc..282d0bc14e8e 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
-@@ -1408,6 +1408,7 @@ bool brcmf_chip_sr_capable(struct brcmf_chip *pub)
- 		addr = CORE_CC_REG(base, sr_control0);
- 		reg = chip->ops->read32(chip->ctx, addr);
- 		return (reg & CC_SR_CTL0_ENABLE_MASK) != 0;
-+	case BRCM_CC_4359_CHIP_ID:
- 	case CY_CC_43012_CHIP_ID:
- 		addr = CORE_CC_REG(pmu->base, retention_ctl);
- 		reg = chip->ops->read32(chip->ctx, addr);
-diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-index 21e535072f3f..c4012ed58b9c 100644
---- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-+++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-@@ -616,6 +616,7 @@ BRCMF_FW_DEF(43455, "brcmfmac43455-sdio");
- BRCMF_FW_DEF(43456, "brcmfmac43456-sdio");
- BRCMF_FW_DEF(4354, "brcmfmac4354-sdio");
- BRCMF_FW_DEF(4356, "brcmfmac4356-sdio");
-+BRCMF_FW_DEF(4359, "brcmfmac4359-sdio");
- BRCMF_FW_DEF(4373, "brcmfmac4373-sdio");
- BRCMF_FW_DEF(43012, "brcmfmac43012-sdio");
+diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
+index 0cf13cea1dbe..9d9dc9195e9e 100644
+--- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
++++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cfg80211.c
+@@ -6520,6 +6520,9 @@ brcmf_txrx_stypes[NUM_NL80211_IFTYPES] = {
+  *	#STA <= 1, #AP <= 1, channels = 1, 2 total
+  *	#AP <= 4, matching BI, channels = 1, 4 total
+  *
++ * no p2p and rsdb:
++ *	#STA <= 2, #AP <= 2, channels = 2, 4 total
++ *
+  * p2p, no mchan, and mbss:
+  *
+  *	#STA <= 1, #P2P-DEV <= 1, #{P2P-CL, P2P-GO} <= 1, channels = 1, 3 total
+@@ -6531,6 +6534,10 @@ brcmf_txrx_stypes[NUM_NL80211_IFTYPES] = {
+  *	#STA <= 1, #P2P-DEV <= 1, #{P2P-CL, P2P-GO} <= 1, channels = 2, 3 total
+  *	#STA <= 1, #P2P-DEV <= 1, #AP <= 1, #P2P-CL <= 1, channels = 1, 4 total
+  *	#AP <= 4, matching BI, channels = 1, 4 total
++ *
++ * p2p, rsdb, and no mbss:
++ *	#STA <= 2, #P2P-DEV <= 1, #{P2P-CL, P2P-GO} <= 2, AP <= 2,
++ *	 channels = 2, 4 total
+  */
+ static int brcmf_setup_ifmodes(struct wiphy *wiphy, struct brcmf_if *ifp)
+ {
+@@ -6538,13 +6545,14 @@ static int brcmf_setup_ifmodes(struct wiphy *wiphy, struct brcmf_if *ifp)
+ 	struct ieee80211_iface_limit *c0_limits = NULL;
+ 	struct ieee80211_iface_limit *p2p_limits = NULL;
+ 	struct ieee80211_iface_limit *mbss_limits = NULL;
+-	bool mbss, p2p;
++	bool mbss, p2p, rsdb;
+ 	int i, c, n_combos;
 
-@@ -638,6 +639,7 @@ static const struct brcmf_firmware_mapping brcmf_sdio_fwnames[] = {
- 	BRCMF_FW_ENTRY(BRCM_CC_4345_CHIP_ID, 0xFFFFFDC0, 43455),
- 	BRCMF_FW_ENTRY(BRCM_CC_4354_CHIP_ID, 0xFFFFFFFF, 4354),
- 	BRCMF_FW_ENTRY(BRCM_CC_4356_CHIP_ID, 0xFFFFFFFF, 4356),
-+	BRCMF_FW_ENTRY(BRCM_CC_4359_CHIP_ID, 0xFFFFFFFF, 4359),
- 	BRCMF_FW_ENTRY(CY_CC_4373_CHIP_ID, 0xFFFFFFFF, 4373),
- 	BRCMF_FW_ENTRY(CY_CC_43012_CHIP_ID, 0xFFFFFFFF, 43012)
- };
-diff --git a/include/linux/mmc/sdio_ids.h b/include/linux/mmc/sdio_ids.h
-index 08b25c02b5a1..2e9a6e4634eb 100644
---- a/include/linux/mmc/sdio_ids.h
-+++ b/include/linux/mmc/sdio_ids.h
-@@ -41,8 +41,10 @@
- #define SDIO_DEVICE_ID_BROADCOM_43455		0xa9bf
- #define SDIO_DEVICE_ID_BROADCOM_4354		0x4354
- #define SDIO_DEVICE_ID_BROADCOM_4356		0x4356
-+#define SDIO_DEVICE_ID_BROADCOM_4359		0x4359
- #define SDIO_DEVICE_ID_CYPRESS_4373		0x4373
- #define SDIO_DEVICE_ID_CYPRESS_43012		43012
-+#define SDIO_DEVICE_ID_CYPRESS_89359		0x4355
+ 	mbss = brcmf_feat_is_enabled(ifp, BRCMF_FEAT_MBSS);
+ 	p2p = brcmf_feat_is_enabled(ifp, BRCMF_FEAT_P2P);
++	rsdb = brcmf_feat_is_enabled(ifp, BRCMF_FEAT_RSDB);
 
- #define SDIO_VENDOR_ID_INTEL			0x0089
- #define SDIO_DEVICE_ID_INTEL_IWMC3200WIMAX	0x1402
+-	n_combos = 1 + !!p2p + !!mbss;
++	n_combos = 1 + !!(p2p && !rsdb) + !!mbss;
+ 	combo = kcalloc(n_combos, sizeof(*combo), GFP_KERNEL);
+ 	if (!combo)
+ 		goto err;
+@@ -6555,16 +6563,36 @@ static int brcmf_setup_ifmodes(struct wiphy *wiphy, struct brcmf_if *ifp)
+
+ 	c = 0;
+ 	i = 0;
+-	c0_limits = kcalloc(p2p ? 3 : 2, sizeof(*c0_limits), GFP_KERNEL);
++	if (p2p && rsdb)
++		c0_limits = kcalloc(4, sizeof(*c0_limits), GFP_KERNEL);
++	else if (p2p)
++		c0_limits = kcalloc(3, sizeof(*c0_limits), GFP_KERNEL);
++	else
++		c0_limits = kcalloc(2, sizeof(*c0_limits), GFP_KERNEL);
+ 	if (!c0_limits)
+ 		goto err;
+-	c0_limits[i].max = 1;
+-	c0_limits[i++].types = BIT(NL80211_IFTYPE_STATION);
+-	if (p2p) {
++	if (p2p && rsdb) {
++		combo[c].num_different_channels = 2;
++		wiphy->interface_modes |= BIT(NL80211_IFTYPE_P2P_CLIENT) |
++					  BIT(NL80211_IFTYPE_P2P_GO) |
++					  BIT(NL80211_IFTYPE_P2P_DEVICE);
++		c0_limits[i].max = 2;
++		c0_limits[i++].types = BIT(NL80211_IFTYPE_STATION);
++		c0_limits[i].max = 1;
++		c0_limits[i++].types = BIT(NL80211_IFTYPE_P2P_DEVICE);
++		c0_limits[i].max = 2;
++		c0_limits[i++].types = BIT(NL80211_IFTYPE_P2P_CLIENT) |
++				       BIT(NL80211_IFTYPE_P2P_GO);
++		c0_limits[i].max = 2;
++		c0_limits[i++].types = BIT(NL80211_IFTYPE_AP);
++		combo[c].max_interfaces = 5;
++	} else if (p2p) {
+ 		if (brcmf_feat_is_enabled(ifp, BRCMF_FEAT_MCHAN))
+ 			combo[c].num_different_channels = 2;
+ 		else
+ 			combo[c].num_different_channels = 1;
++		c0_limits[i].max = 1;
++		c0_limits[i++].types = BIT(NL80211_IFTYPE_STATION);
+ 		wiphy->interface_modes |= BIT(NL80211_IFTYPE_P2P_CLIENT) |
+ 					  BIT(NL80211_IFTYPE_P2P_GO) |
+ 					  BIT(NL80211_IFTYPE_P2P_DEVICE);
+@@ -6573,16 +6601,26 @@ static int brcmf_setup_ifmodes(struct wiphy *wiphy, struct brcmf_if *ifp)
+ 		c0_limits[i].max = 1;
+ 		c0_limits[i++].types = BIT(NL80211_IFTYPE_P2P_CLIENT) |
+ 				       BIT(NL80211_IFTYPE_P2P_GO);
++		combo[c].max_interfaces = i;
++	} else if (rsdb) {
++		combo[c].num_different_channels = 2;
++		c0_limits[i].max = 2;
++		c0_limits[i++].types = BIT(NL80211_IFTYPE_STATION);
++		c0_limits[i].max = 2;
++		c0_limits[i++].types = BIT(NL80211_IFTYPE_AP);
++		combo[c].max_interfaces = 3;
+ 	} else {
+ 		combo[c].num_different_channels = 1;
+ 		c0_limits[i].max = 1;
++		c0_limits[i++].types = BIT(NL80211_IFTYPE_STATION);
++		c0_limits[i].max = 1;
+ 		c0_limits[i++].types = BIT(NL80211_IFTYPE_AP);
++		combo[c].max_interfaces = i;
+ 	}
+-	combo[c].max_interfaces = i;
+ 	combo[c].n_limits = i;
+ 	combo[c].limits = c0_limits;
+
+-	if (p2p) {
++	if (p2p && !rsdb) {
+ 		c++;
+ 		i = 0;
+ 		p2p_limits = kcalloc(4, sizeof(*p2p_limits), GFP_KERNEL);
 --
 2.17.1
 
