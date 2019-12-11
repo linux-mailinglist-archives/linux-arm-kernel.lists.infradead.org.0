@@ -2,82 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B09111B991
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 18:04:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 086C811B9AC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 18:09:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J4e0f9wO/qXKYVv2ibj4NVnt4HulLkqMIoJ4TT8/e2A=; b=IJiUJoDK8aZ+Wf
-	NBB5KUQTuf+GyPf/T0VjhNux3QVYPk7u+IEbBVY/ySfBH0MGQ0A69/15bXFEKc1JRI/jsS0rfHGKT
-	i78/fjN+dSL5Nq4ItNgOO/SGTiBilrqhyR62y8+6Hu6926Xn1mBRYJe7uZisFzJO2Ea4RTFGUo/Bm
-	274HPBBR81Ai6fOn9upk7jKOpLNWQhLzynpRlD+v9aEz5casEYO95opbt2pGW7GMzqmY6E1S8pyKN
-	Uizn1kgzWRGBKH2XeOeXfLRtv8s9Opra34ohvSMj9aobuEYq504D7QOMZGgyNjjwi72NLYmEu7JT3
-	Ya7nAXBJLmiY/PZCtngQ==;
+	List-Owner; bh=jqK/w9sDj/uWfT9KPxXEgHOlWrrgBnkl0+4wPoJWZ0s=; b=MfXz2j2ITSrvAZ
+	DOlJtlM5rHcRuhC34DomLQUz7Wl3fA+XbCQX9RnWpZUHhfxGY2Co8z8uKh017Jnw/OZ0+g+t1dI69
+	hmIWx3xrQQKPuTsXBnx5hVfGA9RWayb4zpcdZMtbn/H3ZKzRkTFVe1iRovPxnX60nBfpICWuvKRpH
+	HweF/fCKLHhFVCHnK0R6tG6xYYlUXF+JRr92G43vXdbiK/hkmAR7PosL4BoQZMoRftRsIkFUArGDd
+	XXQ3upEAOHpcuKcgkzTm05qWMyHkYrvKbwOOUa3RklTwRSGUw4Gsz9AYWCC17KL0APIfOdtmqmdIy
+	xEz8T+38woGzCye9JJdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if5Pn-00070q-W8; Wed, 11 Dec 2019 17:04:44 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1if5Ug-0000q6-Sh; Wed, 11 Dec 2019 17:09:46 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if5PC-0006Yx-7I
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 17:04:07 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBBH43dG093381;
- Wed, 11 Dec 2019 11:04:03 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576083843;
- bh=2q7+lDu/00Dro2as6TEZvbW2Mo8FYkswNwEaKXoLaGc=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=HD2TeEeD8rV95xAm+hnw8E7Um8xDpyYi4Uo/mvWdlZ5u32W/UERVeCGa8j6d7IZQF
- BMVo7W/uMUchDFg2jUIum9How2Slu2oGuxzdiY6FNE0077oHTFjdnNSYrfPegiNt8v
- 9maS6mXMdnOd3o13tY7s3Q0BH1zJUbPeFdqIZksU=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBBH43V7130518;
- Wed, 11 Dec 2019 11:04:03 -0600
-Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 11
- Dec 2019 11:04:02 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Wed, 11 Dec 2019 11:04:02 -0600
-Received: from a0132425.dhcp.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBBH3s6h099151; 
- Wed, 11 Dec 2019 11:04:00 -0600
-From: Vignesh Raghavendra <vigneshr@ti.com>
-To: Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>
-Subject: [PATCH v2 3/3] arm64: dts: k3-am654-base-board: Add IRQ line for GPIO
- expander
-Date: Wed, 11 Dec 2019 22:34:14 +0530
-Message-ID: <20191211170414.7026-3-vigneshr@ti.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191211170414.7026-1-vigneshr@ti.com>
-References: <20191211170414.7026-1-vigneshr@ti.com>
+ id 1if5UW-0000pj-Qx
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 17:09:38 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1if5UG-0005Y6-BL; Wed, 11 Dec 2019 18:09:20 +0100
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1if5UE-0002i5-93; Wed, 11 Dec 2019 18:09:18 +0100
+Date: Wed, 11 Dec 2019 18:09:18 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Adam Thomson <Adam.Thomson.Opensource@diasemi.com>
+Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
+ selection documentation
+Message-ID: <20191211170918.q7kqkd4lrwwp7jl3@pengutronix.de>
+References: <20191129172537.31410-1-m.felsch@pengutronix.de>
+ <20191129172537.31410-4-m.felsch@pengutronix.de>
+ <20191204134631.GT1998@sirena.org.uk>
+ <20191210094144.mxximpuouchy3fqu@pengutronix.de>
+ <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 17:23:39 up 26 days,  7:42, 33 users,  load average: 0.00, 0.00, 0.00
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_090406_340469_F1914648 
-X-CRM114-Status: GOOD (  13.77  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191211_090937_030574_664814CA 
+X-CRM114-Status: GOOD (  29.20  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,59 +78,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Vignesh Raghavendra <vigneshr@ti.com>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Support Opensource <Support.Opensource@diasemi.com>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "andrew@aj.id.au" <andrew@aj.id.au>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ Mark Brown <broonie@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "lee.jones@linaro.org" <lee.jones@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add IRQ line for IO expander present on wkup_i2c bus on  AM654 EVM
+Hi Adam,
 
-Signed-off-by: Vignesh Raghavendra <vigneshr@ti.com>
----
-v2:
+On 19-12-11 16:14, Adam Thomson wrote:
+> On 10 December 2019 09:42, Marco Felsch wrote:
+> 
+> > Hi Mark,
+> > 
+> > On 19-12-04 13:46, Mark Brown wrote:
+> > > On Fri, Nov 29, 2019 at 06:25:34PM +0100, Marco Felsch wrote:
+> > >
+> > > > +  Optional regulator device-specific properties:
+> > > > +  - dlg,vsel-sense-gpios : A GPIO reference to a local general purpose input,
+> > > > +    the datasheet calls it GPI. The regulator sense the input signal and select
+> > > > +    the active or suspend voltage settings. If the signal is active the
+> > > > +    active-settings are applied else the suspend-settings are applied.
+> > > > +    Attention: Sharing the same GPI for other purposes or across multiple
+> > > > +    regulators is possible but the polarity setting must equal.
+> > >
+> > > I'm really confused by this.  As far as I understand it it seems
+> > > to be doing pinmuxing on the chip using the GPIO bindings which
+> > > is itself a bit odd and I don't see anything here that configures
+> > > whatever sets the state of the pins.  Don't we need another GPIO
+> > > to set the vsel-sense inputs on the PMIC?
+> > 
+> > Yes the PMIC is very configurable and it took a while till I understand
+> > it.. @Adam please correct me if I'm wrong.
+> > 
+> > The PMIC regulators regardless of the type: ldo or buck can be
+> > simplified drawn as:
+> > 
+> > 
+> > 
+> > da9062-gpio               da9062-regulator
+> > 
+> >   +-------------------------------------------------------
+> >   |                  PMIC
+> >   |
+> >   > GPIO0            +--------------------------+
+> >   |                  |         REGULATOR-0      |
+> >   > GPIO1 -------+   |                          |
+> >   |              +-- > vsel-in    voltage-a-out <
+> >   > GPIO2        |   |                          |
+> >   |              |   > enable-in  voltage-b-out <
+> >   |              |   |                          |
+> >   |              |   +--------------------------+
+> >   |              |
+> >   |              |   +--------------------------+
+> >   |              |   |         REGULATOR-1      |
+> >   |              |   |                          |
+> >   |              +-- > vsel-in    voltage-a-out <
+> >   |                  |                          |
+> >   |                  > enable-in  voltage-b-out <
+> >   |                  |                          |
+> >   |                  +--------------------------+
+> >   |
+> > 
+> > The 'vsel-in' and 'enable-in' regulator inputs must be routed to the
+> > PMIC GPIOs which must be configured as input. If this is a pinmux in
+> > your opinion, then yes we need to do that. IMHO it isn't a pinmux
+> > because from the regulator point of view it is just a GPIO which comes
+> > from our own gpio-dev (da9062-gpio). So the abstraction is vald. Anyway
+> > I'm with you that this isn't the typical use-case.
+> 
+> We've had this discussion before and to me it felt more like pinmux than GPIO
+> although I understand we're configuring the GPIO pin as input before then
+> configuring a regulator to take that specific internal GPIO as the control
+> signal. We're defining a specific role to this pin in HW rather than it being a
+> general software handled GPI so it feels like this would be neater under pinmux.
+> There does still need to be a mapping between that pin and the regulator which I
+> guess would be served by passing the pin to the regulator through generic pinmux
+> bindings and then in the regulator code you're simply just enabling the
+> regulator to be controlled from that pin. The HW lets you control multiple
+> regulators from the same input pin so there's a flexibility there to be
+> captured, as you mention.
 
-New patch
+I know that we already had this discussion but the result was to wait
+for the maintainers input. Since Linus is the pinctrl/gpio maintainer
+and Mark the regulator maintainer we now have some input so we can move
+forward. Linus made some comments on the dt-bindings and on the code but
+he didn't pointed out that this usage is wrong. So I guessed it would be
+fine for him. Mark did his first comments now and I explained the
+current state..
 
- arch/arm64/boot/dts/ti/k3-am654-base-board.dts | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+I discussed it with a colleague again and he mentioned that pinctrl
+should be named pinctrl instead it should be named padctrl. We don't
+reconfigure the pad to a other function it is still a device general
+purpose input pad. The hw-signal flow goes always trough the gpio block
+so one argument more for my solution. Also we don't configure the "pad"
+to be a vsel/ena-pin. The hw-pad can only be a gpio or has an alternate
+function (WDKICK for GPIO0, Seq. SYS_EN for GPIO2, Seq. PWR_EN for GPIO4).
+Instead we tell the regulator to use _this_ GPIO e.g. for voltage
+selection so we go the other way around. My last argument why pinctrl
+isn't the correct place is that the GPIO1 can be used for
+regulator-0:vsel-in and for regulator-1:enable-in. So this pad would
+have different states which is invalid IMHO.
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-index 94bec7aa9baf..a634dceaa964 100644
---- a/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-+++ b/arch/arm64/boot/dts/ti/k3-am654-base-board.dts
-@@ -85,6 +85,13 @@ AM65X_WKUP_IOPAD(0x0028, PIN_INPUT, 0)  /* (R3) MCU_OSPI0_D7 */
- 			AM65X_WKUP_IOPAD(0x002c, PIN_OUTPUT, 0) /* (R4) MCU_OSPI0_CSn0 */
- 		>;
- 	};
-+
-+	wkup_pca554_default: wkup_pca554_default {
-+		pinctrl-single,pins = <
-+			AM65X_WKUP_IOPAD(0x0034, PIN_INPUT, 7) /* (T1) MCU_OSPI1_CLK.WKUP_GPIO0_25 */
-+
-+		>;
-+	};
- };
- 
- &main_pmx0 {
-@@ -180,6 +187,12 @@ pca9554: gpio@39 {
- 		reg = <0x39>;
- 		gpio-controller;
- 		#gpio-cells = <2>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&wkup_pca554_default>;
-+		interrupt-parent = <&wkup_gpio0>;
-+		interrupts = <25 IRQ_TYPE_EDGE_FALLING>;
-+		interrupt-controller;
-+		#interrupt-cells = <2>;
- 	};
- };
- 
+Regards,
+  Marco
+
+> > Regards,
+> >   Marco
+> > 
+> > --
+> > Pengutronix e.K.                           |                             |
+> > Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+> > 31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+> > Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+> 
+
 -- 
-2.24.0
-
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
