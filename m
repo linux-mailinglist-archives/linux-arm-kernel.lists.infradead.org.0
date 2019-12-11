@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9BCE11BA0F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 18:21:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F62C11BA11
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 18:21:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2CTtwABQKoeUwpC+Fb2yOIoDy1RHyGAxn0A4RZTe0QU=; b=ic4l4DsWY7PKiA
-	yNE4RX+OHGFI4ame5doHDVKpcULPgR3HPE4kiPTW62l1UjuKhHmV0iHT5C3w/4rEPDvAnFxEME83S
-	J0ya/t9A+tkCX7S0XE9N66ND6m8qAGCxPQ/Og/CikY5CSh798a3RUhgCDQcx4t2+mu0mqYjCLNt+/
-	jIM4knMrlF4jHfDafD7qo6YM9V6wXYHAOZBG2yKe4Np1Vxjutm1doHFxqQKK6GB8hanYL/pMHdSUM
-	p5sxUCPzOWoBR/Pa/kyGtqMA5Fo13VPLOkey7Bq8mv500RVhq+ym/1eBDVZ4iWL0yQgoCmPmi7AJ7
-	Vkbu+aMKJoX1bCkwrA6g==;
+	List-Owner; bh=EOx0Yg6ixCG/Pw4CAK6X9mfUFt3eHCTtrBcAQHKIkms=; b=omXXB5sIDuzuwT
+	mXgEEjjHC+DpyZ4GrkQxciGU6WIcgEeGGHj/zshM2inB6MLKqzMXycgBke04JNa9mz1mvbAHeKvnP
+	TnExtpaOUijRHexCeE5kMsGTOXT+/M07l2hBmqm9lRcwXqUSaqFCgSO/0o++iwP36qAPtP1EQJC1c
+	CF52RB2DVp1sQkk75Ioi8SH6Udsf7apdD/PLBE4ThOH9KlVc7ZTr53SalegF3HfiuK7lopatsadWn
+	AYcO76Yhtwb7uVHQvzCcZlcMv3H5K4K0kBzAsV4iUNYViP32CIlkbav/RoibSqUW9+U1LkJyaoeYL
+	mRv+J7Xp2xkEMa+ARAJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if5fo-0006sV-Aq; Wed, 11 Dec 2019 17:21:16 +0000
+	id 1if5gL-0007NQ-Oz; Wed, 11 Dec 2019 17:21:49 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if5f1-0006RQ-WC
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 17:20:29 +0000
+ id 1if5f3-0006SI-JC
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 17:20:31 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 5467E81BD;
- Wed, 11 Dec 2019 17:21:06 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id EBA9B80FA;
+ Wed, 11 Dec 2019 17:21:07 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 04/16] ARM: OMAP2+: Drop legacy platform data for omap4
+Subject: [PATCH 05/16] ARM: OMAP2+: Drop legacy platform data for omap5
  spinlock
-Date: Wed, 11 Dec 2019 09:20:02 -0800
-Message-Id: <20191211172014.35201-5-tony@atomide.com>
+Date: Wed, 11 Dec 2019 09:20:03 -0800
+Message-Id: <20191211172014.35201-6-tony@atomide.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191211172014.35201-1-tony@atomide.com>
 References: <20191211172014.35201-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_092028_092861_8B39F9B5 
-X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-CacheID: sfid-20191211_092029_702926_F76E81AF 
+X-CRM114-Status: UNSURE (   8.03  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -82,26 +82,26 @@ Cc: Suman Anna <s-anna@ti.com>
 Cc: Keerthy <j-keerthy@ti.com>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/boot/dts/omap4-l4.dtsi            |  1 -
- arch/arm/mach-omap2/omap_hwmod_44xx_data.c | 43 ----------------------
+ arch/arm/boot/dts/omap5-l4.dtsi            |  1 -
+ arch/arm/mach-omap2/omap_hwmod_54xx_data.c | 43 ----------------------
  2 files changed, 44 deletions(-)
 
-diff --git a/arch/arm/boot/dts/omap4-l4.dtsi b/arch/arm/boot/dts/omap4-l4.dtsi
---- a/arch/arm/boot/dts/omap4-l4.dtsi
-+++ b/arch/arm/boot/dts/omap4-l4.dtsi
-@@ -613,7 +613,6 @@ mbox_dsp: mbox_dsp {
+diff --git a/arch/arm/boot/dts/omap5-l4.dtsi b/arch/arm/boot/dts/omap5-l4.dtsi
+--- a/arch/arm/boot/dts/omap5-l4.dtsi
++++ b/arch/arm/boot/dts/omap5-l4.dtsi
+@@ -627,7 +627,6 @@ mbox_dsp: mbox_dsp {
  
- 		target-module@76000 {			/* 0x4a0f6000, ap 29 3a.0 */
+ 		target-module@76000 {			/* 0x4a0f6000, ap 27 0c.0 */
  			compatible = "ti,sysc-omap2", "ti,sysc";
 -			ti,hwmods = "spinlock";
  			reg = <0x76000 0x4>,
  			      <0x76010 0x4>,
  			      <0x76014 0x4>;
-diff --git a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c b/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
---- a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
-@@ -1490,40 +1490,6 @@ static struct omap_hwmod omap44xx_smartreflex_mpu_hwmod = {
- 	.dev_attr	= &smartreflex_mpu_dev_attr,
+diff --git a/arch/arm/mach-omap2/omap_hwmod_54xx_data.c b/arch/arm/mach-omap2/omap_hwmod_54xx_data.c
+--- a/arch/arm/mach-omap2/omap_hwmod_54xx_data.c
++++ b/arch/arm/mach-omap2/omap_hwmod_54xx_data.c
+@@ -684,40 +684,6 @@ static struct omap_hwmod omap54xx_mpu_hwmod = {
+ 	},
  };
  
 -/*
@@ -110,7 +110,7 @@ diff --git a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c b/arch/arm/mach-omap2/om
 - * running on multiple processors
 - */
 -
--static struct omap_hwmod_class_sysconfig omap44xx_spinlock_sysc = {
+-static struct omap_hwmod_class_sysconfig omap54xx_spinlock_sysc = {
 -	.rev_offs	= 0x0000,
 -	.sysc_offs	= 0x0010,
 -	.syss_offs	= 0x0014,
@@ -121,49 +121,49 @@ diff --git a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c b/arch/arm/mach-omap2/om
 -	.sysc_fields	= &omap_hwmod_sysc_type1,
 -};
 -
--static struct omap_hwmod_class omap44xx_spinlock_hwmod_class = {
+-static struct omap_hwmod_class omap54xx_spinlock_hwmod_class = {
 -	.name	= "spinlock",
--	.sysc	= &omap44xx_spinlock_sysc,
+-	.sysc	= &omap54xx_spinlock_sysc,
 -};
 -
 -/* spinlock */
--static struct omap_hwmod omap44xx_spinlock_hwmod = {
+-static struct omap_hwmod omap54xx_spinlock_hwmod = {
 -	.name		= "spinlock",
--	.class		= &omap44xx_spinlock_hwmod_class,
--	.clkdm_name	= "l4_cfg_clkdm",
+-	.class		= &omap54xx_spinlock_hwmod_class,
+-	.clkdm_name	= "l4cfg_clkdm",
 -	.prcm = {
 -		.omap4 = {
--			.clkctrl_offs = OMAP4_CM_L4CFG_HW_SEM_CLKCTRL_OFFSET,
--			.context_offs = OMAP4_RM_L4CFG_HW_SEM_CONTEXT_OFFSET,
+-			.clkctrl_offs = OMAP54XX_CM_L4CFG_SPINLOCK_CLKCTRL_OFFSET,
+-			.context_offs = OMAP54XX_RM_L4CFG_SPINLOCK_CONTEXT_OFFSET,
 -		},
 -	},
 -};
  
  /*
-  * 'timer' class
-@@ -2348,14 +2314,6 @@ static struct omap_hwmod_ocp_if omap44xx_l4_cfg__smartreflex_mpu = {
+  * 'ocp2scp' class
+@@ -1262,14 +1228,6 @@ static struct omap_hwmod_ocp_if omap54xx_l4_cfg__mpu = {
  	.user		= OCP_USER_MPU | OCP_USER_SDMA,
  };
  
 -/* l4_cfg -> spinlock */
--static struct omap_hwmod_ocp_if omap44xx_l4_cfg__spinlock = {
--	.master		= &omap44xx_l4_cfg_hwmod,
--	.slave		= &omap44xx_spinlock_hwmod,
--	.clk		= "l4_div_ck",
+-static struct omap_hwmod_ocp_if omap54xx_l4_cfg__spinlock = {
+-	.master		= &omap54xx_l4_cfg_hwmod,
+-	.slave		= &omap54xx_spinlock_hwmod,
+-	.clk		= "l4_root_clk_div",
 -	.user		= OCP_USER_MPU | OCP_USER_SDMA,
 -};
 -
- /* l4_wkup -> timer1 */
- static struct omap_hwmod_ocp_if omap44xx_l4_wkup__timer1 = {
- 	.master		= &omap44xx_l4_wkup_hwmod,
-@@ -2486,7 +2444,6 @@ static struct omap_hwmod_ocp_if *omap44xx_hwmod_ocp_ifs[] __initdata = {
- 	&omap44xx_l4_cfg__smartreflex_core,
- 	&omap44xx_l4_cfg__smartreflex_iva,
- 	&omap44xx_l4_cfg__smartreflex_mpu,
--	&omap44xx_l4_cfg__spinlock,
- 	&omap44xx_l4_wkup__timer1,
- 	/* &omap44xx_l4_cfg__usb_host_fs, */
- 	&omap44xx_l4_cfg__usb_host_hs,
+ /* l4_cfg -> ocp2scp1 */
+ static struct omap_hwmod_ocp_if omap54xx_l4_cfg__ocp2scp1 = {
+ 	.master		= &omap54xx_l4_cfg_hwmod,
+@@ -1341,7 +1299,6 @@ static struct omap_hwmod_ocp_if *omap54xx_hwmod_ocp_ifs[] __initdata = {
+ 	&omap54xx_l3_main_2__mmu_ipu,
+ 	&omap54xx_l4_wkup__kbd,
+ 	&omap54xx_l4_cfg__mpu,
+-	&omap54xx_l4_cfg__spinlock,
+ 	&omap54xx_l4_cfg__ocp2scp1,
+ 	&omap54xx_l4_wkup__timer1,
+ 	&omap54xx_l4_cfg__usb_host_hs,
 -- 
 2.24.1
 
