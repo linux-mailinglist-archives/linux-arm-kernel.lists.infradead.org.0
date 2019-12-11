@@ -2,52 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D088C11A73E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:34:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2273611A740
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:34:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QpgULJdM0Ea6nypsTsPt9FqFJ6H0VLYE6EOczy8LkLs=; b=Jkdt0IFHlEE4Jv
-	THHVwIgyd3HEQKIuhFPfWFM5wJRfCHv49ym5et0tITj34hHfCuvSdAleLqayBU1PcRZlmd7co1WRl
-	27/E9zL4giOeupC8F30ObvqWplcnNMAOU8v/ZJzjMkZabxyONplZNrer4o6ih4/tw/N5HJzCMUjTF
-	e3It8yIR0O0bDu6RMk7XkxwjzWTd+grJ5QcYq0EBkcpNaEqCe+hjwScUeUbidtxeOlUdlrpOQZ46k
-	BZvOUyyA0Jyldw50YDt0ZRgk/gzLO5FNhzL+U1s1IcOMafcCAIxJ9HI9+Cydk/K908SNpGzJqH17x
-	Dp/quUCICzIcJKMcvazA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+wfjzgVUtOnFMJSxvOeOFwwgs7D93HJDoMAO4pBlDeg=; b=XFeiWMZKph8VILc5LEPU7/7RW5
+	GyyAe2MQvHvrETIbQatzlNwW6ySPM1aXPK3uS1qFY1ol9n/FzzX5G+Gt9lZ21mulufBkvjIGMlljz
+	l47SSympe4p+lNtIx3ldihdZ6XKLW5TMimCFo3KxiQP27laBeqXp9w5CgKi18nTh+QQ0Jh4UBnhjv
+	w2Ey0EUAGsGVGkVGiCVL8HdN+I9eOLGpyEf7p7AufuB7i/jariWtI36TAakiKhC9Vf4Rnl6AyPH02
+	nSDhyT+6vGH9XXj42yHDu47YOh5gF1fMseMHLGsCCmw/8vCLPxdKRCeQ5tpvs4JWxGqLIdfpM1ZWC
+	7ynCKnfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieyNw-0004HK-LT; Wed, 11 Dec 2019 09:34:20 +0000
-Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
+	id 1ieyOH-0004Wl-BH; Wed, 11 Dec 2019 09:34:41 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieyNY-0004FU-SA; Wed, 11 Dec 2019 09:34:06 +0000
-Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
- by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1ieyNF-0008KJ-G0; Wed, 11 Dec 2019 17:33:37 +0800
-Received: from herbert by gondobar with local (Exim 4.89)
- (envelope-from <herbert@gondor.apana.org.au>)
- id 1ieyN8-0000Aw-DU; Wed, 11 Dec 2019 17:33:30 +0800
-Date: Wed, 11 Dec 2019 17:33:30 +0800
-From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Stephen Brennan <stephen@brennan.io>
-Subject: Re: [PATCH v2 0/3] Raspberry Pi 4 HWRNG Support
-Message-ID: <20191211093330.h5qz4oyll3jsuqot@gondor.apana.org.au>
-References: <20191119061407.69911-1-stephen@brennan.io>
+ id 1ieyNu-0004M5-L1
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:34:20 +0000
+Received: by mail-wm1-x343.google.com with SMTP id n9so6261925wmd.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Dec 2019 01:34:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=2aHze3eD3qXxFb1do0AXNxi5Ns/Q9Iwwz2n3HPpJOcs=;
+ b=VzDedKeMxQaNjEiczxGBTICIPaIV8PnAeFP1Rr1OgYLJI0XPPZ8hsic40cqjmiTyo3
+ wYTDItCB0zXtkyaI42IJsnUV4D0yQCvnTnWO3F00uZ7dPqoIFPgzSDJBLe65rRZm3OVe
+ OBqCyUpJ+xq6g5nVO5nm6OYpdhun8nWnR8INhbYMnRBLIoascaSdvzMpS+J6p25Kre8e
+ 3KkQ/rMdUKCU6OmbCGynjh0CgUo5q/5lFiY9bc8rvWo4BnD7+Xts/5+fBpVBAtTHkOU5
+ Syju8hBbNEbXRwgUmdisOR4FPwKw6Ut1p/I1D6tKeY03HyZFcugKDOCcrRv1IzQ5jJwx
+ QY2Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=2aHze3eD3qXxFb1do0AXNxi5Ns/Q9Iwwz2n3HPpJOcs=;
+ b=oOheCLUB9slrDRE8PPSl+bHAY/jiC+VeUTfq42vLir3vjrzh8JuC6BIEwAlZHPRPxh
+ cQKP/wg2gq1jr4+m0hK+fXr/VUZLeMTvRIg6VENzqpAi4V+Tc5TTmybYrLIEKXLLiPVr
+ mLStupkB+jB6YT40jUGwIF1onLibiZwuXhk7E7wKG94ez/68Plic78CAJVS9aS6pflig
+ nEQgdChuVUmGt7BNx6RPiA+YHjyGdy+8XDVFfq2ax2+DODDks8/mBDlMuAfJhT/v5159
+ SI0BFrCwSDFYrb9stkQfOz3uWWs0AYbJgTowGaXVJoA9EZl1sIE6yQ16mWOOf6WS3ttg
+ Pl+g==
+X-Gm-Message-State: APjAAAUjh/zJFE7YSTsHdTYK8X5dZJmiTyoOiNyPDM6n46Um2Zh8Ddlr
+ SmkbkncjAuu8tPIg1DzIcvVOMQ==
+X-Google-Smtp-Source: APXvYqyaiVVPEaixzSy9hFWroTUOlG1fayabOrFMoHshKKilcKu2iFPikVV+wuyvp7vTFK3Tb0XS2Q==
+X-Received: by 2002:a1c:9e49:: with SMTP id h70mr2604822wme.79.1576056857130; 
+ Wed, 11 Dec 2019 01:34:17 -0800 (PST)
+Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id y10sm1594428wmm.3.2019.12.11.01.34.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Dec 2019 01:34:16 -0800 (PST)
+References: <20191211032802.83309-1-jian.hu@amlogic.com>
+User-agent: mu4e 1.3.3; emacs 26.2
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Jian Hu <jian.hu@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH v2] arm64: dts: meson-a1: add I2C nodes
+In-reply-to: <20191211032802.83309-1-jian.hu@amlogic.com>
+Date: Wed, 11 Dec 2019 10:34:16 +0100
+Message-ID: <1jk173kxyf.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191119061407.69911-1-stephen@brennan.io>
-User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_013359_593742_AFCFC79C 
-X-CRM114-Status: GOOD (  15.97  )
+X-CRM114-CacheID: sfid-20191211_013418_705103_9AB48184 
+X-CRM114-Status: GOOD (  17.49  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,59 +95,248 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-rpi-kernel@lists.infradead.org, Florian Fainelli <f.fainelli@gmail.com>,
- Arnd Bergmann <arnd@arndb.de>, Scott Branden <sbranden@broadcom.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Ray Jui <rjui@broadcom.com>,
- linux-kernel@vger.kernel.org, Eric Anholt <eric@anholt.net>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Stefan Wahren <wahrenst@gmx.net>, Matt Mackall <mpm@selenic.com>,
- linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob
+ Herring <robh@kernel.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ Wolfram Sang <wsa@the-dreams.de>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-i2c@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Nov 18, 2019 at 10:14:04PM -0800, Stephen Brennan wrote:
-> This patch series enables support for the HWRNG included on the Raspberry
-> Pi 4.  It is simply a rebase of Stefan's branch [1]. I went ahead and
-> tested this out on a Pi 4.  Prior to this patch series, attempting to use
-> the hwrng gives:
-> 
->     $ head -c 2 /dev/hwrng
->     head: /dev/hwrng: Input/output error
-> 
-> After this series, the same command gives two random bytes.
-> 
-> Changes in v2:
-> - specify the correct size for the region in the dts, refactor bcm283x rng
-> 
-> ---
-> 
-> Stefan Wahren (2):
->   dt-bindings: rng: add BCM2711 RNG compatible
->   hwrng: iproc-rng200: Add support for BCM2711
-> 
-> Stephen Brennan (1):
->   ARM: dts: bcm2711: Enable HWRNG support
-> 
->  .../devicetree/bindings/rng/brcm,iproc-rng200.txt     |  1 +
->  arch/arm/boot/dts/bcm2711.dtsi                        |  6 +++---
->  arch/arm/boot/dts/bcm2835.dtsi                        |  1 +
->  arch/arm/boot/dts/bcm2836.dtsi                        |  1 +
->  arch/arm/boot/dts/bcm2837.dtsi                        |  1 +
->  arch/arm/boot/dts/bcm283x-common.dtsi                 | 11 +++++++++++
->  arch/arm/boot/dts/bcm283x.dtsi                        |  6 ------
->  drivers/char/hw_random/Kconfig                        |  2 +-
->  drivers/char/hw_random/iproc-rng200.c                 |  1 +
->  9 files changed, 20 insertions(+), 10 deletions(-)
->  create mode 100644 arch/arm/boot/dts/bcm283x-common.dtsi
 
-Patches 1-2 applied.  Thanks.
--- 
-Email: Herbert Xu <herbert@gondor.apana.org.au>
-Home Page: http://gondor.apana.org.au/~herbert/
-PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
+On Wed 11 Dec 2019 at 04:28, Jian Hu <jian.hu@amlogic.com> wrote:
+
+> There are four I2C controllers in A1 series,
+> Share the same comptible with AXG. Compared to AXG,
+> Drive strength feature is newly added in A1.
+
+Until here, OK
+
+> This patch depends on A1 clock driver.
+
+This last sentence is a valuable piece of information for the maintainer
+but should not appear is the commit description as it is something we
+want is the history
+
+Please move this bellow the '---' *AND*
+Add a link like " https://lkml.kernel.org/r/..." to help the maintainer
+locate the related series
+
+
+>
+> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
+>
+> ---
+> This patch depends on A1 clock patchset at[0]
+>
+> Changes since v1 at [1]:
+> -change reg length to 0x20
+> -assign i2c bus alias in dts file
+> -add new feature note compared to AXG in changelog
+>
+> [0] https://lkml.kernel.org/r/20191206074052.15557-1-jian.hu@amlogic.com
+> [1] https://lkml.kernel.org/r/20191202111253.94872-1-jian.hu@amlogic.com
+> ---
+> ---
+>  .../arm64/boot/dts/amlogic/meson-a1-ad401.dts |   4 +
+>  arch/arm64/boot/dts/amlogic/meson-a1.dtsi     | 142 ++++++++++++++++++
+>  2 files changed, 146 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts b/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
+> index 69c25c68c358..2d0457976233 100644
+> --- a/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
+> +++ b/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
+> @@ -13,6 +13,10 @@
+>  
+>  	aliases {
+>  		serial0 = &uart_AO_B;
+> +		i2c0 = &i2c0;
+> +		i2c1 = &i2c1;
+> +		i2c2 = &i2c2;
+> +		i2c3 = &i2c3;
+
+It is not necessary to define alias for all the possible buses,
+especially it some won't be used on the platform.
+
+Will this platform use all 4 busses ?
+
+In any case, the aliases can added later, as needed when the related i2c
+bus is enabled on the board
+
+>  	};
+>  
+>  	chosen {
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
+> index eab2ecd36aa8..66d5206a57de 100644
+> --- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
+> +++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
+> @@ -117,6 +117,46 @@
+>  				};
+>  			};
+>  
+> +			i2c0: i2c@1400 {
+> +				compatible = "amlogic,meson-axg-i2c";
+> +				reg = <0x0 0x1400 0x0 0x20>;
+> +				interrupts = <GIC_SPI 32 IRQ_TYPE_EDGE_RISING>;
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +				clocks = <&clkc_periphs CLKID_I2C_M_A>;
+> +				status = "disabled";
+> +			};
+> +
+> +			i2c1: i2c@5c00 {
+
+Please order nodes by address when then have one.
+The 3 following i2c busses should appear after the uarts
+
+> +				compatible = "amlogic,meson-axg-i2c";
+> +				reg = <0x0 0x5c00 0x0 0x20>;
+> +				interrupts = <GIC_SPI 68 IRQ_TYPE_EDGE_RISING>;
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +				clocks = <&clkc_periphs CLKID_I2C_M_B>;
+> +				status = "disabled";
+> +			};
+> +
+> +			i2c2: i2c@6800 {
+> +				compatible = "amlogic,meson-axg-i2c";
+> +				reg = <0x0 0x6800 0x0 0x20>;
+> +				interrupts = <GIC_SPI 76 IRQ_TYPE_EDGE_RISING>;
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +				clocks = <&clkc_periphs CLKID_I2C_M_C>;
+> +				status = "disabled";
+> +			};
+> +
+> +			i2c3: i2c@6c00 {
+> +				compatible = "amlogic,meson-axg-i2c";
+> +				reg = <0x0 0x6c00 0x0 0x20>;
+> +				interrupts = <GIC_SPI 78 IRQ_TYPE_EDGE_RISING>;
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +				clocks = <&clkc_periphs CLKID_I2C_M_D>;
+> +				status = "disabled";
+> +			};
+> +
+>  			uart_AO: serial@1c00 {
+>  				compatible = "amlogic,meson-gx-uart",
+>  					     "amlogic,meson-ao-uart";
+> @@ -171,3 +211,105 @@
+>  		#clock-cells = <0>;
+>  	};
+>  };
+> +
+> +&periphs_pinctrl {
+> +	i2c0_f11_pins:i2c0-f11 {
+> +		mux {
+> +			groups = "i2c0_sck_f11",
+> +				"i2c0_sda_f12";
+> +			function = "i2c0";
+> +			bias-pull-up;
+> +			drive-strength-microamp = <3000>;
+> +		};
+> +	};
+> +
+> +	i2c0_f9_pins:i2c0-f9 {
+
+When the nodes don't have an address, please order them
+alpha-numerically by node name.
+
+> +		mux {
+> +			groups = "i2c0_sck_f9",
+> +				"i2c0_sda_f10";
+> +			function = "i2c0";
+> +			bias-pull-up;
+> +			drive-strength-microamp = <3000>;
+> +		};
+> +	};
+> +
+> +	i2c1_x_pins:i2c1-x {
+> +		mux {
+> +			groups = "i2c1_sck_x",
+> +				"i2c1_sda_x";
+> +			function = "i2c1";
+> +			bias-pull-up;
+> +			drive-strength-microamp = <3000>;
+> +		};
+> +	};
+> +
+> +	i2c1_a_pins:i2c1-a {
+> +		mux {
+> +			groups = "i2c1_sck_a",
+> +				"i2c1_sda_a";
+> +			function = "i2c1";
+> +			bias-pull-up;
+> +			drive-strength-microamp = <3000>;
+> +		};
+> +	};
+> +
+> +	i2c2_x0_pins:i2c2-x0 {
+> +		mux {
+> +			groups = "i2c2_sck_x0",
+> +				"i2c2_sda_x1";
+> +			function = "i2c2";
+> +			bias-pull-up;
+> +			drive-strength-microamp = <3000>;
+> +		};
+> +	};
+> +
+> +	i2c2_x15_pins:i2c2-x15 {
+> +		mux {
+> +			groups = "i2c2_sck_x15",
+> +				"i2c2_sda_x16";
+> +			function = "i2c2";
+> +			bias-pull-up;
+> +			drive-strength-microamp = <3000>;
+> +		};
+> +	};
+> +
+> +	i2c2_a4_pins:i2c2-a4 {
+> +		mux {
+> +			groups = "i2c2_sck_a4",
+> +				"i2c2_sda_a5";
+> +			function = "i2c2";
+> +			bias-pull-up;
+> +			drive-strength-microamp = <3000>;
+> +		};
+> +	};
+> +
+> +	i2c2_a8_pins:i2c2-a8 {
+> +		mux {
+> +			groups = "i2c2_sck_a8",
+> +				"i2c2_sda_a9";
+> +			function = "i2c2";
+> +			bias-pull-up;
+> +			drive-strength-microamp = <3000>;
+> +		};
+> +	};
+> +
+> +	i2c3_x_pins:i2c3-x {
+> +		mux {
+> +			groups = "i2c3_sck_x",
+> +				"i2c3_sda_x";
+> +			function = "i2c3";
+> +			bias-pull-up;
+> +			drive-strength-microamp = <3000>;
+> +		};
+> +	};
+> +
+> +	i2c3_f_pins:i2c3-f {
+> +		mux {
+> +			groups = "i2c3_sck_f",
+> +				"i2c3_sda_f";
+> +			function = "i2c3";
+> +			bias-pull-up;
+> +			drive-strength-microamp = <3000>;
+> +		};
+> +	};
+> +};
+
 
 _______________________________________________
 linux-arm-kernel mailing list
