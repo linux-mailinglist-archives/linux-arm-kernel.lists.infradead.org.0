@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CBF211A75F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:37:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F76211A763
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:37:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ndUThRub2r6Zi+BsAuMkNkV1rZHa2Ekd2/NX7t1Y8UA=; b=mLW5AAQtCSOrem
-	PC41IuP2+LX1P7DzczsyTAdNPX8szW/CqA9OByb1WWWPBhBbroPv+QALE8xumAV/Nwmp9agnhYuEv
-	MnPII7yFRJHNi0+y3dWiBqAfhi+spk3laVfZ7mVPa7zwO07lQvNp+nMVsEp3loTHyfi6wu4mjdRPS
-	B9/zbpYIjssiPhj8bMpHNzWS3zlUjxFxAyKHM/pO29Zo5jy+7lKmWQtvTlvYtLvflmMtj+LcinMD2
-	1KSdrfdEDFsyr9bvARABIngqa51o4qpiZ5IeKxNPuqON2AxMbI+LuOXsgcqffNHjWiStSRDTIoxmE
-	dQmY9n2ZEuqLAmZZ88pg==;
+	List-Owner; bh=ftVYzZeoX30GTKxrNz9zyW6BEhMTnoQi0yi10VHFdRo=; b=mSwmFbDzTzJ02J
+	XtOtGToJMNfao95yu3nr4r8ItqPnZVeHFaor2mjNa8bhpaF0dcbbXwSNWqOhcrhir0krWEa/hu1xl
+	+pQiMLVYPWn2kM6tZ8iiBMUob4zwUa6L2sZlIDtTi5MNaUKKqcKizD+oKlF6QW3fVpNnT/TSqadFz
+	bF3EKvR1BaF3N7Sl0mBN4wb3PB49Y4AL9b0rV8+a4V7FvsbYHbVYVhSK8AHIowRB/HppibVkQRltg
+	ta5KJj0BF4oSD2VIXI4Tsev8Und0WKVtEawqlPP1OenE8Nv6AJUAHwC56slGaog/a2aZRT5ph+AtY
+	lnj4VoJ4XRqwhEdAXnWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieyQX-0006eJ-VC; Wed, 11 Dec 2019 09:37:02 +0000
+	id 1ieyQo-0006r8-F9; Wed, 11 Dec 2019 09:37:18 +0000
 Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieyQQ-0006dc-Td
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:36:56 +0000
+ id 1ieyQa-0006mw-Ad
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:37:05 +0000
 Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
  by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1ieyQ8-0008Ql-42; Wed, 11 Dec 2019 17:36:36 +0800
+ id 1ieyQR-0008Qx-Cx; Wed, 11 Dec 2019 17:36:55 +0800
 Received: from herbert by gondobar with local (Exim 4.89)
  (envelope-from <herbert@gondor.apana.org.au>)
- id 1ieyQ3-0003HT-Iz; Wed, 11 Dec 2019 17:36:31 +0800
-Date: Wed, 11 Dec 2019 17:36:31 +0800
+ id 1ieyQP-0003bR-2n; Wed, 11 Dec 2019 17:36:53 +0800
+Date: Wed, 11 Dec 2019 17:36:53 +0800
 From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v2] crypto: Fix Kconfig indentation
-Message-ID: <20191211093631.sf2es6tnao6ypk52@gondor.apana.org.au>
-References: <1574306448-31868-1-git-send-email-krzk@kernel.org>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Re: [PATCH v2 0/3] crypto: atmel - Retire
+ dma_request_slave_channel_compat()
+Message-ID: <20191211093652.a53uljmw6kns6l4a@gondor.apana.org.au>
+References: <20191121101602.21941-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1574306448-31868-1-git-send-email-krzk@kernel.org>
+In-Reply-To: <20191121101602.21941-1-peter.ujfalusi@ti.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_013655_106573_551CDC97 
-X-CRM114-Status: UNSURE (   7.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_013704_535419_EF8EEB27 
+X-CRM114-Status: GOOD (  10.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,35 +61,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aymen Sghaier <aymen.sghaier@nxp.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Horia =?utf-8?Q?Geant=C4=83?= <horia.geanta@nxp.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, linux-crypto@vger.kernel.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Atul Gupta <atul.gupta@chelsio.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
+ ludovic.desroches@microchip.com, vkoul@kernel.org,
+ linux-crypto@vger.kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBOb3YgMjEsIDIwMTkgYXQgMDQ6MjA6NDhBTSArMDEwMCwgS3J6eXN6dG9mIEtvemxv
-d3NraSB3cm90ZToKPiBBZGp1c3QgaW5kZW50YXRpb24gZnJvbSBzcGFjZXMgdG8gdGFiICgrb3B0
-aW9uYWwgdHdvIHNwYWNlcykgYXMgaW4KPiBjb2Rpbmcgc3R5bGUgd2l0aCBjb21tYW5kIGxpa2U6
-Cj4gCSQgc2VkIC1lICdzL14gICAgICAgIC9cdC8nIC1pICovS2NvbmZpZwo+IAo+IFNpZ25lZC1v
-ZmYtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyemtAa2VybmVsLm9yZz4KPiBSZXZpZXdlZC1i
-eTogSG9yaWEgR2VhbnTEgyA8aG9yaWEuZ2VhbnRhQG54cC5jb20+Cj4gCj4gLS0tCj4gCj4gQ2hh
-bmdlcyBzaW5jZSB2MToKPiAxLiBGaXggYWxzbyA3LXNwYWNlIGFuZCB0YWIrMSBzcGFjZSBpbmRl
-bnRhdGlvbiBpc3N1ZXMuCj4gLS0tCj4gIGRyaXZlcnMvY3J5cHRvL0tjb25maWcgICAgICAgICB8
-IDIyICsrKysrKysrKysrLS0tLS0tLS0tLS0KPiAgZHJpdmVycy9jcnlwdG8vY2FhbS9LY29uZmln
-ICAgIHwgMTQgKysrKysrKy0tLS0tLS0KPiAgZHJpdmVycy9jcnlwdG8vY2hlbHNpby9LY29uZmln
-IHwgMzAgKysrKysrKysrKysrKysrLS0tLS0tLS0tLS0tLS0tCj4gIGRyaXZlcnMvY3J5cHRvL3N0
-bTMyL0tjb25maWcgICB8ICA2ICsrKy0tLQo+ICBkcml2ZXJzL2NyeXB0by91eDUwMC9LY29uZmln
-ICAgfCAxNiArKysrKysrKy0tLS0tLS0tCj4gIDUgZmlsZXMgY2hhbmdlZCwgNDQgaW5zZXJ0aW9u
-cygrKSwgNDQgZGVsZXRpb25zKC0pCgpQYXRjaCBhcHBsaWVkLiAgVGhhbmtzLgotLSAKRW1haWw6
-IEhlcmJlcnQgWHUgPGhlcmJlcnRAZ29uZG9yLmFwYW5hLm9yZy5hdT4KSG9tZSBQYWdlOiBodHRw
-Oi8vZ29uZG9yLmFwYW5hLm9yZy5hdS9+aGVyYmVydC8KUEdQIEtleTogaHR0cDovL2dvbmRvci5h
-cGFuYS5vcmcuYXUvfmhlcmJlcnQvcHVia2V5LnR4dAoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Nov 21, 2019 at 12:15:59PM +0200, Peter Ujfalusi wrote:
+> Hi,
+> 
+> Changes since v1:
+> - Rebased on next-20191121 to avoid conflict for atmel-aes
+> 
+> I'm going through the kernel to crack down on dma_request_slave_channel_compat()
+> users.
+> 
+> These drivers no longer needs it as they are only probed via DT and even if they
+> would probe in legacy mode, the dma_request_chan() + dma_slave_map must be used
+> for supporting non DT boots.
+> 
+> I have only compile tested the drivers!
+> 
+> Regards,
+> Peter
+> ---
+> Peter Ujfalusi (3):
+>   crypto: atmel-aes - Retire dma_request_slave_channel_compat()
+>   crypto: atmel-sha - Retire dma_request_slave_channel_compat()
+>   crypto: atmel-tdes - Retire dma_request_slave_channel_compat()
+> 
+>  drivers/crypto/atmel-aes.c  | 50 ++++++++-----------------------------
+>  drivers/crypto/atmel-sha.c  | 39 ++++++-----------------------
+>  drivers/crypto/atmel-tdes.c | 47 ++++++++++------------------------
+>  3 files changed, 30 insertions(+), 106 deletions(-)
+
+All applied.  Thanks.
+-- 
+Email: Herbert Xu <herbert@gondor.apana.org.au>
+Home Page: http://gondor.apana.org.au/~herbert/
+PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
