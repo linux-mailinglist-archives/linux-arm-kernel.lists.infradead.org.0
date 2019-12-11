@@ -2,62 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EBB911AC5C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:45:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0605711AC6B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 14:50:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gZPEG3WYHVOsqi45XkHbNuE7cP8Pe0dXcESgHlVWpug=; b=R24apNk9in4EGG
-	0kG6JxxZ/lZKM04Bimn9iPCSuEv7cwZ31XighJ5sF9h/qKKUAnCCtLgajE2jB3H1++Yg2rv/kHxQV
-	no7zQNmhK7duSYcCmYx8ojB0+KSJbzVxxr4KfWQfDSoWP2GKsrgJlmvHKDfdLzMq9PficMifQTwgQ
-	+ed8TnNNGYBzMt4lvV9Wu3GCft5kW4oOO68dE+dSKzd4ZFibA576t2z2hhID/JFm+spHC1NHjvSlP
-	mCTgDFh4C9Yfrm4ZcY9uYSRMcQL6AExBBPmNytjiMtsbdtpltca8BNB6SoDEfTu1PDFvkvO9j8TCx
-	UgRV1soLZ4voeri0V6HQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0Hj+ozJqO1PEIqTz6PwcyunwTcB5dfKVO2nZqkm4GI4=; b=W55wVCE6hBxBKt
+	C3PQ9TtZRO5saXRBv1fJWIoZnIaE2ZA/PPNXvl34TsWLLE4bxYkHfa6MSV+7gst4SMEOJEN+9oPRH
+	8uTP4j1YkXCBSt91ZRKS5i8Cxkz9ElP41iYU9adtXVwnZ0IZfOGzGWH5cnS4KAfDFl4Pjqe3JF0O+
+	Vn1bxsNu1/gVV+5Ljbxo1/zK84bG/59TffZGDbrVPpf2r7+VMdzT2Fb/T3rjXfOFN8VCfFerbfl89
+	ANWqYrEHI2skOceXVMAUMakpYeZCh+3HlKhc0WcY2B1XJF/svQevbX6Ly9xoywd03LF5xmh9ZFy1M
+	KonhYA0JgWiIICyK4JkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if2JG-0007mN-LU; Wed, 11 Dec 2019 13:45:46 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1if2No-0001X7-6L; Wed, 11 Dec 2019 13:50:28 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if2J8-0007lM-9v
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:45:40 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1if2J2-0002j6-Sx; Wed, 11 Dec 2019 14:45:32 +0100
-Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1if2J1-0004pK-A8; Wed, 11 Dec 2019 14:45:31 +0100
-Date: Wed, 11 Dec 2019 14:45:31 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: Trying to understand basic concepts about GPIO reset pin
-Message-ID: <20191211134531.4olcqep5ork5h4fn@pengutronix.de>
-References: <e8b645da-9921-0436-ccfa-9abf4ae5b9d6@free.fr>
- <20191211132203.GD25745@shell.armlinux.org.uk>
+ id 1if2Nf-0001W7-8I
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 13:50:20 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id v93so8970354pjb.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Dec 2019 05:50:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+vwhN/yt2WmtrREcyUuWcQxe7CbFit8CvDpGIHKC3OU=;
+ b=hZdxwmexnI6K29c6yjOIdnCuBaZYA8NWSass4fzFRgZPrBpxbcZ28+YOvnRUKpiERz
+ J6MijJuv8l40HNn+/PPucW9ktHd/3pkFlknxAviQcC3NYr7UF6Nw6Fl0/KhLoiLchrZG
+ pJ1FlCgJKsBQE+dRQAhhxkNhKXIW+Sc64Pc50MmhjTH6cnO0DE1tRyaY7TDtL01HQ4qr
+ FTELqs3L7qJd7wdv8bpgRA7UHTxJTstqz8Knqt7YLdU2kpHombgT5MDNWUnzb5iAJQfj
+ q8zMilSD/gsPGgHZCVIIlhZaomzp3Le/r2rK6BfoyolPf5ruCuRtfoxMy8yQ2/sKJVId
+ qbzA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+vwhN/yt2WmtrREcyUuWcQxe7CbFit8CvDpGIHKC3OU=;
+ b=IGsOxH7o53NEpeskZc30VtffdsXKLEopLRRpILupEdgSd1EOY3LPKAAJPJrPx9DSgN
+ zzM18yR/yINKaBWwqj6mfYRbqTot9nQKBQzFNKbtB33ItOENSxwdJWM/kg3vxS/6OodI
+ ckjbpMR6VLWgtSBSDEL8ybWCBAlZqiDuUWvA2uF1TYc6g6xEkF7UffMJOx1TESgs7/Nt
+ hmRwKteH1CZiOkQc8Czk8047wqGNY1lEnXHO1a1vERHChXebuE5Z5QBF/EzWcotBLgFo
+ 78r5yDvqFHhK4CKskHwTq4l4uuAloNVU+ZdT7sSNXvd2R2ow6gwCmrJUpIeCvUzD0gVz
+ D4og==
+X-Gm-Message-State: APjAAAUlmYUf6QOpCj0BRh2WMjLY5YBdCpZzOXobek0GtoPlCdAy6r2f
+ BNmt/c0uzI93eH0tvtvfut0BdsXGJ4Q=
+X-Google-Smtp-Source: APXvYqwsAxWfBEIFCjAdoGJMeISx4//0Y4VVHxiemo0DsbJ+gpBr4l1g18HvOPw3aD0BYmKFgyfHmA==
+X-Received: by 2002:a17:90a:1505:: with SMTP id l5mr679336pja.73.1576072217460; 
+ Wed, 11 Dec 2019 05:50:17 -0800 (PST)
+Received: from localhost.localdomain (c-67-165-113-11.hsd1.wa.comcast.net.
+ [67.165.113.11])
+ by smtp.gmail.com with ESMTPSA id j3sm3294596pfi.8.2019.12.11.05.50.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Dec 2019 05:50:16 -0800 (PST)
+From: Andrey Smirnov <andrew.smirnov@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] ARM: dts: vf610-zii-dev-rev-b: Drop redundant I2C
+ properties
+Date: Wed, 11 Dec 2019 05:49:57 -0800
+Message-Id: <20191211134957.30587-1-andrew.smirnov@gmail.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191211132203.GD25745@shell.armlinux.org.uk>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_054538_353966_0C6391F4 
-X-CRM114-Status: GOOD (  25.13  )
-X-Spam-Score: 2.5 (++)
+X-CRM114-CacheID: sfid-20191211_055019_295422_169A5B47 
+X-CRM114-Status: GOOD (  10.04  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.5 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (andrew.smirnov[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 1.0 FREEMAIL_REPLY         From and body contain different freemails
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,148 +96,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: GPIO <linux-gpio@vger.kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Fabio Estevam <festevam@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-kernel@vger.kernel.org, Chris Healy <cphealy@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 01:22:03PM +0000, Russell King - ARM Linux admin wr=
-ote:
-> On Wed, Dec 11, 2019 at 02:05:45PM +0100, Marc Gonzalez wrote:
-> > Hello,
-> > =
+ZII VF610 Board Rev. B is supposed to have exactly the same I2C config
+as Rev. C, including I2C bus recovery settings. Drop redundant I2C
+properties that are already specified in vf610-zii-dev.dtsi
 
-> > I've asked linusw a few times on IRC, and every time, I /think/ I under=
-stand,
-> > then I get confused again later. So I'm trying to understand once and f=
-or all.
-> > =
+Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Chris Healy <cphealy@gmail.com>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
 
-> > Please do not hesitate to correct any mistake/misconception below.
-> > =
+Changes since [v1]:
 
-> > I want to discuss a "simple" GPIO reset pin.
-> > =
+    - Reworded commit message to clarify that I2C recovery setttins
+      are supposed to apply to both Dev boards
 
-> > 1) When a reset pin is ACTIVE, the corresponding circuit is "held" in r=
-eset.
-> > In other words, when a reset pin is ACTIVE, the circuit is DISABLED / d=
-oes not
-> > receive power, clocks don't tick, nothing changes state.
-> =
+[v1] lore.kernel.org/lkml/20190820031952.14804-1-andrew.smirnov@gmail.com
 
-> Not necessarily.  Whether a circuit is powered or clocked has nothing
-> really to do with whether it is in reset or not.  Many devices specify
-> that power and clocks must be applied prior to reset being released,
-> which is sensible because it allows the reset to set the initial state
-> of the circuitry.
-> =
+ arch/arm/boot/dts/vf610-zii-dev-rev-b.dts | 10 ----------
+ 1 file changed, 10 deletions(-)
 
-> > 2a) If a signal is ACTIVE HIGH, that means the signal is ACTIVE when th=
-e voltage
-> > on the line is HIGH (e.g. 3.3V or 5V)
-> =
+diff --git a/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts b/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts
+index 48086c5e8549..e500911ce0a5 100644
+--- a/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts
++++ b/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts
+@@ -323,11 +323,6 @@
+ };
+ 
+ &i2c0 {
+-	clock-frequency = <100000>;
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pinctrl_i2c0>;
+-	status = "okay";
+-
+ 	gpio5: io-expander@20 {
+ 		compatible = "nxp,pca9554";
+ 		reg = <0x20>;
+@@ -350,11 +345,6 @@
+ };
+ 
+ &i2c2 {
+-	clock-frequency = <100000>;
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pinctrl_i2c2>;
+-	status = "okay";
+-
+ 	tca9548@70 {
+ 		compatible = "nxp,pca9548";
+ 		pinctrl-0 = <&pinctrl_i2c_mux_reset>;
+-- 
+2.21.0
 
-> Correct.
-> =
-
-> > 2b) If a signal is ACTIVE LOW, that means the signal is ACTIVE when the=
- voltage
-> > on the line is LOW (e.g. 0V, connected to ground)
-> =
-
-> Correct.
-> =
-
-> > 3) Usually(?) a reset signal is ACTIVE LOW. That way, when the SoC is c=
-oming up,
-> > and current has not propagated everywhere, LOW voltage on the reset pin=
- means
-> > the circuit is "held" in reset, until we are ready to set voltage HIGH =
-on the
-> > reset pin to disable the reset, and enable the circuit.
-> =
-
-> I don't think there's a "usually" about it.  Some devices take an
-> active high reset, others take an active low reset.
-> =
-
-> > Suppose a circuit's HW description states:
-> > =
-
-> > RESET_N:
-> > External Reset.
-> > Active LOW reset signal to the device.
-> > See Figure 4.6 on page 21 for reset timing requirements.
-> > Figure 4.6 shows the minimum timing interval for RESET_N.
-> > RESET_N must be driven LOW for at least the period of 200 =B5s before a=
-ccessing registers.
-> > =
-
-> > =
-
-> > 4) The DT node for this device should describe the reset pin as GPIO_AC=
-TIVE_LOW:
-> > =
-
-> > 	reset-gpios =3D <&tlmm 12 GPIO_ACTIVE_LOW>;
-> =
-
-> I would say so - the reset is active low, so specifying it as active low
-> in DT seems entirely sensible.
-> =
-
-> > OK, now we're getting into the parts of the GPIO API I don't understand=
- well.
-> > =
-
-> > If I just call
-> > =
-
-> > 	devm_gpiod_get_optional(dev, "reset", GPIOD_OUT_LOW);
-> > =
-
-> > then I am able to interact with the device. How can that be?
-> =
-
-> This is where things get complicated.  GPIOD_OUT_LOW is
-> GPIOD_FLAGS_BIT_DIR_SET | GPIOD_FLAGS_BIT_DIR_OUT without
-> GPIOD_FLAGS_BIT_DIR_VAL.  The above will therefore call:
-> =
-
-> 	gpiod_direction_output(gpiod, !!(dflags & GPIOD_FLAGS_BIT_DIR_VAL));
-> =
-
-> which will be zero.  gpiod_direction_output() respects the inversion
-> that GPIO_ACTIVE_LOW specified in DT.  So, GPIOD_OUT_LOW will set
-> the reset signal _high_.
-> =
-
-> I don't blame you for thinking this is confusing - the terminology
-> adopted in the kernel certainly is.
-> =
-
-> Thnk of whatever you give to the non-raw functions as "low means
-> inactive, high means active".
-
-I think it would be good to not pass GPIOD_OUT_LOW to
-devm_gpiod_get_optional (et al). Something like
-
-	devm_gpiod_get_optional(dev, "reset", GPIOD_OUT_ACTIVE);
-
-would be much less confusing. Not sure this exists, but it would make a
-good alias for GPIOD_OUT_HIGH.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
