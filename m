@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 685B911B426
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:46:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60D5111B43A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:46:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7AqQ4WmfEw2z78YiTloPCewCHUsAz6nKfEXeS2h/Im4=; b=YBRa0AUFoqtZ6d
-	GuvlG+YJ/VETu0ORxntrDSBwfU7bYOTtIfoqVwpeZ9OBbC8syVX1T1OV0Td4YHzbgJwLWhtKtoQA9
-	fPRkb3zsZiH8PCeVzDjEgk4SLShP0xVH2Tr01E7azHMvV0OnmXpuMIpMYbcobjDNsULKUjM4Xsjx+
-	1x0aaI2Kc4Utf7re/n7vcuU+eSC4DGaDIHkETfvsrOnegcrBCBDtrgQX6sA+LoYb05XQoSBxbV5mu
-	SOw+Byzk0VyjAFwr5SyUEMduKPYQo6XxIWhId/Nx6j9ISPNXZdpOqMQXqgBqsnCOqS+7SkrUby01I
-	0CWvk2R3vU88jum7npzg==;
+	List-Owner; bh=Hbqh7WqTyZD9R6PJnfDnpxh4FRCS5XaOO4z4smeij8g=; b=f5sGW+qx2OR/4/
+	BTOg3PV/wqEGfV8PbWZDnLEc6VfGrrL1W6nIG1GHoo5OfB7uUYB/lN50NA14+sRlsOVVD+WMUpps5
+	MXcYyE/wFfyqCUuBb2pjWy037IfW3z4RYUEbMnEOkviWw1nGKp4/hg8ncZ3fTNhLKJbiZ+gIxxtcf
+	9bfM2pGmLW2zU59umZJLpvREsWJAjF0ZgldGpKexabseTG2DDn+b98XzI37eNiuSGICGoNlIsa/IZ
+	Zgsqs0fHfPY6pfhxeIJWB6TZuTzwTdedBOfK3wz32J2Lal5/ttsE2J23JVzzLSSPFNs3Pqh2nNykB
+	fprIdHN4zWBzGFBF9Yww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if4Bw-0001TQ-Li; Wed, 11 Dec 2019 15:46:20 +0000
+	id 1if4C9-0001la-0S; Wed, 11 Dec 2019 15:46:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if48v-000619-QN
+ id 1if48y-0006FE-Dv
  for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:43:18 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9F2D431B;
- Wed, 11 Dec 2019 07:43:13 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EB6A71007;
+ Wed, 11 Dec 2019 07:43:15 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1EE213F52E;
- Wed, 11 Dec 2019 07:43:13 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 448323F52E;
+ Wed, 11 Dec 2019 07:43:15 -0800 (PST)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH v4 10/12] arm64: BTI: Reset BTYPE when skipping emulated
+Subject: [PATCH v4 11/12] KVM: arm64: BTI: Reset BTYPE when skipping emulated
  instructions
-Date: Wed, 11 Dec 2019 15:42:04 +0000
-Message-Id: <20191211154206.46260-11-broonie@kernel.org>
+Date: Wed, 11 Dec 2019 15:42:05 +0000
+Message-Id: <20191211154206.46260-12-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191211154206.46260-1-broonie@kernel.org>
 References: <20191211154206.46260-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_074315_174052_69BBB759 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_074316_529780_E8CF368F 
+X-CRM114-Status: GOOD (  11.52  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -95,22 +94,28 @@ non-zero value to BTYPE here.
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/kernel/traps.c | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm64/include/asm/kvm_emulate.h | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index bf79d8024fbe..9fc05ae500e6 100644
---- a/arch/arm64/kernel/traps.c
-+++ b/arch/arm64/kernel/traps.c
-@@ -332,6 +332,8 @@ void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
+diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
+index 5efe5ca8fecf..05fb1b4e0fa2 100644
+--- a/arch/arm64/include/asm/kvm_emulate.h
++++ b/arch/arm64/include/asm/kvm_emulate.h
+@@ -470,10 +470,12 @@ static inline unsigned long vcpu_data_host_to_guest(struct kvm_vcpu *vcpu,
  
- 	if (regs->pstate & PSR_MODE32_BIT)
- 		advance_itstate(regs);
-+	else
-+		regs->pstate &= ~PSR_BTYPE_MASK;
- }
+ static inline void kvm_skip_instr(struct kvm_vcpu *vcpu, bool is_wide_instr)
+ {
+-	if (vcpu_mode_is_32bit(vcpu))
++	if (vcpu_mode_is_32bit(vcpu)) {
+ 		kvm_skip_instr32(vcpu, is_wide_instr);
+-	else
++	} else {
+ 		*vcpu_pc(vcpu) += 4;
++		*vcpu_cpsr(vcpu) &= ~PSR_BTYPE_MASK;
++	}
  
- static LIST_HEAD(undef_hook);
+ 	/* advance the singlestep state machine */
+ 	*vcpu_cpsr(vcpu) &= ~DBG_SPSR_SS;
 -- 
 2.20.1
 
