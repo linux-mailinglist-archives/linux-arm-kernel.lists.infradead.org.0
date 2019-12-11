@@ -2,88 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F08611A7BC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:43:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E038C11A7E4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 10:45:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=TDgcXMKK/uA9CyJg8Ao2BC75UWRYMSWjzcxFRkqMXK0=; b=NhrjyRKxaCiYcwWH3xtGcm98ag
-	qpCykwuTego+mArYHvXwHqGX1S7r5162GXDMnO8K3h9oxwGBl91255tzHZvM2FGmd/neE6hpUcmf8
-	KD8IWff7wUgmlLSHj9Cttl/eUevAvsWZ8lrQBf4+eWJOyjMkevoa2dgzXsLdLCv+VsHkj7hNQ4A35
-	tZMy7hLTlhb7mfxxqbXYbOzxAyeoxV6xS1Hubo4pyQfD/SlM3w5iT8bpIGin1mqfEdGORedaCvTi0
-	3NEkK7I621vN0p+iIZ4e8B/1FlZAyVSPV9C6wUoyD1fz9t8KObWt7nCthfPShjxtG02Toc5c3rZMR
-	84GL5TTA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=V7t7zONyiLtTcBV/2/HhY3InTg/CPxWL9oMk7CmbuqY=; b=Zk7RDrOdJZP2ZH
+	iTK0geJ3VTgqm0PPru1+t4/fm6Szv+laPLhe/Stam1bKgQIc3n2MEhv44Cl9t2XAtZvJLZYhMT3d5
+	Sjc9O0lQ66mtUafClkdRAKBIb7FVk0EOihLe6F41Ft3mr9F65VQw4jpzSy09hXERcDk1DjWz4eGni
+	cHdOCGZOIaltu6V0sKU4iLjIaGIyCSf8lHtVbbP3djN3bGNFGgUsjQClhfDAOyxYauiCBMpm7bLSY
+	S/PIlFz4TcDPJU9SBG7D9omZ+KxmW1Fp5tTb8zFavbJMrRR0LSJPqBnEd15Y8T10/XPKE9lwPgPa6
+	vGj3fLpG+YfaJL/C335A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ieyX0-0001W2-IU; Wed, 11 Dec 2019 09:43:42 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1ieyY7-0002SX-6S; Wed, 11 Dec 2019 09:44:51 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ieyWn-0001UZ-Cw
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 09:43:31 +0000
-Received: by mail-wr1-x441.google.com with SMTP id d16so23227786wre.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 01:43:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=z0QzLt7cguGjhYkQBQHVG6HhXU8NuMmHzTVdwtHS9ig=;
- b=BEiRXRNtnIBFjpCSBExLUGZx1Pa6SKsAtXeeJLD6W0NIrioRnhtiOEgMsi4ugdJ3zp
- QSz4GgMNADAajE9pqGigE9t7kXg8yQJn8TM4iG5K2aCTnKRPwWn7UTEzF3a77XnBSxgT
- 9JE2grqONb42g6IFklDtyXxlEtrbdRdAQZkRTkXN+VULb9YNs4MsFIzC1v9S1at2bASB
- w6qdaGWc8SDPWo1Uk4S+4IxaK3s0DW4T8dtMxPlBlLziHdeozq+skjRn3dptiBgKm96t
- ffDDrYpcOA+HKEZEcdgbMK2sJwZJ0KEZk3T/SHXU7aCp3kncTv3eIfsNdJZUNiGiuJXO
- +QoQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=z0QzLt7cguGjhYkQBQHVG6HhXU8NuMmHzTVdwtHS9ig=;
- b=M0alYKF2ztWOGvJeq8AHgnAOaI3CyxoGzFcqD3Vrg+Ibe5vEuW7lMaAu3ZlqK3mRx9
- OfUDvTP7SAzOqIzOgVIHjLWE/NlDYvYKnU75+HoBjIGPdjXEpTctFVsxSE2Rb+1kFz7x
- VXbwLzFGtx1BzVijyPgbOc91FVHycDlte/FDOZMCPrFFd1I/fJ54r+Mr4JUZW4slzm4a
- VKOl8+kC1ToAPDu+QCFJ+Vx9DRzGH25YuyehULS9D7w2WhNcM++aZix4EhGeOKA2+rzt
- y8O4406gxoK1WCZnFaoBXOFvFPwMxWMA/qksMqt9YNyNg2yYfhcGrn4rM7FkzxSMIoxP
- V7ig==
-X-Gm-Message-State: APjAAAXPqCZalT1EHaFISG5nQZQ9CIgth0Rt6+xpLosSbjDybELkJHu7
- nDEj6D8Rd7Dj9utlagL5QHWPMg==
-X-Google-Smtp-Source: APXvYqyRpPjVZqQ6wK30FYYM+9G40xoHiGPwj/gyIyeDl0yqTe5vb7IVvt4aDak5sZieLFEduj9Sog==
-X-Received: by 2002:adf:f3d0:: with SMTP id g16mr2843035wrp.2.1576057407844;
- Wed, 11 Dec 2019 01:43:27 -0800 (PST)
-Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id s25sm1586444wmh.4.2019.12.11.01.43.27
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Dec 2019 01:43:27 -0800 (PST)
-References: <20191211070835.83489-1-jian.hu@amlogic.com>
-User-agent: mu4e 1.3.3; emacs 26.2
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Jian Hu <jian.hu@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH] arm64: dts: meson: add A1 periphs and PLL clock nodes
-In-reply-to: <20191211070835.83489-1-jian.hu@amlogic.com>
-Date: Wed, 11 Dec 2019 10:43:26 +0100
-Message-ID: <1jimmnkxj5.fsf@starbuckisacylon.baylibre.com>
+ id 1ieyXN-0001rh-88; Wed, 11 Dec 2019 09:44:07 +0000
+X-UUID: 8e5049bf134840e2bcd5ec9ec0ef72db-20191211
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=Dm3mlfxD96MxnkXGJUHjOsMb6SebZYhQjiXuyxfYDOs=; 
+ b=Fw7Ajf8TNCWGFxJy/Hqp60Yzy6L0LehHXwy2V2ylhAF5x1HkdUXiIs7YMu0630YFNakyZEDSQtTWXuRCklHudMo4b8lZYVFzxA8++o49ZCvrx/AkWYtemyFR6rry8DC0J4Mgtoi7P0EHJ2BLS5tf0ELQdEC5XmeztbgrIs7dq3U=;
+X-UUID: 8e5049bf134840e2bcd5ec9ec0ef72db-20191211
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <hsin-hsiung.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 223091969; Wed, 11 Dec 2019 01:43:59 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Dec 2019 01:44:57 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Dec 2019 17:43:42 +0800
+Received: from mtksdaap41.mediatek.inc (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 11 Dec 2019 17:43:33 +0800
+From: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+To: Lee Jones <lee.jones@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Alexandre Belloni <alexandre.belloni@free-electrons.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>
+Subject: [PATCH v7 0/6] Add Support for MediaTek PMIC MT6358
+Date: Wed, 11 Dec 2019 17:43:49 +0800
+Message-ID: <1576057435-3561-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+X-Mailer: git-send-email 2.6.4
 MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_014329_438105_101A6C9E 
-X-CRM114-Status: GOOD (  16.97  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_014405_294521_45D8B5EE 
+X-CRM114-Status: GOOD (  10.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,105 +86,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>, devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Alessandro
+ Zummo <a.zummo@towertech.it>, Josef Friedl <josef.friedl@speed.at>,
+ srv_heupstream@mediatek.com, Frank Wunderlich <frank-w@public-files.de>,
+ Kate Stewart <kstewart@linuxfoundation.org>,
+ Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
+ Tianping Fang <tianping.fang@mediatek.com>, devicetree@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
+ Ran Bi <ran.bi@mediatek.com>, Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>,
+ linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This patchset including modifying suspend/resume behavior add support to MT6358 PMIC.
+MT6358 is the primary PMIC for MT8183 platform.
 
-On Wed 11 Dec 2019 at 08:08, Jian Hu <jian.hu@amlogic.com> wrote:
+changes since v6:
+- rebase series on 5.5-rc1
 
-> Add A1 periphs and PLL clock controller nodes, Some clocks
-> in periphs controller are the parents of PLL clocks, Meanwhile
-> some clocks in PLL controller are those of periphs clocks.
-> They rely on each other.
+Hsin-Hsiung Wang (4):
+  mfd: mt6397: modify suspend/resume behavior
+  dt-bindings: mfd: Add compatible for the MediaTek MT6358 PMIC
+  mfd: Add support for the MediaTek MT6358 PMIC
+  arm64: dts: mt6358: add PMIC MT6358 related nodes
 
-> Compared with the previous series,
-> the register region is only for the clock. So syscon is not
-> used in A1.
+Ran Bi (2):
+  rtc: mt6397: fix alarm register overwrite
+  rtc: Add support for the MediaTek MT6358 RTC
 
-Again, while this is valuable information for the maintainer to keep up,
-it is not something that should appear in the commit description.
+ Documentation/devicetree/bindings/mfd/mt6397.txt |  14 +-
+ arch/arm64/boot/dts/mediatek/mt6358.dtsi         | 361 +++++++++++++++++++++++
+ arch/arm64/boot/dts/mediatek/mt8183-evb.dts      |   1 +
+ drivers/mfd/Makefile                             |   2 +-
+ drivers/mfd/mt6358-irq.c                         | 224 ++++++++++++++
+ drivers/mfd/mt6397-core.c                        |  75 +++--
+ drivers/mfd/mt6397-irq.c                         |  33 +++
+ drivers/rtc/rtc-mt6397.c                         |  63 ++--
+ include/linux/mfd/mt6358/core.h                  | 158 ++++++++++
+ include/linux/mfd/mt6358/registers.h             | 282 ++++++++++++++++++
+ include/linux/mfd/mt6397/core.h                  |   5 +
+ include/linux/mfd/mt6397/rtc.h                   |  24 +-
+ 12 files changed, 1183 insertions(+), 59 deletions(-)
+ create mode 100644 arch/arm64/boot/dts/mediatek/mt6358.dtsi
+ create mode 100644 drivers/mfd/mt6358-irq.c
+ create mode 100644 include/linux/mfd/mt6358/core.h
+ create mode 100644 include/linux/mfd/mt6358/registers.h
 
-The evolution of your commit should be described after the '---'
-
-Also, this obviously depends on another series. It should be mentioned
-accordingly
-
->
-> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
-> ---
->  arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 26 +++++++++++++++++++++++
->  1 file changed, 26 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-> index 7210ad049d1d..de43a010fa6e 100644
-> --- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-> +++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-> @@ -5,6 +5,8 @@
->  
->  #include <dt-bindings/interrupt-controller/irq.h>
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +#include <dt-bindings/clock/a1-pll-clkc.h>
-> +#include <dt-bindings/clock/a1-clkc.h>
-
-When possible, please order the includes alpha-numerically
-
->  
->  / {
->  	compatible = "amlogic,a1";
-> @@ -74,6 +76,30 @@
->  			#size-cells = <2>;
->  			ranges = <0x0 0x0 0x0 0xfe000000 0x0 0x1000000>;
->  
-> +			clkc_periphs: periphs-clock-controller@800 {
-                                             ^
-From DT spec: "The name of a node should be somewhat generic, reflecting
-the function of the device and not its precise programming model."
-
-Here, an appropriate node name would be "clock-controller", not
-"periphs-clock-controller"
-
-> +				compatible = "amlogic,a1-periphs-clkc";
-> +				#clock-cells = <1>;
-> +				reg = <0 0x800 0 0x104>;
-> +				clocks = <&clkc_pll CLKID_FCLK_DIV2>,
-> +					<&clkc_pll CLKID_FCLK_DIV3>,
-> +					<&clkc_pll CLKID_FCLK_DIV5>,
-> +					<&clkc_pll CLKID_FCLK_DIV7>,
-> +					<&clkc_pll CLKID_HIFI_PLL>,
-> +					<&xtal>;
-> +				clock-names = "fclk_div2", "fclk_div3",
-> +					"fclk_div5", "fclk_div7",
-> +					"hifi_pll", "xtal";
-> +			};
-> +
-> +			clkc_pll: pll-clock-controller@7c80 {
-
-Please order nodes by address when they have one.
-This clock controller should appear after the uarts
-
-> +				compatible = "amlogic,a1-pll-clkc";
-> +				#clock-cells = <1>;
-> +				reg = <0 0x7c80 0 0x21c>;
-> +				clocks = <&clkc_periphs CLKID_XTAL_FIXPLL>,
-> +					<&clkc_periphs CLKID_XTAL_HIFIPLL>;
-> +				clock-names = "xtal_fixpll", "xtal_hifipll";
-> +			};
-> +
->  			uart_AO: serial@1c00 {
->  				compatible = "amlogic,meson-gx-uart",
->  					     "amlogic,meson-ao-uart";
-
-
+-- 
+2.6.4
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
