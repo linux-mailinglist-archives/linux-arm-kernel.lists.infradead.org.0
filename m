@@ -2,87 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 502B911AD50
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 15:24:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C629311AD62
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 15:25:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P5NLPDBGTehF6zZbKGsofrvAm5PYoYL9lJlbG2p6yyI=; b=sByno8ixQIjpWK
-	wAq6bCf5Ry0yS1S/xtuT7cjkyHJEQ+1q5w7IwEAssp1pj/+x7snBiWzEpBaOI02lEmv65d0Cjxoh4
-	cJnNAmzbSzJ+zIxKfqOzWJp0dHZmB2YXww8H9i8erAucwk5hE0RLpFSMfQ2KIfUi3W3VXshWAUnjH
-	oIOdSgxIuHNJFzHz4RlGiFPktBLymAoo65HxyOthsuUUTYYWhI2k0GBMhS+nvxey2OgioTrTT86iR
-	T5caq0EVfUNPXq9QjfYE3dh/h8+ms6VCTYdX7bfWsjCQzfVYj137Du2aA8MvMFQHfION6csLHCKqs
-	ohqz9gSZT3quPi71XpVA==;
+	List-Owner; bh=QsrPF0RTS934rfj6ydsGos8/vBiGWd3o2rM47lapcgQ=; b=OUkGG9iyvZtZHw
+	foqk1GfPlPWcEpgXj5+NIpcIbocLjVlFwc+Cn/PbH422AnVsd1QJx/yB2yQjL7ct+VTyUB8BdBPAy
+	dMxLgdpJkOMwS6Ef6VjULec9MjA67wWqq8cFxcSAgbaI8+9V9VBPLBMNYTVgbRpqnS7jYGw8+14TB
+	9JBDaIt/7uhkHXvSCebZq4H5AZXagumYVxDHr0tKSQtvLGN2Bp4ReUGN1HCit3EA3hTCtyqb0gju+
+	fZWwandFlgm3LXCx4u9vAIoUiJKMiflhelB93A3FxldLwG4gY7yciSgyfGywQWgDni/Su5hBhwOpv
+	62Qg1sp2NzfSDTdbrPaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if2uM-0007lv-7I; Wed, 11 Dec 2019 14:24:06 +0000
-Received: from skedge03.snt-world.com ([91.208.41.68])
+	id 1if2vY-0000JS-Qt; Wed, 11 Dec 2019 14:25:20 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if2uE-0007kZ-Gi
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 14:24:00 +0000
-Received: from sntmail12r.snt-is.com (unknown [10.203.32.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by skedge03.snt-world.com (Postfix) with ESMTPS id C5A2767A6F1;
- Wed, 11 Dec 2019 15:23:33 +0100 (CET)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail12r.snt-is.com
- (10.203.32.182) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 11 Dec
- 2019 15:23:33 +0100
-Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
- sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1713.004; Wed, 11 Dec 2019 15:23:33 +0100
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: Horia Geanta <horia.geanta@nxp.com>, Adam Ford <aford173@gmail.com>
-Subject: Re: [PATCH 1/2] crypto: caam: Change the i.MX8MQ check support all
- i.MX8M variants
-Thread-Topic: [PATCH 1/2] crypto: caam: Change the i.MX8MQ check support all
- i.MX8M variants
-Thread-Index: AQHVp9kQe4CI+Rf8yUmun0IOEuspVqe0/KsA
-Date: Wed, 11 Dec 2019 14:23:32 +0000
-Message-ID: <d82428e3-326b-db80-2e40-4ef1bdbca060@kontron.de>
-References: <20191130225153.30111-1-aford173@gmail.com>
- <e8e429dd-4508-9835-fd01-825d2de8871e@kontron.de>
- <CAHCN7xLkV1WC=9ACj1Mi8+uE8kRCEjCEe+Y36pXwkNeNrgrNVg@mail.gmail.com>
- <VI1PR0402MB34857B8C5560B912B34674AB985B0@VI1PR0402MB3485.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR0402MB34857B8C5560B912B34674AB985B0@VI1PR0402MB3485.eurprd04.prod.outlook.com>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
-Content-ID: <AA2FCE7CD7265A47BE96B7819248829C@snt-world.com>
+ id 1if2vI-0008Fb-Jw
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 14:25:06 +0000
+Received: by mail-pg1-x543.google.com with SMTP id b137so10854989pga.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Dec 2019 06:25:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axtens.net; s=google;
+ h=from:to:subject:in-reply-to:references:date:message-id:mime-version;
+ bh=098L4qWOo/dhHj7up13Q/6AGsTiEtq7zvqd33y20xho=;
+ b=bFMQWnI1gXtKeiW21Ws8EHVoOcE5cqQ2w2Df6osYM/2xsfsIpAWPWYxCufyaZoj4DI
+ DbCCvWw90Y+crXFC3bZL94l5YRUG0RBgiyIIz5kKgQW7pxE7sq8fpJ+ADLtnfSGsn3IH
+ hE2VnMFgCaV4BtHbpbf2+z09SPak4lBeQ7Txw=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=098L4qWOo/dhHj7up13Q/6AGsTiEtq7zvqd33y20xho=;
+ b=nTF/FttoWshUVwPGsAalBo8s6FEu/CYQQja8NoFUjoeFPxI72TvQPBXYBQUo2nndAv
+ /gdKKpCRTtMggIPv0W/LN7V197M7ijfm3rdyS4Vxse2CMr0Yo52T+MqEGUErRvae+d6F
+ 1m7CvI933Iml//ox7Cxf4rKHyXpNWP76BV4g0EkFdq7HTLgG9yPqHnegXY3x/TLzTff/
+ RQA7xeadQtZwwOek+hheGHIRIwE21teWb3VIBiY6ywev77Xnuxv0MIjmV4yjK3eAfrRO
+ PD/q/BnMRw2G/rs8+lOyxOqB6J9sOwMc6xH3AWnz+9d1FavULkF9i/Pvj7rdmNzcccsF
+ zN4A==
+X-Gm-Message-State: APjAAAWchQBGLwQac+eRevTr1zc3DAnSFaH0b/Y7RkKtK83JuRlzPw09
+ Gy0PpauXVO59xuP7cgCdORclOg==
+X-Google-Smtp-Source: APXvYqxPxi+KaqBazUZaoJTrv1EEot9gnqUhrYprkTIb3+HbLUJJUrb1vIdkZL8Y+vj7jHi2BsmD6w==
+X-Received: by 2002:a65:6916:: with SMTP id s22mr4325069pgq.244.1576074303700; 
+ Wed, 11 Dec 2019 06:25:03 -0800 (PST)
+Received: from localhost
+ (2001-44b8-111e-5c00-b116-2689-a4a9-76f8.static.ipv6.internode.on.net.
+ [2001:44b8:111e:5c00:b116:2689:a4a9:76f8])
+ by smtp.gmail.com with ESMTPSA id j16sm3395784pfi.165.2019.12.11.06.25.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Dec 2019 06:25:02 -0800 (PST)
+From: Daniel Axtens <dja@axtens.net>
+To: Balbir Singh <bsingharora@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, linuxppc-dev@lists.ozlabs.org, linux-s390@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, linux-arch@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, kasan-dev@googlegroups.com,
+ christophe.leroy@c-s.fr, aneesh.kumar@linux.ibm.com,
+ Dmitry Vyukov <dvyukov@google.com>, Andrey Ryabinin <aryabinin@virtuozzo.com>
+Subject: Re: [PATCH v2 4/4] powerpc: Book3S 64-bit "heavyweight" KASAN support
+In-Reply-To: <2e0f21e6-7552-815b-1bf3-b54b0fc5caa9@gmail.com>
+References: <20191210044714.27265-1-dja@axtens.net>
+ <20191210044714.27265-5-dja@axtens.net>
+ <71751e27-e9c5-f685-7a13-ca2e007214bc@gmail.com>
+ <875zincu8a.fsf@dja-thinkpad.axtens.net>
+ <2e0f21e6-7552-815b-1bf3-b54b0fc5caa9@gmail.com>
+Date: Thu, 12 Dec 2019 01:24:59 +1100
+Message-ID: <87wob3aqis.fsf@dja-thinkpad.axtens.net>
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: C5A2767A6F1.AF622
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: aford173@gmail.com, aymen.sghaier@nxp.com,
- davem@davemloft.net, devicetree@vger.kernel.org, festevam@gmail.com,
- herbert@gondor.apana.org.au, horia.geanta@nxp.com,
- kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org, linux-imx@nxp.com,
- linux-kernel@vger.kernel.org, mark.rutland@arm.com,
- robh+dt@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org
-X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_062358_884794_0E585F0B 
-X-CRM114-Status: GOOD (  24.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_062504_683467_D0436372 
+X-CRM114-Status: GOOD (  20.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.68 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,101 +102,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Aymen Sghaier <aymen.sghaier@nxp.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, "David S.
- Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10.12.19 08:56, Horia Geanta wrote:
-> On 12/6/2019 9:55 PM, Adam Ford wrote:
->> On Wed, Dec 4, 2019 at 5:38 AM Schrempf Frieder
->> <frieder.schrempf@kontron.de> wrote:
+Hi Balbir,
+
+>>>> +Discontiguous memory can occur when you have a machine with memory spread
+>>>> +across multiple nodes. For example, on a Talos II with 64GB of RAM:
+>>>> +
+>>>> + - 32GB runs from 0x0 to 0x0000_0008_0000_0000,
+>>>> + - then there's a gap,
+>>>> + - then the final 32GB runs from 0x0000_2000_0000_0000 to 0x0000_2008_0000_0000
+>>>> +
+>>>> +This can create _significant_ issues:
+>>>> +
+>>>> + - If we try to treat the machine as having 64GB of _contiguous_ RAM, we would
+>>>> +   assume that ran from 0x0 to 0x0000_0010_0000_0000. We'd then reserve the
+>>>> +   last 1/8th - 0x0000_000e_0000_0000 to 0x0000_0010_0000_0000 as the shadow
+>>>> +   region. But when we try to access any of that, we'll try to access pages
+>>>> +   that are not physically present.
+>>>> +
 >>>
->>> Hi Adam,
+>>> If we reserved memory for KASAN from each node (discontig region), we might survive
+>>> this no? May be we need NUMA aware KASAN? That might be a generic change, just thinking
+>>> out loud.
+>> 
+>> The challenge is that - AIUI - in inline instrumentation, the compiler
+>> doesn't generate calls to things like __asan_loadN and
+>> __asan_storeN. Instead it uses -fasan-shadow-offset to compute the
+>> checks, and only calls the __asan_report* family of functions if it
+>> detects an issue. This also matches what I can observe with objdump
+>> across outline and inline instrumentation settings.
+>> 
+>> This means that for this sort of thing to work we would need to either
+>> drop back to out-of-line calls, or teach the compiler how to use a
+>> nonlinear, NUMA aware mem-to-shadow mapping.
+>
+> Yes, out of line is expensive, but seems to work well for all use cases.
+
+I'm not sure this is true. Looking at scripts/Makefile.kasan, allocas,
+stacks and globals will only be instrumented if you can provide
+KASAN_SHADOW_OFFSET. In the case you're proposing, we can't provide a
+static offset. I _think_ this is a compiler limitation, where some of
+those instrumentations only work/make sense with a static offset, but
+perhaps that's not right? Dmitry and Andrey, can you shed some light on
+this?
+
+Also, as it currently stands, the speed difference between inline and
+outline is approximately 2x, and given that we'd like to run this
+full-time in syzkaller I think there is value in trading off speed for
+some limitations.
+
+> BTW, the current set of patches just hang if I try to make the default
+> mode as out of line
+
+Do you have CONFIG_RELOCATABLE?
+
+I've tested the following process:
+
+# 1) apply patches on a fresh linux-next
+# 2) output dir
+mkdir ../out-3s-kasan
+
+# 3) merge in the relevant config snippets
+cat > kasan.config << EOF
+CONFIG_EXPERT=y
+CONFIG_LD_HEAD_STUB_CATCH=y
+
+CONFIG_RELOCATABLE=y
+
+CONFIG_KASAN=y
+CONFIG_KASAN_GENERIC=y
+CONFIG_KASAN_OUTLINE=y
+
+CONFIG_PHYS_MEM_SIZE_FOR_KASAN=2048
+EOF
+
+ARCH=powerpc CROSS_COMPILE=powerpc64-linux-gnu- ./scripts/kconfig/merge_config.sh -O ../out-3s-kasan/ arch/powerpc/configs/pseries_defconfig arch/powerpc/configs/le.config kasan.config
+
+# 4) make
+make O=../out-3s-kasan/ ARCH=powerpc CROSS_COMPILE=powerpc64-linux-gnu- -j8 vmlinux
+
+# 5) test
+qemu-system-ppc64  -m 2G -M pseries -cpu power9  -kernel ../out-3s-kasan/vmlinux  -nographic -chardev stdio,id=charserial0,mux=on -device spapr-vty,chardev=charserial0,reg=0x30000000 -initrd ./rootfs-le.cpio.xz -mon chardev=charserial0,mode=readline -nodefaults -smp 4 
+
+This boots fine for me under TCG and KVM, with both CONFIG_KASAN_OUTLINE
+and CONFIG_KASAN_INLINE. You do still need to supply the size even in
+outline mode - I don't have code that switches over to vmalloced space
+when in outline mode. I will clarify the docs on that.
+
+
+>>>> +	if (IS_ENABLED(CONFIG_KASAN) && IS_ENABLED(CONFIG_PPC_BOOK3S_64)) {
+>>>> +		kasan_memory_size =
+>>>> +			((phys_addr_t)CONFIG_PHYS_MEM_SIZE_FOR_KASAN << 20);
+>>>> +
+>>>> +		if (top_phys_addr < kasan_memory_size) {
+>>>> +			/*
+>>>> +			 * We are doomed. Attempts to call e.g. panic() are
+>>>> +			 * likely to fail because they call out into
+>>>> +			 * instrumented code, which will almost certainly
+>>>> +			 * access memory beyond the end of physical
+>>>> +			 * memory. Hang here so that at least the NIP points
+>>>> +			 * somewhere that will help you debug it if you look at
+>>>> +			 * it in qemu.
+>>>> +			 */
+>>>> +			while (true)
+>>>> +				;
 >>>
->>> On 30.11.19 23:51, Adam Ford wrote:
->>>> The i.MX8M Mini uses the same crypto engine as the i.MX8MQ, but
->>>> the driver is restricting the check to just the i.MX8MQ.
->>>>
->>>> This patch lets the driver support all i.MX8M Variants if enabled.
->>>>
->>>> Signed-off-by: Adam Ford <aford173@gmail.com>
->>>
->>> What about the following lines in run_descriptor_deco0()? Does this
->>> condition also apply to i.MX8MM?
->>
->> I think that's a question for NXP.  I am not seeing that in the NXP
->> Linux Release, and I don't have an 8MQ to compare.
->>
-> IIRC the i.MX BSP releases use the JRI for initializing the RNG,
-> and not the DECO register interface.
-> 
->> I was able to get the driver working on the i.MXMM with the patch.
->>
-> You are probably using a newer U-boot, which includes
-> commit dfaec76029f2 ("crypto/fsl: instantiate all rng state handles")
-> 
->> NXP  Team,
->>
->> Do you have any opinions on this?
->>
-> Since current U-boot initializes both RNG state handles, practically
-> instantiate_rng() is a no-op.
-> 
-> A simple experiment is to "lie" about the state_handle_mask, to exercise
-> the DECO acquire code (or, as mentioned above, to run with an older U-boot):
-> 
-> @@ -268,12 +272,19 @@ static int instantiate_rng(struct device *ctrldev, int state_handle_mask,
->          struct caam_ctrl __iomem *ctrl;
->          u32 *desc, status = 0, rdsta_val;
->          int ret = 0, sh_idx;
-> +       static int force_init = 1;
-> 
->          ctrl = (struct caam_ctrl __iomem *)ctrlpriv->ctrl;
->          desc = kmalloc(CAAM_CMD_SZ * 7, GFP_KERNEL);
->          if (!desc)
->                  return -ENOMEM;
-> 
-> +       if (force_init && (state_handle_mask == 0x3)) {
-> +               dev_err(ctrldev, "Forcing reinit of RNG state handle 0!\n");
-> +               force_init = 0;
-> +               state_handle_mask = 0x2;
-> +       }
-> +
->          for (sh_idx = 0; sh_idx < RNG4_MAX_HANDLES; sh_idx++) {
->                  /*
->                   * If the corresponding bit is set, this state handle
-> 
-> In this case boot log confirms the DECO cannot be acquired:
-> [    2.137101] caam 30900000.crypto: Forcing reinit of RNG state handle 0!
-> [    2.172293] caam 30900000.crypto: failed to acquire DECO 0
-> [    2.177786] caam 30900000.crypto: failed to instantiate RNG
-> 
-> To sum up, writing to DECORSR is mandatory.
+>>> Again with the right hooks in check_memory_region_inline() these are recoverable,
+>>> or so I think
+>> 
+>> So unless I misunderstand the circumstances in which
+>> check_memory_region_inline is used, this isn't going to help with inline
+>> instrumentation.
+>> 
+>
+> Yes, I understand. Same as above?
 
-Thanks Horia for providing the details.
+Yes.
 
-Adam, can you update your patch to enable the code in 
-run_descriptor_deco0() for i.MX8MM?
+>>> NOTE: I can't test any of these, well may be with qemu, let me see if I can spin
+>>> the series and provide more feedback
+>> 
+>> It's actually super easy to do simple boot tests with qemu, it works fine in TCG,
+>> Michael's wiki page at
+>> https://github.com/linuxppc/wiki/wiki/Booting-with-Qemu is very helpful.
+>> 
+>> I did this a lot in development.
+>> 
+>> My full commandline, fwiw, is:
+>> 
+>> qemu-system-ppc64  -m 8G -M pseries -cpu power9  -kernel ../out-3s-radix/vmlinux  -nographic -chardev stdio,id=charserial0,mux=on -device spapr-vty,chardev=charserial0,reg=0x30000000 -initrd ./rootfs-le.cpio.xz -mon chardev=charserial0,mode=readline -nodefaults -smp 4
+>
+> qemu has been crashing with KASAN enabled/ both inline/out-of-line options. I am running linux-next + the 4 patches you've posted. In one case I get a panic and a hang in the other. I can confirm that when I disable KASAN, the issue disappears
 
-If I understand this correctly, this is necessary to have the RNG 
-initialize correctly no matter what version of U-Boot is used.
+Hopefully my script above can help narrow that down.
 
-Thanks,
-Frieder
+Regards,
+Daniel
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
