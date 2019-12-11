@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D05AB11BBFF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:42:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 715A211BC03
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 19:42:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NgEUX/BqSykiN7J88ICRb46yxrT+wBk/chVf0q15Gk4=; b=oVwlNxmrRHPN3D
-	cePBFWuw6MxIPrQZ/jsZq1LMsaizs0Uplqfzp117JqeXrPrZFOx87fkdqamzbKW5em+GxWL45mQv/
-	2KYeXOnUvWVGcbX39FcysgRtECHhyGnacflDspLdZZfGtGTDbff18JIyvvVjz6yh1EKkipP9o2TYM
-	t9PLBuJenH5GiDujDBQ9WXWb8xtoii9FNrAE/fRdPk+/W1bvz7emAFy6ylBBcC7v/sz82oVg3Hs5z
-	S6cvj+kLsEU0/vfNbm6Mg2Ie/7Q2WfkK2M4prYaWJycEs2RxpdWWsuD2g4Wptjk4cxAw5BtQdx7fd
-	O74yIl8ThQDP63RvdA2Q==;
+	List-Owner; bh=927fgn5mmaOSmpRqA0rQADO6xXYP89Fb7hjEeQZAV4w=; b=DNTWjGyP0IYGCf
+	2c5goOPnz+g2cNfhe5F+EVu9vC5V2wQgjCOA3RpfsDiw03hInOu55JD7ZOGmugf4gLpIQCKgxps+m
+	pWeUKvMMwZch9CzGIB99WmOWtBr99LmwuEbzFJb0e6figuDFr5HD6b6Zn2fe4HCKIyn2kJuWGFVvA
+	AwgH826sx7mhaZj52wvk22g5a0n0AA/mHA0GBmJHXrD3N0Tw11hyh8gDCQpIN9/NrrJjb1HqCWEpI
+	Qeet34hpuMCHoW460F+rKeMs49SNBVTarbJejy5PnM3/3VfEuN+0JaALEraZ2zwRH99ojPMBsYNQ3
+	jYYauELuEmfNWj2WpKMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if6vs-0003wT-K4; Wed, 11 Dec 2019 18:41:56 +0000
+	id 1if6w6-00049Y-0y; Wed, 11 Dec 2019 18:42:10 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if6uh-000383-6d
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:40:44 +0000
+ id 1if6uj-000383-2a
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 18:40:47 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A5DE5106F;
- Wed, 11 Dec 2019 10:40:42 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E5C5113E;
+ Wed, 11 Dec 2019 10:40:44 -0800 (PST)
 Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3CDB93F6CF;
- Wed, 11 Dec 2019 10:40:41 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D9A5D3F6CF;
+ Wed, 11 Dec 2019 10:40:42 -0800 (PST)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 03/22] arm64: alternative: Allow alternative_insn to always
- issue the first instruction
-Date: Wed, 11 Dec 2019 18:40:08 +0000
-Message-Id: <20191211184027.20130-4-catalin.marinas@arm.com>
+Subject: [PATCH 04/22] arm64: Use macros instead of hard-coded constants for
+ MAIR_EL1
+Date: Wed, 11 Dec 2019 18:40:09 +0000
+Message-Id: <20191211184027.20130-5-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191211184027.20130-1-catalin.marinas@arm.com>
 References: <20191211184027.20130-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_104043_295324_F268CBC6 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_104045_168949_8C881312 
+X-CRM114-Status: GOOD (  10.17  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,42 +73,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are situations where we do not want to disable the whole block
-based on a config option, only the alternative part while keeping the
-first instruction. Improve the alternative_insn assembler macro to take
-a 'first_insn' argument, default 0 to preserve the current behaviour.
+Currently, the arm64 __cpu_setup has hard-coded constants for the memory
+attributes that go into the MAIR_EL1 register. Define proper macros in
+asm/sysreg.h and make use of them in proc.S.
 
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/include/asm/alternative.h | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ arch/arm64/include/asm/sysreg.h | 12 ++++++++++++
+ arch/arm64/mm/proc.S            | 27 ++++++++++-----------------
+ 2 files changed, 22 insertions(+), 17 deletions(-)
 
-diff --git a/arch/arm64/include/asm/alternative.h b/arch/arm64/include/asm/alternative.h
-index b9f8d787eea9..b4d3ffe16ca6 100644
---- a/arch/arm64/include/asm/alternative.h
-+++ b/arch/arm64/include/asm/alternative.h
-@@ -101,7 +101,11 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
- 	.byte \alt_len
- .endm
+diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+index 6e919fafb43d..e21470337c5e 100644
+--- a/arch/arm64/include/asm/sysreg.h
++++ b/arch/arm64/include/asm/sysreg.h
+@@ -538,6 +538,18 @@
+ 			 SCTLR_EL1_NTWE | SCTLR_ELx_IESB | SCTLR_EL1_SPAN |\
+ 			 ENDIAN_SET_EL1 | SCTLR_EL1_UCI  | SCTLR_EL1_RES1)
  
--.macro alternative_insn insn1, insn2, cap, enable = 1
-+/*
-+ * Disable the whole block if enable == 0, unless first_insn == 1 in which
-+ * case insn1 will always be issued but without an alternative insn2.
-+ */
-+.macro alternative_insn insn1, insn2, cap, enable = 1, first_insn = 0
- 	.if \enable
- 661:	\insn1
- 662:	.pushsection .altinstructions, "a"
-@@ -112,6 +116,8 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
- 664:	.popsection
- 	.org	. - (664b-663b) + (662b-661b)
- 	.org	. - (662b-661b) + (664b-663b)
-+	.elseif \first_insn
-+	\insn1
- 	.endif
- .endm
++/* MAIR_ELx memory attributes (used by Linux) */
++#define MAIR_ATTR_DEVICE_nGnRnE		UL(0x00)
++#define MAIR_ATTR_DEVICE_nGnRE		UL(0x04)
++#define MAIR_ATTR_DEVICE_GRE		UL(0x0c)
++#define MAIR_ATTR_NORMAL_NC		UL(0x44)
++#define MAIR_ATTR_NORMAL_WT		UL(0xbb)
++#define MAIR_ATTR_NORMAL		UL(0xff)
++#define MAIR_ATTR_MASK			UL(0xff)
++
++/* Position the attr at the correct index */
++#define MAIR_ATTRIDX(attr, idx)		((attr) << ((idx) * 8))
++
+ /* id_aa64isar0 */
+ #define ID_AA64ISAR0_TS_SHIFT		52
+ #define ID_AA64ISAR0_FHM_SHIFT		48
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index a1e0592d1fbc..55f715957b36 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -42,7 +42,14 @@
+ #define TCR_KASAN_FLAGS 0
+ #endif
  
+-#define MAIR(attr, mt)	((attr) << ((mt) * 8))
++/* Default MAIR_EL1 */
++#define MAIR_EL1_SET							\
++	(MAIR_ATTRIDX(MAIR_ATTR_DEVICE_nGnRnE, MT_DEVICE_nGnRnE) |	\
++	 MAIR_ATTRIDX(MAIR_ATTR_DEVICE_nGnRE, MT_DEVICE_nGnRE) |	\
++	 MAIR_ATTRIDX(MAIR_ATTR_DEVICE_GRE, MT_DEVICE_GRE) |		\
++	 MAIR_ATTRIDX(MAIR_ATTR_NORMAL_NC, MT_NORMAL_NC) |		\
++	 MAIR_ATTRIDX(MAIR_ATTR_NORMAL, MT_NORMAL) |			\
++	 MAIR_ATTRIDX(MAIR_ATTR_NORMAL_WT, MT_NORMAL_WT))
+ 
+ #ifdef CONFIG_CPU_PM
+ /**
+@@ -416,23 +423,9 @@ ENTRY(__cpu_setup)
+ 	enable_dbg				// since this is per-cpu
+ 	reset_pmuserenr_el0 x0			// Disable PMU access from EL0
+ 	/*
+-	 * Memory region attributes for LPAE:
+-	 *
+-	 *   n = AttrIndx[2:0]
+-	 *			n	MAIR
+-	 *   DEVICE_nGnRnE	000	00000000
+-	 *   DEVICE_nGnRE	001	00000100
+-	 *   DEVICE_GRE		010	00001100
+-	 *   NORMAL_NC		011	01000100
+-	 *   NORMAL		100	11111111
+-	 *   NORMAL_WT		101	10111011
++	 * Memory region attributes
+ 	 */
+-	ldr	x5, =MAIR(0x00, MT_DEVICE_nGnRnE) | \
+-		     MAIR(0x04, MT_DEVICE_nGnRE) | \
+-		     MAIR(0x0c, MT_DEVICE_GRE) | \
+-		     MAIR(0x44, MT_NORMAL_NC) | \
+-		     MAIR(0xff, MT_NORMAL) | \
+-		     MAIR(0xbb, MT_NORMAL_WT)
++	mov_q	x5, MAIR_EL1_SET
+ 	msr	mair_el1, x5
+ 	/*
+ 	 * Prepare SCTLR
 
 _______________________________________________
 linux-arm-kernel mailing list
