@@ -2,73 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DE0C11B29F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:39:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB45A11B369
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:42:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qMRCk/ielV/ay1DuB2TvN89OLcea8cckQFYeJ4IF/mI=; b=Fk+COPmBarJbqI
-	df/EmJE20HWcpa6P3I929/YADxol7tHc2D3yE6HKgy79PHQyqRuZocHc7AJRwYdGfc2PVrnuCuwgN
-	q2PQG9QQhRX6bs0jfKAxVd+leovGkOn/n2rCutghEx/7jfISKZhmOf+vOty6rQc7aiVZd9kKnfRCz
-	KQdYpy3wgsgNQxj84wZcdmuZokp151u5lCQUzoFphMkdugTIUUqf1wvz6oxdJemf8OmxIQTOwRp5Q
-	6hhDPq5n/ED+a8U6utfIPZoMfkDfrVGvwUigpiFq8OOWPuFyGkne8gwxiFj7muIw2EMhoXiKN2oM6
-	4Ivm47iYQBT5feuepeVw==;
+	List-Owner; bh=zEIFy42gw0qlhhlLlnnXZUmuxZXHI4Pn1MmF4qJhwK8=; b=Nf5ytH5VqjMfAm
+	xYmfU5o4op0+qK8EuV7gOwYld8yjlsd7HjYDX7oMNhL+eUhL2QVUUxK1bPhiuM/WWu7Zcon07WWU3
+	ds3NKbwQqkykvnDKuQtwgsrOQwuVIAPpp1YcLgzmXYj84y1QcMR2bJ8krcj69kRc0jeicit6oetwk
+	tE7Ez+SYOype5ecFi2sPuXkl5LIO2+ZPZ6RalpJX1MOlXzPu5tdZ05fAvPSwp9DAUBUY+vQ/0Q8Kp
+	cxVxYLOU4Uu0CHw0J1N0wwMfel78acSUrz/7WeSHEGhrPTbsprCs3tYnETFfEF8NhT2Vtl1cGZfsN
+	v18QFYb4JizmSYt0ywtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if44n-0002pj-J3; Wed, 11 Dec 2019 15:38:57 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1if482-0005Ae-CH; Wed, 11 Dec 2019 15:42:18 +0000
+Received: from 212.199.177.27.static.012.net.il ([212.199.177.27]
+ helo=herzl.nuvoton.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if44g-0002oz-IX
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:38:51 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 71B342467F;
- Wed, 11 Dec 2019 15:38:49 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576078730;
- bh=IG9kGKLljauydAeaT7R+w9w3rEQaS3pDBysxhkF6U/4=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=h9x1n5q2tbIyxwxJ0z3JcbN1K1sXNlj5HyieaMbWqex5TfE8cbOu2P1492f/Ibhth
- YfR/12TM5Ru+qoj2OnYwKdx6S4myIsAs1mlJQFFma3Sfpp/X4Vg2p4HCNmts/bubpD
- Kw97iab3a8H/4VxeFT6Mi5/J2vA8NaC0gCGXHxSI=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 34/37] libfdt: define INT32_MAX and UINT32_MAX in
- libfdt_env.h
-Date: Wed, 11 Dec 2019 10:38:10 -0500
-Message-Id: <20191211153813.24126-34-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191211153813.24126-1-sashal@kernel.org>
-References: <20191211153813.24126-1-sashal@kernel.org>
+ id 1if47p-00057G-IF
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:42:07 +0000
+Received: from taln60.nuvoton.co.il (ntil-fw [212.199.177.25])
+ by herzl.nuvoton.co.il (8.13.8/8.13.8) with ESMTP id xBBFfaMG012118;
+ Wed, 11 Dec 2019 17:41:36 +0200
+Received: by taln60.nuvoton.co.il (Postfix, from userid 10070)
+ id B257660329; Wed, 11 Dec 2019 17:41:36 +0200 (IST)
+From: Tomer Maimon <tmaimon77@gmail.com>
+To: linux-arm-kernel@lists.infradead.org, joel@jms.id.au, yuenn@google.com,
+ venture@google.com, benjaminfair@google.com, avifishman70@gmail.com
+Subject: [PATCH v2 1/3] arm: dts: modify NPCM7xx device tree clock parameter
+ to clock constant
+Date: Wed, 11 Dec 2019 17:41:32 +0200
+Message-Id: <20191211154134.266860-2-tmaimon77@gmail.com>
+X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20191211154134.266860-1-tmaimon77@gmail.com>
+References: <20191211154134.266860-1-tmaimon77@gmail.com>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_073850_630912_29CF22AE 
-X-CRM114-Status: GOOD (  11.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191211_074205_993623_31A9E507 
+X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 3.1 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (3.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tmaimon77[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,92 +76,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, Rob Herring <robh@kernel.org>
+Cc: Tomer Maimon <tmaimon77@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Modify NPCM7xx device tree clock parameter to clock constants that
+define at include/dt-bindings/clock/nuvoton,npcm7xx-clock.h file.
 
-[ Upstream commit a8de1304b7df30e3a14f2a8b9709bb4ff31a0385 ]
-
-The DTC v1.5.1 added references to (U)INT32_MAX.
-
-This is no problem for user-space programs since <stdint.h> defines
-(U)INT32_MAX along with (u)int32_t.
-
-For the kernel space, libfdt_env.h needs to be adjusted before we
-pull in the changes.
-
-In the kernel, we usually use s/u32 instead of (u)int32_t for the
-fixed-width types.
-
-Accordingly, we already have S/U32_MAX for their max values.
-So, we should not add (U)INT32_MAX to <linux/limits.h> any more.
-
-Instead, add them to the in-kernel libfdt_env.h to compile the
-latest libfdt.
-
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-Signed-off-by: Rob Herring <robh@kernel.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+Signed-off-by: Tomer Maimon <tmaimon77@gmail.com>
 ---
- arch/arm/boot/compressed/libfdt_env.h | 4 +++-
- arch/powerpc/boot/libfdt_env.h        | 2 ++
- include/linux/libfdt_env.h            | 3 +++
- 3 files changed, 8 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi | 19 ++++++++++---------
+ arch/arm/boot/dts/nuvoton-npcm750.dtsi        |  6 +++---
+ 2 files changed, 13 insertions(+), 12 deletions(-)
 
-diff --git a/arch/arm/boot/compressed/libfdt_env.h b/arch/arm/boot/compressed/libfdt_env.h
-index 005bf4ff1b4cb..f3ddd4f599e3e 100644
---- a/arch/arm/boot/compressed/libfdt_env.h
-+++ b/arch/arm/boot/compressed/libfdt_env.h
-@@ -1,11 +1,13 @@
- #ifndef _ARM_LIBFDT_ENV_H
- #define _ARM_LIBFDT_ENV_H
+diff --git a/arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi b/arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi
+index d2d0761295a4..16a28c5c4131 100644
+--- a/arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi
++++ b/arch/arm/boot/dts/nuvoton-common-npcm7xx.dtsi
+@@ -3,6 +3,7 @@
+ // Copyright 2018 Google, Inc.
  
-+#include <linux/limits.h>
- #include <linux/types.h>
- #include <linux/string.h>
- #include <asm/byteorder.h>
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
++#include <dt-bindings/clock/nuvoton,npcm7xx-clock.h>
  
--#define INT_MAX			((int)(~0U>>1))
-+#define INT32_MAX	S32_MAX
-+#define UINT32_MAX	U32_MAX
+ / {
+ 	#address-cells = <1>;
+@@ -80,7 +81,7 @@
+ 			interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
+ 			cache-unified;
+ 			cache-level = <2>;
+-			clocks = <&clk 10>;
++			clocks = <&clk NPCM7XX_CLK_AXI>;
+ 			arm,shared-override;
+ 		};
  
- typedef __be16 fdt16_t;
- typedef __be32 fdt32_t;
-diff --git a/arch/powerpc/boot/libfdt_env.h b/arch/powerpc/boot/libfdt_env.h
-index 0b3db6322c793..5f2cb1c53e151 100644
---- a/arch/powerpc/boot/libfdt_env.h
-+++ b/arch/powerpc/boot/libfdt_env.h
-@@ -5,6 +5,8 @@
- #include <string.h>
+@@ -120,7 +121,7 @@
+ 				compatible = "nuvoton,npcm750-timer";
+ 				interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
+ 				reg = <0x8000 0x50>;
+-				clocks = <&clk 5>;
++				clocks = <&clk NPCM7XX_CLK_TIMER>;
+ 			};
  
- #define INT_MAX			((int)(~0U>>1))
-+#define UINT32_MAX		((u32)~0U)
-+#define INT32_MAX		((s32)(UINT32_MAX >> 1))
+ 			watchdog0: watchdog@801C {
+@@ -128,7 +129,7 @@
+ 				interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
+ 				reg = <0x801C 0x4>;
+ 				status = "disabled";
+-				clocks = <&clk 5>;
++				clocks = <&clk NPCM7XX_CLK_TIMER>;
+ 			};
  
- #include "of.h"
+ 			watchdog1: watchdog@901C {
+@@ -136,7 +137,7 @@
+ 				interrupts = <GIC_SPI 48 IRQ_TYPE_LEVEL_HIGH>;
+ 				reg = <0x901C 0x4>;
+ 				status = "disabled";
+-				clocks = <&clk 5>;
++				clocks = <&clk NPCM7XX_CLK_TIMER>;
+ 			};
  
-diff --git a/include/linux/libfdt_env.h b/include/linux/libfdt_env.h
-index 8850e243c9406..bd0a55821177a 100644
---- a/include/linux/libfdt_env.h
-+++ b/include/linux/libfdt_env.h
-@@ -6,6 +6,9 @@
+ 			watchdog2: watchdog@a01C {
+@@ -144,13 +145,13 @@
+ 				interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
+ 				reg = <0xa01C 0x4>;
+ 				status = "disabled";
+-				clocks = <&clk 5>;
++				clocks = <&clk NPCM7XX_CLK_TIMER>;
+ 			};
  
- #include <asm/byteorder.h>
- 
-+#define INT32_MAX	S32_MAX
-+#define UINT32_MAX	U32_MAX
-+
- typedef __be16 fdt16_t;
- typedef __be32 fdt32_t;
- typedef __be64 fdt64_t;
+ 			serial0: serial@1000 {
+ 				compatible = "nuvoton,npcm750-uart";
+ 				reg = <0x1000 0x1000>;
+-				clocks = <&clk 6>;
++				clocks = <&clk NPCM7XX_CLK_UART>;
+ 				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
+ 				reg-shift = <2>;
+ 				status = "disabled";
+@@ -159,7 +160,7 @@
+ 			serial1: serial@2000 {
+ 				compatible = "nuvoton,npcm750-uart";
+ 				reg = <0x2000 0x1000>;
+-				clocks = <&clk 6>;
++				clocks = <&clk NPCM7XX_CLK_UART>;
+ 				interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
+ 				reg-shift = <2>;
+ 				status = "disabled";
+@@ -168,7 +169,7 @@
+ 			serial2: serial@3000 {
+ 				compatible = "nuvoton,npcm750-uart";
+ 				reg = <0x3000 0x1000>;
+-				clocks = <&clk 6>;
++				clocks = <&clk NPCM7XX_CLK_UART>;
+ 				interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
+ 				reg-shift = <2>;
+ 				status = "disabled";
+@@ -177,7 +178,7 @@
+ 			serial3: serial@4000 {
+ 				compatible = "nuvoton,npcm750-uart";
+ 				reg = <0x4000 0x1000>;
+-				clocks = <&clk 6>;
++				clocks = <&clk NPCM7XX_CLK_UART>;
+ 				interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
+ 				reg-shift = <2>;
+ 				status = "disabled";
+diff --git a/arch/arm/boot/dts/nuvoton-npcm750.dtsi b/arch/arm/boot/dts/nuvoton-npcm750.dtsi
+index 6ac340533587..a37bb2294b8f 100644
+--- a/arch/arm/boot/dts/nuvoton-npcm750.dtsi
++++ b/arch/arm/boot/dts/nuvoton-npcm750.dtsi
+@@ -17,7 +17,7 @@
+ 		cpu@0 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a9";
+-			clocks = <&clk 0>;
++			clocks = <&clk NPCM7XX_CLK_CPU>;
+ 			clock-names = "clk_cpu";
+ 			reg = <0>;
+ 			next-level-cache = <&l2>;
+@@ -26,7 +26,7 @@
+ 		cpu@1 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a9";
+-			clocks = <&clk 0>;
++			clocks = <&clk NPCM7XX_CLK_CPU>;
+ 			clock-names = "clk_cpu";
+ 			reg = <1>;
+ 			next-level-cache = <&l2>;
+@@ -38,7 +38,7 @@
+ 			reg = <0x3fe600 0x20>;
+ 			interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(2) |
+ 						  IRQ_TYPE_LEVEL_HIGH)>;
+-			clocks = <&clk 5>;
++			clocks = <&clk NPCM7XX_CLK_AHB>;
+ 		};
+ 	};
+ };
 -- 
-2.20.1
+2.22.0
 
 
 _______________________________________________
