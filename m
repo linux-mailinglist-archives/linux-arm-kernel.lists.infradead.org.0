@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38B8711B47F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:48:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 998F911B485
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 16:48:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qcqODo++W01Fdzm85ux3N6k5rKZm147IsWlAPbJtIvY=; b=fxUNZqVu+0fWPo+iCP8+4FbNv+
-	LthUAtVq6E4BklVPdKB1kS160G19aVNKKDYhiapTL6IflEDLxCaJ1UqomZwyBzC3KUQHKv9UBR6Rk
-	qh103C0mg+gBHRPVvWVl6TyMAF0Hfzahwj3UA/o5XLsN3qFl9S0N0FRG+nuU++4SQ3P4DYPUEj9y5
-	VC8XmRWkaF8biykNejOlu/kDJAK7FeXXoZeM4K+0yHoWk8HLTdScD8M572PIG+/kg0mEGNQZHRDqw
-	Zlq6AfJmdXI29TSJFL34uDHDCO9DdiXDBbT+9r9pgEcReSCENy6ggwFppbBXWBshmykJHwKRb8OF2
-	+3kkYQlA==;
+	bh=nygeOF92Uzp1rI/QRTDlu+TWYiWbRLZpmhFLSv8WXpg=; b=iLR/93976SZk00A0X+xVQWf2dm
+	iWwC6YobenYbG/iyKcaSdS3X2bYFTzJZ7DP3YcLr+5P/wgGfT1s4Lmrc3jyqYeVIBjn0FFftAHSwL
+	WFlG0fX5YoKwdefPJWj3Ppjycuw4s1kYcTHJ++TU2ifnh+vDOAeURCAt25xSVtWyLHwrRup+SSVeK
+	XlxToPKhTnSQpU3lWBRg7Mur2/K1aCRe5YQLVqVgYoNRhYwUvESYpREtsns27z9flkn6oInfGfVHf
+	9qMEBc4pvzSwYjG+jBH0ka06ql5wIobpoQxyYDb9QEwSC34aNXBX8bkDXHFibCJTwc1F/L9eNOJwv
+	OYvD7Pxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if4Dc-0003Pb-LL; Wed, 11 Dec 2019 15:48:04 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1if4E0-00043r-BS; Wed, 11 Dec 2019 15:48:28 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if49h-00070E-FB
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:44:03 +0000
-Received: by mail-lf1-x141.google.com with SMTP id 15so17085505lfr.2
+ id 1if49k-000723-2m
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 15:44:05 +0000
+Received: by mail-lf1-x142.google.com with SMTP id n12so17083293lfe.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 07:44:01 -0800 (PST)
+ Wed, 11 Dec 2019 07:44:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Z3dFHMSTWmknhjBa3X9neiliLOt0Ua6IMiSdXiMVvsE=;
- b=wcpag0kFqzXeqRry8Pg+EjTlMzNiSVaOfpgd2if+zbTIxT2iOgTP4xyZQYDC8Bs6dB
- Zluu3yKQ0PKtJnDpD55xA3itb23Jn9Sp2je5wAgwp4H+0HY2bMJk7/6Ipq8dh1R89DaB
- n1URhE+ohyGVs+jgVRNadHhoHlebRHdIPN/V7BI6SBWKO2DYO8RdzuvI75pXdvqpvhXz
- 7M5kOfABGVvXfaD9+Bldd012eFKU3iv0n9b8VLjttNt5N3LN7Z5pBKEB8eiFVpTjae0r
- FYPzg01HomARnv+j/Tsl7qynJqgHED4aYsx7ALVvAkIb5SElrIMAY6qA4fQ2A2d3w9tt
- tWmw==
+ bh=S2XemtX4hMYuEUmPXCsFCarqlwpwIjzNfad7a4a1Y1I=;
+ b=zJsktAeJPVQv9poyv+aQY1Kiea0KoaXHBS/enAVvKiWoIkm3Qj8bFFC5H5xBZaGDnb
+ EqSZcEdehRJsS0IhuBVQ/TKu4hVHgkJXnlnFrhNrhdZkVH9FerJrdG1mB+HU05AmTaR1
+ MJbLfJC4ikUYact0RaEanF53QtjHKyT8x7zOD56Yo60xroNsezkUGPM6ZHPEgHK4Ysn0
+ HU2yKAsyxVzmNNmgjRM41m9AscNNW6t7fq/8hYlNOTDpl3xReNh1KvM6A5z1JG4PiQUF
+ 2j/C3zVIivL0hiUM84TUxwCENGf0SLmV2eEGq1zXvoXA9W2+mFofRicESuLNkkNpINyL
+ ZHaQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Z3dFHMSTWmknhjBa3X9neiliLOt0Ua6IMiSdXiMVvsE=;
- b=W1dwVv0a48AOs9RF3knlMMybG1+L7ERVjFCKybUiPYpPTNe+H7IS1x9jBdxsvOHQcp
- GcT//zZhqZyz6cAh4TeM1OuyzY5RLsI8ptxtzuVcIzEPhNr9A5+I/4vvmW/9BMxae2GR
- Yq87ceJzzIrL6Tj9m7+MBd6jSANasSe3PVD9VaKIEDavHiLAm+aMy6XlLiG9YZWC4zTm
- eUfCirpIg4EPKsmoQxou0u9OdfBMBDVViwyLfX8Epsge7/jsi7LE209F60/yWAdRxhiY
- 6WpJbur/PCaR7M7jcWzS2tTZTaAhNUiv/kL9m2n+h/KItqHBafnQqudooTgwgtJUAopb
- PT2g==
-X-Gm-Message-State: APjAAAUKITGXKzQrkCSg8C14GjDolZhu6xMY59nJZb1JPFY2ZIAsx8L6
- 1uAf2nbWvHfuADykatjkMufqng==
-X-Google-Smtp-Source: APXvYqybL5yW0+Q8vqmaFlpbiu510ZmXk7dCEaf5C5AYnxU+6bSbBrEJxJrKmgsFoRB3rc4iE6TC2g==
-X-Received: by 2002:a19:5f58:: with SMTP id a24mr2699587lfj.9.1576079039918;
- Wed, 11 Dec 2019 07:43:59 -0800 (PST)
+ bh=S2XemtX4hMYuEUmPXCsFCarqlwpwIjzNfad7a4a1Y1I=;
+ b=INnQEK9AzlEt9o/G/k2j9ze4bCZNAHsXXhRgXQ4fhQRexV6A32j+gS8q88TgYI2Dxy
+ ph95+4MIhRLGR/nwMHI6TuQbUC/iRNpfJNDXZe9+QcgU7gE5xENHdEc2T6DI19p2cpE5
+ T5P8gCUQ4cI53a1UWx8J7N0HE990j0keA8Uzltern+zFEutApxuJSuV7iWmzzqkLI6Sj
+ e9RxbEaiTh9oVim2ljQKPszMk6JUNlazA8f+ZwkXUfVjlRrnSUmd5ampDhAHJ462rU5r
+ qiL+GGWNx2+QLHHpr3zcOHUiv+vDwtNsOJuY3OJlSZJ8DwhDxW0y/zdBK4dD56lgKiAZ
+ JDPQ==
+X-Gm-Message-State: APjAAAUdmhg1tWwqGtgsi77qmz0+35nxguVQBFI0unfAM3EgPOHI7FE5
+ H6h8zsL1DxJRhxw6c8d+OUbruw==
+X-Google-Smtp-Source: APXvYqxqYN5IMFGsrJLgOcWZ7/rfrvTcU1Mt/hLAaC2UQmkeUZesn74SHY0YLNwolOTv/jADHPA8hg==
+X-Received: by 2002:a19:ec14:: with SMTP id b20mr2691734lfa.63.1576079041735; 
+ Wed, 11 Dec 2019 07:44:01 -0800 (PST)
 Received: from localhost.localdomain (h-158-174-22-210.NA.cust.bahnhof.se.
  [158.174.22.210])
- by smtp.gmail.com with ESMTPSA id b14sm1389608lff.68.2019.12.11.07.43.57
+ by smtp.gmail.com with ESMTPSA id b14sm1389608lff.68.2019.12.11.07.44.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Dec 2019 07:43:58 -0800 (PST)
+ Wed, 11 Dec 2019 07:44:00 -0800 (PST)
 From: Ulf Hansson <ulf.hansson@linaro.org>
 To: Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
  Rob Herring <robh+dt@kernel.org>, linux-pm@vger.kernel.org
-Subject: [PATCH v4 05/14] cpuidle: dt: Support hierarchical CPU idle states
-Date: Wed, 11 Dec 2019 16:43:34 +0100
-Message-Id: <20191211154343.29765-6-ulf.hansson@linaro.org>
+Subject: [PATCH v4 06/14] cpuidle: psci: Simplify OF parsing of CPU idle state
+ nodes
+Date: Wed, 11 Dec 2019 16:43:35 +0100
+Message-Id: <20191211154343.29765-7-ulf.hansson@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191211154343.29765-1-ulf.hansson@linaro.org>
 References: <20191211154343.29765-1-ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_074401_562170_B5888833 
-X-CRM114-Status: GOOD (  12.98  )
+X-CRM114-CacheID: sfid-20191211_074404_178924_FE97FE0D 
+X-CRM114-Status: GOOD (  17.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,23 +104,18 @@ Cc: Mark Rutland <mark.rutland@arm.com>, Ulf Hansson <ulf.hansson@linaro.org>,
  linux-arm-msm@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
  "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
  Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
- Lina Iyer <lina.iyer@linaro.org>, linux-arm-kernel@lists.infradead.org
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lina Iyer <lina.iyer@linaro.org>
+Iterating through the idle state nodes in DT, to find out the number of
+states that needs to be allocated is unnecessary, as it has already been
+done from dt_init_idle_driver(). Therefore, drop the iteration and use the
+number we already have at hand.
 
-Currently CPU's idle states are represented using the flattened model.
-Let's add support for the hierarchical layout, via converting to use
-of_get_cpu_state_node().
-
-Suggested-by: Sudeep Holla <sudeep.holla@arm.com>
-Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
-Reviewed-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-Co-developed-by: Ulf Hansson <ulf.hansson@linaro.org>
 Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
@@ -128,32 +124,92 @@ Changes in v4:
 	- None.
 
 ---
- drivers/cpuidle/dt_idle_states.c | 5 ++---
- 1 file changed, 2 insertions(+), 3 deletions(-)
+ drivers/cpuidle/cpuidle-psci.c | 35 +++++++++++++++++-----------------
+ 1 file changed, 17 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/cpuidle/dt_idle_states.c b/drivers/cpuidle/dt_idle_states.c
-index d06d21a9525d..252f2a9686a6 100644
---- a/drivers/cpuidle/dt_idle_states.c
-+++ b/drivers/cpuidle/dt_idle_states.c
-@@ -111,8 +111,7 @@ static bool idle_state_valid(struct device_node *state_node, unsigned int idx,
- 	for (cpu = cpumask_next(cpumask_first(cpumask), cpumask);
- 	     cpu < nr_cpu_ids; cpu = cpumask_next(cpu, cpumask)) {
- 		cpu_node = of_cpu_device_node_get(cpu);
--		curr_state_node = of_parse_phandle(cpu_node, "cpu-idle-states",
--						   idx);
-+		curr_state_node = of_get_cpu_state_node(cpu_node, idx);
- 		if (state_node != curr_state_node)
- 			valid = false;
+diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+index 361985f52ddd..761359be50f2 100644
+--- a/drivers/cpuidle/cpuidle-psci.c
++++ b/drivers/cpuidle/cpuidle-psci.c
+@@ -73,30 +73,24 @@ static int __init psci_dt_parse_state_node(struct device_node *np, u32 *state)
+ 	return 0;
+ }
  
-@@ -170,7 +169,7 @@ int dt_init_idle_driver(struct cpuidle_driver *drv,
- 	cpu_node = of_cpu_device_node_get(cpumask_first(cpumask));
+-static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node, int cpu)
++static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node,
++					unsigned int state_count, int cpu)
+ {
+-	int i, ret = 0, count = 0;
++	int i, ret = 0;
+ 	u32 *psci_states;
+ 	struct device_node *state_node;
  
- 	for (i = 0; ; i++) {
--		state_node = of_parse_phandle(cpu_node, "cpu-idle-states", i);
-+		state_node = of_get_cpu_state_node(cpu_node, i);
- 		if (!state_node)
- 			break;
+-	/* Count idle states */
+-	while ((state_node = of_parse_phandle(cpu_node, "cpu-idle-states",
+-					      count))) {
+-		count++;
+-		of_node_put(state_node);
+-	}
+-
+-	if (!count)
+-		return -ENODEV;
+-
+-	count++; /* Add WFI state too */
+-	psci_states = kcalloc(count, sizeof(*psci_states), GFP_KERNEL);
++	state_count++; /* Add WFI state too */
++	psci_states = kcalloc(state_count, sizeof(*psci_states), GFP_KERNEL);
+ 	if (!psci_states)
+ 		return -ENOMEM;
  
+-	for (i = 1; i < count; i++) {
++	for (i = 1; i < state_count; i++) {
+ 		state_node = of_parse_phandle(cpu_node, "cpu-idle-states",
+ 					      i - 1);
++		if (!state_node)
++			break;
++
+ 		ret = psci_dt_parse_state_node(state_node, &psci_states[i]);
+ 		of_node_put(state_node);
+ 
+@@ -106,6 +100,11 @@ static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node, int cpu)
+ 		pr_debug("psci-power-state %#x index %d\n", psci_states[i], i);
+ 	}
+ 
++	if (i != state_count) {
++		ret = -ENODEV;
++		goto free_mem;
++	}
++
+ 	/* Idle states parsed correctly, initialize per-cpu pointer */
+ 	per_cpu(psci_power_state, cpu) = psci_states;
+ 	return 0;
+@@ -115,7 +114,7 @@ static int __init psci_dt_cpu_init_idle(struct device_node *cpu_node, int cpu)
+ 	return ret;
+ }
+ 
+-static __init int psci_cpu_init_idle(unsigned int cpu)
++static __init int psci_cpu_init_idle(unsigned int cpu, unsigned int state_count)
+ {
+ 	struct device_node *cpu_node;
+ 	int ret;
+@@ -131,7 +130,7 @@ static __init int psci_cpu_init_idle(unsigned int cpu)
+ 	if (!cpu_node)
+ 		return -ENODEV;
+ 
+-	ret = psci_dt_cpu_init_idle(cpu_node, cpu);
++	ret = psci_dt_cpu_init_idle(cpu_node, state_count, cpu);
+ 
+ 	of_node_put(cpu_node);
+ 
+@@ -187,7 +186,7 @@ static int __init psci_idle_init_cpu(int cpu)
+ 	/*
+ 	 * Initialize PSCI idle states.
+ 	 */
+-	ret = psci_cpu_init_idle(cpu);
++	ret = psci_cpu_init_idle(cpu, ret);
+ 	if (ret) {
+ 		pr_err("CPU %d failed to PSCI idle\n", cpu);
+ 		goto out_kfree_drv;
 -- 
 2.17.1
 
