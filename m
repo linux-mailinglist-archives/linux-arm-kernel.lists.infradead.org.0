@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10A3D11BA36
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 18:24:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E70611BA38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 18:25:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i5m4gG57a34qgPJLOsrqMb6k2HLhEneL4Prt4/5GrDw=; b=iELdBrPMwW5ykw
-	R3yNKQbA0OowzmbNGHje3NnSX5UIpCAPM2mnNRiCENe+A2OO8eQRbF15njyVLo2gTgJlSr5OuWOWf
-	tx+wuxf2Q+3E1lmkGw+IGyWtOehNsA7gPOi2yLkhyNNkzbAA6LP+ICHq7Mub2araV0o3hAWSZRFJx
-	CmqCaOQQRzGR5dgJe7dUp3h2jK9YBUaCAA1bYnrgBORhcljowgLPeWRNd4STFnDciN1er24A/EFBd
-	UrnsnpdOLgC6TgWHRSP/0UvfjPMIZg1q/w1YhqqwL4R6m+Dnz+BW86WUg2O7JTeN5vOAxUu0QRQrj
-	LI9NXFTVuRPAxb3dLryQ==;
+	List-Owner; bh=lrCELZvRhKEpXKD1FNuKcWvf06cOpKnAz90O3CPvXnA=; b=hyvTbIBV4gj8Xq
+	mMGJa1zqY1l2uPQrr3xd+4Odr6q0xFucctVArNd0OKVKgD3yQniKeObiZwKpELLTgtKqWiUhIclk1
+	6SFb90NmfAnER8k4CR+wV7H+c2XKh2jxEgBTkV3Hw89ZNz8AkiO27Z85D+Px4o7OppEQ6Bk6lTw5/
+	SmuImtRz+q6X/999YeJe/4xIPtaupROmyQWx8IaOj2iWbttzScvB5dlIIq1XJAb6uJAj/DM1VTmGL
+	exqIz6VapMouwo4wXXjAeg7DT3iCBZq5XC0LwXBOUWPyxv52xZP3NxAwkJ8iVvreAFgEXYI1EEGx6
+	QploLBg+vNwidnLt4ihw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if5j8-0001jO-80; Wed, 11 Dec 2019 17:24:42 +0000
+	id 1if5jM-00021E-C0; Wed, 11 Dec 2019 17:24:56 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if5fL-0006ia-4q
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 17:20:49 +0000
+ id 1if5fM-0006h5-Id
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 17:20:51 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 4621B81A8;
- Wed, 11 Dec 2019 17:21:25 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 1069E80FA;
+ Wed, 11 Dec 2019 17:21:26 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 15/16] ARM: OMAP2+: Drop legacy platform data for dra7 elm
-Date: Wed, 11 Dec 2019 09:20:13 -0800
-Message-Id: <20191211172014.35201-16-tony@atomide.com>
+Subject: [PATCH 16/16] ARM: OMAP2+: Drop legacy platform data for am3 lcdc
+Date: Wed, 11 Dec 2019 09:20:14 -0800
+Message-Id: <20191211172014.35201-17-tony@atomide.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191211172014.35201-1-tony@atomide.com>
 References: <20191211172014.35201-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_092047_304128_3A3974E4 
-X-CRM114-Status: UNSURE (   7.94  )
+X-CRM114-CacheID: sfid-20191211_092049_577024_0CDB5699 
+X-CRM114-Status: UNSURE (   7.80  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,95 +77,86 @@ As we're just dropping data, and the early platform data init
 is based on the custom ti,hwmods property, we want to drop both
 the platform data and ti,hwmods property in a single patch.
 
-Cc: Franklin S Cooper Jr <fcooper@ti.com>
 Cc: Keerthy <j-keerthy@ti.com>
-Cc: Roger Quadros <rogerq@ti.com>
+Cc: Jyri Sarha <jsarha@ti.com>
+Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/boot/dts/dra7-l4.dtsi            |  1 -
- arch/arm/mach-omap2/omap_hwmod_7xx_data.c | 44 -----------------------
- 2 files changed, 45 deletions(-)
+ arch/arm/boot/dts/am33xx-l4.dtsi           |  1 -
+ arch/arm/mach-omap2/omap_hwmod_33xx_data.c | 36 ----------------------
+ 2 files changed, 37 deletions(-)
 
-diff --git a/arch/arm/boot/dts/dra7-l4.dtsi b/arch/arm/boot/dts/dra7-l4.dtsi
---- a/arch/arm/boot/dts/dra7-l4.dtsi
-+++ b/arch/arm/boot/dts/dra7-l4.dtsi
-@@ -1746,7 +1746,6 @@ i2c2: i2c@0 {
+diff --git a/arch/arm/boot/dts/am33xx-l4.dtsi b/arch/arm/boot/dts/am33xx-l4.dtsi
+--- a/arch/arm/boot/dts/am33xx-l4.dtsi
++++ b/arch/arm/boot/dts/am33xx-l4.dtsi
+@@ -2006,7 +2006,6 @@ ehrpwm2: pwm@200 {
  
- 		target-module@78000 {			/* 0x48078000, ap 39 0a.0 */
- 			compatible = "ti,sysc-omap2", "ti,sysc";
--			ti,hwmods = "elm";
- 			reg = <0x78000 0x4>,
- 			      <0x78010 0x4>,
- 			      <0x78014 0x4>;
-diff --git a/arch/arm/mach-omap2/omap_hwmod_7xx_data.c b/arch/arm/mach-omap2/omap_hwmod_7xx_data.c
---- a/arch/arm/mach-omap2/omap_hwmod_7xx_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_7xx_data.c
-@@ -524,42 +524,7 @@ static struct omap_hwmod dra7xx_dss_hdmi_hwmod = {
+ 		target-module@e000 {			/* 0x4830e000, ap 72 4a.0 */
+ 			compatible = "ti,sysc-omap4", "ti,sysc";
+-			ti,hwmods = "lcdc";
+ 			reg = <0xe000 0x4>,
+ 			      <0xe054 0x4>;
+ 			reg-names = "rev", "sysc";
+diff --git a/arch/arm/mach-omap2/omap_hwmod_33xx_data.c b/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
+--- a/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
++++ b/arch/arm/mach-omap2/omap_hwmod_33xx_data.c
+@@ -196,34 +196,6 @@ static struct omap_hwmod am33xx_control_hwmod = {
+ 	},
+ };
  
- 
- 
--/*
-- * 'elm' class
-- *
-- */
- 
--static struct omap_hwmod_class_sysconfig dra7xx_elm_sysc = {
--	.rev_offs	= 0x0000,
--	.sysc_offs	= 0x0010,
--	.syss_offs	= 0x0014,
--	.sysc_flags	= (SYSC_HAS_AUTOIDLE | SYSC_HAS_CLOCKACTIVITY |
--			   SYSC_HAS_SIDLEMODE | SYSC_HAS_SOFTRESET |
--			   SYSS_HAS_RESET_STATUS),
--	.idlemodes	= (SIDLE_FORCE | SIDLE_NO | SIDLE_SMART |
--			   SIDLE_SMART_WKUP),
--	.sysc_fields	= &omap_hwmod_sysc_type1,
+-/* lcdc */
+-static struct omap_hwmod_class_sysconfig lcdc_sysc = {
+-	.rev_offs	= 0x0,
+-	.sysc_offs	= 0x54,
+-	.sysc_flags	= SYSC_HAS_SIDLEMODE | SYSC_HAS_MIDLEMODE,
+-	.idlemodes	= SIDLE_FORCE | SIDLE_NO | SIDLE_SMART |
+-			  MSTANDBY_FORCE | MSTANDBY_NO | MSTANDBY_SMART,
+-	.sysc_fields	= &omap_hwmod_sysc_type2,
 -};
 -
--static struct omap_hwmod_class dra7xx_elm_hwmod_class = {
--	.name	= "elm",
--	.sysc	= &dra7xx_elm_sysc,
+-static struct omap_hwmod_class am33xx_lcdc_hwmod_class = {
+-	.name		= "lcdc",
+-	.sysc		= &lcdc_sysc,
 -};
 -
--/* elm */
--
--static struct omap_hwmod dra7xx_elm_hwmod = {
--	.name		= "elm",
--	.class		= &dra7xx_elm_hwmod_class,
--	.clkdm_name	= "l4per_clkdm",
--	.main_clk	= "l3_iclk_div",
--	.prcm = {
--		.omap4 = {
--			.clkctrl_offs = DRA7XX_CM_L4PER_ELM_CLKCTRL_OFFSET,
--			.context_offs = DRA7XX_RM_L4PER_ELM_CONTEXT_OFFSET,
+-static struct omap_hwmod am33xx_lcdc_hwmod = {
+-	.name		= "lcdc",
+-	.class		= &am33xx_lcdc_hwmod_class,
+-	.clkdm_name	= "lcdc_clkdm",
+-	.flags		= HWMOD_SWSUP_SIDLE | HWMOD_SWSUP_MSTANDBY,
+-	.main_clk	= "lcd_gclk",
+-	.prcm		= {
+-		.omap4	= {
+-			.clkctrl_offs	= AM33XX_CM_PER_LCDC_CLKCTRL_OFFSET,
+-			.modulemode	= MODULEMODE_SWCTRL,
 -		},
 -	},
 -};
  
  /*
-  * 'gpmc' class
-@@ -1333,14 +1298,6 @@ static struct omap_hwmod_ocp_if dra7xx_l3_main_1__hdmi = {
- 	.user		= OCP_USER_MPU | OCP_USER_SDMA,
+  * Interfaces
+@@ -301,13 +273,6 @@ static struct omap_hwmod_ocp_if am33xx_l4_wkup__control = {
+ 	.user		= OCP_USER_MPU,
  };
  
--/* l4_per1 -> elm */
--static struct omap_hwmod_ocp_if dra7xx_l4_per1__elm = {
--	.master		= &dra7xx_l4_per1_hwmod,
--	.slave		= &dra7xx_elm_hwmod,
--	.clk		= "l3_iclk_div",
--	.user		= OCP_USER_MPU | OCP_USER_SDMA,
+-static struct omap_hwmod_ocp_if am33xx_l3_main__lcdc = {
+-	.master		= &am33xx_l3_main_hwmod,
+-	.slave		= &am33xx_lcdc_hwmod,
+-	.clk		= "dpll_core_m4_ck",
+-	.user		= OCP_USER_MPU,
 -};
 -
- /* l3_main_1 -> gpmc */
- static struct omap_hwmod_ocp_if dra7xx_l3_main_1__gpmc = {
- 	.master		= &dra7xx_l3_main_1_hwmod,
-@@ -1564,7 +1521,6 @@ static struct omap_hwmod_ocp_if *dra7xx_hwmod_ocp_ifs[] __initdata = {
- 	&dra7xx_l3_main_1__dss,
- 	&dra7xx_l3_main_1__dispc,
- 	&dra7xx_l3_main_1__hdmi,
--	&dra7xx_l4_per1__elm,
- 	&dra7xx_l3_main_1__gpmc,
- 	&dra7xx_l4_cfg__mpu,
- 	&dra7xx_l4_cfg__ocp2scp1,
+ /* l4 wkup -> timer1 */
+ static struct omap_hwmod_ocp_if am33xx_l4_wkup__timer1 = {
+ 	.master		= &am33xx_l4_wkup_hwmod,
+@@ -340,7 +305,6 @@ static struct omap_hwmod_ocp_if *am33xx_hwmod_ocp_ifs[] __initdata = {
+ 	&am33xx_l4_ls__timer2,
+ 	&am33xx_l3_main__tpcc,
+ 	&am33xx_l3_s__gpmc,
+-	&am33xx_l3_main__lcdc,
+ 	&am33xx_l3_main__tptc0,
+ 	&am33xx_l3_main__tptc1,
+ 	&am33xx_l3_main__tptc2,
 -- 
 2.24.1
 
