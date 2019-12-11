@@ -2,72 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48BD111BFA4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 23:09:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CC4F11BFC9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 23:28:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yxSeW+mb6MYhLgxK3y/wxsUJdHiZAgxqf+QfQ7DMyhY=; b=lE03PDuMwY3Tfm
-	r1vqz4RL4j3FKtR+A7ai7K7rVsqs6WYXxW+UXEbiLeAZ4EGS8is9H05d5VGFPVuvevpFqV1QEZHfB
-	6R8MJ27aliWQqQhz10aPrCeWWXCX6xwjDq3RVOuMcvKQDdN7cvqsBsWhzx5WIdNsvmlj+L8zOJA8c
-	q9r1vhqjQioQuXrw+rhZG4OxelyVaciU4Azje+2UvkHN9kZNpILUPChuzEkP8INJmGEbqAUo+zj/a
-	/HSmhjhWC7tCI0TEJqGf14mpa90YeCVkTlaV44sFSw/loVAtzzK/Ekg2lLw+37d6/Tp836H/ih5vX
-	n/BlS8Z7nUaOZOoD8tbg==;
+	List-Owner; bh=8wP2E4OzFo+F059L3aCon9E9JwgHDB8ZeUoRnrFs0+A=; b=uKd0p4KJKILafs
+	7/iXyi5VVXOtpp1mVkZUfz3OAiyocConL77RC2Ms8nAvbJm0F7taZLwDcvMNgejGUor5Pjfrf9bo5
+	Z4xNi6zs00Qw5kKmoC+aDnn+Ir6MzscGEXclIrZGipaSNHT5UE6Nwt1+TFkXrnVD8VQpV3C9fxuS2
+	NE7RpdKBZDw8BaWgflWdS1zu5KWavkTgNn/oRSH3gWKg26fWYqVrnmtmwAaYIWH9exs/nwAUboyGx
+	aPYiBOP0zhrqniLVYumVfrv0JfP8A5/xUi+YGxRPAca2zUJjM8rgMyrJdKm5A47ynycO3N8T+6bF5
+	HdyvusDLM+hx/OingdKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifAAn-0001RM-0x; Wed, 11 Dec 2019 22:09:33 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1ifATK-0000Ds-He; Wed, 11 Dec 2019 22:28:42 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifAAd-0001PU-8v
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 22:09:25 +0000
-Received: by mail-qt1-x841.google.com with SMTP id 5so452984qtz.1
+ id 1ifATD-0000DI-4c
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 22:28:36 +0000
+Received: by mail-pg1-x544.google.com with SMTP id s64so49006pgb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 14:09:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=k7d7WsbP3LoU75+WuemV9UlLvjwYU63WdP9k7hHQzFM=;
- b=S60IcC8q2ZKHlkDtHhETX2BprZm1KILkOpTxAFaysmnH1ZUe5PKiDzDAbQA0+L2aG5
- jGoaV42u5oEaJmjpcsbN+sT+pm6ZJSgih5K4iICnmqQ7Ofcygc/D7shmAAtbrZH8Vanz
- iz2lsJhsiZjz0UfO25zlNcbayx9quiDGiIur4=
+ Wed, 11 Dec 2019 14:28:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=TUyXHjX3PYUM9nKm/LBHXohlHydzz+X5MYoM1R3UKnk=;
+ b=DlIrY07nZUpFfOZumiYwfvGQsjWziSLuLYYk0u7cfTR9mrbgjKyuMd5nIFIc64yhuW
+ GcRRxJf3NkABfPegZhceytl5qOyYrvDrDV/aBhiBTXeS6v6u5sPY5TSPRvjkx4q2Oi/i
+ eRaSMr5jcGPDX0kq73qvnAtMLsMwSEKlDbSv3QNbkWh1AR8bEHgwnOfa/wJWqxHMKgxL
+ VjL6DCJjVRR0f4QNVAPMTJm1iKH2z8oJiCjGd3nRZZqQ5jMtHsW4qIrqkRn4TgU/fmGT
+ FBZOqHzbhmqPfZxERKkpoIek+rADA3KSeICpHN+4g4y4asHuvsgyuTPi6ZyGijl9aQZK
+ a6yQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=k7d7WsbP3LoU75+WuemV9UlLvjwYU63WdP9k7hHQzFM=;
- b=o6q35RqV1psjLV3cGKAcS5CshT/OuM73QN0ZmBgFsVLaeW9FV1pZWNcvpuB2VBFpyc
- tVef+xYQvSOGpUR77U3RKQSLsxPiACx2aInctsdPlzDYQ6sQDIm1fOl2uO5YNCC8vk7/
- 1beBHBXC1V+XO9d/aqJJ9vPBdKyxI+q4bnMjh44C9dkxU1PmUxz41PP49gwpD8aNtOOT
- 7GpCJPx5sNyaVNwxlFmzB74j0pRNqw5a2DJQExH1qw42k5VZb41uSp0V3bZqIHymFfwv
- MSVWsugp8TBJlRudNKhltsX/afXmI2ASSd55neQqRonXiZBa0zguTsEHVWmRlQsHWyu0
- GPRQ==
-X-Gm-Message-State: APjAAAXjtCcdhtSOUPZ3icvKJyGx1BC/8m4hoSUsX4tN3tvW1XT6ybf8
- kjRKFBH4yYVTsA5G+Ed5v7NvatTRqK7E1PlQqQmv2A==
-X-Google-Smtp-Source: APXvYqzIan/p6MBZBXr7KxGgHZna/XiKYTqTn0jrIbFub78HgMIxWvp4zsQZYS6tItRiacNkgg/lWajfwPljnjTUUZI=
-X-Received: by 2002:ac8:3946:: with SMTP id t6mr4934746qtb.278.1576102161712; 
- Wed, 11 Dec 2019 14:09:21 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=TUyXHjX3PYUM9nKm/LBHXohlHydzz+X5MYoM1R3UKnk=;
+ b=YQtyZB27h3c4kThByfJrIrmXuY7k1hULvscOp1dsb4G9HuWCE4QxxAYp5XyT/xaxmJ
+ jkiM1O67nuw+rIrvXohkTeqtydUCa75KvGEGXA6eAvhRmLQyKVzmlEFUfSah83pqhoGP
+ Auyi+kBIu3e9igz9hSC22Hs4n6DQZ+tq0V9t/R+FHePO0mKw+j5Hn3DzGqYmkeZn4RVz
+ XH0FyDOI+5GF4L20OalHAKtX/TNQ+EmfootsShoNYot85JTXKboiM8KFDlVY7yFZWulK
+ wuRyschdC+FfpE8nj76jcd2KZt5VlNreUFjLAUCXKYvzUjVb5YjqGW6za86zc6VwHBf6
+ 43Xw==
+X-Gm-Message-State: APjAAAVS8wyJ7pZa/6MDc9HdgKjjSp7TSIM+NYvBwvihyNJlQ5Lf+Lpx
+ VlpOkncbLUHPAWTQnhYn9GA=
+X-Google-Smtp-Source: APXvYqxwKjD3h+li5pd06Ogk9jgvc7NsUBZEri5ZUl/uWZW2mQ2IR6/uARTmg9E9Edg/X5XISeramg==
+X-Received: by 2002:a63:d00f:: with SMTP id z15mr6780305pgf.143.1576103312802; 
+ Wed, 11 Dec 2019 14:28:32 -0800 (PST)
+Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
+ by smtp.gmail.com with ESMTPSA id z23sm3844841pgj.43.2019.12.11.14.28.31
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Dec 2019 14:28:32 -0800 (PST)
+Date: Wed, 11 Dec 2019 14:28:29 -0800
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
+ API
+Message-ID: <20191211222829.GV50317@dtor-ws>
+References: <3d8a58bf-0814-1ec1-038a-10a20b9646ad@free.fr>
+ <20191128185630.GK82109@yoga> <20191202014237.GR248138@dtor-ws>
+ <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
+ <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
+ <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
 MIME-Version: 1.0
-References: <20191121015410.18852-1-bibby.hsieh@mediatek.com>
-In-Reply-To: <20191121015410.18852-1-bibby.hsieh@mediatek.com>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Wed, 11 Dec 2019 14:09:10 -0800
-Message-ID: <CANMq1KCTJQL+GFqo8HYM8cEpzXJmebJ=9ju4CzHLwyuQfbZEAA@mail.gmail.com>
-Subject: Re: [PATCH v17 0/6] support gce on mt8183 platform
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Content-Disposition: inline
+In-Reply-To: <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_140923_340080_186DE788 
-X-CRM114-Status: GOOD (  11.84  )
+X-CRM114-CacheID: sfid-20191211_142835_181177_D9C5D90D 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dmitry.torokhov[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -76,7 +94,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,64 +105,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream <srv_heupstream@mediatek.com>,
- lkml <linux-kernel@vger.kernel.org>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, CK HU <ck.hu@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ linux-clk <linux-clk@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
+ Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Matthias,
+On Wed, Dec 11, 2019 at 05:17:28PM +0100, Marc Gonzalez wrote:
+> But I need to ask: what is the rationale for the devm_add_action API?
 
-Quick question, any reason you picked only patches 2+3+6 from this
-series, and not the 3 others?
+For one-off and maybe complex unwind actions in drivers that wish to use
+devm API (as mixing devm and manual release is verboten). Also is often
+used when some core subsystem does not provide enough devm APIs.
 
 Thanks.
 
-On Wed, Nov 20, 2019 at 5:54 PM Bibby Hsieh <bibby.hsieh@mediatek.com> wrote:
->
-> Changes since v16:
->  - naming the poll mask enable bit
->  - add a patch to fiup the input order of write api
->
-> Changes since v15:
->  - rebase onto 5.4-rc1
->  - rollback the v14 change
->  - add a patch to fixup the combination of return value
->
-> Changes since v14:
->  - change input argument as pointer in append_commend()
->
-> Changes since v13:
->  - separate poll function as poll w/ & w/o mask function
->  - directly pass inst into append_command function instead
->    of returns a pointer
->  - fixup coding style
->  - rebase onto 5.3-rc1
->
-> [... snip ...]
->
-> Bibby Hsieh (6):
->   soc: mediatek: cmdq: fixup wrong input order of write api
->   soc: mediatek: cmdq: remove OR opertaion from err return
->   soc: mediatek: cmdq: define the instruction struct
->   soc: mediatek: cmdq: add polling function
->   soc: mediatek: cmdq: add cmdq_dev_get_client_reg function
->   arm64: dts: add gce node for mt8183
->
->  arch/arm64/boot/dts/mediatek/mt8183.dtsi |  10 ++
->  drivers/soc/mediatek/mtk-cmdq-helper.c   | 147 +++++++++++++++++++----
->  include/linux/mailbox/mtk-cmdq-mailbox.h |  11 ++
->  include/linux/soc/mediatek/mtk-cmdq.h    |  53 ++++++++
->  4 files changed, 195 insertions(+), 26 deletions(-)
->
-> --
-> 2.18.0
+-- 
+Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
