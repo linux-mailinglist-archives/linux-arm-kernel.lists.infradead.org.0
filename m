@@ -2,84 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8915A11AD9A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 15:36:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07B5C11ADA9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 15:39:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hoR2WkClfzVRXIollTvVC3r4dVlx/DAsYE8mIKK+feE=; b=CDpxEABZygXN2F
-	UgQ7/cTVlTubypWxsO0y++AXqudz0dofGZD7EiHi/xxQ0CQZW0i5MTyrVgsaddcHpo5U4hNU97Plq
-	gDjICST9VDZVml/ZbkYVHJnbPg0gBKI/pi73mR+62dxDJ3/FhO8jElQxuKHsiIZTQVKDAoR9btBER
-	7G/iwaHrV8Q5yPvozj+lD2cMoz3Ho/hrXHkf4qz6TwZghwxiMblsOOOLOJXAF0QDItfelfNKOV1Tl
-	ZQ1jpn+zdQ4SjFHMnh3rMrmPvQOJjhjaj80h9FAK46lDr+hY99NSMrO4dJwPyehuJv2TYX8sm9+1h
-	Z+lNEi0UhjZBq3/QuEXw==;
+	List-Owner; bh=k1tewsNCROWlE5D9XabwEt7lJbIYhFIDteTazAt382I=; b=QWmACTgVN20VvP
+	KqZrCfk0eVBpu0p3Favqhg0FbNh52B2ghtdQvyZQ1Cahg9NQC9YsXPO8aTlwZL2BojmwSOk9syQqb
+	2qiYyVKzr60ZvOm4Y1kVv7hod16X4CAuIOmnjqCK2ZIPixFw1rM44r+GUWyEXU+RTrPM0PWmjU8o/
+	kitYdhvRa3xm9seIkWdEbLvE+kKaodLl3JC060QlS3Yy2bp3zqARHvsSFoVzd0+OmaOLGMH/MT5lS
+	nOG+W6LJ8IYWtUl6BJMbaehQSU9c3UKQhu9mbn96WGvZoEdBEyLuuQqvHf6V/Hqyh2mcll8sOODS/
+	7mAEjzlqMl7+1gHEJRzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if36V-0005WD-Of; Wed, 11 Dec 2019 14:36:39 +0000
-Received: from skedge04.snt-world.com ([91.208.41.69])
+	id 1if38h-00063u-Lq; Wed, 11 Dec 2019 14:38:55 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if36O-0005VD-78
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 14:36:34 +0000
-Received: from sntmail14r.snt-is.com (unknown [10.203.32.184])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by skedge04.snt-world.com (Postfix) with ESMTPS id 51D1D6285B9;
- Wed, 11 Dec 2019 15:36:25 +0100 (CET)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail14r.snt-is.com
- (10.203.32.184) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 11 Dec
- 2019 15:36:24 +0100
-Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
- sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1713.004; Wed, 11 Dec 2019 15:36:24 +0100
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: Adam Ford <aford173@gmail.com>, Horia Geanta <horia.geanta@nxp.com>
-Subject: Re: [PATCH 2/2] arm64: dts: imx8mm: Add Crypto CAAM support
-Thread-Topic: [PATCH 2/2] arm64: dts: imx8mm: Add Crypto CAAM support
-Thread-Index: AQHVp9OTS5mnZfHbzke4GpMb7fpZMqeyADMAgAMAHAA=
-Date: Wed, 11 Dec 2019 14:36:24 +0000
-Message-ID: <fd146818-98c9-7092-5d49-a985db5900c7@kontron.de>
-References: <20191130225153.30111-1-aford173@gmail.com>
- <20191130225153.30111-2-aford173@gmail.com>
- <VI1PR0402MB348586BEDA9BE13CEB10C75698580@VI1PR0402MB3485.eurprd04.prod.outlook.com>
- <CAHCN7x+roEAmteNLT9KkLxPvL6AFFHMUW=J_cLcSdE50kODZQQ@mail.gmail.com>
-In-Reply-To: <CAHCN7x+roEAmteNLT9KkLxPvL6AFFHMUW=J_cLcSdE50kODZQQ@mail.gmail.com>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
-Content-ID: <ACEAAA732C76144993E26E2C6A1682CB@snt-world.com>
+ id 1if38Z-0005hG-1B; Wed, 11 Dec 2019 14:38:48 +0000
+X-Amp-Result: UNSCANNABLE
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 11 Dec 2019 06:36:45 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,301,1571727600"; d="scan'208";a="220476305"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga001.fm.intel.com with ESMTP; 11 Dec 2019 06:36:41 -0800
+Received: from andy by smile with local (Exim 4.93-RC7)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1if36W-0000CJ-VS; Wed, 11 Dec 2019 16:36:40 +0200
+Date: Wed, 11 Dec 2019 16:36:40 +0200
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>
+Subject: Re: [V6, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
+Message-ID: <20191211143640.GU32742@smile.fi.intel.com>
+References: <20191211112849.16705-1-dongchun.zhu@mediatek.com>
+ <20191211112849.16705-3-dongchun.zhu@mediatek.com>
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: 51D1D6285B9.A01DE
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: aford173@gmail.com, aymen.sghaier@nxp.com,
- davem@davemloft.net, devicetree@vger.kernel.org, festevam@gmail.com,
- herbert@gondor.apana.org.au, horia.geanta@nxp.com,
- kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org, linux-imx@nxp.com,
- linux-kernel@vger.kernel.org, mark.rutland@arm.com,
- robh+dt@kernel.org, s.hauer@pengutronix.de, shawnguo@kernel.org
-X-Spam-Status: No
+Content-Disposition: inline
+In-Reply-To: <20191211112849.16705-3-dongchun.zhu@mediatek.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_063632_588863_D6FABF2D 
-X-CRM114-Status: GOOD (  19.10  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_063847_089456_88486AFE 
+X-CRM114-Status: GOOD (  16.58  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.69 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -92,84 +69,225 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Aymen Sghaier <aymen.sghaier@nxp.com>, Herbert
- Xu <herbert@gondor.apana.org.au>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>, Pengutronix
- Kernel Team <kernel@pengutronix.de>, Fabio Estevam <festevam@gmail.com>, "David
- S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
+ srv_heupstream@mediatek.com, shengnan.wang@mediatek.com, tfiga@chromium.org,
+ louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Adam,
-
-On 09.12.19 17:47, Adam Ford wrote:
-> On Mon, Dec 9, 2019 at 10:23 AM Horia Geanta <horia.geanta@nxp.com> wrote:
->>
->> On 12/1/2019 12:52 AM, Adam Ford wrote:
->>> The i.MX8M Mini supports the same crypto engine as what is in
->>> the i.MX8MQ, but it is not currently present in the device tree,
->>> because it may be resricted by security features.
->>>
->> What exactly are you referring to?
+On Wed, Dec 11, 2019 at 07:28:49PM +0800, Dongchun Zhu wrote:
+> Add a V4L2 sub-device driver for OV02A10 image sensor. The OV02A10 is a
+> 1/5" CMOS sensor from Omnivision, asupporting output format: 10-bit Raw.
 > 
-> I don't know this hardware very well, but on a different platform, we
-> needed to make the crypto engines as disabled if they were being
-> accessed through secure operations which made it unavailable to Linux
-> without using some special barriers. I didn't have the special
-> hardware on the other platform that required it that way, so I can't
-> really explain it well.  I know on those special cases, because some
-> people were accessing these registers through other means, the devices
-> had to be marked as 'disabled' so to avoid breaking something.  Since
-> I wasn't sure if this was left out of the i.MX8M Mini on purpose, I
-> let this disabled just in case this hardware platform was also
-> affected in a similar and people wanting to use it could mark it as
-> 'okay'
+> This chip has a single MIPI lane interface and use the I2C bus for
+> control and the CSI-2 bus for data.
 
-I don't know enough about this to understand the problem you're 
-describing. It seems like most SoCs have the CAAM enabled by default in 
-the devicetree. On first glance I could only find fsl-lx2160a.dtsi that 
-has it disabled.
+...
 
-> 
-> adam
-> 
->>
->>> This patch places in into the device tree and marks it as disabled,
->>> but anyone not restricting the CAAM with secure mode functions
->>> can mark it as enabled.
->>>
->> Even if - due to export control regulations - CAAM is "trimmed down",
->> it loses only the encryption capabilities (hashing etc. still working).
+> +#define OV02A10_MASK_8_BITS                            0xff
 
-I don't know much about this, but as Horia said the CAAM might have 
-limited capabilities in some cases but would still work.
+Besides GENMASK() why do you need a definition here? What's the point?
 
-Therefore I think the CAAM should be enabled by default as it already is 
-done for most other SoCs.
+...
 
-Regards,
-Frieder
+> +static int ov02a10_entity_init_cfg(struct v4l2_subdev *sd,
+> +				   struct v4l2_subdev_pad_config *cfg)
+> +{
+> +	struct v4l2_subdev_format fmt = {
+> +		.which = cfg ? V4L2_SUBDEV_FORMAT_TRY
+> +			     : V4L2_SUBDEV_FORMAT_ACTIVE,
+> +		.format = {
+> +			.width = 1600,
 
->>
->> Again, please clarify what you mean by "secure mode functions",
->> "security features" etc.
->>
->> Horia
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+> +			.height = 1200
+
+Leave comma here.
+
+> +		}
+> +	};
+> +
+> +	ov02a10_set_fmt(sd, cfg, &fmt);
+> +
+> +	return 0;
+> +}
+
+...
+
+> +	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_GAIN,
+> +					(val & OV02A10_MASK_8_BITS));
+
+Too many parentheses.
+
+> +	if (ret < 0)
+> +		return ret;
+
+...
+
+> +static int ov02a10_set_vblank(struct ov02a10 *ov02a10, int val)
+> +{
+> +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
+
+if you do
+
+	int vts = val + ov02a10->cur_mode->height - OV02A10_BASIC_LINE;
+
+you may increase readability below...
+
+> +	int ret;
+> +
+> +	ret = i2c_smbus_write_byte_data(client, REG_PAGE_SWITCH, REG_ENABLE);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_H,
+> +					(((val + ov02a10->cur_mode->height -
+> +					OV02A10_BASIC_LINE) >>
+> +					OV02A10_VTS_SHIFT) &
+> +					OV02A10_MASK_8_BITS));
+
+	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_H,
+					(vts >> OV02A10_VTS_SHIFT) &
+					OV02A10_MASK_8_BITS));
+
+And actually why do you need this mask here? Isn't enough to call
+
+	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_H,
+					vts >> OV02A10_VTS_SHIFT);
+
+here...
+
+
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_L,
+> +					((val + ov02a10->cur_mode->height -
+> +					OV02A10_BASIC_LINE) &
+> +					OV02A10_MASK_8_BITS));
+
+...and
+
+	ret = i2c_smbus_write_byte_data(client, OV02A10_REG_VTS_L, vts);
+
+here?
+
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	return i2c_smbus_write_byte_data(client, REG_GLOBAL_EFFECTIVE,
+> +					 REG_ENABLE);
+> +}
+
+...
+
+> +static int ov02a10_check_hwcfg(struct device *dev, struct ov02a10 *ov02a10)
+> +{
+> +	struct fwnode_handle *ep;
+> +	struct fwnode_handle *fwnode = dev_fwnode(dev);
+> +	struct v4l2_fwnode_endpoint bus_cfg = {
+
+> +		.bus_type = V4L2_MBUS_CSI2_DPHY
+
+Leave comma here.
+
+> +	};
+> +	unsigned int i, j;
+> +	int ret;
+
+> +	if (!fwnode)
+> +		return -ENXIO;
+
+A bit strange error code here.
+
+> +
+> +	ep = fwnode_graph_get_next_endpoint(fwnode, NULL);
+> +	if (!ep)
+> +		return -ENXIO;
+> +
+> +	ret = v4l2_fwnode_endpoint_alloc_parse(ep, &bus_cfg);
+> +	fwnode_handle_put(ep);
+> +	if (ret)
+> +		return ret;
+
+> +	if (!bus_cfg.nr_of_link_frequencies) {
+> +		dev_err(dev, "no link frequencies defined");
+> +		ret = -EINVAL;
+> +		goto check_hwcfg_error;
+> +	}
+
+I still think it's redundant check, though it's up to maintainers.
+
+> +
+> +	for (i = 0; i < ARRAY_SIZE(link_freq_menu_items); i++) {
+> +		for (j = 0; j < bus_cfg.nr_of_link_frequencies; j++) {
+> +			if (link_freq_menu_items[i] ==
+> +				bus_cfg.link_frequencies[j])
+> +				break;
+> +		}
+> +
+> +		if (j == bus_cfg.nr_of_link_frequencies) {
+> +			dev_err(dev, "no link frequency %lld supported",
+> +				link_freq_menu_items[i]);
+> +			ret = -EINVAL;
+> +			goto check_hwcfg_error;
+> +		}
+> +	}
+> +
+> +check_hwcfg_error:
+> +	v4l2_fwnode_endpoint_free(&bus_cfg);
+> +
+> +	return ret;
+> +}
+
+...
+
+> +static int ov02a10_probe(struct i2c_client *client)
+> +{
+
+> +	/* Optional indication of physical rotation of sensor */
+> +	ret = fwnode_property_read_u32(dev_fwnode(dev), "rotation", &rotation);
+
+> +	if (!ret) {
+
+Why not positive conditional?
+
+> +		ov02a10->upside_down = rotation == 180;
+> +		if (rotation == 180) {
+> +			ov02a10->upside_down = true;
+> +			ov02a10->fmt.code = MEDIA_BUS_FMT_SRGGB10_1X10;
+> +		}
+> +	} else {
+> +		dev_warn(dev, "failed to get rotation\n");
+> +	}
+> +
+> +	/* Optional indication of mipi TX speed */
+> +	ret = fwnode_property_read_u32(dev_fwnode(dev), "ovti,mipi-tx-speed",
+> +				       &clock_lane_tx_speed);
+> +
+
+> +	if (!ret)
+
+Ditto.
+
+> +		ov02a10->mipi_clock_tx_speed = clock_lane_tx_speed;
+> +	else
+> +		dev_warn(dev, "failed to get mipi tx speed, using default...\n");
+> +
+
+> +	return ret;
+> +}
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
