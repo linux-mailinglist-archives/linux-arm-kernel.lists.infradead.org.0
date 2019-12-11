@@ -2,52 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29E6A11BCBA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 20:15:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35A8911BCD7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Dec 2019 20:25:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2i2ULvojOZQAuh+K/mU+TmFMUUZnO6em7N8KnZAECBo=; b=Z4hxFlu3aMcFpE
-	fTFH6oLMIT53rIiy5wL30T325YSciSEzqycnppcnYgdFfrETLA9kRjQigO06k6CjfnQmJEKPWEhQi
-	oqQCvVM1abGlxHmfDxpJlQhKVy78ZAGJ/sh8njnW/FdyrlChhckVorl/bK/UN7UD0bQj0A12XSlAd
-	S/LUHc+CxBxhAh8tNTgE5uZ3tHX1ry2VEbpY7YyCw0U9OJOE7ZJR5e8cz7QWE9ihCsoTbX5lf9V2l
-	2mdjGhVph5U8y/oCDNAzeQ74aPWj8BKEpKJ+hcPW4bo/nE5dvhft66r+Co2V0LJLr9X36J73k5/iy
-	inF8j5MUCk1dRmMEgxNg==;
+	List-Owner; bh=y1NrlNDNM/pPttL0n5VtHHLdml+3h+kN9liBSBrzCRA=; b=Lm3CqTqeKFdVP4
+	HlV5jn+mVUAMhyjgk5k947VVD2HhPpfTjhbV/m+RbbLUYvjcX4uJ6eVxr9Wj8Mwp0gn7AXeiBtRwZ
+	Nb2lKwf8ola/sDM2+8t957qrE6wQSCSYAUMAkew2EOtqBA2VO/73MBIuYgPUR3rMxmMdUicuBmNu8
+	m+MGOpC1gm/jSqCJfW+aMIY1hJD1uU07mDushmlYIyo1tr9Og7mvI26N9aA0ID+kgWwXxsA85lfL4
+	sywhjmZZvfjJWsQ+C1ML/t7udqaRt64d76OYXY8ey88WqIfDkX5KRJ1asxbSjY43uDCY3ym6NdC8B
+	iDgUcKeLG5sZk3kfyYpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1if7Sg-0007I4-Es; Wed, 11 Dec 2019 19:15:50 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1if7PS-0002wf-1R
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 19:12:32 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 87A5F81A8;
- Wed, 11 Dec 2019 19:13:08 +0000 (UTC)
-From: Tony Lindgren <tony@atomide.com>
-To: linux-omap@vger.kernel.org
-Subject: [PATCH 13/13] ARM: OMAP2+: Drop legacy platform data for omap4 fdif
-Date: Wed, 11 Dec 2019 11:12:06 -0800
-Message-Id: <20191211191206.12190-14-tony@atomide.com>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20191211191206.12190-1-tony@atomide.com>
-References: <20191211191206.12190-1-tony@atomide.com>
+	id 1if7cL-0003JH-IO; Wed, 11 Dec 2019 19:25:49 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1if7cB-0003Ic-I5
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Dec 2019 19:25:40 +0000
+Received: by mail-io1-xd43.google.com with SMTP id c16so2601078ioo.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Dec 2019 11:25:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=AuPspogaaJ+YoXMUXjj634J3GCNOXTkD4GxSk/Fu5dA=;
+ b=Ov2+zkYxARX/4G2CFUTDrTcWVYed0ALV7FAdS21qi5jU0vfvH/ZWc6qkFyMVL/CgBS
+ +ER5AJeTdE2I8ujQ4UsDX4voFpXv0+pzIzsxksN+QOO5l1nU9CKKyJSKVKsZifYCWudi
+ aNB4asF6dcNFFMM2FGpYupn60GCY0GLjGLUsA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=AuPspogaaJ+YoXMUXjj634J3GCNOXTkD4GxSk/Fu5dA=;
+ b=Cxk5CkbXUVPxsuqWuIfd2jGuXvapiC2eLHy9Ra10++6K+S87MYvHSCJop+JFKHOc/T
+ JBMoO84emarCSBZKVlYB8rrCs1ym6A58t5Ww8vGavMfvxmB2Ho/AClDfcduFLXnfIi/N
+ hP6cR3r9uUuOkw72EO8jsxKGYKP9bgKXjYxJakCZWdvCoBdELJByjcEZ4nBe4P0BaMmT
+ h2l7OH5x/eHekKJwaejObOnT5O6s0A9+RA5ncWMvgWzZOwKFZE9igdGIsjEDfsVYA/IS
+ zsvE4aw054WLZ+5u/jFDZV587sGqV1mwvaI6P+jYWGvK8fBNy2Hkde47IL9XIe/GoJos
+ 3jjw==
+X-Gm-Message-State: APjAAAVLUkppxpadxJvJshVue/kGmfpTQ1nNc9JG11K/eR8l+e7KdiFW
+ +pf7sf1AGdzS3+vEgP/+33m4u7KTXdg=
+X-Google-Smtp-Source: APXvYqx9BMKHEWaO23ampIFwDBI7ghDOcGQZDUZn69DO0CYJEQrpWctQiiMFHW/9XsKsRZ3OssIkSA==
+X-Received: by 2002:a6b:4f15:: with SMTP id d21mr3718104iob.190.1576092337091; 
+ Wed, 11 Dec 2019 11:25:37 -0800 (PST)
+Received: from mail-il1-f182.google.com (mail-il1-f182.google.com.
+ [209.85.166.182])
+ by smtp.gmail.com with ESMTPSA id m65sm970941ilh.23.2019.12.11.11.25.36
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 11 Dec 2019 11:25:36 -0800 (PST)
+Received: by mail-il1-f182.google.com with SMTP id u16so20460339ilg.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Dec 2019 11:25:36 -0800 (PST)
+X-Received: by 2002:a92:d581:: with SMTP id a1mr4302609iln.218.1576092336013; 
+ Wed, 11 Dec 2019 11:25:36 -0800 (PST)
 MIME-Version: 1.0
+References: <cover.1576037078.git.saiprakash.ranjan@codeaurora.org>
+ <0101016ef3391ded-57772416-f32d-40e8-acb5-5dd1b6064f73-000000@us-west-2.amazonses.com>
+In-Reply-To: <0101016ef3391ded-57772416-f32d-40e8-acb5-5dd1b6064f73-000000@us-west-2.amazonses.com>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 11 Dec 2019 11:25:23 -0800
+X-Gmail-Original-Message-ID: <CAD=FV=X3Akg07hetQOgd0P_wTVWs3QpuCNQ8O6qQ5LK2ZeWSaQ@mail.gmail.com>
+Message-ID: <CAD=FV=X3Akg07hetQOgd0P_wTVWs3QpuCNQ8O6qQ5LK2ZeWSaQ@mail.gmail.com>
+Subject: Re: [PATCH 1/3] arm64: dts: qcom: sc7180: Add APSS watchdog node
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_111230_148650_E42432F6 
-X-CRM114-Status: UNSURE (   8.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_112539_622765_3CFB067C 
+X-CRM114-Status: GOOD (  16.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,141 +101,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Keerthy <j-keerthy@ti.com>, Sebastian Reichel <sre@kernel.org>,
- Benoit Parrot <bparrot@ti.com>, Bin Liu <b-liu@ti.com>,
- linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
+ Guenter Roeck <groeck@chromium.org>, Stephen Boyd <swboyd@chromium.org>,
+ Matthias Kaehlcke <mka@chromium.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We can now probe devices with ti-sysc interconnect driver and dts
-data. Let's drop the related platform data and custom ti,hwmods
-dts property.
+Sai,
 
-As we're just dropping data, and the early platform data init
-is based on the custom ti,hwmods property, we want to drop both
-the platform data and ti,hwmods property in a single patch.
+On Tue, Dec 10, 2019 at 8:30 PM Sai Prakash Ranjan
+<saiprakash.ranjan@codeaurora.org> wrote:
+>
+> Add APSS (Application Processor Subsystem) watchdog
+> DT node for SC7180 SoC.
+>
+> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> ---
+>  arch/arm64/boot/dts/qcom/sc7180.dtsi | 6 ++++++
+>  1 file changed, 6 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> index 666e9b92c7ad..a6773ad3738b 100644
+> --- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> @@ -1038,6 +1038,12 @@
+>                         };
+>                 };
+>
+> +               watchdog@17c10000 {
+> +                       compatible = "qcom,apss-wdt-sc7180", "qcom,kpss-wdt";
 
-Signed-off-by: Tony Lindgren <tony@atomide.com>
----
- arch/arm/boot/dts/omap4-l4.dtsi            |  1 -
- arch/arm/mach-omap2/omap_hwmod_44xx_data.c | 62 ----------------------
- 2 files changed, 63 deletions(-)
+If you haven't already done it (I couldn't find it), can you please
+add this to "Documentation/devicetree/bindings/watchdog/qcom-wdt.txt"?
+ Presumably at the same time it would be good to change the format of
+that file to .yaml.
 
-diff --git a/arch/arm/boot/dts/omap4-l4.dtsi b/arch/arm/boot/dts/omap4-l4.dtsi
---- a/arch/arm/boot/dts/omap4-l4.dtsi
-+++ b/arch/arm/boot/dts/omap4-l4.dtsi
-@@ -715,7 +715,6 @@ target-module@8000 {			/* 0x4a108000, ap 63 62.0 */
- 
- 		target-module@a000 {			/* 0x4a10a000, ap 65 50.0 */
- 			compatible = "ti,sysc-omap4", "ti,sysc";
--			ti,hwmods = "fdif";
- 			reg = <0xa000 0x4>,
- 			      <0xa010 0x4>;
- 			reg-names = "rev", "sysc";
-diff --git a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c b/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
---- a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
-@@ -752,50 +752,6 @@ static struct omap_hwmod omap44xx_emif2_hwmod = {
- 	},
- };
- 
--/*
-- * 'fdif' class
-- * face detection hw accelerator module
-- */
--
--static struct omap_hwmod_class_sysconfig omap44xx_fdif_sysc = {
--	.rev_offs	= 0x0000,
--	.sysc_offs	= 0x0010,
--	/*
--	 * FDIF needs 100 OCP clk cycles delay after a softreset before
--	 * accessing sysconfig again.
--	 * The lowest frequency at the moment for L3 bus is 100 MHz, so
--	 * 1usec delay is needed. Add an x2 margin to be safe (2 usecs).
--	 *
--	 * TODO: Indicate errata when available.
--	 */
--	.srst_udelay	= 2,
--	.sysc_flags	= (SYSC_HAS_MIDLEMODE | SYSC_HAS_RESET_STATUS |
--			   SYSC_HAS_SIDLEMODE | SYSC_HAS_SOFTRESET),
--	.idlemodes	= (SIDLE_FORCE | SIDLE_NO | SIDLE_SMART |
--			   MSTANDBY_FORCE | MSTANDBY_NO | MSTANDBY_SMART),
--	.sysc_fields	= &omap_hwmod_sysc_type2,
--};
--
--static struct omap_hwmod_class omap44xx_fdif_hwmod_class = {
--	.name	= "fdif",
--	.sysc	= &omap44xx_fdif_sysc,
--};
--
--/* fdif */
--static struct omap_hwmod omap44xx_fdif_hwmod = {
--	.name		= "fdif",
--	.class		= &omap44xx_fdif_hwmod_class,
--	.clkdm_name	= "iss_clkdm",
--	.main_clk	= "fdif_fck",
--	.prcm = {
--		.omap4 = {
--			.clkctrl_offs = OMAP4_CM_CAM_FDIF_CLKCTRL_OFFSET,
--			.context_offs = OMAP4_RM_CAM_FDIF_CONTEXT_OFFSET,
--			.modulemode   = MODULEMODE_SWCTRL,
--		},
--	},
--};
--
- /*
-  * 'gpmc' class
-  * general purpose memory controller
-@@ -1474,14 +1430,6 @@ static struct omap_hwmod_ocp_if omap44xx_dma_system__l3_main_2 = {
- 	.user		= OCP_USER_MPU | OCP_USER_SDMA,
- };
- 
--/* fdif -> l3_main_2 */
--static struct omap_hwmod_ocp_if omap44xx_fdif__l3_main_2 = {
--	.master		= &omap44xx_fdif_hwmod,
--	.slave		= &omap44xx_l3_main_2_hwmod,
--	.clk		= "l3_div_ck",
--	.user		= OCP_USER_MPU | OCP_USER_SDMA,
--};
--
- /* ipu -> l3_main_2 */
- static struct omap_hwmod_ocp_if omap44xx_ipu__l3_main_2 = {
- 	.master		= &omap44xx_ipu_hwmod,
-@@ -1818,14 +1766,6 @@ static struct omap_hwmod_ocp_if omap44xx_l4_per__dss_venc = {
- 	.user		= OCP_USER_MPU,
- };
- 
--/* l4_cfg -> fdif */
--static struct omap_hwmod_ocp_if omap44xx_l4_cfg__fdif = {
--	.master		= &omap44xx_l4_cfg_hwmod,
--	.slave		= &omap44xx_fdif_hwmod,
--	.clk		= "l4_div_ck",
--	.user		= OCP_USER_MPU | OCP_USER_SDMA,
--};
--
- /* l3_main_2 -> gpmc */
- static struct omap_hwmod_ocp_if omap44xx_l3_main_2__gpmc = {
- 	.master		= &omap44xx_l3_main_2_hwmod,
-@@ -1983,7 +1923,6 @@ static struct omap_hwmod_ocp_if *omap44xx_hwmod_ocp_ifs[] __initdata = {
- 	&omap44xx_mpu__l3_main_1,
- 	&omap44xx_debugss__l3_main_2,
- 	&omap44xx_dma_system__l3_main_2,
--	&omap44xx_fdif__l3_main_2,
- 	&omap44xx_ipu__l3_main_2,
- 	&omap44xx_iss__l3_main_2,
- 	&omap44xx_iva__l3_main_2,
-@@ -2026,7 +1965,6 @@ static struct omap_hwmod_ocp_if *omap44xx_hwmod_ocp_ifs[] __initdata = {
- 	&omap44xx_l4_per__dss_rfbi,
- 	&omap44xx_l3_main_2__dss_venc,
- 	&omap44xx_l4_per__dss_venc,
--	&omap44xx_l4_cfg__fdif,
- 	&omap44xx_l3_main_2__gpmc,
- 	&omap44xx_l3_main_2__ipu,
- 	&omap44xx_l3_main_2__iss,
--- 
-2.24.1
+
+Unrelated to sc7180, but it also feels like something is awfully
+screwy here in terms of the various Qualcomm device tree files
+referring to watchdog timers.  It feels wrong, but perhaps you can
+educate me on how it works and I'll see the light.  Specifically:
+
+1. It seems like the same node is used for two things on other Qualcomm SoCs
+
+If I grep the bindings for "qcom,kpss-timer" or "qcom,scss-timer", I
+get two hits:
+
+Documentation/devicetree/bindings/timer/qcom,msm-timer.txt
+Documentation/devicetree/bindings/watchdog/qcom-wdt.txt
+
+...and, in fact, there appear to be two drivers claiming compatibility here:
+
+drivers/clocksource/timer-qcom.c
+drivers/watchdog/qcom-wdt.c
+
+That seems super odd to me.  Is that really right?  We have two
+drivers probing against the same device tree nodes?  ...and that's OK?
+ If so, why does only one of the bindings list the SoC-specific
+bindings names?
+
+
+2. The actual nodes look really wonky.  A few examples below:
+
+2a) arch/arm/boot/dts/qcom-apq8064.dtsi:
+compatible = "qcom,kpss-timer", "qcom,kpss-wdt-apq8064", "qcom,msm-timer";
+
+...why is the SoC-specific compatible string in the middle?  The
+SoC-specific one should be first.
+
+2b) arch/arm/boot/dts/qcom-ipq4019.dtsi:
+compatible = "qcom,kpss-wdt", "qcom,kpss-wdt-ipq4019";
+
+...same question, but in this case there is no "msm-timer" at the end?
+
+2c) arch/arm64/boot/dts/qcom/qcs404.dtsi
+compatible = "qcom,kpss-wdt";
+
+...no SoC-specific string at all?
+
+
+Thanks!
+
+-Doug
 
 _______________________________________________
 linux-arm-kernel mailing list
