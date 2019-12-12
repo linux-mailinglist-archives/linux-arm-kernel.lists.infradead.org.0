@@ -2,129 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27E4D11C681
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 08:36:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C61DA11C696
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 08:43:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xanz8JgkpiDXQu9rFXz5vT5fov/OY9VOor/59O5Xwik=; b=AjkA11Pv9junTB
-	lBFIRtF6RItWiMr3uxve56TxB/UAk+zzfmL6q0qU/Z6JAUadGwkUcbIZR4PPNkNvygOcMr3KfWNFz
-	J5mDKDZLvBpukemTtJtDu+RyDbAAl6p5TzJBP6F8/hLg1njJ2II3eJmP8pIJG25LHuZDN6H0YXwBY
-	YCjm63CTioMMn3FV78Dg44O/K9JEEQ8P1qPghdPdWbdXxNPfoA8vs/6SbkUJ7tHD4FodXCUwcNlgM
-	wYJCIQ5E+pQkizLII+0OGdz35Obyd6Xv2v7ql1HRMKYeccEz0j8DPxVSkpXt7ZtNOy4j8XQy1iXxP
-	A+SeAFrP7KaMJwPxCitQ==;
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=BrIgE1i+/qxLY5YKVrKfyJ8UtQVE94NiFVGiEY9ychc=; b=Jsm+L93ijeujjIJaoxO6lPOHhB
+	IQVWAe0Uqbry+PTw46E2WGSQCRUCBKbiSkmDY7qrGaK5UyFagacTShFM0GYpm1oXvx443dwTIsa7Y
+	5MmY9a1o/9iNB1Pp4P/W1oQGQC3n+neisScnxnGpIFjBD78DwhZNQ6qTs0mDyM6jAofHNymL5L4uM
+	vX3iKuiYXTg3PTwhXSjzx07zIk/ncaQsRUecimCM0/AtWei6FcBu177gvMT0dCoU+4WrmXSx/3aTs
+	px/fVNOG/2w4Z4shiyCBTibHFAEwRxNR9MFQ04+rdhA87dhGyUnQiHtMDVV8DIrTdrV89zco5ZyZl
+	btCwkFsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifJ11-00028L-Fq; Thu, 12 Dec 2019 07:36:03 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1ifJ7m-0004Kz-SF; Thu, 12 Dec 2019 07:43:02 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifJ0n-00027U-Ev
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 07:35:52 +0000
-Received: by mail-wr1-x442.google.com with SMTP id q10so1516369wrm.11
+ id 1ifJ7f-0004JX-2F
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 07:42:56 +0000
+Received: by mail-lf1-x142.google.com with SMTP id y19so902986lfl.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Dec 2019 23:35:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=A+YZjm2Ye3pC2B1PdeSakvD5oUwYpRwIr8NfLtIK9OQ=;
- b=KxXYrdcBAzTVBh7CxZp6tWfURJTbsWvieNcjFsCiN3LDwCJfYNbtpfsvs5IbA0P5r0
- ANWFo/KIRIb+jAbvh/gbg+g6CKFKpqs9DllHbnVP9v5yXJH2DpHmb4c9SuZJGj8PUeOP
- 880I+EvnUh4qhwY4P4d+rGkyOxXWe03CLPxImZuBkHrWK2xSrcdQPuyeQxOYpK03MdK1
- +ZzmbKlSVnhXBVxcohT4cSjn02DRUGs8bQLzzAefFXFGNHRVknnV1iXwBNxI8bg2lcLX
- 7KFF4bXDjormm1TZAK9yIaQ/yO29mRjF/Lhbr3AcxZnGuLHpen7TZk7BhlgjLofI0+ga
- w13A==
+ Wed, 11 Dec 2019 23:42:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=PkUsNGoqFdl5gXqJP6bnP2J6yrhC8TrnSK9hjm92v8k=;
+ b=NMCNzYEm9Gfegz6VLnF8XP0V5Hn0WezwnX7U9NkH5MQWw+pZmvdE45rMspF3sLqxbF
+ ZZnNXwqhT2Q5GUIlC1rnmGWdvyOao7Mv2wdJk0VOhiLJ/8ruwz7CzgzsU9HcBqUHN8xb
+ OlyZ2qODoD9obyPBZzL0HLC0LDMy+X8yU/eWI5IZxzHqW/dN5qNLoU6c8k6x83yi0cTH
+ yY3XvA65/q1EilVfL5O1Awlr4X/HW8bO8iCGiDKbMOtMsyKX1Owmv2jHdInhOqTPfUY4
+ DTV3Brysx5psuGFJ/sIoP9BO6zN1aE1N5mB96sZ/Z4CD9q24KbeourzxSb0xwN0ZLlvx
+ 75SA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=A+YZjm2Ye3pC2B1PdeSakvD5oUwYpRwIr8NfLtIK9OQ=;
- b=X0AdnXkfbaOJ01XHu4/NkbtI/0uN7fvSpE5LqdHqhUluy+DJCYa+sC/qY0jtOdDf/+
- Ah8MWZcV091H76POwbRBnIpgH+aSQL9835XBUsFRvcoemEyRp8td4KzELG53rQ94TxVo
- b6VRqrMcuY9Y9z3EuhEu9B2pwlZEfPHg5Wh24Kcp7aQARX/g4/azeym81bB9MrMahMq4
- kBgfwrckJWED7auFSRWATnUKjLeGJCeZIoAeMfHNcWMDe71Jt8mbX6tM8TPQI17/SKfG
- B8Xj9SLnFh0boVmrtRVQX1nZm8oPzQgUIXd7SQi8Pdnof8zV7urQHjr3HWXhhdGWxyce
- Q9FA==
-X-Gm-Message-State: APjAAAXbvBNqCeMJ7Q5S/iHRbOyXJLCpuaQD7U825MEgE2UB3KCmtPvC
- cRUEWyR2kthm64b+VY/n/1EyY6YGYaM=
-X-Google-Smtp-Source: APXvYqwD1LPGGvRRbdrhL+bZMaR2zHPn54yzIr3uDJnubGHYpMAkNtsHA1kpeHWxgWtn2OREd91XEw==
-X-Received: by 2002:a5d:558d:: with SMTP id i13mr4581208wrv.364.1576136147874; 
- Wed, 11 Dec 2019 23:35:47 -0800 (PST)
-Received: from [10.44.66.8] ([212.45.67.2])
- by smtp.googlemail.com with ESMTPSA id v14sm5078571wrm.28.2019.12.11.23.35.45
+ bh=PkUsNGoqFdl5gXqJP6bnP2J6yrhC8TrnSK9hjm92v8k=;
+ b=s0b6Oi8pN1ZxlCbzyluiGViPQjrIOPZMAInhpqbSmV7+JKVYvMKesE697SGe8KuVMm
+ 8SnOKMd1/oUFsOeLgnOFXSgKduBXBf8zx84vyMZo6Gr8lHD89QrfOLmrfqP7D/qNMynv
+ mk3L1cUV9nElRQVNSGspmWO2icTUUr2xqbuWpEc3os9AL7iTaluyJk+aecu9YEMieeYu
+ p83Cz1tyJEREDkHl78+NpBOeKqBIfoMDdXcraM86qZoLAMeD1FQ3eOEDc9ih5Ff7a9YF
+ 0+Qs2do1RnFrdwl/2zI2JlRR58Y0Hr3gkpi/qvrlxkeiVNFHWkW4JaugR5rQYgXa1ebT
+ T0Zg==
+X-Gm-Message-State: APjAAAWrduZsh/sgR47HcKwNspRcHpIxLDKlUtXNIFHneA0stagiPBvG
+ gOuyi85fxQqtenZVDE5shig=
+X-Google-Smtp-Source: APXvYqw61Nc9c1M7/MZ1ZVdl9tv4GQZF2ss+5I1aVe+a5lUKM/oLVCrLyFH8YTXcNcxBfb4SaCbXuQ==
+X-Received: by 2002:ac2:5975:: with SMTP id h21mr4695940lfp.165.1576136571817; 
+ Wed, 11 Dec 2019 23:42:51 -0800 (PST)
+Received: from [192.168.68.108] (115-64-122-209.tpgi.com.au. [115.64.122.209])
+ by smtp.gmail.com with ESMTPSA id
+ v5sm2444547ljk.67.2019.12.11.23.42.45
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 11 Dec 2019 23:35:47 -0800 (PST)
-Subject: Re: [PATCH RFC v6 5/9] interconnect: imx: Add platform driver for
- imx8mm
-To: Leonard Crestez <leonard.crestez@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>
-References: <cover.1573761527.git.leonard.crestez@nxp.com>
- <60d36b71294d162d25c9f889177cab30e41d5ae7.1573761527.git.leonard.crestez@nxp.com>
-From: Georgi Djakov <georgi.djakov@linaro.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=georgi.djakov@linaro.org; prefer-encrypt=mutual; keydata=
- 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
- KEmKjLDvB0pePJkdTw==
-Message-ID: <537baef4-d3bf-8de9-d168-21af0062b30a@linaro.org>
-Date: Thu, 12 Dec 2019 09:35:44 +0200
+ Wed, 11 Dec 2019 23:42:51 -0800 (PST)
+Subject: Re: [PATCH v2 4/4] powerpc: Book3S 64-bit "heavyweight" KASAN support
+To: Daniel Axtens <dja@axtens.net>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, linuxppc-dev@lists.ozlabs.org,
+ linux-s390@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ kasan-dev@googlegroups.com, christophe.leroy@c-s.fr,
+ aneesh.kumar@linux.ibm.com, Dmitry Vyukov <dvyukov@google.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>
+References: <20191210044714.27265-1-dja@axtens.net>
+ <20191210044714.27265-5-dja@axtens.net>
+ <71751e27-e9c5-f685-7a13-ca2e007214bc@gmail.com>
+ <875zincu8a.fsf@dja-thinkpad.axtens.net>
+ <2e0f21e6-7552-815b-1bf3-b54b0fc5caa9@gmail.com>
+ <87wob3aqis.fsf@dja-thinkpad.axtens.net>
+From: Balbir Singh <bsingharora@gmail.com>
+Message-ID: <1bffad2d-db13-9808-afc9-5594f02dcf01@gmail.com>
+Date: Thu, 12 Dec 2019 18:42:40 +1100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <60d36b71294d162d25c9f889177cab30e41d5ae7.1573761527.git.leonard.crestez@nxp.com>
+In-Reply-To: <87wob3aqis.fsf@dja-thinkpad.axtens.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_233550_843741_0F99505B 
-X-CRM114-Status: GOOD (  16.95  )
+X-CRM114-CacheID: sfid-20191211_234255_135036_260A292B 
+X-CRM114-Status: GOOD (  24.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (bsingharora[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -144,77 +114,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Matthias Kaehlcke <mka@chromium.org>, linux-imx@nxp.com,
- devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
- Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Alexandre Bailon <abailon@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Leonard,
 
-On 11/14/19 22:09, Leonard Crestez wrote:
-> Add a platform driver for the i.MX8MM SoC describing bus topology.
+
+On 12/12/19 1:24 am, Daniel Axtens wrote:
+> Hi Balbir,
 > 
-> Bandwidth adjustments is currently only supported on the DDRC and main
-> NOC. Scaling for the vpu/gpu/display NICs could be added in the future.
+>>>>> +Discontiguous memory can occur when you have a machine with memory spread
+>>>>> +across multiple nodes. For example, on a Talos II with 64GB of RAM:
+>>>>> +
+>>>>> + - 32GB runs from 0x0 to 0x0000_0008_0000_0000,
+>>>>> + - then there's a gap,
+>>>>> + - then the final 32GB runs from 0x0000_2000_0000_0000 to 0x0000_2008_0000_0000
+>>>>> +
+>>>>> +This can create _significant_ issues:
+>>>>> +
+>>>>> + - If we try to treat the machine as having 64GB of _contiguous_ RAM, we would
+>>>>> +   assume that ran from 0x0 to 0x0000_0010_0000_0000. We'd then reserve the
+>>>>> +   last 1/8th - 0x0000_000e_0000_0000 to 0x0000_0010_0000_0000 as the shadow
+>>>>> +   region. But when we try to access any of that, we'll try to access pages
+>>>>> +   that are not physically present.
+>>>>> +
+>>>>
+>>>> If we reserved memory for KASAN from each node (discontig region), we might survive
+>>>> this no? May be we need NUMA aware KASAN? That might be a generic change, just thinking
+>>>> out loud.
+>>>
+>>> The challenge is that - AIUI - in inline instrumentation, the compiler
+>>> doesn't generate calls to things like __asan_loadN and
+>>> __asan_storeN. Instead it uses -fasan-shadow-offset to compute the
+>>> checks, and only calls the __asan_report* family of functions if it
+>>> detects an issue. This also matches what I can observe with objdump
+>>> across outline and inline instrumentation settings.
+>>>
+>>> This means that for this sort of thing to work we would need to either
+>>> drop back to out-of-line calls, or teach the compiler how to use a
+>>> nonlinear, NUMA aware mem-to-shadow mapping.
+>>
+>> Yes, out of line is expensive, but seems to work well for all use cases.
 > 
-> Signed-off-by: Alexandre Bailon <abailon@baylibre.com>
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> ---
->  drivers/interconnect/imx/Kconfig          |   4 +
->  drivers/interconnect/imx/Makefile         |   1 +
->  drivers/interconnect/imx/imx8mm.c         | 105 ++++++++++++++++++++++
->  include/dt-bindings/interconnect/imx8mm.h |  49 ++++++++++
->  4 files changed, 159 insertions(+)
->  create mode 100644 drivers/interconnect/imx/imx8mm.c
->  create mode 100644 include/dt-bindings/interconnect/imx8mm.h
+> I'm not sure this is true. Looking at scripts/Makefile.kasan, allocas,
+> stacks and globals will only be instrumented if you can provide
+> KASAN_SHADOW_OFFSET. In the case you're proposing, we can't provide a
+> static offset. I _think_ this is a compiler limitation, where some of
+> those instrumentations only work/make sense with a static offset, but
+> perhaps that's not right? Dmitry and Andrey, can you shed some light on
+> this?
 > 
-> diff --git a/drivers/interconnect/imx/Kconfig b/drivers/interconnect/imx/Kconfig
-> index 7d81d3c83a61..15671fe7f600 100644
-> --- a/drivers/interconnect/imx/Kconfig
-> +++ b/drivers/interconnect/imx/Kconfig
-> @@ -1,5 +1,9 @@
->  config INTERCONNECT_IMX
->  	bool "i.MX interconnect drivers"
->  	depends on ARCH_MXC || COMPILE_TEST
->  	help
->  	  Generic interconnect driver for i.MX SOCs
-> +
-> +config INTERCONNECT_IMX8MM
-> +	def_bool y
 
-Can this be a module?
+From what I can read, everything should still be supported, the info page
+for gcc states that globals, stack asan should be enabled by default.
+allocas may have limited meaning if stack-protector is turned on (no?)
 
-> +	depends on INTERCONNECT_IMX
-> diff --git a/drivers/interconnect/imx/Makefile b/drivers/interconnect/imx/Makefile
-> index bb92fd9fe4a5..5f658c1608a6 100644
-> --- a/drivers/interconnect/imx/Makefile
-> +++ b/drivers/interconnect/imx/Makefile
-> @@ -1 +1,2 @@
->  obj-$(CONFIG_INTERCONNECT_IMX) += imx.o
-> +obj-$(CONFIG_INTERCONNECT_IMX8MM) += imx8mm.o
-> diff --git a/drivers/interconnect/imx/imx8mm.c b/drivers/interconnect/imx/imx8mm.c
-> new file mode 100644
-> index 000000000000..acc002153729
-> --- /dev/null
+> Also, as it currently stands, the speed difference between inline and
+> outline is approximately 2x, and given that we'd like to run this
+> full-time in syzkaller I think there is value in trading off speed for
+> some limitations.
+> 
 
-Thanks,
-Georgi
+Full speed vs actually working across different configurations?
+
+>> BTW, the current set of patches just hang if I try to make the default
+>> mode as out of line
+> 
+> Do you have CONFIG_RELOCATABLE?
+> 
+> I've tested the following process:
+> 
+> # 1) apply patches on a fresh linux-next
+> # 2) output dir
+> mkdir ../out-3s-kasan
+> 
+> # 3) merge in the relevant config snippets
+> cat > kasan.config << EOF
+> CONFIG_EXPERT=y
+> CONFIG_LD_HEAD_STUB_CATCH=y
+> 
+> CONFIG_RELOCATABLE=y
+> 
+> CONFIG_KASAN=y
+> CONFIG_KASAN_GENERIC=y
+> CONFIG_KASAN_OUTLINE=y
+> 
+> CONFIG_PHYS_MEM_SIZE_FOR_KASAN=2048
+> EOF
+> 
+
+I think I got CONFIG_PHYS_MEM_SIZE_FOR_KASN wrong, honestly I don't get why
+we need this size? The size is in MB and the default is 0. 
+
+Why does the powerpc port of KASAN need the SIZE to be explicitly specified?
+
+Balbir Singh.
 
 _______________________________________________
 linux-arm-kernel mailing list
