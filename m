@@ -2,61 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DE9A11C323
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 03:20:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32EEE11C328
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 03:22:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=23ixvXHfC8uP9ujVz0A6tvhj+Sh+yMXLXa6ozext2WI=; b=b4ZPa7zJGA8iPT
-	Vxuty5VfvMVb7WQCnf1WGTtpyPV8/8Qzt914d6YhFi8GyRXiI2OS6GIi67BYOc2sUIFWpb7Dkxerf
-	DQvyMh5bdpdLIc3YXgePdqr8cvKMObzcZWzZ8WkVz/+5t5tjHacrO8z8lg5eWPW0rzkLqnadhr2pB
-	eXptIxk6h7xIiYEnSkou6/+Sa5rXgMO2y9Ca6yz8x4BNXkUsRAdMFLtlPSKztOlg0og+m/KJ5k93e
-	smijE/4wwwAPaPUwlVyby+BqF3eLOgrbAg3Clz1NanjzDfY5+85H8/3o/mktDlhMAON+98ImKwo4o
-	CzuDaJ5wDqVePzk8ce0w==;
+	List-Owner; bh=4c1eJzt8NXSyYZXEOogvoGAXZTMjdYhY0gt9ahlEIsg=; b=LqwQnEFix4DOt+
+	RZryvgL1s0dUSWjToulJhAmKaU/F3RYn0lH/O5QVPCKrEKu0rqrZxHWbhzLdBOLCSJ6s6jO4E0RFe
+	JoPPolU8AVXTV1/2QIzYfX4quArEg8YOaiDMcspHfsWN2ijJeb7Ccyl1Cpjfrg5yDlHLtEvm3RQ3U
+	JjVCy22GtmMg1EropiyTqk1hT+RG5U3JRFUFZhndhXWxjT5aQYxsNmfNs6GTCN/ATUCd+mNHbw7qy
+	zheonOq8a004TS5sbwFreuPcqAJKX+bP0ZyPXgQ3ffgb/MDPX83ppKzf5miVlV8BLHnNeWJiQhdJJ
+	DMIeO49nNPJSJDnvjK2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifE5P-0003tu-9y; Thu, 12 Dec 2019 02:20:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ifE7b-0004RN-MH; Thu, 12 Dec 2019 02:22:31 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifE5F-0003ME-LB
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 02:20:07 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9C3A7208C3;
- Thu, 12 Dec 2019 02:20:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576117204;
- bh=WCnzKfA5mZ8iHgw9EUafDcJ6IlFqAjGtxuR1gUjVxto=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=odb/UIKlx4nrIjmRzmJOiScGwVsZi81CCIvw6Fru+s5tIZo2O5YvqT4A5HdCODp6L
- ts7vr/hsSOCKjh+Iuab/akV9I69OctM0tqmpaGD7owqUw2R1VMu7Us6bzUZ4rcUNPe
- WA75iUe1X4AMTvQn+Xf8iehsTImopA4lCPvYCIcI=
-Date: Thu, 12 Dec 2019 10:19:51 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Peng Ma <peng.ma@nxp.com>
-Subject: Re: [v4 2/2] arm64: dts: ls1028a: Update edma compatible to fit eDMA
- driver
-Message-ID: <20191212021950.GE15858@dragon>
-References: <20191211080749.30751-1-peng.ma@nxp.com>
- <20191211080749.30751-2-peng.ma@nxp.com>
+ id 1ifE7S-0004Qy-V9; Thu, 12 Dec 2019 02:22:24 +0000
+X-UUID: 1e6653d561154131aa0d9ab3f4eaf1e1-20191211
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=9c+CKJCw7ds62qe6zhspsMPOjl/4Hp7ooomuS+RoEEI=; 
+ b=YfzqF2gBK9cOf3P5+RyjdFs2uoFb9Bzn0jlneCtjpAaRPkqAU+238zimE7sJYgpLtNzYIf8AqphROllQ0il8eJEu+OgkH0YYFBy/wziUGpGE4FmhXkygG0dh1hTAIpkVm2ExDxRGT0um+URS5a9BZYn/hnl18fkE4MF/5c0Hmp4=;
+X-UUID: 1e6653d561154131aa0d9ab3f4eaf1e1-20191211
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <dennis-yc.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 498437813; Wed, 11 Dec 2019 18:22:20 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Dec 2019 18:20:43 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Dec 2019 10:20:06 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 12 Dec 2019 10:19:58 +0800
+Message-ID: <1576117225.21687.6.camel@mtkswgap22>
+Subject: Re: [PATCH v2 04/14] mailbox: mediatek: cmdq: clear task in channel
+ before shutdown
+From: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>
+Date: Thu, 12 Dec 2019 10:20:25 +0800
+In-Reply-To: <1576116202.16444.4.camel@mtksdaap41>
+References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1574819937-6246-6-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1575946181.16676.4.camel@mtksdaap41> <1576113221.17653.6.camel@mtkswgap22>
+ <1576114297.11762.1.camel@mtksdaap41>
+ <1576115494.17653.21.camel@mtkswgap22>
+ <1576116202.16444.4.camel@mtksdaap41>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191211080749.30751-2-peng.ma@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_182005_718786_36FD7BF3 
-X-CRM114-Status: GOOD (  16.59  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191211_182223_011370_3ACC6D72 
+X-CRM114-Status: GOOD (  17.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -66,7 +77,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,65 +90,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- Robin Gong <yibin.gong@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 08:09:39AM +0000, Peng Ma wrote:
-> The eDMA of LS1028A soc has a little bit different from others, So we
-> should distinguish them in driver by compatible.
-> 
-> Signed-off-by: Peng Ma <peng.ma@nxp.com>
-> ---
-> Changed for v4
-> 	- Add new change patch
-> 
->  Documentation/devicetree/bindings/dma/fsl-edma.txt | 1 +
+Hi CK,
 
-Please have bindings change as a separate patch.
-
-Shawn
-
->  arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi     | 2 +-
->  2 files changed, 2 insertions(+), 1 deletion(-)
+On Thu, 2019-12-12 at 10:03 +0800, CK Hu wrote:
+> Hi, Dennis:
 > 
-> diff --git a/Documentation/devicetree/bindings/dma/fsl-edma.txt b/Documentation/devicetree/bindings/dma/fsl-edma.txt
-> index 29dd3ccb1235..e77b08ebcd06 100644
-> --- a/Documentation/devicetree/bindings/dma/fsl-edma.txt
-> +++ b/Documentation/devicetree/bindings/dma/fsl-edma.txt
-> @@ -10,6 +10,7 @@ Required properties:
->  - compatible :
->  	- "fsl,vf610-edma" for eDMA used similar to that on Vybrid vf610 SoC
->  	- "fsl,imx7ulp-edma" for eDMA2 used similar to that on i.mx7ulp
-> +	- "fsl,fsl,ls1028a-edma" for eDMA used similar to that on Vybrid vf610 SoC
->  - reg : Specifies base physical address(s) and size of the eDMA registers.
->  	The 1st region is eDMA control register's address and size.
->  	The 2nd and the 3rd regions are programmable channel multiplexing
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> index 8e8a77eb596a..b3716a89fa0d 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-> @@ -316,7 +316,7 @@
->  
->  		edma0: dma-controller@22c0000 {
->  			#dma-cells = <2>;
-> -			compatible = "fsl,vf610-edma";
-> +			compatible = "fsl,ls1028a-edma";
->  			reg = <0x0 0x22c0000 0x0 0x10000>,
->  			      <0x0 0x22d0000 0x0 0x10000>,
->  			      <0x0 0x22e0000 0x0 0x10000>;
-> -- 
-> 2.17.1
+> On Thu, 2019-12-12 at 09:51 +0800, Dennis-YC Hsieh wrote:
+> > Hi CK,
+> > 
+> > On Thu, 2019-12-12 at 09:31 +0800, CK Hu wrote:
+> > > Hi, Dennis:
+> > > 
+> > > On Thu, 2019-12-12 at 09:13 +0800, Dennis-YC Hsieh wrote:
+> > > > Hi CK,
+> > > > 
+> > > > On Tue, 2019-12-10 at 10:49 +0800, CK Hu wrote:
+> > > > > Hi, Dennis:
+> > > > > 
+> > > > > On Wed, 2019-11-27 at 09:58 +0800, Dennis YC Hsieh wrote:
+> > > > > > Do success callback in channel when shutdown. For those task not finish,
+> > > > > > callback with error code thus client has chance to cleanup or reset.
+> > > > > > 
+> > > > > > Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> > > > > > ---
+> > > > > >  drivers/mailbox/mtk-cmdq-mailbox.c | 26 ++++++++++++++++++++++++++
+> > > > > >  1 file changed, 26 insertions(+)
+> > > > > > 
+> > > > > > diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
+> > > > > > index fd519b6f518b..c12a768d1175 100644
+> > > > > > --- a/drivers/mailbox/mtk-cmdq-mailbox.c
+> > > > > > +++ b/drivers/mailbox/mtk-cmdq-mailbox.c
+> > > > > > @@ -450,6 +450,32 @@ static int cmdq_mbox_startup(struct mbox_chan *chan)
+> > > > > >  
+> > > > > >  static void cmdq_mbox_shutdown(struct mbox_chan *chan)
+> > > > > >  {
+> > > > > > +	struct cmdq_thread *thread = (struct cmdq_thread *)chan->con_priv;
+> > > > > > +	struct cmdq *cmdq = dev_get_drvdata(chan->mbox->dev);
+> > > > > > +	struct cmdq_task *task, *tmp;
+> > > > > > +	unsigned long flags;
+> > > > > > +
+> > > > > > +	spin_lock_irqsave(&thread->chan->lock, flags);
+> > > > > > +	if (list_empty(&thread->task_busy_list))
+> > > > > > +		goto done;
+> > > > > > +
+> > > > > > +	WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
+> > > > > > +
+> > > > > > +	/* make sure executed tasks have success callback */
+> > > > > > +	cmdq_thread_irq_handler(cmdq, thread);
+> > > > > > +	if (list_empty(&thread->task_busy_list))
+> > > > > > +		goto done;
+> > > > > > +
+> > > > > > +	list_for_each_entry_safe(task, tmp, &thread->task_busy_list,
+> > > > > > +				 list_entry) {
+> > > > > > +		cmdq_task_exec_done(task, -ECONNABORTED);
+> > > > > > +		kfree(task);
+> > > > > > +	}
+> > > > > > +
+> > > > > > +	cmdq_thread_disable(cmdq, thread);
+> > > > > > +	clk_disable(cmdq->clock);
+> > > > > > +done:
+> > > > > 
+> > > > > cmdq_thread_resume(thread);
+> > > > > 
+> > > > > Regards,
+> > > > > CK
+> > > > > 
+> > > > 
+> > > > Call resume here will cause violation. The thread->task_busy_list empty
+> > > > means no task work in gce and thread state should already disable
+> > > > without clock, which is what we want since client try to shut down this
+> > > > mbox channel. So I think we don't need resume here.
+> > > > 
+> > > 
+> > > OK. When client free channel, thread is suspended. Then client request
+> > > channel, where do you resume thread?
+> > > 
+> > 
+> > when client send new pkt to new channel, cmdq_mbox_send_data() will
+> > enable thread.
+> 
+> in cmdq_mbox_send_data(), it would run below command:
+> 
+> WARN_ON(clk_enable(cmdq->clock) < 0);
+> WARN_ON(cmdq_thread_reset(cmdq, thread) < 0);
+> 
+> writel(task->pa_base, thread->base + CMDQ_THR_CURR_ADDR);
+> writel(task->pa_base + pkt->cmd_buf_size,
+>        thread->base + CMDQ_THR_END_ADDR);
+> writel(thread->priority, thread->base + CMDQ_THR_PRIORITY);
+> writel(CMDQ_THR_IRQ_EN, thread->base + CMDQ_THR_IRQ_ENABLE);
+> writel(CMDQ_THR_ENABLED, thread->base + CMDQ_THR_ENABLE_TASK);
+> 
+> Do you mean CMDQ_THR_ENABLE_TASK is set to CMDQ_THR_ENABLED, then
+> CMDQ_THR_SUSPEND_TASK would be automatically set to CMDQ_THR_RESUME? If
+> this hardware work in so special behavior, please add comment for this.
+> 
+> Regards,
+> CK
+> 
+
+sorry for not clearly explain before
+
+call to cmdq_thread_reset() will reset thread status, which include
+suspend state. the CMDQ_THR_SUSPEND_TASK will be clear after reset, thus
+we can simply set CMDQ_THR_ENABLE_TASK to CMDQ_THR_ENABLED and then
+thread running again.
+
+I will add comment in both cmdq_mbox_send_data() and
+cmdq_mbox_shutdown() to clarify this hardware behavior.
+
+
+Regards,
+Dennis
+
+> > 
+> > 
+> > Regards,
+> > Dennis
+> > 
+> > > Regards,
+> > > CK
+> > > 
+> > > > 
+> > > > Regards,
+> > > > Dennis
+> > > > 
+> > > > > > +	spin_unlock_irqrestore(&thread->chan->lock, flags);
+> > > > > >  }
+> > > > > >  
+> > > > > >  static const struct mbox_chan_ops cmdq_mbox_chan_ops = {
+> > > > > 
+> > > > > 
+> > > > 
+> > > > 
+> > > 
+> > > 
+> > 
+> > 
+> 
 > 
 
 _______________________________________________
