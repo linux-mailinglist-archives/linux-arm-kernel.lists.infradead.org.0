@@ -2,71 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 167CD11CC4C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 12:34:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D204911CC66
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 12:40:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=716OUo1pgyrUP/ThlQ3lJVoD/q2a7yDYFM7GTGvnZtQ=; b=IaEHNI23rwm4Rk
-	ILL02thlY18m14AdRWReGAy0REli1+a4JMjP3X1Ae2aQe1w9V6D1O3dv30JlyqpSBjbIadI+nSi3w
-	kWDjeGD+Uldqw5NwR2rD2qWXsZoPcclcA7NO6crGckM/AvQORR09gtMF8cpm4sSwpb64+dFaLaNiq
-	sb14DsFPl+XrKBuafKDuSrfUHfBxPCyLKeUE5sySQYpdfjmLFNw7z6Re2yhGdysp5fdLI1Rtg4sus
-	JEtSuHN9v6M4rmtdwrSeVYaJ9fvpU2AKJgIX7UmFweESsC598ebgDJj2W0sgGvywF4qeyN5QH2fM1
-	KPQEhA8+Q156Nhg5n4Bw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3HB4md60rGRUvzQpauc/00PFLKYNjp0H3ImFE4tBMQY=; b=CHa9/LzMr5/Npg
+	Lk+6A1NZJVVnN/LuYK7ZlmFr+Nv7+a94131DwE3fQG7aNuv00C42gRPrjC959HSstSBrB8YFIGuHf
+	r6IRVSb37W+HVk/YLL3zv1rqkX5iNRV1dsWAF9TK+JBsky2XeL28nEhve9Y07BvgfpYQkoJjFCAfb
+	O9zTbKYMnZqw2RddspHy6D7ViwikGLNBQzuAkGh9o7Pu0uZBvAQVfmwWEPhhV5kVJDtOU2VlFaVIB
+	s21RZ+A4oSTY5yFqCg4m31Lw7XoeOU/eYDuw9BgJvp/RrpnzNDSGmbHiXI3cBPCty1an5zR4jI7VU
+	5qNN5Np5ln4fBtGBgkMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifMjk-0001u7-Nm; Thu, 12 Dec 2019 11:34:28 +0000
-Received: from lb1-smtp-cloud9.xs4all.net ([194.109.24.22])
+	id 1ifMpN-00041Q-I7; Thu, 12 Dec 2019 11:40:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifMjN-0001lb-KK
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 11:34:08 +0000
-Received: from [IPv6:2001:983:e9a7:1:1c4a:480a:7ba1:9c65]
- ([IPv6:2001:983:e9a7:1:1c4a:480a:7ba1:9c65])
- by smtp-cloud9.xs4all.net with ESMTPA
- id fMjIiZATUGyJwfMjJixvan; Thu, 12 Dec 2019 12:34:02 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
- t=1576150442; bh=OKCpeFi5DoqJE6NWtMpQWIWKvSSGpGz8TupfDamuRC0=;
- h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
- Subject;
- b=QQm1tvnXMaB8eQETcibkZHG7cfU5QXrNBF/Q0VRxwwq8FBPNFHPt+dbW1AL0ycKoB
- +zdJ4rnY7wYgb3lk4KIBiMaCnIWwvC98bay09Gsldwar8O0UbaB6Iyn5noITuYjs8h
- lnsC9fT7v8MP9QDCvDthuXoT0+SJlHHPUfWwxk+qQFBi+K6oAoM06f/wy0LSBoAeLk
- CqJqA7JNziaiXfN4hB7wL0ZvefHZeK8HiTSt3gfGXXSwDDQ3WrXbdxRRK84fPx/eSD
- yQYEs3E4lX4SdN8otglq5jvNvNxsqSY+1Cw0bghqACVNtwDz5K9sy+FLDMxxyNn2OU
- GMZfvnqogyfGQ==
-Subject: Re: [PATCH] media: imx7-mipi-csis: Add the missed
- v4l2_async_notifier_cleanup in remove
-To: Rui Miguel Silva <rmfrfs@gmail.com>, Chuhong Yuan <hslester96@gmail.com>
-References: <20191209085828.16183-1-hslester96@gmail.com>
- <20191211105908.dw4lnuble3ejlnil@arch-thunder.localdomain>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <5013c486-3713-6e40-49a1-2fe452ba254f@xs4all.nl>
-Date: Thu, 12 Dec 2019 12:34:00 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1ifMp6-0003sM-Tl
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 11:40:02 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2ADB420663;
+ Thu, 12 Dec 2019 11:39:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576150800;
+ bh=dVMm7Esi2DBpBpD7/SKuK2wM+ZF9Kl3Z8wYXQN8FSP4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=x0ZEj5qy9x1LVm7IZA9vRoLZbJZY7cCoJDSgRzvTEP0Wj9Sve2Kb8UVyZYvWLdglX
+ P1P6adnSEHZU1TxIlU7K+UkNaN5LGrazPy9L0twYSnQmQX3tGQEWmtR6vq41XXcwie
+ 2TWV5ayXhfujs6Z6obItBXOUoq5u31GRpRxO2FP8=
+Date: Thu, 12 Dec 2019 19:39:43 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Philippe Schenker <philippe.schenker@toradex.com>
+Subject: Re: [PATCH v3] ARM: dts: colibri-imx6ull: correct wrong pinmuxing
+ and add comments
+Message-ID: <20191212113942.GJ15858@dragon>
+References: <20191212103745.44672-1-philippe.schenker@toradex.com>
 MIME-Version: 1.0
-In-Reply-To: <20191211105908.dw4lnuble3ejlnil@arch-thunder.localdomain>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfKETIfBTI/Tow7zgY3i+e6lZwyq1XB1sOoDGL8WE5K6A7cM4MbKL9xtk6FSy+6hw3TL/fvtm1yzilRaba0DZeD7w7P4Kc3Zs1u1f2esQgam74drqWtoK
- KiuoQjq2rRiEH8UYJ54YWrx/9ExmJC/5pkAOY2pfs7sKtEvOKUsTQpvI1QF4QPf9fkGRvvLogtojkUxleao9rKMmO1lbK0O2JHpyTAEDBGWh12vzRsstU8YV
- azp2JXso9caELQQRsQYLVUa39eRzOR060Tzucn4GWvPTPhWdewD7IkSzB21EHyPyxRlWh2SwqtL5ZzKlonq/+XyUs/UUvbbCBl6P/n26Dt51PRL6kd76U16L
- OgwaEtNoijOrKalJdxgfFNZed9tWyeRWC/UwFnIwwvo5t++uaNSjgOF77f4+HP2DwivU+1Nc4Ge7mP+DTHHReA8cX7CwKOAu64tAQnRP10VY63mGitE1MuDK
- Ug7OJrn/4AaDINufittAK/Nf+trKMTrGkeqbX5sAAnDycM1u7p8jqT87DrSbV/Z8Zf5FfqpFxHLQotMFGLL5fdJ58WP6tfKFsQcXJ9gcMDy/s6wUDQH5J93h
- bNinzyLZUbqSYJ9aXSUcxM4a3LY1RATlOkQuHt5o5cAPW9XWxN7PGzh0vEa/eV325orLMRjZaylWOYBQ4S9iEPsRJ8rxmV8/3tXIFQIDJTFCtgUHyvDXWu9A
- FclNahOMPGQ=
+Content-Disposition: inline
+In-Reply-To: <20191212103745.44672-1-philippe.schenker@toradex.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_033407_229699_624E115C 
-X-CRM114-Status: GOOD (  16.47  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191212_034000_989907_2B748E04 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.22 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -76,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,69 +78,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Fabio Estevam <festevam@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Steve Longerbeam <slongerbeam@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+ Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Steve, Philipp,
-
-I'd like one (or both) of you to look over this first.
-
-It looks as if the subdev_notifier field of struct csi_state is never used,
-except by the existing v4l2_async_notifier_unregister() call.
-
-If I am right, then the real issue is that that field should be removed.
-
-Regards,
-
-	Hans
-
-
-On 12/11/19 11:59 AM, Rui Miguel Silva wrote:
-> Hi Chuhong,
-> Thanks for the patch.
+On Thu, Dec 12, 2019 at 10:38:10AM +0000, Philippe Schenker wrote:
+> Some pinmuxings are obviously wrong, originating from a copy/paste
+> error. This patch corrects that with the following strategy:
 > 
-> On Mon, Dec 09, 2019 at 04:58:28PM +0800, Chuhong Yuan wrote:
->> All drivers in imx call v4l2_async_notifier_cleanup() after unregistering
->> the notifier except this driver.
->> This should be a miss and we need to add the call to fix it.
->>
->> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+> - Set all reserved bits to zero
+> - Leave drive strength and slew rate as is
+> - Add sensible pull and hysteresis depending on the function of the pin
+> - Not used pins are muxed to their reset-value defined by the SoC
 > 
-> Reviewed-by: Rui Miguel Silva <rmfrfs@gmail.com>
-> 
-> ------
-> Cheers,
->      Rui
->> ---
->>  drivers/staging/media/imx/imx7-mipi-csis.c | 1 +
->>  1 file changed, 1 insertion(+)
->>
->> diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
->> index 99166afca071..2bfa85bb84e7 100644
->> --- a/drivers/staging/media/imx/imx7-mipi-csis.c
->> +++ b/drivers/staging/media/imx/imx7-mipi-csis.c
->> @@ -1105,6 +1105,7 @@ static int mipi_csis_remove(struct platform_device *pdev)
->>  	mipi_csis_debugfs_exit(state);
->>  	v4l2_async_unregister_subdev(&state->mipi_sd);
->>  	v4l2_async_notifier_unregister(&state->subdev_notifier);
->> +	v4l2_async_notifier_cleanup(&state->subdev_notifier);
->>  
->>  	pm_runtime_disable(&pdev->dev);
->>  	mipi_csis_pm_suspend(&pdev->dev, true);
->> -- 
->> 2.24.0
->>
+> Signed-off-by: Philippe Schenker <philippe.schenker@toradex.com>
 
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
