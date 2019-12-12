@@ -2,86 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF01F11CAE7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 11:33:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5754511CAE6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 11:33:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5HqokoTwi34lDCNTxsOHP5D6JMl3whXXIt52UdsIgzo=; b=DxQjjSwEKE7j9c
-	KvXsg4CWmb2+XlA9fz0J3BpCIcSydKuhjD54N08zFTbzP3i73nXzANP1AWFvUqf2WcpUu1AHk8XxI
-	HvOz0A/w5eQQhjYGMF895e5toXG9RBMh1j5zGJDn3WWdpBJO6El0vvh2FegYTXjEtFjA40U8caH5L
-	b93f30kAUDmWvSB0aCEObgQl+7zpt4Cd7fIXLOCKOkZ2G7z34fBqBer6MEqns8pqajA+lRfJdDRJZ
-	5yg6cFJ5XyTAOcb66CXvmzaU+W8Id78nlVfS+B0uN2dIgzXpsJ4IiNn/81OeXauWaSEvt8ZY+MbKR
-	UDec6nbBL6ZNSJTWo6pA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qfxrVLDDP/+Sd9oGzIA+vlc29a1KrJiUixKmWwC5NC4=; b=go/ZYImvbcmgyj
+	3J6OHmHEaMEA42WBUpxs2E6HmjLKFVFRMoDuaIVIuwN6hVtEm6oUQ/3YSh8NIVuwfCWi52wHlAYPd
+	0/V6Z3qSCvUHlRiWAAwZrTJJTMCRAi9dXbnLXOrPY2xBu59bE8ZcF0ppGrajO28olSuZHsTKjkXEU
+	zNQsWmDOvgCNi4FCI+unabXO7cQ9bceheINoHpAV/Qouj6NPIOjINt12d8fIg8u3ErC+zz4pg1eIV
+	WYqKQRCcBjowrzlWuof8f2osB2ODKRaQR+MckDdHHkXfl7nWgom/Sdc5hX0wpDIYAMOvTUclMHazr
+	oTw8Xc0F+LQLts8lcYxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifLmq-0007oE-Qv; Thu, 12 Dec 2019 10:33:36 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifLm8-0007Id-7q
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 10:32:53 +0000
-Received: by mail-lf1-x143.google.com with SMTP id l18so1316119lfc.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Dec 2019 02:32:51 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=VWL9+V2LMiT9o2FJLi3yEGGm0mbcqGKTZCNZjA3DyVQ=;
- b=JHNgQG4JaflzNKZS6SjnLq+BGIY0xKcrhawJ4qSCLadAe7hUlYSTTM6yg9Y3InFPme
- 65GvyKU8ZgeTTvHCUQpLz3gdVifxv2sx5EB0maUrWRtmXnyQeQ2RzH4e6AwIIFn/Ocv0
- HbafD0hIdo8H/uCHiT0TBp2VElIGTB/axXoF4ZoG9VakftAWgZS11IgoT8MI8CaJ2S5P
- 2tfrszsvlyNzhBe6mtgHXMJKQChMyGr5KV9reluXUNs2LuGTjNveZegBli/WGzmT/qJ3
- sLkdgkiLdb9gNFrmBa8EmK7AzxkqHOHCD9MBb052/a9h6FU3fjQSTfjAoXXWV9ze1b1q
- ZwyQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=VWL9+V2LMiT9o2FJLi3yEGGm0mbcqGKTZCNZjA3DyVQ=;
- b=FNFw51qjHFJCHu0QlFHxMZplXDJSk1yZgGZfhT4VYgLLMlOqpZU36dLxkN98OniLbK
- CXedhdfZHy2ELLeBEFZUuWaIT2TYuki7Hv9oTwXv1WMWzUgxjZdKO0SELaO++sjEgLCO
- q7znWNyFRa2YAXg89/bLct3dPPzRUn555l7Xk5/lUNqipYd/xXRxGtdEWAq8qtZjkMPU
- fzNwiHEXmBW8BKxwy5l9tmtrYYIT5AL0nU4qtWDmi1c5WV+0BwhbOKyEX5xZGxV/2YBz
- vGxTSgQMyspXXNNVu488NDJOfU94q9jqd6GII8meS2B2bAwv5pwoyWxhyGoRs/uG4487
- W4Fw==
-X-Gm-Message-State: APjAAAWDYuBRQK/y1z01nQYj3oVaONbwCdMNLN+4/uZ4pEKdFjfHiZkL
- lZrQD0SP/bCGDqeFjZBk/rObjepGcrn8Kw6KLVD5bQ==
-X-Google-Smtp-Source: APXvYqywDQNwDMe4Gb7wNrl8nlViHTFAYbbKR8mGbYLzjghxmd/DxWHrpL44HVqLtiyMfWxK6a/Gv0MgTOUFix3M9V4=
-X-Received: by 2002:a19:c0b:: with SMTP id 11mr5269617lfm.135.1576146770206;
- Thu, 12 Dec 2019 02:32:50 -0800 (PST)
+	id 1ifLmc-0007bh-JR; Thu, 12 Dec 2019 10:33:22 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifLm5-0007Hs-Or; Thu, 12 Dec 2019 10:32:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 12CCF1045;
+ Thu, 12 Dec 2019 02:32:49 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 37FB03F6CF;
+ Thu, 12 Dec 2019 02:32:47 -0800 (PST)
+Subject: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ in
+ vmcoreinfo
+To: Bhupesh Sharma <bhsharma@redhat.com>, linux-kernel@vger.kernel.org
+References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
+ <1575057559-25496-3-git-send-email-bhsharma@redhat.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <63d6e63c-7218-d2dd-8767-4464be83603f@arm.com>
+Date: Thu, 12 Dec 2019 10:32:46 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <cover.1574871463.git.nishadkamdar@gmail.com>
- <5a7ed2e4b58ba7ff2f0638a2435a3a1e1c62c9f6.1574871463.git.nishadkamdar@gmail.com>
-In-Reply-To: <5a7ed2e4b58ba7ff2f0638a2435a3a1e1c62c9f6.1574871463.git.nishadkamdar@gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 12 Dec 2019 11:32:39 +0100
-Message-ID: <CACRpkdaDaM6wSfeeo6NARC0VibLMWWDDsN2LbLRooih3uGTvog@mail.gmail.com>
-Subject: Re: [PATCH 4/5] pinctrl: sh-pfc: Use the correct style for SPDX
- License Identifier
-To: Nishad Kamdar <nishadkamdar@gmail.com>
+In-Reply-To: <1575057559-25496-3-git-send-email-bhsharma@redhat.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_023252_305234_708B417A 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191212_023250_000428_18D28D4B 
+X-CRM114-Status: GOOD (  24.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,46 +64,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kevin Hilman <khilman@baylibre.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Sean Wang <sean.wang@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Joe Perches <joe@perches.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-doc@vger.kernel.org,
+ Will Deacon <will@kernel.org>, x86@kernel.org, kexec@lists.infradead.org,
+ Kazuhito Hagio <k-hagio@ab.jp.nec.com>, Dave Anderson <anderson@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, bhupesh.linux@gmail.com,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ Steve Capper <steve.capper@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 27, 2019 at 5:46 PM Nishad Kamdar <nishadkamdar@gmail.com> wrote:
+Hi Bhupesh,
 
-> This patch corrects the SPDX License Identifier style in
-> header files related to Reneses Soc pinctrl driver.
-> It assigns explicit block comment for the SPDX License Identifier.
->
-> Changes made by using a script provided by Joe Perches here:
-> https://lkml.org/lkml/2019/2/7/46.
->
-> Suggested-by: Joe Perches <joe@perches.com>
-> Signed-off-by: Nishad Kamdar <nishadkamdar@gmail.com>
+On 29/11/2019 19:59, Bhupesh Sharma wrote:
+> vabits_actual variable on arm64 indicates the actual VA space size,
+> and allows a single binary to support both 48-bit and 52-bit VA
+> spaces.
+> 
+> If the ARMv8.2-LVA optional feature is present, and we are running
+> with a 64KB page size; then it is possible to use 52-bits of address
+> space for both userspace and kernel addresses. However, any kernel
+> binary that supports 52-bit must also be able to fall back to 48-bit
+> at early boot time if the hardware feature is not present.
+> 
+> Since TCR_EL1.T1SZ indicates the size offset of the memory region
+> addressed by TTBR1_EL1 (and hence can be used for determining the
+> vabits_actual value) it makes more sense to export the same in
+> vmcoreinfo rather than vabits_actual variable, as the name of the
+> variable can change in future kernel versions, but the architectural
+> constructs like TCR_EL1.T1SZ can be used better to indicate intended
+> specific fields to user-space.
+> 
+> User-space utilities like makedumpfile and crash-utility, need to
+> read/write this value from/to vmcoreinfo
 
-I leave it to Geert to decide if he wants to pick this up for
-sh-pfc or not.
+(write?)
 
-Yours,
-Linus Walleij
+> for determining if a virtual address lies in the linear map range.
+
+I think this is a fragile example. The debugger shouldn't need to know this.
+
+
+> The user-space computation for determining whether an address lies in
+> the linear map range is the same as we have in kernel-space:
+> 
+>   #define __is_lm_address(addr)	(!(((u64)addr) & BIT(vabits_actual - 1)))
+
+This was changed with 14c127c957c1 ("arm64: mm: Flip kernel VA space"). If user-space
+tools rely on 'knowing' the kernel memory layout, they must have to constantly be fixed
+and updated. This is a poor argument for adding this to something that ends up as ABI.
+
+
+I think a better argument is walking the kernel page tables from the core dump.
+Core code's vmcoreinfo exports the location of the kernel page tables, but in the example
+above you can't walk them without knowing how T1SZ was configured.
+
+On older kernels, user-space that needs this would have to assume the value it computes
+from VA_BITs (also in vmcoreinfo) is the value in use.
+
+
+---%<---
+> I have sent out user-space patches for makedumpfile and crash-utility
+> to add features for obtaining vabits_actual value from TCR_EL1.T1SZ (see
+> [0] and [1]).
+> 
+> Akashi reported that he was able to use this patchset and the user-space
+> changes to get user-space working fine with the 52-bit kernel VA
+> changes (see [2]).
+> 
+> [0]. http://lists.infradead.org/pipermail/kexec/2019-November/023966.html
+> [1]. http://lists.infradead.org/pipermail/kexec/2019-November/024006.html
+> [2]. http://lists.infradead.org/pipermail/kexec/2019-November/023992.html
+---%<---
+
+This probably belongs in the cover letter instead of the commit log.
+
+(From-memory: one of vmcore/kcore is virtually addressed, the other physically. Does this
+fix your poblem in both cases?)
+
+
+> diff --git a/arch/arm64/kernel/crash_core.c b/arch/arm64/kernel/crash_core.c
+> index ca4c3e12d8c5..f78310ba65ea 100644
+> --- a/arch/arm64/kernel/crash_core.c
+> +++ b/arch/arm64/kernel/crash_core.c
+> @@ -7,6 +7,13 @@
+>  #include <linux/crash_core.h>
+>  #include <asm/memory.h>
+
+You need to include asm/sysreg.h for read_sysreg(), and asm/pgtable-hwdef.h for the macros
+you added.
+
+
+> +static inline u64 get_tcr_el1_t1sz(void);
+
+Why do you need to do this?
+
+
+> +static inline u64 get_tcr_el1_t1sz(void)
+> +{
+> +	return (read_sysreg(tcr_el1) & TCR_T1SZ_MASK) >> TCR_T1SZ_OFFSET;
+> +}
+
+(We don't modify this one, and its always the same one very CPU, so this is fine.
+This function is only called once when the stringy vmcoreinfo elf_note is created...)
+
+
+>  void arch_crash_save_vmcoreinfo(void)
+>  {
+>  	VMCOREINFO_NUMBER(VA_BITS);
+> @@ -15,5 +22,7 @@ void arch_crash_save_vmcoreinfo(void)
+>  						kimage_voffset);
+>  	vmcoreinfo_append_str("NUMBER(PHYS_OFFSET)=0x%llx\n",
+>  						PHYS_OFFSET);
+> +	vmcoreinfo_append_str("NUMBER(tcr_el1_t1sz)=0x%llx\n",
+> +						get_tcr_el1_t1sz());
+
+You document the name as being upper-case.
+The two values either values either side are upper-case.
+
+
+>  	vmcoreinfo_append_str("KERNELOFFSET=%lx\n", kaslr_offset());
+>  }
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
