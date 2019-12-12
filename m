@@ -2,64 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2C8011D361
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 18:13:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 225E611D395
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 18:18:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zXt2jWYVPr2BVzKpQDShtcewq/6UdPZ5xwzkhSL/om0=; b=DQU1yqamvjADib
-	5VZxEf++nKUFBL/gh8UJ8wPIeolBzB1uE+5fy04VhI7QQF5iqcCZr81FHfaMtFLSZbdD9HzvmVwiB
-	SRcTbyMZFb8MHUoWxPNAENf+jJJWOEYPGvEn7jx9HqMdLigdyul++kOn6pzA+1NUAJw9sVsSWlBEj
-	47ZIEs2TTRcOXGIJBpOsxA9rMTXdFW6/yLI5Ue3DyEmDqgW1MtMSiiLA5el+GZ3cbqlWp2HNDzNwA
-	vwsRUo+0qPUQwpFyFhY6aiMbcdABZfYkNp2SN34fN0NbV6XXrsYEMivH9eNaFC/KtpyIGXmXpuh/j
-	sgdBO+aeWXeZRfPB0hcA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=yR0lA/48ruDjwzMI2hxqzu3JVTXMqiTImd61fWq131g=; b=ahb
+	CcaK7g+m5/ZMGAQrLYxyqSYXvZUhc47RTk1aw5a2zeBygP8JYryFl4PsI66fRl2GNKdPQnR1jwK2K
+	ofN369Gxjw99C75TI3VlEvoMDEbHL+KAfNuV6wrW3LuU9TTwNJZIiX56+MrxADjqCWT/30HBSXKHS
+	polO7LSLLOqvnHdJ82emeCstM0wCVjg95BKrUA9w9RCx6Pp0gTyn7gB8SpScsOChA0G462iKctxVo
+	z66XaIAZFbZXjXp0BzkdcV2WONAjBx5H2D9TDSDrZnzDpeScJsTR7M7VXP7Wfr8RJSOisoFWVtkiN
+	XJpGP/XrqnXy7IKEPPe58WjMS+D6/kA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifS1a-0006Gp-VM; Thu, 12 Dec 2019 17:13:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ifS69-0008M9-GP; Thu, 12 Dec 2019 17:17:57 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifS1Q-0006En-Vk
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 17:13:07 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C58FA205C9;
- Thu, 12 Dec 2019 17:13:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576170784;
- bh=6WWgXHRmBLyrGztQsiGlzPd1w6CVO+6p+6mHF4MHqF4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=bzcW/B3m1BHg6ciyfd426DSmgDvMp8fyzLITw0NTbNCe3KSyZubOiwt5v1T98oPxv
- 2g65JEnLOk8tI8BrQbUqrbNCtOzFfTxQxh2aSNJu0Ym8fa0hGW3zwIRIFxBY5qZyex
- Vo6oN694WbNvDywipdKFbaSab2bDKSa+yIALT7v0=
-Date: Thu, 12 Dec 2019 17:12:58 +0000
-From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: arm_smccc_smc as generic smc interface?
-Message-ID: <20191212171257.GB16364@willie-the-truck>
-References: <20191209180752.GJ35479@atomide.com>
- <CAHUa44EJAjL+MGqgKd6YvQAg0z4hRYXb9MeTqsTYhAe-RBZt+g@mail.gmail.com>
- <20191210153840.GL35479@atomide.com>
- <20191212142305.GD46910@lakrids.cambridge.arm.com>
- <622404c8-8ca7-11bb-64fe-14d280827cd2@ti.com>
- <20191212155811.GG46910@lakrids.cambridge.arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191212155811.GG46910@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1ifS60-0008Lg-Aw
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 17:17:49 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id x4so2092609vsx.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Dec 2019 09:17:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=CijgkspoW+Zx0cv79pbBAewbwbnWZo70qA6UYTTivFQ=;
+ b=izFt0W2M0YcSKzLsV4yVFMo83/9Bi7CNsmOd7wqhtC0wKO7e9lzCZ4ZJU9K5dBxYe5
+ lUcnFjZMD+4NCbwWuWHtGNfJ8luAdIKT15V/TQ+crseI7sFghWGnnBpA2mZvD5e1FbTc
+ vImLFayb+z1EiX4up0Pgv3teheXmiZRdpPqLeBOsy1ptxDyihONnn95OFiVCpA+XrEff
+ rOK+HoGi149MOqKpEIQ6F39vRKIZk8nzXLUz/p+7N/hFLbLelrTOzX5CQZHL/ff6MI+B
+ UsDLCtNFQH/YULIKvdGZdQKM8b31hk9NypBlJxhY6FZuwGXAv5Htu71pDIYtCxQ+fYI0
+ o6yg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=CijgkspoW+Zx0cv79pbBAewbwbnWZo70qA6UYTTivFQ=;
+ b=bi1DLjsAagDyWvjekEdJhQZnpDdxoi9v2LyWKH5KxshyF19Fusu9YjxbsZfjDHLnzA
+ wc1L2aLauRt0FfZqikvhXvpXx7vLdSUNCWd7h5q/LfnPO/glMbDCnwpAL2lEe8L1Nhj1
+ Hv+uX8xLGj34YMZUL1QCn0lypdjhVxPlAoybOkNgxlkdEIRNt39rSYONUa3pI1PVMGNw
+ l7Fk5h6kkHEFk3BTEQ1XLlRJG8f+pVky6hR09DzsXG3ggrn+VYuimvxf3K16bsEbivFc
+ FwfPpfRCa06WjDO5u3F4/9kZabfw+2yqm9e3OWC6iYt4TYZjlKGogJgVZBjr0h1LSfKm
+ Yfng==
+X-Gm-Message-State: APjAAAUQv5jf5EYvqgimXlZI2JTysLkLd/BuiaRMWlVvhlV9H5HgVV3z
+ WcZDPkzAcodwWyXd1C7K2b0=
+X-Google-Smtp-Source: APXvYqx3GkJFaKMqjZwAqosQgKdhI4zg6EhrtnZZgpPXVoTOZeAnJouyEY519jviMhD/DD+pwccuOA==
+X-Received: by 2002:a67:ae43:: with SMTP id u3mr8212717vsh.44.1576171066958;
+ Thu, 12 Dec 2019 09:17:46 -0800 (PST)
+Received: from fabio-Latitude-E5450.nxp.com ([177.221.114.206])
+ by smtp.gmail.com with ESMTPSA id g140sm4246759vkf.18.2019.12.12.09.17.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 12 Dec 2019 09:17:46 -0800 (PST)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH 1/2] ARM: dts: imx51-babbage: Fix the DVI output description
+Date: Thu, 12 Dec 2019 14:17:03 -0300
+Message-Id: <20191212171704.23604-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_091305_738643_6C860F8A 
-X-CRM114-Status: GOOD (  19.42  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191212_091748_401343_F527EE2B 
+X-CRM114-Status: GOOD (  10.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -69,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,66 +93,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sumit Garg <sumit.garg@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
- Tony Lindgren <tony@atomide.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Volodymyr Babchuk <vlad.babchuk@gmail.com>, "Andrew F. Davis" <afd@ti.com>,
- Olof Johansson <olof@lixom.net>, Russell King <rmk+kernel@armlinux.org.uk>,
- Marc Zyngier <maz@kernel.org>, Andy Gross <andy.gross@linaro.org>,
- Colin Ian King <colin.king@canonical.com>,
- Jens Wiklander <jens.wiklander@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 12, 2019 at 03:58:12PM +0000, Mark Rutland wrote:
-> On Thu, Dec 12, 2019 at 10:23:47AM -0500, Andrew F. Davis wrote:
-> > On 12/12/19 9:23 AM, Mark Rutland wrote:
-> > > On Tue, Dec 10, 2019 at 07:38:40AM -0800, Tony Lindgren wrote:
-> > >> * Jens Wiklander <jens.wiklander@linaro.org> [191210 08:10]:
-> > >>> On Mon, Dec 9, 2019 at 7:07 PM Tony Lindgren <tony@atomide.com> wrote:
-> > >>> In <arm-smccc.h> there's already been made room for some Qualcomm
-> > >>> quirks, perhaps it's possible to use or extend it to cover the TI
-> > >>> cases you have in mind.
-> > >>
-> > >> Yeah that's my thinking too as long as there are no issues using
-> > >> arm_smccc_smc() for non-optee cases.
-> > > 
-> > > I don't think that we wan't to turn the SMCCC code itself into a generic
-> > > SMC interface, and this boils down to how divergent the TI calling
-> > > convention is from SMCCC. What are the differences?
-> > 
-> > There are three levels of differences based on the the type of legacy
-> > SMC call we make, first type omap_smc1():
-> > 
-> >  * r2-r12 are clobbered vs SMCCC only saving r4-r7
-> >  * r12 used as command ID vs SMCCC using r0
-> > 
-> > omap_smc2(), in addition to the above incompatibilities:
-> > 
-> >  * r6 must contain #0xff
-> >  * r12 used as command ID again
-> > 
-> > omap_smc3(), in addition to the above incompatibilities:
-> > 
-> >  * Uses SMC #1 vs #0
-> > 
-> > My personal opinion would be to leave arm_smccc_smc() alone and only
-> > allow SMCCC complaint callers to use it (even QCOM's quark should not
-> > have gone in if the plan was not to allow the same exceptions for
-> > others). 
-> 
-> I agree. Given the above examples, I'd rather have this separated out.
-> While I'd have preferred to not have the QCOM quirk, that's simply
-> something we have to live with now.
+imx51-babbage has a TFP410 chip that receives 24-bit RGB parallel
+input and convert it to DVI.
 
-It's not ABI is it, so we could split that out as well? That said, my
-recollection of the qcom quirk is that they were mostly following the
-SMCCC spec, but just with an extra register to save/restore, which is
-a lot less invasive than the stuff above.
+Fix the device tree description to reflect the real hardware.
 
-Will
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
+---
+ arch/arm/boot/dts/imx51-babbage.dts | 64 ++++++++++++++++++++++-------
+ 1 file changed, 49 insertions(+), 15 deletions(-)
+
+diff --git a/arch/arm/boot/dts/imx51-babbage.dts b/arch/arm/boot/dts/imx51-babbage.dts
+index ed6a3ce874b2..1f05afa7579c 100644
+--- a/arch/arm/boot/dts/imx51-babbage.dts
++++ b/arch/arm/boot/dts/imx51-babbage.dts
+@@ -58,29 +58,27 @@
+ 
+ 	display1: disp1 {
+ 		compatible = "fsl,imx-parallel-display";
++		#address-cells = <1>;
++		#size-cells = <0>;
+ 		interface-pix-fmt = "rgb24";
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&pinctrl_ipu_disp1>;
+-		display-timings {
+-			native-mode = <&timing0>;
+-			timing0: dvi {
+-				clock-frequency = <65000000>;
+-				hactive = <1024>;
+-				vactive = <768>;
+-				hback-porch = <220>;
+-				hfront-porch = <40>;
+-				vback-porch = <21>;
+-				vfront-porch = <7>;
+-				hsync-len = <60>;
+-				vsync-len = <10>;
+-			};
+-		};
+ 
+-		port {
++		port@0 {
++		reg = <0>;
++
+ 			display0_in: endpoint {
+ 				remote-endpoint = <&ipu_di0_disp1>;
+ 			};
+ 		};
++
++		port@1 {
++			reg = <1>;
++
++			parallel_display_out: endpoint {
++				remote-endpoint = <&tfp410_in>;
++			};
++		};
+ 	};
+ 
+ 	display2: disp2 {
+@@ -115,6 +113,31 @@
+ 		};
+ 	};
+ 
++	encoder {
++		compatible = "ti,tfp410";
++
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			port@0 {
++				reg = <0>;
++
++				tfp410_in: endpoint {
++					remote-endpoint = <&parallel_display_out>;
++				};
++			};
++
++			port@1 {
++				reg = <1>;
++
++				tfp410_out: endpoint {
++					remote-endpoint = <&hdmi_connector_in>;
++				};
++			};
++		};
++	};
++
+ 	gpio-keys {
+ 		compatible = "gpio-keys";
+ 		pinctrl-names = "default";
+@@ -128,6 +151,17 @@
+ 		};
+ 	};
+ 
++	hdmi-connector {
++		compatible = "hdmi-connector";
++		type = "a";
++
++		port {
++			hdmi_connector_in: endpoint {
++				remote-endpoint = <&tfp410_out>;
++			};
++		};
++	};
++
+ 	leds {
+ 		compatible = "gpio-leds";
+ 		pinctrl-names = "default";
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
