@@ -2,68 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA5F611CCBD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 13:03:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F1AA11CCB9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 13:02:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JhpF4SKD0v2pC8JaAbviNQt6gFxddbbQaFHdZ2WRExw=; b=QfhCxtRiXdN4uE
-	Rdsej9N59796S3JxARn0ib5XB4Zt2bkNh2NakFnTgg40Xn+13Rj9MCN6DsQVUVKTvfR82AGBhjZdB
-	dx7cy+rXZupZGHK810D15WhtMoEZBQA1qR1JU6kPQgttnpJrNSHhJ8cNQXBP6mf9nvJlyUAVuverd
-	MNjCO4sYqS6Qoa9Y5aoGZyGPVV9Ec1ZvDWlsPMzny5clzo1DFAoCGn+Qbf5OFXDYpxO5WMMekiL4s
-	IHKfM9JShFqFJMpE3F4AdHuoLVtsWGzQL7wYhiSqr0ngOICxv/xnboVfLeN5xesp5uFvoMfKpJJX3
-	iSBOGQmjAe2X2rHz/Q6Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OsMLOBvOutxaJt9J9ThKlzyJG8KxEbpyVSuPs4ND6p8=; b=lvX+ge1SZdehm7
+	RJYxQiC0URhZZLCFoQAltBQeBybo3V9jSIwpixymlMDK4aYvlGvfij7UE7rrAw3xBPJMx+oXSk5vI
+	y0y+zbl6329m6qQ/nKOKe/FfyAJXTsT2aV6GWyN0CpbJdv4AV6556W9pvCUaPYgBATwrC9ybRSxBM
+	wks2KfdfQlG61YampwNdYy/QvW95OTnp6W5P5u9mtwUj0AfDpgCE9YkP7vHatMOQeKfB2KGRyQ5b8
+	uxAzPnEn415OU8zVdaGksV1xF0n/zTMsGdQaGPuqdq3sdQ2+uHkwIHk5/0/Mk64ywOv1f74w52Pf7
+	7YRkcpBmZwljQM5JzgKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifNC8-00081K-Fs; Thu, 12 Dec 2019 12:03:48 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ifNAn-0007do-O5; Thu, 12 Dec 2019 12:02:25 +0000
+Received: from lb3-smtp-cloud9.xs4all.net ([194.109.24.30])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifNC0-00080q-7L; Thu, 12 Dec 2019 12:03:41 +0000
-X-UUID: 4a131ac01ba64247965b64a0542ea646-20191212
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=dail/LG0z8iZJ8tcfeMMz3hG5C4dKVGEMXa8efdIfeQ=; 
- b=emk0ikDnYR7OqJjnq1YxTC2ab8l1nyERP0vDM0f+6r1P2Qm//c7I37Oa653wunvnnKYSV3nZYveEnEyKzVf/88ivN75i9WNtdjbHzbpRM/4kH2Q3hxZxRU093UfuWm89KY4Y6L56MXdcNNx0COrQOuRlvhIQIHsNiYfOYhWoT1I=;
-X-UUID: 4a131ac01ba64247965b64a0542ea646-20191212
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 638340871; Thu, 12 Dec 2019 04:03:36 -0800
-Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Dec 2019 04:00:00 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Dec 2019 19:58:51 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Thu, 12 Dec 2019 19:58:45 +0800
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>, Thomas Gleixner
- <tglx@linutronix.de>, Alexander Potapenko <glider@google.com>, Josh Poimboeuf
- <jpoimboe@redhat.com>
-Subject: [PATCH v2] lib/stackdepot: Fix global out-of-bounds in stackdepot
-Date: Thu, 12 Dec 2019 19:58:48 +0800
-Message-ID: <20191212115848.21687-1-walter-zh.wu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1ifNAc-0007d5-Pp; Thu, 12 Dec 2019 12:02:16 +0000
+Received: from [IPv6:2001:983:e9a7:1:1c4a:480a:7ba1:9c65]
+ ([IPv6:2001:983:e9a7:1:1c4a:480a:7ba1:9c65])
+ by smtp-cloud9.xs4all.net with ESMTPA
+ id fNAYiZIm6GyJwfNAZiy0h9; Thu, 12 Dec 2019 13:02:12 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
+ t=1576152132; bh=grA3mrY/IXTuR/bHnsfsFfTSA8BCPNcViLc0fRgFSEg=;
+ h=Subject:From:To:Message-ID:Date:MIME-Version:Content-Type:From:
+ Subject;
+ b=nzEPxu/XiAq6xqJTEPtu2DMyFeL+3oKzznjfS8x4FT/5JQvyJe0A1cdg52/aYtQje
+ Q28MS1eZ97eJ2uG0m5TG7zFtGiD5VwDcEzvhRbV19ST4l0c8kRotbI94BHivZy8UBY
+ Y7yWuKKaX0PsLD4qBdn5bfYJNC4WJXSXFOsSios8DGvU7P8nfX/fgwQMyEPT0fSg1P
+ PvsgHSBA/JZe4yikXFhnQ+cJPgCsD6PcsqpH3kJ74VOTxg7d1gcbH4qUudjqoKmSaV
+ 4jCvItG9+5UaRbH0H38fvOK6XOqSvcheujlc2B51AZBo6LD0NVxVagx2ujgm0i+6ls
+ CONsICQSvGD0Q==
+Subject: Re: [PATCH v11 00/11] Rockchip ISP Driver
+From: Hans Verkuil <hverkuil@xs4all.nl>
+To: Ezequiel Garcia <ezequiel@collabora.com>,
+ Helen Koike <helen.koike@collabora.com>, linux-rockchip@lists.infradead.org
+References: <20191114051242.14651-1-helen.koike@collabora.com>
+ <996a9b6a-0e45-d627-9263-539c22e5f1c0@xs4all.nl>
+ <7fd4bf99fd6316da8acaf0a27b6845bedbf4b25f.camel@collabora.com>
+ <eafffc6f-061e-65ab-079b-b2bd613d61cb@xs4all.nl>
+Message-ID: <20f99f0e-dfec-f6c0-eeb3-7561018f32e9@xs4all.nl>
+Date: Thu, 12 Dec 2019 13:02:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <eafffc6f-061e-65ab-079b-b2bd613d61cb@xs4all.nl>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfMDfu7petJydGdzuJyylr5ZiNog40vMypqvfQw7ZVz48j+cgXHx/cTeFqN1/hiF8DSXEOpCJ20WY7E5a94cB1D2PZi7ML8XhkxMVMy0iR4SJQ4vKxJKi
+ ftB/XN39JhQEUYBc8BqlxhyoQuxxXMDZIwBgwdBCeW1iR27+uOELF8KpcwgxwC3YpRMZCXHyBUlXOlsmilsvxlZ+tUPadvpHrZMXa0fbpTJN1NQ3Gfhb4C8g
+ Ey9971QU/1aNWS6qs55K9REyFymqQcD+MCjep1VvsImgMFileSAM1UvR1WvQ0UQSwCKiuv/5JpKWQyObfLI9YHJqOnlCMVkwado7cwy3VaqW7/tZ/kWL+bN4
+ vD42oWtQwV4mxkcNc1FkEdzle+uDb0YzHHrsz0otltr7IWNTGAI1Hst8Gozocr63Czju4gGbtp7oIDByGPBe83x2ZgI09gn/gc28vBtdfs/oaoBnHS6cnaEC
+ E7+SsuD1fZi95WxWXfUtazbaT6MH5cDsJU9m3cEylYYAQqSlrUF5zYkDcsdo4TCXAM84dpoB344aucpHrv7M9QvnpsLqzVUZISK7wYM1Lo9Hb8MDDXlmwL4r
+ xIi7vcXizDuJhzNTp5BfrFPDWCXJs8SR1jKhutFfQ2+XMd1OCUg9k17FyR+3gLw1z+uCGGqbDD9pyEWcqul0IBR0PWOrbFOLrI01v1XO+DyZ9ZoXMrCZM3/D
+ kT+0Y0OCCd5k4pu6X7fCGA81kV5oK8daXF0zIbPFhTfhBc/37ACc7L2orLrRPLcVsdB+ZOHB9LiaHg0OCH78xdxF8K2JtKLfQaIQqCP5SQxxPi8Nh8TIZCrm
+ 2GA9v6FZ5YAaldkVTokUB1wwSMdC+8vMdIYnb18vTMQmRcwMomQoHjPl+lZXwGI7bj0CGM1R/OUDogkUdk3xRQJIAaTy+HUtshdELy+I7KHCWAxUjSv5gf3f
+ tanncCiL1byhYkycQwgkjxEWtnc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_040340_270414_271B9A52 
-X-CRM114-Status: GOOD (  10.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191212_040215_006354_48F8BEAB 
+X-CRM114-Status: GOOD (  15.22  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.30 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -71,8 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,61 +90,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Walter Wu <walter-zh.wu@mediatek.com>, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- wsd_upstream <wsd_upstream@mediatek.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
+ kernel@collabora.com, heiko@sntech.de, gregkh@linuxfoundation.org,
+ jeffy.chen@rock-chips.com, zyc@rock-chips.com, jacob-chen@iotwrt.com,
+ tfiga@chromium.org, robh+dt@kernel.org, laurent.pinchart@ideasonboard.com,
+ sakari.ailus@linux.intel.com, mchehab@kernel.org, zhengsq@rock-chips.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If the depot_index = STACK_ALLOC_MAX_SLABS - 2 and next_slab_inited = 0,
-then it will cause array out-of-bounds access, so that we should modify
-the detection to avoid this array out-of-bounds bug.
+Hi Helen, Ezequiel,
 
-Assume depot_index = STACK_ALLOC_MAX_SLABS - 3
-Consider following call flow sequence:
+The merge window is open, so you want to get this in, then please post a v12
+with the few remaining items addressed so that I can merge it.
 
-stack_depot_save()
-   depot_alloc_stack()
-      if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) //pass
-      depot_index++  //depot_index = STACK_ALLOC_MAX_SLABS - 2
-      if (depot_index + 1 < STACK_ALLOC_MAX_SLABS) //enter
-         smp_store_release(&next_slab_inited, 0); //next_slab_inited = 0
-      init_stack_slab()
-	     if (stack_slabs[depot_index] == NULL) //enter
+Regards,
 
-stack_depot_save()
-   depot_alloc_stack()
-      if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) //pass
-      depot_index++  //depot_index = STACK_ALLOC_MAX_SLABS - 1
-      init_stack_slab(&prealloc)
-         stack_slabs[depot_index + 1]  //here get global out-of-bounds
+	Hans
 
-Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
----
-changes in v2:
-modify call flow sequence and preconditon
+On 11/19/19 9:30 AM, Hans Verkuil wrote:
+> On 11/18/19 7:52 PM, Ezequiel Garcia wrote:
+>> Hi Hans,
+>>
+>> Thanks for taking care of this.
+>>
+>> On Thu, 2019-11-14 at 09:42 +0100, Hans Verkuil wrote:
+>>> On 11/14/19 6:12 AM, Helen Koike wrote:
+>>>> Hello,
+>>>>
+>>>> This series adds the Rockchip Image Signal Processing Unit v1 driver to
+>>>> staging.
+>>>>
+>>>> The main reason to be in staging is that people are already using it from the
+>>>> mailing list (including libcamera), and having it in mainline makes the workflow
+>>>> easier. Also, it is easier for other people to contribute back (with code
+>>>> or testing the driver).
+>>>>
+>>>> We plan to actively work on this driver to get it our of staging.
+>>>>
+>>>> This patchset is also available at:
+>>>> https://gitlab.collabora.com/koike/linux/tree/rockchip/isp/v11
+>>>>
+>>>> Libcamera patched to work with this version:
+>>>> https://gitlab.collabora.com/koike/libcamera
+>>>> (also sent to the mailing list)
+>>>>
+>>>> The major difference in v11 are:
+>>>> - Fixed compiling warnings found with W=1
+>>>> - Fixed checkpatch errors
+>>>> - Add clock-names values in dt-bindings
+>>>
+>>> Looking at checkpatch I see a few remaining issues that I believe should be
+>>> fixed before merging this:
+>>>
+>>> CHECK: spinlock_t definition without comment
+>>> #575: FILE: drivers/staging/media/rkisp1/isp_stats.h:43:
+>>> +       spinlock_t irq_lock;
+>>>
+>>> CHECK: struct mutex definition without comment
+>>> #581: FILE: drivers/staging/media/rkisp1/isp_stats.h:49:
+>>> +       struct mutex wq_lock;
+>>>
+>>> CHECK: spinlock_t definition without comment
+>>> #1648: FILE: drivers/staging/media/rkisp1/isp_params.h:25:
+>>> +       spinlock_t config_lock;
+>>>
+>>> CHECK: spinlock_t definition without comment
+>>> #2058: FILE: drivers/staging/media/rkisp1/capture.h:145:
+>>> +       spinlock_t vbq_lock;
+>>>
+>>
+>> I'd rather merge this as-is, adding a TODO entry stating
+>> we need to revisit locking specifically, because I'd like
+>> to take a close look at these spinlocks/mutex,
+>> instead of just addding comments for then.
+> 
+> Fair enough! Just as long as it is mentioned somewhere.
+> 
+>>
+>>> Once this is done together with the Jacob Chen email clarification
+>>> it is ready to be merged for v5.6.
+>>>
+>>
+>> I'll find out more about this.
+> 
+> Thanks!
+> 
+> Remember that we are in the code freeze until v5.5-rc1 is released,
+> so you have time to make more adjustments if you want to.
+> 
+> Regards,
+> 
+> 	Hans
+> 
+>>
+>>> It passes all the sparse/smatch tests, so that's very good.
+>>>
+>>
+>> Great!
+>>
+>> Thanks,
+>> Ezequiel
+>>
+> 
 
----
- lib/stackdepot.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/lib/stackdepot.c b/lib/stackdepot.c
-index ed717dd08ff3..7e8a15e41600 100644
---- a/lib/stackdepot.c
-+++ b/lib/stackdepot.c
-@@ -106,7 +106,7 @@ static struct stack_record *depot_alloc_stack(unsigned long *entries, int size,
- 	required_size = ALIGN(required_size, 1 << STACK_ALLOC_ALIGN);
- 
- 	if (unlikely(depot_offset + required_size > STACK_ALLOC_SIZE)) {
--		if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) {
-+		if (unlikely(depot_index + 2 >= STACK_ALLOC_MAX_SLABS)) {
- 			WARN_ONCE(1, "Stack depot reached limit capacity");
- 			return NULL;
- 		}
--- 
-2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
