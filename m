@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AF1B11CEE4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:56:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CD2611CEEE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:56:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yILVzy4fJTg5cyyjT1k7ExXqEj5LkdKHKgZiKPpf3z4=; b=jq70DfvanlQH5G
-	gq8wgsMR7GXOXsNgW44W1F2dKGqgb4u/JAOqHM3SEOg+3noRY50lRS2/iOfdZ1UgiY7FYu+BB1r35
-	R0kT4QcWsbVL5qLc9ecNEU7/Nsk7oJg0P4AZ2W1EeVYOL8gQMDNBQdKJ+OSFGxGVY/+/v7BU89MPV
-	7DMZgXa1A2PHy3N0sOdf0+bhkM+iS8nHM5bxqIoSWNLX77d1aNcI2iL2IygWHKW+tEU68VqlTyCIV
-	1w1MDzAao/oVdGK3JxH7EfvfRVGs9W6EM/M5wolMV2XL1PNEbHhCBeoqTFc0bjMQBhCnvYt0lfz4G
-	T9nuFIXTucC1/yMUcSnQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xBvzxE5t2A83LjGoHWzz23v3KlXKFQaiawmZ7epr1vA=; b=WvULQn7E/06IAj
+	jMaWmJdr6m0VFev8vpXLLALYI1hG1GhKxg7iXhdAUk6uylMntER6c77lqQbCDToZrMeqX7iI06m5F
+	P37TNc6rG0U3CJh+Lk7wR7e43qKx/FZxlsc4UiDpJ52csk2+/3wRoDESkK0apZUz8EGJA5W9slVGH
+	setY9Qb73i/1Cl0tWE3x2XFzmnoteqCDq7cnub8H84xSxD3wAShLpHonrWQatCx0ruRHUE1AMLUwH
+	N/YEjoS+PK0g31L1QOZuXOhFqMVSO4G79dkK1Cjx4OzmriJoBxiEGOkjEMkNm78QUOeCCYyqDkfyr
+	Q97E5pUX/p0PscO/2q1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifOwl-0004Ke-Mt; Thu, 12 Dec 2019 13:56:03 +0000
+	id 1ifOx8-0004Xp-AF; Thu, 12 Dec 2019 13:56:26 +0000
 Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifOwY-0004JL-01; Thu, 12 Dec 2019 13:55:51 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBCDti1m130359;
- Thu, 12 Dec 2019 07:55:44 -0600
+ id 1ifOwZ-0004K4-3L; Thu, 12 Dec 2019 13:55:52 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBCDtmCj130390;
+ Thu, 12 Dec 2019 07:55:48 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576158944;
- bh=0iLDWJMQzCj3Znd8rcYL8KQNQ37u7msZ1UlTKw8z0pc=;
- h=From:To:CC:Subject:Date;
- b=AdH+nTjOUFattoYbz5vKh2MjG+4yqS1zif/iNhB21H+DZbRiO20JjhhW8xOvy3Y04
- wn+MTpkS88eSIfWD0CaxGGtvldkKfB3oAJL2hhXZdyf1cRvxBy1Nkywn/ozs+9epDi
- AkZ22nws08ke9QXgRFRV//PMXcYwY/441UCJJz9I=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBCDtiJX044250
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 12 Dec 2019 07:55:44 -0600
-Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ s=ti-com-17Q1; t=1576158948;
+ bh=3gLGICxAzTQwTc/DkihTZhEXH6qumJS8Bb6FHHUYzCY=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=ZqyfX6ql8GX4aJtV6oPEPl3Z5XmrYLPR/tKcuub+H+f5XcD2+sZbfxPHww3j1HtAk
+ UROBweX/WDXlNJKJoN8bU5Z4BCYDe4KZ9OrtdyGsse4nIIYOLRKNhAnGBjkpdIA3Nv
+ D1UWa6yx/NB7bmQPQT3EbftiiJt8c1PA2SU/k1RY=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBCDtmVE116297;
+ Thu, 12 Dec 2019 07:55:48 -0600
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 12
- Dec 2019 07:55:44 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 07:55:47 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 12 Dec 2019 07:55:43 -0600
+ Frontend Transport; Thu, 12 Dec 2019 07:55:47 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBCDtdqQ048444;
- Thu, 12 Dec 2019 07:55:40 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBCDtdqR048444;
+ Thu, 12 Dec 2019 07:55:44 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <broonie@kernel.org>, <nsaenzjulienne@suse.de>, <f.fainelli@gmail.com>,
  <rjui@broadcom.com>, <sbranden@broadcom.com>, <shawnguo@kernel.org>,
  <s.hauer@pengutronix.de>, <baohua@kernel.org>,
  <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-Subject: [PATCH 0/9] spi: Use dma_request_chan() instead
+Subject: [PATCH 1/9] spi: atmel: Use dma_request_chan() instead
  dma_request_slave_channel()
-Date: Thu, 12 Dec 2019 15:55:41 +0200
-Message-ID: <20191212135550.4634-1-peter.ujfalusi@ti.com>
+Date: Thu, 12 Dec 2019 15:55:42 +0200
+Message-ID: <20191212135550.4634-2-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191212135550.4634-1-peter.ujfalusi@ti.com>
+References: <20191212135550.4634-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_055550_143938_7091658E 
-X-CRM114-Status: UNSURE (   7.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191212_055551_218952_F4CCDA09 
+X-CRM114-Status: GOOD (  14.01  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -99,44 +99,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
 dma_request_slave_channel() is a wrapper on top of dma_request_chan()
 eating up the error code.
 
-With dma_request_chan() drivers can receive the real error code and can support
-deferred probing against DMA.
+By using dma_request_chan() directly the driver can support deferred
+probing against DMA.
 
-The series has been compile tested only (allyesconfig).
-
-Regards,
-Peter
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
-Peter Ujfalusi (9):
-  spi: atmel: Use dma_request_chan() instead dma_request_slave_channel()
-  spi: bcm2835: Release the DMA channel if probe fails after dma_init
-  spi: bcm2835: Use dma_request_chan() instead
-    dma_request_slave_channel()
-  spi: img-spfi: Use dma_request_chan() instead
-    dma_request_slave_channel()
-  spi: mxs: Use dma_request_chan() instead dma_request_slave_channel()
-  spi: sirf: Use dma_request_chan() instead dma_request_slave_channel()
-  spi: spi-fsl-dspi: Use dma_request_chan() instead
-    dma_request_slave_channel()
-  spi: stm32-qspi: Use dma_request_chan() instead
-    dma_request_slave_channel()
-  spi: stm32: Use dma_request_chan() instead dma_request_slave_channel()
+ drivers/spi/spi-atmel.c | 29 +++++++++++------------------
+ 1 file changed, 11 insertions(+), 18 deletions(-)
 
- drivers/spi/spi-atmel.c      | 29 ++++++++++----------------
- drivers/spi/spi-bcm2835.c    | 40 +++++++++++++++++++++++++-----------
- drivers/spi/spi-fsl-dspi.c   | 12 +++++------
- drivers/spi/spi-img-spfi.c   | 18 ++++++++++++++--
- drivers/spi/spi-mxs.c        |  6 +++---
- drivers/spi/spi-sirf.c       | 12 +++++------
- drivers/spi/spi-stm32-qspi.c | 30 +++++++++++++++++++++------
- drivers/spi/spi-stm32.c      | 32 ++++++++++++++++++++---------
- 8 files changed, 116 insertions(+), 63 deletions(-)
-
+diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
+index 56f0ca361deb..013458cabe3c 100644
+--- a/drivers/spi/spi-atmel.c
++++ b/drivers/spi/spi-atmel.c
+@@ -514,26 +514,19 @@ static int atmel_spi_configure_dma(struct spi_master *master,
+ 	master->dma_tx = dma_request_chan(dev, "tx");
+ 	if (IS_ERR(master->dma_tx)) {
+ 		err = PTR_ERR(master->dma_tx);
+-		if (err == -EPROBE_DEFER) {
+-			dev_warn(dev, "no DMA channel available at the moment\n");
+-			goto error_clear;
+-		}
+-		dev_err(dev,
+-			"DMA TX channel not available, SPI unable to use DMA\n");
+-		err = -EBUSY;
++		if (err != -EPROBE_DEFER)
++			dev_err(dev, "No TX DMA channel, DMA is disabled\n");
+ 		goto error_clear;
+ 	}
+ 
+-	/*
+-	 * No reason to check EPROBE_DEFER here since we have already requested
+-	 * tx channel. If it fails here, it's for another reason.
+-	 */
+-	master->dma_rx = dma_request_slave_channel(dev, "rx");
+-
+-	if (!master->dma_rx) {
+-		dev_err(dev,
+-			"DMA RX channel not available, SPI unable to use DMA\n");
+-		err = -EBUSY;
++	master->dma_rx = dma_request_chan(dev, "rx");
++	if (IS_ERR(master->dma_rx)) {
++		err = PTR_ERR(master->dma_rx);
++		/*
++		 * No reason to check EPROBE_DEFER here since we have already
++		 * requested tx channel.
++		 */
++		dev_err(dev, "No RX DMA channel, DMA is disabled\n");
+ 		goto error;
+ 	}
+ 
+@@ -548,7 +541,7 @@ static int atmel_spi_configure_dma(struct spi_master *master,
+ 
+ 	return 0;
+ error:
+-	if (master->dma_rx)
++	if (!IS_ERR(master->dma_rx))
+ 		dma_release_channel(master->dma_rx);
+ 	if (!IS_ERR(master->dma_tx))
+ 		dma_release_channel(master->dma_tx);
 -- 
 Peter
 
