@@ -2,51 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A120D11D9C8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 00:08:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D24D911D9CC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 00:13:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UkAvRJgPPxQcYoi7//QF/XZwb0ILNuX+Y6b90lhgzyA=; b=gG5x2MkqFVXe+8
-	bvlqIADl49Td8yr4RofAV9aF2pnokPywkUov0qrPjbtToKcodv6jq/OUqKZeZQhskT8jx+V5kp4Qj
-	sBBn5LTGoZf264uTjXcjT3PFo3klGCHPJIMV0jaQrvtrZ+UQEPPI91bOwdf/8xMbd+aaPpjRO/AJ9
-	hxp7VWuN+Hg3qvgOfC7yCMS7g4lOsnGL9U+G5NkexjoHQpdRsCEJvqvmA0McyYBFsXixddBL/LvyV
-	DBO7Bx2kIWkKwZ1X5doZKN/oOBv7DHLV821/Vmbbug05boExnN1rar2j8y11SfnuIGD4UuAwkOfuD
-	Fy1Df2w70QNiH4t2tzmA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FUf5MOUQbSrmupjyaSmd10Jdzj+aCdNfmYWI7n5u0i4=; b=XA2
+	uLwULzLgS3lsoJv15wclwdeBhDZInBKb0meBbQSdUpfw+yI1ZO4eYLKCf66i3awD+Pi21GGn0WB49
+	qbMDA1kjvs17z0bTHqmSUCgpBXr0sNjfEAnXrxrubF+LnS/brgl6aKDLAeo3fyU6DQh5qD0Cl3IUC
+	ntrqlZ5vFr/+JjWobE9fQJbO587JzS+VsQ/oUXUj+d0fyvpPydeTmwxMZD+tqu5eugFryQF5NvaU+
+	9TYJsEoyg80EugVOtCdsegLopUGHIsWVe50wXUXq8BMZAa5fAFzCURdvs5dkVnQkSDiXziqOSO2tK
+	jBXNZW+S/GAU9PHh+ThVHnsajXoTddw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifXZU-0004Ry-0x; Thu, 12 Dec 2019 23:08:36 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1ifXdm-0006Bz-3e; Thu, 12 Dec 2019 23:13:02 +0000
+Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifXZJ-0004R5-Ih
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 23:08:27 +0000
-X-Originating-IP: 195.39.63.77
-Received: from localhost (unknown [195.39.63.77])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id A5B79C0009;
- Thu, 12 Dec 2019 23:08:16 +0000 (UTC)
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: [PATCH] ARM: dts: imx6q-dhcom: fix rtc compatible
-Date: Fri, 13 Dec 2019 00:08:14 +0100
-Message-Id: <20191212230814.66663-1-alexandre.belloni@bootlin.com>
-X-Mailer: git-send-email 2.23.0
-MIME-Version: 1.0
+ id 1ifXdd-0006BQ-CU; Thu, 12 Dec 2019 23:12:54 +0000
+Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
+ [10.75.242.48])
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 1801D30C047;
+ Thu, 12 Dec 2019 15:08:10 -0800 (PST)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 1801D30C047
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
+ s=dkimrelay; t=1576192090;
+ bh=GUHozoaDgbqjfROjXkEJw092rtDS8++6YoSJnSbvtOs=;
+ h=From:To:Cc:Subject:Date:From;
+ b=TJm/Ng73wQ9MRMHSQu23Rs6/CAol/PxhHn5hDL8FSzsi1yUrQ1ZWsQx8DAQKxH5H2
+ hBcjJuA6zXvysnTtThtBA3iGZkLigoAS3Lx+LNkZTmtlzVySXXaiQ3fbq4bBIKW0OT
+ 8Vk3JDA/NF5tR/StYpnvUvkOw/YmzBcqWOFzVoJ0=
+Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
+ [10.28.16.211])
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id E6F7C140069;
+ Thu, 12 Dec 2019 15:12:43 -0800 (PST)
+From: Jim Quinlan <james.quinlan@broadcom.com>
+To: linux-spi@vger.kernel.org
+Subject: [PATCH] spi: bcm2835: don't print error on clk_get() DEFER
+Date: Thu, 12 Dec 2019 18:12:13 -0500
+Message-Id: <20191212231213.29061-1-jquinlan@broadcom.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_150825_753376_B7DB5B33 
-X-CRM114-Status: GOOD (  10.70  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191212_151253_445355_E967525C 
+X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.19.229.170 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,39 +76,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- Ludwig Zenz <lzenz@dh-electronics.com>
+Cc: linux-arm-kernel@lists.infradead.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Scott Branden <scott.branden@broadcom.com>, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Jim Quinlan <james.quinlan@broadcom.com>,
+ Ray Jui <ray.jui@broadcom.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The only correct and documented compatible string for the rv3029 is
-microcrystal,rv3029. Fix it up.
+Otherwise one may get multiple error messages for normal
+operation of a clock provider.
 
-Fixes: 52c7a088badd ("ARM: dts: imx6q: Add support for the DHCOM iMX6 SoM and PDK2")
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
 ---
- arch/arm/boot/dts/imx6q-dhcom-som.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/spi/spi-bcm2835.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/imx6q-dhcom-som.dtsi b/arch/arm/boot/dts/imx6q-dhcom-som.dtsi
-index 845cfad99bf9..87f0aa897086 100644
---- a/arch/arm/boot/dts/imx6q-dhcom-som.dtsi
-+++ b/arch/arm/boot/dts/imx6q-dhcom-som.dtsi
-@@ -204,7 +204,7 @@
- 	};
+diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
+index fb61a620effc..6c9addc9f276 100644
+--- a/drivers/spi/spi-bcm2835.c
++++ b/drivers/spi/spi-bcm2835.c
+@@ -1305,7 +1305,8 @@ static int bcm2835_spi_probe(struct platform_device *pdev)
+ 	bs->clk = devm_clk_get(&pdev->dev, NULL);
+ 	if (IS_ERR(bs->clk)) {
+ 		err = PTR_ERR(bs->clk);
+-		dev_err(&pdev->dev, "could not get clk: %d\n", err);
++		if (err != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "could not get clk: %d\n", err);
+ 		goto out_controller_put;
+ 	}
  
- 	rtc@56 {
--		compatible = "rv3029c2";
-+		compatible = "microcrystal,rv3029";
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&pinctrl_rtc_hw300>;
- 		reg = <0x56>;
 -- 
-2.23.0
+2.17.1
 
 
 _______________________________________________
