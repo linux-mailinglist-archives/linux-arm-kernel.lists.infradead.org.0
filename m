@@ -2,39 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B10A911D3E9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 18:29:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53A3B11D3EF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 18:29:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=6QD/EC7cnY69wvOWUEtJOZo8vI/MYTZwfujfZDUs4F8=; b=kghbLRmeVacxoA
-	LePvlRHmIQhyLtCZhK0T67SXwl9AAzsbixBRzEn9QV9SpyIo4RuhQFRlXsVHYZWyp1+zeiPagyWoc
-	a0Nea6rVoaLDUr9dI7bNuzd7gsNLaBcH4+mM3ZCE6OAKsljwVolF7DvPeOL2EdLGfQSKCYVzJHgzd
-	ucbkpX/uzWiutuWn0TvoHS1EVuUHjAfgRV7k0IFISg04fXX1cmr06EEDKxjGCiniD1lY70MMgx7Pl
-	G81Yhf/swh75T5r4CGsFkOEFJ30TwgJljtSP0Z7o6G9KGpk/HFBPhMMqdfV9zrZPLwllq4/uLR5Lh
-	Fusf67Q6NJ5P0OR4cYaw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UTGXYn2hkVwWfPLiTfVPc1uatkHWqfiheU2kvvAl9Wk=; b=SHG1K3wZTCZfPq
+	Qa4HV5W6UUp7vxBsyYkz31MCv4y70bgwbY29SVnggfq5yKmLJR5lKxelP+LidvJPyQ0r8E8+UatyS
+	P9brUlKf9eKKMmbhwfmxbpjQQMDmR9sKlSAPO6UOGrXrGpdR+d8r/XMSvWB23XUubE2WCesnxMwUo
+	KtMUUQIZM/IpLpfo7GqnU2dpa7zqidTQyClshabDhgWo5aAMnNd052RCIl0ws0yrt3ql0ENsqNziI
+	zs7ILu/MC7bizoCP2xgNYSHQX5qZwm7bkfryUjEREqsG1AJtHB25MC58+meDuvSlXFjDdXnU+mz7F
+	OFiqzM1OXQMQZqTcBvdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifSGp-0005DB-SL; Thu, 12 Dec 2019 17:28:59 +0000
+	id 1ifSHa-0005pc-Qa; Thu, 12 Dec 2019 17:29:46 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifSGe-00059t-KI
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 17:28:50 +0000
+ id 1ifSGe-0005A1-Lt
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 17:28:51 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1ifSGU-00069s-N1; Thu, 12 Dec 2019 18:28:38 +0100
+ id 1ifSGV-00069s-HK; Thu, 12 Dec 2019 18:28:39 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [GIT PULL] KVM/arm updates for 5.5-rc2
-Date: Thu, 12 Dec 2019 17:28:16 +0000
-Message-Id: <20191212172824.11523-1-maz@kernel.org>
+Subject: [PATCH 1/8] KVM: arm/arm64: Get rid of unused arg in
+ cpu_init_hyp_mode()
+Date: Thu, 12 Dec 2019 17:28:17 +0000
+Message-Id: <20191212172824.11523-2-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191212172824.11523-1-maz@kernel.org>
+References: <20191212172824.11523-1-maz@kernel.org>
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 62.31.163.78
 X-SA-Exim-Rcpt-To: pbonzini@redhat.com, rkrcmar@redhat.com,
@@ -48,8 +51,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_092848_811027_DA107787 
-X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-CacheID: sfid-20191212_092848_855090_75845A8D 
+X-CRM114-Status: UNSURE (   8.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -84,62 +87,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Paolo, Radim,
+From: Miaohe Lin <linmiaohe@huawei.com>
 
-This is the first set of fixes for 5.5-rc2. This time around,
-a couple of MM fixes, a ONE_REG fix for an issue detected by
-GCC-10, and a handful of cleanups.
+As arg dummy is not really needed, there's no need to pass
+NULL when calling cpu_init_hyp_mode(). So clean it up.
 
-Please pull,
+Fixes: 67f691976662 ("arm64: kvm: allows kvm cpu hotplug")
+Reviewed-by: Steven Price <steven.price@arm.com>
+Signed-off-by: Miaohe Lin <linmiaohe@huawei.com>
+Signed-off-by: Marc Zyngier <maz@kernel.org>
+Link: https://lore.kernel.org/r/1574320559-5662-1-git-send-email-linmiaohe@huawei.com
+---
+ virt/kvm/arm/arm.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-	M.
+diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+index 12e0280291ce..8de4daf25097 100644
+--- a/virt/kvm/arm/arm.c
++++ b/virt/kvm/arm/arm.c
+@@ -1352,7 +1352,7 @@ long kvm_arch_vm_ioctl(struct file *filp,
+ 	}
+ }
+ 
+-static void cpu_init_hyp_mode(void *dummy)
++static void cpu_init_hyp_mode(void)
+ {
+ 	phys_addr_t pgd_ptr;
+ 	unsigned long hyp_stack_ptr;
+@@ -1386,7 +1386,7 @@ static void cpu_hyp_reinit(void)
+ 	if (is_kernel_in_hyp_mode())
+ 		kvm_timer_init_vhe();
+ 	else
+-		cpu_init_hyp_mode(NULL);
++		cpu_init_hyp_mode();
+ 
+ 	kvm_arm_init_debug();
+ 
+-- 
+2.20.1
 
-The following changes since commit cd7056ae34af0e9424da97bbc7d2b38246ba8a2c:
-
-  Merge remote-tracking branch 'kvmarm/misc-5.5' into kvmarm/next (2019-11-08 11:27:29 +0000)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git tags/kvmarm-fixes-5.5-1
-
-for you to fetch changes up to 6d674e28f642e3ff676fbae2d8d1b872814d32b6:
-
-  KVM: arm/arm64: Properly handle faulting of device mappings (2019-12-12 16:22:40 +0000)
-
-----------------------------------------------------------------
-KVM/arm fixes for .5.5, take #1
-
-- Fix uninitialised sysreg accessor
-- Fix handling of demand-paged device mappings
-- Stop spamming the console on IMPDEF sysregs
-- Relax mappings of writable memslots
-- Assorted cleanups
-
-----------------------------------------------------------------
-Jia He (1):
-      KVM: arm/arm64: Remove excessive permission check in kvm_arch_prepare_memory_region
-
-Marc Zyngier (1):
-      KVM: arm/arm64: Properly handle faulting of device mappings
-
-Mark Rutland (2):
-      KVM: arm64: Sanely ratelimit sysreg messages
-      KVM: arm64: Don't log IMP DEF sysreg traps
-
-Miaohe Lin (3):
-      KVM: arm/arm64: Get rid of unused arg in cpu_init_hyp_mode()
-      KVM: arm/arm64: vgic: Fix potential double free dist->spis in __kvm_vgic_destroy()
-      KVM: arm/arm64: vgic: Use wrapper function to lock/unlock all vcpus in kvm_vgic_create()
-
-Will Deacon (1):
-      KVM: arm64: Ensure 'params' is initialised when looking up sys register
-
- arch/arm64/kvm/sys_regs.c     | 25 ++++++++++++++++++-------
- arch/arm64/kvm/sys_regs.h     | 17 +++++++++++++++--
- virt/kvm/arm/arm.c            |  4 ++--
- virt/kvm/arm/mmu.c            | 30 +++++++++++++++++-------------
- virt/kvm/arm/vgic/vgic-init.c | 20 +++++---------------
- 5 files changed, 57 insertions(+), 39 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
