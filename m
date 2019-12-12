@@ -2,86 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 117D111D793
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 20:58:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67D8D11D796
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 20:59:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2HaZJaMnlvzDvcCqX7flhRlEV7Rn3MXQQIXNkBnyre4=; b=mIYPipVwH4RulC
-	tYa0Iuo7UBLGn01BWOUn7leaeU0yhltfOZ8vkv6I2NBtBlkcGGkeO4XV7oD8WimnzplHqbLyM9XFN
-	Y5dKGqcg0elj2MulyQSyweDKV8YqMgJKZ3wp4NWMNoqzxAy0I8rmaS2z85W1q7rezsM7tCGAN5qet
-	XI7iIrk6R5Cx9cN8xjH0fsTwq3EmFLqRkeyjS9wSMDNIBDTwaOY0aUleZbSVmYgzUpJWGVmGDt3Nm
-	utxWBnha1XQhIYZrWeAY4c32RnVqDFJiKwMu1vnTaPtvkfvGj0KJy4DOryS49vA0mKUqI3e0Fb6ol
-	yqAJZV6OieSuDLuzSS9g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=vk1W4NIFIgUU3+hHeJSWyjxhkTKYvQqoN25TXBC2S0s=; b=P66VNzchnZmjICU3SsWgR5MNSK
+	eV3E0h9OfWguHm6EciTXOL66A7Z8klGlZ4avsweqJNSMdq0pA8+ofVqPgs7K7CvTZJ3fVw4E5CP9y
+	Owrc2Tj7yNbMynUp4M7pXspmT2QUq85quWYvX0e04zTlPGXbt6PUOZmEubbUpXXakNcRFCc5sNV1+
+	FEkbCbHdU3OFyIzjj+gao/47pDP4+C9RlexFHx7YY1zgQfsb5LJKDP5EjXLfn2Y9sOwfkwMcd8M9c
+	c0SnKY0RCeVLBPoddJlr/SM6Jtv07Tzg3odgUES/zb6ufFA3pa4lIewZ3z6/7tRHpFSJFZPp+vuwU
+	AKl5uZnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifUbL-0004vK-MR; Thu, 12 Dec 2019 19:58:19 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1ifUby-0005CU-LV; Thu, 12 Dec 2019 19:58:58 +0000
+Received: from lists.gateworks.com ([108.161.130.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifUbA-0004ta-Jm; Thu, 12 Dec 2019 19:58:09 +0000
-Received: by mail-ot1-x344.google.com with SMTP id i15so3246459oto.7;
- Thu, 12 Dec 2019 11:58:08 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=DFLlahyHI5CWddupsVreSqNy/vA0cEJats5492jOSIs=;
- b=TD7g7jwnUfDkDTZXvxve3OJXxK3GHfe5bBkdC7pt5OmvM0NMo9LVvJUmtVK+yMpQgy
- vQgMoNCRNgIPGk6R5mhXxZWioE7nsHSI6ypVusSjEl7CjyUu3EgqXGSybzS7OkzpOsSb
- mcmhXX1vYjnkVSefiLRylfhtoyJ9Vy39jDMVZLuZYqVTpzRQWrobagHQbcOPc1HsXqqF
- y/kSNaw3ZaaGT3WDFKb/HmEQ8tHXojg9ICTqbAEDBP/HnjJ5Rbzd8E4ODkxLXWOHxQgZ
- kjs1aVUkYxcYB1+tQil4sFBJqJe4E+3ubKfq45Cxfg8dyMV0PoAWKl+Ix78PTZOq33op
- TL1w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DFLlahyHI5CWddupsVreSqNy/vA0cEJats5492jOSIs=;
- b=MzMeY/SDViOW6Oq8ieA+501EG7LIBvWFUwhjJoZXUO7KrtouoMK9pxb0KjPwmQr2lZ
- uC8j//c6mv1677dUfjU5e/neF0PmbznmKe9djLKNRo7b2qKkuCbt+9ANCghu0OmQDebQ
- wxhMgWcQO7zPBGLLHMd/EhB03BgJ9W/BNtei2sLpiFmy2hpZm0GC5YJ++HgEopvJp0rm
- T6luFMY2RD+rgQym3J4x9q+yxH7qUZ30LbSgtb3kXX0pG4o1NczfXODA1y96KapeIDaw
- a9hXDRkvtSTRiWWRjAhuYwtZYRSrZUVP49RWoJPwdJnIHuFJ++Qk0ysTCfHoHWlLtAal
- lUjw==
-X-Gm-Message-State: APjAAAWRGIPQnu+sSUyGeinI2nwCx9HwrIooiDjoLDhVgY9xst1vaMhC
- cJ6bHWxL1DUwuH7vxaPMolq9qQfzrfpieG9z2po=
-X-Google-Smtp-Source: APXvYqzBv7wgx408g13iewCw+znrFEZiUL++7s01qX7XO3cSWn27p9E1tGYyz8Gwyf9GVrZPOlySmA8XV5OfmM/myAQ=
-X-Received: by 2002:a9d:6a4c:: with SMTP id h12mr10313165otn.81.1576180687595; 
- Thu, 12 Dec 2019 11:58:07 -0800 (PST)
-MIME-Version: 1.0
-References: <20191212145925.32123-1-glaroque@baylibre.com>
- <20191212145925.32123-4-glaroque@baylibre.com>
-In-Reply-To: <20191212145925.32123-4-glaroque@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Thu, 12 Dec 2019 20:57:56 +0100
-Message-ID: <CAFBinCDjfzQX=ZG=cgTYo=icGNU-t4Kqnu0Bu5qRLsRk_s6S_Q@mail.gmail.com>
-Subject: Re: [PATCH 3/3] media: platform: meson-ao-cec-g12a: add wakeup support
-To: Guillaume La Roque <glaroque@baylibre.com>
+ id 1ifUbl-0005Br-Cb
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 19:58:47 +0000
+Received: from 68-189-91-139.static.snlo.ca.charter.com ([68.189.91.139]
+ helo=rjones.pdc.gateworks.com)
+ by lists.gateworks.com with esmtp (Exim 4.82)
+ (envelope-from <rjones@gateworks.com>)
+ id 1ifUqF-0003ki-4O; Thu, 12 Dec 2019 20:13:43 +0000
+From: Robert Jones <rjones@gateworks.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>
+Subject: [PATCH v2] ARM: dts: imx: Add GW5913 board support
+Date: Thu, 12 Dec 2019 11:58:26 -0800
+Message-Id: <20191212195826.30976-1-rjones@gateworks.com>
+X-Mailer: git-send-email 2.9.2
+In-Reply-To: <20191205220918.23109-1-rjones@gateworks.com>
+References: <20191205220918.23109-1-rjones@gateworks.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_115808_649021_1950A888 
-X-CRM114-Status: UNSURE (   9.21  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191212_115845_467678_B797CDB8 
+X-CRM114-Status: GOOD (  13.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,53 +59,469 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
- khilman@baylibre.com, linux-kernel@vger.kernel.org, hverkuil-cisco@xs4all.nl,
- linux-amlogic@lists.infradead.org, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org,
- linux-media <linux-media@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, Robert Jones <rjones@gateworks.com>,
+ Tim Harvey <tharvey@gateworks.com>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Guillaume,
+The Gateworks GW5913 is an IMX6 SoC based single board computer with:
+ - IMX6Q or IMX6DL
+ - 32bit DDR3 DRAM
+ - FEC GbE RJ45 front-panel
+ - 1x miniPCIe socket with PCI Gen2, USB2
+ - 1x miniPCIe socket with PCI Gen2, USB2, nanoSIM
+ - 6V to 60V DC input connector
+ - GPS (ublox ZOE-M8Q)
+ - bi-color front-panel LED
+ - 256MB NAND boot device
+ - nanoSIM socket
+ - user pushbutton
+ - Gateworks System Controller (hwmon, pushbutton controller, EEPROM)
 
-(I don't know the specifics of this hardware but I have two general
-comments below)
+Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+Signed-off-by: Robert Jones <rjones@gateworks.com>
+---
+Changes in v2:
+ - Generalized node names
+ - Removed unnecessary labels
+ - Expanded patch subject
+ - Removed undocumented compatible string in dts**
 
-On Thu, Dec 12, 2019 at 4:00 PM Guillaume La Roque
-<glaroque@baylibre.com> wrote:
-> +#define CECB_FUNC_CFG_REG              0xA0
-> +#define CECB_FUNC_CFG_MASK             GENMASK(6, 0)
-> +#define CECB_FUNC_CFG_CEC_ON           0x01
-> +#define CECB_FUNC_CFG_OTP_ON           0x02
-> +#define CECB_FUNC_CFG_AUTO_STANDBY     0x04
-> +#define CECB_FUNC_CFG_AUTO_POWER_ON    0x08
-> +#define CECB_FUNC_CFG_ALL              0x2f
-> +#define CECB_FUNC_CFG_NONE             0x0
-> +
-> +#define CECB_LOG_ADDR_REG      0xA4
-> +#define CECB_LOG_ADDR_MASK     GENMASK(22, 16)
-do these registers have some RTI_* prefix in the datasheet?
-that would make it easier to spot that these registers belong to AO /
-RTI (while all other registers belong to the CEC controller)
+** I realize that the "gw,ventana" still exists here, but that cant be removed
+without breaking a conditional check in arch/arm/mach-imx/mach-imx6q.c
 
-[...]
-> +       if (ao_cec->regmap_ao_sysctrl)
-> +               ret |= regmap_update_bits(ao_cec->regmap_ao_sysctrl,
-> +                                        CECB_LOG_ADDR_REG,
-> +                                         CECB_FUNC_CFG_MASK,
-why do we need to mask CECB_FUNC_CFG_MASK (from register 0xa0) in the
-CECB_LOG_ADDR_REG register (0xa4)?
+ arch/arm/boot/dts/Makefile            |   2 +
+ arch/arm/boot/dts/imx6dl-gw5913.dts   |  14 ++
+ arch/arm/boot/dts/imx6q-gw5913.dts    |  14 ++
+ arch/arm/boot/dts/imx6qdl-gw5913.dtsi | 348 ++++++++++++++++++++++++++++++++++
+ 4 files changed, 378 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6dl-gw5913.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-gw5913.dts
+ create mode 100644 arch/arm/boot/dts/imx6qdl-gw5913.dtsi
 
-> +                                         logical_addr << CECB_LOG_ADDR_SHIFT);
-FIELD_PREP(CECB_FUNC_CFG_MASK, logical_addr) would make it consistent
-with the rest of the driver
-then you can also drop the #define CECB_LOG_ADDR_SHIFT
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index cbde18a..adef472 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -419,6 +419,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
+ 	imx6dl-gw5903.dtb \
+ 	imx6dl-gw5904.dtb \
+ 	imx6dl-gw5910.dtb \
++	imx6dl-gw5913.dtb \
+ 	imx6dl-hummingboard.dtb \
+ 	imx6dl-hummingboard-emmc-som-v15.dtb \
+ 	imx6dl-hummingboard-som-v15.dtb \
+@@ -491,6 +492,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
+ 	imx6q-gw5903.dtb \
+ 	imx6q-gw5904.dtb \
+ 	imx6q-gw5910.dtb \
++	imx6q-gw5913.dtb \
+ 	imx6q-h100.dtb \
+ 	imx6q-hummingboard.dtb \
+ 	imx6q-hummingboard-emmc-som-v15.dtb \
+diff --git a/arch/arm/boot/dts/imx6dl-gw5913.dts b/arch/arm/boot/dts/imx6dl-gw5913.dts
+new file mode 100644
+index 0000000..81475c1
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6dl-gw5913.dts
+@@ -0,0 +1,14 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2019 Gateworks Corporation
++ */
++
++/dts-v1/;
++
++#include "imx6dl.dtsi"
++#include "imx6qdl-gw5913.dtsi"
++
++/ {
++	model = "Gateworks Ventana i.MX6 DualLite/Solo GW5913";
++	compatible = "gw,ventana", "fsl,imx6dl";
++};
+diff --git a/arch/arm/boot/dts/imx6q-gw5913.dts b/arch/arm/boot/dts/imx6q-gw5913.dts
+new file mode 100644
+index 0000000..09cf350
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6q-gw5913.dts
+@@ -0,0 +1,14 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2019 Gateworks Corporation
++ */
++
++/dts-v1/;
++
++#include "imx6q.dtsi"
++#include "imx6qdl-gw5913.dtsi"
++
++/ {
++	model = "Gateworks Ventana i.MX6 Dual/Quad GW5913";
++	compatible = "gw,ventana", "fsl,imx6q";
++};
+diff --git a/arch/arm/boot/dts/imx6qdl-gw5913.dtsi b/arch/arm/boot/dts/imx6qdl-gw5913.dtsi
+new file mode 100644
+index 0000000..635c203
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6qdl-gw5913.dtsi
+@@ -0,0 +1,348 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2019 Gateworks Corporation
++ */
++
++#include <dt-bindings/gpio/gpio.h>
++
++/ {
++	/* these are used by bootloader for disabling nodes */
++	aliases {
++		led0 = &led0;
++		led1 = &led1;
++		nand = &gpmi;
++		usb0 = &usbh1;
++		usb1 = &usbotg;
++	};
++
++	chosen {
++		stdout-path = &uart2;
++	};
++
++	leds {
++		compatible = "gpio-leds";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_gpio_leds>;
++
++		led0: user1 {
++			label = "user1";
++			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>; /* MX6_PANLEDG */
++			default-state = "on";
++			linux,default-trigger = "heartbeat";
++		};
++
++		led1: user2 {
++			label = "user2";
++			gpios = <&gpio4 7 GPIO_ACTIVE_HIGH>; /* MX6_PANLEDR */
++			default-state = "off";
++		};
++	};
++
++	memory@10000000 {
++		device_type = "memory";
++		reg = <0x10000000 0x20000000>;
++	};
++
++	pps {
++		compatible = "pps-gpio";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_pps>;
++		gpios = <&gpio7 0 GPIO_ACTIVE_HIGH>;
++		status = "okay";
++	};
++
++	reg_3p3v: regulator-3p3v {
++		compatible = "regulator-fixed";
++		regulator-name = "3P3V";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		regulator-always-on;
++	};
++
++	reg_5p0v: regulator-5p0v {
++		compatible = "regulator-fixed";
++		regulator-name = "5P0V";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		regulator-always-on;
++	};
++};
++
++&fec {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_enet>;
++	phy-mode = "rgmii-id";
++	status = "okay";
++};
++
++&gpmi {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_gpmi_nand>;
++	status = "okay";
++};
++
++&i2c1 {
++	clock-frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c1>;
++	status = "okay";
++
++	gpio@23 {
++		compatible = "nxp,pca9555";
++		reg = <0x23>;
++		gpio-controller;
++		#gpio-cells = <2>;
++	};
++
++	eeprom@50 {
++		compatible = "atmel,24c02";
++		reg = <0x50>;
++		pagesize = <16>;
++	};
++
++	eeprom@51 {
++		compatible = "atmel,24c02";
++		reg = <0x51>;
++		pagesize = <16>;
++	};
++
++	eeprom@52 {
++		compatible = "atmel,24c02";
++		reg = <0x52>;
++		pagesize = <16>;
++	};
++
++	eeprom@53 {
++		compatible = "atmel,24c02";
++		reg = <0x53>;
++		pagesize = <16>;
++	};
++
++	rtc@68 {
++		compatible = "dallas,ds1672";
++		reg = <0x68>;
++	};
++};
++
++&i2c2 {
++	clock-frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c2>;
++	status = "okay";
++};
++
++&i2c3 {
++	clock-frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c3>;
++	status = "okay";
++};
++
++&pcie {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pcie>;
++	reset-gpio = <&gpio1 0 GPIO_ACTIVE_LOW>;
++	status = "okay";
++};
++
++&pwm2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pwm2>; /* MX6_DIO1 */
++	status = "disabled";
++};
++
++&pwm3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pwm3>; /* MX6_DIO2 */
++	status = "disabled";
++};
++
++&pwm4 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pwm4>; /* MX6_DIO3 */
++	status = "disabled";
++};
++
++&uart1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart1>;
++	status = "okay";
++};
++
++&uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart2>;
++	status = "okay";
++};
++
++&uart3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart3>;
++	status = "okay";
++};
++
++&uart5 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart5>;
++	status = "okay";
++};
++
++&usbotg {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_usbotg>;
++	disable-over-current;
++	status = "okay";
++};
++
++&usbh1 {
++	status = "okay";
++};
++
++&wdog1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_wdog>;
++	fsl,ext-reset-output;
++};
++
++&iomuxc {
++	pinctrl_enet: enetgrp {
++		fsl,pins = <
++			MX6QDL_PAD_RGMII_RXC__RGMII_RXC		0x1b030
++			MX6QDL_PAD_RGMII_RD0__RGMII_RD0		0x1b030
++			MX6QDL_PAD_RGMII_RD1__RGMII_RD1		0x1b030
++			MX6QDL_PAD_RGMII_RD2__RGMII_RD2		0x1b030
++			MX6QDL_PAD_RGMII_RD3__RGMII_RD3		0x1b030
++			MX6QDL_PAD_RGMII_RX_CTL__RGMII_RX_CTL	0x1b030
++			MX6QDL_PAD_RGMII_TXC__RGMII_TXC		0x1b030
++			MX6QDL_PAD_RGMII_TD0__RGMII_TD0		0x1b030
++			MX6QDL_PAD_RGMII_TD1__RGMII_TD1		0x1b030
++			MX6QDL_PAD_RGMII_TD2__RGMII_TD2		0x1b030
++			MX6QDL_PAD_RGMII_TD3__RGMII_TD3		0x1b030
++			MX6QDL_PAD_RGMII_TX_CTL__RGMII_TX_CTL	0x1b030
++			MX6QDL_PAD_ENET_REF_CLK__ENET_TX_CLK	0x1b0b0
++			MX6QDL_PAD_ENET_MDIO__ENET_MDIO		0x1b0b0
++			MX6QDL_PAD_ENET_MDC__ENET_MDC		0x1b0b0
++			MX6QDL_PAD_GPIO_16__ENET_REF_CLK	0x4001b0a8
++			MX6QDL_PAD_ENET_TXD0__GPIO1_IO30	0x1b0b0
++		>;
++	};
++
++	pinctrl_gpio_leds: gpioledsgrp {
++		fsl,pins = <
++			MX6QDL_PAD_KEY_COL0__GPIO4_IO06		0x1b0b0
++			MX6QDL_PAD_KEY_ROW0__GPIO4_IO07		0x1b0b0
++		>;
++	};
++
++	pinctrl_gpmi_nand: gpminandgrp {
++		fsl,pins = <
++			MX6QDL_PAD_NANDF_CLE__NAND_CLE		0xb0b1
++			MX6QDL_PAD_NANDF_ALE__NAND_ALE		0xb0b1
++			MX6QDL_PAD_NANDF_WP_B__NAND_WP_B	0xb0b1
++			MX6QDL_PAD_NANDF_RB0__NAND_READY_B	0xb000
++			MX6QDL_PAD_NANDF_CS0__NAND_CE0_B	0xb0b1
++			MX6QDL_PAD_SD4_CMD__NAND_RE_B		0xb0b1
++			MX6QDL_PAD_SD4_CLK__NAND_WE_B		0xb0b1
++			MX6QDL_PAD_NANDF_D0__NAND_DATA00	0xb0b1
++			MX6QDL_PAD_NANDF_D1__NAND_DATA01	0xb0b1
++			MX6QDL_PAD_NANDF_D2__NAND_DATA02	0xb0b1
++			MX6QDL_PAD_NANDF_D3__NAND_DATA03	0xb0b1
++			MX6QDL_PAD_NANDF_D4__NAND_DATA04	0xb0b1
++			MX6QDL_PAD_NANDF_D5__NAND_DATA05	0xb0b1
++			MX6QDL_PAD_NANDF_D6__NAND_DATA06	0xb0b1
++			MX6QDL_PAD_NANDF_D7__NAND_DATA07	0xb0b1
++		>;
++	};
++
++	pinctrl_i2c1: i2c1grp {
++		fsl,pins = <
++			MX6QDL_PAD_EIM_D21__I2C1_SCL		0x4001b8b1
++			MX6QDL_PAD_EIM_D28__I2C1_SDA		0x4001b8b1
++			MX6QDL_PAD_GPIO_4__GPIO1_IO04		0x0001b0b0
++		>;
++	};
++
++	pinctrl_i2c2: i2c2grp {
++		fsl,pins = <
++			MX6QDL_PAD_KEY_COL3__I2C2_SCL		0x4001b8b1
++			MX6QDL_PAD_KEY_ROW3__I2C2_SDA		0x4001b8b1
++		>;
++	};
++
++	pinctrl_i2c3: i2c3grp {
++		fsl,pins = <
++			MX6QDL_PAD_GPIO_3__I2C3_SCL		0x4001b8b1
++			MX6QDL_PAD_GPIO_6__I2C3_SDA		0x4001b8b1
++		>;
++	};
++
++	pinctrl_pcie: pciegrp {
++		fsl,pins = <
++			MX6QDL_PAD_GPIO_0__GPIO1_IO00		0x1b0b0
++		>;
++	};
++
++	pinctrl_pps: ppsgrp {
++		fsl,pins = <
++			MX6QDL_PAD_SD3_DAT5__GPIO7_IO00		0x1b0b1
++		>;
++	};
++
++	pinctrl_pwm2: pwm2grp {
++		fsl,pins = <
++			MX6QDL_PAD_SD1_DAT2__PWM2_OUT		0x1b0b1
++		>;
++	};
++
++	pinctrl_pwm3: pwm3grp {
++		fsl,pins = <
++			MX6QDL_PAD_SD1_DAT1__PWM3_OUT		0x1b0b1
++		>;
++	};
++
++	pinctrl_pwm4: pwm4grp {
++		fsl,pins = <
++			MX6QDL_PAD_SD1_CMD__PWM4_OUT		0x1b0b1
++		>;
++	};
++
++	pinctrl_uart1: uart1grp {
++		fsl,pins = <
++			MX6QDL_PAD_SD3_DAT7__UART1_TX_DATA	0x1b0b1
++			MX6QDL_PAD_SD3_DAT6__UART1_RX_DATA	0x1b0b1
++		>;
++	};
++
++	pinctrl_uart2: uart2grp {
++		fsl,pins = <
++			MX6QDL_PAD_SD4_DAT7__UART2_TX_DATA	0x1b0b1
++			MX6QDL_PAD_SD4_DAT4__UART2_RX_DATA	0x1b0b1
++		>;
++	};
++
++	pinctrl_uart3: uart3grp {
++		fsl,pins = <
++			MX6QDL_PAD_EIM_D24__UART3_TX_DATA	0x1b0b1
++			MX6QDL_PAD_EIM_D25__UART3_RX_DATA	0x1b0b1
++		>;
++	};
++
++	pinctrl_uart5: uart5grp {
++		fsl,pins = <
++			MX6QDL_PAD_KEY_COL1__UART5_TX_DATA	0x1b0b1
++			MX6QDL_PAD_KEY_ROW1__UART5_RX_DATA	0x1b0b1
++		>;
++	};
++
++	pinctrl_usbotg: usbotggrp {
++		fsl,pins = <
++			MX6QDL_PAD_GPIO_1__USB_OTG_ID		0x17059
++		>;
++	};
++
++	pinctrl_wdog: wdoggrp {
++		fsl,pins = <
++			MX6QDL_PAD_DISP0_DAT8__WDOG1_B		0x1b0b0
++		>;
++	};
++};
+-- 
+2.9.2
 
-
-Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
