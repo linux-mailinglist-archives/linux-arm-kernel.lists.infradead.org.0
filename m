@@ -2,63 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A5B411C2E8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 03:03:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14FBD11C2EB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 03:04:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Lvoa5aCPEg2ejeictC+fYYglbFdNjpguuWr1dqy0isU=; b=jwXu3p7rNeyD/4/yZWEoz+0lss
-	eKE5EAeRxrBfAt23OYUtV2Qs53rbjuvTPfVqss7jtp7/8Ms5gfml5qQnlQ1zAivgqE62CNA1O2UH0
-	gOYJy+e2dCeLtMIoYepuCBJ7MXrTiQCamd7AyDpLrelOq09dNQqzPPNwN/N4DEBfSeP4cP1vH0Bux
-	YsxFTi33DggfZRTr1tLqXJdPY9lO3/5u1+8vsiOsGiJgly5Ff5iTh+b2lE+P7/RhCIYdaonoGx0KT
-	gpkBtz2sK2GGnV7VT/QZjCwHSCqBQEgAfhHkNy6Wk9e/XdUm+syYfIf7BEPyT3hvvMq1SHPcpHg/U
-	eCZbHgog==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qYCtzgItmvTljcd+yWiEPj2j+AyYOz1N2afyQwR+S9U=; b=MS7BYGMJQoMdJu
+	/ghHCwOL16nMF9nLgqSeTOKogcDHusUXawAdTWdL2EKbqf66WWW/fW7ZGAD0fjETwZaOROHWK/cZA
+	XHXIRFKVHlBHMGfsjqqSIOZnKJujchw4NWRM2bH2JBBtijl5rsmg/joqzBN1iexyrNEpT8VF/Ozno
+	WtiMJ7Wf7JITbPdjPDOO6IQ9nME3bB4Wwqa8CuEZv9SDAxJj56/LNTFwQigjYnqDD7nhCqe4zwyFX
+	q3fRgTV8Ik2J2wQPC2A2JIKleiOk9pPkZtoyV9TMJ1nybCC2reVHFrrIQkdLPwzrMliv8vpDy5egG
+	67OnlRNleaZ+WjTaXQHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifDor-0004TV-In; Thu, 12 Dec 2019 02:03:09 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifDoE-0003tF-VS
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 02:02:33 +0000
-Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
- by mx.socionext.com with ESMTP; 12 Dec 2019 11:02:27 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 5E3AD603AB;
- Thu, 12 Dec 2019 11:02:27 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Thu, 12 Dec 2019 11:03:07 +0900
-Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id E6AEC1A01CF;
- Thu, 12 Dec 2019 11:02:26 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Bjorn Helgaas <bhelgaas@google.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 2/2] PCI: uniphier: Add UniPhier PCIe endpoint controller
- support
-Date: Thu, 12 Dec 2019 11:02:18 +0900
-Message-Id: <1576116138-16501-3-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1576116138-16501-1-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1576116138-16501-1-git-send-email-hayashi.kunihiko@socionext.com>
+	id 1ifDpX-00050X-8j; Thu, 12 Dec 2019 02:03:51 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifDpL-0004zT-BN; Thu, 12 Dec 2019 02:03:40 +0000
+X-UUID: 42fb624a37d54a6498161dbadf683991-20191211
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=58Kn1gNg/Vbwnp9rOtOIWJfzSVNVySk5I9bvfgOs8zs=; 
+ b=FJqm1hGYBNcAr0iCcqx0uQRFX+TkLaek5WlEXOOW8/psp/5KbWOkLqnX0SRxtPTLncu22Vrr9z84cz4KnxHP4st2AKLCtGmaIYZ0GgwVy1ofrnd2AGMrMPbzMue7ev1eKGIptPFlZeswsQ5PB4o1BzVZLdIyzf0LpH8zw0SgqZE=;
+X-UUID: 42fb624a37d54a6498161dbadf683991-20191211
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1690761400; Wed, 11 Dec 2019 18:03:33 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Dec 2019 18:04:32 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Dec 2019 10:02:24 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 12 Dec 2019 10:03:20 +0800
+Message-ID: <1576116202.16444.4.camel@mtksdaap41>
+Subject: Re: [PATCH v2 04/14] mailbox: mediatek: cmdq: clear task in channel
+ before shutdown
+From: CK Hu <ck.hu@mediatek.com>
+To: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
+Date: Thu, 12 Dec 2019 10:03:22 +0800
+In-Reply-To: <1576115494.17653.21.camel@mtkswgap22>
+References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1574819937-6246-6-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1575946181.16676.4.camel@mtksdaap41> <1576113221.17653.6.camel@mtkswgap22>
+ <1576114297.11762.1.camel@mtksdaap41>
+ <1576115494.17653.21.camel@mtkswgap22>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: A8FE64F7829C208CB8FCB2A8C581833FEC7AEC50ED8D9CA3A499B8304934AA792000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_180231_494689_45DC648D 
-X-CRM114-Status: GOOD (  22.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191211_180339_396445_AB866B92 
+X-CRM114-Status: GOOD (  16.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,494 +88,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Jassi Brar <jaswinder.singh@linaro.org>,
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This introduces specific glue layer for UniPhier platform to support
-PCIe controller that is based on the DesignWare PCIe core, and
-this driver supports endpoint mode. This supports for Pro5 SoC only.
+Hi, Dennis:
 
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
----
- MAINTAINERS                                   |   2 +-
- drivers/pci/controller/dwc/Kconfig            |  13 +-
- drivers/pci/controller/dwc/Makefile           |   1 +
- drivers/pci/controller/dwc/pcie-uniphier-ep.c | 399 ++++++++++++++++++++++++++
- 4 files changed, 412 insertions(+), 3 deletions(-)
- create mode 100644 drivers/pci/controller/dwc/pcie-uniphier-ep.c
+On Thu, 2019-12-12 at 09:51 +0800, Dennis-YC Hsieh wrote:
+> Hi CK,
+> 
+> On Thu, 2019-12-12 at 09:31 +0800, CK Hu wrote:
+> > Hi, Dennis:
+> > 
+> > On Thu, 2019-12-12 at 09:13 +0800, Dennis-YC Hsieh wrote:
+> > > Hi CK,
+> > > 
+> > > On Tue, 2019-12-10 at 10:49 +0800, CK Hu wrote:
+> > > > Hi, Dennis:
+> > > > 
+> > > > On Wed, 2019-11-27 at 09:58 +0800, Dennis YC Hsieh wrote:
+> > > > > Do success callback in channel when shutdown. For those task not finish,
+> > > > > callback with error code thus client has chance to cleanup or reset.
+> > > > > 
+> > > > > Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> > > > > ---
+> > > > >  drivers/mailbox/mtk-cmdq-mailbox.c | 26 ++++++++++++++++++++++++++
+> > > > >  1 file changed, 26 insertions(+)
+> > > > > 
+> > > > > diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
+> > > > > index fd519b6f518b..c12a768d1175 100644
+> > > > > --- a/drivers/mailbox/mtk-cmdq-mailbox.c
+> > > > > +++ b/drivers/mailbox/mtk-cmdq-mailbox.c
+> > > > > @@ -450,6 +450,32 @@ static int cmdq_mbox_startup(struct mbox_chan *chan)
+> > > > >  
+> > > > >  static void cmdq_mbox_shutdown(struct mbox_chan *chan)
+> > > > >  {
+> > > > > +	struct cmdq_thread *thread = (struct cmdq_thread *)chan->con_priv;
+> > > > > +	struct cmdq *cmdq = dev_get_drvdata(chan->mbox->dev);
+> > > > > +	struct cmdq_task *task, *tmp;
+> > > > > +	unsigned long flags;
+> > > > > +
+> > > > > +	spin_lock_irqsave(&thread->chan->lock, flags);
+> > > > > +	if (list_empty(&thread->task_busy_list))
+> > > > > +		goto done;
+> > > > > +
+> > > > > +	WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
+> > > > > +
+> > > > > +	/* make sure executed tasks have success callback */
+> > > > > +	cmdq_thread_irq_handler(cmdq, thread);
+> > > > > +	if (list_empty(&thread->task_busy_list))
+> > > > > +		goto done;
+> > > > > +
+> > > > > +	list_for_each_entry_safe(task, tmp, &thread->task_busy_list,
+> > > > > +				 list_entry) {
+> > > > > +		cmdq_task_exec_done(task, -ECONNABORTED);
+> > > > > +		kfree(task);
+> > > > > +	}
+> > > > > +
+> > > > > +	cmdq_thread_disable(cmdq, thread);
+> > > > > +	clk_disable(cmdq->clock);
+> > > > > +done:
+> > > > 
+> > > > cmdq_thread_resume(thread);
+> > > > 
+> > > > Regards,
+> > > > CK
+> > > > 
+> > > 
+> > > Call resume here will cause violation. The thread->task_busy_list empty
+> > > means no task work in gce and thread state should already disable
+> > > without clock, which is what we want since client try to shut down this
+> > > mbox channel. So I think we don't need resume here.
+> > > 
+> > 
+> > OK. When client free channel, thread is suspended. Then client request
+> > channel, where do you resume thread?
+> > 
+> 
+> when client send new pkt to new channel, cmdq_mbox_send_data() will
+> enable thread.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 4b6ec28..9ed0572 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12695,7 +12695,7 @@ M:	Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
- L:	linux-pci@vger.kernel.org
- S:	Maintained
- F:	Documentation/devicetree/bindings/pci/uniphier-pcie*.txt
--F:	drivers/pci/controller/dwc/pcie-uniphier.c
-+F:	drivers/pci/controller/dwc/pcie-uniphier*.c
- 
- PCIE DRIVER FOR ST SPEAR13XX
- M:	Pratyush Anand <pratyush.anand@gmail.com>
-diff --git a/drivers/pci/controller/dwc/Kconfig b/drivers/pci/controller/dwc/Kconfig
-index 0ba988b..6bc661a 100644
---- a/drivers/pci/controller/dwc/Kconfig
-+++ b/drivers/pci/controller/dwc/Kconfig
-@@ -247,15 +247,24 @@ config PCIE_TEGRA194
- 	  controller found in NVIDIA Tegra194 SoC.
- 
- config PCIE_UNIPHIER
--	bool "Socionext UniPhier PCIe controllers"
-+	bool "Socionext UniPhier PCIe host controllers"
- 	depends on ARCH_UNIPHIER || COMPILE_TEST
- 	depends on OF && HAS_IOMEM
- 	depends on PCI_MSI_IRQ_DOMAIN
- 	select PCIE_DW_HOST
- 	help
--	  Say Y here if you want PCIe controller support on UniPhier SoCs.
-+	  Say Y here if you want PCIe host controller support on UniPhier SoCs.
- 	  This driver supports LD20 and PXs3 SoCs.
- 
-+config PCIE_UNIPHIER_EP
-+	bool "Socionext UniPhier PCIe endpoint controllers"
-+	depends on ARCH_UNIPHIER || COMPILE_TEST
-+	depends on OF && HAS_IOMEM
-+	select PCIE_DW_EP
-+	help
-+	  Say Y here if you want PCIe endpoint controller support on
-+	  UniPhier SoCs. This driver supports Pro5 SoC.
-+
- config PCIE_AL
- 	bool "Amazon Annapurna Labs PCIe controller"
- 	depends on OF && (ARM64 || COMPILE_TEST)
-diff --git a/drivers/pci/controller/dwc/Makefile b/drivers/pci/controller/dwc/Makefile
-index 69faff3..ba458b6 100644
---- a/drivers/pci/controller/dwc/Makefile
-+++ b/drivers/pci/controller/dwc/Makefile
-@@ -18,6 +18,7 @@ obj-$(CONFIG_PCIE_HISI_STB) += pcie-histb.o
- obj-$(CONFIG_PCI_MESON) += pci-meson.o
- obj-$(CONFIG_PCIE_TEGRA194) += pcie-tegra194.o
- obj-$(CONFIG_PCIE_UNIPHIER) += pcie-uniphier.o
-+obj-$(CONFIG_PCIE_UNIPHIER_EP) += pcie-uniphier-ep.o
- 
- # The following drivers are for devices that use the generic ACPI
- # pci_root.c driver but don't support standard ECAM config access.
-diff --git a/drivers/pci/controller/dwc/pcie-uniphier-ep.c b/drivers/pci/controller/dwc/pcie-uniphier-ep.c
-new file mode 100644
-index 00000000..7b5aa0f
---- /dev/null
-+++ b/drivers/pci/controller/dwc/pcie-uniphier-ep.c
-@@ -0,0 +1,399 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * PCIe endpoint controller driver for UniPhier SoCs
-+ * Copyright 2018 Socionext Inc.
-+ * Author: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-+ */
-+
-+#include <linux/bitops.h>
-+#include <linux/bitfield.h>
-+#include <linux/clk.h>
-+#include <linux/delay.h>
-+#include <linux/init.h>
-+#include <linux/of_device.h>
-+#include <linux/pci.h>
-+#include <linux/phy/phy.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset.h>
-+
-+#include "pcie-designware.h"
-+
-+/* Link Glue registers */
-+#define PCL_RSTCTRL0			0x0010
-+#define PCL_RSTCTRL_AXI_REG		BIT(3)
-+#define PCL_RSTCTRL_AXI_SLAVE		BIT(2)
-+#define PCL_RSTCTRL_AXI_MASTER		BIT(1)
-+#define PCL_RSTCTRL_PIPE3		BIT(0)
-+
-+#define PCL_RSTCTRL1			0x0020
-+#define PCL_RSTCTRL_PERST		BIT(0)
-+
-+#define PCL_RSTCTRL2			0x0024
-+#define PCL_RSTCTRL_PHY_RESET		BIT(0)
-+
-+#define PCL_MODE			0x8000
-+#define PCL_MODE_REGVAL			BIT(0)
-+
-+#define PCL_APP_CLK_CTRL		0x8004
-+#define PCL_APP_CLK_REQ			BIT(0)
-+
-+#define PCL_APP_READY_CTRL		0x8008
-+#define PCL_APP_LTSSM_ENABLE		BIT(0)
-+
-+#define PCL_APP_MSI0			0x8040
-+#define PCL_APP_VEN_MSI_TC_MASK		GENMASK(10, 8)
-+#define PCL_APP_VEN_MSI_VECTOR_MASK	GENMASK(4, 0)
-+
-+#define PCL_APP_MSI1			0x8044
-+#define PCL_APP_MSI_REQ			BIT(0)
-+
-+#define PCL_APP_INTX			0x8074
-+#define PCL_APP_INTX_SYS_INT		BIT(0)
-+
-+/* assertion time of intx in usec */
-+#define PCL_INTX_WIDTH_USEC		30
-+
-+struct uniphier_pcie_ep_priv {
-+	void __iomem *base;
-+	struct dw_pcie pci;
-+	struct clk *clk, *clk_gio;
-+	struct reset_control *rst, *rst_gio;
-+	struct phy *phy;
-+	const struct uniphier_pcie_ep_soc_data *data;
-+};
-+
-+struct uniphier_pcie_ep_soc_data {
-+	bool is_legacy;
-+	const struct pci_epc_features features;
-+};
-+
-+#define to_uniphier_pcie(x)	dev_get_drvdata((x)->dev)
-+
-+static void uniphier_pcie_ltssm_enable(struct uniphier_pcie_ep_priv *priv,
-+				       bool enable)
-+{
-+	u32 val;
-+
-+	val = readl(priv->base + PCL_APP_READY_CTRL);
-+	if (enable)
-+		val |= PCL_APP_LTSSM_ENABLE;
-+	else
-+		val &= ~PCL_APP_LTSSM_ENABLE;
-+	writel(val, priv->base + PCL_APP_READY_CTRL);
-+}
-+
-+static void uniphier_pcie_phy_reset(struct uniphier_pcie_ep_priv *priv,
-+				    bool assert)
-+{
-+	u32 val;
-+
-+	val = readl(priv->base + PCL_RSTCTRL2);
-+	if (assert)
-+		val |= PCL_RSTCTRL_PHY_RESET;
-+	else
-+		val &= ~PCL_RSTCTRL_PHY_RESET;
-+	writel(val, priv->base + PCL_RSTCTRL2);
-+}
-+
-+static void uniphier_pcie_init_ep(struct uniphier_pcie_ep_priv *priv)
-+{
-+	u32 val;
-+
-+	/* set EP mode */
-+	val = readl(priv->base + PCL_MODE);
-+	val |= PCL_MODE_REGVAL;
-+	writel(val, priv->base + PCL_MODE);
-+
-+	/* clock request */
-+	val = readl(priv->base + PCL_APP_CLK_CTRL);
-+	val &= ~PCL_APP_CLK_REQ;
-+	writel(val, priv->base + PCL_APP_CLK_CTRL);
-+
-+	/* deassert PIPE3 and AXI reset */
-+	val = readl(priv->base + PCL_RSTCTRL0);
-+	val |= PCL_RSTCTRL_AXI_REG | PCL_RSTCTRL_AXI_SLAVE
-+		| PCL_RSTCTRL_AXI_MASTER | PCL_RSTCTRL_PIPE3;
-+	writel(val, priv->base + PCL_RSTCTRL0);
-+
-+	uniphier_pcie_ltssm_enable(priv, false);
-+}
-+
-+static int uniphier_pcie_start_link(struct dw_pcie *pci)
-+{
-+	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-+
-+	uniphier_pcie_ltssm_enable(priv, true);
-+
-+	return 0;
-+}
-+
-+static void uniphier_pcie_stop_link(struct dw_pcie *pci)
-+{
-+	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-+
-+	uniphier_pcie_ltssm_enable(priv, false);
-+}
-+
-+static void uniphier_pcie_ep_init(struct dw_pcie_ep *ep)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	enum pci_barno bar;
-+
-+	for (bar = BAR_0; bar <= BAR_5; bar++)
-+		dw_pcie_ep_reset_bar(pci, bar);
-+}
-+
-+static int uniphier_pcie_ep_raise_legacy_irq(struct dw_pcie_ep *ep)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-+	u32 val;
-+
-+	/* assert INTx */
-+	val = readl(priv->base + PCL_APP_INTX);
-+	val |= PCL_APP_INTX_SYS_INT;
-+	writel(val, priv->base + PCL_APP_INTX);
-+
-+	udelay(PCL_INTX_WIDTH_USEC);
-+
-+	/* deassert INTx */
-+	val = readl(priv->base + PCL_APP_INTX);
-+	val &= ~PCL_APP_INTX_SYS_INT;
-+	writel(val, priv->base + PCL_APP_INTX);
-+
-+	return 0;
-+}
-+
-+static int uniphier_pcie_ep_raise_msi_irq(struct dw_pcie_ep *ep,
-+					  u8 func_no, u16 interrupt_num)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-+	u32 val;
-+
-+	val = FIELD_PREP(PCL_APP_VEN_MSI_TC_MASK, func_no)
-+		| FIELD_PREP(PCL_APP_VEN_MSI_VECTOR_MASK, interrupt_num - 1);
-+	writel(val, priv->base + PCL_APP_MSI0);
-+
-+	val = readl(priv->base + PCL_APP_MSI1);
-+	val |= PCL_APP_MSI_REQ;
-+	writel(val, priv->base + PCL_APP_MSI1);
-+
-+	return 0;
-+}
-+
-+static int uniphier_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
-+				      enum pci_epc_irq_type type,
-+				      u16 interrupt_num)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+
-+	switch (type) {
-+	case PCI_EPC_IRQ_LEGACY:
-+		return uniphier_pcie_ep_raise_legacy_irq(ep);
-+	case PCI_EPC_IRQ_MSI:
-+		return uniphier_pcie_ep_raise_msi_irq(ep, func_no,
-+						      interrupt_num);
-+	default:
-+		dev_err(pci->dev, "UNKNOWN IRQ type (%d)\n", type);
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct pci_epc_features*
-+uniphier_pcie_get_features(struct dw_pcie_ep *ep)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	struct uniphier_pcie_ep_priv *priv = to_uniphier_pcie(pci);
-+
-+	return &priv->data->features;
-+}
-+
-+static const struct dw_pcie_ep_ops uniphier_pcie_ep_ops = {
-+	.ep_init = uniphier_pcie_ep_init,
-+	.raise_irq = uniphier_pcie_ep_raise_irq,
-+	.get_features = uniphier_pcie_get_features,
-+};
-+
-+static int uniphier_add_pcie_ep(struct uniphier_pcie_ep_priv *priv,
-+				struct platform_device *pdev)
-+{
-+	struct dw_pcie *pci = &priv->pci;
-+	struct dw_pcie_ep *ep = &pci->ep;
-+	struct device *dev = &pdev->dev;
-+	struct resource *res;
-+	int ret;
-+
-+	ep->ops = &uniphier_pcie_ep_ops;
-+
-+	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dbi2");
-+	pci->dbi_base2 = devm_ioremap_resource(dev, res);
-+	if (IS_ERR(pci->dbi_base2))
-+		return PTR_ERR(pci->dbi_base2);
-+
-+	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "addr_space");
-+	if (!res)
-+		return -EINVAL;
-+
-+	ep->phys_base = res->start;
-+	ep->addr_size = resource_size(res);
-+
-+	ret = dw_pcie_ep_init(ep);
-+	if (ret) {
-+		dev_err(dev, "Failed to initialize endpoint (%d)\n", ret);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int uniphier_pcie_ep_enable(struct uniphier_pcie_ep_priv *priv)
-+{
-+	int ret;
-+
-+	ret = clk_prepare_enable(priv->clk);
-+	if (ret)
-+		return ret;
-+
-+	ret = clk_prepare_enable(priv->clk_gio);
-+	if (ret)
-+		goto out_clk_disable;
-+
-+	ret = reset_control_deassert(priv->rst);
-+	if (ret)
-+		goto out_clk_gio_disable;
-+
-+	ret = reset_control_deassert(priv->rst_gio);
-+	if (ret)
-+		goto out_rst_assert;
-+
-+	uniphier_pcie_init_ep(priv);
-+
-+	if (priv->data->is_legacy)
-+		uniphier_pcie_phy_reset(priv, true);
-+
-+	ret = phy_init(priv->phy);
-+	if (ret)
-+		goto out_rst_gio_assert;
-+
-+	if (priv->data->is_legacy)
-+		uniphier_pcie_phy_reset(priv, false);
-+
-+	return 0;
-+
-+out_rst_gio_assert:
-+	reset_control_assert(priv->rst_gio);
-+out_rst_assert:
-+	reset_control_assert(priv->rst);
-+out_clk_gio_disable:
-+	clk_disable_unprepare(priv->clk_gio);
-+out_clk_disable:
-+	clk_disable_unprepare(priv->clk);
-+
-+	return ret;
-+}
-+
-+static const struct dw_pcie_ops dw_pcie_ops = {
-+	.start_link = uniphier_pcie_start_link,
-+	.stop_link = uniphier_pcie_stop_link,
-+};
-+
-+static int uniphier_pcie_ep_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct uniphier_pcie_ep_priv *priv;
-+	struct resource *res;
-+	int ret;
-+
-+	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	priv->data = of_device_get_match_data(dev);
-+	if (WARN_ON(!priv->data))
-+		return -EINVAL;
-+
-+	priv->pci.dev = dev;
-+	priv->pci.ops = &dw_pcie_ops;
-+
-+	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "dbi");
-+	priv->pci.dbi_base = devm_pci_remap_cfg_resource(dev, res);
-+	if (IS_ERR(priv->pci.dbi_base))
-+		return PTR_ERR(priv->pci.dbi_base);
-+
-+	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "link");
-+	priv->base = devm_ioremap_resource(dev, res);
-+	if (IS_ERR(priv->base))
-+		return PTR_ERR(priv->base);
-+
-+	if (priv->data->is_legacy) {
-+		priv->clk_gio = devm_clk_get(dev, "gio");
-+		if (IS_ERR(priv->clk))
-+			return PTR_ERR(priv->clk);
-+
-+		priv->rst_gio =
-+			devm_reset_control_get_shared(dev, "gio");
-+		if (IS_ERR(priv->rst_gio))
-+			return PTR_ERR(priv->rst_gio);
-+
-+		priv->clk = devm_clk_get(dev, "link");
-+		if (IS_ERR(priv->clk))
-+			return PTR_ERR(priv->clk);
-+
-+		priv->rst =
-+			devm_reset_control_get_shared(dev, "link");
-+		if (IS_ERR(priv->rst))
-+			return PTR_ERR(priv->rst);
-+	} else {
-+		priv->clk = devm_clk_get(dev, NULL);
-+		if (IS_ERR(priv->clk))
-+			return PTR_ERR(priv->clk);
-+
-+		priv->rst = devm_reset_control_get_shared(dev, NULL);
-+		if (IS_ERR(priv->rst))
-+			return PTR_ERR(priv->rst);
-+	}
-+
-+	priv->phy = devm_phy_optional_get(dev, "pcie-phy");
-+	if (IS_ERR(priv->phy))
-+		return PTR_ERR(priv->phy);
-+
-+	platform_set_drvdata(pdev, priv);
-+
-+	ret = uniphier_pcie_ep_enable(priv);
-+	if (ret)
-+		return ret;
-+
-+	return uniphier_add_pcie_ep(priv, pdev);
-+}
-+
-+static const struct uniphier_pcie_ep_soc_data uniphier_pro5_data = {
-+	.is_legacy = true,
-+	.features = {
-+		.linkup_notifier = false,
-+		.msi_capable = true,
-+		.msix_capable = false,
-+		.align = 1 << 16,
-+		.bar_fixed_64bit = BIT(BAR_0) | BIT(BAR_2) | BIT(BAR_4),
-+		.reserved_bar =  BIT(BAR_4),
-+	},
-+};
-+
-+static const struct of_device_id uniphier_pcie_ep_match[] = {
-+	{
-+		.compatible = "socionext,uniphier-pro5-pcie-ep",
-+		.data = &uniphier_pro5_data,
-+	},
-+	{ /* sentinel */ },
-+};
-+
-+static struct platform_driver uniphier_pcie_ep_driver = {
-+	.probe  = uniphier_pcie_ep_probe,
-+	.driver = {
-+		.name = "uniphier-pcie-ep",
-+		.of_match_table = uniphier_pcie_ep_match,
-+		.suppress_bind_attrs = true,
-+	},
-+};
-+builtin_platform_driver(uniphier_pcie_ep_driver);
--- 
-2.7.4
+in cmdq_mbox_send_data(), it would run below command:
 
+WARN_ON(clk_enable(cmdq->clock) < 0);
+WARN_ON(cmdq_thread_reset(cmdq, thread) < 0);
+
+writel(task->pa_base, thread->base + CMDQ_THR_CURR_ADDR);
+writel(task->pa_base + pkt->cmd_buf_size,
+       thread->base + CMDQ_THR_END_ADDR);
+writel(thread->priority, thread->base + CMDQ_THR_PRIORITY);
+writel(CMDQ_THR_IRQ_EN, thread->base + CMDQ_THR_IRQ_ENABLE);
+writel(CMDQ_THR_ENABLED, thread->base + CMDQ_THR_ENABLE_TASK);
+
+Do you mean CMDQ_THR_ENABLE_TASK is set to CMDQ_THR_ENABLED, then
+CMDQ_THR_SUSPEND_TASK would be automatically set to CMDQ_THR_RESUME? If
+this hardware work in so special behavior, please add comment for this.
+
+Regards,
+CK
+
+> 
+> 
+> Regards,
+> Dennis
+> 
+> > Regards,
+> > CK
+> > 
+> > > 
+> > > Regards,
+> > > Dennis
+> > > 
+> > > > > +	spin_unlock_irqrestore(&thread->chan->lock, flags);
+> > > > >  }
+> > > > >  
+> > > > >  static const struct mbox_chan_ops cmdq_mbox_chan_ops = {
+> > > > 
+> > > > 
+> > > 
+> > > 
+> > 
+> > 
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
