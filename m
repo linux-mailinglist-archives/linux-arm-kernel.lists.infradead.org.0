@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF0DE11CA34
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 11:07:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40BE211CA50
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 11:14:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=PvqX62XQRFCViwy9lrcSnSWYaYckRNDSYerhMyJaVqY=; b=GBI
-	9xGb7C7lxE7BTgQmrQuQWLgjrZHmdg0i9cZpTKv1606mXm8fSjxfsbNYeKgF+/orb1cD3SkmFuFh7
-	mkl/1WAHcC3p98gFeJ0WIsuvZ84IuhV9JbZVjGpcoTxw6/L3XDNIKD1garHAd7Lq+E18/MayD7QPY
-	ac7gjLFl9RYhN0kHT6Wxnssb8c0dETp3Q4KHZdrd+F3Rddt3WZ/KddTpnW8BChKzTrowLqVtOnzx5
-	mQz+mcL/7t2p4t8vORsbTyPoHiibKpBJEpHRg+Xeo4oBpd6jnlAQCp2EGBKHmDjGQLsN9Omc0qFYq
-	NCKFltKp3r19ibKgwU/fgrpcsqJKr1w==;
+	References:List-Owner; bh=eNLQKrWen4wrYcWFILCbTgmBVumfHB4fljEUfSJ2cy4=; b=aWd
+	nZGt2bBLrxuZQQj5qvDobnegAvkqzOi1HUfuKAuULFyugc5XUrmRxeiRcId/RLsPFjl6AJwyCbVqL
+	AH/G/hT890opzid/vVUmXLrBKxh5yN5f7qoR4Y+xSUSyxjt2DSowoxT9OMNUGfx9EXRzwXOvS2ZXB
+	iyBzZqpeXXkslUb4oz9Xt4uf1QQ+u8jEiPKKPRiBAt1z1FgZdSvjmp8aSdZoCbcshv1GYANJ4w6MR
+	H6aHqsR3HV7jxE/64YGuTXO77VzC9DvByJGm3RP77xoR3dwb/L7GSkXFFqwwiyvqTLQPoP+1p76S9
+	iEzoFuduuIXGhWHLW7jVoYqgIRU7Jpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifLMy-0004ul-Pv; Thu, 12 Dec 2019 10:06:52 +0000
+	id 1ifLTk-000716-Df; Thu, 12 Dec 2019 10:13:52 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifLMq-0004t5-VL
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 10:06:46 +0000
+ id 1ifLTd-00070l-5O
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 10:13:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 41F39328;
- Thu, 12 Dec 2019 02:06:42 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7CCA2328;
+ Thu, 12 Dec 2019 02:13:44 -0800 (PST)
 Received: from p8cg001049571a15.arm.com (unknown [10.163.1.199])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 343F13F6CF;
- Thu, 12 Dec 2019 02:06:35 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 03A913F6CF;
+ Thu, 12 Dec 2019 02:13:39 -0800 (PST)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64/elf_hwcap: Add new flags for BFloat-16 extension
-Date: Thu, 12 Dec 2019 15:37:12 +0530
-Message-Id: <1576145232-8311-1-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH] arm64: Introduce ISAR6 CPU ID register
+Date: Thu, 12 Dec 2019 15:44:23 +0530
+Message-Id: <1576145663-9909-1-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_020645_104969_B4A2AC55 
-X-CRM114-Status: GOOD (  11.17  )
+X-CRM114-CacheID: sfid-20191212_021345_295038_04C99B67 
+X-CRM114-Status: GOOD (  13.20  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -59,167 +59,147 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Will Deacon <will@kernel.org>
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Expose the availability of the BFloat16 (BF16) format support in the CPUs.
-BF16 is a new 16-bit floating point format different from the half
-precision format defined by the IEEE-754-2008.
-
-BF16 extensions add support for new instructions for both FP/SIMD and SVE.
-Advertise these features individually to the userspace via ELF HWCAP.
+This adds basic building blocks required for ISAR6 CPU ID register which
+identifies support for various instruction implementation on AArch32 state.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: James Morse <james.morse@arm.com>
 Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-Cc: linux-doc@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: linux-kernel@vger.kernel.org
+Cc: kvmarm@lists.cs.columbia.edu
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 ---
- Documentation/arm64/elf_hwcaps.rst  | 7 +++++++
- arch/arm64/include/asm/hwcap.h      | 2 ++
- arch/arm64/include/asm/sysreg.h     | 4 ++++
- arch/arm64/include/uapi/asm/hwcap.h | 2 ++
- arch/arm64/kernel/cpufeature.c      | 5 +++++
- arch/arm64/kernel/cpuinfo.c         | 2 ++
- 6 files changed, 22 insertions(+)
+ arch/arm64/include/asm/cpu.h    | 1 +
+ arch/arm64/include/asm/sysreg.h | 9 +++++++++
+ arch/arm64/kernel/cpufeature.c  | 7 ++++++-
+ arch/arm64/kernel/cpuinfo.c     | 1 +
+ arch/arm64/kvm/sys_regs.c       | 2 +-
+ 5 files changed, 18 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/arm64/elf_hwcaps.rst b/Documentation/arm64/elf_hwcaps.rst
-index 7fa3d21..776b2fe 100644
---- a/Documentation/arm64/elf_hwcaps.rst
-+++ b/Documentation/arm64/elf_hwcaps.rst
-@@ -204,6 +204,13 @@ HWCAP2_FRINT
- 
-     Functionality implied by ID_AA64ISAR1_EL1.FRINTTS == 0b0001.
- 
-+HWCAP2_BF16
-+
-+    Functionality implied by ID_AA64ISAR1_EL1.BF16 == 0b0001.
-+
-+HWCAP2_SVEBF16
-+
-+    Functionality implied by ID_AA64ZFR0_EL1.BF16 == 0b0001.
- 
- 4. Unused AT_HWCAP bits
- -----------------------
-diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
-index 3d2f247..bd8bf48 100644
---- a/arch/arm64/include/asm/hwcap.h
-+++ b/arch/arm64/include/asm/hwcap.h
-@@ -86,6 +86,8 @@
- #define KERNEL_HWCAP_SVESM4		__khwcap2_feature(SVESM4)
- #define KERNEL_HWCAP_FLAGM2		__khwcap2_feature(FLAGM2)
- #define KERNEL_HWCAP_FRINT		__khwcap2_feature(FRINT)
-+#define KERNEL_HWCAP_BF16		__khwcap2_feature(BF16)
-+#define KERNEL_HWCAP_SVEBF16		__khwcap2_feature(SVEBF16)
- 
- /*
-  * This yields a mask that user programs can use to figure out what
+diff --git a/arch/arm64/include/asm/cpu.h b/arch/arm64/include/asm/cpu.h
+index d72d995..b4a4053 100644
+--- a/arch/arm64/include/asm/cpu.h
++++ b/arch/arm64/include/asm/cpu.h
+@@ -39,6 +39,7 @@ struct cpuinfo_arm64 {
+ 	u32		reg_id_isar3;
+ 	u32		reg_id_isar4;
+ 	u32		reg_id_isar5;
++	u32		reg_id_isar6;
+ 	u32		reg_id_mmfr0;
+ 	u32		reg_id_mmfr1;
+ 	u32		reg_id_mmfr2;
 diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 6e919fa..6db3a9b 100644
+index 6db3a9b..4fd3327 100644
 --- a/arch/arm64/include/asm/sysreg.h
 +++ b/arch/arm64/include/asm/sysreg.h
-@@ -553,6 +553,7 @@
- #define ID_AA64ISAR0_AES_SHIFT		4
+@@ -146,6 +146,7 @@
+ #define SYS_ID_ISAR4_EL1		sys_reg(3, 0, 0, 2, 4)
+ #define SYS_ID_ISAR5_EL1		sys_reg(3, 0, 0, 2, 5)
+ #define SYS_ID_MMFR4_EL1		sys_reg(3, 0, 0, 2, 6)
++#define SYS_ID_ISAR6_EL1		sys_reg(3, 0, 0, 2, 7)
  
- /* id_aa64isar1 */
-+#define ID_AA64ISAR1_BF16_SHIFT		44
- #define ID_AA64ISAR1_SB_SHIFT		36
- #define ID_AA64ISAR1_FRINTTS_SHIFT	32
- #define ID_AA64ISAR1_GPI_SHIFT		28
-@@ -564,6 +565,7 @@
- #define ID_AA64ISAR1_APA_SHIFT		4
- #define ID_AA64ISAR1_DPB_SHIFT		0
+ #define SYS_MVFR0_EL1			sys_reg(3, 0, 0, 3, 0)
+ #define SYS_MVFR1_EL1			sys_reg(3, 0, 0, 3, 1)
+@@ -683,6 +684,14 @@
+ #define ID_ISAR5_AES_SHIFT		4
+ #define ID_ISAR5_SEVL_SHIFT		0
  
-+#define ID_AA64ISAR1_BF16		0x1
- #define ID_AA64ISAR1_APA_NI		0x0
- #define ID_AA64ISAR1_APA_ARCHITECTED	0x1
- #define ID_AA64ISAR1_API_NI		0x0
-@@ -607,12 +609,14 @@
- /* id_aa64zfr0 */
- #define ID_AA64ZFR0_SM4_SHIFT		40
- #define ID_AA64ZFR0_SHA3_SHIFT		32
-+#define ID_AA64ZFR0_BF16_SHIFT		20
- #define ID_AA64ZFR0_BITPERM_SHIFT	16
- #define ID_AA64ZFR0_AES_SHIFT		4
- #define ID_AA64ZFR0_SVEVER_SHIFT	0
- 
- #define ID_AA64ZFR0_SM4			0x1
- #define ID_AA64ZFR0_SHA3		0x1
-+#define ID_AA64ZFR0_BF16		0x1
- #define ID_AA64ZFR0_BITPERM		0x1
- #define ID_AA64ZFR0_AES			0x1
- #define ID_AA64ZFR0_AES_PMULL		0x2
-diff --git a/arch/arm64/include/uapi/asm/hwcap.h b/arch/arm64/include/uapi/asm/hwcap.h
-index a1e72886..095090c 100644
---- a/arch/arm64/include/uapi/asm/hwcap.h
-+++ b/arch/arm64/include/uapi/asm/hwcap.h
-@@ -65,5 +65,7 @@
- #define HWCAP2_SVESM4		(1 << 6)
- #define HWCAP2_FLAGM2		(1 << 7)
- #define HWCAP2_FRINT		(1 << 8)
-+#define HWCAP2_BF16		(1 << 9)
-+#define HWCAP2_SVEBF16		(1 << 10)
- 
- #endif /* _UAPI__ASM_HWCAP_H */
++#define ID_ISAR6_JSCVT_SHIFT		0
++#define ID_ISAR6_DP_SHIFT		4
++#define ID_ISAR6_FHM_SHIFT		8
++#define ID_ISAR6_SB_SHIFT		12
++#define ID_ISAR6_SPECRES_SHIFT		16
++#define ID_ISAR6_BF16_SHIFT		20
++#define ID_ISAR6_I8MM_SHIFT		24
++
+ #define MVFR0_FPROUND_SHIFT		28
+ #define MVFR0_FPSHVEC_SHIFT		24
+ #define MVFR0_FPSQRT_SHIFT		20
 diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 04cf64e..f344cea 100644
+index f344cea..3b9ac8b 100644
 --- a/arch/arm64/kernel/cpufeature.c
 +++ b/arch/arm64/kernel/cpufeature.c
-@@ -149,6 +149,7 @@ static const struct arm64_ftr_bits ftr_id_aa64isar1[] = {
- 	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
- 		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_APA_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_DPB_SHIFT, 4, 0),
-+	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_BF16_SHIFT, 4, 0),
- 	ARM64_FTR_END,
- };
+@@ -346,7 +346,7 @@ static const struct arm64_ftr_bits ftr_zcr[] = {
+  * Common ftr bits for a 32bit register with all hidden, strict
+  * attributes, with 4bit feature fields and a default safe value of
+  * 0. Covers the following 32bit registers:
+- * id_isar[0-4], id_mmfr[1-3], id_pfr1, mvfr[0-1]
++ * id_isar[0-4, 6], id_mmfr[1-3], id_pfr1, mvfr[0-1]
+  */
+ static const struct arm64_ftr_bits ftr_generic_32bits[] = {
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 28, 4, 0),
+@@ -399,6 +399,7 @@ static const struct __ftr_reg_entry {
+ 	ARM64_FTR_REG(SYS_ID_ISAR4_EL1, ftr_generic_32bits),
+ 	ARM64_FTR_REG(SYS_ID_ISAR5_EL1, ftr_id_isar5),
+ 	ARM64_FTR_REG(SYS_ID_MMFR4_EL1, ftr_id_mmfr4),
++	ARM64_FTR_REG(SYS_ID_ISAR6_EL1, ftr_generic_32bits),
  
-@@ -186,6 +187,8 @@ static const struct arm64_ftr_bits ftr_id_aa64zfr0[] = {
- 		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_AES_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
- 		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SVEVER_SHIFT, 4, 0),
-+	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-+		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_BF16_SHIFT, 4, 0),
- 	ARM64_FTR_END,
- };
+ 	/* Op1 = 0, CRn = 0, CRm = 3 */
+ 	ARM64_FTR_REG(SYS_MVFR0_EL1, ftr_generic_32bits),
+@@ -603,6 +604,7 @@ void __init init_cpu_features(struct cpuinfo_arm64 *info)
+ 		init_cpu_ftr_reg(SYS_ID_ISAR3_EL1, info->reg_id_isar3);
+ 		init_cpu_ftr_reg(SYS_ID_ISAR4_EL1, info->reg_id_isar4);
+ 		init_cpu_ftr_reg(SYS_ID_ISAR5_EL1, info->reg_id_isar5);
++		init_cpu_ftr_reg(SYS_ID_ISAR6_EL1, info->reg_id_isar6);
+ 		init_cpu_ftr_reg(SYS_ID_MMFR0_EL1, info->reg_id_mmfr0);
+ 		init_cpu_ftr_reg(SYS_ID_MMFR1_EL1, info->reg_id_mmfr1);
+ 		init_cpu_ftr_reg(SYS_ID_MMFR2_EL1, info->reg_id_mmfr2);
+@@ -756,6 +758,8 @@ void update_cpu_features(int cpu,
+ 					info->reg_id_isar4, boot->reg_id_isar4);
+ 		taint |= check_update_ftr_reg(SYS_ID_ISAR5_EL1, cpu,
+ 					info->reg_id_isar5, boot->reg_id_isar5);
++		taint |= check_update_ftr_reg(SYS_ID_ISAR6_EL1, cpu,
++					info->reg_id_isar6, boot->reg_id_isar6);
  
-@@ -1652,6 +1655,7 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
- 	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_FRINTTS_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_FRINT),
- 	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_SB_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SB),
- 	HWCAP_CAP(SYS_ID_AA64MMFR2_EL1, ID_AA64MMFR2_AT_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_USCAT),
-+	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_BF16_SHIFT, FTR_UNSIGNED, ID_AA64ISAR1_BF16, CAP_HWCAP, KERNEL_HWCAP_BF16),
- #ifdef CONFIG_ARM64_SVE
- 	HWCAP_CAP(SYS_ID_AA64PFR0_EL1, ID_AA64PFR0_SVE_SHIFT, FTR_UNSIGNED, ID_AA64PFR0_SVE, CAP_HWCAP, KERNEL_HWCAP_SVE),
- 	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_SVEVER_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_SVEVER_SVE2, CAP_HWCAP, KERNEL_HWCAP_SVE2),
-@@ -1660,6 +1664,7 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
- 	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_BITPERM_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_BITPERM, CAP_HWCAP, KERNEL_HWCAP_SVEBITPERM),
- 	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_SHA3_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_SHA3, CAP_HWCAP, KERNEL_HWCAP_SVESHA3),
- 	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_SM4_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_SM4, CAP_HWCAP, KERNEL_HWCAP_SVESM4),
-+	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_BF16_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_BF16, CAP_HWCAP, KERNEL_HWCAP_SVEBF16),
- #endif
- 	HWCAP_CAP(SYS_ID_AA64PFR1_EL1, ID_AA64PFR1_SSBS_SHIFT, FTR_UNSIGNED, ID_AA64PFR1_SSBS_PSTATE_INSNS, CAP_HWCAP, KERNEL_HWCAP_SSBS),
- #ifdef CONFIG_ARM64_PTR_AUTH
+ 		/*
+ 		 * Regardless of the value of the AuxReg field, the AIFSR, ADFSR, and
+@@ -834,6 +838,7 @@ static u64 __read_sysreg_by_encoding(u32 sys_id)
+ 	read_sysreg_case(SYS_ID_ISAR3_EL1);
+ 	read_sysreg_case(SYS_ID_ISAR4_EL1);
+ 	read_sysreg_case(SYS_ID_ISAR5_EL1);
++	read_sysreg_case(SYS_ID_ISAR6_EL1);
+ 	read_sysreg_case(SYS_MVFR0_EL1);
+ 	read_sysreg_case(SYS_MVFR1_EL1);
+ 	read_sysreg_case(SYS_MVFR2_EL1);
 diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
-index 56bba74..10121f5 100644
+index 10121f5..6005d38 100644
 --- a/arch/arm64/kernel/cpuinfo.c
 +++ b/arch/arm64/kernel/cpuinfo.c
-@@ -84,6 +84,8 @@ static const char *const hwcap_str[] = {
- 	"svesm4",
- 	"flagm2",
- 	"frint",
-+	"bf16",
-+	"svebf16",
- 	NULL
- };
+@@ -362,6 +362,7 @@ static void __cpuinfo_store_cpu(struct cpuinfo_arm64 *info)
+ 		info->reg_id_isar3 = read_cpuid(ID_ISAR3_EL1);
+ 		info->reg_id_isar4 = read_cpuid(ID_ISAR4_EL1);
+ 		info->reg_id_isar5 = read_cpuid(ID_ISAR5_EL1);
++		info->reg_id_isar6 = read_cpuid(ID_ISAR6_EL1);
+ 		info->reg_id_mmfr0 = read_cpuid(ID_MMFR0_EL1);
+ 		info->reg_id_mmfr1 = read_cpuid(ID_MMFR1_EL1);
+ 		info->reg_id_mmfr2 = read_cpuid(ID_MMFR2_EL1);
+diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+index 7dadd24..a6b8ca1 100644
+--- a/arch/arm64/kvm/sys_regs.c
++++ b/arch/arm64/kvm/sys_regs.c
+@@ -1424,7 +1424,7 @@ static const struct sys_reg_desc sys_reg_descs[] = {
+ 	ID_SANITISED(ID_ISAR4_EL1),
+ 	ID_SANITISED(ID_ISAR5_EL1),
+ 	ID_SANITISED(ID_MMFR4_EL1),
+-	ID_UNALLOCATED(2,7),
++	ID_SANITISED(ID_ISAR6_EL1),
  
+ 	/* CRm=3 */
+ 	ID_SANITISED(MVFR0_EL1),
 -- 
 2.7.4
 
