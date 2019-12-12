@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FD7011C3A7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 03:59:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4946911C3AF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 03:59:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=o3/BClbtJs0PenpvvRgsNi9G9i5J8lVfqfktk0DoAUQ=; b=ad1LT2wlUdMEGS
-	b7K6JmBqLGM/qG5vEgxTS+6anSPztLtiOeFekxJMbLSb1u7edmZxTO0/WgNOTPwLA2EPHdxCTyBG+
-	tFfnTZlzKY6Yd0uhFN6xEViAm7sINybhtU1GkB9ad1ajF7ZwdD7QM3pST5MOiOnorfFNhkJTdTIDK
-	g1d0msg1mhdS2bqWK8Ram0BCqFCS4x+Yv5sP/CqVnFpkBzf5vfVV93B/aOMPP44k5ZaF8SwR+D8ht
-	arhjxfeEPihyARH173fDzjRSbxSzepYS3589KetWbprxqISfi65uq0KoZuqcWtt5pVdpkh+CISVu0
-	XCbJ1D8qmF0OPG7uVENA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XJwSAwJk090iggxLp5wkEZ3K4k2/y9YTDo01xxlM8Eg=; b=m6cLtlI+AsbJrx
+	cupIytiIEv8kxAHDHQNqa3X4Q1Q2k92BwOE9q0MwY4GMy0iJ1ZRaCf8wgk6yO8Bi+uozqgTbNKL6l
+	gFE8sTV4a2BzU3IxDQPta/Uh2zPiICZEaUZ+Tl0mXzPApdQktdeRl9P1I73zPliEANZLW7wQy0WSB
+	nFbbASBrsQpf7Vxgfz8I38VszlIGA8BPaGh7p1yGbIMzNuHatNQnUZiHM7zkCu38tJ9aIjHRsj2xh
+	wlNEUx/3CKzc74V/po9ON6GC11+vtsMMr7cKagXcLzMXmYFPXY5Ke+/pxzoU6jP+aFpL2OROqZIqc
+	ZyS1NXuoOFkrqe5cdNzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifEgv-0001AF-Ur; Thu, 12 Dec 2019 02:59:01 +0000
-Received: from mail-eopbgr30083.outbound.protection.outlook.com ([40.107.3.83]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1ifEhN-0001QT-Kq; Thu, 12 Dec 2019 02:59:29 +0000
+Received: from mail-eopbgr70044.outbound.protection.outlook.com ([40.107.7.44]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifEgg-00018W-F6
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 02:58:48 +0000
+ id 1ifEgh-00018z-Sc
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 02:58:49 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cUMMHYMKuk6H++TE2++I66yJ9yuYzDe8LYQzqGWG/JRkHTsbif9IEHP/2RNzu+P/C3Z8Bz/2Nx33/XQt2q3lrieMfDhWXtLbTe9awjTmATANvXpYjXobC7Pi5jVfDWKoM5hv+vhjhjEcCVbEQ22VkkP900km5TrMdzwZ5uUPZ2zl7bOUt+KnfHLLscPpmIvBNpKEiX1memU8z1IoX2NISDhYA0m9uKa9yga9/Hnzv5Oj8HsYO2yJMZIyexwbymbLJEmRVR518rtW89kW7SBnjjtSrGlHauDTs4Rger2RY2+mDGWQTpXy2YVdeKXWmiKCP2ls3ASmoi4E2j9ohN+1eA==
+ b=Hb0OvMwOfT0zAKRV8cocsCuRTN0fg64Z++w59egUdBfsFCg889lrYGqNhaxLL/mTX2vUz/ZkbgScna18Ec2kqqo93e62wKNK0aOHiSyipSXMSaoqGmKxZjTuhykeyrFaHor63ZeztgRDofmaibRTpSkrZ1jY66X+kI8UuSO/KqKJh1GzeyMkBiWxfDRQvgV7VO4hJ8I+aKVL20tx87U/8m7Axtn9UfgRFJH0YaW21tyzhLhTqdpVTTaqtiulh8y9gghRjyTUjpTV79OnyNaRYy7jbQmxhwWlJTqzN92oVY0+KNMjNd8G86TS4BFErJYqOcktMKJ9pjVl3RBbxisl4w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7H80ueDAI1BZaVY7PtEth1+meRWE6eRsxYMoFkbRFGk=;
- b=Q/6oG4qohYvFhNioJ0YuyxH+fQOgJ+P4o9ORgJKpGYqzoEnGou2l50gdsDCrC4OQXgSOFfiRA6oiZ1gEji1ICDTOG6Pgy/2AHfelgiM3dBpw6iuyAVJ+fn8wyH/jU2P8b38+kpGmSYh1un6yLkuV1Ldf0G0TmodwI7RSuCD89VdHLHS6jpZNjv3/uJO3+1dzQg0JbFVZFEPA3+OIYiObZCgwPAYDv1jwdpRWITOMaFXKOtd/ulUcyq3fV4ZNbPR2AvTokVpHvlFhnH+oCsp8zY4tVVE2t/oAPYpXewNrkACjobtBoypkSvVJY/9GBhxJL1nGeBB4A7E+B5uPHwPzYQ==
+ bh=Gal1Piys1PGylfNZmJEiIuuLptpQRcnIdDp0U9Lza7E=;
+ b=M6ftBOYATEDukz02J9/jIZZdQ3bzG9p+CZ/vHBDrDIwOCPP3HuGdAORn8G6onparSWAgfTolms+XuaP7KqXhdzAMDIItn+O6IGd97qeLHWXkJHjPCSNi8LFr41u+LjzJZX8qflGDsjf2UjG+aLvQHnL3MSdDU2rvzrmLPdW1WhB0XUl1aBbSC0rTZayJ3IH/3tiU7VtTTL0B6eRDd79PmXGe/NMZu386NyubZ0W+Bo5BLfjqBldzfhaHhOzvD29mW4zuirHaCPJ4N1721obpScpghlnM2dKMWztOSKq5Qx6xKOSNOhLmDVHfDwevSw3UgiP4HxvArD48Zgp7CitMMA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7H80ueDAI1BZaVY7PtEth1+meRWE6eRsxYMoFkbRFGk=;
- b=exAsROwNX/NesGwjaO6VCJc2V+PtrnPglurNKXQcz8e9aVCDa1w6OTifZIxJechIQ+oo4574RRxqRVO0AO6zANqZGIZm+uCq7q6oJjYfXnAb+KC+BLRTo7colRMW4Pc4wMgR7VWe7Hs/na+blzoDs6KVpNR/ylCjAY4AwHLNEf8=
+ bh=Gal1Piys1PGylfNZmJEiIuuLptpQRcnIdDp0U9Lza7E=;
+ b=pR4zSLiJCX7aFEt6VlZOW+T7JABP+Ah2zOHlO4Cy9iKUos92ucoddMsvfIfY41pzudzMrBQZD2DwaZlIxgXfnVKFMa1NFLTUaNxTtMS7lIFZDMDqnrlPjjqbMCjtQHjT6nY6ftcgYDkogRQGmdEw1DOPyWhpAhN8vLh7F5Wi3Sc=
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6369.eurprd04.prod.outlook.com (20.179.252.10) with Microsoft SMTP
+ AM0PR04MB6196.eurprd04.prod.outlook.com (20.179.34.138) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2516.14; Thu, 12 Dec 2019 02:58:38 +0000
+ 15.20.2538.15; Thu, 12 Dec 2019 02:58:42 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::505:87e7:6b49:3d29]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::505:87e7:6b49:3d29%7]) with mapi id 15.20.2538.017; Thu, 12 Dec 2019
- 02:58:38 +0000
+ 02:58:42 +0000
 From: Peng Fan <peng.fan@nxp.com>
 To: "sboyd@kernel.org" <sboyd@kernel.org>, "shawnguo@kernel.org"
  <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>,
  Leonard Crestez <leonard.crestez@nxp.com>
-Subject: [PATCH V2 0/9] clk: imx8m: switch to clk_hw based API
-Thread-Topic: [PATCH V2 0/9] clk: imx8m: switch to clk_hw based API
-Thread-Index: AQHVsJgNGbvwO6VVu0SKbjsMmkP7iw==
-Date: Thu, 12 Dec 2019 02:58:38 +0000
-Message-ID: <1576119353-26679-1-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH V2 1/9] clk: imx: clk-pll14xx: Switch to clk_hw based API
+Thread-Topic: [PATCH V2 1/9] clk: imx: clk-pll14xx: Switch to clk_hw based API
+Thread-Index: AQHVsJgPEjS6WGPPHEml3WtkGD4THw==
+Date: Thu, 12 Dec 2019 02:58:42 +0000
+Message-ID: <1576119353-26679-2-git-send-email-peng.fan@nxp.com>
+References: <1576119353-26679-1-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1576119353-26679-1-git-send-email-peng.fan@nxp.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -70,42 +72,41 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: aae20718-2039-48d5-26b8-08d77eaf2f71
-x-ms-traffictypediagnostic: AM0PR04MB6369:|AM0PR04MB6369:
+x-ms-office365-filtering-correlation-id: 15891387-901a-4a68-9f64-08d77eaf3254
+x-ms-traffictypediagnostic: AM0PR04MB6196:|AM0PR04MB6196:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB6369EA324F1B4BBAEE57663D88550@AM0PR04MB6369.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3383;
+x-microsoft-antispam-prvs: <AM0PR04MB6196805A70A499CDF795059088550@AM0PR04MB6196.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:270;
 x-forefront-prvs: 0249EFCB0B
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(376002)(346002)(396003)(366004)(136003)(199004)(189003)(6512007)(71200400001)(44832011)(4326008)(2906002)(6636002)(26005)(186003)(478600001)(6486002)(966005)(5660300002)(2616005)(86362001)(8936002)(36756003)(110136005)(316002)(8676002)(6506007)(66476007)(66556008)(64756008)(66946007)(66446008)(81156014)(54906003)(52116002)(81166006)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6369;
+ SFS:(10009020)(4636009)(396003)(136003)(346002)(366004)(39860400002)(376002)(199004)(189003)(81156014)(8936002)(316002)(81166006)(8676002)(36756003)(52116002)(478600001)(6512007)(6486002)(71200400001)(110136005)(54906003)(86362001)(186003)(66476007)(4326008)(5660300002)(2906002)(66446008)(64756008)(44832011)(26005)(6636002)(66946007)(6506007)(2616005)(66556008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6196;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: KvnnWTtXq+eRCabnFgCLVrAWyFlIrkKma1aqy98fwC2AMVfUjmU41Fvt6thaRaMO6WzWEO/5H7heDEE4lkHJOaeMJ3GJKf/aA3zFzt3iruYId9UNP5GtQxrYLqr+OCzXLnCIsvKlRR/6ruHva1xyZ06E4ZZ12juDBAiArim2qia67YHvnTqGVV1s9WFNcIA9KVWjJvsUZe3obFik/BS2NslHweoQi4kSlf7ekVaDkCaDh5CSsMzp/YM88XkPtELPN5aHeMqF52FEA4KiBcz8BV4DVE1ujICBadoMbRgeBtivW+xVFfZaHz9gwkhk7tBtLb1pbLBluq7aezK6wvWCAOqnuhMe+KfFFE3TB9tLwTylZ5EDWMNMG4uCTN3qTgLDyS1N6uAypeFs1L6pU0cBL1qninmooiidSrCim4KzehXVD0KXqeTc8dU+s+BB2r+7E6DEKnjGvIsk2ZIefv50xNIpwTrQSsHYMkfMY0I5nuv9vZRjtZLS9yh9Fy/zooKpx6vgfu033R3MHjeOXB8aVw==
+x-microsoft-antispam-message-info: Iw+0/WqIf/KhIWTO+rXaLCzFRarV1+IeXe8BAwHTMllAe4qoLk6jdMGLzGdj447yPXm3stPGeYKFBxgO9B/jyYXoOfSaaAvajLChBjgKA+7oxJ2PoCvrRdhKR/41rlikj4haiBXgCxOyvxDgdemQ73hiSrIkViaxDOy47ipAOhlrMxST9QbqdWFTu2fLiajOLmyjmnGFQI36YsJRVayebrfWJAfmiijC2Pgz+ZP/EmpajOFaHSjHujICJESDJUSzFfhwApYf47AzXePM2oIc43X6RP6dCjtM4liap1Db4SSBH/Yl3Kjxw2+hJlfOfDz/rGiiRm2hOJ+vieJzj1z9/dwsvtBjk5/KMo/5KLXOmVxnMY51llpHn3knKX0bX1zxznGu/TGxCsyJ58db73t101Br+t9qAQP9q/r9v747sbOPmfiA2/WpSwI9wDIl5Tpn
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: aae20718-2039-48d5-26b8-08d77eaf2f71
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Dec 2019 02:58:38.0773 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 15891387-901a-4a68-9f64-08d77eaf3254
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Dec 2019 02:58:42.7696 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: K0jyZjvJg4qRqlw/llt6Xy/oO24ohPrvez2HeR6DbzHSsnqJw6kou0qppVO9KGwdRb4hh5fqvb6IAcK79Oqe4w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6369
+X-MS-Exchange-CrossTenant-userprincipalname: 88nPSqhIfjE50oGME9nX64FzT3biiI4uPfystoiUO6ost2s5G4t3/X8cM+JseFtS13Vwppi5BmsJ0Q94MMpb5g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6196
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_185846_508707_3D9918A5 
-X-CRM114-Status: UNSURE (   7.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_185847_924757_E40AC1E3 
+X-CRM114-Status: GOOD (  12.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.83 listed in list.dnswl.org]
+ no trust [40.107.7.44 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -140,37 +141,79 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-This covers v1 https://patchwork.kernel.org/cover/11217881/ and
-v3 https://patchwork.kernel.org/cover/11251585/
+Switch the imx_clk_pll14xx function to clk_hw based API, rename
+accordingly and add a macro for clk based legacy. This allows us to
+move closer to a clear split between consumer and provider clk APIs.
 
-V2:
-Per Leonard's comments, use to_clk helpers
-Add Abel's R-b tag
-Rebased on Shawn's next branch
+Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
+ drivers/clk/imx/clk-pll14xx.c | 22 +++++++++++++---------
+ drivers/clk/imx/clk.h         |  7 +++++++
+ 2 files changed, 20 insertions(+), 9 deletions(-)
 
-This patchset is to convert i.MX8M clk driver to clk_hw based API,
-and add clk_hw helpers that will be used by i.MX8M clk driver.
-
-Peng Fan (9):
-  clk: imx: clk-pll14xx: Switch to clk_hw based API
-  clk: imx: clk-composite-8m: Switch to clk_hw based API
-  clk: imx: add imx_unregister_hw_clocks
-  clk: imx: add hw API imx_clk_hw_mux2_flags
-  clk: imx: gate3: Switch to clk_hw based API
-  clk: imx: Remove __init for imx_obtain_fixed_clk_hw() API
-  clk: imx: imx8mn: Switch to clk_hw based API
-  clk: imx: imx8mm: Switch to clk_hw based API
-  clk: imx: imx8mq: Switch to clk_hw based API
-
- drivers/clk/imx/clk-composite-8m.c |   4 +-
- drivers/clk/imx/clk-imx8mm.c       | 555 +++++++++++++++++------------------
- drivers/clk/imx/clk-imx8mn.c       | 489 ++++++++++++++++---------------
- drivers/clk/imx/clk-imx8mq.c       | 573 +++++++++++++++++++------------------
- drivers/clk/imx/clk-pll14xx.c      |  22 +-
- drivers/clk/imx/clk.c              |  12 +-
- drivers/clk/imx/clk.h              |  52 +++-
- 7 files changed, 896 insertions(+), 811 deletions(-)
-
+diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
+index e2384271ed83..5b0519a81a7a 100644
+--- a/drivers/clk/imx/clk-pll14xx.c
++++ b/drivers/clk/imx/clk-pll14xx.c
+@@ -376,13 +376,14 @@ static const struct clk_ops clk_pll1443x_ops = {
+ 	.set_rate	= clk_pll1443x_set_rate,
+ };
+ 
+-struct clk *imx_clk_pll14xx(const char *name, const char *parent_name,
+-			    void __iomem *base,
+-			    const struct imx_pll14xx_clk *pll_clk)
++struct clk_hw *imx_clk_hw_pll14xx(const char *name, const char *parent_name,
++				  void __iomem *base,
++				  const struct imx_pll14xx_clk *pll_clk)
+ {
+ 	struct clk_pll14xx *pll;
+-	struct clk *clk;
++	struct clk_hw *hw;
+ 	struct clk_init_data init;
++	int ret;
+ 	u32 val;
+ 
+ 	pll = kzalloc(sizeof(*pll), GFP_KERNEL);
+@@ -419,12 +420,15 @@ struct clk *imx_clk_pll14xx(const char *name, const char *parent_name,
+ 	val &= ~BYPASS_MASK;
+ 	writel_relaxed(val, pll->base + GNRL_CTL);
+ 
+-	clk = clk_register(NULL, &pll->hw);
+-	if (IS_ERR(clk)) {
+-		pr_err("%s: failed to register pll %s %lu\n",
+-			__func__, name, PTR_ERR(clk));
++	hw = &pll->hw;
++
++	ret = clk_hw_register(NULL, hw);
++	if (ret) {
++		pr_err("%s: failed to register pll %s %d\n",
++			__func__, name, ret);
+ 		kfree(pll);
++		return ERR_PTR(ret);
+ 	}
+ 
+-	return clk;
++	return hw;
+ }
+diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
+index afc794714992..caee661664c1 100644
+--- a/drivers/clk/imx/clk.h
++++ b/drivers/clk/imx/clk.h
+@@ -127,6 +127,13 @@ extern struct imx_pll14xx_clk imx_1443x_dram_pll;
+ struct clk *imx_clk_pll14xx(const char *name, const char *parent_name,
+ 		 void __iomem *base, const struct imx_pll14xx_clk *pll_clk);
+ 
++#define imx_clk_pll14xx(name, parent_name, base, pll_clk) \
++	to_clk(imx_clk_hw_pll14xx(name, parent_name, base, pll_clk))
++
++struct clk_hw *imx_clk_hw_pll14xx(const char *name, const char *parent_name,
++				  void __iomem *base,
++				  const struct imx_pll14xx_clk *pll_clk);
++
+ struct clk_hw *imx_clk_hw_pllv1(enum imx_pllv1_type type, const char *name,
+ 		const char *parent, void __iomem *base);
+ 
 -- 
 2.16.4
 
