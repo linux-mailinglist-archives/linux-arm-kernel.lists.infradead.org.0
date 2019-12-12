@@ -2,91 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4833F11CA12
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 11:00:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9494711CA18
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 11:01:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=qCWyDl9ameH2dDN0buUb27j5Qpzf4SyjW359ThmEXTU=; b=Eifj/mJHHW4wp1Ljp9SCB99/Dz
-	R1dUDg74wlwlxQkvfrQ7DUk6E/7bEC8O4KljoQCIPxrey2nKEpxPbWA5wOZ72V1CB4+vWUPIMZaWb
-	N2hByhS4QClaM1w5BwtXo89D5DqvRz848Aohgi8xECkPfNdmMqRYoLVXcSlwoiqeNvtv7VLMn/+BP
-	gIpETxa8XWVSS85GlBQWMpSZqAWnFTr8F/2yn2UoDNwTORNPxC9tNnN3cKDsVXp/Km78OWa4O3gDq
-	OsVA9gP3z4mpt5z9WNLzuVJglGmGrSAFMt+11NKtpS0Pe2hYi84u9SA4mch1T9798PhWP8Av1Nj9l
-	/Nmy+QDA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y7WN86U/Q5krUFSSYaqaMo63RuABEu4QI6zwxSefyeE=; b=CgXoIVXJAwhPEO
+	fWWRx0MXLNQGJgKbFtF1u4nne4VmXCX6HmD7SJrkCP83YjQ8NDCJSuRfVs4xTgOqgYScoMXS8iaaB
+	eFsE7wpOkJ/zWF5qSlELv2ct5/xlCeYVvj9Djg7AvYokwmNMuprpCGpdRUW+8/uIkkennkIiRT3wM
+	d5oUqgnvZZHb0gRt9Zq5oKUuRZS/l95fKCX+e5GwBucIOMpF7OIGF992H86+Bum00VJKF2a6X2xFE
+	rAkEP+/075cqYbPtviCZQewrxpNZQ6qFgKkq4BI0q91/TrisQJCj9H+5nf3lH0cE9hUaIv2+tmDsT
+	kKnPocH+kio920PExDqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifLGB-0000pd-0u; Thu, 12 Dec 2019 09:59:51 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1ifLHg-0002Pl-K9; Thu, 12 Dec 2019 10:01:24 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifLFq-0000o5-PV
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 09:59:34 +0000
-Received: by mail-wm1-x341.google.com with SMTP id a5so1664210wmb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Dec 2019 01:59:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=qob5MD+1ZS0pYtdjBgnkpFDxpc0W6ot/d2VJiwxkCsk=;
- b=PVQa/n6i8SkgK9Qe3IN37/3ocLPKhqVZj7Ng/BtpSwIVIKbtGMdmqL4EnaeJ+k8nUA
- BkfOq+mCUdpDoL6kOQl2BgnR8+bvECXBMSm3h0ZH7tvTs6aRGiNCQb/GQFQKu8plEx7u
- mexp0P0At5XABCcNEdmQYhl1qkN5f4YPK+t07HvtV0DjBrNiBjpqrIdCcwBC2qllenRl
- Kvwq/WwNGkaOkryWCQpGI59VwW3zazsqC4ybmSJ1rWlauZJQYMSEKMzQi4UtieqpIE50
- YDvFVWDxtd59J/tdAmDixl07nKYNObHE0bD9lxDNsJJHFRj5dNMzjNcFKEIufExR/x+/
- CMxA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=qob5MD+1ZS0pYtdjBgnkpFDxpc0W6ot/d2VJiwxkCsk=;
- b=crAWkoTZUbDDIDeHj78pB4TCaYsp+aBSdkvMDbqOCKsPIweL91JlehQixEWjJx48/U
- AvO0yM6DlMTFkKhH1DVo4YFuZ0Ctl+bJ3eKJ4dCo922r4Dfapan8XdUV2tUdaKLSZrx6
- PV0l6Nj4W6uH/THche68HMXr2xjJbqk0b2yl7rzr96Z1NFeCAOdglVyfKMRLJwE+CccV
- 5ttNUfQ9iuHg0MIpgfrRKs+s6KrqM9LHD+/ZghjtXVhz5sCFsHItM6cosfvMJ4evdQvt
- Fr14MMFMVwtoJ4Qi18kUyugOT1bB9WlR6ysAqcxPTB42U3vD+oQAg7oma+usx3rU64Yb
- C2iw==
-X-Gm-Message-State: APjAAAV81dD79W1S6PkIiK6FSr6NV2ImDx5Ky0j5MWpOxEwa8WoYr956
- 5KeGlX90Ci6RFRHYoQ2VrP6EPA==
-X-Google-Smtp-Source: APXvYqzjEwjpObi8qUnk6Ez7f9NzpaNmY7bDUm4m0xWIfse8HZrQDicowh/cC1jDLVKpVYSOeIRI3w==
-X-Received: by 2002:a05:600c:20f:: with SMTP id
- 15mr5584485wmi.128.1576144768995; 
- Thu, 12 Dec 2019 01:59:28 -0800 (PST)
-Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id g21sm6269303wmh.17.2019.12.12.01.59.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Dec 2019 01:59:28 -0800 (PST)
-References: <20191206074052.15557-1-jian.hu@amlogic.com>
- <20191206074052.15557-6-jian.hu@amlogic.com>
-User-agent: mu4e 1.3.3; emacs 26.2
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Jian Hu <jian.hu@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH v4 5/6] dt-bindings: clock: meson: add A1 peripheral clock
- controller bindings
-In-reply-to: <20191206074052.15557-6-jian.hu@amlogic.com>
-Date: Thu, 12 Dec 2019 10:59:27 +0100
-Message-ID: <1ja77xlv9c.fsf@starbuckisacylon.baylibre.com>
+ id 1ifLHW-0002PM-G3
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 10:01:16 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1ifLHN-0006Jy-UX; Thu, 12 Dec 2019 11:01:05 +0100
+Message-ID: <9fd20d18a8773cd8886d9cb0424791b2f79b3e25.camel@pengutronix.de>
+Subject: Re: [PATCH 2/2] reset: Add Broadcom STB RESCAL reset controller
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org
+Date: Thu, 12 Dec 2019 11:01:04 +0100
+In-Reply-To: <469c7b73-b028-1691-d5f0-0ceb3007da1c@gmail.com>
+References: <20191210195903.24127-1-f.fainelli@gmail.com>
+ <20191210195903.24127-3-f.fainelli@gmail.com>
+ <89d2d00058e34e7571fc0f50ce487cf54414cd49.camel@pengutronix.de>
+ <469c7b73-b028-1691-d5f0-0ceb3007da1c@gmail.com>
+User-Agent: Evolution 3.30.5-1.1 
 MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_015930_832684_C5D1F61F 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20191212_020114_536806_A5F154FE 
+X-CRM114-Status: GOOD (  23.54  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,216 +66,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Jim Quinlan <im2101024@gmail.com>, "open list:OPEN FIRMWARE AND
+ FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Jim Quinlan <jim2101024@gmail.com>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>, "moderated
+ list:BROADCOM BCM7XXX ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, 2019-12-11 at 10:12 -0800, Florian Fainelli wrote:
+> 
+> On 12/11/2019 1:48 AM, Philipp Zabel wrote:
+> > > +#define BRCM_RESCAL_START	0
+> > > +#define	BRCM_RESCAL_START_BIT	BIT(0)
+> > > +#define BRCM_RESCAL_CTRL	4
+> > > +#define BRCM_RESCAL_STATUS	8
+> > > +#define BRCM_RESCAL_STATUS_BIT	BIT(0)
+> > 
+> > Is there any reason the start bit is indented but the status bit is not?
+> 
+> This is a convention we have tried to adopt to denote the definition
+> from a register word address/offset versus the definition for bits
+> within that register word.
 
-On Fri 06 Dec 2019 at 08:40, Jian Hu <jian.hu@amlogic.com> wrote:
+That's fine, consider indenting BRCM_RESCAL_STATUS_BIT as well, then.
 
-> Add the documentation to support Amlogic A1 peripheral clock driver,
-> and add A1 peripheral clock controller bindings.
->
-> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
-> ---
->  .../bindings/clock/amlogic,a1-clkc.yaml       | 70 +++++++++++++
->  include/dt-bindings/clock/a1-clkc.h           | 98 +++++++++++++++++++
->  2 files changed, 168 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
->  create mode 100644 include/dt-bindings/clock/a1-clkc.h
->
-> diff --git a/Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml b/Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
-> new file mode 100644
-> index 000000000000..dd3ce071834e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/clock/amlogic,a1-clkc.yaml
-> @@ -0,0 +1,70 @@
-> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
+[...]
+> > > +	reg = readl(base + BRCM_RESCAL_START);
+> > > +	writel(reg | BRCM_RESCAL_START_BIT, base + BRCM_RESCAL_START);
+> > > +	reg = readl(base + BRCM_RESCAL_START);
+> > > +	if (!(reg & BRCM_RESCAL_START_BIT)) {
+> > > +		dev_err(data->dev, "failed to start sata/pcie rescal\n");
 
-Same Here, Either take Rob's suggestion from v1 or reply to his comment.
+Is this something that can actually happen?
 
-> +/*
-> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-> + */
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/clock/amlogic,a1-clkc.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> +
-> +title: Amlogic Meson A/C serials Peripheral Clock Control Unit Device Tree Bindings
-> +
-> +maintainers:
-> +  - Neil Armstrong <narmstrong@baylibre.com>
-> +  - Jerome Brunet <jbrunet@baylibre.com>
-> +  - Jian Hu <jian.hu@jian.hu.com>
-> +
-> +properties:
-> +  "#clock-cells":
-> +    const: 1
-> +  compatible:
-> +    - enum:
-> +        - amlogic,a1-periphs-clkc
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 6
-> +    maxItems: 6
-> +    items:
-> +      - description: Input fixed pll div2
-> +      - description: Input fixed pll div3
-> +      - description: Input fixed pll div5
-> +      - description: Input fixed pll div7
-> +      - description: HIFI PLL
-> +      - description: Input Oscillator (usually at 24MHz)
-> +
-> +  clock-names:
-> +    minItems: 6
-> +    maxItems: 6
-> +    items:
-> +      - const: fclk_div2
-> +      - const: fclk_div3
-> +      - const: fclk_div5
-> +      - const: fclk_div7
-> +      - const: hifi_pll
-> +      - const: xtal
-> +
-> +required:
-> +  - "#clock-cells"
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +
-> +examples:
-> +  - |
-> +    clkc_periphs: periphs-clock-controller {
-> +        compatible = "amlogic,a1-periphs-clkc";
-> +        reg = <0 0x800 0 0x104>;
-> +        #clock-cells = <1>;
-> +        clocks = <&clkc_pll CLKID_FCLK_DIV2>,
-> +                <&clkc_pll CLKID_FCLK_DIV3>,
-> +                <&clkc_pll CLKID_FCLK_DIV5>,
-> +                <&clkc_pll CLKID_FCLK_DIV7>,
-> +                <&clkc_pll CLKID_HIFI_PLL>,
-> +                <&xtal>;
-> +        clock-names = "fclk_div2", "fclk_div3", "fclk_div5",
-> +                      "fclk_div7", "hifi_pll", "xtal";
-> +   };
-> diff --git a/include/dt-bindings/clock/a1-clkc.h b/include/dt-bindings/clock/a1-clkc.h
-> new file mode 100644
-> index 000000000000..1ba01122457c
-> --- /dev/null
-> +++ b/include/dt-bindings/clock/a1-clkc.h
-> @@ -0,0 +1,98 @@
-> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
-> +/*
-> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-> + */
-> +
-> +#ifndef __A1_CLKC_H
-> +#define __A1_CLKC_H
-> +
-> +#define CLKID_XTAL_FIXPLL			1
-> +#define CLKID_XTAL_USB_PHY			2
-> +#define CLKID_XTAL_USB_CTRL			3
-> +#define CLKID_XTAL_HIFIPLL			4
-> +#define CLKID_XTAL_SYSPLL			5
-> +#define CLKID_XTAL_DDS				6
-> +#define CLKID_SYS_CLK				7
-> +#define CLKID_CLKTREE				8
-> +#define CLKID_RESET_CTRL			9
-> +#define CLKID_ANALOG_CTRL			10
-> +#define CLKID_PWR_CTRL				11
-> +#define CLKID_PAD_CTRL				12
-> +#define CLKID_SYS_CTRL				13
-> +#define CLKID_TEMP_SENSOR			14
-> +#define CLKID_AM2AXI_DIV			15
-> +#define CLKID_SPICC_B				16
-> +#define CLKID_SPICC_A				17
-> +#define CLKID_CLK_MSR				18
-> +#define CLKID_AUDIO				19
-> +#define CLKID_JTAG_CTRL				20
-> +#define CLKID_SARADC				21
-> +#define CLKID_PWM_EF				22
-> +#define CLKID_PWM_CD				23
-> +#define CLKID_PWM_AB				24
-> +#define CLKID_CEC				25
-> +#define CLKID_I2C_S				26
-> +#define CLKID_IR_CTRL				27
-> +#define CLKID_I2C_M_D				28
-> +#define CLKID_I2C_M_C				29
-> +#define CLKID_I2C_M_B				30
-> +#define CLKID_I2C_M_A				31
-> +#define CLKID_ACODEC				32
-> +#define CLKID_OTP				33
-> +#define CLKID_SD_EMMC_A				34
-> +#define CLKID_USB_PHY				35
-> +#define CLKID_USB_CTRL				36
-> +#define CLKID_SYS_DSPB				37
-> +#define CLKID_SYS_DSPA				38
-> +#define CLKID_DMA				39
-> +#define CLKID_IRQ_CTRL				40
-> +#define CLKID_NIC				41
-> +#define CLKID_GIC				42
-> +#define CLKID_UART_C				43
-> +#define CLKID_UART_B				44
-> +#define CLKID_UART_A				45
-> +#define CLKID_SYS_PSRAM				46
-> +#define CLKID_RSA				47
-> +#define CLKID_CORESIGHT				48
-> +#define CLKID_AM2AXI_VAD			49
-> +#define CLKID_AUDIO_VAD				50
-> +#define CLKID_AXI_DMC				51
-> +#define CLKID_AXI_PSRAM				52
-> +#define CLKID_RAMB				53
-> +#define CLKID_RAMA				54
-> +#define CLKID_AXI_SPIFC				55
-> +#define CLKID_AXI_NIC				56
-> +#define CLKID_AXI_DMA				57
-> +#define CLKID_CPU_CTRL				58
-> +#define CLKID_ROM				59
-> +#define CLKID_PROC_I2C				60
-> +#define CLKID_DSPA_SEL				61
-> +#define CLKID_DSPB_SEL				62
-> +#define CLKID_DSPA_EN_DSPA			63
-> +#define CLKID_DSPA_EN_NIC			64
-> +#define CLKID_DSPB_EN_DSPB			65
-> +#define CLKID_DSPB_EN_NIC			66
-> +#define CLKID_RTC_CLK				67
-> +#define CLKID_CECA_32K				68
-> +#define CLKID_CECB_32K				69
-> +#define CLKID_24M				70
-> +#define CLKID_12M				71
-> +#define CLKID_FCLK_DIV2_DIVN			72
-> +#define CLKID_GEN				73
-> +#define CLKID_SARADC_SEL			74
-> +#define CLKID_SARADC_CLK			75
-> +#define CLKID_PWM_A				76
-> +#define CLKID_PWM_B				77
-> +#define CLKID_PWM_C				78
-> +#define CLKID_PWM_D				79
-> +#define CLKID_PWM_E				80
-> +#define CLKID_PWM_F				81
-> +#define CLKID_SPICC				82
-> +#define CLKID_TS				83
-> +#define CLKID_SPIFC				84
-> +#define CLKID_USB_BUS				85
-> +#define CLKID_SD_EMMC				86
-> +#define CLKID_PSRAM				87
-> +#define CLKID_DMC				88
-> +
-> +#endif /* __A1_CLKC_H */
+[...]
+> > > +	reg = readl(base + BRCM_RESCAL_START);
+> > > +	writel(reg ^ BRCM_RESCAL_START_BIT, base + BRCM_RESCAL_START);
+> > 
+> > Please use &= ~BRCM_RESCAL_START_BIT instead.
+> 
+> I think the idea was to avoid unconditionally clearing it, but based on
+> the documentation, I don't see this being harmful, Jim?
+
+Unless the bit is self-clearing, I can't see how this XOR could ever set
+the bit instead of clearing it.
+And even if it would, I don't understand how that can be indented.
+Wouldn't that restart the reset/calibration sequence?
+
+> > > +	reg = readl(base + BRCM_RESCAL_START);
+> > > +	dev_dbg(data->dev, "sata/pcie rescal success\n");
+> > > +
+> > > +	return 0;
+> > > +}
+> > 
+> > This whole function looks a lot like it doesn't just deassert a reset
+> > line, but actually issues a complete reset procedure of some kind. Do
+> > you have some insight on what actually happens in the hardware when the
+> > start bit is triggered? I suspect this should be implemented with the
+> > .reset operation.
+> 
+> This hardware block is controlling the reset and calibration process of
+> the SATA/PCIe combo PHY analog front end, but is not technically part of
+> the PCIe or SATA PHY proper, it stands on its own, both functionally and
+> from a register space perspective. The motivation for modelling this as
+> a reset controller is that it does a reset (and a calibration) and this
+> is a shared reset line among 2/3 instances of another block. If you
+> think we should model this differently, please let us know.
+
+Thank you for the explanation. I agree the "reset and calibration
+sequence" property is close enough to a pure reset sequence to warrant
+describing this as as reset controller.
+The correct way would be to use the .reset callback though, if you can
+have the drivers use reset_control_reset().
+
+regards
+Philipp
 
 
 _______________________________________________
