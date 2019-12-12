@@ -2,39 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BB2D11D3EC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 18:29:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12AD911D3ED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 18:29:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b1KbNNeKbiMolkjtuw+IAA6wNACz0VQvEakVTEzdK9k=; b=prjZsvYmyYNaAw
-	eC0XmeLNK0hsYlkR8TlJChx15ZPMKwEIp0nRlMoq0AoYLQ63Le+gFm+92DGop6YLKyAzZ0oGqcih+
-	L+jpsM6i4a9Bfdcblfj5P3AqN+Pf1jGr6eh7m2RsfWYJZzbb38zUYhIQel5asJtj2YhsmqDRO1f3R
-	LOEsg3ycqiTttxecj8aeWG+yz4PE5iahFla1oK6hH/pPE6HE725GQ5PDYAq2wKMwS2Q0a10wRcQ/8
-	GcNYAkzWcuEiCk+shUBGctMGG4fV6izqMfbKEef4sgearTZQ66JhT6OIiEO5Juygwh/Fzbh5wIl0M
-	I/i49UO6m5XTBoiVYBag==;
+	List-Owner; bh=q8fDuiv7OBu2uHdRKRLaKgNYi8xGwEMBZvHNZwJQhHg=; b=e5Pos/iaZIt2I1
+	JilrAcUpv+9VbAQ2MG6GJ6EWLex5tR6nEFPE090neWYHZz0F9m/qhSNb79iP6/GidQlHreTW8TGVi
+	aj5+siWUGvW9SrjGSIH/gwXkg10pD8xiBh2w8yFHe284DoRhIoH2vK09Q8Env/n3vWW/ALDwb5ioq
+	j2R/I226kSNA3gRQGdCAQ2QMf7WN6xvaMsEZEcYaGoQwZS3yVk3U5dDD45ae8q+2hJhf8iQE1rc+0
+	fX8HRV6I2BsUkvckr9NSZNMNj7agnImFZ5sCdmD+sGc1UaPlBl+WlfhrTDl0Jf2H01qwZUl+QGPyx
+	2Is9jFSgcRyWRL8d5XFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifSH9-0005Ns-7V; Thu, 12 Dec 2019 17:29:19 +0000
+	id 1ifSHM-0005cm-2b; Thu, 12 Dec 2019 17:29:32 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifSGe-0005A4-KL
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 17:28:50 +0000
+ id 1ifSGe-0005A3-VF
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 17:28:52 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1ifSGW-00069s-Cp; Thu, 12 Dec 2019 18:28:40 +0100
+ id 1ifSGY-00069s-0w; Thu, 12 Dec 2019 18:28:42 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 2/8] KVM: arm/arm64: vgic: Fix potential double free
- dist->spis in __kvm_vgic_destroy()
-Date: Thu, 12 Dec 2019 17:28:18 +0000
-Message-Id: <20191212172824.11523-3-maz@kernel.org>
+Subject: [PATCH 4/8] KVM: arm64: Sanely ratelimit sysreg messages
+Date: Thu, 12 Dec 2019 17:28:20 +0000
+Message-Id: <20191212172824.11523-5-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191212172824.11523-1-maz@kernel.org>
 References: <20191212172824.11523-1-maz@kernel.org>
@@ -51,9 +50,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_092848_814528_BBF64947 
-X-CRM114-Status: UNSURE (   9.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191212_092849_164542_E86E25DA 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -87,36 +85,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Miaohe Lin <linmiaohe@huawei.com>
+From: Mark Rutland <mark.rutland@arm.com>
 
-In kvm_vgic_dist_init() called from kvm_vgic_map_resources(), if
-dist->vgic_model is invalid, dist->spis will be freed without set
-dist->spis = NULL. And in vgicv2 resources clean up path,
-__kvm_vgic_destroy() will be called to free allocated resources.
-And dist->spis will be freed again in clean up chain because we
-forget to set dist->spis = NULL in kvm_vgic_dist_init() failed
-path. So double free would happen.
+Currently kvm_pr_unimpl() is ratelimited, so print_sys_reg_instr() won't
+spam the console. However, someof its callers try to print some
+contextual information with kvm_err(), which is not ratelimited. This
+means that in some cases the context may be printed without the sysreg
+encoding, which isn't all that useful.
 
-Signed-off-by: Miaohe Lin <linmiaohe@huawei.com>
+Let's ensure that both are consistently printed together and
+ratelimited, by refactoring print_sys_reg_instr() so that some callers
+can provide it with an arbitrary format string.
+
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Reviewed-by: Eric Auger <eric.auger@redhat.com>
-Link: https://lore.kernel.org/r/1574923128-19956-1-git-send-email-linmiaohe@huawei.com
+Link: https://lore.kernel.org/r/20191205180652.18671-2-mark.rutland@arm.com
 ---
- virt/kvm/arm/vgic/vgic-init.c | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/kvm/sys_regs.c | 12 ++++++------
+ arch/arm64/kvm/sys_regs.h | 17 +++++++++++++++--
+ 2 files changed, 21 insertions(+), 8 deletions(-)
 
-diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
-index b3c5de48064c..7c58112ae67c 100644
---- a/virt/kvm/arm/vgic/vgic-init.c
-+++ b/virt/kvm/arm/vgic/vgic-init.c
-@@ -177,6 +177,7 @@ static int kvm_vgic_dist_init(struct kvm *kvm, unsigned int nr_spis)
- 			break;
- 		default:
- 			kfree(dist->spis);
-+			dist->spis = NULL;
- 			return -EINVAL;
- 		}
+diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+index 2071260a275b..e8bf08e09f78 100644
+--- a/arch/arm64/kvm/sys_regs.c
++++ b/arch/arm64/kvm/sys_regs.c
+@@ -2094,9 +2094,9 @@ static void unhandled_cp_access(struct kvm_vcpu *vcpu,
+ 		WARN_ON(1);
  	}
+ 
+-	kvm_err("Unsupported guest CP%d access at: %08lx [%08lx]\n",
+-		cp, *vcpu_pc(vcpu), *vcpu_cpsr(vcpu));
+-	print_sys_reg_instr(params);
++	print_sys_reg_msg(params,
++			  "Unsupported guest CP%d access at: %08lx [%08lx]\n",
++			  cp, *vcpu_pc(vcpu), *vcpu_cpsr(vcpu));
+ 	kvm_inject_undefined(vcpu);
+ }
+ 
+@@ -2245,9 +2245,9 @@ static int emulate_sys_reg(struct kvm_vcpu *vcpu,
+ 	if (likely(r)) {
+ 		perform_access(vcpu, params, r);
+ 	} else {
+-		kvm_err("Unsupported guest sys_reg access at: %lx [%08lx]\n",
+-			*vcpu_pc(vcpu), *vcpu_cpsr(vcpu));
+-		print_sys_reg_instr(params);
++		print_sys_reg_msg(params,
++				  "Unsupported guest sys_reg access at: %lx [%08lx]\n",
++				  *vcpu_pc(vcpu), *vcpu_cpsr(vcpu));
+ 		kvm_inject_undefined(vcpu);
+ 	}
+ 	return 1;
+diff --git a/arch/arm64/kvm/sys_regs.h b/arch/arm64/kvm/sys_regs.h
+index 9bca0312d798..5a6fc30f5989 100644
+--- a/arch/arm64/kvm/sys_regs.h
++++ b/arch/arm64/kvm/sys_regs.h
+@@ -62,11 +62,24 @@ struct sys_reg_desc {
+ #define REG_HIDDEN_USER		(1 << 0) /* hidden from userspace ioctls */
+ #define REG_HIDDEN_GUEST	(1 << 1) /* hidden from guest */
+ 
+-static inline void print_sys_reg_instr(const struct sys_reg_params *p)
++static __printf(2, 3)
++inline void print_sys_reg_msg(const struct sys_reg_params *p,
++				       char *fmt, ...)
+ {
++	va_list va;
++
++	va_start(va, fmt);
+ 	/* Look, we even formatted it for you to paste into the table! */
+-	kvm_pr_unimpl(" { Op0(%2u), Op1(%2u), CRn(%2u), CRm(%2u), Op2(%2u), func_%s },\n",
++	kvm_pr_unimpl("%pV { Op0(%2u), Op1(%2u), CRn(%2u), CRm(%2u), Op2(%2u), func_%s },\n",
++		      &(struct va_format){ fmt, &va },
+ 		      p->Op0, p->Op1, p->CRn, p->CRm, p->Op2, p->is_write ? "write" : "read");
++	va_end(va);
++}
++
++static inline void print_sys_reg_instr(const struct sys_reg_params *p)
++{
++	/* GCC warns on an empty format string */
++	print_sys_reg_msg(p, "%s", "");
+ }
+ 
+ static inline bool ignore_write(struct kvm_vcpu *vcpu,
 -- 
 2.20.1
 
