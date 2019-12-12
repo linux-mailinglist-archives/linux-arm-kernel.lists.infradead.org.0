@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6664311D3F6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 18:31:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D36411D3FA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 18:31:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aVZtEtXwnDw1m5y18rXZUSsJMVZKmFgR/HOSxCvGh2M=; b=HzcJBRff7gwiSB
-	CSrwWSpMg4LJOcNZ6meKy0qerCyysA2ksuDUrgnZX6DvwC6Tln2AOGW0CE+8x4y6fUXwCeKUKub/G
-	viqH+iVhAipYQNUVnMC6xuQc99+AfCWGE3ne+lrryM4HXQ7h0RBTg9u5rD+Fgu95Bu/nbbI3N2LIX
-	+ryXX0YmejiYb5JezJpbkfQnVCuH/omNgE4yKQyOnp/2gSM34Au5k1Xj/buHyt2c5f0EuJWbhssuz
-	gS2oeuD1ZhIZnfzxyA3PGctWz4ZY5QyHTPA/3xHXcqmkKRkuoAmGr6xtGIBCP9UxKWApIWWOVldcn
-	3n6cd60BQ5I4zX04UaDw==;
+	List-Owner; bh=OoF0Vldr7o49S+ZcjX+MIQQktSf+lK72tkgKYLB2LyM=; b=DJb/QBepRtQ9iN
+	IZMNdmz5oHKEELLd26UatHmu7GhL0/9rKw14HFU6JRja1Ag9XxmYTECSVmeM0haPwNSqNYbx5kz+N
+	Cg7o6Vuv5icQGxSpAlKb+8n3U3J8mnpGJhF+q/Y24iq1gX7bTeu9Pz0p9h0hpiLO2+fyRidv9Wbdg
+	PC1W+iIWlV2r/kfgxVfYz8nuHI5ZFfEUPrrZOTrWCBWqppOYrlBJ1gWEc7SnxCoHY8/RNtIbaqkTn
+	DnNVljrM1KfLcDgNMKKkWxMk/t/Ez+MGTflXj0KbV8Tskt3WHD7ipYpqSfNg4cCNWiOuUknNRT/qp
+	4fU41zDhRxmUXdgRa+7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifSIh-0007vv-7b; Thu, 12 Dec 2019 17:30:55 +0000
+	id 1ifSIv-0008Br-Lx; Thu, 12 Dec 2019 17:31:09 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifSGf-0005AL-L2
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 17:28:53 +0000
+ id 1ifSGg-0005Bs-I5
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 17:28:54 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1ifSGa-00069s-F9; Thu, 12 Dec 2019 18:28:44 +0100
+ id 1ifSGb-00069s-Dd; Thu, 12 Dec 2019 18:28:45 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 7/8] KVM: arm64: Ensure 'params' is initialised when looking
- up sys register
-Date: Thu, 12 Dec 2019 17:28:23 +0000
-Message-Id: <20191212172824.11523-8-maz@kernel.org>
+Subject: [PATCH 8/8] KVM: arm/arm64: Properly handle faulting of device
+ mappings
+Date: Thu, 12 Dec 2019 17:28:24 +0000
+Message-Id: <20191212172824.11523-9-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191212172824.11523-1-maz@kernel.org>
 References: <20191212172824.11523-1-maz@kernel.org>
@@ -51,8 +51,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_092849_829438_384125E7 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20191212_092850_748266_22DCC351 
+X-CRM114-Status: GOOD (  12.26  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -81,48 +81,106 @@ Cc: Mark Rutland <mark.rutland@arm.com>, Miaohe Lin <linmiaohe@huawei.com>,
  Julien Thierry <julien.thierry.kdev@gmail.com>,
  Alexandru Elisei <alexandru.elisei@arm.com>, kvmarm@lists.cs.columbia.edu,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogV2lsbCBEZWFjb24gPHdpbGxAa2VybmVsLm9yZz4KCkNvbW1pdCA0YjkyN2I5NGQ1ZGYg
-KCJLVk06IGFybS9hcm02NDogdmdpYzogSW50cm9kdWNlIGZpbmRfcmVnX2J5X2lkKCkiKQppbnRy
-b2R1Y2VkICdmaW5kX3JlZ19ieV9pZCgpJywgd2hpY2ggbG9va3MgdXAgYSBzeXN0ZW0gcmVnaXN0
-ZXIgb25seSBpZgp0aGUgJ2lkJyBpbmRleCBwYXJhbWV0ZXIgaWRlbnRpZmllcyBhIHZhbGlkIHN5
-c3RlbSByZWdpc3Rlci4gQXMgcGFydCBvZgp0aGUgcGF0Y2gsIGV4aXN0aW5nIGNhbGxlcnMgb2Yg
-J2ZpbmRfcmVnKCknIHdlcmUgcG9ydGVkIG92ZXIgdG8gdGhlIG5ldwppbnRlcmZhY2UsIGJ1dCB0
-aGlzIGJyZWFrcyAnaW5kZXhfdG9fc3lzX3JlZ19kZXNjKCknIGluIHRoZSBjYXNlIHRoYXQgdGhl
-CmluaXRpYWwgbG9va3VwIGluIHRoZSB2Q1BVIHRhcmdldCB0YWJsZSBmYWlscyBiZWNhdXNlIHdl
-IHdpbGwgdGhlbiBjYWxsCmludG8gJ2ZpbmRfcmVnKCknIGZvciB0aGUgc3lzdGVtIHJlZ2lzdGVy
-IHRhYmxlIHdpdGggYW4gdW5pbml0aWFsaXNlZAoncGFyYW0nIGFzIHRoZSBrZXkgdG8gdGhlIGxv
-b2t1cC4KCkdDQyAxMCBpcyBicmlnaHQgZW5vdWdoIHRvIHNwb3QgdGhpcyAoYW1vbmdzdCBhIHRv
-bm5lIG9mIGZhbHNlIHBvc2l0aXZlcywKYnV0IGhleSEpOgoKICB8IGFyY2gvYXJtNjQva3ZtL3N5
-c19yZWdzLmM6IEluIGZ1bmN0aW9uIOKAmGluZGV4X3RvX3N5c19yZWdfZGVzYy5wYXJ0LjAuaXNy
-YeKAmToKICB8IGFyY2gvYXJtNjQva3ZtL3N5c19yZWdzLmM6OTgzOjMzOiB3YXJuaW5nOiDigJhw
-YXJhbXMuT3Ay4oCZIG1heSBiZSB1c2VkIHVuaW5pdGlhbGl6ZWQgaW4gdGhpcyBmdW5jdGlvbiBb
-LVdtYXliZS11bmluaXRpYWxpemVkXQogIHwgICA5ODMgfCAgICh1MzIpKHgpLT5DUm4sICh1MzIp
-KHgpLT5DUm0sICh1MzIpKHgpLT5PcDIpOwogIHwgWy4uLl0KClJldmVydCB0aGUgaHVuayBvZiA0
-YjkyN2I5NGQ1ZGYgd2hpY2ggYnJlYWtzICdpbmRleF90b19zeXNfcmVnX2Rlc2MoKScgc28KdGhh
-dCB0aGUgb2xkIGJlaGF2aW91ciBvZiBjaGVja2luZyB0aGUgaW5kZXggdXBmcm9udCBpcyByZXN0
-b3JlZC4KCkZpeGVzOiA0YjkyN2I5NGQ1ZGYgKCJLVk06IGFybS9hcm02NDogdmdpYzogSW50cm9k
-dWNlIGZpbmRfcmVnX2J5X2lkKCkiKQpTaWduZWQtb2ZmLWJ5OiBXaWxsIERlYWNvbiA8d2lsbEBr
-ZXJuZWwub3JnPgpTaWduZWQtb2ZmLWJ5OiBNYXJjIFp5bmdpZXIgPG1hekBrZXJuZWwub3JnPgpD
-YzogPHN0YWJsZUB2Z2VyLmtlcm5lbC5vcmc+Ckxpbms6IGh0dHBzOi8vbG9yZS5rZXJuZWwub3Jn
-L3IvMjAxOTEyMTIwOTQwNDkuMTI0MzctMS13aWxsQGtlcm5lbC5vcmcKLS0tCiBhcmNoL2FybTY0
-L2t2bS9zeXNfcmVncy5jIHwgNSArKysrLQogMSBmaWxlIGNoYW5nZWQsIDQgaW5zZXJ0aW9ucygr
-KSwgMSBkZWxldGlvbigtKQoKZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQva3ZtL3N5c19yZWdzLmMg
-Yi9hcmNoL2FybTY0L2t2bS9zeXNfcmVncy5jCmluZGV4IGJkMmFjMzc5NmQ4ZC4uZDc4YjcyNmQ0
-NzIyIDEwMDY0NAotLS0gYS9hcmNoL2FybTY0L2t2bS9zeXNfcmVncy5jCisrKyBiL2FyY2gvYXJt
-NjQva3ZtL3N5c19yZWdzLmMKQEAgLTIzNjQsOCArMjM2NCwxMSBAQCBzdGF0aWMgY29uc3Qgc3Ry
-dWN0IHN5c19yZWdfZGVzYyAqaW5kZXhfdG9fc3lzX3JlZ19kZXNjKHN0cnVjdCBrdm1fdmNwdSAq
-dmNwdSwKIAlpZiAoKGlkICYgS1ZNX1JFR19BUk1fQ09QUk9DX01BU0spICE9IEtWTV9SRUdfQVJN
-NjRfU1lTUkVHKQogCQlyZXR1cm4gTlVMTDsKIAorCWlmICghaW5kZXhfdG9fcGFyYW1zKGlkLCAm
-cGFyYW1zKSkKKwkJcmV0dXJuIE5VTEw7CisKIAl0YWJsZSA9IGdldF90YXJnZXRfdGFibGUodmNw
-dS0+YXJjaC50YXJnZXQsIHRydWUsICZudW0pOwotCXIgPSBmaW5kX3JlZ19ieV9pZChpZCwgJnBh
-cmFtcywgdGFibGUsIG51bSk7CisJciA9IGZpbmRfcmVnKCZwYXJhbXMsIHRhYmxlLCBudW0pOwog
-CWlmICghcikKIAkJciA9IGZpbmRfcmVnKCZwYXJhbXMsIHN5c19yZWdfZGVzY3MsIEFSUkFZX1NJ
-WkUoc3lzX3JlZ19kZXNjcykpOwogCi0tIAoyLjIwLjEKCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+A device mapping is normally always mapped at Stage-2, since there
+is very little gain in having it faulted in.
+
+Nonetheless, it is possible to end-up in a situation where the device
+mapping has been removed from Stage-2 (userspace munmaped the VFIO
+region, and the MMU notifier did its job), but present in a userspace
+mapping (userpace has mapped it back at the same address). In such
+a situation, the device mapping will be demand-paged as the guest
+performs memory accesses.
+
+This requires to be careful when dealing with mapping size, cache
+management, and to handle potential execution of a device mapping.
+
+Reported-by: Alexandru Elisei <alexandru.elisei@arm.com>
+Signed-off-by: Marc Zyngier <maz@kernel.org>
+Tested-by: Alexandru Elisei <alexandru.elisei@arm.com>
+Reviewed-by: James Morse <james.morse@arm.com>
+Cc: stable@vger.kernel.org
+Link: https://lore.kernel.org/r/20191211165651.7889-2-maz@kernel.org
+---
+ virt/kvm/arm/mmu.c | 21 +++++++++++++++++----
+ 1 file changed, 17 insertions(+), 4 deletions(-)
+
+diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+index a48994af70b8..0b32a904a1bb 100644
+--- a/virt/kvm/arm/mmu.c
++++ b/virt/kvm/arm/mmu.c
+@@ -38,6 +38,11 @@ static unsigned long io_map_base;
+ #define KVM_S2PTE_FLAG_IS_IOMAP		(1UL << 0)
+ #define KVM_S2_FLAG_LOGGING_ACTIVE	(1UL << 1)
+ 
++static bool is_iomap(unsigned long flags)
++{
++	return flags & KVM_S2PTE_FLAG_IS_IOMAP;
++}
++
+ static bool memslot_is_logging(struct kvm_memory_slot *memslot)
+ {
+ 	return memslot->dirty_bitmap && !(memslot->flags & KVM_MEM_READONLY);
+@@ -1698,6 +1703,7 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+ 
+ 	vma_pagesize = vma_kernel_pagesize(vma);
+ 	if (logging_active ||
++	    (vma->vm_flags & VM_PFNMAP) ||
+ 	    !fault_supports_stage2_huge_mapping(memslot, hva, vma_pagesize)) {
+ 		force_pte = true;
+ 		vma_pagesize = PAGE_SIZE;
+@@ -1760,6 +1766,9 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+ 			writable = false;
+ 	}
+ 
++	if (exec_fault && is_iomap(flags))
++		return -ENOEXEC;
++
+ 	spin_lock(&kvm->mmu_lock);
+ 	if (mmu_notifier_retry(kvm, mmu_seq))
+ 		goto out_unlock;
+@@ -1781,7 +1790,7 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+ 	if (writable)
+ 		kvm_set_pfn_dirty(pfn);
+ 
+-	if (fault_status != FSC_PERM)
++	if (fault_status != FSC_PERM && !is_iomap(flags))
+ 		clean_dcache_guest_page(pfn, vma_pagesize);
+ 
+ 	if (exec_fault)
+@@ -1948,9 +1957,8 @@ int kvm_handle_guest_abort(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ 	if (kvm_is_error_hva(hva) || (write_fault && !writable)) {
+ 		if (is_iabt) {
+ 			/* Prefetch Abort on I/O address */
+-			kvm_inject_pabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+-			ret = 1;
+-			goto out_unlock;
++			ret = -ENOEXEC;
++			goto out;
+ 		}
+ 
+ 		/*
+@@ -1992,6 +2000,11 @@ int kvm_handle_guest_abort(struct kvm_vcpu *vcpu, struct kvm_run *run)
+ 	ret = user_mem_abort(vcpu, fault_ipa, memslot, hva, fault_status);
+ 	if (ret == 0)
+ 		ret = 1;
++out:
++	if (ret == -ENOEXEC) {
++		kvm_inject_pabt(vcpu, kvm_vcpu_get_hfar(vcpu));
++		ret = 1;
++	}
+ out_unlock:
+ 	srcu_read_unlock(&vcpu->kvm->srcu, idx);
+ 	return ret;
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
