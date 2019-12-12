@@ -2,94 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BCD211C105
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 00:56:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40E5B11C12A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 01:13:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=77nNhtLBZf6t3XsA8HVcE9vOn9eiHsnKyQSaeBv4eH4=; b=erqPQqzwTJqJG5
-	Fkijlaup3CqeKK5MPaTHG0DT31sFIvJMRiblV3upMGO3WxWvh2k8Lc+a2YhihAv04g6dsDg2yYyR2
-	+6ePEWdHbKvONSmQjNCEuF4Kc9MSGPSupG6Pp4Cd1hVh7906wfwtrWuR6B3X6zZoXfP+df6Hw3CmM
-	7ux/6pFDQL7bGFu+KyYzJbpK9RzZJwaBVrYpBc0hMJELGzOmX/+Y1cU2i5Qe6sCSJytJn8ykajbRr
-	iqABA0/BOpnebcHr9ZBKzYJeYg0sdcwW/HETvvzV9vgw4+JOxGeOKa74FCSXKuo7BJOTcnbjK1fAy
-	a+VpXkHQ+2HfFH+3NKvQ==;
+	List-Owner; bh=bI5aspnTT0EwGzdZZ7WO5L5zPLOFC+IiuQH7D2OCkeo=; b=rzydAnohqbT7WC
+	aA9rj1f7iG/2JHqzSgHh5Cwwa0bSZ4MgE0wORS7P3q7Yt/dDQX6DmXvum8Q9JJwAOXXRv7BM+Rzjz
+	dxLvfyQOJ1P0E1pincjuJ+4m8tbshgSK83j0vZJW/jK+q7NCMB1qre2wc11wIsQhs4Ex7Z3KoPJqw
+	vJpZrhYzk9rqc/oVx4FjmgJ+MIoYKhTUHnHmNV1+4T6g/f/B5Qmt68rMmOrFJRM5GyonuSMFArNsD
+	lVI8HOBp/ESsK1mXgYUIu7Pg+u7LkGBu/TsMY+Lhp61wmPC9OCKMFb8PZnc45vuuxOh14u5Z8J1rU
+	njwoGzEMYRwXeIVOlceg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifBqD-0004oE-6p; Wed, 11 Dec 2019 23:56:25 +0000
-Received: from mout.web.de ([212.227.17.12])
+	id 1ifC6R-00052p-7s; Thu, 12 Dec 2019 00:13:11 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifBnK-0000vD-If; Wed, 11 Dec 2019 23:53:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1576108399;
- bh=vpmcxnQM8xeIOrgf/nLMbY75MJAw3JLGxT3wkvLPkbo=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=BzrHW2OM7bnwDihbgxHzNh8UPyn71b0KWUeLA7jUPedIlK3QHYVlS0idBZM47pmbx
- u/s2Oorz8KhTT7wAZjxE29vQzv+lZoxVuVp4hoCqQLSOFesdNtpM70cAoxjkN8VesG
- 2tWns90UzykDW0PtQzGz1+jRSE3N5Me3UUJVdcqs=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from localhost.localdomain ([89.204.139.166]) by smtp.web.de
- (mrweb101 [213.165.67.124]) with ESMTPSA (Nemesis) id
- 0LmLoU-1i6PGv079u-00Zwng; Thu, 12 Dec 2019 00:53:19 +0100
-From: Soeren Moch <smoch@web.de>
-To: Kalle Valo <kvalo@codeaurora.org>,
-	Heiko Stuebner <heiko@sntech.de>
-Subject: [PATCH v2 9/9] arm64: dts: rockchip: RockPro64: hook up bluetooth at
- uart0
-Date: Thu, 12 Dec 2019 00:52:53 +0100
-Message-Id: <20191211235253.2539-10-smoch@web.de>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191211235253.2539-1-smoch@web.de>
-References: <20191211235253.2539-1-smoch@web.de>
+ id 1ifC6C-0004wu-SW; Thu, 12 Dec 2019 00:13:01 +0000
+Received: by mail-qt1-x841.google.com with SMTP id z15so688002qts.5;
+ Wed, 11 Dec 2019 16:12:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=JpkQHGI2xpytoMExaxEosFs2mgf6joP/Hf11Z973OOo=;
+ b=CSt6XAY8CElDN73sZdchWCJTiVYvx0gczwNtK7YUuSVX/lG5mchWFQNQbomhcw58G2
+ d92/8npPNpQ73goL6dPfm215af8SsA90ngfSDwgtOY1LnOaqE44SOOIrUTGK85AoA8E/
+ aypxy00MsBhiVXUyn1al9RZIE3GrLCeLZjLI8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=JpkQHGI2xpytoMExaxEosFs2mgf6joP/Hf11Z973OOo=;
+ b=tH9XWDjDfK3IFzETUoQq/UzoOeAegrO31EpRwCCT1GaUU5Glr1oFP6as9TBmlUCBTO
+ E+h92ddfoXRRuMpn7C4iBaAvGTCwkFxyNDIO6J63NOJmfUyMCmSSxYXhiC2kL4b8I953
+ NqnuwysVdm3ZRkmXaz0L0czpaUUJXmRu8xPewWYxHb1ZzTq+jGhr4iMOleBxD34lOwx4
+ 3uX30y+YNrkQOSpRpbSAvl+0qLxuwGJNK7C5Kd3O9KuTwJv1rWV4+Mnxc4Uk22ByD56W
+ cLnlnC0UvYU3Dqy7hHkqL9oPdEeIFdpo0m13rbI5e1LOJhjH8Lpctb5gkdtW89CozBE5
+ Gygw==
+X-Gm-Message-State: APjAAAUEGtptan3vhSDRVac77OPLsIUMy/+mJzzOGVxRHdZJB88/7TX3
+ rE0jagiNsqB7+m1gqYT4XzixjVB8tFt0XGS6gv4=
+X-Google-Smtp-Source: APXvYqx9tpMnePqfUyI/wqyrtIckfCZNviBzFD6lqfFJher3fMfJBT1e7NmLJtfELd5HAaHlEF3LR3ykCznnk4gFFTs=
+X-Received: by 2002:ac8:3467:: with SMTP id v36mr5149667qtb.255.1576109575020; 
+ Wed, 11 Dec 2019 16:12:55 -0800 (PST)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:5PDFH2F0gjxlcHEJO1q+UhhYMk5qrPh+R32KnEj09Ga2cRHNb6a
- WRvTk6+wPGns5t79V6A5yoGWG8mUNT8/17s9oA0//bPLHcW6hDWVFW/oVkXNIt2bhpPEv0K
- lJgNfkZq5I4mKhPg5g5ld/AlrjfJATF9j+BESdBC3KhzSqzdzaYD6z9e2CNWxmPy1A8KAmw
- LisOj0yPMWY6dMp/VuCwA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:tpVInoJ1RDg=:TY0Y8jY4BRFGaskvGFkBNh
- jwQgF+B6L5pOwcYFelXXSOSs3JUoLAzMJmi3lQHZG3zagTYa5ec3EmFKy2zWyjjkqDUYmfbxM
- SklKG+S9WrhxwukxqP48U1AB/c/nkv8Ff2Xxxxb/v4YznBy5PI9OANBHdeperFGLIG2D117rG
- RKU4govznHCUe4vzIx50qc3MBAAnQ4k2axKbCjCdQU0KZy+HjR1nMtaVUrRwb1ea0HyzBwg0v
- 2oCg2XkNnBcaXqHeWTlqOG+FGoqnL19Syz4pKB+6GznH9jaSzQ49pjSd0q5JW5aw0gpCIqDdB
- q9HHB2tBJnKWHpvNmU7FfDZLZfcQPmWdK9owN/pIZOECF3V5KEXziEn6mZqordxnGDC/EInQq
- Lc4ISJgfJXU01ERmUroP2kb44G08JMtDG/qID9OWX9Gl74/gmZYYw8gCDf+xFPfg7ne6iZAqC
- nac05Sz6FjuQUc3H2J4BQcykdjrcBmF8s5qPACTOr5o86gvN90J8gCo87hR1QOGBaw1o/hHXh
- C20wpBWRlzCZSb81nOVbKt8H387nsw9GoYEnXJ3Ib3laZ4zoX1Zuk81CECo4zINJuY1ZTzkVb
- DHyJrRg5Tizk1YhMJ6y4BK+AgXsuWHS/7hG65fBo1U9e2+rWKIdrPb0ik4QJfDN01a1Ze9IpZ
- lZiM5ydyw6NLK9fS4k8cOWwAEE68qFwCMz5otMcDMUqA35FbAGlyfa12OmyhuNpOH8bNZfuCU
- S7kgGnpZm3AvTqOyKfJRic/h9o8vQtE5hSm7PAePDr8nPLp3PttDhdzcURTllw1Nhm77lMKTk
- q8h8HiV8VS7tg4nviLnyDNvrXDnDmiBB0fGzrRCyEjLQlg4wNk8r+WEXd64pLBrrYZYLr5UKy
- gFlIeqT6utsFoLYYGvAEkLXzJgj3ByToaly7FQr1YJej5cze5QoWGV3qAAfUBCnwXk8cBurre
- Il3LMG4GJKHlRMmtui9X93CJgjPhpYIwZ3FjYfOkDvlTs6Jz9IrOM7Dyd7gXPNGtpHxY8ZRPZ
- wZYfDyXjuZ7Ttli5eXTV6CgECOYT3ldVewSf8S96IRRbruiTZ43w8oe7R04a0mxVwh30YbRTS
- EZBwgktnaiZGCVaau1310BTCnvJMj0zHgswDCshOMY/l8q6kzKyWK4+ZSNbj25ChQuw5CBa6N
- W8cppyIDzVq9kBEvrDAiEUoq3h94zApYs2Lgs2Rb3fUbwaQqcf4n0XEpjL8FdAxA6sYX4gwGK
- viCgHHeD+54tWUevFFwkG18p6Ilf+g0GP4UA1Mw==
+References: <20191211192742.95699-1-brendanhiggins@google.com>
+ <20191211192742.95699-8-brendanhiggins@google.com>
+In-Reply-To: <20191211192742.95699-8-brendanhiggins@google.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Thu, 12 Dec 2019 00:12:43 +0000
+Message-ID: <CACPK8XctCb9Q2RaFVHEDuWxKDXpCWMWs-+vnKZ=SeTa3xRnT_g@mail.gmail.com>
+Subject: Re: [PATCH v1 7/7] fsi: aspeed: add unspecified HAS_IOMEM dependency
+To: Brendan Higgins <brendanhiggins@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_155326_940100_45C9934E 
-X-CRM114-Status: UNSURE (   8.25  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191211_161257_856844_A7459F34 
+X-CRM114-Status: GOOD (  14.54  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.12 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (smoch[at]web.de)
+ provider (joel.stan[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,89 +90,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: brcm80211-dev-list.pdl@broadcom.com, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Soeren Moch <smoch@web.de>,
- brcm80211-dev-list@cypress.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ Andrew Jeffery <andrew@aj.id.au>, Richard Weinberger <richard@nod.at>,
+ jdike@addtoit.com, Eddie James <eajames@linux.ibm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-um@lists.infradead.org, Jeremy Kerr <jk@ozlabs.org>, davidgow@google.com,
+ Alistar Popple <alistair@popple.id.au>, linux-fsi@lists.ozlabs.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ anton.ivanov@cambridgegreys.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With enabled wifi support (required for firmware loading) for the
-Ampak AP6359SA based wifi/bt combo module we now also can enable
-the bluetooth part.
+On Wed, 11 Dec 2019 at 19:28, Brendan Higgins <brendanhiggins@google.com> wrote:
+>
+> Currently CONFIG_FSI_MASTER_ASPEED=y implicitly depends on
+> CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we get
+> the following build error:
+>
+> ld: drivers/fsi/fsi-master-aspeed.o: in function `fsi_master_aspeed_probe':
+> drivers/fsi/fsi-master-aspeed.c:436: undefined reference to `devm_ioremap_resource'
+>
+> Fix the build error by adding the unspecified dependency.
+>
+> Reported-by: Brendan Higgins <brendanhiggins@google.com>
+> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
 
-Suggested-by: Heiko Stuebner <heiko@sntech.de>
-Signed-off-by: Soeren Moch <smoch@web.de>
----
-changes in v2:
-- new patch
+Nice. I hit this when attempting to force on CONFIG_COMPILE_TEST in
+order to build some ARM drivers under UM. Do you have plans to fix
+that too?
 
-Cc: Heiko Stuebner <heiko@sntech.de>
-Cc: Kalle Valo <kvalo@codeaurora.org>
-Cc: linux-wireless@vger.kernel.org
-Cc: brcm80211-dev-list.pdl@broadcom.com
-Cc: brcm80211-dev-list@cypress.com
-Cc: netdev@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-rockchip@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- .../boot/dts/rockchip/rk3399-rockpro64.dts    | 29 ++++++++++++++++++-
- 1 file changed, 28 insertions(+), 1 deletion(-)
+Do you want to get this in a fix for 5.5?
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-index 9fa92790d6e0..94cc462e234d 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
-@@ -561,6 +561,20 @@
- };
+Acked-by: Joel Stanley <joel@jms.id.au>
 
- &pinctrl {
-+	bt {
-+		bt_enable_h: bt-enable-h {
-+			rockchip,pins = <0 RK_PB1 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+
-+		bt_host_wake_l: bt-host-wake-l {
-+			rockchip,pins = <0 RK_PA4 RK_FUNC_GPIO &pcfg_pull_down>;
-+		};
-+
-+		bt_wake_l: bt-wake-l {
-+			rockchip,pins = <2 RK_PD3 RK_FUNC_GPIO &pcfg_pull_none>;
-+		};
-+	};
-+
- 	buttons {
- 		pwrbtn: pwrbtn {
- 			rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_up>;
-@@ -729,8 +743,21 @@
+Cheers,
 
- &uart0 {
- 	pinctrl-names = "default";
--	pinctrl-0 = <&uart0_xfer &uart0_cts>;
-+	pinctrl-0 = <&uart0_xfer &uart0_cts &uart0_rts>;
- 	status = "okay";
-+
-+	bluetooth {
-+		compatible = "brcm,bcm43438-bt";
-+		clocks = <&rk808 1>;
-+		clock-names = "extclk";
-+		device-wakeup-gpios = <&gpio2 RK_PD3 GPIO_ACTIVE_HIGH>;
-+		host-wakeup-gpios = <&gpio0 RK_PA4 GPIO_ACTIVE_HIGH>;
-+		shutdown-gpios = <&gpio0 RK_PB1 GPIO_ACTIVE_HIGH>;
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&bt_host_wake_l &bt_wake_l &bt_enable_h>;
-+		vbat-supply = <&vcc3v3_sys>;
-+		vddio-supply = <&vcc_1v8>;
-+	};
- };
+Joel
 
- &uart2 {
---
-2.17.1
-
+> ---
+>  drivers/fsi/Kconfig | 1 +
+>  1 file changed, 1 insertion(+)
+>
+> diff --git a/drivers/fsi/Kconfig b/drivers/fsi/Kconfig
+> index 92ce6d85802cc..4cc0e630ab79b 100644
+> --- a/drivers/fsi/Kconfig
+> +++ b/drivers/fsi/Kconfig
+> @@ -55,6 +55,7 @@ config FSI_MASTER_AST_CF
+>
+>  config FSI_MASTER_ASPEED
+>         tristate "FSI ASPEED master"
+> +       depends on HAS_IOMEM
+>         help
+>          This option enables a FSI master that is present behind an OPB bridge
+>          in the AST2600.
+> --
+> 2.24.0.525.g8f36a354ae-goog
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
