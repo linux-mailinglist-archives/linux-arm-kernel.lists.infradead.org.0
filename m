@@ -2,69 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0B1311C257
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 02:39:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DB1111C242
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 02:36:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fw1vfwaZJbXcpCwr6f+a6SfdI4MtzuLnVYfFZtSM2rw=; b=i5IMgcnsJYmgqv
-	V/YF0sPj0e603uMdfRqG6Xpz9YP5M3TFxOANhMA7g/GzZVVLSvM5PYe5WxGZoIYt6sZpAoQk1zFQu
-	/q/CO+1XoHjfpiUxYVAJCafXo1Rt3HjQ3rfnXLacPrrCqhRVkkEKqsL6KWPvsnDpgasWqNWLPHc2c
-	jzD3LQJVP6LvQbnnRSImv01cZs+9QS3bqNPMahiaBeBanJ9QtQEtM7FKg5da591F5XVqVP8xosE56
-	jsmpWN9L3JegrxmLI+MtuW4VQEOLiB3Bw7XyuudApge3CeC3Xb0yn62WAcfZDupsIiHx/AnhsfpqB
-	vewdO7pf+O3pF+y8HIAQ==;
+	List-Owner; bh=fyZyxedAA9Xmc2mXVLDHFBuDGNB891Ctgj8bVcjiSps=; b=ooVNuoqJX4Og3w
+	+d+NFefIymjBfSAjucdv/P0xQOTz8Yf2wdczvTTuOzTpbhHaP0LBMDTqJyZYY4DVJna74jLlfC+CV
+	S5O8+RP7L82k8vqEgGIZwMmS3HxxnPG6dvpPr/TMihGZk1nErHbDIJt3/0C5Feuf6NMOMjhSb4TI9
+	nR8+ngYJ3bCOWibFePanMXT+4PlAMfNaySstmIj4psChs8oLpS5VIE9K092fLiBG9S3I2CLYCRwb9
+	NOHG1d1i8vlpdoxoYmo4giEuGswd4S2TEHbDUuOtWj6JVn7s6PBH/fjVMEaIVbhQQASMeToSFFwZ2
+	WNNEy1QtLrqOKzANaXHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifDS7-0000w1-Dh; Thu, 12 Dec 2019 01:39:39 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ifDOT-00081I-Tq; Thu, 12 Dec 2019 01:35:53 +0000
+Received: from mail-lj1-x235.google.com ([2a00:1450:4864:20::235])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifDRv-0000v6-1a; Thu, 12 Dec 2019 01:39:28 +0000
-X-UUID: b7bc3234d53241e88a6f9160efa978f9-20191211
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=ARecqApZNNYt1nHRIt9ZYfGP9FOkfwd1O+i0oCs1XL0=; 
- b=dOmIJ0Eb/dEGSqxcnZspet2VG4fdzQysCRKzSETcg2EwiVcb/Lk8bOWU1Adjfrt7iHbgy9IysBD9rWpJME5N4O7OG5kkXloAE6rI2Xmt07Pe1U3xycCOXVTH0zzJQcPzUXKWEHKkA9jh40jkiTB7WnJOOutEYhP9axrrzE3bGxg=;
-X-UUID: b7bc3234d53241e88a6f9160efa978f9-20191211
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dennis-yc.hsieh@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1994948118; Wed, 11 Dec 2019 17:39:22 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Dec 2019 17:34:54 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Dec 2019 09:33:26 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 12 Dec 2019 09:33:41 +0800
-Message-ID: <1576114425.17653.11.camel@mtkswgap22>
-Subject: Re: [PATCH v2 09/14] soc: mediatek: cmdq: add read_s function
-From: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>
-Date: Thu, 12 Dec 2019 09:33:45 +0800
-In-Reply-To: <1575964515.13210.3.camel@mtksdaap41>
-References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1574819937-6246-11-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1575964515.13210.3.camel@mtksdaap41>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1ifDOK-00080X-PC
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 01:35:46 +0000
+Received: by mail-lj1-x235.google.com with SMTP id z17so303480ljk.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Dec 2019 17:35:43 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZaEZOn8uxJOWV9EktE+N7ZvwoKIzj2BI2bWmHs6V1ts=;
+ b=BULsKvh0hpE/MuXlhKSgHhjC60UsCYIDAXytAW8fufBqNjjJn49JjA73RcpVS4CpHr
+ VCD2+xEC9uG3uU3Hz8JgQ+LKLVs9ITB0lMBUyX4IunhNhkgGpBNlJH+7NsxgB153mE5k
+ 1LYb1PM/mFyhQGn85ioSAY46lF/Q5ob6i0LqNm77Wk3r2q0Wkj/6+rmPOnev6+bjEUB5
+ CAGd4xjijvNibAwS2wBh10B1aXFbTe+b7bL74lsB4vl+mkADWlSViuTXUk5t9AJMcak4
+ 1fOwMvGlm/GYhKRNenBON0+OwZsuMgGn4W3Mq+WUX21UCPdPwFRr63kwrEdkCLJbf7Em
+ oL1A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZaEZOn8uxJOWV9EktE+N7ZvwoKIzj2BI2bWmHs6V1ts=;
+ b=JTpnTy6CXgH6CySRZ6661TcOfRStYDSE5M7sE6pBgG/PXCHy4/Dbm2FBi3mSMJHmVn
+ Ix6YEL8vWDTx3t9T3Tz94w79EHv3QJ/iIBvuIBpggPQg4+1XvJdtqeJ/cZsphGbjDdi7
+ Kh8B8NI2Hqd9lT0EgCyNXPBYzuhi5THPUyLqANbBqHe+p2uRh+2ChNxD3sbz4IZADRjZ
+ 7LI0FEqBw5uVnKwu2r7MKiAa6DJxkQGjnYiQoGg8rSY1BVeyv8iVE+blLJajuQHsNhPf
+ U+CYpoKRXvPOpPdaR9hbhqBE2XouQgwW1a/Mgr9HSqDGq35U+qjTbvdiVRLATVIZJQ8I
+ gViw==
+X-Gm-Message-State: APjAAAXYJ3iSCNI/XARHaHVI+zOAf7Z2CSVYfKtuXC2LYEM53N7fLW5/
+ eoPKga4D3KJNzXBvOaeua/9LiheYq30fu6hEa5U=
+X-Google-Smtp-Source: APXvYqxg3187v/noGtowxkVk9ZI19Ts3s8w9ivUnb2MtsHwlKxxLTw6I3+B1z/hPKmx/9xRFJdyfGZ0AviElzcPXfi4=
+X-Received: by 2002:a2e:8247:: with SMTP id j7mr4202221ljh.239.1576114542541; 
+ Wed, 11 Dec 2019 17:35:42 -0800 (PST)
 MIME-Version: 1.0
-X-MTK: N
+References: <CAEj2-1PyhkhEJ1+uRWio4vYxGuFOuR9mpZOdxmDDjGt_Az+3uA@mail.gmail.com>
+ <CAOMZO5AxvuWETvubZU1Tu=0-SeoSzJs=LZcj-JJFE1+4O6-FxA@mail.gmail.com>
+ <CAEj2-1M6950NxK0mOBzdc4qz3b=eBzD8NdLKE55aas5WN0iZkA@mail.gmail.com>
+ <VI1PR0402MB3600DD7A4C9BFFE8E2805378FF5B0@VI1PR0402MB3600.eurprd04.prod.outlook.com>
+ <CAEj2-1PCDWSiP98ZN9ufa-Nws_4KSgX7Jf8gK1+TM1zEuU3SKw@mail.gmail.com>
+ <CAOMZO5AP4F3fMwbx7TbnJ-xNPRh6r+3=TccWasVJER=cjLkgjA@mail.gmail.com>
+ <789B91A2-6416-4906-AD32-BD66BDF879B3@designa-electronics.com>
+In-Reply-To: <789B91A2-6416-4906-AD32-BD66BDF879B3@designa-electronics.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Wed, 11 Dec 2019 22:35:31 -0300
+Message-ID: <CAOMZO5DDrE_-HtHzppC0_AxMRLpTJfaWLORnAo74u4S1W+=pOw@mail.gmail.com>
+Subject: Re: [EXT] iMX6/UART imprecise external abort
+To: Andre Renaud <arenaud@designa-electronics.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_173927_093167_09447327 
-X-CRM114-Status: GOOD (  16.78  )
+X-CRM114-CacheID: sfid-20191211_173544_820473_A095DFD1 
+X-CRM114-Status: UNSURE (   6.14  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:235 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -73,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,113 +99,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Youxin Su <suyouxin@sporelab.io>, Andy Duan <fugang.duan@nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi CK,
+Hi Andre,
 
-On Tue, 2019-12-10 at 15:55 +0800, CK Hu wrote:
-> Hi, Dennis:
-> 
-> On Wed, 2019-11-27 at 09:58 +0800, Dennis YC Hsieh wrote:
-> > Add read_s function in cmdq helper functions which support read value from
-> > register or dma physical address into gce internal register.
-> > 
-> > Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-> > ---
-> >  drivers/soc/mediatek/mtk-cmdq-helper.c   | 20 ++++++++++++++++++++
-> >  include/linux/mailbox/mtk-cmdq-mailbox.h |  1 +
-> >  include/linux/soc/mediatek/mtk-cmdq.h    | 10 ++++++++++
-> >  3 files changed, 31 insertions(+)
-> > 
-> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > index 2edbc0954d97..2cd693e34980 100644
-> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > @@ -231,6 +231,26 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
-> >  }
-> >  EXPORT_SYMBOL(cmdq_pkt_write_mask);
-> >  
-> > +int cmdq_pkt_read_s(struct cmdq_pkt *pkt, phys_addr_t addr, u16 reg_idx)
-> > +{
-> 
-> Should addr be shifted in mt6779?
-> 
-> Regards,
-> CK
-> 
+On Tue, Dec 10, 2019 at 10:36 PM Andre Renaud
+<arenaud@designa-electronics.com> wrote:
 
-no, only pc and end register shift address
-no need to shift in instruction
+> Yes, we connect it to a PC and basically stream data in both directions between the two.
 
+Looks like I need to access the UART2 pins in the wandboard and place
+a RS-232/USB converter.
 
-Regards,
-Dennis
-
-> > +	struct cmdq_instruction inst = { {0} };
-> > +	int err;
-> > +	const u16 src_reg_idx = CMDQ_SPR_TEMP;
-> > +
-> > +	err = cmdq_pkt_assign(pkt, src_reg_idx, CMDQ_ADDR_HIGH(addr));
-> > +	if (err < 0)
-> > +		return err;
-> > +
-> > +	inst.op = CMDQ_CODE_READ_S;
-> > +	inst.dst_t = CMDQ_REG_TYPE;
-> > +	inst.sop = src_reg_idx;
-> > +	inst.reg_dst = reg_idx;
-> > +	inst.arg_b = CMDQ_ADDR_LOW(addr);
-> > +
-> > +	return cmdq_pkt_append_command(pkt, inst);
-> > +}
-> > +EXPORT_SYMBOL(cmdq_pkt_read_s);
-> > +
-> >  int cmdq_pkt_write_s(struct cmdq_pkt *pkt, phys_addr_t addr, u16 reg_idx,
-> >  		     u32 mask)
-> >  {
-> > diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> > index 8ef87e1bd03b..3f6bc0dfd5da 100644
-> > --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
-> > +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> > @@ -59,6 +59,7 @@ enum cmdq_code {
-> >  	CMDQ_CODE_JUMP = 0x10,
-> >  	CMDQ_CODE_WFE = 0x20,
-> >  	CMDQ_CODE_EOC = 0x40,
-> > +	CMDQ_CODE_READ_S = 0x80,
-> >  	CMDQ_CODE_WRITE_S = 0x90,
-> >  	CMDQ_CODE_WRITE_S_MASK = 0x91,
-> >  	CMDQ_CODE_LOGIC = 0xa0,
-> > diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> > index 56ff1970197c..bc28a41d7780 100644
-> > --- a/include/linux/soc/mediatek/mtk-cmdq.h
-> > +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> > @@ -106,6 +106,16 @@ int cmdq_pkt_write(struct cmdq_pkt *pkt, u8 subsys, u16 offset, u32 value);
-> >  int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
-> >  			u16 offset, u32 value, u32 mask);
-> >  
-> > +/**
-> > + * cmdq_pkt_read_s() - append read_s command to the CMDQ packet
-> > + * @pkt:	the CMDQ packet
-> > + * @addr:	the physical address of register or dma to read
-> > + * @reg_idx:	the CMDQ internal register ID to cache read data
-> > + *
-> > + * Return: 0 for success; else the error code is returned
-> > + */
-> > +int cmdq_pkt_read_s(struct cmdq_pkt *pkt, phys_addr_t addr, u16 reg_idx);
-> > +
-> >  /**
-> >   * cmdq_pkt_write_s_mask() - append write_s command to the CMDQ packet
-> >   * @pkt:	the CMDQ packet
-> 
-> 
+Not sure I can easily do such setup at the moment.
 
 _______________________________________________
 linux-arm-kernel mailing list
