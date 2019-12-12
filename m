@@ -2,51 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40BE211CA50
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 11:14:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44B5E11CA5C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 11:16:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=eNLQKrWen4wrYcWFILCbTgmBVumfHB4fljEUfSJ2cy4=; b=aWd
-	nZGt2bBLrxuZQQj5qvDobnegAvkqzOi1HUfuKAuULFyugc5XUrmRxeiRcId/RLsPFjl6AJwyCbVqL
-	AH/G/hT890opzid/vVUmXLrBKxh5yN5f7qoR4Y+xSUSyxjt2DSowoxT9OMNUGfx9EXRzwXOvS2ZXB
-	iyBzZqpeXXkslUb4oz9Xt4uf1QQ+u8jEiPKKPRiBAt1z1FgZdSvjmp8aSdZoCbcshv1GYANJ4w6MR
-	H6aHqsR3HV7jxE/64YGuTXO77VzC9DvByJGm3RP77xoR3dwb/L7GSkXFFqwwiyvqTLQPoP+1p76S9
-	iEzoFuduuIXGhWHLW7jVoYqgIRU7Jpg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=MlYLgCoLLr6M6ZOmF9sVVegC0Drmi5qEXCH0PmKW+2g=; b=A1x74DYoMmU8jv9C9L0u4gcKFZ
+	NAddfgY0qyCnmBasce1A7Cse5GN98Kr8ENFSgSQjKWH5bshd4/fRrq15W0gZt1zuJkMdPIk/ytgi/
+	fCXOOhOXC3Nz+LTThsICgIu5qcVCHnrcxPLZdbvOZ3V3gKZzwXd/ovY4A1ujdh+SLDQrgmFnvplg+
+	BBhygnfLZzAiAhlXwzO7dbxuYg0ZMRNozqTnZ0GlG59aeD0ue7VUqR5iaSFhBKTNJl9y9YEXuWTbr
+	HCmXGg9qhXvEvE650jSCXTxfcoeh0R5mNs2fWfkL14clWvqlH8O2xlB8X/s0NozF4dV8vcA9oH/Cm
+	ijAfexpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifLTk-000716-Df; Thu, 12 Dec 2019 10:13:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifLTd-00070l-5O
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 10:13:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7CCA2328;
- Thu, 12 Dec 2019 02:13:44 -0800 (PST)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.1.199])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 03A913F6CF;
- Thu, 12 Dec 2019 02:13:39 -0800 (PST)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: Introduce ISAR6 CPU ID register
-Date: Thu, 12 Dec 2019 15:44:23 +0530
-Message-Id: <1576145663-9909-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
+	id 1ifLWM-0000Ob-3K; Thu, 12 Dec 2019 10:16:34 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifLW2-0000Mh-DB
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 10:16:16 +0000
+Received: by mail-wm1-x343.google.com with SMTP id f4so3248540wmj.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Dec 2019 02:16:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=qTx2vi9sq1DjlIujztZ1QG4YIeemlAnEZ4TJMf6wqjQ=;
+ b=fZ8ym5wiyLI8tAQ3CrB2XdCDetkueTTgeNnA+AaN85MRT09dekPDn485MKyKMA/n3l
+ Ei72d3mF2vDeKdVokKPTnv7wFWIoc0q27jynW1t/FsI6o858s7jF2XEx8H6JniLGX3jK
+ 7YWbEjESl8QA9Xvia0TBrauiCvlckNBWvgV5MeU4rrgDz9j82ZHSjdMXOUZvxVFGrPof
+ jHpsEnnypSevZjaHGHOphZ33lBQ+qTg11x8OZxv/sdOtkaSAu8pJVuBTOiPG7QaeNgxT
+ EYQ/9s8c+w55DskN97YHhsfttrlyNdq5A8Ba/F9Rg81AzYw1NPOc3tCxYzCyqT93itCx
+ MUtA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=qTx2vi9sq1DjlIujztZ1QG4YIeemlAnEZ4TJMf6wqjQ=;
+ b=Xe/rEojP2+AX3hNP7dE7vfcFuruog/PS0p7n008aMT62fHoDNQTtAxl1oXt/t54bzA
+ 09sDXTwZQPJvgqHYo6H/ZER/CcxoJmbUAvjnKfLwZHWn6XQ5kumdx/q9xV+xkemv1k1M
+ fqwujZqrvVv1BW35wVMOz52UGS083vor9gFoA+XnggWArdMWEibIIhlFNl+uHiOhO1vI
+ 7HcM8TrWtD1Qi/8Uk914a6L1hlFGebMI1sYNTkJY5F2EFlGrv0ylkasnB7iJmEEAPunF
+ 9tteJ8fhXqyDTod/O9+BAkSZvkVVz6Maiq/DTd0S4AyNCfTXT0WnzxstgDiHJIVbt86s
+ 75Ag==
+X-Gm-Message-State: APjAAAVSBUX0VZvBw30iSO/BDIJhjmOmSxPYv0BtCadNfDPSbvscNZvZ
+ frClTtot4Y8cTzpqBKQv61F2mg==
+X-Google-Smtp-Source: APXvYqy0R5kxieJspDN7DzFwaZMTS8PH2ROLNLU1OkAXMoWb9HYF7YwVXjoZYbV7FUe0sc4Ynpi8vg==
+X-Received: by 2002:a1c:407:: with SMTP id 7mr5451329wme.29.1576145773042;
+ Thu, 12 Dec 2019 02:16:13 -0800 (PST)
+Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id o4sm5341601wrx.25.2019.12.12.02.16.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 12 Dec 2019 02:16:12 -0800 (PST)
+References: <20191206074052.15557-1-jian.hu@amlogic.com>
+ <20191206074052.15557-3-jian.hu@amlogic.com>
+User-agent: mu4e 1.3.3; emacs 26.2
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Jian Hu <jian.hu@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH v4 2/6] clk: meson: add support for A1 PLL clock ops
+In-reply-to: <20191206074052.15557-3-jian.hu@amlogic.com>
+Date: Thu, 12 Dec 2019 11:16:11 +0100
+Message-ID: <1j8snhluhg.fsf@starbuckisacylon.baylibre.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_021345_295038_04C99B67 
-X-CRM114-Status: GOOD (  13.20  )
+X-CRM114-CacheID: sfid-20191212_021614_451332_0E59241B 
+X-CRM114-Status: GOOD (  20.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,150 +96,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu
-MIME-Version: 1.0
+Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>, devicetree@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
+ Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds basic building blocks required for ISAR6 CPU ID register which
-identifies support for various instruction implementation on AArch32 state.
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Marc Zyngier <maz@kernel.org>
-Cc: James Morse <james.morse@arm.com>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: linux-kernel@vger.kernel.org
-Cc: kvmarm@lists.cs.columbia.edu
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
- arch/arm64/include/asm/cpu.h    | 1 +
- arch/arm64/include/asm/sysreg.h | 9 +++++++++
- arch/arm64/kernel/cpufeature.c  | 7 ++++++-
- arch/arm64/kernel/cpuinfo.c     | 1 +
- arch/arm64/kvm/sys_regs.c       | 2 +-
- 5 files changed, 18 insertions(+), 2 deletions(-)
+On Fri 06 Dec 2019 at 08:40, Jian Hu <jian.hu@amlogic.com> wrote:
 
-diff --git a/arch/arm64/include/asm/cpu.h b/arch/arm64/include/asm/cpu.h
-index d72d995..b4a4053 100644
---- a/arch/arm64/include/asm/cpu.h
-+++ b/arch/arm64/include/asm/cpu.h
-@@ -39,6 +39,7 @@ struct cpuinfo_arm64 {
- 	u32		reg_id_isar3;
- 	u32		reg_id_isar4;
- 	u32		reg_id_isar5;
-+	u32		reg_id_isar6;
- 	u32		reg_id_mmfr0;
- 	u32		reg_id_mmfr1;
- 	u32		reg_id_mmfr2;
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 6db3a9b..4fd3327 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -146,6 +146,7 @@
- #define SYS_ID_ISAR4_EL1		sys_reg(3, 0, 0, 2, 4)
- #define SYS_ID_ISAR5_EL1		sys_reg(3, 0, 0, 2, 5)
- #define SYS_ID_MMFR4_EL1		sys_reg(3, 0, 0, 2, 6)
-+#define SYS_ID_ISAR6_EL1		sys_reg(3, 0, 0, 2, 7)
- 
- #define SYS_MVFR0_EL1			sys_reg(3, 0, 0, 3, 0)
- #define SYS_MVFR1_EL1			sys_reg(3, 0, 0, 3, 1)
-@@ -683,6 +684,14 @@
- #define ID_ISAR5_AES_SHIFT		4
- #define ID_ISAR5_SEVL_SHIFT		0
- 
-+#define ID_ISAR6_JSCVT_SHIFT		0
-+#define ID_ISAR6_DP_SHIFT		4
-+#define ID_ISAR6_FHM_SHIFT		8
-+#define ID_ISAR6_SB_SHIFT		12
-+#define ID_ISAR6_SPECRES_SHIFT		16
-+#define ID_ISAR6_BF16_SHIFT		20
-+#define ID_ISAR6_I8MM_SHIFT		24
+> The A1 PLL design is different with previous SoCs. The PLL
+> internal analog modules Power-on sequence is different
+> with previous, and thus requires a strict register sequence to
+> enable the PLL.
+>
+> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
+> ---
+>  drivers/clk/meson/clk-pll.c | 21 +++++++++++++++++++++
+>  drivers/clk/meson/clk-pll.h |  1 +
+>  drivers/clk/meson/parm.h    |  1 +
+>  3 files changed, 23 insertions(+)
+>
+> diff --git a/drivers/clk/meson/clk-pll.c b/drivers/clk/meson/clk-pll.c
+> index ddb1e5634739..4aff31a51589 100644
+> --- a/drivers/clk/meson/clk-pll.c
+> +++ b/drivers/clk/meson/clk-pll.c
+> @@ -318,6 +318,23 @@ static int meson_clk_pll_enable(struct clk_hw *hw)
+>  	struct clk_regmap *clk = to_clk_regmap(hw);
+>  	struct meson_clk_pll_data *pll = meson_clk_pll_data(clk);
+>  
+> +	/*
+> +	 * The A1 design is different with previous SoCs.The PLL
+> +	 * internal analog modules Power-on sequence is different with
+> +	 * previous, and thus requires a strict register sequence to
+> +	 * enable the PLL.
+
+The code does something more, not completly different. This comment is
+not aligned with what the code does
+
+> +	 */
+> +	if (MESON_PARM_APPLICABLE(&pll->current_en)) {
+> +		/* Enable the pll */
+> +		meson_parm_write(clk->map, &pll->en, 1);
+> +		udelay(10);
+> +		/* Enable the pll self-adaption module current */
+> +		meson_parm_write(clk->map, &pll->current_en, 1);
+> +		udelay(40);
+> +		meson_parm_write(clk->map, &pll->rst, 1);
+> +		meson_parm_write(clk->map, &pll->rst, 0);
+
+Here you enable the PLL and self adaptation module then reset the PLL.
+However:
+#1 when you enter this function, the PLL should already by in reset
+and disabled
+#2 the code after that will reset the PLL again
+
+So if what you submited works, inserting the following should accomplish
+the same thing:
+
+---8<---
+diff --git a/drivers/clk/meson/clk-pll.c b/drivers/clk/meson/clk-pll.c
+index 489092dde3a6..9b38df0a7682 100644
+--- a/drivers/clk/meson/clk-pll.c
++++ b/drivers/clk/meson/clk-pll.c
+@@ -330,6 +330,13 @@ static int meson_clk_pll_enable(struct clk_hw *hw)
+        /* Enable the pll */
+        meson_parm_write(clk->map, &pll->en, 1);
+
++       if (MESON_PARM_APPLICABLE(&pll->current_en)) {
++               udelay(10);
++               /* Enable the pll self-adaption module current */
++               meson_parm_write(clk->map, &pll->current_en, 1);
++               udelay(40);
++       }
 +
- #define MVFR0_FPROUND_SHIFT		28
- #define MVFR0_FPSHVEC_SHIFT		24
- #define MVFR0_FPSQRT_SHIFT		20
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index f344cea..3b9ac8b 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -346,7 +346,7 @@ static const struct arm64_ftr_bits ftr_zcr[] = {
-  * Common ftr bits for a 32bit register with all hidden, strict
-  * attributes, with 4bit feature fields and a default safe value of
-  * 0. Covers the following 32bit registers:
-- * id_isar[0-4], id_mmfr[1-3], id_pfr1, mvfr[0-1]
-+ * id_isar[0-4, 6], id_mmfr[1-3], id_pfr1, mvfr[0-1]
-  */
- static const struct arm64_ftr_bits ftr_generic_32bits[] = {
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 28, 4, 0),
-@@ -399,6 +399,7 @@ static const struct __ftr_reg_entry {
- 	ARM64_FTR_REG(SYS_ID_ISAR4_EL1, ftr_generic_32bits),
- 	ARM64_FTR_REG(SYS_ID_ISAR5_EL1, ftr_id_isar5),
- 	ARM64_FTR_REG(SYS_ID_MMFR4_EL1, ftr_id_mmfr4),
-+	ARM64_FTR_REG(SYS_ID_ISAR6_EL1, ftr_generic_32bits),
- 
- 	/* Op1 = 0, CRn = 0, CRm = 3 */
- 	ARM64_FTR_REG(SYS_MVFR0_EL1, ftr_generic_32bits),
-@@ -603,6 +604,7 @@ void __init init_cpu_features(struct cpuinfo_arm64 *info)
- 		init_cpu_ftr_reg(SYS_ID_ISAR3_EL1, info->reg_id_isar3);
- 		init_cpu_ftr_reg(SYS_ID_ISAR4_EL1, info->reg_id_isar4);
- 		init_cpu_ftr_reg(SYS_ID_ISAR5_EL1, info->reg_id_isar5);
-+		init_cpu_ftr_reg(SYS_ID_ISAR6_EL1, info->reg_id_isar6);
- 		init_cpu_ftr_reg(SYS_ID_MMFR0_EL1, info->reg_id_mmfr0);
- 		init_cpu_ftr_reg(SYS_ID_MMFR1_EL1, info->reg_id_mmfr1);
- 		init_cpu_ftr_reg(SYS_ID_MMFR2_EL1, info->reg_id_mmfr2);
-@@ -756,6 +758,8 @@ void update_cpu_features(int cpu,
- 					info->reg_id_isar4, boot->reg_id_isar4);
- 		taint |= check_update_ftr_reg(SYS_ID_ISAR5_EL1, cpu,
- 					info->reg_id_isar5, boot->reg_id_isar5);
-+		taint |= check_update_ftr_reg(SYS_ID_ISAR6_EL1, cpu,
-+					info->reg_id_isar6, boot->reg_id_isar6);
- 
- 		/*
- 		 * Regardless of the value of the AuxReg field, the AIFSR, ADFSR, and
-@@ -834,6 +838,7 @@ static u64 __read_sysreg_by_encoding(u32 sys_id)
- 	read_sysreg_case(SYS_ID_ISAR3_EL1);
- 	read_sysreg_case(SYS_ID_ISAR4_EL1);
- 	read_sysreg_case(SYS_ID_ISAR5_EL1);
-+	read_sysreg_case(SYS_ID_ISAR6_EL1);
- 	read_sysreg_case(SYS_MVFR0_EL1);
- 	read_sysreg_case(SYS_MVFR1_EL1);
- 	read_sysreg_case(SYS_MVFR2_EL1);
-diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
-index 10121f5..6005d38 100644
---- a/arch/arm64/kernel/cpuinfo.c
-+++ b/arch/arm64/kernel/cpuinfo.c
-@@ -362,6 +362,7 @@ static void __cpuinfo_store_cpu(struct cpuinfo_arm64 *info)
- 		info->reg_id_isar3 = read_cpuid(ID_ISAR3_EL1);
- 		info->reg_id_isar4 = read_cpuid(ID_ISAR4_EL1);
- 		info->reg_id_isar5 = read_cpuid(ID_ISAR5_EL1);
-+		info->reg_id_isar6 = read_cpuid(ID_ISAR6_EL1);
- 		info->reg_id_mmfr0 = read_cpuid(ID_MMFR0_EL1);
- 		info->reg_id_mmfr1 = read_cpuid(ID_MMFR1_EL1);
- 		info->reg_id_mmfr2 = read_cpuid(ID_MMFR2_EL1);
-diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index 7dadd24..a6b8ca1 100644
---- a/arch/arm64/kvm/sys_regs.c
-+++ b/arch/arm64/kvm/sys_regs.c
-@@ -1424,7 +1424,7 @@ static const struct sys_reg_desc sys_reg_descs[] = {
- 	ID_SANITISED(ID_ISAR4_EL1),
- 	ID_SANITISED(ID_ISAR5_EL1),
- 	ID_SANITISED(ID_MMFR4_EL1),
--	ID_UNALLOCATED(2,7),
-+	ID_SANITISED(ID_ISAR6_EL1),
- 
- 	/* CRm=3 */
- 	ID_SANITISED(MVFR0_EL1),
--- 
-2.7.4
+        /* Take the pll out reset */
+        meson_parm_write(clk->map, &pll->rst, 0);
+--->8---
+
+
+
+
+> +	}
+> +
+>  	/* do nothing if the PLL is already enabled */
+>  	if (clk_hw_is_enabled(hw))
+>  		return 0;
+
+In any case, nothing should be done on the clock before this check
+otherwise you might just break the clock
+
+> @@ -347,6 +364,10 @@ static void meson_clk_pll_disable(struct clk_hw *hw)
+>  
+>  	/* Disable the pll */
+>  	meson_parm_write(clk->map, &pll->en, 0);
+> +
+> +	/* Disable PLL internal self-adaption module current */
+> +	if (MESON_PARM_APPLICABLE(&pll->current_en))
+> +		meson_parm_write(clk->map, &pll->current_en, 0);
+>  }
+>  
+>  static int meson_clk_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+> diff --git a/drivers/clk/meson/clk-pll.h b/drivers/clk/meson/clk-pll.h
+> index 367efd0f6410..30f039242a65 100644
+> --- a/drivers/clk/meson/clk-pll.h
+> +++ b/drivers/clk/meson/clk-pll.h
+> @@ -36,6 +36,7 @@ struct meson_clk_pll_data {
+>  	struct parm frac;
+>  	struct parm l;
+>  	struct parm rst;
+> +	struct parm current_en;
+>  	const struct reg_sequence *init_regs;
+>  	unsigned int init_count;
+>  	const struct pll_params_table *table;
+> diff --git a/drivers/clk/meson/parm.h b/drivers/clk/meson/parm.h
+> index 3c9ef1b505ce..c53fb26577e3 100644
+> --- a/drivers/clk/meson/parm.h
+> +++ b/drivers/clk/meson/parm.h
+> @@ -20,6 +20,7 @@
+>  	(((reg) & CLRPMASK(width, shift)) | ((val) << (shift)))
+>  
+>  #define MESON_PARM_APPLICABLE(p)		(!!((p)->width))
+> +#define MESON_PARM_CURRENT(p)			(!!((p)->width))
+
+Why do we need that ?
+
+>  
+>  struct parm {
+>  	u16	reg_off;
 
 
 _______________________________________________
