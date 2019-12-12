@@ -2,56 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EB7811CF70
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:11:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2EBF11CF83
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:15:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OygR/QeSyS0mZsVsWAbQdWLB9x71B1xEfmqkt8FBAco=; b=QQrdMuuYNSpAy8
-	XBMVw6JNHk8cJdYXVqW70ClB0K5fJxfK52O+svDSbOXTBAp+H2T+1tuoFJYI9LETAIVE3UHA0GnbD
-	bq2rJcNp3Go7hbTI7OSWgFwg0qWIA04bhBn/pwxdffDbPBkEH7e16q59+8oXFwFmxNoX3LErTnLcc
-	LKZ1itfu0zDOIZFnyy4R1GFUHR5i5Qntg1jBXYZoIZUKU3skYkBMXjJQ/66qDRYqhrmYEz2iwWBkH
-	ni9YzxsY86dEUAW6PZSJTGdWF9jgw+q5Gljf4zoeiX4+uqmiW8NRBYTRm9mxyyGes4PRmJ1/ec8zL
-	HAc6dfiFkkZK88FySPGA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fpXqIsvmtWnWLpKaRYTZlNCWyzO8o/6bczPam7ITOms=; b=J5tAYo6gPtEuos
+	tAsFJ7hTzHFO5FXuv+oL3kvaaRYXkIOhZJQaoW0rCIoHqSyP/u9df6XLqah1CL310t14YdpanC9lW
+	Xx8kf1XDhCPxQSyCktv3ZAxZ77ZkusVudEYNFxY6Eehni0UEzcUF0cpB1FPUzXhKzdc+tJGP6CVFO
+	jUH6rcRQmZKEQmprRCGJkiUTZVoRJpxn8n+KfcujIkQkcSHDiZYNf7l7eOdKyG2OyPb5W7BEIjoox
+	0etr0SFt8UZ0Lq0JVsMlscs5gb2x4N4oqw/asSyko8+SCVX/yV+BV2rrXUd8O/HOOhsr02PbZXM8e
+	m5mr13MNXvvV/KLE9sfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifPBG-0004DN-6O; Thu, 12 Dec 2019 14:11:02 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1ifPFl-000630-Tp; Thu, 12 Dec 2019 14:15:41 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifPB7-0004CW-Uc; Thu, 12 Dec 2019 14:10:55 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 90F17ACE1;
- Thu, 12 Dec 2019 14:10:51 +0000 (UTC)
-Subject: Re: [RFC 19/25] leds: tm1628: Add 7-segment display support
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-References: <20191212033952.5967-1-afaerber@suse.de>
- <20191212033952.5967-20-afaerber@suse.de>
- <CAMuHMdWeqoqQBtsdN2Q=Urc22Ezj5nBRFPk1_V5gvGV9BGuMkw@mail.gmail.com>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <a9bacb0d-eccf-ec42-5d09-ce042aff2f41@suse.de>
-Date: Thu, 12 Dec 2019 15:10:50 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1ifPFc-00061x-U0
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 14:15:35 +0000
+Received: by mail-io1-f66.google.com with SMTP id b10so2145141iof.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Dec 2019 06:15:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=rYO0vtrh5ndy7gwZikU1oH7JLP2fHnRpDb1aMOPMlmg=;
+ b=ZEpemDipLJFLngdu5DRHLK9+G9LT0ArmVRxkc8wGxIJnqkil2etBm4qSp+IMEctcSB
+ OaorxX5ZkSpoAZAOyvdKfot1SClAuqc5sA1E179IY2tokIY8etLGQ1V5l4ZhuXNJJm/4
+ x6IRDfrQ977wlrNNXnTBZrDV7TgagxbLLav5lYzy1dl2N/pjWuNkYxf1v27pDbQ6tyce
+ n9zaJ+LgPuJ2H69BsPTLviGI7wdCrYaCVRSkFz8RPRGsGZZDxAixGKOt1caM6QhqC3G1
+ QegodW0hqpFnlRN2EmipG2w/5jSb7CygatS9gavL1rORWt3K7EZGGYkkyNtIXvNQcVGF
+ PDAA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=rYO0vtrh5ndy7gwZikU1oH7JLP2fHnRpDb1aMOPMlmg=;
+ b=K4yK2I8Pf2YpwvZV3ucgV+4/ibl51bBDSLwHkPdkOJlUk8mpmOtRXPlEERyL4SDzEe
+ VrhuZ0h7E19CZ9zsOwus16Df0/AZ3OSWluPAB/i7lw0nw2ZmKcIUkV3Bb226aIvkAG0m
+ KqRRTCFYnSDXPLUldpoDbqzbD+w2Q9jIEMdX5Zh+peKH6RZgt08W/XPnCiIz3w9ge74D
+ nfXZScVz7Lk7eOH8Hcj3M2SXqwWyN3dYKQ8/h7imWliROmzNbkS3oBg+ZeoyozJR2jNB
+ Lo9aSNjAJ6zEheQNCXYtKjpjgVnvnnUasG396zX0fpR9r7q4/Ufmz+HCBVS0Kh/eGinj
+ pjjg==
+X-Gm-Message-State: APjAAAVU/3HrNk7xt1qhTjY7a0+gHyNQ5qkFf1jr5cdxT8SkRWlmZ5UC
+ K1z1lK6HR2I1iRErb7TwmbMDg5X93JAQ5G3Cx2IYHA==
+X-Google-Smtp-Source: APXvYqwXu9iyecqx40na9enDvYofmCWOETmlMVhDGZVixaQ93xIQYvWAz1tw1Gs5v2KKKODm4Ff9b32roWCcC4rYKpM=
+X-Received: by 2002:a6b:bd06:: with SMTP id n6mr3199167iof.165.1576160070755; 
+ Thu, 12 Dec 2019 06:14:30 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdWeqoqQBtsdN2Q=Urc22Ezj5nBRFPk1_V5gvGV9BGuMkw@mail.gmail.com>
-Content-Language: en-US
+References: <20191211154901.176256-1-markyacoub@google.com>
+ <1576125900.29693.0.camel@mtksdaap41>
+In-Reply-To: <1576125900.29693.0.camel@mtksdaap41>
+From: Sean Paul <sean@poorly.run>
+Date: Thu, 12 Dec 2019 09:13:55 -0500
+Message-ID: <CAMavQKKOtYKVnCs3RCi3iYiX-2rLHoaDBTsEHyQmvWGoYj4M0g@mail.gmail.com>
+Subject: Re: [PATCH 1/2] Return from mtk_ovl_layer_config after
+ mtk_ovl_layer_off
+To: CK Hu <ck.hu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_061054_131924_5C7411AB 
-X-CRM114-Status: GOOD (  12.62  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191212_061533_660707_8DB6F253 
+X-CRM114-Status: GOOD (  20.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.66 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,42 +93,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-realtek-soc@lists.infradead.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Dan Murphy <dmurphy@ti.com>, Pavel Machek <pavel@ucw.cz>,
- linux-leds@vger.kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Jacek Anaszewski <jacek.anaszewski@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Daniele Castagna <dcastagna@chromium.org>, David Airlie <airlied@linux.ie>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <seanpaul@chromium.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mark Yacoub <markyacoub@google.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgR2VlcnQsCgpBbSAxMi4xMi4xOSB1bSAwOTozMyBzY2hyaWViIEdlZXJ0IFV5dHRlcmhvZXZl
-bjoKPiBPbiBUaHUsIERlYyAxMiwgMjAxOSBhdCA0OjQyIEFNIEFuZHJlYXMgRsOkcmJlciA8YWZh
-ZXJiZXJAc3VzZS5kZT4gd3JvdGU6Cj4+IERldGVjdCBEVCBjaGlsZCBub2RlcyBjb3ZlcmluZyBt
-b3JlIHRoYW4gb25lIExFRCBjb21wb25lbnQgYW5kIGltcGxlbWVudAo+PiBhIHRleHQgdG8gNy1z
-ZWdtZW50IGRpc3BsYXkgbWFwcGluZy4KPj4KPj4gU2lnbmVkLW9mZi1ieTogQW5kcmVhcyBGw6Ry
-YmVyIDxhZmFlcmJlckBzdXNlLmRlPgo+IAo+PiAtLS0gYS9kcml2ZXJzL2xlZHMvbGVkcy10bTE2
-MjguYwo+PiArKysgYi9kcml2ZXJzL2xlZHMvbGVkcy10bTE2MjguYwo+IAo+PiArc3RhdGljIGNv
-bnN0IHN0cnVjdCB0bTE2Mjhfc3NkX2NoYXIgdG0xNjI4X2NoYXJfc3NkX21hcFtdID0gewo+PiAr
-ICAgICAgIHsgJzAnLCBTU0RfVE9QIHwgU1NEX1RPUF9MRUZUIHwgU1NEX1RPUF9SSUdIVCB8Cj4+
-ICsgICAgICAgICAgICAgIFNTRF9CT1RUT01fTEVGVCB8IFNTRF9CT1RUT01fUklHSFQgfCBTU0Rf
-Qk9UVE9NIH0sCj4gCj4gUGxlYXNlIHVzZSBpbmNsdWRlL3VhcGkvbGludXgvbWFwX3RvXzdzZWdt
-ZW50LmgKPiBZZXMsIGl0IGlzIHdlbGwgaGlkZGVuIDstKS4KCk1hbnkgdGhhbmtzIGZvciB0aGF0
-IHBvaW50ZXIhIEV2ZW4gbWF0Y2hlcyB0aGUgc2VnbWVudC9iaXQgb3JkZXIgb2YgbXkKZGF0YXNo
-ZWV0cy9kZWZpbmVzLgoKVGhlIHNtYWxsIHQgbWF5IGJlIGRpZmZlcmVudCAoVD8pLCBhbmQgSSBk
-b24ndCBzZWUgaXQgbWFwcGluZyBjb21iaW5lZApjaGFyYWN0ZXJzIChwYXRjaCAyMi8yNSkuIFRo
-ZSByZWNvbW1lbmRlZCBzeXNmcyBtYXBfN3NlZyBhdHRyaWJ1dGUgbWF5CmhlbHAgZGVhbCB3aXRo
-IHRoYXQsIGJ1dCBzZWVtcyB0ZXJyaWJseSB1bmhhbmR5IGZvciBteSBidXN5Ym94IGluaXRyZC4K
-CkhvcGUgeW91IGFsc28gcmVhZCB0aGUgY292ZXIgbGV0dGVyLCB3aGVyZSBub3QgZmluZGluZyB0
-aGlzIGFuZCBtYW55Cm90aGVyIGlzc3VlcyB3ZXJlIGRpc2N1c3NlZC4gSSB3YXMgZXhwZWN0aW5n
-IHNvbWUgLmMgZmlsZSBpbiBlaXRoZXIKZHJpdmVycy9sZWRzIG9yIGF1eGRpc3BsYXkgLSBpbnB1
-dCBpcyBpbmRlZWQgdW5leHBlY3RlZCBmb3Igb3V0cHV0LgoKU3RpbGwgd29uZGVyaW5nIHdoZXRo
-ZXIgd2UgY2FuIHNvbWVob3cgZGVzY3JpYmUgdGhvc2UgIlZGRCIgZGlzcGxheXMgaW4KYSBtb3Jl
-IHJldXNhYmxlIHdheSwgbGlrZSB3ZSBkbyBmb3IgTUlQSSBEU0kgcGFuZWxzLgoKQ2hlZXJzLApB
-bmRyZWFzCgotLSAKU1VTRSBTb2Z0d2FyZSBTb2x1dGlvbnMgR2VybWFueSBHbWJICk1heGZlbGRz
-dHIuIDUsIDkwNDA5IE7DvHJuYmVyZywgR2VybWFueQpHRjogRmVsaXggSW1lbmTDtnJmZmVyCkhS
-QiAzNjgwOSAoQUcgTsO8cm5iZXJnKQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
-cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, Dec 11, 2019 at 11:45 PM CK Hu <ck.hu@mediatek.com> wrote:
+>
+> Hi, Mark:
+>
+> On Wed, 2019-12-11 at 10:49 -0500, Mark Yacoub wrote:
+> > drm/mediatek: return if plane pending state is disabled.
+> >
+> > If the plane pending state is disabled, call mtk_ovl_layer_off then
+> > return.
+> > This guarantees that that the state is valid for all operations when the
+> > pending state is enabled.
+>
+> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+>
+
+Thanks for reviewing these patches, CK. When you apply them to your
+tree, could you please fixup the subjects with the correct prefixes?
+
+Both patches are also
+
+Reviewed-by: Sean Paul <seanpaul@chromium.org>
+
+Sean
+
+> >
+> > Suggested-by: Sean Paul <seanpaul@chromium.org>
+> > To: CK Hu <ck.hu@mediatek.com>
+> > To: dri-devel@lists.freedesktop.org
+> > Cc: Daniele Castagna <dcastagna@chromium.org>
+> > Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> > Cc: David Airlie <airlied@linux.ie>
+> > Cc: Daniel Vetter <daniel@ffwll.ch>
+> > Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> > Cc: linux-arm-kernel@lists.infradead.org
+> > Cc: linux-mediatek@lists.infradead.org
+> > Signed-off-by: Mark Yacoub <markyacoub@google.com>
+> > ---
+> >  drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 7 ++++---
+> >  1 file changed, 4 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> > index 4a55bb6e2213..526b595eeff9 100644
+> > --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> > +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> > @@ -260,8 +260,10 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
+> >       unsigned int src_size = (pending->height << 16) | pending->width;
+> >       unsigned int con;
+> >
+> > -     if (!pending->enable)
+> > +     if (!pending->enable) {
+> >               mtk_ovl_layer_off(comp, idx);
+> > +             return;
+> > +     }
+> >
+> >       con = ovl_fmt_convert(ovl, fmt);
+> >       if (idx != 0)
+> > @@ -283,8 +285,7 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
+> >       writel_relaxed(offset, comp->regs + DISP_REG_OVL_OFFSET(idx));
+> >       writel_relaxed(addr, comp->regs + DISP_REG_OVL_ADDR(ovl, idx));
+> >
+> > -     if (pending->enable)
+> > -             mtk_ovl_layer_on(comp, idx);
+> > +     mtk_ovl_layer_on(comp, idx);
+> >  }
+> >
+> >  static void mtk_ovl_bgclr_in_on(struct mtk_ddp_comp *comp)
+>
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
