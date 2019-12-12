@@ -2,70 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C66BF11C2D9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 03:01:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D690611C2E6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 03:02:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nw4DG1gmp5ZxXtMTwhmXzSA/pPgakzFNkveONfcYYsQ=; b=oY5mjMXK7WNeSC
-	VNbKPkx6Oq8KEGEfLUIedFV5XRO1hzahkzk0gBdRA+xBj+CWMxbME2rAn1B1MZnb61i9sl7rgsBFh
-	+34DgJSFCtY3Im8IrNsJF8NibRU5nmSAnXTq3Zl2sN+E10RODnCgLX/H+G9pxZQ4vSHABH0EVzCWr
-	V5ceZFbUh4xwavaokx4WmJNSp9CF3zOLMU8rjZY/s/TiVAu7qvwwXQKn0RTX9d+mCfMiaWUKDm4gM
-	UWBy3pXvsTjB4MQyedrL0TKv4CrJFqz3W3H7O2txdHYu4E2jlBQngyziucalXA7Lsk6Y25lQn7ows
-	ZieGvkKuKZplVsVnDgQQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=69AADyrEsx3+WVZKtUZz7pwANsO2T7aL8v+lXa7B+oY=; b=Qcz
+	4IqkFYgjRdH+w6d+PxvhdBGJRD8+dVDIvtiliEuilJNrX7UDEPui6kaJUpEN7LhGr5YjP4g91MUEa
+	Gf5dAw3SdDsi6pCnE0RYcY2ELmrzkfncyYu37b910LEHStQ/JYhxKlKKGIaJvrEa1K/b4kohnJ/3v
+	83krae9VwLoojbmOjlbLxhJODYl1YoyMWYfxF3SzTlss0r8cT2Zt5zrrmm2uDkzkEMGuktaP1M5HI
+	zQQhxOKDosEMtpEETmGJU38lBaWFJueGlFMQfOXZdyWWEQI3/5mIwFh6pz5u8eEb4GxIRgZGm8Yj3
+	iGgqkVKCTtFPUa4urpG3lCYkEIsT8pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifDn4-0002pA-Cn; Thu, 12 Dec 2019 02:01:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifDmu-0002og-NW
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 02:01:09 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 232722077B;
- Thu, 12 Dec 2019 02:01:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576116068;
- bh=mrLm7hWWGdtEPq9cGYIvyHV5bCojU9MeN4AkSl1wgng=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=LXZxgE+DKBG/qoOnEiDBqi4cB+vAa9DF8tMqPwcCv5iE6Ri8KD/kKZVKAZ4gc/KaO
- 1cIi+UK0BKN4kCPeqHDRoonl+3TlmTJpancmus5GZz0xxy25tzYq4bCZLs7EZ7bXjb
- OTITqe06Wl/qWRvaJfI/Z2WK1j8xUftOiF2565ag=
-Date: Thu, 12 Dec 2019 10:00:56 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Michael Walle <michael@walle.cc>
-Subject: Re: [PATCH v3] arm64: dts: ls1028a: fix reboot node
-Message-ID: <20191212020055.GB15858@dragon>
-References: <20191211171145.14736-1-michael@walle.cc>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191211171145.14736-1-michael@walle.cc>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+	id 1ifDoO-0003v4-Rx; Thu, 12 Dec 2019 02:02:40 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifDoD-0003tF-5c
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 02:02:30 +0000
+Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ by mx.socionext.com with ESMTP; 12 Dec 2019 11:02:25 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 51E9C180B6B;
+ Thu, 12 Dec 2019 11:02:25 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Thu, 12 Dec 2019 11:03:05 +0900
+Received: from plum.e01.socionext.com (unknown [10.213.132.32])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id C04DC1A0006;
+ Thu, 12 Dec 2019 11:02:24 +0900 (JST)
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Bjorn Helgaas <bhelgaas@google.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH 0/2] PCI: Add new UniPhier PCIe endpoint driver
+Date: Thu, 12 Dec 2019 11:02:16 +0900
+Message-Id: <1576116138-16501-1-git-send-email-hayashi.kunihiko@socionext.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_180108_784669_5E3D0B6C 
-X-CRM114-Status: UNSURE (   7.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191211_180229_324282_B3B59D9D 
+X-CRM114-Status: GOOD (  14.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.248.49.38 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,24 +66,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Jassi Brar <jaswinder.singh@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 06:11:45PM +0100, Michael Walle wrote:
-> The reboot register isn't located inside the DCFG controller, but in its
-> own RST controller. Fix it.
-> 
-> Fixes: 8897f3255c9c ("arm64: dts: Add support for NXP LS1028A SoC")
-> Signed-off-by: Michael Walle <michael@walle.cc>
+This series adds PCIe endpoint controller driver for Socionext UniPhier
+SoCs. This controller is based on the DesignWare PCIe core. This driver
+supports Pro5 SoC.
 
-You missed Leo's ACK on v2?  I added it and applied the patch.
+Kunihiko Hayashi (2):
+  dt-bindings: PCI: Add UniPhier PCIe endpoint controller description
+  PCI: uniphier: Add UniPhier PCIe endpoint controller support
 
-Shawn
+ .../devicetree/bindings/pci/uniphier-pcie-ep.txt   |  47 +++
+ MAINTAINERS                                        |   4 +-
+ drivers/pci/controller/dwc/Kconfig                 |  13 +-
+ drivers/pci/controller/dwc/Makefile                |   1 +
+ drivers/pci/controller/dwc/pcie-uniphier-ep.c      | 399 +++++++++++++++++++++
+ 5 files changed, 460 insertions(+), 4 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/uniphier-pcie-ep.txt
+ create mode 100644 drivers/pci/controller/dwc/pcie-uniphier-ep.c
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
