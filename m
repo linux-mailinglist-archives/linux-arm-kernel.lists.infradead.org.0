@@ -2,80 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80D1511C514
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 05:56:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40A8F11C51E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 06:04:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=th38TuPkFq+eB/vbBTtSaIy78dW9yiVwHp9h3BRFa/M=; b=U+kiWnpR+xnmQq
-	5XQdLiaVaUlqtI59NOZxrNDHxbaoVgdURiI+ktA5XjPKZYoAMURE2mERnYVhyVjR3lwMU8WB+8+2t
-	VPETwrwRkmVsPdv7isg9eHP0IJvgCF9h+TCyRD/2yzY/AzeWAaUCBjWWp70H5A/UbBqZtWzpjb8Xd
-	uT5NjCQZBc/F7dDiY5+1dNcaSxiznEF8OrVL0EDpWk4DClj6nMbUZpo/iQQAIoTjx0ubIhwlUSwyn
-	JNas3ZuyNy5odnA30kstET5hHPwDOHfxxjxBzTpeE+ybTDKXy5Ij6doKB3x41VIkb4wLFHzFk8WPp
-	yGOtWTAgLN6UN2mJkn1Q==;
+	List-Owner; bh=OOKYL+u7rAOxbU4Tfb93GscWnCvQD+tbC3ukmaW8f6c=; b=ipzkQZccYdtG/7
+	zmuiN9hRV5oAf37mRDDej16x2HW3RVEQdLNDwteEWeqbepJoTf3hxhmufMfHs7+Hw/XvyYDvdi2Nd
+	dymL6U4z7a+NuEa3SFhs/kLUuioynlWj4URCTYOFXsE5boTJJkOhXwhxvV5NBXaeq9n35/2ZkF9tk
+	9j1ORqYSgzy3R5dtmkFxOGVUJHm/2OY8+nP8zCg31OJ0nQYS+PF4Xvh1c3iJ/FSF5eZUto55wTux3
+	YLmcX8OEi74+19vOaqR3sUrtRDzty+NYkkeESGdGH/s8ylDq5Vn946kMl0HfBbVbik4nuwmafGjG6
+	ckifWHwZnD8kqUKtFYIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifGW2-0006pR-Dk; Thu, 12 Dec 2019 04:55:54 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ifGeR-0000PQ-DA; Thu, 12 Dec 2019 05:04:35 +0000
+Received: from conssluserg-03.nifty.com ([210.131.2.82])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifGVH-0005Wd-3T; Thu, 12 Dec 2019 04:55:09 +0000
-X-UUID: 3a6c49666f6f4259a50432c65f43375e-20191211
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=61QzL2uAhif1inmfHk4F3GpOWbSMt53a76nKAzVwLMU=; 
- b=f5bMNPM5X3vpibe0RnOnQWIHHLjNcUhruZoyv2kTE7kQMw2sq6n8oCiqECQvYoXylolEXoxlHHdzYCtPjixo5Mk4wplOpBb8wMOEzckUSh89XQ0ukV3N+v41y+IA9vePsWjQrTSMqTJAM1tHOscJaSAx8PQJYXxGxJA+hQ4XHSw=;
-X-UUID: 3a6c49666f6f4259a50432c65f43375e-20191211
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2137650125; Wed, 11 Dec 2019 20:55:03 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Dec 2019 20:51:08 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Dec 2019 12:49:45 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 12 Dec 2019 12:49:53 +0800
-Message-ID: <1576126197.29693.3.camel@mtksdaap41>
-Subject: Re: [PATCH] drm/mediatek: Fix can't get component for external
- display plane.
-From: CK Hu <ck.hu@mediatek.com>
-To: Pi-Hsun Shih <pihsun@chromium.org>
-Date: Thu, 12 Dec 2019 12:49:57 +0800
-In-Reply-To: <1575264270.16063.0.camel@mtksdaap41>
-References: <20191127100419.130300-1-pihsun@chromium.org>
- <1575264270.16063.0.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1ifGeH-0000Oo-HU
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 05:04:28 +0000
+Received: from mail-vs1-f44.google.com (mail-vs1-f44.google.com
+ [209.85.217.44]) (authenticated)
+ by conssluserg-03.nifty.com with ESMTP id xBC5407B029187
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 12 Dec 2019 14:04:01 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com xBC5407B029187
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1576127041;
+ bh=f0mX96dUj+4SSO7tlGuJjbJ2RUgELAxn1iGgSDGDbbA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=mZ1JIZHe8zix2l9FjfNAniHgyI9oSvauhAcPoqTxKT2A4OdfQ6LoL/v8zbDHIMxYj
+ mhDcjoSh0vEu+LtXS+MtkYAcpX3jOyRNJlre+cXE2vx+SKR622V+/EdoCDiv6L9Czp
+ dtHzu1j68lvJTCpkBrcMBvfNBGz2s/SYZeCDlVHU3+Mi3/LVg1RrQyRG37YV2D6gEs
+ 7MSFfyhR+rJYSoK/A9Tros/69wod/qLfHR/Wy8Lu7G3yKos64Goxe3qgV5XICmBHu5
+ BzgUVnck5bQ8tGq7xoCugzdLckDKpcc1wceT248Z9mjHWiNNHBELC/vO2+O8mLC1F/
+ GEeLkj0rANPTw==
+X-Nifty-SrcIP: [209.85.217.44]
+Received: by mail-vs1-f44.google.com with SMTP id b79so672024vsd.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Dec 2019 21:04:01 -0800 (PST)
+X-Gm-Message-State: APjAAAWfx8ORmGATTdI44PtxXxTSPcDPRHAqbJymosdS2js4gJvjN2lf
+ McHvrYBvYGMWy49cfSrGkdfD8VoCalv8WqFFvTM=
+X-Google-Smtp-Source: APXvYqwITbfxXfryxfdFs+wuDBH6lMreA653GFfyRlQshqBOwFIPRjFb2inNIzS8YEl1Z3dRS/b2hoN5oMNCFLezUXA=
+X-Received: by 2002:a67:7ac4:: with SMTP id v187mr5603811vsc.181.1576127040046; 
+ Wed, 11 Dec 2019 21:04:00 -0800 (PST)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: A33FA4A393275F96C1D67CACE7875D97147C4BC54960F0F3AB9A8D502DF8916C2000:8
-X-MTK: N
+References: <20191211184027.20130-1-catalin.marinas@arm.com>
+ <20191211184027.20130-3-catalin.marinas@arm.com>
+In-Reply-To: <20191211184027.20130-3-catalin.marinas@arm.com>
+From: Masahiro Yamada <masahiroy@kernel.org>
+Date: Thu, 12 Dec 2019 14:03:24 +0900
+X-Gmail-Original-Message-ID: <CAK7LNARR=DjdnZdu=L+0H8ALr4XJNpVbcRTOz_sVZdZpcM0pdQ@mail.gmail.com>
+Message-ID: <CAK7LNARR=DjdnZdu=L+0H8ALr4XJNpVbcRTOz_sVZdZpcM0pdQ@mail.gmail.com>
+Subject: Re: [PATCH 02/22] kbuild: Add support for 'as-instr' to be used in
+ Kconfig files
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_205507_193879_3480CE7E 
-X-CRM114-Status: GOOD (  17.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191211_210425_818112_F55A8BBC 
+X-CRM114-Status: GOOD (  14.16  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [210.131.2.82 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,84 +84,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sean Paul <seanpaul@chromium.org>,
- Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
- open list <linux-kernel@vger.kernel.org>,
- "open list:DRM DRIVERS FOR MEDIATEK" <dri-devel@lists.freedesktop.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>,
+ Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Pi-Hsun:
+On Thu, Dec 12, 2019 at 3:40 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
+>
+> Similar to 'cc-option' or 'ld-option', it is occasionally necessary to
+> check whether the assembler supports certain ISA extensions. In the
+> arm64 code we currently do this in Makefile with an additional define:
+>
+> lseinstr := $(call as-instr,.arch_extension lse,-DCONFIG_AS_LSE=1)
+>
+> Add the 'as-instr' option so that it can be used in Kconfig directly:
+>
+>         def_bool $(as-instr,.arch_extension lse)
+>
+> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+> Cc: linux-kbuild@vger.kernel.org
+> Reviewed-by: Vladimir Murzin <vladimir.murzin@arm.com>
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> ---
 
-On Mon, 2019-12-02 at 13:24 +0800, CK Hu wrote:
-> Hi, Pi-Hsun:
-> 
-> 
-> On Wed, 2019-11-27 at 18:04 +0800, Pi-Hsun Shih wrote:
-> > From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> > 
-> > The original logic is ok for primary display, but will not find out
-> > component for external display.
-> > 
-> > For example, plane->index is 6 for external display, but there are only
-> > 2 layer nr in external display, and this condition will never happen:
-> > if (plane->index < (count + mtk_ddp_comp_layer_nr(comp)))
-> > 
-> > Fix this by using the offset of the plane to mtk_crtc->planes as index,
-> > instead of plane->index.
-> 
-> Reviewed-by: CK Hu <ck.hu@mediatek.com>
-> 
+Please feel fee to apply this to arm64 tree.
+Acked-by: Masahiro Yamada <masahiroy@kernel.org>
 
-Applied to mediatek-drm-fixes-5.5 [1], thanks.
-
-[1]
-https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-fixes-5.5
+>  scripts/Kconfig.include | 4 ++++
+>  1 file changed, 4 insertions(+)
+>
+> diff --git a/scripts/Kconfig.include b/scripts/Kconfig.include
+> index d4adfbe42690..9d07e59cbdf7 100644
+> --- a/scripts/Kconfig.include
+> +++ b/scripts/Kconfig.include
+> @@ -31,6 +31,10 @@ cc-option = $(success,$(CC) -Werror $(CLANG_FLAGS) $(1) -E -x c /dev/null -o /de
+>  # Return y if the linker supports <flag>, n otherwise
+>  ld-option = $(success,$(LD) -v $(1))
+>
+> +# $(as-instr,<instr>)
+> +# Return y if the assembler supports <instr>, n otherwise
+> +as-instr = $(success,printf "%b\n" "$(1)" | $(CC) $(CLANG_FLAGS) -c -x assembler -o /dev/null -)
+> +
+>  # check if $(CC) and $(LD) exist
+>  $(error-if,$(failure,command -v $(CC)),compiler '$(CC)' not found)
+>  $(error-if,$(failure,command -v $(LD)),linker '$(LD)' not found)
 
 
-Regards,
-CK
 
-> Regards,
-> CK
-> 
-> > 
-> > Fixes: d6b53f68356f ("drm/mediatek: Add helper to get component for a plane")
-> > Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> > Signed-off-by: Pi-Hsun Shih <pihsun@chromium.org>
-> > ---
-> >  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 5 +++--
-> >  1 file changed, 3 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > index f80a8ba75977..b34e7d70702a 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > @@ -215,11 +215,12 @@ struct mtk_ddp_comp *mtk_drm_ddp_comp_for_plane(struct drm_crtc *crtc,
-> >  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> >  	struct mtk_ddp_comp *comp;
-> >  	int i, count = 0;
-> > +	unsigned int local_index = plane - mtk_crtc->planes;
-> >  
-> >  	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
-> >  		comp = mtk_crtc->ddp_comp[i];
-> > -		if (plane->index < (count + mtk_ddp_comp_layer_nr(comp))) {
-> > -			*local_layer = plane->index - count;
-> > +		if (local_index < (count + mtk_ddp_comp_layer_nr(comp))) {
-> > +			*local_layer = local_index - count;
-> >  			return comp;
-> >  		}
-> >  		count += mtk_ddp_comp_layer_nr(comp);
-> > 
-> > base-commit: 1875ff320f14afe21731a6e4c7b46dd33e45dfaa
-> 
+-- 
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
