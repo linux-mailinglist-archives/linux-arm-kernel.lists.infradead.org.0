@@ -2,83 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40E5B11C12A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 01:13:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A66D11C12C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 01:13:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bI5aspnTT0EwGzdZZ7WO5L5zPLOFC+IiuQH7D2OCkeo=; b=rzydAnohqbT7WC
-	aA9rj1f7iG/2JHqzSgHh5Cwwa0bSZ4MgE0wORS7P3q7Yt/dDQX6DmXvum8Q9JJwAOXXRv7BM+Rzjz
-	dxLvfyQOJ1P0E1pincjuJ+4m8tbshgSK83j0vZJW/jK+q7NCMB1qre2wc11wIsQhs4Ex7Z3KoPJqw
-	vJpZrhYzk9rqc/oVx4FjmgJ+MIoYKhTUHnHmNV1+4T6g/f/B5Qmt68rMmOrFJRM5GyonuSMFArNsD
-	lVI8HOBp/ESsK1mXgYUIu7Pg+u7LkGBu/TsMY+Lhp61wmPC9OCKMFb8PZnc45vuuxOh14u5Z8J1rU
-	njwoGzEMYRwXeIVOlceg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gMIGTK1ZSlpDLG2WpReVC/iEBpr5VoyBay/jR+tjcio=; b=Z4KdbPxpnJocJLcQpylE04Q9n
+	Plh/JWpvZA3J3X0lTWv1anD23DmVnv/GZg4LjVd56DHoXyRxuhblNWJyUqH/93AOMNHc381MByLQ7
+	dghaYTab/Iglh0PLl5wuSUV+rh01aEQxB+MOhVqBNbkd9ZNtPvG0BFrld43Z2q05S2qnT5gq/+R3n
+	awsh/zdJlYNxI92wjEaMjwRCOtyeTOqUBH9C02Jr9dFOwkkFnkd6XNP8v/M8e/tSG1WjyEt+dvbly
+	JADSUjM6bikhxBKND7zuBHBmIK2WhRZbOCYsLZ90f/bHfAunb4jwvBmVltytPRplVDFRScWsaFlZG
+	GcsoFaNVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifC6R-00052p-7s; Thu, 12 Dec 2019 00:13:11 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifC6C-0004wu-SW; Thu, 12 Dec 2019 00:13:01 +0000
-Received: by mail-qt1-x841.google.com with SMTP id z15so688002qts.5;
+	id 1ifC6e-0005Cw-Cg; Thu, 12 Dec 2019 00:13:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifC6I-00052e-RR; Thu, 12 Dec 2019 00:13:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B4E121FB;
+ Wed, 11 Dec 2019 16:12:59 -0800 (PST)
+Received: from [192.168.1.123] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 025913F52E;
  Wed, 11 Dec 2019 16:12:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=JpkQHGI2xpytoMExaxEosFs2mgf6joP/Hf11Z973OOo=;
- b=CSt6XAY8CElDN73sZdchWCJTiVYvx0gczwNtK7YUuSVX/lG5mchWFQNQbomhcw58G2
- d92/8npPNpQ73goL6dPfm215af8SsA90ngfSDwgtOY1LnOaqE44SOOIrUTGK85AoA8E/
- aypxy00MsBhiVXUyn1al9RZIE3GrLCeLZjLI8=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=JpkQHGI2xpytoMExaxEosFs2mgf6joP/Hf11Z973OOo=;
- b=tH9XWDjDfK3IFzETUoQq/UzoOeAegrO31EpRwCCT1GaUU5Glr1oFP6as9TBmlUCBTO
- E+h92ddfoXRRuMpn7C4iBaAvGTCwkFxyNDIO6J63NOJmfUyMCmSSxYXhiC2kL4b8I953
- NqnuwysVdm3ZRkmXaz0L0czpaUUJXmRu8xPewWYxHb1ZzTq+jGhr4iMOleBxD34lOwx4
- 3uX30y+YNrkQOSpRpbSAvl+0qLxuwGJNK7C5Kd3O9KuTwJv1rWV4+Mnxc4Uk22ByD56W
- cLnlnC0UvYU3Dqy7hHkqL9oPdEeIFdpo0m13rbI5e1LOJhjH8Lpctb5gkdtW89CozBE5
- Gygw==
-X-Gm-Message-State: APjAAAUEGtptan3vhSDRVac77OPLsIUMy/+mJzzOGVxRHdZJB88/7TX3
- rE0jagiNsqB7+m1gqYT4XzixjVB8tFt0XGS6gv4=
-X-Google-Smtp-Source: APXvYqx9tpMnePqfUyI/wqyrtIckfCZNviBzFD6lqfFJher3fMfJBT1e7NmLJtfELd5HAaHlEF3LR3ykCznnk4gFFTs=
-X-Received: by 2002:ac8:3467:: with SMTP id v36mr5149667qtb.255.1576109575020; 
- Wed, 11 Dec 2019 16:12:55 -0800 (PST)
+Subject: Re: [REGRESSION] PCI v5.5-rc1 breaks google kevin
+To: Vicente Bergas <vicencb@gmail.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>
+References: <58ce5534-64bd-4b4b-bd60-ed4e0c71b20f@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <166f0016-7061-be5c-660d-0499f74e8697@arm.com>
+Date: Thu, 12 Dec 2019 00:12:56 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-References: <20191211192742.95699-1-brendanhiggins@google.com>
- <20191211192742.95699-8-brendanhiggins@google.com>
-In-Reply-To: <20191211192742.95699-8-brendanhiggins@google.com>
-From: Joel Stanley <joel@jms.id.au>
-Date: Thu, 12 Dec 2019 00:12:43 +0000
-Message-ID: <CACPK8XctCb9Q2RaFVHEDuWxKDXpCWMWs-+vnKZ=SeTa3xRnT_g@mail.gmail.com>
-Subject: Re: [PATCH v1 7/7] fsi: aspeed: add unspecified HAS_IOMEM dependency
-To: Brendan Higgins <brendanhiggins@google.com>
+In-Reply-To: <58ce5534-64bd-4b4b-bd60-ed4e0c71b20f@gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_161257_856844_A7459F34 
-X-CRM114-Status: GOOD (  14.54  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191211_161302_946227_0EDB885D 
+X-CRM114-Status: GOOD (  14.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,66 +66,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- Andrew Jeffery <andrew@aj.id.au>, Richard Weinberger <richard@nod.at>,
- jdike@addtoit.com, Eddie James <eajames@linux.ibm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-um@lists.infradead.org, Jeremy Kerr <jk@ozlabs.org>, davidgow@google.com,
- Alistar Popple <alistair@popple.id.au>, linux-fsi@lists.ozlabs.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- anton.ivanov@cambridgegreys.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Frederick Lawler <fred@fredlawl.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, Andrew Murray <andrew.murray@arm.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ =?UTF-8?Q?Stefan_M=c3=a4tje?= <stefan.maetje@esd.eu>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 11 Dec 2019 at 19:28, Brendan Higgins <brendanhiggins@google.com> wrote:
->
-> Currently CONFIG_FSI_MASTER_ASPEED=y implicitly depends on
-> CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we get
-> the following build error:
->
-> ld: drivers/fsi/fsi-master-aspeed.o: in function `fsi_master_aspeed_probe':
-> drivers/fsi/fsi-master-aspeed.c:436: undefined reference to `devm_ioremap_resource'
->
-> Fix the build error by adding the unspecified dependency.
->
-> Reported-by: Brendan Higgins <brendanhiggins@google.com>
-> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-
-Nice. I hit this when attempting to force on CONFIG_COMPILE_TEST in
-order to build some ARM drivers under UM. Do you have plans to fix
-that too?
-
-Do you want to get this in a fix for 5.5?
-
-Acked-by: Joel Stanley <joel@jms.id.au>
-
-Cheers,
-
-Joel
-
-> ---
->  drivers/fsi/Kconfig | 1 +
->  1 file changed, 1 insertion(+)
->
-> diff --git a/drivers/fsi/Kconfig b/drivers/fsi/Kconfig
-> index 92ce6d85802cc..4cc0e630ab79b 100644
-> --- a/drivers/fsi/Kconfig
-> +++ b/drivers/fsi/Kconfig
-> @@ -55,6 +55,7 @@ config FSI_MASTER_AST_CF
->
->  config FSI_MASTER_ASPEED
->         tristate "FSI ASPEED master"
-> +       depends on HAS_IOMEM
->         help
->          This option enables a FSI master that is present behind an OPB bridge
->          in the AST2600.
-> --
-> 2.24.0.525.g8f36a354ae-goog
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgVmljZW50ZSwKCk9uIDIwMTktMTItMTEgMTE6MzggcG0sIFZpY2VudGUgQmVyZ2FzIHdyb3Rl
+Ogo+IEhpLAo+IHNpbmNlIHY1LjUtcmMxIHRoZSBnb29nbGUga2V2aW4gY2hyb21lYm9vayBkb2Vz
+IG5vdCBib290Lgo+IEdpdCBiaXNlY3QgcmVwb3J0cyA1ZTBjMjFjNzVlOGMgUENJL0FTUE06IFJl
+bW92ZSBwY2llX2FzcG1fZW5hYmxlZCgpIAo+IHVubmVjZXNzYXJ5IGxvY2tpbmcKPiBhcyB0aGUg
+Zmlyc3QgYmFkIGNvbW1pdC4KPiAKPiBJbiBvcmRlciB0byByZXZlcnQgaXQgZnJvbSB2NS41LXJj
+MSBpIGhhZCB0byBhbHNvIHJldmVydCBzb21lIGRlcGVuZGVuY2llczoKPiA1ZTBjMjFjNzVlOGMw
+ODM3NWE2OTcxMDUyN2U0YTkyMWI4OTdjYjdlCj4gYWZmNWQwNTUyZGE0MDU1ZGEzZmFhMjdlZTQy
+NTJlNDhiYjFmNTgyMQo+IDM1ZWZlYTMyYjI2ZjlhYWNjOTliZjA3ZTBkMmNkZmJhMjAyOGIwOTkK
+PiA2ODdhYWYzODZhZWI1NTExMzBmMzE3MDVjZTQwZDEzNDEwNDdhOTM2Cj4gNzJlYTkxYWZiZmIw
+ODYxOTY5NmNjZGU2MTBlZTRkMGQyOWNmNGExZAo+IDg3ZTkwMjgzYzk0Yzc2ZWUxMWQzNzlhYjVh
+MDk3MzM4MmJiZDBiYWYKPiBBZnRlciByZXZlcnRpbmcgYWxsIG9mIHRoaXMsIHN0aWxsIG5vIGx1
+Y2suCj4gU28sIGVpdGhlciB0aGUgcmVzdWx0cyBvZiBnaXQgYmlzZWN0IGFyZSBub3QgdG8gYmUg
+dHJ1c3RlZCwgb3IKPiB0aGVyZSBhcmUgbW9yZSBiYWQgY29tbWl0cy4KPiAKPiBCeSAiZG9lcyBu
+b3QgYm9vdCIgaSBtZWFuIHRoYXQgdGhlIGRpc3BsYXkgZmFpbHMgdG8gc3RhcnQgYW5kCj4gdGhl
+IGRpc3BsYXkgaXMgdGhlIG9ubHkgb3V0cHV0IGRldmljZSwgc28gZGVidWdnaW5nIGlzIHF1aXRl
+IGRpZmZpY3VsdC4KCkFzc3VtaW5nIGl0J3MgYSBtYW5pZmVzdGF0aW9uIG9mIHRoZSBzYW1lIFBD
+SSBicmVha2FnZSB0aGF0IEVucmljIGFuZCAKTG9yZW56byBmaWd1cmVkIG91dCwgdGhlcmUncyBh
+IHByb3Bvc2VkIGZpeCBoZXJlOiAKaHR0cHM6Ly9sa21sLm9yZy9sa21sLzIwMTkvMTIvMTEvMTk5
+CgpSb2Jpbi4KCj4gdjUuNS1yYzEgYXMgaXMgKHJldmVydGluZyBubyBjb21taXRzIGF0IGFsbCkg
+d29ya3MgZmluZSB3aGVuIGRpc2FibGluZyBQQ0k6Cj4gIyBDT05GSUdfUENJIGlzIG5vdCBzZXQK
+PiAKPiBSZWdhcmRzLAo+ICDCoFZpY2VudGUuCj4gCj4gCj4gX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KPiBMaW51eC1yb2NrY2hpcCBtYWlsaW5nIGxpc3QK
+PiBMaW51eC1yb2NrY2hpcEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
