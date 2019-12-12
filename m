@@ -2,58 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A9FE11D01D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:44:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D53711D025
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:46:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s7XcKtTgFcSi2liMO7V6EwVAJVCj+FoCTFjbekuGwAI=; b=Xicn90WGA+mNSN
-	+vKdw+xHtqRUG8v70EFtUVR2vQdV71M3SzfKPlYpSeXp5qh3pxPYcMshzaQ2mrCQlRvbOPlwnPJAz
-	j46PxzdzfcpjYpsazl4w7GNesxfQYapag1nswyB2tX9oVuBl/H4FNITVAGu5TS1Vbv7tAyAbextrU
-	yrfvt4rU4Nsu2qziKk+TcxW6hWxLULcrJskIP7CyH6QdwxRcy1/tW+D9TIkhYtyvQ42NkZafkbyQ/
-	7P6NAJRrBxpKxL/1gH9dIPKRejwJ+y0oBoO3SaB1P+WUqjF2am8WAl0Df/foI4/E04VrYNYOI9aP9
-	t9LD2hdrCfr+ypDyT/TQ==;
+	List-Owner; bh=61198V0MHNCBubs+HHF+CHDVlhGW3mCNth5Xpk0h4MY=; b=tIhPfyzGJbT391
+	4ykbszoYCUf8cdiLphXJz5Cglrq0ECCXJGAWWMxlChtJ+CWOd70mQuz5cDenJdIg/NX2Gtq8tbMpP
+	jrGUl5PoscQYEBizzhE9o+jymauhmqIquv4zXhzE5uDXyIt1OfBV4rckfc/XQn8tpQOSBHDy976iV
+	LWjc80oVfXbu6Q73b71K7VHvqFh+JcVxCk5JB8oLW/kEN6xFOrukhu5Aa8t+tSmCcEF0h1q1H3A5c
+	434alJCVPztEoM+dwJLRd69BikSGHcIPWJTSaaxj3NbEklwXHkQcSHS8/YZPZiuP4P8tbBYEqGZP2
+	IyPY/iWuDlGfrs60j8RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifPhQ-00084A-JX; Thu, 12 Dec 2019 14:44:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifPhD-00083P-Vh; Thu, 12 Dec 2019 14:44:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4B0E530E;
- Thu, 12 Dec 2019 06:44:03 -0800 (PST)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D90EA3F718;
- Thu, 12 Dec 2019 06:44:00 -0800 (PST)
-Date: Thu, 12 Dec 2019 14:43:55 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [PATCH v5 3/3] hwrng: add mtk-sec-rng driver
-Message-ID: <20191212144355.GA13263@bogus>
-References: <1574864578-467-1-git-send-email-neal.liu@mediatek.com>
- <1574864578-467-4-git-send-email-neal.liu@mediatek.com>
- <CADnJP=uhD=J2NrpSwiX8oCTd-u_q05=HhsAV-ErCsXNDwVS0rA@mail.gmail.com>
- <1575027046.24848.4.camel@mtkswgap22>
- <CAKv+Gu_um7eRYXbieW7ogDX5mmZaxP7JQBJM9CajK+6CsO5RgQ@mail.gmail.com>
+	id 1ifPjq-0001J8-BW; Thu, 12 Dec 2019 14:46:46 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifPjc-0001IH-OB
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 14:46:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=hkHDB3phcH0HfS+SYlRQH6XDGLuoaLVy41b9XR3p43Q=; b=Og9r+73slsywdB0UTKFtoWlqY
+ 5tH6AeleUmHyad03r1ijWZDvinNFcpKVrgl92ti5xMKUrF0ircAXO+9E2PRwju+ewUAQMwO/tbF5a
+ LR4vjjIArUhVKQDL7qkN4Kn2ZbV6LOeqPlZCNjm2anwx9isZmLSQqNnWn2fk3MmNg+PjfaTDo3/5Q
+ TIpKeJRnwakwsChaRG0LzJLeUjLS+aDKDds9Ifg8ONuAxmD00ehC7dd3KFDNMP8ujWLnYzL8Rvvyn
+ N82AHe1puRQfXT6AIizxnooy9afqoZfupFT/yvDK9MzyDx2tMittVI6/fGdS2A5FGU+YYeHTAsEvU
+ pWae21DPg==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:47872)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1ifPjP-0007Hs-GT; Thu, 12 Dec 2019 14:46:19 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1ifPjM-0006tX-JX; Thu, 12 Dec 2019 14:46:16 +0000
+Date: Thu, 12 Dec 2019 14:46:16 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
+ API
+Message-ID: <20191212144616.GJ25745@shell.armlinux.org.uk>
+References: <3d8a58bf-0814-1ec1-038a-10a20b9646ad@free.fr>
+ <20191128185630.GK82109@yoga> <20191202014237.GR248138@dtor-ws>
+ <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
+ <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
+ <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
+ <20191211222829.GV50317@dtor-ws>
+ <70528f77-ca10-01cd-153b-23486ce87d45@free.fr>
+ <20191212141747.GI25745@shell.armlinux.org.uk>
+ <58c27422-e06c-f42e-16ea-baeca3bb9b01@free.fr>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAKv+Gu_um7eRYXbieW7ogDX5mmZaxP7JQBJM9CajK+6CsO5RgQ@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <58c27422-e06c-f42e-16ea-baeca3bb9b01@free.fr>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_064404_110337_825483FF 
-X-CRM114-Status: GOOD (  20.86  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191212_064632_781736_5F1FF353 
+X-CRM114-Status: GOOD (  18.65  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,76 +95,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Herbert Xu <herbert@gondor.apana.org.au>,
- wsd_upstream <wsd_upstream@mediatek.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Matt Mackall <mpm@selenic.com>,
- Sean Wang <sean.wang@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Neal Liu <neal.liu@mediatek.com>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
- Marc Zyngier <maz@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Crystal Guo =?utf-8?B?KOmDreaZtik=?= <Crystal.Guo@mediatek.com>,
- Will Deacon <will@kernel.org>, Lars Persson <lists@bofh.nu>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ linux-clk <linux-clk@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
+ Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 02, 2019 at 04:12:09PM +0000, Ard Biesheuvel wrote:
-> (adding some more arm64 folks)
+On Thu, Dec 12, 2019 at 03:41:20PM +0100, Marc Gonzalez wrote:
+> On 12/12/2019 15:17, Russell King - ARM Linux admin wrote:
 > 
-> On Fri, 29 Nov 2019 at 11:30, Neal Liu <neal.liu@mediatek.com> wrote:
+> > On Thu, Dec 12, 2019 at 02:53:40PM +0100, Marc Gonzalez wrote:
 > >
-> > On Fri, 2019-11-29 at 18:02 +0800, Lars Persson wrote:
-> > > Hi Neal,
-> > >
-> > > On Wed, Nov 27, 2019 at 3:23 PM Neal Liu <neal.liu@mediatek.com> wrote:
-> > > >
-> > > > For MediaTek SoCs on ARMv8 with TrustZone enabled, peripherals like
-> > > > entropy sources is not accessible from normal world (linux) and
-> > > > rather accessible from secure world (ATF/TEE) only. This driver aims
-> > > > to provide a generic interface to ATF rng service.
-> > > >
-> > >
-> > > I am working on several SoCs that also will need this kind of driver
-> > > to get entropy from Arm trusted firmware.
-> > > If you intend to make this a generic interface, please clean up the
-> > > references to MediaTek and give it a more generic name. For example
-> > > "Arm Trusted Firmware random number driver".
-> > >
-> > > It will also be helpful if the SMC call number is configurable.
-> > >
-> > > - Lars
-> >
-> > Yes, I'm trying to make this to a generic interface. I'll try to make
-> > HW/platform related dependency to be configurable and let it more
-> > generic.
-> > Thanks for your suggestion.
-> >
+> >> On 11/12/2019 23:28, Dmitry Torokhov wrote:
+> >>
+> >>> On Wed, Dec 11, 2019 at 05:17:28PM +0100, Marc Gonzalez wrote:
+> >>>
+> >>>> What is the rationale for the devm_add_action API?
+> >>>
+> >>> For one-off and maybe complex unwind actions in drivers that wish to use
+> >>> devm API (as mixing devm and manual release is verboten). Also is often
+> >>> used when some core subsystem does not provide enough devm APIs.
+> >>
+> >> Thanks for the insight, Dmitry. Thanks to Robin too.
+> >>
+> >> This is what I understand so far:
+> >>
+> >> devm_add_action() is nice because it hides/factorizes the complexity
+> >> of the devres API, but it incurs a small storage overhead of one
+> >> pointer per call, which makes it unfit for frequently used actions,
+> >> such as clk_get.
+> >>
+> >> Is that correct?
+> >>
+> >> My question is: why not design the API without the small overhead?
+> >>
+> >> Proof of concept below:
+> >>
+> >>
+> >> diff --git a/drivers/base/devres.c b/drivers/base/devres.c
+> >> index 0bbb328bd17f..76392dd6273b 100644
+> >> --- a/drivers/base/devres.c
+> >> +++ b/drivers/base/devres.c
+> >> @@ -685,6 +685,20 @@ int devres_release_group(struct device *dev, void *id)
+> >>  }
+> >>  EXPORT_SYMBOL_GPL(devres_release_group);
+> >>  
+> >> +void *devm_add(struct device *dev, dr_release_t func, void *arg, size_t size)
+> >> +{
+> >> +	void *data = devres_alloc(func, size, GFP_KERNEL);
+> >> +
+> >> +	if (data) {
+> >> +		memcpy(data, arg, size);
+> >> +		devres_add(dev, data);
+> >> +	} else
+> >> +		func(dev, arg);
+> >> +
+> >> +	return data;
+> >> +}
+> >> +EXPORT_SYMBOL_GPL(devm_add);
+> >> +
+> >>  /*
+> >>   * Custom devres actions allow inserting a simple function call
+> >>   * into the teadown sequence.
+> >> diff --git a/drivers/clk/clk-devres.c b/drivers/clk/clk-devres.c
+> >> index be160764911b..8db671823126 100644
+> >> --- a/drivers/clk/clk-devres.c
+> >> +++ b/drivers/clk/clk-devres.c
+> >> @@ -4,6 +4,11 @@
+> >>  #include <linux/export.h>
+> >>  #include <linux/gfp.h>
+> >>  
+> >> +static void __clk_put(struct device *dev, void *data)
+> >> +{
+> >> +	clk_put(*(struct clk **)data);
+> >> +}
+> >> +
+> >>  static void devm_clk_release(struct device *dev, void *res)
+> >>  {
+> >>  	clk_put(*(struct clk **)res);
+> >> @@ -11,19 +16,11 @@ static void devm_clk_release(struct device *dev, void *res)
+> >>  
+> >>  struct clk *devm_clk_get(struct device *dev, const char *id)
+> >>  {
+> >> -	struct clk **ptr, *clk;
+> >> -
+> >> -	ptr = devres_alloc(devm_clk_release, sizeof(*ptr), GFP_KERNEL);
+> >> -	if (!ptr)
+> >> -		return ERR_PTR(-ENOMEM);
+> >> +	struct clk *clk = clk_get(dev, id);
+> >>  
+> >> -	clk = clk_get(dev, id);
+> >> -	if (!IS_ERR(clk)) {
+> >> -		*ptr = clk;
+> >> -		devres_add(dev, ptr);
+> >> -	} else {
+> >> -		devres_free(ptr);
+> >> -	}
+> >> +	if (!IS_ERR(clk))
+> >> +		if (!devm_add(dev, __clk_put, &clk, sizeof(clk)))
+> >> +			clk = ERR_PTR(-ENOMEM);
+> > 
+> > You leak clk here.
 > 
-> I don't think it makes sense for each arm64 platform to expose an
-> entropy source via SMC calls in a slightly different way, and model it
-> as a h/w driver. Instead, we should try to standardize this, and
-> perhaps expose it via the architectural helpers that already exist
-> (get_random_seed_long() and friends), so they get plugged into the
-> kernel random pool driver directly.
+> I don't think so ;-)
 > 
-> Note that in addition to drivers based on vendor SMC calls, we already
-> have a RNG h/w driver based on OP-TEE as well, where the driver
-> attaches to a standardized trusted OS interface identified by a UUID,
-> and which also gets invoked via SMC calls into secure firmware.
+> If devm_add() returns NULL, then we have called __clk_put(dev, &clk);
 
-Yes, I agree. I had raised the issue internally and forgot to follow up.
-I raised this few months back after I read a blog[1]
+Okay.
 
---
-Regards,
-Sudeep
+However, please don't call this __clk_put().  git grep __clk_put will
+tell you why.  Thanks.
 
-[1] https://community.arm.com/developer/ip-products/processors/f/cortex-a-forum/43679/arm-really-should-standardize-an-smc-interface-for-hardware-random-number-generators
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
