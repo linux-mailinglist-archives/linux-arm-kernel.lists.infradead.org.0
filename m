@@ -2,112 +2,112 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A66B11C3D1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 04:19:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54FC711C3E5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 04:38:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pn4ATUAOu7o2n7yGTJSrKv8uQQcsNtGL7Pq87d8QneY=; b=roKkQgJcJ1erz1
-	HKjQCtH6mbnQUfgS0/ru4tLii2QEq6k1Pr9MrlzbUi6hi4bemA+cek5chFIyzAVerKQLT1nrGAZQP
-	uJsGXV3yVbI+7C7h4TgkJKfKbzVewsZULJDyfS4CcafuBhIzQwweDY+eGj1TNLegK/Pl7CoiLAEiB
-	2ZVYi3LvJQ0k2YAAoBHo7ARV0HCFg2AeDTwlMOH6O7nvdx5jiYHsOZeH+byuAbG4rhx7T+/+xPR6B
-	1GATqv8GWEMF4SLnlBSe3ByqxiQVJYyOcAnoJvNK9lyk69Ss5vbpb6+YivmapamBwGqXINN2t/tIz
-	Ow9E9CcQhVsQ7yAL9AUQ==;
+	List-Owner; bh=qvUwPiAoFNIc4gAXWmNEHlJ46mbOgOw+AShN9njPIuQ=; b=co1hSGGD1yugmh
+	CnEMTQPQrqeIJMfpm475GnUctZAvHR1LGEaf4Tw+ZJTQFEXm+LQqcBV6E19pcbKYMa/LfDj7Pompl
+	S9SDXbgqEqiGqV7WGIcIlm9OjKPsKHh70qTAl0k25XOrTR8Ecpgnk4NA+YhpxalztLBdKt537VOzK
+	FhgsAzgzmOZW9qGxpVzoZoChVg9NkqywkjTyfGL5C9tp8qr2NTJ2kW9O1mh4lytC7OA/WPLV208RQ
+	LLCpRUuLvWiLtuCXO0UjhINlqJ3ZvB00nmqeKFGY/xrwI02+niLtTf+YjUR0SGPPB+6St4bVYurif
+	s1RCX5hgn1zrJLcNtdjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifF0p-0001Vv-Ck; Thu, 12 Dec 2019 03:19:35 +0000
-Received: from mail-eopbgr50082.outbound.protection.outlook.com ([40.107.5.82]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1ifFJ3-00082k-Kl; Thu, 12 Dec 2019 03:38:25 +0000
+Received: from mail-eopbgr70084.outbound.protection.outlook.com ([40.107.7.84]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifF0i-0001VG-CE
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 03:19:29 +0000
+ id 1ifFIs-00080i-IL
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 03:38:15 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=SA74HZ/T7X6oNtscmaQD0dbXsn9XinPI+APt8yJi5IXh7qiu+aqd1tRGB1vN39cC30WWNsYcZ4rIw80vF4uipaP5PKS3/0TzCwu44z0BoYZJlQtB8oMDNBRaCvLAvJn5NSJt09HyFR9WwjJVZusqOQH0hLJCviAvrmZL28wTIwD6q6AIom+x2j2ncLwD+YuoWSDi9oUku0TCEqDSREjLnnWmewYmHVX0EKarbBmhscDrzztOwW6JLud2r7F7d4VACxrpJGhkasNXaO5OPy3QAVUGL0SCT9YkBqQNhbi8qsT7tVFeiPuOVqjvEYddXtJQHoFTIR1tW41wxFWKO84pfg==
+ b=IkxJLvbgjtQNLDUDplYczhWugTGHsKWC2JGo928ssxoQQz1zuwFk4rGj3SMN7UKXkNKxJ2pY3ez8sPPKJ71vHUa9i+Lr1CZRtuxYUqmjOn1HcszTaJYl4Q5RcjPnUA1RX/oJHeH6tL1fjKm6mEHFmyaZ+J+CYCvGNf4XF4pJ4YNkfH9RNb25fJs7cDmqYjwAWGeDmPG3IfcLNtsGuyY+JloE+2DmVE8SnZgSqXRp1oskyFH/CoHk3CULpOohbWuPwatkQgI99gox7t+H0oqSQcx6gavsjd3j/6NA+bSQMdZ2lmpjhaYFC+yhm9ky61Rq/tcUHL6e7ChUNtxsj9/7lg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DAwjKxvnVC+zMuAx21ydKprAKexJLCOi4NMZvk1QE0w=;
- b=EXF4s05e7C2B4vh228Jc8Pxwx9R+jLlMMlqfqIolJh01B/TXuZJ6dKoiC6VJD+fsL0bv5ddGDbq8RqrevRvoEns6Bhbq3t7xd1NHgJCnDv035P1nkZzNzD1F3tBIMvmj1r1xdECsvjRCYN/1xjKus497K2vigFh2IdYVWFPdgm6QoaqDd5uBdvuAMI2DvgmPIlI9xqQAPbA0vgjPjLT1wweyVwejCJBaAug0AKLuTVXwgMZ3PN82rjPi30eUn05RZ0h3pEMSuIO4JXOjpLlUjyNoAnnlo8L6m/UUKdzkNncMSaggolz1LlWOt9IH11qsU2dHFF0qV6ugFs+HnYKd9Q==
+ bh=EbqbW4O3jFEWvf9ZNMWPcspqJahUbVt/YsmLXBXU7xA=;
+ b=F2WENGj9pi0nIttks6XaKnfC8ywK4+vjUtGuJ5fMhelmc4MTsZ3WShXQi87Ken7bl3H2qgrFoEHfIjCcEt7WfWBuCVX8z05kZUmpTpm44N8Si+z2K9qpeD0NoQ0vg71sp/5yN2E0Y2sf23LAh/L2x3wlI78FHCn7wPrSlmsdtjRYv/BNOezT/AFUsFG9Pg9JHXEGNnKqeo368iCnyB81g2EKEko2LTP+S6vUbO6wtfB2gNvKUSNZBAbcF6HoZkVlItc2vcfd5/LAQP0eRg1njdYtFxD3bNNU/YaQfXPivNPMnyZoQXlCM/1FxbJgGg3Gex4evZTFBs2FXjqR2jChMw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DAwjKxvnVC+zMuAx21ydKprAKexJLCOi4NMZvk1QE0w=;
- b=rwcZY6UM9Ugjg5phXiNJ3jTQeNFaFKyCXM2qIj4YDyIb/eSkl1TBzcyU5fAmLjdpHBT2yt8Y3q2A2CZui10aQw8tD5i/GU5K5n1pLA+J2qVW1+PXoFMqE3QjrqJtZ0X4l8pywhXKByNymFg5vlTD+o23y51oxx13yvMy2zpvHHg=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6756.eurprd04.prod.outlook.com (10.255.182.16) with Microsoft SMTP
+ bh=EbqbW4O3jFEWvf9ZNMWPcspqJahUbVt/YsmLXBXU7xA=;
+ b=iRvtoDSX+8tYChRgpKx5ZGvoWZhXWLramdRRCmJLW5V2Hq5kF2NzbRIfww2inM4925JeQof1+zbyphyPpkOAiI+U+ACwnvlOkvSQu3iROcAoUGNezaS7ZwXfLv5vCRCcRL6X6UzhewAsTY0lLyGm1sForZGDU7YAA+XjM20qwhY=
+Received: from VI1PR04MB4431.eurprd04.prod.outlook.com (20.177.55.205) by
+ VI1PR04MB3181.eurprd04.prod.outlook.com (10.170.229.31) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2516.16; Thu, 12 Dec 2019 03:19:25 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::505:87e7:6b49:3d29]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::505:87e7:6b49:3d29%7]) with mapi id 15.20.2538.017; Thu, 12 Dec 2019
- 03:19:25 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>
-Subject: [PATCH] arm64: dts: imx8m: drop "fsl,aips-bus" and
- "fsl,imx8mq-aips-bus"
-Thread-Topic: [PATCH] arm64: dts: imx8m: drop "fsl,aips-bus" and
- "fsl,imx8mq-aips-bus"
-Thread-Index: AQHVsJr0430+yrGMXkiqegeAayzdJw==
-Date: Thu, 12 Dec 2019 03:19:25 +0000
-Message-ID: <1576120601-28698-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
+ 15.20.2538.16; Thu, 12 Dec 2019 03:38:11 +0000
+Received: from VI1PR04MB4431.eurprd04.prod.outlook.com
+ ([fe80::c947:5ae7:2a68:a4f2]) by VI1PR04MB4431.eurprd04.prod.outlook.com
+ ([fe80::c947:5ae7:2a68:a4f2%3]) with mapi id 15.20.2538.017; Thu, 12 Dec 2019
+ 03:38:11 +0000
+From: Peng Ma <peng.ma@nxp.com>
+To: "vkoul@kernel.org" <vkoul@kernel.org>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, Leo Li <leoyang.li@nxp.com>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>, Robin Gong
+ <yibin.gong@nxp.com>
+Subject: [v5 1/3] dmaengine: fsl-edma: Add eDMA support for QorIQ LS1028A
+ platform
+Thread-Topic: [v5 1/3] dmaengine: fsl-edma: Add eDMA support for QorIQ LS1028A
+ platform
+Thread-Index: AQHVsJ2TZ/jVyH6lNkyvcDWZa1lfcQ==
+Date: Thu, 12 Dec 2019 03:38:10 +0000
+Message-ID: <20191212033714.4090-1-peng.ma@nxp.com>
+Accept-Language: zh-CN, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR04CA0076.apcprd04.prod.outlook.com
- (2603:1096:202:15::20) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
+x-clientproxiedby: HK2PR04CA0049.apcprd04.prod.outlook.com
+ (2603:1096:202:14::17) To VI1PR04MB4431.eurprd04.prod.outlook.com
+ (2603:10a6:803:6f::13)
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
+ smtp.mailfrom=peng.ma@nxp.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
+x-mailer: git-send-email 2.17.1
+x-originating-ip: [119.31.174.73]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 26512b2c-2412-4f7d-3186-08d77eb216f7
-x-ms-traffictypediagnostic: AM0PR04MB6756:|AM0PR04MB6756:
+x-ms-office365-filtering-correlation-id: a1ec1328-c2ad-4fbf-a6ce-08d77eb4b5e2
+x-ms-traffictypediagnostic: VI1PR04MB3181:|VI1PR04MB3181:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB675619A221046213CCDCE4B688550@AM0PR04MB6756.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2449;
+x-microsoft-antispam-prvs: <VI1PR04MB31811653E53F9D51770EE031ED550@VI1PR04MB3181.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3044;
 x-forefront-prvs: 0249EFCB0B
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(136003)(366004)(396003)(376002)(39860400002)(189003)(199004)(8936002)(81156014)(81166006)(71200400001)(6512007)(7416002)(2616005)(54906003)(186003)(6486002)(26005)(8676002)(4326008)(52116002)(86362001)(6506007)(110136005)(316002)(66476007)(66446008)(66946007)(64756008)(66556008)(2906002)(478600001)(36756003)(44832011)(5660300002)(32563001)(142933001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6756;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
+ SFS:(10009020)(4636009)(136003)(366004)(346002)(376002)(39860400002)(396003)(199004)(189003)(1076003)(6512007)(5660300002)(478600001)(6486002)(26005)(71200400001)(6506007)(2906002)(316002)(52116002)(4326008)(186003)(66476007)(110136005)(66946007)(64756008)(66446008)(6636002)(54906003)(8936002)(8676002)(81166006)(81156014)(86362001)(2616005)(44832011)(36756003)(66556008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3181;
+ H:VI1PR04MB4431.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: XN+8r7HR3a7tynccVF5m3CzcxwCKXIvper7rRhhSMPvhzXsRneLWRdQqk5BPfq+ikOnbq8jRlaFQwCUL511B8bWGyHcnf33GuuYUp2YlQhAyMumybYrrtuxGKUe/mIXya1H6AtpKkUPqfPl4GQ1+R4f8lkEzNXirTyqXc3yRO63Suw96YuueMp6lMM8Iqcnwq/g8A7fmhXlcVvD42oW+cgxDO+fV6AQLQva6UfUUtws59bwwQDbllqTtSaO0X90Z02MWGf8+m0o470mmlP0+sT/SgZ255SEF9PK+iw3x42rlF4PQgQJJtxAnYm6AVmIA15nW1iJlDHjBra5TzuZMNHZXV9xRJePsimyAjSZCUeX+SupRofBZTNGygHyU6jmDiI1+dvlU0hY+qLirDoXKjbxMQUmRP9oq5PwIbeTH2U+S+UEGfUR13c1OXFO8NF3EUMlD1k846PsBCxdo6VXmIJATZt5F6KizunA8B7Pebh+PoyuJlcStNuC2vi1lQK8+1k7eEEZslc8qKa3b4JM4xQ==
+x-microsoft-antispam-message-info: f8+03pK9gKt8/YukHwnf1qt18f8UZ3DSsT7i48Pdaj4bOA2CyrFSwRUYOgC32H+dmJX80UJZsyDXkchqcmPELnAcRKkBbqAwNCFUk091jYxM8pxincqaTUnarLBeb5BVV8l1lMa7wsnN0U67L3cnGLWBnJHK7+z2yWvx5t7ZXaeGMVhSMEEnE2sO6gVvUSVeL9gEXYn7EfiwHrsJ8rzs3/JWLEWrVpUDQi0+2BV3GxrONCoViYZ9b8vJHXdDZ2nJr+VxHd3jth+1kYYgNs6EU8agl6YVa48YESUtub0Lg7OfAElEU3haetnFZztrLdd5t4fGipwS67ka8DwLQbUaGEdJJ4y0YACuB8M+IXKGaPaptAKz/jtbsvp05g7tZCqlOk367C3PZpgIdG8KZ62VPiLQGuO1P5Ll5qYFrnSD/kkAy+sLPnhhAzfa/34fPpQ2
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 26512b2c-2412-4f7d-3186-08d77eb216f7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Dec 2019 03:19:25.2740 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a1ec1328-c2ad-4fbf-a6ce-08d77eb4b5e2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Dec 2019 03:38:10.9936 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: g4HauRcp+eat25InHGbb7kEsJRCdwBeQBpNFaZVj9xN5hE598Aast0MflFUMjoF9kZTih12veOJN9tG7x8oZ3w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6756
+X-MS-Exchange-CrossTenant-userprincipalname: NhJDnp/KF+JZTjcKNGktoWjJp/41wi5g5ns9kSez2EoH32E2e9wQMeC+0AbKF9jH
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3181
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_191928_420708_B060607F 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191211_193814_610680_2AAF7BC0 
+X-CRM114-Status: GOOD (  12.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.82 listed in list.dnswl.org]
+ no trust [40.107.7.84 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -128,157 +128,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- "S.j. Wang" <shengjiu.wang@nxp.com>, "angus@akkea.ca" <angus@akkea.ca>,
+Cc: "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Peng Ma <peng.ma@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, dl-linux-imx <linux-imx@nxp.com>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jun Li <jun.li@nxp.com>
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+Our platforms(such as LS1021A, LS1012A, LS1043A, LS1046A, LS1028A) with
+below registers(CHCFG0 - CHCFG15) of eDMA as follows:
+*-----------------------------------------------------------*
+|     Offset   |	OTHERS			|		LS1028A			|
+|--------------|--------------------|-----------------------|
+|     0x0      |        CHCFG0      |           CHCFG3      |
+|--------------|--------------------|-----------------------|
+|     0x1      |        CHCFG1      |           CHCFG2      |
+|--------------|--------------------|-----------------------|
+|     0x2      |        CHCFG2      |           CHCFG1      |
+|--------------|--------------------|-----------------------|
+|     0x3      |        CHCFG3      |           CHCFG0      |
+|--------------|--------------------|-----------------------|
+|     ...      |        ......      |           ......      |
+|--------------|--------------------|-----------------------|
+|     0xC      |        CHCFG12     |           CHCFG15     |
+|--------------|--------------------|-----------------------|
+|     0xD      |        CHCFG13     |           CHCFG14     |
+|--------------|--------------------|-----------------------|
+|     0xE      |        CHCFG14     |           CHCFG13     |
+|--------------|--------------------|-----------------------|
+|     0xF      |        CHCFG15     |           CHCFG12     |
+*-----------------------------------------------------------*
 
-There is no binding doc for these compatible string
-"fsl,imx8mq-aips-bus" and "fsl,aips-bus", "simple-bus" is enough
-for aips usage, so drop the upper two.
+This patch is to improve edma driver to fit LS1028A platform.
 
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
+Signed-off-by: Peng Ma <peng.ma@nxp.com>
+Reviewed-by: Robin Gong <yibin.gong@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 8 ++++----
- arch/arm64/boot/dts/freescale/imx8mn.dtsi | 8 ++++----
- arch/arm64/boot/dts/freescale/imx8mq.dtsi | 8 ++++----
- 3 files changed, 12 insertions(+), 12 deletions(-)
+Changed for v5:
+	- no changes
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 20756440a420..a0dbf47ab320 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -232,7 +232,7 @@
- 		ranges = <0x0 0x0 0x0 0x3e000000>;
+ drivers/dma/fsl-edma-common.c | 5 +++++
+ drivers/dma/fsl-edma-common.h | 1 +
+ drivers/dma/fsl-edma.c        | 8 ++++++++
+ 3 files changed, 14 insertions(+)
+
+diff --git a/drivers/dma/fsl-edma-common.c b/drivers/dma/fsl-edma-common.c
+index b1a7ca91701a..5697c3622699 100644
+--- a/drivers/dma/fsl-edma-common.c
++++ b/drivers/dma/fsl-edma-common.c
+@@ -109,10 +109,15 @@ void fsl_edma_chan_mux(struct fsl_edma_chan *fsl_chan,
+ 	u32 ch = fsl_chan->vchan.chan.chan_id;
+ 	void __iomem *muxaddr;
+ 	unsigned int chans_per_mux, ch_off;
++	int endian_diff[4] = {3, 1, -1, -3};
+ 	u32 dmamux_nr = fsl_chan->edma->drvdata->dmamuxs;
  
- 		aips1: bus@30000000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30000000 0x30000000 0x400000>;
-@@ -501,7 +501,7 @@
- 		};
+ 	chans_per_mux = fsl_chan->edma->n_chans / dmamux_nr;
+ 	ch_off = fsl_chan->vchan.chan.chan_id % chans_per_mux;
++
++	if (fsl_chan->edma->drvdata->mux_swap)
++		ch_off += endian_diff[ch_off % 4];
++
+ 	muxaddr = fsl_chan->edma->muxbase[ch / chans_per_mux];
+ 	slot = EDMAMUX_CHCFG_SOURCE(slot);
  
- 		aips2: bus@30400000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30400000 0x30400000 0x400000>;
-@@ -560,7 +560,7 @@
- 		};
+diff --git a/drivers/dma/fsl-edma-common.h b/drivers/dma/fsl-edma-common.h
+index 5eaa2902ed39..67e422590c9a 100644
+--- a/drivers/dma/fsl-edma-common.h
++++ b/drivers/dma/fsl-edma-common.h
+@@ -147,6 +147,7 @@ struct fsl_edma_drvdata {
+ 	enum edma_version	version;
+ 	u32			dmamuxs;
+ 	bool			has_dmaclk;
++	bool			mux_swap;
+ 	int			(*setup_irq)(struct platform_device *pdev,
+ 					     struct fsl_edma_engine *fsl_edma);
+ };
+diff --git a/drivers/dma/fsl-edma.c b/drivers/dma/fsl-edma.c
+index b626c06ac2e0..eff7ebd8cf35 100644
+--- a/drivers/dma/fsl-edma.c
++++ b/drivers/dma/fsl-edma.c
+@@ -233,6 +233,13 @@ static struct fsl_edma_drvdata vf610_data = {
+ 	.setup_irq = fsl_edma_irq_init,
+ };
  
- 		aips3: bus@30800000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30800000 0x30800000 0x400000>;
-@@ -775,7 +775,7 @@
- 		};
++static struct fsl_edma_drvdata ls1028a_data = {
++	.version = v1,
++	.dmamuxs = DMAMUX_NR,
++	.mux_swap = true,
++	.setup_irq = fsl_edma_irq_init,
++};
++
+ static struct fsl_edma_drvdata imx7ulp_data = {
+ 	.version = v3,
+ 	.dmamuxs = 1,
+@@ -242,6 +249,7 @@ static struct fsl_edma_drvdata imx7ulp_data = {
  
- 		aips4: bus@32c00000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x32c00000 0x32c00000 0x400000>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-index 5c47443ceb3d..cce65b9a861f 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-@@ -208,7 +208,7 @@
- 		ranges = <0x0 0x0 0x0 0x3e000000>;
- 
- 		aips1: bus@30000000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			reg = <0x30000000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
-@@ -395,7 +395,7 @@
- 		};
- 
- 		aips2: bus@30400000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			reg = <0x30400000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
-@@ -455,7 +455,7 @@
- 		};
- 
- 		aips3: bus@30800000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			reg = <0x30800000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
-@@ -671,7 +671,7 @@
- 		};
- 
- 		aips4: bus@32c00000 {
--			compatible = "fsl,aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			reg = <0x32c00000 0x400000>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index a9fe065e3cde..6a1e83922c71 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -290,7 +290,7 @@
- 		dma-ranges = <0x40000000 0x0 0x40000000 0xc0000000>;
- 
- 		bus@30000000 { /* AIPS1 */
--			compatible = "fsl,imx8mq-aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30000000 0x30000000 0x400000>;
-@@ -692,7 +692,7 @@
- 		};
- 
- 		bus@30400000 { /* AIPS2 */
--			compatible = "fsl,imx8mq-aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30400000 0x30400000 0x400000>;
-@@ -751,7 +751,7 @@
- 		};
- 
- 		bus@30800000 { /* AIPS3 */
--			compatible = "fsl,imx8mq-aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x30800000 0x30800000 0x400000>,
-@@ -1023,7 +1023,7 @@
- 		};
- 
- 		bus@32c00000 { /* AIPS4 */
--			compatible = "fsl,imx8mq-aips-bus", "simple-bus";
-+			compatible = "simple-bus";
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			ranges = <0x32c00000 0x32c00000 0x400000>;
+ static const struct of_device_id fsl_edma_dt_ids[] = {
+ 	{ .compatible = "fsl,vf610-edma", .data = &vf610_data},
++	{ .compatible = "fsl,ls1028a-edma", .data = &ls1028a_data},
+ 	{ .compatible = "fsl,imx7ulp-edma", .data = &imx7ulp_data},
+ 	{ /* sentinel */ }
+ };
 -- 
-2.16.4
+2.17.1
 
 
 _______________________________________________
