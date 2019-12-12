@@ -2,64 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CC2311D849
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 22:08:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0692F11D84A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 22:08:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bgJzxsgsa4D3//BJlOyYHlFF1bIIGGppLKMJghEK3PE=; b=hPX4ofsswuiUwBfNvMIlyiq0N
-	lhXR1YNdZ0epkPuGL6MHEU2Z2aLtLmZ8H+j/NrP4eILYlvwkOM1tlHqUtddicb5Tn5pWlxc+h8fZt
-	jUPAZOMfo6i4xxn9PYfBDsiAWzwok0pPzMNldSexjB98jcDXqvOJcyb74TVQyuk/xDDFbBHWjv5mF
-	VAgE3CAGSyjssm91dIjlEsNgSqAf8SvBd+RsI38aN3kd3nb1nydw4j1ZByrzAhx0HISzzWvKIpvl2
-	c0/VGuvQe6vSTaJ4wuv6QhnAtua7eqBP8EmcSSN75qw2KiYI1hy86Dsmg9RLSBm1FLdkhPc8D6/YL
-	PoftzNgBw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=levL4Bm+l8hndkCwjUpFbAYmnU50TWNK7Xm0VcpOfOk=; b=aOz9MhMbqLUGaU
+	m/pH2tOz9xH0CT1r5f0kEyd9yt9X4Bu0igkfVhXshsS7krkclEZPAX4ScQlrz+NsdWc8rdFMHamto
+	vQfApv225h6ikJ39v7ZI5N0c3zcK0qsqitNMwSEmgNAIF38VrD7NgQwVXjyL0CtQiRSZ4232Ik6UE
+	SxQe2Alj2a5x5p67LHv2nNFFrBKO4Ut4+PIFBFqEvOLKxO8PvXxyCuBN4+CO4QI5rPii3AuBOkP0c
+	44LNzOOdn9401DS5mCnayVmiXKXCtKPStysYsaAjjqbMeuj7WfUGBT/RQ+YitYMbFCXGDxH4ERfB5
+	sZqaS8W2P/pY0QuPfSTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifVgs-0005nK-4U; Thu, 12 Dec 2019 21:08:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifVgi-0005mZ-FM
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 21:07:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5E04E328;
- Thu, 12 Dec 2019 13:07:55 -0800 (PST)
-Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4585F3F718;
- Thu, 12 Dec 2019 13:07:53 -0800 (PST)
-Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
- API
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-References: <20191128185630.GK82109@yoga> <20191202014237.GR248138@dtor-ws>
- <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
- <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
- <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
- <20191211222829.GV50317@dtor-ws>
- <70528f77-ca10-01cd-153b-23486ce87d45@free.fr>
- <cf5b3dee-061e-a476-7219-aa08c2977488@arm.com>
- <6a647c20-c2fa-f14c-256d-6516d0ad03b0@free.fr>
- <6ce49a67-8065-277b-5f80-ed47011e50d6@arm.com>
- <20191212191002.GA101194@dtor-ws>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <3ce51e0b-f4eb-707d-c55d-0eaf4ac72c5a@arm.com>
-Date: Thu, 12 Dec 2019 21:08:04 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+	id 1ifVhK-000628-Go; Thu, 12 Dec 2019 21:08:34 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifVhC-00061T-8L; Thu, 12 Dec 2019 21:08:27 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id D14CDAD95;
+ Thu, 12 Dec 2019 21:08:24 +0000 (UTC)
+Subject: Re: [RFC 04/25] spi: gpio: Implement LSB First bitbang support
+To: Mark Brown <broonie@kernel.org>
+References: <20191212033952.5967-1-afaerber@suse.de>
+ <20191212033952.5967-5-afaerber@suse.de>
+ <CAMuHMdWdxJ9AaWhyCW-u8fCpXSDCPd-D6Dx129SF5nRssZsK=g@mail.gmail.com>
+ <9b4b6287-c1d9-1b41-88a8-7ac9fe222642@suse.de>
+ <20191212171922.GM4310@sirena.org.uk>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <70bf4954-d7ab-e300-017c-c743a40162a4@suse.de>
+Date: Thu, 12 Dec 2019 22:08:24 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191212191002.GA101194@dtor-ws>
-Content-Language: en-GB
+In-Reply-To: <20191212171922.GM4310@sirena.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_130756_594547_2EF0285F 
-X-CRM114-Status: GOOD (  21.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191212_130826_438786_B181E911 
+X-CRM114-Status: GOOD (  12.87  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -73,132 +65,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, x86 <x86@kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-realtek-soc@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-spi <linux-spi@vger.kernel.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>, Pavel Machek <pavel@ucw.cz>,
+ linux-leds@vger.kernel.org, Dan Murphy <dmurphy@ti.com>
+Content-Type: text/plain; charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-12 7:10 pm, Dmitry Torokhov wrote:
-> On Thu, Dec 12, 2019 at 06:15:16PM +0000, Robin Murphy wrote:
->> On 12/12/2019 4:59 pm, Marc Gonzalez wrote:
->>> On 12/12/2019 15:47, Robin Murphy wrote:
->>>
->>>> On 12/12/2019 1:53 pm, Marc Gonzalez wrote:
->>>>
->>>>> On 11/12/2019 23:28, Dmitry Torokhov wrote:
->>>>>
->>>>>> On Wed, Dec 11, 2019 at 05:17:28PM +0100, Marc Gonzalez wrote:
->>>>>>
->>>>>>> What is the rationale for the devm_add_action API?
->>>>>>
->>>>>> For one-off and maybe complex unwind actions in drivers that wish to use
->>>>>> devm API (as mixing devm and manual release is verboten). Also is often
->>>>>> used when some core subsystem does not provide enough devm APIs.
->>>>>
->>>>> Thanks for the insight, Dmitry. Thanks to Robin too.
->>>>>
->>>>> This is what I understand so far:
->>>>>
->>>>> devm_add_action() is nice because it hides/factorizes the complexity
->>>>> of the devres API, but it incurs a small storage overhead of one
->>>>> pointer per call, which makes it unfit for frequently used actions,
->>>>> such as clk_get.
->>>>>
->>>>> Is that correct?
->>>>>
->>>>> My question is: why not design the API without the small overhead?
->>>>
->>>> Probably because on most architectures, ARCH_KMALLOC_MINALIGN is at
->>>> least as big as two pointers anyway, so this "overhead" should mostly be
->>>> free in practice. Plus the devres API is almost entirely about being
->>>> able to write simple robust code, rather than absolute efficiency - I
->>>> mean, struct devres itself is already 5 pointers large at the absolute
->>>> minimum ;)
->>>
->>> (3 pointers: 1 list_head + 1 function pointer)
->>
->> Ah yes, I failed to mentally preprocess the debug config :)
->>
->>> I'm confused. The first patch was criticized for potentially adding
->>> an extra pointer for every devm_clk_get (e.g. 800 bytes on a 64-bit
->>> platform with 100 clocks).
->>
->> I'm not sure it was a criticism so much as an observation of an aspect that
->> deserved consideration (certainly it was on my part, and I read Dmitry's "It
->> might still, ..." as implying the same). I'd say by this point it has been
->> thoroughly considered, and personally I'm now happy with the conclusion that
->> the kind of embedded platforms that will have many dozens of clocks are also
->> the kind that will tend to have enough padding to make it moot, and thus the
->> code simplification probably is worthwhile overall.
-> 
-> I wonder if we could actually avoid allocating the data with
-> ARCH_KMALLOC_MINALIGN in all the cases. It is definitely needed for the
-> devm_k*alloc() group of functions as they are direct replacement for
-> k*alloc() APIs that give users aligned memory, but for other data
-> structures (clocks, regulators, etc, etc) it is not required.
+Am 12.12.19 um 18:19 schrieb Mark Brown:
+> On Thu, Dec 12, 2019 at 04:14:59PM +0100, Andreas F=E4rber wrote:
+>> Am 12.12.19 um 09:40 schrieb Geert Uytterhoeven:
+>>> On Thu, Dec 12, 2019 at 4:41 AM Andreas F=E4rber <afaerber@suse.de> wro=
+te:
+>>>> Add support for slave DT property spi-lsb-first, i.e., SPI_LSB_FIRST m=
+ode.
+> =
 
-That's a very good point - perhaps something like this (only done properly)?
+>>>> Duplicate the inline helpers bitbang_txrx_be_cpha{0,1} as LE versions.
+>>>> Make checkpatch.pl happy by changing "unsigned" to "unsigned int".
+> =
 
-Robin.
+> Separate patch for this?
 
-diff --git a/drivers/base/devres.c b/drivers/base/devres.c
-index 0bbb328bd17f..2382f963abbe 100644
---- a/drivers/base/devres.c
-+++ b/drivers/base/devres.c
-@@ -26,14 +26,7 @@ struct devres_node {
+For the checkpatch cleanup? Or helpers preparation vs. spi-gpio.c usage?
 
-  struct devres {
-         struct devres_node              node;
--       /*
--        * Some archs want to perform DMA into kmalloc caches
--        * and need a guaranteed alignment larger than
--        * the alignment of a 64-bit integer.
--        * Thus we use ARCH_KMALLOC_MINALIGN here and get exactly the same
--        * buffer alignment as if it was allocated by plain kmalloc().
--        */
--       u8 __aligned(ARCH_KMALLOC_MINALIGN) data[];
-+       u8                              data[];
-  };
+>> So from that angle I don't see a better way than either duplicating the
+>> functions or using some macro magic to #include the header twice. If we
+>> wanted to go down that path, we could probably de-duplicate the existing
+>> two functions, too, but I was trying to err on the cautious side, since
+>> I don't have setups to test all four code paths myself (and a ton of
+>> more relevant but less fun patches to flush out ;)).
+> =
 
-  struct devres_group {
-@@ -810,6 +803,17 @@ static int devm_kmalloc_match(struct device *dev, 
-void *res, void *data)
-  void * devm_kmalloc(struct device *dev, size_t size, gfp_t gfp)
-  {
-         struct devres *dr;
-+       size_t align;
-+
-+       /*
-+        * Some archs want to perform DMA into kmalloc caches
-+        * and need a guaranteed alignment larger than
-+        * the alignment of a 64-bit integer.
-+        * Thus we use ARCH_KMALLOC_MINALIGN here and get exactly the same
-+        * buffer alignment as if it was allocated by plain kmalloc().
-+        */
-+       align = (ARCH_KMALLOC_MINALIGN - sizeof(*dr)) % 
-ARCH_KMALLOC_MINALIGN;
-+       size += align;
+> Yeah, I don't think there's any great options here with the potential
+> performance issues - probably the nicest thing would be to autogenerate
+> lots of variants but I think that's far more trouble than it's worth.
 
-         /* use raw alloc_dr for kmalloc caller tracing */
-         dr = alloc_dr(devm_kmalloc_release, size, gfp, dev_to_node(dev));
-@@ -822,7 +826,7 @@ void * devm_kmalloc(struct device *dev, size_t size, 
-gfp_t gfp)
-          */
-         set_node_dbginfo(&dr->node, "devm_kzalloc_release", size);
-         devres_add(dev, dr->data);
--       return dr->data;
-+       return dr->data + align;
-  }
-  EXPORT_SYMBOL_GPL(devm_kmalloc);
+Maybe add another code comment to revisit that idea later then?
+
+Thanks,
+Andreas
+
+-- =
+
+SUSE Software Solutions Germany GmbH
+Maxfeldstr. 5, 90409 N=FCrnberg, Germany
+GF: Felix Imend=F6rffer
+HRB 36809 (AG N=FCrnberg)
 
 _______________________________________________
 linux-arm-kernel mailing list
