@@ -2,56 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0343511D254
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 17:31:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A509511D2C3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 17:51:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BO4dDNP/c4MHEp5FP4UGRVljPc6Fvw4fl8kIATcobcU=; b=sXJgMnFLUf6sTH
-	JwZgxHbxR//k2O4AgxkJBU+mq5nTWO87LrvpPKpkQcN8dAMV+7LUTVgkUWwxObVh9/QwKyOOXlsUA
-	eot1mpn8c2xjq2rp1xPODen4gUtJqnKW+2fiuQf/3QrNbSK18A3pjs5qOaN7Lpgjr0LoJOLYvWnib
-	UoSWBUtLDZsIBfQYQkytmJQPrpBzFjy5lE+B41cgidKi78gfwc605ETMbevECrtSeVCbDcA5g1Ju7
-	VRgkAVNJdr8T7YmOZfjc+8lVkzVHV5PnGqFotcYWzATpLnPd2YtJtjB+CFyBhWH44WzYqL5vxPDrc
-	xeGnzbbmrWhCmTTjAP3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QHe7wc9xU23yDxEZa94qRtLFatjzESmqcPrxGiwNhXw=; b=nYoGsePWmlVfkgdxPBqtL9t92
+	zvQeoJkw9baB8Ox/QiOiulWXv83flvyprB39zPEojEmTWq/RB5y7iGiy8vE62YwKlppLvGGozJIvu
+	iN02APz6u7RuWTMGgoM3z9kYBiROACt0HTkGZ18NXM5kmB7xJokdEXmhEpGXWO6WVZrjPYy9q0LNl
+	GeNAcpBX/CeeCClDPdYtDPEfOa3P/WTqbDcwKoQZhHwjy4nD4NDEzFIJYdyPx3a30orzNXGnu2gQF
+	27jMKFbLF/WewrzwX2rZnBj73QC0pYd+xUgk0wF8FnWIx+UBBZrp+own8iSmEI/WRUsd3stzRBZXM
+	pf6MCmQOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifRNF-0006K4-45; Thu, 12 Dec 2019 16:31:33 +0000
+	id 1ifRgj-000559-E3; Thu, 12 Dec 2019 16:51:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifRN7-0006JI-Bb
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 16:31:26 +0000
+ id 1ifRgX-000549-NI
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 16:51:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F407B30E;
- Thu, 12 Dec 2019 08:31:23 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BEEFD3F6CF;
- Thu, 12 Dec 2019 08:31:22 -0800 (PST)
-Date: Thu, 12 Dec 2019 16:31:20 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH] arm64: Introduce ISAR6 CPU ID register
-Message-ID: <20191212163120.GH46910@lakrids.cambridge.arm.com>
-References: <1576145663-9909-1-git-send-email-anshuman.khandual@arm.com>
- <20191212144633.GE46910@lakrids.cambridge.arm.com>
- <be707b09-6469-d12f-07d5-50d574dc7284@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C3E3630E;
+ Thu, 12 Dec 2019 08:51:26 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 431F63F6CF;
+ Thu, 12 Dec 2019 08:51:26 -0800 (PST)
+Date: Thu, 12 Dec 2019 16:51:24 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
+ selection documentation
+Message-ID: <20191212165124.GJ4310@sirena.org.uk>
+References: <20191129172537.31410-1-m.felsch@pengutronix.de>
+ <20191129172537.31410-4-m.felsch@pengutronix.de>
+ <20191204134631.GT1998@sirena.org.uk>
+ <20191210094144.mxximpuouchy3fqu@pengutronix.de>
+ <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+ <20191211170918.q7kqkd4lrwwp7jl3@pengutronix.de>
+ <20191212161019.GF4310@sirena.org.uk>
+ <20191212162152.5uu3feacduetysq7@pengutronix.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <be707b09-6469-d12f-07d5-50d574dc7284@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20191212162152.5uu3feacduetysq7@pengutronix.de>
+X-Cookie: We have DIFFERENT amounts of HAIR --
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_083125_439632_B5C90104 
-X-CRM114-Status: GOOD (  16.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191212_085129_808707_4CBEC124 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,82 +73,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Support Opensource <Support.Opensource@diasemi.com>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "andrew@aj.id.au" <andrew@aj.id.au>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ "lee.jones@linaro.org" <lee.jones@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============8152014198750277156=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 12, 2019 at 03:22:13PM +0000, Suzuki Kuruppassery Poulose wrote:
-> On 12/12/2019 14:46, Mark Rutland wrote:
-> > On Thu, Dec 12, 2019 at 03:44:23PM +0530, Anshuman Khandual wrote:
-> > > +#define ID_ISAR6_JSCVT_SHIFT		0
-> > > +#define ID_ISAR6_DP_SHIFT		4
-> > > +#define ID_ISAR6_FHM_SHIFT		8
-> > > +#define ID_ISAR6_SB_SHIFT		12
-> > > +#define ID_ISAR6_SPECRES_SHIFT		16
-> > > +#define ID_ISAR6_BF16_SHIFT		20
-> > > +#define ID_ISAR6_I8MM_SHIFT		24
-> > 
-> > > @@ -399,6 +399,7 @@ static const struct __ftr_reg_entry {
-> > >   	ARM64_FTR_REG(SYS_ID_ISAR4_EL1, ftr_generic_32bits),
-> > >   	ARM64_FTR_REG(SYS_ID_ISAR5_EL1, ftr_id_isar5),
-> > >   	ARM64_FTR_REG(SYS_ID_MMFR4_EL1, ftr_id_mmfr4),
-> > 
-> > > +	ARM64_FTR_REG(SYS_ID_ISAR6_EL1, ftr_generic_32bits),
-> > 
-> > Using ftr_generic_32bits exposes the lowest-common-denominator for all
-> > 4-bit fields in the register, and I don't think that's the right thing
-> > to do here, because:
-> > 
-> > * We have no idea what ID_ISAR6 bits [31:28] may mean in future.
-> > 
-> > * AFAICT, the instructions described by ID_ISAR6.SPECRES (from the
-> >    ARMv8.0-PredInv extension) operate on the local PE and are not
-> >    broadcast. To make those work as a guest expects, the host will need
-> >    to do additional things (e.g. to preserve that illusion when a vCPU is
-> >    migrated from one pCPU to another and back).
-> > 
-> > Given that, think we should add an explicit ftr_id_isar6 which only
-> > exposes the fields that we're certain are safe to expose to a guest
-> > (i.e. without SPECRES).
-> 
-> Agree. Thanks for pointing this out. I recommended the usage of
-> generic_32bits table without actually looking at the feature
-> definitions.
 
-No worries; this is /really/ easy to miss!
+--===============8152014198750277156==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="ZG+WKzXzVby2T9Ro"
+Content-Disposition: inline
 
-Looking again, comparing to ARM DDI 0487E.a, there are a few other
-things we should probably sort out:
 
-* ID_DFR0 fields need more thought; we should limit what we expose here.
-  I don't think it's valid for us to expose TraceFilt, and I suspect we
-  need to add capping for debug features we currently emulate.
+--ZG+WKzXzVby2T9Ro
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-* ID_ISAR0[31:28] are RES0 in ARMv8, Reserved/UNK in ARMv7.
-  We should probably ftr_id_isar0 so we can hide those bits.
+On Thu, Dec 12, 2019 at 05:21:53PM +0100, Marco Felsch wrote:
 
-* ID_ISAR5[23:10] are RES0
-  We handle this already! :)
+> "... what's driving the input ..":
+> Sorry I didn't get you here. What did you mean? The input is driven by
+> the host. This can be any gpio line and in my case it is a gpio line
+> driven by the soc-hw during a suspend operation.
 
-* ID_MMFR4.SpecSEI should be trated as higher safe.
-  We should update ftr_id_mmfr4 to handle this and other fields.
+Something needs to say what that thing is, especially if it's runtime
+controllable.  In your case from the point of view of software there is
+actually no enable control so we shouldn't be providing an enable
+operation to the framework.
 
-* ID_PFR0 is missing DIT and CSV2
-  We should probably add these (but neither RAS not AMU).
+--ZG+WKzXzVby2T9Ro
+Content-Type: application/pgp-signature; name="signature.asc"
 
-* ID_PFR2 is missing
-  We should probably add this for SSBS and CSV3.
+-----BEGIN PGP SIGNATURE-----
 
-Thanks,
-Mark.
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3ycAwACgkQJNaLcl1U
+h9B0+Af/VqUSeJpE19kobOJNyxukShzWkjvn9zBGGTGch6WlXuTTNWPT3to6NmBZ
+h9MnIKzpjLfRlv6iAlnWJRxzMh5yeAZv7BBOwdqpO+pLwsJ/xcTpcT8IEqioaIYx
+Vgq3TQKDv5I9NJoz33MUu6RZ/FwFcPx7rF+9Hs/O43gAjeQy4EW4o25ZTqSJivZe
+BXocX/5YTPwTuFBpYbLLvu0YX/joFGU50yiN3IcMPUMWkf8My0aSD5FjWZDTZD07
++KMKZi5qHkLZ1icKON2BhiYDMNH69+ormalcBZMrXiS7rVeoIGQ+d4ox2l+Osieq
+J3w1vPOljnw05pXWu43tWEgA2h9ung==
+=OQvA
+-----END PGP SIGNATURE-----
+
+--ZG+WKzXzVby2T9Ro--
+
+
+--===============8152014198750277156==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8152014198750277156==--
+
