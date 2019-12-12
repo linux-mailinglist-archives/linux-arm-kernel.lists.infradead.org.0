@@ -2,52 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9942B11CD09
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 13:21:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE90C11CD15
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 13:24:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nBGJxqJe2uXxPzYuR+CXZ6PZBwYpe7F/KhQMKQs+Dmk=; b=TnJtVedyhtHfq+
-	Yj8fIZgtTEktvqfKNQnFoq5JLmIa3/XNpRkXNkAg34TKzDnq4qkA8cVWfVQe38lTTxtCI7EUGIx2P
-	6MBwWg8BChqKN8c4v1ZFQuND4ubKsQDtrnv5erI7NetZHDqiWrc2Cjbd7fZ3TO3dEcavN6pbG9VUo
-	WlTaJ30ko4k5F4rI0niqux5OurO2tskygOzW+Vo7tikh2FKSGvSuS5HAVeRmTojx3KXenrwQ8wxSL
-	ZrMftHbUF8cerUJ0nRH8fFk84CxHeIEy261xGt2Ao9bv7CyLHzaN0x217WhbilRb8f0HhIHhKF55m
-	K5+dinbFFwzNsL+fWlSw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qliqtZATns4ovYXzJ36EGnHyn84yyG2K+aE6WI8DhBQ=; b=fhwb1VP3MEutHS
+	VIhiN31t5nUv9B8wFbQwsCsnM5MXKG5NUwrHxjXRP+TtpTbD9WXyz5DtacW8+LUo6DPVukmWkmrsu
+	b4BI0dKu/6cbqCcn7opLx0zx2LoYRVN7AL/d/NytMisjTBiue7lL5lMmv154RsOYEj6i673cuxftb
+	N7rlqRWDaAZ4MhWrGGKgFCS0BPXaElIa4TNllE18xO8J0Do7ZIABekjzCkLzMKyiY9+f3YPAlFoe/
+	L4bxFvdi5BlSgZ58r/teX1VRMkWa0m2BhOerwL1i0aUjbuIWZ5mYB+dcw4Nkzu1T28UC2PSfPtVvH
+	f2gkRmJL/GgEWtHAQrMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifNTC-0008EW-I2; Thu, 12 Dec 2019 12:21:26 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1ifNWa-0000Sd-G4; Thu, 12 Dec 2019 12:24:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifNS3-0006Ia-UU; Thu, 12 Dec 2019 12:20:17 +0000
-Received: from droid12-sz.software.amlogic (10.28.8.22) by mail-sz.amlogic.com
- (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10;
- Thu, 12 Dec 2019 20:20:37 +0800
-From: Xingyu Chen <xingyu.chen@amlogic.com>
-To: Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
- <linux@roeck-us.net>, Kevin Hilman <khilman@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-Subject: [PATCH v5 4/4] arm64: dts: a1: add secure watchdog controller
-Date: Thu, 12 Dec 2019 20:19:47 +0800
-Message-ID: <1576153187-28378-5-git-send-email-xingyu.chen@amlogic.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1576153187-28378-1-git-send-email-xingyu.chen@amlogic.com>
-References: <1576153187-28378-1-git-send-email-xingyu.chen@amlogic.com>
+ id 1ifNWP-0000Ry-So
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 12:24:47 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DDAB92073D;
+ Thu, 12 Dec 2019 12:24:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576153485;
+ bh=1UJMcxaQY0J4yVFLDK0ZzDGXxaz3aKR4hZZ4WOefTdg=;
+ h=Date:From:To:Cc:Subject:From;
+ b=ME1xMH8sXdZoM0BXtjtGUEeqBT5Qj3NJHFYqSXCe1Ej7hCMd7IMK6Q409OQ8CUIDn
+ Y5UP2ZWGKh25n4O0gK6GXAZ11g1TRVBBNGcYiaWvyVuAQXY3wECWBo8tmBB7HrfBYF
+ gAYenHCFooHRwiCwTrYNp/jjhWnqFIVEpEP0ROyI=
+Date: Thu, 12 Dec 2019 20:24:28 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: soc@kernel.org, arm@kernel.org
+Subject: [GIT PULL] i.MX fixes for 5.5
+Message-ID: <20191212122427.GK15858@dragon>
 MIME-Version: 1.0
-X-Originating-IP: [10.28.8.22]
+Content-Disposition: inline
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_042015_998218_51D9FEE2 
-X-CRM114-Status: UNSURE (   7.20  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191212_042445_959034_EC93D69E 
+X-CRM114-Status: GOOD (  11.87  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,44 +74,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Qianggui Song <qianggui.song@amlogic.com>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, Jianxin Pan <jianxin.pan@amlogic.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Jian Hu <jian.hu@amlogic.com>, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org, Xingyu Chen <xingyu.chen@amlogic.com>,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: Stefan Agner <stefan@agner.ch>, Li Yang <leoyang.li@nxp.com>,
+ linux-imx@nxp.com, kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable secure watchdog controller for Meson-A1 SoC
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
-Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
----
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 6 ++++++
- 1 file changed, 6 insertions(+)
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-index 4dec518..1e354b7 100644
---- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -118,6 +118,12 @@
- 				clock-names = "xtal", "pclk", "baud";
- 				status = "disabled";
- 			};
-+
-+			watchdog {
-+				compatible = "amlogic,meson-sec-wdt";
-+				timeout-sec = <60>;
-+				status = "okay";
-+			};
- 		};
- 
- 		gic: interrupt-controller@ff901000 {
--- 
-2.7.4
+are available in the Git repository at:
 
+  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-fixes-5.5
+
+for you to fetch changes up to 7947e3238b64c00c396e6f5738f94c4d653bc6a2:
+
+  ARM: imx: Fix boot crash if ocotp is not found (2019-12-12 10:44:28 +0800)
+
+----------------------------------------------------------------
+i.MX fixes for 5.5:
+ - Add missing jedec,spi-nor compatible for imx6ul-14x14-evk board,
+   so that SPI NOR device can be probed.
+ - Fix power button of E60K02 board by removing LDORTC2 regulator.
+ - A couple of fixes on serial number support of i.MX6ULL/ULZ SoCs to
+   remove the boot regression caused by 8267ff89b713 ("ARM: imx: Add
+   serial number support for i.MX6/7 SoCs").
+ - A couple of fixes on LS1028A SoC TMU regarding to calibration data
+   and reboot register configuration.
+ - Fix a regression seen on imx6ul-evk board by marking always-on for
+   the regulator that is shared by many peripherals.
+ - Explicitly restore CONFIG_DEBUG_FS in imx_v6_v7_defconfig.
+
+----------------------------------------------------------------
+Andreas Kemnade (1):
+      ARM: dts: e60k02: fix power button
+
+Christoph Niedermaier (1):
+      ARM: imx: Correct ocotp id for serial number support of i.MX6ULL/ULZ SoCs
+
+Leonard Crestez (3):
+      ARM: dts: imx6ul-evk: Fix peripheral regulator
+      ARM: imx_v6_v7_defconfig: Explicitly restore CONFIG_DEBUG_FS
+      ARM: imx: Fix boot crash if ocotp is not found
+
+Michael Walle (2):
+      arm64: dts: ls1028a: fix typo in TMU calibration data
+      arm64: dts: ls1028a: fix reboot node
+
+Stefan Roese (1):
+      ARM: dts: imx6ul: imx6ul-14x14-evk.dtsi: Fix SPI NOR probing
+
+ arch/arm/boot/dts/e60k02.dtsi                  |  5 -----
+ arch/arm/boot/dts/imx6ul-14x14-evk.dtsi        | 28 +++++++++++++++++++-------
+ arch/arm/configs/imx_v6_v7_defconfig           |  1 +
+ arch/arm/mach-imx/cpu.c                        |  8 +++++---
+ arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 10 +++++++--
+ 5 files changed, 35 insertions(+), 17 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
