@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04E0D11D91E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 23:12:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E965211D91F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 23:13:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cac4EN0J19XmIiL69awujv/3dVd15nIcgwoSKOC/SCQ=; b=PaLCnTsR4knel+
-	zd04xU/goeM3wj+Y/HaHtpdgFIZAF3ZFEibvWMzQVNpOs74SLPAAQ7VFETg0EbuZ0nQQLUThvUoAg
-	Flj809mRrS2EVQa2mGA9RA1fwkRxU35P4xcSRHDloZG3t1yc/J+8bSKYXiLdXzO0gj8yX9Rr0DVJH
-	SVKUWJQkzKar7Vh1p9ZjNSp74sOp3sszpfPix5WZm5hUTs7GRmB/cqEUck0QVRdJLNJVRof+2YT2T
-	+5yoGc1kzjlJRfMZu9GhqiqczfEhHt6YBtKvhYdsB1zFUfQuBWhpqqaZOCLkcaYp8BVZpnsDKDklQ
-	tKBy4wsaRsnmq8cO41kg==;
+	List-Owner; bh=Amyt2gPtIsVez5nxQSZK+y7Dw3NRTbo0SA1qgTIqwCo=; b=hVIko2686l3PDX
+	4gKq/Wv6OkRHZnbXhDonuJzRN5Vwu9Rchi+DKfKA0tutIZ4RoMLemPu89RE7yasJ7fMd3GTahXMUS
+	3hrF4RDLAyRD7pLXzSQ0VDZmSkXdrz6P0gub1mmtJZDLTAbaQaUDY8EZX+H4avU117JXacBwI+8xM
+	FMt9ZZUUDjMtnyj6riKcDe2bauk7h//EJina6E9j2+neeIBoXv7im/QMDrc+c1UjnIYYBvAzCg7d7
+	uxiiaJuwrbGRwoE2aPsenI08MxammLZSTiZh3fHv3epmJI/oqaacl+kOd5h1REc9Ao9qONTsUh3aA
+	DRbgAxcrbFWb7RAANm2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifWhN-0002nA-TT; Thu, 12 Dec 2019 22:12:41 +0000
+	id 1ifWhd-0002xw-0b; Thu, 12 Dec 2019 22:12:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifWhA-0002l3-JI
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 22:12:29 +0000
+ id 1ifWhE-0002oX-Mz
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 22:12:33 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2D5C820663;
- Thu, 12 Dec 2019 22:12:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 078B52173E;
+ Thu, 12 Dec 2019 22:12:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576188748;
- bh=BZXcBrg43znvkzXsw7BiYCv+5ooVO2ZlYSSTwSngLm8=;
+ s=default; t=1576188752;
+ bh=qsQtuvESmLGci5iJAEm1dwzoRJg3ZjZsFOo6TC1d/9g=;
  h=In-Reply-To:References:From:Cc:To:Subject:Date:From;
- b=yH3EYZNy14PKPmgOWzv8J0gwB1TPaTg2KSWoSO/WYFFNExsWxenak71cykWdzgQz/
- V0/w/G4TmZWZP0zcKjDLh5/mHqaNUNhpqaaKKrL/a6xFVafGHnqcRvjGLPvNBE4UpM
- WZrgyDmoKitoV/mPvgKlLYXHfTib5mMlP+cL+JUQ=
+ b=ekb+iuD28RbLxVQx6VRq2FZ0IVJCn4Cpy9mimZ4AtPuPQWl7jm5pqEAGgtnxhcNtQ
+ dwMUlFUINiNIbvTpdGPGBT+6Qy3ZOPLoFci07cU4N2Q1KfJ+hKb+ZWYJr4d8JDZ8ci
+ nAO1VY+SQni+Lw0VFevtFcNrKsUm7F3PQGTCyTfc=
 MIME-Version: 1.0
-In-Reply-To: <20191209093558.50940-2-maxime@cerno.tech>
+In-Reply-To: <20191209093558.50940-3-maxime@cerno.tech>
 References: <20191209093558.50940-1-maxime@cerno.tech>
- <20191209093558.50940-2-maxime@cerno.tech>
+ <20191209093558.50940-3-maxime@cerno.tech>
 From: Stephen Boyd <sboyd@kernel.org>
 To: Frank Rowand <frowand.list@gmail.com>, Mark Rutland <mark.rutland@arm.com>,
  Maxime Ripard <maxime@cerno.tech>, Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH 2/3] dt-bindings: clocks: Convert Allwinner A80 USB clocks
+Subject: Re: [PATCH 3/3] dt-bindings: clocks: Convert Allwinner A80 DE clocks
  to a schema
 User-Agent: alot/0.8.1
-Date: Thu, 12 Dec 2019 14:12:27 -0800
-Message-Id: <20191212221228.2D5C820663@mail.kernel.org>
+Date: Thu, 12 Dec 2019 14:12:31 -0800
+Message-Id: <20191212221232.078B52173E@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_141228_656454_552B97C9 
-X-CRM114-Status: UNSURE (   8.37  )
+X-CRM114-CacheID: sfid-20191212_141232_773376_66D6EF06 
+X-CRM114-Status: UNSURE (   8.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -88,8 +88,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Maxime Ripard (2019-12-09 01:35:57)
-> The Allwinner A80 SoC has a USB clocks controller that is supported in
+Quoting Maxime Ripard (2019-12-09 01:35:58)
+> The Allwinner A80 SoC has a display clocks controller that is supported in
 > Linux, with a matching Device Tree binding.
 > 
 > Now that we have the DT validation in place, let's convert the device tree
