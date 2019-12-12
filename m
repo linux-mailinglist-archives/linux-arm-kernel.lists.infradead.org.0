@@ -2,57 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFF6411D040
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:53:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90DFE11D051
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:59:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CQbDcFwm8emNVCib679B5gVyItngvGVNarB2FKVAKO8=; b=IxPTa+L9jUuF2jaEkdiO+Jq71
-	MxzJo2LV7kYspxB/UjBWzBqPt6nYUxFVhEIuEe57G4CYMPKdyAdYkGi8d6u0x+tj749uFfqHPmJLv
-	Avg/Gk0qHCV7etdSZ/RUknSQx3V/wKsC0o6MBioZN8Oi7LuciIlpIbHEkmNxttOuPgCbEobsDw1y6
-	nUULNgreBKvwTtrn86JEnYbgLo4AAD3qAYCXjrNy0EdF7GzmWiIzDIaujY3gYXQ5Er5wfCT2+Uk0t
-	/UYNHZOpsbVHzXiamp6aP5RqiUWVAet7C9QPsUuIEcXh6D78x/mzhHYMrX41ewJ3cVNCL2m77/JD0
-	dhQa7Fa9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=jgabCgBk7sOZT8xWRaW5hm3HhcJee17VS8GrpKDb4G8=; b=lwA
+	A6siASIIA7jSmvKV7i9NNmckyUvR1vE/cQlUKN7QxU6opfnGcs60v0JfYhP6qpBXb5YUNn+2Z19Df
+	dKLGKcKFjo3GcavhR27ayhdbV2GgnuqxdqafBru30FtVCveLiq/Rd6huRSxxfhG4B08TnGyICO/+F
+	1XdfiyXklPtxekjyIK0wofCU9ZAVhwstg7miOQG+2XUYi3/ytFmPjjQIz5OvO4OtUfY5Kjr5jkKg8
+	qJGMnfL+/ZAzgbHOeN0yoVLBX7j8bnzJlFG8GOP6L7fGfRFvSAJ/4nLlRfv8aK7IUHS1pFn7yVHzU
+	z9Eoi/MYpAIBfAGeaz7+nEDjqxwp+sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifPqX-0004Cf-2M; Thu, 12 Dec 2019 14:53:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifPqP-0004Ba-Eq
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 14:53:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AEE1CDA7;
- Thu, 12 Dec 2019 06:53:32 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E5B03F6CF;
- Thu, 12 Dec 2019 06:53:32 -0800 (PST)
-Date: Thu, 12 Dec 2019 14:53:30 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Jeff Chang <richtek.jeff.chang@gmail.com>
-Subject: Re: [PATCH] ASoC: Add MediaTek MT6660 Speaker Amp Driver
-Message-ID: <20191212145330.GC4310@sirena.org.uk>
-References: <1576152740-11979-1-git-send-email-richtek.jeff.chang@gmail.com>
-MIME-Version: 1.0
-In-Reply-To: <1576152740-11979-1-git-send-email-richtek.jeff.chang@gmail.com>
-X-Cookie: We have DIFFERENT amounts of HAIR --
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1ifPwK-00066K-Ke; Thu, 12 Dec 2019 14:59:40 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifPw9-000653-97
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 14:59:30 +0000
+Received: by mail-wm1-x341.google.com with SMTP id p17so2866347wma.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Dec 2019 06:59:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=Q8cDD1h6Kbt+wm67+7ymZTLscWfxx20xc71x85bi1V8=;
+ b=swMATU3v8KmM1+9GIdXKQR6jSiOWRMCOPd5Xl01rpFArfJ3XAfwd8XMvQ1jGf7EYvH
+ S7MyPMiaWUjl2NpRaTx0B/o0QlP/ReDBkqJZ494uKUJZM04o8MM4jHdRMtaA9rGbcxH5
+ md7ZfDoyr0+K5+Ds4FRCXnDr05l58y/YgLN/xVSuCdUTQ6J3M0y9atPTykJGq013MPKy
+ taPvYnxGEb/o4PfaH6zsEyDl7nndMkomGvzcJKRL7jDZPI79kpFik1saoJHdGqJNgh+u
+ lyqOOG8mSXuI/iktQ2xEuGxTypgZB83oAz+GqolP2EGv77BXqSSbpi/2IpH756bGcB87
+ 2MtQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=Q8cDD1h6Kbt+wm67+7ymZTLscWfxx20xc71x85bi1V8=;
+ b=dcvlYIxWarjUzKQsaLeduz4+KTdcbyoBsp7Ztk78bjiObnAltDjzSfJwL1aLLjQA0W
+ nI07F1fbFsakbubm7OoljS6tehfKheCu89KBM7NgE7xzzPy0RLKBoHpIiuN4bf2HNSlT
+ hpNBd2dkO/wzcqRg94xyIz6EG8wsX9aaVrG4tYYbJ07STsCxDA0pkASpiYu2VJjZuMzq
+ UYo+5MP47fH+/IAzZGrT7f8A8tuUoLgH9W7Hx4dDZ5gNt+74wg7rpgoaPccKbG3nsFhh
+ y4ptk/qtgI67mgIyegc47envsE8HvAiDyqAS2ai4ZiVkTDJkiEsedle5cCpqKLIUy0yn
+ thjg==
+X-Gm-Message-State: APjAAAWhF2Lcu2lpSqGOiegIe0S7be9Bi/T6cp1LxPjk8bJkudyams2h
+ 0v8LnbfYVbPmgc1trPEP4mPlsw==
+X-Google-Smtp-Source: APXvYqxQvIfo9ValD2pZteRv78WUJy9Ja4QFpldqUrLBkg8LV7Tf3HWrTT9klIIijQsPl9BRZGoXrA==
+X-Received: by 2002:a1c:1987:: with SMTP id 129mr6978284wmz.112.1576162767185; 
+ Thu, 12 Dec 2019 06:59:27 -0800 (PST)
+Received: from glaroque-ThinkPad-T480.baylibre.local
+ (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id h8sm6670292wrx.63.2019.12.12.06.59.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 12 Dec 2019 06:59:26 -0800 (PST)
+From: Guillaume La Roque <glaroque@baylibre.com>
+To: narmstrong@baylibre.com, mchehab@kernel.org, hverkuil-cisco@xs4all.nl,
+ khilman@baylibre.com, devicetree@vger.kernel.org
+Subject: [PATCH 0/3] Add support of CEC wakeup on Amlogic G12 and SM1 SoCs
+Date: Thu, 12 Dec 2019 15:59:22 +0100
+Message-Id: <20191212145925.32123-1-glaroque@baylibre.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_065333_589424_95A4B401 
-X-CRM114-Status: GOOD (  22.92  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191212_065929_344252_C815D445 
+X-CRM114-Status: UNSURE (   7.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,196 +91,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org, tiwai@suse.com,
- lgirdwood@gmail.com, jeff_chang@richtek.com, matthias.bgg@gmail.com,
- perex@perex.cz, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1065634830205327146=="
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+this patchset add support of CEC wakeup.
+We need to set logical address and activate some options in registers before going in suspend.
+Registers address and options values come from amlogic driver.
 
---===============1065634830205327146==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="gr/z0/N6AeWAPJVB"
-Content-Disposition: inline
+Guillaume La Roque (3):
+  media: dt-bindings: media: meson-ao-cec: Add support of ao-sysctrl
+    syscon
+  arm64: dts: meson-g12g12: add syscon phandle in cec node
+  media: platform: meson-ao-cec-g12a: add wakeup support
 
+ .../media/amlogic,meson-gx-ao-cec.yaml        |  4 +++
+ .../boot/dts/amlogic/meson-g12-common.dtsi    |  1 +
+ drivers/media/platform/meson/ao-cec-g12a.c    | 33 +++++++++++++++++++
+ 3 files changed, 38 insertions(+)
 
---gr/z0/N6AeWAPJVB
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+-- 
+2.17.1
 
-On Thu, Dec 12, 2019 at 08:12:20PM +0800, Jeff Chang wrote:
-
-> sense, which are able to be monitored via DATAO through proper
->=20
-> ---
->=20
-> [PATCH v2] :
-> 	1. remove unnecessary space from commit message
-> 	2. add Signed-off-by info
->=20
-> Signed-off-by: Jeff Chang <richtek.jeff.chang@gmail.com>
-> ---
-
-You should place the Signed-off-by before the first --- as covered by
-submitting-patches.rst.  Please, slow down a bit before resending and
-make sure you've checked what you're doing thoroughly.  Look at what
-you're sending and how it compares to what others are sending.
-
-> +config SND_SOC_MT6660
-> +	tristate "Mediatek MT6660 Speaker Amplifier"
-> +	depends on I2C
-> +	select CRC32
-> +	select CRYPTO_SHA256
-> +	select CRYTO_RSA
-> +	help
-
-These selects of crypto stuf appear entirely unrelated to anything in
-the driver?
-
-> +++ b/sound/soc/codecs/mt6660.c
-> @@ -0,0 +1,1063 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) 2019 MediaTek Inc.
-> + */
-
-Please make the entire comment a C++ one so things look more
-intentional.
-
-> +static int mt6660_dbg_io_write(void *drvdata, u16 reg,
-> +			       const void *val, u16 size)
-> +{
-> +	struct mt6660_chip *chip =3D (struct mt6660_chip *)drvdata;
-> +	int reg_size =3D mt6660_get_reg_size(reg);
-> +	int i =3D 0;
-> +	unsigned int regval =3D 0;
-> +	u8 *_val =3D (u8 *)val;
-
-This is duplicating standard regmap functionality.
-
-> +static bool mt6660_volatile_reg(struct device *dev, unsigned int reg)
-> +{
-> +	return true;
-> +}
-
-There's no need to do this, there's no cache configured.
-
-> +static unsigned int mt6660_component_io_read(
-> +	struct snd_soc_component *component, unsigned int reg)
-> +{
-> +	struct mt6660_chip *chip =3D snd_soc_component_get_drvdata(component);
-> +	unsigned int val;
-> +	int ret;
-> +
-> +	ret =3D regmap_read(chip->regmap, reg, &val);
-> +	if (ret < 0) /* ret success -> >=3D 0, fail -> < - */
-> +		return ret;
-> +	pr_err("%s val =3D 0x%x\n", __func__, val);
-> +	return val;
-> +}
-
-This function appears to be redunddant, ASoC has wrappers for I/O on
-components, same for writes.
-
-> +static int data_debug_show(struct seq_file *s, void *data)
-> +{
-> +	struct dbg_info *di =3D s->private;
-> +	struct dbg_internal *d =3D &di->internal;
-
-regmap has standard support for dumping the register map via debugfs, no
-need to write your own.  You should be able to just remove all the
-debugfs code.
-
-> +/*
-> + * MT6660 Generic Setting make this chip work normally.
-> + * it is tuned by Richtek RDs.
-> + */
-> +static const struct codec_reg_val generic_reg_inits[] =3D {
-> +	{ MT6660_REG_WDT_CTRL, 0x80, 0x00 },
-> +	{ MT6660_REG_SPS_CTRL, 0x01, 0x00 },
-> +	{ MT6660_REG_AUDIO_IN2_SEL, 0x1c, 0x04 },
-
-The writes to reserved registers should be fine but things like this
-which looks like it's configuring the input path should just be left at
-the chip default, we don't want to be configuring for particular boards
-since the same driver will be used for every board with the chip.
-
-> +	{ MT6660_REG_HPF1_COEF, 0xffffffff, 0x7fdb7ffe },
-> +	{ MT6660_REG_HPF2_COEF, 0xffffffff, 0x7fdb7ffe },
-
-Similarly here.
-
-> +static int mt6660_component_init_setting(struct snd_soc_component *compo=
-nent)
-> +{
-> +	int i, len, ret;
-> +	const struct codec_reg_val *init_table;
-> +
-> +	pr_info("%s start\n", __func__);
-
-These pr_info() calls are going to be too noisy.
-
-> +	switch (level) {
-> +	case SND_SOC_BIAS_OFF:
-> +		ret =3D regmap_read(chip->regmap, MT6660_REG_IRQ_STATUS1, &val);
-> +		dev_info(component->dev,
-> +			"%s reg0x05 =3D 0x%x\n", __func__, val);
-> +		break;
-
-This is just making noise, it looks like there's nothing to do in this
-function at all and the above is only for debugging.  There's lots of
-these throughout the driver.
-
-> +static int mt6660_component_put_volsw(struct snd_kcontrol *kcontrol,
-> +				  struct snd_ctl_elem_value *ucontrol)
-> +{
-> +	struct snd_soc_component *component =3D
-> +		snd_soc_kcontrol_component(kcontrol);
-> +	int put_ret =3D 0;
-> +
-> +	pm_runtime_get_sync(component->dev);
-> +	put_ret =3D snd_soc_put_volsw(kcontrol, ucontrol);
-> +	if (put_ret < 0)
-> +		return put_ret;
-> +	pm_runtime_put(component->dev);
-> +	return put_ret;
-> +}
-
-It would be *much* better to just use a register cache here rather than
-open code like this, and given that the device is suspended via the
-register map it is more than a little surprising that there's any need
-to do anything special here.
-
---gr/z0/N6AeWAPJVB
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3yVGkACgkQJNaLcl1U
-h9AdBgf/Txq2F8UErlJS7V2ETpVBmA7z2H4huGjRBF5D9tDQD5uNbT/pA25/Oe5D
-VFt+1dRHKpk3TU3MUFiIwkZNH0UzD2MC8RmK3UvxGZP51HCE9R8SkleH8cDoSbJc
-aZqys/4lsz0DVc+qzhyuxHA2dckYOyqRTrn+4RNT1Q3reiJfYDDk5ziZRpqohril
-8e9lNqyTewpob7SrL5zUtHbn0cIGuSFt/mo6Iweocy6+J7hYMEZEBb7kd84LAhRP
-H3S3ggEEGC32CS0ez0Qdgm+tq6DF2+UGkZOU6AGk9aOgjbGoBZxvWlXTQS/qPX1C
-04OcQ5JFv5kv6Sr/okYs23KuYYQrLg==
-=2dQa
------END PGP SIGNATURE-----
-
---gr/z0/N6AeWAPJVB--
-
-
---===============1065634830205327146==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1065634830205327146==--
-
