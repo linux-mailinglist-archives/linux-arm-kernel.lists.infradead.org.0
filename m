@@ -2,75 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57E5F11CEFE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:58:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35F2311CF23
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:04:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GDVDLmPfexqclNRKnnAtjvjyoKGnHjJHT5rT8NZtus0=; b=U+GkuS9FUC+jET
-	Bb4Z6jtrQtEkB+SO17ENBiXh0quwKD4AUKXgX4eQSVZaxguTl9RjxguxVLghUQRD5dq3N0yYEjYtp
-	noGyXWg4WO9lhjHZ/y3ZCqUSVf9hlp1aEklw+5SzFTUrVpQF+UjA9BqQeiP39bhWgMVmehnZkyM74
-	tq7UOJ587im8zI3qnes7Tg9tdh8mLTKfqlB/tkGtfb9H06X0qbt7lX28+OSkz0FfcRjKxQXpCtupH
-	MRDWRdss6pVDa9v6IaxOOlvWW7E2auxZHv/SzR0+gR9l1kDNfZkj/DbjcjFJwDGKlsarIclrlGKp5
-	0NgscUAcCq9LnE7cRMQA==;
+	List-Owner; bh=5USgwrHRofS5L01kR/OwrPj2lA392YMgzrzzfEhM0ks=; b=h3nMlTQ6PXKBvL
+	YrMbhizVZSHjYyuvf2DPsMpISuOTAubonYFkAQimAAkryTMKy/64hjX4VpgJA++aMXBPz7smmiAXx
+	FuH8arTEPF7kU52+cKa32XR7eFU9EnuKvLh/gPyPcMks4xyDP0SJ4iIEqEjQH6YYQxOxeDkK5ZDcE
+	uuKGiCmvqIcNMWAih0QuiqnAHznFmdMPOA+fG4ycEnDO7yCnnQtDzh9a+R+jUhXjwQDI6i2NUMUD2
+	Z0sq+lMfRYzRToefm4kUddJMFOgC3PuLBgN9bop+1AuBBRm//Fr/FT1dQKBcef/sTT3Ib42KRcXbt
+	PmsxFZwY2wzFX0p2e2GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifOz4-0006rV-G7; Thu, 12 Dec 2019 13:58:26 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1ifP4h-0000G8-Nk; Thu, 12 Dec 2019 14:04:15 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifOx3-0004pu-V8; Thu, 12 Dec 2019 13:56:23 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBCDuJC3130575;
- Thu, 12 Dec 2019 07:56:19 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576158979;
- bh=sT2GTlfLRw0eUXbETF9GVVQ6WAg3uD6MtSWiMfyqi+M=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=RsOFgEThAZihJpqCZMapImij1AG0ZEd06hlyMRl5+UDp6U3N7xHaJORSvQZSyZayi
- vZH5625luHJSMUF9zXBaNVuWFpANZE6VQH0Wk4oJKqDWerLRmUQ2ShLOlWfYnFM/7m
- 7/lAV2rm7YGPF653rxtp+GRYimudAe4wCXKsNIrE=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBCDuJM0045145
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 12 Dec 2019 07:56:19 -0600
-Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 12
- Dec 2019 07:56:19 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 12 Dec 2019 07:56:19 -0600
-Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBCDtdqZ048444;
- Thu, 12 Dec 2019 07:56:15 -0600
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <broonie@kernel.org>, <nsaenzjulienne@suse.de>, <f.fainelli@gmail.com>,
- <rjui@broadcom.com>, <sbranden@broadcom.com>, <shawnguo@kernel.org>,
- <s.hauer@pengutronix.de>, <baohua@kernel.org>,
- <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-Subject: [PATCH 9/9] spi: stm32: Use dma_request_chan() instead
- dma_request_slave_channel()
-Date: Thu, 12 Dec 2019 15:55:50 +0200
-Message-ID: <20191212135550.4634-10-peter.ujfalusi@ti.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191212135550.4634-1-peter.ujfalusi@ti.com>
-References: <20191212135550.4634-1-peter.ujfalusi@ti.com>
+ id 1ifP4X-0000Eh-C4
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 14:04:07 +0000
+Received: by mail-wr1-x441.google.com with SMTP id j42so2820897wrj.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Dec 2019 06:03:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=YadRPUKRq+F+OfrkUFp7sfL3GGaSi5RtCx1mrcXaajw=;
+ b=XiZKyVtF24JXNcMYL8Xwe6LFXRC5rGLAOXIUebbHSaeHrG07WKUNr8RJwQ823LolID
+ XnFR2jJK+OvfWeKwOzAJUnPI+UDjOIOAgaUxlmeNOgEYTjulFbraIKmKbxd3ld4BJepg
+ G8B4irn4mFBPM4Zu1GzyaWBuarsTxkULoMSdz25SJyyVexc+thf8CLbZtfVE9FbRTaOh
+ 07zSU07GZuRh33XLh0EaBWoqfCLw6SwC7WrBpEUnaHaZ6x4A62aUKnANPqKliM4Y0vez
+ uxK2fzumLw0PuinGG6OouRcXDf86rYM3J9sV+PomXgyY3qXZ+pLRC39ja+f/oDQUrtUn
+ HCsg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=YadRPUKRq+F+OfrkUFp7sfL3GGaSi5RtCx1mrcXaajw=;
+ b=Dht592iCKsuuq7acBIQlsm6mxTWE4Jkj7IP71SPU28lVyNy8R0vNJmEIDxUG97isjy
+ 1N0dOLLV7pCMFycLUdmRsiOiCTD44VsUmOXJ3Nccei7BVhxsmBe0cZzyAAjffdeamHzc
+ WuyHoMvWhe/HfXfI9nXr7AL+Z1UckvkpCVzxTpimCBC/zUFPOUaGMr4scIvcqWy+4egY
+ FuQZik3zA99BCl6q6SVc/tiVtpecIr/WzsNBfk7Qg91bp9qdXWnFGm2gB+XhxRzrKeg1
+ SoTyXPoW6/7Xjj89DnFMrjZYT25ah03TK2LxCsNl74Ek+447Ua+3U8R4FvgyX5StztKo
+ jp3A==
+X-Gm-Message-State: APjAAAWCJQG2XBxzZW4bPK1pgcTq/j9hFhUTIRONL06G0cAenjKzC1D7
+ Ge1OszvsjUXgaWkdyoMsnBt6jLp7+En5Nvj+v+U3kQ==
+X-Google-Smtp-Source: APXvYqyP/fsTNrCsT+L04hV7mtxjhyRS7l6whdWu7iB4pHI+wGkJkmQ7EMGzQOTq1HesEWkup/WBxhYzqcz5ap1GBSE=
+X-Received: by 2002:a5d:6652:: with SMTP id f18mr6737640wrw.246.1576159437310; 
+ Thu, 12 Dec 2019 06:03:57 -0800 (PST)
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <1574864578-467-1-git-send-email-neal.liu@mediatek.com>
+ <1574864578-467-4-git-send-email-neal.liu@mediatek.com>
+ <CADnJP=uhD=J2NrpSwiX8oCTd-u_q05=HhsAV-ErCsXNDwVS0rA@mail.gmail.com>
+ <1575027046.24848.4.camel@mtkswgap22>
+ <CAKv+Gu_um7eRYXbieW7ogDX5mmZaxP7JQBJM9CajK+6CsO5RgQ@mail.gmail.com>
+ <20191202191146.79e6368c@why> <299029b0-0689-c2c4-4656-36ced31ed513@gmail.com>
+ <b7043e932211911a81383274e0cc983d@www.loen.fr>
+ <1576127609.27185.8.camel@mtkswgap22>
+ <a5982b8ed10440eef14c04df6e6060b6@www.loen.fr>
+In-Reply-To: <a5982b8ed10440eef14c04df6e6060b6@www.loen.fr>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Thu, 12 Dec 2019 15:03:42 +0100
+Message-ID: <CAKv+Gu9YhkzpKbrxa=xDOkS6=kZSMaidor_4DqGY6f1M0tO7kQ@mail.gmail.com>
+Subject: Re: [PATCH v5 3/3] hwrng: add mtk-sec-rng driver
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_055622_137672_C61F5408 
-X-CRM114-Status: GOOD (  12.54  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191212_060405_413905_E7600573 
+X-CRM114-Status: GOOD (  29.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -80,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,102 +98,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org, vkoul@kernel.org,
- linux-rpi-kernel@lists.infradead.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Pawel Moll <pawel.moll@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Sean Wang <sean.wang@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ wsd_upstream <wsd_upstream@mediatek.com>,
+ =?UTF-8?B?Q3J5c3RhbCBHdW8gKOmDreaZtik=?= <crystal.guo@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, Neal Liu <neal.liu@mediatek.com>,
+ "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
+ <linux-crypto@vger.kernel.org>, Matt Mackall <mpm@selenic.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Will Deacon <will@kernel.org>, Lars Persson <lists@bofh.nu>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dma_request_slave_channel() is a wrapper on top of dma_request_chan()
-eating up the error code.
+On Thu, 12 Dec 2019 at 12:45, Marc Zyngier <maz@kernel.org> wrote:
+>
+> On 2019-12-12 05:13, Neal Liu wrote:
+> > On Tue, 2019-12-03 at 11:17 +0000, Marc Zyngier wrote:
+> >> On 2019-12-03 04:16, Florian Fainelli wrote:
+> >> > On 12/2/2019 11:11 AM, Marc Zyngier wrote:
+> >> >> On Mon, 2 Dec 2019 16:12:09 +0000
+> >> >> Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+> >> >>
+> >> >>> (adding some more arm64 folks)
+> >> >>>
+> >> >>> On Fri, 29 Nov 2019 at 11:30, Neal Liu <neal.liu@mediatek.com>
+> >> >>> wrote:
+> >> >>>>
+> >> >>>> On Fri, 2019-11-29 at 18:02 +0800, Lars Persson wrote:
+> >> >>>>> Hi Neal,
+> >> >>>>>
+> >> >>>>> On Wed, Nov 27, 2019 at 3:23 PM Neal Liu
+> >> <neal.liu@mediatek.com>
+> >> >>>>> wrote:
+> >> >>>>>>
+> >> >>>>>> For MediaTek SoCs on ARMv8 with TrustZone enabled,
+> >> peripherals
+> >> >>>>>> like
+> >> >>>>>> entropy sources is not accessible from normal world (linux)
+> >> and
+> >> >>>>>> rather accessible from secure world (ATF/TEE) only. This
+> >> driver
+> >> >>>>>> aims
+> >> >>>>>> to provide a generic interface to ATF rng service.
+> >> >>>>>>
+> >> >>>>>
+> >> >>>>> I am working on several SoCs that also will need this kind of
+> >> >>>>> driver
+> >> >>>>> to get entropy from Arm trusted firmware.
+> >> >>>>> If you intend to make this a generic interface, please clean
+> >> up
+> >> >>>>> the
+> >> >>>>> references to MediaTek and give it a more generic name. For
+> >> >>>>> example
+> >> >>>>> "Arm Trusted Firmware random number driver".
+> >> >>>>>
+> >> >>>>> It will also be helpful if the SMC call number is
+> >> configurable.
+> >> >>>>>
+> >> >>>>> - Lars
+> >> >>>>
+> >> >>>> Yes, I'm trying to make this to a generic interface. I'll try
+> >> to
+> >> >>>> make
+> >> >>>> HW/platform related dependency to be configurable and let it
+> >> more
+> >> >>>> generic.
+> >> >>>> Thanks for your suggestion.
+> >> >>>>
+> >> >>>
+> >> >>> I don't think it makes sense for each arm64 platform to expose
+> >> an
+> >> >>> entropy source via SMC calls in a slightly different way, and
+> >> model
+> >> >>> it
+> >> >>> as a h/w driver. Instead, we should try to standardize this, and
+> >> >>> perhaps expose it via the architectural helpers that already
+> >> exist
+> >> >>> (get_random_seed_long() and friends), so they get plugged into
+> >> the
+> >> >>> kernel random pool driver directly.
+> >> >>
+> >> >> Absolutely. I'd love to see a standard, ARM-specified,
+> >> virtualizable
+> >> >> RNG that is abstracted from the HW.
+> >> >
+> >> > Do you think we could use virtio-rng on top of a modified
+> >> virtio-mmio
+> >> > which instead of being backed by a hardware mailbox, could use
+> >> > hvc/smc
+> >> > calls to signal writes to shared memory and get notifications via
+> >> an
+> >> > interrupt? This would also open up the doors to other virtio uses
+> >> > cases
+> >> > beyond just RNG (e.g.: console, block devices?). If this is
+> >> > completely
+> >> > stupid, then please disregard this comment.
+> >>
+> >> The problem with a virtio device is that it is a ... device. What we
+> >> want
+> >> is to be able to have access to an entropy source extremely early in
+> >> the
+> >> kernel life, and devices tend to be available pretty late in the
+> >> game.
+> >> This means we cannot plug them in the architectural helpers that Ard
+> >> mentions above.
+> >>
+> >> What you're suggesting looks more like a new kind of virtio
+> >> transport,
+> >> which is interesting, in a remarkably twisted way... ;-)
+> >>
+> >> Thanks,
+> >>
+> >>          M.
+> >
+> > In conclusion, is it helpful that hw_random has a generic interface
+> > to
+> > add device randomness by talking to hwrng which is implemented in the
+> > firmware or the hypervisor?
+> > For most chip vendors, I think the answer is yes. We already prepared
+> > a
+> > new patchset and need you agree with this idea.
+>
+> As long as it is a *unified* interface, I'm all for that.
+>
 
-By using dma_request_chan() directly the driver can support deferred
-probing against DMA.
 
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
- drivers/spi/spi-stm32.c | 32 ++++++++++++++++++++++----------
- 1 file changed, 22 insertions(+), 10 deletions(-)
-
-diff --git a/drivers/spi/spi-stm32.c b/drivers/spi/spi-stm32.c
-index 7d75632c4151..e041f9c4ec47 100644
---- a/drivers/spi/spi-stm32.c
-+++ b/drivers/spi/spi-stm32.c
-@@ -1879,17 +1879,29 @@ static int stm32_spi_probe(struct platform_device *pdev)
- 	master->transfer_one = stm32_spi_transfer_one;
- 	master->unprepare_message = stm32_spi_unprepare_msg;
- 
--	spi->dma_tx = dma_request_slave_channel(spi->dev, "tx");
--	if (!spi->dma_tx)
-+	spi->dma_tx = dma_request_chan(spi->dev, "tx");
-+	if (IS_ERR(spi->dma_tx)) {
-+		ret = PTR_ERR(spi->dma_tx);
-+		spi->dma_tx = NULL;
-+		if (ret == -EPROBE_DEFER)
-+			goto err_clk_disable;
-+
- 		dev_warn(&pdev->dev, "failed to request tx dma channel\n");
--	else
-+	} else {
- 		master->dma_tx = spi->dma_tx;
-+	}
-+
-+	spi->dma_rx = dma_request_chan(spi->dev, "rx");
-+	if (IS_ERR(spi->dma_rx)) {
-+		ret = PTR_ERR(spi->dma_rx);
-+		spi->dma_rx = NULL;
-+		if (ret == -EPROBE_DEFER)
-+			goto err_dma_release;
- 
--	spi->dma_rx = dma_request_slave_channel(spi->dev, "rx");
--	if (!spi->dma_rx)
- 		dev_warn(&pdev->dev, "failed to request rx dma channel\n");
--	else
-+	} else {
- 		master->dma_rx = spi->dma_rx;
-+	}
- 
- 	if (spi->dma_tx || spi->dma_rx)
- 		master->can_dma = stm32_spi_can_dma;
-@@ -1901,26 +1913,26 @@ static int stm32_spi_probe(struct platform_device *pdev)
- 	if (ret) {
- 		dev_err(&pdev->dev, "spi master registration failed: %d\n",
- 			ret);
--		goto err_dma_release;
-+		goto err_pm_disable;
- 	}
- 
- 	if (!master->cs_gpiods) {
- 		dev_err(&pdev->dev, "no CS gpios available\n");
- 		ret = -EINVAL;
--		goto err_dma_release;
-+		goto err_pm_disable;
- 	}
- 
- 	dev_info(&pdev->dev, "driver initialized\n");
- 
- 	return 0;
- 
-+err_pm_disable:
-+	pm_runtime_disable(&pdev->dev);
- err_dma_release:
- 	if (spi->dma_tx)
- 		dma_release_channel(spi->dma_tx);
- 	if (spi->dma_rx)
- 		dma_release_channel(spi->dma_rx);
--
--	pm_runtime_disable(&pdev->dev);
- err_clk_disable:
- 	clk_disable_unprepare(spi->clk);
- err_master_put:
--- 
-Peter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
+Yeah, but I'm not sure it makes sense to model it as a device like
+this. It would be nice if we could tie this into the ARM SMCCC
+discovery, and use the SMC calls to back arch_get_random_seed_long()
+[provided we fix the braindead way in which that is being used today
+in the interrupt code]
 
 _______________________________________________
 linux-arm-kernel mailing list
