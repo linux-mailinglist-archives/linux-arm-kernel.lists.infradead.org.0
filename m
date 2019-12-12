@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67C6411CEFD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:58:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57E5F11CEFE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:58:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WTE+82OVNwowHNKtX17Tj/0rvsFzAwNU6VCR2AMPlpA=; b=EVCjBaxWUVqAoX
-	PKH8OKdADurYvt5khqmOgWiSLnjQw7oYNnhikF9lkenFETlF6H4zHxpAqf8fCVE6nw+U/WcdG/+vp
-	34R6ukJoPlUDdpqgSdbtSF+KYpiroX5w21yIxIBFeAFRD5kzgYezM3JRs3gbNRlDfMc3OtFCnffqt
-	lyTL25heoEXSHVxU6xxoTrRWg/enFmzV9CADlIvp30dVjJ58E1KwZMGfpzo/afcy2W7ePvu5dO8+7
-	EkwCKZ5jGNNZwTSi2OWto2liENiUK7NDEI66l0DnrKPQLMLqQfs0Ik8HlsqqPJe3fPYYfPNenvV2k
-	IUwTgnD5ngToIpi4HYcw==;
+	List-Owner; bh=GDVDLmPfexqclNRKnnAtjvjyoKGnHjJHT5rT8NZtus0=; b=U+GkuS9FUC+jET
+	Bb4Z6jtrQtEkB+SO17ENBiXh0quwKD4AUKXgX4eQSVZaxguTl9RjxguxVLghUQRD5dq3N0yYEjYtp
+	noGyXWg4WO9lhjHZ/y3ZCqUSVf9hlp1aEklw+5SzFTUrVpQF+UjA9BqQeiP39bhWgMVmehnZkyM74
+	tq7UOJ587im8zI3qnes7Tg9tdh8mLTKfqlB/tkGtfb9H06X0qbt7lX28+OSkz0FfcRjKxQXpCtupH
+	MRDWRdss6pVDa9v6IaxOOlvWW7E2auxZHv/SzR0+gR9l1kDNfZkj/DbjcjFJwDGKlsarIclrlGKp5
+	0NgscUAcCq9LnE7cRMQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifOyg-0006Uh-UW; Thu, 12 Dec 2019 13:58:02 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1ifOz4-0006rV-G7; Thu, 12 Dec 2019 13:58:26 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifOx0-0004m0-39; Thu, 12 Dec 2019 13:56:19 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBCDuGqo009067;
- Thu, 12 Dec 2019 07:56:16 -0600
+ id 1ifOx3-0004pu-V8; Thu, 12 Dec 2019 13:56:23 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBCDuJC3130575;
+ Thu, 12 Dec 2019 07:56:19 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576158976;
- bh=GufpDqc/JsjNnk5yJpyjIjNCslz2RxoV+SAcmiZ8xk8=;
+ s=ti-com-17Q1; t=1576158979;
+ bh=sT2GTlfLRw0eUXbETF9GVVQ6WAg3uD6MtSWiMfyqi+M=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Nz6TLqNez/VlFzVcmNAVmLTW+ivYsv/Hnj3n02im4EkIY3qdHIbhPWbNfp77t4onc
- nvjel4ZQAzU15S50IvRb0YyiWzLLU12uNlbRzATwx3XJR7NYh16KY/DMfS63M05i82
- TeM1akRUu76tlP4PvOR/ARz4t4F3VF8Znw5rA+Ys=
-Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBCDuFKS019946
+ b=RsOFgEThAZihJpqCZMapImij1AG0ZEd06hlyMRl5+UDp6U3N7xHaJORSvQZSyZayi
+ vZH5625luHJSMUF9zXBaNVuWFpANZE6VQH0Wk4oJKqDWerLRmUQ2ShLOlWfYnFM/7m
+ 7/lAV2rm7YGPF653rxtp+GRYimudAe4wCXKsNIrE=
+Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBCDuJM0045145
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 12 Dec 2019 07:56:16 -0600
-Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ Thu, 12 Dec 2019 07:56:19 -0600
+Received: from DLEE108.ent.ti.com (157.170.170.38) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 12
- Dec 2019 07:56:15 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 07:56:19 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 12 Dec 2019 07:56:15 -0600
+ Frontend Transport; Thu, 12 Dec 2019 07:56:19 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBCDtdqY048444;
- Thu, 12 Dec 2019 07:56:11 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBCDtdqZ048444;
+ Thu, 12 Dec 2019 07:56:15 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <broonie@kernel.org>, <nsaenzjulienne@suse.de>, <f.fainelli@gmail.com>,
  <rjui@broadcom.com>, <sbranden@broadcom.com>, <shawnguo@kernel.org>,
  <s.hauer@pengutronix.de>, <baohua@kernel.org>,
  <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-Subject: [PATCH 8/9] spi: stm32-qspi: Use dma_request_chan() instead
+Subject: [PATCH 9/9] spi: stm32: Use dma_request_chan() instead
  dma_request_slave_channel()
-Date: Thu, 12 Dec 2019 15:55:49 +0200
-Message-ID: <20191212135550.4634-9-peter.ujfalusi@ti.com>
+Date: Thu, 12 Dec 2019 15:55:50 +0200
+Message-ID: <20191212135550.4634-10-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191212135550.4634-1-peter.ujfalusi@ti.com>
 References: <20191212135550.4634-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_055618_231520_00355723 
-X-CRM114-Status: GOOD (  13.30  )
+X-CRM114-CacheID: sfid-20191212_055622_137672_C61F5408 
+X-CRM114-Status: GOOD (  12.54  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -108,82 +108,80 @@ probing against DMA.
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- drivers/spi/spi-stm32-qspi.c | 30 ++++++++++++++++++++++++------
- 1 file changed, 24 insertions(+), 6 deletions(-)
+ drivers/spi/spi-stm32.c | 32 ++++++++++++++++++++++----------
+ 1 file changed, 22 insertions(+), 10 deletions(-)
 
-diff --git a/drivers/spi/spi-stm32-qspi.c b/drivers/spi/spi-stm32-qspi.c
-index 4e726929bb4f..4ef569b47aa6 100644
---- a/drivers/spi/spi-stm32-qspi.c
-+++ b/drivers/spi/spi-stm32-qspi.c
-@@ -470,10 +470,11 @@ static int stm32_qspi_setup(struct spi_device *spi)
- 	return 0;
- }
+diff --git a/drivers/spi/spi-stm32.c b/drivers/spi/spi-stm32.c
+index 7d75632c4151..e041f9c4ec47 100644
+--- a/drivers/spi/spi-stm32.c
++++ b/drivers/spi/spi-stm32.c
+@@ -1879,17 +1879,29 @@ static int stm32_spi_probe(struct platform_device *pdev)
+ 	master->transfer_one = stm32_spi_transfer_one;
+ 	master->unprepare_message = stm32_spi_unprepare_msg;
  
--static void stm32_qspi_dma_setup(struct stm32_qspi *qspi)
-+static int stm32_qspi_dma_setup(struct stm32_qspi *qspi)
- {
- 	struct dma_slave_config dma_cfg;
- 	struct device *dev = qspi->dev;
-+	int ret = 0;
- 
- 	memset(&dma_cfg, 0, sizeof(dma_cfg));
- 
-@@ -484,8 +485,13 @@ static void stm32_qspi_dma_setup(struct stm32_qspi *qspi)
- 	dma_cfg.src_maxburst = 4;
- 	dma_cfg.dst_maxburst = 4;
- 
--	qspi->dma_chrx = dma_request_slave_channel(dev, "rx");
--	if (qspi->dma_chrx) {
-+	qspi->dma_chrx = dma_request_chan(dev, "rx");
-+	if (IS_ERR(qspi->dma_chrx)) {
-+		ret = PTR_ERR(qspi->dma_chrx);
-+		qspi->dma_chrx = NULL;
+-	spi->dma_tx = dma_request_slave_channel(spi->dev, "tx");
+-	if (!spi->dma_tx)
++	spi->dma_tx = dma_request_chan(spi->dev, "tx");
++	if (IS_ERR(spi->dma_tx)) {
++		ret = PTR_ERR(spi->dma_tx);
++		spi->dma_tx = NULL;
 +		if (ret == -EPROBE_DEFER)
-+			goto out;
++			goto err_clk_disable;
++
+ 		dev_warn(&pdev->dev, "failed to request tx dma channel\n");
+-	else
 +	} else {
- 		if (dmaengine_slave_config(qspi->dma_chrx, &dma_cfg)) {
- 			dev_err(dev, "dma rx config failed\n");
- 			dma_release_channel(qspi->dma_chrx);
-@@ -493,8 +499,11 @@ static void stm32_qspi_dma_setup(struct stm32_qspi *qspi)
- 		}
+ 		master->dma_tx = spi->dma_tx;
++	}
++
++	spi->dma_rx = dma_request_chan(spi->dev, "rx");
++	if (IS_ERR(spi->dma_rx)) {
++		ret = PTR_ERR(spi->dma_rx);
++		spi->dma_rx = NULL;
++		if (ret == -EPROBE_DEFER)
++			goto err_dma_release;
+ 
+-	spi->dma_rx = dma_request_slave_channel(spi->dev, "rx");
+-	if (!spi->dma_rx)
+ 		dev_warn(&pdev->dev, "failed to request rx dma channel\n");
+-	else
++	} else {
+ 		master->dma_rx = spi->dma_rx;
++	}
+ 
+ 	if (spi->dma_tx || spi->dma_rx)
+ 		master->can_dma = stm32_spi_can_dma;
+@@ -1901,26 +1913,26 @@ static int stm32_spi_probe(struct platform_device *pdev)
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "spi master registration failed: %d\n",
+ 			ret);
+-		goto err_dma_release;
++		goto err_pm_disable;
  	}
  
--	qspi->dma_chtx = dma_request_slave_channel(dev, "tx");
--	if (qspi->dma_chtx) {
-+	qspi->dma_chtx = dma_request_chan(dev, "tx");
-+	if (IS_ERR(qspi->dma_chtx)) {
-+		ret = PTR_ERR(qspi->dma_chtx);
-+		qspi->dma_chtx = NULL;
-+	} else {
- 		if (dmaengine_slave_config(qspi->dma_chtx, &dma_cfg)) {
- 			dev_err(dev, "dma tx config failed\n");
- 			dma_release_channel(qspi->dma_chtx);
-@@ -502,7 +511,13 @@ static void stm32_qspi_dma_setup(struct stm32_qspi *qspi)
- 		}
+ 	if (!master->cs_gpiods) {
+ 		dev_err(&pdev->dev, "no CS gpios available\n");
+ 		ret = -EINVAL;
+-		goto err_dma_release;
++		goto err_pm_disable;
  	}
  
-+out:
- 	init_completion(&qspi->dma_completion);
-+
-+	if (ret != -EPROBE_DEFER)
-+		ret = 0;
-+
-+	return ret;
- }
+ 	dev_info(&pdev->dev, "driver initialized\n");
  
- static void stm32_qspi_dma_free(struct stm32_qspi *qspi)
-@@ -608,7 +623,10 @@ static int stm32_qspi_probe(struct platform_device *pdev)
+ 	return 0;
  
- 	qspi->dev = dev;
- 	platform_set_drvdata(pdev, qspi);
--	stm32_qspi_dma_setup(qspi);
-+	ret = stm32_qspi_dma_setup(qspi);
-+	if (ret)
-+		goto err;
-+
- 	mutex_init(&qspi->lock);
- 
- 	ctrl->mode_bits = SPI_RX_DUAL | SPI_RX_QUAD
++err_pm_disable:
++	pm_runtime_disable(&pdev->dev);
+ err_dma_release:
+ 	if (spi->dma_tx)
+ 		dma_release_channel(spi->dma_tx);
+ 	if (spi->dma_rx)
+ 		dma_release_channel(spi->dma_rx);
+-
+-	pm_runtime_disable(&pdev->dev);
+ err_clk_disable:
+ 	clk_disable_unprepare(spi->clk);
+ err_master_put:
 -- 
 Peter
 
