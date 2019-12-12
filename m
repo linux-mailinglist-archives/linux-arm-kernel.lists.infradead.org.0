@@ -2,105 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45EC011D147
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 16:46:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D063B11D155
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 16:48:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:To:Date:From:Subject:
-	MIME-Version:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H4IMaBvQQXzQQv+5G+lstOljBA6AESjIxHuR019ZhCM=; b=HsW9XDPFXnDVDL
-	Hw+04QyWwMG5B3mIfKqxTJNvwU9Eki0n2FNJBnccjyprmAcMXPYAUjANLj/ygqCSiM7MAAby7RrTc
-	BjrfKAxxXRinyjwVRauQtrxiAfHmnEFvivhSTYugF9Jp6KUhUJSXXha4KeqwtaF0EzvHM9KAM9CGw
-	Kojid2i1h5e6A9pSz1WH5QgsgSKl4O9spuoBwnwK1YzmJ5xy5FuddD6+E+ImcC4+CIcx5Hl3WwHnR
-	cRRJZPCWZeuiwtj9pQ+tosornz+qvUEO0AJvXYgqS7isO6IVMgSu2eQM6SaojTcuXcnypvegCrR/G
-	z95fq9R26z+KGNIzCAfg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=7h0iXUZGywV+H0eTRRv4OwYK9CoBA7dpfwoSHoxnCN0=; b=c0w5q5DzA2qUoB2OVVshoTO0z1
+	fDvWW1t1xa83o9G4JhRC+qr15wglOWBlI0HhtAuE7QmR3AJR5TxVevXzWx9S2kTKq4C8xjWXlErpN
+	cUBArA222UJEF3m/RUyI0Xh2OswqNU667vt/37GPUQsgQ+RDQTp0J+Yrmhwy8IZke/Jz+TILSk90P
+	CvTW4vsJEYAF6K0bKqkVUWASDBmU609zHSvCM6dTZkV4iEeQ/UQNjxyllgyWqJiZWyYjNzbGHQCUJ
+	0i1Xb6WI8NWZ8O40zXJtGeLdYxRKgXMt0Se7Dy+xc8I68hMSfZdAM13nAi3w/LgEf4zKi+caRhLMv
+	xc5Oy1GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifQfm-0002Xg-IA; Thu, 12 Dec 2019 15:46:38 +0000
-Received: from gateway32.websitewelcome.com ([192.185.145.107])
+	id 1ifQhc-00033y-9Y; Thu, 12 Dec 2019 15:48:32 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifQfa-0002Vd-75
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 15:46:28 +0000
-Received: from cm10.websitewelcome.com (cm10.websitewelcome.com [100.42.49.4])
- by gateway32.websitewelcome.com (Postfix) with ESMTP id E88B690B572
+ id 1ifQhR-00032I-In
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 15:48:23 +0000
+Received: by mail-wm1-x343.google.com with SMTP id p9so2893377wmc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Dec 2019 09:46:11 -0600 (CST)
-Received: from e36.ehosts.com ([192.185.128.17]) by cmsmtp with SMTP
- id fQfLi3PL6HunhfQfLiKYyJ; Thu, 12 Dec 2019 09:46:11 -0600
-X-Authority-Reason: nr=8
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=singleboardsolutions.com; s=default; h=Message-ID:CC:To:Date:From:Subject:
- Content-Type:Content-Transfer-Encoding:MIME-Version:References:In-Reply-To:
- Sender:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UMrk7SVJBaZoF5+E4IWNlDb5JQkYTRr384MzHtkSMNA=; b=Z6F45GnZxN2pseuh0IHHkf69/s
- ZLOxtsygVBMQDpO7ull4wMLqcSmdySbPZvytspNyu2pUslfuHN/55s2KRqikKLBC5+E5gapNgaaXl
- NAknwJTUy7yBoxUao54lCEhsviPaOlUAFap8Ls3ZQ7zGD04OjmJjFdakIOnDIAgOkGblTHOpaKUT7
- GGxhZmp2azaq1Yd6hLkYjDBMnUAuljMr/tgsucpANmmnJAwdndG6GDFTNKm68bwyqQ7U/+Om0ahbG
- 5/4QYPZzmFm75kkCvNBRN3X/3NRJvQnmkWKmlccw/oAe1JruqtpbPQdf2pErpAlMCdRfUTE3lSC2T
- vkLtKQHA==;
-Received: from [172.58.138.77] (port=57064
- helo=[IPV6:2607:fb90:1784:5f4e:a5d4:b11d:2550:9cec])
- by e36.ehosts.com with esmtpa (Exim 4.92)
- (envelope-from <tmckahan@singleboardsolutions.com>)
- id 1ifQfL-001viD-Fm; Thu, 12 Dec 2019 08:46:11 -0700
-In-Reply-To: <678df227-38be-47af-7ee3-741a391a196c@fivetechno.de>
-References: <678df227-38be-47af-7ee3-741a391a196c@fivetechno.de>
-X-Referenced-Uid: 55
-Thread-Topic: [PATCH 2/3] arm64: dts: rockchip: Enable PD for USB-C-Port on
- rk3399-roc-pc.
-X-Is-Generated-Message-Id: true
-X-Blue-Identity: !l=635&o=43&fo=3004&pl=525&po=0&qs=PREFIX&f=HTML&n=Thomas%20McKahan&e=tmckahan%40singleboardsolutions.com&m=!%3ANDg0ODA5OGEtZmVjOS00NjIyLTkwMTUtZGI5MTM5OGY1ZGU3%3ASU5CT1g%3D%3ANTU%3D%3AANSWERED&p=491&q=SHOW
-User-Agent: Android
+ Thu, 12 Dec 2019 07:48:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=ZSDD0/glpJ1MgC2m3fsC6RmNqv5qfMCzBU/Ws2SvIi8=;
+ b=uBvEJvm6xdv/CK4SU85EVr9Mxaq6c28Tocn0XUIdJ+tDyPSZrt0IRxbFwAAZ62yiW5
+ 9KQVcubwDSY+6CA8hl1fFj9eJov2sRbL/5ESoQ/0bw8vPsA8+jUb149QEZlxiuaHM6gO
+ xfkZyTDKaqE4d4r+JCCuwBQv5GWOYOFYudxnuQu6fjI/B0PJXfRn/Ehp46d3CgXQXCiK
+ gbIwUpYQ3S+yRiAnpcjUPo8nO5nRZFvC9OK58nUPRUiv//D0JhQBh+VSvn4UN2UHfPTp
+ R8xFcowCLsIU3cJ/DPXOlSpTfYNh12UTR1/DeTmqbb1LcZYE2U5lMvCreTJgZ3l4ZzUY
+ o+PQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=ZSDD0/glpJ1MgC2m3fsC6RmNqv5qfMCzBU/Ws2SvIi8=;
+ b=JYganFWZzN9EB4+J0MK7oDxvCVA2QN8iiLj2Tfx+NRFAxb5lh+AVe7+fGmqoOCBveb
+ NlESrqdG3jJnub5V5Pr9/QMGB+095Mt+5cJpqlla1DBv6UH/BaD8AoHui9pE2F1PtJN3
+ ZLShJwXs7SPzMLZKSrUwS6PQrV1jcoB1PmPt/7zsaiBq3WvfmtO5yb2lX+oT4yQbFsrb
+ puoi/dPQQ59xRJFI7t2u9DDsTFV09LcPKJSaJ+E+PrkHaBoeo4sEPamVuvLNkTo2Nmow
+ lQVC7XZarjWQGE3BEt82Gzd0oWa0A963/g5rTbZ7qnWote9XPMziZVeVlV9p5lf0oKpq
+ 75ww==
+X-Gm-Message-State: APjAAAWPSEZijO/ro0M9Jt/xU5z4cSTOqIw28LmI2Xpcze11eTVC3wZK
+ n27AhF26MDPvhTe4KJxB4HLv/w==
+X-Google-Smtp-Source: APXvYqwXq66n5SLrBk1VKsZ4xywwLs9fJTHh0tdpXlZ2eIUT6PJDbAVb67zUzRsHvrqVeSqYp7yuWg==
+X-Received: by 2002:a1c:3141:: with SMTP id x62mr7208553wmx.18.1576165700213; 
+ Thu, 12 Dec 2019 07:48:20 -0800 (PST)
+Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
+ [82.243.161.21])
+ by smtp.gmail.com with ESMTPSA id b17sm6464442wrp.49.2019.12.12.07.48.19
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 12 Dec 2019 07:48:19 -0800 (PST)
+References: <20191208180525.1076152-1-martin.blumenstingl@googlemail.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, khilman@baylibre.com
+Subject: Re: [PATCH 0/3] ARM: dts: meson: clock updates
+In-reply-to: <20191208180525.1076152-1-martin.blumenstingl@googlemail.com>
+Date: Thu, 12 Dec 2019 16:48:18 +0100
+Message-ID: <1j8snhbl4t.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-Subject: Re: [PATCH 2/3] arm64: dts: rockchip: Enable PD for USB-C-Port on
- rk3399-roc-pc.
-From: Thomas McKahan <tmckahan@singleboardsolutions.com>
-Date: Thu, 12 Dec 2019 10:46:09 -0500
-To: Markus Reichl <m.reichl@fivetechno.de>
-Message-ID: <84920a36-230f-42a6-a960-a71e685be99f@singleboardsolutions.com>
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - e36.ehosts.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - singleboardsolutions.com
-X-BWhitelist: no
-X-Source-IP: 172.58.138.77
-X-Source-L: No
-X-Exim-ID: 1ifQfL-001viD-Fm
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: ([IPV6:2607:fb90:1784:5f4e:a5d4:b11d:2550:9cec])
- [172.58.138.77]:57064
-X-Source-Auth: tmckahan@singleboardsolutions.com
-X-Email-Count: 4
-X-Source-Cap: ZWxlY3RyaTk7ZWxlY3RyaTk7ZTM2LmVob3N0cy5jb20=
-X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_074626_335678_3AD68DA9 
-X-CRM114-Status: UNSURE (   8.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191212_074821_617007_39D61C5A 
+X-CRM114-Status: GOOD (  14.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.145.107 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,72 +96,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, narmstrong@baylibre.com,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8gTWFya3VzLAoKwqDCoMKgIEkgaGF2ZSBiZWVuIHdvcmtpbmcgd2l0aCB0aGlzIGFzIHdl
-bGwsIGNhbWUgYWNyb3NzIGl0IG9uIEFybWJpYW4uIEkgd2FzIGFsc28gdHJ5aW5nIHRvIGVsaW1p
-bmF0ZSB0aGUgd2FybmluZyBjb25jZXJuaW5nIHRoZSBsYWNrIG9mIHBvcnQgd2l0aCBsaW1pdGVk
-IHN1Y2Nlc3MuwqAgSSBhbHNvIG1pc3NlZCB0aGUgaW50ZXJydXB0IHBpbiBkZWZpbml0aW9uIEkg
-c2VlLsKgIEkgd2lsbCB0ZXN0IHRoaXMgbGF0ZXIgdG9kYXkuwqAgCgrCoMKgIEkndmUgYWRkZWQg
-TmVpbCBBcm1zdHJvbmcgZm9yIGluZm9ybWF0aW9uIGluIGNhc2UgYW55IGJvYXJkcyBvbiB0aGUg
-QW1sb2dpYyBzaWRlIGFyZSBzaW1pbGFybHkgY29uZmlndXJlZCwgSSB0aGluayBhIGZldyBvdGhl
-ciBSb2NrY2hpcCBvbmVzIGF0IGxlYXN0IGFyZSBtaXNzaW5nIGNvbm5lY3RvciBub2RlcywgaXQg
-YXBwZWFycyB0byBiZSBhIGNvbnNpc3RlbnQgaXNzdWUgcHJlc3VtYWJseSBkdWUgdG8gZHJpdmVy
-IGNoYW5nZXMuCgotVG9ueQoKCuKBowoKT24gRGVjIDEwLCAyMDE5LCA3OjQ1IEFNLCBhdCA3OjQ1
-IEFNLCBNYXJrdXMgUmVpY2hsIDxtLnJlaWNobEBmaXZldGVjaG5vLmRlPiB3cm90ZToKPlVTQi1D
-LVBvcnQgMCBvbiByazMzOTktcm9jLXBjIGlzIGRlc2lnbmVkIHRvIHN1cHBseSB0aGUgYm9hcmQu
-Cj5UbyBtZWV0IHRoZSBwb3dlciByZXF1aXJlbWVudHMgb2YgdXAgdG8gNDVXIGEgcG93ZXIgZGVs
-aXZlcnkgKFBEKQo+Y29tcGF0aWJsZSBzdXBwbHkgaXMgbmVlZGVkLiBUbyBjb25maWd1cmUgdGhl
-IFBEIHRoZSBub2RlIG9mIHRoZQo+ZnVzYjMwMiBuZWVkcyBhIGNvbm5lY3RvciBwcm9wZXJ0eSB3
-aXRoIGRlc2lyZWQgUEQgZGVzY3JpcHRpb24uCj4KPlNpZ25lZC1vZmYtYnk6IE1hcmt1cyBSZWlj
-aGwgPG0ucmVpY2hsQGZpdmV0ZWNobm8uZGU+Cj4tLS0KPlByZXNlbnRseSB0aGUgYm9hcmQgaW4g
-bWFpbmxpbmUgaGFzIHRvIGJlIHBvd2VyZWQgZnJvbSBhIDEyViBzdXBwbHksCj5jb25uZWN0ZWQg
-dG8gdHdvIHBpbnMgb24gdGhlIGV4cGFuc2lvbiBoZWFkZXIgYXMgdGhlIHN0YW5kYXJkIDVWCj5k
-ZWxpdmVyZWQgYnkgdGhlIHVuY29uZmlndXJlZCBVU0ItQyBwbHVnIGlzIG5vdCBlbm91Z2ggZm9y
-IGhpZ2hlcgo+bG9hZHMgb3IgcGVyaXBoZXJhbHMgb24gVVNCIG9yIE0uMi4KPgo+V2l0aCB0aGlz
-IHBhdGNoIHRoZSBib2FyZCByZXF1ZXN0cyAxNVYgZnJvbSB0aGUgUEQgYW5kIHJ1bnMgZmluZQo+
-b24gaGlnaCBsb2FkcyB3aXRoIE5WTUUgU1NELCBFdGhlcm5ldCwgU0RJTyBXTEFOIGFuZCBVU0Ig
-cGVyaXBoZXJhbHMuCj5EdXJpbmcgYm9vdCB0aGUgMTJWIHN1cHBseSBpcyBzdGlsbCBuZWVkZWQg
-Zm9yIHNvbWUgc2Vjb25kcywKPmFzIHRoZSBmdXNiMzAyIHNodXRzIGRvd24gb3IgcmVzZXRzIHRo
-ZSBQRCBzaG9ydGx5IHdoZW4gaW5pdGlhbGl6aW5nCj4oQlVHPykuCj4KPlRoZSBib2FyZCdzIDEy
-ViBsaW5lIGlzIHJ1bm5pbmcgcHJlc2VudGx5IG9uIDVWLCB0aGUgZGVmYXVsdCBvdXRwdXQKPnZv
-bHRhZ2Ugb2YgdGhlIE1QODg1OSBvbiBJMkMtNywgZm9yIHdpY2ggbm8gbWFpbmxpbmUga2VybmVs
-IGRyaXZlcgo+ZXhpc3RzIHlldC4KPi0tLQo+ICBhcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlw
-L3JrMzM5OS1yb2MtcGMuZHRzaSB8IDE2ICsrKysrKysrKysrKysrLS0KPiAgMSBmaWxlIGNoYW5n
-ZWQsIDE0IGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCj4KPmRpZmYgLS1naXQgYS9hcmNo
-L2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1yb2MtcGMuZHRzaQo+Yi9hcmNoL2FybTY0
-L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzM5OS1yb2MtcGMuZHRzaQo+aW5kZXggOGUwMWIwNDE0NGI3
-Li45MDc4M2IyYjFkMWYgMTAwNjQ0Cj4tLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlw
-L3JrMzM5OS1yb2MtcGMuZHRzaQo+KysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9y
-azMzOTktcm9jLXBjLmR0c2kKPkBAIC02LDYgKzYsNyBAQAo+ICAvZHRzLXYxLzsKPiAgI2luY2x1
-ZGUgPGR0LWJpbmRpbmdzL2lucHV0L2xpbnV4LWV2ZW50LWNvZGVzLmg+Cj4gICNpbmNsdWRlIDxk
-dC1iaW5kaW5ncy9wd20vcHdtLmg+Cj4rI2luY2x1ZGUgPGR0LWJpbmRpbmdzL3VzYi9wZC5oPgo+
-ICAjaW5jbHVkZSAicmszMzk5LmR0c2kiCj4gICNpbmNsdWRlICJyazMzOTktb3BwLmR0c2kiCj4g
-IAo+QEAgLTU0MCwxMSArNTQxLDIyIEBAIGZ1c2IwOiB1c2ItdHlwZWNAMjIgewo+ICAJCWNvbXBh
-dGlibGUgPSAiZmNzLGZ1c2IzMDIiOwo+ICAJCXJlZyA9IDwweDIyPjsKPiAgCQlpbnRlcnJ1cHQt
-cGFyZW50ID0gPCZncGlvMT47Cj4tCQlpbnRlcnJ1cHRzID0gPDIgSVJRX1RZUEVfTEVWRUxfTE9X
-PjsKPisJCWludGVycnVwdHMgPSA8UktfUEEyIElSUV9UWVBFX0xFVkVMX0xPVz47Cj4gIAkJcGlu
-Y3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPiAgCQlwaW5jdHJsLTAgPSA8JmZ1c2IwX2ludD47Cj4g
-IAkJdmJ1cy1zdXBwbHkgPSA8JnZjY192YnVzX3R5cGVjMD47Cj4tCQlzdGF0dXMgPSAib2theSI7
-Cj4rCj4rCQl1c2JfY29uOiBjb25uZWN0b3Igewo+KwkJCWNvbXBhdGlibGUgPSAidXNiLWMtY29u
-bmVjdG9yIjsKPisJCQlsYWJlbCA9ICJVU0ItQy0wIjsKPisJCQlwb3dlci1yb2xlID0gImR1YWwi
-Owo+KwkJCXRyeS1wb3dlci1yb2xlID0gInNpbmsiOwo+KwkJCXNvdXJjZS1wZG9zID0gPFBET19G
-SVhFRCg1MDAwLCAzMDAwLCBQRE9fRklYRURfVVNCX0NPTU0pPjsKPisJCQlzaW5rLXBkb3MgPSA8
-UERPX0ZJWEVEKDUwMDAsIDMwMDAsIFBET19GSVhFRF9VU0JfQ09NTSkKPisJCQkJICAgICBQRE9f
-VkFSKDUwMDAsIDE1MDAwLCAzMDAwKQo+KwkJCQkgICAgIFBET19QUFNfQVBETyg1MDAwLCAxNTAw
-MCwgMzAwMCk+Owo+KwkJCW9wLXNpbmstbWljcm93YXR0ID0gPDQ1MDAwMDAwPjsKPisJCX07Cj4g
-IAl9Owo+ICB9Owo+ICAKPi0tIAo+Mi4yNC4wCj4KPgo+X19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KPkxpbnV4LXJvY2tjaGlwIG1haWxpbmcgbGlzdAo+TGlu
-dXgtcm9ja2NoaXBAbGlzdHMuaW5mcmFkZWFkLm9yZwo+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1yb2NrY2hpcAoKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+
+On Sun 08 Dec 2019 at 19:05, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
+
+> This series moves the XTAL clock out of the main (HHI) clock controller
+> because it's an actual dedicated crystal on the PCBs.
+>
+> The last two patches add the DDR clock controller whose output is used
+> as input for some of the audio clocks.
+>
+>
+> Dependencies:
+> - patch #1 has a runtime dependency on my other series:
+>   "provide the XTAL clock via OF on Meson8/8b/8m2" [0]
+>   Jerome has already queued this for v5.6
+> - patches #2 and #3 have a compile time dependency on my other series:
+>   "add the DDR clock controller on Meson8 and Meson8b" [1]
+>   Jerome has already queued this for v5.6, but you need an immutable
+>   tag for the dt-bindings
+
+Bindings tag clk-meson-dt-v5.6-1 available with the necessary ids
+branch v5.6/drivers with the actual driver changes
+
+>
+>
+> Jerome: can you please rebase the v5.6/dt branch tomorrow on top of
+> v5.6-rc1 and provide a tag so Kevin can apply this series?
+>
+>
+> [0] https://patchwork.kernel.org/cover/11248377/
+> [1] https://patchwork.kernel.org/cover/11248423/
+>
+>
+> Martin Blumenstingl (3):
+>   ARM: dts: meson: provide the XTAL clock using a fixed-clock
+>   ARM: dts: meson8: add the DDR clock controller
+>   ARM: dts: meson8b: add the DDR clock controller
+>
+>  arch/arm/boot/dts/meson.dtsi           |  7 +++++++
+>  arch/arm/boot/dts/meson6.dtsi          |  7 -------
+>  arch/arm/boot/dts/meson8.dtsi          | 24 +++++++++++++++++-------
+>  arch/arm/boot/dts/meson8b-ec100.dts    |  2 +-
+>  arch/arm/boot/dts/meson8b-mxq.dts      |  2 +-
+>  arch/arm/boot/dts/meson8b-odroidc1.dts |  2 +-
+>  arch/arm/boot/dts/meson8b.dtsi         | 24 +++++++++++++++++-------
+>  7 files changed, 44 insertions(+), 24 deletions(-)
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
