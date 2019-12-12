@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 957AE11D9D6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 00:17:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0050A11D9D8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 00:17:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=mvQyoq7MQ0GwTpXSc1Hjz3qe0vOAkEyb4u6aa89Ct8U=; b=HNo
-	8edZ6oJiufQUw9NMBWh+qKeYzA2db+LxdAmj8tVGMAfr2v+3l/6RX02e1HmytxQiNnaT7T2x5NVZl
-	6j+vWtPjl1fvY18lzjNSJnHL8T6aHOgSt0J+vGZXxmBAVFVVVZA0BdOsQnN3qbqsEQdpnTxB7yvPB
-	CBnmq4dfg5QcMtW3ZV6DT/bAgfcRUBc1bSuhJTXaUXpMRWKrzrpCCV48IMbwtnEEtM5zlqSeMaS4x
-	c39NpJSMM9TLe+GkoIn47Re7Hw+EmRS9r9xq6avmHyf+4p3Eds6zj6QKmJiF1eSp7DCyIL0SqdCUx
-	y28vuU2n8DkE5VYTgS8tpHuFgivJXKQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=C/kVK+yY/cG+cacUCg8utaHvvHR+CZMghk3wIYD6Xyk=; b=gIy9JOJgkmGGEpVhSD8i+QO+wG
+	GM9/aJa9wIH2X/LLcASSVAYDX1ZY0Xm83QOW3JB1yWmjcXSeM9ubgazA2ntx05hx/ev3lGzltlVj4
+	QXPEp4ULbN7twoXnRZ5uPTRR3okFqSq0wgiACcmS49R4mU/Xy9rcOKHyOt3IzLGf4zE9jTlGhuaCw
+	oJ0Gj8wve6KqRzPF8c6wXcbNGXsrRESj2woQi3WZDp3NodI0+zdI22gamQ+HQ1datso92LDnpujGS
+	cDVHIESMS7XPK1JYJ+eZUwhl960CWCR6/PDBg09f6HwTyT0D/bDIy7c03zwntXD5gduir7XGWOlaT
+	J6lxF2WQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifXhf-0007ko-7u; Thu, 12 Dec 2019 23:17:03 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1ifXhr-0007v8-Um; Thu, 12 Dec 2019 23:17:15 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifXhS-0007j0-7Y
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 23:16:51 +0000
-Received: by mail-pl1-x642.google.com with SMTP id o9so281504plk.6
+ id 1ifXhS-0007jF-P2
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 23:16:52 +0000
+Received: by mail-pg1-x541.google.com with SMTP id b9so399268pgk.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Dec 2019 15:16:49 -0800 (PST)
+ Thu, 12 Dec 2019 15:16:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=QugmQVfkr5kZ5L06QzjGjrkPPpkKJsHosocYw9nkXYU=;
- b=Jjb4J4VzVLPOmC6bbFASdp8Qh98F+OA+usrxiVMhS8CCy4yqe3wt7Coib+5Kam75vL
- JC32YNicxYhCea7HUEKC6kRu5HcOESEN/qt4vxIBl15a93NfUQE3VYepnlkCKA9OZP5r
- d4LSMMzRRPeLdcvOT1yqHfZ7Tdo9ohpUKwryKqOuYwLuhqOAKd1AL0GnmkT3TJvAvXGX
- O4uZges96v3Zb1JH7yZuxRfoYib/b4DANcxU9AdHlDxPcTtf3QUb2TJ0q9Kk3kX2nk37
- ZpkvZ5ud19a15wY7VX+ytCc6nfiOdomTTuAaxZatfrIH0Eh6P+7PHih/VNUouM27NfGt
- acwA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=JrcLTUya6tKmBDv9fbzxQOHC8CSLJLBRuOXylw/H/LQ=;
+ b=OUwsSXv1ozwid6KtPLBhDJzii7BoCsvW+6+6VCvLOV2j0VWexXUXp0+6+s2V28nw5c
+ +CDD1soqsV4bmZ882ggwY07tSBjH4mvBJNiWOB2mlvUN4dnbJdLEb8jx4Ng+hiOHwY7E
+ ZbL2ReILkbwf/vZ9TSy2t4UDjeDw/yDRLAujIP1lsgACnGCH85Uxn1OexduP+b1FHyXS
+ B8B2S1l9RGYr6chkeuTfD+ZCVCvVUe8li1b46/Ed5W0LEhkCj10AY8dGxeHEmT7nFF0O
+ BeApaieC1GBETt+WJ0h/x6azsE/RuP78q6/n811NPRaMngJDQiwfdx5mFll3YHyebXhX
+ wkDQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=QugmQVfkr5kZ5L06QzjGjrkPPpkKJsHosocYw9nkXYU=;
- b=O2mA4n2SrG8ZPBPfXLi138AuG+1ymrmI1ht/nATBCFNuG8Z3ClGbenc2jSwEkjr+j/
- amodDzJJ69dTMs21IOxkix+pv2+Jv6q+2rmJpHD63A9PeR7QQVYqycaW+9zd3cNHywsJ
- smNpw66H7BddKDACEB5GY/od+urU8KxIuo6fAhtcHEl+tJMKr0Ewr5EatpHSbP3FDXt9
- Rx3n/SYXT1AsEA41NRLuBiRAN5ZCq5SgKcg10NS/PYtH7cgLvdMihcvWMz1e4mqlokQy
- 41mQbdpJGgzSGdT/IzgySxCUPSeGGWHzJg97QAZxXYChhV2RFGjx3/WHPMSgXPGCU/eI
- jOhg==
-X-Gm-Message-State: APjAAAW/0qtC172bsXi0/9uUd5LSH4aouesM52bwENWCkm1bKVNw8OUW
- 0qdULaIQ/qRdf4K8dP/KdXxWdRuxesU=
-X-Google-Smtp-Source: APXvYqxyMrVg9IcNBWLaeMiBnoSXUAohAjqNoUjd0LnkUQuoYfNNWWihyzKcX1cckq+MRBMfevi95Q==
-X-Received: by 2002:a17:90a:c795:: with SMTP id
- gn21mr12912024pjb.95.1576192608724; 
- Thu, 12 Dec 2019 15:16:48 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=JrcLTUya6tKmBDv9fbzxQOHC8CSLJLBRuOXylw/H/LQ=;
+ b=N6Wy1y7CDclfQZZ88JEbRbgU+Csh0cXXSA4VgRHSf7YHwW8w5vAKPOe3hSLurBAbgK
+ 8i7llWZNEqQ8pqfsTCaLp6XnAdSTFJdFNeTKS8E6zYQQ23Lox1GE3D+uC8pHYJiNOjwm
+ kJ22S9IlvWs3Bl7lxNXReDZHkeAYR/w40DtHeivjl7Xx+NxjLon3Z232U8XO98aPRF+7
+ hRAqJywUBxx6HK/nTQEVK2x2sQvLQNMx0sp4OHL1BsHlMv38vYlrYVU6L1iGrV+q9mt2
+ 9UEDF5q3KgCXANvCZgcB6J5QuaD5TKn88geme3aHTlf+Y82zCjhHEfXn3zXOUmPzm5uR
+ 2Bxg==
+X-Gm-Message-State: APjAAAUNCEseRBF6wdkhl/DOTnci8vrN+vezMiAp+MbSftXPrwL6JIVO
+ 9NWgaNi8/nYTGXqnIOaMOOw=
+X-Google-Smtp-Source: APXvYqxi/4Uk21EguLIChFfr3iDaBRkRE2ol/JFuqs6f26TAO/JO2iEOAe4DA0rmARfaTHkBSX7sGA==
+X-Received: by 2002:a63:2063:: with SMTP id r35mr13926813pgm.120.1576192610054; 
+ Thu, 12 Dec 2019 15:16:50 -0800 (PST)
 Received: from taoren-ubuntu-R90MNF91.thefacebook.com
  ([2620:10d:c090:200::1072])
- by smtp.gmail.com with ESMTPSA id ev11sm9423307pjb.1.2019.12.12.15.16.47
+ by smtp.gmail.com with ESMTPSA id ev11sm9423307pjb.1.2019.12.12.15.16.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Dec 2019 15:16:48 -0800 (PST)
+ Thu, 12 Dec 2019 15:16:49 -0800 (PST)
 From: rentao.bupt@gmail.com
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-aspeed@lists.ozlabs.org, linux-kernel@vger.kernel.org,
  openbmc@lists.ozlabs.org
-Subject: [PATCH 0/2] ARM: dts: aspeed: delete no-hw-checksum from Facebook
- NetBMC dts
-Date: Thu, 12 Dec 2019 15:16:20 -0800
-Message-Id: <20191212231622.302-1-rentao.bupt@gmail.com>
+Subject: [PATCH 1/2] ARM: dts: aspeed: delete no-hw-checksum from Facebook
+ NetBMC Common dtsi
+Date: Thu, 12 Dec 2019 15:16:21 -0800
+Message-Id: <20191212231622.302-2-rentao.bupt@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191212231622.302-1-rentao.bupt@gmail.com>
+References: <20191212231622.302-1-rentao.bupt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_151650_272347_948DACB7 
-X-CRM114-Status: UNSURE (   7.59  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191212_151650_808748_4BBBA5E6 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (rentao.bupt[at]gmail.com)
@@ -110,24 +112,27 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Tao Ren <rentao.bupt@gmail.com>
 
-The patch series is to delete "no-hw-checksum" from all Facebook Network
-BMC platforms, because ftgmac100's checksum issue has been fixed by
-commit 88824e3bf29a ("net: ethernet: ftgmac100: Fix DMA coherency issue
-with SW checksum").
+Delete "no-hw-checksum" property from ast2500-facebook-netbmc-common.dtsi
+because ftgmac100's checksum issue has been fixed by commit 88824e3bf29a
+("net: ethernet: ftgmac100: Fix DMA coherency issue with SW checksum").
 
-Patch #1 removes "no-hw-checksum" from Minipack and CMM BMCs (MAC-PHY
-connection), and patch #2 deletes the property from Yamp BMC (MAC/NC-SI
-connection).
-
-Tao Ren (2):
-  ARM: dts: aspeed: delete no-hw-checksum from Facebook NetBMC Common
-    dtsi
-  ARM: dts: aspeed: delete no-hw-checksum from yamp dts
-
- arch/arm/boot/dts/aspeed-bmc-facebook-yamp.dts        | 1 -
+Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
+---
  arch/arm/boot/dts/ast2500-facebook-netbmc-common.dtsi | 1 -
- 2 files changed, 2 deletions(-)
+ 1 file changed, 1 deletion(-)
 
+diff --git a/arch/arm/boot/dts/ast2500-facebook-netbmc-common.dtsi b/arch/arm/boot/dts/ast2500-facebook-netbmc-common.dtsi
+index 7a395ba56512..7468f102bd76 100644
+--- a/arch/arm/boot/dts/ast2500-facebook-netbmc-common.dtsi
++++ b/arch/arm/boot/dts/ast2500-facebook-netbmc-common.dtsi
+@@ -71,7 +71,6 @@
+ 
+ &mac1 {
+ 	status = "okay";
+-	no-hw-checksum;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
+ };
 -- 
 2.17.1
 
