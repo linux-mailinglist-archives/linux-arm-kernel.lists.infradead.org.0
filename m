@@ -2,71 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17DB711D18F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 16:55:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53F9311D1A3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 16:58:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bAF1MyhmONjBxJNnlFsxNfgMhn/CZoyvAwmJ+02mBKg=; b=ai4pWHMvz/Qo9l
-	eUAGgIHEihIt8if4nOtz+T8XEwfBv4oie37oWTC+U53g4ecDkAqKz2sWt7mrVuRII4/a6tX4XFE4C
-	gtAhKpaifHm/zgKlLE0xibp1hfgtpFnR8hjavxfyfJ9hjJ/t4qWYKuR0x0oGRiL4xIRQg2fHuJ6QS
-	mATEGD2L+ujXK1zyBpPn5S0EapfCNDbzpeX2nC+oTfesVwn0L1WADe/Qnzt+mRWlAd+3Z+Cf4KZ2h
-	h/8gkIV107A4UsAwAol0SMuTHduvZG6GDyrXT08Pobn7R0xyH7NK2nxetjjquu+GKsjxDH2exRKl4
-	1z2ejnljLPv4yKkNwPhQ==;
+	List-Owner; bh=n4j0ri+T7KMxlpORhYPKeQdGnKu8Dm+ae6CtRoiN64M=; b=Usbl9eX+76aIer
+	3u0PrIzOPTC4OFeJ9KHx7RpLjjEO2iTbRLOrxKEvV2h0VuIOm02YDFKA8D7QDhFKo/kV5NxBwe0Ds
+	Un5j8XjOrhmiBn6BoUk75+xde2lndaekcTKdeVZn4VQT38j0zE6GydM7WJlguN4bwQZ0Kub8lF7BS
+	b7v8igKEi8FmsdD8/LPqRpesRML1vUqm5C9X7umadK62fxUe89pxELArSPniV+3nE2Cyn8uU5KOJO
+	m066vneHIz6+/PyArX9TeCsx+Vyu/d6tnVbywfAPcmc8oDDMSYY7rYuaN3aBjAdBiZBbhSESJRdT3
+	z0N9yantiFRXRIjgPOvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifQoS-0007UC-Jr; Thu, 12 Dec 2019 15:55:36 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifQoJ-0007TW-EC
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 15:55:28 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1ifQo8-0002KX-2S; Thu, 12 Dec 2019 16:55:16 +0100
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1ifQo5-000678-TI; Thu, 12 Dec 2019 16:55:13 +0100
-Date: Thu, 12 Dec 2019 16:55:13 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
- selection documentation
-Message-ID: <20191212155513.fevajupxi6omphzf@pengutronix.de>
-References: <20191129172537.31410-1-m.felsch@pengutronix.de>
- <20191129172537.31410-4-m.felsch@pengutronix.de>
- <20191204134631.GT1998@sirena.org.uk>
- <20191210094144.mxximpuouchy3fqu@pengutronix.de>
- <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
- <20191211170918.q7kqkd4lrwwp7jl3@pengutronix.de>
- <CACRpkda4PFA=99u33xsXzQND1FaP=8GXGRQULngcd5a=zFepXg@mail.gmail.com>
+	id 1ifQrF-0000JY-B7; Thu, 12 Dec 2019 15:58:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifQr6-0000J0-Be
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 15:58:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EF4F430E;
+ Thu, 12 Dec 2019 07:58:15 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 322383F6CF;
+ Thu, 12 Dec 2019 07:58:14 -0800 (PST)
+Date: Thu, 12 Dec 2019 15:58:12 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: "Andrew F. Davis" <afd@ti.com>
+Subject: Re: arm_smccc_smc as generic smc interface?
+Message-ID: <20191212155811.GG46910@lakrids.cambridge.arm.com>
+References: <20191209180752.GJ35479@atomide.com>
+ <CAHUa44EJAjL+MGqgKd6YvQAg0z4hRYXb9MeTqsTYhAe-RBZt+g@mail.gmail.com>
+ <20191210153840.GL35479@atomide.com>
+ <20191212142305.GD46910@lakrids.cambridge.arm.com>
+ <622404c8-8ca7-11bb-64fe-14d280827cd2@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CACRpkda4PFA=99u33xsXzQND1FaP=8GXGRQULngcd5a=zFepXg@mail.gmail.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 16:51:05 up 27 days,  7:09, 36 users,  load average: 0.12, 0.17, 0.13
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <622404c8-8ca7-11bb-64fe-14d280827cd2@ti.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_075527_476790_A9551F6D 
-X-CRM114-Status: GOOD (  19.09  )
+X-CRM114-CacheID: sfid-20191212_075820_441696_C6F0B2AA 
+X-CRM114-Status: GOOD (  17.30  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,81 +67,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Support Opensource <Support.Opensource@diasemi.com>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "andrew@aj.id.au" <andrew@aj.id.au>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
- Mark Brown <broonie@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- "lee.jones@linaro.org" <lee.jones@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Sumit Garg <sumit.garg@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
+ Tony Lindgren <tony@atomide.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Volodymyr Babchuk <vlad.babchuk@gmail.com>, Olof Johansson <olof@lixom.net>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Marc Zyngier <maz@kernel.org>,
+ Andy Gross <andy.gross@linaro.org>, Colin Ian King <colin.king@canonical.com>,
+ Will Deacon <will@kernel.org>, Jens Wiklander <jens.wiklander@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 19-12-12 16:08, Linus Walleij wrote:
-> On Wed, Dec 11, 2019 at 6:09 PM Marco Felsch <m.felsch@pengutronix.de> wrote:
+On Thu, Dec 12, 2019 at 10:23:47AM -0500, Andrew F. Davis wrote:
+> On 12/12/19 9:23 AM, Mark Rutland wrote:
+> > On Tue, Dec 10, 2019 at 07:38:40AM -0800, Tony Lindgren wrote:
+> >> * Jens Wiklander <jens.wiklander@linaro.org> [191210 08:10]:
+> >>> On Mon, Dec 9, 2019 at 7:07 PM Tony Lindgren <tony@atomide.com> wrote:
+> >>> In <arm-smccc.h> there's already been made room for some Qualcomm
+> >>> quirks, perhaps it's possible to use or extend it to cover the TI
+> >>> cases you have in mind.
+> >>
+> >> Yeah that's my thinking too as long as there are no issues using
+> >> arm_smccc_smc() for non-optee cases.
+> > 
+> > I don't think that we wan't to turn the SMCCC code itself into a generic
+> > SMC interface, and this boils down to how divergent the TI calling
+> > convention is from SMCCC. What are the differences?
 > 
-> > I discussed it with a colleague again and he mentioned that pinctrl
-> > should be named pinctrl instead it should be named padctrl.
+> There are three levels of differences based on the the type of legacy
+> SMC call we make, first type omap_smc1():
 > 
-> Quoting Documentation/driver-api/pinctl.rst:
+>  * r2-r12 are clobbered vs SMCCC only saving r4-r7
+>  * r12 used as command ID vs SMCCC using r0
 > 
-> (...)
-> Definition of PIN:
+> omap_smc2(), in addition to the above incompatibilities:
 > 
-> - PINS are equal to pads, fingers, balls or whatever packaging input or
->   output line you want to control and these are denoted by unsigned integers
->   in the range 0..maxpin.
-> (...)
-
-Okay there is the definition.
-
-> > We don't
-> > reconfigure the pad to a other function it is still a device general
-> > purpose input pad. The hw-signal flow goes always trough the gpio block
-> > so one argument more for my solution. Also we don't configure the "pad"
-> > to be a vsel/ena-pin. The hw-pad can only be a gpio or has an alternate
-> > function (WDKICK for GPIO0, Seq. SYS_EN for GPIO2, Seq. PWR_EN for GPIO4).
-> > Instead we tell the regulator to use _this_ GPIO e.g. for voltage
-> > selection so we go the other way around. My last argument why pinctrl
-> > isn't the correct place is that the GPIO1 can be used for
-> > regulator-0:vsel-in and for regulator-1:enable-in. So this pad would
-> > have different states which is invalid IMHO.
+>  * r6 must contain #0xff
+>  * r12 used as command ID again
 > 
-> Yeah it is just one of these cases where the silicon designer pulled
-> a line of polysilicone over to the regulator enable signal and put a
-> switch on it and say "so you can also enable the regulator
-> with a signal from here", it can be used in parallel with anything
-> else, which is especially messy.
-
-I didn't say that the design isn't messy ;) I just wanna make the right
-abstraction and IMHO this is the correct abstraction.
-
-Regards,
-  Marco
-
-> Special cases require special handling, since the electronic design
-> of this thing is a bit Rube Goldberg.
+> omap_smc3(), in addition to the above incompatibilities:
 > 
-> Yours,
-> Linus Walleij
+>  * Uses SMC #1 vs #0
 > 
+> My personal opinion would be to leave arm_smccc_smc() alone and only
+> allow SMCCC complaint callers to use it (even QCOM's quark should not
+> have gone in if the plan was not to allow the same exceptions for
+> others). 
 
--- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+I agree. Given the above examples, I'd rather have this separated out.
+While I'd have preferred to not have the QCOM quirk, that's simply
+something we have to live with now.
+
+> I believe what Tony might really want is a separate generic
+> arm_smc() that can handle the above cases based on parameters so that we
+> don't have to drop into custom assembly in mach-omap2.
+
+FWIW, I agree that having a separate arm_generic_smc() feels like a
+better way of handling the omap cases above. I think that only needs to
+exist for arch/arm, too, so some complexity involved with making that
+arch-neutral can be avoided.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
