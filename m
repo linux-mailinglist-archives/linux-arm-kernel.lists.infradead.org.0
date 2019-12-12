@@ -2,49 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED24111D774
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 20:51:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 780F011D779
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 20:52:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=kKm92oFXw80Az3+uKv52JWuX2Mxt1c0lX71q2l5oKIs=; b=qVO
-	C+stz1tEvo35zOvWAh6d5uVgQ1tb2WL7ztVSs6adzqENR/wZLqqsopaSJLKCqbsXK4E6VKyD6c5t5
-	ZZBuPl0LYa4KflZf056RRpRZBNcfFihb4aSWh9bhnr+f8pISVEwEjDKYzWGVrJYWubMWeifq07A9L
-	wpi2peLRMFC3F3FM8PGd6PheVS1g7GKQ2MAhphTVDBgsCr3Q62+m3eQDCBO7+3pdhfQ4wbs/c5b5j
-	ONtg15B7Cg3DknkPv0RdnZ/26scY2CSIQ5odC/lYoEJcHycJx1s/vLaH6t3zr7svhBtWpyZ9O+O/3
-	ZloVQwZy41VkRi9NIW4u0iJPKC/b3MA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=cctIV36XHLuHJDDrdRLrwblP9nXDxSoVVVTMY0D23Rc=; b=j95hX40Ma+Goj66pzCKjeZtomr
+	ncf0jkIViIsoMzH6d9YEvDuApLCrFgL2RPeGlZFkkfnW7nCzQHhHe2MHAv1+XRNCV0x/S/CECaKe/
+	NLcZP9Ci5ljxumck6hYChuoeAzvUKSsKOqeeTD6T90HJGv23Cti0iiSo29I2s+C4mIkFzWOGETYYD
+	XOhZMF7W+ZTIOnk2TvaeT0ATp22K589AMGmRxuIuXlYJp8hOFbTyHXLP1V0OcAAnXnZbvSGIi6kd0
+	u4Y+ql7wwD/GE01Cr9P7z0ifoSPK61CAiiBPVJkTBUXawSGohNJXLvvJH7mbCCaQbBu76EFg76Qp2
+	vtCpKmrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifUUb-0001yy-0N; Thu, 12 Dec 2019 19:51:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifUUT-0001yC-LQ
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 19:51:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CE41B328;
- Thu, 12 Dec 2019 11:51:07 -0800 (PST)
-Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5DA883F718;
- Thu, 12 Dec 2019 11:51:07 -0800 (PST)
-From: Christoffer Dall <christoffer.dall@arm.com>
-To: kvmarm@lists.cs.columbia.edu
-Subject: [PATCH] KVM: arm64: Only sign-extend MMIO up to register width
-Date: Thu, 12 Dec 2019 20:50:55 +0100
-Message-Id: <20191212195055.5541-1-christoffer.dall@arm.com>
-X-Mailer: git-send-email 2.18.0
+	id 1ifUVr-0002H3-Ph; Thu, 12 Dec 2019 19:52:39 +0000
+Received: from lists.gateworks.com ([108.161.130.12])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifUVd-0002Gd-W2
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 19:52:27 +0000
+Received: from 68-189-91-139.static.snlo.ca.charter.com ([68.189.91.139]
+ helo=rjones.pdc.gateworks.com)
+ by lists.gateworks.com with esmtp (Exim 4.82)
+ (envelope-from <rjones@gateworks.com>)
+ id 1ifUkF-0003ji-Op; Thu, 12 Dec 2019 20:07:31 +0000
+From: Robert Jones <rjones@gateworks.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>
+Subject: [PATCH v2] ARM: dts: imx: Add GW5907 board support
+Date: Thu, 12 Dec 2019 11:52:12 -0800
+Message-Id: <20191212195212.30433-1-rjones@gateworks.com>
+X-Mailer: git-send-email 2.9.2
+In-Reply-To: <20191205220825.22915-1-rjones@gateworks.com>
+References: <20191205220825.22915-1-rjones@gateworks.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_115113_791223_B6B8AB42 
-X-CRM114-Status: GOOD (  14.31  )
+X-CRM114-CacheID: sfid-20191212_115226_071590_ECCC2510 
+X-CRM114-Status: GOOD (  14.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -58,148 +59,516 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- Christoffer Dall <christoffer.dall@arm.com>, Djordje.Kovacevic@arm.com,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: devicetree@vger.kernel.org, Robert Jones <rjones@gateworks.com>,
+ Tim Harvey <tharvey@gateworks.com>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On AArch64 you can do a sign-extended load to either a 32-bit or 64-bit
-register, and we should only sign extend the register up to the width of
-the register as specified in the operation (by using the 32-bit Wn or
-64-bit Xn register specifier).
+The Gateworks GW5907 is an IMX6 SoC based single board computer with:
+ - IMX6Q or IMX6DL
+ - 32bit DDR3 DRAM
+ - FEC GbE Phy
+ - bi-color front-panel LED
+ - 256MB NAND boot device
+ - Gateworks System Controller (hwmon, pushbutton controller, EEPROM)
+ - Digital IO expander (pca9555)
+ - Joystick 12bit adc (ads1015)
 
-As it turns out, the architecture provides this decoding information in
-the SF ("Sixty-Four" -- how cute...) bit.
-
-Let's take advantage of this with the usual 32-bit/64-bit header file
-dance and do the right thing on AArch64 hosts.
-
-Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+Signed-off-by: Robert Jones <rjones@gateworks.com>
 ---
- arch/arm/include/asm/kvm_emulate.h   | 5 +++++
- arch/arm/include/asm/kvm_mmio.h      | 2 ++
- arch/arm64/include/asm/kvm_emulate.h | 5 +++++
- arch/arm64/include/asm/kvm_mmio.h    | 6 ++----
- virt/kvm/arm/mmio.c                  | 8 +++++++-
- 5 files changed, 21 insertions(+), 5 deletions(-)
 
-diff --git a/arch/arm/include/asm/kvm_emulate.h b/arch/arm/include/asm/kvm_emulate.h
-index 9b118516d2db..fe55d8737a11 100644
---- a/arch/arm/include/asm/kvm_emulate.h
-+++ b/arch/arm/include/asm/kvm_emulate.h
-@@ -182,6 +182,11 @@ static inline bool kvm_vcpu_dabt_issext(struct kvm_vcpu *vcpu)
- 	return kvm_vcpu_get_hsr(vcpu) & HSR_SSE;
- }
- 
-+static inline bool kvm_vcpu_dabt_issf(const struct kvm_vcpu *vcpu)
-+{
-+	return false;
-+}
+Changes in v2:
+ - Generalized node names
+ - Removed unnecessary labels
+ - Expanded patch subject
+ - Removed undocumented compatible string in dts**
+
+** I realize that the "gw,ventana" still exists here, but that cant be removed
+without breaking a conditional check in arch/arm/mach-imx/mach-imx6q.cq
+
+ arch/arm/boot/dts/Makefile            |   2 +
+ arch/arm/boot/dts/imx6dl-gw5907.dts   |  14 ++
+ arch/arm/boot/dts/imx6q-gw5907.dts    |  14 ++
+ arch/arm/boot/dts/imx6qdl-gw5907.dtsi | 399 ++++++++++++++++++++++++++++++++++
+ 4 files changed, 429 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6dl-gw5907.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-gw5907.dts
+ create mode 100644 arch/arm/boot/dts/imx6qdl-gw5907.dtsi
+
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index 8784115..1c58d11 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -418,6 +418,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
+ 	imx6dl-gw560x.dtb \
+ 	imx6dl-gw5903.dtb \
+ 	imx6dl-gw5904.dtb \
++	imx6dl-gw5907.dtb \
+ 	imx6dl-gw5910.dtb \
+ 	imx6dl-gw5912.dtb \
+ 	imx6dl-gw5913.dtb \
+@@ -492,6 +493,7 @@ dtb-$(CONFIG_SOC_IMX6Q) += \
+ 	imx6q-gw560x.dtb \
+ 	imx6q-gw5903.dtb \
+ 	imx6q-gw5904.dtb \
++	imx6q-gw5907.dtb \
+ 	imx6q-gw5910.dtb \
+ 	imx6q-gw5912.dtb \
+ 	imx6q-gw5913.dtb \
+diff --git a/arch/arm/boot/dts/imx6dl-gw5907.dts b/arch/arm/boot/dts/imx6dl-gw5907.dts
+new file mode 100644
+index 0000000..7d9fe47
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6dl-gw5907.dts
+@@ -0,0 +1,14 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2019 Gateworks Corporation
++ */
 +
- static inline int kvm_vcpu_dabt_get_rd(struct kvm_vcpu *vcpu)
- {
- 	return (kvm_vcpu_get_hsr(vcpu) & HSR_SRT_MASK) >> HSR_SRT_SHIFT;
-diff --git a/arch/arm/include/asm/kvm_mmio.h b/arch/arm/include/asm/kvm_mmio.h
-index 7c0eddb0adb2..32fbf82e3ebc 100644
---- a/arch/arm/include/asm/kvm_mmio.h
-+++ b/arch/arm/include/asm/kvm_mmio.h
-@@ -14,6 +14,8 @@
- struct kvm_decode {
- 	unsigned long rt;
- 	bool sign_extend;
-+	/* Not used on 32-bit arm */
-+	bool sixty_four;
- };
- 
- void kvm_mmio_write_buf(void *buf, unsigned int len, unsigned long data);
-diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
-index 5efe5ca8fecf..f407b6bdad2e 100644
---- a/arch/arm64/include/asm/kvm_emulate.h
-+++ b/arch/arm64/include/asm/kvm_emulate.h
-@@ -283,6 +283,11 @@ static inline bool kvm_vcpu_dabt_issext(const struct kvm_vcpu *vcpu)
- 	return !!(kvm_vcpu_get_hsr(vcpu) & ESR_ELx_SSE);
- }
- 
-+static inline bool kvm_vcpu_dabt_issf(const struct kvm_vcpu *vcpu)
-+{
-+	return !!(kvm_vcpu_get_hsr(vcpu) & ESR_ELx_SF);
-+}
++/dts-v1/;
 +
- static inline int kvm_vcpu_dabt_get_rd(const struct kvm_vcpu *vcpu)
- {
- 	return (kvm_vcpu_get_hsr(vcpu) & ESR_ELx_SRT_MASK) >> ESR_ELx_SRT_SHIFT;
-diff --git a/arch/arm64/include/asm/kvm_mmio.h b/arch/arm64/include/asm/kvm_mmio.h
-index 02b5c48fd467..b204501a0c39 100644
---- a/arch/arm64/include/asm/kvm_mmio.h
-+++ b/arch/arm64/include/asm/kvm_mmio.h
-@@ -10,13 +10,11 @@
- #include <linux/kvm_host.h>
- #include <asm/kvm_arm.h>
- 
--/*
-- * This is annoying. The mmio code requires this, even if we don't
-- * need any decoding. To be fixed.
-- */
- struct kvm_decode {
- 	unsigned long rt;
- 	bool sign_extend;
-+	/* Witdth of the register accessed by the faulting instruction is 64-bits */
-+	bool sixty_four;
- };
- 
- void kvm_mmio_write_buf(void *buf, unsigned int len, unsigned long data);
-diff --git a/virt/kvm/arm/mmio.c b/virt/kvm/arm/mmio.c
-index 70d3b449692c..e62454b2e529 100644
---- a/virt/kvm/arm/mmio.c
-+++ b/virt/kvm/arm/mmio.c
-@@ -83,7 +83,7 @@ unsigned long kvm_mmio_read_buf(const void *buf, unsigned int len)
- int kvm_handle_mmio_return(struct kvm_vcpu *vcpu, struct kvm_run *run)
- {
- 	unsigned long data;
--	unsigned int len;
-+	unsigned int len, regsize;
- 	int mask;
- 
- 	/* Detect an already handled MMIO return */
-@@ -105,6 +105,9 @@ int kvm_handle_mmio_return(struct kvm_vcpu *vcpu, struct kvm_run *run)
- 			data = (data ^ mask) - mask;
- 		}
- 
-+		if (!vcpu->arch.mmio_decode.sixty_four)
-+			data = data & 0xffffffff;
++#include "imx6dl.dtsi"
++#include "imx6qdl-gw5907.dtsi"
 +
- 		trace_kvm_mmio(KVM_TRACE_MMIO_READ, len, run->mmio.phys_addr,
- 			       &data);
- 		data = vcpu_data_host_to_guest(vcpu, data, len);
-@@ -125,6 +128,7 @@ static int decode_hsr(struct kvm_vcpu *vcpu, bool *is_write, int *len)
- 	unsigned long rt;
- 	int access_size;
- 	bool sign_extend;
-+	bool sixty_four;
- 
- 	if (kvm_vcpu_dabt_iss1tw(vcpu)) {
- 		/* page table accesses IO mem: tell guest to fix its TTBR */
-@@ -138,11 +142,13 @@ static int decode_hsr(struct kvm_vcpu *vcpu, bool *is_write, int *len)
- 
- 	*is_write = kvm_vcpu_dabt_iswrite(vcpu);
- 	sign_extend = kvm_vcpu_dabt_issext(vcpu);
-+	sixty_four = kvm_vcpu_dabt_issf(vcpu);
- 	rt = kvm_vcpu_dabt_get_rd(vcpu);
- 
- 	*len = access_size;
- 	vcpu->arch.mmio_decode.sign_extend = sign_extend;
- 	vcpu->arch.mmio_decode.rt = rt;
-+	vcpu->arch.mmio_decode.sixty_four = sixty_four;
- 
- 	return 0;
- }
++/ {
++	model = "Gateworks Ventana i.MX6 DualLite/Solo GW5907";
++	compatible = "gw,ventana", "fsl,imx6dl";
++};
+diff --git a/arch/arm/boot/dts/imx6q-gw5907.dts b/arch/arm/boot/dts/imx6q-gw5907.dts
+new file mode 100644
+index 0000000..63e0bef
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6q-gw5907.dts
+@@ -0,0 +1,14 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2019 Gateworks Corporation
++ */
++
++/dts-v1/;
++
++#include "imx6q.dtsi"
++#include "imx6qdl-gw5907.dtsi"
++
++/ {
++	model = "Gateworks Ventana i.MX6 Dual/Quad GW5907";
++	compatible = "gw,ventana", "fsl,imx6q";
++};
+diff --git a/arch/arm/boot/dts/imx6qdl-gw5907.dtsi b/arch/arm/boot/dts/imx6qdl-gw5907.dtsi
+new file mode 100644
+index 0000000..0bdebdd
+--- /dev/null
++++ b/arch/arm/boot/dts/imx6qdl-gw5907.dtsi
+@@ -0,0 +1,399 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2019 Gateworks Corporation
++ */
++
++#include <dt-bindings/gpio/gpio.h>
++
++/ {
++	/* these are used by bootloader for disabling nodes */
++	aliases {
++		led0 = &led0;
++		led1 = &led1;
++		nand = &gpmi;
++		usb0 = &usbh1;
++		usb1 = &usbotg;
++	};
++
++	chosen {
++		stdout-path = &uart2;
++	};
++
++	leds {
++		compatible = "gpio-leds";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_gpio_leds>;
++
++		led0: user1 {
++			label = "user1";
++			gpios = <&gpio4 6 GPIO_ACTIVE_HIGH>; /* MX6_PANLEDG */
++			default-state = "on";
++			linux,default-trigger = "heartbeat";
++		};
++
++		led1: user2 {
++			label = "user2";
++			gpios = <&gpio4 7 GPIO_ACTIVE_HIGH>; /* MX6_PANLEDR */
++			default-state = "off";
++		};
++	};
++
++	memory@10000000 {
++		device_type = "memory";
++		reg = <0x10000000 0x20000000>;
++	};
++
++	pps {
++		compatible = "pps-gpio";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_pps>;
++		gpios = <&gpio1 26 GPIO_ACTIVE_HIGH>;
++		status = "okay";
++	};
++
++	reg_3p3v: regulator-3p3v {
++		compatible = "regulator-fixed";
++		regulator-name = "3P3V";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		regulator-always-on;
++	};
++
++	reg_5p0v: regulator-5p0v {
++		compatible = "regulator-fixed";
++		regulator-name = "5P0V";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		regulator-always-on;
++	};
++
++	reg_usb_otg_vbus: regulator-usb-otg-vbus {
++		compatible = "regulator-fixed";
++		regulator-name = "usb_otg_vbus";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		gpio = <&gpio3 22 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++	};
++};
++
++&fec {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_enet>;
++	phy-mode = "rgmii-id";
++	phy-reset-gpios = <&gpio1 30 GPIO_ACTIVE_LOW>;
++	status = "okay";
++};
++
++&gpmi {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_gpmi_nand>;
++	status = "okay";
++};
++
++&hdmi {
++	ddc-i2c-bus = <&i2c3>;
++	status = "okay";
++};
++
++&i2c1 {
++	clock-frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c1>;
++	status = "okay";
++
++	gpio@23 {
++		compatible = "nxp,pca9555";
++		reg = <0x23>;
++		gpio-controller;
++		#gpio-cells = <2>;
++	};
++
++	eeprom@50 {
++		compatible = "atmel,24c02";
++		reg = <0x50>;
++		pagesize = <16>;
++	};
++
++	eeprom@51 {
++		compatible = "atmel,24c02";
++		reg = <0x51>;
++		pagesize = <16>;
++	};
++
++	eeprom@52 {
++		compatible = "atmel,24c02";
++		reg = <0x52>;
++		pagesize = <16>;
++	};
++
++	eeprom@53 {
++		compatible = "atmel,24c02";
++		reg = <0x53>;
++		pagesize = <16>;
++	};
++
++	rtc@68 {
++		compatible = "dallas,ds1672";
++		reg = <0x68>;
++	};
++};
++
++&i2c2 {
++	clock-frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c2>;
++	status = "okay";
++};
++
++&i2c3 {
++	clock-frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c3>;
++	status = "okay";
++
++	gpio@20 {
++		compatible = "nxp,pca9555";
++		reg = <0x20>;
++		gpio-controller;
++		#gpio-cells = <2>;
++	};
++
++	adc@48 {
++		compatible = "ti,ads1015";
++		reg = <0x48>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		channel@4 {
++			reg = <4>;
++			ti,gain = <0>;
++			ti,datarate = <5>;
++		};
++
++		channel@5 {
++			reg = <5>;
++			ti,gain = <0>;
++			ti,datarate = <5>;
++		};
++
++		channel@6 {
++			reg = <6>;
++			ti,gain = <0>;
++			ti,datarate = <5>;
++		};
++	};
++};
++
++&pcie {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pcie>;
++	reset-gpio = <&gpio1 0 GPIO_ACTIVE_LOW>;
++	status = "okay";
++};
++
++&pwm2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pwm2>; /* MX6_DIO1 */
++	status = "disabled";
++};
++
++&pwm3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pwm3>; /* MX6_DIO2 */
++	status = "disabled";
++};
++
++&pwm4 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_pwm4>; /* MX6_DIO3 */
++	status = "disabled";
++};
++
++&uart1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart1>;
++	status = "okay";
++};
++
++&uart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart2>;
++	status = "okay";
++};
++
++&uart3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart3>;
++	status = "okay";
++};
++
++&uart5 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_uart5>;
++	status = "okay";
++};
++
++&usbotg {
++	vbus-supply = <&reg_usb_otg_vbus>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_usbotg>;
++	disable-over-current;
++	status = "okay";
++};
++
++&usbh1 {
++	status = "okay";
++};
++
++&wdog1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_wdog>;
++	fsl,ext-reset-output;
++};
++
++&iomuxc {
++	pinctrl_enet: enetgrp {
++		fsl,pins = <
++			MX6QDL_PAD_RGMII_RXC__RGMII_RXC		0x1b0b0
++			MX6QDL_PAD_RGMII_RD0__RGMII_RD0		0x1b0b0
++			MX6QDL_PAD_RGMII_RD1__RGMII_RD1		0x1b0b0
++			MX6QDL_PAD_RGMII_RD2__RGMII_RD2		0x1b0b0
++			MX6QDL_PAD_RGMII_RD3__RGMII_RD3		0x1b0b0
++			MX6QDL_PAD_RGMII_RX_CTL__RGMII_RX_CTL	0x1b0b0
++			MX6QDL_PAD_RGMII_TXC__RGMII_TXC		0x1b0b0
++			MX6QDL_PAD_RGMII_TD0__RGMII_TD0		0x1b0b0
++			MX6QDL_PAD_RGMII_TD1__RGMII_TD1		0x1b0b0
++			MX6QDL_PAD_RGMII_TD2__RGMII_TD2		0x1b0b0
++			MX6QDL_PAD_RGMII_TD3__RGMII_TD3		0x1b0b0
++			MX6QDL_PAD_RGMII_TX_CTL__RGMII_TX_CTL	0x1b0b0
++			MX6QDL_PAD_ENET_REF_CLK__ENET_TX_CLK	0x1b0b0
++			MX6QDL_PAD_ENET_MDIO__ENET_MDIO		0x1b0b0
++			MX6QDL_PAD_ENET_MDC__ENET_MDC		0x1b0b0
++			MX6QDL_PAD_GPIO_16__ENET_REF_CLK	0x4001b0a8
++			MX6QDL_PAD_ENET_TXD0__GPIO1_IO30	0x1b0b0
++		>;
++	};
++
++	pinctrl_gpio_leds: gpioledsgrp {
++		fsl,pins = <
++			MX6QDL_PAD_KEY_COL0__GPIO4_IO06		0x1b0b0
++			MX6QDL_PAD_KEY_ROW0__GPIO4_IO07		0x1b0b0
++		>;
++	};
++
++	pinctrl_gpmi_nand: gpminandgrp {
++		fsl,pins = <
++			MX6QDL_PAD_NANDF_CLE__NAND_CLE		0xb0b1
++			MX6QDL_PAD_NANDF_ALE__NAND_ALE		0xb0b1
++			MX6QDL_PAD_NANDF_WP_B__NAND_WP_B	0xb0b1
++			MX6QDL_PAD_NANDF_RB0__NAND_READY_B	0xb000
++			MX6QDL_PAD_NANDF_CS0__NAND_CE0_B	0xb0b1
++			MX6QDL_PAD_SD4_CMD__NAND_RE_B		0xb0b1
++			MX6QDL_PAD_SD4_CLK__NAND_WE_B		0xb0b1
++			MX6QDL_PAD_NANDF_D0__NAND_DATA00	0xb0b1
++			MX6QDL_PAD_NANDF_D1__NAND_DATA01	0xb0b1
++			MX6QDL_PAD_NANDF_D2__NAND_DATA02	0xb0b1
++			MX6QDL_PAD_NANDF_D3__NAND_DATA03	0xb0b1
++			MX6QDL_PAD_NANDF_D4__NAND_DATA04	0xb0b1
++			MX6QDL_PAD_NANDF_D5__NAND_DATA05	0xb0b1
++			MX6QDL_PAD_NANDF_D6__NAND_DATA06	0xb0b1
++			MX6QDL_PAD_NANDF_D7__NAND_DATA07	0xb0b1
++		>;
++	};
++
++	pinctrl_i2c1: i2c1grp {
++		fsl,pins = <
++			MX6QDL_PAD_EIM_D21__I2C1_SCL		0x4001b8b1
++			MX6QDL_PAD_EIM_D28__I2C1_SDA		0x4001b8b1
++			MX6QDL_PAD_GPIO_4__GPIO1_IO04		0x0001b0b0
++		>;
++	};
++
++	pinctrl_i2c2: i2c2grp {
++		fsl,pins = <
++			MX6QDL_PAD_KEY_COL3__I2C2_SCL		0x4001b8b1
++			MX6QDL_PAD_KEY_ROW3__I2C2_SDA		0x4001b8b1
++		>;
++	};
++
++	pinctrl_i2c3: i2c3grp {
++		fsl,pins = <
++			MX6QDL_PAD_GPIO_3__I2C3_SCL		0x4001b8b1
++			MX6QDL_PAD_GPIO_6__I2C3_SDA		0x4001b8b1
++			MX6QDL_PAD_GPIO_2__GPIO1_IO02		0x1b0b0
++			MX6QDL_PAD_GPIO_19__GPIO4_IO05		0x1b0b0
++		>;
++	};
++
++	pinctrl_pcie: pciegrp {
++		fsl,pins = <
++			MX6QDL_PAD_GPIO_0__GPIO1_IO00		0x1b0b0
++		>;
++	};
++
++	pinctrl_pps: ppsgrp {
++		fsl,pins = <
++			MX6QDL_PAD_ENET_RXD1__GPIO1_IO26	0x1b0b1
++		>;
++	};
++
++	pinctrl_pwm2: pwm2grp {
++		fsl,pins = <
++			MX6QDL_PAD_SD1_DAT2__PWM2_OUT		0x1b0b1
++		>;
++	};
++
++	pinctrl_pwm3: pwm3grp {
++		fsl,pins = <
++			MX6QDL_PAD_SD1_DAT1__PWM3_OUT		0x1b0b1
++		>;
++	};
++
++	pinctrl_pwm4: pwm4grp {
++		fsl,pins = <
++			MX6QDL_PAD_SD1_CMD__PWM4_OUT		0x1b0b1
++		>;
++	};
++
++	pinctrl_uart1: uart1grp {
++		fsl,pins = <
++			MX6QDL_PAD_SD3_DAT7__UART1_TX_DATA	0x1b0b1
++			MX6QDL_PAD_SD3_DAT6__UART1_RX_DATA	0x1b0b1
++		>;
++	};
++
++	pinctrl_uart2: uart2grp {
++		fsl,pins = <
++			MX6QDL_PAD_SD4_DAT7__UART2_TX_DATA	0x1b0b1
++			MX6QDL_PAD_SD4_DAT4__UART2_RX_DATA	0x1b0b1
++		>;
++	};
++
++	pinctrl_uart3: uart3grp {
++		fsl,pins = <
++			MX6QDL_PAD_EIM_D24__UART3_TX_DATA	0x1b0b1
++			MX6QDL_PAD_EIM_D25__UART3_RX_DATA	0x1b0b1
++		>;
++	};
++
++	pinctrl_uart5: uart5grp {
++		fsl,pins = <
++			MX6QDL_PAD_KEY_COL1__UART5_TX_DATA	0x1b0b1
++			MX6QDL_PAD_KEY_ROW1__UART5_RX_DATA	0x1b0b1
++		>;
++	};
++
++	pinctrl_usbotg: usbotggrp {
++		fsl,pins = <
++			MX6QDL_PAD_GPIO_1__USB_OTG_ID		0x17059
++			MX6QDL_PAD_EIM_D22__GPIO3_IO22		0x1b0b0
++		>;
++	};
++
++	pinctrl_wdog: wdoggrp {
++		fsl,pins = <
++			MX6QDL_PAD_DISP0_DAT8__WDOG1_B		0x1b0b0
++		>;
++	};
++};
 -- 
-2.18.0
+2.9.2
 
 
 _______________________________________________
