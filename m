@@ -2,60 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FEF111C9F7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 10:55:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71BAF11CA03
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 10:58:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2y7vfsh8HWRY7ePrWd0Mr742kKfxFENS1Dpq20ZW7Hg=; b=SQ7MEee3zNlEfffQ8vyxZgxDV
-	euRGHvfzVu/8B/U4nK0DAoBOwHThT7yPNLSpJ/s0Tv6HW+dW+Hdq57GAExGM6C2xtwZEycRofiJVP
-	HeIKRsLNoja6b29QvYf1yj/N5E9WeUDXllFcolJfe5s278B0Cd/irnazCjkqeMXIGkfBospdILceN
-	xfJAcTyEHDrMJwq6h+iH2UG48cjwWgkDTorQsKCAPwNLumDxDR3qhRdBrIdPk2Pmcv0CI8S4gAC/c
-	Sox0Dhr+DBZW2i4q4lFdugDsnwcNZUyBlOr/Jeb/wNKbGbIlOAkQvGdYwHTHzf098OraZtsGUlSQ5
-	HiqG4h3oA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Qtz1UkfP8TEbl1MNuTBIwGbpTsbxBsrCyPjtvFaJKNk=; b=i776+c0iG/K7/yrJCIRchiFtqF
+	rvqmUXmxBW0D4cCh9LkQHulpuwCNovlExdi2yXvdA9kyqmgik35HkONP3HvBrw8nf5z+xwRKwa4mp
+	cygEW+/7Sh4WeePpTP5vi/Jw7ZGiYVMShZasWzQJfAoY9I4UCrsAfE45AwIlm0Vlv+LE6STVrNnjB
+	te4TeVKYalQPhHGmbZdMRw9wyZ3NK4/LPWndfD2eEFTutf5EtsOGddl3DOEYIc6TlWtyCXEAdS76w
+	RWEOAOqsWvu8cWLT3kWR1NWscHBb9ETHYi2dkqFr6wrfgyDcld9iphovvwnetw6JrRhxfxZd4TCVY
+	Wke9Yj/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifLCC-0007wF-NR; Thu, 12 Dec 2019 09:55:44 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1ifLEb-0000Ae-RN; Thu, 12 Dec 2019 09:58:13 +0000
+Received: from relay.sw.ru ([185.231.240.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifLC5-0007um-2V
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 09:55:38 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1ifLC0-0007AX-PZ; Thu, 12 Dec 2019 10:55:32 +0100
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] KVM: arm64: Ensure 'params' is initialised when looking
- up sys register
-X-PHP-Originating-Script: 0:main.inc
+ id 1ifLEJ-0008Qy-4S
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 09:57:57 +0000
+Received: from dhcp-172-16-25-5.sw.ru ([172.16.25.5])
+ by relay.sw.ru with esmtp (Exim 4.92.3)
+ (envelope-from <aryabinin@virtuozzo.com>)
+ id 1ifLDd-00051z-5a; Thu, 12 Dec 2019 12:57:13 +0300
+Subject: Re: [PATCH v2 4/4] powerpc: Book3S 64-bit "heavyweight" KASAN support
+To: Daniel Axtens <dja@axtens.net>, Balbir Singh <bsingharora@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ linuxppc-dev@lists.ozlabs.org, linux-s390@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, linux-arch@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, kasan-dev@googlegroups.com,
+ christophe.leroy@c-s.fr, aneesh.kumar@linux.ibm.com,
+ Dmitry Vyukov <dvyukov@google.com>
+References: <20191210044714.27265-1-dja@axtens.net>
+ <20191210044714.27265-5-dja@axtens.net>
+ <71751e27-e9c5-f685-7a13-ca2e007214bc@gmail.com>
+ <875zincu8a.fsf@dja-thinkpad.axtens.net>
+ <2e0f21e6-7552-815b-1bf3-b54b0fc5caa9@gmail.com>
+ <87wob3aqis.fsf@dja-thinkpad.axtens.net>
+From: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Message-ID: <023d59f1-c007-e153-9893-3231a4caf7d1@virtuozzo.com>
+Date: Thu, 12 Dec 2019 12:56:56 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-Date: Thu, 12 Dec 2019 09:55:32 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <20191212094049.12437-1-will@kernel.org>
-References: <20191212094049.12437-1-will@kernel.org>
-Message-ID: <a4b931f697b2fc7ec6ef5356b84a3939@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: will@kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, james.morse@arm.com,
- suzuki.poulose@arm.com, kernel-team@android.com, stable@vger.kernel.org,
- vijaya.kumar@cavium.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <87wob3aqis.fsf@dja-thinkpad.axtens.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_015537_262197_D1962F42 
-X-CRM114-Status: GOOD (  15.56  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191212_015755_188245_C242CBF4 
+X-CRM114-Status: GOOD (  19.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,56 +71,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: suzuki.poulose@arm.com, stable@vger.kernel.org,
- Vijaya Kumar K <vijaya.kumar@cavium.com>, james.morse@arm.com,
- kernel-team@android.com, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAxOS0xMi0xMiAwOTo0MCwgV2lsbCBEZWFjb24gd3JvdGU6Cj4gQ29tbWl0IDRiOTI3Yjk0
-ZDVkZiAoIktWTTogYXJtL2FybTY0OiB2Z2ljOiBJbnRyb2R1Y2UgCj4gZmluZF9yZWdfYnlfaWQo
-KSIpCj4gaW50cm9kdWNlZCAnZmluZF9yZWdfYnlfaWQoKScsIHdoaWNoIGxvb2tzIHVwIGEgc3lz
-dGVtIHJlZ2lzdGVyIG9ubHkgCj4gaWYKPiB0aGUgJ2lkJyBpbmRleCBwYXJhbWV0ZXIgaWRlbnRp
-ZmllcyBhIHZhbGlkIHN5c3RlbSByZWdpc3Rlci4gQXMgcGFydCAKPiBvZgo+IHRoZSBwYXRjaCwg
-ZXhpc3RpbmcgY2FsbGVycyBvZiAnZmluZF9yZWcoKScgd2VyZSBwb3J0ZWQgb3ZlciB0byB0aGUg
-Cj4gbmV3Cj4gaW50ZXJmYWNlLCBidXQgdGhpcyBicmVha3MgJ2luZGV4X3RvX3N5c19yZWdfZGVz
-YygpJyBpbiB0aGUgY2FzZSB0aGF0IAo+IHRoZQo+IGluaXRpYWwgbG9va3VwIGluIHRoZSB2Q1BV
-IHRhcmdldCB0YWJsZSBmYWlscyBiZWNhdXNlIHdlIHdpbGwgdGhlbiAKPiBjYWxsCj4gaW50byAn
-ZmluZF9yZWcoKScgZm9yIHRoZSBzeXN0ZW0gcmVnaXN0ZXIgdGFibGUgd2l0aCBhbiB1bmluaXRp
-YWxpc2VkCj4gJ3BhcmFtJyBhcyB0aGUga2V5IHRvIHRoZSBsb29rdXAuCj4KPiBHQ0MgMTAgaXMg
-YnJpZ2h0IGVub3VnaCB0byBzcG90IHRoaXMgKGFtb25nc3QgYSB0b25uZSBvZiBmYWxzZSAKPiBw
-b3NpdGl2ZXMsCj4gYnV0IGhleSEpOgo+Cj4gICB8IGFyY2gvYXJtNjQva3ZtL3N5c19yZWdzLmM6
-IEluIGZ1bmN0aW9uIAo+IOKAmGluZGV4X3RvX3N5c19yZWdfZGVzYy5wYXJ0LjAuaXNyYeKAmToK
-PiAgIHwgYXJjaC9hcm02NC9rdm0vc3lzX3JlZ3MuYzo5ODM6MzM6IHdhcm5pbmc6IOKAmHBhcmFt
-cy5PcDLigJkgbWF5IGJlIAo+IHVzZWQgdW5pbml0aWFsaXplZCBpbiB0aGlzIGZ1bmN0aW9uIFst
-V21heWJlLXVuaW5pdGlhbGl6ZWRdCj4gICB8ICAgOTgzIHwgICAodTMyKSh4KS0+Q1JuLCAodTMy
-KSh4KS0+Q1JtLCAodTMyKSh4KS0+T3AyKTsKPiAgIHwgWy4uLl0KPgo+IFJldmVydCB0aGUgaHVu
-ayBvZiA0YjkyN2I5NGQ1ZGYgd2hpY2ggYnJlYWtzIAo+ICdpbmRleF90b19zeXNfcmVnX2Rlc2Mo
-KScgc28KPiB0aGF0IHRoZSBvbGQgYmVoYXZpb3VyIG9mIGNoZWNraW5nIHRoZSBpbmRleCB1cGZy
-b250IGlzIHJlc3RvcmVkLgoKSHVodWguLi4gV2VsbCBzcG90dGVkIEdDQyAxMCEgQW5kIHRoYW5r
-cyBXaWxsIGZvciB0aGUgZml4LgoKPgo+IENjOiA8c3RhYmxlQHZnZXIua2VybmVsLm9yZz4KPiBD
-YzogTWFyYyBaeW5naWVyIDxtYXpAa2VybmVsLm9yZz4KPiBDYzogVmlqYXlhIEt1bWFyIEsgPFZp
-amF5YS5LdW1hckBjYXZpdW0uY29tPgo+IEZpeGVzOiA0YjkyN2I5NGQ1ZGYgKCJLVk06IGFybS9h
-cm02NDogdmdpYzogSW50cm9kdWNlIAo+IGZpbmRfcmVnX2J5X2lkKCkiKQo+IFNpZ25lZC1vZmYt
-Ynk6IFdpbGwgRGVhY29uIDx3aWxsQGtlcm5lbC5vcmc+Cj4gLS0tCj4gIGFyY2gvYXJtNjQva3Zt
-L3N5c19yZWdzLmMgfCA1ICsrKystCj4gIDEgZmlsZSBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKyks
-IDEgZGVsZXRpb24oLSkKPgo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2t2bS9zeXNfcmVncy5j
-IGIvYXJjaC9hcm02NC9rdm0vc3lzX3JlZ3MuYwo+IGluZGV4IDQ2ODIyYWZjNTdlMC4uMDFhNTE1
-ZTAxNzFlIDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQva3ZtL3N5c19yZWdzLmMKPiArKysgYi9h
-cmNoL2FybTY0L2t2bS9zeXNfcmVncy5jCj4gQEAgLTIzNjAsOCArMjM2MCwxMSBAQCBzdGF0aWMg
-Y29uc3Qgc3RydWN0IHN5c19yZWdfZGVzYwo+ICppbmRleF90b19zeXNfcmVnX2Rlc2Moc3RydWN0
-IGt2bV92Y3B1ICp2Y3B1LAo+ICAJaWYgKChpZCAmIEtWTV9SRUdfQVJNX0NPUFJPQ19NQVNLKSAh
-PSBLVk1fUkVHX0FSTTY0X1NZU1JFRykKPiAgCQlyZXR1cm4gTlVMTDsKPgo+ICsJaWYgKCFpbmRl
-eF90b19wYXJhbXMoaWQsICZwYXJhbXMpKQo+ICsJCXJldHVybiBOVUxMOwo+ICsKPiAgCXRhYmxl
-ID0gZ2V0X3RhcmdldF90YWJsZSh2Y3B1LT5hcmNoLnRhcmdldCwgdHJ1ZSwgJm51bSk7Cj4gLQly
-ID0gZmluZF9yZWdfYnlfaWQoaWQsICZwYXJhbXMsIHRhYmxlLCBudW0pOwo+ICsJciA9IGZpbmRf
-cmVnKCZwYXJhbXMsIHRhYmxlLCBudW0pOwo+ICAJaWYgKCFyKQo+ICAJCXIgPSBmaW5kX3JlZygm
-cGFyYW1zLCBzeXNfcmVnX2Rlc2NzLCBBUlJBWV9TSVpFKHN5c19yZWdfZGVzY3MpKTsKCkFwcGxp
-ZWQsIHRoYW5rcy4KCiAgICAgICAgIE0uCi0tIApKYXp6IGlzIG5vdCBkZWFkLiBJdCBqdXN0IHNt
-ZWxscyBmdW5ueS4uLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtYXJtLWtlcm5lbAo=
+On 12/11/19 5:24 PM, Daniel Axtens wrote:
+> Hi Balbir,
+> 
+>>>>> +Discontiguous memory can occur when you have a machine with memory spread
+>>>>> +across multiple nodes. For example, on a Talos II with 64GB of RAM:
+>>>>> +
+>>>>> + - 32GB runs from 0x0 to 0x0000_0008_0000_0000,
+>>>>> + - then there's a gap,
+>>>>> + - then the final 32GB runs from 0x0000_2000_0000_0000 to 0x0000_2008_0000_0000
+>>>>> +
+>>>>> +This can create _significant_ issues:
+>>>>> +
+>>>>> + - If we try to treat the machine as having 64GB of _contiguous_ RAM, we would
+>>>>> +   assume that ran from 0x0 to 0x0000_0010_0000_0000. We'd then reserve the
+>>>>> +   last 1/8th - 0x0000_000e_0000_0000 to 0x0000_0010_0000_0000 as the shadow
+>>>>> +   region. But when we try to access any of that, we'll try to access pages
+>>>>> +   that are not physically present.
+>>>>> +
+>>>>
+>>>> If we reserved memory for KASAN from each node (discontig region), we might survive
+>>>> this no? May be we need NUMA aware KASAN? That might be a generic change, just thinking
+>>>> out loud.
+>>>
+>>> The challenge is that - AIUI - in inline instrumentation, the compiler
+>>> doesn't generate calls to things like __asan_loadN and
+>>> __asan_storeN. Instead it uses -fasan-shadow-offset to compute the
+>>> checks, and only calls the __asan_report* family of functions if it
+>>> detects an issue. This also matches what I can observe with objdump
+>>> across outline and inline instrumentation settings.
+>>>
+>>> This means that for this sort of thing to work we would need to either
+>>> drop back to out-of-line calls, or teach the compiler how to use a
+>>> nonlinear, NUMA aware mem-to-shadow mapping.
+>>
+>> Yes, out of line is expensive, but seems to work well for all use cases.
+> 
+> I'm not sure this is true. Looking at scripts/Makefile.kasan, allocas,
+> stacks and globals will only be instrumented if you can provide
+> KASAN_SHADOW_OFFSET. In the case you're proposing, we can't provide a
+> static offset. I _think_ this is a compiler limitation, where some of
+> those instrumentations only work/make sense with a static offset, but
+> perhaps that's not right? Dmitry and Andrey, can you shed some light on
+> this?
+> 
+
+There is no code in the kernel is poisoning/unpoisoning
+redzones/variables on stack. It's because it's always done by the compiler, it inserts
+some code in prologue/epilogue of every function.
+So compiler needs to know the shadow offset which will be used to poison/unpoison
+stack frames.
+
+There is no such kind of limitation on globals instrumentation. The only reason globals
+instrumentation depends on -fasan-shadow-offset is because there was some bug related to
+globals in old gcc version which didn't support -fasan-shadow-offset.
+
+
+If you want stack instrumentation with not standard mem-to-shadow mapping, the options are:
+1. Patch compiler to make it possible the poisoning/unpoisonig of stack frames via function calls.
+2. Use out-line instrumentation and do whatever mem-to-shadow mapping you want, but keep all kernel
+stacks in some special place for which standard mem-to-shadow mapping (addr >>3 +offset)
+works.
+
+
+> Also, as it currently stands, the speed difference between inline and
+> outline is approximately 2x, and given that we'd like to run this
+> full-time in syzkaller I think there is value in trading off speed for
+> some limitations.
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
