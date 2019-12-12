@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62CDE11CEF6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:57:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3130911CEF7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:57:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tmC3Cwn+Hw994HvI3LlUPgD41aWCowB6pNnCNKF9CTw=; b=lzUp71vMGlSg+V
-	vn+rTjzZcMmqYx32F4Z9SbeLLfBgj6HBSwOWcvGYatK8InDx8DDYYOcZlsHAgSass1fCCjw6/BDTV
-	kp0rJW02QzzlKJ4pAP2WVzCDrhZai98jrnmdRmmpXDskqaX7AO1OVAYuP550eG71IwuxnPuYsiolH
-	4ZCS71Ft1Gj+daQCdjHfKuKjr4PvRajct0UXrVepQNq+EDSWpV24IVU7XsqQFY8DmPvXRP7egR9Kj
-	gjKb6cQ2qe19UHUNwvb2XI9YAevorme0kXwvJoCgq5gVhXofmMEGOuWyt7f7rIRt2XDoillW5zSWg
-	HCpUU7A+CIyuJHHLOjcg==;
+	List-Owner; bh=1mbdsIFWzpsSYODuBp9YG25QSrexyfGYC80f3KUeT+4=; b=VBlihB7XZLVdvs
+	1GA0mRU0ZvFfI6zq33mwma32g3XkwEyn7wbMcE0ZPKJ8zHosybRVa9DfBZf9QYzWowBXIoZXRHCz1
+	V+0u55LUkJxUIDf4JNhI4RLoirn1tk3T0ViZMd82CCZqNsZV3QoLGjCzCRfz3p2czrC5ndzDW28kc
+	GVY2MKPHCFm/hObWI6pPdrM+T3wyF38hK94fS/8vAfSGNx3V8xUK3fDnBPHSRP4wQnFzemo3HB5wF
+	pn6di27we/wM4gLe0RNs/Lqf8nl1PkBkroottmZCD7K4FQWLStQYwlRIehGvbt0b4ROawB2WVVV+Q
+	vElf+tQxRMCTf9axCrgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifOxc-0005FC-Rn; Thu, 12 Dec 2019 13:56:56 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1ifOxo-0005Rl-FP; Thu, 12 Dec 2019 13:57:08 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifOwg-0004QW-LY; Thu, 12 Dec 2019 13:56:00 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBCDtuq9122218;
- Thu, 12 Dec 2019 07:55:56 -0600
+ id 1ifOwk-0004Uf-Rd; Thu, 12 Dec 2019 13:56:04 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBCDu0cx130447;
+ Thu, 12 Dec 2019 07:56:00 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576158956;
- bh=IBaNIEvB7cLy+PukAGb/PB35woOhPXfCWf9nooovf4U=;
+ s=ti-com-17Q1; t=1576158960;
+ bh=Nf2gNb/jS/G6cUNn8sWiq6/8AS6dlAnuvnEznHwOdRM=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=hvJhHLwWXHgDXi8I2PKoplyV4NlRhLSYaKZSD5ecFI12PY000rSxd80+xnDLjX3/j
- R76TQfyc7cdegWYRwFYOAWUCOnEnWnBP5KHIgtJijGpSU54xAzMIbJ2KUNyDSJnZ5u
- 2WCe2sL51i1kmpO1+tkP9wImu9aiKsxfFq4A8Y38=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBCDtu6s044382
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 12 Dec 2019 07:55:56 -0600
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ b=k6uYh5bU2/zzgvk7pRIgiuqGcu8mz94qs7oiyHD8Ih1TVnUuBzZR0/ZYEYBOLJvD3
+ XJeSkDnN29o+7pHzUZrULOcrPZZzPRix0f7nPfoUaU7u0oBzHz/PcxY6r1NFHfrijW
+ JfD2AOjbCNWzyhkgJ82tPVSPrQBpJD3NkuEks8nE=
+Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBCDu071116442;
+ Thu, 12 Dec 2019 07:56:00 -0600
+Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 12
- Dec 2019 07:55:55 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 07:55:59 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 12 Dec 2019 07:55:55 -0600
+ Frontend Transport; Thu, 12 Dec 2019 07:55:59 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBCDtdqT048444;
- Thu, 12 Dec 2019 07:55:52 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBCDtdqU048444;
+ Thu, 12 Dec 2019 07:55:56 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <broonie@kernel.org>, <nsaenzjulienne@suse.de>, <f.fainelli@gmail.com>,
  <rjui@broadcom.com>, <sbranden@broadcom.com>, <shawnguo@kernel.org>,
  <s.hauer@pengutronix.de>, <baohua@kernel.org>,
  <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-Subject: [PATCH 3/9] spi: bcm2835: Use dma_request_chan() instead
+Subject: [PATCH 4/9] spi: img-spfi: Use dma_request_chan() instead
  dma_request_slave_channel()
-Date: Thu, 12 Dec 2019 15:55:44 +0200
-Message-ID: <20191212135550.4634-4-peter.ujfalusi@ti.com>
+Date: Thu, 12 Dec 2019 15:55:45 +0200
+Message-ID: <20191212135550.4634-5-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191212135550.4634-1-peter.ujfalusi@ti.com>
 References: <20191212135550.4634-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_055558_807396_2004E931 
-X-CRM114-Status: GOOD (  14.99  )
+X-CRM114-CacheID: sfid-20191212_055603_055993_12CB5946 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -108,90 +107,38 @@ probing against DMA.
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- drivers/spi/spi-bcm2835.c | 34 ++++++++++++++++++++++++----------
- 1 file changed, 24 insertions(+), 10 deletions(-)
+ drivers/spi/spi-img-spfi.c | 18 ++++++++++++++++--
+ 1 file changed, 16 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
-index 662d55e9f21d..69df79914504 100644
---- a/drivers/spi/spi-bcm2835.c
-+++ b/drivers/spi/spi-bcm2835.c
-@@ -888,8 +888,8 @@ static void bcm2835_dma_release(struct spi_controller *ctlr,
- 	}
- }
+diff --git a/drivers/spi/spi-img-spfi.c b/drivers/spi/spi-img-spfi.c
+index f4a8f470aecc..8543f5ed1099 100644
+--- a/drivers/spi/spi-img-spfi.c
++++ b/drivers/spi/spi-img-spfi.c
+@@ -666,8 +666,22 @@ static int img_spfi_probe(struct platform_device *pdev)
+ 	master->unprepare_message = img_spfi_unprepare;
+ 	master->handle_err = img_spfi_handle_err;
  
--static void bcm2835_dma_init(struct spi_controller *ctlr, struct device *dev,
--			     struct bcm2835_spi *bs)
-+static int bcm2835_dma_init(struct spi_controller *ctlr, struct device *dev,
-+			    struct bcm2835_spi *bs)
- {
- 	struct dma_slave_config slave_config;
- 	const __be32 *addr;
-@@ -900,19 +900,24 @@ static void bcm2835_dma_init(struct spi_controller *ctlr, struct device *dev,
- 	addr = of_get_address(ctlr->dev.of_node, 0, NULL, NULL);
- 	if (!addr) {
- 		dev_err(dev, "could not get DMA-register address - not using dma mode\n");
--		goto err;
-+		/* Fall back to interrupt mode */
-+		return 0;
- 	}
- 	dma_reg_base = be32_to_cpup(addr);
- 
- 	/* get tx/rx dma */
--	ctlr->dma_tx = dma_request_slave_channel(dev, "tx");
--	if (!ctlr->dma_tx) {
-+	ctlr->dma_tx = dma_request_chan(dev, "tx");
-+	if (IS_ERR(ctlr->dma_tx)) {
- 		dev_err(dev, "no tx-dma configuration found - not using dma mode\n");
-+		ret = PTR_ERR(ctlr->dma_tx);
-+		ctlr->dma_tx = NULL;
- 		goto err;
- 	}
--	ctlr->dma_rx = dma_request_slave_channel(dev, "rx");
--	if (!ctlr->dma_rx) {
-+	ctlr->dma_rx = dma_request_chan(dev, "rx");
-+	if (IS_ERR(ctlr->dma_rx)) {
- 		dev_err(dev, "no rx-dma configuration found - not using dma mode\n");
-+		ret = PTR_ERR(ctlr->dma_rx);
-+		ctlr->dma_rx = NULL;
- 		goto err_release;
- 	}
- 
-@@ -997,7 +1002,7 @@ static void bcm2835_dma_init(struct spi_controller *ctlr, struct device *dev,
- 	/* all went well, so set can_dma */
- 	ctlr->can_dma = bcm2835_spi_can_dma;
- 
--	return;
-+	return 0;
- 
- err_config:
- 	dev_err(dev, "issue configuring dma: %d - not using DMA mode\n",
-@@ -1005,7 +1010,14 @@ static void bcm2835_dma_init(struct spi_controller *ctlr, struct device *dev,
- err_release:
- 	bcm2835_dma_release(ctlr, bs);
- err:
--	return;
-+	/*
-+	 * Only report error for deferred probing, otherwise fall back to
-+	 * interrupt mode
-+	 */
-+	if (ret != -EPROBE_DEFER)
-+		ret = 0;
+-	spfi->tx_ch = dma_request_slave_channel(spfi->dev, "tx");
+-	spfi->rx_ch = dma_request_slave_channel(spfi->dev, "rx");
++	spfi->tx_ch = dma_request_chan(spfi->dev, "tx");
++	if (IS_ERR(spfi->tx_ch)) {
++		ret = PTR_ERR(spfi->tx_ch);
++		spfi->tx_ch = NULL;
++		if (ret == -EPROBE_DEFER)
++			goto disable_pm;
++	}
 +
-+	return ret;
- }
- 
- static int bcm2835_spi_transfer_one_poll(struct spi_controller *ctlr,
-@@ -1317,7 +1329,9 @@ static int bcm2835_spi_probe(struct platform_device *pdev)
- 
- 	clk_prepare_enable(bs->clk);
- 
--	bcm2835_dma_init(ctlr, &pdev->dev, bs);
-+	err = bcm2835_dma_init(ctlr, &pdev->dev, bs);
-+	if (err)
-+		goto out_clk_disable;
- 
- 	/* initialise the hardware with the default polarities */
- 	bcm2835_wr(bs, BCM2835_SPI_CS,
++	spfi->rx_ch = dma_request_chan(spfi->dev, "rx");
++	if (IS_ERR(spfi->rx_ch)) {
++		ret = PTR_ERR(spfi->rx_ch);
++		spfi->rx_ch = NULL;
++		if (ret == -EPROBE_DEFER)
++			goto disable_pm;
++	}
++
+ 	if (!spfi->tx_ch || !spfi->rx_ch) {
+ 		if (spfi->tx_ch)
+ 			dma_release_channel(spfi->tx_ch);
 -- 
 Peter
 
