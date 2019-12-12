@@ -2,59 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D75911CEBB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:49:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D30DA11CED6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:54:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=E0t0lklKjxvwzZMAYJReloyjCvhdh71+9InbG9OAnsk=; b=LmvgiyeY7euTzAv2ULukLKddW
-	g94YUHDDap94K0JxCKMQgheHs77HNYJ14+Q22iC4f0YgXT/RPFvCLVefRjZWmt/22JqkYKjdQS5i8
-	QgFj0WVsdO22bBBcOPLwHckGHbjvz6eSUPq85pie0vbWq6JXn25NT84U+kuEr0cV5CBodt8Ur7L+F
-	yLQm3+xYd//YeF22rkzBpVA0iI6STW4jjxFiqr624UqRQTZZxz5g+4TOX9WHyqenzB6IJVZUS8L5v
-	TI/FDs4Ur33RxI92La9a2DvVrxjaCJW1ydPdfb7qkxLCK5qifJDBjI95SotZClOqLgzg37v2EqYiw
-	52I+HAlZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mZnXRllAsBCPH3s9Ix7QSOiIPjLd2Wk+I2Z/C76I8MI=; b=fOEQAvRXEYGEP1
+	8F8w1wBDlt1GjtfiifXwzdumLFLnpUIpA2PGpchZIOw919Vru4KTxMYc6d++Nv78c4lIcRAaWxPA5
+	5akanIfZrPpWgsxsRHwq9hAucmNSYRxFnj6KHhk1WqJiDD/Jh1j1VP3fsuXtlvpwzqpsBVsAF7Gnd
+	krOCT4kKEkwIts/bHXkFIepnihAaCWzcnYU/slrFeTewDMI5jymOw0l7njHIT1NDF+si/RlWhHEp6
+	JDuETxxVqcy/9GVIzLNkVDsSesQ3r+A/B1brsc07z/QkLV5UW+AO9ym94ohHcSmjmuav6B2YYKzd8
+	jM8Jez2n/s9IT6qv0v3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifOpp-0000m5-1e; Thu, 12 Dec 2019 13:48:53 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1ifOuj-0002lv-CH; Thu, 12 Dec 2019 13:53:57 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifOpg-0000kR-3b; Thu, 12 Dec 2019 13:48:45 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1ifOpd-0002Ct-8N; Thu, 12 Dec 2019 14:48:41 +0100
-To: =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
-Subject: Re: [PATCH v5 3/9] irqchip: rtd1195-mux: Implement
- =?UTF-8?Q?irq=5Fget=5Firqchip=5Fstate?=
-X-PHP-Originating-Script: 0:main.inc
+ id 1ifOuV-0002kY-Jp
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 13:53:45 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 4558D204CB;
+ Thu, 12 Dec 2019 14:53:40 +0100 (CET)
+Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 2CF8E200E6;
+ Thu, 12 Dec 2019 14:53:40 +0100 (CET)
+Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
+ API
+To: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>
+References: <3d8a58bf-0814-1ec1-038a-10a20b9646ad@free.fr>
+ <20191128185630.GK82109@yoga> <20191202014237.GR248138@dtor-ws>
+ <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
+ <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
+ <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
+ <20191211222829.GV50317@dtor-ws>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <70528f77-ca10-01cd-153b-23486ce87d45@free.fr>
+Date: Thu, 12 Dec 2019 14:53:40 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-Date: Thu, 12 Dec 2019 13:48:41 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <20191121050208.11324-4-afaerber@suse.de>
-References: <20191121050208.11324-1-afaerber@suse.de>
- <20191121050208.11324-4-afaerber@suse.de>
-Message-ID: <f756e3ccde3b928ccc75f41f2012895a@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: afaerber@suse.de, linux-realtek-soc@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- tglx@linutronix.de, jason@lakedaemon.net
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20191211222829.GV50317@dtor-ws>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Thu Dec 12 14:53:40 2019 +0100 (CET)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_054844_293003_51958C96 
-X-CRM114-Status: GOOD (  14.03  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191212_055343_949003_F3B8C74E 
+X-CRM114-Status: GOOD (  15.06  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marc.w.gonzalez[at]free.fr)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,62 +74,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jason Cooper <jason@lakedaemon.net>, Thomas Gleixner <tglx@linutronix.de>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-realtek-soc@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ linux-clk <linux-clk@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
+ Guenter Roeck <linux@roeck-us.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAxOS0xMS0yMSAwNTowMiwgQW5kcmVhcyBGw6RyYmVyIHdyb3RlOgo+IEltcGxlbWVudCB0
-aGUgLmlycV9nZXRfaXJxY2hpcF9zdGF0ZSBjYWxsYmFjayB0byByZXRyaWV2ZSBwZW5kaW5nLAo+
-IGFjdGl2ZSBhbmQgbWFza2VkIGludGVycnVwdCBzdGF0dXMuCj4KPiBTaWduZWQtb2ZmLWJ5OiBB
-bmRyZWFzIEbDpHJiZXIgPGFmYWVyYmVyQHN1c2UuZGU+Cj4gLS0tCj4gIHY1OiBOZXcKPgo+ICBk
-cml2ZXJzL2lycWNoaXAvaXJxLXJ0ZDExOTUtbXV4LmMgfCAzNiAKPiArKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKysrKysrKysKPiAgMSBmaWxlIGNoYW5nZWQsIDM2IGluc2VydGlvbnMoKykK
-Pgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2lycWNoaXAvaXJxLXJ0ZDExOTUtbXV4LmMKPiBiL2Ry
-aXZlcnMvaXJxY2hpcC9pcnEtcnRkMTE5NS1tdXguYwo+IGluZGV4IDBlODY5NzNhYWZjYS4uMmYx
-YmNmZDlkNWQ2IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvaXJxY2hpcC9pcnEtcnRkMTE5NS1tdXgu
-Ywo+ICsrKyBiL2RyaXZlcnMvaXJxY2hpcC9pcnEtcnRkMTE5NS1tdXguYwo+IEBAIC03LDYgKzcs
-NyBAQAo+Cj4gICNpbmNsdWRlIDxsaW51eC9iaXRvcHMuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2lv
-Lmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9pbnRlcnJ1cHQuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2ly
-cWNoaXAuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2lycWNoaXAvY2hhaW5lZF9pcnEuaD4KPiAgI2lu
-Y2x1ZGUgPGxpbnV4L2lycWRvbWFpbi5oPgo+IEBAIC05NiwxMCArOTcsNDUgQEAgc3RhdGljIHZv
-aWQgcnRkMTE5NV9tdXhfdW5tYXNrX2lycShzdHJ1Y3QgCj4gaXJxX2RhdGEgKmRhdGEpCj4gIAly
-YXdfc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmbXV4LT5sb2NrLCBmbGFncyk7Cj4gIH0KPgo+ICtz
-dGF0aWMgaW50IHJ0ZDExOTVfbXV4X2dldF9pcnFjaGlwX3N0YXRlKHN0cnVjdCBpcnFfZGF0YSAq
-ZGF0YSwKPiArCWVudW0gaXJxY2hpcF9pcnFfc3RhdGUgd2hpY2gsIGJvb2wgKnN0YXRlKQo+ICt7
-Cj4gKwlzdHJ1Y3QgcnRkMTE5NV9pcnFfbXV4X2RhdGEgKm11eCA9IAo+IGlycV9kYXRhX2dldF9p
-cnFfY2hpcF9kYXRhKGRhdGEpOwo+ICsJdTMyIHZhbDsKPiArCj4gKwlzd2l0Y2ggKHdoaWNoKSB7
-Cj4gKwljYXNlIElSUUNISVBfU1RBVEVfUEVORElORzoKPiArCQkvKgo+ICsJCSAqIFVNU0tfSVNS
-IHByb3ZpZGVzIHRoZSB1bm1hc2tlZCBwZW5kaW5nIGludGVycnVwdHMsCj4gKwkJICogZXhjZXB0
-IFVBUlQgYW5kIEkyQy4KPiArCQkgKi8KPiArCQl2YWwgPSByZWFkbF9yZWxheGVkKG11eC0+cmVn
-X3Vtc2tfaXNyKTsKPiArCQkqc3RhdGUgPSAhISh2YWwgJiBCSVQoZGF0YS0+aHdpcnEpKTsKPiAr
-CQlicmVhazsKPiArCWNhc2UgSVJRQ0hJUF9TVEFURV9BQ1RJVkU6Cj4gKwkJLyoKPiArCQkgKiBJ
-U1IgcHJvdmlkZXMgdGhlIG1hc2tlZCBwZW5kaW5nIGludGVycnVwdHMsCj4gKwkJICogaW5jbHVk
-aW5nIFVBUlQgYW5kIEkyQy4KPiArCQkgKi8KPiArCQl2YWwgPSByZWFkbF9yZWxheGVkKG11eC0+
-cmVnX2lzcik7Cj4gKwkJKnN0YXRlID0gISEodmFsICYgQklUKGRhdGEtPmh3aXJxKSk7Cj4gKwkJ
-YnJlYWs7CgpBQ1RJVkUgaGFzIGEgdmVyeSBzcGVjaWZpYyBtZWFuaW5nOiBpdCBpbmRpY2F0ZXMg
-dGhhdCB0aGUgaW50ZXJydXB0IGlzCmJlaW5nIGhhbmRsZWQgcmlnaHQgbm93LiBXaGF0IHRoaXMg
-dGVsbHMgeW91IGlzIHdoZXRoZXIgdGhlIGludGVycnVwdAppcyBwZW5kaW5nIGFuZCB1bm1hc2tl
-ZCwgd2hpY2ggaXMgYW4gZW50aXJlbHkgZGlmZmVyZW50IHRoaW5nLgoKVGhpcyB3aWxsIGxlYWQg
-dG8gaXJxX2Rpc2FibGUoKSBtaXNiZWhhdmluZyAoaXQgd2lsbCBhc3N1bWUgdGhhdAp0aGUgaW50
-ZXJydXB0IGlzIGFjdGl2ZSB3aGlsZSBpdCBpcyBvbmx5IHBlbmRpbmcpLgoKR2l2ZW4gd2hhdCB0
-aGUgSFcgZXhwb3NlcyAob3IgcmF0aGVyLCB3aGF0IHRoaXMgZHJpdmVyIGV4cG9zZXMgb2YgdGhl
-IApIVyksCkkgZG9uJ3QgdGhpbmsgeW91IGNhbiBpbXBsZW1lbnQgdGhpcyBzdGF0ZS4KCj4gKwlj
-YXNlIElSUUNISVBfU1RBVEVfTUFTS0VEOgo+ICsJCXZhbCA9IG11eC0+aW5mby0+aXNyX3RvX2lu
-dF9lbl9tYXNrW2RhdGEtPmh3aXJxXTsKPiArCQkqc3RhdGUgPSAhKG11eC0+c2NwdV9pbnRfZW4g
-JiB2YWwpOwoKU2hvdWxkbid0IHlvdSB0YWtlIHRoZSBjb3JyZXNwb25kaW5nIHNwaW5sb2NrIGdp
-dmVuIHRoYXQgeW91IGNhbgpoYXZlIGEgcGVuZGluZyB1cGRhdGUgaW4gcGFyYWxsZWw/CgogICAg
-ICAgICBNLgoKPiArCQlicmVhazsKPiArCWRlZmF1bHQ6Cj4gKwkJcmV0dXJuIC1FSU5WQUw7Cj4g
-Kwl9Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gIHN0YXRpYyBjb25zdCBzdHJ1Y3QgaXJx
-X2NoaXAgcnRkMTE5NV9tdXhfaXJxX2NoaXAgPSB7Cj4gIAkuaXJxX2FjawkJPSBydGQxMTk1X211
-eF9hY2tfaXJxLAo+ICAJLmlycV9tYXNrCQk9IHJ0ZDExOTVfbXV4X21hc2tfaXJxLAo+ICAJLmly
-cV91bm1hc2sJCT0gcnRkMTE5NV9tdXhfdW5tYXNrX2lycSwKPiArCS5pcnFfZ2V0X2lycWNoaXBf
-c3RhdGUJPSBydGQxMTk1X211eF9nZXRfaXJxY2hpcF9zdGF0ZSwKPiAgfTsKPgo+ICBzdGF0aWMg
-aW50IHJ0ZDExOTVfbXV4X2lycV9kb21haW5fbWFwKHN0cnVjdCBpcnFfZG9tYWluICpkLAoKLS0g
-CkphenogaXMgbm90IGRlYWQuIEl0IGp1c3Qgc21lbGxzIGZ1bm55Li4uCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 11/12/2019 23:28, Dmitry Torokhov wrote:
+
+> On Wed, Dec 11, 2019 at 05:17:28PM +0100, Marc Gonzalez wrote:
+>
+>> What is the rationale for the devm_add_action API?
+> 
+> For one-off and maybe complex unwind actions in drivers that wish to use
+> devm API (as mixing devm and manual release is verboten). Also is often
+> used when some core subsystem does not provide enough devm APIs.
+
+Thanks for the insight, Dmitry. Thanks to Robin too.
+
+This is what I understand so far:
+
+devm_add_action() is nice because it hides/factorizes the complexity
+of the devres API, but it incurs a small storage overhead of one
+pointer per call, which makes it unfit for frequently used actions,
+such as clk_get.
+
+Is that correct?
+
+My question is: why not design the API without the small overhead?
+
+Proof of concept below:
+
+
+diff --git a/drivers/base/devres.c b/drivers/base/devres.c
+index 0bbb328bd17f..76392dd6273b 100644
+--- a/drivers/base/devres.c
++++ b/drivers/base/devres.c
+@@ -685,6 +685,20 @@ int devres_release_group(struct device *dev, void *id)
+ }
+ EXPORT_SYMBOL_GPL(devres_release_group);
+ 
++void *devm_add(struct device *dev, dr_release_t func, void *arg, size_t size)
++{
++	void *data = devres_alloc(func, size, GFP_KERNEL);
++
++	if (data) {
++		memcpy(data, arg, size);
++		devres_add(dev, data);
++	} else
++		func(dev, arg);
++
++	return data;
++}
++EXPORT_SYMBOL_GPL(devm_add);
++
+ /*
+  * Custom devres actions allow inserting a simple function call
+  * into the teadown sequence.
+diff --git a/drivers/clk/clk-devres.c b/drivers/clk/clk-devres.c
+index be160764911b..8db671823126 100644
+--- a/drivers/clk/clk-devres.c
++++ b/drivers/clk/clk-devres.c
+@@ -4,6 +4,11 @@
+ #include <linux/export.h>
+ #include <linux/gfp.h>
+ 
++static void __clk_put(struct device *dev, void *data)
++{
++	clk_put(*(struct clk **)data);
++}
++
+ static void devm_clk_release(struct device *dev, void *res)
+ {
+ 	clk_put(*(struct clk **)res);
+@@ -11,19 +16,11 @@ static void devm_clk_release(struct device *dev, void *res)
+ 
+ struct clk *devm_clk_get(struct device *dev, const char *id)
+ {
+-	struct clk **ptr, *clk;
+-
+-	ptr = devres_alloc(devm_clk_release, sizeof(*ptr), GFP_KERNEL);
+-	if (!ptr)
+-		return ERR_PTR(-ENOMEM);
++	struct clk *clk = clk_get(dev, id);
+ 
+-	clk = clk_get(dev, id);
+-	if (!IS_ERR(clk)) {
+-		*ptr = clk;
+-		devres_add(dev, ptr);
+-	} else {
+-		devres_free(ptr);
+-	}
++	if (!IS_ERR(clk))
++		if (!devm_add(dev, __clk_put, &clk, sizeof(clk)))
++			clk = ERR_PTR(-ENOMEM);
+ 
+ 	return clk;
+ }
+diff --git a/include/linux/device.h b/include/linux/device.h
+index e226030c1df3..5acb61ec39ab 100644
+--- a/include/linux/device.h
++++ b/include/linux/device.h
+@@ -970,6 +970,7 @@ void __iomem *devm_of_iomap(struct device *dev,
+ 			    resource_size_t *size);
+ 
+ /* allows to add/remove a custom action to devres stack */
++void *devm_add(struct device *dev, dr_release_t func, void *arg, size_t size);
+ int devm_add_action(struct device *dev, void (*action)(void *), void *data);
+ void devm_remove_action(struct device *dev, void (*action)(void *), void *data);
+ void devm_release_action(struct device *dev, void (*action)(void *), void *data);
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
