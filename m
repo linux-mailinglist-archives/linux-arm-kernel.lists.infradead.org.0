@@ -2,69 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF0FF11C58D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 06:41:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F26B11C596
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 06:45:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/PVFRYR0+TzGsE8fUvwZCaDSYUUWt7I+aXHJUnf4VAU=; b=ulcHW/vaHmD3RC
-	t6Gz7E2y1v2eOuISQnSapoF7By61nE8sby+0zMcdPZ4WO6DPNGA4iNUULg8vRO7ytcBGN+d1Y+Noa
-	DPHjlbximG1y9cVV6mWlLoZC9BC/qhMn1iw4NAdVosDhpVouXjMZ+ybRU7IO/lkpvOuYysvkR1jqL
-	W2JuZ4e09T1ZLdFTac6D+fxaWcTqtNG8s4/5bbCqIJeWVeyxbCsZ1D1t53wJ2EUvz3zWal8MNAENH
-	NUITKJpljkmu8xWzuZInZ7NOfltxAbcRNU3mMxdnGh+etd2ro/wyzqqMcPdFky1tCT16EsBNgY493
-	qCqIhb5eN2C4iB20TxHg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=shs2xnE0v6bvZBfD+a+S9mhg6bEu7tIPaV8yu5oATPQ=; b=iophkpWZg2P/tL
+	ZTPtoQvQfNJmMpsiZLitUSXJS09DQwFUGeLbq3vcinLxo07/y8aywJIkhElyMByE3ZGRJirWeFssa
+	lJpZxkZ/bl3RQbbNXdYX4MJMs3POBkt6vnz+IvGnMiMH58W8O4L5vxLcikcHYh3kccuWiZ9sc9Vog
+	V1i9NpUldihQcyTM2Zc50oP+nyvnwZ9YvGN75rbN+n1GoBK8jY+gf//wVhikWyHOTWzNC19ZTf/r/
+	7vkmG6P1/FkvP6icEDf03LepYYxKht14yAbnwJ7sW7pIHet0J46l5YW55fawlV+OwztTTFW+W8Ka3
+	HPeSHluiN6PZe1Z3RF1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifHDh-00053K-Ac; Thu, 12 Dec 2019 05:41:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ifHI7-0006pw-VY; Thu, 12 Dec 2019 05:45:35 +0000
+Received: from mail-mw2nam12on2082.outbound.protection.outlook.com
+ ([40.107.244.82] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifHDZ-00052p-Kx
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 05:40:54 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DD5222073D;
- Thu, 12 Dec 2019 05:40:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576129253;
- bh=XKhjZZ9Eq3LmyvLJDZblqLMH57FvHvbebLAz9KXwU2k=;
- h=From:To:Cc:Subject:Date:From;
- b=v4W7GJCoMDjbUoNwzl5rFXo6Rm9FMwzTk1iO/Zp3tV5G2mHEiwaOm+rVPv2lbol/R
- Hnugq+Iv8ilTrctbmt8hp9WkayBXkvi7K0Kx9ANLLsEKrxyw4so75fBMAx+O0JL49I
- qeGr9mdPtLWNTdNNeghUczai3+QdIOhHa/n9giXs=
-Received: by wens.tw (Postfix, from userid 1000)
- id AF8D75FB77; Thu, 12 Dec 2019 13:40:50 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Russell King <linux@armlinux.org.uk>
-Subject: [PATCH v2] ARM: dma-api: fix max_pfn off-by-one error in
- __dma_supported()
-Date: Thu, 12 Dec 2019 13:40:47 +0800
-Message-Id: <20191212054047.26202-1-wens@kernel.org>
-X-Mailer: git-send-email 2.24.0
+ id 1ifHHv-0006oz-58; Thu, 12 Dec 2019 05:45:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ls3BWT2JZiMF1quQjuW2S15TCuOw5zaqfW9UMp5+cvzya7BxjfU74GoDqUL2DJTrnAx+fjLKdAbomdSn5Fx/m72igko0+A/n6ztqQNoegncHpDvr54Bd5WoF6QGRO2HpikosAsGNl8e3jCV0krI3R8vQLtB8fLJLO89Ib3nhXswYhv1dsgFYjiXKAuOfyeNU9A8f/QYo6ppB+wglcOl74xMwbuROdoXVo2FeLPbLXJ4z0S/buRnbAb7e5n5R5Z2nnJ/2xBeipiGCpyhbtd5SrqdZZWlwKn+XQm//eEYGhTzDHN2vpgUB4a1/Pv1dXh02mEebwBDVbjgDcl4yYTKBfg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=V6a0Tis2G2v9de9CINqeKkPu/zvCMbwC7NJdlkWUaG8=;
+ b=eV/aKQy4/0wP1xhcE3sGrnKPyha8bqv+fqEb55YD+2oP7SpNie+Q0h7LIYWrdbKtolJGrdVMS0zqPWfi3GAOt/+hIYVyDliMx1wH+wsw89BX+70M3ZxvbYUgJoYDgiyS/6o3gQCsByqVntW6BQ40neFF25Q2QLZciZy6LDgEJAvZJOpWKaTW+YRSDMaVPa8QwewQknXecSUh0lm6O20Hoa0uQKsfAE6BLFuhJG6VfSLiMmSBY+AU1ixphIvL6TWlJjLv/S/WYEc3lP402kWKi3jkiO2SS0GYgna6V0AiimJ6dbjqTjFs7ckJvUzlIDEm122+PsABBG6UknZFMCOaOQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=V6a0Tis2G2v9de9CINqeKkPu/zvCMbwC7NJdlkWUaG8=;
+ b=mmvLvDM8nAWVILtSfZh238d9XxZzfllSCu8k/lQ5MW7kKE7HUBGytftme1HhcwrJZRf/JCvgXkw4e9v9YUPPflLhCcqef4M11Ns83aYDbpfBMD7sQTsqrLOUU7467sJMicpJI9Y+w5YaYdCM/mtUHieDF1wU6KX4RPEG8VGoCQk=
+Received: from CH2PR02MB7000.namprd02.prod.outlook.com (20.180.9.216) by
+ CH2PR02MB6245.namprd02.prod.outlook.com (52.132.230.147) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2516.14; Thu, 12 Dec 2019 05:45:20 +0000
+Received: from CH2PR02MB7000.namprd02.prod.outlook.com
+ ([fe80::5d66:1c32:4c41:b087]) by CH2PR02MB7000.namprd02.prod.outlook.com
+ ([fe80::5d66:1c32:4c41:b087%3]) with mapi id 15.20.2516.018; Thu, 12 Dec 2019
+ 05:45:20 +0000
+From: Radhey Shyam Pandey <radheys@xilinx.com>
+To: Brendan Higgins <brendanhiggins@google.com>, "jdike@addtoit.com"
+ <jdike@addtoit.com>, "richard@nod.at" <richard@nod.at>,
+ "anton.ivanov@cambridgegreys.com" <anton.ivanov@cambridgegreys.com>, "David
+ S. Miller" <davem@davemloft.net>, Michal Simek <michals@xilinx.com>
+Subject: RE: [PATCH v1 3/7] net: axienet: add unspecified HAS_IOMEM dependency
+Thread-Topic: [PATCH v1 3/7] net: axienet: add unspecified HAS_IOMEM dependency
+Thread-Index: AQHVsFkiqR8nSduRnUG1Mm2Zwj3HCqe1/amA
+Date: Thu, 12 Dec 2019 05:45:20 +0000
+Message-ID: <CH2PR02MB7000A8C27E849A6B81251AFEC7550@CH2PR02MB7000.namprd02.prod.outlook.com>
+References: <20191211192742.95699-1-brendanhiggins@google.com>
+ <20191211192742.95699-4-brendanhiggins@google.com>
+In-Reply-To: <20191211192742.95699-4-brendanhiggins@google.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=radheys@xilinx.com; 
+x-originating-ip: [149.199.50.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 9c65c8d5-7781-406b-2a30-08d77ec6796f
+x-ms-traffictypediagnostic: CH2PR02MB6245:|CH2PR02MB6245:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <CH2PR02MB62457B07B6E59B127FE8C450C7550@CH2PR02MB6245.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4941;
+x-forefront-prvs: 0249EFCB0B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(376002)(346002)(396003)(136003)(39860400002)(13464003)(189003)(199004)(66946007)(76116006)(52536014)(478600001)(5660300002)(33656002)(9686003)(66476007)(26005)(2906002)(6636002)(4326008)(86362001)(186003)(66556008)(8936002)(66446008)(8676002)(316002)(7696005)(6506007)(53546011)(54906003)(71200400001)(81166006)(81156014)(64756008)(110136005)(55016002)(7416002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6245;
+ H:CH2PR02MB7000.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: wbdqpDUm6dDxHM6Yvm8GkKgvuhOVZSxhUtBsfZflN18AxhVoVk7/VXD6EAKeDeS1y2Sw+dm6fuCyRblTV31iVAGsDtIUchHUw1rsd++YE0bZ5oarS/QW6M+reEpGTBcEWXC2x3Q6PuKHP8EUeRBxQGPwJQLeM2aAAeI/qKOVv91Q9JVhTTL3extGojM9HvFQFpgz02uk5sYjXDskSYGKAzaO2t42mc9Fo+dEojE6C9qBSwYnnK9yg46rN3Jieih2vOOzLOR7mM7z8CEAZz7kzuk158QLG2S+vvvJAD5AMBcxgdVW3LmQJ8mlHw2WMGEVb5Pcy7pJf3zIOuU1YU/N/C8Cjfg/UdZC1Q8QziAI/Tp0Nnp+0phMjmQQBP6wrckK+8MlQtTJxKkz+Yfd/beaH4m1cQF12wkEOCcyGNn1rUZXL3bDP/7Wyv1u39XSKKH5muzcjrpgBT8tdO02DIjB0pWaR7fqe0QXXLatNQkselBeyoSodigOO5vaBFQqroR3
 MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9c65c8d5-7781-406b-2a30-08d77ec6796f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Dec 2019 05:45:20.1141 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 3vu+7lUBSOYsSLoPc2QJVeXj42dT7tBNwx8k4EpdsOZX7dK5n+akLfOMwqT+jG4Oi8TkJTpnrmZ5favEIMyRzw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6245
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_214053_712037_2ED75684 
-X-CRM114-Status: GOOD (  17.49  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191211_214523_194260_A8F73FEC 
+X-CRM114-Status: GOOD (  14.81  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.244.82 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,81 +120,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-um@lists.infradead.org" <linux-um@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "davidgow@google.com" <davidgow@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
+> -----Original Message-----
+> From: Brendan Higgins <brendanhiggins@google.com>
+> Sent: Thursday, December 12, 2019 12:58 AM
+> To: jdike@addtoit.com; richard@nod.at;
+> anton.ivanov@cambridgegreys.com; David S. Miller
+> <davem@davemloft.net>; Michal Simek <michals@xilinx.com>; Radhey
+> Shyam Pandey <radheys@xilinx.com>
+> Cc: linux-um@lists.infradead.org; linux-kernel@vger.kernel.org;
+> davidgow@google.com; Brendan Higgins <brendanhiggins@google.com>;
+> netdev@vger.kernel.org; linux-arm-kernel@lists.infradead.org
+> Subject: [PATCH v1 3/7] net: axienet: add unspecified HAS_IOMEM
+> dependency
+> 
+> Currently CONFIG_XILINX_AXI_EMAC=y implicitly depends on
+> CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we
+> get
+> the following build error:
+> 
+> ld: drivers/net/ethernet/xilinx/xilinx_axienet_main.o: in function
+> `axienet_probe':
+> drivers/net/ethernet/xilinx/xilinx_axienet_main.c:1680: undefined reference
+> to `devm_ioremap_resource'
+> ld: drivers/net/ethernet/xilinx/xilinx_axienet_main.c:1779: undefined
+> reference to `devm_ioremap_resource'
+> ld: drivers/net/ethernet/xilinx/xilinx_axienet_main.c:1789: undefined
+> reference to `devm_ioremap_resource'
+> 
+> Fix the build error by adding the unspecified dependency.
+> 
+> Reported-by: Brendan Higgins <brendanhiggins@google.com>
+> Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+Reviewed-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
+Thanks!
 
-max_pfn, as set in arch/arm/mm/init.c:
-
-    static void __init find_limits(unsigned long *min,
-				   unsigned long *max_low,
-				   unsigned long *max_high)
-    {
-	    *max_low = PFN_DOWN(memblock_get_current_limit());
-	    *min = PFN_UP(memblock_start_of_DRAM());
-	    *max_high = PFN_DOWN(memblock_end_of_DRAM());
-    }
-
-with memblock_end_of_DRAM() pointing to the next byte after DRAM. As
-such, max_pfn points to the PFN after the end of DRAM.
-
-Thus when using max_pfn to check DMA masks, we should subtract one
-when checking DMA ranges against it.
-
-Commit 8bf1268f48ad ("ARM: dma-api: fix off-by-one error in
-__dma_supported()") fixed the same issue, but missed this spot.
-
-This issue was found while working on the sun4i-csi v4l2 driver on the
-Allwinner R40 SoC. On Allwinner SoCs, DRAM is offset at 0x40000000,
-and we are starting to use of_dma_configure() with the "dma-ranges"
-property in the device tree to have the DMA API handle the offset.
-
-In this particular instance, dma-ranges was set to the same range as
-the actual available (2 GiB) DRAM. The following error appeared when
-the driver attempted to allocate a buffer:
-
-    sun4i-csi 1c09000.csi: Coherent DMA mask 0x7fffffff (pfn 0x40000-0xc0000)
-    covers a smaller range of system memory than the DMA zone pfn 0x0-0xc0001
-    sun4i-csi 1c09000.csi: dma_alloc_coherent of size 307200 failed
-
-Fixing the off-by-one error makes things work.
-
-Fixes: 11a5aa32562e ("ARM: dma-mapping: check DMA mask against available memory")
-Fixes: 9f28cde0bc64 ("ARM: another fix for the DMA mapping checks")
-Fixes: ab746573c405 ("ARM: dma-mapping: allow larger DMA mask than supported")
-Cc: <stable@vger.kernel.org>
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
-
-Changes since v1:
-
-  - correct max_pfn offset in the correct place.
----
- arch/arm/mm/dma-mapping.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
-index e822af0d9219..9414d72f664b 100644
---- a/arch/arm/mm/dma-mapping.c
-+++ b/arch/arm/mm/dma-mapping.c
-@@ -221,7 +221,7 @@ EXPORT_SYMBOL(arm_coherent_dma_ops);
- 
- static int __dma_supported(struct device *dev, u64 mask, bool warn)
- {
--	unsigned long max_dma_pfn = min(max_pfn, arm_dma_pfn_limit);
-+	unsigned long max_dma_pfn = min(max_pfn - 1, arm_dma_pfn_limit);
- 
- 	/*
- 	 * Translate the device's DMA mask to a PFN limit.  This
--- 
-2.24.0
-
+> ---
+>  drivers/net/ethernet/xilinx/Kconfig | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/net/ethernet/xilinx/Kconfig
+> b/drivers/net/ethernet/xilinx/Kconfig
+> index 6304ebd8b5c69..b1a285e693756 100644
+> --- a/drivers/net/ethernet/xilinx/Kconfig
+> +++ b/drivers/net/ethernet/xilinx/Kconfig
+> @@ -25,6 +25,7 @@ config XILINX_EMACLITE
+> 
+>  config XILINX_AXI_EMAC
+>  	tristate "Xilinx 10/100/1000 AXI Ethernet support"
+> +	depends on HAS_IOMEM
+>  	select PHYLINK
+>  	---help---
+>  	  This driver supports the 10/100/1000 Ethernet from Xilinx for the
+> --
+> 2.24.0.525.g8f36a354ae-goog
 
 _______________________________________________
 linux-arm-kernel mailing list
