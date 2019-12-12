@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5842E11CBD5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 12:07:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F10411CBDD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 12:08:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p+XsNyccOkEVG0QPxqBLu09eCXWF2ucmJnVnA3d9MgI=; b=QhpJqKUBZo0v8V
-	CJhrzt1kE7gS5i2r45DbW1ZJsmb4Z0d60mS3DG5r3LVsG6lTNwGQRZV0cYramTWetQcQGI8fzyI5Q
-	wCt5h1PK8TsdY3WmdFsiYKa6BxmXfxI/itlsDLMdkfHkhzjWX/gdnc6M9BhcV/4YOIzjKi5J67QCU
-	18mtDSBW7nuEZ/xxozImLX/m3PqQenS304CjpHAfBpgugc56rf5YuVgeqE6e+1FgB2+3FQBEZvlSt
-	zUBJiWU1UpRoQI1MYnyxHk4cA/sjLZW/ZgHeSAyRaFOZy2ZFOVL8Ie7r1aUjCxCfAv1+A2BUsXPTa
-	C6pfnqzlzupe1PcqQr2w==;
+	List-Owner; bh=7c7fiV0zhRU01MjBeQm5NOqzHp+idum6jvgCV4g6mK8=; b=d+yuAEEfOjtEG1
+	q6klwMgVP6QZULIW0Yxnx6vmEiHo4zQL5cIWdKzZTf8X7jT0jHJ428IWFCNdX0Lnmp8O2ZzX2AGPc
+	8GfoncBMlq02pz4N/z56AratTetBS8DAjvVytUhogDkICeF/qYa8B4TqcODkECwMeYbu6oPrACTpW
+	asPgDaxfTYe+BVS16jUETyzpmIHkSrnkaOIf4/nONV8SV04569EUTO+N/2eRnA9IY2QT7BOJpTk3d
+	npQ5l6RUeUljA9aJvEUIOvgcFR5eUSI+NgcqyAsgPw9Ob/nsX33u7IAJrhPZDqXiukx2RE0kaYZpn
+	vLtXq9gzao48vxRd2Dwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifMJJ-00089V-EO; Thu, 12 Dec 2019 11:07:09 +0000
+	id 1ifMKp-000082-Rm; Thu, 12 Dec 2019 11:08:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifMJB-00088i-7V
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 11:07:02 +0000
+ id 1ifMKi-00007j-Fk
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 11:08:37 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 58F3D2067C;
- Thu, 12 Dec 2019 11:07:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B501F2173E;
+ Thu, 12 Dec 2019 11:08:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576148820;
- bh=Y0loDw+uKFeN7cf78aOvQigklGH6Ys0zQRFUm0ZVYuQ=;
+ s=default; t=1576148916;
+ bh=deuLf2nnBJBe69PXS9rhbsEM6xSlAG5E9wksUh2vIGc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Tuv5lWkKG9kriUxqdbH5FxuUH9XO3guojzxKaKZd+KUI1T8MVOL6B7LBUfWoPhe8H
- q84SwjIt4mJwXWZkE0CpFYt/x6lDVIea1uiurG7NAuwJ8Pu+KH2rKSMhpch/OAKHXg
- wyJnS0ybv0P5RM2PSrgZnTk48ns+Ht87FPCFyNbU=
-Date: Thu, 12 Dec 2019 12:06:58 +0100
+ b=qokv9s00FXWaCas/YvTf8ieF6dvHFVZWeE4UOASx2X8fW/k5tTojjPgKXDu2PriWX
+ T6cYdZuab8ZzaBfkoL1AvO1EG/plsq3KWnMFAPmXnjoEicfFOe46EFlmc5ORblRIto
+ HmcQRe9zpzZETLHRiMDipSW46/WqKrHb6LaxIcJw=
+Date: Thu, 12 Dec 2019 12:08:34 +0100
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH 03/10] tty: serial: samsung.h: fix up minor comment issues
-Message-ID: <20191212110658.GA1490894@kroah.com>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: [PATCH 08/10] tty: serial: samsung_tty: use 'unsigned int' not
+ 'unsigned'
+Message-ID: <20191212110834.GB1490894@kroah.com>
 References: <20191210143706.3928480-1-gregkh@linuxfoundation.org>
- <20191210143706.3928480-3-gregkh@linuxfoundation.org>
- <20191210151204.GH11222@pi3>
+ <20191210143706.3928480-8-gregkh@linuxfoundation.org>
+ <eb3cf8f9-3606-c2d6-ad90-4388a52c320b@free.fr>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191210151204.GH11222@pi3>
+In-Reply-To: <eb3cf8f9-3606-c2d6-ad90-4388a52c320b@free.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_030701_291144_CC3F122C 
-X-CRM114-Status: UNSURE (   8.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191212_030836_545873_35D1CA14 
+X-CRM114-Status: GOOD (  10.02  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,27 +75,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Shinbeom Choi <sbeom.choi@samsung.com>, Hyunki Koo <kkoos00@naver.com>,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- HYUN-KI KOO <hyunki00.koo@samsung.com>
+Cc: LKML <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-serial <linux-serial@vger.kernel.org>, Jiri Slaby <jslaby@suse.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 10, 2019 at 04:12:04PM +0100, Krzysztof Kozlowski wrote:
-> On Tue, Dec 10, 2019 at 03:36:59PM +0100, Greg Kroah-Hartman wrote:
-> > checkpatch found some minor issues with comments in samsung.h, so fix
-> > that up.
-> >
+On Tue, Dec 10, 2019 at 04:12:07PM +0100, Marc Gonzalez wrote:
+> [ Trim recipients list ]
 > 
-> No, you remove this header two patches later. No point to fix checkpatch
-> issues here.
+> On 10/12/2019 15:37, Greg Kroah-Hartman wrote:
+> 
+> > The function uart_console_write() expects an unsigned int, so use that
+> > variable type, not 'unsigned', which is generally frowned apon in the
+> > kernel now.
+> 
+> "frowned upon"
+> 
+> Wait, what?!
+> 
+> 'unsigned' and 'unsigned int' are the same type, if I remember my C
+> lessons correctly.
+> 
+> Is this a uniformization issue?
 
-It's nice to delete "clean" files :)
+Yes.  It's a long-time checkpatch warning, it's good to be explicit for
+this type of thing.
 
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
