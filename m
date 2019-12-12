@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEF0311CF8B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:16:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DA0911CF94
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:18:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=htOvSzuXe15CF5tOcz+FlWsZxqHnhUcUVvwI+Bhe1sE=; b=ul8SM1u5hOCqoa
-	5JFTCiz6hrtfrN90bxFHGSFgzZWaEOqzC+5Ils9JzdHOsEIaOmNNmwyrnTqEiApzQkTrFKc9HEnNp
-	U1dw8rfcwVzzLp2yZR8H0kpL+zoESKQoGRcwzrA9BwOwCADSbUm7voxBNVnJpUV4OJrxC+mgWw0Z3
-	EUO56tLmfLYUWfoTDMBiZHj1ADZV77Ovin7H08JjqakZvgqWvqqtGrnmvZiYhX9LfYNvo3bkrS36j
-	PxdAgEO2WMAY9/IkmjtyDfzj6k3JJBouBlb/M5GT4OcNp0ehv5O6c0F3bqQ4tQJmIe9AsuchKpivM
-	Uf21i82MPjLdVZD73/SQ==;
+	List-Owner; bh=IEKk/ua/wt0nQTYlQrbfIW7vcKJmDugGn95hELiDTzc=; b=eRQA9t4hepnx6g
+	sGwg+KghEDNh4CnUI/nE8oTHc0kCLUtA1hYpiY/EXoEXQlvfVdhY8S/0EXEi3FfqrT3yW2+CQb4eC
+	PM/WaFonvbSAchLb7/t4sO4VWJtXXFclxtfOSKX8W1bsN3rTO+NJX3xf3wnGlCx/vTEBPFvJ7g1Fk
+	WCL2nJLlAazWVf7DtTbOJ+GbXTU/Q+UYTvO1SIHmHKd4WNyxLJeq5J6dNlUBTDtze2KDT9Ldu5Opv
+	tvB0rDkOdtEamkQViUbKQMvCzuX7v+o63HvvuB4D+//IapQld2ModQiTVqPA3SerGH25UuvTkW2L0
+	86Cu+yVFGZqQf1tcVluQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifPGp-0006MW-HL; Thu, 12 Dec 2019 14:16:47 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1ifPIR-0006hX-MH; Thu, 12 Dec 2019 14:18:27 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifPGg-0006Kw-By; Thu, 12 Dec 2019 14:16:39 +0000
-Received: by mail-qk1-x743.google.com with SMTP id l124so1690911qkf.8;
- Thu, 12 Dec 2019 06:16:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6GBGCKakEwAi+SxuWUfOkadj0n7loMWnfnQvA8ShRvQ=;
- b=syayC1RvNDxvD18+kTX/JNogom/aWz14yGuOHeDLj5KjomPtSd37PoGodtbiCvOpdE
- vGIaVlQeTXfMsf9yVKonxDTBX2DP2xlnGPfieK+nH8CDudRSroy1R7g3EVhDc/DfhJ24
- FzrwYjcvm7+7WFEo6oRj4dM8wmPiCC4wedPnKXsxCGCk7S4dIWZF0fodt1DxRPkW9T9l
- CZc/iztXwUpiJe86KApaizcy2cEnJa8T7CFnVOiAfJBtiTZXw8Iu5hXIB/fNwqN+qQEy
- k+VIRKMpPtu/KpcQrMOb3nzGuE9cgLSMypnGsqstWYmxBlvVj99j8AVObaopHS+/5ajL
- vQrw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6GBGCKakEwAi+SxuWUfOkadj0n7loMWnfnQvA8ShRvQ=;
- b=iTBaAgRzgIACDnE+DDwyYGSNgdMHYIEzaCseKmcti0MkkfmcByRBpB6X47AnCWSXiu
- ZRYcML7wcapaerjk5/2sym2I9RsqOjbMB+mcBYVHLnBWI6jr0EHsd/+cUcZNRLsEhTcv
- bQMsc8J9aTqFrBZoowBdKjUqa82Ui0BK+s6UKTCtyUuGNj4M6yNwqfm+tiECk3acEffC
- oNvseEU2DFG+TytMMAHXo3DmMojhTCG/AtpzCs4uL4HRxyy8H7xBp9yeDY3JffG32UGh
- GdM8L3plMh9N3gNT//d5+ErpfrcdZ9uam/y5ym5c7a/IImSdp3m3wh+ayWCJKck7lUlj
- pDKA==
-X-Gm-Message-State: APjAAAWk5hoEvYnXvAy0ptWseB4YckRcLuZqAUUuIFY4gGlGtAep9Vro
- EB8ea3G63Na32BK7r8uI/iZMmuMsIqEuh1XwCJ0=
-X-Google-Smtp-Source: APXvYqy3LZbmIJZqWEtZQRAxI8xuryqKsLm5wgMvxsNC8rWduFKgN8bZg4xqtDDT3Ra7L0z4cOoXyw9CsE4XvMKt3OQ=
-X-Received: by 2002:a37:a642:: with SMTP id p63mr8470433qke.85.1576160197345; 
- Thu, 12 Dec 2019 06:16:37 -0800 (PST)
+ id 1ifPIE-0006gT-2m
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 14:18:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=sLQKwGit9wLSgboUFNJSj0UuCKgTnkxAwBeCTVETGRM=; b=GhgvB6chdyHnUTDYNs015+Il8
+ ODfPi+ysABPUR4KShO40i06LpIl6SBFQORMDqrMTR2tk5o9ZI4455WH50RipoykJ1xN3AByQhnkoY
+ dK1yzNt/9Cm8gLK5xHxLNl9YrHfV11g+xYZc5E+Wdvq8tOtiJ95XTSBZjhbWdPWrdT1wAYh7wmQG3
+ VPtn/nhGUpV8RfBYROZuyzUlnJqqLnN67O6ObAMclAoC6p/SvxZbtn9G51pm6njYYhfJzBIVFiFfH
+ w6nnd0FpE80ItbAT2Lw49ekjdFa7nK5rR0F+0ojdBOAKnMwyMA4etvo75JUcURB7dc/eHzZiMMXCA
+ Jyx/ehTkw==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:40348)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1ifPHr-000791-JH; Thu, 12 Dec 2019 14:17:51 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1ifPHn-0006sN-Ar; Thu, 12 Dec 2019 14:17:47 +0000
+Date: Thu, 12 Dec 2019 14:17:47 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
+ API
+Message-ID: <20191212141747.GI25745@shell.armlinux.org.uk>
+References: <3d8a58bf-0814-1ec1-038a-10a20b9646ad@free.fr>
+ <20191128185630.GK82109@yoga> <20191202014237.GR248138@dtor-ws>
+ <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
+ <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
+ <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
+ <20191211222829.GV50317@dtor-ws>
+ <70528f77-ca10-01cd-153b-23486ce87d45@free.fr>
 MIME-Version: 1.0
-References: <58ce5534-64bd-4b4b-bd60-ed4e0c71b20f@gmail.com>
- <166f0016-7061-be5c-660d-0499f74e8697@arm.com>
- <20191212005254.GE24359@e119886-lin.cambridge.arm.com>
-In-Reply-To: <20191212005254.GE24359@e119886-lin.cambridge.arm.com>
-From: Enric Balletbo Serra <eballetbo@gmail.com>
-Date: Thu, 12 Dec 2019 15:16:25 +0100
-Message-ID: <CAFqH_50pJVQT3uqtpVgqn4ijfdPMzHoE1ns_KARH+_cKe+3NRg@mail.gmail.com>
-Subject: Re: [REGRESSION] PCI v5.5-rc1 breaks google kevin
-To: Andrew Murray <andrew.murray@arm.com>
+Content-Disposition: inline
+In-Reply-To: <70528f77-ca10-01cd-153b-23486ce87d45@free.fr>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_061638_435829_D35983D1 
-X-CRM114-Status: GOOD (  16.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191212_061814_120496_4364165C 
+X-CRM114-Status: GOOD (  20.37  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (eballetbo[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,103 +93,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Mika Westerberg <mika.westerberg@linux.intel.com>,
- Heiko Stuebner <heiko@sntech.de>, Frederick Lawler <fred@fredlawl.com>,
- linux-pci@vger.kernel.org, Shawn Lin <shawn.lin@rock-chips.com>,
- "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Vicente Bergas <vicencb@gmail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Mark Brown <broonie@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Robin Murphy <robin.murphy@arm.com>,
- =?UTF-8?Q?Stefan_M=C3=A4tje?= <stefan.maetje@esd.eu>,
+Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ linux-clk <linux-clk@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Heiner Kallweit <hkallweit1@gmail.com>
+ Robin Murphy <robin.murphy@arm.com>,
+ Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
+ Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vicente,
-
-Missatge de Andrew Murray <andrew.murray@arm.com> del dia dj., 12 de
-des. 2019 a les 1:53:
->
-> On Thu, Dec 12, 2019 at 12:12:56AM +0000, Robin Murphy wrote:
-> > Hi Vicente,
+On Thu, Dec 12, 2019 at 02:53:40PM +0100, Marc Gonzalez wrote:
+> On 11/12/2019 23:28, Dmitry Torokhov wrote:
+> 
+> > On Wed, Dec 11, 2019 at 05:17:28PM +0100, Marc Gonzalez wrote:
 > >
-> > On 2019-12-11 11:38 pm, Vicente Bergas wrote:
-> > > Hi,
-> > > since v5.5-rc1 the google kevin chromebook does not boot.
-> > > Git bisect reports 5e0c21c75e8c PCI/ASPM: Remove pcie_aspm_enabled()
-> > > unnecessary locking
-> > > as the first bad commit.
-> > >
-> > > In order to revert it from v5.5-rc1 i had to also revert some dependencies:
-> > > 5e0c21c75e8c08375a69710527e4a921b897cb7e
-> > > aff5d0552da4055da3faa27ee4252e48bb1f5821
-> > > 35efea32b26f9aacc99bf07e0d2cdfba2028b099
-> > > 687aaf386aeb551130f31705ce40d1341047a936
-> > > 72ea91afbfb08619696ccde610ee4d0d29cf4a1d
-> > > 87e90283c94c76ee11d379ab5a0973382bbd0baf
-> > > After reverting all of this, still no luck.
-> > > So, either the results of git bisect are not to be trusted, or
-> > > there are more bad commits.
-> > >
-> > > By "does not boot" i mean that the display fails to start and
-> > > the display is the only output device, so debugging is quite difficult.
-> >
+> >> What is the rationale for the devm_add_action API?
+> > 
+> > For one-off and maybe complex unwind actions in drivers that wish to use
+> > devm API (as mixing devm and manual release is verboten). Also is often
+> > used when some core subsystem does not provide enough devm APIs.
+> 
+> Thanks for the insight, Dmitry. Thanks to Robin too.
+> 
+> This is what I understand so far:
+> 
+> devm_add_action() is nice because it hides/factorizes the complexity
+> of the devres API, but it incurs a small storage overhead of one
+> pointer per call, which makes it unfit for frequently used actions,
+> such as clk_get.
+> 
+> Is that correct?
+> 
+> My question is: why not design the API without the small overhead?
+> 
+> Proof of concept below:
+> 
+> 
+> diff --git a/drivers/base/devres.c b/drivers/base/devres.c
+> index 0bbb328bd17f..76392dd6273b 100644
+> --- a/drivers/base/devres.c
+> +++ b/drivers/base/devres.c
+> @@ -685,6 +685,20 @@ int devres_release_group(struct device *dev, void *id)
+>  }
+>  EXPORT_SYMBOL_GPL(devres_release_group);
+>  
+> +void *devm_add(struct device *dev, dr_release_t func, void *arg, size_t size)
+> +{
+> +	void *data = devres_alloc(func, size, GFP_KERNEL);
+> +
+> +	if (data) {
+> +		memcpy(data, arg, size);
+> +		devres_add(dev, data);
+> +	} else
+> +		func(dev, arg);
+> +
+> +	return data;
+> +}
+> +EXPORT_SYMBOL_GPL(devm_add);
+> +
+>  /*
+>   * Custom devres actions allow inserting a simple function call
+>   * into the teadown sequence.
+> diff --git a/drivers/clk/clk-devres.c b/drivers/clk/clk-devres.c
+> index be160764911b..8db671823126 100644
+> --- a/drivers/clk/clk-devres.c
+> +++ b/drivers/clk/clk-devres.c
+> @@ -4,6 +4,11 @@
+>  #include <linux/export.h>
+>  #include <linux/gfp.h>
+>  
+> +static void __clk_put(struct device *dev, void *data)
+> +{
+> +	clk_put(*(struct clk **)data);
+> +}
+> +
+>  static void devm_clk_release(struct device *dev, void *res)
+>  {
+>  	clk_put(*(struct clk **)res);
+> @@ -11,19 +16,11 @@ static void devm_clk_release(struct device *dev, void *res)
+>  
+>  struct clk *devm_clk_get(struct device *dev, const char *id)
+>  {
+> -	struct clk **ptr, *clk;
+> -
+> -	ptr = devres_alloc(devm_clk_release, sizeof(*ptr), GFP_KERNEL);
+> -	if (!ptr)
+> -		return ERR_PTR(-ENOMEM);
+> +	struct clk *clk = clk_get(dev, id);
+>  
+> -	clk = clk_get(dev, id);
+> -	if (!IS_ERR(clk)) {
+> -		*ptr = clk;
+> -		devres_add(dev, ptr);
+> -	} else {
+> -		devres_free(ptr);
+> -	}
+> +	if (!IS_ERR(clk))
+> +		if (!devm_add(dev, __clk_put, &clk, sizeof(clk)))
+> +			clk = ERR_PTR(-ENOMEM);
 
-Another issue that is affecting current mainline for kevin is fixed
-with [1]. As usual, I have a tracking branch for 5.5 for different
-Chromebooks with some not yet merged patches that makes things work
-while are not fixed [2]. For kevin only the mentioned ASoC patch [1]
-and the pcie fix [3] should be needed. Other than that display is
-working for me on Kevin.
+You leak clk here.
 
-Cheers,
- Enric
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git/commit/?h=for-5.5&id=4bf2e385aa59c2fae5f880aa25cfd2b470109093
-[2] https://gitlab.collabora.com/eballetbo/linux/commits/topic/chromeos/somewhat-stable-5.5
-[3]  https://lkml.org/lkml/2019/12/11/199
-
-> > Assuming it's a manifestation of the same PCI breakage that Enric and
-> > Lorenzo figured out, there's a proposed fix here:
-> > https://lkml.org/lkml/2019/12/11/199
->
-> It's likely that any PCI driver that uses PCI IO with that controller will
-> suffer the same fate.
->
-> Vicente - can you try the patch that has been proposed and verify it fixes
-> the issue for you?
->
-> Thanks,
->
-> Andrew Murray
->
-> >
-> > Robin.
-> >
-> > > v5.5-rc1 as is (reverting no commits at all) works fine when disabling PCI:
-> > > # CONFIG_PCI is not set
-> > >
-> > > Regards,
-> > >   Vicente.
-> > >
-> > >
-> > > _______________________________________________
-> > > Linux-rockchip mailing list
-> > > Linux-rockchip@lists.infradead.org
-> > > http://lists.infradead.org/mailman/listinfo/linux-rockchip
->
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
