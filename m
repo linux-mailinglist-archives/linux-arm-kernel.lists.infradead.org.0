@@ -2,56 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACB2311CCE1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 13:15:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A13C411CCF8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 13:20:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bk/RzIVU3PnBYLxMasUs52MCj/6XD7eFJHAg2nyJFkA=; b=EuVRPqjIdyM67y
-	Ie/5x6/Fzv1a/uQqwNUcqVQIOunb/F3UNVOGEtLpiG9xImE29+3x0RntlryDVoSprj/lU9lHdjEgG
-	Eg0rR27nAuNvV4hwHk8PAZkVQg+Uk2NuihOcCNQJ3ALFLoaQIi78Z4gCm7NwoEueQZj7qLnZAS+7G
-	qr/MGhNMbm9Gs7E6z6JGM3w4ifst9XrkV1OVuPI8G5ocvFcAuw/abBRtYaZrDQS/KO3xNaNG0Eu4J
-	cYy+isGMPkGTEDUnp7dgQRHQvpPwMh7l42DikR7UKzBnUkeFHBmdtcPIp+eZc7Cvc8QXY3JPG4EwB
-	AY9/f/KXg2zdaGRANdMA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=T7W/vCSyGsPA8RaZEZGuquxYID5POSTtyVAxvAq+sX0=; b=rKdCmYnpKw0gXX
+	u7uXbVLfaxvMZLqz8/a/7OqC+nUeoND/YrDUbpehu3ykPhiDITK+sFNZ0H27NaEPty3adq065Bp/V
+	UYfi/l8fIRTSLApY4aksyi5WTC3KWJATHmfn6Jbba6y4Wc1BxPNUayyIv1ckOYNms9ZxcALmAEB/5
+	sA3QpoNdXoeRwoGDa3qb4l0q7bswM/no7tGeHK7LaYjdUY1UR0iwrzb3zFlDyqXa+ZFv0oghcvJCS
+	FB8P6FjVpY4d/VZDSQgDNCd/fawAxDZQBFC2PsgwWq8XfzhSAfFEshCvKu42BhJnUGrC67pYzBmuO
+	uO1DlutyUgvJqutop6SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifNNl-0005Ps-Ib; Thu, 12 Dec 2019 12:15:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifNNZ-0005Oi-Pc
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 12:15:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B26B11FB;
- Thu, 12 Dec 2019 04:15:36 -0800 (PST)
-Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B74C3F718;
- Thu, 12 Dec 2019 04:15:35 -0800 (PST)
-Date: Thu, 12 Dec 2019 12:15:31 +0000
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH 08/15] firmware: arm_scmi: Add and initialise protocol
- version to scmi_device structure
-Message-ID: <20191212121531.GA27215@bogus>
-References: <20191210145345.11616-1-sudeep.holla@arm.com>
- <20191210145345.11616-9-sudeep.holla@arm.com>
- <b79fe89b-5779-f70b-cfb8-4b20f622e9ef@arm.com>
+	id 1ifNSC-000786-94; Thu, 12 Dec 2019 12:20:24 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifNRv-0006Ia-Q1; Thu, 12 Dec 2019 12:20:09 +0000
+Received: from droid12-sz.software.amlogic (10.28.8.22) by mail-sz.amlogic.com
+ (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10;
+ Thu, 12 Dec 2019 20:20:36 +0800
+From: Xingyu Chen <xingyu.chen@amlogic.com>
+To: Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck
+ <linux@roeck-us.net>, Kevin Hilman <khilman@baylibre.com>, Neil Armstrong
+ <narmstrong@baylibre.com>
+Subject: [PATCH v5 0/4] add meson secure watchdog driver
+Date: Thu, 12 Dec 2019 20:19:43 +0800
+Message-ID: <1576153187-28378-1-git-send-email-xingyu.chen@amlogic.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b79fe89b-5779-f70b-cfb8-4b20f622e9ef@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Originating-IP: [10.28.8.22]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_041537_885132_4D1A106E 
-X-CRM114-Status: GOOD (  22.48  )
+X-CRM114-CacheID: sfid-20191212_042007_889492_43F04A25 
+X-CRM114-Status: GOOD (  11.17  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,71 +56,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Sudeep Holla <sudeep.holla@arm.com>
+Cc: Qianggui Song <qianggui.song@amlogic.com>, devicetree@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, Jianxin Pan <jianxin.pan@amlogic.com>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Jian Hu <jian.hu@amlogic.com>, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, Xingyu Chen <xingyu.chen@amlogic.com>,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 06:06:50PM +0000, Cristian Marussi wrote:
-> On 10/12/2019 14:53, Sudeep Holla wrote:
-> > It's useful to keep track of scmi protocol version in the scmi device
-> > structure along with the protocol id. These can be used to expose the
-> > information to the userspace via bus dev_groups attributes as well.
-> >
-> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> > ---
-> >  drivers/firmware/arm_scmi/clock.c   | 6 +++++-
-> >  drivers/firmware/arm_scmi/perf.c    | 6 +++++-
-> >  drivers/firmware/arm_scmi/power.c   | 6 +++++-
-> >  drivers/firmware/arm_scmi/reset.c   | 6 +++++-
-> >  drivers/firmware/arm_scmi/sensors.c | 6 +++++-
-> >  include/linux/scmi_protocol.h       | 1 +
-> >  6 files changed, 26 insertions(+), 5 deletions(-)
-> >
-> > diff --git a/drivers/firmware/arm_scmi/clock.c b/drivers/firmware/arm_scmi/clock.c
-> > index b567ec03f711..b68736ae7f88 100644
-> > --- a/drivers/firmware/arm_scmi/clock.c
-> > +++ b/drivers/firmware/arm_scmi/clock.c
-> > @@ -318,8 +318,11 @@ static int scmi_clock_protocol_init(struct scmi_device *dev)
-> >  	struct clock_info *cinfo;
-> >  	struct scmi_handle *handle = dev->handle;
-> >
-> > -	if (handle->clk_ops && handle->clk_priv)
-> > +	if (handle->clk_ops && handle->clk_priv) {
-> > +		cinfo = handle->clk_priv;
-> > +		dev->version = cinfo->version;
-> >  		return 0; /* initialised already for the first device */
-> > +	}
-> >
->
-> This is the device specific init stuff which I would remove from this proto
-> initialization, which is the reason for this proto_init to be invoked for
-> all devices defined for such proto.
->
+The watchdog controller on the Meson-A/C series SoCs is moved to secure world,
+We have to call SMC instruction to trap the ATF for watchdog operation. These
+operations are different from previous SoCs, so we introduce a new watchdog
+driver to support this kind of SoCs.
 
-Agreed, this is something I could come up with quickly, I have to think about
-this more for sure.
+Changes since v4 at [3]:
+- add watchdog node in dts, and introduce a new optional property "timeout-sec"
+- add dt-binding for meson secure watchdog
+- instantiate wdt device through dts node instead of platform_device_register_simple()
 
-> I'd say to move dev->version initialization into the specific
-> scmi_drv->probe which is called after scmi_protocol_init inside
-> bus:scmi_dev_probe, after having disabled the proto_init after the first
-> invocation, once the protocol is initialized, BUT this would result anyway
-> in duplication since you'll have to fill dev->version from the custom
-> protocol info in each of the related scmi drivers, and that would also mean
-> delegating to a possible user scmi driver .probe an initialization which is
-> then needed by the sysfs attribute exposed by the SCMI framework code.
->
-I am trying to avoid that as it's just version and we should be able to
-manage this in the scmi_bus layer. I agree what we have in these patches
-are not so pretty.
+Changes since v3 at [2]:
+- add SM_A1_ prefix for WATCHDOG_OPS
+- remove phandle to secure-monitor node
+- remove watchdog node from dts, and register wdt device by platform_device_register_simple()
+- remove dt-binding for meson secure watchdog
+- use the msec as unit of timeout parameter which is passed to fw side
 
-Anyways, thanks a lot for all the review.
+Changes since v2 at [1]:
+- remove useless dependency in Kconfig
+- return zero when getting left time value fails
 
---
-Regards,
-Sudeep
+Changes since v1 at [0]:
+- add a new dependency in Kconfig
+- simplify/add the return operation
+- remove useless ping operation when setting the timeout
+- fix some return values
+- fix the license statement
+
+[0]:https://lore.kernel.org/linux-amlogic/1570874721-36077-1-git-send-email-xingyu.chen@amlogic.com
+[1]:https://lore.kernel.org/linux-amlogic/1571387622-35132-1-git-send-email-xingyu.chen@amlogic.com
+[2]:https://lore.kernel.org/linux-amlogic/1571983984-11771-1-git-send-email-xingyu.chen@amlogic.com
+[3]:https://lore.kernel.org/linux-amlogic/1574685218-31164-1-git-send-email-xingyu.chen@amlogic.com
+
+Xingyu Chen (4):
+  firmware: meson_sm: add new SMC ID support for accessing secure
+    watchdog
+  dt-bindings: watchdog: add new binding for meson secure watchdog
+  watchdog: add meson secure watchdog driver
+  arm64: dts: a1: add secure watchdog controller
+
+ .../bindings/watchdog/amlogic,meson-sec-wdt.yaml   |  35 ++++
+ arch/arm64/boot/dts/amlogic/meson-a1.dtsi          |   6 +
+ drivers/firmware/meson/meson_sm.c                  |   1 +
+ drivers/watchdog/Kconfig                           |  16 ++
+ drivers/watchdog/Makefile                          |   1 +
+ drivers/watchdog/meson_sec_wdt.c                   | 188 +++++++++++++++++++++
+ include/linux/firmware/meson/meson_sm.h            |   1 +
+ 7 files changed, 248 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/watchdog/amlogic,meson-sec-wdt.yaml
+ create mode 100644 drivers/watchdog/meson_sec_wdt.c
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
