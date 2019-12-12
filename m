@@ -2,92 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 488A911D7B6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 21:10:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B0C111D7C3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 21:21:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oCj8O39Z1zPaQEYzbemA3oQlMv3VWA71qw6dwVlqIHk=; b=IeWjOfLDNWGsn4
-	uHj2u+GkH/i/LsEdD00mUUlXqL+V/MF0GzodLSQhDuQObUx/o/fjUhe/QV9xcqZBydVtdovssFcKt
-	c5q4ief2iRCmk9vdA15QS5Wht47T69Ys9IxvRE3yX8wMTHuS4sggGf3cuWoVwdGMVvKcZ7f+i9C6k
-	TisbJAnqX8ZAe717437WNV6FJZhcR2O8CMtiA3m1KEFEL7xdwBUC5UhvbNqPsTSw2QH6qa+7WUzPV
-	olLMWAY7zddIGHMZjCqSCEA6uqXr/4HIObUuI5Hdhipi9XJFYqH9kVf97LzGCY4RRWtHk5YdwdTYg
-	JwVKapJYETTBNdRpZzEA==;
+	List-Owner; bh=qwdwkbF+fkc0B/RiKIPi8jNltOnIGF3X91Ifc1mAPEM=; b=VSPi50f83MbQw1
+	MGIn8eSpkQrStExry2U0wPmImVBNvcv6y1H1s+3+JWocQjrpNrM2X6rxZ+TxujkH/CjTDTCgmQVac
+	FA//9J9SQF1iU4P3Y7Ba+jPXCAgo0mzHtHfnX8x7PVWfeaZd1no3YmNCAzPdQJ2axf5BFi4tcLBQQ
+	jFUsLmg2/c9BxXzhn2RTdqbk16QOewMDPyrGi3zHfrmfDmF8Fv0/O0ywYj1Gt8esoP6ZW2hsgrtJf
+	Ep81TfjhdBzmGT2jZasdErQKu2PsTgbVQECqFPErcyC0L4eAjAAeu6rVE+3on4PNf2uQ+9wFu6/FM
+	FJgAyMa5H+tOwbYxC0yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifUmu-0002P0-Dw; Thu, 12 Dec 2019 20:10:16 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1ifUxz-0006A1-8D; Thu, 12 Dec 2019 20:21:43 +0000
+Received: from mail-wr1-f67.google.com ([209.85.221.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifUmk-0001q4-P9; Thu, 12 Dec 2019 20:10:08 +0000
-Received: by mail-ot1-x344.google.com with SMTP id r27so3281374otc.8;
- Thu, 12 Dec 2019 12:10:06 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7qXkeZV74bje26NgCl5xWXQcNmUybdFUwUsZ8xV5JBg=;
- b=osM2qIGr3hGnVVczgOggDP8yZ4BLwi4bJkQh+zYOWI36YpgtY/j+xU9LCtmyq32DBd
- Mjj+23mFP8L9FoYlLmufBfmOpUomC9vzeHZhOTYaVZMVXfgww5OMb9Zy9INqH79IKoad
- /gGQVB82TujuEl87tkDn/MLsgvd5yiqExg2DcudusJa9+yXkl5Ctv0VpGy612OPSnW1Q
- QZyUEdPErjULdppAUQ81I9t97g81kQ4pUJP/wJrdnPGjO+hHvbRFUZiIIt6DQA2dWGeT
- ege3a93qQKLb/1GCRI1m1kxyBKmDUdrKmQk4Goby+4PYPaU3QJnYMqFySOBG8zcHiV72
- v2Iw==
+ id 1ifUxp-00068H-2S; Thu, 12 Dec 2019 20:21:34 +0000
+Received: by mail-wr1-f67.google.com with SMTP id c9so4154460wrw.8;
+ Thu, 12 Dec 2019 12:21:31 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=7qXkeZV74bje26NgCl5xWXQcNmUybdFUwUsZ8xV5JBg=;
- b=o5htSHddKVshDG5+WWAzf0udDGI7okDJk3XCDbeLw2yrtUf4GPG8b/XaqGDfUQGzMV
- jca2BBhmtmGwV3t1G7oJNeqP+e6U/BKN63zSP2AVUK4TxK7/0ZqgtEyAw2d2Ury9501+
- 0On2adARVhuk5QJWh18+bkXjU8Rl6+YwY5dTYlIgzoTQ/s6vxk8O0ixvokDvu1//nTPS
- rugpR1WqKaaaSTQRvvvpkiwVhMjtgbMhLOUGMUUln0G149i/KmB3oM9oWIkXT16XJkDA
- JZwt0OHV1OL4h6HYHiFAgfQMZrsvy/Lnc9tZEax8zskBsPrFO8MMumvJ7lD2L+vKBzfC
- DUcQ==
-X-Gm-Message-State: APjAAAXbAAu6mBpDAV5QCgbCjYnzWREp6eGW6u9lx4RLTdMwTB0Yh05b
- R/So6Mw/1f7yLKSVLxnmiIcmxbPOKRlGFv7Klio=
-X-Google-Smtp-Source: APXvYqyyXC4xCET3bH9d4JwztvKF8qJ5uMa+OdBlTIJYxnxVioR5wZQgPot30XdCsn1UDNUkV//KHNktBacycDlqK1U=
-X-Received: by 2002:a05:6830:2087:: with SMTP id
- y7mr9659452otq.96.1576181405915; 
- Thu, 12 Dec 2019 12:10:05 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=CPNUf9ZfNsHV45XZGqiBQJlUTUhc2MVRp6BnooBqqSc=;
+ b=PWiCKDDHQTXDBMhA0UqRWD+7jcCKH5cKGxwZxSfLLoDKt74oV/6u1Mw27Tb0Tk/SCS
+ THBjIGr1Ddf/jx4GR0DNmki5jRaovivhDWUmDv0HXvC8IvrIJjAkvDvHNOCAm2YTfQEB
+ FJXDiS1pHNBS8iOtqR1cUPAHsg/HafsOg+HY3rIV1qHkmMYSy7yEqkZX5GTDK8J4C8cu
+ thS6lWPM8wBx3sK9oRQO5IsMnItaytxHTxKuY7Hl5fQObmFe/a7QY/GA9acuszP/Q/mF
+ foUUK4f8Sn/KcG9VMQr+d3VRKPBVc4lqb3UjpSUxRzXnbKvpxjejgDlKnuv537SvxBkZ
+ 9PxQ==
+X-Gm-Message-State: APjAAAU7pmzDN4wT8H/8NM7xyNc5QMqIvrVr8U5YEKs1zeCDPoL7uP2D
+ qIbEgxlf8l/M47fsnnTL9Rt9wJAi
+X-Google-Smtp-Source: APXvYqzzbodyVYL3FNuaGg6Zp/U+21dUGiWWf3SbMNFJoJ0+vWDhCy4pxUgA9VjNMpaXXox/nvLRBw==
+X-Received: by 2002:a17:906:3953:: with SMTP id
+ g19mr11516560eje.227.1576182089998; 
+ Thu, 12 Dec 2019 12:21:29 -0800 (PST)
+Received: from kozik-lap ([194.230.155.234])
+ by smtp.googlemail.com with ESMTPSA id k36sm2772ede.57.2019.12.12.12.21.28
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 12 Dec 2019 12:21:29 -0800 (PST)
+Date: Thu, 12 Dec 2019 21:21:26 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: [PATCH v2 1/4] ARM: dts: exynos: Correct USB3503 GPIOs polarity
+Message-ID: <20191212202126.GA3534@kozik-lap>
+References: <20191211144638.24676-1-m.szyprowski@samsung.com>
+ <CGME20191211144648eucas1p2065aac523ce190a5c0e6e2b5b11bd5ce@eucas1p2.samsung.com>
+ <20191211144638.24676-2-m.szyprowski@samsung.com>
 MIME-Version: 1.0
-References: <20191101143126.2549-1-linux.amoon@gmail.com>
- <7hfthtrvvv.fsf@baylibre.com>
- <c89791de-0a46-3ce2-b3e2-3640c364cd0f@baylibre.com>
- <CANAwSgQx3LjQe60TGgKyk6B5BD5y1caS2tA+O+GFES7=qCFeKg@mail.gmail.com>
- <7hfthsqcap.fsf@baylibre.com>
- <CAFBinCBfgxXhPKpBLdoq9AimrpaneYFgzgJoDyC-2xhbHmihpA@mail.gmail.com>
- <7hpngvontu.fsf@baylibre.com>
- <4e1339b4-c751-3edc-3a2e-36931ad1c503@baylibre.com>
-In-Reply-To: <4e1339b4-c751-3edc-3a2e-36931ad1c503@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Thu, 12 Dec 2019 21:09:55 +0100
-Message-ID: <CAFBinCCgKcwXSLxS_CRvz9JZvQo8PcUGm=egBbabVZSrkSc30Q@mail.gmail.com>
-Subject: Re: [RFC-next 0/1] Odroid C2: Enable DVFS for cpu
-To: Neil Armstrong <narmstrong@baylibre.com>
+Content-Disposition: inline
+In-Reply-To: <20191211144638.24676-2-m.szyprowski@samsung.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_121006_835671_1704F242 
-X-CRM114-Status: GOOD (  17.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191212_122133_113232_3B2CA4A1 
+X-CRM114-Status: GOOD (  11.22  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ no trust [209.85.221.67 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ provider (k.kozlowski.k[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,100 +88,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Kevin Hilman <khilman@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-amlogic@lists.infradead.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Chen-Yu Tsai <wens@csie.org>,
+ Andy Gross <agross@kernel.org>, linux-mediatek@lists.infradead.org,
+ Stefan Agner <stefan@agner.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
+On Wed, Dec 11, 2019 at 03:46:35PM +0100, Marek Szyprowski wrote:
+> Current USB3503 driver ignores GPIO polarity and always operates as if the
+> GPIO lines were flagged as ACTIVE_HIGH. Fix the polarity for the existing
+> USB3503 chip applications to match the chip specification and common
+> convention for naming the pins. The only pin, which has to be ACTIVE_LOW
+> is the reset pin. The remaining are ACTIVE_HIGH. This change allows later
+> to fix the USB3503 driver to properly use generic GPIO bindings and read
+> polarity from DT.
+> 
 
-On Wed, Dec 11, 2019 at 9:49 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> On 10/12/2019 22:47, Kevin Hilman wrote:
-> > Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
-> >
-> >> On Tue, Dec 10, 2019 at 7:13 PM Kevin Hilman <khilman@baylibre.com> wrote:
-> >>>
-> >>> Anand Moon <linux.amoon@gmail.com> writes:
-> >>>
-> >>>> Hi Neil / Kevin,
-> >>>>
-> >>>> On Tue, 10 Dec 2019 at 14:13, Neil Armstrong <narmstrong@baylibre.com> wrote:
-> >>>>>
-> >>>>> On 09/12/2019 23:12, Kevin Hilman wrote:
-> >>>>>> Anand Moon <linux.amoon@gmail.com> writes:
-> >>>>>>
-> >>>>>>> Some how this patch got lost, so resend this again.
-> >>>>>>>
-> >>>>>>> [0] https://patchwork.kernel.org/patch/11136545/
-> >>>>>>>
-> >>>>>>> This patch enable DVFS on GXBB Odroid C2.
-> >>>>>>>
-> >>>>>>> DVFS has been tested by running the arm64 cpuburn
-> >>>>>>> [1] https://github.com/ssvb/cpuburn-arm/blob/master/cpuburn-a53.S
-> >>>>>>> PM-QA testing
-> >>>>>>> [2] https://git.linaro.org/power/pm-qa.git [cpufreq testcase]
-> >>>>>>>
-> >>>>>>> Tested on latest U-Boot 2019.07-1 (Aug 01 2019 - 23:58:01 +0000) Arch Linux ARM
-> >>>>>>
-> >>>>>> Have you tested with the Harkernel u-boot?
-> >>>>>>
-> >>>>>> Last I remember, enabling CPUfreq will cause system hangs with the
-> >>>>>> Hardkernel u-boot because of improperly enabled frequencies, so I'm not
-> >>>>>> terribly inclined to merge this patch.
-> >>>>
-> >>>> HK u-boot have many issue with loading the kernel, with load address
-> >>>> *it's really hard to build the kernel for HK u-boot*,
-> >>>> to get the configuration correctly.
-> >>>>
-> >>>> Well I have tested with mainline u-boot with latest ATF .
-> >>>> I would prefer mainline u-boot for all the Amlogic SBC, since
-> >>>> they sync with latest driver changes.
-> >>>
-> >>> Yes, we would all prefer mainline u-boot, but the mainline kernel needs
-> >>> to support the vendor u-boot that is shipping with the boards.  So
-> >>> until Hardkernel (and other vendors) switch to mainline u-boot we do not
-> >>> want to have upstream kernel defaults that will not boot with the vendor
-> >>> u-boot.
-> >>>
-> >>> We can always support these features, but they just cannot be enabled
-> >>> by default.
-> >> (I don't have an Odroid-C2 but I'm curious)
-> >> should Anand submit a patch to mainline u-boot instead?
-> >
-> > It would be in addition to $SUBJECT patch, not instead, I think.
-> >
-> >> the &scpi_clocks node could be enabled at runtime by mainline u-boot
-> >
-> > That would work, but I don't know about u-boot maintainers opinions on
-> > this kind of thing, so let's see what Neil thinks.
->
-> U-Boot doesn't anything to do with SCPI, SCPI discusses directly with the SCP
-> processor, and the CPU clock is set to 1,56GHz by the BL2 boot stage before
-> U-boot starts.
->
-> The only viable solution I see now is to find if we could add a DT OPP table
-> only for Odroid-C2 dts to bypass the SCPI OPP table.
-my understanding is that mainline u-boot (with whatever SCP firmware
-it uses) provides the *correct* OPP table
-in this case it would be "safe" to have SCPI enabled with mainline u-boot
-@Anand: please correct me if I misunderstood you
+Thanks, applied (for v5.6).
 
-my idea to "enable SCPI with mainline u-boot" is to have u-boot update
-the "status" property of the scpi_clocks node.
-u-boot does something similar with the mac-address property of the
-Ethernet controller for example.
-as result of this users of mainline u-boot would have working CPU
-DVFS, while users of the old vendor u-boot would run at fixed 1.54GHz.
+Best regards,
+Krzysztof
 
-
-Martin
 
 _______________________________________________
 linux-arm-kernel mailing list
