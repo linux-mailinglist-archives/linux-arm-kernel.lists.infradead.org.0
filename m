@@ -2,74 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4E9D11C9B3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 10:42:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 906B911CA0B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 10:58:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EsZm8NBJcEhkJWRnLq9XJhmbyM+bzBUbm3HqEvAhbbs=; b=OdhUeRkzY0SmVO
-	0JWLph1+FKhz0tYnHuUd+RMBBN+e3AhHgGe+KbOPzjbZVk44530T009O7/Qf/k8gxQm6d8dU3pI/b
-	DlQYSs2yusDs/fXDA3YszJCmNWT/dEo7+CHbRFZ0EPoFIZQtAj3Ehkc+Qyu2BQcGdu3GW+ReJC7UA
-	7VEaE003Ym0sEeuJvesSRqitl+hTXBUH7xk0oWvcwZ6pnDRCHy34U4Gin3FmwT2pv2w7HVaoALtOG
-	hDVbN8V0cCVh/JfJnYKaVpRE1XlEX4V84T1AkxHlOt0NMDkgRjQmjBg4vONolLqF1yJdex711/tNi
-	1UHVEKCrTSMIsmQybSCg==;
+	List-Owner; bh=F7+bFAa81spJvDSbCzGkam8yB1r7ZwQu56CpCwR+uGU=; b=CZC4sSWFtbdBye
+	2Dt0NTPCz/itLaG5aK94BdD0COL8wEe81+El6V2KV4vEdJLoY14u3LkBa5/+mfEPekEqCbQb/Ii7T
+	aou6TvNRCqBeaiTb11M8gdsI6vP/m2MyIy6GugOSFfNe+NL2wWA+JWZLOlLb+BMI1ThTP3jxD0Yaa
+	nJTcXyVz358DnI7q2DdUBAcEWAo7ivCMXQ20qGZOIJ8H7L81YlcLJdnDorgS3gZXADejHxY0x5pww
+	GW5p2O0ugP9QqfHgfYzOzPdZGcFqTnsYXjKTZK6ZpZAd0JBtVowU0iwyCyo3+URP41hQvwQl9HxGs
+	JRO4acADpEc7xlX4MWIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifKzX-0002aW-7O; Thu, 12 Dec 2019 09:42:39 +0000
-Received: from a27-18.smtp-out.us-west-2.amazonses.com ([54.240.27.18])
+	id 1ifLEt-0000Sa-4T; Thu, 12 Dec 2019 09:58:31 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifKzM-0002Z7-Vj; Thu, 12 Dec 2019 09:42:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=zsmsymrwgfyinv5wlfyidntwsjeeldzt; d=codeaurora.org; t=1576143746;
- h=From:To:Cc:Subject:References:Date:In-Reply-To:Message-ID:MIME-Version:Content-Type;
- bh=i0FaJubDuJMbNyKma+XSBPHXvIJXRnamxfGjizAg5l4=;
- b=joBdw2U47skEzTWQsIBsuU18qjWbgQ3l4GW+wCBhj3pBO6hPKy4NETmO4/e24qV5
- Z3xYhCTcWhCgoaFyV91UhaWHBIvTwrB7csVhPbaPZjUIxBwaNlhmx+SMsdd/OqbcENx
- GWWqeTxaAOUyBG4aD/u4YKvYYkpZ2w/8KU0OusVM=
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
- s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1576143746;
- h=From:To:Cc:Subject:References:Date:In-Reply-To:Message-ID:MIME-Version:Content-Type:Feedback-ID;
- bh=i0FaJubDuJMbNyKma+XSBPHXvIJXRnamxfGjizAg5l4=;
- b=O9a3ks7ehxWurNXvWOBcxj/zIsgvXsxuK8UptAX+yeQOCfA4JjjHYCbZYkFDMTAU
- YMVvBh7QeOCKhUbbqEX1puFMbS2llvG13J4gEwR9wUkq5EPJVVhtyzzYKKcU1JtfUJO
- BnpXXBKoVClmv1dN1Rv9nwSxkxlKKt6uqMiXBsAU=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=ham autolearn_force=no version=3.4.0
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 06A7FC433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
-From: Kalle Valo <kvalo@codeaurora.org>
-To: Soeren Moch <smoch@web.de>
-Subject: Re: [PATCH v2 0/9] brcmfmac: add support for BCM4359 SDIO chipset
-References: <20191211235253.2539-1-smoch@web.de>
-Date: Thu, 12 Dec 2019 09:42:26 +0000
-In-Reply-To: <20191211235253.2539-1-smoch@web.de> (Soeren Moch's message of
- "Thu, 12 Dec 2019 00:52:44 +0100")
-Message-ID: <0101016ef97cf6b5-2552a5e4-12de-4616-94d6-b63d9c795ed6-000000@us-west-2.amazonses.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+ id 1ifLEP-0000BA-FU; Thu, 12 Dec 2019 09:58:02 +0000
+X-UUID: 0002e869d2b64c58a74eb2c293629ba9-20191212
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=jjUFyhr70q5Qwl+cMOFBMZpPatFW/kw0aENfH71RXPE=; 
+ b=jq1MoFnXSMWZvmV0J7XARns1yvG2bHjCQbtyK65p/f/bLDgB/PvOdmWrmEMcXF5rTX9bvglZotXQa5HwIpiqnc+QdQsXWCsRVFfcnnM/cVX6QsHaS1Lq6YfkMfQSvyrBVim5vxfXraDAoabZFjvpD1fe5Qm152QqcUSnzzDZzuQ=;
+X-UUID: 0002e869d2b64c58a74eb2c293629ba9-20191212
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <bibby.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 392406774; Thu, 12 Dec 2019 01:57:52 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Dec 2019 01:48:06 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Dec 2019 17:47:29 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 12 Dec 2019 17:47:46 +0800
+Message-ID: <1576144069.16442.3.camel@mtksdaap41>
+Subject: Re: [PATCH v17 0/6] support gce on mt8183 platform
+From: Bibby Hsieh <bibby.hsieh@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>, Jassi Brar
+ <jassisinghbrar@gmail.com>
+Date: Thu, 12 Dec 2019 17:47:49 +0800
+In-Reply-To: <cb5cd58e-dc62-ae30-9ddd-7c2b95fde3e3@gmail.com>
+References: <20191121015410.18852-1-bibby.hsieh@mediatek.com>
+ <CANMq1KCTJQL+GFqo8HYM8cEpzXJmebJ=9ju4CzHLwyuQfbZEAA@mail.gmail.com>
+ <cb5cd58e-dc62-ae30-9ddd-7c2b95fde3e3@gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-SES-Outgoing: 2019.12.12-54.240.27.18
-Feedback-ID: 1.us-west-2.CZuq2qbDmUIuT3qdvXlRHZZCpfZqZ4GtG9v3VKgRyF0=:AmazonSES
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_014229_044968_BAD54033 
-X-CRM114-Status: GOOD (  13.97  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191212_015801_548544_22128ADC 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [54.240.27.18 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -79,6 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,55 +85,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: brcm80211-dev-list.pdl@broadcom.com, Heiko Stuebner <heiko@sntech.de>,
- netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- brcm80211-dev-list@cypress.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ lkml <linux-kernel@vger.kernel.org>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, "moderated list:ARM/Mediatek SoC
+ support" <linux-mediatek@lists.infradead.org>, CK HU <ck.hu@mediatek.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Soeren Moch <smoch@web.de> writes:
+On Thu, 2019-12-12 at 08:49 +0100, Matthias Brugger wrote:
+> 
+> On 11/12/2019 23:09, Nicolas Boichat wrote:
+> > Hi Matthias,
+> > 
+> > Quick question, any reason you picked only patches 2+3+6 from this
+> > series, and not the 3 others?
+> > 
+> 
+> The quick answer, time :)
+> The longer one:
+> 1/6 went already in through fixes for v5.4
+> 4/6 it touches mailbox code, so we will need a acked-by from Jassi
 
-> Add support for the BCM4359 chipset with SDIO interface and RSDB support
-> to the brcmfmac wireless network driver in patches 1-7.
->
-> Enhance devicetree of the RockPro64 arm64/rockchip board to use an
-> AP6359SA based wifi/bt combo module with this chipset in patches 8-9.
->
->
-> Chung-Hsien Hsu (1):
->   brcmfmac: set F2 blocksize and watermark for 4359
->
-> Soeren Moch (5):
->   brcmfmac: fix rambase for 4359/9
->   brcmfmac: make errors when setting roaming parameters non-fatal
->   brcmfmac: add support for BCM4359 SDIO chipset
->   arm64: dts: rockchip: RockPro64: enable wifi module at sdio0
->   arm64: dts: rockchip: RockPro64: hook up bluetooth at uart0
->
-> Wright Feng (3):
->   brcmfmac: reset two D11 cores if chip has two D11 cores
->   brcmfmac: add RSDB condition when setting interface combinations
->   brcmfmac: not set mbss in vif if firmware does not support MBSS
->
->  .../boot/dts/rockchip/rk3399-rockpro64.dts    | 50 +++++++++++---
->  .../broadcom/brcm80211/brcmfmac/bcmsdh.c      |  8 ++-
->  .../broadcom/brcm80211/brcmfmac/cfg80211.c    | 68 +++++++++++++++----
->  .../broadcom/brcm80211/brcmfmac/chip.c        | 54 ++++++++++++++-
->  .../broadcom/brcm80211/brcmfmac/chip.h        |  1 +
->  .../broadcom/brcm80211/brcmfmac/pcie.c        |  2 +-
->  .../broadcom/brcm80211/brcmfmac/sdio.c        | 17 +++++
->  include/linux/mmc/sdio_ids.h                  |  2 +
->  8 files changed, 176 insertions(+), 26 deletions(-)
+Hi, Jassi,
 
-Just to make sure we are on the same page, I will apply patches 1-7 to
-wireless-drivers-next and patches 8-9 go to some other tree? And there
-are no dependencies between the brcmfmac patches and dts patches?
+Sorry for the mailing losing.
+Could you help me to review [PATCH 4/6 soc: mediatek: cmdq: add polling
+function] if you are free?
 
--- 
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+Bibby
+
+> 5/6 time, I want to have a better look onto this to see if that makes sense (I
+> slightly remember some old comment I had on this)
+> 
+> Regards,
+> Matthias
+> 
+> > Thanks.
+> > 
+> > On Wed, Nov 20, 2019 at 5:54 PM Bibby Hsieh <bibby.hsieh@mediatek.com> wrote:
+> >>
+> >> Changes since v16:
+> >>  - naming the poll mask enable bit
+> >>  - add a patch to fiup the input order of write api
+> >>
+> >> Changes since v15:
+> >>  - rebase onto 5.4-rc1
+> >>  - rollback the v14 change
+> >>  - add a patch to fixup the combination of return value
+> >>
+> >> Changes since v14:
+> >>  - change input argument as pointer in append_commend()
+> >>
+> >> Changes since v13:
+> >>  - separate poll function as poll w/ & w/o mask function
+> >>  - directly pass inst into append_command function instead
+> >>    of returns a pointer
+> >>  - fixup coding style
+> >>  - rebase onto 5.3-rc1
+> >>
+> >> [... snip ...]
+> >>
+> >> Bibby Hsieh (6):
+> >>   soc: mediatek: cmdq: fixup wrong input order of write api
+> >>   soc: mediatek: cmdq: remove OR opertaion from err return
+> >>   soc: mediatek: cmdq: define the instruction struct
+> >>   soc: mediatek: cmdq: add polling function
+> >>   soc: mediatek: cmdq: add cmdq_dev_get_client_reg function
+> >>   arm64: dts: add gce node for mt8183
+> >>
+> >>  arch/arm64/boot/dts/mediatek/mt8183.dtsi |  10 ++
+> >>  drivers/soc/mediatek/mtk-cmdq-helper.c   | 147 +++++++++++++++++++----
+> >>  include/linux/mailbox/mtk-cmdq-mailbox.h |  11 ++
+> >>  include/linux/soc/mediatek/mtk-cmdq.h    |  53 ++++++++
+> >>  4 files changed, 195 insertions(+), 26 deletions(-)
+> >>
+> >> --
+> >> 2.18.0
 
 _______________________________________________
 linux-arm-kernel mailing list
