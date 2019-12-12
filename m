@@ -2,57 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BE5311CEAB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:45:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D75911CEBB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:49:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
+	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=THkfiqD9mR9eYlCwNeLvsfcMDY9iEnljuJQuoSctZeQ=; b=qST61+ndA/weOaez5PhwdvtIQ
-	jjFL6gUBFmmegPujyHQ4to62z4ycnZv71qG16mKY/xGJ2uk0OrY6KED6vjWUc8AFaB7b8Fs0JEEOk
-	H2tpezMZEBYdFine1y3bL38JiTD5HLW7948TMg2NHY7AEckXXF3SsgmXN5sA6govjZBKKLZUstJna
-	IRgRkVgfE7U76jbFFaPW1Su31dxK7D5umwCpq2XEeWLr9o9VFANc3DWjrfehNdBMdC8bwvyJgVdoT
-	Ct6koe7+NJle+AKzgjW42/KxpvbCjSKYEQo1WQmdmsg3SEvyjRyIVueza2OBAz5Urh9bi0o9WohB6
-	4d56bNwVA==;
+	 bh=E0t0lklKjxvwzZMAYJReloyjCvhdh71+9InbG9OAnsk=; b=LmvgiyeY7euTzAv2ULukLKddW
+	g94YUHDDap94K0JxCKMQgheHs77HNYJ14+Q22iC4f0YgXT/RPFvCLVefRjZWmt/22JqkYKjdQS5i8
+	QgFj0WVsdO22bBBcOPLwHckGHbjvz6eSUPq85pie0vbWq6JXn25NT84U+kuEr0cV5CBodt8Ur7L+F
+	yLQm3+xYd//YeF22rkzBpVA0iI6STW4jjxFiqr624UqRQTZZxz5g+4TOX9WHyqenzB6IJVZUS8L5v
+	TI/FDs4Ur33RxI92La9a2DvVrxjaCJW1ydPdfb7qkxLCK5qifJDBjI95SotZClOqLgzg37v2EqYiw
+	52I+HAlZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifOmF-0007Af-L0; Thu, 12 Dec 2019 13:45:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifOm0-00079L-U5
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 13:44:58 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D4D530E;
- Thu, 12 Dec 2019 05:44:54 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 17E8B3F718;
- Thu, 12 Dec 2019 05:44:52 -0800 (PST)
-Subject: Re: [PATCH] pcie: Add quirk for the Arm Neoverse N1SDP platform
-To: Andre Przywara <andre.przywara@arm.com>, Bjorn Helgaas <helgaas@kernel.org>
-References: <20191211201725.GA30513@google.com>
- <9ad40b55-0d31-a7b7-9f99-ea281fd4ad7d@arm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <46bfdd37-c8a2-f0e2-b0b4-0a40a129d4cb@arm.com>
-Date: Thu, 12 Dec 2019 13:44:51 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1ifOpp-0000m5-1e; Thu, 12 Dec 2019 13:48:53 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifOpg-0000kR-3b; Thu, 12 Dec 2019 13:48:45 +0000
+Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
+ (envelope-from <maz@kernel.org>)
+ id 1ifOpd-0002Ct-8N; Thu, 12 Dec 2019 14:48:41 +0100
+To: =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
+Subject: Re: [PATCH v5 3/9] irqchip: rtd1195-mux: Implement
+ =?UTF-8?Q?irq=5Fget=5Firqchip=5Fstate?=
+X-PHP-Originating-Script: 0:main.inc
 MIME-Version: 1.0
-In-Reply-To: <9ad40b55-0d31-a7b7-9f99-ea281fd4ad7d@arm.com>
-Content-Language: en-GB
+Date: Thu, 12 Dec 2019 13:48:41 +0000
+From: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <20191121050208.11324-4-afaerber@suse.de>
+References: <20191121050208.11324-1-afaerber@suse.de>
+ <20191121050208.11324-4-afaerber@suse.de>
+Message-ID: <f756e3ccde3b928ccc75f41f2012895a@www.loen.fr>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/0.7.2
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Rcpt-To: afaerber@suse.de, linux-realtek-soc@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ tglx@linutronix.de, jason@lakedaemon.net
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_054457_062100_21D90990 
-X-CRM114-Status: GOOD (  29.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191212_054844_293003_51958C96 
+X-CRM114-Status: GOOD (  14.03  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,119 +66,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- linux-acpi@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Jason Cooper <jason@lakedaemon.net>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-realtek-soc@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/12/2019 11:05 am, Andre Przywara wrote:
-> On 11/12/2019 20:17, Bjorn Helgaas wrote:
-> 
-> Hi Bjorn,
-> 
->> On Wed, Dec 11, 2019 at 11:00:49AM +0000, Andre Przywara wrote:
->>> On Tue, 10 Dec 2019 08:41:15 -0600
->>> Bjorn Helgaas <helgaas@kernel.org> wrote:
->>>> On Mon, Dec 09, 2019 at 04:06:38PM +0000, Andre Przywara wrote:
->>>>> From: Deepak Pandey <Deepak.Pandey@arm.com>
->>>>>
->>>>> The Arm N1SDP SoC suffers from some PCIe integration issues, most
->>>>> prominently config space accesses to not existing BDFs being answered
->>>>> with a bus abort, resulting in an SError.
->>>>
->>>> Can we tease this apart a little more?  Linux doesn't program all the
->>>> bits that control error signaling, so even on hardware that works
->>>> perfectly, much of this behavior is determined by what firmware did.
->>>> I wonder if Linux could be more careful about this.
->>>>
->>>> "Bus abort" is not a term used in PCIe.
->>>
->>> Yes, sorry, that was my sloppy term, also aiming more at the CPU
->>> side of the bus, between the cores and the RC.
->>>
->>>>   IIUC, a config read to a
->>>> device that doesn't exist should terminate with an Unsupported Request
->>>> completion, e.g., see the implementation note in PCIe r5.0 sec 2.3.1.
->>>
->>> Yes, that's what Lorenzo mentioned as well.
->>>
->>>> The UR should be an uncorrectable non-fatal error (Table 6-5), and
->>>> Figures 6-2 and 6-3 show how it should be handled and when it should
->>>> be signaled as a system error.  In case you don't have a copy of the
->>>> spec, I extracted those two figures and put them at [1].
->>>
->>> Thanks for that.
->>> So in the last few months we tossed several ideas around how to
->>> work-around this without kernel intervention, all of them turned out
->>> to be not working. There are indeed registers in the RC that
->>> influence error reporting to the CPU side, but even if we could
->>> suppress (or catch) the SError, we can't recover and fixup the read
->>> transaction to the CPU. Even Lorenzo gave up on this ;-) As far as I
->>> understood this, there are gates missing which are supposed to
->>> translate this specific UR into a valid "all-1s" response.
->>
->> But the commit log says firmware scanned the bus (catching the
->> SErrors).  Shouldn't Linux be able to catch them the same way?
-> 
-> Not really. The scanning is done by the SCP management processor, which is a Cortex-M class core on the same bus. So it's a simple, single core running very early after power-on, when the actual AP cores are still off. The SError handler is set to just increase a value, then to return. This value is then checked before and after a config space access for a given
-> BDF: https://git.linaro.org/landing-teams/working/arm/n1sdp-pcie-quirk.git/tree/scp
-> 
-> On the AP cores that run Linux later on this is quite different: The SError is asynchronous, imprecise (inexact) and has no syndrome information. That means we can't attribute this anymore to the faulting instruction, we don't even know if it happened due to this config space access. The CPU might have executed later instructions already, so the state is broken at this point. SError basically means: the system is screwed up.
-> Because this is quite common for SErrors, we don't even allow to register SError handlers in arm64 Linux.
-
-Furthermore, on the main application processor, SError might be 
-delivered to EL3 firmware well beyond the reach of Linux, so we can make 
-zero assumptions about how it's handled and whether we'll ever see it, 
-or survive the result (EL3 is at liberty to say "oh, something went 
-wrong, I'll reset the system immediately").
-
-Robin.
-> So even if we could somehow handle this is in Linux, it would be a much greater and intrusive hack, so I'd rather stick with this version.
->   
->> The "all-1s" response directly from hardware is typical of most
->> platforms, but I don't think it's strictly required by the PCIe spec
->> and I don't think it's absolutely essential even to Linux.  If you can
->> catch the SErrors, isn't there a way for software to fabricate that
->> all-1s data and continue after the read?
-> 
-> That was an idea we had as well, but due to the points mentioned above this is not possible.
-> 
->>>> Even ECAM compliance is not really minor -- if this controller were
->>>> fully compliant with the spec, you would need ZERO Linux changes to
->>>> support it.  Every quirk like this means additional maintenance
->>>> burden, and it's not just a one-time thing.  It means old kernels that
->>>> *should* "just work" on your system will not work unless somebody
->>>> backports the quirk.
->>>
->>> I am well aware of that, and we had quite some discussions
->>> internally, with quite some opposition.  ...
->>
->> The main point is that *future* silicon should be designed to avoid
->> this issue.  I hope at least that part was not controversial.
-> 
-> Yes, the design goal was to be completely standards (SBSA, ACPI, ECAM) compliant, it was just the usual "things happen" that wasn't spotted in time.
-> 
->> If we want to take advantage of the generic PCI code supplied by
->> Linux, we have to expect that the hardware will play by the rules of
->> PCI.
-> 
-> You don't need to convince me ;-), but I think the lesson has been learned.
-> 
-> Cheers,
-> Andre.
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAxOS0xMS0yMSAwNTowMiwgQW5kcmVhcyBGw6RyYmVyIHdyb3RlOgo+IEltcGxlbWVudCB0
+aGUgLmlycV9nZXRfaXJxY2hpcF9zdGF0ZSBjYWxsYmFjayB0byByZXRyaWV2ZSBwZW5kaW5nLAo+
+IGFjdGl2ZSBhbmQgbWFza2VkIGludGVycnVwdCBzdGF0dXMuCj4KPiBTaWduZWQtb2ZmLWJ5OiBB
+bmRyZWFzIEbDpHJiZXIgPGFmYWVyYmVyQHN1c2UuZGU+Cj4gLS0tCj4gIHY1OiBOZXcKPgo+ICBk
+cml2ZXJzL2lycWNoaXAvaXJxLXJ0ZDExOTUtbXV4LmMgfCAzNiAKPiArKysrKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKysKPiAgMSBmaWxlIGNoYW5nZWQsIDM2IGluc2VydGlvbnMoKykK
+Pgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2lycWNoaXAvaXJxLXJ0ZDExOTUtbXV4LmMKPiBiL2Ry
+aXZlcnMvaXJxY2hpcC9pcnEtcnRkMTE5NS1tdXguYwo+IGluZGV4IDBlODY5NzNhYWZjYS4uMmYx
+YmNmZDlkNWQ2IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvaXJxY2hpcC9pcnEtcnRkMTE5NS1tdXgu
+Ywo+ICsrKyBiL2RyaXZlcnMvaXJxY2hpcC9pcnEtcnRkMTE5NS1tdXguYwo+IEBAIC03LDYgKzcs
+NyBAQAo+Cj4gICNpbmNsdWRlIDxsaW51eC9iaXRvcHMuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2lv
+Lmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9pbnRlcnJ1cHQuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2ly
+cWNoaXAuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L2lycWNoaXAvY2hhaW5lZF9pcnEuaD4KPiAgI2lu
+Y2x1ZGUgPGxpbnV4L2lycWRvbWFpbi5oPgo+IEBAIC05NiwxMCArOTcsNDUgQEAgc3RhdGljIHZv
+aWQgcnRkMTE5NV9tdXhfdW5tYXNrX2lycShzdHJ1Y3QgCj4gaXJxX2RhdGEgKmRhdGEpCj4gIAly
+YXdfc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmbXV4LT5sb2NrLCBmbGFncyk7Cj4gIH0KPgo+ICtz
+dGF0aWMgaW50IHJ0ZDExOTVfbXV4X2dldF9pcnFjaGlwX3N0YXRlKHN0cnVjdCBpcnFfZGF0YSAq
+ZGF0YSwKPiArCWVudW0gaXJxY2hpcF9pcnFfc3RhdGUgd2hpY2gsIGJvb2wgKnN0YXRlKQo+ICt7
+Cj4gKwlzdHJ1Y3QgcnRkMTE5NV9pcnFfbXV4X2RhdGEgKm11eCA9IAo+IGlycV9kYXRhX2dldF9p
+cnFfY2hpcF9kYXRhKGRhdGEpOwo+ICsJdTMyIHZhbDsKPiArCj4gKwlzd2l0Y2ggKHdoaWNoKSB7
+Cj4gKwljYXNlIElSUUNISVBfU1RBVEVfUEVORElORzoKPiArCQkvKgo+ICsJCSAqIFVNU0tfSVNS
+IHByb3ZpZGVzIHRoZSB1bm1hc2tlZCBwZW5kaW5nIGludGVycnVwdHMsCj4gKwkJICogZXhjZXB0
+IFVBUlQgYW5kIEkyQy4KPiArCQkgKi8KPiArCQl2YWwgPSByZWFkbF9yZWxheGVkKG11eC0+cmVn
+X3Vtc2tfaXNyKTsKPiArCQkqc3RhdGUgPSAhISh2YWwgJiBCSVQoZGF0YS0+aHdpcnEpKTsKPiAr
+CQlicmVhazsKPiArCWNhc2UgSVJRQ0hJUF9TVEFURV9BQ1RJVkU6Cj4gKwkJLyoKPiArCQkgKiBJ
+U1IgcHJvdmlkZXMgdGhlIG1hc2tlZCBwZW5kaW5nIGludGVycnVwdHMsCj4gKwkJICogaW5jbHVk
+aW5nIFVBUlQgYW5kIEkyQy4KPiArCQkgKi8KPiArCQl2YWwgPSByZWFkbF9yZWxheGVkKG11eC0+
+cmVnX2lzcik7Cj4gKwkJKnN0YXRlID0gISEodmFsICYgQklUKGRhdGEtPmh3aXJxKSk7Cj4gKwkJ
+YnJlYWs7CgpBQ1RJVkUgaGFzIGEgdmVyeSBzcGVjaWZpYyBtZWFuaW5nOiBpdCBpbmRpY2F0ZXMg
+dGhhdCB0aGUgaW50ZXJydXB0IGlzCmJlaW5nIGhhbmRsZWQgcmlnaHQgbm93LiBXaGF0IHRoaXMg
+dGVsbHMgeW91IGlzIHdoZXRoZXIgdGhlIGludGVycnVwdAppcyBwZW5kaW5nIGFuZCB1bm1hc2tl
+ZCwgd2hpY2ggaXMgYW4gZW50aXJlbHkgZGlmZmVyZW50IHRoaW5nLgoKVGhpcyB3aWxsIGxlYWQg
+dG8gaXJxX2Rpc2FibGUoKSBtaXNiZWhhdmluZyAoaXQgd2lsbCBhc3N1bWUgdGhhdAp0aGUgaW50
+ZXJydXB0IGlzIGFjdGl2ZSB3aGlsZSBpdCBpcyBvbmx5IHBlbmRpbmcpLgoKR2l2ZW4gd2hhdCB0
+aGUgSFcgZXhwb3NlcyAob3IgcmF0aGVyLCB3aGF0IHRoaXMgZHJpdmVyIGV4cG9zZXMgb2YgdGhl
+IApIVyksCkkgZG9uJ3QgdGhpbmsgeW91IGNhbiBpbXBsZW1lbnQgdGhpcyBzdGF0ZS4KCj4gKwlj
+YXNlIElSUUNISVBfU1RBVEVfTUFTS0VEOgo+ICsJCXZhbCA9IG11eC0+aW5mby0+aXNyX3RvX2lu
+dF9lbl9tYXNrW2RhdGEtPmh3aXJxXTsKPiArCQkqc3RhdGUgPSAhKG11eC0+c2NwdV9pbnRfZW4g
+JiB2YWwpOwoKU2hvdWxkbid0IHlvdSB0YWtlIHRoZSBjb3JyZXNwb25kaW5nIHNwaW5sb2NrIGdp
+dmVuIHRoYXQgeW91IGNhbgpoYXZlIGEgcGVuZGluZyB1cGRhdGUgaW4gcGFyYWxsZWw/CgogICAg
+ICAgICBNLgoKPiArCQlicmVhazsKPiArCWRlZmF1bHQ6Cj4gKwkJcmV0dXJuIC1FSU5WQUw7Cj4g
+Kwl9Cj4gKwo+ICsJcmV0dXJuIDA7Cj4gK30KPiArCj4gIHN0YXRpYyBjb25zdCBzdHJ1Y3QgaXJx
+X2NoaXAgcnRkMTE5NV9tdXhfaXJxX2NoaXAgPSB7Cj4gIAkuaXJxX2FjawkJPSBydGQxMTk1X211
+eF9hY2tfaXJxLAo+ICAJLmlycV9tYXNrCQk9IHJ0ZDExOTVfbXV4X21hc2tfaXJxLAo+ICAJLmly
+cV91bm1hc2sJCT0gcnRkMTE5NV9tdXhfdW5tYXNrX2lycSwKPiArCS5pcnFfZ2V0X2lycWNoaXBf
+c3RhdGUJPSBydGQxMTk1X211eF9nZXRfaXJxY2hpcF9zdGF0ZSwKPiAgfTsKPgo+ICBzdGF0aWMg
+aW50IHJ0ZDExOTVfbXV4X2lycV9kb21haW5fbWFwKHN0cnVjdCBpcnFfZG9tYWluICpkLAoKLS0g
+CkphenogaXMgbm90IGRlYWQuIEl0IGp1c3Qgc21lbGxzIGZ1bm55Li4uCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
