@@ -2,64 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71BAF11CA03
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 10:58:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B34DA11C9FF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 10:58:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Qtz1UkfP8TEbl1MNuTBIwGbpTsbxBsrCyPjtvFaJKNk=; b=i776+c0iG/K7/yrJCIRchiFtqF
-	rvqmUXmxBW0D4cCh9LkQHulpuwCNovlExdi2yXvdA9kyqmgik35HkONP3HvBrw8nf5z+xwRKwa4mp
-	cygEW+/7Sh4WeePpTP5vi/Jw7ZGiYVMShZasWzQJfAoY9I4UCrsAfE45AwIlm0Vlv+LE6STVrNnjB
-	te4TeVKYalQPhHGmbZdMRw9wyZ3NK4/LPWndfD2eEFTutf5EtsOGddl3DOEYIc6TlWtyCXEAdS76w
-	RWEOAOqsWvu8cWLT3kWR1NWscHBb9ETHYi2dkqFr6wrfgyDcld9iphovvwnetw6JrRhxfxZd4TCVY
-	Wke9Yj/Q==;
+	bh=svNAIEVhKaizn0QC989HaTPEf5ofB7AaI7rV83YO7Mk=; b=HBMrotDKQGzs0zzIAs9UjXKcib
+	TNKk+25ZtuA/y5uHXsjXHDoPJ/Qet4waHOyGoLvL6M3aqn3Huxcl1ahGVAuRFbYMgnoQ3NHAZMX7K
+	nPlHkYy2z0fq+D3uqvOd92heizNdRNxNRAAMWIbLf/aOporBKQa+Rq7oOaIOMrF0wunoqGmpF8HuW
+	A/+jD4WSC2BV+0sGRBD2qENOAlabUuBzx9P9xwHUqX/g87wGxF4iB7V8bpEOqmVfAJHD/yHcY8Yzg
+	ktFTvk0toZmuumSgBcQGotPJAOhFpp3cRaHLuB+hBLG32gnT1RGKDk8zT6QH0sQ+uAZYGr6UQ94Fs
+	M9vB9sEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifLEb-0000Ae-RN; Thu, 12 Dec 2019 09:58:13 +0000
-Received: from relay.sw.ru ([185.231.240.75])
+	id 1ifLEG-0008Jf-CI; Thu, 12 Dec 2019 09:57:52 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifLEJ-0008Qy-4S
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 09:57:57 +0000
-Received: from dhcp-172-16-25-5.sw.ru ([172.16.25.5])
- by relay.sw.ru with esmtp (Exim 4.92.3)
- (envelope-from <aryabinin@virtuozzo.com>)
- id 1ifLDd-00051z-5a; Thu, 12 Dec 2019 12:57:13 +0300
-Subject: Re: [PATCH v2 4/4] powerpc: Book3S 64-bit "heavyweight" KASAN support
-To: Daniel Axtens <dja@axtens.net>, Balbir Singh <bsingharora@gmail.com>,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- linuxppc-dev@lists.ozlabs.org, linux-s390@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, linux-arch@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kasan-dev@googlegroups.com,
- christophe.leroy@c-s.fr, aneesh.kumar@linux.ibm.com,
- Dmitry Vyukov <dvyukov@google.com>
-References: <20191210044714.27265-1-dja@axtens.net>
- <20191210044714.27265-5-dja@axtens.net>
- <71751e27-e9c5-f685-7a13-ca2e007214bc@gmail.com>
- <875zincu8a.fsf@dja-thinkpad.axtens.net>
- <2e0f21e6-7552-815b-1bf3-b54b0fc5caa9@gmail.com>
- <87wob3aqis.fsf@dja-thinkpad.axtens.net>
-From: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Message-ID: <023d59f1-c007-e153-9893-3231a4caf7d1@virtuozzo.com>
-Date: Thu, 12 Dec 2019 12:56:56 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+ id 1ifLE0-0008Hx-6N
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 09:57:40 +0000
+Received: by mail-wm1-x342.google.com with SMTP id t14so1759648wmi.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Dec 2019 01:57:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=gx1Mdi7/CFmOT7RiIEVg3kQRBdQoHiJa4CnAd9qCJmg=;
+ b=yd5bVEFtgIODavE5Wy5kl2EwUKPgntf/ynutV1/iuGWUD7bN9CmysWNJgtp9Bs3vVf
+ bLKRuIOtbxscxmKQ5AoUrdctD3vjekNCRBG20Z+21i36dxmQjJB/kqpJqM4j1IXiVrHV
+ zdgK0zjx2IJXCdHzkWC4Srs79kGXf7TVq6kSzAU1yPNnVlB/hdCu/RuOOAYwqI0jFs9J
+ uyHCMuKtD3XZ6Ymbz+aL/YawKQkgEXAmQybExIjwVLXb0+TmAuwCLWKsOCNi/1ON8PGZ
+ cQP6rBl5ZNcF8PU0F29ZGw+9Ze1ZBnASA1cVQ4X37+jSlUKGtkv9rT0Lv/9/tf9PjGuv
+ j0RQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=gx1Mdi7/CFmOT7RiIEVg3kQRBdQoHiJa4CnAd9qCJmg=;
+ b=at7jlsLCJgeBx/pVu8ZOBKK3r8I2lQnNdjFtpS+j4yr7UgTq/T1G3GNyh/2BIvCxre
+ 3nLiOaS9K8NHiYUWk2G5dgiIcu4l5EPhk8uv7i50JSrWFHkriehBgQhboK4TLF6uOdg0
+ pkFWJ06ljh2ala2x96bz3OjhRDsqVTFtPl709CoM8qy3Ql13judZcG4kWJ0kwVoVMwHV
+ rb5OZ7JKgtTu4eCKl3jDHYD4ZeCcM27/Z5hx9GtsGKR2T4TVlwUHgX/tJMlL4w1RH7mX
+ tkrQTQt6ynJU/ov0u+aNW55NO5YBwsiJ3A00uuTLibrzgrmreDR20QbhfV/ozzCr3DY7
+ KIkQ==
+X-Gm-Message-State: APjAAAUzw0m+G66IBWYngfVXNTqk6rxozjbf5Om82KGH1jsH3NJiNoOr
+ oRddzCpM4cqtUrKARvHlDNb0qQ==
+X-Google-Smtp-Source: APXvYqwk4QDlI0ODXXgdLTi/EXbqG6DwiTR8OW5NiylFbyhT0VLdogLil3eQ5czc90Dbh6YAj+YurA==
+X-Received: by 2002:a1c:541b:: with SMTP id i27mr5740102wmb.137.1576144653403; 
+ Thu, 12 Dec 2019 01:57:33 -0800 (PST)
+Received: from localhost (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id k19sm5248320wmi.42.2019.12.12.01.57.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 12 Dec 2019 01:57:32 -0800 (PST)
+References: <20191206074052.15557-1-jian.hu@amlogic.com>
+ <20191206074052.15557-2-jian.hu@amlogic.com>
+User-agent: mu4e 1.3.3; emacs 26.2
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Jian Hu <jian.hu@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH v4 1/6] dt-bindings: clock: meson: add A1 PLL clock
+ controller bindings
+In-reply-to: <20191206074052.15557-2-jian.hu@amlogic.com>
+Date: Thu, 12 Dec 2019 10:57:31 +0100
+Message-ID: <1jblsdlvck.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <87wob3aqis.fsf@dja-thinkpad.axtens.net>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_015755_188245_C242CBF4 
-X-CRM114-Status: GOOD (  19.93  )
+X-CRM114-CacheID: sfid-20191212_015736_297478_1BD03287 
+X-CRM114-Status: GOOD (  14.17  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,79 +97,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>, devicetree@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
+ Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/11/19 5:24 PM, Daniel Axtens wrote:
-> Hi Balbir,
-> 
->>>>> +Discontiguous memory can occur when you have a machine with memory spread
->>>>> +across multiple nodes. For example, on a Talos II with 64GB of RAM:
->>>>> +
->>>>> + - 32GB runs from 0x0 to 0x0000_0008_0000_0000,
->>>>> + - then there's a gap,
->>>>> + - then the final 32GB runs from 0x0000_2000_0000_0000 to 0x0000_2008_0000_0000
->>>>> +
->>>>> +This can create _significant_ issues:
->>>>> +
->>>>> + - If we try to treat the machine as having 64GB of _contiguous_ RAM, we would
->>>>> +   assume that ran from 0x0 to 0x0000_0010_0000_0000. We'd then reserve the
->>>>> +   last 1/8th - 0x0000_000e_0000_0000 to 0x0000_0010_0000_0000 as the shadow
->>>>> +   region. But when we try to access any of that, we'll try to access pages
->>>>> +   that are not physically present.
->>>>> +
->>>>
->>>> If we reserved memory for KASAN from each node (discontig region), we might survive
->>>> this no? May be we need NUMA aware KASAN? That might be a generic change, just thinking
->>>> out loud.
->>>
->>> The challenge is that - AIUI - in inline instrumentation, the compiler
->>> doesn't generate calls to things like __asan_loadN and
->>> __asan_storeN. Instead it uses -fasan-shadow-offset to compute the
->>> checks, and only calls the __asan_report* family of functions if it
->>> detects an issue. This also matches what I can observe with objdump
->>> across outline and inline instrumentation settings.
->>>
->>> This means that for this sort of thing to work we would need to either
->>> drop back to out-of-line calls, or teach the compiler how to use a
->>> nonlinear, NUMA aware mem-to-shadow mapping.
->>
->> Yes, out of line is expensive, but seems to work well for all use cases.
-> 
-> I'm not sure this is true. Looking at scripts/Makefile.kasan, allocas,
-> stacks and globals will only be instrumented if you can provide
-> KASAN_SHADOW_OFFSET. In the case you're proposing, we can't provide a
-> static offset. I _think_ this is a compiler limitation, where some of
-> those instrumentations only work/make sense with a static offset, but
-> perhaps that's not right? Dmitry and Andrey, can you shed some light on
-> this?
-> 
 
-There is no code in the kernel is poisoning/unpoisoning
-redzones/variables on stack. It's because it's always done by the compiler, it inserts
-some code in prologue/epilogue of every function.
-So compiler needs to know the shadow offset which will be used to poison/unpoison
-stack frames.
+On Fri 06 Dec 2019 at 08:40, Jian Hu <jian.hu@amlogic.com> wrote:
 
-There is no such kind of limitation on globals instrumentation. The only reason globals
-instrumentation depends on -fasan-shadow-offset is because there was some bug related to
-globals in old gcc version which didn't support -fasan-shadow-offset.
+> Add the documentation to support Amlogic A1 PLL clock driver,
+> and add A1 PLL clock controller bindings.
+>
+> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
+> ---
+>  .../bindings/clock/amlogic,a1-pll-clkc.yaml   | 59 +++++++++++++++++++
+>  include/dt-bindings/clock/a1-pll-clkc.h       | 16 +++++
+>  2 files changed, 75 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
+>  create mode 100644 include/dt-bindings/clock/a1-pll-clkc.h
+>
+> diff --git a/Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml b/Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
+> new file mode 100644
+> index 000000000000..7feeef5abf1b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
+> @@ -0,0 +1,59 @@
+> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
 
+Rob commented on the above in v1 and it remains unaddressed
 
-If you want stack instrumentation with not standard mem-to-shadow mapping, the options are:
-1. Patch compiler to make it possible the poisoning/unpoisonig of stack frames via function calls.
-2. Use out-line instrumentation and do whatever mem-to-shadow mapping you want, but keep all kernel
-stacks in some special place for which standard mem-to-shadow mapping (addr >>3 +offset)
-works.
+> +/*
+> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+> + */
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/clock/amlogic,a1-pll-clkc.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Amlogic Meson A/C serials PLL Clock Control Unit Device Tree Bindings
+> +
+> +maintainers:
+> +  - Neil Armstrong <narmstrong@baylibre.com>
+> +  - Jerome Brunet <jbrunet@baylibre.com>
+> +  - Jian Hu <jian.hu@jian.hu.com>
+> +
+> +properties:
+> +  compatible:
+> +    - enum:
+> +        - amlogic,a1-pll-clkc
+> +  "#clock-cells":
+> +    const: 1
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +clocks:
+> +  minItems: 2
+> +  maxItems: 2
+> +  items:
+> +   - description: Input xtal_fixpll
+> +   - description: Input xtal_hifipll
+> +
+> +clock-names:
+> +  minItems: 2
+> +  maxItems: 2
+> +  items:
+> +     - const: xtal_fixpll
+> +     - const: xtal_hifipll
+> +
+> +required:
+> +  - compatible
+> +  - "#clock-cells"
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    clkc_pll: pll-clock-controller@7c80 {
+> +                compatible = "amlogic,a1-pll-clkc";
+> +                reg = <0 0x7c80 0 0x18c>;
+> +                #clock-cells = <1>;
+> +                clocks = <&clkc_periphs CLKID_XTAL_FIXPLL>,
+> +                         <&clkc_periphs CLKID_XTAL_HIFIPLL>;
+> +                clock-names = "xtal_fixpll", "xtal_hifipll";
+> +    };
+> diff --git a/include/dt-bindings/clock/a1-pll-clkc.h b/include/dt-bindings/clock/a1-pll-clkc.h
+> new file mode 100644
+> index 000000000000..58eae237e503
+> --- /dev/null
+> +++ b/include/dt-bindings/clock/a1-pll-clkc.h
+> @@ -0,0 +1,16 @@
+> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
+> +/*
+> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+> + */
+> +
+> +#ifndef __A1_PLL_CLKC_H
+> +#define __A1_PLL_CLKC_H
+> +
+> +#define CLKID_FIXED_PLL				1
+> +#define CLKID_FCLK_DIV2				6
+> +#define CLKID_FCLK_DIV3				7
+> +#define CLKID_FCLK_DIV5				8
+> +#define CLKID_FCLK_DIV7				9
+> +#define CLKID_HIFI_PLL				10
+> +
+> +#endif /* __A1_PLL_CLKC_H */
 
-
-> Also, as it currently stands, the speed difference between inline and
-> outline is approximately 2x, and given that we'd like to run this
-> full-time in syzkaller I think there is value in trading off speed for
-> some limitations.
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
