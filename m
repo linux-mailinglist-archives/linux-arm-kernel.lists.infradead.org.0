@@ -2,62 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46FE711D029
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:48:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFF6411D040
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:53:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SSOvDeu9vJp7BFUBg+m6rGY+PSk2u3OO6vGbN/+xav8=; b=J6mHqcUUwwvl2T6VokG2Spc53
-	oj80qJLF6KKnqe2KNWdRNjuCDu+CQ+/WA7ImDLQd0d+tc+GhQunhdY5X+eWVOgh4Rx/2a/EKtpqAu
-	eGoh78nqsFOkyRhs4e65dYQBmR5YzPuISdUIEA4+jPtNmbrUdDo3G6LkGP5Ijs/JC0rMA7CCgwZs2
-	BPgXV0wTJoMrW4vXHEma0PgpZNeNGzaqskLTZyxhv4i9Hh3QmGe4TvU1vFDnf6spJsMjVSczLaiQW
-	UzfIv1AUtbRE1PMwkR/XFSYkxg8o7eyR1jZGMIXUlL44AKuzPAjcg1p+ChM4byiMdIRclQVl0aGMw
-	PhAAw80VQ==;
+	 bh=CQbDcFwm8emNVCib679B5gVyItngvGVNarB2FKVAKO8=; b=IxPTa+L9jUuF2jaEkdiO+Jq71
+	MxzJo2LV7kYspxB/UjBWzBqPt6nYUxFVhEIuEe57G4CYMPKdyAdYkGi8d6u0x+tj749uFfqHPmJLv
+	Avg/Gk0qHCV7etdSZ/RUknSQx3V/wKsC0o6MBioZN8Oi7LuciIlpIbHEkmNxttOuPgCbEobsDw1y6
+	nUULNgreBKvwTtrn86JEnYbgLo4AAD3qAYCXjrNy0EdF7GzmWiIzDIaujY3gYXQ5Er5wfCT2+Uk0t
+	/UYNHZOpsbVHzXiamp6aP5RqiUWVAet7C9QPsUuIEcXh6D78x/mzhHYMrX41ewJ3cVNCL2m77/JD0
+	dhQa7Fa9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifPl7-00022r-6a; Thu, 12 Dec 2019 14:48:05 +0000
+	id 1ifPqX-0004Cf-2M; Thu, 12 Dec 2019 14:53:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifPkw-00022V-2w
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 14:47:55 +0000
+ id 1ifPqP-0004Ba-Eq
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 14:53:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85557DA7;
- Thu, 12 Dec 2019 06:47:53 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A7613F6CF;
- Thu, 12 Dec 2019 06:47:51 -0800 (PST)
-Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
- API
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>
-References: <3d8a58bf-0814-1ec1-038a-10a20b9646ad@free.fr>
- <20191128185630.GK82109@yoga> <20191202014237.GR248138@dtor-ws>
- <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
- <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
- <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
- <20191211222829.GV50317@dtor-ws>
- <70528f77-ca10-01cd-153b-23486ce87d45@free.fr>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <cf5b3dee-061e-a476-7219-aa08c2977488@arm.com>
-Date: Thu, 12 Dec 2019 14:47:46 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AEE1CDA7;
+ Thu, 12 Dec 2019 06:53:32 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E5B03F6CF;
+ Thu, 12 Dec 2019 06:53:32 -0800 (PST)
+Date: Thu, 12 Dec 2019 14:53:30 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Jeff Chang <richtek.jeff.chang@gmail.com>
+Subject: Re: [PATCH] ASoC: Add MediaTek MT6660 Speaker Amp Driver
+Message-ID: <20191212145330.GC4310@sirena.org.uk>
+References: <1576152740-11979-1-git-send-email-richtek.jeff.chang@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <70528f77-ca10-01cd-153b-23486ce87d45@free.fr>
-Content-Language: en-GB
+In-Reply-To: <1576152740-11979-1-git-send-email-richtek.jeff.chang@gmail.com>
+X-Cookie: We have DIFFERENT amounts of HAIR --
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_064754_210663_F2C9CC68 
-X-CRM114-Status: GOOD (  23.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191212_065333_589424_95A4B401 
+X-CRM114-Status: GOOD (  22.92  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,139 +64,196 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-clk <linux-clk@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org, tiwai@suse.com,
+ lgirdwood@gmail.com, jeff_chang@richtek.com, matthias.bgg@gmail.com,
+ perex@perex.cz, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1065634830205327146=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/12/2019 1:53 pm, Marc Gonzalez wrote:
-> On 11/12/2019 23:28, Dmitry Torokhov wrote:
-> 
->> On Wed, Dec 11, 2019 at 05:17:28PM +0100, Marc Gonzalez wrote:
->>
->>> What is the rationale for the devm_add_action API?
->>
->> For one-off and maybe complex unwind actions in drivers that wish to use
->> devm API (as mixing devm and manual release is verboten). Also is often
->> used when some core subsystem does not provide enough devm APIs.
-> 
-> Thanks for the insight, Dmitry. Thanks to Robin too.
-> 
-> This is what I understand so far:
-> 
-> devm_add_action() is nice because it hides/factorizes the complexity
-> of the devres API, but it incurs a small storage overhead of one
-> pointer per call, which makes it unfit for frequently used actions,
-> such as clk_get.
-> 
-> Is that correct?
-> 
-> My question is: why not design the API without the small overhead?
 
-Probably because on most architectures, ARCH_KMALLOC_MINALIGN is at 
-least as big as two pointers anyway, so this "overhead" should mostly be 
-free in practice. Plus the devres API is almost entirely about being 
-able to write simple robust code, rather than absolute efficiency - I 
-mean, struct devres itself is already 5 pointers large at the absolute 
-minimum ;)
+--===============1065634830205327146==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="gr/z0/N6AeWAPJVB"
+Content-Disposition: inline
 
-In summary: the email client in which I'm writing this is currently 
-using 2.3GB of my workstation's 64GB of RAM; welcome to 21st century 
-software... :P
 
-Robin.
+--gr/z0/N6AeWAPJVB
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> Proof of concept below:
-> 
-> 
-> diff --git a/drivers/base/devres.c b/drivers/base/devres.c
-> index 0bbb328bd17f..76392dd6273b 100644
-> --- a/drivers/base/devres.c
-> +++ b/drivers/base/devres.c
-> @@ -685,6 +685,20 @@ int devres_release_group(struct device *dev, void *id)
->   }
->   EXPORT_SYMBOL_GPL(devres_release_group);
->   
-> +void *devm_add(struct device *dev, dr_release_t func, void *arg, size_t size)
+On Thu, Dec 12, 2019 at 08:12:20PM +0800, Jeff Chang wrote:
+
+> sense, which are able to be monitored via DATAO through proper
+>=20
+> ---
+>=20
+> [PATCH v2] :
+> 	1. remove unnecessary space from commit message
+> 	2. add Signed-off-by info
+>=20
+> Signed-off-by: Jeff Chang <richtek.jeff.chang@gmail.com>
+> ---
+
+You should place the Signed-off-by before the first --- as covered by
+submitting-patches.rst.  Please, slow down a bit before resending and
+make sure you've checked what you're doing thoroughly.  Look at what
+you're sending and how it compares to what others are sending.
+
+> +config SND_SOC_MT6660
+> +	tristate "Mediatek MT6660 Speaker Amplifier"
+> +	depends on I2C
+> +	select CRC32
+> +	select CRYPTO_SHA256
+> +	select CRYTO_RSA
+> +	help
+
+These selects of crypto stuf appear entirely unrelated to anything in
+the driver?
+
+> +++ b/sound/soc/codecs/mt6660.c
+> @@ -0,0 +1,1063 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2019 MediaTek Inc.
+> + */
+
+Please make the entire comment a C++ one so things look more
+intentional.
+
+> +static int mt6660_dbg_io_write(void *drvdata, u16 reg,
+> +			       const void *val, u16 size)
 > +{
-> +	void *data = devres_alloc(func, size, GFP_KERNEL);
-> +
-> +	if (data) {
-> +		memcpy(data, arg, size);
-> +		devres_add(dev, data);
-> +	} else
-> +		func(dev, arg);
-> +
-> +	return data;
-> +}
-> +EXPORT_SYMBOL_GPL(devm_add);
-> +
->   /*
->    * Custom devres actions allow inserting a simple function call
->    * into the teadown sequence.
-> diff --git a/drivers/clk/clk-devres.c b/drivers/clk/clk-devres.c
-> index be160764911b..8db671823126 100644
-> --- a/drivers/clk/clk-devres.c
-> +++ b/drivers/clk/clk-devres.c
-> @@ -4,6 +4,11 @@
->   #include <linux/export.h>
->   #include <linux/gfp.h>
->   
-> +static void __clk_put(struct device *dev, void *data)
+> +	struct mt6660_chip *chip =3D (struct mt6660_chip *)drvdata;
+> +	int reg_size =3D mt6660_get_reg_size(reg);
+> +	int i =3D 0;
+> +	unsigned int regval =3D 0;
+> +	u8 *_val =3D (u8 *)val;
+
+This is duplicating standard regmap functionality.
+
+> +static bool mt6660_volatile_reg(struct device *dev, unsigned int reg)
 > +{
-> +	clk_put(*(struct clk **)data);
+> +	return true;
 > +}
+
+There's no need to do this, there's no cache configured.
+
+> +static unsigned int mt6660_component_io_read(
+> +	struct snd_soc_component *component, unsigned int reg)
+> +{
+> +	struct mt6660_chip *chip =3D snd_soc_component_get_drvdata(component);
+> +	unsigned int val;
+> +	int ret;
 > +
->   static void devm_clk_release(struct device *dev, void *res)
->   {
->   	clk_put(*(struct clk **)res);
-> @@ -11,19 +16,11 @@ static void devm_clk_release(struct device *dev, void *res)
->   
->   struct clk *devm_clk_get(struct device *dev, const char *id)
->   {
-> -	struct clk **ptr, *clk;
-> -
-> -	ptr = devres_alloc(devm_clk_release, sizeof(*ptr), GFP_KERNEL);
-> -	if (!ptr)
-> -		return ERR_PTR(-ENOMEM);
-> +	struct clk *clk = clk_get(dev, id);
->   
-> -	clk = clk_get(dev, id);
-> -	if (!IS_ERR(clk)) {
-> -		*ptr = clk;
-> -		devres_add(dev, ptr);
-> -	} else {
-> -		devres_free(ptr);
-> -	}
-> +	if (!IS_ERR(clk))
-> +		if (!devm_add(dev, __clk_put, &clk, sizeof(clk)))
-> +			clk = ERR_PTR(-ENOMEM);
->   
->   	return clk;
->   }
-> diff --git a/include/linux/device.h b/include/linux/device.h
-> index e226030c1df3..5acb61ec39ab 100644
-> --- a/include/linux/device.h
-> +++ b/include/linux/device.h
-> @@ -970,6 +970,7 @@ void __iomem *devm_of_iomap(struct device *dev,
->   			    resource_size_t *size);
->   
->   /* allows to add/remove a custom action to devres stack */
-> +void *devm_add(struct device *dev, dr_release_t func, void *arg, size_t size);
->   int devm_add_action(struct device *dev, void (*action)(void *), void *data);
->   void devm_remove_action(struct device *dev, void (*action)(void *), void *data);
->   void devm_release_action(struct device *dev, void (*action)(void *), void *data);
-> 
+> +	ret =3D regmap_read(chip->regmap, reg, &val);
+> +	if (ret < 0) /* ret success -> >=3D 0, fail -> < - */
+> +		return ret;
+> +	pr_err("%s val =3D 0x%x\n", __func__, val);
+> +	return val;
+> +}
+
+This function appears to be redunddant, ASoC has wrappers for I/O on
+components, same for writes.
+
+> +static int data_debug_show(struct seq_file *s, void *data)
+> +{
+> +	struct dbg_info *di =3D s->private;
+> +	struct dbg_internal *d =3D &di->internal;
+
+regmap has standard support for dumping the register map via debugfs, no
+need to write your own.  You should be able to just remove all the
+debugfs code.
+
+> +/*
+> + * MT6660 Generic Setting make this chip work normally.
+> + * it is tuned by Richtek RDs.
+> + */
+> +static const struct codec_reg_val generic_reg_inits[] =3D {
+> +	{ MT6660_REG_WDT_CTRL, 0x80, 0x00 },
+> +	{ MT6660_REG_SPS_CTRL, 0x01, 0x00 },
+> +	{ MT6660_REG_AUDIO_IN2_SEL, 0x1c, 0x04 },
+
+The writes to reserved registers should be fine but things like this
+which looks like it's configuring the input path should just be left at
+the chip default, we don't want to be configuring for particular boards
+since the same driver will be used for every board with the chip.
+
+> +	{ MT6660_REG_HPF1_COEF, 0xffffffff, 0x7fdb7ffe },
+> +	{ MT6660_REG_HPF2_COEF, 0xffffffff, 0x7fdb7ffe },
+
+Similarly here.
+
+> +static int mt6660_component_init_setting(struct snd_soc_component *compo=
+nent)
+> +{
+> +	int i, len, ret;
+> +	const struct codec_reg_val *init_table;
+> +
+> +	pr_info("%s start\n", __func__);
+
+These pr_info() calls are going to be too noisy.
+
+> +	switch (level) {
+> +	case SND_SOC_BIAS_OFF:
+> +		ret =3D regmap_read(chip->regmap, MT6660_REG_IRQ_STATUS1, &val);
+> +		dev_info(component->dev,
+> +			"%s reg0x05 =3D 0x%x\n", __func__, val);
+> +		break;
+
+This is just making noise, it looks like there's nothing to do in this
+function at all and the above is only for debugging.  There's lots of
+these throughout the driver.
+
+> +static int mt6660_component_put_volsw(struct snd_kcontrol *kcontrol,
+> +				  struct snd_ctl_elem_value *ucontrol)
+> +{
+> +	struct snd_soc_component *component =3D
+> +		snd_soc_kcontrol_component(kcontrol);
+> +	int put_ret =3D 0;
+> +
+> +	pm_runtime_get_sync(component->dev);
+> +	put_ret =3D snd_soc_put_volsw(kcontrol, ucontrol);
+> +	if (put_ret < 0)
+> +		return put_ret;
+> +	pm_runtime_put(component->dev);
+> +	return put_ret;
+> +}
+
+It would be *much* better to just use a register cache here rather than
+open code like this, and given that the device is suspended via the
+register map it is more than a little surprising that there's any need
+to do anything special here.
+
+--gr/z0/N6AeWAPJVB
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl3yVGkACgkQJNaLcl1U
+h9AdBgf/Txq2F8UErlJS7V2ETpVBmA7z2H4huGjRBF5D9tDQD5uNbT/pA25/Oe5D
+VFt+1dRHKpk3TU3MUFiIwkZNH0UzD2MC8RmK3UvxGZP51HCE9R8SkleH8cDoSbJc
+aZqys/4lsz0DVc+qzhyuxHA2dckYOyqRTrn+4RNT1Q3reiJfYDDk5ziZRpqohril
+8e9lNqyTewpob7SrL5zUtHbn0cIGuSFt/mo6Iweocy6+J7hYMEZEBb7kd84LAhRP
+H3S3ggEEGC32CS0ez0Qdgm+tq6DF2+UGkZOU6AGk9aOgjbGoBZxvWlXTQS/qPX1C
+04OcQ5JFv5kv6Sr/okYs23KuYYQrLg==
+=2dQa
+-----END PGP SIGNATURE-----
+
+--gr/z0/N6AeWAPJVB--
+
+
+--===============1065634830205327146==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1065634830205327146==--
+
