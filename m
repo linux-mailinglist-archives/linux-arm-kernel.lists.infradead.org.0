@@ -2,72 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33AE811CFD8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:31:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 855BB11D002
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 15:38:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Nx1cPE/PODVZs+P2HWp0VecGGKbXvwwVp0wOMoWjhKw=; b=Dri66QXo3HxQGDWryPpzNyFO1
-	KQLRFZFu/grg7H+LAZId4g49O3ABptz0PMXwgQ+HYhxfHmmO1YQpgswyNFPtHihSn1l7NoixzSa4+
-	Z3DllkfT0uZs/YyC9au4mxqqGE8NyNIpgH4Xs4cp7WJfJw4Eim9gT9+yApvd9tiaT7PImBxkGllcs
-	wUz41f2xyh5Kw02dhL1aNUtHFki1uU+WRRA7p0vMdl2VBPVe3m6ExSwO9E5fQmFVLDws48xuq0Bsj
-	s3QR6IDyMUD3DRuRikqiXvdL9YRPTmuZFHBS1V0hpePW8aO5CVa/cJPdqz6wtJ2G0JOh2ogpAvGH5
-	VAbnkjCzA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9gS2o2a8kvbyeCkSNClbdcHRJzHQ3m9rr+rtnGvc3jU=; b=cFeWOhWsH+C6Td
+	OkqiqWSbWmM1hx1/H4t0ZOXOBIy1juB6v8SLEL9lE20AEjR0hfFVpiy+2p9ntu1IPY+kKuxR+BfOO
+	BqkJF5UrmSF0UqGpF2WRIWdtlHSOZ36YBx7GgeDsugld0tFR3kOD23dxiOT4/xBINE/lG7Pm+ogLu
+	PX4sV/8roMyl7s9FYw/ysjWmY4OMOCeWQ4t2Q0iaqH9CO92f4s6x6dVWVoHJvEbi9aR9Sdclw3ehG
+	hVjVfmBeRBbuRY9HM1KrFZ+4FaEBje1U7HqQN0tUV34J7PJqG56ROLsapgw51nowmnSbphNgYegJK
+	JbcKKs6wdQrcyX1ZaapA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifPUd-0003YW-7G; Thu, 12 Dec 2019 14:31:03 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1ifPby-0005ZF-JH; Thu, 12 Dec 2019 14:38:38 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifPUP-0003Xe-6O; Thu, 12 Dec 2019 14:30:50 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1ifPUF-0002s6-2y; Thu, 12 Dec 2019 15:30:39 +0100
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [PATCH v5 3/3] hwrng: add mtk-sec-rng driver
-X-PHP-Originating-Script: 0:main.inc
+ id 1ifPbo-0005Yo-Aw
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 14:38:29 +0000
+Received: by mail-wm1-x341.google.com with SMTP id f4so3765260wmj.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Dec 2019 06:38:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=monstr-eu.20150623.gappssmtp.com; s=20150623;
+ h=sender:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=IRa2P15JWd6yJ1hNkD7pnHDIq7rswcnHahGMVU4CTFI=;
+ b=zZDTXj50NJUYtsoJMVI4UBnkdOFa/BR1tjfzRVP2m/vjyLczlalfh9zilxZiXOJchN
+ S7FiGfMBixLntjrFudYTUMd+wH1WVS4IIIa6x6trOnG70K3pxITkpuUm50udmAK8EFem
+ +uq2d5RP2FbE6f3pCaevkLQ+ZFnLDsQnT3MY/aFcRglYeTmuQO1Q5K6+jKgJhFOIvzap
+ cesJOxuJExEp+W9/JQQDDzd3EHhI2FWkrhZ8kThLsgEPYagfpHb9HMAvVkDeroHbOYPD
+ HzaaJS5Qmcm3ZW+IyNUdQZcG86gcN6ocJQxmoumdvbUWgIUzRFYIahPhmq2G56Cg8b7F
+ JzSQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
+ :mime-version:content-transfer-encoding;
+ bh=IRa2P15JWd6yJ1hNkD7pnHDIq7rswcnHahGMVU4CTFI=;
+ b=RKUYp+Rwebw/pvcADRWoY+GpCOCC6e8yBpA9qeAXr4ATTTivmkjHE9d6OTrVbdgpc/
+ eqWcoDZb/T50bfGqvd3OF/HSpLA72MMnxV52rKEFPSjH6wEmfOFKsFf/hU749Y6HUSZc
+ asB4UiL5pmwmRxfSMG84r8bTfXNPJqFON4qJd5EJSwLtLTzNWqTpvGifX6mofTbK0qEz
+ f4QIRn4VGbcXHpI4B7hjurpFEYb8J1RXv5FPk16PRSbfDwajsN+8NMqhZJM+cFrH/EXd
+ ZdrFNjg+pkow866v9JdIkAbBEs83sX3wP3bALjpKtEx3qTnS91BfWtpyZNhMLK9yho11
+ DRwg==
+X-Gm-Message-State: APjAAAWhXuwJ3GxP7xSznpCsL/rZzMysql1lB16jmFSZBe+l6AMX+K9T
+ l8WjHq3o4D7DaQ8apriZ9tw+MQ==
+X-Google-Smtp-Source: APXvYqziK1VPELmI60zIYS1D+M1NyY1LFCBCZDlsW/ln/D5k+VAz/+wP+s++KRHeq9efGtLkL1EslQ==
+X-Received: by 2002:a1c:9d8b:: with SMTP id g133mr6774930wme.27.1576161502689; 
+ Thu, 12 Dec 2019 06:38:22 -0800 (PST)
+Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
+ by smtp.gmail.com with ESMTPSA id x6sm6781798wmi.44.2019.12.12.06.38.21
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 12 Dec 2019 06:38:22 -0800 (PST)
+From: Michal Simek <michal.simek@xilinx.com>
+To: linux-kernel@vger.kernel.org, monstr@monstr.eu, michal.simek@xilinx.com,
+ git@xilinx.com
+Subject: [PATCH v2] ARM: dts: zynq: enablement of coresight topology
+Date: Thu, 12 Dec 2019 15:38:20 +0100
+Message-Id: <882627bc1ecd622355fb72b742b4e3c013d0b1ca.1576161496.git.michal.simek@xilinx.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-Date: Thu, 12 Dec 2019 14:30:38 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <CAKv+Gu9YhkzpKbrxa=xDOkS6=kZSMaidor_4DqGY6f1M0tO7kQ@mail.gmail.com>
-References: <1574864578-467-1-git-send-email-neal.liu@mediatek.com>
- <1574864578-467-4-git-send-email-neal.liu@mediatek.com>
- <CADnJP=uhD=J2NrpSwiX8oCTd-u_q05=HhsAV-ErCsXNDwVS0rA@mail.gmail.com>
- <1575027046.24848.4.camel@mtkswgap22>
- <CAKv+Gu_um7eRYXbieW7ogDX5mmZaxP7JQBJM9CajK+6CsO5RgQ@mail.gmail.com>
- <20191202191146.79e6368c@why>
- <299029b0-0689-c2c4-4656-36ced31ed513@gmail.com>
- <b7043e932211911a81383274e0cc983d@www.loen.fr>
- <1576127609.27185.8.camel@mtkswgap22>
- <a5982b8ed10440eef14c04df6e6060b6@www.loen.fr>
- <CAKv+Gu9YhkzpKbrxa=xDOkS6=kZSMaidor_4DqGY6f1M0tO7kQ@mail.gmail.com>
-Message-ID: <9de12c45b4b022cfb01d89ca56429d53@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: ard.biesheuvel@linaro.org, neal.liu@mediatek.com,
- f.fainelli@gmail.com, pawel.moll@arm.com, mark.rutland@arm.com,
- devicetree@vger.kernel.org, herbert@gondor.apana.org.au,
- wsd_upstream@mediatek.com, catalin.marinas@arm.com, sean.wang@kernel.org,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, linux-crypto@vger.kernel.org, mpm@selenic.com,
- matthias.bgg@gmail.com, crystal.guo@mediatek.com, will@kernel.org,
- lists@bofh.nu, linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_063049_378599_54C2F1E5 
-X-CRM114-Status: GOOD (  23.63  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191212_063828_424837_1C19999D 
+X-CRM114-Status: GOOD (  12.42  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,171 +94,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Pawel Moll <pawel.moll@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Sean Wang <sean.wang@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- wsd_upstream <wsd_upstream@mediatek.com>,
- =?UTF-8?Q?Crystal_Guo_=28=E9=83=AD=E6=99=B6=29?= <crystal.guo@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, Neal Liu <neal.liu@mediatek.com>, "open
- list:HARDWARE RANDOM NUMBER GENERATOR CORE" <linux-crypto@vger.kernel.org>,
- Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Will Deacon <will@kernel.org>, Lars Persson <lists@bofh.nu>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Zumeng Chen <zumeng.chen@windriver.com>, Rob Herring <robh+dt@kernel.org>,
+ Quanyang Wang <quanyang.wang@windriver.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-12 14:03, Ard Biesheuvel wrote:
-> On Thu, 12 Dec 2019 at 12:45, Marc Zyngier <maz@kernel.org> wrote:
->>
->> On 2019-12-12 05:13, Neal Liu wrote:
->> > On Tue, 2019-12-03 at 11:17 +0000, Marc Zyngier wrote:
->> >> On 2019-12-03 04:16, Florian Fainelli wrote:
->> >> > On 12/2/2019 11:11 AM, Marc Zyngier wrote:
->> >> >> On Mon, 2 Dec 2019 16:12:09 +0000
->> >> >> Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
->> >> >>
->> >> >>> (adding some more arm64 folks)
->> >> >>>
->> >> >>> On Fri, 29 Nov 2019 at 11:30, Neal Liu 
->> <neal.liu@mediatek.com>
->> >> >>> wrote:
->> >> >>>>
->> >> >>>> On Fri, 2019-11-29 at 18:02 +0800, Lars Persson wrote:
->> >> >>>>> Hi Neal,
->> >> >>>>>
->> >> >>>>> On Wed, Nov 27, 2019 at 3:23 PM Neal Liu
->> >> <neal.liu@mediatek.com>
->> >> >>>>> wrote:
->> >> >>>>>>
->> >> >>>>>> For MediaTek SoCs on ARMv8 with TrustZone enabled,
->> >> peripherals
->> >> >>>>>> like
->> >> >>>>>> entropy sources is not accessible from normal world 
->> (linux)
->> >> and
->> >> >>>>>> rather accessible from secure world (ATF/TEE) only. This
->> >> driver
->> >> >>>>>> aims
->> >> >>>>>> to provide a generic interface to ATF rng service.
->> >> >>>>>>
->> >> >>>>>
->> >> >>>>> I am working on several SoCs that also will need this kind 
->> of
->> >> >>>>> driver
->> >> >>>>> to get entropy from Arm trusted firmware.
->> >> >>>>> If you intend to make this a generic interface, please 
->> clean
->> >> up
->> >> >>>>> the
->> >> >>>>> references to MediaTek and give it a more generic name. For
->> >> >>>>> example
->> >> >>>>> "Arm Trusted Firmware random number driver".
->> >> >>>>>
->> >> >>>>> It will also be helpful if the SMC call number is
->> >> configurable.
->> >> >>>>>
->> >> >>>>> - Lars
->> >> >>>>
->> >> >>>> Yes, I'm trying to make this to a generic interface. I'll 
->> try
->> >> to
->> >> >>>> make
->> >> >>>> HW/platform related dependency to be configurable and let it
->> >> more
->> >> >>>> generic.
->> >> >>>> Thanks for your suggestion.
->> >> >>>>
->> >> >>>
->> >> >>> I don't think it makes sense for each arm64 platform to 
->> expose
->> >> an
->> >> >>> entropy source via SMC calls in a slightly different way, and
->> >> model
->> >> >>> it
->> >> >>> as a h/w driver. Instead, we should try to standardize this, 
->> and
->> >> >>> perhaps expose it via the architectural helpers that already
->> >> exist
->> >> >>> (get_random_seed_long() and friends), so they get plugged 
->> into
->> >> the
->> >> >>> kernel random pool driver directly.
->> >> >>
->> >> >> Absolutely. I'd love to see a standard, ARM-specified,
->> >> virtualizable
->> >> >> RNG that is abstracted from the HW.
->> >> >
->> >> > Do you think we could use virtio-rng on top of a modified
->> >> virtio-mmio
->> >> > which instead of being backed by a hardware mailbox, could use
->> >> > hvc/smc
->> >> > calls to signal writes to shared memory and get notifications 
->> via
->> >> an
->> >> > interrupt? This would also open up the doors to other virtio 
->> uses
->> >> > cases
->> >> > beyond just RNG (e.g.: console, block devices?). If this is
->> >> > completely
->> >> > stupid, then please disregard this comment.
->> >>
->> >> The problem with a virtio device is that it is a ... device. What 
->> we
->> >> want
->> >> is to be able to have access to an entropy source extremely early 
->> in
->> >> the
->> >> kernel life, and devices tend to be available pretty late in the
->> >> game.
->> >> This means we cannot plug them in the architectural helpers that 
->> Ard
->> >> mentions above.
->> >>
->> >> What you're suggesting looks more like a new kind of virtio
->> >> transport,
->> >> which is interesting, in a remarkably twisted way... ;-)
->> >>
->> >> Thanks,
->> >>
->> >>          M.
->> >
->> > In conclusion, is it helpful that hw_random has a generic 
->> interface
->> > to
->> > add device randomness by talking to hwrng which is implemented in 
->> the
->> > firmware or the hypervisor?
->> > For most chip vendors, I think the answer is yes. We already 
->> prepared
->> > a
->> > new patchset and need you agree with this idea.
->>
->> As long as it is a *unified* interface, I'm all for that.
->>
->
->
-> Yeah, but I'm not sure it makes sense to model it as a device like
-> this. It would be nice if we could tie this into the ARM SMCCC
-> discovery, and use the SMC calls to back arch_get_random_seed_long()
+From: Zumeng Chen <zumeng.chen@windriver.com>
 
-Probably I wasn't clear enough, but that's really what I meant by
-a unified interface (implemented by the firmware or the hypervisor).
+This patch is to build the coresight topology structure of zynq-7000
+series according to the docs of coresight and userguide of zynq-7000.
 
-> [provided we fix the braindead way in which that is being used today
-> in the interrupt code]
+Signed-off-by: Zumeng Chen <zumeng.chen@windriver.com>
+Signed-off-by: Quanyang Wang <quanyang.wang@windriver.com>
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+---
 
-Ah, I said I'd look into it. Thanks for the reminder...
+Changes in v2:
+- Remove slava-mode from replicator in-ports
+- Remove ITM completely
 
-Thanks,
+ arch/arm/boot/dts/zynq-7000.dtsi | 135 +++++++++++++++++++++++++++++++
+ 1 file changed, 135 insertions(+)
 
-         M.
+diff --git a/arch/arm/boot/dts/zynq-7000.dtsi b/arch/arm/boot/dts/zynq-7000.dtsi
+index ca6425ad794c..db3899b07992 100644
+--- a/arch/arm/boot/dts/zynq-7000.dtsi
++++ b/arch/arm/boot/dts/zynq-7000.dtsi
+@@ -59,6 +59,39 @@ regulator_vccpint: fixedregulator {
+ 		regulator-always-on;
+ 	};
+ 
++	replicator {
++		compatible = "arm,coresight-static-replicator";
++		clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
++		clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
++
++		out-ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			/* replicator output ports */
++			port@0 {
++				reg = <0>;
++				replicator_out_port0: endpoint {
++					remote-endpoint = <&tpiu_in_port>;
++				};
++			};
++			port@1 {
++				reg = <1>;
++				replicator_out_port1: endpoint {
++					remote-endpoint = <&etb_in_port>;
++				};
++			};
++		};
++		in-ports {
++			/* replicator input port */
++			port {
++				replicator_in_port0: endpoint {
++					remote-endpoint = <&funnel_out_port>;
++				};
++			};
++		};
++	};
++
+ 	amba: amba {
+ 		compatible = "simple-bus";
+ 		#address-cells = <1>;
+@@ -365,5 +398,107 @@ watchdog0: watchdog@f8005000 {
+ 			reg = <0xf8005000 0x1000>;
+ 			timeout-sec = <10>;
+ 		};
++
++		etb@f8801000 {
++			compatible = "arm,coresight-etb10", "arm,primecell";
++			reg = <0xf8801000 0x1000>;
++			clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
++			clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
++			in-ports {
++				port {
++					etb_in_port: endpoint {
++						remote-endpoint = <&replicator_out_port1>;
++					};
++				};
++			};
++		};
++
++		tpiu@f8803000 {
++			compatible = "arm,coresight-tpiu", "arm,primecell";
++			reg = <0xf8803000 0x1000>;
++			clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
++			clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
++			in-ports {
++				port {
++					tpiu_in_port: endpoint {
++						remote-endpoint = <&replicator_out_port0>;
++					};
++				};
++			};
++		};
++
++		funnel@f8804000 {
++			compatible = "arm,coresight-static-funnel", "arm,primecell";
++			reg = <0xf8804000 0x1000>;
++			clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
++			clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
++
++			/* funnel output ports */
++			out-ports {
++				port {
++					funnel_out_port: endpoint {
++						remote-endpoint =
++							<&replicator_in_port0>;
++					};
++				};
++			};
++
++			in-ports {
++				#address-cells = <1>;
++				#size-cells = <0>;
++
++				/* funnel input ports */
++				port@0 {
++					reg = <0>;
++					funnel0_in_port0: endpoint {
++						remote-endpoint = <&ptm0_out_port>;
++					};
++				};
++
++				port@1 {
++					reg = <1>;
++					funnel0_in_port1: endpoint {
++						remote-endpoint = <&ptm1_out_port>;
++					};
++				};
++
++				port@2 {
++					reg = <2>;
++					funnel0_in_port2: endpoint {
++					};
++				};
++				/* The other input ports are not connect to anything */
++			};
++		};
++
++		ptm@f889c000 {
++			compatible = "arm,coresight-etm3x", "arm,primecell";
++			reg = <0xf889c000 0x1000>;
++			clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
++			clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
++			cpu = <&cpu0>;
++			out-ports {
++				port {
++					ptm0_out_port: endpoint {
++						remote-endpoint = <&funnel0_in_port0>;
++					};
++				};
++			};
++		};
++
++		ptm@f889d000 {
++			compatible = "arm,coresight-etm3x", "arm,primecell";
++			reg = <0xf889d000 0x1000>;
++			clocks = <&clkc 27>, <&clkc 46>, <&clkc 47>;
++			clock-names = "apb_pclk", "dbg_trc", "dbg_apb";
++			cpu = <&cpu1>;
++			out-ports {
++				port {
++					ptm1_out_port: endpoint {
++						remote-endpoint = <&funnel0_in_port1>;
++					};
++				};
++			};
++		};
+ 	};
+ };
 -- 
-Jazz is not dead. It just smells funny...
+2.24.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
