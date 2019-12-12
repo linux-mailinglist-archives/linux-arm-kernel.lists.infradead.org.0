@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08FF711C3BD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 04:00:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 369D711C3BE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 04:00:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A81vZ+oGR2PHAHOQc5tCcoYkkTGMt0c/Ue4REdP9WFA=; b=IKaOwSTjmEEscJ
-	TdZJABBvqSqPx/ohHJ4Cn+yf31tEe4IK6Z7DGUA4GcdtuQSHZggZQHHzEAk4+ds29nk/l9rFoWwis
-	ZevvIApEthk7Z5/um6TtBup5jSQ/Y27b+Y7YLRNBW+qwU0mW5wae1k01oeCiN8laHcA3zmr/eg18s
-	COcIx1AOCZ6t5Ehkw6wqSsSI6Yalpj9xQ532XyJEI4QGl7l+1UknJHQE1JqUcsBAQphHvSH8Xol7A
-	zGHUpTV7dXHvM0bQBc2Cg8ToHrAH2TeHQny/mRQGNSHDEgc/mg5y4auRF9Cc/5yCjNaBVASFLKAxu
-	rC+s+qDGWn+E5yRbDnBA==;
+	List-Owner; bh=PizB4sriB/6PbcsISR7UJilfljJAz8uoOT0cozoP0Ro=; b=EN7HooXhPu+2oC
+	BpuQXIEXXylVcUqQnaz2sZfSJIL3BITDld8Em7uALfvaW7GKWk5Oo8IEFBPS8nfBmDZD/jcnsewrL
+	xOZUbW0XJK8sUNQsYw7aPRCambExmsFlikdNUAcMOdrg2ye0OBicttmv9Uf7TySA9lDFCx21l1MGS
+	GHwu6YOZBnY6mSwHbZIGgzMDMsY0QWOydC7NhGfmPZjnz8yCxorPcRqMMFUUvhjgmnvLQJdLUK21F
+	JfrYittmUuJYVXZBhbV9DNsfIpDRz1Y4LFMJe4UfF2tcNeHRviuB6oOq8PTImv/Oyt/AEZw//NLDZ
+	OBMXlxzoTkDQKLeoiw/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifEi7-0001xa-CR; Thu, 12 Dec 2019 03:00:15 +0000
-Received: from mail-eopbgr70048.outbound.protection.outlook.com ([40.107.7.48]
+	id 1ifEiO-0003UF-VM; Thu, 12 Dec 2019 03:00:33 +0000
+Received: from mail-eopbgr70058.outbound.protection.outlook.com ([40.107.7.58]
  helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifEgr-0001F9-SF
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 02:58:59 +0000
+ id 1ifEgx-0001JP-8K
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 02:59:05 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RgcT4A5lYV+GktEV50/ICpqpSXKbqCgEi0XyFlKpPdeSf0inTbFwYM3Dq0djPv9ZSeC0f+/qNWu923cKof4D3uPfyf4FBuURv8SAEZNDQpC1b4egOR8TGWggttN6DzteB1QhNgyz/uNxrVWbnyayL870dEERwwI0ueVsIvoi5QDSFOTaNp04reXTwFbI8gAEhId7RK7K15mXDxwpHhz34e83WMY+GMeDyDbb4ErvNE2yz9XhxXnE15YIwvZ9oBJIYGs6cDgB5MMl+IPupaEQwZw6dPXB2/93gTJiMzLmPrjPrV/6p81tyWI3QYB1COYyZbP2rqDytGgJQOyW5SFAIQ==
+ b=Q051rPRE9ZARcZRf0A985q1l8uVNzZvkAoco0I+VuCX+cQrPGkkn2ereN0sJguiJCApzSuTRrAq7w4NR63zXblRC1I4owQNqwRUrqTuZatYiXGPvTtcOosLJUj23HbyNk1xBpmOXxttx1/vHuh7NsoO3pwed22ij2wQHE0E9/AAbz3B6bwaGiFllIECo8M7W0ItiVbyvTgxvlgAddjr0hQFQTg3uUR5bpPJ8N/h8Cx6ndpSid+M9RlBdJ5+c66vWqtPn8HULDZYnQFib/DRj5XlZCnsBkEgkIsb1vRj1BNgIk4uPkOOoaCma/7CvMCW2iDNGYMmvpaQKXj90N77/JA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=TmP/J8+lSTJ72L+YfDiWnqLgv47r9EsYxC8ONhrzGwA=;
- b=FucParvwNTGWCxJfCJO3bnjQa5cc6v/gpBEyVwETJbQaj3K+jTBuBwgHa5WJLWwBpBh24QmngJkGy2UxWucn09d0eCxgrcMvC8CawTmV4IvCIlz9+iv6dDhxDXD/smg1s+8NQ5JTigraI4ikoP+y+GZw808jFD5+vpEyhIzyx3C7S5NSkfMOgDzcL9SVMlQjmkyMH9pzm3OzJVd7nFfwo/MxG/wL0t+q9xWJEPR0++HSxgWlRP+nAp7Ci2MWVhP8JKtNm9hfEpFnVA94RDwkYZgP1O4HzyyduLiztVT4gilwH8MJgzwNnNablaKOwAIe8+ODZVzTZPotyMNJAtKyWQ==
+ bh=wyZPIAe8LjGerk71QQuWn5nzd2l4GPtmIAn+VLCR0I4=;
+ b=oET+fCKBITgVtapMeGTWou4s7O0S6CJiehWgtFOO05yw4HVT5CqgmbZHkE37lh4nf8grD08VVV5T65otkFGj5LSoqn7sEUWpJs0SSsSmRuRsLLlgxXP4B24sEyT5wblCFPYH1l9xmKeN5FX/5pg7cvGGZe0oA+h1tbcLkL576SECiudkO0fT6uloRI1WHyauV2Wc3FwceyoUK2In8ynO/R9QREx3MNvqQEtq2v0WSj/DMwzxcYVmeT+1uRb6lVYdGSvcuMkhQYrTIQp5fqwz03kpM3NujU0KdmdieBowAZ7IdLsE3J3451U9ZukR8HrouYl/x2dL5ub7odZ9QuUXkQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=TmP/J8+lSTJ72L+YfDiWnqLgv47r9EsYxC8ONhrzGwA=;
- b=BV6D86l2AqnW4WqmgetYshddjR2WUs/b7c7N7MT5gZHXXcgc+sanrhHASSebZ8W07GPGZig8EdAZylxsxH0qkhQBqyxLguTmLBN9hZYFhMO955zg7+ueJtofqTX8IO6xV+fkFmTl1qMcvQj/veFHPXBSbntcZlkCQvXDaZIuAPM=
+ bh=wyZPIAe8LjGerk71QQuWn5nzd2l4GPtmIAn+VLCR0I4=;
+ b=E8pqghRELFmPAluoyCb4mHP03m5Jvj4C+QVobbq4ejPgvm69YNjpvJIs85AfWtQ7MkTYtVaLq7n/UG5C/PXHR74yuAT6ianSSd8T5/iY5D3YoZsFZ1TPos8T7Y5vVGMzGo6ECmskUaV/BWW5N0AbLYmKa0KfTLvUREN0ejVczxs=
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB6196.eurprd04.prod.outlook.com (20.179.34.138) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2538.15; Thu, 12 Dec 2019 02:58:54 +0000
+ 15.20.2538.15; Thu, 12 Dec 2019 02:59:00 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::505:87e7:6b49:3d29]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::505:87e7:6b49:3d29%7]) with mapi id 15.20.2538.017; Thu, 12 Dec 2019
- 02:58:54 +0000
+ 02:59:00 +0000
 From: Peng Fan <peng.fan@nxp.com>
 To: "sboyd@kernel.org" <sboyd@kernel.org>, "shawnguo@kernel.org"
  <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>,
  Leonard Crestez <leonard.crestez@nxp.com>
-Subject: [PATCH V2 3/9] clk: imx: add imx_unregister_hw_clocks
-Thread-Topic: [PATCH V2 3/9] clk: imx: add imx_unregister_hw_clocks
-Thread-Index: AQHVsJgXLLTiXm5fZEqiDZK/JwhSLg==
-Date: Thu, 12 Dec 2019 02:58:54 +0000
-Message-ID: <1576119353-26679-4-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH V2 4/9] clk: imx: add hw API imx_clk_hw_mux2_flags
+Thread-Topic: [PATCH V2 4/9] clk: imx: add hw API imx_clk_hw_mux2_flags
+Thread-Index: AQHVsJgaUHTthaBEu0uFPrqdwhekNA==
+Date: Thu, 12 Dec 2019 02:59:00 +0000
+Message-ID: <1576119353-26679-5-git-send-email-peng.fan@nxp.com>
 References: <1576119353-26679-1-git-send-email-peng.fan@nxp.com>
 In-Reply-To: <1576119353-26679-1-git-send-email-peng.fan@nxp.com>
 Accept-Language: en-US
@@ -72,14 +72,14 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 5d2d6a4d-0d5c-48a6-733e-08d77eaf397c
+x-ms-office365-filtering-correlation-id: 0ad3ed11-7e9a-40b8-52f9-08d77eaf3cac
 x-ms-traffictypediagnostic: AM0PR04MB6196:|AM0PR04MB6196:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB6196DE65C90E3BF0D2FF429688550@AM0PR04MB6196.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1002;
+x-microsoft-antispam-prvs: <AM0PR04MB6196EF26C59B984CC863D8F288550@AM0PR04MB6196.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:386;
 x-forefront-prvs: 0249EFCB0B
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(136003)(346002)(366004)(39860400002)(376002)(199004)(189003)(81156014)(8936002)(316002)(81166006)(8676002)(36756003)(52116002)(478600001)(6512007)(6486002)(71200400001)(110136005)(54906003)(86362001)(186003)(66476007)(4326008)(5660300002)(2906002)(66446008)(64756008)(44832011)(26005)(6636002)(66946007)(6506007)(2616005)(66556008);
+ SFS:(10009020)(4636009)(396003)(136003)(346002)(366004)(39860400002)(376002)(199004)(189003)(81156014)(8936002)(316002)(81166006)(8676002)(36756003)(52116002)(478600001)(4744005)(6512007)(6486002)(71200400001)(110136005)(54906003)(86362001)(186003)(66476007)(4326008)(5660300002)(2906002)(66446008)(64756008)(44832011)(26005)(6636002)(66946007)(6506007)(2616005)(66556008);
  DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6196;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
@@ -87,26 +87,26 @@ received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: XMMeZTycAAG91Ibsc9JSCJm+vL2uac6UaQ7SsxlQz1TXpXzvOo0jm/zkxV0hz81KnCMs/uFhTbZfBddHEt+W1ReoPNCtz47uL4rm2wKvqs3Ldo70byb1zXXKqHi+XP9Br3p4wkQEEdkJC3BzZ1+YoyhzesrKDkmePQKmc93DT8cKTgJhoVlCtDtWDEx0TQNDaSgY1vkC+cZf/c5N31AdjslXD2LWYXC+j0seAnREFVcSAG+w3eBJzhG6djzyb/WYq24WH9kABuwNmXgsOiktNR7Addisa7ZBJY3qI0P+SafgHpvEOSXDSuSOTRFdlrB5RLdqhED3pHr6rdH9tv+TcoW9g5309+oefXkze7O1kEQR5wk6XwHTcKZMNo8zY3J7CcBpU35ailmoZwnQH+5lHgl4U6GyJPEPfLzNkBtGjIIlZgavHsqXUkEb6DTv0ehV
+x-microsoft-antispam-message-info: onAgyzMawZtlwDoKlWp4KfFY+HzyX7mdhJMcSformi/Qn7p+8c7TMaJDuHr/gIewpZzPHFNAzhs3tPcbg6zMuXg5d1jUz78vLYECPfP0nKrdsoOlASe7W6wdqp6gCengMYT/umddBqNuD9pJrL2qYrJJinwFU3IUwZ33OaWcJLJ38jV45kH+0URLiTyfI481CMW/6aTOnJ6DTRI029Rk0a1fDehC0XBYYWvH3FUiw6uI3+hI/+O8n82weeraM3kJ6+H2uO3yXEqEKW1M0mtFl4d1rl14/hDasXd+queIHUy90D+wWfMguqwEjqrI804+un2YpDYdmQqI4vvgt3TlYm5rfFcDohDPaHmvk7nV9lXZL7Dq81AZ8D7JXnVZ5E54JQTcbTQiIC0pyGloA1Fx4cQ2MKc7iYoqUKNigoFNySfSpIpnoZ3YMTjcKdGgOgXQ
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5d2d6a4d-0d5c-48a6-733e-08d77eaf397c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Dec 2019 02:58:54.7736 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0ad3ed11-7e9a-40b8-52f9-08d77eaf3cac
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Dec 2019 02:59:00.2235 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Saxg+sKOYzEzq+KY2u9s54lPhKGP6/zXEzq9vtlbgSu+FZpMPtdY7NbXjGErBZ34u4qvuknODgavQpWRU2/91Q==
+X-MS-Exchange-CrossTenant-userprincipalname: UaIhY5OfbpXol+fyfIwSjOm3AoomkGkvAQVq3GR80EOEW4FZB4F75tsuo1rwsgpV7RRZQkqYYHZVY5exnPl8Tg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6196
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_185857_941506_1EF84441 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20191211_185903_595486_8BDDC65F 
+X-CRM114-Status: GOOD (  10.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.48 listed in list.dnswl.org]
+ no trust [40.107.7.58 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -141,48 +141,35 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-There is a non hw API based imx_unregister_clocks to unregister clocks
-when of_clk_add_provider failed. Add a hw API based
-imx_unregister_hw_clocks when of_clk_add_hw_provider failed.
+Introduce hw based API imx_clk_hw_mux2_flags, then we could
+convert i.MX8MN clk driver to use hw based APIs.
 
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- drivers/clk/imx/clk.c | 8 ++++++++
- drivers/clk/imx/clk.h | 1 +
- 2 files changed, 9 insertions(+)
+ drivers/clk/imx/clk.h | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/drivers/clk/imx/clk.c b/drivers/clk/imx/clk.c
-index cfc05e43c343..d0ce29f2c417 100644
---- a/drivers/clk/imx/clk.c
-+++ b/drivers/clk/imx/clk.c
-@@ -22,6 +22,14 @@ void imx_unregister_clocks(struct clk *clks[], unsigned int count)
- 		clk_unregister(clks[i]);
- }
- 
-+void imx_unregister_hw_clocks(struct clk_hw *hws[], unsigned int count)
-+{
-+	unsigned int i;
-+
-+	for (i = 0; i < count; i++)
-+		clk_hw_unregister(hws[i]);
-+}
-+
- void __init imx_mmdc_mask_handshake(void __iomem *ccm_base,
- 				    unsigned int chn)
- {
 diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
-index 46cbac4d89a5..20dc9a1fcd6c 100644
+index 20dc9a1fcd6c..e28166a63894 100644
 --- a/drivers/clk/imx/clk.h
 +++ b/drivers/clk/imx/clk.h
-@@ -12,6 +12,7 @@ void imx_check_clk_hws(struct clk_hw *clks[], unsigned int count);
- void imx_register_uart_clocks(struct clk ** const clks[]);
- void imx_mmdc_mask_handshake(void __iomem *ccm_base, unsigned int chn);
- void imx_unregister_clocks(struct clk *clks[], unsigned int count);
-+void imx_unregister_hw_clocks(struct clk_hw *hws[], unsigned int count);
+@@ -435,6 +435,16 @@ static inline struct clk *imx_clk_mux_flags(const char *name,
+ 			&imx_ccm_lock);
+ }
  
- extern void imx_cscmr1_fixup(u32 *val);
- 
++static inline struct clk_hw *imx_clk_hw_mux2_flags(const char *name,
++		void __iomem *reg, u8 shift, u8 width,
++		const char * const *parents,
++		int num_parents, unsigned long flags)
++{
++	return clk_hw_register_mux(NULL, name, parents, num_parents,
++			flags | CLK_SET_RATE_NO_REPARENT | CLK_OPS_PARENT_ENABLE,
++			reg, shift, width, 0, &imx_ccm_lock);
++}
++
+ static inline struct clk *imx_clk_mux2_flags(const char *name,
+ 		void __iomem *reg, u8 shift, u8 width,
+ 		const char * const *parents,
 -- 
 2.16.4
 
