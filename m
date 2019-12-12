@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82EE211D3F1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 18:30:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A4C211D3F4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 18:30:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xdsuVbmhbLZIphhC7GGtG40hrHUDoom9m8yCikJoRAQ=; b=qB3G1eUPQKlY7j
-	ArGtRFog6p15OlqdSy/RNM9nYkM2xeW4EnXDzg5+6/QfKXmNTNxduPVexwr+gwIBpmTiVHBcOBWyq
-	Odov9RfkmzAvn7aViioeWOrDDf6ty2MOBoDjrBKYf7vZkyYm6yBWHvxkGUQtqX6cwLqMEYBwvxu1M
-	jRXnv8B4v+ChANae4r+uUuteTERKiMYH5EsY1dlDTpz+NcMQZnE5QBxB22GC9H1Oauf/GSKewb1M/
-	LLglpwqzdWD83md3ae742bbUs+5l9Kddy3Ri85uh+2VxANoRlQ12xwc6Q9sabK78Dgk6uWUKmRw3Z
-	qUEzLPc0NL2T//2vybKw==;
+	List-Owner; bh=pOYKM2R+DPeRLtbuShiBCha43w73s3VMzteY/BnBNVQ=; b=Z8rO4DEzHhtCfu
+	TpNIZtPCnH78MNIxk8AnmjZOTRKRIlyWyIpfwcN2RfSgdlxaPgUTEi1X1RW+x+TiaqHI7c0F0WdK/
+	Kb5x27LChHz8XyNiPTCZOO1UWjCcWF15Ync6lg057rMPm/XFRDiFZ7PSzi4D724NHzQCgX2tpA1fB
+	4D+dT0mj5vnEuEU4CNeGEN0uICUHiZnrAj7NGm7DIhe0kWlUJVOJHO+s+hQepBCApmh0kLZIgn/aB
+	HDjmQBNQV4tcY1RrSi3HwGrs++zYtxh6lT4YSlFCKcjG0/kJBhhNvQi7l992sbvEqAZ7CwN5OzUuM
+	5wHga8nM4B4moUN7so3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifSHo-000642-3l; Thu, 12 Dec 2019 17:30:00 +0000
+	id 1ifSIQ-0007ib-4J; Thu, 12 Dec 2019 17:30:38 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifSGf-0005AI-7X
+ id 1ifSGe-0005A2-V3
  for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 17:28:52 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1ifSGY-00069s-Qa; Thu, 12 Dec 2019 18:28:43 +0100
+ id 1ifSGX-00069s-7R; Thu, 12 Dec 2019 18:28:41 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 5/8] KVM: arm64: Don't log IMP DEF sysreg traps
-Date: Thu, 12 Dec 2019 17:28:21 +0000
-Message-Id: <20191212172824.11523-6-maz@kernel.org>
+Subject: [PATCH 3/8] KVM: arm/arm64: vgic: Use wrapper function to lock/unlock
+ all vcpus in kvm_vgic_create()
+Date: Thu, 12 Dec 2019 17:28:19 +0000
+Message-Id: <20191212172824.11523-4-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191212172824.11523-1-maz@kernel.org>
 References: <20191212172824.11523-1-maz@kernel.org>
@@ -50,8 +51,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_092849_411217_3728EDBA 
-X-CRM114-Status: UNSURE (   7.92  )
+X-CRM114-CacheID: sfid-20191212_092849_165880_63373C4A 
+X-CRM114-Status: UNSURE (   9.92  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -86,46 +87,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mark Rutland <mark.rutland@arm.com>
+From: Miaohe Lin <linmiaohe@huawei.com>
 
-We don't intend to support IMPLEMENATION DEFINED system registers, but
-have to trap them (and emulate them as UNDEFINED). These traps aren't
-interesting to the system administrator or to the KVM developers, so
-let's not bother logging when we do so.
+Use wrapper function lock_all_vcpus()/unlock_all_vcpus()
+in kvm_vgic_create() to remove duplicated code dealing
+with locking and unlocking all vcpus in a vm.
 
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Miaohe Lin <linmiaohe@huawei.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Link: https://lore.kernel.org/r/20191205180652.18671-3-mark.rutland@arm.com
+Reviewed-by: Eric Auger <eric.auger@redhat.com>
+Reviewed-by: Steven Price <steven.price@arm.com>
+Link: https://lore.kernel.org/r/1575081918-11401-1-git-send-email-linmiaohe@huawei.com
 ---
- arch/arm64/kvm/sys_regs.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ virt/kvm/arm/vgic/vgic-init.c | 19 ++++---------------
+ 1 file changed, 4 insertions(+), 15 deletions(-)
 
-diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index e8bf08e09f78..bd2ac3796d8d 100644
---- a/arch/arm64/kvm/sys_regs.c
-+++ b/arch/arm64/kvm/sys_regs.c
-@@ -2229,6 +2229,12 @@ int kvm_handle_cp14_32(struct kvm_vcpu *vcpu, struct kvm_run *run)
- 				NULL, 0);
+diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
+index 7c58112ae67c..a963b9d766b7 100644
+--- a/virt/kvm/arm/vgic/vgic-init.c
++++ b/virt/kvm/arm/vgic/vgic-init.c
+@@ -70,7 +70,7 @@ void kvm_vgic_early_init(struct kvm *kvm)
+  */
+ int kvm_vgic_create(struct kvm *kvm, u32 type)
+ {
+-	int i, vcpu_lock_idx = -1, ret;
++	int i, ret;
+ 	struct kvm_vcpu *vcpu;
+ 
+ 	if (irqchip_in_kernel(kvm))
+@@ -86,17 +86,9 @@ int kvm_vgic_create(struct kvm *kvm, u32 type)
+ 		!kvm_vgic_global_state.can_emulate_gicv2)
+ 		return -ENODEV;
+ 
+-	/*
+-	 * Any time a vcpu is run, vcpu_load is called which tries to grab the
+-	 * vcpu->mutex.  By grabbing the vcpu->mutex of all VCPUs we ensure
+-	 * that no other VCPUs are run while we create the vgic.
+-	 */
+ 	ret = -EBUSY;
+-	kvm_for_each_vcpu(i, vcpu, kvm) {
+-		if (!mutex_trylock(&vcpu->mutex))
+-			goto out_unlock;
+-		vcpu_lock_idx = i;
+-	}
++	if (!lock_all_vcpus(kvm))
++		return ret;
+ 
+ 	kvm_for_each_vcpu(i, vcpu, kvm) {
+ 		if (vcpu->arch.has_run_once)
+@@ -125,10 +117,7 @@ int kvm_vgic_create(struct kvm *kvm, u32 type)
+ 		INIT_LIST_HEAD(&kvm->arch.vgic.rd_regions);
+ 
+ out_unlock:
+-	for (; vcpu_lock_idx >= 0; vcpu_lock_idx--) {
+-		vcpu = kvm_get_vcpu(kvm, vcpu_lock_idx);
+-		mutex_unlock(&vcpu->mutex);
+-	}
++	unlock_all_vcpus(kvm);
+ 	return ret;
  }
  
-+static bool is_imp_def_sys_reg(struct sys_reg_params *params)
-+{
-+	// See ARM DDI 0487E.a, section D12.3.2
-+	return params->Op0 == 3 && (params->CRn & 0b1011) == 0b1011;
-+}
-+
- static int emulate_sys_reg(struct kvm_vcpu *vcpu,
- 			   struct sys_reg_params *params)
- {
-@@ -2244,6 +2250,8 @@ static int emulate_sys_reg(struct kvm_vcpu *vcpu,
- 
- 	if (likely(r)) {
- 		perform_access(vcpu, params, r);
-+	} else if (is_imp_def_sys_reg(params)) {
-+		kvm_inject_undefined(vcpu);
- 	} else {
- 		print_sys_reg_msg(params,
- 				  "Unsupported guest sys_reg access at: %lx [%08lx]\n",
 -- 
 2.20.1
 
