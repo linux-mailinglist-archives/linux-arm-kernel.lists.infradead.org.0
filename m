@@ -2,86 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6620F11C1CA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 02:02:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D67E11C1D3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 02:03:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:To:References:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=022DXPg/TUGFkSuYS8q+/6ns5Y3dPVVQJ/Vc9ZpODtE=; b=YqMZTmb6TCxoZB
-	ezhJ+Y6+4wUi8NjmwDantzRZYnctl5buHsOVWopukT+z8+52DZJW5rQZlOY/3uM9A/UKkSQQ82sOV
-	eJlh0j8ZbjYEr+7NX3vFjMG0RPur8ByDlNM5lRXIP9PldNwKU2BLgd7PANVLBNT/D6R9zcUQ70gz4
-	CwNlHo6uS2AT8CVfxHLJHa4k6RkLFFXv/c8heyIfp+dop6UbzsC2ROTCchy1M7xxDBVhrLd8zgapo
-	r5/E+ObrPxIm55ough9t4CiVrS674bjQswUJDvA0/5cDxl+WoYzPaSgAjXRkYCl89hwvj106/rdv+
-	FTwmMVqg3o41i0t8t/xQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BefzrK0GEaPxpBC6DAnUo8fwExQhjltkbhmtFLXNXSY=; b=RLsJwWyuUuG/a9
+	gAxWcixdQ4XUjk3hKa8/ePsiy8PrgFe5Lq8F5pCbwJge+lj7caO8g/cpP+gJz2wIQnezsTDMINTyw
+	bhha8WeFPQ6MOyOFET0Q29Wi9iki4wfhXuI6OrthuP5dZzn3z3YrBv5RRhE5cazyi0pZO81Xvl/MO
+	nyhJcoBAT3DdjGKgagp0jAR8cY7s16HlxSwM+F7TjpwdDTCFw6kEqTKUznVFcZMniJf0S5Jcvl8yH
+	FmQdu/iCYRuDKSIL6XSQ7JyzOpD6SJXvePzGmde4TPmU5Au7aKgxGty1Ld5LtHB0UjukMp4dOZNVC
+	CDfNIgh3JI4VtvyykYIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifCsU-0002eh-LR; Thu, 12 Dec 2019 01:02:50 +0000
-Received: from mout.web.de ([212.227.17.11])
+	id 1ifCtI-0003FX-DB; Thu, 12 Dec 2019 01:03:40 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifCsM-0002dz-PG; Thu, 12 Dec 2019 01:02:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
- s=dbaedf251592; t=1576112550;
- bh=jn+uo4Cqpx1ozQR3B2KC5B3J+RoGsXHD7RZoPdcq0nU=;
- h=X-UI-Sender-Class:Subject:Cc:References:To:From:Date:In-Reply-To;
- b=L9ydTcdnRJrw9gBXCFSp39/6F4PqkOI1mV5NtJlDVgKwnuD7uf7ZhBPUrHV+eEVs7
- 8rlfbWcscTZHp8s6Bybzh1921thpQkMbsT8iyrwukvHuRpmJNLzPk5UaQExBkMvSgP
- aYxoNlWI1onySK1XhCQ9PVUaahHlQEY/JDbRvq2c=
-X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
-Received: from [192.168.43.108] ([89.204.139.166]) by smtp.web.de (mrweb101
- [213.165.67.124]) with ESMTPSA (Nemesis) id 0Ldn6l-1hxNjC2bPH-00izDK; Thu, 12
- Dec 2019 02:02:29 +0100
-Subject: Re: [PATCH v2 5/9] brcmfmac: add support for BCM4359 SDIO chipset
-References: <20191211235253.2539-1-smoch@web.de>
- <20191211235253.2539-6-smoch@web.de>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-From: Soeren Moch <smoch@web.de>
-Message-ID: <56de6321-bfc5-a66c-23c0-8928221c2a7f@web.de>
-Date: Thu, 12 Dec 2019 02:02:27 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1ifCt1-0003Cf-Ro; Thu, 12 Dec 2019 01:03:28 +0000
+X-UUID: cd009a3998d84d6597a026720e6b1603-20191211
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=1nVw2YWBGUS/oMhW5DDgBl2g5t5Me3srGmGp5Tfjzxg=; 
+ b=OFoPtBfc8hc3RDn55qAHCBISzy4tvQOUk2ZkT9hq4TX+bdVXRG+xitr2/EV+NsVOucqrMaNhkjxZVHUoz+MXxpIEbFhjMS1mXJJATdLAKlzVrMbwpYHJOulEgaMF2Ik2sBg0EoVLSQ5JMmQt/ig+KqqeJyPgZ51+UqSEoAu1RKY=;
+X-UUID: cd009a3998d84d6597a026720e6b1603-20191211
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <dennis-yc.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1082264688; Wed, 11 Dec 2019 17:03:16 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Dec 2019 17:04:21 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Dec 2019 09:03:05 +0800
+Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 12 Dec 2019 09:02:37 +0800
+Message-ID: <1576112593.17653.1.camel@mtkswgap22>
+Subject: Re: [PATCH v2 02/14] mailbox: cmdq: variablize address shift in
+ platform
+From: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
+To: CK Hu <ck.hu@mediatek.com>
+Date: Thu, 12 Dec 2019 09:03:13 +0800
+In-Reply-To: <1575942906.12891.6.camel@mtksdaap41>
+References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1574819937-6246-4-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1575942906.12891.6.camel@mtksdaap41>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20191211235253.2539-6-smoch@web.de>
-Content-Language: en-GB
-X-Provags-ID: V03:K1:Qvea2KHNf/g2y1Ioev+CHDSFFOxPHdl3xf9+z6TwJCNrGKeu3DC
- N5JpsCsR16tn96j9rG5iSRCPi5IzfAIwr8q8n237lCSdFK9bcCs8pIVHxkP72scLzpIh4s8
- QLzbpBz2pnIO/Dfkwqax6PEfK+4psyx9Opexgc52ANnihUeQLz83ik/KTC1HqPH7ITwkTKK
- ESRdXx9zbmH8XtthjV1Ig==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:LJbS0jdVLI8=:ATWbHxULlQjn6MOGYVh1va
- k8DOWElK6UqGaBsIs04vtExB6xn8PWwJfJjjLs8HFwGLLuYzwSOhytFFDxGnC6b5qfItgr2qR
- 2m3O2kjZJ9kWRkIjfNaqyA/eUwKGVoKyWwbLIoIBpWDlWX1KcFlnKQLm/MpM5Vm6DTwIRLW1p
- cz9YcX0qrKY62ABDP4bJoW8UxGqOgfgsDg53OlyyHikmruCLxfPPOn1qYfV/xoxONcjJYZGKu
- SN+QowbsuqAAefygQgl+nXv5qiFDs70bnISUGQa2/aGiAJt3ynZ7edeoyZqbevvzVy/FvX2c8
- wP0HqPca3/cAthgB6aCJDy6ds1CbK+Sn/6cJZtE26dUgDSpPB4X6llqqYRwq5D64+/emgGM3b
- tlYUgqZyGDYAjGVHPMth5r7frtzJ0UWM7LWl//N/hlyDW9aRL/49jrew/He9aowsQpIp9XAcI
- 9+nK5EdVNpIexu5hpgKz9KeOHv7WELHDo+qIuDmrX0KWcGdl9thhxcjMCx28wMDc+j50rN5yB
- AKk7zlr6p7nqH195717o9gXvNGw3KMdY4ywsHGi8+0qr0op6DFdMOV+zJdK1NS/EQQQsZVDfA
- cUZzYsvO6zkQGxbUbDlLK3v+LYvtQuZ9zARAgY+VMqcSAWw0aLKin8x3EKSRCLnf9nWlwQPhm
- 48JmWWzP2MMO76v5PDqOv84iVPyvQEgPw1vaH8CrOFix9Gapqe2O3CeQC2KcnE88TI6Uqs/Ix
- oCYef2L1N96qK4ftlg/ZJX5g+2S73iNA9w+9nyCmwEiLag8q0qu/3PMqw9tBHKroZi+KKdLny
- /anTRBANHdpmGPFYpJWS1+L/GTJRx2wMnDB7joX1QZ6XfElOHZCVfNVrl9yDHiJ83wLwjfjYS
- sEBAPcyaB48UFKNFtOfa7g5zLhEYLUTTOOtQZfiWw36gC/cQpQlBGUlWr0+7fGyuqHIHSfknH
- jBPk1IQlPooiiJ+mT5VtpoFFUxafHlwa/6yxcuVII4NN8P/6JZReAPYltNSoUwVMtpGc08tkV
- YH2ijg6zw7B9B6hYlr9OG0xqsY9MxwzQ/HnvgzRpAhwIRRTJmkoYOwhNOirxa4fllGyS/k7AN
- fn40VpMf5a4L8ybR+kzHwR2ziY7fmbmCWUEpMxHXsZ2q3OlNxL+dTdY+u57+DZ4ix8TjI+J0m
- pR7h8rACGdVUxJpJZA91wY05WqF51vVfgOeE4xFMB5IA45ciclxlvg5ZfOh0V34VoN4d4wN87
- sWeffHekji1J7qb+gJSSJesyCznUA8H7XCc3Q+A==
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_170243_154869_4528269E 
-X-CRM114-Status: GOOD (  18.29  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191211_170323_935780_3B7EFC22 
+X-CRM114-Status: GOOD (  21.37  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.11 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (smoch[at]web.de)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -90,6 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,134 +85,265 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: brcm80211-dev-list.pdl@broadcom.com,
- Arend van Spriel <arend.vanspriel@broadcom.com>,
- Heiko Stuebner <heiko@sntech.de>, netdev@vger.kernel.org,
- Chi-Hsien Lin <chi-hsien.lin@cypress.com>, linux-wireless@vger.kernel.org,
- Hante Meuleman <hante.meuleman@broadcom.com>, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Wright Feng <wright.feng@cypress.com>, linux-mmc@vger.kernel.org,
- brcm80211-dev-list@cypress.com, Kalle Valo <kvalo@codeaurora.org>,
- Franky Lin <franky.lin@broadcom.com>
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ulf,
+Hi CK,
 
-This patch is part of a series [1] to add support for the BCM4359
-chipset with SDIO interface to the brcmfmac wireless network driver.
+Thanks for your comment.
 
-I just realized that this patch touches
-include/linux/mmc/sdio_ids.h
-and therefore I need an Ack from MMC folks. Can you please look at this?
+On Tue, 2019-12-10 at 09:55 +0800, CK Hu wrote:
+> Hi, Dennis:
+> 
+> On Wed, 2019-11-27 at 09:58 +0800, Dennis YC Hsieh wrote:
+> > Some gce hardware shift pc and end address in register to support
+> > large dram addressing.
+> > Implement gce address shift when write or read pc and end register.
+> > And add shift bit in platform definition.
+> > 
+> > Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> > ---
+> >  drivers/mailbox/mtk-cmdq-mailbox.c       | 57 ++++++++++++++++++------
+> >  drivers/soc/mediatek/mtk-cmdq-helper.c   |  3 +-
+> >  include/linux/mailbox/mtk-cmdq-mailbox.h |  2 +
+> >  3 files changed, 48 insertions(+), 14 deletions(-)
+> > 
+> > diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
+> > index 9a6ce9f5a7db..d5536563fce1 100644
+> > --- a/drivers/mailbox/mtk-cmdq-mailbox.c
+> > +++ b/drivers/mailbox/mtk-cmdq-mailbox.c
+> > @@ -76,8 +76,21 @@ struct cmdq {
+> >  	struct cmdq_thread	*thread;
+> >  	struct clk		*clock;
+> >  	bool			suspended;
+> > +	u8			shift_pa;
+> >  };
+> >  
+> > +struct gce_plat {
+> > +	u32 thread_nr;
+> > +	u8 shift;
+> > +};
+> > +
+> > +u8 cmdq_mbox_shift(struct mbox_chan *chan)
+> > +{
+> > +	struct cmdq *cmdq = container_of(chan->mbox, struct cmdq, mbox);
+> > +
+> > +	return cmdq->shift_pa;
+> > +}
+> 
+> EXPORT_SYMBOL(cmdq_mbox_shift);
+> 
 
-Thanks and sorry for not including you in the original patch series
-submission,
-Soeren
+will do
 
-[1] https://lkml.org/lkml/2019/12/11/1958
+> > +
+> >  static int cmdq_thread_suspend(struct cmdq *cmdq, struct cmdq_thread *thread)
+> >  {
+> >  	u32 status;
+> > @@ -176,6 +189,7 @@ static void cmdq_task_remove_wfe(struct cmdq_task *task)
+> >  {
+> >  	struct device *dev = task->cmdq->mbox.dev;
+> >  	u64 *base = task->pkt->va_base;
+> > +	struct cmdq *cmdq = task->cmdq;
+> >  	int i;
+> >  
+> >  	dma_sync_single_for_cpu(dev, task->pa_base, task->pkt->cmd_buf_size,
+> > @@ -183,7 +197,7 @@ static void cmdq_task_remove_wfe(struct cmdq_task *task)
+> >  	for (i = 0; i < CMDQ_NUM_CMD(task->pkt); i++)
+> >  		if (cmdq_command_is_wfe(base[i]))
+> >  			base[i] = (u64)CMDQ_JUMP_BY_OFFSET << 32 |
+> > -				  CMDQ_JUMP_PASS;
+> > +				  CMDQ_JUMP_PASS >> cmdq->shift_pa;
+> 
+> cmdq is only used here, so I would like
+> 
+> CMDQ_JUMP_PASS >> task->cmdq->shift_pa;
+> 
 
-On 12.12.19 00:52, Soeren Moch wrote:
-> BCM4359 is a 2x2 802.11 abgn+ac Dual-Band HT80 combo chip and it
-> supports Real Simultaneous Dual Band feature.
->
-> Based on a similar patch by: Wright Feng <wright.feng@cypress.com>
->
-> Signed-off-by: Soeren Moch <smoch@web.de>
-> ---
-> changes in v2:
-> - add SDIO_DEVICE_ID_CYPRESS_89359 as requested
->   by Chi-Hsien Lin <chi-hsien.lin@cypress.com>
->
-> Cc: Kalle Valo <kvalo@codeaurora.org>
-> Cc: Heiko Stuebner <heiko@sntech.de>
-> Cc: Arend van Spriel <arend.vanspriel@broadcom.com>
-> Cc: Franky Lin <franky.lin@broadcom.com>
-> Cc: Hante Meuleman <hante.meuleman@broadcom.com>
-> Cc: Chi-Hsien Lin <chi-hsien.lin@cypress.com>
-> Cc: Wright Feng <wright.feng@cypress.com>
-> Cc: linux-wireless@vger.kernel.org
-> Cc: brcm80211-dev-list.pdl@broadcom.com
-> Cc: brcm80211-dev-list@cypress.com
-> Cc: netdev@vger.kernel.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-rockchip@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> ---
->  drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c | 2 ++
->  drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c   | 1 +
->  drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c   | 2 ++
->  include/linux/mmc/sdio_ids.h                              | 2 ++
->  4 files changed, 7 insertions(+)
->
-> diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c
-> index 68baf0189305..f4c53ab46058 100644
-> --- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c
-> +++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bcmsdh.c
-> @@ -973,8 +973,10 @@ static const struct sdio_device_id brcmf_sdmmc_ids[] = {
->  	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_BROADCOM_43455),
->  	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_BROADCOM_4354),
->  	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_BROADCOM_4356),
-> +	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_BROADCOM_4359),
->  	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_CYPRESS_4373),
->  	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_CYPRESS_43012),
-> +	BRCMF_SDIO_DEVICE(SDIO_DEVICE_ID_CYPRESS_89359),
->  	{ /* end: all zeroes */ }
->  };
->  MODULE_DEVICE_TABLE(sdio, brcmf_sdmmc_ids);
-> diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
-> index baf72e3984fc..282d0bc14e8e 100644
-> --- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
-> +++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/chip.c
-> @@ -1408,6 +1408,7 @@ bool brcmf_chip_sr_capable(struct brcmf_chip *pub)
->  		addr = CORE_CC_REG(base, sr_control0);
->  		reg = chip->ops->read32(chip->ctx, addr);
->  		return (reg & CC_SR_CTL0_ENABLE_MASK) != 0;
-> +	case BRCM_CC_4359_CHIP_ID:
->  	case CY_CC_43012_CHIP_ID:
->  		addr = CORE_CC_REG(pmu->base, retention_ctl);
->  		reg = chip->ops->read32(chip->ctx, addr);
-> diff --git a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-> index 21e535072f3f..c4012ed58b9c 100644
-> --- a/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-> +++ b/drivers/net/wireless/broadcom/brcm80211/brcmfmac/sdio.c
-> @@ -616,6 +616,7 @@ BRCMF_FW_DEF(43455, "brcmfmac43455-sdio");
->  BRCMF_FW_DEF(43456, "brcmfmac43456-sdio");
->  BRCMF_FW_DEF(4354, "brcmfmac4354-sdio");
->  BRCMF_FW_DEF(4356, "brcmfmac4356-sdio");
-> +BRCMF_FW_DEF(4359, "brcmfmac4359-sdio");
->  BRCMF_FW_DEF(4373, "brcmfmac4373-sdio");
->  BRCMF_FW_DEF(43012, "brcmfmac43012-sdio");
->
-> @@ -638,6 +639,7 @@ static const struct brcmf_firmware_mapping brcmf_sdio_fwnames[] = {
->  	BRCMF_FW_ENTRY(BRCM_CC_4345_CHIP_ID, 0xFFFFFDC0, 43455),
->  	BRCMF_FW_ENTRY(BRCM_CC_4354_CHIP_ID, 0xFFFFFFFF, 4354),
->  	BRCMF_FW_ENTRY(BRCM_CC_4356_CHIP_ID, 0xFFFFFFFF, 4356),
-> +	BRCMF_FW_ENTRY(BRCM_CC_4359_CHIP_ID, 0xFFFFFFFF, 4359),
->  	BRCMF_FW_ENTRY(CY_CC_4373_CHIP_ID, 0xFFFFFFFF, 4373),
->  	BRCMF_FW_ENTRY(CY_CC_43012_CHIP_ID, 0xFFFFFFFF, 43012)
->  };
-> diff --git a/include/linux/mmc/sdio_ids.h b/include/linux/mmc/sdio_ids.h
-> index 08b25c02b5a1..2e9a6e4634eb 100644
-> --- a/include/linux/mmc/sdio_ids.h
-> +++ b/include/linux/mmc/sdio_ids.h
-> @@ -41,8 +41,10 @@
->  #define SDIO_DEVICE_ID_BROADCOM_43455		0xa9bf
->  #define SDIO_DEVICE_ID_BROADCOM_4354		0x4354
->  #define SDIO_DEVICE_ID_BROADCOM_4356		0x4356
-> +#define SDIO_DEVICE_ID_BROADCOM_4359		0x4359
->  #define SDIO_DEVICE_ID_CYPRESS_4373		0x4373
->  #define SDIO_DEVICE_ID_CYPRESS_43012		43012
-> +#define SDIO_DEVICE_ID_CYPRESS_89359		0x4355
->
->  #define SDIO_VENDOR_ID_INTEL			0x0089
->  #define SDIO_DEVICE_ID_INTEL_IWMC3200WIMAX	0x1402
-> --
-> 2.17.1
->
+ok, will fix
 
+> >  	dma_sync_single_for_device(dev, task->pa_base, task->pkt->cmd_buf_size,
+> >  				   DMA_TO_DEVICE);
+> >  }
+> > @@ -221,13 +235,15 @@ static void cmdq_task_handle_error(struct cmdq_task *task)
+> >  {
+> >  	struct cmdq_thread *thread = task->thread;
+> >  	struct cmdq_task *next_task;
+> > +	struct cmdq *cmdq = task->cmdq;
+> >  
+> >  	dev_err(task->cmdq->mbox.dev, "task 0x%p error\n", task);
+> >  	WARN_ON(cmdq_thread_suspend(task->cmdq, thread) < 0);
+> >  	next_task = list_first_entry_or_null(&thread->task_busy_list,
+> >  			struct cmdq_task, list_entry);
+> >  	if (next_task)
+> > -		writel(next_task->pa_base, thread->base + CMDQ_THR_CURR_ADDR);
+> > +		writel(next_task->pa_base >> cmdq->shift_pa,
+> > +		       thread->base + CMDQ_THR_CURR_ADDR);
+> >  	cmdq_thread_resume(thread);
+> >  }
+> >  
+> > @@ -257,7 +273,7 @@ static void cmdq_thread_irq_handler(struct cmdq *cmdq,
+> >  	else
+> >  		return;
+> >  
+> > -	curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR);
+> > +	curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR) << cmdq->shift_pa;
+> >  
+> >  	list_for_each_entry_safe(task, tmp, &thread->task_busy_list,
+> >  				 list_entry) {
+> > @@ -373,16 +389,20 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
+> >  		WARN_ON(clk_enable(cmdq->clock) < 0);
+> >  		WARN_ON(cmdq_thread_reset(cmdq, thread) < 0);
+> >  
+> > -		writel(task->pa_base, thread->base + CMDQ_THR_CURR_ADDR);
+> > -		writel(task->pa_base + pkt->cmd_buf_size,
+> > +		writel(task->pa_base >> cmdq->shift_pa,
+> > +		       thread->base + CMDQ_THR_CURR_ADDR);
+> > +		writel((task->pa_base + pkt->cmd_buf_size) >> cmdq->shift_pa,
+> >  		       thread->base + CMDQ_THR_END_ADDR);
+> > +
+> >  		writel(thread->priority, thread->base + CMDQ_THR_PRIORITY);
+> >  		writel(CMDQ_THR_IRQ_EN, thread->base + CMDQ_THR_IRQ_ENABLE);
+> >  		writel(CMDQ_THR_ENABLED, thread->base + CMDQ_THR_ENABLE_TASK);
+> >  	} else {
+> >  		WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
+> > -		curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR);
+> > -		end_pa = readl(thread->base + CMDQ_THR_END_ADDR);
+> > +		curr_pa = readl(thread->base + CMDQ_THR_CURR_ADDR) <<
+> > +			cmdq->shift_pa;
+> > +		end_pa = readl(thread->base + CMDQ_THR_END_ADDR) <<
+> > +			cmdq->shift_pa;
+> >  
+> >  		/*
+> >  		 * Atomic execution should remove the following wfe, i.e. only
+> > @@ -395,7 +415,7 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
+> >  				cmdq_thread_wait_end(thread, end_pa);
+> >  				WARN_ON(cmdq_thread_suspend(cmdq, thread) < 0);
+> >  				/* set to this task directly */
+> > -				writel(task->pa_base,
+> > +				writel(task->pa_base >> cmdq->shift_pa,
+> >  				       thread->base + CMDQ_THR_CURR_ADDR);
+> >  			} else {
+> >  				cmdq_task_insert_into_thread(task);
+> > @@ -407,14 +427,14 @@ static int cmdq_mbox_send_data(struct mbox_chan *chan, void *data)
+> >  			if (curr_pa == end_pa - CMDQ_INST_SIZE ||
+> >  			    curr_pa == end_pa) {
+> >  				/* set to this task directly */
+> > -				writel(task->pa_base,
+> > +				writel(task->pa_base >> cmdq->shift_pa,
+> >  				       thread->base + CMDQ_THR_CURR_ADDR);
+> >  			} else {
+> >  				cmdq_task_insert_into_thread(task);
+> >  				smp_mb(); /* modify jump before enable thread */
+> >  			}
+> >  		}
+> > -		writel(task->pa_base + pkt->cmd_buf_size,
+> > +		writel((task->pa_base + pkt->cmd_buf_size) >> cmdq->shift_pa,
+> >  		       thread->base + CMDQ_THR_END_ADDR);
+> >  		cmdq_thread_resume(thread);
+> >  	}
+> > @@ -461,6 +481,7 @@ static int cmdq_probe(struct platform_device *pdev)
+> >  	struct resource *res;
+> >  	struct cmdq *cmdq;
+> >  	int err, i;
+> > +	struct gce_plat *plat_data;
+> >  
+> >  	cmdq = devm_kzalloc(dev, sizeof(*cmdq), GFP_KERNEL);
+> >  	if (!cmdq)
+> > @@ -479,7 +500,14 @@ static int cmdq_probe(struct platform_device *pdev)
+> >  		return -EINVAL;
+> >  	}
+> >  
+> > -	cmdq->thread_nr = (u32)(unsigned long)of_device_get_match_data(dev);
+> > +	plat_data = (struct gce_plat *)of_device_get_match_data(dev);
+> > +	if (!plat_data) {
+> > +		dev_err(dev, "failed to get match data\n");
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	cmdq->thread_nr = plat_data->thread_nr;
+> > +	cmdq->shift_pa = plat_data->shift;
+> >  	cmdq->irq_mask = GENMASK(cmdq->thread_nr - 1, 0);
+> >  	err = devm_request_irq(dev, cmdq->irq, cmdq_irq_handler, IRQF_SHARED,
+> >  			       "mtk_cmdq", cmdq);
+> > @@ -542,9 +570,12 @@ static const struct dev_pm_ops cmdq_pm_ops = {
+> >  	.resume = cmdq_resume,
+> >  };
+> >  
+> > +static const struct gce_plat gce_plat_v2 = {.thread_nr = 16, .shift = 0};
+> > +static const struct gce_plat gce_plat_v3 = {.thread_nr = 24, .shift = 0};
+> 
+> For global variable, you need not to initialize it to zero.
+> 
+
+will fix
+
+> > +
+> >  static const struct of_device_id cmdq_of_ids[] = {
+> > -	{.compatible = "mediatek,mt8173-gce", .data = (void *)16},
+> > -	{.compatible = "mediatek,mt8183-gce", .data = (void *)24},
+> > +	{.compatible = "mediatek,mt8173-gce", .data = (void *)&gce_plat_v2},
+> > +	{.compatible = "mediatek,mt8183-gce", .data = (void *)&gce_plat_v3},
+> >  	{}
+> >  };
+> >  
+> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > index 9add0fd5fa6c..274f6f311d05 100644
+> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > @@ -281,6 +281,7 @@ EXPORT_SYMBOL(cmdq_pkt_poll_mask);
+> >  
+> >  static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
+> >  {
+> > +	struct cmdq_client *cl = pkt->cl;
+> >  	struct cmdq_instruction inst = { {0} };
+> >  	int err;
+> >  
+> > @@ -293,7 +294,7 @@ static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
+> >  
+> >  	/* JUMP to end */
+> >  	inst.op = CMDQ_CODE_JUMP;
+> > -	inst.value = CMDQ_JUMP_PASS;
+> > +	inst.value = CMDQ_JUMP_PASS >> cmdq_mbox_shift(cl->chan);
+> 
+> cl is used only here, so I would like
+> 
+> cmdq_mbox_shift(pkt->cl->chan);
+> 
+> Regards,
+> CK
+> 
+
+will fix
+
+
+Regards,
+Dennis
+
+> >  	err = cmdq_pkt_append_command(pkt, inst);
+> >  
+> >  	return err;
+> > diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
+> > index a4dc45fbec0a..dfe5b2eb85cc 100644
+> > --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
+> > +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
+> > @@ -88,4 +88,6 @@ struct cmdq_pkt {
+> >  	void			*cl;
+> >  };
+> >  
+> > +u8 cmdq_mbox_shift(struct mbox_chan *chan);
+> > +
+> >  #endif /* __MTK_CMDQ_MAILBOX_H__ */
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
