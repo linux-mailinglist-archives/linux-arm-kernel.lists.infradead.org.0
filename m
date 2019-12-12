@@ -2,52 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A402C11CE2D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:21:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F41211CE40
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 14:25:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=T52BXDljZBppC1E0nX4VDw5rvPMC/dKuCXMBwl21jN8=; b=mUGFEsx6iLmx01UjbtWWn+Tni
-	9ISsrfB51GNoOrSDVUDuiSPkqeH2lhA9QpIOc6JM0ZPRp9GBdGxVkVlKSBLfEC4UW4gHEjLRhPtbf
-	gNaDfUtvPuLUda+r/zg1Dvz6KGD6fF2KYA6FSpqsFUuzwf7koSFQ/sjX0QDqUv2rkCBo26pP+u+z2
-	VOgwslMGSyjMms028dmj7rM489curBNJzdKmusqYaAh4fuO/0qJu3d5IPaLbqO7x3fgmB9H2jCyEA
-	4H4DUFmL0VpQEPECtWHFPUHXymFAkW0sZ46jexAU2oYpMQ6nzeXKCjamIsOF9YA10JIL/Z1lpZnfu
-	5SSBhUh+Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j56gahCOrFQXhPMNKjESakQ8cf+nT3QVhb+pHOoT5lg=; b=jBYjOzNEda6SHA
+	TK1PPYQCHsWJV4vFzJAyw5EWX2yDEe45YZl9OZBT0QPMJmNidUDZOx4fJTCtVDaBqKMgl6/rJaLmi
+	j4NkzI1rOdY93bVRtyenrZXCq/sPl8D+VUV/1TesCtF9oxkEuL90E0y1MeYuZhB6I2ykAP0bWgjLo
+	nUH3/Gqv8QK7L9zhIbyVnUkuGapbJWp/fcCk9enrPKjFoCv24sMlOCJgUC9n1iPKJoqKoa7rwKTio
+	gDj/wFko8maXaZPeU/xixaLwuFYNtKukB/89zhAs8HEdZD3Qp+IL6YbpG5QF6t20yK1oE/9OKKnUA
+	14mnqKoClqiqefqR8zpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifOP4-0006y1-Tw; Thu, 12 Dec 2019 13:21:14 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1ifOTW-0000fx-Pr; Thu, 12 Dec 2019 13:25:50 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifOOv-0006xZ-CD; Thu, 12 Dec 2019 13:21:07 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id B70EFAFD8;
- Thu, 12 Dec 2019 13:21:03 +0000 (UTC)
-Message-ID: <ff60337c5f6f324fb121fa7cad24e763af29cfe2.camel@suse.de>
-Subject: Re: [PATCH v4 8/8] linux/log2.h: Use roundup/dow_pow_two() on 64bit
- calculations
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Date: Thu, 12 Dec 2019 14:21:00 +0100
-In-Reply-To: <20191205203845.GA243596@google.com>
-References: <20191205203845.GA243596@google.com>
-User-Agent: Evolution 3.34.2 
+ id 1ifOTP-0000Ya-82; Thu, 12 Dec 2019 13:25:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=bxnXIodnVA+EXBQ9CzKw2+L2s06f/eW1ZteOUMDWsiU=; b=L5e/4sTMJEgfoy08MJh5WXYJ6i
+ vtxgJMqAJUi8fKfN/Q5KP8FQnuW4FE9UBwBZ/KRoW0xWFvLE685wFxZz9EFJekPOrDAqg783JqQJ3
+ XPskH3kEU7fR0/Ph78F3bj9HvZWOr4H99XHMwhfMNb8afPT2T5Xye6Z5mz+fbKas7xlU=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.92.2)
+ (envelope-from <andrew@lunn.ch>)
+ id 1ifOT2-0002nd-BQ; Thu, 12 Dec 2019 14:25:20 +0100
+Date: Thu, 12 Dec 2019 14:25:20 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Biao Huang <biao.huang@mediatek.com>
+Subject: Re: [PATCH 1/2] net-next: stmmac: mediatek: add more suuport for RMII
+Message-ID: <20191212132520.GB9959@lunn.ch>
+References: <20191212024145.21752-1-biao.huang@mediatek.com>
+ <20191212024145.21752-2-biao.huang@mediatek.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191212024145.21752-2-biao.huang@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_052105_709241_D6DEC602 
-X-CRM114-Status: GOOD (  20.01  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191212_052543_286083_FAC90CA8 
+X-CRM114-Status: GOOD (  11.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,149 +75,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
- Shawn Lin <shawn.lin@rock-chips.com>, Eric Anholt <eric@anholt.net>,
- Hanjun Guo <guohanjun@huawei.com>, Frank Rowand <frowand.list@gmail.com>,
- Christoph Hellwig <hch@lst.de>, Marek Szyprowski <m.szyprowski@samsung.com>,
- Florian Fainelli <f.fainelli@gmail.com>, linux-rockchip@lists.infradead.org,
- linux-rdma@vger.kernel.org, maz@kernel.org, phil@raspberrypi.org,
- linux-acpi@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- Len Brown <lenb@kernel.org>, devicetree@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- mbrugger@suse.com, netdev@vger.kernel.org,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- jeremy.linton@arm.com, iommu@lists.linux-foundation.org,
- Rob Herring <robh+dt@kernel.org>, Stefan Wahren <wahrenst@gmx.net>,
- james.quinlan@broadcom.com, Sudeep Holla <sudeep.holla@arm.com>,
- andrew.murray@arm.com, Robin Murphy <robin.murphy@arm.com>,
- "David S. Miller" <davem@davemloft.net>, Tariq Toukan <tariqt@mellanox.com>
-Content-Type: multipart/mixed; boundary="===============0333740677147883232=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Jose Abreu <joabreu@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, devicetree@vger.kernel.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, yt.shen@mediatek.com,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Dec 12, 2019 at 10:41:44AM +0800, Biao Huang wrote:
+> MT2712 SoC can provide the rmii reference clock, and the clock
+> will output from TXC pin only, which means ref_clk pin of external
+> PHY should connect to TXC pin in this case.
+> Add corresponding clock and timing settings.
 
---===============0333740677147883232==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-lcx9Dpdc/nSfdN+F0tca"
+Hi Biao
 
+Subject line has a typo.
 
---=-lcx9Dpdc/nSfdN+F0tca
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+> @@ -278,6 +296,7 @@ static int mediatek_dwmac_config_dt(struct mediatek_dwmac_plat_data *plat)
+>  	mac_delay->tx_inv = of_property_read_bool(plat->np, "mediatek,txc-inverse");
+>  	mac_delay->rx_inv = of_property_read_bool(plat->np, "mediatek,rxc-inverse");
+>  	plat->rmii_rxc = of_property_read_bool(plat->np, "mediatek,rmii-rxc");
+> +	plat->rmii_clk_from_mac = of_property_read_bool(plat->np, "mediatek,rmii-clk-from-mac");
+>  
+>  	return 0;
+>  }
+> @@ -287,6 +306,16 @@ static int mediatek_dwmac_clk_init(struct mediatek_dwmac_plat_data *plat)
+>  	const struct mediatek_dwmac_variant *variant = plat->variant;
+>  	int i, num = variant->num_clks;
+>  
+> +	plat->mac_rmii_clk = NULL;
+> +	if (plat->phy_mode == PHY_INTERFACE_MODE_RMII &&
+> +	    plat->rmii_clk_from_mac) {
+> +		plat->mac_rmii_clk = devm_clk_get(plat->dev, "rmii_internal");
+> +		if (IS_ERR(plat->mac_rmii_clk)) {
+> +			dev_err(plat->dev, "Failed to get reference clk from MAC\n");
+> +			return PTR_ERR(plat->mac_rmii_clk);
+> +		}
+> +	}
 
-On Thu, 2019-12-05 at 14:38 -0600, Bjorn Helgaas wrote:
-> The subject contains a couple typos: it's missing "of" and it's
-> missing the "n" on "down".
+Please don't use a binary property. This is a clock, so describe it in
+DT as a clock. Add it to the existing list of clocks.
 
-Noted >=20
-> On Tue, Dec 03, 2019 at 12:47:41PM +0100, Nicolas Saenz Julienne wrote:
-> > The function now is safe to use while expecting a 64bit value. Use it
-> > where relevant.
->=20
-> Please include the function names ("roundup_pow_of_two()",
-> "rounddown_pow_of_two()") in the changelog so it is self-contained and
-> doesn't depend on the subject.
-
-Noted
-
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->=20
-> With the nits above and below addressed,
->=20
-> Acked-by: Bjorn Helgaas <bhelgaas@google.com>	# drivers/pci
-
-Thanks!
-
-> > ---
-> >  drivers/acpi/arm64/iort.c                        | 2 +-
-> >  drivers/net/ethernet/mellanox/mlx4/en_clock.c    | 3 ++-
-> >  drivers/of/device.c                              | 3 ++-
-> >  drivers/pci/controller/cadence/pcie-cadence-ep.c | 3 ++-
-> >  drivers/pci/controller/cadence/pcie-cadence.c    | 3 ++-
-> >  drivers/pci/controller/pcie-brcmstb.c            | 3 ++-
-> >  drivers/pci/controller/pcie-rockchip-ep.c        | 5 +++--
-> >  kernel/dma/direct.c                              | 2 +-
-> >  8 files changed, 15 insertions(+), 9 deletions(-)
-> > --- a/drivers/pci/controller/cadence/pcie-cadence-ep.c
-> > +++ b/drivers/pci/controller/cadence/pcie-cadence-ep.c
-> > @@ -10,6 +10,7 @@
-> >  #include <linux/platform_device.h>
-> >  #include <linux/pm_runtime.h>
-> >  #include <linux/sizes.h>
-> > +#include <linux/log2.h>
-> > =20
-> >  #include "pcie-cadence.h"
-> > =20
-> > @@ -65,7 +66,7 @@ static int cdns_pcie_ep_set_bar(struct pci_epc *epc, =
-u8
-> > fn,
-> >  	 * roundup_pow_of_two() returns an unsigned long, which is not suited
-> >  	 * for 64bit values.
-> >  	 */
->=20
-> Please remove the comment above since it no longer applies.
-
-Noted
-
-[...]
-
-> > diff --git a/kernel/dma/direct.c b/kernel/dma/direct.c
-> > index 6af7ae83c4ad..056886c4efec 100644
-> > --- a/kernel/dma/direct.c
-> > +++ b/kernel/dma/direct.c
-> > @@ -53,7 +53,7 @@ u64 dma_direct_get_required_mask(struct device *dev)
-> >  {
-> >  	u64 max_dma =3D phys_to_dma_direct(dev, (max_pfn - 1) << PAGE_SHIFT);
-> > =20
-> > -	return (1ULL << (fls64(max_dma) - 1)) * 2 - 1;
-> > +	return rounddown_pow_of_two(max_dma) * 2 - 1;
->=20
-> Personally I would probably make this one a separate patch since it's
-> qualitatively different than the others and it would avoid the slight
-> awkwardness of the non-greppable "roundup/down_pow_of_two()"
-> construction in the commit subject.
->=20
-> But it's fine either way.
-
-I'll split it into two parts, as RobH made a similar complaint.
-
-Regards,
-Nicolas
-
-
---=-lcx9Dpdc/nSfdN+F0tca
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl3yPrwACgkQlfZmHno8
-x/4DxAf/dUNU44c6C5UlupKkHs1V09AR3yPNPOe8GrxrtpnzWAaNQ9L4S0ZG9ocS
-gey8W3CCPJPrWmqSAjQ8ddX9w+wKaaRaGFE3wHRFiGVMDSN8kGzHySuWi1ytfy0Y
-x0msb/bX87L3SwSegRTGlvbRJ1rDZl4WxCVFSrhCNRwem2R+v668VGifVS24Ay1f
-dwS7xyDUcMTmaiCfpK8KyJK1GdbScI6kVPFUM57deANw/I60zWGWykBnTeTQtlrM
-gLN2fGNP1wLRKZ5IEHObKLWo0rXTRKBjsouzL4/D5dW69LXZK1nS02rJsdu5bpUl
-WepA96OKnIgxngbBiO8z4btiMgZ1Jw==
-=QTsG
------END PGP SIGNATURE-----
-
---=-lcx9Dpdc/nSfdN+F0tca--
-
-
-
---===============0333740677147883232==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+   Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0333740677147883232==--
-
-
