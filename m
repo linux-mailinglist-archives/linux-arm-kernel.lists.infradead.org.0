@@ -2,70 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EB0E11CC81
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 12:46:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 575CB11CC92
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 12:52:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=F3YCRmdCVUYE6kf+j/BEngPcWUA3gw8+2bHnrMDuRmE=; b=M3SbpMxjLc3Pshz+qvzSzbzLs
-	ORlu/W4jQ5Ai/w+Qh9eLllpK1Ynx5Cfeif1JcZ7cww9dKQHU5AV8WtdcLMUd/VuLNheTEchylDsST
-	BbesJu+Fqqz8WsQchuoF1at2uEc5+rnUmIhm1aky7kJdajcX/jrCuVNI/y+X93MkFeS/96xRgrUro
-	lPgePJaTKYwWF0cEmRbuQQqLVSyUSxljzpEpaAow1/vIIayY3DAtUI1t5Xlktw7b2y+YYP84pCx58
-	A1LgleaPyk0MrL1ZrNsMgw+4s2Thia9ej6FC+ck4ykbguEdNUFHOgFALMAzFUsL66rCxTKErXV4sK
-	jFV2EXiXg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Zj5QBpLvKogqYFJTejbLhpmcQ6D5NfdPvMnpmBgzSQA=; b=lbwQS3fkpi16ik
+	YtkdSuxhVnfz3lV9IRIeyUQWEYk/iep8tv1W21kl/6aK6xUg0hxsUHUV9Qrt/cbZKQaZIo/2TUNZh
+	7m1kAJPGx/uK3a+ONB2QMjN00OuEpQyqs3UDsDae5P+3KAUlY15VwxM/libvOYI4dMwiVk9SM+MH+
+	bwj2RYRHQrMR6aXEjSqU+GTtyGbyJYcIg2U9WVWi4FXidUzah29xNWnhW7oumZ4itS47FQrRKEqXY
+	nugOsphnJn21Pb9KHzVTfYfUBmU1UDlh4MYzwyNdvwuuGcqZMZaGqiiXm3kwb56RpLBM/BWY0fR09
+	wNHl3q9TflIsdOoZthsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifMvG-0007KZ-Br; Thu, 12 Dec 2019 11:46:22 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1ifN0r-0002mR-PN; Thu, 12 Dec 2019 11:52:09 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifMv2-0007Ir-JI; Thu, 12 Dec 2019 11:46:10 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1ifMuq-0000Vg-Vq; Thu, 12 Dec 2019 12:45:57 +0100
-To: Neal Liu <neal.liu@mediatek.com>
-Subject: Re: [PATCH v5 3/3] hwrng: add mtk-sec-rng driver
-X-PHP-Originating-Script: 0:main.inc
+ id 1ifN0h-0002ln-4g
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 11:52:00 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xBCBk7d0092536;
+ Thu, 12 Dec 2019 11:51:49 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2019-08-05;
+ bh=QYEt3ZHHvwyo7hQcDmCsE+2gnaQbCn7M898TjPIxqIY=;
+ b=VxL13QJJ9Of4N03WEBOiXN7ilSvi6qi6PSIqU3S7oZ30BCKJzeXcjF+x7JwDl0a8+Ycc
+ O7ZrrIzcCA4TBPFXa1fJpuDVUPtkHwCLVKDe55yi93nrYYf1t4/SS3+TdDBzURQ7Q1Mn
+ gpsu0BL1YSMUCjPPLnLDuauwG1/PFXgEsOzo821C6qDPij+YrHGsBIq5H3I8XZcVFTaV
+ t6sHGaU/syEJVTXAXRo5NpETL4woyC7vxMd76uzIYK8AezMPk1LdzvmQITAa5097xgzN
+ Sik1lO6nz7wmtcd4D//EFSgE3jCvQDS2sC4MRjwbxVlz5YHDbhCL3XcuZWnOvnELZAIi bw== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2120.oracle.com with ESMTP id 2wr4qrte1k-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 12 Dec 2019 11:51:49 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xBCBnDlu054722;
+ Thu, 12 Dec 2019 11:51:49 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3020.oracle.com with ESMTP id 2wums91y16-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 12 Dec 2019 11:51:48 +0000
+Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id xBCBpiHo024067;
+ Thu, 12 Dec 2019 11:51:44 GMT
+Received: from kadam (/129.205.23.165) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 12 Dec 2019 03:51:43 -0800
+Date: Thu, 12 Dec 2019 14:51:34 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Chuhong Yuan <hslester96@gmail.com>
+Subject: Re: [PATCH] media: imx7-mipi-csis: Add the missed
+ v4l2_async_notifier_cleanup in remove
+Message-ID: <20191212115134.GA1895@kadam>
+References: <20191209085828.16183-1-hslester96@gmail.com>
 MIME-Version: 1.0
-Date: Thu, 12 Dec 2019 11:45:56 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <1576127609.27185.8.camel@mtkswgap22>
-References: <1574864578-467-1-git-send-email-neal.liu@mediatek.com>
- <1574864578-467-4-git-send-email-neal.liu@mediatek.com>
- <CADnJP=uhD=J2NrpSwiX8oCTd-u_q05=HhsAV-ErCsXNDwVS0rA@mail.gmail.com>
- <1575027046.24848.4.camel@mtkswgap22>
- <CAKv+Gu_um7eRYXbieW7ogDX5mmZaxP7JQBJM9CajK+6CsO5RgQ@mail.gmail.com>
- <20191202191146.79e6368c@why>
- <299029b0-0689-c2c4-4656-36ced31ed513@gmail.com>
- <b7043e932211911a81383274e0cc983d@www.loen.fr>
- <1576127609.27185.8.camel@mtkswgap22>
-Message-ID: <a5982b8ed10440eef14c04df6e6060b6@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: neal.liu@mediatek.com, f.fainelli@gmail.com,
- ard.biesheuvel@linaro.org, pawel.moll@arm.com, mark.rutland@arm.com,
- devicetree@vger.kernel.org, herbert@gondor.apana.org.au,
- wsd_upstream@mediatek.com, catalin.marinas@arm.com, sean.wang@kernel.org,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, linux-crypto@vger.kernel.org, mpm@selenic.com,
- matthias.bgg@gmail.com, crystal.guo@mediatek.com, will@kernel.org,
- lists@bofh.nu, linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20191209085828.16183-1-hslester96@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9468
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-1912120089
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9468
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-1912120089
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_034608_785521_AA63B8C3 
-X-CRM114-Status: GOOD (  19.58  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191212_035159_316202_5DDBDDC5 
+X-CRM114-Status: GOOD (  21.33  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,137 +111,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, pawel.moll@arm.com,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Sean Wang <sean.wang@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- wsd_upstream <wsd_upstream@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, linux-crypto@vger.kernel.org,
- Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- =?UTF-8?Q?Crystal_Guo_=28=E9=83=AD?= =?UTF-8?Q?=E6=99=B6=29?=
- <crystal.guo@mediatek.com>, Will Deacon <will@kernel.org>,
- Lars Persson <lists@bofh.nu>, linux-arm-kernel@lists.infradead.org
+Cc: devel@driverdev.osuosl.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Steve Longerbeam <slongerbeam@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-12 05:13, Neal Liu wrote:
-> On Tue, 2019-12-03 at 11:17 +0000, Marc Zyngier wrote:
->> On 2019-12-03 04:16, Florian Fainelli wrote:
->> > On 12/2/2019 11:11 AM, Marc Zyngier wrote:
->> >> On Mon, 2 Dec 2019 16:12:09 +0000
->> >> Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
->> >>
->> >>> (adding some more arm64 folks)
->> >>>
->> >>> On Fri, 29 Nov 2019 at 11:30, Neal Liu <neal.liu@mediatek.com>
->> >>> wrote:
->> >>>>
->> >>>> On Fri, 2019-11-29 at 18:02 +0800, Lars Persson wrote:
->> >>>>> Hi Neal,
->> >>>>>
->> >>>>> On Wed, Nov 27, 2019 at 3:23 PM Neal Liu 
->> <neal.liu@mediatek.com>
->> >>>>> wrote:
->> >>>>>>
->> >>>>>> For MediaTek SoCs on ARMv8 with TrustZone enabled, 
->> peripherals
->> >>>>>> like
->> >>>>>> entropy sources is not accessible from normal world (linux) 
->> and
->> >>>>>> rather accessible from secure world (ATF/TEE) only. This 
->> driver
->> >>>>>> aims
->> >>>>>> to provide a generic interface to ATF rng service.
->> >>>>>>
->> >>>>>
->> >>>>> I am working on several SoCs that also will need this kind of
->> >>>>> driver
->> >>>>> to get entropy from Arm trusted firmware.
->> >>>>> If you intend to make this a generic interface, please clean 
->> up
->> >>>>> the
->> >>>>> references to MediaTek and give it a more generic name. For
->> >>>>> example
->> >>>>> "Arm Trusted Firmware random number driver".
->> >>>>>
->> >>>>> It will also be helpful if the SMC call number is 
->> configurable.
->> >>>>>
->> >>>>> - Lars
->> >>>>
->> >>>> Yes, I'm trying to make this to a generic interface. I'll try 
->> to
->> >>>> make
->> >>>> HW/platform related dependency to be configurable and let it 
->> more
->> >>>> generic.
->> >>>> Thanks for your suggestion.
->> >>>>
->> >>>
->> >>> I don't think it makes sense for each arm64 platform to expose 
->> an
->> >>> entropy source via SMC calls in a slightly different way, and 
->> model
->> >>> it
->> >>> as a h/w driver. Instead, we should try to standardize this, and
->> >>> perhaps expose it via the architectural helpers that already 
->> exist
->> >>> (get_random_seed_long() and friends), so they get plugged into 
->> the
->> >>> kernel random pool driver directly.
->> >>
->> >> Absolutely. I'd love to see a standard, ARM-specified, 
->> virtualizable
->> >> RNG that is abstracted from the HW.
->> >
->> > Do you think we could use virtio-rng on top of a modified 
->> virtio-mmio
->> > which instead of being backed by a hardware mailbox, could use
->> > hvc/smc
->> > calls to signal writes to shared memory and get notifications via 
->> an
->> > interrupt? This would also open up the doors to other virtio uses
->> > cases
->> > beyond just RNG (e.g.: console, block devices?). If this is
->> > completely
->> > stupid, then please disregard this comment.
->>
->> The problem with a virtio device is that it is a ... device. What we
->> want
->> is to be able to have access to an entropy source extremely early in
->> the
->> kernel life, and devices tend to be available pretty late in the 
->> game.
->> This means we cannot plug them in the architectural helpers that Ard
->> mentions above.
->>
->> What you're suggesting looks more like a new kind of virtio 
->> transport,
->> which is interesting, in a remarkably twisted way... ;-)
->>
->> Thanks,
->>
->>          M.
->
-> In conclusion, is it helpful that hw_random has a generic interface 
-> to
-> add device randomness by talking to hwrng which is implemented in the
-> firmware or the hypervisor?
-> For most chip vendors, I think the answer is yes. We already prepared 
-> a
-> new patchset and need you agree with this idea.
+On Mon, Dec 09, 2019 at 04:58:28PM +0800, Chuhong Yuan wrote:
+> All drivers in imx call v4l2_async_notifier_cleanup() after unregistering
+> the notifier except this driver.
+> This should be a miss and we need to add the call to fix it.
+> 
+> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+> ---
+>  drivers/staging/media/imx/imx7-mipi-csis.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
+> index 99166afca071..2bfa85bb84e7 100644
+> --- a/drivers/staging/media/imx/imx7-mipi-csis.c
+> +++ b/drivers/staging/media/imx/imx7-mipi-csis.c
+> @@ -1105,6 +1105,7 @@ static int mipi_csis_remove(struct platform_device *pdev)
+>  	mipi_csis_debugfs_exit(state);
+>  	v4l2_async_unregister_subdev(&state->mipi_sd);
+>  	v4l2_async_notifier_unregister(&state->subdev_notifier);
+> +	v4l2_async_notifier_cleanup(&state->subdev_notifier);
+>  
 
-As long as it is a *unified* interface, I'm all for that.
+In this case the "state->subdev_notifier" was never initialized or used
+so both v4l2_async_notifier_unregister() and v4l2_async_notifier_cleanup()
+are no-ops.
 
-Thanks,
+We should just delete "subdev_notifier".
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+regards,
+dan carpenter
+
 
 _______________________________________________
 linux-arm-kernel mailing list
