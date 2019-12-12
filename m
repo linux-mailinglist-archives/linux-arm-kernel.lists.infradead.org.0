@@ -2,64 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79A4711D50E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 19:15:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7011311D57B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 19:28:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KPv7p8GWs87XVQQAIN887Agkn+0yNlXQqPxTDIyFbK4=; b=Kaap1890cQJ75Uk3YInU9MRmQ
-	1Yan5/wAHL0YzlgYVhmDXjUadG/BpZsHL7tPgsB93HpKIiXoF+2QbBx2Z8sfcXlP6090ttiQtVKNQ
-	PiKkuCn+HlY07esPAd+OuaQOQ9t4U1g7EBcrKeTSUB0ZLeQs+wKCNetHKtwKqKsJPG4r1TB/n/fDc
-	dfn1DyMqBcDiYrfoXLZF1Tcy7FchGR3Z57LBVZrLwtY2Qgybl3fiHjnDj4ePsm4TUITh/Xs8kvJ95
-	yOLVCzed2B/JMLnfSOINEHXUwtsoBXSEZntrnHRAV/WwnKH9CT32rFtqQDu9IZQ7fqEefzXeZ6Q+Q
-	ia8ZvAw3g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XhGk++AzyEUG0cJv5ZDQnX85EVNbAxIkOTMIoBgQAtI=; b=rwpGXTJOAFXDX+
+	bbkduCcxpAy1oni2lUMcYWRqAn5fh1b/mZ9NQGC7jpBszN2vmvONAtMpk0yD0BWy0BuAOeyDMqf0K
+	siFJD7jNqdnLUTwtQp7T9/m2eMC5o/B/8imvVzl7tNg8eirWmRgdZaAFVH9vo3PQOEG/Bw4qD5c9/
+	Rp0DvlAdYhMaf1pK+A3PKY/T1MK/r3XRo6fjg64GE603Bx9j4HUHRCDkKIcFk/XVBjSzoY7Wdgld2
+	E15pFRRBQqyIuV0mEPVg89D+aQH31NqS+4aDpYlavgRo3n+QAnPXJEvsgguSnmN2RPgYjW9e1G8dw
+	mqIDCS1BogKvqcsUdJhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifSzr-0007eF-7k; Thu, 12 Dec 2019 18:15:31 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifSzi-0007dQ-HK
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 18:15:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A1C7328;
- Thu, 12 Dec 2019 10:15:19 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E85583F6CF;
- Thu, 12 Dec 2019 10:15:17 -0800 (PST)
-Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
- API
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>
-References: <3d8a58bf-0814-1ec1-038a-10a20b9646ad@free.fr>
- <20191128185630.GK82109@yoga> <20191202014237.GR248138@dtor-ws>
- <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
- <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
- <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
- <20191211222829.GV50317@dtor-ws>
- <70528f77-ca10-01cd-153b-23486ce87d45@free.fr>
- <cf5b3dee-061e-a476-7219-aa08c2977488@arm.com>
- <6a647c20-c2fa-f14c-256d-6516d0ad03b0@free.fr>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <6ce49a67-8065-277b-5f80-ed47011e50d6@arm.com>
-Date: Thu, 12 Dec 2019 18:15:16 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1ifTCP-0003DU-VU; Thu, 12 Dec 2019 18:28:29 +0000
+Received: from out02.mta.xmission.com ([166.70.13.232])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifTCG-0003CD-FV
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 18:28:22 +0000
+Received: from in01.mta.xmission.com ([166.70.13.51])
+ by out02.mta.xmission.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1ifTBW-0006da-Da; Thu, 12 Dec 2019 11:27:34 -0700
+Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
+ helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1ifTBV-0007Vb-8k; Thu, 12 Dec 2019 11:27:34 -0700
+From: ebiederm@xmission.com (Eric W. Biederman)
+To: Arnd Bergmann <arnd@arndb.de>
+References: <20191211184027.20130-1-catalin.marinas@arm.com>
+ <20191211184027.20130-13-catalin.marinas@arm.com>
+ <CAK8P3a1-eaR7NddhDce65vXKCGeZD3xUMrTTAWN4U3oW0ecN=g@mail.gmail.com>
+Date: Thu, 12 Dec 2019 12:26:41 -0600
+In-Reply-To: <CAK8P3a1-eaR7NddhDce65vXKCGeZD3xUMrTTAWN4U3oW0ecN=g@mail.gmail.com>
+ (Arnd Bergmann's message of "Wed, 11 Dec 2019 20:31:28 +0100")
+Message-ID: <87zhfxqu1q.fsf@x220.int.ebiederm.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-In-Reply-To: <6a647c20-c2fa-f14c-256d-6516d0ad03b0@free.fr>
-Content-Language: en-GB
+X-XM-SPF: eid=1ifTBV-0007Vb-8k; ; ; mid=<87zhfxqu1q.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+ frm=ebiederm@xmission.com; ; ; spf=neutral
+X-XM-AID: U2FsdGVkX18Nj1okHY+lVK9nVgaeSq2QimrMTWlLlGo=
+X-SA-Exim-Connect-IP: 68.227.160.95
+X-SA-Exim-Mail-From: ebiederm@xmission.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa07.xmission.com
+X-Spam-Level: 
+X-Spam-Status: No, score=0.5 required=8.0 tests=ALL_TRUSTED,BAYES_20,
+ DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,XMNoVowels autolearn=disabled
+ version=3.4.2
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ * -0.0 BAYES_20 BODY: Bayes spam probability is 5 to 20%
+ *      [score: 0.1506]
+ *  1.5 XMNoVowels Alpha-numberic number with no vowels
+ *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
+ *      [sa07 1397; Body=1 Fuz1=1 Fuz2=1]
+X-Spam-DCC: XMission; sa07 1397; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: ;Arnd Bergmann <arnd@arndb.de>
+X-Spam-Relay-Country: 
+X-Spam-Timing: total 522 ms - load_scoreonly_sql: 0.03 (0.0%),
+ signal_user_changed: 2.4 (0.5%), b_tie_ro: 1.69 (0.3%), parse: 0.84
+ (0.2%), extract_message_metadata: 16 (3.0%), get_uri_detail_list: 2.6
+ (0.5%), tests_pri_-1000: 10 (1.9%), tests_pri_-950: 1.26 (0.2%),
+ tests_pri_-900: 1.07 (0.2%), tests_pri_-90: 34 (6.6%), check_bayes: 33
+ (6.3%), b_tokenize: 10 (1.8%), b_tok_get_all: 13 (2.6%), b_comp_prob:
+ 3.5 (0.7%), b_tok_touch_all: 4.3 (0.8%), b_finish: 0.59 (0.1%),
+ tests_pri_0: 441 (84.4%), check_dkim_signature: 0.52 (0.1%),
+ check_dkim_adsp: 2.5 (0.5%), poll_dns_idle: 0.39 (0.1%), tests_pri_10:
+ 2.2 (0.4%), tests_pri_500: 10 (2.0%), rewrite_mail: 0.00 (0.0%)
+Subject: Re: [PATCH 12/22] arm64: mte: Add specific SIGSEGV codes
+X-Spam-Flag: No
+X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
+X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_101522_663758_EB3C6241 
-X-CRM114-Status: GOOD (  18.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191212_102820_517010_4A1855C3 
+X-CRM114-Status: GOOD (  16.82  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [166.70.13.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -73,129 +102,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- x86 <x86@kernel.org>, linux-clk <linux-clk@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>, Linux-MM <linux-mm@kvack.org>,
+ Al Viro <viro@zeniv.linux.org.uk>, Marc Zyngier <maz@kernel.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/12/2019 4:59 pm, Marc Gonzalez wrote:
-> On 12/12/2019 15:47, Robin Murphy wrote:
-> 
->> On 12/12/2019 1:53 pm, Marc Gonzalez wrote:
+Arnd Bergmann <arnd@arndb.de> writes:
+
+> On Wed, Dec 11, 2019 at 7:40 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
 >>
->>> On 11/12/2019 23:28, Dmitry Torokhov wrote:
->>>
->>>> On Wed, Dec 11, 2019 at 05:17:28PM +0100, Marc Gonzalez wrote:
->>>>
->>>>> What is the rationale for the devm_add_action API?
->>>>
->>>> For one-off and maybe complex unwind actions in drivers that wish to use
->>>> devm API (as mixing devm and manual release is verboten). Also is often
->>>> used when some core subsystem does not provide enough devm APIs.
->>>
->>> Thanks for the insight, Dmitry. Thanks to Robin too.
->>>
->>> This is what I understand so far:
->>>
->>> devm_add_action() is nice because it hides/factorizes the complexity
->>> of the devres API, but it incurs a small storage overhead of one
->>> pointer per call, which makes it unfit for frequently used actions,
->>> such as clk_get.
->>>
->>> Is that correct?
->>>
->>> My question is: why not design the API without the small overhead?
+>> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 >>
->> Probably because on most architectures, ARCH_KMALLOC_MINALIGN is at
->> least as big as two pointers anyway, so this "overhead" should mostly be
->> free in practice. Plus the devres API is almost entirely about being
->> able to write simple robust code, rather than absolute efficiency - I
->> mean, struct devres itself is already 5 pointers large at the absolute
->> minimum ;)
-> 
-> (3 pointers: 1 list_head + 1 function pointer)
+>> Add MTE-specific SIGSEGV codes to siginfo.h.
+>>
+>> Note that the for MTE we are reusing the same SPARC ADI codes because
+>> the two functionalities are similar and they cannot coexist on the same
+>> system.
 
-Ah yes, I failed to mentally preprocess the debug config :)
+Please Please Please don't do that.
 
-> I'm confused. The first patch was criticized for potentially adding
-> an extra pointer for every devm_clk_get (e.g. 800 bytes on a 64-bit
-> platform with 100 clocks).
+It is actively harmful to have architecture specific si_code values.
+As it makes maintenance much more difficult.
 
-I'm not sure it was a criticism so much as an observation of an aspect 
-that deserved consideration (certainly it was on my part, and I read 
-Dmitry's "It might still, ..." as implying the same). I'd say by this 
-point it has been thoroughly considered, and personally I'm now happy 
-with the conclusion that the kind of embedded platforms that will have 
-many dozens of clocks are also the kind that will tend to have enough 
-padding to make it moot, and thus the code simplification probably is 
-worthwhile overall.
+Especially as the si_codes are part of union descrimanator.
 
-Robin.
+If your functionality is identical reuse the numbers otherwise please
+just select the next numbers not yet used.
 
-> Let's see. On arm64, ARCH_KMALLOC_MINALIGN is 128.
-> 
-> So basically, a struct devres looks like this on arm64:
-> 
-> 	list_head.next
-> 	list_head.prev
-> 	dr_release_t
-> 		.
-> 		.
-> 		.
-> 	104 bytes of padding
-> 		.
-> 		.
-> 		.
-> 	data (flexible array)
-> 		.
-> 		.
-> 		.
-> 	padding up to 256 bytes
-> 
-> 
-> Basically, on arm64, every struct devres occupies 256 bytes, most of it
-> (typically 104 + 112 = 216) wasted as padding.
-> 
-> Hmmm, given how many devm stuff goes on in a modern platform, there
-> might be large savings to be had...
-> 
-> Assuming 10,000 calls to devres_alloc_node(), we would be wasting ~2 MB
-> of RAM. Not sure it's worth trying to save that?
-> 
-> $ git grep '#define ARCH_DMA_MINALIGN'
-> arch/arc/include/asm/cache.h:#define ARCH_DMA_MINALIGN  SMP_CACHE_BYTES
-> arch/arm/include/asm/cache.h:#define ARCH_DMA_MINALIGN  L1_CACHE_BYTES
-> arch/arm64/include/asm/cache.h:#define ARCH_DMA_MINALIGN        (128)
-> arch/c6x/include/asm/cache.h:#define ARCH_DMA_MINALIGN  L1_CACHE_BYTES
-> arch/csky/include/asm/cache.h:#define ARCH_DMA_MINALIGN L1_CACHE_BYTES
-> arch/hexagon/include/asm/cache.h:#define ARCH_DMA_MINALIGN      L1_CACHE_BYTES
-> arch/m68k/include/asm/cache.h:#define ARCH_DMA_MINALIGN L1_CACHE_BYTES
-> arch/microblaze/include/asm/page.h:#define ARCH_DMA_MINALIGN    L1_CACHE_BYTES
-> arch/mips/include/asm/mach-generic/kmalloc.h:#define ARCH_DMA_MINALIGN  128
-> arch/mips/include/asm/mach-ip32/kmalloc.h:#define ARCH_DMA_MINALIGN     32
-> arch/mips/include/asm/mach-ip32/kmalloc.h:#define ARCH_DMA_MINALIGN     128
-> arch/mips/include/asm/mach-tx49xx/kmalloc.h:#define ARCH_DMA_MINALIGN L1_CACHE_BYTES
-> arch/nds32/include/asm/cache.h:#define ARCH_DMA_MINALIGN   L1_CACHE_BYTES
-> arch/nios2/include/asm/cache.h:#define ARCH_DMA_MINALIGN        L1_CACHE_BYTES
-> arch/parisc/include/asm/cache.h:#define ARCH_DMA_MINALIGN       L1_CACHE_BYTES
-> arch/powerpc/include/asm/page_32.h:#define ARCH_DMA_MINALIGN    L1_CACHE_BYTES
-> arch/sh/include/asm/page.h:#define ARCH_DMA_MINALIGN    L1_CACHE_BYTES
-> arch/unicore32/include/asm/cache.h:#define ARCH_DMA_MINALIGN    L1_CACHE_BYTES
-> arch/xtensa/include/asm/cache.h:#define ARCH_DMA_MINALIGN       L1_CACHE_BYTES
-> 
-> Hmmm, how does arch/x86 do it?
-> 
-> Regards.
-> 
+We have at least 256 si_codes per signal 2**32 if we really need them so
+there is no need to be reuse numbers.
+
+The practical problem is that architecture specific si_codes start
+turning kernel/signal.c into #ifdef soup, and we loose a lot of
+basic compile coverage because of that.  In turn not compiling the code
+leads to bit-rot in all kinds of weird places.
+
+
+
+Now as far as the observation that this is almost the same as other
+functionality why can't this fit the existing interface exposed to
+userspace?   Sometimes there are good reasons, but technology gets
+a lot more uptake and testing when the same interfaces are more widely
+available.
+
+Eric
+
+p.s. As for coexistence there is always the possibility that one chip
+in a cpu family does supports one thing and another chip in a cpu
+family supports another.  So userspace may have to cope with the
+situation even if an individual chip doesn't.
+
+I remember a similar case where sparc had several distinct page table
+formats and we had a single kernel that had to cope with them all.
+
+
+>> Cc: Arnd Bergmann <arnd@arndb.de>
+>> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+>> [catalin.marinas@arm.com: renamed precise/imprecise to sync/async]
+>> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+>> ---
+>>  include/uapi/asm-generic/siginfo.h | 9 +++++++--
+>>  1 file changed, 7 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/include/uapi/asm-generic/siginfo.h b/include/uapi/asm-generic/siginfo.h
+>> index cb3d6c267181..a5184a5438c6 100644
+>> --- a/include/uapi/asm-generic/siginfo.h
+>> +++ b/include/uapi/asm-generic/siginfo.h
+>> @@ -227,8 +227,13 @@ typedef struct siginfo {
+>>  # define SEGV_PKUERR   4       /* failed protection key checks */
+>>  #endif
+>>  #define SEGV_ACCADI    5       /* ADI not enabled for mapped object */
+>> -#define SEGV_ADIDERR   6       /* Disrupting MCD error */
+>> -#define SEGV_ADIPERR   7       /* Precise MCD exception */
+>> +#ifdef __aarch64__
+>> +# define SEGV_MTEAERR  6       /* Asynchronous MTE error */
+>> +# define SEGV_MTESERR  7       /* Synchronous MTE exception */
+>> +#else
+>> +# define SEGV_ADIDERR  6       /* Disrupting MCD error */
+>> +# define SEGV_ADIPERR  7       /* Precise MCD exception */
+>> +#endif
+>
+> SEGV_ADIPERR/SEGV_ADIDERR were added together with SEGV_ACCADI,
+> it seems a bit odd to make only two of them conditional but not the others.
+>
+> I think we are generally working towards having the same constants
+> across architectures even for features that only exist on one of them.
+>
+> Adding Al and Eric to Cc, maybe they have another suggestion on what
+> constants should be used.
+>
+>      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
