@@ -2,79 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5791A11CAFE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 11:34:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9D0411CB06
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 11:37:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7boImH9tPsOtyzc7CMJg49J9qF+EwVMDufLhuJtOUs0=; b=KGT+au8vRZDvT1
-	yCljArPlldERgkE7NSQJ7ZXfSN410yVWXcbiO6J+JSuJNjbM/Eb7ac9J5M1Nl1e9WonaRX6RmX5wy
-	qEKKiVm5+7aPRn3qe6ueBMabwZ7A1e+pwEcNZfqRnuJd3R38BwTqy2yWCe3h0yiio0K7lGJShP0eQ
-	UKCyJu8t+nSyqhJNZ2SHR48aEFfHJnTiyy57KbmwgJ8XJS8rqzmCIUzogEuCdypdP5S2b17Fraz9f
-	jVEUvZvPhxI5BAoMc1NEpp0Z5ySPEdycHJGXhgxA4ScwNoktxWkdMTNzIrsKEeXA/w1vZCPo5b4e6
-	OpRfN6D4DfVN8oiSoRpA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=XNkkj4aRP2Pq5WKF2VG4ShP/tV4V5jM9ZuCdv1lRT6s=; b=VGTF5T+bHUVAi7URP6bYtkpAs
+	8cM/O3AdXl+OtJHj1M6EPU0yMuTKbgnvyTs5fgkAHuXmbrFPVf8ze5FVl5cdMZ12gxxa4WVJLxrUE
+	GWQDMbM8iQjblmnVNFSdKGgcOuwE3QhUy38xcQAHrU6mqASEspSIomlcceSzL7s+Oj0io+Zj3Axy7
+	/FSD7/SQvZZKGEpy8odlgztvAF37sR0S3oy9gZt66Vfo7TQkn3muD/OrgTlIjXTolXfug6eOXlFeK
+	vHW0urNH+8dXyw5M04F+owdlD3zWOCElAJkgvFTTBNVZDDRZovvnlnyL0ABG9LmQr1HHsKa3G4cuj
+	nwTipC19g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifLno-00007R-07; Thu, 12 Dec 2019 10:34:36 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1ifLqB-0001r2-Vu; Thu, 12 Dec 2019 10:37:04 +0000
+Received: from mail1.perex.cz ([77.48.224.245])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifLnd-00005z-9K
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 10:34:26 +0000
-Received: by mail-lf1-x141.google.com with SMTP id 9so1280640lfq.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Dec 2019 02:34:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7ExYrHwIdHCQw2WEYskGLMt3e4iRrFiC/gjDbaG279k=;
- b=v3r+vw4bQ6LcEOVMLroVVNcC+2Y/AzPkE2LJq2f1Lot631cAshif/11f31CHbINpBZ
- fmYSCuW3Mz1prOo0bUtBy4htaY7FdZw8KE8xeeA/HrFGWHPc78FthcjLfD0qk2Qs/CS7
- xkIn9QGDritjyD0ervG/Um3166uG0YKmRkjZ20pdgisOimHnx48OYbokM/CRMnZpn/7M
- /0Xe+CxEXmAKAEIuiWVi+nam8Xc2D9V60tSyQ+M0GWZqTunhuvoWa7UY+C17G+jarcXv
- Pi8/R8LvY9oJTetJPpFtkaAbWYxz+0lGaUdC68k3ZvRfCDiDhZ9gyadW0bJucGfP95tS
- q0wQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=7ExYrHwIdHCQw2WEYskGLMt3e4iRrFiC/gjDbaG279k=;
- b=eHuUP+3PE+Ye3y7dOx/GU/Uu55QaFGtpoWNNbNcs+ib7BIPDFxXqx+UcRTxP3a+xs+
- RA9C6uXiHbSI7lmFYRnXnb9QTz3bJVKhNKiiMd6Jg2Cvt+7NdsN4Ec7bRaBN7APJrdD8
- /ThBLwIWUBqEaQxos9ZhSGkA1MLuCkiEbRYEDVGNTZRlnea/OsROk7kqilQvOHJ1PTGF
- 91Ew7VEaUoH4v1BOusGYMj25MGcc/ec7WdpLsKmHNEXx6uwsxPdmwKWi0mrXGHIq6cBb
- rLpFlPDCSt4iYhxxHI1T8ZPlrwn62oFyYSn9TwdhIFmxszm/ArLaHSJao4+1Z0PtA/FY
- Q8aQ==
-X-Gm-Message-State: APjAAAWfOihmFQ0RgeJe7u8JjuSw6oRkcih/Ho0WL6brTtIw0peg2sm3
- LppA9Ae15Jph9WK8FyVrUF4VfJV+Cy4LG8NH1/QjSg==
-X-Google-Smtp-Source: APXvYqwFQ1SvwLMAfhJKA9VEc7eUCJlGz9Lb+HFPgfR4cI1vkIqNPg8K3VY8f6gAcFuMk4OpAzItb0UELxQqJmkPvio=
-X-Received: by 2002:a19:c0b:: with SMTP id 11mr5273188lfm.135.1576146863970;
- Thu, 12 Dec 2019 02:34:23 -0800 (PST)
+ id 1ifLpp-0001kA-CU
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 10:36:43 +0000
+Received: from mail1.perex.cz (localhost [127.0.0.1])
+ by smtp1.perex.cz (Perex's E-mail Delivery System) with ESMTP id 7D1ECA003F;
+ Thu, 12 Dec 2019 11:36:26 +0100 (CET)
+DKIM-Filter: OpenDKIM Filter v2.11.0 smtp1.perex.cz 7D1ECA003F
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=perex.cz; s=default;
+ t=1576146986; bh=YtTaENPq9i4RKmnvPYc5L3nsNLdbKw7vKEt54nHQbGI=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=USc9YNRCsV7vZpdI3NBwrO18EULFynImYU0yxKpMDDo84nWb/UQUxHU15JQDZbvWo
+ UKoeC6tehU870BYiTN8tbMtb5Kle0QmBQfrqVmQEOYiDlSflATNe+0FmIQdGu1mXfh
+ fZpLfcpHG+LSnmTewAmG6QVz0NwielNKhbkMAqd8=
+Received: from p50.perex-int.cz (unknown [192.168.100.94])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: perex)
+ by mail1.perex.cz (Perex's E-mail Delivery System) with ESMTPSA;
+ Thu, 12 Dec 2019 11:36:17 +0100 (CET)
+Subject: Re: [PATCH] ASoC: Add MediaTek MT6660 Speaker Amp Driver
+To: Jeff Chang <richtek.jeff.chang@gmail.com>, lgirdwood@gmail.com
+References: <1576141937-13199-1-git-send-email-richtek.jeff.chang@gmail.com>
+From: Jaroslav Kysela <perex@perex.cz>
+Message-ID: <02c25504-dec5-4026-6e2b-d3763e70663a@perex.cz>
+Date: Thu, 12 Dec 2019 11:36:17 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.1
 MIME-Version: 1.0
-References: <cover.1574871463.git.nishadkamdar@gmail.com>
- <14bb695da50f7af8499e7dfc32c2ab753d92a3e9.1574871463.git.nishadkamdar@gmail.com>
-In-Reply-To: <14bb695da50f7af8499e7dfc32c2ab753d92a3e9.1574871463.git.nishadkamdar@gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 12 Dec 2019 11:34:12 +0100
-Message-ID: <CACRpkdZFH-5RuQ1yGape4j6ukVEY7u2s_TywLUNXnwx9jgHNwQ@mail.gmail.com>
-Subject: Re: [PATCH 5/5] pinctrl: stm32: Use the correct style for SPDX
- License Identifier
-To: Nishad Kamdar <nishadkamdar@gmail.com>
+In-Reply-To: <1576141937-13199-1-git-send-email-richtek.jeff.chang@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_023425_342688_9A527B3F 
-X-CRM114-Status: UNSURE (   9.12  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191212_023641_924084_930998B1 
+X-CRM114-Status: GOOD (  11.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,47 +77,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kevin Hilman <khilman@baylibre.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Sean Wang <sean.wang@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Joe Perches <joe@perches.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: alsa-devel@alsa-project.org, tiwai@suse.com, linux-kernel@vger.kernel.org,
+ jeff_chang@richtek.com, broonie@kernel.org, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Nov 27, 2019 at 5:47 PM Nishad Kamdar <nishadkamdar@gmail.com> wrote:
+Dne 12. 12. 19 v 10:12 Jeff Chang napsal(a):
+> +static const struct snd_kcontrol_new mt6660_component_snd_controls[] = {
+> +	SOC_SINGLE_EXT_TLV("Digital Volume", MT6660_REG_VOL_CTRL, 0, 255,
+> +			   1, snd_soc_get_volsw, mt6660_component_put_volsw,
+> +			   vol_ctl_tlv),
+> +	SOC_SINGLE_EXT("WDT Switch", MT6660_REG_WDT_CTRL, 7, 1, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("Hard_Clip Switch", MT6660_REG_HCLIP_CTRL, 8, 1, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("Clip Switch", MT6660_REG_SPS_CTRL, 0, 1, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("BoostMode", MT6660_REG_BST_CTRL, 0, 3, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("DRE Switch", MT6660_REG_DRE_CTRL, 0, 1, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("DC_Protect Switch",
+> +		MT6660_REG_DC_PROTECT_CTRL, 3, 1, 0,
+> +		snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("audio input selection", MT6660_REG_DATAO_SEL, 6, 3, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("Data Output Left Channel Selection",
+> +		       MT6660_REG_DATAO_SEL, 3, 7, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("Data Output Right Channel Selection",
+> +		       MT6660_REG_DATAO_SEL, 0, 7, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	/* for debug purpose */
+> +	SOC_SINGLE_EXT("HPF_AUD_IN Switch", MT6660_REG_HPF_CTRL, 0, 1, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("AUD_LOOP_BACK Switch", MT6660_REG_PATH_BYPASS, 4, 1, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("Mute Switch", MT6660_REG_SYSTEM_CTRL, 1, 1, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("Bypass CS Comp Switch", MT6660_REG_PATH_BYPASS, 2, 1, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("T0_SEL", MT6660_REG_CALI_T0, 0, 7, 0,
+> +		       snd_soc_get_volsw, NULL),
+> +	SOC_SINGLE_EXT("Chip_Rev", SND_SOC_NOPM, 0, 16, 0,
+> +		       mt6660_component_get_volsw, NULL),
 
-> This patch corrects the SPDX License Identifier style in
-> header file related to STMicroelectronics pinctrl driver.
-> For C header files Documentation/process/license-rules.rst
-> mandates C-like comments (opposed to C source files where
-> C++ style should be used).
->
-> Changes made by using a script provided by Joe Perches here:
-> https://lkml.org/lkml/2019/2/7/46.
->
-> Suggested-by: Joe Perches <joe@perches.com>
-> Signed-off-by: Nishad Kamdar <nishadkamdar@gmail.com>
+The control names looks really strange like always for the ASoC tree. We 
+should talk about a standardization here. At least unify spaces, underscores 
+and such characters and abbreviations.
 
-Patch applied.
+					Thanks,
+						Jaroslav
 
-Yours,
-Linus Walleij
+-- 
+Jaroslav Kysela <perex@perex.cz>
+Linux Sound Maintainer; ALSA Project; Red Hat, Inc.
 
 _______________________________________________
 linux-arm-kernel mailing list
