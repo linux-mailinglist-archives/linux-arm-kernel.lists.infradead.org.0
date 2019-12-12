@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B1FB11D90F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 23:10:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A83111D910
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Dec 2019 23:10:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZT3DdOgCD2FR8zDq9jPLAH+qd//VO0Pw3wtJVi3SriY=; b=CYbOvMYgv67SBu
-	nVTaz9pSO2IfgOe66hTqFFL7NSf9nlnYdwabP/Ah4BnTUIf9Y54qOa9Aonbb+ky7TW1WY5DqqWVk0
-	i2T1E0ABu5xWufONJTRUeEsOYhosKi0Abk58T6puD732KuC7Pxx0/312PA2zojZom32V9bNG8gaQh
-	0Cspj1qtjbDJRQDNzthwFQYxDcwbdXmPvmL0ioZ3MaMEHETCgbnIHwsgIwI3KslSHkuaupgM7Qovd
-	tbASZF5uXbbPz7pLtknHK7hsT6/2LfxDTx27q6uT5la/Bs4Jf5oTgARLRfUaobyLQs8OBoBDU2IEw
-	YAeaQf94WUIcm8Pyxy3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bfMbddW7pnl7Ov/g7i3XZ39xd4E1uCuLlqzn+2iFsOg=; b=ZXHriIds/+vVJm
+	l4FddjBk+59TlVDVuHQqWsNYazxUETDEh5AjaTWlCqlmrPJSQ5PPLULRAFoVBcNRW6rFPFzblXmA2
+	W0f2xbUCVCNn3fdjAFZ0aTkJY88Uu1/7CN4iMKSXiDwP3W6aWndepxxEAtgaB4QNMBNwy+I4ITrJW
+	vBk3wqVVs0LYPOfDWoxs7qi+Q9vwHfJVPLoGGSKtgWwj8GDggBjz01NBj9H6d2g8QE4NUrPAKU35J
+	EplVTun3uWNIZpNlZ30Z+7uMEs6q8XGLa6j9JeTcpLqIZ3hISOo8AweqYLdVq+x8sR/Ct7BVVEiHL
+	RShE0EnCTe+Ar/+dpHmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifWex-0000gG-99; Thu, 12 Dec 2019 22:10:11 +0000
+	id 1ifWfB-0001wh-T0; Thu, 12 Dec 2019 22:10:25 +0000
 Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifWee-0000fd-Lv
+ id 1ifWee-0000fe-M2
  for linux-arm-kernel@lists.infradead.org; Thu, 12 Dec 2019 22:09:54 +0000
 Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 22897806B6;
- Fri, 13 Dec 2019 11:09:42 +1300 (NZDT)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 6C1EB886BF;
+ Fri, 13 Dec 2019 11:09:43 +1300 (NZDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
- s=mail181024; t=1576188582;
- bh=+GrjulGj8W3gsECBwATbZi+48pIVbe0VIJhJK0bHuQo=;
- h=From:To:Cc:Subject:Date;
- b=XHVTDYJzJrcV2AkpsdI44AqHF0qaBFkgasGDVcYAGOKfR4BXJap+uloTrglnYIPf3
- dDM/NoZR8MT2JNID49K+BkPBArU/MDC+LopMauX0hDcXAUJZAR6HqUEAwfYnAlEb4M
- cOcl3leqEFPK028/VlwsLGi5Wo8pbLH1eKC8RabqZwlhQLG6h/J3VfsUTloZ5PNlNm
- KX/JraNZgCTrZ2neWEvEV1/SFaHWYBe6Co6ydnXv+DAcQSVDztySN1PY0LPeo1ZU2c
- T9JH48yw8puJjvHYLcFQzptLPdwyp0u9egE2LD4cw6x0/cZoEZrjNdmMIkemu4QeVE
- oPtBgYBnRWH6g==
+ s=mail181024; t=1576188583;
+ bh=7P9buINH8YZmi8YLKUIL68gu/6asYNIBiQhY6iZpyrs=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=2TPrp/FvGrmrN4CtpRefZbw+Vh6j9IltNNZ6QWdT48bFOeOBf0NLKEMSOqOSp8P+T
+ OTZx9aTZEh2Ka8so0J88n2AHCoqHrXrw3d2Z5ZdaQxwYRPkvPNfVK2Q9SKY2U0HmHC
+ tlQzCiXk4f+thvPzjnZGJ2xMI/YYis1M15Uap0RmqXS/sxEA9vx71JvZAnp4sr80Wk
+ qz3Y6szdeUvHHs7bJ/DooYiPTxxiWQmKne4LHkH89IWojUnX4UjDL+1Pi39/tUnTq1
+ dYQ0XdQ94LOeUvV6RAq+kEdfakhUYRxNVSwbB1XnLD7Qw/7zXMUOQDGEGabAjGp9Hc
+ BdTm9jOEaoGxQ==
 Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
  Trustwave SEG (v7, 5, 8, 10121)
- id <B5df2baa10000>; Fri, 13 Dec 2019 11:09:42 +1300
+ id <B5df2baa20000>; Fri, 13 Dec 2019 11:09:43 +1300
 Received: from hamishm-dl.ws.atlnz.lc (hamishm-dl.ws.atlnz.lc [10.33.24.30])
- by smtp (Postfix) with ESMTP id 2237113EED2;
- Fri, 13 Dec 2019 11:09:37 +1300 (NZDT)
+ by smtp (Postfix) with ESMTP id 3178D13EF6B;
+ Fri, 13 Dec 2019 11:09:38 +1300 (NZDT)
 Received: by hamishm-dl.ws.atlnz.lc (Postfix, from userid 1133)
- id 63604540505; Fri, 13 Dec 2019 11:09:37 +1300 (NZDT)
+ id 76782540505; Fri, 13 Dec 2019 11:09:38 +1300 (NZDT)
 From: Hamish Martin <hamish.martin@alliedtelesis.co.nz>
 To: linus.walleij@linaro.org,
 	rjui@broadcom.com,
 	sbranden@broadcom.com
-Subject: [PATCH 0/1] pinctrl: iproc: Fix level interrupt handling
-Date: Fri, 13 Dec 2019 11:09:22 +1300
-Message-Id: <20191212220923.15089-1-hamish.martin@alliedtelesis.co.nz>
+Subject: [PATCH 1/1] pinctrl: iproc: Set irq handler based on trig type
+Date: Fri, 13 Dec 2019 11:09:23 +1300
+Message-Id: <20191212220923.15089-2-hamish.martin@alliedtelesis.co.nz>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20191212220923.15089-1-hamish.martin@alliedtelesis.co.nz>
+References: <20191212220923.15089-1-hamish.martin@alliedtelesis.co.nz>
 MIME-Version: 1.0
 x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_140953_072940_A77AA0E1 
-X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-CacheID: sfid-20191212_140953_073325_06AA983C 
+X-CRM114-Status: UNSURE (   8.11  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -93,24 +95,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-An issue is seen on the BCM56060 SoC using the pinctrl-iproc-gpio.c driver
-for one of its GPIO blocks.
-When a GPIO on this block is used as a level sensitive interrupt the
-downstream handler is not invoked until the level returns to its previous
-(non-interrupting) state. This makes the level sensitive interrupts
-unusable. Edge sensitive interrupts are not affected.
+Rather than always using handle_simple_irq() as the gpio_irq_chip
+handler, set a more appropriate handler based on the IRQ trigger type
+requested.
+This is important for level triggered interrupts which need to be
+masked during handling.
 
-The fix is to simply ensure that we use a more appropriate handler
-(handle_level_irq) for the interrupt based on what trigger type has been
-configured.
-Similar setting of the handler is done in numerous other drivers.
-
-Hamish Martin (1):
-  pinctrl: iproc: Set irq handler based on trig type
-
+Signed-off-by: Hamish Martin <hamish.martin@alliedtelesis.co.nz>
+---
  drivers/pinctrl/bcm/pinctrl-iproc-gpio.c | 5 +++++
  1 file changed, 5 insertions(+)
 
+diff --git a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
+index 831a9318c384..c79e91eb1a47 100644
+--- a/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
++++ b/drivers/pinctrl/bcm/pinctrl-iproc-gpio.c
+@@ -288,6 +288,11 @@ static int iproc_gpio_irq_set_type(struct irq_data *d, unsigned int type)
+ 		       rising_or_high);
+ 	raw_spin_unlock_irqrestore(&chip->lock, flags);
+ 
++	if (type & IRQ_TYPE_EDGE_BOTH)
++		irq_set_handler_locked(d, handle_edge_irq);
++	else
++		irq_set_handler_locked(d, handle_level_irq);
++
+ 	dev_dbg(chip->dev,
+ 		"gpio:%u level_triggered:%d dual_edge:%d rising_or_high:%d\n",
+ 		gpio, level_triggered, dual_edge, rising_or_high);
 -- 
 2.24.1
 
