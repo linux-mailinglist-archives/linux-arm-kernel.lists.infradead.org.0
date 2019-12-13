@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D9C911EDC7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 23:31:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 668F311EDC8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 23:31:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=o/afqZEwg+X1WKgGociXKGLZA+4oboB1/euK8dk4kiQ=; b=BsZ
-	7zk2rhhhsa9LvW85cft9PsOaMDHc2wFuxTkUnm+1ehB/fWzWZpoeKwagEiflb3RlsQLcp0Q/GXyLT
-	FesnOiIj02eghF5iDBcuGqrxLqtgXvOtR669HcCRc1Er5An56O28avU64phC7i5zHpfwyLdZ2J5aN
-	I/LSl2EQBFu+OIKEXg1nsLyoTucxc5VJo6IFvdj9yscw9nQhZSCqHoV7l3xpmGo2ZecH+m8T2SHTi
-	qqlECDMZ2+5XRYt2Y2XD74KgZhqipdxBeibghE0DNN/mfB9bnAYBYcnd9OxMnx1eq0cJoiCW2C7wE
-	0qf7S4d8HQvFTTx2ku1Rn6OGIUYYeGQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=DIhSr/Jdj8YivQzvttAeRdCbQHxC5316yDoZKJf+frw=; b=BnvkTzfYcjOuJ9d0knxT4WS/OA
+	Ndr7vYpGAvQUrlMamPZEDiEVY9+r5rcVlw28yr/6ip3jnub+rLw2xB+KIA6FUubQxzJYv2nAllaEm
+	g+mPWV4G7gkC7sRIkhEKCAXxsU4gdnZUvtZ9QTeC3h64K0ZfVTQ0CMN6AiHXUwB2CTx7hG1Id5fCf
+	sYuPGxPcHx5leKQufPCA24IrYLoIPGsUupjLwtynOxXfSWCZFOQPk4Rf6XhUmjKLRfJ8XdNo2gnul
+	si6HSpz5T4VVGFK1PbsjSFBqZeUEsjmxk4YNSZJB8d/0oTYa0Ul7h2+onb2SLdwL3tbZx0twBjcLz
+	+85QW4rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iftSw-0000DJ-HJ; Fri, 13 Dec 2019 22:31:18 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iftTD-0000M8-O9; Fri, 13 Dec 2019 22:31:35 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iftSo-0000CI-IO
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 22:31:11 +0000
-Received: by mail-pg1-x544.google.com with SMTP id k25so170074pgt.7
+ id 1iftSp-0000Cc-Uk
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 22:31:13 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id l4so323490pjt.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 14:31:10 -0800 (PST)
+ Fri, 13 Dec 2019 14:31:11 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=LHoIae2XNCa3AukmEzpCJ7hn/t0mtHhIaNOkcRhKOG0=;
- b=hU1x7VCUvKIt7Cg/eg0wfaKvqD1IFsyIilDpGwxLmedBHlc57jIwuVRLykhhgnlF15
- pXEkRXNiVOnpris7PSvO4SXDdYoV/4r8PjVjg6Psp0jjSJ5GMbZxPdiRxp/XIC3yEoTy
- YAD7RaGTrmZ8z5dcM6+C2shxjzlAlTg6AR7UXN0NQOCsPrlrlqWFM76RrkaBPHzC4H3Z
- TvBQac9a39iOdD2lH8sPVrC6VaYGk+hcXZmeVhO0QXzLnGhwzPn3udyxehROqh7l9dm3
- XPGbp1iz/h/771ZHP2xIedtVK7140ipS2BNzCSzNH3b05Bufl4E1cAfIkdG2mMfsBMcL
- cqmw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=6xiPB4V1MquUiOmcSV74SL5uCSBXsqT0lweR/qYDigQ=;
+ b=RD/8Wp23u2HL+Of7WXX/WBYuFgXFrxWHZT9+pRV1xNQmg6N/L1av0fnq378xoYuMGK
+ gXqnEvWiYxdnv07ysfWJHJS3kc4NlOy8vd7UgpJMXh8QfL2i1Q7cJEkB4hhHPZVa8Sc/
+ ycW8+VVbe8xvjJFP/6dy4MaIAHldnUrAsOOhJmgnYaqMd3isSTJMJcPNJ0tyO1KsyLvu
+ u1kb+nA4PhxoHaNtwdd19jfcrI0FBKMVfnwxA4drknbIhWjRVY96Fm1T8Y3sTiQ1PrtF
+ QekxQqU5UQty1cozgGdsWfMqkI7FQ+fpQR34xTByrgCfgverDuhyVhMqyHjlS5ptMEQi
+ vUMA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=LHoIae2XNCa3AukmEzpCJ7hn/t0mtHhIaNOkcRhKOG0=;
- b=eDGYcKeeok1oUTWulzz7QhgH5pYbDqHzbhNV0vt55nnj8g8IwNOP7EOrYDgLFVURd1
- s0osxw3CTImdiS+dOKY9dLJqBzM8XqifR+HHZ5KqI9ORh1YzgS/Gj9XtZuEAWw2Sq9vO
- 85WBxgYU8MePvd/n/zI17+62yMdLoOuPYbko25BSVGUNW2UuwzNxl+YIah3+zwgw3q3D
- Whi7dIOozNL/oZzbp3zCjtfvypuPD/8CJjEHzxTDvvQvzkmVyHtdJJhS8Hsi1rWUQvm5
- aYV9zms81+Sw1x4z2ePWh1xu8V/zuR1GdM8xwn6vDa66fyMuYXg7U2DcIf654nFv1A0n
- m9hA==
-X-Gm-Message-State: APjAAAWclZUXYtr9WscgqgLs1p/GaFASbXEOoba3+x2zNEXexIQFht9v
- 6EHMDjAN+QiYdQojGH0qC+fJxQ==
-X-Google-Smtp-Source: APXvYqxjGsOY8wNPiQWZLO7QyfMd7NVagT5u/0KddkS/aD8uWQT99Tud+8ZE/aeIyFzf4UG2IRosGA==
-X-Received: by 2002:a63:5442:: with SMTP id e2mr2058808pgm.18.1576276269733;
- Fri, 13 Dec 2019 14:31:09 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=6xiPB4V1MquUiOmcSV74SL5uCSBXsqT0lweR/qYDigQ=;
+ b=EuNOHChrSUTUfsp328HFDSF7swQA+E8j8iCffVEDBrwTVXgbX8M7GTzl7n34ID3QdC
+ QP8loOHWbMWWl7CwKQBMj9RP80C0dD6CvsZhDX4DRiO/gEWmQRNdAXqaYb1rim8Fq9aY
+ AV60jOnfSrOpOjmUxhRmnb9Lvtp5CyAye7UN9l0fsuYs0d/iEwFdVAxqZ8ztZLyPARV+
+ AZut3jC63jwaTmhH0RTpdeslD3IfMB3TVi3rVgn0lm4tzR8cwGVEOQNhKGOPvFdrX1Sz
+ QqiLRIm2QeD4VdDELcTB9ZydVN1AcTdShIEZrpaZjuIiIksVnWd5sb87Vb7xw1zB5vyG
+ DXjA==
+X-Gm-Message-State: APjAAAXIH2+tsjn/XiLXMoEQ9gITFsz6dlfNenFnUeSXlXrd51sM2+7d
+ yPiZRDmRahUzU+08pd9S3ur/jw==
+X-Google-Smtp-Source: APXvYqxQn0YUbrOLh36feQfvxK5Y5frN9aMYM1JviFC9pwwWoUhOT1jRHwqaDvdGV1oRSaZ3PdMtmQ==
+X-Received: by 2002:a17:902:a9c7:: with SMTP id
+ b7mr1912322plr.23.1576276270618; 
+ Fri, 13 Dec 2019 14:31:10 -0800 (PST)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id d26sm11556782pgv.66.2019.12.13.14.31.08
+ by smtp.gmail.com with ESMTPSA id d26sm11556782pgv.66.2019.12.13.14.31.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Dec 2019 14:31:09 -0800 (PST)
+ Fri, 13 Dec 2019 14:31:10 -0800 (PST)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 0/1] coresight: Fix for v5.5-rc2 
-Date: Fri, 13 Dec 2019 15:31:06 -0700
-Message-Id: <20191213223107.1484-1-mathieu.poirier@linaro.org>
+Subject: [PATCH 1/1] coresight: etm4x: Fix unused function warning
+Date: Fri, 13 Dec 2019 15:31:07 -0700
+Message-Id: <20191213223107.1484-2-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191213223107.1484-1-mathieu.poirier@linaro.org>
+References: <20191213223107.1484-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_143110_653357_49220D24 
-X-CRM114-Status: UNSURE (   6.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191213_143111_991116_0A39C332 
+X-CRM114-Status: GOOD (  14.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,19 +101,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Greg,
+From: Arnd Bergmann <arnd@arndb.de>
 
-Please consider this fix for the current cycle.
+Some of the newly added code in the etm4x driver is inside of an #ifdef,
+and some other code is outside of it, leading to a harmless warning when
+CONFIG_CPU_PM is disabled:
 
-Thanks,
-Mathieu
+drivers/hwtracing/coresight/coresight-etm4x.c:68:13: error: 'etm4_os_lock' defined but not used [-Werror=unused-function]
+ static void etm4_os_lock(struct etmv4_drvdata *drvdata)
+             ^~~~~~~~~~~~
 
-Arnd Bergmann (1):
-  coresight: etm4x: Fix unused function warning
+To avoid the warning and simplify the the #ifdef checks, use
+IS_ENABLED() instead, so the compiler can drop the unused functions
+without complaining.
 
+Fixes: f188b5e76aae ("coresight: etm4x: Save/restore state across CPU low power states")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+[Fixed capital 'f' in title]
+Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+---
  drivers/hwtracing/coresight/coresight-etm4x.c | 13 ++++++-------
  1 file changed, 6 insertions(+), 7 deletions(-)
 
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index dc3f507e7562..a90d757f7043 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -1132,7 +1132,6 @@ static void etm4_init_trace_id(struct etmv4_drvdata *drvdata)
+ 	drvdata->trcid = coresight_get_trace_id(drvdata->cpu);
+ }
+ 
+-#ifdef CONFIG_CPU_PM
+ static int etm4_cpu_save(struct etmv4_drvdata *drvdata)
+ {
+ 	int i, ret = 0;
+@@ -1402,17 +1401,17 @@ static struct notifier_block etm4_cpu_pm_nb = {
+ 
+ static int etm4_cpu_pm_register(void)
+ {
+-	return cpu_pm_register_notifier(&etm4_cpu_pm_nb);
++	if (IS_ENABLED(CONFIG_CPU_PM))
++		return cpu_pm_register_notifier(&etm4_cpu_pm_nb);
++
++	return 0;
+ }
+ 
+ static void etm4_cpu_pm_unregister(void)
+ {
+-	cpu_pm_unregister_notifier(&etm4_cpu_pm_nb);
++	if (IS_ENABLED(CONFIG_CPU_PM))
++		cpu_pm_unregister_notifier(&etm4_cpu_pm_nb);
+ }
+-#else
+-static int etm4_cpu_pm_register(void) { return 0; }
+-static void etm4_cpu_pm_unregister(void) { }
+-#endif
+ 
+ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+ {
 -- 
 2.17.1
 
