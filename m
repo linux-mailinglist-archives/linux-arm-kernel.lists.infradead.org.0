@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C98D711E60F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 16:05:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B71A911E611
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 16:05:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SQosGyVvAjCNAMOU7SUSXpQd8tofWrFrNHArrU0WN0s=; b=udd1D+CAOlW7qY
-	Kvp+Wr4BZ/qQoWRflbllzb3N8YhUGQA1AYQ8cJaSoPuxTXd77GOAyu8NwqtQQZZxdEI5HX+OrkP0K
-	RT7MmuJp8K2X6tY4jQ9HAx6XimINp9UwIruvccKlaGKec3SbEJB89iOrntj4VVc9gPs+AwwMyAeuT
-	WINCUHIlnUCeHHoigArlcCbzfPCf2yvUaVdzG0tkUBiMYQm5aLk5uv9YCdZvCqFnMnWeo9wF8P5K0
-	UgkcbScvUw0cPepMbx2FFc8W4WoUFtNSqkQPm57GSTJtVQrazUWzySAsuITKp/MsxxuambBc/dcYu
-	cKanaoQHzBk3hWnOO9Kg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pR0Fb2ymfIR2qnluu00H4WVw5efmrtlKFYeZNR3TMlM=; b=fKC3IxWOJJZYDv
+	90clhpUDalWbg0wiRb4gbn/JrFpTnEN0I5RJrZhIfpdTpFOybaAbQ5DRvhSVExLa7rjomiVQvWF5l
+	0D2WEvuBh2VYAMspN1unrzdE+bZeKrdS9mjjXknThlQwufAQ4xxvCOx4l2X5aPGjfYUDD3lVC5Cyc
+	hKyj/C+GjOE1JQgNaYbrQSAmGU3HcL90PJzijJrBdGfDJNhAJjDCIEcsyR2FWo+5AAkvnNe0Qhitx
+	5DRcIvCB/otCGb6MkKB0y118Wg+SLcHovq2lV+mcTAGGsdP0ed1HCgm1KWiSFvPWegs47nSa6jnJa
+	98W5we+Z/zSSxjAwdjUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifmVS-0007EI-7t; Fri, 13 Dec 2019 15:05:26 +0000
-Received: from esa1.microchip.iphmx.com ([68.232.147.91])
+	id 1ifmVn-0007Qg-0b; Fri, 13 Dec 2019 15:05:47 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifmVD-0006mm-Iy
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 15:05:13 +0000
-Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ id 1ifmVF-0007Cl-Sm
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 15:05:15 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,55 +34,57 @@ Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
  a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
  include:servers.mcsv.net include:mktomail.com
  include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa1.microchip.iphmx.com: no sender
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa1.microchip.iphmx.com;
+Authentication-Results: esa2.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: /l3zNd7W8x5mGxD5D2YKoB1ZSgknSeaTBybraVXNXDLaHm0eK/6PWCZz5tbCMhBfosSQk99CMd
- sun3NtdDv8aYIoRGm4z0TPZ/CjWpJ9uiZz54nOAyE58fK2qAOiwinDmKSjahHddnQWWvvfetST
- ckayaBEyvavx3V+Kp+T9fDkeUaQyeJDbbtHiuZIPIrabWW6LqIRxB13GEMq5cdGQSZgwjzLScP
- o1lcMPyuTP/IHzWr7cWsZm8HA2xfjYrUqmWEtVoFw7TC++lzLZVf12NqSWfQmGy4T5C19yxMlF
- PRI=
-X-IronPort-AV: E=Sophos;i="5.69,309,1571727600"; d="scan'208";a="61646956"
+IronPort-SDR: 3s87HGeRyJ3cdUsyo8jIMOXNtMXWUzz+OrDdM/5jAbKKxZbcSJcw/zIsfLUHU74W4cfgeXDWiP
+ 1VxMcupZbkqszZX7Ha8ysXN/1gKrqqDyU7yim0hOoZPKYrxsQBZrBbvHLopRsNzWks+jgmAcwK
+ f6p2+zx7GpKGm7tKHlaiwQ1ki0hQVkQC8gYFk/sYyT4UriRrzClVGCD12kTo7vh7uegYdC0xjY
+ Psn4/Jd4Kael0JBtw1A4GpmVu6ziynoHnhcEaS58gL5MFoUcRNt/ajIoWKzK1disdEP51XOCLb
+ 7SA=
+X-IronPort-AV: E=Sophos;i="5.69,309,1571727600"; d="scan'208";a="59718051"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 Dec 2019 08:05:07 -0700
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 Dec 2019 08:05:12 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 13 Dec 2019 08:05:06 -0700
+ 15.1.1713.5; Fri, 13 Dec 2019 08:05:11 -0700
 Received: from m18063-ThinkPad-T460p.microchip.com (10.10.85.251) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 13 Dec 2019 08:05:02 -0700
+ 15.1.1713.5 via Frontend Transport; Fri, 13 Dec 2019 08:05:07 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <sam@ravnborg.org>, <bbrezillon@kernel.org>, <airlied@linux.ie>,
  <daniel@ffwll.ch>, <nicolas.ferre@microchip.com>,
  <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>,
  <lee.jones@linaro.org>
-Subject: [PATCH v2 0/6] fixes for atmel-hlcdc
-Date: Fri, 13 Dec 2019 17:04:50 +0200
-Message-ID: <1576249496-4849-1-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH v2 1/6] drm: atmel-hlcdc: use double rate for pixel clock only
+ if supported
+Date: Fri, 13 Dec 2019 17:04:51 +0200
+Message-ID: <1576249496-4849-2-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1576249496-4849-1-git-send-email-claudiu.beznea@microchip.com>
+References: <1576249496-4849-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_070511_772839_0B00C7F2 
-X-CRM114-Status: UNSURE (   6.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191213_070514_427468_80E4BEB4 
+X-CRM114-Status: GOOD (  10.19  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.147.91 listed in list.dnswl.org]
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,38 +106,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Doubled system clock should be used as pixel cock source only if this
+is supported. This is emphasized by the value of
+atmel_hlcdc_crtc::dc::desc::fixed_clksrc.
 
-I have few fixes for atmel-hlcdc driver in this series as well
-as two reverts.
-Revert "drm: atmel-hlcdc: enable sys_clk during initalization." is
-due to the fix in in patch 2/5.
+Fixes: a6eca2abdd42 ("drm: atmel-hlcdc: add config option for clock selection")
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+---
+ drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-Thank you,
-Claudiu Beznea
-
-Changes in v2:
-- introduce patch 3/6
-- use dev_err() inpatch 4/6
-- introduce patch 5/6 instead of reverting commit f6f7ad323461
-  ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
-
-Claudiu Beznea (5):
-  drm: atmel-hlcdc: use double rate for pixel clock only if supported
-  drm: atmel-hlcdc: enable clock before configuring timing engine
-  mfd: atmel-hlcdc: add struct device member to struct
-    atmel_hlcdc_regmap
-  mfd: atmel-hlcdc: return in case of error
-  Revert "drm: atmel-hlcdc: enable sys_clk during initalization."
-
-Peter Rosin (1):
-  drm: atmel-hlcdc: prefer a lower pixel-clock than requested
-
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 18 ++++++++++++------
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c   | 19 +------------------
- drivers/mfd/atmel-hlcdc.c                      | 18 ++++++++++++++----
- 3 files changed, 27 insertions(+), 28 deletions(-)
-
+diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+index f2e73e6d46b8..5040ed8d0871 100644
+--- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
++++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+@@ -95,14 +95,14 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
+ 		     (adj->crtc_hdisplay - 1) |
+ 		     ((adj->crtc_vdisplay - 1) << 16));
+ 
++	prate = clk_get_rate(crtc->dc->hlcdc->sys_clk);
++	mode_rate = adj->crtc_clock * 1000;
+ 	if (!crtc->dc->desc->fixed_clksrc) {
++		prate *= 2;
+ 		cfg |= ATMEL_HLCDC_CLKSEL;
+ 		mask |= ATMEL_HLCDC_CLKSEL;
+ 	}
+ 
+-	prate = 2 * clk_get_rate(crtc->dc->hlcdc->sys_clk);
+-	mode_rate = adj->crtc_clock * 1000;
+-
+ 	div = DIV_ROUND_UP(prate, mode_rate);
+ 	if (div < 2) {
+ 		div = 2;
 -- 
 2.7.4
 
