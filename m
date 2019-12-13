@@ -2,78 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E0D611EA4D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:29:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAC1C11EA52
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:30:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8Yq+UBtIAbONQC7ttUGBhuipJJB9vPUKzME1yhgeNLE=; b=kn1zdRyrC+E0v5
-	6cCXsBO/6mvC1Z2CQE18EDNaXqWPCMwGRria8hmNZENhh28dWX5e1SFidP0wiKPw7ywmsqfee/KXg
-	X6jZHdCrFSNftViYUYtG2Unwl5JAnZDZqD+GXg/4zVc1TkQEG5ByldapFJW/nKUwIv9vcfMgXE6cn
-	WsYT2xeHOZbj+6BbiTnbqMfO5rBunN98Ps6/IzorKHCTe/7bvqj5JxdGnu9f80osz6i0rcJPCNLO5
-	Z+dTX3SkDgiuYkbKxzQbehRjhjQwOP8vzIlis/Gu+V2zBcYTris8naELmUEwPAQ+QCZs4bqMtFnOB
-	tUSrYpE5YUlcBzo08OqQ==;
+	List-Owner; bh=H3EAL3MXztWrdVr6zM4FmU3efCGkh52X2qS0BJHyMHY=; b=CSmHfKXs3jHsNM
+	h6XBPEd3Mx5Sp/kZNfASV6QbvYmqzot1Y1fNIomaGJBOazQn1hzsxnmUMolJLHe9cHLrRfyvzI/Wh
+	NDesfR7S78GIyetOJYy3u1AIDl5dCju/Ranxum8g3QTCdgNYNMbLA13miSJRI7MnGFWNVzNcKvy2X
+	+9rhTX4UUYlj+AIjCwSlRsB5m/2nvP9W93WeeD97FdUGOfaiF5GMnSJMvdEyKClaERhPf8rYfMb8c
+	Vd9XmGvneNTL9favhVbEiF0E0WN7Qzbns1rACaF0BUdbCNkdamq1oh3BOuW1BtghVdW6ueJouXq0I
+	3YTdGsMwBJtIVDWVkC3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifpgg-0001Fv-Vg; Fri, 13 Dec 2019 18:29:14 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1ifphP-0001sK-5k; Fri, 13 Dec 2019 18:29:59 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifpfl-0000Zs-0H
- for linux-arm-kernel@bombadil.infradead.org; Fri, 13 Dec 2019 18:28:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=m7GXogmvRuTwfuJicGQ2Zyj36+IZresYnE8Bz7r3uTA=; b=tALDUqsOH7Rrz+g5LRlluJ+GvQ
- YySD44ivVu0UuBebOswwo3J5UYyQKmUMdHY9DoSlv4+lGsz/iSeFpbThOuMF+get36tP9FnaXUCP7
- f868eXmWg26ebvQbnFTED/aJpl7je1IygjgrUmS1VjknGx2J9uHdCJVQ18THK4ssSrRgvDis9ajty
- jESGPLJu6TLZolddYGT/9Jq2CniP7p6NS+MDlmCOuRyJ57ayFVCNch39LmJJZArFN5v1M6VnKSU9B
- 4uRjsckw4hmbWM+t08IxCh3ybkDkeVDoautmuq6HZ8w0kZMIRvSos85kLRmwhZ6Zyh+Oox1SyGC0N
- OvHdw8EA==;
-Received: from inca-roads.misterjones.org ([213.251.177.50])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifpg8-0006IG-DX
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 18:28:45 +0000
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by cheepnis.misterjones.org with esmtpsa
- (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1ifpdJ-0001O7-JV; Fri, 13 Dec 2019 19:25:45 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: 
-Subject: [PATCH 7/7] KVM: arm/arm64: Elide CMOs when unmapping a range
-Date: Fri, 13 Dec 2019 18:25:03 +0000
-Message-Id: <20191213182503.14460-8-maz@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191213182503.14460-1-maz@kernel.org>
-References: <20191213182503.14460-1-maz@kernel.org>
+ id 1ifpg1-0000o7-RL; Fri, 13 Dec 2019 18:28:39 +0000
+Received: from ip5f5a6266.dynamic.kabel-deutschland.de ([95.90.98.102]
+ helo=diego.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1ifpfq-0003GI-A5; Fri, 13 Dec 2019 19:28:22 +0100
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH 10/12] arm64: dts: rockchip: Add PX30 CRTCs graph LVDS
+ endpoints
+Date: Fri, 13 Dec 2019 19:28:21 +0100
+Message-ID: <1933192.L6hp5CucIl@diego>
+In-Reply-To: <20191213181051.25983-11-miquel.raynal@bootlin.com>
+References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
+ <20191213181051.25983-11-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: james.morse@arm.com, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, jhogan@kernel.org, paulus@ozlabs.org,
- pbonzini@redhat.com, rkrcmar@redhat.com, sean.j.christopherson@intel.com,
- vkuznets@redhat.com, wanpengli@tencent.com, jmattson@google.com,
- joro@8bytes.org, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, linux-mips@vger.kernel.org,
- kvm-ppc@vger.kernel.org, kvm@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_182840_542536_D0EC4360 
-X-CRM114-Status: GOOD (  11.83  )
-X-Spam-Score: 1.0 (+)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (1.0 points, 5.0 required)
+X-CRM114-CacheID: sfid-20191213_102834_058603_C14CD11E 
+X-CRM114-Status: GOOD (  14.95  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,62 +58,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm-ppc@vger.kernel.org, Wanpeng Li <wanpengli@tencent.com>,
- kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- James Hogan <jhogan@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
- linux-mips@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- Paul Mackerras <paulus@ozlabs.org>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, Paolo Bonzini <pbonzini@redhat.com>,
- Vitaly Kuznetsov <vkuznets@redhat.com>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jim Mattson <jmattson@google.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>,
+ dri-devel@lists.freedesktop.org,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If userspace issues a munmap() on a set of pages, there is no
-expectation that the pages are cleaned to the PoC. So let's
-not do more work than strictly necessary, and set the magic
-flag that avoids CMOs in this case.
+Hi Miquel,
 
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
- virt/kvm/arm/mmu.c | 10 ++++++++--
- 1 file changed, 8 insertions(+), 2 deletions(-)
+Am Freitag, 13. Dezember 2019, 19:10:49 CET schrieb Miquel Raynal:
+> Add the display subsystem routes with the two available CRTCs: vopb
+> and vopl (big and little). For each CRTC, add the LVDS endpoints. MIPI
+> DSI endpoints will come later.
+> 
+> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/px30.dtsi | 20 ++++++++++++++++++++
+>  1 file changed, 20 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+> index b2af0f02ecbe..1c96ba556daf 100644
+> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+> @@ -190,6 +190,16 @@
+>  		compatible = "rockchip,display-subsystem";
+>  		ports = <&vopb_out>, <&vopl_out>;
+>  		status = "disabled";
+> +
+> +		route {
+> +			route_vopb_lvds: route-vopb-lvds {
+> +				connect = <&vopb_out_lvds>;
+> +			};
+> +
+> +			route_vopl_lvds: route-vopl-lvds {
+> +				connect = <&vopl_out_lvds>;
+> +			};
+> +		};
 
-diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-index c55022dbac89..6749be33d822 100644
---- a/virt/kvm/arm/mmu.c
-+++ b/virt/kvm/arm/mmu.c
-@@ -2056,7 +2056,13 @@ static int handle_hva_to_gpa(struct kvm *kvm,
- 
- static int kvm_unmap_hva_handler(struct kvm *kvm, gpa_t gpa, u64 size, void *data)
- {
--	unmap_stage2_range(kvm, gpa, size, 0);
-+	struct mmu_notifier_range *range = data;
-+	unsigned long flags = 0;
-+
-+	if (range->event == MMU_NOTIFY_UNMAP)
-+		flags = KVM_UNMAP_ELIDE_CMO;
-+
-+	unmap_stage2_range(kvm, gpa, size, flags);
- 	return 0;
- }
- 
-@@ -2067,7 +2073,7 @@ int kvm_unmap_hva_range(struct kvm *kvm, const struct mmu_notifier_range *range)
- 
- 	trace_kvm_unmap_hva_range(range->start, range->end);
- 	handle_hva_to_gpa(kvm, range->start, range->end,
--			  &kvm_unmap_hva_handler, NULL);
-+			  &kvm_unmap_hva_handler, (void *)range);
- 	return 0;
- }
- 
--- 
-2.20.1
+where does this route-stuff come from?
+The vendor tree? Because so far I've not seen this in mainline-drm
+in general nor the Rockchip drm driver itself.
+
+
+>  	};
+>  
+>  	gmac_clkin: external-gmac-clock {
+> @@ -976,6 +986,11 @@
+>  		vopb_out: port {
+>  			#address-cells = <1>;
+>  			#size-cells = <0>;
+> +
+> +			vopb_out_lvds: endpoint@0 {
+> +				reg = <0>;
+> +				remote-endpoint = <&lvds_vopb_in>;
+> +			};
+
+This (and the one below) would create dangling phandle references
+and compile errors, because the referenced phandles only get introduced
+in patch12. So ideally merge this into the last patch.
+
+
+Heiko
+
+>  		};
+>  	};
+>  
+> @@ -1008,6 +1023,11 @@
+>  		vopl_out: port {
+>  			#address-cells = <1>;
+>  			#size-cells = <0>;
+> +
+> +			vopl_out_lvds: endpoint@0 {
+> +				reg = <0>;
+> +				remote-endpoint = <&lvds_vopl_in>;
+> +			};
+>  		};
+>  	};
+>  
+> 
+
+
+
 
 
 _______________________________________________
