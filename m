@@ -2,64 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C65911E7A8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:06:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3978011E7BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:06:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iyIiCkLkQDAptPpmgcxaqPKp9nSoeDcjkcsPa+ehEFE=; b=JsmSart0N3Gi5Q
-	0+TRZL0sGkPrOc6eDlxnxcfQGZ514SEY4k25adBTi8ErGDvIQsAtb9bArDDwbC28A93IM80pZx3GA
-	P+JU5zpV+Gfa1Gl+O7yadRenzFFX690DBlWp4zHbexqwKeq+zW3OqZHbnPu+fE7HAiRIF3EUI1K56
-	Cnt7rQ8SY+YtvAxjbwufpEXJcwC14lU++nmPk+MWRNstluIojv9SS3ZSfj5f3tRcRgT5kqnx+6dp6
-	a+0h/VRS4XmxXR9zFIDyrXFKBKZ2kX1WjjrE50wXhrv0qfa8wgJSAI+oRpNgI8wgNhPqkyL7mH11I
-	rGnVv6wpIyAkcejZ3GxA==;
+	List-Owner; bh=0eXG3lh/WrF/ZzXcfAPO3RYn8gLSFFHtKnetcj+XzSw=; b=no6204uiOzwKXY
+	Mg2s/dDXMNFFDXnIiUdqDcpDj+CBmCqn8HAwI1pJr3k+pJ2K0DoNI5V01sAC1kkhR22vviisllVam
+	HJNRsrAwoyzjgp0jXZPNaxAehPp6+A0TltPO8OnKTL0KLirmYkCXd4eK8FdB2S7M4ndDKIJKzsk+i
+	DPclOHe1csG9hMta5YscPgHQMHtmgIFjo0kUUKeQbEnDaPzMvvP+6WTC4pcm4tA/Pa/L9LaaoI93k
+	MqDxhB/xZMNfWjwSNoTnVkZH+0v8tLEgZJQQwmDHMvanAV/WnwtbX3hVvs7eNyzTOOKGLyLxR0dV+
+	nViCYKS0SkA6gKNVppNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifnSJ-0003ew-TX; Fri, 13 Dec 2019 16:06:15 +0000
-Received: from mailoutvs51.siol.net ([185.57.226.242] helo=mail.siol.net)
+	id 1ifnSf-00045w-Gh; Fri, 13 Dec 2019 16:06:37 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifnQv-0001RT-Ue
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:04:51 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id CD37B524565;
- Fri, 13 Dec 2019 17:04:47 +0100 (CET)
-X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id ATbi4QIs82Ql; Fri, 13 Dec 2019 17:04:47 +0100 (CET)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 6BEDE524543;
- Fri, 13 Dec 2019 17:04:47 +0100 (CET)
-Received: from localhost.localdomain (cpe-86-58-102-7.static.triera.net
- [86.58.102.7]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 2B84E52455E;
- Fri, 13 Dec 2019 17:04:45 +0100 (CET)
-From: Jernej Skrabec <jernej.skrabec@siol.net>
-To: mchehab@kernel.org, mripard@kernel.org, paul.kocialkowski@bootlin.com,
- hverkuil@xs4all.nl
-Subject: [PATCH v2 4/4] media: cedrus: hevc: Add support for multiple slices
-Date: Fri, 13 Dec 2019 17:04:28 +0100
-Message-Id: <20191213160428.54303-5-jernej.skrabec@siol.net>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191213160428.54303-1-jernej.skrabec@siol.net>
-References: <20191213160428.54303-1-jernej.skrabec@siol.net>
+ id 1ifnRB-0001id-L7
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:05:10 +0000
+Received: by mail-lj1-x244.google.com with SMTP id e28so3195750ljo.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Dec 2019 08:05:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gbf8k5yJ19A5wSZeXVRUlCPqOm3eyldLxkULlc81AFU=;
+ b=ymPQwlgoBu3AuxXxyAS8Pqr3jk0WyzPrXO0bCPOwIOGjnvgBRrGXil4Wbr2ayNyVg0
+ 5oHwBqXWHlNYU4H4t0AGAUVusSZhkfHiNJjIj3uc5bx4NxoOqz31/r1rWdCvix34S3ZY
+ 2LTTNgxyQ1bi8H8MZq9m+SG3t+rgn5AEU+AoO5VKhdPwcr7tzMRGFhdW9/jc9cvU1N9p
+ yEh3vCXdHeINwcTyiFYrKgZxEzP6mSe5+H8dC7GEWci+dHT6he+jJOMaqoKrHvuaroER
+ O8H3WuM0RCU6HzU+YAsXHI4yTGfj4+7zOW1wJoyn1ns5KWkT3b+TjkHMoaPRnN7i7Mnt
+ wJ2Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gbf8k5yJ19A5wSZeXVRUlCPqOm3eyldLxkULlc81AFU=;
+ b=tpxCryZqM7LxI9pNxtK6Wor6CLhLHGToLL8pkK9C/WlosSKbgZsTuUAAPe91B1tB5W
+ u9ywmkr6XNazCNqwIg5yw/o5lep8mjpydCJsvVQpYtAehKNOSFDKbNiB1Q2ppFvX8eEl
+ LFbb+jMvAly7PqshGYRLHO5GM/V9VuRU8+LCXxhIT+tWifgO0oRIqAte/HHo3kzqwDN8
+ oNiC7H0lcctkvZrtbAIcL1f1B0P+wPSlgRofaez2p347cpvwHMXMDDRkjYGtoxP8E7N6
+ AIP3gCcpjSXL57dSSUpPN+ZBn0OTJYRpFEuUnGsEmzNM+Yb/+mqtVSuB4GamxpyY9IQ/
+ QsfQ==
+X-Gm-Message-State: APjAAAX9ehny9bLdwvvLYGvZBzf5JBnG9LcPSDKdSBceCWnrBlOy21wa
+ s/6EUTBebL+YB8ZOK9pEFujn/ZdoAByyDaxGMrCtYw==
+X-Google-Smtp-Source: APXvYqwqvR2JGdbH6+gDLiMiftLZwqMCeGYmrtZEZ9p/3pwbALJms19uoBQteKErH11ha+LVboridg4Lm1ql8BrOASI=
+X-Received: by 2002:a05:651c:1049:: with SMTP id
+ x9mr9963179ljm.233.1576253102887; 
+ Fri, 13 Dec 2019 08:05:02 -0800 (PST)
 MIME-Version: 1.0
+References: <CGME20191211145104eucas1p1ce04a26eebcd4c22d72f204e7ae0aa5a@eucas1p1.samsung.com>
+ <20191211145054.24835-1-m.szyprowski@samsung.com>
+In-Reply-To: <20191211145054.24835-1-m.szyprowski@samsung.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 13 Dec 2019 17:04:51 +0100
+Message-ID: <CACRpkdbBBjXxftu1fw7H9N+hAe_MfkUPJErN6MPJ8Mxirh1w5A@mail.gmail.com>
+Subject: Re: [PATCH v2 0/4 RESEND] USB3503: correct GPIOs polarity and update
+ the driver
+To: Marek Szyprowski <m.szyprowski@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_080450_140502_71229031 
-X-CRM114-Status: GOOD (  12.79  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191213_080506_654299_376C3CCA 
+X-CRM114-Status: UNSURE (   8.05  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.242 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,106 +94,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, wens@csie.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Stefan Agner <stefan@agner.ch>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-usb <linux-usb@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, Chen-Yu Tsai <wens@csie.org>,
+ Andy Gross <agross@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Maxime Ripard <mripard@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that segment address is available, support for multi-slice frames
-can be easily added.
+On Wed, Dec 11, 2019 at 3:51 PM Marek Szyprowski
+<m.szyprowski@samsung.com> wrote:
 
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
----
- .../staging/media/sunxi/cedrus/cedrus_h265.c  | 26 ++++++++++++-------
- .../staging/media/sunxi/cedrus/cedrus_video.c |  1 +
- 2 files changed, 17 insertions(+), 10 deletions(-)
+> Marek Szyprowski (3):
+>   ARM: dts: exynos: Correct USB3503 GPIOs polarity
+>   ARM: dts: qcom: Correct USB3503 GPIOs polarity
+>   ARM: dts: sun8i: a83t: Correct USB3503 GPIOs polarity
 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-index 888bfd5ca224..109d3289418c 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-@@ -291,6 +291,8 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
- 	const struct v4l2_ctrl_hevc_pps *pps;
- 	const struct v4l2_ctrl_hevc_slice_params *slice_params;
- 	const struct v4l2_hevc_pred_weight_table *pred_weight_table;
-+	unsigned int width_in_ctb_luma, ctb_size_luma;
-+	unsigned int log2_max_luma_coding_block_size;
- 	dma_addr_t src_buf_addr;
- 	dma_addr_t src_buf_end_addr;
- 	u32 chroma_log2_weight_denom;
-@@ -303,15 +305,17 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
- 	slice_params = run->h265.slice_params;
- 	pred_weight_table = &slice_params->pred_weight_table;
- 
-+	log2_max_luma_coding_block_size =
-+		sps->log2_min_luma_coding_block_size_minus3 + 3 +
-+		sps->log2_diff_max_min_luma_coding_block_size;
-+	ctb_size_luma = 1UL << log2_max_luma_coding_block_size;
-+	width_in_ctb_luma =
-+		DIV_ROUND_UP(sps->pic_width_in_luma_samples, ctb_size_luma);
-+
- 	/* MV column buffer size and allocation. */
- 	if (!ctx->codec.h265.mv_col_buf_size) {
- 		unsigned int num_buffers =
- 			run->dst->vb2_buf.vb2_queue->num_buffers;
--		unsigned int log2_max_luma_coding_block_size =
--			sps->log2_min_luma_coding_block_size_minus3 + 3 +
--			sps->log2_diff_max_min_luma_coding_block_size;
--		unsigned int ctb_size_luma =
--			1UL << log2_max_luma_coding_block_size;
- 
- 		/*
- 		 * Each CTB requires a MV col buffer with a specific unit size.
-@@ -366,15 +370,17 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
- 	reg = VE_DEC_H265_BITS_END_ADDR_BASE(src_buf_end_addr);
- 	cedrus_write(dev, VE_DEC_H265_BITS_END_ADDR, reg);
- 
--	/* Coding tree block address: start at the beginning. */
--	reg = VE_DEC_H265_DEC_CTB_ADDR_X(0) | VE_DEC_H265_DEC_CTB_ADDR_Y(0);
-+	/* Coding tree block address */
-+	reg = VE_DEC_H265_DEC_CTB_ADDR_X(slice_params->slice_segment_addr % width_in_ctb_luma);
-+	reg |= VE_DEC_H265_DEC_CTB_ADDR_Y(slice_params->slice_segment_addr / width_in_ctb_luma);
- 	cedrus_write(dev, VE_DEC_H265_DEC_CTB_ADDR, reg);
- 
- 	cedrus_write(dev, VE_DEC_H265_TILE_START_CTB, 0);
- 	cedrus_write(dev, VE_DEC_H265_TILE_END_CTB, 0);
- 
- 	/* Clear the number of correctly-decoded coding tree blocks. */
--	cedrus_write(dev, VE_DEC_H265_DEC_CTB_NUM, 0);
-+	if (ctx->fh.m2m_ctx->new_frame)
-+		cedrus_write(dev, VE_DEC_H265_DEC_CTB_NUM, 0);
- 
- 	/* Initialize bitstream access. */
- 	cedrus_write(dev, VE_DEC_H265_TRIGGER, VE_DEC_H265_TRIGGER_INIT_SWDEC);
-@@ -523,8 +529,8 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
- 				V4L2_HEVC_PPS_FLAG_DEPENDENT_SLICE_SEGMENT,
- 				pps->flags);
- 
--	/* FIXME: For multi-slice support. */
--	reg |= VE_DEC_H265_DEC_SLICE_HDR_INFO0_FLAG_FIRST_SLICE_SEGMENT_IN_PIC;
-+	if (ctx->fh.m2m_ctx->new_frame)
-+		reg |= VE_DEC_H265_DEC_SLICE_HDR_INFO0_FLAG_FIRST_SLICE_SEGMENT_IN_PIC;
- 
- 	cedrus_write(dev, VE_DEC_H265_DEC_SLICE_HDR_INFO0, reg);
- 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-index 15cf1f10221b..497b1199d3fe 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
-@@ -311,6 +311,7 @@ static int cedrus_s_fmt_vid_out(struct file *file, void *priv,
- 
- 	switch (ctx->src_fmt.pixelformat) {
- 	case V4L2_PIX_FMT_H264_SLICE:
-+	case V4L2_PIX_FMT_HEVC_SLICE:
- 		vq->subsystem_flags |=
- 			VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF;
- 		break;
--- 
-2.24.0
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
+for all these three.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
