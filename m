@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7786111E9E5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:13:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0CBA11E9E6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:13:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VRrcgsTJIzqWZff1zQcVNfdlF3oNP11moLeFWoQHDQ0=; b=YAPB48c4mngjFq
-	TU0kBYNK8omVLT3Aq2T8l9rdh5iW5W7rX6yDVNe9fwiMr5bT2J1es5E8Yu2lhAqC6HNEPd4kL5JfI
-	seNAfIB+BSkaUhdpxIT2+GSd7TCuuDoZFy05GZhZxEmrC6O1Il2L3MhM80DHX8sUo9uIy+becNZ//
-	G3uGUfP45Li0tuIj50NALU1DdMauG5PMaOHBb88fniVumbQFGynfptCOK0DO1A5uI7Nn9+JSrCoSR
-	LSNdMU6MkASifjWYOWzqwMCYXsi2KukBUtNjzuqaUvIybVCi4jr6DYLm1YmXgmPM/WINCzmaAA15N
-	vLiFmag58hl99nXalZkA==;
+	List-Owner; bh=NPofWEVjIrFXHMsl+O81Wh+FDAsy6AK/B+Pm2XqMFJg=; b=N8P3o14+u21VjE
+	Q2G1T4YJhq1tnLHhiqEfC5eGHAj1d3nj96ytUiSktM8q/yKuEZpzggIV5p/lMGRwmwDAR95ogf8+S
+	gXV0MyUhsMhCYMDiiZgvdXVDbZNaGHu9+wEpBeoB6vSaoWLg2+N+zLLPOyw0a7PPZuCrL6F+YwPR1
+	FM1PGBZJjQeu3WsOP9sOLIAHKJT0uS1G4bFFI5Rur8VhT+yNOYByEwOUbil/yOdTTZ6IhTQzaa2bw
+	S3we9LJjoCCsujuNqpUW8KbHpJvYQZ0Db8S7CJ/S/au825xkMq5zItLRNMui2poshttmYxbD+uO7/
+	xW0jHYWH1NxFZEdiVtww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifpR4-0001c8-CH; Fri, 13 Dec 2019 18:13:06 +0000
+	id 1ifpRH-0001q3-Lv; Fri, 13 Dec 2019 18:13:19 +0000
 Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifpPB-0008Qm-Sh; Fri, 13 Dec 2019 18:11:11 +0000
+ id 1ifpPD-0008SB-NO; Fri, 13 Dec 2019 18:11:13 +0000
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 628F8200007;
- Fri, 13 Dec 2019 18:11:06 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 747D920000E;
+ Fri, 13 Dec 2019 18:11:08 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
  <linux-rockchip@lists.infradead.org>, Daniel Vetter <daniel@ffwll.ch>,
  David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>
-Subject: [PATCH 06/12] drm/rockchip: lvds: Create an RK3288 specific probe
- function
-Date: Fri, 13 Dec 2019 19:10:45 +0100
-Message-Id: <20191213181051.25983-7-miquel.raynal@bootlin.com>
+Subject: [PATCH 07/12] drm/rockchip: lvds: Helpers should return decent values
+Date: Fri, 13 Dec 2019 19:10:46 +0100
+Message-Id: <20191213181051.25983-8-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191213181051.25983-1-miquel.raynal@bootlin.com>
 References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_101110_223467_DBA309B2 
-X-CRM114-Status: GOOD (  14.28  )
+X-CRM114-CacheID: sfid-20191213_101111_932718_E2F0A8E7 
+X-CRM114-Status: GOOD (  12.45  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -73,169 +72,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The probe function is highly tighten to the RK3288 specificities, move
-all specific bits into an "rk3288_probe" function, also part of the
-platform data.
-
-The goal is to ease the addition of new flavors of Rockchip LVDS IPs.
+Return errors instead of returning void from internal helpers. When
+these helpers are called, check the returned value and print an error
+message in this case.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- drivers/gpu/drm/rockchip/rockchip_lvds.c | 94 ++++++++++++++----------
- 1 file changed, 57 insertions(+), 37 deletions(-)
+ drivers/gpu/drm/rockchip/rockchip_lvds.c | 31 ++++++++++++++++++------
+ 1 file changed, 23 insertions(+), 8 deletions(-)
 
 diff --git a/drivers/gpu/drm/rockchip/rockchip_lvds.c b/drivers/gpu/drm/rockchip/rockchip_lvds.c
-index 262fec61eb78..0d2902b0d990 100644
+index 0d2902b0d990..6365a2c883c3 100644
 --- a/drivers/gpu/drm/rockchip/rockchip_lvds.c
 +++ b/drivers/gpu/drm/rockchip/rockchip_lvds.c
-@@ -31,6 +31,8 @@
- #define DISPLAY_OUTPUT_LVDS		1
- #define DISPLAY_OUTPUT_DUAL_LVDS	2
- 
-+struct rockchip_lvds;
-+
- #define connector_to_lvds(c) \
- 		container_of(c, struct rockchip_lvds, connector)
- 
-@@ -39,9 +41,11 @@
- 
- /**
-  * rockchip_lvds_soc_data - rockchip lvds Soc private data
-+ * @probe: LVDS platform probe function
-  * @helper_funcs: LVDS connector helper functions
-  */
- struct rockchip_lvds_soc_data {
-+	int (*probe)(struct platform_device *pdev, struct rockchip_lvds *lvds);
- 	const struct drm_encoder_helper_funcs *helper_funcs;
+@@ -215,8 +215,8 @@ struct drm_connector_helper_funcs rockchip_lvds_connector_helper_funcs = {
+ 	.get_modes = rockchip_lvds_connector_get_modes,
  };
  
-@@ -303,6 +307,52 @@ static void rk3288_lvds_encoder_disable(struct drm_encoder *encoder)
- 	drm_panel_unprepare(lvds->panel);
+-static void rk3288_lvds_grf_config(struct drm_encoder *encoder,
+-				   struct drm_display_mode *mode)
++static int rk3288_lvds_grf_config(struct drm_encoder *encoder,
++				  struct drm_display_mode *mode)
+ {
+ 	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
+ 	u8 pin_hsync = (mode->flags & DRM_MODE_FLAG_PHSYNC) ? 1 : 0;
+@@ -241,10 +241,10 @@ static void rk3288_lvds_grf_config(struct drm_encoder *encoder,
+ 	val |= (pin_dclk << 8) | (pin_hsync << 9);
+ 	val |= (0xffff << 16);
+ 	ret = regmap_write(lvds->grf, RK3288_LVDS_GRF_SOC_CON7, val);
+-	if (ret != 0) {
++	if (ret)
+ 		DRM_DEV_ERROR(lvds->dev, "Could not write to GRF: %d\n", ret);
+-		return;
+-	}
++
++	return ret;
  }
  
-+static int rk3288_lvds_probe(struct platform_device *pdev,
-+			     struct rockchip_lvds *lvds)
-+{
-+	struct resource *res;
-+	int ret;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	lvds->regs = devm_ioremap_resource(lvds->dev, res);
-+	if (IS_ERR(lvds->regs))
-+		return PTR_ERR(lvds->regs);
-+
-+	lvds->pclk = devm_clk_get(lvds->dev, "pclk_lvds");
-+	if (IS_ERR(lvds->pclk)) {
-+		DRM_DEV_ERROR(lvds->dev, "could not get pclk_lvds\n");
-+		return PTR_ERR(lvds->pclk);
-+	}
-+
-+	lvds->pins = devm_kzalloc(lvds->dev, sizeof(*lvds->pins),
-+				  GFP_KERNEL);
-+	if (!lvds->pins)
-+		return -ENOMEM;
-+
-+	lvds->pins->p = devm_pinctrl_get(lvds->dev);
-+	if (IS_ERR(lvds->pins->p)) {
-+		DRM_DEV_ERROR(lvds->dev, "no pinctrl handle\n");
-+		devm_kfree(lvds->dev, lvds->pins);
-+		lvds->pins = NULL;
-+	} else {
-+		lvds->pins->default_state =
-+			pinctrl_lookup_state(lvds->pins->p, "lcdc");
-+		if (IS_ERR(lvds->pins->default_state)) {
-+			DRM_DEV_ERROR(lvds->dev, "no default pinctrl state\n");
-+			devm_kfree(lvds->dev, lvds->pins);
-+			lvds->pins = NULL;
-+		}
-+	}
-+
-+	ret = clk_prepare(lvds->pclk);
-+	if (ret < 0) {
-+		DRM_DEV_ERROR(lvds->dev, "failed to prepare pclk_lvds\n");
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
- static const
- struct drm_encoder_helper_funcs rk3288_lvds_encoder_helper_funcs = {
- 	.enable = rk3288_lvds_encoder_enable,
-@@ -315,6 +365,7 @@ static const struct drm_encoder_funcs rockchip_lvds_encoder_funcs = {
- };
- 
- static const struct rockchip_lvds_soc_data rk3288_lvds_data = {
-+	.probe = rk3288_lvds_probe,
- 	.helper_funcs = &rk3288_lvds_encoder_helper_funcs,
- };
- 
-@@ -488,7 +539,6 @@ static int rockchip_lvds_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct rockchip_lvds *lvds;
- 	const struct of_device_id *match;
--	struct resource *res;
+ static int rk3288_lvds_set_vop_source(struct rockchip_lvds *lvds,
+@@ -288,13 +288,28 @@ static void rk3288_lvds_encoder_enable(struct drm_encoder *encoder)
  	int ret;
  
- 	if (!dev->of_node)
-@@ -504,37 +554,6 @@ static int rockchip_lvds_probe(struct platform_device *pdev)
- 		return -ENODEV;
- 	lvds->soc_data = match->data;
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	lvds->regs = devm_ioremap_resource(&pdev->dev, res);
--	if (IS_ERR(lvds->regs))
--		return PTR_ERR(lvds->regs);
--
--	lvds->pclk = devm_clk_get(&pdev->dev, "pclk_lvds");
--	if (IS_ERR(lvds->pclk)) {
--		DRM_DEV_ERROR(dev, "could not get pclk_lvds\n");
--		return PTR_ERR(lvds->pclk);
--	}
--
--	lvds->pins = devm_kzalloc(lvds->dev, sizeof(*lvds->pins),
--				  GFP_KERNEL);
--	if (!lvds->pins)
--		return -ENOMEM;
--
--	lvds->pins->p = devm_pinctrl_get(lvds->dev);
--	if (IS_ERR(lvds->pins->p)) {
--		DRM_DEV_ERROR(dev, "no pinctrl handle\n");
--		devm_kfree(lvds->dev, lvds->pins);
--		lvds->pins = NULL;
--	} else {
--		lvds->pins->default_state =
--			pinctrl_lookup_state(lvds->pins->p, "lcdc");
--		if (IS_ERR(lvds->pins->default_state)) {
--			DRM_DEV_ERROR(dev, "no default pinctrl state\n");
--			devm_kfree(lvds->dev, lvds->pins);
--			lvds->pins = NULL;
--		}
--	}
--
- 	lvds->grf = syscon_regmap_lookup_by_phandle(dev->of_node,
- 						    "rockchip,grf");
- 	if (IS_ERR(lvds->grf)) {
-@@ -542,13 +561,14 @@ static int rockchip_lvds_probe(struct platform_device *pdev)
- 		return PTR_ERR(lvds->grf);
+ 	drm_panel_prepare(lvds->panel);
++
+ 	ret = rk3288_lvds_poweron(lvds);
+ 	if (ret < 0) {
+-		DRM_DEV_ERROR(lvds->dev, "failed to power on lvds: %d\n", ret);
++		DRM_DEV_ERROR(lvds->dev, "failed to power on LVDS: %d\n", ret);
+ 		drm_panel_unprepare(lvds->panel);
++		return;
  	}
- 
-+	ret = lvds->soc_data->probe(pdev, lvds);
+-	rk3288_lvds_grf_config(encoder, mode);
+-	rk3288_lvds_set_vop_source(lvds, encoder);
++
++	ret = rk3288_lvds_grf_config(encoder, mode);
 +	if (ret) {
-+		DRM_DEV_ERROR(dev, "Platform initialization failed\n");
-+		return ret;
++		DRM_DEV_ERROR(lvds->dev, "failed to configure LVDS: %d\n", ret);
++		drm_panel_unprepare(lvds->panel);
++		return;
 +	}
 +
- 	dev_set_drvdata(dev, lvds);
++	ret = rk3288_lvds_set_vop_source(lvds, encoder);
++	if (ret) {
++		DRM_DEV_ERROR(lvds->dev, "failed to set VOP source: %d\n", ret);
++		drm_panel_unprepare(lvds->panel);
++		return;
++	}
++
+ 	drm_panel_enable(lvds->panel);
+ }
  
--	ret = clk_prepare(lvds->pclk);
--	if (ret < 0) {
--		DRM_DEV_ERROR(dev, "failed to prepare pclk_lvds\n");
--		return ret;
--	}
- 	ret = component_add(&pdev->dev, &rockchip_lvds_component_ops);
- 	if (ret < 0) {
- 		DRM_DEV_ERROR(dev, "failed to add component\n");
 -- 
 2.20.1
 
