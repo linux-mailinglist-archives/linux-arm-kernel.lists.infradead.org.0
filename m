@@ -2,56 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1231311E512
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 14:58:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A546811E517
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 14:59:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=r1H8MW5khktYY/9eo1pw5duRfgOKUrMHbEv/bX8PnNs=; b=KmLDkoyENzEPYX
-	wB+Ieftr/aW+Y3B9a5XVnQsXS2NRxIY61g/7dFrheXUsltWgp++URYvLpAdZEk2md3zeYR+k8m7Ag
-	MirpzFdE1pVntJyqqlZfagdjEZJ3Q8wIZ+sfuTfBBg0X6LOpzfoF95Ov7Y5RquQt9n7PGREx1zc9G
-	aDOozmQ9IjK6O76uEK175pcaV3MPkLrHyjs84n9L0r4rKXEJaefXqhyQ2v+qEIZUnGQ10ViZ7ogQo
-	IBbL8sXdNKt0zt5yzfLGnkZmwiYrGv7QY4AMc2FTxFyZxrb4AsrkhTra7T+lUHXUUMk0+XtvLQO2Z
-	lCLVBCjC7C631PvdO+sA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=G9hyaJdva7xc2X9WSrW9NrWuyBJCXLAfdBtb/lgYdUk=; b=Iuw
+	0M9pNe3HZR0vIh2NU5wZjhLFVYwS7jUEVgb/BeBXRmetQwtxc5iNMGzrele04I7N1qobCSS3o4GqF
+	8PK4QuFRXssmipFoHZJZsmdzai+Q+tHNGv8dy5Q1yRWtADZPtL4h7URmI42TnbSc1ZMgCflFUcrWg
+	HjFgO9IdjUcTf4wbW2WeG1AflC/QX90ptNCm/3KZ0wAWwXZ3wtl1cG/ayBIBb77e/rgHOonYvL52A
+	0HQ6XXo/p/RLpDtpMV2fqBR3zi3sPBiyJ7Qt3gRtrKBdU2XQgcy0ZMdPVAP1x7gpEBftzBoIOApqJ
+	bIkptZV31Q57e3v0SvH3wvPTyKCwiog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iflSZ-000231-Qs; Fri, 13 Dec 2019 13:58:23 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1iflTE-0002Ol-9m; Fri, 13 Dec 2019 13:59:04 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iflSR-0001v5-Mv
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 13:58:17 +0000
-Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 28D915C864E049F2EFC2;
- Fri, 13 Dec 2019 21:58:01 +0800 (CST)
-Received: from localhost.localdomain (10.69.192.58) by
- DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
- 14.3.439.0; Fri, 13 Dec 2019 21:57:50 +0800
-From: John Garry <john.garry@huawei.com>
-To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
- <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
- <jolsa@redhat.com>, <namhyung@kernel.org>
-Subject: [PATCH] perf tools: Add arm64 version of get_cpuid()
-Date: Fri, 13 Dec 2019 21:54:15 +0800
-Message-ID: <1576245255-210926-1-git-send-email-john.garry@huawei.com>
-X-Mailer: git-send-email 2.8.1
-MIME-Version: 1.0
-X-Originating-IP: [10.69.192.58]
-X-CFilter-Loop: Reflected
+ id 1iflT0-0002O5-F6
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 13:58:51 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id o11so1233827pjp.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Dec 2019 05:58:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=0pSL7+6Hfic6QamJwgv8SnmNlOMYhYlW3BzhIK7N/pE=;
+ b=e6xLarDs9kfv5A7ccrZSG4Janl78yrPDHvawA5PnhtHZ+7+iphzeBKwPtRXUTGxszO
+ Tu7l+HeoAnYG61sNVR5YPMjpxtAQwfh0RjeISvAvmajbctn1tUbnQ/TVEKP8+SBbdoYU
+ 9sjFHPM6LhcnSetBfIQXMkxESYH4Qqf1obBcNEZtzXhhMSNzKGLkBs+3jpe1s/+EaqmT
+ Yp7c09HZDq+hRwgH9KTdhbCMDscQVApKeE7LV1mKgPVSNi59Q/YsTJuVLHP4DTAVzfr5
+ BmOn+j2lSUwxya2lructw3cKIHH4Cga/ol/E+ZXIH1eJl7ZVhZOpQyAJUF5fCDqCnyRC
+ SMkQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=0pSL7+6Hfic6QamJwgv8SnmNlOMYhYlW3BzhIK7N/pE=;
+ b=MMT235l9qahBOnYUhOsVXZv2Jf2/WEyIy0uYJmNPqrfE81PuU8NdYFmDWwhDI8itPw
+ fMMuvoDPFopGPkZfITvbaBSzLPzwlZYPWHoeYWZ8WqcSNaijCHnWecTVyI8Bdbfxb0QN
+ tRat9Pee6HaZ5y6DVkP/TqaGxdGA+tOjr/vYng5oT+bbmNpXhX/km48agGyJrR/zYgOc
+ Gq39qf34vYzaA8/esknbo89KLc0s5fn4fR1m17JFhZElb7DWjNyniDAVFSpN6Qv5UwWj
+ x4+ZPz/7/ety2r3HQNK/HWpapKjhMzf+ZBLzYLwt41Og0iNX0uUiH8oOGf763jyWDoFI
+ 9GoQ==
+X-Gm-Message-State: APjAAAUksKagigv/GMK6q4fBjYdCOxlrLfvx0+0Z7aeXQU84DuaDFNVH
+ RgTEIs+zjrFpEYk1Sk6lwpQ=
+X-Google-Smtp-Source: APXvYqzhlxxZQ4K1aCD0j18ML2PufVmV+xW9yLZRqMg/AjI1PiTcYhuuvAMy7LsRWotBHgMTxu41bA==
+X-Received: by 2002:a17:90a:b002:: with SMTP id
+ x2mr16298438pjq.38.1576245529285; 
+ Fri, 13 Dec 2019 05:58:49 -0800 (PST)
+Received: from fabio-Latitude-E5450.nxp.com ([177.221.114.206])
+ by smtp.gmail.com with ESMTPSA id y6sm10778538pgc.10.2019.12.13.05.58.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 Dec 2019 05:58:48 -0800 (PST)
+From: Fabio Estevam <festevam@gmail.com>
+To: shawnguo@kernel.org
+Subject: [PATCH v2 1/2] ARM: dts: imx51-babbage: Fix the DVI output description
+Date: Fri, 13 Dec 2019 10:58:37 -0300
+Message-Id: <20191213135838.28697-1-festevam@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_055815_943127_A3C0B8B8 
-X-CRM114-Status: GOOD (  11.88  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191213_055850_506910_CC71360E 
+X-CRM114-Status: GOOD (  11.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,132 +91,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: John Garry <john.garry@huawei.com>, will@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linuxarm@huawei.com
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add an arm64 version of get_cpuid(), which is used for various annotation
-and headers - for example, I now get the CPUID in "perf report --header",
-as shown in this snippet:
+imx51-babbage has a TFP410 chip that receives 24-bit RGB parallel
+input and convert it to DVI.
 
-# hostname : ubuntu
-# os release : 5.5.0-rc1-dirty
-# perf version : 5.5.rc1.gbf8a13dc9851
-# arch : aarch64
-# nrcpus online : 96
-# nrcpus avail : 96
-# cpuid : 0x00000000480fd010
+Fix the device tree description to reflect the real hardware.
 
-Since much of the code to read the MIDR is already in get_cpuid_str(),
-factor out this code.
+Signed-off-by: Fabio Estevam <festevam@gmail.com>
+---
+Changes since v1:
+- Use "dvi-connector" compatible
 
-Signed-off-by: John Garry <john.garry@huawei.com>
+ arch/arm/boot/dts/imx51-babbage.dts | 64 ++++++++++++++++++++++-------
+ 1 file changed, 49 insertions(+), 15 deletions(-)
 
-diff --git a/tools/perf/arch/arm64/util/header.c b/tools/perf/arch/arm64/util/header.c
-index a32e4b72a98f..d730666ab95d 100644
---- a/tools/perf/arch/arm64/util/header.c
-+++ b/tools/perf/arch/arm64/util/header.c
-@@ -1,8 +1,10 @@
- #include <stdio.h>
- #include <stdlib.h>
- #include <perf/cpumap.h>
-+#include <util/cpumap.h>
- #include <internal/cpumap.h>
- #include <api/fs/fs.h>
-+#include <errno.h>
- #include "debug.h"
- #include "header.h"
+diff --git a/arch/arm/boot/dts/imx51-babbage.dts b/arch/arm/boot/dts/imx51-babbage.dts
+index ed6a3ce874b2..552196d8a60a 100644
+--- a/arch/arm/boot/dts/imx51-babbage.dts
++++ b/arch/arm/boot/dts/imx51-babbage.dts
+@@ -58,29 +58,27 @@
  
-@@ -12,26 +14,21 @@
- #define MIDR_VARIANT_SHIFT      20
- #define MIDR_VARIANT_MASK       (0xf << MIDR_VARIANT_SHIFT)
+ 	display1: disp1 {
+ 		compatible = "fsl,imx-parallel-display";
++		#address-cells = <1>;
++		#size-cells = <0>;
+ 		interface-pix-fmt = "rgb24";
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&pinctrl_ipu_disp1>;
+-		display-timings {
+-			native-mode = <&timing0>;
+-			timing0: dvi {
+-				clock-frequency = <65000000>;
+-				hactive = <1024>;
+-				vactive = <768>;
+-				hback-porch = <220>;
+-				hfront-porch = <40>;
+-				vback-porch = <21>;
+-				vfront-porch = <7>;
+-				hsync-len = <60>;
+-				vsync-len = <10>;
+-			};
+-		};
  
--char *get_cpuid_str(struct perf_pmu *pmu)
-+static int _get_cpuid(char *buf, size_t sz, struct perf_cpu_map *cpus)
- {
--	char *buf = NULL;
--	char path[PATH_MAX];
- 	const char *sysfs = sysfs__mountpoint();
--	int cpu;
- 	u64 midr = 0;
--	struct perf_cpu_map *cpus;
--	FILE *file;
-+	int cpu;
+-		port {
++		port@0 {
++		reg = <0>;
++
+ 			display0_in: endpoint {
+ 				remote-endpoint = <&ipu_di0_disp1>;
+ 			};
+ 		};
++
++		port@1 {
++			reg = <1>;
++
++			parallel_display_out: endpoint {
++				remote-endpoint = <&tfp410_in>;
++			};
++		};
+ 	};
  
--	if (!sysfs || !pmu || !pmu->cpus)
--		return NULL;
-+	if (!sysfs || sz < MIDR_SIZE)
-+		return EINVAL;
+ 	display2: disp2 {
+@@ -115,6 +113,42 @@
+ 		};
+ 	};
  
--	buf = malloc(MIDR_SIZE);
--	if (!buf)
--		return NULL;
-+	cpus = perf_cpu_map__get(cpus);
- 
--	/* read midr from list of cpus mapped to this pmu */
--	cpus = perf_cpu_map__get(pmu->cpus);
- 	for (cpu = 0; cpu < perf_cpu_map__nr(cpus); cpu++) {
-+		char path[PATH_MAX];
-+		FILE *file;
++	dvi-connector {
++		compatible = "dvi-connector";
++		digital;
 +
- 		scnprintf(path, PATH_MAX, "%s/devices/system/cpu/cpu%d"MIDR,
- 				sysfs, cpus->map[cpu]);
- 
-@@ -57,12 +54,48 @@ char *get_cpuid_str(struct perf_pmu *pmu)
- 		break;
- 	}
- 
--	if (!midr) {
-+	perf_cpu_map__put(cpus);
++		port {
++			dvi_connector_in: endpoint {
++				remote-endpoint = <&tfp410_out>;
++			};
++		};
++	};
 +
-+	if (!midr)
-+		return EINVAL;
++	dvi-encoder {
++		compatible = "ti,tfp410";
 +
-+	return 0;
-+}
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
 +
-+int get_cpuid(char *buf, size_t sz)
-+{
-+	struct perf_cpu_map *cpus = perf_cpu_map__new(NULL);
-+	int ret;
++			port@0 {
++				reg = <0>;
 +
-+	if (!cpus)
-+		return EINVAL;
++				tfp410_in: endpoint {
++					remote-endpoint = <&parallel_display_out>;
++				};
++			};
 +
-+	ret = _get_cpuid(buf, sz, cpus);
++			port@1 {
++				reg = <1>;
 +
-+	perf_cpu_map__put(cpus);
++				tfp410_out: endpoint {
++					remote-endpoint = <&dvi_connector_in>;
++				};
++			};
++		};
++	};
 +
-+	return ret;
-+}
-+
-+char *get_cpuid_str(struct perf_pmu *pmu)
-+{
-+	char *buf = NULL;
-+	int res;
-+
-+	if (!pmu || !pmu->cpus)
-+		return NULL;
-+
-+	buf = malloc(MIDR_SIZE);
-+	if (!buf)
-+		return NULL;
-+
-+	/* read midr from list of cpus mapped to this pmu */
-+	res = _get_cpuid(buf, MIDR_SIZE, pmu->cpus);
-+	if (res) {
- 		pr_err("failed to get cpuid string for PMU %s\n", pmu->name);
- 		free(buf);
- 		buf = NULL;
- 	}
- 
--	perf_cpu_map__put(cpus);
- 	return buf;
- }
+ 	gpio-keys {
+ 		compatible = "gpio-keys";
+ 		pinctrl-names = "default";
 -- 
 2.17.1
 
