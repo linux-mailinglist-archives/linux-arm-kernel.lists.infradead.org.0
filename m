@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9563811E92D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 18:27:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BB7D11E92E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 18:27:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3ACZfQNrgo9jKnOu+cEGueJSMNWsEUN1QWKt36DjaW0=; b=mtbuacyUIX96gD
-	awtrt160kZN204XHCUc9dKYi13gSOMqH9gxQcgwUZ6/vfS2Jlea84x5EShWjUkrxt8Ty2VSBFENuc
-	7nrjAYmb/pNzm29csgUa4YsFJybpiL+43+j29N80EfJpI0xxYli2sHCLzYAUPtrxjLVNTI32hlt2d
-	f62oYA+653OEqnEP96+CBmPgmLoht0CdiqTBDOuNBN7RlKFc/gXSzO89ZzAl1BIH9AAztxs60tY5/
-	C4HWj44UxvQyovb7lnnhMGTn5eD1to6rEinCerCj0YDBIt++PQL9OOEdsdXPwhm1PdaANAwijW4kI
-	2GCvL0DUJIxImCRHIadg==;
+	List-Owner; bh=SoNR44sVYf5IKvGlyo9JEu63NoQXOlunOAOrTTFUusc=; b=KI58G6ZyYYCNuz
+	ZFRA9Eww2RIb5vJkbTRncsxhLrxPE7Er63Tisqv07WjvtByL5OCQwDm7ZTVsuSJ6XcPYsWrvepw9s
+	v4g8vAB58lDs1SHHOVnpPmQf5zWFjHRpVRcIY7pGNMj8hbnpHUKUJaXmDgl1iQKaRkMoZKpgGY9l3
+	jYgsCWPK+lrMwYTlDpL8Jq5eW56lAr3bASYvovYcumCq8/zOn6p6dcyATIDJNrEoiz120rqZb9meP
+	r28i6Gm2PJ1a/efnH8CdCZQXlkz1djAH7Fb/dMP3EkHOKaOhS2cy+DjblhJ5t+4d0Nw9cNZJKhq0H
+	HhyhH/eiSR0ZbSo4xlWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifoiH-0005iT-3U; Fri, 13 Dec 2019 17:26:49 +0000
+	id 1ifoiV-0005wq-UO; Fri, 13 Dec 2019 17:27:03 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifohr-0005XN-5T
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 17:26:24 +0000
-Received: by mail-wr1-x442.google.com with SMTP id z3so281464wru.3
+ id 1ifohs-0005Xf-2p
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 17:26:26 +0000
+Received: by mail-wr1-x442.google.com with SMTP id y11so265977wrt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 09:26:22 -0800 (PST)
+ Fri, 13 Dec 2019 09:26:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=k37i2rf0mrZ5PJBC1jYZXYaxxFfiB3iLMNAh4njzQbQ=;
- b=kzPdtp7JSMUx3Zngnb/0mSHBSVnlQiPG7HKMb8VAcPBhARKG5gd2fjFKOTGMsyZNpb
- OzkkaNb70V8zrtQMaRhpigBgwFToYKS/KlcAW6Qx1aqR0m/Po4RflLJHKfQB6BfoBTNX
- m1s3pGfg3l94wvz64lDNsXj2mIjGn82Hd34RY=
+ bh=+cbrIbSvVp0LclU+aOKqTmPIt3fby91EuMSME26/d5Y=;
+ b=OKaJHrVAoaZtUEU3D85ZFLCR77H4fX6v6CsgmAjDRP9z9ftuNCnp76zTWWUm7HPKiN
+ FTTSSUgJNQOmvoLndwEMxA/UsGm+L98LxGIzL43X7OUEB28m6PNUKY/007+20qZ70j5p
+ 9F/y1NUVDwbvHhqktxm5Q/NhFLQrhd0/evKGg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=k37i2rf0mrZ5PJBC1jYZXYaxxFfiB3iLMNAh4njzQbQ=;
- b=Ru37t0S6FWeIaZzZjzxR1WRbevX5Uz5ITLz5M4aXUS45PzGoCt5y3q2oQvfVkd0Hll
- I4w25E38GojtqzVZwuVLKPbmdGxAIZZ44WYq7AgPb7I0rjSzE7eD/D3dFHcTcZNLTaio
- 2LrfM4HuL894M+P0a5BXD6MwYnQL5XgG4OjJl4wKQJv/u1F525J+cWKdep564pNnCMpf
- +zGOD31eCka0JuwGrkTA54X0kGltOzmt6CkYgiScmD4yvUwvfsZ1f2S6Piq4ydQA471U
- P825fceejRX7wFmu1YiLD4FCBKeEcdsBflCKgPLrAAS8X3LZm/l0RYU6oK2xveT84BhK
- jRTg==
-X-Gm-Message-State: APjAAAUNdFTC3VAw2SlKNITDyMY8hA76TmS9Goakaa2aAEtp+5XHoQ9O
- 7odAKWKiLV0h+uI9jn3NasZGS+7UhdU=
-X-Google-Smtp-Source: APXvYqzF2mlRiwvCpAy00FAu9v/gdbejfjXHVa3jmhV2/faBiJCG4X7d07oMgDmgeJTfaiBQafdsIg==
-X-Received: by 2002:adf:d4ca:: with SMTP id w10mr13329482wrk.53.1576257981725; 
- Fri, 13 Dec 2019 09:26:21 -0800 (PST)
+ bh=+cbrIbSvVp0LclU+aOKqTmPIt3fby91EuMSME26/d5Y=;
+ b=JddXiA6NJ9Rh+gtd3wKD8Tz2aRJ0EKCYn7Er7oHJdxgM8ixYY9dG9lTlR6u2J2koeT
+ xJ1MI9Xfj0JllYAlj3ozAT+DsBEkIEiCng0XR7tXwg67VLOd97qF7nSCHg3GgFf9RXRs
+ RdFMLNGGq2lkMa8BAy1yOWXfAPyfUSar1OFvImZ8HU6dFHFEqXNtzBbsbVX6UuWkKy5x
+ 7crXoD5FJFYuRvqa19MPRJ00kfYL6qbESX3OJIOEZpgsTUo00X9JW5jw4URnE2InhbJf
+ mk/SLVHymcvneA9Dmr/+0rDpCdBWPT5hFf3A/QtnUbFVCm2ATslQ5WJ5ypCfVoxq1kNB
+ 2D8g==
+X-Gm-Message-State: APjAAAW8+ItzKzS+Qrkxsav94syA4EkidrgOtfGZQsbfLGSoUPwAeDIj
+ BooXqsnpDRkG8ewSqE+oRD9fcg==
+X-Google-Smtp-Source: APXvYqyJt4nToJrw+6t6T/NTYV4dX0RRCO+tqGBGWSgh7apaWrrcILwebqQdGpcwUnJdOImfOsV15w==
+X-Received: by 2002:a5d:690e:: with SMTP id t14mr13815008wru.65.1576257982999; 
+ Fri, 13 Dec 2019 09:26:22 -0800 (PST)
 Received: from phenom.ffwll.local ([2a02:168:564b:0:7567:bb67:3d7f:f863])
- by smtp.gmail.com with ESMTPSA id q15sm10689669wrr.11.2019.12.13.09.26.20
+ by smtp.gmail.com with ESMTPSA id q15sm10689669wrr.11.2019.12.13.09.26.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Dec 2019 09:26:21 -0800 (PST)
+ Fri, 13 Dec 2019 09:26:22 -0800 (PST)
 From: Daniel Vetter <daniel.vetter@ffwll.ch>
 To: DRI Development <dri-devel@lists.freedesktop.org>
-Subject: [PATCH 04/10] drm/malidp: plane_state->fb iff plane_state->crtc
-Date: Fri, 13 Dec 2019 18:26:06 +0100
-Message-Id: <20191213172612.1514842-4-daniel.vetter@ffwll.ch>
+Subject: [PATCH 05/10] drm/mediatek: plane_state->fb iff plane_state->crtc
+Date: Fri, 13 Dec 2019 18:26:07 +0100
+Message-Id: <20191213172612.1514842-5-daniel.vetter@ffwll.ch>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191213172612.1514842-1-daniel.vetter@ffwll.ch>
 References: <20191213172612.1514842-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_092623_201050_9C311F8C 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20191213_092624_122475_615F5B89 
+X-CRM114-Status: GOOD (  12.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -93,12 +93,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, Sascha Hauer <s.hauer@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Daniel Vetter <daniel.vetter@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, CK Hu <ck.hu@mediatek.com>,
+ Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -108,30 +106,28 @@ Checking both is one too much, so wrap a WARN_ON around it to stope
 the copypasta.
 
 Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+Cc: CK Hu <ck.hu@mediatek.com>
 Cc: Philipp Zabel <p.zabel@pengutronix.de>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>
-Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>
 Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-mediatek@lists.infradead.org
 ---
- drivers/gpu/drm/imx/ipuv3-plane.c | 2 +-
+ drivers/gpu/drm/mediatek/mtk_drm_plane.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/imx/ipuv3-plane.c b/drivers/gpu/drm/imx/ipuv3-plane.c
-index 28826c0aa24a..6776ebb3246d 100644
---- a/drivers/gpu/drm/imx/ipuv3-plane.c
-+++ b/drivers/gpu/drm/imx/ipuv3-plane.c
-@@ -359,7 +359,7 @@ static int ipu_plane_atomic_check(struct drm_plane *plane,
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+index 540ef2faa40a..f0b0325381e0 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+@@ -94,7 +94,7 @@ static int mtk_plane_atomic_check(struct drm_plane *plane,
  	if (!fb)
  		return 0;
  
 -	if (!state->crtc)
 +	if (WARN_ON(!state->crtc))
- 		return -EINVAL;
+ 		return 0;
  
- 	crtc_state =
+ 	ret = mtk_drm_crtc_plane_check(state->crtc, plane,
 -- 
 2.24.0
 
