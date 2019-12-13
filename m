@@ -2,68 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A546811E517
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 14:59:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1237C11E518
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 14:59:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=G9hyaJdva7xc2X9WSrW9NrWuyBJCXLAfdBtb/lgYdUk=; b=Iuw
-	0M9pNe3HZR0vIh2NU5wZjhLFVYwS7jUEVgb/BeBXRmetQwtxc5iNMGzrele04I7N1qobCSS3o4GqF
-	8PK4QuFRXssmipFoHZJZsmdzai+Q+tHNGv8dy5Q1yRWtADZPtL4h7URmI42TnbSc1ZMgCflFUcrWg
-	HjFgO9IdjUcTf4wbW2WeG1AflC/QX90ptNCm/3KZ0wAWwXZ3wtl1cG/ayBIBb77e/rgHOonYvL52A
-	0HQ6XXo/p/RLpDtpMV2fqBR3zi3sPBiyJ7Qt3gRtrKBdU2XQgcy0ZMdPVAP1x7gpEBftzBoIOApqJ
-	bIkptZV31Q57e3v0SvH3wvPTyKCwiog==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=A+XcsWsZ4Ck32fyifaIjnwDeaFSek7evoJkaFOmC3u8=; b=g95P316CqkbsQxaO/LrihJQLLL
+	yLWkdDHqEOiKAjFt+qs4DySoZDn6tuJQT0VwH33QoIFu1KsCS6yNA85IzVMjOwJtEbgT98+qj2MMJ
+	n7HJNd0JY4QUPllIVDG5q+Uh1y4ZGuTWX70NrR8+xpjQSHTwHlHQ0qUDRcc1B0FPT6r/D9vfueUYh
+	82AlqC2m+Yi+13sQ81nh7u9qTo95lb3y+8Ub7Cc9pPwMR1lsiNYRlt3yl8OqpxJfnmvdiZAqAGN0M
+	Wu8R/PXQX+LBGCEtsBYkFOPkrpDhp6yluROPpa87CpJmtYaWU7KyATtD4aArkwE309/rWyexO+cqv
+	gGFykVfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iflTE-0002Ol-9m; Fri, 13 Dec 2019 13:59:04 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1iflTR-0002aW-VP; Fri, 13 Dec 2019 13:59:17 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iflT0-0002O5-F6
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 13:58:51 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id o11so1233827pjp.9
+ id 1iflT3-0002Ok-3V
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 13:58:54 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id w23so1248955pjd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 05:58:49 -0800 (PST)
+ Fri, 13 Dec 2019 05:58:52 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=0pSL7+6Hfic6QamJwgv8SnmNlOMYhYlW3BzhIK7N/pE=;
- b=e6xLarDs9kfv5A7ccrZSG4Janl78yrPDHvawA5PnhtHZ+7+iphzeBKwPtRXUTGxszO
- Tu7l+HeoAnYG61sNVR5YPMjpxtAQwfh0RjeISvAvmajbctn1tUbnQ/TVEKP8+SBbdoYU
- 9sjFHPM6LhcnSetBfIQXMkxESYH4Qqf1obBcNEZtzXhhMSNzKGLkBs+3jpe1s/+EaqmT
- Yp7c09HZDq+hRwgH9KTdhbCMDscQVApKeE7LV1mKgPVSNi59Q/YsTJuVLHP4DTAVzfr5
- BmOn+j2lSUwxya2lructw3cKIHH4Cga/ol/E+ZXIH1eJl7ZVhZOpQyAJUF5fCDqCnyRC
- SMkQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=vcUNQxR7kklwsKYBxB+fFt1v2oL8rvHjk/tVQSdWeAA=;
+ b=EFE9gbV0c7TC7yH0DM4JMFqPzwtx2/mShQaSXX7dLYtmDXa7RyVMKKuOXY28klniZg
+ 0ayqVkD6UvEloW2Y66ddKuh0jL3EaeVfqSG5HSqcYlcqzE/toAkgR+9phdi9CXRDShsk
+ SmroiraAPwOMKlo1MrOQI6u79oH9a3xEbazN+RIwJtZFQmF0CMVgb5+yoBifE0gMmp4W
+ qUHE21rfhfUSTYcSzgo++MwF+wekwkYAe+Yhn5Wd/AMV0j64hS6BDJCOoCGWWgCWKmYi
+ uNcmONcBuQowyz7sjKWgiyPofQ5SIjc0u9eZEqL6zcwL3qtDPWL7WOABmbjbIL36mkyZ
+ xnRw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=0pSL7+6Hfic6QamJwgv8SnmNlOMYhYlW3BzhIK7N/pE=;
- b=MMT235l9qahBOnYUhOsVXZv2Jf2/WEyIy0uYJmNPqrfE81PuU8NdYFmDWwhDI8itPw
- fMMuvoDPFopGPkZfITvbaBSzLPzwlZYPWHoeYWZ8WqcSNaijCHnWecTVyI8Bdbfxb0QN
- tRat9Pee6HaZ5y6DVkP/TqaGxdGA+tOjr/vYng5oT+bbmNpXhX/km48agGyJrR/zYgOc
- Gq39qf34vYzaA8/esknbo89KLc0s5fn4fR1m17JFhZElb7DWjNyniDAVFSpN6Qv5UwWj
- x4+ZPz/7/ety2r3HQNK/HWpapKjhMzf+ZBLzYLwt41Og0iNX0uUiH8oOGf763jyWDoFI
- 9GoQ==
-X-Gm-Message-State: APjAAAUksKagigv/GMK6q4fBjYdCOxlrLfvx0+0Z7aeXQU84DuaDFNVH
- RgTEIs+zjrFpEYk1Sk6lwpQ=
-X-Google-Smtp-Source: APXvYqzhlxxZQ4K1aCD0j18ML2PufVmV+xW9yLZRqMg/AjI1PiTcYhuuvAMy7LsRWotBHgMTxu41bA==
-X-Received: by 2002:a17:90a:b002:: with SMTP id
- x2mr16298438pjq.38.1576245529285; 
- Fri, 13 Dec 2019 05:58:49 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=vcUNQxR7kklwsKYBxB+fFt1v2oL8rvHjk/tVQSdWeAA=;
+ b=LvW/zUf4lkCYS6wEf3VPqg0t8HrjHJhjGdd6SbeCcvSGY8s5LrnLlBxGtiMGGgTEij
+ p0zr38+rLgTWH303nNATy+RpoeiS/mmY3IyUfQhLo6OgSBht8FXiIvnsqBqgLovaAOz/
+ lJKa8gKvV4RFysNrtzlrc/2YmFxmrtTaVCgKxau667ZGIqfd7exojNU256X3qviuOm7j
+ BKZSwpmOGqn5FM9yrADZQN3a5AN+EtrTM6jL8u4RKpnl0Gy4MWTTYwGJ9ixwHs4Mdyuq
+ eTaZ/brrtm68cm8DuB9g9xoOzhjuXOGFTYpFa2YdUanWAVehgroAiroiqMOqcUFH70rQ
+ 2sLQ==
+X-Gm-Message-State: APjAAAUMDEwRF6cZbtNyeg6FLgOyuJOdv0nh1/J++exkuBY+WMygbybv
+ L0rzdiVgucdoOqpZqZLB8mg=
+X-Google-Smtp-Source: APXvYqzaLN80aPfcy7vGwykcX7yav2qHw0Y40Aml6Mu12LESmEJrpbBNSzAbx1OaeHR9FiUwxsJ16Q==
+X-Received: by 2002:a17:902:b187:: with SMTP id
+ s7mr13765841plr.97.1576245532462; 
+ Fri, 13 Dec 2019 05:58:52 -0800 (PST)
 Received: from fabio-Latitude-E5450.nxp.com ([177.221.114.206])
- by smtp.gmail.com with ESMTPSA id y6sm10778538pgc.10.2019.12.13.05.58.45
+ by smtp.gmail.com with ESMTPSA id y6sm10778538pgc.10.2019.12.13.05.58.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Dec 2019 05:58:48 -0800 (PST)
+ Fri, 13 Dec 2019 05:58:51 -0800 (PST)
 From: Fabio Estevam <festevam@gmail.com>
 To: shawnguo@kernel.org
-Subject: [PATCH v2 1/2] ARM: dts: imx51-babbage: Fix the DVI output description
-Date: Fri, 13 Dec 2019 10:58:37 -0300
-Message-Id: <20191213135838.28697-1-festevam@gmail.com>
+Subject: [PATCH v2 2/2] ARM: imx_v6_v7_defconfig: Select the TFP410 driver
+Date: Fri, 13 Dec 2019 10:58:38 -0300
+Message-Id: <20191213135838.28697-2-festevam@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191213135838.28697-1-festevam@gmail.com>
+References: <20191213135838.28697-1-festevam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_055850_506910_CC71360E 
-X-CRM114-Status: GOOD (  11.12  )
+X-CRM114-CacheID: sfid-20191213_055853_205297_DD404E9F 
+X-CRM114-Status: UNSURE (   9.77  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -100,109 +105,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-imx51-babbage has a TFP410 chip that receives 24-bit RGB parallel
-input and convert it to DVI.
+Some boards like imx51-babbage, imx53-cx9020 and imx6q-utilite-pro
+have a TFP410 DVI bridge chip.
 
-Fix the device tree description to reflect the real hardware.
+Select its driver by default.
 
 Signed-off-by: Fabio Estevam <festevam@gmail.com>
 ---
 Changes since v1:
-- Use "dvi-connector" compatible
+- None
 
- arch/arm/boot/dts/imx51-babbage.dts | 64 ++++++++++++++++++++++-------
- 1 file changed, 49 insertions(+), 15 deletions(-)
+ arch/arm/configs/imx_v6_v7_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/imx51-babbage.dts b/arch/arm/boot/dts/imx51-babbage.dts
-index ed6a3ce874b2..552196d8a60a 100644
---- a/arch/arm/boot/dts/imx51-babbage.dts
-+++ b/arch/arm/boot/dts/imx51-babbage.dts
-@@ -58,29 +58,27 @@
- 
- 	display1: disp1 {
- 		compatible = "fsl,imx-parallel-display";
-+		#address-cells = <1>;
-+		#size-cells = <0>;
- 		interface-pix-fmt = "rgb24";
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&pinctrl_ipu_disp1>;
--		display-timings {
--			native-mode = <&timing0>;
--			timing0: dvi {
--				clock-frequency = <65000000>;
--				hactive = <1024>;
--				vactive = <768>;
--				hback-porch = <220>;
--				hfront-porch = <40>;
--				vback-porch = <21>;
--				vfront-porch = <7>;
--				hsync-len = <60>;
--				vsync-len = <10>;
--			};
--		};
- 
--		port {
-+		port@0 {
-+		reg = <0>;
-+
- 			display0_in: endpoint {
- 				remote-endpoint = <&ipu_di0_disp1>;
- 			};
- 		};
-+
-+		port@1 {
-+			reg = <1>;
-+
-+			parallel_display_out: endpoint {
-+				remote-endpoint = <&tfp410_in>;
-+			};
-+		};
- 	};
- 
- 	display2: disp2 {
-@@ -115,6 +113,42 @@
- 		};
- 	};
- 
-+	dvi-connector {
-+		compatible = "dvi-connector";
-+		digital;
-+
-+		port {
-+			dvi_connector_in: endpoint {
-+				remote-endpoint = <&tfp410_out>;
-+			};
-+		};
-+	};
-+
-+	dvi-encoder {
-+		compatible = "ti,tfp410";
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			port@0 {
-+				reg = <0>;
-+
-+				tfp410_in: endpoint {
-+					remote-endpoint = <&parallel_display_out>;
-+				};
-+			};
-+
-+			port@1 {
-+				reg = <1>;
-+
-+				tfp410_out: endpoint {
-+					remote-endpoint = <&dvi_connector_in>;
-+				};
-+			};
-+		};
-+	};
-+
- 	gpio-keys {
- 		compatible = "gpio-keys";
- 		pinctrl-names = "default";
+diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+index d5f31e436032..e1a219573966 100644
+--- a/arch/arm/configs/imx_v6_v7_defconfig
++++ b/arch/arm/configs/imx_v6_v7_defconfig
+@@ -283,6 +283,7 @@ CONFIG_DRM_MSM=y
+ CONFIG_DRM_PANEL_LVDS=y
+ CONFIG_DRM_PANEL_SIMPLE=y
+ CONFIG_DRM_PANEL_SEIKO_43WVF1G=y
++CONFIG_DRM_TI_TFP410=y
+ CONFIG_DRM_DW_HDMI_AHB_AUDIO=m
+ CONFIG_DRM_DW_HDMI_CEC=y
+ CONFIG_DRM_IMX=y
 -- 
 2.17.1
 
