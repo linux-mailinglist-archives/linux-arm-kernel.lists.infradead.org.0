@@ -2,58 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8EE211EACA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:59:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C627F11EADF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 20:03:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BI9W2h/L8DujCKvg6aBGtNzzfqBBrSpq4PLEe0C7Jbc=; b=SjmwMMK39mSHv4ejCWPMF27jq
-	QCy1+ltLVGRrGU4BZCgrkpc9K3rGvfWH8OmwMJUC8VNtzu6vC0K8U3Js4nlyIIv9cgoesIc0iNHzv
-	gx0Gmc4fpOE77ouNUq8URDrRwmcOatReFwDAvnc34SmrLV6mJLrYYIuamLnpdPCeR6q23LZ1uIosx
-	iSvvu/vxlkrmkyz0cf3J1xp+gamRklIaOb3HuQC9odMN15v+YHSjp44sVPNWTQS1MdoAdPOVT0wjw
-	puCA3aYTclKuTnV83pMcdbAN7hQzUgi9z+qbIVBeHFuXyb+OgczP6dOFngRdjg3xrtVFfScXyqXUq
-	yxfu8rD3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FmtZsGJGGdRztSLpVKD5JY04BGdizDY43MsKwSjB8pE=; b=SgiC/L++XHtU58
+	jVyWp0jr2zxJlgsrNv9AOSkzBHwqPiuJmdXocEK0ZXWntop6S6mFk91Wu+P+lS5aw3j5OXLSVXq7s
+	O5gWLSiA23T+Qp4aU1Nf2Gc5XmaqGG+L28+dkmUWwwQjEJjwmVgf0elJ7hRTtpLDUQxmwttuW+4SN
+	J+Ntzi8nyv77w1BJmaFsEBb5EOe4ksTRwskhm77nh57Ysw4UfNUaNkXMs04gxA502YS4JcBgqt4NR
+	Vo/nTlEjE6xd5K8oAleiOtHKKN7kIwL6WhTBa+BnpEpqiRlrZJmMzaXc4ogGc9Tjp8Yq1PVqUS1Tt
+	yXVp1XUXFTnrv3Vco4AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifqAG-00072j-Pt; Fri, 13 Dec 2019 18:59:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifqA7-00071k-Tq
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 18:59:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C33DE106F;
- Fri, 13 Dec 2019 10:59:35 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AD07C3F718;
- Fri, 13 Dec 2019 10:59:33 -0800 (PST)
-Subject: Re: [PATCH 1/7] KVM: Pass mmu_notifier_range down to
- kvm_unmap_hva_range()
-To: Marc Zyngier <maz@kernel.org>
-References: <20191213182503.14460-1-maz@kernel.org>
- <20191213182503.14460-2-maz@kernel.org>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <c347df67-6cc3-9d5c-0dd9-72ebb8fa9712@arm.com>
-Date: Fri, 13 Dec 2019 18:59:32 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+	id 1ifqE7-0000G3-FS; Fri, 13 Dec 2019 19:03:47 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifqDy-0000FL-CG; Fri, 13 Dec 2019 19:03:40 +0000
+Received: by mail-oi1-f194.google.com with SMTP id j22so1637778oij.9;
+ Fri, 13 Dec 2019 11:03:37 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=0jLdwo4Gh3BpcLr+x8Y4V1BSkeVDpmaHMCwdlyDbPHI=;
+ b=Dd8iHORFjAjx3msGa/j1vB36qAw5nxUfTewVFqppsFaAGY0fI/2Yr+6P74RXHomCD4
+ N5GoGVhyRGCELwOjIDNy3tHMX9StTXBG+CYtyAbEBDEF9iYfVoQQJZ7JP6GWHEgVcWfm
+ FcDej7OVsReFt3sgjfB69xxnTybkmWfGndqShM6ottCe2Fz7fm/HddPXy9NqCCOLjuk1
+ 3fm4iEKyL8/QsUJFzLtlDVGrJmz0AitxdGJhQlC7R/BZarCT8gRqA+vAWtR+2blJNq5D
+ j8FLjJaNZM+Keaqw5BKEn6/+7lT+M5WlsBSG+vVZ8K3t61aFz1HpzZTTmijIoSHOjbWC
+ IEoA==
+X-Gm-Message-State: APjAAAXMYMc1mXf05/IgraVMWB9sTGZp3mUpctq8QVA1EWoU/plI/ZLn
+ D7D+wrv3Go735nzrb21chQ==
+X-Google-Smtp-Source: APXvYqyDYMLhdnJ4CPCzJjTRPxkIRfS51N1GfBOGJw6/3Te72GU1lQmiGGiO0u/xbrXHuLqsxYwijg==
+X-Received: by 2002:aca:3141:: with SMTP id x62mr7090024oix.108.1576263816699; 
+ Fri, 13 Dec 2019 11:03:36 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id r124sm3612857oie.9.2019.12.13.11.03.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 Dec 2019 11:03:35 -0800 (PST)
+Date: Fri, 13 Dec 2019 13:03:35 -0600
+From: Rob Herring <robh@kernel.org>
+To: min.guo@mediatek.com
+Subject: Re: [PATCH v9 1/6] dt-bindings: usb: musb: Add support for MediaTek
+ musb controller
+Message-ID: <20191213190335.GA16897@bogus>
+References: <20191211015446.11477-1-min.guo@mediatek.com>
+ <20191211015446.11477-2-min.guo@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <20191213182503.14460-2-maz@kernel.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20191211015446.11477-2-min.guo@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_105940_007698_0721DC27 
-X-CRM114-Status: GOOD (  16.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191213_110338_422243_977F1B7B 
+X-CRM114-Status: GOOD (  12.63  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,76 +90,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm-ppc@vger.kernel.org, Wanpeng Li <wanpengli@tencent.com>,
- kvm@vger.kernel.org, =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?= <rkrcmar@redhat.com>,
- James Hogan <jhogan@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- linux-mips@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- Paul Mackerras <paulus@ozlabs.org>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, Paolo Bonzini <pbonzini@redhat.com>,
- Vitaly Kuznetsov <vkuznets@redhat.com>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jim Mattson <jmattson@google.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ hdegoede@redhat.com, tony@atomide.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Alan Stern <stern@rowland.harvard.edu>, chunfeng.yun@mediatek.com,
+ linux-mediatek@lists.infradead.org, Bin Liu <b-liu@ti.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-
-On 13/12/2019 18:24, Marc Zyngier wrote:
-> kvm_unmap_hva_range() is currently passed both start and end
-> fields from the mmu_notifier_range structure. As this struct
-> now contains important information about the reason of the
-> unmap (the event field), replace the start/end parameters
-> with the range struct, and update all architectures.
+On Wed, Dec 11, 2019 at 09:54:41AM +0800, min.guo@mediatek.com wrote:
+> From: Min Guo <min.guo@mediatek.com>
 > 
-> No functionnal change.
+> This adds support for MediaTek musb controller in
+> host, peripheral and otg mode.
 > 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> Signed-off-by: Min Guo <min.guo@mediatek.com>
+> ---
+> changes in v9:
+> 1. Add usb-role-switch
+> 2. Remove label of usb connector child node
+> 3. Change usb connector child node compatible as "gpio-usb-b-connector", "usb-b-connector";
+> 
+> changes in v8:
+> 1. Add reviewed by Rob
+> 
+> changes in v7:
+> 1. Modify compatible as
+> - compatible : should be one of:
+>                "mediatek,mt2701-musb"
+>                ...
+>                followed by "mediatek,mtk-musb"
+> 2. Change usb connector child node compatible as "gpio-usb-b-connector" 
+> 
+> changes in v6:
+> 1. Modify usb connector child node
+> 
+> changes in v5:
+> suggested by Rob:
+> 1. Modify compatible as 
+> - compatible : should be one of:
+>                "mediatek,mt-2701"
+>                ...
+>                followed by "mediatek,mtk-musb"
+> 2. Add usb connector child node
+> 
+> changes in v4:
+> suggested by Sergei:
+> 1. String alignment
+> 
+> changes in v3:
+> 1. no changes
+> 
+> changes in v2:
+> suggested by Bin:
+> 1. Modify DRC to DRD
+> suggested by Rob:
+> 2. Drop the "<soc-model>-musb" in compatible
+> 3. Remove phy-names
+> 4. Add space after comma in clock-names
+> ---
+>  .../devicetree/bindings/usb/mediatek,musb.txt | 57 +++++++++++++++++++
+>  1 file changed, 57 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/usb/mediatek,musb.txt
 
-
-> diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
-> index 00268290dcbd..7c3665ad1035 100644
-> --- a/virt/kvm/kvm_main.c
-> +++ b/virt/kvm/kvm_main.c
-> @@ -158,7 +158,7 @@ static unsigned long long kvm_createvm_count;
->   static unsigned long long kvm_active_vms;
->   
->   __weak int kvm_arch_mmu_notifier_invalidate_range(struct kvm *kvm,
-> -		unsigned long start, unsigned long end, bool blockable)
-> +		const struct mmu_notifier_range *range, bool blockable)
->   {
->   	return 0;
->   }
-> @@ -415,7 +415,7 @@ static int kvm_mmu_notifier_invalidate_range_start(struct mmu_notifier *mn,
->   	 * count is also read inside the mmu_lock critical section.
->   	 */
->   	kvm->mmu_notifier_count++;
-> -	need_tlb_flush = kvm_unmap_hva_range(kvm, range->start, range->end);
-> +	need_tlb_flush = kvm_unmap_hva_range(kvm, range);
->   	need_tlb_flush |= kvm->tlbs_dirty;
->   	/* we've to flush the tlb before the pages can be freed */
->   	if (need_tlb_flush)
-> @@ -423,8 +423,7 @@ static int kvm_mmu_notifier_invalidate_range_start(struct mmu_notifier *mn,
->   
->   	spin_unlock(&kvm->mmu_lock);
->   
-> -	ret = kvm_arch_mmu_notifier_invalidate_range(kvm, range->start,
-> -					range->end,
-> +	ret = kvm_arch_mmu_notifier_invalidate_range(kvm, range,
->   					mmu_notifier_range_blockable(range));
-
-minor nit:
-
-Since we now have the range passed on to the arch hooks, we could get
-rid of the "blockable" too, as it is something you can deduce from the
-range.
-
-Otherwise looks good to me.
-
-Suzuki
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
