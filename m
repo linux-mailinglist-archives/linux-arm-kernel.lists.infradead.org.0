@@ -2,62 +2,135 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E7CF11E0BC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 10:29:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4059811E0C7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 10:31:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SVaNPNhUJyfi0R/c2EXC/O7GlEdM76iNefpRXe8FKlY=; b=nYMkoitgqsiny2+6hKdI5T9MS
-	5HJggoG5DGvvaKwv5RDEYeqpFoqm+UiGMBMUrZFIgAOJouAohFbC4f1hrYmeWzvvmFqJ3PutdF4KT
-	uG7hd/zTd/SMf+Ez8XV/zwxXzQ2DSoI+vm+CT49pLyfFdhAH/gKN/jx/bRAOxBOOG+zxBLOd8Bqof
-	i/InLNzlm6C82w4xHIJwfroS2T76kSrRF4YV4mBGV4uRcJ7FLEJTdgZXr1pg9jCM313dhJmdgy6ti
-	+L70eEm4h/0XBM6eH4BowIztdvODJToYdnGbhzI4QctoCaKPLamvcmefertsh01bGiVmgM2gDIg+9
-	6XMJZgjnw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hhUW2zgZoBqRdW+DAFErUrHm5N3FAA+3EsA0vp78B+g=; b=fwC9ILLH7Yl7EQ
+	7dQPNcetviL4G1MlfSMRiLAAFu/ZUK992p3/u4I2+ACBieZFuaG1O8n1744TGw5I3ZoNqIfnK6CtH
+	K5ocxyAA2DEp26dInezdm2IJqBLGNXadvicntqVo4SFIHaXYbct4oDRJqyTuhXLho1YL/lK0+Z8CU
+	4OfwoSnMgtsbbw0iHtjhmoxrHzLWOruObZNvdg+MqMSFxJe0Vsus7c3brA0mQMjox+wkFyfot1dGa
+	DGOJ4HTpLLZ64vAWyNHDKokocyxFZLWL0nUbuj3Amwv1ELY072pq/7DQkHJeLzaERqSl1Qn4xlFDc
+	WdrqfYnjc3Wz6kMaBDPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifhG5-0007Nj-4i; Fri, 13 Dec 2019 09:29:13 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1ifhI2-0000nB-Ub; Fri, 13 Dec 2019 09:31:14 +0000
+Received: from mail-eopbgr140102.outbound.protection.outlook.com
+ ([40.107.14.102] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifhFu-0007Mj-R1
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 09:29:05 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1ifhFr-00024d-DZ; Fri, 13 Dec 2019 10:28:59 +0100
-To: Christoffer Dall <christoffer.dall@arm.com>
-Subject: Re: [PATCH 1/3] KVM: arm/arm64: Properly handle faulting of device
- mappings
-X-PHP-Originating-Script: 0:main.inc
+ id 1ifhHt-0000mC-6W
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 09:31:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=k/60L5D6/6ZFYN0IDCl8qk/tMXuNU+UErExNDIeRaSQ9OsAjw1P0LCewzZ2E9ISSodGSCJLn+11ljmITfrbXJTOELeZn5zkC+ift/6zt3r8NVv834cnipyTk8HuK14jdP9/rpQ/83KuYbIHmXgwjXIiCcXmvRmXHlI51VvZ2TGXmH/t9WRp+8ofiElJIXakku/7aGWaZanpAZh9oEhvm09p/W8RwOhr4JqPEL946MaozHufRXV1slPSnXBayFTKx9y8vAzXdPOTnH+SS7avh9Lh7xJW3zzFEuDuhtRM7W3dfbw1FwPLGeRbsuEaG9pYaQk7dWUy15iyMp1EC8msnDg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=LgzuOxOAh0vuBgzLzyvSqbVaGg+tm5tiLCBdGSrzdoc=;
+ b=niZrKPT2yb+rb/ZRKVQQBzErxSTZlzdD4hD0/B8Y3EzNSxpK4jLdfcF+AADpZN3rqBcIqNc0+hqfwGaPJ4gZplBXUPmH7SjvCO0v62tejl5AHK6EXMEKIlcYBISUTqvUXwSDPSDUn7mlEBg2/y8yJ6MHBtoFdqWo3dUgFIP54va549mawB1e5mTeYIXkhbCXI15xFyY3ONEpP5z/7OYt+5Y10IsqJrA2Ck2YFF7XWbT5lu9ntT4SL8SOw/AHwquVI/oOAMB+N8vcuQNxQgSF4OwrALPtWx+BoDLGc/zbEtBeMwteX+vjMQ82n6iK05797xys6hCxqFt/jH+dEAbvqg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
+ dkim=pass header.d=axentia.se; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=LgzuOxOAh0vuBgzLzyvSqbVaGg+tm5tiLCBdGSrzdoc=;
+ b=S8D/nYOwkWYo0TyQqXSQME4/L+DgwT0ZUWD9CwrtLHZMsSuQEe1NQiKkf6C9zFkC0XejR9m+45BGL4tlelEKkVFxY/dHaNiiXSJ67ujVLj7+UtdJQAE4a8BQcdIO1ZMHjc3QfGN749/HSfFliOldYqkxfsMjPjQrw4EJWfOs9KY=
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
+ DB3PR0202MB3418.eurprd02.prod.outlook.com (52.134.70.152) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2516.17; Fri, 13 Dec 2019 09:30:59 +0000
+Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::cd85:a8a5:da14:db13]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
+ ([fe80::cd85:a8a5:da14:db13%7]) with mapi id 15.20.2538.017; Fri, 13 Dec 2019
+ 09:30:59 +0000
+From: Peter Rosin <peda@axentia.se>
+To: "Claudiu.Beznea@microchip.com" <Claudiu.Beznea@microchip.com>,
+ "sam@ravnborg.org" <sam@ravnborg.org>, "bbrezillon@kernel.org"
+ <bbrezillon@kernel.org>, "airlied@linux.ie" <airlied@linux.ie>,
+ "daniel@ffwll.ch" <daniel@ffwll.ch>, "Nicolas.Ferre@microchip.com"
+ <Nicolas.Ferre@microchip.com>, "alexandre.belloni@bootlin.com"
+ <alexandre.belloni@bootlin.com>, "Ludovic.Desroches@microchip.com"
+ <Ludovic.Desroches@microchip.com>, "lee.jones@linaro.org"
+ <lee.jones@linaro.org>
+Subject: Re: [PATCH 4/5] Revert "drm/atmel-hlcdc: allow selecting a higher
+ pixel-clock than requested"
+Thread-Topic: [PATCH 4/5] Revert "drm/atmel-hlcdc: allow selecting a higher
+ pixel-clock than requested"
+Thread-Index: AQHVr11DyxIz9S+dLEWyrkArJlSyg6ezeYGA///8moCAADjaAIABIyyAgAAtnoCAAtDTgIAAAL4A
+Date: Fri, 13 Dec 2019 09:30:59 +0000
+Message-ID: <e41b9a8f-b0f4-bb88-1512-7fb94dfaebe4@axentia.se>
+References: <1575984287-26787-1-git-send-email-claudiu.beznea@microchip.com>
+ <1575984287-26787-5-git-send-email-claudiu.beznea@microchip.com>
+ <4c3ffc48-7aa5-1e48-b0e9-a50c4eea7c38@axentia.se>
+ <5fbad2cd-0dbe-0be5-833a-f7a612d48012@microchip.com>
+ <2272669c-38ee-1928-9563-46755574897c@axentia.se>
+ <167cb87e-b189-71fd-0a79-adf89336d1f3@microchip.com>
+ <b5ea01da-5345-05cf-9f89-b7123dbbb893@axentia.se>
+ <be6a9bce-7d14-563b-1ee5-a968e2e3a6c8@microchip.com>
+In-Reply-To: <be6a9bce-7d14-563b-1ee5-a968e2e3a6c8@microchip.com>
+Accept-Language: en-US, sv-SE
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
+x-originating-ip: [213.112.138.100]
+x-clientproxiedby: HE1P195CA0023.EURP195.PROD.OUTLOOK.COM (2603:10a6:3:fd::33)
+ To DB3PR0202MB3434.eurprd02.prod.outlook.com
+ (2603:10a6:8:5::30)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peda@axentia.se; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f3f0e860-2afb-4d07-b20d-08d77faf29b6
+x-ms-traffictypediagnostic: DB3PR0202MB3418:
+x-microsoft-antispam-prvs: <DB3PR0202MB34180DEA97DA6CA52DDAC193BC540@DB3PR0202MB3418.eurprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0250B840C1
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(366004)(346002)(376002)(136003)(396003)(39830400003)(199004)(189003)(31686004)(66556008)(5660300002)(66476007)(2616005)(36756003)(316002)(71200400001)(54906003)(110136005)(64756008)(7416002)(6486002)(66446008)(66946007)(31696002)(6506007)(53546011)(508600001)(4326008)(81156014)(186003)(8936002)(4001150100001)(26005)(2906002)(6512007)(8676002)(81166006)(52116002)(86362001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3418;
+ H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: axentia.se does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 2jMfNXjNbeGqNJEhyuvYpIIEeRd/ImqTvo6upAMgtQzJ7rqqlaG22IBhGASzykpxhVFBgZKRftpmReV9yPXdsSxWOfCIcgroTFwR5ceM//6v0Klv5WhyNWnbSnnE2w2D53EpMPDpNvj+f3cbZSTHE+QUhZo7Zk+Yy4Cf5m+Dj2v66fsSBKHkgnq6/yEvJWrOcsEOXd0ZlCDgbCDHc0rs6M1nINYHfyf2Irm7ZjmDULxnaNI0FkLR2o28RmZ7lG+WFSQuWxot38oder0cqx54Vm/Zd0ae4Xb9hIdYLGWB7sgz1In5GAJTGzJUCM6xzxHkMae86eJHi/DomYvKmnC03thWBnGwTfzeZdnXD3ZP4HeZnpKLwPTVtzAwB8ql+HiXirD0CovkYx3YpLPQC0higK9+BOnrajGuIJ70S+QwPNxGPSS41DzEmCOD7lMig8w7
+x-ms-exchange-transport-forked: True
+Content-ID: <E58D646F03742341997F54DCEB0144F6@eurprd02.prod.outlook.com>
 MIME-Version: 1.0
-Date: Fri, 13 Dec 2019 09:28:59 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <20191213082920.GA28840@e113682-lin.lund.arm.com>
-References: <20191211165651.7889-1-maz@kernel.org>
- <20191211165651.7889-2-maz@kernel.org>
- <20191213082920.GA28840@e113682-lin.lund.arm.com>
-Message-ID: <7f86824f4cbd17cd75ef347473e34278@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: christoffer.dall@arm.com, kvm@vger.kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
- alexandru.elisei@arm.com, stable@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+X-OriginatorOrg: axentia.se
+X-MS-Exchange-CrossTenant-Network-Message-Id: f3f0e860-2afb-4d07-b20d-08d77faf29b6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Dec 2019 09:30:59.4656 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: cby1IleFZNzQn/oCi7nHN9MQnjm/Asd4j3eQXBokQGmvJ+Z/KAfLRrxCJD5gWAKM
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3418
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_012903_019897_04D2AD24 
-X-CRM114-Status: GOOD (  29.10  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191213_013105_635928_E4207191 
+X-CRM114-Status: GOOD (  25.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.14.102 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,207 +142,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- stable@vger.kernel.org, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Alexandru Elisei <alexandru.elisei@arm.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Christoffer,
-
-On 2019-12-13 08:29, Christoffer Dall wrote:
-> Hi Marc,
->
-> On Wed, Dec 11, 2019 at 04:56:48PM +0000, Marc Zyngier wrote:
->> A device mapping is normally always mapped at Stage-2, since there
->> is very little gain in having it faulted in.
->
-> It is actually becoming less clear to me what the real benefits of
-> pre-populating the stage 2 page table are, especially given that we 
-> can
-> provoke a situation where they're faulted in anyhow.  Do you recall 
-> if
-> we had any specific case that motivated us to pre-fault in the pages?
-
-It's only a minor performance optimization that was introduced by Ard 
-in
-8eef91239e57d. Which makes sense for platform devices that have a 
-single
-fixed location in memory. It makes slightly less sense for PCI, where
-you can move things around.
-
->> Nonetheless, it is possible to end-up in a situation where the 
->> device
->> mapping has been removed from Stage-2 (userspace munmaped the VFIO
->> region, and the MMU notifier did its job), but present in a 
->> userspace
->> mapping (userpace has mapped it back at the same address). In such
->> a situation, the device mapping will be demand-paged as the guest
->> performs memory accesses.
+On 2019-12-13 10:28, Claudiu.Beznea@microchip.com wrote:
+> 
+> 
+> On 11.12.2019 15:28, Peter Rosin wrote:
+>> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
 >>
->> This requires to be careful when dealing with mapping size, cache
->> management, and to handle potential execution of a device mapping.
+>> On 2019-12-11 12:45, Claudiu.Beznea@microchip.com wrote:
+>>>
+>>>
+>>> On 10.12.2019 19:22, Peter Rosin wrote:
+>>>> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
+>>>>
+>>>> On 2019-12-10 15:59, Claudiu.Beznea@microchip.com wrote:
+>>>>>
+>>>>>
+>>>>> On 10.12.2019 16:11, Peter Rosin wrote:
+>>>>>> On 2019-12-10 14:24, Claudiu Beznea wrote:
+>>>>>>> This reverts commit f6f7ad3234613f6f7f27c25036aaf078de07e9b0.
+>>>>>>> ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
+>>>>>>> because allowing selecting a higher pixel clock may overclock
+>>>>>>> LCD devices, not all of them being capable of this.
+>>>>>>
+>>>>>> Without this patch, there are panels that are *severly* underclocked (on the
+>>>>>> magnitude of 40MHz instead of 65MHz or something like that, I don't remember
+>>>>>> the exact figures).
+>>>>>
+>>>>> With patch that switches by default to 2xsystem clock for pixel clock, if
+>>>>> using 133MHz system clock (as you specified in the patch I proposed for
+>>>>> revert here) that would go, without this patch at 53MHz if 65MHz is
+>>>>> requested. Correct me if I'm wrong.
+>>>>
+>>>> It might have been 53MHz, whatever it was it was too low for things to work.
+>>>>
+>>>>>> And they are of course not capable of that. All panels
+>>>>>> have *some* slack as to what frequencies are supported, and the patch was
+>>>>>> written under the assumption that the preferred frequency of the panel was
+>>>>>> requested, which should leave at least a *little* headroom.
+>>>>>
+>>>>> I see, but from my point of view, the upper layers should decide what
+>>>>> frequency settings should be done on the LCD controller and not let this at
+>>>>>  the driver's latitude.
+>>>>
+>>>> Right, but the upper layers do not support negotiating a frequency from
+>>>> ranges. At least the didn't when the patch was written, and implementing
+>>>> *that* seemed like a huge undertaking.
+>>>>
+>>>>>>
+>>>>>> So, I'm curious as to what panel regressed. Or rather, what pixel-clock it needs
+>>>>>> and what it gets with/without the patch?
+>>>>>
+>>>>> I have 2 use cases:
+>>>>> 1/ system clock = 200MHz and requested pixel clock (mode_rate) ~71MHz. With
+>>>>> the reverted patch the resulted computed pixel clock would be 80MHz.
+>>>>> Previously it was at 66MHz
+>>>>
+>>>> I don't see how that's possible.
+>>>>
+>>>> [doing some calculation by hand]
+>>>>
+>>>> Arrgh. *blush*
+>>>>
+>>>> The code does not do what I intended for it to do.
+>>>> Can you please try this instead of reverting?
+>>>>
+>>>> Cheers,
+>>>> Peter
+>>>>
+>>>> From b3e86d55b8d107a5c07e98f879c67f67120c87a6 Mon Sep 17 00:00:00 2001
+>>>> From: Peter Rosin <peda@axentia.se>
+>>>> Date: Tue, 10 Dec 2019 18:11:28 +0100
+>>>> Subject: [PATCH] drm/atmel-hlcdc: prefer a lower pixel-clock than requested
+>>>>
+>>>> The intention was to only select a higher pixel-clock rate than the
+>>>> requested, if a slight overclocking would result in a rate significantly
+>>>> closer to the requested rate than if the conservative lower pixel-clock
+>>>> rate is selected. The fixed patch has the logic the other way around and
+>>>> actually prefers the higher frequency. Fix that.
+>>>>
+>>>> Fixes: f6f7ad323461 ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
+>>>> Reported-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+>>>> Signed-off-by: Peter Rosin <peda@axentia.se>
+>>>> ---
+>>>>  drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 4 ++--
+>>>>  1 file changed, 2 insertions(+), 2 deletions(-)
+>>>>
+>>>> diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+>>>> index 9e34bce089d0..03691845d37a 100644
+>>>> --- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+>>>> +++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+>>>> @@ -120,8 +120,8 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
+>>>>                 int div_low = prate / mode_rate;
+>>>>
+>>>>                 if (div_low >= 2 &&
+>>>> -                   ((prate / div_low - mode_rate) <
+>>>> -                    10 * (mode_rate - prate / div)))
+>>>> +                   (10 * (prate / div_low - mode_rate) <
+>>>> +                    (mode_rate - prate / div)))
+>>>
+>>> I tested it on my setup (I have only one of those specified above) and it
+>>> is OK. Doing some math for the other setup it should also be OK.
 >>
->> Cc: stable@vger.kernel.org
->> Reported-by: Alexandru Elisei <alexandru.elisei@arm.com>
->> Signed-off-by: Marc Zyngier <maz@kernel.org>
->> ---
->>  virt/kvm/arm/mmu.c | 21 +++++++++++++++++----
->>  1 file changed, 17 insertions(+), 4 deletions(-)
+>> Glad to hear it, and thanks for testing/verifying!
 >>
->> diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
->> index a48994af70b8..0b32a904a1bb 100644
->> --- a/virt/kvm/arm/mmu.c
->> +++ b/virt/kvm/arm/mmu.c
->> @@ -38,6 +38,11 @@ static unsigned long io_map_base;
->>  #define KVM_S2PTE_FLAG_IS_IOMAP		(1UL << 0)
->>  #define KVM_S2_FLAG_LOGGING_ACTIVE	(1UL << 1)
+>>> As a whole, I'm OK with this at the moment (let's hope it will work for all
+>>> use-cases) but still I am not OK with selecting here, in the driver,
+>>> something that might work.
 >>
->> +static bool is_iomap(unsigned long flags)
->> +{
->> +	return flags & KVM_S2PTE_FLAG_IS_IOMAP;
->> +}
->> +
->
-> nit: I'm not really sure this indirection makes the code more 
-> readable,
-> but I guess that's a matter of taste.
->
->>  static bool memslot_is_logging(struct kvm_memory_slot *memslot)
->>  {
->>  	return memslot->dirty_bitmap && !(memslot->flags & 
->> KVM_MEM_READONLY);
->> @@ -1698,6 +1703,7 @@ static int user_mem_abort(struct kvm_vcpu 
->> *vcpu, phys_addr_t fault_ipa,
+>> The driver has to select *something*. If it can deliver the exact requested
+>> frequency, fine. Otherwise? What should it do? Bail out? Why is 53MHz better
+>> and more likely to produce a picture than 66MHz, when 65MHz is requested?
+>> That's of course an impossible question for the driver to answer.
 >>
->>  	vma_pagesize = vma_kernel_pagesize(vma);
->>  	if (logging_active ||
->> +	    (vma->vm_flags & VM_PFNMAP) ||
->
-> WHat is actually the rationale for this?
->
-> Why is a huge mapping not permitted to device memory?
->
-> Are we guaranteed that VM_PFNMAP on the vma results in device 
-> mappings?
-> I'm not convinced this is the case, and it would be better if we can
-> stick to a single primitive (either kvm_is_device_pfn, or VM_PFNMAP) 
-> to
-> detect device mappings.
-
-For now, I've tried to keep the two paths that deal with mapping 
-devices
-(or rather, things that we interpret as devices) as close as possible.
-If we drop the "eager" mapping, then we're at liberty to restructure
-this in creative ways.
-
-This includes potential huge mappings, but I'm not sure the rest of the
-kernel uses them for devices anyway (I need to find out).
-
-> As a subsequent patch, I'd like to make sure that at the very least 
-> our
-> memslot prepare function follows the exact same logic for mapping 
-> device
-> memory as a fault-in approach does, or that we simply always fault 
-> pages
-> in.
-
-As far as I can see, the two approach are now identical. Am I missing 
-something?
-And yes, getting rid of the eager mapping works for me.
-
->
->>  	    !fault_supports_stage2_huge_mapping(memslot, hva, 
->> vma_pagesize)) {
->>  		force_pte = true;
->>  		vma_pagesize = PAGE_SIZE;
->> @@ -1760,6 +1766,9 @@ static int user_mem_abort(struct kvm_vcpu 
->> *vcpu, phys_addr_t fault_ipa,
->>  			writable = false;
->>  	}
+>> So, if you are not ok with that, you need to implement something that uses
+>> the min/max fields from the various fields inside struct display_timing
+>> instead of only looking at the typ field. E.g. the panel_lvds driver calls
+>> videomode_from_timings() and the result is a single possible mode with only
+>> the typical timings, with no negotiation of the best option within the
+>> given ranges with the other drivers involved with the pipe. I think the
+>> panel-simple driver also makes this one-sided decision of only making use
+>> of the typ field for each given timing range. Having dabbled a bit in what
+>> the sound stack does to negotiate the sample rate, sample format and
+>> channel count etc, I can only predict that retrofitting something like that
+>> for video modes will be ... interesting. Which is probably why it's not
+>> done at all, at least not in the general case.
 >>
->> +	if (exec_fault && is_iomap(flags))
->> +		return -ENOEXEC;
->> +
->
-> nit: why don't you just do this when checking kvm_is_device_pfn() and
-> avoid having logic in two places to deal with this case?
-
-Good point. I've already sent the PR, but that could be a further 
-cleanup.
-
->
->>  	spin_lock(&kvm->mmu_lock);
->>  	if (mmu_notifier_retry(kvm, mmu_seq))
->>  		goto out_unlock;
->> @@ -1781,7 +1790,7 @@ static int user_mem_abort(struct kvm_vcpu 
->> *vcpu, phys_addr_t fault_ipa,
->>  	if (writable)
->>  		kvm_set_pfn_dirty(pfn);
+>> And yes, I agree, the current mechanics are less than ideal. But I have no
+>> time to do anything about it.
 >>
->> -	if (fault_status != FSC_PERM)
->> +	if (fault_status != FSC_PERM && !is_iomap(flags))
->>  		clean_dcache_guest_page(pfn, vma_pagesize);
+>>>                            Although I am not familiar with how other DRM
+>>> drivers are handling this kind of scenarios. Maybe you and/or other DRM
+>>> guys knows more about it.
 >>
->>  	if (exec_fault)
->> @@ -1948,9 +1957,8 @@ int kvm_handle_guest_abort(struct kvm_vcpu 
->> *vcpu, struct kvm_run *run)
->>  	if (kvm_is_error_hva(hva) || (write_fault && !writable)) {
->>  		if (is_iabt) {
->>  			/* Prefetch Abort on I/O address */
->> -			kvm_inject_pabt(vcpu, kvm_vcpu_get_hfar(vcpu));
->> -			ret = 1;
->> -			goto out_unlock;
->> +			ret = -ENOEXEC;
->> +			goto out;
->>  		}
+>> I don't know (and I mean it literally), but maybe these chips are special
+>> as they typically end up with very small dividers and thus large frequency
+>> steps? BTW, I do not consider myself a DRM guy, I have only tried to
+>> fix that which did not work out for our needs...
 >>
->>  		/*
->> @@ -1992,6 +2000,11 @@ int kvm_handle_guest_abort(struct kvm_vcpu 
->> *vcpu, struct kvm_run *run)
->>  	ret = user_mem_abort(vcpu, fault_ipa, memslot, hva, fault_status);
->>  	if (ret == 0)
->>  		ret = 1;
->> +out:
->> +	if (ret == -ENOEXEC) {
->> +		kvm_inject_pabt(vcpu, kvm_vcpu_get_hfar(vcpu));
->> +		ret = 1;
->> +	}
->>  out_unlock:
->>  	srcu_read_unlock(&vcpu->kvm->srcu, idx);
->>  	return ret;
->> --
->> 2.20.1
+>>> Just as a notice, it may worth adding a print message saying what was
+>>> frequency was requested and what frequency has been setup by driver.
 >>
->
-> I can't seem to decide for myself if I think there's a sematic
-> difference between trying to execute from somewhere the VMM has
-> explicitly told us is device memory and from somewhere which we 
-> happen
-> to have mapped with VM_PFNMAP from user space.  But I also can't seem 
-> to
-> really fault it (pun intended).  Thoughts?
+>> I have no problem with that.
+> 
+> Hi Peter,
+> 
+> I intend to prepare my v2 of this series. How would you like to proceed
+> with the patch you provided? Are you OK if I add it to my v2 of this series
+> or would you prefer to send it on your own?
 
-The issue is that the VMM never really tells us whether something is a
-device mapping or not (the only exception being the GICv2 cpuif). Even
-with PFNMAP, we guess it (it could well be memory that lives outside
-of the linear mapping). I don't see a way to lift this ambiguity.
+It would be awesome if you shepherd it for me, thanks!
 
-Ideally, faulting on executing a non-mapping should be offloaded to
-userspace for emulation, in line with your patches that offload
-non-emulated data accesses. That'd be a new ABI, and I can't imagine
-anyone willing to deal with it.
-
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
-
+Cheers,
+Peter
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
