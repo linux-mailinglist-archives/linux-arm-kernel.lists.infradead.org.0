@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B802A11DA9B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 01:09:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DC6F11DAA9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 01:09:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=irPHWr6sO6Ps86MFoglgaYv+y4ijvmu7ErvkMCP5JoY=; b=bVa1nV+tezf5ii
-	GyCri4B31THHg2ROmlK03mnaD2rN2o9DgBGdN/S6+0FvTuEv7gNOrWzpfHg1OeiM03b2CMPsXyw7M
-	dLdi/0TvdaD0ZHrWWhC9uKhfXTULqe32p6gWj3bufWTv0qDxtm+JTzsF3tMmJDqAW2XY9sAzLLd04
-	TcOKHAjKUfxkMYQQ03S6/nbkbin3CTZ0o24wPAa0nad9mJ6zswhZfJsY6A9Pxm948zh92pvs2R6G1
-	FlgF+JLkrOw2CnX3xcDMShTwdYw7TuYio52Iii0g5sAZcvUsgLZpmw9DlBsudtCmtWDfVMODGngHC
-	erpfIigASTg3VlGQRyhA==;
+	List-Owner; bh=6EK5vhQ+jJEeVPSM/K3gdVDQmqvQmDvukJPDAeDpGxo=; b=Y6yJCLGUJdTN+9
+	oVs7T28J1MEr+wHRQCuhsMW+6SmhA0lMy1zmALZGaSe9JfZfgQaLPWtNa+WHRDOWxV7e8XoAsiZvv
+	l2MIR5bX2jbnBlJqOPohRd/2vVs01uvGuuxzK4v7CaruHS+yZf6CfNW6py1JPlhzIJDn0YbDI06GU
+	g0W1mczbbXbiPRPc/l17vvU1NVo8TdxYejDo9Jer9V8Ue1NTV3JzjPwpZe8YaHDNAU/GsFkKJVNQ8
+	a9ySmuJoADxIalu2w9w2IenrqMFj3Q9wbvV0NkqWqYat7dRoy3WcmIjrkVS0J3Fa6qT5y+N1M41rC
+	xfcoLQ91NfOdYYpmQMqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifYVs-00056G-1S; Fri, 13 Dec 2019 00:08:56 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1ifYWA-0005PP-3B; Fri, 13 Dec 2019 00:09:14 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifYV9-0004Ub-Mj
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 00:08:15 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id o11so335230pjp.9
+ id 1ifYVF-0004aS-7K
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 00:08:19 +0000
+Received: by mail-pf1-x442.google.com with SMTP id h14so376620pfe.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Dec 2019 16:08:11 -0800 (PST)
+ Thu, 12 Dec 2019 16:08:17 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=arista.com; s=googlenew;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=T7vj+qwFtP7xVmHBgaa06jNzp38vBtMsISF/N9QYy00=;
- b=QCtRZf+DpfijvCDxwWd0IInXC860Nhs1gnLTLXGzQrEyny0IANF6c+HSGP+7/iHmdU
- DM5EdeqGyMXymv4UANFp1Z+5EsiHLvgA6yQ+XcMwy+PTcU7R7QFRT2hVgHWVQ/j363l8
- BgI12yjHkE8/3iqxZ3W2zBJMKdvk4VHuyqHjOre1o03hbAnZy/wYG5+qne5I+RuQXv4x
- 6O5l4VOyLvv304hUlJOOE+OQBsUq2Uci45yCHYWyQpxJJ/Rqm2pwQa1A9i1DIc80NKuk
- J9YnQDJtbDSrO/95A7qkhUTtDFXEIcXzu6MQ32q41T9H333pdp1QRtBVdj0+kRMAtNdK
- zuzw==
+ bh=Uk3TZICnk6L8+YQsKzp4vXh6Lz+AHFrWnELXXHSVLmg=;
+ b=MEiquop+dWgeX+dUKlkKtAa/DS84d2iq6ZW3M0G1Psp+yW+8kVNAYH6uQjsPE6JJ5i
+ za7C7kyKxoDAA2dn0siHaxDAEijdX3Pcmou7RQYXmgc4vMF/39b3nBwSAnB7xRC9myN9
+ t2TD35xkpGzZz9eHkb5uaIx/Jki9YMY0Hxw/TQqUh0/FAtfLYZcdkHvXPq0eFyvHHyeu
+ HfjUzcroMqSh7D6/IYRUpsyQDt3CqfFUX+Pm8BoUYGT88RmIXIFDxmWn6vlIye7C2QGn
+ 2HwQ81fDPi+rbdnS+9f0Y7tr9+nNMau4z5t+HuFuO6XZeNFTOvveWSvDx00bm7lseGgW
+ KJwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=T7vj+qwFtP7xVmHBgaa06jNzp38vBtMsISF/N9QYy00=;
- b=gSiV7p3JIYfDkIPynl1Q1tOGPhSU6zNd+8+n4aRTdxeulUFwkVDJrk8Xppa1kjuuL1
- mZDp8vvznZVxP5g1D1ZDV+wocCayRjLfeZUAyBppEHCHXy6mhOVMCTnFtgaqu3JCbmuR
- mm8+l+LnCqa1Of3+U/kAUnHAjUnYlEabFtvovLhSWe6/NFoyi+B6MuuljXnTgevyZNcw
- 3HpgUl6ectukkGovYSxm7h4b6eznFPno7SxX45v3dLkffD8AdwZ4qf8s2qjijPnwZcB5
- We1qcdCn0J5iKNDOWiwPehZtQJH7yf6QjAXrJOZ7YkU3pzf1+dIJe3vSVj2YGDAGdLRE
- i7vg==
-X-Gm-Message-State: APjAAAUdQiV/X1eroSXL71oaj4YMWcJN3w+7n8S7nJoz+sMKlUvxVvTZ
- 4XeSjpeUoJTr1cA2xmDkrSUjPA==
-X-Google-Smtp-Source: APXvYqwLlbH3BL8PWw8R26CwvErqXpqt7+6m7DaqfHW7yx/zTlishWw5KaaIcP1V5keny7voOTKrsA==
-X-Received: by 2002:a17:902:9a02:: with SMTP id
- v2mr12665787plp.221.1576195690418; 
- Thu, 12 Dec 2019 16:08:10 -0800 (PST)
+ bh=Uk3TZICnk6L8+YQsKzp4vXh6Lz+AHFrWnELXXHSVLmg=;
+ b=s0OY0IewP/EBQJEJ9KGCn2QLNMWAF0xIVm6pfNzYhR0Yldne8S94sexnIIj79qFNye
+ Z1WtY1rKNartNVpk5Y/CN0uOtki4NHWaK1StP0WdV99SiKm6xrEcgLuVfTpavkiPa+MR
+ 5Tf0zg30gZ65uajd9Ial/M+YUYfT1OLkDGfHpNTuTXgCw27Klt9WlTphSGrrQVohjflO
+ wW+PikIuC0YaqV64KJ/KN5xyUexgQ+PC7QeOjKQf5rM+uCXfKCjAkgSMt014jYugOhQ3
+ OCqYiuO/WmHuIktKnJ3SQHNHyZHQtlvK4IZG8lA/t8xsOKhBFbUbgOUlKVnlcesgWe97
+ 7f0Q==
+X-Gm-Message-State: APjAAAUWmfH+EmA1HHEjQqo8wWGLiMM+XJgHpROHnQcjs50l/sCBZ2wr
+ tdkXB0H1K47Hwq+h+FfWzyAt9w==
+X-Google-Smtp-Source: APXvYqzavE1+kkQp1uQB6Awu3jk2+Wse3GRBkbNukVGHGUDFeOheGMh3MBohyrMn3SZ2woUxcYQijQ==
+X-Received: by 2002:a63:ca4d:: with SMTP id o13mr13550977pgi.360.1576195696496; 
+ Thu, 12 Dec 2019 16:08:16 -0800 (PST)
 Received: from Mindolluin.ire.aristanetworks.com ([217.173.96.166])
- by smtp.gmail.com with ESMTPSA id j38sm8317647pgj.27.2019.12.12.16.08.07
+ by smtp.gmail.com with ESMTPSA id j38sm8317647pgj.27.2019.12.12.16.08.13
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Dec 2019 16:08:09 -0800 (PST)
+ Thu, 12 Dec 2019 16:08:15 -0800 (PST)
 From: Dmitry Safonov <dima@arista.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 19/58] tty/serial: Migrate imx to use has_sysrq
-Date: Fri, 13 Dec 2019 00:06:18 +0000
-Message-Id: <20191213000657.931618-20-dima@arista.com>
+Subject: [PATCH 21/58] tty/serial: Migrate meson_uart to use has_sysrq
+Date: Fri, 13 Dec 2019 00:06:20 +0000
+Message-Id: <20191213000657.931618-22-dima@arista.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191213000657.931618-1-dima@arista.com>
 References: <20191213000657.931618-1-dima@arista.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_160811_807414_E15F94EA 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20191212_160817_274946_46EE06B4 
+X-CRM114-Status: GOOD (  10.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -96,14 +98,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vasiliy Khoruzhick <vasilykh@arista.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Dmitry Safonov <dima@arista.com>,
+Cc: Vasiliy Khoruzhick <vasilykh@arista.com>, Dmitry Safonov <dima@arista.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Dmitry Safonov <0x7f454c46@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>, linux-serial@vger.kernel.org,
- Jiri Slaby <jslaby@suse.com>, Shawn Guo <shawnguo@kernel.org>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+ Dmitry Safonov <0x7f454c46@gmail.com>, Kevin Hilman <khilman@baylibre.com>,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -118,50 +117,37 @@ The SUPPORT_SYSRQ ifdeffery is not nice as:
 In order to remove SUPPORT_SYSRQ, has_sysrq variable has been added.
 Initialise it in driver's probe and remove ifdeffery.
 
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>
-Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Kevin Hilman <khilman@baylibre.com>
 Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org
 Signed-off-by: Dmitry Safonov <dima@arista.com>
 ---
- drivers/tty/serial/imx.c | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
+ drivers/tty/serial/meson_uart.c | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
-index a9e20e6c63ad..83c6e2ac0e8d 100644
---- a/drivers/tty/serial/imx.c
-+++ b/drivers/tty/serial/imx.c
-@@ -8,10 +8,6 @@
-  * Copyright (C) 2004 Pengutronix
+diff --git a/drivers/tty/serial/meson_uart.c b/drivers/tty/serial/meson_uart.c
+index fbc5bc022a39..12e15358554c 100644
+--- a/drivers/tty/serial/meson_uart.c
++++ b/drivers/tty/serial/meson_uart.c
+@@ -5,10 +5,6 @@
+  * Copyright (C) 2014 Carlo Caione <carlo@caione.org>
   */
  
--#if defined(CONFIG_SERIAL_IMX_CONSOLE) && defined(CONFIG_MAGIC_SYSRQ)
+-#if defined(CONFIG_SERIAL_MESON_CONSOLE) && defined(CONFIG_MAGIC_SYSRQ)
 -#define SUPPORT_SYSRQ
 -#endif
 -
- #include <linux/module.h>
- #include <linux/ioport.h>
- #include <linux/init.h>
-@@ -779,9 +775,7 @@ static irqreturn_t imx_uart_rxint(int irq, void *dev_id)
- 			if (rx & URXD_OVRRUN)
- 				flg = TTY_OVERRUN;
- 
--#ifdef SUPPORT_SYSRQ
- 			sport->port.sysrq = 0;
--#endif
- 		}
- 
- 		if (sport->port.ignore_status_mask & URXD_DUMMY_READ)
-@@ -2231,6 +2225,7 @@ static int imx_uart_probe(struct platform_device *pdev)
- 	sport->port.iotype = UPIO_MEM;
- 	sport->port.irq = rxirq;
- 	sport->port.fifosize = 32;
-+	sport->port.has_sysrq = IS_ENABLED(CONFIG_SERIAL_IMX_CONSOLE);
- 	sport->port.ops = &imx_uart_pops;
- 	sport->port.rs485_config = imx_uart_rs485_config;
- 	sport->port.flags = UPF_BOOT_AUTOCONF;
+ #include <linux/clk.h>
+ #include <linux/console.h>
+ #include <linux/delay.h>
+@@ -703,6 +699,7 @@ static int meson_uart_probe(struct platform_device *pdev)
+ 	port->mapsize = resource_size(res_mem);
+ 	port->irq = res_irq->start;
+ 	port->flags = UPF_BOOT_AUTOCONF | UPF_LOW_LATENCY;
++	port->has_sysrq = IS_ENABLED(CONFIG_SERIAL_MESON_CONSOLE);
+ 	port->dev = &pdev->dev;
+ 	port->line = pdev->id;
+ 	port->type = PORT_MESON;
 -- 
 2.24.0
 
