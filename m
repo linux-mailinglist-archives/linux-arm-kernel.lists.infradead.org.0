@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B742811EE7A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 00:26:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6C0411EE87
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 00:29:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PxCaTSS4CikZ/jVakK9x1bAQeaMh3wc75MJ7Q+CgBX0=; b=u75lAGiuyzt7Zq
-	NHRjhqP22IhFxCznnfbtrE1ZYjufAc/th0/s2oaXkf20UQB+PCZiyt9rny4dUapPYgZyUYOI3UEkl
-	oeSCsZ6w5PZCfgO/97/WQVBv/eyu20onWMf0SqNFEyQCaYUPJgdHBdk2eptq/eHKde///guFwPiB+
-	MRg1FwP8K515ZXfTuMVbAg7llVJBET+ne1rG7zRa1Sz1spfb3oxiH+3pHB1JAEub7plWZZRaoVUrD
-	wnDpEUTl0u+DVFlabbFYklFhVujPWcCODdtumXk23xSOnrSS25smxia/cmtx6sxMz20wENtVVOgOs
-	p5IdHqlR2K3CHXM82afg==;
+	List-Owner; bh=ACg1HZJj0M+WdJ1c84hx8HUZ5lOOgyVftBeo1BGNzAI=; b=NC8D5kjaPJUeFt
+	a7xrCRL+4pAnY/YpbPjT1VLS34O8yZdtwl2Hjxm4xJFkfoAmmap3AV4KTaoD3y36WLNBdtI3sE3Qh
+	LEAcMZooTzylVO35hDfmp02hPw+0gsbww4buyu66siJvg5P1xWbMirUFICR2uN6v6xm3pQ9rWKIir
+	rKELPcKCxI53KOFiRGs/kCgqPb0IATd3KeQULzems/yk32rlhAIWyI6BA2f1B4QiKPvWDFtnK627k
+	q2atvUo90rhU7SzT1UK8F41nGbuLUWh9LyFPAxuNcT8+bZyUjkYxoi3NsyhMqdA5TaXZ709r0qF3I
+	82JFSmXXmfODhbwaVKfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifuKe-0002Bj-CL; Fri, 13 Dec 2019 23:26:48 +0000
+	id 1ifuNc-0002bb-V2; Fri, 13 Dec 2019 23:29:52 +0000
 Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifuKS-0002BF-KT
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 23:26:37 +0000
-Received: by mail-oi1-f193.google.com with SMTP id j22so2057780oij.9
+ id 1ifuNQ-0002b0-Ge
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 23:29:41 +0000
+Received: by mail-oi1-f193.google.com with SMTP id l136so2099843oig.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 15:26:36 -0800 (PST)
+ Fri, 13 Dec 2019 15:29:40 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9tBcNOCxqPdqixtTHmzQKgwSJzOr34ZtfeLXIY6339k=;
- b=tCtZD6RD8P4BpZmSHUQ0Pfknw76LgF6bZBU4VEJcQFjg4Ugc4N/a1nad7evne0BHGB
- nBkgtHvQ+SWOx6kUoBGer0l8nWBltOv+6UPHUjjqqtSeyaaD2JZdR5PcqvA7Sxs5Yjdt
- 3klfy1wLasFK7+auz5IufmF9sa+8H/dlojwEL0yWmeI1qXS7LwrroF7lu3re9Arsy6Tq
- 1nmouQIRlg6j/e5hqANp7kLfN60BvA6VKGQr2HZPjnPByuIxOzJ+OaEZUVEWpXab0K+q
- 5+krPfYUx58Zytu8uKd+13L/uXQ16uf4l2E+tXyOsxmCIVapC3NoGkBg1ogjTTpEtZ16
- n2wQ==
-X-Gm-Message-State: APjAAAU5ZQbQpY0GoJk5U1p0JENKoLphkBXJti9D+egALgsooYuX6jP6
- vSmknTz9mxiujqkJQph+hBGMsSE=
-X-Google-Smtp-Source: APXvYqwNYGgD2lL8HkWOAPYgLrNju3VL3N1vf+LrHhWb+bLnt1opXtXZP9zsrWmQ8iKm2ZyeU5xyfQ==
-X-Received: by 2002:a05:6808:102:: with SMTP id
- b2mr8248272oie.127.1576279595637; 
- Fri, 13 Dec 2019 15:26:35 -0800 (PST)
+ bh=m7ZDoVimtRbppkq3mXaQzzU3mfgleq0CeC6M4xh1UDQ=;
+ b=ox+JwD3qDxVbsZBINvN8TACj1XwJ1QEWgI+2tsOo2rRIhqPu/TH9Dj9ZE1MOEyTWu2
+ WPgWyXgOplkN1sCB2cSS35EJ8uhq2qhACHqXY9MsMdoAH3h4iL0zvH735sw0WYu6uSHF
+ DU8PuCCfJnOx2Q32Vf7yK99bZYlKISVPfDZphIlMAvodYzT6NhhDx3MPE+WAIB6ta4aZ
+ SHxy1BmnIleBVdJ9XdOKvwl+CmiqjV/vhmTrHnnud+LJnMsBnPGhcSsXrcjEY5CM+NSp
+ nDihL8pFtad/pSZa9IEO/t6tOo0QbzBFwB6x8TvCExE5Wz+q/HBRRRKxjRbTkJHGoBu7
+ j8Kw==
+X-Gm-Message-State: APjAAAWJhvoOBSGDvsh0e9YFRsYM6MTi740FOwUw9zSZRS4MFXZwrs9R
+ qKCf0bRfu7F31sAe7n5UCMam/B4=
+X-Google-Smtp-Source: APXvYqxxxXP3ATVpyq8gPqENQUD4uftWKFxljdXqs0fD2LDAfZJ7txJETyw1WR2Y8EXOFX8+Q3+Nmg==
+X-Received: by 2002:aca:4183:: with SMTP id o125mr7767626oia.125.1576279779822; 
+ Fri, 13 Dec 2019 15:29:39 -0800 (PST)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id l128sm3844610oif.55.2019.12.13.15.26.34
+ by smtp.gmail.com with ESMTPSA id q5sm3788415oia.21.2019.12.13.15.29.38
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Dec 2019 15:26:35 -0800 (PST)
-Date: Fri, 13 Dec 2019 17:26:34 -0600
+ Fri, 13 Dec 2019 15:29:38 -0800 (PST)
+Date: Fri, 13 Dec 2019 17:29:38 -0600
 From: Rob Herring <robh@kernel.org>
-To: gabriel.fernandez@st.com
-Subject: Re: [PATCH] dt-bindings: rcc: Convert stm32mp1 rcc bindings to
- json-schema
-Message-ID: <20191213232634.GA21711@bogus>
-References: <20191202150343.27854-1-gabriel.fernandez@st.com>
+To: "Angus Ainslie (Purism)" <angus@akkea.ca>
+Subject: Re: [PATCH] dt-bindings: vendor-prefixes: Add a broadmobi entry
+Message-ID: <20191213232938.GA26283@bogus>
+References: <20191202172203.11917-1-angus@akkea.ca>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191202150343.27854-1-gabriel.fernandez@st.com>
+In-Reply-To: <20191202172203.11917-1-angus@akkea.ca>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_152636_671973_17F5E5FD 
-X-CRM114-Status: GOOD (  10.16  )
+X-CRM114-CacheID: sfid-20191213_152940_554743_0A035C3B 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
@@ -92,30 +91,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Gabriel Fernandez <gabriel.fernandez@st.com>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, "Angus Ainslie \(Purism\)" <angus@akkea.ca>,
+ linux-kernel@vger.kernel.org,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2 Dec 2019 16:03:43 +0100, <gabriel.fernandez@st.com> wrote:
-> From: Gabriel Fernandez <gabriel.fernandez@st.com>
+On Mon,  2 Dec 2019 10:22:03 -0700, "Angus Ainslie (Purism)" wrote:
+> Add Shanghai Broadmobi Communication Technology Co.,Ltd. for their modem
+> dts entries.
 > 
-> Convert the STM32MP1 RCC binding to DT schema format using json-schema.
-> 
-> Signed-off-by: Gabriel Fernandez <gabriel.fernandez@st.com>
+> Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 > ---
->  .../bindings/clock/st,stm32mp1-rcc.txt        | 60 --------------
->  .../bindings/clock/st,stm32mp1-rcc.yaml       | 79 +++++++++++++++++++
->  2 files changed, 79 insertions(+), 60 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/clock/st,stm32mp1-rcc.txt
->  create mode 100644 Documentation/devicetree/bindings/clock/st,stm32mp1-rcc.yaml
+>  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
 
 Applied, thanks.
