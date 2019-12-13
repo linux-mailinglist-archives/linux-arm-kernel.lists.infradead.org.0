@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B54A911EC0F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 21:51:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 188EF11ECBB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 22:19:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PLnPYzue1KHaJVE/mmyEK6q0v9K/kE72uTH6aP4/MC8=; b=AwYmVMeNvfOpwM
-	x8D9ed/mAfajSvSahLPh1kHrmZprzIPttvTQWjdL5UV6WQ/5WondZ0h0CJhvmz9E3Ur4Et6SN8k0P
-	6zPWMtac6Tfwn0QUZAsD+v8c0AXajw+wGyuXGQ/4SYZ2wQIjcV6VjoEZ1iOZNwUCouPHdNji+OWOI
-	Ga6v+eo0WYfLnBqxMCxpr22m7bhnUgdHXFyquTlYsyH3NsUKUzxwgXN3y5nr9qwysfZwkjNfONXPt
-	ZRHR1/vgeDl+DKG6nGTK5k952OiPxfblnhg3xAHsa5U1al5JRCobAHKuJMOzbMLyIjUUU+xw0orQh
-	motGGs1woSCWpzdbmfPw==;
+	List-Owner; bh=AndJ82q/+FQ8p2AIObQoGpvHdF1Fdzrklur6qtAYvYY=; b=iXSMPdr3/QkR8j
+	uMWLRlBOylyuScUYBG+BSrCHhklO5yS5Hde/c6hsvBbLoy5bPAbkRoyfi3zqUIrov9+waApBk02ZQ
+	BrYEPUOVCz5L+ycwcdWh1dyjUj2ga+ic+qvLhoryaFQExRdvGm/XwLmyxZKHzoTQj3hUpDWPBpcuT
+	QVqNU+nMdt3P1u+JkCW2clpPbTUGzynWUhmmCXxpSe92o3YX4F5+3h1bcT/xRUqKuIedw/PmiTQ44
+	hWSi+vNmYbvlkdNRJUpUYqhJ2Z9KVw4pcTr7Qt0EL8/XHz333UJT9kIg+R0eNU+Klmo+W8GDFE0vZ
+	txwNTEbQ29x3HLBslYKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifru3-00009B-1a; Fri, 13 Dec 2019 20:51:11 +0000
+	id 1ifsLX-000338-LC; Fri, 13 Dec 2019 21:19:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifrtv-00008s-LI
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 20:51:05 +0000
-Received: from mail-qv1-f49.google.com (mail-qv1-f49.google.com
- [209.85.219.49])
+ id 1ifsLP-00032i-6P
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 21:19:28 +0000
+Received: from mail-qv1-f54.google.com (mail-qv1-f54.google.com
+ [209.85.219.54])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7E04624689
+ by mail.kernel.org (Postfix) with ESMTPSA id D27A420663
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 20:51:02 +0000 (UTC)
+ Fri, 13 Dec 2019 21:19:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576270262;
- bh=+dKkT9qss0TqkoVOkTkEq+PspUmRCwAnZfc5MFA4ENA=;
+ s=default; t=1576271966;
+ bh=jai15Z72z/o94nuRP3eB2l8cBu8i1br/bUFA9Yx9HFk=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=W/zY2QBDNrZoAyQi2h9xiIIpG5KVH+26UxJbi+0i/S/DJugOQcg7XK787XAVmZKgb
- IpTDpnRyffCD+2nB2CefjCV3/FoznaFUd7SFP42sh0F4Lr/G/zFQNwQLKmDL9Z8CAJ
- f0/jCj5vjNzOvzD8jTcxFgWnTgVpYvFCOlQC8aZA=
-Received: by mail-qv1-f49.google.com with SMTP id n8so279130qvg.11
+ b=Qc4XggrhPLzyc2WbZ/5DxhPc1XTPobtUZFnS4ELYK7CyEHh4W39kPEKwZTnAgJp7B
+ E+fxk3fX0IOT6QiHrVoNqXIsmA3BwwUl1fSzzYH1a4qLw5GNBiIVUyOFvK334rGRWV
+ 6ycmlqI0njA3A2NCryBh88KdOhuklQG++7DO04qM=
+Received: by mail-qv1-f54.google.com with SMTP id t5so327625qvs.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 12:51:03 -0800 (PST)
-X-Gm-Message-State: APjAAAU2zZGCsUbGDhPpbw5w35F8P/tIHE2QqWNCvuixf2HcyiMeirb4
- 5euWqumCi7UHON7Q6CrpYNrdloGph4qVZDzj0g==
-X-Google-Smtp-Source: APXvYqyB90WtC9yvdYd6CmgFqz44rFwwJP+EgXqkcen8gQAUWJSXIFADvOtFxe2f6ycbB1XDnFfJpLpI9ICEyUjapLU=
-X-Received: by 2002:a0c:f68f:: with SMTP id p15mr13564621qvn.79.1576250763417; 
- Fri, 13 Dec 2019 07:26:03 -0800 (PST)
+ Fri, 13 Dec 2019 13:19:26 -0800 (PST)
+X-Gm-Message-State: APjAAAVOIYp9T+LoF5p5tGeWrwNlfMyFEpJePXZHCIX1Fhir0DAwduVk
+ VaV/psdWA4yLBpV5HatXGL/jhK7FT6MN1+Z74q0=
+X-Google-Smtp-Source: APXvYqzL/zuv9na7RTUnc+WEI76bRQtaD2KXswqsZ3zbI4Xp1HjAVlOa2s6VJL4ANENtayAjVtUyjbjvvj97VcJA6V0=
+X-Received: by 2002:ad4:4dc3:: with SMTP id cw3mr14415205qvb.130.1576257310506; 
+ Fri, 13 Dec 2019 09:15:10 -0800 (PST)
 MIME-Version: 1.0
-References: <20191213074055.26193-1-maxime@cerno.tech>
-In-Reply-To: <20191213074055.26193-1-maxime@cerno.tech>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 13 Dec 2019 09:25:51 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLxGe9sWrTdZhuT69o_LBxQTi6TxcbT28WdC1gsPw5+fQ@mail.gmail.com>
-Message-ID: <CAL_JsqLxGe9sWrTdZhuT69o_LBxQTi6TxcbT28WdC1gsPw5+fQ@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: media: Convert Allwinner hardware codec to a
- schema
-To: Maxime Ripard <maxime@cerno.tech>
+References: <06448242d336c3bd1dda8ca0a5aa232e@codeaurora.org>
+In-Reply-To: <06448242d336c3bd1dda8ca0a5aa232e@codeaurora.org>
+From: Josh Boyer <jwboyer@kernel.org>
+Date: Fri, 13 Dec 2019 12:14:59 -0500
+X-Gmail-Original-Message-ID: <CA+5PVA4roUT3YF7wV4peQRCfGefsZCsrwD9J_SWpDoMy+sz4GQ@mail.gmail.com>
+Message-ID: <CA+5PVA4roUT3YF7wV4peQRCfGefsZCsrwD9J_SWpDoMy+sz4GQ@mail.gmail.com>
+Subject: Re: qcom: add firmware file for Venus on SC7180
+To: dikshita@codeaurora.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_125103_721663_341FD091 
-X-CRM114-Status: GOOD (  17.11  )
+X-CRM114-CacheID: sfid-20191213_131927_256281_7ECC7DE3 
+X-CRM114-Status: GOOD (  18.72  )
 X-Spam-Score: -4.1 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-4.1 points)
@@ -87,47 +86,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
+Cc: Stanimir Varbanov <stanimir.varbanov@linaro.org>,
+ Linux Firmware <linux-firmware@kernel.org>,
+ Mauro Carvalho Chehab <mchehab@infradead.org>,
+ linux-media-owner@vger.kernel.org, Alexandre Courbot <acourbot@google.com>,
+ linux-arm-kernel@lists.infradead.org,
  Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 13, 2019 at 1:41 AM Maxime Ripard <maxime@cerno.tech> wrote:
+On Wed, Dec 11, 2019 at 3:37 AM <dikshita@codeaurora.org> wrote:
 >
-> The Allwinner SoCs have a hardware video codec that is supported in Linux,
-> with a matching Device Tree binding.
 >
-> Now that we have the DT validation in place, let's convert the device tree
-> bindings for that controller over to a YAML schemas.
+> This pull request adds firmware files for Venus h/w codec found on the
+> Qualcomm SC7180 Chipset
 >
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> ---
->  .../allwinner,sun4i-a10-video-engine.yaml     | 83 +++++++++++++++++++
->  .../devicetree/bindings/media/cedrus.txt      | 57 -------------
->  2 files changed, 83 insertions(+), 57 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml
->  delete mode 100644 Documentation/devicetree/bindings/media/cedrus.txt
+> The following changes since commit
+> e8a0f4c9314754d8b2cbe9840357d88a861c438a:
 >
-> diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml
-> new file mode 100644
-> index 000000000000..47c8513555b2
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml
-> @@ -0,0 +1,83 @@
-> +# SPDX-License-Identifier: GPL-2.0+
+>    rtl_nic: add firmware rtl8168fp-3 (2019-11-18 16:16:01 -0500)
+>
+> are available in the git repository at:
+>
+>    https://github.com/dikshitaagarwal/video_firmware_5.4.git master
+>
+> for you to fetch changes up to e10ed2126e33582c6c9c5896ca7c16907980784c:
+>
+>    qcom: update venus firmware files for v5.4 (2019-12-11 13:53:22 +0530)
+>
+> ----------------------------------------------------------------
+> Dikshita Agarwal (1):
+>        qcom: update venus firmware files for v5.4
+>
+>   WHENCE                   |  10 ++++++++++
+>   qcom/venus-5.4/venus.b00 | Bin 0 -> 212 bytes
+>   qcom/venus-5.4/venus.b01 | Bin 0 -> 6808 bytes
+>   qcom/venus-5.4/venus.b02 | Bin 0 -> 870812 bytes
+>   qcom/venus-5.4/venus.b03 | Bin 0 -> 33792 bytes
+>   qcom/venus-5.4/venus.b04 |   1 +
+>   qcom/venus-5.4/venus.mbn | Bin 0 -> 916924 bytes
+>   qcom/venus-5.4/venus.mdt | Bin 0 -> 7020 bytes
+>   8 files changed, 11 insertions(+)
+>   create mode 100644 qcom/venus-5.4/venus.b00
+>   create mode 100644 qcom/venus-5.4/venus.b01
+>   create mode 100644 qcom/venus-5.4/venus.b02
+>   create mode 100644 qcom/venus-5.4/venus.b03
+>   create mode 100644 qcom/venus-5.4/venus.b04
+>   create mode 100644 qcom/venus-5.4/venus.mbn
+>   create mode 100644 qcom/venus-5.4/venus.mdt
 
-Do you have rights to change the license (adding '+' aka '-or-later')?
-If so, please add BSD-2-Clause. I don't have any other comments, so
-just confirm and I can change it when applying.
+Pulled.  kernel.org is down right now but I'll push it out when it's back up.
 
-Rob
+josh
 
 _______________________________________________
 linux-arm-kernel mailing list
