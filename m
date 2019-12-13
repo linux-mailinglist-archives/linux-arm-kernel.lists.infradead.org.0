@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8A2511E9E3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:12:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18C9111E9E4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:12:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uat+6SkD80dAe+rlqvK1+dO1Rc26D+TvwAGC+w6JDYI=; b=o3bBZLY5lqUj8i
-	CQq7TR2yQv4FpWbwr448dOw+pfccJcgbNa6Uz12U7ezetzNqA+pLyj/4zfqfTbQ+XQyGjjTNSkzLQ
-	ruVhclR20ShfYUqv+XYyYK93t2yKruLJzE8Hns0uPPVTC6lTlACkHVDwBKebqx61hohWOhCXbt1vB
-	7GIKtcwpJTYX8Lbmt2BOCeiOMrZ0biH4DZCkFscNkeaKVphoFqFffRwVqhkoiBjA1Ujfi8QzSW6xW
-	X8q6scPgQi6KmkCdVuRWj8qAYOUbCsDfrVruKs0C4Qsklrwjv51dMJ2SwEaSsQcjJ+tw7qr8TrtlT
-	gHJFbzHp6c5q5BM3X+Bw==;
+	List-Owner; bh=YABDTu+MTmAUBhdOT6VVtC2KpvId1acpFPzHFwacW4g=; b=lsPhUyajks6EOE
+	oJNuL8rkFqfkgIIXc1KibC4MWP5hUj19whm5qMJt5/N55YkRVVrLD+DrXUiB7bUbY6ULdNyzTefHV
+	3HVAJ/y8vZLMX3uZuqOtBuICzdC+0jaW5gPtxaoq8/Z1wUeMeBuoL15THmajPksZvNgaNMMoufAY6
+	v0a8VexAZre8UeOzRLps2zOqc/AdDjTkvGAfSUuFCvK9qij+pJoi79XHXOSqRb69ZnnvHucMVBf2X
+	VVjQS+M3jRaOcQ1dHQ87fyWMEOjgVhSM/k3YgueT8DtogCd/j08jY6Ylf0X8qWF//4s6PCjzB304/
+	M2SI52ezZO1COqa+AuLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifpQV-00014y-0Z; Fri, 13 Dec 2019 18:12:31 +0000
+	id 1ifpQq-0001OP-3B; Fri, 13 Dec 2019 18:12:52 +0000
 Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifpP7-0008MX-CR; Fri, 13 Dec 2019 18:11:07 +0000
+ id 1ifpP9-0008OT-Qt; Fri, 13 Dec 2019 18:11:10 +0000
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id E99D9200005;
- Fri, 13 Dec 2019 18:11:01 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id A4950200012;
+ Fri, 13 Dec 2019 18:11:03 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  <devicetree@vger.kernel.org>, Heiko Stuebner <heiko@sntech.de>,
  <linux-rockchip@lists.infradead.org>, Daniel Vetter <daniel@ffwll.ch>,
  David Airlie <airlied@linux.ie>, Sandy Huang <hjc@rock-chips.com>
-Subject: [PATCH 04/12] drm/rockchip: lvds: Harmonize function names
-Date: Fri, 13 Dec 2019 19:10:43 +0100
-Message-Id: <20191213181051.25983-5-miquel.raynal@bootlin.com>
+Subject: [PATCH 05/12] drm/rockchip: lvds: Change platform data
+Date: Fri, 13 Dec 2019 19:10:44 +0100
+Message-Id: <20191213181051.25983-6-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191213181051.25983-1-miquel.raynal@bootlin.com>
 References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_101105_712885_A9555A3B 
-X-CRM114-Status: GOOD (  13.38  )
+X-CRM114-CacheID: sfid-20191213_101108_140094_C63C2AF8 
+X-CRM114-Status: GOOD (  15.46  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -72,278 +72,134 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Prepare the introduction of PX30 support by clarifying the function
-prefixes.
-
-We continue to prefix with 'rockchip_lvds_' generic functions that are
-not specific to a single hardware. Functions implying hardware
-modifications are now prefixed with 'rk3288_lvds_'.
+Prepare the introduction of PX30 support by using
+drm_encoder_helper_funcs as platform data instead of multiple register
+names which are specific to rk3288 and not generic to all Rockchip
+IPs. This way adding support for a new flavor of a similar IP will be
+a matter of adding the relevant helper funcs.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- drivers/gpu/drm/rockchip/rockchip_lvds.c | 138 ++++++++++++-----------
- 1 file changed, 73 insertions(+), 65 deletions(-)
+ drivers/gpu/drm/rockchip/rockchip_lvds.c | 32 ++++++++----------------
+ drivers/gpu/drm/rockchip/rockchip_lvds.h |  3 +++
+ 2 files changed, 14 insertions(+), 21 deletions(-)
 
 diff --git a/drivers/gpu/drm/rockchip/rockchip_lvds.c b/drivers/gpu/drm/rockchip/rockchip_lvds.c
-index 8a4c9af0ba73..34e5d0b1172e 100644
+index 34e5d0b1172e..262fec61eb78 100644
 --- a/drivers/gpu/drm/rockchip/rockchip_lvds.c
 +++ b/drivers/gpu/drm/rockchip/rockchip_lvds.c
-@@ -67,7 +67,8 @@ struct rockchip_lvds {
- 	struct dev_pin_info *pins;
+@@ -39,16 +39,10 @@
+ 
+ /**
+  * rockchip_lvds_soc_data - rockchip lvds Soc private data
+- * @ch1_offset: lvds channel 1 registe offset
+- * grf_soc_con6: general registe offset for LVDS contrl
+- * grf_soc_con7: general registe offset for LVDS contrl
+- * has_vop_sel: to indicate whether need to choose from different VOP.
++ * @helper_funcs: LVDS connector helper functions
+  */
+ struct rockchip_lvds_soc_data {
+-	u32 ch1_offset;
+-	int grf_soc_con6;
+-	int grf_soc_con7;
+-	bool has_vop_sel;
++	const struct drm_encoder_helper_funcs *helper_funcs;
  };
  
--static inline void lvds_writel(struct rockchip_lvds *lvds, u32 offset, u32 val)
-+static inline void rk3288_writel(struct rockchip_lvds *lvds, u32 offset,
-+				 u32 val)
- {
+ struct rockchip_lvds {
+@@ -73,7 +67,7 @@ static inline void rk3288_writel(struct rockchip_lvds *lvds, u32 offset,
  	writel_relaxed(val, lvds->regs + offset);
  	if (lvds->output == DISPLAY_OUTPUT_LVDS)
-@@ -75,7 +76,7 @@ static inline void lvds_writel(struct rockchip_lvds *lvds, u32 offset, u32 val)
- 	writel_relaxed(val, lvds->regs + offset + lvds->soc_data->ch1_offset);
+ 		return;
+-	writel_relaxed(val, lvds->regs + offset + lvds->soc_data->ch1_offset);
++	writel_relaxed(val, lvds->regs + offset + RK3288_LVDS_CH1_OFFSET);
  }
  
--static inline int lvds_name_to_format(const char *s)
-+static inline int rockchip_lvds_name_to_format(const char *s)
- {
- 	if (strncmp(s, "jeida-18", 8) == 0)
- 		return LVDS_JEIDA_18;
-@@ -87,7 +88,7 @@ static inline int lvds_name_to_format(const char *s)
- 	return -EINVAL;
- }
- 
--static inline int lvds_name_to_output(const char *s)
-+static inline int rockchip_lvds_name_to_output(const char *s)
- {
- 	if (strncmp(s, "rgb", 3) == 0)
- 		return DISPLAY_OUTPUT_RGB;
-@@ -99,7 +100,7 @@ static inline int lvds_name_to_output(const char *s)
- 	return -EINVAL;
- }
- 
--static int rockchip_lvds_poweron(struct rockchip_lvds *lvds)
-+static int rk3288_lvds_poweron(struct rockchip_lvds *lvds)
- {
- 	int ret;
- 	u32 val;
-@@ -121,63 +122,70 @@ static int rockchip_lvds_poweron(struct rockchip_lvds *lvds)
- 	if (lvds->output == DISPLAY_OUTPUT_RGB) {
- 		val |= RK3288_LVDS_CH0_REG0_TTL_EN |
- 			RK3288_LVDS_CH0_REG0_LANECK_EN;
--		lvds_writel(lvds, RK3288_LVDS_CH0_REG0, val);
--		lvds_writel(lvds, RK3288_LVDS_CH0_REG2,
--			    RK3288_LVDS_PLL_FBDIV_REG2(0x46));
--		lvds_writel(lvds, RK3288_LVDS_CH0_REG4,
--			    RK3288_LVDS_CH0_REG4_LANECK_TTL_MODE |
--			    RK3288_LVDS_CH0_REG4_LANE4_TTL_MODE |
--			    RK3288_LVDS_CH0_REG4_LANE3_TTL_MODE |
--			    RK3288_LVDS_CH0_REG4_LANE2_TTL_MODE |
--			    RK3288_LVDS_CH0_REG4_LANE1_TTL_MODE |
--			    RK3288_LVDS_CH0_REG4_LANE0_TTL_MODE);
--		lvds_writel(lvds, RK3288_LVDS_CH0_REG5,
--			    RK3288_LVDS_CH0_REG5_LANECK_TTL_DATA |
--			    RK3288_LVDS_CH0_REG5_LANE4_TTL_DATA |
--			    RK3288_LVDS_CH0_REG5_LANE3_TTL_DATA |
--			    RK3288_LVDS_CH0_REG5_LANE2_TTL_DATA |
--			    RK3288_LVDS_CH0_REG5_LANE1_TTL_DATA |
--			    RK3288_LVDS_CH0_REG5_LANE0_TTL_DATA);
-+		rk3288_writel(lvds, RK3288_LVDS_CH0_REG0, val);
-+		rk3288_writel(lvds, RK3288_LVDS_CH0_REG2,
-+			      RK3288_LVDS_PLL_FBDIV_REG2(0x46));
-+		rk3288_writel(lvds, RK3288_LVDS_CH0_REG4,
-+			      RK3288_LVDS_CH0_REG4_LANECK_TTL_MODE |
-+			      RK3288_LVDS_CH0_REG4_LANE4_TTL_MODE |
-+			      RK3288_LVDS_CH0_REG4_LANE3_TTL_MODE |
-+			      RK3288_LVDS_CH0_REG4_LANE2_TTL_MODE |
-+			      RK3288_LVDS_CH0_REG4_LANE1_TTL_MODE |
-+			      RK3288_LVDS_CH0_REG4_LANE0_TTL_MODE);
-+		rk3288_writel(lvds, RK3288_LVDS_CH0_REG5,
-+			      RK3288_LVDS_CH0_REG5_LANECK_TTL_DATA |
-+			      RK3288_LVDS_CH0_REG5_LANE4_TTL_DATA |
-+			      RK3288_LVDS_CH0_REG5_LANE3_TTL_DATA |
-+			      RK3288_LVDS_CH0_REG5_LANE2_TTL_DATA |
-+			      RK3288_LVDS_CH0_REG5_LANE1_TTL_DATA |
-+			      RK3288_LVDS_CH0_REG5_LANE0_TTL_DATA);
- 	} else {
- 		val |= RK3288_LVDS_CH0_REG0_LVDS_EN |
- 			    RK3288_LVDS_CH0_REG0_LANECK_EN;
--		lvds_writel(lvds, RK3288_LVDS_CH0_REG0, val);
--		lvds_writel(lvds, RK3288_LVDS_CH0_REG1,
--			    RK3288_LVDS_CH0_REG1_LANECK_BIAS |
--			    RK3288_LVDS_CH0_REG1_LANE4_BIAS |
--			    RK3288_LVDS_CH0_REG1_LANE3_BIAS |
--			    RK3288_LVDS_CH0_REG1_LANE2_BIAS |
--			    RK3288_LVDS_CH0_REG1_LANE1_BIAS |
--			    RK3288_LVDS_CH0_REG1_LANE0_BIAS);
--		lvds_writel(lvds, RK3288_LVDS_CH0_REG2,
--			    RK3288_LVDS_CH0_REG2_RESERVE_ON |
--			    RK3288_LVDS_CH0_REG2_LANECK_LVDS_MODE |
--			    RK3288_LVDS_CH0_REG2_LANE4_LVDS_MODE |
--			    RK3288_LVDS_CH0_REG2_LANE3_LVDS_MODE |
--			    RK3288_LVDS_CH0_REG2_LANE2_LVDS_MODE |
--			    RK3288_LVDS_CH0_REG2_LANE1_LVDS_MODE |
--			    RK3288_LVDS_CH0_REG2_LANE0_LVDS_MODE |
--			    RK3288_LVDS_PLL_FBDIV_REG2(0x46));
--		lvds_writel(lvds, RK3288_LVDS_CH0_REG4, 0x00);
--		lvds_writel(lvds, RK3288_LVDS_CH0_REG5, 0x00);
-+		rk3288_writel(lvds, RK3288_LVDS_CH0_REG0, val);
-+		rk3288_writel(lvds, RK3288_LVDS_CH0_REG1,
-+			      RK3288_LVDS_CH0_REG1_LANECK_BIAS |
-+			      RK3288_LVDS_CH0_REG1_LANE4_BIAS |
-+			      RK3288_LVDS_CH0_REG1_LANE3_BIAS |
-+			      RK3288_LVDS_CH0_REG1_LANE2_BIAS |
-+			      RK3288_LVDS_CH0_REG1_LANE1_BIAS |
-+			      RK3288_LVDS_CH0_REG1_LANE0_BIAS);
-+		rk3288_writel(lvds, RK3288_LVDS_CH0_REG2,
-+			      RK3288_LVDS_CH0_REG2_RESERVE_ON |
-+			      RK3288_LVDS_CH0_REG2_LANECK_LVDS_MODE |
-+			      RK3288_LVDS_CH0_REG2_LANE4_LVDS_MODE |
-+			      RK3288_LVDS_CH0_REG2_LANE3_LVDS_MODE |
-+			      RK3288_LVDS_CH0_REG2_LANE2_LVDS_MODE |
-+			      RK3288_LVDS_CH0_REG2_LANE1_LVDS_MODE |
-+			      RK3288_LVDS_CH0_REG2_LANE0_LVDS_MODE |
-+			      RK3288_LVDS_PLL_FBDIV_REG2(0x46));
-+		rk3288_writel(lvds, RK3288_LVDS_CH0_REG4, 0x00);
-+		rk3288_writel(lvds, RK3288_LVDS_CH0_REG5, 0x00);
- 	}
--	lvds_writel(lvds, RK3288_LVDS_CH0_REG3, RK3288_LVDS_PLL_FBDIV_REG3(0x46));
--	lvds_writel(lvds, RK3288_LVDS_CH0_REGD, RK3288_LVDS_PLL_PREDIV_REGD(0x0a));
--	lvds_writel(lvds, RK3288_LVDS_CH0_REG20, RK3288_LVDS_CH0_REG20_LSB);
-+	rk3288_writel(lvds, RK3288_LVDS_CH0_REG3,
-+		      RK3288_LVDS_PLL_FBDIV_REG3(0x46));
-+	rk3288_writel(lvds, RK3288_LVDS_CH0_REGD,
-+		      RK3288_LVDS_PLL_PREDIV_REGD(0x0a));
-+	rk3288_writel(lvds, RK3288_LVDS_CH0_REG20,
-+		      RK3288_LVDS_CH0_REG20_LSB);
- 
--	lvds_writel(lvds, RK3288_LVDS_CFG_REGC, RK3288_LVDS_CFG_REGC_PLL_ENABLE);
--	lvds_writel(lvds, RK3288_LVDS_CFG_REG21, RK3288_LVDS_CFG_REG21_TX_ENABLE);
-+	rk3288_writel(lvds, RK3288_LVDS_CFG_REGC,
-+		      RK3288_LVDS_CFG_REGC_PLL_ENABLE);
-+	rk3288_writel(lvds, RK3288_LVDS_CFG_REG21,
-+		      RK3288_LVDS_CFG_REG21_TX_ENABLE);
- 
- 	return 0;
- }
- 
--static void rockchip_lvds_poweroff(struct rockchip_lvds *lvds)
-+static void rk3288_lvds_poweroff(struct rockchip_lvds *lvds)
- {
- 	int ret;
- 	u32 val;
- 
--	lvds_writel(lvds, RK3288_LVDS_CFG_REG21, RK3288_LVDS_CFG_REG21_TX_ENABLE);
--	lvds_writel(lvds, RK3288_LVDS_CFG_REGC, RK3288_LVDS_CFG_REGC_PLL_ENABLE);
-+	rk3288_writel(lvds, RK3288_LVDS_CFG_REG21,
-+		      RK3288_LVDS_CFG_REG21_TX_ENABLE);
-+	rk3288_writel(lvds, RK3288_LVDS_CFG_REGC,
-+		      RK3288_LVDS_CFG_REGC_PLL_ENABLE);
+ static inline int rockchip_lvds_name_to_format(const char *s)
+@@ -188,7 +182,7 @@ static void rk3288_lvds_poweroff(struct rockchip_lvds *lvds)
+ 		      RK3288_LVDS_CFG_REGC_PLL_ENABLE);
  	val = LVDS_DUAL | LVDS_TTL_EN | LVDS_CH0_EN | LVDS_CH1_EN | LVDS_PWRDN;
  	val |= val << 16;
- 	ret = regmap_write(lvds->grf, lvds->soc_data->grf_soc_con7, val);
-@@ -209,8 +217,8 @@ struct drm_connector_helper_funcs rockchip_lvds_connector_helper_funcs = {
- 	.get_modes = rockchip_lvds_connector_get_modes,
- };
+-	ret = regmap_write(lvds->grf, lvds->soc_data->grf_soc_con7, val);
++	ret = regmap_write(lvds->grf, RK3288_LVDS_GRF_SOC_CON7, val);
+ 	if (ret != 0)
+ 		DRM_DEV_ERROR(lvds->dev, "Could not write to GRF: %d\n", ret);
  
--static void rockchip_lvds_grf_config(struct drm_encoder *encoder,
--				     struct drm_display_mode *mode)
-+static void rk3288_lvds_grf_config(struct drm_encoder *encoder,
-+				   struct drm_display_mode *mode)
- {
- 	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
- 	u8 pin_hsync = (mode->flags & DRM_MODE_FLAG_PHSYNC) ? 1 : 0;
-@@ -241,8 +249,8 @@ static void rockchip_lvds_grf_config(struct drm_encoder *encoder,
- 	}
- }
+@@ -242,7 +236,7 @@ static void rk3288_lvds_grf_config(struct drm_encoder *encoder,
  
--static int rockchip_lvds_set_vop_source(struct rockchip_lvds *lvds,
--					struct drm_encoder *encoder)
-+static int rk3288_lvds_set_vop_source(struct rockchip_lvds *lvds,
-+				      struct drm_encoder *encoder)
- {
+ 	val |= (pin_dclk << 8) | (pin_hsync << 9);
+ 	val |= (0xffff << 16);
+-	ret = regmap_write(lvds->grf, lvds->soc_data->grf_soc_con7, val);
++	ret = regmap_write(lvds->grf, RK3288_LVDS_GRF_SOC_CON7, val);
+ 	if (ret != 0) {
+ 		DRM_DEV_ERROR(lvds->dev, "Could not write to GRF: %d\n", ret);
+ 		return;
+@@ -255,9 +249,6 @@ static int rk3288_lvds_set_vop_source(struct rockchip_lvds *lvds,
  	u32 val;
  	int ret;
-@@ -278,36 +286,36 @@ rockchip_lvds_encoder_atomic_check(struct drm_encoder *encoder,
- 	return 0;
- }
  
--static void rockchip_lvds_encoder_enable(struct drm_encoder *encoder)
-+static void rk3288_lvds_encoder_enable(struct drm_encoder *encoder)
- {
- 	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
- 	struct drm_display_mode *mode = &encoder->crtc->state->adjusted_mode;
- 	int ret;
+-	if (!lvds->soc_data->has_vop_sel)
+-		return 0;
+-
+ 	ret = drm_of_encoder_active_endpoint_id(lvds->dev->of_node, encoder);
+ 	if (ret < 0)
+ 		return ret;
+@@ -266,7 +257,7 @@ static int rk3288_lvds_set_vop_source(struct rockchip_lvds *lvds,
+ 	if (ret)
+ 		val |= RK3288_LVDS_SOC_CON6_SEL_VOP_LIT;
  
- 	drm_panel_prepare(lvds->panel);
--	ret = rockchip_lvds_poweron(lvds);
-+	ret = rk3288_lvds_poweron(lvds);
- 	if (ret < 0) {
- 		DRM_DEV_ERROR(lvds->dev, "failed to power on lvds: %d\n", ret);
- 		drm_panel_unprepare(lvds->panel);
- 	}
--	rockchip_lvds_grf_config(encoder, mode);
--	rockchip_lvds_set_vop_source(lvds, encoder);
-+	rk3288_lvds_grf_config(encoder, mode);
-+	rk3288_lvds_set_vop_source(lvds, encoder);
- 	drm_panel_enable(lvds->panel);
- }
+-	ret = regmap_write(lvds->grf, lvds->soc_data->grf_soc_con6, val);
++	ret = regmap_write(lvds->grf, RK3288_LVDS_GRF_SOC_CON6, val);
+ 	if (ret < 0)
+ 		return ret;
  
--static void rockchip_lvds_encoder_disable(struct drm_encoder *encoder)
-+static void rk3288_lvds_encoder_disable(struct drm_encoder *encoder)
- {
- 	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
- 
- 	drm_panel_disable(lvds->panel);
--	rockchip_lvds_poweroff(lvds);
-+	rk3288_lvds_poweroff(lvds);
- 	drm_panel_unprepare(lvds->panel);
- }
- 
- static const
--struct drm_encoder_helper_funcs rockchip_lvds_encoder_helper_funcs = {
--	.enable = rockchip_lvds_encoder_enable,
--	.disable = rockchip_lvds_encoder_disable,
-+struct drm_encoder_helper_funcs rk3288_lvds_encoder_helper_funcs = {
-+	.enable = rk3288_lvds_encoder_enable,
-+	.disable = rk3288_lvds_encoder_disable,
- 	.atomic_check = rockchip_lvds_encoder_atomic_check,
+@@ -324,10 +315,7 @@ static const struct drm_encoder_funcs rockchip_lvds_encoder_funcs = {
  };
  
-@@ -378,7 +386,7 @@ static int rockchip_lvds_bind(struct device *dev, struct device *master,
- 		/* default set it as output rgb */
- 		lvds->output = DISPLAY_OUTPUT_RGB;
- 	else
--		lvds->output = lvds_name_to_output(name);
-+		lvds->output = rockchip_lvds_name_to_output(name);
+ static const struct rockchip_lvds_soc_data rk3288_lvds_data = {
+-	.ch1_offset = 0x100,
+-	.grf_soc_con6 = 0x025c,
+-	.grf_soc_con7 = 0x0260,
+-	.has_vop_sel = true,
++	.helper_funcs = &rk3288_lvds_encoder_helper_funcs,
+ };
  
- 	if (lvds->output < 0) {
- 		DRM_DEV_ERROR(dev, "invalid output type [%s]\n", name);
-@@ -390,7 +398,7 @@ static int rockchip_lvds_bind(struct device *dev, struct device *master,
- 		/* default set it as format vesa 18 */
- 		lvds->format = LVDS_VESA_18;
- 	else
--		lvds->format = lvds_name_to_format(name);
-+		lvds->format = rockchip_lvds_name_to_format(name);
- 
- 	if (lvds->format < 0) {
- 		DRM_DEV_ERROR(dev, "invalid data-mapping format [%s]\n", name);
-@@ -410,7 +418,7 @@ static int rockchip_lvds_bind(struct device *dev, struct device *master,
+ static const struct of_device_id rockchip_lvds_dt_ids[] = {
+@@ -418,7 +406,7 @@ static int rockchip_lvds_bind(struct device *dev, struct device *master,
  		goto err_put_remote;
  	}
  
--	drm_encoder_helper_add(encoder, &rockchip_lvds_encoder_helper_funcs);
-+	drm_encoder_helper_add(encoder, &rk3288_lvds_encoder_helper_funcs);
+-	drm_encoder_helper_add(encoder, &rk3288_lvds_encoder_helper_funcs);
++	drm_encoder_helper_add(encoder, lvds->soc_data->helper_funcs);
  
  	if (lvds->panel) {
  		connector = &lvds->connector;
-@@ -472,7 +480,7 @@ static void rockchip_lvds_unbind(struct device *dev, struct device *master,
+@@ -479,8 +467,10 @@ static void rockchip_lvds_unbind(struct device *dev, struct device *master,
+ 				void *data)
  {
  	struct rockchip_lvds *lvds = dev_get_drvdata(dev);
++	const struct drm_encoder_helper_funcs *encoder_funcs;
  
--	rockchip_lvds_encoder_disable(&lvds->encoder);
-+	rk3288_lvds_encoder_disable(&lvds->encoder);
+-	rk3288_lvds_encoder_disable(&lvds->encoder);
++	encoder_funcs = lvds->soc_data->helper_funcs;
++	encoder_funcs->disable(&lvds->encoder);
  	if (lvds->panel)
  		drm_panel_detach(lvds->panel);
  	pm_runtime_disable(dev);
+diff --git a/drivers/gpu/drm/rockchip/rockchip_lvds.h b/drivers/gpu/drm/rockchip/rockchip_lvds.h
+index 1387bcbc4bc0..e41e9ab3c306 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_lvds.h
++++ b/drivers/gpu/drm/rockchip/rockchip_lvds.h
+@@ -72,6 +72,9 @@
+ #define RK3288_LVDS_CFG_REG21_TX_DISABLE	0x00
+ #define RK3288_LVDS_CH1_OFFSET			0x100
+ 
++#define RK3288_LVDS_GRF_SOC_CON6		0x025C
++#define RK3288_LVDS_GRF_SOC_CON7		0x0260
++
+ /* fbdiv value is split over 2 registers, with bit8 in reg2 */
+ #define RK3288_LVDS_PLL_FBDIV_REG2(_fbd) \
+ 		(_fbd & BIT(8) ? RK3288_LVDS_CH0_REG2_PLL_FBDIV8 : 0)
 -- 
 2.20.1
 
