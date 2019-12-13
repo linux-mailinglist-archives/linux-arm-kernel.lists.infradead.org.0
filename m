@@ -2,134 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D435011DBA2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 02:24:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8976A11DBAF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 02:30:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UtvHnAXTxIk+GCdZ8ivB6TT4JmBWfaTnGpa90Ct0WHc=; b=HYMNQWOFLPsFtm
-	k4eHIzIHR2Zy4wx7LggyCM/tSFnRvvfGsDbvHWVtxb3/Aaj80koT4J/oHDf/I7hnrFljtJPIKTSze
-	DViVjVQ/MZRjIgQJqGMaEdlLWWQg/JAZgInPLARWG6WFMAC/z6dpKY4PSrx+Xdks3bBLR6BNgA0bA
-	dsNznkRTXcHuif5Hdp0ybwsvsxckTBifmLHPOHtsMgJ87pJalVApwrqjvbXUrIvwnprYKQ4Vegipw
-	GZSf45xXyXe5OOzpISlfyw0X0AtcoHe9mdzVIBFt9qlqjMQNf57D6aHQ6DZott+3KKKlLeQVqBEk3
-	fcNUpIIj2JosLlRjYCzg==;
+	List-Owner; bh=BARey/QTvAL7S1+QGPDYxpFLKjqahx+hI72eHHJ0fbc=; b=UyxcZGRGftPk+z
+	xPGoiJZdL6ctcLkEWCm5KkyEG1H9wk91fGO+xZ6bUnIRPG+fkgQo9hFCYrLccmYI/k+O3H1dZ/Y/8
+	UQJOACZ/1CYk8o+1dgVIgL6PCKtt+UOEt6wsegQHVIFxZ+SxiNNN7tZUODVR7+NUKLaKEy/cl2Op4
+	3DhkZxslgA4qFp3w+qjM5MRokJnSgJw21yy47bXgbEKD/Fnm4A1UrGGjVc+eICOHhsbYMzDzqSCFS
+	uSgFnCZu1LJz7ZWki1nMiibJic5WvP8RtmGUaQgYv84z7EwFIUTzqOK2FPV8yN0hb7x4FdeVC9rUX
+	PYim+pGyfdAb5Cr6h2ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifZh3-0001Zs-2B; Fri, 13 Dec 2019 01:24:33 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1ifZn2-0004Wn-84; Fri, 13 Dec 2019 01:30:44 +0000
+Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifZgt-0001Yi-BM
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 01:24:25 +0000
-Received: from epcas1p2.samsung.com (unknown [182.195.41.46])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20191213012420epoutp03816449037d3d2160c8d0209152d84b45~fyckWIf1E2850528505epoutp03g
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 01:24:20 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20191213012420epoutp03816449037d3d2160c8d0209152d84b45~fyckWIf1E2850528505epoutp03g
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1576200260;
- bh=5CvMUFlOh3CH/oawCLl54ZNz9H/LkRQEF/C9QHv+8XA=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=fdTr9uenEBkcjlIwGcU/ZD9DcLdGUog97/+0S0EbC5qN2hmVStMZVJpYE4NMeaVHJ
- PijyKADQFYlEg6oaxZCd1SQWoK687cXRU2DLaK14R7rHli9A6csC1DdcisCBFvRgo3
- x6zJmKcn5A/XW/iONOb3hsKz2kVDvL4meKhSc9kM=
-Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTP id
- 20191213012419epcas1p4717e3fe7e5d59b28b9a7455ba67299d0~fycjkwQ762781827818epcas1p4F;
- Fri, 13 Dec 2019 01:24:19 +0000 (GMT)
-Received: from epsmges1p2.samsung.com (unknown [182.195.40.154]) by
- epsnrtp1.localdomain (Postfix) with ESMTP id 47YtHP0fvfzMqYm4; Fri, 13 Dec
- 2019 01:24:17 +0000 (GMT)
-Received: from epcas1p1.samsung.com ( [182.195.41.45]) by
- epsmges1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
- 5D.78.48498.048E2FD5; Fri, 13 Dec 2019 10:24:17 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
- 20191213012416epcas1p4d1d2af13ce4822a7439b08801aef55d2~fycg-kx5J2813928139epcas1p40;
- Fri, 13 Dec 2019 01:24:16 +0000 (GMT)
-Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20191213012416epsmtrp135ba3a6b0e6f05d53d2d4b737758d27f~fycg_VY1G1299812998epsmtrp1d;
- Fri, 13 Dec 2019 01:24:16 +0000 (GMT)
-X-AuditID: b6c32a36-a3dff7000001bd72-eb-5df2e8403b8e
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- FB.9E.06569.048E2FD5; Fri, 13 Dec 2019 10:24:16 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20191213012416epsmtip2538381df632dd67dae345724f33c2a1c~fycglJM5o1814718147epsmtip2P;
- Fri, 13 Dec 2019 01:24:16 +0000 (GMT)
-Subject: Re: [PATCH RFC v6 2/9] PM / devfreq: Add generic imx bus scaling
- driver
-To: Leonard Crestez <leonard.crestez@nxp.com>, Georgi Djakov
- <georgi.djakov@linaro.org>, Rob Herring <robh+dt@kernel.org>
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <8734a934-79e2-7445-c3e5-a0bb59afd4a8@samsung.com>
-Date: Fri, 13 Dec 2019 10:30:45 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:59.0) Gecko/20100101
- Thunderbird/59.0
-MIME-Version: 1.0
-In-Reply-To: <f329e715898a6b9fd0cee707a93fb1e144e31bd4.1573761527.git.leonard.crestez@nxp.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Tf0xbVRjd7WvfeyCdbx3ItQkKz6gZhq2PX14UhovbfFESiUuM0yC+0BdA
- +it9hcjQjJGxsU4djSEbnRUmY4MOHS1lwBwyfrnAMmqnVBgjiKDBxQECdYiB2fbVyH/nO9/5
- 7nfPubkkpugilGShzsQbdZyGxsOlV/p3JCTsmVvKUVVYMNT3XTuBfDeHAbpwexCglZqrGJqZ
- mgCoozYP1Q2MyJCjbUKKTnc7cWSv6ZIit7uVQLcq/iBQ0+SfMuSc8cqQea0ZQ8ufDADU+JNH
- grxNFhlabp0ByDO8D00cacLRpZFeHNlWajBU2T1AIHPfOo42vA4pmnNFo8YGL4YcPvalGLbG
- 3ATYli9aALswVkmwZ8s9UrbeWcw67Sdw9q73Gs62nT/MOuY7JWzv/DUJe2pdxa71R7GfuuyA
- XXY+kb317aL0Ap5T88ZYXpenVxfq8jPo1w7kvpybkqpiEpg09Dwdq+O0fAa9Nys7YX+hxp8M
- HVvCaYr9VDYnCPSu3elGfbGJjy3QC6YMmjeoNYY0w06B0wrFuvydeXrtC4xKlZjiF75XVOAe
- /pEw3Mv44Lf7VlAOzIlmQJKQSoZfr+nNIJxUUJ0A/nrkPBCLJQBXL/pwsfgLwNrpFswMwoIT
- 1c7BUKMbQMvwV6FiAcCTo8eJgGo79QY8d7lZGsCRVBmsvlUhCYgwapyA1we/BYEGTsXDnrkx
- PIAfpeLg6OpMkJdTu+GUfVwWwFLqadjmnggeGkW9CYeuHA1ptsGh2tnggjDqXVje7gvyGBUN
- 78zWSUT8JOy4/zkWWAyp6yR8cGkSFz3shWce1hEi3g7v3XCFsBL+fupYCJfB5qEBXByuAtDV
- 871MbCTBnsbPJIH4MGoHvHx1l0jHwa5/bKFLbIXzvo9lYsJyWHVMIUqegj/8PCkR8eOw4fgJ
- vBrQ1k12rJssWDdZsP6/rB5I7eAx3iBo83mBMSRufm4nCH6b+NRO8OVIVh+gSEBHyLeol3IU
- Mq5EKNX2AUhidKQ880M/JVdzpYd4oz7XWKzhhT6Q4k/bgimj8vT+T6gz5TIpiUlJSSiZSU1h
- GDpaTq56chRUPmfii3jewBv/m5OQYcpykLn4TNWi8mJrFFliy3z/lZjXXz06HXEw4lDlR2ct
- TEzWwfCSB4fD2je6vR1l8/ve+cby0JeVTjzifis5H7s7O7q/lFxgbCsHnutvDjfrp+48O16v
- 20Ktp+m95sjGsJOuM429kTX1tuTpbXumxjJveATHOd/N0sW/cxoibv/y4saFzDhaKhRwTDxm
- FLh/AcXfFxZMBAAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRiA+XbOzjmOVqdN8bOo1aKMwbxEPz7ITIjgFBFRFBWYHvKg0W7s
- ZGUtWoWBo5vRrFa5LipzGc6ZqaWYm8tL5VBsWsuEJmalCzUrht22Eezfw/c+z/v++ShMUiFc
- RB3UHOb0GlYlJ0T4Y7dcpswan85Os05B5HreQKLZFz0AVfV7APpmfoKhwIgfoMYbB5C1o1eI
- 6ur9OLrW6iSQ3dyMI6/XQaJXZyZIZBueEiJnwCdEplA1hmYudABUOdgnQD5bqRDNOAIA9fVs
- Qv7TNgI96G0n0O1vZgwVt3aQyOT6RaDfvjocjT9KRJX3fRiqm2WyljBmkw0wNeU1gPk6VEwy
- N419OHPHWcg47SUE887XQjD1FaeYumCTgGkPtgiYS7/SmJA7gbn4yA6YGefS7fP3iTLyONXB
- I5w+NTNXVODtGSB1n9cfG5u0ACMwrTGBOArSa+Flp4cwAREloZ8C6HH48OggCZb1eTAToP6x
- FLrdfNSZBLCmuBaEHSm9A96trY748fQJODfWiYUljB4m4fXznYJo8QHA3rLrRNgiaAVsGx+K
- 8AJ6OXz9MxDZJKYz4Yj9jTDMOL0S1nv9ZJgT6N2wuSIgiDoLYfeN0ci1OHo/NDbMRlqMToZz
- 5f1YlBPh21GrIMoy2Dh5C7sMpJaY3BKTWGISS0xyB+B2kMTpeHW+mk/XrdFwR1N4Vs0XavJT
- DmjVThD5OwpFE+jqynEBmgLyeWIbO50tEbJH+CK1C0AKk8eLNxj+PYnz2KLjnF6boy9UcbwL
- LKZweaJYpn2+V0Lns4e5Qxyn4/T/pwIqbpERxF9p5UscFTuN7MN1md2S5Ksvl6GPPz5dDE7s
- alwx19O2+cKZhJaz/qLvBQsM/tBmmXZP3mp6FVF1biO25MfIFrOqrKTUem/t9y26gZMUMIxy
- +NZyXXKu/I968ftQqTJotWSxA51kqqxBuTPl5rCUMTQ827EtQ7Xpi9RRO1illON8AZuuwPQ8
- +xeaSAVbNwMAAA==
-X-CMS-MailID: 20191213012416epcas1p4d1d2af13ce4822a7439b08801aef55d2
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191114201049epcas5p4a24607634af7b31e6a2dbdb4166dd862
-References: <cover.1573761527.git.leonard.crestez@nxp.com>
- <CGME20191114201049epcas5p4a24607634af7b31e6a2dbdb4166dd862@epcas5p4.samsung.com>
- <f329e715898a6b9fd0cee707a93fb1e144e31bd4.1573761527.git.leonard.crestez@nxp.com>
+ id 1ifZmt-0004Vf-MP
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 01:30:37 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.west.internal (Postfix) with ESMTP id F2E50816;
+ Thu, 12 Dec 2019 20:30:28 -0500 (EST)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Thu, 12 Dec 2019 20:30:29 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm1; bh=kIQjHdVLE1/fU9KLKVqg1kUSU55z6qa
+ RkOCmaNZ7BcM=; b=SoJQ5xHvi3TecnC2YnRQVyS8fHZ9HwNhk6t6bDtxOvFj1fa
+ 4xH0M+JjI6BGsABRedlcfWLu2SPCvrLL9bYFLYlSfxVDrsW1RJRUu5kgGtx94b2E
+ q8OCbmI3eCk+HtRHALdZOuzKWmN0wq6cHb31AFq0OGxCwuAUCrwH3EKEFEGpm8Ax
+ jgpQdNCj1s2wXnx/hl5JyjwihPnxmNDbsBPcqOgYdo8RvleY4PB6jdLbREFFmfN9
+ wmzCrFFygtUhv+6CW6PChNfIoHYMCNAwe8QF5blsXjZuvHDBrqDnT4c/A19XTolg
+ dT4JR1PxTvDMXZWNVTv+qWsnOtC7IknaaLhp6ig==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=kIQjHd
+ VLE1/fU9KLKVqg1kUSU55z6qaRkOCmaNZ7BcM=; b=oc+XOCz9hlr/DOd2zlvukv
+ U0Licj/xRjpzT8oaccVAWiWCQ23NZ4jGRvhiXRZUvdwWVEXxd0QDYUjVenh6vj/7
+ nup1Tmp/yTzFenX7zuuMPOnqpcetaGGPwcVmMaDGScTtscKOmCYqInqTNZqP2zfh
+ rF7TgQH7JVNr3tlGprHOVfSzYiRQSizIF9Cm9GHXU4pHvN+KjDn9cKrLgddLxGUR
+ 8aRgJngKLJhwtLH663kKAJr7cQokmq/kqazL7u9fVv2o9w/RCq8wMP/fZ7E0w6wr
+ 9CA4ocXRyJA3LYQa6mFprFUbgQR85GZBKI+T+EZ5ejajuTUeAbMUMC/ZiHFFS/Bg
+ ==
+X-ME-Sender: <xms:sunyXdExu8xTM5B38nRS1bCN5Z15PXqo3hXfKkXXe8AmYeN05gt4qQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudelkedgfeehucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
+ rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
+ grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
+ rhfuihiivgeptd
+X-ME-Proxy: <xmx:sunyXXcSxg4dgH-B0kWwKeSVBRadjgvRAPWCagmcKt0fLHcBk4_sLA>
+ <xmx:sunyXWbQUcYVk3SvFPvRGO6bqpOqNezIuw_MW1-fAUvsiwUUVEbh0g>
+ <xmx:sunyXapAx4F9qjVqSOiMKR330kZAcK0jxMIHppW06AwZZd0dudQzwA>
+ <xmx:tOnyXSu_o_4JZC6f6T3E_sP3_KtRV98RBlold90e-Z-jZKy2_kiNug>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id 34C75E00A2; Thu, 12 Dec 2019 20:30:26 -0500 (EST)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.7-680-g58d4e90-fmstable-20191213v1
+Mime-Version: 1.0
+Message-Id: <274285bd-1304-4e35-945a-90c9aecd119b@www.fastmail.com>
+In-Reply-To: <20191213000657.931618-5-dima@arista.com>
+References: <20191213000657.931618-1-dima@arista.com>
+ <20191213000657.931618-5-dima@arista.com>
+Date: Fri, 13 Dec 2019 12:02:05 +1030
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Dmitry Safonov" <dima@arista.com>, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 04/58] tty/serial: Migrate aspeed_vuart to use has_sysrq
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_172423_899593_CAD55E0E 
-X-CRM114-Status: GOOD (  32.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191212_173035_775609_9970832A 
+X-CRM114-Status: UNSURE (   6.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.33 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -139,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,284 +104,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Matthias Kaehlcke <mka@chromium.org>, linux-imx@nxp.com,
- devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
- Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Alexandre Bailon <abailon@baylibre.com>
+Cc: Vasiliy Khoruzhick <vasilykh@arista.com>, linux-aspeed@lists.ozlabs.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dmitry Safonov <0x7f454c46@gmail.com>, Joel Stanley <joel@jms.id.au>,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
 
-On 11/15/19 5:09 AM, Leonard Crestez wrote:
-> Add initial support for dynamic frequency switching on pieces of the imx
-> interconnect fabric.
+
+On Fri, 13 Dec 2019, at 10:36, Dmitry Safonov wrote:
+> The SUPPORT_SYSRQ ifdeffery is not nice as:
+> - May create misunderstanding about sizeof(struct uart_port) between
+>   different objects
+> - Prevents moving functions from serial_core.h
+> - Reduces readability (well, it's ifdeffery - it's hard to follow)
 > 
-> All this driver does is set a clk rate based on an opp table, it does
-> not map register areas.
+> In order to remove SUPPORT_SYSRQ, has_sysrq variable has been added.
+> Initialise it in driver's probe and remove ifdeffery.
 > 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> ---
->  drivers/devfreq/Kconfig       |   9 ++
->  drivers/devfreq/Makefile      |   1 +
->  drivers/devfreq/imx-devfreq.c | 150 ++++++++++++++++++++++++++++++++++
->  3 files changed, 160 insertions(+)
->  create mode 100644 drivers/devfreq/imx-devfreq.c
-> 
-> diff --git a/drivers/devfreq/Kconfig b/drivers/devfreq/Kconfig
-> index 923a6132e741..fef5ce831e90 100644
-> --- a/drivers/devfreq/Kconfig
-> +++ b/drivers/devfreq/Kconfig
-> @@ -98,10 +98,19 @@ config ARM_IMX8M_DDRC_DEVFREQ
->  	select DEVFREQ_GOV_USERSPACE
->  	help
->  	  This adds the DEVFREQ driver for the i.MX8M DDR Controller. It allows
->  	  adjusting DRAM frequency.
->  
-> +config ARM_IMX_DEVFREQ
-> +	tristate "i.MX Generic DEVFREQ Driver"
-> +	depends on ARCH_MXC || COMPILE_TEST
-> +	select DEVFREQ_GOV_PASSIVE
-> +	select DEVFREQ_GOV_USERSPACE
-> +	help
-> +	  This adds the generic DEVFREQ driver for i.MX interconnects. It
-> +	  allows adjusting NIC/NOC frequency.
-> +
->  config ARM_TEGRA_DEVFREQ
->  	tristate "NVIDIA Tegra30/114/124/210 DEVFREQ Driver"
->  	depends on ARCH_TEGRA_3x_SOC || ARCH_TEGRA_114_SOC || \
->  		ARCH_TEGRA_132_SOC || ARCH_TEGRA_124_SOC || \
->  		ARCH_TEGRA_210_SOC || \
-> diff --git a/drivers/devfreq/Makefile b/drivers/devfreq/Makefile
-> index 3eb4d5e6635c..61d0edee16f7 100644
-> --- a/drivers/devfreq/Makefile
-> +++ b/drivers/devfreq/Makefile
-> @@ -8,10 +8,11 @@ obj-$(CONFIG_DEVFREQ_GOV_USERSPACE)	+= governor_userspace.o
->  obj-$(CONFIG_DEVFREQ_GOV_PASSIVE)	+= governor_passive.o
->  
->  # DEVFREQ Drivers
->  obj-$(CONFIG_ARM_EXYNOS_BUS_DEVFREQ)	+= exynos-bus.o
->  obj-$(CONFIG_ARM_IMX8M_DDRC_DEVFREQ)	+= imx8m-ddrc.o
-> +obj-$(CONFIG_ARM_IMX_DEVFREQ)		+= imx-devfreq.o
->  obj-$(CONFIG_ARM_RK3399_DMC_DEVFREQ)	+= rk3399_dmc.o
->  obj-$(CONFIG_ARM_TEGRA_DEVFREQ)		+= tegra30-devfreq.o
->  obj-$(CONFIG_ARM_TEGRA20_DEVFREQ)	+= tegra20-devfreq.o
->  
->  # DEVFREQ Event Drivers
-> diff --git a/drivers/devfreq/imx-devfreq.c b/drivers/devfreq/imx-devfreq.c
-> new file mode 100644
-> index 000000000000..620b344e87aa
-> --- /dev/null
-> +++ b/drivers/devfreq/imx-devfreq.c
-> @@ -0,0 +1,150 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2019 NXP
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/devfreq.h>
-> +#include <linux/device.h>
-> +#include <linux/module.h>
-> +#include <linux/of_device.h>
-> +#include <linux/pm_opp.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/slab.h>
-> +
-> +struct imx_devfreq {
-> +	struct devfreq_dev_profile profile;
-> +	struct devfreq *devfreq;
-> +	struct clk *clk;
-> +	struct devfreq_passive_data passive_data;
-> +};
-> +
-> +static int imx_devfreq_target(struct device *dev,
-> +			      unsigned long *freq, u32 flags)
+> Cc: Andrew Jeffery <andrew@aj.id.au>
+> Cc: Joel Stanley <joel@jms.id.au>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-aspeed@lists.ozlabs.org
+> Signed-off-by: Dmitry Safonov <dima@arista.com>
 
-Don't use space for the indentation. Please use only tab.
-
-> +{
-> +	struct imx_devfreq *priv = dev_get_drvdata(dev);
-> +	struct dev_pm_opp *new_opp;
-> +	unsigned long new_freq;
-> +	int ret;
-> +
-> +	new_opp = devfreq_recommended_opp(dev, freq, flags);
-> +	if (IS_ERR(new_opp)) {
-> +		ret = PTR_ERR(new_opp);
-> +		dev_err(dev, "failed to get recommended opp: %d\n", ret);
-> +		return ret;
-> +	}
-> +	new_freq = dev_pm_opp_get_freq(new_opp);
-> +	dev_pm_opp_put(new_opp);
-> +
-> +	return clk_set_rate(priv->clk, new_freq);
-> +}
-> +
-> +static int imx_devfreq_get_cur_freq(struct device *dev, unsigned long *freq)
-> +{
-> +	struct imx_devfreq *priv = dev_get_drvdata(dev);
-> +
-> +	*freq = clk_get_rate(priv->clk);
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx_devfreq_get_dev_status(struct device *dev,
-> +				      struct devfreq_dev_status *stat)
-
-ditto. Please use tab for the indentation.
-
-> +{
-> +	struct imx_devfreq *priv = dev_get_drvdata(dev);
-> +
-> +	stat->busy_time = 0;
-> +	stat->total_time = 0;
-> +	stat->current_frequency = clk_get_rate(priv->clk);
-> +
-> +	return 0;
-> +}
-> +
-> +static void imx_devfreq_exit(struct device *dev)
-> +{
-> +	dev_pm_opp_of_remove_table(dev);
-> +}
-> +
-> +static int imx_devfreq_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct imx_devfreq *priv;
-
-How about changing the variable name 'priv' to 'imx' or 'imx_data'?
-because it is not easy to catch the role of 'priv' from variable name.
-
-> +	const char *gov = DEVFREQ_GOV_USERSPACE;
-> +	void *govdata = NULL;
-
-How about changing the variable name 'govdata' to 'gov_data'?
-- govdata -> gov_data
-
-> +	int ret;
-> +
-> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-> +	if (!priv)
-> +		return -ENOMEM;
-> +
-> +	priv->clk = devm_clk_get(dev, NULL);
-
-nitpick: because the clock-name is not mandatory.
-Don't need to specify the clock name to inform the role of clock
-of other developer/user?
-
-For example, "ddr", "bus" and so on.
-
-> +	if (IS_ERR(priv->clk)) {
-> +		ret = PTR_ERR(priv->clk);
-> +		dev_err(dev, "failed to fetch clk: %d\n", ret);
-> +		return ret;
-> +	}
-> +	platform_set_drvdata(pdev, priv);
-> +
-> +	ret = dev_pm_opp_of_add_table(dev);
-> +	if (ret < 0) {
-> +		dev_err(dev, "failed to get OPP table\n");
-> +		return ret;
-> +	}
-> +
-> +	priv->profile.polling_ms = 1000;
-> +	priv->profile.target = imx_devfreq_target;
-> +	priv->profile.get_dev_status = imx_devfreq_get_dev_status;
-> +	priv->profile.exit = imx_devfreq_exit;
-> +	priv->profile.get_cur_freq = imx_devfreq_get_cur_freq;
-> +	priv->profile.initial_freq = clk_get_rate(priv->clk);
-> +
-> +	/* Handle passive devfreq parent link */
-> +	priv->passive_data.parent = devfreq_get_devfreq_by_phandle(dev, 0);
-> +	if (!IS_ERR(priv->passive_data.parent)) {
-> +		dev_info(dev, "setup passive link to %s\n",
-> +			 dev_name(priv->passive_data.parent->dev.parent));
-> +		gov = DEVFREQ_GOV_PASSIVE;
-> +		govdata = &priv->passive_data;
-> +	} else if (priv->passive_data.parent != ERR_PTR(-ENODEV)) {
-> +		// -ENODEV means no parent: not an error.
-> +		ret = PTR_ERR(priv->passive_data.parent);
-> +		if (ret != -EPROBE_DEFER)
-> +			dev_warn(dev, "failed to get initialize passive parent: %d\n",
-> +				 ret);
-> +		goto err;
-> +	}
-
-You better to change the exception handling as following: It is more simple.
-
-	} else if (PTR_ERR(priv->passive_data.parent) == -EPROBE_DEFER)
-			|| PTR_ERR(priv->passive_data.parent) == -ENODEV) {
-		goto err;
-	} else {
-		ret = PTR_ERR(priv->passive_data.parent);
-		dev_err(dev, "failed to get initialize passive parent: %d\n", ret);
-		goto err;
-	}
-
-> +
-> +	priv->devfreq = devm_devfreq_add_device(dev, &priv->profile,
-> +						gov, govdata);
-> +	if (IS_ERR(priv->devfreq)) {
-> +		ret = PTR_ERR(priv->devfreq);
-> +		dev_err(dev, "failed to add devfreq device: %d\n", ret);
-> +		goto err;
-> +	}
-> +
-> +	return 0;
-> +
-> +err:
-> +	dev_pm_opp_of_remove_table(dev);
-> +	return ret;
-> +}
-> +
-> +static const struct of_device_id imx_devfreq_of_match[] = {
-> +	{ .compatible = "fsl,imx8m-noc", },
-> +	{ .compatible = "fsl,imx8m-nic", },
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, imx_devfreq_of_match);
-> +
-> +static struct platform_driver imx_devfreq_platdrv = {
-> +	.probe		= imx_devfreq_probe,
-> +	.driver = {
-> +		.name	= "imx-devfreq",
-> +		.of_match_table = of_match_ptr(imx_devfreq_of_match),
-> +	},
-> +};
-> +module_platform_driver(imx_devfreq_platdrv);
-> +
-> +MODULE_DESCRIPTION("Generic i.MX bus frequency driver");
-
-If this driver is for bus frequency, you better to use 'bus' for the clock-name
-for the readability.
-
-> +MODULE_AUTHOR("Leonard Crestez <leonard.crestez@nxp.com>");
-> +MODULE_LICENSE("GPL v2");
-> 
-
-
--- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
+Acked-by: Andrew Jeffery <andrew@aj.id.au>
 
 _______________________________________________
 linux-arm-kernel mailing list
