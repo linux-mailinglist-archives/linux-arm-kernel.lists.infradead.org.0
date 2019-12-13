@@ -2,65 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C7F111E8A4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:45:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA90911E8B4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:51:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Os+zDRYI2FfwfynBcC7tnU7+PA10eekGxedS7vrGH0=; b=OWsepeGaoQt4Jm
-	hBak2q4Wea39Aq2nANWqWjXzeX6vNjXcWpn6FCFIFgIc7P/jig2U8akQiEpSRjaxP0xIsYcwGGSWl
-	LROnk0TvmadX4s95ML56sAfAf47f9+mskhe1KsG+nze4ONcFNUl4lz18UL2ut1eHg+oNtOA5yHxAE
-	h+U/YOv2duHl/V35qiNjbINBtnLMQTG3RsYJ+Du2GQzBTmEeu6JMrmydHi8KrrfKPhKxRx8nEfHyK
-	EVpCoiqBp9CO4Qj2Yy/i++Qt6CDDBlvQsnbRHTa0v1n8tj+UB7T7PVlQm/tCVf+OHrYJ0cwQpo2Po
-	JHimdGhLBFcIJrbXVccQ==;
+	List-Owner; bh=exYbRbe9Pku8HMUU4b3AAOws7Si9/+hx1vrzk3yQhH8=; b=Iug2LZk7srTMeV
+	w1ibFpvEAFy7BZ1ZfZGbGP8TU8nrYDzkcqZFzU02peAoOxRadalUKMmJiqUPDG/nuYECnjWGlxojU
+	Eiyo+Ys8QIw88UqmtXOuihgAR/Nwn+dyMkInLLV5wG5cMju/7Pq4fwJB+cUmeWIKPZIuqhZvkuyAP
+	JFsAqssoc5kb1v3yA+I/IzEghXqMWNc99/nGypBSwz6ke80Eq2uokurbWE1f9Z42qvNFdQnczbTCr
+	WCsXIzG0pQJYymf8adXyWIlNShbktxsfd3GQ6/kOkJQnf5bDU2jBJYzB9ndzkwXh7IIqUq79vUczz
+	qpJ8Dy52bADKgZWHAgHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifo4M-000778-1k; Fri, 13 Dec 2019 16:45:34 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1ifoA9-0000Zk-0s; Fri, 13 Dec 2019 16:51:33 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifo4A-0006lj-HC
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:45:24 +0000
-Received: from lhreml703-cah.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id D295B1175F5A999CD297;
- Fri, 13 Dec 2019 16:45:10 +0000 (GMT)
-Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
- lhreml703-cah.china.huawei.com (10.201.108.44) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Fri, 13 Dec 2019 16:45:10 +0000
-Received: from localhost (10.202.226.57) by lhreml710-chm.china.huawei.com
- (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Fri, 13 Dec
- 2019 16:45:10 +0000
-Date: Fri, 13 Dec 2019 16:45:08 +0000
-From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v3 01/13] iommu/arm-smmu-v3: Drop __GFP_ZERO flag from
- DMA allocation
-Message-ID: <20191213164508.00001f99@Huawei.com>
-In-Reply-To: <20191209180514.272727-2-jean-philippe@linaro.org>
-References: <20191209180514.272727-1-jean-philippe@linaro.org>
- <20191209180514.272727-2-jean-philippe@linaro.org>
-Organization: Huawei Technologies Research and Development (UK) Ltd.
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
+ id 1ifo9x-0000YD-MS
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:51:23 +0000
+Received: by mail-pf1-x444.google.com with SMTP id 2so1745383pfg.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Dec 2019 08:51:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=CAKYbgJOuPrQjZzMU15duDzEPoqOHPryHWVB0LlLVJ0=;
+ b=Y9roHoe4knC/3BeSYJfMTn6bay+pT2YhyVNHvcWdl3A8J7dp63no9Ekvt1JsYnoaHY
+ vixMt2a9ZIF+VpZCiLfqaF2+Qi91TDmH48MdsevifKtcEMPwo8ThbhsPJtVU/DX3SPGT
+ hozgRBw67+xOvh61BGiu/pj8aspFRnxjXdEAx9WReUQNZcfB5mw4371fWOrp/1xZSa25
+ DjaByZ9CuvGnurGZFRES5Thm6CY+r6na325r5TRh9PVZDAykJPzB8gcpQDig6tzpk1nQ
+ gE+1JvbnCl7LRzMaO9F7wvvv0XpXmTLwYcpXgri3ros2x8HNdTjJkIbRG9NX/W5AcVjP
+ BIiw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=CAKYbgJOuPrQjZzMU15duDzEPoqOHPryHWVB0LlLVJ0=;
+ b=Wc0B5vPlnkCCtDIStjDoGjV/ensP3ZVxYSt6YV7yUJgazEFO3eGgt0rL4bt/d3Pm+K
+ X3df1g02ZurbIsD1vOR42W+Dh9tRZMtQhTKbTFvbLFTWzYdlaJvuFAPXOBaVmvbKvsPy
+ 2aCgYb2tFfqTD7FVpVNEkoCZetJipJiKdmxfkjMKSxlO8+RzlYZAvHJg3OxXgTWu895d
+ GypIIB+8zO4mzAM4m2pNbYxMP259TLWviJt8/Yi2v3ZMpHWoKHOvmPH9T8cZeYwHB1gT
+ hqwh1D++Kuo31LMNkiGTgKumzmuezQC3zr1sd26t7O/CR7eL8T8V811emt042r9906e3
+ LeAw==
+X-Gm-Message-State: APjAAAVV0J+VxW8l+Exel+gs0Z9cbQnr3ixUsx3XSEWU5OfNKKmSvDKE
+ NxdGLLZOcCq5zVm3NpnRi+OP3g==
+X-Google-Smtp-Source: APXvYqx8c6YOAASRXq1y4Uky+FLljcRzDfb1EqKwF5yKxzGUufqLyOLiT0Js4vaXwqrz7WYzNKz0zQ==
+X-Received: by 2002:a62:5544:: with SMTP id j65mr381415pfb.121.1576255880888; 
+ Fri, 13 Dec 2019 08:51:20 -0800 (PST)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id 91sm10649806pjq.18.2019.12.13.08.51.19
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 13 Dec 2019 08:51:19 -0800 (PST)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>, mjourdan@baylibre.com
+Subject: Re: [PATCH 4/4] arm64: dts: meson-g12-common: add video decoder node
+In-Reply-To: <20191120111430.29552-5-narmstrong@baylibre.com>
+References: <20191120111430.29552-1-narmstrong@baylibre.com>
+ <20191120111430.29552-5-narmstrong@baylibre.com>
+Date: Fri, 13 Dec 2019 08:51:19 -0800
+Message-ID: <7hwob088zc.fsf@baylibre.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.202.226.57]
-X-ClientProxiedBy: lhreml721-chm.china.huawei.com (10.201.108.72) To
- lhreml710-chm.china.huawei.com (10.201.108.61)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_084522_721731_83199521 
-X-CRM114-Status: GOOD (  14.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191213_085121_738059_7BC987BA 
+X-CRM114-Status: UNSURE (   6.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,83 +94,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- eric.auger@redhat.com, linux-pci@vger.kernel.org, joro@8bytes.org,
- sudeep.holla@arm.com, rjw@rjwysocki.net, robin.murphy@arm.com,
- linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
- robh+dt@kernel.org, guohanjun@huawei.com, bhelgaas@google.com,
- zhangfei.gao@linaro.org, will@kernel.org, linux-arm-kernel@lists.infradead.org,
- lenb@kernel.org
+Cc: linux-amlogic@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 9 Dec 2019 19:05:02 +0100
-Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
+Neil Armstrong <narmstrong@baylibre.com> writes:
 
-> Since commit 518a2f1925c3 ("dma-mapping: zero memory returned from
-> dma_alloc_*"), dma_alloc_* always initializes memory to zero, so there
-> is no need to use dma_zalloc_* or pass the __GFP_ZERO flag anymore.
-> 
-> The flag was introduced by commit 04fa26c71be5 ("iommu/arm-smmu: Convert
-> DMA buffer allocations to the managed API"), since the managed API
-> didn't provide a dmam_zalloc_coherent() function.
-> 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+> From: Maxime Jourdan <mjourdan@baylibre.com>
+>
+> Add the video decoder node for the Amlogic G12A and compatible SoC.
+>
+> Signed-off-by: Maxime Jourdan <mjourdan@baylibre.com>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 
-Good to tidy these up whilst we are here.
+Queued for v5.6,
 
-Jonathan
-
-> ---
->  drivers/iommu/arm-smmu-v3.c | 9 ++++-----
->  1 file changed, 4 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> index effe72eb89e7..d4e8b7f8d9f4 100644
-> --- a/drivers/iommu/arm-smmu-v3.c
-> +++ b/drivers/iommu/arm-smmu-v3.c
-> @@ -1675,7 +1675,7 @@ static int arm_smmu_init_l2_strtab(struct arm_smmu_device *smmu, u32 sid)
->  
->  	desc->span = STRTAB_SPLIT + 1;
->  	desc->l2ptr = dmam_alloc_coherent(smmu->dev, size, &desc->l2ptr_dma,
-> -					  GFP_KERNEL | __GFP_ZERO);
-> +					  GFP_KERNEL);
->  	if (!desc->l2ptr) {
->  		dev_err(smmu->dev,
->  			"failed to allocate l2 stream table for SID %u\n",
-> @@ -2161,8 +2161,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
->  		return asid;
->  
->  	cfg->cdptr = dmam_alloc_coherent(smmu->dev, CTXDESC_CD_DWORDS << 3,
-> -					 &cfg->cdptr_dma,
-> -					 GFP_KERNEL | __GFP_ZERO);
-> +					 &cfg->cdptr_dma, GFP_KERNEL);
->  	if (!cfg->cdptr) {
->  		dev_warn(smmu->dev, "failed to allocate context descriptor\n");
->  		ret = -ENOMEM;
-> @@ -2883,7 +2882,7 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
->  
->  	l1size = cfg->num_l1_ents * (STRTAB_L1_DESC_DWORDS << 3);
->  	strtab = dmam_alloc_coherent(smmu->dev, l1size, &cfg->strtab_dma,
-> -				     GFP_KERNEL | __GFP_ZERO);
-> +				     GFP_KERNEL);
->  	if (!strtab) {
->  		dev_err(smmu->dev,
->  			"failed to allocate l1 stream table (%u bytes)\n",
-> @@ -2910,7 +2909,7 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
->  
->  	size = (1 << smmu->sid_bits) * (STRTAB_STE_DWORDS << 3);
->  	strtab = dmam_alloc_coherent(smmu->dev, size, &cfg->strtab_dma,
-> -				     GFP_KERNEL | __GFP_ZERO);
-> +				     GFP_KERNEL);
->  	if (!strtab) {
->  		dev_err(smmu->dev,
->  			"failed to allocate linear stream table (%u bytes)\n",
-
-
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
