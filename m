@@ -2,89 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EA4911DEE5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 08:50:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 409B911DEE7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 08:50:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aLN45wfchnGZ2cEVuEfvKrT16Ro7oj8QVuyS5bR7eKw=; b=h0DIou/DxLs4Tq
-	wAExOlgYS00b5VJ41XrKmlZe6r16WDx5dmLpLOdpez1OspkF8ZvoYDwLNg+IVLCSX14sySzUvxxI7
-	sumFCNf4QM1DQ1bsQXBZC1B6wzTHwYC6I7z4EcLd2EdDhoPpkoAIkvztU35Alvt3L4J2nB7yD5L3x
-	ATxUmcbAvq/WYUG3jNBviOr2WxNqeiTlsmwLVKea4qWXgCpAY/vFnLW5K4n3Ar0JNIb/qrrvZY76+
-	FnZPe4qSosiNexTrD99wZsR1SPSb0m5MwjfRphHi9wWpgHA5L9Y7/rYfAWpvhWlw8Tna9UIbABVyD
-	Abjz+LHl0FdzZp7moJYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K8iNehwqmP6saQbqYtH3gkSDnJKU7H5gk3ymURmfJPw=; b=SKYp7TbZLkgjRf
+	k+l9u8wmNyPJxVwx3c+ULMUkeCpx6gQIbvXEKp2IGj7O0KoUvIfu4Jhg5BZQwzpdyDdiGtOux4QWI
+	/9iP5lXKTBy2Zgjc2fc/BpFa7A1Y+vF4Cuj4yPu5l56GGUB8EPD85C+W17+dCPyGwdWNkySP7oQUw
+	eGtBp0ksAvOWaYm2r5FOww5IzIw54VKo8HCF3jkn7HISAEmbexlSP33Sj/GugWfFg5wxFFSJOSRm1
+	i7+99yig+RvhbpEqw96KQOg9AZ8OnEtICDCmD2apVGSTQaE37fCUJD1qrxxmGIOWKkaQaNF97RvOE
+	4N2OvN8kdkFBhedsJ+Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iffi0-0006b3-9o; Fri, 13 Dec 2019 07:49:56 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+	id 1iffiT-0007az-IS; Fri, 13 Dec 2019 07:50:25 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iffhn-0006Zl-Sa
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 07:49:49 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 1125822784;
- Fri, 13 Dec 2019 02:49:43 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Fri, 13 Dec 2019 02:49:43 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm1; bh=mJFqAJ0C3QCpWN2iUjPkDmdFvn
- znhTzLbrbNUZFsDHk=; b=M5Z0fhzEup+SlJRpXx8Nk9814SOijbwUlJwPFXr3Fp
- UXqpw5TDvfj53uwfP5k001Y0KKkIp3sJ3cYzvL4uM/IXYvnLSwLktwJEs56LQr5u
- ONz83jKed3LKu4T/4s7I4BXg7MigZxMWmdCxPEZ+Nf0MDMxJLgncD+u4Oc53/3iU
- 43jlJXMsQKMt8OY0AbZ9vrAmgzwBpvrLT1UG05t48wWpJq5dq4iqiCkeIH4teVsG
- yZnXhDz4Agl3XjSZzV/kO0lhfCFXb27UMBkO4bliuoBRhBgcxunN4EBCBmzUJQx5
- WuFaqBkVj22GilvqhuhbKm580KicthIsSZY0/U6EJ4og==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=mJFqAJ0C3QCpWN2iU
- jPkDmdFvnznhTzLbrbNUZFsDHk=; b=xZ+B6sOQYtZxyvToFKhUpaFvzQkiGu4k2
- D6M/OzzLo3y3zN0FMj6bGuZj5J9eK5Ul5pUQKbQa07XVXIchfOXMGf8jq02dmhUE
- X47btzYL4GBhsJRPzSamTYnNNnVvz8CAqAqqYLgvsQM5oShXYymZ7HW424A8+ASD
- RYWHPvkQVbZQ05gRqaT9d6OVUcjaBgGuXB2GFuDOreCUtX9HTX+oKh6VMNTd9sDI
- RA9qk6iDz+KRVjbkzlrJsYBxeml0XQuZ6Fx0RxjhnpBYwfbWij7ocHPyT2pNx4cE
- uFSZI+O37mrXTdNpQ26er2HxIFBzDr4SfYRsQKkliH/jR1YefStww==
-X-ME-Sender: <xms:lkLzXZU9KDrpochxgUwvzHVDtY2_D3LFfhBduW93rjRu1WIZMAFpZg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudelkedgudduvdcutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
- enogevohgrshhtrghlqdfhgeduvddqtddvucdludehtddmnecujfgurhephffvufffkffo
- ggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhmvgcutfhiphgrrhguuceomhgrgi
- himhgvsegtvghrnhhordhtvggthheqnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdr
- ohhrghenucfkphepledtrdekledrieekrdejieenucfrrghrrghmpehmrghilhhfrhhomh
- epmhgrgihimhgvsegtvghrnhhordhtvggthhenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:lkLzXQf9_gBrxN17AcTL8Ma1jJ5ZOsSrHDAgNj-2FlZd56KBp_9UfQ>
- <xmx:lkLzXduYbHuMJZUUQmKSo__iuMRC7xP9IKO5qpN5P1WKJzsRQZp-Yw>
- <xmx:lkLzXX8BF3j5y60ZmFiHgjESVUxrzH8OnQFfXiKt4SfeI7M1-RC9pw>
- <xmx:l0LzXdSX-vkhze1OcB_TTFVL9e23hD77BV-zKs4PVlnD6LXN07sjXQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id B783880069;
- Fri, 13 Dec 2019 02:49:41 -0500 (EST)
-From: Maxime Ripard <maxime@cerno.tech>
-To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>
-Subject: [PATCH] dt-bindings: ata: Convert Allwinner AHCI controller to a
- schema
-Date: Fri, 13 Dec 2019 08:49:38 +0100
-Message-Id: <20191213074938.27285-1-maxime@cerno.tech>
-X-Mailer: git-send-email 2.23.0
+ id 1iffi1-0006js-Sw; Fri, 13 Dec 2019 07:49:59 +0000
+X-UUID: 590fd14ae92d48d5bdba11c00da3403e-20191212
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=sGCRslRMxKd4+sopLgy6QPoZUbVrNbm1Aabm9JQ7Fiw=; 
+ b=afi5h+foitKu6vDgUAo5b/2YH6VGSujr3TAIFXEptMJCnJD+YkdQiNff9Pze/CH/4e1B4qDDbetB88NeGVUaEMJNAxyaKQRUaUPyn238WkedEkarA+K8orwo7RsrhIM11t8edi/Z7ENhF1i+yjwNI2XiOarN7R1YBKPleAmqsGs=;
+X-UUID: 590fd14ae92d48d5bdba11c00da3403e-20191212
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1465958448; Thu, 12 Dec 2019 23:49:54 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Dec 2019 23:51:02 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 13 Dec 2019 15:49:32 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 13 Dec 2019 15:49:40 +0800
+Message-ID: <1576223390.9817.4.camel@mtksdaap41>
+Subject: Re: [PATCH v2, 0/2] drm/mediatek: Add ctm property support
+From: CK Hu <ck.hu@mediatek.com>
+To: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Date: Fri, 13 Dec 2019 15:49:50 +0800
+In-Reply-To: <1576222132-31586-1-git-send-email-yongqiang.niu@mediatek.com>
+References: <1576222132-31586-1-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: B532F401A64E730E8B148E727DA995610D1CD9CB4E6643715A43734C63D673E82000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_234948_080772_E772A193 
-X-CRM114-Status: GOOD (  11.64  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191212_234957_956788_039893FD 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,196 +86,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: axboe@kernel.dk, devicetree@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, linux-ide@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime@cerno.tech>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Allwinner SoCs have a AHCI controllers that is supported in Linux, with
-a matching Device Tree binding.
+Hi, Yongqiang:
 
-Now that we have the DT validation in place, let's convert the device tree
-bindings for that controller over to a YAML schemas.
+On Fri, 2019-12-13 at 15:28 +0800, Yongqiang Niu wrote:
+> Changes since v1:
+> -separate gamma patch
+> -remove cmdq support for ctm setting
 
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
----
- .../devicetree/bindings/ata/ahci-platform.txt | 12 ----
- .../ata/allwinner,sun4i-a10-ahci.yaml         | 47 +++++++++++++
- .../ata/allwinner,sun8i-r40-ahci.yaml         | 67 +++++++++++++++++++
- 3 files changed, 114 insertions(+), 12 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/ata/allwinner,sun4i-a10-ahci.yaml
- create mode 100644 Documentation/devicetree/bindings/ata/allwinner,sun8i-r40-ahci.yaml
+If this series depend on other patch or series, please describe it.
 
-diff --git a/Documentation/devicetree/bindings/ata/ahci-platform.txt b/Documentation/devicetree/bindings/ata/ahci-platform.txt
-index 55c6fab1b373..77091a277642 100644
---- a/Documentation/devicetree/bindings/ata/ahci-platform.txt
-+++ b/Documentation/devicetree/bindings/ata/ahci-platform.txt
-@@ -9,8 +9,6 @@ PHYs.
- 
- Required properties:
- - compatible        : compatible string, one of:
--  - "allwinner,sun4i-a10-ahci"
--  - "allwinner,sun8i-r40-ahci"
-   - "brcm,iproc-ahci"
-   - "hisilicon,hisi-ahci"
-   - "cavium,octeon-7130-ahci"
-@@ -45,8 +43,6 @@ Required properties when using sub-nodes:
- - #address-cells    : number of cells to encode an address
- - #size-cells       : number of cells representing the size of an address
- 
--For allwinner,sun8i-r40-ahci, the reset property must be present.
--
- Sub-nodes required properties:
- - reg		    : the port number
- And at least one of the following properties:
-@@ -60,14 +56,6 @@ Examples:
- 		interrupts = <115>;
-         };
- 
--	ahci: sata@1c18000 {
--		compatible = "allwinner,sun4i-a10-ahci";
--		reg = <0x01c18000 0x1000>;
--		interrupts = <56>;
--		clocks = <&pll6 0>, <&ahb_gates 25>;
--		target-supply = <&reg_ahci_5v>;
--	};
--
- With sub-nodes:
- 	sata@f7e90000 {
- 		compatible = "marvell,berlin2q-achi", "generic-ahci";
-diff --git a/Documentation/devicetree/bindings/ata/allwinner,sun4i-a10-ahci.yaml b/Documentation/devicetree/bindings/ata/allwinner,sun4i-a10-ahci.yaml
-new file mode 100644
-index 000000000000..cb530b46beff
---- /dev/null
-+++ b/Documentation/devicetree/bindings/ata/allwinner,sun4i-a10-ahci.yaml
-@@ -0,0 +1,47 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/ata/allwinner,sun4i-a10-ahci.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Allwinner A10 AHCI SATA Controller bindings
-+
-+maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Maxime Ripard <mripard@kernel.org>
-+
-+properties:
-+  compatible:
-+    const: allwinner,sun4i-a10-ahci
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: AHCI Bus Clock
-+      - description: AHCI Module Clock
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  target-supply:
-+    description: Regulator for SATA target power
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - interrupts
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    ahci: sata@1c18000 {
-+        compatible = "allwinner,sun4i-a10-ahci";
-+        reg = <0x01c18000 0x1000>;
-+        interrupts = <56>;
-+        clocks = <&pll6 0>, <&ahb_gates 25>;
-+        target-supply = <&reg_ahci_5v>;
-+    };
-diff --git a/Documentation/devicetree/bindings/ata/allwinner,sun8i-r40-ahci.yaml b/Documentation/devicetree/bindings/ata/allwinner,sun8i-r40-ahci.yaml
-new file mode 100644
-index 000000000000..e74d609be3cc
---- /dev/null
-+++ b/Documentation/devicetree/bindings/ata/allwinner,sun8i-r40-ahci.yaml
-@@ -0,0 +1,67 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/ata/allwinner,sun8i-r40-ahci.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Allwinner R40 AHCI SATA Controller bindings
-+
-+maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Maxime Ripard <mripard@kernel.org>
-+
-+properties:
-+  compatible:
-+    const: allwinner,sun8i-r40-ahci
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: AHCI Bus Clock
-+      - description: AHCI Module Clock
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  resets:
-+    description: AHCI Reset Line
-+
-+  reset-names:
-+    const: ahci
-+
-+  ahci-supply:
-+    description: Regulator for the AHCI controller
-+
-+  phy-supply:
-+    description: Regulator for the SATA PHY power
-+
-+required:
-+  - compatible
-+  - reg
-+  - clocks
-+  - interrupts
-+  - resets
-+  - reset-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/sun8i-r40-ccu.h>
-+    #include <dt-bindings/reset/sun8i-r40-ccu.h>
-+
-+    ahci: sata@1c18000 {
-+        compatible = "allwinner,sun8i-r40-ahci";
-+        reg = <0x01c18000 0x1000>;
-+        interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
-+        clocks = <&ccu CLK_BUS_SATA>, <&ccu CLK_SATA>;
-+        resets = <&ccu RST_BUS_SATA>;
-+        reset-names = "ahci";
-+        ahci-supply = <&reg_dldo4>;
-+        phy-supply = <&reg_eldo3>;
-+    };
-+
-+...
--- 
-2.23.0
+Regards,
+CK
 
+> 
+> 
+> Yongqiang Niu (2):
+>   drm/mediatek: Fix gamma correction issue
+>   drm/mediatek: Add ctm property support
+> 
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 18 +++++++--
+>  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 62 ++++++++++++++++++++++++++++-
+>  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  9 +++++
+>  3 files changed, 85 insertions(+), 4 deletions(-)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
