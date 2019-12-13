@@ -2,57 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E94B11E29A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 12:14:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1422D11E2B4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 12:20:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yqwcDhpJqE3exhSO87uF4CxG8b4EH9Y5G9nPYyzSSzk=; b=orQ9dxRW9tV519
-	NaXrfAO2fA5T+7MFDBGYEJdZj5R/qXvXxii0SNMpQuVNlWezla0fTmN9jEF20Vm/W6ghCYPlHxExn
-	gKoG67MAwW4uQDz6NtjhDor9e8OMBe2NVxbqP4Tu9T08pYFFB7AK9Fq1x/MKjV4ARICvUAF+TxZHK
-	6/P1/qDPYCvT1osQFr2DzOhTs7h7NRZiaXifYRzWGKuvzti1oGW2FOE1v6yD7fHqapRiQzzIPryta
-	lvPR4bIjoAHHeNB832mb6dhzId60z4lxrIJY6hvZ9SFKdmaanfX4tmwjcZHF85sXREjglnzOsNptr
-	XEsgd2t1lWEMWEjRc8ig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KThYNKqcAEhKoIXvHTMPhyTTh3z2AGY0VIiyHXoryl0=; b=TPk3Crc/VbqLRA
+	khtLDxNcmZ+iMA6SRd9OJkt19RTnJq4zhtcjQgNNLUnQt7o3BjoerPTfYTze53uLwgTxLQKgKoBOj
+	2hAq7EnJ6IuR1nMcGVYWOKuxL7V+UeozwUXLA9FGRQOPHDL3FF6NMzZWV5xMe+QFBc5s+WMsvBW+/
+	s5ad7KcveKXkwKdPZdZ0Ja/ceUrBDGShXDV7RAfH/q3eYjWl2od11sAgUjEX2t3KWxJCLZtwDOQFD
+	tKLe/SpTf4wh5oLrrLz/HRbfXAtYBULsqrYdnKsEWTpRXVsNKFnInN/an+HQOUn1cOH1MJ6ZhCrr9
+	If64d8RSi9xLGo8JZ+xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifitg-00072I-65; Fri, 13 Dec 2019 11:14:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifitY-00071d-4J
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 11:14:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D1B231FB;
- Fri, 13 Dec 2019 03:14:01 -0800 (PST)
-Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 656FC3F718;
- Fri, 13 Dec 2019 03:14:01 -0800 (PST)
-Date: Fri, 13 Dec 2019 12:14:00 +0100
-From: Christoffer Dall <christoffer.dall@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH 1/3] KVM: arm/arm64: Properly handle faulting of device
- mappings
-Message-ID: <20191213111400.GI28840@e113682-lin.lund.arm.com>
-References: <20191211165651.7889-1-maz@kernel.org>
- <20191211165651.7889-2-maz@kernel.org>
- <20191213082920.GA28840@e113682-lin.lund.arm.com>
- <7f86824f4cbd17cd75ef347473e34278@www.loen.fr>
+	id 1ifizh-000164-IZ; Fri, 13 Dec 2019 11:20:25 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifiz9-0000iF-UJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 11:19:53 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: lH2DhvT7SomBYBQ6THB2MuQsdRsIoltRtdm4rT/nTa4FJ2tVfL9sP5vUJfnOcncuDcdnRijeuc
+ /AeejhZTdeHw7Vd5ARF4aCvYgk7QR6gOF6cVOEiUoSRQqMjGPCTWhisgRzvGi9d/FdzT+M6B2Z
+ uqpSFFy9xzs+upmpKiayq4zeZ7qVdc/+1oIh4DmFyElqHjYAOwd8JaWJgn4t3EPgrx8UetdvP1
+ IBLjSHz+ebTgIcY98M67ack8sT1wkQ4GYfJxkWNs0pZN77ZOUN5cGagLT+I298ZNDM+mophJ+p
+ 0ec=
+X-IronPort-AV: E=Sophos;i="5.69,309,1571727600"; d="scan'208";a="57662245"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 Dec 2019 04:19:49 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 13 Dec 2019 04:19:36 -0700
+Received: from m18063-ThinkPad-T460p.microchip.com (10.10.85.251) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Fri, 13 Dec 2019 04:19:33 -0700
+From: Claudiu Beznea <claudiu.beznea@microchip.com>
+To: <robh+dt@kernel.org>, <mark.rutland@arm.com>,
+ <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
+ <ludovic.desroches@microchip.com>, <daniel.lezcano@linaro.org>,
+ <tglx@linutronix.de>
+Subject: [PATCH v4 0/2] add Microchip PIT64B timer
+Date: Fri, 13 Dec 2019 13:19:20 +0200
+Message-ID: <1576235962-30123-1-git-send-email-claudiu.beznea@microchip.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7f86824f4cbd17cd75ef347473e34278@www.loen.fr>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_031404_258780_83907074 
-X-CRM114-Status: GOOD (  41.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191213_031952_031641_5385FA27 
+X-CRM114-Status: GOOD (  17.84  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,231 +95,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- stable@vger.kernel.org, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Alexandru Elisei <alexandru.elisei@arm.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Claudiu Beznea <claudiu.beznea@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 13, 2019 at 09:28:59AM +0000, Marc Zyngier wrote:
-> Hi Christoffer,
-> 
-> On 2019-12-13 08:29, Christoffer Dall wrote:
-> > Hi Marc,
-> > 
-> > On Wed, Dec 11, 2019 at 04:56:48PM +0000, Marc Zyngier wrote:
-> > > A device mapping is normally always mapped at Stage-2, since there
-> > > is very little gain in having it faulted in.
-> > 
-> > It is actually becoming less clear to me what the real benefits of
-> > pre-populating the stage 2 page table are, especially given that we can
-> > provoke a situation where they're faulted in anyhow.  Do you recall if
-> > we had any specific case that motivated us to pre-fault in the pages?
-> 
-> It's only a minor performance optimization that was introduced by Ard in
-> 8eef91239e57d. Which makes sense for platform devices that have a single
-> fixed location in memory. It makes slightly less sense for PCI, where
-> you can move things around.
+Hi,
 
-User space could still decide to move things around in its VA map even
-if the device is fixed.
+This series adds driver for Microchip PIT64B timer.
+Timer could be used in continuous or oneshot mode. It has 2x32 bit registers
+to emulate a 64 bit timer. The timer's period could be configured via LSB_PR
+and MSB_PR registers. The current timer's value could be checked via TLSB and
+TMSB registers. When (TMSB << 32) | TLSB value reach the (MSB_PR << 32) | LSB_PR
+interrupt is raised. If in contiuous mode the TLSB and TMSB resets and restart
+counting.
 
-Anyway, I was thinking more if there was some sort of device, like a
-frambuffer, which for example crosses page boundaries and where it would
-be visible to the user that there's a sudden performance drop while
-operating the device over page boundaries.  Anything like that?
+This drivers uses PIT64B capabilities for clocksource and clockevent.
+The first requested PIT64B timer is used for clockevent. The second one is used
+for clocksource. Individual PIT64B hardware resources were used for clocksource
+and clockevent to be able to support high resolution timers with this PIT64B
+implementation.
 
-> 
-> > > Nonetheless, it is possible to end-up in a situation where the
-> > > device
-> > > mapping has been removed from Stage-2 (userspace munmaped the VFIO
-> > > region, and the MMU notifier did its job), but present in a
-> > > userspace
-> > > mapping (userpace has mapped it back at the same address). In such
-> > > a situation, the device mapping will be demand-paged as the guest
-> > > performs memory accesses.
-> > > 
-> > > This requires to be careful when dealing with mapping size, cache
-> > > management, and to handle potential execution of a device mapping.
-> > > 
-> > > Cc: stable@vger.kernel.org
-> > > Reported-by: Alexandru Elisei <alexandru.elisei@arm.com>
-> > > Signed-off-by: Marc Zyngier <maz@kernel.org>
-> > > ---
-> > >  virt/kvm/arm/mmu.c | 21 +++++++++++++++++----
-> > >  1 file changed, 17 insertions(+), 4 deletions(-)
-> > > 
-> > > diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-> > > index a48994af70b8..0b32a904a1bb 100644
-> > > --- a/virt/kvm/arm/mmu.c
-> > > +++ b/virt/kvm/arm/mmu.c
-> > > @@ -38,6 +38,11 @@ static unsigned long io_map_base;
-> > >  #define KVM_S2PTE_FLAG_IS_IOMAP		(1UL << 0)
-> > >  #define KVM_S2_FLAG_LOGGING_ACTIVE	(1UL << 1)
-> > > 
-> > > +static bool is_iomap(unsigned long flags)
-> > > +{
-> > > +	return flags & KVM_S2PTE_FLAG_IS_IOMAP;
-> > > +}
-> > > +
-> > 
-> > nit: I'm not really sure this indirection makes the code more readable,
-> > but I guess that's a matter of taste.
-> > 
-> > >  static bool memslot_is_logging(struct kvm_memory_slot *memslot)
-> > >  {
-> > >  	return memslot->dirty_bitmap && !(memslot->flags &
-> > > KVM_MEM_READONLY);
-> > > @@ -1698,6 +1703,7 @@ static int user_mem_abort(struct kvm_vcpu
-> > > *vcpu, phys_addr_t fault_ipa,
-> > > 
-> > >  	vma_pagesize = vma_kernel_pagesize(vma);
-> > >  	if (logging_active ||
-> > > +	    (vma->vm_flags & VM_PFNMAP) ||
-> > 
-> > WHat is actually the rationale for this?
-> > 
-> > Why is a huge mapping not permitted to device memory?
-> > 
-> > Are we guaranteed that VM_PFNMAP on the vma results in device mappings?
-> > I'm not convinced this is the case, and it would be better if we can
-> > stick to a single primitive (either kvm_is_device_pfn, or VM_PFNMAP) to
-> > detect device mappings.
-> 
-> For now, I've tried to keep the two paths that deal with mapping devices
-> (or rather, things that we interpret as devices) as close as possible.
-> If we drop the "eager" mapping, then we're at liberty to restructure
-> this in creative ways.
-> 
-> This includes potential huge mappings, but I'm not sure the rest of the
-> kernel uses them for devices anyway (I need to find out).
-> 
-> > As a subsequent patch, I'd like to make sure that at the very least our
-> > memslot prepare function follows the exact same logic for mapping device
-> > memory as a fault-in approach does, or that we simply always fault pages
-> > in.
-> 
-> As far as I can see, the two approach are now identical. Am I missing
-> something?
-> And yes, getting rid of the eager mapping works for me.
-> 
+Thank you,
+Claudiu Beznea
 
-As far as I can tell, our user_mem_abort() uses gfn_to_pfn_prot() which
-goes doesn a long trail which ends up at hva_to_pfn_remapped(), which
-might result in doing the same offset calculation that we do in
-kvm_arch_prepare_memory_region(), but it also considers other scenarios.
+Changes in v4:
+- use clocksource_mmio_init() to register timer for clocksource
+  functionality; with this, struct mchp_pit64b_clksrc was removed and replaced
+  with mchp_pit64b_cs_base variable to keep the timer base address
+- removed clksrc_to_mchp_pit64b_timer() macro 
+- introduce mchp_pit64b_dt_init_timer() and add there the content of
+  mchp_pit64b_timer_init() which was removed
+- s/mchp_pit64b_dt_init_clksrc()/mchp_pit64b_init_clksrc(),
+  s/mchp_pit64b_dt_init_clkevt()/mchp_pit64b_init_clkevt() and minimize
+  their content
+- remove cycles member from mchp_pit64b_timer and add it as a local
+  variable (to be used only for clockevent timer in periodic mode)
+- add mode member to struct mchp_pit64b_timer keeping a precomputed value
+  (at probe) of the mode register to remove some of the logic inside
+  mchp_pit64b_reset() function
+- remove irq member from struct mchp_pit64b_timer; add it instead as
+  argument for mchp_pit64b_reset() function to be able to use the same
+  function also for programming of clocksource timer
+- remove mchp_pit64b_clkevt_set_oneshot() function; timer programming
+  while in one shot mode should be done by mchp_pit64b_clkevt_set_next_event()
+- in mchp_pit64b_clkevt_suspend()/mchp_pit64b_clkevt_resume() remove the
+  timer reconfiguration (via mchp_pit64b_reset()); it should be done
+  while programming next delta (if one shot mode) or in
+  mchp_pit64b_clkevt_set_periodic() if periodic mode
+- s/mchp_pit64b_get_period()/mchp_pit64b_cnt_read()
+- in mchp_pit64b_init_clksrc() stop timer if clocksource registration fails
+- remove MCHP_PIT64B_ISR_PERIOD macro
+- s/to_mchp_pit64b_clkevt()/to_mchp_pit64b_timer() and cast the result
+  to struct mchp_pit64b_timer *
+- s/mchp_pit64b_pres_prepare()/mchp_pit64b_init_mode() since the function
+  will be in charge of precomputing the mode registe value to be used at
+  runtime
 
-Even if we analyze all that and convince oursleves it's always all the
-same on arm64, the two code paths could change, leading to really hard
-to debug differing behavior, and nobody will actively keep the two paths
-in sync.  I'd be fine with keeping the performance optimization if we
-have good grounds for that though, and using the same translation
-mechanism for VM_PFNMAP as user_mem_abort.
+Changes in v3:
+- rework data structures:
+	- timer related data structure is called now mchp_pit64b_timer embedding
+	  base iomem, clocks, interrupt, prescaler value
+	- introduced struct mchp_pit64b_clksrc and struct mchp_pit64b_clkevt
+	  instead of mchp_pit64b_clksrc_data and mchp_pit64b_clkevt_data
+	- use container_of() to retrieve mchp_pit64b_timer objects on
+	  clocksource/clockevent specific APIs
+	- document data structures
+- use raw_local_irq_save()/raw_local_irq_restore() when reading
+  MCHP_PIT64B_TLSBR and MCHP_PIT64B_TMSBR in mchp_pit64b_get_period()
+- get rid of mchp_pit64b_read(), mchp_pit64b_write() and use instead
+  readl_relaxed(), writel_relaxed()
+- get rid of mchp_pit64b_set_period() and inlined its instructions in
+  mchp_pit64b_reset()
+- mchp_pit64b_reset() gets now as arguments an object of type
+  struct mchp_pit64b_timer, cycles to program and mode
+- remove static struct clocksource mchp_pit64b_clksrc and
+  static struct clock_event_device mchp_pit64b_clkevt and instead allocate
+  and fill them in mchp_pit64b_dt_init_clksrc() and
+  mchp_pit64b_dt_init_clkevt()
+- call mchp_pit64b_reset() in mchp_pit64b_clkevt_set_next_event() and
+  program clockevent timer with SMOD=0; if SMOD=1 the timer's period could
+  be reprogrammed also if writing TLSB, TMSB if it is running. In cases
+  were its period expired START bit still has to be set in control register.
+  In case the programming sequence is like in v2, with SMOD=1:
+	- program MSB_PR
+	- program LSB_PR
+	- program START bit in control register
+  for short programmed periods we may start the timer twice with this
+  programming sequence, 1st time after LSB_PR is updated (and due to SMOD=1),
+  2nd time after programming START bit in control register and in case
+  programmed period already expire
+- simplify mchp_pit64b_interrupt() by just reading ISR register, to clear the
+  received interrupt, and just call irq_data->clkevt->event_handler(irq_data->clkevt);
+- in mchp_pit64b_pres_compute() chose the bigest prescaler in case a good
+  one not found
+- document mchp_pit64b_pres_prepare() and simplified it a bit
+- enforce gclk as mandatory
+- introduce mchp_pit64b_timer_init() and mchp_pit64b_timer_cleanup()
+- keep the clocksource timer base address in a mchp_pit64b_cs_base variable so
+  that it could be used by mchp_pit64b_sched_read_clk()
+- rework mchp_pit64b_dt_init() and return -EINVAL in case it was called
+  more than two times: one for initialization of clockevent, one for
+  initialization of clocksource
+- introduce MCHP_PIT64B_MR_ONE_SHOT define
+- move the new lines introduced in Makefile and Kconfig at the end of files
+- collect Rob's Reviewed-by tag on patch 1/2
+- review the commit message of patch 2/2
 
-Am I missing something?
+Changes in v2:
+- remove clock-frequency DT binding and hardcoded it in the driver
+- initialize best_pres variable in mchp_pit64b_pres_prepare()
+- remove MCHP_PIT64B_DEF_FREQ 
+- get rid of patches 3-5 from v1 [1] since there is no entry in MAINTAINERS file
+  for this entry. It was removed in
+  commit 44015a8181a5 ("MAINTAINERS: at91: remove the TC entry")
 
-> > 
-> > >  	    !fault_supports_stage2_huge_mapping(memslot, hva,
-> > > vma_pagesize)) {
-> > >  		force_pte = true;
-> > >  		vma_pagesize = PAGE_SIZE;
-> > > @@ -1760,6 +1766,9 @@ static int user_mem_abort(struct kvm_vcpu
-> > > *vcpu, phys_addr_t fault_ipa,
-> > >  			writable = false;
-> > >  	}
-> > > 
-> > > +	if (exec_fault && is_iomap(flags))
-> > > +		return -ENOEXEC;
-> > > +
-> > 
-> > nit: why don't you just do this when checking kvm_is_device_pfn() and
-> > avoid having logic in two places to deal with this case?
-> 
-> Good point. I've already sent the PR, but that could be a further cleanup.
-> 
-
-Sure, I can have a look when we agree on the above.
-
-> > 
-> > >  	spin_lock(&kvm->mmu_lock);
-> > >  	if (mmu_notifier_retry(kvm, mmu_seq))
-> > >  		goto out_unlock;
-> > > @@ -1781,7 +1790,7 @@ static int user_mem_abort(struct kvm_vcpu
-> > > *vcpu, phys_addr_t fault_ipa,
-> > >  	if (writable)
-> > >  		kvm_set_pfn_dirty(pfn);
-> > > 
-> > > -	if (fault_status != FSC_PERM)
-> > > +	if (fault_status != FSC_PERM && !is_iomap(flags))
-> > >  		clean_dcache_guest_page(pfn, vma_pagesize);
-> > > 
-> > >  	if (exec_fault)
-> > > @@ -1948,9 +1957,8 @@ int kvm_handle_guest_abort(struct kvm_vcpu
-> > > *vcpu, struct kvm_run *run)
-> > >  	if (kvm_is_error_hva(hva) || (write_fault && !writable)) {
-> > >  		if (is_iabt) {
-> > >  			/* Prefetch Abort on I/O address */
-> > > -			kvm_inject_pabt(vcpu, kvm_vcpu_get_hfar(vcpu));
-> > > -			ret = 1;
-> > > -			goto out_unlock;
-> > > +			ret = -ENOEXEC;
-> > > +			goto out;
-> > >  		}
-> > > 
-> > >  		/*
-> > > @@ -1992,6 +2000,11 @@ int kvm_handle_guest_abort(struct kvm_vcpu
-> > > *vcpu, struct kvm_run *run)
-> > >  	ret = user_mem_abort(vcpu, fault_ipa, memslot, hva, fault_status);
-> > >  	if (ret == 0)
-> > >  		ret = 1;
-> > > +out:
-> > > +	if (ret == -ENOEXEC) {
-> > > +		kvm_inject_pabt(vcpu, kvm_vcpu_get_hfar(vcpu));
-> > > +		ret = 1;
-> > > +	}
-> > >  out_unlock:
-> > >  	srcu_read_unlock(&vcpu->kvm->srcu, idx);
-> > >  	return ret;
-> > > --
-> > > 2.20.1
-> > > 
-> > 
-> > I can't seem to decide for myself if I think there's a sematic
-> > difference between trying to execute from somewhere the VMM has
-> > explicitly told us is device memory and from somewhere which we happen
-> > to have mapped with VM_PFNMAP from user space.  But I also can't seem to
-> > really fault it (pun intended).  Thoughts?
-> 
-> The issue is that the VMM never really tells us whether something is a
-> device mapping or not (the only exception being the GICv2 cpuif). Even
-> with PFNMAP, we guess it (it could well be memory that lives outside
-> of the linear mapping). I don't see a way to lift this ambiguity.
-> 
-> Ideally, faulting on executing a non-mapping should be offloaded to
-> userspace for emulation, in line with your patches that offload
-> non-emulated data accesses. That'd be a new ABI, and I can't imagine
-> anyone willing to deal with it.
-
-So what I was asking was if it makes sense to report the Prefetch Abort
-in the case where the VMM has already told us that it doesn't want to
-register anything backing the IPA (no memslot), and instead return an
-error to user space, so that it can make a decision (for example inject
-an external abort, which may have been the right thing to do in the
-former case as well, but that could be considered ABI now, so let's not
-kick that hornet's nest).
-
-In any case, no strong feelings here, I just have a vague feeling that
-injecting more prefetch aborts on execute-from-some-device is not
-necessarily the right thing to do.
+[1] https://lore.kernel.org/lkml/1552580772-8499-1-git-send-email-claudiu.beznea@microchip.com/
 
 
-Thanks,
+Claudiu Beznea (2):
+  dt-bindings: arm: atmel: add bindings for PIT64B
+  clocksource/drivers/timer-microchip-pit64b: add Microchip PIT64B
+    support
 
-    Christoffer
+ .../devicetree/bindings/arm/atmel-sysregs.txt      |   6 +
+ drivers/clocksource/Kconfig                        |   7 +
+ drivers/clocksource/Makefile                       |   1 +
+ drivers/clocksource/timer-microchip-pit64b.c       | 449 +++++++++++++++++++++
+ 4 files changed, 463 insertions(+)
+ create mode 100644 drivers/clocksource/timer-microchip-pit64b.c
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
