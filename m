@@ -2,103 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4ECE11E4EB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 14:51:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1231311E512
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 14:58:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sBWJmZjGotN99WyYOlSA1FoeVa9a1O+IpvbA7LtxFcI=; b=CYZu24nJieOewcCPI7+OqN7pR
-	hMEsATVkMGi8dAtYJXQQx7ANsqjinIIWOExNgT1SxEz0rIcMxf6EwHTCGfjhS8gVfB6mY9BM7hc52
-	MBMlIERRVYaBfrdot/DhU4kquwmev9TI1eFdXadXNE7Y2KlnBlhxpifEILKLO9NmufdEpeEezrEDj
-	NhqaixQoKv0pDGFSOgs8tpgC6ZoHDeZTqaa9ogzFx7mJMpFTKV3W02XTLs4vjM+nlGJIHGs02veku
-	gQaLPxdBUSWs7OFKbT1nPxUhutSG7M+7Y6vohBmZ3hauKP9Lr25MgqE4yWpihd5TMw9u1ccDiHTVK
-	vR7kydbOQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=r1H8MW5khktYY/9eo1pw5duRfgOKUrMHbEv/bX8PnNs=; b=KmLDkoyENzEPYX
+	wB+Ieftr/aW+Y3B9a5XVnQsXS2NRxIY61g/7dFrheXUsltWgp++URYvLpAdZEk2md3zeYR+k8m7Ag
+	MirpzFdE1pVntJyqqlZfagdjEZJ3Q8wIZ+sfuTfBBg0X6LOpzfoF95Ov7Y5RquQt9n7PGREx1zc9G
+	aDOozmQ9IjK6O76uEK175pcaV3MPkLrHyjs84n9L0r4rKXEJaefXqhyQ2v+qEIZUnGQ10ViZ7ogQo
+	IBbL8sXdNKt0zt5yzfLGnkZmwiYrGv7QY4AMc2FTxFyZxrb4AsrkhTra7T+lUHXUUMk0+XtvLQO2Z
+	lCLVBCjC7C631PvdO+sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iflMA-0008IF-3r; Fri, 13 Dec 2019 13:51:46 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iflSZ-000231-Qs; Fri, 13 Dec 2019 13:58:23 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iflLz-0008Hs-Tc
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 13:51:37 +0000
-Received: by mail-pf1-x444.google.com with SMTP id p14so1517500pfn.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 05:51:35 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=IkiWlzBXeVbd3pSPzmXC9ZHVKdjut2jmY51Fm29xZAs=;
- b=i/RYUMmYOGOZ/VZKkxvFNK+7sCFzdMrMs6TAwG7vkLPleEc1/ItLPOymgcWVSS5G/U
- iMTxLpR/JsuQAOk5Ca8XHmU+ijB8RhElFbU9PNj/sOkgaNdwhbIY7f0X89f/+5qWquZf
- OtkK3OnWpS1/K0bgqrJas+gJAr2HyAlg7i0aOZUrTqRBOXGHGfG2M0LgwRrQfoJbYLRt
- kuBrwTLuAk9JI6agmzxTGL1XXgDWpLVXQOMl38OUyMrqFLmKz8DqyrwHOjMfMelCqsLP
- uBvsHhpOLHDtp7Rp1yPzGUozjOK/VHm8n3vgIa1+3i5y7GvZGnUd5IRJPWFIvrHtY58R
- mylw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=IkiWlzBXeVbd3pSPzmXC9ZHVKdjut2jmY51Fm29xZAs=;
- b=EiIQUk87F/cq1Jfz0ASHFtST25vZTgVMSp5PrwLkpCvuoe3bfpvk4XXHhT1ytCQ1sz
- OEBPZra6Bh+JNAfb94vLP3pgrSkutkgq8eLHnuGivr7r7BsBNsIJYszJkFvc+5OqYSiX
- /PSCzoZu6J88e5NMHBV7IhSAE5iARqmg6T41wjit5LUEilc393Pyl8CuiODKpevUxCfF
- N3Ga6ZcJVrTraRq4cIt5ifKYfVT5jLhhRscK5FQFbC8g4wxF+kLuaDm39L3m9wHsrIkx
- oTKhHm4dtEvcJ5ucKgMTWMqR4oYAutas3UgOvDwD3unCCXyFKnMeoXc5PZu0ToYVTsoV
- fEKg==
-X-Gm-Message-State: APjAAAUsPfmFoZqynm/d+N5KcpPQMwe7bZklg4FveWNG5Xhp+47I2Bfm
- bKQSpRd6KMIwkP5wyFgBYR0=
-X-Google-Smtp-Source: APXvYqzZcDPfj1DX9SnGHIm18wsz2wIAlsgXAU/nTMByZURxs8UdspDbhjZ639wV1GPUt6rYXKjOjw==
-X-Received: by 2002:a62:e40e:: with SMTP id r14mr15971357pfh.115.1576245095471; 
- Fri, 13 Dec 2019 05:51:35 -0800 (PST)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- f30sm11194840pga.20.2019.12.13.05.51.33
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 13 Dec 2019 05:51:34 -0800 (PST)
-Subject: Re: [PATCH] watchdog: qcom: Use platform_get_irq_optional() for bark
- irq
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Andy Gross <agross@kernel.org>, Bjorn Andersson
- <bjorn.andersson@linaro.org>, Stephen Boyd <swboyd@chromium.org>,
- Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
-References: <20191213064934.4112-1-saiprakash.ranjan@codeaurora.org>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <b5b1d073-832b-e7bf-90b0-0cd4167ca3dc@roeck-us.net>
-Date: Fri, 13 Dec 2019 05:51:33 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1iflSR-0001v5-Mv
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 13:58:17 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 28D915C864E049F2EFC2;
+ Fri, 13 Dec 2019 21:58:01 +0800 (CST)
+Received: from localhost.localdomain (10.69.192.58) by
+ DGGEMS402-HUB.china.huawei.com (10.3.19.202) with Microsoft SMTP Server id
+ 14.3.439.0; Fri, 13 Dec 2019 21:57:50 +0800
+From: John Garry <john.garry@huawei.com>
+To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
+ <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
+ <jolsa@redhat.com>, <namhyung@kernel.org>
+Subject: [PATCH] perf tools: Add arm64 version of get_cpuid()
+Date: Fri, 13 Dec 2019 21:54:15 +0800
+Message-ID: <1576245255-210926-1-git-send-email-john.garry@huawei.com>
+X-Mailer: git-send-email 2.8.1
 MIME-Version: 1.0
-In-Reply-To: <20191213064934.4112-1-saiprakash.ranjan@codeaurora.org>
-Content-Language: en-US
+X-Originating-IP: [10.69.192.58]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_055135_981809_859334B2 
-X-CRM114-Status: GOOD (  19.54  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20191213_055815_943127_A3C0B8B8 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,47 +63,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-watchdog@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
- Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
+Cc: John Garry <john.garry@huawei.com>, will@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linuxarm@huawei.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/12/19 10:49 PM, Sai Prakash Ranjan wrote:
-> platform_get_irq() prints an error message when the interrupt
-> is not available. So on platforms where bark interrupt is
-> not specified, following error message is observed on SDM845.
-> 
-> [    2.975888] qcom_wdt 17980000.watchdog: IRQ index 0 not found
-> 
-> This is also seen on SC7180, SM8150 SoCs as well.
-> Fix this by using platform_get_irq_optional() instead.
-> 
-> Fixes: 36375491a4395654 ("watchdog: qcom: support pre-timeout when the bark irq is available")
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Add an arm64 version of get_cpuid(), which is used for various annotation
+and headers - for example, I now get the CPUID in "perf report --header",
+as shown in this snippet:
 
-Reviewed-by: Guenter Roeck <linux@roeck-us.net>
+# hostname : ubuntu
+# os release : 5.5.0-rc1-dirty
+# perf version : 5.5.rc1.gbf8a13dc9851
+# arch : aarch64
+# nrcpus online : 96
+# nrcpus avail : 96
+# cpuid : 0x00000000480fd010
 
-> ---
->   drivers/watchdog/qcom-wdt.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/watchdog/qcom-wdt.c b/drivers/watchdog/qcom-wdt.c
-> index a494543d3ae1..eb47fe5ed280 100644
-> --- a/drivers/watchdog/qcom-wdt.c
-> +++ b/drivers/watchdog/qcom-wdt.c
-> @@ -246,7 +246,7 @@ static int qcom_wdt_probe(struct platform_device *pdev)
->   	}
->   
->   	/* check if there is pretimeout support */
-> -	irq = platform_get_irq(pdev, 0);
-> +	irq = platform_get_irq_optional(pdev, 0);
->   	if (irq > 0) {
->   		ret = devm_request_irq(dev, irq, qcom_wdt_isr,
->   				       IRQF_TRIGGER_RISING,
-> 
+Since much of the code to read the MIDR is already in get_cpuid_str(),
+factor out this code.
+
+Signed-off-by: John Garry <john.garry@huawei.com>
+
+diff --git a/tools/perf/arch/arm64/util/header.c b/tools/perf/arch/arm64/util/header.c
+index a32e4b72a98f..d730666ab95d 100644
+--- a/tools/perf/arch/arm64/util/header.c
++++ b/tools/perf/arch/arm64/util/header.c
+@@ -1,8 +1,10 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <perf/cpumap.h>
++#include <util/cpumap.h>
+ #include <internal/cpumap.h>
+ #include <api/fs/fs.h>
++#include <errno.h>
+ #include "debug.h"
+ #include "header.h"
+ 
+@@ -12,26 +14,21 @@
+ #define MIDR_VARIANT_SHIFT      20
+ #define MIDR_VARIANT_MASK       (0xf << MIDR_VARIANT_SHIFT)
+ 
+-char *get_cpuid_str(struct perf_pmu *pmu)
++static int _get_cpuid(char *buf, size_t sz, struct perf_cpu_map *cpus)
+ {
+-	char *buf = NULL;
+-	char path[PATH_MAX];
+ 	const char *sysfs = sysfs__mountpoint();
+-	int cpu;
+ 	u64 midr = 0;
+-	struct perf_cpu_map *cpus;
+-	FILE *file;
++	int cpu;
+ 
+-	if (!sysfs || !pmu || !pmu->cpus)
+-		return NULL;
++	if (!sysfs || sz < MIDR_SIZE)
++		return EINVAL;
+ 
+-	buf = malloc(MIDR_SIZE);
+-	if (!buf)
+-		return NULL;
++	cpus = perf_cpu_map__get(cpus);
+ 
+-	/* read midr from list of cpus mapped to this pmu */
+-	cpus = perf_cpu_map__get(pmu->cpus);
+ 	for (cpu = 0; cpu < perf_cpu_map__nr(cpus); cpu++) {
++		char path[PATH_MAX];
++		FILE *file;
++
+ 		scnprintf(path, PATH_MAX, "%s/devices/system/cpu/cpu%d"MIDR,
+ 				sysfs, cpus->map[cpu]);
+ 
+@@ -57,12 +54,48 @@ char *get_cpuid_str(struct perf_pmu *pmu)
+ 		break;
+ 	}
+ 
+-	if (!midr) {
++	perf_cpu_map__put(cpus);
++
++	if (!midr)
++		return EINVAL;
++
++	return 0;
++}
++
++int get_cpuid(char *buf, size_t sz)
++{
++	struct perf_cpu_map *cpus = perf_cpu_map__new(NULL);
++	int ret;
++
++	if (!cpus)
++		return EINVAL;
++
++	ret = _get_cpuid(buf, sz, cpus);
++
++	perf_cpu_map__put(cpus);
++
++	return ret;
++}
++
++char *get_cpuid_str(struct perf_pmu *pmu)
++{
++	char *buf = NULL;
++	int res;
++
++	if (!pmu || !pmu->cpus)
++		return NULL;
++
++	buf = malloc(MIDR_SIZE);
++	if (!buf)
++		return NULL;
++
++	/* read midr from list of cpus mapped to this pmu */
++	res = _get_cpuid(buf, MIDR_SIZE, pmu->cpus);
++	if (res) {
+ 		pr_err("failed to get cpuid string for PMU %s\n", pmu->name);
+ 		free(buf);
+ 		buf = NULL;
+ 	}
+ 
+-	perf_cpu_map__put(cpus);
+ 	return buf;
+ }
+-- 
+2.17.1
 
 
 _______________________________________________
