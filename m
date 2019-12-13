@@ -2,65 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7343711EB75
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 21:02:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFF3511EBF8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 21:41:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ilrk0iJzrWD6uTl62tRmHK00b/+HQS/ddYM1GbmDCkE=; b=slrsJqQMy5Q6IO
-	6vdfVSmhvkjI9xVql4cm5LmUh7HzVtq1jb2zu5lSEi1DFyhK4hjy+4+eGdGA4ccqGVZ4Kk1TxHruD
-	H4LzMCNTgRYYOTIxqwDCmxcJDq1leAUEB1o+fK/xskMJ7TQFDMZKp1IQH4SzgshD4lkvApNuLqkVv
-	xlXJhcg4zbENO/sfOGe8/0rfrh85e6CqCJVS8VCXfITp+9yGyoe7nngDPpsZX4TQDIil9YXNMnspL
-	9jpy9cCA5Xv5ZG0HGkbt1VzFmZ7uSzYhm/N5fYJO8Qy1GF8zgAPAdM6cVw9ou35ZB++lLR+I/SNPJ
-	o2QeS1GabFDDi4HNSgEw==;
+	List-Owner; bh=fyFrndCT84LdmtU/I8fDeKr1szTFw0zcesvxm4YbJMc=; b=bBsupVKCvBw0Os
+	1yzv9rczqRemNzuJOre+Oltm69CeGBCOBTyYPPwgRoqHr2FlvbOf7JE52QeHuxH3IHcoa3yF1cuql
+	9zTDYR5Q8/8/8UdaC2ik1D8iC3KMh6kBDx3WhRQa9Vl3JN/bDbjOKaE1YsNofxcVptYRpgSvhEPPh
+	BF7WqvZRuBgRAorvZ9/ogC3YwI8Gz+ztzQuu7XWU2GTAPZ1fhRHooHs8eJrs+R+XXqGU9gMbmt6Mx
+	6oERpjo0Mg4FUvez00J5TF5lMmIAaTiPcgNKreyWrLkH8q6Jizal1tsfkuEuu80hSpSa7DxwLgTj3
+	ZvzBBd0TZpDzEHaspdCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifr8v-0006oF-Ac; Fri, 13 Dec 2019 20:02:29 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1ifrki-0005YS-KJ; Fri, 13 Dec 2019 20:41:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifr8j-0006nl-Sa
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 20:02:19 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 13 Dec 2019 12:01:51 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,311,1571727600"; d="scan'208";a="208563026"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.202])
- by orsmga008.jf.intel.com with ESMTP; 13 Dec 2019 12:01:51 -0800
-Date: Fri, 13 Dec 2019 12:01:51 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: James Hogan <jhogan@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- Radim =?utf-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
- Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v3 00/15] KVM: Dynamically size memslot arrays
-Message-ID: <20191213200151.GF31552@linux.intel.com>
-References: <20191024230744.14543-1-sean.j.christopherson@intel.com>
- <20191203221433.GK19877@linux.intel.com>
+ id 1ifrka-0005XN-Hf; Fri, 13 Dec 2019 20:41:27 +0000
+Received: from mail-qk1-f182.google.com (mail-qk1-f182.google.com
+ [209.85.222.182])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1B06324712;
+ Fri, 13 Dec 2019 20:41:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576269683;
+ bh=TD0vlyaaEUltY3uhgJ1XIdZNPofDo4T5Xxo/vcYOCwY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=HlfwTnErUlECUKC8DbLDmiSp9ER8lm5MlUc4wAmhZAfxb80fNIgxtpMQLHBhIf2BD
+ PhdWD0Nla1HEuWbkUx53pMHtpsBhP/isjIDZyCnhoB75dQIZpDSkGQdUFz6seFiqsA
+ VcFTdm5rezIYZHYv7FrNXantiQ1m6HoYtrikD1XA=
+Received: by mail-qk1-f182.google.com with SMTP id z76so330337qka.2;
+ Fri, 13 Dec 2019 12:41:23 -0800 (PST)
+X-Gm-Message-State: APjAAAVDa8CMFmVuzv1SVzDc/PxEWFXdzVvjVZP4AkRjczUFiGT6ihNP
+ me9Jat6ux7mcCfyAoi941SbUbssUVZcTIcbroA==
+X-Google-Smtp-Source: APXvYqxkbISqK9twnzzbDp0Ep4niiepgzIHARDF7yBHJmpY5klt6cp3Cad6Ltt+c1NvlrxmDe5/mRhj5K2wE2GoSEAU=
+X-Received: by 2002:a37:85c4:: with SMTP id
+ h187mr14127413qkd.223.1576249641042; 
+ Fri, 13 Dec 2019 07:07:21 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191203221433.GK19877@linux.intel.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Fri, 13 Dec 2019 09:07:07 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLSYroDZGWksJJ=E+01X=3Tji4+GmK8s3i+d2BJphqiLQ@mail.gmail.com>
+Message-ID: <CAL_JsqLSYroDZGWksJJ=E+01X=3Tji4+GmK8s3i+d2BJphqiLQ@mail.gmail.com>
+Subject: Re: [v2 3/6] of: address: add support to parse PCI outbound-ranges
+To: Lad Prabhakar <prabhakar.csengg@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_120217_935847_2AEB4ECB 
-X-CRM114-Status: GOOD (  16.59  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191213_124124_605204_658215BC 
+X-CRM114-Status: GOOD (  12.24  )
+X-Spam-Score: -4.1 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-4.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.1 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,65 +85,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Christoffer Dall <christoffer.dall@arm.com>,
- Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, Joerg Roedel <joro@8bytes.org>,
- Cornelia Huck <cohuck@redhat.com>, linux-mips@vger.kernel.org,
- kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Vitaly Kuznetsov <vkuznets@redhat.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jim Mattson <jmattson@google.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, PCI <linux-pci@vger.kernel.org>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, devicetree@vger.kernel.org,
+ Chris Paterson <Chris.Paterson2@renesas.com>, Arnd Bergmann <arnd@arndb.de>,
+ "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:MEDIA DRIVERS FOR RENESAS - FCP"
+ <linux-renesas-soc@vger.kernel.org>, Tom Joseph <tjoseph@cadence.com>,
+ Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 03, 2019 at 02:14:33PM -0800, Sean Christopherson wrote:
-> On Thu, Oct 24, 2019 at 04:07:29PM -0700, Sean Christopherson wrote:
-> > The end goal of this series is to dynamically size the memslot array so
-> > that KVM allocates memory based on the number of memslots in use, as
-> > opposed to unconditionally allocating memory for the maximum number of
-> > memslots.  On x86, each memslot consumes 88 bytes, and so with 2 address
-> > spaces of 512 memslots, each VM consumes ~90k bytes for the memslots.
-> > E.g. given a VM that uses a total of 30 memslots, dynamic sizing reduces
-> > the memory footprint from 90k to ~2.6k bytes.
-> > 
-> > The changes required to support dynamic sizing are relatively small,
-> > e.g. are essentially contained in patches 14/15 and 15/15.  Patches 1-13
-> > clean up the memslot code, which has gotten quite crusty, especially
-> > __kvm_set_memory_region().  The clean up is likely not strictly necessary
-> > to switch to dynamic sizing, but I didn't have a remotely reasonable
-> > level of confidence in the correctness of the dynamic sizing without first
-> > doing the clean up.
-> > 
-> > Christoffer, I added your Tested-by to the patches that I was confident
-> > would be fully tested based on the desription of what you tested.  Let me
-> > know if you disagree with any of 'em.
-> > 
-> > v3:
-> >   - Fix build errors on PPC and MIPS due to missed params during
-> >     refactoring [kbuild test robot].
-> >   - Rename the helpers for update_memslots() and add comments describing
-> >     the new algorithm and how it interacts with searching [Paolo].
-> >   - Remove the unnecessary and obnoxious warning regarding memslots being
-> >     a flexible array [Paolo].
-> >   - Fix typos in the changelog of patch 09/15 [Christoffer].
-> >   - Collect tags [Christoffer].
-> > 
-> > v2:
-> >   - Split "Drop kvm_arch_create_memslot()" into three patches to move
-> >     minor functional changes to standalone patches [Janosch].
-> >   - Rebase to latest kvm/queue (f0574a1cea5b, "KVM: x86: fix ...")
-> >   - Collect an Acked-by and a Reviewed-by
-> 
-> Paolo, do you want me to rebase this to the latest kvm/queue?
+On Fri, Dec 13, 2019 at 2:48 AM Lad Prabhakar
+<prabhakar.csengg@gmail.com> wrote:
+>
+> From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
+>
+> this patch adds support to parse PCI outbound-ranges, the
+> outbound-regions are similar to pci ranges except it doesn't
+> have pci address, below is the format for bar-ranges:
+>
+> outbound-ranges = <flags upper32_cpuaddr lower32_cpuaddr
+>                    upper32_size lower32_size>;
 
-Ping.
+You can't just make up a new ranges property. Especially one that
+doesn't follow how 'ranges' works. We already have 'dma-ranges' to
+translate device to memory addresses.
 
-Applies cleanly on the current kvm/queue and nothing caught fire in
-testing (though I only re-tested the series as a whole).
+Explain the problem or feature you need, not the solution you came up
+with. Why do you need this and other endpoint bindings haven't?
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
