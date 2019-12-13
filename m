@@ -2,47 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 805AE11E276
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 11:57:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E94B11E29A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 12:14:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oduWquuK2jmITstaCyE5xyZF8udN02RMdPGp78TkUZ8=; b=qSOifXVtyDuJjG
-	5R1rq4Osqr98bxl6xACDRCj1qAMPauZj7JbYzYabaNLShYJ1SuiFSls79nfooJ5bK6CXvzoOXM9TT
-	Nb9Bp20PCzNTOrnFuDgCVd6SXiUzPiXKT4aaTrl1pU1/uLUNPb7TQxRlc1waANpzn0FtaSs27eEQ6
-	vYMyxQOQg/aXYd2Cttb7tZJn0OThIVA5XCZYVtlfkuzx2n2nYFz8BsvZEJy0aheRrzVPFL69/uRJ3
-	72pvYj1cRenltpJhS52M/RKuu1RJ5sWfWOigioVYe+7Hlz9w6yoTYupB5NTDLcDTxRK/PWLqcdhuo
-	gI4wGnyUVQm5GQlbZncQ==;
+	List-Owner; bh=yqwcDhpJqE3exhSO87uF4CxG8b4EH9Y5G9nPYyzSSzk=; b=orQ9dxRW9tV519
+	NaXrfAO2fA5T+7MFDBGYEJdZj5R/qXvXxii0SNMpQuVNlWezla0fTmN9jEF20Vm/W6ghCYPlHxExn
+	gKoG67MAwW4uQDz6NtjhDor9e8OMBe2NVxbqP4Tu9T08pYFFB7AK9Fq1x/MKjV4ARICvUAF+TxZHK
+	6/P1/qDPYCvT1osQFr2DzOhTs7h7NRZiaXifYRzWGKuvzti1oGW2FOE1v6yD7fHqapRiQzzIPryta
+	lvPR4bIjoAHHeNB832mb6dhzId60z4lxrIJY6hvZ9SFKdmaanfX4tmwjcZHF85sXREjglnzOsNptr
+	XEsgd2t1lWEMWEjRc8ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifid0-0001J4-HD; Fri, 13 Dec 2019 10:56:58 +0000
+	id 1ifitg-00072I-65; Fri, 13 Dec 2019 11:14:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifics-0001Ig-Hh
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 10:56:52 +0000
+ id 1ifitY-00071d-4J
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 11:14:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5E41C1FB;
- Fri, 13 Dec 2019 02:56:49 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D1B231FB;
+ Fri, 13 Dec 2019 03:14:01 -0800 (PST)
 Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.145.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E69B03F718;
- Fri, 13 Dec 2019 02:56:48 -0800 (PST)
-Date: Fri, 13 Dec 2019 11:56:47 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 656FC3F718;
+ Fri, 13 Dec 2019 03:14:01 -0800 (PST)
+Date: Fri, 13 Dec 2019 12:14:00 +0100
 From: Christoffer Dall <christoffer.dall@arm.com>
 To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH] KVM: arm64: Only sign-extend MMIO up to register width
-Message-ID: <20191213105647.GH28840@e113682-lin.lund.arm.com>
-References: <20191212195055.5541-1-christoffer.dall@arm.com>
- <92df358b3261598b587f95a2aa4d9bc5@www.loen.fr>
+Subject: Re: [PATCH 1/3] KVM: arm/arm64: Properly handle faulting of device
+ mappings
+Message-ID: <20191213111400.GI28840@e113682-lin.lund.arm.com>
+References: <20191211165651.7889-1-maz@kernel.org>
+ <20191211165651.7889-2-maz@kernel.org>
+ <20191213082920.GA28840@e113682-lin.lund.arm.com>
+ <7f86824f4cbd17cd75ef347473e34278@www.loen.fr>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <92df358b3261598b587f95a2aa4d9bc5@www.loen.fr>
+In-Reply-To: <7f86824f4cbd17cd75ef347473e34278@www.loen.fr>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_025650_674114_3DEA51AF 
-X-CRM114-Status: GOOD (  28.06  )
+X-CRM114-CacheID: sfid-20191213_031404_258780_83907074 
+X-CRM114-Status: GOOD (  41.46  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,195 +66,229 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, djordje.kovacevic@arm.com,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ stable@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Alexandru Elisei <alexandru.elisei@arm.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 13, 2019 at 10:12:19AM +0000, Marc Zyngier wrote:
-> On 2019-12-12 19:50, Christoffer Dall wrote:
-> > On AArch64 you can do a sign-extended load to either a 32-bit or 64-bit
-> > register, and we should only sign extend the register up to the width of
-> > the register as specified in the operation (by using the 32-bit Wn or
-> > 64-bit Xn register specifier).
+On Fri, Dec 13, 2019 at 09:28:59AM +0000, Marc Zyngier wrote:
+> Hi Christoffer,
 > 
-> Nice catch. It's only been there for... Oh wait! ;-)
-> 
+> On 2019-12-13 08:29, Christoffer Dall wrote:
+> > Hi Marc,
 > > 
-> > As it turns out, the architecture provides this decoding information in
-> > the SF ("Sixty-Four" -- how cute...) bit.
+> > On Wed, Dec 11, 2019 at 04:56:48PM +0000, Marc Zyngier wrote:
+> > > A device mapping is normally always mapped at Stage-2, since there
+> > > is very little gain in having it faulted in.
 > > 
-> > Let's take advantage of this with the usual 32-bit/64-bit header file
-> > dance and do the right thing on AArch64 hosts.
-> > 
-> > Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+> > It is actually becoming less clear to me what the real benefits of
+> > pre-populating the stage 2 page table are, especially given that we can
+> > provoke a situation where they're faulted in anyhow.  Do you recall if
+> > we had any specific case that motivated us to pre-fault in the pages?
 > 
-> Cc: stable?
-> 
+> It's only a minor performance optimization that was introduced by Ard in
+> 8eef91239e57d. Which makes sense for platform devices that have a single
+> fixed location in memory. It makes slightly less sense for PCI, where
+> you can move things around.
 
-Yes, good idea.
+User space could still decide to move things around in its VA map even
+if the device is fixed.
 
-> > ---
-> >  arch/arm/include/asm/kvm_emulate.h   | 5 +++++
-> >  arch/arm/include/asm/kvm_mmio.h      | 2 ++
-> >  arch/arm64/include/asm/kvm_emulate.h | 5 +++++
-> >  arch/arm64/include/asm/kvm_mmio.h    | 6 ++----
-> >  virt/kvm/arm/mmio.c                  | 8 +++++++-
-> >  5 files changed, 21 insertions(+), 5 deletions(-)
-> > 
-> > diff --git a/arch/arm/include/asm/kvm_emulate.h
-> > b/arch/arm/include/asm/kvm_emulate.h
-> > index 9b118516d2db..fe55d8737a11 100644
-> > --- a/arch/arm/include/asm/kvm_emulate.h
-> > +++ b/arch/arm/include/asm/kvm_emulate.h
-> > @@ -182,6 +182,11 @@ static inline bool kvm_vcpu_dabt_issext(struct
-> > kvm_vcpu *vcpu)
-> >  	return kvm_vcpu_get_hsr(vcpu) & HSR_SSE;
-> >  }
-> > 
-> > +static inline bool kvm_vcpu_dabt_issf(const struct kvm_vcpu *vcpu)
-> > +{
-> > +	return false;
-> > +}
-> > +
-> >  static inline int kvm_vcpu_dabt_get_rd(struct kvm_vcpu *vcpu)
-> >  {
-> >  	return (kvm_vcpu_get_hsr(vcpu) & HSR_SRT_MASK) >> HSR_SRT_SHIFT;
-> > diff --git a/arch/arm/include/asm/kvm_mmio.h
-> > b/arch/arm/include/asm/kvm_mmio.h
-> > index 7c0eddb0adb2..32fbf82e3ebc 100644
-> > --- a/arch/arm/include/asm/kvm_mmio.h
-> > +++ b/arch/arm/include/asm/kvm_mmio.h
-> > @@ -14,6 +14,8 @@
-> >  struct kvm_decode {
-> >  	unsigned long rt;
-> >  	bool sign_extend;
-> > +	/* Not used on 32-bit arm */
-> > +	bool sixty_four;
-> >  };
-> > 
-> >  void kvm_mmio_write_buf(void *buf, unsigned int len, unsigned long
-> > data);
-> > diff --git a/arch/arm64/include/asm/kvm_emulate.h
-> > b/arch/arm64/include/asm/kvm_emulate.h
-> > index 5efe5ca8fecf..f407b6bdad2e 100644
-> > --- a/arch/arm64/include/asm/kvm_emulate.h
-> > +++ b/arch/arm64/include/asm/kvm_emulate.h
-> > @@ -283,6 +283,11 @@ static inline bool kvm_vcpu_dabt_issext(const
-> > struct kvm_vcpu *vcpu)
-> >  	return !!(kvm_vcpu_get_hsr(vcpu) & ESR_ELx_SSE);
-> >  }
-> > 
-> > +static inline bool kvm_vcpu_dabt_issf(const struct kvm_vcpu *vcpu)
-> > +{
-> > +	return !!(kvm_vcpu_get_hsr(vcpu) & ESR_ELx_SF);
-> > +}
-> > +
-> >  static inline int kvm_vcpu_dabt_get_rd(const struct kvm_vcpu *vcpu)
-> >  {
-> >  	return (kvm_vcpu_get_hsr(vcpu) & ESR_ELx_SRT_MASK) >>
-> > ESR_ELx_SRT_SHIFT;
-> > diff --git a/arch/arm64/include/asm/kvm_mmio.h
-> > b/arch/arm64/include/asm/kvm_mmio.h
-> > index 02b5c48fd467..b204501a0c39 100644
-> > --- a/arch/arm64/include/asm/kvm_mmio.h
-> > +++ b/arch/arm64/include/asm/kvm_mmio.h
-> > @@ -10,13 +10,11 @@
-> >  #include <linux/kvm_host.h>
-> >  #include <asm/kvm_arm.h>
-> > 
-> > -/*
-> > - * This is annoying. The mmio code requires this, even if we don't
-> > - * need any decoding. To be fixed.
-> > - */
-> >  struct kvm_decode {
-> >  	unsigned long rt;
-> >  	bool sign_extend;
-> > +	/* Witdth of the register accessed by the faulting instruction is
-> > 64-bits */
-> > +	bool sixty_four;
-> >  };
-> > 
-> >  void kvm_mmio_write_buf(void *buf, unsigned int len, unsigned long
-> > data);
-> > diff --git a/virt/kvm/arm/mmio.c b/virt/kvm/arm/mmio.c
-> > index 70d3b449692c..e62454b2e529 100644
-> > --- a/virt/kvm/arm/mmio.c
-> > +++ b/virt/kvm/arm/mmio.c
-> > @@ -83,7 +83,7 @@ unsigned long kvm_mmio_read_buf(const void *buf,
-> > unsigned int len)
-> >  int kvm_handle_mmio_return(struct kvm_vcpu *vcpu, struct kvm_run *run)
-> >  {
-> >  	unsigned long data;
-> > -	unsigned int len;
-> > +	unsigned int len, regsize;
-> 
-> Unused variable?
-> 
-
-Ah, yes, whoops.  Guess which unstaged change I still have in my tree...
-
-> >  	int mask;
-> > 
-> >  	/* Detect an already handled MMIO return */
-> > @@ -105,6 +105,9 @@ int kvm_handle_mmio_return(struct kvm_vcpu *vcpu,
-> > struct kvm_run *run)
-> >  			data = (data ^ mask) - mask;
-> >  		}
-> > 
-> > +		if (!vcpu->arch.mmio_decode.sixty_four)
-> > +			data = data & 0xffffffff;
-> > +
-> >  		trace_kvm_mmio(KVM_TRACE_MMIO_READ, len, run->mmio.phys_addr,
-> >  			       &data);
-> >  		data = vcpu_data_host_to_guest(vcpu, data, len);
-> > @@ -125,6 +128,7 @@ static int decode_hsr(struct kvm_vcpu *vcpu, bool
-> > *is_write, int *len)
-> >  	unsigned long rt;
-> >  	int access_size;
-> >  	bool sign_extend;
-> > +	bool sixty_four;
-> > 
-> >  	if (kvm_vcpu_dabt_iss1tw(vcpu)) {
-> >  		/* page table accesses IO mem: tell guest to fix its TTBR */
-> > @@ -138,11 +142,13 @@ static int decode_hsr(struct kvm_vcpu *vcpu,
-> > bool *is_write, int *len)
-> > 
-> >  	*is_write = kvm_vcpu_dabt_iswrite(vcpu);
-> >  	sign_extend = kvm_vcpu_dabt_issext(vcpu);
-> > +	sixty_four = kvm_vcpu_dabt_issf(vcpu);
-> >  	rt = kvm_vcpu_dabt_get_rd(vcpu);
-> > 
-> >  	*len = access_size;
-> >  	vcpu->arch.mmio_decode.sign_extend = sign_extend;
-> >  	vcpu->arch.mmio_decode.rt = rt;
-> > +	vcpu->arch.mmio_decode.sixty_four = sixty_four;
-> > 
-> >  	return 0;
-> >  }
-> 
-> I can't remember why we keep this mmio_decode structure as part of
-> the vcpu. It isn't like it is going to change anytime soon (userspace
-> cannot change the saved ESR_EL2)...
-
-I think that was just an uninformed design decision on my part and it
-could be reworked to operate on the ESR_EL2 directly or just take the
-information from userspace (which we already rely on for read vs.
-write).
+Anyway, I was thinking more if there was some sort of device, like a
+frambuffer, which for example crosses page boundaries and where it would
+be visible to the user that there's a sudden performance drop while
+operating the device over page boundaries.  Anything like that?
 
 > 
-> Anyway, your patch is in keeping with the current shape of the code.
-> If you're OK with, it, I'll apply it with the above nits addressed.
+> > > Nonetheless, it is possible to end-up in a situation where the
+> > > device
+> > > mapping has been removed from Stage-2 (userspace munmaped the VFIO
+> > > region, and the MMU notifier did its job), but present in a
+> > > userspace
+> > > mapping (userpace has mapped it back at the same address). In such
+> > > a situation, the device mapping will be demand-paged as the guest
+> > > performs memory accesses.
+> > > 
+> > > This requires to be careful when dealing with mapping size, cache
+> > > management, and to handle potential execution of a device mapping.
+> > > 
+> > > Cc: stable@vger.kernel.org
+> > > Reported-by: Alexandru Elisei <alexandru.elisei@arm.com>
+> > > Signed-off-by: Marc Zyngier <maz@kernel.org>
+> > > ---
+> > >  virt/kvm/arm/mmu.c | 21 +++++++++++++++++----
+> > >  1 file changed, 17 insertions(+), 4 deletions(-)
+> > > 
+> > > diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+> > > index a48994af70b8..0b32a904a1bb 100644
+> > > --- a/virt/kvm/arm/mmu.c
+> > > +++ b/virt/kvm/arm/mmu.c
+> > > @@ -38,6 +38,11 @@ static unsigned long io_map_base;
+> > >  #define KVM_S2PTE_FLAG_IS_IOMAP		(1UL << 0)
+> > >  #define KVM_S2_FLAG_LOGGING_ACTIVE	(1UL << 1)
+> > > 
+> > > +static bool is_iomap(unsigned long flags)
+> > > +{
+> > > +	return flags & KVM_S2PTE_FLAG_IS_IOMAP;
+> > > +}
+> > > +
+> > 
+> > nit: I'm not really sure this indirection makes the code more readable,
+> > but I guess that's a matter of taste.
+> > 
+> > >  static bool memslot_is_logging(struct kvm_memory_slot *memslot)
+> > >  {
+> > >  	return memslot->dirty_bitmap && !(memslot->flags &
+> > > KVM_MEM_READONLY);
+> > > @@ -1698,6 +1703,7 @@ static int user_mem_abort(struct kvm_vcpu
+> > > *vcpu, phys_addr_t fault_ipa,
+> > > 
+> > >  	vma_pagesize = vma_kernel_pagesize(vma);
+> > >  	if (logging_active ||
+> > > +	    (vma->vm_flags & VM_PFNMAP) ||
+> > 
+> > WHat is actually the rationale for this?
+> > 
+> > Why is a huge mapping not permitted to device memory?
+> > 
+> > Are we guaranteed that VM_PFNMAP on the vma results in device mappings?
+> > I'm not convinced this is the case, and it would be better if we can
+> > stick to a single primitive (either kvm_is_device_pfn, or VM_PFNMAP) to
+> > detect device mappings.
+> 
+> For now, I've tried to keep the two paths that deal with mapping devices
+> (or rather, things that we interpret as devices) as close as possible.
+> If we drop the "eager" mapping, then we're at liberty to restructure
+> this in creative ways.
+> 
+> This includes potential huge mappings, but I'm not sure the rest of the
+> kernel uses them for devices anyway (I need to find out).
+> 
+> > As a subsequent patch, I'd like to make sure that at the very least our
+> > memslot prepare function follows the exact same logic for mapping device
+> > memory as a fault-in approach does, or that we simply always fault pages
+> > in.
+> 
+> As far as I can see, the two approach are now identical. Am I missing
+> something?
+> And yes, getting rid of the eager mapping works for me.
 > 
 
-Absolutely, I decided not to rework the mmio_decode stuff, and leave
-that for some later day.
+As far as I can tell, our user_mem_abort() uses gfn_to_pfn_prot() which
+goes doesn a long trail which ends up at hva_to_pfn_remapped(), which
+might result in doing the same offset calculation that we do in
+kvm_arch_prepare_memory_region(), but it also considers other scenarios.
+
+Even if we analyze all that and convince oursleves it's always all the
+same on arm64, the two code paths could change, leading to really hard
+to debug differing behavior, and nobody will actively keep the two paths
+in sync.  I'd be fine with keeping the performance optimization if we
+have good grounds for that though, and using the same translation
+mechanism for VM_PFNMAP as user_mem_abort.
+
+Am I missing something?
+
+> > 
+> > >  	    !fault_supports_stage2_huge_mapping(memslot, hva,
+> > > vma_pagesize)) {
+> > >  		force_pte = true;
+> > >  		vma_pagesize = PAGE_SIZE;
+> > > @@ -1760,6 +1766,9 @@ static int user_mem_abort(struct kvm_vcpu
+> > > *vcpu, phys_addr_t fault_ipa,
+> > >  			writable = false;
+> > >  	}
+> > > 
+> > > +	if (exec_fault && is_iomap(flags))
+> > > +		return -ENOEXEC;
+> > > +
+> > 
+> > nit: why don't you just do this when checking kvm_is_device_pfn() and
+> > avoid having logic in two places to deal with this case?
+> 
+> Good point. I've already sent the PR, but that could be a further cleanup.
+> 
+
+Sure, I can have a look when we agree on the above.
+
+> > 
+> > >  	spin_lock(&kvm->mmu_lock);
+> > >  	if (mmu_notifier_retry(kvm, mmu_seq))
+> > >  		goto out_unlock;
+> > > @@ -1781,7 +1790,7 @@ static int user_mem_abort(struct kvm_vcpu
+> > > *vcpu, phys_addr_t fault_ipa,
+> > >  	if (writable)
+> > >  		kvm_set_pfn_dirty(pfn);
+> > > 
+> > > -	if (fault_status != FSC_PERM)
+> > > +	if (fault_status != FSC_PERM && !is_iomap(flags))
+> > >  		clean_dcache_guest_page(pfn, vma_pagesize);
+> > > 
+> > >  	if (exec_fault)
+> > > @@ -1948,9 +1957,8 @@ int kvm_handle_guest_abort(struct kvm_vcpu
+> > > *vcpu, struct kvm_run *run)
+> > >  	if (kvm_is_error_hva(hva) || (write_fault && !writable)) {
+> > >  		if (is_iabt) {
+> > >  			/* Prefetch Abort on I/O address */
+> > > -			kvm_inject_pabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+> > > -			ret = 1;
+> > > -			goto out_unlock;
+> > > +			ret = -ENOEXEC;
+> > > +			goto out;
+> > >  		}
+> > > 
+> > >  		/*
+> > > @@ -1992,6 +2000,11 @@ int kvm_handle_guest_abort(struct kvm_vcpu
+> > > *vcpu, struct kvm_run *run)
+> > >  	ret = user_mem_abort(vcpu, fault_ipa, memslot, hva, fault_status);
+> > >  	if (ret == 0)
+> > >  		ret = 1;
+> > > +out:
+> > > +	if (ret == -ENOEXEC) {
+> > > +		kvm_inject_pabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+> > > +		ret = 1;
+> > > +	}
+> > >  out_unlock:
+> > >  	srcu_read_unlock(&vcpu->kvm->srcu, idx);
+> > >  	return ret;
+> > > --
+> > > 2.20.1
+> > > 
+> > 
+> > I can't seem to decide for myself if I think there's a sematic
+> > difference between trying to execute from somewhere the VMM has
+> > explicitly told us is device memory and from somewhere which we happen
+> > to have mapped with VM_PFNMAP from user space.  But I also can't seem to
+> > really fault it (pun intended).  Thoughts?
+> 
+> The issue is that the VMM never really tells us whether something is a
+> device mapping or not (the only exception being the GICv2 cpuif). Even
+> with PFNMAP, we guess it (it could well be memory that lives outside
+> of the linear mapping). I don't see a way to lift this ambiguity.
+> 
+> Ideally, faulting on executing a non-mapping should be offloaded to
+> userspace for emulation, in line with your patches that offload
+> non-emulated data accesses. That'd be a new ABI, and I can't imagine
+> anyone willing to deal with it.
+
+So what I was asking was if it makes sense to report the Prefetch Abort
+in the case where the VMM has already told us that it doesn't want to
+register anything backing the IPA (no memslot), and instead return an
+error to user space, so that it can make a decision (for example inject
+an external abort, which may have been the right thing to do in the
+former case as well, but that could be considered ABI now, so let's not
+kick that hornet's nest).
+
+In any case, no strong feelings here, I just have a vague feeling that
+injecting more prefetch aborts on execute-from-some-device is not
+necessarily the right thing to do.
 
 
-Thanks!
+Thanks,
 
     Christoffer
 
