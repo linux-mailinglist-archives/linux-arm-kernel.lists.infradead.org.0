@@ -2,66 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5786811DC3A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 03:48:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6943911DC5C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 04:01:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gFWXhG3/Y/13OZM2XTX7h+FGzdDOROq8z2cYYmk7pRg=; b=odaS5js9d5U5Ma
-	3RdJCXEIg7fjOPkJ4alPlOpzgngaowOPslF0s8/reIie60sOSNny5PxNoHCuvaRMsBOXeTV2KeuI3
-	FzwByTl75mDR2FcJYrACdlBxK08g7VZlBBH3ictwKFjkWkwhuNkPDmTZsT+CYwCY8e3CaICCAFTKk
-	j0Q0zbvSldZmBdjBQUcQUthuq7F/g5hzIDjmD8tUBTT0279BaC3z6lzteOla/M6CiTooQbJPQmVXn
-	DLuk+5iUX3kBGzXMtdMmsT3Z1cufzGMHlz+DV31gw6Z31psf0Wxrs6I8sr6vqStoj82ttBYd11wV+
-	T6xVQcAMj0d55504JPgA==;
+	List-Owner; bh=YxaQJ9KRGLhcCZiuOWGVWJoKgETJt3waOGuPoagbgIk=; b=j8KxO3rXKkRx7g
+	yg8694voUUIZpWineBEipcucQM6rIDjoa5J2TrnhMGLhfSfLtSfD2F8lYZQ7kSkeqEPl5B7cHYLJT
+	EhIsBieJgA6IzUf5tyk32I5vKs2m3SDSzmEmV6mMviVVeHKSaKhsFi/jwXwTIIls6y+vnf8nhsCk+
+	aA5NGqoB3C25Dl8EnGxkOGG5D08CKX7J15ZEIXbrEgnyBZO2KZK4TnH2atoLGrdrioD7lXKRCdy18
+	nwUlwfvE5pQFTi6UIciSOWRU2KTu4t5EbMJSd71xxlYapbw1mKjh4SazqOmZaPQm1HLvLGo0FQd3M
+	0K+vTRKMXcu4A0GbRKGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifb0O-0007iA-IZ; Fri, 13 Dec 2019 02:48:36 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ifbCP-0003vq-SC; Fri, 13 Dec 2019 03:01:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifb09-0007h4-Gf; Fri, 13 Dec 2019 02:48:22 +0000
-X-UUID: 31dfb38d9d51427097b7ab674c1359e9-20191212
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=1mh7OPQCgMOBR1dvjtbiL2hG+rXyscvDOnW/uspS6Jg=; 
- b=Pa6pK6ODz4CZP0vPhpwf7QPrL+CysndJoTOGcw5+gVlbVxo5xLwIHVeS9gTek2XrE4N93R6TlMXZhiArWDall1mgvloG2emzEL0zE8TtuK/nHnqegsla0MLUV3Ujh/H2DJYLR8jaap1kk97tMYd9+6PgddmmYIIh3CWJAUgZ6tU=;
-X-UUID: 31dfb38d9d51427097b7ab674c1359e9-20191212
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 172248405; Thu, 12 Dec 2019 18:48:18 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Dec 2019 18:49:19 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 13 Dec 2019 10:47:49 +0800
-Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 13 Dec 2019 10:47:36 +0800
-Message-ID: <1576205295.12066.5.camel@mtkswgap22>
-Subject: Re: [PATCH v1 0/2] scsi: ufs: fixup active period of ufshcd interrupt
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <alim.akhtar@samsung.com>,
- <pedrom.sousa@synopsys.com>, <avri.altman@wdc.com>
-Date: Fri, 13 Dec 2019 10:48:15 +0800
-In-Reply-To: <1575721321-8071-1-git-send-email-stanley.chu@mediatek.com>
-References: <1575721321-8071-1-git-send-email-stanley.chu@mediatek.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1ifbCF-0003vJ-T7
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 03:00:53 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7AD292253D;
+ Fri, 13 Dec 2019 03:00:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576206051;
+ bh=jE+LTMyoJh2M2a4nIMPu40B/WipswxFrLQnWV9tHD3Y=;
+ h=In-Reply-To:References:Subject:To:From:Cc:Date:From;
+ b=ImnwF3Xgr5UP21cuKpCbNWSth6vJ1jt85UsYSC84YPi3M2dOGGBPFkiNgGWfb1Lp0
+ eNVXfbXMwbC6Owthq+AgCKyxz5aHdnDTH7qwJPedGrDdPzMJ3fnweT/Q1JhPaGh3MV
+ +Tj5ATUg4MgFZiQepKqeGLWEllmE4neXFhyknSzs=
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191212125447.GL15858@dragon>
+References: <20191212125447.GL15858@dragon>
+Subject: Re: [GIT PULL] i.MX clock fixes for 5.5
+To: Shawn Guo <shawnguo@kernel.org>
+From: Stephen Boyd <sboyd@kernel.org>
+User-Agent: alot/0.8.1
+Date: Thu, 12 Dec 2019 19:00:50 -0800
+Message-Id: <20191213030051.7AD292253D@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_184821_559898_F82A6118 
-X-CRM114-Status: UNSURE (   6.16  )
+X-CRM114-CacheID: sfid-20191212_190051_959960_F7E59850 
+X-CRM114-Status: UNSURE (   6.91  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -71,8 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,33 +76,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: martin.petersen@oracle.com, andy.teng@mediatek.com, jejb@linux.ibm.com,
- chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- peter.wang@mediatek.com, matthias.bgg@gmail.com,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dear reviewers,
-
-	Gentle ping for this patch set.
-
-On Sat, 2019-12-07 at 20:21 +0800, Stanley Chu wrote:
-> This patchset fixes up active duration of ufshcd interrupt to avoid potential system hang issues.
+Quoting Shawn Guo (2019-12-12 04:54:48)
+> The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 > 
-> Stanley Chu (2):
->   scsi: ufs: disable irq before disabling clocks
->   scsi: ufs: disable interrupt during clock-gating
+>   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
 > 
->  drivers/scsi/ufs/ufshcd.c | 15 ++++++++++-----
->  1 file changed, 10 insertions(+), 5 deletions(-)
+> are available in the Git repository at:
 > 
+>   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-clk-fixes-5.5
+> 
+> for you to fetch changes up to c3a5fd15ed0c1494435e4e35fbee734ae46b5073:
+> 
+>   clk: imx: pll14xx: fix clk_pll14xx_wait_lock (2019-12-11 15:07:06 +0800)
+> 
+> ----------------------------------------------------------------
 
-Thanks,
-Stanley
+Thanks. Pulled into clk-fixes.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
