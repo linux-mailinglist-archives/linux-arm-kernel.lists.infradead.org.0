@@ -2,95 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFCD511DB04
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 01:16:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99BAD11DB11
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 01:20:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4tgMDJmevySx0BVf1LOhPDPS6vJlGS6KoiC+P0yDYnI=; b=sYveTdV8JlKwjM
-	ZC26cJcW4G9KdRq8JK8Ftzmtn7ztfp4frwBAmZ4r4IW1E8rMP3HztY5fQ6tY+anEnVR5WxIc0rGSV
-	fGTHUQQ9M5OGfzpjZJ9Ow+3uufXjIVsoBPMTodoPuqH3oWRYqFVzN59uru4QXP9iO+0U8el8ewjUE
-	jydZFK3f5IlgXWD3WUyUTpSWtQO71Ji6tivN3vHzMchqOSzWdXflalLRDmg1Jj3jrQFCBA9Q0dSSg
-	CvAJK+4oG9EMN52JMmEawj8FpRP3TbIw9MsmopEScjVeBU9rZ4ixWS1NsUzD3qmCW3G5tEoUSeaMx
-	yzwTh/Vc+eMDgRy+7LNg==;
+	List-Owner; bh=JKuMXivkgsucbxyV1I6Sd8sir4L5OZS2cqG81vsmF2k=; b=m5ZA5/uNrAnIfb
+	jf05PMgwNuSoniEPHPFmJaLo56Vka6jPp2r6IZnIl5q8WGNd/+3ZA8ly0Kyqv90enxPd3SqJD3YLd
+	0Ysca48rhEXL5DDE9exJc52ZxKjzftndWY5BkhVKu3JNkoHYugJkozbJpS+1q98YWK0YZIfAex1Yw
+	NDnCCre28c6iyO45ID5x3mLUjPsl8Yy+o4USE/qJSvTnvM/F0k6mH69J01FP9omdwcR0K6idx0njr
+	g4VS1GSUrQv5NbpI55+TB0bAgXmdEcfrTLLLt3wHEshz3GZtbB3jAZz3LlCE6bzrA0CyyDvtHB8CB
+	2V0yvmGFPphhn5bnMa5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifYdQ-0001WP-0o; Fri, 13 Dec 2019 00:16:44 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ifYh4-0003LZ-CU; Fri, 13 Dec 2019 00:20:30 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifYdF-0001Vx-GM
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 00:16:35 +0000
-Received: by mail-pf1-x442.google.com with SMTP id b19so417165pfo.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Dec 2019 16:16:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Rz7Ap8NSB2+QwfjX22YVS15g9RA3g1APMaXnf9JhgX4=;
- b=fupIWZnf7eC60SsffWCDQxq7sVQjLX+ADuUuuTBkjb4ABWmcvAP2GHPLRqVZ0+F8Iv
- uWw+yx8PmsgmYRt+vtwN1Q6mUCVOu7e9cr4zSUYWKlYB8pZDh5b7zOesGEYijm/rs6x/
- OlTapLIoOeZjI3ggnXYKUUGg9/cpyLJT6Y5c17WWbTnJYc0pB6E1eKeQ2hVUXqAKmFFF
- 9YaH6qa+4dI8Nag0NJCvLJ5oH28ZtFzBvHW32RVplML1GZyU6Licl6RwNH82jTXK7DIU
- 8TDwao8t/HM20lrTlgmc5DU+oWmXvIn0Y2lBdtMz4ehXmY+uwugJyLhgUmlNstyuvoJY
- Ostg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Rz7Ap8NSB2+QwfjX22YVS15g9RA3g1APMaXnf9JhgX4=;
- b=E9bsl5xaA4WkqsYrgeisH+QlCViv4bgQSEgSst5rcDN+ToA0O7g2XaJIzDya/b9H5S
- CHfTirVUF1+gYTIg7SME/dB3yj2t2oLehWGq6dbpyLATMVF8Y/xJeoDpV8J36rskg3KD
- vI2VRmx1P8j1nFy/pmnXQPs5eU06WxcsW8pMmtjmW5bQAFeS8vwWTbx3YS+tvyUi1uO7
- TirYERC+pVgEkqbDttqZbYYJAfRlDuWtHr+A4CTVDhK5Fmm31TYKXNuKk9r79lwTGz2x
- ivN0R0V8emeLtBAe2y6IbTN3Zg3sThtAbomkQjieB4PoTs62evIyj7hZobF1m6ey6cmZ
- Qo7A==
-X-Gm-Message-State: APjAAAV+/3f2k2zDkwgHKanFEwOh3r7G8ZUgzJqX2VGlkdTj5zIU2tgf
- 0HGMkFN7KB+XCToE+vFKSx0=
-X-Google-Smtp-Source: APXvYqzdi9TTVeyNm4GDapF0tocbS/2DKfHDlMK1xI+DX6Yv8E32E2ylfND+lyJY/Mep/9YSafcUWA==
-X-Received: by 2002:a62:ed0b:: with SMTP id u11mr12700624pfh.46.1576196191905; 
- Thu, 12 Dec 2019 16:16:31 -0800 (PST)
-Received: from dtor-ws ([2620:15c:202:201:3adc:b08c:7acc:b325])
- by smtp.gmail.com with ESMTPSA id c8sm8711705pfo.163.2019.12.12.16.16.30
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Dec 2019 16:16:31 -0800 (PST)
-Date: Thu, 12 Dec 2019 16:16:28 -0800
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v1] clk: Convert managed get functions to devm_add_action
- API
-Message-ID: <20191213001628.GF101194@dtor-ws>
-References: <f177ef95-ef7e-cab0-1322-6de28f18ecdb@free.fr>
- <c0ccca86-b7b1-b587-60c1-4794376fa789@arm.com>
- <ba630966-5479-c831-d0e2-bc2eb12bc317@free.fr>
- <20191211222829.GV50317@dtor-ws>
- <70528f77-ca10-01cd-153b-23486ce87d45@free.fr>
- <cf5b3dee-061e-a476-7219-aa08c2977488@arm.com>
- <6a647c20-c2fa-f14c-256d-6516d0ad03b0@free.fr>
- <6ce49a67-8065-277b-5f80-ed47011e50d6@arm.com>
- <20191212191002.GA101194@dtor-ws>
- <3ce51e0b-f4eb-707d-c55d-0eaf4ac72c5a@arm.com>
+ id 1ifYgt-0003K6-1U
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 00:20:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=LqxUPL3Y4cuUH/Zy0P7G5Mo/xf7O+6Q0H0QIj59ubzk=; b=dUJuHNdqzI6cdDeW8wLQqYrtv
+ nRNBfK4nAcqE2vDxPUZugGiY2ltVvDB55ttppJrFjX2OhSLnTxTVXOoMjz15D3WF0Py7DHMl1co97
+ pf0+pkLnF3ujJiiaoGhUrZBL+Zh2QSkVz7j72vQI4lb2/SNJYRph+fLr1SVn14FmrTFb7o88VYi9N
+ AsUS3tbcCNh0IHyZ4rO8QOt15nwnge8TV1KpZ+lipgfi539PfqWy+BYLATmYxCflMOYC9m11jFaQf
+ ikPCPM/VNJs1arceK196oO1KHIIrfyKSD89f0YSkHpXzo4H1s2AeOskp45tYlyVJStowjsguGQxNg
+ Sa7oODncA==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:52214)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1ifYgl-0001Vk-Ed; Fri, 13 Dec 2019 00:20:11 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1ifYgk-0007Ke-68; Fri, 13 Dec 2019 00:20:10 +0000
+Date: Fri, 13 Dec 2019 00:20:10 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: pinctrl states vs pinmux vs gpio (i2c bus recovery)
+Message-ID: <20191213002010.GO25745@shell.armlinux.org.uk>
+References: <20191206173343.GX25745@shell.armlinux.org.uk>
+ <CACRpkdZv2rzA8AbFZKq0XVBaXNJR8c5tsb+1KTZ7fNuWjm5cbQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <3ce51e0b-f4eb-707d-c55d-0eaf4ac72c5a@arm.com>
+In-Reply-To: <CACRpkdZv2rzA8AbFZKq0XVBaXNJR8c5tsb+1KTZ7fNuWjm5cbQ@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_161633_546103_6E08E892 
-X-CRM114-Status: GOOD (  33.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191212_162019_087993_6CE6E92E 
+X-CRM114-Status: GOOD (  27.58  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dmitry.torokhov[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -109,146 +87,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, x86 <x86@kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>
+Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 12, 2019 at 09:08:04PM +0000, Robin Murphy wrote:
-> On 2019-12-12 7:10 pm, Dmitry Torokhov wrote:
-> > On Thu, Dec 12, 2019 at 06:15:16PM +0000, Robin Murphy wrote:
-> > > On 12/12/2019 4:59 pm, Marc Gonzalez wrote:
-> > > > On 12/12/2019 15:47, Robin Murphy wrote:
-> > > > 
-> > > > > On 12/12/2019 1:53 pm, Marc Gonzalez wrote:
-> > > > > 
-> > > > > > On 11/12/2019 23:28, Dmitry Torokhov wrote:
-> > > > > > 
-> > > > > > > On Wed, Dec 11, 2019 at 05:17:28PM +0100, Marc Gonzalez wrote:
-> > > > > > > 
-> > > > > > > > What is the rationale for the devm_add_action API?
-> > > > > > > 
-> > > > > > > For one-off and maybe complex unwind actions in drivers that wish to use
-> > > > > > > devm API (as mixing devm and manual release is verboten). Also is often
-> > > > > > > used when some core subsystem does not provide enough devm APIs.
-> > > > > > 
-> > > > > > Thanks for the insight, Dmitry. Thanks to Robin too.
-> > > > > > 
-> > > > > > This is what I understand so far:
-> > > > > > 
-> > > > > > devm_add_action() is nice because it hides/factorizes the complexity
-> > > > > > of the devres API, but it incurs a small storage overhead of one
-> > > > > > pointer per call, which makes it unfit for frequently used actions,
-> > > > > > such as clk_get.
-> > > > > > 
-> > > > > > Is that correct?
-> > > > > > 
-> > > > > > My question is: why not design the API without the small overhead?
-> > > > > 
-> > > > > Probably because on most architectures, ARCH_KMALLOC_MINALIGN is at
-> > > > > least as big as two pointers anyway, so this "overhead" should mostly be
-> > > > > free in practice. Plus the devres API is almost entirely about being
-> > > > > able to write simple robust code, rather than absolute efficiency - I
-> > > > > mean, struct devres itself is already 5 pointers large at the absolute
-> > > > > minimum ;)
-> > > > 
-> > > > (3 pointers: 1 list_head + 1 function pointer)
-> > > 
-> > > Ah yes, I failed to mentally preprocess the debug config :)
-> > > 
-> > > > I'm confused. The first patch was criticized for potentially adding
-> > > > an extra pointer for every devm_clk_get (e.g. 800 bytes on a 64-bit
-> > > > platform with 100 clocks).
-> > > 
-> > > I'm not sure it was a criticism so much as an observation of an aspect that
-> > > deserved consideration (certainly it was on my part, and I read Dmitry's "It
-> > > might still, ..." as implying the same). I'd say by this point it has been
-> > > thoroughly considered, and personally I'm now happy with the conclusion that
-> > > the kind of embedded platforms that will have many dozens of clocks are also
-> > > the kind that will tend to have enough padding to make it moot, and thus the
-> > > code simplification probably is worthwhile overall.
-> > 
-> > I wonder if we could actually avoid allocating the data with
-> > ARCH_KMALLOC_MINALIGN in all the cases. It is definitely needed for the
-> > devm_k*alloc() group of functions as they are direct replacement for
-> > k*alloc() APIs that give users aligned memory, but for other data
-> > structures (clocks, regulators, etc, etc) it is not required.
+On Mon, Dec 09, 2019 at 01:20:15AM +0100, Linus Walleij wrote:
+> Hi Russell,
 > 
-> That's a very good point - perhaps something like this (only done properly)?
+> very nice description of this dual-mode problem.
+> 
+> I wish I had a simple and elegant way we could make it
+> unambiguous and simple to use ... but it beats me right
+> now.
+> 
+> On Fri, Dec 6, 2019 at 6:33 PM Russell King - ARM Linux admin
+> <linux@armlinux.org.uk> wrote:
+> 
+> > One may expect:
+> >
+> >         pinctrl_select_state(i2c_imx->pinctrl, i2c_imx->pinctrl_pins_default);
+> >
+> > to change them back to the default state, but that would be incorrect.
+> > The first thing that pinctrl_select_state() does is check whether
+> >
+> >         p->state == state
+> >
+> > which it will do, as the pinctrl layer hasn't been informed of the
+> > change that has happened behind its back at the pinmux level.
+> 
+> Some pin controllers have the .strict property set
+> in their struct pinmux_ops:
+> 
+> * @strict: do not allow simultaneous use of the same pin for GPIO and another
+> *      function. Check both gpio_owner and mux_owner strictly before approving
+> *      the pin request.
+> 
+> The non-strict pin controllers are those that actually allow GPIO
+> and device functions to be used on the same physical line at the
+> same time. In this case there is not special GPIO mode for the
+> line in some muxing registers, they are just physically connected
+> somehow.
+> 
+> One usecase is sort of like how tcpdump work for
+> ethernet interfaces: a GPIO register can "snoop" on a pin while
+> in used by another device.
+> 
+> But it would notably also allow you to drive the line and interfere
+> with the device. Which is exactly what this I2C recovery mechanism
+> does, just that its pin controller is actually strict, will not allow
+> the same line to be used for GPIO and some other function at the
+> same time, so I suppose i.MX should probably explore the
+> strict mode.
+> 
+> Enabling that will sadly make the problem MORE complex
+> for this I2C recovery, requiring a cycle of
+> gpiod_put()/gpiod_get() to get it released from GPIO mode, i.e.
+> we would need to just get the GPIO when this is strictly needed.
+> Using devm_gpiod_get() and keeping a reference descriptor
+> around would not work all of a sudden.
+> 
+> I am thinking whether we can handle the non-strict controllers
+> in a more elegant way, or add some API to explicitly hand over
+> between device function and GPIO function. But I can't really
+> see some obvious solution.
 
-Yes, but it has to be done carefully.
+What I'm currently trying is (error handling removed for brevity):
 
-> 
-> Robin.
-> 
-> diff --git a/drivers/base/devres.c b/drivers/base/devres.c
-> index 0bbb328bd17f..2382f963abbe 100644
-> --- a/drivers/base/devres.c
-> +++ b/drivers/base/devres.c
-> @@ -26,14 +26,7 @@ struct devres_node {
-> 
->  struct devres {
->         struct devres_node              node;
-> -       /*
-> -        * Some archs want to perform DMA into kmalloc caches
-> -        * and need a guaranteed alignment larger than
-> -        * the alignment of a 64-bit integer.
-> -        * Thus we use ARCH_KMALLOC_MINALIGN here and get exactly the same
-> -        * buffer alignment as if it was allocated by plain kmalloc().
-> -        */
-> -       u8 __aligned(ARCH_KMALLOC_MINALIGN) data[];
-> +       u8                              data[];
->  };
-> 
->  struct devres_group {
-> @@ -810,6 +803,17 @@ static int devm_kmalloc_match(struct device *dev, void
-> *res, void *data)
->  void * devm_kmalloc(struct device *dev, size_t size, gfp_t gfp)
->  {
->         struct devres *dr;
-> +       size_t align;
-> +
-> +       /*
-> +        * Some archs want to perform DMA into kmalloc caches
-> +        * and need a guaranteed alignment larger than
-> +        * the alignment of a 64-bit integer.
-> +        * Thus we use ARCH_KMALLOC_MINALIGN here and get exactly the same
-> +        * buffer alignment as if it was allocated by plain kmalloc().
-> +        */
-> +       align = (ARCH_KMALLOC_MINALIGN - sizeof(*dr)) %
-> ARCH_KMALLOC_MINALIGN;
-> +       size += align;
-> 
->         /* use raw alloc_dr for kmalloc caller tracing */
->         dr = alloc_dr(devm_kmalloc_release, size, gfp, dev_to_node(dev));
-> @@ -822,7 +826,7 @@ void * devm_kmalloc(struct device *dev, size_t size,
-> gfp_t gfp)
->          */
->         set_node_dbginfo(&dr->node, "devm_kzalloc_release", size);
->         devres_add(dev, dr->data);
+	struct i2c_bus_recovery_info *bri = &i2c->recovery;
 
-I think it has to be "devres_add(dev, dr->data + align);" here, as match
-function checks the pointer passed to devm_kfree() with one stored in
-devres structure.
+        i2c->pinctrl = devm_pinctrl_get(dev);
+        i2c->pinctrl_default = pinctrl_lookup_state(i2c->pinctrl,
+                                                    PINCTRL_STATE_DEFAULT);
+        i2c->pinctrl_recovery = pinctrl_lookup_state(i2c->pinctrl,
+						     "recovery");
+        bri->sda_gpiod = devm_gpiod_get(dev, "sda", GPIOD_OUT_HIGH_OPEN_DRAIN);
+        bri->scl_gpiod = devm_gpiod_get(dev, "scl", GPIOD_OUT_HIGH_OPEN_DRAIN);
 
-> -       return dr->data;
-> +       return dr->data + align;
->  }
->  EXPORT_SYMBOL_GPL(devm_kmalloc);
+	pinctrl_select_state(i2c->pinctrl, i2c->pinctrl_recovery);
+	return pinctrl_select_state(i2c->pinctrl, i2c->pinctrl_default);
 
-Thanks.
+which seems good enough to get the pins back into i2c mode after the
+gpios are obtained.  Then we switch the pinctrl state between
+pinctrl_recovery and pinctrl_default as we have need to.
+
+The problem is, the generic i2c bus recovery code wants the gpiod
+descriptors to be setup and inplace by the time i2c_init_recovery()
+is called (which is called when the adapter is registered) so
+holding off until we need to do recovery doesn't work.
+
+This seems to work for this SoC I'm currently working with, but I
+think there's more on the horizon - I'm having the same problems
+on another SoC which also needs bus recovery implemented, and as
+the problem device is behind an I2C bus mux, when it locks the I2C
+bus, it kills all I2C buses rooted at that particular SoC I2C
+controller.  However, there's a problem - the pinctrls for that SoC
+are set by ROM firmware at boot time by reading a table from the
+boot media.  *Unprintables about firmware being too way limiting*. :p
 
 -- 
-Dmitry
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
