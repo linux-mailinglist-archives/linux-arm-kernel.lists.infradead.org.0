@@ -2,82 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 464BA11DED7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 08:48:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77CEE11DEF3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 08:56:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CamJKEl1RWo2Vuvqjyxz9S71cYnspKDBuTA+FCQLFOA=; b=JmGMvEMVr8Ifwa
-	phoj9x9HsCGaLoah1JtlX9xCkVhtATeIkml49SXx1n4/v9eu1U0VJ0t87dSDIBkLsHEMTwygJcqJ/
-	ecB15U38xyPWzIRw6OIiGTLUWseqOrmcSFDFrvdX54h+fqcuSrbl3k3EEQ+5hQRLyxxjpyxxnR8S+
-	DKvWfyR7N6kwHRVKDwgYMaCtNFTh5vPjNW38vL8wnZeCHzJ1KvU3pbsk3I5MKRE9wLFzLkTjJBtfm
-	mrCnOIEzesVIoH/jCWkFaZHXXtOXTQvWv6wRlcHdG69kA8CiG6u8O5IgM6J3eoaQ281hu9OH49dlg
-	1SY2PMTGttTpOErUnUeg==;
+	List-Owner; bh=0oNxKn4Jr6P/rSmq6MG2I6LJvaYsgQE5N/Yx6euz/AU=; b=dwGMSN0n1L+v1k
+	Frw66pDtJutGDZAGC40ljODFYBwIRb+LnvnfCyjmcweoKgjlO2VXZwWF79KqQNCYgNw1NvFaptc08
+	ypw9GYjufsWVpYdqlyBFLYPEsDgHIpIXrZgozyUNMhN6j0BgLsloorlyDmoKiPBvOko37vm0yWByp
+	HSPB1l1v0sHDGaK9dd4bReELcwlxvySICHngvg4RAxU7OQDCT0f+GjX2dp9Eba+AcHMoFTnY8Sx39
+	bR+3++k7DEjGj00M5JF+iHXOIRa54iKOrfYjr/kbBidDx43c8g7NjAU5RxRO+WGVSysVLMiCb2RcJ
+	+iHqxBcVqpErv24dFlnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifffy-0006Ck-I5; Fri, 13 Dec 2019 07:47:50 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1iffoI-0001vo-Hd; Fri, 13 Dec 2019 07:56:26 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifffo-0006BN-CC
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 07:47:42 +0000
-Received: by mail-wm1-x341.google.com with SMTP id p17so5476678wmb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Dec 2019 23:47:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vTSxvUqfa6FoEiQTgKaCRKQ961VVqjF3zVcNDPTqeUQ=;
- b=FygEFXPkvDTEqQFNc95GmEPQFaOALol3FJZVABII8mgatRtgdG31UxBB+q2f85tioV
- YaDq76YgKg19kavCxLDGCXYdqM9e4pt1+h8vMM1af+h493sGTqtu8x0x0Y7pDZ9rZODl
- D0Tmu44OHSSAi7XTfiw3ezo4lLtG/fvqKXr9UP1I7ioXEwEcTuWWl+MwWhGJYbEnMq+w
- ALx7B4du4u7jUwnaaQoo9t+S3X/fO96NeqeTQ28Ffuy5wSsYUMg78UyAtuMEUmLPhSNZ
- lUUoOAhyKE5fSjw0CUYEi+vy/hxr1Eua69Uhw+w3KzjGJP3OD8JUBE+JCzVqCd/mRebH
- 8ZnQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vTSxvUqfa6FoEiQTgKaCRKQ961VVqjF3zVcNDPTqeUQ=;
- b=KAe4AOXwozKGVKjwR/Yripp9kizZk2gSejc7mzowsEi8c2Cr+XbXzLCpaECbd+NZZk
- UgLGLWNfTu3VsT9fe5F+I3xkosxV7vTlkcyM4TaZC8+2knn2uB9eYaAGsZybaSFkIM/q
- 2w1LytTS5/LgmW2nyjQFPjubltTFZvArDhyBJyjePKeEbl0Dzx0A6twOY+otj4ekU/26
- St1sPmj4Kg3m3j/4YRQLOgNRItPWbiuFwVnwji7V3oCA3kkpJDbaWien3sDcLB/JvmO+
- e0n2Q8YAFxboOh27XsOKRURw/8moSej15DaVLeE6IJAJvULhnvRbhW5UMzwKs/iy6VHM
- /v7Q==
-X-Gm-Message-State: APjAAAUNuqhhn/IgFsPwF+1wZJhzu0DnPS9/AxrTDv1XVcmUUo99aNbX
- k3jqsDiKScTMBEKdT8Q6//+Oq/rA2tqr6nkzE1KqxA==
-X-Google-Smtp-Source: APXvYqwNVH+CrxZcMnxSwclo0S3v7qgeIyd4KN1mrRn3wdEhUWxce27y0yPjv6LZIAM/PDIfAV+2naYwlAPl2eY/5zg=
-X-Received: by 2002:a7b:cd84:: with SMTP id y4mr1059323wmj.57.1576223256882;
- Thu, 12 Dec 2019 23:47:36 -0800 (PST)
+ id 1iffoA-0001ug-2b; Fri, 13 Dec 2019 07:56:19 +0000
+X-UUID: 87ab83a0272042f9af9379c92b8b9f37-20191212
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=BtXET+1NElrPbMJwRKiAbYUNzkYHcN515L3qrDyBFRk=; 
+ b=cq5jNJlja/2j2iyT88NpKe2zBuz+s9htvrHW45m0a0jERY9i44urEUDGMMVSVwE2CGWmGEH7y/zB7N1QCz8VTu9AhEHJEXC9ToD/zCTALNuy+K3xd54uhD8pXmQix3/Neztxj8I0zQgCijLYFwcGUz0l8JRksYXLUVSfA1gQNd4=;
+X-UUID: 87ab83a0272042f9af9379c92b8b9f37-20191212
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 461127659; Thu, 12 Dec 2019 23:56:14 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Dec 2019 23:50:03 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 13 Dec 2019 15:48:39 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 13 Dec 2019 15:48:46 +0800
+Message-ID: <1576223336.9817.3.camel@mtksdaap41>
+Subject: Re: [PATCH v2, 1/2] drm/mediatek: Fix gamma correction issue
+From: CK Hu <ck.hu@mediatek.com>
+To: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Date: Fri, 13 Dec 2019 15:48:56 +0800
+In-Reply-To: <1576222132-31586-2-git-send-email-yongqiang.niu@mediatek.com>
+References: <1576222132-31586-1-git-send-email-yongqiang.niu@mediatek.com>
+ <1576222132-31586-2-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-References: <20191204141159.1432387-1-colin.king@canonical.com>
- <20191205080611.GY93017@google.com>
-In-Reply-To: <20191205080611.GY93017@google.com>
-From: Maxime Jourdan <mjourdan@baylibre.com>
-Date: Fri, 13 Dec 2019 08:47:26 +0100
-Message-ID: <CAMO6naxT0syj74xvcectWXyVGmHfOU341A+15tC+GW4hsq+yJQ@mail.gmail.com>
-Subject: Re: [PATCH] media: meson: add missing allocation failure check on
- new_buf
-To: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
+X-TM-SNTS-SMTP: B2D976F46AAC6B6E1746EF1ECE6AC29281FF83D79D292527E390BA3DF3F8755E2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_234740_529654_502CFFEE 
-X-CRM114-Status: GOOD (  12.96  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191212_235618_121709_74F9320A 
+X-CRM114-Status: GOOD (  13.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,55 +84,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, Kevin Hilman <khilman@baylibre.com>,
- kernel-janitors@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Colin King <colin.king@canonical.com>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 5, 2019 at 9:06 AM Sergey Senozhatsky
-<sergey.senozhatsky.work@gmail.com> wrote:
->
-> On (19/12/04 14:11), Colin King wrote:
-> [..]
-> > diff --git a/drivers/staging/media/meson/vdec/vdec.c b/drivers/staging/media/meson/vdec/vdec.c
-> > index 0a1a04fd5d13..8dd1396909d7 100644
-> > --- a/drivers/staging/media/meson/vdec/vdec.c
-> > +++ b/drivers/staging/media/meson/vdec/vdec.c
-> > @@ -133,6 +133,8 @@ vdec_queue_recycle(struct amvdec_session *sess, struct vb2_buffer *vb)
-> >       struct amvdec_buffer *new_buf;
-> >
-> >       new_buf = kmalloc(sizeof(*new_buf), GFP_KERNEL);
-> > +     if (!new_buf)
-> > +             return;
-> >       new_buf->vb = vb;
+Hi, Yongqiang:
 
-Thanks for the patch Colin.
+The title is too rough. Any bug of gamma would be this title. I would
+like the title show explicitly what it does.
 
->
-> So the buffer is not getting recycled? IOW is leaked?
->
->         -ss
+On Fri, 2019-12-13 at 15:28 +0800, Yongqiang Niu wrote:
+> if there is no gamma function in the crtc
+> display path, don't add gamma property
+> for crtc
+> 
+> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 10 ++++++++--
+>  1 file changed, 8 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index ca4fc47..9a8e1d4 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -734,6 +734,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+>  	int pipe = priv->num_pipes;
+>  	int ret;
+>  	int i;
+> +	uint gamma_lut_size = 0;
+>  
+>  	if (!path)
+>  		return 0;
+> @@ -785,6 +786,9 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+>  		}
+>  
+>  		mtk_crtc->ddp_comp[i] = comp;
+> +
+> +		if (comp->funcs->gamma_set)
+> +			gamma_lut_size = MTK_LUT_SIZE;
+>  	}
+>  
+>  	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+> @@ -805,8 +809,10 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+>  				NULL, pipe);
+>  	if (ret < 0)
+>  		return ret;
+> -	drm_mode_crtc_set_gamma_size(&mtk_crtc->base, MTK_LUT_SIZE);
+> -	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
+> +
+> +	if (gamma_lut_size)
+> +		drm_mode_crtc_set_gamma_size(&mtk_crtc->base, gamma_lut_size);
+> +	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, gamma_lut_size);
 
-The "recycle" mechanism in the meson vdec is a way to tell the
-firmware that "hey, both userspace and kernel are done using this
-buffer, you can start using it again".
+If there is no gamma, shall we enable color management?
 
-Not queuing it for recycling means that the firmware won't use this
-buffer again, it's not desirable of course, but if there is no memory
-left to allocate a simple list element then there are bigger problems
-at hand.
+Regards,
+CK
 
-Either way, failing this allocation and returning instantly doesn't
-leak anything or do any damage kernel-side.
+>  	priv->num_pipes++;
+>  	mutex_init(&mtk_crtc->hw_lock);
+>  
 
 _______________________________________________
 linux-arm-kernel mailing list
