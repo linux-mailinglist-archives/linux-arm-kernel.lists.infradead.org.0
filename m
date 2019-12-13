@@ -2,62 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58D9C11DC12
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 03:19:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5F3011DC2B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 03:35:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=yw7WL3oHlrxhSd7Sm4Bzm5WaKg0YAQvRKDPc6RSQoec=; b=c/32innv4iZirV8BuEmRmBXOWw
-	I47WwBRxRsHeBV+pPSbyHRnPAWFwCDrOn4JJkgohDCV7s03zfDvmfO8tLEyt7hIu902T6C6RKcXRo
-	PgXZl7bQH2eFxqNDMGJuKCStKK4G9DzZePqDDYYj2gVSKecyG5STxJ0qR3g5DZWanZ/+93yDnmvRW
-	6mcKr3i9fkno47yRb7WFwfrF7/BT4FmSAtdaLQYuqY96I4FJT5coM9nB/HzjECmN8ELpTLFIzlVq8
-	KqluImGYKWnBoBeQqP+NU5UGlIbn5nToB6XNc9wGPO5gCEQCtZBS3Y3CmxEscEUnokpCrcK4ARth4
-	h6fRfEuw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6j5yUNbWAl2zvCTMZKvJjyEGN6qD3eEmg9TpF+Qh4KI=; b=pStRhWZY3GyHrR
+	fJgozn0Y6VdqiQVMF4L/jb3FkQW3u3mkh1cyGia9XVtxf15LeS/0WGFSwVvdur2cO5IO9UZhub2Kf
+	Dsy2n9KPrI3LRxcHjylD3SmxAy1Uxw9MlpRpOZLTGxHYVD3uW/nKTyht6ANVw4sqBx7ervXW57P26
+	hiqI9WPFWzidtY5mDGdCD/cTR2g4lLtxXqF37UrHs5TYGKtUgnFcNdz5TOUDybRjxkrpdc9f71wop
+	QiISxmfn8WKq3KmsSs2MSOuX/ao1ogS85czxxS6Z7e6GWYRRTly2tivbyidky4o0DT3Abi27kMgxU
+	pPJyzlyW0FC5EOxcsR8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifaYa-0003Dh-NQ; Fri, 13 Dec 2019 02:19:52 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1ifanV-0004Ch-Qv; Fri, 13 Dec 2019 02:35:17 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifaYM-00034O-MX
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 02:19:40 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7DCDC200300;
- Fri, 13 Dec 2019 03:19:33 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 000B620030A;
- Fri, 13 Dec 2019 03:19:28 +0100 (CET)
-Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1AE99402AF;
- Fri, 13 Dec 2019 10:19:23 +0800 (SGT)
-From: Yinbo Zhu <yinbo.zhu@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v2 2/2] arm64: dts: ls1028a: fix little-big endian issue for
- dcfg
-Date: Fri, 13 Dec 2019 10:18:39 +0800
-Message-Id: <20191213021839.23517-2-yinbo.zhu@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191213021839.23517-1-yinbo.zhu@nxp.com>
-References: <20191213021839.23517-1-yinbo.zhu@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1ifanM-0003YZ-8s; Fri, 13 Dec 2019 02:35:10 +0000
+X-UUID: 47fa587e52fc447683185be32e24f6e0-20191212
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=yhFMIzdACTJWG8hG2F5mM6oLY9KIsSirpu7dj4pmzWo=; 
+ b=OQv/fxiQsfz4cvuh5JCsWQWp2JRkjT1QaFhtXzcgEfYxmmzin8CsOw79fhtWlphFO76eLW+07eYB+O8zKugRMO8JivvHFUMbzH2x63ELE60uieaRK2swT6thOuy/iTJDEyiI2n0pCYqHYmvGhNwdHcr1o+h6XYOghd9Suw+u0MY=;
+X-UUID: 47fa587e52fc447683185be32e24f6e0-20191212
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1796512916; Thu, 12 Dec 2019 18:35:01 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Dec 2019 18:35:16 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 13 Dec 2019 10:34:36 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 13 Dec 2019 10:34:51 +0800
+Message-ID: <1576204492.26694.0.camel@mtksdaap41>
+Subject: Re: [PATCH 1/2] Return from mtk_ovl_layer_config after
+ mtk_ovl_layer_off
+From: CK Hu <ck.hu@mediatek.com>
+To: Sean Paul <sean@poorly.run>
+Date: Fri, 13 Dec 2019 10:34:52 +0800
+In-Reply-To: <CAMavQKKOtYKVnCs3RCi3iYiX-2rLHoaDBTsEHyQmvWGoYj4M0g@mail.gmail.com>
+References: <20191211154901.176256-1-markyacoub@google.com>
+ <1576125900.29693.0.camel@mtksdaap41>
+ <CAMavQKKOtYKVnCs3RCi3iYiX-2rLHoaDBTsEHyQmvWGoYj4M0g@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_181938_903424_CF07D187 
-X-CRM114-Status: UNSURE (   7.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191212_183508_332736_CBB67145 
+X-CRM114-Status: GOOD (  19.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,43 +85,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- xiaobo.xie@nxp.com, jiafei.pan@nxp.com, yinbo.zhu@nxp.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Daniele Castagna <dcastagna@chromium.org>, David Airlie <airlied@linux.ie>,
+ dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <seanpaul@chromium.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mark Yacoub <markyacoub@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dcfg use little endian that SoC register value will be correct
+Hi, Sean:
 
-Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
-Acked-by: Shawn Guo <shawnguo@kernel.org>
-Acked-by: Yangbo Lu <yangbo.lu@nxp.com>
----
-Change in v2:
-		Add Acked-by
+On Thu, 2019-12-12 at 09:13 -0500, Sean Paul wrote:
+> On Wed, Dec 11, 2019 at 11:45 PM CK Hu <ck.hu@mediatek.com> wrote:
+> >
+> > Hi, Mark:
+> >
+> > On Wed, 2019-12-11 at 10:49 -0500, Mark Yacoub wrote:
+> > > drm/mediatek: return if plane pending state is disabled.
+> > >
+> > > If the plane pending state is disabled, call mtk_ovl_layer_off then
+> > > return.
+> > > This guarantees that that the state is valid for all operations when the
+> > > pending state is enabled.
+> >
+> > Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> >
+> 
+> Thanks for reviewing these patches, CK. When you apply them to your
+> tree, could you please fixup the subjects with the correct prefixes?
 
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Thanks for your notice. I've already planed to do so.
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 8e8a77eb596a..8b28fda2ca20 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -175,7 +175,7 @@
- 		dcfg: syscon@1e00000 {
- 			compatible = "fsl,ls1028a-dcfg", "syscon";
- 			reg = <0x0 0x1e00000 0x0 0x10000>;
--			big-endian;
-+			little-endian;
- 		};
- 
- 		scfg: syscon@1fc0000 {
--- 
-2.17.1
+Regards,
+CK
 
+> 
+> Both patches are also
+> 
+> Reviewed-by: Sean Paul <seanpaul@chromium.org>
+> 
+> Sean
+> 
+> > >
+> > > Suggested-by: Sean Paul <seanpaul@chromium.org>
+> > > To: CK Hu <ck.hu@mediatek.com>
+> > > To: dri-devel@lists.freedesktop.org
+> > > Cc: Daniele Castagna <dcastagna@chromium.org>
+> > > Cc: Philipp Zabel <p.zabel@pengutronix.de>
+> > > Cc: David Airlie <airlied@linux.ie>
+> > > Cc: Daniel Vetter <daniel@ffwll.ch>
+> > > Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> > > Cc: linux-arm-kernel@lists.infradead.org
+> > > Cc: linux-mediatek@lists.infradead.org
+> > > Signed-off-by: Mark Yacoub <markyacoub@google.com>
+> > > ---
+> > >  drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 7 ++++---
+> > >  1 file changed, 4 insertions(+), 3 deletions(-)
+> > >
+> > > diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> > > index 4a55bb6e2213..526b595eeff9 100644
+> > > --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> > > +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+> > > @@ -260,8 +260,10 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
+> > >       unsigned int src_size = (pending->height << 16) | pending->width;
+> > >       unsigned int con;
+> > >
+> > > -     if (!pending->enable)
+> > > +     if (!pending->enable) {
+> > >               mtk_ovl_layer_off(comp, idx);
+> > > +             return;
+> > > +     }
+> > >
+> > >       con = ovl_fmt_convert(ovl, fmt);
+> > >       if (idx != 0)
+> > > @@ -283,8 +285,7 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
+> > >       writel_relaxed(offset, comp->regs + DISP_REG_OVL_OFFSET(idx));
+> > >       writel_relaxed(addr, comp->regs + DISP_REG_OVL_ADDR(ovl, idx));
+> > >
+> > > -     if (pending->enable)
+> > > -             mtk_ovl_layer_on(comp, idx);
+> > > +     mtk_ovl_layer_on(comp, idx);
+> > >  }
+> > >
+> > >  static void mtk_ovl_bgclr_in_on(struct mtk_ddp_comp *comp)
+> >
+> > _______________________________________________
+> > dri-devel mailing list
+> > dri-devel@lists.freedesktop.org
+> > https://lists.freedesktop.org/mailman/listinfo/dri-devel
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
 _______________________________________________
 linux-arm-kernel mailing list
