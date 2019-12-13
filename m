@@ -2,143 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 267C911DD1E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 05:22:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46C4D11DD27
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 05:31:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dbmVwKCFpU/eGpmkDEJWGY9LEzeRNaejY8vZpqPwkkk=; b=bkXcPjfvcxoSW8
-	87lhm1zq0DqubodbbqfrHnEShMfQlFKUiVeFePjllhqBdtjBHX86Uvm9OMYAe1Ye5fi8jgudqKS8L
-	QGOhlfWWm8ge2tp7IvwccU/oIEg0Cru+5lKVUNz2DyI0mEcgr2Xc57GGSyW/t8OPNtC3OGdctXk5V
-	OMFp1XZb/GZqWwCcHigWLeyLpp1LsOulh1/A4VRGIqIkwSMsWtwY9GcBKYUzr4OBKgVp7GYyo65wV
-	jVIqGjYLAomZSEZ4Pt8it2N9fcEI7m0k1Ucss0rWr53b1PGkSz6whtpxL+rrbTzw97fFnljRvRXNc
-	omNIBvb5twurQpnPMcJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HJ2HJr88nOGlsOUQJ82M8uKFLHlef13PPJAZnU/7Ffo=; b=fzafwebuSlcBUMwWfzT2DFN1y
+	2RCTGmxUdC8i9ao63jP04BimFb7ALW6RXBoCb2j8igVM/NyOOi8tlBQINi3DmOldj0gb1QnpHlsPR
+	3p4sKdR86+gYianWyupWbJGfb4LJ+FT1Yw3vKO46aFgRjM6MDiMvIIfYL8KQ3qYl+Wyp+bCL1NGIS
+	TiPfuYOOT+ZWQ+Gfnkotam5hExCqNsPIPVA3KtZszTd05ymISz5on1SuPRwGfGgKaD2N5JOItB20s
+	x39ANGkKlNkOsQyQVnaHynLiU9XrYTxZDKLUHSe8n7hKvbZ8SWiaug9hMHv2m7SVv/cdL/Wutheit
+	n/3DKBJKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifcTZ-0007my-7H; Fri, 13 Dec 2019 04:22:49 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1ifcbx-0002h2-Mq; Fri, 13 Dec 2019 04:31:29 +0000
+Received: from m228-5.mailgun.net ([159.135.228.5])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifcTN-0007mT-KI
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 04:22:39 +0000
-Received: from epcas1p3.samsung.com (unknown [182.195.41.47])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20191213042232epoutp04e23857171f06f23c94151de3e813ea2f~f04J_3duZ0453404534epoutp04n
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 04:22:32 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20191213042232epoutp04e23857171f06f23c94151de3e813ea2f~f04J_3duZ0453404534epoutp04n
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1576210952;
- bh=TxyKw3Ul1g+AAGrympx1fMmccHpakDh6s6Hu8YFBF/U=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=IU3xezhzSZFstu175bUEt9eUVC8whaCKN5YWmQh20iqxIyrfsxkngf7a2wOMtGbZk
- rL7wDwnJsNAa9EK+WdRL7/DFas0T+uifpl7Z7DrAIQUuUFdHjBjc1eExwZtid72cRC
- ixEsDl2nZqbGK3AzvPudQ5HbOXj7rzpJ2SIz9q1U=
-Received: from epsnrtp2.localdomain (unknown [182.195.42.163]) by
- epcas1p3.samsung.com (KnoxPortal) with ESMTP id
- 20191213042231epcas1p339e826de73063a8cd62b72ffb5b80efa~f04JJHR-D2676926769epcas1p3J;
- Fri, 13 Dec 2019 04:22:31 +0000 (GMT)
-Received: from epsmges1p3.samsung.com (unknown [182.195.40.157]) by
- epsnrtp2.localdomain (Postfix) with ESMTP id 47YyDz6yJHzMqYkx; Fri, 13 Dec
- 2019 04:22:27 +0000 (GMT)
-Received: from epcas1p3.samsung.com ( [182.195.41.47]) by
- epsmges1p3.samsung.com (Symantec Messaging Gateway) with SMTP id
- 89.68.52419.30213FD5; Fri, 13 Dec 2019 13:22:27 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
- 20191213042227epcas1p4b1e09e0001edc5da8466eb98debb6c98~f04F6-OY42197221972epcas1p4N;
- Fri, 13 Dec 2019 04:22:27 +0000 (GMT)
-Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20191213042227epsmtrp1026ea16fd654083f10803ae88241378d~f04F5zMOQ2855928559epsmtrp1z;
- Fri, 13 Dec 2019 04:22:27 +0000 (GMT)
-X-AuditID: b6c32a37-5b7ff7000001ccc3-cc-5df31203b494
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 40.0C.06569.30213FD5; Fri, 13 Dec 2019 13:22:27 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20191213042227epsmtip1d445af99ba0f9e76c2a94067e5097fc9~f04FdkB4z1095810958epsmtip1K;
- Fri, 13 Dec 2019 04:22:27 +0000 (GMT)
-Subject: Re: [PATCH RFC v6 3/9] PM / devfreq: imx: Register interconnect device
-To: Leonard Crestez <leonard.crestez@nxp.com>, Georgi Djakov
- <georgi.djakov@linaro.org>, Rob Herring <robh+dt@kernel.org>
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <4d45cd39-24df-1714-0a27-5019c1367063@samsung.com>
-Date: Fri, 13 Dec 2019 13:28:56 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:59.0) Gecko/20100101
- Thunderbird/59.0
+ id 1ifcbn-0002gb-KZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 04:31:21 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1576211479; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=2dEQvqwynE6D0k73vhsmc99DYPPkKBISeGiPH0xpt3U=;
+ b=JE4DepL/IDJZMOjvWEn9V368p1KMz8tSj1jBqDaVS0IpMBc3MsEHQHOHbKnOa+Lkvqr3tbel
+ zmrURLVFPL889XR7nDNLOPU+2D7VzfBKDeL7iJR2uzHpX9ZJCaDJEusInJytGER/95xB3U2P
+ Kzn3u1uq/W+KWn0HUOLuq3+0inE=
+X-Mailgun-Sending-Ip: 159.135.228.5
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5df31412.7fbe31093110-smtp-out-n01;
+ Fri, 13 Dec 2019 04:31:14 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id E0340C447A0; Fri, 13 Dec 2019 04:31:13 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 3FE2DC433CB;
+ Fri, 13 Dec 2019 04:31:13 +0000 (UTC)
 MIME-Version: 1.0
-In-Reply-To: <e0e6a1685ccdad95c9d0c922801afdda8adb9f05.1573761527.git.leonard.crestez@nxp.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA01TbUxTZxTee297e9FV7iod71g28br9sAvQWgsvizjN1N05s7CwD7OE1Ru4
- o4R+pbclcyyDMWXS6MQYYvhwuAhLW9mktWLp+LLCCE6LzKx+dEwDxOniymbFdDjZ2t6a8e85
- 5zzPed5z3hwSl/VJsshKo5WzGFk9TSwT9Z5bm5eDy6KlykV/AQr8cFqC5n88D9A3P40CdL/Z
- j6OZG2GAzrSUoY6RoBi5T4VF6MiAh0Cu5j4RmpjokaCL9XclyDH1lxh5ZkJiZF9w4ih6YASg
- riuTGAo5DolRtGcGoMnzW1H4MweBTgTPEujo/WYc7R0YkSB74BGBFkNuEbrtzURdx0M4cs8z
- m55jmu0OwHR/1Q2Yuat7JUxb3aSIOeaxMR5XI8H8EuonmFOdtYw74sOYs5F+jDn4SMksnJMz
- X3pdgIl6ni9e8X7VBh3HlnOWbM5YZiqvNFYU0W+UaF/VavKVqhxVISqgs42sgSuit+woztlW
- qY9vhs6uZvW2eKqY5Xk6b+MGi8lm5bJ1Jt5aRHPmcr250JzLswbeZqzILTMZXlYples0ceKu
- Kt3D+gXCvJj1UXioCa8Dl+V2kEZCaj288Oe3mB0sI2WUD8DD3r9TwT0AI22dQAgeADg8FcQe
- S77vu4ALhQEAnR2DKdYcgNEHg6IEayX1FpxoHJUkcAZVA5su1if74tQ1CRweTSjSSIJSwKHb
- V4kETqdWw59jM8m8lNoIo9PdSbGIehG6Wq8lOXLqXTjeuyfFeQqOt8wmzdKoD2BL254kB6cy
- 4fXZDkzAq+CZP9qTT4XUMAljjs54UzIebIFB33ZhnJXw9zGvRMBZ8M7BhhSugc7xEULQ7gPQ
- O3RJLBTUcKjrMJbog1Nr4Ul/npBeDfseHgWC7woYmd8vFqykcF+DTKCsgZdvTqW2+Aw8/kUj
- 0QTo1iXTtC6ZoHXJBK3/mx0DIhd4mjPzhgqOV5nVS7/bA5JnoyjwgZ7gjgCgSEA/KXWw90pl
- Yraa320IAEjidIb0lU/iKWk5u/tjzmLSWmx6jg8ATXzZh/AseZkpfoRGq1alWadWq9F6Vb5G
- paIzpWRsslRGVbBWrorjzJzlsQ4j07LqgKJr7rW3l49j6Xd5eUl+Hq+9Hhv1nZTNdO/0b76R
- Xrtpzu18VqpRvO76t6H90xps+de/ndg5ffO7hpc+922PbA0re9/5B7OfXmMtvIVzzjdLtvnr
- CN2dfsr03oEr1b/e2gUvxaYd/vZVHkdzxmDj2Au16v25VZEPHQ7b7Ga1ceyJNlrE61iVArfw
- 7H+4DKCtTAQAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRjHeXfOzo7i8rhpvhopDiJYZhqJLyHWF/WgdP0QZHhZelDRTdlR
- SyvytsBhpZmZs9Rw1ppCblpqKuJ03kptRsu8EDgpwTRqGjIvpRuB3348/9//eb48JCZQc73J
- VFkWI5dJ0kWEM/6mX+RzFBNYYwO76vyQYfA1D629GwXo+aQRoNXKtxiyfJ0BqL06EdUNjHOR
- rnUGR1U9egJpKztxNDHRwkNjhT94SDP3i4v0FjMXKW0vMWS9OwBQ42cTB5k15VxkbbEAZBoN
- RzMFGgI1jfcR6OlqJYYUPQM8pDRsEWjbrMPRYpsnamwwY0i3Rp8+SFcqNYBurm0G9M8pBY+u
- yTfhdL0+m9ZrSwh61txN0K3q27RupYND9610c+j7W4G0rd+DvtemBbRV73N+X4xzaBKTnprD
- yI+FJTinbBTaiMxt7+szvWVYPvjooQROJKROwK7O95gSOJMCqgvAmr9NwBF4wUcm405A7rAQ
- 9vezDmcZwBezk/iuI6QuwIkSI2+X3akbcPPbkH0RRs3x4OPSIY6jMQ+g0jrO3bUISgx7F6eI
- XXal/OCndYv9Gp8Kg9b5ZvsmnDoEtaovdseDugQ71RaOw3GDI9UL9stOVBysrim2Oxh1GG7W
- TmIO9oTTC3UcB/vC9uUnWBkQqvbUVXsqqj0V1Z5KPcC1wIvJZKXJUjYo87iMuRbASqRstiw5
- IDFDqgf23xGLO8DwcLwBUCQQufA1kt+xAq4kh82VGgAkMZE7/9TNnRE/SZKbx8gz4uXZ6Qxr
- AAdIXOTJ980YvCygkiVZTBrDZDLy/ymHdPLOB8JgrkIhTSVsIwF5Yx9G1hUwsurq2bacalRw
- MUIR/2fCz3TE9UFzVu8VXfFwWqiwNLKr6AzQnKvwCylfEoRHPJNNBxMB/ieji+LEd6LrO5cS
- XKRZoWn1RUPlQGUxWmL8axKjHl6IuZUTXsHZb1RH2TZWG9x81C4RHtbvr2pDRDibIgkSY3JW
- 8g9oHmRpNwMAAA==
-X-CMS-MailID: 20191213042227epcas1p4b1e09e0001edc5da8466eb98debb6c98
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191114201049epcas5p370853a1d78584bf00d8493ce20320bf9
-References: <cover.1573761527.git.leonard.crestez@nxp.com>
- <CGME20191114201049epcas5p370853a1d78584bf00d8493ce20320bf9@epcas5p3.samsung.com>
- <e0e6a1685ccdad95c9d0c922801afdda8adb9f05.1573761527.git.leonard.crestez@nxp.com>
+Date: Fri, 13 Dec 2019 10:01:13 +0530
+From: saiprakash.ranjan@codeaurora.org
+To: Doug Anderson <dianders@chromium.org>
+Subject: Re: [PATCH 1/3] arm64: dts: qcom: sc7180: Add APSS watchdog node
+In-Reply-To: <CAD=FV=X3Akg07hetQOgd0P_wTVWs3QpuCNQ8O6qQ5LK2ZeWSaQ@mail.gmail.com>
+References: <cover.1576037078.git.saiprakash.ranjan@codeaurora.org>
+ <0101016ef3391ded-57772416-f32d-40e8-acb5-5dd1b6064f73-000000@us-west-2.amazonses.com>
+ <CAD=FV=X3Akg07hetQOgd0P_wTVWs3QpuCNQ8O6qQ5LK2ZeWSaQ@mail.gmail.com>
+Message-ID: <6453ced1f718bf3a214c404b08f8c35b@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_202238_059889_3CAEAA8A 
-X-CRM114-Status: GOOD (  27.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191212_203119_727142_690B7DD5 
+X-CRM114-Status: GOOD (  18.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [159.135.228.5 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,137 +88,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- Jacky Bai <ping.bai@nxp.com>, "Rafael J. Wysocki" <rafael@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Matthias Kaehlcke <mka@chromium.org>, linux-imx@nxp.com,
- devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- Martin Kepplinger <martink@posteo.de>,
- Silvano di Ninno <silvano.dininno@nxp.com>,
- linux-arm-kernel@lists.infradead.org, Dong Aisheng <aisheng.dong@nxp.com>,
- Saravana Kannan <saravanak@google.com>, Stephen Boyd <sboyd@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Alexandre Bailon <abailon@baylibre.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE
+ TREE BINDINGS" <devicetree@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
+ Guenter Roeck <groeck@chromium.org>, Stephen Boyd <swboyd@chromium.org>,
+ Matthias Kaehlcke <mka@chromium.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Doug,
 
-On 11/15/19 5:09 AM, Leonard Crestez wrote:
-> There is no single device which can represent the imx interconnect.
-> Instead of adding a virtual one just make the main &noc act as the
-> global interconnect provider.
-> 
-> The imx interconnect provider driver will scale the NOC and DDRC based
-> on bandwidth request. More scalable nodes can be added in the future,
-> for example for audio/display/vpu/gpu NICs.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> ---
->  drivers/devfreq/imx-devfreq.c | 37 +++++++++++++++++++++++++++++++++++
->  1 file changed, 37 insertions(+)
-> 
-> diff --git a/drivers/devfreq/imx-devfreq.c b/drivers/devfreq/imx-devfreq.c
-> index 620b344e87aa..585d340c0f6e 100644
-> --- a/drivers/devfreq/imx-devfreq.c
-> +++ b/drivers/devfreq/imx-devfreq.c
-> @@ -15,10 +15,11 @@
->  struct imx_devfreq {
->  	struct devfreq_dev_profile profile;
->  	struct devfreq *devfreq;
->  	struct clk *clk;
->  	struct devfreq_passive_data passive_data;
-> +	struct platform_device *icc_pdev;
->  };
->  
->  static int imx_devfreq_target(struct device *dev,
->  			      unsigned long *freq, u32 flags)
->  {
-> @@ -60,11 +61,40 @@ static int imx_devfreq_get_dev_status(struct device *dev,
->  	return 0;
->  }
->  
->  static void imx_devfreq_exit(struct device *dev)
->  {
-> +	struct imx_devfreq *priv = dev_get_drvdata(dev);
-> +
->  	dev_pm_opp_of_remove_table(dev);
-> +	platform_device_unregister(priv->icc_pdev);
-> +}
-> +
-> +/* imx_devfreq_init_icc() - register matching icc provider if required */
-> +static int imx_devfreq_init_icc(struct device *dev)
-> +{
-> +	struct imx_devfreq *priv = dev_get_drvdata(dev);
-> +	const char *icc_driver_name;
-> +
-> +	if (!IS_ENABLED(CONFIG_INTERCONNECT_IMX))
-> +		return 0;
-
-It is not proper to check the enable state of CONFIG_INTERCONNECT_IMX configuration
-on device driver. Why don't you add the 'select CONFIG_INTERCONNECT_IMX' on Kconfig?
-
-> +	if (!of_get_property(dev->of_node, "#interconnect-cells", 0))
-> +		return 0;
-> +
-> +	icc_driver_name = of_device_get_match_data(dev);
-> +	if (!icc_driver_name)
-> +		return 0;
-> +
-> +	priv->icc_pdev = platform_device_register_data(
-> +			dev, icc_driver_name, 0, NULL, 0);
-> +	if (IS_ERR(priv->icc_pdev)) {
-> +		dev_err(dev, "failed to register icc provider %s: %ld\n",
-> +				icc_driver_name, PTR_ERR(priv->devfreq));
-> +		return PTR_ERR(priv->devfreq);
-> +	}
-> +
-> +	return 0;
->  }
->  
->  static int imx_devfreq_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
-> @@ -120,18 +150,25 @@ static int imx_devfreq_probe(struct platform_device *pdev)
->  		ret = PTR_ERR(priv->devfreq);
->  		dev_err(dev, "failed to add devfreq device: %d\n", ret);
->  		goto err;
->  	}
->  
-> +	ret = imx_devfreq_init_icc(dev);
-> +	if (ret)
-> +		goto err;
-> +
->  	return 0;
->  
->  err:
->  	dev_pm_opp_of_remove_table(dev);
->  	return ret;
->  }
->  
->  static const struct of_device_id imx_devfreq_of_match[] = {
-> +	{ .compatible = "fsl,imx8mq-noc", .data = "imx8mq-interconnect", },
-> +	{ .compatible = "fsl,imx8mm-noc", .data = "imx8mm-interconnect", },
-> +	{ .compatible = "fsl,imx8mn-noc", .data = "imx8mn-interconnect", },
->  	{ .compatible = "fsl,imx8m-noc", },
->  	{ .compatible = "fsl,imx8m-nic", },
->  	{ /* sentinel */ },
->  };
->  MODULE_DEVICE_TABLE(of, imx_devfreq_of_match);
+On 2019-12-12 00:55, Doug Anderson wrote:
+> If you haven't already done it (I couldn't find it), can you please
+> add this to "Documentation/devicetree/bindings/watchdog/qcom-wdt.txt"?
+>  Presumably at the same time it would be good to change the format of
+> that file to .yaml.
 > 
 
+This was the copy paste mistake from sdm845, I will convert the wdog 
+bindings
+to yaml and add missing SoC specific compatible for SC7180, SDM845 and 
+SM8150.
+
+> 
+> Unrelated to sc7180, but it also feels like something is awfully
+> screwy here in terms of the various Qualcomm device tree files
+> referring to watchdog timers.  It feels wrong, but perhaps you can
+> educate me on how it works and I'll see the light.  Specifically:
+> 
+> 1. It seems like the same node is used for two things on other Qualcomm 
+> SoCs
+> 
+> If I grep the bindings for "qcom,kpss-timer" or "qcom,scss-timer", I
+> get two hits:
+> 
+> Documentation/devicetree/bindings/timer/qcom,msm-timer.txt
+> Documentation/devicetree/bindings/watchdog/qcom-wdt.txt
+> 
+> ...and, in fact, there appear to be two drivers claiming compatibility 
+> here:
+> 
+> drivers/clocksource/timer-qcom.c
+> drivers/watchdog/qcom-wdt.c
+> 
+> That seems super odd to me.  Is that really right?  We have two
+> drivers probing against the same device tree nodes?  ...and that's OK?
+>  If so, why does only one of the bindings list the SoC-specific
+> bindings names?
+> 
+
+This was before my time, but scratching my head and some internal docs
+and git history reveals that watchdog was part of the timer block in
+APQ8064, MSM8960. However in IPQ4019, watchdog was standalone and split
+from timer block.
+
+Below links gives us some more background:
+
+https://groups.google.com/forum/#!topic/linux.kernel/UnDgqU8QgLU
+https://patchwork.kernel.org/patch/5868261/
+
+> 
+> 2. The actual nodes look really wonky.  A few examples below:
+> 
+> 2a) arch/arm/boot/dts/qcom-apq8064.dtsi:
+> compatible = "qcom,kpss-timer", "qcom,kpss-wdt-apq8064", 
+> "qcom,msm-timer";
+> 
+> ...why is the SoC-specific compatible string in the middle?  The
+> SoC-specific one should be first.
+
+Yes, SoC specific compatible should come first, I guess they just didn't 
+care when
+it was merged.
+
+> 
+> 2b) arch/arm/boot/dts/qcom-ipq4019.dtsi:
+> compatible = "qcom,kpss-wdt", "qcom,kpss-wdt-ipq4019";
+> 
+> ...same question, but in this case there is no "msm-timer" at the end?
+> 
+
+IPQ4019 had watchdog as standalone outside of timer block as explained 
+above.
+
+> 2c) arch/arm64/boot/dts/qcom/qcs404.dtsi
+> compatible = "qcom,kpss-wdt";
+> 
+> ...no SoC-specific string at all?
+> 
+
+Needs a SoC specific compatible, I am going to add this in my coming 
+patch.
+
+Thanks,
+Sai
 
 -- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
