@@ -2,77 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C312911E485
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 14:24:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D73BA11E489
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 14:26:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JuM/TdVYVCpciBUj2oZUh3A85o4exAloTzdIQTEJ6ic=; b=qPFo8kr9lwDYik
-	lIJ6BIjLNAT04THAOW8NVk0kDAShBcJ1O5HEKyVGvk7WD6rDzNo3AxwhjP2G15sislDe2naEZD+1j
-	aG/lzic2xtKP426iOxG6iz/xhz0yVcO9JeKT+6Ep+KZbZi1QtO8noKQRapFeevOasa3pa+hF++1q5
-	0wAM9FGhRx2fJtqS0wEGaOT3ANnZynfMozmoYo+4xOrxzrMbhBzK8tPjIw7TkF6T61aZQzLlvLTYg
-	L9uEclVm/Rbjc0xjPDVvKRA4KolngwO6ds/WN++OSyD1qDTyS7aJG15xkKb/qv1V/id6oh5F3+01V
-	1MCzsIPxeqdSox1Tox5g==;
+	List-Owner; bh=GkaxpBdAH6CRMS6xSenFah7ztJMtKh3j6wjnjRxQBJc=; b=l38qXu+0NynsKk
+	97UGoucgtZbNIhYCpTPYsyvXq3mUyti04bKLedEJ8KDY80fz6ZqIWkobC9DQFGp49CPpZ5ERXsPUK
+	N6hxU68YcFOpME7fIWP7R5hNsemfYXjOxhh+2Byr1d+MT2hlLVhNdmmq6kq7Jpob9TkY9yQFLB79o
+	f6BZO2+nqtYwj84ZBHBv0+1W6erfzC2VfLOJ5wtTyReow9otbYDUCOlVwp0Hy01tkRnsBsy++LQMH
+	t58QjCuViJQjdGwENm7uJ1HWRFvHgxtAQOnoGf8A4WluW8NOSSUoKSWqud8oimR6ogw1gP3FxAWrV
+	1ZLa185X1UpaM3vvPJWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifkvz-0004mS-N8; Fri, 13 Dec 2019 13:24:43 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1ifkxR-0006NJ-UJ; Fri, 13 Dec 2019 13:26:13 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifkvm-0004kk-Ti
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 13:24:33 +0000
-Received: by mail-wr1-x444.google.com with SMTP id g17so6654999wro.2
+ id 1ifkxG-0006MX-9Z
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 13:26:03 +0000
+Received: by mail-wm1-x344.google.com with SMTP id p9so6365133wmc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 05:24:27 -0800 (PST)
+ Fri, 13 Dec 2019 05:26:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=TeKkRgU0jXGjzT9DCm0fTUy/QIiQKl1xy36a8E5Fwws=;
- b=IDMTrz+rS8XuFRKTldFBWE+ElzWuH1NR0eGoEwbDDKuN1121QIhN3WWEz1ZtXDCcnb
- bJak3I7EerNSQXdO1bSgrWofohg3jl/87TdgLr6Hv6rcfGXROtrR/LYbPbGX6tMFtrsh
- DTLJKETX1i9ZWI5j6wXFwVuy4CppJ8Y1Cwf44XMqrhy/E6Vjfzt7rcbBTgrcTifwV56Z
- 8q8Qyu6O4uwHecv8nlEdQq/yzO+/6xJY5DnJ2RrnPExk0NnUdCcLVcNZJ53BH535dXQY
- QIrAqPOvcVr9D/lVLtNUVkSr3OSilRaBIbC6bRf7mDAia71xdBS3uNs/eMaUEA3qA44H
- IoJA==
+ bh=95TTKeNptsHmjRNeTiYhUSEDoPaxL2Lysa6poNCdeOY=;
+ b=cqa9VsKrTNXmm8jWTRbXuNB0dAn+UF/lDr+W1eYHicYE4BHyYbIKT0r6opo6q3ug0z
+ oa+eiT9HpN8A6acHUf8oaA8VwUFQgG4ImibBu6ZzDVcAOMfDPvEHCZQQ1VRHEIdQ/7ih
+ lh1sET60jmQzs7VmSwP0stFNFW6tPq34KH1sfDhxRBh/0vAZCT9A2LD5mACdWqcJOad+
+ 1ISzQP0pdl0BbMZGmPcYLipGrtxN6OSAyAGhqxPOQk3dLfsgyL4+gkYNKQzKCeney+jt
+ nZ3PO+XB2PALZk5kKcKrs0qLRmeMKfUl772Q8Snt9koB5CZB60dKO3fi+7I4qrc015UP
+ 2Fwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=TeKkRgU0jXGjzT9DCm0fTUy/QIiQKl1xy36a8E5Fwws=;
- b=tteznUgtKS3dxWxRyQu0jWs6lP2bTO9vC8F23aOc2fe579/D+NhFqwRol1lIs/w0bK
- CP/0nXhrDBQqksuD34WjCPcaQWCVx8hrMSKsSBdutruBzyf0JMXIvELdkJOORxDqJOru
- 1aFXoVBmWqGrdWAw0yVBuOVYt0xBAdqtfUwTpjl4sXNFx9LqTfMjZKnL1w2AeLzBobKM
- 0tMrB3KhzrF0hiQCDkFbA4dUhe/fDkyDiS6BChwSMyCRxc+0v966xeNgaJ2cXgA8lyBv
- S1lmpCV79Za8eQLPwUr7Gon5Zj0G2qAXCtWkyXh9qKk+xIKIKishZfjCdoHW/LE+OAft
- o1fg==
-X-Gm-Message-State: APjAAAUPt+HvSSbE/4qncXn61ysqLZJor1uWmETFIexY9XIOK18zHawc
- g3n3KNPlxLHdIO60rTh7t28wig==
-X-Google-Smtp-Source: APXvYqwdFZ2qNVDI1LIj0hzn0dE3lZy0iGZ3yIt2DB53spn18lP29RlgKMpWV5Ijfr4VLxOnCAl/7Q==
-X-Received: by 2002:a5d:46c1:: with SMTP id g1mr12547902wrs.200.1576243465558; 
- Fri, 13 Dec 2019 05:24:25 -0800 (PST)
+ bh=95TTKeNptsHmjRNeTiYhUSEDoPaxL2Lysa6poNCdeOY=;
+ b=XNZKgnRWhZQFANWrJEGGMzO6neTeFMpnwrmSqogEJzExssSsnqXIrpyLD9ZbqqSaVU
+ cNf12q7ZB287yPgFaUY5lc+rgGHo43Nb+egF7cC2OOpJHJbG1brF03VKE+1PNVaEnKDt
+ e2gnXEtmXN+fFRUKl1HMhcqCjmR0LVta/ZGsPY8r39h626StEx2bh9dD3OMkVOakgvT2
+ yzJHgKQ04+IEr2dUEJ4ZyU4bCmzQjfr7sVMf/oFGp1x7Hy1G7zufFn7oK9oJNltjgkcV
+ tj/Y3xlDJudufXdqGOd4fs/T0XDEfvkpcirWcR0SeC3R/C866QvTg92C5Tb8I2u2BEjx
+ kkDg==
+X-Gm-Message-State: APjAAAXezgT1SwoG2xpart074g648lkxfYGT0HqxXCwaEd4rFWiaj20x
+ 3uGrjWf5y+uH7OWLR8CfETtvSw==
+X-Google-Smtp-Source: APXvYqzexj2CIyiXUk6k9Pbs023wlmbOjmR95/h3tr7hWUu4/VtgvX05v0FshE4PeD3JZECQnoTqHg==
+X-Received: by 2002:a1c:b7c4:: with SMTP id
+ h187mr13539211wmf.105.1576243559706; 
+ Fri, 13 Dec 2019 05:25:59 -0800 (PST)
 Received: from [10.2.4.229] (lfbn-nic-1-505-157.w90-116.abo.wanadoo.fr.
  [90.116.92.157])
- by smtp.gmail.com with ESMTPSA id f1sm10029376wro.85.2019.12.13.05.24.24
+ by smtp.gmail.com with ESMTPSA id u10sm10011222wmd.1.2019.12.13.05.25.58
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 13 Dec 2019 05:24:25 -0800 (PST)
-Subject: Re: [RFC-next 0/1] Odroid C2: Enable DVFS for cpu
-To: Anand Moon <linux.amoon@gmail.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20191101143126.2549-1-linux.amoon@gmail.com>
- <7hfthtrvvv.fsf@baylibre.com>
- <c89791de-0a46-3ce2-b3e2-3640c364cd0f@baylibre.com>
- <CANAwSgQx3LjQe60TGgKyk6B5BD5y1caS2tA+O+GFES7=qCFeKg@mail.gmail.com>
- <7hfthsqcap.fsf@baylibre.com>
- <CAFBinCBfgxXhPKpBLdoq9AimrpaneYFgzgJoDyC-2xhbHmihpA@mail.gmail.com>
- <7hpngvontu.fsf@baylibre.com>
- <4e1339b4-c751-3edc-3a2e-36931ad1c503@baylibre.com>
- <CAFBinCCgKcwXSLxS_CRvz9JZvQo8PcUGm=egBbabVZSrkSc30Q@mail.gmail.com>
- <CANAwSgSFR3kftWLPqyoYfyxdQ5dcp2W7NgRCaFNkMj-xEDY1Kw@mail.gmail.com>
+ Fri, 13 Dec 2019 05:25:59 -0800 (PST)
+Subject: Re: [PATCH v3 2/4] media: vicodec: use v4l2-mem2mem draining, stopped
+ and next-buf-is-last states handling
+To: Hans Verkuil <hverkuil@xs4all.nl>, mchehab@kernel.org,
+ hans.verkuil@cisco.com
+References: <20191209122028.13714-1-narmstrong@baylibre.com>
+ <20191209122028.13714-3-narmstrong@baylibre.com>
+ <0eb52de8-97a9-40cf-a926-262b1ecdc3e9@xs4all.nl>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -125,23 +120,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <83791a71-a45c-383d-0406-b0f4e0a0c215@baylibre.com>
-Date: Fri, 13 Dec 2019 14:24:24 +0100
+Message-ID: <f7e91a9c-266c-0282-414d-5d0333c97d91@baylibre.com>
+Date: Fri, 13 Dec 2019 14:25:58 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <CANAwSgSFR3kftWLPqyoYfyxdQ5dcp2W7NgRCaFNkMj-xEDY1Kw@mail.gmail.com>
+In-Reply-To: <0eb52de8-97a9-40cf-a926-262b1ecdc3e9@xs4all.nl>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_052430_963630_E1C3B094 
-X-CRM114-Status: GOOD (  26.43  )
+X-CRM114-CacheID: sfid-20191213_052602_363645_B06B0DC5 
+X-CRM114-Status: GOOD (  15.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -159,163 +154,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Kevin Hilman <khilman@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-amlogic@lists.infradead.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: Maxime Jourdan <mjourdan@baylibre.com>, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13/12/2019 12:28, Anand Moon wrote:
-> Hi Martin
-> 
-> On Fri, 13 Dec 2019 at 01:40, Martin Blumenstingl
-> <martin.blumenstingl@googlemail.com> wrote:
+On 13/12/2019 14:21, Hans Verkuil wrote:
+> On 12/9/19 1:20 PM, Neil Armstrong wrote:
+>> Use the previously introduced v4l2-mem2mem core APIs to handle the drainig,
+>> stopped and next-buf-is-last states.
 >>
->> Hi Neil,
+>> With these changes, the v4l2-compliance still passes with the following
+>> commands :
+>> # v4l2-ctl --stream-mmap --stream-out-mmap --stream-to-hdr out.comp --stream-from in.yuv
+>>>>>> <><><><><><><><><><><><><><><><>< 15.53 fps
+>>  15.53 fps
+>>> <><><><><><><><><><><><>< 13.99 fps
+>>  13.99 fps
+>>> <><><><><><><><><><><>< 13.52 fps
+>>  13.52 fps
+>>> <><><><><><><><><><><><>< 13.41 fps
+>>  13.41 fps
+>>> <><><><><><><><><><><><>< 13.21 fps
+>>  13.21 fps
+>>> <><><><><><><><><><><>< 13.09 fps
+>>  13.09 fps
+>>> <><><><><><><
+>> STOP ENCODER
+>> <<<
+>> EOS EVENT
 >>
->> On Wed, Dec 11, 2019 at 9:49 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->>>
->>> On 10/12/2019 22:47, Kevin Hilman wrote:
->>>> Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
->>>>
->>>>> On Tue, Dec 10, 2019 at 7:13 PM Kevin Hilman <khilman@baylibre.com> wrote:
->>>>>>
->>>>>> Anand Moon <linux.amoon@gmail.com> writes:
->>>>>>
->>>>>>> Hi Neil / Kevin,
->>>>>>>
->>>>>>> On Tue, 10 Dec 2019 at 14:13, Neil Armstrong <narmstrong@baylibre.com> wrote:
->>>>>>>>
->>>>>>>> On 09/12/2019 23:12, Kevin Hilman wrote:
->>>>>>>>> Anand Moon <linux.amoon@gmail.com> writes:
->>>>>>>>>
->>>>>>>>>> Some how this patch got lost, so resend this again.
->>>>>>>>>>
->>>>>>>>>> [0] https://patchwork.kernel.org/patch/11136545/
->>>>>>>>>>
->>>>>>>>>> This patch enable DVFS on GXBB Odroid C2.
->>>>>>>>>>
->>>>>>>>>> DVFS has been tested by running the arm64 cpuburn
->>>>>>>>>> [1] https://github.com/ssvb/cpuburn-arm/blob/master/cpuburn-a53.S
->>>>>>>>>> PM-QA testing
->>>>>>>>>> [2] https://git.linaro.org/power/pm-qa.git [cpufreq testcase]
->>>>>>>>>>
->>>>>>>>>> Tested on latest U-Boot 2019.07-1 (Aug 01 2019 - 23:58:01 +0000) Arch Linux ARM
->>>>>>>>>
->>>>>>>>> Have you tested with the Harkernel u-boot?
->>>>>>>>>
->>>>>>>>> Last I remember, enabling CPUfreq will cause system hangs with the
->>>>>>>>> Hardkernel u-boot because of improperly enabled frequencies, so I'm not
->>>>>>>>> terribly inclined to merge this patch.
->>>>>>>
->>>>>>> HK u-boot have many issue with loading the kernel, with load address
->>>>>>> *it's really hard to build the kernel for HK u-boot*,
->>>>>>> to get the configuration correctly.
->>>>>>>
->>>>>>> Well I have tested with mainline u-boot with latest ATF .
->>>>>>> I would prefer mainline u-boot for all the Amlogic SBC, since
->>>>>>> they sync with latest driver changes.
->>>>>>
->>>>>> Yes, we would all prefer mainline u-boot, but the mainline kernel needs
->>>>>> to support the vendor u-boot that is shipping with the boards.  So
->>>>>> until Hardkernel (and other vendors) switch to mainline u-boot we do not
->>>>>> want to have upstream kernel defaults that will not boot with the vendor
->>>>>> u-boot.
->>>>>>
->>>>>> We can always support these features, but they just cannot be enabled
->>>>>> by default.
->>>>> (I don't have an Odroid-C2 but I'm curious)
->>>>> should Anand submit a patch to mainline u-boot instead?
->>>>
->>>> It would be in addition to $SUBJECT patch, not instead, I think.
->>>>
->>>>> the &scpi_clocks node could be enabled at runtime by mainline u-boot
->>>>
->>>> That would work, but I don't know about u-boot maintainers opinions on
->>>> this kind of thing, so let's see what Neil thinks.
->>>
->>> U-Boot doesn't anything to do with SCPI, SCPI discusses directly with the SCP
->>> processor, and the CPU clock is set to 1,56GHz by the BL2 boot stage before
->>> U-boot starts.
->>>
->>> The only viable solution I see now is to find if we could add a DT OPP table
->>> only for Odroid-C2 dts to bypass the SCPI OPP table.
->> my understanding is that mainline u-boot (with whatever SCP firmware
->> it uses) provides the *correct* OPP table
-> 
-> Right now I am not sure how this OPP table is populated.
-> But I saw the same freq table used in 3.16.x kernel after enable the clk.
-> 
->> in this case it would be "safe" to have SCPI enabled with mainline u-boot
->> @Anand: please correct me if I misunderstood you
+>> # v4l2-compliance --stream-from in.yuv -s
+>> v4l2-compliance SHA: 7ead0e1856b89f2e19369af452bb03fd0cd16793, 64 bits
+>> [...]
+>> Total for vicodec device /dev/video0: 50, Succeeded: 50, Failed: 0, Warnings: 0
 >>
-> 
-> As per my understanding DVFS OPP frequency table for SCPI firmware set
-> for 1.536 GHz
-> somewhere in BL2 as pointed by Neil.
-> 
-> Arm Trusted firmware added new secure SCPI communication with
-> Cortex-M3 co processor.
-> [0] https://github.com/ARM-software/arm-trusted-firmware/blob/master/docs/plat/meson-gxbb.rst
-> [1] https://github.com/ARM-software/arm-trusted-firmware/blob/master/plat/amlogic/common/aml_scpi.c
-> 
-> ATF generated the *bl1.bin* which is replace the Amlogic's bl1.bin
-> while preparing
-> the new u-boot *u-boot.gxbb* image.
-> 
->> my idea to "enable SCPI with mainline u-boot" is to have u-boot update
->> the "status" property of the scpi_clocks node.
->> u-boot does something similar with the mac-address property of the
->> Ethernet controller for example.
->> as result of this users of mainline u-boot would have working CPU
->> DVFS, while users of the old vendor u-boot would run at fixed 1.54GHz.
+>> The full output is available at [1]
 >>
+>> # v4l2-compliance -d1 --stream-from-hdr out.comp -s
+>> v4l2-compliance SHA: 7ead0e1856b89f2e19369af452bb03fd0cd16793, 64 bits
+>> [...]
+>> Total for vicodec device /dev/video1: 50, Succeeded: 50, Failed: 0, Warnings: 0
 >>
->> Martin
+>> The full output is available at [2]
+>>
+>> No functional changes should be noticed.
 > 
-> Right now as per my understanding 1.536 GHz max is bit under clocked.
+> Ah, unfortunately there *are* functional changes.
 > 
-> Some time ago on Odroid Forum tried to over clock the cpu to 2GHz.
+> There is a (much) more extensive test that is done in the test-media script.
+> 
+> In v4l-utils, go to contrib/test. Now run (as root): test-media vicodec
+> 
+> This test now fails on some tests for the stateful decoder:
+> 
+> Streaming ioctls:
+>         test read/write: OK (Not Supported)
+>         test blocking wait: OK
+>                 fail: v4l2-test-buffers.cpp(943): ret == 0
+>                 fail: v4l2-test-buffers.cpp(1353): captureBufs(node, node_m2m_cap, q, m2m_q, frame_count, pollmode, capture_count)
+>         test MMAP (select): FAIL
+>                 fail: v4l2-test-buffers.cpp(951): ret == 0
+>                 fail: v4l2-test-buffers.cpp(1353): captureBufs(node, node_m2m_cap, q, m2m_q, frame_count, pollmode, capture_count)
+>         test MMAP (epoll): FAIL
+>                 fail: v4l2-test-buffers.cpp(943): ret == 0
+>                 fail: v4l2-test-buffers.cpp(1607): captureBufs(node, node_m2m_cap, q, m2m_q, frame_count, pollmode, capture_count)
+>         test USERPTR (select): FAIL
+>                 fail: v4l2-test-buffers.cpp(943): ret == 0
+>                 fail: v4l2-test-buffers.cpp(1761): captureBufs(node, node_m2m_cap, q, m2m_q, frame_count, pollmode, capture_count)
+>         test DMABUF (select): FAIL
+> 
+> I also see this:
+> 
+> cmp: EOF on /tmp/tmp.7KAXKAIkVZ/raw.yu12.1280.24 after byte 23500800, in line 1
+> 
+> which shouldn't be there either.
+> 
+> I can recommend the test-media script: it can test all the virtual drivers and it is
+> part of the daily build to check for regressions.
 
-This is the point, the Odroid-C2 is *not* stable at 2GHz,
-a large amount of board doesn't support 2GHz, this is why Amlogic
-dropped the freq > 1.536 GHz for the GXBB family.
-
-But HardKernel still delivers the SCPI table with > 1.536 GHz which breaks
-on most of the boards, but doesn't on 3.14 since they have a hack disabling
-higher freqs with a cmdline set in boot.ini.
-
-> [3] https://forum.odroid.com/viewtopic.php?f=139&t=18738
-> So more investigation need to done in this line.
+Thx for the pointer, I'll analyze the failures.
 > 
-> I also tried the same with HardKernel Image, with modifying the boot.ini
-> I could increase the max DVFS cpu frequency to 1.90 GHz,
-> This is just proof of concept.
+> Regards,
 > 
-> odroid:~# cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
-> 100000 250000 500000 1000000 1296000 1536000 1656000 1680000 1752000 1896000
-> 
-> I have some minimal stress testing attached are the results for HK
-> 3.16.x kernel.
-> 
-> For now we should not enable this clock.
-> Until we can possible to check for higher clock frequency to work stable
-> on all Amlogic S905X SBC.
-> 
-> I like the Neil's approach to use it's own dts OPP table for SCPI protocol.
-
-The various tests gave very little perf enhancement by going > 1,536 GHz, seriously
-it's not worth the pain.
-
-Neil
-
-> 
-> -Anand
+> 	Hans
 > 
 
 
