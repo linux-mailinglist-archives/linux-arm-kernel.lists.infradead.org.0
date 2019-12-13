@@ -2,91 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DFC111E2B3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 12:20:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C34211E2C7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 12:28:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vfzy8Qonra+Yt34ztL6Bbkmju6MDTfC1R5+Ivk9LVUg=; b=GKNzMIZwSfTa/S
-	CFCWTKWf7nSeQOTJyFxEuCzvt+Jj3vA6o0yacqvSqvCVuPP9gNBZoWr9G52Lx5c2SZNsgIflCDnUn
-	J22dotWC00/GkPkO9YGjknB52EeAc1kzIjviN5M+AOAF8EuNeEznPlO+JpcDTqNu9RWtFpDekRE2g
-	e/LVF5eNncdpUouhXR/ghwG5s9GZlW9yfm94ueKjr+N16+AbWnRIN63jJqXjkJa+SGQrRCRYssZ4X
-	zBvFXvR4Zl73O9LZ6PDN/LO2jkkB9cuFDbbJ7H5jIfkIywlev1W7jf5VqyafGZdrfzLVT8x0z2dl0
-	5b4VwQV25KPI8QHQkqKQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:
+	Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1i1EkxYXU9ITGCm304ltz1lL4MBVe6x/vMpYFPDrkSo=; b=KMK6cliWhb954xzvdznd79F/p
+	bPCx8uizEZaSLiLa3niLw/lzMS+DhZKoX9mQLJqhm5RdAaQuPO8BqK2fmZz5K90pkgCHa/BNQOwSL
+	2C8IDNkJ9Qeq8lbhYMTiW24uebSa0O1EK9nwJkyjrhWsSzG8q72OnkfNbJLKFx+4AksZPv6YKl6k6
+	+sybUmQfeDdaHtcH+KncJZbvXBt0XG1nZxYeiYnId1EX06VTa8GN9TSqufd9UZWoFjyRfGSmgGF9O
+	WjrztxTTWlUwTQN6QiEUmdh95YQENhWG+A2XxyaliWtiX0Ds37gZwVsJhMFujmscMwdk9Ok3hChpR
+	r7M6Ryg+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifizV-0000rL-3v; Fri, 13 Dec 2019 11:20:13 +0000
-Received: from esa1.microchip.iphmx.com ([68.232.147.91])
+	id 1ifj7f-0005S2-OY; Fri, 13 Dec 2019 11:28:39 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifiz5-0000ge-Ph
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 11:19:50 +0000
-Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa1.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa1.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: gLILAU94dJtVQVxw2Piwv+xtaZidvzGDu3v8+JJqIGcOVc7Ie6H64PIm6kWB2BcHq4d97qtHYH
- Mi2Pk0xxCYpTtSD4RDwRkkoAGTHd16PsYPj0Uh2ndpb522R6z7Z9oYwoeF3GntYkvCLLYvwGTG
- 7Ji63bsEhRT5uzCSLAQSHRDX7JWSFJz7YBAxk1yepPxtWuyWSMxKA4E/ozi8LSK+6vTbVWLFdS
- /+Xl8iw/uwMKy4fPR6ur2W6Kr6ZJzmoNARIjZ3g88weE6YZ2D0TVfP4BA8UdYjUG87EwXOPkQZ
- hXk=
-X-IronPort-AV: E=Sophos;i="5.69,309,1571727600"; d="scan'208";a="61625824"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 Dec 2019 04:19:46 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 13 Dec 2019 04:19:46 -0700
-Received: from m18063-ThinkPad-T460p.microchip.com (10.10.85.251) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 13 Dec 2019 04:19:42 -0700
-From: Claudiu Beznea <claudiu.beznea@microchip.com>
-To: <robh+dt@kernel.org>, <mark.rutland@arm.com>,
- <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
- <ludovic.desroches@microchip.com>, <daniel.lezcano@linaro.org>,
- <tglx@linutronix.de>
-Subject: [PATCH v4 2/2] clocksource/drivers/timer-microchip-pit64b: add
- Microchip PIT64B support
-Date: Fri, 13 Dec 2019 13:19:22 +0200
-Message-ID: <1576235962-30123-3-git-send-email-claudiu.beznea@microchip.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1576235962-30123-1-git-send-email-claudiu.beznea@microchip.com>
-References: <1576235962-30123-1-git-send-email-claudiu.beznea@microchip.com>
+ id 1ifj7U-0005GY-37; Fri, 13 Dec 2019 11:28:30 +0000
+Received: by mail-il1-x141.google.com with SMTP id n1so1787007ilm.6;
+ Fri, 13 Dec 2019 03:28:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=SApHZXxkyc33oQaGK6ky4W1VLNyP7mSMuSzcqHJ/PMo=;
+ b=HhDJni7Z8Yno+RYPsfonnh9u7UmeNE60s3l8GDJ5FsG12OyvWMXhrinljTrHbKD4+5
+ 2xIpEk4Q7aekunme4PXh2CTzJbYFHwJzPzJh13yXzDlZud3PxhDGfbmyel4AAMP50yWg
+ HwNS9GiuiS9hnITqC41XdouC/rSjpT/LD2iRHgubIHsbTaxIAJHG7OQKE3zqCw2E+KGs
+ ohASwrdD4mWl+9NEypLgSLJCBkyTXr6e9IBxJlxiPTvBVHBS86ps752U9g+ESSuOeUIV
+ zdXXirsH0aCVba3F/hRWGAx831heB78XEk+MMfBwXApnBgmLefFw5I1mIiRan+GyhwR1
+ +txg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=SApHZXxkyc33oQaGK6ky4W1VLNyP7mSMuSzcqHJ/PMo=;
+ b=r2OWDtwsz/2duQVqoiX4ZbMM1Y4nHtSnkby0Sq+QWHGHw8LDiFmyaLhHis6mO2wCgz
+ 7kGI/ZT77x6QHSBX4BjoEmzQx4cxVmHa1WewEGDpyiuq8sp+PQqV90luMa7p08X7Yc2s
+ Rgxf4eHb9MZ7iiCAZBM3j2LKz1hh+OwR4Zv14BF0dAZ4zAba/nR4lwGI8ANgqXce9J/4
+ pWMtdZrfoWmTGY85a2L2nJWsVJbxIJvfZA8FmxiS6ELNnOwIrfKmqLpZUN4qACXwavne
+ QUdu3OCo2GlOWMPnR+TvvaKrPG8ZcYVKO463Rue6Gzkl6m6CIwTfonTBrdGELo4HWCiJ
+ ogRQ==
+X-Gm-Message-State: APjAAAVu/9A4OZdKzAqBIhbW/cWMXps77JQVgYb6TxfpqK6251MLnqRP
+ P5dFpk51FwfPF11/VQBO5BfbMiAcUFrgZvjxfdk=
+X-Google-Smtp-Source: APXvYqwg0FT6i21iRj8cES5CzIZe+O41zVwBf4zrhT9VlubUT5C87Ye5zvW1/OTnwkaaVp0JwGsy31bWMWtRA/EdKSQ=
+X-Received: by 2002:a92:49d1:: with SMTP id k78mr13607183ilg.6.1576236506638; 
+ Fri, 13 Dec 2019 03:28:26 -0800 (PST)
 MIME-Version: 1.0
+References: <20191101143126.2549-1-linux.amoon@gmail.com>
+ <7hfthtrvvv.fsf@baylibre.com>
+ <c89791de-0a46-3ce2-b3e2-3640c364cd0f@baylibre.com>
+ <CANAwSgQx3LjQe60TGgKyk6B5BD5y1caS2tA+O+GFES7=qCFeKg@mail.gmail.com>
+ <7hfthsqcap.fsf@baylibre.com>
+ <CAFBinCBfgxXhPKpBLdoq9AimrpaneYFgzgJoDyC-2xhbHmihpA@mail.gmail.com>
+ <7hpngvontu.fsf@baylibre.com>
+ <4e1339b4-c751-3edc-3a2e-36931ad1c503@baylibre.com>
+ <CAFBinCCgKcwXSLxS_CRvz9JZvQo8PcUGm=egBbabVZSrkSc30Q@mail.gmail.com>
+In-Reply-To: <CAFBinCCgKcwXSLxS_CRvz9JZvQo8PcUGm=egBbabVZSrkSc30Q@mail.gmail.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Fri, 13 Dec 2019 16:58:13 +0530
+Message-ID: <CANAwSgSFR3kftWLPqyoYfyxdQ5dcp2W7NgRCaFNkMj-xEDY1Kw@mail.gmail.com>
+Subject: Re: [RFC-next 0/1] Odroid C2: Enable DVFS for cpu
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Content-Type: multipart/mixed; boundary="0000000000000fd7b0059994291b"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_031947_847111_A92F271F 
-X-CRM114-Status: GOOD (  22.90  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191213_032828_169137_A3A40562 
+X-CRM114-Status: GOOD (  25.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,518 +99,254 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Claudiu Beznea <claudiu.beznea@microchip.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-amlogic@lists.infradead.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jerome Brunet <jbrunet@baylibre.com>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add driver for Microchip PIT64B timer. Timer could be used in continuous
-mode or oneshot mode. The hardware has 2x32 bit registers for period
-emulating a 64 bit timer. The LSB_PR and MSB_PR registers are used to
-set the period value (compare value). TLSB and TMSB keeps the current
-value of the counter. After a compare the TLSB and TMSB register resets.
-The driver uses PIT64B timer for clocksource or clockevent. First
-requested timer would be registered as clockevent, second one would be
-registered as clocksource. Individual PIT64B hardware resources were
-used for clocksource and clockevent to be able to support high resolution
-timers with this hardware implementation.
+--0000000000000fd7b0059994291b
+Content-Type: text/plain; charset="UTF-8"
 
-Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
----
- drivers/clocksource/Kconfig                  |   7 +
- drivers/clocksource/Makefile                 |   1 +
- drivers/clocksource/timer-microchip-pit64b.c | 449 +++++++++++++++++++++++++++
- 3 files changed, 457 insertions(+)
- create mode 100644 drivers/clocksource/timer-microchip-pit64b.c
+Hi Martin
 
-diff --git a/drivers/clocksource/Kconfig b/drivers/clocksource/Kconfig
-index 5fdd76cb1768..6c3907b54c65 100644
---- a/drivers/clocksource/Kconfig
-+++ b/drivers/clocksource/Kconfig
-@@ -697,4 +697,11 @@ config INGENIC_TIMER
- 	help
- 	  Support for the timer/counter unit of the Ingenic JZ SoCs.
- 
-+config MICROCHIP_PIT64B
-+	bool "Microchip PIT64B support"
-+	depends on OF || COMPILE_TEST
-+	select CLKSRC_MMIO
-+	help
-+	  This option enables Microchip PIT64B timer.
-+
- endmenu
-diff --git a/drivers/clocksource/Makefile b/drivers/clocksource/Makefile
-index 4dfe4225ece7..713686faa549 100644
---- a/drivers/clocksource/Makefile
-+++ b/drivers/clocksource/Makefile
-@@ -88,3 +88,4 @@ obj-$(CONFIG_RISCV_TIMER)		+= timer-riscv.o
- obj-$(CONFIG_CSKY_MP_TIMER)		+= timer-mp-csky.o
- obj-$(CONFIG_GX6605S_TIMER)		+= timer-gx6605s.o
- obj-$(CONFIG_HYPERV_TIMER)		+= hyperv_timer.o
-+obj-$(CONFIG_MICROCHIP_PIT64B)		+= timer-microchip-pit64b.o
-diff --git a/drivers/clocksource/timer-microchip-pit64b.c b/drivers/clocksource/timer-microchip-pit64b.c
-new file mode 100644
-index 000000000000..27a389a7e078
---- /dev/null
-+++ b/drivers/clocksource/timer-microchip-pit64b.c
-@@ -0,0 +1,449 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * 64-bit Periodic Interval Timer driver
-+ *
-+ * Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries
-+ *
-+ * Author: Claudiu Beznea <claudiu.beznea@microchip.com>
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/clockchips.h>
-+#include <linux/interrupt.h>
-+#include <linux/of_address.h>
-+#include <linux/of_irq.h>
-+#include <linux/sched_clock.h>
-+#include <linux/slab.h>
-+
-+#define MCHP_PIT64B_CR			0x00	/* Control Register */
-+#define MCHP_PIT64B_CR_START		BIT(0)
-+#define MCHP_PIT64B_CR_SWRST		BIT(8)
-+
-+#define MCHP_PIT64B_MR			0x04	/* Mode Register */
-+#define MCHP_PIT64B_MR_CONT		BIT(0)
-+#define MCHP_PIT64B_MR_ONE_SHOT		(0)
-+#define MCHP_PIT64B_MR_SGCLK		BIT(3)
-+#define MCHP_PIT64B_MR_PRES		GENMASK(11, 8)
-+
-+#define MCHP_PIT64B_LSB_PR		0x08	/* LSB Period Register */
-+
-+#define MCHP_PIT64B_MSB_PR		0x0C	/* MSB Period Register */
-+
-+#define MCHP_PIT64B_IER			0x10	/* Interrupt Enable Register */
-+#define MCHP_PIT64B_IER_PERIOD		BIT(0)
-+
-+#define MCHP_PIT64B_ISR			0x1C	/* Interrupt Status Register */
-+
-+#define MCHP_PIT64B_TLSBR		0x20	/* Timer LSB Register */
-+
-+#define MCHP_PIT64B_TMSBR		0x24	/* Timer MSB Register */
-+
-+#define MCHP_PIT64B_PRES_MAX		0x10
-+#define MCHP_PIT64B_LSBMASK		GENMASK_ULL(31, 0)
-+#define MCHP_PIT64B_PRES_TO_MODE(p)	(MCHP_PIT64B_MR_PRES & ((p) << 8))
-+#define MCHP_PIT64B_MODE_TO_PRES(m)	((MCHP_PIT64B_MR_PRES & (m)) >> 8)
-+#define MCHP_PIT64B_DEF_CS_FREQ		5000000UL	/* 5 MHz */
-+#define MCHP_PIT64B_DEF_CE_FREQ		32768		/* 32 KHz */
-+
-+#define MCHP_PIT64B_NAME		"pit64b"
-+
-+/**
-+ * struct mchp_pit64b_timer - PIT64B timer data structure
-+ * @base: base address of PIT64B hardware block
-+ * @pclk: PIT64B's peripheral clock
-+ * @gclk: PIT64B's generic clock
-+ * @mode: precomputed value for mode register
-+ */
-+struct mchp_pit64b_timer {
-+	void __iomem	*base;
-+	struct clk	*pclk;
-+	struct clk	*gclk;
-+	u32		mode;
-+};
-+
-+/**
-+ * mchp_pit64b_clkevt - PIT64B clockevent data structure
-+ * @timer: PIT64B timer
-+ * @clkevt: clockevent
-+ */
-+struct mchp_pit64b_clkevt {
-+	struct mchp_pit64b_timer	timer;
-+	struct clock_event_device	clkevt;
-+};
-+
-+#define to_mchp_pit64b_timer(x) \
-+	((struct mchp_pit64b_timer *)container_of(x,\
-+		struct mchp_pit64b_clkevt, clkevt))
-+
-+/* Base address for clocksource timer. */
-+static void __iomem *mchp_pit64b_cs_base;
-+/* Default cycles for clockevent timer. */
-+static u64 mchp_pit64b_ce_cycles;
-+
-+static inline u64 mchp_pit64b_cnt_read(void __iomem *base)
-+{
-+	unsigned long	flags;
-+	u32		low, high;
-+
-+	raw_local_irq_save(flags);
-+
-+	/*
-+	 * When using a 64 bit period TLSB must be read first, followed by the
-+	 * read of TMSB. This sequence generates an atomic read of the 64 bit
-+	 * timer value whatever the lapse of time between the accesses.
-+	 */
-+	low = readl_relaxed(base + MCHP_PIT64B_TLSBR);
-+	high = readl_relaxed(base + MCHP_PIT64B_TMSBR);
-+
-+	raw_local_irq_restore(flags);
-+
-+	return (((u64)high << 32) | low);
-+}
-+
-+static inline void mchp_pit64b_reset(struct mchp_pit64b_timer *timer,
-+				     u64 cycles, u32 mode, u32 irqs)
-+{
-+	u32 low, high;
-+
-+	low = cycles & MCHP_PIT64B_LSBMASK;
-+	high = cycles >> 32;
-+
-+	writel_relaxed(MCHP_PIT64B_CR_SWRST, timer->base + MCHP_PIT64B_CR);
-+	writel_relaxed(mode | timer->mode, timer->base + MCHP_PIT64B_MR);
-+	writel_relaxed(high, timer->base + MCHP_PIT64B_MSB_PR);
-+	writel_relaxed(low, timer->base + MCHP_PIT64B_LSB_PR);
-+	writel_relaxed(irqs, timer->base + MCHP_PIT64B_IER);
-+	writel_relaxed(MCHP_PIT64B_CR_START, timer->base + MCHP_PIT64B_CR);
-+}
-+
-+static u64 mchp_pit64b_clksrc_read(struct clocksource *cs)
-+{
-+	return mchp_pit64b_cnt_read(mchp_pit64b_cs_base);
-+}
-+
-+static u64 mchp_pit64b_sched_read_clk(void)
-+{
-+	return mchp_pit64b_cnt_read(mchp_pit64b_cs_base);
-+}
-+
-+static int mchp_pit64b_clkevt_shutdown(struct clock_event_device *cedev)
-+{
-+	struct mchp_pit64b_timer *timer = to_mchp_pit64b_timer(cedev);
-+
-+	writel_relaxed(MCHP_PIT64B_CR_SWRST, timer->base + MCHP_PIT64B_CR);
-+
-+	return 0;
-+}
-+
-+static int mchp_pit64b_clkevt_set_periodic(struct clock_event_device *cedev)
-+{
-+	struct mchp_pit64b_timer *timer = to_mchp_pit64b_timer(cedev);
-+
-+	mchp_pit64b_reset(timer, mchp_pit64b_ce_cycles, MCHP_PIT64B_MR_CONT,
-+			  MCHP_PIT64B_IER_PERIOD);
-+
-+	return 0;
-+}
-+
-+static int mchp_pit64b_clkevt_set_next_event(unsigned long evt,
-+					     struct clock_event_device *cedev)
-+{
-+	struct mchp_pit64b_timer *timer = to_mchp_pit64b_timer(cedev);
-+
-+	mchp_pit64b_reset(timer, evt, MCHP_PIT64B_MR_ONE_SHOT,
-+			  MCHP_PIT64B_IER_PERIOD);
-+
-+	return 0;
-+}
-+
-+static void mchp_pit64b_clkevt_suspend(struct clock_event_device *cedev)
-+{
-+	struct mchp_pit64b_timer *timer = to_mchp_pit64b_timer(cedev);
-+
-+	writel_relaxed(MCHP_PIT64B_CR_SWRST, timer->base + MCHP_PIT64B_CR);
-+	if (timer->mode & MCHP_PIT64B_MR_SGCLK)
-+		clk_disable_unprepare(timer->gclk);
-+	clk_disable_unprepare(timer->pclk);
-+}
-+
-+static void mchp_pit64b_clkevt_resume(struct clock_event_device *cedev)
-+{
-+	struct mchp_pit64b_timer *timer = to_mchp_pit64b_timer(cedev);
-+
-+	clk_prepare_enable(timer->pclk);
-+	if (timer->mode & MCHP_PIT64B_MR_SGCLK)
-+		clk_prepare_enable(timer->gclk);
-+}
-+
-+static irqreturn_t mchp_pit64b_interrupt(int irq, void *dev_id)
-+{
-+	struct mchp_pit64b_clkevt *irq_data = dev_id;
-+
-+	/* Need to clear the interrupt. */
-+	readl_relaxed(irq_data->timer.base + MCHP_PIT64B_ISR);
-+
-+	irq_data->clkevt.event_handler(&irq_data->clkevt);
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static void __init mchp_pit64b_pres_compute(u32 *pres, u32 clk_rate,
-+					    u32 max_rate)
-+{
-+	u32 tmp;
-+
-+	for (*pres = 0; *pres < MCHP_PIT64B_PRES_MAX; (*pres)++) {
-+		tmp = clk_rate / (*pres + 1);
-+		if (tmp <= max_rate)
-+			break;
-+	}
-+
-+	/* Use the bigest prescaler if we didn't match one. */
-+	if (*pres == MCHP_PIT64B_PRES_MAX)
-+		*pres = MCHP_PIT64B_PRES_MAX - 1;
-+}
-+
-+/**
-+ * mchp_pit64b_init_mode - prepare PIT64B mode register value to be used at
-+ *			   runtime; this includes prescaler and SGCLK bit
-+ *
-+ * PIT64B timer may be fed by gclk or pclk. When gclk is used its rate has to
-+ * be at least 3 times lower that pclk's rate. pclk rate is fixed, gclk rate
-+ * could be changed via clock APIs. The chosen clock (pclk or gclk) could be
-+ * divided by the internal PIT64B's divider.
-+ *
-+ * This function, first tries to use GCLK by requesting the desired rate from
-+ * PMC and then using the internal PIT64B prescaler, if any, to reach the
-+ * requested rate. If PCLK/GCLK < 3 (condition requested by PIT64B hardware)
-+ * then the function falls back on using PCLK as clock source for PIT64B timer
-+ * choosing the highest prescaler in case it doesn't locate one to match the
-+ * requested frequency.
-+ *
-+ * Below is presented the PIT64B block in relation with PMC:
-+ *
-+ *                                PIT64B
-+ *  PMC             +------------------------------------+
-+ * +----+           |   +-----+                          |
-+ * |    |-->gclk -->|-->|     |    +---------+  +-----+  |
-+ * |    |           |   | MUX |--->| Divider |->|timer|  |
-+ * |    |-->pclk -->|-->|     |    +---------+  +-----+  |
-+ * +----+           |   +-----+                          |
-+ *                  |      ^                             |
-+ *                  |     sel                            |
-+ *                  +------------------------------------+
-+ *
-+ * Where:
-+ *	- gclk rate <= pclk rate/3
-+ *	- gclk rate could be requested from PMC
-+ *	- pclk rate is fixed (cannot be requested from PMC)
-+ */
-+static int __init mchp_pit64b_init_mode(struct mchp_pit64b_timer *timer,
-+					unsigned long max_rate)
-+{
-+	unsigned long pclk_rate, diff = 0, best_diff = ULONG_MAX;
-+	long gclk_round = 0;
-+	u32 pres, best_pres = 0;
-+
-+	pclk_rate = clk_get_rate(timer->pclk);
-+	if (!pclk_rate)
-+		return -EINVAL;
-+
-+	/* Try using GCLK. */
-+	gclk_round = clk_round_rate(timer->gclk, max_rate);
-+	if (gclk_round < 0)
-+		goto pclk;
-+
-+	if (pclk_rate / gclk_round < 3)
-+		goto pclk;
-+
-+	mchp_pit64b_pres_compute(&pres, gclk_round, max_rate);
-+	best_diff = abs(gclk_round / (pres + 1) - max_rate);
-+	best_pres = pres;
-+
-+	if (!best_diff) {
-+		timer->mode |= MCHP_PIT64B_MR_SGCLK;
-+		goto done;
-+	}
-+
-+pclk:
-+	/* Check if requested rate could be obtained using PCLK. */
-+	mchp_pit64b_pres_compute(&pres, pclk_rate, max_rate);
-+	diff = abs(pclk_rate / (pres + 1) - max_rate);
-+
-+	if (best_diff > diff) {
-+		/* Use PCLK. */
-+		best_pres = pres;
-+	} else {
-+		/* Use GCLK. */
-+		timer->mode |= MCHP_PIT64B_MR_SGCLK;
-+		clk_set_rate(timer->gclk, gclk_round);
-+	}
-+
-+done:
-+	timer->mode |= MCHP_PIT64B_PRES_TO_MODE(best_pres);
-+
-+	pr_info("PIT64B: using clk=%s with prescaler %u, freq=%lu [Hz]\n",
-+		timer->mode & MCHP_PIT64B_MR_SGCLK ? "gclk" : "pclk", best_pres,
-+		timer->mode & MCHP_PIT64B_MR_SGCLK ?
-+		gclk_round / (best_pres + 1) : pclk_rate / (best_pres + 1));
-+
-+	return 0;
-+}
-+
-+static int __init mchp_pit64b_init_clksrc(struct mchp_pit64b_timer *timer,
-+					  u32 clk_rate)
-+{
-+	int ret;
-+
-+	mchp_pit64b_reset(timer, ULLONG_MAX, MCHP_PIT64B_MR_CONT, 0);
-+
-+	mchp_pit64b_cs_base = timer->base;
-+
-+	ret = clocksource_mmio_init(timer->base, MCHP_PIT64B_NAME, clk_rate,
-+				    210, 64, mchp_pit64b_clksrc_read);
-+	if (ret) {
-+		pr_debug("clksrc: Failed to register PIT64B clocksource!\n");
-+
-+		/* Stop timer. */
-+		writel_relaxed(MCHP_PIT64B_CR_SWRST,
-+			       timer->base + MCHP_PIT64B_CR);
-+
-+		return ret;
-+	}
-+
-+	sched_clock_register(mchp_pit64b_sched_read_clk, 64, clk_rate);
-+
-+	return 0;
-+}
-+
-+static int __init mchp_pit64b_init_clkevt(struct mchp_pit64b_timer *timer,
-+					  u32 clk_rate, u32 irq)
-+{
-+	struct mchp_pit64b_clkevt *ce;
-+	int ret;
-+
-+	ce = kzalloc(sizeof(*ce), GFP_KERNEL);
-+	if (!ce)
-+		return -ENOMEM;
-+
-+	mchp_pit64b_ce_cycles = DIV_ROUND_CLOSEST(clk_rate, HZ);
-+
-+	ce->timer.base = timer->base;
-+	ce->timer.pclk = timer->pclk;
-+	ce->timer.gclk = timer->gclk;
-+	ce->timer.mode = timer->mode;
-+	ce->clkevt.name = MCHP_PIT64B_NAME;
-+	ce->clkevt.features = CLOCK_EVT_FEAT_ONESHOT | CLOCK_EVT_FEAT_PERIODIC;
-+	ce->clkevt.rating = 150;
-+	ce->clkevt.set_state_shutdown = mchp_pit64b_clkevt_shutdown;
-+	ce->clkevt.set_state_periodic = mchp_pit64b_clkevt_set_periodic;
-+	ce->clkevt.set_next_event = mchp_pit64b_clkevt_set_next_event;
-+	ce->clkevt.suspend = mchp_pit64b_clkevt_suspend;
-+	ce->clkevt.resume = mchp_pit64b_clkevt_resume;
-+	ce->clkevt.cpumask = cpumask_of(0);
-+	ce->clkevt.irq = irq;
-+
-+	ret = request_irq(irq, mchp_pit64b_interrupt, IRQF_TIMER,
-+			  "pit64b_tick", ce);
-+	if (ret) {
-+		pr_debug("clkevt: Failed to setup PIT64B IRQ\n");
-+		kfree(ce);
-+		return ret;
-+	}
-+
-+	clockevents_config_and_register(&ce->clkevt, clk_rate, 1, ULONG_MAX);
-+
-+	return 0;
-+}
-+
-+static int __init mchp_pit64b_dt_init_timer(struct device_node *node,
-+					    bool clkevt)
-+{
-+	u32 freq = clkevt ? MCHP_PIT64B_DEF_CE_FREQ : MCHP_PIT64B_DEF_CS_FREQ;
-+	struct mchp_pit64b_timer timer = { 0 };
-+	unsigned long clk_rate;
-+	u32 irq = 0;
-+	int ret;
-+
-+	/* Parse DT node. */
-+	timer.pclk = of_clk_get_by_name(node, "pclk");
-+	if (IS_ERR(timer.pclk))
-+		return PTR_ERR(timer.pclk);
-+
-+	timer.gclk = of_clk_get_by_name(node, "gclk");
-+	if (IS_ERR(timer.gclk))
-+		return PTR_ERR(timer.gclk);
-+
-+	timer.base = of_iomap(node, 0);
-+	if (!timer.base)
-+		return -ENXIO;
-+
-+	if (clkevt) {
-+		irq = irq_of_parse_and_map(node, 0);
-+		if (!irq) {
-+			ret = -ENODEV;
-+			goto io_unmap;
-+		}
-+	}
-+
-+	/* Initialize mode (prescaler + SGCK bit). To be used at runtime. */
-+	ret = mchp_pit64b_init_mode(&timer, freq);
-+	if (ret)
-+		goto irq_unmap;
-+
-+	ret = clk_prepare_enable(timer.pclk);
-+	if (ret)
-+		goto irq_unmap;
-+
-+	if (timer.mode & MCHP_PIT64B_MR_SGCLK) {
-+		ret = clk_prepare_enable(timer.gclk);
-+		if (ret)
-+			goto pclk_unprepare;
-+
-+		clk_rate = clk_get_rate(timer.gclk);
-+	} else {
-+		clk_rate = clk_get_rate(timer.pclk);
-+	}
-+	clk_rate = clk_rate / (MCHP_PIT64B_MODE_TO_PRES(timer.mode) + 1);
-+
-+	if (clkevt)
-+		ret = mchp_pit64b_init_clkevt(&timer, clk_rate, irq);
-+	else
-+		ret = mchp_pit64b_init_clksrc(&timer, clk_rate);
-+
-+	if (ret)
-+		goto gclk_unprepare;
-+
-+	return 0;
-+
-+gclk_unprepare:
-+	if (timer.mode & MCHP_PIT64B_MR_SGCLK)
-+		clk_disable_unprepare(timer.gclk);
-+pclk_unprepare:
-+	clk_disable_unprepare(timer.pclk);
-+irq_unmap:
-+	irq_dispose_mapping(irq);
-+io_unmap:
-+	iounmap(timer.base);
-+
-+	return ret;
-+}
-+
-+static int __init mchp_pit64b_dt_init(struct device_node *node)
-+{
-+	static int inits;
-+
-+	switch (inits++) {
-+	case 0:
-+		/* 1st request, register clockevent. */
-+		return mchp_pit64b_dt_init_timer(node, true);
-+	case 1:
-+		/* 2nd request, register clocksource. */
-+		return mchp_pit64b_dt_init_timer(node, false);
-+	}
-+
-+	/* The rest, don't care. */
-+	return -EINVAL;
-+}
-+
-+TIMER_OF_DECLARE(mchp_pit64b, "microchip,sam9x60-pit64b", mchp_pit64b_dt_init);
--- 
-2.7.4
+On Fri, 13 Dec 2019 at 01:40, Martin Blumenstingl
+<martin.blumenstingl@googlemail.com> wrote:
+>
+> Hi Neil,
+>
+> On Wed, Dec 11, 2019 at 9:49 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
+> >
+> > On 10/12/2019 22:47, Kevin Hilman wrote:
+> > > Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
+> > >
+> > >> On Tue, Dec 10, 2019 at 7:13 PM Kevin Hilman <khilman@baylibre.com> wrote:
+> > >>>
+> > >>> Anand Moon <linux.amoon@gmail.com> writes:
+> > >>>
+> > >>>> Hi Neil / Kevin,
+> > >>>>
+> > >>>> On Tue, 10 Dec 2019 at 14:13, Neil Armstrong <narmstrong@baylibre.com> wrote:
+> > >>>>>
+> > >>>>> On 09/12/2019 23:12, Kevin Hilman wrote:
+> > >>>>>> Anand Moon <linux.amoon@gmail.com> writes:
+> > >>>>>>
+> > >>>>>>> Some how this patch got lost, so resend this again.
+> > >>>>>>>
+> > >>>>>>> [0] https://patchwork.kernel.org/patch/11136545/
+> > >>>>>>>
+> > >>>>>>> This patch enable DVFS on GXBB Odroid C2.
+> > >>>>>>>
+> > >>>>>>> DVFS has been tested by running the arm64 cpuburn
+> > >>>>>>> [1] https://github.com/ssvb/cpuburn-arm/blob/master/cpuburn-a53.S
+> > >>>>>>> PM-QA testing
+> > >>>>>>> [2] https://git.linaro.org/power/pm-qa.git [cpufreq testcase]
+> > >>>>>>>
+> > >>>>>>> Tested on latest U-Boot 2019.07-1 (Aug 01 2019 - 23:58:01 +0000) Arch Linux ARM
+> > >>>>>>
+> > >>>>>> Have you tested with the Harkernel u-boot?
+> > >>>>>>
+> > >>>>>> Last I remember, enabling CPUfreq will cause system hangs with the
+> > >>>>>> Hardkernel u-boot because of improperly enabled frequencies, so I'm not
+> > >>>>>> terribly inclined to merge this patch.
+> > >>>>
+> > >>>> HK u-boot have many issue with loading the kernel, with load address
+> > >>>> *it's really hard to build the kernel for HK u-boot*,
+> > >>>> to get the configuration correctly.
+> > >>>>
+> > >>>> Well I have tested with mainline u-boot with latest ATF .
+> > >>>> I would prefer mainline u-boot for all the Amlogic SBC, since
+> > >>>> they sync with latest driver changes.
+> > >>>
+> > >>> Yes, we would all prefer mainline u-boot, but the mainline kernel needs
+> > >>> to support the vendor u-boot that is shipping with the boards.  So
+> > >>> until Hardkernel (and other vendors) switch to mainline u-boot we do not
+> > >>> want to have upstream kernel defaults that will not boot with the vendor
+> > >>> u-boot.
+> > >>>
+> > >>> We can always support these features, but they just cannot be enabled
+> > >>> by default.
+> > >> (I don't have an Odroid-C2 but I'm curious)
+> > >> should Anand submit a patch to mainline u-boot instead?
+> > >
+> > > It would be in addition to $SUBJECT patch, not instead, I think.
+> > >
+> > >> the &scpi_clocks node could be enabled at runtime by mainline u-boot
+> > >
+> > > That would work, but I don't know about u-boot maintainers opinions on
+> > > this kind of thing, so let's see what Neil thinks.
+> >
+> > U-Boot doesn't anything to do with SCPI, SCPI discusses directly with the SCP
+> > processor, and the CPU clock is set to 1,56GHz by the BL2 boot stage before
+> > U-boot starts.
+> >
+> > The only viable solution I see now is to find if we could add a DT OPP table
+> > only for Odroid-C2 dts to bypass the SCPI OPP table.
+> my understanding is that mainline u-boot (with whatever SCP firmware
+> it uses) provides the *correct* OPP table
 
+Right now I am not sure how this OPP table is populated.
+But I saw the same freq table used in 3.16.x kernel after enable the clk.
+
+> in this case it would be "safe" to have SCPI enabled with mainline u-boot
+> @Anand: please correct me if I misunderstood you
+>
+
+As per my understanding DVFS OPP frequency table for SCPI firmware set
+for 1.536 GHz
+somewhere in BL2 as pointed by Neil.
+
+Arm Trusted firmware added new secure SCPI communication with
+Cortex-M3 co processor.
+[0] https://github.com/ARM-software/arm-trusted-firmware/blob/master/docs/plat/meson-gxbb.rst
+[1] https://github.com/ARM-software/arm-trusted-firmware/blob/master/plat/amlogic/common/aml_scpi.c
+
+ATF generated the *bl1.bin* which is replace the Amlogic's bl1.bin
+while preparing
+the new u-boot *u-boot.gxbb* image.
+
+> my idea to "enable SCPI with mainline u-boot" is to have u-boot update
+> the "status" property of the scpi_clocks node.
+> u-boot does something similar with the mac-address property of the
+> Ethernet controller for example.
+> as result of this users of mainline u-boot would have working CPU
+> DVFS, while users of the old vendor u-boot would run at fixed 1.54GHz.
+>
+>
+> Martin
+
+Right now as per my understanding 1.536 GHz max is bit under clocked.
+
+Some time ago on Odroid Forum tried to over clock the cpu to 2GHz.
+[3] https://forum.odroid.com/viewtopic.php?f=139&t=18738
+So more investigation need to done in this line.
+
+I also tried the same with HardKernel Image, with modifying the boot.ini
+I could increase the max DVFS cpu frequency to 1.90 GHz,
+This is just proof of concept.
+
+odroid:~# cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+100000 250000 500000 1000000 1296000 1536000 1656000 1680000 1752000 1896000
+
+I have some minimal stress testing attached are the results for HK
+3.16.x kernel.
+
+For now we should not enable this clock.
+Until we can possible to check for higher clock frequency to work stable
+on all Amlogic S905X SBC.
+
+I like the Neil's approach to use it's own dts OPP table for SCPI protocol.
+
+-Anand
+
+--0000000000000fd7b0059994291b
+Content-Type: text/plain; charset="US-ASCII"; name="cpufreq_odroid_c2_3.16.78-48.txt"
+Content-Disposition: attachment; filename="cpufreq_odroid_c2_3.16.78-48.txt"
+Content-Transfer-Encoding: base64
+Content-ID: <f_k4414bbd0>
+X-Attachment-Id: f_k4414bbd0
+
+cm9vdEBvZHJvaWQ6fiMgc3lzYmVuY2ggLS10ZXN0PWNwdSAtLXRocmVhZHM9NCAtLWNwdS1tYXgt
+cHJpbWU9MjAwMDAwMCBydW4NCldBUk5JTkc6IHRoZSAtLXRlc3Qgb3B0aW9uIGlzIGRlcHJlY2F0
+ZWQuIFlvdSBjYW4gcGFzcyBhIHNjcmlwdCBuYW1lIG9yIHBhdGggb24gdGhlIGNvbW1hbmQgbGlu
+ZSB3aXRob3V0IGFueSBvcHRpb25zLg0Kc3lzYmVuY2ggMS4wLjExICh1c2luZyBzeXN0ZW0gTHVh
+SklUIDIuMS4wLWJldGEzKQ0KDQpSdW5uaW5nIHRoZSB0ZXN0IHdpdGggZm9sbG93aW5nIG9wdGlv
+bnM6DQpOdW1iZXIgb2YgdGhyZWFkczogNA0KSW5pdGlhbGl6aW5nIHJhbmRvbSBudW1iZXIgZ2Vu
+ZXJhdG9yIGZyb20gY3VycmVudCB0aW1lDQoNCg0KUHJpbWUgbnVtYmVycyBsaW1pdDogMjAwMDAw
+MA0KDQpJbml0aWFsaXppbmcgd29ya2VyIHRocmVhZHMuLi4NCg0KVGhyZWFkcyBzdGFydGVkIQ0K
+DQpDUFUgc3BlZWQ6DQogICAgZXZlbnRzIHBlciBzZWNvbmQ6ICAgICAwLjA5DQoNCkdlbmVyYWwg
+c3RhdGlzdGljczoNCiAgICB0b3RhbCB0aW1lOiAgICAgICAgICAgICAgICAgICAgICAgICAgNDYu
+NDc5OXMNCiAgICB0b3RhbCBudW1iZXIgb2YgZXZlbnRzOiAgICAgICAgICAgICAgNA0KDQpMYXRl
+bmN5IChtcyk6DQogICAgICAgICBtaW46ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMzEz
+MTkuODINCiAgICAgICAgIGF2ZzogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAzODU4My4z
+Nw0KICAgICAgICAgbWF4OiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDQ2NDc4LjUzDQog
+ICAgICAgICA5NXRoIHBlcmNlbnRpbGU6ICAgICAgICAgICAgICAgICAgNDYxMDMuNTINCiAgICAg
+ICAgIHN1bTogICAgICAgICAgICAgICAgICAgICAgICAgICAgIDE1NDMzMy40Nw0KDQpUaHJlYWRz
+IGZhaXJuZXNzOg0KICAgIGV2ZW50cyAoYXZnL3N0ZGRldik6ICAgICAgICAgICAxLjAwMDAvMC4w
+MA0KICAgIGV4ZWN1dGlvbiB0aW1lIChhdmcvc3RkZGV2KTogICAzOC41ODM0LzYuOTgNCnJvb3RA
+b2Ryb2lkOn4jIGNwdWZyZXEtDQpjcHVmcmVxLWFwZXJmICBjcHVmcmVxLWluZm8gICBjcHVmcmVx
+LXNldA0Kcm9vdEBvZHJvaWQ6fiMgY3B1ZnJlcS1pbmZvDQpjcHVmcmVxdXRpbHMgMDA4OiBjcHVm
+cmVxLWluZm8gKEMpIERvbWluaWsgQnJvZG93c2tpIDIwMDQtMjAwOQ0KUmVwb3J0IGVycm9ycyBh
+bmQgYnVncyB0byBjcHVmcmVxQHZnZXIua2VybmVsLm9yZywgcGxlYXNlLg0KYW5hbHl6aW5nIENQ
+VSAwOg0KICBkcml2ZXI6IG1lc29uX2NwdWZyZXENCiAgQ1BVcyB3aGljaCBydW4gYXQgdGhlIHNh
+bWUgaGFyZHdhcmUgZnJlcXVlbmN5OiAwIDEgMiAzDQogIENQVXMgd2hpY2ggbmVlZCB0byBoYXZl
+IHRoZWlyIGZyZXF1ZW5jeSBjb29yZGluYXRlZCBieSBzb2Z0d2FyZTogMCAxIDIgMw0KICBtYXhp
+bXVtIHRyYW5zaXRpb24gbGF0ZW5jeTogMjAwIHVzLg0KICBoYXJkd2FyZSBsaW1pdHM6IDEwMC4w
+IE1IeiAtIDEuOTAgR0h6DQogIGF2YWlsYWJsZSBmcmVxdWVuY3kgc3RlcHM6IDEwMC4wIE1Ieiwg
+MjUwIE1IeiwgNTAwIE1IeiwgMTAwMCBNSHosIDEuMzAgR0h6LCAxLjU0IEdIeiwgMS42NiBHSHos
+IDEuNjggR0h6LCAxLjc1IEdIeiwgMS45MCBHSHoNCiAgYXZhaWxhYmxlIGNwdWZyZXEgZ292ZXJu
+b3JzOiBob3RwbHVnLCBpbnRlcmFjdGl2ZSwgY29uc2VydmF0aXZlLCBvbmRlbWFuZCwgdXNlcnNw
+YWNlLCBwb3dlcnNhdmUsIHBlcmZvcm1hbmNlDQogIGN1cnJlbnQgcG9saWN5OiBmcmVxdWVuY3kg
+c2hvdWxkIGJlIHdpdGhpbiAxMDAuMCBNSHogYW5kIDEwMC4wIE1Iei4NCiAgICAgICAgICAgICAg
+ICAgIFRoZSBnb3Zlcm5vciAicGVyZm9ybWFuY2UiIG1heSBkZWNpZGUgd2hpY2ggc3BlZWQgdG8g
+dXNlDQogICAgICAgICAgICAgICAgICB3aXRoaW4gdGhpcyByYW5nZS4NCiAgY3VycmVudCBDUFUg
+ZnJlcXVlbmN5IGlzIDEwMC4wIE1IeiAoYXNzZXJ0ZWQgYnkgY2FsbCB0byBoYXJkd2FyZSkuDQog
+IGNwdWZyZXEgc3RhdHM6IDEwMC4wIE1IejoyOC41NCUsIDI1MCBNSHo6MC4wMCUsIDUwMCBNSHo6
+MC4wMCUsIDEwMDAgTUh6OjAuMDAlLCAxLjMwIEdIejowLjAwJSwgMS41NCBHSHo6MC4wMCUsIDEu
+NjYgR0h6OjAuMDAlLCAxLjY4IEdIejowLjAwJSwgMS43NSBHSHo6MC4wMCUsIDEuOTAgR0h6Ojcx
+LjQ2JSAgKDIpDQphbmFseXppbmcgQ1BVIDE6DQogIGRyaXZlcjogbWVzb25fY3B1ZnJlcQ0KICBD
+UFVzIHdoaWNoIHJ1biBhdCB0aGUgc2FtZSBoYXJkd2FyZSBmcmVxdWVuY3k6IDAgMSAyIDMNCiAg
+Q1BVcyB3aGljaCBuZWVkIHRvIGhhdmUgdGhlaXIgZnJlcXVlbmN5IGNvb3JkaW5hdGVkIGJ5IHNv
+ZnR3YXJlOiAwIDEgMiAzDQogIG1heGltdW0gdHJhbnNpdGlvbiBsYXRlbmN5OiAyMDAgdXMuDQog
+IGhhcmR3YXJlIGxpbWl0czogMTAwLjAgTUh6IC0gMS45MCBHSHoNCiAgYXZhaWxhYmxlIGZyZXF1
+ZW5jeSBzdGVwczogMTAwLjAgTUh6LCAyNTAgTUh6LCA1MDAgTUh6LCAxMDAwIE1IeiwgMS4zMCBH
+SHosIDEuNTQgR0h6LCAxLjY2IEdIeiwgMS42OCBHSHosIDEuNzUgR0h6LCAxLjkwIEdIeg0KICBh
+dmFpbGFibGUgY3B1ZnJlcSBnb3Zlcm5vcnM6IGhvdHBsdWcsIGludGVyYWN0aXZlLCBjb25zZXJ2
+YXRpdmUsIG9uZGVtYW5kLCB1c2Vyc3BhY2UsIHBvd2Vyc2F2ZSwgcGVyZm9ybWFuY2UNCiAgY3Vy
+cmVudCBwb2xpY3k6IGZyZXF1ZW5jeSBzaG91bGQgYmUgd2l0aGluIDEwMC4wIE1IeiBhbmQgMTAw
+LjAgTUh6Lg0KICAgICAgICAgICAgICAgICAgVGhlIGdvdmVybm9yICJwZXJmb3JtYW5jZSIgbWF5
+IGRlY2lkZSB3aGljaCBzcGVlZCB0byB1c2UNCiAgICAgICAgICAgICAgICAgIHdpdGhpbiB0aGlz
+IHJhbmdlLg0KICBjdXJyZW50IENQVSBmcmVxdWVuY3kgaXMgMTAwLjAgTUh6IChhc3NlcnRlZCBi
+eSBjYWxsIHRvIGhhcmR3YXJlKS4NCiAgY3B1ZnJlcSBzdGF0czogMTAwLjAgTUh6OjI4LjU0JSwg
+MjUwIE1IejowLjAwJSwgNTAwIE1IejowLjAwJSwgMTAwMCBNSHo6MC4wMCUsIDEuMzAgR0h6OjAu
+MDAlLCAxLjU0IEdIejowLjAwJSwgMS42NiBHSHo6MC4wMCUsIDEuNjggR0h6OjAuMDAlLCAxLjc1
+IEdIejowLjAwJSwgMS45MCBHSHo6NzEuNDYlICAoMikNCmFuYWx5emluZyBDUFUgMjoNCiAgZHJp
+dmVyOiBtZXNvbl9jcHVmcmVxDQogIENQVXMgd2hpY2ggcnVuIGF0IHRoZSBzYW1lIGhhcmR3YXJl
+IGZyZXF1ZW5jeTogMCAxIDIgMw0KICBDUFVzIHdoaWNoIG5lZWQgdG8gaGF2ZSB0aGVpciBmcmVx
+dWVuY3kgY29vcmRpbmF0ZWQgYnkgc29mdHdhcmU6IDAgMSAyIDMNCiAgbWF4aW11bSB0cmFuc2l0
+aW9uIGxhdGVuY3k6IDIwMCB1cy4NCiAgaGFyZHdhcmUgbGltaXRzOiAxMDAuMCBNSHogLSAxLjkw
+IEdIeg0KICBhdmFpbGFibGUgZnJlcXVlbmN5IHN0ZXBzOiAxMDAuMCBNSHosIDI1MCBNSHosIDUw
+MCBNSHosIDEwMDAgTUh6LCAxLjMwIEdIeiwgMS41NCBHSHosIDEuNjYgR0h6LCAxLjY4IEdIeiwg
+MS43NSBHSHosIDEuOTAgR0h6DQogIGF2YWlsYWJsZSBjcHVmcmVxIGdvdmVybm9yczogaG90cGx1
+ZywgaW50ZXJhY3RpdmUsIGNvbnNlcnZhdGl2ZSwgb25kZW1hbmQsIHVzZXJzcGFjZSwgcG93ZXJz
+YXZlLCBwZXJmb3JtYW5jZQ0KICBjdXJyZW50IHBvbGljeTogZnJlcXVlbmN5IHNob3VsZCBiZSB3
+aXRoaW4gMTAwLjAgTUh6IGFuZCAxMDAuMCBNSHouDQogICAgICAgICAgICAgICAgICBUaGUgZ292
+ZXJub3IgInBlcmZvcm1hbmNlIiBtYXkgZGVjaWRlIHdoaWNoIHNwZWVkIHRvIHVzZQ0KICAgICAg
+ICAgICAgICAgICAgd2l0aGluIHRoaXMgcmFuZ2UuDQogIGN1cnJlbnQgQ1BVIGZyZXF1ZW5jeSBp
+cyAxMDAuMCBNSHogKGFzc2VydGVkIGJ5IGNhbGwgdG8gaGFyZHdhcmUpLg0KICBjcHVmcmVxIHN0
+YXRzOiAxMDAuMCBNSHo6MjguNTQlLCAyNTAgTUh6OjAuMDAlLCA1MDAgTUh6OjAuMDAlLCAxMDAw
+IE1IejowLjAwJSwgMS4zMCBHSHo6MC4wMCUsIDEuNTQgR0h6OjAuMDAlLCAxLjY2IEdIejowLjAw
+JSwgMS42OCBHSHo6MC4wMCUsIDEuNzUgR0h6OjAuMDAlLCAxLjkwIEdIejo3MS40NiUgICgyKQ0K
+YW5hbHl6aW5nIENQVSAzOg0KICBkcml2ZXI6IG1lc29uX2NwdWZyZXENCiAgQ1BVcyB3aGljaCBy
+dW4gYXQgdGhlIHNhbWUgaGFyZHdhcmUgZnJlcXVlbmN5OiAwIDEgMiAzDQogIENQVXMgd2hpY2gg
+bmVlZCB0byBoYXZlIHRoZWlyIGZyZXF1ZW5jeSBjb29yZGluYXRlZCBieSBzb2Z0d2FyZTogMCAx
+IDIgMw0KICBtYXhpbXVtIHRyYW5zaXRpb24gbGF0ZW5jeTogMjAwIHVzLg0KICBoYXJkd2FyZSBs
+aW1pdHM6IDEwMC4wIE1IeiAtIDEuOTAgR0h6DQogIGF2YWlsYWJsZSBmcmVxdWVuY3kgc3RlcHM6
+IDEwMC4wIE1IeiwgMjUwIE1IeiwgNTAwIE1IeiwgMTAwMCBNSHosIDEuMzAgR0h6LCAxLjU0IEdI
+eiwgMS42NiBHSHosIDEuNjggR0h6LCAxLjc1IEdIeiwgMS45MCBHSHoNCiAgYXZhaWxhYmxlIGNw
+dWZyZXEgZ292ZXJub3JzOiBob3RwbHVnLCBpbnRlcmFjdGl2ZSwgY29uc2VydmF0aXZlLCBvbmRl
+bWFuZCwgdXNlcnNwYWNlLCBwb3dlcnNhdmUsIHBlcmZvcm1hbmNlDQogIGN1cnJlbnQgcG9saWN5
+OiBmcmVxdWVuY3kgc2hvdWxkIGJlIHdpdGhpbiAxMDAuMCBNSHogYW5kIDEwMC4wIE1Iei4NCiAg
+ICAgICAgICAgICAgICAgIFRoZSBnb3Zlcm5vciAicGVyZm9ybWFuY2UiIG1heSBkZWNpZGUgd2hp
+Y2ggc3BlZWQgdG8gdXNlDQogICAgICAgICAgICAgICAgICB3aXRoaW4gdGhpcyByYW5nZS4NCiAg
+Y3VycmVudCBDUFUgZnJlcXVlbmN5IGlzIDEwMC4wIE1IeiAoYXNzZXJ0ZWQgYnkgY2FsbCB0byBo
+YXJkd2FyZSkuDQogIGNwdWZyZXEgc3RhdHM6IDEwMC4wIE1IejoyOC41NSUsIDI1MCBNSHo6MC4w
+MCUsIDUwMCBNSHo6MC4wMCUsIDEwMDAgTUh6OjAuMDAlLCAxLjMwIEdIejowLjAwJSwgMS41NCBH
+SHo6MC4wMCUsIDEuNjYgR0h6OjAuMDAlLCAxLjY4IEdIejowLjAwJSwgMS43NSBHSHo6MC4wMCUs
+IDEuOTAgR0h6OjcxLjQ1JSAgKDIpDQpyb290QG9kcm9pZDp+Iw0K
+--0000000000000fd7b0059994291b
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--0000000000000fd7b0059994291b--
+
