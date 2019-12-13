@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BF6211EA54
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:30:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CF3311EA53
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:30:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JQ6JHwk9k+Z2/k2aa/3+TFHHPuCW52VDUSax24JOKH8=; b=HqDRVUgKrLiZ2c
-	zmxzX8siDaHXBo3n6exp0HezDRjMGsWL0vmhh4pSO98uA4LzGb31mnw2Tq14YG3tMgFjDZKFMIchh
-	bP3U0cbwGV6mS60C5uIA979YhPZ9tmIb/hnwyjFegqVO4o9HN+YMT5X9ZrKKys9wdyCfGHa01E9BK
-	Yt9OaBy3d1czIv300euJLU1R8udo7fdlWRjnN+DtqNdnVMxlRvjWnjlRb2iKyznp+LTXHBZvpx1+M
-	C4qhWGOK8GB52Z2Jgt5UAZLTqwhdB1MhHW2tg2+52CsvmFaS+sQu6IvCozhyQLOxG6KKMgdJWl+E8
-	uR/4g63Djo9fC9aBvMgA==;
+	List-Owner; bh=1Wb/Jtv7mFB9+B/2mBRoMs9uY1dxiS0gmQticNh2ILU=; b=hwuLbtErIxVHkN
+	4cz8iKE2V0aKfRJh5fAVeYS/ofV4iZm8kM+Ei5hI9WsfqJcdpQy8ywL+2pi+kAiCyhqUV/TRvH7kT
+	DpXlW1Oe/FQzNVGBQvY/0v+Q0kZnW9T3IzkoeOoIvJzpN07TY3RjLX6ay/Iuk6C3J/4b5DJw7GYQH
+	Ag9ZufZsoyVHbiMeqNuVBfidHCL0FTf2mQ/JKcqQroX+7rW5D6p6rymfpgK+13lECbgHnGx98TLkW
+	HIPekpvOizD/DlwAosmMYcrUQpwzslWbmd31gbf8e6PEkCpjTBjKGstyHu5e+zqGaj3M5wOykPx98
+	Yh6qtYhuwhNtG9x39HnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifpiB-0003d2-TS; Fri, 13 Dec 2019 18:30:47 +0000
+	id 1ifphr-0003Th-Qb; Fri, 13 Dec 2019 18:30:27 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifphi-0003TI-6h
- for linux-arm-kernel@bombadil.infradead.org; Fri, 13 Dec 2019 18:30:18 +0000
+ id 1ifphh-0003TA-UD
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 13 Dec 2019 18:30:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=WAuT2wlA5NSeznqmnfgHqGVJ1sG0Nwiv/gcz3aYIWp0=; b=QvRh8+gGm2G5cqCeU79CSvjIUO
- UHTyZL1bCYntLJFqhgXx+fnhuTznA92ag7IA/aP6VHOpU3oGHStd2wOZzcKMIRmciCvoQQu4xSgaP
- Ix5zQRtCnFVTaD9lAm42V3Dj8GZmPKzdN8oyEqLcUtw1HdYztmOxeDN3LMCLjE55m/uDz7MNcENNd
- SxekflnFzGCtzY63/BWbPh+X0YBFuRDTZhAFHqXtXps511HjMcItsWXcGmdgC3Uf5PD+7JRytxHly
- INmNbHflh32ZtYB2+zIhLLNweBwXJhSZ+c8/M5gHsX+v8v5GAxUq8p0A3jJvvrTG7HKiI6hKQFyBE
- JIlF1ZUw==;
+ bh=Jeqj7CRDsTOztbpEvu8sFavkXPJenfkY3QRGn8nl6y4=; b=ks9rttKM7d0I/hEJn8+5bh0BIu
+ rLbUHQBaDu2HjnK/u8tsZLQA+qWDUreGPI6CbX6fkXv/02xvh+wa3otVAwSOxP/swgRQDkPB9VKCJ
+ 0JLHRzsz/LWzCKA5tLSojvZv9fHrQMBghffNTMSkz2z04/F/asNDoaiLEfwzKOiliLSaGyBCXQC0S
+ aLaGKxXvw2q3LiDdP1apOHWYhEsdYOkNmDLJ2hNTi5DJpjZksueYjpYzv5llzhn/uE4M78iF9E3pj
+ nTVekUrBlrnCtIaSlQ9syKEJTOq0p72adIPyVcWsxfy3WOAM+3mspjszky/vxjVfkvZqvI0xbVGgE
+ HHKI2l7w==;
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifpi8-0006OK-OD
+ id 1ifpi8-0006OJ-O2
  for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 18:30:46 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1ifpdH-0001O7-7w; Fri, 13 Dec 2019 19:25:43 +0100
+ id 1ifpdI-0001O7-Qa; Fri, 13 Dec 2019 19:25:44 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: 
-Subject: [PATCH 4/7] KVM: arm/arm64: Condition TLB maintenance on unmap with a
- flag
-Date: Fri, 13 Dec 2019 18:25:00 +0000
-Message-Id: <20191213182503.14460-5-maz@kernel.org>
+Subject: [PATCH 6/7] KVM: arm/arm64: Elide CMOs when retrying a block mapping
+Date: Fri, 13 Dec 2019 18:25:02 +0000
+Message-Id: <20191213182503.14460-7-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191213182503.14460-1-maz@kernel.org>
 References: <20191213182503.14460-1-maz@kernel.org>
@@ -66,8 +65,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_183044_829884_BA98B888 
-X-CRM114-Status: GOOD (  10.99  )
+X-CRM114-CacheID: sfid-20191213_183044_802594_7421E3B8 
+X-CRM114-Status: GOOD (  11.30  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (1.0 points, 5.0 required)
@@ -102,89 +101,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to allow the elision of TLB maintenance operations
-on unmap, add a new flag (KVM_UNMAP_ELIDE_TBLI) that a caller
-can use to indicate that TLB invalidation is not required.
-
-Nobody is passing this flag yet, hence no functional change.
+In the rare cases where we're converting a table mapping in
+a block mapping, there is no point in cleaning memory to the
+PoC, as we're about to remap the exact same pages again,
+only as a block mapping.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- virt/kvm/arm/mmu.c | 19 +++++++++++++------
- 1 file changed, 13 insertions(+), 6 deletions(-)
+ virt/kvm/arm/mmu.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
 diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-index ebf8c87cc007..4399866842dc 100644
+index d7c710491d26..c55022dbac89 100644
 --- a/virt/kvm/arm/mmu.c
 +++ b/virt/kvm/arm/mmu.c
-@@ -37,6 +37,7 @@ static unsigned long io_map_base;
+@@ -1109,7 +1109,8 @@ static int stage2_set_pmd_huge(struct kvm *kvm, struct kvm_mmu_memory_cache
+ 		 * get handled accordingly.
+ 		 */
+ 		if (!pmd_thp_or_huge(old_pmd)) {
+-			unmap_stage2_range(kvm, addr & S2_PMD_MASK, S2_PMD_SIZE, 0);
++			unmap_stage2_range(kvm, addr & S2_PMD_MASK, S2_PMD_SIZE,
++					   KVM_UNMAP_ELIDE_CMO);
+ 			goto retry;
+ 		}
+ 		/*
+@@ -1159,7 +1160,8 @@ static int stage2_set_pud_huge(struct kvm *kvm, struct kvm_mmu_memory_cache *cac
+ 		 * the range for this block and retry.
+ 		 */
+ 		if (!stage2_pud_huge(kvm, old_pud)) {
+-			unmap_stage2_range(kvm, addr & S2_PUD_MASK, S2_PUD_SIZE, 0);
++			unmap_stage2_range(kvm, addr & S2_PUD_MASK, S2_PUD_SIZE,
++					   KVM_UNMAP_ELIDE_CMO);
+ 			goto retry;
+ 		}
  
- /* Flags controlling S2 unmapping */
- #define KVM_UNMAP_ELIDE_CMO		(1UL << 0)
-+#define KVM_UNMAP_ELIDE_TBLI		(1UL << 1)
- 
- #define KVM_S2PTE_FLAG_IS_IOMAP		(1UL << 0)
- #define KVM_S2_FLAG_LOGGING_ACTIVE	(1UL << 1)
-@@ -160,7 +161,8 @@ static void clear_stage2_pgd_entry(struct kvm *kvm, pgd_t *pgd, phys_addr_t addr
- {
- 	pud_t *pud_table __maybe_unused = stage2_pud_offset(kvm, pgd, 0UL);
- 	stage2_pgd_clear(kvm, pgd);
--	kvm_tlb_flush_vmid_ipa(kvm, addr);
-+	if (!(flags & KVM_UNMAP_ELIDE_TBLI))
-+		kvm_tlb_flush_vmid_ipa(kvm, addr);
- 	stage2_pud_free(kvm, pud_table);
- 	put_page(virt_to_page(pgd));
- }
-@@ -171,7 +173,8 @@ static void clear_stage2_pud_entry(struct kvm *kvm, pud_t *pud, phys_addr_t addr
- 	pmd_t *pmd_table __maybe_unused = stage2_pmd_offset(kvm, pud, 0);
- 	VM_BUG_ON(stage2_pud_huge(kvm, *pud));
- 	stage2_pud_clear(kvm, pud);
--	kvm_tlb_flush_vmid_ipa(kvm, addr);
-+	if (!(flags & KVM_UNMAP_ELIDE_TBLI))
-+		kvm_tlb_flush_vmid_ipa(kvm, addr);
- 	stage2_pmd_free(kvm, pmd_table);
- 	put_page(virt_to_page(pud));
- }
-@@ -182,7 +185,8 @@ static void clear_stage2_pmd_entry(struct kvm *kvm, pmd_t *pmd, phys_addr_t addr
- 	pte_t *pte_table = pte_offset_kernel(pmd, 0);
- 	VM_BUG_ON(pmd_thp_or_huge(*pmd));
- 	pmd_clear(pmd);
--	kvm_tlb_flush_vmid_ipa(kvm, addr);
-+	if (!(flags & KVM_UNMAP_ELIDE_TBLI))
-+		kvm_tlb_flush_vmid_ipa(kvm, addr);
- 	free_page((unsigned long)pte_table);
- 	put_page(virt_to_page(pmd));
- }
-@@ -253,7 +257,8 @@ static void unmap_stage2_ptes(struct kvm *kvm, pmd_t *pmd,
- 			pte_t old_pte = *pte;
- 
- 			kvm_set_pte(pte, __pte(0));
--			kvm_tlb_flush_vmid_ipa(kvm, addr);
-+			if (!(flags & KVM_UNMAP_ELIDE_TBLI))
-+				kvm_tlb_flush_vmid_ipa(kvm, addr);
- 
- 			/* No need to invalidate the cache for device mappings */
- 			if (!kvm_is_device_pfn(pte_pfn(old_pte)) &&
-@@ -283,7 +288,8 @@ static void unmap_stage2_pmds(struct kvm *kvm, pud_t *pud,
- 				pmd_t old_pmd = *pmd;
- 
- 				pmd_clear(pmd);
--				kvm_tlb_flush_vmid_ipa(kvm, addr);
-+				if (!(flags & KVM_UNMAP_ELIDE_TBLI))
-+					kvm_tlb_flush_vmid_ipa(kvm, addr);
- 
- 				if (!(flags & KVM_UNMAP_ELIDE_CMO))
- 					kvm_flush_dcache_pmd(old_pmd);
-@@ -314,7 +320,8 @@ static void unmap_stage2_puds(struct kvm *kvm, pgd_t *pgd,
- 				pud_t old_pud = *pud;
- 
- 				stage2_pud_clear(kvm, pud);
--				kvm_tlb_flush_vmid_ipa(kvm, addr);
-+				if (!(flags & KVM_UNMAP_ELIDE_TBLI))
-+					kvm_tlb_flush_vmid_ipa(kvm, addr);
- 				if (!(flags & KVM_UNMAP_ELIDE_CMO))
- 					kvm_flush_dcache_pud(old_pud);
- 				put_page(virt_to_page(pud));
 -- 
 2.20.1
 
