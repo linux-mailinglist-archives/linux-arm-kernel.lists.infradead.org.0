@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF96C11EB04
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 20:11:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 395F411EB06
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 20:11:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tbCUwDmdgJdTLtsfWiB0zbtORoQRmBsJrsSguCm51r8=; b=B9kPymjjOXYoxM
-	ZBmzfGw9kTgYPdHvEc+btAc7sVz8uKjpoheUvVhij63CGK/LikJi2CQB9rsUeMWvYeD2uLLz5TkI5
-	Ks+bBIGFcDGZD0bjJHEtKuYrkDkhf9HD75Sazt/OVVU2ItMGndRwwlaV56Xrn8xszTBN8Fe0TTwGp
-	DoMSb4N9SH0jQ5HPrRasF8wc4AdH8dkcShACTPsF83haVX3S9DiMfh4nitvmOiBdd+IoGndppMyTB
-	450A2FJqvIm0FgzXwXrF2lIzkj7HqqbOABTnL8OK270KMYb86rn3EhCJh+ro7b8XzS9/1F7BE4utt
-	5e2FSaoNdy7Z2FF7PvBg==;
+	List-Owner; bh=6+NNh0s3CfEuMC/HGWxzLLeO0pFlMEMIFdISAMPWBfw=; b=NID77bsEEKatA2
+	pIscVylshSFoAueRRT2Hs8Iso9UYpRrxqOnBYUTFd90KNclMj2lYAhemO4zx+DqAgSsP4zzajUKYL
+	vk7Qqlhf05uRXzdA/tG0LQhDH/GerPE8e8yPvU/S3GthS0NI67raPtzNlCzcI/kdmS349fDITmW5u
+	ArNyXrs1UnHRYCWaShQ8zcZb0arVJAbc736/Cw59EZAoIOe0NPxu/22TnQFo4O56Vq+BIFB9Ckdkv
+	bNjlJkATN5BSy2SO3qOYjKxRb6d3UkNOd2xPjPexd7pFWtL6eu+BsJpvM6yPrtlfM1IdDSICMM/bu
+	GakLF7Ztf6RN271ROuZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifqL4-0004GO-0I; Fri, 13 Dec 2019 19:10:58 +0000
+	id 1ifqLM-0004So-Az; Fri, 13 Dec 2019 19:11:16 +0000
 Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifqKs-0004Fn-6R; Fri, 13 Dec 2019 19:10:47 +0000
-Received: by mail-ot1-f68.google.com with SMTP id h20so324982otn.5;
- Fri, 13 Dec 2019 11:10:45 -0800 (PST)
+ id 1ifqL0-0004M0-Dd
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 19:10:55 +0000
+Received: by mail-ot1-f68.google.com with SMTP id i15so311561oto.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Dec 2019 11:10:54 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qHsUIESi47GUujK3ymDIbUW6G62I8FASealFyFb2qxM=;
- b=q+qEpUGcYL4Ok1EaXdNTVYHa8popEyOmJP8hCMTVQneB2EWM5FQufY5kuy2ZRnpSaC
- UkBlNtZfEk01D1zg0OP/LByQPoIXPeLbAJAUr5KaRMxrLWki7jXVaCqy9HgChdeC6LiQ
- ErAo8vBeKkZUbV9wHBrS9vsTwqLXwfBRN2Xnqs26tIUhZ3LSps4+vQ6mKJRzcvd/AGSC
- zPQw8Vn5TJK0g9+fbr04jmbNYmYQlbUrTkVt1Rkh7Ssw08pO7B77UyvpYmbRQ/6Q23rQ
- XnE3B/B7gTGFEbWVCBZsGeYftSBeo1DtpaMRWZQQUUchtJYSpupbVJLab2cjGB0eY8GZ
- 9mbg==
-X-Gm-Message-State: APjAAAVLglFTKO3AbJRmgi4kvQ2PwJAof0vUqHvYMnYJJeh1H+GC4hLw
- gCgzxS9lIofmB21/iIBtmQ==
-X-Google-Smtp-Source: APXvYqzHxWniZ5J9xfopYjECrU07WUzV4L9U6fU6FRGgt1nEiyBXlgj3TRlcGj+V/4Fj0x84/KDZiQ==
-X-Received: by 2002:a9d:53cb:: with SMTP id i11mr16760478oth.158.1576264244638; 
- Fri, 13 Dec 2019 11:10:44 -0800 (PST)
+ bh=vImPv04WGeNaWlCnAr6u+MXH0lm+G+inNDjxTwv0uh8=;
+ b=VtV9t0EzqhJtebD+MnqS4WE0ao+2o8JUy7ga2sHmF6EAwf7dT9PYtjHOXKezbslwvF
+ 5UaLSbGhYnRWw7tECLpD89Tw2rMPI7cYKIgBY1rp1MAKrJi1HvmITCnLM0pfVtnteu5v
+ 7qhePlJmgd4j6lQSP9tNspfvD3b8+0UxleJOlH0j+idPMPIAbDiPN0T58rT3cjKIjOJC
+ AVfwzu4p+iPXqdqF7OD28qQxRyyIKhX34SmfREuej4MRor+y4x4KdutT+OEwVpSsHJS3
+ D4yts2wUSvN10OpGA+cNtMU4kJVqsqHJCOK52vNVv5jdNpK3ZrdWoy2S+FOZXu4ANYfs
+ Riww==
+X-Gm-Message-State: APjAAAWKr3vi0KBzPJlPNvOky9lzdsN1DbIsvSfDDC2Q7eu5AL/Ddleu
+ vHNiNgEUnNZfNvzkE+Ej1w==
+X-Google-Smtp-Source: APXvYqxsRQNWKOiW7wZgxEaz7ZXEJ6cCxMTePzGhx295WsoMtFcK/Hrfvkg78SNa+3tZ4dWM9jbeng==
+X-Received: by 2002:a05:6830:50:: with SMTP id
+ d16mr17205249otp.155.1576264253619; 
+ Fri, 13 Dec 2019 11:10:53 -0800 (PST)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id b3sm3550697oie.25.2019.12.13.11.10.43
+ by smtp.gmail.com with ESMTPSA id j1sm3581023oii.2.2019.12.13.11.10.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Dec 2019 11:10:44 -0800 (PST)
-Date: Fri, 13 Dec 2019 13:10:43 -0600
+ Fri, 13 Dec 2019 11:10:51 -0800 (PST)
+Date: Fri, 13 Dec 2019 13:10:51 -0600
 From: Rob Herring <robh@kernel.org>
-To: Ming-Fan Chen <ming-fan.chen@mediatek.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: mediatek: Add binding for MT6779 SMI
-Message-ID: <20191213191043.GB28558@bogus>
-References: <1575872371-671-1-git-send-email-ming-fan.chen@mediatek.com>
- <1575872371-671-3-git-send-email-ming-fan.chen@mediatek.com>
+To: Al Cooper <alcooperx@gmail.com>
+Subject: Re: [PATCH v3 06/13] dt-bindings: Add Broadcom STB USB PHY binding
+ document
+Message-ID: <20191213191051.GC28558@bogus>
+References: <20191210132132.41509-1-alcooperx@gmail.com>
+ <20191210132132.41509-7-alcooperx@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1575872371-671-3-git-send-email-ming-fan.chen@mediatek.com>
+In-Reply-To: <20191210132132.41509-7-alcooperx@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_111046_239122_6E07301D 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20191213_111054_496661_A59CE564 
+X-CRM114-Status: GOOD (  12.30  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.210.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -90,25 +94,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Joerg Roedel <jroedel@suse.de>,
- wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
- Evan Green <evgreen@chromium.org>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Ming-Fan Chen <ming-fan.chen@mediatek.com>, Yong Wu <yong.wu@mediatek.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, Al Cooper <alcooperx@gmail.com>,
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Srinath Mannam <srinath.mannam@broadcom.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 9 Dec 2019 14:19:30 +0800, Ming-Fan Chen wrote:
-> This patch add description for MT6779 SMI.
+On Tue, 10 Dec 2019 08:21:25 -0500, Al Cooper wrote:
+> Add support for bcm7216 and bcm7211
 > 
-> Signed-off-by: Ming-Fan Chen <ming-fan.chen@mediatek.com>
+> Signed-off-by: Al Cooper <alcooperx@gmail.com>
 > ---
->  .../memory-controllers/mediatek,smi-common.txt     |    5 +++--
->  .../memory-controllers/mediatek,smi-larb.txt       |    3 ++-
->  2 files changed, 5 insertions(+), 3 deletions(-)
+>  .../bindings/phy/brcm,brcmstb-usb-phy.txt     | 69 +++++++++++++++----
+>  1 file changed, 56 insertions(+), 13 deletions(-)
 > 
 
 Please add Acked-by/Reviewed-by tags when posting new versions. However,
