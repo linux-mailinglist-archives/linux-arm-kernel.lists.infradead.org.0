@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A250611EA4C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:29:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E0D611EA4D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 19:29:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+hJrBiwse03R/WPb3LqFDa58IQaRsOiv0R5r69fRFlk=; b=Q4JLm9TsJbgILB
-	4v2lJ0a7ZAUEDTNMlcuQUO8U03gHsTc2BrGSCyCYZ20RNT/Fk2aP1u8ZAbxX3I4R7r6bnwnv2ZAkA
-	CEdqlRBWTJysevKfgnM8KuMLPXPeX2Z+dH1+C6YI1WkBQHHypHLbfVRLj/UjNsljhhZqTK0y+czOE
-	MMrGr20RjSirxQ/FoMMJb4CNkpeBGtDrBFFVOv8fjz0j/rl9DgZ/KFlc1fcMsVamSqh7CrDTKyGrA
-	sBnTFJtgae+ByzWsjG9Jd3+RWVsmCMP3yirwtLMJZgq2x8ldGhQB13VP78xmltuQ/3vs7rvjWBj2f
-	RBENyegz/GR+V3b1P7rg==;
+	List-Owner; bh=8Yq+UBtIAbONQC7ttUGBhuipJJB9vPUKzME1yhgeNLE=; b=kn1zdRyrC+E0v5
+	6cCXsBO/6mvC1Z2CQE18EDNaXqWPCMwGRria8hmNZENhh28dWX5e1SFidP0wiKPw7ywmsqfee/KXg
+	X6jZHdCrFSNftViYUYtG2Unwl5JAnZDZqD+GXg/4zVc1TkQEG5ByldapFJW/nKUwIv9vcfMgXE6cn
+	WsYT2xeHOZbj+6BbiTnbqMfO5rBunN98Ps6/IzorKHCTe/7bvqj5JxdGnu9f80osz6i0rcJPCNLO5
+	Z+dTX3SkDgiuYkbKxzQbehRjhjQwOP8vzIlis/Gu+V2zBcYTris8naELmUEwPAQ+QCZs4bqMtFnOB
+	tUSrYpE5YUlcBzo08OqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifpgU-0000yJ-0A; Fri, 13 Dec 2019 18:29:02 +0000
+	id 1ifpgg-0001Fv-Vg; Fri, 13 Dec 2019 18:29:14 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifpfj-0000Yu-J5
- for linux-arm-kernel@bombadil.infradead.org; Fri, 13 Dec 2019 18:28:15 +0000
+ id 1ifpfl-0000Zs-0H
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 13 Dec 2019 18:28:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=iY4r/Cpja2MTp9nLPxqT5+JkzLwYwSxRg9yYMap58ig=; b=uwFbY0f5MPFL4Jl4U1+MWJ3yEv
- ROvu/7t6VcUhoZDBYzB8wHhEPzik6lDzDLSfJoshcmRJ3cXDhEX6Q/uY3ljQaChPfvxyW6CMjTvAn
- 7NCrHfNlw8jHgV+qlbAdUDzkUlambZpDcCTGB1M0EGnPaqDzhsYfww6LSH1zk1bzHBEB1Ox4nuOs4
- GBqD3n1Qgvunx57NUlzIUFiQkT0YATThNxQFQ00HXwAazNSbxQjJyyadm3cV4Po8TnPfQtwO/Ia42
- 43rsoZhtwB1XZttwmyComb2dhQKSGo3634M/n0nolCDM2PRuLf2Jsj6Jc888XAIMdwZiXJQf9fl9N
- LeIXxozg==;
+ bh=m7GXogmvRuTwfuJicGQ2Zyj36+IZresYnE8Bz7r3uTA=; b=tALDUqsOH7Rrz+g5LRlluJ+GvQ
+ YySD44ivVu0UuBebOswwo3J5UYyQKmUMdHY9DoSlv4+lGsz/iSeFpbThOuMF+get36tP9FnaXUCP7
+ f868eXmWg26ebvQbnFTED/aJpl7je1IygjgrUmS1VjknGx2J9uHdCJVQ18THK4ssSrRgvDis9ajty
+ jESGPLJu6TLZolddYGT/9Jq2CniP7p6NS+MDlmCOuRyJ57ayFVCNch39LmJJZArFN5v1M6VnKSU9B
+ 4uRjsckw4hmbWM+t08IxCh3ybkDkeVDoautmuq6HZ8w0kZMIRvSos85kLRmwhZ6Zyh+Oox1SyGC0N
+ OvHdw8EA==;
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifpg8-0006IE-DY
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 18:28:44 +0000
+ id 1ifpg8-0006IG-DX
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 18:28:45 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by cheepnis.misterjones.org with esmtpsa
  (TLSv1.2:DHE-RSA-AES128-GCM-SHA256:128) (Exim 4.80)
  (envelope-from <maz@kernel.org>)
- id 1ifpdI-0001O7-2m; Fri, 13 Dec 2019 19:25:44 +0100
+ id 1ifpdJ-0001O7-JV; Fri, 13 Dec 2019 19:25:45 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: 
-Subject: [PATCH 5/7] KVM: arm/arm64: Elide both CMOs and TBLIs on freeing the
- whole Stage-2
-Date: Fri, 13 Dec 2019 18:25:01 +0000
-Message-Id: <20191213182503.14460-6-maz@kernel.org>
+Subject: [PATCH 7/7] KVM: arm/arm64: Elide CMOs when unmapping a range
+Date: Fri, 13 Dec 2019 18:25:03 +0000
+Message-Id: <20191213182503.14460-8-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191213182503.14460-1-maz@kernel.org>
 References: <20191213182503.14460-1-maz@kernel.org>
@@ -66,8 +65,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_182840_534021_AB46F185 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20191213_182840_542536_D0EC4360 
+X-CRM114-Status: GOOD (  11.83  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (1.0 points, 5.0 required)
@@ -102,36 +101,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When freeing the whole of a VM's Stage-2 page tables, there is
-little point in doing cache maintenance on each and every page
-(the guest won't be running anymore, let alone having its MMU
-off). As for TLBs, there is no point in invalidating individual
-pages, as we can replace the whole thing with a VMALL operation,
-which invalidates all the TLBs for this VM in one go.
+If userspace issues a munmap() on a set of pages, there is no
+expectation that the pages are cleaned to the PoC. So let's
+not do more work than strictly necessary, and set the magic
+flag that avoids CMOs in this case.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- virt/kvm/arm/mmu.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ virt/kvm/arm/mmu.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-index 4399866842dc..d7c710491d26 100644
+index c55022dbac89..6749be33d822 100644
 --- a/virt/kvm/arm/mmu.c
 +++ b/virt/kvm/arm/mmu.c
-@@ -1016,10 +1016,13 @@ void kvm_free_stage2_pgd(struct kvm *kvm)
+@@ -2056,7 +2056,13 @@ static int handle_hva_to_gpa(struct kvm *kvm,
  
- 	spin_lock(&kvm->mmu_lock);
- 	if (kvm->arch.pgd) {
--		unmap_stage2_range(kvm, 0, kvm_phys_size(kvm), 0);
-+		unmap_stage2_range(kvm, 0, kvm_phys_size(kvm),
-+				   KVM_UNMAP_ELIDE_CMO | KVM_UNMAP_ELIDE_TBLI);
- 		pgd = READ_ONCE(kvm->arch.pgd);
- 		kvm->arch.pgd = NULL;
- 		kvm->arch.pgd_phys = 0;
+ static int kvm_unmap_hva_handler(struct kvm *kvm, gpa_t gpa, u64 size, void *data)
+ {
+-	unmap_stage2_range(kvm, gpa, size, 0);
++	struct mmu_notifier_range *range = data;
++	unsigned long flags = 0;
 +
-+		kvm_flush_remote_tlbs(kvm);
- 	}
- 	spin_unlock(&kvm->mmu_lock);
++	if (range->event == MMU_NOTIFY_UNMAP)
++		flags = KVM_UNMAP_ELIDE_CMO;
++
++	unmap_stage2_range(kvm, gpa, size, flags);
+ 	return 0;
+ }
+ 
+@@ -2067,7 +2073,7 @@ int kvm_unmap_hva_range(struct kvm *kvm, const struct mmu_notifier_range *range)
+ 
+ 	trace_kvm_unmap_hva_range(range->start, range->end);
+ 	handle_hva_to_gpa(kvm, range->start, range->end,
+-			  &kvm_unmap_hva_handler, NULL);
++			  &kvm_unmap_hva_handler, (void *)range);
+ 	return 0;
+ }
  
 -- 
 2.20.1
