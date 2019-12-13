@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0712711DA91
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 01:08:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DD7D11DA95
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 01:08:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uvp+ONtjHbfSY8RZ7dVi+I5iKoaw3/1TvrNtRJ4gUok=; b=Y1F4QrSYjewsO3
-	mhoQHvTjmGowT9MB3kOSuGnBYNv66gGgorlQSAhJw1Kywho1BtiNq3gxxUJbCGqzAeWHfXTrCjjSc
-	WVnXxSyHhqwBplLLLlGpejE4UWuZYR4viRVOhe/Hchw6U6xR66JbEc6wb2iXaAOPyV9CwkFEV88UZ
-	Ir1COQ8MvXopmUOGlUUC9b+uOMxtZX431/4byLQKOyL433Plqfh+sZNPij3e/dfYcsuDmfOKvqqqC
-	XlX904x/k0ltlcgdbSH/35OhC2NMYPez0XaKKZdk7YiMQH7NX8sSOLgfW6dUfRU1Mq8oY/p5Jdkkv
-	AvYUqrmLzdukijEwz+rQ==;
+	List-Owner; bh=nIsx2xUvd/ClIG2saJSM+swWxF/u9zMZCVKMU4Wb7zM=; b=bdk2VBOKCFUNQs
+	pGiJsH3VDq7CMCDU0TLUFTT1gw0wx2IZSrSSV3W5zFV+8vC6QuNMraV42e6olGEFNG/bCVfLEo32A
+	BDnWnW03e5ZpSlx0aVKyz5ChtmTnVBrJ81rPZc1iN56RybmFBEYFWzL8HLGVjkHFB39KoRjTTpbBD
+	e3vZ9E8viQEwAwKeKH62od/c0ppT6iUDbKyzbrxE0VtCApt9cA9Wc3RoNyn9nSq1vyJnIc7WoLxfU
+	e/tUn8LfKRuif7ZxJomvVqi9hSg4oFZgVGhHotKAQnmZbuB9Ecovk36qb6Z1m/KT8cAAQ+7TE+LSn
+	cpaHN6mmJWs01tsd0eQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifYVR-0004Xt-Ca; Fri, 13 Dec 2019 00:08:29 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1ifYVe-0004rE-SD; Fri, 13 Dec 2019 00:08:42 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifYUr-0004Fb-BK
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 00:07:58 +0000
-Received: by mail-pl1-x642.google.com with SMTP id k20so368627pll.13
+ id 1ifYV0-0004MY-2W
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 00:08:03 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 2so387333pfx.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Dec 2019 16:07:53 -0800 (PST)
+ Thu, 12 Dec 2019 16:08:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=arista.com; s=googlenew;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=1lzeOKE7E2xm2Pt7osPxOs8CjOGmgq2Y6YA5myrIRwI=;
- b=UAGjR5Lwhlk2Ldz8b3cTLehatxJ/23uzY+Ob377pN0apnlpA770tNf4dQhE0OtCW+S
- L/QyIj6i2JC/neA9LoyfQmluxjAFkAcgszhlqfHmyDmHOlom6m3rRD1AvK2WraW9al61
- +iTX8p0wkbUv84baDL/YqJX2paQPCuceH4dmb8uMHS83muaLzVYaj6xTSassG8mmh4E8
- /u1z4oMQmA03jFhf/icDV8SAhnxBTKqNv5SiNq0FEyMdIdVPWm+mrzos74CwWVUzCXC8
- S45FAbDm+7QtukDSwo73q4zwfwMRmH8aVTECzWx4T3AaPfQRYMdqcrYcYSZJ55o7+exF
- AGuw==
+ bh=Euik8RhSRJjHmC28+StnihMZD1d4qJRUDgdRlDVUqg8=;
+ b=Vov9+2yB9/3J2+7DANI/wPjle8KZwVg0d5zBvN5FnKFK2vBdtzOq7YcpV9aNTO2UVi
+ J+2z+NpVo3Ei+Pl4+oggYNrBLDvL/eMxREVg6SLUIyyiHBghtCgmfaXVT57XltyKauc3
+ OzAv3XL2UKiRaOikeC7iTvhrIzspRT8CUNWLLjzmuYT+nYNmZaGi5qcUtIqcam0H124e
+ RbclY+ExjONTJH6cmIEhDq6bmEYd9/EAFkqIp/bZq9PKYiVdFbNKprQM4q9hbaC3RKqk
+ IGMkNo2fkuWmlu2mT7mfqbIin7ri/Vc8aIKwHHOOpF2FCjzTecK7E3S40SISqeuGnlox
+ bD6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=1lzeOKE7E2xm2Pt7osPxOs8CjOGmgq2Y6YA5myrIRwI=;
- b=ovP4fnRdLLh5l/sy3YulN/8vrCkBUnRxVbY/CdabwScy9akbBF52c2oBs+HeFfPu49
- Ji3RwZdFKiSSFfkPbmUK+fjNy/QppoKAsZwBb3geFKAA1DTZCKhReSOpmP9SjgwI2bND
- TvwLbyvuJdQ1/VRr8Smr4nSGIXgOfuGLvZ0QDmcEM9K708s9DFRT9COABdII0Z9RrwhU
- h7PhF1GIgldt/Jnx+om4HVKeHHnI0bfKi+fGjsArg78NmMVGAUbnEIkDBtiSglgljzVh
- iFfqay9rE/kpBwb6L3cXdpFhGxpimaWhXyALc2FffnSVpq2rNHBW/aU0Yufaif0heCMJ
- MbaA==
-X-Gm-Message-State: APjAAAXyrHzl0z3K1q+vl0j5XpVXVNpqHwWby5nTopluwhYmE+i3nIEn
- xR1L6TgKVu2bnc+w8uq7WUKi6g==
-X-Google-Smtp-Source: APXvYqwojedrKhxZAq5cumleNwwcoSZ1lEw0FeB3H5QkX03T5VYZcpLlDknvC/Jx8tVgNaDLXobTIg==
-X-Received: by 2002:a17:902:6b:: with SMTP id
- 98mr13070692pla.128.1576195672261; 
- Thu, 12 Dec 2019 16:07:52 -0800 (PST)
+ bh=Euik8RhSRJjHmC28+StnihMZD1d4qJRUDgdRlDVUqg8=;
+ b=RYhgnR3My6BmZgp8aD82zPCYGbyN5wY9QhyW+n7Q79ydxP+bHN0bkhaxdFevRDDduL
+ yD/CYapitqD0MlWTohcR6221/Ul1kc1jEi3o+eK81Bwvf/E5cm+wv8mlsTsfV3Ckah1K
+ tmbP70LJxy4orVsLjo8N1Sk/ak0a9z1WO3/PK+nS/dK50/olEHjv18XhzQ+Jf7GW4rrg
+ JmXFnOPIcJMg//v5YTwF9QGcxuPIx0Fm+Ah7uHSwrVoDg3woXjEkCULeSnC90YUoHs5W
+ SyGRcqTSPxTg08u81w5YoWEUCpYt791EwhXYMaKBJ+BBMWrGjKEL7AnCRqd1hQRBOpF4
+ feNg==
+X-Gm-Message-State: APjAAAWOUualgBhDrcMz036Mcw7+M4WztgK9OKCVa8R1nFQY+BqJrpoU
+ SE7fvocndPzmp02R2RCe+KK24Q==
+X-Google-Smtp-Source: APXvYqzY6lLiNfLcAT2CBNRvssxZ7MTePv1pHo5Z9zzhPNEs2I5saW4nMcezRwTRhfTnTCpuHM6CLA==
+X-Received: by 2002:aa7:95a9:: with SMTP id a9mr12656949pfk.15.1576195681400; 
+ Thu, 12 Dec 2019 16:08:01 -0800 (PST)
 Received: from Mindolluin.ire.aristanetworks.com ([217.173.96.166])
- by smtp.gmail.com with ESMTPSA id j38sm8317647pgj.27.2019.12.12.16.07.49
+ by smtp.gmail.com with ESMTPSA id j38sm8317647pgj.27.2019.12.12.16.07.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 12 Dec 2019 16:07:51 -0800 (PST)
+ Thu, 12 Dec 2019 16:08:00 -0800 (PST)
 From: Dmitry Safonov <dima@arista.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 13/58] tty/serial: Migrate clps711x to use has_sysrq
-Date: Fri, 13 Dec 2019 00:06:12 +0000
-Message-Id: <20191213000657.931618-14-dima@arista.com>
+Subject: [PATCH 16/58] tty/serial: Migrate efm32-uart to use has_sysrq
+Date: Fri, 13 Dec 2019 00:06:15 +0000
+Message-Id: <20191213000657.931618-17-dima@arista.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191213000657.931618-1-dima@arista.com>
 References: <20191213000657.931618-1-dima@arista.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_160753_424490_FEA2E84B 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20191212_160802_175148_C22F0162 
+X-CRM114-Status: GOOD (  11.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,59 +99,43 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Vasiliy Khoruzhick <vasilykh@arista.com>,
- Alexander Shiyan <shc_work@mail.ru>, Dmitry Safonov <dima@arista.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Dmitry Safonov <dima@arista.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
  Dmitry Safonov <0x7f454c46@gmail.com>, linux-serial@vger.kernel.org,
  Jiri Slaby <jslaby@suse.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SUPPORT_SYSRQ ifdeffery is not nice as:
-- May create misunderstanding about sizeof(struct uart_port) between
-  different objects
-- Prevents moving functions from serial_core.h
-- Reduces readability (well, it's ifdeffery - it's hard to follow)
-
-In order to remove SUPPORT_SYSRQ, has_sysrq variable has been added.
-Initialise it in driver's probe and remove ifdeffery.
-
-Cc: Alexander Shiyan <shc_work@mail.ru>
-Cc: linux-arm-kernel@lists.infradead.org
-Signed-off-by: Dmitry Safonov <dima@arista.com>
----
- drivers/tty/serial/clps711x.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
-
-diff --git a/drivers/tty/serial/clps711x.c b/drivers/tty/serial/clps711x.c
-index 061590795680..95abc6faa3d5 100644
---- a/drivers/tty/serial/clps711x.c
-+++ b/drivers/tty/serial/clps711x.c
-@@ -8,10 +8,6 @@
-  *  Copyright (C) 2000 Deep Blue Solutions Ltd.
-  */
- 
--#if defined(CONFIG_SERIAL_CLPS711X_CONSOLE) && defined(CONFIG_MAGIC_SYSRQ)
--#define SUPPORT_SYSRQ
--#endif
--
- #include <linux/module.h>
- #include <linux/device.h>
- #include <linux/console.h>
-@@ -479,6 +475,7 @@ static int uart_clps711x_probe(struct platform_device *pdev)
- 	s->port.mapbase		= res->start;
- 	s->port.type		= PORT_CLPS711X;
- 	s->port.fifosize	= 16;
-+	s->port.has_sysrq	= IS_ENABLED(CONFIG_SERIAL_CLPS711X_CONSOLE);
- 	s->port.flags		= UPF_SKIP_TEST | UPF_FIXED_TYPE;
- 	s->port.uartclk		= clk_get_rate(uart_clk);
- 	s->port.ops		= &uart_clps711x_ops;
--- 
-2.24.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIFNVUFBPUlRfU1lTUlEgaWZkZWZmZXJ5IGlzIG5vdCBuaWNlIGFzOgotIE1heSBjcmVhdGUg
+bWlzdW5kZXJzdGFuZGluZyBhYm91dCBzaXplb2Yoc3RydWN0IHVhcnRfcG9ydCkgYmV0d2Vlbgog
+IGRpZmZlcmVudCBvYmplY3RzCi0gUHJldmVudHMgbW92aW5nIGZ1bmN0aW9ucyBmcm9tIHNlcmlh
+bF9jb3JlLmgKLSBSZWR1Y2VzIHJlYWRhYmlsaXR5ICh3ZWxsLCBpdCdzIGlmZGVmZmVyeSAtIGl0
+J3MgaGFyZCB0byBmb2xsb3cpCgpJbiBvcmRlciB0byByZW1vdmUgU1VQUE9SVF9TWVNSUSwgaGFz
+X3N5c3JxIHZhcmlhYmxlIGhhcyBiZWVuIGFkZGVkLgpJbml0aWFsaXNlIGl0IGluIGRyaXZlcidz
+IHByb2JlIGFuZCByZW1vdmUgaWZkZWZmZXJ5LgoKQ2M6ICJVd2UgS2xlaW5lLUvDtm5pZyIgPHUu
+a2xlaW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4KQ2M6IFBlbmd1dHJvbml4IEtlcm5lbCBUZWFt
+IDxrZXJuZWxAcGVuZ3V0cm9uaXguZGU+CkNjOiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKU2lnbmVkLW9mZi1ieTogRG1pdHJ5IFNhZm9ub3YgPGRpbWFAYXJpc3RhLmNvbT4K
+LS0tCiBkcml2ZXJzL3R0eS9zZXJpYWwvZWZtMzItdWFydC5jIHwgNSArLS0tLQogMSBmaWxlIGNo
+YW5nZWQsIDEgaW5zZXJ0aW9uKCspLCA0IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZl
+cnMvdHR5L3NlcmlhbC9lZm0zMi11YXJ0LmMgYi9kcml2ZXJzL3R0eS9zZXJpYWwvZWZtMzItdWFy
+dC5jCmluZGV4IGQ2YjVlNTQ2Mzc0Ni4uMmFjODcxMjhkN2ZkIDEwMDY0NAotLS0gYS9kcml2ZXJz
+L3R0eS9zZXJpYWwvZWZtMzItdWFydC5jCisrKyBiL2RyaXZlcnMvdHR5L3NlcmlhbC9lZm0zMi11
+YXJ0LmMKQEAgLTEsOCArMSw0IEBACiAvLyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIu
+MAotI2lmIGRlZmluZWQoQ09ORklHX1NFUklBTF9FRk0zMl9VQVJUX0NPTlNPTEUpICYmIGRlZmlu
+ZWQoQ09ORklHX01BR0lDX1NZU1JRKQotI2RlZmluZSBTVVBQT1JUX1NZU1JRCi0jZW5kaWYKLQog
+I2luY2x1ZGUgPGxpbnV4L2tlcm5lbC5oPgogI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgogI2lu
+Y2x1ZGUgPGxpbnV4L2lvLmg+CkBAIC03NDgsNiArNzQ0LDcgQEAgc3RhdGljIGludCBlZm0zMl91
+YXJ0X3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCiAJZWZtX3BvcnQtPnBvcnQu
+dHlwZSA9IFBPUlRfRUZNVUFSVDsKIAllZm1fcG9ydC0+cG9ydC5pb3R5cGUgPSBVUElPX01FTTMy
+OwogCWVmbV9wb3J0LT5wb3J0LmZpZm9zaXplID0gMjsKKwllZm1fcG9ydC0+cG9ydC5oYXNfc3lz
+cnEgPSBJU19FTkFCTEVEKENPTkZJR19TRVJJQUxfRUZNMzJfVUFSVF9DT05TT0xFKTsKIAllZm1f
+cG9ydC0+cG9ydC5vcHMgPSAmZWZtMzJfdWFydF9wb3BzOwogCWVmbV9wb3J0LT5wb3J0LmZsYWdz
+ID0gVVBGX0JPT1RfQVVUT0NPTkY7CiAKLS0gCjIuMjQuMAoKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
