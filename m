@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 635B611E929
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 18:26:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9563811E92D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 18:27:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jTCiKKDxtXTa0xnF0VRqflpFmZ2astXaPayXFA/VtvQ=; b=eKEBQOdnAqSQNe
-	c8tnlQe1GKNKWyejWoCfEzBoXNsjqzpoY0HiUJDjq+RC8kT2ZkrLDNng3riIaGlwIdWfosyrmHuBS
-	SlpZeB07F2UKuEH0NXla2wMoBae3EaD8/3ZoczlGslI9aN0CSVjl9lJjxO+McyCmg8Fkp0ihRHD6L
-	dfDHMJ+CD6pR8t0xKlqylrwzty4XA5G0zWkwrazHnwstgJm0ZBvEoUO1s/4ZSVvniu4+zuFepQWOn
-	yCM3WpaujhHWtjHQRvG97YO0eHXdB2Ox/sa6FkMMOMYhENardpD+W6p52d1akT6bZHhLIPUXQMxwK
-	0BSa1HExhmZxvEjXkElg==;
+	List-Owner; bh=3ACZfQNrgo9jKnOu+cEGueJSMNWsEUN1QWKt36DjaW0=; b=mtbuacyUIX96gD
+	awtrt160kZN204XHCUc9dKYi13gSOMqH9gxQcgwUZ6/vfS2Jlea84x5EShWjUkrxt8Ty2VSBFENuc
+	7nrjAYmb/pNzm29csgUa4YsFJybpiL+43+j29N80EfJpI0xxYli2sHCLzYAUPtrxjLVNTI32hlt2d
+	f62oYA+653OEqnEP96+CBmPgmLoht0CdiqTBDOuNBN7RlKFc/gXSzO89ZzAl1BIH9AAztxs60tY5/
+	C4HWj44UxvQyovb7lnnhMGTn5eD1to6rEinCerCj0YDBIt++PQL9OOEdsdXPwhm1PdaANAwijW4kI
+	2GCvL0DUJIxImCRHIadg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifoi2-0005Yu-Hw; Fri, 13 Dec 2019 17:26:34 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1ifoiH-0005iT-3U; Fri, 13 Dec 2019 17:26:49 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifohq-0005XF-W7
+ id 1ifohr-0005XN-5T
  for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 17:26:24 +0000
-Received: by mail-wr1-x441.google.com with SMTP id q10so232386wrm.11
+Received: by mail-wr1-x442.google.com with SMTP id z3so281464wru.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 09:26:21 -0800 (PST)
+ Fri, 13 Dec 2019 09:26:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ZKp83AbaxIS+4w7GqVdl0VoZ9O2XyHrFAUMYGF70UwE=;
- b=OfSrV5Vil2g/TEwGoE+9+3zrqIds/h9UcxYpcO1Rn6hlmJQNDcktKtFsUPESJyEuWw
- +44liXSdOqrdzz8uO3ia8fbjHat8SVJOYBEhnMsHPYuljCSpeHGKY96EolZPtUKyC2xk
- Q84vr2pn+WG67t6AEv1w/BZ7r2BjZKVc3qLDo=
+ bh=k37i2rf0mrZ5PJBC1jYZXYaxxFfiB3iLMNAh4njzQbQ=;
+ b=kzPdtp7JSMUx3Zngnb/0mSHBSVnlQiPG7HKMb8VAcPBhARKG5gd2fjFKOTGMsyZNpb
+ OzkkaNb70V8zrtQMaRhpigBgwFToYKS/KlcAW6Qx1aqR0m/Po4RflLJHKfQB6BfoBTNX
+ m1s3pGfg3l94wvz64lDNsXj2mIjGn82Hd34RY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ZKp83AbaxIS+4w7GqVdl0VoZ9O2XyHrFAUMYGF70UwE=;
- b=Yjsh1zdrjI8Ky0r+OoCib54Yhql3Y/3auIfuD+2Wz0orYoDLFkZxcMcDfbHYrD4ShD
- tnhyPxjnQVoGhRC17N67pFmtxZ+qBtx5WanpkGYa+387GB/7co/JCQyHMkGpc5+xZS1l
- h3nNSNaIbLUK1XaXoTCXRTliTD8yRTdjVapD4odDmjETXI1gOj4ibGYo8eVy6b6b1e3a
- HeMaTdEZuY7gNcZxNJcEa0cBRJbmSWjqY0lwr3d4lkKuwv3mRO0XeYKyZtf2EZvVpp9V
- 2i03JqedOHY1gFPKjKSpJNRUbp2P7ll+Vrh3g2x6WhAbk0NPKCQVuSqzVUyeQz31l1e0
- 64BQ==
-X-Gm-Message-State: APjAAAWz8jAdwY/hUC6MoI0GLSyqpTs0J0JEBqHsxmLIi4WSRq/EdIo9
- eZRJntmZowqc02hyHkpfEe2uqA==
-X-Google-Smtp-Source: APXvYqxvAUdSOy0yUEjbwxNRm3JdVfrjHXjQ+h8EaoHNogxjjVS/vLJfUI+ItOofVgpZ02EmtD3iaw==
-X-Received: by 2002:adf:ef8b:: with SMTP id d11mr13513872wro.45.1576257980601; 
- Fri, 13 Dec 2019 09:26:20 -0800 (PST)
+ bh=k37i2rf0mrZ5PJBC1jYZXYaxxFfiB3iLMNAh4njzQbQ=;
+ b=Ru37t0S6FWeIaZzZjzxR1WRbevX5Uz5ITLz5M4aXUS45PzGoCt5y3q2oQvfVkd0Hll
+ I4w25E38GojtqzVZwuVLKPbmdGxAIZZ44WYq7AgPb7I0rjSzE7eD/D3dFHcTcZNLTaio
+ 2LrfM4HuL894M+P0a5BXD6MwYnQL5XgG4OjJl4wKQJv/u1F525J+cWKdep564pNnCMpf
+ +zGOD31eCka0JuwGrkTA54X0kGltOzmt6CkYgiScmD4yvUwvfsZ1f2S6Piq4ydQA471U
+ P825fceejRX7wFmu1YiLD4FCBKeEcdsBflCKgPLrAAS8X3LZm/l0RYU6oK2xveT84BhK
+ jRTg==
+X-Gm-Message-State: APjAAAUNdFTC3VAw2SlKNITDyMY8hA76TmS9Goakaa2aAEtp+5XHoQ9O
+ 7odAKWKiLV0h+uI9jn3NasZGS+7UhdU=
+X-Google-Smtp-Source: APXvYqzF2mlRiwvCpAy00FAu9v/gdbejfjXHVa3jmhV2/faBiJCG4X7d07oMgDmgeJTfaiBQafdsIg==
+X-Received: by 2002:adf:d4ca:: with SMTP id w10mr13329482wrk.53.1576257981725; 
+ Fri, 13 Dec 2019 09:26:21 -0800 (PST)
 Received: from phenom.ffwll.local ([2a02:168:564b:0:7567:bb67:3d7f:f863])
- by smtp.gmail.com with ESMTPSA id q15sm10689669wrr.11.2019.12.13.09.26.19
+ by smtp.gmail.com with ESMTPSA id q15sm10689669wrr.11.2019.12.13.09.26.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Dec 2019 09:26:19 -0800 (PST)
+ Fri, 13 Dec 2019 09:26:21 -0800 (PST)
 From: Daniel Vetter <daniel.vetter@ffwll.ch>
 To: DRI Development <dri-devel@lists.freedesktop.org>
-Subject: [PATCH 03/10] drm/atmel: plane_state->fb iff plane_state->crtc
-Date: Fri, 13 Dec 2019 18:26:05 +0100
-Message-Id: <20191213172612.1514842-3-daniel.vetter@ffwll.ch>
+Subject: [PATCH 04/10] drm/malidp: plane_state->fb iff plane_state->crtc
+Date: Fri, 13 Dec 2019 18:26:06 +0100
+Message-Id: <20191213172612.1514842-4-daniel.vetter@ffwll.ch>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191213172612.1514842-1-daniel.vetter@ffwll.ch>
 References: <20191213172612.1514842-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_092623_100038_AD966CF6 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20191213_092623_201050_9C311F8C 
+X-CRM114-Status: GOOD (  11.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -93,11 +93,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Boris Brezillon <bbrezillon@kernel.org>,
- Daniel Vetter <daniel.vetter@ffwll.ch>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Daniel Vetter <daniel.vetter@intel.com>, Sam Ravnborg <sam@ravnborg.org>,
+Cc: Fabio Estevam <festevam@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>, Sascha Hauer <s.hauer@pengutronix.de>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Daniel Vetter <daniel.vetter@intel.com>, Shawn Guo <shawnguo@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -108,29 +108,30 @@ Checking both is one too much, so wrap a WARN_ON around it to stope
 the copypasta.
 
 Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
-Cc: Sam Ravnborg <sam@ravnborg.org>
-Cc: Boris Brezillon <bbrezillon@kernel.org>
-Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
+Cc: Philipp Zabel <p.zabel@pengutronix.de>
+Cc: Shawn Guo <shawnguo@kernel.org>
+Cc: Sascha Hauer <s.hauer@pengutronix.de>
+Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
+Cc: Fabio Estevam <festevam@gmail.com>
+Cc: NXP Linux Team <linux-imx@nxp.com>
 Cc: linux-arm-kernel@lists.infradead.org
 ---
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c | 2 +-
+ drivers/gpu/drm/imx/ipuv3-plane.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
-index 034f202dfe8f..40800ec5700a 100644
---- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
-+++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_plane.c
-@@ -604,7 +604,7 @@ static int atmel_hlcdc_plane_atomic_check(struct drm_plane *p,
- 	int ret;
- 	int i;
- 
--	if (!state->base.crtc || !fb)
-+	if (!state->base.crtc || WARN_ON(!fb))
+diff --git a/drivers/gpu/drm/imx/ipuv3-plane.c b/drivers/gpu/drm/imx/ipuv3-plane.c
+index 28826c0aa24a..6776ebb3246d 100644
+--- a/drivers/gpu/drm/imx/ipuv3-plane.c
++++ b/drivers/gpu/drm/imx/ipuv3-plane.c
+@@ -359,7 +359,7 @@ static int ipu_plane_atomic_check(struct drm_plane *plane,
+ 	if (!fb)
  		return 0;
  
- 	crtc_state = drm_atomic_get_existing_crtc_state(s->state, s->crtc);
+-	if (!state->crtc)
++	if (WARN_ON(!state->crtc))
+ 		return -EINVAL;
+ 
+ 	crtc_state =
 -- 
 2.24.0
 
