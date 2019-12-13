@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5F3011DC2B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 03:35:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5786811DC3A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 03:48:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6j5yUNbWAl2zvCTMZKvJjyEGN6qD3eEmg9TpF+Qh4KI=; b=pStRhWZY3GyHrR
-	fJgozn0Y6VdqiQVMF4L/jb3FkQW3u3mkh1cyGia9XVtxf15LeS/0WGFSwVvdur2cO5IO9UZhub2Kf
-	Dsy2n9KPrI3LRxcHjylD3SmxAy1Uxw9MlpRpOZLTGxHYVD3uW/nKTyht6ANVw4sqBx7ervXW57P26
-	hiqI9WPFWzidtY5mDGdCD/cTR2g4lLtxXqF37UrHs5TYGKtUgnFcNdz5TOUDybRjxkrpdc9f71wop
-	QiISxmfn8WKq3KmsSs2MSOuX/ao1ogS85czxxS6Z7e6GWYRRTly2tivbyidky4o0DT3Abi27kMgxU
-	pPJyzlyW0FC5EOxcsR8A==;
+	List-Owner; bh=gFWXhG3/Y/13OZM2XTX7h+FGzdDOROq8z2cYYmk7pRg=; b=odaS5js9d5U5Ma
+	3RdJCXEIg7fjOPkJ4alPlOpzgngaowOPslF0s8/reIie60sOSNny5PxNoHCuvaRMsBOXeTV2KeuI3
+	FzwByTl75mDR2FcJYrACdlBxK08g7VZlBBH3ictwKFjkWkwhuNkPDmTZsT+CYwCY8e3CaICCAFTKk
+	j0Q0zbvSldZmBdjBQUcQUthuq7F/g5hzIDjmD8tUBTT0279BaC3z6lzteOla/M6CiTooQbJPQmVXn
+	DLuk+5iUX3kBGzXMtdMmsT3Z1cufzGMHlz+DV31gw6Z31psf0Wxrs6I8sr6vqStoj82ttBYd11wV+
+	T6xVQcAMj0d55504JPgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifanV-0004Ch-Qv; Fri, 13 Dec 2019 02:35:17 +0000
+	id 1ifb0O-0007iA-IZ; Fri, 13 Dec 2019 02:48:36 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifanM-0003YZ-8s; Fri, 13 Dec 2019 02:35:10 +0000
-X-UUID: 47fa587e52fc447683185be32e24f6e0-20191212
+ id 1ifb09-0007h4-Gf; Fri, 13 Dec 2019 02:48:22 +0000
+X-UUID: 31dfb38d9d51427097b7ab674c1359e9-20191212
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=yhFMIzdACTJWG8hG2F5mM6oLY9KIsSirpu7dj4pmzWo=; 
- b=OQv/fxiQsfz4cvuh5JCsWQWp2JRkjT1QaFhtXzcgEfYxmmzin8CsOw79fhtWlphFO76eLW+07eYB+O8zKugRMO8JivvHFUMbzH2x63ELE60uieaRK2swT6thOuy/iTJDEyiI2n0pCYqHYmvGhNwdHcr1o+h6XYOghd9Suw+u0MY=;
-X-UUID: 47fa587e52fc447683185be32e24f6e0-20191212
+ bh=1mh7OPQCgMOBR1dvjtbiL2hG+rXyscvDOnW/uspS6Jg=; 
+ b=Pa6pK6ODz4CZP0vPhpwf7QPrL+CysndJoTOGcw5+gVlbVxo5xLwIHVeS9gTek2XrE4N93R6TlMXZhiArWDall1mgvloG2emzEL0zE8TtuK/nHnqegsla0MLUV3Ujh/H2DJYLR8jaap1kk97tMYd9+6PgddmmYIIh3CWJAUgZ6tU=;
+X-UUID: 31dfb38d9d51427097b7ab674c1359e9-20191212
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
+ (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1796512916; Thu, 12 Dec 2019 18:35:01 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Dec 2019 18:35:16 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 13 Dec 2019 10:34:36 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ with ESMTP id 172248405; Thu, 12 Dec 2019 18:48:18 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Dec 2019 18:49:19 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 13 Dec 2019 10:47:49 +0800
+Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 13 Dec 2019 10:34:51 +0800
-Message-ID: <1576204492.26694.0.camel@mtksdaap41>
-Subject: Re: [PATCH 1/2] Return from mtk_ovl_layer_config after
- mtk_ovl_layer_off
-From: CK Hu <ck.hu@mediatek.com>
-To: Sean Paul <sean@poorly.run>
-Date: Fri, 13 Dec 2019 10:34:52 +0800
-In-Reply-To: <CAMavQKKOtYKVnCs3RCi3iYiX-2rLHoaDBTsEHyQmvWGoYj4M0g@mail.gmail.com>
-References: <20191211154901.176256-1-markyacoub@google.com>
- <1576125900.29693.0.camel@mtksdaap41>
- <CAMavQKKOtYKVnCs3RCi3iYiX-2rLHoaDBTsEHyQmvWGoYj4M0g@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ Transport; Fri, 13 Dec 2019 10:47:36 +0800
+Message-ID: <1576205295.12066.5.camel@mtkswgap22>
+Subject: Re: [PATCH v1 0/2] scsi: ufs: fixup active period of ufshcd interrupt
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <alim.akhtar@samsung.com>,
+ <pedrom.sousa@synopsys.com>, <avri.altman@wdc.com>
+Date: Fri, 13 Dec 2019 10:48:15 +0800
+In-Reply-To: <1575721321-8071-1-git-send-email-stanley.chu@mediatek.com>
+References: <1575721321-8071-1-git-send-email-stanley.chu@mediatek.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_183508_332736_CBB67145 
-X-CRM114-Status: GOOD (  19.46  )
+X-CRM114-CacheID: sfid-20191212_184821_559898_F82A6118 
+X-CRM114-Status: UNSURE (   6.16  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -85,102 +84,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniele Castagna <dcastagna@chromium.org>, David Airlie <airlied@linux.ie>,
- dri-devel <dri-devel@lists.freedesktop.org>, Sean Paul <seanpaul@chromium.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Mark Yacoub <markyacoub@google.com>
+Cc: martin.petersen@oracle.com, andy.teng@mediatek.com, jejb@linux.ibm.com,
+ chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ peter.wang@mediatek.com, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Sean:
+Dear reviewers,
 
-On Thu, 2019-12-12 at 09:13 -0500, Sean Paul wrote:
-> On Wed, Dec 11, 2019 at 11:45 PM CK Hu <ck.hu@mediatek.com> wrote:
-> >
-> > Hi, Mark:
-> >
-> > On Wed, 2019-12-11 at 10:49 -0500, Mark Yacoub wrote:
-> > > drm/mediatek: return if plane pending state is disabled.
-> > >
-> > > If the plane pending state is disabled, call mtk_ovl_layer_off then
-> > > return.
-> > > This guarantees that that the state is valid for all operations when the
-> > > pending state is enabled.
-> >
-> > Reviewed-by: CK Hu <ck.hu@mediatek.com>
-> >
-> 
-> Thanks for reviewing these patches, CK. When you apply them to your
-> tree, could you please fixup the subjects with the correct prefixes?
+	Gentle ping for this patch set.
 
-Thanks for your notice. I've already planed to do so.
+On Sat, 2019-12-07 at 20:21 +0800, Stanley Chu wrote:
+> This patchset fixes up active duration of ufshcd interrupt to avoid potential system hang issues.
+> 
+> Stanley Chu (2):
+>   scsi: ufs: disable irq before disabling clocks
+>   scsi: ufs: disable interrupt during clock-gating
+> 
+>  drivers/scsi/ufs/ufshcd.c | 15 ++++++++++-----
+>  1 file changed, 10 insertions(+), 5 deletions(-)
+> 
 
-Regards,
-CK
-
-> 
-> Both patches are also
-> 
-> Reviewed-by: Sean Paul <seanpaul@chromium.org>
-> 
-> Sean
-> 
-> > >
-> > > Suggested-by: Sean Paul <seanpaul@chromium.org>
-> > > To: CK Hu <ck.hu@mediatek.com>
-> > > To: dri-devel@lists.freedesktop.org
-> > > Cc: Daniele Castagna <dcastagna@chromium.org>
-> > > Cc: Philipp Zabel <p.zabel@pengutronix.de>
-> > > Cc: David Airlie <airlied@linux.ie>
-> > > Cc: Daniel Vetter <daniel@ffwll.ch>
-> > > Cc: Matthias Brugger <matthias.bgg@gmail.com>
-> > > Cc: linux-arm-kernel@lists.infradead.org
-> > > Cc: linux-mediatek@lists.infradead.org
-> > > Signed-off-by: Mark Yacoub <markyacoub@google.com>
-> > > ---
-> > >  drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 7 ++++---
-> > >  1 file changed, 4 insertions(+), 3 deletions(-)
-> > >
-> > > diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> > > index 4a55bb6e2213..526b595eeff9 100644
-> > > --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> > > +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> > > @@ -260,8 +260,10 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
-> > >       unsigned int src_size = (pending->height << 16) | pending->width;
-> > >       unsigned int con;
-> > >
-> > > -     if (!pending->enable)
-> > > +     if (!pending->enable) {
-> > >               mtk_ovl_layer_off(comp, idx);
-> > > +             return;
-> > > +     }
-> > >
-> > >       con = ovl_fmt_convert(ovl, fmt);
-> > >       if (idx != 0)
-> > > @@ -283,8 +285,7 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
-> > >       writel_relaxed(offset, comp->regs + DISP_REG_OVL_OFFSET(idx));
-> > >       writel_relaxed(addr, comp->regs + DISP_REG_OVL_ADDR(ovl, idx));
-> > >
-> > > -     if (pending->enable)
-> > > -             mtk_ovl_layer_on(comp, idx);
-> > > +     mtk_ovl_layer_on(comp, idx);
-> > >  }
-> > >
-> > >  static void mtk_ovl_bgclr_in_on(struct mtk_ddp_comp *comp)
-> >
-> > _______________________________________________
-> > dri-devel mailing list
-> > dri-devel@lists.freedesktop.org
-> > https://lists.freedesktop.org/mailman/listinfo/dri-devel
-> 
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+Thanks,
+Stanley
 
 _______________________________________________
 linux-arm-kernel mailing list
