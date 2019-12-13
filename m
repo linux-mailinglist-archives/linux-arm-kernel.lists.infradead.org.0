@@ -2,93 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40B9F11E57F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 15:23:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A033011E583
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 15:24:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nunLIf0CwdqikVQvYgyaBQEzanKSV7RTjta8CvmA9lo=; b=nI3chAtusGdowu
-	Qut4FXIMtUrRz14Fp1tvyzyeCqmoiIGUHNHNNGN8g1GM4vtEQTht+tsMDv7UfvMac+KTvbo+hneqk
-	DUrIcO2KjUSWkMP6S81ZSOalOMzuftYIPQILQwoOPTYoScdIhAZIrZcrQEmQbjfMSxwSDfnk7tky5
-	lnl+ARAXEwMl6K2yIy6ccaqQuAHHgJLTx2gQyXyRvUXYo76/LPd2g4ATFaOBZEOVCkPV8pQDMQrpR
-	ODIIy3Y9rnsRtUFvnViHTfNLcSg5jgvKfXXrEr4ukW51klxBFAZeUDa4XANFql+0SBbUQmj/AmBJT
-	5xm0bddEJ+jrMjITocIw==;
+	List-Owner; bh=x6CJo+vSWZud6A9O0cCoSWr9DSytUTfIVcKPxj54nD8=; b=V/02vJbL8nKbZ2
+	hsizdq9mIuc+7K7crHAFauNu2+I4MbWJ/VTdA3nbDv3229dsZcNDiDLMFy5Q9QMhu3SCjA84/7vbU
+	RAQBOvz9ZNzsGIKDW7OL5aEx5C3yeVUokUaStVq/lo+cELhYAH5A0jb4XxDzPzkJ/6BOyREinoE3w
+	xoBaYyya66CrHVR2KPZVE6WJ6fcio808Vuo9BMUDUX3cTGLPJS2h6fRvAk+6ywDfZnnaCQBNzeFmM
+	L7xyRNA2BF+LDst+GM/2FYQtZG8oWdGMTXtLgfPMT5fo2pwnA6MSvihl/xyKB6EIbYRSG8JAYC0gW
+	4F/CRpUAuOC/QsGm8R/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iflrC-00055d-4R; Fri, 13 Dec 2019 14:23:50 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iflr1-00054u-93; Fri, 13 Dec 2019 14:23:41 +0000
-Received: by mail-io1-xd42.google.com with SMTP id t26so2512723ioi.13;
- Fri, 13 Dec 2019 06:23:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=oY4foPWzvMWBhrOb3ctOq9TVV5hU0NFwbmMTS0Zd/UU=;
- b=WA/Nl5/qzxziow27rNFDBN6AR0i/0NcNiRvRVp80t0u9W0JQMaMjKJ1FXpSIJvFRsA
- 9XNtyo7R3tvMIJvxC8oiNyOk4J2wtKS7B3Ts81LXhTeznVpJDzP2bBwTq3eNp8TT5jGC
- JeJnDQdKIfDwUHRy+/BauHNwzMIsrHZwY1yL13K6S1JG3p8bmPr43mrdPMlvRX974Db3
- sejJ6jhmsn/JNHCDsnNqd+DX6Vt5JKtCkrXbQGX1nBV17cl/Lwbv1gGNky1WX5xz6cB9
- qNaJLQ5sYArh6IQ72EsTE5mzorok1Y/tT0dn2XFjhtREMCr3CwECOoTe5T6M5fG+Ice6
- rw+Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=oY4foPWzvMWBhrOb3ctOq9TVV5hU0NFwbmMTS0Zd/UU=;
- b=pYqriNq1VAF9zPFZSUtjkBZ+kXKu7KIM1kII/QOgT78uDmi7ND5JLNCAnC6Qx4azjE
- OuLm879dsqBIJyEys4jtz703hTEKFjmUMso2jx5fi17hEu9zbavON3X3/azaJ9BeuJST
- H4BxT/SjeqZdZnjn6O/+vXm+LFsMWangsdNgW3QjogMLIcIZhGfqyF8mryVW+fHCtidG
- EsrQibc9KEF7cBThOhdocBItK4aoSrHCTZ+9VOX8sayZzapjcQM5q8Khn6C70pO1XLi2
- HH+fnMOw8uDXresgw3ElULTTTE7H6P5pg/qfTj/xXZlczf2OZIh7TAqrqdt9BTAkH33e
- DhHA==
-X-Gm-Message-State: APjAAAV+0kAgogyKfJj0sKEhpcy3WgqbLpgNe1yIO4heO/yhoJdEPLRO
- ypGBTmEe+XMrEAfolEXte8YXm/TE5U7F6vYC+a4=
-X-Google-Smtp-Source: APXvYqw9fo8CyH8rZgTkDXi/QpomXN7jj5DggXjh44v4tlkbINHuyaaFmy+kLmhjIEG8wBfM6tVMJ2kyLjCLt4kAyek=
-X-Received: by 2002:a02:844e:: with SMTP id l14mr2634809jah.30.1576247017731; 
- Fri, 13 Dec 2019 06:23:37 -0800 (PST)
+	id 1iflra-0005La-IR; Fri, 13 Dec 2019 14:24:14 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iflrF-0005DI-41
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 14:23:55 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 15EEC13D5;
+ Fri, 13 Dec 2019 06:23:50 -0800 (PST)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9E8BC3F52E;
+ Fri, 13 Dec 2019 06:23:48 -0800 (PST)
+Date: Fri, 13 Dec 2019 14:23:34 +0000
+From: Andre Przywara <andre.przywara@arm.com>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH] pcie: Add quirk for the Arm Neoverse N1SDP platform
+Message-ID: <20191213142334.1631e3db@donnerap.cambridge.arm.com>
+In-Reply-To: <20191212123748.GF24359@e119886-lin.cambridge.arm.com>
+References: <20191209160638.141431-1-andre.przywara@arm.com>
+ <20191212123748.GF24359@e119886-lin.cambridge.arm.com>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-References: <20191101143126.2549-1-linux.amoon@gmail.com>
- <7hfthtrvvv.fsf@baylibre.com>
- <c89791de-0a46-3ce2-b3e2-3640c364cd0f@baylibre.com>
- <CANAwSgQx3LjQe60TGgKyk6B5BD5y1caS2tA+O+GFES7=qCFeKg@mail.gmail.com>
- <7hfthsqcap.fsf@baylibre.com>
- <CAFBinCBfgxXhPKpBLdoq9AimrpaneYFgzgJoDyC-2xhbHmihpA@mail.gmail.com>
- <7hpngvontu.fsf@baylibre.com>
- <4e1339b4-c751-3edc-3a2e-36931ad1c503@baylibre.com>
- <CAFBinCCgKcwXSLxS_CRvz9JZvQo8PcUGm=egBbabVZSrkSc30Q@mail.gmail.com>
- <CANAwSgSFR3kftWLPqyoYfyxdQ5dcp2W7NgRCaFNkMj-xEDY1Kw@mail.gmail.com>
- <83791a71-a45c-383d-0406-b0f4e0a0c215@baylibre.com>
-In-Reply-To: <83791a71-a45c-383d-0406-b0f4e0a0c215@baylibre.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Fri, 13 Dec 2019 19:53:26 +0530
-Message-ID: <CANAwSgSsJ8oc--SxtOnsqAfRHQwtBi=ExWg0hqWX7QKga=OYRw@mail.gmail.com>
-Subject: Re: [RFC-next 0/1] Odroid C2: Enable DVFS for cpu
-To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_062339_345036_0DC16271 
-X-CRM114-Status: GOOD (  28.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191213_062353_270418_FB014B78 
+X-CRM114-Status: GOOD (  47.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (linux.amoon[at]gmail.com)
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,172 +64,402 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-amlogic@lists.infradead.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ linux-acpi@vger.kernel.org, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil
+On Thu, 12 Dec 2019 12:37:48 +0000
+Andrew Murray <andrew.murray@arm.com> wrote:
 
-On Fri, 13 Dec 2019 at 18:54, Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> On 13/12/2019 12:28, Anand Moon wrote:
-> > Hi Martin
-> >
-> > On Fri, 13 Dec 2019 at 01:40, Martin Blumenstingl
-> > <martin.blumenstingl@googlemail.com> wrote:
-> >>
-> >> Hi Neil,
-> >>
-> >> On Wed, Dec 11, 2019 at 9:49 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
-> >>>
-> >>> On 10/12/2019 22:47, Kevin Hilman wrote:
-> >>>> Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
-> >>>>
-> >>>>> On Tue, Dec 10, 2019 at 7:13 PM Kevin Hilman <khilman@baylibre.com> wrote:
-> >>>>>>
-> >>>>>> Anand Moon <linux.amoon@gmail.com> writes:
-> >>>>>>
-> >>>>>>> Hi Neil / Kevin,
-> >>>>>>>
-> >>>>>>> On Tue, 10 Dec 2019 at 14:13, Neil Armstrong <narmstrong@baylibre.com> wrote:
-> >>>>>>>>
-> >>>>>>>> On 09/12/2019 23:12, Kevin Hilman wrote:
-> >>>>>>>>> Anand Moon <linux.amoon@gmail.com> writes:
-> >>>>>>>>>
-> >>>>>>>>>> Some how this patch got lost, so resend this again.
-> >>>>>>>>>>
-> >>>>>>>>>> [0] https://patchwork.kernel.org/patch/11136545/
-> >>>>>>>>>>
-> >>>>>>>>>> This patch enable DVFS on GXBB Odroid C2.
-> >>>>>>>>>>
-> >>>>>>>>>> DVFS has been tested by running the arm64 cpuburn
-> >>>>>>>>>> [1] https://github.com/ssvb/cpuburn-arm/blob/master/cpuburn-a53.S
-> >>>>>>>>>> PM-QA testing
-> >>>>>>>>>> [2] https://git.linaro.org/power/pm-qa.git [cpufreq testcase]
-> >>>>>>>>>>
-> >>>>>>>>>> Tested on latest U-Boot 2019.07-1 (Aug 01 2019 - 23:58:01 +0000) Arch Linux ARM
-> >>>>>>>>>
-> >>>>>>>>> Have you tested with the Harkernel u-boot?
-> >>>>>>>>>
-> >>>>>>>>> Last I remember, enabling CPUfreq will cause system hangs with the
-> >>>>>>>>> Hardkernel u-boot because of improperly enabled frequencies, so I'm not
-> >>>>>>>>> terribly inclined to merge this patch.
-> >>>>>>>
-> >>>>>>> HK u-boot have many issue with loading the kernel, with load address
-> >>>>>>> *it's really hard to build the kernel for HK u-boot*,
-> >>>>>>> to get the configuration correctly.
-> >>>>>>>
-> >>>>>>> Well I have tested with mainline u-boot with latest ATF .
-> >>>>>>> I would prefer mainline u-boot for all the Amlogic SBC, since
-> >>>>>>> they sync with latest driver changes.
-> >>>>>>
-> >>>>>> Yes, we would all prefer mainline u-boot, but the mainline kernel needs
-> >>>>>> to support the vendor u-boot that is shipping with the boards.  So
-> >>>>>> until Hardkernel (and other vendors) switch to mainline u-boot we do not
-> >>>>>> want to have upstream kernel defaults that will not boot with the vendor
-> >>>>>> u-boot.
-> >>>>>>
-> >>>>>> We can always support these features, but they just cannot be enabled
-> >>>>>> by default.
-> >>>>> (I don't have an Odroid-C2 but I'm curious)
-> >>>>> should Anand submit a patch to mainline u-boot instead?
-> >>>>
-> >>>> It would be in addition to $SUBJECT patch, not instead, I think.
-> >>>>
-> >>>>> the &scpi_clocks node could be enabled at runtime by mainline u-boot
-> >>>>
-> >>>> That would work, but I don't know about u-boot maintainers opinions on
-> >>>> this kind of thing, so let's see what Neil thinks.
-> >>>
-> >>> U-Boot doesn't anything to do with SCPI, SCPI discusses directly with the SCP
-> >>> processor, and the CPU clock is set to 1,56GHz by the BL2 boot stage before
-> >>> U-boot starts.
-> >>>
-> >>> The only viable solution I see now is to find if we could add a DT OPP table
-> >>> only for Odroid-C2 dts to bypass the SCPI OPP table.
-> >> my understanding is that mainline u-boot (with whatever SCP firmware
-> >> it uses) provides the *correct* OPP table
-> >
-> > Right now I am not sure how this OPP table is populated.
-> > But I saw the same freq table used in 3.16.x kernel after enable the clk.
-> >
-> >> in this case it would be "safe" to have SCPI enabled with mainline u-boot
-> >> @Anand: please correct me if I misunderstood you
-> >>
-> >
-> > As per my understanding DVFS OPP frequency table for SCPI firmware set
-> > for 1.536 GHz
-> > somewhere in BL2 as pointed by Neil.
-> >
-> > Arm Trusted firmware added new secure SCPI communication with
-> > Cortex-M3 co processor.
-> > [0] https://github.com/ARM-software/arm-trusted-firmware/blob/master/docs/plat/meson-gxbb.rst
-> > [1] https://github.com/ARM-software/arm-trusted-firmware/blob/master/plat/amlogic/common/aml_scpi.c
-> >
-> > ATF generated the *bl1.bin* which is replace the Amlogic's bl1.bin
-> > while preparing
-> > the new u-boot *u-boot.gxbb* image.
-> >
-> >> my idea to "enable SCPI with mainline u-boot" is to have u-boot update
-> >> the "status" property of the scpi_clocks node.
-> >> u-boot does something similar with the mac-address property of the
-> >> Ethernet controller for example.
-> >> as result of this users of mainline u-boot would have working CPU
-> >> DVFS, while users of the old vendor u-boot would run at fixed 1.54GHz.
-> >>
-> >>
-> >> Martin
-> >
-> > Right now as per my understanding 1.536 GHz max is bit under clocked.
-> >
-> > Some time ago on Odroid Forum tried to over clock the cpu to 2GHz.
->
-> This is the point, the Odroid-C2 is *not* stable at 2GHz,
-> a large amount of board doesn't support 2GHz, this is why Amlogic
-> dropped the freq > 1.536 GHz for the GXBB family.
->
-> But HardKernel still delivers the SCPI table with > 1.536 GHz which breaks
-> on most of the boards, but doesn't on 3.14 since they have a hack disabling
-> higher freqs with a cmdline set in boot.ini.
->
-> > [3] https://forum.odroid.com/viewtopic.php?f=139&t=18738
-> > So more investigation need to done in this line.
-> >
-> > I also tried the same with HardKernel Image, with modifying the boot.ini
-> > I could increase the max DVFS cpu frequency to 1.90 GHz,
-> > This is just proof of concept.
-> >
-> > odroid:~# cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
-> > 100000 250000 500000 1000000 1296000 1536000 1656000 1680000 1752000 1896000
-> >
-> > I have some minimal stress testing attached are the results for HK
-> > 3.16.x kernel.
-> >
-> > For now we should not enable this clock.
-> > Until we can possible to check for higher clock frequency to work stable
-> > on all Amlogic S905X SBC.
-> >
-> > I like the Neil's approach to use it's own dts OPP table for SCPI protocol.
->
-> The various tests gave very little perf enhancement by going > 1,536 GHz, seriously
-> it's not worth the pain.
->
-> Neil
->
+Hi Andrew,
 
-Ok Thanks for your expert knowledge.
-I agree with you completely on this to set max freq to 1,536 GHz for
-all S905 SoC.
+> On Mon, Dec 09, 2019 at 04:06:38PM +0000, Andre Przywara wrote:
+> > From: Deepak Pandey <Deepak.Pandey@arm.com>
+> > 
+> > The Arm N1SDP SoC suffers from some PCIe integration issues, most
+> > prominently config space accesses to not existing BDFs being answered
+> > with a bus abort, resulting in an SError.  
+> 
+> It wouldn't be a surprise if the host controller handled UR completions
+> differently depending on if they were in response to a Type 0 configuration
+> request or a Type 1 configuration request. (I think I've seen this before).
 
--Anand
+Yeah, that rings a bell here as well, I remember something with the RK3399 PCIe RC.
+ 
+> Have you verified that you still get a bus abort when you attempt to
+> perform a config read of a non-existent device downstream of the PCIe switch?
+> (and thus as a response to a Type 1 request).
+
+I think I have checked this (please confirm if my experiment is valid): I get SErrors for both probing non-existent devices on bus 0 and other busses.
+
+> I ask because if this is the case, and knowing that the PCIe switch is
+> fixed, then it would be possible to simplify this quirk (by just making
+> assumptions of the presence of devices in bus 0 rather than all the busses).
+
+Yeah, thanks for trying, but no luck here ;-)
+
+> > To mitigate this, the firmware scans the bus before boot (catching the
+> > SErrors) and creates a table with valid BDFs, which acts as a filter for
+> > Linux' config space accesses.
+> > 
+> > Add code consulting the table as an ACPI PCIe quirk, also register the
+> > corresponding device tree based description of the host controller.
+> > Also fix the other two minor issues on the way, namely not being fully
+> > ECAM compliant and config space accesses being restricted to 32-bit
+> > accesses only.
+> > 
+> > This allows the Arm Neoverse N1SDP board to boot Linux without crashing
+> > and to access *any* devices (there are no platform devices except UART).  
+> 
+> This implies that this quirk has no side-effects and everything will work
+> as expected - but this is only true for the simple case. For example hot
+> plug won't work, SR-IOV, and others won't work.
+
+Yeah, good point, I should have mentioned this. This is really a best effort hack^Wworkaround to make the system work as best as possible.
+Yes, SR-IOV won't work. We are about to evaluate our options here, but for now it's just not supported on this system.
+
+I don't think hot plug is of a particular concern here, since the hardware doesn't support physical hot plug. I am not sure if a Thunderbolt add-in card would trigger this problem, but in the worst case it just wouldn't work.
+
+> Also what happens for devices that return CRS? - does this also result in an
+> abort?
+
+I haven't tried, and it looks like it's hard to trigger? But chances are indeed that it could generate SErrors.
+
+> Does that mean that the firmware will consider these devices as not
+> present instead of not ready yet? If this is an issue, then FLR of devices
+> will also create issues (resulting in SErrors for users).
+> 
+> I think it would be helpful to update this commit message to indicate that
+> this makes it work better, but it may be broken in certain ways.
+
+Good point. This is really a pragmatic patch to make the system usable at all.
+
+> > Signed-off-by: Deepak Pandey <Deepak.Pandey@arm.com>
+> > [Sudipto: extend to cover the CCIX root port as well]
+> > Signed-off-by: Sudipto Paul <sudipto.paul@arm.com>
+> > [Andre: fix coding style issues, rewrite some parts, add DT support]
+> > Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> > ---
+> >  arch/arm64/configs/defconfig        |   1 +
+> >  drivers/acpi/pci_mcfg.c             |   7 +
+> >  drivers/pci/controller/Kconfig      |  11 ++
+> >  drivers/pci/controller/Makefile     |   1 +
+> >  drivers/pci/controller/pcie-n1sdp.c | 196 ++++++++++++++++++++++++++++
+> >  include/linux/pci-ecam.h            |   2 +
+> >  6 files changed, 218 insertions(+)
+> >  create mode 100644 drivers/pci/controller/pcie-n1sdp.c
+> > 
+> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > index 6a83ba2aea3e..58124ef5070b 100644
+> > --- a/arch/arm64/configs/defconfig
+> > +++ b/arch/arm64/configs/defconfig
+> > @@ -177,6 +177,7 @@ CONFIG_NET_9P=y
+> >  CONFIG_NET_9P_VIRTIO=y
+> >  CONFIG_PCI=y
+> >  CONFIG_PCIEPORTBUS=y
+> > +CONFIG_PCI_QUIRKS=y
+> >  CONFIG_PCI_IOV=y
+> >  CONFIG_HOTPLUG_PCI=y
+> >  CONFIG_HOTPLUG_PCI_ACPI=y
+> > diff --git a/drivers/acpi/pci_mcfg.c b/drivers/acpi/pci_mcfg.c
+> > index 6b347d9920cc..7a2b41b9ab57 100644
+> > --- a/drivers/acpi/pci_mcfg.c
+> > +++ b/drivers/acpi/pci_mcfg.c
+> > @@ -142,6 +142,13 @@ static struct mcfg_fixup mcfg_quirks[] = {
+> >  	XGENE_V2_ECAM_MCFG(4, 0),
+> >  	XGENE_V2_ECAM_MCFG(4, 1),
+> >  	XGENE_V2_ECAM_MCFG(4, 2),
+> > +
+> > +#define N1SDP_ECAM_MCFG(rev, seg, ops) \
+> > +	{"ARMLTD", "ARMN1SDP", rev, seg, MCFG_BUS_ANY, ops }
+> > +
+> > +	/* N1SDP SoC with v1 PCIe controller */
+> > +	N1SDP_ECAM_MCFG(0x20181101, 0, &pci_n1sdp_pcie_ecam_ops),
+> > +	N1SDP_ECAM_MCFG(0x20181101, 1, &pci_n1sdp_ccix_ecam_ops),
+> >  };
+> >  
+> >  static char mcfg_oem_id[ACPI_OEM_ID_SIZE];
+> > diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+> > index c77069c8ee5d..45700d32f02e 100644
+> > --- a/drivers/pci/controller/Kconfig
+> > +++ b/drivers/pci/controller/Kconfig
+> > @@ -37,6 +37,17 @@ config PCI_FTPCI100
+> >  	depends on OF
+> >  	default ARCH_GEMINI
+> >  
+> > +config PCIE_HOST_N1SDP_ECAM
+> > +	bool "ARM N1SDP PCIe Controller"
+> > +	depends on ARM64
+> > +	depends on OF || (ACPI && PCI_QUIRKS)
+> > +	select PCI_HOST_COMMON
+> > +	default y if ARCH_VEXPRESS
+> > +	help
+> > +	  Say Y here if you want PCIe support for the Arm N1SDP platform.
+> > +	  The controller is ECAM compliant, but needs a quirk to workaround
+> > +	  an integration issue.  
+> 
+> Again - please indicate the scope of support provided.
+> 
+> > +
+> >  config PCI_TEGRA
+> >  	bool "NVIDIA Tegra PCIe controller"
+> >  	depends on ARCH_TEGRA || COMPILE_TEST
+> > diff --git a/drivers/pci/controller/Makefile b/drivers/pci/controller/Makefile
+> > index 3d4f597f15ce..5f47fefbd67d 100644
+> > --- a/drivers/pci/controller/Makefile
+> > +++ b/drivers/pci/controller/Makefile
+> > @@ -28,6 +28,7 @@ obj-$(CONFIG_PCIE_MEDIATEK) += pcie-mediatek.o
+> >  obj-$(CONFIG_PCIE_MOBIVEIL) += pcie-mobiveil.o
+> >  obj-$(CONFIG_PCIE_TANGO_SMP8759) += pcie-tango.o
+> >  obj-$(CONFIG_VMD) += vmd.o
+> > +obj-$(CONFIG_PCIE_HOST_N1SDP_ECAM) += pcie-n1sdp.o
+> >  # pcie-hisi.o quirks are needed even without CONFIG_PCIE_DW
+> >  obj-y				+= dwc/
+> >  
+> > diff --git a/drivers/pci/controller/pcie-n1sdp.c b/drivers/pci/controller/pcie-n1sdp.c
+> > new file mode 100644
+> > index 000000000000..620ab221466c
+> > --- /dev/null
+> > +++ b/drivers/pci/controller/pcie-n1sdp.c
+> > @@ -0,0 +1,196 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright (C) 2018/2019 ARM Ltd.
+> > + *
+> > + * This quirk is to mask the following issues:
+> > + * - PCIE SLVERR: config space accesses to invalid PCIe BDFs cause a bus
+> > + *		  error (signalled as an asynchronous SError)
+> > + * - MCFG BDF mapping: the root complex is mapped separately from the device
+> > + *		       config space
+> > + * - Non 32-bit accesses to config space are not supported.
+> > + *
+> > + * At boot time the SCP board firmware creates a discovery table with
+> > + * the root complex' base address and the valid BDF values, discovered while
+> > + * scanning the config space and catching the SErrors.
+> > + * Linux responds only to the EPs listed in this table, returning NULL  
+> 
+> NIT: it will respond to the switch devices which aren't EPs.
+> 
+> 
+> > + * for the rest.
+> > + */
+> > +
+> > +#include <linux/kernel.h>
+> > +#include <linux/init.h>
+> > +#include <linux/ioport.h>
+> > +#include <linux/sizes.h>
+> > +#include <linux/of_pci.h>
+> > +#include <linux/of.h>
+> > +#include <linux/pci-ecam.h>
+> > +#include <linux/platform_device.h>
+> > +#include <linux/module.h>
+> > +
+> > +/* Platform specific values as hardcoded in the firmware. */
+> > +#define AP_NS_SHARED_MEM_BASE	0x06000000
+> > +#define MAX_SEGMENTS		2		/* Two PCIe root complexes. */
+> > +#define BDF_TABLE_SIZE		SZ_16K
+> > +
+> > +/*
+> > + * Shared memory layout as written by the SCP upon boot time:
+> > + *  ----
+> > + *  Discover data header --> RC base address
+> > + *                       \-> BDF Count
+> > + *  Discover data        --> BDF 0...n
+> > + *  ----
+> > + */
+> > +struct pcie_discovery_data {
+> > +	u32 rc_base_addr;
+> > +	u32 nr_bdfs;
+> > +	u32 valid_bdfs[0];
+> > +} *pcie_discovery_data[MAX_SEGMENTS];
+> > +
+> > +void __iomem *rc_remapped_addr[MAX_SEGMENTS];
+> > +
+> > +/*
+> > + * map_bus() is called before we do a config space access for a certain
+> > + * device. We use this to check whether this device is valid, avoiding
+> > + * config space accesses which would result in an SError otherwise.
+> > + */
+> > +static void __iomem *pci_n1sdp_map_bus(struct pci_bus *bus, unsigned int devfn,
+> > +				       int where)
+> > +{
+> > +	struct pci_config_window *cfg = bus->sysdata;
+> > +	unsigned int devfn_shift = cfg->ops->bus_shift - 8;
+> > +	unsigned int busn = bus->number;
+> > +	unsigned int segment = bus->domain_nr;
+> > +	unsigned int bdf_addr;
+> > +	unsigned int table_count, i;
+> > +
+> > +	if (segment >= MAX_SEGMENTS ||
+> > +	    busn < cfg->busr.start || busn > cfg->busr.end)
+> > +		return NULL;
+> > +
+> > +	/* The PCIe root complex has a separate config space mapping. */
+> > +	if (busn == 0 && devfn == 0)
+> > +		return rc_remapped_addr[segment] + where;
+> > +
+> > +	busn -= cfg->busr.start;
+> > +	bdf_addr = (busn << cfg->ops->bus_shift) + (devfn << devfn_shift);
+> > +	table_count = pcie_discovery_data[segment]->nr_bdfs;
+> > +	for (i = 0; i < table_count; i++) {
+> > +		if (bdf_addr == pcie_discovery_data[segment]->valid_bdfs[i])
+> > +			return pci_ecam_map_bus(bus, devfn, where);
+> > +	}
+> > +
+> > +	return NULL;
+> > +}
+> > +
+> > +static int pci_n1sdp_init(struct pci_config_window *cfg, unsigned int segment)
+> > +{
+> > +	phys_addr_t table_base;
+> > +	struct device *dev = cfg->parent;
+> > +	struct pcie_discovery_data *shared_data;
+> > +	size_t bdfs_size;
+> > +
+> > +	if (segment >= MAX_SEGMENTS)
+> > +		return -ENODEV;
+> > +
+> > +	table_base = AP_NS_SHARED_MEM_BASE + segment * BDF_TABLE_SIZE;  
+> 
+> How can you be sure that this table is populated and isn't junk? I.e. using an older
+> SCP version?
+
+This is just (and always was) part of the firmware. If not, it won't work. Technically we tie this to the DT compatible or the ACPI signature.
+
+> > +
+> > +	if (!request_mem_region(table_base, BDF_TABLE_SIZE,
+> > +				"PCIe valid BDFs")) {
+> > +		dev_err(dev, "PCIe BDF shared region request failed\n");
+> > +		return -ENOMEM;
+> > +	}
+> > +
+> > +	shared_data = devm_ioremap(dev,
+> > +				   table_base, BDF_TABLE_SIZE);
+> > +	if (!shared_data)
+> > +		return -ENOMEM;
+> > +
+> > +	/* Copy the valid BDFs structure to allocated normal memory. */
+> > +	bdfs_size = sizeof(struct pcie_discovery_data) +
+> > +		    sizeof(u32) * shared_data->nr_bdfs;
+> > +	pcie_discovery_data[segment] = devm_kmalloc(dev, bdfs_size, GFP_KERNEL);
+> > +	if (!pcie_discovery_data[segment])
+> > +		return -ENOMEM;
+> > +
+> > +	memcpy_fromio(pcie_discovery_data[segment], shared_data, bdfs_size);
+> > +
+> > +	rc_remapped_addr[segment] = devm_ioremap_nocache(dev,
+> > +						shared_data->rc_base_addr,
+> > +						PCI_CFG_SPACE_EXP_SIZE);
+> > +	if (!rc_remapped_addr[segment]) {
+> > +		dev_err(dev, "Cannot remap root port base\n");
+> > +		return -ENOMEM;
+> > +	}
+> > +
+> > +	devm_iounmap(dev, shared_data);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int pci_n1sdp_pcie_init(struct pci_config_window *cfg)
+> > +{
+> > +	return pci_n1sdp_init(cfg, 0);
+> > +}
+> > +
+> > +static int pci_n1sdp_ccix_init(struct pci_config_window *cfg)
+> > +{
+> > +	return pci_n1sdp_init(cfg, 1);
+> > +}
+> > +
+> > +struct pci_ecam_ops pci_n1sdp_pcie_ecam_ops = {
+> > +	.bus_shift	= 20,
+> > +	.init		= pci_n1sdp_pcie_init,
+> > +	.pci_ops	= {
+> > +		.map_bus        = pci_n1sdp_map_bus,
+> > +		.read           = pci_generic_config_read32,
+> > +		.write          = pci_generic_config_write32,
+> > +	}
+> > +};
+> > +
+> > +struct pci_ecam_ops pci_n1sdp_ccix_ecam_ops = {
+> > +	.bus_shift	= 20,
+> > +	.init		= pci_n1sdp_ccix_init,
+> > +	.pci_ops	= {
+> > +		.map_bus        = pci_n1sdp_map_bus,
+> > +		.read           = pci_generic_config_read32,
+> > +		.write          = pci_generic_config_write32,
+> > +	}
+> > +};
+> > +
+> > +static const struct of_device_id n1sdp_pcie_of_match[] = {
+> > +	{ .compatible = "arm,n1sdp-pcie" },
+> > +	{ },
+> > +};
+> > +MODULE_DEVICE_TABLE(of, n1sdp_pcie_of_match);
+> > +
+> > +static int n1sdp_pcie_probe(struct platform_device *pdev)
+> > +{
+> > +	const struct device_node *of_node = pdev->dev.of_node;
+> > +	u32 segment;
+> > +
+> > +	if (of_property_read_u32(of_node, "linux,pci-domain", &segment)) {
+> > +		dev_err(&pdev->dev, "N1SDP PCI controllers require linux,pci-domain property\n");
+> > +		return -EINVAL;
+> > +	}  
+> 
+> Can you use of_get_pci_domain_nr here?
+
+Ah, indeed. There seems to be an of_... function for everything ;-)
+
+Cheers,
+Andre.
+
+> > +
+> > +	switch (segment) {
+> > +	case 0:
+> > +		return pci_host_common_probe(pdev, &pci_n1sdp_pcie_ecam_ops);
+> > +	case 1:
+> > +		return pci_host_common_probe(pdev, &pci_n1sdp_ccix_ecam_ops);
+> > +	}
+> > +
+> > +	dev_err(&pdev->dev, "Invalid segment number, must be smaller than %d\n",
+> > +		MAX_SEGMENTS);
+> > +
+> > +	return -EINVAL;
+> > +}
+> > +
+> > +static struct platform_driver n1sdp_pcie_driver = {
+> > +	.driver = {
+> > +		.name = KBUILD_MODNAME,
+> > +		.of_match_table = n1sdp_pcie_of_match,
+> > +		.suppress_bind_attrs = true,
+> > +	},
+> > +	.probe = n1sdp_pcie_probe,
+> > +};
+> > +builtin_platform_driver(n1sdp_pcie_driver);
+> > diff --git a/include/linux/pci-ecam.h b/include/linux/pci-ecam.h
+> > index a73164c85e78..03cdea69f4e8 100644
+> > --- a/include/linux/pci-ecam.h
+> > +++ b/include/linux/pci-ecam.h
+> > @@ -57,6 +57,8 @@ extern struct pci_ecam_ops pci_thunder_ecam_ops; /* Cavium ThunderX 1.x */
+> >  extern struct pci_ecam_ops xgene_v1_pcie_ecam_ops; /* APM X-Gene PCIe v1 */
+> >  extern struct pci_ecam_ops xgene_v2_pcie_ecam_ops; /* APM X-Gene PCIe v2.x */
+> >  extern struct pci_ecam_ops al_pcie_ops; /* Amazon Annapurna Labs PCIe */
+> > +extern struct pci_ecam_ops pci_n1sdp_pcie_ecam_ops; /* Arm N1SDP PCIe */
+> > +extern struct pci_ecam_ops pci_n1sdp_ccix_ecam_ops; /* Arm N1SDP PCIe */
+> >  #endif
+> >  
+> >  #ifdef CONFIG_PCI_HOST_COMMON
+> > -- 
+> > 2.17.1
+> >   
+
 
 _______________________________________________
 linux-arm-kernel mailing list
