@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8946E11E7BD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:07:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2ECF711E7BE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:07:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4I8MW0jpnGl6SicA8GMHMIkKzv3W+3+K28S+dOwRcPw=; b=Nlob1bIS/fV1Yh
-	ws1dENAu578MIO+liBe/smE0Gz70uyUOdiN6jDtcMqsTL+USJKh5Ei98YryMZNHSNx9B6cU1CidZ4
-	s9mZZPzsB/bqrrk2ALlZk0YBnlFeZJfYAZn3UwElACoOCU6VMZDVTR8VKf4XIas5CNXXWCTPCD1ce
-	yiTzcggwIFagGBvJnYbUBEG40dQdFZncnRAPygt7+VdNCsgURoyjqqTZCJ2JuSIIH17Fa0w4Twkkp
-	kPLDWH7pRrm/yb7Fyn8BAw8HjdT7k/yGnH88rFwBubQDslEjiGaQXA3B1C7capesgvOBTtaeMRi+a
-	az2b6gUOc/VXcq48dBGA==;
+	List-Owner; bh=ftBq22sP+CKALykOh0ce60lZnqhWbbXadyv/+lUIa0U=; b=JmuI3GVTuR4b/+
+	hvmp0q2Q+OefEpdlP/XaRKamPE7kM+ERUmJUOGDQ7E3dnK140LPoG41R/Ir1y6VHGkUnM6ymc8ysM
+	450iFvY958ppvpAocd9m9DQa1yD0Ij23JrGjiqJZkiQ4vNPILFgFRyoMAtEK+BDLJ1wm2gbdNEhtE
+	kohQRA25f65XUunyBxDcccJg8Y0sHQWV7k2qBNW5l6U9yky7ETQ6YHN7ODKDLMG+/jOlYwZoB4XSP
+	jvKbWtVyyG9tGXNfLEoCDUs0laG9/v7qLiq4cUBLP2+tR0Vj6UtCw3uuAj+yhvitTXnqNopQ/SHqA
+	jB96B2Ut25SidLwgCl6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifnTM-0004re-HB; Fri, 13 Dec 2019 16:07:20 +0000
+	id 1ifnTc-00055x-GS; Fri, 13 Dec 2019 16:07:36 +0000
 Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifnS0-0003iy-6J
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:05:58 +0000
-Received: by mail-yb1-xb43.google.com with SMTP id i72so963494ybg.3
+ id 1ifnS2-0003lH-6B
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:06:01 +0000
+Received: by mail-yb1-xb43.google.com with SMTP id v15so932577ybp.13
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 08:05:55 -0800 (PST)
+ Fri, 13 Dec 2019 08:05:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=PmiKmTwTQ0CJkoTG6PszHCX+iZK7oZLHF5W+m4h4bCQ=;
- b=pDhmaget9UZMaNSsEBxSXNQ00A0aG9sLNvD5tQaF2lcttifPiL88bfjbYQRg82MwkP
- L3F8of4RkLvvx7oK2+c/1Vt7y1wbPGw3G0LeSM2jX9Gp/peLvgpnrF8iWWCxA1Li9lqZ
- oKFfkI5+IcXuro6IkIkc18HzX0fMkKr0yrSINUgSzgVQ8lJS1S1S4oMC6SwQ0pP/dbyQ
- ToCAalYk+hgBA8B7GNOYLbDBJhGFqK79bqFU215XzYAfi/yLzhxcdzzcGUKx0Wt+N63j
- 0FXWHvmNUggzuePqnUdQGhHJ6inQDP+zTWgTKYTzciyoJVxPgkGDAaRaS7ew3/SYrQIL
- +Xtw==
+ bh=GJRp0zVXenPTDOj2+N1sqi3Za0T7/7Gs5s6eak/8py8=;
+ b=Ec532aIIrIGX9CHDUvl5IcrdHxCiDLwypD1lwJOHQfnudfJNrVQhm0VRqk33uIvbUZ
+ IfsDx4LaPg2I8o8xyio8/I+WFUFvWbRf2JqCRfTPCd5qrCsdIBwyM/fynfzhquFv4ztG
+ AiOALw0zBX/LQKYOWPWbLYUCnMZN+IXEKBJxshnWsq3zbM7egHdRk8NdWX8zpLkDrWe6
+ ThP28r9wNqZ+jTkM2YAH/lNrALzSIi9vJr4DT+1yNyOuITm2tMrVU0x3ClgM5/vF/22F
+ ipgAkD4Dw9pijlv75bKIY8j6SGkn1LKHz497g7xNOLnRxKC4M+lY5FSSWP+Cn+seGAif
+ fA7g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=PmiKmTwTQ0CJkoTG6PszHCX+iZK7oZLHF5W+m4h4bCQ=;
- b=M7Q10ayHdryn4LzQyZuBePudG1TSVszA56zugguOxXA81S8sm614OQFa1Sus8Wujcj
- Tp7Ufyl1Mzy2BJt4HmtRZQynGd6rhwZWa6Yhnq7Bhtb4N2X8rVwaGajNTvaVZJLOGZMv
- bRxomjKkHqZe4ruX7vMgGvb73G4fbmmVLl6/qgjgpqVmnALucHgzVCWQ2r3JQW2eiAu0
- /hKOldRSdLXHN+g6ZwtcIbWbHXUss44H4hEgjdv+d5cAznuMCEg30H2MGT6O0KUVUNnG
- 6cB1FV8yvHq9TEAKVCPxRQC58KQ73g+OAfvCo5mHSena8u176L42FALueeb1+p75GJYM
- vhEg==
-X-Gm-Message-State: APjAAAWKr23HyxEGSgIAQZ0si751uimc3HiYDcuWfcU+LZXdXiRDtAhf
- QbVFtU6aQ5Qx4W2nXxwXq8Lk7NuE
-X-Google-Smtp-Source: APXvYqyvMxo0m9J9o7pzqtQ4LDSJYU1J4I8OigUuQ/pFrJPc6HZMKaZZVwpP0Dg4mAOHuGg59i6WEw==
-X-Received: by 2002:a25:4258:: with SMTP id p85mr9366936yba.121.1576253154449; 
- Fri, 13 Dec 2019 08:05:54 -0800 (PST)
+ bh=GJRp0zVXenPTDOj2+N1sqi3Za0T7/7Gs5s6eak/8py8=;
+ b=OayFw6qDUOwKMC30Vwjo+fVnTTAuzYXOZYj3Pe+JPjvIWq586RsQ+lzgUIlaibPfnN
+ fBqRwtnK2QKJrAEBxfrfP9Jdy2IqkApgQ/I8Hop22+IVSjhvGPjF+Yi38tbEaWALus1Y
+ HVeuZanJwbYieGvPLHf7P6B4MixGItCT2iMhs+KbrC2ZvqVxUolhZ1rnmROk9zyw9nc9
+ nkRO2ujc59JZgPl6vT/QElyxvZ6WWA6h8OpCZpzi1fofqSISmRbNYeEB11/viXLxAnZF
+ Ahz4daIQX/AAKKYrG+MXlB/HhZbSupAhtBNlveWbFp0oeAIo20wXVrHRN5H2dARHa4i4
+ Q7Bw==
+X-Gm-Message-State: APjAAAUKJuK5PISMErZsVQPANDHo1cjS9WoSsKqzdGt+n+NWqthWNYqC
+ l7C6X+wXBDDLeggFBeH0SsrKtyYp
+X-Google-Smtp-Source: APXvYqxDaTa5aqCm+chgjHLGW2vqpptGzmRd3EK3DbPOIfwrrTG4NZ2TEJVaHKhObqr7tukwhXUn3Q==
+X-Received: by 2002:a25:abcf:: with SMTP id v73mr9166953ybi.114.1576253156726; 
+ Fri, 13 Dec 2019 08:05:56 -0800 (PST)
 Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
  [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id v38sm3984694ywh.63.2019.12.13.08.05.52
+ by smtp.gmail.com with ESMTPSA id v38sm3984694ywh.63.2019.12.13.08.05.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Dec 2019 08:05:53 -0800 (PST)
+ Fri, 13 Dec 2019 08:05:56 -0800 (PST)
 From: Adam Ford <aford173@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 2/7] soc: imx: gpcv2: Update imx8m-power.h to include iMX8M
- Mini
-Date: Fri, 13 Dec 2019 10:05:37 -0600
-Message-Id: <20191213160542.15757-3-aford173@gmail.com>
+Subject: [PATCH V2 3/7] soc: imx: gpcv2: add support for i.MX8M Mini SoC
+Date: Fri, 13 Dec 2019 10:05:38 -0600
+Message-Id: <20191213160542.15757-4-aford173@gmail.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191213160542.15757-1-aford173@gmail.com>
 References: <20191213160542.15757-1-aford173@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_080556_257925_0B2D50AB 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20191213_080558_376607_EB7A8E5B 
+X-CRM114-Status: GOOD (  13.57  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -114,40 +113,317 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for i.MX8M Mini support in the GPC driver, the
-include file used by both the device tree and the source needs to
-have the appropriate references for it.
+The GPCv2 on the Freescale i.MX8M Mini SoC works in the same way as the
+GPCv2 on the i.MX8MQ, but with slightly different power domains and
+mapping.
+
+This patch adds the necessary tables so the GPC can operate on the
+i.MX8M Mini.
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
 ---
 V2:  No Change
 
- include/dt-bindings/power/imx8m-power.h | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ drivers/soc/imx/gpcv2.c | 244 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 244 insertions(+)
 
-diff --git a/include/dt-bindings/power/imx8m-power.h b/include/dt-bindings/power/imx8m-power.h
-index 8a513bd9166e..0054bba744b8 100644
---- a/include/dt-bindings/power/imx8m-power.h
-+++ b/include/dt-bindings/power/imx8m-power.h
-@@ -18,4 +18,18 @@
- #define IMX8M_POWER_DOMAIN_MIPI_CSI2	9
- #define IMX8M_POWER_DOMAIN_PCIE2	10
+diff --git a/drivers/soc/imx/gpcv2.c b/drivers/soc/imx/gpcv2.c
+index 250f740d2314..52668e985e8e 100644
+--- a/drivers/soc/imx/gpcv2.c
++++ b/drivers/soc/imx/gpcv2.c
+@@ -41,6 +41,20 @@
+ #define IMX8M_PCIE1_A53_DOMAIN			BIT(3)
+ #define IMX8M_MIPI_A53_DOMAIN			BIT(2)
  
-+#define IMX8MM_POWER_DOMAIN_MIPI	0
-+#define IMX8MM_POWER_DOMAIN_PCIE	1
-+#define IMX8MM_POWER_DOMAIN_USB_OTG1	2
-+#define IMX8MM_POWER_DOMAIN_USB_OTG2	3
-+#define IMX8MM_POWER_DOMAIN_DDR1	4
-+#define IMX8MM_POWER_DOMAIN_GPU2D	5
-+#define IMX8MM_POWER_DOMAIN_GPU	6
-+#define IMX8MM_POWER_DOMAIN_VPU	7
-+#define IMX8MM_POWER_DOMAIN_GPU3D	8
-+#define IMX8MM_POWER_DOMAIN_DISP	9
-+#define IMX8MM_POWER_VPU_G1		10
-+#define IMX8MM_POWER_VPU_G2		11
-+#define IMX8MM_POWER_VPU_H1		12
++#define IMX8MM_VPU_H1_A53_DOMAIN		BIT(15)
++#define IMX8MM_VPU_G2_A53_DOMAIN		BIT(14)
++#define IMX8MM_VPU_G1_A53_DOMAIN		BIT(13)
++#define IMX8MM_DISP_MIX_A53_DOMAIN		BIT(12)
++#define IMX8MM_GPU_3D_A53_DOMAIN		BIT(11)
++#define IMX8MM_VPUMIX_A53_DOMAIN		BIT(10)
++#define IMX8MM_GPUMIX_A53_DOMAIN		BIT(9)
++#define IMX8MM_GPU_2D_A53_DOMAIN		BIT(8)
++#define IMX8MM_DDR1_A53_DOMAIN			BIT(7)
++#define IMX8MM_OTG2_A53_DOMAIN			BIT(5)
++#define IMX8MM_OTG1_A53_DOMAIN			BIT(4)
++#define IMX8MM_PCIE_A53_DOMAIN			BIT(3)
++#define IMX8MM_MIPI_A53_DOMAIN			BIT(2)
 +
- #endif
+ #define GPC_PU_PGC_SW_PUP_REQ		0x0f8
+ #define GPC_PU_PGC_SW_PDN_REQ		0x104
+ 
+@@ -64,6 +78,20 @@
+ #define IMX8M_PCIE1_SW_Pxx_REQ			BIT(1)
+ #define IMX8M_MIPI_SW_Pxx_REQ			BIT(0)
+ 
++#define IMX8MM_VPU_H1_SW_Pxx_REQ		BIT(13)
++#define IMX8MM_VPU_G2_SW_Pxx_REQ		BIT(12)
++#define IMX8MM_VPU_G1_SW_Pxx_REQ		BIT(11)
++#define IMX8MM_DISP_SW_Pxx_REQ			BIT(10)
++#define IMX8MM_GPU_3D_SW_Pxx_REQ		BIT(9)
++#define IMX8MM_VPU_SW_Pxx_REQ			BIT(8)
++#define IMX8MM_GPU_SW_Pxx_REQ			BIT(7)
++#define IMX8MM_GPU_2D_SW_PXX_REQ		BIT(6)
++#define IMX8MM_DDR1_SW_Pxx_REQ			BIT(5)
++#define IMX8MM_OTG2_SW_Pxx_REQ			BIT(3)
++#define IMX8MM_OTG1_SW_Pxx_REQ			BIT(2)
++#define IMX8MM_PCIE_SW_Pxx_REQ			BIT(1)
++#define IMX8MM_MIPI_SW_Pxx_REQ			BIT(0)
++
+ #define GPC_M4_PU_PDN_FLG		0x1bc
+ 
+ #define GPC_PU_PWRHSK			0x1fc
+@@ -72,6 +100,10 @@
+ #define IMX8M_VPU_HSK_PWRDNREQN			BIT(5)
+ #define IMX8M_DISP_HSK_PWRDNREQN		BIT(4)
+ 
++#define IMX8MM_GPU_HSK_PWRDNREQN		BIT(9)
++#define IMX8MM_VPU_HSK_PWRDNREQN		BIT(8)
++#define IMX8MM_DISP_HSK_PWRDNREQN		BIT(7)
++
+ /*
+  * The PGC offset values in Reference Manual
+  * (Rev. 1, 01/2018 and the older ones) GPC chapter's
+@@ -94,6 +126,24 @@
+ #define IMX8M_PGC_MIPI_CSI2		28
+ #define IMX8M_PGC_PCIE2			29
+ 
++/*
++ * Taken from i.MX8M Mini values from Reference
++ * Manual, Rev. 2, 08/2019
++ */
++#define IMX8MM_PGC_MIPI			16
++#define IMX8MM_PGC_PCIE			17
++#define IMX8MM_PGC_OTG1			18
++#define IMX8MM_PGC_OTG2			19
++#define IMX8MM_PGC_DDR1			21
++#define IMX8MM_PGC_GPU2D		22
++#define IMX8MM_PGC_GPU			23
++#define IMX8MM_PGC_VPU			24
++#define IMX8MM_PGC_GPU3D		25
++#define IMX8MM_PGC_DISP			26
++#define IMX8MM_PGC_VPU_G1		27
++#define IMX8MM_PGC_VPU_G2		28
++#define IMX8MM_PGC_VPU_H1		29
++
+ #define GPC_PGC_CTRL(n)			(0x800 + (n) * 0x40)
+ #define GPC_PGC_SR(n)			(GPC_PGC_CTRL(n) + 0xc)
+ 
+@@ -278,6 +328,7 @@ static const struct imx_pgc_domain_data imx7_pgc_domain_data = {
+ 	.reg_access_table = &imx7_access_table,
+ };
+ 
++/* i.MX8M dual/QuadLite/Quad */
+ static const struct imx_pgc_domain imx8m_pgc_domains[] = {
+ 	[IMX8M_POWER_DOMAIN_MIPI] = {
+ 		.genpd = {
+@@ -442,6 +493,198 @@ static const struct imx_pgc_domain_data imx8m_pgc_domain_data = {
+ 	.reg_access_table = &imx8m_access_table,
+ };
+ 
++/* i.MX8M Mini */
++static const struct imx_pgc_domain imx8mm_pgc_domains[] = {
++	[IMX8MM_POWER_DOMAIN_MIPI] = {
++		.genpd = {
++			.name      = "mipi",
++		},
++		.bits  = {
++			.pxx = IMX8MM_MIPI_SW_Pxx_REQ,
++			.map = IMX8MM_MIPI_A53_DOMAIN,
++		},
++		.pgc	   = IMX8M_PGC_MIPI,
++	},
++
++	[IMX8MM_POWER_DOMAIN_PCIE] = {
++		.genpd = {
++			.name = "pcie1",
++		},
++		.bits  = {
++			.pxx = IMX8MM_PCIE_SW_Pxx_REQ,
++			.map = IMX8MM_PCIE_A53_DOMAIN,
++		},
++		.pgc   = IMX8MM_PGC_PCIE,
++	},
++
++	[IMX8MM_POWER_DOMAIN_USB_OTG1] = {
++		.genpd = {
++			.name = "usb-otg1",
++		},
++		.bits  = {
++			.pxx = IMX8MM_OTG1_SW_Pxx_REQ,
++			.map = IMX8MM_OTG1_A53_DOMAIN,
++		},
++		.pgc   = IMX8M_PGC_OTG1,
++	},
++
++	[IMX8MM_POWER_DOMAIN_USB_OTG2] = {
++		.genpd = {
++			.name = "usb-otg2",
++		},
++		.bits  = {
++			.pxx = IMX8MM_OTG2_SW_Pxx_REQ,
++			.map = IMX8MM_OTG2_A53_DOMAIN,
++		},
++		.pgc   = IMX8M_PGC_OTG2,
++	},
++
++	[IMX8MM_POWER_DOMAIN_DDR1] = {
++		.genpd = {
++			.name = "ddr1",
++		},
++		.bits  = {
++			.pxx = IMX8MM_DDR1_SW_Pxx_REQ,
++			.map = IMX8MM_DDR1_A53_DOMAIN,
++		},
++		.pgc   = IMX8M_PGC_DDR1,
++	},
++
++	[IMX8MM_POWER_DOMAIN_GPU2D] = {
++		.genpd = {
++			.name = "gpu2d",
++		},
++		.bits  = {
++			.pxx = IMX8MM_GPU_2D_SW_PXX_REQ,
++			.map = IMX8MM_GPU_2D_A53_DOMAIN,
++			.hsk = IMX8MM_GPU_HSK_PWRDNREQN,
++		},
++		.pgc   = IMX8MM_PGC_GPU2D,
++	},
++
++
++	[IMX8MM_POWER_DOMAIN_GPU] = {
++		.genpd = {
++			.name = "gpu",
++		},
++		.bits  = {
++			.pxx = IMX8MM_GPU_SW_Pxx_REQ,
++			.map = IMX8MM_GPUMIX_A53_DOMAIN,
++			.hsk = IMX8MM_GPU_HSK_PWRDNREQN,
++		},
++		.pgc   = IMX8M_PGC_GPU,
++	},
++
++	[IMX8MM_POWER_DOMAIN_VPU] = {
++		.genpd = {
++			.name = "vpu",
++		},
++		.bits  = {
++			.pxx = IMX8MM_VPU_SW_Pxx_REQ,
++			.map = IMX8MM_VPUMIX_A53_DOMAIN,
++			.hsk = IMX8MM_VPU_HSK_PWRDNREQN,
++		},
++		.pgc   = IMX8M_PGC_VPU,
++	},
++
++	[IMX8MM_POWER_DOMAIN_GPU3D] = {
++		.genpd = {
++			.name = "gpu3d",
++		},
++		.bits  = {
++			.pxx = IMX8MM_GPU_3D_SW_Pxx_REQ,
++			.map = IMX8MM_GPU_3D_A53_DOMAIN,
++			.hsk = IMX8MM_GPU_HSK_PWRDNREQN,
++		},
++		.pgc   = IMX8MM_PGC_GPU2D,
++	},
++
++	[IMX8MM_POWER_DOMAIN_DISP] = {
++		.genpd = {
++			.name = "disp",
++		},
++		.bits  = {
++			.pxx = IMX8MM_DISP_SW_Pxx_REQ,
++			.map = IMX8MM_DISP_MIX_A53_DOMAIN,
++			.hsk = IMX8MM_DISP_HSK_PWRDNREQN,
++		},
++		.pgc   = IMX8M_PGC_DISP,
++	},
++
++	[IMX8MM_POWER_VPU_G1] = {
++		.genpd = {
++			.name = "vpu_g1",
++		},
++		.bits  = {
++			.pxx = IMX8MM_VPU_G1_SW_Pxx_REQ,
++			.map = IMX8MM_VPU_G1_A53_DOMAIN,
++		},
++		.pgc   = IMX8M_PGC_MIPI_CSI1,
++	},
++
++	[IMX8MM_POWER_VPU_G2] = {
++		.genpd = {
++			.name = "vpu_g2",
++		},
++		.bits  = {
++			.pxx = IMX8MM_VPU_G2_SW_Pxx_REQ,
++			.map = IMX8MM_VPU_G2_A53_DOMAIN,
++		},
++		.pgc   = IMX8M_PGC_MIPI_CSI2,
++	},
++
++	[IMX8MM_POWER_VPU_H1] = {
++		.genpd = {
++			.name = "vpu_h1",
++		},
++		.bits  = {
++			.pxx = IMX8MM_VPU_H1_SW_Pxx_REQ,
++			.map = IMX8MM_VPU_H1_A53_DOMAIN,
++		},
++		.pgc   = IMX8M_PGC_PCIE2,
++	},
++};
++
++static const struct regmap_range imx8mm_yes_ranges[] = {
++		regmap_reg_range(GPC_LPCR_A_CORE_BSC,
++				 GPC_PU_PWRHSK),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_MIPI),
++				 GPC_PGC_SR(IMX8MM_PGC_MIPI)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_PCIE),
++				 GPC_PGC_SR(IMX8MM_PGC_PCIE)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_OTG1),
++				 GPC_PGC_SR(IMX8MM_PGC_OTG1)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_OTG2),
++				 GPC_PGC_SR(IMX8MM_PGC_OTG2)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_DDR1),
++				 GPC_PGC_SR(IMX8MM_PGC_DDR1)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_GPU2D),
++				 GPC_PGC_SR(IMX8MM_PGC_GPU2D)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_GPU),
++				 GPC_PGC_SR(IMX8MM_PGC_GPU)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_VPU),
++				 GPC_PGC_SR(IMX8MM_PGC_VPU)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_DISP),
++				 GPC_PGC_SR(IMX8MM_PGC_DISP)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_VPU_G1),
++				 GPC_PGC_SR(IMX8MM_PGC_VPU_G1)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_VPU_G2),
++				 GPC_PGC_SR(IMX8MM_PGC_VPU_G2)),
++		regmap_reg_range(GPC_PGC_CTRL(IMX8MM_PGC_VPU_H1),
++				 GPC_PGC_SR(IMX8MM_PGC_VPU_H1)),
++};
++
++static const struct regmap_access_table imx8mm_access_table = {
++	.yes_ranges	= imx8mm_yes_ranges,
++	.n_yes_ranges	= ARRAY_SIZE(imx8mm_yes_ranges),
++};
++
++static const struct imx_pgc_domain_data imx8mm_pgc_domain_data = {
++	.domains = imx8mm_pgc_domains,
++	.domains_num = ARRAY_SIZE(imx8mm_pgc_domains),
++	.reg_access_table = &imx8mm_access_table,
++};
++
+ static int imx_pgc_get_clocks(struct imx_pgc_domain *domain)
+ {
+ 	int i, ret;
+@@ -641,6 +884,7 @@ static int imx_gpcv2_probe(struct platform_device *pdev)
+ static const struct of_device_id imx_gpcv2_dt_ids[] = {
+ 	{ .compatible = "fsl,imx7d-gpc", .data = &imx7_pgc_domain_data, },
+ 	{ .compatible = "fsl,imx8mq-gpc", .data = &imx8m_pgc_domain_data, },
++	{ .compatible = "fsl,imx8mm-gpc", .data = &imx8mm_pgc_domain_data, },
+ 	{ }
+ };
+ 
 -- 
 2.20.1
 
