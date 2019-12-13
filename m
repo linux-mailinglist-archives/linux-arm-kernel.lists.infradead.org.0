@@ -2,50 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7178D11E86F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:36:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C7F111E8A4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:45:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=okgiYvISW4v/9CCILN4pyGY2kTX66N4PWQBP0gXSfyM=; b=AevKkqRh2AhimZ
-	Z7ckxLIor1HtHCZZP+K9287wXnqxaVynCIEbpLIp4bWxscue7wwkA8XX0VbeGLmJ3ZTU3x+75vc3I
-	DIabyOj/61s+wYZN4xAGh12JjEcZE1b4NWduBvWoDlGIi5Vz1DcvGMtwC0uzb2O12mUkRpYIwyKx1
-	0pua7+t1jowxXHmOusAdUzFyqp5w7YJEtVw3ecndXJNImrkzta30WOwwkFcbuTB+p2M1F8aWvy47X
-	b5V6Ml7nCwFiLOJLOkHfJgI/qHtJxg5hpM2OchF/O/bvVvv90n7uxw4sk7794TWIdItLXDa4wTXMg
-	ScIP2d0ZjULGqxzRiQiQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9Os+zDRYI2FfwfynBcC7tnU7+PA10eekGxedS7vrGH0=; b=OWsepeGaoQt4Jm
+	hBak2q4Wea39Aq2nANWqWjXzeX6vNjXcWpn6FCFIFgIc7P/jig2U8akQiEpSRjaxP0xIsYcwGGSWl
+	LROnk0TvmadX4s95ML56sAfAf47f9+mskhe1KsG+nze4ONcFNUl4lz18UL2ut1eHg+oNtOA5yHxAE
+	h+U/YOv2duHl/V35qiNjbINBtnLMQTG3RsYJ+Du2GQzBTmEeu6JMrmydHi8KrrfKPhKxRx8nEfHyK
+	EVpCoiqBp9CO4Qj2Yy/i++Qt6CDDBlvQsnbRHTa0v1n8tj+UB7T7PVlQm/tCVf+OHrYJ0cwQpo2Po
+	JHimdGhLBFcIJrbXVccQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifnv6-00034C-T2; Fri, 13 Dec 2019 16:36:00 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifnuz-00033g-LS
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:35:54 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 615408186;
- Fri, 13 Dec 2019 16:36:29 +0000 (UTC)
-From: Tony Lindgren <tony@atomide.com>
-To: soc@kernel.org
-Subject: [GIT PULL] omap fixes for v5.5-rc cycle
-Date: Fri, 13 Dec 2019 08:35:40 -0800
-Message-Id: <pull-1576254925-709310@atomide.com>
-X-Mailer: git-send-email 2.24.1
+	id 1ifo4M-000778-1k; Fri, 13 Dec 2019 16:45:34 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifo4A-0006lj-HC
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:45:24 +0000
+Received: from lhreml703-cah.china.huawei.com (unknown [172.18.7.107])
+ by Forcepoint Email with ESMTP id D295B1175F5A999CD297;
+ Fri, 13 Dec 2019 16:45:10 +0000 (GMT)
+Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
+ lhreml703-cah.china.huawei.com (10.201.108.44) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Fri, 13 Dec 2019 16:45:10 +0000
+Received: from localhost (10.202.226.57) by lhreml710-chm.china.huawei.com
+ (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Fri, 13 Dec
+ 2019 16:45:10 +0000
+Date: Fri, 13 Dec 2019 16:45:08 +0000
+From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH v3 01/13] iommu/arm-smmu-v3: Drop __GFP_ZERO flag from
+ DMA allocation
+Message-ID: <20191213164508.00001f99@Huawei.com>
+In-Reply-To: <20191209180514.272727-2-jean-philippe@linaro.org>
+References: <20191209180514.272727-1-jean-philippe@linaro.org>
+ <20191209180514.272727-2-jean-philippe@linaro.org>
+Organization: Huawei Technologies Research and Development (UK) Ltd.
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
+X-Originating-IP: [10.202.226.57]
+X-ClientProxiedBy: lhreml721-chm.china.huawei.com (10.201.108.72) To
+ lhreml710-chm.china.huawei.com (10.201.108.61)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_083553_746669_32441AEA 
-X-CRM114-Status: UNSURE (   9.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191213_084522_721731_83199521 
+X-CRM114-Status: GOOD (  14.35  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,69 +72,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
- arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ eric.auger@redhat.com, linux-pci@vger.kernel.org, joro@8bytes.org,
+ sudeep.holla@arm.com, rjw@rjwysocki.net, robin.murphy@arm.com,
+ linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
+ robh+dt@kernel.org, guohanjun@huawei.com, bhelgaas@google.com,
+ zhangfei.gao@linaro.org, will@kernel.org, linux-arm-kernel@lists.infradead.org,
+ lenb@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Tony Lindgren" <tony@atomide.com>
+On Mon, 9 Dec 2019 19:05:02 +0100
+Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
 
-The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+> Since commit 518a2f1925c3 ("dma-mapping: zero memory returned from
+> dma_alloc_*"), dma_alloc_* always initializes memory to zero, so there
+> is no need to use dma_zalloc_* or pass the __GFP_ZERO flag anymore.
+> 
+> The flag was introduced by commit 04fa26c71be5 ("iommu/arm-smmu: Convert
+> DMA buffer allocations to the managed API"), since the managed API
+> didn't provide a dmam_zalloc_coherent() function.
+> 
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
 
-  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+Good to tidy these up whilst we are here.
 
-are available in the Git repository at:
+Jonathan
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.5/fixes-rc1-signed
+> ---
+>  drivers/iommu/arm-smmu-v3.c | 9 ++++-----
+>  1 file changed, 4 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index effe72eb89e7..d4e8b7f8d9f4 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -1675,7 +1675,7 @@ static int arm_smmu_init_l2_strtab(struct arm_smmu_device *smmu, u32 sid)
+>  
+>  	desc->span = STRTAB_SPLIT + 1;
+>  	desc->l2ptr = dmam_alloc_coherent(smmu->dev, size, &desc->l2ptr_dma,
+> -					  GFP_KERNEL | __GFP_ZERO);
+> +					  GFP_KERNEL);
+>  	if (!desc->l2ptr) {
+>  		dev_err(smmu->dev,
+>  			"failed to allocate l2 stream table for SID %u\n",
+> @@ -2161,8 +2161,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
+>  		return asid;
+>  
+>  	cfg->cdptr = dmam_alloc_coherent(smmu->dev, CTXDESC_CD_DWORDS << 3,
+> -					 &cfg->cdptr_dma,
+> -					 GFP_KERNEL | __GFP_ZERO);
+> +					 &cfg->cdptr_dma, GFP_KERNEL);
+>  	if (!cfg->cdptr) {
+>  		dev_warn(smmu->dev, "failed to allocate context descriptor\n");
+>  		ret = -ENOMEM;
+> @@ -2883,7 +2882,7 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
+>  
+>  	l1size = cfg->num_l1_ents * (STRTAB_L1_DESC_DWORDS << 3);
+>  	strtab = dmam_alloc_coherent(smmu->dev, l1size, &cfg->strtab_dma,
+> -				     GFP_KERNEL | __GFP_ZERO);
+> +				     GFP_KERNEL);
+>  	if (!strtab) {
+>  		dev_err(smmu->dev,
+>  			"failed to allocate l1 stream table (%u bytes)\n",
+> @@ -2910,7 +2909,7 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
+>  
+>  	size = (1 << smmu->sid_bits) * (STRTAB_STE_DWORDS << 3);
+>  	strtab = dmam_alloc_coherent(smmu->dev, size, &cfg->strtab_dma,
+> -				     GFP_KERNEL | __GFP_ZERO);
+> +				     GFP_KERNEL);
+>  	if (!strtab) {
+>  		dev_err(smmu->dev,
+>  			"failed to allocate linear stream table (%u bytes)\n",
 
-for you to fetch changes up to e709ed70d122e94cb426b1e1f905829eae19a009:
 
-  bus: ti-sysc: Fix missing reset delay handling (2019-12-12 08:20:10 -0800)
-
-----------------------------------------------------------------
-Fixes for omap variants for v5.5-rc1 cycle
-
-This series of changes contains fixes for issues recently noticed:
-
-- The ti-sysc interconnect target module driver needs fixes for
-  mstandby quirk handling and reset delay
-
-- We need to configure am335x-sancloud-bbe to use rgmii-id mode because of
-  the phy changes done earlier
-
-- NET_SWITCHDEV is no longer selected in Kconfig but a dependency and we
-  must enable CONFIG_NET_SWITCHDEV to have TI_CPSW_SWITCHDEV
-
-- We are still relying on DEBUG_FS at least for PM configuration, let's
-  add it back
-
-- We need to update compatible for am437x-gp/epos-evm because of the
-  recent changes to use generic panels
-
-----------------------------------------------------------------
-Grygorii Strashko (1):
-      ARM: omap2plus_defconfig: enable NET_SWITCHDEV
-
-Mans Rullgard (1):
-      ARM: dts: am335x-sancloud-bbe: fix phy mode
-
-Tomi Valkeinen (1):
-      ARM: dts: am437x-gp/epos-evm: fix panel compatible
-
-Tony Lindgren (3):
-      bus: ti-sysc: Fix missing force mstandby quirk handling
-      ARM: omap2plus_defconfig: Add back DEBUG_FS
-      bus: ti-sysc: Fix missing reset delay handling
-
- arch/arm/boot/dts/am335x-sancloud-bbe.dts | 2 +-
- arch/arm/boot/dts/am437x-gp-evm.dts       | 2 +-
- arch/arm/boot/dts/am43x-epos-evm.dts      | 2 +-
- arch/arm/configs/omap2plus_defconfig      | 4 +++-
- drivers/bus/ti-sysc.c                     | 7 ++++++-
- include/linux/platform_data/ti-sysc.h     | 1 +
- 6 files changed, 13 insertions(+), 5 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
