@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFF3511EBF8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 21:41:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B54A911EC0F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 21:51:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fyFrndCT84LdmtU/I8fDeKr1szTFw0zcesvxm4YbJMc=; b=bBsupVKCvBw0Os
-	1yzv9rczqRemNzuJOre+Oltm69CeGBCOBTyYPPwgRoqHr2FlvbOf7JE52QeHuxH3IHcoa3yF1cuql
-	9zTDYR5Q8/8/8UdaC2ik1D8iC3KMh6kBDx3WhRQa9Vl3JN/bDbjOKaE1YsNofxcVptYRpgSvhEPPh
-	BF7WqvZRuBgRAorvZ9/ogC3YwI8Gz+ztzQuu7XWU2GTAPZ1fhRHooHs8eJrs+R+XXqGU9gMbmt6Mx
-	6oERpjo0Mg4FUvez00J5TF5lMmIAaTiPcgNKreyWrLkH8q6Jizal1tsfkuEuu80hSpSa7DxwLgTj3
-	ZvzBBd0TZpDzEHaspdCg==;
+	List-Owner; bh=PLnPYzue1KHaJVE/mmyEK6q0v9K/kE72uTH6aP4/MC8=; b=AwYmVMeNvfOpwM
+	x8D9ed/mAfajSvSahLPh1kHrmZprzIPttvTQWjdL5UV6WQ/5WondZ0h0CJhvmz9E3Ur4Et6SN8k0P
+	6zPWMtac6Tfwn0QUZAsD+v8c0AXajw+wGyuXGQ/4SYZ2wQIjcV6VjoEZ1iOZNwUCouPHdNji+OWOI
+	Ga6v+eo0WYfLnBqxMCxpr22m7bhnUgdHXFyquTlYsyH3NsUKUzxwgXN3y5nr9qwysfZwkjNfONXPt
+	ZRHR1/vgeDl+DKG6nGTK5k952OiPxfblnhg3xAHsa5U1al5JRCobAHKuJMOzbMLyIjUUU+xw0orQh
+	motGGs1woSCWpzdbmfPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifrki-0005YS-KJ; Fri, 13 Dec 2019 20:41:32 +0000
+	id 1ifru3-00009B-1a; Fri, 13 Dec 2019 20:51:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifrka-0005XN-Hf; Fri, 13 Dec 2019 20:41:27 +0000
-Received: from mail-qk1-f182.google.com (mail-qk1-f182.google.com
- [209.85.222.182])
+ id 1ifrtv-00008s-LI
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 20:51:05 +0000
+Received: from mail-qv1-f49.google.com (mail-qv1-f49.google.com
+ [209.85.219.49])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1B06324712;
- Fri, 13 Dec 2019 20:41:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7E04624689
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Dec 2019 20:51:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576269683;
- bh=TD0vlyaaEUltY3uhgJ1XIdZNPofDo4T5Xxo/vcYOCwY=;
+ s=default; t=1576270262;
+ bh=+dKkT9qss0TqkoVOkTkEq+PspUmRCwAnZfc5MFA4ENA=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=HlfwTnErUlECUKC8DbLDmiSp9ER8lm5MlUc4wAmhZAfxb80fNIgxtpMQLHBhIf2BD
- PhdWD0Nla1HEuWbkUx53pMHtpsBhP/isjIDZyCnhoB75dQIZpDSkGQdUFz6seFiqsA
- VcFTdm5rezIYZHYv7FrNXantiQ1m6HoYtrikD1XA=
-Received: by mail-qk1-f182.google.com with SMTP id z76so330337qka.2;
- Fri, 13 Dec 2019 12:41:23 -0800 (PST)
-X-Gm-Message-State: APjAAAVDa8CMFmVuzv1SVzDc/PxEWFXdzVvjVZP4AkRjczUFiGT6ihNP
- me9Jat6ux7mcCfyAoi941SbUbssUVZcTIcbroA==
-X-Google-Smtp-Source: APXvYqxkbISqK9twnzzbDp0Ep4niiepgzIHARDF7yBHJmpY5klt6cp3Cad6Ltt+c1NvlrxmDe5/mRhj5K2wE2GoSEAU=
-X-Received: by 2002:a37:85c4:: with SMTP id
- h187mr14127413qkd.223.1576249641042; 
- Fri, 13 Dec 2019 07:07:21 -0800 (PST)
+ b=W/zY2QBDNrZoAyQi2h9xiIIpG5KVH+26UxJbi+0i/S/DJugOQcg7XK787XAVmZKgb
+ IpTDpnRyffCD+2nB2CefjCV3/FoznaFUd7SFP42sh0F4Lr/G/zFQNwQLKmDL9Z8CAJ
+ f0/jCj5vjNzOvzD8jTcxFgWnTgVpYvFCOlQC8aZA=
+Received: by mail-qv1-f49.google.com with SMTP id n8so279130qvg.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Dec 2019 12:51:03 -0800 (PST)
+X-Gm-Message-State: APjAAAU2zZGCsUbGDhPpbw5w35F8P/tIHE2QqWNCvuixf2HcyiMeirb4
+ 5euWqumCi7UHON7Q6CrpYNrdloGph4qVZDzj0g==
+X-Google-Smtp-Source: APXvYqyB90WtC9yvdYd6CmgFqz44rFwwJP+EgXqkcen8gQAUWJSXIFADvOtFxe2f6ycbB1XDnFfJpLpI9ICEyUjapLU=
+X-Received: by 2002:a0c:f68f:: with SMTP id p15mr13564621qvn.79.1576250763417; 
+ Fri, 13 Dec 2019 07:26:03 -0800 (PST)
 MIME-Version: 1.0
-References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <20191213084748.11210-4-prabhakar.mahadev-lad.rj@bp.renesas.com>
+References: <20191213074055.26193-1-maxime@cerno.tech>
+In-Reply-To: <20191213074055.26193-1-maxime@cerno.tech>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 13 Dec 2019 09:07:07 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLSYroDZGWksJJ=E+01X=3Tji4+GmK8s3i+d2BJphqiLQ@mail.gmail.com>
-Message-ID: <CAL_JsqLSYroDZGWksJJ=E+01X=3Tji4+GmK8s3i+d2BJphqiLQ@mail.gmail.com>
-Subject: Re: [v2 3/6] of: address: add support to parse PCI outbound-ranges
-To: Lad Prabhakar <prabhakar.csengg@gmail.com>
+Date: Fri, 13 Dec 2019 09:25:51 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLxGe9sWrTdZhuT69o_LBxQTi6TxcbT28WdC1gsPw5+fQ@mail.gmail.com>
+Message-ID: <CAL_JsqLxGe9sWrTdZhuT69o_LBxQTi6TxcbT28WdC1gsPw5+fQ@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: media: Convert Allwinner hardware codec to a
+ schema
+To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_124124_605204_658215BC 
-X-CRM114-Status: GOOD (  12.24  )
+X-CRM114-CacheID: sfid-20191213_125103_721663_341FD091 
+X-CRM114-Status: GOOD (  17.11  )
 X-Spam-Score: -4.1 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-4.1 points)
@@ -85,49 +87,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>, PCI <linux-pci@vger.kernel.org>,
- Shawn Lin <shawn.lin@rock-chips.com>, Frank Rowand <frowand.list@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
- Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, devicetree@vger.kernel.org,
- Chris Paterson <Chris.Paterson2@renesas.com>, Arnd Bergmann <arnd@arndb.de>,
- "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:MEDIA DRIVERS FOR RENESAS - FCP"
- <linux-renesas-soc@vger.kernel.org>, Tom Joseph <tjoseph@cadence.com>,
- Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 13, 2019 at 2:48 AM Lad Prabhakar
-<prabhakar.csengg@gmail.com> wrote:
+On Fri, Dec 13, 2019 at 1:41 AM Maxime Ripard <maxime@cerno.tech> wrote:
 >
-> From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> The Allwinner SoCs have a hardware video codec that is supported in Linux,
+> with a matching Device Tree binding.
 >
-> this patch adds support to parse PCI outbound-ranges, the
-> outbound-regions are similar to pci ranges except it doesn't
-> have pci address, below is the format for bar-ranges:
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
 >
-> outbound-ranges = <flags upper32_cpuaddr lower32_cpuaddr
->                    upper32_size lower32_size>;
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> ---
+>  .../allwinner,sun4i-a10-video-engine.yaml     | 83 +++++++++++++++++++
+>  .../devicetree/bindings/media/cedrus.txt      | 57 -------------
+>  2 files changed, 83 insertions(+), 57 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/media/cedrus.txt
+>
+> diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml
+> new file mode 100644
+> index 000000000000..47c8513555b2
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml
+> @@ -0,0 +1,83 @@
+> +# SPDX-License-Identifier: GPL-2.0+
 
-You can't just make up a new ranges property. Especially one that
-doesn't follow how 'ranges' works. We already have 'dma-ranges' to
-translate device to memory addresses.
-
-Explain the problem or feature you need, not the solution you came up
-with. Why do you need this and other endpoint bindings haven't?
+Do you have rights to change the license (adding '+' aka '-or-later')?
+If so, please add BSD-2-Clause. I don't have any other comments, so
+just confirm and I can change it when applying.
 
 Rob
 
