@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F84411DECD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 08:44:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A242211DED0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 08:45:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=31F0gDg79GRiRuNHOCytkhuf2cRx1NXs4escZP6gjLw=; b=h9IB55k2cY6h/f
-	W6E20bEnx0im7CdkyreASzk+KLngLK3ojCgyh8cEkAZIoGtvF8M1P16DqnukG7wHHNPUAxesH+97l
-	5e5mVh21KhFz3G2gNF+BQaHT46SOdK6YBGnAxtckuS8HY8NtzUqYe80VrOfDo4JlUFIJWVFlsuP5l
-	mYhIzFvud7UrZFILVIyf+VHZpZOHfNFKQ4AbRhY71G6DFtt90p02S+5zACgrDsCXVmi99geISCgA+
-	6FHo8WwnmsbLKo7Kcn5gzcGaW/OJEmndfaW87V8rFt4g/mdvtkV5tvngASm29mBIReMIACZQK1q19
-	Y8yB2IMcfMmrSg7J1cXA==;
+	List-Owner; bh=2MoRRVfpsN6ADf8WWJDxPFSaDYi481eIFMBMAxavRRg=; b=RmytPpt8zSEv+0
+	7IAqe8tGZN9hXAajNzRqRleXaRCTdjEmSNNOg/GpI34RR7TDiOQrn6x6R4lCCr6/MVL1qbIkhY7z0
+	4PjzJhpWdV1aRVIyWKm7Vb1Imaaa9gFoNftlI+ICKMNyRO8D9xOLkPRN1K5b/yYDKa/8Tsf1tGjb8
+	IVn5jb24dJCk7susG2vzjYJG9QpBAq3ChMhV46yRrr+BdmqAcuwROBdzriFEy77CbONkN4DPqhC41
+	Zmp7N5Mx4GpD3RkgY7BhAaoiALnoRGYVMCop5syV28A4oNc2jDuQvabAXgjTxaW6zDpcd2h5FTM+y
+	zjx8a22WUOs2mRfJg21w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iffcO-0004Kz-EC; Fri, 13 Dec 2019 07:44:08 +0000
+	id 1iffe1-0005tq-QZ; Fri, 13 Dec 2019 07:45:49 +0000
 Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iffcF-0004KS-FD
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 07:44:01 +0000
+ id 1iffdr-0005tP-KC
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 07:45:41 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id A86F0226EE;
- Fri, 13 Dec 2019 02:43:58 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Fri, 13 Dec 2019 02:43:58 -0500
+ by mailout.nyi.internal (Postfix) with ESMTP id C1763226E8;
+ Fri, 13 Dec 2019 02:45:35 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Fri, 13 Dec 2019 02:45:35 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm1; bh=V/dkQqEhLQZVHxS63i+CEEgpu+
- G4fLu9zf6DuAwnDME=; b=jlzK9T0XIoe/Cg3kmMNln6fyYPgqy1SZU+C/G0qPCI
- QWP8B8ofUx2j4AbUo8LnHnA8WV/LU4kOR/q6NEojD0W1AtlJDcRslR6qCKd+MT2s
- nECl7+V4hppIQeDl5Rsa6S8vAVDwqplSk6TUUFa8XLdzB8qlju6Dsz/1/5OXp/9g
- qM292p0nsxH0o3wxxL1k1Yr6DdjVWT+ZiFAxg0cqJbWTlKw9mXqnFOtshqYAz/IN
- OjrL3o5ZzTkgWPf+BJ4WDq3MO3aXvjzyJa4HgbgSRQAPYI9v89NqaMY94GWorY81
- 6Rqxf1ig0JeBi/BFBF7MkpZuY804Dmp294+Xe9+l9H1w==
+ :content-transfer-encoding; s=fm1; bh=nhawLaFhQzIeBCxzZbgim1fSPf
+ fZS3C8Yjokab7nDIM=; b=pYbrjgqOext6JqHNjjBJiQ0TJTq9wzpI7tCiF19QXu
+ a0IuJblDugfpFrtKBVtgr3uwgxHdsqwivNd3xjYEbnIjn5R+eYO8rcYPWx5mSIfI
+ vZ788Rw6eMIlW6RZXfnvoOQ+LnuPN1ISuInL3rPVMm8mAPL6jtz4Balb8PQUXdfQ
+ LwNXnHnL1gKn+GKBHdFuKGB7k3IlwZ2ImAf78oHEEiKq0+a+7OBi7LgxvKtlOC/N
+ 9QQH+Kg1KVQmeAvd7nk7DNN1r3NaASaVReHj+WRuXOOIZ+QV2yqpjCrWP65qCGCQ
+ puGBhgyjDbY7cjjMckeiA6R/RFa2KVEH1HX0FqnYzTjQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=V/dkQqEhLQZVHxS63
- i+CEEgpu+G4fLu9zf6DuAwnDME=; b=bMzqLlFeomEdXco6mDDOKEXiTwSG07iDX
- yqSxgZ9Hrh9odYYu5hvj1+yhn9LDUi/4UxpAfHSHDphUPoRdsOPTe9KPh04drkFO
- eaMMAno4E3WG73E1lUxjWjTD7fMwNNnLkuR1cooqdZg02NbJhlhAFgZNZdCGb+2f
- T7c13a0curZGYJWbOmHI6nIliIDDsxAE0KrOWwr7U8+/C5Z6+2PbU6ONtmLqoAYn
- Acw5FJIbUt/mstQUthLUXIBpBYfnQI7ARoxfGpJUTMKJT99lAGKIyJ0d6tqRwh0k
- G+eBXACnz9TfyRe6HgotzAXNtLM9raXc0Z23lGi9CJL5H0w7pRzIw==
-X-ME-Sender: <xms:PUHzXaZiSYiyxdLF2cPV0vMRdRNFu3VCzkRCfib4wwVXTTdYQZUdFQ>
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=nhawLaFhQzIeBCxzZ
+ bgim1fSPffZS3C8Yjokab7nDIM=; b=kFNL8J/M2zd2h9oiPk2y1LXWIm2pF05J1
+ nLZlXh8bO1hyUGiomUhLM9JibVwO7KE2rMJLkM5B38EUX/aw74O3/qWxTZXT6BNB
+ sd8tXOCJ19CqUMElY+qRRs8yT5ZXmdgxWp3URKzzXE/cSqPf30sy+aGq7F6P8xEY
+ lZr59YKLHmf1YYYjeeQ1TZwB8L/bJCE4+Uhj+skEzNtIBcMKK7Aa1QsiZpx0tSXE
+ hcf9Tnjz9m0bJCs2mlM1KTBGZARImh51L7ZQspr3rqWPaXPIA2Z66utucfqsFjsY
+ qCa8l2+JBEn0JLCV8nlblLXY2voOKVITscQkhWXjiH6vYPyv4V5SA==
+X-ME-Sender: <xms:n0HzXbDursfaUkSlHmHC6CYwcSKDPBX-7LbWT7CL6R77qku41yZn4A>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudelkedgudduudcutefuodetggdotefrod
  ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
  necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
@@ -55,26 +55,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudelkedgudduudcutefuodetgg
  ggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhmvgcutfhiphgrrhguuceomhgrgi
  himhgvsegtvghrnhhordhtvggthheqnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdr
  ohhrghenucfkphepledtrdekledrieekrdejieenucfrrghrrghmpehmrghilhhfrhhomh
- epmhgrgihimhgvsegtvghrnhhordhtvggthhenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:PkHzXZH7NHZ_NEmPoMIUGdF6mcGEnBNz-YBn76vFDXIWce3o48mQEA>
- <xmx:PkHzXb1asWJuiPDnn32TS1cOjg6ZId7KLXFFUododURAkW7MwIjKqg>
- <xmx:PkHzXRcxMjf-B6VLMPTDjFqm8QIwRn2iDGXCxZOrunYjlFyFIj0otQ>
- <xmx:PkHzXZEJZsKYh823OunFMjqrES31qFRVO3ZEYfHpgcWehTKO3BpK_Q>
+ epmhgrgihimhgvsegtvghrnhhordhtvggthhenucevlhhushhtvghrufhiiigvpedu
+X-ME-Proxy: <xmx:n0HzXTNcim2tGE3lhVtfR8TkEkdyclBilVk4Hy-VmqG5CL2DbNC7xg>
+ <xmx:n0HzXaDEwSgLYSu5KPzCknrpf4qZ9BtjTyeoIha7YqOFQiem0hbW7g>
+ <xmx:n0HzXdltF86_iR0od2bLSwHMEhU6uYtRDE2PQG8pn1XKM08JH-apZw>
+ <xmx:n0HzXcnZp-29fwMxJHEszTI_d8AcrNJu9kwzn_EfryJqWd65AjmsdA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id AF4B03060193;
- Fri, 13 Dec 2019 02:43:57 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 3729280066;
+ Fri, 13 Dec 2019 02:45:35 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>
-Subject: [PATCH] dt-bindings: media: Convert Allwinner A31 CSI to a schema
-Date: Fri, 13 Dec 2019 08:43:55 +0100
-Message-Id: <20191213074355.26840-1-maxime@cerno.tech>
+Subject: [PATCH] dt-bindings: interconnect: Convert Allwinner MBUS controller
+ to a schema
+Date: Fri, 13 Dec 2019 08:45:33 +0100
+Message-Id: <20191213074533.27048-1-maxime@cerno.tech>
 X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_234359_647618_46A0BB8B 
-X-CRM114-Status: GOOD (  13.57  )
+X-CRM114-CacheID: sfid-20191212_234539_807619_09EB80D1 
+X-CRM114-Status: GOOD (  11.87  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -102,216 +103,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime@cerno.tech>,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <maxime@cerno.tech>, georgi.djakov@linaro.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The newer Allwinner SoCs have a camera controller that is supported in
-Linux, with a matching Device Tree binding.
+The older Allwinner SoCs have an MBUS controller that is used by Linux,
+with a matching Device Tree binding.
 
 Now that we have the DT validation in place, let's convert the device tree
 bindings for that controller over to a YAML schemas.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- .../media/allwinner,sun6i-a31-csi.yaml        | 115 ++++++++++++++++++
- .../devicetree/bindings/media/sun6i-csi.txt   |  61 ----------
- 2 files changed, 115 insertions(+), 61 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
- delete mode 100644 Documentation/devicetree/bindings/media/sun6i-csi.txt
+ .../arm/sunxi/allwinner,sun4i-a10-mbus.yaml   | 65 +++++++++++++++++++
+ .../bindings/arm/sunxi/sunxi-mbus.txt         | 37 -----------
+ 2 files changed, 65 insertions(+), 37 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
+ delete mode 100644 Documentation/devicetree/bindings/arm/sunxi/sunxi-mbus.txt
 
-diff --git a/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
+diff --git a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
 new file mode 100644
-index 000000000000..1fd9b5532a21
+index 000000000000..9370e64992dd
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/media/allwinner,sun6i-a31-csi.yaml
-@@ -0,0 +1,115 @@
++++ b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
+@@ -0,0 +1,65 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/media/allwinner,sun6i-a31-csi.yaml#
++$id: http://devicetree.org/schemas/arm/sunxi/allwinner,sun4i-a10-mbus.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Allwinner A31 CMOS Sensor Interface (CSI) Device Tree Bindings
++title: Allwinner Memory Bus (MBUS) controller
 +
 +maintainers:
 +  - Chen-Yu Tsai <wens@csie.org>
 +  - Maxime Ripard <mripard@kernel.org>
 +
++description: |
++  The MBUS controller drives the MBUS that other devices in the SoC
++  will use to perform DMA. It also has a register interface that
++  allows to monitor and control the bandwidth and priorities for
++  masters on that bus.
++
++  Each device having to perform their DMA through the MBUS must have
++  the interconnects and interconnect-names properties set to the MBUS
++  controller and with "dma-mem" as the interconnect name.
++
 +properties:
++  "#interconnect-cells":
++    const: 1
++    description:
++      The content of the cell is the MBUS ID.
++
 +  compatible:
 +    enum:
-+      - allwinner,sun6i-a31-csi
-+      - allwinner,sun8i-a83t-csi
-+      - allwinner,sun8i-h3-csi
-+      - allwinner,sun8i-v3s-csi
-+      - allwinner,sun50i-a64-csi
++      - allwinner,sun5i-a13-mbus
++      - allwinner,sun8i-h3-mbus
 +
 +  reg:
 +    maxItems: 1
 +
-+  interrupts:
-+    maxItems: 1
-+
 +  clocks:
-+    items:
-+      - description: Bus Clock
-+      - description: Module Clock
-+      - description: DRAM Clock
-+
-+  clock-names:
-+    items:
-+      - const: bus
-+      - const: mod
-+      - const: ram
-+
-+  resets:
 +    maxItems: 1
 +
-+  # See ./video-interfaces.txt for details
-+  port:
-+    type: object
-+
-+    properties:
-+      endpoint:
-+        type: object
-+
-+        properties:
-+          remote-endpoint: true
-+
-+          bus-width:
-+            enum: [ 8, 10, 12, 16 ]
-+
-+          pclk-sample: true
-+          hsync-active: true
-+          vsync-active: true
-+
-+        required:
-+          - bus-width
-+          - remote-endpoint
-+
-+    required:
-+      - endpoint
-+
-+    additionalProperties: false
++  dma-ranges:
++    description:
++      See section 2.3.9 of the DeviceTree Specification.
 +
 +required:
++  - "#interconnect-cells"
 +  - compatible
 +  - reg
-+  - interrupts
 +  - clocks
-+  - clock-names
-+  - resets
++  - dma-ranges
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/sun8i-v3s-ccu.h>
-+    #include <dt-bindings/reset/sun8i-v3s-ccu.h>
++    #include <dt-bindings/clock/sun5i-ccu.h>
 +
-+    csi1: csi@1cb4000 {
-+        compatible = "allwinner,sun8i-v3s-csi";
-+        reg = <0x01cb4000 0x1000>;
-+        interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
-+        clocks = <&ccu CLK_BUS_CSI>,
-+                 <&ccu CLK_CSI1_SCLK>,
-+                 <&ccu CLK_DRAM_CSI>;
-+        clock-names = "bus",
-+                      "mod",
-+                      "ram";
-+        resets = <&ccu RST_BUS_CSI>;
-+
-+        port {
-+            /* Parallel bus endpoint */
-+            csi1_ep: endpoint {
-+                remote-endpoint = <&adv7611_ep>;
-+                bus-width = <16>;
-+
-+                /*
-+                 * If hsync-active/vsync-active are missing,
-+                 * embedded BT.656 sync is used.
-+                 */
-+                 hsync-active = <0>; /* Active low */
-+                 vsync-active = <0>; /* Active low */
-+                 pclk-sample = <1>;  /* Rising */
-+            };
-+        };
++    mbus: dram-controller@1c01000 {
++        compatible = "allwinner,sun5i-a13-mbus";
++        reg = <0x01c01000 0x1000>;
++        clocks = <&ccu CLK_MBUS>;
++        dma-ranges = <0x00000000 0x40000000 0x20000000>;
++        #interconnect-cells = <1>;
 +    };
 +
 +...
-diff --git a/Documentation/devicetree/bindings/media/sun6i-csi.txt b/Documentation/devicetree/bindings/media/sun6i-csi.txt
+diff --git a/Documentation/devicetree/bindings/arm/sunxi/sunxi-mbus.txt b/Documentation/devicetree/bindings/arm/sunxi/sunxi-mbus.txt
 deleted file mode 100644
-index a2e3e56f0257..000000000000
---- a/Documentation/devicetree/bindings/media/sun6i-csi.txt
+index 2005bb486705..000000000000
+--- a/Documentation/devicetree/bindings/arm/sunxi/sunxi-mbus.txt
 +++ /dev/null
-@@ -1,61 +0,0 @@
--Allwinner V3s Camera Sensor Interface
---------------------------------------
+@@ -1,37 +0,0 @@
+-Allwinner Memory Bus (MBUS) controller
 -
--Allwinner V3s SoC features a CSI module(CSI1) with parallel interface.
+-The MBUS controller drives the MBUS that other devices in the SoC will
+-use to perform DMA. It also has a register interface that allows to
+-monitor and control the bandwidth and priorities for masters on that
+-bus.
 -
 -Required properties:
--  - compatible: value must be one of:
--    * "allwinner,sun6i-a31-csi"
--    * "allwinner,sun8i-a83t-csi"
--    * "allwinner,sun8i-h3-csi"
--    * "allwinner,sun8i-v3s-csi"
--    * "allwinner,sun50i-a64-csi"
--  - reg: base address and size of the memory-mapped region.
--  - interrupts: interrupt associated to this IP
--  - clocks: phandles to the clocks feeding the CSI
--    * bus: the CSI interface clock
--    * mod: the CSI module clock
--    * ram: the CSI DRAM clock
--  - clock-names: the clock names mentioned above
--  - resets: phandles to the reset line driving the CSI
+- - compatible: Must be one of:
+-	- allwinner,sun5i-a13-mbus
+-	- allwinner,sun8i-h3-mbus
+- - reg: Offset and length of the register set for the controller
+- - clocks: phandle to the clock driving the controller
+- - dma-ranges: See section 2.3.9 of the DeviceTree Specification
+- - #interconnect-cells: Must be one, with the argument being the MBUS
+-   port ID
 -
--The CSI node should contain one 'port' child node with one child 'endpoint'
--node, according to the bindings defined in
--Documentation/devicetree/bindings/media/video-interfaces.txt.
--
--Endpoint node properties for CSI
-----------------------------------
--See the video-interfaces.txt for a detailed description of these properties.
--- remote-endpoint	: (required) a phandle to the bus receiver's endpoint
--			   node
--- bus-width:		: (required) must be 8, 10, 12 or 16
--- pclk-sample		: (optional) (default: sample on falling edge)
--- hsync-active		: (required; parallel-only)
--- vsync-active		: (required; parallel-only)
+-Each device having to perform their DMA through the MBUS must have the
+-interconnects and interconnect-names properties set to the MBUS
+-controller and with "dma-mem" as the interconnect name.
 -
 -Example:
 -
--csi1: csi@1cb4000 {
--	compatible = "allwinner,sun8i-v3s-csi";
--	reg = <0x01cb4000 0x1000>;
--	interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
--	clocks = <&ccu CLK_BUS_CSI>,
--		 <&ccu CLK_CSI1_SCLK>,
--		 <&ccu CLK_DRAM_CSI>;
--	clock-names = "bus", "mod", "ram";
--	resets = <&ccu RST_BUS_CSI>;
+-mbus: dram-controller@1c01000 {
+-	compatible = "allwinner,sun5i-a13-mbus";
+-	reg = <0x01c01000 0x1000>;
+-	clocks = <&ccu CLK_MBUS>;
+-	dma-ranges = <0x00000000 0x40000000 0x20000000>;
+-	#interconnect-cells = <1>;
+-};
 -
--	port {
--		/* Parallel bus endpoint */
--		csi1_ep: endpoint {
--			remote-endpoint = <&adv7611_ep>;
--			bus-width = <16>;
--
--			/* If hsync-active/vsync-active are missing,
--			   embedded BT.656 sync is used */
--			hsync-active = <0>; /* Active low */
--			vsync-active = <0>; /* Active low */
--			pclk-sample = <1>;  /* Rising */
--		};
--	};
+-fe0: display-frontend@1e00000 {
+-	compatible = "allwinner,sun5i-a13-display-frontend";
+-	...
+-	interconnects = <&mbus 19>;
+-	interconnect-names = "dma-mem";
 -};
 -- 
 2.23.0
