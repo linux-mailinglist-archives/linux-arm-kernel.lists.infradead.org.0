@@ -2,91 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 280C611E615
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 16:06:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78C6011E69C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 16:34:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CSsYk8o26L4QfpuQWyeLQlWyq3wnj8u946K0vGcaRGw=; b=LCcbIvNTqOkjN9
-	0DDBJ0qdApbATusEpWO2h/HzRjXnuOlDNqmz8XDu3Rp1rlkPFmN4DE2plBdsJ2GPXOiu0tFdHunk0
-	9bDcA6KIqIau1fkU0DZDggZZu7KUWcDry+WWJtVAgs8x0DeVmpbv4rzQxH6b2/LLvG5++JfYUkuae
-	p0HA8aD1v3WZe9NgTAV1Cf4Cc3ynbRtQ0eiBUFVojF4ukzLTnY+jAQ+bhHVDFHfYXwtjF1kVuPu9I
-	7mJZMLkVQ8yTkprwIUsGwv5XfXA6xOduYBsQbv5eI+Vz03GtNm3S48QKv4cQAfRbhxrUhP/XS6WOl
-	qRowi4bM6EX1lznGEBCg==;
+	List-Owner; bh=yfjwZ/Jpf8fsNILrtDLCG31h8b7NsNxIUz4ncDzKeqI=; b=oOmlidaaXF0BM3
+	e6irUxzuYDSJ2jktyfRjxqDNkDjS3JH51fObj3zf6DSuCTZB6Wn78+jxnqc/uIP62AiqgIMZUgYS+
+	f5umlb8owKM8PTgOtla6IxBq44CrTKBPQEUiLOaJ4eiX+57hDCulaB2v5eK8dYrScBukQfKtcmHys
+	vIepxyEIxrP7Z1OTxROyboAEc7GG748XXfGOSIEFC8vLub8PN5ILgO7/VrzUsXzvxGjq370tSXFBA
+	IeCn+CEX/PGd8YNai3paazWgZmekk0t8jbRAi/JGvVbrs/WcUJwp9nCSu3+D2BXUJ9gnBFQiFg8H5
+	FKljRkV8X7t7eXpHBS7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifmWY-0008B4-MQ; Fri, 13 Dec 2019 15:06:34 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+	id 1ifmx9-0001ER-19; Fri, 13 Dec 2019 15:34:03 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifmVe-0007Yd-Qm
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 15:05:41 +0000
-Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa3.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa3.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: oGwtiwfYvjjZREwj4sUA+zqOCDJsiGr6mTMDgf/guLFS7iQtfF1E8lv4yQo+jj9CZzN/rt1VQG
- sN2jYAElRxkItkzsoYd9LugIWwQlBjQVuxELGVGCxcGrJErh3HnPmvLjDrFuYP2uZnOInzSv3a
- 7kr5IrYd5P+qtG9q6nFKcRfAetEpIVphd8S8TE582layuQi2RTgxpPhL7m/6fYalfd1y7w0urK
- ukHNG8SP2vk3uRNzV3S9hyZRt8XlpiFrfyIQnh6saJrjqOE1vlk1zuKdLAMTdxqLL8kHDguN40
- aLI=
-X-IronPort-AV: E=Sophos;i="5.69,309,1571727600"; d="scan'208";a="60293567"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 Dec 2019 08:05:35 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 13 Dec 2019 08:05:34 -0700
-Received: from m18063-ThinkPad-T460p.microchip.com (10.10.85.251) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 13 Dec 2019 08:05:30 -0700
-From: Claudiu Beznea <claudiu.beznea@microchip.com>
-To: <sam@ravnborg.org>, <bbrezillon@kernel.org>, <airlied@linux.ie>,
- <daniel@ffwll.ch>, <nicolas.ferre@microchip.com>,
- <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>,
- <lee.jones@linaro.org>
-Subject: [PATCH v2 6/6] Revert "drm: atmel-hlcdc: enable sys_clk during
- initalization."
-Date: Fri, 13 Dec 2019 17:04:56 +0200
-Message-ID: <1576249496-4849-7-git-send-email-claudiu.beznea@microchip.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1576249496-4849-1-git-send-email-claudiu.beznea@microchip.com>
-References: <1576249496-4849-1-git-send-email-claudiu.beznea@microchip.com>
+ id 1ifmx0-0001Dl-Kl
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 15:33:55 +0000
+Received: by mail-wm1-x343.google.com with SMTP id b19so2640367wmj.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Dec 2019 07:33:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=SAYkCWa+UKUtmAHpxZPtyf0202Fu23Y0TOqeEazyr/Q=;
+ b=VB0Qc7V7S5H1KmeOm9KBILALqgHQYmF0aObNiHutpNEkYKmbpAjtI6JvdXopT8ToXQ
+ qm9DbdizY6eiF3/gk9eh3FqiObj0x6V2jvz6Ylw/I73linNPmdpuQtck7H3uv4ntHObE
+ zQqLulojG9AR9iQ3V4qz2nPme4DxxHaa4KFNI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=SAYkCWa+UKUtmAHpxZPtyf0202Fu23Y0TOqeEazyr/Q=;
+ b=kedy8ue+GoHuybxO1gRMd73GVF88dhIGe5Xd3B+9MQf7uPtm8WB8Z1S353V7Gs5Ajq
+ 9mfGI+cWqIUMbvq8Nd0JX8RHa5Hu15+8EVY0veDIvVNdu5SMEMcHXZMJgZhHfyxdtN93
+ YsGoyhRfdNgb6Zl1gSdaG1pJvb0QfwZ+i2c5WAJndvu9SM8Yb7h2ACqTPiHh3+9AtBqN
+ V+t6fdPKxkuqg+hlucUlM1qNsbiAyKfGcGAyS4dGMoV0GZ73QM3jmDOe2FTMoUyjCNmR
+ aDphorMGuTA1sBzrXKyVZB+YivPXqOGXR3WtVULXKRxsvRPesQymXJtZ7uhxsk0YaN7w
+ fNSA==
+X-Gm-Message-State: APjAAAUBGoex+bR9pI608icX4iX1OpKTH0RGv0Z15/NjAGGIxzy47Eep
+ taZuNbx9MOq/+d24KECfwySDJATptPTNKZQ32EdwKA==
+X-Google-Smtp-Source: APXvYqzG07t8L0rdT/jCMyiZ1bizG1mmA/UGnwTTkXBgBiB92Pia9cOilPnt362sCSti1OdNCJDkL78l3OzGZ3Q6Gso=
+X-Received: by 2002:a7b:c051:: with SMTP id u17mr13988989wmc.174.1576251232755; 
+ Fri, 13 Dec 2019 07:33:52 -0800 (PST)
 MIME-Version: 1.0
+References: <20191212231213.29061-1-jquinlan@broadcom.com>
+ <20191213114138.GB4644@sirena.org.uk>
+In-Reply-To: <20191213114138.GB4644@sirena.org.uk>
+From: Jim Quinlan <james.quinlan@broadcom.com>
+Date: Fri, 13 Dec 2019 10:33:41 -0500
+Message-ID: <CA+-6iNz4WVJzfntJ5CUXBYvqQG4kEj8g8g_HOxZN5rFWTUvv3g@mail.gmail.com>
+Subject: Re: [PATCH] spi: bcm2835: don't print error on clk_get() DEFER
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_070538_890320_8C29C7B5 
-X-CRM114-Status: GOOD (  11.42  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191213_073354_682443_6CEC2F4A 
+X-CRM114-Status: GOOD (  12.37  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,102 +89,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>,
- Claudiu Beznea <claudiu.beznea@microchip.com>,
- linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Scott Branden <scott.branden@broadcom.com>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Ray Jui <ray.jui@broadcom.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit d2c755e66617620b729041c625a6396c81d1231c
-("drm: atmel-hlcdc: enable sys_clk during initalization."). With
-commit "drm: atmel-hlcdc: enable clock before configuring timing engine"
-there is no need for this patch. Code is also simpler.
+On Fri, Dec 13, 2019 at 6:41 AM Mark Brown <broonie@kernel.org> wrote:
+>
+> On Thu, Dec 12, 2019 at 06:12:13PM -0500, Jim Quinlan wrote:
+> > Otherwise one may get multiple error messages for normal
+> > operation of a clock provider.
+>
+> >       if (IS_ERR(bs->clk)) {
+> >               err = PTR_ERR(bs->clk);
+> > -             dev_err(&pdev->dev, "could not get clk: %d\n", err);
+> > +             if (err != -EPROBE_DEFER)
+> > +                     dev_err(&pdev->dev, "could not get clk: %d\n", err);
+>
+> On the other hand if the clock isn't there and never appears then there
+> won't be anything saying why the driver isn't loading which won't be
+> helpful when trying to figure out what's going on.
 
-Cc: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
-Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
----
-
-Hi Sam,
-
-I still kept this as a patch as I didn't got any answer from you at my
-last email up to this moment.
-
-If you think it is better to squash this one with patch 2/6 in this seris
-let me know.
-
-Thank you,
-Claudiu Beznea
-
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c | 19 +------------------
- 1 file changed, 1 insertion(+), 18 deletions(-)
-
-diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
-index 8dc917a1270b..112aa5066cee 100644
---- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
-+++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c
-@@ -721,18 +721,10 @@ static int atmel_hlcdc_dc_load(struct drm_device *dev)
- 	dc->hlcdc = dev_get_drvdata(dev->dev->parent);
- 	dev->dev_private = dc;
- 
--	if (dc->desc->fixed_clksrc) {
--		ret = clk_prepare_enable(dc->hlcdc->sys_clk);
--		if (ret) {
--			dev_err(dev->dev, "failed to enable sys_clk\n");
--			goto err_destroy_wq;
--		}
--	}
--
- 	ret = clk_prepare_enable(dc->hlcdc->periph_clk);
- 	if (ret) {
- 		dev_err(dev->dev, "failed to enable periph_clk\n");
--		goto err_sys_clk_disable;
-+		goto err_destroy_wq;
- 	}
- 
- 	pm_runtime_enable(dev->dev);
-@@ -768,9 +760,6 @@ static int atmel_hlcdc_dc_load(struct drm_device *dev)
- err_periph_clk_disable:
- 	pm_runtime_disable(dev->dev);
- 	clk_disable_unprepare(dc->hlcdc->periph_clk);
--err_sys_clk_disable:
--	if (dc->desc->fixed_clksrc)
--		clk_disable_unprepare(dc->hlcdc->sys_clk);
- 
- err_destroy_wq:
- 	destroy_workqueue(dc->wq);
-@@ -795,8 +784,6 @@ static void atmel_hlcdc_dc_unload(struct drm_device *dev)
- 
- 	pm_runtime_disable(dev->dev);
- 	clk_disable_unprepare(dc->hlcdc->periph_clk);
--	if (dc->desc->fixed_clksrc)
--		clk_disable_unprepare(dc->hlcdc->sys_clk);
- 	destroy_workqueue(dc->wq);
- }
- 
-@@ -910,8 +897,6 @@ static int atmel_hlcdc_dc_drm_suspend(struct device *dev)
- 	regmap_read(regmap, ATMEL_HLCDC_IMR, &dc->suspend.imr);
- 	regmap_write(regmap, ATMEL_HLCDC_IDR, dc->suspend.imr);
- 	clk_disable_unprepare(dc->hlcdc->periph_clk);
--	if (dc->desc->fixed_clksrc)
--		clk_disable_unprepare(dc->hlcdc->sys_clk);
- 
- 	return 0;
- }
-@@ -921,8 +906,6 @@ static int atmel_hlcdc_dc_drm_resume(struct device *dev)
- 	struct drm_device *drm_dev = dev_get_drvdata(dev);
- 	struct atmel_hlcdc_dc *dc = drm_dev->dev_private;
- 
--	if (dc->desc->fixed_clksrc)
--		clk_prepare_enable(dc->hlcdc->sys_clk);
- 	clk_prepare_enable(dc->hlcdc->periph_clk);
- 	regmap_write(dc->hlcdc->regmap, ATMEL_HLCDC_IER, dc->suspend.imr);
- 
--- 
-2.7.4
-
+Understood; I could do a dev_dbg() on -EPROBE_DEFER and dev_err() on
+all other errors -- would that work for you?
 
 _______________________________________________
 linux-arm-kernel mailing list
