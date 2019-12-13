@@ -2,59 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 769E711DEA4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 08:29:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CC4B11DEA5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 08:29:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JYCHAt2hb/hiQ8h9/2iCEme5KvLT0xIKjwAV1q9Z0rE=; b=kQEIfMAWj1fs8/
-	HB84ZLhmv/XrsoUiJDVD8IG5sR1ELEf6tnhLS8I6BYgf+f78Buh75wIsRNydm3SrZMPf7nZIU8uRR
-	gIMFtVZQzxpM7chETBfyxHWOKXSUZA8kZKJTpb4/ZZqF6UbtJBhzD5e8cxq6y24pn9G6ZCDUMpKyt
-	6JhLmgZrWWrF9ij5SCFWXZSaDSUxpOZUGp+mi6n+kHcPSBkskDMWOmtrcVsv6P8oPOMjjgWBvJFiI
-	i9t6poyUbN4ki74ANXch8EEp8V/sgkBLplhrTipaNHCgccYrg9Uc7s6Vn5BHhU7aCl2jhCdOjblQY
-	PYT+sXY5gqYvZ2HyYJpQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q+dmcfzXUIWOfoBywf5/0UXzu/OqJojHxH7lDuWxxLQ=; b=o346buTFRAB4G8
+	xCV+vIwWheeR0dAMRCx5bH1QtLFEIaR5XjJxwgZqhGFWNLILfByf4SKeAzBl8woZU4Qnn4mL+psk0
+	qVKIa+11cDZe0NN++jb0bjw/lhBQ/Bmf8c0JsK3/p/zFeZnJHmzTLs/abJTmiUBbNPb+OL9JnPxwW
+	Im1sR9pgfEoRJZaXOxiuuHWzezcE7CJlLA18hAfOYG16Z8B1yviP1LTpjBNfsoSsGLTj8YNNS6nbi
+	+blSyW1Ow3G/ElFf3ceSw77xe5w+mQTYMa0XfZ0arTxy+O/pKF5WsjMwO1BHOe/RSiK8whiNNWB2N
+	P2fwu0s7pDePZhfFUiHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iffO3-0006YM-4J; Fri, 13 Dec 2019 07:29:19 +0000
+	id 1iffOH-0006lz-Kt; Fri, 13 Dec 2019 07:29:33 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iffNp-0006WC-H8; Fri, 13 Dec 2019 07:29:06 +0000
-X-UUID: 4da6eaacc65b411bb2e28d5017b165f1-20191212
+ id 1iffNp-0006WD-Uw; Fri, 13 Dec 2019 07:29:07 +0000
+X-UUID: 5ce28be006044b41baa60ba68e63d464-20191212
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=hE/LFR4VgS3BbRyTDvhyusFCTOwqCXLwuzkWfS0Tpg4=; 
- b=FeLHEIIOQH4bupNaqisL2s7MWQ+/zHNd9fkQNzpyxRHZURAVmEMbJDispqTV8aL3dpiUMOs45XfUv6svwz6tYiF1+fY+PXU/PYHtlFMAUCz9NGIj9lz8sonRE7PPSgiICZkre9lxYBb28cSfMw0464laQUD3HjYXju9C5mTr9hI=;
-X-UUID: 4da6eaacc65b411bb2e28d5017b165f1-20191212
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=G9xP57LuRrds9HJm7/htVK7BRBr/hZcnDeiAioMGxyc=; 
+ b=XkjPd02lRlExDiY12upV5c93239wv2ny4hmD/bHVY7PUKHKeHw36v2/DnEdbxDlho59X9eyZmBiZUgxl7AIfHwgqY88JNXEptUIN5P37TxQAIVKxMcJ9sRq8RZpcQhoR3ltAHgkwbdmefIbNvuwt+vTjFgJ3Hlrni6qwungtPcs=;
+X-UUID: 5ce28be006044b41baa60ba68e63d464-20191212
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 389834308; Thu, 12 Dec 2019 23:28:59 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ with ESMTP id 2081626529; Thu, 12 Dec 2019 23:28:59 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Dec 2019 23:30:00 -0800
+ 15.0.1395.4; Thu, 12 Dec 2019 23:30:01 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 13 Dec 2019 15:28:32 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 13 Dec 2019 15:28:37 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 13 Dec 2019 15:28:23 +0800
+ Transport; Fri, 13 Dec 2019 15:28:24 +0800
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v2, 0/2] drm/mediatek: Add ctm property support
-Date: Fri, 13 Dec 2019 15:28:50 +0800
-Message-ID: <1576222132-31586-1-git-send-email-yongqiang.niu@mediatek.com>
+Subject: [PATCH v2, 1/2] drm/mediatek: Fix gamma correction issue
+Date: Fri, 13 Dec 2019 15:28:51 +0800
+Message-ID: <1576222132-31586-2-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1576222132-31586-1-git-send-email-yongqiang.niu@mediatek.com>
+References: <1576222132-31586-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_232905_581027_D3C24948 
-X-CRM114-Status: UNSURE (   6.41  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191212_232905_996345_4F0C68C4 
+X-CRM114-Status: GOOD (  10.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -94,20 +95,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Changes since v1:
--separate gamma patch
--remove cmdq support for ctm setting
+if there is no gamma function in the crtc
+display path, don't add gamma property
+for crtc
 
+Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+---
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-Yongqiang Niu (2):
-  drm/mediatek: Fix gamma correction issue
-  drm/mediatek: Add ctm property support
-
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 18 +++++++--
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 62 ++++++++++++++++++++++++++++-
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  9 +++++
- 3 files changed, 85 insertions(+), 4 deletions(-)
-
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index ca4fc47..9a8e1d4 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -734,6 +734,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 	int pipe = priv->num_pipes;
+ 	int ret;
+ 	int i;
++	uint gamma_lut_size = 0;
+ 
+ 	if (!path)
+ 		return 0;
+@@ -785,6 +786,9 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 		}
+ 
+ 		mtk_crtc->ddp_comp[i] = comp;
++
++		if (comp->funcs->gamma_set)
++			gamma_lut_size = MTK_LUT_SIZE;
+ 	}
+ 
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+@@ -805,8 +809,10 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 				NULL, pipe);
+ 	if (ret < 0)
+ 		return ret;
+-	drm_mode_crtc_set_gamma_size(&mtk_crtc->base, MTK_LUT_SIZE);
+-	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
++
++	if (gamma_lut_size)
++		drm_mode_crtc_set_gamma_size(&mtk_crtc->base, gamma_lut_size);
++	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, gamma_lut_size);
+ 	priv->num_pipes++;
+ 	mutex_init(&mtk_crtc->hw_lock);
+ 
 -- 
 1.8.1.1.dirty
 _______________________________________________
