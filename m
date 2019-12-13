@@ -2,74 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78C6011E69C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 16:34:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E15811E6D0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 16:39:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yfjwZ/Jpf8fsNILrtDLCG31h8b7NsNxIUz4ncDzKeqI=; b=oOmlidaaXF0BM3
-	e6irUxzuYDSJ2jktyfRjxqDNkDjS3JH51fObj3zf6DSuCTZB6Wn78+jxnqc/uIP62AiqgIMZUgYS+
-	f5umlb8owKM8PTgOtla6IxBq44CrTKBPQEUiLOaJ4eiX+57hDCulaB2v5eK8dYrScBukQfKtcmHys
-	vIepxyEIxrP7Z1OTxROyboAEc7GG748XXfGOSIEFC8vLub8PN5ILgO7/VrzUsXzvxGjq370tSXFBA
-	IeCn+CEX/PGd8YNai3paazWgZmekk0t8jbRAi/JGvVbrs/WcUJwp9nCSu3+D2BXUJ9gnBFQiFg8H5
-	FKljRkV8X7t7eXpHBS7A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MET72S+fOrXz+opY+ixBGYXl/sFq78qrI/cd2q/pM3s=; b=HV6wYBgSBhFuwF
+	NkRUDMpVPZWg5K8/GjYZSJRJHzlMb8/dbi/O86iaS9Oxr0e8BTwj5oJ91PMs/vqdDoeUhLwzEbb87
+	f+omQSW0S46EnvmnE152+W5B/vj7QxLpuDc6Man3so0eKN9YG4XY7yqdOk4pKID+nHMj54uEs1IAO
+	nt+42yXsouvvoEktNaHt+I2+sKGVgmz9f5idBThyvygRLRZhFp3x8MpZah1xdybIpoBpuiQHpX5Sk
+	4bE4JhYglzMiKsb/ytLjQyWuU5KN4tBaaAIMXOqLOOLgjPQ6Z229FYKUE5IRSkRWVubmOhhsIkwAk
+	tp8Vwk3MY8pqibWnfO7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifmx9-0001ER-19; Fri, 13 Dec 2019 15:34:03 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1ifn2R-0004J6-I9; Fri, 13 Dec 2019 15:39:31 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifmx0-0001Dl-Kl
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 15:33:55 +0000
-Received: by mail-wm1-x343.google.com with SMTP id b19so2640367wmj.4
+ id 1ifn2I-0004Hv-1W
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 15:39:25 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id h126so1414520ywc.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 07:33:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=SAYkCWa+UKUtmAHpxZPtyf0202Fu23Y0TOqeEazyr/Q=;
- b=VB0Qc7V7S5H1KmeOm9KBILALqgHQYmF0aObNiHutpNEkYKmbpAjtI6JvdXopT8ToXQ
- qm9DbdizY6eiF3/gk9eh3FqiObj0x6V2jvz6Ylw/I73linNPmdpuQtck7H3uv4ntHObE
- zQqLulojG9AR9iQ3V4qz2nPme4DxxHaa4KFNI=
+ Fri, 13 Dec 2019 07:39:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=66dDxa4JQshR1dxJN1HCdA7FRTIVML1Rl2L0x4gBwBs=;
+ b=IpwWQTBzg9+efmz6zpdHlpW7WO6Qb2rzpNyjAvojL6elJWNgpVqmZyQ+VOA2jRdCEh
+ jGyplAdiIPO/JftjYxUO7sovgTvepNOw0lWV1MT9dznUOuusPMO+j+Z13oroUaaD5bil
+ 1piYhqNdzEdfXdqhnE+7U5kCEFqfJ8zhu7wceeOYtYpgS0QKCQ+RML/u0oe6npp2nIWC
+ Cc9nOT5KsyorY2X5unKnHKTIQ8r9XxZZz4ec1HolS6nH5SjuT5MeeuFP3YXKRzxK52KC
+ 2LdZ8O6EEN/aQaZn8ExiHvWWt6aJrAMgVOeJJTI1AxGZbbtQSCpn6u9Ib/Kn3pQul97X
+ ebAA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=SAYkCWa+UKUtmAHpxZPtyf0202Fu23Y0TOqeEazyr/Q=;
- b=kedy8ue+GoHuybxO1gRMd73GVF88dhIGe5Xd3B+9MQf7uPtm8WB8Z1S353V7Gs5Ajq
- 9mfGI+cWqIUMbvq8Nd0JX8RHa5Hu15+8EVY0veDIvVNdu5SMEMcHXZMJgZhHfyxdtN93
- YsGoyhRfdNgb6Zl1gSdaG1pJvb0QfwZ+i2c5WAJndvu9SM8Yb7h2ACqTPiHh3+9AtBqN
- V+t6fdPKxkuqg+hlucUlM1qNsbiAyKfGcGAyS4dGMoV0GZ73QM3jmDOe2FTMoUyjCNmR
- aDphorMGuTA1sBzrXKyVZB+YivPXqOGXR3WtVULXKRxsvRPesQymXJtZ7uhxsk0YaN7w
- fNSA==
-X-Gm-Message-State: APjAAAUBGoex+bR9pI608icX4iX1OpKTH0RGv0Z15/NjAGGIxzy47Eep
- taZuNbx9MOq/+d24KECfwySDJATptPTNKZQ32EdwKA==
-X-Google-Smtp-Source: APXvYqzG07t8L0rdT/jCMyiZ1bizG1mmA/UGnwTTkXBgBiB92Pia9cOilPnt362sCSti1OdNCJDkL78l3OzGZ3Q6Gso=
-X-Received: by 2002:a7b:c051:: with SMTP id u17mr13988989wmc.174.1576251232755; 
- Fri, 13 Dec 2019 07:33:52 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=66dDxa4JQshR1dxJN1HCdA7FRTIVML1Rl2L0x4gBwBs=;
+ b=RLNxUh1DxHC5wV7CvEKofDjFWehzY5lIspk+OXUEKysSHOG9Q+9ct+mx5tcdT4AsQh
+ /V9vBkq3Y+kgKYlUeOaH4Tn6IdrKQgEmXJK5pOMe4mH69jvKpT3KFSwTJ69D4HSjRtVL
+ fExgIQ3bpTJkO5xxWK2RhPvRIY3wgcqg56Qg/z07GfcALLmWY3A34+S1PD+p7qtUni9A
+ sIL/SvnElKQ6I9h8MEj6vQRFhYCBqOmOOv9zzFWJ49iLWVG+a7PwnSL8K9Bk0gyhU1tG
+ TqmZr/Z7dsi28hSHxZcDXUEgGydcWpmt1cfxMOfAJBz6lXuf+Ul7L43cjVaBIwbObE7x
+ 0EUQ==
+X-Gm-Message-State: APjAAAXR4lV0BgAfWYrKVlRLp0wmrNpL8Mvpf0LM3bwoV2C7Ikvv3jzW
+ z7HtStRItykKjrqU8slROnNwadQlkqg=
+X-Google-Smtp-Source: APXvYqzO7cb72G93h6pc42x43nIgubOr0x06bTe3Kej8fCH2doIKLJGdJ8weE8MbHkaf+/uMF//KeA==
+X-Received: by 2002:a25:b007:: with SMTP id q7mr7626962ybf.193.1576251560130; 
+ Fri, 13 Dec 2019 07:39:20 -0800 (PST)
+Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
+ [73.37.219.234])
+ by smtp.gmail.com with ESMTPSA id i17sm4300474ywg.66.2019.12.13.07.39.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 Dec 2019 07:39:19 -0800 (PST)
+From: Adam Ford <aford173@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH V2 1/3] crypto: caam: Add support for i.MX8M Mini
+Date: Fri, 13 Dec 2019 09:39:08 -0600
+Message-Id: <20191213153910.11235-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20191212231213.29061-1-jquinlan@broadcom.com>
- <20191213114138.GB4644@sirena.org.uk>
-In-Reply-To: <20191213114138.GB4644@sirena.org.uk>
-From: Jim Quinlan <james.quinlan@broadcom.com>
-Date: Fri, 13 Dec 2019 10:33:41 -0500
-Message-ID: <CA+-6iNz4WVJzfntJ5CUXBYvqQG4kEj8g8g_HOxZN5rFWTUvv3g@mail.gmail.com>
-Subject: Re: [PATCH] spi: bcm2835: don't print error on clk_get() DEFER
-To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_073354_682443_6CEC2F4A 
-X-CRM114-Status: GOOD (  12.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191213_073923_747364_23D71DD3 
+X-CRM114-Status: GOOD (  13.45  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (aford173[at]gmail.com)
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -77,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,35 +99,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Scott Branden <scott.branden@broadcom.com>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Ray Jui <ray.jui@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Mark Rutland <mark.rutland@arm.com>, Aymen Sghaier <aymen.sghaier@nxp.com>,
+ Fabio Estevam <festevam@gmail.com>, Herbert Xu <herbert@gondor.apana.org.au>,
+ horia.geanta@nxp.com, devicetree@vger.kernel.org,
+ Adam Ford <aford173@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Will Deacon <will@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Catalin Marinas <catalin.marinas@arm.com>, Shawn Guo <shawnguo@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 13, 2019 at 6:41 AM Mark Brown <broonie@kernel.org> wrote:
->
-> On Thu, Dec 12, 2019 at 06:12:13PM -0500, Jim Quinlan wrote:
-> > Otherwise one may get multiple error messages for normal
-> > operation of a clock provider.
->
-> >       if (IS_ERR(bs->clk)) {
-> >               err = PTR_ERR(bs->clk);
-> > -             dev_err(&pdev->dev, "could not get clk: %d\n", err);
-> > +             if (err != -EPROBE_DEFER)
-> > +                     dev_err(&pdev->dev, "could not get clk: %d\n", err);
->
-> On the other hand if the clock isn't there and never appears then there
-> won't be anything saying why the driver isn't loading which won't be
-> helpful when trying to figure out what's going on.
+The i.MX8M Mini uses the same crypto engine as the i.MX8MQ, but
+the driver is restricting the check to just the i.MX8MQ.
 
-Understood; I could do a dev_dbg() on -EPROBE_DEFER and dev_err() on
-all other errors -- would that work for you?
+This patch expands the check for either i.MX8MQ or i.MX8MM.
+
+Signed-off-by: Adam Ford <aford173@gmail.com>
+
+---
+V2:  Expand the check that forces the setting on imx8mq to also be true for imx8mm
+     Explictly state imx8mm compatiblity instead of making it generic to all imx8m*
+      this is mostly due to lack of other hardware to test
+
+diff --git a/drivers/crypto/caam/ctrl.c b/drivers/crypto/caam/ctrl.c
+index d7c3c3805693..c01dda692ecc 100644
+--- a/drivers/crypto/caam/ctrl.c
++++ b/drivers/crypto/caam/ctrl.c
+@@ -102,7 +102,8 @@ static inline int run_descriptor_deco0(struct device *ctrldev, u32 *desc,
+ 	     * Apparently on i.MX8MQ it doesn't matter if virt_en == 1
+ 	     * and the following steps should be performed regardless
+ 	     */
+-	    of_machine_is_compatible("fsl,imx8mq")) {
++	    of_machine_is_compatible("fsl,imx8mq") ||
++	    of_machine_is_compatible("fsl,imx8mm")) {
+ 		clrsetbits_32(&ctrl->deco_rsr, 0, DECORSR_JR0);
+ 
+ 		while (!(rd_reg32(&ctrl->deco_rsr) & DECORSR_VALID) &&
+@@ -509,6 +510,7 @@ static const struct soc_device_attribute caam_imx_soc_table[] = {
+ 	{ .soc_id = "i.MX6*",  .data = &caam_imx6_data },
+ 	{ .soc_id = "i.MX7*",  .data = &caam_imx7_data },
+ 	{ .soc_id = "i.MX8MQ", .data = &caam_imx7_data },
++	{ .soc_id = "i.MX8MM", .data = &caam_imx7_data },
+ 	{ .family = "Freescale i.MX" },
+ 	{ /* sentinel */ }
+ };
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
