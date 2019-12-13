@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E15811E6D0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 16:39:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B50911E6D5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 16:39:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MET72S+fOrXz+opY+ixBGYXl/sFq78qrI/cd2q/pM3s=; b=HV6wYBgSBhFuwF
-	NkRUDMpVPZWg5K8/GjYZSJRJHzlMb8/dbi/O86iaS9Oxr0e8BTwj5oJ91PMs/vqdDoeUhLwzEbb87
-	f+omQSW0S46EnvmnE152+W5B/vj7QxLpuDc6Man3so0eKN9YG4XY7yqdOk4pKID+nHMj54uEs1IAO
-	nt+42yXsouvvoEktNaHt+I2+sKGVgmz9f5idBThyvygRLRZhFp3x8MpZah1xdybIpoBpuiQHpX5Sk
-	4bE4JhYglzMiKsb/ytLjQyWuU5KN4tBaaAIMXOqLOOLgjPQ6Z229FYKUE5IRSkRWVubmOhhsIkwAk
-	tp8Vwk3MY8pqibWnfO7g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QjAz4V6RfYzOTUprK6fxTFYN41y9CBlBvvDXwjmzNu8=; b=Dg14+vKtt+TGXA
+	e/oO2RQFnOgNS1GJbu0bO9mHBrJfb78vWOM1MTTAWofnKFxUoxCdq026UnceIRvy91XY2uPqDklXf
+	FYyQUwnF73Y7q9JmisvVlfC4pzm+JMgl30tv82fO5olqyFrkVY6WOUmuQh94f/EhwRXLYTfN/P6Cg
+	B94RLeNrvuGjHHhdWDgoilIYs+kD4HbnbCGMzuA/C9Qk2ZdNyKty1PTG4ywTnPgFjNbiaYyf0p8+T
+	0GMHkuCgr46R2ws6jsmNtFYtK3fxVt/Yo+w82yDcycb+f41a8CprAJ0zFxCA56P+TerfdwO67almx
+	vF045C8HaYi8Z7nZRbOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifn2R-0004J6-I9; Fri, 13 Dec 2019 15:39:31 +0000
-Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
+	id 1ifn2d-0004SI-4Z; Fri, 13 Dec 2019 15:39:43 +0000
+Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifn2I-0004Hv-1W
+ id 1ifn2J-0004I2-Tv
  for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 15:39:25 +0000
-Received: by mail-yw1-xc42.google.com with SMTP id h126so1414520ywc.6
+Received: by mail-yw1-xc44.google.com with SMTP id b186so17781ywc.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 07:39:21 -0800 (PST)
+ Fri, 13 Dec 2019 07:39:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=66dDxa4JQshR1dxJN1HCdA7FRTIVML1Rl2L0x4gBwBs=;
- b=IpwWQTBzg9+efmz6zpdHlpW7WO6Qb2rzpNyjAvojL6elJWNgpVqmZyQ+VOA2jRdCEh
- jGyplAdiIPO/JftjYxUO7sovgTvepNOw0lWV1MT9dznUOuusPMO+j+Z13oroUaaD5bil
- 1piYhqNdzEdfXdqhnE+7U5kCEFqfJ8zhu7wceeOYtYpgS0QKCQ+RML/u0oe6npp2nIWC
- Cc9nOT5KsyorY2X5unKnHKTIQ8r9XxZZz4ec1HolS6nH5SjuT5MeeuFP3YXKRzxK52KC
- 2LdZ8O6EEN/aQaZn8ExiHvWWt6aJrAMgVOeJJTI1AxGZbbtQSCpn6u9Ib/Kn3pQul97X
- ebAA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=zAVLyHI55RYFQfABy0CQiTV5qxIf3ilADCMSzbRJCnM=;
+ b=bw41ej1m7qXmEL/RA/Zpn70Z9LvnYU1XkNBiR8nDGpD9rGdBw5AaKbgRzT+4WIoXnx
+ GgOFePNa7to/03NkjusJ3b+dsq/CUeKC9Nk+6Qn3Csyg+UXiq642pzTAYcdLcEvXOMYB
+ 70itpJPQWDiPW3x7i+0jGNg4wmLrBAJPd017LZpkmaOyUQDVuRBmsEJzd91QPzUXy9i/
+ WtCSjAo5M+DGkRTXhsMPiD6BaYWy5UV47OXokef+D9oL1LigiMVSgsdbNOc5qXM+RJbE
+ KrcVNtljQDVPV8X7iFA+TG+0I21dE7/06p+KigtJRQn1TPCMfOaYnjUJnQJzP+qYligO
+ 9kVA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=66dDxa4JQshR1dxJN1HCdA7FRTIVML1Rl2L0x4gBwBs=;
- b=RLNxUh1DxHC5wV7CvEKofDjFWehzY5lIspk+OXUEKysSHOG9Q+9ct+mx5tcdT4AsQh
- /V9vBkq3Y+kgKYlUeOaH4Tn6IdrKQgEmXJK5pOMe4mH69jvKpT3KFSwTJ69D4HSjRtVL
- fExgIQ3bpTJkO5xxWK2RhPvRIY3wgcqg56Qg/z07GfcALLmWY3A34+S1PD+p7qtUni9A
- sIL/SvnElKQ6I9h8MEj6vQRFhYCBqOmOOv9zzFWJ49iLWVG+a7PwnSL8K9Bk0gyhU1tG
- TqmZr/Z7dsi28hSHxZcDXUEgGydcWpmt1cfxMOfAJBz6lXuf+Ul7L43cjVaBIwbObE7x
- 0EUQ==
-X-Gm-Message-State: APjAAAXR4lV0BgAfWYrKVlRLp0wmrNpL8Mvpf0LM3bwoV2C7Ikvv3jzW
- z7HtStRItykKjrqU8slROnNwadQlkqg=
-X-Google-Smtp-Source: APXvYqzO7cb72G93h6pc42x43nIgubOr0x06bTe3Kej8fCH2doIKLJGdJ8weE8MbHkaf+/uMF//KeA==
-X-Received: by 2002:a25:b007:: with SMTP id q7mr7626962ybf.193.1576251560130; 
- Fri, 13 Dec 2019 07:39:20 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=zAVLyHI55RYFQfABy0CQiTV5qxIf3ilADCMSzbRJCnM=;
+ b=Dt+eprDgA8NZiEBOTkdUh7jn2lTH+ow9oC1DKRxELW8SsXF5KVOmUPC6APTZ61Fzkf
+ jfz9QuKLoopan1908tOgRxBmuOWpitcIMZHRu7fkLVIVUjQ9nZHUAQ2fXiTLYTuldpfB
+ umaGduoR9raSp0Hchs7mjQdCgoz6iOhKVowyUoRNTwsrxJsO9i6IrFZRWF0e+nNIbrR9
+ uwzyvGQ79VluTKFhwOo2HE5sGSMzD9ssp7QaRN/fxILhkt3K6vZTmPen0PgWG8j1RQWz
+ NAeSu7JMlpSvMN0Fm53zh13xLUE8TTiv8+FuL1LVZh4M4BUAyic7C3AkfefBSwf2Gsvf
+ O4uQ==
+X-Gm-Message-State: APjAAAXfHrd8rboVK2u/MHjMtEGxRRSB5wwdGlBeKuTaSFo8SVZuRraw
+ 1XNslaXMIOXOTyanEqxH12ynW/HRkZQ=
+X-Google-Smtp-Source: APXvYqxEJIIyofm5M0Sh4DQ1LyuKviJI7SgF5u+5c4dQaIsYOJppbZ+0Ko1f0dmxBRWmYpBnkZ+uLQ==
+X-Received: by 2002:a25:c242:: with SMTP id s63mr9067337ybf.19.1576251562471; 
+ Fri, 13 Dec 2019 07:39:22 -0800 (PST)
 Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
  [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id i17sm4300474ywg.66.2019.12.13.07.39.18
+ by smtp.gmail.com with ESMTPSA id i17sm4300474ywg.66.2019.12.13.07.39.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Dec 2019 07:39:19 -0800 (PST)
+ Fri, 13 Dec 2019 07:39:21 -0800 (PST)
 From: Adam Ford <aford173@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 1/3] crypto: caam: Add support for i.MX8M Mini
-Date: Fri, 13 Dec 2019 09:39:08 -0600
-Message-Id: <20191213153910.11235-1-aford173@gmail.com>
+Subject: [PATCH V2 2/3] arm64: dts: imx8mm: Add Crypto CAAM support
+Date: Fri, 13 Dec 2019 09:39:09 -0600
+Message-Id: <20191213153910.11235-2-aford173@gmail.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191213153910.11235-1-aford173@gmail.com>
+References: <20191213153910.11235-1-aford173@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_073923_747364_23D71DD3 
-X-CRM114-Status: GOOD (  13.45  )
+X-CRM114-CacheID: sfid-20191213_073923_980105_E8721AD7 
+X-CRM114-Status: GOOD (  12.87  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -113,40 +115,56 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The i.MX8M Mini uses the same crypto engine as the i.MX8MQ, but
-the driver is restricting the check to just the i.MX8MQ.
+The i.MX8M Mini supports the same crypto engine as what is in
+the i.MX8MQ, but it is not currently present in the device tree.
 
-This patch expands the check for either i.MX8MQ or i.MX8MM.
+This patch places in into the device tree.
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
-
 ---
-V2:  Expand the check that forces the setting on imx8mq to also be true for imx8mm
-     Explictly state imx8mm compatiblity instead of making it generic to all imx8m*
-      this is mostly due to lack of other hardware to test
+V2:  Don't disable it by default
 
-diff --git a/drivers/crypto/caam/ctrl.c b/drivers/crypto/caam/ctrl.c
-index d7c3c3805693..c01dda692ecc 100644
---- a/drivers/crypto/caam/ctrl.c
-+++ b/drivers/crypto/caam/ctrl.c
-@@ -102,7 +102,8 @@ static inline int run_descriptor_deco0(struct device *ctrldev, u32 *desc,
- 	     * Apparently on i.MX8MQ it doesn't matter if virt_en == 1
- 	     * and the following steps should be performed regardless
- 	     */
--	    of_machine_is_compatible("fsl,imx8mq")) {
-+	    of_machine_is_compatible("fsl,imx8mq") ||
-+	    of_machine_is_compatible("fsl,imx8mm")) {
- 		clrsetbits_32(&ctrl->deco_rsr, 0, DECORSR_JR0);
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index 860cddec9632..1f0178078572 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -726,6 +726,36 @@
+ 				status = "disabled";
+ 			};
  
- 		while (!(rd_reg32(&ctrl->deco_rsr) & DECORSR_VALID) &&
-@@ -509,6 +510,7 @@ static const struct soc_device_attribute caam_imx_soc_table[] = {
- 	{ .soc_id = "i.MX6*",  .data = &caam_imx6_data },
- 	{ .soc_id = "i.MX7*",  .data = &caam_imx7_data },
- 	{ .soc_id = "i.MX8MQ", .data = &caam_imx7_data },
-+	{ .soc_id = "i.MX8MM", .data = &caam_imx7_data },
- 	{ .family = "Freescale i.MX" },
- 	{ /* sentinel */ }
- };
++			crypto: crypto@30900000 {
++				compatible = "fsl,sec-v4.0";
++				#address-cells = <1>;
++				#size-cells = <1>;
++				reg = <0x30900000 0x40000>;
++				ranges = <0 0x30900000 0x40000>;
++				interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MM_CLK_AHB>,
++					 <&clk IMX8MM_CLK_IPG_ROOT>;
++				clock-names = "aclk", "ipg";
++
++				sec_jr0: jr@1000 {
++					compatible = "fsl,sec-v4.0-job-ring";
++					reg = <0x1000 0x1000>;
++					interrupts = <GIC_SPI 105 IRQ_TYPE_LEVEL_HIGH>;
++				};
++
++				sec_jr1: jr@2000 {
++					compatible = "fsl,sec-v4.0-job-ring";
++					reg = <0x2000 0x1000>;
++					interrupts = <GIC_SPI 106 IRQ_TYPE_LEVEL_HIGH>;
++				};
++
++				sec_jr2: jr@3000 {
++					compatible = "fsl,sec-v4.0-job-ring";
++					reg = <0x3000 0x1000>;
++					interrupts = <GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>;
++				};
++			};
++
+ 			i2c1: i2c@30a20000 {
+ 				compatible = "fsl,imx8mm-i2c", "fsl,imx21-i2c";
+ 				#address-cells = <1>;
 -- 
 2.20.1
 
