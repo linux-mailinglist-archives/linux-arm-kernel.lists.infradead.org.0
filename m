@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2D9811E793
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:05:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 829D911E787
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:05:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Peeik14P8CDF49jUvttgM5ehGrAE/oOP/ygfOOd0B0=; b=hGYppKhLHxghcX
-	UBeJwfOiTplZI3in5XbliyucsSY8M1C1bnNBDmgbvQov6UHR1obSSjp6tG06DKg3bvqIiaXzXLC3M
-	6BQO1gLERX8ZcupfC818xHyUzPE/sfoH/8sdc6jIQfKSqmnum4qsKf2qpQ15vzGBLHIDEKOsXpxt1
-	LUFKjsIgbweQmd4M7jaWghQK9hstVzax0WlBoTs+nUXRGwUrykgHJUDn/suER3UGrDdBLlRB+hYvF
-	8+Y+nvi+EXbpXhSxgcA2hI9Aht6R2wOJMjKZlX9DVSp+JsssGIsUZtJdsJ+9GjZXU2ucx0WqTxZIR
-	Cq+177qksiubgKpKehdw==;
+	List-Owner; bh=yaFRXRiIliZeXGBwSJJn2M52FqvHEApWTWCmYRURq/A=; b=lhpMdw4Q0wh1zK
+	SpAd60soUPCRDacngvszFh4fEoZw+7XTFqvMskj6lI/Qg+yzyhopRTI/BcO/z6I5CDN6u23VM+VqT
+	ALMX23W4uOy7m/VQZqhCKkrbfvB8+BOm/pphKg8/q4X7Itmvj5jXn5FZc1jx6tsR8TsVjWZhJIVxa
+	O0Kg/G/DPoTS3dvP6aFKcHSuWJDgMSbKr0yooUwRSqmDX8kIFFZ8ZjkqWhqjeN5LxwaVC7lPChTDA
+	jj0YdqZvBeOhSBTgQ6qx27X/9IizMPxVm7tzh3GOVFSWJKLJ7QN+TDaVAbIcz12xXKol914KACPPM
+	3NFu9J23wYWAyX5Jbu2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifnRe-00038m-U9; Fri, 13 Dec 2019 16:05:34 +0000
-Received: from mailoutvs8.siol.net ([185.57.226.199] helo=mail.siol.net)
+	id 1ifnR3-0001Sb-RS; Fri, 13 Dec 2019 16:04:57 +0000
+Received: from mailoutvs43.siol.net ([185.57.226.234] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifnQt-0001QA-5A
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:04:51 +0000
+ id 1ifnQt-0001QR-D8
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:04:49 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 63D6052454D;
- Fri, 13 Dec 2019 17:04:43 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTP id 6C4A952455C;
+ Fri, 13 Dec 2019 17:04:45 +0100 (CET)
 X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id Y-bJ71l0u6-E; Fri, 13 Dec 2019 17:04:42 +0100 (CET)
+ with ESMTP id Kfzlo29mUbBN; Fri, 13 Dec 2019 17:04:45 +0100 (CET)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id CE91452454E;
- Fri, 13 Dec 2019 17:04:42 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPS id 25E6C524558;
+ Fri, 13 Dec 2019 17:04:45 +0100 (CET)
 Received: from localhost.localdomain (cpe-86-58-102-7.static.triera.net
  [86.58.102.7]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 829F6524558;
- Fri, 13 Dec 2019 17:04:40 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPSA id D45B152455C;
+ Fri, 13 Dec 2019 17:04:42 +0100 (CET)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mchehab@kernel.org, mripard@kernel.org, paul.kocialkowski@bootlin.com,
  hverkuil@xs4all.nl
-Subject: [PATCH v2 2/4] media: cedrus: hevc: Add support for scaling matrix
-Date: Fri, 13 Dec 2019 17:04:26 +0100
-Message-Id: <20191213160428.54303-3-jernej.skrabec@siol.net>
+Subject: [PATCH v2 3/4] media: uapi: hevc: Add segment address field
+Date: Fri, 13 Dec 2019 17:04:27 +0100
+Message-Id: <20191213160428.54303-4-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191213160428.54303-1-jernej.skrabec@siol.net>
 References: <20191213160428.54303-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_080447_780623_82653846 
-X-CRM114-Status: GOOD (  12.71  )
+X-CRM114-CacheID: sfid-20191213_080447_778881_7D8B5FD7 
+X-CRM114-Status: UNSURE (   9.16  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.199 listed in list.dnswl.org]
+ low trust [185.57.226.234 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,161 +80,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-HEVC frames may use scaling list feature. Add support for it.
+If HEVC frame consists of multiple slices, segment address has to be
+known in order to properly decode it.
+
+Add segment address field to slice parameters.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- drivers/staging/media/sunxi/cedrus/cedrus.c   |  7 ++
- drivers/staging/media/sunxi/cedrus/cedrus.h   |  1 +
- .../staging/media/sunxi/cedrus/cedrus_dec.c   |  2 +
- .../staging/media/sunxi/cedrus/cedrus_h265.c  | 70 ++++++++++++++++++-
- .../staging/media/sunxi/cedrus/cedrus_regs.h  |  2 +
- 5 files changed, 81 insertions(+), 1 deletion(-)
+ Documentation/media/uapi/v4l/ext-ctrls-codec.rst | 5 ++++-
+ include/media/hevc-ctrls.h                       | 5 ++++-
+ 2 files changed, 8 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
-index c6ddd46eff82..bf68bc6b20c8 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
-@@ -116,6 +116,13 @@ static const struct cedrus_control cedrus_controls[] = {
- 		.codec		= CEDRUS_CODEC_H265,
- 		.required	= true,
- 	},
-+	{
-+		.cfg = {
-+			.id	= V4L2_CID_MPEG_VIDEO_HEVC_SCALING_MATRIX,
-+		},
-+		.codec		= CEDRUS_CODEC_H265,
-+		.required	= true,
-+	},
- 	{
- 		.cfg = {
- 			.id	= V4L2_CID_MPEG_VIDEO_HEVC_DECODE_MODE,
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
-index 96765555ab8a..d945f4f0ff2d 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus.h
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
-@@ -73,6 +73,7 @@ struct cedrus_h265_run {
- 	const struct v4l2_ctrl_hevc_sps			*sps;
- 	const struct v4l2_ctrl_hevc_pps			*pps;
- 	const struct v4l2_ctrl_hevc_slice_params	*slice_params;
-+	const struct v4l2_ctrl_hevc_scaling_matrix	*scaling_matrix;
- };
+diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+index aab1451e54d4..5415d5babcc2 100644
+--- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
++++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
+@@ -3975,6 +3975,9 @@ enum v4l2_mpeg_video_hevc_size_of_length_field -
+     * - __u32
+       - ``data_bit_offset``
+       - Offset (in bits) to the video data in the current slice data.
++    * - __u32
++      - ``slice_segment_addr``
++      -
+     * - __u8
+       - ``nal_unit_type``
+       -
+@@ -4052,7 +4055,7 @@ enum v4l2_mpeg_video_hevc_size_of_length_field -
+       - ``num_rps_poc_lt_curr``
+       - The number of reference pictures in the long-term set.
+     * - __u8
+-      - ``padding[7]``
++      - ``padding[5]``
+       - Applications and drivers must set this to zero.
+     * - struct :c:type:`v4l2_hevc_dpb_entry`
+       - ``dpb[V4L2_HEVC_DPB_ENTRIES_NUM_MAX]``
+diff --git a/include/media/hevc-ctrls.h b/include/media/hevc-ctrls.h
+index 1592e52c3614..3e2e32098312 100644
+--- a/include/media/hevc-ctrls.h
++++ b/include/media/hevc-ctrls.h
+@@ -167,6 +167,9 @@ struct v4l2_ctrl_hevc_slice_params {
+ 	__u32	bit_size;
+ 	__u32	data_bit_offset;
  
- struct cedrus_run {
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-index 4a2fc33a1d79..327ed6c264dc 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-@@ -66,6 +66,8 @@ void cedrus_device_run(void *priv)
- 			V4L2_CID_MPEG_VIDEO_HEVC_PPS);
- 		run.h265.slice_params = cedrus_find_control_data(ctx,
- 			V4L2_CID_MPEG_VIDEO_HEVC_SLICE_PARAMS);
-+		run.h265.scaling_matrix = cedrus_find_control_data(ctx,
-+			V4L2_CID_MPEG_VIDEO_HEVC_SCALING_MATRIX);
- 		break;
++	/* ISO/IEC 23008-2, ITU-T Rec. H.265: General slice segment header */
++	__u32	slice_segment_addr;
++
+ 	/* ISO/IEC 23008-2, ITU-T Rec. H.265: NAL unit header */
+ 	__u8	nal_unit_type;
+ 	__u8	nuh_temporal_id_plus1;
+@@ -200,7 +203,7 @@ struct v4l2_ctrl_hevc_slice_params {
+ 	__u8	num_rps_poc_st_curr_after;
+ 	__u8	num_rps_poc_lt_curr;
  
- 	default:
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-index 6945dc74e1d7..888bfd5ca224 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
-@@ -220,6 +220,69 @@ static void cedrus_h265_pred_weight_write(struct cedrus_dev *dev,
- 	}
- }
+-	__u8	padding;
++	__u8	padding[5];
  
-+static void cedrus_h265_write_scaling_list(struct cedrus_ctx *ctx,
-+					   struct cedrus_run *run)
-+{
-+	const struct v4l2_ctrl_hevc_scaling_matrix *scaling;
-+	struct cedrus_dev *dev = ctx->dev;
-+	u32 i, j, k, val;
-+
-+	scaling = run->h265.scaling_matrix;
-+
-+	cedrus_write(dev, VE_DEC_H265_SCALING_LIST_DC_COEF0,
-+		     (scaling->scaling_list_dc_coef_32x32[1] << 24) |
-+		     (scaling->scaling_list_dc_coef_32x32[0] << 16) |
-+		     (scaling->scaling_list_dc_coef_16x16[1] << 8) |
-+		     (scaling->scaling_list_dc_coef_16x16[0] << 0));
-+
-+	cedrus_write(dev, VE_DEC_H265_SCALING_LIST_DC_COEF1,
-+		     (scaling->scaling_list_dc_coef_16x16[5] << 24) |
-+		     (scaling->scaling_list_dc_coef_16x16[4] << 16) |
-+		     (scaling->scaling_list_dc_coef_16x16[3] << 8) |
-+		     (scaling->scaling_list_dc_coef_16x16[2] << 0));
-+
-+	cedrus_h265_sram_write_offset(dev, VE_DEC_H265_SRAM_OFFSET_SCALING_LISTS);
-+
-+	for (i = 0; i < 6; i++)
-+		for (j = 0; j < 8; j++)
-+			for (k = 0; k < 8; k += 4) {
-+				val = ((u32)scaling->scaling_list_8x8[i][j + (k + 3) * 8] << 24) |
-+				      ((u32)scaling->scaling_list_8x8[i][j + (k + 2) * 8] << 16) |
-+				      ((u32)scaling->scaling_list_8x8[i][j + (k + 1) * 8] << 8) |
-+				      scaling->scaling_list_8x8[i][j + k * 8];
-+				cedrus_write(dev, VE_DEC_H265_SRAM_DATA, val);
-+			}
-+
-+	for (i = 0; i < 2; i++)
-+		for (j = 0; j < 8; j++)
-+			for (k = 0; k < 8; k += 4) {
-+				val = ((u32)scaling->scaling_list_32x32[i][j + (k + 3) * 8] << 24) |
-+				      ((u32)scaling->scaling_list_32x32[i][j + (k + 2) * 8] << 16) |
-+				      ((u32)scaling->scaling_list_32x32[i][j + (k + 1) * 8] << 8) |
-+				      scaling->scaling_list_32x32[i][j + k * 8];
-+				cedrus_write(dev, VE_DEC_H265_SRAM_DATA, val);
-+			}
-+
-+	for (i = 0; i < 6; i++)
-+		for (j = 0; j < 8; j++)
-+			for (k = 0; k < 8; k += 4) {
-+				val = ((u32)scaling->scaling_list_16x16[i][j + (k + 3) * 8] << 24) |
-+				      ((u32)scaling->scaling_list_16x16[i][j + (k + 2) * 8] << 16) |
-+				      ((u32)scaling->scaling_list_16x16[i][j + (k + 1) * 8] << 8) |
-+				      scaling->scaling_list_16x16[i][j + k * 8];
-+				cedrus_write(dev, VE_DEC_H265_SRAM_DATA, val);
-+			}
-+
-+	for (i = 0; i < 6; i++)
-+		for (j = 0; j < 4; j++) {
-+			val = ((u32)scaling->scaling_list_4x4[i][j + 12] << 24) |
-+			      ((u32)scaling->scaling_list_4x4[i][j + 8] << 16) |
-+			      ((u32)scaling->scaling_list_4x4[i][j + 4] << 8) |
-+			      scaling->scaling_list_4x4[i][j];
-+			cedrus_write(dev, VE_DEC_H265_SRAM_DATA, val);
-+		}
-+}
-+
- static void cedrus_h265_setup(struct cedrus_ctx *ctx,
- 			      struct cedrus_run *run)
- {
-@@ -499,7 +562,12 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
- 
- 	/* Scaling list. */
- 
--	reg = VE_DEC_H265_SCALING_LIST_CTRL0_DEFAULT;
-+	if (sps->flags & V4L2_HEVC_SPS_FLAG_SCALING_LIST_ENABLED) {
-+		cedrus_h265_write_scaling_list(ctx, run);
-+		reg = VE_DEC_H265_SCALING_LIST_CTRL0_FLAG_ENABLED;
-+	} else {
-+		reg = VE_DEC_H265_SCALING_LIST_CTRL0_DEFAULT;
-+	}
- 	cedrus_write(dev, VE_DEC_H265_SCALING_LIST_CTRL0, reg);
- 
- 	/* Neightbor information address. */
-diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-index 7beb03d3bb39..0d9449fe2b28 100644
---- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-+++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
-@@ -492,6 +492,8 @@
- #define VE_DEC_H265_ENTRY_POINT_OFFSET_ADDR	(VE_ENGINE_DEC_H265 + 0x64)
- #define VE_DEC_H265_TILE_START_CTB		(VE_ENGINE_DEC_H265 + 0x68)
- #define VE_DEC_H265_TILE_END_CTB		(VE_ENGINE_DEC_H265 + 0x6c)
-+#define VE_DEC_H265_SCALING_LIST_DC_COEF0	(VE_ENGINE_DEC_H265 + 0x78)
-+#define VE_DEC_H265_SCALING_LIST_DC_COEF1	(VE_ENGINE_DEC_H265 + 0x7c)
- 
- #define VE_DEC_H265_LOW_ADDR			(VE_ENGINE_DEC_H265 + 0x80)
- 
+ 	/* ISO/IEC 23008-2, ITU-T Rec. H.265: General slice segment header */
+ 	struct v4l2_hevc_dpb_entry dpb[V4L2_HEVC_DPB_ENTRIES_NUM_MAX];
 -- 
 2.24.0
 
