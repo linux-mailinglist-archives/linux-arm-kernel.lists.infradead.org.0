@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92EEE11EC97
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 22:07:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 837E411EC9D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 22:07:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=59Ou0XWaGX08zWLlbh5963f8LJz6W3GROUtcNZKkgjQ=; b=JYu8K9aY8c20UF
-	1+cEumeUfKJUZIAeklEvKs//BLUJUWmDSHEt81atCq5Yb08efDvpMEmbR4B+U/eQxEEEc1g4HQd8m
-	52uteQa8IjuN3dHzvDc8SQZDAJf2XdDsKvLjunndqeA9vVI3OSoJGAGoL+KuRUYzs93R61ENGYa1W
-	UADE2GMsO4UaXhsaGfuSRRuptcMc2GasUaEgQkIBqk1jOZ1TJdA+LnpnMwufadWSU92fN00CakotQ
-	VHoXUjQJSgsGt9Skl0EkAyhuPn1KrGd0vVAhebd7a/o+Tsv75lzg1K/FU6aLJm073MD/MWwHyQSya
-	e8XqOsZhYDschbOLMk3g==;
+	List-Owner; bh=CsLIrWM3XRLZOb+yp6C8IdgRuBbSxNipAhctuLP6S4I=; b=mFDxWyHyBtUIVp
+	Yx+iAcDPKMty+IQStl4Pf6Df8S31yU2nZNQuZNIO4l6ptzoRFLN5EEMY88OYU5SYRVevwWnIdKOEm
+	2G8DB+2Y42MfXlWb2Q80htPaCwHJ0M4p0d+jABuV6gT4zJFHAE6/bA7DHx+rjpGSvhQYy60rCPCHz
+	tMactjxJ59bSPt6J9uC/LIV1eyupyUfqES+kxa0jHM7RHQYi0Jy/oZHM2Yzvb88y4OXQQCavxfghE
+	XAHwnTPByD6n5Wnmi7Y0009SvmPglb/lMvBgAhpFCZGzAleiQCt3dGvkXsWNtvWk2HHUon/PT3i+m
+	T5ku5jkuZ7+NC9VKBbAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifs9L-0006sk-8R; Fri, 13 Dec 2019 21:06:59 +0000
+	id 1ifs9b-0007AB-H4; Fri, 13 Dec 2019 21:07:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifs8w-0006lE-Ja; Fri, 13 Dec 2019 21:06:36 +0000
+ id 1ifs96-0006tX-6l; Fri, 13 Dec 2019 21:06:45 +0000
 Received: from localhost (mobile-166-170-223-177.mycingular.net
  [166.170.223.177])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D28C62467A;
- Fri, 13 Dec 2019 21:06:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6D6D72467A;
+ Fri, 13 Dec 2019 21:06:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576271193;
- bh=TLRFub19ZhaITE7YjcFkEHRBA0pszoIN5RnRY1gDYLs=;
+ s=default; t=1576271202;
+ bh=hWUTsi+517PaE+0S0Vj4/AHhcznAaHtL9dM69acMjt0=;
  h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=E/BnZTX+a8LiIkE6EdBlArJFLe2i3cC9dAJ9uaJzsx+hIy4Neio9I5tQwh+XcB08d
- YZV1mMNvJ1mDG0o5Vz+DTW3Xm51ca/KJWDwKJavT60c/lw5iWIrjQWfoEI7HKwPIq7
- 9Ynq21FilKYcUtvUrWHTkFAx9x5ELRCpRpV7Bpkg=
-Date: Fri, 13 Dec 2019 15:06:31 -0600
+ b=cObaL2ydIExDh5FQfy04mYtNWg8OGAWhz8lGSbGtxeNyVZ2k16gCNohgzA/fV+IBS
+ 9cFMAMDj4nGr6XQKqdmWTNDQRO5ykXoBKm9Ncektrv6hzd7/TEU83Mfl0rChSKJn7j
+ qY1XoccfsWjH7157hNnDcoweI7eFUjAByHwEYBgg=
+Date: Fri, 13 Dec 2019 15:06:41 -0600
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Lad Prabhakar <prabhakar.csengg@gmail.com>
-Subject: Re: [v2 1/6] pci: pcie-rcar: preparation for adding endpoint support
-Message-ID: <20191213185011.GA170447@google.com>
+Subject: Re: [v2 0/6] Add support for PCIe controller to work in endpoint
+ mode on R-Car SoCs
+Message-ID: <20191213184627.GA169673@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191213084748.11210-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_130634_689036_6BFD6EFA 
-X-CRM114-Status: GOOD (  15.16  )
+X-CRM114-CacheID: sfid-20191213_130644_285289_6E9EF48A 
+X-CRM114-Status: GOOD (  11.21  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -98,34 +99,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 13, 2019 at 08:47:43AM +0000, Lad Prabhakar wrote:
-> From: "Lad, Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> 
-> this patch prepares for adding endpoint support to rcar controller,
-> there are no functional changes with this patch, a common file is
-> created so that it can be shared with endpoint driver. Alongside
-> this patch fixes checkpatch reported issues.
+On Fri, Dec 13, 2019 at 08:47:42AM +0000, Lad Prabhakar wrote:
 
-Can you please split this into:
+> Lad, Prabhakar (6):
+>   pci: pcie-rcar: preparation for adding endpoint support
+>   pci: endpoint: add support to handle features of outbound memory
+>   of: address: add support to parse PCI outbound-ranges
+>   dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+>     controller
+>   pci: rcar: add support for rcar pcie controller in endpoint mode
+>   misc: pci_endpoint_test: add device-id for RZ/G2E pcie controller
 
-  - a patch that moves code only, with no other changes except any
-    necessary Kconfig and Makefile changes
-  - another patch that fixes the checkpatch things
+The next time you post this, please update the subject lines to match
+existing conventions (capitalize "PCI", description is a complete
+sentence starting with a capitalized verb, etc").  Run "git log
+--online" on the file you're changing and make yours look the same.
 
-When the checkpatch fixes are buried in the code move, it's impossible
-to review them.
-
-> Signed-off-by: Lad, Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> ---
->  arch/arm64/configs/defconfig            |    2 +-
->  drivers/pci/controller/Kconfig          |    4 +-
->  drivers/pci/controller/Makefile         |    2 +-
->  drivers/pci/controller/pcie-rcar-host.c | 1056 ++++++++++++++++++++++++++
->  drivers/pci/controller/pcie-rcar.c      | 1229 ++-----------------------------
->  drivers/pci/controller/pcie-rcar.h      |  129 ++++
->  6 files changed, 1242 insertions(+), 1180 deletions(-)
->  create mode 100644 drivers/pci/controller/pcie-rcar-host.c
->  create mode 100644 drivers/pci/controller/pcie-rcar.h
+  s/pci: /PCI: /
+  s/pcie-rcar: /rcar: /
+  s/pcie/PCIe/
+  s/device-id/Device ID/
 
 _______________________________________________
 linux-arm-kernel mailing list
