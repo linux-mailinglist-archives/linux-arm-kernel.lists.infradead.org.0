@@ -2,71 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60DD211DEA8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 08:30:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED83511DEC4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 08:41:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L140azaB98NDsDQx7fPPmn8NngRRpJHoSSgWLbn1s8M=; b=bH3qQptqEVi7GJ
-	QPUzKi0iPu3c4DDPHfZUk5a6qCFF0U/12oWubU6FKM9YuFMVU5wYQ/7e9CXhsopb20s117AwsTH40
-	VtLyTJOl+Th0HYxSLgGQA+QBSVOq0wwL6l5zvqrk0SPsRQaxVDniNR/R2nPElvWkVtDsXDG05vBg4
-	Sv37IHiuTGP20iGZTze2arRRrr5ss8pXwKqz88RWwq7IY998ptyNQgXjmsmkmSGDwJ7qnNMsQGJ5r
-	gk6K5p/WOzTDP3Bw8Uadi5DcdlEfDjCg15W+J0Y9P4hxBXxdmu4xABD2RtGPsvEHw7LLzi5dETK0B
-	8P5WkzMVlHaonRlmN1xg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=00eDnN2/21jxakIvpPqlrbUpG8YoGKTqzdUoGDNGJao=; b=ZSvCKNXG6JaIs2
+	c79SXc1WvVyfMrZonkoSs03jiD8biuv3FrljCbVRwyZZ9Qi9PflTo0EhImxp30YfxXrhG0UULrZt6
+	ieg6pECC9WGiiIVDmDNelNtEipRGN6k3GMkoEwBU8e4X6oMzJ9lok5VMjbx6BeX5JPIogyOcRUDFA
+	DjlA+QsoGCugIgZR/4j2r4iQbop0rvtCGQK4EC7XgtDL9goSfBr66vYQBn8FBjo8qO2T06i1VePbN
+	pJq8SnJAfbuWm5p1EblHxW6rvSCzJGf0PSqnPSgG63d9EnezbUelJz7Da6KcY3pvplW6CT3UStjwB
+	gqeCjEk+i/yZL8E39HwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iffOb-00074S-Vb; Fri, 13 Dec 2019 07:29:53 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iffZb-0003ic-Vb; Fri, 13 Dec 2019 07:41:15 +0000
+Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iffNv-0006Xl-My; Fri, 13 Dec 2019 07:29:13 +0000
-X-UUID: bcb1d70f5f84410e8a086fb84c0d3745-20191212
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=qyqLc9Qc/AHMZVxh4MW/hNmQGqRMapZ3wj3ihngoU6Q=; 
- b=G7eGOo+1uuLLyI1djgpQ4krSzgCJ52ToNVRkRqpeb5MG2Fv04xLSSPZ8/xLWzOQyTdUQIq488nRL20YEVaN+uKgQNossWN5Op6n2s93C2bw0WsM8NA3+LcDglzgWvmmy7IdCft3oMCGcYgDOQyoBctGNduGZtBSEExp43XPkYug=;
-X-UUID: bcb1d70f5f84410e8a086fb84c0d3745-20191212
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <yongqiang.niu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1948050293; Thu, 12 Dec 2019 23:29:01 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Dec 2019 23:30:08 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 13 Dec 2019 15:28:34 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 13 Dec 2019 15:28:25 +0800
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
- Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v2, 2/2] drm/mediatek: Add ctm property support
-Date: Fri, 13 Dec 2019 15:28:52 +0800
-Message-ID: <1576222132-31586-3-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1576222132-31586-1-git-send-email-yongqiang.niu@mediatek.com>
-References: <1576222132-31586-1-git-send-email-yongqiang.niu@mediatek.com>
+ id 1iffZS-0003hn-F8
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 07:41:08 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 1F0C92016D;
+ Fri, 13 Dec 2019 02:41:03 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Fri, 13 Dec 2019 02:41:03 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm1; bh=33Mnjk9CTgiKk4soyBf8XwUhyv
+ OpzfMckjiIljvOAFA=; b=F1Iff1JbCYyv88yK2oj9MC7XZaKUey7s3R7ouxTueM
+ CYNOnolGeWNiezw6VDV/wR9rwqx5kEg/BP6zJU8GfOc3aHU5P88cZi3qgprwEEGc
+ cIFiKIug0dNiPJF9h8IBw82L4xtGmFlKAiNVEDsulyLgLyoTt2VF7dIGvs0e3gEq
+ WtwWwYpxl9arCP9eSlxLwJPQgaCp52M/HcBFdxWJnn1YP+fJw6sU9L+9xjao/W76
+ Iw3QR0oJmQIroUlaaDYolP2GEeuhx/3J0HEi94xKzzd1MeKOeAeE5MfuHMKHpbsd
+ Zz/VSaBkzAKVJPzc1Pp0oaArPTJMcgEgMm16W4vGpHCA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=33Mnjk9CTgiKk4soy
+ Bf8XwUhyvOpzfMckjiIljvOAFA=; b=JC8UFfh7/aKZ1APq2dMfAPRWQYPWvwU0M
+ R2POtJcfW+CGcMnY0LaZt6zJtNpc4b2rQhPRj2yd5QhwBASknkwc7U/VGHU6bw8e
+ 4zBrSeToIUU9xq3GpQ9WnYbA6yYVXd4/RKfscpzi3m3LrZt4QDgozi/bIB9haMFy
+ ucA0w7oMOMPD5r8YuKEsqtFquPEDXEZlwOEJo34TWWPEdGEAcHY5/0/+A2aWrXZb
+ X7ou78fenTBjB0bS1WVY7fjNSWnqnm5SExFgMi4ukfY0ipeSOZKgeLBCJVyAUdsY
+ AZzf0bD9D2GIUu09V1P0Sne9MemAM4o/As9qlDrdPx2i5RLDSfpeg==
+X-ME-Sender: <xms:jUDzXbz9Y14hXVlu5djXj3MB9WdIqmCRSqv5EU9WzN-36jUT40X8pA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudelkedguddutdcutefuodetggdotefrod
+ ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+ necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+ enogevohgrshhtrghlqdfhgeduvddqtddvucdludehtddmnecujfgurhephffvufffkffo
+ ggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhmvgcutfhiphgrrhguuceomhgrgi
+ himhgvsegtvghrnhhordhtvggthheqnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdr
+ ohhrghenucfkphepledtrdekledrieekrdejieenucfrrghrrghmpehmrghilhhfrhhomh
+ epmhgrgihimhgvsegtvghrnhhordhtvggthhenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:jUDzXXjm_pgjqzXPZbqcCdBDez4NOCr_LsulHGZ4Grq7AD8-pV1Rmw>
+ <xmx:jUDzXQXe4m8Rj2h2qLcJcviwDItRVFF9waWyxgQItm6esbeJBv-zJA>
+ <xmx:jUDzXZ0PrIi79cpfTuu_MSB6iaF94QAhjqB_BzWhe6p8wiakWCEnOg>
+ <xmx:j0DzXS40g5r-TZS7hUVRHpVssizubgDTkvZLaaQWCIjaUi-gMMLPog>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 06CA180063;
+ Fri, 13 Dec 2019 02:41:00 -0500 (EST)
+From: Maxime Ripard <maxime@cerno.tech>
+To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>
+Subject: [PATCH] dt-bindings: media: Convert Allwinner hardware codec to a
+ schema
+Date: Fri, 13 Dec 2019 08:40:55 +0100
+Message-Id: <20191213074055.26193-1-maxime@cerno.tech>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_232911_776319_D21AD7AD 
-X-CRM114-Status: GOOD (  14.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191212_234106_844782_E6E3ACA2 
+X-CRM114-Status: GOOD (  12.25  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -74,8 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,192 +103,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime@cerno.tech>,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add ctm property support
+The Allwinner SoCs have a hardware video codec that is supported in Linux,
+with a matching Device Tree binding.
 
-Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Now that we have the DT validation in place, let's convert the device tree
+bindings for that controller over to a YAML schemas.
+
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 10 ++++-
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 62 ++++++++++++++++++++++++++++-
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  9 +++++
- 3 files changed, 78 insertions(+), 3 deletions(-)
+ .../allwinner,sun4i-a10-video-engine.yaml     | 83 +++++++++++++++++++
+ .../devicetree/bindings/media/cedrus.txt      | 57 -------------
+ 2 files changed, 83 insertions(+), 57 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml
+ delete mode 100644 Documentation/devicetree/bindings/media/cedrus.txt
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index 9a8e1d4..db3031e 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -614,8 +614,10 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
- 	if (mtk_crtc->event)
- 		mtk_crtc->pending_needs_vblank = true;
- 	if (crtc->state->color_mgmt_changed)
--		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
-+		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
- 			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i], crtc->state);
-+			mtk_ddp_ctm_set(mtk_crtc->ddp_comp[i], crtc->state);
-+		}
- 	mtk_drm_crtc_hw_config(mtk_crtc);
- }
- 
-@@ -734,6 +736,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 	int pipe = priv->num_pipes;
- 	int ret;
- 	int i;
-+	bool has_ctm = false;
- 	uint gamma_lut_size = 0;
- 
- 	if (!path)
-@@ -787,6 +790,9 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 
- 		mtk_crtc->ddp_comp[i] = comp;
- 
-+		if (comp->funcs->ctm_set)
-+			has_ctm = true;
+diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml
+new file mode 100644
+index 000000000000..47c8513555b2
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-video-engine.yaml
+@@ -0,0 +1,83 @@
++# SPDX-License-Identifier: GPL-2.0+
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/allwinner,sun4i-a10-video-engine.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- 		if (comp->funcs->gamma_set)
- 			gamma_lut_size = MTK_LUT_SIZE;
- 	}
-@@ -812,7 +818,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 
- 	if (gamma_lut_size)
- 		drm_mode_crtc_set_gamma_size(&mtk_crtc->base, gamma_lut_size);
--	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, gamma_lut_size);
-+	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, has_ctm, gamma_lut_size);
- 	priv->num_pipes++;
- 	mutex_init(&mtk_crtc->hw_lock);
- 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-index cb3296f..182990a 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-@@ -37,7 +37,15 @@
- #define CCORR_EN				BIT(0)
- #define DISP_CCORR_CFG				0x0020
- #define CCORR_RELAY_MODE			BIT(0)
-+#define CCORR_ENGINE_EN				BIT(1)
-+#define CCORR_GAMMA_OFF				BIT(2)
-+#define CCORR_WGAMUT_SRC_CLIP			BIT(3)
- #define DISP_CCORR_SIZE				0x0030
-+#define DISP_CCORR_COEF_0			0x0080
-+#define DISP_CCORR_COEF_1			0x0084
-+#define DISP_CCORR_COEF_2			0x0088
-+#define DISP_CCORR_COEF_3			0x008C
-+#define DISP_CCORR_COEF_4			0x0090
- 
- #define DISP_DITHER_EN				0x0000
- #define DITHER_EN				BIT(0)
-@@ -188,7 +196,7 @@ static void mtk_ccorr_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
- 	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_CCORR_SIZE);
--	mtk_ddp_write(cmdq_pkt, CCORR_RELAY_MODE, comp, DISP_CCORR_CFG);
-+	mtk_ddp_write(cmdq_pkt, CCORR_ENGINE_EN, comp, DISP_CCORR_CFG);
- }
- 
- static void mtk_ccorr_start(struct mtk_ddp_comp *comp)
-@@ -201,6 +209,57 @@ static void mtk_ccorr_stop(struct mtk_ddp_comp *comp)
- 	writel_relaxed(0x0, comp->regs + DISP_CCORR_EN);
- }
- 
-+/* Converts a DRM S31.32 value to the HW S1.10 format. */
-+static u16 mtk_ctm_s31_32_to_s1_10(u64 in)
-+{
-+	u16 r;
++title: Allwinner A10 Video Engine Device Tree Bindings
 +
-+	/* Sign bit. */
-+	r = in & BIT_ULL(63) ? BIT(11) : 0;
++maintainers:
++  - Chen-Yu Tsai <wens@csie.org>
++  - Maxime Ripard <mripard@kernel.org>
 +
-+	if ((in & GENMASK_ULL(62, 33)) > 0) {
-+		/* identity value 0x100000000 -> 0x400, */
-+		/* if bigger this, set it to max 0x7ff. */
-+		r |= GENMASK(10, 0);
-+	} else {
-+		/* take the 11 most important bits. */
-+		r |= (in >> 22) & GENMASK(10, 0);
-+	}
++properties:
++  compatible:
++    enum:
++      - allwinner,sun4i-a10-video-engine
++      - allwinner,sun5i-a13-video-engine
++      - allwinner,sun7i-a20-video-engine
++      - allwinner,sun8i-a33-video-engine
++      - allwinner,sun8i-h3-video-engine
++      - allwinner,sun50i-a64-video-engine
++      - allwinner,sun50i-h5-video-engine
++      - allwinner,sun50i-h6-video-engine
 +
-+	return r;
-+}
++  reg:
++    maxItems: 1
 +
-+static void mtk_ccorr_ctm_set(struct mtk_ddp_comp *comp,
-+			      struct drm_crtc_state *state)
-+{
-+	struct drm_property_blob *blob = state->ctm;
-+	struct drm_color_ctm *ctm;
-+	const u64 *input;
-+	uint16_t coeffs[9] = { 0 };
-+	int i;
-+	struct cmdq_pkt *cmdq_pkt = NULL;
++  interrupts:
++    maxItems: 1
 +
-+	if (!blob)
-+		return;
++  clocks:
++    items:
++      - description: Bus Clock
++      - description: Module Clock
++      - description: RAM Clock
 +
-+	ctm = (struct drm_color_ctm *)blob->data;
-+	input = ctm->matrix;
++  clock-names:
++    items:
++      - const: ahb
++      - const: mod
++      - const: ram
 +
-+	for (i = 0; i < ARRAY_SIZE(coeffs); i++)
-+		coeffs[i] = mtk_ctm_s31_32_to_s1_10(input[i]);
++  resets:
++    maxItems: 1
 +
-+	mtk_ddp_write(cmdq_pkt, coeffs[0] << 16 | coeffs[1],
-+		      comp, DISP_CCORR_COEF_0);
-+	mtk_ddp_write(cmdq_pkt, coeffs[2] << 16 | coeffs[3],
-+		      comp, DISP_CCORR_COEF_1);
-+	mtk_ddp_write(cmdq_pkt, coeffs[4] << 16 | coeffs[5],
-+		      comp, DISP_CCORR_COEF_2);
-+	mtk_ddp_write(cmdq_pkt, coeffs[6] << 16 | coeffs[7],
-+		      comp, DISP_CCORR_COEF_3);
-+	mtk_ddp_write(cmdq_pkt, coeffs[8] << 16,
-+		      comp, DISP_CCORR_COEF_4);
-+}
++  allwinner,sram:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    description: Phandle to the device SRAM
 +
- static void mtk_dither_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			      unsigned int h, unsigned int vrefresh,
- 			      unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
-@@ -271,6 +330,7 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
- 	.config = mtk_ccorr_config,
- 	.start = mtk_ccorr_start,
- 	.stop = mtk_ccorr_stop,
-+	.ctm_set = mtk_ccorr_ctm_set,
- };
- 
- static const struct mtk_ddp_comp_funcs ddp_dither = {
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-index 384abae..20fe55d 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-@@ -92,6 +92,8 @@ struct mtk_ddp_comp_funcs {
- 			  struct drm_crtc_state *state);
- 	void (*bgclr_in_on)(struct mtk_ddp_comp *comp);
- 	void (*bgclr_in_off)(struct mtk_ddp_comp *comp);
-+	void (*ctm_set)(struct mtk_ddp_comp *comp,
-+			struct drm_crtc_state *state);
- };
- 
- struct mtk_ddp_comp {
-@@ -205,6 +207,13 @@ static inline void mtk_ddp_comp_bgclr_in_off(struct mtk_ddp_comp *comp)
- 		comp->funcs->bgclr_in_off(comp);
- }
- 
-+static inline void mtk_ddp_ctm_set(struct mtk_ddp_comp *comp,
-+				   struct drm_crtc_state *state)
-+{
-+	if (comp->funcs && comp->funcs->ctm_set)
-+		comp->funcs->ctm_set(comp, state);
-+}
++  memory-region:
++    description:
++      CMA pool to use for buffers allocation instead of the default
++      CMA pool.
 +
- int mtk_ddp_comp_get_id(struct device_node *node,
- 			enum mtk_ddp_comp_type comp_type);
- int mtk_ddp_comp_init(struct device *dev, struct device_node *comp_node,
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - resets
++  - allwinner,sram
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/clock/sun7i-a20-ccu.h>
++    #include <dt-bindings/reset/sun4i-a10-ccu.h>
++
++    video-codec@1c0e000 {
++        compatible = "allwinner,sun7i-a20-video-engine";
++        reg = <0x01c0e000 0x1000>;
++        interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
++        clocks = <&ccu CLK_AHB_VE>, <&ccu CLK_VE>,
++                 <&ccu CLK_DRAM_VE>;
++        clock-names = "ahb", "mod", "ram";
++        resets = <&ccu RST_VE>;
++        allwinner,sram = <&ve_sram 1>;
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/media/cedrus.txt b/Documentation/devicetree/bindings/media/cedrus.txt
+deleted file mode 100644
+index 20c82fb0c343..000000000000
+--- a/Documentation/devicetree/bindings/media/cedrus.txt
++++ /dev/null
+@@ -1,57 +0,0 @@
+-Device-tree bindings for the VPU found in Allwinner SoCs, referred to as the
+-Video Engine (VE) in Allwinner literature.
+-
+-The VPU can only access the first 256 MiB of DRAM, that are DMA-mapped starting
+-from the DRAM base. This requires specific memory allocation and handling.
+-
+-Required properties:
+-- compatible		: must be one of the following compatibles:
+-			- "allwinner,sun4i-a10-video-engine"
+-			- "allwinner,sun5i-a13-video-engine"
+-			- "allwinner,sun7i-a20-video-engine"
+-			- "allwinner,sun8i-a33-video-engine"
+-			- "allwinner,sun8i-h3-video-engine"
+-			- "allwinner,sun50i-a64-video-engine"
+-			- "allwinner,sun50i-h5-video-engine"
+-			- "allwinner,sun50i-h6-video-engine"
+-- reg			: register base and length of VE;
+-- clocks		: list of clock specifiers, corresponding to entries in
+-			  the clock-names property;
+-- clock-names		: should contain "ahb", "mod" and "ram" entries;
+-- resets		: phandle for reset;
+-- interrupts		: VE interrupt number;
+-- allwinner,sram	: SRAM region to use with the VE.
+-
+-Optional properties:
+-- memory-region		: CMA pool to use for buffers allocation instead of the
+-			  default CMA pool.
+-
+-Example:
+-
+-reserved-memory {
+-	#address-cells = <1>;
+-	#size-cells = <1>;
+-	ranges;
+-
+-	/* Address must be kept in the lower 256 MiBs of DRAM for VE. */
+-	cma_pool: default-pool {
+-		compatible = "shared-dma-pool";
+-		size = <0x6000000>;
+-		alloc-ranges = <0x4a000000 0x6000000>;
+-		reusable;
+-		linux,cma-default;
+-	};
+-};
+-
+-video-codec@1c0e000 {
+-	compatible = "allwinner,sun7i-a20-video-engine";
+-	reg = <0x01c0e000 0x1000>;
+-
+-	clocks = <&ccu CLK_AHB_VE>, <&ccu CLK_VE>,
+-		 <&ccu CLK_DRAM_VE>;
+-	clock-names = "ahb", "mod", "ram";
+-
+-	resets = <&ccu RST_VE>;
+-	interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
+-	allwinner,sram = <&ve_sram 1>;
+-};
 -- 
-1.8.1.1.dirty
+2.23.0
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
