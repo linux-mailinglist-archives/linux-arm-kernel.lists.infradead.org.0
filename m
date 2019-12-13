@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 403FF11DE1E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 07:09:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B18B11DE20
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 07:10:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=q9fSHQhyB8qW7DMvc1o2tXusOfEOdvU4Oc8q9PBt/6w=; b=Md6F6zro7NkuoSOOW4s5wGYJQ
-	F2kFMSCSLKEkqFQoMQD5Aqhz2zzTGPXYO180u5uUeA38NroTBWiYc4D7XJ8LpbbLTEmR35Lxu8DTf
-	Lp20vXDQ1Qmy9o3I9oh0zQsfWWFvm0DxSnm8okTfS00QkITUnqeOIycQN+bNRkWEj89EJexkMenlC
-	Lj4pFc2KnStWdBWJoLnI5G/nYL4GGGcAGyjfdjihyha9yD46j3O/7u6UYBjmtf7vKxNEtLp8pYi5F
-	nGzgPwHiUo1fBML1RmEdHgX4mWzrnPxWfO1uDzRu0eOgGynEyP+ebKdt0bShfqowG+jLRFFqK4yzx
-	GfGvHVZew==;
+	 bh=Yxa0p1xnijBiNr1nB1+Emv+GKoEhtpCXZ76R3iJOWYw=; b=ij471JxLFFc67tBnbDyddK1l0
+	JgTT57Zx+rImwXo0WAVnaTlRpVxyjgAMxQh0IkXPbhvFn1DxblhmFYV2nn/cepucRhzTqWkkb8ax0
+	895T7ZefVJ0870puBOgBsUWZY9FrkkyruSpBusY3c1e5xn2JL8CL4S7v6YMgHBUCqlXQ0bHK/T/E3
+	ALT+0IxqzqISahn2rtfjbMaz1/0xGYGYnwo6QYMObBiuoFCkzTiJ8gxaCfJKVRHssVYU5fUswCoOG
+	j+h17P3jqarY6BpfrlgZ/Knv3+VwgjS1ZV4O8l8zHBFEsTmorm6ge2ni0InmlYIy50iGGVMalnJhD
+	Ds9AaSlrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ife8U-0002Tg-UW; Fri, 13 Dec 2019 06:09:10 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1ifeA0-00047i-1U; Fri, 13 Dec 2019 06:10:44 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ife8L-0002TF-RU
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 06:09:03 +0000
+ id 1ife9q-000477-Dc
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 06:10:35 +0000
 Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBD68vnK019499;
- Fri, 13 Dec 2019 00:08:57 -0600
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBD6AUKC016745;
+ Fri, 13 Dec 2019 00:10:30 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576217337;
- bh=IW1CVGOLk3zvfeZN1wVJTxk77Dh8sXQ4EIIZFKcl4bw=;
+ s=ti-com-17Q1; t=1576217430;
+ bh=lxpyAYNxKZfa7ImT1KScnaeXY0/dG5yxbrcxzBOJAqo=;
  h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Tmeg8FCK9JxfR1hilSHcJDTbSVq6My6MrVTpQB2Wicryd7urdn1r3sSpso32OSnlk
- CJf9qQ0yLOLaySdoZjvFMe+AfJMCuNAORMuSwSAHXRj/Qd6EWSlX7wwuaRR1xQ0687
- ostqor2CvlrmaXQoGfAJ+nu2Fuvp5QkJFKp6/wQg=
-Received: from DFLE111.ent.ti.com (dfle111.ent.ti.com [10.64.6.32])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBD68v00004679
+ b=nNcNNrYlXja4QcbYo9XI5y5j+DO9ydaXPTpn/Li0FQpXCC5n0AQ0AL1VoGQ23woL/
+ cid3FFC0Jo15uF4ijhY1zliGPiWlDH7NA1CIcZSzBNEQVj0iriRjZ+BSZLkzKnAEYP
+ hEvkon/Ptf2FOZbMs9fHiqlXiwJL/bfpUA6l3uKc=
+Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBD6AUwm007790
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 13 Dec 2019 00:08:57 -0600
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ Fri, 13 Dec 2019 00:10:30 -0600
+Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 13
- Dec 2019 00:08:57 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 00:10:30 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 13 Dec 2019 00:08:57 -0600
+ Frontend Transport; Fri, 13 Dec 2019 00:10:30 -0600
 Received: from [10.24.69.174] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBD68shl084921;
- Fri, 13 Dec 2019 00:08:55 -0600
-Subject: Re: [PATCH 00/13] Drop more legacy platform data for omaps
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBD6ARvc082478;
+ Fri, 13 Dec 2019 00:10:27 -0600
+Subject: Re: [PATCH 00/16] Drop legacy platform data for various omap devices
 To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
-References: <20191211191206.12190-1-tony@atomide.com>
+References: <20191211172014.35201-1-tony@atomide.com>
 From: Keerthy <j-keerthy@ti.com>
 X-Pep-Version: 2.0
-Message-ID: <732d073a-8f46-8df0-3bc2-b24b845e3e91@ti.com>
-Date: Fri, 13 Dec 2019 11:39:10 +0530
+Message-ID: <87376f9c-6900-612b-e96a-0e44d087d095@ti.com>
+Date: Fri, 13 Dec 2019 11:40:43 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <20191211191206.12190-1-tony@atomide.com>
-Content-Type: multipart/mixed; boundary="------------24BD0487D7392C320305683D"
+In-Reply-To: <20191211172014.35201-1-tony@atomide.com>
+Content-Type: multipart/mixed; boundary="------------5E7BF3703CF31460EEA1C4C2"
 Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_220901_974020_1464072B 
-X-CRM114-Status: GOOD (  13.20  )
+X-CRM114-CacheID: sfid-20191212_221034_541054_C30CB6E2 
+X-CRM114-Status: GOOD (  14.33  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,31 +93,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benoit Parrot <bparrot@ti.com>, Sebastian Reichel <sre@kernel.org>,
- Bin Liu <b-liu@ti.com>, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
+Cc: Vignesh R <vigneshr@ti.com>, Jyri Sarha <jsarha@ti.com>,
+ "Andrew F. Davis" <afd@ti.com>, Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ linux-arm-kernel@lists.infradead.org, Suman Anna <s-anna@ti.com>,
+ Franklin S Cooper Jr <fcooper@ti.com>, Roger Quadros <rogerq@ti.com>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---------------24BD0487D7392C320305683D
+--------------5E7BF3703CF31460EEA1C4C2
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
 
 
-On 12/12/19 12:41 am, Tony Lindgren wrote:
+On 11/12/19 10:49 pm, Tony Lindgren wrote:
 > Hi all,
 >=20
-> Here are more patches to drop legacy platform data for v5.6,
-> please test.
+> In order to get the l4 instances closer to being usable with genpd, we
+> continue dropping legacy platform data for various devices.
 >=20
-> To make testing easier, I've pushed out all the related patches
-> I've posted over past few days into omap-for-5.6/ti-sysc-testing
-> branch at [0][1].
+> Please test, some patches may depend on the earlier patches to drop
+> platform data to apply as they touch the same files.
 
 Hi Tony,
 
-Boot tested on DRA71 & DRA76.
+As reported earlier patchh 12 of this series causes a crash at boot
+while probing the rtc.
+
+For the rest of the series:
+
+Boot tested on DRA72 & DRA76.
 
 Tested for RTC+DDR mode and DS0 mode on AM437x.
 Tested for DS0 on am335x-evm & am335x-beagle-bone-black.
@@ -128,46 +133,50 @@ Tested-by: Keerthy <j-keerthy@ti.com>
 
 - Keerthy
 
+
 >=20
 > Regards,
 >=20
 > Tony
 >=20
-> [0] git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap.git=
- omap-for-5.6/ti-sysc-testing
-> [1] https://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap.g=
-it/log/?h=3Domap-for-5.6/ti-sysc-testing
 >=20
+> Tony Lindgren (16):
+>   ARM: OMAP2+: Drop legacy platform data for am3 and am4 epwmss
+>   ARM: OMAP2+: Drop legacy platform data for dra7 epwmss
+>   ARM: OMAP2+: Drop legacy platform data for am3 and am4 spinlock
+>   ARM: OMAP2+: Drop legacy platform data for omap4 spinlock
+>   ARM: OMAP2+: Drop legacy platform data for omap5 spinlock
+>   ARM: OMAP2+: Drop legacy platform data for dra7 spinlock
+>   ARM: OMAP2+: Drop legacy platform data for am3 and am4 spi
+>   ARM: OMAP2+: Drop legacy platform data for am3 and am4 dcan
+>   ARM: OMAP2+: Drop legacy platform data for dra7 dcan
+>   ARM: OMAP2+: Drop legacy platform data for am3 adc_tsc
+>   ARM: OMAP2+: Drop legacy platform data for am4 adc_tsc
+>   ARM: OMAP2+: Drop legacy platform data for am3 and am4 rtc
+>   ARM: OMAP2+: Drop legacy platform data for am3 and am4 elm
+>   ARM: OMAP2+: Drop legacy platform data for omap4 elm
+>   ARM: OMAP2+: Drop legacy platform data for dra7 elm
+>   ARM: OMAP2+: Drop legacy platform data for am3 lcdc
 >=20
-> Tony Lindgren (13):
->   ARM: OMAP2+: Drop legacy platform data for am4 ocp2scp
->   ARM: OMAP2+: Drop legacy platform data for omap4 ocp2scp
->   ARM: OMAP2+: Drop legacy platform data for omap5 ocp2scp
->   ARM: OMAP2+: Drop legacy platform data for dra7 ocp2scp
->   ARM: OMAP2+: Drop legacy platform data for am4 vpfe
->   ARM: OMAP2+: Drop legacy platform data for omap4 hsi
->   ARM: OMAP2+: Drop legacy platform data for omap4 smartreflex
->   ARM: OMAP2+: Drop legacy platform data for dra7 smartreflex
->   ARM: OMAP2+: Drop legacy platform data for omap4 kbd
->   ARM: OMAP2+: Drop legacy platform data for omap5 kbd
->   ARM: OMAP2+: Drop legacy platform data for omap4 slimbus
->   ARM: OMAP2+: Drop legacy platform data for dra7 rtcss
->   ARM: OMAP2+: Drop legacy platform data for omap4 fdif
->=20
->  arch/arm/boot/dts/am437x-l4.dtsi           |   4 -
->  arch/arm/boot/dts/dra7-l4.dtsi             |   5 -
->  arch/arm/boot/dts/omap4-l4.dtsi            |   8 -
->  arch/arm/boot/dts/omap4.dtsi               |   1 -
->  arch/arm/boot/dts/omap5-l4.dtsi            |   3 -
->  arch/arm/mach-omap2/omap_hwmod_43xx_data.c | 115 ------
->  arch/arm/mach-omap2/omap_hwmod_44xx_data.c | 423 ---------------------=
+>  arch/arm/boot/dts/am33xx-l4.dtsi              |  12 -
+>  arch/arm/boot/dts/am437x-l4.dtsi              |  19 +-
+>  arch/arm/boot/dts/am43x-epos-evm.dts          |   4 +
+>  arch/arm/boot/dts/dra7-l4.dtsi                |   5 -
+>  arch/arm/boot/dts/omap4-l4.dtsi               |   2 -
+>  arch/arm/boot/dts/omap5-l4.dtsi               |   1 -
+>  .../omap_hwmod_33xx_43xx_common_data.h        |  21 --
+>  .../omap_hwmod_33xx_43xx_interconnect_data.c  |  76 ------
+>  .../omap_hwmod_33xx_43xx_ipblock_data.c       | 247 ------------------=
 
->  arch/arm/mach-omap2/omap_hwmod_54xx_data.c | 117 ------
->  arch/arm/mach-omap2/omap_hwmod_7xx_data.c  | 194 ----------
->  9 files changed, 870 deletions(-)
+>  arch/arm/mach-omap2/omap_hwmod_33xx_data.c    |  85 ------
+>  arch/arm/mach-omap2/omap_hwmod_43xx_data.c    | 183 -------------
+>  arch/arm/mach-omap2/omap_hwmod_44xx_data.c    |  85 ------
+>  arch/arm/mach-omap2/omap_hwmod_54xx_data.c    |  43 ---
+>  arch/arm/mach-omap2/omap_hwmod_7xx_data.c     | 236 -----------------
+>  14 files changed, 5 insertions(+), 1014 deletions(-)
 >=20
 
---------------24BD0487D7392C320305683D
+--------------5E7BF3703CF31460EEA1C4C2
 Content-Type: application/pgp-keys; name="pEpkey.asc"
 Content-Transfer-Encoding: quoted-printable
 Content-Disposition: attachment; filename="pEpkey.asc"
@@ -314,7 +323,7 @@ Xpo=3D
 =3DNfsW
 -----END PGP PUBLIC KEY BLOCK-----
 
---------------24BD0487D7392C320305683D
+--------------5E7BF3703CF31460EEA1C4C2
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -325,5 +334,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---------------24BD0487D7392C320305683D--
+--------------5E7BF3703CF31460EEA1C4C2--
 
