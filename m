@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 829D911E787
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:05:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C65911E7A8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Dec 2019 17:06:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yaFRXRiIliZeXGBwSJJn2M52FqvHEApWTWCmYRURq/A=; b=lhpMdw4Q0wh1zK
-	SpAd60soUPCRDacngvszFh4fEoZw+7XTFqvMskj6lI/Qg+yzyhopRTI/BcO/z6I5CDN6u23VM+VqT
-	ALMX23W4uOy7m/VQZqhCKkrbfvB8+BOm/pphKg8/q4X7Itmvj5jXn5FZc1jx6tsR8TsVjWZhJIVxa
-	O0Kg/G/DPoTS3dvP6aFKcHSuWJDgMSbKr0yooUwRSqmDX8kIFFZ8ZjkqWhqjeN5LxwaVC7lPChTDA
-	jj0YdqZvBeOhSBTgQ6qx27X/9IizMPxVm7tzh3GOVFSWJKLJ7QN+TDaVAbIcz12xXKol914KACPPM
-	3NFu9J23wYWAyX5Jbu2A==;
+	List-Owner; bh=iyIiCkLkQDAptPpmgcxaqPKp9nSoeDcjkcsPa+ehEFE=; b=JsmSart0N3Gi5Q
+	0+TRZL0sGkPrOc6eDlxnxcfQGZ514SEY4k25adBTi8ErGDvIQsAtb9bArDDwbC28A93IM80pZx3GA
+	P+JU5zpV+Gfa1Gl+O7yadRenzFFX690DBlWp4zHbexqwKeq+zW3OqZHbnPu+fE7HAiRIF3EUI1K56
+	Cnt7rQ8SY+YtvAxjbwufpEXJcwC14lU++nmPk+MWRNstluIojv9SS3ZSfj5f3tRcRgT5kqnx+6dp6
+	a+0h/VRS4XmxXR9zFIDyrXFKBKZ2kX1WjjrE50wXhrv0qfa8wgJSAI+oRpNgI8wgNhPqkyL7mH11I
+	rGnVv6wpIyAkcejZ3GxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifnR3-0001Sb-RS; Fri, 13 Dec 2019 16:04:57 +0000
-Received: from mailoutvs43.siol.net ([185.57.226.234] helo=mail.siol.net)
+	id 1ifnSJ-0003ew-TX; Fri, 13 Dec 2019 16:06:15 +0000
+Received: from mailoutvs51.siol.net ([185.57.226.242] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifnQt-0001QR-D8
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:04:49 +0000
+ id 1ifnQv-0001RT-Ue
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Dec 2019 16:04:51 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 6C4A952455C;
- Fri, 13 Dec 2019 17:04:45 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTP id CD37B524565;
+ Fri, 13 Dec 2019 17:04:47 +0100 (CET)
 X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id Kfzlo29mUbBN; Fri, 13 Dec 2019 17:04:45 +0100 (CET)
+ with ESMTP id ATbi4QIs82Ql; Fri, 13 Dec 2019 17:04:47 +0100 (CET)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 25E6C524558;
- Fri, 13 Dec 2019 17:04:45 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPS id 6BEDE524543;
+ Fri, 13 Dec 2019 17:04:47 +0100 (CET)
 Received: from localhost.localdomain (cpe-86-58-102-7.static.triera.net
  [86.58.102.7]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id D45B152455C;
- Fri, 13 Dec 2019 17:04:42 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPSA id 2B84E52455E;
+ Fri, 13 Dec 2019 17:04:45 +0100 (CET)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mchehab@kernel.org, mripard@kernel.org, paul.kocialkowski@bootlin.com,
  hverkuil@xs4all.nl
-Subject: [PATCH v2 3/4] media: uapi: hevc: Add segment address field
-Date: Fri, 13 Dec 2019 17:04:27 +0100
-Message-Id: <20191213160428.54303-4-jernej.skrabec@siol.net>
+Subject: [PATCH v2 4/4] media: cedrus: hevc: Add support for multiple slices
+Date: Fri, 13 Dec 2019 17:04:28 +0100
+Message-Id: <20191213160428.54303-5-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191213160428.54303-1-jernej.skrabec@siol.net>
 References: <20191213160428.54303-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_080447_778881_7D8B5FD7 
-X-CRM114-Status: UNSURE (   9.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191213_080450_140502_71229031 
+X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.234 listed in list.dnswl.org]
+ low trust [185.57.226.242 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,63 +79,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If HEVC frame consists of multiple slices, segment address has to be
-known in order to properly decode it.
-
-Add segment address field to slice parameters.
+Now that segment address is available, support for multi-slice frames
+can be easily added.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- Documentation/media/uapi/v4l/ext-ctrls-codec.rst | 5 ++++-
- include/media/hevc-ctrls.h                       | 5 ++++-
- 2 files changed, 8 insertions(+), 2 deletions(-)
+ .../staging/media/sunxi/cedrus/cedrus_h265.c  | 26 ++++++++++++-------
+ .../staging/media/sunxi/cedrus/cedrus_video.c |  1 +
+ 2 files changed, 17 insertions(+), 10 deletions(-)
 
-diff --git a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-index aab1451e54d4..5415d5babcc2 100644
---- a/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-+++ b/Documentation/media/uapi/v4l/ext-ctrls-codec.rst
-@@ -3975,6 +3975,9 @@ enum v4l2_mpeg_video_hevc_size_of_length_field -
-     * - __u32
-       - ``data_bit_offset``
-       - Offset (in bits) to the video data in the current slice data.
-+    * - __u32
-+      - ``slice_segment_addr``
-+      -
-     * - __u8
-       - ``nal_unit_type``
-       -
-@@ -4052,7 +4055,7 @@ enum v4l2_mpeg_video_hevc_size_of_length_field -
-       - ``num_rps_poc_lt_curr``
-       - The number of reference pictures in the long-term set.
-     * - __u8
--      - ``padding[7]``
-+      - ``padding[5]``
-       - Applications and drivers must set this to zero.
-     * - struct :c:type:`v4l2_hevc_dpb_entry`
-       - ``dpb[V4L2_HEVC_DPB_ENTRIES_NUM_MAX]``
-diff --git a/include/media/hevc-ctrls.h b/include/media/hevc-ctrls.h
-index 1592e52c3614..3e2e32098312 100644
---- a/include/media/hevc-ctrls.h
-+++ b/include/media/hevc-ctrls.h
-@@ -167,6 +167,9 @@ struct v4l2_ctrl_hevc_slice_params {
- 	__u32	bit_size;
- 	__u32	data_bit_offset;
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+index 888bfd5ca224..109d3289418c 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+@@ -291,6 +291,8 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
+ 	const struct v4l2_ctrl_hevc_pps *pps;
+ 	const struct v4l2_ctrl_hevc_slice_params *slice_params;
+ 	const struct v4l2_hevc_pred_weight_table *pred_weight_table;
++	unsigned int width_in_ctb_luma, ctb_size_luma;
++	unsigned int log2_max_luma_coding_block_size;
+ 	dma_addr_t src_buf_addr;
+ 	dma_addr_t src_buf_end_addr;
+ 	u32 chroma_log2_weight_denom;
+@@ -303,15 +305,17 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
+ 	slice_params = run->h265.slice_params;
+ 	pred_weight_table = &slice_params->pred_weight_table;
  
-+	/* ISO/IEC 23008-2, ITU-T Rec. H.265: General slice segment header */
-+	__u32	slice_segment_addr;
++	log2_max_luma_coding_block_size =
++		sps->log2_min_luma_coding_block_size_minus3 + 3 +
++		sps->log2_diff_max_min_luma_coding_block_size;
++	ctb_size_luma = 1UL << log2_max_luma_coding_block_size;
++	width_in_ctb_luma =
++		DIV_ROUND_UP(sps->pic_width_in_luma_samples, ctb_size_luma);
 +
- 	/* ISO/IEC 23008-2, ITU-T Rec. H.265: NAL unit header */
- 	__u8	nal_unit_type;
- 	__u8	nuh_temporal_id_plus1;
-@@ -200,7 +203,7 @@ struct v4l2_ctrl_hevc_slice_params {
- 	__u8	num_rps_poc_st_curr_after;
- 	__u8	num_rps_poc_lt_curr;
+ 	/* MV column buffer size and allocation. */
+ 	if (!ctx->codec.h265.mv_col_buf_size) {
+ 		unsigned int num_buffers =
+ 			run->dst->vb2_buf.vb2_queue->num_buffers;
+-		unsigned int log2_max_luma_coding_block_size =
+-			sps->log2_min_luma_coding_block_size_minus3 + 3 +
+-			sps->log2_diff_max_min_luma_coding_block_size;
+-		unsigned int ctb_size_luma =
+-			1UL << log2_max_luma_coding_block_size;
  
--	__u8	padding;
-+	__u8	padding[5];
+ 		/*
+ 		 * Each CTB requires a MV col buffer with a specific unit size.
+@@ -366,15 +370,17 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
+ 	reg = VE_DEC_H265_BITS_END_ADDR_BASE(src_buf_end_addr);
+ 	cedrus_write(dev, VE_DEC_H265_BITS_END_ADDR, reg);
  
- 	/* ISO/IEC 23008-2, ITU-T Rec. H.265: General slice segment header */
- 	struct v4l2_hevc_dpb_entry dpb[V4L2_HEVC_DPB_ENTRIES_NUM_MAX];
+-	/* Coding tree block address: start at the beginning. */
+-	reg = VE_DEC_H265_DEC_CTB_ADDR_X(0) | VE_DEC_H265_DEC_CTB_ADDR_Y(0);
++	/* Coding tree block address */
++	reg = VE_DEC_H265_DEC_CTB_ADDR_X(slice_params->slice_segment_addr % width_in_ctb_luma);
++	reg |= VE_DEC_H265_DEC_CTB_ADDR_Y(slice_params->slice_segment_addr / width_in_ctb_luma);
+ 	cedrus_write(dev, VE_DEC_H265_DEC_CTB_ADDR, reg);
+ 
+ 	cedrus_write(dev, VE_DEC_H265_TILE_START_CTB, 0);
+ 	cedrus_write(dev, VE_DEC_H265_TILE_END_CTB, 0);
+ 
+ 	/* Clear the number of correctly-decoded coding tree blocks. */
+-	cedrus_write(dev, VE_DEC_H265_DEC_CTB_NUM, 0);
++	if (ctx->fh.m2m_ctx->new_frame)
++		cedrus_write(dev, VE_DEC_H265_DEC_CTB_NUM, 0);
+ 
+ 	/* Initialize bitstream access. */
+ 	cedrus_write(dev, VE_DEC_H265_TRIGGER, VE_DEC_H265_TRIGGER_INIT_SWDEC);
+@@ -523,8 +529,8 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
+ 				V4L2_HEVC_PPS_FLAG_DEPENDENT_SLICE_SEGMENT,
+ 				pps->flags);
+ 
+-	/* FIXME: For multi-slice support. */
+-	reg |= VE_DEC_H265_DEC_SLICE_HDR_INFO0_FLAG_FIRST_SLICE_SEGMENT_IN_PIC;
++	if (ctx->fh.m2m_ctx->new_frame)
++		reg |= VE_DEC_H265_DEC_SLICE_HDR_INFO0_FLAG_FIRST_SLICE_SEGMENT_IN_PIC;
+ 
+ 	cedrus_write(dev, VE_DEC_H265_DEC_SLICE_HDR_INFO0, reg);
+ 
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_video.c b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+index 15cf1f10221b..497b1199d3fe 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus_video.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus_video.c
+@@ -311,6 +311,7 @@ static int cedrus_s_fmt_vid_out(struct file *file, void *priv,
+ 
+ 	switch (ctx->src_fmt.pixelformat) {
+ 	case V4L2_PIX_FMT_H264_SLICE:
++	case V4L2_PIX_FMT_HEVC_SLICE:
+ 		vq->subsystem_flags |=
+ 			VB2_V4L2_FL_SUPPORTS_M2M_HOLD_CAPTURE_BUF;
+ 		break;
 -- 
 2.24.0
 
