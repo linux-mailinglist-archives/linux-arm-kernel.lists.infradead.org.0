@@ -2,68 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCD4211F173
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 11:54:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A705D11F1C4
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 13:28:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fs89CMkuDBoBpV0PJYArha70acSGZmdjizjUG+ldRVw=; b=n9gRec7kziRFXr
-	f0lyntqLv/vvwyQ9TpZ2GuTld7+qUssDCrklvbb52XdogSjOXegoFjq6YoqxROaKsCIRNgzYGlRn0
-	1d1nIQINWt5AK+7/RxuS/oLDL9j1i3dK6Z1KcxSBf1Vd3fhcH45aHNXutV5/IhJrkt+MRLbRzpS+U
-	WWFMFM1orsdNdmyonpiI982Tl/yXNN45TsGe8wMe7jmsKRjPTt+0F4NEYVObxq/GhzvkTN+KxHk85
-	XwY3uRz1JHvM+q3iizawmjsicFcl0/0pNqsMMcp1nnyDQfoYvZ4ju1F9ke1zgkR6idkCSSFtQGY48
-	f7rR+5Wm/5buXAmLTZXQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BFbR6VOYYS52upqDh6IRPScJ+2B/ti+f64droNGQKpU=; b=GP50wr6M/KRgWV
+	hivrUxyKl5LRd6xqIEO/BHvHKwxupp6RvOsgSqe2JlvQSwJJ93RKFzkeiYgWrs3s8fPir8f08bPRp
+	e8idKEDxyZ8XP83AIow2i2phMHaFnr5Im/8BvbeLN2T89lQ3e/EJM9/79Psu6WjJ0iBG67GYCy1mS
+	vDRzwCq9YbpcmtWJe8YortwO9+bZnIj1uiS+aZRL7mB5lZYOTn2sTGJJJNd8ZWBAXRbEkzO6ey/7y
+	ExPs/P5l4ahd5R4uxa4a6beZ+UPSxO5YFUTcGE6wS1NlWMETaCaCjbMCwFISl2MwSEE52z1elv3gn
+	dKYK/4I/q/+P2VbHPrWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ig54V-0001GL-1P; Sat, 14 Dec 2019 10:54:51 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::9])
+	id 1ig6We-0004s5-CR; Sat, 14 Dec 2019 12:28:00 +0000
+Received: from mail.skyhub.de ([2a01:4f8:190:11c2::b:1457])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ig54K-0001EI-4a; Sat, 14 Dec 2019 10:54:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1576320868;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=eDWu/SgTD1s26WzZv5mA2/eo9hiZvqG2HLEvHCoMl34=;
- b=sg7dd0jlDcZ2qnwSTp0zgw2lqVl+uiypy3gzR7fKyQcZgi0ttyJLE7vDoF56WO/war
- b9Kv7XEzZ9ZVaq2N4Z/DqTF0sNijj08GJ9wAN0rpfrk4ACt7xx+YjWnxwu1QfCLmDbHy
- iGTdM4qM9DZuTkMUNAWXG29uK3IV1UKOoWbVj1QtDRa76hYKjYNHtoxzuPJzk+aSgcm0
- VRhj1x7u4oONxPuFh8EHkcXFDCAtCNcTBKRhWNeoJkYmt9s2KaI8XObjKlk0ODUzUgW3
- 4H8mQXJGGHgK/avGQemr8HPa0/BcmUD0dECzJ4pY9R2VFRO+VtjVZe7X5TcFI3u2622g
- e+8Q==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj7wpz8NMGHPruwDCvIHw="
-X-RZG-CLASS-ID: mo00
-Received: from imac.fritz.box by smtp.strato.de (RZmta 46.0.7 DYNA|AUTH)
- with ESMTPSA id i03ca8vBEAsKB9B
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
- ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Sat, 14 Dec 2019 11:54:20 +0100 (CET)
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-Subject: BUG - was: [GIT PULL 2/3] bcm2835-soc-next-2019-10-15
-From: H. Nikolaus Schaller <hns@goldelico.com>
-In-Reply-To: <1571159725-5090-2-git-send-email-wahrenst@gmx.net>
-Date: Sat, 14 Dec 2019 11:54:19 +0100
-Message-Id: <12244E4E-A1A0-4EE9-ACD3-EA165D9A2C79@goldelico.com>
-References: <1571159725-5090-1-git-send-email-wahrenst@gmx.net>
- <1571159725-5090-2-git-send-email-wahrenst@gmx.net>
-To: Stefan Wahren <wahrenst@gmx.net>
-X-Mailer: Apple Mail (2.3124)
+ id 1ig6WV-0004qG-GD; Sat, 14 Dec 2019 12:27:53 +0000
+Received: from zn.tnic (p200300EC2F0A5A009CBB5BB8E6A81C1F.dip0.t-ipconnect.de
+ [IPv6:2003:ec:2f0a:5a00:9cbb:5bb8:e6a8:1c1f])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 682DF1EC095C;
+ Sat, 14 Dec 2019 13:27:40 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
+ t=1576326460;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
+ bh=KMOGp1DUcIN500Sf6UYZB3bgYUnXmeQfVRfnvzyLKHY=;
+ b=chfeFSasyOvGnWur6zP4vjznxjIxTClbROkym4G+z0Jf+v1/F5zEEQxoTkld0mGQ3/uuKy
+ tToyhG1ZCVWakFI2UFgtYTvuCB6F7DakzuI+cYbEVgsMl4UWGFpe0VnsQfw8qY1N6MDSvc
+ c5dUrY9q0OXDBpPggRMfLryMpBiGwm8=
+Date: Sat, 14 Dec 2019 13:27:34 +0100
+From: Borislav Petkov <bp@alien8.de>
+To: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: Re: [PATCH v5 0/5] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
+ for arm64 and MAX_PHYSMEM_BITS for all archs)
+Message-ID: <20191214122734.GC28635@zn.tnic>
+References: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_025440_774718_7E31F3BF 
-X-CRM114-Status: GOOD (  16.97  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191214_042751_699916_E459804E 
+X-CRM114-Status: UNSURE (   7.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5301:0:0:9 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -82,98 +77,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, Tony Lindgren <tony@atomide.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- Linux-OMAP <linux-omap@vger.kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Dave Anderson <anderson@redhat.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-doc@vger.kernel.org,
+ Will Deacon <will@kernel.org>, x86@kernel.org, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ James Morse <james.morse@arm.com>, Michael Ellerman <mpe@ellerman.id.au>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
+ Thomas Gleixner <tglx@linutronix.de>, bhupesh.linux@gmail.com,
+ linuxppc-dev@lists.ozlabs.org, Ingo Molnar <mingo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Steve Capper <steve.capper@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stefan,
+On Fri, Nov 29, 2019 at 01:53:36AM +0530, Bhupesh Sharma wrote:
+> Bhupesh Sharma (5):
+>   crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
+>   arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
+>   Documentation/arm64: Fix a simple typo in memory.rst
+>   Documentation/vmcoreinfo: Add documentation for 'MAX_PHYSMEM_BITS'
+>   Documentation/vmcoreinfo: Add documentation for 'TCR_EL1.T1SZ'
 
-> Am 15.10.2019 um 19:15 schrieb Stefan Wahren <wahrenst@gmx.net>:
-> 
-> Hi Florian,
-> 
-> The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
-> 
->  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
-> 
-> are available in the git repository at:
-> 
->  git://github.com/anholt/linux tags/bcm2835-soc-next-2019-10-15
-> 
-> for you to fetch changes up to 781fa0a954240c8487683ddf837fb2c4ede8e7ca:
-> 
->  ARM: bcm: Add support for BCM2711 SoC (2019-10-10 19:21:03 +0200)
+why are those last two separate patches and not part of the patches
+which export the respective variable/define?
 
-this patch has finally arrived in v5.5-rc1 but it seems to break
-multiplatform build.
+-- 
+Regards/Gruss,
+    Boris.
 
-We run a distribution kernel that supports OMAP3/4/5, i.MX6 and RasPi 3B+
-but since rebasing to v5.5-rc1 the kernel hangs after "Starting Kernel ...".
-On all ARM devices (incl. RasPi 3B+).
-
-Playing with our defconfig did show that deconfiguring CONFIG_ARCH_BCM2835
-makes the kernel work again.
-
-After further analysis it turns out that reverting this patch also
-makes the boards work again.
-
-I am not exactly sure what the reason is, but it may have something to
-do with the new auto-selection of CONFIG_ZONE_DMA which is not automatically
-selected by OMAP and i.MX6.
-
-To reproduce on some OMAP device (i.MX6 should be similar)
-
-1st test:
-
-git checkout v5.5-rc1
-make omap2plus_defconfig
-
-=> boots OMAP device
-
-2nd test:
-
-( echo CONFIG_ARCH_BCM2835=y; echo CONFIG_ARCH_BCM=y ) >>arch/arm/configs/omap2plus_defconfig
-make omap2plus_defconfig
-
-=> fails to boot OMAP device
-
-3rd test:
-
-git revert 781fa0a954240c8487683ddf837fb2c4ede8e7ca
-make omap2plus_defconfig
-
-=> boots OMAP device
-
-BTW: the RasPi 3B+ runs equally well without this patch. So what is it
-good for?
-
-So please check and fix this patch.
-
-> ----------------------------------------------------------------
-> This pull request introduces the machine board code for the BCM2711,
-> which is placed on the Raspberry Pi 4.
-> 
-> ----------------------------------------------------------------
-> Stefan Wahren (1):
->      ARM: bcm: Add support for BCM2711 SoC
-> 
-> arch/arm/mach-bcm/Kconfig    |  4 +++-
-> arch/arm/mach-bcm/Makefile   |  3 ++-
-> arch/arm/mach-bcm/bcm2711.c  | 24 ++++++++++++++++++++++++
-> arch/arm64/Kconfig.platforms |  5 +++--
-> 4 files changed, 32 insertions(+), 4 deletions(-)
-> create mode 100644 arch/arm/mach-bcm/bcm2711.c
-
-BR and thanks,
-Nikolaus Schaller
-
+https://people.kernel.org/tglx/notes-about-netiquette
 
 _______________________________________________
 linux-arm-kernel mailing list
