@@ -2,87 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7F5111EF1D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 01:22:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E19811EF9E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 02:43:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=orp5SjMt7KC0Y/If4VFjpzFUhDCzsl2zReaYdvnkANg=; b=Ne+CjXffG5rcd6
-	t/pFOZo5438X3eOjQcUKcCxYpiULKDDHFlClWiJJCPm+M1JoHl8igNU7rLaANcsLy0Btf+AZHpCVG
-	YOyCXlVU/fZQPEzXn0whRTlAiFzoPxrjClS7UWuzti/U+itbGPtsXITbL9iRBgXwvSpvvI7y8xQtG
-	5FWmRhfelasCLY8o6QlV/auNmJfb2p+iLWqiu+mBbBoVwMp32+LMCBbemJuVwkvZ9OFPp3Ujybu7g
-	lfvagDGdNB96cxXYjEY9qt9wdLSquBBu8jY9/Vidvw9CDMAFr62P/BAx2fSL4VN7cQlRQKc0DId6P
-	Eefv9Szo1bXsKnE4H3hQ==;
+	List-Owner; bh=9Uos6FwT+4oN7MRInrtlh6KLnMVk52gSgypuUE7D6nk=; b=UNdNqBMdETgNQq
+	tSe5PhKzFcjBLlXostXzRLxSyhHeQZiOsERHAWDX3J9QQJFWQYT2emiNNPwwGbSCdUizo421FlJR1
+	ODsi3jA1G6YosBP378JBK2lY2gF81gYTFZbBOSn3Pycr2n00LPNNcaWR9S/3el/LLB1Z4iCPjMJQx
+	z/fsjxxdJgTXHiUXwM0ICNczhtyUvCW2OlIHgL5rqi/mqIY2XHOGpbCV7ASl6QfujstAywPy/Hc6e
+	dKSKgtAmyCCB43Ir2+WL741dK/XA6cJpmWf5ku/UKsNDnW06nHX+GjtcsQJMB3vOklIG4H0Yim3Lo
+	zbVmfxWhHkjvkRcKiU1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifvCi-0004zb-Kg; Sat, 14 Dec 2019 00:22:40 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1ifwT6-0004bk-S8; Sat, 14 Dec 2019 01:43:40 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifvCY-0004xp-K5
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Dec 2019 00:22:31 +0000
-Received: by mail-lj1-x243.google.com with SMTP id z17so519902ljk.13
+ id 1ifwSw-0004bC-Mc
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Dec 2019 01:43:32 +0000
+Received: by mail-wr1-x443.google.com with SMTP id b6so745799wrq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 16:22:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=netronome-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:in-reply-to:references
- :organization:mime-version:content-transfer-encoding;
- bh=giiBxdvWgaNqH68xnv3JmWP9dzCBTdZ9klmH0YITisE=;
- b=moDlCKvuxDXDzEEAIiXkhQpF42yemoKEbL0AZF9wNsfDWxNqQ6PAyC79TcuJE7Mkc9
- Zd8qEd4kDdalk1yWC0H+Rr1MJ1/Yx0Hzhn7Tx0fCPyejRdP0cH3t3Jq5V7nYVWtI9cTR
- S7EOX9jtd1eh7m3Y6RLy5trfH8sioerQknIUhEUlEwtfb3Rtt9vMYdIm0xtLws8vyLIo
- 8Wz5AZza9+t2BnITvbK6kvG+AWHbDFu93SVokmMiCVY0e3lv9bI1cVEarTCu+TarLpw3
- brGJ7zEjLhMXpGfaQjutJUx6HNe/0vR1nl/rzpmdY6cIp+tWFtL5Bbuhd7ElwsD/eF6b
- WE6w==
+ Fri, 13 Dec 2019 17:43:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=OK1hOxVquW0ozgWFou0Nh784J1Qs7V8DhLyZizt1RJY=;
+ b=O+7x69fLEuvoThGfRA0n5aMg8gw6fa5G0VDBFjErBVc2hW+YjXPYJTHd8xxZMayDjF
+ ZbXwPHheuE6RxmygQHo9Eoqxk/kqG8Ob3puhcB8+bUTAdyTbCpujQiYJoYx69AlMXbm+
+ 935vHyqh4Cm3tRJFTZayOpDPySxjmu5eZYB4U8MaBwE2NFShtbduoecI0caHuPCFCWjq
+ QNrzdv1hLbobXl6cM9oahfhiO5FCWjLW2dEXb0Umclc7L5qGfBJ8njfyPTriZ6uSvCfT
+ 32avqtJ1AMu2EKUpx0R/RZQFKDrzC7u/AbyYkO/5lXoTmkltb7pE1xD20jwgS+OTIkdb
+ sgow==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
- :references:organization:mime-version:content-transfer-encoding;
- bh=giiBxdvWgaNqH68xnv3JmWP9dzCBTdZ9klmH0YITisE=;
- b=qRPK56wOszn5DIi7bo6yeF7cnOgmcZ2f8XSx3jPv53ao84xQg5sO46ep5ebX6/hDgp
- zhlHCOMhj0VyP4t3Rqrg4G1g6MG49gw3yYtijNicYdO7NfLg6I0b+4JQMtaoDPjRfFRC
- ozneZyFSRbOZKm/pivNNx4nb1XYVkQlh2F7OFLEQK/HokdC3lXiKeiFkhj9R7GdHFjri
- Qzyf2R9Gj3HNcXBYCTjmObN3L8jKR3T+q+OuVHoRMZpjV+g+PFpnUYmStvCGqmbl93yr
- BHowgzpMfztaODspBJKsy/PDJZ/ss2Ag2Frb/CZSaBDGUBxsQn5BeS6zZsLfkW1PTu6G
- nMhQ==
-X-Gm-Message-State: APjAAAXzfl+VAZVsc6kNV+AKY84jRwqCHEiM8xIsgPQmHPsQS167IdJy
- H5OmEKdZdAzsCKm4jx6oy9eGkw==
-X-Google-Smtp-Source: APXvYqxk4KifralwNEGO507iNNuOIWFqTEHw/xBJIq1aHCZdSobUATGCeEfnlG0VPQmTb1fbDwOe/Q==
-X-Received: by 2002:a2e:9a11:: with SMTP id o17mr11430388lji.256.1576282944630; 
- Fri, 13 Dec 2019 16:22:24 -0800 (PST)
-Received: from cakuba.netronome.com ([66.60.152.14])
- by smtp.gmail.com with ESMTPSA id k25sm5583547lji.42.2019.12.13.16.22.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Dec 2019 16:22:24 -0800 (PST)
-Date: Fri, 13 Dec 2019 16:22:16 -0800
-From: Jakub Kicinski <jakub.kicinski@netronome.com>
-To: Jose Abreu <Jose.Abreu@synopsys.com>
-Subject: Re: [PATCH net 0/8] net: stmmac: Fixes for -net
-Message-ID: <20191213162216.2dc8a108@cakuba.netronome.com>
-In-Reply-To: <cover.1576005975.git.Jose.Abreu@synopsys.com>
-References: <cover.1576005975.git.Jose.Abreu@synopsys.com>
-Organization: Netronome Systems, Ltd.
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=OK1hOxVquW0ozgWFou0Nh784J1Qs7V8DhLyZizt1RJY=;
+ b=lw3TeGr5K1hdJpupF011+BVj4YLPLCtGN3/zrEcvTJvfyQPKLfirlxZ/9ZHNLf/3yR
+ e15KpD+AiF2ry0LDXbN4aKgMwUbP8HuxNQiGTihR/ZHAVwM6n51AYhoUIHRH3ha+4zxO
+ Zqyq3YIuTvGh5kC7EHZwQPQNYOaKOfq9fGbtdZgFp9HcCby7c/frQ11jIa+Qi2OCu4kA
+ YuaHvcHg415yhB362W7ogtagUz43txcMvdyDrVcMAybePHvfvigkOk7STNSEiaiWeg7U
+ ot1gL8PlfRjrXYOYA8hAbRPpMsn0zcPXhugve6BAIi3sZH0PdMWeXk7aAeZx1MjHvQyQ
+ ucRw==
+X-Gm-Message-State: APjAAAXdGuuOg1ILiD2lgzrh1ZEEC/ZKbaI6TNKy7h1aeabBWN27il7R
+ HXJTioaiSTMsyVfP8wkeU2Qv5pe98665PMir1aHdfw==
+X-Google-Smtp-Source: APXvYqzlMkJr9eClnvaplJwftzHi0XgzTz741gcIniA7KIq0TDGk58Re2C4sqZOVoWUDnUb+Xl01a3MSrP5HcmIbT7c=
+X-Received: by 2002:a5d:6a88:: with SMTP id s8mr15421936wru.173.1576287807371; 
+ Fri, 13 Dec 2019 17:43:27 -0800 (PST)
 MIME-Version: 1.0
+References: <20191211184027.20130-1-catalin.marinas@arm.com>
+ <20191211184027.20130-14-catalin.marinas@arm.com>
+In-Reply-To: <20191211184027.20130-14-catalin.marinas@arm.com>
+From: Peter Collingbourne <pcc@google.com>
+Date: Fri, 13 Dec 2019 17:43:15 -0800
+Message-ID: <CAMn1gO6RDrpkO6hygTUuXbsE5XTD+FEsZKpo5cqgg+nQWfBVKQ@mail.gmail.com>
+Subject: Re: [PATCH 13/22] arm64: mte: Handle synchronous and asynchronous tag
+ check faults
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, Kostya Serebryany <kcc@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_162230_802034_8B87B293 
-X-CRM114-Status: UNSURE (   9.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191213_174330_767096_EB5ABEDB 
+X-CRM114-Status: GOOD (  26.45  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,45 +99,251 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 10 Dec 2019 20:33:52 +0100, Jose Abreu wrote:
-> Fixes for stmmac.
-> 
-> 1) Fixes the filtering selftests (again) for cases when the number of multicast
-> filters are not enough.
-> 
-> 2) Fixes SPH feature for MTU > default.
-> 
-> 3) Fixes the behavior of accepting invalid MTU values.
-> 
-> 4) Fixes FCS stripping for multi-descriptor packets.
-> 
-> 5) Fixes the change of RX buffer size in XGMAC.
-> 
-> 6) Fixes RX buffer size alignment.
-> 
-> 7) Fixes the 16KB buffer alignment.
-> 
-> 8) Fixes the enabling of 16KB buffer size feature.
+On Wed, Dec 11, 2019 at 10:44 AM Catalin Marinas
+<catalin.marinas@arm.com> wrote:
+>
+> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+>
+> The Memory Tagging Extension has two modes of notifying a tag check
+> fault at EL0, configurable through the SCTLR_EL1.TCF0 field:
+>
+> 1. Synchronous raising of a Data Abort exception with DFSC 17.
+> 2. Asynchronous setting of a cumulative bit in TFSRE0_EL1.
+>
+> Add the exception handler for the synchronous exception and handling of
+> the asynchronous TFSRE0_EL1.TF0 bit setting via a new TIF flag in
+> do_notify_resume().
+>
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> Co-developed-by: Catalin Marinas <catalin.marinas@arm.com>
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+>  arch/arm64/include/asm/thread_info.h |  4 +++-
+>  arch/arm64/kernel/entry.S            | 17 +++++++++++++++++
+>  arch/arm64/kernel/process.c          |  7 +++++++
+>  arch/arm64/kernel/signal.c           |  8 ++++++++
+>  arch/arm64/mm/fault.c                |  9 ++++++++-
+>  5 files changed, 43 insertions(+), 2 deletions(-)
+>
+> diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
+> index f0cec4160136..f759a0215a71 100644
+> --- a/arch/arm64/include/asm/thread_info.h
+> +++ b/arch/arm64/include/asm/thread_info.h
+> @@ -63,6 +63,7 @@ void arch_release_task_struct(struct task_struct *tsk);
+>  #define TIF_FOREIGN_FPSTATE    3       /* CPU's FP state is not current's */
+>  #define TIF_UPROBE             4       /* uprobe breakpoint or singlestep */
+>  #define TIF_FSCHECK            5       /* Check FS is USER_DS on return */
+> +#define TIF_MTE_ASYNC_FAULT    6       /* MTE Asynchronous Tag Check Fault */
+>  #define TIF_NOHZ               7
+>  #define TIF_SYSCALL_TRACE      8       /* syscall trace active */
+>  #define TIF_SYSCALL_AUDIT      9       /* syscall auditing */
+> @@ -93,10 +94,11 @@ void arch_release_task_struct(struct task_struct *tsk);
+>  #define _TIF_FSCHECK           (1 << TIF_FSCHECK)
+>  #define _TIF_32BIT             (1 << TIF_32BIT)
+>  #define _TIF_SVE               (1 << TIF_SVE)
+> +#define _TIF_MTE_ASYNC_FAULT   (1 << TIF_MTE_ASYNC_FAULT)
+>
+>  #define _TIF_WORK_MASK         (_TIF_NEED_RESCHED | _TIF_SIGPENDING | \
+>                                  _TIF_NOTIFY_RESUME | _TIF_FOREIGN_FPSTATE | \
+> -                                _TIF_UPROBE | _TIF_FSCHECK)
+> +                                _TIF_UPROBE | _TIF_FSCHECK | _TIF_MTE_ASYNC_FAULT)
+>
+>  #define _TIF_SYSCALL_WORK      (_TIF_SYSCALL_TRACE | _TIF_SYSCALL_AUDIT | \
+>                                  _TIF_SYSCALL_TRACEPOINT | _TIF_SECCOMP | \
+> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+> index 7c6a0a41676f..c221a539e61d 100644
+> --- a/arch/arm64/kernel/entry.S
+> +++ b/arch/arm64/kernel/entry.S
+> @@ -144,6 +144,22 @@ alternative_cb_end
+>  #endif
+>         .endm
+>
+> +       // Check for MTE asynchronous tag check faults
+> +       .macro check_mte_async_tcf, flgs, tmp
+> +#ifdef CONFIG_ARM64_MTE
+> +alternative_if_not ARM64_MTE
+> +       b       1f
+> +alternative_else_nop_endif
+> +       mrs_s   \tmp, SYS_TFSRE0_EL1
+> +       tbz     \tmp, #SYS_TFSR_EL1_TF0_SHIFT, 1f
+> +       // Asynchronous TCF occurred at EL0, set the TI flag
+> +       orr     \flgs, \flgs, #_TIF_MTE_ASYNC_FAULT
+> +       str     \flgs, [tsk, #TSK_TI_FLAGS]
+> +       msr_s   SYS_TFSRE0_EL1, xzr
+> +1:
+> +#endif
+> +       .endm
+> +
+>         .macro  kernel_entry, el, regsize = 64
+>         .if     \regsize == 32
+>         mov     w0, w0                          // zero upper 32 bits of x0
+> @@ -171,6 +187,7 @@ alternative_cb_end
+>         ldr     x19, [tsk, #TSK_TI_FLAGS]       // since we can unmask debug
+>         disable_step_tsk x19, x20               // exceptions when scheduling.
+>
+> +       check_mte_async_tcf x19, x22
+>         apply_ssbd 1, x22, x23
+>
+>         .else
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index 71f788cd2b18..dd98d539894e 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -317,12 +317,19 @@ static void flush_tagged_addr_state(void)
+>                 clear_thread_flag(TIF_TAGGED_ADDR);
+>  }
+>
+> +static void flush_mte_state(void)
+> +{
+> +       if (system_supports_mte())
+> +               clear_thread_flag(TIF_MTE_ASYNC_FAULT);
+> +}
+> +
+>  void flush_thread(void)
+>  {
+>         fpsimd_flush_thread();
+>         tls_thread_flush();
+>         flush_ptrace_hw_breakpoint(current);
+>         flush_tagged_addr_state();
+> +       flush_mte_state();
+>  }
+>
+>  void release_thread(struct task_struct *dead_task)
+> diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
+> index dd2cdc0d5be2..41fae64af82a 100644
+> --- a/arch/arm64/kernel/signal.c
+> +++ b/arch/arm64/kernel/signal.c
+> @@ -730,6 +730,9 @@ static void setup_return(struct pt_regs *regs, struct k_sigaction *ka,
+>         regs->regs[29] = (unsigned long)&user->next_frame->fp;
+>         regs->pc = (unsigned long)ka->sa.sa_handler;
+>
+> +       /* TCO (Tag Check Override) always cleared for signal handlers */
+> +       regs->pstate &= ~PSR_TCO_BIT;
+> +
+>         if (ka->sa.sa_flags & SA_RESTORER)
+>                 sigtramp = ka->sa.sa_restorer;
+>         else
+> @@ -921,6 +924,11 @@ asmlinkage void do_notify_resume(struct pt_regs *regs,
+>                         if (thread_flags & _TIF_UPROBE)
+>                                 uprobe_notify_resume(regs);
+>
+> +                       if (thread_flags & _TIF_MTE_ASYNC_FAULT) {
+> +                               clear_thread_flag(TIF_MTE_ASYNC_FAULT);
+> +                               force_signal_inject(SIGSEGV, SEGV_MTEAERR, 0);
 
-Hi Jose!
+In the case where the kernel is entered due to a syscall, this will
+inject a signal, but only after servicing the syscall. This means
+that, for example, if the syscall is exit(), the async tag check
+failure will be silently ignored. I can reproduce the problem with the
+program below:
 
-Patches directed at net should have a Fixes tag identifying the commit
-which introduced the problem. The commit messages should also describe
-user-visible outcomes of the bugs. Without those two its hard to judge
-which patches are important for stable backports.
+.arch_extension mte
 
-Could you please repost with appropriate Fixes tags?
+.globl _start
+_start:
+mov x0, #0x37 // PR_SET_TAGGED_ADDR_CTRL
+mov x1, #0xd // PR_TAGGED_ADDR_ENABLE | PR_MTE_TCF_ASYNC | (1 <<
+PR_MTE_EXCL_SHIFT)
+mov x2, #0
+mov x3, #0
+mov x4, #0
+mov x8, #0xa7 // prctl
+svc #0
+
+mov x0, xzr
+mov w1, #0x1000
+mov w2, #0x23 // PROT_READ|PROT_WRITE|PROT_MTE
+mov w3, #0x22 // MAP_PRIVATE|MAP_ANONYMOUS
+mov w4, #0xffffffff
+mov x5, xzr
+mov x8, #0xde // mmap
+svc #0
+
+orr x0, x0, #(1 << 56)
+str x0, [x0] // <- tag check fail here
+
+// mov x0, #0
+// mov x8, #0x17 // dup
+// svc #0
+
+mov x0, #0
+mov x8, #0x5d // exit
+svc #0
+
+If I run this program, it terminates successfully (i.e. the exit
+syscall succeeds). And if I uncomment the dup() syscall and run the
+program under strace, I see that the program dies with SIGSEGV, but
+not before servicing the dup().
+
+This patch fixes the problem for me:
+
+diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
+index 9a9d98a443fc..d0c8918dee00 100644
+--- a/arch/arm64/kernel/syscall.c
++++ b/arch/arm64/kernel/syscall.c
+@@ -94,6 +94,8 @@ static void el0_svc_common(struct pt_regs *regs, int
+scno, int sc_nr,
+                           const syscall_fn_t syscall_table[])
+ {
+        unsigned long flags = current_thread_info()->flags;
++       if (flags & _TIF_MTE_ASYNC_FAULT)
++               return;
+
+        regs->orig_x0 = regs->regs[0];
+        regs->syscallno = scno;
+
+I am not sure whether this is the correct fix, though.
+
+Peter
+
+> +                       }
+> +
+>                         if (thread_flags & _TIF_SIGPENDING)
+>                                 do_signal(regs);
+>
+> diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
+> index 077b02a2d4d3..ef3bfa2bf2b1 100644
+> --- a/arch/arm64/mm/fault.c
+> +++ b/arch/arm64/mm/fault.c
+> @@ -660,6 +660,13 @@ static int do_sea(unsigned long addr, unsigned int esr, struct pt_regs *regs)
+>         return 0;
+>  }
+>
+> +static int do_tag_check_fault(unsigned long addr, unsigned int esr,
+> +                             struct pt_regs *regs)
+> +{
+> +       do_bad_area(addr, esr, regs);
+> +       return 0;
+> +}
+> +
+>  static const struct fault_info fault_info[] = {
+>         { do_bad,               SIGKILL, SI_KERNEL,     "ttbr address size fault"       },
+>         { do_bad,               SIGKILL, SI_KERNEL,     "level 1 address size fault"    },
+> @@ -678,7 +685,7 @@ static const struct fault_info fault_info[] = {
+>         { do_page_fault,        SIGSEGV, SEGV_ACCERR,   "level 2 permission fault"      },
+>         { do_page_fault,        SIGSEGV, SEGV_ACCERR,   "level 3 permission fault"      },
+>         { do_sea,               SIGBUS,  BUS_OBJERR,    "synchronous external abort"    },
+> -       { do_bad,               SIGKILL, SI_KERNEL,     "unknown 17"                    },
+> +       { do_tag_check_fault,   SIGSEGV, SEGV_MTESERR,  "synchronous tag check fault"   },
+>         { do_bad,               SIGKILL, SI_KERNEL,     "unknown 18"                    },
+>         { do_bad,               SIGKILL, SI_KERNEL,     "unknown 19"                    },
+>         { do_sea,               SIGKILL, SI_KERNEL,     "level 0 (translation table walk)"      },
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
