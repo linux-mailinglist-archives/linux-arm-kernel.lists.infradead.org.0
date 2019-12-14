@@ -2,83 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FFA811F370
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 19:12:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 647F411F3C5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 21:03:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=FLSW53zt6BqA9XMoRSO/O7JPKhkxLO3xCM5nG8BGKxY=; b=nVF+J5AO6rICJ30eHKSDg+Zj3C
-	FHtPoyMeh7thC5PuWuWJmoM3jNbxkxogNWF4E9Djhm0XG6pNYfF2awgjhbKFe5h0sa7gFDVJWK1wI
-	b0LOVASzeYdG4R0zR0DvJ4qPEQCv8C+GoYLRSnqBPC9OB5ab3DmBkRaycXRlE3l4iGYUIFC7ADVd2
-	a3Ug70J2FNNsBN4Tjj9hpSDSS/Y4q7AiuNgaO7VYBXCE1Rn1fFKCkmenkAQBkUezA/wk94joS5meH
-	tJhkn7VVPOW7Fg5nT2C0E2h24jL2A8v3hAqk/KrNmUDrvxKr5ZdZGbDemQnz0hgY+j96vOBcWXiVy
-	vTbzoMOw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o0iLFcVJX18090JKyb7o6F5OdDRIBPEfCf3BNlic9Mc=; b=nsTG0C0b+AJboB
+	AgGfLRtsGddWpipAuw4ZOWENQ8eD9dERZlauZYp18iBSlOodSc4gzUBh6GFq6CohxW+R1yMqOk2VV
+	mlUnGi87Lw2lR+0AjZg1iaDthrurscyjHd30twy22Cm70ndALmw1Zhxq+RkU8j28ScU/1qvn59yfj
+	t2iJczeKWRYMs8JY2ZNQtD4wi5FGELP8SediIpGsvZyM7JDLSbAkUgW4CcGzp8RSc02c5GcfKaWpX
+	wkPGlGGaz/Why4EIp+brbZAZwjNd0W8VwIXf8FSHVWKzWJlXoy9O5itXq9WmQwDI2IzZlUwWBNZPY
+	ydFzowYYGoyxvQDNmbvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igBtV-0004eY-Kc; Sat, 14 Dec 2019 18:11:57 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1igDdN-0004pp-09; Sat, 14 Dec 2019 20:03:25 +0000
+Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igBtA-0004T9-TH; Sat, 14 Dec 2019 18:11:38 +0000
-Received: by mail-pl1-x641.google.com with SMTP id x17so2643309pln.1;
- Sat, 14 Dec 2019 10:11:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=SvTdvPiQ4xS/R0i2wr0OUTzm/R634IQg+liWq51l5qI=;
- b=GjJhF1CAXzdxoO+FucPX1sTsI0/8x0LFMpCRzTIKTB81SGg0MRkFv1GuE/kKOUL7UM
- 6xh1yviwLoQNhqQclDhr0qbETgbrQEG3Ud5h6lssD5CihvWHgbVvX6aL1znY47R16vE/
- ni44huX7x6QKD+AxFPeFCEPoWTnbtgzVWNKv8UqHGkmTqwiSPs5E+KsZp2EXozsYAOhX
- 3hYprEBKDcQcZKcQD4ARCH0TFznsrlG/fZGamrUOwgWtiiVSUq8eqaX6lUkslUZDWMwO
- X6+igpp4YIpotZWdWePFhV80TtqzIO+7MiGcJ+TpQj+fIBok9XfGdQvGdXu+alQtEHut
- 4SGg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=SvTdvPiQ4xS/R0i2wr0OUTzm/R634IQg+liWq51l5qI=;
- b=Ok2Vmmkf7urqLIStQBRMsIJ7xQIAAsvDQKiHnRp3UJnVBVh2IDC+y29+c8HAMvBUkW
- bG5a6Skgx1rw9bbYHDivADiTsV2CaXn0cGzcxmdx5zJ2wz1krwX8Em+HlNSv2Eu1v23r
- nnIV8jQZvymjtybxa7eU3mgh3Q+tSIBGyclBG9OkgFW+YRM8NFQZDp+Yo0kAdYOBFKpv
- dKX+/PlcT15Sqnzc+YAxJWqHk4F4rzOOkYvOjQWC2ov1PS8jd9tFgKKLK3ukj0uk0kHP
- BEfTI1cFzNA3DjzuCTjl+00R1y1IE1yR1L/sJ2M35sf9WJDF/KwS1oO7ianHD9CdwZzF
- EuGQ==
-X-Gm-Message-State: APjAAAVIttndz34aSmogDUOwt+A5iiFp+rY+9NF/B3J9KCPsAfJCwDk0
- 6SrnjL8oWRKg8nrdkk7bD8Y=
-X-Google-Smtp-Source: APXvYqwO9rgNZe3r1YYJXfOMjUaz6xLzQB0K3HMgzzIWBQTtDHfKH5LltW8bhA04msSercIVr4AEHw==
-X-Received: by 2002:a17:902:8541:: with SMTP id
- d1mr6447836plo.57.1576347096300; 
- Sat, 14 Dec 2019 10:11:36 -0800 (PST)
-Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id f8sm13276261pfn.2.2019.12.14.10.11.35
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 14 Dec 2019 10:11:35 -0800 (PST)
-From: Yangtao Li <tiny.windzz@gmail.com>
-To: cw00.choi@samsung.com, myungjoo.ham@samsung.com, kyungmin.park@samsung.com,
- heiko@sntech.de
-Subject: [PATCH 2/2] PM / devfreq: rk3399_dmc: add missing of_node_put()
-Date: Sat, 14 Dec 2019 18:11:30 +0000
-Message-Id: <20191214181130.25808-2-tiny.windzz@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191214181130.25808-1-tiny.windzz@gmail.com>
-References: <20191214181130.25808-1-tiny.windzz@gmail.com>
+ id 1igDdG-0004pP-FG; Sat, 14 Dec 2019 20:03:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1576353796;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=DPuTsZ3nF0GQ/mkxy1iKe+y0Pe4EavbpO5IBrMhpzbw=;
+ b=b30rXUm/EKDErwQ9vsIDG6PL+ep9i8zrWMRiw6waCqIbf4CXEjcdDQxfdzaQE1VjTd
+ 9zclSECizHo1MuHyJAconocyPxMOlwS/LxvuuY+O+8RigGlnonSbfbiRgnih27NnoKNY
+ kKlvlm1Rzk2ZI75cDuEPrd9jU3btpWNslHRpRJLM7EPj4VlRurnS8xlVCkoMIu7wRazE
+ 9GXpJQII1afsfhP7nTfFVY/KyxnTmXM5ReiFBpgZ+mKja2ai0/C2/kM+1x1jXj4Mfs10
+ MNLqCmNvJtGEdK2JndXrjfOLtTLbY9KJvOZ5dP/2n/w/wUA0bGiKhgMv3Q5/M9/Zzv5E
+ 35eA==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj7wpz8NMGHPruwDCvIHw="
+X-RZG-CLASS-ID: mo00
+Received: from imac.fritz.box by smtp.strato.de (RZmta 46.0.7 DYNA|AUTH)
+ with ESMTPSA id i03ca8vBEK2vCBh
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
+ ECDH bits, eq. 3072 bits RSA))
+ (Client did not present a certificate);
+ Sat, 14 Dec 2019 21:02:57 +0100 (CET)
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+Subject: Re: BUG - was: [GIT PULL 2/3] bcm2835-soc-next-2019-10-15
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <f6f38340-2555-7907-6b89-748c34cd2978@gmx.net>
+Date: Sat, 14 Dec 2019 21:02:56 +0100
+Message-Id: <A0CE3E97-00E3-401F-AB89-153700B4D93F@goldelico.com>
+References: <1571159725-5090-1-git-send-email-wahrenst@gmx.net>
+ <1571159725-5090-2-git-send-email-wahrenst@gmx.net>
+ <12244E4E-A1A0-4EE9-ACD3-EA165D9A2C79@goldelico.com>
+ <f6f38340-2555-7907-6b89-748c34cd2978@gmx.net>
+To: Stefan Wahren <wahrenst@gmx.net>
+X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_101136_952576_E817D1EF 
-X-CRM114-Status: GOOD (  10.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191214_120319_105153_E8F5A41E 
+X-CRM114-Status: GOOD (  13.96  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5301:0:0:9 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -97,37 +84,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yangtao Li <tiny.windzz@gmail.com>, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org
-MIME-Version: 1.0
+Cc: Florian Fainelli <f.fainelli@gmail.com>, Tony Lindgren <tony@atomide.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ Linux-OMAP <linux-omap@vger.kernel.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-of_node_put() needs to be called when the device node which is got
-from of_parse_phandle has finished using.
+Hi all,
+I think I have found the issue, it is not ZONE_DMA, see below.
 
-Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
----
- drivers/devfreq/rk3399_dmc.c | 1 +
- 1 file changed, 1 insertion(+)
+> Am 14.12.2019 um 17:54 schrieb Stefan Wahren <wahrenst@gmx.net>:
+> 
+> Hi Nikolaus,
+> 
+> [add Nicolas as the new BCM2835 maintainer]
+> 
+> Am 14.12.19 um 11:54 schrieb H. Nikolaus Schaller:
+>> Hi Stefan,
+>> 
+>>> Am 15.10.2019 um 19:15 schrieb Stefan Wahren <wahrenst@gmx.net>:
+>>> 
+>>> Hi Florian,
+>>> 
+>>> The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
+>>> 
+>>> Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
+>>> 
+>>> are available in the git repository at:
+>>> 
+>>> git://github.com/anholt/linux tags/bcm2835-soc-next-2019-10-15
+>>> 
+>>> for you to fetch changes up to 781fa0a954240c8487683ddf837fb2c4ede8e7ca:
+>>> 
+>>> ARM: bcm: Add support for BCM2711 SoC (2019-10-10 19:21:03 +0200)
+>> this patch has finally arrived in v5.5-rc1 but it seems to break
+>> multiplatform build.
+>> 
+>> We run a distribution kernel that supports OMAP3/4/5, i.MX6 and RasPi 3B+
+>> but since rebasing to v5.5-rc1 the kernel hangs after "Starting Kernel ...".
+>> On all ARM devices (incl. RasPi 3B+).
+> 
+> i wasn't able to reproduce this issue with the RPi 3B+ so far and i
+> don't have any OMAP hardware:
+> 
+> Linux 5.3 (bcm2835_defconfig) + FW 2019-02-12 => okay
+> Linux 5.3 (bcm2835_defconfig + ZONE_DMA) + FW 2019-02-12 => okay
+> Linux 5.5-rc1 (bcm2835_defconfig) + FW 2019-02-12 => okay
+> Linux 5.5-rc1 (multi_v7_defconfig) + FW 2019-02-12 => okay
+> 
+> So please provide more information about your RPi 3B+ setup:
+> 
+> - VC firmware version
+> - additional bootloader (U-Boot)
+> - boot source (SD card, USB, network)
+> - kernel config
+> 
+> Did you tested the mainline kernel or the letux kernel?
 
-diff --git a/drivers/devfreq/rk3399_dmc.c b/drivers/devfreq/rk3399_dmc.c
-index 2e65d7279d79..2f1027c5b647 100644
---- a/drivers/devfreq/rk3399_dmc.c
-+++ b/drivers/devfreq/rk3399_dmc.c
-@@ -372,6 +372,7 @@ static int rk3399_dmcfreq_probe(struct platform_device *pdev)
- 	node = of_parse_phandle(np, "rockchip,pmu", 0);
- 	if (node) {
- 		data->regmap_pmu = syscon_node_to_regmap(node);
-+		of_node_put(node);
- 		if (IS_ERR(data->regmap_pmu))
- 			return PTR_ERR(data->regmap_pmu);
- 	}
--- 
-2.17.1
+On the OMAP I did test the mainline kernel with omap2plus_defconfig.
+RasPi 3B+ experiment was with Letux kernel and config.
+
+
+But I was lucky to find the issue by code inspection:
+
+bcm2711_compat[] is missing a NULL sentinel.
+
+Therefore, enabling CONFIG_ARCH_BCM2835 is sufficient to trigger the
+problem unless you may have been lucky getting something starting with
+a NULL packed after it on your bcm2835_defconfig or multi_v7_defconfig
+build.
+
+Patch submitted.
+
+BR,
+Nikolaus
 
 
 _______________________________________________
