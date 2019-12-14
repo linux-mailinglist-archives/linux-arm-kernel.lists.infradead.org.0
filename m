@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C84BA11F330
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 18:58:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56E8411F34B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 18:58:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=gzDbwJlzm1j5o7BXI0X+Ve46n5saAddfcql/GVqqiVc=; b=KmomXYm+o72vaiePMChgmCu0dr
-	KLaIrkJ8kGdx8P2I98ZHLkEXHlMjCU+j7nL1S+AguSR9I69eWCnSPG0Mm0II3G0IGflTWFwOTruFW
-	3ZxOi8h7GJeabO6vSl4qo2TaKoY5/4QjJf6ROCVEbXhXjj7YzpPAJsxUTVag/hGyVuMFQTtLfhyxR
-	wYDDELkFBpOys/Bn4TrMptIwKpCHT8i63+aLUv5MFvaNvBX8/XnGAfgpaua/Mk2/CCsMkZrJVRxVo
-	mataRxfsJf+tlWXlKOZ2vV9Rmha0fFH5qI7Vg3S7lc06aHhbBjo5pp6lowMmjQ6mDp0ix3RkVx2cH
-	FxVRrrsA==;
+	bh=tm7uJaxTdPJA8b1rCOeOq2WswtnfpC9tynOVnd7Ik98=; b=flsxCQYmVdTxeZl8o6e0SHSh5+
+	Bu/WKTgXXeTqDnT6VYpz5AzWoINmGnDUGHXN66nz5Mb8mZml9xQWhspq/mY5bmGo9T338q2rmh3N/
+	ZVCOPgv4AMkss0SAmLuak4Zz2H0oxUpUf1306KK7oqh1eGVksvgdQ5M91Vfsprs15mRFet5pVJn28
+	WtWWGQLNNJcB7r73wkzw/W1ek9Lr9D+oCz9XHdslECbB0h+6Q1hR4fD1R2CRFXrM01fypQh9HzFdW
+	ew0fwfLJSog48UBlx7NKRo/NILOnQRDqwZCnaJUO4ytwIli3+26EGpCVwoaHySMVaboFjW3Of/zFu
+	I9JeUxIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igBfs-0006uX-KW; Sat, 14 Dec 2019 17:57:52 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1igBgN-0007Pj-9v; Sat, 14 Dec 2019 17:58:23 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igBdL-0004p9-Kf; Sat, 14 Dec 2019 17:55:17 +0000
-Received: by mail-pl1-x643.google.com with SMTP id z3so1090724plk.6;
- Sat, 14 Dec 2019 09:55:15 -0800 (PST)
+ id 1igBdP-0004wp-0F; Sat, 14 Dec 2019 17:55:22 +0000
+Received: by mail-pl1-x642.google.com with SMTP id bd4so2614805plb.8;
+ Sat, 14 Dec 2019 09:55:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=p464edzUa2iPp9uHgJjpc0nSudXprxPgj9c87WZ/a/8=;
- b=jwbTlKjUlgdBEVsfFGJ0AFRM27IrT+5/nGVpeqjmCQY8Pvog9nLbJEGs3BoJShCWcc
- HUCs/NcUJEbspXufkbpSOSgpcLjHI9uSC2uL8deL98KCPLdAycltVaMbDTSY7BfErs2r
- 3jb+3au9m3HLLvo5IanTkhro0u+uMh+7QnL1Kmvn6n0zxgK8PqWxjbHB9UOlTP9lJERQ
- fRA0q2rQ0Mg0I4cJZ6oR/WvAPyLLemDcLzfJOfJwdMDJDyZj6sbgdurkJ9mbvF3rvF94
- qtAuTF6Xj2R2j2anoXaTjjEStkzmzXjXeUm9O3eCz5K6gXyVi95VvTd8QtE1eKhmZ/RZ
- FutA==
+ bh=G5UK5DwBUduQN5XnwW7khvuWSh3A6ZcbhwTioDRukl8=;
+ b=CbiDXSDajwRpx8W14h4Me/LqDY31+yHYAfRzx0gJjjZCKzYKeU/z+dRgbh8G0FB8Kz
+ n23u0oKZqKSzIYv+ZL33ayO6Nm2GUXWzXYlOWey+vH7BxOSNg1x5YuD+KX3DbDKrOn6L
+ s5pmk0dhSJQD63OQQyVOnnG5MA+j9dwufNQjp4qEDTK3V5YkQwYrGSY+U3Pc6GbbZRxC
+ CajxwBSj4cWprH+2jMO3kzlI61ws7Qkomli0Aczwwl3k6qQ00RIGGRQNNK5T1/gCZVZt
+ gSTJw7QQeLaRrJDTor/KB3Wx5TNqwOMf490slViV18ZldipGn352lX01mW6xS17FsVQG
+ TjSQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=p464edzUa2iPp9uHgJjpc0nSudXprxPgj9c87WZ/a/8=;
- b=QkA9ulfNGFdcNSgMWEVXsFBJjHAUpev6D5ztoLksthkorOGb1R+y6Oj3oZcjZKJij6
- GyZfIZU9/P8ov4LwLWaVF319X7dOTKIt6/HD8grClMXLeVU/ZNFuhReG1Y8mFuMmDavU
- YdTTTCzlznvVzNa7SE38ckPVsGqVV0szwQ/zUk747WP0QC1zPPzaxT33I3WqDKjko7bw
- diBhpdzdBNQ+JvTn+mdHj+vofHkyHBwfc8ZbHYGdDBsuRd2ZXCCQqyvn2Xk3zQF7DgBR
- fhYo+iBNuffCimzrFBkgX2EVeLR6WPvX9TJanGIxKaE8mT8acE5RVjs/wW3x2MYYou67
- wN7Q==
-X-Gm-Message-State: APjAAAXTTpyiwdaRnrpO5UQ3qycLmB5NjT6gI/UrgGbVJotdWaBFLtFt
- TvtsUBEvZMO+tUZ5uHW2bF8=
-X-Google-Smtp-Source: APXvYqxG8GAI4f/vKneCzHJdyU3sDnTOcUKGttUJVG0Uipa0HZQ6CtNPSXlPYC7sJOX/nTAUj+QlEA==
-X-Received: by 2002:a17:90a:374b:: with SMTP id
- u69mr6820565pjb.23.1576346114545; 
- Sat, 14 Dec 2019 09:55:14 -0800 (PST)
+ bh=G5UK5DwBUduQN5XnwW7khvuWSh3A6ZcbhwTioDRukl8=;
+ b=YLCZQpCWs/652+T+asJYgeECpAFRkkwjFRfG0wcgPiHXNPX0IGWyYLsP5KZclK/7Ey
+ 3BYKOCENEXEBoVJRwgUrMP02Zc6C41fL+cJFnCmt5kvMQ90NpPDbjkKAe/roeFo11Q8u
+ rD3KVCh6P7tPAPkTIecURSDxlMP3ljSGhROEqN4kcvk6dlAlEP9kb9boDIGwUcyQjcjr
+ ji/kjdo4RG7Gvj9xNpRQXdsU1ixFsTkR6M5fCsyPrCkB2vFQ0W9duBfqzuug/eWzMLi7
+ 8HhOGGcltKzqbMfiU1NT666fNwoli2wCncbbQuQNxqC2i44eJzzX4ZQUR4gYqtHcGBYu
+ 0lPw==
+X-Gm-Message-State: APjAAAVnmXT+Pm5oQphCpMFm6tUf2+QT0U2gd7pubUwy4P40mPGC2iLe
+ O6OkiHyShr+17rbsfImGWS9ebx6V76I=
+X-Google-Smtp-Source: APXvYqxLeBRtno5UO/xbNsZnN4kmZhB035ExJnlkIwjScfYHKudBua3+fBmjaQTpdULAB/liHFw71A==
+X-Received: by 2002:a17:90a:33e8:: with SMTP id
+ n95mr7043968pjb.17.1576346118077; 
+ Sat, 14 Dec 2019 09:55:18 -0800 (PST)
 Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id z23sm14868517pgj.43.2019.12.14.09.55.13
+ by smtp.gmail.com with ESMTPSA id g18sm16392573pfi.80.2019.12.14.09.55.17
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 14 Dec 2019 09:55:13 -0800 (PST)
+ Sat, 14 Dec 2019 09:55:17 -0800 (PST)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: khilman@baylibre.com, leoyang.li@nxp.com, khalasa@piap.pl,
  john@phrozen.org, matthias.bgg@gmail.com, agross@kernel.org,
  bjorn.andersson@linaro.org, kgene@kernel.org, krzk@kernel.org,
  mripard@kernel.org, wens@csie.org, ssantosh@kernel.org, jun.nie@linaro.org,
  shawnguo@kernel.org
-Subject: [PATCH 08/10] soc: lantiq: convert to devm_platform_ioremap_resource
-Date: Sat, 14 Dec 2019 17:54:45 +0000
-Message-Id: <20191214175447.25482-8-tiny.windzz@gmail.com>
+Subject: [PATCH 09/10] soc: ixp4xx: qmgr: convert to
+ devm_platform_ioremap_resource
+Date: Sat, 14 Dec 2019 17:54:46 +0000
+Message-Id: <20191214175447.25482-9-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191214175447.25482-1-tiny.windzz@gmail.com>
 References: <20191214175447.25482-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_095515_698519_7D334AB8 
-X-CRM114-Status: UNSURE (   9.58  )
+X-CRM114-CacheID: sfid-20191214_095519_083177_964D26DB 
+X-CRM114-Status: UNSURE (   9.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -116,28 +117,27 @@ Use devm_platform_ioremap_resource() to simplify code.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/soc/lantiq/fpi-bus.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/soc/ixp4xx/ixp4xx-qmgr.c | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
 
-diff --git a/drivers/soc/lantiq/fpi-bus.c b/drivers/soc/lantiq/fpi-bus.c
-index cb0303a0fe60..dff1375851cf 100644
---- a/drivers/soc/lantiq/fpi-bus.c
-+++ b/drivers/soc/lantiq/fpi-bus.c
-@@ -28,14 +28,12 @@ static int ltq_fpi_probe(struct platform_device *pdev)
- {
+diff --git a/drivers/soc/ixp4xx/ixp4xx-qmgr.c b/drivers/soc/ixp4xx/ixp4xx-qmgr.c
+index 8c968382cea7..520babbd9037 100644
+--- a/drivers/soc/ixp4xx/ixp4xx-qmgr.c
++++ b/drivers/soc/ixp4xx/ixp4xx-qmgr.c
+@@ -375,13 +375,9 @@ static int ixp4xx_qmgr_probe(struct platform_device *pdev)
+ 	int i, err;
+ 	irq_handler_t handler1, handler2;
  	struct device *dev = &pdev->dev;
- 	struct device_node *np = dev->of_node;
--	struct resource *res_xbar;
- 	struct regmap *rcu_regmap;
- 	void __iomem *xbar_membase;
- 	u32 rcu_ahb_endianness_reg_offset;
- 	int ret;
+-	struct resource *res;
+ 	int irq1, irq2;
  
--	res_xbar = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	xbar_membase = devm_ioremap_resource(dev, res_xbar);
-+	xbar_membase = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(xbar_membase))
- 		return PTR_ERR(xbar_membase);
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	if (!res)
+-		return -ENODEV;
+-	qmgr_regs = devm_ioremap_resource(dev, res);
++	qmgr_regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(qmgr_regs))
+ 		return PTR_ERR(qmgr_regs);
  
 -- 
 2.17.1
