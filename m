@@ -2,92 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E19811EF9E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 02:43:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14E5D11EFF0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 03:14:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Uos6FwT+4oN7MRInrtlh6KLnMVk52gSgypuUE7D6nk=; b=UNdNqBMdETgNQq
-	tSe5PhKzFcjBLlXostXzRLxSyhHeQZiOsERHAWDX3J9QQJFWQYT2emiNNPwwGbSCdUizo421FlJR1
-	ODsi3jA1G6YosBP378JBK2lY2gF81gYTFZbBOSn3Pycr2n00LPNNcaWR9S/3el/LLB1Z4iCPjMJQx
-	z/fsjxxdJgTXHiUXwM0ICNczhtyUvCW2OlIHgL5rqi/mqIY2XHOGpbCV7ASl6QfujstAywPy/Hc6e
-	dKSKgtAmyCCB43Ir2+WL741dK/XA6cJpmWf5ku/UKsNDnW06nHX+GjtcsQJMB3vOklIG4H0Yim3Lo
-	zbVmfxWhHkjvkRcKiU1w==;
+	List-Owner; bh=0FwFuHnQj5LMfCBGTLjhsTXTFHJt1rW0nwr6qQ0TlyU=; b=Z2aQsqhA+P2JN8
+	Pcz3J+fEAt2utnRel5DaobLOnXzmqQCuL2j3NFy+zla45T/bsqUH4uqq/eUznRqLwii+R3guogf53
+	tw3dDpZp/Jg/WThetAZi3Q6hlcN/bLWcWYRR9/WTYENMn8uD1sIZMu4eSqfjnvmqX2sKUACJNcKdh
+	mTdxZVvY8MQTnW4BzbKF8f2MT7UDh0JKDIsux5n/V9oPAexFyEIzXUUdG0FapLAM3f/uIYMwcNZBJ
+	4jlU6cFBi1m8l1pXlj1KrVcr7LzNkvwggf95Bixwucs6EqOfPxfLobAOK5p7+q5yR/z3l+rhWW4Q+
+	XdweXbwSKaIyltw0UULg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifwT6-0004bk-S8; Sat, 14 Dec 2019 01:43:40 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1ifwwr-0006b3-6P; Sat, 14 Dec 2019 02:14:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifwSw-0004bC-Mc
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Dec 2019 01:43:32 +0000
-Received: by mail-wr1-x443.google.com with SMTP id b6so745799wrq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Dec 2019 17:43:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OK1hOxVquW0ozgWFou0Nh784J1Qs7V8DhLyZizt1RJY=;
- b=O+7x69fLEuvoThGfRA0n5aMg8gw6fa5G0VDBFjErBVc2hW+YjXPYJTHd8xxZMayDjF
- ZbXwPHheuE6RxmygQHo9Eoqxk/kqG8Ob3puhcB8+bUTAdyTbCpujQiYJoYx69AlMXbm+
- 935vHyqh4Cm3tRJFTZayOpDPySxjmu5eZYB4U8MaBwE2NFShtbduoecI0caHuPCFCWjq
- QNrzdv1hLbobXl6cM9oahfhiO5FCWjLW2dEXb0Umclc7L5qGfBJ8njfyPTriZ6uSvCfT
- 32avqtJ1AMu2EKUpx0R/RZQFKDrzC7u/AbyYkO/5lXoTmkltb7pE1xD20jwgS+OTIkdb
- sgow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OK1hOxVquW0ozgWFou0Nh784J1Qs7V8DhLyZizt1RJY=;
- b=lw3TeGr5K1hdJpupF011+BVj4YLPLCtGN3/zrEcvTJvfyQPKLfirlxZ/9ZHNLf/3yR
- e15KpD+AiF2ry0LDXbN4aKgMwUbP8HuxNQiGTihR/ZHAVwM6n51AYhoUIHRH3ha+4zxO
- Zqyq3YIuTvGh5kC7EHZwQPQNYOaKOfq9fGbtdZgFp9HcCby7c/frQ11jIa+Qi2OCu4kA
- YuaHvcHg415yhB362W7ogtagUz43txcMvdyDrVcMAybePHvfvigkOk7STNSEiaiWeg7U
- ot1gL8PlfRjrXYOYA8hAbRPpMsn0zcPXhugve6BAIi3sZH0PdMWeXk7aAeZx1MjHvQyQ
- ucRw==
-X-Gm-Message-State: APjAAAXdGuuOg1ILiD2lgzrh1ZEEC/ZKbaI6TNKy7h1aeabBWN27il7R
- HXJTioaiSTMsyVfP8wkeU2Qv5pe98665PMir1aHdfw==
-X-Google-Smtp-Source: APXvYqzlMkJr9eClnvaplJwftzHi0XgzTz741gcIniA7KIq0TDGk58Re2C4sqZOVoWUDnUb+Xl01a3MSrP5HcmIbT7c=
-X-Received: by 2002:a5d:6a88:: with SMTP id s8mr15421936wru.173.1576287807371; 
- Fri, 13 Dec 2019 17:43:27 -0800 (PST)
+ id 1ifwwf-0006aC-LD
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Dec 2019 02:14:15 +0000
+Received: from home.goodmis.org (cpe-66-24-58-225.stny.res.rr.com
+ [66.24.58.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D05242073D;
+ Sat, 14 Dec 2019 02:14:10 +0000 (UTC)
+Date: Fri, 13 Dec 2019 21:14:03 -0500
+From: Steven Rostedt <rostedt@goodmis.org>
+To: Sasha Levin <sashal@kernel.org>
+Subject: Re: [PATCH AUTOSEL 4.19 031/219] arm64: preempt: Fix big-endian when
+ checking preempt count in assembly
+Message-ID: <20191214021403.GA1357@home.goodmis.org>
+References: <20191122054911.1750-1-sashal@kernel.org>
+ <20191122054911.1750-24-sashal@kernel.org>
 MIME-Version: 1.0
-References: <20191211184027.20130-1-catalin.marinas@arm.com>
- <20191211184027.20130-14-catalin.marinas@arm.com>
-In-Reply-To: <20191211184027.20130-14-catalin.marinas@arm.com>
-From: Peter Collingbourne <pcc@google.com>
-Date: Fri, 13 Dec 2019 17:43:15 -0800
-Message-ID: <CAMn1gO6RDrpkO6hygTUuXbsE5XTD+FEsZKpo5cqgg+nQWfBVKQ@mail.gmail.com>
-Subject: Re: [PATCH 13/22] arm64: mte: Handle synchronous and asynchronous tag
- check faults
-To: Catalin Marinas <catalin.marinas@arm.com>,
- Evgenii Stepanov <eugenis@google.com>, Kostya Serebryany <kcc@google.com>
+Content-Disposition: inline
+In-Reply-To: <20191122054911.1750-24-sashal@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191213_174330_767096_EB5ABEDB 
-X-CRM114-Status: GOOD (  26.45  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191213_181413_746403_13C51B8B 
+X-CRM114-Status: GOOD (  19.10  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,251 +66,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>, Marc Zyngier <maz@kernel.org>,
- Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
- Andrey Konovalov <andreyknvl@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "kernelci.org bot" <bot@kernelci.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 10:44 AM Catalin Marinas
-<catalin.marinas@arm.com> wrote:
->
-> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
->
-> The Memory Tagging Extension has two modes of notifying a tag check
-> fault at EL0, configurable through the SCTLR_EL1.TCF0 field:
->
-> 1. Synchronous raising of a Data Abort exception with DFSC 17.
-> 2. Asynchronous setting of a cumulative bit in TFSRE0_EL1.
->
-> Add the exception handler for the synchronous exception and handling of
-> the asynchronous TFSRE0_EL1.TF0 bit setting via a new TIF flag in
-> do_notify_resume().
->
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> Co-developed-by: Catalin Marinas <catalin.marinas@arm.com>
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+On Fri, Nov 22, 2019 at 12:46:03AM -0500, Sasha Levin wrote:
+> From: Will Deacon <will.deacon@arm.com>
+> 
+> [ Upstream commit 7faa313f05cad184e8b17750f0cbe5216ac6debb ]
+> 
+> Commit 396244692232 ("arm64: preempt: Provide our own implementation of
+> asm/preempt.h") extended the preempt count field in struct thread_info
+> to 64 bits, so that it consists of a 32-bit count plus a 32-bit flag
+> indicating whether or not the current task needs rescheduling.
+> 
+> Whilst the asm-offsets definition of TSK_TI_PREEMPT was updated to point
+> to this new field, the assembly usage was left untouched meaning that a
+> 32-bit load from TSK_TI_PREEMPT on a big-endian machine actually returns
+> the reschedule flag instead of the count.
+> 
+> Whilst we could fix this by pointing TSK_TI_PREEMPT at the count field,
+> we're actually better off reworking the two assembly users so that they
+> operate on the whole 64-bit value in favour of inspecting the thread
+> flags separately in order to determine whether a reschedule is needed.
+> 
+> Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Reported-by: "kernelci.org bot" <bot@kernelci.org>
+> Tested-by: Kevin Hilman <khilman@baylibre.com>
+> Signed-off-by: Will Deacon <will.deacon@arm.com>
+> Signed-off-by: Sasha Levin <sashal@kernel.org>
 > ---
->  arch/arm64/include/asm/thread_info.h |  4 +++-
->  arch/arm64/kernel/entry.S            | 17 +++++++++++++++++
->  arch/arm64/kernel/process.c          |  7 +++++++
->  arch/arm64/kernel/signal.c           |  8 ++++++++
->  arch/arm64/mm/fault.c                |  9 ++++++++-
->  5 files changed, 43 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/thread_info.h b/arch/arm64/include/asm/thread_info.h
-> index f0cec4160136..f759a0215a71 100644
-> --- a/arch/arm64/include/asm/thread_info.h
-> +++ b/arch/arm64/include/asm/thread_info.h
-> @@ -63,6 +63,7 @@ void arch_release_task_struct(struct task_struct *tsk);
->  #define TIF_FOREIGN_FPSTATE    3       /* CPU's FP state is not current's */
->  #define TIF_UPROBE             4       /* uprobe breakpoint or singlestep */
->  #define TIF_FSCHECK            5       /* Check FS is USER_DS on return */
-> +#define TIF_MTE_ASYNC_FAULT    6       /* MTE Asynchronous Tag Check Fault */
->  #define TIF_NOHZ               7
->  #define TIF_SYSCALL_TRACE      8       /* syscall trace active */
->  #define TIF_SYSCALL_AUDIT      9       /* syscall auditing */
-> @@ -93,10 +94,11 @@ void arch_release_task_struct(struct task_struct *tsk);
->  #define _TIF_FSCHECK           (1 << TIF_FSCHECK)
->  #define _TIF_32BIT             (1 << TIF_32BIT)
->  #define _TIF_SVE               (1 << TIF_SVE)
-> +#define _TIF_MTE_ASYNC_FAULT   (1 << TIF_MTE_ASYNC_FAULT)
->
->  #define _TIF_WORK_MASK         (_TIF_NEED_RESCHED | _TIF_SIGPENDING | \
->                                  _TIF_NOTIFY_RESUME | _TIF_FOREIGN_FPSTATE | \
-> -                                _TIF_UPROBE | _TIF_FSCHECK)
-> +                                _TIF_UPROBE | _TIF_FSCHECK | _TIF_MTE_ASYNC_FAULT)
->
->  #define _TIF_SYSCALL_WORK      (_TIF_SYSCALL_TRACE | _TIF_SYSCALL_AUDIT | \
->                                  _TIF_SYSCALL_TRACEPOINT | _TIF_SECCOMP | \
+>  arch/arm64/include/asm/assembler.h | 8 +++-----
+>  arch/arm64/kernel/entry.S          | 6 ++----
+>  2 files changed, 5 insertions(+), 9 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+> index 5a97ac8531682..0c100506a29aa 100644
+> --- a/arch/arm64/include/asm/assembler.h
+> +++ b/arch/arm64/include/asm/assembler.h
+> @@ -683,11 +683,9 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
+>  	.macro		if_will_cond_yield_neon
+>  #ifdef CONFIG_PREEMPT
+>  	get_thread_info	x0
+> -	ldr		w1, [x0, #TSK_TI_PREEMPT]
+> -	ldr		x0, [x0, #TSK_TI_FLAGS]
+> -	cmp		w1, #PREEMPT_DISABLE_OFFSET
+> -	csel		x0, x0, xzr, eq
+> -	tbnz		x0, #TIF_NEED_RESCHED, .Lyield_\@	// needs rescheduling?
+> +	ldr		x0, [x0, #TSK_TI_PREEMPT]
+> +	sub		x0, x0, #PREEMPT_DISABLE_OFFSET
+> +	cbz		x0, .Lyield_\@
+>  	/* fall through to endif_yield_neon */
+>  	.subsection	1
+>  .Lyield_\@ :
 > diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> index 7c6a0a41676f..c221a539e61d 100644
+> index 5f800384cb9a8..bb68323530458 100644
 > --- a/arch/arm64/kernel/entry.S
 > +++ b/arch/arm64/kernel/entry.S
-> @@ -144,6 +144,22 @@ alternative_cb_end
+> @@ -622,10 +622,8 @@ el1_irq:
+>  	irq_handler
+>  
+>  #ifdef CONFIG_PREEMPT
+> -	ldr	w24, [tsk, #TSK_TI_PREEMPT]	// get preempt count
+> -	cbnz	w24, 1f				// preempt count != 0
+> -	ldr	x0, [tsk, #TSK_TI_FLAGS]	// get flags
+> -	tbz	x0, #TIF_NEED_RESCHED, 1f	// needs rescheduling?
+> +	ldr	x24, [tsk, #TSK_TI_PREEMPT]	// get preempt count
+> +	cbnz	x24, 1f				// preempt count != 0
+>  	bl	el1_preempt
+
+While updating 4.19-rt, I stumbled on this change to arm64 backport. And was
+confused by it, but looking deeper, this is something that breaks without
+having 396244692232f ("arm64: preempt: Provide our own implementation of
+asm/preempt.h").
+
+That commit inverts the TIF_NEED_RESCHED meaning where set means we don't need
+to resched, and clear means we need to resched. This way we can combine the
+preempt count with the need resched flag test as they share the same 64bit
+word. A 0 means we need to preempt (as NEED_RESCHED being zero means we need
+to resched, and this also means preempt_count is zero). If the
+TIF_NEED_RESCHED bit is set, that means we don't need to resched, and if
+preempt count is something other than zero, we don't need to resched, and
+since those two are together by commit 396244692232f, we can just test
+#TSK_TI_PREEMPT. But because that commit does not exist in 4.19, we can't
+remove the TIF_NEED_RESCHED check, that this backport does, and then breaks
+the kernel!
+
+-- Steve
+
+
+>  1:
 >  #endif
->         .endm
->
-> +       // Check for MTE asynchronous tag check faults
-> +       .macro check_mte_async_tcf, flgs, tmp
-> +#ifdef CONFIG_ARM64_MTE
-> +alternative_if_not ARM64_MTE
-> +       b       1f
-> +alternative_else_nop_endif
-> +       mrs_s   \tmp, SYS_TFSRE0_EL1
-> +       tbz     \tmp, #SYS_TFSR_EL1_TF0_SHIFT, 1f
-> +       // Asynchronous TCF occurred at EL0, set the TI flag
-> +       orr     \flgs, \flgs, #_TIF_MTE_ASYNC_FAULT
-> +       str     \flgs, [tsk, #TSK_TI_FLAGS]
-> +       msr_s   SYS_TFSRE0_EL1, xzr
-> +1:
-> +#endif
-> +       .endm
-> +
->         .macro  kernel_entry, el, regsize = 64
->         .if     \regsize == 32
->         mov     w0, w0                          // zero upper 32 bits of x0
-> @@ -171,6 +187,7 @@ alternative_cb_end
->         ldr     x19, [tsk, #TSK_TI_FLAGS]       // since we can unmask debug
->         disable_step_tsk x19, x20               // exceptions when scheduling.
->
-> +       check_mte_async_tcf x19, x22
->         apply_ssbd 1, x22, x23
->
->         .else
-> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> index 71f788cd2b18..dd98d539894e 100644
-> --- a/arch/arm64/kernel/process.c
-> +++ b/arch/arm64/kernel/process.c
-> @@ -317,12 +317,19 @@ static void flush_tagged_addr_state(void)
->                 clear_thread_flag(TIF_TAGGED_ADDR);
->  }
->
-> +static void flush_mte_state(void)
-> +{
-> +       if (system_supports_mte())
-> +               clear_thread_flag(TIF_MTE_ASYNC_FAULT);
-> +}
-> +
->  void flush_thread(void)
->  {
->         fpsimd_flush_thread();
->         tls_thread_flush();
->         flush_ptrace_hw_breakpoint(current);
->         flush_tagged_addr_state();
-> +       flush_mte_state();
->  }
->
->  void release_thread(struct task_struct *dead_task)
-> diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-> index dd2cdc0d5be2..41fae64af82a 100644
-> --- a/arch/arm64/kernel/signal.c
-> +++ b/arch/arm64/kernel/signal.c
-> @@ -730,6 +730,9 @@ static void setup_return(struct pt_regs *regs, struct k_sigaction *ka,
->         regs->regs[29] = (unsigned long)&user->next_frame->fp;
->         regs->pc = (unsigned long)ka->sa.sa_handler;
->
-> +       /* TCO (Tag Check Override) always cleared for signal handlers */
-> +       regs->pstate &= ~PSR_TCO_BIT;
-> +
->         if (ka->sa.sa_flags & SA_RESTORER)
->                 sigtramp = ka->sa.sa_restorer;
->         else
-> @@ -921,6 +924,11 @@ asmlinkage void do_notify_resume(struct pt_regs *regs,
->                         if (thread_flags & _TIF_UPROBE)
->                                 uprobe_notify_resume(regs);
->
-> +                       if (thread_flags & _TIF_MTE_ASYNC_FAULT) {
-> +                               clear_thread_flag(TIF_MTE_ASYNC_FAULT);
-> +                               force_signal_inject(SIGSEGV, SEGV_MTEAERR, 0);
-
-In the case where the kernel is entered due to a syscall, this will
-inject a signal, but only after servicing the syscall. This means
-that, for example, if the syscall is exit(), the async tag check
-failure will be silently ignored. I can reproduce the problem with the
-program below:
-
-.arch_extension mte
-
-.globl _start
-_start:
-mov x0, #0x37 // PR_SET_TAGGED_ADDR_CTRL
-mov x1, #0xd // PR_TAGGED_ADDR_ENABLE | PR_MTE_TCF_ASYNC | (1 <<
-PR_MTE_EXCL_SHIFT)
-mov x2, #0
-mov x3, #0
-mov x4, #0
-mov x8, #0xa7 // prctl
-svc #0
-
-mov x0, xzr
-mov w1, #0x1000
-mov w2, #0x23 // PROT_READ|PROT_WRITE|PROT_MTE
-mov w3, #0x22 // MAP_PRIVATE|MAP_ANONYMOUS
-mov w4, #0xffffffff
-mov x5, xzr
-mov x8, #0xde // mmap
-svc #0
-
-orr x0, x0, #(1 << 56)
-str x0, [x0] // <- tag check fail here
-
-// mov x0, #0
-// mov x8, #0x17 // dup
-// svc #0
-
-mov x0, #0
-mov x8, #0x5d // exit
-svc #0
-
-If I run this program, it terminates successfully (i.e. the exit
-syscall succeeds). And if I uncomment the dup() syscall and run the
-program under strace, I see that the program dies with SIGSEGV, but
-not before servicing the dup().
-
-This patch fixes the problem for me:
-
-diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
-index 9a9d98a443fc..d0c8918dee00 100644
---- a/arch/arm64/kernel/syscall.c
-+++ b/arch/arm64/kernel/syscall.c
-@@ -94,6 +94,8 @@ static void el0_svc_common(struct pt_regs *regs, int
-scno, int sc_nr,
-                           const syscall_fn_t syscall_table[])
- {
-        unsigned long flags = current_thread_info()->flags;
-+       if (flags & _TIF_MTE_ASYNC_FAULT)
-+               return;
-
-        regs->orig_x0 = regs->regs[0];
-        regs->syscallno = scno;
-
-I am not sure whether this is the correct fix, though.
-
-Peter
-
-> +                       }
-> +
->                         if (thread_flags & _TIF_SIGPENDING)
->                                 do_signal(regs);
->
-> diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-> index 077b02a2d4d3..ef3bfa2bf2b1 100644
-> --- a/arch/arm64/mm/fault.c
-> +++ b/arch/arm64/mm/fault.c
-> @@ -660,6 +660,13 @@ static int do_sea(unsigned long addr, unsigned int esr, struct pt_regs *regs)
->         return 0;
->  }
->
-> +static int do_tag_check_fault(unsigned long addr, unsigned int esr,
-> +                             struct pt_regs *regs)
-> +{
-> +       do_bad_area(addr, esr, regs);
-> +       return 0;
-> +}
-> +
->  static const struct fault_info fault_info[] = {
->         { do_bad,               SIGKILL, SI_KERNEL,     "ttbr address size fault"       },
->         { do_bad,               SIGKILL, SI_KERNEL,     "level 1 address size fault"    },
-> @@ -678,7 +685,7 @@ static const struct fault_info fault_info[] = {
->         { do_page_fault,        SIGSEGV, SEGV_ACCERR,   "level 2 permission fault"      },
->         { do_page_fault,        SIGSEGV, SEGV_ACCERR,   "level 3 permission fault"      },
->         { do_sea,               SIGBUS,  BUS_OBJERR,    "synchronous external abort"    },
-> -       { do_bad,               SIGKILL, SI_KERNEL,     "unknown 17"                    },
-> +       { do_tag_check_fault,   SIGSEGV, SEGV_MTESERR,  "synchronous tag check fault"   },
->         { do_bad,               SIGKILL, SI_KERNEL,     "unknown 18"                    },
->         { do_bad,               SIGKILL, SI_KERNEL,     "unknown 19"                    },
->         { do_sea,               SIGKILL, SI_KERNEL,     "level 0 (translation table walk)"      },
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> -- 
+> 2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
