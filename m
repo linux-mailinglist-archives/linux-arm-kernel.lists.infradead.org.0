@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0048711F2E2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 17:55:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BC2411F2F0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 18:48:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ov1+ik6dRl9THqSBj/WWrNfVZ1cdY/O3A/wcVqHvCOM=; b=Ll+IKyRp4SzYAB
-	HgyNNw2TBJO2iOpDX5Y12q7DA9fN270kJmEqU2UUftYY4Bu0unADShhiX/4oJaNAJ4DcLLjjuCEMP
-	n0ndx9Sq7n3oVByyRJEc3XcL0tHXxqALu65b2cpnx2CkdLMgkRqxawEwnaOti5cBc4Bb236V+zq3F
-	t+CWOgViksI3nGvTD5rfPoH4K3X12/ksWgWsO79W67dfdmdas4lHkBkbwAS6wQMFmPpekD0LbQzbt
-	XLbYNE1jwwv417xJdDcJIXcEF7i4D+7LzWC147zAlNqtpj4rWY0zBxGQhF15nUL5af+uhEEskPY4r
-	rMIRBoCabZ/MyFCnPYQw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=10+LLkZCQsS6QTjdOcm4hqwFs7naTONpKKlrZartUR4=; b=bp/wpWJ1AdkDZOhrqO6b4NEjs
+	Wnn41b3ntC0diot0g9lC2RmEIPtDGVI8sKcnBNVZTHf+1SKd13fLjHtuWOm+a/8Zz/s6d8xfZtybD
+	nOQb3c+QEERc03HD7o5SwYOJfsGmuDylynxK/bT65QWly1B/K+WtKuFmXu+dWAl0Sj7AGrvuINBdK
+	JY2kHnh33NPHRB51hPBnuCNO6YjSdzb5bSYTZQ/IaIXJPI2GnTIWsuzggDAIiVXfajddaGgS/UOWY
+	pbd0wKF4WhVT6GtntBWoXRH6mIG72XAgc2ygg7Ld7n6VHMSit2zJqOX9Wh81IZ0y3y3VTAs9uBKb6
+	cJLPWZiVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igAgz-0002lf-NP; Sat, 14 Dec 2019 16:54:57 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1igBWx-0001VG-Ts; Sat, 14 Dec 2019 17:48:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igAgs-0002l5-Bd; Sat, 14 Dec 2019 16:54:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1576342475;
- bh=+BbVCIHuNmxom49QgIOa+rVhYJNXL05jIfaUgchsleA=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=VmgSSuFHso6sSPe4dL2Mrpy3+5pVvrn50Sn4palz5AuuOf2wv6/ITivaMBffJ4kap
- jMBIEwsB3TlD/tbecm54YNYHsbGLAvlGbxhxj/hsL1AZrpEtgicjGVYu0CSsqapeoc
- DfMgcOWquAXtxcoVSkc0k0fb5L3oMCBRbVNcISXM=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.176] ([37.4.249.154]) by mail.gmx.com (mrgmx105
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1MEm27-1iVTBh3EPD-00GMNY; Sat, 14
- Dec 2019 17:54:34 +0100
-Subject: Re: BUG - was: [GIT PULL 2/3] bcm2835-soc-next-2019-10-15
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
-References: <1571159725-5090-1-git-send-email-wahrenst@gmx.net>
- <1571159725-5090-2-git-send-email-wahrenst@gmx.net>
- <12244E4E-A1A0-4EE9-ACD3-EA165D9A2C79@goldelico.com>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <f6f38340-2555-7907-6b89-748c34cd2978@gmx.net>
-Date: Sat, 14 Dec 2019 17:54:30 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1igBWq-0001UT-6q
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Dec 2019 17:48:34 +0000
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 688DE206B7;
+ Sat, 14 Dec 2019 17:48:29 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576345709;
+ bh=j0cVVduqPZlIJCt7KdsAChcBm98KlrgSj7LuGXfADtQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=nRlUD67SsC3no5wZ2NmSP4n5VDMdh1W4oz9RpVBJ6Trchp7SF2sLUqgfZ75O+aP5g
+ NSIqc9z359ro1N0EEVIQTRZUTyYGWl19SKWNpSeJ2RXsJV9anNpZSoLhD7gGvFmtHH
+ qznE+LN5YjFEKs7o+211O29uI1CXRjcXTyrra02E=
+Date: Sat, 14 Dec 2019 18:48:27 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: zhengbin <zhengbin13@huawei.com>
+Subject: Re: [PATCH 0/2] drm/sun4i: Remove unneeded semicolon
+Message-ID: <20191214174827.2ua36bdyd4cruany@gilmour.lan>
+References: <1576317091-24968-1-git-send-email-zhengbin13@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <12244E4E-A1A0-4EE9-ACD3-EA165D9A2C79@goldelico.com>
-Content-Language: en-US
-X-Provags-ID: V03:K1:ELFNI87v57TSREqtXP96vdgImKzkkUHbI3qOsvnsOa/ruWSt74b
- i3rbtP0n/I1A1A6c5KebrDoY5ezip6rimI8jNOnmroTBHPhM1nprkvAIBeFGIhJsLeAGm1X
- S/geNjiXjtNFyhU0kFK+43LQ/jrPxKdXtOUfuv2lKmK87n0TcmYzqe9ekafdHaZerwFDKur
- Omzf9vF/uSNesLYbkpAcA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:UNbQGgv5KWo=:paK+qqmVLcAsfK4nh6VZO0
- 8Suk8svgYYGTWkrUvzlY67n3dtDx/blwhgLOK1dsUBRMsjV9Odbj88HMkfXfSEuv4c7DTC6Cv
- QJdSmkzM6zGDDYEJeA9vc6ociK8vnobicFTHxYfLJHZYnEAZBXp/t2jwmSUljDQ0M4pWk3PR5
- 09onjuoPEvS89CqontZNOiLb42lRJzYM7M1xAwyygIqePbv/HY/QteCZ6jnO0mh/OMIPmj/uq
- YAMYwYsLDuv8iqVM8UY6vJsFaloQOF9LztiOnAcrhAORf7ukE0w5A/QHiIWHfFV4VT30nr+S1
- sNDfqsNziqIu8ng3WcUodW5j+L5HyUMtXZqfc0ElpC3ltiMNMrrDMcmhT9swK2tnU8doa/qQA
- /Kbafv/Bhe5/FSvQNEabGw3Fo2GWp6y1YUiQOlDVHyScwXOHCp7pPO8BrT1+YSovQ4i3msNTC
- dmEgbMe0DPdaYEadIRrhdYGTcDtd1sBYcc2UUY8FFmRr4uv8keqF0u58Rk2DX7eTYD2ElP4nb
- t3BQc/7rzK9DuPx+A9Ys4r/FQ2f5Iy9Vy5WsHCyTbTZ5vn/S6pX7iUQoxfbL8KHGQwcI6q47E
- zkDZyncaf5dTunui5SNjutSSdbmfMs5UIJjyokftX23qr7GJAADpPGOIz7lqbJplN6SvkvTFb
- tl0pvwVOKsHQU1BB8XGrkia6iL5PUz6fPACUfs2p7gkNUWHPDd78a6+IcPfuRVsrtGWKLknEq
- tIH4hwpGX5mAsPciQ0Np4KGrYfgE+/CY7vGpZb8OKmxwivCsjXp7K6w7HzHHG7fOkgoS4e7ye
- 8lhUN4bJ6X0AknBZbiTst2Kb/TMaiYd8LGy9ZCSli/EDCnHTRC2/UFUikGjGcfScqxLwYLvup
- 79VOcypVfo9q3FvvbhRBIfJdoFvXA3hvKLsbPfl4A8XO8xLKMLqTYDDIbCzRvsH4FSWxBjagm
- TtSkNSyPH2yEJMhMil+cBFUM1GQwbYdf2KHlIoRoc2IZazN0l6LzpI9V9cDOzsgNZ+Ep8oACr
- 1O4K4SeKqAmzq1ykgAJMU4mkz7/jJIGnDDitNqfc3iwjxmatONfnPexO/AaILszW4GHsYuEDx
- 3Ch02WHDRbWq2yOtxc/rI9EDBucPmATx2nKARHdzt1Mtk1BfNnE4cMkMolRiJ15mjl/X6t5p2
- EOp6U4068ajxNAHirzqBtpaKRnrg6QQV9+lRt0yNxlVBkgQv/WEeeIB3Qg8Nv2fytg0R3pd+7
- v2cdmaRPI09hGYnPalXy4KvlWb/GPVvN6fgH5Uq5Ds2bt52DbXJOL0ddrJeU=
+In-Reply-To: <1576317091-24968-1-git-send-email-zhengbin13@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_085450_728265_E9E0D3E8 
-X-CRM114-Status: GOOD (  13.53  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191214_094832_271411_5A3EB09A 
+X-CRM114-Status: UNSURE (   7.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.21 listed in list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -91,6 +62,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,68 +76,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, Tony Lindgren <tony@atomide.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- Linux-OMAP <linux-omap@vger.kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: jernej.skrabec@siol.net, airlied@linux.ie, dri-devel@lists.freedesktop.org,
+ wens@csie.org, daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1649080174865659253=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Nikolaus,
 
-[add Nicolas as the new BCM2835 maintainer]
+--===============1649080174865659253==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="wq4asypllxoogmjg"
+Content-Disposition: inline
 
-Am 14.12.19 um 11:54 schrieb H. Nikolaus Schaller:
-> Hi Stefan,
->
->> Am 15.10.2019 um 19:15 schrieb Stefan Wahren <wahrenst@gmx.net>:
->>
->> Hi Florian,
->>
->> The following changes since commit 54ecb8f7028c5eb3d740bb82b0f1d90f2df63c5c:
->>
->>  Linux 5.4-rc1 (2019-09-30 10:35:40 -0700)
->>
->> are available in the git repository at:
->>
->>  git://github.com/anholt/linux tags/bcm2835-soc-next-2019-10-15
->>
->> for you to fetch changes up to 781fa0a954240c8487683ddf837fb2c4ede8e7ca:
->>
->>  ARM: bcm: Add support for BCM2711 SoC (2019-10-10 19:21:03 +0200)
-> this patch has finally arrived in v5.5-rc1 but it seems to break
-> multiplatform build.
->
-> We run a distribution kernel that supports OMAP3/4/5, i.MX6 and RasPi 3B+
-> but since rebasing to v5.5-rc1 the kernel hangs after "Starting Kernel ...".
-> On all ARM devices (incl. RasPi 3B+).
 
-i wasn't able to reproduce this issue with the RPi 3B+ so far and i
-don't have any OMAP hardware:
+--wq4asypllxoogmjg
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Linux 5.3 (bcm2835_defconfig) + FW 2019-02-12 => okay
-Linux 5.3 (bcm2835_defconfig + ZONE_DMA) + FW 2019-02-12 => okay
-Linux 5.5-rc1 (bcm2835_defconfig) + FW 2019-02-12 => okay
-Linux 5.5-rc1 (multi_v7_defconfig) + FW 2019-02-12 => okay
+On Sat, Dec 14, 2019 at 05:51:29PM +0800, zhengbin wrote:
+> zhengbin (2):
+>   drm/sun4i: Remove unneeded semicolon in sun8i_mixer.c
+>   drm/sun4i: Remove unneeded semicolon in sun4i_layer.c
 
-So please provide more information about your RPi 3B+ setup:
+Applied both, thanks
+Maxime
 
-- VC firmware version
-- additional bootloader (U-Boot)
-- boot source (SD card, USB, network)
-- kernel config
+--wq4asypllxoogmjg
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Did you tested the mainline kernel or the letux kernel?
+-----BEGIN PGP SIGNATURE-----
 
-Best regards
-Stefan
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfUgawAKCRDj7w1vZxhR
+xX5gAP4xFduplod+4goMNhuN53JJWcWKrNm3JMooYCbn+X57lwD/RxUI2b++7rwH
+wFMmW+jkpz3dH1UwM163irZWST9Y7wc=
+=NZ1P
+-----END PGP SIGNATURE-----
+
+--wq4asypllxoogmjg--
+
+
+--===============1649080174865659253==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1649080174865659253==--
+
