@@ -2,89 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E45A11F402
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 21:36:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39F2911F427
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Dec 2019 22:10:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2+HAapdMYMQGEwEiFtX3V5B2xHSVz0VnpXWyDHtiTmU=; b=nOZnUrv8gGSwlK
-	BCKdGKLx4go7szfXm7+UNgBONXh+E0DmhKksHwK7ZYvDg9YI2qz50PBDyqdtCaqE6PyNSEOLFSXxC
-	TXFunmIpWEtTUZ08fdvycyPwtPGZ9OqYM0MGWt6zzBhoi6nA34km/dFuYvl+IfYslpE/nxQnFcnf+
-	oaw+pIeum5fUcaEvjttolX6Kv9D7KHLkHumoDL7NjUErjofpRslEczM8QQ0VMb6ar4Zy7EcI04dQ6
-	pjvCYwvvFty4aqwJwCTvdXWRk/hKD+rNlb7PsqSavipM5zsUSF8deVF8S8xjWD7AAEvnOAsyLtIJ3
-	KRlk8A+p8JqxBlogSaCg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JiARZjKjPPOJ/hFaToqY5VtgDL91o4b4S2FQYts1Xg0=; b=oMDNAjDkqP2VxZ
+	g28NU+pLiZgrpCeccsj4advGzsxuzYz33uVrOk7t+hJe4x7gG+4XcYXGgIS6vsx/MVwFQbWevW3wH
+	QGlR/8Jua71axplc/4Y6n3iz0rbTa4aSzLYix3qOR79Vawwins8/KNPv2gMKxdzLY2fE/pjn0CuwQ
+	+w0ULNw0Dmxo7Cde1I2iHTtf35z7GaYKwX33ektcFpYq0IaXCu+VCvmuftIOeATXFM7yqtHSEIbCo
+	F0gfx+jn98fH9fN7rKNh9BY/bkppBXEqt+gMseFRtiqYyYDPX87adskSsVkD0P1tMVexzRul/Qte6
+	qS9ir4AwVKZsS00Aqqhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igE9W-0000dB-Nt; Sat, 14 Dec 2019 20:36:38 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1igEg7-0003B2-C1; Sat, 14 Dec 2019 21:10:19 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igE9M-0000c8-W3
- for linux-arm-kernel@lists.infradead.org; Sat, 14 Dec 2019 20:36:30 +0000
-Received: by mail-pg1-x541.google.com with SMTP id 6so1326390pgk.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 14 Dec 2019 12:36:26 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=netronome-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:in-reply-to:references
- :organization:mime-version:content-transfer-encoding;
- bh=u5S8AzA/two94BW1QHz+RPP0930vQSWwKoy/1jrejMo=;
- b=lfGP0h/6gjRV3qM4YEFh2+9XY/Vn700YCuonoJZrLzUvgymJ4AwkVEjYqcRp6LBlMl
- ptZSe9eEWDPT9Af6pcwB5Rd12R0ps6Rdsue/xR4W7IWtPvk87m9rzCSv7zx66OWmUnnP
- z+6PZGJ0sQnUihfo3rijoi1qU6NsYEuNgZjWfihTdu/VKqe0oOLBGKVjw5GSBliKtM7i
- B8kAQFe6vXRShN9qPbBkACTWzJEgjbfxxzPqtB2Ahdyhg/bj+mvtc3xoousWt49dfeu3
- p30tsbDnEzZFNYY1geeh9It/aYV+mifXhi2O+iNCguBlN7RD1Z9hBxkKccDNUmUpOquF
- YeoQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
- :references:organization:mime-version:content-transfer-encoding;
- bh=u5S8AzA/two94BW1QHz+RPP0930vQSWwKoy/1jrejMo=;
- b=AIJj28L/wSrBGEasKmzcQZqHnKIQOMuXClEV1obuL1+b/oc7+XFcshMikOd4tW6JEW
- eD/nuN9RB+6KuAbfd/mdmFEWKDav0ox7q6L6zt3J8EVatxrpmBxooZlmQFYbYm55S716
- I4cP12IAcykU0vnQ8K6jlSsnannTqKiVYev5yWeekYkrMqCF+VzsG6iYMnpj/xW3lzrL
- 4y/vHNErRRZZnddwhXw+WcQJ2gIPxKbooquybaD7dJnfAyLdfM7C2BF3xVgP5XShFp2x
- ZiFBwzMs3PmhmfsnbbhM4aHfJZQ17HGG23quLMaNjZIM3bmNmWUJiW82But3cwVcKCEp
- 3muw==
-X-Gm-Message-State: APjAAAXCqO1H5Ot/ybEubZshp5EKqMJGb/Cu9MDJD+VuYq7l1R5n21Qg
- 58Qr9mhPuQGZcg+8jwYY9FB6zw==
-X-Google-Smtp-Source: APXvYqyy2Uw5pYrnt7cqN32mxFB1vF+Q9fs1ZY/FlZ7maVgLk5Wicty7+Ay07UDDowWoZgWaopJlaA==
-X-Received: by 2002:a62:ee06:: with SMTP id e6mr7100945pfi.45.1576355786428;
- Sat, 14 Dec 2019 12:36:26 -0800 (PST)
-Received: from cakuba.netronome.com (c-73-202-202-92.hsd1.ca.comcast.net.
- [73.202.202.92])
- by smtp.gmail.com with ESMTPSA id j28sm15493997pgb.36.2019.12.14.12.36.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 14 Dec 2019 12:36:26 -0800 (PST)
-Date: Sat, 14 Dec 2019 12:36:23 -0800
-From: Jakub Kicinski <jakub.kicinski@netronome.com>
-To: Jose Abreu <Jose.Abreu@synopsys.com>
-Subject: Re: [PATCH net-next 3/4] net: stmmac: Let TX and RX interrupts be
- independently enabled/disabled
-Message-ID: <20191214123623.1aeb4966@cakuba.netronome.com>
-In-Reply-To: <04c000a3e0356e8bfb63e07490d8de8e081a2afe.1576007149.git.Jose.Abreu@synopsys.com>
-References: <cover.1576007149.git.Jose.Abreu@synopsys.com>
- <04c000a3e0356e8bfb63e07490d8de8e081a2afe.1576007149.git.Jose.Abreu@synopsys.com>
-Organization: Netronome Systems, Ltd.
+ id 1igEfv-0002Va-TP; Sat, 14 Dec 2019 21:10:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1576357790;
+ bh=TXBkusM4pGGyyc42JuzHWCOIuM+BLDKgM7c9ve9GIqY=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=fPMD/xFJTCMs3LrZKukP4l0lDeb4LAswt9Po2OEfDOnyP7Of0Q7+SXPW2cfh0cthX
+ 0jru4yctgV1TSvFu9w3k1IKhWOYBCyxoIMQXK5FtviVN6I6l5XEyXlk49vTCbmbKnr
+ 89ls6eAV9lHcD9tv3lb6VSWzUlQfeJ7ceo9Bu3Tc=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.176] ([37.4.249.154]) by mail.gmx.com (mrgmx004
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1MUGi9-1iG4ib0WSR-00REKH; Sat, 14
+ Dec 2019 22:09:50 +0100
+Subject: Re: [PATCH] ARM: bcm: Fix support for BCM2711 SoC which breaks other
+ ARM platforms
+To: "H. Nikolaus Schaller" <hns@goldelico.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+References: <33662723d61a80669390abc1e592eb006d8709f1.1576353784.git.hns@goldelico.com>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <a78dbb9c-31ee-90c6-6bb6-6f6448c8208e@gmx.net>
+Date: Sat, 14 Dec 2019 22:09:48 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <33662723d61a80669390abc1e592eb006d8709f1.1576353784.git.hns@goldelico.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:W19swVnhvLWklH1Ap3rdgPxUw/2Kp/bVdKN4sEQ/PBWwjnDI5b2
+ A48uwBM4gtkWr80+vegiKsJV+Cszcb/2mvAIKzGjIsy0KRO7ZYWbG6Uu7Oj0Fa46hkNBht2
+ w+/WFYA7GcddJKwDk/amdibedXDP/G0MJLHfpeNHFkCFDZHULdWgqQAkqvyoU7o9sdNHDSu
+ vIZ9xgkq+MwWtwu+3yl1A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:tN3rSwrH9Ok=:yigtH0PU6m6NjmVpqOiYkl
+ 1vLoM48c66zGlX+gVDVUttKOoFJ8RkNqQ6sxj4dKtO4Z7ACo+I5+UioIVbSwLSxrDyUvP5nFz
+ iOAnsTXtnaOecrOJKR4DObXhW5FahpQFOKQ5lfZQ8zZWulSuDaM1hNz+8MUQ3Vr09ibunC7e/
+ BIOXbeuQeucovK/253kqe2p2wTMvbIp46zl42xkhxupUWT3FyZ7TThlQ4KvRCsG7TEtTuPZ+W
+ hB8dS8O+uVEQpOYnTd6yl3jWX5hJMLZ8XweT5ZWS2aeGBBQaNBnq22NosasqxsFsBDSF411/Y
+ k0RH+rWns3jwcZbv0OUCcPxdGo2pXJFXVexYi5fid1auhLWA7iDrX95+yCq0V9cZD7NuxDRXL
+ Xm3kKAv7z05d9P8OxhVfxIqfml32rEI7KxpsruNUN5yeqc0RDocd+Xpj86JOXERvfrwVCbDYh
+ g9X5lG3P880nq/zZ0dRD/RPzb6iMM7PNhS7gBIz3jVz99LGOtV0qSSHb8v6ztyflRRRoRope5
+ U4yjuz/4RDoQo7hB7QrwySIhqX3tgVTWHFNyL1dMrXb0wqfRaTMzToXc7AUM6A4jYZkr5mP00
+ 4m9aL1afP1PW66vQd+H1heo4MLK5szRHlniGgzLntiZJpaqMQY0/dD6I/McfpW1Cvdul8N3q6
+ n5gja47RHBkVOSQtrJ3NwCwNwqipKmxJ78PWsBWIEM1QSPBEtZq3bv60u4MxdQIAJtDPvg+AO
+ CWC7+U17H7LweSTF9NFv+hNo9aCFfWgPju2yBc4++VVrdmrHobNOrkSbES1QWZ/D+5fT8z6ON
+ mepwGtjD3QYF4ZvafYJ2O0ge1EO4LJz3OAyVGKtaxsNBTzeKYSw44FWmFP0i0JVQAIQ4gyoU3
+ GxaIv3y4TxCkUyDk8Prn7qHgRwrLCY9G/Ov1LkwfpImispxH9MjmVAsMPaMYKYeRS/sqtx2T1
+ CQJKrqKWqy1vj2Gyda7iC6e5D+eaElyYRCDqEDXatu1croxR8mc2uu4B8kisFTP4CN/nsR5G6
+ sqJt5DYiiQX2o8lKPC3UMuoGHcGSHO30NS/XxFw15+//jxAdEO1h6/jvEAQkHEc8c/cprnWSe
+ 5AEc2ohhNTdAwSmBk1mSf/8lMhxCvyn42BYb29bn+Vo9S4M8eQeasKS1odgKH0SYaT0roEdMb
+ 1x8roXR4lnOsPbuhlKJS5rSeeQHZblDZwHuxF20RpezSQxODyKwmtZPPsqGwSWP7/haUkIes+
+ VkmA08KzuSEB/NdZhGeeRH61SWfc0S8Sgra922cOBHxvxi2Fmm2XCpxeS88s=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_123629_173078_645625BE 
-X-CRM114-Status: GOOD (  14.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191214_131008_294468_0838460A 
+X-CRM114-Status: GOOD (  19.47  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [212.227.15.19 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,78 +105,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com, Chen-Yu Tsai <wens@csie.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Linux-OMAP <linux-omap@vger.kernel.org>, Tony Lindgren <tony@atomide.com>,
+ linux@armlinux.org.uk,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-rpi-kernel@lists.infradead.org, kernel@pyra-handheld.com,
+ letux-kernel@openphoenux.org, arm-soc <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 10 Dec 2019 20:54:43 +0100, Jose Abreu wrote:
-> @@ -2278,10 +2286,14 @@ static void stmmac_tx_timer(struct timer_list *t)
->  	 * If NAPI is already running we can miss some events. Let's rearm
->  	 * the timer and try again.
->  	 */
-> -	if (likely(napi_schedule_prep(&ch->tx_napi)))
-> +	if (likely(napi_schedule_prep(&ch->tx_napi))) {
-> +		unsigned long flags;
-> +
-> +		spin_lock_irqsave(&ch->lock, flags);
-> +		stmmac_disable_dma_irq(priv, priv->ioaddr, ch->index, 0, 1);
-> +		spin_unlock_irqrestore(&ch->lock, flags);
->  		__napi_schedule(&ch->tx_napi);
-> -	else
-> -		mod_timer(&tx_q->txtimer, STMMAC_COAL_TIMER(10));
+Hi Nikolaus,
 
-You should also remove the comment above the if statement if it's
-really okay to no longer re-arm the timer. No?
+Am 14.12.19 um 21:03 schrieb H. Nikolaus Schaller:
+> commit 781fa0a95424 ("ARM: bcm: Add support for BCM2711 SoC")
+>
+> breaks boot of many other platforms (e.g. OMAP or i.MX6) if
+> CONFIG_ARCH_BCM2835 is enabled in addition to some multiplatform
+> config (e.g. omap2plus_defconfig). The symptom is that the OMAP
+> based board does not show any activity beyond "Starting Kernel ..."
+> even with earlycon.
+>
+> Reverting the mentioned commit makes it work again.
+>
+> The real fix is to add the missing NULL sentinel to the
+> bcm2711_compat[] variable-length array.
+>
+> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 
-> +	}
->  }
->  
->  /**
+could you please add a Fixes tag. Apart from that
 
-> @@ -3759,24 +3777,18 @@ static int stmmac_napi_poll_tx(struct napi_struct *napi, int budget)
->  	struct stmmac_channel *ch =
->  		container_of(napi, struct stmmac_channel, tx_napi);
->  	struct stmmac_priv *priv = ch->priv_data;
-> -	struct stmmac_tx_queue *tx_q;
->  	u32 chan = ch->index;
->  	int work_done;
->  
->  	priv->xstats.napi_poll++;
->  
-> -	work_done = stmmac_tx_clean(priv, DMA_TX_SIZE, chan);
-> -	work_done = min(work_done, budget);
-> -
-> -	if (work_done < budget)
-> -		napi_complete_done(napi, work_done);
-> +	work_done = stmmac_tx_clean(priv, budget, chan);
-> +	if (work_done < budget && napi_complete_done(napi, work_done)) {
+Acked-by: Stefan Wahren <wahrenst@gmx.net>
 
-Not really related to this patch, but this looks a little suspicious. 
-I think the TX completions should all be processed regardless of the
-budget. The budget is for RX.
+Thank you
+Stefan
 
-> +		unsigned long flags;
->  
-> -	/* Force transmission restart */
-> -	tx_q = &priv->tx_queue[chan];
-> -	if (tx_q->cur_tx != tx_q->dirty_tx) {
-> -		stmmac_enable_dma_transmission(priv, priv->ioaddr);
-> -		stmmac_set_tx_tail_ptr(priv, priv->ioaddr, tx_q->tx_tail_addr,
-> -				       chan);
-> +		spin_lock_irqsave(&ch->lock, flags);
-> +		stmmac_enable_dma_irq(priv, priv->ioaddr, chan, 0, 1);
-> +		spin_unlock_irqrestore(&ch->lock, flags);
->  	}
->  
->  	return work_done;
+> ---
+>  arch/arm/mach-bcm/bcm2711.c | 1 +
+>  1 file changed, 1 insertion(+)
+>
+> diff --git a/arch/arm/mach-bcm/bcm2711.c b/arch/arm/mach-bcm/bcm2711.c
+> index dbe296798647..fa0300d8c79d 100644
+> --- a/arch/arm/mach-bcm/bcm2711.c
+> +++ b/arch/arm/mach-bcm/bcm2711.c
+> @@ -13,6 +13,7 @@ static const char * const bcm2711_compat[] = {
+>  #ifdef CONFIG_ARCH_MULTI_V7
+>  	"brcm,bcm2711",
+>  #endif
+> +	NULL
+>  };
+>
+>  DT_MACHINE_START(BCM2711, "BCM2711")
 
 _______________________________________________
 linux-arm-kernel mailing list
