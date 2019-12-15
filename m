@@ -2,70 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11D5111F7D7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 14:02:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A62DB11F7D6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 14:02:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lZxA4AON4YxNM10EQQsKJzpcHd6OBoMdRFwoo8JqE1E=; b=kM6
-	5ACiO3psPzDOTptwGzjgk+MPdBqH7DHP062oJHrHXogQHy4kqbrd3Q89keYcv9pbtwCMA0fgubUsj
-	PLeFN4bPF4KylqfdL2oBtvAUIZzYCPJ3Aywk/L4wkk89tne8CDcP9F0zuj5SpU0S6oxFUrCjVPqMi
-	C8r8nagrJR2i6Lv3KZxQXO/OUWC92hqmibCR6hjpQnbXDVUkEWAdeM7Ap6q+D30HSHuw33323n/q6
-	uADCa+VJ8yFLd3d0fFIk+oIl/GD8z6j5O84HgsOoM0Vd1yDAHsOGSt7BBGN+Ue88MD7WZv7d8ciw/
-	J+i4z2IZqIgbyA2VMc6z0QKjYN4qWNw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=FEVPBSZbJP/dCQXnJlcro96NPovPNvVZphXz87Ncw/k=; b=Nzb6msKyv9w8nkM6KfbFe/ipQ9
+	ZNivQaYysmtCDTvUYrc0or4MXYZmW6rhWaC8NH18qS2s8Q3werGQ85w8JaRMhmHfsGv5OFd9s5k8S
+	NldcpWt6xD3I4pFYcBZT9XjGXmnXPap72uIUVyKJ+j6uSrkW/Ls3fZrUDPwbcXxg7LOzuyf645o+t
+	T+qRZvf5nDeDAfMjqrGjdXCeMpvHrgID+TGZ1HZH71rcXX3mClmEJIEAP9OjdksXy/7vdQR2fNwfj
+	Hx7P9J4TKL0zZgHeGtZtZVNDbLIcZctWuboow8/3FpvRUY1YIfdb6e8edGxFSmq8RedyKFkYcsRPz
+	w1wkCbIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igTXQ-0005jL-Mh; Sun, 15 Dec 2019 13:02:20 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1igTXa-0005qW-0z; Sun, 15 Dec 2019 13:02:30 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igTXG-0005i5-GY
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 13:02:12 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id w5so1791497pjh.11
+ id 1igTXI-0005iM-8Z
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 13:02:13 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id w23so1811609pjd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Dec 2019 05:02:10 -0800 (PST)
+ Sun, 15 Dec 2019 05:02:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=xNa0YO9i+PgQItqALzHc2Ca92D6+HcEc/gZ6BbMbQCo=;
- b=anFNcxAJvR3IX167LmYZb3wvbf+jRobRHPJ31pDH1PrN5fnW70yM5jcvhXRQRLMPTu
- m4blTi+idGxM0T4eCf7cZKA8k4oIQNgmnMh/dLjC6FJut+e5mSjtMh7Q5nEirI1y6J5X
- MrlNYq9IoghInUaTWfXvpp31+wgobK4K+Ndzi+80DBPEtfYGO0xat+vkO3gaum+9Bj+Y
- QuOXkgF6uE2zXThOvKZjMfEPnKTcaDFxaMESzimnsEeU69EeBQFupmazyGy4HXYaAJpd
- 8YBejr3Zn5fQb+mih5oM6XkPq2Z/QoleVi1U2DvuVNfx8pB15FrbdOb34IegX/gg6LTU
- Hb/A==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=quqseq6iPMQF1FVXX9HnBc22kYXAEYNLOrdqtNexOas=;
+ b=p2RO5v4iwHSr0AQpXjRerB2HVhxbf8qXUlVHWlPFTNtK3Qwb75plrABEwRdDpW0ulW
+ Jx/h8CUWGX+hAOkrLX1JWG34yee2RAEIefKvn2tEnDdcj+DZ1IgXwrVw5ULyDveRnKVO
+ pNwOkKdTeF0wo/dQBbqfwrFDJP+MJVAm97q+Rdv54S3/PTEkeNmwx+T43lxIBNTFDORO
+ 8tsV5PH9lxpKyeh3D9ZQiG2DAVMITwlebsVvRW+MyaUkQszObe6INnjG7mNYUqkva47Z
+ BijQfYWZRd0BZrEmFNB5mueaSkAJe/GQjvM/+s4YImQx+jync7/5qvC6wfU4gUbm6N/z
+ N4pg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=xNa0YO9i+PgQItqALzHc2Ca92D6+HcEc/gZ6BbMbQCo=;
- b=mtSMERW9eIPnZJYOYL1/USEdywl6eXuVdQLvmKL9CwdXyxzgoebBlTXdfZSWi+Mc3s
- Q9jW9IkhPPrab0N4ScVKog9dHTiY/H5gIIKLfPBMxA6eK8DTUFnOVogykG/JxLtbRsmO
- q43IFqIl1nClHWa/nrDysaRO5ulOQ/JOKfLM+wi/6ZYXbpiUr2nAij0cco5whVql8H4y
- 4YE7pLGTcbyMj7oiHlbzuaMloHEx+RT1VL0aQkFv1e9SP4tPT7Tn9kR7hIfXUbdjWty0
- r3vVMTBwM0kO8gwUtSGhTvEbi9jJRy1reWD2JozCnui5Ev6tRSRYd4EFYiDj7FDHl3dC
- xidA==
-X-Gm-Message-State: APjAAAV9EtczkrkOiEONTE+RvTvFlvkI100MXZZ5WTUKpoOlE8Zx7OZ/
- UpEzf0Y0MHzlnE0X/1N9idc=
-X-Google-Smtp-Source: APXvYqweRAPO3QMbCaNi3MbULtPGBgI7s0pOkFauOXkW+xKr9IXis34RDvftiP+xuFAJWohKKYgaqA==
-X-Received: by 2002:a17:902:d915:: with SMTP id
- c21mr10585935plz.295.1576414929617; 
- Sun, 15 Dec 2019 05:02:09 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=quqseq6iPMQF1FVXX9HnBc22kYXAEYNLOrdqtNexOas=;
+ b=dnTCxSJLNt0yTk8sJIAotoVMWBm7eN+L4gVSYvZNNWCHwm/5LTeofZMsMclX0CwmI3
+ RvrQyc6XWju43eTOnSitCtHIWNyMU93xRmHtIURhI1h4f+Gsd257GuXuD6cIHsZBPhBs
+ tiXUc2koc0U+B6D/JjMnl44lm+KIxsB1seIgHyEQ934TYQUTRAnUkfrzTzkVxkiZWZ+7
+ ax8qEzmuZhzbFqUjUTyJItHD2RiNk0fzuBr3JUkBdH6OGsF7gvsrsNUKCdYlpScZB1v8
+ mrSkb+rIaCGiE7gZvufMJR6lr9+ClBJmxtq3MC5ZWuwNYrc5nv/MSSlNwFGaVo09GkwP
+ n1HA==
+X-Gm-Message-State: APjAAAWZ+fiCWmpz0bfY9VOMVZsLLlDzDe0FYGJOs9LqfoiggskT7ciH
+ rx6A+vq7VZnnNceBSijLqgI=
+X-Google-Smtp-Source: APXvYqwSZudvDKwwD+qN+akaodIq8lTpRSPuMTSkixiJXC+E+W/W6GOnXscbqm98VGni5Kla7iwPsg==
+X-Received: by 2002:a17:90a:178f:: with SMTP id
+ q15mr12153921pja.132.1576414931682; 
+ Sun, 15 Dec 2019 05:02:11 -0800 (PST)
 Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id m27sm18896092pff.179.2019.12.15.05.02.08
+ by smtp.gmail.com with ESMTPSA id k15sm18675514pfg.37.2019.12.15.05.02.11
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 15 Dec 2019 05:02:08 -0800 (PST)
+ Sun, 15 Dec 2019 05:02:11 -0800 (PST)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: rjw@rjwysocki.net,
 	daniel.lezcano@linaro.org,
 	shc_work@mail.ru
-Subject: [PATCH] cpuidle: clps711x: convert to devm_platform_ioremap_resource
-Date: Sun, 15 Dec 2019 13:02:05 +0000
-Message-Id: <20191215130206.30265-1-tiny.windzz@gmail.com>
+Subject: [PATCH 1/2] cpuidle: kirkwood: convert to
+ devm_platform_ioremap_resource
+Date: Sun, 15 Dec 2019 13:02:06 +0000
+Message-Id: <20191215130206.30265-2-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191215130206.30265-1-tiny.windzz@gmail.com>
+References: <20191215130206.30265-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_050210_575223_6A5D0326 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20191215_050212_301342_82A2A0D4 
+X-CRM114-Status: GOOD (  11.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -105,24 +110,24 @@ Use devm_platform_ioremap_resource() to simplify code.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/cpuidle/cpuidle-clps711x.c | 5 +----
+ drivers/cpuidle/cpuidle-kirkwood.c | 5 +----
  1 file changed, 1 insertion(+), 4 deletions(-)
 
-diff --git a/drivers/cpuidle/cpuidle-clps711x.c b/drivers/cpuidle/cpuidle-clps711x.c
-index 6e36740f5719..fc22c59b6c73 100644
---- a/drivers/cpuidle/cpuidle-clps711x.c
-+++ b/drivers/cpuidle/cpuidle-clps711x.c
-@@ -37,10 +37,7 @@ static struct cpuidle_driver clps711x_idle_driver = {
- 
- static int __init clps711x_cpuidle_probe(struct platform_device *pdev)
+diff --git a/drivers/cpuidle/cpuidle-kirkwood.c b/drivers/cpuidle/cpuidle-kirkwood.c
+index d23d8f468c12..511c4f46027a 100644
+--- a/drivers/cpuidle/cpuidle-kirkwood.c
++++ b/drivers/cpuidle/cpuidle-kirkwood.c
+@@ -55,10 +55,7 @@ static struct cpuidle_driver kirkwood_idle_driver = {
+ /* Initialize CPU idle by registering the idle states */
+ static int kirkwood_cpuidle_probe(struct platform_device *pdev)
  {
 -	struct resource *res;
 -
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	clps711x_halt = devm_ioremap_resource(&pdev->dev, res);
-+	clps711x_halt = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(clps711x_halt))
- 		return PTR_ERR(clps711x_halt);
+-	ddr_operation_base = devm_ioremap_resource(&pdev->dev, res);
++	ddr_operation_base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(ddr_operation_base))
+ 		return PTR_ERR(ddr_operation_base);
  
 -- 
 2.17.1
