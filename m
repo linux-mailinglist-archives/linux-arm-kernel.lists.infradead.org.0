@@ -2,68 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02E8C11F5B3
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 05:26:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4FF7211F5B1
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 05:25:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KoaascZ1NbaOEtl1uaVKIwKW9cttLfFn0KDOP0gvmWE=; b=IaPtcl9h9zCGQh
-	rO6JzRckLekZn7Vi5/BGlGI15Xi6y8tnoRCHJbBhI4CGBeukZExNQjMf6y/h5LmiJGlVqS9/N3AxC
-	GJuEw+Y5+v6jO5FF25OrOPL/H7uVm81I1b9MkJkD4K0sQTICC3OHtyLF169TKygN95+qkD3acnaYE
-	/1yiNplMXBNH148g+Vkql+pdLqLXvseLwZTWoQFZfX/Kw79Ws+XWBjzBlxZqaNKZXZcLXvqF0NQCI
-	QybJ8FUD0JQadGgAbhaGmFlVrAV5DUryNdHpBgLR6YFlOaHhebAKg6d67ECn8cklLIGIUgaSpNOlY
-	SkE82PKzmAW9n8RYBhrw==;
+	List-Owner; bh=ESgMHCFmas1ic/3xtz1/ZlZA0ta2EFZMYD3eCsQJXco=; b=oVjozrOu/cRGwB
+	yYtln8RpyiPJjIYQOeXTaFJHsYbapusD1gFdTGhXrMvNo6p4H6Fflqud3kGjqKAog+G3gV88bJfWx
+	Gp+4Ps7VNjEy+TH5HGLrXnECcqnWHCA7D0GvT8sEegWx1wjx9shLVc+8GKzwV4d+3tbc20bwyy6KV
+	6OCYZ3EoiAr9xFaPyxkXuun03dhg8ObQqUso12OzxKvb1u2CwLWxgyglyNwHXq8paU8VcK8sy9FpC
+	Qo5Ta5vLHHUq/Juxc+r+gGnK+7lf+eMH/r1A4i170w04AGzmKf2r4365KS4rHmmksCZeu+MMWglg4
+	+7nWMCuwVvncifgzkTAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igLTy-0001Va-A2; Sun, 15 Dec 2019 04:26:14 +0000
+	id 1igLTU-00010e-0F; Sun, 15 Dec 2019 04:25:44 +0000
 Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igLSs-0007zM-Qz
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 04:25:13 +0000
+ id 1igLSs-0007zI-Qf
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 04:25:12 +0000
 Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id 89E8A5A9C;
- Sat, 14 Dec 2019 23:24:58 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 140D85A7A;
+ Sat, 14 Dec 2019 23:24:59 -0500 (EST)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute5.internal (MEProxy); Sat, 14 Dec 2019 23:24:58 -0500
+ by compute5.internal (MEProxy); Sat, 14 Dec 2019 23:24:59 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm1; bh=/BdBX9KpJW198
- Ta1eCmzbMoGLXCd9rn/ML7K+vXiTBU=; b=PoYyfY0Z2wOnxJ8T64U5fgfhHP2na
- C0S9/nz57fJVrTX9chWlhA7PC4QDkxe5RcxM7O2kp4QnpFTbOCF08EL1Xka8i4Dm
- ioI2TUQlWEE88b4hBwYcXEZgfTxJd8LyDPRadPamk2epnyrJAixBtBO92b5J5Mw7
- nyuF0FzO9uQrnotrmAVb78pbvFSiIjbftzJITJfCjKACEYmtV7vFuNwFtGmthZJa
- MOyifVKpvx7wQ++nAsht/jltLkrqzx1uRUegHzpHpIwChI2d9duLX+o8tkY5/BoK
- KR0OMBFTqnL8Y2NG33/P5krRyhse1Ff35B1Q0god0XimJOMzLGK3nFe5A==
+ :mime-version:content-transfer-encoding; s=fm1; bh=JjsSHv7y+xoC9
+ wzCPjhtQRaN9GgsGgC2WECk087F2qk=; b=MpdAbp6oqXAMC/ICQ2LIy9FhX10LT
+ stCeOkYbnHUzid3iDKZBU5XJgaBWxguNem1ZGqi3Jpxd9iXlKpwI3RuGRm6do5h8
+ MIO6bWiyBMz0H8jm0opl9Lwc/lG0tljYBGvUhexeyNYYn/oe2W3GUoqL3jclS2NW
+ tqt9+7PkHyFRcQbWC7L8FistNaC6S6qMOXs6K1wEtFwEvLPCkIeaXzuqUTvaUt4v
+ mujkZJquV34U2YQhq3QahRxINcT03aibiYpUfPjrfA56I6rdsb1v51b3cAluKwvD
+ p4oKQ1+hDHMO3sv/LzIyFQASsyCumDEXgOP+1BaPEygzia9oJQDm4jOlg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=/BdBX9KpJW198Ta1eCmzbMoGLXCd9rn/ML7K+vXiTBU=; b=UOwzkyb1
- BHbL528JZoJp4w0mcdWwJJdn0/Z+qV4mHnDxERdqgxM9Bssdq9LnD8qPk07ZMU0x
- 0E6PQWD7gkee+MLw0NjxpHR2McUFPEu6Mv5TZRri6PM2J536Bt8Pz508nD0tjVKZ
- ZTaCP1jzgxfQCyuG3MyZA8C507RkhAbb1iXSum7X7x8eAkHxQsjNKgRERtKC9VAL
- sTvTs9sr495z+uSPi2/VzUjvrqOpoMzqY99tQx9Fmmhan64qG2+hA/BlDN5fjK36
- u4AUiZR05t4WaOKrWRA/mE7awDyRjMiRYGWBlr6Ku262HtkeQfP9JM6daYb5HSH2
- YU2x8XMCTapkSA==
-X-ME-Sender: <xms:mrX1XcS0FaOkvGIdam0i_ovkGa74Er5MwDRQT4pKO1J_Ao9wks4BCQ>
+ fm1; bh=JjsSHv7y+xoC9wzCPjhtQRaN9GgsGgC2WECk087F2qk=; b=kceOdyq1
+ H6uAiE4SFfBvu8sMeVhzzcsPHmLeBJhIhh16hMeE9IUcJelL1cSFzPNmW2gpaI/I
+ EZuh16ERwPCQizWSiqNL9caCe9srNNNccLt+ubCH1z28oR7oRgSt6v9NWs1QRK9/
+ rl83K/nB7ZRJt5z0G+4oVfQHZWnUb+tNhm/FA9hXLYfdfpwxYFi72AGV4OfKZtXZ
+ zu+uqsf9rZkhEeZvTB+SUfBxxmTpMHpknl4gire75K9r2zx/FZTDBP6P7nt/7Tc2
+ Q0RecB2o4Wj4Vi7a0/kHuL5z9tcrzi2yE4GCMc7y511q1n1crkfSmCC2eT1wYlCa
+ CfrNtUd7cozaOw==
+X-ME-Sender: <xms:mrX1XdkBphMUTKsDbZK4p1Uw2V_Fl3F5ie8ld692zVxrSVyxiSr2Hg>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddtvddgieelucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgv
- lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
- epjedtrddufeehrddugeekrdduhedunecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghm
- uhgvlhesshhhohhllhgrnhgurdhorhhgnecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:mrX1XSl_aeTe3tdWhMXra3SzVk68iAmH8fAdgrHQK30vDyVUP4c9Zw>
- <xmx:mrX1XQy1ytLeevpf-OSm2_FKLrAry4MP1PFZE4w7miRTE3Ro-JKuDA>
- <xmx:mrX1XZkTe_jZkA9SkGXfhsQqOnRWYlYPjDH7kPs0PBLlw40Te4Bm2g>
- <xmx:mrX1XUFI2LCYMkrA5nWVgT-aOT8X3Z2DsbYa8bbPRdUqO1_AYlWhPA>
+ lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucffoh
+ hmrghinhepuggvvhhitggvthhrvggvrdhorhhgnecukfhppeejtddrudefhedrudegkedr
+ udehudenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnug
+ drohhrghenucevlhhushhtvghrufhiiigvpedt
+X-ME-Proxy: <xmx:mrX1XQHJQn3YAI8-oHleirrxRX0Ark_cku1EQ53vDhhL1N8ScNR_dQ>
+ <xmx:mrX1XYX6-VYZ_edwWIj6yfkEgHEt4njFVTTzOuYMY9n5F2MxN_w5vQ>
+ <xmx:mrX1XaQIe5GhWZSvzXut_7k1s7frshEPgAeCjo2lSsYqgpGAxkx-cQ>
+ <xmx:m7X1Xc8ql89hyosemHSgtJ_lN2Ha5yHEAkOpxKBXpOvf9pE9RkFuiA>
 Received: from titanium.stl.sholland.net
  (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 6F7548005C;
- Sat, 14 Dec 2019 23:24:57 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 2777F80062;
+ Sat, 14 Dec 2019 23:24:58 -0500 (EST)
 From: Samuel Holland <samuel@sholland.org>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Jassi Brar <jassisinghbrar@gmail.com>,
@@ -72,16 +73,16 @@ To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Mark Rutland <mark.rutland@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
  Philipp Zabel <p.zabel@pengutronix.de>, Ondrej Jirman <megous@megous.com>,
  Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: [PATCH v5 1/8] clk: sunxi-ng: Mark msgbox clocks as critical
-Date: Sat, 14 Dec 2019 22:24:48 -0600
-Message-Id: <20191215042455.51001-2-samuel@sholland.org>
+Subject: [PATCH v5 2/8] dt-bindings: mailbox: Add a sun6i message box binding
+Date: Sat, 14 Dec 2019 22:24:49 -0600
+Message-Id: <20191215042455.51001-3-samuel@sholland.org>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191215042455.51001-1-samuel@sholland.org>
 References: <20191215042455.51001-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_202507_110172_7E27C7CE 
-X-CRM114-Status: GOOD (  12.28  )
+X-CRM114-CacheID: sfid-20191214_202507_085922_84482D3B 
+X-CRM114-Status: GOOD (  10.90  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -117,139 +118,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The msgbox clock is critical because the hardware it controls is shared
-between Linux and system firmware. The message box may be used by the
-EL3 secure monitor's PSCI implementation. On 64-bit sunxi SoCs, this is
-provided by ARM TF-A; 32-bit SoCs use a different implementation. The
-secure monitor uses the message box to forward requests to power
-management firmware running on a separate CPU.
-
-It is not enough for the secure monitor to enable the clock each time
-Linux performs a SMC into EL3, as both the firmware and Linux can run
-concurrently on separate CPUs. So it is never safe for Linux to turn
-this clock off, and it should be marked as critical.
-
-At this time, such power management firmware only exists for the A64 and
-H5 SoCs.  However, it makes sense to take care of all CCU drivers now
-for consistency, and to ease the transition in the future once firmware
-is ported to the other SoCs.
+This mailbox hardware is present in Allwinner sun6i, sun8i, sun9i, and
+sun50i SoCs. Add a device tree binding for it. As it has only been
+tested on the A83T, A64, H3/H5, and H6 SoCs, only those compatibles are
+included.
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
- drivers/clk/sunxi-ng/ccu-sun50i-a64.c | 3 ++-
- drivers/clk/sunxi-ng/ccu-sun50i-h6.c  | 3 ++-
- drivers/clk/sunxi-ng/ccu-sun8i-a23.c  | 3 ++-
- drivers/clk/sunxi-ng/ccu-sun8i-a33.c  | 3 ++-
- drivers/clk/sunxi-ng/ccu-sun8i-a83t.c | 3 ++-
- drivers/clk/sunxi-ng/ccu-sun8i-h3.c   | 3 ++-
- drivers/clk/sunxi-ng/ccu-sun9i-a80.c  | 3 ++-
- 7 files changed, 14 insertions(+), 7 deletions(-)
+ .../mailbox/allwinner,sun6i-a31-msgbox.yaml   | 78 +++++++++++++++++++
+ 1 file changed, 78 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
-index 49bd7a4c015c..045121b50da3 100644
---- a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
-@@ -342,8 +342,9 @@ static SUNXI_CCU_GATE(bus_de_clk,	"bus-de",	"ahb1",
- 		      0x064, BIT(12), 0);
- static SUNXI_CCU_GATE(bus_gpu_clk,	"bus-gpu",	"ahb1",
- 		      0x064, BIT(20), 0);
-+/* Used for communication between firmware components at runtime */
- static SUNXI_CCU_GATE(bus_msgbox_clk,	"bus-msgbox",	"ahb1",
--		      0x064, BIT(21), 0);
-+		      0x064, BIT(21), CLK_IS_CRITICAL);
- static SUNXI_CCU_GATE(bus_spinlock_clk,	"bus-spinlock",	"ahb1",
- 		      0x064, BIT(22), 0);
- 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-h6.c b/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-index f2497d0a4683..91da52ca3c75 100644
---- a/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun50i-h6.c
-@@ -349,8 +349,9 @@ static SUNXI_CCU_GATE(bus_vp9_clk, "bus-vp9", "psi-ahb1-ahb2",
- static SUNXI_CCU_GATE(bus_dma_clk, "bus-dma", "psi-ahb1-ahb2",
- 		      0x70c, BIT(0), 0);
- 
-+/* Used for communication between firmware components at runtime */
- static SUNXI_CCU_GATE(bus_msgbox_clk, "bus-msgbox", "psi-ahb1-ahb2",
--		      0x71c, BIT(0), 0);
-+		      0x71c, BIT(0), CLK_IS_CRITICAL);
- 
- static SUNXI_CCU_GATE(bus_spinlock_clk, "bus-spinlock", "psi-ahb1-ahb2",
- 		      0x72c, BIT(0), 0);
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-a23.c b/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
-index 103aa504f6c8..5a28583f57e2 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-a23.c
-@@ -255,8 +255,9 @@ static SUNXI_CCU_GATE(bus_de_fe_clk,	"bus-de-fe",	"ahb1",
- 		      0x064, BIT(14), 0);
- static SUNXI_CCU_GATE(bus_gpu_clk,	"bus-gpu",	"ahb1",
- 		      0x064, BIT(20), 0);
-+/* Used for communication between firmware components at runtime */
- static SUNXI_CCU_GATE(bus_msgbox_clk,	"bus-msgbox",	"ahb1",
--		      0x064, BIT(21), 0);
-+		      0x064, BIT(21), CLK_IS_CRITICAL);
- static SUNXI_CCU_GATE(bus_spinlock_clk,	"bus-spinlock",	"ahb1",
- 		      0x064, BIT(22), 0);
- static SUNXI_CCU_GATE(bus_drc_clk,	"bus-drc",	"ahb1",
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-a33.c b/drivers/clk/sunxi-ng/ccu-sun8i-a33.c
-index 91838cd11037..50cf3726ef30 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-a33.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-a33.c
-@@ -267,8 +267,9 @@ static SUNXI_CCU_GATE(bus_de_fe_clk,	"bus-de-fe",	"ahb1",
- 		      0x064, BIT(14), 0);
- static SUNXI_CCU_GATE(bus_gpu_clk,	"bus-gpu",	"ahb1",
- 		      0x064, BIT(20), 0);
-+/* Used for communication between firmware components at runtime */
- static SUNXI_CCU_GATE(bus_msgbox_clk,	"bus-msgbox",	"ahb1",
--		      0x064, BIT(21), 0);
-+		      0x064, BIT(21), CLK_IS_CRITICAL);
- static SUNXI_CCU_GATE(bus_spinlock_clk,	"bus-spinlock",	"ahb1",
- 		      0x064, BIT(22), 0);
- static SUNXI_CCU_GATE(bus_drc_clk,	"bus-drc",	"ahb1",
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-a83t.c b/drivers/clk/sunxi-ng/ccu-sun8i-a83t.c
-index 2b434521c5cc..4ab3a76f4ffa 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-a83t.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-a83t.c
-@@ -339,8 +339,9 @@ static SUNXI_CCU_GATE(bus_de_clk,	"bus-de",	"ahb1",
- 		      0x064, BIT(12), 0);
- static SUNXI_CCU_GATE(bus_gpu_clk,	"bus-gpu",	"ahb1",
- 		      0x064, BIT(20), 0);
-+/* Used for communication between firmware components at runtime */
- static SUNXI_CCU_GATE(bus_msgbox_clk,	"bus-msgbox",	"ahb1",
--		      0x064, BIT(21), 0);
-+		      0x064, BIT(21), CLK_IS_CRITICAL);
- static SUNXI_CCU_GATE(bus_spinlock_clk,	"bus-spinlock",	"ahb1",
- 		      0x064, BIT(22), 0);
- 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-h3.c b/drivers/clk/sunxi-ng/ccu-sun8i-h3.c
-index 6b636362379e..7429d3fe8fb7 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-h3.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-h3.c
-@@ -273,8 +273,9 @@ static SUNXI_CCU_GATE(bus_de_clk,	"bus-de",	"ahb1",
- 		      0x064, BIT(12), 0);
- static SUNXI_CCU_GATE(bus_gpu_clk,	"bus-gpu",	"ahb1",
- 		      0x064, BIT(20), 0);
-+/* Used for communication between firmware components at runtime */
- static SUNXI_CCU_GATE(bus_msgbox_clk,	"bus-msgbox",	"ahb1",
--		      0x064, BIT(21), 0);
-+		      0x064, BIT(21), CLK_IS_CRITICAL);
- static SUNXI_CCU_GATE(bus_spinlock_clk,	"bus-spinlock",	"ahb1",
- 		      0x064, BIT(22), 0);
- 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun9i-a80.c b/drivers/clk/sunxi-ng/ccu-sun9i-a80.c
-index ef29582676f6..471e841aabdf 100644
---- a/drivers/clk/sunxi-ng/ccu-sun9i-a80.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun9i-a80.c
-@@ -748,8 +748,9 @@ static SUNXI_CCU_GATE(bus_usb_clk,	"bus-usb",	"ahb1",
- 		      0x584, BIT(1), 0);
- static SUNXI_CCU_GATE(bus_gmac_clk,	"bus-gmac",	"ahb1",
- 		      0x584, BIT(17), 0);
-+/* Used for communication between firmware components at runtime */
- static SUNXI_CCU_GATE(bus_msgbox_clk,	"bus-msgbox",	"ahb1",
--		      0x584, BIT(21), 0);
-+		      0x584, BIT(21), CLK_IS_CRITICAL);
- static SUNXI_CCU_GATE(bus_spinlock_clk,	"bus-spinlock",	"ahb1",
- 		      0x584, BIT(22), 0);
- static SUNXI_CCU_GATE(bus_hstimer_clk,	"bus-hstimer",	"ahb1",
+diff --git a/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml b/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
+new file mode 100644
+index 000000000000..dd746e07acfd
+--- /dev/null
++++ b/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
+@@ -0,0 +1,78 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/mailbox/allwinner,sun6i-a31-msgbox.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner sunxi Message Box
++
++maintainers:
++  - Samuel Holland <samuel@sholland.org>
++
++description: |
++  The hardware message box on sun6i, sun8i, sun9i, and sun50i SoCs is a
++  two-user mailbox controller containing 8 unidirectional FIFOs. An interrupt
++  is raised for received messages, but software must poll to know when a
++  transmitted message has been acknowledged by the remote user. Each FIFO can
++  hold four 32-bit messages; when a FIFO is full, clients must wait before
++  attempting more transmissions.
++
++  Refer to ./mailbox.txt for generic information about mailbox device-tree
++  bindings.
++
++properties:
++  compatible:
++    items:
++      - enum:
++          - allwinner,sun8i-a83t-msgbox
++          - allwinner,sun8i-h3-msgbox
++          - allwinner,sun50i-a64-msgbox
++          - allwinner,sun50i-h6-msgbox
++      - const: allwinner,sun6i-a31-msgbox
++
++  reg:
++    items:
++      - description: MMIO register range
++
++  clocks:
++    maxItems: 1
++    description: bus clock
++
++  resets:
++    maxItems: 1
++    description: bus reset
++
++  interrupts:
++    maxItems: 1
++    description: controller interrupt
++
++  '#mbox-cells':
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - resets
++  - interrupts
++  - '#mbox-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/sun8i-h3-ccu.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/reset/sun8i-h3-ccu.h>
++
++    msgbox: mailbox@1c17000 {
++            compatible = "allwinner,sun8i-h3-msgbox",
++                         "allwinner,sun6i-a31-msgbox";
++            reg = <0x01c17000 0x1000>;
++            clocks = <&ccu CLK_BUS_MSGBOX>;
++            resets = <&ccu RST_BUS_MSGBOX>;
++            interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
++            #mbox-cells = <1>;
++    };
++
++...
 -- 
 2.23.0
 
