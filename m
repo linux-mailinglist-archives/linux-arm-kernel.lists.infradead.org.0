@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 121D711F5B7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 05:27:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AC9A11F5B8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 05:27:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oz3sjLPUgOQqknnuVl/uhQ4NUbZsScpAXq6OcN4WQ8Q=; b=Fkj9fmAYxNm7uh
-	epV9C6r0Nw5uW0HGb/XF2kU6dph3VVSCE6+oWYyzZyKkd+CM9YO4yl9hR/vlvNGLuylqhrSS30Y2y
-	dFOyuS30ZfeDz6Ub74zv7g5Ch/9hwTvetd2Ec63Se/wKXp4hD0SFGL2BRYMAmZMfs+5LR+bhlKkt2
-	vW1EVs64Zzb4SZFuQHJdrj0RMwVPbZ53DiTjGLnQSG/Y6IgTl6cYa2db3FZqrq5j7YRXatTGxKqHq
-	kSjMm2G8Glk/iHylODmzyXzGUhfikQmT8BejGxto1IkgoOjuajf3zNc8jYenztT2omr+koUB00dq4
-	CQlq6PLE3mgCAVlvMwNQ==;
+	List-Owner; bh=s0jYacxQQkwRqQ7jdNf5PGw/XM4/ogxLok9y7OeGTr4=; b=leAg/D4bsucgGQ
+	N3a759fEEcYHkfYelbNva7aS5sFHJzS/MyZwaSjWgxZ7fuhExxBdjpCSgNi62R3o/vlBKkYBbN2Jt
+	/1QBmNbg84QeLEpjv6QmgD8mltQ5r9k1m+DPgj/BLAruj9U2Xhl9B2uN4P+JSgDfJ6qSm4s9sHiBU
+	cvBKaGM1LXl+nCqzqGEfSQLDVndHGtR+Z0pWx+nGKBJSvNzVxljGABzy7brnqSf+P5PmoCVf+RtRi
+	TVp3hcvxu2KEAdNOvC6yR/4Wkd6y9RcaWXOBRJPdxVzFKi+Nt7+8Zj0MeVD9NnrIIWv5s2V+ui8yD
+	0SdlMninJPBTMtrKm0XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igLV5-0002ay-7z; Sun, 15 Dec 2019 04:27:23 +0000
+	id 1igLVR-00030K-Cz; Sun, 15 Dec 2019 04:27:45 +0000
 Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igLSz-0000pb-NS
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 04:25:15 +0000
+ id 1igLSz-0000pc-J6
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 04:25:19 +0000
 Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id 4E96B5AE9;
- Sat, 14 Dec 2019 23:25:03 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 379475AC9;
+ Sat, 14 Dec 2019 23:25:04 -0500 (EST)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute5.internal (MEProxy); Sat, 14 Dec 2019 23:25:03 -0500
+ by compute5.internal (MEProxy); Sat, 14 Dec 2019 23:25:04 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm1; bh=b6HojHijxWb+y
- 5XleJvk+mLWd4R6gqj7yGjWhlzWNIc=; b=HCuIys0KuTmOuDOGPeH1i5uklfFtJ
- 0cPQbfJmG53IwKJpiDhN6Rkrw5BdEWXgt/bfqMxVteVzW/err946kNpLsprx8sZN
- KNzI0l8v4w0EgeiALxeL4vvEMbmz7Gxt4td7IT0pypjb6tcp79N7RKupFpNK7EaF
- P/CmXLNWjfziSeADmr1fDhIbfpMO6VXZuuUWjSIDtRkf7/I0Z8ejbxHVFqItELqJ
- U4mWJBJpGmMX1sTeYlCkoYvh2rLuEkMF6ReokLQzgfv+zRdBBIqVq+gQ84FMJFkB
- t7kpkuqfu57aynS2wTIgXf7LMLXGZlbOVBxURIrxzcxAna2wL5Qs4mkTA==
+ :mime-version:content-transfer-encoding; s=fm1; bh=eiExqcZ7ujXnf
+ ULrpep8+tjQvNG7hCVX9mCQFkEA6Uo=; b=Y3B7esRl9WjdxAbHeNYyrAjnpTM5n
+ /sxSOD24kVHfDwnWXzc2FcA0QeX+Syj9i8dtZz/HLEb96dWpD90JPa2DDsbG10qq
+ 4qp9saXXWWXMD7wOGjpEfA2ZBy3F588WejM4+hUDCNddldCGctUhQTjJJtEdZKtU
+ ZgnuJFqVGgxe/FVzNxYkWApkmkQJrbeaHg0jYbhFfXNJ841aeD5t4oRGtFGb7ifU
+ 4WPajAbXxI4R+C5O4WTzm7HJfHbrNNMalRaXBdTqC4HPlL2YOHJWdBeREiek+29K
+ EIuP5IbCbDQfy6RvOT9C/Wcf9cOAswMvclhtT7bRCGpal1ek3jqsaqBNQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=b6HojHijxWb+y5XleJvk+mLWd4R6gqj7yGjWhlzWNIc=; b=EzLWb1oV
- R/IT+zv7mmdIiWf4Ne9Jw6b6kG/JK5wV34ldDiR0I1hhilVQqbZwznORkyb8J3kl
- cNeiU4WKKAXJM6Ac2IkJIe+bYoJ3D5/qsloyXSF8VVHf82rBIiPYGK7qSmmFY+BG
- ee0B3zWXpi7nBhjCHeMbykgowa6Bvf7MnPtc5Z1fLXRIOqparUnJYbZ0XeixPUkk
- e3Td9JSkJ5mNbZHQELxsio9KZr6MmhDylHauLNpklGLhNQmPfck2rl9Y9Pr/g/Ou
- S0hyhK9DWp0kJ+m28c0xlr/RIyaAIg60EYAedv+alYCx1nHhbd3c4jdGeBhXzK5m
- /9XPJIYCDR/WJQ==
-X-ME-Sender: <xms:n7X1XZnGGCNl5aNUin-fHyezI3e1aOn6fmXgi92TMYXXZoxrl9-VdA>
+ fm1; bh=eiExqcZ7ujXnfULrpep8+tjQvNG7hCVX9mCQFkEA6Uo=; b=Oe0HD8Xi
+ 1Mk7itRp/qo0Mk7pIEd/zKrwkmAT+4VBjv7vwuJq/ybqpemhfBTI2Xne8EBclGfP
+ xNl+10hp1MAddEx9AbVSXE8Ng/PNI5k/jg/2QyYhZDNaKn2jW3xrs0YMtSG3YRKc
+ ldF0KsHlOmF87mgZ2kNbtFwm8GA1/MqlUFnXvZo1zx9LTj3zwBb3K+yyU6GGraqs
+ ZK0I0U8K9kKd5kF67i/XKy84Rdny2+Evnn/QD3II5pRN6QN/4As1oC4QdrBaz5E3
+ 1nnzBqdiPxMr5+CCw63bWtt6T0/aBKS4SjkkJsEV+PelyL4PDUmtjesCRm1EBZfk
+ pQR+e8WWak2tXA==
+X-ME-Sender: <xms:oLX1XYDiok_1POBQxg95OkoXKhgLHZktDPGxuFQK7HTd-nJ1SQFbtA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddtvddgieelucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,14 +56,14 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddtvddgieelucetufdoteggod
  lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
  epjedtrddufeehrddugeekrdduhedunecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghm
  uhgvlhesshhhohhllhgrnhgurdhorhhgnecuvehluhhsthgvrhfuihiivgepvd
-X-ME-Proxy: <xmx:n7X1XalNUiokq8tv2nhCBpg8T7Vi-4dCg2aGeEUj_0UdxQ4zU5nZCg>
- <xmx:n7X1Xds1oPgAB8wKLD0CBnXYuuN6pMjqk3dYuabyL550qoNU_t5Kyg>
- <xmx:n7X1XUKXkWUzg3-86Lp4B44SPWUkmSlhXgv4r1nWBCDjtHR1kp-1Mw>
- <xmx:n7X1XTuF4PovPZZzfHh5emB3_6CdFT7xUu15P285jMtoNTx-E_MUPA>
+X-ME-Proxy: <xmx:oLX1XSLpkAWwI3qOhoCsdTWKd9fqMHG0la571rOACOwOKvyhpipQdQ>
+ <xmx:oLX1XbzWSA3A86E2CJGAWj90Ea1rxhHH_sRktGr7nCtFPxqbiVhXfA>
+ <xmx:oLX1XWw7An2FuzIJTNcjVCiiH8eFAWLmCHz95XkzsfH8fRw2GK3Tpw>
+ <xmx:oLX1XRH3K7Di1erBh9UIyftu4nis3iwYuRKcTDaFU4EYI89DrSYflQ>
 Received: from titanium.stl.sholland.net
  (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 614B78005B;
- Sat, 14 Dec 2019 23:25:02 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 2730A80059;
+ Sat, 14 Dec 2019 23:25:03 -0500 (EST)
 From: Samuel Holland <samuel@sholland.org>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Jassi Brar <jassisinghbrar@gmail.com>,
@@ -72,16 +72,17 @@ To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Mark Rutland <mark.rutland@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
  Philipp Zabel <p.zabel@pengutronix.de>, Ondrej Jirman <megous@megous.com>,
  Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: [PATCH v5 7/8] arm64: dts: allwinner: h6: Add msgbox node
-Date: Sat, 14 Dec 2019 22:24:54 -0600
-Message-Id: <20191215042455.51001-8-samuel@sholland.org>
+Subject: [PATCH v5 8/8] firmware: arm_scpi: Support unidirectional mailbox
+ channels
+Date: Sat, 14 Dec 2019 22:24:55 -0600
+Message-Id: <20191215042455.51001-9-samuel@sholland.org>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191215042455.51001-1-samuel@sholland.org>
 References: <20191215042455.51001-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_202513_986708_4C2BA434 
-X-CRM114-Status: GOOD (  10.74  )
+X-CRM114-CacheID: sfid-20191214_202513_808708_FE4FEAB5 
+X-CRM114-Status: GOOD (  13.96  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -117,36 +118,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The H6 SoC contains a message box that can be used to send messages and
-interrupts back and forth between the ARM application CPUs and the ARISC
-coprocessor. Add a device tree node for it.
+Some mailbox controllers have only unidirectional channels, so we need a
+pair of them for each SCPI channel. If a mbox-names property is present,
+look for "rx" and "tx" mbox channels; otherwise, the existing behavior
+is preserved, and a single mbox channel is used for each SCPI channel.
+
+Note that since the mailbox framework only supports a single phandle
+with each name (mbox_request_channel_byname always returns the first
+one), this new mode only supports a single SCPI channel.
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ drivers/firmware/arm_scpi.c | 58 +++++++++++++++++++++++++++++--------
+ 1 file changed, 46 insertions(+), 12 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-index 8e5999cd08bb..70ee56ba2091 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-@@ -240,6 +240,16 @@
- 			#dma-cells = <1>;
- 		};
+diff --git a/drivers/firmware/arm_scpi.c b/drivers/firmware/arm_scpi.c
+index a80c331c3a6e..36ff9dd8d0fa 100644
+--- a/drivers/firmware/arm_scpi.c
++++ b/drivers/firmware/arm_scpi.c
+@@ -231,7 +231,8 @@ struct scpi_xfer {
  
-+		msgbox: mailbox@3003000 {
-+			compatible = "allwinner,sun50i-h6-msgbox",
-+				     "allwinner,sun6i-a31-msgbox";
-+			reg = <0x03003000 0x1000>;
-+			clocks = <&ccu CLK_BUS_MSGBOX>;
-+			resets = <&ccu RST_BUS_MSGBOX>;
-+			interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
-+			#mbox-cells = <1>;
-+		};
+ struct scpi_chan {
+ 	struct mbox_client cl;
+-	struct mbox_chan *chan;
++	struct mbox_chan *rx_chan;
++	struct mbox_chan *tx_chan;
+ 	void __iomem *tx_payload;
+ 	void __iomem *rx_payload;
+ 	struct list_head rx_pending;
+@@ -505,7 +506,7 @@ static int scpi_send_message(u8 idx, void *tx_buf, unsigned int tx_len,
+ 	msg->rx_len = rx_len;
+ 	reinit_completion(&msg->done);
+ 
+-	ret = mbox_send_message(scpi_chan->chan, msg);
++	ret = mbox_send_message(scpi_chan->tx_chan, msg);
+ 	if (ret < 0 || !rx_buf)
+ 		goto out;
+ 
+@@ -854,8 +855,13 @@ static void scpi_free_channels(void *data)
+ 	struct scpi_drvinfo *info = data;
+ 	int i;
+ 
+-	for (i = 0; i < info->num_chans; i++)
+-		mbox_free_channel(info->channels[i].chan);
++	for (i = 0; i < info->num_chans; i++) {
++		struct scpi_chan *pchan = &info->channels[i];
 +
- 		sid: efuse@3006000 {
- 			compatible = "allwinner,sun50i-h6-sid";
- 			reg = <0x03006000 0x400>;
++		if (pchan->tx_chan != pchan->rx_chan)
++			mbox_free_channel(pchan->tx_chan);
++		mbox_free_channel(pchan->rx_chan);
++	}
+ }
+ 
+ static int scpi_remove(struct platform_device *pdev)
+@@ -903,6 +909,7 @@ static int scpi_probe(struct platform_device *pdev)
+ 	struct resource res;
+ 	struct device *dev = &pdev->dev;
+ 	struct device_node *np = dev->of_node;
++	bool use_mbox_names = false;
+ 
+ 	scpi_info = devm_kzalloc(dev, sizeof(*scpi_info), GFP_KERNEL);
+ 	if (!scpi_info)
+@@ -916,6 +923,14 @@ static int scpi_probe(struct platform_device *pdev)
+ 		dev_err(dev, "no mboxes property in '%pOF'\n", np);
+ 		return -ENODEV;
+ 	}
++	if (of_get_property(dev->of_node, "mbox-names", NULL)) {
++		use_mbox_names = true;
++		if (count != 2) {
++			dev_err(dev, "need exactly 2 mboxes with mbox-names\n");
++			return -ENODEV;
++		}
++		count /= 2;
++	}
+ 
+ 	scpi_info->channels = devm_kcalloc(dev, count, sizeof(struct scpi_chan),
+ 					   GFP_KERNEL);
+@@ -961,15 +976,34 @@ static int scpi_probe(struct platform_device *pdev)
+ 		mutex_init(&pchan->xfers_lock);
+ 
+ 		ret = scpi_alloc_xfer_list(dev, pchan);
+-		if (!ret) {
+-			pchan->chan = mbox_request_channel(cl, idx);
+-			if (!IS_ERR(pchan->chan))
+-				continue;
+-			ret = PTR_ERR(pchan->chan);
+-			if (ret != -EPROBE_DEFER)
+-				dev_err(dev, "failed to get channel%d err %d\n",
+-					idx, ret);
++		if (ret)
++			return ret;
++
++		if (use_mbox_names) {
++			pchan->rx_chan = mbox_request_channel_byname(cl, "rx");
++			if (IS_ERR(pchan->rx_chan)) {
++				ret = PTR_ERR(pchan->rx_chan);
++				goto fail;
++			}
++			pchan->tx_chan = mbox_request_channel_byname(cl, "tx");
++			if (IS_ERR(pchan->rx_chan)) {
++				ret = PTR_ERR(pchan->tx_chan);
++				goto fail;
++			}
++		} else {
++			pchan->rx_chan = mbox_request_channel(cl, idx);
++			if (IS_ERR(pchan->rx_chan)) {
++				ret = PTR_ERR(pchan->rx_chan);
++				goto fail;
++			}
++			pchan->tx_chan = pchan->rx_chan;
+ 		}
++		continue;
++
++fail:
++		if (ret != -EPROBE_DEFER)
++			dev_err(dev, "failed to get channel%d err %d\n",
++				idx, ret);
+ 		return ret;
+ 	}
+ 
 -- 
 2.23.0
 
