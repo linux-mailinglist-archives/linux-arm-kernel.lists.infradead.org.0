@@ -2,77 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 663E611F795
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 13:00:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9086411F79E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 13:13:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xwUzHQQDHk/PQIyp9Tqyit3nCzghn3lVdOcjHx6aWVA=; b=rvSmkp7lyl1IA0
-	dHrvhdkqAq/Ln/h8DGFt78CYg79YQSxTLA6m5+FMoV+t6yf8IxBtDli20+d++W2Vou8+XFFr+mDHC
-	KCz6cO5YRiRJy/h8kBLhkX7ynbLSlbs0tfWUH/GMbZfX+/Fo8Y3Y/2J3Fyb84tHNTfVWWb4tt0EOA
-	2f36riAFrc3/4mVIbbUGo4NIUVbtnPLEGTGyW7fTgvpleuEHJzDHieMAPmFo0Cwb5t05NaGAm2zv0
-	GUOTnfLPBi23rH2plJfg79GR9NjdY9moFzkafPz2iym7B92sWd6Vn8W7s2FCCHZrxCGtII61AiQNQ
-	t9dUobznIk4ziCQEcpYA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=e2zcw1RmuvZ2MIwaWpWk1Qxi4Va8rASu3ZJu/zu6fno=; b=KAc
+	Sl8gFVv5L53dkYgiQEp+ehvkEjHa4JW7XkDNkKMNTVPayIkQu+/l2ViE9DsJ8/o4Up3Hf4TMyJefM
+	DN1WlDO405QCjGqEvyiw4Qbtrlcccakui6ZbmExVz+PoMt5LVwj63j7wdHnBGdj6AR36SdcCeN6mQ
+	N977SziPS2LJ1TT//Q37f+NQ+SmLK0OG9i5DZh3XRmgTUyZCuoyALMCI2sf+3Wfg6JqCQdK9aQnZT
+	Ca4vfmOr63xMb/ypBV//wTF2X7C4TyanDAsDRaJswJOHquQpOJ71N82SH0m4ypjWaZcc3o6ufZa4U
+	cCjbZoHedcl5wipH0IXEvaeRW8UPl/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igSZX-0002uG-UJ; Sun, 15 Dec 2019 12:00:27 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1igSmB-0006eL-RC; Sun, 15 Dec 2019 12:13:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igSZK-0002rg-DB; Sun, 15 Dec 2019 12:00:15 +0000
-Received: by mail-io1-xd41.google.com with SMTP id z193so540182iof.1;
- Sun, 15 Dec 2019 04:00:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=U32Ya4ZtyKRe0g31iyaOrg9bNIbVTfXKPEbGivDkS10=;
- b=OSen5Gcvcdj9lEzBZB15Tn6QiRTI9MWlO/rPN49bMq0K83mAgq18VHkzQ7zVlPrjML
- gszdUGt2eF1kyYhDFF+GP7FeP1RPEnPsfH7wY9I095RPAYClYjywGRCaSteDEqN+zK62
- IKehzG864B+NpPZLPI1yH3m0V9J02rnTKvgIZxkccK3VNzHuy++Doo+IV2cQKWeFpyGv
- sOw1S4YJdTl9C8RnFpAVjILHeJMichKHxPUSI98wDRt0UmqQkWCWFLtA7q2g+jukhVzx
- EloylsApJVNnAMvbYem3m+vszDWIyz4reg4yOYbOHfUjbut1/oBMn1uR67AGYca3deCP
- DSrg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=U32Ya4ZtyKRe0g31iyaOrg9bNIbVTfXKPEbGivDkS10=;
- b=Ox9khvQK28UlWRysi1owebpg6ISPT+U3GDWX7ukkmZcLxxsE4usOyJP1GFm0i5X6yW
- zTH4kZvU/rkK5sEXjDmYxZ21k64uD/+Gg3CjLvJ9guqrqvDc/7J1aq0PzNidiBWe18sJ
- 7kSFK9d6tGVSiGO3J3Rpqdurm6TeMfaoU7QoeI2Kwp4qDc63MqmshSTke3NSzE7olekf
- qH0emWXgpkea84AY9C43yzlYOUxC4jaNQQEFFSPSNY3cV/xGwCcqyf5c2/fw0rkLyDcA
- 0He9kUW0gAXiHQpE+YjNBETq88X0PHqqF9bFMynizvF9JEzSy/lBqi8Y5b7RkHV2zlmE
- 7U3Q==
-X-Gm-Message-State: APjAAAUkSBYVRbYlE56IpKsgHaFadhGbo0/WknU46e29g8A16us6o76J
- KOnxobrnG+PEOeYzkzzitiDGVGhFtAcfzmamWkE=
-X-Google-Smtp-Source: APXvYqytWwvnLfUD+171nhXHDbJqlTikV21tQNc2dQdQlOI6X6lJ/eLQFLTNTro7mQyhFx4wzdvzbYn6q+tytdyDIA8=
-X-Received: by 2002:a5d:9f05:: with SMTP id q5mr14678305iot.295.1576411213379; 
- Sun, 15 Dec 2019 04:00:13 -0800 (PST)
-MIME-Version: 1.0
-References: <20191214175447.25482-1-tiny.windzz@gmail.com>
- <20191214175447.25482-10-tiny.windzz@gmail.com>
- <20191215104824.658889d3@why>
-In-Reply-To: <20191215104824.658889d3@why>
-From: Frank Lee <tiny.windzz@gmail.com>
-Date: Sun, 15 Dec 2019 20:00:01 +0800
-Message-ID: <CAEExFWtgXt2pGM1fGfmxNdk_7S_53gnhN0-bProWA4-vOaNN3w@mail.gmail.com>
-Subject: Re: [PATCH 10/10] soc: qcom: convert to devm_platform_ioremap_resource
-To: Marc Zyngier <maz@kernel.org>
+ id 1igSm4-0006dl-LW
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 12:13:26 +0000
+Received: from localhost.localdomain (unknown [194.230.155.234])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 078D524654;
+ Sun, 15 Dec 2019 12:13:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576412003;
+ bh=kEXVJBS/UwSqT3Pg74eUT2ImW/zfE9tpz4hx6T3Exhc=;
+ h=From:To:Cc:Subject:Date:From;
+ b=SJx6ZiaWnXXF3Zdx0oLlUaOw1bKAIEIIWgnsMajl5s0Hy4sLaK4cFIXYn++eZlMx0
+ pcaexBmHxoMhXBXT4/XalZNLjxv4r7a+d2R168iY6YacNpBTwV3q95VaCda6eNeoJJ
+ 5vz6+1jCxsD+hA86MqXSCLQRe7fOKAYAqseIzct8=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL] ARM: exynos: Fixes for v5.5
+Date: Sun, 15 Dec 2019 13:13:16 +0100
+Message-Id: <20191215121316.32091-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_040014_475285_C43D3923 
-X-CRM114-Status: GOOD (  14.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191215_041324_728854_50E5A3EB 
+X-CRM114-Status: GOOD (  12.11  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -81,6 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,76 +73,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: john@phrozen.org, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-samsung-soc@vger.kernel.org, khilman@baylibre.com, krzk@kernel.org,
- Chen-Yu Tsai <wens@csie.org>, agross@kernel.org, linux-arm-msm@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, khalasa@piap.pl, ssantosh@kernel.org,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-amlogic@lists.infradead.org,
- bjorn.andersson@linaro.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- shawnguo@kernel.org, linux-mips@vger.kernel.org, leoyang.li@nxp.com,
- kgene@kernel.org, linux-mediatek@lists.infradead.org, jun.nie@linaro.org,
- linuxppc-dev@lists.ozlabs.org
+Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Dec 15, 2019 at 6:48 PM Marc Zyngier <maz@kernel.org> wrote:
->
-> On Sat, 14 Dec 2019 17:54:47 +0000
-> Yangtao Li <tiny.windzz@gmail.com> wrote:
->
-> > Use devm_platform_ioremap_resource() to simplify code.
-> >
-> > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> > ---
-> >  drivers/soc/qcom/llcc-qcom.c    | 7 +------
-> >  drivers/soc/qcom/qcom-geni-se.c | 4 +---
-> >  drivers/soc/qcom/qcom_aoss.c    | 4 +---
-> >  drivers/soc/qcom/qcom_gsbi.c    | 5 +----
-> >  drivers/soc/qcom/spm.c          | 4 +---
-> >  5 files changed, 5 insertions(+), 19 deletions(-)
-> >
-> > diff --git a/drivers/soc/qcom/llcc-qcom.c b/drivers/soc/qcom/llcc-qcom.c
-> > index 429b5a60a1ba..99e19df76889 100644
-> > --- a/drivers/soc/qcom/llcc-qcom.c
-> > +++ b/drivers/soc/qcom/llcc-qcom.c
-> > @@ -387,7 +387,6 @@ static int qcom_llcc_remove(struct platform_device *pdev)
-> >  static struct regmap *qcom_llcc_init_mmio(struct platform_device *pdev,
-> >               const char *name)
-> >  {
-> > -     struct resource *res;
-> >       void __iomem *base;
-> >       struct regmap_config llcc_regmap_config = {
-> >               .reg_bits = 32,
-> > @@ -396,11 +395,7 @@ static struct regmap *qcom_llcc_init_mmio(struct platform_device *pdev,
-> >               .fast_io = true,
-> >       };
-> >
-> > -     res = platform_get_resource_byname(pdev, IORESOURCE_MEM, name);
-> > -     if (!res)
-> > -             return ERR_PTR(-ENODEV);
-> > -
-> > -     base = devm_ioremap_resource(&pdev->dev, res);
-> > +     base = devm_platform_ioremap_resource(pdev, 0);
->
-> What guarantees do you have that entry 0 matches name?
+Hi,
 
-Yeah, this place is wrong. I intruduce another helper.
+Three fix-related patches for current cycle.
 
-https://lore.kernel.org/patchwork/patch/1165186/
-
-Thx,
-Yangtao
+Best regards,
+Krzysztof
 
 
->
-> I find these changes pointless: they don't add much to the readability
-> or maintainability of the code, and instead introduce creative bugs.
->
->         M.
-> --
-> Jazz is not dead. It just smells funny...
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+
+are available in the Git repository at:
+
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-fixes-5.5
+
+for you to fetch changes up to a2315d3aea5976acd919d3d3fcf82f752562c25b:
+
+  ARM: exynos_defconfig: Restore debugfs support (2019-12-09 18:59:54 +0100)
+
+----------------------------------------------------------------
+Samsung fixes for v5.5
+
+1. Restore debugfs support in exynos_defconfig (as now it is not
+   selected as dependency of tracing).  Debugfs is required by systemd
+   and several tests.
+2. Maintainers updates.
+
+----------------------------------------------------------------
+Krzysztof Kozlowski (1):
+      MAINTAINERS: Include Samsung SoC serial driver in Samsung SoC entry
+
+Lukasz Luba (1):
+      MAINTAINERS: Update Lukasz Luba's email address
+
+Marek Szyprowski (1):
+      ARM: exynos_defconfig: Restore debugfs support
+
+ .mailmap                          | 1 +
+ MAINTAINERS                       | 3 ++-
+ arch/arm/configs/exynos_defconfig | 1 +
+ 3 files changed, 4 insertions(+), 1 deletion(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
