@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0488D11F972
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 18:00:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8BB811F975
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 18:01:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g4ELtnuayVZuK2/Cf9W1gxzE7JJ7AHZAqino5FbPghs=; b=W7EeQ7tDlzSFAD
-	TapB2FCZNZniAs2UH4NBp7tc0/uWG07VMYybIKM1wYl7sd8039VwRBDMipYs5N7EXvApB0EOQ4OXB
-	mHiGGfGjzhU8LNSEMOCg3IUQG/4ta13jwS7Gd8n7CZaVF3Iuk6lDBLk2JYdQX2lZDnNwOIRq5PVaD
-	/npM0NSZP52TsRh1frQc0DoY8XBlQIHocS+vsY8G0+ORntJTun4mBFN4OBtPEji0itgZkjgN5F0HA
-	Y4WZIch2iLDYBKAnv8QqFFXnoLkT6EQ2DyfZyzvO0sgeCML5NNoJWA9iW+iEDEje0bRuwPSub2sqa
-	am8qL+SrtuNzyZtMlfpQ==;
+	List-Owner; bh=6js1DxiGzpeciFwfo/9x4J3+1rvuafxgFr9vZaNLd0U=; b=D7PXFfCXNzYX72
+	/0GfzKYL6XKutDoegzrjPVYg3x36gu7b0trJQyNbjjV85YG93wx3Yhn2t9Feo53+aEZP0Kjhs8Mdu
+	L8dAfC+kxlm6roAJA/teSp3ZFbbd1vtVXZjCOp+zkbD2nQKWzRSChiLtKqCXCSIOvwDI9NXHKdXNw
+	grQOGyVdmQZsA8hkUPsAs7Sd11XWN7IyqVTcCnnyl5i41i4gdMcp7fbW3RgB+K5lGA3ekDL4yiFIC
+	kFzUyX0eZwUMM1F+IRULoWdiEJJHmWhA9aVDN3VepUflodHTvgmu9vaoWiwzpyCfmCMEXQNW26E0t
+	/Z5zPaSfgy87EpEHbLMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igXG9-0007jc-Jd; Sun, 15 Dec 2019 17:00:45 +0000
+	id 1igXGq-0008Qr-Ri; Sun, 15 Dec 2019 17:01:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igXF1-0005ld-Ql
+ id 1igXF1-0005la-RT
  for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 16:59:37 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8E4A724681;
+ by mail.kernel.org (Postfix) with ESMTPSA id 8BAFA24676;
  Sun, 15 Dec 2019 16:59:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1576429171;
- bh=MFr4r0CtVaXDpNF9mGw8EkkRQEEHSJia0THm3nYQ5t0=;
+ bh=EZHv3FHkZdfny3NSAdab5tp7Y0RDcEfbHiuBOD3ZxQo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=D9ZQd6ZMMz7jiffsSEXfvTw73DPNirugBVvPAUXOy/paHURs42gUWPq9YCCZTyzGE
- 73uNV3nPw7bbPIHMPyjst+QdtEmUD/DDNyKIglZ0HhFAMrc4/gdXRRGFY8MWK6cvtK
- F2H83Iyd4O2Vtcw1WBWq4dXJMVFg8Jf+MV/kpmhM=
+ b=xwiYOsuzNAWmNvP5nIpflWhBotg3GwseugwEVquZTU9FO2v2x4qdUzaotd9+R8Ibn
+ lEkoZUXeAgGIVD6zoRRX2wwffcooRSlf5d0MTvnW7qG5mCQfXs1Yeojuh4eGsbOayX
+ SA6PinGY+41TiMJXEbnQkX01H4aGDHi35+chg2j0=
 Received: by wens.tw (Postfix, from userid 1000)
- id 603815FD9D; Mon, 16 Dec 2019 00:59:26 +0800 (CST)
+ id 6B3535FD8D; Mon, 16 Dec 2019 00:59:26 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <mripard@kernel.org>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 07/14] ARM: dts: sun4i: Add CSI1 controller and pinmux options
-Date: Mon, 16 Dec 2019 00:59:17 +0800
-Message-Id: <20191215165924.28314-8-wens@kernel.org>
+Subject: [PATCH 08/14] ARM: dts: sun7i: Add CSI1 controller and pinmux options
+Date: Mon, 16 Dec 2019 00:59:18 +0800
+Message-Id: <20191215165924.28314-9-wens@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191215165924.28314-1-wens@kernel.org>
 References: <20191215165924.28314-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_085935_905756_A3DB437B 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20191215_085935_931439_5B9758BB 
+X-CRM114-Status: GOOD (  10.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -97,21 +97,22 @@ standard 8-bit interface, and a secondary 24-bit interface are included.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- arch/arm/boot/dts/sun4i-a10.dtsi | 35 ++++++++++++++++++++++++++++++++
- 1 file changed, 35 insertions(+)
+ arch/arm/boot/dts/sun7i-a20.dtsi | 36 ++++++++++++++++++++++++++++++++
+ 1 file changed, 36 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sun4i-a10.dtsi b/arch/arm/boot/dts/sun4i-a10.dtsi
-index 4c268b70b735..bf531efc0610 100644
---- a/arch/arm/boot/dts/sun4i-a10.dtsi
-+++ b/arch/arm/boot/dts/sun4i-a10.dtsi
-@@ -624,6 +624,16 @@ ohci1: usb@1c1c400 {
+diff --git a/arch/arm/boot/dts/sun7i-a20.dtsi b/arch/arm/boot/dts/sun7i-a20.dtsi
+index 8aebefd6accf..92b5be97085d 100644
+--- a/arch/arm/boot/dts/sun7i-a20.dtsi
++++ b/arch/arm/boot/dts/sun7i-a20.dtsi
+@@ -729,6 +729,17 @@ ohci1: usb@1c1c400 {
  			status = "disabled";
  		};
  
 +		csi1: csi@1c1d000 {
-+			compatible = "allwinner,sun4i-a10-csi1";
++			compatible = "allwinner,sun7i-a20-csi1",
++				     "allwinner,sun4i-a10-csi1";
 +			reg = <0x01c1d000 0x1000>;
-+			interrupts = <43>;
++			interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
 +			clocks = <&ccu CLK_AHB_CSI1>, <&ccu CLK_DRAM_CSI1>;
 +			clock-names = "bus", "ram";
 +			resets = <&ccu RST_CSI1>;
@@ -121,8 +122,8 @@ index 4c268b70b735..bf531efc0610 100644
  		spi3: spi@1c1f000 {
  			compatible = "allwinner,sun4i-a10-spi";
  			reg = <0x01c1f000 0x1000>;
-@@ -670,6 +680,31 @@ can0_ph_pins: can0-ph-pins {
- 				function = "can";
+@@ -802,6 +813,31 @@ csi0_clk_pin: csi-clk-pin {
+ 				function = "csi0";
  			};
  
 +			/omit-if-no-ref/
@@ -150,9 +151,9 @@ index 4c268b70b735..bf531efc0610 100644
 +				function = "csi1";
 +			};
 +
- 			emac_pins: emac0-pins {
+ 			/omit-if-no-ref/
+ 			emac_pa_pins: emac-pa-pins {
  				pins = "PA0", "PA1", "PA2",
- 				       "PA3", "PA4", "PA5", "PA6",
 -- 
 2.24.0
 
