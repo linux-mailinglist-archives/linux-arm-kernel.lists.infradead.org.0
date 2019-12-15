@@ -2,100 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F5C411F588
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 05:07:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 599E811F5B2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 05:26:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/oRqCTv7WFcIVHetEDL7UdYuL0Ie6aEzEwiuiRfUoDU=; b=jj7k6BLDY4AqKYuOpfbMDXVN1
-	u0QL5ySQfI+eIErkSmt4XbHopEup9D4y3gP7eC4jyWMGeLLFuto/BpfEbXIjrk+wFTiKSw0XG3XDB
-	bFga3jn5ePXM705Bi7sIFukwBaigyDDvR9/6ygO3y+2nMZjrzfbs1DBrCIn2TusUbI9niBpijTbyH
-	GLlxG/KrtFoUacQs3WNFLIGra2CkUubGuG3A6Aaftb1uIizSJDUZn4A2LH35NEbnLeyqR2FSnCS0V
-	ZmY4q9NDtlKrG8Tj/LBtAkZ734OV4u0OiB9n77K+62gHs0lsM2iOSvHVC7PXojQG3yil7D+vBW5KC
-	jSG/WBKUQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eSfcFpksetlue2U/5h86Jue/oYqL+i9BUOKVD92IOz4=; b=eb9Oz1QyjP8Qpm
+	ptn2Hls5vzTQopIr9bkmxGjsULQtPSqi0Hy7CpIOu8toEQfV0w60XBCPir8isaWkkxLES/q1YKA9Z
+	l0m72LKu7i3adBesrVwj4BMOsqw9R5SdyBk8vBNnZhyIsy8moNQMYovTkA1yb5wa33ligkDKvc8OC
+	CGhYr7sbmMIfqon5NAoI+udSPgPhCyUiKy9ZhDkRFjmW7KkIPeBwLgzUkhZou+jkNHb/tBrm0KScv
+	NgEVrhOtZmYxMsCLs/1O8kHJoFEVZ/ZXgKZDrI16k9d6xbWM8h7H6oOlRfbolXAAKTgtVidBuUxH5
+	a14l01IVTQ2tmGUMLcVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igLBg-0002US-Dy; Sun, 15 Dec 2019 04:07:20 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1igLTk-0001Fs-Jw; Sun, 15 Dec 2019 04:26:00 +0000
+Received: from new3-smtp.messagingengine.com ([66.111.4.229])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igLBY-0002Tr-HE; Sun, 15 Dec 2019 04:07:14 +0000
-Received: by mail-pl1-x642.google.com with SMTP id az3so2966139plb.11;
- Sat, 14 Dec 2019 20:07:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Gr7XIvzPboyqrsDdwyLjJusURMdi2PSGnJ+TpGd+U0U=;
- b=srhcpMQCP+NzTKJtQhD7TavIWi3vc/vqoe5ZFBeDgk28K1EqMr4ObHZAocP7UELc2E
- 9FPFvNlDJ2cqOPfGKMnElLnHwuQ3zLK49+moVFGNtipCDiqwSjQTEOlzLAPYaytiN04l
- bRu0amfJ+vN79ZLcpaW7f4FsnaQ9Q74JD7d9IaPyxUBVxMdXtnAkkNAUIxJ6KuKfRGLN
- hjz3S60sj8aS/aFOG8HAOXKZYJxey2K6ugQYJcf6T8CYt9ThUZJDPwEGGca3jdZgND84
- Bz5h0UaHzs1/+Na0iER00nNnfJrOfFhU+AfY7S+blRZzef3UW5am/B+jNfR7OCyq8OaZ
- 0EdA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Gr7XIvzPboyqrsDdwyLjJusURMdi2PSGnJ+TpGd+U0U=;
- b=CecfOz+sTR3lhAGJnDtQXSoDg6wBuhQgIdPZBqymu0gBRJIywnOAmbIwyDZCOUXhh1
- yzo3I0xa3pjwd7Q4VDMve7TMVlovJv2+blPyPFxMIhYmmZERosx5f17WhG/VMZ/yShPY
- QYhRywfmJ8TjqQaecLvDSRHQHKycpL+jP0MSUL4gegOf7D/kSnedEywR0KhiJrtklMxN
- islHVS7M75lFSa28OfifMAYb78bpM7ShfejUTzr5/ev9ISDeRqF+JMrYkE0tiNu6Ja8p
- iQv9kwzuErNId4FpIkL1yCoBxOlLTlFLZ2wK1Ve+inXaebLhibTea9j0QWTqtjH0vG7O
- YoUA==
-X-Gm-Message-State: APjAAAWTfvPTrVSIGrHhmyhHzIdneMJ8bL9tPB/JdqALNowj+te7eJAJ
- N85aTVt/OpndwiV2tvtxPlY=
-X-Google-Smtp-Source: APXvYqwHfNbgNnfq/CFNsGQnxkE9LQaXeMEXaAOiP5qHjmI3zK0tOKKHKx/Y2Y6Lve98tuJ69MhoFA==
-X-Received: by 2002:a17:90a:8c1:: with SMTP id 1mr10311370pjn.12.1576382831104; 
- Sat, 14 Dec 2019 20:07:11 -0800 (PST)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- r68sm18186001pfr.78.2019.12.14.20.07.09
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 14 Dec 2019 20:07:10 -0800 (PST)
-Subject: Re: [PATCH v5 3/4] watchdog: add meson secure watchdog driver
-To: Xingyu Chen <xingyu.chen@amlogic.com>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- Kevin Hilman <khilman@baylibre.com>, Neil Armstrong <narmstrong@baylibre.com>
-References: <1576153187-28378-1-git-send-email-xingyu.chen@amlogic.com>
- <1576153187-28378-4-git-send-email-xingyu.chen@amlogic.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <693e6738-92b8-07cf-2003-4cf081f4992b@roeck-us.net>
-Date: Sat, 14 Dec 2019 20:07:08 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1igLSs-0007zK-SW
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 04:25:13 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 9B5E45AC7;
+ Sat, 14 Dec 2019 23:24:58 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute5.internal (MEProxy); Sat, 14 Dec 2019 23:24:58 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm1; bh=yF1ILw6fVT9Ms/aRvWhr5GmNy8
+ yCGr3pdt2J77P8Ksg=; b=BV/CcvtMaUwJ5Xkmrafcunww9v4v4S5kcTx99tU1EB
+ sOPSEYwERghframe5KVWMwobt2PY4HQNQQu2M1chgX+ubpFEf3J8XO3qD4JJxmln
+ RflPCYFWyHYjDGPo78fb47HlR078gaPkLsEdr9P9jqliVCTo1SY7AJ6Hp6rWd8r7
+ W5DBV/pMMSJkh1q0OIQIBhbSExv75caTPQgBunbHvXNqGH4vSRUFdyKso0gdEgM8
+ 0onhPU13x8uBGlfOA8LWsEv03wWaPsxzbIfiZnlnV6Fy7uI7HbSi6igzK+X/cb3n
+ zvG7ebfYEYT56dV/G5nuOu1eYZqjq36OhZCZy7RGnQAQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=yF1ILw6fVT9Ms/aRv
+ Whr5GmNy8yCGr3pdt2J77P8Ksg=; b=TTQOvW6r9Mi392k9GGi6muC4N+pNtQ0Xm
+ GdWhR+xYvDth+aBUAQdmPL/NmyJcHOcCwhhdoqed8QlH0hqrAVK6M9vJ+iolQ51o
+ tybj41uNSMpYU/HPiznEFifdy/VzsCUbOLw87LXXKwB0dJANNXhQwfGCu4pb8GD6
+ 7zoDYpbfXvxsFgVmUnoXCrhPGyIlKQkH5Bn0uPnpn6N6WFpjuezhxMmYUXUwUuX0
+ btYLyeaZ7K1D8fKxLnGrrTEEsQIv/cqF6UiOCt+EXXNDtVdLGzmkkVrhNnAGUY4z
+ 63iWDlkgSRUlLr7ZDRAV2K7d/mD5Qid43lMtdemyYwn+tBfg4yB/A==
+X-ME-Sender: <xms:mbX1XSkQcijX_Y6EzV-uhI2a9R45QZY5H9LY2SSO8tivwy6LVJIpbA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddtvddgieelucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhephffvufffkffoggfgsedtkeertdertddtnecuhfhrohhmpefurghmuhgvlhcu
+ jfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkphepje
+ dtrddufeehrddugeekrdduhedunecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghmuhgv
+ lhesshhhohhllhgrnhgurdhorhhgnecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:mbX1XfHA4DWZTjW_wQrEfGKPsFvCpNrWl6sarDuEFlgi5KMgA1K4_Q>
+ <xmx:mbX1XSVMypIjxbOqYHykcFy4kPMrcwFCew_zUWsipqB1yqKG1kG8kg>
+ <xmx:mbX1Xeyf8LwH_9K-1dQEO830eTGigJUaAxK_Zx2PTGAq6J1Yas7iHA>
+ <xmx:mrX1XYRbkjBPBJSJfIXXEqhDzpdYk8PWkZBxxL5FMcffXggFEGcI6A>
+Received: from titanium.stl.sholland.net
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id B5ACC80060;
+ Sat, 14 Dec 2019 23:24:56 -0500 (EST)
+From: Samuel Holland <samuel@sholland.org>
+To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jassi Brar <jassisinghbrar@gmail.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Ondrej Jirman <megous@megous.com>,
+ Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: [PATCH v5 0/8] Allwinner sun6i message box support
+Date: Sat, 14 Dec 2019 22:24:47 -0600
+Message-Id: <20191215042455.51001-1-samuel@sholland.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-In-Reply-To: <1576153187-28378-4-git-send-email-xingyu.chen@amlogic.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191214_200712_595732_92233D63 
-X-CRM114-Status: GOOD (  24.44  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191214_202507_128869_65B8B962 
+X-CRM114-Status: GOOD (  17.11  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.229 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,267 +106,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Qianggui Song <qianggui.song@amlogic.com>, linux-watchdog@vger.kernel.org,
- Jianxin Pan <jianxin.pan@amlogic.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: devicetree@vger.kernel.org, Samuel Holland <samuel@sholland.org>,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/12/19 4:19 AM, Xingyu Chen wrote:
-> The watchdog controller on the Meson-A/C series SoCs is moved to secure
-> world, watchdog operation needs to be done in secure EL3 mode via ATF,
-> Non-secure world can call SMC instruction to trap to AFT for watchdog
-> operation.
-> 
-> Signed-off-by: Xingyu Chen <xingyu.chen@amlogic.com>
+This series adds support for the "hardware message box" in sun8i, sun9i,
+and sun50i SoCs, used for communication with the ARISC management
+processor (the platform's equivalent of the ARM SCP). The end goal is to
+use the arm_scpi driver as a client, communicating with firmware running
+on the ARISC CPU.
 
-Reviewed-by: Guenter Roeck <linux@roeck-us.net>
+I have tested this driver with various firmware programs on the A64, H5,
+and H6 SoCs (including specifically this arm_scpi patch on A64 and H6),
+and Ondrej Jirman has tested the driver on the A83T (using a similar
+patch to arm_scpi).
 
-> ---
->   drivers/watchdog/Kconfig         |  16 ++++
->   drivers/watchdog/Makefile        |   1 +
->   drivers/watchdog/meson_sec_wdt.c | 188 +++++++++++++++++++++++++++++++++++++++
->   3 files changed, 205 insertions(+)
->   create mode 100644 drivers/watchdog/meson_sec_wdt.c
-> 
-> diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-> index 1679e0d..5f88325 100644
-> --- a/drivers/watchdog/Kconfig
-> +++ b/drivers/watchdog/Kconfig
-> @@ -826,6 +826,22 @@ config MESON_GXBB_WATCHDOG
->   	  To compile this driver as a module, choose M here: the
->   	  module will be called meson_gxbb_wdt.
->   
-> +config MESON_SEC_WATCHDOG
-> +	tristate "Amlogic Meson Secure watchdog support"
-> +	depends on MESON_SM
-> +	select WATCHDOG_CORE
-> +	help
-> +	  The watchdog controller on the Meson-A/C series SoCs is moved to
-> +	  secure world, watchdog operation needs to be done in secure EL3
-> +	  mode via ATF, non-secure world can call SMC instruction to trap
-> +	  to ATF for the watchdog operation.
-> +
-> +	  Say Y here if watchdog controller on Meson SoCs is located in
-> +	  secure world.
-> +
-> +	  To compile this driver as a module, choose M here: the
-> +	  module will be called meson_sec_wdt.
-> +
->   config MESON_WATCHDOG
->   	tristate "Amlogic Meson SoCs watchdog support"
->   	depends on ARCH_MESON || COMPILE_TEST
-> diff --git a/drivers/watchdog/Makefile b/drivers/watchdog/Makefile
-> index 2ee352b..5e6b73d 100644
-> --- a/drivers/watchdog/Makefile
-> +++ b/drivers/watchdog/Makefile
-> @@ -78,6 +78,7 @@ obj-$(CONFIG_QCOM_WDT) += qcom-wdt.o
->   obj-$(CONFIG_BCM_KONA_WDT) += bcm_kona_wdt.o
->   obj-$(CONFIG_TEGRA_WATCHDOG) += tegra_wdt.o
->   obj-$(CONFIG_MESON_GXBB_WATCHDOG) += meson_gxbb_wdt.o
-> +obj-$(CONFIG_MESON_SEC_WATCHDOG) += meson_sec_wdt.o
->   obj-$(CONFIG_MESON_WATCHDOG) += meson_wdt.o
->   obj-$(CONFIG_MEDIATEK_WATCHDOG) += mtk_wdt.o
->   obj-$(CONFIG_DIGICOLOR_WATCHDOG) += digicolor_wdt.o
-> diff --git a/drivers/watchdog/meson_sec_wdt.c b/drivers/watchdog/meson_sec_wdt.c
-> new file mode 100644
-> index 00000000..7975522
-> --- /dev/null
-> +++ b/drivers/watchdog/meson_sec_wdt.c
-> @@ -0,0 +1,188 @@
-> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-> +/*
-> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-> + * Author: Xingyu Chen <xingyu.chen@amlogic.com>
-> + *
-> + */
-> +#include <linux/err.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/types.h>
-> +#include <linux/watchdog.h>
-> +#include <linux/firmware/meson/meson_sm.h>
-> +
-> +#define MESON_SIP_WDT_DISABLE		0x1
-> +#define MESON_SIP_WDT_ENABLE		0x2
-> +#define MESON_SIP_WDT_PING		0x3
-> +#define MESON_SIP_WDT_INIT		0x4
-> +#define MESON_SIP_WDT_RESETNOW		0x5
-> +#define MESON_SIP_WDT_SETTIMEOUT	0x6
-> +#define MESON_SIP_WDT_GETTIMELEFT	0x7
-> +
-> +#define DEFAULT_TIMEOUT			30 /* seconds */
-> +
-> +/*
-> + * Watchdog timer tick is set to 1ms in secfw side, and tick count is
-> + * stored in the bit[16-31] of WATCHDOG_CNT register, so the maximum
-> + * timeout value is 0xffff ms.
-> + */
-> +#define MAX_TIMEOUT_MS			0xFFFF
-> +
-> +struct meson_sec_wdt {
-> +	struct watchdog_device wdt_dev;
-> +	struct meson_sm_firmware *fw;
-> +};
-> +
-> +static int meson_sec_wdt_start(struct watchdog_device *wdt_dev)
-> +{
-> +	struct meson_sec_wdt *data = watchdog_get_drvdata(wdt_dev);
-> +
-> +	return meson_sm_call(data->fw, SM_A1_WATCHDOG_OPS, NULL,
-> +			     MESON_SIP_WDT_ENABLE, 0, 0, 0, 0);
-> +}
-> +
-> +static int meson_sec_wdt_stop(struct watchdog_device *wdt_dev)
-> +{
-> +	struct meson_sec_wdt *data = watchdog_get_drvdata(wdt_dev);
-> +
-> +	return meson_sm_call(data->fw, SM_A1_WATCHDOG_OPS, NULL,
-> +			     MESON_SIP_WDT_DISABLE, 0, 0, 0, 0);
-> +}
-> +
-> +static int meson_sec_wdt_ping(struct watchdog_device *wdt_dev)
-> +{
-> +	struct meson_sec_wdt *data = watchdog_get_drvdata(wdt_dev);
-> +
-> +	return meson_sm_call(data->fw, SM_A1_WATCHDOG_OPS, NULL,
-> +			     MESON_SIP_WDT_PING, 0, 0, 0, 0);
-> +}
-> +
-> +static int meson_sec_wdt_set_timeout(struct watchdog_device *wdt_dev,
-> +				     unsigned int timeout)
-> +{
-> +	struct meson_sec_wdt *data = watchdog_get_drvdata(wdt_dev);
-> +
-> +	wdt_dev->timeout = timeout;
-> +
-> +	return meson_sm_call(data->fw, SM_A1_WATCHDOG_OPS, NULL,
-> +			     MESON_SIP_WDT_SETTIMEOUT,
-> +			     wdt_dev->timeout * 1000, 0, 0, 0);
-> +}
-> +
-> +static unsigned int meson_sec_wdt_get_timeleft(struct watchdog_device *wdt_dev)
-> +{
-> +	int ret;
-> +	unsigned int timeleft;
-> +	struct meson_sec_wdt *data = watchdog_get_drvdata(wdt_dev);
-> +
-> +	ret = meson_sm_call(data->fw, SM_A1_WATCHDOG_OPS, &timeleft,
-> +			    MESON_SIP_WDT_GETTIMELEFT, 0, 0, 0, 0);
-> +
-> +	if (ret)
-> +		return 0;
-> +
-> +	return timeleft;
-> +}
-> +
-> +static const struct watchdog_ops meson_sec_wdt_ops = {
-> +	.start = meson_sec_wdt_start,
-> +	.stop = meson_sec_wdt_stop,
-> +	.ping = meson_sec_wdt_ping,
-> +	.set_timeout = meson_sec_wdt_set_timeout,
-> +	.get_timeleft = meson_sec_wdt_get_timeleft,
-> +};
-> +
-> +static const struct watchdog_info meson_sec_wdt_info = {
-> +	.identity = "Meson Secure Watchdog Timer",
-> +	.options = WDIOF_SETTIMEOUT | WDIOF_KEEPALIVEPING | WDIOF_MAGICCLOSE,
-> +};
-> +
-> +static int __maybe_unused meson_sec_wdt_resume(struct device *dev)
-> +{
-> +	struct meson_sec_wdt *data = dev_get_drvdata(dev);
-> +
-> +	if (watchdog_active(&data->wdt_dev))
-> +		return meson_sec_wdt_start(&data->wdt_dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused meson_sec_wdt_suspend(struct device *dev)
-> +{
-> +	struct meson_sec_wdt *data = dev_get_drvdata(dev);
-> +
-> +	if (watchdog_active(&data->wdt_dev))
-> +		return meson_sec_wdt_stop(&data->wdt_dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct dev_pm_ops meson_sec_wdt_pm_ops = {
-> +	SET_SYSTEM_SLEEP_PM_OPS(meson_sec_wdt_suspend, meson_sec_wdt_resume)
-> +};
-> +
-> +static const struct of_device_id meson_sec_wdt_dt_ids[] = {
-> +	 { .compatible = "amlogic,meson-sec-wdt", },
-> +	 { /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, meson_sec_wdt_dt_ids);
-> +
-> +static int meson_sec_wdt_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct meson_sec_wdt *data;
-> +	struct device_node *sm_np;
-> +	int ret;
-> +
-> +	data = devm_kzalloc(dev, sizeof(*data), GFP_KERNEL);
-> +	if (!data)
-> +		return -ENOMEM;
-> +
-> +	sm_np = of_find_compatible_node(NULL, NULL, "amlogic,meson-gxbb-sm");
-> +	if (!sm_np) {
-> +		dev_err(&pdev->dev, "no secure-monitor node\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	data->fw = meson_sm_get(sm_np);
-> +	of_node_put(sm_np);
-> +	if (!data->fw)
-> +		return -EPROBE_DEFER;
-> +
-> +	platform_set_drvdata(pdev, data);
-> +
-> +	data->wdt_dev.parent = dev;
-> +	data->wdt_dev.info = &meson_sec_wdt_info;
-> +	data->wdt_dev.ops = &meson_sec_wdt_ops;
-> +	data->wdt_dev.max_hw_heartbeat_ms = MAX_TIMEOUT_MS;
-> +	data->wdt_dev.min_timeout = 1;
-> +	data->wdt_dev.timeout = DEFAULT_TIMEOUT;
-> +	watchdog_set_drvdata(&data->wdt_dev, data);
-> +	watchdog_init_timeout(&data->wdt_dev, 0, dev);
-> +
-> +	ret = meson_sm_call(data->fw, SM_A1_WATCHDOG_OPS, NULL,
-> +			    MESON_SIP_WDT_INIT,
-> +			    data->wdt_dev.timeout * 1000, 0, 0, 0);
-> +	if (ret)
-> +		return ret;
-> +
-> +	watchdog_stop_on_reboot(&data->wdt_dev);
-> +
-> +	return devm_watchdog_register_device(dev, &data->wdt_dev);
-> +}
-> +
-> +static struct platform_driver meson_sec_wdt_driver = {
-> +	.probe	= meson_sec_wdt_probe,
-> +	.driver = {
-> +		.name = "meson-sec-wdt",
-> +		.pm = &meson_sec_wdt_pm_ops,
-> +		.of_match_table	= meson_sec_wdt_dt_ids,
-> +	},
-> +};
-> +
-> +module_platform_driver(meson_sec_wdt_driver);
-> +
-> +MODULE_AUTHOR("Xingyu Chen <xingyu.chen@amlogic.com>");
-> +MODULE_DESCRIPTION("Amlogic Secure Watchdog Timer Driver");
-> +MODULE_LICENSE("Dual MIT/GPL");
-> 
+The change to make the arm_scpi compatible with unidirectional mailbox
+controllers is attached to the end of this patch series. While it would
+be nice to get this merged too, I don't consider it a prerequisite to
+getting the driver merged. And even without the driver, the clock change
+(patch #1) can go in at any time.
+
+Thanks,
+Samuel
+
+Changes from v4:
+  - Rebased on sunxi-next
+  - Dropped AR100 clock patch, as it was controversial and unnecessary
+  - Renamed sunxi-msgbox to sun6i-msgbox and sun6i-a31-msgbox
+  - Added comments about not asserting the reset line
+  - Dropped A80 DTS changes as they were untested
+  - Added Ondrej's Tested-by for A83T
+  - Dropped the demo; replaced with a real arm_scpi fix
+
+Changes from v3:
+  - Rebased on sunxi-next
+  - Added Rob's Reviewed-by for patch 3
+  - Fixed a crash when receiving a message on a disabled channel
+  - Cleaned up some comments/formatting in the driver
+  - Fixed #mbox-cells in sunxi-h3-h5.dtsi (patch 7)
+  - Removed the irqchip example (no longer relevant to the fw design)
+  - Added a demo/example client that uses the driver and a toy firmware
+
+Changes from v2:
+  - Merge patches 1-3
+  - Add a comment in the code explaining the CLK_IS_CRITICAL usage
+  - Add a patch to mark the AR100 clocks as critical
+  - Use YAML for the device tree binding
+  - Include a not-for-merge example usage of the mailbox
+
+Changes from v1:
+  - Marked message box clocks as critical instead of hacks in the driver
+  - 8 unidirectional channels instead of 4 bidirectional pairs
+  - Use per-SoC compatible strings and an A31 fallback compatible
+  - Dropped the mailbox framework patch
+  - Include DT patches for SoCs that document the message box
+
+Samuel Holland (8):
+  clk: sunxi-ng: Mark msgbox clocks as critical
+  dt-bindings: mailbox: Add a sun6i message box binding
+  mailbox: sun6i-msgbox: Add a new mailbox driver
+  ARM: dts: sunxi: a83t: Add msgbox node
+  ARM: dts: sunxi: h3/h5: Add msgbox node
+  arm64: dts: allwinner: a64: Add msgbox node
+  arm64: dts: allwinner: h6: Add msgbox node
+  firmware: arm_scpi: Support unidirectional mailbox channels
+
+ .../mailbox/allwinner,sun6i-a31-msgbox.yaml   |  78 ++++
+ arch/arm/boot/dts/sun8i-a83t.dtsi             |  10 +
+ arch/arm/boot/dts/sunxi-h3-h5.dtsi            |  10 +
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi |  10 +
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  |  10 +
+ drivers/clk/sunxi-ng/ccu-sun50i-a64.c         |   3 +-
+ drivers/clk/sunxi-ng/ccu-sun50i-h6.c          |   3 +-
+ drivers/clk/sunxi-ng/ccu-sun8i-a23.c          |   3 +-
+ drivers/clk/sunxi-ng/ccu-sun8i-a33.c          |   3 +-
+ drivers/clk/sunxi-ng/ccu-sun8i-a83t.c         |   3 +-
+ drivers/clk/sunxi-ng/ccu-sun8i-h3.c           |   3 +-
+ drivers/clk/sunxi-ng/ccu-sun9i-a80.c          |   3 +-
+ drivers/firmware/arm_scpi.c                   |  58 ++-
+ drivers/mailbox/Kconfig                       |   9 +
+ drivers/mailbox/Makefile                      |   2 +
+ drivers/mailbox/sun6i-msgbox.c                | 332 ++++++++++++++++++
+ 16 files changed, 520 insertions(+), 19 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
+ create mode 100644 drivers/mailbox/sun6i-msgbox.c
+
+-- 
+2.23.0
 
 
 _______________________________________________
