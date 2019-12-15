@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A5A711F97A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 18:02:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C56D11F97C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 18:02:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D8IsWyrgHkVwqGPo0MvVRbtfEcID0iUO8Qoeibm/BOI=; b=lFYMuXti5sPGhr
-	c7H/IdPWnUI/yVjwUIzcsb8VHrdBxhMC8v3bs+G/KwdI+dEYBRWH2uV9Lj8qoL7YMZ8RwTbSSZI1e
-	Aq5FW9R3MIiazlkoare0315o3q+ROhd3bJ7zQCDWhfRZgohq8kSnnNrnEASDq1K9Icx4tH7N4RU5D
-	vfjVXU54JuwdAPBJ4vPXl3tyeMDkO0IaYXNXTqmYO17SDWzX2YZi6pVnU7vU4N60Czh5A4NvmZmqd
-	OglrYnottuG2MLeIqkmuJDFLyUmdyjAXxRnJuAf1o2Ui/369HUI9+yjBkGXbEHbWwfPw45zZkgYsb
-	ebjJpmnhF8BDbZa2pTUw==;
+	List-Owner; bh=G6A3dxwXsssyRZHkcxAEiMTlPuT1YIoP7zc5a/Rr3/0=; b=NDFHFvbx2zcbZH
+	5nw+rTKKXytkJtFTertzE3OmS+e7qG3yKYfJm7Wc/7GX/AcbWEEw4ofbI75xCOelwx0WQffEhypLt
+	uH5t+oOJ3R3sJQMoKLSNOaz9hRPFXWSrnGstdVKowH16EezoubXiaNcepgXWJeHTa3hqY3XcNqcDC
+	oBxdimKvbz990E9L0vSKi/wFUXYJAFDRVzgDfwGwE0k6PNZGGDwJTewZ16q1D+cT+olTU/TIJAq8I
+	PpYzfAg+GxdFaWSLwbuEkLpPuRcp2Q7jEGEW+0nyzqxudiUvUvjiaQ+DQ6MUhvosmoHomAH6IIXEY
+	6H7p2cVYYhe/yW8iLRAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igXHc-0000gg-1Q; Sun, 15 Dec 2019 17:02:16 +0000
+	id 1igXI6-0001AS-EI; Sun, 15 Dec 2019 17:02:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igXF3-0005ms-IB
+ id 1igXF1-0005lc-Sg
  for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 16:59:40 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9114D24682;
+ by mail.kernel.org (Postfix) with ESMTPSA id 8C57424679;
  Sun, 15 Dec 2019 16:59:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1576429171;
- bh=p2Yk04lSXEPWoex3Y1O8riiRlK5G3iH1Tys7J7+B3o8=;
+ bh=h33d693tSXLso9w3yXgPuTbnms8ia3M5JIWMSCbNBnE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=LUPNYD1OWdsrcYwcbkmcQkooPutjW5PbLh2mVYdomXCucnPWv3+MNCkcBv/slwdR+
- xd06MXKjknUg224R+4jO5D97MX/f7tw07Mst6kGuUBCIHJbaSoRAt8vLNj+iECTyyX
- jSrik9KNfNdc16z8O53hBYQX22RjcQafO4lVD0fs=
+ b=iRsFDfp5dTCdd8hdfb7DRsrAhuVj+MbDM6yDZ4TkQLjmR183GI2NhsimxlOkuld0l
+ lH0YUZBtbTWtQ5bFj6cEr5Is0L7icYgGC3qZiFbLKecUsQht57C6WsG6Dm1djuqBA1
+ ry+oYgAq/HPx0ms2JPnZEBar9La4Kb4P63emA+ig=
 Received: by wens.tw (Postfix, from userid 1000)
- id 7FE985FF5A; Mon, 16 Dec 2019 00:59:26 +0800 (CST)
+ id 84BFD5FF75; Mon, 16 Dec 2019 00:59:26 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <mripard@kernel.org>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 11/14] ARM: dts: sun8i: r40: Add device node for CSI0
-Date: Mon, 16 Dec 2019 00:59:21 +0800
-Message-Id: <20191215165924.28314-12-wens@kernel.org>
+Subject: [PATCH 12/14] [DO NOT MERGE] ARM: dts: sun4i: cubieboard: Enable
+ OV7670 camera on CSI1
+Date: Mon, 16 Dec 2019 00:59:22 +0800
+Message-Id: <20191215165924.28314-13-wens@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191215165924.28314-1-wens@kernel.org>
 References: <20191215165924.28314-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_085937_645769_4296F082 
-X-CRM114-Status: GOOD (  11.31  )
+X-CRM114-CacheID: sfid-20191215_085935_982219_0E73AB45 
+X-CRM114-Status: GOOD (  12.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,78 +91,80 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-The CSI0 and CSI1 blocks are the same as found on the A20. However only
-CSI0 is supported upstream right now.
+The Cubieboard has CSI1 pins exposed on one of its GPIO headers.
+Combined with I2C1 on the same header, a connected OV7670 based
+camera module can be used. Power is provided via the 5V rail on
+the same header. The module has onboard LDOs for the sensor's
+various power rails.
 
-Add a device node for CSI0 using the A20 compatible as a fallback, and
-the standard pinctrl options. Also add the MBUS interconnect.
+Add a device node for the sensor, enable CSI1 and I2C1, and hook
+everything up.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- arch/arm/boot/dts/sun8i-r40.dtsi | 36 ++++++++++++++++++++++++++++++++
- 1 file changed, 36 insertions(+)
+ arch/arm/boot/dts/sun4i-a10-cubieboard.dts | 42 ++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
-index 82ea0b5b0710..2d1e97cc4155 100644
---- a/arch/arm/boot/dts/sun8i-r40.dtsi
-+++ b/arch/arm/boot/dts/sun8i-r40.dtsi
-@@ -180,6 +180,20 @@ nmi_intc: interrupt-controller@1c00030 {
- 			interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
- 		};
+diff --git a/arch/arm/boot/dts/sun4i-a10-cubieboard.dts b/arch/arm/boot/dts/sun4i-a10-cubieboard.dts
+index 6ca02e824acc..29bfec8fad5b 100644
+--- a/arch/arm/boot/dts/sun4i-a10-cubieboard.dts
++++ b/arch/arm/boot/dts/sun4i-a10-cubieboard.dts
+@@ -101,6 +101,25 @@ &cpu0 {
+ 	cpu-supply = <&reg_dcdc2>;
+ };
  
-+		csi0: csi@1c09000 {
-+			compatible = "allwinner,sun8i-r40-csi0",
-+				     "allwinner,sun7i-a20-csi0";
-+			reg = <0x01c09000 0x1000>;
-+			interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_CSI0>, <&ccu CLK_CSI_SCLK>,
-+				 <&ccu CLK_DRAM_CSI0>;
-+			clock-names = "bus", "isp", "ram";
-+			resets = <&ccu RST_BUS_CSI0>;
-+			interconnects = <&mbus 5>;
-+			interconnect-names = "dma-mem";
-+			status = "disabled";
++&csi1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&csi1_8bits_pg_pins>;
++	status = "okay";
++
++	port {
++		/* Parallel bus endpoint */
++		csi_from_ov7670: endpoint {
++			remote-endpoint = <&ov7670_to_csi>;
++			bus-width = <8>;
++			/* driver is broken */
++			hsync-active = <0>; /* Active high */
++			vsync-active = <1>; /* Active high */
++			data-active = <1>;  /* Active high */
++			pclk-sample = <1>;  /* Rising */
 +		};
++	};
++};
 +
- 		mmc0: mmc@1c0f000 {
- 			compatible = "allwinner,sun8i-r40-mmc",
- 				     "allwinner,sun50i-a64-mmc";
-@@ -355,6 +369,20 @@ clk_out_a_pin: clk-out-a-pin {
- 				function = "clk_out_a";
- 			};
+ &de {
+ 	status = "okay";
+ };
+@@ -143,6 +162,29 @@ axp209: pmic@34 {
  
-+			/omit-if-no-ref/
-+			csi0_8bits_pins: csi0-8bits-pins {
-+				pins = "PE0", "PE2", "PE3", "PE4", "PE5",
-+				       "PE6", "PE7", "PE8", "PE9", "PE10",
-+				       "PE11";
-+				function = "csi0";
-+			};
+ &i2c1 {
+ 	status = "okay";
 +
-+			/omit-if-no-ref/
-+			csi0_mclk_pin: csi0-mclk-pin {
-+				pins = "PE1";
-+				function = "csi0";
-+			};
++	ov7670: camera@21 {
++		compatible = "ovti,ov7670";
++		reg = <0x21>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&csi1_clk_pg_pin>;
++		clocks = <&ccu CLK_CSI1>;
++		clock-names = "xclk";
 +
- 			gmac_rgmii_pins: gmac-rgmii-pins {
- 				pins = "PA0", "PA1", "PA2", "PA3",
- 				       "PA4", "PA5", "PA6", "PA7",
-@@ -624,6 +652,14 @@ gmac_mdio: mdio {
- 			};
- 		};
- 
-+		mbus: dram-controller@1c62000 {
-+			compatible = "allwinner,sun8i-r40-mbus";
-+			reg = <0x01c62000 0x1000>;
-+			clocks = <&ccu 155>;
-+			dma-ranges = <0x00000000 0x40000000 0x80000000>;
-+			#interconnect-cells = <1>;
++		reset-gpios = <&pio 7 14 GPIO_ACTIVE_LOW>; /* PH14 */
++		powerdown-gpios = <&pio 7 15 GPIO_ACTIVE_HIGH>; /* PH15 */
++
++		port {
++			ov7670_to_csi: endpoint {
++				remote-endpoint = <&csi_from_ov7670>;
++				bus-width = <8>;
++				hsync-active = <1>; /* Active high */
++				vsync-active = <1>; /* Active high */
++				data-active = <1>;  /* Active high */
++				pclk-sample = <1>;  /* Rising */
++			};
 +		};
-+
- 		tcon_top: tcon-top@1c70000 {
- 			compatible = "allwinner,sun8i-r40-tcon-top";
- 			reg = <0x01c70000 0x1000>;
++	};
+ };
+ 
+ &ir0 {
 -- 
 2.24.0
 
