@@ -2,87 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED56011FB52
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 22:02:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09A4811FB59
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 22:05:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tgeWvwKifZOwJhlwO/4Is7HnOioZcMixFocIfmZ6y2w=; b=t/F/sC8sP1tv9F
-	xabMIm5irFXBPXYVFgxkgg7JC6zOQR5bWFfGF8tQ9NIyNns270PMUCmKFly/wZoProoMFI+hTjVY+
-	uFVYnYQ5qGKowQjsXoyO1q4udJg7jWTaWYSCvOcRD1AoEQbpU06FXkipYMmVMfq1Cih4USO+1GIaE
-	DjucHK0aTI4Zogsv7m6UdvZC4fq304AJJUVINrP6S08dfaRe6Ou7H78q+h54sENEEq2NEZB+P2jru
-	w6HakD3ysxqVpvkhDV7OD4qavMxeie0mNT4hx36xPPVQk7yRoPmIkhWz1eG6HSJ/ZXMfbw7M01tsA
-	TKFUlDAAfKQDICqU/+QA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=w4J/uybM6nvxqp/qFarrdkbiY41ir4FvG+AI1kDyZCI=; b=kTsHwO3h2kKnIt
+	TtIiqeA57JrIdvfrTddsxpUwpBDzqfLPlVMSMnAIpD/WbMy3x/GJ+UttsgJBZrlFnu0G7IDVaC/Bt
+	SixEatXqkuAZiQNDLSieI9+QEzrARQtKIUtRJwvzKpr+v6a4tYnOBULbDkco+guiIFf2sx4MdVobj
+	qL5JGD5MyFfPMpmcFEojaUOBX9kQD9YWS5U0ci2Csp3sMjcr0C8mhL1m47VfJ4CUBOly8dydVipo7
+	VVZlMOBbevrjEQYUZ2aGXDK3oPWPIDmWkcE04KjEMVRjyRuS5DtVkNih9A+TIHhg+ZVWgHkIGkP7T
+	mVKMApKt8OPz3vmrFIPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igb2H-00082J-TR; Sun, 15 Dec 2019 21:02:41 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1igb5Q-0001Pb-Uh; Sun, 15 Dec 2019 21:05:56 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igb1r-0007nS-KR; Sun, 15 Dec 2019 21:02:16 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z3so4825952wru.3;
- Sun, 15 Dec 2019 13:02:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=5gHIa9kqk84t33T9/NR0KW4i+WbdOUW3zGPJ6/IWE5o=;
- b=EdMEfomij+fA1v4b/Yor6lscI3NPOuQmskR5Fr1gAOqyq5dbnCqVnM4yIIEtgkWAku
- EW4kz6sHZIwfrf/X1Y/uXzcuWcaS/m5ukjlM+f0sPTwKyWthLe5RKObOyDdacAoQ6iOV
- jDBbUqupMO0Bk+5UwEw4vCAI7QrBxmfjOp3n5KHnUkRmMhS99a+slIp74029MYHP8zmk
- R05TuKtLVIJwPF5FRrhw1XJF301yoURMYqgtBvsCAVGcpxlgBMBSjVjTZuywFsSuIDxj
- f6DfoCT7iZM+pVHl6DIQr3qo3nxoKCL4LTvc3a5AfroEXdwPs8TW7A0eKfsf8swGHYHn
- 9qSQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=5gHIa9kqk84t33T9/NR0KW4i+WbdOUW3zGPJ6/IWE5o=;
- b=L+G/3MIiDL0zbwDmKisy2EqF0OVW3fjGbxdwSCf3DjAFO350OJz+/Bhpbj7b/akJjl
- U2SCsQwguN2PoGco57rzfD8t0I6EqsSU5VOL69e3oTdI+M3ExkXWC7zfI/XPmLBRJ4Yz
- G8armfH2QbWUGlwZ2Un0ErZXDVa4lo0MQTpC3ndHzGKcWkP24IrDP7pcJK8oaCeWYLNz
- fVbaK2QhxYhvRwt04dzwVrMrDwQIztWmNLbnZMmjaej6QCesZY1tmMoYKI3X5QIt0nxB
- Zowm/jLRcQgoAs9gPRtVioXqLcgVg0HiT+OI5odhhIcNplPAfVUvfAxFy9Tqj4XYXsbX
- 3OWA==
-X-Gm-Message-State: APjAAAWqlqztgogbKB+qlYZULL9z3NMDKW7q9yxOuaoMyqVl48C53/n1
- u2M4UpFa9ELZaeb5aPdwCY7SWoIh
-X-Google-Smtp-Source: APXvYqwgM/b7u1mLXpFZdVCEUisopxkubQb3HOxGH/WKnOjGP69jUA3GLe0OxIjfyI4giLcKZXVjTA==
-X-Received: by 2002:a5d:6211:: with SMTP id y17mr26014162wru.344.1576443733657; 
- Sun, 15 Dec 2019 13:02:13 -0800 (PST)
-Received: from localhost.localdomain
- (p200300F1370FCC00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:370f:cc00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id f1sm19565645wrp.93.2019.12.15.13.02.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 15 Dec 2019 13:02:13 -0800 (PST)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: linux-amlogic@lists.infradead.org, jbrunet@baylibre.com,
- narmstrong@baylibre.com
-Subject: [PATCH 1/1] clk: meson: meson8b: make the CCF use the glitch-free
- "mali" mux
-Date: Sun, 15 Dec 2019 22:01:53 +0100
-Message-Id: <20191215210153.1449067-2-martin.blumenstingl@googlemail.com>
+ id 1igb55-0001Ft-Np
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 21:05:37 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 45370891AC;
+ Mon, 16 Dec 2019 10:05:10 +1300 (NZDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1576443910;
+ bh=B17L/LC4Pm0ZcN7G12j2beHk5JASujxIbHNMPhRgl64=;
+ h=From:To:Cc:Subject:Date;
+ b=h3oNptCS2SIfUEpx6WYwTtiiUZ0KYLmQguQZVc3yEQliYop243eVFsFcMZBKu/sIT
+ J553w0r8YXSQzXpsAHGMN/QYrif4oFwYFuyrVKvDspZHv54KL1Y82/utiFKicyCP1N
+ r8nojL2SUIBOGa1TJe1UjGzoaza5dy0KUF3Nxbf+Oj8jLtiNamGmcBo5xCMNm6421K
+ Xbr1mX1NWiFgu+VP4APTslcLpo6qhRBhlgreWxTyUM0/3Q5eLTbfQlJsQcfbIrHHYc
+ Dkmyr2ylnYLVw00i/N0+Dfqlpvm/7LXy2QtF+i5Gp2Fcxfx0xBiJ4gVa5VYOLxm2Gs
+ kiaPJkKWuJ6vA==
+Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
+ Trustwave SEG (v7, 5, 8, 10121)
+ id <B5df6a0060000>; Mon, 16 Dec 2019 10:05:10 +1300
+Received: from hamishm-dl.ws.atlnz.lc (hamishm-dl.ws.atlnz.lc [10.33.24.30])
+ by smtp (Postfix) with ESMTP id 49F4D13EEA8;
+ Mon, 16 Dec 2019 10:05:07 +1300 (NZDT)
+Received: by hamishm-dl.ws.atlnz.lc (Postfix, from userid 1133)
+ id 0F54F540430; Mon, 16 Dec 2019 10:05:10 +1300 (NZDT)
+From: Hamish Martin <hamish.martin@alliedtelesis.co.nz>
+To: linus.walleij@linaro.org,
+	rjui@broadcom.com,
+	sbranden@broadcom.com
+Subject: [PATCH v2 0/1] pinctrl: iproc: Fix level interrupt handling
+Date: Mon, 16 Dec 2019 10:05:02 +1300
+Message-Id: <20191215210503.15488-1-hamish.martin@alliedtelesis.co.nz>
 X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20191215210153.1449067-1-martin.blumenstingl@googlemail.com>
-References: <20191215210153.1449067-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
+x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_130215_665939_8FC5B0C5 
-X-CRM114-Status: GOOD (  13.41  )
+X-CRM114-CacheID: sfid-20191215_130536_128046_E08EF239 
+X-CRM114-Status: UNSURE (   7.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [202.36.163.20 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -101,50 +87,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-gpio@vger.kernel.org,
+ Hamish Martin <hamish.martin@alliedtelesis.co.nz>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Mali clock tree should not be updated while the clock is running.
-Enforce this by setting CLK_SET_RATE_GATE on the "mali_0" and "mali_1"
-gates. This makes the CCF switch to the "mali_1" tree when "mali_0" is
-currently active and vice versa which is exactly what the vendor driver
-does when updating the frequency of the mali clock.
+An issue is seen on the BCM56060 SoC using the pinctrl-iproc-gpio.c driver
+for one of its GPIO blocks.
+When a GPIO on this block is used as a level sensitive interrupt the
+downstream handler is not invoked until the level returns to its previous
+(non-interrupting) state. This makes the level sensitive interrupts
+unusable. Edge sensitive interrupts are not affected.
 
-This fixes a potential hang when changing the GPU frequency at runtime.
+The fix is to simply ensure that we use a more appropriate handler
+(handle_level_irq) for the interrupt based on what trigger type has been
+configured.
+Similar setting of the handler is done in numerous other drivers.
 
-Fixes: 74e1f2521f16ff ("clk: meson: meson8b: add the GPU clock tree")
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- drivers/clk/meson/meson8b.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+v2: Fixes for Ray Jui's review comments.
 
-diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
-index 3408297bff65..6b13084eebf5 100644
---- a/drivers/clk/meson/meson8b.c
-+++ b/drivers/clk/meson/meson8b.c
-@@ -1838,7 +1838,7 @@ static struct clk_regmap meson8b_mali_0 = {
- 			&meson8b_mali_0_div.hw
- 		},
- 		.num_parents = 1,
--		.flags = CLK_SET_RATE_PARENT,
-+		.flags = CLK_SET_RATE_GATE | CLK_SET_RATE_PARENT,
- 	},
- };
- 
-@@ -1893,7 +1893,7 @@ static struct clk_regmap meson8b_mali_1 = {
- 			&meson8b_mali_1_div.hw
- 		},
- 		.num_parents = 1,
--		.flags = CLK_SET_RATE_PARENT,
-+		.flags = CLK_SET_RATE_GATE | CLK_SET_RATE_PARENT,
- 	},
- };
- 
+Hamish Martin (1):
+  pinctrl: iproc: Set irq handler based on trig type
+
+ drivers/pinctrl/bcm/pinctrl-iproc-gpio.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
 -- 
 2.24.1
 
