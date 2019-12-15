@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C56D11F97C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 18:02:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FF7511F97E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Dec 2019 18:03:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G6A3dxwXsssyRZHkcxAEiMTlPuT1YIoP7zc5a/Rr3/0=; b=NDFHFvbx2zcbZH
-	5nw+rTKKXytkJtFTertzE3OmS+e7qG3yKYfJm7Wc/7GX/AcbWEEw4ofbI75xCOelwx0WQffEhypLt
-	uH5t+oOJ3R3sJQMoKLSNOaz9hRPFXWSrnGstdVKowH16EezoubXiaNcepgXWJeHTa3hqY3XcNqcDC
-	oBxdimKvbz990E9L0vSKi/wFUXYJAFDRVzgDfwGwE0k6PNZGGDwJTewZ16q1D+cT+olTU/TIJAq8I
-	PpYzfAg+GxdFaWSLwbuEkLpPuRcp2Q7jEGEW+0nyzqxudiUvUvjiaQ+DQ6MUhvosmoHomAH6IIXEY
-	6H7p2cVYYhe/yW8iLRAw==;
+	List-Owner; bh=c0hVKnf0fQboyvajNR/ljRGU8ER3UOYFd78aIfk4LJM=; b=Jro/Xbr1dLpxSZ
+	Ti3XeDQA4cypbbefzf0/mQj9f6vZigD0d5jR1VUWH60S2N2Cbx5Fvw7TxwE4IyUGHnl6DQpCc/yB9
+	LmJXmfW5e5cMMF3OVhWDzeI/eAePIXSEKqATFGnwzhO5WnXJlFo1pb2DcUHLAiJZLnOGfBTrgDOEL
+	e5Sg8mYAs0p22XW5k76pWX1WVUrOUOmF06ZGTBlosyp01JggrTPxw5ClF2rOWb/NneS7NjFtZignH
+	uNQqmYqN6srWcSPJ6z2SppfHvyQIGAnjmIgYygmQq4jzIJHAeHRnavquXJ0ODa+4gAYL1dDjzzGLc
+	cXzz2K88ylFPwfL6hZNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igXI6-0001AS-EI; Sun, 15 Dec 2019 17:02:46 +0000
+	id 1igXIL-0001PU-2l; Sun, 15 Dec 2019 17:03:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igXF1-0005lc-Sg
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 16:59:40 +0000
+ id 1igXF4-0005ng-7n
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Dec 2019 16:59:42 +0000
 Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8C57424679;
+ by mail.kernel.org (Postfix) with ESMTPSA id CE86424698;
  Sun, 15 Dec 2019 16:59:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576429171;
- bh=h33d693tSXLso9w3yXgPuTbnms8ia3M5JIWMSCbNBnE=;
+ s=default; t=1576429172;
+ bh=54k6tl/u+QN8VRT7KToMNhJCWuLH8xcLwdQidKHpf5M=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=iRsFDfp5dTCdd8hdfb7DRsrAhuVj+MbDM6yDZ4TkQLjmR183GI2NhsimxlOkuld0l
- lH0YUZBtbTWtQ5bFj6cEr5Is0L7icYgGC3qZiFbLKecUsQht57C6WsG6Dm1djuqBA1
- ry+oYgAq/HPx0ms2JPnZEBar9La4Kb4P63emA+ig=
+ b=yJz3Qqq0Q0L+/eAbbBSro1dsvZOsx30HJMSOdbCZgixRkCAA1aW+GvmImMQAkNME6
+ v7HDFCqqnW1x1tBZ2mIzzClD/ylIks9DAcDijQO+qJjLJfCv2ibQ0+JH2L/PwdBz/x
+ Hcobms1QGKlvXiZ1HZgf24G0yPx9umflyAGW5WsI=
 Received: by wens.tw (Postfix, from userid 1000)
- id 84BFD5FF75; Mon, 16 Dec 2019 00:59:26 +0800 (CST)
+ id 918F95FFE9; Mon, 16 Dec 2019 00:59:26 +0800 (CST)
 From: Chen-Yu Tsai <wens@kernel.org>
 To: Maxime Ripard <mripard@kernel.org>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  Sakari Ailus <sakari.ailus@linux.intel.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 12/14] [DO NOT MERGE] ARM: dts: sun4i: cubieboard: Enable
+Subject: [PATCH 13/14] [DO NOT MERGE] ARM: dts: sun7i: cubieboard2: Enable
  OV7670 camera on CSI1
-Date: Mon, 16 Dec 2019 00:59:22 +0800
-Message-Id: <20191215165924.28314-13-wens@kernel.org>
+Date: Mon, 16 Dec 2019 00:59:23 +0800
+Message-Id: <20191215165924.28314-14-wens@kernel.org>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191215165924.28314-1-wens@kernel.org>
 References: <20191215165924.28314-1-wens@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_085935_982219_0E73AB45 
-X-CRM114-Status: GOOD (  12.39  )
+X-CRM114-CacheID: sfid-20191215_085938_349461_B0A711B2 
+X-CRM114-Status: GOOD (  12.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-The Cubieboard has CSI1 pins exposed on one of its GPIO headers.
+The Cubieboard2 has CSI1 pins exposed on one of its GPIO headers.
 Combined with I2C1 on the same header, a connected OV7670 based
 camera module can be used. Power is provided via the 5V rail on
 the same header. The module has onboard LDOs for the sensor's
@@ -102,14 +102,14 @@ everything up.
 
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 ---
- arch/arm/boot/dts/sun4i-a10-cubieboard.dts | 42 ++++++++++++++++++++++
+ arch/arm/boot/dts/sun7i-a20-cubieboard2.dts | 42 +++++++++++++++++++++
  1 file changed, 42 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sun4i-a10-cubieboard.dts b/arch/arm/boot/dts/sun4i-a10-cubieboard.dts
-index 6ca02e824acc..29bfec8fad5b 100644
---- a/arch/arm/boot/dts/sun4i-a10-cubieboard.dts
-+++ b/arch/arm/boot/dts/sun4i-a10-cubieboard.dts
-@@ -101,6 +101,25 @@ &cpu0 {
+diff --git a/arch/arm/boot/dts/sun7i-a20-cubieboard2.dts b/arch/arm/boot/dts/sun7i-a20-cubieboard2.dts
+index b8203e4ef21c..0ff1593041eb 100644
+--- a/arch/arm/boot/dts/sun7i-a20-cubieboard2.dts
++++ b/arch/arm/boot/dts/sun7i-a20-cubieboard2.dts
+@@ -100,6 +100,25 @@ &cpu0 {
  	cpu-supply = <&reg_dcdc2>;
  };
  
@@ -135,7 +135,7 @@ index 6ca02e824acc..29bfec8fad5b 100644
  &de {
  	status = "okay";
  };
-@@ -143,6 +162,29 @@ axp209: pmic@34 {
+@@ -142,6 +161,29 @@ axp209: pmic@34 {
  
  &i2c1 {
  	status = "okay";
