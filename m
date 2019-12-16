@@ -2,95 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7024511FCE0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 03:27:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7D3611FCF9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 03:47:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4JoBw+cr5DJ9FsQjLnObcjbVEjVaE/xLJ574BFYf0Hg=; b=LEghbsjQgl9EbP
-	FdTUOxW9hmGhZsvXz49/DNx7SZ9a3Byl4/QdTLyKetrzTq7PkBy6/XoJWRxSspUHzHwHRiGudSDqH
-	9Md40amBM+7vRmdjale3jg3niYDjwOFNkQFVrRz1z3fqn5ZuiH+isyq5U+/ZoqcpuVj7mvSxUU9Eh
-	Q5qAUEvHtQdqhFLFKgNeNflb+X9jrKTJwf1d83VdQtESbjijgZetSw8VT16rQESwrNwLA1agw7ViU
-	SMbJQ1Yn1GGMDkIdEAa8JoBjGDExEqvHzXMHAIVgLWUYSDGcihTtIiRp1B2UBxG4jxGrxK+65VEY3
-	PE9yTOOm91vXuG46oh8Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tgtwYN6+q7oFi6XhdR1MBg2485TfyGRfxJl1G8PBBAs=; b=oymSq+vT4WcE+EsGXpgp5JyIk
+	rhKmpTQLtXLxHse89BnQ6nXXMzYuhRVQUWk3BQ12HDsliLZhN7jefWUlM845bF3vC62GrISXdh5wJ
+	aQmStWMlvG1PxaFbXOtpAEP44pJBkeJM5c7SxzO+ZJaA+eC9CJo8nyqOvKq4yIkyveubYODcprtSl
+	o8KliM7lZbnUlhkMsnUob3U8MerCOSQi4SgRD+FbLmfN2SrNDXtHP0cSbBu6ccd14V3OFjLNbf++d
+	En9ZX945N0ZfY5OhD+CqWxrx15mQgE3ZlNhkgprppuoNzOLjN5rDLhsP+RA3rYVqzLXt2cctF+qKu
+	Qddebpw6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igg6e-0005qs-IX; Mon, 16 Dec 2019 02:27:32 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1iggQG-0003WB-2H; Mon, 16 Dec 2019 02:47:48 +0000
+Received: from lucky1.263xmail.com ([211.157.147.132])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igg5h-0005DJ-BF
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 02:26:35 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 586176C38;
- Sun, 15 Dec 2019 21:26:32 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Sun, 15 Dec 2019 21:26:32 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm1; bh=qVRwiUxnW9dUO
- PGmtU73LvlGD9psrupWjkCbHXotvZE=; b=dmUcTTuAEC2klN6w3zuYrdHlIlTqp
- iAVFwjqZbv4VRvn6wQekWM7aVc/Qg28zDmJXZTPlUnbW39Y8cr52ZP1y7a3nxUWl
- dJ6XVhOzdW4jwouGhTkP/846PprfAB3wCBLFe2mSrYObyD9fPKktbXcnPuEJW2c/
- MttfRtlL8ebJfqK6Dr3vbFHDJf/wPq6pPx3oEcE+Gvug5jKZG96vM2jOhVcXtaPP
- oISPdIMI73C2NFZt+RAwB2KNcOrC+FCWXNvOMj4JBsvqte6O/FxrYgFW7c2T09cD
- ES2ixdKfOTVX+91aP9VqloW/Wk8HUslgVnZwrGVKOxGk+o8Hj5ud65RWQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm1; bh=qVRwiUxnW9dUOPGmtU73LvlGD9psrupWjkCbHXotvZE=; b=rY1aoygr
- Nzb7UXWKrZBo16WF6yyELlS6E/yUquzSBetuXix0aXiAog4jvnFrPHOlOd18xjxl
- OYvB3ZW1mVPPrT9YV18hhX9GAqs1qMcPbK99agMAaf7TM0cT7kGVY6JFImhGpjmh
- D8PsitEh0eNuUx2mCJul7VoU8z0jI0VgTuSHv5k9NQBRgHIAmVxtejXxfa7IBeyj
- iNzbxNdwttJ5RfmB94lImuEZeG2ViI5/Q40H55P7GvYIYKTFrAxMhEU7BGBZqCPI
- pOpMZmADbwJnAKVcTvgfJb5fv8JUymcfGabQkhYt6zNsKrDZfguxRV8tYXgc7q8a
- zzK1JKl1TrJnNw==
-X-ME-Sender: <xms:WOv2XVKoFX6nK60Ldsy8703KTxMIk2t0C0sd-KN5ckWDiKc1zcIcDQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddtgedggeehucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgjfhgggfestdekre
- dtredttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegr
- jhdrihgurdgruheqnecukfhppedvtddvrdekuddrudekrdeftdenucfrrghrrghmpehmrg
- hilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhiiigv
- pedv
-X-ME-Proxy: <xmx:WOv2XfGf5JPFWDa5UQ62ujBNTrPYcGkmeX7juLBbGZBCkDD1ZI9sIg>
- <xmx:WOv2XVQd_bkdy8Z_8LwT-oYLY2q6n5qhlONOMtdCVnuvmv1-TffodA>
- <xmx:WOv2XTHgJhiH0OUqk4hFmKS2BNZIkHBjeMM-SYXrVDyYKOBsoUrzow>
- <xmx:WOv2XRB5Q3_VEIQsfiJ3zy9VrrfXxNytUXLv5B9ljd5jUsnIthJXRQ>
-Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
- by mail.messagingengine.com (Postfix) with ESMTPA id CAB118005B;
- Sun, 15 Dec 2019 21:26:27 -0500 (EST)
-From: Andrew Jeffery <andrew@aj.id.au>
-To: openipmi-developer@lists.sourceforge.net
-Subject: [PATCH v2 3/3] ipmi: kcs: aspeed: Implement v2 bindings
-Date: Mon, 16 Dec 2019 12:57:42 +1030
-Message-Id: <01ef3787e9ddaa9d87cfd55a2ac793053b5a69de.1576462051.git-series.andrew@aj.id.au>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <cover.fe20dfec1a7c91771c6bb574814ffb4bb49e2136.1576462051.git-series.andrew@aj.id.au>
-References: <cover.fe20dfec1a7c91771c6bb574814ffb4bb49e2136.1576462051.git-series.andrew@aj.id.au>
+ id 1iggQ5-0003Va-Bt; Mon, 16 Dec 2019 02:47:40 +0000
+Received: from localhost (unknown [192.168.167.209])
+ by lucky1.263xmail.com (Postfix) with ESMTP id 2FE5D84C50;
+ Mon, 16 Dec 2019 10:47:27 +0800 (CST)
+X-MAIL-GRAY: 1
+X-MAIL-DELIVERY: 0
+X-ADDR-CHECKED4: 1
+X-ANTISPAM-LEVEL: 2
+X-SKE-CHECKED: 1
+X-ABS-CHECKED: 1
+Received: from [172.16.12.170] (unknown [58.22.7.114])
+ by smtp.263.net (postfix) whith ESMTP id
+ P24116T140398768936704S1576464445264821_; 
+ Mon, 16 Dec 2019 10:47:26 +0800 (CST)
+X-IP-DOMAINF: 1
+X-UNIQUE-TAG: <3817e914a77aac289a66aebb2ed1ce78>
+X-RL-SENDER: andy.yan@rock-chips.com
+X-SENDER: yxj@rock-chips.com
+X-LOGIN-NAME: andy.yan@rock-chips.com
+X-FST-TO: linux-kernel@vger.kernel.org
+X-SENDER-IP: 58.22.7.114
+X-ATTACHMENT-NUM: 0
+X-DNS-TYPE: 0
+Subject: Re: [PATCH] arm64: dts: rockchip: add ROCK Pi S DTS support
+To: Akash Gajjar <akash@openedev.com>, heiko@sntech.de
+References: <20191215173318.16385-1-akash@openedev.com>
+From: Andy Yan <andy.yan@rock-chips.com>
+Message-ID: <ad08cf78-b1e0-debc-e21d-92657b0f9723@rock-chips.com>
+Date: Mon, 16 Dec 2019 10:47:25 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
+In-Reply-To: <20191215173318.16385-1-akash@openedev.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_182633_556398_1F52964C 
-X-CRM114-Status: GOOD (  14.43  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191215_184737_870858_A03BCE89 
+X-CRM114-Status: GOOD (  22.39  )
+X-Spam-Score: 1.5 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [211.157.147.132 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [58.22.7.114 listed in dnsbl.sorbs.net]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,230 +80,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, minyard@acm.org,
- arnd@arndb.de, gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- linux-aspeed@lists.ozlabs.org, robh+dt@kernel.org, joel@jms.id.au,
- haiyue.wang@linux.intel.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ jagan@openedev.com, Douglas Anderson <dianders@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Nick Xie <nick@khadas.com>,
+ Robin Murphy <robin.murphy@arm.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Vivek Unune <npcomplete13@gmail.com>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The v2 bindings allow us to extract the resources from the devicetree.
-The table in the driver is retained to derive the channel index, which
-removes the need for kcs_chan property from the v1 bindings. The v2
-bindings allow us to reduce the number of warnings generated by the
-existing devicetree nodes.
-
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-Reviewed-by: Joel Stanley <joel@jms.id.au>
-Reviewed-by: Haiyue Wang <haiyue.wang@linux.intel.com>
----
-v2: Use aspeed,lpc-io-reg based on the updated binding
-
- drivers/char/ipmi/kcs_bmc_aspeed.c | 144 +++++++++++++++++++++++++-----
- 1 file changed, 121 insertions(+), 23 deletions(-)
-
-diff --git a/drivers/char/ipmi/kcs_bmc_aspeed.c b/drivers/char/ipmi/kcs_bmc_aspeed.c
-index e3dd09022589..9422d55a0476 100644
---- a/drivers/char/ipmi/kcs_bmc_aspeed.c
-+++ b/drivers/char/ipmi/kcs_bmc_aspeed.c
-@@ -12,6 +12,7 @@
- #include <linux/mfd/syscon.h>
- #include <linux/module.h>
- #include <linux/of.h>
-+#include <linux/of_address.h>
- #include <linux/platform_device.h>
- #include <linux/poll.h>
- #include <linux/regmap.h>
-@@ -233,38 +234,133 @@ static const struct kcs_ioreg ast_kcs_bmc_ioregs[KCS_CHANNEL_MAX] = {
- 	{ .idr = LPC_IDR4, .odr = LPC_ODR4, .str = LPC_STR4 },
- };
- 
--static int aspeed_kcs_probe(struct platform_device *pdev)
-+static struct kcs_bmc *aspeed_kcs_probe_of_v1(struct platform_device *pdev)
- {
--	struct device *dev = &pdev->dev;
- 	struct aspeed_kcs_bmc *priv;
--	struct kcs_bmc *kcs_bmc;
--	u32 chan, addr;
-+	struct device_node *np;
-+	struct kcs_bmc *kcs;
-+	u32 channel;
-+	u32 slave;
- 	int rc;
- 
--	rc = of_property_read_u32(dev->of_node, "kcs_chan", &chan);
--	if ((rc != 0) || (chan == 0 || chan > KCS_CHANNEL_MAX)) {
--		dev_err(dev, "no valid 'kcs_chan' configured\n");
--		return -ENODEV;
-+	np = pdev->dev.of_node;
-+
-+	rc = of_property_read_u32(np, "kcs_chan", &channel);
-+	if ((rc != 0) || (channel == 0 || channel > KCS_CHANNEL_MAX)) {
-+		dev_err(&pdev->dev, "no valid 'kcs_chan' configured\n");
-+		return ERR_PTR(-EINVAL);
- 	}
- 
--	rc = of_property_read_u32(dev->of_node, "kcs_addr", &addr);
-+	kcs = kcs_bmc_alloc(&pdev->dev, sizeof(struct aspeed_kcs_bmc), channel);
-+	if (!kcs)
-+		return ERR_PTR(-ENOMEM);
-+
-+	priv = kcs_bmc_priv(kcs);
-+	priv->map = syscon_node_to_regmap(pdev->dev.parent->of_node);
-+	if (IS_ERR(priv->map)) {
-+		dev_err(&pdev->dev, "Couldn't get regmap\n");
-+		return ERR_PTR(-ENODEV);
-+	}
-+
-+	rc = of_property_read_u32(np, "kcs_addr", &slave);
- 	if (rc) {
--		dev_err(dev, "no valid 'kcs_addr' configured\n");
--		return -ENODEV;
-+		dev_err(&pdev->dev, "no valid 'kcs_addr' configured\n");
-+		return ERR_PTR(-EINVAL);
- 	}
- 
--	kcs_bmc = kcs_bmc_alloc(dev, sizeof(*priv), chan);
--	if (!kcs_bmc)
--		return -ENOMEM;
-+	kcs->ioreg = ast_kcs_bmc_ioregs[channel - 1];
-+	aspeed_kcs_set_address(kcs, slave);
-+
-+	return 0;
-+}
-+
-+static int aspeed_kcs_calculate_channel(const struct kcs_ioreg *regs)
-+{
-+	int i;
-+
-+	for (i = 0; i < ARRAY_SIZE(ast_kcs_bmc_ioregs); i++) {
-+		if (!memcmp(&ast_kcs_bmc_ioregs[i], regs, sizeof(*regs)))
-+			return i + 1;
-+	}
-+
-+	return -EINVAL;
-+}
-+
-+static struct kcs_bmc *aspeed_kcs_probe_of_v2(struct platform_device *pdev)
-+{
-+	struct aspeed_kcs_bmc *priv;
-+	struct device_node *np;
-+	struct kcs_ioreg ioreg;
-+	struct kcs_bmc *kcs;
-+	const __be32 *reg;
-+	int channel;
-+	u32 slave;
-+	int rc;
- 
--	priv = kcs_bmc_priv(kcs_bmc);
--	priv->map = syscon_node_to_regmap(dev->parent->of_node);
-+	np = pdev->dev.of_node;
-+
-+	/* Don't translate addresses, we want offsets for the regmaps */
-+	reg = of_get_address(np, 0, NULL, NULL);
-+	if (!reg)
-+		return ERR_PTR(-EINVAL);
-+	ioreg.idr = be32_to_cpup(reg);
-+
-+	reg = of_get_address(np, 1, NULL, NULL);
-+	if (!reg)
-+		return ERR_PTR(-EINVAL);
-+	ioreg.odr = be32_to_cpup(reg);
-+
-+	reg = of_get_address(np, 2, NULL, NULL);
-+	if (!reg)
-+		return ERR_PTR(-EINVAL);
-+	ioreg.str = be32_to_cpup(reg);
-+
-+	channel = aspeed_kcs_calculate_channel(&ioreg);
-+	if (channel < 0)
-+		return ERR_PTR(channel);
-+
-+	kcs = kcs_bmc_alloc(&pdev->dev, sizeof(struct aspeed_kcs_bmc), channel);
-+	if (!kcs)
-+		return ERR_PTR(-ENOMEM);
-+
-+	kcs->ioreg = ioreg;
-+
-+	priv = kcs_bmc_priv(kcs);
-+	priv->map = syscon_node_to_regmap(pdev->dev.parent->of_node);
- 	if (IS_ERR(priv->map)) {
--		dev_err(dev, "Couldn't get regmap\n");
--		return -ENODEV;
-+		dev_err(&pdev->dev, "Couldn't get regmap\n");
-+		return ERR_PTR(-ENODEV);
- 	}
- 
--	kcs_bmc->ioreg = ast_kcs_bmc_ioregs[chan - 1];
-+	rc = of_property_read_u32(np, "aspeed,lpc-io-reg", &slave);
-+	if (rc)
-+		return ERR_PTR(rc);
-+
-+	aspeed_kcs_set_address(kcs, slave);
-+
-+	return kcs;
-+}
-+
-+static int aspeed_kcs_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct kcs_bmc *kcs_bmc;
-+	struct device_node *np;
-+	int rc;
-+
-+	np = pdev->dev.of_node;
-+	if (of_device_is_compatible(np, "aspeed,ast2400-kcs-bmc") ||
-+			of_device_is_compatible(np, "aspeed,ast2500-kcs-bmc"))
-+		kcs_bmc = aspeed_kcs_probe_of_v1(pdev);
-+	else if (of_device_is_compatible(np, "aspeed,ast2400-kcs-bmc-v2") ||
-+			of_device_is_compatible(np, "aspeed,ast2500-kcs-bmc-v2"))
-+		kcs_bmc = aspeed_kcs_probe_of_v2(pdev);
-+	else
-+		return -EINVAL;
-+
-+	if (IS_ERR(kcs_bmc))
-+		return PTR_ERR(kcs_bmc);
-+
- 	kcs_bmc->io_inputb = aspeed_kcs_inb;
- 	kcs_bmc->io_outputb = aspeed_kcs_outb;
- 
-@@ -274,7 +370,6 @@ static int aspeed_kcs_probe(struct platform_device *pdev)
- 
- 	dev_set_drvdata(dev, kcs_bmc);
- 
--	aspeed_kcs_set_address(kcs_bmc, addr);
- 	aspeed_kcs_enable_channel(kcs_bmc, true);
- 
- 	rc = misc_register(&kcs_bmc->miscdev);
-@@ -283,9 +378,10 @@ static int aspeed_kcs_probe(struct platform_device *pdev)
- 		return rc;
- 	}
- 
--	pr_info("channel=%u addr=0x%x idr=0x%x odr=0x%x str=0x%x\n",
--		chan, addr,
--		kcs_bmc->ioreg.idr, kcs_bmc->ioreg.odr, kcs_bmc->ioreg.str);
-+	dev_dbg(&pdev->dev,
-+		"Probed KCS device %d (IDR=0x%x, ODR=0x%x, STR=0x%x)\n",
-+		kcs_bmc->channel, kcs_bmc->ioreg.idr, kcs_bmc->ioreg.odr,
-+		kcs_bmc->ioreg.str);
- 
- 	return 0;
- }
-@@ -302,6 +398,8 @@ static int aspeed_kcs_remove(struct platform_device *pdev)
- static const struct of_device_id ast_kcs_bmc_match[] = {
- 	{ .compatible = "aspeed,ast2400-kcs-bmc" },
- 	{ .compatible = "aspeed,ast2500-kcs-bmc" },
-+	{ .compatible = "aspeed,ast2400-kcs-bmc-v2" },
-+	{ .compatible = "aspeed,ast2500-kcs-bmc-v2" },
- 	{ }
- };
- MODULE_DEVICE_TABLE(of, ast_kcs_bmc_match);
--- 
-git-series 0.9.1
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQWthc2g6CgpPbiAxMi8xNi8xOSAxOjMzIEFNLCBBa2FzaCBHYWpqYXIgd3JvdGU6Cj4gUk9D
+SyBQaSBTIGlzIFJLMzMwOCBiYXNlZCBTQkMgZnJvbSByYWR4YS5jb20uIFJPQ0sgUGkgUyBoYXMg
+YSwKPiAtIDI1Nk1CLzUxMk1CIEREUjMgUkFNCj4gLSBTRCwgTkFORCBmbGFzaCAob3B0aW9uYWwg
+b24gYm9hcmQgMS8yLzQvOEdiKQo+IC0gMTAwTUIgZXRoZXJuZXQsIFBvRSAob3B0aW9uYWwpCj4g
+LSBPbmJvYXJkIDgwMi4xMSBiL2cvbiB3aWZpICsgQmx1ZXRvb3RoIDQuMCBNb2R1bGUKPiAtIFVT
+QjIuMCBUeXBlLUEgSE9TVCB4MQo+IC0gVVNCMy4wIFR5cGUtQyBPVEcgeDEKPiAtIDI2LXBpbiBl
+eHBhbnNpb24gaGVhZGVyCj4gLSBVU0IgVHlwZS1DIERDIDVWIFBvd2VyIFN1cHBseQo+Cj4gVGhp
+cyBwYXRjaCBlbmFibGVzCj4gLSBDb25zb2xlCj4gLSBOQU5EIEZsYXNoCj4gLSBTRCBDYXJkCj4K
+PiBTaWduZWQtb2ZmLWJ5OiBBa2FzaCBHYWpqYXIgPGFrYXNoQG9wZW5lZGV2LmNvbT4KPiAtLS0K
+PiAgIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL2FybS9yb2NrY2hpcC55YW1sICAgICB8ICAgNSAr
+Cj4gICBhcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL01ha2VmaWxlICAgICAgICAgfCAgIDEg
+Kwo+ICAgLi4uL2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzMwOC1yb2NrLXBpLVMuZHRzICAgIHwgMjIx
+ICsrKysrKysrKysrKysrKysrKwo+ICAgMyBmaWxlcyBjaGFuZ2VkLCAyMjcgaW5zZXJ0aW9ucygr
+KQo+ICAgY3JlYXRlIG1vZGUgMTAwNjQ0IGFyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmsz
+MzA4LXJvY2stcGktUy5kdHMKPgo+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRy
+ZWUvYmluZGluZ3MvYXJtL3JvY2tjaGlwLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
+YmluZGluZ3MvYXJtL3JvY2tjaGlwLnlhbWwKPiBpbmRleCBkOTg0N2IzMDZiODMuLjQ4ZDQwYzky
+OGQ0NSAxMDA2NDQKPiAtLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvYXJt
+L3JvY2tjaGlwLnlhbWwKPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
+YXJtL3JvY2tjaGlwLnlhbWwKPiBAQCAtNDIyLDYgKzQyMiwxMSBAQCBwcm9wZXJ0aWVzOgo+ICAg
+ICAgICAgICAgIC0gY29uc3Q6IHJhZHhhLHJvY2twaTQKPiAgICAgICAgICAgICAtIGNvbnN0OiBy
+b2NrY2hpcCxyazMzOTkKPiAgIAo+ICsgICAgICAtIGRlc2NyaXB0aW9uOiBSYWR4YSBST0NLIFBp
+IFMKPiArICAgICAgICBpdGVtczoKPiArICAgICAgICAgIC0gY29uc3Q6IHJhZHhhLHJvY2twaXMK
+PiArICAgICAgICAgIC0gY29uc3Q6IHJvY2tjaGlwLHJrMzMwOAo+ICsKPiAgICAgICAgIC0gZGVz
+Y3JpcHRpb246IFJhZHhhIFJvY2syIFNxdWFyZQo+ICAgICAgICAgICBpdGVtczoKPiAgICAgICAg
+ICAgICAtIGNvbnN0OiByYWR4YSxyb2NrMi1zcXVhcmUKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02
+NC9ib290L2R0cy9yb2NrY2hpcC9NYWtlZmlsZSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2No
+aXAvTWFrZWZpbGUKPiBpbmRleCA0OGZiNjMxZDU0NTEuLmNjOWU4YzgyNDk4MCAxMDA2NDQKPiAt
+LS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL01ha2VmaWxlCj4gKysrIGIvYXJjaC9h
+cm02NC9ib290L2R0cy9yb2NrY2hpcC9NYWtlZmlsZQo+IEBAIC0yLDYgKzIsNyBAQAo+ICAgZHRi
+LSQoQ09ORklHX0FSQ0hfUk9DS0NISVApICs9IHB4MzAtZXZiLmR0Ygo+ICAgZHRiLSQoQ09ORklH
+X0FSQ0hfUk9DS0NISVApICs9IHJrMzMwOC1ldmIuZHRiCj4gICBkdGItJChDT05GSUdfQVJDSF9S
+T0NLQ0hJUCkgKz0gcmszMzA4LXJvYy1jYy5kdGIKPiArZHRiLSQoQ09ORklHX0FSQ0hfUk9DS0NI
+SVApICs9IHJrMzMwOC1yb2NrLXBpLVMuZHRiCj4gICBkdGItJChDT05GSUdfQVJDSF9ST0NLQ0hJ
+UCkgKz0gcmszMzI4LWExLmR0Ygo+ICAgZHRiLSQoQ09ORklHX0FSQ0hfUk9DS0NISVApICs9IHJr
+MzMyOC1ldmIuZHRiCj4gICBkdGItJChDT05GSUdfQVJDSF9ST0NLQ0hJUCkgKz0gcmszMzI4LXJv
+Y2s2NC5kdGIKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMz
+MDgtcm9jay1waS1TLmR0cyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzA4LXJv
+Y2stcGktUy5kdHMKPiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+IGluZGV4IDAwMDAwMDAwMDAwMC4u
+ZTVmYWU0NTFjNjMxCj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMv
+cm9ja2NoaXAvcmszMzA4LXJvY2stcGktUy5kdHMKPiBAQCAtMCwwICsxLDIyMSBAQAo+ICsvLyBT
+UERYLUxpY2Vuc2UtSWRlbnRpZmllcjogKEdQTC0yLjArIE9SIE1JVCkKPiArLyoKPiArICogQ29w
+eXJpZ2h0IChjKSAyMDE5IEFrYXNoIEdhamphciA8YWthc2hAb3BlbmVkZXYuY29tPgo+ICsgKiBD
+b3B5cmlnaHQgKGMpIDIwMTkgSmFnYW4gVGVraSA8amFnYW5Ab3BlbmVkZXYuY29tPgo+ICsgKi8K
+PiArCj4gKy9kdHMtdjEvOwo+ICsjaW5jbHVkZSAicmszMzA4LmR0c2kiCj4gKwo+ICsvIHsKPiAr
+CW1vZGVsID0gIlJhZHhhIFJPQ0sgUGkgUyI7Cj4gKwljb21wYXRpYmxlID0gInJhZHhhLHJvY2tw
+aXMiLCAicm9ja2NoaXAscmszMzA4IjsKPiArCj4gKwljaG9zZW4gewo+ICsJCXN0ZG91dC1wYXRo
+ID0gInNlcmlhbDA6MTUwMDAwMG44IjsKPiArCX07Cj4gKwo+ICsJbGVkcyB7Cj4gKwkJY29tcGF0
+aWJsZSA9ICJncGlvLWxlZHMiOwo+ICsJCXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4gKwkJ
+cGluY3RybC0wID0gPCZncmVlbl9sZWRfZ2lvPiwgPCZoZWFydGJlYXRfbGVkX2dwaW8+Owo+ICsK
+PiArCQlncmVlbi1sZWQgewo+ICsJCQlsYWJlbCA9ICJyb2NrcGlzOmdyZWVuOnBvd2VyIjsKPiAr
+CQkJZ3Bpb3MgPSA8JmdwaW8wIFJLX1BBNiBHUElPX0FDVElWRV9ISUdIPjsKPiArCQkJbGludXgs
+ZGVmYXVsdC10cmlnZ2VyID0gImRlZmF1bHQtb24iOwo+ICsJCQlkZWZhdWx0LXN0YXRlID0gIm9u
+IjsKPiArCQl9Owo+ICsKPiArCQlibHVlLWxlZCB7Cj4gKwkJCWxhYmVsID0gInJvY2twaXM6Ymx1
+ZTp1c2VyIjsKPiArCQkJZ3Bpb3MgPSA8JmdwaW8wIFJLX1BBNSBHUElPX0FDVElWRV9ISUdIPjsK
+PiArCQkJZGVmYXVsdC1zdGF0ZSA9ICJvbiI7Cj4gKwkJCWxpbnV4LGRlZmF1bHQtdHJpZ2dlciA9
+ICJoZWFydGJlYXQiOwo+ICsJCX07Cj4gKwl9Owo+ICsKPiArCXNkaW9fcHdyc2VxOiBzZGlvLXB3
+cnNlcSB7Cj4gKwkJY29tcGF0aWJsZSA9ICJtbWMtcHdyc2VxLXNpbXBsZSI7Cj4gKwkJcGluY3Ry
+bC1uYW1lcyA9ICJkZWZhdWx0IjsKPiArCQlwaW5jdHJsLTAgPSA8JndpZmlfZW5hYmxlX2g+Owo+
+ICsJCXJlc2V0LWdwaW9zID0gPCZncGlvMCBSS19QQTIgR1BJT19BQ1RJVkVfTE9XPjsKPiArCX07
+Cj4gKwo+ICsJdmNjNXYwX3N5czogdmNjNXYwLXN5cyB7Cj4gKwkJY29tcGF0aWJsZSA9ICJyZWd1
+bGF0b3ItZml4ZWQiOwo+ICsJCXJlZ3VsYXRvci1uYW1lID0gInZjYzV2MF9zeXMiOwo+ICsJCXJl
+Z3VsYXRvci1hbHdheXMtb247Cj4gKwkJcmVndWxhdG9yLWJvb3Qtb247Cj4gKwkJcmVndWxhdG9y
+LW1pbi1taWNyb3ZvbHQgPSA8NTAwMDAwMD47Cj4gKwkJcmVndWxhdG9yLW1heC1taWNyb3ZvbHQg
+PSA8NTAwMDAwMD47Cj4gKwl9Owo+ICsKPiArCXZkZF9jb3JlOiB2ZGQtY29yZSB7Cj4gKwkJY29t
+cGF0aWJsZSA9ICJwd20tcmVndWxhdG9yIjsKPiArCQlwd21zID0gPCZwd20wIDAgNTAwMCAxPjsK
+PiArCQlyZWd1bGF0b3ItbmFtZSA9ICJ2ZGRfY29yZSI7Cj4gKwkJcmVndWxhdG9yLW1pbi1taWNy
+b3ZvbHQgPSA8ODI3MDAwPjsKPiArCQlyZWd1bGF0b3ItbWF4LW1pY3Jvdm9sdCA9IDwxMzQwMDAw
+PjsKPiArCQlyZWd1bGF0b3ItaW5pdC1taWNyb3ZvbHQgPSA8MTAxNTAwMD47Cj4gKwkJcmVndWxh
+dG9yLXNldHRsaW5nLXRpbWUtdXAtdXMgPSA8MjUwPjsKPiArCQlyZWd1bGF0b3ItYWx3YXlzLW9u
+Owo+ICsJCXJlZ3VsYXRvci1ib290LW9uOwo+ICsJCXZpbi1zdXBwbHkgPSA8JnZjYzV2MF9zeXM+
+OwoKCkkgdGhpbmsgdGhpcyBzaG91bGQgYmUgcHdtLXN1cHBseSA9IDwmdmNjNXYwX3N5cz4KCnNl
+ZToKCmRyaXZlcnMvcmVndWxhdG9yL3B3bS1yZWd1bGF0b3IuYwoKc3RhdGljIGNvbnN0IHN0cnVj
+dCByZWd1bGF0b3JfZGVzYyBwd21fcmVndWxhdG9yX2Rlc2MgPSB7CiDCoMKgwqDCoMKgwqDCoCAu
+bmFtZcKgwqDCoMKgwqDCoMKgwqDCoMKgID0gInB3bS1yZWd1bGF0b3IiLAogwqDCoMKgwqDCoMKg
+wqAgLnR5cGXCoMKgwqDCoMKgwqDCoMKgwqDCoCA9IFJFR1VMQVRPUl9WT0xUQUdFLAogwqDCoMKg
+wqDCoMKgwqAgLm93bmVywqDCoMKgwqDCoMKgwqDCoMKgID0gVEhJU19NT0RVTEUsCiDCoMKgwqDC
+oMKgwqDCoCAuc3VwcGx5X25hbWXCoMKgwqAgPSAicHdtIiwKfTsKCj4gKwl9Owo+ICsKPiArCXZk
+ZF9sb2c6IHZkZC1sb2cgewo+ICsJCWNvbXBhdGlibGUgPSAicmVndWxhdG9yLWZpeGVkIjsKPiAr
+CQlyZWd1bGF0b3ItbmFtZSA9ICJ2ZGRfbG9nIjsKPiArCQlyZWd1bGF0b3ItYWx3YXlzLW9uOwo+
+ICsJCXJlZ3VsYXRvci1ib290LW9uOwo+ICsJCXJlZ3VsYXRvci1taW4tbWljcm92b2x0ID0gPDEw
+NTAwMDA+Owo+ICsJCXJlZ3VsYXRvci1tYXgtbWljcm92b2x0ID0gPDEwNTAwMDA+Owo+ICsJCXZp
+bi1zdXBwbHkgPSA8JnZjYzV2MF9zeXM+Owo+ICsJfTsKPiArCj4gKwl2Y2NfZGRyOiB2Y2MtZGRy
+IHsKPiArCQljb21wYXRpYmxlID0gInJlZ3VsYXRvci1maXhlZCI7Cj4gKwkJcmVndWxhdG9yLW5h
+bWUgPSAidmNjX2RkciI7Cj4gKwkJcmVndWxhdG9yLWFsd2F5cy1vbjsKPiArCQlyZWd1bGF0b3It
+Ym9vdC1vbjsKPiArCQlyZWd1bGF0b3ItbWluLW1pY3Jvdm9sdCA9IDwxNTAwMDAwPjsKPiArCQly
+ZWd1bGF0b3ItbWF4LW1pY3Jvdm9sdCA9IDwxNTAwMDAwPjsKPiArCQl2aW4tc3VwcGx5ID0gPCZ2
+Y2M1djBfc3lzPjsKPiArCX07Cj4gKwo+ICsJdmNjXzF2ODogdmNjLTF2OCB7Cj4gKwkJY29tcGF0
+aWJsZSA9ICJyZWd1bGF0b3ItZml4ZWQiOwo+ICsJCXJlZ3VsYXRvci1uYW1lID0gInZjY18xdjgi
+Owo+ICsJCXJlZ3VsYXRvci1hbHdheXMtb247Cj4gKwkJcmVndWxhdG9yLWJvb3Qtb247Cj4gKwkJ
+cmVndWxhdG9yLW1pbi1taWNyb3ZvbHQgPSA8MTgwMDAwMD47Cj4gKwkJcmVndWxhdG9yLW1heC1t
+aWNyb3ZvbHQgPSA8MTgwMDAwMD47Cj4gKwkJdmluLXN1cHBseSA9IDwmdmNjX2lvPjsKPiArCX07
+Cj4gKwo+ICsJdmNjX2lvOiB2Y2MtaW8gewo+ICsJCWNvbXBhdGlibGUgPSAicmVndWxhdG9yLWZp
+eGVkIjsKPiArCQlyZWd1bGF0b3ItbmFtZSA9ICJ2Y2NfaW8iOwo+ICsJCXJlZ3VsYXRvci1hbHdh
+eXMtb247Cj4gKwkJcmVndWxhdG9yLWJvb3Qtb247Cj4gKwkJcmVndWxhdG9yLW1pbi1taWNyb3Zv
+bHQgPSA8MzMwMDAwMD47Cj4gKwkJcmVndWxhdG9yLW1heC1taWNyb3ZvbHQgPSA8MzMwMDAwMD47
+Cj4gKwkJdmluLXN1cHBseSA9IDwmdmNjNXYwX3N5cz47Cj4gKwl9Owo+ICsKPiArCXZjYzV2MF9v
+dGc6IHZjYzV2MC1vdGcgewo+ICsJCWNvbXBhdGlibGUgPSAicmVndWxhdG9yLWZpeGVkIjsKPiAr
+CQlyZWd1bGF0b3ItbmFtZSA9ICJ2Y2M1djBfb3RnIjsKPiArCQlyZWd1bGF0b3ItYWx3YXlzLW9u
+Owo+ICsJCWdwaW8gPSA8JmdwaW8wIFJLX1BDNSBHUElPX0FDVElWRV9ISUdIPjsKPiArCQllbmFi
+bGUtYWN0aXZlLWhpZ2g7Cj4gKwkJcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPiArCQlwaW5j
+dHJsLTAgPSA8Jm90Z192YnVzX2Rydj47Cj4gKwkJdmluLXN1cHBseSA9IDwmdmNjNXYwX3N5cz47
+Cj4gKwl9Owo+ICt9Owo+ICsKPiArJmNwdTAgewo+ICsJY3B1LXN1cHBseSA9IDwmdmRkX2NvcmU+
+Owo+ICt9Owo+ICsKPiArJmVtbWMgewo+ICsJYnVzLXdpZHRoID0gPDQ+Owo+ICsJY2FwLW1tYy1o
+aWdoc3BlZWQ7Cj4gKwltbWMtaHMyMDAtMV84djsKPiArCXN1cHBvcnRzLXNkOwo+ICsJZGlzYWJs
+ZS13cDsKPiArCW5vbi1yZW1vdmFibGU7Cj4gKwludW0tc2xvdHMgPSA8MT47Cj4gKwl2aW4tc3Vw
+cGx5ID0gPCZ2Y2NfaW8+Owo+ICsJc3RhdHVzID0gIm9rYXkiOwo+ICt9Owo+ICsKPiArJmkyYzEg
+ewo+ICsJc3RhdHVzID0gIm9rYXkiOwo+ICt9Owo+ICsKPiArJnNkbW1jIHsKPiArCWJ1cy13aWR0
+aCA9IDw0PjsKPiArCWNhcC1tbWMtaGlnaHNwZWVkOwo+ICsJY2FwLXNkLWhpZ2hzcGVlZDsKPiAr
+CW1heC1mcmVxdWVlbmN5ID0gPDE1MDAwMDAwMD47Cj4gKwlzdXBwb3J0cy1zZDsKPiArCWRpc2Fi
+bGUtd3A7Cj4gKwludW0tc2xvdHMgPSA8MT47Cj4gKwlwaW5jdHJsLTAgPSA8JnNkbW1jX2NsayAm
+c2RtbWNfY21kICZzZG1tY19kZXQgJnNkbW1jX2J1czQ+Owo+ICsJY2FyZC1kZXRlY3QtZGVsYXkg
+PSA8ODAwPjsKPiArCXN0YXR1cyA9ICJva2F5IjsKPiArfTsKPiArCj4gKyZzcGkyIHsKPiArCXN0
+YXR1cyA9ICJva2F5IjsKPiArCW1heC1mcmVxID0gPDEwMDAwMDAwPjsKPiArfTsKPiArCj4gKyZw
+aW5jdHJsIHsKPiArCXBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4gKwlwaW5jdHJsLTAgPSA8
+JnJ0Y18zMms+Owo+ICsKPiArCWxlZHMgewo+ICsJCWdyZWVuX2xlZF9naW86IGdyZWVuLWxlZC1n
+cGlvIHsKPiArCQkJcm9ja2NoaXAscGlucyA9IDwwIFJLX1BBNiBSS19GVU5DX0dQSU8gJnBjZmdf
+cHVsbF9ub25lPjsKPiArCQl9Owo+ICsKPiArCQloZWFydGJlYXRfbGVkX2dwaW86IGhlYXJ0YmVh
+dC1sZWQtZ3BpbyB7Cj4gKwkJCXJvY2tjaGlwLHBpbnMgPSA8MCBSS19QQTUgUktfRlVOQ19HUElP
+ICZwY2ZnX3B1bGxfbm9uZT47Cj4gKwkJfTsKPiArCX07Cj4gKwo+ICsJdXNiIHsKPiArCQlvdGdf
+dmJ1c19kcnY6IG90Zy12YnVzLWRydiB7Cj4gKwkJCXJvY2tjaGlwLHBpbnMgPSA8MCBSS19QQzUg
+UktfRlVOQ19HUElPICZwY2ZnX3B1bGxfbm9uZT47Cj4gKwkJfTsKPiArCX07Cj4gKwo+ICsJc2Rp
+by1wd3JzZXEgewo+ICsJCXdpZmlfZW5hYmxlX2g6IHdpZmktZW5hYmxlLWggewo+ICsJCQlyb2Nr
+Y2hpcCxwaW5zID0gPDAgUktfUEEyIFJLX0ZVTkNfR1BJTyAmcGNmZ19wdWxsX25vbmU+Owo+ICsJ
+CX07Cj4gKwo+ICsJCXdpZmlfaG9zdF93YWtlOiB3aWZpLWhvc3Qtd2FrZSB7Cj4gKwkJCXJvY2tj
+aGlwLHBpbnMgPSA8MCBSS19QQTAgUktfRlVOQ19HUElPICZwY2ZnX3B1bGxfZG93bj47Cj4gKwkJ
+fTsKPiArCX07Cj4gK307Cj4gKwo+ICsmcHdtMCB7Cj4gKwlzdGF0dXMgPSAib2theSI7Cj4gKwlw
+aW5jdHJsLTAgPSA8JnB3bTBfcGluX3B1bGxfZG93bj47Cj4gK307Cj4gKwo+ICsmc2FyYWRjIHsK
+PiArCXZyZWYtc3VwcGx5ID0gPCZ2Y2NfMXY4PjsKPiArCXN0YXR1cyA9ICJva2F5IjsKPiArfTsK
+PiArCj4gKyZzZGlvIHsKPiArCSNhZGRyZXNzLWNlbGxzID0gPDE+Owo+ICsJI3NpemUtY2VsbHMg
+PSA8MD47Cj4gKwlidXMtd2lkdGggPSA8ND47Cj4gKwltYXgtZnJlcXVlbmN5ID0gPDEwMDAwMDA+
+Owo+ICsJY2FwLXNkLWhpZ2hzcGVlZDsKPiArCWNhcC1zZGlvLWlycTsKPiArCXN1cHBvcnRzLXNk
+aW87Cj4gKwlrZWVwLXBvd2VyLWluLXN1c3BlbmQ7Cj4gKwltbWMtcHdyc2VxID0gPCZzZGlvX3B3
+cnNlcT47Cj4gKwlub24tcmVtb3ZhYmxlOwo+ICsJc2QtdWhzLXNkcjEwNDsKPiArCXN0YXR1cyA9
+ICJva2F5IjsKPiArfTsKPiArCj4gKyZ1YXJ0MCB7Cj4gKwlzdGF0dXMgPSAib2theSI7Cj4gK307
+Cj4gKwo+ICsmdWFydDQgewo+ICsJcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPiArCXBpbmN0
+cmwtMCA9IDwmdWFydDRfeGZlciAmdWFydDRfcnRzICZ1YXJ0NF9jdHM+Owo+ICsJc3RhdHVzID0g
+Im9rYXkiOwo+ICt9OwoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
+c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
+aW5mby9saW51eC1hcm0ta2VybmVsCg==
