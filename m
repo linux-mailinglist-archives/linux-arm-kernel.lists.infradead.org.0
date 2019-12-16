@@ -2,84 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42D881219B3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 20:10:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA2701219C7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 20:17:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+iu3ct5ZreYNYT6c+Gq+EG8iDZO6wRZ0W9/BinCns9Y=; b=pHculHVmiAmpz9
-	QTXicvGd/ez4yfmbpajFm284KOF+4C2Ihw0DjjIVFFyDjwv+lAcvyD+6xREZ3PtlzwPTnztTtQShC
-	dHg/5Il7aQijwmH89dwv/Y9/YuFM1EhfbhzSgBxPN6GNubWk1cXZdNCd+Se8egYhOMsNcG0ds+ffz
-	K1nIMicrJZPX4MKMvb+AAcDPcbrfLR/+fKsMIeKgHtYebyzqH3JoJ7hFiCmmfai4VGRXmL4+RvK0Q
-	I3LrAQ0DOduXZnrh73UITUWv7OISPOkCx/4G3UbtGFuYgw3i9dwTxa2bDeZPgBggYqRNOWYkIKcMG
-	zeDL5R06NC2BAeHdnDaQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=gYj+/MfzhF7FS4UlqlQjQ86WD390A7zshcu6o1oR3/0=; b=tsm04D4JnT0KOeF7jbLFpcL8SU
+	X6yR2dQcIIVpIrxhm9Zg6805GC58umxUoaAG+jPSfhGvmshScdKs+9fKpKs4oYfH66uJcdpcEHoik
+	HCCiGjoesP/bG/x/uULvfO+UUSdaQ0x/hFg1gkz0b3a0JQjhvgPpL7e4r55XbxUlPAO/w6JquoDvi
+	YpyJEIZmKGLctSo4yz/layZzUUvIkRaJpIe8GMXJaMmRfwDtkfPHldS/29WHiCvKpOmyO6OrgJHOC
+	VQVUu4ZxVnlKDaHvoEAc8Ja7x0SV1hmtBQ7oG2DpKtDj8Svn0rMPBwcEh/zgC8D4ud/ijOYd3CGAx
+	hCMwGlew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igvl9-00011M-QK; Mon, 16 Dec 2019 19:10:23 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1igvs6-0002py-PC; Mon, 16 Dec 2019 19:17:34 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igvl1-00010f-4W
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 19:10:17 +0000
-Received: by mail-qt1-x844.google.com with SMTP id e5so5357319qtm.6
+ id 1igvrx-0002pJ-4K
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 19:17:27 +0000
+Received: by mail-wm1-x343.google.com with SMTP id a5so524089wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 11:10:09 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Uw9U7rblKVGuRst+OVJeS+hnJio304MdqULIkTyPuXA=;
- b=sFr/Mv4DBTCYaRnfl12PIOZSe3JPJLY87L9IdBCtKXouRLYpCoc67xxz5/6xwu4uI5
- XHx+efnEQIs5JBtfY4CNDP1bkQSOaC/oQPNm7RP7pGlOaPu/BxnWHB0tl2PEDF2mqgPM
- 7ZWFWB9/DxusPCQm7QzPNDR13dOCEmDnUWTS1ZsZflHVfa6cBw3jF/1jQvvj0VFJJ848
- EdnF4DOhPkDSP4NVk8qmM1ldPBDhChTFcIsEg/JckUHWM3a7KlDlzisdid7V/9cfGE5J
- kUaKbKZvKpVF/IT0jyt4LN3g4UH+q/4qpw1cwKoI8MTiECYny6XojCFD/fH+oMYfTevf
- X2WA==
+ Mon, 16 Dec 2019 11:17:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=TaI0P/S1Bo1801cSTwOrAdNkaWycLWwGESwHFZB6KEs=;
+ b=xvdovwieuu2wlweKn+bC82YHPbOfrIQNK/KniqVl/LOyohWKBHwrU797ArnIsfpYZY
+ LDDNQlzGxpBkWeBsrQUF+Vap3F/F1x6LCA34Y5i4axTfLB//VFOjbTZgt9DbejVI7bm4
+ XqYAlC9Yvz2keoscHo7fRACoo2ZjzY2vZ3hUfDPyXfMTil7mXMp/S1w0khldmBW9z4s/
+ 0oG//LwoTu0fraVx4xZp5RHcUHxS7cXHkUMSKuPzIyoCMLkX1XqZs620cofxsuYPl5KH
+ RL8NhD/FLK1qu812eWtxMIQLTAQgsnH4Z6UKwDhd/MuC/B23GCpOcY/ulUNjenn6ph3+
+ w0vQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Uw9U7rblKVGuRst+OVJeS+hnJio304MdqULIkTyPuXA=;
- b=iIWF29J/uVNdsZPSs0VcnCBqwRZVrkfawJCIDiE12r/Nva6A0HJU0+yboELCP4jEgq
- trxSa1Nh6a9bBAbRhzxzIYldSwm3xi3/9q3WZH8DzacR4Kr2GaICdycFMgzhY1stESrv
- ZhYZVfjct6QW9+yxvhnq1pTfYEynMsEyKz6Ef9Rui6jtnNgQSJwtGU56SqF0ZHah7Dnp
- ugRJvpdCI5PQL8PZil26HU7lDvF13eD5ppRyDkQ2r7vL8PlF5pbBTCNGddwP1J+T7LAi
- HklPQTcra78+bAnw66qCnwhQEXkvZhqR3OZO2csT9vvBIU0cyswH3raBHsKV1wqLtg9T
- 2JCA==
-X-Gm-Message-State: APjAAAXp1jkg5zNcTVio4490YASox3kSFfcWBUMncv+G+9JA6U61TS5V
- kHufgViv1MskqxttaVGJO5fxHkOr52ySbjsB3k7Acw==
-X-Google-Smtp-Source: APXvYqyhwdhD8SVt5G6Rr61HxNIfhkRMf/+yf6TiwVRSl8xiJY/x5WTcD8VdvPpANl2cfQ+cjpouMbfBl+2FjNsQtHg=
-X-Received: by 2002:ac8:5257:: with SMTP id y23mr829308qtn.88.1576523408360;
- Mon, 16 Dec 2019 11:10:08 -0800 (PST)
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=TaI0P/S1Bo1801cSTwOrAdNkaWycLWwGESwHFZB6KEs=;
+ b=lr+YBpdb4X4hOo/X3QNw9DO7fji9nNpJ6G5SaNWdwrF4Veiw4oXBcVNEZMXeauBdQH
+ CIK4L9U99aAOCd+3vuzgmDuASeGXtYdVaYiUNpgmO2sUJ4z7dYLLno6/ZI4aOkfzLPAE
+ cBg24MIZC0yHsmdJGAYzrv2YljWMf98oCS6wBhd64CAROZTW0iTTuQ80Q9HeBWbUJvx5
+ 9h0VLpLDE7AUYH42Zkl+55Ma7az7gB1fpGKZnJ6iuHBfL5LTz5sFhlaWdjv5YQwL0Hij
+ /O1wJMp0dBLK9MlQBW9Pw3KqLNPC+FA8NXAOw7PBwz0F9BFb++PCx2Qn341b/1z6Lrja
+ 5yRg==
+X-Gm-Message-State: APjAAAUHSU73IV+u72dCFWxpeHrQ7IDfKMwwOa+oYrGIIhsQLWefS7Pa
+ CRpWG3J7XM4OB6VH/4OXxk5pRg==
+X-Google-Smtp-Source: APXvYqxx7C0OjSpuBe4yr998Ep7mXAjBkYmeq2Ns5kTbTRAuKQseJcwGroV2UfloXbHqT0riVdJBkA==
+X-Received: by 2002:a1c:e108:: with SMTP id y8mr566525wmg.147.1576523843234;
+ Mon, 16 Dec 2019 11:17:23 -0800 (PST)
+Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
+ [82.243.161.21])
+ by smtp.gmail.com with ESMTPSA id b17sm22647883wrp.49.2019.12.16.11.17.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Dec 2019 11:17:22 -0800 (PST)
+References: <20191215210153.1449067-1-martin.blumenstingl@googlemail.com>
+ <1jr214bpl0.fsf@starbuckisacylon.baylibre.com>
+ <20191216175015.2A642206EC@mail.kernel.org>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Stephen Boyd <sboyd@kernel.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, narmstrong@baylibre.com
+Subject: Re: [PATCH 0/1] clk: Meson8/8b/8m2: fix the mali clock flags
+In-reply-to: <20191216175015.2A642206EC@mail.kernel.org>
+Date: Mon, 16 Dec 2019 20:17:21 +0100
+Message-ID: <1jlfrcaxmm.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-References: <20191211230813.5144-1-mike.leach@linaro.org>
- <20191213114008.uyghh3rdbnaumcft@gilmour.lan>
- <CAJ9a7VjhbAxmJPc1TT2EfzEC6EPinf7Kq8qbv1ZQ-_S0qmfXow@mail.gmail.com>
- <20191214202631.2h7jzfafkdqew2js@gilmour.lan>
-In-Reply-To: <20191214202631.2h7jzfafkdqew2js@gilmour.lan>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Mon, 16 Dec 2019 19:09:57 +0000
-Message-ID: <CAJ9a7Vh7cvHO-CO1D-xZgeRgNaFhqaJ+aYmMN94BQgeSxWbccA@mail.gmail.com>
-Subject: Re: [PATCH v6 05/15] dt-bindings: arm: Adds CoreSight CTI hardware
- definitions.
-To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_111015_212630_289FEF44 
-X-CRM114-Status: GOOD (  39.16  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_111725_219970_540D7057 
+X-CRM114-Status: GOOD (  32.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -94,263 +99,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
- Coresight ML <coresight@lists.linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
- agross@kernel.org, Rob Herring <robh+dt@kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: mturquette@baylibre.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime
 
-On Sat, 14 Dec 2019 at 20:26, Maxime Ripard <maxime@cerno.tech> wrote:
->
-> On Fri, Dec 13, 2019 at 03:04:35PM +0000, Mike Leach wrote:
-> > > > +    type: object
-> > > > +    description:
-> > > > +      A trigger connections child node which describes the trigger signals
-> > > > +      between this CTI and another hardware device. This device may be a CPU,
-> > > > +      CoreSight device, any other hardware device or simple external IO lines.
-> > > > +      The connection may have both input and output triggers, or only one or the
-> > > > +      other.
-> > > > +
-> > > > +    properties:
-> > > > +
-> > > > +      arm,trig-in-sigs:
-> > > > +        allOf:
-> > > > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > > > +        minItems: 1
-> > > > +        maxItems: 32
-> > > > +        description:
-> > > > +          List of CTI trigger in signal numbers in use by a trig-conns node.
-> > > > +
-> > > > +      arm,trig-in-types:
-> > > > +        allOf:
-> > > > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > > > +        minItems: 1
-> > > > +        maxItems: 32
-> > > > +        description:
-> > > > +          List of constants representing the types for the CTI trigger in
-> > > > +          signals. Types in this array match to the corresponding signal in the
-> > > > +          arm,trig-in-sigs array. If the -types array is smaller, or omitted
-> > > > +          completely, then the types will default to GEN_IO.
-> > > > +
-> > > > +      arm,trig-out-sigs:
-> > > > +        allOf:
-> > > > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > > > +        minItems: 1
-> > > > +        maxItems: 32
-> > > > +        description:
-> > > > +          List of CTI trigger out signal numbers in use by a trig-conns node.
-> > > > +
-> > > > +      arm,trig-out-types:
-> > > > +        allOf:
-> > > > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > > > +        minItems: 1
-> > > > +        maxItems: 32
-> > > > +        description:
-> > > > +          List of constants representing the types for the CTI trigger out
-> > > > +          signals. Types in this array match to the corresponding signal
-> > > > +          in the arm,trig-out-sigs array. If the "-types" array is smaller,
-> > > > +          or omitted completely, then the types will default to GEN_IO.
-> > > > +
-> > > > +      arm,trig-filters:
-> > > > +        allOf:
-> > > > +          - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > > > +        minItems: 1
-> > > > +        maxItems: 32
-> > > > +        description:
-> > > > +          List of CTI trigger out signals that will be blocked from becoming
-> > > > +          active, unless filtering is disabled on the driver.
-> > > > +
-> > > > +      arm,trig-conn-name:
-> > > > +        allOf:
-> > > > +          - $ref: /schemas/types.yaml#/definitions/string
-> > > > +        description:
-> > > > +          Defines a connection name that will be displayed, if the cpu or
-> > > > +          arm,cs-dev-assoc properties are not being used in this connection.
-> > > > +          Principle use for CTI that are connected to non-CoreSight devices, or
-> > > > +          external IO.
-> > > > +
-> > > > +    anyOf:
-> > > > +      - required:
-> > > > +        - arm,trig-in-sigs
-> > > > +      - required:
-> > > > +        - arm,trig-out-sigs
-> > > > +    oneOf:
-> > > > +      - required:
-> > > > +        - arm,trig-conn-name
-> > > > +      - required:
-> > > > +        - cpu
-> > > > +      - required:
-> > > > +        - arm,cs-dev-assoc
-> > >
-> > > This would mean that either arm,trig-conn-name, cpu xor
-> > > arm,cs-dev-assoc is required in the trig_conn child nodes, but they
-> > > don't seem to be defined at this level but in the parent node?
-> > >
-> >
-> > cpu and rm,cs-dev-assoc can appear in the parent node if the
-> > arm,coresight-cti-v8-arch compatible string is used - hence declared
-> > at that level. See the examples for the v8 compatible layout.
-> >
-> > > > +
-> > > > +required:
-> > > > +  - compatible
-> > > > +  - reg
-> > > > +  - clocks
-> > > > +  - clock-names
-> > > > +
-> > > > +examples:
-> > > > +  # minimum CTI definition. DEVID register used to set number of triggers.
-> > > > +  - |
-> > > > +    cti@20020000 {
-> > > > +      compatible = "arm,coresight-cti", "arm,primecell";
-> > > > +      reg = <0x20020000 0x1000>;
-> > > > +
-> > > > +      clocks = <&soc_smc50mhz>;
-> > > > +      clock-names = "apb_pclk";
-> > > > +    };
-> > > > +  #  v8 architecturally defined CTI - CPU + ETM connections generated by the
-> > > > +  #  driver according to the v8 architecture specification.
-> > > > +  - |
-> > > > +    cti@859000 {
-> > > > +      compatible = "arm,coresight-cti-v8-arch", "arm,coresight-cti",
-> > > > +                   "arm,primecell";
-> > > > +      reg = <0x859000 0x1000>;
-> > > > +
-> > > > +      clocks = <&soc_smc50mhz>;
-> > > > +      clock-names = "apb_pclk";
-> > > > +
-> > > > +      cpu = <&CPU1>;
-> > > > +      arm,cs-dev-assoc = <&etm1>;
-> > >
-> > > and it looks like arm,cs-dev-assoc and cpu can be combined?
-> > >
-> > Absolutely - a CTI can and is connected to both the CPU and an
-> > optional ETM attached to the CPU in a v8 architecture system.
->
-> That's not what
->
-> > > > +    oneOf:
-> > > > +      - required:
-> > > > +        - arm,trig-conn-name
-> > > > +      - required:
-> > > > +        - cpu
-> > > > +      - required:
-> > > > +        - arm,cs-dev-assoc
->
-> Is saying though. oneOf is a xor, you can have one of the three
-> schemas that are valid, but not more than that.
->
+On Mon 16 Dec 2019 at 18:50, Stephen Boyd <sboyd@kernel.org> wrote:
 
-This required schema only applies to the trig-conns@ child nodes. So
-each trig-conns can have one only of the three attributes - as each
-trig-conns node represents a single connection between the CTI and a
-component, and defines the trigger signals that exist in that
-connections.
+> Quoting Jerome Brunet (2019-12-16 01:13:31)
+>> 
+>> On Sun 15 Dec 2019 at 22:01, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
+>> 
+>> > While playing with devfreq support for the lima driver I experienced
+>> > sporadic (random) system lockups. It turned out that this was in
+>> > certain cases when changing the mali clock.
+>> >
+>> > The Amlogic vendor GPU platform driver (which is responsible for
+>> > changing the clock frequency) uses the following pattern when updating
+>> > the mali clock rate:
+>> > - at initialization: initialize the two mali_0 and mali_1 clock trees
+>> >   with a default setting and enable both clocks
+>> > - when changing the clock frequency:
+>> > -- set HHI_MALI_CLK_CNTL[31] to temporarily use the mali_1 clock output
+>> > -- update the mali_0 clock tree (set the mux, divider, etc.)
+>> > -- clear HHI_MALI_CLK_CNTL[31] to temporarily use the mali_0 clock
+>>                                       ^ no final setting then ? :P
+>> >    output again
+>> >
+>> > With the common clock framework we can even do better:
+>> > by setting CLK_SET_RATE_PARENT for the mali_0 and mali_1 output gates
+>>                 ^
+>> From your patch, I guess you mean CLK_SET_RATE_GATE ?
+>> 
+>> > we can force the common clock framework to update the "inactive" clock
+>> > and then switch to it's output.
+>> >
+>> > I only tested this patch for a limited time only (approx. 2 hours).
+>> > So far I couldn't reproduce the sporadic system lockups with it.
+>> > However, broader testing would be great so I would like this to be
+>> > applied for -next.
+>> 
+>> CLK_SET_RATE_GATE guarantees that a clock cannot be updated while in
+>> use. While it works at your advantage here, I'm not sure CCF guarantees
+>> the assumption this implementation is based on. Some explanation below:
+>> 
+>> In your case, if it works as you expect when calling set_rate() on the
+>> top clock, it goes as this:
+>> 
+>> - mali0 is use with rate X:
+>> - => set_rate(mali_top, Y)
+>> - mali0 is in use, cannot change, will round rate Y to X
+>> - mali1 is not in use, can provide Y
+>> - mali1 is determined to be the new best parent for mali top
+>> 
+>> So far so good.
+>> 
+>> - CCF pick the mali1 subtree
+>>   *start updating the clock from the root to the leaf*
+>> 
+>> So the mali top mux, which choose between mali0 and mali1, will be
+>> *updated last* which crucial to your use case.
+>> 
+>> I just wonder if this crucial part something CCF guarantee and you can
+>> rely on it ... or if it might break in the future.
+>> 
+>> Stephen, any thoughts on this ?
+>
+> We have problems with the order in which we call the set_rate clk_op.
+> Sometimes clk providers want us to call from leaf to root but instead we
+> call from root to leaf because of implementation reasons. Controlling
+> the order in which clk operations are done is an unsolved problem. But
+> yes, in the future I'd like to see us introduce the vaporware that is
+> coordinated clk rates that would allow clk providers to decide what this
+> order should be, instead of having to do this "root-to-leaf" update.
+> Doing so would help us with the clk dividers that have some parent
+> changing rate that causes the downstream device to be overclocked while
+> we change the parent before the divider.
+>
+> If there are more assumptions like this about how the CCF is implemented
+> then we'll have to be extra careful to not disturb the "normal" order of
+> operations when introducing something that allows clk providers to
+> modify it.
 
-At the cti@ level, if the compatible is the arm,coresight-cti-v8-arch
-type, then both cpu and arm,cs-dev-assoc can appear at this level as
-we only need to know the devices it is connected to - the individual
-trigger signals in the connections are defined by the architecture and
-do not need repeating here.
+I understand that CCR would, in theory, allow to define that sort of
+details. Still defining (and documenting) the default behavior would be
+nice.
 
-> > > > +    };
-> > > > +  # Implementation defined CTI - CPU + ETM connections explicitly defined..
-> > > > +  # Shows use of type constants from dt-bindings/arm/coresight-cti-dt.h
-> > > > +  - |
-> > > > +    #include <dt-bindings/arm/coresight-cti-dt.h>
-> > > > +
-> > > > +    cti@858000 {
-> > > > +      compatible = "arm,coresight-cti", "arm,primecell";
-> > > > +      reg = <0x858000 0x1000>;
-> > > > +
-> > > > +      clocks = <&soc_smc50mhz>;
-> > > > +      clock-names = "apb_pclk";
-> > > > +
-> > > > +      arm,cti-ctm-id = <1>;
-> > > > +
-> > > > +      trig-conns@0 {
-> > >
-> > > So, what I think happened here is that your patternProperties doesn't
-> > > match anything (underscore vs dash), and since you don't have
-> > > additionalProperties set to false, it doesn't warn that there's
-> > > properties that aren't defined in the binding. Meaning that none of
-> > > the child nodes in the bindings are effectively validated.
-> > >
-> >
-> > OK - fixing the name should fix this.
-> > I can't use additionalProperties as this is prohibited for bindings
-> > that use ref: (according to the example-schema.yaml)
+So the question is:
+ * Can we rely set_rate() doing a root-to-leaf update until CCR comes
+   around ?
+ * If not, for use cases like the one described by Martin, I guess we
+   are stuck with the notifier ? Or would you have something else to
+   propose ?
+   
 >
-> Ah right, I missed that one, sorry. In this case, you can use the
-> keyword unevaluatedProperties instead. As its name suggests, it will
-> report an error if there's a property that hasn't been validated by
-> any schemas.
->
-> Note that this is a keyword introduced by the latest schemas spec
-> (draft 2019-09) which isn't supported by the DT tools yet. But putting
-> it into your schema will at least allow to have that check when the
-> tools will support it.
->
-> > > > +            arm,trig-in-sigs = <4 5 6 7>;
-> > > > +            arm,trig-in-types = <ETM_EXTOUT
-> > > > +                                 ETM_EXTOUT
-> > > > +                                 ETM_EXTOUT
-> > > > +                                 ETM_EXTOUT>;
-> > > > +            arm,trig-out-sigs = <4 5 6 7>;
-> > > > +            arm,trig-out-types = <ETM_EXTIN
-> > > > +                                  ETM_EXTIN
-> > > > +                                  ETM_EXTIN
-> > > > +                                  ETM_EXTIN>;
-> > > > +            arm,cs-dev-assoc = <&etm0>;
-> > > > +      };
-> > >
-> > > Nodes with unit-address must have a matching reg property. This will
-> > > generate a dtc warning too.
-> >
-> > That's interesting - I don't get any dtc warnings when compiling or
-> > when running make dt_binding_checl
->
-> Linux disables a lot of DTC warnings. You can see all (I think?) the
-> warnings by passing W=1 in the environment when you compile the device
-> trees.
->
-Thanks -  the W=12 starts outputting warnings for lack of reg in child nodes.
-I'll build the requirement into the next version so it is explicitly
-called out in the check.
+> Also, isn't CLK_SET_RATE_GATE broken in the case that clk_set_rate()
+> isn't called on that particular clk? I seem to recall that the flag only
+> matters when it's applied to the "leaf" or entry point into the CCF from
+> a consumer API.
 
-> > Is this rule documented anywhere? I cannot see it in the 0.2 spec
-> > version from devicetree.org or any of the examples / docs in the
-> > kernel tree.
->
-> The commit adding it to DTC is this one
-> https://git.kernel.org/pub/scm/utils/dtc/dtc.git/commit/?id=852e9ecbe1976927057402f8a8f71ee8e8a49098
+It did but not anymore
 
-I was referring to the requirement for reg = <N> in node@<N> child
-nodes - though I have now spotted this in the early part of the
-0.3-rc2 spec - which appears to be the latest I have access to.
+> I've wanted to fix that but never gotten around to it.
 
-So I can add in the reg<> parameters and fix this up.
+I fixed that already :P
+CLK_SET_RATE_GATE is a special case of clock protect. The clock is
+protecting itself so it is going down through the tree.
+
+
+> The whole flag sort of irks me because I don't understand what consumers
+> are supposed to do when this flag is set on a clk. How do they discover
+> it?
+
+Actually (ATM) the consumer is not even aware of it. If a clock with
+CLK_SET_RATE_GATE is enabled, it will return the current rate to
+.round_rate() and .set_rate() ... as if it was fixed.
+
+> They're supposed to "just know" and turn off the clk first and then
+> call clk_set_rate()?
+
+ATM, yes ... if CCF cannot switch to another "unlocked" subtree (the
+case here)
+
+> Why can't the framework do this all in the clk_set_rate() call?
+
+When there is multiple consumers the behavior would become a bit
+difficult to predict and drivers may have troubles anticipating that,
+maybe, the clock is locked.
 
 >
-> It just seems that while valid, it's against best practices.
->
-> Maxime
+>> 
+>> PS: If CCF does guarantee "root-to-leaf" updates, I think this
+>> implementation is a clever trick to solve this usual glitch free clock
+>> update issue ... much more elegant that the notifier solution we have
+>> been using so far.
 
-Thanks
-
-Mike
---
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
