@@ -2,71 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0125120330
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:04:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D605D12034F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:07:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T+T/NubRKBkB4vSXXKpZhHAQA5ROhvBk95Ru3Wd0uoQ=; b=feyLDA4OzxjsgH
-	l8y1zlg6OltsCmlUUIDiXYQvA6kFJ2qAj8fJkGC3TRKB1etJNBMlJY5B+4hQJVc6ar8Pj0brOjGDE
-	WCYmWXdkJUyu09lE5Wupsolt8WPIIfWWY5YyC/V62TCYIoBH2QYVQeY8OdWoHJFATOv3THytCdAqp
-	xp+Fvtrj/JslW+t7Hk93OYO3lt1EPJ5l2qHcpGcV8cXPDGB+s3SJ2QeolvKUREAUOML8mNjm6QCit
-	dfn7bBC3k/zGFsQbCOT+4Vy1rObJYzlUIEksKntbzMCgO6gt8m7SlZiKk0/LXeTBszRusunHD1cRY
-	D3D9vQGSVlk2Vcm1m52g==;
+	List-Owner; bh=q+79sRUgFhtAjeEr1rGsxuomfVXQz96LofrWZuBl1TU=; b=Uv4Iq40EId2kKI
+	Fwt294tTDJwtWv5NhTtIBH0vaCzlKPEHKRS0AL9hn9+DeaafkoeYxcM7P6Cu2Nr1fgC3yU3DlzMAm
+	3xOKxa3ozlG5DAuAX9QHw/Tqrzn5MTvqlRlWSshuQdNOLadDMS2S+OwR/lEz4wJ2CTpqT0K18Sz8c
+	yIqe7auRr87x1eTeRDTVOLKeOYbrwwiQXfFyuPeaXL63TPK0CDBcyJpvJJ3NJxfQyDoAS+TDrbYtD
+	l2mycHXoAr8ECLJMbO7Xwp+6aVt8C+mFbxc0xLpjiMCpdPOJC2sQkzsoetMvW5ysozqRdPFKlImmQ
+	8Ld7hGu4I+tR1mQWVKbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igoAw-0004zE-54; Mon, 16 Dec 2019 11:04:30 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1igoE8-0006vJ-8M; Mon, 16 Dec 2019 11:07:48 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igoAS-0004oT-Jb; Mon, 16 Dec 2019 11:04:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=T5jUwhG5VPmfwvGWXVkOBlrlF0PHl4vRCrBbuHZot1M=; b=XKw+sRGVYjEDBdN5nwlV26J+02
- CL4nTT9lm/HVg/dUmbYd6SxucA7C5skV/vAczck52JW9HDevLUy5SWrT0eulsDL+j8Ob6UrdhnYSc
- XOuVR6mbUj9cWrk9mBF1OzPcNFfreU4BODNHUFuptfD6AtNYBVO3SpTD6JIpE0Fe9DKCdwattr4k2
- mZ/1v0G4WCEJ43clMqVPpaLg0/TDO49Wldcefi7Ez6T6K/FSedwc405lNE8xgJCFg/GN54Q37l5Zy
- WDDQd94u8w6X5vCA5SLVOMyuivYcSLyrOD5kkayn5q466MxkJbaMQUrkXdIl4mkF3mCg1JLsGoHFw
- 0oV92IXA==;
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igoAP-0004dS-FS; Mon, 16 Dec 2019 11:03:58 +0000
-X-Originating-IP: 91.224.148.103
-Received: from xps13 (unknown [91.224.148.103])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id DB96C24001C;
- Mon, 16 Dec 2019 11:03:13 +0000 (UTC)
-Date: Mon, 16 Dec 2019 12:03:12 +0100
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH 09/12] drm/rockchip: lvds: Add PX30 support
-Message-ID: <20191216120312.4aa478da@xps13>
-In-Reply-To: <20191216105827.rxkfbwemkqw446jx@gilmour.lan>
-References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
- <20191213181051.25983-10-miquel.raynal@bootlin.com>
- <20191216105827.rxkfbwemkqw446jx@gilmour.lan>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1igoDu-0006tX-SV
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 11:07:36 +0000
+Received: by mail-io1-xd44.google.com with SMTP id k24so4791816ioc.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Dec 2019 03:07:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=KfZaSbdFEASJkf9WsXHl71dcv4ETqMgnXgcnwp3Mq+I=;
+ b=dP+KqavQmuo0QMDmi4neiVk93gyhwe17pjwdfjNCR4kaW410MUv5U9XBebG0Af2JUg
+ uSjY0f9+4haCQspqumE1JA6bnz8vOxRbsSA26BD2mrXZCVUyRjkx08KynOVeOGtZ0Ok4
+ rzKSsE7NpKWocqf5Jm4pm2f4YI9vDE48P61aE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KfZaSbdFEASJkf9WsXHl71dcv4ETqMgnXgcnwp3Mq+I=;
+ b=MN7ZK0NUk9FmD5ftueFlIp82XwGbonPLlHqS8m9+9alUezzMBFHwceSSZJI+/bxfux
+ V2om5V5UQjtZG1cUaBtWl/WiBmDY8G7PNn/TjA0esxFIReItNgv0CJIwcPNvEawHeLPe
+ lXxN6XbcPH2OkaCYUf4FyKPBtWYijXlYiBLjuLz1Y4+9wjGBUKsI6/pJAK0jC5jmgrcD
+ ckZHgiWDNHztshj7R30ulMmQxB2Xdc+eAtThrsGgGBStZskw0uUqRNlyjC+cxUHrIs4i
+ IXmWg1FRKwqZjlk0BW0nOJxoGININJg1fXVR8tm5zdxq2Uspj2El7A4ntg4npDWhZu61
+ y1Tw==
+X-Gm-Message-State: APjAAAVd9KkUXgBdZOLFDVvNcGFaUU7BMMRTwPNy5Wp0/WA4OeCJ9knk
+ cVkvr+JW5yIfa402XYvqITZWyU3SU8RbwlElXdbiqj+I
+X-Google-Smtp-Source: APXvYqxYm4/U2soHztfqAotrtRHQmYHhxvY2dRK0oTC0bL7+7SnLpoXa+xv9qJGP1N2VQheZkh2UqTeKeOZ/EbOzqgQ=
+X-Received: by 2002:a5d:97c9:: with SMTP id k9mr17260864ios.297.1576494451527; 
+ Mon, 16 Dec 2019 03:07:31 -0800 (PST)
 MIME-Version: 1.0
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+References: <20191203134816.5319-1-jagan@amarulasolutions.com>
+ <20191203134816.5319-2-jagan@amarulasolutions.com>
+ <20191204133600.gnv6dnhk6upe7xod@gilmour.lan>
+In-Reply-To: <20191204133600.gnv6dnhk6upe7xod@gilmour.lan>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Mon, 16 Dec 2019 16:37:20 +0530
+Message-ID: <CAMty3ZDU57Hj3ZSBC6sSMFWN9-HQadA03hmXUNUVS1W0UQQ3DA@mail.gmail.com>
+Subject: Re: [PATCH v12 1/7] dt-bindings: sun6i-dsi: Document A64 MIPI-DSI
+ controller
+To: Maxime Ripard <mripard@kernel.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191216_030735_069680_76362E8C 
+X-CRM114-Status: GOOD (  20.39  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.193 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,54 +91,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
- Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Michael Trimarchi <michael@amarulasolutions.com>,
+ linux-amarula <linux-amarula@amarulasolutions.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWF4aW1lLAoKTWF4aW1lIFJpcGFyZCA8bWF4aW1lQGNlcm5vLnRlY2g+IHdyb3RlIG9uIE1v
-biwgMTYgRGVjIDIwMTkgMTE6NTg6MjcKKzAxMDA6Cgo+IEhpLAo+IAo+IE9uIEZyaSwgRGVjIDEz
-LCAyMDE5IGF0IDA3OjEwOjQ4UE0gKzAxMDAsIE1pcXVlbCBSYXluYWwgd3JvdGU6Cj4gPiArc3Rh
-dGljIGludCBweDMwX2x2ZHNfZ3JmX2NvbmZpZyhzdHJ1Y3QgZHJtX2VuY29kZXIgKmVuY29kZXIs
-Cj4gPiArCQkJCXN0cnVjdCBkcm1fZGlzcGxheV9tb2RlICptb2RlKQo+ID4gK3sKPiA+ICsJc3Ry
-dWN0IHJvY2tjaGlwX2x2ZHMgKmx2ZHMgPSBlbmNvZGVyX3RvX2x2ZHMoZW5jb2Rlcik7Cj4gPiAr
-CXU4IG5oc3luYyA9ICEobW9kZS0+ZmxhZ3MgJiBEUk1fTU9ERV9GTEFHX1BIU1lOQyk7Cj4gPiAr
-CXU4IG52c3luYyA9ICEobW9kZS0+ZmxhZ3MgJiBEUk1fTU9ERV9GTEFHX1BWU1lOQyk7Cj4gPiAr
-CXU4IG5kY2xrID0gIShtb2RlLT5mbGFncyAmIERSTV9NT0RFX0ZMQUdfUENTWU5DKTsKPiA+ICsJ
-aW50IHJldDsKPiA+ICsKPiA+ICsJaWYgKGx2ZHMtPm91dHB1dCAhPSBESVNQTEFZX09VVFBVVF9M
-VkRTKSB7Cj4gPiArCQlEUk1fREVWX0VSUk9SKGx2ZHMtPmRldiwgIlVuc3VwcG9ydGVkIGRpc3Bs
-YXkgb3V0cHV0ICVkXG4iLAo+ID4gKwkJCSAgICAgIGx2ZHMtPm91dHB1dCk7Cj4gPiArCQlyZXR1
-cm4gLUVJTlZBTDsKPiA+ICsJfQo+ID4gKwo+ID4gKwlpZiAobmhzeW5jIF4gbnZzeW5jKSB7Cj4g
-PiArCQlEUk1fREVWX0VSUk9SKGx2ZHMtPmRldiwgIlVuc3VwcG9ydGVkIEhzeW5jL1ZzeW5jIHBv
-bGFyaXR5XG4iKTsKPiA+ICsJCXJldHVybiAtRUlOVkFMOwo+ID4gKwl9Cj4gPiArCj4gPiArCS8q
-IFNldCBmb3JtYXQgKi8KPiA+ICsJcmV0ID0gcmVnbWFwX3VwZGF0ZV9iaXRzKGx2ZHMtPmdyZiwg
-UFgzMF9MVkRTX0dSRl9QRF9WT19DT04xLAo+ID4gKwkJCQkgUFgzMF9MVkRTX0ZPUk1BVChsdmRz
-LT5mb3JtYXQpLAo+ID4gKwkJCQkgUFgzMF9MVkRTX0ZPUk1BVChsdmRzLT5mb3JtYXQpKTsKPiA+
-ICsJaWYgKHJldCkKPiA+ICsJCXJldHVybiByZXQ7Cj4gPiArCj4gPiArCS8qIENvbnRyb2wgSHN5
-bmMvVnN5bmMgcG9sYXJpdHkgKi8KPiA+ICsJcmV0ID0gcmVnbWFwX3VwZGF0ZV9iaXRzKGx2ZHMt
-PmdyZiwgUFgzMF9MVkRTX0dSRl9QRF9WT19DT04wLAo+ID4gKwkJCQkgUFgzMF9MVkRTX1RJRV9D
-TEtTKDEpLAo+ID4gKwkJCQkgUFgzMF9MVkRTX1RJRV9DTEtTKDEpKTsKPiA+ICsJaWYgKHJldCkK
-PiA+ICsJCXJldHVybiByZXQ7Cj4gPiArCj4gPiArCS8qIFNldCBIc3luYy9Wc3luYyBwb2xhcml0
-eSAqLwo+ID4gKwlyZXQgPSByZWdtYXBfdXBkYXRlX2JpdHMobHZkcy0+Z3JmLCBQWDMwX0xWRFNf
-R1JGX1BEX1ZPX0NPTjAsCj4gPiArCQkJCSBQWDMwX0xWRFNfSU5WRVJUX0NMS1MoMSksCj4gPiAr
-CQkJCSBQWDMwX0xWRFNfSU5WRVJUX0NMS1MobmhzeW5jKSk7Cj4gPiArCWlmIChyZXQpCj4gPiAr
-CQlyZXR1cm4gcmV0OyAgCj4gCj4gSSBkb24ndCBrbm93IHRoZSBoYXJkd2FyZSBidXQgaXQgc2Vl
-bXMgcHJldHR5IHdlaXJkIHRvIG1lLiBoc3luYyBhbmQKPiB2c3luYyBpbiBMVkRTIGFyZSBub3Qg
-Y2xvY2tzIChvciBldmVuIHNpZ25hbHMpLCB0aGV5J3JlIGEgYml0IGluIHRoZQo+IHBheWxvYWQu
-IElzIHRoZXJlIGFueSBleHBsYW5hdGlvbiBpbiB0aGUgZGF0YXNoZWV0IChvciBldmVuIGEKPiBk
-YXRhc2hlZXQgaW4gdGhlIGZpcnN0IHBsYWNlKT8KClRoZXJlIGlzIG5vIGV4cGxhbmF0aW9uIGFi
-b3V0IHRoaXMgaW4gdGhlIFBYMzAgVFJNIHBhcnQgMSAocHVibGljKS4gQnV0CnlvdSBhcmUgcmln
-aHQgdGhlIG5hbWluZyBpcyB3ZWlyZC4gQ291bGQgdGhlICJ0aWUgY2xvY2tzIiB0aGluZyBhYm92
-ZQptZWFuIHNvbWV0aGluZyB0byB5b3UvcGVvcGxlIGtub3dpbmcgdGhlIExWRFMgd29ybGQ/CgpD
-aGVlcnMsCk1pcXXDqGwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed, Dec 4, 2019 at 7:06 PM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> On Tue, Dec 03, 2019 at 07:18:10PM +0530, Jagan Teki wrote:
+> > The MIPI DSI controller in Allwinner A64 is similar to A33.
+> >
+> > But unlike A33, A64 doesn't have DSI_SCLK gating so it is valid
+> > to have separate compatible for A64 on the same driver.
+> >
+> > DSI_SCLK uses mod clock-names on dt-bindings, so the same
+> > is not required for A64.
+> >
+> > On that note
+> > - A64 require minimum of 1 clock like the bus clock
+> > - A33 require minimum of 2 clocks like both bus, mod clocks
+> >
+> > So, update dt-bindings so-that it can document both A33,
+> > A64 bindings requirements.
+> >
+> > Reviewed-by: Rob Herring <robh@kernel.org>
+> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
+> > ---
+> > Changes for v12:
+> > - Use 'enum' instead of oneOf+const
+> >
+> >  .../display/allwinner,sun6i-a31-mipi-dsi.yaml | 20 +++++++++++++++++--
+> >  1 file changed, 18 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
+> > index dafc0980c4fa..b91446475f35 100644
+> > --- a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
+> > +++ b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
+> > @@ -15,7 +15,9 @@ properties:
+> >    "#size-cells": true
+> >
+> >    compatible:
+> > -    const: allwinner,sun6i-a31-mipi-dsi
+> > +    enum:
+> > +      - allwinner,sun6i-a31-mipi-dsi
+> > +      - allwinner,sun50i-a64-mipi-dsi
+> >
+> >    reg:
+> >      maxItems: 1
+> > @@ -24,6 +26,8 @@ properties:
+> >      maxItems: 1
+> >
+> >    clocks:
+> > +    minItems: 1
+> > +    maxItems: 2
+> >      items:
+> >        - description: Bus Clock
+> >        - description: Module Clock
+> > @@ -63,13 +67,25 @@ required:
+> >    - reg
+> >    - interrupts
+> >    - clocks
+> > -  - clock-names
+> >    - phys
+> >    - phy-names
+> >    - resets
+> >    - vcc-dsi-supply
+> >    - port
+> >
+> > +allOf:
+> > +  - if:
+> > +      properties:
+> > +         compatible:
+> > +           contains:
+> > +             const: allwinner,sun6i-a31-mipi-dsi
+> > +      then:
+> > +        properties:
+> > +          clocks:
+> > +            minItems: 2
+> > +        required:
+> > +          - clock-names
+> > +
+>
+> Your else condition should check that the number of clocks items is 1
+> on the A64
+
+But the minItems mentioned as 1 in clocks, which is unchanged number
+by default. doesn't it sufficient?
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
