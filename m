@@ -2,84 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB07D121C32
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 22:53:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B901121C36
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 22:57:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZcLjgvbsJvWd/boRD5JAW3gnesQbbBhvhk7WUbYog5Q=; b=PVTOJ93eQ4Eokj
-	M2XoedkYRKNrS/R1ksFOxJpjYL839be/9DlkXV7C3gEX7iiF2dH1e9lF3/3E1rOJgtmHu9KL+tfU2
-	QRnetTnurnlbGfQ+EU4gMZACSBuUxNI9IBPl/4SqbqV3XPymVy4I/MaEdtEzUyoCBYdepnKiwIoQ+
-	FNKJAH08L/RnKokrU8o1mFgHjL0mj1oX1D4EqII3ofYGSM2+WQ/5GTH22VY3iS5PQajQph3ojGx/1
-	hSeoNO7gVuQkOEvawN3kA0HNhgo2e5Ayzt4JOxSFWg2rohWML7Qk/DPH2D/BbsZanx651VRTSX+y6
-	L9mAq+R6V2ytdPb6I0sQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=rGvoS+gvSIHBYJiehh1kvkShYqRyo5DQ9KiD0y8dfyE=; b=AWl8YhqRf/pGh+jYF3Sxtv4pK
+	skWkrcm5Q0Kn/y5BbUjxvGcYMyXBX5HdSUVf8RgaSYxIkVmx2PjY54k4GhiYKD/BB4qWIyF9dvaZ0
+	273L55rvOuVeyfU+WJ7uVIQ2fCb1X6iceROumLrn/IxrKWegiPCn9HRwRe0TYHZefKwerTojnwbjV
+	Ly1lo3Hq17fIoRSyBhQxZUO1zOky2aeFlScNetyFAg/xaNBcQHXPuZCWFoDHpU0TI0QUv9AwXXpr7
+	DYzjqrMxhMz5vaah6EB17CMFId+eLuzdjCpZs6+0qSRz4/yfAXqFkgOY0yjc7qmkhpeH6OXBpFEH0
+	FSaSv67tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igyJG-0005SD-LL; Mon, 16 Dec 2019 21:53:46 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1igyMr-00078D-KK; Mon, 16 Dec 2019 21:57:29 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igyJ3-0005RC-HI
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 21:53:35 +0000
-Received: by mail-lf1-x143.google.com with SMTP id l18so5419953lfc.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 13:53:31 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=UWnCdbVcICZmAK6eBq6qDsPZuchsCvO3LUVcqk3TXso=;
- b=XutwovNch624bzEmqS/scigRStmz63GXtqrGzMwVK0NC1oCv4UB0VCUM5PxxOzydWp
- KgxCwFsVHLq/KihZHLgr6f+D1KzJaw9KQWNiBii6VpvI+fy8aXiFpklcgeC2NtC4s7yd
- OUw90QVpp/GnOgfYUCKg0GgETLbPjzExFyNmFfB4CGfEDLBhPlg7mtjkUw9OuLtTcuJ2
- s7a8c/Pdb00Ozg8N+I1F420VBWmPgKgOPCnADGbzpiAHfFmW7dyyiXb8klzg4NJLO2xt
- rkBy2G+UwtTrqeAmX4v9c5nJS961nWawUq9rlVeQ9nOBRegwT2oDZR/Cpb1YQs2vllTj
- rKGg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=UWnCdbVcICZmAK6eBq6qDsPZuchsCvO3LUVcqk3TXso=;
- b=D0WsyJSi1Ur7fV2k46S3i7a1HjEl8pXPtgmkKLAMs8xV1ANgxkmEZxCPOxV7c7soMx
- JzN0J1x/1VYK/Vueyg3H38izYTLL0P3ERgTNPx6yf8cESJdIpLTcOqhV6m2GalFlARE5
- 6c2X/26l/aW3jMNeWkgrQ2UmmYrhksO2Uyd6XIgO/TLx8Y3CgRiH8OHsk3lynsvpkqy/
- hIExeA0jet++Ds22DGX1spiYDEmx8+qVord8+S3qJjZoAhiSrU8KHnbKMVJvYQZs7IPs
- Tg/kZHze/FSz0/+2sh8mQ/iWi5pRhM70uadNAxAD+5mlhZgHRjyGIMP7PxJW44EqicJH
- RrwQ==
-X-Gm-Message-State: APjAAAXAcTOOgAnhRl5OqB30wtHAbvd0lHaImy08qsXHDrU/I+VzAQB8
- +l8vwRec1uRwoPlRWzaLbnk7qw==
-X-Google-Smtp-Source: APXvYqwbMx6tW5Wgn+Bdc3Hbpz9H0mRNZrI2wF2Gs8s8y4VPXUihxRs58UFX6f463QrP6ZujcZi8lQ==
-X-Received: by 2002:ac2:489b:: with SMTP id x27mr799195lfc.130.1576533210378; 
- Mon, 16 Dec 2019 13:53:30 -0800 (PST)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id n5sm11314858ljh.86.2019.12.16.13.53.28
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 16 Dec 2019 13:53:28 -0800 (PST)
-Date: Mon, 16 Dec 2019 13:53:20 -0800
-From: Olof Johansson <olof@lixom.net>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] ARM: SoC fixes
-Message-ID: <20191216215320.li7x45fhkrkolvbk@localhost>
+ id 1igyMh-000773-Dz
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 21:57:21 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 16 Dec 2019 13:57:18 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,323,1571727600"; d="scan'208";a="205256585"
+Received: from yoojae-mobl1.amr.corp.intel.com (HELO [10.7.153.147])
+ ([10.7.153.147])
+ by orsmga007.jf.intel.com with ESMTP; 16 Dec 2019 13:57:18 -0800
+Subject: Re: [PATCH v11 11/14] mfd: intel-peci-client: Add Intel PECI client
+ driver
+To: Lee Jones <lee.jones@linaro.org>
+References: <20191211194624.2872-1-jae.hyun.yoo@linux.intel.com>
+ <20191211194624.2872-12-jae.hyun.yoo@linux.intel.com>
+ <20191216160145.GL2369@dell>
+From: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+Message-ID: <b92c3154-0ee4-3f1a-d913-15653a9469ea@linux.intel.com>
+Date: Mon, 16 Dec 2019 13:57:17 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20191216160145.GL2369@dell>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_135333_626148_6C44AC09 
-X-CRM114-Status: GOOD (  16.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191216_135719_495083_CDF77293 
+X-CRM114-Status: GOOD (  29.43  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,147 +70,435 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: olof@lixom.net, soc@kernel.org, arm@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Randy Dunlap <rdunlap@infradead.org>,
+ Tomer Maimon <tmaimon77@gmail.com>, devicetree@vger.kernel.org,
+ Vernon Mauery <vernon.mauery@linux.intel.com>,
+ Frederic Barrat <fbarrat@linux.vnet.ibm.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Jason M Biils <jason.m.bills@linux.intel.com>,
+ Eric Sandeen <sandeen@redhat.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jonathan Corbet <corbet@lwn.net>, openbmc@lists.ozlabs.org,
+ linux-doc@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Joel Stanley <joel@jms.id.au>, "Bryant G . Ly" <bryantly@linux.vnet.ibm.com>,
+ Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de>,
+ David Kershner <david.kershner@unisys.com>, Guenter Roeck <linux@roeck-us.net>,
+ Wu Hao <hao.wu@intel.com>, linux-hwmon@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, Arnd Bergmann <arnd@arndb.de>,
+ Philippe Ombredanne <pombredanne@nexb.com>, Johan Hovold <johan@kernel.org>,
+ Tomohiro Kusumi <kusumi.tomohiro@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Sagar Dharia <sdharia@codeaurora.org>,
+ linux-arm-kernel@lists.infradead.org, Juergen Gross <jgross@suse.com>,
+ Cyrille Pitchen <cyrille.pitchen@wedev4u.fr>, Andrew Jeffery <andrew@aj.id.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Darrick J . Wong" <darrick.wong@oracle.com>,
+ Stephen Boyd <sboyd@codeaurora.org>, Vinod Koul <vkoul@kernel.org>,
+ James Feist <james.feist@linux.intel.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "David S . Miller" <davem@davemloft.net>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+Hi Lee,
 
-The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+On 12/16/2019 8:01 AM, Lee Jones wrote:
+> On Wed, 11 Dec 2019, Jae Hyun Yoo wrote:
+> 
+>> This commit adds Intel PECI client driver.
+>>
+>> Cc: Lee Jones <lee.jones@linaro.org>
+>> Cc: Randy Dunlap <rdunlap@infradead.org>
+>> Cc: Rob Herring <robh+dt@kernel.org>
+>> Cc: Andrew Jeffery <andrew@aj.id.au>
+>> Cc: James Feist <james.feist@linux.intel.com>
+>> Cc: Jason M Biils <jason.m.bills@linux.intel.com>
+>> Cc: Joel Stanley <joel@jms.id.au>
+>> Cc: Vernon Mauery <vernon.mauery@linux.intel.com>
+>> Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+>> ---
+>> Changes since v10:
+>> - Fixed minor style issues.
+>>
+>>   drivers/mfd/Kconfig                   |  17 +++
+>>   drivers/mfd/Makefile                  |   1 +
+>>   drivers/mfd/intel-peci-client.c       | 149 ++++++++++++++++++++++++++
+>>   include/linux/mfd/intel-peci-client.h | 117 ++++++++++++++++++++
+>>   4 files changed, 284 insertions(+)
+>>   create mode 100644 drivers/mfd/intel-peci-client.c
+>>   create mode 100644 include/linux/mfd/intel-peci-client.h
+>>
+>> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
+>> index 420900852166..7022e54a4703 100644
+>> --- a/drivers/mfd/Kconfig
+>> +++ b/drivers/mfd/Kconfig
+>> @@ -632,6 +632,23 @@ config MFD_INTEL_MSIC
+>>   	  Passage) chip. This chip embeds audio, battery, GPIO, etc.
+>>   	  devices used in Intel Medfield platforms.
+>>   
+>> +config MFD_INTEL_PECI_CLIENT
+>> +	tristate "Intel PECI client"
+>> +	depends on (PECI || COMPILE_TEST)
+>> +	select MFD_CORE
+>> +	help
+>> +	  If you say yes to this option, support will be included for the
+>> +	  Intel PECI (Platform Environment Control Interface) client. PECI is a
+>> +	  one-wire bus interface that provides a communication channel from PECI
+>> +	  clients in Intel processors and chipset components to external
+>> +	  monitoring or control devices.
+>> +
+>> +	  Additional drivers must be enabled in order to use the functionality
+>> +	  of the device.
+>> +
+>> +	  This driver can also be built as a module. If so, the module
+>> +	  will be called intel-peci-client.
+>> +
+>>   config MFD_IPAQ_MICRO
+>>   	bool "Atmel Micro ASIC (iPAQ h3100/h3600/h3700) Support"
+>>   	depends on SA1100_H3100 || SA1100_H3600
+>> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+>> index aed99f08739f..91c6fda5cec6 100644
+>> --- a/drivers/mfd/Makefile
+>> +++ b/drivers/mfd/Makefile
+>> @@ -211,6 +211,7 @@ obj-$(CONFIG_MFD_INTEL_LPSS)	+= intel-lpss.o
+>>   obj-$(CONFIG_MFD_INTEL_LPSS_PCI)	+= intel-lpss-pci.o
+>>   obj-$(CONFIG_MFD_INTEL_LPSS_ACPI)	+= intel-lpss-acpi.o
+>>   obj-$(CONFIG_MFD_INTEL_MSIC)	+= intel_msic.o
+>> +obj-$(CONFIG_MFD_INTEL_PECI_CLIENT)	+= intel-peci-client.o
+>>   obj-$(CONFIG_MFD_PALMAS)	+= palmas.o
+>>   obj-$(CONFIG_MFD_VIPERBOARD)    += viperboard.o
+>>   obj-$(CONFIG_MFD_RC5T583)	+= rc5t583.o rc5t583-irq.o
+>> diff --git a/drivers/mfd/intel-peci-client.c b/drivers/mfd/intel-peci-client.c
+>> new file mode 100644
+>> index 000000000000..18bf0af0e09e
+>> --- /dev/null
+>> +++ b/drivers/mfd/intel-peci-client.c
+>> @@ -0,0 +1,149 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +// Copyright (c) 2018-2019 Intel Corporation
+>> +
+>> +#include <linux/bitfield.h>
+>> +#include <linux/mfd/core.h>
+>> +#include <linux/mfd/intel-peci-client.h>
+>> +#include <linux/module.h>
+>> +#include <linux/of_device.h>
+>> +#include <linux/peci.h>
+>> +
+>> +#define CPU_ID_MODEL_MASK      GENMASK(7, 4)
+>> +#define CPU_ID_FAMILY_MASK     GENMASK(11, 8)
+>> +#define CPU_ID_EXT_MODEL_MASK  GENMASK(19, 16)
+>> +#define CPU_ID_EXT_FAMILY_MASK GENMASK(27, 20)
+>> +
+>> +#define LOWER_NIBBLE_MASK      GENMASK(3, 0)
+>> +#define UPPER_NIBBLE_MASK      GENMASK(7, 4)
+>> +#define LOWER_BYTE_MASK        GENMASK(7, 0)
+>> +#define UPPER_BYTE_MASK        GENMASK(16, 8)
+>> +
+>> +static struct mfd_cell peci_functions[] = {
+>> +	{ .name = "peci-cputemp", },
+>> +	{ .name = "peci-dimmtemp", },
+>> +	/* TODO: Add additional PECI sideband functions into here */
+> 
+> No need for this comment.  It's implied.
 
-  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+I see. I'll remove this comment.
 
-are available in the Git repository at:
+>> +};
+>> +
+>> +static const struct cpu_gen_info cpu_gen_info_table[] = {
+>> +	{ /* Haswell Xeon */
+>> +		.family        = 6, /* Family code */
+> 
+> Nit: Why don't you just define the number, instead of feeling the need
+> to further clarify by providing a comment?
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-fixes
+Makes sense. Will define the number.
 
-for you to fetch changes up to e3992af1256a4fe0b83ac790d4caa58ff731609d:
+>> +		.model         = INTEL_FAM6_HASWELL_X,
+>> +		.core_max      = CORE_MAX_ON_HSX,
+>> +		.chan_rank_max = CHAN_RANK_MAX_ON_HSX,
+>> +		.dimm_idx_max  = DIMM_IDX_MAX_ON_HSX },
+>> +	{ /* Broadwell Xeon */
+>> +		.family        = 6, /* Family code */
+>> +		.model         = INTEL_FAM6_BROADWELL_X,
+>> +		.core_max      = CORE_MAX_ON_BDX,
+>> +		.chan_rank_max = CHAN_RANK_MAX_ON_BDX,
+>> +		.dimm_idx_max  = DIMM_IDX_MAX_ON_BDX },
+>> +	{ /* Skylake Xeon */
+>> +		.family        = 6, /* Family code */
+>> +		.model         = INTEL_FAM6_SKYLAKE_X,
+>> +		.core_max      = CORE_MAX_ON_SKX,
+>> +		.chan_rank_max = CHAN_RANK_MAX_ON_SKX,
+>> +		.dimm_idx_max  = DIMM_IDX_MAX_ON_SKX },
+>> +	{ /* Skylake Xeon D */
+>> +		.family        = 6, /* Family code */
+>> +		.model         = INTEL_FAM6_SKYLAKE_XD,
+>> +		.core_max      = CORE_MAX_ON_SKXD,
+>> +		.chan_rank_max = CHAN_RANK_MAX_ON_SKXD,
+>> +		.dimm_idx_max  = DIMM_IDX_MAX_ON_SKXD },
+>> +};
+>> +
+>> +static int peci_client_get_cpu_gen_info(struct peci_client_manager *priv)
+>> +{
+>> +	struct device *dev = &priv->client->dev;
+>> +	u32 cpu_id;
+>> +	u16 family;
+>> +	u8 model;
+>> +	int ret;
+>> +	int i;
+>> +
+>> +	ret = peci_get_cpu_id(priv->client->adapter, priv->client->addr,
+>> +			      &cpu_id);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	family = FIELD_PREP(LOWER_BYTE_MASK,
+>> +			    FIELD_GET(CPU_ID_FAMILY_MASK, cpu_id)) |
+>> +		 FIELD_PREP(UPPER_BYTE_MASK,
+>> +			    FIELD_GET(CPU_ID_EXT_FAMILY_MASK, cpu_id));
+>> +	model = FIELD_PREP(LOWER_NIBBLE_MASK,
+>> +			   FIELD_GET(CPU_ID_MODEL_MASK, cpu_id)) |
+>> +		FIELD_PREP(UPPER_NIBBLE_MASK,
+>> +			   FIELD_GET(CPU_ID_EXT_MODEL_MASK, cpu_id));
+>> +
+>> +	for (i = 0; i < ARRAY_SIZE(cpu_gen_info_table); i++) {
+>> +		const struct cpu_gen_info *cpu_info = &cpu_gen_info_table[i];
+>> +
+>> +		if (family == cpu_info->family && model == cpu_info->model) {
+>> +			priv->gen_info = cpu_info;
+>> +			break;
+>> +		}
+>> +	}
+>> +
+>> +	if (!priv->gen_info) {
+>> +		dev_err(dev, "Can't support this CPU: 0x%x\n", cpu_id);
+>> +		ret = -ENODEV;
+>> +	}
+>> +
+>> +	return ret;
+>> +}
+>> +
+>> +static int peci_client_probe(struct peci_client *client)
+>> +{
+>> +	struct device *dev = &client->dev;
+>> +	struct peci_client_manager *priv;
+>> +	uint cpu_no;
+>> +	int ret;
+>> +
+>> +	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
+>> +	if (!priv)
+>> +		return -ENOMEM;
+>> +
+>> +	dev_set_drvdata(dev, priv);
+>> +	priv->client = client;
+>> +	cpu_no = client->addr - PECI_BASE_ADDR;
+>> +
+>> +	ret = peci_client_get_cpu_gen_info(priv);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	ret = devm_mfd_add_devices(dev, cpu_no, peci_functions,
+>> +				   ARRAY_SIZE(peci_functions), NULL, 0, NULL);
+>> +	if (ret < 0) {
+>> +		dev_err(dev, "Failed to register child devices: %d\n", ret);
+>> +		return ret;
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +#if IS_ENABLED(CONFIG_OF)
+> 
+> #ifdef CONFIG_OF
 
-  Merge tag 'arm-soc/for-5.5/soc-fixes' of https://github.com/Broadcom/stblinux into arm/fixes (2019-12-16 11:33:29 -0800)
+Will fix it.
 
-----------------------------------------------------------------
-ARM: SoC fixes
+>> +static const struct of_device_id peci_client_of_table[] = {
+>> +	{ .compatible = "intel,peci-client" },
+>> +	{ }
+>> +};
+>> +MODULE_DEVICE_TABLE(of, peci_client_of_table);
+>> +#endif /* CONFIG_OF */
+> 
+> Please remove this comment.  It doesn't provide anything here.
 
-I didn't get a batch in this weekend, so here's what we queued up last
-week and today.
+I see. I'll remove this comment.
 
- - A couple of defconfigs add back debugfs -- it used to be implicitly
- enabled through CONFIG_TRACING, but 0e4a459f56c32d3e ("tracing: Remove
- unnecessary DEBUG_FS dependency") removed that.
+>> +static const struct peci_device_id peci_client_ids[] = {
+>> +	{ .name = "peci-client" },
+>> +	{ }
+>> +};
+>> +MODULE_DEVICE_TABLE(peci, peci_client_ids);
+> 
+> Is this a requirement?  If so, why?
+> 
+> We're trying to get rid of unnecessary tables.
+> 
+> Please grep for "probe_new".
 
- - The rest are mostly minor fixlets of the usual kind; some DT tweaks,
- a headerfile refactor that needs a build fix now, etc.
+This is needed because peci-core.c provides sub tree searching while
+registering a peci bus using of_match_device, also it provides
+runtime registration through sysfs interface using ID match just like
+I2C subsystem does. The probe member in 'struct peci_driver' is defined
+as the new style like this:
 
-----------------------------------------------------------------
-Andreas Kemnade (1):
-      ARM: dts: e60k02: fix power button
+struct peci_driver {
+	int (*probe)(struct peci_client *client);
+	[....]
+}
 
-Arnd Bergmann (1):
-      ARM: mmp: include the correct cputype.h
+>> +static struct peci_driver peci_client_driver = {
+>> +	.probe    = peci_client_probe,
+>> +	.id_table = peci_client_ids,
+>> +	.driver   = {
+>> +		.name           = KBUILD_MODNAME,
+>> +		.of_match_table = of_match_ptr(peci_client_of_table),
+>> +	},
+>> +};
+>> +module_peci_driver(peci_client_driver);
+>> +
+>> +MODULE_AUTHOR("Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>");
+>> +MODULE_DESCRIPTION("PECI client driver");
+>> +MODULE_LICENSE("GPL v2");
+>> diff --git a/include/linux/mfd/intel-peci-client.h b/include/linux/mfd/intel-peci-client.h
+>> new file mode 100644
+>> index 000000000000..9854303bbc26
+>> --- /dev/null
+>> +++ b/include/linux/mfd/intel-peci-client.h
+>> @@ -0,0 +1,117 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +/* Copyright (c) 2018-2019 Intel Corporation */
+>> +
+>> +#ifndef __LINUX_MFD_INTEL_PECI_CLIENT_H
+>> +#define __LINUX_MFD_INTEL_PECI_CLIENT_H
+>> +
+>> +#include <linux/peci.h>
+>> +
+>> +#if IS_ENABLED(CONFIG_X86)
+>> +#include <asm/intel-family.h>
+>> +#else
+>> +/*
+>> + * Architectures other than x86 cannot include the header file so define these
+>> + * at here. These are needed for detecting type of client x86 CPUs behind a PECI
+>> + * connection.
+>> + */
+>> +#define INTEL_FAM6_HASWELL_X		0x3F
+>> +#define INTEL_FAM6_BROADWELL_X		0x4F
+>> +#define INTEL_FAM6_SKYLAKE_X		0x55
+>> +#define INTEL_FAM6_SKYLAKE_XD		0x56
+>> +#endif
+>> +
+>> +#define CORE_MAX_ON_HSX        18 /* Max number of cores on Haswell */
+>> +#define CHAN_RANK_MAX_ON_HSX   8  /* Max number of channel ranks on Haswell */
+>> +#define DIMM_IDX_MAX_ON_HSX    3  /* Max DIMM index per channel on Haswell */
+>> +
+>> +#define CORE_MAX_ON_BDX        24 /* Max number of cores on Broadwell */
+>> +#define CHAN_RANK_MAX_ON_BDX   4  /* Max number of channel ranks on Broadwell */
+>> +#define DIMM_IDX_MAX_ON_BDX    3  /* Max DIMM index per channel on Broadwell */
+>> +
+>> +#define CORE_MAX_ON_SKX        28 /* Max number of cores on Skylake */
+>> +#define CHAN_RANK_MAX_ON_SKX   6  /* Max number of channel ranks on Skylake */
+>> +#define DIMM_IDX_MAX_ON_SKX    2  /* Max DIMM index per channel on Skylake */
+>> +
+>> +#define CORE_MAX_ON_SKXD       16 /* Max number of cores on Skylake D */
+>> +#define CHAN_RANK_MAX_ON_SKXD  2  /* Max number of channel ranks on Skylake D */
+>> +#define DIMM_IDX_MAX_ON_SKXD   2  /* Max DIMM index per channel on Skylake D */
+>> +
+>> +#define CORE_NUMS_MAX          CORE_MAX_ON_SKX
+>> +#define CHAN_RANK_MAX          CHAN_RANK_MAX_ON_HSX
+>> +#define DIMM_IDX_MAX           DIMM_IDX_MAX_ON_HSX
+>> +#define DIMM_NUMS_MAX          (CHAN_RANK_MAX * DIMM_IDX_MAX)
+>> +
+>> +/**
+>> + * struct cpu_gen_info - CPU generation specific information
+>> + * @family: CPU family ID
+>> + * @model: CPU model
+>> + * @core_max: max number of cores
+>> + * @chan_rank_max: max number of channel ranks
+>> + * @dimm_idx_max: max number of DIMM indices
+>> + *
+>> + * CPU generation specific information to identify maximum number of cores and
+>> + * DIMM slots.
+>> + */
+>> +struct cpu_gen_info {
+>> +	u16  family;
+>> +	u8   model;
+>> +	uint core_max;
+>> +	uint chan_rank_max;
+>> +	uint dimm_idx_max;
+>> +};
+>> +
+>> +/**
+>> + * struct peci_client_manager - PECI client manager information
+>> + * @client; pointer to the PECI client
+>> + * @name: PECI client manager name
+>> + * @gen_info: CPU generation info of the detected CPU
+>> + *
+>> + * PECI client manager information for managing PECI sideband functions on a CPU
+>> + * client.
+>> + */
+>> +struct peci_client_manager {
+>> +	struct peci_client *client;
+>> +	char name[PECI_NAME_SIZE];
+>> +	const struct cpu_gen_info *gen_info;
+>> +};
+>> +
+>> +/**
+>> + * peci_client_read_package_config - read from the Package Configuration Space
+>> + * @priv: driver private data structure
+>> + * @index: encoding index for the requested service
+>> + * @param: parameter to specify the exact data being requested
+>> + * @data: data buffer to store the result
+>> + * Context: can sleep
+>> + *
+>> + * A generic PECI command that provides read access to the
+>> + * "Package Configuration Space" that is maintained by the PCU, including
+>> + * various power and thermal management functions. Typical PCS read services
+>> + * supported by the processor may include access to temperature data, energy
+>> + * status, run time information, DIMM temperatures and so on.
+>> + *
+>> + * Return: zero on success, else a negative error code.
+>> + */
+>> +static inline int
+>> +peci_client_read_package_config(struct peci_client_manager *priv,
+>> +				u8 index, u16 param, u8 *data)
+>> +{
+>> +	struct peci_rd_pkg_cfg_msg msg;
+>> +	int ret;
+>> +
+>> +	msg.addr = priv->client->addr;
+>> +	msg.index = index;
+>> +	msg.param = param;
+>> +	msg.rx_len = 4;
+>> +
+>> +	ret = peci_command(priv->client->adapter, PECI_CMD_RD_PKG_CFG, &msg);
+>> +	if (msg.cc != PECI_DEV_CC_SUCCESS)
+>> +		ret = -EAGAIN;
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	memcpy(data, msg.pkg_config, 4);
+>> +
+>> +	return 0;
+>> +}
+> 
+> Where is this function used?
 
-Christoph Niedermaier (1):
-      ARM: imx: Correct ocotp id for serial number support of i.MX6ULL/ULZ SoCs
+This function is used in MFD cell drivers that are included in this
+patch set, peci-cputemp and peci-dimmtemp drivers. I moved it from
+intel-peci-client.c to this header file as you commented in the previous
+review spin. I also thought about moving it into peci-hwmon.h but
+this command macro is a generic thing for Intel CPUs so I moved into
+here.
 
-Florian Fainelli (4):
-      ARM: dts: BCM5301X: Fix MDIO node address/size cells
-      ARM: dts: Cygnus: Fix MDIO node address/size cells
-      dt-bindings: reset: Fix brcmstb-reset example
-      reset: brcmstb: Remove resource checks
+Thanks a lot for your review!
 
-Geert Uytterhoeven (3):
-      reset: Fix {of,devm}_reset_control_array_get kerneldoc return types
-      reset: Do not register resource data for missing resets
-      ARM: shmobile: defconfig: Restore debugfs support
+-Jae
 
-Grygorii Strashko (1):
-      ARM: omap2plus_defconfig: enable NET_SWITCHDEV
-
-H. Nikolaus Schaller (1):
-      ARM: bcm: Add missing sentinel to bcm2711_compat[]
-
-Krzysztof Kozlowski (1):
-      MAINTAINERS: Include Samsung SoC serial driver in Samsung SoC entry
-
-Leonard Crestez (3):
-      ARM: dts: imx6ul-evk: Fix peripheral regulator
-      ARM: imx_v6_v7_defconfig: Explicitly restore CONFIG_DEBUG_FS
-      ARM: imx: Fix boot crash if ocotp is not found
-
-Lukasz Luba (1):
-      MAINTAINERS: Update Lukasz Luba's email address
-
-Mans Rullgard (1):
-      ARM: dts: am335x-sancloud-bbe: fix phy mode
-
-Marek Szyprowski (1):
-      ARM: exynos_defconfig: Restore debugfs support
-
-Michael Walle (2):
-      arm64: dts: ls1028a: fix typo in TMU calibration data
-      arm64: dts: ls1028a: fix reboot node
-
-Nicolas Saenz Julienne (1):
-      ARM: dts: bcm2711: fix soc's node dma-ranges
-
-Olof Johansson (8):
-      Merge tag 'vexpress-fixes-5.5' of git://git.kernel.org/.../sudeep.holla/linux into arm/fixes
-      Merge tag 'arm-soc/for-5.5/devicetree-fixes' of https://github.com/Broadcom/stblinux into arm/fixes
-      Merge tag 'reset-fixes-for-v5.5-2' of git://git.pengutronix.de/git/pza/linux into arm/fixes
-      Merge tag 'imx-fixes-5.5' of git://git.kernel.org/.../shawnguo/linux into arm/fixes
-      Merge tag 'omap-for-v5.5/fixes-rc1-signed' of git://git.kernel.org/.../tmlind/linux-omap into arm/fixes
-      Merge tag 'renesas-fixes-for-v5.5-tag1' of git://git.kernel.org/.../geert/renesas-devel into arm/fixes
-      Merge tag 'samsung-fixes-5.5' of https://git.kernel.org/.../krzk/linux into arm/fixes
-      Merge tag 'arm-soc/for-5.5/soc-fixes' of https://github.com/Broadcom/stblinux into arm/fixes
-
-Stefan Roese (1):
-      ARM: dts: imx6ul: imx6ul-14x14-evk.dtsi: Fix SPI NOR probing
-
-Stefan Wahren (1):
-      ARM: dts: bcm283x: Fix critical trip point
-
-Sudeep Holla (2):
-      ARM: vexpress: Set-up shared OPP table instead of individual for each CPU
-      cpufreq: vexpress-spc: Switch cpumask from topology core to OPP sharing
-
-Tomi Valkeinen (1):
-      ARM: dts: am437x-gp/epos-evm: fix panel compatible
-
-Tony Lindgren (3):
-      bus: ti-sysc: Fix missing force mstandby quirk handling
-      ARM: omap2plus_defconfig: Add back DEBUG_FS
-      bus: ti-sysc: Fix missing reset delay handling
-
- .mailmap                                           |  1 +
- .../bindings/reset/brcm,brcmstb-reset.txt          |  2 +-
- MAINTAINERS                                        |  3 ++-
- arch/arm/boot/dts/am335x-sancloud-bbe.dts          |  2 +-
- arch/arm/boot/dts/am437x-gp-evm.dts                |  2 +-
- arch/arm/boot/dts/am43x-epos-evm.dts               |  2 +-
- arch/arm/boot/dts/bcm-cygnus.dtsi                  |  4 ++--
- arch/arm/boot/dts/bcm2711.dtsi                     |  2 +-
- arch/arm/boot/dts/bcm283x.dtsi                     |  2 +-
- arch/arm/boot/dts/bcm5301x.dtsi                    |  4 ++--
- arch/arm/boot/dts/e60k02.dtsi                      |  5 ----
- arch/arm/boot/dts/imx6ul-14x14-evk.dtsi            | 28 ++++++++++++++++------
- arch/arm/configs/exynos_defconfig                  |  1 +
- arch/arm/configs/imx_v6_v7_defconfig               |  1 +
- arch/arm/configs/omap2plus_defconfig               |  4 +++-
- arch/arm/configs/shmobile_defconfig                |  1 +
- arch/arm/mach-bcm/bcm2711.c                        |  1 +
- arch/arm/mach-imx/cpu.c                            |  8 ++++---
- arch/arm/mach-mmp/pxa168.h                         |  2 +-
- arch/arm/mach-vexpress/spc.c                       | 12 +++++++++-
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi     | 10 ++++++--
- drivers/bus/ti-sysc.c                              |  7 +++++-
- drivers/cpufreq/vexpress-spc-cpufreq.c             |  2 +-
- drivers/reset/core.c                               | 10 ++++----
- drivers/reset/reset-brcmstb.c                      |  6 -----
- include/linux/platform_data/ti-sysc.h              |  1 +
- 26 files changed, 78 insertions(+), 45 deletions(-)
-
+>> +#endif /* __LINUX_MFD_INTEL_PECI_CLIENT_H */
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
