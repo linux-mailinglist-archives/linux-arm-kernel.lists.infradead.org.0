@@ -2,95 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8BD0120310
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:58:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B1AA120320
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:01:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8RJ69HJZVroaOCljpDnurlqN6Biv632boLWYNeR6fzk=; b=PiFErNPOCLWMikvh+3I3GZ8CN
-	vqAis3BooCygH0FKLmXOUjhAbgLD/nTRzQqbd0wZimThQD+OnbIeqTLfQITnC2uPyTQZCxyfQfwrE
-	QXQZS9ANlpeJhFh/NCwalkDrRZ7NuoHFYOpezYcugnYJBAmnRk4/5CxPEuBKWTIhd7z9KstbSmjdu
-	GyRKlNnXL/Wy4/CR3OAe0Ss8WfqdmkLU56J0Td+JMC/8xTfsr5YdK9xYZoliZAlM/ccbU+ddhlXos
-	xTBxqU738SFoZIa1G2mveF57egvme4J/GPlyxgYOKDV09hnumt4dBTm3XaJuOVSrkxcmp3dPBlSEd
-	ro+FIWDRw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9rq4srH0fvPF9nDAveGicFvMbXQgjc1RqxEe3yA+Sfk=; b=FAKIXIge+GzPd+
+	dvQN9KH8v4hXmvzhh2zUchiBRFFoiH2MyW8yyEBHA7fcDkVqYtX2ad67g/01Q+lds3SfVARkboFcy
+	Ekb8cmsHlq8wfHUA2+Nu2nVyS4lcCyklwDCk1QP6yugVlgMh/KipV1Rs9pUrrRSUGp8KLCzgD7ain
+	4HDWAgG4rPeNCwJGoZIa7NgxD7wqpdZpOR97hpGasxVL8DGnbda5Ixee0kd7Qs0leVBeZzEZKmUv1
+	hNEVsumdo9HSSXtyl1PxnpH1TqmEs729MLQAGabpJxhTmKpZh/9VFonDJAlZhj3XsChe/QnIOeen2
+	7gYua3L3sKRVI/SwHXQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igo5K-0001Jd-9R; Mon, 16 Dec 2019 10:58:42 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1igo8D-00037n-4F; Mon, 16 Dec 2019 11:01:41 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igo59-0001J4-D9; Mon, 16 Dec 2019 10:58:32 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 5EA5E7118;
- Mon, 16 Dec 2019 05:58:30 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Mon, 16 Dec 2019 05:58:30 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm1; bh=7E2TpTwENCgP1MRD7/Eziybb/Th
- 2bGLOCc12fC88q6E=; b=IMLrsBodXXXGicPZCQDlL4YhxJ8yYXkJiGeQPJQQwf4
- cvkx9X6OxYx4AIhSKnPbdJllQHaNKzzF32/qX58QgboLLpEQjhHszLxaPpdgMMqV
- 5jwKe1BCnPBcTCzsnR03dumppfba/ket7EzIV/vDMcpIzk6A9IEqm5vtpgGTV0is
- zhsxVo69knhpEPIVcq8TwJ3MXG2+XWNQp+POUAs1H0De5zyyiyMRlkSCghfcP6au
- 1A6KiA/ogyumRutouWKKu8dAEzQyxprg9hq1qJbuVHeCMMxACjaQnueTYxbD/Xbp
- 1EaHOWLopra/MTOUFxZc/cLJR14aFWEUPkFkB2CgpAw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=7E2TpT
- wENCgP1MRD7/Eziybb/Th2bGLOCc12fC88q6E=; b=q+xW6eiNUtLhXYj2T6MpV1
- DO8WdVfGXHlYR8Od+K4ZToowmTlu5f3/0IOeXhM0VokgQyeONZ1a7SFy1qvQ09sS
- RJo277PYsWoBr9JZzYUX1G8wrKf8zaGzsV3XCIqtSdwweXbLBWtRqbsDZDQyVKT8
- BBUNVnMhxMxo6H0jMMQkFW58R8n+XHpB9KIkoJH+b3JN5yZPUEtHDIGdPI5GMBV/
- YEWDRRva+BF230lJgh67fWaDUDKu+WGR40H/0ooi009xOpo+5NNKgJ0NOx8/e41Q
- pUtQwoztthAvbEQgK30HoL9BjVCTgbU5uRqaC5EzMJnejxYGnCQB2JqhHaGLlKxw
- ==
-X-ME-Sender: <xms:VGP3XUY8i-9w8CG05Yj5PzjIikoPOmggk-UF_ctcBee-8Lck051Ulg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddthedgvddvucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggv
- rhhnohdrthgvtghhnecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:VGP3Xbt6ohxrttMcaXVI6FmO7AAaqrpN7X7GqTN0Wk7tLzLIlYh-yg>
- <xmx:VGP3XRtN1Yg5tIbLqODohz6GBDmEP1smxIZbRdwPBUzowBcnBB7ffA>
- <xmx:VGP3XQe2jz2UyPBCXhDoFD1nNHKHF_HUD8nsB_jR_XrJ_cT8fDkXMA>
- <xmx:VmP3XVbpO_j_XIh2rB_1sEeclFhYceWTGR5NP61U8O2Mv5Qzxs8Stw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 690A280063;
- Mon, 16 Dec 2019 05:58:28 -0500 (EST)
-Date: Mon, 16 Dec 2019 11:58:27 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH 09/12] drm/rockchip: lvds: Add PX30 support
-Message-ID: <20191216105827.rxkfbwemkqw446jx@gilmour.lan>
-References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
- <20191213181051.25983-10-miquel.raynal@bootlin.com>
+ id 1igo80-00036E-Bb; Mon, 16 Dec 2019 11:01:30 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 854E2AC7D;
+ Mon, 16 Dec 2019 11:01:26 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: andrew.murray@arm.com,
+	maz@kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v5 0/6] Raspberry Pi 4 PCIe support
+Date: Mon, 16 Dec 2019 12:01:06 +0100
+Message-Id: <20191216110113.30436-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-In-Reply-To: <20191213181051.25983-10-miquel.raynal@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_025831_577554_F30A935B 
-X-CRM114-Status: GOOD (  12.27  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191216_030128_542454_8C9427A7 
+X-CRM114-Status: GOOD (  14.75  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,104 +61,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
- Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3093668142488151188=="
+Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ f.fainelli@gmail.com, linux-pci@vger.kernel.org, phil@raspberrypi.org,
+ jeremy.linton@arm.com, mbrugger@suse.com,
+ bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
+ james.quinlan@broadcom.com, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This series aims at providing support for Raspberry Pi 4's PCIe
+controller, which is also shared with the Broadcom STB family of
+devices.
 
---===============3093668142488151188==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="akf2tzjwfz7nnjic"
-Content-Disposition: inline
+There was a previous attempt to upstream this some years ago[1] but was
+blocked as most STB PCIe integrations have a sparse DMA mapping[2] which
+is something currently not supported by the kernel.  Luckily this is not
+the case for the Raspberry Pi 4.
 
+Note the series is based on top of linux next, as the DTS patch depends
+on it.
 
---akf2tzjwfz7nnjic
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+[1] https://patchwork.kernel.org/cover/10605933/
+[2] https://patchwork.kernel.org/patch/10605957/
 
-Hi,
+---
 
-On Fri, Dec 13, 2019 at 07:10:48PM +0100, Miquel Raynal wrote:
-> +static int px30_lvds_grf_config(struct drm_encoder *encoder,
-> +				struct drm_display_mode *mode)
-> +{
-> +	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
-> +	u8 nhsync = !(mode->flags & DRM_MODE_FLAG_PHSYNC);
-> +	u8 nvsync = !(mode->flags & DRM_MODE_FLAG_PVSYNC);
-> +	u8 ndclk = !(mode->flags & DRM_MODE_FLAG_PCSYNC);
-> +	int ret;
-> +
-> +	if (lvds->output != DISPLAY_OUTPUT_LVDS) {
-> +		DRM_DEV_ERROR(lvds->dev, "Unsupported display output %d\n",
-> +			      lvds->output);
-> +		return -EINVAL;
-> +	}
-> +
-> +	if (nhsync ^ nvsync) {
-> +		DRM_DEV_ERROR(lvds->dev, "Unsupported Hsync/Vsync polarity\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	/* Set format */
-> +	ret = regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON1,
-> +				 PX30_LVDS_FORMAT(lvds->format),
-> +				 PX30_LVDS_FORMAT(lvds->format));
-> +	if (ret)
-> +		return ret;
-> +
-> +	/* Control Hsync/Vsync polarity */
-> +	ret = regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON0,
-> +				 PX30_LVDS_TIE_CLKS(1),
-> +				 PX30_LVDS_TIE_CLKS(1));
-> +	if (ret)
-> +		return ret;
-> +
-> +	/* Set Hsync/Vsync polarity */
-> +	ret = regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON0,
-> +				 PX30_LVDS_INVERT_CLKS(1),
-> +				 PX30_LVDS_INVERT_CLKS(nhsync));
-> +	if (ret)
-> +		return ret;
+Changes since v4:
+  - Rebase DTS patch
+  - Respin log2.h code into it's own series as it's still contentious
+    yet mostly unrelated to the PCIe part
 
-I don't know the hardware but it seems pretty weird to me. hsync and
-vsync in LVDS are not clocks (or even signals), they're a bit in the
-payload. Is there any explanation in the datasheet (or even a
-datasheet in the first place)?
+Changes since v3:
+  - Moved all the log2.h related changes at the end of the series, as I
+    presume they will be contentious and I don't want the PCIe patches
+    to depend on them. Ultimately I think I'll respin them on their own
+    series but wanted to keep them in for this submission just for the
+    sake of continuity.
+  - Addressed small nits here and there.
 
-Maxime
+Changes since v2:
+  - Redo register access in driver avoiding indirection while keeping
+    the naming intact
+  - Add patch editing ARM64's config
+  - Last MSI cleanups, notably removing MSIX flag
+  - Got rid of all _RB writes
+  - Got rid of all of_data
+  - Overall churn removal
+  - Address the rest of Andrew's comments
 
---akf2tzjwfz7nnjic
-Content-Type: application/pgp-signature; name="signature.asc"
+Changes since v1:
+  - add generic rounddown/roundup_pow_two64() patch
+  - Add MAINTAINERS patch
+  - Fix Kconfig
+  - Cleanup probe, use up to date APIs, exit on MSI failure
+  - Get rid of linux,pci-domain and other unused constructs
+  - Use edge triggered setup for MSI
+  - Cleanup MSI implementation
+  - Fix multiple cosmetic issues
+  - Remove supend/resume code
 
------BEGIN PGP SIGNATURE-----
+Jim Quinlan (3):
+  dt-bindings: PCI: Add bindings for brcmstb's PCIe device
+  PCI: brcmstb: Add Broadcom STB PCIe host controller driver
+  PCI: brcmstb: Add MSI support
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfdjUgAKCRDj7w1vZxhR
-xRBYAP44GLCelEvFF7JRcxbERsDpTT+xk8XxtfgoWUly8jPqegD+Jrne3aLXYopK
-ogFPLh6TeB2oQ1+pAWNgKDtT5Zntxwo=
-=SVmk
------END PGP SIGNATURE-----
+Nicolas Saenz Julienne (3):
+  ARM: dts: bcm2711: Enable PCIe controller
+  MAINTAINERS: Add brcmstb PCIe controller
+  arm64: defconfig: Enable Broadcom's STB PCIe controller
 
---akf2tzjwfz7nnjic--
+ .../bindings/pci/brcm,stb-pcie.yaml           |   97 ++
+ MAINTAINERS                                   |    4 +
+ arch/arm/boot/dts/bcm2711.dtsi                |   31 +-
+ arch/arm64/configs/defconfig                  |    1 +
+ drivers/pci/controller/Kconfig                |    9 +
+ drivers/pci/controller/Makefile               |    1 +
+ drivers/pci/controller/pcie-brcmstb.c         | 1007 +++++++++++++++++
+ 7 files changed, 1149 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+ create mode 100644 drivers/pci/controller/pcie-brcmstb.c
 
+-- 
+2.24.0
 
---===============3093668142488151188==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3093668142488151188==--
-
