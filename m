@@ -2,40 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94EB3120E68
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 16:52:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EEC4E120E67
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 16:52:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JOivGK2ZhGhhXJGENUFuXlTDDGWoEozasSH1yptWang=; b=r921koMnU7j7Sv
-	VuvJqPlq2gFUffcgHdHwbQYQKWIWir7LHqiXJ8jdzzzTkMdBhD2OSzsVxGDWqmk0jKPSLhvSqzUDs
-	O8jcJyUd+VOTKAUcIbJd0bFOLKUpO6/KTNw1c3GCqIW+6aF5KP+Kf7zDwgLumoIp4SoAj5NIHkBvp
-	Oqu/2CwMB52aDtKLp43P94QIaLv2pYm71IXt7ZcWsKaSSONWadnrirop5oRBmWp1ZPCjSi1iMn3Cf
-	rDKO0nld4RJ8rma79VY13OtJHK2Wq0ntW1sNmagFMqktvpBEqWNVbygdbA8LoY5UBQTl1gAa7oRax
-	c4Y8rON3C7b9phXYZw/g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WpvS2bI/alFGW4hWfXR7EFkJKxtu+OV2nuCjeei7Ke4=; b=QtQpa3I5+VIKtG
+	ILivhq1CUUb+th+bn0QaWnqWahqr1K2z6CyjIU1EwzSj//vJe17UoaSkx2DnSeEmBJf7UefzYsw8I
+	gwcLJ/TvlfgpLjXKVhwucpQvP3qc3GuoX2v2EsI3GL0UGpfStk3ZSYjF7k3Fzq9bVJ+vVMIdDR68z
+	x7mZBFejeIz2JNsFRNjzLj+OGU+/Dof4vp68phs8hEtPa1MAfj3J539KIZuH8abN9I7G3Jby6GM3B
+	GceXyC+7Q5Hp6KWYde+RpK2f6bS8AVGhEHiibfnDnTuY5J3JMJzn/bQ+eg+mhRP510bwI0YzMm+ab
+	QZua+JMImoDiwlM6T2ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igsfV-0003Cy-3k; Mon, 16 Dec 2019 15:52:21 +0000
+	id 1igsfG-000341-U7; Mon, 16 Dec 2019 15:52:06 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igsf6-000329-Dk
+ id 1igsf6-00032v-TC
  for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 15:51:58 +0000
 Received: from localhost (p54B33297.dip0.t-ipconnect.de [84.179.50.151])
- by pokefinder.org (Postfix) with ESMTPSA id C22C32C04DF;
- Mon, 16 Dec 2019 16:51:47 +0100 (CET)
+ by pokefinder.org (Postfix) with ESMTPSA id 39BD82C2DAA;
+ Mon, 16 Dec 2019 16:51:56 +0100 (CET)
 From: Wolfram Sang <wsa+renesas@sang-engineering.com>
 To: linux-media@vger.kernel.org
-Subject: [PATCH RESEND 00/16] media: use new API for creating client devices
-Date: Mon, 16 Dec 2019 16:51:27 +0100
-Message-Id: <20191216155146.8803-1-wsa+renesas@sang-engineering.com>
+Subject: [PATCH RESEND 09/16] media: platform: sti: c8sectpfe: c8sectpfe-dvb:
+ convert to use i2c_new_client_device()
+Date: Mon, 16 Dec 2019 16:51:36 +0100
+Message-Id: <20191216155146.8803-10-wsa+renesas@sang-engineering.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191216155146.8803-1-wsa+renesas@sang-engineering.com>
+References: <20191216155146.8803-1-wsa+renesas@sang-engineering.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_075156_762248_2C93F78E 
-X-CRM114-Status: GOOD (  11.39  )
+X-CRM114-CacheID: sfid-20191216_075157_085919_AF141CCC 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -58,103 +62,38 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Wolfram Sang <wsa+renesas@sang-engineering.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Patrice Chotard <patrice.chotard@st.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These media drivers create a new I2C client device with the deprecated
-i2c_new_device() and check afterwards if the client exists and if a
-driver is bound to it.
+Use the newer API returning an ERRPTR and use the new helper to bail
+out.
 
-This series changes the drivers to use the now suggested
-i2c_new_client_device() call and a new helper to check if the driver is
-bound. This helper supports (for now) the old and the new API and is
-also more readable.
+Reviewed-by: Patrice Chotard <patrice.chotard@st.com>
+Signed-off-by: Wolfram Sang <wsa+renesas@sang-engineering.com>
+---
+ drivers/media/platform/sti/c8sectpfe/c8sectpfe-dvb.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-The drivers were converted with the following coccinelle script:
-
-@@
-expression client;
-statement S;
-@@
-        client =
--               i2c_new_device
-+               i2c_new_client_device
-                        (...);
-        ... when != client
-        if (
--               \( !client \| client == NULL \) || \( !client->dev.driver \| client->dev.driver == NULL \)
-+               !i2c_client_has_driver(client)
-                        ) {
-                        S
-                }
-
-The helper has been tested on a Renesas Salvator-XS board (R-Car M3-N).
-The rest was build tested by me and buildbot.
-
-This series is based on v5.5-rc2 where the new helper was added. A
-branch can be found here:
-
-git://git.kernel.org/pub/scm/linux/kernel/git/wsa/linux.git renesas/i2c/new_device_with_driver
-
-This series is largely the same as the last one sent out in November. It
-was rebased to v5.5-rc2 and one Rev-tag added. The patch for v4l2-core
-has been extended to use more new API. This series can be applied as is.
-I think it should go via the media-tree.
-
-Looking forward to comments.
-
-Thanks and happy hacking,
-
-   Wolfram
-
-
-Wolfram Sang (16):
-  media: dvb-core: dvbdev: convert to use i2c_new_client_device()
-  media: dvb-frontends: cxd2820r_core: convert to use
-    i2c_new_client_device()
-  media: dvb-frontends: lgdt330x: convert to use i2c_new_client_device()
-  media: dvb-frontends: m88ds3103: convert to use
-    i2c_new_client_device()
-  media: dvb-frontends: ts2020: convert to use i2c_new_client_device()
-  media: pci: cx23885: cx23885-dvb: convert to use
-    i2c_new_client_device()
-  media: pci: saa7164: saa7164-dvb: convert to use
-    i2c_new_client_device()
-  media: pci: smipcie: smipcie-main: convert to use
-    i2c_new_client_device()
-  media: platform: sti: c8sectpfe: c8sectpfe-dvb: convert to use
-    i2c_new_client_device()
-  media: usb: dvb-usb-v2: af9035: convert to use i2c_new_client_device()
-  media: usb: dvb-usb-v2: anysee: convert to use i2c_new_client_device()
-  media: usb: dvb-usb-v2: rtl28xxu: convert to use
-    i2c_new_client_device()
-  media: usb: dvb-usb-v2: zd1301: convert to use i2c_new_client_device()
-  media: usb: dvb-usb: dib0700_devices: convert to use
-    i2c_new_client_device()
-  media: usb: dvb-usb: dw2102: convert to use i2c_new_client_device()
-  media: v4l2-core: v4l2-i2c: convert to new API with ERRPTR
-
- drivers/media/dvb-core/dvbdev.c               |   4 +-
- drivers/media/dvb-frontends/cxd2820r_core.c   |   4 +-
- drivers/media/dvb-frontends/lgdt330x.c        |   4 +-
- drivers/media/dvb-frontends/m88ds3103.c       |   4 +-
- drivers/media/dvb-frontends/ts2020.c          |   4 +-
- drivers/media/pci/cx23885/cx23885-dvb.c       | 114 +++++++++---------
- drivers/media/pci/saa7164/saa7164-dvb.c       |  20 +--
- drivers/media/pci/smipcie/smipcie-main.c      |   4 +-
- .../platform/sti/c8sectpfe/c8sectpfe-dvb.c    |   4 +-
- drivers/media/usb/dvb-usb-v2/af9035.c         |   4 +-
- drivers/media/usb/dvb-usb-v2/anysee.c         |   4 +-
- drivers/media/usb/dvb-usb-v2/rtl28xxu.c       |  36 +++---
- drivers/media/usb/dvb-usb-v2/zd1301.c         |   4 +-
- drivers/media/usb/dvb-usb/dib0700_devices.c   |   8 +-
- drivers/media/usb/dvb-usb/dw2102.c            |   8 +-
- drivers/media/v4l2-core/v4l2-i2c.c            |  10 +-
- 16 files changed, 115 insertions(+), 121 deletions(-)
-
+diff --git a/drivers/media/platform/sti/c8sectpfe/c8sectpfe-dvb.c b/drivers/media/platform/sti/c8sectpfe/c8sectpfe-dvb.c
+index a79250a7f812..103872266565 100644
+--- a/drivers/media/platform/sti/c8sectpfe/c8sectpfe-dvb.c
++++ b/drivers/media/platform/sti/c8sectpfe/c8sectpfe-dvb.c
+@@ -170,8 +170,8 @@ int c8sectpfe_frontend_attach(struct dvb_frontend **fe,
+ 
+ 		/* attach tuner */
+ 		request_module("tda18212");
+-		client = i2c_new_device(tsin->i2c_adapter, &tda18212_info);
+-		if (!client || !client->dev.driver) {
++		client = i2c_new_client_device(tsin->i2c_adapter, &tda18212_info);
++		if (!i2c_client_has_driver(client)) {
+ 			dvb_frontend_detach(*fe);
+ 			return -ENODEV;
+ 		}
 -- 
 2.20.1
 
