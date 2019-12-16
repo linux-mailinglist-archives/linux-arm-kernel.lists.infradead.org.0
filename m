@@ -2,84 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3089120222
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:20:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34F15120251
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:27:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gofTArvhc/ycqmgns2Lj/YumNmGY3g9NJUgycvvSMUA=; b=Ykt3R6sTsr/yYD
-	vl5N0Bwb1f53D9s/qnYe/LRX2h/aRBjDVew6/50RogztzIFuOn8tiFWFG8rxtqpwKjbl7HGnM+Wpb
-	Ru1Zgg718+Y8YdJFFg4wpO9oleoPKl5rskRBB+T0PL06sgW/f5oytiZmXAk2zz2O7byBfu6tLw745
-	laRvLS4oqsxu2jVpqIxC2HcRxi79feJKK5Tr7lXMgivIwk7MPhP74dbrNV02zxkZ2cFpmuZvhbFLw
-	xj6TUYDqZ3gNPmLhjKMO4qrDwIIvgA3ncj4CQfmj5Ivp3zaZHfjN71E0kygxst7fza/woNEmTGFl+
-	Tk2SyY6NVLKUZ3hoT8YA==;
+	List-Owner; bh=dVWk5Crqysw6K6mlsK2I7tVb2cREM7Y7Mfx9NtZ/bNI=; b=k5zykI2y0OXs1v
+	Vk5XmQmpNqjnGXHTCmbWVBdaFyHBeefAAU317Aeh6tvJqJ7C5KS/TwoL3omROutyCCejFkRzrHwvt
+	vhMwbEXZoT5nBLHFSmSQn8o6ih39uLrUitdd72sEHSgs4iBw0JckegKTsKwDyQkny+m/Hjndi1+3c
+	fl2y2P08OLWVzwHBpQL1XEJM0i17AA/vWgu0+maeY2ZXoTGovSVdbCNf+6b2wdli5vZJv5cN85Ihk
+	pAwdMRDPy4IlsWQ6R9FUAb8KLaEt7YsFYDkgG0JUJgjvG3Y1u1tOOxEOfRVFvseDIaXeAylLYFXYg
+	Mm2BLeJDDs+wMFJpoGaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ignUl-0002pq-An; Mon, 16 Dec 2019 10:20:55 +0000
-Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
+	id 1ignb3-00050u-5K; Mon, 16 Dec 2019 10:27:25 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ignUb-0002pG-KY
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 10:20:46 +0000
-Received: by mail-ua1-x942.google.com with SMTP id o42so1868031uad.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 02:20:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=MkbL1d/SzqUihRGV9EGxMppkoVLFMzfPIRPZl16fK20=;
- b=tHE/FqAndfXj+pF3rpKcyZB3P2mC/ivGu+RuNn7h6U8fH6CwMbbwsVUcsp/rTQHd7w
- SnHZW/qVxTnvRge2orkhtQ9Xsf73XYevjXfqvfdKDkG6TobwnqhLBRLLAqcTfYe0WEYP
- TemamdhsBonUMSlcJPhpPbtBP1PxXnbcO6gUB921WNamWplR0wZicOySkVBqhLyXZ1Yo
- 5/Wicv3VUbruyGwEo/ySRP7hgpg/Rx9tzYgwHjF/x5Tt0Rb19SDBDqLbx7dadCPp/2w3
- 55sfvzdVwUdtHbd82oEpCim18++9O0mztUBgkt/XgEzxg9/Ghg+3d2LhqjyhP+4MBMHG
- ziSw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=MkbL1d/SzqUihRGV9EGxMppkoVLFMzfPIRPZl16fK20=;
- b=OUtjcZP5zzNA6sRXKuaivEY2eIvsRgeNy8ILlvD8JlV2PZq80H9H1t6lYiJ4oxevxH
- vBHRd2SQri0GD2nuzh+4ay3X6l/zRhx6mVqaRIZqKjpCaYzU+H4/rX6q/x2QD/+tgfHX
- xSCPvgchjt1Y61RkTczMyZRF1+RskQJSB6Qo531x3HdHdOP23fIJyvxoSB9lcGm6gvH8
- FB5yoGPL+xr27qf/yvggXyXWa1gljRYb07qSgvhZ2Qs9AcBkzBG8mtMuko1eq56uOD5t
- 5Km8OO+bFZICdC5oCbTq2iXQJC1+xht5n9kqAdIuNeLE3Om9huvN1OokHP/p/1IvatvY
- h3aw==
-X-Gm-Message-State: APjAAAXIJjh2U2SsYozRUyfxlJdWQaE5nBjl6ZnBN7e14oE/DzF06Z7C
- o7gL7aDI3pX6se5kixGgs8vi/cdw5WA3EgXvuLTvrQ==
-X-Google-Smtp-Source: APXvYqytRcaEhtLm4UxsiP0XcQ5WA/lllFA43ewjb5KkmW6LveWszgSmmf6NQVq50n36TRexdsgdRA2S2NxjbZ7+23A=
-X-Received: by 2002:ab0:7219:: with SMTP id u25mr23212467uao.10.1576491644556; 
- Mon, 16 Dec 2019 02:20:44 -0800 (PST)
+ id 1ignas-00050E-8T
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 10:27:16 +0000
+Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ Ludovic.Desroches@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="Ludovic.Desroches@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa6.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa6.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: 5jsqDektV5BBk2+xf3w/QcqvniodKkPePiSDQucL2mBcAfnV0iyjeDQf/r2QK9nJNIrLHoHtFM
+ aiELBZFR1pVJPWH2ErEzW3Ff5y0gL1/yZ1Sylm+pmkwWlgnm/ctrtFlqbc75tn/o+zyg9y7Zn7
+ xjZ8RI68Ik5eX63k9atSyhnV4b7ivLHPdpW7JbP4YXrX3H9PXnP2cr3xvon0Y0eQR8zQqtAv/r
+ o7vs0mcBwP6GY9pwoSklBZnMaHnLwP7ooKy2Ve2Z9dcHF8yUExUHWnpzQJsgKsMxx6TiqF6WY+
+ zmc=
+X-IronPort-AV: E=Sophos;i="5.69,321,1571727600"; d="scan'208";a="57878905"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 16 Dec 2019 03:27:12 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 16 Dec 2019 03:27:11 -0700
+Received: from localhost (10.10.85.251) by chn-vm-ex02.mchp-main.com
+ (10.10.85.144) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Mon, 16 Dec 2019 03:27:11 -0700
+Date: Mon, 16 Dec 2019 11:26:56 +0100
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: David Engraf <david.engraf@sysgo.com>
+Subject: Re: [PATCH v3] tty/serial: atmel: fix out of range clock divider
+ handling
+Message-ID: <20191216102656.lkazcvuy5oai63lb@M43218.corp.atmel.com>
+Mail-Followup-To: David Engraf <david.engraf@sysgo.com>,
+ richard.genoud@gmail.com, gregkh@linuxfoundation.org,
+ jslaby@suse.com, nicolas.ferre@microchip.com,
+ alexandre.belloni@bootlin.com, linux-serial@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <39e4d1c7-20b0-a024-3a46-e4d4369eed8e@sysgo.com>
+ <20191216085403.17050-1-david.engraf@sysgo.com>
 MIME-Version: 1.0
-References: <20191215011045.15453-1-navid.emamdoost@gmail.com>
-In-Reply-To: <20191215011045.15453-1-navid.emamdoost@gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 16 Dec 2019 11:20:33 +0100
-Message-ID: <CACRpkdYZDj+rO0WL3wFtVM0Kosx5LWrKDLkUvmqV4EVXtSeO-w@mail.gmail.com>
-Subject: Re: [PATCH] net: gemini: Fix memory leak in gmac_setup_txqs
-To: Navid Emamdoost <navid.emamdoost@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20191216085403.17050-1-david.engraf@sysgo.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_022045_683337_0DEC0C2B 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_022714_331484_31223721 
+X-CRM114-Status: GOOD (  16.22  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,32 +101,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev <netdev@vger.kernel.org>,
- Hans Ulli Kroll <ulli.kroll@googlemail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- =?UTF-8?B?TWljaGHFgiBNaXJvc8WCYXc=?= <mirq-linux@rere.qmqm.pl>,
- emamd001@umn.edu, "David S. Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: alexandre.belloni@bootlin.com, richard.genoud@gmail.com,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ linux-serial@vger.kernel.org, jslaby@suse.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Dec 15, 2019 at 2:11 AM Navid Emamdoost
-<navid.emamdoost@gmail.com> wrote:
+On Mon, Dec 16, 2019 at 09:54:03AM +0100, David Engraf wrote:
+> Use MCK_DIV8 when the clock divider is > 65535. Unfortunately the mode
+> register was already written thus the clock selection is ignored.
+> 
+> Fix by doing the baud rate calulation before setting the mode.
+> 
+> Fixes: 5bf5635ac170 ("tty/serial: atmel: add fractional baud rate support")
+> Signed-off-by: David Engraf <david.engraf@sysgo.com>
+Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
 
-> In the implementation of gmac_setup_txqs() the allocated desc_ring is
-> leaked if TX queue base is not aligned. Release it via
-> dma_free_coherent.
->
-> Fixes: 4d5ae32f5e1e ("net: ethernet: Add a driver for Gemini gigabit ethernet")
-> Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
+Thanks for the fix
 
-Looks correct to me,
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Regards
 
-Yours,
-Linus Walleij
+> ---
+> Changes since v1:
+>  - moves set baud rate block before setting the mode register because
+>    ATMEL_US_RTSDIS and ATMEL_US_RTSEN depend on ATMEL_US_MR.mode
+> 
+> ---
+>  drivers/tty/serial/atmel_serial.c | 43 ++++++++++++++++---------------
+>  1 file changed, 22 insertions(+), 21 deletions(-)
+> 
+> diff --git a/drivers/tty/serial/atmel_serial.c b/drivers/tty/serial/atmel_serial.c
+> index a8dc8af83f39..1ba9bc667e13 100644
+> --- a/drivers/tty/serial/atmel_serial.c
+> +++ b/drivers/tty/serial/atmel_serial.c
+> @@ -2270,27 +2270,6 @@ static void atmel_set_termios(struct uart_port *port, struct ktermios *termios,
+>                 mode |= ATMEL_US_USMODE_NORMAL;
+>         }
+> 
+> -       /* set the mode, clock divisor, parity, stop bits and data size */
+> -       atmel_uart_writel(port, ATMEL_US_MR, mode);
+> -
+> -       /*
+> -        * when switching the mode, set the RTS line state according to the
+> -        * new mode, otherwise keep the former state
+> -        */
+> -       if ((old_mode & ATMEL_US_USMODE) != (mode & ATMEL_US_USMODE)) {
+> -               unsigned int rts_state;
+> -
+> -               if ((mode & ATMEL_US_USMODE) == ATMEL_US_USMODE_HWHS) {
+> -                       /* let the hardware control the RTS line */
+> -                       rts_state = ATMEL_US_RTSDIS;
+> -               } else {
+> -                       /* force RTS line to low level */
+> -                       rts_state = ATMEL_US_RTSEN;
+> -               }
+> -
+> -               atmel_uart_writel(port, ATMEL_US_CR, rts_state);
+> -       }
+> -
+>         /*
+>          * Set the baud rate:
+>          * Fractional baudrate allows to setup output frequency more
+> @@ -2317,6 +2296,28 @@ static void atmel_set_termios(struct uart_port *port, struct ktermios *termios,
+> 
+>         if (!(port->iso7816.flags & SER_ISO7816_ENABLED))
+>                 atmel_uart_writel(port, ATMEL_US_BRGR, quot);
+> +
+> +       /* set the mode, clock divisor, parity, stop bits and data size */
+> +       atmel_uart_writel(port, ATMEL_US_MR, mode);
+> +
+> +       /*
+> +        * when switching the mode, set the RTS line state according to the
+> +        * new mode, otherwise keep the former state
+> +        */
+> +       if ((old_mode & ATMEL_US_USMODE) != (mode & ATMEL_US_USMODE)) {
+> +               unsigned int rts_state;
+> +
+> +               if ((mode & ATMEL_US_USMODE) == ATMEL_US_USMODE_HWHS) {
+> +                       /* let the hardware control the RTS line */
+> +                       rts_state = ATMEL_US_RTSDIS;
+> +               } else {
+> +                       /* force RTS line to low level */
+> +                       rts_state = ATMEL_US_RTSEN;
+> +               }
+> +
+> +               atmel_uart_writel(port, ATMEL_US_CR, rts_state);
+> +       }
+> +
+>         atmel_uart_writel(port, ATMEL_US_CR, ATMEL_US_RSTSTA | ATMEL_US_RSTRX);
+>         atmel_uart_writel(port, ATMEL_US_CR, ATMEL_US_TXEN | ATMEL_US_RXEN);
+>         atmel_port->tx_stopped = false;
+> --
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
