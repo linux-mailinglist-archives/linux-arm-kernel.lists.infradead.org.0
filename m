@@ -2,72 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76F3011FF44
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 08:56:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7B0311FF45
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 08:58:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=19LkiZJeDnWScHf00UIyPULPcAbzocjjtlPSiSJaEbk=; b=scsSJflzFAU5ZG
-	EjABpLRaNZQIK8+Ks06rHcAHYtGH/YpD2LTJhtaf06zL5D43+H2PwKfbyGVZv4FXxhcRNr8bRI4uq
-	e/l9eIqWWb8CnxPVDe7LXjxuW/G0JELNI//ITNnafWD5flDwEUU5kFainPaqrtvJrMGrs63LF7nrQ
-	SqZbEatPU830lsSYq5soptocBduI3NEKk6r4xD5LbMrK9DAXt2CURI0K3NkiV2YqfOSK+axceHdTL
-	/WaYLoFkA4TmoyI9D2jy5bG6SWg/ZVFdUMksGqUm54UEbUsOuUdrMD/3olQJTQzwT+6he9piKjSeo
-	zgv5g9gAwdw1sZAXgfzQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FAkZXHdfNZFZUaFy0SwyO3qqQ5qv09+B47cwBw1OUyU=; b=n3TI/pVvf/jpw42qeK5iybFv/
+	G0chskuY6hlIekiYCXKg+kHa7g4IAjbrJRIIg+MIRLPjTtGJETWOfRnVQn6QBgoLC4J3Rl26//spE
+	JxrJS9YifVhswckDIsmpaH6TC54S+23olpjo+S1hZpjVLhv9CqAK5Zs21lfQYET8c5xVs+f0UH5Jm
+	RI3pCB23Io7FqDYpSdz8XdzhRVYO5aIdNphucVIeK+f0vhE6Ap8rNNcd5+1hROFcDw88lzhqM2Grm
+	JnthtFxkXiNLKiyGIvpSahz3ou0/9wSANE+SdPjXVJOhLEeXm67h0bhFX9jDdtexiOGhNZe9zcXLL
+	IvEY38pwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iglEV-0000v5-IO; Mon, 16 Dec 2019 07:55:59 +0000
-Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
+	id 1iglGe-0001Gc-1Y; Mon, 16 Dec 2019 07:58:12 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iglEL-0000uA-97
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 07:55:50 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mta-01.yadro.com (Postfix) with ESMTP id A5EAD43B4E;
- Mon, 16 Dec 2019 07:55:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
- in-reply-to:content-disposition:content-type:content-type
- :mime-version:references:message-id:subject:subject:from:from
- :date:date:received:received:received; s=mta-01; t=1576482940;
- x=1578297341; bh=BWfwqYX21S2KCFxyZoimHOBsY3YUgME5n7pLkWB60bE=; b=
- B+V2ZbgOx+qPVvZsiFz2PdKkhU81IxBp4SDALFFClriCfZzrKvVM2HZbPf325V4r
- QmOifWLexJldu0z/Wef2gRJaSBMjU/DZGgUPx+MYqaRXtYdnDnHWXZWyJpONfTWz
- CR93bmQbZga3Z7+W47xJ5Q8RX3CBmUqNI4kHTQR9X3M=
-X-Virus-Scanned: amavisd-new at yadro.com
-Received: from mta-01.yadro.com ([127.0.0.1])
- by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id MNlYISM0A_mb; Mon, 16 Dec 2019 10:55:40 +0300 (MSK)
-Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
- [172.17.10.102])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mta-01.yadro.com (Postfix) with ESMTPS id 3E66E411FF;
- Mon, 16 Dec 2019 10:55:40 +0300 (MSK)
-Received: from localhost (172.17.14.115) by T-EXCH-02.corp.yadro.com
- (172.17.10.102) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id 15.1.669.32; Mon, 16
- Dec 2019 10:55:39 +0300
-Date: Mon, 16 Dec 2019 10:55:39 +0300
-From: "Alexander A. Filippov" <a.filippov@yadro.com>
-To: Joel Stanley <joel@jms.id.au>
-Subject: Re: [PATCH] ARM: dts: aspeed: AST2400 disables hw checksum
-Message-ID: <20191216075539.GA13054@bbwork.lan>
-References: <20191216064132.78015-1-joel@jms.id.au>
+ id 1iglGT-0001Ft-Td
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 07:58:03 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBG7vpeY063231;
+ Mon, 16 Dec 2019 01:57:51 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1576483071;
+ bh=sfrarZ24vNSke4hOJFAUW1PxVnpBAlJQohsKdU29YcA=;
+ h=Subject:To:References:From:Date:In-Reply-To;
+ b=sxsrKQKConolNmlUvdEglb0f81TZhsFghK9P8H61G9+U4U2seNVslyhH9VhxlTwkh
+ Y8oV8GsER+U8zh53Dl3GUsJjk99oSTyvrTrJMhLZyCz2kBWmi9T9KQL0PuBBjy3Y/q
+ o4EU794RlVtgEoLpR52+IN+lgZBd0MeZa0TsmM5k=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBG7vp00105355;
+ Mon, 16 Dec 2019 01:57:51 -0600
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 16
+ Dec 2019 01:57:47 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 16 Dec 2019 01:57:48 -0600
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBG7vkNW106258;
+ Mon, 16 Dec 2019 01:57:46 -0600
+Subject: Re: [PATCH] firmware: ti_sci: Remove unneeded semicolon
+To: zhengbin <zhengbin13@huawei.com>, <nm@ti.com>, <ssantosh@kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>
+References: <1576465684-30829-1-git-send-email-zhengbin13@huawei.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <07a096d2-fc08-6c16-15fc-b6502d0a6c45@ti.com>
+Date: Mon, 16 Dec 2019 09:57:45 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191216064132.78015-1-joel@jms.id.au>
-X-Originating-IP: [172.17.14.115]
-X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
- T-EXCH-02.corp.yadro.com (172.17.10.102)
+In-Reply-To: <1576465684-30829-1-git-send-email-zhengbin13@huawei.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_235549_688289_516EBFA9 
-X-CRM114-Status: GOOD (  12.54  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191215_235802_061092_F0A1A176 
+X-CRM114-Status: GOOD (  14.65  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -77,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,70 +91,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Jeffery <andrew@aj.id.au>, Tao Ren <taoren@fb.com>,
- Alexander Filippov <a.filippov@yadro.com>, linux-aspeed@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Reviewed-by: Alexander Filippov <a.filippov@yadro.com>
+On 16/12/2019 05:08, zhengbin wrote:
+> Fixes coccicheck warning:
+> 
+> drivers/firmware/ti_sci.c:1809:2-3: Unneeded semicolon
+> drivers/firmware/ti_sci.c:2241:2-3: Unneeded semicolon
+> 
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: zhengbin <zhengbin13@huawei.com>
 
-On Mon, Dec 16, 2019 at 05:41:32PM +1100, Joel Stanley wrote:
-> There is no need to specify this property in the device tree as the
-> AST2400 does not have working hardware checksum and disables it in the
-> driver.
-> 
-> Signed-off-by: Joel Stanley <joel@jms.id.au>
+Acked-by: Tero Kristo <t-kristo@ti.com>
+
 > ---
->  arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts | 1 -
->  arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts  | 1 -
->  arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts        | 3 ---
->  3 files changed, 5 deletions(-)
+>   drivers/firmware/ti_sci.c | 4 ++--
+>   1 file changed, 2 insertions(+), 2 deletions(-)
 > 
-> diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
-> index b1e10f0c85c9..322587b7b67d 100644
-> --- a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
-> +++ b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
-> @@ -76,7 +76,6 @@ &uart5 {
->  
->  &mac1 {
->  	status = "okay";
-> -	no-hw-checksum;
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
->  };
-> diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
-> index aaa77a597d1a..54e508530dce 100644
-> --- a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
-> +++ b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
-> @@ -75,7 +75,6 @@ &uart5 {
->  
->  &mac1 {
->  	status = "okay";
-> -	no-hw-checksum;
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
->  };
-> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-> index affd2c8743b1..041f28e3ac10 100644
-> --- a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-> @@ -107,10 +107,7 @@ flash@0 {
->  
->  &mac0 {
->  	status = "okay";
-> -
->  	use-ncsi;
-> -	no-hw-checksum;
-> -
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_rmii1_default>;
->  };
-> -- 
-> 2.24.0
+> diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
+> index 4126be9..a063a08 100644
+> --- a/drivers/firmware/ti_sci.c
+> +++ b/drivers/firmware/ti_sci.c
+> @@ -1806,7 +1806,7 @@ static int ti_sci_get_resource_range(const struct ti_sci_handle *handle,
+>   	} else {
+>   		*range_start = resp->range_start;
+>   		*range_num = resp->range_num;
+> -	};
+> +	}
 > 
+>   fail:
+>   	ti_sci_put_one_xfer(&info->minfo, xfer);
+> @@ -2238,7 +2238,7 @@ static int ti_sci_cmd_ring_get_config(const struct ti_sci_handle *handle,
+>   			*size = resp->size;
+>   		if (order_id)
+>   			*order_id = resp->order_id;
+> -	};
+> +	}
+> 
+>   fail:
+>   	ti_sci_put_one_xfer(&info->minfo, xfer);
+> --
+> 2.7.4
+> 
+
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
