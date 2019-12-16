@@ -2,90 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC53E12001D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:44:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A779912001E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:45:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4TYYP6Ztv+7j/IhkcTqjGjTsx7AEWgPAE5I+g3qQNa8=; b=NTfSb8zLWWGXk4
-	FZdkdASRfyO6P3BZe504m9feaCc6/i1aRoU7w0gCLYYbutFRwGf5Cv/Pp1sAIPvnC/ZQZ99TzYfAz
-	bzPPJdhF0cg9YPLEghpL+2wyJMnemavpIYFVgtT10FIffkY00Rz1pHeIs0FLPMm+vmzVbqZiZSiGM
-	pav9XR4ed0FgkvbCi305T6czrMJD5EpaeHqreagUD3UQaVQQh121qL6Bg50NvgJ9b0u/whoU/Zfrl
-	SfPsQrNmK7Q8zr+TAkC8FfTEHwdtYCdUSDaeSBIrKFi28S6mCOqq4bGKQfEwhbbjnfjuDuFpEEcBw
-	sWZenjFK6u7Alf8gH3lw==;
+	List-Owner; bh=fPCjsdexgyqwizc18Me7X6Po1FEC6y3tgSdwRgFGyog=; b=GBiADgkTRXWh/b
+	OCp2yBx5NeXFmO3mv/j9nBoqSy00NPKPd3Gu/wUgFAtu8K3FcWpOCilC3ppVCgayTv4O8fqbSGDjy
+	jJ3SNb5we4rQHSQZBbnrmPZV05P0KjGqboB4Wwc6D4ksnTuShycc7qdMJgJi1MjuxBuKFLFdR8bRF
+	HNHkmt4n4GbQwgfOzmvoBj9tRe2URt8YOn1DltTQrqh3YwKr86TbawQeSc8FnQpfePeMwMoD4jy2U
+	QFINwdga7XtRTW4L9802L321GrahNXXSxJtR52gMjLZFQ4Wt/wNi+7FaPxS3kaLvns/RkhlUNRPr7
+	2kwStMyUhYXOPvaMo0Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iglzb-0001jL-6w; Mon, 16 Dec 2019 08:44:39 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1igm0g-0003by-BX; Mon, 16 Dec 2019 08:45:46 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iglzO-0001iO-5M
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 08:44:28 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xBG8Y0Db017279; Mon, 16 Dec 2019 09:44:17 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=PJqSVGtMd6PUNoyoHJdaGLduaNwj7hJN0wsA7xo1/94=;
- b=pdne5z84gtgpxXRktsXb4F+rtlwA9UQQ+B2R0Dzw7lIMYHpPdZ4gSmGbFz9JuZIuPSe0
- bHKsG713AUuO2j/CHmUhuKc2uBdza2qZCjEX4JdVaMJN7QpMPo568bokRW5PGU0iqB7Z
- K3zUpsX0h+qthruKdkRDwGQNdPy02ps4MpHVAp+aWd44DLBhHLpJgigT5mr13PTWhxlG
- db4wZsjPc6wSv2Z9yp3HNiH4Eree73v4VXff+QwS/KJD0MAXmu3VmKQ6TpDaPFzIDBtE
- H/P8fZ51mvrxWthrDXXa6B6FKPrF1I9ZhIZ3xgbFeuTWRusjT/i6kvD0yQfkbfL35iLl LA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wvqgpg3gx-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 16 Dec 2019 09:44:17 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 42482100039;
- Mon, 16 Dec 2019 09:44:16 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 33C082B5463;
- Mon, 16 Dec 2019 09:44:16 +0100 (CET)
-Received: from lmecxl0889.lme.st.com (10.75.127.49) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 16 Dec
- 2019 09:44:15 +0100
-Subject: Re: [PATCH] dt-bindings: stm32: convert mlahb to json-schema
-To: Rob Herring <robh@kernel.org>
-References: <20191128154603.6911-1-arnaud.pouliquen@st.com>
- <20191213213916.GA1292@bogus>
-From: Arnaud POULIQUEN <arnaud.pouliquen@st.com>
-Message-ID: <7ac83aa6-0ec6-db4f-556d-a17c28d2bcab@st.com>
-Date: Mon, 16 Dec 2019 09:44:14 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1igm0Q-0003WB-Ol; Mon, 16 Dec 2019 08:45:33 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 78DCAAE03;
+ Mon, 16 Dec 2019 08:45:28 +0000 (UTC)
+Subject: Re: [PATCH v6 6/8] soc: mediatek: add MT6765 scpsys and subdomain
+ support
+From: Matthias Brugger <matthias.bgg@gmail.com>
+To: Macpaul Lin <macpaul.lin@mediatek.com>, Rob Herring <robh+dt@kernel.org>, 
+ Marc Zyngier <marc.zyngier@arm.com>, Ryder Lee <ryder.lee@mediatek.com>,
+ Stephen Boyd <sboyd@kernel.org>, Sean Wang <sean.wang@mediatek.com>,
+ Mars Cheng <mars.cheng@mediatek.com>, Owen Chen <owen.chen@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <1562924653-10056-1-git-send-email-macpaul.lin@mediatek.com>
+ <1562924653-10056-7-git-send-email-macpaul.lin@mediatek.com>
+ <bdadcb15-7bbc-11a9-5780-edcb984b051a@gmail.com>
+Autocrypt: addr=matthias.bgg@gmail.com; keydata=
+ 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
+Message-ID: <f7299e88-d525-dd7f-fc4c-c113de76a8aa@gmail.com>
+Date: Mon, 16 Dec 2019 09:45:21 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20191213213916.GA1292@bogus>
+In-Reply-To: <bdadcb15-7bbc-11a9-5780-edcb984b051a@gmail.com>
 Content-Language: en-US
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG3NODE2.st.com (10.75.127.8) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-12-16_01:2019-12-16,2019-12-16 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_004426_577237_DE55D513 
-X-CRM114-Status: GOOD (  25.48  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191216_004531_141636_4EF89214 
+X-CRM114-Status: GOOD (  15.45  )
+X-Spam-Score: 0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (matthias.bgg[at]gmail.com)
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,214 +153,205 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- Fabien Dessenne <fabien.dessenne@st.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, CC Hwang <cc.hwang@mediatek.com>,
+ wsd_upstream@mediatek.com, Loda Chou <loda.chou@mediatek.com>,
+ linux-serial@vger.kernel.org, linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Rob,
-
-On 12/13/19 10:39 PM, Rob Herring wrote:
-> On Thu, Nov 28, 2019 at 04:46:03PM +0100, Arnaud Pouliquen wrote:
->> Convert the ML-AHB bus bindings to DT schema format using json-schema
->>
->> Signed-off-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
->> ---
->> Notice that this patch requests an update of the simple-bus schema to add
->> the support of the "dma-ranges" property.
->> A Pull request has been sent in parallel to the dt-schema github repo:
->> https://github.com/devicetree-org/dt-schema/pull/30
->>
->> To remind the topic around the use of "dma-ranges" please
->> refer to following discussion: https://lkml.org/lkml/2019/4/3/1261
->> ---
->>  .../devicetree/bindings/arm/stm32/mlahb.txt   | 37 ----------
->>  .../bindings/arm/stm32/st,mlahb.yaml          | 69 +++++++++++++++++++
->>  2 files changed, 69 insertions(+), 37 deletions(-)
->>  delete mode 100644 Documentation/devicetree/bindings/arm/stm32/mlahb.txt
->>  create mode 100644 Documentation/devicetree/bindings/arm/stm32/st,mlahb.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/arm/stm32/mlahb.txt b/Documentation/devicetree/bindings/arm/stm32/mlahb.txt
->> deleted file mode 100644
->> index 25307aa1eb9b..000000000000
->> --- a/Documentation/devicetree/bindings/arm/stm32/mlahb.txt
->> +++ /dev/null
->> @@ -1,37 +0,0 @@
->> -ML-AHB interconnect bindings
->> -
->> -These bindings describe the STM32 SoCs ML-AHB interconnect bus which connects
->> -a Cortex-M subsystem with dedicated memories.
->> -The MCU SRAM and RETRAM memory parts can be accessed through different addresses
->> -(see "RAM aliases" in [1]) using different buses (see [2]) : balancing the
->> -Cortex-M firmware accesses among those ports allows to tune the system
->> -performance.
->> -
->> -[1]: https://www.st.com/resource/en/reference_manual/dm00327659.pdf
->> -[2]: https://wiki.st.com/stm32mpu/wiki/STM32MP15_RAM_mapping
->> -
->> -Required properties:
->> -- compatible: should be "simple-bus"
->> -- dma-ranges: describes memory addresses translation between the local CPU and
->> -	   the remote Cortex-M processor. Each memory region, is declared with
->> -	   3 parameters:
->> -		 - param 1: device base address (Cortex-M processor address)
->> -		 - param 2: physical base address (local CPU address)
->> -		 - param 3: size of the memory region.
->> -
->> -The Cortex-M remote processor accessed via the mlahb interconnect is described
->> -by a child node.
->> -
->> -Example:
->> -mlahb {
->> -	compatible = "simple-bus";
->> -	#address-cells = <1>;
->> -	#size-cells = <1>;
->> -	dma-ranges = <0x00000000 0x38000000 0x10000>,
->> -		     <0x10000000 0x10000000 0x60000>,
->> -		     <0x30000000 0x30000000 0x60000>;
->> -
->> -	m4_rproc: m4@10000000 {
->> -		...
->> -	};
->> -};
->> diff --git a/Documentation/devicetree/bindings/arm/stm32/st,mlahb.yaml b/Documentation/devicetree/bindings/arm/stm32/st,mlahb.yaml
->> new file mode 100644
->> index 000000000000..8ad3f7c7f9ab
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/arm/stm32/st,mlahb.yaml
->> @@ -0,0 +1,69 @@
->> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: "http://devicetree.org/schemas/arm/stm32/st,mlahb.yaml#"
->> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
->> +
->> +title: STMicroelectronics STM32 ML-AHB interconnect bindings
->> +
->> +maintainers:
->> +  - Fabien Dessenne <fabien.dessenne@st.com>
->> +  - Arnaud Pouliquen <arnaud.pouliquen@st.com>
->> +
->> +description: |
->> +  These bindings describe the STM32 SoCs ML-AHB interconnect bus which connects
->> +  a Cortex-M subsystem with dedicated memories. The MCU SRAM and RETRAM memory
->> +  parts can be accessed through different addresses (see "RAM aliases" in [1])
->> +  using different buses (see [2]): balancing the Cortex-M firmware accesses
->> +  among those ports allows to tune the system performance.
->> +  [1]: https://www.st.com/resource/en/reference_manual/dm00327659.pdf
->> +  [2]: https://wiki.st.com/stm32mpu/wiki/STM32MP15_RAM_mapping
->> +
->> +allOf:
->> + - $ref: /schemas/simple-bus.yaml#
->> +
->> +properties:
->> +  compatible:
->> +    contains:
->> +      enum:
->> +        - st,mlahb
->> +
->> +  dma-ranges:
->> +    description: |
->> +      Describe memory addresses translation between the local CPU and the
->> +      remote Cortex-M processor. Each memory region, is declared with
->> +      3 parameters:
->> +      - param 1: device base address (Cortex-M processor address)
->> +      - param 2: physical base address (local CPU address)
->> +      - param 3: size of the memory region.
->> +    maxItems: 3
->> +
->> +  '#address-cells':
->> +    const: 1
->> +
->> +  '#size-cells':
->> +    const: 1
->> +
->> +required:
->> +  - compatible
->> +  - '#address-cells'
->> +  - '#size-cells'
->> +  - dma-ranges
->> +
->> +examples:
->> +  - |
->> +    mlahb: ahb {
->> +      compatible = "st,mlahb", "simple-bus";
->> +      #address-cells = <1>;
->> +      #size-cells = <1>;
->> +      reg = <0x10000000 0x40000>;
->> +      dma-ranges = <0x00000000 0x38000000 0x10000>,
->> +                   <0x10000000 0x10000000 0x60000>,
->> +                   <0x30000000 0x30000000 0x60000>;
->> +
+On 15/12/2019 00:40, Matthias Brugger wrote:
 > 
-> Fails to build:
 > 
-> builds/robherring/linux-dt-review/Documentation/devicetree/bindings/arm/stm32/st,mlahb.example.dt.yaml: 
-> ahb: 'ranges' is a required property
+> On 12/07/2019 11:43, Macpaul Lin wrote:
+>> From: Mars Cheng <mars.cheng@mediatek.com>
+>>
+>> This adds scpsys support for MT6765
+>> Add subdomain support for MT6765:
+>> isp, mm, connsys, mfg, and cam.
+>>
+>> Signed-off-by: Mars Cheng <mars.cheng@mediatek.com>
+>> Signed-off-by: Owen Chen <owen.chen@mediatek.com>
+>> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
 > 
-> Run 'make dt_binding_check'
+> Applied to v5.5-next/soc
+> 
 
-Yes, that why i posted in parallel the PR on the tool:
-https://github.com/devicetree-org/dt-schema/pull/30. 
+I didn't realize this has dependencies with other series not yet merged. I drop
+this one for now as it breaks linux-next.
 
-I don't know if you saw my answer on this post so i copy/paste  it here:
-
-How to describe the stm32mp1 coprocessor mapping and translations based on this "ranges" requirement?
-
-On stm32mp1 we have 2 RAM memories accessible by the Cortex-A7 running Linux and used by the Cortex-M4 coprocessor to run its code. Each Cortex has a specific mapping of the memories. Some memory translations are needed by:
-
-- rproc driver to load the Cortex-M4 firmware in RAMs
-- rpmsg & virtio frameworks for shared memory
-
-Here is the memory mapping:
-
-- RETRAM (64 kB);
-  - Cortex-A7 @ : 0x38000000
-  - Cortex-M4 @: 0x00000000
-- MCUSRAM (up to 384 kB)
-  - Cortex-A7 @ : 0x30000000 or 0x10000000 ( 2 addresses for the same memory)
-  - Cortex-M4 @: 0x30000000 or 0x10000000 ( 2 addresses for the same memory)
-  =>addresses used on both side depend on the MCURAM access optimization
-
-Today our upstreamed solution is based on dma-range only (https://lkml.org/lkml/2019/4/3/1261)
-
-What about adding an "unused" ranges property in DT to match the requirement?
-
-	mlahb {
-		compatible = "simple-bus";
-		#address-cells = <1>;
-		#size-cells = <1>;
-		ranges = <0 0x38000000 0x10000>,
-			       <1 0x10000000 0x60000>,
-			       <2 0x30000000 0x60000>;
-		dma-ranges = <0x00000000 0x38000000 0x10000>,
-			     <0x10000000 0x10000000 0x60000>,
-			     <0x30000000 0x30000000 0x60000>;
-
-		m4_rproc: m4@10000000 {
-		        ---
-		};
-	};
-
-Thanks in advance for your feedback.
 Regards,
-Arnaud
+Matthias
 
-> 
->> +      m4_rproc: m4@10000000 {
->> +       reg = <0x10000000 0x40000>;
->> +      };
->> +    };
->> +
->> +...
->> -- 
->> 2.17.1
+>> ---
+>>  drivers/soc/mediatek/mtk-scpsys.c | 130 ++++++++++++++++++++++++++++++
+>>  1 file changed, 130 insertions(+)
 >>
+>> diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+>> index ea5a221a16e9..ff124c514e9c 100644
+>> --- a/drivers/soc/mediatek/mtk-scpsys.c
+>> +++ b/drivers/soc/mediatek/mtk-scpsys.c
+>> @@ -16,6 +16,7 @@
+>>  
+>>  #include <dt-bindings/power/mt2701-power.h>
+>>  #include <dt-bindings/power/mt2712-power.h>
+>> +#include <dt-bindings/power/mt6765-power.h>
+>>  #include <dt-bindings/power/mt6797-power.h>
+>>  #include <dt-bindings/power/mt7622-power.h>
+>>  #include <dt-bindings/power/mt7623a-power.h>
+>> @@ -869,6 +870,120 @@ static const struct scp_subdomain scp_subdomain_mt2712[] = {
+>>  	{MT2712_POWER_DOMAIN_MFG_SC2, MT2712_POWER_DOMAIN_MFG_SC3},
+>>  };
+>>  
+>> +/*
+>> + * MT6765 power domain support
+>> + */
+>> +#define SPM_PWR_STATUS_MT6765			0x0180
+>> +#define SPM_PWR_STATUS_2ND_MT6765		0x0184
+>> +
+>> +static const struct scp_domain_data scp_domain_data_mt6765[] = {
+>> +	[MT6765_POWER_DOMAIN_VCODEC] = {
+>> +		.name = "vcodec",
+>> +		.sta_mask = BIT(26),
+>> +		.ctl_offs = 0x300,
+>> +		.sram_pdn_bits = GENMASK(8, 8),
+>> +		.sram_pdn_ack_bits = GENMASK(12, 12),
+>> +	},
+>> +	[MT6765_POWER_DOMAIN_ISP] = {
+>> +		.name = "isp",
+>> +		.sta_mask = BIT(5),
+>> +		.ctl_offs = 0x308,
+>> +		.sram_pdn_bits = GENMASK(8, 8),
+>> +		.sram_pdn_ack_bits = GENMASK(12, 12),
+>> +		.subsys_clk_prefix = "isp",
+>> +		.bp_table = {
+>> +			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
+>> +				BIT(20), BIT(20)),
+>> +			BUS_PROT(SMI_TYPE, 0x3C4, 0x3C8, 0, 0x3C0,
+>> +				BIT(2), BIT(2)),
+>> +		},
+>> +	},
+>> +	[MT6765_POWER_DOMAIN_MM] = {
+>> +		.name = "mm",
+>> +		.sta_mask = BIT(3),
+>> +		.ctl_offs = 0x30C,
+>> +		.sram_pdn_bits = GENMASK(8, 8),
+>> +		.sram_pdn_ack_bits = GENMASK(12, 12),
+>> +		.basic_clk_id = {"mm"},
+>> +		.subsys_clk_prefix = "mm",
+>> +		.bp_table = {
+>> +			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
+>> +				BIT(16) | BIT(17), BIT(16) | BIT(17)),
+>> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
+>> +				BIT(10) | BIT(11), BIT(10) | BIT(11)),
+>> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
+>> +				BIT(1) | BIT(2), BIT(1) | BIT(2)),
+>> +		},
+>> +	},
+>> +	[MT6765_POWER_DOMAIN_CONN] = {
+>> +		.name = "conn",
+>> +		.sta_mask = BIT(1),
+>> +		.ctl_offs = 0x32C,
+>> +		.sram_pdn_bits = 0,
+>> +		.sram_pdn_ack_bits = 0,
+>> +		.bp_table = {
+>> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
+>> +				BIT(13), BIT(13)),
+>> +			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
+>> +				BIT(18), BIT(18)),
+>> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
+>> +				BIT(14) | BIT(16), BIT(14) | BIT(16)),
+>> +		},
+>> +	},
+>> +	[MT6765_POWER_DOMAIN_MFG_ASYNC] = {
+>> +		.name = "mfg_async",
+>> +		.sta_mask = BIT(23),
+>> +		.ctl_offs = 0x334,
+>> +		.sram_pdn_bits = 0,
+>> +		.sram_pdn_ack_bits = 0,
+>> +		.basic_clk_id = {"mfg"},
+>> +	},
+>> +	[MT6765_POWER_DOMAIN_MFG] = {
+>> +		.name = "mfg",
+>> +		.sta_mask = BIT(4),
+>> +		.ctl_offs = 0x338,
+>> +		.sram_pdn_bits = GENMASK(8, 8),
+>> +		.sram_pdn_ack_bits = GENMASK(12, 12),
+>> +		.bp_table = {
+>> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
+>> +				BIT(25), BIT(25)),
+>> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
+>> +				BIT(21) | BIT(22), BIT(21) | BIT(22)),
+>> +		}
+>> +	},
+>> +	[MT6765_POWER_DOMAIN_CAM] = {
+>> +		.name = "cam",
+>> +		.sta_mask = BIT(25),
+>> +		.ctl_offs = 0x344,
+>> +		.sram_pdn_bits = GENMASK(8, 9),
+>> +		.sram_pdn_ack_bits = GENMASK(12, 13),
+>> +		.subsys_clk_prefix = "cam",
+>> +		.bp_table = {
+>> +			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
+>> +				BIT(19) | BIT(21), BIT(19) | BIT(21)),
+>> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
+>> +				BIT(20), BIT(20)),
+>> +			BUS_PROT(SMI_TYPE, 0x3C4, 0x3C8, 0, 0x3C0,
+>> +				BIT(3), BIT(3)),
+>> +		}
+>> +	},
+>> +	[MT6765_POWER_DOMAIN_MFG_CORE0] = {
+>> +		.name = "mfg_core0",
+>> +		.sta_mask = BIT(7),
+>> +		.ctl_offs = 0x34C,
+>> +		.sram_pdn_bits = GENMASK(8, 8),
+>> +		.sram_pdn_ack_bits = GENMASK(12, 12),
+>> +	},
+>> +};
+>> +
+>> +static const struct scp_subdomain scp_subdomain_mt6765[] = {
+>> +	{MT6765_POWER_DOMAIN_MM, MT6765_POWER_DOMAIN_CAM},
+>> +	{MT6765_POWER_DOMAIN_MM, MT6765_POWER_DOMAIN_ISP},
+>> +	{MT6765_POWER_DOMAIN_MM, MT6765_POWER_DOMAIN_VCODEC},
+>> +	{MT6765_POWER_DOMAIN_MFG_ASYNC, MT6765_POWER_DOMAIN_MFG},
+>> +	{MT6765_POWER_DOMAIN_MFG, MT6765_POWER_DOMAIN_MFG_CORE0},
+>> +};
+>> +
+>>  /*
+>>   * MT6797 power domain support
+>>   */
+>> @@ -1363,6 +1478,18 @@ static const struct scp_soc_data mt2712_data = {
+>>  	.bus_prot_reg_update = false,
+>>  };
+>>  
+>> +static const struct scp_soc_data mt6765_data = {
+>> +	.domains = scp_domain_data_mt6765,
+>> +	.num_domains = ARRAY_SIZE(scp_domain_data_mt6765),
+>> +	.subdomains = scp_subdomain_mt6765,
+>> +	.num_subdomains = ARRAY_SIZE(scp_subdomain_mt6765),
+>> +	.regs = {
+>> +		.pwr_sta_offs = SPM_PWR_STATUS_MT6765,
+>> +		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND_MT6765,
+>> +	},
+>> +	.bus_prot_reg_update = true,
+>> +};
+>> +
+>>  static const struct scp_soc_data mt6797_data = {
+>>  	.domains = scp_domain_data_mt6797,
+>>  	.num_domains = ARRAY_SIZE(scp_domain_data_mt6797),
+>> @@ -1429,6 +1556,9 @@ static const struct of_device_id of_scpsys_match_tbl[] = {
+>>  	}, {
+>>  		.compatible = "mediatek,mt2712-scpsys",
+>>  		.data = &mt2712_data,
+>> +	}, {
+>> +		.compatible = "mediatek,mt6765-scpsys",
+>> +		.data = &mt6765_data,
+>>  	}, {
+>>  		.compatible = "mediatek,mt6797-scpsys",
+>>  		.data = &mt6797_data,
+>>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
