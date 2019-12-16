@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B712D1216E6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 19:33:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 995DD1216E7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 19:33:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KGS/qd0UsvMc4XRSn9t20RZChrV/5hH6JIw6rSfNnc4=; b=oxIWx/l+X1g05j
-	w0t7Bc83NjBy3wZHMNTFP+bAtxeZ3bsL1a+orJxpsaEXrYvKdf4zk1RAi7G4ZJ7Yzf96up6FZn9Yy
-	Zpr0kVCajMTgUl5b9IqGDyryKexkM2CVOwWZQczTtZehDtkUTPMaXQVpAeCZqREjub6D/RVUUKvMn
-	il5zYE3ojwzU7MHl7YKlqmaUUSNwBOqmZrr/D6EUZTKPb0LEKfH7QAY2RCCFjRFMGP9PHKfsfsJ4t
-	BPXSamaQn6xMOMvACxPH2rwLYl9tqFqDe0/EEiDH5bQxztua+skjh+x3nR1q+xNDKqYTsjMWKpG2T
-	rj9v6SYC5SuqNqWga9dg==;
+	List-Owner; bh=tSDIFytoGspAZhlmDcK3WpYB6BqRYQ5ejCg9JG3Z30w=; b=hZ32h8U9BE29gv
+	r1J1X3xLA4DVIlLXvqwrz5kJ4GhKmW/VyQoib5TB8AZHYo5e97KjPvZWFut4qssO1+5MdT6ToNKUu
+	DW4P7uccwJphcH5kMETU1qaPYJbdI0UGBBq9X4GmHfsV1ZmcTG8GyaTZg78lgBu4YSQDusu2ORJY7
+	89pkLFFxJqv5Z/Q5/nxGO3dBH93y+SVUkpmAvT99RaRviXGcBwfcWqR5nmqXhVra0PhneUUVW2tP1
+	szgTUsw07m7FcWTpHKMPBVTvLZcLpqUasHecmfv2wQPZAg6fwG8I7rcIs4omuARWChFde7unlzyMH
+	eA10RRCkjSKglL0dq4Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igvBN-0001zz-BF; Mon, 16 Dec 2019 18:33:25 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1igvBa-0002Fv-Gr; Mon, 16 Dec 2019 18:33:38 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igvAy-0001pK-Rw
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 18:33:02 +0000
-Received: by mail-pg1-x544.google.com with SMTP id z124so4171722pgb.13
+ id 1igvB0-0001pm-72
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 18:33:03 +0000
+Received: by mail-pl1-x643.google.com with SMTP id c23so4854672plz.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 10:33:00 -0800 (PST)
+ Mon, 16 Dec 2019 10:33:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=LsjRazNxwIjB/kfHtlv+QoNeEmV3wJwVhLTpn5ed/GQ=;
- b=EPNmuv7MqNfortefo8XxuPcLZY3v2+0pE/+qs5Mn/GhZSLiGYUEIFwOATXAMBhey5i
- evD1gcEeThnipE0cQo9oRKVuW70omJvIx4KGpA+ONYBCnaayq7479PtwTiK8fkQd9PJp
- jXXnQczA3ti83FYCWD7QEfUngm2rHMWv3dj0nz4B5fYnwVA2FhEQA5kQXsvZPTj65Zpq
- W4d6W2uJkoTEJDk4HWbJ3J89oMQwwpfoBnsuSos7jCnUphCmRT2XJDKGYAlDyApOzjHy
- zx0KYeSXpgtcgoy0tJWJ6OZa0xqM3icfHeXZLiRB3vfkEhC0TzBI/R7nPp4RYRIcGvyz
- 5J3w==
+ bh=muvIZPXZzFYwA2KnEz8hZgGKrX75pxgv3Lg3oHbwLBw=;
+ b=q0owXzgWorl+IT7EkpCMUN7xBbxlHC/mqAg9W9RTyNS1DZPouBDeAjh2z75XOKd2XM
+ H2zvMJ4+D+vRCyLPoV6/ukez7dhju4BzISB2MFuIgVn9R1bF60KrQ550ejjEjQQhfJ3d
+ R6NMNgCf9eQ1IK4+oUHoP4GJq41qma1QJ5kd37GC7FjKlmfruE/dmor9jXZdFrXVKioA
+ MjjovHVvZIdkz64f6uLojQxp16D0wP4RaCry0+ZHNRAZb/NA2qnA5ZNWLVFXFDoN8Puk
+ qTHH3zv1kSFftAZkAo5ErJVGH268XiYuT8vWzHBZEYjeH53PXUOGImxAgc3iof0dfak+
+ TCqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=LsjRazNxwIjB/kfHtlv+QoNeEmV3wJwVhLTpn5ed/GQ=;
- b=PqPRxzldwXtgjamZ9PQveTwPZYWS5aGEoVk5vplVBNpB2Cn+CgokITtGhXtB9s3DsD
- q+nljTq4hpwPo/uCkWRgd31R+MNkgAi7iEPqVgb0oUOI0SPzcQiyqxMh+ertU5y99PET
- B20ALnGyFbCoh4eeKzzIkkrxXuYNnSdCTV+t+x3oBfnI3pxMNGyRyIJ9Dqqf7sx7jWWE
- rkqbKuWUeBwuyy9aiBo559kl5UHp2k6dNAf0q2EDbKQru1sGsmcyWrVHmiijEhyBqbU7
- vo+Dh/qe084XuSBh2TXrHo2ifBSwdGgeSN4S04h9FXR+3QZhXVjvOEz5x4WA0cOHTav4
- o5og==
-X-Gm-Message-State: APjAAAXW3RKDVS8baAIRlP6mEgRuG1EstSAtGMF8mAnyGjwZZMrOhBBn
- 5clC/P/wPdizgtAy6wrTIqPflgUQ
-X-Google-Smtp-Source: APXvYqywyd+9sNBYjD8oNqLxF1Md9OVBnbnTKmYuQP3g7+J+J1BRsdzZYnneQ8i6drfpJFAw5/qcJg==
-X-Received: by 2002:a63:d62:: with SMTP id 34mr20598440pgn.268.1576521180321; 
- Mon, 16 Dec 2019 10:33:00 -0800 (PST)
+ bh=muvIZPXZzFYwA2KnEz8hZgGKrX75pxgv3Lg3oHbwLBw=;
+ b=lnG2VwpkCUOep6RpWCSQ4ELwRjKklGcpUu+gTcSgrelHxy+IHErJC/kxpJj+dEsrKX
+ LpcP4jNVjW0MeZUxk5rs/vTFcn9VXkjO7DEe5HypZ5weugkiX+Ja+bbg3om7tnNM8ZOW
+ KX46+u4c7u/ZOxmoZ0dsGhsMDmja+xhRzWaqeLZCeCb6N2jddTXBIx1oOW6FVdOB16iM
+ L/zwuM0Ni55z4DRXwVYvYwuPi0yPxC6pZAVBcc3jNntm1VI9Pc2FPCTiaX2vz5akc5WT
+ p5JvziK8RZEOLJYhqv67dMH9mJy+QQ+YMLERWqr71xCBula+2bz2Ef4bxhXDUmOl7/WH
+ ASkQ==
+X-Gm-Message-State: APjAAAWRJvCNaGSZyTkWZcPtL97ohGzYSoqR37fyEsnww8HPi8Z8vBYT
+ Qwsq9Z3P2OKfAevKRVrHNuk=
+X-Google-Smtp-Source: APXvYqygLqbMNydAuYdfkCmF+8oCs3Vw2xkRqAtHA6tCsjJGXCzAIzsezFGkNLbfktPTVScTqWNo8w==
+X-Received: by 2002:a17:902:bd85:: with SMTP id
+ q5mr4061608pls.17.1576521181571; 
+ Mon, 16 Dec 2019 10:33:01 -0800 (PST)
 Received: from localhost.localdomain (c-73-241-114-122.hsd1.ca.comcast.net.
  [73.241.114.122])
- by smtp.gmail.com with ESMTPSA id d65sm23400738pfa.159.2019.12.16.10.32.59
+ by smtp.gmail.com with ESMTPSA id d65sm23400738pfa.159.2019.12.16.10.33.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Dec 2019 10:32:59 -0800 (PST)
+ Mon, 16 Dec 2019 10:33:00 -0800 (PST)
 From: Richard Cochran <richardcochran@gmail.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 1/3] net: axienet: Propagate registration errors
- during probe.
-Date: Mon, 16 Dec 2019 10:32:54 -0800
-Message-Id: <42ed0fb7ef99101d6fd8b799bccb6e2d746939c2.1576520432.git.richardcochran@gmail.com>
+Subject: [PATCH net-next 2/3] net: axienet: Support software transmit time
+ stamping.
+Date: Mon, 16 Dec 2019 10:32:55 -0800
+Message-Id: <79b2d20c323484b8f86690ea56dae52b1be6a8e9.1576520432.git.richardcochran@gmail.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <cover.1576520432.git.richardcochran@gmail.com>
 References: <cover.1576520432.git.richardcochran@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_103300_899393_BCF6B607 
+X-CRM114-CacheID: sfid-20191216_103302_254833_C5D24301 
 X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,34 +109,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The function, axienet_mdio_setup(), calls of_mdiobus_register() which
-might return EDEFER_PROBE.  However, this error is not propagated to
-the driver's probe method, and so deferred registration cannot happen.
-This patch fixes the issue by handling the error code properly.
+MAC drivers are expected to invoke the transmit time stamping hook in
+order to support both software time stamping and PHY time stamping.
+This patch adds the missing hook.  In addition, drivers calling
+netif_rx() should first check for PHY time stamping by calling
+skb_defer_rx_timestamp().
 
 Signed-off-by: Richard Cochran <richardcochran@gmail.com>
 ---
- drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/net/ethernet/xilinx/xilinx_axienet_main.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-index 20746b801959..53644abe52da 100644
+index 53644abe52da..05fa7371c39a 100644
 --- a/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
 +++ b/drivers/net/ethernet/xilinx/xilinx_axienet_main.c
-@@ -1835,9 +1835,10 @@ static int axienet_probe(struct platform_device *pdev)
+@@ -675,6 +675,9 @@ axienet_start_xmit(struct sk_buff *skb, struct net_device *ndev)
+ 	cur_p->skb = skb;
+ 
+ 	tail_p = lp->tx_bd_p + sizeof(*lp->tx_bd_v) * lp->tx_bd_tail;
++
++	skb_tx_timestamp(skb);
++
+ 	/* Start the transfer */
+ 	axienet_dma_out32(lp, XAXIDMA_TX_TDESC_OFFSET, tail_p);
+ 	if (++lp->tx_bd_tail >= lp->tx_bd_num)
+@@ -736,7 +739,8 @@ static void axienet_recv(struct net_device *ndev)
+ 			skb->ip_summed = CHECKSUM_COMPLETE;
  		}
  
- 		ret = axienet_mdio_setup(lp);
--		if (ret)
--			dev_warn(&pdev->dev,
--				 "error registering MDIO bus: %d\n", ret);
-+		if (ret) {
-+			dev_err(&pdev->dev, "error registering MDIO bus\n");
-+			goto free_netdev;
-+		}
- 	}
+-		netif_rx(skb);
++		if (!skb_defer_rx_timestamp(skb))
++			netif_rx(skb);
  
- 	lp->phylink_config.dev = &ndev->dev;
+ 		size += length;
+ 		packets++;
+@@ -1367,6 +1371,7 @@ static const struct ethtool_ops axienet_ethtool_ops = {
+ 	.set_pauseparam = axienet_ethtools_set_pauseparam,
+ 	.get_coalesce   = axienet_ethtools_get_coalesce,
+ 	.set_coalesce   = axienet_ethtools_set_coalesce,
++	.get_ts_info	= ethtool_op_get_ts_info,
+ 	.get_link_ksettings = axienet_ethtools_get_link_ksettings,
+ 	.set_link_ksettings = axienet_ethtools_set_link_ksettings,
+ };
 -- 
 2.20.1
 
