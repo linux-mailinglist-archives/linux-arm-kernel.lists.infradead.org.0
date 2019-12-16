@@ -2,81 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7AD9112034A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:05:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0125120330
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:04:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bQrATTGVTO33ZvJTKsIqD138gWZZzuFkgFFzPCraJpU=; b=qN2aYyFRZOZurN
-	VXBnykmMtf8OrfMH31MS6yfzbTwt/q9bHBQk7d11gWOv5x26TtgT3zNWqfqaqgf0IAesvcz0UYKyZ
-	8Eq2a28EZ9+qhKk4P5tx/i7LYB4+OcUZbWOpGV2aJRU7Ma5/ipQycNIY1TnXFstSclS6FPFZJ1KcK
-	00CczbBVLCS/yOhW44YNdi4BhyrpLMQ3hkToFr6kIategJevb7Ysov14Izp6BFKPa+OnsrXmfqTtd
-	7CaGKzmi5blxTM0g1DCsgExivlTPsDMQo3j9iWu6udpha+C4HUR3JJvuG9WHI1HewYW7LEr/bQWae
-	iFXIw4703tDo0mIbnNXw==;
+	List-Owner; bh=T+T/NubRKBkB4vSXXKpZhHAQA5ROhvBk95Ru3Wd0uoQ=; b=feyLDA4OzxjsgH
+	l8y1zlg6OltsCmlUUIDiXYQvA6kFJ2qAj8fJkGC3TRKB1etJNBMlJY5B+4hQJVc6ar8Pj0brOjGDE
+	WCYmWXdkJUyu09lE5Wupsolt8WPIIfWWY5YyC/V62TCYIoBH2QYVQeY8OdWoHJFATOv3THytCdAqp
+	xp+Fvtrj/JslW+t7Hk93OYO3lt1EPJ5l2qHcpGcV8cXPDGB+s3SJ2QeolvKUREAUOML8mNjm6QCit
+	dfn7bBC3k/zGFsQbCOT+4Vy1rObJYzlUIEksKntbzMCgO6gt8m7SlZiKk0/LXeTBszRusunHD1cRY
+	D3D9vQGSVlk2Vcm1m52g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igoBk-0006YF-7Z; Mon, 16 Dec 2019 11:05:20 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1igoAw-0004zE-54; Mon, 16 Dec 2019 11:04:30 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igoBZ-0004e8-NP
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 11:05:11 +0000
+ id 1igoAS-0004oT-Jb; Mon, 16 Dec 2019 11:04:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=XJ6t/pFlC3K5rIsLbz5VvrPkJShYdpcCpsxUEpi01j4=; b=KYxC1EQCERvt/T7I2Nuflwy4J
- THmLSXt2fNtPkDwzOGvGh7iCsyyALl5kOwP+ZXDnjlI7GusUsG3aVXqTFA0wZMcYfIyA4OEudhIri
- x6koXj2ziETizSNUviSWHw2GlMdrh4jUOiaWUNk3PVO+cmIXc/0iE5CwmXdCacMu6GgLkDuF2ArlE
- dbDJG7I3AKwrpqFmmuVyKZR+IirOo4Fbkw14WAMyr4ctAtGEfcpppGMVnonBOYtP2ii2J1MY4yJTH
- qznEhG2GMETj5nDWIzoGJB4VXGcooACTUCWMGmahSZHggv8cT8Hk6HNdTIBeCo2JLmdv/qdOeoCzF
- JzHBCIatg==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:42078)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1igo9P-0006r5-0L; Mon, 16 Dec 2019 11:02:55 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1igo9N-0002Ke-Fm; Mon, 16 Dec 2019 11:02:53 +0000
-Date: Mon, 16 Dec 2019 11:02:53 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Shawn Guo <shawnguo@kernel.org>
-Subject: Re: [PATCH 1/2] arm64: dts: lx2160a: add MDIO descriptions
-Message-ID: <20191216110253.GE25745@shell.armlinux.org.uk>
-References: <20191209120010.GG25745@shell.armlinux.org.uk>
- <E1ieHiP-0004wT-2O@rmk-PC.armlinux.org.uk>
- <20191211073330.GO15858@dragon>
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=T5jUwhG5VPmfwvGWXVkOBlrlF0PHl4vRCrBbuHZot1M=; b=XKw+sRGVYjEDBdN5nwlV26J+02
+ CL4nTT9lm/HVg/dUmbYd6SxucA7C5skV/vAczck52JW9HDevLUy5SWrT0eulsDL+j8Ob6UrdhnYSc
+ XOuVR6mbUj9cWrk9mBF1OzPcNFfreU4BODNHUFuptfD6AtNYBVO3SpTD6JIpE0Fe9DKCdwattr4k2
+ mZ/1v0G4WCEJ43clMqVPpaLg0/TDO49Wldcefi7Ez6T6K/FSedwc405lNE8xgJCFg/GN54Q37l5Zy
+ WDDQd94u8w6X5vCA5SLVOMyuivYcSLyrOD5kkayn5q466MxkJbaMQUrkXdIl4mkF3mCg1JLsGoHFw
+ 0oV92IXA==;
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1igoAP-0004dS-FS; Mon, 16 Dec 2019 11:03:58 +0000
+X-Originating-IP: 91.224.148.103
+Received: from xps13 (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id DB96C24001C;
+ Mon, 16 Dec 2019 11:03:13 +0000 (UTC)
+Date: Mon, 16 Dec 2019 12:03:12 +0100
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH 09/12] drm/rockchip: lvds: Add PX30 support
+Message-ID: <20191216120312.4aa478da@xps13>
+In-Reply-To: <20191216105827.rxkfbwemkqw446jx@gilmour.lan>
+References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
+ <20191213181051.25983-10-miquel.raynal@bootlin.com>
+ <20191216105827.rxkfbwemkqw446jx@gilmour.lan>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191211073330.GO15858@dragon>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_030509_766391_6F79885E 
-X-CRM114-Status: GOOD (  14.32  )
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.193 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,69 +79,53 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jon Nettleton <jon@solid-run.com>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Rabeeh Khoury <rabeeh@solid-run.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 03:33:31PM +0800, Shawn Guo wrote:
-> On Mon, Dec 09, 2019 at 12:00:37PM +0000, Russell King wrote:
-> > Add MDIO descriptions to the lx2160a dtsi file, so we can use them in
-> > the SolidRun Clearfog CX platform.
-> > 
-> > Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-> > ---
-> >  .../arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 20 +++++++++++++++++++
-> >  1 file changed, 20 insertions(+)
-> > 
-> > diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-> > index 0bd98f179bfa..617e1f1a2339 100644
-> > --- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-> > +++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
-> > @@ -863,6 +863,26 @@
-> >  			fsl,extts-fifo;
-> >  		};
-> >  
-> > +		emdio1: mdio@8b96000 {
-> > +			compatible = "fsl,fman-memac-mdio";
-> > +			reg = <0x00 0x8b96000 0x00 0x1000>;
-> > +			interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-> > +			little-endian;
-> > +			#address-cells = <0x01>;
-> > +			#size-cells = <0x00>;
-> > +			status = "disabled";
-> > +		};
-> > +
-> > +		emdio2: mdio@8b97000 {
-> > +			compatible = "fsl,fman-memac-mdio";
-> > +			reg = <0x00 0x8b97000 0x00 0x1000>;
-> > +			interrupts = <GIC_SPI 91 IRQ_TYPE_LEVEL_HIGH>;
-> > +			little-endian;
-> > +			#address-cells = <0x01>;
-> > +			#size-cells = <0x00>;
-> > +			status = "disabled";
-> > +		};
-> > +
-> 
-> Ioana Ciornei already had a patch [1] adding emdio1, but unfortunately,
-> emdio2 was missing from there.
-> 
-> Shawn
-> 
-> [1] https://lkml.org/lkml/2019/12/4/675
-
-Okay, I'll wait until after the next merge window before resubmitting.
-Thanks.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWF4aW1lLAoKTWF4aW1lIFJpcGFyZCA8bWF4aW1lQGNlcm5vLnRlY2g+IHdyb3RlIG9uIE1v
+biwgMTYgRGVjIDIwMTkgMTE6NTg6MjcKKzAxMDA6Cgo+IEhpLAo+IAo+IE9uIEZyaSwgRGVjIDEz
+LCAyMDE5IGF0IDA3OjEwOjQ4UE0gKzAxMDAsIE1pcXVlbCBSYXluYWwgd3JvdGU6Cj4gPiArc3Rh
+dGljIGludCBweDMwX2x2ZHNfZ3JmX2NvbmZpZyhzdHJ1Y3QgZHJtX2VuY29kZXIgKmVuY29kZXIs
+Cj4gPiArCQkJCXN0cnVjdCBkcm1fZGlzcGxheV9tb2RlICptb2RlKQo+ID4gK3sKPiA+ICsJc3Ry
+dWN0IHJvY2tjaGlwX2x2ZHMgKmx2ZHMgPSBlbmNvZGVyX3RvX2x2ZHMoZW5jb2Rlcik7Cj4gPiAr
+CXU4IG5oc3luYyA9ICEobW9kZS0+ZmxhZ3MgJiBEUk1fTU9ERV9GTEFHX1BIU1lOQyk7Cj4gPiAr
+CXU4IG52c3luYyA9ICEobW9kZS0+ZmxhZ3MgJiBEUk1fTU9ERV9GTEFHX1BWU1lOQyk7Cj4gPiAr
+CXU4IG5kY2xrID0gIShtb2RlLT5mbGFncyAmIERSTV9NT0RFX0ZMQUdfUENTWU5DKTsKPiA+ICsJ
+aW50IHJldDsKPiA+ICsKPiA+ICsJaWYgKGx2ZHMtPm91dHB1dCAhPSBESVNQTEFZX09VVFBVVF9M
+VkRTKSB7Cj4gPiArCQlEUk1fREVWX0VSUk9SKGx2ZHMtPmRldiwgIlVuc3VwcG9ydGVkIGRpc3Bs
+YXkgb3V0cHV0ICVkXG4iLAo+ID4gKwkJCSAgICAgIGx2ZHMtPm91dHB1dCk7Cj4gPiArCQlyZXR1
+cm4gLUVJTlZBTDsKPiA+ICsJfQo+ID4gKwo+ID4gKwlpZiAobmhzeW5jIF4gbnZzeW5jKSB7Cj4g
+PiArCQlEUk1fREVWX0VSUk9SKGx2ZHMtPmRldiwgIlVuc3VwcG9ydGVkIEhzeW5jL1ZzeW5jIHBv
+bGFyaXR5XG4iKTsKPiA+ICsJCXJldHVybiAtRUlOVkFMOwo+ID4gKwl9Cj4gPiArCj4gPiArCS8q
+IFNldCBmb3JtYXQgKi8KPiA+ICsJcmV0ID0gcmVnbWFwX3VwZGF0ZV9iaXRzKGx2ZHMtPmdyZiwg
+UFgzMF9MVkRTX0dSRl9QRF9WT19DT04xLAo+ID4gKwkJCQkgUFgzMF9MVkRTX0ZPUk1BVChsdmRz
+LT5mb3JtYXQpLAo+ID4gKwkJCQkgUFgzMF9MVkRTX0ZPUk1BVChsdmRzLT5mb3JtYXQpKTsKPiA+
+ICsJaWYgKHJldCkKPiA+ICsJCXJldHVybiByZXQ7Cj4gPiArCj4gPiArCS8qIENvbnRyb2wgSHN5
+bmMvVnN5bmMgcG9sYXJpdHkgKi8KPiA+ICsJcmV0ID0gcmVnbWFwX3VwZGF0ZV9iaXRzKGx2ZHMt
+PmdyZiwgUFgzMF9MVkRTX0dSRl9QRF9WT19DT04wLAo+ID4gKwkJCQkgUFgzMF9MVkRTX1RJRV9D
+TEtTKDEpLAo+ID4gKwkJCQkgUFgzMF9MVkRTX1RJRV9DTEtTKDEpKTsKPiA+ICsJaWYgKHJldCkK
+PiA+ICsJCXJldHVybiByZXQ7Cj4gPiArCj4gPiArCS8qIFNldCBIc3luYy9Wc3luYyBwb2xhcml0
+eSAqLwo+ID4gKwlyZXQgPSByZWdtYXBfdXBkYXRlX2JpdHMobHZkcy0+Z3JmLCBQWDMwX0xWRFNf
+R1JGX1BEX1ZPX0NPTjAsCj4gPiArCQkJCSBQWDMwX0xWRFNfSU5WRVJUX0NMS1MoMSksCj4gPiAr
+CQkJCSBQWDMwX0xWRFNfSU5WRVJUX0NMS1MobmhzeW5jKSk7Cj4gPiArCWlmIChyZXQpCj4gPiAr
+CQlyZXR1cm4gcmV0OyAgCj4gCj4gSSBkb24ndCBrbm93IHRoZSBoYXJkd2FyZSBidXQgaXQgc2Vl
+bXMgcHJldHR5IHdlaXJkIHRvIG1lLiBoc3luYyBhbmQKPiB2c3luYyBpbiBMVkRTIGFyZSBub3Qg
+Y2xvY2tzIChvciBldmVuIHNpZ25hbHMpLCB0aGV5J3JlIGEgYml0IGluIHRoZQo+IHBheWxvYWQu
+IElzIHRoZXJlIGFueSBleHBsYW5hdGlvbiBpbiB0aGUgZGF0YXNoZWV0IChvciBldmVuIGEKPiBk
+YXRhc2hlZXQgaW4gdGhlIGZpcnN0IHBsYWNlKT8KClRoZXJlIGlzIG5vIGV4cGxhbmF0aW9uIGFi
+b3V0IHRoaXMgaW4gdGhlIFBYMzAgVFJNIHBhcnQgMSAocHVibGljKS4gQnV0CnlvdSBhcmUgcmln
+aHQgdGhlIG5hbWluZyBpcyB3ZWlyZC4gQ291bGQgdGhlICJ0aWUgY2xvY2tzIiB0aGluZyBhYm92
+ZQptZWFuIHNvbWV0aGluZyB0byB5b3UvcGVvcGxlIGtub3dpbmcgdGhlIExWRFMgd29ybGQ/CgpD
+aGVlcnMsCk1pcXXDqGwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
