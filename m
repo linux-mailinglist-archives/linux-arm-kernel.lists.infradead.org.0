@@ -2,70 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4439120800
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 15:04:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36835120868
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 15:20:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fg/AdaBlvqtEsEw+K1nIWK35/ymttPbMuvu7gdSsALM=; b=VjG1LMPdy2LLE1qURoe3fHYeZ
-	ylzqoBDL10zM9r/YW3GigOg9EXs5yBXzjLWANuBbIvPx9GQ+/XSLMRK9dGSHhX8wc5BTmMaEV1cl2
-	mf1mcrZkPKf4ZfdZsZQrqY/oExBOsNr/35HYYJxHdJvOuiZ5JUGqcq9YwIKgIbN0E1mOXTExKQj7a
-	GsH08fQFQr431kDDZNOfEA+NB+LcuzIS1KhqjnXuSyIN6FNpYU/x3n3CSwBu3n/fIkMcDALVT3Gvs
-	RSBY8d1ojAJ1ugIJbiEq//HrDGvJP8AOt7U+d7+shhXuTe0CkOfADDbYmY09LZsMFX6GEwdLKZNjd
-	I+HEJ2apg==;
+	 bh=2hF4d365TcNZglch/W22SREc+adiyMllTtPzxCvL0Zc=; b=QJYRtBL28Ga0XaGoJIe3tSBGk
+	CYdoOVXqlLw0ZkuT8f0KTi4nxmfvYHBi2JiV6FPYE9bTf7UbHQ6bmirPM8Q9URHKO5aNLh96QIozS
+	heW18XDYSnUlrvsmvsxuO8vT5TNE5gI7SMgWIKbTPKnmqDq8j7RExfHKmpNcyC9noEvHHoakHRzyX
+	+yJO7B/ECnWuoRFSU+yWF33D434C6MVs0EWQ1H08OSt/v6tTlzbD742Vzd0iySZu3K3G4CfOxI0qD
+	H/638gHGw/jonOR/bZ94kZg0CAc1XVG6pU0PEyss45aUGOjj8kXKDjlWZsu5IrZ2zpFp6xQ2e/4OZ
+	6qgIv3mLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igqzC-0008I3-Ab; Mon, 16 Dec 2019 14:04:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igqz3-0008HQ-Ln
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 14:04:27 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C951C206A5;
- Mon, 16 Dec 2019 14:04:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576505065;
- bh=eqhwT21aMAQai25oTPNjuF/wi6Lr8PnjARGwV07MqLM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=A8aG72OOaT8znWL8+GmFhVW5bWEDI5ITGF2n2FOZQrOGAZPAK8TwebfG6yZ/idgLI
- 72X8kyE2neY4gEQpT7V7jx7S3d/A8I93FNZ7g4n7lf6lWWMvpr01tj0/lLzWy59qJT
- uaTK+pIxRpmLZ3iLVuMB5bPe6qQRh9KJfGq2Dmw0=
-Date: Mon, 16 Dec 2019 15:04:22 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH v5 2/8] dt-bindings: mailbox: Add a sun6i message box
- binding
-Message-ID: <20191216140422.on4bredklgdxywbw@gilmour.lan>
-References: <20191215042455.51001-1-samuel@sholland.org>
- <20191215042455.51001-3-samuel@sholland.org>
+	id 1igrEh-0006Mf-ET; Mon, 16 Dec 2019 14:20:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1igrEY-0006Ly-4j
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 14:20:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0B6941FB;
+ Mon, 16 Dec 2019 06:20:22 -0800 (PST)
+Received: from [10.1.195.17] (e123572-lin.cambridge.arm.com [10.1.195.17])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 47C1F3F718;
+ Mon, 16 Dec 2019 06:20:20 -0800 (PST)
+Subject: Re: [PATCH 20/22] arm64: mte: Allow user control of the excluded tags
+ via prctl()
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20191211184027.20130-1-catalin.marinas@arm.com>
+ <20191211184027.20130-21-catalin.marinas@arm.com>
+From: Kevin Brodsky <kevin.brodsky@arm.com>
+Message-ID: <ef61bbc6-76d6-531d-2156-b57efc070da4@arm.com>
+Date: Mon, 16 Dec 2019 14:20:18 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-In-Reply-To: <20191215042455.51001-3-samuel@sholland.org>
+In-Reply-To: <20191211184027.20130-21-catalin.marinas@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_060425_758150_57AEDD39 
-X-CRM114-Status: GOOD (  21.26  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191216_062026_273531_29FDC58A 
+X-CRM114-Status: GOOD (  25.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,176 +66,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ondrej Jirman <megous@megous.com>,
- linux-sunxi@googlegroups.com, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Sudeep Holla <sudeep.holla@arm.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============9084364390211019317=="
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Branislav Rankov <Branislav.Rankov@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Peter Collingbourne <pcc@google.com>, linux-mm@kvack.org,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
++Branislav, Peter
 
---===============9084364390211019317==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="6kpcajowhdygmdk2"
-Content-Disposition: inline
+In this patch, the default exclusion mask remains 0 (i.e. all tags can be generated). 
+After some more discussions, Branislav and I think that it would be better to start 
+with the reverse, i.e. all tags but 0 excluded (mask = 0xfe or 0xff).
 
+This should simplify the MTE setup in the early C runtime quite a bit. Indeed, if all 
+tags can be generated, doing any heap or stack tagging before the 
+PR_SET_TAGGED_ADDR_CTRL prctl() is issued can cause problems, notably because tagged 
+addresses could end up being passed to syscalls. Conversely, if IRG and ADDG never 
+set the top byte by default, then tagging operations should be no-ops until the 
+prctl() is issued. This would be particularly useful given that it may not be 
+straightforward for the C runtime to issue the prctl() before doing anything else.
 
---6kpcajowhdygmdk2
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Additionally, since the default tag checking mode is PR_MTE_TCF_NONE, it would make 
+perfect sense not to generate tags by default.
 
-Hi,
+Any thoughts?
 
-On Sat, Dec 14, 2019 at 10:24:49PM -0600, Samuel Holland wrote:
-> This mailbox hardware is present in Allwinner sun6i, sun8i, sun9i, and
-> sun50i SoCs. Add a device tree binding for it. As it has only been
-> tested on the A83T, A64, H3/H5, and H6 SoCs, only those compatibles are
-> included.
+Thanks,
+Kevin
+
+On 11/12/2019 18:40, Catalin Marinas wrote:
+> The IRG, ADDG and SUBG instructions insert a random tag in the resulting
+> address. Certain tags can be excluded via the GCR_EL1.Exclude bitmap
+> when, for example, the user wants a certain colour for freed buffers.
+> Since the GCR_EL1 register is not accessible at EL0, extend the
+> prctl(PR_SET_TAGGED_ADDR_CTRL) interface to include a 16-bit field in
+> the first argument for controlling the excluded tags. This setting is
+> pre-thread.
 >
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 > ---
->  .../mailbox/allwinner,sun6i-a31-msgbox.yaml   | 78 +++++++++++++++++++
->  1 file changed, 78 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
+>   arch/arm64/include/asm/processor.h |  1 +
+>   arch/arm64/include/asm/sysreg.h    |  7 +++++++
+>   arch/arm64/kernel/process.c        | 27 +++++++++++++++++++++++----
+>   include/uapi/linux/prctl.h         |  3 +++
+>   4 files changed, 34 insertions(+), 4 deletions(-)
 >
-> diff --git a/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml b/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
-> new file mode 100644
-> index 000000000000..dd746e07acfd
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
-> @@ -0,0 +1,78 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mailbox/allwinner,sun6i-a31-msgbox.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index 91aa270afc7d..5b6988035334 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -150,6 +150,7 @@ struct thread_struct {
+>   #endif
+>   #ifdef CONFIG_ARM64_MTE
+>   	u64			sctlr_tcf0;
+> +	u64			gcr_excl;
+>   #endif
+>   };
+>   
+> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+> index 9e5753272f4b..b6bb6d31f1cd 100644
+> --- a/arch/arm64/include/asm/sysreg.h
+> +++ b/arch/arm64/include/asm/sysreg.h
+> @@ -901,6 +901,13 @@
+>   		write_sysreg(__scs_new, sysreg);			\
+>   } while (0)
+>   
+> +#define sysreg_clear_set_s(sysreg, clear, set) do {			\
+> +	u64 __scs_val = read_sysreg_s(sysreg);				\
+> +	u64 __scs_new = (__scs_val & ~(u64)(clear)) | (set);		\
+> +	if (__scs_new != __scs_val)					\
+> +		write_sysreg_s(__scs_new, sysreg);			\
+> +} while (0)
 > +
-> +title: Allwinner sunxi Message Box
+>   #endif
+>   
+>   #endif	/* __ASM_SYSREG_H */
+> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> index 47ce98f47253..5ec6889795fc 100644
+> --- a/arch/arm64/kernel/process.c
+> +++ b/arch/arm64/kernel/process.c
+> @@ -502,6 +502,15 @@ static void update_sctlr_el1_tcf0(u64 tcf0)
+>   	sysreg_clear_set(sctlr_el1, SCTLR_EL1_TCF0_MASK, tcf0);
+>   }
+>   
+> +static void update_gcr_el1_excl(u64 excl)
+> +{
+> +	/*
+> +	 * No need for ISB since this only affects EL0 currently, implicit
+> +	 * with ERET.
+> +	 */
+> +	sysreg_clear_set_s(SYS_GCR_EL1, SYS_GCR_EL1_EXCL_MASK, excl);
+> +}
 > +
-> +maintainers:
-> +  - Samuel Holland <samuel@sholland.org>
+>   /* Handle MTE thread switch */
+>   static void mte_thread_switch(struct task_struct *next)
+>   {
+> @@ -511,6 +520,7 @@ static void mte_thread_switch(struct task_struct *next)
+>   	/* avoid expensive SCTLR_EL1 accesses if no change */
+>   	if (current->thread.sctlr_tcf0 != next->thread.sctlr_tcf0)
+>   		update_sctlr_el1_tcf0(next->thread.sctlr_tcf0);
+> +	update_gcr_el1_excl(next->thread.gcr_excl);
+>   }
+>   #else
+>   static void mte_thread_switch(struct task_struct *next)
+> @@ -641,22 +651,31 @@ static long set_mte_ctrl(unsigned long arg)
+>   	update_sctlr_el1_tcf0(tcf0);
+>   	preempt_enable();
+>   
+> +	current->thread.gcr_excl = (arg & PR_MTE_EXCL_MASK) >> PR_MTE_EXCL_SHIFT;
+> +	update_gcr_el1_excl(current->thread.gcr_excl);
 > +
-> +description: |
-> +  The hardware message box on sun6i, sun8i, sun9i, and sun50i SoCs is a
-> +  two-user mailbox controller containing 8 unidirectional FIFOs. An interrupt
-> +  is raised for received messages, but software must poll to know when a
-> +  transmitted message has been acknowledged by the remote user. Each FIFO can
-> +  hold four 32-bit messages; when a FIFO is full, clients must wait before
-> +  attempting more transmissions.
+>   	return 0;
+>   }
+>   
+>   static long get_mte_ctrl(void)
+>   {
+> +	unsigned long ret;
 > +
-> +  Refer to ./mailbox.txt for generic information about mailbox device-tree
-> +  bindings.
+>   	if (!system_supports_mte())
+>   		return 0;
+>   
+> +	ret = current->thread.gcr_excl << PR_MTE_EXCL_SHIFT;
 > +
-> +properties:
-> +  compatible:
-> +     items:
-> +      - enum:
-> +          - allwinner,sun8i-a83t-msgbox
-> +          - allwinner,sun8i-h3-msgbox
-> +          - allwinner,sun50i-a64-msgbox
-> +          - allwinner,sun50i-h6-msgbox
-> +      - const: allwinner,sun6i-a31-msgbox
+>   	switch (current->thread.sctlr_tcf0) {
+>   	case SCTLR_EL1_TCF0_SYNC:
+> -		return PR_MTE_TCF_SYNC;
+> +		ret |= PR_MTE_TCF_SYNC;
+> +		break;
+>   	case SCTLR_EL1_TCF0_ASYNC:
+> -		return PR_MTE_TCF_ASYNC;
+> +		ret |= PR_MTE_TCF_ASYNC;
+> +		break;
+>   	}
+>   
+> -	return 0;
+> +	return ret;
+>   }
+>   #else
+>   static long set_mte_ctrl(unsigned long arg)
+> @@ -684,7 +703,7 @@ long set_tagged_addr_ctrl(unsigned long arg)
+>   		return -EINVAL;
+>   
+>   	if (system_supports_mte())
+> -		valid_mask |= PR_MTE_TCF_MASK;
+> +		valid_mask |= PR_MTE_TCF_MASK | PR_MTE_EXCL_MASK;
+>   
+>   	if (arg & ~valid_mask)
+>   		return -EINVAL;
+> diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
+> index 5e9323e66a38..749de5ab4f9f 100644
+> --- a/include/uapi/linux/prctl.h
+> +++ b/include/uapi/linux/prctl.h
+> @@ -239,5 +239,8 @@ struct prctl_mm_map {
+>   # define PR_MTE_TCF_SYNC		(1UL << PR_MTE_TCF_SHIFT)
+>   # define PR_MTE_TCF_ASYNC		(2UL << PR_MTE_TCF_SHIFT)
+>   # define PR_MTE_TCF_MASK		(3UL << PR_MTE_TCF_SHIFT)
+> +/* MTE tag exclusion mask */
+> +# define PR_MTE_EXCL_SHIFT		3
+> +# define PR_MTE_EXCL_MASK		(0xffffUL << PR_MTE_EXCL_SHIFT)
+>   
+>   #endif /* _LINUX_PRCTL_H */
 
-This will fail for the A31, since it won't have two compatibles but
-just one.
-
-You can have something like this if you want to do it with an enum:
-
-compatible:
-  oneOf:
-    - const: allwinner,sun6i-a31-msgbox
-    - items:
-      - enum:
-        - allwinner,sun8i-a83t-msgbox
-        - allwinner,sun8i-h3-msgbox
-        - allwinner,sun50i-a64-msgbox
-        - allwinner,sun50i-h6-msgbox
-      - const: allwinner,sun6i-a31-msgbox
-
-> +  reg:
-> +    items:
-> +      - description: MMIO register range
-
-There's no need for an obvious description like this.
-Just set it to maxItems: 1
-
-> +
-> +  clocks:
-> +    maxItems: 1
-> +    description: bus clock
-> +
-> +  resets:
-> +    maxItems: 1
-> +    description: bus reset
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +    description: controller interrupt
-
-Ditto, you can drop the description here.
-
-> +  '#mbox-cells':
-> +    const: 1
-
-However, you should document what the argument is about?
-
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - resets
-> +  - interrupts
-> +  - '#mbox-cells'
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/sun8i-h3-ccu.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/reset/sun8i-h3-ccu.h>
-> +
-> +    msgbox: mailbox@1c17000 {
-> +            compatible = "allwinner,sun8i-h3-msgbox",
-> +                         "allwinner,sun6i-a31-msgbox";
-> +            reg = <0x01c17000 0x1000>;
-> +            clocks = <&ccu CLK_BUS_MSGBOX>;
-> +            resets = <&ccu RST_BUS_MSGBOX>;
-> +            interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-> +            #mbox-cells = <1>;
-> +    };
-
-Look good otherwise, thanks!
-Maxime
-
---6kpcajowhdygmdk2
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfeO5gAKCRDj7w1vZxhR
-xZz1AP4ummpThYn1v2bFsXFQFsYqcm6TRKjZ8eZz+DriVOSSjAEAgxnXw2btNZrv
-PVGRNuENk6kHsBf7eVmnaJa2MVik5Qs=
-=/Mdk
------END PGP SIGNATURE-----
-
---6kpcajowhdygmdk2--
-
-
---===============9084364390211019317==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============9084364390211019317==--
-
