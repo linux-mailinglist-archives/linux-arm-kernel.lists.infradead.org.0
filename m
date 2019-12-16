@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2700A1207CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 15:00:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4439120800
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 15:04:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nhDopihH32hbJpOQpFdsAoXyo6ZriTlTlpHnk3r1+Tg=; b=CpnpnwmZ4C0xn1fxsQk9j+ZdG
-	jY2X/sNmICCbHb4P0wIj10frzeRdT6JUerHBj+M/4tYwrfXYPlro5GKk+5Furp7UppBfx1jlGFaUG
-	B3Iy0EGS4h3eQXHsLp86lpGNcYqDvVutbOistbCMn8w6Yo1RnQRDAT2tKqlCJYDeVx3Vf6IlLdFZ9
-	jwViuy/kMtOQAt7UZp2QByTXRFPct3XVINmXJOUIqEyXVaKS+vMCw55FCX7/ISGEVvt8du7B1OKeL
-	PPStGMKwJ8Q9YJQUkfWmP3PYBzPXnXt/2y9X78zsI87BjIxYGhExiPozi4PTyd3GnBFdQG6QBOyg7
-	vaLEKpH9A==;
+	 bh=fg/AdaBlvqtEsEw+K1nIWK35/ymttPbMuvu7gdSsALM=; b=VjG1LMPdy2LLE1qURoe3fHYeZ
+	ylzqoBDL10zM9r/YW3GigOg9EXs5yBXzjLWANuBbIvPx9GQ+/XSLMRK9dGSHhX8wc5BTmMaEV1cl2
+	mf1mcrZkPKf4ZfdZsZQrqY/oExBOsNr/35HYYJxHdJvOuiZ5JUGqcq9YwIKgIbN0E1mOXTExKQj7a
+	GsH08fQFQr431kDDZNOfEA+NB+LcuzIS1KhqjnXuSyIN6FNpYU/x3n3CSwBu3n/fIkMcDALVT3Gvs
+	RSBY8d1ojAJ1ugIJbiEq//HrDGvJP8AOt7U+d7+shhXuTe0CkOfADDbYmY09LZsMFX6GEwdLKZNjd
+	I+HEJ2apg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igqvP-0007di-GU; Mon, 16 Dec 2019 14:00:39 +0000
+	id 1igqzC-0008I3-Ab; Mon, 16 Dec 2019 14:04:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igqvE-0007d5-GT
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 14:00:29 +0000
+ id 1igqz3-0008HQ-Ln
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 14:04:27 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B6FF220684;
- Mon, 16 Dec 2019 14:00:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C951C206A5;
+ Mon, 16 Dec 2019 14:04:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576504828;
- bh=jdFxBKgT93c3jWBHm8m4ZNJqE+g91z3/HhdnxSdPqNs=;
+ s=default; t=1576505065;
+ bh=eqhwT21aMAQai25oTPNjuF/wi6Lr8PnjARGwV07MqLM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2MtKvPzn98o3Zde83TLKGVd+xDbArRelFftBwc4hJgoFOq4ZUxwNBRDKkPUuUB/9G
- c2GG1mAcpt/gchMK2fkzpckK2B1hcMkqg/W2NL/BoDoZTjZPpkfBaWosvLXSyWaS4O
- nJcWWO3X8ePpccLyO9K5a+audJq7aT6i7koZLXsA=
-Date: Mon, 16 Dec 2019 15:00:25 +0100
+ b=A8aG72OOaT8znWL8+GmFhVW5bWEDI5ITGF2n2FOZQrOGAZPAK8TwebfG6yZ/idgLI
+ 72X8kyE2neY4gEQpT7V7jx7S3d/A8I93FNZ7g4n7lf6lWWMvpr01tj0/lLzWy59qJT
+ uaTK+pIxRpmLZ3iLVuMB5bPe6qQRh9KJfGq2Dmw0=
+Date: Mon, 16 Dec 2019 15:04:22 +0100
 From: Maxime Ripard <mripard@kernel.org>
 To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH v5 1/8] clk: sunxi-ng: Mark msgbox clocks as critical
-Message-ID: <20191216140025.6sfmqneiyxjqe6v7@gilmour.lan>
+Subject: Re: [PATCH v5 2/8] dt-bindings: mailbox: Add a sun6i message box
+ binding
+Message-ID: <20191216140422.on4bredklgdxywbw@gilmour.lan>
 References: <20191215042455.51001-1-samuel@sholland.org>
- <20191215042455.51001-2-samuel@sholland.org>
+ <20191215042455.51001-3-samuel@sholland.org>
 MIME-Version: 1.0
-In-Reply-To: <20191215042455.51001-2-samuel@sholland.org>
+In-Reply-To: <20191215042455.51001-3-samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_060028_570129_E753A87D 
-X-CRM114-Status: GOOD (  18.07  )
+X-CRM114-CacheID: sfid-20191216_060425_758150_57AEDD39 
+X-CRM114-Status: GOOD (  21.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,64 +84,160 @@ Cc: Mark Rutland <mark.rutland@arm.com>, Ondrej Jirman <megous@megous.com>,
  Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
  Philipp Zabel <p.zabel@pengutronix.de>, Sudeep Holla <sudeep.holla@arm.com>,
  linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4720548871480642910=="
+Content-Type: multipart/mixed; boundary="===============9084364390211019317=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4720548871480642910==
+--===============9084364390211019317==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="orhnilvx6yyc5lzw"
+	protocol="application/pgp-signature"; boundary="6kpcajowhdygmdk2"
 Content-Disposition: inline
 
 
---orhnilvx6yyc5lzw
+--6kpcajowhdygmdk2
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Sat, Dec 14, 2019 at 10:24:48PM -0600, Samuel Holland wrote:
-> The msgbox clock is critical because the hardware it controls is shared
-> between Linux and system firmware. The message box may be used by the
-> EL3 secure monitor's PSCI implementation. On 64-bit sunxi SoCs, this is
-> provided by ARM TF-A; 32-bit SoCs use a different implementation. The
-> secure monitor uses the message box to forward requests to power
-> management firmware running on a separate CPU.
->
-> It is not enough for the secure monitor to enable the clock each time
-> Linux performs a SMC into EL3, as both the firmware and Linux can run
-> concurrently on separate CPUs. So it is never safe for Linux to turn
-> this clock off, and it should be marked as critical.
->
-> At this time, such power management firmware only exists for the A64 and
-> H5 SoCs.  However, it makes sense to take care of all CCU drivers now
-> for consistency, and to ease the transition in the future once firmware
-> is ported to the other SoCs.
+Hi,
+
+On Sat, Dec 14, 2019 at 10:24:49PM -0600, Samuel Holland wrote:
+> This mailbox hardware is present in Allwinner sun6i, sun8i, sun9i, and
+> sun50i SoCs. Add a device tree binding for it. As it has only been
+> tested on the A83T, A64, H3/H5, and H6 SoCs, only those compatibles are
+> included.
 >
 > Signed-off-by: Samuel Holland <samuel@sholland.org>
+> ---
+>  .../mailbox/allwinner,sun6i-a31-msgbox.yaml   | 78 +++++++++++++++++++
+>  1 file changed, 78 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml b/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
+> new file mode 100644
+> index 000000000000..dd746e07acfd
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
+> @@ -0,0 +1,78 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mailbox/allwinner,sun6i-a31-msgbox.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Allwinner sunxi Message Box
+> +
+> +maintainers:
+> +  - Samuel Holland <samuel@sholland.org>
+> +
+> +description: |
+> +  The hardware message box on sun6i, sun8i, sun9i, and sun50i SoCs is a
+> +  two-user mailbox controller containing 8 unidirectional FIFOs. An interrupt
+> +  is raised for received messages, but software must poll to know when a
+> +  transmitted message has been acknowledged by the remote user. Each FIFO can
+> +  hold four 32-bit messages; when a FIFO is full, clients must wait before
+> +  attempting more transmissions.
+> +
+> +  Refer to ./mailbox.txt for generic information about mailbox device-tree
+> +  bindings.
+> +
+> +properties:
+> +  compatible:
+> +     items:
+> +      - enum:
+> +          - allwinner,sun8i-a83t-msgbox
+> +          - allwinner,sun8i-h3-msgbox
+> +          - allwinner,sun50i-a64-msgbox
+> +          - allwinner,sun50i-h6-msgbox
+> +      - const: allwinner,sun6i-a31-msgbox
 
-This is pretty much the same case than for the AR100 clock though,
-right?
+This will fail for the A31, since it won't have two compatibles but
+just one.
 
-I'm still not sure about why we should enable it that clock all the
-time, even if you're not using the ARISC.
+You can have something like this if you want to do it with an enum:
 
+compatible:
+  oneOf:
+    - const: allwinner,sun6i-a31-msgbox
+    - items:
+      - enum:
+        - allwinner,sun8i-a83t-msgbox
+        - allwinner,sun8i-h3-msgbox
+        - allwinner,sun50i-a64-msgbox
+        - allwinner,sun50i-h6-msgbox
+      - const: allwinner,sun6i-a31-msgbox
+
+> +  reg:
+> +    items:
+> +      - description: MMIO register range
+
+There's no need for an obvious description like this.
+Just set it to maxItems: 1
+
+> +
+> +  clocks:
+> +    maxItems: 1
+> +    description: bus clock
+> +
+> +  resets:
+> +    maxItems: 1
+> +    description: bus reset
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +    description: controller interrupt
+
+Ditto, you can drop the description here.
+
+> +  '#mbox-cells':
+> +    const: 1
+
+However, you should document what the argument is about?
+
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - resets
+> +  - interrupts
+> +  - '#mbox-cells'
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/sun8i-h3-ccu.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/reset/sun8i-h3-ccu.h>
+> +
+> +    msgbox: mailbox@1c17000 {
+> +            compatible = "allwinner,sun8i-h3-msgbox",
+> +                         "allwinner,sun6i-a31-msgbox";
+> +            reg = <0x01c17000 0x1000>;
+> +            clocks = <&ccu CLK_BUS_MSGBOX>;
+> +            resets = <&ccu RST_BUS_MSGBOX>;
+> +            interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
+> +            #mbox-cells = <1>;
+> +    };
+
+Look good otherwise, thanks!
 Maxime
 
---orhnilvx6yyc5lzw
+--6kpcajowhdygmdk2
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfeN+QAKCRDj7w1vZxhR
-xZBuAP9Ia+0yr/oIdBQG1t+E3BzWwHMnlV5Sjd2kxueCGpo/HQD/bOzlGVC7h/lX
-e+NB4e8WsigEdVU31jCtR+QPP4lVzQo=
-=bWXY
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfeO5gAKCRDj7w1vZxhR
+xZz1AP4ummpThYn1v2bFsXFQFsYqcm6TRKjZ8eZz+DriVOSSjAEAgxnXw2btNZrv
+PVGRNuENk6kHsBf7eVmnaJa2MVik5Qs=
+=/Mdk
 -----END PGP SIGNATURE-----
 
---orhnilvx6yyc5lzw--
+--6kpcajowhdygmdk2--
 
 
---===============4720548871480642910==
+--===============9084364390211019317==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -151,5 +248,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4720548871480642910==--
+--===============9084364390211019317==--
 
