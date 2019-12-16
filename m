@@ -2,95 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99FC211FC15
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 01:20:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 314BB11FC10
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 01:19:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qClPUi478koHKTMSWSrKuTmdKMhLZnJPGwcej3BNhc8=; b=bn9Rk6g4RAyfgP
-	+5n5sVQn1Cs/MeBenE2VdW4Nq8s/hbROpvDL1vYS74MXwFt62wVAHnRz4yuMi66B7IfQRA/PQlTON
-	J4NbpaBD7uUAcT5WLo1/t7AtpWpmbN4s5T3qMqp2TXuOsON+sjEVDwuTLV2F1zbil8ttKwGQ2LDpF
-	zvQRH6SKt2jTmPqxKLhOqrtjIr2F5jz1Ixh2S0D+THdQt0CMkDIGoz3f01sAqWsahtbW4nU4Uz4zD
-	1LwA7uvgR8pZkkVi/lKr1E9DCS7tlm05+bQn/KQXu3CEU+oK8ut6xjb5qVVbrnOfKpDq6E1jeA7OB
-	kKAuhDcuG8X9ykSnT6Rg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nrMhciCdQKYUOH4Ku5PqR131D/ziRYrp2NiWqA9f8dk=; b=BihbKs+/Sy5xu6
+	VqtesvlTeuhzXicMoXKH1nMfy2MXZqFIwlp/6IN+dKKviKPwqYWImQhjqpPzFzu5gHAogb8MGdrFa
+	wE1giCClUOLEIvDvzhZ54bRvx8dPL22mxr73GLlVjO2TVgnU3MX18+vpAhxUuiYkKMAahG85Ygp97
+	b+sa24eJdgakKhWmytI3bsxgTOkFJIINcJB9OBZxsID2L5+wOpC9siZP0w3NmN+22NRyqOBSy5GvS
+	BXiCnTdcmVMloOabv2MYJ9M6ahR31pmDgNJ/WJc7z96fH+3RpO6Kw6mlF9zxLgl7h9NevXfV8mTj1
+	JM4CqJFVKO+lL/i/eZ8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ige7E-0003yi-3H; Mon, 16 Dec 2019 00:20:00 +0000
+	id 1ige70-0003rH-6c; Mon, 16 Dec 2019 00:19:46 +0000
 Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ige6q-0003qK-1x
+ id 1ige6q-0003qL-6P
  for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 00:19:37 +0000
-Received: by mail-qk1-x744.google.com with SMTP id k6so1545730qki.5
+Received: by mail-qk1-x744.google.com with SMTP id a203so2879686qkc.3
  for <linux-arm-kernel@lists.infradead.org>;
  Sun, 15 Dec 2019 16:19:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=aZ6sGO0KS0Q8EYVwWz/tNENQC8GnXFZ6xRDHj7knL74=;
- b=Gmb45a2redl2v2Psqc9UmK5BWjcPglzmbzjDpsikHLbmggLKdOVorJeLzaOihAp93n
- dZuMPP9Yq0XhR4kkhOpXSkhSDgDY7Q1xUpGZhMf6Ogg+p7xlsNEqI8pOq07smNJIb729
- KRa4FwyruYu+W4RNN1PJgXm4h6Ulv+MJjNPQcDIV0FZh4+eA8lE6SlNe6p65GE7u3Z6k
- Wa+wg8XDsBh++bc/vo63jVSfEKICDmwU/S4INp786dJO2HHJnWsMRwktN9Y0UajVgbpm
- NrNsEFU0hxV8nLsegKRlsf3oghWVDY2nCi+m+2Fp1dRlscQL+URlyVJ1jR+XgzFXJbZM
- L3dw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=UVpf63Qd4TX5I9v6qZSm1vjU4JS6/z/tTXxQbaf4TBY=;
+ b=D3mlEWftH/mVQoC67x99bNXce+yDo9uBMNOqzw1fGt6PhXd+LwHuVyfikJEw19svXT
+ ahktUA0bg5LNwRtDfUXFXJtgYcVcz+WvgYNgKN52gtMp51f/HAJu//uMElnRofK2Dy+9
+ Ewadu7SGqcg12XJ5zZTRprJ3NaY1znutfpXRlG4jrG/SFwQGxLAzeNLLgox4fEnUWkQw
+ +J5igAXDv+iyg+LeIsh1Zj443GBnRzKKPnfRFWGm4ewPAuxQE/ACSVBktckgGgyZgqCR
+ 6LqvzSPpBJdipjqwU1V6qSP+X4WGwMPO3iyNej07cCFd7D54L3xTElk/AZTKjMtaVZW1
+ RD7w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=aZ6sGO0KS0Q8EYVwWz/tNENQC8GnXFZ6xRDHj7knL74=;
- b=cFXBJT7Gm1NPOq2TRNYBBdUpWARv5TyceqCG80oVtY5iV9OKKDHwe8gyamGDR+GLLT
- CkDkUk2XJ3WSQaFD1YsiwvMTnffSAAuojLuReC7xMz3wUlj3HswUnsDJhA/ncOu2+UQI
- 6nnAqpdtE27/8Qv8ocmW8ZQ2my7U3ewY4Iqx1zqGARnim3ZY4INb8YdP8iyCt0gEzXWl
- 8aiLDCk0GHhRKXuST/+HG8cewO81md5+6WCxqYW6Ud8pBvyCn0f5dS/vGWO0QT7/ID63
- hzfwSfQszgBbjFO06EPBJN1c414YBXQeJXBVR7M7WokwPQjuruZD2G/zn+NCniBo50aJ
- pbEQ==
-X-Gm-Message-State: APjAAAXk9FBGwjIDcsmj7UHNFMKqkytZ0wLw7AXo2e4svCCi67VSb4zc
- A4a93BSUyp9wOIIbSLcYFbY=
-X-Google-Smtp-Source: APXvYqzAQwy89lyacoeuw+asSDBQYlTp0vqfLPII18paqb1S/uBBbW6TqUEv6w6/z3AIjjLrHyaopg==
-X-Received: by 2002:a37:48f:: with SMTP id 137mr24677846qke.25.1576455572728; 
- Sun, 15 Dec 2019 16:19:32 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=UVpf63Qd4TX5I9v6qZSm1vjU4JS6/z/tTXxQbaf4TBY=;
+ b=BFVLWQRaC7kW9BNnZxUyDoN8lrY+D+rue34jFhqWEyjd43mVq99pItsVAna+PAMCZ7
+ T555novMzD5bU3jK4N0AQpjbNfq0FO46ebm72WF3KJ9peEzIymj0YfB4nXF2OcLJKt+u
+ uSu0IIg0W8nrGNX5mg2GzA4ZXuesZDs9ZlcTTkBph13QhJwFRchq294JWkeSut2YczGr
+ yK0Sy7pYkonyvNVQ74LemTkCvfNE78FKEEdjWX+TYCDiXVgfjXlMjeplrdKElQ36emtl
+ xEUtcLUo9OowOTJ/qW3OkUQoY4NfaKBWuEZkq2i99M4KdkMkywl4H61/K3FgTJjkOJNg
+ lceQ==
+X-Gm-Message-State: APjAAAXepDzWNz5XGun+oNgGCyw7qTuteQ5+i8Wu7eaRbD7vxXtTuuqz
+ +tXVGpDZoVWoKQRd5uknpX9rqjs2
+X-Google-Smtp-Source: APXvYqx3q9o5IJDrNl2qRBw2P9CxytUA2HNSYLBG2f5II++aBKtmeVfY050HNOiMvaqJ5iFUhF31NA==
+X-Received: by 2002:a37:4047:: with SMTP id n68mr24901320qka.258.1576455573256; 
+ Sun, 15 Dec 2019 16:19:33 -0800 (PST)
 Received: from auth1-smtp.messagingengine.com (auth1-smtp.messagingengine.com.
  [66.111.4.227])
- by smtp.gmail.com with ESMTPSA id e2sm5376739qkl.3.2019.12.15.16.19.31
+ by smtp.gmail.com with ESMTPSA id g16sm5431819qkk.61.2019.12.15.16.19.31
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 15 Dec 2019 16:19:31 -0800 (PST)
+ Sun, 15 Dec 2019 16:19:32 -0800 (PST)
 Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailauth.nyi.internal (Postfix) with ESMTP id 7111D22430;
- Sun, 15 Dec 2019 19:19:30 -0500 (EST)
+ by mailauth.nyi.internal (Postfix) with ESMTP id 851932243F;
+ Sun, 15 Dec 2019 19:19:31 -0500 (EST)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute6.internal (MEProxy); Sun, 15 Dec 2019 19:19:30 -0500
-X-ME-Sender: <xms:kc32XeNibvP_au8cm_jiN6rThl2eefciU1Jc-App3cBtSjKNtAWevA>
+ by compute6.internal (MEProxy); Sun, 15 Dec 2019 19:19:31 -0500
+X-ME-Sender: <xms:k832XadXgrGcvhHXrQgixQfusVx3I2zgBe1vYGxMM1OBi1ia7pJkfQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddtgedgvddtucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- goufhorhhtvggutfgvtghiphdvucdlgedtmdenucfjughrpefhvffufffkofgggfestdek
- redtredttdenucfhrhhomhepuehoqhhunhcuhfgvnhhguceosghoqhhunhdrfhgvnhhgse
- hgmhgrihhlrdgtohhmqeenucffohhmrghinhepkhgvrhhnvghlrdhorhhgpdhgihhthhhu
- sgdrtghomhenucfkphephedvrdduheehrdduuddurdejudenucfrrghrrghmpehmrghilh
- hfrhhomhepsghoqhhunhdomhgvshhmthhprghuthhhphgvrhhsohhnrghlihhthidqieel
- vdeghedtieegqddujeejkeehheehvddqsghoqhhunhdrfhgvnhhgpeepghhmrghilhdrtg
- homhesfhhigihmvgdrnhgrmhgvnecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:kc32Xdl8_zahWOQvooHUe9tKxDScPH3OeodcADOCpBCp0dUmiJjnvQ>
- <xmx:kc32XQbukJFCvrLL7M4nc72CTroIKyNCxbhWdtmCCe5vP3l91CwIyQ>
- <xmx:kc32XTTHwezsupdARHAEkG3utLJ_lpz0EFhC-pw3X_mCxe6pmXP0Eg>
- <xmx:ks32XdWhDOQlVK8lfpDMef_v7K-YnFb-v4AwmCwl5TJhn4VnUW0LfBRLVg8>
+ goufhorhhtvggutfgvtghiphdvucdlgedtmdenucfjughrpefhvffufffkofgjfhgggfes
+ tdekredtredttdenucfhrhhomhepuehoqhhunhcuhfgvnhhguceosghoqhhunhdrfhgvnh
+ hgsehgmhgrihhlrdgtohhmqeenucfkphephedvrdduheehrdduuddurdejudenucfrrghr
+ rghmpehmrghilhhfrhhomhepsghoqhhunhdomhgvshhmthhprghuthhhphgvrhhsohhnrg
+ hlihhthidqieelvdeghedtieegqddujeejkeehheehvddqsghoqhhunhdrfhgvnhhgpeep
+ ghhmrghilhdrtghomhesfhhigihmvgdrnhgrmhgvnecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:k832XUi8fzGm26Bbd8FBjgs6V_X1Z6B77yd2PtlZUsUELS9iVEIaaA>
+ <xmx:k832XW_7t8KIwsegj48VkjbCQyL995c-MkpH-jRx3rDzPL12KDDzDw>
+ <xmx:k832XSbyuh6uVe5LGlV4GvbhPrxOw1t7oRzFp7J8wp3DS_UzsmDG0g>
+ <xmx:k832XfcXy6BV60t5ZHB6ZgVtmayIz_Uvuf_yjzhevdi1WusdebQV2BB0RDQ>
 Received: from localhost (unknown [52.155.111.71])
- by mail.messagingengine.com (Postfix) with ESMTPA id 992E780062;
- Sun, 15 Dec 2019 19:19:28 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id DF9058005C;
+ Sun, 15 Dec 2019 19:19:30 -0500 (EST)
 From: Boqun Feng <boqun.feng@gmail.com>
 To: linux-hyperv@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [RFC 0/6] vDSO support for Hyper-V guest on ARM64
-Date: Mon, 16 Dec 2019 08:19:16 +0800
-Message-Id: <20191216001922.23008-1-boqun.feng@gmail.com>
+Subject: [RFC 1/6] arm64: hyperv: Allow hv_get_raw_timer() definition to be
+ overridden
+Date: Mon, 16 Dec 2019 08:19:17 +0800
+Message-Id: <20191216001922.23008-2-boqun.feng@gmail.com>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191216001922.23008-1-boqun.feng@gmail.com>
+References: <20191216001922.23008-1-boqun.feng@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_161936_123173_6C6AE57A 
-X-CRM114-Status: GOOD (  10.11  )
+X-CRM114-CacheID: sfid-20191215_161936_235506_EF83200A 
+X-CRM114-Status: GOOD (  12.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -135,54 +137,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+In order to support vDSO, hv_read_tsc_page() should be able to be called
+from userspace if tsc page mapped. As a result, hv_get_raw_timer(),
+called by hv_read_tsc_page() requires to be called by both kernel and
+vDSO. Currently, it's defined as arch_timer_read_counter(), which is a
+function pointer initialized (using a kernel address) by the arch timer
+driver, therefore not usable in vDSO.
 
-This is the RFC patchset for vDSO support in ARM64 Hyper-V guest. To
-test it, Michael's ARM64 support patchset:
+Fix this by allowing a previous definition to override the default one,
+so that in vDSO code, we can define it as a function callable in
+userspace.
 
-	https://lore.kernel.org/linux-arm-kernel/1570129355-16005-1-git-send-email-mikelley@microsoft.com/
+Signed-off-by: Boqun Feng (Microsoft) <boqun.feng@gmail.com>
+---
+ arch/arm64/include/asm/mshyperv.h | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
-is needed.
+diff --git a/arch/arm64/include/asm/mshyperv.h b/arch/arm64/include/asm/mshyperv.h
+index a8468a611912..9cc4aeddf2d0 100644
+--- a/arch/arm64/include/asm/mshyperv.h
++++ b/arch/arm64/include/asm/mshyperv.h
+@@ -97,8 +97,15 @@ extern void hv_get_vpreg_128(u32 reg, struct hv_get_vp_register_output *result);
+ #define hv_disable_stimer0_percpu_irq(irq)	disable_percpu_irq(irq)
+ #endif
+ 
+-/* ARM64 specific code to read the hardware clock */
++/*
++ * ARM64 specific code to read the hardware clock.
++ *
++ * This could be used in both kernel space and userspace (vDSO), so make it
++ * possible for a previous definition to override the default one.
++ */
++#ifndef hv_get_raw_timer
+ #define hv_get_raw_timer() arch_timer_read_counter()
++#endif
+ 
+ #include <asm-generic/mshyperv.h>
+ 
+-- 
+2.24.0
 
-Similar as x86, Hyper-V on ARM64 use a TSC page for guests to read
-the virtualized hardware timer, this TSC page is read-only for the
-guests, so could be used for vDSO data page. And the vDSO (userspace)
-code could use the same code for timer reading as kernel, since
-they read the same TSC page.
-
-This patchset therefore extends ARM64's __vsdo_init() to allow multiple
-data pages and introduces the vclock_mode concept similar to x86 to
-allow different platforms (bare-metal, Hyper-V, etc.) to switch to
-different __arch_get_hw_counter() implementations. The rest of this
-patchset does the necessary setup for Hyper-V guests: mapping tsc page,
-enabling userspace to read cntvct, etc. to enable vDSO.
-
-This patchset consists of 6 patches:
-
-patch #1 allows hv_get_raw_timer() definition to be overridden for
-userspace and kernel to share the same hv_read_tsc_page() definition.
-
-patch #2 extends ARM64 to support multiple vDSO data pages.
-
-patch #3 introduces vclock_mode similiar to x86 to allow different
-__arch_get_hw_counter() implementations for different clocksources.
-
-patch #4 maps Hyper-V TSC page into vDSO data page.
-
-patch #5 allows userspace to read cntvct, so that userspace can
-efficiently read the clocksource.
-
-patch #6 enables the vDSO for ARM64 Hyper-V guest.
-
-The whole patchset is based on v5.5-rc1 plus Michael's ARM64 support
-patchset, and I've done a few tests with:
-
-	https://github.com/nlynch-mentor/vdsotest
-
-Comments and suggestions are welcome!
-
-Regards,
-Boqun
 
 _______________________________________________
 linux-arm-kernel mailing list
