@@ -2,75 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D3AC120156
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 10:44:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F815120161
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 10:45:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0rWkT0qyJJysZczoLWwvi+i4rE6m1BqUIWbz0PKZ1TI=; b=IkS4AQvXuiNDoR
-	9+DtnHsPfkxalcUI8oLnJcDJnXUzrNk/2RiqIJ9oXE9Mflc11pICNYUWIJZWv2hPnS6DGk+BhYaIC
-	ssqr4Io1sjHExWDkAvLKoekhwgUR4uhbvxiHfWP1n/0MsZ39uc/7JEoT3KfIXinHgE7rPcDN1NKzA
-	iVSAGi59fZ+sULrtzQnMFiDtLRiDfQI+JE26FcyQdoZJUBDz5fHCsJ+/EY3zDSoR7B7QkI4C6o/AX
-	ROmaGQUVvMpPseHqZ/eB8tWu6CItMfRwalsbOaG5lemEOSTQnUl0pUt2At6irEbpnUOnqXjW/Ht7A
-	Bq8D5f0hiOo8UiLg+6wA==;
+	List-Owner; bh=ofOC895ogpWHgyNw4iqdSDdNar9gX6IQDbcv/Tyw/MQ=; b=GM7exXpHmAKIJk
+	q3QSBaF9jpkggHbSuxLs+OVRwXu1c1tyFpiUO2EY+MHZwJD+7KhS6WCwYtCvjaS9eSwZF8DuhwJ2S
+	D74RGSmg/4PBC5g+oTdP3GEFB5ZlrMLSCJd//sFf8mgOKl23nfqLUz89bdc7XGUQY/ksC7yZ7BRun
+	0EmvcSixuEEkE69Z3cSCx+NbasulGfDTxNDiYCmbR/rMW/A84L6K32OCcaJfrdgZmzRVz7LWFFPwT
+	4lgzYFOjYunrzo6PO6R76XMCVKfXdDTT03tI9R2r/DgQOD6QwZXNpWWs4KXsS/t0AdQqbmOKuQrXc
+	NUe9loDnL9F22BoAYW0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igmvK-0008EP-Kp; Mon, 16 Dec 2019 09:44:18 +0000
-Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
+	id 1igmwc-0001Vi-An; Mon, 16 Dec 2019 09:45:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igmvB-0008Dr-LQ
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 09:44:11 +0000
-Received: by mail-ua1-x944.google.com with SMTP id v19so1854389uap.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 01:44:06 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6cBtmKWsLcFEesk9As3Zqq5Dsa1by5Ki2QFbfWPIPMw=;
- b=vN9q0WoAlGGzmzPAUIa3Bf4RlHBveDfHPrbcYTXgQlRRfnqfpRjJqT9LcZ18SjP/pe
- Ql/SG9e4hN07gc+/JTgJYOY6E7VS4Lgn2JbB5qDtLmhUv+fJMuIq9zF41qU/liDNqaPk
- JIgzBHMjV7zV/uaqS44Yfd25jRg0WXP1MUVHWP3bzoHnLgUR8H3lrVvfTWfhetHJm987
- 4sanJLDTIwBgAbBrTBxIKWdG8zJ4w4Wo+stuzOSAUk/ZaE+RD1eC4JPIQBRj8YC+aomR
- KpfEjEflO+Jxh2Sc9yAz2gagL24Ad34o+j+p55NSzs5LvwJCbDE+8H0Bh5r6FtayP452
- SrMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6cBtmKWsLcFEesk9As3Zqq5Dsa1by5Ki2QFbfWPIPMw=;
- b=MkEdKcqT9vnYr0+WSZgl9PLgfuq4X8FAk+Ji9RFHUqcZjd+b+YjW/TtAqvblMem0yv
- LkxivhUYElRy6jxteElTBNJexEf/5jDfb1stAMasWPl5afvZpo/+BJ/7tJH9mONgUc8D
- AOO4DVU9100vo87lyxq5TRSq5Kai6bYnnpA20PnuhiPaW/y3ZcyTjc7fhLv5YMgn/70t
- S/jIiBLdKOKU4y4TyBq2nKitKt4UhY8XaVQbcPEEAkAyDSo4PdihSl6XSBhwJn1XBJ70
- fsglT5D3YcNRKPClDQkfCAq2KLSRl6nNAjp6yk7ylx6rciE80FPalE3QDjeUr7sbZzzc
- 9QgQ==
-X-Gm-Message-State: APjAAAX4cKe8RsW9MUo2sAtWp08EWKKXJIZTodzftr7ob7DqPy1WxYKq
- 0fbwxHaD7ujM2R8b/1dCMGwdE5RDdHtXJ46Y7rTnzg==
-X-Google-Smtp-Source: APXvYqxZqWfu63h7+QfiSM+bLvm/MTrgs7ML2u5C04jZw3wt+JrhTqX4WzahGvEan9Ny/1cGTQCA41TLz3q5BlgZNQI=
-X-Received: by 2002:ab0:32ce:: with SMTP id f14mr5283635uao.54.1576489446278; 
- Mon, 16 Dec 2019 01:44:06 -0800 (PST)
+ id 1igmwU-0001VF-6T
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 09:45:31 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D319320665;
+ Mon, 16 Dec 2019 09:45:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576489529;
+ bh=ID6AxVJaN/XZPaFJDNB6plYUfGK4flJOFGIZw/PCpfI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=usiK59CUF4wvbn/67RYEOn0Dl40MAPAvz11JWIwlYU8+v1B/eA6RgcQdph0DQoTse
+ Uj9p2alU1Ex+bT22CAN1SPQ55yltS4CATkUF8CVhrxuLPw1v+4YAB2nPL5OmW/dDkm
+ qn0CPviLJpyHQ7NqWfK4Ff2LapqUV9TjUR1xFzkk=
+Date: Mon, 16 Dec 2019 09:45:24 +0000
+From: Will Deacon <will@kernel.org>
+To: Steven Rostedt <rostedt@goodmis.org>
+Subject: Re: [PATCH AUTOSEL 4.19 031/219] arm64: preempt: Fix big-endian when
+ checking preempt count in assembly
+Message-ID: <20191216094523.GA9938@willie-the-truck>
+References: <20191122054911.1750-1-sashal@kernel.org>
+ <20191122054911.1750-24-sashal@kernel.org>
+ <20191214021403.GA1357@home.goodmis.org>
 MIME-Version: 1.0
-References: <20191215210503.15488-1-hamish.martin@alliedtelesis.co.nz>
- <20191215210503.15488-2-hamish.martin@alliedtelesis.co.nz>
-In-Reply-To: <20191215210503.15488-2-hamish.martin@alliedtelesis.co.nz>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 16 Dec 2019 10:43:55 +0100
-Message-ID: <CACRpkdZVPaUBSkoymOL9iWfa21U4s_zPLoJdcEuWeYn_DAbkVQ@mail.gmail.com>
-Subject: Re: [PATCH v2 1/1] pinctrl: iproc: Set irq handler based on trig type
-To: Hamish Martin <hamish.martin@alliedtelesis.co.nz>
+Content-Disposition: inline
+In-Reply-To: <20191214021403.GA1357@home.goodmis.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_014409_728748_3209839E 
-X-CRM114-Status: GOOD (  10.16  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_014530_280056_A99F37BB 
+X-CRM114-Status: GOOD (  22.79  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -80,6 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,34 +79,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ray Jui <rjui@broadcom.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Scott Branden <sbranden@broadcom.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>
+Cc: Sasha Levin <sashal@kernel.org>, "kernelci.org bot" <bot@kernelci.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Kevin Hilman <khilman@baylibre.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Dec 15, 2019 at 10:05 PM Hamish Martin
-<hamish.martin@alliedtelesis.co.nz> wrote:
+On Fri, Dec 13, 2019 at 09:14:03PM -0500, Steven Rostedt wrote:
+> On Fri, Nov 22, 2019 at 12:46:03AM -0500, Sasha Levin wrote:
+> > From: Will Deacon <will.deacon@arm.com>
+> > 
+> > [ Upstream commit 7faa313f05cad184e8b17750f0cbe5216ac6debb ]
+> > 
+> > Commit 396244692232 ("arm64: preempt: Provide our own implementation of
+> > asm/preempt.h") extended the preempt count field in struct thread_info
+> > to 64 bits, so that it consists of a 32-bit count plus a 32-bit flag
+> > indicating whether or not the current task needs rescheduling.
+> > 
+> > Whilst the asm-offsets definition of TSK_TI_PREEMPT was updated to point
+> > to this new field, the assembly usage was left untouched meaning that a
+> > 32-bit load from TSK_TI_PREEMPT on a big-endian machine actually returns
+> > the reschedule flag instead of the count.
+> > 
+> > Whilst we could fix this by pointing TSK_TI_PREEMPT at the count field,
+> > we're actually better off reworking the two assembly users so that they
+> > operate on the whole 64-bit value in favour of inspecting the thread
+> > flags separately in order to determine whether a reschedule is needed.
+> > 
+> > Acked-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> > Reported-by: "kernelci.org bot" <bot@kernelci.org>
+> > Tested-by: Kevin Hilman <khilman@baylibre.com>
+> > Signed-off-by: Will Deacon <will.deacon@arm.com>
+> > Signed-off-by: Sasha Levin <sashal@kernel.org>
+> > ---
+> >  arch/arm64/include/asm/assembler.h | 8 +++-----
+> >  arch/arm64/kernel/entry.S          | 6 ++----
+> >  2 files changed, 5 insertions(+), 9 deletions(-)
+> > 
+> > diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+> > index 5a97ac8531682..0c100506a29aa 100644
+> > --- a/arch/arm64/include/asm/assembler.h
+> > +++ b/arch/arm64/include/asm/assembler.h
+> > @@ -683,11 +683,9 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
+> >  	.macro		if_will_cond_yield_neon
+> >  #ifdef CONFIG_PREEMPT
+> >  	get_thread_info	x0
+> > -	ldr		w1, [x0, #TSK_TI_PREEMPT]
+> > -	ldr		x0, [x0, #TSK_TI_FLAGS]
+> > -	cmp		w1, #PREEMPT_DISABLE_OFFSET
+> > -	csel		x0, x0, xzr, eq
+> > -	tbnz		x0, #TIF_NEED_RESCHED, .Lyield_\@	// needs rescheduling?
+> > +	ldr		x0, [x0, #TSK_TI_PREEMPT]
+> > +	sub		x0, x0, #PREEMPT_DISABLE_OFFSET
+> > +	cbz		x0, .Lyield_\@
+> >  	/* fall through to endif_yield_neon */
+> >  	.subsection	1
+> >  .Lyield_\@ :
+> > diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+> > index 5f800384cb9a8..bb68323530458 100644
+> > --- a/arch/arm64/kernel/entry.S
+> > +++ b/arch/arm64/kernel/entry.S
+> > @@ -622,10 +622,8 @@ el1_irq:
+> >  	irq_handler
+> >  
+> >  #ifdef CONFIG_PREEMPT
+> > -	ldr	w24, [tsk, #TSK_TI_PREEMPT]	// get preempt count
+> > -	cbnz	w24, 1f				// preempt count != 0
+> > -	ldr	x0, [tsk, #TSK_TI_FLAGS]	// get flags
+> > -	tbz	x0, #TIF_NEED_RESCHED, 1f	// needs rescheduling?
+> > +	ldr	x24, [tsk, #TSK_TI_PREEMPT]	// get preempt count
+> > +	cbnz	x24, 1f				// preempt count != 0
+> >  	bl	el1_preempt
+> 
+> While updating 4.19-rt, I stumbled on this change to arm64 backport. And was
+> confused by it, but looking deeper, this is something that breaks without
+> having 396244692232f ("arm64: preempt: Provide our own implementation of
+> asm/preempt.h").
+> 
+> That commit inverts the TIF_NEED_RESCHED meaning where set means we don't need
+> to resched, and clear means we need to resched. This way we can combine the
+> preempt count with the need resched flag test as they share the same 64bit
+> word. A 0 means we need to preempt (as NEED_RESCHED being zero means we need
+> to resched, and this also means preempt_count is zero). If the
+> TIF_NEED_RESCHED bit is set, that means we don't need to resched, and if
+> preempt count is something other than zero, we don't need to resched, and
+> since those two are together by commit 396244692232f, we can just test
+> #TSK_TI_PREEMPT. But because that commit does not exist in 4.19, we can't
+> remove the TIF_NEED_RESCHED check, that this backport does, and then breaks
+> the kernel!
 
-> Rather than always using handle_simple_irq() as the gpio_irq_chip
-> handler, set a more appropriate handler based on the IRQ trigger type
-> requested.
-> This is important for level triggered interrupts which need to be
-> masked during handling.
->
-> Signed-off-by: Hamish Martin <hamish.martin@alliedtelesis.co.nz>
-> ---
-> v2: Alterations based on Ray Jui's review comments
-> - shift setting of handler type inside spinlocked region
-> - install handle_bad_irq as default handler for uninitialised interrupts
+Yup, without 396244692232 this commit makes no sense. That's why I didn't CC
+stable or add a Fixes tag :(
 
-Patch applied. It just looks very good.
-
-Yours,
-Linus Walleij
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
