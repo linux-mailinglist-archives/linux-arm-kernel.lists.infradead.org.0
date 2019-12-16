@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A7E7120193
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 10:56:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FB3E120195
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 10:56:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/XRYLUsGy5l3KAvwZcNFXdVZiiQpUOBcUQwUutcKr3s=; b=tuPUm+AaMdOxws
-	LyPq7CmOp5PN+/Tt7PqkBDqDYxSGGM9jCwqZFKtgTuxEG9koaGHBaNnJkKmWRruzc1KaPJfn6Jxuu
-	qCgym2eWE4b5kfRA5R7d72vha5TMLZDlkEYuVQir0Rq28o9Qcx2Qz1/s6cgGjvYz88+BShFnQ4POt
-	xxh1yZYSNSPUh35jwEycPb6e1yu56cIs7NKb9QnrQVLIFQNt/XH4vgA0V98XpLrnRE6lxWOQ7jT2M
-	GkBsL6jTUk8SMmd//7wF1aX90H8A/wGNghANQhfB5BB/hDGC5jRhqhJ0p+BdDys8P8hFklwUyUd9a
-	nD3dTRbdOjjet7pm+//w==;
+	List-Owner; bh=S4LJuzvtem8AyhH7NN1TrFzlOBZlCR6dNBUwfI+wfog=; b=tONtZ2z5GuquYD
+	pb4uZxlXE/LjkdjK3uaRKNL6IYEYLxtgDnT0uCqYjwEdK9pRwN2eM7mgdueRGQTb5YTp+mR2ZtII5
+	BtlgEnp8aJujxw7jaOR/vLfnqWIwrIZ94rWbEXdRIVSkaHTntgDs4w3c3qqhj+Kk/+AmmRQaH6eY1
+	Ud9LmNuJUIEogPErg+kwF+Zrk6V4uzfNSBSu3UU0wTo0Em6hGSCaSBra6vLbA70Hwh2FYMz2V64hQ
+	RVzdetzrtA+093DVi9+eIcJmKiAHYppGz4iqHsT8V69+Wn0xS82d4V9zQFnlzWVfLQiWspHl/FNys
+	4oBSUgKxpPQqH9RmyFDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ign6u-0005MM-D4; Mon, 16 Dec 2019 09:56:16 +0000
+	id 1ign7S-0005gh-9l; Mon, 16 Dec 2019 09:56:50 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ign6i-0005Kl-Lv
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 09:56:06 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBG9u0Yx105981;
- Mon, 16 Dec 2019 03:56:00 -0600
+ id 1ign6k-0005LR-9f
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 09:56:07 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBG9u3LF106027;
+ Mon, 16 Dec 2019 03:56:03 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576490160;
- bh=6fpvrXJ83jkqpt127njJSVIBYoo3/59w/XSU+W0RtjE=;
+ s=ti-com-17Q1; t=1576490164;
+ bh=VhJSSgKonMP8J+UZxJu16JLCrKr2Kl8xqPLRdnV/E1E=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=NKlrK6FAlZIywRYsmE4sw/16bzggCzHeGDwwldI39Hdp7S90tAciZ/h6bu4/1rxNa
- RAz6bnpPEBZX+XHfhoYUI8V2Cc2UUIx2O0W+bMmZVEwv7e1CWuLDIrtbj4wEkeoEfR
- y2qcPmhmzNzlUyTM4+aq2e3p7s/niGMY1vT8bBis=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBG9u0fu048706
+ b=s7Uj9JcN+ZvQ/erGMxSB7Xb91kJBeW0uhi0jCKddmsvtHZ4RL2tK1x5hZNIHmjyYG
+ 5U/oI0e95BTaibvR0yJfN8cS03SS8WRvQK1B+kZfi4d4WQpSI92EozJO7BxuSLaeSW
+ KVCkMEa0AW4pXxBn/xl3MNoT0zbERn4JMXiv92zY=
+Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBG9u30U124709
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 16 Dec 2019 03:56:00 -0600
-Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 16 Dec 2019 03:56:03 -0600
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 16
- Dec 2019 03:55:59 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 03:56:02 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 16 Dec 2019 03:55:59 -0600
+ Frontend Transport; Mon, 16 Dec 2019 03:56:02 -0600
 Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBG9tsJK084408;
- Mon, 16 Dec 2019 03:55:57 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBG9tsJL084408;
+ Mon, 16 Dec 2019 03:56:00 -0600
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Rob Herring <robh+dt@kernel.org>, Anil Varughese <aniljoy@cadence.com>,
  Roger Quadros <rogerq@ti.com>, Jyri Sarha <jsarha@ti.com>
-Subject: [PATCH v4 01/14] dt-bindings: phy: Sierra: Add bindings for Sierra in
- TI's J721E
-Date: Mon, 16 Dec 2019 15:26:59 +0530
-Message-ID: <20191216095712.13266-2-kishon@ti.com>
+Subject: [PATCH v4 02/14] phy: cadence: Sierra: Make "phy_clk" and
+ "sierra_apb" optional resources
+Date: Mon, 16 Dec 2019 15:27:00 +0530
+Message-ID: <20191216095712.13266-3-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191216095712.13266-1-kishon@ti.com>
 References: <20191216095712.13266-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_015604_798105_88338310 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20191216_015606_417119_65EE8160 
+X-CRM114-Status: GOOD (  13.75  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -99,49 +99,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add DT binding documentation for Sierra PHY IP used in TI's J721E
-SoC.
+Certain platforms like TI J721E using Cadence Sierra Serdes
+doesn't provide explicit phy_clk and reset (APB reset) control.
+Make them optional here.
 
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- .../devicetree/bindings/phy/phy-cadence-sierra.txt  | 13 ++++++++-----
- 1 file changed, 8 insertions(+), 5 deletions(-)
+ drivers/phy/cadence/phy-cadence-sierra.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-sierra.txt b/Documentation/devicetree/bindings/phy/phy-cadence-sierra.txt
-index 6e1b47bfce43..03f5939d3d19 100644
---- a/Documentation/devicetree/bindings/phy/phy-cadence-sierra.txt
-+++ b/Documentation/devicetree/bindings/phy/phy-cadence-sierra.txt
-@@ -2,21 +2,24 @@ Cadence Sierra PHY
- -----------------------
+diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
+index de10402f2931..bed68c25682f 100644
+--- a/drivers/phy/cadence/phy-cadence-sierra.c
++++ b/drivers/phy/cadence/phy-cadence-sierra.c
+@@ -193,7 +193,7 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
  
- Required properties:
--- compatible:	cdns,sierra-phy-t0
--- clocks:	Must contain an entry in clock-names.
--		See ../clocks/clock-bindings.txt for details.
--- clock-names:	Must be "phy_clk"
-+- compatible:	Must be "cdns,sierra-phy-t0" for Sierra in Cadence platform
-+		Must be "ti,sierra-phy-t0" for Sierra in TI's J721E SoC.
- - resets:	Must contain an entry for each in reset-names.
- 		See ../reset/reset.txt for details.
- - reset-names:	Must include "sierra_reset" and "sierra_apb".
- 		"sierra_reset" must control the reset line to the PHY.
- 		"sierra_apb" must control the reset line to the APB PHY
--		interface.
-+		interface ("sierra_apb" is optional).
- - reg:		register range for the PHY.
- - #address-cells: Must be 1
- - #size-cells:	Must be 0
+ 	platform_set_drvdata(pdev, sp);
  
- Optional properties:
-+- clocks:		Must contain an entry in clock-names.
-+			See ../clocks/clock-bindings.txt for details.
-+- clock-names:		Must contain "cmn_refclk_dig_div" and
-+			"cmn_refclk1_dig_div" for configuring the frequency of
-+			the clock to the lanes. "phy_clk" is deprecated.
- - cdns,autoconf:	A boolean property whose presence indicates that the
- 			PHY registers will be configured by hardware. If not
- 			present, all sub-node optional properties must be
+-	sp->clk = devm_clk_get(dev, "phy_clk");
++	sp->clk = devm_clk_get_optional(dev, "phy_clk");
+ 	if (IS_ERR(sp->clk)) {
+ 		dev_err(dev, "failed to get clock phy_clk\n");
+ 		return PTR_ERR(sp->clk);
+@@ -205,7 +205,7 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 		return PTR_ERR(sp->phy_rst);
+ 	}
+ 
+-	sp->apb_rst = devm_reset_control_get(dev, "sierra_apb");
++	sp->apb_rst = devm_reset_control_get_optional(dev, "sierra_apb");
+ 	if (IS_ERR(sp->apb_rst)) {
+ 		dev_err(dev, "failed to get apb reset\n");
+ 		return PTR_ERR(sp->apb_rst);
 -- 
 2.17.1
 
