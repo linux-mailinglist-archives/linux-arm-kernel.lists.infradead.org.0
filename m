@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6229A121B7E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 22:10:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0E17121B8F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 22:11:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eW0klZwRrDcAEfhyNtQbnWp+p3onivctbKthkFw8mOs=; b=QnE6kASJy0/Czt
-	G1owiZx3rI+jIHVdPUQHHJay6hlD1Dz1J4IVRBqZ2P/HniO7W+H+iy80ZUy1YOHYb6hqJykII2kBH
-	m/pI4cz+sTo8/MeXEGSkoCtcYVDhQc4ldgoAcF8TAma1Yb/LgvY9KVZ2nxWWvJqQyg+7nyKVnMogq
-	9LDIulNsXKHhj64QN3pgbEeaSG8s/MuFHuRSOki26W579ZYpYandf1sIfsZlO+ToP/gG2UhVSipbY
-	b12Hke+mgVUEz6Ij64ojSaDHfNBFP2MoUpN5zG1DMMvqTBp8Fo4FXZ8GP9EyvnJIDxMwgvHcijWj1
-	qiXXKbSJ7dSoAOpxlVPg==;
+	List-Owner; bh=VQg9KE2z/2Xvq+La/bPEBgfahw2WlFr6D2YtDJ+qhts=; b=O/zrT+o1bG6JLk
+	ebgPo0BSIu5DFX6X+P440qWB3BsX/CgPelrcQS5aQQQLALTIZESyilmeVzBSowGylaS2+JF1M07mI
+	BWiPQJsmY/hoXDFJSmzN3hszku+P2cxep+a63x02wKlMgvuxS4eGMxPy1evnt4ekh3mPc2DlhjJDm
+	Fwx5CRJIS+fqsWXwqBA0oCBuJpySiDpjv+SscPwYyDCkEpbGizQndelemnKJePXTJDNJbqH1ooP0Q
+	5FGo8Bbd4f7tfsoTJzNTzZw2phKaz8V50G8B4dkovYccfgNIq5TuVdWXul2HTc+EdalUT+7M6Z/HP
+	IF3v1U5seM+SoB/cT1Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igxd0-0004Yl-3j; Mon, 16 Dec 2019 21:10:06 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1igxeV-0006Ee-UX; Mon, 16 Dec 2019 21:11:39 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igxcm-0004YI-9R
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 21:09:54 +0000
-Received: by mail-io1-xd43.google.com with SMTP id z193so5031504iof.1
+ id 1igxeM-0006Di-0K
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 21:11:32 +0000
+Received: by mail-il1-x144.google.com with SMTP id a6so6573929ili.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 13:09:51 -0800 (PST)
+ Mon, 16 Dec 2019 13:11:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OC6dg+LyOUqf3B+KdcQshHYleKkReK1YVRJDMZcRz98=;
- b=PQaekCoVnVt0izSYDpfP670QGROJZaXV3HrKHr9fRCxFs9oNtSzszeYc0ROvIPGrqT
- tX/rVC0LE7e7MG533M6L5cCJZOSp0XYtH2dQIqmWd1TV02Wa4el1eKwCUcSOoHq2B1dO
- 1+ihGXFk+YgSQS9SK7SfktK6Mq3Qe5qiVuHszXj8wm2k6M75TGblfbw2eTQPOZjwK0v/
- 2y7vp4CsuKQbYC7l/hIuBM17mMahYyYAOYj30pM5+6fE3qxwpIt3Mbl3Pg0N0VH9mXQ6
- k7PqCsqKafPYobGgNTnlmgbdvF1I29dBrQoDbQe/A7dJ8wix8DSRfAVqRqhC46dJXVyM
- f7Pg==
+ :cc; bh=fkYJ5pa9nbKOKyFcP8C8UHZBwLa5GTQfg7UnOmnBomE=;
+ b=p0lL2isV5hhyipvhkSqpkezqiNxO/gomyfNXgVp1sNiokvE7WHAgy5YsnlImH0Rcbp
+ FZlC8YcC64xQb73aWSxz20NfuGmGUn5JWUrrcpX6iKK6iYlxmH9L8Er8YZQVt2CR6XZY
+ CUDjfqHU9fSm7uD+buILT2h3MCCk+3b7gh5Xl4UsUEGhhoHxDK1b070+sxL3GEkCzEQD
+ 1ka6D1oeH/jAsr+lvK/ENdP2aQqzNUP1t5t0vBxnC37Qz41qx2mLaAZKhqE/HodKMfUL
+ nKKEBe8aTv7w5xUTv3r6Fi3ARFBjvmdU+ULTqhd8l5rSPGfacfny7kNCbG5NGNNMOHKT
+ F6hg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=OC6dg+LyOUqf3B+KdcQshHYleKkReK1YVRJDMZcRz98=;
- b=ESMUUcnbpuvbT6pydxuKXlzwTI+fJc3txVYx2REd3/Qe+lRwbek5OGHk+/0UAJ6YZF
- JXuWiDfSIwlWarzS5yOGUo+jPkgxe6JJS6D72mWI2pa70y3YWmuUdxrGbXdgBeFPAPtp
- s5uMkaeP5eYbCwjZs+fglhmjtkh7xwpHN7D1bSj/JVeTLRrARNGMoW6TC3qd1+SI8hfq
- 2xVmWkGM8sbyZJcKHFPbAKxUIMfMvHosoZZ95dtSYY8YsJZ8DPuQa3FGVqMkyLOGskox
- 4KWTC7/iw5gb4rZWgwQKcX5vNwQePQLM4ZSH2k3YG2SKtM8yMPIqan41J6iQAu089YSQ
- TRsg==
-X-Gm-Message-State: APjAAAW2/yFBFtbleIrTd2I8ZltZ7zDUEJRlHi4RUWctme6S4bLbRAnj
- 8Cz2bOwVjmXP/7b2m1EM3hnYaHx6/usITFEtrDgiaA==
-X-Google-Smtp-Source: APXvYqy+t8iNuAnaIa7sVk7jLsqm58CTXVz4KlgHb3nVjaxrdDBS6fXoh0OhFg44zPPKSd0zcIp7AHZe82mzIZTNX2c=
-X-Received: by 2002:a02:6c41:: with SMTP id w62mr6954440jab.52.1576530591061; 
- Mon, 16 Dec 2019 13:09:51 -0800 (PST)
+ bh=fkYJ5pa9nbKOKyFcP8C8UHZBwLa5GTQfg7UnOmnBomE=;
+ b=UCqLv18GL8F7yl5QtK2u1gJzMYS7pw4DvlOpU6AmK89/vLwD2FPUoNVuSyO3fYCfIo
+ JGwWIZ7cAodvyWR3Xq9u1/VuyGVNgEY4MSxtGZgC9s2/tcbWNO6/7JGBYMKbx5soOtM4
+ TmlWLWXcDiIsb/Q+h7OZTIScFXk7nunWJgTp53kJ46u1UW1jlOEO8E+ZtGPKnqbEzwP3
+ fTRvVOSOcfWFHEwobUMYETsGishYn5BRJQXNxeAIB3PIQ3SfcjDfDeJkdzaCtggtbIlR
+ BHKcaP6jOEtXskHDLC+gHrjkagCi3acpKgIRyQsGJM/w/XAXOfNoswVbKa8P+PF4qEFV
+ JncQ==
+X-Gm-Message-State: APjAAAUkpkNWXQJzSSV0C8OouuAcdjd9PU4vwolsa/GkbTlPfUtqUKu0
+ vrHTO2k7Dy7q2htxQIkjbJpxjr6yZkFqGp5aVb6HkQ==
+X-Google-Smtp-Source: APXvYqxVHsdIC8VlRYTzYqeb69NqWhrUbzqstR4rImviApaGK7bQAGkdHjoiFC5rrFcG91bXmTXETB1cct+Y6qGPmJU=
+X-Received: by 2002:a92:5f86:: with SMTP id i6mr13599326ill.57.1576530688363; 
+ Mon, 16 Dec 2019 13:11:28 -0800 (PST)
 MIME-Version: 1.0
-References: <20191211230911.5467-1-mike.leach@linaro.org>
-In-Reply-To: <20191211230911.5467-1-mike.leach@linaro.org>
+References: <20191211230959.5577-1-mike.leach@linaro.org>
+In-Reply-To: <20191211230959.5577-1-mike.leach@linaro.org>
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Mon, 16 Dec 2019 14:09:40 -0700
-Message-ID: <CANLsYkzGZde=2WhWhVqJGRBZbNy1EQUEAg2W_L9ek6JtNGGc2Q@mail.gmail.com>
-Subject: Re: [PATCH v6 11/15] dt-bindings: arm: Juno platform - add CTI
- entries to device tree.
-To: Mike Leach <mike.leach@linaro.org>, Sudeep Holla <sudeep.holla@arm.com>
+Date: Mon, 16 Dec 2019 14:11:17 -0700
+Message-ID: <CANLsYkx_bG4GLcP5qhdDgHNmGa0C6Wi0HaLcdzCJj1yHE0iNXQ@mail.gmail.com>
+Subject: Re: [PATCH v6 13/15] docs: coresight: Update documentation for
+ CoreSight to cover CTI.
+To: Mike Leach <mike.leach@linaro.org>, Jon Corbet <corbet@lwn.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_130952_338893_4AFA3E1C 
-X-CRM114-Status: GOOD (  15.10  )
+X-CRM114-CacheID: sfid-20191216_131130_064560_153C40E1 
+X-CRM114-Status: GOOD (  32.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,419 +91,274 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
- Coresight ML <coresight@lists.linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
- Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+Cc: devicetree@vger.kernel.org, "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
+ Coresight ML <coresight@lists.linaro.org>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 11 Dec 2019 at 16:09, Mike Leach <mike.leach@linaro.org> wrote:
+On Wed, 11 Dec 2019 at 16:10, Mike Leach <mike.leach@linaro.org> wrote:
 >
-> Add in CTI entries for Juno r0, r1 and r2 to device tree entries.
+> Add new document covering CTI / CTM usage in CoreSight.
+>
+> Add section in coresight.rst introducing CTI and CTM modules with link
+> to new document.
 >
 > Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 > ---
->  arch/arm64/boot/dts/arm/juno-base.dtsi    | 149 +++++++++++++++++++++-
->  arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi |  31 ++++-
->  arch/arm64/boot/dts/arm/juno-r1.dts       |  25 ++++
->  arch/arm64/boot/dts/arm/juno-r2.dts       |  25 ++++
->  arch/arm64/boot/dts/arm/juno.dts          |  25 ++++
->  5 files changed, 250 insertions(+), 5 deletions(-)
+>  .../trace/coresight/coresight-ect.rst         | 211 ++++++++++++++++++
+>  Documentation/trace/coresight/coresight.rst   |  13 ++
+>  2 files changed, 224 insertions(+)
+>  create mode 100644 Documentation/trace/coresight/coresight-ect.rst
 >
-> diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
-> index 1f3c80aafbd7..07d6395a2194 100644
-> --- a/arch/arm64/boot/dts/arm/juno-base.dtsi
-> +++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
-> @@ -119,7 +119,7 @@
->          * The actual size is just 4K though 64K is reserved. Access to the
->          * unmapped reserved region results in a DECERR response.
->          */
-> -       etf@20010000 { /* etf0 */
-> +       etf_sys0: etf@20010000 { /* etf0 */
->                 compatible = "arm,coresight-tmc", "arm,primecell";
->                 reg = <0 0x20010000 0 0x1000>;
+> diff --git a/Documentation/trace/coresight/coresight-ect.rst b/Documentation/trace/coresight/coresight-ect.rst
+> new file mode 100644
+> index 000000000000..3e06588f24fa
+> --- /dev/null
+> +++ b/Documentation/trace/coresight/coresight-ect.rst
+> @@ -0,0 +1,211 @@
+> +=============================================
+> +CoreSight Embedded Cross Trigger (CTI & CTM).
+> +=============================================
+> +
+> +    :Author:   Mike Leach <mike.leach@linaro.org>
+> +    :Date:     November 2019
+> +
+> +Hardware Description
+> +--------------------
+> +
+> +The CoreSight Cross Trigger Interface (CTI) is a hardware device that takes
+> +individual input and output hardware signals known as triggers to and from
+> +devices and interconnects them via the Cross Trigger Matrix (CTM) to other
+> +devices via numbered channels, in order to propagate events between devices.
+> +
+> +e.g.::
+> +
+> + 0000000  in_trigs  :::::::
+> + 0 C   0----------->:     :             +======>(other CTI channel IO)
+> + 0  P  0<-----------:     :             v
+> + 0   U 0  out_trigs :     : Channels  *****      :::::::
+> + 0000000            : CTI :<=========>*CTM*<====>: CTI :---+
+> + #######  in_trigs  :     : (id 0-3)  *****      :::::::   v
+> + # ETM #----------->:     :                         ^   #######
+> + #     #<-----------:     :                         +---# ETR #
+> + ####### out_trigs  :::::::                             #######
+> +
+> +The CTI driver enables the programming of the CTI to attach triggers to
+> +channels. When an input trigger becomes active, the attached channel will
+> +become active. Any output trigger attached to that channel will also
+> +become active. The active channel is propagated to other CTIs via the CTM,
+> +activating connected output triggers there, unless filtered by the CTI
+> +channel gate.
+> +
+> +It is also possible to activate a channel using system software directly
+> +programming registers in the CTI.
+> +
+> +The CTIs are registered by the system to be associated with CPUs and/or other
+> +CoreSight devices on the trace data path. When these devices are enabled the
+> +attached CTIs will also be enabled. By default/on power up the CTIs have
+> +no programmed trigger/channel attachments, so will not affect the system
+> +until explicitly programmed.
+> +
+> +The hardware trigger connections between CTIs and devices is implementation
+> +defined, unless the CPU/ETM combination is a v8 architecture, in which case
+> +the connections have an architecturally defined standard layout.
+> +
+> +The hardware trigger signals can also be connected to non-CoreSight devices
+> +(e.g. UART), or be propagated off chip as hardware IO lines.
+> +
+> +All the CTI devices are associated with a CTM. On many systems there will be a
+> +single effective CTM (one CTM, or multiple CTMs all interconnected), but it is
+> +possible that systems can have nets of CTIs+CTM that are not interconnected by
+> +a CTM to each other. On these systems a CTM index is declared to associate
+> +CTI devices that are interconnected via a given CTM.
+> +
+> +Sysfs files and directories
+> +---------------------------
+> +
+> +The CTI devices appear on the existing CoreSight bus alongside the other
+> +CoreSight devices::
+> +
+> +    >$ ls /sys/bus/coresight/devices
+> +     cti_cpu0  cti_cpu2  cti_sys0  etm0  etm2  funnel0  replicator0  tmc_etr0
+> +     cti_cpu1  cti_cpu3  cti_sys1  etm1  etm3  funnel1  tmc_etf0     tpiu0
+> +
+> +The ``cti_cpu<N>`` named CTIs are associated with a CPU, and any ETM used by
+> +that core. the ``cti_sys<N>`` CTIs are general system infrastructure CTIs that
+> +can be associated with other CoreSight devices, or other system hardware
+> +capable of generating or using trigger signals.::
+> +
+> +  >$ ls /sys/bus/coresight/devices/etm0/cti_cpu0
+> +  channels  ctmid  enable  nr_trigger_cons mgmt  power  regs  subsystem
+> +  triggers0 triggers1  uevent
+> +
+> +*Key file items are:-*
+> +   * ``enable``: enables/disables the CTI.
+> +   * ``ctmid`` : associated CTM - only relevant if system has multiple CTI+CTM
+> +     clusters that are not interconnected.
+> +   * ``nr_trigger_cons`` : total connections - triggers<N> directories.
+> +
+> +*Sub-directories:-*
+> +   * ``triggers<N>``: contains list of triggers for an individual connection.
+> +   * ``channels``: Contains the channel API - CTI main programming interface.
+> +   * ``regs``: Gives access to the raw programmable CTI regs.
+> +   * ``mgmt``: the standard CoreSight management registers.
+> +
+> +
+> +triggers<N> directories
+> +~~~~~~~~~~~~~~~~~~~~~~~
+> +
+> +Individual trigger connection information. This describes trigger signals for
+> +CoreSight and non-CoreSight connections.
+> +
+> +Each triggers directory has a set of parameters describing the triggers for
+> +the connection.
+> +
+> +   * ``name`` : name of connection
+> +   * ``in_signals`` : input trigger signal indexes used in this connection.
+> +   * ``in_types`` : functional types for in signals.
+> +   * ``out_signals`` : output trigger signals for this connection.
+> +   * ``out_types`` : functional types for out signals.
+> +
+> +e.g::
+> +
+> +    >$ ls ./cti_cpu0/triggers0/
+> +    in_signals  in_types  name  out_signals  out_types
+> +    >$ cat ./cti_cpu0/triggers0/name
+> +    cpu0
+> +    >$ cat ./cti_cpu0/triggers0/out_signals
+> +    0-2
+> +    >$ cat ./cti_cpu0/triggers0/out_types
+> +    pe_edbgreq pe_dbgrestart pe_ctiirq
+> +    >$ cat ./cti_cpu0/triggers0/in_signals
+> +    0-1
+> +    >$ cat ./cti_cpu0/triggers0/in_types
+> +    pe_dbgtrigger pe_pmuirq
+> +
+> +If a connection has zero signals in either the 'in' or 'out' triggers then
+> +those parameters will be omitted.
+> +
+> +Channels API Directory
+> +~~~~~~~~~~~~~~~~~~~~~~
+> +
+> +This provides an easy way to attach triggers to channels, without needing
+> +the multiple register operations that are required if manipulating the
+> +'regs' sub-dir elements directly.
+> +
+> +A number of files provide this API::
+> +
+> +   >$ ls ./cti_sys0/channels/
+> +   chan_clear         chan_inuse         chan_xtrigs_view      trigin_detach
+> +   chan_free          chan_pulse         chan_xtrigs_view_sel  trigout_attach
+> +   chan_gate_disable  chan_set           trig_filter_enable    trigout_detach
+> +   chan_gate_enable   chan_xtrigs_reset  trigin_attach         trigout_filtered
+> +
+> +Most access to these elements take the form::
+> +
+> +  echo <chan> [<trigger>] > /<device_path>/<operation>
+> +
+> +where the optional <trigger> is only needed for trigXX_attach | detach
+> +operations.
+> +
+> +e.g.::
+> +
+> +   >$ echo 0 1 > ./cti_sys0/channels/trigout_attach
+> +   >$ echo 0 > ./cti_sys0/channels/chan_set
+> +
+> +Attaches trigout(1) to channel(0), then activates channel(0) generating a
+> +set state on cti_sys0.trigout(1)
+> +
+> +
+> +*API operations*
+> +
+> +   * ``trigin_attach, trigout_attach``: Attach a channel to a trigger signal.
+> +   * ``trigin_detach, trigout_detach``: Detach a channel from a trigger signal.
+> +   * ``chan_set``: Set the channel - the set state will be propagated around
+> +     the CTM to other connected devices.
+> +   * ``chan_clear``: Clear the channel.
+> +   * ``chan_pulse``: Set the channel for a single CoreSight clock cycle.
+> +   * ``chan_gate_enable``: Write operation sets the CTI gate to propagate
+> +     (enable) the channel to other devices. This operation takes a channel
+> +     number. CTI gate is enabled for all channels by default at power up. Read
+> +     to list the currently enabled channels on the gate.
+> +   * ``chan_gate_disable``: Write channel number to disable gate for that
+> +     channel.
+> +   * ``chan_inuse``: Show the current channels attached to any signal
+> +   * ``chan_free``: Show channels with no attached signals.
+> +   * ``chan_xtrig_view``: write a channel number to select a channel to view,
+> +     read to show the cross triggers programmed for the selected channel.
+> +   * ``trig_filter_enable``: Defaults to enabled, disable to allow potentially
+> +     dangerous output signals to be set.
+> +   * ``trigout_filtered``: Trigger out signals that are prevented from being
+> +     set if filtering ``trig_filter_enable`` is enabled. One use is to prevent
+> +     accidental ``EDBGREQ`` signals stopping a core.
+> +   * ``chan_xtrigs_reset``: Write 1 to clear all channel / trigger programming.
+> +     Resets device hardware to default state.
+> +
+> +
+> +The example below attaches input trigger index 1 to channel 2, and output
+> +trigger index 6 to the same channel. It then examines the state of the
+> +channel / trigger connections using the appropriate sysfs attributes.
+> +
+> +The settings mean that if either input trigger 1, or channel 2 go active then
+> +trigger out 6 will go active. We then enable the CTI, and use the software
+> +channel control to activate channel 2. We see the active channel on the
+> +``choutstatus`` register and the active signal on the ``trigoutstatus``
+> +register. Finally clearing the channel removes this.
+> +
+> +e.g.::
+> +
+> +   .../cti_sys0/channels# echo 2 1 > trigin_attach
+> +   .../cti_sys0/channels# echo 2 6 > trigout_attach
+> +   .../cti_sys0/channels# cat chan_free
+> +   0-1,3
+> +   .../cti_sys0/channels# cat chan_inuse
+> +   2
+> +   .../cti_sys0/channels# echo 2 > chan_xtrigs_view
+> +   .../cti_sys0/channels# cat chan_xtrigs_view
+> +   [2] IN: 1 OUT: 6
+> +   .../cti_sys0/# echo 1 > enable
+> +   .../cti_sys0/channels# echo 2 > chan_set
+> +   .../cti_sys0/channels# cat ../regs/choutstatus
+> +   0x4
+> +   .../cti_sys0/channels# cat ../regs/trigoutstatus
+> +   0x40
+> +   .../cti_sys0/channels# echo 2 > chan_clear
+> +   .../cti_sys0/channels# cat ../regs/trigoutstatus
+> +   0x0
+> +   .../cti_sys0/channels# cat ../regs/choutstatus
+> +   0x0
+> diff --git a/Documentation/trace/coresight/coresight.rst b/Documentation/trace/coresight/coresight.rst
+> index a566719f8e7e..108600ee1e12 100644
+> --- a/Documentation/trace/coresight/coresight.rst
+> +++ b/Documentation/trace/coresight/coresight.rst
+> @@ -491,8 +491,21 @@ interface provided for that purpose by the generic STM API::
 >
-> @@ -143,7 +143,7 @@
->                 };
->         };
+>  Details on how to use the generic STM API can be found here:- :doc:`../stm` [#second]_.
 >
-> -       tpiu@20030000 {
-> +       tpiu_sys: tpiu@20030000 {
->                 compatible = "arm,coresight-tpiu", "arm,primecell";
->                 reg = <0 0x20030000 0 0x1000>;
+> +The CTI & CTM Modules
+> +---------------------
+> +
+> +The CTI (Cross Trigger Interface) provides a set of trigger signals between
+> +individual CTIs and components, and can propagate these between all CTIs via
+> +channels on the CTM (Cross Trigger Matrix).
+> +
+> +A separate documentation file is provided to explain the use of these devices.
+> +(:doc:`coresight-ect`) [#fourth]_.
+> +
+> +
+>  .. [#first] Documentation/ABI/testing/sysfs-bus-coresight-devices-stm
 >
-> @@ -196,7 +196,7 @@
->                 };
->         };
+>  .. [#second] Documentation/trace/stm.rst
 >
-> -       etr@20070000 {
-> +       etr_sys: etr@20070000 {
->                 compatible = "arm,coresight-tmc", "arm,primecell";
->                 reg = <0 0x20070000 0 0x1000>;
->                 iommus = <&smmu_etr 0>;
-> @@ -214,7 +214,7 @@
->                 };
->         };
->
-> -       stm@20100000 {
-> +       stm_sys: stm@20100000 {
->                 compatible = "arm,coresight-stm", "arm,primecell";
->                 reg = <0 0x20100000 0 0x1000>,
->                       <0 0x28000000 0 0x1000000>;
-> @@ -291,6 +291,18 @@
->                 };
->         };
->
-> +       cti0: cti@22020000 {
-> +               compatible = "arm,coresight-cti-v8-arch", "arm,coresight-cti",
-> +                            "arm,primecell";
-> +               reg = <0 0x22020000 0 0x1000>;
+>  .. [#third] https://github.com/Linaro/perf-opencsd
 > +
-> +               clocks = <&soc_smc50mhz>;
-> +               clock-names = "apb_pclk";
-> +               power-domains = <&scpi_devpd 0>;
-> +
-> +               arm,cs-dev-assoc = <&etm0>;
-> +       };
-> +
->         funnel@220c0000 { /* cluster0 funnel */
->                 compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
->                 reg = <0 0x220c0000 0 0x1000>;
-> @@ -351,6 +363,18 @@
->                 };
->         };
->
-> +       cti1: cti@22120000 {
-> +               compatible = "arm,coresight-cti-v8-arch", "arm,coresight-cti",
-> +                            "arm,primecell";
-> +               reg = <0 0x22120000 0 0x1000>;
-> +
-> +               clocks = <&soc_smc50mhz>;
-> +               clock-names = "apb_pclk";
-> +               power-domains = <&scpi_devpd 0>;
-> +
-> +               arm,cs-dev-assoc = <&etm1>;
-> +       };
-> +
->         cpu_debug2: cpu-debug@23010000 {
->                 compatible = "arm,coresight-cpu-debug", "arm,primecell";
->                 reg = <0x0 0x23010000 0x0 0x1000>;
-> @@ -376,6 +400,18 @@
->                 };
->         };
->
-> +       cti2: cti@23020000 {
-> +               compatible = "arm,coresight-cti-v8-arch", "arm,coresight-cti",
-> +                            "arm,primecell";
-> +               reg = <0 0x23020000 0 0x1000>;
-> +
-> +               clocks = <&soc_smc50mhz>;
-> +               clock-names = "apb_pclk";
-> +               power-domains = <&scpi_devpd 0>;
-> +
-> +               arm,cs-dev-assoc = <&etm2>;
-> +       };
-> +
->         funnel@230c0000 { /* cluster1 funnel */
->                 compatible = "arm,coresight-dynamic-funnel", "arm,primecell";
->                 reg = <0 0x230c0000 0 0x1000>;
-> @@ -448,6 +484,18 @@
->                 };
->         };
->
-> +       cti3: cti@23120000 {
-> +               compatible = "arm,coresight-cti-v8-arch", "arm,coresight-cti",
-> +                            "arm,primecell";
-> +               reg = <0 0x23120000 0 0x1000>;
-> +
-> +               clocks = <&soc_smc50mhz>;
-> +               clock-names = "apb_pclk";
-> +               power-domains = <&scpi_devpd 0>;
-> +
-> +               arm,cs-dev-assoc = <&etm3>;
-> +       };
-> +
->         cpu_debug4: cpu-debug@23210000 {
->                 compatible = "arm,coresight-cpu-debug", "arm,primecell";
->                 reg = <0x0 0x23210000 0x0 0x1000>;
-> @@ -473,6 +521,18 @@
->                 };
->         };
->
-> +       cti4: cti@23220000 {
-> +               compatible = "arm,coresight-cti-v8-arch", "arm,coresight-cti",
-> +                            "arm,primecell";
-> +               reg = <0 0x23220000 0 0x1000>;
-> +
-> +               clocks = <&soc_smc50mhz>;
-> +               clock-names = "apb_pclk";
-> +               power-domains = <&scpi_devpd 0>;
-> +
-> +               arm,cs-dev-assoc = <&etm4>;
-> +       };
-> +
->         cpu_debug5: cpu-debug@23310000 {
->                 compatible = "arm,coresight-cpu-debug", "arm,primecell";
->                 reg = <0x0 0x23310000 0x0 0x1000>;
-> @@ -498,6 +558,87 @@
->                 };
->         };
->
-> +       cti5: cti@23320000 {
-> +               compatible = "arm,coresight-cti-v8-arch", "arm,coresight-cti",
-> +                            "arm,primecell";
-> +               reg = <0 0x23320000 0 0x1000>;
-> +
-> +               clocks = <&soc_smc50mhz>;
-> +               clock-names = "apb_pclk";
-> +               power-domains = <&scpi_devpd 0>;
-> +
-> +               arm,cs-dev-assoc = <&etm5>;
-> +       };
-> +
-> +       cti@20020000 { /* sys_cti_0 */
-> +               compatible = "arm,coresight-cti", "arm,primecell";
-> +               reg = <0 0x20020000 0 0x1000>;
-> +
-> +               clocks = <&soc_smc50mhz>;
-> +               clock-names = "apb_pclk";
-> +               power-domains = <&scpi_devpd 0>;
-> +
-> +               trig-conns@0 {
-> +                       arm,trig-in-sigs=<2 3>;
-> +                       arm,trig-in-types=<SNK_FULL SNK_ACQCOMP>;
-> +                       arm,trig-out-sigs=<0 1>;
-> +                       arm,trig-out-types=<SNK_FLUSHIN SNK_TRIGIN>;
-> +                       arm,cs-dev-assoc = <&etr_sys>;
-> +               };
-> +
-> +               trig-conns@1 {
-> +                       arm,trig-in-sigs=<0 1>;
-> +                       arm,trig-in-types=<SNK_FULL SNK_ACQCOMP>;
-> +                       arm,trig-out-sigs=<7 6>;
-> +                       arm,trig-out-types=<SNK_FLUSHIN SNK_TRIGIN>;
-> +                       arm,cs-dev-assoc = <&etf_sys0>;
-> +               };
-> +
-> +               trig-conns@2 {
-> +                       arm,trig-in-sigs=<4 5 6 7>;
-> +                       arm,trig-in-types=<STM_TOUT_SPTE STM_TOUT_SW
-> +                                          STM_TOUT_HETE STM_ASYNCOUT>;
-> +                       arm,trig-out-sigs=<4 5>;
-> +                       arm,trig-out-types=<STM_HWEVENT STM_HWEVENT>;
-> +                       arm,cs-dev-assoc = <&stm_sys>;
-> +               };
-> +
-> +               trig-conns@3 {
-> +                       arm,trig-out-sigs=<2 3>;
-> +                       arm,trig-out-types=<SNK_FLUSHIN SNK_TRIGIN>;
-> +                       arm,cs-dev-assoc = <&tpiu_sys>;
-> +               };
-> +       };
-> +
-> +       cti@20110000 { /* sys_cti_1 */
-> +               compatible = "arm,coresight-cti", "arm,primecell";
-> +               reg = <0 0x20110000 0 0x1000>;
-> +
-> +               clocks = <&soc_smc50mhz>;
-> +               clock-names = "apb_pclk";
-> +               power-domains = <&scpi_devpd 0>;
-> +
-> +               trig-conns@0 {
-> +                       arm,trig-in-sigs=<0>;
-> +                       arm,trig-in-types=<GEN_INTREQ>;
-> +                       arm,trig-out-sigs=<0>;
-> +                       arm,trig-out-types=<GEN_HALTREQ>;
-> +                       arm,trig-conn-name = "sys_profiler";
-> +               };
-> +
-> +               trig-conns@1 {
-> +                       arm,trig-out-sigs=<2 3>;
-> +                       arm,trig-out-types=<GEN_HALTREQ GEN_RESTARTREQ>;
-> +                       arm,trig-conn-name = "watchdog";
-> +               };
-> +
-> +               trig-conns@2 {
-> +                       arm,trig-out-sigs=<1 6>;
-> +                       arm,trig-out-types=<GEN_HALTREQ GEN_RESTARTREQ>;
-> +                       arm,trig-conn-name = "g_counter";
-> +               };
-> +       };
-> +
->         gpu: gpu@2d000000 {
->                 compatible = "arm,juno-mali", "arm,mali-t624";
->                 reg = <0 0x2d000000 0 0x10000>;
-> diff --git a/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi b/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi
-> index eda3d9e18af6..308f4eee8b29 100644
-> --- a/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi
-> +++ b/arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi
-> @@ -23,7 +23,7 @@
->                 };
->         };
->
-> -       etf@20140000 { /* etf1 */
-> +       etf_sys1: etf@20140000 { /* etf1 */
->                 compatible = "arm,coresight-tmc", "arm,primecell";
->                 reg = <0 0x20140000 0 0x1000>;
->
-> @@ -82,4 +82,33 @@
->
->                 };
->         };
-> +
-> +       cti@20160000 { /* sys_cti_2 */
-> +               compatible = "arm,coresight-cti", "arm,primecell";
-> +               reg = <0 0x20160000 0 0x1000>;
-> +
-> +               clocks = <&soc_smc50mhz>;
-> +               clock-names = "apb_pclk";
-> +               power-domains = <&scpi_devpd 0>;
-> +
-> +               trig-conns@0 {
-> +                       arm,trig-in-sigs=<0 1>;
-> +                       arm,trig-in-types=<SNK_FULL SNK_ACQCOMP>;
-> +                       arm,trig-out-sigs=<0 1>;
-> +                       arm,trig-out-types=<SNK_FLUSHIN SNK_TRIGIN>;
-> +                       arm,cs-dev-assoc = <&etf_sys1>;
-> +               };
-> +
-> +               trig-conns@1 {
-> +                       arm,trig-in-sigs=<2 3 4>;
-> +                       arm,trig-in-types=<ELA_DBGREQ ELA_TSTART ELA_TSTOP>;
-> +                       arm,trig-conn-name = "ela_clus_0";
-> +               };
-> +
-> +               trig-conns@2 {
-> +                       arm,trig-in-sigs=<5 6 7>;
-> +                       arm,trig-in-types=<ELA_DBGREQ ELA_TSTART ELA_TSTOP>;
-> +                       arm,trig-conn-name = "ela_clus_1";
-> +               };
-> +       };
->  };
-> diff --git a/arch/arm64/boot/dts/arm/juno-r1.dts b/arch/arm64/boot/dts/arm/juno-r1.dts
-> index 5f290090b0cf..02aa51eb311d 100644
-> --- a/arch/arm64/boot/dts/arm/juno-r1.dts
-> +++ b/arch/arm64/boot/dts/arm/juno-r1.dts
-> @@ -9,6 +9,7 @@
->  /dts-v1/;
->
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +#include <dt-bindings/arm/coresight-cti-dt.h>
->  #include "juno-base.dtsi"
->  #include "juno-cs-r1r2.dtsi"
->
-> @@ -309,3 +310,27 @@
->  &cpu_debug5 {
->         cpu = <&A53_3>;
->  };
-> +
-> +&cti0 {
-> +       cpu = <&A57_0>;
-> +};
-> +
-> +&cti1 {
-> +       cpu = <&A57_1>;
-> +};
-> +
-> +&cti2 {
-> +       cpu = <&A53_0>;
-> +};
-> +
-> +&cti3 {
-> +       cpu = <&A53_1>;
-> +};
-> +
-> +&cti4 {
-> +       cpu = <&A53_2>;
-> +};
-> +
-> +&cti5 {
-> +       cpu = <&A53_3>;
-> +};
-> diff --git a/arch/arm64/boot/dts/arm/juno-r2.dts b/arch/arm64/boot/dts/arm/juno-r2.dts
-> index 305300dd521c..75bb27c2d4dc 100644
-> --- a/arch/arm64/boot/dts/arm/juno-r2.dts
-> +++ b/arch/arm64/boot/dts/arm/juno-r2.dts
-> @@ -9,6 +9,7 @@
->  /dts-v1/;
->
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +#include <dt-bindings/arm/coresight-cti-dt.h>
->  #include "juno-base.dtsi"
->  #include "juno-cs-r1r2.dtsi"
->
-> @@ -315,3 +316,27 @@
->  &cpu_debug5 {
->         cpu = <&A53_3>;
->  };
-> +
-> +&cti0 {
-> +       cpu = <&A72_0>;
-> +};
-> +
-> +&cti1 {
-> +       cpu = <&A72_1>;
-> +};
-> +
-> +&cti2 {
-> +       cpu = <&A53_0>;
-> +};
-> +
-> +&cti3 {
-> +       cpu = <&A53_1>;
-> +};
-> +
-> +&cti4 {
-> +       cpu = <&A53_2>;
-> +};
-> +
-> +&cti5 {
-> +       cpu = <&A53_3>;
-> +};
-> diff --git a/arch/arm64/boot/dts/arm/juno.dts b/arch/arm64/boot/dts/arm/juno.dts
-> index f00cffbd032c..dbc22e70b62c 100644
-> --- a/arch/arm64/boot/dts/arm/juno.dts
-> +++ b/arch/arm64/boot/dts/arm/juno.dts
-> @@ -9,6 +9,7 @@
->  /dts-v1/;
->
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +#include <dt-bindings/arm/coresight-cti-dt.h>
->  #include "juno-base.dtsi"
->
->  / {
-> @@ -295,3 +296,27 @@
->  &cpu_debug5 {
->         cpu = <&A53_3>;
->  };
-> +
-> +&cti0 {
-> +       cpu = <&A57_0>;
-> +};
-> +
-> +&cti1 {
-> +       cpu = <&A57_1>;
-> +};
-> +
-> +&cti2 {
-> +       cpu = <&A53_0>;
-> +};
-> +
-> +&cti3 {
-> +       cpu = <&A53_1>;
-> +};
-> +
-> +&cti4 {
-> +       cpu = <&A53_2>;
-> +};
-> +
-> +&cti5 {
-> +       cpu = <&A53_3>;
-> +};
+> +.. [#fourth] Documentation/trace/coresight/coresight-ect.rst
 
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
