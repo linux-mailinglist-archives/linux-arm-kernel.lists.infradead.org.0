@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81FB712074A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 14:37:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6149712074D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 14:38:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=j4CQe2fyYhLyvKJffUklrj6JQT53O37tWEAUt1DbpSk=; b=ctHEs8cLU9l2llHT7O382+bRp
-	MKj+CXP7VrjalIdsK4GCZaiPArbGAo8GWMQXqPBRbPzCEQ0DvKavSH9dALco2xPBxOZ14P74VMqYL
-	RZhxmO8mWHun0+4cUEx36rhrh2UT97uFZvqKam3EmApC2B7A4GOqzdd7Oq7xoDt3keUuqHxETzM8r
-	ujOgRLTlM8U4aoiFXCPcDnAWROB2cE4l1QdNwr7J8UxaKB6DDdk/XPgQGD3qxmCrrkNRPOdvuK1e/
-	vXTo/sIF5RjgrvtsuiorU1SV2VzbYOVF1nYZObTosnITIYuDmjK+dLAayqZ/ZE7Mdlwg1XfTSaN3Q
-	k4e91jxqg==;
+	 bh=JM8XKb/UID/wPyqQ6Ft2XcLAR2fMV43jJ5L/JMb9BsA=; b=ZOdkLtm9yZzxQQ/m2goc8G5bK
+	YVglZeQZZZzS6KR2bb1AUkNb/x6dE/avhp/Mxrn/agUqqZs2vSuLc7qoEQtEwSFwpEdPxJYLJvknh
+	tilIYGulxtYd8qACcoBcp6nF1SOOa9RG1/VwCfeya8j6+cnfldEHmpNlyNBG1Yn3v5VifrwvT2K1V
+	7H4sfpp7JAC0HXT1PVEiqHmB2Z90oZdFXDIvC/RWUdzJIf5tozT2BmKVYdpdASGIXooLFwSWzTa3A
+	OEbOQaHoEVygS7DyyR+JbNohC6kzGX1sEVku4M0V0VxGFr2egFx+jxGIdWvsr43UoIzfPKE9oCrb5
+	PuW34UP5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igqYj-0005UH-VR; Mon, 16 Dec 2019 13:37:14 +0000
+	id 1igqZs-00064U-Fl; Mon, 16 Dec 2019 13:38:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igqYb-0005Tx-OT
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 13:37:06 +0000
+ id 1igqZk-00064A-Is
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 13:38:17 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 00E49206A5;
- Mon, 16 Dec 2019 13:37:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CBB5A206A5;
+ Mon, 16 Dec 2019 13:38:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576503425;
- bh=OlLjTfGQi5/U4jUE0lWUYWNrQUVkF9ABRFYEb3H6wRM=;
+ s=default; t=1576503496;
+ bh=Iu98Oy5TZm+H1asM/smrTrfPFvEBzeFkzFr8AMmXZXk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=UN3eg7bkh56gQzbPJKX92DS2oPbfzk/s8NFCYvwapn+olTsxbwocauo+FhEgEbHcQ
- oVENs8AlxstW3j1z2VhLfYFGQ6Xhmp7LZh1iQ3H4OC9FogVfZVkmRrIBpGFIyKVQQt
- e6d4Og6pZ0miFTtZaa0ZOojvY10otamRfSr8r9r8=
-Date: Mon, 16 Dec 2019 14:37:03 +0100
+ b=qLoRzPiAgHrMoOeQlq47u2JMMsF+kaN6ulynlbG1cRyJ7s2WQ+gZ9zfgmw3qdh7sv
+ myCIG83Rfn3FSh1WmEl5AH2BfMtLbkWPKDglHU66akHYiVDCTmO2Ep7X01WYXQ8I12
+ 04mRGGadq8HC3/+ky2NASgJcq/3lws8PZ0xtYJTs=
+Date: Mon, 16 Dec 2019 14:38:14 +0100
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@kernel.org>
-Subject: Re: [PATCH 04/14] media: sun4i-csi: Fix [HV]sync polarity handling
-Message-ID: <20191216133703.4udteob37py5s3ms@gilmour.lan>
+Subject: Re: [PATCH 05/14] media: sun4i-csi: Deal with DRAM offset
+Message-ID: <20191216133814.hozcgdrnqe6tim36@gilmour.lan>
 References: <20191215165924.28314-1-wens@kernel.org>
- <20191215165924.28314-5-wens@kernel.org>
+ <20191215165924.28314-6-wens@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20191215165924.28314-5-wens@kernel.org>
+In-Reply-To: <20191215165924.28314-6-wens@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_053705_818319_08D22D05 
-X-CRM114-Status: GOOD (  11.14  )
+X-CRM114-CacheID: sfid-20191216_053816_661682_A7A766FE 
+X-CRM114-Status: GOOD (  18.43  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,59 +81,90 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>, Sakari Ailus <sakari.ailus@linux.intel.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============6018302803681254340=="
+Content-Type: multipart/mixed; boundary="===============0067697346759713897=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6018302803681254340==
+--===============0067697346759713897==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="2fe4ttno4f4fmseg"
+	protocol="application/pgp-signature"; boundary="f4vwh4csed7tzwjp"
 Content-Disposition: inline
 
 
---2fe4ttno4f4fmseg
+--f4vwh4csed7tzwjp
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Mon, Dec 16, 2019 at 12:59:14AM +0800, Chen-Yu Tsai wrote:
+On Mon, Dec 16, 2019 at 12:59:15AM +0800, Chen-Yu Tsai wrote:
 > From: Chen-Yu Tsai <wens@csie.org>
 >
-> The Allwinner camera sensor interface has a different definition of
-> [HV]sync. While the timing diagram uses the names HSYNC and VSYNC,
-> the note following the diagram and register names use HREF and VREF.
-> Combined they imply the hardware uses either [HV]REF or inverted
-> [HV]SYNC. There are also registers to set horizontal skip lengths
-> in pixels and vertical skip lengths in lines, also known as back
-> porches.
+> On Allwinner SoCs, some high memory bandwidth devices do DMA directly
+> over the memory bus (called MBUS), instead of the system bus. These
+> devices include the CSI camera sensor interface, video (codec) engine,
+> display subsystem, etc.. The memory bus has a different addressing
+> scheme without the DRAM starting offset.
 >
-> Fix the polarity handling by using the opposite polarity flag for
-> the checks. Also rename `[hv]sync_pol` to `[hv]ref_pol` to better
-> match the hardware register description.
+> Deal with this using the "interconnects" property from the device tree,
+> or if that is not available, set dev->dma_pfn_offset to PHYS_PFN_OFFSET.
 >
 > Fixes: 577bbf23b758 ("media: sunxi: Add A10 CSI driver")
 > Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 
 Acked-by: Maxime Ripard <mripard@kernel.org>
 
-Thanks!
+> ---
+>  .../platform/sunxi/sun4i-csi/sun4i_csi.c      | 22 +++++++++++++++++++
+>  1 file changed, 22 insertions(+)
+>
+> diff --git a/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c b/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
+> index f36dc6258900..b8b07c1de2a8 100644
+> --- a/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
+> +++ b/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
+> @@ -11,6 +11,7 @@
+>  #include <linux/module.h>
+>  #include <linux/mutex.h>
+>  #include <linux/of.h>
+> +#include <linux/of_device.h>
+>  #include <linux/of_graph.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/pm_runtime.h>
+> @@ -155,6 +156,27 @@ static int sun4i_csi_probe(struct platform_device *pdev)
+>  	subdev = &csi->subdev;
+>  	vdev = &csi->vdev;
+>
+> +	/*
+> +	 * On Allwinner SoCs, some high memory bandwidth devices do DMA
+> +	 * directly over the memory bus (called MBUS), instead of the
+> +	 * system bus. The memory bus has a different addressing scheme
+> +	 * without the DRAM starting offset.
+> +	 *
+> +	 * In some cases this can be described by an interconnect in
+> +	 * the device tree. In other cases where the hardware is not
+> +	 * fully understood and the interconnect is left out of the
+> +	 * device tree, fall back to a default offset.
+> +	 */
+
+Though we should probably mention the DT-backward-compatibility case
+here too.
+
 Maxime
 
---2fe4ttno4f4fmseg
+--f4vwh4csed7tzwjp
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfeIfwAKCRDj7w1vZxhR
-xRA/AP4vF6S6Kyoc+sq1NvPSmvANUDxkredIbI6JCHlMsiFG3QD9H7FUVTe0FnrF
-Al8s9SSOmN2Cb9+DM0+mq5Jb6GxZyQQ=
-=u2Iv
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfeIxgAKCRDj7w1vZxhR
+xSYlAP4uGoz1Ce+9iej57ZZmMWf4/Tv6JmIocroCOLYz9/kGmgEAlLfgpLkvr3sQ
+xO02B/RijIIY2oIzaS23VHo7I+iAtgs=
+=/CRW
 -----END PGP SIGNATURE-----
 
---2fe4ttno4f4fmseg--
+--f4vwh4csed7tzwjp--
 
 
---===============6018302803681254340==
+--===============0067697346759713897==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -144,5 +175,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6018302803681254340==--
+--===============0067697346759713897==--
 
