@@ -2,99 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 311C4121A3F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 20:56:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76563121AB6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 21:14:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yZLA5FxJ9eUKDioDgfE2Arb2VkysjC+YhbyjsJpxJeM=; b=nz7Oq0ZvVHz74R
-	tLxwVPLX0+UnhupSfawx7tPN3gVKjCDlsVWF/wwWLBVAgW7mDk+j0kGsDzDvUp0usPA6r2nNekHoO
-	BLJOEut5mdHVp+2rlz3/QoRtxwhnG6xygPJqtoXwKgxjGZFngP3BIAkfQlpQCc1gdYnD3wvY7VBhm
-	1pKnDOMd3EJZvTdHuNLgjEVDVlAFNgqWi7duAj+/pb0rFDEeybmwohIjhlGmqUPbK5NWWOXxaWR0N
-	5RqCjGzovSwTb3w2b06JjthevsAI5yGWzTsVhG41WVr0W++6R+qNyJ4+4dIQINZib7DPdAvl+lwgF
-	lx8aALxkNd+LL5Tgfpbg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vNZ+4GGFuVrtMOJ2D710EzDfFQApMFoAG33fYd4J70g=; b=ZRanWmybjS9iou
+	frQFO+rm5fE89ocGLiBD2PCSj23RiQ6loTn9oAlbHzSP0GCVAAR37c5a1Dgdx1bcKYuC/w9uOFkvZ
+	uh/hSiOHzPBulx20Md0lKKlOonzuP3G0RdNBZiBuEeC+OnfWb3If/uRA9OzcXQCAKHozdqU7M50dv
+	MOu4ZITmC6ZxF7DK13mJXFz6+Oho5Q3aP7YxblP+y8bVscxLbOL1lj+plqchwu1uQ+X3H50SZ7Q4w
+	Efuin7maV31QrKcgaUWqtQYNhpW8oChOhwP3qpAghTDRG4WwG/MSR90Amj35dgKIgHIyGdHrj6xJF
+	W1SBi1RkAs3hw9xK1m5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igwTk-0001KA-1t; Mon, 16 Dec 2019 19:56:28 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1igwlB-0007lD-Ly; Mon, 16 Dec 2019 20:14:29 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igwTb-0001Jb-9W
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 19:56:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1576526174;
- bh=CNL4/ITrQyawW6Jwa7ZAkK9ujkdNN6N4djNXPY/LFy8=;
- h=X-UI-Sender-Class:Subject:To:References:From:Cc:Date:In-Reply-To;
- b=h/o52mFMz6z4L2EVFIDt/pu0uYfDVMCrkIKvPvLzm0h0VP0vvOyqWLK4KW3o6mEBS
- ZJf9sGo1WU3uvvIepLMCQIVbdOSi7ReR+1hMXnuoJzJwfQM3QyRFiOGVIiCvLpvZue
- s1EFwHFD7jvH4Tmk1u8nQFK2l47uOx9e0Ri0syUo=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.176] ([37.4.249.154]) by mail.gmx.com (mrgmx104
- [212.227.17.168]) with ESMTPSA (Nemesis) id 1MQ5rU-1iKtLS0PC4-00M5AL; Mon, 16
- Dec 2019 20:56:14 +0100
-Subject: Re: [PATCH V4 01/10] bluetooth: hci_bcm: Fix RTS handling during
- startup
-To: Marcel Holtmann <marcel@holtmann.org>,
- Johan Hedberg <johan.hedberg@gmail.com>, =?UTF-8?Q?Ond=c5=99ej_Jirman?=
- <megous@megous.com>
-References: <1570375708-26965-1-git-send-email-wahrenst@gmx.net>
- <1570375708-26965-2-git-send-email-wahrenst@gmx.net>
- <61789264-a4c2-ac85-9d74-d186213ec70a@gmx.net>
- <20191216132509.ofqcdpwxsd7324ql@core.my.home>
- <6f05f4d8-fa84-ae81-ac4f-00ab12fabeea@gmx.net>
- <20191216194235.4pq2xpfl7nz3p55w@core.my.home>
-From: Stefan Wahren <wahrenst@gmx.net>
-Message-ID: <ff0206e0-8290-0639-5399-5304b9454110@gmx.net>
-Date: Mon, 16 Dec 2019 20:56:12 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1igwl1-0007kk-FA
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 20:14:20 +0000
+Received: by mail-lf1-x143.google.com with SMTP id b15so5222976lfc.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Dec 2019 12:14:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=netronome-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:in-reply-to:references
+ :organization:mime-version:content-transfer-encoding;
+ bh=SBA8qsH74joROaQ7qUDtcV487nsBL4T4WgclmBa0Frc=;
+ b=ku4jjLQyhZhXcIGu4nZIjg8rbK20un3MtB+TCOZXShMDtjr2HGOaRu9he7uOTF7Cih
+ T3brX3yh+ceFv1ntlhNGLP08m0V9P/WctQ31kCqVPwTi11yHvWDB5zIM2L5gdtJU0t6C
+ toL5piqJBqXKVfkIh8mA39aWi5VXl3mGdfXtivjFonFdjVGqYWA8jh0Vc6d9QCyAkARu
+ JsEfg1+SXICLbj/4yY8AtlA1Ik7ZG/HN0JzGkdvM1S4w9ncr2eYD6CVNrpouMnS8Sv2w
+ 5TLiAlvSGrxO3NlzrooXpjw9JCEb10909JKvwfctiyJBYaKdJw18ww6wndKPu+6NMY0+
+ zznQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
+ :references:organization:mime-version:content-transfer-encoding;
+ bh=SBA8qsH74joROaQ7qUDtcV487nsBL4T4WgclmBa0Frc=;
+ b=cA27DIOJctydD+FAwhlsfHoSJ1xTc0yqNjGSSQKLYLM2awqnv+KzYQTb5l65iJuRP7
+ 7cX4iP/M61Lins9XsKE11T336AeoDMNERkDjWcSS0WS1sXrT7Jly+OhbMayXnW6phvgq
+ DA/nTlpzl3wABEnBem7cr8UJ7tG6/7zMFRZgaY6OjYwRqb/yPKd1WQlKs4DOwKVax3ib
+ 3fYuLAASEEVB0bvxmAT0bONji/b2x4ACiYRy/cxKO5UkJKhTcltMGpTpsCACWF7uJ43C
+ sdSDtmKY6343obH1DYwFZvr0jduhswE93HjvOakRe/zevl73TXTz0SXi+J4hSXt+aAig
+ lptw==
+X-Gm-Message-State: APjAAAU5OcchR1Ux1fdJPiJ/LEb9FTYB3x5p2oYZj2KxPgI1CQPxXIuh
+ GNolgjpkcf43TAbvaViORTswcw==
+X-Google-Smtp-Source: APXvYqxKjc/fsBTpIng96/mIdsynKS0oePdJPNDLm9lKBC2UNlCq0QkEhG6AghBZJ/xPXJHMxWvS4w==
+X-Received: by 2002:ac2:5635:: with SMTP id b21mr512845lff.127.1576527257085; 
+ Mon, 16 Dec 2019 12:14:17 -0800 (PST)
+Received: from cakuba.netronome.com ([66.60.152.14])
+ by smtp.gmail.com with ESMTPSA id 192sm9615625lfh.28.2019.12.16.12.14.13
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Dec 2019 12:14:16 -0800 (PST)
+Date: Mon, 16 Dec 2019 12:14:04 -0800
+From: Jakub Kicinski <jakub.kicinski@netronome.com>
+To: Jose Abreu <Jose.Abreu@synopsys.com>
+Subject: Re: [PATCH net-next 3/4] net: stmmac: Let TX and RX interrupts be
+ independently enabled/disabled
+Message-ID: <20191216121404.43966b89@cakuba.netronome.com>
+In-Reply-To: <BN8PR12MB3266288303A6CA6C3CAA5E6CD3510@BN8PR12MB3266.namprd12.prod.outlook.com>
+References: <cover.1576007149.git.Jose.Abreu@synopsys.com>
+ <04c000a3e0356e8bfb63e07490d8de8e081a2afe.1576007149.git.Jose.Abreu@synopsys.com>
+ <20191214123623.1aeb4966@cakuba.netronome.com>
+ <BN8PR12MB3266288303A6CA6C3CAA5E6CD3510@BN8PR12MB3266.namprd12.prod.outlook.com>
+Organization: Netronome Systems, Ltd.
 MIME-Version: 1.0
-In-Reply-To: <20191216194235.4pq2xpfl7nz3p55w@core.my.home>
-Content-Language: en-US
-X-Provags-ID: V03:K1:frpVMvHvuwuUjwYqcSegzPvPNdhbH3fki7ucVW2an/S2FhOx+UY
- UcSNCOk4IpNNG4W8cZ7siJs2B/tR7FLt++GI7BAMFyDi6qO7EP3tkHr7FGAW9AtzQmVHta3
- 7h6zwi49JMchT2PpuBILSToHHv09DVPsduHtvCHY9Ewgo5GgBGc33Ge4kd9XG7p4Bc/wHP4
- zgmTQtird6GDCtegho8MQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:BNw9DSMBEC4=:bdYEcuDFgaeDTz5P1s3yax
- l13x3/Xtj+VlfUkVJg0oVPAWp2VV1ALfyJ0nzq0DExgodeXMDbpr0LoC4wEKOYc5sLE0zLsVK
- d+WG2PIrojejyuckxioWwqRuVi0fGfUH7IWWyFLCAXgSjtnZN+ff+DD/wputazvQR4kKWlKx2
- sRv2IUrGMtqVaEviTiBwlmsu7O11xRqP1vBEE+z4AwOQaSfQeU64FB4HSJEIIms2SVvMqVgML
- JqBEnINTDTaJjPSFndsLw5kUg017Az8BdPyC0TVSC/HuauLaHhoX0uztgOvUfPKO+bnmUTOTN
- JbpHc7FxR8BR1Xv6WADCs73MNeodh/WSr7RspThKY+kSXiOdLOdN8528VnECeQDLa/UQCn1Q2
- iNaLvWaPYNzoN9EcTaNlfZC/FVJVOxQvPhH02aNGPLVVCSZ7YAqodFFMglT4WhgCUq8ku8wXy
- yjXlBYa3FbuGTF/E5Pzhx1O+hf6hSLJ+0+dSmQLGSoZdTTW/M9H0Bl5fX6rLAxCGlIa2+8Q09
- OrveGtnKfVFQ4LFgaOTj6olCFDklzvyACcxdeYlop8u7PjVni33V5tkVjAzfY3ANKilrb+UVu
- s0NEJJ72nNy+VblxunKioG/yJDk+gBFcLiDYcwcx4sEyixA6y1qmTiK8nu2bCat8BgECUz725
- lgG2wrMJPzGygv2+yUzO/2y3uHklv/wyj6n244nWLcm6n2jDjczwIPeO28WG0Z0CR6GTYZ7ta
- 5H3H25d1w7JGmxtKKlo/dChCGlZevicnSZcDG13nmpThwCc13vGfUn0uQH5rXhz1I8fdOZ940
- I+uJk/D3G5Nn35bAvk1i/6qqC8279TSQtpDhc5cI7Et3WzudQBM+h7neXQ+HuI7cnrnR4FBnM
- Cy93cOJGbGzWpyAoEdFojScHHz0sbL0L5JtVfeHDflsmZ31Q22uC4PT01kkPPiyeC+pW1V6d/
- d6wMkOm/6j6EmNpOpe6asvU8a4mPHBFhQtqV44WoOmfUfSlnHN4rHCu2+Rb70WC5MEfyvVosb
- mJpcjEovzpB/pFF9s/5PLuYX/BfqYhiwC5ZZ4PJOK0kYycQorhzbuLsqdyAt6TVXxjpNg7Et1
- 5a1Tjbq4NIB4c/mVub1ERqIOTmPCDU9N23pUBYlTDKbAE4TbE7GmgQrp/egG4b4+GkAaBC8qm
- MZz/MK8jrNpYhtNoSnZlMlrdwZmGQdoFiHn0UGnVv1nBlpKJ0gfiJXR3oHg9FZtreuZUxLMZo
- 0XmnqZ6dER1TICekvEGpR88GmuzlzFc7aZTY1fUxe2G5Q5w116fjRXxBRI2o=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_115619_665210_18D3365F 
-X-CRM114-Status: GOOD (  12.95  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191216_121419_533659_92CA0B81 
+X-CRM114-Status: GOOD (  13.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.20 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -109,37 +97,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-bluetooth@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8gT25kcmVqLAoKQW0gMTYuMTIuMTkgdW0gMjA6NDIgc2NocmllYiBPbmTFmWVqIEppcm1h
-bjoKPiBIZWxsbyBTdGVmYW4sCj4KPiBPbiBNb24sIERlYyAxNiwgMjAxOSBhdCAwNzoyODowNFBN
-ICswMTAwLCBTdGVmYW4gV2FocmVuIHdyb3RlOgo+PiBIaSBPbmRyZWosCj4+Cj4+IHNvcnJ5LCBp
-IGRvbid0IGhhdmUgYWNjZXNzIHRvIGEgT3JhbmdlIFBpIDMuCj4+Cj4+IEkgbG9va2VkIGF0IGHC
-oCBBUDYyNTYgZGF0YXNoZWV0IFsxXSwgYnV0IGkgY291bGRuJ3QgZmluZCBhbnkgaGVscGZ1bAo+
-PiBpbmZvcm1hdGlvbiBhYm91dCBmbG93IGNvbnRyb2wgZHVyaW5nIHBvd2VyIHVwLgo+Pgo+PiBB
-cmUgeW91IGFibGUgdG8gYW5hbHl6ZSB0aGlzIGlzc3VlIG1vcmUgZnVydGhlciBiZWZvcmUgd2Ug
-cmV2ZXJ0IHRoaXMgcGF0Y2g/Cj4gSSdkIGxpa2UgdG8sIGJ1dCBJJ2xsIG5vdCBiZSBhYmxlIHRv
-IGF0dGFjaCBsb2dpYyBwcm9iZSB0byB0aGUgQVA2MjU2Cj4gbW9kdWxlLiBJdCdzIHRvbyBmaW5l
-IHBpdGNoIGZvciBzb2xkZXJpbmcuCnRoaXMgdGhlIHNhbWUgaXNzdWUsIGkgaGFkIHdpdGggdGhl
-IFJhc3BiZXJyeSBQaSA0IDotKAo+IEkgbWF5IHRyeSBzZXR0aW5nIENUUy9SVFMgdG8gZ3Bpby9p
-bnB1dCBtb2RlIGFuZCBncmFiIHRoZSBjYXB0dXJlIG9mCj4gdGhlIEdQSU8gcG9ydCBzdGF0ZXMg
-aW4gdGltZSB0byBzZWUgd2hhdCdzIGhhcHBlbmluZyBkdXJpbmcgcHJvYmUKPiBvZiBidF9iY20g
-bW9kdWxlLgo+Cj4gSSBkb24ndCByZWFsbHkgdW5kZXJzdGFuZCB3aGF0IGVmZmVjdCB5b3VyIHBh
-dGNoIGlzIHN1cHBvc2VkIHRvIGhhdmUKPiBvbiB0aGUgQ1RTL1JUUyBsaW5lcyBkdXJpbmcgcG93
-ZXIgdXAgZnJvbSB0aGUgY29tbWl0IGRlc2NyaXB0aW9uLgo+IENhbiB5b3UgcGxlYXNlIGV4cGxh
-aW4gaXQgbW9yZSBjb25jcmV0ZWx5PwpJIGhvcGUgYSBwaWN0dXJlIGV4cGxhaW4gbW9yZSB0aGFu
-IHRob3VzYW5kIHdvcmRzLiBQbGVhc2UgbG9vayBhdCBmaWd1cmUKNyBhdCBwYWdlIDIyIG9mIHRo
-ZSBkYXRhc2hlZXQgWzJdLiBUaGUgcGF0Y2ggdHJpZXMgdG8gYWNoaWV2ZSB0aGUgcHJvcGVyCnRp
-bWluZyBvZiBCVF9VQVJUX0NUU19OLgo+Cj4gSSdsbCBiZSBhYmxlIHRvIGdldCB0byBwbGF5aW5n
-IHdpdGggdGhpcyBhZnRlciB0aGUgaG9saWRheXMuCgpPa2F5CgpTdGVmYW4KClsyXSAtCmh0dHBz
-Oi8vd3d3LnZlcmljYWwuY29tL2RhdGFzaGVldC9jeXByZXNzLXNlbWljb25kdWN0b3ItY29tYm8t
-d2lyZWxlc3MtbW9kdWxlLWN5dzQzNDU1eGt1Ymd0LTU3NzA1OTUucGRmCgoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Mon, 16 Dec 2019 09:18:50 +0000, Jose Abreu wrote:
+> > > @@ -3759,24 +3777,18 @@ static int stmmac_napi_poll_tx(struct napi_struct *napi, int budget)
+> > >  	struct stmmac_channel *ch =
+> > >  		container_of(napi, struct stmmac_channel, tx_napi);
+> > >  	struct stmmac_priv *priv = ch->priv_data;
+> > > -	struct stmmac_tx_queue *tx_q;
+> > >  	u32 chan = ch->index;
+> > >  	int work_done;
+> > >  
+> > >  	priv->xstats.napi_poll++;
+> > >  
+> > > -	work_done = stmmac_tx_clean(priv, DMA_TX_SIZE, chan);
+> > > -	work_done = min(work_done, budget);
+> > > -
+> > > -	if (work_done < budget)
+> > > -		napi_complete_done(napi, work_done);
+> > > +	work_done = stmmac_tx_clean(priv, budget, chan);
+> > > +	if (work_done < budget && napi_complete_done(napi, work_done)) {  
+> > 
+> > Not really related to this patch, but this looks a little suspicious. 
+> > I think the TX completions should all be processed regardless of the
+> > budget. The budget is for RX.  
+> 
+> Well but this is a TX NAPI ... Shouldn't it be limited to prevent CPU 
+> starvation ?
+
+It is a bit confusing, but at least netpoll expects the TX completions
+to be processed with zero budget. Check out poll_one_napi().
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
