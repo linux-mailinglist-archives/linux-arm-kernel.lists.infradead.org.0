@@ -2,109 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B794121190
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 18:18:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9101A1211C3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 18:31:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VJ+1nLrHFpJwXd2/Aw3fTABGWE5SHMgxm8zlhsC8cS4=; b=b+339k4e8fYRs5
-	Dkm2FTWZbg0eWcbYl2MQlzQF207DX/u835/7UCe8V8/aH8hutrP3b1bPz77dNWVMed16ytu7Sc7J0
-	vMF2cscFYAw8kthYidsXCPiEQejbIhFtmg7aqCERImMnvhOCuKebzKkWEHIHGM1zr8w8fg2TjyD21
-	aLXCABIBlph8YP2mi1yKN1dPKXpwaVBugn6mpAjhRH6YTORg6cuim1+2ruGZnkHotxrqNbd7yvK9J
-	FvV+ZvnY0+k6UHCzoDNlGD907lT6PSNqrc9AyJAmEEWJI1HAY9sxfULpvHmMIS8zsHH/MhuAYRT8t
-	2JLGjWiR/TtjDGWcPPaw==;
+	List-Owner; bh=3+H4edCiRD6J3qvHIterRfW6KVzEkYabYZXklR7YNM0=; b=kZSXj2pVN4J56M
+	mmO/MU2/bT9+zQ9zSOmL9ENvKhfbtavzPxd8kjmLxrMZKnfEuBnJRVo6aqtqm57kVPjNUNmZR20fw
+	qSlc4Zv65zRJWUK51lW2saXfHYmF0gFyXJqR3CdobOL9to+3VHwoVaMs8iYel9fIqIjH5oH9p7cpz
+	lQgtRFInYgF1lFtiJxHRdcj/ZhZcIVlV23sc+4sn4VzIQJdLx15qSacT9WC/uz/NB1LB5HV630gVT
+	UN3C4+p6D6iSTYhQ0jUmAGq2X4EGIR0saZN3KF35MEVstzaQ5fu8APZcBFCokGqMntAEOSebZE0Mm
+	eRHO8Rj3PiEtQ1feEQOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igu0b-0000J3-AI; Mon, 16 Dec 2019 17:18:13 +0000
-Received: from mail-eopbgr50072.outbound.protection.outlook.com ([40.107.5.72]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1iguD2-00062K-6y; Mon, 16 Dec 2019 17:31:04 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igu0S-0000IF-Fl
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 17:18:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Vv8LGMqOGkJyflPaSXyQE4p7zAAtGkyd0WsJa5gjbX+9/4D2UJTTqJ6ZN7dhCqdGAz9Ka+g9bNPuaOTe36UHhTUD1WEf21rv2VOGV4BlTC3dxoyCQkSDaWdvpFoUlpoctZqODw8GhffzSPM5XtJFN2c/9gWjCgctkjjz35RFFUS4DOkY8ugwj15YGJkN62Rwga26KEJ/Pi62LrRR//SDk/+ynW/iJUVaO28Qg7fQlRo6rVtH1CqGslPMkULkwVaLN6anpAh0sLoJqalBBC7HV0qakkRsPqAUl0V/amO5Z1fBHNxZXCUd+KDpvR76cqiDPI+U3L/osUff2TbMPbTj2A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YbRVersQlPr8Bx52aoWr0qx/xTlslifg8y490caAkZw=;
- b=IPQiKHi36rdv7lwQaOEU7Fr+yDfrFJfhWjL07gbzPUy3ZewN3xrNi2F7fLj4khYHSAt61CclqwMgHA1nrlnmv+bUJfb/d9cfCqNBejen1JyAg3CeGfeKLmR8BpkJyHstxE/4UMCk/VXuT3GR6VJAS1Tvn63Px8OGxv731BIKaV8fF9MQzyRVdAw49+UoMOESDWqWqEdXCGZrFVWK8XaueNR1emXOBhhOhkfH+VRbvh5PTGHlMdM0D5tfkqZO+Jnb1ozw/Q6te2iANsUL/VPLAWBqYC5xfgZkM2ue3JGVbwt43GMJ35r9A76YK18vnDIdNZDNePESqHJPxpy+3xjXBw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YbRVersQlPr8Bx52aoWr0qx/xTlslifg8y490caAkZw=;
- b=VWMY0K/r1hSslS9xAdmBu56A4dGULED0EUJsxr0OMEaFN+q/gFzWQDn9YnNPtkFcvMY2AgpfQL5LujydwD46/1CUzZAkv9rf/vPrJqqW+horIdCV0AoI0zFFGJ/agWazAf1U9oIi5DDEScNFZjdfPGG7HfXIwUBnVE3Gg59uFhg=
-Received: from VI1PR0401MB2496.eurprd04.prod.outlook.com (10.168.65.10) by
- VI1PR0401MB2496.eurprd04.prod.outlook.com (10.168.65.10) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2538.19; Mon, 16 Dec 2019 17:18:00 +0000
-Received: from VI1PR0401MB2496.eurprd04.prod.outlook.com
- ([fe80::8823:663d:c6ed:cbd6]) by VI1PR0401MB2496.eurprd04.prod.outlook.com
- ([fe80::8823:663d:c6ed:cbd6%12]) with mapi id 15.20.2538.019; Mon, 16 Dec
- 2019 17:17:59 +0000
-From: Pankaj Bansal <pankaj.bansal@nxp.com>
-To: Hanjun Guo <guohanjun@huawei.com>, Lorenzo Pieralisi
- <lorenzo.pieralisi@arm.com>, Sudeep Holla <sudeep.holla@arm.com>, "Rafael J .
- Wysocki" <rjw@rjwysocki.net>, Len Brown <lenb@kernel.org>
-Subject: RE: [PATCH] ACPI/IORT: fix the iort_id_map function
-Thread-Topic: [PATCH] ACPI/IORT: fix the iort_id_map function
-Thread-Index: AQHVs1oeh+jJ/g/JdU2kvN0Bjpwx56e8IO0AgAAVdGCAAHH+gIAAWRgQ
-Date: Mon, 16 Dec 2019 17:17:59 +0000
-Message-ID: <VI1PR0401MB2496DEA6CDEFD57C9427883FF1510@VI1PR0401MB2496.eurprd04.prod.outlook.com>
-References: <20191215203303.29811-1-pankaj.bansal@nxp.com>
- <ffc5a6e9-cac3-d6c6-fe16-745b4f9e481f@huawei.com>
- <VI1PR0401MB2496E243F45C82E789B867A6F1510@VI1PR0401MB2496.eurprd04.prod.outlook.com>
- <eedbf670-00e2-93ce-06ac-469d6032ce74@huawei.com>
-In-Reply-To: <eedbf670-00e2-93ce-06ac-469d6032ce74@huawei.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pankaj.bansal@nxp.com; 
-x-originating-ip: [49.36.128.25]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 58906403-9225-4826-12a2-08d7824be693
-x-ms-traffictypediagnostic: VI1PR0401MB2496:
-x-microsoft-antispam-prvs: <VI1PR0401MB249603C0A7A2FF37324D8275F1510@VI1PR0401MB2496.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 02530BD3AA
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(376002)(39860400002)(346002)(136003)(366004)(199004)(189003)(13464003)(316002)(110136005)(6506007)(26005)(86362001)(186003)(54906003)(2906002)(44832011)(53546011)(7696005)(5660300002)(66556008)(81156014)(81166006)(9686003)(8676002)(66946007)(55016002)(66446008)(64756008)(8936002)(76116006)(45080400002)(71200400001)(33656002)(478600001)(66476007)(52536014)(966005)(4326008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0401MB2496;
- H:VI1PR0401MB2496.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 1HSHzLk/QiaTJ5O28y75sun38RtFxl4/g9/2r3Eaq4xFM4fJxb0JybQ7FXRs0LRTelMQkRllCoN0Hy4cVnU7Q/ZyWT9YsTC6TKwE7SxdNZMgdw4I3gYAV6Kr14mb4WAcXA4Ggoo1j1bnvSlymsvZSvOCfpCKszVOB3eLgsthaY110PCzDN+L0BcVctoBg4At70ruKbhCMfshpRHm4/wnwEBl86mYa9De3anQVVVc8OE1c0SzSegb1ScPv0DOO+1JXiavApZiam199qS5LNM2+No/ymaDerbalQ5xov0BqDyLyKpaCUhHwE4FDsUZkyyMNI5KdTQ5AYzRTPNqCFVNWDcK074+gMD8qCNhNqB33piwrRa09x0rAb+4g1gOQo2/P6uh9faZ7AAeQ/k7MRF5OH5MstX4jBxMkNVuSI4ba0dIvjyCc+1SxopKPSi5PP5eoPElJI6QxoUDXSKh5KZnyrJkdMH4Ude/0wOIyVtQt7NbHur/URxRpJQcGbU0ECCq
-x-ms-exchange-transport-forked: True
+ id 1iguCt-00060l-9Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 17:30:56 +0000
+Received: by mail-wr1-x441.google.com with SMTP id d16so8315529wre.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Dec 2019 09:30:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7fWYDGMp/nApDNbsrJ+5xWU9putwDijDotVARBJn+ns=;
+ b=gdIMAIf97ukxAmjomWXZt5U5oVo5ZHPpBsn8yC+LUJsUpG/0g7jNbRu+fF+T5QXIRv
+ dUc+6/GMVd4y8Dn2BUkBrZAVDct54i+OJAb18XlddDIlSOeTLs5ZX6V6nJD04poiKKjh
+ MhFytbWzx2fnX2crjrCcKdUmIPgC/Kh4VMnTWPHWuXs92o0u5Zn8uFTP7URYbKd/yNYA
+ H1pK3pAA/pcShk0GqJBgQ3yHpAsRyELjKg7Wq/ouI7OBxjm8qbhr8qcWOb3LU1mhCJXV
+ rolTLcMf2FYfJZvSerMd2MPTvBNIu61GdGWwGrGBtp8FZQqzVVyRurinNqK9NnLPpzsh
+ Drrg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7fWYDGMp/nApDNbsrJ+5xWU9putwDijDotVARBJn+ns=;
+ b=fGvPAMnBHJybga3nSRdnPRW72q/BMiSA+1S4aOxols3chpxnt+HEgRHMJA/0v+rjIq
+ FTLCpSht4lz1n5UyQbjQLkgX5REwPuIT/ukWb04uy5rTeHZ8rWH7yDc9CsPoGCov3Wri
+ jj/3kedQbVT/UPWlrFuAIUPPcRHZMMQXk+P6a+Dtxxk0/oP66vaJyJQIGwaJhTURwc++
+ uhGjb9Vx6r4SL+PeDgUCyZ+zIdG1+0z/mtJVSNdi4XfH+cRa2V6gHu6qHtqfmuW60m/Y
+ pGNunpvkWadykQlVUSiYsKtnG7YJzXwCs7SlfY0T3MD8QdMZTM2jwli4gB7ryeropeUf
+ sCVw==
+X-Gm-Message-State: APjAAAUJRNk5tI/egWtw9STvNwmm2T31sYzIR5LV5TPuHgDoWNfiWx7J
+ XAu/InKPBNZJZRF223PGiJJnqlRgiwQZXZomiszE+Q==
+X-Google-Smtp-Source: APXvYqyoF+KvnzIYNr2E7q8HeyNbCKjQw7uAH6xStgdJExVzXSR0xSCZPRzKzq+G6oWrvHrRDKICuZ+IOnGR+n/Xc8k=
+X-Received: by 2002:a5d:4984:: with SMTP id r4mr30348162wrq.137.1576517448748; 
+ Mon, 16 Dec 2019 09:30:48 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 58906403-9225-4826-12a2-08d7824be693
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Dec 2019 17:17:59.7941 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 33PXpocZf0iuF/fYNxj9UwYPH6WWL3rqciiP+I0UtgwbKkuorl4deSOhxoKl40ll7FdNCKLh5kYnHP8jYq6r1g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0401MB2496
+References: <20191211184027.20130-1-catalin.marinas@arm.com>
+ <20191211184027.20130-21-catalin.marinas@arm.com>
+ <ef61bbc6-76d6-531d-2156-b57efc070da4@arm.com>
+In-Reply-To: <ef61bbc6-76d6-531d-2156-b57efc070da4@arm.com>
+From: Peter Collingbourne <pcc@google.com>
+Date: Mon, 16 Dec 2019 09:30:36 -0800
+Message-ID: <CAMn1gO6KGbeSkuEJB_j+WG8DAjbn81OdfA6DQQ+FFA5F6dcsVQ@mail.gmail.com>
+Subject: Re: [PATCH 20/22] arm64: mte: Allow user control of the excluded tags
+ via prctl()
+To: Kevin Brodsky <kevin.brodsky@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_091804_575468_2C3E6068 
-X-CRM114-Status: GOOD (  21.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_093055_333131_84DF95D4 
+X-CRM114-Status: GOOD (  30.96  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.72 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -113,6 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,99 +99,195 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Jonathan Cameron <jonathan.cameron@huawei.com>
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Branislav Rankov <Branislav.Rankov@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>, linux-mm@kvack.org,
+ Marc Zyngier <maz@kernel.org>, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Hanjun Guo <guohanjun@huawei.com>
-> Sent: Monday, 16 December, 2019 05:24 PM
-> To: Pankaj Bansal <pankaj.bansal@nxp.com>; Lorenzo Pieralisi
-> <lorenzo.pieralisi@arm.com>; Sudeep Holla <sudeep.holla@arm.com>;
-> Rafael J . Wysocki <rjw@rjwysocki.net>; Len Brown <lenb@kernel.org>
-> Cc: linux-acpi@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
-> Jonathan Cameron <jonathan.cameron@huawei.com>
-> Subject: Re: [PATCH] ACPI/IORT: fix the iort_id_map function
-> 
-> On 2019/12/16 13:14, Pankaj Bansal wrote:
-> > Hi Hanjun,
-> >
-> > Thanks for replying. Please find my response inline
-> >
-> >> Hi Pankaj,
-> >>
-> >> On 2019/12/15 23:12, Pankaj Bansal wrote:
-> >>> As per
-> >>> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Finf
-> >>> oc
-> >>>
-> >>
-> enter.arm.com%2Fhelp%2Ftopic%2Fcom.arm.doc.den0049d%2FDEN0049D_IO
-> >> _Rema
-> >>>
-> >>
-> pping_Table.pdf&amp;data=02%7C01%7Cpankaj.bansal%40nxp.com%7C78d
-> >> 82a560
-> >>>
-> >>
-> 5714219196008d781db06a7%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%
-> >> 7C1%7C6
-> >>>
-> >>
-> 37120650018983814&amp;sdata=%2FRhATUKx%2FA2gPEx%2BNY9X%2F7kqV
-> >> CrEeRnbE%
-> >>> 2B2qlTkdGDc%3D&amp;reserved=0
-> >>> in ID mappings:
-> >>> Number of IDs = The number of IDs in the range minus one.
-> >>
-> >> Hmm, the spec is confusing, the spec may need to be updated, for
-> >> example, for a PCI bus, device ID + function ID will take 8 bits and
-> >> will be 256 IDs for that PCI bus, not sure why we need to minus one.
-> >>
-> >
-> > I agree that this "minus one" thing is confusing. Not sure why It was
-> > put in the spec like that. I guess they wanted the number of IDs to be 0
-> based instead of 1 based.
-> >
-> >>>
-> >>> Therefore, it's valid for ID mapping to contain single device
-> >>> mapping which would have Number of IDs field 0.
-> >>
-> >> Why not use single mapping flag for this case?
-> >
-> > Actually single mapping flag doesn't mean that there is single mapping in
-> an ID mapping.
-> > It means that Input ID should not be considered when looking for Output
-> ID.
-> > If we put single id flag, then we cannot have a case where we have an
-> > array of single mappings for one device.
-> > e.g. an array of single mappings for one PCIe Root Complex, where we
-> > have a unique output ID for a unique BDF(Input ID)
-> 
-> Agreed, single mapping flag is not working for multi-entris of single mappings.
-> 
-> Do you have a real use case for this fix? I'm thinking if we will break any
-> delivered platforms with this patch applied, since this code is not changed
-> from 2016, and it's the key logic for mapping the IDs.
+On Mon, Dec 16, 2019 at 6:20 AM Kevin Brodsky <kevin.brodsky@arm.com> wrote:
+>
+> +Branislav, Peter
+>
+> In this patch, the default exclusion mask remains 0 (i.e. all tags can be generated).
+> After some more discussions, Branislav and I think that it would be better to start
+> with the reverse, i.e. all tags but 0 excluded (mask = 0xfe or 0xff).
+>
+> This should simplify the MTE setup in the early C runtime quite a bit. Indeed, if all
+> tags can be generated, doing any heap or stack tagging before the
+> PR_SET_TAGGED_ADDR_CTRL prctl() is issued can cause problems, notably because tagged
+> addresses could end up being passed to syscalls. Conversely, if IRG and ADDG never
+> set the top byte by default, then tagging operations should be no-ops until the
+> prctl() is issued. This would be particularly useful given that it may not be
+> straightforward for the C runtime to issue the prctl() before doing anything else.
+>
+> Additionally, since the default tag checking mode is PR_MTE_TCF_NONE, it would make
+> perfect sense not to generate tags by default.
+>
+> Any thoughts?
 
-We have this use case in our platform NXP LX2160A, where we provide the array of single mappings in IORT table. Actually we can only have limited number of output IDs for PCIe devices, so we allocate unique output ID to each BDF connected to a PCIe root complex and pass these IDs in IORT table.
+This would indeed allow the early C runtime startup code to pass
+tagged addresses to syscalls, but I don't think it would entirely free
+the code from the burden of worrying about stack tagging. Either way,
+any stack frames that are active at the point when the prctl() is
+issued would need to be compiled without stack tagging, because
+otherwise those stack frames may use ADDG to rematerialize a stack
+object address, which may produce a different address post-prctl.
+Setting the exclude mask to 0xffff would at least make it more likely
+for this problem to be detected, though.
 
-> 
-> I checked Hisilicon's ARM64 server platform, Number of IDs is equal to the
-> number of IDs in the range in the firmware, which is not doing the same as
-> the spec said, but (rid_in > map->input_base + map->id_count) is still valid
-> with this patch applied, not sure for other platforms.
+If we change the default in this way, maybe it would be worth
+considering flipping the meaning of the tag mask and have it be a mask
+of tags to allow. That would be consistent with the existing behaviour
+where userspace sets bits in tagged_addr_ctrl in order to enable
+tagging features.
 
-I don't think that this patch would break any platform which has IORT table defined as per spec.
+Peter
 
-> 
-> Thanks
-> Hanjun
+>
+> Thanks,
+> Kevin
+>
+> On 11/12/2019 18:40, Catalin Marinas wrote:
+> > The IRG, ADDG and SUBG instructions insert a random tag in the resulting
+> > address. Certain tags can be excluded via the GCR_EL1.Exclude bitmap
+> > when, for example, the user wants a certain colour for freed buffers.
+> > Since the GCR_EL1 register is not accessible at EL0, extend the
+> > prctl(PR_SET_TAGGED_ADDR_CTRL) interface to include a 16-bit field in
+> > the first argument for controlling the excluded tags. This setting is
+> > pre-thread.
+> >
+> > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> > ---
+> >   arch/arm64/include/asm/processor.h |  1 +
+> >   arch/arm64/include/asm/sysreg.h    |  7 +++++++
+> >   arch/arm64/kernel/process.c        | 27 +++++++++++++++++++++++----
+> >   include/uapi/linux/prctl.h         |  3 +++
+> >   4 files changed, 34 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> > index 91aa270afc7d..5b6988035334 100644
+> > --- a/arch/arm64/include/asm/processor.h
+> > +++ b/arch/arm64/include/asm/processor.h
+> > @@ -150,6 +150,7 @@ struct thread_struct {
+> >   #endif
+> >   #ifdef CONFIG_ARM64_MTE
+> >       u64                     sctlr_tcf0;
+> > +     u64                     gcr_excl;
+> >   #endif
+> >   };
+> >
+> > diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+> > index 9e5753272f4b..b6bb6d31f1cd 100644
+> > --- a/arch/arm64/include/asm/sysreg.h
+> > +++ b/arch/arm64/include/asm/sysreg.h
+> > @@ -901,6 +901,13 @@
+> >               write_sysreg(__scs_new, sysreg);                        \
+> >   } while (0)
+> >
+> > +#define sysreg_clear_set_s(sysreg, clear, set) do {                  \
+> > +     u64 __scs_val = read_sysreg_s(sysreg);                          \
+> > +     u64 __scs_new = (__scs_val & ~(u64)(clear)) | (set);            \
+> > +     if (__scs_new != __scs_val)                                     \
+> > +             write_sysreg_s(__scs_new, sysreg);                      \
+> > +} while (0)
+> > +
+> >   #endif
+> >
+> >   #endif      /* __ASM_SYSREG_H */
+> > diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
+> > index 47ce98f47253..5ec6889795fc 100644
+> > --- a/arch/arm64/kernel/process.c
+> > +++ b/arch/arm64/kernel/process.c
+> > @@ -502,6 +502,15 @@ static void update_sctlr_el1_tcf0(u64 tcf0)
+> >       sysreg_clear_set(sctlr_el1, SCTLR_EL1_TCF0_MASK, tcf0);
+> >   }
+> >
+> > +static void update_gcr_el1_excl(u64 excl)
+> > +{
+> > +     /*
+> > +      * No need for ISB since this only affects EL0 currently, implicit
+> > +      * with ERET.
+> > +      */
+> > +     sysreg_clear_set_s(SYS_GCR_EL1, SYS_GCR_EL1_EXCL_MASK, excl);
+> > +}
+> > +
+> >   /* Handle MTE thread switch */
+> >   static void mte_thread_switch(struct task_struct *next)
+> >   {
+> > @@ -511,6 +520,7 @@ static void mte_thread_switch(struct task_struct *next)
+> >       /* avoid expensive SCTLR_EL1 accesses if no change */
+> >       if (current->thread.sctlr_tcf0 != next->thread.sctlr_tcf0)
+> >               update_sctlr_el1_tcf0(next->thread.sctlr_tcf0);
+> > +     update_gcr_el1_excl(next->thread.gcr_excl);
+> >   }
+> >   #else
+> >   static void mte_thread_switch(struct task_struct *next)
+> > @@ -641,22 +651,31 @@ static long set_mte_ctrl(unsigned long arg)
+> >       update_sctlr_el1_tcf0(tcf0);
+> >       preempt_enable();
+> >
+> > +     current->thread.gcr_excl = (arg & PR_MTE_EXCL_MASK) >> PR_MTE_EXCL_SHIFT;
+> > +     update_gcr_el1_excl(current->thread.gcr_excl);
+> > +
+> >       return 0;
+> >   }
+> >
+> >   static long get_mte_ctrl(void)
+> >   {
+> > +     unsigned long ret;
+> > +
+> >       if (!system_supports_mte())
+> >               return 0;
+> >
+> > +     ret = current->thread.gcr_excl << PR_MTE_EXCL_SHIFT;
+> > +
+> >       switch (current->thread.sctlr_tcf0) {
+> >       case SCTLR_EL1_TCF0_SYNC:
+> > -             return PR_MTE_TCF_SYNC;
+> > +             ret |= PR_MTE_TCF_SYNC;
+> > +             break;
+> >       case SCTLR_EL1_TCF0_ASYNC:
+> > -             return PR_MTE_TCF_ASYNC;
+> > +             ret |= PR_MTE_TCF_ASYNC;
+> > +             break;
+> >       }
+> >
+> > -     return 0;
+> > +     return ret;
+> >   }
+> >   #else
+> >   static long set_mte_ctrl(unsigned long arg)
+> > @@ -684,7 +703,7 @@ long set_tagged_addr_ctrl(unsigned long arg)
+> >               return -EINVAL;
+> >
+> >       if (system_supports_mte())
+> > -             valid_mask |= PR_MTE_TCF_MASK;
+> > +             valid_mask |= PR_MTE_TCF_MASK | PR_MTE_EXCL_MASK;
+> >
+> >       if (arg & ~valid_mask)
+> >               return -EINVAL;
+> > diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
+> > index 5e9323e66a38..749de5ab4f9f 100644
+> > --- a/include/uapi/linux/prctl.h
+> > +++ b/include/uapi/linux/prctl.h
+> > @@ -239,5 +239,8 @@ struct prctl_mm_map {
+> >   # define PR_MTE_TCF_SYNC            (1UL << PR_MTE_TCF_SHIFT)
+> >   # define PR_MTE_TCF_ASYNC           (2UL << PR_MTE_TCF_SHIFT)
+> >   # define PR_MTE_TCF_MASK            (3UL << PR_MTE_TCF_SHIFT)
+> > +/* MTE tag exclusion mask */
+> > +# define PR_MTE_EXCL_SHIFT           3
+> > +# define PR_MTE_EXCL_MASK            (0xffffUL << PR_MTE_EXCL_SHIFT)
+> >
+> >   #endif /* _LINUX_PRCTL_H */
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
