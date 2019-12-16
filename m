@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA5971202E0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:48:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8BD0120310
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:58:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Umq5PaK9oLGa6FO/V815xJiMm/STM5iFqzrVtS+Kpjc=; b=t9qZNlIVJNJcykYz74bQdFuaZ
-	rgGUdbpCTcUPHK3aUDDkeBAEPeiRMyui4bZLJxyk/QTOUjKUC+jKGPpLliEXAEUpAUmGzi9kQgmY4
-	10+g7nkDVIQGQ1OLmmof1BYTv2JJqmZSvC+z6rg3B92IcdE6muyqVV5FnO0SfLkqavGKdYjslC77G
-	hPosGk6uTe+2TkJjMom1/fCmmUgJ5dSZqcOZiSCp5abYETQZA3bdpvMxdCY0ScTHD4J2RzfhCb7AG
-	zh56stnMTFGcboM0r73Qwpi5UxnowomNTwP2a3HvVZ8OqyLkR1VRejV59HYsJy7u+VqZLPo8D5ERR
-	xVBVj+GTg==;
+	 bh=8RJ69HJZVroaOCljpDnurlqN6Biv632boLWYNeR6fzk=; b=PiFErNPOCLWMikvh+3I3GZ8CN
+	vqAis3BooCygH0FKLmXOUjhAbgLD/nTRzQqbd0wZimThQD+OnbIeqTLfQITnC2uPyTQZCxyfQfwrE
+	QXQZS9ANlpeJhFh/NCwalkDrRZ7NuoHFYOpezYcugnYJBAmnRk4/5CxPEuBKWTIhd7z9KstbSmjdu
+	GyRKlNnXL/Wy4/CR3OAe0Ss8WfqdmkLU56J0Td+JMC/8xTfsr5YdK9xYZoliZAlM/ccbU+ddhlXos
+	xTBxqU738SFoZIa1G2mveF57egvme4J/GPlyxgYOKDV09hnumt4dBTm3XaJuOVSrkxcmp3dPBlSEd
+	ro+FIWDRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ignvt-0006K2-VV; Mon, 16 Dec 2019 10:48:57 +0000
+	id 1igo5K-0001Jd-9R; Mon, 16 Dec 2019 10:58:42 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ignvK-000643-Nw; Mon, 16 Dec 2019 10:48:24 +0000
+ id 1igo59-0001J4-D9; Mon, 16 Dec 2019 10:58:32 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 8277E712E;
- Mon, 16 Dec 2019 05:48:20 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 5EA5E7118;
+ Mon, 16 Dec 2019 05:58:30 -0500 (EST)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Mon, 16 Dec 2019 05:48:20 -0500
+ by compute3.internal (MEProxy); Mon, 16 Dec 2019 05:58:30 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm1; bh=b2sdt1L+RtAvCJWD+Ejy+ZFvgQM
- jCXlABUGffB8yAfA=; b=hpoeKy4M0e/xSvJLEpsfWD6wOgXYRtamc7oXmnJ0piJ
- I3b0fZd7v59vpwxad7wQ7IxLTz9XYIZcSri9aKECh0m9CZAqp7RJy/wpf+TKCk0H
- 5drdwgmqEjXT2Q+noD1x+8Jeh0cexJphIVqVMMezk5wyNUeVKsY512uvA2jyko62
- joC4nuay5b6kHnbeRsHJctp83oWLygRop0qtKLLF4l0x4L5U29IPwBc1qC6a147H
- iyKQZeFWzr9T1mpkPO5GSA02X+Tb7bU/Eh/l1s+CXUMrr18ApOQ+vwKrZWnS7o5z
- 08+V6irSPmYEc1zbk10CNKSW89FJVspqMaV3OK1+0QQ==
+ :content-type:in-reply-to; s=fm1; bh=7E2TpTwENCgP1MRD7/Eziybb/Th
+ 2bGLOCc12fC88q6E=; b=IMLrsBodXXXGicPZCQDlL4YhxJ8yYXkJiGeQPJQQwf4
+ cvkx9X6OxYx4AIhSKnPbdJllQHaNKzzF32/qX58QgboLLpEQjhHszLxaPpdgMMqV
+ 5jwKe1BCnPBcTCzsnR03dumppfba/ket7EzIV/vDMcpIzk6A9IEqm5vtpgGTV0is
+ zhsxVo69knhpEPIVcq8TwJ3MXG2+XWNQp+POUAs1H0De5zyyiyMRlkSCghfcP6au
+ 1A6KiA/ogyumRutouWKKu8dAEzQyxprg9hq1qJbuVHeCMMxACjaQnueTYxbD/Xbp
+ 1EaHOWLopra/MTOUFxZc/cLJR14aFWEUPkFkB2CgpAw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=b2sdt1
- L+RtAvCJWD+Ejy+ZFvgQMjCXlABUGffB8yAfA=; b=wDSmux4G5XsrldAYsui0YF
- pYc8Svcsbxs4ZWyysfS0XnYYgzgFlGK65W2CxBUJlCWNyTC5mWVMT2cvaAfXSHfS
- uquhig/HLIC5SSZgSyJBr7pRjkYsl0aioO4aAme/OFok3dRbGp+dYN3Egryn3BjN
- ZQKtlfGjZRyzGqWJsuYq79ril5x5A7tBykog+2quKzQOsD601klvnizLN6sSJe21
- ORNH77lHrfe3ksC54G4wLc/YrjRHzwzNEC0MhJHCxcStVH5pKSPVYX6Vcg0Y8+K6
- O4HW2lD5mxpboe7fh8+ay7aHynmv3gNcxX2SFDwT0RtxurAfT9HyrPMpoL9KjUtw
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=7E2TpT
+ wENCgP1MRD7/Eziybb/Th2bGLOCc12fC88q6E=; b=q+xW6eiNUtLhXYj2T6MpV1
+ DO8WdVfGXHlYR8Od+K4ZToowmTlu5f3/0IOeXhM0VokgQyeONZ1a7SFy1qvQ09sS
+ RJo277PYsWoBr9JZzYUX1G8wrKf8zaGzsV3XCIqtSdwweXbLBWtRqbsDZDQyVKT8
+ BBUNVnMhxMxo6H0jMMQkFW58R8n+XHpB9KIkoJH+b3JN5yZPUEtHDIGdPI5GMBV/
+ YEWDRRva+BF230lJgh67fWaDUDKu+WGR40H/0ooi009xOpo+5NNKgJ0NOx8/e41Q
+ pUtQwoztthAvbEQgK30HoL9BjVCTgbU5uRqaC5EzMJnejxYGnCQB2JqhHaGLlKxw
  ==
-X-ME-Sender: <xms:82D3XYYias_kvtl7_R0ILc0k8BsgyyYH-tzt2rV1jsQwfOdwtKr3XA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddthedgvddtucetufdoteggodetrfdotf
+X-ME-Sender: <xms:VGP3XUY8i-9w8CG05Yj5PzjIikoPOmggk-UF_ctcBee-8Lck051Ulg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddthedgvddvucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
  vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
  drkeelrdeikedrjeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggv
  rhhnohdrthgvtghhnecuvehluhhsthgvrhfuihiivgeptd
-X-ME-Proxy: <xmx:82D3XWofO-dhm5zVt2cImA2pQHn1JHEAMECKaBperVUf4LUGme1KBQ>
- <xmx:82D3XcYf6FwSIxZiZteTo-Eyu0wayV82DR75lHASu3ZTWx5dJdEZjQ>
- <xmx:82D3XeTmSoQpebhQDlaOCf4ZnlRApl7Hq_DyQFTnf4GRE6ikH9CZZQ>
- <xmx:9GD3XYvCRlj-vrtszBqs79rDoXPTEjGttA70nTEU0BduQ4J5v2mBdw>
+X-ME-Proxy: <xmx:VGP3Xbt6ohxrttMcaXVI6FmO7AAaqrpN7X7GqTN0Wk7tLzLIlYh-yg>
+ <xmx:VGP3XRtN1Yg5tIbLqODohz6GBDmEP1smxIZbRdwPBUzowBcnBB7ffA>
+ <xmx:VGP3XQe2jz2UyPBCXhDoFD1nNHKHF_HUD8nsB_jR_XrJ_cT8fDkXMA>
+ <xmx:VmP3XVbpO_j_XIh2rB_1sEeclFhYceWTGR5NP61U8O2Mv5Qzxs8Stw>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id ACF288005A;
- Mon, 16 Dec 2019 05:48:18 -0500 (EST)
-Date: Mon, 16 Dec 2019 11:48:16 +0100
+ by mail.messagingengine.com (Postfix) with ESMTPA id 690A280063;
+ Mon, 16 Dec 2019 05:58:28 -0500 (EST)
+Date: Mon, 16 Dec 2019 11:58:27 +0100
 From: Maxime Ripard <maxime@cerno.tech>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH 02/12] dt-bindings: display: rockchip-lvds: Document PX30
- PHY
-Message-ID: <20191216104816.zttjrgck3rdr54ok@gilmour.lan>
+Subject: Re: [PATCH 09/12] drm/rockchip: lvds: Add PX30 support
+Message-ID: <20191216105827.rxkfbwemkqw446jx@gilmour.lan>
 References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
- <20191213181051.25983-3-miquel.raynal@bootlin.com>
+ <20191213181051.25983-10-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
-In-Reply-To: <20191213181051.25983-3-miquel.raynal@bootlin.com>
+In-Reply-To: <20191213181051.25983-10-miquel.raynal@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_024823_149766_4E3D7E37 
-X-CRM114-Status: GOOD (  13.69  )
+X-CRM114-CacheID: sfid-20191216_025831_577554_F30A935B 
+X-CRM114-Status: GOOD (  12.27  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -111,63 +110,87 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
  linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
  Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5855270811887742891=="
+Content-Type: multipart/mixed; boundary="===============3093668142488151188=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5855270811887742891==
+--===============3093668142488151188==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="inqcuz5g7xh4n5en"
+	protocol="application/pgp-signature"; boundary="akf2tzjwfz7nnjic"
 Content-Disposition: inline
 
 
---inqcuz5g7xh4n5en
+--akf2tzjwfz7nnjic
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Fri, Dec 13, 2019 at 07:10:41PM +0100, Miquel Raynal wrote:
-> PX30 SoCs use a single PHY shared by two display pipelines: MIPI DSI
-> and LVDS. In the case of the LVDS IP, document the possibility to fill
-> a PHY handle.
->
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-> ---
->  .../devicetree/bindings/display/rockchip/rockchip-lvds.txt     | 3 +++
->  1 file changed, 3 insertions(+)
->
-> diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt
-> index aa5663a6fd42..ec7b4341cfd2 100644
-> --- a/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt
-> +++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt
-> @@ -19,6 +19,9 @@ Required properties:
->  - rockchip,grf: phandle to the general register files syscon
->  - rockchip,output: "rgb", "lvds" or "duallvds", This describes the output interface
->
-> +- phys: LVDS/DSI DPHY (px30 only)
-> +- phy-names: name of the PHY, should be "dphy"
+Hi,
 
-Should or must?
+On Fri, Dec 13, 2019 at 07:10:48PM +0100, Miquel Raynal wrote:
+> +static int px30_lvds_grf_config(struct drm_encoder *encoder,
+> +				struct drm_display_mode *mode)
+> +{
+> +	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
+> +	u8 nhsync = !(mode->flags & DRM_MODE_FLAG_PHSYNC);
+> +	u8 nvsync = !(mode->flags & DRM_MODE_FLAG_PVSYNC);
+> +	u8 ndclk = !(mode->flags & DRM_MODE_FLAG_PCSYNC);
+> +	int ret;
+> +
+> +	if (lvds->output != DISPLAY_OUTPUT_LVDS) {
+> +		DRM_DEV_ERROR(lvds->dev, "Unsupported display output %d\n",
+> +			      lvds->output);
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (nhsync ^ nvsync) {
+> +		DRM_DEV_ERROR(lvds->dev, "Unsupported Hsync/Vsync polarity\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	/* Set format */
+> +	ret = regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON1,
+> +				 PX30_LVDS_FORMAT(lvds->format),
+> +				 PX30_LVDS_FORMAT(lvds->format));
+> +	if (ret)
+> +		return ret;
+> +
+> +	/* Control Hsync/Vsync polarity */
+> +	ret = regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON0,
+> +				 PX30_LVDS_TIE_CLKS(1),
+> +				 PX30_LVDS_TIE_CLKS(1));
+> +	if (ret)
+> +		return ret;
+> +
+> +	/* Set Hsync/Vsync polarity */
+> +	ret = regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON0,
+> +				 PX30_LVDS_INVERT_CLKS(1),
+> +				 PX30_LVDS_INVERT_CLKS(nhsync));
+> +	if (ret)
+> +		return ret;
 
-Also, phy-names is optional only for px30
+I don't know the hardware but it seems pretty weird to me. hsync and
+vsync in LVDS are not clocks (or even signals), they're a bit in the
+payload. Is there any explanation in the datasheet (or even a
+datasheet in the first place)?
 
 Maxime
 
---inqcuz5g7xh4n5en
+--akf2tzjwfz7nnjic
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfdg8AAKCRDj7w1vZxhR
-xel0AP9MqWCTdMxRsTUEkW3yY3dbF1oX5qWpR8bMcDtuj70uRwEA57+6MTtKXQt5
-k9opFOaTXgz5rq8ptFWDC/kAy5Z8/Ao=
-=SRme
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfdjUgAKCRDj7w1vZxhR
+xRBYAP44GLCelEvFF7JRcxbERsDpTT+xk8XxtfgoWUly8jPqegD+Jrne3aLXYopK
+ogFPLh6TeB2oQ1+pAWNgKDtT5Zntxwo=
+=SVmk
 -----END PGP SIGNATURE-----
 
---inqcuz5g7xh4n5en--
+--akf2tzjwfz7nnjic--
 
 
---===============5855270811887742891==
+--===============3093668142488151188==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -178,5 +201,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5855270811887742891==--
+--===============3093668142488151188==--
 
