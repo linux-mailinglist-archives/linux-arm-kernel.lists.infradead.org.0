@@ -2,88 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAA4A121AD1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 21:21:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A1A1121AF7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 21:36:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+PcpoV45hJkbZNzdYj6y97mWpZ2Ru+85JzT+2Me564s=; b=jx7ODco3DtKEDR
-	4P/3uKbyjmec7I6p/4R7n6mbhVF0pPIfA3b0gOKU3La7HXJA7UM3kE/9Pz9vM0OEtqnGyYQjFJs7l
-	K6YQC9LZNC1GiCBvbYdKIYdLWMTwSPunj+kU6iyzgrL0v5olMEW+uvZo/5T+68714jsxSy8SFYfJ+
-	P04snZykjupg/Q7gQqhlPC8hI5gFPD7sMracqM9/z6ps+Ir9dk1etGEYB1ulHo5OWfhNHsUDWVF3x
-	queF5K7RR1mIDirKi79Zo9sDmkrGcGi86l+C2vCYPsMevkM3mI6rWshzWDadIKu554T5KBRgzF/AS
-	ZGfMYpfuQtdbYoGt0d1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=f4JFWFf5Yo6zbSW83S4Qk6F0A1acmu806zboRWa+zpU=; b=VhZC9bo1Fxp7caO+LNSK8eYMJ
+	k9lIlRDbNMJvHuaV3PPxQSDdc56xQmHSIwS+FymFOWUsGmNuoaD6guhWc/ZDkGybcCFzQLT7Sooyj
+	XDST88yTEsDRJURsZDiSOOYVg63MVxzPuug5pqFMJ6623c/R73XlITGxM1dzZDAURL+y6vDld6bm6
+	rFv/6jSyiD8NjOK5Qz8wvMRLLzmXkQSL5ZNfFZRT2n5Vpd3hEw7lhTgbOlf1ra1t0Gd4bAPKGrwZW
+	E220XW6xW5maPOq8yZ2c1LRe82sfRWV8revYyZeQHujbI7jGxMB/Hui6KLjOupYz30Qlpp8hkbnTy
+	hJQHYK9tQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igwrv-00039n-Ae; Mon, 16 Dec 2019 20:21:27 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1igx6i-000079-7a; Mon, 16 Dec 2019 20:36:44 +0000
+Received: from mail-wr1-f68.google.com ([209.85.221.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igwrm-00039U-0G
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 20:21:19 +0000
-Received: by mail-lj1-x243.google.com with SMTP id j6so8259099lja.2
+ id 1igx6U-00005o-Sz
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 20:36:32 +0000
+Received: by mail-wr1-f68.google.com with SMTP id g17so8917382wro.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 12:21:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=netronome-com.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:in-reply-to:references
- :organization:mime-version:content-transfer-encoding;
- bh=Coj/0TiMCvz30A/R8txuCVhc5n1pm41RNaOjJUWUaS0=;
- b=fPZkCIk0sJHFLthoSa2l0yCn2V8lLSwii17NEqkwT98ikRbJYd1twQVIIGQw7ltrH6
- J6doHz2eDuvnDERtdF9jYiFBsZs/SpGZwOcVAugBoU9E3jT41G/1ZigNahbIa1J8rg5K
- kSbJqo+ITbb2zxFaZluYltZ1isGPfKYAAXcte6U5wo82/wR2RXiPcnHGvaAKqPXV0Dnk
- NKG2rqg84KUceg2vu6AL70Z+Ieyhw9hnEIQ5ol8TGm1ChMs4pc0/vpjrVAQGMVZuPzes
- sXe0f9brx+3rHfDB2mBiVtY6XH6BhzvHiPtE68xp98dm6LygxTRY0c3DDKJPoAoGnVLW
- xjPw==
+ Mon, 16 Dec 2019 12:36:26 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
- :references:organization:mime-version:content-transfer-encoding;
- bh=Coj/0TiMCvz30A/R8txuCVhc5n1pm41RNaOjJUWUaS0=;
- b=gtoLRG7/9rO3WrASsbsOGQMXsNbVwCV5CAfbyROw2AKZWRpGpElamiQQbWJTlHNJQ3
- 6dIa1CQR0qbyj1TCWFYBRfxs45rkBy1UPgq8q23YpP5wK/RbwNfM94hJe2QsecVRb7L8
- MKN+5p3PI7btHuzPSaWR4AmIQ4FbMTeTWVAlO1JYMDGn5yKxg1ICFWrYGaAo73tOnzUC
- 3NDu4d1Uy3qTWsvToPSwq+w7Rj7qcUeHkp/wTCtKl8JMz8uweRsXC4YO5jIIZhVggQ4w
- yoxfFkArOi9o+ekOPAB0MyRjSMcJAWQnO/Q0HdY5FOu1NsrpLCnuwytDFLgkmoR/hs9g
- j15g==
-X-Gm-Message-State: APjAAAXffPHbZ+j1kfWXk7bbkF8oHfr/9BFTeEnk6d0Rdi6BnJKi+Y0X
- mgdRn/N53EdTWTPqdsLIVBjgrV88WcM=
-X-Google-Smtp-Source: APXvYqwvffi+Q+fIIrfBgnRjuyf8h/Vz0+Y6j1dBgFciwrLYs7AYC/zjAUfMezy6GLiXnMwUcjT2XQ==
-X-Received: by 2002:a05:651c:c4:: with SMTP id 4mr644180ljr.131.1576527676330; 
- Mon, 16 Dec 2019 12:21:16 -0800 (PST)
-Received: from cakuba.netronome.com ([66.60.152.14])
- by smtp.gmail.com with ESMTPSA id r26sm9508344lfm.82.2019.12.16.12.21.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Dec 2019 12:21:16 -0800 (PST)
-Date: Mon, 16 Dec 2019 12:21:06 -0800
-From: Jakub Kicinski <jakub.kicinski@netronome.com>
-To: Jose Abreu <Jose.Abreu@synopsys.com>
-Subject: Re: [PATCH net 0/8] net: stmmac: Fixes for -net
-Message-ID: <20191216122106.582b6cc9@cakuba.netronome.com>
-In-Reply-To: <BN8PR12MB326639325F465266DEACAA64D3510@BN8PR12MB3266.namprd12.prod.outlook.com>
-References: <cover.1576005975.git.Jose.Abreu@synopsys.com>
- <20191213162216.2dc8a108@cakuba.netronome.com>
- <BN8PR12MB326639325F465266DEACAA64D3510@BN8PR12MB3266.namprd12.prod.outlook.com>
-Organization: Netronome Systems, Ltd.
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=JF5j2QhBPiKVEsszO1fwNIEf5ztIBBW8hIVMIyB6TX8=;
+ b=rHqSYEhzzwRDbh3+TC+QEt6dSHTd2brtkpzuLEh1REtqogd5q5pucSOHZ7CVQp/tz2
+ pmrN9ZFNdGmQfednLHLL0LV82Rwus/WQkFoE6z2A9Ig0Z2y2yZtFebmIITSz3TJxaGhd
+ MiTbhCWnUo5ht2s1lnfbcJU4Ubji5sFHaKRJYjD1iwqzuheA6J/SP0EAXdE+7faKQYX3
+ VRcuXg115nEVhLatwP+8kU86u1e2JWif1sUclo+pGjFdbtL+h9JH07Y9pb0WLwswUo07
+ LMCSdzAemZlADmgC9iNOZnjmV8TfudUUhV7efrAWzr4xeyz96oLNKLPlVhAY+TxyjwCb
+ XMLw==
+X-Gm-Message-State: APjAAAWlFXYZ0Er0QjPlFXDf5BPvwtyfDKEQR6BNSQIxcJPSYsMhlzGw
+ Qbww6d/9ysaKi6KW20n7vm8=
+X-Google-Smtp-Source: APXvYqz9kOCrk7TdGWR+j99RWSQ6+KDeJJaAl/3DJBRD938fSrWXpjD853kqh1J0TmYUVY6y872K+A==
+X-Received: by 2002:a5d:6305:: with SMTP id i5mr33173920wru.119.1576528585567; 
+ Mon, 16 Dec 2019 12:36:25 -0800 (PST)
+Received: from a483e7b01a66.ant.amazon.com
+ (cpc91200-cmbg18-2-0-cust94.5-4.cable.virginm.net. [81.100.41.95])
+ by smtp.gmail.com with ESMTPSA id v8sm22540503wrw.2.2019.12.16.12.36.23
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 16 Dec 2019 12:36:24 -0800 (PST)
+Subject: Re: [PATCH v4 1/6] arm/arm64/xen: hypercall.h add includes guards
+To: Pavel Tatashin <pasha.tatashin@soleen.com>, jmorris@namei.org,
+ sashal@kernel.org, linux-kernel@vger.kernel.org, catalin.marinas@arm.com,
+ will@kernel.org, steve.capper@arm.com, linux-arm-kernel@lists.infradead.org,
+ maz@kernel.org, james.morse@arm.com, vladimir.murzin@arm.com,
+ mark.rutland@arm.com, tglx@linutronix.de, gregkh@linuxfoundation.org,
+ allison@lohutok.net, info@metux.net, alexios.zavras@intel.com,
+ sstabellini@kernel.org, boris.ostrovsky@oracle.com, jgross@suse.com,
+ stefan@agner.ch, yamada.masahiro@socionext.com,
+ xen-devel@lists.xenproject.org, linux@armlinux.org.uk,
+ andrew.cooper3@citrix.com
+References: <20191204232058.2500117-1-pasha.tatashin@soleen.com>
+ <20191204232058.2500117-2-pasha.tatashin@soleen.com>
+From: Julien Grall <julien@xen.org>
+Message-ID: <c5dcf342-90f4-beb5-d2b1-4a37ccedfe42@xen.org>
+Date: Mon, 16 Dec 2019 20:36:23 +0000
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
+ Gecko/20100101 Thunderbird/68.3.0
 MIME-Version: 1.0
+In-Reply-To: <20191204232058.2500117-2-pasha.tatashin@soleen.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_122118_042264_70D16C77 
-X-CRM114-Status: GOOD (  17.88  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191216_123630_936185_CADECDC0 
+X-CRM114-Status: GOOD (  15.83  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [209.85.221.68 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (julien.grall.oss[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,68 +100,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 16 Dec 2019 09:26:22 +0000, Jose Abreu wrote:
-> From: Jakub Kicinski <jakub.kicinski@netronome.com>
-> Date: Dec/14/2019, 00:22:16 (UTC+00:00)
-> 
-> > On Tue, 10 Dec 2019 20:33:52 +0100, Jose Abreu wrote:  
-> > > Fixes for stmmac.
-> > > 
-> > > 1) Fixes the filtering selftests (again) for cases when the number of multicast
-> > > filters are not enough.
-> > > 
-> > > 2) Fixes SPH feature for MTU > default.
-> > > 
-> > > 3) Fixes the behavior of accepting invalid MTU values.
-> > > 
-> > > 4) Fixes FCS stripping for multi-descriptor packets.
-> > > 
-> > > 5) Fixes the change of RX buffer size in XGMAC.
-> > > 
-> > > 6) Fixes RX buffer size alignment.
-> > > 
-> > > 7) Fixes the 16KB buffer alignment.
-> > > 
-> > > 8) Fixes the enabling of 16KB buffer size feature.  
-> > 
-> > Hi Jose!
-> > 
-> > Patches directed at net should have a Fixes tag identifying the commit
-> > which introduced the problem. The commit messages should also describe
-> > user-visible outcomes of the bugs. Without those two its hard to judge
-> > which patches are important for stable backports.
-> > 
-> > Could you please repost with appropriate Fixes tags?  
-> 
-> I agree with you Jakub but although these are bugs they are either for 
-> recently introduced features (such as SPH and selftests), or for 
-> features that are not commonly used. I can dig into the GIT history and 
-> provide fixes tag for them all or I can always provide a backport fix if 
-> any user requires so. Can you please comment on which one you prefer ?
+Hi,
 
-I think Fixes tags helps either way, if the fix is not important enough
-upstream maintainers should be able to figure that out based on the
-commit message (or you can give advice on backporting below the ---
-line, like "Probably not worth backporting").
+On 04/12/2019 23:20, Pavel Tatashin wrote:
+> The arm and arm64 versions of hypercall.h are missing the include
+> guards. This is needed because C inlines for privcmd_call are going to
+> be added to the files.
+> 
+> Also fix a comment.
+> 
+> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+> ---
+>   arch/arm/include/asm/assembler.h       | 2 +-
+>   arch/arm/include/asm/xen/hypercall.h   | 4 ++++
+>   arch/arm64/include/asm/xen/hypercall.h | 4 ++++
+>   include/xen/arm/hypercall.h            | 6 +++---
+>   4 files changed, 12 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm/include/asm/assembler.h b/arch/arm/include/asm/assembler.h
+> index 99929122dad7..8e9262a0f016 100644
+> --- a/arch/arm/include/asm/assembler.h
+> +++ b/arch/arm/include/asm/assembler.h
+> @@ -480,7 +480,7 @@ THUMB(	orr	\reg , \reg , #PSR_T_BIT	)
+>   	.macro	uaccess_disable, tmp, isb=1
+>   #ifdef CONFIG_CPU_SW_DOMAIN_PAN
+>   	/*
+> -	 * Whenever we re-enter userspace, the domains should always be
+> +	 * Whenever we re-enter kernel, the domains should always be
 
-For the recent features it's quite useful to see the fixes tag so both
-humans and bots can immediately see its a recent feature and we don't
-have to worry about backports.
+This feels unrelated from the rest of the patch and probably want an 
+explanation. So I think this want to be in a separate patch.
+
+The rest of the patch looks good to me.
+
+Cheers,
+
+-- 
+Julien Grall
 
 _______________________________________________
 linux-arm-kernel mailing list
