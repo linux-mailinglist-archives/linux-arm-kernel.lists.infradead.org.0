@@ -2,73 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 084F411FEBC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 08:02:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 332E011FEB9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 08:02:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mik7utyj9ZwvoOUHNCkMd3EC34dsPQRzd+pnAZ9OJy4=; b=D98sNYsZm5yDfj
-	TW1+h2CEXXK8/ptk+H34jZg92tYI4dHKwyc8jrGu+8Q5IE7k70NByBhO51Z8/cau7zlEsxyVafwYB
-	RPRTUJZGHdmyZVc1BQHm/ciMUY1ZAPcOaXxAauiEIubJ2SsKKMl4e8JBDeOFvUsJOwUH7PZBP4kZ1
-	7+K0A0jtC0CGe/rIgpBe7DI8N7S1Qf7dJ659ync0QEA0qYq+Krovh2FW8HCNlsjOdoF6IBSjDFEzf
-	0n3Ryp3ZDFqeG6ptwm8qDiEOOYsC3UWbu4AWRG3SGNLS6ziigP2jlrRvCmHs4q49kC+rvuxOydPpJ
-	B3W+kKl7WejPHxDIGqYg==;
+	List-Owner; bh=ZvdWpmW3t/q3eYT3nAMMBNMkAh1uV9pXEhIlWU5bl64=; b=JJnJYsa/OPtyLF
+	3wHHQ9hfjIthppyz/zAGzeFnu3ZUKHazcLsqN+AOsTXF8bn/dYPlP9rUmICih1bYmjFYDIR0gSh6k
+	e0dm/a0IeU1gnos9/T7M5xk2vzeDPIDbDYgw+BbC2FWlVLbgOYjn+IA+G/1356Lsd5DrgYL+cXnra
+	+IZakwbKZYZcKQTm7m4I1SULIQKK9sRQUXGuVEj1RT4PdWlxSKRH2OloajKkQqJSeSN5hPMFcJrd/
+	WsWm6GTP+E4zdwMnNm6ah+zmxHeoT6d4kxjTn7amYybPM8mwCCtGsJtyVuqnS9fE6Li73eBbG5MsP
+	l+9mdZ4ErAM+AmtD5z5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igkOO-00059i-Ut; Mon, 16 Dec 2019 07:02:08 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1igkO6-000526-8A; Mon, 16 Dec 2019 07:01:50 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igkO0-00051V-8V
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 07:01:45 +0000
-Received: by mail-qk1-x744.google.com with SMTP id r14so3965866qke.13
+ id 1igkNy-00051B-AT
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 07:01:43 +0000
+Received: by mail-pg1-x542.google.com with SMTP id q127so3135090pga.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Dec 2019 23:01:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mNxq9QEx/Y0AFfmFBHfjO9qh1l6j5wyPEAuFcOtgvko=;
- b=k8Jz8WhY1cxn9bFKXeAi5vzaTBfRitVt26Dv8N8sNlYJP+LrdDlQqaBI0DhBwVSp3j
- jqUvtkluKNvckqYdwX0zAwgdTSijpgtwIQkpJR0wV31kbIiO6lN/sqeFNJxRolylHi9z
- mkNpLYAbfL38r2dXtuppefORp2tXgISUEAbu4=
+ Sun, 15 Dec 2019 23:01:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=QTc3d1HmVPrybJi2/QarMwHVxM3YGV+FrtECoqhlaVM=;
+ b=V4YmLffaWP4s+kQ6BJvq6kVT1zDNR+3hMe/lXQaI/CpjA9B/Yi5Fi9/fZNahOPncH5
+ PUWVlR8lNtVE70GoY0Nu0MWnUDvbJJcf0KceehFUqHTJTCmItz8Y31gurqLGiRtTCfZi
+ 3nLA1Q39WIf44c0UDCUciUgPAx6BSvLG3aQ5LHuOiA+rEEHyawtOwHxTt56S4rT7OBjp
+ KvYE/SPWlm66nx+6JfpdEPfbLmaHGV3B85WbYoogHYzWh5K4kIXs/2Wz2Ui6nuEIvu6t
+ uIHTdgb1CszgVdzkOG1P83gaG90DhxDUIRm06bM2kM9Ihph8eR6EnBqX4T+76jnVE0dd
+ y28A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=mNxq9QEx/Y0AFfmFBHfjO9qh1l6j5wyPEAuFcOtgvko=;
- b=ISIdHbHiJu/QiS/cMChHjwnhFHGM40Pf7X6rhM2bSQslcWjwVxxGxv0lKH6x8PAKHn
- FBF/L5BQeXbybVLTjsOn9n1n11M8Fhr9NnnDP4bPt+AgOUsfA4h4eWZclHSukNV0a7fH
- 98MtL0CJauT+/Zl8xe+jlk/iMNwsTipUMrYnLNsbLmrsq2HX71vTHToNobrZjJafqwJ8
- 2AZEpf0kJH793+8yCz2SUSolkH08R6rRvdqI4cQihxVITbTNLxkKFlD6l3jtMquD/FIk
- P/BTCCJgg6d0haIhYq9qP7s1hQzyGzarKbho/i/kC4yHxomo8G0O5Jup5Lq+bSudPVdf
- Y16w==
-X-Gm-Message-State: APjAAAU8L8qoAgqpGl4lQhUFmNMsucHwaaTYsLljb6bD7rlAc3o0oDPG
- BpXz57HWTIkvn48EEPEts3D5D+feyD0Ylw/uQ/3Z+g==
-X-Google-Smtp-Source: APXvYqzVdceLqcG+3fAzc6E6Q5G9XbMKp+zuFLQXrq1VY+BvVu+NpyPVVDbAVBh4Vyd+Tbmbw9ZSQBEix3ZXm6HqNCo=
-X-Received: by 2002:ae9:f003:: with SMTP id l3mr25598095qkg.457.1576479702489; 
- Sun, 15 Dec 2019 23:01:42 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=QTc3d1HmVPrybJi2/QarMwHVxM3YGV+FrtECoqhlaVM=;
+ b=tnwG4JFQHHqU9E59C8+uvtk0LVSeEW5BQB2NVcwM+NbqMIiMSCK9pTQsd1c8KnYRjS
+ Kl1hN3o+pyfIufYYlu2mY3q27+VwPo7Ve8Y708qDMf3f5gKvShO4eWN1CMuSBZqf3Y8I
+ 3AwYdRy2I070jP3m5qWb7jCFTlOppfnqVNaIT4N+/EgVRRDJQTyG2q1iHjfaRcDPL+UX
+ LIRhiVcF9ZAcdlI4+GH6X95G3lhmg0DWOLZwAoIdpHePNJSMDXRbVI53Fb6XSPJbbiVo
+ W4ICjJzynzNitWndcBnDtkPPk/m1eDsyNj3duv/yCfg040Gy9gpSVzWRV9NUXFBtIoXg
+ dJuQ==
+X-Gm-Message-State: APjAAAW0Qf6cYq7+yv82V/U14NJH0qnFuepYi5dXjaLX0tw9XSytOFtt
+ iE1kUB75unnlKLjJFa21BrU=
+X-Google-Smtp-Source: APXvYqw1S8NeDvux5szO7FbOa9ytvis7sjbDjIn33rJHA9DmPrfRgaJxVhOZcjtvgNbB7S9x0NioTA==
+X-Received: by 2002:a63:6946:: with SMTP id e67mr11257641pgc.181.1576479700620; 
+ Sun, 15 Dec 2019 23:01:40 -0800 (PST)
+Received: from taoren-ubuntu-R90MNF91 (c-24-4-25-55.hsd1.ca.comcast.net.
+ [24.4.25.55])
+ by smtp.gmail.com with ESMTPSA id 78sm19949249pfu.65.2019.12.15.23.01.39
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 15 Dec 2019 23:01:40 -0800 (PST)
+Date: Sun, 15 Dec 2019 23:01:32 -0800
+From: Tao Ren <rentao.bupt@gmail.com>
+To: Joel Stanley <joel@jms.id.au>
+Subject: Re: [PATCH] ARM: dts: aspeed: AST2400 disables hw checksum
+Message-ID: <20191216070131.GA11755@taoren-ubuntu-R90MNF91>
+References: <20191216064132.78015-1-joel@jms.id.au>
 MIME-Version: 1.0
-References: <1575960413-6900-1-git-send-email-weiyi.lu@mediatek.com>
- <1575960413-6900-4-git-send-email-weiyi.lu@mediatek.com>
-In-Reply-To: <1575960413-6900-4-git-send-email-weiyi.lu@mediatek.com>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Mon, 16 Dec 2019 15:01:31 +0800
-Message-ID: <CANMq1KC4Qz8yKNTqfjYb335RCY8t5pdRa09Bvroo_BNXv19hWQ@mail.gmail.com>
-Subject: Re: [PATCH v9 3/9] soc: mediatek: Add basic_clk_id to scp_power_data
-To: Weiyi Lu <weiyi.lu@mediatek.com>
+Content-Disposition: inline
+In-Reply-To: <20191216064132.78015-1-joel@jms.id.au>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_230144_323561_F213DA7C 
-X-CRM114-Status: GOOD (  18.70  )
+X-CRM114-CacheID: sfid-20191215_230142_386091_844F85A3 
+X-CRM114-Status: GOOD (  15.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rentao.bupt[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -77,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,102 +100,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, srv_heupstream <srv_heupstream@mediatek.com>,
- James Liao <jamesjj.liao@mediatek.com>, lkml <linux-kernel@vger.kernel.org>,
- Fan Chen <fan.chen@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Yong Wu <yong.wu@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Andrew Jeffery <andrew@aj.id.au>, Alexander Filippov <a.filippov@yadro.com>,
+ linux-aspeed@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 10, 2019 at 2:47 PM Weiyi Lu <weiyi.lu@mediatek.com> wrote:
->
-> Try to stop extending the clk_id or clk_names if there are
-> more and more new BASIC clocks. To get its own clocks by the
-> basic_clk_id of each power domain.
-
-Looking at this a bit more, I'm not sure why we make this an option...
-
-The easiest way to make this consistent with non-MT8183 scpsys drivers
-is to add your missing clocks to "enum clk_id" and clk_names, but I
-understand it's not desired (number of clocks would blow up).
-
-Can we, instead, convert all existing scpsys drivers to use "char *"
-clock names instead?
-I made an attempt here and it seems simple enough:
-https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/1969103
-
->
-> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+On Mon, Dec 16, 2019 at 05:41:32PM +1100, Joel Stanley wrote:
+> There is no need to specify this property in the device tree as the
+> AST2400 does not have working hardware checksum and disables it in the
+> driver.
+> 
+> Signed-off-by: Joel Stanley <joel@jms.id.au>
 > ---
->  drivers/soc/mediatek/mtk-scpsys.c | 29 +++++++++++++++++++++--------
->  1 file changed, 21 insertions(+), 8 deletions(-)
->
-> diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
-> index f669d37..915d635 100644
-> --- a/drivers/soc/mediatek/mtk-scpsys.c
-> +++ b/drivers/soc/mediatek/mtk-scpsys.c
-> @@ -117,6 +117,8 @@ enum clk_id {
->   * @sram_pdn_ack_bits: The mask for sram power control acked bits.
->   * @bus_prot_mask: The mask for single step bus protection.
->   * @clk_id: The basic clocks required by this power domain.
-> + * @basic_clk_id: provide the same purpose with field "clk_id"
-> + *                by declaring basic clock prefix name rather than clk_id.
-
-Actually, I prefer the name clk_name, not sure why I pushed you in
-that direction...
-
->   * @caps: The flag for active wake-up action.
->   */
->  struct scp_domain_data {
-> @@ -127,6 +129,7 @@ struct scp_domain_data {
->         u32 sram_pdn_ack_bits;
->         u32 bus_prot_mask;
->         enum clk_id clk_id[MAX_CLKS];
-> +       const char *basic_clk_id[MAX_CLKS];
->         u8 caps;
+>  arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts | 1 -
+>  arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts  | 1 -
+>  arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts        | 3 ---
+>  3 files changed, 5 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
+> index b1e10f0c85c9..322587b7b67d 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
+> @@ -76,7 +76,6 @@ &uart5 {
+>  
+>  &mac1 {
+>  	status = "okay";
+> -	no-hw-checksum;
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
 >  };
->
-> @@ -493,16 +496,26 @@ static struct scp *init_scp(struct platform_device *pdev,
->
->                 scpd->data = data;
->
-> -               for (j = 0; j < MAX_CLKS && data->clk_id[j]; j++) {
-> -                       struct clk *c = clk[data->clk_id[j]];
-> +               if (data->clk_id[0]) {
-> +                       WARN_ON(data->basic_clk_id[0]);
->
-> -                       if (IS_ERR(c)) {
-> -                               dev_err(&pdev->dev, "%s: clk unavailable\n",
-> -                                       data->name);
-> -                               return ERR_CAST(c);
-> -                       }
-> +                       for (j = 0; j < MAX_CLKS && data->clk_id[j]; j++) {
-> +                               struct clk *c = clk[data->clk_id[j]];
-> +
-> +                               if (IS_ERR(c)) {
-> +                                       dev_err(&pdev->dev,
-> +                                               "%s: clk unavailable\n",
-> +                                               data->name);
-> +                                       return ERR_CAST(c);
-> +                               }
->
-> -                       scpd->clk[j] = c;
-> +                               scpd->clk[j] = c;
-> +                       }
-> +               } else if (data->basic_clk_id[0]) {
-> +                       for (j = 0; j < MAX_CLKS &&
-> +                                       data->basic_clk_id[j]; j++)
-> +                               scpd->clk[j] = devm_clk_get(&pdev->dev,
-> +                                               data->basic_clk_id[j]);
->                 }
->
->                 genpd->name = data->name;
-> --
-> 1.8.1.1.dirty
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
+> index aaa77a597d1a..54e508530dce 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
+> @@ -75,7 +75,6 @@ &uart5 {
+>  
+>  &mac1 {
+>  	status = "okay";
+> -	no-hw-checksum;
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
+>  };
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
+> index affd2c8743b1..041f28e3ac10 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
+> @@ -107,10 +107,7 @@ flash@0 {
+>  
+>  &mac0 {
+>  	status = "okay";
+> -
+>  	use-ncsi;
+> -	no-hw-checksum;
+> -
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_rmii1_default>;
+>  };
+> -- 
+> 2.24.0
+
+Thanks for the fix, Joel. I totally forget I added the property in
+ast2400 dts.
+
+Reviewed-by: Tao Ren <rentao.bupt@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
