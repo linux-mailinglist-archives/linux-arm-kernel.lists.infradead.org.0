@@ -2,92 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A293412098D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 16:22:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F1BC1209D6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 16:39:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rak6u5dzZ4o9d4JrXulwKcJeRsXzCbZBlL9jDGA5mqY=; b=Z76QgHWguj/gWs
-	fZek4q7TfNpfbDS1g/7hhG42eqL6nxbYZXg8IC+A6JtI3+x/eKJZQShlWWrm8LkoyeSF+DhoUFZbP
-	QTlc9riHru64p2tybiNNB/JioO2j5J0mJiHLhX+eoYCCNJiMg9y2BX5mo/ijBMSq0zAR8Zdk+Hyjt
-	rUmipF/DWsfx+FKrnK99dxzJHHQ3jJTWCH9d6vv+npgbjr2nYqPRYlwSuPliaG2P76ry91EOz0R3w
-	k8N07oRr/CL1g1sgWFp6JdtVLgqo7P01ZItu0qtVhl1LM2cuaiyKjId+gqoNqaqhYeFnCJQ0/zPJf
-	ATEcQjUtso2bgqjsIHnQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NOs3wZPdazUpI0Pbgr+qJgSgRCf+hOMTCodn2Qr0Tao=; b=Sw6dwS13MLferD
+	Wg6cJCXuecUtX/vgerQD76WFrPu6uTXjJz1rKi/La8ZevyFKrc8gcKpUp1kpgMJ6U0mJrxgDoY2Zo
+	mAOFeaYQsm4SoVPubo0SWzuBoB56z6I8pYOv44Y2xSxXDoMW7JVqKXvEB0BCDskchOFAqzMIqHt7d
+	jq3N0ia4Lx0Lt7btBoM1gMp8Pee4t/dP1Sc0LF2OoUkeJR4QupGPVf9T3KBvLyp2pJomQ652efuLf
+	d4Px1SX0oDv3FjcPcaMhf6vde5iUR4kum9r198yZVhRtio1orHsWRUr/VATEkv8Mi5TWzYb+L2q2L
+	YHr1Uiv9lBXZDb97f2Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igsC6-0005tw-BD; Mon, 16 Dec 2019 15:21:58 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1igsTE-0003i5-8E; Mon, 16 Dec 2019 15:39:40 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igsBq-0005rb-6a
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 15:21:43 +0000
-Received: by mail-wr1-x441.google.com with SMTP id w15so7768918wru.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 07:21:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=qLW85+iCakysrIL3d9ahlxs/+0bq3c8q3dQkkBI+mAY=;
- b=l9eRHG6cELj/1PPW5EMQL8KGSpML40lgI42oonoObgVkQJpwcUpAhOzugGJ1YzDVh/
- Xn+g5HPMl+dLsYUrlg7312P/+FNbj9QEnm2kVtOKCQdPOD447fXhj6oyX5lGi6hArYGI
- ORKa/zBvvQR/ijSqhhv+sdOOlpsJpm4PmFmwb3UgJplzSokAD8u8b9pQ7kaUsCXJ9f9m
- Lv/bhO/Swr+5cFJ21U8uk/Jd33llMPn0xeTlVRk8bVjXZJZrg3/QC8m5DHrKlgB4M0QV
- osHGkfb8Z2PSqzmCGeUX3qd3TpPIq2QDjMGPHvZoY2oInrkzLxNL6LEBL8zZzqTbZKg1
- pYfA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=qLW85+iCakysrIL3d9ahlxs/+0bq3c8q3dQkkBI+mAY=;
- b=iknjIZfsWNxftoLs7Waf8r0EKShe0vGSxx9Xvy2GPAzdQ8tf+BKR6MuYAsjaXkaAKd
- zTqAoTtksVQVU6Z1VPKTILyWS2I6o8lA3FFIGgQP7OmCHokoaqwhlbmM3As37nU0dXrH
- 9jkdDrwrSdQkkI6+HnW0JjtkbvBEYeTVl72omrjXnLtK29y7Sa+u4e5DPyVE5j6JwVmB
- igogdvenQMygODr3I4Fi7U8smPzaOP/9PbHCICPt6ZVw5EBky6XADuzaclhYfOKIkj7q
- GOvTRyW1YJFyCCYY4fHCIOhmXbOrxQkTpBtRAp6lBNcv5H4e3a1N3df+0gDCBcjJ96Us
- hL1w==
-X-Gm-Message-State: APjAAAWZQYVv0x0fkvGjQaUkhzuBdbOpsKbrbSHz1r8jftNEkS1/mvKE
- YbB09guUhFYw7qPRoswU99m9eA==
-X-Google-Smtp-Source: APXvYqweC7S5MEqLKn13rfYs2+xIpXzL1Op8mNT8o+RON6KKvlXrllfQ92Cbjp2t7tj6nFBRu6VFaw==
-X-Received: by 2002:a5d:4b8f:: with SMTP id b15mr32672267wrt.100.1576509699617; 
- Mon, 16 Dec 2019 07:21:39 -0800 (PST)
-Received: from dell ([185.17.149.202])
- by smtp.gmail.com with ESMTPSA id x10sm22076901wrv.60.2019.12.16.07.21.38
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Dec 2019 07:21:39 -0800 (PST)
-Date: Mon, 16 Dec 2019 15:21:38 +0000
-From: Lee Jones <lee.jones@linaro.org>
-To: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-Subject: Re: [PATCH v7 6/6] rtc: Add support for the MediaTek MT6358 RTC
-Message-ID: <20191216152138.GF2369@dell>
-References: <1576057435-3561-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1576057435-3561-7-git-send-email-hsin-hsiung.wang@mediatek.com>
+ id 1igsSh-0003Su-Af
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 15:39:09 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 4860D5A56A57D6BA28D3;
+ Mon, 16 Dec 2019 23:38:53 +0800 (CST)
+Received: from lhrphicprd00229.huawei.com (10.123.41.22) by
+ DGGEMS405-HUB.china.huawei.com (10.3.19.205) with Microsoft SMTP Server id
+ 14.3.439.0; Mon, 16 Dec 2019 23:38:43 +0800
+From: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+To: <linux-mm@kvack.org>, <linux-acpi@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <x86@kernel.org>
+Subject: [PATCH V6 0/7]  ACPI: Support Generic Initiator proximity domains
+Date: Mon, 16 Dec 2019 23:38:02 +0800
+Message-ID: <20191216153809.105463-1-Jonathan.Cameron@huawei.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1576057435-3561-7-git-send-email-hsin-hsiung.wang@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.123.41.22]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_072142_237444_ACEB08E1 
-X-CRM114-Status: GOOD (  11.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_073907_696820_E4A19BB6 
+X-CRM114-Status: GOOD (  18.92  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,35 +63,586 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>, Josef Friedl <josef.friedl@speed.at>,
- srv_heupstream@mediatek.com, Frank Wunderlich <frank-w@public-files.de>,
- Ran Bi <ran.bi@mediatek.com>, Sean Wang <sean.wang@mediatek.com>,
- linux-kernel@vger.kernel.org, Tianping Fang <tianping.fang@mediatek.com>,
- devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Alexandre Belloni <alexandre.belloni@free-electrons.com>,
- linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Kate Stewart <kstewart@linuxfoundation.org>, linux-rtc@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Brice Goglin <brice.goglin@gmail.com>, Tao Xu <tao3.xu@intel.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, "Rafael J .
+ Wysocki" <rjw@rjwysocki.net>, linuxarm@huawei.com,
+ Keith Busch <keith.busch@intel.com>, jglisse@redhat.com,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Hanjun Guo <guohanjun@huawei.com>, Dan Williams <dan.j.williams@intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCAxMSBEZWMgMjAxOSwgSHNpbi1Ic2l1bmcgV2FuZyB3cm90ZToKCj4gRnJvbTogUmFu
-IEJpIDxyYW4uYmlAbWVkaWF0ZWsuY29tPgo+IAo+IFRoaXMgYWRkIHN1cHBvcnQgZm9yIHRoZSBN
-ZWRpYVRlayBNVDYzNTggUlRDLiBEcml2ZXIgdXNpbmcKPiBjb21wYXRpYmxlIGRhdGEgdG8gc3Rv
-cmUgZGlmZmVyZW50IFJUQ19XUlRHUiBhZGRyZXNzIG9mZnNldC4KPiAKPiBTaWduZWQtb2ZmLWJ5
-OiBSYW4gQmkgPHJhbi5iaUBtZWRpYXRlay5jb20+Cj4gU2lnbmVkLW9mZi1ieTogSHNpbi1Ic2l1
-bmcgV2FuZyA8aHNpbi1oc2l1bmcud2FuZ0BtZWRpYXRlay5jb20+Cj4gQWNrZWQtYnk6IEFsZXhh
-bmRyZSBCZWxsb25pIDxhbGV4YW5kcmUuYmVsbG9uaUBib290bGluLmNvbT4KPiAtLS0KPiAgZHJp
-dmVycy9ydGMvcnRjLW10NjM5Ny5jICAgICAgIHwgMjQgKysrKysrKysrKysrKysrKy0tLS0tLS0t
-Cgo+ICBpbmNsdWRlL2xpbnV4L21mZC9tdDYzOTcvcnRjLmggfCAxNiArKysrKysrKysrKysrKyst
-CgpBY2tlZC1ieTogTGVlIEpvbmVzIDxsZWUuam9uZXNAbGluYXJvLm9yZz4KCi0tIApMZWUgSm9u
-ZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg
-4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNl
-Ym9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Introduces a new type of NUMA node for cases where we want to represent
+the access characteristics of a non CPU initiator of memory requests,
+as these differ from all those for existing nodes containing CPUs and/or
+memory.
+
+These Generic Initiators are presented by the node access0 class in
+sysfs in the same way as a CPU.   It seems likely that there will be
+usecases in which the best 'CPU' is desired and Generic Initiators
+should be ignored.  The final few patches in this series introduced
+access1 which is a new performance class in the sysfs node description
+which presents only CPU to memory relationships.  Test cases for this
+are described below.
+
+Thanks to Dan for suggestions on V5.  Most of the changes are
+an attempt to implement what was discussed in that thread.
+
+The new patch makes it clear that some of the existing naming is perhaps
+more specific than it should be. It may be worth a follow up patch
+to rename from *cpu* to *initiator* in a few places where this might
+cause confusion.
+
+One outstanding question to highlight in this series is whether
+we should assume all ACPI supporting architectures support Generic
+Initiator domains, or whether to introduce an
+ARCH_HAS_GENERIC_INITIATOR_DOMAINS entry in Kconfig.
+
+Changes since V5:
+
+3 new patches:
+* A fix for a subtlety in how ACPI 6.3 changed part of the HMAT table.
+* Introduction of access1 class to represent characteristics between CPU
+  and memory, ingnoring GIs unlike access0 which includes them.
+* Docs to describe the new access0 class.
+
+Note that I ran a number of test cases for the new class which are
+described at the end of this email.
+
+Changes since V4:
+
+At Rafael's suggestion:
+
+Rebase on top of Dan William's Specific Purpose Memory series as that
+moves srat.c Original patches cherry-picked fine onto mmotm with Dan's
+patches applied.
+
+Applies to mmotm-2019-09-25 +
+https://lore.kernel.org/linux-acpi/156140036490.2951909.1837804994781523185.stgit@dwillia2-desk3.amr.corp.intel.com/
+[PATCH v4 00/10] EFI Specific Purpose Memory Support
+(note there are some trivial conflicts to deal with when applying
+the SPM series).
+
+Change since V3.
+* Rebase.
+
+Changes since RFC V2.
+* RFC dropped as now we have x86 support, so the lack of guards in in the
+  ACPI code etc should now be fine.
+  * Added x86 support.  Note this has only been tested on QEMU as I don't have
+    a convenient x86 NUMA machine to play with.  Note that this fitted together
+      rather differently from arm64 so I'm particularly interested in feedback
+        on the two solutions.
+
+Since RFC V1.
+* Fix incorrect interpretation of the ACPI entry noted by Keith Busch
+* Use the acpica headers definitions that are now in mmotm.
+
+It's worth noting that, to safely put a given device in a GI node, may
+require changes to the existing drivers as it's not unusual to assume
+you have local memory or processor core. There may be further constraints
+not yet covered by this patch.
+
+Original cover letter...
+
+ACPI 6.3 introduced a new entity that can be part of a NUMA proximity domain.
+It may share such a domain with the existing options (memory, CPU etc) but it
+may also exist on it's own.
+
+The intent is to allow the description of the NUMA properties (particularly
+via HMAT) of accelerators and other initiators of memory activity that are not
+the host processor running the operating system.
+
+This patch set introduces 'just enough' to make them work for arm64 and x86.
+It should be trivial to support other architectures, I just don't suitable
+NUMA systems readily available to test.
+
+There are a few quirks that need to be considered.
+
+1. Fall back nodes
+******************
+
+As pre ACPI 6.3 supporting operating systems do not have Generic Initiator
+Proximity Domains it is possible to specify, via _PXM in DSDT that another
+device is part of such a GI only node.  This currently blows up spectacularly.
+
+Whilst we can obviously 'now' protect against such a situation (see the related
+thread on PCI _PXM support and the  threadripper board identified there as
+also falling into the  problem of using non existent nodes
+https://patchwork.kernel.org/patch/10723311/ ), there is no way to  be sure
+we will never have legacy OSes that are not protected  against this.  It would
+also be 'non ideal' to fallback to  a default node as there may be a better
+(non GI) node to pick  if GI nodes aren't available.
+
+The work around is that we also have a new system wide OSC bit that allows
+an operating system to 'announce' that it supports Generic Initiators.  This
+allows, the firmware to us DSDT magic to 'move' devices between the nodes
+dependent on whether our new nodes are there or not.
+
+2. New ways of assigning a proximity domain for devices
+*******************************************************
+
+Until now, the only way firmware could indicate that a particular device
+(outside the 'special' set of cpus etc) was to be found in a particular
+Proximity Domain by the use of _PXM in DSDT.
+
+That is equally valid with GI domains, but we have new options. The SRAT
+affinity structure includes a handle (ACPI or PCI) to identify devices
+with the system and specify their proximity domain that way.  If both _PXM
+and this are provided, they should give the same answer.
+
+For now this patch set completely ignores that feature as we don't need
+it to start the discussion.  It will form a follow up set at some point
+(if no one else fancies doing it).
+
+Test cases for the access1 class
+********************************
+
+Test cases for Generic Initiator additions to HMAT.
+
+Setup
+
+PXM0 (node 0) - CPU0 CPU1, 2G memory
+PXM1 (node 1) - CPU2 CPU3, 2G memory
+PXM2 (node 2) - CPU4 CPU5, 2G memory
+PXM3 (node 4) - 2G memory (GI in one case below)
+PXM4 (node 3) - GI only.
+
+Config 1:  GI in PXM4 nearer to memory in PXM 3 than CPUs, not direct attached
+
+[    2.384064] acpi/hmat: HMAT: Locality: Flags:00 Type:Access Latency Initiator Domains:4 Target Domains:4 Base:256
+[    2.384913] acpi/hmat:   Initiator-Target[0-0]:1 nsec
+[    2.385190] acpi/hmat:   Initiator-Target[0-1]:9 nsec
+[    2.385736] acpi/hmat:   Initiator-Target[0-2]:9 nsec
+[    2.385984] acpi/hmat:   Initiator-Target[0-3]:9 nsec
+[    2.386447] acpi/hmat:   Initiator-Target[1-0]:9 nsec
+[    2.386740] acpi/hmat:   Initiator-Target[1-1]:1 nsec
+[    2.386964] acpi/hmat:   Initiator-Target[1-2]:9 nsec
+[    2.387174] acpi/hmat:   Initiator-Target[1-3]:9 nsec
+[    2.387624] acpi/hmat:   Initiator-Target[2-0]:9 nsec
+[    2.387953] acpi/hmat:   Initiator-Target[2-1]:9 nsec
+[    2.388155] acpi/hmat:   Initiator-Target[2-2]:1 nsec
+[    2.388607] acpi/hmat:   Initiator-Target[2-3]:9 nsec
+[    2.388861] acpi/hmat:   Initiator-Target[4-0]:13 nsec
+[    2.389126] acpi/hmat:   Initiator-Target[4-1]:13 nsec
+[    2.389574] acpi/hmat:   Initiator-Target[4-2]:13 nsec
+[    2.389805] acpi/hmat:   Initiator-Target[4-3]:5 nsec
+
+# Sysfs reads the same for nodes 0-2 for access0 and access1 as no GI involved.
+
+/sys/bus/node/devices/...
+    node0 #1 and 2 similar.
+        access0
+            initiators
+                node0
+                read_bandwidth  0 #not specificed in hmat
+                read_latency    1
+                write_bandwidth 0
+                write_latency   1
+            power
+            targets
+                node0
+            uevent
+        access1
+            initiators
+                node0
+                read_bandwidth  0
+                read_latency    1
+                write_bandwidth 0
+                read_bandwidth  1   
+            power
+            targets
+                node 0
+            uevent
+        compact
+        cpu0
+        cpu1
+        ...
+    node3 # Note PXM 4, contains GI only
+        access0
+            initiators
+                *empty*
+            power
+            targets
+                node4
+            uevent
+        compact
+        ...
+    node4
+        access0
+            initiators
+                node3
+                read_bandwidth  0
+                read_latency    5
+                write_bandwidth 0
+                write_latency   5
+            power
+            targets
+                *empty*
+            uevent
+        access1
+            initiators
+                node0
+                node1
+                node2
+                read_bandwidth  0
+                read_latency    9
+                write_bandwidth 0
+                write_latency   9
+            power
+            targets
+                *empty*
+            uevent
+        compact
+        ...
+
+Config 2:  GI in PXM4 further to memory in PXM 3 than CPUs, not direct attached
+
+[    4.073493] acpi/hmat: HMAT: Locality: Flags:00 Type:Access Latency Initiator Domains:4 Target Domains:4 Base:256
+[    4.074785] acpi/hmat:   Initiator-Target[0-0]:1 nsec
+[    4.075150] acpi/hmat:   Initiator-Target[0-1]:9 nsec
+[    4.075423] acpi/hmat:   Initiator-Target[0-2]:9 nsec
+[    4.076184] acpi/hmat:   Initiator-Target[0-3]:9 nsec
+[    4.077116] acpi/hmat:   Initiator-Target[1-0]:9 nsec
+[    4.077366] acpi/hmat:   Initiator-Target[1-1]:1 nsec
+[    4.077640] acpi/hmat:   Initiator-Target[1-2]:9 nsec
+[    4.078156] acpi/hmat:   Initiator-Target[1-3]:9 nsec
+[    4.078471] acpi/hmat:   Initiator-Target[2-0]:9 nsec
+[    4.078994] acpi/hmat:   Initiator-Target[2-1]:9 nsec
+[    4.079277] acpi/hmat:   Initiator-Target[2-2]:1 nsec
+[    4.079505] acpi/hmat:   Initiator-Target[2-3]:9 nsec
+[    4.080126] acpi/hmat:   Initiator-Target[4-0]:13 nsec
+[    4.080995] acpi/hmat:   Initiator-Target[4-1]:13 nsec
+[    4.081351] acpi/hmat:   Initiator-Target[4-2]:13 nsec
+[    4.082125] acpi/hmat:   Initiator-Target[4-3]:13 nsec
+
+/sys/bus/node/devices/...
+    node0 #1 and 2 similar.
+        access0
+            initiators
+                node0
+                read_bandwidth  0 #not specificed in hmat
+                read_latency    1
+                write_bandwidth 0
+                write_latency   1
+            power
+            targets
+                node0
+                node4
+            uevent
+        access1
+            initiators
+                node0
+                read_bandwidth  0
+                read_latency    1
+                write_bandwidth 0
+                read_bandwidth  1   
+            power
+            targets
+                node0
+                node4
+            uevent
+        compact
+        cpu0
+        cpu1
+        ...
+    node3 # Note PXM 4, contains GI only
+        #No accessX directories.
+        compact
+        ...
+    node4
+        access0
+            initiators
+                node0
+                node1
+                node2
+                read_bandwidth  0
+                read_latency    9
+                write_bandwidth 0
+                write_latency   9
+            power
+            targets
+                *empty*
+            uevent
+        access1
+            initiators
+                node0
+                node1
+                node2
+                read_bandwidth  0
+                read_latency    9
+                write_bandwidth 0
+                write_latency   9
+            power
+            targets
+                *empty*
+            uevent
+        compact
+        ...
+
+
+case 3 - as per case 2 but now the memory in node 3 is direct attached to the
+GI but nearer the main nodes (not physically sensible :))
+
+/sys/bus/node/devices/...
+    node0 #1 and 2 similar.
+        access0
+            initiators
+                node0
+                read_bandwidth  0 #not specificed in hmat
+                read_latency    1
+                write_bandwidth 0
+                write_latency   1
+            power
+            targets
+                node0
+                node4
+            uevent
+        access1
+            initiators
+                node0
+                read_bandwidth  0
+                read_latency    1
+                write_bandwidth 0
+                read_bandwidth  1   
+            power
+            targets
+                node0
+                node4
+            uevent
+        compact
+        cpu0
+        cpu1
+        ...
+    node3 # Note PXM 4, contains GI only
+        access0
+            initiators
+                *empty*
+            power
+            targets
+                node4
+            uevent
+        compact
+        ...
+    node4
+        access0
+            initiators
+                node3
+                read_bandwidth  0
+                read_latency    13
+                write_bandwidth 0
+                write_latency   13
+            power
+            targets
+                *empty*
+            uevent
+        access1
+            initiators
+                node0
+                node1
+                node2
+                read_bandwidth  0
+                read_latency    9
+                write_bandwidth 0
+                write_latency   9
+            power
+            targets
+                *empty*
+            uevent
+        compact
+        ...
+
+Case 4 - nearer the GI, but direct attached to one of the CPUS.
+# Another bonkers one.
+
+/sys/bus/node/devices/...
+    node0 #1 similar.
+        access0
+            initiators
+                node0
+                read_bandwidth  0 #not specificed in hmat
+                read_latency    1
+                write_bandwidth 0
+                write_latency   1
+            power
+            targets
+                node0
+                node4
+            uevent
+        access1
+            initiators
+                node0
+                read_bandwidth  0
+                read_latency    1
+                write_bandwidth 0
+                read_bandwidth  1   
+            power
+            targets
+                node0
+            uevent
+        compact
+        cpu0
+        cpu1
+        ...
+    node2 # Direct attached to memory in node 3
+        access0
+            initiators
+                node2
+                read_bandwidth  0 #not specificed in hmat
+                read_latency    1
+                write_bandwidth 0
+                write_latency   1
+            power
+            targets
+                node2
+                node4 #direct attached
+            uevent
+        access1
+            initiators
+                node2
+                read_bandwidth  0
+                read_latency    1
+                write_bandwidth 0
+                read_bandwidth  1   
+            power
+            targets
+                node2
+                node4 #direct attached
+            uevent
+        compact
+        cpu0
+        cpu1
+        ...
+
+    node3 # Note PXM 4, contains GI only
+        #No accessX directories.
+        compact
+        ...
+    node4
+        access0
+            initiators
+                node3
+                read_bandwidth  0
+                read_latency    13
+                write_bandwidth 0
+                write_latency   13
+            power
+            targets
+                *empty*
+            uevent
+        access1
+            initiators
+                node0
+                node1
+                node2
+                read_bandwidth  0
+                read_latency    9
+                write_bandwidth 0
+                write_latency   9
+            power
+            targets
+                *empty*
+            uevent
+        compact
+        ...
+
+case 5 memory and GI together in node 3 (added an extra GI to node 3)
+Note hmat should also reflect this extra initiator domain.
+
+/sys/bus/node/devices/...
+    node0 #1 and 2 similar.
+        access0
+            initiators
+                node0
+                read_bandwidth  0 #not specificed in hmat
+                read_latency    1
+                write_bandwidth 0
+                write_latency   1
+            power
+            targets
+                node0
+                node4
+            uevent
+        access1
+            initiators
+                node0
+                read_bandwidth  0
+                read_latency    1
+                write_bandwidth 0
+                read_bandwidth  1   
+            power
+            targets
+                node0
+            uevent
+        compact
+        cpu0
+        cpu1
+        ...
+    node3 # Note PXM 3, contains GI only
+        #No accessX directories.
+        compact
+        ...
+    node4 # Now memory and GI.
+        access0
+            initiators
+                node4
+                read_bandwidth  0
+                read_latency    1
+                write_bandwidth 0
+                write_latency   1
+            power
+            targets
+                node4
+            uevent
+        access1
+            initiators
+                node0
+                node1
+                node2
+                read_bandwidth  0
+                read_latency    9
+                write_bandwidth 0
+                write_latency   9
+            power
+            targets
+                *empty* # as expected GI doesn't paticipate in access 1.
+            uevent
+        compact
+        ...
+
+Jonathan Cameron (7):
+  ACPI: Support Generic Initiator only domains
+  arm64: Support Generic Initiator only domains
+  x86: Support Generic Initiator only proximity domains
+  ACPI: Let ACPI know we support Generic Initiator Affinity Structures
+  ACPI: HMAT: Fix handling of changes from ACPI 6.2 to ACPI 6.3
+  node: Add access1 class to represent CPU to memory characteristics
+  docs: mm: numaperf.rst Add brief description for access class 1.
+
+ Documentation/admin-guide/mm/numaperf.rst |  8 ++
+ arch/arm64/kernel/smp.c                   |  8 ++
+ arch/x86/include/asm/numa.h               |  2 +
+ arch/x86/kernel/setup.c                   |  1 +
+ arch/x86/mm/numa.c                        | 14 ++++
+ drivers/acpi/bus.c                        |  1 +
+ drivers/acpi/numa/hmat.c                  | 89 ++++++++++++++++++-----
+ drivers/acpi/numa/srat.c                  | 62 +++++++++++++++-
+ drivers/base/node.c                       |  3 +
+ include/asm-generic/topology.h            |  3 +
+ include/linux/acpi.h                      |  1 +
+ include/linux/nodemask.h                  |  1 +
+ include/linux/topology.h                  |  7 ++
+ 13 files changed, 179 insertions(+), 21 deletions(-)
+
+-- 
+2.19.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
