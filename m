@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5F69120047
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:51:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FF68120048
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:51:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3aR5HcGpPVU6d1FupwJcTReR+nDUYtODid9KLEEJ0io=; b=RlwDjVfD+tPcoEQdcGpOk5DFGc
-	fHGi8MnjsIs7B3rWkCfFjOLCzXD+kZghJPuvT0GL/lcLX6vybxJtx+YvdsFoHNDEUP5pT5gGTugVf
-	tDbuxOQytQhhQBCeMqKwzj2FaA/UdSlVHqZxmWH7eW1zgWkxOKDrwTXZ50Yq4Veh6bYg4/vVtOtWP
-	mTmJQYPs6f4kHiQ48P/y4/YauG2LAnt3x3InAXtzOUy+hRwQe7qauO4LY4qFR+3EkZ/+btJCfcPL5
-	tGsd5MR8YdVAMWBeJ50aInvsBtIaqedubvhdPmf4BSGuk6DzVrfINC8o942YOuKZwqlvTl7vRDZ8D
-	qL3xksaQ==;
+	bh=g386klTzkjqNXqQw5oMgDRmayF/xOUkTAFOI6by1hR8=; b=KqeEk2Zbg1rf5mWjwvvmTRLX4a
+	S/K/6SLCnwDlP/KvLRSNtVzddGclfgtzMIZ46gzDlq5kdPX6udJzoMZPHySj/IsME+7N3vgPRDByT
+	v5lTGg70dwIqaaDgpWSmBQmC9EsdkLXt8m+AmBfDLCCcjIDYPWnTf4C0HwAbxBdp0LHldA9tS/09w
+	i6ojU4gYmBIsLCHhrsSMNWsAoVxihi7erp/nOSDB9MAij5BNcHd1cpdImsAL+JlESro/9i1j24PfG
+	1aMnQQ01qjrBCyyUO+Y7N/+ZCHYr9VXaMcEPE+gPbkASCAdmfK1lmSupQTLSUranhXemsxmwLl0Rd
+	lOin4UCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igm6F-0008Mx-OR; Mon, 16 Dec 2019 08:51:31 +0000
+	id 1igm6V-0000GX-6X; Mon, 16 Dec 2019 08:51:47 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igm35-0004a0-Co
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 08:48:17 +0000
+ id 1igm3A-0004dt-6g
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 08:48:21 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DC2211007;
- Mon, 16 Dec 2019 00:48:14 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 71E9E1007;
+ Mon, 16 Dec 2019 00:48:19 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 28A2F3F6CF;
- Mon, 16 Dec 2019 00:51:25 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B23C13F6CF;
+ Mon, 16 Dec 2019 00:51:30 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 09/16] arm64: mask PAC bits of __builtin_return_address
-Date: Mon, 16 Dec 2019 14:17:11 +0530
-Message-Id: <1576486038-9899-10-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v3 10/16] arm64: unwind: strip PAC from kernel addresses
+Date: Mon, 16 Dec 2019 14:17:12 +0530
+Message-Id: <1576486038-9899-11-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
 References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_004815_532793_D8A1EE03 
-X-CRM114-Status: GOOD (  17.33  )
+X-CRM114-CacheID: sfid-20191216_004820_323756_F77A64AF 
+X-CRM114-Status: GOOD (  10.22  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -78,103 +78,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This redefines __builtin_return_address to mask pac bits
-when Pointer Authentication is enabled. As __builtin_return_address
-is used mostly used to refer to the caller function symbol address
-so masking runtime generated pac bits will help to find the match.
+From: Mark Rutland <mark.rutland@arm.com>
 
-This patch adds a new file (asm/compiler.h) and is transitively
-included (via include/compiler_types.h) on the compiler command line
-so it is guaranteed to be loaded and the users of this macro will
-not find a wrong version.
+When we enable pointer authentication in the kernel, LR values saved to
+the stack will have a PAC which we must strip in order to retrieve the
+real return address.
 
-A helper macro ptrauth_kernel_pac_mask is created for this purpose
-and added in this file. A similar macro ptrauth_user_pac_mask exists
-in pointer_auth.h and is now moved here for the sake of consistency.
+Strip PACs when unwinding the stack in order to account for this.
 
-This change fixes the utilities like cat /proc/vmallocinfo to show
-correct symbol names.
-
+Reviewed-by: Kees Cook <keescook@chromium.org>
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
+[Amit: Re-position ptrauth_strip_insn_pac, comment]
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Changes since last version:
-* Moved pac mask macros from pointer_auth.h to asm/compiler.h as
-  suggested by Ard.
-* There was suggestion by Richard to use xpaclri/xpac instruction to
-  clear the pack but this needs -march=armv8.3-a GCC option which
-  also generates non-nops instruction like retaa and hence may
-  break the backward compatibility. So it is left like earlier.
+* Just use ptrauth_strip_insn_pac function introduced in previous
+  patch.
 
- arch/arm64/Kconfig                    |  1 +
- arch/arm64/include/asm/compiler.h     | 20 ++++++++++++++++++++
- arch/arm64/include/asm/pointer_auth.h | 13 +++++--------
- 3 files changed, 26 insertions(+), 8 deletions(-)
- create mode 100644 arch/arm64/include/asm/compiler.h
+ arch/arm64/kernel/stacktrace.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 5aabe8a..06b5025 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -116,6 +116,7 @@ config ARM64
- 	select HAVE_ALIGNED_STRUCT_PAGE if SLUB
- 	select HAVE_ARCH_AUDITSYSCALL
- 	select HAVE_ARCH_BITREVERSE
-+	select HAVE_ARCH_COMPILER_H
- 	select HAVE_ARCH_HUGE_VMAP
- 	select HAVE_ARCH_JUMP_LABEL
- 	select HAVE_ARCH_JUMP_LABEL_RELATIVE
-diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
-new file mode 100644
-index 0000000..3cb06f9
---- /dev/null
-+++ b/arch/arm64/include/asm/compiler.h
-@@ -0,0 +1,20 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __ASM_COMPILER_H
-+#define __ASM_COMPILER_H
-+
-+#if defined(CONFIG_ARM64_PTR_AUTH)
-+
-+/*
-+ * The EL0/EL1 pointer bits used by a pointer authentication code.
-+ * This is dependent on TBI0/TBI1 being enabled, or bits 63:56 would also apply.
-+ */
-+#define ptrauth_user_pac_mask()		GENMASK_ULL(54, vabits_actual)
-+#define ptrauth_kernel_pac_mask()	(GENMASK_ULL(63, 56) | GENMASK_ULL(54, VA_BITS))
-+
-+#define __builtin_return_address(val)				\
-+	(void *)((unsigned long)__builtin_return_address(val) |	\
-+	ptrauth_kernel_pac_mask())
-+
-+#endif /* CONFIG_ARM64_PTR_AUTH */
-+
-+#endif /* __ASM_COMPILER_H */
-diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
-index 0f89f59..ec33af3 100644
---- a/arch/arm64/include/asm/pointer_auth.h
-+++ b/arch/arm64/include/asm/pointer_auth.h
-@@ -68,16 +68,13 @@ static inline void ptrauth_keys_switch_kernel(struct ptrauth_keys_kernel *keys)
+diff --git a/arch/arm64/kernel/stacktrace.c b/arch/arm64/kernel/stacktrace.c
+index a336cb1..b479df7 100644
+--- a/arch/arm64/kernel/stacktrace.c
++++ b/arch/arm64/kernel/stacktrace.c
+@@ -14,6 +14,7 @@
+ #include <linux/stacktrace.h>
  
- extern int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg);
+ #include <asm/irq.h>
++#include <asm/pointer_auth.h>
+ #include <asm/stack_pointer.h>
+ #include <asm/stacktrace.h>
  
--/*
-- * The EL0 pointer bits used by a pointer authentication code.
-- * This is dependent on TBI0 being enabled, or bits 63:56 would also apply.
-- */
--#define ptrauth_user_pac_mask()	GENMASK(54, vabits_actual)
--
--/* Only valid for EL0 TTBR0 instruction pointers */
-+/* Valid for EL0 TTBR0 and EL1 TTBR1 instruction pointers */
- static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
- {
--	return ptr & ~ptrauth_user_pac_mask();
-+	if (ptr & BIT_ULL(55))
-+		return ptr | ptrauth_kernel_pac_mask();
-+	else
-+		return ptr & ~ptrauth_user_pac_mask();
- }
+@@ -101,6 +102,8 @@ int notrace unwind_frame(struct task_struct *tsk, struct stackframe *frame)
+ 	}
+ #endif /* CONFIG_FUNCTION_GRAPH_TRACER */
  
- #define ptrauth_thread_init_user(tsk)					\
++	frame->pc = ptrauth_strip_insn_pac(frame->pc);
++
+ 	/*
+ 	 * Frames created upon entry from EL0 have NULL FP and PC values, so
+ 	 * don't bother reporting these. Frames created by __noreturn functions
 -- 
 2.7.4
 
