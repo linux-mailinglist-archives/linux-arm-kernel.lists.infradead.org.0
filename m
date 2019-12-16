@@ -2,104 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19DD4120734
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 14:30:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16A6512073F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 14:36:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sHjuEbG2mL+V6zzEMWkwZPH9jMEZuSqFtyeZx5B4ZQA=; b=j3UUcusklg0piG+PMhjeb2V+m
-	99LO5GmsNZKxzd6e/afEtbcMeNQvdkqo5/B07hncyAQGUgnYuCt4nFFGgIta2zSHA+3lXTbzfMgXq
-	GBKPWG8kCIfsgPaAuz8TAw+NaheZyXN3UegWkKAgkiLkAK8lXlgYARTDqjYbr+BepkZBOb25Y5CsM
-	/8yxYyr3CcSnxIi+SYB2E5JgDJrlOj8qXWTmQR6i6MNWeqa4PmFwEkUfwQxBaez1JTPa041TKpZXX
-	xs3ya44AuR/aCGaAu/CPAZeCMQE6gIyuw8TToR6Ld0Yk+23eG34q8+/TIbU+vFlYmJXAZorSGuwQb
-	6K/Yi4Ceg==;
+	 bh=nRlpOydRgAiKS5oD/Kh5SASVHlBaSraMQbR0Gy7qbAk=; b=kbXTJHaGdbqXE9sLGXeBb2mWS
+	wqGIydDcbkbOuM8pOnr3t8pODopX5qnTQLppw53SlXPfDAm/CO6q7FFSJmEYjwkbDfbPNwqlPheIG
+	nbjzJQFd4pEcdGttz/Df3MpvvfeQc1RFboS/mmZKTOwtC1lHDZd+OPBzPWPDaVXfiQJ3YrSFFAMvv
+	JeqrUA5NlEYQzR66AH12vBHUyJ+I7VUsDQajm06bU/F22yORQv0XNuZYJ+jUEVf8Yn9/A6qICMk86
+	CLjvd7zKxRTdMNSbSRRd0pxJgPRL9WAaiMipg1NWePOsWlS/A5963U1mwNiGuFDFX4gEPPRYfpt1Y
+	FRs6WQbBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igqS8-00034U-Vn; Mon, 16 Dec 2019 13:30:24 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1igqXn-0005B9-Fn; Mon, 16 Dec 2019 13:36:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igqRw-00032r-WE; Mon, 16 Dec 2019 13:30:14 +0000
-Received: by mail-pl1-x642.google.com with SMTP id g6so4467456plp.7;
- Mon, 16 Dec 2019 05:30:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=c6k2uM/4KQBTBeEC+JGE88itWoiZaxFzfzDFaOUPwN4=;
- b=WU2LMml9ybURvvoAkKn84Ls2pu5xuXxxs5xMy9YIAIuH+QpEBES7Fx3AEg2Awx0eZC
- eOP9lj+obKAHaeQTG8x7AKkZRmJVsKhTCrmDoU+lTu4fD7hbjbbB0TDh8anWmiR4NE8Q
- 0vRnJFCI88IlQ/i2lgF5OkFvvmdA4xSVQw46d82pfn1UYopKvLJdYUDFZEOie4D29ofs
- jhr83+VsoL5WyjrRsBkdTtIISTH1IF0nFzXfQYAZkctwUem7bQamJ24XBDBIj+xvPmhA
- AGv5C2QbcM9PBGJxMstdHAuE0iPKFOisBpolMprqccxSmygVz+ynNZOFYWIQiWOsIKW0
- X9QQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=c6k2uM/4KQBTBeEC+JGE88itWoiZaxFzfzDFaOUPwN4=;
- b=l3aVgRH9G13XOdiXbfHROffox0aOaeXWgo12i3Ujia2smp9gSf836OWqVRHpvBRm1A
- tbUXB06cfXL1iH/MHBj0xQJxMchbUuXKg+wQ0dm2qIijLWvUulKrryNItz2vWkNaqveF
- z4KwserLiMIQQUgIrrQrev5shpG8MFkEX8PBoeaY6gLXXNaWDhJJjq6yGm0kgp7k+rzm
- Elj6NYdRcYBIdB44brcMDiUqgqj990Tty94eu/cGUmReN8GtqmcNTa5AeupAO0j62tGk
- 871tROgHO/k0w4lVsq2LckK30EnV3EO2EslzNdM/YTFQIDwcPc2ruQX5OJLa7z/wKScg
- sJBw==
-X-Gm-Message-State: APjAAAUb2x71jU2K3N6g8Gxkvqqcn5EVfZCl9aAX9zQ7RgbVcSy0mKtx
- 6i51upLDKUFE9okrUKabbOE=
-X-Google-Smtp-Source: APXvYqyJ6TZHpyv2Kz7CGI3OHria7rp9vvxislgxfsCZuO3kdTuBGJfZKrdme0Kw7m9+Qlmwh7TBjw==
-X-Received: by 2002:a17:902:d915:: with SMTP id
- c21mr15807890plz.295.1576503011717; 
- Mon, 16 Dec 2019 05:30:11 -0800 (PST)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- 13sm5365907pfi.78.2019.12.16.05.30.09
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 16 Dec 2019 05:30:10 -0800 (PST)
-Subject: Re: [PATCH v5 2/4] dt-bindings: watchdog: add new binding for meson
- secure watchdog
-To: Xingyu Chen <xingyu.chen@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Rob Herring <robh+dt@kernel.org>
-References: <1576153187-28378-1-git-send-email-xingyu.chen@amlogic.com>
- <1576153187-28378-3-git-send-email-xingyu.chen@amlogic.com>
- <CAFBinCBHLqgPExPsVaSWdSOr0Oj-jeYa4Z82U-pJ=fS+D1wGnA@mail.gmail.com>
- <f7b0afe7-e317-2422-de7e-878837f9f238@amlogic.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Message-ID: <a8f5ab1d-264c-5b2c-e72b-3774b9f44c22@roeck-us.net>
-Date: Mon, 16 Dec 2019 05:30:08 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1igqXf-0005A0-F2
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 13:36:08 +0000
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 41866206CB;
+ Mon, 16 Dec 2019 13:36:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576503366;
+ bh=hNHO7qhuEn1+H5H1TDdAFoLepebeVApFqZHiSXCaSeg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=A6y4BII/Y9MV3DxdIIQ7EWpX9KGs5x36m7xIL3euGRGccXYzlnaCJl7X8nRYSzjq/
+ yG+bIbehrGRUTHr/vYq65XJfC40UM3n0XCN4zaPNVmrbfnAGJXcqLbYzNoH+1InrFV
+ 7OHJK3jpcjsuXMcyiOjUK63zjGFCj+1GaGKiKjyw=
+Date: Mon, 16 Dec 2019 14:36:03 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Chen-Yu Tsai <wens@kernel.org>
+Subject: Re: [PATCH 03/14] media: sun4i-csi: Fix data sampling polarity
+ handling
+Message-ID: <20191216133603.gbr2iaikch5lfv6v@gilmour.lan>
+References: <20191215165924.28314-1-wens@kernel.org>
+ <20191215165924.28314-4-wens@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <f7b0afe7-e317-2422-de7e-878837f9f238@amlogic.com>
-Content-Language: en-US
+In-Reply-To: <20191215165924.28314-4-wens@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_053013_062870_CC25A774 
-X-CRM114-Status: GOOD (  14.95  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191216_053607_523326_60BFB5C5 
+X-CRM114-Status: GOOD (  11.57  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,42 +77,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Qianggui Song <qianggui.song@amlogic.com>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
- linux-kernel@vger.kernel.org, Jian Hu <jian.hu@amlogic.com>,
- linux-amlogic@lists.infradead.org, Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============3496038778633622475=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTIvMTUvMTkgMTA6MDMgUE0sIFhpbmd5dSBDaGVuIHdyb3RlOgo+IEhpLCBNYXJ0aW4KPiAK
-PiBTb3JyeSBmb3IgdGhlIGxhdGUgcmVwbHkuCj4gCj4gT24gMjAxOS8xMi8xMyA0OjA1LCBNYXJ0
-aW4gQmx1bWVuc3RpbmdsIHdyb3RlOgo+PiBIaSBYaW5neXUgYW5kIFJvYiwKPj4KPj4gT24gVGh1
-LCBEZWMgMTIsIDIwMTkgYXQgMToyMCBQTSBYaW5neXUgQ2hlbiA8eGluZ3l1LmNoZW5AYW1sb2dp
-Yy5jb20+IHdyb3RlOgo+PiBbLi4uXQo+Pj4gK2V4YW1wbGVzOgo+Pj4gK8KgIC0gfAo+Pj4gK8Kg
-wqDCoCB3YXRjaGRvZyB7Cj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgIGNvbXBhdGlibGUgPSAiYW1s
-b2dpYyxtZXNvbi1zZWMtd2R0IjsKPj4+ICvCoMKgwqDCoMKgwqDCoMKgwqAgdGltZW91dC1zZWMg
-PSA8NjA+Owo+Pj4gK8KgwqDCoCB9Owo+PiBpbiB2MyBvZiB0aGlzIHBhdGNoIFJvYiBjb21tZW50
-ZWQgdGhhdCB0aGVyZSBzaG91bGRuJ3QgYmUgYW4gT0Ygbm9kZQo+PiBpZiB0aGVyZSBhcmUgbm8g
-YWRkaXRpb25hbCBwcm9wZXJ0aWVzCj4+IHdpdGggdGltZW91dC1zZWMgdGhlcmUncyBub3cgYW4g
-YWRkaXRpb25hbCBwcm9wZXJ0eSBzbyBteQo+PiB1bmRlcnN0YW5kaW5nIGlzIHRoYXQgaXQncyBm
-aW5lIHRvIGhhdmUgYW4gT0Ygbm9kZQo+IFlvdXIgdW5kZXJzdGFuZGluZyBpcyBjb3JyZWN0Lgo+
-Pgo+PiB3aGF0IEkgZG9uJ3QgdW5kZXJzdGFuZCB5ZXQgaXMgd2hlcmUgdGhpcyBub2RlIHNob3Vs
-ZCBiZSBwbGFjZWQuCj4+IGlzIGl0IHN1cHBvc2VkIHRvIGJlIGEgY2hpbGQgbm9kZSBvZiB0aGUg
-c2VjdXJlIG1vbml0b3Igbm9kZSAoZm9yCj4+IHdoaWNoIHdlIGFscmVhZHkgaGF2ZSBhIGJpbmRp
-bmcgaGVyZToKPj4gRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Zpcm13YXJlL21l
-c29uL21lc29uX3NtLnR4dCkgb3IKPj4gd2hlcmUgZWxzZSB3b3VsZCB3ZSBwbGFjZSBpdCBpbnNp
-ZGUgdGhlIC5kdHM/Cj4gSU1PLMKgIEFsdGhvdWdoIHRoZSB3YXRjaGRvZyBub2RlIG5lZWQgdG8g
-cmVmZXJlbmNlIHRoZSBtZXNvbl9zbSBub2RlLCB0aGVyZSBpcyBubwo+IGJ1cy1saWtlIGRlcGVu
-ZGVuY2llcyBiZXR3ZWVuIHRoZSBkZXZpY2VzIHdoaWNoIHRoZSB0d28gbm9kZXMgY29ycmVzcG9u
-ZGluZyB0by4KPiBzbyBpIHRoaW5rIHRoYXQgdGhlIHdhdGNoZG9nIG5vZGUgYXMgY2hpbGQgbm9k
-ZSBvZiBtZXNvbl9zbSBtYXliZSBub3QgYXBwcm9wcmlhdGUuCgpUaGUgd2F0Y2hkb2cgZHJpdmVy
-IG5lZWRzIHRoZSBtZXNvbiBTTSdzIGR0IG5vZGUsIGFuZCBpdCBkZXBlbmRzIG9uIHRoZSBleGlz
-dGVuY2UKb2YgdGhhdCBub2RlLiBUaGF0IHNlZW1zIGVub3VnaCBvZiBhIHJlbGF0aW9uc2hpcCB0
-byB3YXJyYW50IGhhdmluZyBpdCBhcyBjaGlsZCBub3RlLgoKR3VlbnRlcgoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+--===============3496038778633622475==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="pxaf47l7hgrm57u2"
+Content-Disposition: inline
+
+
+--pxaf47l7hgrm57u2
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Mon, Dec 16, 2019 at 12:59:13AM +0800, Chen-Yu Tsai wrote:
+> From: Chen-Yu Tsai <wens@csie.org>
+>
+> The CLK_POL field specifies whether data is sampled on the falling or
+> rising edge of PCLK, not whether the data lines are active high or low.
+> Evidence of this can be found in the timing diagram labeled "horizontal
+> size setting and pixel clock timing".
+>
+> Fix the setting by checking the correct flag, V4L2_MBUS_PCLK_SAMPLE_RISING.
+> While at it, reorder the three polarity flag checks so HSYNC and VSYNC
+> are grouped together.
+>
+> Fixes: 577bbf23b758 ("media: sunxi: Add A10 CSI driver")
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+
+Acked-by: Maxime Ripard <mripard@kernel.org>
+
+Thanks!
+Maxime
+
+--pxaf47l7hgrm57u2
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfeIQwAKCRDj7w1vZxhR
+xVxhAP9flbDGwjgJDkotx80gPBlJVBaAWNlKf5+rVukqwTZs9AEA/EU/dnK5KzU0
+QEqJQQjjDUSZ+fxuByQBiPtKJqftfQ0=
+=LpuS
+-----END PGP SIGNATURE-----
+
+--pxaf47l7hgrm57u2--
+
+
+--===============3496038778633622475==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3496038778633622475==--
+
