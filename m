@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9999F120753
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 14:38:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA980120758
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 14:39:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9sQBhBi7zlwruAC7FaJ5SedA9CWnH/1KUdSWPXi/9W8=; b=iuUyrYJKzwwoXSfaY+F1KiNR+
-	Wui3qDkSkg0UHK0M+yAY+u3kbQfb4pxXOfQmD6PZeskBlK+KUTuoSVzUz75DdnwrI+bAK1LzBVgfP
-	03Y/ZG3gcU1VOzCzSyPEoxZmAJPoj0iVGWQGYKWwnJsZROFxL9sgTu039X9BLyU09NU8c9IySTtzC
-	59+SP1igrlbUNPp8hWgeP2TdKIDzWIYGaSPYqvdIgSSwfN//Lv71FVm/sNvr+IJp1TdqqI1QvJLfY
-	yvChAgAAGAIuQwW4sYZOhuD3O6qgnv7K3+qSiyNmAXPHroFKyNdRuOGXNTOWIzq/pdaUb1tIPhW/X
-	6yvnYZFKQ==;
+	 bh=78OvO6p5vMjUJUR3xsVbeTXmZyP1a6C8pC+iLlxfx3Y=; b=Wkb1JGi3G1kJClXREArXzzQNR
+	Wwpkmq63ZPQnB/SWMmeLDb/1NnbDd0yQ3YMjdmGKLrBvaOZ99ZZE4D5Cfbi+CJvx4C/WAN/IQE3if
+	5FXi+AXuPyX5UKWdBK9YWAHbs1bQI6ZW5Ehg8Mk+Ym/1Blie3e2d9/NYG7gSVbyayt8Dhq9uHoSmT
+	tHOf3xLjT86vYfthvrE9qDBDYOwxadZZdIul03yO8G4W8kBRBidJmsHN+/bmu6UcifPhtyvRVgIjv
+	vLCy1USIWyssJ3EXjmMbI58GpUtQShl6d0pM/ctD5xhcpUYaDmC73yMyBy/NdkGvpEmM9w2pyFoRI
+	uDwigHuww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igqaH-0006JC-1x; Mon, 16 Dec 2019 13:38:49 +0000
+	id 1igqb8-0006bi-39; Mon, 16 Dec 2019 13:39:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igqa7-0006If-5a
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 13:38:40 +0000
+ id 1igqaz-0006bI-QZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 13:39:35 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 68705206A5;
- Mon, 16 Dec 2019 13:38:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 121A620409;
+ Mon, 16 Dec 2019 13:39:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576503518;
- bh=shI0lUnBWDuONPZWYfqSGhPOhXNDA+SfJVRhGbQY6Xw=;
+ s=default; t=1576503573;
+ bh=7SGMKiJuU0qvOnDKNSk19Hh1fTjIukPVmdPORtDYtmg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=UttEaSKeMmq7uNC2LPGQ067DE+umu9bQ9JgGGDcjUIl3d40CeYzZFihVV7vaeKa+U
- XfCAudFleagC55ea2i5XWF84QZer3HDLZc9f1oep55imPczhTnxcbZ1AMYC6o42Acm
- Ibp/Qt935MDXGb9HDPOFujM1lj2mZrBvdTydBQQI=
-Date: Mon, 16 Dec 2019 14:38:36 +0100
+ b=vfLGXmzS2aEJJUXCz87hGKfWnfKZK5c+nQN4ASKWZC/3ARcgJPTTGa+WMDjs1sCGz
+ hAJOTeLNBGoTrgn63VcheYdOsnr3rihcQ7gSl17aXmp5oXdeYdin1sQ0wtwpLbkMPd
+ gvnWCW7oIuMe3ciOPsbHGa/nr2xx6KpcjOQZK1DI=
+Date: Mon, 16 Dec 2019 14:39:31 +0100
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@kernel.org>
-Subject: Re: [PATCH 06/14] media: sun4i-csi: Add support for A10 CSI1 camera
- sensor interface
-Message-ID: <20191216133836.n4sej7jqhzwxljnl@gilmour.lan>
+Subject: Re: [PATCH 11/14] ARM: dts: sun8i: r40: Add device node for CSI0
+Message-ID: <20191216133931.wliwn5woy3hstdg3@gilmour.lan>
 References: <20191215165924.28314-1-wens@kernel.org>
- <20191215165924.28314-7-wens@kernel.org>
+ <20191215165924.28314-12-wens@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20191215165924.28314-7-wens@kernel.org>
+In-Reply-To: <20191215165924.28314-12-wens@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_053839_225326_33F55F34 
-X-CRM114-Status: GOOD (  13.88  )
+X-CRM114-CacheID: sfid-20191216_053933_903322_A4EF7C19 
+X-CRM114-Status: GOOD (  17.69  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,66 +81,110 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>, Sakari Ailus <sakari.ailus@linux.intel.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============3529348829703370809=="
+Content-Type: multipart/mixed; boundary="===============6627342556643609767=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3529348829703370809==
+--===============6627342556643609767==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qxmpdqzztr46q3kx"
+	protocol="application/pgp-signature"; boundary="qmlybd2b72avx3db"
 Content-Disposition: inline
 
 
---qxmpdqzztr46q3kx
+--qmlybd2b72avx3db
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Mon, Dec 16, 2019 at 12:59:16AM +0800, Chen-Yu Tsai wrote:
+On Mon, Dec 16, 2019 at 12:59:21AM +0800, Chen-Yu Tsai wrote:
 > From: Chen-Yu Tsai <wens@csie.org>
 >
-> The A10/A20 Allwinner SoCs have two camera sensor interface blocks,
-> named CSI0 and CSI1. The two have the same register layouts with
-> slightly different features:
+> The CSI0 and CSI1 blocks are the same as found on the A20. However only
+> CSI0 is supported upstream right now.
 >
->   - CSI0 has an image signal processor (ISP); CSI1 doesn't
->
->   - CSI0 can support up to four separate channels under CCIR656;
->     CSI1 can only support one
->
->   - CSI0 can support up to 16-bit wide bus with YUV422;
->     CSI1 can support up to 24-bit wide bus with YUV444
->
-> For now the driver doesn't support wide busses, nor CCIR656. So the
-> only relevant difference is whether a clock needs to be taken and
-> enabled for the ISP.
->
-> Add structs to record the differences, tie them to the compatible
-> strings, and deal with the ISP clock. Support for the new CSI1
-> hardware block is added as well.
+> Add a device node for CSI0 using the A20 compatible as a fallback, and
+> the standard pinctrl options. Also add the MBUS interconnect.
 >
 > Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> ---
+>  arch/arm/boot/dts/sun8i-r40.dtsi | 36 ++++++++++++++++++++++++++++++++
+>  1 file changed, 36 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+> index 82ea0b5b0710..2d1e97cc4155 100644
+> --- a/arch/arm/boot/dts/sun8i-r40.dtsi
+> +++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+> @@ -180,6 +180,20 @@ nmi_intc: interrupt-controller@1c00030 {
+>  			interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
+>  		};
+>
+> +		csi0: csi@1c09000 {
+> +			compatible = "allwinner,sun8i-r40-csi0",
+> +				     "allwinner,sun7i-a20-csi0";
+> +			reg = <0x01c09000 0x1000>;
+> +			interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&ccu CLK_BUS_CSI0>, <&ccu CLK_CSI_SCLK>,
+> +				 <&ccu CLK_DRAM_CSI0>;
+> +			clock-names = "bus", "isp", "ram";
+> +			resets = <&ccu RST_BUS_CSI0>;
+> +			interconnects = <&mbus 5>;
+> +			interconnect-names = "dma-mem";
+> +			status = "disabled";
+> +		};
+> +
+>  		mmc0: mmc@1c0f000 {
+>  			compatible = "allwinner,sun8i-r40-mmc",
+>  				     "allwinner,sun50i-a64-mmc";
+> @@ -355,6 +369,20 @@ clk_out_a_pin: clk-out-a-pin {
+>  				function = "clk_out_a";
+>  			};
+>
+> +			/omit-if-no-ref/
+> +			csi0_8bits_pins: csi0-8bits-pins {
+> +				pins = "PE0", "PE2", "PE3", "PE4", "PE5",
+> +				       "PE6", "PE7", "PE8", "PE9", "PE10",
+> +				       "PE11";
+> +				function = "csi0";
+> +			};
+> +
+> +			/omit-if-no-ref/
+> +			csi0_mclk_pin: csi0-mclk-pin {
+> +				pins = "PE1";
+> +				function = "csi0";
+> +			};
+> +
+>  			gmac_rgmii_pins: gmac-rgmii-pins {
+>  				pins = "PA0", "PA1", "PA2", "PA3",
+>  				       "PA4", "PA5", "PA6", "PA7",
+> @@ -624,6 +652,14 @@ gmac_mdio: mdio {
+>  			};
+>  		};
+>
+> +		mbus: dram-controller@1c62000 {
+> +			compatible = "allwinner,sun8i-r40-mbus";
+> +			reg = <0x01c62000 0x1000>;
+> +			clocks = <&ccu 155>;
 
-Acked-by: Maxime Ripard <mripard@kernel.org>
+We should export the clock too?
 
-Thanks!
 Maxime
+>
 
---qxmpdqzztr46q3kx
+--qmlybd2b72avx3db
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfeI3AAKCRDj7w1vZxhR
-xVSBAP9m2gsGlN6svjB7zDFDDm9ZKaScsYn4Qk0eM3z4TyWE/QD/eKqz3SoIImtb
-BN2EcgJHtWC+oJn4pHEYxoCeDYV5IA8=
-=w2qB
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfeJEwAKCRDj7w1vZxhR
+xX4mAP9raoaBd1QdA12eLJMz9YoIz/KDkCY7IQsU8z/3jU+6kAEA/VtzPoBPHD0K
+JHbPLHhucKTZH4r3G5PLW3g/rkleMQA=
+=CsA8
 -----END PGP SIGNATURE-----
 
---qxmpdqzztr46q3kx--
+--qmlybd2b72avx3db--
 
 
---===============3529348829703370809==
+--===============6627342556643609767==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -152,5 +195,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3529348829703370809==--
+--===============6627342556643609767==--
 
