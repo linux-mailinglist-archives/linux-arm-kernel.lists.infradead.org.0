@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2AB61204F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 13:08:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4776B120503
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 13:09:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=ddgsPyrbBY/lEjMmaGqF9+hDdZ52dCInrVHT0ieJbnA=; b=o7C
-	P2Tj/bgJXj/9KUYPz1+ZceG3zDecTNa5GnROHaVHRDVmH3P7UCrUmyWO88gIh79Trs/giX8ZCdUpM
-	ymxZIHn5357knAX0gVtezZTvocPPZ4BsZ/ERqM4g/hvQBiqhzUfKse131QNmM1v6/rNnep16B0dFz
-	k05vqxpaWub5T1/nybG5b5GRzktHL9QZpOQbUqZ7krbpzEKZde0T5R580X79PIMY+yTiCCG1DhPZv
-	R5S+F6EMgQn9n1HSu9f+ACNq+GY3gPYY9qh5/SyGA+FSBBzujfhvIHNojwG1X81IOgBuEGq32SPDl
-	AcCQaMEEttq/QwkhIV1Kj/kOTpX6y1Q==;
+	References:List-Owner; bh=fInqu0rRYcWC7qP0c9oBG1JY45Z0RkzYpifEPhor2bw=; b=Rjf
+	Ksl7d/KqQ6fKt1SEyZmaF9NjOoXA9AbUVofTOjynx1Vf76KPV6R/Xlhp6C2Sn3q3GZRD9qL0bbLLZ
+	am2eZ4UNwMoVhmvMMtEsBUHM2+eu2tUQz9NKm6QPVFAJHNw+zLVj6CCDrwt/ck/BQP2RirVepqgkm
+	gRtXcQZpuMWeatv5nk5JNkFsqOrpubkZJw1dPn2a7DxCsFo2YcV3iqQWbgaGigudamnJihHsy8TQE
+	corI3lbvBISKKUiiI2ZYKZTtqQ3yUvC3Rv9l7mt1NilAKBTp+PecuB/Q4ZjpOnEhKdPel23RH4pGF
+	E0dvnv/2MicxYRySmPZkr4/ROJdbcrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igpAi-0004GH-AU; Mon, 16 Dec 2019 12:08:20 +0000
+	id 1igpBV-00056H-VW; Mon, 16 Dec 2019 12:09:09 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igp8l-0002o2-QF; Mon, 16 Dec 2019 12:06:21 +0000
+ id 1igp8n-0002pi-NG; Mon, 16 Dec 2019 12:06:23 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E79CD1063;
- Mon, 16 Dec 2019 04:06:18 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 438391FB;
+ Mon, 16 Dec 2019 04:06:21 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 676D43F719;
- Mon, 16 Dec 2019 04:06:18 -0800 (PST)
-Date: Mon, 16 Dec 2019 12:06:17 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B82FC3F719;
+ Mon, 16 Dec 2019 04:06:20 -0800 (PST)
+Date: Mon, 16 Dec 2019 12:06:19 +0000
 From: Mark Brown <broonie@kernel.org>
 To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Applied "spi: bcm2835: Release the DMA channel if probe fails after
- dma_init" to the spi tree
-In-Reply-To: <20191212135550.4634-3-peter.ujfalusi@ti.com>
-Message-Id: <applied-20191212135550.4634-3-peter.ujfalusi@ti.com>
+Subject: Applied "spi: atmel: Use dma_request_chan() instead
+ dma_request_slave_channel()" to the spi tree
+In-Reply-To: <20191212135550.4634-2-peter.ujfalusi@ti.com>
+Message-Id: <applied-20191212135550.4634-2-peter.ujfalusi@ti.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_040619_916082_88DDE55F 
-X-CRM114-Status: GOOD (  14.34  )
+X-CRM114-CacheID: sfid-20191216_040621_919135_38EFF5C0 
+X-CRM114-Status: GOOD (  16.80  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -77,7 +77,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: bcm2835: Release the DMA channel if probe fails after dma_init
+   spi: atmel: Use dma_request_chan() instead dma_request_slave_channel()
 
 has been applied to the spi tree at
 
@@ -102,52 +102,75 @@ to this mail.
 Thanks,
 Mark
 
-From 666224b43b4bd4612ce3b758c038f9bc5c5e3fcb Mon Sep 17 00:00:00 2001
+From d947c9d26c2381cc10067e76e71bf9ddb0fedb8b Mon Sep 17 00:00:00 2001
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Date: Thu, 12 Dec 2019 15:55:43 +0200
-Subject: [PATCH] spi: bcm2835: Release the DMA channel if probe fails after
- dma_init
+Date: Thu, 12 Dec 2019 15:55:42 +0200
+Subject: [PATCH] spi: atmel: Use dma_request_chan() instead
+ dma_request_slave_channel()
 
-The DMA channel was not released if either devm_request_irq() or
-devm_spi_register_controller() failed.
+dma_request_slave_channel() is a wrapper on top of dma_request_chan()
+eating up the error code.
+
+By using dma_request_chan() directly the driver can support deferred
+probing against DMA.
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Link: https://lore.kernel.org/r/20191212135550.4634-3-peter.ujfalusi@ti.com
+Link: https://lore.kernel.org/r/20191212135550.4634-2-peter.ujfalusi@ti.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-bcm2835.c | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ drivers/spi/spi-atmel.c | 29 +++++++++++------------------
+ 1 file changed, 11 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
-index fb61a620effc..662d55e9f21d 100644
---- a/drivers/spi/spi-bcm2835.c
-+++ b/drivers/spi/spi-bcm2835.c
-@@ -1327,20 +1327,22 @@ static int bcm2835_spi_probe(struct platform_device *pdev)
- 			       dev_name(&pdev->dev), ctlr);
- 	if (err) {
- 		dev_err(&pdev->dev, "could not request IRQ: %d\n", err);
--		goto out_clk_disable;
-+		goto out_dma_release;
+diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
+index 56f0ca361deb..013458cabe3c 100644
+--- a/drivers/spi/spi-atmel.c
++++ b/drivers/spi/spi-atmel.c
+@@ -514,26 +514,19 @@ static int atmel_spi_configure_dma(struct spi_master *master,
+ 	master->dma_tx = dma_request_chan(dev, "tx");
+ 	if (IS_ERR(master->dma_tx)) {
+ 		err = PTR_ERR(master->dma_tx);
+-		if (err == -EPROBE_DEFER) {
+-			dev_warn(dev, "no DMA channel available at the moment\n");
+-			goto error_clear;
+-		}
+-		dev_err(dev,
+-			"DMA TX channel not available, SPI unable to use DMA\n");
+-		err = -EBUSY;
++		if (err != -EPROBE_DEFER)
++			dev_err(dev, "No TX DMA channel, DMA is disabled\n");
+ 		goto error_clear;
  	}
  
- 	err = devm_spi_register_controller(&pdev->dev, ctlr);
- 	if (err) {
- 		dev_err(&pdev->dev, "could not register SPI controller: %d\n",
- 			err);
--		goto out_clk_disable;
-+		goto out_dma_release;
+-	/*
+-	 * No reason to check EPROBE_DEFER here since we have already requested
+-	 * tx channel. If it fails here, it's for another reason.
+-	 */
+-	master->dma_rx = dma_request_slave_channel(dev, "rx");
+-
+-	if (!master->dma_rx) {
+-		dev_err(dev,
+-			"DMA RX channel not available, SPI unable to use DMA\n");
+-		err = -EBUSY;
++	master->dma_rx = dma_request_chan(dev, "rx");
++	if (IS_ERR(master->dma_rx)) {
++		err = PTR_ERR(master->dma_rx);
++		/*
++		 * No reason to check EPROBE_DEFER here since we have already
++		 * requested tx channel.
++		 */
++		dev_err(dev, "No RX DMA channel, DMA is disabled\n");
+ 		goto error;
  	}
  
- 	bcm2835_debugfs_create(bs, dev_name(&pdev->dev));
+@@ -548,7 +541,7 @@ static int atmel_spi_configure_dma(struct spi_master *master,
  
  	return 0;
- 
-+out_dma_release:
-+	bcm2835_dma_release(ctlr, bs);
- out_clk_disable:
- 	clk_disable_unprepare(bs->clk);
- out_controller_put:
+ error:
+-	if (master->dma_rx)
++	if (!IS_ERR(master->dma_rx))
+ 		dma_release_channel(master->dma_rx);
+ 	if (!IS_ERR(master->dma_tx))
+ 		dma_release_channel(master->dma_tx);
 -- 
 2.20.1
 
