@@ -2,135 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21C47120378
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:14:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18E2112037C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:15:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+V2CH1opP+kFMlqh6gj2k2M9YM7sFSrqlc6bgmIGQtk=; b=YHiS5AevXLgTrV
-	qStNSFfFqmoYPk7KNwUJNb1F8HNejyfG8gYOuIwZPqDbfhEMNmBiovYp0VM0g+YmMIsQa5flp4uH9
-	E3XpamxuZahj7CYQKK7qzBm8/7qW0UhWbLHayDvUpZobOMAX9qRV4/+N9dlXgi+MQdQr2OYT3g0tx
-	9/nUPs+o05Xs31fEfzZKfyUjY0++EKiVw9qOeTGz4ix/+nuEv9JtxP83ne6LiJwb3tD6qujX+M2kc
-	NbxkcmRH6nJ8iinGYtK0B+yF5hzAj06zD074DV2ZaqjEXPZxbVV40RKwvIdVYAli7M/XS2ZSG8vgz
-	2jj7mmjHhuGKyFSf3wmQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ZT1gbYMPtb2+DoNkRXIUOFSEUechk/SSUF9e6TjbAcs=; b=Oxx/HxEnLygthersHXEVD9n4k
+	TjDtICZwcSRabR4o1Z3ZRX0FNQU2BfxvHGQXJynZ/y2AVEIclkU7zi4a90mC02bsppknsB0Log7bO
+	L3Jf9X2yD6wQ/Q0IrYkApbV8s3F3DkVb3ybuqhoGRt2yG9zvOskEqYJfPoGJPmXp3QCqWDMEEuLtR
+	EKuJqtYS+wgh8IehZHeiG/RhjIYHONYzeccxTYc6yW41cdQh22wbKqEPbJ51mNUxvquMcQ2G+xNe3
+	X9qCrUb57I7YNuM1yDHJxlV3XYUIz76uhmj9ziJjoZCyauXRH65WcE7rfWtt6oJJkJVyLnhmo+zDZ
+	7SL6Yoj1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igoKs-0001DL-VU; Mon, 16 Dec 2019 11:14:47 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1igoL6-0001OX-9i; Mon, 16 Dec 2019 11:15:00 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igoKj-0001CX-GI; Mon, 16 Dec 2019 11:14:39 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id EA17FACE1;
- Mon, 16 Dec 2019 11:14:33 +0000 (UTC)
-Subject: Re: [PATCH v5 1/6] dt-bindings: PCI: Add bindings for brcmstb's PCIe
- device
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, andrew.murray@arm.com,
- maz@kernel.org, linux-kernel@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, Bjorn Helgaas <bhelgaas@google.com>
-References: <20191216110113.30436-1-nsaenzjulienne@suse.de>
- <20191216110113.30436-2-nsaenzjulienne@suse.de>
-From: Matthias Brugger <mbrugger@suse.com>
-Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
- 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
- HxUCQ9Y1Y/Ct
-Message-ID: <39a8ab96-2b32-1d9c-63cd-8114a58f723c@suse.com>
-Date: Mon, 16 Dec 2019 12:14:31 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1igoKn-0001E0-TR; Mon, 16 Dec 2019 11:14:43 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 4F5976688;
+ Mon, 16 Dec 2019 06:14:40 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Mon, 16 Dec 2019 06:14:40 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm1; bh=6wtEAOA9zEAjBqSIrctunRBYYSQ
+ b5Glee85EEArhRIg=; b=QQ+dte4fenHJ/naMFXR/2rJBYhoA5yenpYglspuOyZ5
+ ZE8Si4su1rjLMlbd79tR2adUzkVlDRdEnpJClo7kbjdSm/YAB47vMVK4JWR21bdU
+ kol3RipmAKIqAr63myjA+j4HBg3hOynwLcmJR5aOmvvJyPC4J9ygdsfYdtxX+Mft
+ IVXURlXC+RPzzfrMll02epZuDbHIbwuqZBCbg6BWH8ESJ1S3HcFVKdEfwJ3RkoxO
+ UdU4wgJG7kzkpGoVgNEPpn+sho9VqV8g/t4368yv9r8epeMH5Q0xOCiR2TEbVlVv
+ d8cWK9t48RnrBuve2Z690Z1NkuBUtUW+zj2oogs3i/g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=6wtEAO
+ A9zEAjBqSIrctunRBYYSQb5Glee85EEArhRIg=; b=D9CpUbS2MR2NrbgEKUpd3r
+ 3553/A7UXfd8QWqnnjZMUl8WtV7A1bKW0GnFN8ZdKkpT+jDMAufZOtxQIS4GTmHS
+ FG924bw4svhU+lkZm72RQLa//k3wPYvwbCAAAf6cjjmFzS2Ea0DVigdHOFVH7s3H
+ RVMDgpUTV/2ttrzk4sYdXS+sF4+ZoxbqcagpY/5JSrFt9oW8o3cwzqFHuQGL1jHB
+ LMjJMDiq0PrDnysVugV/Ee5z2mlQgKtA5umwcZvKa5Veqhrt/tdmyrFmeyY+o74t
+ gRQfZQkqUFCiKGvj8yHcYvaVosoDQfscfC4XTb6k1ppCORShGEGiETbGj9MXCYqg
+ ==
+X-ME-Sender: <xms:Hmf3XR4U0X52qKZRYc29zdmO7tX8l7uf4MII9BZSnUBdZtOHbFs8OQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddthedgvdeiucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggv
+ rhhnohdrthgvtghhnecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:Hmf3XR-GNZfv0lLZ1VFQD0DMQfuxMnPt3WArhYHR06Abs9EftgFgaw>
+ <xmx:Hmf3XTHN-1r0Euo-LbMyBv2L0C2BTkZ1fSJQlbrHCZ2PEUGTF5fCew>
+ <xmx:Hmf3XWXbvncf3_-rzz9IlVAb3JkNcFc2xhGidGJpqrF2MkhkTSRN2Q>
+ <xmx:IGf3XVOI0leesD0cM5hYoV_V3UHVuNrXFxbcFvZquKkN8sohfa0aTA>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id EC21A80061;
+ Mon, 16 Dec 2019 06:14:37 -0500 (EST)
+Date: Mon, 16 Dec 2019 12:14:36 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH 09/12] drm/rockchip: lvds: Add PX30 support
+Message-ID: <20191216111436.wzoq33gvt42w6gqj@gilmour.lan>
+References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
+ <20191213181051.25983-10-miquel.raynal@bootlin.com>
+ <20191216105827.rxkfbwemkqw446jx@gilmour.lan>
+ <20191216120312.4aa478da@xps13>
 MIME-Version: 1.0
-In-Reply-To: <20191216110113.30436-2-nsaenzjulienne@suse.de>
-Content-Language: en-US
+In-Reply-To: <20191216120312.4aa478da@xps13>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_031437_835877_42B15082 
-X-CRM114-Status: GOOD (  20.11  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191216_031442_145896_7E44CDC1 
+X-CRM114-Status: GOOD (  17.46  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.230 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -142,167 +104,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- devicetree@vger.kernel.org, linux-pci@vger.kernel.org, phil@raspberrypi.org,
- jeremy.linton@arm.com, Rob Herring <robh+dt@kernel.org>,
- linux-rpi-kernel@lists.infradead.org, james.quinlan@broadcom.com,
- linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
+ Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4177131168762963870=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-
-On 16/12/2019 12:01, Nicolas Saenz Julienne wrote:
-> From: Jim Quinlan <james.quinlan@broadcom.com>
-> 
-> The DT bindings description of the brcmstb PCIe device is described.
-> This node can only be used for now on the Raspberry Pi 4.
-> 
-> Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
-> Co-developed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-> 
-> ---
-> 
-> Changes since v2:
->   - Add pci reference schema
->   - Drop all default properties
->   - Assume msi-controller and msi-parent are properly defined
->   - Add num entries on multiple properties
->   - use unevaluatedProperties
->   - Update required properties
->   - Fix license
-> 
-> Changes since v1:
->   - Fix commit Subject
->   - Remove linux,pci-domain
-> 
-> This was based on Jim's original submission[1], converted to yaml and
-> adapted to the RPi4 case.
-> 
-> [1] https://patchwork.kernel.org/patch/10605937/
-> 
->  .../bindings/pci/brcm,stb-pcie.yaml           | 97 +++++++++++++++++++
->  1 file changed, 97 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> new file mode 100644
-> index 000000000000..77d3e81a437b
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> @@ -0,0 +1,97 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/pci/brcm,stb-pcie.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Brcmstb PCIe Host Controller Device Tree Bindings
-> +
-> +maintainers:
-> +  - Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> +
-> +allOf:
-> +  - $ref: /schemas/pci/pci-bus.yaml#
-> +
-> +properties:
-> +  compatible:
-> +    const: brcm,bcm2711-pcie # The Raspberry Pi 4
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    minItems: 1
-> +    maxItems: 2
-> +    items:
-> +      - description: PCIe host controller
-> +      - description: builtin MSI controller
-> +
-> +  interrupt-names:
-> +    minItems: 1
-> +    maxItems: 2
-> +    items:
-> +      - const: pcie
-> +      - const: msi
-> +
-> +  ranges:
-> +    maxItems: 1
-> +
-> +  dma-ranges:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    items:
-> +      - const: sw_pcie
-> +
-> +  msi-controller:
-> +    description: Identifies the node as an MSI controller.
-
-are you missing "type: boolean" here?
-
-Regards,
-Matthias
+--===============4177131168762963870==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="qqehoburp6qkbata"
+Content-Disposition: inline
 
 
-> +
-> +  msi-parent:
-> +    description: MSI controller the device is capable of using.
-> +
-> +  brcm,enable-ssc:
-> +    description: Indicates usage of spread-spectrum clocking.
-> +    type: boolean
-> +
-> +required:
-> +  - reg
-> +  - dma-ranges
-> +  - "#interrupt-cells"
-> +  - interrupts
-> +  - interrupt-names
-> +  - interrupt-map-mask
-> +  - interrupt-map
-> +  - msi-controller
-> +
-> +unevaluatedProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/irq.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
-> +    scb {
-> +            #address-cells = <2>;
-> +            #size-cells = <1>;
-> +            pcie0: pcie@7d500000 {
-> +                    compatible = "brcm,bcm2711-pcie";
-> +                    reg = <0x0 0x7d500000 0x9310>;
-> +                    device_type = "pci";
-> +                    #address-cells = <3>;
-> +                    #size-cells = <2>;
-> +                    #interrupt-cells = <1>;
-> +                    interrupts = <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>,
-> +                                 <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
-> +                    interrupt-names = "pcie", "msi";
-> +                    interrupt-map-mask = <0x0 0x0 0x0 0x7>;
-> +                    interrupt-map = <0 0 0 1 &gicv2 GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>;
-> +                    msi-parent = <&pcie0>;
-> +                    msi-controller;
-> +                    ranges = <0x02000000 0x0 0xf8000000 0x6 0x00000000 0x0 0x04000000>;
-> +                    dma-ranges = <0x02000000 0x0 0x00000000 0x0 0x00000000 0x0 0x80000000>;
-> +                    brcm,enable-ssc;
-> +            };
-> +    };
-> 
+--qqehoburp6qkbata
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Mon, Dec 16, 2019 at 12:03:12PM +0100, Miquel Raynal wrote:
+> Maxime Ripard <maxime@cerno.tech> wrote on Mon, 16 Dec 2019 11:58:27 +0100:
+> > Hi,
+> >
+> > On Fri, Dec 13, 2019 at 07:10:48PM +0100, Miquel Raynal wrote:
+> > > +static int px30_lvds_grf_config(struct drm_encoder *encoder,
+> > > +				struct drm_display_mode *mode)
+> > > +{
+> > > +	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
+> > > +	u8 nhsync = !(mode->flags & DRM_MODE_FLAG_PHSYNC);
+> > > +	u8 nvsync = !(mode->flags & DRM_MODE_FLAG_PVSYNC);
+> > > +	u8 ndclk = !(mode->flags & DRM_MODE_FLAG_PCSYNC);
+> > > +	int ret;
+> > > +
+> > > +	if (lvds->output != DISPLAY_OUTPUT_LVDS) {
+> > > +		DRM_DEV_ERROR(lvds->dev, "Unsupported display output %d\n",
+> > > +			      lvds->output);
+> > > +		return -EINVAL;
+> > > +	}
+> > > +
+> > > +	if (nhsync ^ nvsync) {
+> > > +		DRM_DEV_ERROR(lvds->dev, "Unsupported Hsync/Vsync polarity\n");
+> > > +		return -EINVAL;
+> > > +	}
+> > > +
+> > > +	/* Set format */
+> > > +	ret = regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON1,
+> > > +				 PX30_LVDS_FORMAT(lvds->format),
+> > > +				 PX30_LVDS_FORMAT(lvds->format));
+> > > +	if (ret)
+> > > +		return ret;
+> > > +
+> > > +	/* Control Hsync/Vsync polarity */
+> > > +	ret = regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON0,
+> > > +				 PX30_LVDS_TIE_CLKS(1),
+> > > +				 PX30_LVDS_TIE_CLKS(1));
+> > > +	if (ret)
+> > > +		return ret;
+> > > +
+> > > +	/* Set Hsync/Vsync polarity */
+> > > +	ret = regmap_update_bits(lvds->grf, PX30_LVDS_GRF_PD_VO_CON0,
+> > > +				 PX30_LVDS_INVERT_CLKS(1),
+> > > +				 PX30_LVDS_INVERT_CLKS(nhsync));
+> > > +	if (ret)
+> > > +		return ret;
+> >
+> > I don't know the hardware but it seems pretty weird to me. hsync and
+> > vsync in LVDS are not clocks (or even signals), they're a bit in the
+> > payload. Is there any explanation in the datasheet (or even a
+> > datasheet in the first place)?
+>
+> There is no explanation about this in the PX30 TRM part 1 (public). But
+> you are right the naming is weird. Could the "tie clocks" thing above
+> mean something to you/people knowing the LVDS world?
+
+I have no idea what that could mean :)
+
+Maxime
+
+--qqehoburp6qkbata
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfdnHAAKCRDj7w1vZxhR
+xZyOAQDhVHd0nWPr1azNDyQKN7iIgKm2Ki+H9zu+7Qomae56GgD/XQNyQoHH9Lfw
+mc376rXeaH4JqVQjDhawWMIIG6U/dAw=
+=keFX
+-----END PGP SIGNATURE-----
+
+--qqehoburp6qkbata--
+
+
+--===============4177131168762963870==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4177131168762963870==--
+
