@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61138120041
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:50:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D58A7120042
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:50:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xwfBJUxX9S4yLC20tJd26lDnxNdXMdxEpnfTnP6JAAg=; b=PyWUWqwIOTkSktmfvOfHdr/iii
-	1L+0YxC+GAKTe1otfvNRDnqdwkPfM5D2Plepv18kyi6G7vFUqa4ZjEUQGP3Rz7uLbG9BKVk4UaAI0
-	8DJh1a7OeXKgY4WdaMgYP9s5cEvbFaejLrg3WiVFJPpxeO3QnP4mY55DfQUMQM1mIO7trcxHzh27R
-	DUdyDLzoMKQSVK4appeEVPj/CvofenwB5+WCJQTBGz1oW3vIxl77+48M2OkGchdabguaImxX2UdSH
-	PfgqfeXzgtkhtQhUk6lz0L3Ui/OW8kkUHLVBJUg+IbB/YYAb6z2O8ATTyB12SBz5oGxmb7WRNFFJZ
-	SybA4z4A==;
+	bh=rYtYp8DLtSbyDL5DRDjHk2KgbzpLlnXCSIgkjnoekm4=; b=PH/R5zGTg35vJwaf0skDLzPJNE
+	Xr58eEETmlojbUYPH/8WZ6ABsvLxI7b1O+6UdcRC5tU0bnYxnfyO/MVv2vcM8CRrOZOQYyX/3XvZ0
+	y2BY+AvJq6twa994QcDnoH8DyRd+ejCIyf1ju7qQMScicBeyBnUGmaXIz3Yg7dHEobwzCrQ4xTPxF
+	ZkJUTPpKLVpJeAX1PebUL7HYGzTMcVXi8qEv43jrimytH1iSIIV7zt+qM35EN8BnD7L2GK4XD9N31
+	E3CEdAvsOZkLITL4axOwMc0f7/XUG1xk1nRBct84S5rJYZN50qEzJvUfRdM4KcZ/dIh4iORNpczmh
+	i7uBGBUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igm4z-0005v9-OL; Mon, 16 Dec 2019 08:50:13 +0000
+	id 1igm5E-0007JI-CO; Mon, 16 Dec 2019 08:50:28 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igm2n-0004PE-F6
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 08:48:03 +0000
+ id 1igm2s-0004Rl-58
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 08:48:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CD551007;
- Mon, 16 Dec 2019 00:47:56 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 320251045;
+ Mon, 16 Dec 2019 00:48:01 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id DC5F33F6CF;
- Mon, 16 Dec 2019 00:51:07 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 72A063F6CF;
+ Mon, 16 Dec 2019 00:51:12 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 05/16] arm64: ptrauth: Add bootup/runtime flags for
- __cpu_setup
-Date: Mon, 16 Dec 2019 14:17:07 +0530
-Message-Id: <1576486038-9899-6-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v3 06/16] arm64: enable ptrauth earlier
+Date: Mon, 16 Dec 2019 14:17:08 +0530
+Message-Id: <1576486038-9899-7-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
 References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_004758_304641_59B85A06 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20191216_004802_327921_B652CEF8 
+X-CRM114-Status: GOOD (  19.91  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -79,141 +78,225 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch allows __cpu_setup to be invoked with one of these flags,
-ARM64_CPU_BOOT_PRIMARY, ARM64_CPU_BOOT_LATE or ARM64_CPU_RUNTIME.
-This is required as some cpufeatures need different handling during
-different scenarios.
+From: Kristina Martsenko <kristina.martsenko@arm.com>
 
-The input parameter in x0 is preserved till the end to be used inside
-this function.
+When the kernel is compiled with pointer auth instructions, the boot CPU
+needs to start using address auth very early, so change the cpucap to
+account for this.
 
-There should be no functional change with this patch and is useful
-for the subsequent ptrauth patch which utilizes it. Some upcoming
-arm cpufeatures can also utilize these flags.
+Pointer auth must be enabled before we call C functions, because it is
+not possible to enter a function with pointer auth disabled and exit it
+with pointer auth enabled. Note, mismatches between architected and
+IMPDEF algorithms will still be caught by the cpufeature framework (the
+separate *_ARCH and *_IMP_DEF cpucaps).
 
+Note the change in behavior: if the boot CPU has address auth and a late
+CPU does not, then we park the late CPU very early in booting. Also, if
+the boot CPU does not have address auth and the late CPU has then system
+panic will occur little later from inside the C code. Until now we would
+have just disabled address auth in this case.
+
+Leave generic authentication as a "system scope" cpucap for now, since
+initially the kernel will only use address authentication.
+
+Reviewed-by: Kees Cook <keescook@chromium.org>
+Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
+[Amit: Re-worked ptrauth setup logic, comments]
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Changes since last version:
 * None.
 
- arch/arm64/include/asm/smp.h |  5 +++++
- arch/arm64/kernel/head.S     |  2 ++
- arch/arm64/kernel/sleep.S    |  2 ++
- arch/arm64/mm/proc.S         | 26 +++++++++++++++-----------
- 4 files changed, 24 insertions(+), 11 deletions(-)
+ arch/arm64/Kconfig             |  5 +++++
+ arch/arm64/include/asm/smp.h   |  1 +
+ arch/arm64/kernel/cpufeature.c | 13 +++----------
+ arch/arm64/kernel/head.S       | 20 ++++++++++++++++++++
+ arch/arm64/kernel/smp.c        |  2 ++
+ arch/arm64/mm/proc.S           | 31 +++++++++++++++++++++++++++++++
+ 6 files changed, 62 insertions(+), 10 deletions(-)
 
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index b1b4476..5aabe8a 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1482,6 +1482,11 @@ config ARM64_PTR_AUTH
+ 	  be enabled. However, KVM guest also require VHE mode and hence
+ 	  CONFIG_ARM64_VHE=y option to use this feature.
+ 
++	  If the feature is present on the primary CPU but not a secondary CPU,
++	  then the secondary CPU will be parked. Also, if the boot CPU does not
++	  have address auth and the late CPU has then system panic will occur.
++	  On such a system, this option should not be selected.
++
+ endmenu
+ 
+ config ARM64_SVE
 diff --git a/arch/arm64/include/asm/smp.h b/arch/arm64/include/asm/smp.h
-index a0c8a0b..008d004 100644
+index 008d004..ddb6d70 100644
 --- a/arch/arm64/include/asm/smp.h
 +++ b/arch/arm64/include/asm/smp.h
-@@ -23,6 +23,11 @@
+@@ -22,6 +22,7 @@
+ 
  #define CPU_STUCK_REASON_52_BIT_VA	(UL(1) << CPU_STUCK_REASON_SHIFT)
  #define CPU_STUCK_REASON_NO_GRAN	(UL(2) << CPU_STUCK_REASON_SHIFT)
++#define CPU_STUCK_REASON_NO_PTRAUTH	(UL(4) << CPU_STUCK_REASON_SHIFT)
  
-+/* Options for __cpu_setup */
-+#define ARM64_CPU_BOOT_PRIMARY		(1)
-+#define ARM64_CPU_BOOT_LATE		(2)
-+#define ARM64_CPU_RUNTIME		(3)
-+
- #ifndef __ASSEMBLY__
+ /* Options for __cpu_setup */
+ #define ARM64_CPU_BOOT_PRIMARY		(1)
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index cf42c46..771c435 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1244,12 +1244,6 @@ static void cpu_clear_disr(const struct arm64_cpu_capabilities *__unused)
+ #endif /* CONFIG_ARM64_RAS_EXTN */
  
- #include <asm/percpu.h>
+ #ifdef CONFIG_ARM64_PTR_AUTH
+-static void cpu_enable_address_auth(struct arm64_cpu_capabilities const *cap)
+-{
+-	sysreg_clear_set(sctlr_el1, 0, SCTLR_ELx_ENIA | SCTLR_ELx_ENIB |
+-				       SCTLR_ELx_ENDA | SCTLR_ELx_ENDB);
+-}
+-
+ static bool has_address_auth(const struct arm64_cpu_capabilities *entry,
+ 			     int __unused)
+ {
+@@ -1526,7 +1520,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 	{
+ 		.desc = "Address authentication (architected algorithm)",
+ 		.capability = ARM64_HAS_ADDRESS_AUTH_ARCH,
+-		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
++		.type = ARM64_CPUCAP_SCOPE_BOOT_CPU,
+ 		.sys_reg = SYS_ID_AA64ISAR1_EL1,
+ 		.sign = FTR_UNSIGNED,
+ 		.field_pos = ID_AA64ISAR1_APA_SHIFT,
+@@ -1536,7 +1530,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 	{
+ 		.desc = "Address authentication (IMP DEF algorithm)",
+ 		.capability = ARM64_HAS_ADDRESS_AUTH_IMP_DEF,
+-		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
++		.type = ARM64_CPUCAP_SCOPE_BOOT_CPU,
+ 		.sys_reg = SYS_ID_AA64ISAR1_EL1,
+ 		.sign = FTR_UNSIGNED,
+ 		.field_pos = ID_AA64ISAR1_API_SHIFT,
+@@ -1545,9 +1539,8 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 	},
+ 	{
+ 		.capability = ARM64_HAS_ADDRESS_AUTH,
+-		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
++		.type = ARM64_CPUCAP_SCOPE_BOOT_CPU,
+ 		.matches = has_address_auth,
+-		.cpu_enable = cpu_enable_address_auth,
+ 	},
+ 	{
+ 		.desc = "Generic authentication (architected algorithm)",
 diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-index 3d18163..5aaf1bb 100644
+index 5aaf1bb..c59c28f 100644
 --- a/arch/arm64/kernel/head.S
 +++ b/arch/arm64/kernel/head.S
-@@ -118,6 +118,7 @@ ENTRY(stext)
- 	 * On return, the CPU will be ready for the MMU to be turned on and
- 	 * the TCR will have been set.
- 	 */
-+	mov	x0, #ARM64_CPU_BOOT_PRIMARY
- 	bl	__cpu_setup			// initialise processor
- 	b	__primary_switch
- ENDPROC(stext)
-@@ -712,6 +713,7 @@ secondary_startup:
+@@ -13,6 +13,7 @@
+ #include <linux/init.h>
+ #include <linux/irqchip/arm-gic-v3.h>
+ 
++#include <asm/alternative.h>
+ #include <asm/assembler.h>
+ #include <asm/boot.h>
+ #include <asm/ptrace.h>
+@@ -713,6 +714,7 @@ secondary_startup:
  	 * Common entry point for secondary CPUs.
  	 */
  	bl	__cpu_secondary_check52bitva
-+	mov	x0, #ARM64_CPU_BOOT_LATE
++	bl	__cpu_secondary_checkptrauth
+ 	mov	x0, #ARM64_CPU_BOOT_LATE
  	bl	__cpu_setup			// initialise processor
  	adrp	x1, swapper_pg_dir
- 	bl	__enable_mmu
-diff --git a/arch/arm64/kernel/sleep.S b/arch/arm64/kernel/sleep.S
-index f5b04dd..7b2f2e6 100644
---- a/arch/arm64/kernel/sleep.S
-+++ b/arch/arm64/kernel/sleep.S
-@@ -3,6 +3,7 @@
- #include <linux/linkage.h>
- #include <asm/asm-offsets.h>
- #include <asm/assembler.h>
-+#include <asm/smp.h>
+@@ -831,6 +833,24 @@ __no_granule_support:
+ 	early_park_cpu CPU_STUCK_REASON_NO_GRAN
+ ENDPROC(__no_granule_support)
  
- 	.text
- /*
-@@ -99,6 +100,7 @@ ENDPROC(__cpu_suspend_enter)
- 	.pushsection ".idmap.text", "awx"
- ENTRY(cpu_resume)
- 	bl	el2_setup		// if in EL2 drop to EL1 cleanly
-+	mov	x0, #ARM64_CPU_RUNTIME
- 	bl	__cpu_setup
- 	/* enable the MMU early - so we can access sleep_save_stash by va */
- 	adrp	x1, swapper_pg_dir
++ENTRY(__cpu_secondary_checkptrauth)
++#ifdef CONFIG_ARM64_PTR_AUTH
++	/* Check if the CPU supports ptrauth */
++	mrs	x2, id_aa64isar1_el1
++	ubfx	x2, x2, #ID_AA64ISAR1_APA_SHIFT, #8
++	cbnz	x2, 1f
++alternative_if ARM64_HAS_ADDRESS_AUTH
++	mov	x3, 1
++alternative_else
++	mov	x3, 0
++alternative_endif
++	cbz	x3, 1f
++	/* Park the mismatched secondary CPU */
++	early_park_cpu CPU_STUCK_REASON_NO_PTRAUTH
++#endif
++1:	ret
++ENDPROC(__cpu_secondary_checkptrauth)
++
+ #ifdef CONFIG_RELOCATABLE
+ __relocate_kernel:
+ 	/*
+diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+index d4ed9a1..f2761a9 100644
+--- a/arch/arm64/kernel/smp.c
++++ b/arch/arm64/kernel/smp.c
+@@ -164,6 +164,8 @@ int __cpu_up(unsigned int cpu, struct task_struct *idle)
+ 				pr_crit("CPU%u: does not support 52-bit VAs\n", cpu);
+ 			if (status & CPU_STUCK_REASON_NO_GRAN)
+ 				pr_crit("CPU%u: does not support %luK granule \n", cpu, PAGE_SIZE / SZ_1K);
++			if (status & CPU_STUCK_REASON_NO_PTRAUTH)
++				pr_crit("CPU%u: does not support pointer authentication\n", cpu);
+ 			cpus_stuck_in_kernel++;
+ 			break;
+ 		case CPU_PANIC_KERNEL:
 diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-index a1e0592..88cf7e4 100644
+index 88cf7e4..8734d99 100644
 --- a/arch/arm64/mm/proc.S
 +++ b/arch/arm64/mm/proc.S
-@@ -400,21 +400,25 @@ ENDPROC(idmap_kpti_install_ng_mappings)
- /*
-  *	__cpu_setup
-  *
-- *	Initialise the processor for turning the MMU on.  Return in x0 the
-- *	value of the SCTLR_EL1 register.
-+ *	Initialise the processor for turning the MMU on.
-+ *
-+ * Input:
-+ *	x0 with a flag ARM64_CPU_BOOT_PRIMARY/ARM64_CPU_BOOT_LATE/ARM64_CPU_RUNTIME.
-+ * Output:
-+ *	Return in x0 the value of the SCTLR_EL1 register.
-  */
- 	.pushsection ".idmap.text", "awx"
- ENTRY(__cpu_setup)
- 	tlbi	vmalle1				// Invalidate local TLB
- 	dsb	nsh
+@@ -16,6 +16,7 @@
+ #include <asm/pgtable-hwdef.h>
+ #include <asm/cpufeature.h>
+ #include <asm/alternative.h>
++#include <asm/smp.h>
  
--	mov	x0, #3 << 20
--	msr	cpacr_el1, x0			// Enable FP/ASIMD
--	mov	x0, #1 << 12			// Reset mdscr_el1 and disable
--	msr	mdscr_el1, x0			// access to the DCC from EL0
-+	mov	x1, #3 << 20
-+	msr	cpacr_el1, x1			// Enable FP/ASIMD
-+	mov	x1, #1 << 12			// Reset mdscr_el1 and disable
-+	msr	mdscr_el1, x1			// access to the DCC from EL0
- 	isb					// Unmask debug exceptions now,
- 	enable_dbg				// since this is per-cpu
--	reset_pmuserenr_el0 x0			// Disable PMU access from EL0
-+	reset_pmuserenr_el0 x1			// Disable PMU access from EL0
- 	/*
- 	 * Memory region attributes for LPAE:
- 	 *
-@@ -435,10 +439,6 @@ ENTRY(__cpu_setup)
- 		     MAIR(0xbb, MT_NORMAL_WT)
- 	msr	mair_el1, x5
- 	/*
--	 * Prepare SCTLR
--	 */
--	mov_q	x0, SCTLR_EL1_SET
--	/*
- 	 * Set/prepare TCR and TTBR. We use 512GB (39-bit) address range for
- 	 * both user and kernel.
- 	 */
-@@ -474,5 +474,9 @@ ENTRY(__cpu_setup)
+ #ifdef CONFIG_ARM64_64K_PAGES
+ #define TCR_TG_FLAGS	TCR_TG0_64K | TCR_TG1_64K
+@@ -474,9 +475,39 @@ ENTRY(__cpu_setup)
  1:
  #endif	/* CONFIG_ARM64_HW_AFDBM */
  	msr	tcr_el1, x10
-+	/*
-+	 * Prepare SCTLR
-+	 */
-+	mov_q	x0, SCTLR_EL1_SET
++	mov	x1, x0
+ 	/*
+ 	 * Prepare SCTLR
+ 	 */
+ 	mov_q	x0, SCTLR_EL1_SET
++
++#ifdef CONFIG_ARM64_PTR_AUTH
++	/* No ptrauth setup for run time cpus */
++	cmp	x1, #ARM64_CPU_RUNTIME
++	b.eq	3f
++
++	/* Check if the CPU supports ptrauth */
++	mrs	x2, id_aa64isar1_el1
++	ubfx	x2, x2, #ID_AA64ISAR1_APA_SHIFT, #8
++	cbz	x2, 3f
++
++	msr_s	SYS_APIAKEYLO_EL1, xzr
++	msr_s	SYS_APIAKEYHI_EL1, xzr
++
++	/* Just enable ptrauth for primary cpu */
++	cmp	x1, #ARM64_CPU_BOOT_PRIMARY
++	b.eq	2f
++
++	/* if !system_supports_address_auth() then skip enable */
++alternative_if_not ARM64_HAS_ADDRESS_AUTH
++	b	3f
++alternative_else_nop_endif
++
++2:	/* Enable ptrauth instructions */
++	ldr	x2, =SCTLR_ELx_ENIA | SCTLR_ELx_ENIB | \
++		     SCTLR_ELx_ENDA | SCTLR_ELx_ENDB
++	orr	x0, x0, x2
++3:
++#endif
  	ret					// return to head.S
  ENDPROC(__cpu_setup)
 -- 
