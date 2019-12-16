@@ -2,94 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34F15120251
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:27:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0C53120253
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:27:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dVWk5Crqysw6K6mlsK2I7tVb2cREM7Y7Mfx9NtZ/bNI=; b=k5zykI2y0OXs1v
-	Vk5XmQmpNqjnGXHTCmbWVBdaFyHBeefAAU317Aeh6tvJqJ7C5KS/TwoL3omROutyCCejFkRzrHwvt
-	vhMwbEXZoT5nBLHFSmSQn8o6ih39uLrUitdd72sEHSgs4iBw0JckegKTsKwDyQkny+m/Hjndi1+3c
-	fl2y2P08OLWVzwHBpQL1XEJM0i17AA/vWgu0+maeY2ZXoTGovSVdbCNf+6b2wdli5vZJv5cN85Ihk
-	pAwdMRDPy4IlsWQ6R9FUAb8KLaEt7YsFYDkgG0JUJgjvG3Y1u1tOOxEOfRVFvseDIaXeAylLYFXYg
-	Mm2BLeJDDs+wMFJpoGaQ==;
+	List-Owner; bh=bp9xWhCPeud7fYPZEfhhlI6hIqcMZMwOIHmrT1wVO34=; b=kGcUZPgjAK+efi
+	EehG2Ybmc/U/Zm4cQQUZrPGVUkG6DEicKhFkymwsnX1nLv7GHOzTo4K2HcAIA5ihEjTihdCaAL+/h
+	xX5+V5EZOj4M7EwbGM3cPfJmN/HyM93Qa7l/7kAE2ZiPj8RCAf9fT/7S85H98q+5A9iyLgvdTv2Zh
+	VMhcy8pRq2TaS2SNJIH8xFQO7K28dzFzX/QaQI1wPfw99pC4seYQoP4d4mUFFOhBBTzFq+gmhN+5v
+	tGRusmsl8TLA3K4DOkynnhHQaYl8vzv8CpKdzXeICveqp0oK6jFviZqtYD6GGnMNLonivBAkicbLh
+	PuPHFHAiLxjqBOaZUmTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ignb3-00050u-5K; Mon, 16 Dec 2019 10:27:25 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1ignbP-0005Ee-KT; Mon, 16 Dec 2019 10:27:47 +0000
+Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ignas-00050E-8T
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 10:27:16 +0000
-Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa6.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa6.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 5jsqDektV5BBk2+xf3w/QcqvniodKkPePiSDQucL2mBcAfnV0iyjeDQf/r2QK9nJNIrLHoHtFM
- aiELBZFR1pVJPWH2ErEzW3Ff5y0gL1/yZ1Sylm+pmkwWlgnm/ctrtFlqbc75tn/o+zyg9y7Zn7
- xjZ8RI68Ik5eX63k9atSyhnV4b7ivLHPdpW7JbP4YXrX3H9PXnP2cr3xvon0Y0eQR8zQqtAv/r
- o7vs0mcBwP6GY9pwoSklBZnMaHnLwP7ooKy2Ve2Z9dcHF8yUExUHWnpzQJsgKsMxx6TiqF6WY+
- zmc=
-X-IronPort-AV: E=Sophos;i="5.69,321,1571727600"; d="scan'208";a="57878905"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 16 Dec 2019 03:27:12 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 16 Dec 2019 03:27:11 -0700
-Received: from localhost (10.10.85.251) by chn-vm-ex02.mchp-main.com
- (10.10.85.144) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Mon, 16 Dec 2019 03:27:11 -0700
-Date: Mon, 16 Dec 2019 11:26:56 +0100
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: David Engraf <david.engraf@sysgo.com>
-Subject: Re: [PATCH v3] tty/serial: atmel: fix out of range clock divider
- handling
-Message-ID: <20191216102656.lkazcvuy5oai63lb@M43218.corp.atmel.com>
-Mail-Followup-To: David Engraf <david.engraf@sysgo.com>,
- richard.genoud@gmail.com, gregkh@linuxfoundation.org,
- jslaby@suse.com, nicolas.ferre@microchip.com,
- alexandre.belloni@bootlin.com, linux-serial@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <39e4d1c7-20b0-a024-3a46-e4d4369eed8e@sysgo.com>
- <20191216085403.17050-1-david.engraf@sysgo.com>
+ id 1ignb1-0004zz-HZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 10:27:25 +0000
+X-Originating-IP: 90.65.102.129
+Received: from kb-xps (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
+ [90.65.102.129]) (Authenticated sender: kamel.bouhara@bootlin.com)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 47A3FE0008;
+ Mon, 16 Dec 2019 10:27:01 +0000 (UTC)
+Date: Mon, 16 Dec 2019 11:26:59 +0100
+From: Kamel Bouhara <kamel.bouhara@bootlin.com>
+To: Codrin.Ciubotariu@microchip.com,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 0/3] SAMA5D2 i2c bus recovery testing
+Message-ID: <20191216102659.GA23978@kb-xps>
+References: <20191205140305.1144788-1-kamel.bouhara@bootlin.com>
+ <20191216101044.x7m7edrrjn2xtq6h@M43218.corp.atmel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191216085403.17050-1-david.engraf@sysgo.com>
+In-Reply-To: <20191216101044.x7m7edrrjn2xtq6h@M43218.corp.atmel.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_022714_331484_31223721 
-X-CRM114-Status: GOOD (  16.22  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191216_022723_741312_AC660C72 
+X-CRM114-Status: GOOD (  16.85  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.70.183.196 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,102 +68,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, richard.genoud@gmail.com,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- linux-serial@vger.kernel.org, jslaby@suse.com,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 09:54:03AM +0100, David Engraf wrote:
-> Use MCK_DIV8 when the clock divider is > 65535. Unfortunately the mode
-> register was already written thus the clock selection is ignored.
-> 
-> Fix by doing the baud rate calulation before setting the mode.
-> 
-> Fixes: 5bf5635ac170 ("tty/serial: atmel: add fractional baud rate support")
-> Signed-off-by: David Engraf <david.engraf@sysgo.com>
-Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+On Mon, Dec 16, 2019 at 11:10:44AM +0100, Ludovic Desroches wrote:
+> Hi Kamel,
+>
 
-Thanks for the fix
+Hi Ludovic,
 
-Regards
+> On Thu, Dec 05, 2019 at 03:03:02PM +0100, Kamel Bouhara wrote:
+> >
+> > Here are the sama5d2 patches, as there is not pinmux defined in the
+> > dtsi. I choosed to only apply it to derivated board as the i2c
+> > configuration is specific for each.
+> >
+> > Of course, it could be great if could test it on the ptc board as well.
+> >
+>
+> The i2c mailing list is missing, can you resend it please.
+>
 
-> ---
-> Changes since v1:
->  - moves set baud rate block before setting the mode register because
->    ATMEL_US_RTSDIS and ATMEL_US_RTSEN depend on ATMEL_US_MR.mode
-> 
-> ---
->  drivers/tty/serial/atmel_serial.c | 43 ++++++++++++++++---------------
->  1 file changed, 22 insertions(+), 21 deletions(-)
-> 
-> diff --git a/drivers/tty/serial/atmel_serial.c b/drivers/tty/serial/atmel_serial.c
-> index a8dc8af83f39..1ba9bc667e13 100644
-> --- a/drivers/tty/serial/atmel_serial.c
-> +++ b/drivers/tty/serial/atmel_serial.c
-> @@ -2270,27 +2270,6 @@ static void atmel_set_termios(struct uart_port *port, struct ktermios *termios,
->                 mode |= ATMEL_US_USMODE_NORMAL;
->         }
-> 
-> -       /* set the mode, clock divisor, parity, stop bits and data size */
-> -       atmel_uart_writel(port, ATMEL_US_MR, mode);
-> -
-> -       /*
-> -        * when switching the mode, set the RTS line state according to the
-> -        * new mode, otherwise keep the former state
-> -        */
-> -       if ((old_mode & ATMEL_US_USMODE) != (mode & ATMEL_US_USMODE)) {
-> -               unsigned int rts_state;
-> -
-> -               if ((mode & ATMEL_US_USMODE) == ATMEL_US_USMODE_HWHS) {
-> -                       /* let the hardware control the RTS line */
-> -                       rts_state = ATMEL_US_RTSDIS;
-> -               } else {
-> -                       /* force RTS line to low level */
-> -                       rts_state = ATMEL_US_RTSEN;
-> -               }
-> -
-> -               atmel_uart_writel(port, ATMEL_US_CR, rts_state);
-> -       }
-> -
->         /*
->          * Set the baud rate:
->          * Fractional baudrate allows to setup output frequency more
-> @@ -2317,6 +2296,28 @@ static void atmel_set_termios(struct uart_port *port, struct ktermios *termios,
-> 
->         if (!(port->iso7816.flags & SER_ISO7816_ENABLED))
->                 atmel_uart_writel(port, ATMEL_US_BRGR, quot);
-> +
-> +       /* set the mode, clock divisor, parity, stop bits and data size */
-> +       atmel_uart_writel(port, ATMEL_US_MR, mode);
-> +
-> +       /*
-> +        * when switching the mode, set the RTS line state according to the
-> +        * new mode, otherwise keep the former state
-> +        */
-> +       if ((old_mode & ATMEL_US_USMODE) != (mode & ATMEL_US_USMODE)) {
-> +               unsigned int rts_state;
-> +
-> +               if ((mode & ATMEL_US_USMODE) == ATMEL_US_USMODE_HWHS) {
-> +                       /* let the hardware control the RTS line */
-> +                       rts_state = ATMEL_US_RTSDIS;
-> +               } else {
-> +                       /* force RTS line to low level */
-> +                       rts_state = ATMEL_US_RTSEN;
-> +               }
-> +
-> +               atmel_uart_writel(port, ATMEL_US_CR, rts_state);
-> +       }
-> +
->         atmel_uart_writel(port, ATMEL_US_CR, ATMEL_US_RSTSTA | ATMEL_US_RSTRX);
->         atmel_uart_writel(port, ATMEL_US_CR, ATMEL_US_TXEN | ATMEL_US_RXEN);
->         atmel_port->tx_stopped = false;
-> --
-> 2.17.1
-> 
+Actually it was not intended to be sent to any mailing list, it is a
+mail for Codrin so he can achieve some tests.
+
+> By the way, it fails to apply against next and 5.5-rc1. On which version is it
+> based? I assume a cherry-pick should work but git am fails.
+>
+
+It's based on 5.4, Im not sure it will apply on next but it should on
+5.5, anyway it is a WIP here.
+
+Best Regards,
+Kamel
+
+> Regards
+>
+> Ludovic
+>
+> > Best Regards,
+> > Kamel
+> >
+> > Kamel Bouhara (3):
+> >   dt-bindings: i2c: at91: document optional bus recovery properties
+> >   i2c: at91: implement i2c bus recovery
+> >   ARM: at91/dt: sama5d2: add i2c gpio pinctrl
+> >
+> >  .../devicetree/bindings/i2c/i2c-at91.txt      | 10 +++
+> >  arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts     | 33 +++++++++-
+> >  arch/arm/boot/dts/at91-sama5d2_xplained.dts   | 33 +++++++++-
+> >  drivers/i2c/busses/i2c-at91-master.c          | 64 +++++++++++++++++++
+> >  drivers/i2c/busses/i2c-at91.h                 |  8 +++
+> >  5 files changed, 142 insertions(+), 6 deletions(-)
+> >
+> > --
+> > 2.24.0
+> >
+
+--
+Kamel Bouhara, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
