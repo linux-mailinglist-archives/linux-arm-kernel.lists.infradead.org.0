@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2920A12028D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:30:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 172FD12028F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:30:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tOVlVmrrmZwkYJTUHJ7MxNE5a0BfJpWAlv0l/TabPFA=; b=fqeYScKWQL6g6tol3sD1NZQT8
-	LoGqzIDgSTLU/G3qHMjoO2e70p0gJzpvVuvX6TtJV5dmpwDu/YS1gw7qEHrQVZ4AB1AWKToKYmDl6
-	3ZpQlEfGN4qJOg87Hbs+EX5DHtrbe1FDDQI/1T2x57ezi5nLZSeRdNP4dok+eLgK0eNZmCBqHuUVy
-	surLhJR8H4ee1lqWz06vIeo69ypipMX+uVcMrTZ7jJYVWV6NOWUva+9ErxHzISY1croBAd1hi6VHm
-	xZr/qYtyFep5NWa4ndrKruIK8MA9gtUcNo8Xa71qChqM8TmtqJJh0yI7xaDpPG0CPeK3Qz9B29chN
-	J9Nijba9A==;
+	 bh=Mapv0Muu9VbIVe1OLDXQAXGN+i8gk2nKCnCGu9qFQQs=; b=KmVWC+7TJHN95VIB+IupOvURW
+	d9yhPYZu7UlJDAn5Jcm5Mj0lhdYHlPCfcwuS0+xkUGVVOxTVbDOAwgpc5iKR2WKrKMw6E+xvu1TSK
+	5Pbi+9cHLVPiTbaDBm7uIsCsKEIfI9S4MDEm5kwvFvK6Ifb/ijiV9iuDvDpp4f5h/V4MGYyKd/q3Y
+	CLVI8bTDOE+Ll6KFINJ8+p00Z9l8ZSNgbR+iEefayS0nJnUwPZg0OPgTSlw9EOYoL4F2T05Ey480g
+	+vxW8+CxzNijwfPkJQA3W+7S5c2EYibLDhjlwQoHBMNf6sdLzBOKkAg7MpbWY4pjAqTqaI7lPrts1
+	Vc2h+YogA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igne9-0007SE-8n; Mon, 16 Dec 2019 10:30:37 +0000
+	id 1igneQ-0007jy-3O; Mon, 16 Dec 2019 10:30:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igndk-0007Ip-Ax
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 10:30:14 +0000
+ id 1igndw-0007U1-A1
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 10:30:25 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7CAF8206CB;
- Mon, 16 Dec 2019 10:30:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 73AD7206CB;
+ Mon, 16 Dec 2019 10:30:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576492212;
- bh=TP9DzZcKSVrQpP32FqzNgOZaTZ4ylpfJByIaBDD/rtI=;
+ s=default; t=1576492223;
+ bh=KmOjsO485jZWPyMI0JTSr6CCJZxWMYYXDKFUfapkW0k=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=cbW7rAD98yBt5ylWkUjbozPxRKW1HZE5UawycIiZRFQ7gvrOSblVeXGoelAraXm6z
- BkbndCnYJ4/iiZpb3JLUY79l3nikIgQSfsGIToNvNie7cu1JTu1PeaXTB4430bcJ5J
- E2BhjDjV/XFCPZXxpWRtwB/0M1JZKrVzw/bN05+8=
-Date: Mon, 16 Dec 2019 11:30:09 +0100
+ b=KcB9P/2h/9Ud9VmZpuZ737sZN6xDA/T/iKVKsFkI4QgKMissDmHwcz+tU8/zU0XuQ
+ e+5y+DSi5/tXT/uWOXMRg8j/ooYnhFd8jg+rFGOr8hn7kjhv3h+/p8/uyQsirCdQJB
+ uWqhnBl7t1rYareJCRlX0yeY6o6vVqWhtmh/+AQ0=
+Date: Mon, 16 Dec 2019 11:30:21 +0100
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@kernel.org>
-Subject: Re: [PATCH 02/14] dt-bindings: media: sun4i-csi: Add compatible for
- CSI0 on R40
-Message-ID: <20191216103009.knlby7rxf5pghf5q@gilmour.lan>
+Subject: Re: [PATCH 01/14] dt-bindings: media: sun4i-csi: Add compatible for
+ CSI1 on A10/A20
+Message-ID: <20191216103021.z4zmd5wz3fbt6p76@gilmour.lan>
 References: <20191215165924.28314-1-wens@kernel.org>
- <20191215165924.28314-3-wens@kernel.org>
+ <20191215165924.28314-2-wens@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20191215165924.28314-3-wens@kernel.org>
+In-Reply-To: <20191215165924.28314-2-wens@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_023012_915073_08049F2E 
-X-CRM114-Status: GOOD (  14.04  )
+X-CRM114-CacheID: sfid-20191216_023024_390180_0E5E4EC1 
+X-CRM114-Status: GOOD (  10.89  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,55 +82,55 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>, Sakari Ailus <sakari.ailus@linux.intel.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============6128976981162589407=="
+Content-Type: multipart/mixed; boundary="===============5911486468407134203=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6128976981162589407==
+--===============5911486468407134203==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="j4c5uoispaqa4lve"
+	protocol="application/pgp-signature"; boundary="c5dhr4zeahfmg3rc"
 Content-Disposition: inline
 
 
---j4c5uoispaqa4lve
+--c5dhr4zeahfmg3rc
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Mon, Dec 16, 2019 at 12:59:12AM +0800, Chen-Yu Tsai wrote:
+On Mon, Dec 16, 2019 at 12:59:11AM +0800, Chen-Yu Tsai wrote:
 > From: Chen-Yu Tsai <wens@csie.org>
 >
-> The CSI0 block in the Allwinner R40 SoC looks to be the same as the one
-> in the A20. The register maps line up, and they support the same
-> features. The R40 appears to support BT.1120 based on the feature
-> overview, but it is not mentioned anywhere else. Also like the A20, the
-> ISP is not mentioned, but the CSI special clock needs to be enabled for
-> the hardware to function. The manual does state that the CSI special
-> clock is the TOP clock for all CSI hardware, but currently no hardware
-> exists for us to test if CSI1 also depends on it or not.
+> The CSI1 block has the same structure and layout as the CSI0 block.
+> Differences include:
 >
-> Add a compatible string for the CSI0 block in the R40, with the A20
-> compatible string as a fallback.
+>   - Only one channel in BT.656 instead of four in CSI0
+>   - 10-bit raw data input vs 8-bit in CSI0
+>   - 24-bit RGB888/YUV444 input vs 16-bit RGB565/YUV422 in CSI0
+>   - No ISP hardware
 >
+> The hardware found in the A20 is the same as in the A10.
+>
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+
 Acked-by: Maxime Ripard <mripard@kernel.org>
 
 Maxime
 
---j4c5uoispaqa4lve
+--c5dhr4zeahfmg3rc
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfdcsQAKCRDj7w1vZxhR
-xdV4AP43TuArwkolNnd0v+MEWhLJJWbvcpaXKB28P0p/Or8XqAEAtdXmz4ciBhek
-kycHLr2wxDL17v6dVj+QU3bE3MLLvws=
-=nnf8
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfdcvQAKCRDj7w1vZxhR
+xT3dAQCxY6xWEXeQcYr/d7+QSenbOtBVqgdSzjafmezoosWGJQEAzy+LF9CQBWZn
+xOxhZnZen3CAWEOsFLZ6ul8WsuPC6AM=
+=C0Mw
 -----END PGP SIGNATURE-----
 
---j4c5uoispaqa4lve--
+--c5dhr4zeahfmg3rc--
 
 
---===============6128976981162589407==
+--===============5911486468407134203==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -141,5 +141,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6128976981162589407==--
+--===============5911486468407134203==--
 
