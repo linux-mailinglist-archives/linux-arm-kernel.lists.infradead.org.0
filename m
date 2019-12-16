@@ -2,146 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A779912001E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:45:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B03F12002A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:48:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fPCjsdexgyqwizc18Me7X6Po1FEC6y3tgSdwRgFGyog=; b=GBiADgkTRXWh/b
-	OCp2yBx5NeXFmO3mv/j9nBoqSy00NPKPd3Gu/wUgFAtu8K3FcWpOCilC3ppVCgayTv4O8fqbSGDjy
-	jJ3SNb5we4rQHSQZBbnrmPZV05P0KjGqboB4Wwc6D4ksnTuShycc7qdMJgJi1MjuxBuKFLFdR8bRF
-	HNHkmt4n4GbQwgfOzmvoBj9tRe2URt8YOn1DltTQrqh3YwKr86TbawQeSc8FnQpfePeMwMoD4jy2U
-	QFINwdga7XtRTW4L9802L321GrahNXXSxJtR52gMjLZFQ4Wt/wNi+7FaPxS3kaLvns/RkhlUNRPr7
-	2kwStMyUhYXOPvaMo0Hw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=yvmJyzFGf8lHYw3YXoD8hGKI1Lp5OjIIo6yfD47C4dA=; b=X1u
+	i1+qg9SaxQDUXYkHKr2HUp8OthTQU4zX+wcemhdqoC7VbGR9hPZkhVDho25l+V6eyOtxY5y1kEPZk
+	3jVZentu0S1nJ3HmLLA6y6XRVf1b0/zPV/eVyVNDavFNrwJP3IwPtLChhaDNlovoTDqmKr33Urmx7
+	hDfg5YPEtz0NaH23chRDr8X+6mNANos0TJEPOZqnvdFc0TY8xal3YZO5OABPNLOTEQThNr46xamTP
+	ukY5V5ZECve8AV47eeOMEv7nf1SLdXc/XW+L+3kyJ769i/LaWt3NFs857ImLAEkQCP0bX6TwZEg9s
+	mKA6yyrBs3Idvu39oHaprD9sLa2sjnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igm0g-0003by-BX; Mon, 16 Dec 2019 08:45:46 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igm0Q-0003WB-Ol; Mon, 16 Dec 2019 08:45:33 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 78DCAAE03;
- Mon, 16 Dec 2019 08:45:28 +0000 (UTC)
-Subject: Re: [PATCH v6 6/8] soc: mediatek: add MT6765 scpsys and subdomain
- support
-From: Matthias Brugger <matthias.bgg@gmail.com>
-To: Macpaul Lin <macpaul.lin@mediatek.com>, Rob Herring <robh+dt@kernel.org>, 
- Marc Zyngier <marc.zyngier@arm.com>, Ryder Lee <ryder.lee@mediatek.com>,
- Stephen Boyd <sboyd@kernel.org>, Sean Wang <sean.wang@mediatek.com>,
- Mars Cheng <mars.cheng@mediatek.com>, Owen Chen <owen.chen@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <1562924653-10056-1-git-send-email-macpaul.lin@mediatek.com>
- <1562924653-10056-7-git-send-email-macpaul.lin@mediatek.com>
- <bdadcb15-7bbc-11a9-5780-edcb984b051a@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; keydata=
- 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
-Message-ID: <f7299e88-d525-dd7f-fc4c-c113de76a8aa@gmail.com>
-Date: Mon, 16 Dec 2019 09:45:21 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <bdadcb15-7bbc-11a9-5780-edcb984b051a@gmail.com>
-Content-Language: en-US
+	id 1igm2h-0004AD-07; Mon, 16 Dec 2019 08:47:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1igm2S-00049Q-QF
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 08:47:39 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CA31B1007;
+ Mon, 16 Dec 2019 00:47:33 -0800 (PST)
+Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 138E23F6CF;
+ Mon, 16 Dec 2019 00:50:44 -0800 (PST)
+From: Amit Daniel Kachhap <amit.kachhap@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v3 00/16] arm64: return address signing
+Date: Mon, 16 Dec 2019 14:17:02 +0530
+Message-Id: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_004531_141636_4EF89214 
-X-CRM114-Status: GOOD (  15.45  )
-X-Spam-Score: 0.9 (/)
+X-CRM114-CacheID: sfid-20191216_004736_941004_60E0C0FE 
+X-CRM114-Status: GOOD (  13.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
- headers
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (matthias.bgg[at]gmail.com)
- 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
- CUSTOM_MED
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
- list
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -153,204 +58,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, CC Hwang <cc.hwang@mediatek.com>,
- wsd_upstream@mediatek.com, Loda Chou <loda.chou@mediatek.com>,
- linux-serial@vger.kernel.org, linux-clk@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>, Mark Brown <Mark.Brown@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15/12/2019 00:40, Matthias Brugger wrote:
-> 
-> 
-> On 12/07/2019 11:43, Macpaul Lin wrote:
->> From: Mars Cheng <mars.cheng@mediatek.com>
->>
->> This adds scpsys support for MT6765
->> Add subdomain support for MT6765:
->> isp, mm, connsys, mfg, and cam.
->>
->> Signed-off-by: Mars Cheng <mars.cheng@mediatek.com>
->> Signed-off-by: Owen Chen <owen.chen@mediatek.com>
->> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
-> 
-> Applied to v5.5-next/soc
-> 
+Hi,
 
-I didn't realize this has dependencies with other series not yet merged. I drop
-this one for now as it breaks linux-next.
+This series improves function return address protection for the arm64 kernel, by
+compiling the kernel with ARMv8.3 Pointer Authentication instructions (referred
+ptrauth hereafter). This should help protect the kernel against attacks using
+return-oriented programming.
 
-Regards,
-Matthias
+This series is based on v5.5-rc2.
 
->> ---
->>  drivers/soc/mediatek/mtk-scpsys.c | 130 ++++++++++++++++++++++++++++++
->>  1 file changed, 130 insertions(+)
->>
->> diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
->> index ea5a221a16e9..ff124c514e9c 100644
->> --- a/drivers/soc/mediatek/mtk-scpsys.c
->> +++ b/drivers/soc/mediatek/mtk-scpsys.c
->> @@ -16,6 +16,7 @@
->>  
->>  #include <dt-bindings/power/mt2701-power.h>
->>  #include <dt-bindings/power/mt2712-power.h>
->> +#include <dt-bindings/power/mt6765-power.h>
->>  #include <dt-bindings/power/mt6797-power.h>
->>  #include <dt-bindings/power/mt7622-power.h>
->>  #include <dt-bindings/power/mt7623a-power.h>
->> @@ -869,6 +870,120 @@ static const struct scp_subdomain scp_subdomain_mt2712[] = {
->>  	{MT2712_POWER_DOMAIN_MFG_SC2, MT2712_POWER_DOMAIN_MFG_SC3},
->>  };
->>  
->> +/*
->> + * MT6765 power domain support
->> + */
->> +#define SPM_PWR_STATUS_MT6765			0x0180
->> +#define SPM_PWR_STATUS_2ND_MT6765		0x0184
->> +
->> +static const struct scp_domain_data scp_domain_data_mt6765[] = {
->> +	[MT6765_POWER_DOMAIN_VCODEC] = {
->> +		.name = "vcodec",
->> +		.sta_mask = BIT(26),
->> +		.ctl_offs = 0x300,
->> +		.sram_pdn_bits = GENMASK(8, 8),
->> +		.sram_pdn_ack_bits = GENMASK(12, 12),
->> +	},
->> +	[MT6765_POWER_DOMAIN_ISP] = {
->> +		.name = "isp",
->> +		.sta_mask = BIT(5),
->> +		.ctl_offs = 0x308,
->> +		.sram_pdn_bits = GENMASK(8, 8),
->> +		.sram_pdn_ack_bits = GENMASK(12, 12),
->> +		.subsys_clk_prefix = "isp",
->> +		.bp_table = {
->> +			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
->> +				BIT(20), BIT(20)),
->> +			BUS_PROT(SMI_TYPE, 0x3C4, 0x3C8, 0, 0x3C0,
->> +				BIT(2), BIT(2)),
->> +		},
->> +	},
->> +	[MT6765_POWER_DOMAIN_MM] = {
->> +		.name = "mm",
->> +		.sta_mask = BIT(3),
->> +		.ctl_offs = 0x30C,
->> +		.sram_pdn_bits = GENMASK(8, 8),
->> +		.sram_pdn_ack_bits = GENMASK(12, 12),
->> +		.basic_clk_id = {"mm"},
->> +		.subsys_clk_prefix = "mm",
->> +		.bp_table = {
->> +			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
->> +				BIT(16) | BIT(17), BIT(16) | BIT(17)),
->> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
->> +				BIT(10) | BIT(11), BIT(10) | BIT(11)),
->> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
->> +				BIT(1) | BIT(2), BIT(1) | BIT(2)),
->> +		},
->> +	},
->> +	[MT6765_POWER_DOMAIN_CONN] = {
->> +		.name = "conn",
->> +		.sta_mask = BIT(1),
->> +		.ctl_offs = 0x32C,
->> +		.sram_pdn_bits = 0,
->> +		.sram_pdn_ack_bits = 0,
->> +		.bp_table = {
->> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
->> +				BIT(13), BIT(13)),
->> +			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
->> +				BIT(18), BIT(18)),
->> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
->> +				BIT(14) | BIT(16), BIT(14) | BIT(16)),
->> +		},
->> +	},
->> +	[MT6765_POWER_DOMAIN_MFG_ASYNC] = {
->> +		.name = "mfg_async",
->> +		.sta_mask = BIT(23),
->> +		.ctl_offs = 0x334,
->> +		.sram_pdn_bits = 0,
->> +		.sram_pdn_ack_bits = 0,
->> +		.basic_clk_id = {"mfg"},
->> +	},
->> +	[MT6765_POWER_DOMAIN_MFG] = {
->> +		.name = "mfg",
->> +		.sta_mask = BIT(4),
->> +		.ctl_offs = 0x338,
->> +		.sram_pdn_bits = GENMASK(8, 8),
->> +		.sram_pdn_ack_bits = GENMASK(12, 12),
->> +		.bp_table = {
->> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
->> +				BIT(25), BIT(25)),
->> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
->> +				BIT(21) | BIT(22), BIT(21) | BIT(22)),
->> +		}
->> +	},
->> +	[MT6765_POWER_DOMAIN_CAM] = {
->> +		.name = "cam",
->> +		.sta_mask = BIT(25),
->> +		.ctl_offs = 0x344,
->> +		.sram_pdn_bits = GENMASK(8, 9),
->> +		.sram_pdn_ack_bits = GENMASK(12, 13),
->> +		.subsys_clk_prefix = "cam",
->> +		.bp_table = {
->> +			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
->> +				BIT(19) | BIT(21), BIT(19) | BIT(21)),
->> +			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
->> +				BIT(20), BIT(20)),
->> +			BUS_PROT(SMI_TYPE, 0x3C4, 0x3C8, 0, 0x3C0,
->> +				BIT(3), BIT(3)),
->> +		}
->> +	},
->> +	[MT6765_POWER_DOMAIN_MFG_CORE0] = {
->> +		.name = "mfg_core0",
->> +		.sta_mask = BIT(7),
->> +		.ctl_offs = 0x34C,
->> +		.sram_pdn_bits = GENMASK(8, 8),
->> +		.sram_pdn_ack_bits = GENMASK(12, 12),
->> +	},
->> +};
->> +
->> +static const struct scp_subdomain scp_subdomain_mt6765[] = {
->> +	{MT6765_POWER_DOMAIN_MM, MT6765_POWER_DOMAIN_CAM},
->> +	{MT6765_POWER_DOMAIN_MM, MT6765_POWER_DOMAIN_ISP},
->> +	{MT6765_POWER_DOMAIN_MM, MT6765_POWER_DOMAIN_VCODEC},
->> +	{MT6765_POWER_DOMAIN_MFG_ASYNC, MT6765_POWER_DOMAIN_MFG},
->> +	{MT6765_POWER_DOMAIN_MFG, MT6765_POWER_DOMAIN_MFG_CORE0},
->> +};
->> +
->>  /*
->>   * MT6797 power domain support
->>   */
->> @@ -1363,6 +1478,18 @@ static const struct scp_soc_data mt2712_data = {
->>  	.bus_prot_reg_update = false,
->>  };
->>  
->> +static const struct scp_soc_data mt6765_data = {
->> +	.domains = scp_domain_data_mt6765,
->> +	.num_domains = ARRAY_SIZE(scp_domain_data_mt6765),
->> +	.subdomains = scp_subdomain_mt6765,
->> +	.num_subdomains = ARRAY_SIZE(scp_subdomain_mt6765),
->> +	.regs = {
->> +		.pwr_sta_offs = SPM_PWR_STATUS_MT6765,
->> +		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND_MT6765,
->> +	},
->> +	.bus_prot_reg_update = true,
->> +};
->> +
->>  static const struct scp_soc_data mt6797_data = {
->>  	.domains = scp_domain_data_mt6797,
->>  	.num_domains = ARRAY_SIZE(scp_domain_data_mt6797),
->> @@ -1429,6 +1556,9 @@ static const struct of_device_id of_scpsys_match_tbl[] = {
->>  	}, {
->>  		.compatible = "mediatek,mt2712-scpsys",
->>  		.data = &mt2712_data,
->> +	}, {
->> +		.compatible = "mediatek,mt6765-scpsys",
->> +		.data = &mt6765_data,
->>  	}, {
->>  		.compatible = "mediatek,mt6797-scpsys",
->>  		.data = &mt6797_data,
->>
+High-level changes since v2 [1] (detailed changes are in individual patches):
+ - Added support to generate randomness for ptrauth keys for early booting task
+   in primary core as suggested by Ard.
+ - Modified lkdtm ptrauth test-case to change keys to cause crash instead of
+   modifying the lr in the stack.
+ - Resolved a clang compilation issue.
+ - Re-positioned "arm64: rename ptrauth key structures to be user-specific" to
+   reduce code churnings.
+
+This series do not implement few things or have known limitations:
+ - kdump tools may need some rework to work with ptrauth. The kdump
+   tools may need the ptrauth information to strip PAC bits.
+
+Feedback welcome!
+
+Thanks,
+Amit Daniel
+
+[1]: http://lists.infradead.org/pipermail/linux-arm-kernel/2019-November/695089.html
+
+Amit Daniel Kachhap (8):
+  arm64: create macro to park cpu in an infinite loop
+  arm64: ptrauth: Add bootup/runtime flags for __cpu_setup
+  arm64: initialize ptrauth keys for kernel booting task
+  arm64: mask PAC bits of __builtin_return_address
+  arm64: __show_regs: strip PAC from lr in printk
+  arm64: suspend: restore the kernel ptrauth keys
+  arm64: kprobe: disable probe of ptrauth instruction
+  lkdtm: arm64: test kernel pointer authentication
+
+Kristina Martsenko (6):
+  arm64: cpufeature: add pointer auth meta-capabilities
+  arm64: rename ptrauth key structures to be user-specific
+  arm64: install user ptrauth keys at kernel exit time
+  arm64: enable ptrauth earlier
+  arm64: initialize and switch ptrauth kernel keys
+  arm64: compile the kernel with ptrauth return address signing
+
+Mark Rutland (1):
+  arm64: unwind: strip PAC from kernel addresses
+
+Vincenzo Frascino (1):
+  kconfig: Add support for 'as-option'
+
+ arch/arm64/Kconfig                        | 27 +++++++++++-
+ arch/arm64/Makefile                       | 11 +++++
+ arch/arm64/include/asm/asm_pointer_auth.h | 59 ++++++++++++++++++++++++++
+ arch/arm64/include/asm/compiler.h         | 20 +++++++++
+ arch/arm64/include/asm/cpucaps.h          |  4 +-
+ arch/arm64/include/asm/cpufeature.h       |  6 +--
+ arch/arm64/include/asm/insn.h             | 13 +++---
+ arch/arm64/include/asm/pointer_auth.h     | 54 ++++++++++++------------
+ arch/arm64/include/asm/processor.h        |  3 +-
+ arch/arm64/include/asm/smp.h              | 10 +++++
+ arch/arm64/include/asm/stackprotector.h   |  5 +++
+ arch/arm64/kernel/asm-offsets.c           | 16 +++++++
+ arch/arm64/kernel/cpufeature.c            | 30 ++++++++++----
+ arch/arm64/kernel/entry.S                 |  6 +++
+ arch/arm64/kernel/head.S                  | 47 +++++++++++++++------
+ arch/arm64/kernel/insn.c                  |  1 +
+ arch/arm64/kernel/pointer_auth.c          |  7 +---
+ arch/arm64/kernel/probes/decode-insn.c    |  2 +-
+ arch/arm64/kernel/process.c               |  5 ++-
+ arch/arm64/kernel/ptrace.c                | 16 +++----
+ arch/arm64/kernel/sleep.S                 |  8 ++++
+ arch/arm64/kernel/smp.c                   | 10 +++++
+ arch/arm64/kernel/stacktrace.c            |  3 ++
+ arch/arm64/mm/proc.S                      | 69 ++++++++++++++++++++++++++-----
+ drivers/misc/lkdtm/bugs.c                 | 36 ++++++++++++++++
+ drivers/misc/lkdtm/core.c                 |  1 +
+ drivers/misc/lkdtm/lkdtm.h                |  1 +
+ include/linux/stackprotector.h            |  2 +-
+ scripts/Kconfig.include                   |  4 ++
+ 29 files changed, 388 insertions(+), 88 deletions(-)
+ create mode 100644 arch/arm64/include/asm/asm_pointer_auth.h
+ create mode 100644 arch/arm64/include/asm/compiler.h
+
+-- 
+2.7.4
 
 
 _______________________________________________
