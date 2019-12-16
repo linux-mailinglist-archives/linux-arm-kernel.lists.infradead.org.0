@@ -2,85 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6781B120FB5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 17:39:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54184120FFE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 17:49:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jKN70qWUUOW+1Obd0eXD+T/RT5b0auyS8cHkZUF/+SQ=; b=F7/zT5YglYTsW1XIiOy9siV2sJ
-	FFRDxaTFp9dzJWF4F5dodDEajEL+RcORGzeoeFo7tVMwHj0FX3N6meAcx9TpuZJqp8frEJBcGikTE
-	gX0n1BhYX7WHqodG78fckGzNGmmtG9CLSAXQrFmVBbtCMFPZ+zFOG13O8BVivoS0ZyhmU6MRBeNqL
-	BnDrEuk6trvqd6i0lGHLr4YmvppNDtHv6rTjBldjCw2MlIZKV/G3mVma/Dg+fDN7ByQy5p6U9TVlp
-	gzCkCsDxMcp7+UUU2JEuw2BXLVxXYcGA1MdiaYvlXkLeJ3qsKtDxbjVo14SJ0I8JcwOq5aF41e6jl
-	VFXIuM9A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Date:From:To:Subject:References:
+	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7liUCkCtuwQnGahR0LO/CGtgzNmZmDqrADB4CPCMEC4=; b=sK3bpzEoUNkm+c
+	FMuuM3eHvXvZtD1niqq2BGqWJAWcdwLalXI9u3c/efrl4WRbv9WahsBZeSWt+YuJNBP3wUy1qn7YY
+	8VvD50NYcsFdYBEfI1dO+fVdcMkP7tQtq9Od0GTl2SNRdhvv8WPBh4hRnidPPfC9qrTF54/POB8kl
+	fd1BoDG4puJq+WEQ0Kxnbggb3QWc6pQFgrEHH0CaQhHNN8P0ig9dfb4iCwHLZ1hR1FmVkQvNaiblz
+	7uLbV3J7+Fnge6NkiwVkt861bkOOj5PVpzAt4zIApkMA6WqowkZi25rrvDmNVHNbzLAqQLBlLlqU2
+	UBa+CxYdRJSJicRAfeWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igtP7-0000lv-S7; Mon, 16 Dec 2019 16:39:29 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1igtYT-0004Oc-12; Mon, 16 Dec 2019 16:49:09 +0000
+Received: from mail-pg1-x531.google.com ([2607:f8b0:4864:20::531])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igtNt-00081c-Ft
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 16:38:15 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1576514293; h=References: In-Reply-To: Message-Id: Date:
- Subject: Cc: To: From: Sender;
- bh=2+EDXN6iZgZzpeQrdNotKtBLTO05w7oHvPgGY8rGGuk=;
- b=ku/DoSdTY3E+zEaohEGSfblMF+QlJZ6IdIsq+1E7zHa4BqI70QpQ20izttVLnfTmYANrt87I
- tNI1UDyksFSFkH7Ln2K9dzwe4gGM54dcKV+KrVBQNmlDzPEYWD+Dh68t+uk9vMSuy0cNrqCM
- Xpm1D7aNhlpRZDo7FQRX8ZsZu8k=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5df7b2f3.7f5d791f2ce0-smtp-out-n03;
- Mon, 16 Dec 2019 16:38:11 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id AD1E2C447A2; Mon, 16 Dec 2019 16:38:09 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
- [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: jcrouse)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 45EB8C433CB;
- Mon, 16 Dec 2019 16:38:05 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 45EB8C433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=jcrouse@codeaurora.org
-From: Jordan Crouse <jcrouse@codeaurora.org>
-To: iommu@lists.linux-foundation.org
-Subject: [PATCH v3 5/5] drm/msm/a6xx: Support split pagetables
-Date: Mon, 16 Dec 2019 09:37:51 -0700
-Message-Id: <1576514271-15687-6-git-send-email-jcrouse@codeaurora.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
-References: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
+ id 1igtYK-0004Nn-UY
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 16:49:02 +0000
+Received: by mail-pg1-x531.google.com with SMTP id q127so4035676pga.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Dec 2019 08:48:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=message-id:mime-version:content-transfer-encoding:in-reply-to
+ :references:subject:to:from:cc:user-agent:date;
+ bh=g0u6MYVXB1r8q7tLRy3ssmuddCpp1ygE+qNfEAR+tzs=;
+ b=GkO3p/N3v9DaMjY7s3JJKqo9ZYMrAiq7NezoyL1jtHl6rflpR5LpxodzDPOS8dZeg5
+ QtHOw6SaEFGm0JM8ZeTFp+c9CyZE3latVdmMaNlabZHZwEDIGKnqD4/f4WVZ92UEe6V0
+ JLkYF7c7oqGbJsZ4js+mM2KbizqOYu/UwJGSo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:mime-version
+ :content-transfer-encoding:in-reply-to:references:subject:to:from:cc
+ :user-agent:date;
+ bh=g0u6MYVXB1r8q7tLRy3ssmuddCpp1ygE+qNfEAR+tzs=;
+ b=uKcxeMXTtv5b+8Le/UErUm9DlnyoeEr+jsIBZbNDgSWi/Zis+k0XmPgzNADL8JrRYX
+ JsXZT9eIoEfXAGNd1A6WrjJdJA5+4PVe23LxbYqIUczdp788RL/hZdeua8K5KxrdgnQK
+ sIKaMwuGdHetNvqhMcWcLZRQP+2+LmzPALKekQZClCUgYfu0aOuMTN3qsfKon8jTxJVw
+ rv9GwknlseRyNOXCDInau0qdE1Qph80dPfSLb/k7y7YbCg1JzA3Vq7AcQDjM6kGuRu7y
+ DhRThUe3LICohf2xsVS2AZ8BwYDiu5F5rADFwZYXehwDq1Kky4rgIpkCpLr/AYYMCmhI
+ H/yQ==
+X-Gm-Message-State: APjAAAWKSeyADR6AQ10u5McdKOyJ0ZtyAAukhgh7mOACqbvLK/vxk41z
+ iGYywax2FmRhMieVbZFmCxeX/A==
+X-Google-Smtp-Source: APXvYqxCcxTpMnkRTvpz5cLBjNYbPUx15IUg+xR6p8uH9udpwIzZK5vvkm1iTdzAgUHQrgxw+yGwzQ==
+X-Received: by 2002:a65:66d7:: with SMTP id c23mr19824054pgw.40.1576514939270; 
+ Mon, 16 Dec 2019 08:48:59 -0800 (PST)
+Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
+ by smtp.gmail.com with ESMTPSA id d24sm23769672pfq.75.2019.12.16.08.48.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Dec 2019 08:48:57 -0800 (PST)
+Message-ID: <5df7b579.1c69fb81.c9187.3f3a@mx.google.com>
+MIME-Version: 1.0
+In-Reply-To: <20191213064934.4112-1-saiprakash.ranjan@codeaurora.org>
+References: <20191213064934.4112-1-saiprakash.ranjan@codeaurora.org>
+Subject: Re: [PATCH] watchdog: qcom: Use platform_get_irq_optional() for bark
+ irq
+To: Andy Gross <agross@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Guenter Roeck <linux@roeck-us.net>,
+ Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>,
+ Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+From: Stephen Boyd <swboyd@chromium.org>
+User-Agent: alot/0.8.1
+Date: Mon, 16 Dec 2019 08:48:56 -0800
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_083814_154892_C60B540A 
-X-CRM114-Status: GOOD (  18.35  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191216_084901_008669_6C107C25 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [104.130.122.26 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:531 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,101 +101,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: freedreno@lists.freedesktop.org, David Airlie <airlied@linux.ie>,
- will@kernel.org, robin.murphy@arm.com, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-msm@vger.kernel.org,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ linux-watchdog@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
+ Matthias Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Attempt to enable split pagetables if the arm-smmu driver supports it.
-This will move the default address space from the default region to
-the address range assigned to TTBR1. The behavior should be transparent
-to the driver for now but it gets the default buffers out of the way
-when we want to start swapping TTBR0 for context-specific pagetables.
+Quoting Sai Prakash Ranjan (2019-12-12 22:49:34)
+> platform_get_irq() prints an error message when the interrupt
+> is not available. So on platforms where bark interrupt is
+> not specified, following error message is observed on SDM845.
+> 
+> [    2.975888] qcom_wdt 17980000.watchdog: IRQ index 0 not found
+> 
+> This is also seen on SC7180, SM8150 SoCs as well.
+> Fix this by using platform_get_irq_optional() instead.
+> 
+> Fixes: 36375491a4395654 ("watchdog: qcom: support pre-timeout when the bark irq is available")
+> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> ---
 
-Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
----
+Reviewed-by: Stephen Boyd <swboyd@chromium.org>
 
- drivers/gpu/drm/msm/adreno/a6xx_gpu.c | 52 ++++++++++++++++++++++++++++++++++-
- 1 file changed, 51 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/gpu/drm/msm/adreno/a6xx_gpu.c b/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
-index 5dc0b2c..1c6da93 100644
---- a/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
-+++ b/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
-@@ -811,6 +811,56 @@ static unsigned long a6xx_gpu_busy(struct msm_gpu *gpu)
- 	return (unsigned long)busy_time;
- }
- 
-+static struct msm_gem_address_space *
-+a6xx_create_address_space(struct msm_gpu *gpu, struct platform_device *pdev)
-+{
-+	struct iommu_domain *iommu = iommu_domain_alloc(&platform_bus_type);
-+	struct msm_gem_address_space *aspace;
-+	struct msm_mmu *mmu;
-+	u64 start, size;
-+	u32 val = 1;
-+	int ret;
-+
-+	if (!iommu)
-+		return ERR_PTR(-ENOMEM);
-+
-+	/*
-+	 * Try to request split pagetables - the request has to be made before
-+	 * the domian is attached
-+	 */
-+	iommu_domain_set_attr(iommu, DOMAIN_ATTR_SPLIT_TABLES, &val);
-+
-+	mmu = msm_iommu_new(&pdev->dev, iommu);
-+	if (IS_ERR(mmu)) {
-+		iommu_domain_free(iommu);
-+		return ERR_CAST(mmu);
-+	}
-+
-+	/*
-+	 * After the domain is attached, see if the split tables were actually
-+	 * successful.
-+	 */
-+	ret = iommu_domain_get_attr(iommu, DOMAIN_ATTR_SPLIT_TABLES, &val);
-+	if (!ret && val) {
-+		/*
-+		 * The aperture start will be at the beginning of the TTBR1
-+		 * space so use that as a base
-+		 */
-+		start = iommu->geometry.aperture_start;
-+		size = 0xffffffff;
-+	} else {
-+		/* Otherwise use the legacy 32 bit region */
-+		start = SZ_16M;
-+		size = 0xffffffff - SZ_16M;
-+	}
-+
-+	aspace = msm_gem_address_space_create(mmu, "gpu", start, size);
-+	if (IS_ERR(aspace))
-+		iommu_domain_free(iommu);
-+
-+	return aspace;
-+}
-+
- static const struct adreno_gpu_funcs funcs = {
- 	.base = {
- 		.get_param = adreno_get_param,
-@@ -832,7 +882,7 @@ static const struct adreno_gpu_funcs funcs = {
- #if defined(CONFIG_DRM_MSM_GPU_STATE)
- 		.gpu_state_get = a6xx_gpu_state_get,
- 		.gpu_state_put = a6xx_gpu_state_put,
--		.create_address_space = adreno_iommu_create_address_space,
-+		.create_address_space = a6xx_create_address_space,
- #endif
- 	},
- 	.get_timestamp = a6xx_get_timestamp,
--- 
-2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
