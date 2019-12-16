@@ -2,95 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3476311FE90
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 07:46:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0C5911FE92
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 07:47:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qzqFNfX/wB2qoBSJQlumMHOZNcff6izuhlm0VH+KWLo=; b=eu0PejFPtLNXwZ
-	OYVgR9TNhl6qTtlGmtEkFPA7tYT0BYM/uR+aiVqG5krRMZoTGkJAYdHMSqrcgBD9NYfHBauq6B/iY
-	1EHQS6i85HJI10DGKaMxiMY2Y7lB+RZM/cmt1KVsKMzOlfQXUS+ehX0qQCOoKz+P2cHDoPb7f6Rd5
-	gKzE5QkS2ZvL060ayM2WPYUnI0V2INe522XkMaz2N+FmuCvPdrW0XkBjMSyczkYAK8hdzwjKNlHj6
-	Rn/zjFRo/iNZOaKs5/lPQdC9pAp+XBN06CkbTpfyuLtsrT14VVFKG+IM3T4tWkFTg2QE9ehUD/c+a
-	Sce2rkZGh+qgvGyneArg==;
+	List-Owner; bh=FzeEF+PrqUPuwYhRmOGk5jlsMR2OeEw3549SH/GVc6c=; b=H5FHSX/yu2O6SF
+	mkctVP4AvJf6O1ADkKrjp9lVzFIjgpvGz+fIxYrsUpGe8xuON2vtsweINW0G7wudg6GXiIt+Lq88J
+	bjzymnxVVarApdU+VpHmzl2CG0E/OlNHJGyRKtvnRE8gE0qn3f+q4HW/hFcLT9jEG03Iri5VlqJpt
+	BrYhdBHXeRRr4b6s4enBW3GUk/qTPQe6DnhBSV9/sDa2TGCx8m0Q+Kk8IOgCsSxWew6bQaAzKKujp
+	QSZxYlgl78RZpPlE4NUM+Z46rlP1kgH54u5wcwJJn9U2YPAWRemy8W2qqVELcirUhaJebwAnciJOI
+	1fG4Dle/mxFi4rZ3h2Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igk9Q-0006dZ-Gh; Mon, 16 Dec 2019 06:46:40 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1igkAJ-0006yx-Bc; Mon, 16 Dec 2019 06:47:35 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igk9F-0006cB-SF
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 06:46:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576478788;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=uPUbX9Jz4xx+ZUII2dhvvUhvv4VHD3gib9TjJw4FvFo=;
- b=axvd/GuMCMCsTs+CMigP/dZ5im6iSKbMZASuAT33LNq6UiMoLwqAXtc6WMgvVGlxe4ktns
- 1no5hUBHbNV/FC9qBK4j/cyMrB+XvnUHoVfzqSZgdeZVyNf84Us07YSRNE4Y1/1ijxIfrA
- ifQe2KwFh8pnpgyiv2vqa5Td0DuW/U4=
-Received: from mail-lf1-f72.google.com (mail-lf1-f72.google.com
- [209.85.167.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-333-MNF3ncyYMeClk6zB30O4UA-1; Mon, 16 Dec 2019 01:46:26 -0500
-Received: by mail-lf1-f72.google.com with SMTP id z3so412230lfq.22
+ id 1igkA7-0006xn-5C
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 06:47:24 +0000
+Received: by mail-pg1-x541.google.com with SMTP id z124so3089208pgb.13
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Dec 2019 22:46:26 -0800 (PST)
+ Sun, 15 Dec 2019 22:47:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=endlessm-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=YPHzDwynlmOFdAU5St+7P/aISgKvPX7+uyfwjb3J5vQ=;
+ b=Q7/FsZxqSwMa+BzKGhf/87FEkHKFRHq6bnEriH4r/8faI2wq55Pf+hh6Dn/1A1L1hE
+ QpDC8Tw2cEi1FMh9isaL5Wm2ZOPxXOZWcDiADyPoncHeRi4uNuQVZ3vevcMF6Zmy/s06
+ xmkVNHiSNCCl1q561PMnqZFynvhDCjvRPKlbXzMKMW6IL5ryRPiH7VvsfdkMe7Zfg23b
+ ZInoD7zU0DqJdxovEj9bVs8SpG+oMV7T58xRpRHQNmDSFiQ6/cgLseuSCkkXC5Tjb9Rc
+ 15Kg06QdQIh1L0juCm+0Wblblnt87P6qJKU6kJsjsSXtxS5uEzMSMllQ/53QAInBoJnm
+ HzYw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uPUbX9Jz4xx+ZUII2dhvvUhvv4VHD3gib9TjJw4FvFo=;
- b=VTWdoCXzbLpNKxvB2W8vkAlrs7z4T8a20ZZLbUEOYzrSS5cnFbEfUtddr0c8fLyELs
- ujfzJDcQIwB+H2WGQdmEOe4cUgldEld6jeuj5+neJlZI2Pi7eO1bgO0nvKm8fMXiIk1b
- zJ24tM08aSDNwvvaO0HyGka1i5mA6abQkPPt+3X1C07o8SjlLpX7anyyt6+RSniUqQnV
- LGKmwlMxTn08sAL0LcJhu+wsEkLodXE8wdJmjrk+wONSpAX4LJHYNAVTuO1OwjTxfmXa
- MCwrNpfjciSui/ZmluOiIWomlhxDJyvCoLBd2Z7g7ImVq+3e2clTpDO9kxp0XRviMmtZ
- S/cA==
-X-Gm-Message-State: APjAAAWsSnEtK1E1mAmxUPqD0g05aHCLLHbJ4qYUvAyQAaz8D0nmqXik
- UmIx3KZbMuuUyjx8VVo01wXIuMjZY7camv63lCpboPavvqFBBp2On/rFw+mH23Fdd4KUVB01Jmm
- NiErlrZc7bEJZK/RCJdyFUWLB6aY45oOf3P3yYgHHVxvgELOuHvo=
-X-Received: by 2002:a19:f619:: with SMTP id x25mr15220149lfe.146.1576478784945; 
- Sun, 15 Dec 2019 22:46:24 -0800 (PST)
-X-Google-Smtp-Source: APXvYqxYIqap6RvvS/V3qRxs6d85Vgoutpx8l9xgfgCmVn0EpC3k91P2m6SYYYdmxGiRTrSSf+TXl7Fnv3bF7BQRunc=
-X-Received: by 2002:a19:f619:: with SMTP id x25mr15220124lfe.146.1576478784677; 
- Sun, 15 Dec 2019 22:46:24 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=YPHzDwynlmOFdAU5St+7P/aISgKvPX7+uyfwjb3J5vQ=;
+ b=hzv2HBQDRZQXfn9inZT7MrGjMRr09/lhKCbbkt6U3IYsCf1CDSHqlrtSTUpl9UNLF/
+ +fwd3IP5gZtUe4UZeJPhBPEwP4ONGZMqOFA+F2r/t5MKW41U6Rkdl69+7jgzXwRxEjRe
+ t//J2CEtJe9TX/aeQrYLP2w9Ge/vcuKp6rv/mUmusPjQ6Gc8Gm553Blie6O/Rr5fFjZ4
+ wlEf5VXJcqcUubxyJyFeqFvyUM5ZWbqKOrKEgWYzcY1/MWii1VcMRDk0ZxQM/n3b/bMh
+ auVuF7jOqEURCaGWqYg4Ps+j9PyPgOV6zEC8KAaOBKwwXS4pA88SF9rBwR+EPROrCtg2
+ bofQ==
+X-Gm-Message-State: APjAAAVMHao/ceAROTxm4a10mLmD7OThO/HJ9/hfyCMivEXdNH2Tyfai
+ r3Zim5OWOGqsgO92SggpzOqVpQ==
+X-Google-Smtp-Source: APXvYqzcXDlL9EfEPDbT8ec8JfIiOjcIeAoXu12dG22SBfYFW7LzFWn8hWSWuniHIINm1Ku+0eA7YQ==
+X-Received: by 2002:a63:753:: with SMTP id 80mr15150274pgh.95.1576478842024;
+ Sun, 15 Dec 2019 22:47:22 -0800 (PST)
+Received: from localhost.localdomain (123-204-46-122.static.seed.net.tw.
+ [123.204.46.122])
+ by smtp.gmail.com with ESMTPSA id g7sm20758515pfq.33.2019.12.15.22.47.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 15 Dec 2019 22:47:21 -0800 (PST)
+From: Jian-Hong Pan <jian-hong@endlessm.com>
+To: nsaenzjulienne@suse.de
+Subject: Re: [PATCH v4 2/8] ARM: dts: bcm2711: Enable PCIe controller
+Date: Mon, 16 Dec 2019 14:46:38 +0800
+Message-Id: <20191216064638.5067-1-jian-hong@endlessm.com>
+X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20191203114743.1294-3-nsaenzjulienne@suse.de>
+References: <20191203114743.1294-3-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
-References: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
- <20191214122734.GC28635@zn.tnic>
-In-Reply-To: <20191214122734.GC28635@zn.tnic>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Mon, 16 Dec 2019 12:16:12 +0530
-Message-ID: <CACi5LpP2PPcmaQw95V4MUzhvENq9+mB7UR7eib2HADCDHLz4oA@mail.gmail.com>
-Subject: Re: [PATCH v5 0/5] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-To: Borislav Petkov <bp@alien8.de>
-X-MC-Unique: MNF3ncyYMeClk6zB30O4UA-1
-X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_224629_990516_1F91D3F6 
-X-CRM114-Status: GOOD (  12.51  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191215_224723_344889_2C733E6D 
+X-CRM114-Status: UNSURE (   6.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,53 +95,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- Dave Anderson <anderson@redhat.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Will Deacon <will@kernel.org>, x86@kernel.org,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>, James Morse <james.morse@arm.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
- Thomas Gleixner <tglx@linutronix.de>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linuxppc-dev@lists.ozlabs.org, Ingo Molnar <mingo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Steve Capper <steve.capper@arm.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, f.fainelli@gmail.com,
+ robh+dt@kernel.org, linux-pci@vger.kernel.org, phil@raspberrypi.org,
+ linux-kernel@vger.kernel.org, jeremy.linton@arm.com, eric@anholt.net,
+ mbrugger@suse.com, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, james.quinlan@broadcom.com,
+ maz@kernel.org, andrew.murray@arm.com, linux@endlessm.com,
+ linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Boris,
+Thanks for your effort! System can have USB with this patch series, if the device tree is modified properly.
+Here is the question: Will not the device tree "scb/ranges" in this patch conflict with commit be8af7a9e3cc ("ARM: dts: bcm2711-rpi-4: Enable GENET support")?
 
-On Sat, Dec 14, 2019 at 5:57 PM Borislav Petkov <bp@alien8.de> wrote:
->
-> On Fri, Nov 29, 2019 at 01:53:36AM +0530, Bhupesh Sharma wrote:
-> > Bhupesh Sharma (5):
-> >   crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
-> >   arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
-> >   Documentation/arm64: Fix a simple typo in memory.rst
-> >   Documentation/vmcoreinfo: Add documentation for 'MAX_PHYSMEM_BITS'
-> >   Documentation/vmcoreinfo: Add documentation for 'TCR_EL1.T1SZ'
->
-> why are those last two separate patches and not part of the patches
-> which export the respective variable/define?
-
-I remember there was a suggestion during the review of an earlier
-version to keep them as a separate patch(es) so that the documentation
-text is easier to review, but I have no strong preference towards the
-same.
-
-I can merge the documentation patches with the respective patches
-(which export the variables/defines to vmcoreinfo) in v6, unless other
-maintainers have an objections towards the same.
-
-Thanks,
-Bhupesh
-
+Jian-Hong Pan
 
 _______________________________________________
 linux-arm-kernel mailing list
