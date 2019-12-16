@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D579121205
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 18:44:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1682212120F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 18:47:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x1BEeV4C1/nianqR6Tv/N3vw82FCM1Ih3wxcivpyrlU=; b=toxczDkK1Mi4nC
-	U5aBNhE1c6YxL5GtPuUKFZIEWqEXdu105I4blQE4S4Q0Z9iaOWrXvKOZOGn2dq4Vt21Sl4FPoElAG
-	TVRzwEj2+bE1dUnUbwV7jMa7slC+8wpLKkp9k/Grvv1g1R5dV+x3Ei/c6ZOK0aHUg24ZAkadDI5Ys
-	aiwqvR1EM98iaQrGEWxe7OFYjpFmtRRZjhlC7X21xPOw39abtAyv75pEfb9DJtkVOVKciXjF50EMX
-	GKpK3dpUpRKaeS9AXpne3KxEGPS3dfRPLLkvrvA5qd7iT1rQ9SvF4qcf4WpY8Dg5X72if0aBrwwA5
-	btEJSuq/i4kEGp8yn/XQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4p1Pimwj888nDjOsV3iqdXXxzUa16QIzrxZCtW4E77Q=; b=LEuVo36qiHtC1+
+	hVJo6HeEEf55mOD356eyc/awlD6WxqQvatznb3MDwP3rylzCqCrLchLCJaNTcQZ38QQoRJ5Im0KtH
+	+04rTsffSXzHBeUax+w4rZk0GK6z/sjHFSqdRKJBA41/1E0QavA3jfgQoWrGubyne12UbGmRUZKUr
+	6mbKGao9DhOigg7BeESJXqtIYAByoIMiUjP8BsuZQoC3v6Cr+3tAFYqapQnOMMYBzRm1I3pxa870W
+	ejjQOT1N5ihhpIjkoHG599yFV9QeWmFfPinxSCJjKhUXAvZpczVLwxNIZqJRtGjF+reenNVIp5a6d
+	egOUmTuTj6dBDm0iKPtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iguPs-0001i2-Dm; Mon, 16 Dec 2019 17:44:20 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1iguTH-0003gN-JX; Mon, 16 Dec 2019 17:47:51 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iguPk-0001go-V7
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 17:44:14 +0000
-Received: by mail-ed1-x544.google.com with SMTP id f8so5760000edv.2
+ id 1iguT7-0003fV-3a
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 17:47:42 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y14so5954977pfm.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 09:44:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dotsp4hlrRRgAJ8KtDm+ECaZ4Cv3RzpcnEOHjwNyGY4=;
- b=XuMhWcCBF/5Ytd0QFb2aWT2ZjIhuShrmxVGkMOWEHF4GTXo/JJO3tpKzaYezLulgtb
- ymJn6D9SihsyvAj/EkVlj+aj0p9Ywx+4WTU8EuNhn01x+niEpzjpq4vjuYeRmoNeByn4
- PJZ0QlMrGdlv1Ma6updVH0Q6orL1dTU2clAJaH8wkau3kwvAj6eTD5Tpe4oSrym6hJ9Q
- 7eNQp6O33KdXkmOj224psFuq5lGg+mHv/9oIs69Uqb+zT1cnAuC1Iuw/itukC1gfD577
- fUSzQTCBMpZ6lVtgzcUx0NJlloH5c2qOEvZWhWWlxw7dbGyvfsGEpCpyfTXO1vkLURHr
- uZRw==
+ Mon, 16 Dec 2019 09:47:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amarulasolutions.com; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=23EgKnWEsl0Hd3XbTrDUtuEdXnQvPbAjdUpGkg0hfXw=;
+ b=IGnhB3L2ap3ulPumsoKZ4TVu/FXmghrIC8FwJJpv4Dfc3bbyxjUaFsLSYDCUhkyW4p
+ +xreDjgbdjUxX7sC1gFq9aTbQ106feVMgzzFTVc8tnhMRI6v14HsQKFIkyuf/GInQA/u
+ KccmCNYTo1rTVXvYurh1NY7uS4X8vgOpk+9rw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=dotsp4hlrRRgAJ8KtDm+ECaZ4Cv3RzpcnEOHjwNyGY4=;
- b=om6H3ZenGzTB1IUcsbXMc5qfSl5UBWMB1bJ3tg/5R9h6k3CNuWvpqInmrVVwqWTaEb
- mMfVoQTRE7xEK73u2Tr9NBsUl8eAUZE9RL/ISihAhxaXB3IQZ576rurhLEK2fijqQAUS
- /BL8Qf4AWleH/NmdbJZBqSyPtR37kXyQyfiiIcIxnryyxdTOMlRGfclbt/HFu2S38oU2
- 0bpzNnbvnk29D3OIQqqLNZotBdyATaRMc6F+NhJtVhARCIeivZ++2fmetDdZOMYq+vX8
- 609U1X1m8CVO/yr/maIzk0Is9cjj0ZDdxuriIOy/3v4Ji9RiKpziHNGKIu4tLrlvjAi7
- 1zaw==
-X-Gm-Message-State: APjAAAUPmTK+RVGfAFkt9fGQpXosNmLbRqAthM5KRWzEuS38w5NHwERm
- jKQ0/MEIpzRG5munEJ/ljPBniwXP726nVNf8xoI=
-X-Google-Smtp-Source: APXvYqzMZmKG4O0FupZLieU7MkUuk6V2ElDf+PeLMM9q5q0SW8+Pb9iyDBHD9J+QeQV1ICnDIpyJSoUw51ELTZ5J+Xk=
-X-Received: by 2002:aa7:d6d1:: with SMTP id x17mr365496edr.57.1576518246192;
- Mon, 16 Dec 2019 09:44:06 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=23EgKnWEsl0Hd3XbTrDUtuEdXnQvPbAjdUpGkg0hfXw=;
+ b=FvaWz457niS94TM0/VHwIuE4B6LYUNF8yc0ZtDWZnIBjLaCQ8D100RjcaZVhATZXMY
+ c030ZKo5ekjtsPEfLeagQ1b5U5WA25ht4yQJ4ajxUvA+gp31QHWHpz/aK7jepCpcmp29
+ n3GfNECYeaBOtFUgCM1gO9UMAvBQmqe9RYZGY0nHIvjonxasM5UrArzJqdOZ62IsyhUl
+ aXeathKtZPMohjBtuLfUdGdu0f3LUG6reWejAsGzBwQ84qAaiGfXN+/funAV0YczPRam
+ WqUnf7TnP4CM6EhDLWDgWlph0fq/VZ0051vZ/+UHuwDMT4y7Q+DIJIqJqyVCAV95WdtX
+ WV9g==
+X-Gm-Message-State: APjAAAVO3vra/rSDxZ1bEou0WfW0t+0z0gbzDf6b3MQcyLbqeX0rPUgE
+ Iyd4WYkbojT20blI8Fkx7vwixA==
+X-Google-Smtp-Source: APXvYqyImG7BVxbhsOeBlgf/l2MpA9ppdirUWWsjIQfweo+/Xeo7ac2PoYXkrH8FYNr02BUC+wD+oA==
+X-Received: by 2002:a63:211f:: with SMTP id h31mr18905268pgh.299.1576518460259; 
+ Mon, 16 Dec 2019 09:47:40 -0800 (PST)
+Received: from localhost.localdomain ([2405:201:c809:c7d5:6d28:a89:f9e1:1506])
+ by smtp.gmail.com with ESMTPSA id
+ a6sm22342924pgg.25.2019.12.16.09.47.35
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Dec 2019 09:47:39 -0800 (PST)
+From: Jagan Teki <jagan@amarulasolutions.com>
+To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH v3 0/4] arm64: dts: rockchip: Add Rock Pi N10 support
+Date: Mon, 16 Dec 2019 23:17:07 +0530
+Message-Id: <20191216174711.17856-1-jagan@amarulasolutions.com>
+X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 MIME-Version: 1.0
-References: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
- <1576514271-15687-6-git-send-email-jcrouse@codeaurora.org>
-In-Reply-To: <1576514271-15687-6-git-send-email-jcrouse@codeaurora.org>
-From: Rob Clark <robdclark@gmail.com>
-Date: Mon, 16 Dec 2019 09:43:55 -0800
-Message-ID: <CAF6AEGsWAjgcsqMQEtCfUn9smqfVyOcf-Nn1+eJGrMuLkjgwRA@mail.gmail.com>
-Subject: Re: [PATCH v3 5/5] drm/msm/a6xx: Support split pagetables
-To: Jordan Crouse <jcrouse@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_094413_002183_3F5A8205 
-X-CRM114-Status: GOOD (  24.00  )
+X-CRM114-CacheID: sfid-20191216_094741_237887_6C790981 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robdclark[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,113 +95,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: freedreno <freedreno@lists.freedesktop.org>,
- David Airlie <airlied@linux.ie>, Will Deacon <will@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Sean Paul <sean@poorly.run>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Tom Cubie <tom@radxa.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Akash Gajjar <akash@openedev.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
+ Jagan Teki <jagan@amarulasolutions.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 8:38 AM Jordan Crouse <jcrouse@codeaurora.org> wrote:
->
-> Attempt to enable split pagetables if the arm-smmu driver supports it.
-> This will move the default address space from the default region to
-> the address range assigned to TTBR1. The behavior should be transparent
-> to the driver for now but it gets the default buffers out of the way
-> when we want to start swapping TTBR0 for context-specific pagetables.
->
-> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+Unlike, other Rock PI boards from radxa, Rock Pi N10 SBC is based
+on SOM + Carrier board combination.
 
-Reviewed-by: Rob Clark <robdclark@gmail.com>
+Rock Pi N10 is a Rockchip RK3399Pro based SBC, which has
+- VMARC RK3399Pro SOM (as per SMARC standard) from Vamrs.
+- Dalang carrier board from Radxa.
 
-(my previous r-b's on the other patches from v2 carries over to v3)
+patch 0001: dt-bindings for Rock Pi N10
 
-> ---
->
->  drivers/gpu/drm/msm/adreno/a6xx_gpu.c | 52 ++++++++++++++++++++++++++++++++++-
->  1 file changed, 51 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/gpu/drm/msm/adreno/a6xx_gpu.c b/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
-> index 5dc0b2c..1c6da93 100644
-> --- a/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
-> +++ b/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
-> @@ -811,6 +811,56 @@ static unsigned long a6xx_gpu_busy(struct msm_gpu *gpu)
->         return (unsigned long)busy_time;
->  }
->
-> +static struct msm_gem_address_space *
-> +a6xx_create_address_space(struct msm_gpu *gpu, struct platform_device *pdev)
-> +{
-> +       struct iommu_domain *iommu = iommu_domain_alloc(&platform_bus_type);
-> +       struct msm_gem_address_space *aspace;
-> +       struct msm_mmu *mmu;
-> +       u64 start, size;
-> +       u32 val = 1;
-> +       int ret;
-> +
-> +       if (!iommu)
-> +               return ERR_PTR(-ENOMEM);
-> +
-> +       /*
-> +        * Try to request split pagetables - the request has to be made before
-> +        * the domian is attached
-> +        */
-> +       iommu_domain_set_attr(iommu, DOMAIN_ATTR_SPLIT_TABLES, &val);
-> +
-> +       mmu = msm_iommu_new(&pdev->dev, iommu);
-> +       if (IS_ERR(mmu)) {
-> +               iommu_domain_free(iommu);
-> +               return ERR_CAST(mmu);
-> +       }
-> +
-> +       /*
-> +        * After the domain is attached, see if the split tables were actually
-> +        * successful.
-> +        */
-> +       ret = iommu_domain_get_attr(iommu, DOMAIN_ATTR_SPLIT_TABLES, &val);
-> +       if (!ret && val) {
-> +               /*
-> +                * The aperture start will be at the beginning of the TTBR1
-> +                * space so use that as a base
-> +                */
-> +               start = iommu->geometry.aperture_start;
-> +               size = 0xffffffff;
-> +       } else {
-> +               /* Otherwise use the legacy 32 bit region */
-> +               start = SZ_16M;
-> +               size = 0xffffffff - SZ_16M;
-> +       }
-> +
-> +       aspace = msm_gem_address_space_create(mmu, "gpu", start, size);
-> +       if (IS_ERR(aspace))
-> +               iommu_domain_free(iommu);
-> +
-> +       return aspace;
-> +}
-> +
->  static const struct adreno_gpu_funcs funcs = {
->         .base = {
->                 .get_param = adreno_get_param,
-> @@ -832,7 +882,7 @@ static const struct adreno_gpu_funcs funcs = {
->  #if defined(CONFIG_DRM_MSM_GPU_STATE)
->                 .gpu_state_get = a6xx_gpu_state_get,
->                 .gpu_state_put = a6xx_gpu_state_put,
-> -               .create_address_space = adreno_iommu_create_address_space,
-> +               .create_address_space = a6xx_create_address_space,
->  #endif
->         },
->         .get_timestamp = a6xx_get_timestamp,
-> --
-> 2.7.4
+patch 0002: VMARC RK3399Pro SOM dtsi support
+
+patch 0003: Radxa Dalang carrier board dtsi support
+
+patch 0004: Rock Pi N10 dts support
+
+Tested basic peripherals and will all more in future patches.
+
+Any inputs?
+Jagan.
+
+Jagan Teki (4):
+  dt-bindings: arm: rockchip: Add Rock Pi N10 binding
+  arm64: dts: rockchip: Add VMARC RK3399Pro SOM initial support
+  ARM: dts: rockchip: Add Radxa Dalang Carrier board
+  arm64: dts: rockchip: Add Radxa Rock Pi N10 initial support
+
+ .../devicetree/bindings/arm/rockchip.yaml     |   6 +
+ .../dts/rockchip-radxa-dalang-carrier.dtsi    |  81 +++++
+ arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+ .../dts/rockchip/rk3399pro-rock-pi-n10.dts    |  17 +
+ .../dts/rockchip/rk3399pro-vmarc-som.dtsi     | 333 ++++++++++++++++++
+ 5 files changed, 438 insertions(+)
+ create mode 100644 arch/arm/boot/dts/rockchip-radxa-dalang-carrier.dtsi
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-vmarc-som.dtsi
+
+-- 
+2.18.0.321.gffc6fa0e3
+
 
 _______________________________________________
 linux-arm-kernel mailing list
