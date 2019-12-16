@@ -2,97 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18709121A2D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 20:45:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 311C4121A3F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 20:56:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NdRDorm2vHUc88+gLyYD8viximw7EQerzS+Qly1fMqQ=; b=t4YmTgkvWV55Ez
-	QypgyLRyPCL434ndi010DvYAECJKUyF92GxJ3HzsTt1bnhAt1qm1NwTTT/penbawabzFpL5mJWvPW
-	CnyWgrYLa/HQsW2DYIA2soPoC6RJC3yb99Tmn1aRNYAxPTpg3c/LxwJ5Wh4+Va4wIH6zk3bAEA1Tf
-	rvq3aKzX2gBbtxVFdqtUXhnJ7hnSbUWZdggjEQCxpSY95VmxmoAc1NUcL7idF2c/qAloxuLORpupP
-	sGfUElhxVlBsj3n0uXzI1cxGyZfB0E0c5h3o0j4if+wDj3b5ZX4vvnyHcl7qDB8YXvMFNihzMFmQf
-	jf/mWAELHcuRHGFpG0vA==;
+	List-Owner; bh=yZLA5FxJ9eUKDioDgfE2Arb2VkysjC+YhbyjsJpxJeM=; b=nz7Oq0ZvVHz74R
+	tLxwVPLX0+UnhupSfawx7tPN3gVKjCDlsVWF/wwWLBVAgW7mDk+j0kGsDzDvUp0usPA6r2nNekHoO
+	BLJOEut5mdHVp+2rlz3/QoRtxwhnG6xygPJqtoXwKgxjGZFngP3BIAkfQlpQCc1gdYnD3wvY7VBhm
+	1pKnDOMd3EJZvTdHuNLgjEVDVlAFNgqWi7duAj+/pb0rFDEeybmwohIjhlGmqUPbK5NWWOXxaWR0N
+	5RqCjGzovSwTb3w2b06JjthevsAI5yGWzTsVhG41WVr0W++6R+qNyJ4+4dIQINZib7DPdAvl+lwgF
+	lx8aALxkNd+LL5Tgfpbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igwJ5-0005ws-1E; Mon, 16 Dec 2019 19:45:27 +0000
-Received: from new1-smtp.messagingengine.com ([66.111.4.221])
+	id 1igwTk-0001KA-1t; Mon, 16 Dec 2019 19:56:28 +0000
+Received: from mout.gmx.net ([212.227.17.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igwIv-0005vo-IQ
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 19:45:19 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id 466455D4D;
- Mon, 16 Dec 2019 14:45:12 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute5.internal (MEProxy); Mon, 16 Dec 2019 14:45:12 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- subject:to:cc:references:from:message-id:date:mime-version
- :in-reply-to:content-type:content-transfer-encoding; s=fm1; bh=D
- jvFrxDSCUB8eHUxPxhWbB5MN/QXEIpJKqGs29bik/g=; b=UTOAgPsOjSc+PDzq2
- TbV6VqaDsig1q/9HC0HZls8uW/UfF92M6kz8uVaYweaShAQ86mt3HUi+6xgIBtSS
- IN81PFgUCVp1R4u/b+GbHcnrbQ+BNhlcz6am7yjqD8jqTRC962j7P1kEJBG3O4sr
- r4J6UypswoxE5dgHG8gH4Ti09ujX/ZHfx25SEH/XigHNjsxAtzZKOSCCuUPwHRzg
- ZTmuNgKtAl7MGqz8TiaumGtfQw24xhdrRLoymswgzbnoduHe4ZNvDT31OZRkwuz1
- QRnm70bxu0bhEmaeNlbhxIrJtJrZBanakVxM2tlk6szU2P19jWvIrLYuZDl6A9Vl
- 1+d8w==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:content-type
- :date:from:in-reply-to:message-id:mime-version:references
- :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm1; bh=DjvFrxDSCUB8eHUxPxhWbB5MN/QXEIpJKqGs29bik
- /g=; b=gSN3UzMBPqefR5puzS2Eoul+JnCupRGeA3+Mn1i3BbrRkPWk4eyWteLFB
- +UfODa3iFvIGgJZddtqcozNUmz/nISHp/I08itXnmkzjODvEK6xuDwmsOq5V0VER
- 961d8duFPgrc0mORchgTTTVEAZYxdi2EbULJuky/sD01xgRe383sjQ8Dg63YFtZS
- 8gW0YUYoJawuZjxTCFHsA+KcwI/TbH6q4Y7BzbsE0OVzRdIbNBLUU05LlliW4Oue
- /oegQHBNZ5XTftx3+WNQL3MhFQBQ3FnNaqhXGUA7KOq02EKGG3T8pIpj/t5IRHKB
- 31FAwfssmDnWaJmmZ/QS7Q/oEcKlw==
-X-ME-Sender: <xms:xd73XZS8AFm5-oK7L4gysz86ed_XseCLVKRzGzEpEOkZz8D3O0M6og>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddthedguddvlecutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
- enucfjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghm
- uhgvlhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenuc
- ffohhmrghinhepuggvvhhitggvthhrvggvrdhorhhgnecukfhppeejtddrudefhedrudeg
- kedrudehudenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrg
- hnugdrohhrghenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:xd73XWtslmQDVjFi9lufQzu1iJwpxInNF_j5RUC4VnpwjWVYk8sUtw>
- <xmx:xd73XX5KS_VJ1EqaXUq84fnyy1KnNRJvIP9NT-glll3Uc6A71PDWKQ>
- <xmx:xd73XZhzyr7B5ADOnIFlz9ZS3hAojyzhc3ibEFMF5ERI6_rj7Q8eKw>
- <xmx:yN73XUCJ4FpkwtUkmMecIXBKBLhJLWsPPYbHvRUtJ_wlEKfy-ReDbQ>
-Received: from [192.168.50.169]
- (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 1B15C80061;
- Mon, 16 Dec 2019 14:45:09 -0500 (EST)
-Subject: Re: [PATCH v5 2/8] dt-bindings: mailbox: Add a sun6i message box
- binding
-To: Maxime Ripard <mripard@kernel.org>
-References: <20191215042455.51001-1-samuel@sholland.org>
- <20191215042455.51001-3-samuel@sholland.org>
- <20191216140422.on4bredklgdxywbw@gilmour.lan>
-From: Samuel Holland <samuel@sholland.org>
-Message-ID: <d3a1c7c2-953a-cbfe-970e-c00f9a9f5742@sholland.org>
-Date: Mon, 16 Dec 2019 13:45:08 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1igwTb-0001Jb-9W
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 19:56:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1576526174;
+ bh=CNL4/ITrQyawW6Jwa7ZAkK9ujkdNN6N4djNXPY/LFy8=;
+ h=X-UI-Sender-Class:Subject:To:References:From:Cc:Date:In-Reply-To;
+ b=h/o52mFMz6z4L2EVFIDt/pu0uYfDVMCrkIKvPvLzm0h0VP0vvOyqWLK4KW3o6mEBS
+ ZJf9sGo1WU3uvvIepLMCQIVbdOSi7ReR+1hMXnuoJzJwfQM3QyRFiOGVIiCvLpvZue
+ s1EFwHFD7jvH4Tmk1u8nQFK2l47uOx9e0Ri0syUo=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.176] ([37.4.249.154]) by mail.gmx.com (mrgmx104
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1MQ5rU-1iKtLS0PC4-00M5AL; Mon, 16
+ Dec 2019 20:56:14 +0100
+Subject: Re: [PATCH V4 01/10] bluetooth: hci_bcm: Fix RTS handling during
+ startup
+To: Marcel Holtmann <marcel@holtmann.org>,
+ Johan Hedberg <johan.hedberg@gmail.com>, =?UTF-8?Q?Ond=c5=99ej_Jirman?=
+ <megous@megous.com>
+References: <1570375708-26965-1-git-send-email-wahrenst@gmx.net>
+ <1570375708-26965-2-git-send-email-wahrenst@gmx.net>
+ <61789264-a4c2-ac85-9d74-d186213ec70a@gmx.net>
+ <20191216132509.ofqcdpwxsd7324ql@core.my.home>
+ <6f05f4d8-fa84-ae81-ac4f-00ab12fabeea@gmx.net>
+ <20191216194235.4pq2xpfl7nz3p55w@core.my.home>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <ff0206e0-8290-0639-5399-5304b9454110@gmx.net>
+Date: Mon, 16 Dec 2019 20:56:12 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191216140422.on4bredklgdxywbw@gilmour.lan>
+In-Reply-To: <20191216194235.4pq2xpfl7nz3p55w@core.my.home>
 Content-Language: en-US
+X-Provags-ID: V03:K1:frpVMvHvuwuUjwYqcSegzPvPNdhbH3fki7ucVW2an/S2FhOx+UY
+ UcSNCOk4IpNNG4W8cZ7siJs2B/tR7FLt++GI7BAMFyDi6qO7EP3tkHr7FGAW9AtzQmVHta3
+ 7h6zwi49JMchT2PpuBILSToHHv09DVPsduHtvCHY9Ewgo5GgBGc33Ge4kd9XG7p4Bc/wHP4
+ zgmTQtird6GDCtegho8MQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:BNw9DSMBEC4=:bdYEcuDFgaeDTz5P1s3yax
+ l13x3/Xtj+VlfUkVJg0oVPAWp2VV1ALfyJ0nzq0DExgodeXMDbpr0LoC4wEKOYc5sLE0zLsVK
+ d+WG2PIrojejyuckxioWwqRuVi0fGfUH7IWWyFLCAXgSjtnZN+ff+DD/wputazvQR4kKWlKx2
+ sRv2IUrGMtqVaEviTiBwlmsu7O11xRqP1vBEE+z4AwOQaSfQeU64FB4HSJEIIms2SVvMqVgML
+ JqBEnINTDTaJjPSFndsLw5kUg017Az8BdPyC0TVSC/HuauLaHhoX0uztgOvUfPKO+bnmUTOTN
+ JbpHc7FxR8BR1Xv6WADCs73MNeodh/WSr7RspThKY+kSXiOdLOdN8528VnECeQDLa/UQCn1Q2
+ iNaLvWaPYNzoN9EcTaNlfZC/FVJVOxQvPhH02aNGPLVVCSZ7YAqodFFMglT4WhgCUq8ku8wXy
+ yjXlBYa3FbuGTF/E5Pzhx1O+hf6hSLJ+0+dSmQLGSoZdTTW/M9H0Bl5fX6rLAxCGlIa2+8Q09
+ OrveGtnKfVFQ4LFgaOTj6olCFDklzvyACcxdeYlop8u7PjVni33V5tkVjAzfY3ANKilrb+UVu
+ s0NEJJ72nNy+VblxunKioG/yJDk+gBFcLiDYcwcx4sEyixA6y1qmTiK8nu2bCat8BgECUz725
+ lgG2wrMJPzGygv2+yUzO/2y3uHklv/wyj6n244nWLcm6n2jDjczwIPeO28WG0Z0CR6GTYZ7ta
+ 5H3H25d1w7JGmxtKKlo/dChCGlZevicnSZcDG13nmpThwCc13vGfUn0uQH5rXhz1I8fdOZ940
+ I+uJk/D3G5Nn35bAvk1i/6qqC8279TSQtpDhc5cI7Et3WzudQBM+h7neXQ+HuI7cnrnR4FBnM
+ Cy93cOJGbGzWpyAoEdFojScHHz0sbL0L5JtVfeHDflsmZ31Q22uC4PT01kkPPiyeC+pW1V6d/
+ d6wMkOm/6j6EmNpOpe6asvU8a4mPHBFhQtqV44WoOmfUfSlnHN4rHCu2+Rb70WC5MEfyvVosb
+ mJpcjEovzpB/pFF9s/5PLuYX/BfqYhiwC5ZZ4PJOK0kYycQorhzbuLsqdyAt6TVXxjpNg7Et1
+ 5a1Tjbq4NIB4c/mVub1ERqIOTmPCDU9N23pUBYlTDKbAE4TbE7GmgQrp/egG4b4+GkAaBC8qm
+ MZz/MK8jrNpYhtNoSnZlMlrdwZmGQdoFiHn0UGnVv1nBlpKJ0gfiJXR3oHg9FZtreuZUxLMZo
+ 0XmnqZ6dER1TICekvEGpR88GmuzlzFc7aZTY1fUxe2G5Q5w116fjRXxBRI2o=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_114517_966902_3E1FF55E 
-X-CRM114-Status: GOOD (  21.92  )
+X-CRM114-CacheID: sfid-20191216_115619_665210_18D3365F 
+X-CRM114-Status: GOOD (  12.95  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.221 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.221 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ low trust [212.227.17.20 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -101,7 +98,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,159 +109,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ondrej Jirman <megous@megous.com>,
- linux-sunxi@googlegroups.com, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, Sudeep Holla <sudeep.holla@arm.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-bluetooth@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 12/16/19 8:04 AM, Maxime Ripard wrote:
-> Hi,
-> 
-> On Sat, Dec 14, 2019 at 10:24:49PM -0600, Samuel Holland wrote:
->> This mailbox hardware is present in Allwinner sun6i, sun8i, sun9i, and
->> sun50i SoCs. Add a device tree binding for it. As it has only been
->> tested on the A83T, A64, H3/H5, and H6 SoCs, only those compatibles are
->> included.
->>
->> Signed-off-by: Samuel Holland <samuel@sholland.org>
->> ---
->>  .../mailbox/allwinner,sun6i-a31-msgbox.yaml   | 78 +++++++++++++++++++
->>  1 file changed, 78 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml b/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
->> new file mode 100644
->> index 000000000000..dd746e07acfd
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/mailbox/allwinner,sun6i-a31-msgbox.yaml
->> @@ -0,0 +1,78 @@
->> +# SPDX-License-Identifier: GPL-2.0
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/mailbox/allwinner,sun6i-a31-msgbox.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Allwinner sunxi Message Box
->> +
->> +maintainers:
->> +  - Samuel Holland <samuel@sholland.org>
->> +
->> +description: |
->> +  The hardware message box on sun6i, sun8i, sun9i, and sun50i SoCs is a
->> +  two-user mailbox controller containing 8 unidirectional FIFOs. An interrupt
->> +  is raised for received messages, but software must poll to know when a
->> +  transmitted message has been acknowledged by the remote user. Each FIFO can
->> +  hold four 32-bit messages; when a FIFO is full, clients must wait before
->> +  attempting more transmissions.
->> +
->> +  Refer to ./mailbox.txt for generic information about mailbox device-tree
->> +  bindings.
->> +
->> +properties:
->> +  compatible:
->> +     items:
->> +      - enum:
->> +          - allwinner,sun8i-a83t-msgbox
->> +          - allwinner,sun8i-h3-msgbox
->> +          - allwinner,sun50i-a64-msgbox
->> +          - allwinner,sun50i-h6-msgbox
->> +      - const: allwinner,sun6i-a31-msgbox
-> 
-> This will fail for the A31, since it won't have two compatibles but
-> just one.
-
-You asked me earlier to only include compatibles that had been tested, so I did.
-This hasn't been tested on the A31, so there's no A31-only compatible.
-
-> You can have something like this if you want to do it with an enum:
-> 
-> compatible:
->   oneOf:
->     - const: allwinner,sun6i-a31-msgbox
->     - items:
->       - enum:
->         - allwinner,sun8i-a83t-msgbox
->         - allwinner,sun8i-h3-msgbox
->         - allwinner,sun50i-a64-msgbox
->         - allwinner,sun50i-h6-msgbox
->       - const: allwinner,sun6i-a31-msgbox
-> 
->> +  reg:
->> +    items:
->> +      - description: MMIO register range
-> 
-> There's no need for an obvious description like this.
-> Just set it to maxItems: 1
-
-Will do for v6.
-
->> +
->> +  clocks:
->> +    maxItems: 1
->> +    description: bus clock
->> +
->> +  resets:
->> +    maxItems: 1
->> +    description: bus reset
->> +
->> +  interrupts:
->> +    maxItems: 1
->> +    description: controller interrupt
-> 
-> Ditto, you can drop the description here.
-
-Will do for v6.
-
->> +  '#mbox-cells':
->> +    const: 1
-> 
-> However, you should document what the argument is about?
-
-Ok. "Number of cells used to encode a mailbox specifier" should work.
-
->> +required:
->> +  - compatible
->> +  - reg
->> +  - clocks
->> +  - resets
->> +  - interrupts
->> +  - '#mbox-cells'
->> +
->> +additionalProperties: false
->> +
->> +examples:
->> +  - |
->> +    #include <dt-bindings/clock/sun8i-h3-ccu.h>
->> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
->> +    #include <dt-bindings/reset/sun8i-h3-ccu.h>
->> +
->> +    msgbox: mailbox@1c17000 {
->> +            compatible = "allwinner,sun8i-h3-msgbox",
->> +                         "allwinner,sun6i-a31-msgbox";
->> +            reg = <0x01c17000 0x1000>;
->> +            clocks = <&ccu CLK_BUS_MSGBOX>;
->> +            resets = <&ccu RST_BUS_MSGBOX>;
->> +            interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
->> +            #mbox-cells = <1>;
->> +    };
-> 
-> Look good otherwise, thanks!
-> Maxime
-> 
-
-Thanks,
-Samuel
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGVsbG8gT25kcmVqLAoKQW0gMTYuMTIuMTkgdW0gMjA6NDIgc2NocmllYiBPbmTFmWVqIEppcm1h
+bjoKPiBIZWxsbyBTdGVmYW4sCj4KPiBPbiBNb24sIERlYyAxNiwgMjAxOSBhdCAwNzoyODowNFBN
+ICswMTAwLCBTdGVmYW4gV2FocmVuIHdyb3RlOgo+PiBIaSBPbmRyZWosCj4+Cj4+IHNvcnJ5LCBp
+IGRvbid0IGhhdmUgYWNjZXNzIHRvIGEgT3JhbmdlIFBpIDMuCj4+Cj4+IEkgbG9va2VkIGF0IGHC
+oCBBUDYyNTYgZGF0YXNoZWV0IFsxXSwgYnV0IGkgY291bGRuJ3QgZmluZCBhbnkgaGVscGZ1bAo+
+PiBpbmZvcm1hdGlvbiBhYm91dCBmbG93IGNvbnRyb2wgZHVyaW5nIHBvd2VyIHVwLgo+Pgo+PiBB
+cmUgeW91IGFibGUgdG8gYW5hbHl6ZSB0aGlzIGlzc3VlIG1vcmUgZnVydGhlciBiZWZvcmUgd2Ug
+cmV2ZXJ0IHRoaXMgcGF0Y2g/Cj4gSSdkIGxpa2UgdG8sIGJ1dCBJJ2xsIG5vdCBiZSBhYmxlIHRv
+IGF0dGFjaCBsb2dpYyBwcm9iZSB0byB0aGUgQVA2MjU2Cj4gbW9kdWxlLiBJdCdzIHRvbyBmaW5l
+IHBpdGNoIGZvciBzb2xkZXJpbmcuCnRoaXMgdGhlIHNhbWUgaXNzdWUsIGkgaGFkIHdpdGggdGhl
+IFJhc3BiZXJyeSBQaSA0IDotKAo+IEkgbWF5IHRyeSBzZXR0aW5nIENUUy9SVFMgdG8gZ3Bpby9p
+bnB1dCBtb2RlIGFuZCBncmFiIHRoZSBjYXB0dXJlIG9mCj4gdGhlIEdQSU8gcG9ydCBzdGF0ZXMg
+aW4gdGltZSB0byBzZWUgd2hhdCdzIGhhcHBlbmluZyBkdXJpbmcgcHJvYmUKPiBvZiBidF9iY20g
+bW9kdWxlLgo+Cj4gSSBkb24ndCByZWFsbHkgdW5kZXJzdGFuZCB3aGF0IGVmZmVjdCB5b3VyIHBh
+dGNoIGlzIHN1cHBvc2VkIHRvIGhhdmUKPiBvbiB0aGUgQ1RTL1JUUyBsaW5lcyBkdXJpbmcgcG93
+ZXIgdXAgZnJvbSB0aGUgY29tbWl0IGRlc2NyaXB0aW9uLgo+IENhbiB5b3UgcGxlYXNlIGV4cGxh
+aW4gaXQgbW9yZSBjb25jcmV0ZWx5PwpJIGhvcGUgYSBwaWN0dXJlIGV4cGxhaW4gbW9yZSB0aGFu
+IHRob3VzYW5kIHdvcmRzLiBQbGVhc2UgbG9vayBhdCBmaWd1cmUKNyBhdCBwYWdlIDIyIG9mIHRo
+ZSBkYXRhc2hlZXQgWzJdLiBUaGUgcGF0Y2ggdHJpZXMgdG8gYWNoaWV2ZSB0aGUgcHJvcGVyCnRp
+bWluZyBvZiBCVF9VQVJUX0NUU19OLgo+Cj4gSSdsbCBiZSBhYmxlIHRvIGdldCB0byBwbGF5aW5n
+IHdpdGggdGhpcyBhZnRlciB0aGUgaG9saWRheXMuCgpPa2F5CgpTdGVmYW4KClsyXSAtCmh0dHBz
+Oi8vd3d3LnZlcmljYWwuY29tL2RhdGFzaGVldC9jeXByZXNzLXNlbWljb25kdWN0b3ItY29tYm8t
+d2lyZWxlc3MtbW9kdWxlLWN5dzQzNDU1eGt1Ymd0LTU3NzA1OTUucGRmCgoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
+aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
