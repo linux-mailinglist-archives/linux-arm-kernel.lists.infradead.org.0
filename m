@@ -2,50 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B9D8120589
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 13:25:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74C27120597
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 13:29:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PrcIBU47+I6xlTXoxCjV490m3CnEvJbnfZ2tCuj+WEs=; b=TKViaakpz3XMau
-	vEMsMKd/2zb/y+PFwXk5ktnROj4S2znQqxhMIqbVsIFMVgW+7g5OKTGYBfPIvKazJ8q1Zoj2Yqc64
-	uPhcqPjct89prZQri5RoVrh6skYCBIfOtTK4fnq0g4GFY0/41XlbXDOIoEq0QWyXiuJjVPjZKy9kK
-	rSiqrXlJR2usx3v6n3XuMJWlcvE26+Iez16qprSxeqacHzwwr2a2i0hFX/G+K3KbUQSmZ8F7q2wqM
-	n3WhMjF6AVs+W/UuZax6n0KdaNS6/SGhsh5X4cYOBfkK0o1fi46aNAD4s2CPQFlN6D32ReYIL4y3p
-	hpf8VZodIQE9To8NFKxw==;
+	List-Owner; bh=nhxALIruJHDCFt6B4sTv9d9HE3fYzuhkIJ6i60L8RcY=; b=A+mkXR/tVsYuFe
+	E605Dv3KsYBircGEJRFDV+gyZ6yfdb03Y9PfXcyKcERhg6TCJCUTi/hi5AgSS5SlgBPx4nGDEhXkd
+	YAriAs3GNhuaQ7vKGhlDd+0gXiSUCEaE6Uwv0tONefYektGkI0O74iy1qJ1HDe5GerKqDuUwslJrv
+	FDakHQ1wzRZUd5fYMTgTv3tslyR4kJcZBoAW30X+62uukCQD7IhbYcDT5rC5qQjjqnmMOlrZR8J75
+	ld9etb4BnH1mQFv4KiUHrB/6brgWrwDC8zmyeILme5ypGvIEr8EoK2Ggh1NDXj1IbmjM/TUalxGgE
+	aMLsCJTGDh/3auOtzjKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igpRQ-00067N-T0; Mon, 16 Dec 2019 12:25:36 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1igpUf-0006xJ-S6; Mon, 16 Dec 2019 12:28:57 +0000
+Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igpQv-0005AL-Qy; Mon, 16 Dec 2019 12:25:08 +0000
-Received: from wf0651.dip.tu-dresden.de ([141.76.182.139] helo=phil.sntech)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1igpQm-0008GW-Pu; Mon, 16 Dec 2019 13:24:56 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: kishon@ti.com
-Subject: [PATCH RESEND 2/2] phy/rockchip: inno-dsidphy: generalize parameter
- handling
-Date: Mon, 16 Dec 2019 13:24:48 +0100
-Message-Id: <20191216122448.27867-2-heiko@sntech.de>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191216122448.27867-1-heiko@sntech.de>
-References: <20191216122448.27867-1-heiko@sntech.de>
+ id 1igpUR-0006v4-19
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 12:28:44 +0000
+Received: by mail-vk1-xa42.google.com with SMTP id i4so1558720vkc.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Dec 2019 04:28:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=QaoPgwh2xfV295jRIGnmPYl36fDZZNdnkiloN5hh4CE=;
+ b=S/B9vSxtl+yCUJ5TJtpNk2Stv/n4pxJen2cvthe3ynAP3s2fdfTEDf3tZomPyz6/ti
+ c56rzuxM4QAB6cX1SwuBlhogEMIItrAmGHHi3ns9bmKzWiSCvIoPoAQsE6LewWidcSt/
+ uS/ygBA6WwzxnYrECvxR1yO2wGs7T55an3bXKgv1VII9O7KQetwebEVFyS7PP5o5JG8Z
+ WXw7M3EFBu/VJ44dxGgmBl8Gz7OGufeX8UpyQueudgpm0MdnhWFUBNsCWFzcddS22VKX
+ sPNZI3c8eaEF8pJD1EuxwIwS1BAOsagfTF+6dyoXqycYB/nk0NUuEatN48eLbR9wzjR0
+ GqBA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=QaoPgwh2xfV295jRIGnmPYl36fDZZNdnkiloN5hh4CE=;
+ b=IdbaZvIPx8LCBPpY4bm75CRm/oA7HUtgDDQG/h7AUSdf6H1xZpOwTMoC2u8AK/TYm8
+ 21NxvX3exwTmKqFlbexRpy7noLfM6jK0AU0few3xHW2WyYxJEaHqmy/CBpK5fa9rhp1Q
+ E+F/pLlO5pFFEFXHxUsmaysKsugTJZHA7eKC78RTuN8zjTvy7Rw/AhkapWGkd8S64yJz
+ h28Nk6J64U0QCgi183YGO8PWpgV3NEbQnIgwIFXhDR8Wp9x/6TFdvua9s+fUMh02JefM
+ jxLHSdvTewCeYJt5ubneHpA+4NLTyHkhceHNU3x2NuvuFMRizXzOGTCEQKHPDTeIQYTA
+ EGbQ==
+X-Gm-Message-State: APjAAAWLn9/08kBxIx66TM7LKG1INMwOjn6poQ3oZ9zs+3xB58f6Wa/s
+ CV1odMGkkXmrTMq281t8s62j+PZLfBWgPTa+jmj02Q==
+X-Google-Smtp-Source: APXvYqw/AlQK61lzoibi6xl6okziErleCZ8cs/LBZLmTMrBvWdsoY+o2BjyAVo3CYVnu+ks556/YdO+EFNqOolU0srg=
+X-Received: by 2002:a1f:fe4e:: with SMTP id l75mr24217758vki.18.1576499321815; 
+ Mon, 16 Dec 2019 04:28:41 -0800 (PST)
 MIME-Version: 1.0
+References: <20191129172537.31410-1-m.felsch@pengutronix.de>
+ <20191129172537.31410-4-m.felsch@pengutronix.de>
+ <20191204134631.GT1998@sirena.org.uk>
+ <20191210094144.mxximpuouchy3fqu@pengutronix.de>
+ <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+ <20191211170918.q7kqkd4lrwwp7jl3@pengutronix.de>
+ <20191212161019.GF4310@sirena.org.uk>
+ <20191212162152.5uu3feacduetysq7@pengutronix.de>
+In-Reply-To: <20191212162152.5uu3feacduetysq7@pengutronix.de>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 16 Dec 2019 13:28:30 +0100
+Message-ID: <CACRpkdbkiQLmyxHG4mAOqOho34UkUZwctRwsUgyJKCgZBOUEvQ@mail.gmail.com>
+Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
+ selection documentation
+To: Marco Felsch <m.felsch@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_042506_217026_9EB74A1C 
-X-CRM114-Status: GOOD (  20.37  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191216_042843_207125_F48831C7 
+X-CRM114-Status: GOOD (  10.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,502 +98,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Support Opensource <Support.Opensource@diasemi.com>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "andrew@aj.id.au" <andrew@aj.id.au>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ Mark Brown <broonie@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ "lee.jones@linaro.org" <lee.jones@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+On Thu, Dec 12, 2019 at 5:21 PM Marco Felsch <m.felsch@pengutronix.de> wrote:
+> On 19-12-12 16:10, Mark Brown wrote:
 
-During review it came to light that exposing the pll clock outside is
-not the right approach and struct phy_configure_opts_mipi_dphy exists
-just for that reason to transfer parameters to the phy.
+> > Note that there's two bits to my concern - one is if we should be using
+> > gpiolib or pinctrl, the other is what's driving the input (whichever API
+> > it's configured through) which didn't seem to be mentioned.
+>
+> gpiolib or pinctrl:
+> I pointed out all my arguments above so I think it is time for Linus.
 
-So drop the exposed clock and rely on the phy configure options
-to bring in the correct rate. That way we can also just drop the
-open coded timing struct and default values function.
+I think I've elaborated on this?
 
-Fixes: b7535a3bc0ba ("phy/rockchip: Add support for Innosilicon MIPI/LVDS/TTL PHY")
-Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
----
-Hi Kishon,
+The API is fine with me, because this thing does some autonomous
+control and I don't know any better way to share that same line
+with the GPIO subsystem than to make this offset available to
+the regulator driver.
 
-maybe suitable as a fix for 5.5-rc?
-
-Thanks
-Heiko
-
- drivers/phy/rockchip/Kconfig                  |   1 +
- .../phy/rockchip/phy-rockchip-inno-dsidphy.c  | 319 ++++++------------
- 2 files changed, 100 insertions(+), 220 deletions(-)
-
-diff --git a/drivers/phy/rockchip/Kconfig b/drivers/phy/rockchip/Kconfig
-index dbd2de4d28b1..0824b9dd5683 100644
---- a/drivers/phy/rockchip/Kconfig
-+++ b/drivers/phy/rockchip/Kconfig
-@@ -39,6 +39,7 @@ config PHY_ROCKCHIP_INNO_DSIDPHY
- 	tristate "Rockchip Innosilicon MIPI/LVDS/TTL PHY driver"
- 	depends on (ARCH_ROCKCHIP || COMPILE_TEST) && OF
- 	select GENERIC_PHY
-+	select GENERIC_PHY_MIPI_DPHY
- 	help
- 	  Enable this to support the Rockchip MIPI/LVDS/TTL PHY with
- 	  Innosilicon IP block.
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-index fc729ecd3fe9..a7c6c940a3a8 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-dsidphy.c
-@@ -16,6 +16,7 @@
- #include <linux/platform_device.h>
- #include <linux/reset.h>
- #include <linux/phy/phy.h>
-+#include <linux/phy/phy-mipi-dphy.h>
- #include <linux/pm_runtime.h>
- #include <linux/mfd/syscon.h>
- 
-@@ -167,31 +168,6 @@
- #define DSI_PHY_STATUS		0xb0
- #define PHY_LOCK		BIT(0)
- 
--struct mipi_dphy_timing {
--	unsigned int clkmiss;
--	unsigned int clkpost;
--	unsigned int clkpre;
--	unsigned int clkprepare;
--	unsigned int clksettle;
--	unsigned int clktermen;
--	unsigned int clktrail;
--	unsigned int clkzero;
--	unsigned int dtermen;
--	unsigned int eot;
--	unsigned int hsexit;
--	unsigned int hsprepare;
--	unsigned int hszero;
--	unsigned int hssettle;
--	unsigned int hsskip;
--	unsigned int hstrail;
--	unsigned int init;
--	unsigned int lpx;
--	unsigned int taget;
--	unsigned int tago;
--	unsigned int tasure;
--	unsigned int wakeup;
--};
--
- struct inno_dsidphy {
- 	struct device *dev;
- 	struct clk *ref_clk;
-@@ -201,7 +177,9 @@ struct inno_dsidphy {
- 	void __iomem *host_base;
- 	struct reset_control *rst;
- 	enum phy_mode mode;
-+	struct phy_configure_opts_mipi_dphy dphy_cfg;
- 
-+	struct clk *pll_clk;
- 	struct {
- 		struct clk_hw hw;
- 		u8 prediv;
-@@ -238,37 +216,79 @@ static void phy_update_bits(struct inno_dsidphy *inno,
- 	writel(tmp, inno->phy_base + reg);
- }
- 
--static void mipi_dphy_timing_get_default(struct mipi_dphy_timing *timing,
--					 unsigned long period)
-+static unsigned long inno_dsidphy_pll_calc_rate(struct inno_dsidphy *inno,
-+						unsigned long rate)
- {
--	/* Global Operation Timing Parameters */
--	timing->clkmiss = 0;
--	timing->clkpost = 70000 + 52 * period;
--	timing->clkpre = 8 * period;
--	timing->clkprepare = 65000;
--	timing->clksettle = 95000;
--	timing->clktermen = 0;
--	timing->clktrail = 80000;
--	timing->clkzero = 260000;
--	timing->dtermen = 0;
--	timing->eot = 0;
--	timing->hsexit = 120000;
--	timing->hsprepare = 65000 + 4 * period;
--	timing->hszero = 145000 + 6 * period;
--	timing->hssettle = 85000 + 6 * period;
--	timing->hsskip = 40000;
--	timing->hstrail = max(8 * period, 60000 + 4 * period);
--	timing->init = 100000000;
--	timing->lpx = 60000;
--	timing->taget = 5 * timing->lpx;
--	timing->tago = 4 * timing->lpx;
--	timing->tasure = 2 * timing->lpx;
--	timing->wakeup = 1000000000;
-+	unsigned long prate = clk_get_rate(inno->ref_clk);
-+	unsigned long best_freq = 0;
-+	unsigned long fref, fout;
-+	u8 min_prediv, max_prediv;
-+	u8 _prediv, best_prediv = 1;
-+	u16 _fbdiv, best_fbdiv = 1;
-+	u32 min_delta = UINT_MAX;
-+
-+	/*
-+	 * The PLL output frequency can be calculated using a simple formula:
-+	 * PLL_Output_Frequency = (FREF / PREDIV * FBDIV) / 2
-+	 * PLL_Output_Frequency: it is equal to DDR-Clock-Frequency * 2
-+	 */
-+	fref = prate / 2;
-+	if (rate > 1000000000UL)
-+		fout = 1000000000UL;
-+	else
-+		fout = rate;
-+
-+	/* 5Mhz < Fref / prediv < 40MHz */
-+	min_prediv = DIV_ROUND_UP(fref, 40000000);
-+	max_prediv = fref / 5000000;
-+
-+	for (_prediv = min_prediv; _prediv <= max_prediv; _prediv++) {
-+		u64 tmp;
-+		u32 delta;
-+
-+		tmp = (u64)fout * _prediv;
-+		do_div(tmp, fref);
-+		_fbdiv = tmp;
-+
-+		/*
-+		 * The possible settings of feedback divider are
-+		 * 12, 13, 14, 16, ~ 511
-+		 */
-+		if (_fbdiv == 15)
-+			continue;
-+
-+		if (_fbdiv < 12 || _fbdiv > 511)
-+			continue;
-+
-+		tmp = (u64)_fbdiv * fref;
-+		do_div(tmp, _prediv);
-+
-+		delta = abs(fout - tmp);
-+		if (!delta) {
-+			best_prediv = _prediv;
-+			best_fbdiv = _fbdiv;
-+			best_freq = tmp;
-+			break;
-+		} else if (delta < min_delta) {
-+			best_prediv = _prediv;
-+			best_fbdiv = _fbdiv;
-+			best_freq = tmp;
-+			min_delta = delta;
-+		}
-+	}
-+
-+	if (best_freq) {
-+		inno->pll.prediv = best_prediv;
-+		inno->pll.fbdiv = best_fbdiv;
-+		inno->pll.rate = best_freq;
-+	}
-+
-+	return best_freq;
- }
- 
- static void inno_dsidphy_mipi_mode_enable(struct inno_dsidphy *inno)
- {
--	struct mipi_dphy_timing gotp;
-+	struct phy_configure_opts_mipi_dphy *cfg = &inno->dphy_cfg;
- 	const struct {
- 		unsigned long rate;
- 		u8 hs_prepare;
-@@ -288,12 +308,14 @@ static void inno_dsidphy_mipi_mode_enable(struct inno_dsidphy *inno)
- 		{ 800000000, 0x21, 0x1f, 0x09, 0x29},
- 		{1000000000, 0x09, 0x20, 0x09, 0x27},
- 	};
--	u32 t_txbyteclkhs, t_txclkesc, ui;
-+	u32 t_txbyteclkhs, t_txclkesc;
- 	u32 txbyteclkhs, txclkesc, esc_clk_div;
- 	u32 hs_exit, clk_post, clk_pre, wakeup, lpx, ta_go, ta_sure, ta_wait;
- 	u32 hs_prepare, hs_trail, hs_zero, clk_lane_hs_zero, data_lane_hs_zero;
- 	unsigned int i;
- 
-+	inno_dsidphy_pll_calc_rate(inno, cfg->hs_clk_rate);
-+
- 	/* Select MIPI mode */
- 	phy_update_bits(inno, REGISTER_PART_LVDS, 0x03,
- 			MODE_ENABLE_MASK, MIPI_MODE_ENABLE);
-@@ -328,32 +350,27 @@ static void inno_dsidphy_mipi_mode_enable(struct inno_dsidphy *inno)
- 	txclkesc = txbyteclkhs / esc_clk_div;
- 	t_txclkesc = div_u64(PSEC_PER_SEC, txclkesc);
- 
--	ui = div_u64(PSEC_PER_SEC, inno->pll.rate);
--
--	memset(&gotp, 0, sizeof(gotp));
--	mipi_dphy_timing_get_default(&gotp, ui);
--
- 	/*
- 	 * The value of counter for HS Ths-exit
- 	 * Ths-exit = Tpin_txbyteclkhs * value
- 	 */
--	hs_exit = DIV_ROUND_UP(gotp.hsexit, t_txbyteclkhs);
-+	hs_exit = DIV_ROUND_UP(cfg->hs_exit, t_txbyteclkhs);
- 	/*
- 	 * The value of counter for HS Tclk-post
- 	 * Tclk-post = Tpin_txbyteclkhs * value
- 	 */
--	clk_post = DIV_ROUND_UP(gotp.clkpost, t_txbyteclkhs);
-+	clk_post = DIV_ROUND_UP(cfg->clk_post, t_txbyteclkhs);
- 	/*
- 	 * The value of counter for HS Tclk-pre
- 	 * Tclk-pre = Tpin_txbyteclkhs * value
- 	 */
--	clk_pre = DIV_ROUND_UP(gotp.clkpre, t_txbyteclkhs);
-+	clk_pre = DIV_ROUND_UP(cfg->clk_pre, t_txbyteclkhs);
- 
- 	/*
- 	 * The value of counter for HS Tlpx Time
- 	 * Tlpx = Tpin_txbyteclkhs * (2 + value)
- 	 */
--	lpx = DIV_ROUND_UP(gotp.lpx, t_txbyteclkhs);
-+	lpx = DIV_ROUND_UP(cfg->lpx, t_txbyteclkhs);
- 	if (lpx >= 2)
- 		lpx -= 2;
- 
-@@ -362,19 +379,19 @@ static void inno_dsidphy_mipi_mode_enable(struct inno_dsidphy *inno)
- 	 * Tta-go for turnaround
- 	 * Tta-go = Ttxclkesc * value
- 	 */
--	ta_go = DIV_ROUND_UP(gotp.tago, t_txclkesc);
-+	ta_go = DIV_ROUND_UP(cfg->ta_go, t_txclkesc);
- 	/*
- 	 * The value of counter for HS Tta-sure
- 	 * Tta-sure for turnaround
- 	 * Tta-sure = Ttxclkesc * value
- 	 */
--	ta_sure = DIV_ROUND_UP(gotp.tasure, t_txclkesc);
-+	ta_sure = DIV_ROUND_UP(cfg->ta_sure, t_txclkesc);
- 	/*
- 	 * The value of counter for HS Tta-wait
- 	 * Tta-wait for turnaround
- 	 * Tta-wait = Ttxclkesc * value
- 	 */
--	ta_wait = DIV_ROUND_UP(gotp.taget, t_txclkesc);
-+	ta_wait = DIV_ROUND_UP(cfg->ta_get, t_txclkesc);
- 
- 	for (i = 0; i < ARRAY_SIZE(timings); i++)
- 		if (inno->pll.rate <= timings[i].rate)
-@@ -479,6 +496,7 @@ static int inno_dsidphy_power_on(struct phy *phy)
- 	struct inno_dsidphy *inno = phy_get_drvdata(phy);
- 
- 	clk_prepare_enable(inno->pclk_phy);
-+	clk_prepare_enable(inno->ref_clk);
- 	pm_runtime_get_sync(inno->dev);
- 
- 	/* Bandgap power on */
-@@ -524,6 +542,7 @@ static int inno_dsidphy_power_off(struct phy *phy)
- 			LVDS_PLL_POWER_OFF | LVDS_BANDGAP_POWER_DOWN);
- 
- 	pm_runtime_put(inno->dev);
-+	clk_disable_unprepare(inno->ref_clk);
- 	clk_disable_unprepare(inno->pclk_phy);
- 
- 	return 0;
-@@ -546,168 +565,32 @@ static int inno_dsidphy_set_mode(struct phy *phy, enum phy_mode mode,
- 	return 0;
- }
- 
--static const struct phy_ops inno_dsidphy_ops = {
--	.set_mode = inno_dsidphy_set_mode,
--	.power_on = inno_dsidphy_power_on,
--	.power_off = inno_dsidphy_power_off,
--	.owner = THIS_MODULE,
--};
--
--static unsigned long inno_dsidphy_pll_round_rate(struct inno_dsidphy *inno,
--						   unsigned long prate,
--						   unsigned long rate,
--						   u8 *prediv, u16 *fbdiv)
--{
--	unsigned long best_freq = 0;
--	unsigned long fref, fout;
--	u8 min_prediv, max_prediv;
--	u8 _prediv, best_prediv = 1;
--	u16 _fbdiv, best_fbdiv = 1;
--	u32 min_delta = UINT_MAX;
--
--	/*
--	 * The PLL output frequency can be calculated using a simple formula:
--	 * PLL_Output_Frequency = (FREF / PREDIV * FBDIV) / 2
--	 * PLL_Output_Frequency: it is equal to DDR-Clock-Frequency * 2
--	 */
--	fref = prate / 2;
--	if (rate > 1000000000UL)
--		fout = 1000000000UL;
--	else
--		fout = rate;
--
--	/* 5Mhz < Fref / prediv < 40MHz */
--	min_prediv = DIV_ROUND_UP(fref, 40000000);
--	max_prediv = fref / 5000000;
--
--	for (_prediv = min_prediv; _prediv <= max_prediv; _prediv++) {
--		u64 tmp;
--		u32 delta;
--
--		tmp = (u64)fout * _prediv;
--		do_div(tmp, fref);
--		_fbdiv = tmp;
--
--		/*
--		 * The possible settings of feedback divider are
--		 * 12, 13, 14, 16, ~ 511
--		 */
--		if (_fbdiv == 15)
--			continue;
--
--		if (_fbdiv < 12 || _fbdiv > 511)
--			continue;
--
--		tmp = (u64)_fbdiv * fref;
--		do_div(tmp, _prediv);
--
--		delta = abs(fout - tmp);
--		if (!delta) {
--			best_prediv = _prediv;
--			best_fbdiv = _fbdiv;
--			best_freq = tmp;
--			break;
--		} else if (delta < min_delta) {
--			best_prediv = _prediv;
--			best_fbdiv = _fbdiv;
--			best_freq = tmp;
--			min_delta = delta;
--		}
--	}
--
--	if (best_freq) {
--		*prediv = best_prediv;
--		*fbdiv = best_fbdiv;
--	}
--
--	return best_freq;
--}
--
--static long inno_dsidphy_pll_clk_round_rate(struct clk_hw *hw,
--					      unsigned long rate,
--					      unsigned long *prate)
-+static int inno_dsidphy_configure(struct phy *phy,
-+				  union phy_configure_opts *opts)
- {
--	struct inno_dsidphy *inno = hw_to_inno(hw);
--	unsigned long fout;
--	u16 fbdiv = 1;
--	u8 prediv = 1;
--
--	fout = inno_dsidphy_pll_round_rate(inno, *prate, rate,
--					     &prediv, &fbdiv);
--
--	return fout;
--}
--
--static int inno_dsidphy_pll_clk_set_rate(struct clk_hw *hw,
--					   unsigned long rate,
--					   unsigned long parent_rate)
--{
--	struct inno_dsidphy *inno = hw_to_inno(hw);
--	unsigned long fout;
--	u16 fbdiv = 1;
--	u8 prediv = 1;
-+	struct inno_dsidphy *inno = phy_get_drvdata(phy);
-+	int ret;
- 
--	fout = inno_dsidphy_pll_round_rate(inno, parent_rate, rate,
--					     &prediv, &fbdiv);
-+	if (inno->mode != PHY_MODE_MIPI_DPHY)
-+		return -EINVAL;
- 
--	dev_dbg(inno->dev, "fin=%lu, fout=%lu, prediv=%u, fbdiv=%u\n",
--		parent_rate, fout, prediv, fbdiv);
-+	ret = phy_mipi_dphy_config_validate(&opts->mipi_dphy);
-+	if (ret)
-+		return ret;
- 
--	inno->pll.prediv = prediv;
--	inno->pll.fbdiv = fbdiv;
--	inno->pll.rate = fout;
-+	memcpy(&inno->dphy_cfg, &opts->mipi_dphy, sizeof(inno->dphy_cfg));
- 
- 	return 0;
- }
- 
--static unsigned long
--inno_dsidphy_pll_clk_recalc_rate(struct clk_hw *hw, unsigned long prate)
--{
--	struct inno_dsidphy *inno = hw_to_inno(hw);
--
--	/* PLL_Output_Frequency = (FREF / PREDIV * FBDIV) / 2 */
--	return (prate / inno->pll.prediv * inno->pll.fbdiv) / 2;
--}
--
--static const struct clk_ops inno_dsidphy_pll_clk_ops = {
--	.round_rate = inno_dsidphy_pll_clk_round_rate,
--	.set_rate = inno_dsidphy_pll_clk_set_rate,
--	.recalc_rate = inno_dsidphy_pll_clk_recalc_rate,
-+static const struct phy_ops inno_dsidphy_ops = {
-+	.configure = inno_dsidphy_configure,
-+	.set_mode = inno_dsidphy_set_mode,
-+	.power_on = inno_dsidphy_power_on,
-+	.power_off = inno_dsidphy_power_off,
-+	.owner = THIS_MODULE,
- };
- 
--static int inno_dsidphy_pll_register(struct inno_dsidphy *inno)
--{
--	struct device *dev = inno->dev;
--	struct clk *clk;
--	const char *parent_name;
--	struct clk_init_data init;
--	int ret;
--
--	parent_name = __clk_get_name(inno->ref_clk);
--
--	init.name = "mipi_dphy_pll";
--	ret = of_property_read_string(dev->of_node, "clock-output-names",
--				      &init.name);
--	if (ret < 0)
--		dev_dbg(dev, "phy should set clock-output-names property\n");
--
--	init.ops = &inno_dsidphy_pll_clk_ops;
--	init.parent_names = &parent_name;
--	init.num_parents = 1;
--	init.flags = 0;
--
--	inno->pll.hw.init = &init;
--	clk = devm_clk_register(dev, &inno->pll.hw);
--	if (IS_ERR(clk)) {
--		ret = PTR_ERR(clk);
--		dev_err(dev, "failed to register PLL: %d\n", ret);
--		return ret;
--	}
--
--	return devm_of_clk_add_hw_provider(dev, of_clk_hw_simple_get,
--					   &inno->pll.hw);
--}
--
- static int inno_dsidphy_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
-@@ -764,10 +647,6 @@ static int inno_dsidphy_probe(struct platform_device *pdev)
- 		return ret;
- 	}
- 
--	ret = inno_dsidphy_pll_register(inno);
--	if (ret)
--		return ret;
--
- 	pm_runtime_enable(dev);
- 
- 	return 0;
--- 
-2.23.0
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
