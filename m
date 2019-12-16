@@ -2,85 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 332E011FEB9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 08:02:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E3E711FEFA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 08:22:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZvdWpmW3t/q3eYT3nAMMBNMkAh1uV9pXEhIlWU5bl64=; b=JJnJYsa/OPtyLF
-	3wHHQ9hfjIthppyz/zAGzeFnu3ZUKHazcLsqN+AOsTXF8bn/dYPlP9rUmICih1bYmjFYDIR0gSh6k
-	e0dm/a0IeU1gnos9/T7M5xk2vzeDPIDbDYgw+BbC2FWlVLbgOYjn+IA+G/1356Lsd5DrgYL+cXnra
-	+IZakwbKZYZcKQTm7m4I1SULIQKK9sRQUXGuVEj1RT4PdWlxSKRH2OloajKkQqJSeSN5hPMFcJrd/
-	WsWm6GTP+E4zdwMnNm6ah+zmxHeoT6d4kxjTn7amYybPM8mwCCtGsJtyVuqnS9fE6Li73eBbG5MsP
-	l+9mdZ4ErAM+AmtD5z5g==;
+	List-Owner; bh=prgi3qBWRUi1jpM1D4ewwuwcWpcernLcO5c9NRYaVjg=; b=HaIkhn48qYi57N
+	Jc1+Y3LndinAnnzGRAx0JGHlt6BAddkqfUbekqfrtRk7JgOa2VolzuEcYxEXwUJY8MBoZoSOPPoFW
+	dgvYtyLPDrroyogDvqvCURK+H2fdMWnp1jJTcE932ESyT651CGVci1VGUJ4DPhljJ5I+MTb7yLTWI
+	xW+/C7xG7rwauGqlkDv5MwsWYo0vEBPYNOJzBAW3mvpXu4/xBtU5pCQJRGPjz72ypS1l5ckvWiuk1
+	mv3u9yNQ1YDqvu7TyByFW69gcgQo3QKTOdg+XA1RZHlWxe2HxtvxXkUBjkHS15GbgZSd3qFG+1aB1
+	GBHm2S5Kg9GriQs782qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igkO6-000526-8A; Mon, 16 Dec 2019 07:01:50 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1igki1-0004h0-5w; Mon, 16 Dec 2019 07:22:25 +0000
+Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igkNy-00051B-AT
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 07:01:43 +0000
-Received: by mail-pg1-x542.google.com with SMTP id q127so3135090pga.4
+ id 1igkhp-0004ec-2Z
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 07:22:14 +0000
+Received: by mail-qv1-xf44.google.com with SMTP id m14so1785073qvl.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Dec 2019 23:01:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=QTc3d1HmVPrybJi2/QarMwHVxM3YGV+FrtECoqhlaVM=;
- b=V4YmLffaWP4s+kQ6BJvq6kVT1zDNR+3hMe/lXQaI/CpjA9B/Yi5Fi9/fZNahOPncH5
- PUWVlR8lNtVE70GoY0Nu0MWnUDvbJJcf0KceehFUqHTJTCmItz8Y31gurqLGiRtTCfZi
- 3nLA1Q39WIf44c0UDCUciUgPAx6BSvLG3aQ5LHuOiA+rEEHyawtOwHxTt56S4rT7OBjp
- KvYE/SPWlm66nx+6JfpdEPfbLmaHGV3B85WbYoogHYzWh5K4kIXs/2Wz2Ui6nuEIvu6t
- uIHTdgb1CszgVdzkOG1P83gaG90DhxDUIRm06bM2kM9Ihph8eR6EnBqX4T+76jnVE0dd
- y28A==
+ Sun, 15 Dec 2019 23:22:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=QLwYMou2QNNU+Bbtah+RA9oMWQD3BzPPJMlbiXBB1/I=;
+ b=NdwBkCpbFJPMTNXk1ad0cpoBUAQZkJQHe3BmSg/COwJPa4xK4FCqULVmhzW+w0p9QV
+ WfA/rygfsNE9cJTi/rTiHAYH1q7LZBaiqM4NOW+fQnEh1X69F9UITrKFWqL1qvBRxMsO
+ 7H5ksoQkI9T9j2yk7ASRdZGIp+SDj+Kyj9kSo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=QTc3d1HmVPrybJi2/QarMwHVxM3YGV+FrtECoqhlaVM=;
- b=tnwG4JFQHHqU9E59C8+uvtk0LVSeEW5BQB2NVcwM+NbqMIiMSCK9pTQsd1c8KnYRjS
- Kl1hN3o+pyfIufYYlu2mY3q27+VwPo7Ve8Y708qDMf3f5gKvShO4eWN1CMuSBZqf3Y8I
- 3AwYdRy2I070jP3m5qWb7jCFTlOppfnqVNaIT4N+/EgVRRDJQTyG2q1iHjfaRcDPL+UX
- LIRhiVcF9ZAcdlI4+GH6X95G3lhmg0DWOLZwAoIdpHePNJSMDXRbVI53Fb6XSPJbbiVo
- W4ICjJzynzNitWndcBnDtkPPk/m1eDsyNj3duv/yCfg040Gy9gpSVzWRV9NUXFBtIoXg
- dJuQ==
-X-Gm-Message-State: APjAAAW0Qf6cYq7+yv82V/U14NJH0qnFuepYi5dXjaLX0tw9XSytOFtt
- iE1kUB75unnlKLjJFa21BrU=
-X-Google-Smtp-Source: APXvYqw1S8NeDvux5szO7FbOa9ytvis7sjbDjIn33rJHA9DmPrfRgaJxVhOZcjtvgNbB7S9x0NioTA==
-X-Received: by 2002:a63:6946:: with SMTP id e67mr11257641pgc.181.1576479700620; 
- Sun, 15 Dec 2019 23:01:40 -0800 (PST)
-Received: from taoren-ubuntu-R90MNF91 (c-24-4-25-55.hsd1.ca.comcast.net.
- [24.4.25.55])
- by smtp.gmail.com with ESMTPSA id 78sm19949249pfu.65.2019.12.15.23.01.39
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 15 Dec 2019 23:01:40 -0800 (PST)
-Date: Sun, 15 Dec 2019 23:01:32 -0800
-From: Tao Ren <rentao.bupt@gmail.com>
-To: Joel Stanley <joel@jms.id.au>
-Subject: Re: [PATCH] ARM: dts: aspeed: AST2400 disables hw checksum
-Message-ID: <20191216070131.GA11755@taoren-ubuntu-R90MNF91>
-References: <20191216064132.78015-1-joel@jms.id.au>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=QLwYMou2QNNU+Bbtah+RA9oMWQD3BzPPJMlbiXBB1/I=;
+ b=Oay/hJLVNzhK/BVOsVeQW7Z1pDuTv0MP2EKT2clyXwZmxf5yaOM1ZgH8S6FLxOW0TD
+ hQjcPj/x+TBG5OmspnamdqJLKlfgmw5DhQ0B/5L9NqHweq+tK0LsAGwyxBNdEuxxw7nP
+ Sp6xW11lWcZMx/4qzh1XVRkkk8ZOPlQNH3KeZzZAADl5qTDqBunYfOUI/5PghT0glzCC
+ 075021KH9SkHlKkSNVEaM8mECYPdLgo3u9i8G+KPMQlmmjLka7GA7FhXgcTSUpOA4rDT
+ H9wnvmd9kKxdH9NpISUt2oNtmI36KLorXQJiME50lNsy/b/7R/ZgzlqILodONO5CakUP
+ yr0A==
+X-Gm-Message-State: APjAAAXXcTwwCJvDPuQ6S6zweBGONaCocdSMnEjkBOjeW3U8XaQX+uX0
+ hWJ55QJ9AtrkvsM7R1WGmzM/R5b8DaS3YNrmAtOKpQ==
+X-Google-Smtp-Source: APXvYqzFEIcrFrTNSr7HVqHHexEeQiAhr3dYzHFBq8Zo3RyDvXHnBPRwSaHHZt0irz/WjMERV0dX2mrxOBMgRWyFvzA=
+X-Received: by 2002:a0c:f703:: with SMTP id w3mr25457091qvn.6.1576480928001;
+ Sun, 15 Dec 2019 23:22:08 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191216064132.78015-1-joel@jms.id.au>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <1575960413-6900-1-git-send-email-weiyi.lu@mediatek.com>
+ <1575960413-6900-5-git-send-email-weiyi.lu@mediatek.com>
+In-Reply-To: <1575960413-6900-5-git-send-email-weiyi.lu@mediatek.com>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Mon, 16 Dec 2019 15:21:57 +0800
+Message-ID: <CANMq1KA4KL=ZpU=cQtw3LV79DKRdG3Eb16og6vU1SdsnnL=0CA@mail.gmail.com>
+Subject: Re: [PATCH v9 4/9] soc: mediatek: Add multiple step bus protection
+ control
+To: Weiyi Lu <weiyi.lu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_230142_386091_844F85A3 
-X-CRM114-Status: GOOD (  15.29  )
+X-CRM114-CacheID: sfid-20191215_232213_144318_6C1B57E0 
+X-CRM114-Status: GOOD (  20.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rentao.bupt[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -89,6 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,71 +87,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Jeffery <andrew@aj.id.au>, Alexander Filippov <a.filippov@yadro.com>,
- linux-aspeed@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, srv_heupstream <srv_heupstream@mediatek.com>,
+ James Liao <jamesjj.liao@mediatek.com>, lkml <linux-kernel@vger.kernel.org>,
+ Fan Chen <fan.chen@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Yong Wu <yong.wu@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 05:41:32PM +1100, Joel Stanley wrote:
-> There is no need to specify this property in the device tree as the
-> AST2400 does not have working hardware checksum and disables it in the
-> driver.
-> 
-> Signed-off-by: Joel Stanley <joel@jms.id.au>
+On Tue, Dec 10, 2019 at 2:47 PM Weiyi Lu <weiyi.lu@mediatek.com> wrote:
+>
+> Both MT8183 & MT6765 have more control steps of bus protection
+> than previous project. And there add more bus protection registers
+> reside at infracfg & smi-common. Also add new APIs for multiple
+> step bus protection control with more customized arguments.
+>
+> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
 > ---
->  arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts | 1 -
->  arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts  | 1 -
->  arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts        | 3 ---
->  3 files changed, 5 deletions(-)
-> 
-> diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
-> index b1e10f0c85c9..322587b7b67d 100644
-> --- a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
-> +++ b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
-> @@ -76,7 +76,6 @@ &uart5 {
->  
->  &mac1 {
->  	status = "okay";
-> -	no-hw-checksum;
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
->  };
-> diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
-> index aaa77a597d1a..54e508530dce 100644
-> --- a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
-> +++ b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
-> @@ -75,7 +75,6 @@ &uart5 {
->  
->  &mac1 {
->  	status = "okay";
-> -	no-hw-checksum;
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
->  };
-> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-> index affd2c8743b1..041f28e3ac10 100644
-> --- a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-> @@ -107,10 +107,7 @@ flash@0 {
->  
->  &mac0 {
->  	status = "okay";
-> -
->  	use-ncsi;
-> -	no-hw-checksum;
-> -
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_rmii1_default>;
->  };
-> -- 
-> 2.24.0
+>  drivers/soc/mediatek/Makefile           |  2 +-
+>  drivers/soc/mediatek/mtk-scpsys-ext.c   | 99 +++++++++++++++++++++++++++++++++
+>  drivers/soc/mediatek/mtk-scpsys.c       | 39 +++++++++----
+>  include/linux/soc/mediatek/scpsys-ext.h | 39 +++++++++++++
+>  4 files changed, 168 insertions(+), 11 deletions(-)
+>  create mode 100644 drivers/soc/mediatek/mtk-scpsys-ext.c
+>  create mode 100644 include/linux/soc/mediatek/scpsys-ext.h
+>
+> diff --git a/drivers/soc/mediatek/Makefile b/drivers/soc/mediatek/Makefile
+> index b017330..b442be9 100644
+> --- a/drivers/soc/mediatek/Makefile
+> +++ b/drivers/soc/mediatek/Makefile
+> @@ -1,5 +1,5 @@
+>  # SPDX-License-Identifier: GPL-2.0-only
+>  obj-$(CONFIG_MTK_CMDQ) += mtk-cmdq-helper.o
+> -obj-$(CONFIG_MTK_INFRACFG) += mtk-infracfg.o
+> +obj-$(CONFIG_MTK_INFRACFG) += mtk-infracfg.o mtk-scpsys-ext.o
+>  obj-$(CONFIG_MTK_PMIC_WRAP) += mtk-pmic-wrap.o
+>  obj-$(CONFIG_MTK_SCPSYS) += mtk-scpsys.o
+> diff --git a/drivers/soc/mediatek/mtk-scpsys-ext.c b/drivers/soc/mediatek/mtk-scpsys-ext.c
+> new file mode 100644
+> index 0000000..4f1adda
+> --- /dev/null
+> +++ b/drivers/soc/mediatek/mtk-scpsys-ext.c
+> @@ -0,0 +1,99 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2018 MediaTek Inc.
+> + * Author: Owen Chen <Owen.Chen@mediatek.com>
+> + */
+> +#include <linux/ktime.h>
+> +#include <linux/mfd/syscon.h>
+> +#include <linux/of_device.h>
+> +#include <linux/regmap.h>
+> +#include <linux/soc/mediatek/scpsys-ext.h>
+> +
+> +#define MTK_POLL_DELAY_US   10
+> +#define MTK_POLL_TIMEOUT    USEC_PER_SEC
+> +
+> +static int set_bus_protection(struct regmap *map, u32 mask, u32 ack_mask,
+> +               u32 reg_set, u32 reg_sta, u32 reg_en)
+> +{
+> +       u32 val;
+> +
+> +       if (reg_set)
+> +               regmap_write(map, reg_set, mask);
+> +       else
+> +               regmap_update_bits(map, reg_en, mask, mask);
 
-Thanks for the fix, Joel. I totally forget I added the property in
-ast2400 dts.
+At least for 8183, we never seen to use the reg_set case, can we
+simplify this function?
 
-Reviewed-by: Tao Ren <rentao.bupt@gmail.com>
+> +
+> +       return regmap_read_poll_timeout(map, reg_sta,
+> +                       val, (val & ack_mask) == ack_mask,
+> +                       MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
+
+From 8183, I see that you have either:
+ 1. mask == ack_mask
+ 2. ack_mask == 0 (essentially this skips this test)
+
+Would it be simpler to just skip this test if reg_sta == 0, and always
+assume mask == ack_mask otherwise?
+
+e.g.
+if (reg_sta == 0)
+   return 0;
+
+return regmap_read_poll_timeout(map, reg_sta,
+                       val, (val & mask) == mask,
+                       MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
+
+> +}
+> +
+> [snip]
+> +
+> +int mtk_scpsys_ext_set_bus_protection(const struct bus_prot *bp_table,
+> +       struct regmap *infracfg, struct regmap *smi_common)
+> +{
+> +       int i;
+> +
+> +       for (i = 0; i < MAX_STEPS; i++) {
+> +               struct regmap *map = NULL;
+> +               int ret;
+> +
+> +               if (bp_table[i].type == INVALID_TYPE)
+> +                       continue;
+
+break? (but yes the one below in mtk_scpsys_ext_clear_bus_protection
+has to be continue).
+
+> +               else if (bp_table[i].type == IFR_TYPE)
+> +                       map = infracfg;
+> +               else if (bp_table[i].type == SMI_TYPE)
+> +                       map = smi_common;
+> +
+> +               ret = set_bus_protection(map,
+> +                               bp_table[i].mask, bp_table[i].mask,
+> +                               bp_table[i].set_ofs, bp_table[i].sta_ofs,
+> +                               bp_table[i].en_ofs);
+> +
+> +               if (ret)
+> +                       return ret;
+> +       }
+> +
+> +       return 0;
+> +}
+> +
+> +int mtk_scpsys_ext_clear_bus_protection(const struct bus_prot *bp_table,
+> +       struct regmap *infracfg, struct regmap *smi_common)
+> +{
+> +       int i;
+> +
+> +       for (i = MAX_STEPS - 1; i >= 0; i--) {
+> +               struct regmap *map = NULL;
+> +               int ret;
+> +
+> +               if (bp_table[i].type == INVALID_TYPE)
+> +                       continue;
+> +               else if (bp_table[i].type == IFR_TYPE)
+> +                       map = infracfg;
+> +               else if (bp_table[i].type == SMI_TYPE)
+> +                       map = smi_common;
+> +
+> +               ret = clear_bus_protection(map,
+> +                               bp_table[i].mask, bp_table[i].clr_ack_mask,
+> +                               bp_table[i].clr_ofs, bp_table[i].sta_ofs,
+> +                               bp_table[i].en_ofs);
+> +
+> +               if (ret)
+> +                       return ret;
+> +       }
+> +
+> +       return 0;
+> +}
+> diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+> index 915d635..466bb749 100644
+> --- a/drivers/soc/mediatek/mtk-scpsys.c
+> +++ b/drivers/soc/mediatek/mtk-scpsys.c
+> @@ -12,6 +12,7 @@
+>  #include <linux/pm_domain.h>
+>  #include <linux/regulator/consumer.h>
+>  #include <linux/soc/mediatek/infracfg.h>
+> +#include <linux/soc/mediatek/scpsys-ext.h>
+>
+>  #include <dt-bindings/power/mt2701-power.h>
+>  #include <dt-bindings/power/mt2712-power.h>
+> @@ -120,6 +121,7 @@ enum clk_id {
+>   * @basic_clk_id: provide the same purpose with field "clk_id"
+>   *                by declaring basic clock prefix name rather than clk_id.
+>   * @caps: The flag for active wake-up action.
+> + * @bp_table: The mask table for multiple step bus protection.
+>   */
+>  struct scp_domain_data {
+>         const char *name;
+> @@ -131,6 +133,7 @@ struct scp_domain_data {
+>         enum clk_id clk_id[MAX_CLKS];
+>         const char *basic_clk_id[MAX_CLKS];
+>         u8 caps;
+> +       struct bus_prot bp_table[MAX_STEPS];
+
+As with the previous patch, I'm not a big fan of having 2 approaches
+for something similar (bus_prot_mask vs bp_table), can we define a
+simple macro for this?
+e.g.:
+.bp_table = BUS_PROT_SINGLE(mask)
 
 _______________________________________________
 linux-arm-kernel mailing list
