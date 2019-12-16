@@ -2,61 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EE52120470
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:55:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB385120486
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:57:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6jmBuP/DS2arJAmuKfJ+9eEUkIBiZ2YwoMWd1lI6Q6Q=; b=imDujgd50Bs2tm
-	NxLQKWpXzI3GrEpwT6KlSa11yDf1hVHWT4UsfSxJlZau8qItZWgZnpaArctpLrdOAuo9DuNlad4fW
-	cbs0KcW6Sdo2wnEit2D1Xn5wja/0AYPOmYA30gIwAJqZ7IcmpeN8YGZH2PCHl4qJkZu1FOUBr8XUC
-	rm6Tw+xZBR5Cb1fP3ykZ4aRsc+UNgV0A+0M6si3vYr5+nYiPgdSN5KVGlc9XUpesgjasKIFGeNoEb
-	WoZkYMJTe8oENLWiOKELR5vaujv+d1LinOxrYh8kiIQtfiucty0edWose8/0b7kt17NQBic2gsSEc
-	Ym5WDVkya2F1Q8wTL42g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xxhi1uczWGvw5uKNDXFi01/fuxNY9EFv5OdgKaFleDg=; b=RcFRP8tNm7uZrn
+	8dI8dtxlI8JQOGi1iwJ2Wi1hIltZxWhStoqkrlIXpi1BOrkbhUsT+eyBnMVW64T6+lDgqlp65ECuQ
+	7FusHPr9MIKUM+BuvPktwFNLrJ5ZQlUBJyeCtwiOUnU40fK2BmTbALjbbWXGkz43bpqNdMlMyYELA
+	MzsFedcWKo8SMJv/6qFZwPCqhsgMDeYtYEKXyfE0MC6qjBopTAptqNbH1YTuGMu4PJ2YMhN8y4y2z
+	0zqyE90XKyvE5oqzKqRjAJ+8HzcFVHS8Jf8EIqlK/xmqjQIJFquDBmNsf+Gpwgepsj9gOUftjTj2w
+	YRg3LoMy9rzXoCzrg5hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igoy3-0004MC-UK; Mon, 16 Dec 2019 11:55:16 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igoxl-0004Kw-TM
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 11:55:00 +0000
-Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 23C8195EAB199B681CCD;
- Mon, 16 Dec 2019 19:54:51 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS403-HUB.china.huawei.com
- (10.3.19.203) with Microsoft SMTP Server id 14.3.439.0; Mon, 16 Dec 2019
- 19:54:41 +0800
-Subject: Re: [PATCH] ACPI/IORT: fix the iort_id_map function
-To: Pankaj Bansal <pankaj.bansal@nxp.com>, Lorenzo Pieralisi
- <lorenzo.pieralisi@arm.com>, Sudeep Holla <sudeep.holla@arm.com>, "Rafael J
- . Wysocki" <rjw@rjwysocki.net>, Len Brown <lenb@kernel.org>
-References: <20191215203303.29811-1-pankaj.bansal@nxp.com>
- <ffc5a6e9-cac3-d6c6-fe16-745b4f9e481f@huawei.com>
- <VI1PR0401MB2496E243F45C82E789B867A6F1510@VI1PR0401MB2496.eurprd04.prod.outlook.com>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <eedbf670-00e2-93ce-06ac-469d6032ce74@huawei.com>
-Date: Mon, 16 Dec 2019 19:54:15 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
+	id 1igozg-0005yR-Be; Mon, 16 Dec 2019 11:56:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1igozU-0005x0-IU
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 11:56:45 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E680F1FB;
+ Mon, 16 Dec 2019 03:56:42 -0800 (PST)
+Received: from e112269-lin.cambridge.arm.com (e112269-lin.cambridge.arm.com
+ [10.1.194.43])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E41E13F719;
+ Mon, 16 Dec 2019 03:56:41 -0800 (PST)
+From: Steven Price <steven.price@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Will Deacon <will@kernel.org>
+Subject: [PATCH v5 0/3] arm64: Workaround for Cortex-A55 erratum 1530923
+Date: Mon, 16 Dec 2019 11:56:28 +0000
+Message-Id: <20191216115631.17804-1-steven.price@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <VI1PR0401MB2496E243F45C82E789B867A6F1510@VI1PR0401MB2496.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_035458_121936_7AF5CA83 
-X-CRM114-Status: GOOD (  16.62  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191216_035644_652418_5112FD76 
+X-CRM114-Status: GOOD (  10.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -69,76 +61,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Jonathan Cameron <jonathan.cameron@huawei.com>
+Cc: Steven Price <steven.price@arm.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019/12/16 13:14, Pankaj Bansal wrote:
-> Hi Hanjun,
-> 
-> Thanks for replying. Please find my response inline
-> 
->> Hi Pankaj,
->>
->> On 2019/12/15 23:12, Pankaj Bansal wrote:
->>> As per
->>> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Finfoc
->>>
->> enter.arm.com%2Fhelp%2Ftopic%2Fcom.arm.doc.den0049d%2FDEN0049D_IO
->> _Rema
->>>
->> pping_Table.pdf&amp;data=02%7C01%7Cpankaj.bansal%40nxp.com%7C78d
->> 82a560
->>>
->> 5714219196008d781db06a7%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%
->> 7C1%7C6
->>>
->> 37120650018983814&amp;sdata=%2FRhATUKx%2FA2gPEx%2BNY9X%2F7kqV
->> CrEeRnbE%
->>> 2B2qlTkdGDc%3D&amp;reserved=0
->>> in ID mappings:
->>> Number of IDs = The number of IDs in the range minus one.
->>
->> Hmm, the spec is confusing, the spec may need to be updated, for example,
->> for a PCI bus, device ID + function ID will take 8 bits and will be 256 IDs for
->> that PCI bus, not sure why we need to minus one.
->>
-> 
-> I agree that this "minus one" thing is confusing. Not sure why It was put in the spec
-> like that. I guess they wanted the number of IDs to be 0 based instead of 1 based.
-> 
->>>
->>> Therefore, it's valid for ID mapping to contain single device mapping
->>> which would have Number of IDs field 0.
->>
->> Why not use single mapping flag for this case?
-> 
-> Actually single mapping flag doesn't mean that there is single mapping in an ID mapping.
-> It means that Input ID should not be considered when looking for Output ID.
-> If we put single id flag, then we cannot have a case where we have an array of single mappings
-> for one device.
-> e.g. an array of single mappings for one PCIe Root Complex, where we have a unique output ID for a unique BDF(Input ID)
+Version 5 is a rebasing of version 4 (no changes).
 
-Agreed, single mapping flag is not working for multi-entris of single
-mappings.
+This series enables a workaround for Cortex-A55 erratum 1530923. The
+erratum potentially allows TLB entries to be allocated as a result of a
+speculative AT instruction. This may happen in the middle of a guest
+world switch while the relevant VMSA configuration is in an inconsistent
+state, leading to erroneous content being allocated into TLBs.
 
-Do you have a real use case for this fix? I'm thinking if we will
-break any delivered platforms with this patch applied, since this
-code is not changed from 2016, and it's the key logic for mapping
-the IDs.
+There are existing workarounds for similar issues, 1165522 is
+effectively the same, and 1319367/1319537 is similar but without VHE
+support.  Rather than add to the selection of errata, the first patch
+renames 1165522 to WORKAROUND_SPECULATIVE_AT which can be reused (in the
+final patch) for 1530923.
 
-I checked Hisilicon's ARM64 server platform, Number of IDs is equal
-to the number of IDs in the range in the firmware, which is not doing
-the same as the spec said, but (rid_in > map->input_base + map->id_count)
-is still valid with this patch applied, not sure for other platforms.
+The workaround for errata 1319367 and 1319537 although similar cannot
+use VHE (not available on those CPUs) so cannot share the workaround.
+However, to keep some sense of symmetry the workaround is renamed to
+SPECULATIVE_AT_NVHE.
 
-Thanks
-Hanjun
+Changes since v4:
+ * Rebased to v5.5-rc1
+
+Changes since v3:
+ * Added Suzuki's reviewed-bys - thanks!
+ * Corrected ARM64_WORKAROUND_SPECULATIVE_AT to
+   ARM64_WORKAROUND_SPECULATIVE_AT_VHE in the final patch
+
+Changes since v2:
+ * Split 1319367/1319537 back into their own workaround, but rename it
+   for symmetry with the VHE workaround.
+
+Changes since v1:
+ * Combine 1319367/1319537 into the same 'SPECULATIVE_AT' workaround.
+
+Steven Price (3):
+  arm64: Rename WORKAROUND_1165522 to SPECULATIVE_AT_VHE
+  arm64: Rename WORKAROUND_1319367 to SPECULATIVE_AT_NVHE
+  arm64: Workaround for Cortex-A55 erratum 1530923
+
+ Documentation/arm64/silicon-errata.rst |  2 ++
+ arch/arm64/Kconfig                     | 21 +++++++++++++++++++++
+ arch/arm64/include/asm/cpucaps.h       |  4 ++--
+ arch/arm64/include/asm/kvm_host.h      |  2 +-
+ arch/arm64/include/asm/kvm_hyp.h       |  6 +++---
+ arch/arm64/kernel/cpu_errata.c         | 25 +++++++++++++++++++------
+ arch/arm64/kvm/hyp/switch.c            | 10 +++++-----
+ arch/arm64/kvm/hyp/sysreg-sr.c         |  4 ++--
+ arch/arm64/kvm/hyp/tlb.c               | 12 ++++++------
+ 9 files changed, 61 insertions(+), 25 deletions(-)
+
+-- 
+2.20.1
 
 
 _______________________________________________
