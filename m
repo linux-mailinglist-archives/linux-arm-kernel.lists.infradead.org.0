@@ -2,74 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D605D12034F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:07:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2757D120366
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:12:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q+79sRUgFhtAjeEr1rGsxuomfVXQz96LofrWZuBl1TU=; b=Uv4Iq40EId2kKI
-	Fwt294tTDJwtWv5NhTtIBH0vaCzlKPEHKRS0AL9hn9+DeaafkoeYxcM7P6Cu2Nr1fgC3yU3DlzMAm
-	3xOKxa3ozlG5DAuAX9QHw/Tqrzn5MTvqlRlWSshuQdNOLadDMS2S+OwR/lEz4wJ2CTpqT0K18Sz8c
-	yIqe7auRr87x1eTeRDTVOLKeOYbrwwiQXfFyuPeaXL63TPK0CDBcyJpvJJ3NJxfQyDoAS+TDrbYtD
-	l2mycHXoAr8ECLJMbO7Xwp+6aVt8C+mFbxc0xLpjiMCpdPOJC2sQkzsoetMvW5ysozqRdPFKlImmQ
-	8Ld7hGu4I+tR1mQWVKbA==;
+	List-Owner; bh=jQU1Juajxlp7PdbCe0z3gjuWM0mChh7x9ReBhlA9V+0=; b=jmLC1hXihJwkyw
+	4B2pWL6Bh7lFJF4IUlyMlq6lHX8Il5eAbuc1XJEmg9TDSON+PZGi4tClREkjjqaRIr0jvlT5vGuKI
+	9xIuyKOVElARoc5+8C/HmAdtviPsFmGFiKU5AybJDQ8WaNR2IBkaQRBZgiuDoAtc9QmMwIXSwNvjy
+	DAn30GHw8/j++PgDtFOF9GhVxUj4aan+7W9Rsw3q+ANVMSMp19rfxvNOntLo/0EaasViFlvArDwK8
+	xNffAmss1UOnIBsnElHvmUYIrfuxaH43PjWQgvobWbsAGMGAVEphedkfH9BzscL5xUifiPHzLDQGF
+	GXjKrY09S15aUHhfYMGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igoE8-0006vJ-8M; Mon, 16 Dec 2019 11:07:48 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1igoIE-0000iN-W3; Mon, 16 Dec 2019 11:12:03 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igoDu-0006tX-SV
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 11:07:36 +0000
-Received: by mail-io1-xd44.google.com with SMTP id k24so4791816ioc.4
+ id 1igoI4-0000hT-Ok
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 11:11:54 +0000
+Received: by mail-wr1-x441.google.com with SMTP id y17so6740271wrh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 03:07:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=KfZaSbdFEASJkf9WsXHl71dcv4ETqMgnXgcnwp3Mq+I=;
- b=dP+KqavQmuo0QMDmi4neiVk93gyhwe17pjwdfjNCR4kaW410MUv5U9XBebG0Af2JUg
- uSjY0f9+4haCQspqumE1JA6bnz8vOxRbsSA26BD2mrXZCVUyRjkx08KynOVeOGtZ0Ok4
- rzKSsE7NpKWocqf5Jm4pm2f4YI9vDE48P61aE=
+ Mon, 16 Dec 2019 03:11:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=2dxoabKlBZGvbp4gfeIRY6j7pCmpniW5VhZdZM1jvSg=;
+ b=gAzRCm/Mi70HEKFLVKwdw4o6dgW1+mLf9GMIm8nSgC7Qz7NVXFTtfe89fsNxF5IPwO
+ sNRdlKFk1DehYMbFr3XQ+pzSGskhva5BA9u9F5N1Y+UyWNBPIWImKo/IOxWFzToLNjXz
+ I7HXqTpp1ZR7c9w2GQKByZ+FLo7L14/KXzvlnLv99C3e1u2ojDXJu2LMgf+bEWt/aWGm
+ 5GYZubOutSIqq8w7Ef4Qv0BVyjXAJKWKOhfacE46OxeHUKmjbYzDTDM8SL/J+GayssjG
+ pKQvwVNHZ5buP2ykKauqxNaYT4XEvhGGimm7YEeqZppb2oGCLnev0ZZnNcDUvRjkzstJ
+ ImqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=KfZaSbdFEASJkf9WsXHl71dcv4ETqMgnXgcnwp3Mq+I=;
- b=MN7ZK0NUk9FmD5ftueFlIp82XwGbonPLlHqS8m9+9alUezzMBFHwceSSZJI+/bxfux
- V2om5V5UQjtZG1cUaBtWl/WiBmDY8G7PNn/TjA0esxFIReItNgv0CJIwcPNvEawHeLPe
- lXxN6XbcPH2OkaCYUf4FyKPBtWYijXlYiBLjuLz1Y4+9wjGBUKsI6/pJAK0jC5jmgrcD
- ckZHgiWDNHztshj7R30ulMmQxB2Xdc+eAtThrsGgGBStZskw0uUqRNlyjC+cxUHrIs4i
- IXmWg1FRKwqZjlk0BW0nOJxoGININJg1fXVR8tm5zdxq2Uspj2El7A4ntg4npDWhZu61
- y1Tw==
-X-Gm-Message-State: APjAAAVd9KkUXgBdZOLFDVvNcGFaUU7BMMRTwPNy5Wp0/WA4OeCJ9knk
- cVkvr+JW5yIfa402XYvqITZWyU3SU8RbwlElXdbiqj+I
-X-Google-Smtp-Source: APXvYqxYm4/U2soHztfqAotrtRHQmYHhxvY2dRK0oTC0bL7+7SnLpoXa+xv9qJGP1N2VQheZkh2UqTeKeOZ/EbOzqgQ=
-X-Received: by 2002:a5d:97c9:: with SMTP id k9mr17260864ios.297.1576494451527; 
- Mon, 16 Dec 2019 03:07:31 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=2dxoabKlBZGvbp4gfeIRY6j7pCmpniW5VhZdZM1jvSg=;
+ b=Y8YkxAq3YmLHSSppLoyp6/GatNGuUjmL269nY0M/cVe0zhAlmu22ZKvAqQGyZl4fGO
+ SGXi767TZjjX102dOQsR9tXSl385U5VbrByOzecqkG+dRbNSkC6tUXtM+DsjA+McxvH8
+ WAO1jPxAegNSSeLpLw4zzFmmgirZ/gAoZg4Y921auJT3ubqUYmEe6ePxeLIV9RfJHy4I
+ OCc3i+4eE4CkId6bgHhYj+EtGm4ucenm2cOTqUxsFEZuBNSjiDHHmbjrTUrQoFE63qYm
+ iFVGXlqNBghTDy7OG389jmeSlfCyXwf1hEYzDwtUF6AzuFRK2glxpVuoW9577DyB4Blm
+ jdGg==
+X-Gm-Message-State: APjAAAW1re4TQScJgjtfjaJSAJ/I62qHn2P0jWy2fFw8mhIdilZ6FEvC
+ trypAkR+bUkUBrlcjHbAQvZEIg==
+X-Google-Smtp-Source: APXvYqx8pA749AH1DqU2BLWtKrkPOyGDfdptUcuuJl8+7mbfN9t9G/HQd47nlhBpyBSIKall5Rya2w==
+X-Received: by 2002:adf:bc87:: with SMTP id g7mr30557610wrh.121.1576494711131; 
+ Mon, 16 Dec 2019 03:11:51 -0800 (PST)
+Received: from dell ([2.27.35.132])
+ by smtp.gmail.com with ESMTPSA id g25sm24456932wmh.3.2019.12.16.03.11.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Dec 2019 03:11:50 -0800 (PST)
+Date: Mon, 16 Dec 2019 11:11:50 +0000
+From: Lee Jones <lee.jones@linaro.org>
+To: Anand Moon <linux.amoon@gmail.com>
+Subject: Re: [RFCv1 1/8] mfd: rk808: Refactor shutdown functions
+Message-ID: <20191216111150.GA2369@dell>
+References: <20191206184536.2507-1-linux.amoon@gmail.com>
+ <20191206184536.2507-2-linux.amoon@gmail.com>
 MIME-Version: 1.0
-References: <20191203134816.5319-1-jagan@amarulasolutions.com>
- <20191203134816.5319-2-jagan@amarulasolutions.com>
- <20191204133600.gnv6dnhk6upe7xod@gilmour.lan>
-In-Reply-To: <20191204133600.gnv6dnhk6upe7xod@gilmour.lan>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Mon, 16 Dec 2019 16:37:20 +0530
-Message-ID: <CAMty3ZDU57Hj3ZSBC6sSMFWN9-HQadA03hmXUNUVS1W0UQQ3DA@mail.gmail.com>
-Subject: Re: [PATCH v12 1/7] dt-bindings: sun6i-dsi: Document A64 MIPI-DSI
- controller
-To: Maxime Ripard <mripard@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20191206184536.2507-2-linux.amoon@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_030735_069680_76362E8C 
-X-CRM114-Status: GOOD (  20.39  )
+X-CRM114-CacheID: sfid-20191216_031152_810514_23A4A992 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,104 +99,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Daniel Schultz <d.schultz@phytec.de>, Heiko Stuebner <heiko@sntech.de>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 4, 2019 at 7:06 PM Maxime Ripard <mripard@kernel.org> wrote:
->
-> On Tue, Dec 03, 2019 at 07:18:10PM +0530, Jagan Teki wrote:
-> > The MIPI DSI controller in Allwinner A64 is similar to A33.
-> >
-> > But unlike A33, A64 doesn't have DSI_SCLK gating so it is valid
-> > to have separate compatible for A64 on the same driver.
-> >
-> > DSI_SCLK uses mod clock-names on dt-bindings, so the same
-> > is not required for A64.
-> >
-> > On that note
-> > - A64 require minimum of 1 clock like the bus clock
-> > - A33 require minimum of 2 clocks like both bus, mod clocks
-> >
-> > So, update dt-bindings so-that it can document both A33,
-> > A64 bindings requirements.
-> >
-> > Reviewed-by: Rob Herring <robh@kernel.org>
-> > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > ---
-> > Changes for v12:
-> > - Use 'enum' instead of oneOf+const
-> >
-> >  .../display/allwinner,sun6i-a31-mipi-dsi.yaml | 20 +++++++++++++++++--
-> >  1 file changed, 18 insertions(+), 2 deletions(-)
-> >
-> > diff --git a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> > index dafc0980c4fa..b91446475f35 100644
-> > --- a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> > +++ b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> > @@ -15,7 +15,9 @@ properties:
-> >    "#size-cells": true
-> >
-> >    compatible:
-> > -    const: allwinner,sun6i-a31-mipi-dsi
-> > +    enum:
-> > +      - allwinner,sun6i-a31-mipi-dsi
-> > +      - allwinner,sun50i-a64-mipi-dsi
-> >
-> >    reg:
-> >      maxItems: 1
-> > @@ -24,6 +26,8 @@ properties:
-> >      maxItems: 1
-> >
-> >    clocks:
-> > +    minItems: 1
-> > +    maxItems: 2
-> >      items:
-> >        - description: Bus Clock
-> >        - description: Module Clock
-> > @@ -63,13 +67,25 @@ required:
-> >    - reg
-> >    - interrupts
-> >    - clocks
-> > -  - clock-names
-> >    - phys
-> >    - phy-names
-> >    - resets
-> >    - vcc-dsi-supply
-> >    - port
-> >
-> > +allOf:
-> > +  - if:
-> > +      properties:
-> > +         compatible:
-> > +           contains:
-> > +             const: allwinner,sun6i-a31-mipi-dsi
-> > +      then:
-> > +        properties:
-> > +          clocks:
-> > +            minItems: 2
-> > +        required:
-> > +          - clock-names
-> > +
->
-> Your else condition should check that the number of clocks items is 1
-> on the A64
-
-But the minItems mentioned as 1 in clocks, which is unchanged number
-by default. doesn't it sufficient?
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCAwNiBEZWMgMjAxOSwgQW5hbmQgTW9vbiB3cm90ZToKCj4gRnJvbTogRGFuaWVsIFNj
+aHVsdHogPGQuc2NodWx0ekBwaHl0ZWMuZGU+Cj4gCj4gU2luY2UgYWxsIHNodXRkb3duIGZ1bmN0
+aW9ucyBoYXZlIGFsbW9zdCB0aGUgc2FtZSBjb2RlLCBhbGwgbG9naWMKPiBmcm9tIHRoZSBzaHV0
+ZG93biBmdW5jdGlvbnMgY2FuIGJlIHJlZmFjdG9yZWQgdG8gYSBuZXcgZnVuY3Rpb24KPiAicms4
+MDhfdXBkYXRlX2JpdHMiLCB3aGljaCBjYW4gdXBkYXRlIGEgcmVnaXN0ZXIgYnkgYSBnaXZlbiBh
+ZGRyZXNzCj4gYW5kIGJpdG1hc2sgYW5kIHZhbHVlLgo+IAo+IGxpbms6IGh0dHBzOi8vbG9yZS5r
+ZXJuZWwub3JnL3BhdGNod29yay9wYXRjaC85Mzc0MDQvCj4gQ2M6IEhlaWtvIFN0dWVibmVyIDxo
+ZWlrb0BzbnRlY2guZGU+Cj4gU2lnbmVkLW9mZi1ieTogRGFuaWVsIFNjaHVsdHogPGQuc2NodWx0
+ekBwaHl0ZWMuZGU+Cj4gU2lnbmVkLW9mZi1ieTogQW5hbmQgTW9vbiA8bGludXguYW1vb25AZ21h
+aWwuY29tPgo+IC0tLQo+IFtyZWJhc2VkIG9uIGxhdGVzdCBrZXJuZWxdCj4gTW9kaWZpZWQgdGhl
+IEFQSSB0byBzZXQgdGhlIHZhbHVlLgo+IFRoaXMgY2hhbmdlcyB3ZXJlIHN1Ym1pdGVkIHdpdGgg
+YmVsb3cgcGF0Y2guCj4gWzBdIGh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL3BhdGNod29yay9wYXRj
+aC85Mzc0MDQvCj4gLS0tCj4gIGRyaXZlcnMvbWZkL3JrODA4LmMgfCA4NyArKysrKysrKysrKysr
+Ky0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KPiAgMSBmaWxlIGNoYW5nZWQsIDI2IGlu
+c2VydGlvbnMoKyksIDYxIGRlbGV0aW9ucygtKQoKTm90IHN1cmUgd2hhdCdzIGhhcHBlbmluZyB3
+aXRoIHRoZXNlIChjb21wZXRpbmc/KSBwYXRjaC1zZXRzLiAgSSdtIG5vdApwbGFubmluZyBvbiBn
+ZXR0aW5nIGludm9sdmVkIHVudGlsIHlvdSBndXlzIGhhdmUgYXJyaXZlZCBhdCBhbmQgYWdyZWVk
+CnVwb24gYSBzaW5nbGUgc29sdXRpb24uCgotLSAKTGVlIEpvbmVzIFvmnY7nkLzmlq9dCkxpbmFy
+byBTZXJ2aWNlcyBUZWNobmljYWwgTGVhZApMaW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJjZSBzb2Z0
+d2FyZSBmb3IgQVJNIFNvQ3MKRm9sbG93IExpbmFybzogRmFjZWJvb2sgfCBUd2l0dGVyIHwgQmxv
+ZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
