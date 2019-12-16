@@ -2,82 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9101A1211C3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 18:31:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D579121205
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 18:44:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3+H4edCiRD6J3qvHIterRfW6KVzEkYabYZXklR7YNM0=; b=kZSXj2pVN4J56M
-	mmO/MU2/bT9+zQ9zSOmL9ENvKhfbtavzPxd8kjmLxrMZKnfEuBnJRVo6aqtqm57kVPjNUNmZR20fw
-	qSlc4Zv65zRJWUK51lW2saXfHYmF0gFyXJqR3CdobOL9to+3VHwoVaMs8iYel9fIqIjH5oH9p7cpz
-	lQgtRFInYgF1lFtiJxHRdcj/ZhZcIVlV23sc+4sn4VzIQJdLx15qSacT9WC/uz/NB1LB5HV630gVT
-	UN3C4+p6D6iSTYhQ0jUmAGq2X4EGIR0saZN3KF35MEVstzaQ5fu8APZcBFCokGqMntAEOSebZE0Mm
-	eRHO8Rj3PiEtQ1feEQOg==;
+	List-Owner; bh=x1BEeV4C1/nianqR6Tv/N3vw82FCM1Ih3wxcivpyrlU=; b=toxczDkK1Mi4nC
+	U5aBNhE1c6YxL5GtPuUKFZIEWqEXdu105I4blQE4S4Q0Z9iaOWrXvKOZOGn2dq4Vt21Sl4FPoElAG
+	TVRzwEj2+bE1dUnUbwV7jMa7slC+8wpLKkp9k/Grvv1g1R5dV+x3Ei/c6ZOK0aHUg24ZAkadDI5Ys
+	aiwqvR1EM98iaQrGEWxe7OFYjpFmtRRZjhlC7X21xPOw39abtAyv75pEfb9DJtkVOVKciXjF50EMX
+	GKpK3dpUpRKaeS9AXpne3KxEGPS3dfRPLLkvrvA5qd7iT1rQ9SvF4qcf4WpY8Dg5X72if0aBrwwA5
+	btEJSuq/i4kEGp8yn/XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iguD2-00062K-6y; Mon, 16 Dec 2019 17:31:04 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1iguPs-0001i2-Dm; Mon, 16 Dec 2019 17:44:20 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iguCt-00060l-9Q
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 17:30:56 +0000
-Received: by mail-wr1-x441.google.com with SMTP id d16so8315529wre.10
+ id 1iguPk-0001go-V7
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 17:44:14 +0000
+Received: by mail-ed1-x544.google.com with SMTP id f8so5760000edv.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 09:30:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ Mon, 16 Dec 2019 09:44:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=7fWYDGMp/nApDNbsrJ+5xWU9putwDijDotVARBJn+ns=;
- b=gdIMAIf97ukxAmjomWXZt5U5oVo5ZHPpBsn8yC+LUJsUpG/0g7jNbRu+fF+T5QXIRv
- dUc+6/GMVd4y8Dn2BUkBrZAVDct54i+OJAb18XlddDIlSOeTLs5ZX6V6nJD04poiKKjh
- MhFytbWzx2fnX2crjrCcKdUmIPgC/Kh4VMnTWPHWuXs92o0u5Zn8uFTP7URYbKd/yNYA
- H1pK3pAA/pcShk0GqJBgQ3yHpAsRyELjKg7Wq/ouI7OBxjm8qbhr8qcWOb3LU1mhCJXV
- rolTLcMf2FYfJZvSerMd2MPTvBNIu61GdGWwGrGBtp8FZQqzVVyRurinNqK9NnLPpzsh
- Drrg==
+ :cc; bh=dotsp4hlrRRgAJ8KtDm+ECaZ4Cv3RzpcnEOHjwNyGY4=;
+ b=XuMhWcCBF/5Ytd0QFb2aWT2ZjIhuShrmxVGkMOWEHF4GTXo/JJO3tpKzaYezLulgtb
+ ymJn6D9SihsyvAj/EkVlj+aj0p9Ywx+4WTU8EuNhn01x+niEpzjpq4vjuYeRmoNeByn4
+ PJZ0QlMrGdlv1Ma6updVH0Q6orL1dTU2clAJaH8wkau3kwvAj6eTD5Tpe4oSrym6hJ9Q
+ 7eNQp6O33KdXkmOj224psFuq5lGg+mHv/9oIs69Uqb+zT1cnAuC1Iuw/itukC1gfD577
+ fUSzQTCBMpZ6lVtgzcUx0NJlloH5c2qOEvZWhWWlxw7dbGyvfsGEpCpyfTXO1vkLURHr
+ uZRw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=7fWYDGMp/nApDNbsrJ+5xWU9putwDijDotVARBJn+ns=;
- b=fGvPAMnBHJybga3nSRdnPRW72q/BMiSA+1S4aOxols3chpxnt+HEgRHMJA/0v+rjIq
- FTLCpSht4lz1n5UyQbjQLkgX5REwPuIT/ukWb04uy5rTeHZ8rWH7yDc9CsPoGCov3Wri
- jj/3kedQbVT/UPWlrFuAIUPPcRHZMMQXk+P6a+Dtxxk0/oP66vaJyJQIGwaJhTURwc++
- uhGjb9Vx6r4SL+PeDgUCyZ+zIdG1+0z/mtJVSNdi4XfH+cRa2V6gHu6qHtqfmuW60m/Y
- pGNunpvkWadykQlVUSiYsKtnG7YJzXwCs7SlfY0T3MD8QdMZTM2jwli4gB7ryeropeUf
- sCVw==
-X-Gm-Message-State: APjAAAUJRNk5tI/egWtw9STvNwmm2T31sYzIR5LV5TPuHgDoWNfiWx7J
- XAu/InKPBNZJZRF223PGiJJnqlRgiwQZXZomiszE+Q==
-X-Google-Smtp-Source: APXvYqyoF+KvnzIYNr2E7q8HeyNbCKjQw7uAH6xStgdJExVzXSR0xSCZPRzKzq+G6oWrvHrRDKICuZ+IOnGR+n/Xc8k=
-X-Received: by 2002:a5d:4984:: with SMTP id r4mr30348162wrq.137.1576517448748; 
- Mon, 16 Dec 2019 09:30:48 -0800 (PST)
+ bh=dotsp4hlrRRgAJ8KtDm+ECaZ4Cv3RzpcnEOHjwNyGY4=;
+ b=om6H3ZenGzTB1IUcsbXMc5qfSl5UBWMB1bJ3tg/5R9h6k3CNuWvpqInmrVVwqWTaEb
+ mMfVoQTRE7xEK73u2Tr9NBsUl8eAUZE9RL/ISihAhxaXB3IQZ576rurhLEK2fijqQAUS
+ /BL8Qf4AWleH/NmdbJZBqSyPtR37kXyQyfiiIcIxnryyxdTOMlRGfclbt/HFu2S38oU2
+ 0bpzNnbvnk29D3OIQqqLNZotBdyATaRMc6F+NhJtVhARCIeivZ++2fmetDdZOMYq+vX8
+ 609U1X1m8CVO/yr/maIzk0Is9cjj0ZDdxuriIOy/3v4Ji9RiKpziHNGKIu4tLrlvjAi7
+ 1zaw==
+X-Gm-Message-State: APjAAAUPmTK+RVGfAFkt9fGQpXosNmLbRqAthM5KRWzEuS38w5NHwERm
+ jKQ0/MEIpzRG5munEJ/ljPBniwXP726nVNf8xoI=
+X-Google-Smtp-Source: APXvYqzMZmKG4O0FupZLieU7MkUuk6V2ElDf+PeLMM9q5q0SW8+Pb9iyDBHD9J+QeQV1ICnDIpyJSoUw51ELTZ5J+Xk=
+X-Received: by 2002:aa7:d6d1:: with SMTP id x17mr365496edr.57.1576518246192;
+ Mon, 16 Dec 2019 09:44:06 -0800 (PST)
 MIME-Version: 1.0
-References: <20191211184027.20130-1-catalin.marinas@arm.com>
- <20191211184027.20130-21-catalin.marinas@arm.com>
- <ef61bbc6-76d6-531d-2156-b57efc070da4@arm.com>
-In-Reply-To: <ef61bbc6-76d6-531d-2156-b57efc070da4@arm.com>
-From: Peter Collingbourne <pcc@google.com>
-Date: Mon, 16 Dec 2019 09:30:36 -0800
-Message-ID: <CAMn1gO6KGbeSkuEJB_j+WG8DAjbn81OdfA6DQQ+FFA5F6dcsVQ@mail.gmail.com>
-Subject: Re: [PATCH 20/22] arm64: mte: Allow user control of the excluded tags
- via prctl()
-To: Kevin Brodsky <kevin.brodsky@arm.com>
+References: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
+ <1576514271-15687-6-git-send-email-jcrouse@codeaurora.org>
+In-Reply-To: <1576514271-15687-6-git-send-email-jcrouse@codeaurora.org>
+From: Rob Clark <robdclark@gmail.com>
+Date: Mon, 16 Dec 2019 09:43:55 -0800
+Message-ID: <CAF6AEGsWAjgcsqMQEtCfUn9smqfVyOcf-Nn1+eJGrMuLkjgwRA@mail.gmail.com>
+Subject: Re: [PATCH v3 5/5] drm/msm/a6xx: Support split pagetables
+To: Jordan Crouse <jcrouse@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_093055_333131_84DF95D4 
-X-CRM114-Status: GOOD (  30.96  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20191216_094413_002183_3F5A8205 
+X-CRM114-Status: GOOD (  24.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robdclark[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -86,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,195 +93,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Branislav Rankov <Branislav.Rankov@arm.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>, linux-mm@kvack.org,
- Marc Zyngier <maz@kernel.org>, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: freedreno <freedreno@lists.freedesktop.org>,
+ David Airlie <airlied@linux.ie>, Will Deacon <will@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Sean Paul <sean@poorly.run>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 6:20 AM Kevin Brodsky <kevin.brodsky@arm.com> wrote:
+On Mon, Dec 16, 2019 at 8:38 AM Jordan Crouse <jcrouse@codeaurora.org> wrote:
 >
-> +Branislav, Peter
+> Attempt to enable split pagetables if the arm-smmu driver supports it.
+> This will move the default address space from the default region to
+> the address range assigned to TTBR1. The behavior should be transparent
+> to the driver for now but it gets the default buffers out of the way
+> when we want to start swapping TTBR0 for context-specific pagetables.
 >
-> In this patch, the default exclusion mask remains 0 (i.e. all tags can be generated).
-> After some more discussions, Branislav and I think that it would be better to start
-> with the reverse, i.e. all tags but 0 excluded (mask = 0xfe or 0xff).
->
-> This should simplify the MTE setup in the early C runtime quite a bit. Indeed, if all
-> tags can be generated, doing any heap or stack tagging before the
-> PR_SET_TAGGED_ADDR_CTRL prctl() is issued can cause problems, notably because tagged
-> addresses could end up being passed to syscalls. Conversely, if IRG and ADDG never
-> set the top byte by default, then tagging operations should be no-ops until the
-> prctl() is issued. This would be particularly useful given that it may not be
-> straightforward for the C runtime to issue the prctl() before doing anything else.
->
-> Additionally, since the default tag checking mode is PR_MTE_TCF_NONE, it would make
-> perfect sense not to generate tags by default.
->
-> Any thoughts?
+> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
 
-This would indeed allow the early C runtime startup code to pass
-tagged addresses to syscalls, but I don't think it would entirely free
-the code from the burden of worrying about stack tagging. Either way,
-any stack frames that are active at the point when the prctl() is
-issued would need to be compiled without stack tagging, because
-otherwise those stack frames may use ADDG to rematerialize a stack
-object address, which may produce a different address post-prctl.
-Setting the exclude mask to 0xffff would at least make it more likely
-for this problem to be detected, though.
+Reviewed-by: Rob Clark <robdclark@gmail.com>
 
-If we change the default in this way, maybe it would be worth
-considering flipping the meaning of the tag mask and have it be a mask
-of tags to allow. That would be consistent with the existing behaviour
-where userspace sets bits in tagged_addr_ctrl in order to enable
-tagging features.
+(my previous r-b's on the other patches from v2 carries over to v3)
 
-Peter
-
+> ---
 >
-> Thanks,
-> Kevin
+>  drivers/gpu/drm/msm/adreno/a6xx_gpu.c | 52 ++++++++++++++++++++++++++++++++++-
+>  1 file changed, 51 insertions(+), 1 deletion(-)
 >
-> On 11/12/2019 18:40, Catalin Marinas wrote:
-> > The IRG, ADDG and SUBG instructions insert a random tag in the resulting
-> > address. Certain tags can be excluded via the GCR_EL1.Exclude bitmap
-> > when, for example, the user wants a certain colour for freed buffers.
-> > Since the GCR_EL1 register is not accessible at EL0, extend the
-> > prctl(PR_SET_TAGGED_ADDR_CTRL) interface to include a 16-bit field in
-> > the first argument for controlling the excluded tags. This setting is
-> > pre-thread.
-> >
-> > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> > ---
-> >   arch/arm64/include/asm/processor.h |  1 +
-> >   arch/arm64/include/asm/sysreg.h    |  7 +++++++
-> >   arch/arm64/kernel/process.c        | 27 +++++++++++++++++++++++----
-> >   include/uapi/linux/prctl.h         |  3 +++
-> >   4 files changed, 34 insertions(+), 4 deletions(-)
-> >
-> > diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-> > index 91aa270afc7d..5b6988035334 100644
-> > --- a/arch/arm64/include/asm/processor.h
-> > +++ b/arch/arm64/include/asm/processor.h
-> > @@ -150,6 +150,7 @@ struct thread_struct {
-> >   #endif
-> >   #ifdef CONFIG_ARM64_MTE
-> >       u64                     sctlr_tcf0;
-> > +     u64                     gcr_excl;
-> >   #endif
-> >   };
-> >
-> > diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-> > index 9e5753272f4b..b6bb6d31f1cd 100644
-> > --- a/arch/arm64/include/asm/sysreg.h
-> > +++ b/arch/arm64/include/asm/sysreg.h
-> > @@ -901,6 +901,13 @@
-> >               write_sysreg(__scs_new, sysreg);                        \
-> >   } while (0)
-> >
-> > +#define sysreg_clear_set_s(sysreg, clear, set) do {                  \
-> > +     u64 __scs_val = read_sysreg_s(sysreg);                          \
-> > +     u64 __scs_new = (__scs_val & ~(u64)(clear)) | (set);            \
-> > +     if (__scs_new != __scs_val)                                     \
-> > +             write_sysreg_s(__scs_new, sysreg);                      \
-> > +} while (0)
-> > +
-> >   #endif
-> >
-> >   #endif      /* __ASM_SYSREG_H */
-> > diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> > index 47ce98f47253..5ec6889795fc 100644
-> > --- a/arch/arm64/kernel/process.c
-> > +++ b/arch/arm64/kernel/process.c
-> > @@ -502,6 +502,15 @@ static void update_sctlr_el1_tcf0(u64 tcf0)
-> >       sysreg_clear_set(sctlr_el1, SCTLR_EL1_TCF0_MASK, tcf0);
-> >   }
-> >
-> > +static void update_gcr_el1_excl(u64 excl)
-> > +{
-> > +     /*
-> > +      * No need for ISB since this only affects EL0 currently, implicit
-> > +      * with ERET.
-> > +      */
-> > +     sysreg_clear_set_s(SYS_GCR_EL1, SYS_GCR_EL1_EXCL_MASK, excl);
-> > +}
-> > +
-> >   /* Handle MTE thread switch */
-> >   static void mte_thread_switch(struct task_struct *next)
-> >   {
-> > @@ -511,6 +520,7 @@ static void mte_thread_switch(struct task_struct *next)
-> >       /* avoid expensive SCTLR_EL1 accesses if no change */
-> >       if (current->thread.sctlr_tcf0 != next->thread.sctlr_tcf0)
-> >               update_sctlr_el1_tcf0(next->thread.sctlr_tcf0);
-> > +     update_gcr_el1_excl(next->thread.gcr_excl);
-> >   }
-> >   #else
-> >   static void mte_thread_switch(struct task_struct *next)
-> > @@ -641,22 +651,31 @@ static long set_mte_ctrl(unsigned long arg)
-> >       update_sctlr_el1_tcf0(tcf0);
-> >       preempt_enable();
-> >
-> > +     current->thread.gcr_excl = (arg & PR_MTE_EXCL_MASK) >> PR_MTE_EXCL_SHIFT;
-> > +     update_gcr_el1_excl(current->thread.gcr_excl);
-> > +
-> >       return 0;
-> >   }
-> >
-> >   static long get_mte_ctrl(void)
-> >   {
-> > +     unsigned long ret;
-> > +
-> >       if (!system_supports_mte())
-> >               return 0;
-> >
-> > +     ret = current->thread.gcr_excl << PR_MTE_EXCL_SHIFT;
-> > +
-> >       switch (current->thread.sctlr_tcf0) {
-> >       case SCTLR_EL1_TCF0_SYNC:
-> > -             return PR_MTE_TCF_SYNC;
-> > +             ret |= PR_MTE_TCF_SYNC;
-> > +             break;
-> >       case SCTLR_EL1_TCF0_ASYNC:
-> > -             return PR_MTE_TCF_ASYNC;
-> > +             ret |= PR_MTE_TCF_ASYNC;
-> > +             break;
-> >       }
-> >
-> > -     return 0;
-> > +     return ret;
-> >   }
-> >   #else
-> >   static long set_mte_ctrl(unsigned long arg)
-> > @@ -684,7 +703,7 @@ long set_tagged_addr_ctrl(unsigned long arg)
-> >               return -EINVAL;
-> >
-> >       if (system_supports_mte())
-> > -             valid_mask |= PR_MTE_TCF_MASK;
-> > +             valid_mask |= PR_MTE_TCF_MASK | PR_MTE_EXCL_MASK;
-> >
-> >       if (arg & ~valid_mask)
-> >               return -EINVAL;
-> > diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
-> > index 5e9323e66a38..749de5ab4f9f 100644
-> > --- a/include/uapi/linux/prctl.h
-> > +++ b/include/uapi/linux/prctl.h
-> > @@ -239,5 +239,8 @@ struct prctl_mm_map {
-> >   # define PR_MTE_TCF_SYNC            (1UL << PR_MTE_TCF_SHIFT)
-> >   # define PR_MTE_TCF_ASYNC           (2UL << PR_MTE_TCF_SHIFT)
-> >   # define PR_MTE_TCF_MASK            (3UL << PR_MTE_TCF_SHIFT)
-> > +/* MTE tag exclusion mask */
-> > +# define PR_MTE_EXCL_SHIFT           3
-> > +# define PR_MTE_EXCL_MASK            (0xffffUL << PR_MTE_EXCL_SHIFT)
-> >
-> >   #endif /* _LINUX_PRCTL_H */
+> diff --git a/drivers/gpu/drm/msm/adreno/a6xx_gpu.c b/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
+> index 5dc0b2c..1c6da93 100644
+> --- a/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
+> +++ b/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
+> @@ -811,6 +811,56 @@ static unsigned long a6xx_gpu_busy(struct msm_gpu *gpu)
+>         return (unsigned long)busy_time;
+>  }
 >
+> +static struct msm_gem_address_space *
+> +a6xx_create_address_space(struct msm_gpu *gpu, struct platform_device *pdev)
+> +{
+> +       struct iommu_domain *iommu = iommu_domain_alloc(&platform_bus_type);
+> +       struct msm_gem_address_space *aspace;
+> +       struct msm_mmu *mmu;
+> +       u64 start, size;
+> +       u32 val = 1;
+> +       int ret;
+> +
+> +       if (!iommu)
+> +               return ERR_PTR(-ENOMEM);
+> +
+> +       /*
+> +        * Try to request split pagetables - the request has to be made before
+> +        * the domian is attached
+> +        */
+> +       iommu_domain_set_attr(iommu, DOMAIN_ATTR_SPLIT_TABLES, &val);
+> +
+> +       mmu = msm_iommu_new(&pdev->dev, iommu);
+> +       if (IS_ERR(mmu)) {
+> +               iommu_domain_free(iommu);
+> +               return ERR_CAST(mmu);
+> +       }
+> +
+> +       /*
+> +        * After the domain is attached, see if the split tables were actually
+> +        * successful.
+> +        */
+> +       ret = iommu_domain_get_attr(iommu, DOMAIN_ATTR_SPLIT_TABLES, &val);
+> +       if (!ret && val) {
+> +               /*
+> +                * The aperture start will be at the beginning of the TTBR1
+> +                * space so use that as a base
+> +                */
+> +               start = iommu->geometry.aperture_start;
+> +               size = 0xffffffff;
+> +       } else {
+> +               /* Otherwise use the legacy 32 bit region */
+> +               start = SZ_16M;
+> +               size = 0xffffffff - SZ_16M;
+> +       }
+> +
+> +       aspace = msm_gem_address_space_create(mmu, "gpu", start, size);
+> +       if (IS_ERR(aspace))
+> +               iommu_domain_free(iommu);
+> +
+> +       return aspace;
+> +}
+> +
+>  static const struct adreno_gpu_funcs funcs = {
+>         .base = {
+>                 .get_param = adreno_get_param,
+> @@ -832,7 +882,7 @@ static const struct adreno_gpu_funcs funcs = {
+>  #if defined(CONFIG_DRM_MSM_GPU_STATE)
+>                 .gpu_state_get = a6xx_gpu_state_get,
+>                 .gpu_state_put = a6xx_gpu_state_put,
+> -               .create_address_space = adreno_iommu_create_address_space,
+> +               .create_address_space = a6xx_create_address_space,
+>  #endif
+>         },
+>         .get_timestamp = a6xx_get_timestamp,
+> --
+> 2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
