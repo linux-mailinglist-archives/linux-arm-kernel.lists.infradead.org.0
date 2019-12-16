@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E099611FE25
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 06:40:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6AA511FE4E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 07:01:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uiyxA+wLzTABQKkV1rRvA6NHNgIfqpRQEbV9KYsqSAY=; b=g9lFoiHS7iovSe
-	1r/hsu4pDIvxRuNRG431VWIQ8fOi3JdBf9/iMgM9ikCQxoLhkdTpCwTw5tHKJbwGnTGcEltOF2j9N
-	3742TV6cyhC7g5OmAJeYn/ZfwUFmeCTl4gf5PPTBDvxz1AM13QOD+HjwJ3HD+nZo6dCIb8afN2grH
-	xXEB4tgvcv6HkgBiaKxf0MJWzIqahtvwBvYHcvakSMVjDyExo9HaWtZl4j0BG5oVVVu/XuGRsOM6k
-	WcDGU6XBJakZZvEhmrG4G4QQkr1hE3gv/MkEwImGoBJZMyCi7RdBLdIYyeZkLaBH7/1WXHZ+IbfKy
-	YvLQR2NgtRShxAc0gFmA==;
+	List-Owner; bh=Kq+tOULlw1G5p+Fbzd3oimgKURxWAWCwuS/zhrnzuMg=; b=fsqFWhaJXzsEOr
+	G58jNGqhYU8CWsX4GnA1T1CqpIb0KK6AMpj+bw5TcRXZObBW8QYsMapkUYBxbN5w/Jh65jp8A7w4R
+	8c1W+eCAR0ehOoW+9KJsYjxnyubtttNXCU0zntWvZYC3WNKQRaOUueKgE6N6XHZOnRrkKOjBMu/lA
+	snGTfvhZnfG6UoHflKA3vxqcyDxGdUznW+Uuc1L9vBCJK27b4X6O9+k1cJptgvluGVLwfEwKm/+kc
+	nrFWOoBXCG9ItCzJ7bRA5zmcsydf0c5VVhpx98sP6GYyTPf7fkeDgjTizKbIr2gcSO7almxc4mb+a
+	+pwGxRSF2VGxtv8BBxHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igj7P-0001Zv-0q; Mon, 16 Dec 2019 05:40:31 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1igjRm-0000kp-8i; Mon, 16 Dec 2019 06:01:34 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igj7F-0001Xf-5K; Mon, 16 Dec 2019 05:40:23 +0000
-X-UUID: 504978ae64904107abacae3ce720c231-20191215
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=ZFK5ya63Cy6wgpbjF8WuGV2/7oL5ZesSkDZ/6F6akns=; 
- b=SLD234SHVdhqgz9HUvHWvCnWHg4ygBq/6pKuoWNaISH33SGn7Mt9i30ZnAe45k1G5s7Zs3ZUOGrcmpjEJb4JklR3OpZfqOqLZc9MnxdC3wB7xt4kMVmuQDoiN/eUA5mI44FD3voDrnNhRcoM5AbkLV3/Ci8HvoW238UI78ji1VI=;
-X-UUID: 504978ae64904107abacae3ce720c231-20191215
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <biao.huang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2002216749; Sun, 15 Dec 2019 21:40:11 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 15 Dec 2019 21:40:25 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Dec 2019 13:40:30 +0800
-Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 16 Dec 2019 13:39:22 +0800
-From: Biao Huang <biao.huang@mediatek.com>
-To: <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>, Andrew Lunn
- <andrew@lunn.ch>
-Subject: [v2,
- PATCH 2/2] net-next: dt-binding: dwmac-mediatek: add more description
- for RMII
-Date: Mon, 16 Dec 2019 13:39:58 +0800
-Message-ID: <20191216053958.26130-3-biao.huang@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20191216053958.26130-1-biao.huang@mediatek.com>
-References: <20191216053958.26130-1-biao.huang@mediatek.com>
+ id 1igjRb-0000jp-6G; Mon, 16 Dec 2019 06:01:24 +0000
+Received: by mail-qt1-x844.google.com with SMTP id l12so4882003qtq.12;
+ Sun, 15 Dec 2019 22:01:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=f2z51NNQPGTMFGtesof0cLcp5BmT40GR+s1mJAxOa+c=;
+ b=b6X1jWpTP0RfxR0H/2AEWnknIbaWzzhiV6iFVLwl6X9CxbOBNzjE5GUcxjZ7hJEUAn
+ Zc7OU2vHnDk1a726t9a0s/+ZZTMU1TeZTPhtju7Oi59MiMONTQOtK7D7BoAGFq/3OI0q
+ 8RTFbo/jAklEfgL4DoCUxqRT6V9fIOgVreE/E=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=f2z51NNQPGTMFGtesof0cLcp5BmT40GR+s1mJAxOa+c=;
+ b=G9xLJHS77USWtCiCcJgsnwatYxRZAksCfd7ooefCB1kZHgNVxmAQS09X1vuWxYkYa9
+ KtLLiZYeXTBJ0w1dhBMx3XFVYqxqmhR/qhyQJTSYGqedlQMiXEKfZWIkJLe7rVYHic7i
+ Vz5uFn83MRuAsjezisJhneqYbmEjw+85/PPRy8rvxknufbDcoW29A7T0SsOOriGaU17E
+ FWMlBb4QLOPjv91Dp2/JDsViuu1eLP8HlKBWn3bd7hmL9cpo6N6Y7W0gwDgLyqW2kZZQ
+ KZrJoC8rusB/QHvaHAwxKDxKcffMdjzg9FU4mPrTQxCQh7evn5bfdAaophPAuogszZpD
+ iP/Q==
+X-Gm-Message-State: APjAAAV5hVML95mjpuDcGKwM95sb49fHjMuMcFthkJdX1bdPvyHYdKlA
+ HhW+/MMj5JCrWrP60MF0K1plRt7U8WRDBnjdY6RnUc4HuK4=
+X-Google-Smtp-Source: APXvYqwPky1kIBq5TGeLsTIdyi7DvZWNnzatsH+kjC7TN4z5yU4h0spZkmjXTrZZd+qsQ9tWkqeQPGyHHbV6+3Lse00=
+X-Received: by 2002:ac8:3467:: with SMTP id v36mr22831465qtb.255.1576476081509; 
+ Sun, 15 Dec 2019 22:01:21 -0800 (PST)
 MIME-Version: 1.0
-X-MTK: N
+References: <20191211192742.95699-1-brendanhiggins@google.com>
+ <20191211192742.95699-8-brendanhiggins@google.com>
+ <CACPK8XctCb9Q2RaFVHEDuWxKDXpCWMWs-+vnKZ=SeTa3xRnT_g@mail.gmail.com>
+ <CAFd5g45MFYMK-eZWPC5fhm2OkynUXKfArUVhbanYVH+qKRUwPg@mail.gmail.com>
+In-Reply-To: <CAFd5g45MFYMK-eZWPC5fhm2OkynUXKfArUVhbanYVH+qKRUwPg@mail.gmail.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Mon, 16 Dec 2019 06:01:09 +0000
+Message-ID: <CACPK8XdgGLLT=RprY8zVW6kKJ6fjJdm4Oxs0uHBv-W5StMyGPQ@mail.gmail.com>
+Subject: Re: [PATCH v1 7/7] fsi: aspeed: add unspecified HAS_IOMEM dependency
+To: Brendan Higgins <brendanhiggins@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_214021_209424_73EF642A 
-X-CRM114-Status: GOOD (  11.87  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191215_220123_309776_973FA7E4 
+X-CRM114-Status: GOOD (  12.48  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,118 +92,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Biao Huang <biao.huang@mediatek.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, yt.shen@mediatek.com, Jose
- Abreu <joabreu@synopsys.com>, linux-mediatek@lists.infradead.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Andrew Jeffery <andrew@aj.id.au>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ linux-um <linux-um@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MT2712 SoC can provide RMII reference clock,
-so add corresponding description in dt-binding.
+On Thu, 12 Dec 2019 at 00:30, Brendan Higgins <brendanhiggins@google.com> wrote:
+>
+> On Wed, Dec 11, 2019 at 4:12 PM Joel Stanley <joel@jms.id.au> wrote:
+> >
+> > Nice. I hit this when attempting to force on CONFIG_COMPILE_TEST in
+> > order to build some ARM drivers under UM. Do you have plans to fix
+> > that too?
+>
+> The only broken configs I found for UML are all listed on the cover
+> letter of this patch. I think fixing COMPILE_TEST on UM could be
+> worthwhile. Did you see any brokenness other than what I mentioned on
+> the cover letter?
 
-Signed-off-by: Biao Huang <biao.huang@mediatek.com>
----
- .../bindings/net/mediatek-dwmac.txt           | 33 +++++++++++++------
- 1 file changed, 23 insertions(+), 10 deletions(-)
+There's a few more in drivers/char/hw_random that you would need.
+These were HW_RANDOM_MESON , HW_RANDOM_MTK, HW_RANDOM_EXYNOS,
+HW_RANDOM_NPCM, HW_RANDOM_KEYSTONE.
 
-diff --git a/Documentation/devicetree/bindings/net/mediatek-dwmac.txt b/Documentation/devicetree/bindings/net/mediatek-dwmac.txt
-index 8a08621a5b54..afbcaebf062e 100644
---- a/Documentation/devicetree/bindings/net/mediatek-dwmac.txt
-+++ b/Documentation/devicetree/bindings/net/mediatek-dwmac.txt
-@@ -14,7 +14,7 @@ Required properties:
- 	Should be "macirq" for the main MAC IRQ
- - clocks: Must contain a phandle for each entry in clock-names.
- - clock-names: The name of the clock listed in the clocks property. These are
--	"axi", "apb", "mac_main", "ptp_ref" for MT2712 SoC
-+	"axi", "apb", "mac_main", "ptp_ref", "rmii_internal" for MT2712 SoC.
- - mac-address: See ethernet.txt in the same directory
- - phy-mode: See ethernet.txt in the same directory
- - mediatek,pericfg: A phandle to the syscon node that control ethernet
-@@ -23,8 +23,10 @@ Required properties:
- Optional properties:
- - mediatek,tx-delay-ps: TX clock delay macro value. Default is 0.
- 	It should be defined for RGMII/MII interface.
-+	It should be defined for RMII interface when the reference clock is from MT2712 SoC.
- - mediatek,rx-delay-ps: RX clock delay macro value. Default is 0.
--	It should be defined for RGMII/MII/RMII interface.
-+	It should be defined for RGMII/MII interface.
-+	It should be defined for RMII interface.
- Both delay properties need to be a multiple of 170 for RGMII interface,
- or will round down. Range 0~31*170.
- Both delay properties need to be a multiple of 550 for MII/RMII interface,
-@@ -34,13 +36,20 @@ or will round down. Range 0~31*550.
- 	reference clock, which is from external PHYs, is connected to RXC pin
- 	on MT2712 SoC.
- 	Otherwise, is connected to TXC pin.
-+- mediatek,rmii-clk-from-mac: boolean property, if present indicates that
-+	MT2712 SoC provides the RMII reference clock, which outputs to TXC pin only.
- - mediatek,txc-inverse: boolean property, if present indicates that
- 	1. tx clock will be inversed in MII/RGMII case,
- 	2. tx clock inside MAC will be inversed relative to reference clock
- 	   which is from external PHYs in RMII case, and it rarely happen.
-+	3. the reference clock, which outputs to TXC pin will be inversed in RMII case
-+	   when the reference clock is from MT2712 SoC.
- - mediatek,rxc-inverse: boolean property, if present indicates that
- 	1. rx clock will be inversed in MII/RGMII case.
--	2. reference clock will be inversed when arrived at MAC in RMII case.
-+	2. reference clock will be inversed when arrived at MAC in RMII case, when
-+	   the reference clock is from external PHYs.
-+	3. the inside clock, which be sent to MAC, will be inversed in RMII case when
-+	   the reference clock is from MT2712 SoC.
- - assigned-clocks: mac_main and ptp_ref clocks
- - assigned-clock-parents: parent clocks of the assigned clocks
- 
-@@ -50,29 +59,33 @@ Example:
- 		reg = <0 0x1101c000 0 0x1300>;
- 		interrupts = <GIC_SPI 237 IRQ_TYPE_LEVEL_LOW>;
- 		interrupt-names = "macirq";
--		phy-mode ="rgmii";
-+		phy-mode ="rgmii-rxid";
- 		mac-address = [00 55 7b b5 7d f7];
- 		clock-names = "axi",
- 			      "apb",
- 			      "mac_main",
- 			      "ptp_ref",
--			      "ptp_top";
-+			      "rmii_internal";
- 		clocks = <&pericfg CLK_PERI_GMAC>,
- 			 <&pericfg CLK_PERI_GMAC_PCLK>,
- 			 <&topckgen CLK_TOP_ETHER_125M_SEL>,
--			 <&topckgen CLK_TOP_ETHER_50M_SEL>;
-+			 <&topckgen CLK_TOP_ETHER_50M_SEL>,
-+			 <&topckgen CLK_TOP_ETHER_50M_RMII_SEL>;
- 		assigned-clocks = <&topckgen CLK_TOP_ETHER_125M_SEL>,
--				  <&topckgen CLK_TOP_ETHER_50M_SEL>;
-+				  <&topckgen CLK_TOP_ETHER_50M_SEL>,
-+				  <&topckgen CLK_TOP_ETHER_50M_RMII_SEL>;
- 		assigned-clock-parents = <&topckgen CLK_TOP_ETHERPLL_125M>,
--					 <&topckgen CLK_TOP_APLL1_D3>;
-+					 <&topckgen CLK_TOP_APLL1_D3>,
-+					 <&topckgen CLK_TOP_ETHERPLL_50M>;
-+		power-domains = <&scpsys MT2712_POWER_DOMAIN_AUDIO>;
- 		mediatek,pericfg = <&pericfg>;
- 		mediatek,tx-delay-ps = <1530>;
- 		mediatek,rx-delay-ps = <1530>;
- 		mediatek,rmii-rxc;
- 		mediatek,txc-inverse;
- 		mediatek,rxc-inverse;
--		snps,txpbl = <32>;
--		snps,rxpbl = <32>;
-+		snps,txpbl = <1>;
-+		snps,rxpbl = <1>;
- 		snps,reset-gpio = <&pio 87 GPIO_ACTIVE_LOW>;
- 		snps,reset-active-low;
- 	};
--- 
-2.18.0
+The only one from your series I needed was PINCTRL_EQUILIBRIUM.
+
+I applied this:
+
+--- a/init/Kconfig
++++ b/init/Kconfig
+@@ -91,7 +91,6 @@ config INIT_ENV_ARG_LIMIT
+
+ config COMPILE_TEST
+        bool "Compile also drivers which will not load"
+-       depends on !UML
+        default n
+        help
+
+That lets me build. However, the code I was attempting to enable
+depends on REGMAP, which needs IOMEM too, so I hit that dead end.
+
+Another issue I had was debugging my kunitconfig. This patch helped a bit:
+
+--- a/tools/testing/kunit/kunit_config.py
++++ b/tools/testing/kunit/kunit_config.py
+@@ -40,6 +40,9 @@ class Kconfig(object):
+        def is_subset_of(self, other: 'Kconfig') -> bool:
+                return self.entries().issubset(other.entries())
+
++       def difference(self, other: 'Kconfig') -> list:
++               return self.entries().difference(other.entries())
++
+        def write_to_file(self, path: str) -> None:
+                with open(path, 'w') as f:
+                        for entry in self.entries():
+diff --git a/tools/testing/kunit/kunit_kernel.py
+b/tools/testing/kunit/kunit_kernel.py
+index bf3876835331..0f261bc087e4 100644
+--- a/tools/testing/kunit/kunit_kernel.py
++++ b/tools/testing/kunit/kunit_kernel.py
+@@ -107,6 +107,7 @@ class LinuxSourceTree(object):
+                validated_kconfig.read_from_file(kconfig_path)
+                if not self._kconfig.is_subset_of(validated_kconfig):
+                        logging.error('Provided Kconfig is not
+contained in validated .config!')
++
+logging.error(self._kconfig.difference(validated_kconfig))
+                        return False
+                return True
+
+Which would need some tidying up before applying, but helped a lot in
+working out what was going wrong.
+
+>
+> > Do you want to get this in a fix for 5.5?
+>
+> Preferably, yes.
+>
+> > Acked-by: Joel Stanley <joel@jms.id.au>
+>
+> Thanks!
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
