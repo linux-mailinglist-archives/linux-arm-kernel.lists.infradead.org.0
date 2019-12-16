@@ -2,61 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0C53120253
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:27:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8E87120271
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:29:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bp9xWhCPeud7fYPZEfhhlI6hIqcMZMwOIHmrT1wVO34=; b=kGcUZPgjAK+efi
-	EehG2Ybmc/U/Zm4cQQUZrPGVUkG6DEicKhFkymwsnX1nLv7GHOzTo4K2HcAIA5ihEjTihdCaAL+/h
-	xX5+V5EZOj4M7EwbGM3cPfJmN/HyM93Qa7l/7kAE2ZiPj8RCAf9fT/7S85H98q+5A9iyLgvdTv2Zh
-	VMhcy8pRq2TaS2SNJIH8xFQO7K28dzFzX/QaQI1wPfw99pC4seYQoP4d4mUFFOhBBTzFq+gmhN+5v
-	tGRusmsl8TLA3K4DOkynnhHQaYl8vzv8CpKdzXeICveqp0oK6jFviZqtYD6GGnMNLonivBAkicbLh
-	PuPHFHAiLxjqBOaZUmTA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1isTKLDFeg5MdlUyWD09i4nT+hscZQqGwAtdw17ZHhs=; b=ZcCPQsO3sNjJfIxBWtpHV1IiN
+	RZFZivhQ5f8OzkXFAnJGiek1E+/SpEgFTbBRLAkF1/SLjBKBqykmukRK1F5ynauRb7Vt4jisebmDf
+	yIRYfq4rT6EupwvDFRATaLdpcmISz0syNYWK5/lSJwB1XLNnQ6X7BV/YL5Tz0EcJtfCNh8A8OCKW1
+	ZOpq9wsJFdpUdc5/bCQokzKeAyJGloVxYplXivhKOyLLKNRudPmn+fhzmSHxj3CglVlu7ZfsNuo2E
+	cA/UiQdHrUrWSFVmigtK3/SqEbWoW/XIbSX5K73BF7VXw/tlg4hAXkyoZFjm9gxhRvlbHZOEr2Bya
+	G1OITvkSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ignbP-0005Ee-KT; Mon, 16 Dec 2019 10:27:47 +0000
-Received: from relay4-d.mail.gandi.net ([217.70.183.196])
+	id 1ignd9-0005o4-Cm; Mon, 16 Dec 2019 10:29:35 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ignb1-0004zz-HZ
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 10:27:25 +0000
-X-Originating-IP: 90.65.102.129
-Received: from kb-xps (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
- [90.65.102.129]) (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 47A3FE0008;
- Mon, 16 Dec 2019 10:27:01 +0000 (UTC)
-Date: Mon, 16 Dec 2019 11:26:59 +0100
-From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-To: Codrin.Ciubotariu@microchip.com,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH 0/3] SAMA5D2 i2c bus recovery testing
-Message-ID: <20191216102659.GA23978@kb-xps>
-References: <20191205140305.1144788-1-kamel.bouhara@bootlin.com>
- <20191216101044.x7m7edrrjn2xtq6h@M43218.corp.atmel.com>
+ id 1ignd0-0005nM-NA
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 10:29:27 +0000
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CD8D9206CB;
+ Mon, 16 Dec 2019 10:29:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576492166;
+ bh=h4X6AHfGqH1fcCYhsVZLrhBRQ9DB10RQK53ZRJEGw10=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=IvVcuSHVLYGMmXZVmzWjp42//mldx+pzhw6/n2ye4z+xgib3qOgAuff+SDPb42z/R
+ wfXre21OOpLxB2OAOi4I2vyhOQHvnESfd1wKswN24x4L31iE3E04U4ynLnDGD25sbv
+ V042YBfc8kD87odpp3NQW1egVmAu9toKR/kAdgAU=
+Date: Mon, 16 Dec 2019 11:29:23 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Chen-Yu Tsai <wens@kernel.org>
+Subject: Re: [PATCH 09/14] ARM: dts: sun8i: r40: Add I2C pinmux options
+Message-ID: <20191216102923.nezpk2cqastyfpsd@gilmour.lan>
+References: <20191215165924.28314-1-wens@kernel.org>
+ <20191215165924.28314-10-wens@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191216101044.x7m7edrrjn2xtq6h@M43218.corp.atmel.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+In-Reply-To: <20191215165924.28314-10-wens@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_022723_741312_AC660C72 
-X-CRM114-Status: GOOD (  16.85  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191216_022926_774839_CC9A3507 
+X-CRM114-Status: GOOD (  10.14  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.196 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.196 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,71 +76,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============2964310649151232662=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 11:10:44AM +0100, Ludovic Desroches wrote:
-> Hi Kamel,
+
+--===============2964310649151232662==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="6lkmrciahlk4lydl"
+Content-Disposition: inline
+
+
+--6lkmrciahlk4lydl
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Mon, Dec 16, 2019 at 12:59:19AM +0800, Chen-Yu Tsai wrote:
+> From: Chen-Yu Tsai <wens@csie.org>
 >
-
-Hi Ludovic,
-
-> On Thu, Dec 05, 2019 at 03:03:02PM +0100, Kamel Bouhara wrote:
-> >
-> > Here are the sama5d2 patches, as there is not pinmux defined in the
-> > dtsi. I choosed to only apply it to derivated board as the i2c
-> > configuration is specific for each.
-> >
-> > Of course, it could be great if could test it on the ptc board as well.
-> >
+> The R40 has five I2C controllers. Currently only I2C0 has its pinmux
+> option defined.
 >
-> The i2c mailing list is missing, can you resend it please.
+> Add the options for the remaining four, and set them as the default,
+> since each controller has only one possible pinmux configuration.
 >
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 
-Actually it was not intended to be sent to any mailing list, it is a
-mail for Codrin so he can achieve some tests.
+Applied, thanks!
+Maxime
 
-> By the way, it fails to apply against next and 5.5-rc1. On which version is it
-> based? I assume a cherry-pick should work but git am fails.
->
+--6lkmrciahlk4lydl
+Content-Type: application/pgp-signature; name="signature.asc"
 
-It's based on 5.4, Im not sure it will apply on next but it should on
-5.5, anyway it is a WIP here.
+-----BEGIN PGP SIGNATURE-----
 
-Best Regards,
-Kamel
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfdcgwAKCRDj7w1vZxhR
+xaLdAP9tc7Nm4GYFEAyZVooyptZNGjG4NOL1T9S7EiBgQ3Pz1AEAtO6crXWEEVFr
+ich4eYyroylJ+xW31k+yFo8klXVkSwg=
+=rMnm
+-----END PGP SIGNATURE-----
 
-> Regards
->
-> Ludovic
->
-> > Best Regards,
-> > Kamel
-> >
-> > Kamel Bouhara (3):
-> >   dt-bindings: i2c: at91: document optional bus recovery properties
-> >   i2c: at91: implement i2c bus recovery
-> >   ARM: at91/dt: sama5d2: add i2c gpio pinctrl
-> >
-> >  .../devicetree/bindings/i2c/i2c-at91.txt      | 10 +++
-> >  arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts     | 33 +++++++++-
-> >  arch/arm/boot/dts/at91-sama5d2_xplained.dts   | 33 +++++++++-
-> >  drivers/i2c/busses/i2c-at91-master.c          | 64 +++++++++++++++++++
-> >  drivers/i2c/busses/i2c-at91.h                 |  8 +++
-> >  5 files changed, 142 insertions(+), 6 deletions(-)
-> >
-> > --
-> > 2.24.0
-> >
+--6lkmrciahlk4lydl--
 
---
-Kamel Bouhara, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
+
+--===============2964310649151232662==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2964310649151232662==--
+
