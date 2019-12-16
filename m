@@ -2,153 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25EDB120F90
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 17:33:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B540C120FAC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 17:38:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hn1nLQWhtobzTi4KBRLGMxFyxgMHS4S7qDrpXNUwR0A=; b=MBjgIeIEaH/J9x
-	TI9FpSkR93a2ePKtDg5ULhDk1VCCNE1Kz227f8BbJzlx66Ce2brmsoVEGGY4GwvlAauXetpgDOHdq
-	9YX2jV6VSFwuAEKBOnujdsNPulFv13s1TSDNTYMrLRRt1iu68+A8wpxwgreI/WM2s4DHR0gfAaGNy
-	b+vCWpjT3madV2eAD7z1XiGixLH/yJy/3nu8zv1BX0IakdhBk3SLR8PnNxz35uj/41Fzatempyx8t
-	086mDOuoc3/L1dJkEi/GXhF6jrL+UkFFMIUXOKllSqytMAIlk7RBWt8GjYm5ujq5R8JPxAxOz1lBA
-	mCIFXHza3g+/1o9YxTPg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=nG2JHUIQkLsQ4dXZsvq9LsNpihMB7R190NLLXzMvf0I=; b=bz6
+	DwbnCw8qajhbA2tk+EixIVgOXJZeQl0GTcipeefFeIKZBgvFdRtjhD3TcLFYNXo3D2C7tCWnhYeDS
+	pRx1sW6DweJNLuYC3GQN4fpHh4Nmz6IzsyvcICnvEkA43yZHQUz9k49i+2Gu7+8fevV5fetRritgO
+	L1EPNRDSgif2MuLPbPcSD/pCD+fjmelqhfR1EDkrdu/aK0nKqx31qHT3Axlp9eAvFkbgbWIqryHBu
+	dITXN7qSEw5igL34OE9S4yLTjK99v0ChUo6WsYNd8abTs0y6s1DAiv86qsg45jtm5yGdhQ0rgGQDH
+	MXsVHjEbppMP6fARcTpwtYzdnz7x+ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igtJR-0005kW-5E; Mon, 16 Dec 2019 16:33:37 +0000
-Received: from mail1.bemta25.messagelabs.com ([195.245.230.2])
+	id 1igtNy-00083A-9j; Mon, 16 Dec 2019 16:38:18 +0000
+Received: from mail25.static.mailgun.info ([104.130.122.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igtIw-0005XS-OA
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 16:33:08 +0000
-Received: from [46.226.52.98] (using TLSv1.2 with cipher
- DHE-RSA-AES256-GCM-SHA384 (256 bits))
- by server-2.bemta.az-a.eu-west-1.aws.symcld.net id 76/5B-12145-2B1B7FD5;
- Mon, 16 Dec 2019 16:32:50 +0000
-X-Brightmail-Tracker: H4sIAAAAAAAAA1WTfUwTZxzHeXrX9ng5PQqMRyzbUnUuYgsFsh3
- L2Fxm5IyMObbMbJPosd7aainYawOYLAOEgJANCC+blfdUHBAVYVNAUGwYUMggExVcMMhsIrCJ
- 4Cwvo7D1uOK2/z7P7/t5nuf7x/NgiKRMHIQxaUbGoKd1MpEXqgnFXpdfvryYELZsiSQ7RjDyW
- eUASpZN2kVkdc+QkFwZXkXIxrJ2lJxw/ATIhdt5ArLUeV5Atjy8KyRPNQ0hZGu1E5AjHRUicq
- 7jDkLmdPWI92ym7uR2iKknYzliqt18X0z9Mt+LUC2Np0XU+N1OEdVq+Yoa/q4WUIWrYdSfLS8
- e9PpUqNUnJqcdFWruW46mFGxOuzA0gWaAWe984IUB4hwCL97sQ/OBp2vRi8Lz5gg+aAVw5etl
- EbdAiX4Elk59C7iFhCgXwFOZNQi3RULYAbxSYeJYRJCwpP+BiGN/4gAsrBtFuQ0I0SSC1qtL6
- 4EfoYJt1ixxPsBcEgMda6/w/nFY/MfguoISO2Bf628Ip+AEDXPPvcPfm4nCdluvkHM8iWhoee
- QQ87WD4bPMpvU+CBEIf7VXCziGBAEtncMIzwFw+uGakPcZaMsaA/x8N/x51O5mGayq7HFzMLx
- VXeDm9+CoLQ/d8Ltv/O2ek9BSkINyPSGxHa5Z0/lxCuxfXHTrO2H2fJWQZym8WmZ2z5tROJ5n
- KgKh5v+05nk3rLn2VMRzCKyv/R3hGCd8oe2MHa0BaCMgEw1atcaYRGt1cmVYmFypDJcro8Ll4
- eGkgj4ppxWMSZ7KsEa5UkGnsgo2PelznUqhZ4wtwPU2VSnd9jawMP9YYQVbMIEsAP/o3kKCZF
- NisipdQ7OaIwaTjmGtQIphMojLmhcTJL4GRs2kfaHVuV74RgwxH5k/fuiSK8bZFDqJ1ar5aAB
- EYEXTlXUIZmu01CESVJ+sZ4IC8UlOJThVY9I/P2jjt9wCwUF+OPDw8JD4pDCGJK3x//kMCMSA
- zA/P5U7x0eqNz++bcVURuKqExy1wVYz0v1FQhiAWb4jz2qstsjzor3jk/31pFhpr/zCs0U81F
- bO0782JAiZ6Liubah+ZO/2Xp0FqFUfhaHTcvoaVum5ZSPyN4e75bScqqq+/0C6fiX9cLw+KJz
- OvUTFqKf1xofT6tG0y48hte7H/u7r9zpDcly4sN7zfsfh0Z6h5yzfLN1dLviwKPPkJ9aoscmr
- bWzES0x7P2M+8ggN+GCu3HurTXDp20b+utUZMVp04ezgkoOvlvNH8w/U/Equ17I4ns+UqKPX1
- fkMbMa0oGVRvP55tsw2ktpVFvb36WobvUr+z+YPB2a6F8a2bzrTNH9vV1Xmw19uwP/IKO1Z8z
- zQ8lOrodCpMW2edDrUMZTW0chdiYOl/AOldPSSoBAAA
-X-Env-Sender: Adam.Thomson.Opensource@diasemi.com
-X-Msg-Ref: server-13.tower-262.messagelabs.com!1576513969!503692!1
-X-Originating-IP: [104.47.8.55]
-X-SYMC-ESS-Client-Auth: mailfrom-relay-check=pass
-X-StarScan-Received: 
-X-StarScan-Version: 9.44.22; banners=-,-,-
-X-VirusChecked: Checked
-Received: (qmail 19345 invoked from network); 16 Dec 2019 16:32:49 -0000
-Received: from mail-am5eur03lp2055.outbound.protection.outlook.com (HELO
- EUR03-AM5-obe.outbound.protection.outlook.com) (104.47.8.55)
- by server-13.tower-262.messagelabs.com with ECDHE-RSA-AES256-GCM-SHA384
- encrypted SMTP; 16 Dec 2019 16:32:49 -0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=bRFHlM+l0KhGO+P1GQVm3EvlWQOFLVIXdPiFWGBRFxgv9eq8tEIwT3s1LXa1ZV6G+zVG/YR2Bw1mCKGJ8u/ARbE94DIQxK12fpqtfbELMEyIJmx9Ywg7XQ9oO4kUHiJFk/KfIoayIzrotqD8gTJ0enZtuJF25pmPkF8ehHVv/6W70O8+a/VdKCXQ1jg/WpBx0MMuZftw1wwWSRa/xO9TvS93fStWj/XjglZvpClEADeAi5As1MxP7mx32sjUYkXKDqEZRbczxHZj2C4yeDHk6dr4MoYlj5eRwi2cGZG6Cyqy1UzWSKkGNv3oTLvJaFqeFnzJdK3ldi5OlNXGzh05Tw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WQGJicNBNaGiGtBVenqeDje4pdkwACp/gI94G98JKW4=;
- b=Y5NL8Ef6ypRRp30hF2ouPKIdD7jOCJQJtSHv1pqclni4fRmD5o4I0FY8RUZr5i+9fzdq5F8L2weAFYfQX35flgWR8Chk4sQ2bE5JoIPJ9SHDN/6U2FLI+wr2iPjp04aEU/Qnq+ySHI4q9lDNosyqCTGVKri+KPJd4nqDvDFtbVfq6+1iaxkzvfSLdlPZtB7EUi64eTfaVsIEndRS53K9/Jw0FfXnx737GfuaV6NaVESTrkZ6NSdit7n7PaIiFSM4JduXDZG1JG8UbX2OYOhsMg5rFy/9CFe8aqAUyxCpeSkdLBfOxS15rnkMOKsMSiBhfLKygE9KQP00UHiVeCuiSw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=diasemi.com; dmarc=pass action=none header.from=diasemi.com;
- dkim=pass header.d=diasemi.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=dialogsemiconductor.onmicrosoft.com;
- s=selector1-dialogsemiconductor-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WQGJicNBNaGiGtBVenqeDje4pdkwACp/gI94G98JKW4=;
- b=CGmTL+oGNAltINTFH5cjNnxBIiv68B6U5xOoKdLdZePJPD+KO5v2Z6q7WZLc/yshocelG5pwFjtDdpUnsiuNrOzGAIB9DXMtBKD+Jm5DEQ/7ouCNNkO0mewpw4cQYiVPjjNtelFCYqMJOY8E/qPkcn3e9lJvVqeEmGfJvK+IApI=
-Received: from AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM (10.169.154.136) by
- AM5PR1001MB1060.EURPRD10.PROD.OUTLOOK.COM (10.169.150.150) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2538.18; Mon, 16 Dec 2019 16:32:48 +0000
-Received: from AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::ed23:3ca0:97ef:c868]) by AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM
- ([fe80::ed23:3ca0:97ef:c868%10]) with mapi id 15.20.2538.019; Mon, 16 Dec
- 2019 16:32:48 +0000
-From: Adam Thomson <Adam.Thomson.Opensource@diasemi.com>
-To: Marco Felsch <m.felsch@pengutronix.de>, Mark Brown <broonie@kernel.org>
-Subject: RE: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
- selection documentation
-Thread-Topic: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
- selection documentation
-Thread-Index: AQHVptoKIWnW5XGNx0qiesHaa7KQWaeqBMOAgAkpmQCAAfp+EIAAFOMAgAGB2oCAAAM8gIAACD8AgAXEVoCAAH+D4A==
-Date: Mon, 16 Dec 2019 16:32:48 +0000
-Message-ID: <AM5PR1001MB09941005A47B603805D3C53280510@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
-References: <20191129172537.31410-1-m.felsch@pengutronix.de>
- <20191129172537.31410-4-m.felsch@pengutronix.de>
- <20191204134631.GT1998@sirena.org.uk>
- <20191210094144.mxximpuouchy3fqu@pengutronix.de>
- <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
- <20191211170918.q7kqkd4lrwwp7jl3@pengutronix.de>
- <20191212161019.GF4310@sirena.org.uk>
- <20191212162152.5uu3feacduetysq7@pengutronix.de>
- <20191212165124.GJ4310@sirena.org.uk>
- <20191216085525.csr2aglm5md4vtsw@pengutronix.de>
-In-Reply-To: <20191216085525.csr2aglm5md4vtsw@pengutronix.de>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [165.225.80.228]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 1597e56f-d0ad-45bc-e4b6-08d782459682
-x-ms-traffictypediagnostic: AM5PR1001MB1060:
-x-ms-exchange-sharedmailbox-routingagent-processed: True
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM5PR1001MB10600652CB4BB2438B624129A7510@AM5PR1001MB1060.EURPRD10.PROD.OUTLOOK.COM>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 02530BD3AA
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(366004)(376002)(136003)(346002)(39850400004)(199004)(189003)(478600001)(64756008)(33656002)(52536014)(55236004)(53546011)(6506007)(66476007)(2906002)(54906003)(966005)(66556008)(55016002)(26005)(9686003)(81166006)(81156014)(186003)(8936002)(5660300002)(71200400001)(8676002)(4326008)(7416002)(66946007)(110136005)(7696005)(76116006)(316002)(86362001)(66446008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM5PR1001MB1060;
- H:AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:0; MX:1; 
-received-spf: None (protection.outlook.com: diasemi.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: UFJXbg5/E+LPCtFeLiJsn10fIYud3iXSnOE2GOdMlSEWSwpMBHgs3YOKNVR70cAs8Hw5c9LUzzwg9KNKsyVgs1a/gI2giztoYWDEfxHmUZB7Yvkp97ADvT0sL8XJGHRj3dHYZDCMXnbZgLued+j2CsoKwb2TNDW/Nkqp7fSpHEG3hTj6hM1oA5nH/PsblBVB2PV4Qh3N99bSKr+j61iaw5EROwBqFdpIXTdOPBZ0CDaBXzeNXxEfIOnS5O2kaMaD3RvR6PYFB8Cy97kCzGC9Pe+YSQ44LNsbf8PLsss4jpjsTsjftl7iyBWa+Pb1hXxZXXHTEq1W/F6PFnYPktE2WryO+J8237z1TkXBW3QFlJQB58wFF9JOUUlngRZrOPAJSK6Nx7voBhMHp7GXk03Ny0Xltrun3UG+e75sYnyPnW5/pt0DF87ZI7D8fEDAoZ7JeZjvyakN/ZW0CaPaogRuloK1pLfote5mFDCkM5U14fs=
-MIME-Version: 1.0
-X-OriginatorOrg: diasemi.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1597e56f-d0ad-45bc-e4b6-08d782459682
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Dec 2019 16:32:48.4040 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 511e3c0e-ee96-486e-a2ec-e272ffa37b7c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 4W8RKIQNpcEFQsncvJl95trsedSlj52pZYq+ftJUzmhTX3btw25MJzuqoANk3nzgq9jWJhEKfIs7u6QAwf3aZICnIhJqemNEMG0y3WWfvaU=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR1001MB1060
+ id 1igtNm-00081Q-SW
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 16:38:08 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1576514286; h=Message-Id: Date: Subject: Cc: To: From:
+ Sender; bh=Vr7DeB6UN1uAvIEGB/iA7hx6Y0Q4rdMGj2xmO945Nsw=;
+ b=Ja2MKSUnU41iEkyUTOUcZa6WN8MaHnASm+WJI61SwGfAvcfNwXCWrQU6R3oFJafir0TrwDca
+ I8AcESUltEsVX5DEWFZGiFxp037vaDVbbUpJqhABeUxAuPJAksfsA5Sp3tHZ5ul0GHKwypp8
+ X05Lkm2Pz9IECJwcxis+ZVvQiOQ=
+X-Mailgun-Sending-Ip: 104.130.122.25
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5df7b2e9.7f50f056a960-smtp-out-n01;
+ Mon, 16 Dec 2019 16:38:01 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id B752DC447AB; Mon, 16 Dec 2019 16:37:59 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: jcrouse)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id DE5A9C433CB;
+ Mon, 16 Dec 2019 16:37:55 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org DE5A9C433CB
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=jcrouse@codeaurora.org
+From: Jordan Crouse <jcrouse@codeaurora.org>
+To: iommu@lists.linux-foundation.org
+Subject: [PATCH v3 0/5] iommu/arm-smmu: Split pagetable support for arm-smmu-v2
+Date: Mon, 16 Dec 2019 09:37:46 -0700
+Message-Id: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_083306_967518_E30DBD7B 
-X-CRM114-Status: GOOD (  18.92  )
+X-CRM114-CacheID: sfid-20191216_083806_985769_7846126A 
+X-CRM114-Status: GOOD (  14.30  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [195.245.230.2 listed in list.dnswl.org]
+ no trust [104.130.122.25 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [195.245.230.2 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ [104.130.122.25 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -164,74 +88,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Support Opensource <Support.Opensource@diasemi.com>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
- "andrew@aj.id.au" <andrew@aj.id.au>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- "lee.jones@linaro.org" <lee.jones@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Douglas Anderson <dianders@chromium.org>,
+ AngeloGioacchino Del Regno <kholk11@gmail.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Thomas Gleixner <tglx@linutronix.de>,
+ will@kernel.org, Joerg Roedel <joro@8bytes.org>,
+ Wen Yang <wen.yang99@zte.com.cn>, Ben Dooks <ben.dooks@codethink.co.uk>,
+ linux-arm-kernel@lists.infradead.org, Brian Masney <masneyb@onstation.org>,
+ freedreno@lists.freedesktop.org, Fritz Koenig <frkoenig@google.com>,
+ linux-arm-msm@vger.kernel.org, Alexios Zavras <alexios.zavras@intel.com>,
+ Jeykumar Sankaran <jsanka@codeaurora.org>, Sean Paul <sean@poorly.run>,
+ Allison Randal <allison@lohutok.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ zhengbin <zhengbin13@huawei.com>, Rob Clark <robdclark@gmail.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Drew Davenport <ddavenport@chromium.org>,
+ robin.murphy@arm.com, Georgi Djakov <georgi.djakov@linaro.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16 December 2019 08:55, Marco Felsch wrote:
+Another refresh to support split pagetables for Adreno GPUs as part of an
+incremental process to enable per-context pagetables.
 
-> On 19-12-12 16:51, Mark Brown wrote:
-> > On Thu, Dec 12, 2019 at 05:21:53PM +0100, Marco Felsch wrote:
-> >
-> > > "... what's driving the input ..":
-> > > Sorry I didn't get you here. What did you mean? The input is driven by
-> > > the host. This can be any gpio line and in my case it is a gpio line
-> > > driven by the soc-hw during a suspend operation.
-> >
-> > Something needs to say what that thing is, especially if it's runtime
-> > controllable.  In your case from the point of view of software there is
-> > actually no enable control so we shouldn't be providing an enable
-> > operation to the framework.
-> 
-> The enabel control signal is always available, please check [1] table
-> 63. There is a mux in front of the enable pin so:
-> 
->              +-------------
->  Seq. |\     |   Regulator
->  GPI1 | \    |
->  GPI2 | | -- > Enable
->  GPI3 | /    |
->       |/     .
->              .
->              .
-> 
-> Adam please correct me if this is wrong.
+In order to support per-context pagetables the GPU needs to enable split tables
+so that we can store global buffers in the TTBR1 space leaving the GPU free to
+program the TTBR0 register with the address of a context specific pagetable.
 
-Yes the register can always be configured regardless of the associated pin
-configuration, but if say GPIO1 was configured as a GPO but a regulator was
-configured to use GPIO1 as its GPI control mechanism, the output signal from
-GPIO1 would be ignored, the sequencer control would not have any effect and
-you're simply left with manual I2C control. Really we shouldn't be getting into
-that situation though. If a GPIO is to be used as a regulator control signal
-then it should be marked as such and I don't think we should be able to use that
-pin for anything other than regulator control.
+This patchset adds split pagetable support if requested by the domain owner
+via the DOMAIN_ATTR_SPLIT_TABLES attribute. If the attribute is non zero at
+attach time, the implementation will set up the TTBR0 and TTBR1 spaces with
+identical configurations and program the domain pagetable into the TTBR1
+register. The TTBR0 register will be unused.
 
-> 
-> [1] https://www.dialog-
-> semiconductor.com/sites/default/files/da9062_datasheet_3v6.pdf
-> 
-> Regards,
->   Marco
-> 
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+The driver can determine if split pagetables were programmed by querying
+DOMAIN_ATTR_SPLIT_TABLES after attaching. The domain geometry will also be
+updated to reflect the virtual address space for the TTBR1 range.
+
+These patches are on based on top of linux-next-20191216 with [1], [2], and [3]
+from Robin on the iommu list.
+
+Change log:
+
+v3: Remove the implementation specific and make split pagetable support
+part of the generic configuration
+
+[1] https://lists.linuxfoundation.org/pipermail/iommu/2019-October/039718.html
+[2] https://lists.linuxfoundation.org/pipermail/iommu/2019-October/039719.html
+[3] https://lists.linuxfoundation.org/pipermail/iommu/2019-October/039720.html
+
+
+Jordan Crouse (5):
+  iommu: Add DOMAIN_ATTR_SPLIT_TABLES
+  iommu/arm-smmu: Add support for split pagetables
+  drm/msm: Attach the IOMMU device during initialization
+  drm/msm: Refactor address space initialization
+  drm/msm/a6xx: Support split pagetables
+
+ drivers/gpu/drm/msm/adreno/a2xx_gpu.c    | 16 ++++++++++
+ drivers/gpu/drm/msm/adreno/a3xx_gpu.c    |  1 +
+ drivers/gpu/drm/msm/adreno/a4xx_gpu.c    |  1 +
+ drivers/gpu/drm/msm/adreno/a5xx_gpu.c    |  1 +
+ drivers/gpu/drm/msm/adreno/a6xx_gpu.c    | 51 ++++++++++++++++++++++++++++++++
+ drivers/gpu/drm/msm/adreno/adreno_gpu.c  | 23 ++++++++++----
+ drivers/gpu/drm/msm/adreno/adreno_gpu.h  |  8 +++++
+ drivers/gpu/drm/msm/disp/dpu1/dpu_kms.c  | 18 ++++-------
+ drivers/gpu/drm/msm/disp/mdp4/mdp4_kms.c | 18 +++++------
+ drivers/gpu/drm/msm/disp/mdp5/mdp5_cfg.c |  4 ---
+ drivers/gpu/drm/msm/disp/mdp5/mdp5_kms.c | 18 +++++------
+ drivers/gpu/drm/msm/msm_drv.h            |  8 ++---
+ drivers/gpu/drm/msm/msm_gem_vma.c        | 37 +++++------------------
+ drivers/gpu/drm/msm/msm_gpu.c            | 49 ++----------------------------
+ drivers/gpu/drm/msm/msm_gpu.h            |  4 +--
+ drivers/gpu/drm/msm/msm_gpummu.c         |  6 ----
+ drivers/gpu/drm/msm/msm_iommu.c          | 18 ++++++-----
+ drivers/gpu/drm/msm/msm_mmu.h            |  1 -
+ drivers/iommu/arm-smmu.c                 | 40 +++++++++++++++++++++----
+ drivers/iommu/arm-smmu.h                 | 45 ++++++++++++++++++++++++----
+ include/linux/iommu.h                    |  1 +
+ 21 files changed, 215 insertions(+), 153 deletions(-)
+
+-- 
+2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
