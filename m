@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDEE711FD61
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 04:59:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41C6511FD63
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 04:59:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oBvk0p/2VLs9WYi4h2YO+22Y00oQrx3tutwoj0fvbic=; b=MKKF4ldLl5sYAf
-	uT3xaZGajTbCXLASLy1r9nS9xnkDJRRYQJ+ygkl7VPQyeGdhrATlZHS6KxqSdxLPk+5aGWPyC/TYd
-	7Hu1YVeiko8B8ajL5ZnHntckuPH8n2sTNcCozE/mDfmwsUTIMkfjhVf83war5muqa5TbYRaH8Z6vy
-	ZhuqOTaHJQPIUpvU5lEPPH01qfCjsEhut3a1b+OPGbJS0289i3F8e6WzREOjzr9EXanmjKtnUu7E9
-	JrPwkPcAEAakNm2gvrNTisODKYtKrZvaPp51yqXV8LhxtlU/WPtS0S6fXQ6Qn2yBGJNfehn8N/tdQ
-	rwdzhZIfE9AP8Xq8NPgw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5lwAZnFtTVESi++W+60GdXo6+hS0Om20xhwulxVP7v0=; b=MuKgyrmTU+4QMJ
+	ZeTgjYtjoxElzv3pgyFe2xgPZoBmPZ8xj05MqrMgHIZnvyte9L4nGHYSojwbmT02E6rtllGcc2/9d
+	myo+3aVn9Z8znO/J+xzKvce2M756+0ONtTPP2WvhEe0cBEwZuVamL1gNuxTzBBmbeWDD6bZ2MAnST
+	8rqcfYlQKpDlqXP1cjP8YtvEx99xp6a/LgCLDXI1+tciDYaX3muqJ74OfgEXkEB6I36GSHXEUalaf
+	GOseICEvdUUxgLpdEY5t1+Gx1OnvpqirpmS5WWDYI7hTHvdtAJC9ykCzAILOCDAFhLL6Wyed1vqiY
+	l78sauWUr4oAf5UTJqqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ighXP-0002r0-Mh; Mon, 16 Dec 2019 03:59:15 +0000
+	id 1ighXf-00035l-SE; Mon, 16 Dec 2019 03:59:31 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ighXB-0002pC-AL; Mon, 16 Dec 2019 03:59:02 +0000
-X-UUID: 63490d0359344efb8c4343d7672f902f-20191215
+ id 1ighXB-0002pW-RN; Mon, 16 Dec 2019 03:59:03 +0000
+X-UUID: 9910396fcb464278a48bd4e8bb5f8623-20191215
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=0oTM8ec49riGzkXqbh5sFdhXmjjCrTrpNmENYdE7F7s=; 
- b=M6/3IUhkmECZ4Xvqmv88gWoAUjact28Lub1Z3ZJBDYZZaEKvj5rgW9rxFYTj+oPkv0AGVoJtv4s4m6U10FMtsATlU4dzgQ8dpUetHlnCmAdD3loID7HEAtjhKXmJbTT6KfdB62o6f8MNBskVQUDPdoYzZbYFTMVpq+aJC/BHgZQ=;
-X-UUID: 63490d0359344efb8c4343d7672f902f-20191215
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=12E3/w0zLzo1lHYmnmqiu5tF62G08uQTQTzZ3/Kf2H4=; 
+ b=Hcg4n26TzyXS2za9aCm9jXFWqGKH+nprJ8AKZgv48EIE7QYfOVTj+i06ntAOWFkNnxAYzOQmTOmKwtQQRdhgwfEeFuhR5zWUVC/mRMWDE0GEHYg4Mm914Bksb3rTUHEfREnfCVT/WuUIeoNhNdHqI/UeBCNW0innOCA0JB1EDbA=;
+X-UUID: 9910396fcb464278a48bd4e8bb5f8623-20191215
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 42826778; Sun, 15 Dec 2019 19:58:59 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ with ESMTP id 2098847578; Sun, 15 Dec 2019 19:58:59 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 15 Dec 2019 19:50:21 -0800
+ 15.0.1395.4; Sun, 15 Dec 2019 19:50:08 -0800
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Dec 2019 11:48:28 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Dec 2019 11:48:36 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 16 Dec 2019 11:48:58 +0800
+ Frontend Transport; Mon, 16 Dec 2019 11:48:59 +0800
 From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>,
  <pedrom.sousa@synopsys.com>, <jejb@linux.ibm.com>, <matthias.bgg@gmail.com>,
  <f.fainelli@gmail.com>
-Subject: [PATCH v2 0/2 RESEND] scsi: ufs-mediatek: add device reset
- implementation
-Date: Mon, 16 Dec 2019 11:48:55 +0800
-Message-ID: <1576468137-17220-1-git-send-email-stanley.chu@mediatek.com>
+Subject: [PATCH v2 1/2 RESEND] soc: mediatek: add header for SiP service
+ interface
+Date: Mon, 16 Dec 2019 11:48:56 +0800
+Message-ID: <1576468137-17220-2-git-send-email-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1576468137-17220-1-git-send-email-stanley.chu@mediatek.com>
+References: <1576468137-17220-1-git-send-email-stanley.chu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 2C63DA52B94AD84F64F4F77477A7075DBF46997BA5D1D4C0C62BC6CC6F9402E72000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_195901_365137_813691E8 
-X-CRM114-Status: UNSURE (   4.66  )
+X-CRM114-CacheID: sfid-20191215_195901_894409_592539B2 
+X-CRM114-Status: UNSURE (   8.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -100,21 +101,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset add implementation of UFS device reset vops in MediaTek UFS driver.
+Add a header for the SiP service interface in order to access
+the UFSHCI controller for secure command handling in MediaTek Chipsets.
 
-v2:
- - Use definition defined in include/linux/arm-smccc.h instead of "magic definition" (Florian Fainelli)
-
-Stanley Chu (2):
-  soc: mediatek: add header for SiP service interface
-  scsi: ufs-mediatek: add device reset implementation
-
- drivers/scsi/ufs/ufs-mediatek.c          | 27 +++++++++++++++++++++
- drivers/scsi/ufs/ufs-mediatek.h          |  7 ++++++
- include/linux/soc/mediatek/mtk_sip_svc.h | 30 ++++++++++++++++++++++++
- 3 files changed, 64 insertions(+)
+Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+---
+ include/linux/soc/mediatek/mtk_sip_svc.h | 29 ++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
  create mode 100644 include/linux/soc/mediatek/mtk_sip_svc.h
 
+diff --git a/include/linux/soc/mediatek/mtk_sip_svc.h b/include/linux/soc/mediatek/mtk_sip_svc.h
+new file mode 100644
+index 000000000000..97311959d7d7
+--- /dev/null
++++ b/include/linux/soc/mediatek/mtk_sip_svc.h
+@@ -0,0 +1,29 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/*
++ * Copyright (C) 2019 MediaTek Inc.
++ */
++#ifndef __MTK_SIP_SVC_H
++#define __MTK_SIP_SVC_H
++
++/* Error Code */
++#define SIP_SVC_E_SUCCESS               0
++#define SIP_SVC_E_NOT_SUPPORTED         -1
++#define SIP_SVC_E_INVALID_PARAMS        -2
++#define SIP_SVC_E_INVALID_RANGE         -3
++#define SIP_SVC_E_PERMISSION_DENIED     -4
++
++#ifdef CONFIG_ARM64
++#define MTK_SIP_SMC_CONVENTION          ARM_SMCCC_SMC_64
++#else
++#define MTK_SIP_SMC_CONVENTION          ARM_SMCCC_SMC_32
++#endif
++
++#define MTK_SIP_SMC_CMD(fn_id) \
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL, MTK_SIP_SMC_CONVENTION, \
++			   ARM_SMCCC_OWNER_SIP, fn_id)
++
++/* UFS related SMC call */
++#define MTK_SIP_UFS_CONTROL \
++	MTK_SIP_SMC_CMD(0x276)
++
++#endif
 -- 
 2.18.0
 _______________________________________________
