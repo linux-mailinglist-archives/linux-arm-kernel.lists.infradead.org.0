@@ -2,61 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 914E111FD48
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 04:50:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A65AC11FD57
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 04:53:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U6owqEL+fX1gOGiLradEGsLurYla/tMHG3mPTNEkIho=; b=mx+naOBx5ubXjx
-	QAoy0e8AadVhyFkJhZ79Et5BsltJvHfqrPBFayDY7Fn99HHm1M0cBkluAj/mARfx+IbVQBpVHTUHW
-	Y3CvjSRX8frEjk8cuFKgffpJBwScY0gZRVPg8KRrNAAcnLCU7frRMOv6huit0j+HGEyPohjTkwSIY
-	YqrB4OwKIP8VMrly5YfkcI8goA1DZ/1Wk9XMb84yw/xUCsoXy8rk5nV1F42TzMuDE1V4nkZ7JVBBT
-	/eW+GFEG54x9M7caVIB7fWaQQPjUb2/XLTZSEvWJNt6KR/STZC1JXI2d9qlYKAim9ALFsTqQgwQ6K
-	kEWGdb/enDnE4aB/RAFQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qC6yAJpd6SDQMTBJ7+GYhijNWltAmHQwwL5R7FsZdzc=; b=UpHwlI9EJyp13B
+	rNmRfFWG8ipFj1Um7CcIvmNi1gsFKnRKcznw0OkChhqe5TblOtmNotRngYjP/0pUNpqMwrcUBN8jL
+	fQSxKMhfgzCPpbL1zkEcfbdxrutkn60zNl3sRM9lztEeOt13a1M72Rerp5tN0+wqTDHvye7TRGCcH
+	+HdO5appHI8fEU5M3atx5uCQknGxczGRbLNzdwon4TqusJzko9oHTgQN/20y3KZmNUQdSa+pGnz8V
+	tOCoUNBHlGqSxO1qTsTisYH0ghmT996L3tyV0oGounPPUz7TOfID2THfx16g3jjCfppT/2K4UTeLg
+	cA7qfjg+59a45PqxfcLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ighOi-0007V1-Nq; Mon, 16 Dec 2019 03:50:16 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1ighRX-0000LW-KR; Mon, 16 Dec 2019 03:53:11 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ighOW-0006ht-Bq
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 03:50:06 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id C76EB634CA425675EF14;
- Mon, 16 Dec 2019 11:49:56 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS409-HUB.china.huawei.com
- (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0; Mon, 16 Dec 2019
- 11:49:50 +0800
-Subject: Re: [PATCH] ACPI/IORT: fix the iort_id_map function
-To: Pankaj Bansal <pankaj.bansal@nxp.com>, Lorenzo Pieralisi
- <lorenzo.pieralisi@arm.com>, Sudeep Holla <sudeep.holla@arm.com>, "Rafael J
- . Wysocki" <rjw@rjwysocki.net>, Len Brown <lenb@kernel.org>
-References: <20191215203303.29811-1-pankaj.bansal@nxp.com>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <ffc5a6e9-cac3-d6c6-fe16-745b4f9e481f@huawei.com>
-Date: Mon, 16 Dec 2019 11:49:28 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
+ id 1ighRK-0000K5-41; Mon, 16 Dec 2019 03:52:59 +0000
+X-UUID: 21a15f03e8424bf39cf7f9206eed6a6b-20191215
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=5K/XbBKs8iA6ab+03BUBztdPLrJv72ygYwkxrqAIQ9U=; 
+ b=LtKrPR5oENDw4gxZ7RkF68VJ2n7Q3gw/yPGjjiRBMx5LHOEaQpRaV05lLIPenBkf3EPwQi79RrWSd3REikAwi+EZRDk3XBFMGXXKLvG4ePA8cAODuxKYiCL7Ceqtkr4cViVd47b243sHN7JJ2ufMaZrLfQLkr6VV/BHVlFlhGbI=;
+X-UUID: 21a15f03e8424bf39cf7f9206eed6a6b-20191215
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1855005230; Sun, 15 Dec 2019 19:52:53 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 15 Dec 2019 19:53:07 -0800
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Dec 2019 11:51:41 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 16 Dec 2019 11:52:51 +0800
+Message-ID: <1576468370.13056.2.camel@mtkswgap22>
+Subject: Re: [PATCH v2 1/2 RESEND] soc: mediatek: add header for SiP service
+ interface
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ <f.fainelli@gmail.com>, <matthias.bgg@gmail.com>
+Date: Mon, 16 Dec 2019 11:52:50 +0800
+In-Reply-To: <1576468137-17220-2-git-send-email-stanley.chu@mediatek.com>
+References: <1576468137-17220-1-git-send-email-stanley.chu@mediatek.com>
+ <1576468137-17220-2-git-send-email-stanley.chu@mediatek.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20191215203303.29811-1-pankaj.bansal@nxp.com>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
+X-TM-SNTS-SMTP: 89A95AE056A1C55C4F5ED8FC96F4CCD94C675532D4D860D6EF86D25D953A31ED2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_195004_581347_498988BA 
-X-CRM114-Status: UNSURE (   8.81  )
+X-CRM114-CacheID: sfid-20191215_195258_167170_467ADE35 
+X-CRM114-Status: UNSURE (   6.55  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,35 +89,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Jonathan Cameron <jonathan.cameron@huawei.com>
+Cc: "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "martin.petersen@oracle.com" <martin.petersen@oracle.com>, Leon
+ Chen =?UTF-8?Q?=28=E9=99=B3=E6=96=87=E9=8F=98=29?= <Leon.Chen@mediatek.com>,
+ Andy Teng =?UTF-8?Q?=28=E9=84=A7=E5=A6=82=E5=AE=8F=29?=
+ <Andy.Teng@mediatek.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ Chun-Hung Wu =?UTF-8?Q?=28=E5=B7=AB=E9=A7=BF=E5=AE=8F=29?=
+ <Chun-hung.Wu@mediatek.com>,
+ Kuohong Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=8B=E9=B4=BB=29?=
+ <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "avri.altman@wdc.com" <avri.altman@wdc.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Peter Wang =?UTF-8?Q?=28=E7=8E=8B=E4=BF=A1=E5=8F=8B=29?=
+ <peter.wang@mediatek.com>, "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pankaj,
+Hi Matthias and Florian,
 
-On 2019/12/15 23:12, Pankaj Bansal wrote:
-> As per http://infocenter.arm.com/help/topic/com.arm.doc.den0049d/DEN0049D_IO_Remapping_Table.pdf
-> in ID mappings:
-> Number of IDs = The number of IDs in the range minus one.
+Could you please help review this revised v2 patch ?
 
-Hmm, the spec is confusing, the spec may need to be updated, for example,
-for a PCI bus, device ID + function ID will take 8 bits and will be 256
-IDs for that PCI bus, not sure why we need to minus one.
+Or please advise if any expert could help ?
 
+Thanks so much.
+Stanley
+
+On Mon, 2019-12-16 at 11:48 +0800, Stanley Chu wrote:
+> Add a header for the SiP service interface in order to access
+> the UFSHCI controller for secure command handling in MediaTek Chipsets.
 > 
-> Therefore, it's valid for ID mapping to contain single device mapping which
-> would have Number of IDs field 0.
-
-Why not use single mapping flag for this case?
-
-Thanks
-Hanjun
-
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
