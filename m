@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8E87120271
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:29:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2920A12028D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 11:30:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1isTKLDFeg5MdlUyWD09i4nT+hscZQqGwAtdw17ZHhs=; b=ZcCPQsO3sNjJfIxBWtpHV1IiN
-	RZFZivhQ5f8OzkXFAnJGiek1E+/SpEgFTbBRLAkF1/SLjBKBqykmukRK1F5ynauRb7Vt4jisebmDf
-	yIRYfq4rT6EupwvDFRATaLdpcmISz0syNYWK5/lSJwB1XLNnQ6X7BV/YL5Tz0EcJtfCNh8A8OCKW1
-	ZOpq9wsJFdpUdc5/bCQokzKeAyJGloVxYplXivhKOyLLKNRudPmn+fhzmSHxj3CglVlu7ZfsNuo2E
-	cA/UiQdHrUrWSFVmigtK3/SqEbWoW/XIbSX5K73BF7VXw/tlg4hAXkyoZFjm9gxhRvlbHZOEr2Bya
-	G1OITvkSg==;
+	 bh=tOVlVmrrmZwkYJTUHJ7MxNE5a0BfJpWAlv0l/TabPFA=; b=fqeYScKWQL6g6tol3sD1NZQT8
+	LoGqzIDgSTLU/G3qHMjoO2e70p0gJzpvVuvX6TtJV5dmpwDu/YS1gw7qEHrQVZ4AB1AWKToKYmDl6
+	3ZpQlEfGN4qJOg87Hbs+EX5DHtrbe1FDDQI/1T2x57ezi5nLZSeRdNP4dok+eLgK0eNZmCBqHuUVy
+	surLhJR8H4ee1lqWz06vIeo69ypipMX+uVcMrTZ7jJYVWV6NOWUva+9ErxHzISY1croBAd1hi6VHm
+	xZr/qYtyFep5NWa4ndrKruIK8MA9gtUcNo8Xa71qChqM8TmtqJJh0yI7xaDpPG0CPeK3Qz9B29chN
+	J9Nijba9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ignd9-0005o4-Cm; Mon, 16 Dec 2019 10:29:35 +0000
+	id 1igne9-0007SE-8n; Mon, 16 Dec 2019 10:30:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ignd0-0005nM-NA
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 10:29:27 +0000
+ id 1igndk-0007Ip-Ax
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 10:30:14 +0000
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CD8D9206CB;
- Mon, 16 Dec 2019 10:29:25 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7CAF8206CB;
+ Mon, 16 Dec 2019 10:30:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576492166;
- bh=h4X6AHfGqH1fcCYhsVZLrhBRQ9DB10RQK53ZRJEGw10=;
+ s=default; t=1576492212;
+ bh=TP9DzZcKSVrQpP32FqzNgOZaTZ4ylpfJByIaBDD/rtI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=IvVcuSHVLYGMmXZVmzWjp42//mldx+pzhw6/n2ye4z+xgib3qOgAuff+SDPb42z/R
- wfXre21OOpLxB2OAOi4I2vyhOQHvnESfd1wKswN24x4L31iE3E04U4ynLnDGD25sbv
- V042YBfc8kD87odpp3NQW1egVmAu9toKR/kAdgAU=
-Date: Mon, 16 Dec 2019 11:29:23 +0100
+ b=cbW7rAD98yBt5ylWkUjbozPxRKW1HZE5UawycIiZRFQ7gvrOSblVeXGoelAraXm6z
+ BkbndCnYJ4/iiZpb3JLUY79l3nikIgQSfsGIToNvNie7cu1JTu1PeaXTB4430bcJ5J
+ E2BhjDjV/XFCPZXxpWRtwB/0M1JZKrVzw/bN05+8=
+Date: Mon, 16 Dec 2019 11:30:09 +0100
 From: Maxime Ripard <mripard@kernel.org>
 To: Chen-Yu Tsai <wens@kernel.org>
-Subject: Re: [PATCH 09/14] ARM: dts: sun8i: r40: Add I2C pinmux options
-Message-ID: <20191216102923.nezpk2cqastyfpsd@gilmour.lan>
+Subject: Re: [PATCH 02/14] dt-bindings: media: sun4i-csi: Add compatible for
+ CSI0 on R40
+Message-ID: <20191216103009.knlby7rxf5pghf5q@gilmour.lan>
 References: <20191215165924.28314-1-wens@kernel.org>
- <20191215165924.28314-10-wens@kernel.org>
+ <20191215165924.28314-3-wens@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20191215165924.28314-10-wens@kernel.org>
+In-Reply-To: <20191215165924.28314-3-wens@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_022926_774839_CC9A3507 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20191216_023012_915073_08049F2E 
+X-CRM114-Status: GOOD (  14.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,50 +82,55 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>, Sakari Ailus <sakari.ailus@linux.intel.com>,
  Mauro Carvalho Chehab <mchehab@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============2964310649151232662=="
+Content-Type: multipart/mixed; boundary="===============6128976981162589407=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2964310649151232662==
+--===============6128976981162589407==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="6lkmrciahlk4lydl"
+	protocol="application/pgp-signature"; boundary="j4c5uoispaqa4lve"
 Content-Disposition: inline
 
 
---6lkmrciahlk4lydl
+--j4c5uoispaqa4lve
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 
-On Mon, Dec 16, 2019 at 12:59:19AM +0800, Chen-Yu Tsai wrote:
+On Mon, Dec 16, 2019 at 12:59:12AM +0800, Chen-Yu Tsai wrote:
 > From: Chen-Yu Tsai <wens@csie.org>
 >
-> The R40 has five I2C controllers. Currently only I2C0 has its pinmux
-> option defined.
+> The CSI0 block in the Allwinner R40 SoC looks to be the same as the one
+> in the A20. The register maps line up, and they support the same
+> features. The R40 appears to support BT.1120 based on the feature
+> overview, but it is not mentioned anywhere else. Also like the A20, the
+> ISP is not mentioned, but the CSI special clock needs to be enabled for
+> the hardware to function. The manual does state that the CSI special
+> clock is the TOP clock for all CSI hardware, but currently no hardware
+> exists for us to test if CSI1 also depends on it or not.
 >
-> Add the options for the remaining four, and set them as the default,
-> since each controller has only one possible pinmux configuration.
+> Add a compatible string for the CSI0 block in the R40, with the A20
+> compatible string as a fallback.
 >
-> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+Acked-by: Maxime Ripard <mripard@kernel.org>
 
-Applied, thanks!
 Maxime
 
---6lkmrciahlk4lydl
+--j4c5uoispaqa4lve
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfdcgwAKCRDj7w1vZxhR
-xaLdAP9tc7Nm4GYFEAyZVooyptZNGjG4NOL1T9S7EiBgQ3Pz1AEAtO6crXWEEVFr
-ich4eYyroylJ+xW31k+yFo8klXVkSwg=
-=rMnm
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfdcsQAKCRDj7w1vZxhR
+xdV4AP43TuArwkolNnd0v+MEWhLJJWbvcpaXKB28P0p/Or8XqAEAtdXmz4ciBhek
+kycHLr2wxDL17v6dVj+QU3bE3MLLvws=
+=nnf8
 -----END PGP SIGNATURE-----
 
---6lkmrciahlk4lydl--
+--j4c5uoispaqa4lve--
 
 
---===============2964310649151232662==
+--===============6128976981162589407==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -135,5 +141,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============2964310649151232662==--
+--===============6128976981162589407==--
 
