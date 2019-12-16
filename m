@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 511FC120039
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:49:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61138120041
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:50:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WRaoRHK+i/+KKnuvjp8lx0qdY9d6gg38MX8g0FVzgjQ=; b=jEvZKYJYHSNXO9hrqzRZE5c5Fv
-	FhMKkA6/oWJnvggSEmdic3/pCPuT+j8JOMmLIzrz7SAIwIGl+j3mpwLPaVIup7mrC8Gg79mD2Gx/y
-	/JEkIHIg5Py7n7P2USLaIvHBuJtQz1ZHpd8KV30GdsY1g2Y/DOJk5n1r4Dlkce6Q6mkVAPCCnYy6k
-	0SKlS/wIb2pK5bQuYBHgDyPdEX/0D/sOjMW8OThMHmaf8i11B04Dw0+kqHEwbO0wYh96fCNMmT6LN
-	gADdFtHldzXXnxfLFjq61bw7Z2rxbz73AKGSlcqhK69UxpM5dwJDITmpiVnVnCufDPlac0D/Il94m
-	ujKwvq6g==;
+	bh=xwfBJUxX9S4yLC20tJd26lDnxNdXMdxEpnfTnP6JAAg=; b=PyWUWqwIOTkSktmfvOfHdr/iii
+	1L+0YxC+GAKTe1otfvNRDnqdwkPfM5D2Plepv18kyi6G7vFUqa4ZjEUQGP3Rz7uLbG9BKVk4UaAI0
+	8DJh1a7OeXKgY4WdaMgYP9s5cEvbFaejLrg3WiVFJPpxeO3QnP4mY55DfQUMQM1mIO7trcxHzh27R
+	DUdyDLzoMKQSVK4appeEVPj/CvofenwB5+WCJQTBGz1oW3vIxl77+48M2OkGchdabguaImxX2UdSH
+	PfgqfeXzgtkhtQhUk6lz0L3Ui/OW8kkUHLVBJUg+IbB/YYAb6z2O8ATTyB12SBz5oGxmb7WRNFFJZ
+	SybA4z4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igm4W-0005dz-DY; Mon, 16 Dec 2019 08:49:44 +0000
+	id 1igm4z-0005v9-OL; Mon, 16 Dec 2019 08:50:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igm2i-0004MQ-JE
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 08:47:55 +0000
+ id 1igm2n-0004PE-F6
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 08:48:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1295A1007;
- Mon, 16 Dec 2019 00:47:52 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CD551007;
+ Mon, 16 Dec 2019 00:47:56 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.0.144])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 532863F6CF;
- Mon, 16 Dec 2019 00:51:03 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id DC5F33F6CF;
+ Mon, 16 Dec 2019 00:51:07 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 04/16] arm64: create macro to park cpu in an infinite loop
-Date: Mon, 16 Dec 2019 14:17:06 +0530
-Message-Id: <1576486038-9899-5-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v3 05/16] arm64: ptrauth: Add bootup/runtime flags for
+ __cpu_setup
+Date: Mon, 16 Dec 2019 14:17:07 +0530
+Message-Id: <1576486038-9899-6-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
 References: <1576486038-9899-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_004753_789119_0DE8C5EE 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20191216_004758_304641_59B85A06 
+X-CRM114-Status: GOOD (  13.52  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -78,67 +79,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A macro early_park_cpu is added to park the faulted cpu in an infinite
-loop. Currently, this macro is substituted in two instances and is reused
-in the subsequent pointer authentication patch.
+This patch allows __cpu_setup to be invoked with one of these flags,
+ARM64_CPU_BOOT_PRIMARY, ARM64_CPU_BOOT_LATE or ARM64_CPU_RUNTIME.
+This is required as some cpufeatures need different handling during
+different scenarios.
+
+The input parameter in x0 is preserved till the end to be used inside
+this function.
+
+There should be no functional change with this patch and is useful
+for the subsequent ptrauth patch which utilizes it. Some upcoming
+arm cpufeatures can also utilize these flags.
 
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Changes since last version:
 * None.
 
- arch/arm64/kernel/head.S | 25 +++++++++++++------------
- 1 file changed, 13 insertions(+), 12 deletions(-)
+ arch/arm64/include/asm/smp.h |  5 +++++
+ arch/arm64/kernel/head.S     |  2 ++
+ arch/arm64/kernel/sleep.S    |  2 ++
+ arch/arm64/mm/proc.S         | 26 +++++++++++++++-----------
+ 4 files changed, 24 insertions(+), 11 deletions(-)
 
+diff --git a/arch/arm64/include/asm/smp.h b/arch/arm64/include/asm/smp.h
+index a0c8a0b..008d004 100644
+--- a/arch/arm64/include/asm/smp.h
++++ b/arch/arm64/include/asm/smp.h
+@@ -23,6 +23,11 @@
+ #define CPU_STUCK_REASON_52_BIT_VA	(UL(1) << CPU_STUCK_REASON_SHIFT)
+ #define CPU_STUCK_REASON_NO_GRAN	(UL(2) << CPU_STUCK_REASON_SHIFT)
+ 
++/* Options for __cpu_setup */
++#define ARM64_CPU_BOOT_PRIMARY		(1)
++#define ARM64_CPU_BOOT_LATE		(2)
++#define ARM64_CPU_RUNTIME		(3)
++
+ #ifndef __ASSEMBLY__
+ 
+ #include <asm/percpu.h>
 diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-index 989b194..3d18163 100644
+index 3d18163..5aaf1bb 100644
 --- a/arch/arm64/kernel/head.S
 +++ b/arch/arm64/kernel/head.S
-@@ -761,6 +761,17 @@ ENDPROC(__secondary_too_slow)
- 	.endm
+@@ -118,6 +118,7 @@ ENTRY(stext)
+ 	 * On return, the CPU will be ready for the MMU to be turned on and
+ 	 * the TCR will have been set.
+ 	 */
++	mov	x0, #ARM64_CPU_BOOT_PRIMARY
+ 	bl	__cpu_setup			// initialise processor
+ 	b	__primary_switch
+ ENDPROC(stext)
+@@ -712,6 +713,7 @@ secondary_startup:
+ 	 * Common entry point for secondary CPUs.
+ 	 */
+ 	bl	__cpu_secondary_check52bitva
++	mov	x0, #ARM64_CPU_BOOT_LATE
+ 	bl	__cpu_setup			// initialise processor
+ 	adrp	x1, swapper_pg_dir
+ 	bl	__enable_mmu
+diff --git a/arch/arm64/kernel/sleep.S b/arch/arm64/kernel/sleep.S
+index f5b04dd..7b2f2e6 100644
+--- a/arch/arm64/kernel/sleep.S
++++ b/arch/arm64/kernel/sleep.S
+@@ -3,6 +3,7 @@
+ #include <linux/linkage.h>
+ #include <asm/asm-offsets.h>
+ #include <asm/assembler.h>
++#include <asm/smp.h>
  
+ 	.text
  /*
-+ * Macro to park the cpu in an infinite loop.
-+ */
-+	.macro	early_park_cpu status
-+	update_early_cpu_boot_status \status | CPU_STUCK_IN_KERNEL, x1, x2
-+.Lepc_\@:
-+	wfe
-+	wfi
-+	b	.Lepc_\@
-+	.endm
-+
-+/*
-  * Enable the MMU.
+@@ -99,6 +100,7 @@ ENDPROC(__cpu_suspend_enter)
+ 	.pushsection ".idmap.text", "awx"
+ ENTRY(cpu_resume)
+ 	bl	el2_setup		// if in EL2 drop to EL1 cleanly
++	mov	x0, #ARM64_CPU_RUNTIME
+ 	bl	__cpu_setup
+ 	/* enable the MMU early - so we can access sleep_save_stash by va */
+ 	adrp	x1, swapper_pg_dir
+diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
+index a1e0592..88cf7e4 100644
+--- a/arch/arm64/mm/proc.S
++++ b/arch/arm64/mm/proc.S
+@@ -400,21 +400,25 @@ ENDPROC(idmap_kpti_install_ng_mappings)
+ /*
+  *	__cpu_setup
   *
-  *  x0  = SCTLR_EL1 value for turning on the MMU.
-@@ -808,24 +819,14 @@ ENTRY(__cpu_secondary_check52bitva)
- 	and	x0, x0, #(0xf << ID_AA64MMFR2_LVA_SHIFT)
- 	cbnz	x0, 2f
+- *	Initialise the processor for turning the MMU on.  Return in x0 the
+- *	value of the SCTLR_EL1 register.
++ *	Initialise the processor for turning the MMU on.
++ *
++ * Input:
++ *	x0 with a flag ARM64_CPU_BOOT_PRIMARY/ARM64_CPU_BOOT_LATE/ARM64_CPU_RUNTIME.
++ * Output:
++ *	Return in x0 the value of the SCTLR_EL1 register.
+  */
+ 	.pushsection ".idmap.text", "awx"
+ ENTRY(__cpu_setup)
+ 	tlbi	vmalle1				// Invalidate local TLB
+ 	dsb	nsh
  
--	update_early_cpu_boot_status \
--		CPU_STUCK_IN_KERNEL | CPU_STUCK_REASON_52_BIT_VA, x0, x1
--1:	wfe
--	wfi
--	b	1b
--
-+	early_park_cpu CPU_STUCK_REASON_52_BIT_VA
- #endif
- 2:	ret
- ENDPROC(__cpu_secondary_check52bitva)
- 
- __no_granule_support:
- 	/* Indicate that this CPU can't boot and is stuck in the kernel */
--	update_early_cpu_boot_status \
--		CPU_STUCK_IN_KERNEL | CPU_STUCK_REASON_NO_GRAN, x1, x2
--1:
--	wfe
--	wfi
--	b	1b
-+	early_park_cpu CPU_STUCK_REASON_NO_GRAN
- ENDPROC(__no_granule_support)
- 
- #ifdef CONFIG_RELOCATABLE
+-	mov	x0, #3 << 20
+-	msr	cpacr_el1, x0			// Enable FP/ASIMD
+-	mov	x0, #1 << 12			// Reset mdscr_el1 and disable
+-	msr	mdscr_el1, x0			// access to the DCC from EL0
++	mov	x1, #3 << 20
++	msr	cpacr_el1, x1			// Enable FP/ASIMD
++	mov	x1, #1 << 12			// Reset mdscr_el1 and disable
++	msr	mdscr_el1, x1			// access to the DCC from EL0
+ 	isb					// Unmask debug exceptions now,
+ 	enable_dbg				// since this is per-cpu
+-	reset_pmuserenr_el0 x0			// Disable PMU access from EL0
++	reset_pmuserenr_el0 x1			// Disable PMU access from EL0
+ 	/*
+ 	 * Memory region attributes for LPAE:
+ 	 *
+@@ -435,10 +439,6 @@ ENTRY(__cpu_setup)
+ 		     MAIR(0xbb, MT_NORMAL_WT)
+ 	msr	mair_el1, x5
+ 	/*
+-	 * Prepare SCTLR
+-	 */
+-	mov_q	x0, SCTLR_EL1_SET
+-	/*
+ 	 * Set/prepare TCR and TTBR. We use 512GB (39-bit) address range for
+ 	 * both user and kernel.
+ 	 */
+@@ -474,5 +474,9 @@ ENTRY(__cpu_setup)
+ 1:
+ #endif	/* CONFIG_ARM64_HW_AFDBM */
+ 	msr	tcr_el1, x10
++	/*
++	 * Prepare SCTLR
++	 */
++	mov_q	x0, SCTLR_EL1_SET
+ 	ret					// return to head.S
+ ENDPROC(__cpu_setup)
 -- 
 2.7.4
 
