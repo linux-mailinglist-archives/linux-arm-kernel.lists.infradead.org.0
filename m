@@ -2,82 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCD9C121219
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 18:49:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BD97121234
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 18:50:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:From:To:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WUkLNYuAra6q7TRdvaZ8Ajp24TKUfh1+TFxkNV2CeUQ=; b=E4olyMN4uIflE1
-	mBL2w+tuIrhUTmi9BLSlaZZZ05hFH97F3yvtkRgSlPF8JbJPHhxTTJsdZKl2QzO/CwkjwDXK9WPD8
-	Gh8aFD1cJEgUzrTyi3A7tbW137fkFjoweNXcvhnEBqWuw3VOS3linxGZ89Ar1mk6R7bw3eD76wQVB
-	BeuAeFyhLaUBpzSe/tz5LxBDI/khXcw5TFpT0e22fo/Erp2wW8CyyYwAHP5dOXbj4q2KtsI12V+Y3
-	Ibbquj9QlFVgMNo/2d61GMY/sXtitZkV8cvHvOFfTt2f+U6WkZa2RiFi0+G+HUkE+AxlQpTan278/
-	J2JfwazBj/xjLXKxPg6Q==;
+	List-Owner; bh=fdgzv4TMmWmFLTdIlFVJEV+wibj3VJ2pfsxHpQhXhgU=; b=HFB/JeWYCduCoG
+	R/SSG/tiRWhVrIrbFuJnqsnFsRv4x3TFXLK28QUvCbu7cualchv5PxZ8JTxdtH8hrCUCyTOHegklR
+	HHp0dK3/Suz5JbrjVO/Ph7lbZb5QFpqPQoshXcqwjB672kDeiUzj24+p+GqVBoTtgBCMec8oBrsSj
+	2mKynwJ7eUSrvbCxLaYmz3CDP/Cggyx0CIch7kdfHBXdESCf75V8uKLVyFKQZlUp+h3bC+Zfmferw
+	l7A+Gj5fVnhT6ROSBqd72Ge8grupfjV9T+d5aUdJ8l/awV+VQ4xjBCvULZ+gRUYkPNoqRj7y+CZrQ
+	vI+4bnt0Ws0L6uuzMxnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iguUU-0004sj-Sr; Mon, 16 Dec 2019 17:49:06 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iguVm-0006Uk-Dq; Mon, 16 Dec 2019 17:50:26 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iguTS-0003yY-Q0
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 17:48:07 +0000
-Received: by mail-pl1-x641.google.com with SMTP id p9so535659plk.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 09:48:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=67RnPKw63+A5B3mWKU81b+vfdJ8KYwSGtoL1kew422s=;
- b=rHVK/Ju0g15r+TRIbS2kezdGsHO37G24hm0K36ZYbAlHspIVlXS4Ys59i8GgAGUaBo
- 4Otfi12AJqW/wV46QUynw6JkAr1d7J/IK/zQ/HojllVeIiX7ao2zKhm+pzp/DFP42FeE
- wVO8n2xTycRSGXty5gg+VNYHFHaSgOgftBJhw=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=67RnPKw63+A5B3mWKU81b+vfdJ8KYwSGtoL1kew422s=;
- b=p+NDprR7IRndxGdTK0xDyHTFc5d85vGXBYVCfEPLHJ9mxreOpHxbx+O7dWWBWg4unQ
- FsNM0a2gNgss7colFLPy2okaSmwihtUhYU/D7CUZs8ZIgyAwnYl1Q1zITuR+96k4f+Zi
- QK+9GWoA8lzsbtuFAejLcU5+zooYHHbpXkjFNlgnD56xSV2nQ5fGB6Z7pl0r5VaaWrvX
- Or+ecdepov3bv3awH+vPRJObyWi0PEE1I1BPhy1FgUlgOzucx+FGnglLWKZhlzcmZCdP
- bmJg1XmWvvta9mnA09XMHbvrZxMFtmjiIB5uSklIkb0354svYU/xBv9T51aTlDRWfILw
- KNZQ==
-X-Gm-Message-State: APjAAAXmkEbDnjbAkvKLFP6w8kKrlltJgTPUBOn/AbsglcnGRTJftpTU
- 7JAaN43FAoEvA3BCmTPaOFJHtg==
-X-Google-Smtp-Source: APXvYqyAjAO4jnA4QyilqZkqXP3DoPuztugJ8Cps8+XwWEzUX1N4xsK5btgsHHZlP9temsP5T3pDDQ==
-X-Received: by 2002:a17:902:d883:: with SMTP id
- b3mr16392991plz.231.1576518480927; 
- Mon, 16 Dec 2019 09:48:00 -0800 (PST)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:6d28:a89:f9e1:1506])
- by smtp.gmail.com with ESMTPSA id
- a6sm22342924pgg.25.2019.12.16.09.47.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Dec 2019 09:48:00 -0800 (PST)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v3 4/4] arm64: dts: rockchip: Add Radxa Rock Pi N10 initial
- support
-Date: Mon, 16 Dec 2019 23:17:11 +0530
-Message-Id: <20191216174711.17856-5-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20191216174711.17856-1-jagan@amarulasolutions.com>
-References: <20191216174711.17856-1-jagan@amarulasolutions.com>
+ id 1iguVc-0006TX-4I; Mon, 16 Dec 2019 17:50:17 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2A642206EC;
+ Mon, 16 Dec 2019 17:50:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576518615;
+ bh=g8/rjNCZq7LbHvZLvTNNpjZ1plcZnKZdtSsnrwvnKXs=;
+ h=In-Reply-To:References:Subject:To:From:Cc:Date:From;
+ b=hyJriL7F96LxiYiCXXD6CLjvtW73yKVQDMHGaYpoy1QPMrmgRBbgjZQ2CFT5CAg+W
+ +KrAVw6jQMk7TdXrDODjsWdn7uaXccTJfRVXit4cex32jK7jAeY7lAXuMDrm0lEvfi
+ xm/9xn40U82jAhw/4ZBRdSf9wMSNHaoWdmQdIbhE=
 MIME-Version: 1.0
+In-Reply-To: <1jr214bpl0.fsf@starbuckisacylon.baylibre.com>
+References: <20191215210153.1449067-1-martin.blumenstingl@googlemail.com>
+ <1jr214bpl0.fsf@starbuckisacylon.baylibre.com>
+Subject: Re: [PATCH 0/1] clk: Meson8/8b/8m2: fix the mali clock flags
+To: Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, narmstrong@baylibre.com
+From: Stephen Boyd <sboyd@kernel.org>
+User-Agent: alot/0.8.1
+Date: Mon, 16 Dec 2019 09:50:14 -0800
+Message-Id: <20191216175015.2A642206EC@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_094802_883218_74879B97 
-X-CRM114-Status: GOOD (  14.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_095016_216766_59536802 
+X-CRM114-Status: GOOD (  31.45  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -87,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,72 +77,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tom Cubie <tom@radxa.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Akash Gajjar <akash@openedev.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
- Jagan Teki <jagan@amarulasolutions.com>
+Cc: mturquette@baylibre.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rock Pi N10 is a Rockchip RK3399Pro based SBC, which has
-- VMARC RK3399Pro SOM (as per SMARC standard) from Vamrs.
-- Compatible carrier board from Radxa.
+Quoting Jerome Brunet (2019-12-16 01:13:31)
+> 
+> On Sun 15 Dec 2019 at 22:01, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
+> 
+> > While playing with devfreq support for the lima driver I experienced
+> > sporadic (random) system lockups. It turned out that this was in
+> > certain cases when changing the mali clock.
+> >
+> > The Amlogic vendor GPU platform driver (which is responsible for
+> > changing the clock frequency) uses the following pattern when updating
+> > the mali clock rate:
+> > - at initialization: initialize the two mali_0 and mali_1 clock trees
+> >   with a default setting and enable both clocks
+> > - when changing the clock frequency:
+> > -- set HHI_MALI_CLK_CNTL[31] to temporarily use the mali_1 clock output
+> > -- update the mali_0 clock tree (set the mux, divider, etc.)
+> > -- clear HHI_MALI_CLK_CNTL[31] to temporarily use the mali_0 clock
+>                                       ^ no final setting then ? :P
+> >    output again
+> >
+> > With the common clock framework we can even do better:
+> > by setting CLK_SET_RATE_PARENT for the mali_0 and mali_1 output gates
+>                 ^
+> From your patch, I guess you mean CLK_SET_RATE_GATE ?
+> 
+> > we can force the common clock framework to update the "inactive" clock
+> > and then switch to it's output.
+> >
+> > I only tested this patch for a limited time only (approx. 2 hours).
+> > So far I couldn't reproduce the sporadic system lockups with it.
+> > However, broader testing would be great so I would like this to be
+> > applied for -next.
+> 
+> CLK_SET_RATE_GATE guarantees that a clock cannot be updated while in
+> use. While it works at your advantage here, I'm not sure CCF guarantees
+> the assumption this implementation is based on. Some explanation below:
+> 
+> In your case, if it works as you expect when calling set_rate() on the
+> top clock, it goes as this:
+> 
+> - mali0 is use with rate X:
+> - => set_rate(mali_top, Y)
+> - mali0 is in use, cannot change, will round rate Y to X
+> - mali1 is not in use, can provide Y
+> - mali1 is determined to be the new best parent for mali top
+> 
+> So far so good.
+> 
+> - CCF pick the mali1 subtree
+>   *start updating the clock from the root to the leaf*
+> 
+> So the mali top mux, which choose between mali0 and mali1, will be
+> *updated last* which crucial to your use case.
+> 
+> I just wonder if this crucial part something CCF guarantee and you can
+> rely on it ... or if it might break in the future.
+> 
+> Stephen, any thoughts on this ?
 
-VAMRC RK3399Pro SOM need to mount on top of radxa dalang
-carrier board for making Rock Pi N10 SBC.
+We have problems with the order in which we call the set_rate clk_op.
+Sometimes clk providers want us to call from leaf to root but instead we
+call from root to leaf because of implementation reasons. Controlling
+the order in which clk operations are done is an unsolved problem. But
+yes, in the future I'd like to see us introduce the vaporware that is
+coordinated clk rates that would allow clk providers to decide what this
+order should be, instead of having to do this "root-to-leaf" update.
+Doing so would help us with the clk dividers that have some parent
+changing rate that causes the downstream device to be overclocked while
+we change the parent before the divider.
 
-So, add initial support for Rock Pi N10 by including rk3399,
-rk3399pro vamrc-som and raxda dalang carrier board dtsi files.
+If there are more assumptions like this about how the CCF is implemented
+then we'll have to be extra careful to not disturb the "normal" order of
+operations when introducing something that allows clk providers to
+modify it.
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
-Changes for v3:
-- none
+Also, isn't CLK_SET_RATE_GATE broken in the case that clk_set_rate()
+isn't called on that particular clk? I seem to recall that the flag only
+matters when it's applied to the "leaf" or entry point into the CCF from
+a consumer API. I've wanted to fix that but never gotten around to it.
+The whole flag sort of irks me because I don't understand what consumers
+are supposed to do when this flag is set on a clk. How do they discover
+it? They're supposed to "just know" and turn off the clk first and then
+call clk_set_rate()? Why can't the framework do this all in the
+clk_set_rate() call?
 
- arch/arm64/boot/dts/rockchip/Makefile           |  1 +
- .../boot/dts/rockchip/rk3399pro-rock-pi-n10.dts | 17 +++++++++++++++++
- 2 files changed, 18 insertions(+)
- create mode 100644 arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-
-diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
-index 48fb631d5451..433033b18170 100644
---- a/arch/arm64/boot/dts/rockchip/Makefile
-+++ b/arch/arm64/boot/dts/rockchip/Makefile
-@@ -36,3 +36,4 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rock960.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-rockpro64.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire.dtb
- dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-sapphire-excavator.dtb
-+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399pro-rock-pi-n10.dtb
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts b/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-new file mode 100644
-index 000000000000..b42f94179538
---- /dev/null
-+++ b/arch/arm64/boot/dts/rockchip/rk3399pro-rock-pi-n10.dts
-@@ -0,0 +1,17 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Fuzhou Rockchip Electronics Co., Ltd
-+ * Copyright (c) 2019 Radxa Limited
-+ * Copyright (c) 2019 Amarula Solutions(India)
-+ */
-+
-+/dts-v1/;
-+#include "rk3399.dtsi"
-+#include "rk3399-opp.dtsi"
-+#include "rk3399pro-vmarc-som.dtsi"
-+#include <arm/rockchip-radxa-dalang-carrier.dtsi>
-+
-+/ {
-+	model = "Radxa ROCK Pi N10";
-+	compatible = "radxa,rockpi-n10", "rockchip,rk3399pro";
-+};
--- 
-2.18.0.321.gffc6fa0e3
-
+> 
+> PS: If CCF does guarantee "root-to-leaf" updates, I think this
+> implementation is a clever trick to solve this usual glitch free clock
+> update issue ... much more elegant that the notifier solution we have
+> been using so far.
 
 _______________________________________________
 linux-arm-kernel mailing list
