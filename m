@@ -2,57 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 925AA120520
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 13:11:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50A9E12052E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 13:13:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uOZpUe6bS3veEkkgaG4kYVhrQ1iC6AqNS4IQfMNiibg=; b=dyNhdDhgGJUYzN
-	BcTdulc6dAXRXUM++mO9NVS6sl2P3Q3vfiWaPpcLycoVpK+0ZV7CKqQ7bISUybcfu+OhKgHr34Aik
-	f9/P4Tdwm7HL0JI6XiR2m5S9i0u7EgBZ0DDyQrljbgM6viqcgtHmP0k6Af7KAKMrLy2TWezN2KBQf
-	/uCQT0+GN5g9WaxlKrd4HOvrA0EPr1xF+6K9aF59onkMq+aDygzDp/HEilWmtf2l1xejZVBEb+oC0
-	WZaqOrhCpUS942GVpwvnZtSf8fGvi2AUa4bXiNeDxLusUIYAABhpP8E41R/RQaWS0233RENxNui4T
-	NsSIEQNe7puSuV/qEAMA==;
+	List-Owner; bh=/b3gi5ZNjXNZ0FshgIv3R9uuEWEprhQ6RPbT4eCF9Ls=; b=Sm2S1nNDaWCPA5
+	5LT6iZfNxtFxtB/8ASDacrYvDzEYZoSBSQNMnLMifOxM+XgtVJjndUqeMryzFsWr1tgSaggtlnXPN
+	AtmeLFPrTDDQsTxO6CFX+12qT/fIlSo7hy5zy1AsDmYYQ0hpemExw6I9a+LSPrTk0DHNVanQksvX5
+	i+KSKP5RWF2W7PAnDkbdePOgHZUK837VwsdsaVlvROUHVw7ptZf50GV+6/pAN7+OBFFZOP4whpLU0
+	Ku9m8LxptGWj3SoYpoUB7j50RkRdAgOOrHy21ExHRL73opP7z16vSalNycIIVlEqlpDGIGMZFWQjG
+	PX1sTBLb1c+lXmVPA+YA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igpDl-0008Oa-JY; Mon, 16 Dec 2019 12:11:29 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1igpFu-0000Sl-2s; Mon, 16 Dec 2019 12:13:42 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igpDI-0007zv-CE; Mon, 16 Dec 2019 12:11:03 +0000
-Received: from xps13 (unknown [91.224.148.103])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 04911200004;
- Mon, 16 Dec 2019 12:10:45 +0000 (UTC)
-Date: Mon, 16 Dec 2019 13:10:44 +0100
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Andy Yan <andy.yan@rock-chips.com>
-Subject: Re: [PATCH 09/12] drm/rockchip: lvds: Add PX30 =?UTF-8?B?c3VwcG9y?=
- =?UTF-8?B?dOOAkOivt+azqOaEj++8jOmCruS7tueUsWxpbnV4LXJvY2tjaGlwLWJvdW5j?=
- =?UTF-8?B?ZXMrYW5keS55YW49cm9jay1jaGlwcy5jb21AbGlzdHMuaW5mcmFkZWFkLm9y?=
- =?UTF-8?B?Z+S7o+WPkeOAkQ==?=
-Message-ID: <20191216131044.38582a49@xps13>
-In-Reply-To: <02b3373e-790b-5f0c-40a0-7cc423a0dac5@rock-chips.com>
-References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
- <20191213181051.25983-10-miquel.raynal@bootlin.com>
- <02b3373e-790b-5f0c-40a0-7cc423a0dac5@rock-chips.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1igpFc-0000Qe-Gf; Mon, 16 Dec 2019 12:13:27 +0000
+X-UUID: df7c194140c1458bac79aecee555f15e-20191216
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=01Zdn2moavFSAH92DOzH42F7drWh36U1FiCarROFBME=; 
+ b=BunkaHOKwGz0XKwjgWlc6w83G3Xtk3fjV+FGFAfKc9ki2tIelg4qxB7r7fLVFTN3ypc6VP6yY0nkVwlmkA54wEfbDHiDaMYeCv3Kro5qZWrqQsqSBiKNHk/Reimm0pY0oWgESNqXWOQ8lFSssXE86KOfVFDG6BowjE2kWEJb1Rw=;
+X-UUID: df7c194140c1458bac79aecee555f15e-20191216
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2045145198; Mon, 16 Dec 2019 04:13:21 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Dec 2019 04:13:38 -0800
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31DR.mediatek.inc
+ (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Mon, 16 Dec 2019 20:12:41 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 16 Dec 2019 20:12:59 +0800
+Message-ID: <1576498396.28043.78.camel@mhfsdcap03>
+Subject: Re: [RESEND,PATCH 03/13] iommu/mediatek: Add mtk_iommu_pgtable
+ structure
+From: Yong Wu <yong.wu@mediatek.com>
+To: Chao Hao <chao.hao@mediatek.com>
+Date: Mon, 16 Dec 2019 20:13:16 +0800
+In-Reply-To: <20191104115238.2394-4-chao.hao@mediatek.com>
+References: <20191104115238.2394-1-chao.hao@mediatek.com>
+ <20191104115238.2394-4-chao.hao@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 39EAD26C571E2DA9A3ADF7D67BFB280A5C20D797FC547AE679A650866EB2D9B32000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_041100_700184_FBF1E7FA 
-X-CRM114-Status: GOOD (  23.17  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191216_041324_571721_F8A2DF98 
+X-CRM114-Status: GOOD (  25.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,168 +87,228 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
- Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Anan Sun <anan.sun@mediatek.com>, devicetree@vger.kernel.org,
+ Cui Zhang <cui.zhang@mediatek.com>, Jun Yan <jun.yan@mediatek.com>,
+ wsd_upstream@mediatek.com, Joerg Roedel <joro@8bytes.org>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Miles Chen <miles.chen@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Guangming Cao <guangming.cao@mediatek.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQW5keSwKCkFuZHkgWWFuIDxhbmR5LnlhbkByb2NrLWNoaXBzLmNvbT4gd3JvdGUgb24gTW9u
-LCAxNiBEZWMgMjAxOSAyMDowMDozMQorMDgwMDoKCj4gSGkgTWlxdWVsOgo+IAo+IFRoYW5rcyBm
-b3IgeW91ciB3b3JrIGhlcmUuCj4gCj4gQSBkaXNjdXNzaW9uIGFib3V0IHRoZSBncmYgd3JpdGUg
-bWFjcm8gYmVsbG93Lgo+IAo+IE9uIDEyLzE0LzE5IDI6MTAgQU0sIE1pcXVlbCBSYXluYWwgd3Jv
-dGU6Cj4gPiBJbnRyb2R1Y2UgUFgzMCBMVkRTIHN1cHBvcnQuIFRoaXMgbWVhbnMgYWRkaW5nIHRo
-ZSByZWxldmFudCBoZWxwZXIKPiA+IGZ1bmN0aW9ucywgYSBzcGVjaWZpYyBwcm9iZSBhbmQgYWxz
-byB0aGUgaW5pdGlhbGl6YXRpb24gb2YgYSBzcGVjaWZpYwo+ID4gUEhZLgo+ID4KPiA+IFNpZ25l
-ZC1vZmYtYnk6IE1pcXVlbCBSYXluYWwgPG1pcXVlbC5yYXluYWxAYm9vdGxpbi5jb20+Cj4gPiAt
-LS0KPiA+ICAgZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2x2ZHMuYyB8IDE3MyAr
-KysrKysrKysrKysrKysrKysrKysrKwo+ID4gICBkcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9j
-a2NoaXBfbHZkcy5oIHwgIDE0ICsrCj4gPiAgIDIgZmlsZXMgY2hhbmdlZCwgMTg3IGluc2VydGlv
-bnMoKykKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tj
-aGlwX2x2ZHMuYyBiL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9sdmRzLmMKPiA+
-IGluZGV4IGEwYzIwM2RjZDY2Zi4uZTU1MGMyZjEwMmUwIDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVy
-cy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2x2ZHMuYwo+ID4gKysrIGIvZHJpdmVycy9ncHUv
-ZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2x2ZHMuYwo+ID4gQEAgLTEwLDYgKzEwLDcgQEAKPiA+ICAg
-I2luY2x1ZGUgPGxpbnV4L2NvbXBvbmVudC5oPgo+ID4gICAjaW5jbHVkZSA8bGludXgvbWZkL3N5
-c2Nvbi5oPgo+ID4gICAjaW5jbHVkZSA8bGludXgvb2ZfZ3JhcGguaD4KPiA+ICsjaW5jbHVkZSA8
-bGludXgvcGh5L3BoeS5oPgo+ID4gICAjaW5jbHVkZSA8bGludXgvcGluY3RybC9kZXZpbmZvLmg+
-Cj4gPiAgICNpbmNsdWRlIDxsaW51eC9wbGF0Zm9ybV9kZXZpY2UuaD4KPiA+ICAgI2luY2x1ZGUg
-PGxpbnV4L3BtX3J1bnRpbWUuaD4KPiA+IEBAIC01NCw2ICs1NSw3IEBAIHN0cnVjdCByb2NrY2hp
-cF9sdmRzIHsKPiA+ICAgCXZvaWQgX19pb21lbSAqcmVnczsKPiA+ICAgCXN0cnVjdCByZWdtYXAg
-KmdyZjsKPiA+ICAgCXN0cnVjdCBjbGsgKnBjbGs7Cj4gPiArCXN0cnVjdCBwaHkgKmRwaHk7Cj4g
-PiAgIAljb25zdCBzdHJ1Y3Qgcm9ja2NoaXBfbHZkc19zb2NfZGF0YSAqc29jX2RhdGE7Cj4gPiAg
-IAlpbnQgb3V0cHV0OyAvKiByZ2IgbHZkcyBvciBkdWFsIGx2ZHMgb3V0cHV0ICovCj4gPiAgIAlp
-bnQgZm9ybWF0OyAvKiB2ZXNhIG9yIGplaWRhIGZvcm1hdCAqLwo+ID4gQEAgLTMyMiw2ICszMjQs
-MTMzIEBAIHN0YXRpYyB2b2lkIHJrMzI4OF9sdmRzX2VuY29kZXJfZGlzYWJsZShzdHJ1Y3QgZHJt
-X2VuY29kZXIgKmVuY29kZXIpCj4gPiAgIAlkcm1fcGFuZWxfdW5wcmVwYXJlKGx2ZHMtPnBhbmVs
-KTsKPiA+ICAgfSAgCj4gPiAgID4gK3N0YXRpYyBpbnQgcHgzMF9sdmRzX3Bvd2Vyb24oc3RydWN0
-IHJvY2tjaGlwX2x2ZHMgKmx2ZHMpICAKPiA+ICt7Cj4gPiArCWludCByZXQ7Cj4gPiArCj4gPiAr
-CXJldCA9IHBtX3J1bnRpbWVfZ2V0X3N5bmMobHZkcy0+ZGV2KTsKPiA+ICsJaWYgKHJldCA8IDAp
-IHsKPiA+ICsJCURSTV9ERVZfRVJST1IobHZkcy0+ZGV2LCAiZmFpbGVkIHRvIGdldCBwbSBydW50
-aW1lOiAlZFxuIiwgcmV0KTsKPiA+ICsJCXJldHVybiByZXQ7Cj4gPiArCX0KPiA+ICsKPiA+ICsJ
-LyogRW5hYmxlIExWRFMgbW9kZSAqLwo+ID4gKwlyZXR1cm4gcmVnbWFwX3VwZGF0ZV9iaXRzKGx2
-ZHMtPmdyZiwgUFgzMF9MVkRTX0dSRl9QRF9WT19DT04xLAo+ID4gKwkJCQkgIFBYMzBfTFZEU19N
-T0RFX0VOKDEpIHwgUFgzMF9MVkRTX1AyU19FTigxKSwKPiA+ICsJCQkJICBQWDMwX0xWRFNfTU9E
-RV9FTigxKSB8IFBYMzBfTFZEU19QMlNfRU4oMSkpOwo+ID4gK30KPiA+ICsKPiA+ICtzdGF0aWMg
-dm9pZCBweDMwX2x2ZHNfcG93ZXJvZmYoc3RydWN0IHJvY2tjaGlwX2x2ZHMgKmx2ZHMpCj4gPiAr
-ewo+ID4gKwlyZWdtYXBfdXBkYXRlX2JpdHMobHZkcy0+Z3JmLCBQWDMwX0xWRFNfR1JGX1BEX1ZP
-X0NPTjEsCj4gPiArCQkJICAgUFgzMF9MVkRTX01PREVfRU4oMSkgfCBQWDMwX0xWRFNfUDJTX0VO
-KDEpLAo+ID4gKwkJCSAgIFBYMzBfTFZEU19NT0RFX0VOKDApIHwgUFgzMF9MVkRTX1AyU19FTigw
-KSk7Cj4gPiArCj4gPiArCXBtX3J1bnRpbWVfcHV0KGx2ZHMtPmRldik7Cj4gPiArfQo+ID4gKwo+
-ID4gK3N0YXRpYyBpbnQgcHgzMF9sdmRzX2dyZl9jb25maWcoc3RydWN0IGRybV9lbmNvZGVyICpl
-bmNvZGVyLAo+ID4gKwkJCQlzdHJ1Y3QgZHJtX2Rpc3BsYXlfbW9kZSAqbW9kZSkKPiA+ICt7Cj4g
-PiArCXN0cnVjdCByb2NrY2hpcF9sdmRzICpsdmRzID0gZW5jb2Rlcl90b19sdmRzKGVuY29kZXIp
-Owo+ID4gKwl1OCBuaHN5bmMgPSAhKG1vZGUtPmZsYWdzICYgRFJNX01PREVfRkxBR19QSFNZTkMp
-Owo+ID4gKwl1OCBudnN5bmMgPSAhKG1vZGUtPmZsYWdzICYgRFJNX01PREVfRkxBR19QVlNZTkMp
-Owo+ID4gKwl1OCBuZGNsayA9ICEobW9kZS0+ZmxhZ3MgJiBEUk1fTU9ERV9GTEFHX1BDU1lOQyk7
-Cj4gPiArCWludCByZXQ7Cj4gPiArCj4gPiArCWlmIChsdmRzLT5vdXRwdXQgIT0gRElTUExBWV9P
-VVRQVVRfTFZEUykgewo+ID4gKwkJRFJNX0RFVl9FUlJPUihsdmRzLT5kZXYsICJVbnN1cHBvcnRl
-ZCBkaXNwbGF5IG91dHB1dCAlZFxuIiwKPiA+ICsJCQkgICAgICBsdmRzLT5vdXRwdXQpOwo+ID4g
-KwkJcmV0dXJuIC1FSU5WQUw7Cj4gPiArCX0KPiA+ICsKPiA+ICsJaWYgKG5oc3luYyBeIG52c3lu
-Yykgewo+ID4gKwkJRFJNX0RFVl9FUlJPUihsdmRzLT5kZXYsICJVbnN1cHBvcnRlZCBIc3luYy9W
-c3luYyBwb2xhcml0eVxuIik7Cj4gPiArCQlyZXR1cm4gLUVJTlZBTDsKPiA+ICsJfQo+ID4gKwo+
-ID4gKwkvKiBTZXQgZm9ybWF0ICovCj4gPiArCXJldCA9IHJlZ21hcF91cGRhdGVfYml0cyhsdmRz
-LT5ncmYsIFBYMzBfTFZEU19HUkZfUERfVk9fQ09OMSwKPiA+ICsJCQkJIFBYMzBfTFZEU19GT1JN
-QVQobHZkcy0+Zm9ybWF0KSwKPiA+ICsJCQkJIFBYMzBfTFZEU19GT1JNQVQobHZkcy0+Zm9ybWF0
-KSk7Cj4gPiArCWlmIChyZXQpCj4gPiArCQlyZXR1cm4gcmV0Owo+ID4gKwo+ID4gKwkvKiBDb250
-cm9sIEhzeW5jL1ZzeW5jIHBvbGFyaXR5ICovCj4gPiArCXJldCA9IHJlZ21hcF91cGRhdGVfYml0
-cyhsdmRzLT5ncmYsIFBYMzBfTFZEU19HUkZfUERfVk9fQ09OMCwKPiA+ICsJCQkJIFBYMzBfTFZE
-U19USUVfQ0xLUygxKSwKPiA+ICsJCQkJIFBYMzBfTFZEU19USUVfQ0xLUygxKSk7Cj4gPiArCWlm
-IChyZXQpCj4gPiArCQlyZXR1cm4gcmV0Owo+ID4gKwo+ID4gKwkvKiBTZXQgSHN5bmMvVnN5bmMg
-cG9sYXJpdHkgKi8KPiA+ICsJcmV0ID0gcmVnbWFwX3VwZGF0ZV9iaXRzKGx2ZHMtPmdyZiwgUFgz
-MF9MVkRTX0dSRl9QRF9WT19DT04wLAo+ID4gKwkJCQkgUFgzMF9MVkRTX0lOVkVSVF9DTEtTKDEp
-LAo+ID4gKwkJCQkgUFgzMF9MVkRTX0lOVkVSVF9DTEtTKG5oc3luYykpOwo+ID4gKwlpZiAocmV0
-KQo+ID4gKwkJcmV0dXJuIHJldDsKPiA+ICsKPiA+ICsJLyogU2V0IGRjbGsgcG9sYXJpdHkgKi8K
-PiA+ICsJcmV0dXJuIHJlZ21hcF91cGRhdGVfYml0cyhsdmRzLT5ncmYsIFBYMzBfTFZEU19HUkZf
-UERfVk9fQ09OMCwKPiA+ICsJCQkJICBQWDMwX0xWRFNfSU5WRVJUX0RDTEsoMSksCj4gPiArCQkJ
-CSAgUFgzMF9MVkRTX0lOVkVSVF9EQ0xLKG5kY2xrKSk7Cj4gPiArfQo+ID4gKwo+ID4gK3N0YXRp
-YyBpbnQgcHgzMF9sdmRzX3NldF92b3Bfc291cmNlKHN0cnVjdCByb2NrY2hpcF9sdmRzICpsdmRz
-LAo+ID4gKwkJCQkgICAgc3RydWN0IGRybV9lbmNvZGVyICplbmNvZGVyKQo+ID4gK3sKPiA+ICsJ
-aW50IHZvcDsKPiA+ICsKPiA+ICsJdm9wID0gZHJtX29mX2VuY29kZXJfYWN0aXZlX2VuZHBvaW50
-X2lkKGx2ZHMtPmRldi0+b2Zfbm9kZSwgZW5jb2Rlcik7Cj4gPiArCWlmICh2b3AgPCAwKQo+ID4g
-KwkJcmV0dXJuIHZvcDsKPiA+ICsKPiA+ICsJcmV0dXJuIHJlZ21hcF91cGRhdGVfYml0cyhsdmRz
-LT5ncmYsIFBYMzBfTFZEU19HUkZfUERfVk9fQ09OMSwKPiA+ICsJCQkJICBQWDMwX0xWRFNfVk9Q
-X1NFTCgxKSwKPiA+ICsJCQkJICBQWDMwX0xWRFNfVk9QX1NFTCh2b3ApKTsKPiA+ICt9Cj4gPiAr
-Cj4gPiArc3RhdGljIHZvaWQgcHgzMF9sdmRzX2VuY29kZXJfZW5hYmxlKHN0cnVjdCBkcm1fZW5j
-b2RlciAqZW5jb2RlcikKPiA+ICt7Cj4gPiArCXN0cnVjdCByb2NrY2hpcF9sdmRzICpsdmRzID0g
-ZW5jb2Rlcl90b19sdmRzKGVuY29kZXIpOwo+ID4gKwlzdHJ1Y3QgZHJtX2Rpc3BsYXlfbW9kZSAq
-bW9kZSA9ICZlbmNvZGVyLT5jcnRjLT5zdGF0ZS0+YWRqdXN0ZWRfbW9kZTsKPiA+ICsJaW50IHJl
-dDsKPiA+ICsKPiA+ICsJZHJtX3BhbmVsX3ByZXBhcmUobHZkcy0+cGFuZWwpOwo+ID4gKwo+ID4g
-KwlyZXQgPSBweDMwX2x2ZHNfcG93ZXJvbihsdmRzKTsKPiA+ICsJaWYgKHJldCkgewo+ID4gKwkJ
-RFJNX0RFVl9FUlJPUihsdmRzLT5kZXYsICJmYWlsZWQgdG8gcG93ZXIgb24gTFZEUzogJWRcbiIs
-IHJldCk7Cj4gPiArCQlkcm1fcGFuZWxfdW5wcmVwYXJlKGx2ZHMtPnBhbmVsKTsKPiA+ICsJCXJl
-dHVybjsKPiA+ICsJfQo+ID4gKwo+ID4gKwlyZXQgPSBweDMwX2x2ZHNfZ3JmX2NvbmZpZyhlbmNv
-ZGVyLCBtb2RlKTsKPiA+ICsJaWYgKHJldCkgewo+ID4gKwkJRFJNX0RFVl9FUlJPUihsdmRzLT5k
-ZXYsICJmYWlsZWQgdG8gY29uZmlndXJlIExWRFM6ICVkXG4iLCByZXQpOwo+ID4gKwkJZHJtX3Bh
-bmVsX3VucHJlcGFyZShsdmRzLT5wYW5lbCk7Cj4gPiArCQlyZXR1cm47Cj4gPiArCX0KPiA+ICsK
-PiA+ICsJcmV0ID0gcHgzMF9sdmRzX3NldF92b3Bfc291cmNlKGx2ZHMsIGVuY29kZXIpOwo+ID4g
-KwlpZiAocmV0KSB7Cj4gPiArCQlEUk1fREVWX0VSUk9SKGx2ZHMtPmRldiwgImZhaWxlZCB0byBz
-ZXQgVk9QIHNvdXJjZTogJWRcbiIsIHJldCk7Cj4gPiArCQlkcm1fcGFuZWxfdW5wcmVwYXJlKGx2
-ZHMtPnBhbmVsKTsKPiA+ICsJCXJldHVybjsKPiA+ICsJfQo+ID4gKwo+ID4gKwlkcm1fcGFuZWxf
-ZW5hYmxlKGx2ZHMtPnBhbmVsKTsKPiA+ICt9Cj4gPiArCj4gPiArc3RhdGljIHZvaWQgcHgzMF9s
-dmRzX2VuY29kZXJfZGlzYWJsZShzdHJ1Y3QgZHJtX2VuY29kZXIgKmVuY29kZXIpCj4gPiArewo+
-ID4gKwlzdHJ1Y3Qgcm9ja2NoaXBfbHZkcyAqbHZkcyA9IGVuY29kZXJfdG9fbHZkcyhlbmNvZGVy
-KTsKPiA+ICsKPiA+ICsJZHJtX3BhbmVsX2Rpc2FibGUobHZkcy0+cGFuZWwpOwo+ID4gKwlweDMw
-X2x2ZHNfcG93ZXJvZmYobHZkcyk7Cj4gPiArCWRybV9wYW5lbF91bnByZXBhcmUobHZkcy0+cGFu
-ZWwpOwo+ID4gK30KPiA+ICsKPiA+ICAgc3RhdGljIGNvbnN0Cj4gPiAgIHN0cnVjdCBkcm1fZW5j
-b2Rlcl9oZWxwZXJfZnVuY3MgcmszMjg4X2x2ZHNfZW5jb2Rlcl9oZWxwZXJfZnVuY3MgPSB7Cj4g
-PiAgIAkuZW5hYmxlID0gcmszMjg4X2x2ZHNfZW5jb2Rlcl9lbmFibGUsCj4gPiBAQCAtMzI5LDYg
-KzQ1OCwxMyBAQCBzdHJ1Y3QgZHJtX2VuY29kZXJfaGVscGVyX2Z1bmNzIHJrMzI4OF9sdmRzX2Vu
-Y29kZXJfaGVscGVyX2Z1bmNzID0gewo+ID4gICAJLmF0b21pY19jaGVjayA9IHJvY2tjaGlwX2x2
-ZHNfZW5jb2Rlcl9hdG9taWNfY2hlY2ssCj4gPiAgIH07ICAKPiA+ICAgPiArc3RhdGljIGNvbnN0
-ICAKPiA+ICtzdHJ1Y3QgZHJtX2VuY29kZXJfaGVscGVyX2Z1bmNzIHB4MzBfbHZkc19lbmNvZGVy
-X2hlbHBlcl9mdW5jcyA9IHsKPiA+ICsJLmVuYWJsZSA9IHB4MzBfbHZkc19lbmNvZGVyX2VuYWJs
-ZSwKPiA+ICsJLmRpc2FibGUgPSBweDMwX2x2ZHNfZW5jb2Rlcl9kaXNhYmxlLAo+ID4gKwkuYXRv
-bWljX2NoZWNrID0gcm9ja2NoaXBfbHZkc19lbmNvZGVyX2F0b21pY19jaGVjaywKPiA+ICt9Owo+
-ID4gKwo+ID4gICBzdGF0aWMgY29uc3Qgc3RydWN0IGRybV9lbmNvZGVyX2Z1bmNzIHJvY2tjaGlw
-X2x2ZHNfZW5jb2Rlcl9mdW5jcyA9IHsKPiA+ICAgCS5kZXN0cm95ID0gZHJtX2VuY29kZXJfY2xl
-YW51cCwKPiA+ICAgfTsKPiA+IEBAIC0zNzksMTYgKzUxNSw1MyBAQCBzdGF0aWMgaW50IHJrMzI4
-OF9sdmRzX3Byb2JlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYsCj4gPiAgIAlyZXR1cm4g
-MDsKPiA+ICAgfSAgCj4gPiAgID4gK3N0YXRpYyBpbnQgcHgzMF9sdmRzX3Byb2JlKHN0cnVjdCBw
-bGF0Zm9ybV9kZXZpY2UgKnBkZXYsICAKPiA+ICsJCQkgICBzdHJ1Y3Qgcm9ja2NoaXBfbHZkcyAq
-bHZkcykKPiA+ICt7Cj4gPiArCWludCByZXQ7Cj4gPiArCj4gPiArCS8qIE1TQiAqLwo+ID4gKwly
-ZXQgPSAgcmVnbWFwX3VwZGF0ZV9iaXRzKGx2ZHMtPmdyZiwgUFgzMF9MVkRTX0dSRl9QRF9WT19D
-T04xLAo+ID4gKwkJCQkgIFBYMzBfTFZEU19NU0JTRUwoMSksCj4gPiArCQkJCSAgUFgzMF9MVkRT
-X01TQlNFTCgxKSk7Cj4gPiArCWlmIChyZXQpCj4gPiArCQlyZXR1cm4gcmV0Owo+ID4gKwo+ID4g
-KwkvKiBQSFkgKi8KPiA+ICsJbHZkcy0+ZHBoeSA9IGRldm1fcGh5X2dldCgmcGRldi0+ZGV2LCAi
-ZHBoeSIpOwo+ID4gKwlpZiAoSVNfRVJSKGx2ZHMtPmRwaHkpKQo+ID4gKwkJcmV0dXJuIFBUUl9F
-UlIobHZkcy0+ZHBoeSk7Cj4gPiArCj4gPiArCXBoeV9pbml0KGx2ZHMtPmRwaHkpOwo+ID4gKwlp
-ZiAocmV0KQo+ID4gKwkJcmV0dXJuIHJldDsKPiA+ICsKPiA+ICsJcGh5X3NldF9tb2RlKGx2ZHMt
-PmRwaHksIFBIWV9NT0RFX0xWRFMpOwo+ID4gKwlpZiAocmV0KQo+ID4gKwkJcmV0dXJuIHJldDsK
-PiA+ICsKPiA+ICsJcmV0dXJuIHBoeV9wb3dlcl9vbihsdmRzLT5kcGh5KTsKPiA+ICt9Cj4gPiAr
-Cj4gPiAgIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgcm9ja2NoaXBfbHZkc19zb2NfZGF0YSByazMyODhf
-bHZkc19kYXRhID0gewo+ID4gICAJLnByb2JlID0gcmszMjg4X2x2ZHNfcHJvYmUsCj4gPiAgIAku
-aGVscGVyX2Z1bmNzID0gJnJrMzI4OF9sdmRzX2VuY29kZXJfaGVscGVyX2Z1bmNzLAo+ID4gICB9
-OyAgCj4gPiAgID4gK3N0YXRpYyBjb25zdCBzdHJ1Y3Qgcm9ja2NoaXBfbHZkc19zb2NfZGF0YSBw
-eDMwX2x2ZHNfZGF0YSA9IHsgIAo+ID4gKwkucHJvYmUgPSBweDMwX2x2ZHNfcHJvYmUsCj4gPiAr
-CS5oZWxwZXJfZnVuY3MgPSAmcHgzMF9sdmRzX2VuY29kZXJfaGVscGVyX2Z1bmNzLAo+ID4gK307
-Cj4gPiArCj4gPiAgIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkIHJvY2tjaGlwX2x2
-ZHNfZHRfaWRzW10gPSB7Cj4gPiAgIAl7Cj4gPiAgIAkJLmNvbXBhdGlibGUgPSAicm9ja2NoaXAs
-cmszMjg4LWx2ZHMiLAo+ID4gICAJCS5kYXRhID0gJnJrMzI4OF9sdmRzX2RhdGEKPiA+ICAgCX0s
-Cj4gPiArCXsKPiA+ICsJCS5jb21wYXRpYmxlID0gInJvY2tjaGlwLHB4MzAtbHZkcyIsCj4gPiAr
-CQkuZGF0YSA9ICZweDMwX2x2ZHNfZGF0YQo+ID4gKwl9LAo+ID4gICAJe30KPiA+ICAgfTsKPiA+
-ICAgTU9EVUxFX0RFVklDRV9UQUJMRShvZiwgcm9ja2NoaXBfbHZkc19kdF9pZHMpOwo+ID4gZGlm
-ZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9yb2NrY2hpcF9sdmRzLmggYi9kcml2
-ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBfbHZkcy5oCj4gPiBpbmRleCBlNDFlOWFiM2Mz
-MDYuLjdjZmIxMDJiNDg1NCAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hp
-cC9yb2NrY2hpcF9sdmRzLmgKPiA+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9yb2NrY2hpcC9yb2Nr
-Y2hpcF9sdmRzLmgKPiA+IEBAIC0xMDYsNCArMTA2LDE4IEBACj4gPiAgICNkZWZpbmUgTFZEU19W
-RVNBXzE4CQkJCTIKPiA+ICAgI2RlZmluZSBMVkRTX0pFSURBXzE4CQkJCTMgIAo+ID4gICA+ICsj
-ZGVmaW5lIFdSSVRFX0VOKHYsIGgsIGwpICAoKEdFTk1BU0soaCwgbCkgPDwgMTYpIHwgKHYgPDwg
-bCkpICAKPiAKPiAKPiBIb3cgYWJvdXQgcmVuYW1lIFdSSVRFX0VOIHRvIEhJV09SRF9VUERBVEUg
-dG8ga2VlcCBhbGlnbiB3aXRoIG90aGVyIG1vZHVsZXMgdGhhdCB3cml0ZSBncmY6IHN1Y2ggYXMg
-ZHdtYWMtcmsuYy9kdy1taXBpLWRzaS1yb2NraGlwLmMvZHctaGRtaS1yb2NrY2hpcC5jCgpTdXJl
-LiBJdCBpcyBhbHNvIHRoZSBuYW1lIG9mIHRoaXMgbWFjcm8gaW4gdGhlIEJTUCBidXQgSSBmb3Vu
-ZCBpdCBzbwp1bmRlc2NyaXB0aXZlIHRoYXQgSSBjaGFuZ2VkIGl0LiBJIGRvbid0IGxpa2UgdmVy
-eSBtdWNoIGl0cyBuZXcgbmFtZQpuZWl0aGVyIHNvIEknbGwgZ28gYmFjayB0byB0aGUgb3JpZ2lu
-YWwgb25lLgoKVGhhbmtzLApNaXF1w6hsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon, 2019-11-04 at 19:52 +0800, Chao Hao wrote:
+> Start with this patch, we will change the SW architecture
+> to support multiple domains. SW architecture will has a big change,
+> so we need to modify a little bit by more than one patch.
+> The new SW overall architecture is as below:
+> 
+> 				iommu0   iommu1
+> 				  |	    |
+> 				  -----------
+> 					|
+> 				mtk_iommu_pgtable
+> 					|
+> 			------------------------------------------
+> 			|		     |			 |
+> 		mtk_iommu_domain1   mtk_iommu_domain2  mtk_iommu_domain3
+> 			|                    |                   |
+> 		iommu_group1         iommu_group2           iommu_group3
+> 			|                    |                   |
+> 		iommu_domain1       iommu_domain2	    iommu_domain3
+> 			|                    |                   |
+> 		iova region1(normal)  iova region2(CCU)    iova region3(VPU)
+> 
+> For current structure, no matter how many iommus there are,
+> they use the same page table to simplify the usage of module.
+> In order to make the software architecture more explicit, this
+> patch will create a global mtk_iommu_pgtable structure to describe
+> page table and all the iommus use it.
+
+Thanks for the hard work of this file. Actually this patch and the later
+ones confuse me. Why do you make this flow change? 
+for making the code "more explicit" or for adding multi-domain support
+in 13/13.
+
+IMHO, the change is unnecessary.
+a) For me, this change has no improvement. currently we use a global
+mtk_iommu_get_m4u_data to get the M4U data. I will be very glad if you
+could get rid of it. But in this patchset, You use a another global
+mtk_iommu_pgtable to instead. For me. It has no improvement.
+
+b) This patchset break the original flow. device_group give you a
+software chance for initializing, then you move pagetable allocating
+code into it. But it isn't device_group job.
+
+I can not decide if your flow is right. But if you only want to add
+support multi-domain, I guess you could extend the current "m4u_group"
+to a array "m4u_group[N]". It may be more simple. To make mt6779
+progress easily, I suggest you can use this way to support multi-domain
+firstly. Then you could send this new mtk_iommu_pgtable patchset for the
+code "more explicit" if you insist.
+
+> The diagram is as below:
+> 
+> 	mtk_iommu_data1(MM)       mtk_iommu_data2(APU)
+> 		|			   |
+> 		|			   |
+> 		------mtk_iommu_pgtable-----
+> 
+> We need to create global mtk_iommu_pgtable to include all the iova
+> regions firstly and special iova regions by divided based on it,
+> so the information of pgtable needs to be created in device_group.
+> 
+> Signed-off-by: Chao Hao <chao.hao@mediatek.com>
+> ---
+>  drivers/iommu/mtk_iommu.c | 84 +++++++++++++++++++++++++++++++++++++++
+>  drivers/iommu/mtk_iommu.h |  1 +
+>  2 files changed, 85 insertions(+)
+> 
+> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> index f2847e661137..fcbde6b0f58d 100644
+> --- a/drivers/iommu/mtk_iommu.c
+> +++ b/drivers/iommu/mtk_iommu.c
+> @@ -123,6 +123,12 @@ struct mtk_iommu_domain {
+>  	struct iommu_domain		domain;
+>  };
+>  
+> +struct mtk_iommu_pgtable {
+> +	struct io_pgtable_cfg	cfg;
+> +	struct io_pgtable_ops	*iop;
+> +};
+> +
+> +static struct mtk_iommu_pgtable *share_pgtable;
+>  static const struct iommu_ops mtk_iommu_ops;
+>  
+>  /*
+> @@ -170,6 +176,11 @@ static struct mtk_iommu_data *mtk_iommu_get_m4u_data(void)
+>  	return NULL;
+>  }
+>  
+> +static struct mtk_iommu_pgtable *mtk_iommu_get_pgtable(void)
+> +{
+> +	return share_pgtable;
+> +}
+> +
+>  static struct mtk_iommu_domain *to_mtk_domain(struct iommu_domain *dom)
+>  {
+>  	return container_of(dom, struct mtk_iommu_domain, domain);
+> @@ -322,6 +333,13 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
+>  {
+>  	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
+>  
+> +	if (data->pgtable) {
+> +		dom->cfg = data->pgtable->cfg;
+> +		dom->iop = data->pgtable->iop;
+> +		dom->domain.pgsize_bitmap = data->pgtable->cfg.pgsize_bitmap;
+> +		return 0;
+> +	}
+> +
+>  	dom->cfg = (struct io_pgtable_cfg) {
+>  		.quirks = IO_PGTABLE_QUIRK_ARM_NS |
+>  			IO_PGTABLE_QUIRK_NO_PERMS |
+> @@ -345,6 +363,61 @@ static int mtk_iommu_domain_finalise(struct mtk_iommu_domain *dom)
+>  	return 0;
+>  }
+>  
+> +static struct mtk_iommu_pgtable *create_pgtable(struct mtk_iommu_data *data)
+> +{
+> +	struct mtk_iommu_pgtable *pgtable;
+> +
+> +	pgtable = kzalloc(sizeof(*pgtable), GFP_KERNEL);
+> +	if (!pgtable)
+> +		return ERR_PTR(-ENOMEM);
+> +
+> +	pgtable->cfg = (struct io_pgtable_cfg) {
+> +		.quirks = IO_PGTABLE_QUIRK_ARM_NS |
+> +			IO_PGTABLE_QUIRK_NO_PERMS |
+> +			IO_PGTABLE_QUIRK_TLBI_ON_MAP |
+> +			IO_PGTABLE_QUIRK_ARM_MTK_EXT,
+> +		.pgsize_bitmap = mtk_iommu_ops.pgsize_bitmap,
+> +		.ias = 32,
+> +		.oas = 34,
+> +		.tlb = &mtk_iommu_flush_ops,
+> +		.iommu_dev = data->dev,
+> +	};
+> +
+> +	pgtable->iop = alloc_io_pgtable_ops(ARM_V7S, &pgtable->cfg, data);
+> +	if (!pgtable->iop) {
+> +		dev_err(data->dev, "Failed to alloc io pgtable\n");
+> +		return ERR_PTR(-EINVAL);
+> +	}
+> +
+> +	dev_info(data->dev, "%s create pgtable done\n", __func__);
+> +
+> +	return pgtable;
+> +}
+> +
+> +static int mtk_iommu_attach_pgtable(struct mtk_iommu_data *data,
+> +				    struct device *dev)
+> +{
+> +	struct mtk_iommu_pgtable *pgtable = mtk_iommu_get_pgtable();
+> +
+> +	/* create share pgtable */
+> +	if (!pgtable) {
+> +		pgtable = create_pgtable(data);
+> +		if (IS_ERR(pgtable)) {
+> +			dev_err(data->dev, "Failed to create pgtable\n");
+> +			return -ENOMEM;
+> +		}
+> +
+> +		share_pgtable = pgtable;
+> +	}
+> +
+> +	/* binding to pgtable */
+> +	data->pgtable = pgtable;
+> +
+> +	dev_info(data->dev, "m4u%d attach_pgtable done!\n", data->m4u_id);
+> +
+> +	return 0;
+> +}
+> +
+>  static struct iommu_domain *mtk_iommu_domain_alloc(unsigned type)
+>  {
+>  	struct mtk_iommu_domain *dom;
+> @@ -508,10 +581,21 @@ static void mtk_iommu_remove_device(struct device *dev)
+>  static struct iommu_group *mtk_iommu_device_group(struct device *dev)
+>  {
+>  	struct mtk_iommu_data *data = mtk_iommu_get_m4u_data();
+> +	struct mtk_iommu_pgtable *pgtable;
+> +	int ret = 0;
+>  
+>  	if (!data)
+>  		return ERR_PTR(-ENODEV);
+>  
+> +	pgtable = data->pgtable;
+> +	if (!pgtable) {
+> +		ret = mtk_iommu_attach_pgtable(data, dev);
+> +		if (ret) {
+> +			dev_err(data->dev, "Failed to device_group\n");
+> +			return NULL;
+> +		}
+> +	}
+> +
+>  	/* All the client devices are in the same m4u iommu-group */
+>  	if (!data->m4u_group) {
+>  		data->m4u_group = iommu_group_alloc();
+> diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+> index 132dc765a40b..dd5f19f78b62 100644
+> --- a/drivers/iommu/mtk_iommu.h
+> +++ b/drivers/iommu/mtk_iommu.h
+> @@ -61,6 +61,7 @@ struct mtk_iommu_data {
+>  	struct clk			*bclk;
+>  	phys_addr_t			protect_base; /* protect memory base */
+>  	struct mtk_iommu_suspend_reg	reg;
+> +	struct mtk_iommu_pgtable	*pgtable;
+>  	struct mtk_iommu_domain		*m4u_dom;
+>  	struct iommu_group		*m4u_group;
+>  	bool                            enable_4GB;
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
