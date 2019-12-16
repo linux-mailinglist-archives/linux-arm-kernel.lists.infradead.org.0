@@ -2,70 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12461120706
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 14:22:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32AC9120713
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 14:25:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kze5otapIv2CVMaid9PMJ29XMR2QeAlBg1DXhmdBV3M=; b=K0KgCjFXHtAs1F
-	lyWOObS6SUOczAPEet2rFVFldocKQPja68VVbdAI1QSGxbc1GrG8buPAH7O6sfotlMFzfNEpnk/aT
-	z+i6wHWTqP0lfh6NI0UD1fLwlmUcwKGjALKjhVHilqIhRoFblQZMmUOLMfFeS7zw5h0qb+yKsFxB/
-	Jzk1gdLdbtN/Ub2OcAst1tVo7GhYHTPAn5U5RkPEEDZ4DfKKYFN8sBmyILxgkO5Z/j7LrGN79kwp7
-	yqBVNVpeR3HDK/tDERJF4+1Ka1aLOJwanuee+8fClhVlwPttd+zHKwzq/wqWkjRPwgoXUlD+MRxWq
-	RwtGo/vNML79ZWll7/LA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=opa9iiCIIldcg6xDBmH7snuep7v8QKQeoqAujN74G8M=; b=o+X4CIr1HaVDH9
+	gy15UUiYUnF+OkUqUQ8uPzcHbjh7wzFJ1++M4PjYuut27RIYZv+DWZB8GVVHbB8vgyIX+zcvfxutD
+	K5sOD4LjnOIvfc+i6hRIDJgS8L67cdfpr87jQvXCA1GQZa8/Zoah20M9XzH9g2oa/sDI9Sms8JSPb
+	GBMaycE+hnN0N4wvlcTpX81NDpFSd6bOSsgGyKBAEOtIfXdA6bkOR0Ua6kj1yar00NwaRGhQX/EkU
+	4ZidKQOJG65cT5S2J3EKzRb67V0h7jJUxvQLuPqp5f3tXDFAotea2bF6ACulS0jni6KEYgGz4rvjg
+	LS7SIGo+QQ4KSuQCt2/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igqK6-00071s-Vx; Mon, 16 Dec 2019 13:22:06 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1igqNI-0000Cz-DK; Mon, 16 Dec 2019 13:25:24 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igqJy-00071U-EB
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 13:21:59 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue107 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1MGhi0-1iT9Ch3e2k-00DrdU; Mon, 16 Dec 2019 14:21:34 +0100
-From: Arnd Bergmann <arnd@arndb.de>
-To: Tony Lindgren <tony@atomide.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Tero Kristo <t-kristo@ti.com>,
- Santosh Shilimkar <santosh.shilimkar@oracle.com>
-Subject: [PATCH] ARM: omap2plus: select RESET_CONTROLLER
-Date: Mon, 16 Dec 2019 14:21:26 +0100
-Message-Id: <20191216132132.3330811-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
+ id 1igqN7-0000Bn-SC
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 13:25:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1576502709; bh=es+nOMcbHNUvRapBUN4dNUN1UmQSHOWrTb4CbncHywQ=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=tsO1ZGF1xfKCIUq16OlM2icXeTDgx8P0RR99yzocXToFCSskUe4dEZqEyANAQwbZh
+ nzkxDr39xTguJz3bbHmXeowcERvh5XnXHD1zwPNH2XirEWE6tkTzeLpa6CRwNHK9OU
+ dzQjLfqVJDbcHudGbMBRHzmlYsObxhMjB4WV0A8Q=
+Date: Mon, 16 Dec 2019 14:25:09 +0100
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Stefan Wahren <wahrenst@gmx.net>
+Subject: Re: [PATCH V4 01/10] bluetooth: hci_bcm: Fix RTS handling during
+ startup
+Message-ID: <20191216132509.ofqcdpwxsd7324ql@core.my.home>
+Mail-Followup-To: Stefan Wahren <wahrenst@gmx.net>,
+ Marcel Holtmann <marcel@holtmann.org>,
+ Johan Hedberg <johan.hedberg@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-bluetooth@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Eric Anholt <eric@anholt.net>, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+References: <1570375708-26965-1-git-send-email-wahrenst@gmx.net>
+ <1570375708-26965-2-git-send-email-wahrenst@gmx.net>
+ <61789264-a4c2-ac85-9d74-d186213ec70a@gmx.net>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:Wm5RTpZAgx5UpDGIoWv7v4EV7gdfDKQbLqHRuQjOl+FrgU30CXT
- axQk9AW0xPd7KS/ckntU087e9UeSzC5puiBOhiDC2jXNCLtwnF7z+3SGrPJDn5SrDkCBSfJ
- uaaXALhckSIy8qrY87GXPTv53Ehouq3yWA+xHHc9uk4WUVKG5qBHqn4arqcPnS1mAJ1LS67
- 1beLDQLKqRcI96Xz4pJ3Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:Hrhxfp/VpYg=:3otAal51aHHrkXXep6RH3D
- 7F0TWQqaWvIE6pZWycdW0E94YlOXWPMFP6aMmQvxiv1V+yLiY2VWmBia32ctSmLwaqXqDfRon
- pvhuknI9ImJtknZepqcWir9QoV61iyewoOYhWlh/TAb533Du5IpXnN+EpnZ/RLRbSfRNswjnv
- SVeX3cGJZZUFTaQldEZ7dSukka3ZgyFdVELyWO9lbJTbNY2usV4AEZLs+cU7vEnkWX5SmKpV7
- Wjh2GIYbkYJZgJXnHPLFS3IBzczQr9AR7supnUl1r5+QIx4P8QiPkyBgQL+ulfOG/TwHu+UT+
- TAvzHq/vmlFxQVJbr+gPGUWz+bfZUTcJgySg0B6PYMSWsckQ3EwtzyfKq9rS1Tf4TEN41PbOd
- 9MTGtmwxzpbsNOxYJXzm/3R/GWgSSj2Ws6No7WFdeSyG+o+qWPQrJvIBOjUPmQt/N5VgdSbsH
- 9/UmgMUJlFPZRVfQwd2ksC34toKEjbL6Pj+pnrzrQQeAHJKFfnJ/en/nmx4ePAJNxDOaSi34t
- n9k8kisZWjgEoL9UkqlPzN9PPKioK6KVWt8DPQVQo49jsJDIgUyfho/hWLQwOb2Oj2yiHpLPj
- hs6J9TPJv+vc09ftQI2x2ar3Qo9Sf4K+X7gHcpSaSVmMQt+w1p18DEKsaKKik03Cm1AZx930O
- FQsf7nrtKzqa57ux1XvcYb1qXkP4E5XKcnNm9TnE+KWVdu+xSAZVML3jAtPt2gH0pOZN3Vp0I
- ZqcPfdT7utDoewzkX7bHJx7AgSFSny7N+OkdsgTiQwjJZnrbbdslnq5Z/yCMn7sIHsc7ZSxEg
- eVaUCaX1Ulxe54UoREM+4uNOjYLy5HHCdVyPTpcff+DIoRgazBOxWn/vJICZcGIzMtY64yXYh
- HWZNCOLHk4g6rke0sltg==
+Content-Disposition: inline
+In-Reply-To: <61789264-a4c2-ac85-9d74-d186213ec70a@gmx.net>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_052158_769791_B370326F 
-X-CRM114-Status: GOOD (  10.55  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191216_052514_081496_1374AA30 
+X-CRM114-Status: GOOD (  19.93  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,55 +82,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-omap@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Johan Hedberg <johan.hedberg@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Eric Anholt <eric@anholt.net>, Ray Jui <rjui@broadcom.com>,
+ Marcel Holtmann <marcel@holtmann.org>, linux-bluetooth@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With the new omap_prm driver added unconditionally, omap2 builds
-fail when the reset controller subsystem is disabled:
+Hello,
 
-drivers/soc/ti/omap_prm.o: In function `omap_prm_probe':
-omap_prm.c:(.text+0x2d4): undefined reference to `devm_reset_controller_register'
+On Sun, Oct 20, 2019 at 11:17:28PM +0200, Stefan Wahren wrote:
+> Hi Marcel,
+> hi Johan,
+> 
+> Am 06.10.19 um 17:28 schrieb Stefan Wahren:
+> > The RPi 4 uses the hardware handshake lines for CYW43455, but the chip
+> > doesn't react to HCI requests during DT probe. The reason is the inproper
+> > handling of the RTS line during startup. According to the startup
+> > signaling sequence in the CYW43455 datasheet, the hosts RTS line must
+> > be driven after BT_REG_ON and BT_HOST_WAKE.
+> >
+> > Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+> > ---
+> >  drivers/bluetooth/hci_bcm.c | 2 ++
+> >  1 file changed, 2 insertions(+)
+> >
+> > diff --git a/drivers/bluetooth/hci_bcm.c b/drivers/bluetooth/hci_bcm.c
+> > index 7646636..0f73f6a 100644
+> > --- a/drivers/bluetooth/hci_bcm.c
+> > +++ b/drivers/bluetooth/hci_bcm.c
+> > @@ -445,9 +445,11 @@ static int bcm_open(struct hci_uart *hu)
+> >
+> >  out:
+> >  	if (bcm->dev) {
+> > +		hci_uart_set_flow_control(hu, true);
+> >  		hu->init_speed = bcm->dev->init_speed;
+> >  		hu->oper_speed = bcm->dev->oper_speed;
+> >  		err = bcm_gpio_set_power(bcm->dev, true);
+> > +		hci_uart_set_flow_control(hu, false);
+> >  		if (err)
+> >  			goto err_unset_hu;
+> >  	}
+> > --
+> > 2.7.4
+> 
+> would be nice to get some feedback about this.
 
-Fixes: 3e99cb214f03 ("soc: ti: add initial PRM driver with reset control support")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- arch/arm/mach-omap2/Kconfig | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+I started seeing failures on Orange Pi 3 in 5.5-rc:
 
-diff --git a/arch/arm/mach-omap2/Kconfig b/arch/arm/mach-omap2/Kconfig
-index fe0f82efb1de..639bc38567a7 100644
---- a/arch/arm/mach-omap2/Kconfig
-+++ b/arch/arm/mach-omap2/Kconfig
-@@ -95,6 +95,7 @@ config ARCH_OMAP2PLUS
- 	bool
- 	select ARCH_HAS_BANDGAP
- 	select ARCH_HAS_HOLES_MEMORYMODEL
-+	select ARCH_HAS_RESET_CONTROLLER
- 	select ARCH_OMAP
- 	select CLKSRC_MMIO
- 	select GENERIC_IRQ_CHIP
-@@ -105,11 +106,11 @@ config ARCH_OMAP2PLUS
- 	select OMAP_DM_TIMER
- 	select OMAP_GPMC
- 	select PINCTRL
-+	select RESET_CONTROLLER
- 	select SOC_BUS
- 	select TI_SYSC
- 	select OMAP_IRQCHIP
- 	select CLKSRC_TI_32K
--	select ARCH_HAS_RESET_CONTROLLER
- 	help
- 	  Systems based on OMAP2, OMAP3, OMAP4 or OMAP5
- 
--- 
-2.20.0
+[    3.839134] Bluetooth: hci0: command 0xfc18 tx timeout
+[   11.999136] Bluetooth: hci0: BCM: failed to write update baudrate (-110)
+[   12.004613] Bluetooth: hci0: Failed to set baudrate
+[   12.123187] Bluetooth: hci0: BCM: chip id 130
+[   12.128398] Bluetooth: hci0: BCM: features 0x0f
+[   12.154686] Bluetooth: hci0: BCM4345C5
+[   12.157165] Bluetooth: hci0: BCM4345C5 (003.006.006) build 0000
+[   15.343684] Bluetooth: hci0: BCM4345C5 (003.006.006) build 0038
 
+Switch to higher baudrate works again after reverting this patch.
+
+That board also uses RTS/CTS signalling.
+
+I guess the patch needs re-thinking/maybe other chips may not need this?
+
+I don't have access to datasheets.
+
+regards,
+	o.
+
+> Regards
+> Stefan
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
