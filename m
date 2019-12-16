@@ -2,100 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4A41121BA1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 22:21:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C885C121BA3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 22:22:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s3JBY3jrgtISuT+/PuVCBLCvxCadIt/IkwD0anKuvMM=; b=eW8Uyz5WXr9eOS
-	u0gGH6aA4cLzGivWC9Q5V5TOrRDAR2nKmjlIpMpzaT1HdsUzqZuh6hfjlcK2oYh6vPuQPvqlUQEt9
-	ZKeY0lQ0tb5IkPbkCUELidfIYP9m5k62hillven6kS7ToHxkXeNOMH4U+3G6BEMocTkdD0x9qe6Wp
-	6UOfpV0ViKv4IParf4xDfxW22anjiyHz5fUpUKSFuI0sm/Gi1B0XZMPr7N0bOHUFF/X3V2OQc/vwT
-	Dgq0J3teqst3kRT+dsQg9cFTku220uUg2XUvtyLXB5RDioJAPq4Qvqoat0z+ro6a95H8/pRCPC5af
-	FqJu3fqoHpTrLtMpUPLw==;
+	List-Owner; bh=pjUqSGhPItBzW0gh+hnUOiwXiMahvKlG82xmYW0jYlc=; b=Cs+ZfbmmFfH8dW
+	gI/rsrmB4o0n5o1NpBisv2803oLIGQXHDn91xWdu0KT49bjWyvlmNZ8+/bHFjJJRBKHF3n9EhoZIr
+	13+3OIMMoMa5XkTOIsXDGrvpUHJc+S8Yi6+q+2yyXZw/pkvacMxLQSxr/00k7JaGbbviwcfcTLAVS
+	rbJevbw8dNVgR4922NEAddStmpzK773SqHC8Y6eTKjZchfmRfbDXyTYbdTtrwXpNG+2wuS4oOMKhc
+	Cw8RWCNMzJNi9BrXxce4SKoX/s7X5kXSEYPrtUx2WHDVAAcExmUdKE2w/fMkHOWd3nVXnd+EOhbxC
+	4WU+i/xA7u7eCYk7QpMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igxo4-00027b-Jp; Mon, 16 Dec 2019 21:21:32 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1igxpM-0002ZZ-IZ; Mon, 16 Dec 2019 21:22:52 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igxnv-000276-Pf
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 21:21:26 +0000
-Received: by mail-pf1-x443.google.com with SMTP id b19so6323331pfo.2
+ id 1igxpD-0002Z0-Af
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 21:22:45 +0000
+Received: by mail-il1-x144.google.com with SMTP id f5so6612437ilq.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 13:21:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=NIsiOPIXGNdPj2KeSYFK0YZfg6aOCR5rYXMYdDTxxjg=;
- b=Leh+onp1c6334yt/mm+fFaM9lLR5NyudDQon1Vm+d+zouiogxkNO9Udu6U0ilXLZAK
- oAEBpEhg7LfX7GSrYmjwQeNY5eQwcUngig+Lhl0UUzbWbzOOemFmxuDrug+XIUnvXu1e
- xhJVAjywS/FrI2507lqJNncqe9hBQghN74/i0aKa2/BHrQR7I6fFqy+J7V7+URNwG3wd
- R/TdzXt1WE/pk43Wn+8pcyReJYwAn8Ty/IC0sohoCX+VIvzwSjg6jHuj34Pg8ujZWe1y
- +BA1Bs8DG53nkgN/WZCTuaCrYFTa/tD0tGOSw4Mv/TYybb7Gty50NmOPk1HGUBcyxPz/
- gAaQ==
+ Mon, 16 Dec 2019 13:22:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ADULMXYZJpcRkOz8oTK37UQEihg1gv7L4Ikzy6wAV8w=;
+ b=mQ67J6VJ/LWSkL+e7p0f5Fk2NJWWIADY59kJlh/sRuY42DK0DHq/QjDsmKVCP7enot
+ NNhbE3vWS/2WbTqxpD4BPctVOSWpLETvpgtQ+lz1q/bjvqjW00mx71xFi9kiAw8xPS5i
+ BLTSVJT+8skCvNfcBilC4UOVSOTuq9v3/cgeRDL3PgmDq7W/Gxi6UOVo5KOE8EBdZF1c
+ ELDU5BrKsyXcVKxRUqpvbOaUka1pdgR0vEefjodOj5fAxa04+aGLHgavSgMIrP29BBVA
+ YkOgadcRtaYm1t0x7S6O/mFzzSnbberlwvfjneCy8ULEuZrzhCXo/I0vmhmXgkwtLWre
+ LW8A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition
- :content-transfer-encoding:in-reply-to:user-agent;
- bh=NIsiOPIXGNdPj2KeSYFK0YZfg6aOCR5rYXMYdDTxxjg=;
- b=BMb1dZX9EvEH9G8FcIudFx/IoIae9HEtNUaDvW5CDYV1/B7Gu42TBbNkdSQQwts928
- mxWL7xgI34GPExU8uOlH+eTrdd6oUPyWU3MkL6q1G2lLpWP2DEULNG5SlkH1Man/rwSc
- My4nUCl/A1EzyXig8ZsXWfsNekr+JKghTzxVeuKbxR+X7U9QgrXcDlE8xYWtgs7kibMM
- Pb33J3bYCah+jSCKbsW5MPfVnnTRPiRVXxr2dAXyJ//NmY238Pf+cEbN75C2QTbx0jzA
- A3Vkw54uckX0anXrx5X0fXqfqCsdCCMZ310dKviQHlIKY4KjPiJWRXjyd2/cGm4BoeIx
- 86Cg==
-X-Gm-Message-State: APjAAAUY6b4gYQo2Kn+XiIfOuBi3ohZ5U6HwYT8FeE4Z1zYjHHkuxSrt
- AePa6zi0Klt8Q7+Z2TrFL+c=
-X-Google-Smtp-Source: APXvYqwMJME3LORIz+L/PbewupGbLPbnaMhEHCZv3ap7ixap1Q0Z1HQjfP2Tmx6HbqS5s8g/QX7bZA==
-X-Received: by 2002:a63:904c:: with SMTP id a73mr21103525pge.335.1576531282840; 
- Mon, 16 Dec 2019 13:21:22 -0800 (PST)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id w11sm23510386pfn.4.2019.12.16.13.21.21
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 16 Dec 2019 13:21:21 -0800 (PST)
-Date: Mon, 16 Dec 2019 13:21:20 -0800
-From: Guenter Roeck <linux@roeck-us.net>
-To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
-Subject: Re: [PATCH v11 14/14] hwmon: Add PECI dimmtemp driver
-Message-ID: <20191216212120.GA12089@roeck-us.net>
-References: <20191211194624.2872-1-jae.hyun.yoo@linux.intel.com>
- <20191211194624.2872-15-jae.hyun.yoo@linux.intel.com>
- <d75aaad9-ae07-feeb-966a-899ecfe9d4b3@roeck-us.net>
- <5ed9f292-e024-ffda-a1a8-870ba0f05c58@linux.intel.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ADULMXYZJpcRkOz8oTK37UQEihg1gv7L4Ikzy6wAV8w=;
+ b=JsSlh1CesvU1k+stlLVQ6+jZswha1o8FD+1BymUeGvsOXnKxwtPFErjzm9s/f0tabR
+ COavVjXp1qQhsl2qrOgPTu5PfvKKgrziYeMsZanfRC/dnfFxI7I6yVSP0YoRxWN6TjyG
+ ur4P4ZSFwQs1RgiAY47rc6PfH59fyS2OwhMJnuUS5h9aXPGvCDwcTQmEUhE6l1SJF/dD
+ AqoPAuixgtC7AazFZxEq+dKa16MCqt0McFlvGKznqy20L9CkmUrv94+zbvxJSQ1ZZlPt
+ f3luOTJ1J/ue+Jw+qDKx5UD8ugAVILx2w9HPnM4onGW7KvxCS6qMtSDb23jfh+Z7w8UO
+ J30Q==
+X-Gm-Message-State: APjAAAUxN2I6vUALWgJURVEvi+SILHuv5PvonmgOWttbDi8Lqw1f99Zb
+ ICfiWx6Y0Qte/dTS19p9py6uamCzdBx4cFRRz8f74rft
+X-Google-Smtp-Source: APXvYqxKp36+zgCZmrmmEq4UUIRfilecqGMmjdSfPKSfrEGJReCrdXjvR9aFopP+CCSdjkywQS2yOLBeyO/r9DNsSvM=
+X-Received: by 2002:a92:1711:: with SMTP id u17mr12955418ill.72.1576531362252; 
+ Mon, 16 Dec 2019 13:22:42 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5ed9f292-e024-ffda-a1a8-870ba0f05c58@linux.intel.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20191211230717.4879-1-mike.leach@linaro.org>
+In-Reply-To: <20191211230717.4879-1-mike.leach@linaro.org>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Mon, 16 Dec 2019 14:22:30 -0700
+Message-ID: <CANLsYkzVcTYutoYt5DWiOxyB8m3kCZVPHpTJPPe7YN=OoKtj1g@mail.gmail.com>
+Subject: Re: [PATCH v6 00/15] CoreSight CTI Driver
+To: Mike Leach <mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_132123_865110_A57B39C1 
-X-CRM114-Status: GOOD (  31.58  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191216_132243_381498_D4D9D67A 
+X-CRM114-Status: GOOD (  28.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,626 +90,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Randy Dunlap <rdunlap@infradead.org>, Tomer Maimon <tmaimon77@gmail.com>,
- devicetree@vger.kernel.org, Frederic Barrat <fbarrat@linux.vnet.ibm.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Lee Jones <lee.jones@linaro.org>,
- Jason M Biils <jason.m.bills@linux.intel.com>,
- Eric Sandeen <sandeen@redhat.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jonathan Corbet <corbet@lwn.net>, openbmc@lists.ozlabs.org,
- linux-doc@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Joel Stanley <joel@jms.id.au>, "Bryant G . Ly" <bryantly@linux.vnet.ibm.com>,
- Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de>,
- David Kershner <david.kershner@unisys.com>, Wu Hao <hao.wu@intel.com>,
- linux-hwmon@vger.kernel.org, Jean Delvare <jdelvare@suse.com>,
- Arnd Bergmann <arnd@arndb.de>, Philippe Ombredanne <pombredanne@nexb.com>,
- Johan Hovold <johan@kernel.org>, Tomohiro Kusumi <kusumi.tomohiro@gmail.com>,
- Rob Herring <robh+dt@kernel.org>,
- Stef van Os <stef.van.os@prodrive-technologies.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Sagar Dharia <sdharia@codeaurora.org>, linux-arm-kernel@lists.infradead.org,
- Alan Cox <alan@linux.intel.com>, Juergen Gross <jgross@suse.com>,
- Cyrille Pitchen <cyrille.pitchen@wedev4u.fr>, Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Darrick J . Wong" <darrick.wong@oracle.com>,
- Stephen Boyd <sboyd@codeaurora.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>, Vinod Koul <vkoul@kernel.org>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- "David S . Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
+ Coresight ML <coresight@lists.linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
+ Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 01:04:31PM -0800, Jae Hyun Yoo wrote:
-> Hi Guenter,
-> =
+On Wed, 11 Dec 2019 at 16:07, Mike Leach <mike.leach@linaro.org> wrote:
+>
+> CTIs are defined in the device tree and associated with other CoreSight
+> devices. The core CoreSight code has been modified to enable the registration
+> of the CTI devices on the same bus as the other CoreSight components,
+> but as these are not actually trace generation / capture devices, they
+> are not part of the Coresight path when generating trace.
+>
+> However, the definition of the standard CoreSight device has been extended
+> to include a reference to an associated CTI device, and the enable / disable
+> trace path operations will auto enable/disable any associated CTI devices at
+> the same time.
+>
+> Programming is at present via sysfs - a full API is provided to utilise the
+> hardware capabilities. As CTI devices are unprogrammed by default, the auto
+> enable describe above will have no effect until explicit programming takes
+> place.
+>
+> A set of device tree bindings specific to the CTI topology has been defined.
+> The driver accesses these in a platform agnostic manner, so ACPI bindings
+> can be added later, once they have been agreed and defined for the CTI device.
+>
+> Documentation has been updated to describe both the CTI hardware, its use and
+> programming in sysfs, and the new dts bindings required.
+>
+> Tested on DB410 board and Juno board, against the Linux 5.5-rc1 tree.
+>
+> Changes since v5:
+> 1) Fixed up device tree .yaml file. Using extra compatible string for
+> v8 architecture CTI connections.
+> 2) Ensure association code respects coresight mutex when setting cross
+> referenced pointers. Add in shutdown code.
+> 3) Multiple minor code fixes & rationalisation.
+>
+> Changes since v4:
+> Multiple changes following feedback from Mathieu, Leo and Suzuki.
+> 1) Dropped RFC tag - wider distribution
+> 2) CTI bindings definition now presented as a .yaml file - tested with
+> with 'dt-doc-validate' from devicetree.org/dt-schema project and in kernel
+> build tree with 'make dtbs_check' per kernel docs.
+> 3) Sysfs links to other CoreSight devices moved out of this set into
+> a following set that deals with all CoreSight devices & sysfs links.
+> 4) Documentation in .rst format and new directory following patchset in [1].
+> Extended example provided in docs.
+> 5) Rationalised devicetree of_ specifics to use generic fwnode functions
+> where possible to enable easier addition of ACPI support later.
+> 6) Other minor changes as requested in feedback from last patchset.
+>
+> Changes since v3:
+> 1) After discussion on CS mailing list, each CTI connection has a triggers<N>
+>    sysfs directory with name and trigger signals listed for the connection.
+> 2) Initial code for creating sysfs links between CoreSight components is
+>   introduced and implementation for CTI provided. This allows exploration
+>   of the CoreSight topology within the sysfs infrastructure. Patches for
+>   links between other CoreSight components to follow.
+> 3) Power management - CPU hotplug and idle omitted from this set as ongoing
+>    developments may define required direction. Additional patch set to follow.
+> 4) Multiple fixes applied as requested by reviewers esp. Matthieu, Suzuki
+>    and Leo.
+>
+> Changes since v2:
+> Updates to allow for new features on coresight/next and feedback from
+> Mathieu and Leo.
+>
+> 1) Rebase and restructuring to apply on top of ACPI support patch set,
+> currently on coresight/next. of_coresight_cti has been renamed to
+> coresight-cti-platform and device tree bindings added to this but accessed
+> in a platform agnostic manner using fwnode for later ACPI support
+> to be added.
+> 2) Split the sysfs patch info a series of functional patches.
+> 3) Revised the refcount and enabling support.
+> 4) Adopted the generic naming protocol - CTIs are either cti_cpuN or
+> cti_sysM
+> 5) Various minor presentation /checkpatch issues highlighted in feedback.
+> 6) revised CPU hotplug to cover missing cases needed by ETM.
+>
+> Changes since v1:
+> 1) Significant restructuring of the source code. Adds cti-sysfs file and
+> cti device tree file. Patches add per feature rather than per source
+> file.
+> 2) CPU type power event handling for hotplug moved to CoreSight core,
+> with generic registration interface provided for all CPU bound CS devices
+> to use.
+> 3) CTI signal interconnection details in sysfs now generated dynamically
+> from connection lists in driver. This to fix issue with multi-line sysfs
+> output in previous version.
+> 4) Full device tree bindings for DB410 and Juno provided (to the extent
+> that CTI information is available).
+> 5) AMBA driver update for UCI IDs are now upstream so no longer included
+> in this set.
+>
+> Mike Leach (15):
+>   coresight: cti: Initial CoreSight CTI Driver
+>   coresight: cti: Add sysfs coresight mgmt reg access.
+>   coresight: cti: Add sysfs access to program function regs
+>   coresight: cti: Add sysfs trigger / channel programming API
+>   dt-bindings: arm: Adds CoreSight CTI hardware definitions.
+>   coresight: cti: Add device tree support for v8 arch CTI
+>   coresight: cti: Add device tree support for custom CTI.
+>   coresight: cti: Enable CTI associated with devices.
+>   coresight: cti: Add connection information to sysfs
+>   dt-bindings: qcom: Add CTI options for qcom msm8916
+>   dt-bindings: arm: Juno platform - add CTI entries to device tree.
+>   dt-bindings: hisilicon: Add CTI bindings for hi-6220
+>   docs: coresight: Update documentation for CoreSight to cover CTI.
+>   docs: sysfs: coresight: Add sysfs ABI documentation for CTI
+>   Update MAINTAINERS to add reviewer for CoreSight.
+>
 
-> On 12/12/2019 10:32 PM, Guenter Roeck wrote:
-> > On 12/11/19 11:46 AM, Jae Hyun Yoo wrote:
-> > > This commit adds PECI dimmtemp hwmon driver.
-> > > =
+All that needs to be sorted out in this set are the comments made by
+Maxime.  When you do address those please only resend that patch.
+Since Maxime's comments are related to yaml syntax rather than the
+bindings themselves, I have added your set to my next tree so that it
+can soak in linux-next over the next few weeks.
 
-> > > Cc: Guenter Roeck <linux@roeck-us.net>
-> > > Cc: Jean Delvare <jdelvare@suse.com>
-> > > Cc: Alan Cox <alan@linux.intel.com>
-> > > Cc: Andrew Jeffery <andrew@aj.id.au>
-> > > Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-> > > Cc: Arnd Bergmann <arnd@arndb.de>
-> > > Cc: Jason M Biils <jason.m.bills@linux.intel.com>
-> > > Cc: Joel Stanley <joel@jms.id.au>
-> > > Cc: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
-> > > Cc: Andrew Lunn <andrew@lunn.ch>
-> > > Cc: Stef van Os <stef.van.os@prodrive-technologies.com>
-> > > Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
-> > > Reviewed-by: Haiyue Wang <haiyue.wang@linux.intel.com>
-> > > Reviewed-by: James Feist <james.feist@linux.intel.com>
-> > > Reviewed-by: Vernon Mauery <vernon.mauery@linux.intel.com>
-> > > Acked-by: Guenter Roeck <linux@roeck-us.net>
-> > > ---
-> > > Changes since v10:
-> > > - Added Skylake Xeon D support.
-> > > - Added max and crit properties for temperature threshold checking.
-> > > - Fixed minor bugs and style issues.
-> > > =
+Thanks,
+Mathieu
 
-> > > =A0 drivers/hwmon/Kconfig=A0=A0=A0=A0=A0=A0=A0=A0 |=A0 14 ++
-> > > =A0 drivers/hwmon/Makefile=A0=A0=A0=A0=A0=A0=A0 |=A0=A0 1 +
-> > > =A0 drivers/hwmon/peci-dimmtemp.c | 393 +++++++++++++++++++++++++++++=
-+++++
-> > > =A0 3 files changed, 408 insertions(+)
-> > > =A0 create mode 100644 drivers/hwmon/peci-dimmtemp.c
-> > > =
-
-> > > diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
-> > > index b6604759579c..d3370fbab40c 100644
-> > > --- a/drivers/hwmon/Kconfig
-> > > +++ b/drivers/hwmon/Kconfig
-> > > @@ -1363,6 +1363,20 @@ config SENSORS_PECI_CPUTEMP
-> > > =A0=A0=A0=A0=A0=A0=A0 This driver can also be built as a module. If s=
-o, the module
-> > > =A0=A0=A0=A0=A0=A0=A0 will be called peci-cputemp.
-> > > +config SENSORS_PECI_DIMMTEMP
-> > > +=A0=A0=A0 tristate "PECI DIMM temperature monitoring client"
-> > > +=A0=A0=A0 depends on PECI
-> > > +=A0=A0=A0 select MFD_INTEL_PECI_CLIENT
-> > > +=A0=A0=A0 help
-> > > +=A0=A0=A0=A0=A0 If you say yes here you get support for the generic =
-Intel
-> > > PECI hwmon
-> > > +=A0=A0=A0=A0=A0 driver which provides Digital Thermal Sensor (DTS) t=
-hermal
-> > > readings of
-> > > +=A0=A0=A0=A0=A0 DIMM components that are accessible using the PECI C=
-lient Command
-> > > +=A0=A0=A0=A0=A0 Suite via the processor PECI client.
-> > > +=A0=A0=A0=A0=A0 Check <file:Documentation/hwmon/peci-dimmtemp.rst> f=
-or details.
-> > > +
-> > > +=A0=A0=A0=A0=A0 This driver can also be built as a module. If so, th=
-e module
-> > > +=A0=A0=A0=A0=A0 will be called peci-dimmtemp.
-> > > +
-> > > =A0 source "drivers/hwmon/pmbus/Kconfig"
-> > > =A0 config SENSORS_PWM_FAN
-> > > diff --git a/drivers/hwmon/Makefile b/drivers/hwmon/Makefile
-> > > index d6fea48697af..4015c4b60bf4 100644
-> > > --- a/drivers/hwmon/Makefile
-> > > +++ b/drivers/hwmon/Makefile
-> > > @@ -145,6 +145,7 @@ obj-$(CONFIG_SENSORS_PC87360)=A0=A0=A0 +=3D pc873=
-60.o
-> > > =A0 obj-$(CONFIG_SENSORS_PC87427)=A0=A0=A0 +=3D pc87427.o
-> > > =A0 obj-$(CONFIG_SENSORS_PCF8591)=A0=A0=A0 +=3D pcf8591.o
-> > > =A0 obj-$(CONFIG_SENSORS_PECI_CPUTEMP)=A0=A0=A0 +=3D peci-cputemp.o
-> > > +obj-$(CONFIG_SENSORS_PECI_DIMMTEMP)=A0=A0=A0 +=3D peci-dimmtemp.o
-> > > =A0 obj-$(CONFIG_SENSORS_POWR1220)=A0 +=3D powr1220.o
-> > > =A0 obj-$(CONFIG_SENSORS_PWM_FAN)=A0=A0=A0 +=3D pwm-fan.o
-> > > =A0 obj-$(CONFIG_SENSORS_RASPBERRYPI_HWMON)=A0=A0=A0 +=3D raspberrypi=
--hwmon.o
-> > > diff --git a/drivers/hwmon/peci-dimmtemp.c
-> > > b/drivers/hwmon/peci-dimmtemp.c
-> > > new file mode 100644
-> > > index 000000000000..974f453f9366
-> > > --- /dev/null
-> > > +++ b/drivers/hwmon/peci-dimmtemp.c
-> > > @@ -0,0 +1,393 @@
-> > > +// SPDX-License-Identifier: GPL-2.0
-> > > +// Copyright (c) 2018-2019 Intel Corporation
-> > > +
-> > > +#include <linux/hwmon.h>
-> > > +#include <linux/jiffies.h>
-> > > +#include <linux/mfd/intel-peci-client.h>
-> > > +#include <linux/module.h>
-> > > +#include <linux/of_device.h>
-> > > +#include <linux/platform_device.h>
-> > > +#include <linux/workqueue.h>
-> > > +#include "peci-hwmon.h"
-> > > +
-> > > +#define DIMM_MASK_CHECK_DELAY_JIFFIES=A0 msecs_to_jiffies(5000)
-> > > +#define DIMM_MASK_CHECK_RETRY_MAX=A0=A0=A0=A0=A0 60 /* 60 x 5 secs =
-=3D 5 minutes */
-> > > +
-> > > +struct peci_dimmtemp {
-> > > +=A0=A0=A0 struct peci_client_manager *mgr;
-> > > +=A0=A0=A0 struct device *dev;
-> > > +=A0=A0=A0 char name[PECI_NAME_SIZE];
-> > > +=A0=A0=A0 const struct cpu_gen_info *gen_info;
-> > > +=A0=A0=A0 struct workqueue_struct *work_queue;
-> > > +=A0=A0=A0 struct delayed_work work_handler;
-> > > +=A0=A0=A0 struct peci_sensor_data temp[DIMM_NUMS_MAX];
-> > > +=A0=A0=A0 long temp_max[DIMM_NUMS_MAX];
-> > > +=A0=A0=A0 long temp_crit[DIMM_NUMS_MAX];
-> > > +=A0=A0=A0 u32 dimm_mask;
-> > > +=A0=A0=A0 int retry_count;
-> > > +=A0=A0=A0 u32 temp_config[DIMM_NUMS_MAX + 1];
-> > > +=A0=A0=A0 struct hwmon_channel_info temp_info;
-> > > +=A0=A0=A0 const struct hwmon_channel_info *info[2];
-> > > +=A0=A0=A0 struct hwmon_chip_info chip;
-> > > +};
-> > > +
-> > > +static const char *dimmtemp_label[CHAN_RANK_MAX][DIMM_IDX_MAX] =3D {
-> > > +=A0=A0=A0 { "DIMM A1", "DIMM A2", "DIMM A3" },
-> > > +=A0=A0=A0 { "DIMM B1", "DIMM B2", "DIMM B3" },
-> > > +=A0=A0=A0 { "DIMM C1", "DIMM C2", "DIMM C3" },
-> > > +=A0=A0=A0 { "DIMM D1", "DIMM D2", "DIMM D3" },
-> > > +=A0=A0=A0 { "DIMM E1", "DIMM E2", "DIMM E3" },
-> > > +=A0=A0=A0 { "DIMM F1", "DIMM F2", "DIMM F3" },
-> > > +=A0=A0=A0 { "DIMM G1", "DIMM G2", "DIMM G3" },
-> > > +=A0=A0=A0 { "DIMM H1", "DIMM H2", "DIMM H3" },
-> > > +};
-> > > +
-> > > +static inline int read_ddr_dimm_temp_config(struct peci_dimmtemp *pr=
-iv,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 int chan_rank,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0 u8 *cfg_data)
-> > > +{
-> > > +=A0=A0=A0 return peci_client_read_package_config(priv->mgr,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0 PECI_MBX_INDEX_DDR_DIMM_TEMP,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0 chan_rank, cfg_data);
-> > > +}
-> > > +
-> > > +static int get_dimm_temp(struct peci_dimmtemp *priv, int dimm_no)
-> > > +{
-> > > +=A0=A0=A0 int dimm_order =3D dimm_no % priv->gen_info->dimm_idx_max;
-> > > +=A0=A0=A0 int chan_rank =3D dimm_no / priv->gen_info->dimm_idx_max;
-> > > +=A0=A0=A0 struct peci_rd_pci_cfg_local_msg rp_msg;
-> > > +=A0=A0=A0 u8=A0 cfg_data[4];
-> > > +=A0=A0=A0 int ret;
-> > > +
-> > > +=A0=A0=A0 if (!peci_sensor_need_update(&priv->temp[dimm_no]))
-> > > +=A0=A0=A0=A0=A0=A0=A0 return 0;
-> > > +
-> > > +=A0=A0=A0 ret =3D read_ddr_dimm_temp_config(priv, chan_rank, cfg_dat=
-a);
-> > > +=A0=A0=A0 if (ret)
-> > > +=A0=A0=A0=A0=A0=A0=A0 return ret;
-> > > +
-> > > +=A0=A0=A0 priv->temp[dimm_no].value =3D cfg_data[dimm_order] * 1000;
-> > > +
-> > > +=A0=A0=A0 switch (priv->gen_info->model) {
-> > > +=A0=A0=A0 case INTEL_FAM6_SKYLAKE_X:
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.addr =3D priv->mgr->client->addr;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.bus =3D 2;
-> > > +=A0=A0=A0=A0=A0=A0=A0 /*
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 10, Function 2: IMC 0 channel 0 ->=
- rank 0
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 10, Function 6: IMC 0 channel 1 ->=
- rank 1
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 11, Function 2: IMC 0 channel 2 ->=
- rank 2
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 12, Function 2: IMC 1 channel 0 ->=
- rank 3
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 12, Function 6: IMC 1 channel 1 ->=
- rank 4
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 13, Function 2: IMC 1 channel 2 ->=
- rank 5
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 */
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.device =3D 10 + chan_rank / 3 * 2 +
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 (chan_rank % 3 =3D=
-=3D 2 ? 1 : 0);
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.function =3D chan_rank % 3 =3D=3D 1 ? 6=
- : 2;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.reg =3D 0x120 + dimm_order * 4;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.rx_len =3D 4;
-> > > +
-> > > +=A0=A0=A0=A0=A0=A0=A0 ret =3D peci_command(priv->mgr->client->adapte=
-r,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 PECI_CMD_RD_P=
-CI_CFG_LOCAL, &rp_msg);
-> > > +=A0=A0=A0=A0=A0=A0=A0 if (rp_msg.cc !=3D PECI_DEV_CC_SUCCESS)
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ret =3D -EAGAIN;
-> > > +=A0=A0=A0=A0=A0=A0=A0 if (ret)
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return ret;
-> > > +
-> > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_max[dimm_no] =3D rp_msg.pci_config[=
-1] * 1000;
-> > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_crit[dimm_no] =3D rp_msg.pci_config=
-[2] * 1000;
-> > > +=A0=A0=A0=A0=A0=A0=A0 break;
-> > > +=A0=A0=A0 case INTEL_FAM6_SKYLAKE_XD:
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.addr =3D priv->mgr->client->addr;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.bus =3D 2;
-> > > +=A0=A0=A0=A0=A0=A0=A0 /*
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 10, Function 2: IMC 0 channel 0 ->=
- rank 0
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 10, Function 6: IMC 0 channel 1 ->=
- rank 1
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 12, Function 2: IMC 1 channel 0 ->=
- rank 2
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 12, Function 6: IMC 1 channel 1 ->=
- rank 3
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 */
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.device =3D 10 + chan_rank / 2 * 2;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.function =3D (chan_rank % 2) ? 6 : 2;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.reg =3D 0x120 + dimm_order * 4;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.rx_len =3D 4;
-> > > +
-> > > +=A0=A0=A0=A0=A0=A0=A0 ret =3D peci_command(priv->mgr->client->adapte=
-r,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 PECI_CMD_RD_P=
-CI_CFG_LOCAL, &rp_msg);
-> > > +=A0=A0=A0=A0=A0=A0=A0 if (rp_msg.cc !=3D PECI_DEV_CC_SUCCESS)
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ret =3D -EAGAIN;
-> > > +=A0=A0=A0=A0=A0=A0=A0 if (ret)
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return ret;
-> > > +
-> > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_max[dimm_no] =3D rp_msg.pci_config[=
-1] * 1000;
-> > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_crit[dimm_no] =3D rp_msg.pci_config=
-[2] * 1000;
-> > > +=A0=A0=A0=A0=A0=A0=A0 break;
-> > > +=A0=A0=A0 case INTEL_FAM6_HASWELL_X:
-> > > +=A0=A0=A0 case INTEL_FAM6_BROADWELL_X:
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.addr =3D priv->mgr->client->addr;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.bus =3D 1;
-> > > +=A0=A0=A0=A0=A0=A0=A0 /*
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 20, Function 0: IMC 0 channel 0 ->=
- rank 0
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 20, Function 1: IMC 0 channel 1 ->=
- rank 1
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 21, Function 0: IMC 0 channel 2 ->=
- rank 2
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 21, Function 1: IMC 0 channel 3 ->=
- rank 3
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 23, Function 0: IMC 1 channel 0 ->=
- rank 4
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 23, Function 1: IMC 1 channel 1 ->=
- rank 5
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 24, Function 0: IMC 1 channel 2 ->=
- rank 6
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 24, Function 1: IMC 1 channel 3 ->=
- rank 7
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 */
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.device =3D 20 + chan_rank / 2 + chan_ra=
-nk / 4;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.function =3D chan_rank % 2;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.reg =3D 0x120 + dimm_order * 4;
-> > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.rx_len =3D 4;
-> > > +
-> > > +=A0=A0=A0=A0=A0=A0=A0 ret =3D peci_command(priv->mgr->client->adapte=
-r,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 PECI_CMD_RD_P=
-CI_CFG_LOCAL, &rp_msg);
-> > > +=A0=A0=A0=A0=A0=A0=A0 if (rp_msg.cc !=3D PECI_DEV_CC_SUCCESS)
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ret =3D -EAGAIN;
-> > > +=A0=A0=A0=A0=A0=A0=A0 if (ret)
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return ret;
-> > > +
-> > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_max[dimm_no] =3D rp_msg.pci_config[=
-1] * 1000;
-> > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_crit[dimm_no] =3D rp_msg.pci_config=
-[2] * 1000;
-> > > +=A0=A0=A0=A0=A0=A0=A0 break;
-> > > +=A0=A0=A0 default:
-> > > +=A0=A0=A0=A0=A0=A0=A0 return -EOPNOTSUPP;
-> > =
-
-> > It looks like the sensors are created even on unsupported platforms,
-> > which would generate error messages whenever someone tries to read
-> > the attributes.
-> > =
-
-> > There should be some code early on checking this, and the driver
-> > should not even instantiate if the CPU model is not supported.
-> =
-
-> Actually, this 'default' case will not be happened because this driver
-> will be registered only when the CPU model is supported. The CPU model
-> checking code is in 'intel-peci-client.c' which is [11/14] of this
-> patch set.
-> =
-
-
-That again assumes that both drivers will be modified in sync in the future.
-We can not make that assumption.
-
-> > > +=A0=A0=A0 }
-> > > +
-> > > +=A0=A0=A0 peci_sensor_mark_updated(&priv->temp[dimm_no]);
-> > > +
-> > > +=A0=A0=A0 return 0;
-> > > +}
-> > > +
-> > > +static int dimmtemp_read_string(struct device *dev,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 enum hwmon_sensor_type=
-s type,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 u32 attr, int channel,=
- const char **str)
-> > > +{
-> > > +=A0=A0=A0 struct peci_dimmtemp *priv =3D dev_get_drvdata(dev);
-> > > +=A0=A0=A0 u32 dimm_idx_max =3D priv->gen_info->dimm_idx_max;
-> > > +=A0=A0=A0 int chan_rank, dimm_idx;
-> > > +
-> > > +=A0=A0=A0 if (attr !=3D hwmon_temp_label)
-> > > +=A0=A0=A0=A0=A0=A0=A0 return -EOPNOTSUPP;
-> > > +
-> > > +=A0=A0=A0 chan_rank =3D channel / dimm_idx_max;
-> > > +=A0=A0=A0 dimm_idx =3D channel % dimm_idx_max;
-> > > +=A0=A0=A0 *str =3D dimmtemp_label[chan_rank][dimm_idx];
-> > =
-
-> > Similar to the other patch, I am concerned that this can end up setting
-> > *str
-> > to NULL at some point in the future.
-> =
-
-> Okay. I'll make dynamic label string table generation code for it as
-> well.
-> =
-
-> > > +
-> > > +=A0=A0=A0 return 0;
-> > > +}
-> > > +
-> > > +static int dimmtemp_read(struct device *dev, enum
-> > > hwmon_sensor_types type,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 u32 attr, int channel, long *va=
-l)
-> > > +{
-> > > +=A0=A0=A0 struct peci_dimmtemp *priv =3D dev_get_drvdata(dev);
-> > > +=A0=A0=A0 int ret;
-> > > +
-> > > +=A0=A0=A0 ret =3D get_dimm_temp(priv, channel);
-> > > +=A0=A0=A0 if (ret)
-> > > +=A0=A0=A0=A0=A0=A0=A0 return ret;
-> > > +
-> > > +=A0=A0=A0 switch (attr) {
-> > > +=A0=A0=A0 case hwmon_temp_input:
-> > > +=A0=A0=A0=A0=A0=A0=A0 *val =3D priv->temp[channel].value;
-> > > +=A0=A0=A0=A0=A0=A0=A0 break;
-> > > +=A0=A0=A0 case hwmon_temp_max:
-> > > +=A0=A0=A0=A0=A0=A0=A0 *val =3D priv->temp_max[channel];
-> > > +=A0=A0=A0=A0=A0=A0=A0 break;
-> > > +=A0=A0=A0 case hwmon_temp_crit:
-> > > +=A0=A0=A0=A0=A0=A0=A0 *val =3D priv->temp_crit[channel];
-> > > +=A0=A0=A0=A0=A0=A0=A0 break;
-> > > +=A0=A0=A0 default:
-> > > +=A0=A0=A0=A0=A0=A0=A0 ret =3D -EOPNOTSUPP;
-> > > +=A0=A0=A0=A0=A0=A0=A0 break;
-> > > +=A0=A0=A0 }
-> > > +
-> > > +=A0=A0=A0 return ret;
-> > > +}
-> > > +
-> > > +static umode_t dimmtemp_is_visible(const void *data,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 enum hwmon_se=
-nsor_types type,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 u32 attr, int=
- channel)
-> > > +{
-> > > +=A0=A0=A0 const struct peci_dimmtemp *priv =3D data;
-> > > +
-> > > +=A0=A0=A0 if (priv->temp_config[channel] & BIT(attr) &&
-> > > +=A0=A0=A0=A0=A0=A0=A0 priv->dimm_mask & BIT(channel))
-> > > +=A0=A0=A0=A0=A0=A0=A0 return 0444;
-> > > +
-> > > +=A0=A0=A0 return 0;
-> > > +}
-> > > +
-> > > +static const struct hwmon_ops dimmtemp_ops =3D {
-> > > +=A0=A0=A0 .is_visible =3D dimmtemp_is_visible,
-> > > +=A0=A0=A0 .read_string =3D dimmtemp_read_string,
-> > > +=A0=A0=A0 .read =3D dimmtemp_read,
-> > > +};
-> > > +
-> > > +static int check_populated_dimms(struct peci_dimmtemp *priv)
-> > > +{
-> > > +=A0=A0=A0 u32 chan_rank_max =3D priv->gen_info->chan_rank_max;
-> > > +=A0=A0=A0 u32 dimm_idx_max =3D priv->gen_info->dimm_idx_max;
-> > > +=A0=A0=A0 int chan_rank, dimm_idx;
-> > > +=A0=A0=A0 u8=A0 cfg_data[4];
-> > > +
-> > > +=A0=A0=A0 for (chan_rank =3D 0; chan_rank < chan_rank_max; chan_rank=
-++) {
-> > > +=A0=A0=A0=A0=A0=A0=A0 int ret;
-> > > +
-> > > +=A0=A0=A0=A0=A0=A0=A0 ret =3D read_ddr_dimm_temp_config(priv, chan_r=
-ank, cfg_data);
-> > > +=A0=A0=A0=A0=A0=A0=A0 if (ret) {
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 priv->dimm_mask =3D 0;
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return ret;
-> > > +=A0=A0=A0=A0=A0=A0=A0 }
-> > > +
-> > > +=A0=A0=A0=A0=A0=A0=A0 for (dimm_idx =3D 0; dimm_idx < dimm_idx_max; =
-dimm_idx++)
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (cfg_data[dimm_idx])
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 priv->dimm_mask |=3D B=
-IT(chan_rank *
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 dimm_idx_max +
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0=A0=A0 dimm_idx);
-> > > +=A0=A0=A0 }
-> > > +
-> > > +=A0=A0=A0 if (!priv->dimm_mask)
-> > > +=A0=A0=A0=A0=A0=A0=A0 return -EAGAIN;
-> > > +
-> > > +=A0=A0=A0 dev_dbg(priv->dev, "Scanned populated DIMMs: 0x%x\n",
-> > > priv->dimm_mask);
-> > > +
-> > > +=A0=A0=A0 return 0;
-> > > +}
-> > > +
-> > > +static int create_dimm_temp_info(struct peci_dimmtemp *priv)
-> > > +{
-> > > +=A0=A0=A0 int ret, i, config_idx, channels;
-> > > +=A0=A0=A0 struct device *hwmon_dev;
-> > > +
-> > > +=A0=A0=A0 ret =3D check_populated_dimms(priv);
-> > > +=A0=A0=A0 if (ret) {
-> > > +=A0=A0=A0=A0=A0=A0=A0 if (ret =3D=3D -EAGAIN) {
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 if (priv->retry_count < DIMM_MASK_=
-CHECK_RETRY_MAX) {
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 queue_delayed_work(pri=
-v->work_queue,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0 &priv->work_handler,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0 DIMM_MASK_CHECK_DELAY_JIFFIES);
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 priv->retry_count++;
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 dev_dbg(priv->dev,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 "Deferred =
-DIMM temp info creation\n");
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 } else {
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 dev_err(priv->dev,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 "Timeout D=
-IMM temp info creation\n");
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ret =3D -ETIMEDOUT;
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 }
-> > > +=A0=A0=A0=A0=A0=A0=A0 }
-> > > +
-> > > +=A0=A0=A0=A0=A0=A0=A0 return ret;
-> > > +=A0=A0=A0 }
-> > > +
-> > > +=A0=A0=A0 channels =3D priv->gen_info->chan_rank_max *
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 priv->gen_info->dimm_idx_max;
-> > > +=A0=A0=A0 for (i =3D 0, config_idx =3D 0; i < channels; i++)
-> > > +=A0=A0=A0=A0=A0=A0=A0 if (priv->dimm_mask & BIT(i))
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 while (i >=3D config_idx)
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 priv->temp_config[conf=
-ig_idx++] =3D
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 HWMON_T_LA=
-BEL | HWMON_T_INPUT |
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 HWMON_T_MA=
-X | HWMON_T_CRIT;
-> > > +
-> > > +=A0=A0=A0 priv->chip.ops =3D &dimmtemp_ops;
-> > > +=A0=A0=A0 priv->chip.info =3D priv->info;
-> > > +
-> > > +=A0=A0=A0 priv->info[0] =3D &priv->temp_info;
-> > > +
-> > > +=A0=A0=A0 priv->temp_info.type =3D hwmon_temp;
-> > > +=A0=A0=A0 priv->temp_info.config =3D priv->temp_config;
-> > > +
-> > > +=A0=A0=A0 hwmon_dev =3D devm_hwmon_device_register_with_info(priv->d=
-ev,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0 priv->name,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0 priv,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0 &priv->chip,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0=A0=A0=A0 NULL);
-> > > +=A0=A0=A0 ret =3D PTR_ERR_OR_ZERO(hwmon_dev);
-> > > +=A0=A0=A0 if (!ret)
-> > > +=A0=A0=A0=A0=A0=A0=A0 dev_dbg(priv->dev, "%s: sensor '%s'\n",
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 dev_name(hwmon_dev), priv->name);
-> > > +
-> > =
-
-> > Any chance to make this consistent with the other driver ?
-> =
-
-> Will change this to:
-> =
-
-> if (IS_ERR(hwmon_dev)) {
-> 	dev_err(&priv->dev, "Failed to register hwmon device\n");
-> 	return PTR_ERR(hwmon_dev);
-> }
-> =
-
-> > > +=A0=A0=A0 return ret;
-> > > +}
-> > > +
-> > > +static void create_dimm_temp_info_delayed(struct work_struct *work)
-> > > +{
-> > > +=A0=A0=A0 struct delayed_work *dwork =3D to_delayed_work(work);
-> > > +=A0=A0=A0 struct peci_dimmtemp *priv =3D container_of(dwork, struct
-> > > peci_dimmtemp,
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=
-=A0=A0=A0 work_handler);
-> > > +=A0=A0=A0 int ret;
-> > > +
-> > > +=A0=A0=A0 ret =3D create_dimm_temp_info(priv);
-> > > +=A0=A0=A0 if (ret && ret !=3D -EAGAIN)
-> > > +=A0=A0=A0=A0=A0=A0=A0 dev_dbg(priv->dev, "Failed to create DIMM temp=
- info\n");
-> > > +}
-> > > +
-> > > +static int peci_dimmtemp_probe(struct platform_device *pdev)
-> > > +{
-> > > +=A0=A0=A0 struct peci_client_manager *mgr =3D dev_get_drvdata(pdev->=
-dev.parent);
-> > > +=A0=A0=A0 struct device *dev =3D &pdev->dev;
-> > > +=A0=A0=A0 struct peci_dimmtemp *priv;
-> > > +=A0=A0=A0 int ret;
-> > > +
-> > > +=A0=A0=A0 if ((mgr->client->adapter->cmd_mask &
-> > > +=A0=A0=A0=A0=A0=A0=A0 (BIT(PECI_CMD_GET_TEMP) | BIT(PECI_CMD_RD_PKG_=
-CFG))) !=3D
-> > > +=A0=A0=A0=A0=A0=A0=A0 (BIT(PECI_CMD_GET_TEMP) | BIT(PECI_CMD_RD_PKG_=
-CFG)))
-> > > +=A0=A0=A0=A0=A0=A0=A0 return -ENODEV;
-> > > +
-> > > +=A0=A0=A0 priv =3D devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-> > > +=A0=A0=A0 if (!priv)
-> > > +=A0=A0=A0=A0=A0=A0=A0 return -ENOMEM;
-> > > +
-> > > +=A0=A0=A0 dev_set_drvdata(dev, priv);
-> > > +=A0=A0=A0 priv->mgr =3D mgr;
-> > > +=A0=A0=A0 priv->dev =3D dev;
-> > > +=A0=A0=A0 priv->gen_info =3D mgr->gen_info;
-> > > +
-> > > +=A0=A0=A0 snprintf(priv->name, PECI_NAME_SIZE, "peci_dimmtemp.cpu%d",
-> > > +=A0=A0=A0=A0=A0=A0=A0=A0 priv->mgr->client->addr - PECI_BASE_ADDR);
-> > > +
-> > > +=A0=A0=A0 priv->work_queue =3D alloc_ordered_workqueue(priv->name, 0=
-);
-> > > +=A0=A0=A0 if (!priv->work_queue)
-> > > +=A0=A0=A0=A0=A0=A0=A0 return -ENOMEM;
-> > > +
-> > > +=A0=A0=A0 INIT_DELAYED_WORK(&priv->work_handler,
-> > > create_dimm_temp_info_delayed);
-> > > +
-> > > +=A0=A0=A0 ret =3D create_dimm_temp_info(priv);
-> > > +=A0=A0=A0 if (ret && ret !=3D -EAGAIN) {
-> > > +=A0=A0=A0=A0=A0=A0=A0 dev_err(dev, "Failed to create DIMM temp info\=
-n");
-> > =
-
-> > Does this generate error messages if there are no DIMMS ?
-> =
-
-> Yes, this error message will be printed out once if it meets a timeout
-> in DIMM scanning when there is no DIMM.
-> =
-
-
-Is that indeed an error, or are there situations where no DIMMs are
-detected and that is a perfectly valid situation ? An error message
-is only acceptable if this is indeed an error in all situations.
-
-Guenter
+>  .../testing/sysfs-bus-coresight-devices-cti   |  221 ++++
+>  .../bindings/arm/coresight-cti.yaml           |  303 +++++
+>  .../devicetree/bindings/arm/coresight.txt     |    7 +
+>  .../trace/coresight/coresight-ect.rst         |  211 +++
+>  Documentation/trace/coresight/coresight.rst   |   13 +
+>  MAINTAINERS                                   |    3 +
+>  arch/arm64/boot/dts/arm/juno-base.dtsi        |  149 ++-
+>  arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi     |   31 +-
+>  arch/arm64/boot/dts/arm/juno-r1.dts           |   25 +
+>  arch/arm64/boot/dts/arm/juno-r2.dts           |   25 +
+>  arch/arm64/boot/dts/arm/juno.dts              |   25 +
+>  .../boot/dts/hisilicon/hi6220-coresight.dtsi  |  130 +-
+>  arch/arm64/boot/dts/qcom/msm8916.dtsi         |   85 +-
+>  drivers/hwtracing/coresight/Kconfig           |   21 +
+>  drivers/hwtracing/coresight/Makefile          |    3 +
+>  .../coresight/coresight-cti-platform.c        |  485 +++++++
+>  .../hwtracing/coresight/coresight-cti-sysfs.c | 1175 +++++++++++++++++
+>  drivers/hwtracing/coresight/coresight-cti.c   |  748 +++++++++++
+>  drivers/hwtracing/coresight/coresight-cti.h   |  235 ++++
+>  .../hwtracing/coresight/coresight-platform.c  |   21 +
+>  drivers/hwtracing/coresight/coresight-priv.h  |   15 +
+>  drivers/hwtracing/coresight/coresight.c       |   86 +-
+>  include/dt-bindings/arm/coresight-cti-dt.h    |   37 +
+>  include/linux/coresight.h                     |   27 +
+>  24 files changed, 4050 insertions(+), 31 deletions(-)
+>  create mode 100644 Documentation/ABI/testing/sysfs-bus-coresight-devices-cti
+>  create mode 100644 Documentation/devicetree/bindings/arm/coresight-cti.yaml
+>  create mode 100644 Documentation/trace/coresight/coresight-ect.rst
+>  create mode 100644 drivers/hwtracing/coresight/coresight-cti-platform.c
+>  create mode 100644 drivers/hwtracing/coresight/coresight-cti-sysfs.c
+>  create mode 100644 drivers/hwtracing/coresight/coresight-cti.c
+>  create mode 100644 drivers/hwtracing/coresight/coresight-cti.h
+>  create mode 100644 include/dt-bindings/arm/coresight-cti-dt.h
+>
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
