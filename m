@@ -2,78 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 593F31204AA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 13:05:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4245A1204CC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 13:06:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IlncCEtcIDXB/KG3a4OC2SUoCoqGgPOUcUtDo3nHwcs=; b=TSt/E+KU/zSJsp
-	YyTUXCvjGKArM0H2+ndXrAfCJpX/RAcxHE36Lv9Xp6ZmfA+m0q+l2uNrBL5xH+kzYiPta1Wvd9Ioa
-	9+8cyED31ll2fWZhrzxljoa1kCumoBbGEnY1oSRhKPjp3YBXeLaFl4bqQ/M9/kkcUCSyJQbaB6dH9
-	g1fW/lNg/ZP3VQIzFnThukcYLYMn/coQoTvlOIIOtdyo8ddU4WsLxn3BS5Ksn61inv0s65bbbYEgW
-	zYVlyDPeSzv92hoPAkX4ET3oXjRdnEHNjX25WifTx0n3HFnEn20M/6YRALxri0HaLiabzT9EJy5/q
-	hBEQYgCSm+fmSjgLntxA==;
+	References:List-Owner; bh=zAOP3P87AuZ76+oo2qFiC7G3uzB2AIFcgiwqh5BdALs=; b=a9V
+	1HS7LxUwaMAuILVZIfCtwvHcmWuJduNdi8mp7nvG4sF1UWQEICLIIKvR9JiMcIO6/W2hNomtTGwhL
+	t4EYCGNODyQii3MUVz9fDKU5Pd4nB/9pkBFLePJerY2zKmiC1QWvnw4wVNaseoNYrZNzVHPX4A563
+	iV4b4LwS7o6fx1b249q9cMOxx9M7OBaK2226sEVU5XIkLpcQ3ZWxibprqXQ4PCbg3gm5Omri+726C
+	WOifFFi34H5BguRywXmcpl3ES/LcIgma+LlRPUtdCCLKqOl4X52ssSqib8r2DwAvnayv7wJRCJXEY
+	o9OHc1hs6rc6OLwJVHQeHvfCwQRHORQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igp7t-0002Bh-Pw; Mon, 16 Dec 2019 12:05:25 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igp7i-00029n-Op; Mon, 16 Dec 2019 12:05:16 +0000
-X-UUID: d7c5a365f594495e9a09df0ca9ba57d9-20191216
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=Clqeu4fvpnmS/ZiCD2V6ResMoNTOcGR52Rz6w11NnqM=; 
- b=PMX8MTJgfJ5616HcoHjc1OONlBGM2MG0L83STOdHt6G/tN+7ZWgsZHO/CswbV8D+0YbpnL9Wmoz7Tx/vT0Y1G1ZPv+FYQoVrRFpNuEOJwM0GOzaEpUanbc9Q3dWUuikpYzqH3YjwKXYVFN6PRYqTFsGkARnt7tmkmox7L21PIJA=;
-X-UUID: d7c5a365f594495e9a09df0ca9ba57d9-20191216
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <yong.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 448083721; Mon, 16 Dec 2019 04:05:06 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Dec 2019 04:05:23 -0800
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Mon, 16 Dec 2019 20:04:02 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 16 Dec 2019 20:04:44 +0800
-Message-ID: <1576497901.28043.71.camel@mhfsdcap03>
-Subject: Re: [RESEND,PATCH 01/13] dt-bindings: mediatek: Add bindings for
- MT6779
-From: Yong Wu <yong.wu@mediatek.com>
-To: Chao Hao <chao.hao@mediatek.com>
-Date: Mon, 16 Dec 2019 20:05:01 +0800
-In-Reply-To: <20191104115238.2394-2-chao.hao@mediatek.com>
-References: <20191104115238.2394-1-chao.hao@mediatek.com>
- <20191104115238.2394-2-chao.hao@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: A9E5E71080A842134B9DA6CCB99242C492F30F72968470E68E8786C7F60B10FC2000:8
-X-MTK: N
+	id 1igp8k-0002Zi-97; Mon, 16 Dec 2019 12:06:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1igp8U-0002Yh-5a; Mon, 16 Dec 2019 12:06:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 290FA1FB;
+ Mon, 16 Dec 2019 04:06:01 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 779503F719;
+ Mon, 16 Dec 2019 04:06:00 -0800 (PST)
+Date: Mon, 16 Dec 2019 12:05:59 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Applied "spi: stm32: Use dma_request_chan() instead
+ dma_request_slave_channel()" to the spi tree
+In-Reply-To: <20191212135550.4634-10-peter.ujfalusi@ti.com>
+Message-Id: <applied-20191212135550.4634-10-peter.ujfalusi@ti.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_040514_817489_A4C66FD1 
-X-CRM114-Status: GOOD (  18.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_040602_292541_6F9B6894 
+X-CRM114-Status: GOOD (  15.76  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,195 +62,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anan Sun <anan.sun@mediatek.com>, devicetree@vger.kernel.org,
- Cui Zhang <cui.zhang@mediatek.com>, Jun Yan <jun.yan@mediatek.com>,
- wsd_upstream@mediatek.com, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Miles Chen <miles.chen@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Guangming Cao <guangming.cao@mediatek.com>
+Cc: baohua@kernel.org, f.fainelli@gmail.com, alexandre.torgue@st.com,
+ sbranden@broadcom.com, rjui@broadcom.com, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ nsaenzjulienne@suse.de, vkoul@kernel.org, Mark Brown <broonie@kernel.org>,
+ linux-rpi-kernel@lists.infradead.org, mcoquelin.stm32@gmail.com,
+ shawnguo@kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-11-04 at 19:52 +0800, Chao Hao wrote:
-> This patch adds description for MT6779 IOMMU.
-> 
-> MT6779 has two iommus, they are MM_IOMMU and APU_IOMMU which
-> use ARM Short-Descriptor translation format.
-> 
-> The MT6779 IOMMU hardware diagram is as below, it is only a brief
-> diagram about iommu, it don't focus on the part of smi_larb, so
-> I don't describe the smi_larb detailedly.
-> 
-> 			     EMI
-> 			      |
-> 	   --------------------------------------
-> 	   |					|
->         MM_IOMMU                            APU_IOMMU
-> 	   |					|
->        SMI_COMMOM-----------		     APU_BUS
->           |		   |			|
->     SMI_LARB(0~11)  SMI_LARB12(FAKE)	    SMI_LARB13(FAKE)
-> 	  |		   |			|
-> 	  |		   |		   --------------
-> 	  |		   |		   |	 |	|
->    Multimedia engine	  CCU		  VPU   MDLA   EMDA
-> 
-> All the connections are hardware fixed, software can not adjust it.
-> 
-> From the diagram above, MM_IOMMU provides mapping for multimedia engine,
-> but CCU is connected with smi_common directly, we can take them as larb12.
-> APU_IOMMU provides mapping for APU engine, we can take them larb13.
-> Larb12 and Larb13 are fake larbs.
-> 
-> Signed-off-by: Chao Hao <chao.hao@mediatek.com>
-> ---
->  .../bindings/iommu/mediatek,iommu.txt         |   2 +
->  include/dt-bindings/memory/mt6779-larb-port.h | 217 ++++++++++++++++++
->  2 files changed, 219 insertions(+)
->  create mode 100644 include/dt-bindings/memory/mt6779-larb-port.h
-> 
-> diff --git a/Documentation/devicetree/bindings/iommu/mediatek,iommu.txt b/Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
-> index ce59a505f5a4..c1ccd8582eb2 100644
-> --- a/Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
-> +++ b/Documentation/devicetree/bindings/iommu/mediatek,iommu.txt
-> @@ -58,6 +58,7 @@ Required properties:
->  - compatible : must be one of the following string:
->  	"mediatek,mt2701-m4u" for mt2701 which uses generation one m4u HW.
->  	"mediatek,mt2712-m4u" for mt2712 which uses generation two m4u HW.
-> +	"mediatek,mt6779-m4u" for mt6779 which uses generation two m4u HW.
->  	"mediatek,mt7623-m4u", "mediatek,mt2701-m4u" for mt7623 which uses
->  						     generation one m4u HW.
->  	"mediatek,mt8173-m4u" for mt8173 which uses generation two m4u HW.
-> @@ -78,6 +79,7 @@ Required properties:
->  	Specifies the mtk_m4u_id as defined in
->  	dt-binding/memory/mt2701-larb-port.h for mt2701, mt7623
->  	dt-binding/memory/mt2712-larb-port.h for mt2712,
-> +	dt-binding/memory/mt6779-larb-port.h for mt6779,
->  	dt-binding/memory/mt8173-larb-port.h for mt8173, and
->  	dt-binding/memory/mt8183-larb-port.h for mt8183.
->  
-> diff --git a/include/dt-bindings/memory/mt6779-larb-port.h b/include/dt-bindings/memory/mt6779-larb-port.h
-> new file mode 100644
-> index 000000000000..8b7f2d2446ea
-> --- /dev/null
-> +++ b/include/dt-bindings/memory/mt6779-larb-port.h
-> @@ -0,0 +1,217 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +/*
-> + * Copyright (c) 2019 MediaTek Inc.
-> + * Author: Chao Hao <chao.hao@mediatek.com>
-> + */
-> +
-> +#ifndef _DTS_IOMMU_PORT_MT6779_H_
-> +#define _DTS_IOMMU_PORT_MT6779_H_
-> +
-> +#define MTK_M4U_ID(larb, port)		 (((larb) << 5) | (port))
-> +
-> +#define M4U_LARB0_ID			 0
-> +#define M4U_LARB1_ID			 1
-> +#define M4U_LARB2_ID			 2
-> +#define M4U_LARB3_ID			 3
-> +#define M4U_LARB4_ID			 4
-> +#define M4U_LARB5_ID			 5
-> +#define M4U_LARB6_ID			 6
-> +#define M4U_LARB7_ID			 7
-> +#define M4U_LARB8_ID			 8
-> +#define M4U_LARB9_ID			 9
-> +#define M4U_LARB10_ID			 10
-> +#define M4U_LARB11_ID			 11
-> +#define M4U_LARB12_ID			 12
-> +#define M4U_LARB13_ID			 13
-> +
-> +/* larb0 */
-> +#define M4U_PORT_DISP_POSTMASK0		 MTK_M4U_ID(M4U_LARB0_ID, 0)
-> +#define M4U_PORT_DISP_OVL0_HDR		 MTK_M4U_ID(M4U_LARB0_ID, 1)
-> +#define M4U_PORT_DISP_OVL1_HDR		 MTK_M4U_ID(M4U_LARB0_ID, 2)
-> +#define M4U_PORT_DISP_OVL0		 MTK_M4U_ID(M4U_LARB0_ID, 3)
-> +#define M4U_PORT_DISP_OVL1		 MTK_M4U_ID(M4U_LARB0_ID, 4)
-> +#define M4U_PORT_DISP_PVRIC0		 MTK_M4U_ID(M4U_LARB0_ID, 5)
-> +#define M4U_PORT_DISP_RDMA0		 MTK_M4U_ID(M4U_LARB0_ID, 6)
-> +#define M4U_PORT_DISP_WDMA0		 MTK_M4U_ID(M4U_LARB0_ID, 7)
-> +#define M4U_PORT_DISP_FAKE0		 MTK_M4U_ID(M4U_LARB0_ID, 8)
-> +
-> +/* larb1 */
-> +#define M4U_PORT_DISP_OVL0_2L_HDR	 MTK_M4U_ID(M4U_LARB1_ID, 0)
-> +#define M4U_PORT_DISP_OVL1_2L_HDR	 MTK_M4U_ID(M4U_LARB1_ID, 1)
-> +#define M4U_PORT_DISP_OVL0_2L		 MTK_M4U_ID(M4U_LARB1_ID, 2)
-> +#define M4U_PORT_DISP_OVL1_2L		 MTK_M4U_ID(M4U_LARB1_ID, 3)
-> +#define M4U_PORT_DISP_RDMA1		 MTK_M4U_ID(M4U_LARB1_ID, 4)
-> +#define M4U_PORT_MDP_PVRIC0		 MTK_M4U_ID(M4U_LARB1_ID, 5)
-> +#define M4U_PORT_MDP_PVRIC1		 MTK_M4U_ID(M4U_LARB1_ID, 6)
-> +#define M4U_PORT_MDP_RDMA0		 MTK_M4U_ID(M4U_LARB1_ID, 7)
-> +#define M4U_PORT_MDP_RDMA1		 MTK_M4U_ID(M4U_LARB1_ID, 8)
-> +#define M4U_PORT_MDP_WROT0_R		 MTK_M4U_ID(M4U_LARB1_ID, 9)
-> +#define M4U_PORT_MDP_WROT0_W		 MTK_M4U_ID(M4U_LARB1_ID, 10)
-> +#define M4U_PORT_MDP_WROT1_R		 MTK_M4U_ID(M4U_LARB1_ID, 11)
-> +#define M4U_PORT_MDP_WROT1_W		 MTK_M4U_ID(M4U_LARB1_ID, 12)
-> +#define M4U_PORT_DISP_FAKE1		 MTK_M4U_ID(M4U_LARB1_ID, 13)
-> +
-> +/* larb2-VDEC */
-> +#define M4U_PORT_HW_VDEC_MC_EXT          MTK_M4U_ID(M4U_LARB2_ID, 0)
-> +#define M4U_PORT_HW_VDEC_UFO_EXT         MTK_M4U_ID(M4U_LARB2_ID, 1)
-> +#define M4U_PORT_HW_VDEC_PP_EXT          MTK_M4U_ID(M4U_LARB2_ID, 2)
-> +#define M4U_PORT_HW_VDEC_PRED_RD_EXT     MTK_M4U_ID(M4U_LARB2_ID, 3)
-> +#define M4U_PORT_HW_VDEC_PRED_WR_EXT     MTK_M4U_ID(M4U_LARB2_ID, 4)
-> +#define M4U_PORT_HW_VDEC_PPWRAP_EXT      MTK_M4U_ID(M4U_LARB2_ID, 5)
-> +#define M4U_PORT_HW_VDEC_TILE_EXT        MTK_M4U_ID(M4U_LARB2_ID, 6)
-> +#define M4U_PORT_HW_VDEC_VLD_EXT         MTK_M4U_ID(M4U_LARB2_ID, 7)
-> +#define M4U_PORT_HW_VDEC_VLD2_EXT        MTK_M4U_ID(M4U_LARB2_ID, 8)
-> +#define M4U_PORT_HW_VDEC_AVC_MV_EXT      MTK_M4U_ID(M4U_LARB2_ID, 9)
-> +#define M4U_PORT_HW_VDEC_UFO_ENC_EXT     MTK_M4U_ID(M4U_LARB2_ID, 10)
-> +#define M4U_PORT_HW_VDEC_RG_CTRL_DMA_EXT MTK_M4U_ID(M4U_LARB2_ID, 11)
-> +
-> +/*larb3-VENC*/
+The patch
 
-Normally add space before and after the word. Like: /* larb3-VENC */
+   spi: stm32: Use dma_request_chan() instead dma_request_slave_channel()
 
-below are the same.
+has been applied to the spi tree at
 
-> +#define M4U_PORT_VENC_RCPU		 MTK_M4U_ID(M4U_LARB3_ID, 0)
-> +#define M4U_PORT_VENC_REC		 MTK_M4U_ID(M4U_LARB3_ID, 1)
-> +#define M4U_PORT_VENC_BSDMA		 MTK_M4U_ID(M4U_LARB3_ID, 2)
-> +#define M4U_PORT_VENC_SV_COMV		 MTK_M4U_ID(M4U_LARB3_ID, 3)
-> +#define M4U_PORT_VENC_RD_COMV		 MTK_M4U_ID(M4U_LARB3_ID, 4)
-> +#define M4U_PORT_VENC_NBM_RDMA		 MTK_M4U_ID(M4U_LARB3_ID, 5)
-> +#define M4U_PORT_VENC_NBM_RDMA_LITE	 MTK_M4U_ID(M4U_LARB3_ID, 6)
-> +#define M4U_PORT_JPGENC_Y_RDMA		 MTK_M4U_ID(M4U_LARB3_ID, 7)
-> +#define M4U_PORT_JPGENC_C_RDMA		 MTK_M4U_ID(M4U_LARB3_ID, 8)
-> +#define M4U_PORT_JPGENC_Q_TABLE		 MTK_M4U_ID(M4U_LARB3_ID, 9)
-> +#define M4U_PORT_JPGENC_BSDMA		 MTK_M4U_ID(M4U_LARB3_ID, 10)
-> +#define M4U_PORT_JPGDEC_WDMA		 MTK_M4U_ID(M4U_LARB3_ID, 11)
-> +#define M4U_PORT_JPGDEC_BSDMA		 MTK_M4U_ID(M4U_LARB3_ID, 12)
-> +#define M4U_PORT_VENC_NBM_WDMA		 MTK_M4U_ID(M4U_LARB3_ID, 13)
-> +#define M4U_PORT_VENC_NBM_WDMA_LITE	 MTK_M4U_ID(M4U_LARB3_ID, 14)
-> +#define M4U_PORT_VENC_CUR_LUMA		 MTK_M4U_ID(M4U_LARB3_ID, 15)
-> +#define M4U_PORT_VENC_CUR_CHROMA	 MTK_M4U_ID(M4U_LARB3_ID, 16)
-> +#define M4U_PORT_VENC_REF_LUMA		 MTK_M4U_ID(M4U_LARB3_ID, 17)
-> +#define M4U_PORT_VENC_REF_CHROMA	 MTK_M4U_ID(M4U_LARB3_ID, 18)
-> +
-> +/*larb4-dummy*/
-> +
-> +/*larb5-IMG*/
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.6
 
-[snip]
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-> +
-> +#define M4U_PORT_VPU			 MTK_M4U_ID(M4U_LARB13_ID, 0)
-> +#define M4U_PORT_MDLA			 MTK_M4U_ID(M4U_LARB13_ID, 1)
-> +#define M4U_PORT_EDMA			 MTK_M4U_ID(M4U_LARB13_ID, 2)
-> +
-> +#define M4U_PORT_UNKNOWN		 (M4U_PORT_EDMA + 1)
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-When do you need this UNKNOWN one? The other SoC doesn't have it. Please
-remove if it is unnecessary.
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-> +
-> +#endif
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 0a454258febb73e4c60d7f5d9a02d1a8c64fdfb8 Mon Sep 17 00:00:00 2001
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Date: Thu, 12 Dec 2019 15:55:50 +0200
+Subject: [PATCH] spi: stm32: Use dma_request_chan() instead
+ dma_request_slave_channel()
+
+dma_request_slave_channel() is a wrapper on top of dma_request_chan()
+eating up the error code.
+
+By using dma_request_chan() directly the driver can support deferred
+probing against DMA.
+
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Link: https://lore.kernel.org/r/20191212135550.4634-10-peter.ujfalusi@ti.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/spi/spi-stm32.c | 32 ++++++++++++++++++++++----------
+ 1 file changed, 22 insertions(+), 10 deletions(-)
+
+diff --git a/drivers/spi/spi-stm32.c b/drivers/spi/spi-stm32.c
+index 7d75632c4151..e041f9c4ec47 100644
+--- a/drivers/spi/spi-stm32.c
++++ b/drivers/spi/spi-stm32.c
+@@ -1879,17 +1879,29 @@ static int stm32_spi_probe(struct platform_device *pdev)
+ 	master->transfer_one = stm32_spi_transfer_one;
+ 	master->unprepare_message = stm32_spi_unprepare_msg;
+ 
+-	spi->dma_tx = dma_request_slave_channel(spi->dev, "tx");
+-	if (!spi->dma_tx)
++	spi->dma_tx = dma_request_chan(spi->dev, "tx");
++	if (IS_ERR(spi->dma_tx)) {
++		ret = PTR_ERR(spi->dma_tx);
++		spi->dma_tx = NULL;
++		if (ret == -EPROBE_DEFER)
++			goto err_clk_disable;
++
+ 		dev_warn(&pdev->dev, "failed to request tx dma channel\n");
+-	else
++	} else {
+ 		master->dma_tx = spi->dma_tx;
++	}
++
++	spi->dma_rx = dma_request_chan(spi->dev, "rx");
++	if (IS_ERR(spi->dma_rx)) {
++		ret = PTR_ERR(spi->dma_rx);
++		spi->dma_rx = NULL;
++		if (ret == -EPROBE_DEFER)
++			goto err_dma_release;
+ 
+-	spi->dma_rx = dma_request_slave_channel(spi->dev, "rx");
+-	if (!spi->dma_rx)
+ 		dev_warn(&pdev->dev, "failed to request rx dma channel\n");
+-	else
++	} else {
+ 		master->dma_rx = spi->dma_rx;
++	}
+ 
+ 	if (spi->dma_tx || spi->dma_rx)
+ 		master->can_dma = stm32_spi_can_dma;
+@@ -1901,26 +1913,26 @@ static int stm32_spi_probe(struct platform_device *pdev)
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "spi master registration failed: %d\n",
+ 			ret);
+-		goto err_dma_release;
++		goto err_pm_disable;
+ 	}
+ 
+ 	if (!master->cs_gpiods) {
+ 		dev_err(&pdev->dev, "no CS gpios available\n");
+ 		ret = -EINVAL;
+-		goto err_dma_release;
++		goto err_pm_disable;
+ 	}
+ 
+ 	dev_info(&pdev->dev, "driver initialized\n");
+ 
+ 	return 0;
+ 
++err_pm_disable:
++	pm_runtime_disable(&pdev->dev);
+ err_dma_release:
+ 	if (spi->dma_tx)
+ 		dma_release_channel(spi->dma_tx);
+ 	if (spi->dma_rx)
+ 		dma_release_channel(spi->dma_rx);
+-
+-	pm_runtime_disable(&pdev->dev);
+ err_clk_disable:
+ 	clk_disable_unprepare(spi->clk);
+ err_master_put:
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
