@@ -2,72 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9657120196
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 10:57:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A7E7120193
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 10:56:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/9n0CCWcjT5uMFzP4kwvjaOMV1zIXTSBEdVJ7qGeb9Y=; b=e1hdHeOtWuwjwr
-	4xk5dPomxAhXEjG15gpPZFgb7BTBH1rErFPeRpjzE4yP40noJUAeUwBu2ZYB9scZEr/7eIA4o22m1
-	/s+if8Cd7pItFs5BYdKqm1kKkRuzFh1uO0B2TkvLK7aLRUSMciBTEcyvuJhB8AD2a6w1PlIVsVA8r
-	CnQE/skFJqj1BLqpW3sCD6fwlGRvB28mBU3yujH47bV74gB/BnfcWVrQ2N8ZZTUZkHDvpKtLh/AsI
-	Kh0eUIJGDZynLUP9EapxzGXCsjO9/FQTmy+RqOciv7NF7gCNFB4tVSEO68qs4hATusHzPbPn6sks7
-	sZFe6AQD01iZCxtdMG+A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/XRYLUsGy5l3KAvwZcNFXdVZiiQpUOBcUQwUutcKr3s=; b=tuPUm+AaMdOxws
+	LyPq7CmOp5PN+/Tt7PqkBDqDYxSGGM9jCwqZFKtgTuxEG9koaGHBaNnJkKmWRruzc1KaPJfn6Jxuu
+	qCgym2eWE4b5kfRA5R7d72vha5TMLZDlkEYuVQir0Rq28o9Qcx2Qz1/s6cgGjvYz88+BShFnQ4POt
+	xxh1yZYSNSPUh35jwEycPb6e1yu56cIs7NKb9QnrQVLIFQNt/XH4vgA0V98XpLrnRE6lxWOQ7jT2M
+	GkBsL6jTUk8SMmd//7wF1aX90H8A/wGNghANQhfB5BB/hDGC5jRhqhJ0p+BdDys8P8hFklwUyUd9a
+	nD3dTRbdOjjet7pm+//w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ign7m-0005yF-0T; Mon, 16 Dec 2019 09:57:10 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1ign6u-0005MM-D4; Mon, 16 Dec 2019 09:56:16 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ign6j-0005Kk-3D
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 09:56:07 +0000
+ id 1ign6i-0005Kl-Lv
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 09:56:06 +0000
 Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBG9tv6G037837;
- Mon, 16 Dec 2019 03:55:57 -0600
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBG9u0Yx105981;
+ Mon, 16 Dec 2019 03:56:00 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576490157;
- bh=h6SVCdCA8094qluRqF1qIAbqUqNnpdtR3qwpgtBc3ck=;
- h=From:To:CC:Subject:Date;
- b=iddfKkc8eLohJwWp70i8+Vj+SfbfoCLwB60WOEnGWymfsq4ZaFBih2dvgRhb1yhCq
- y3KRXCNl5IWIWj7ri49iqsf6zFLDFTnyxIk5BBkbpdNeb3X0YYkjGSzSJU7RHeDhfs
- NRc/AydGH3GLVlF9FpqY1WTRfCCezVmcDp1x93NU=
-Received: from DLEE101.ent.ti.com (dlee101.ent.ti.com [157.170.170.31])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBG9tvOA048668
+ s=ti-com-17Q1; t=1576490160;
+ bh=6fpvrXJ83jkqpt127njJSVIBYoo3/59w/XSU+W0RtjE=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=NKlrK6FAlZIywRYsmE4sw/16bzggCzHeGDwwldI39Hdp7S90tAciZ/h6bu4/1rxNa
+ RAz6bnpPEBZX+XHfhoYUI8V2Cc2UUIx2O0W+bMmZVEwv7e1CWuLDIrtbj4wEkeoEfR
+ y2qcPmhmzNzlUyTM4+aq2e3p7s/niGMY1vT8bBis=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBG9u0fu048706
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 16 Dec 2019 03:55:57 -0600
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 16 Dec 2019 03:56:00 -0600
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 16
- Dec 2019 03:55:57 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 03:55:59 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 16 Dec 2019 03:55:57 -0600
+ Frontend Transport; Mon, 16 Dec 2019 03:55:59 -0600
 Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBG9tsJJ084408;
- Mon, 16 Dec 2019 03:55:54 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBG9tsJK084408;
+ Mon, 16 Dec 2019 03:55:57 -0600
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Rob Herring <robh+dt@kernel.org>, Anil Varughese <aniljoy@cadence.com>,
  Roger Quadros <rogerq@ti.com>, Jyri Sarha <jsarha@ti.com>
-Subject: [PATCH v4 00/14] PHY: Add support for SERDES in TI's J721E SoC
-Date: Mon, 16 Dec 2019 15:26:58 +0530
-Message-ID: <20191216095712.13266-1-kishon@ti.com>
+Subject: [PATCH v4 01/14] dt-bindings: phy: Sierra: Add bindings for Sierra in
+ TI's J721E
+Date: Mon, 16 Dec 2019 15:26:59 +0530
+Message-ID: <20191216095712.13266-2-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191216095712.13266-1-kishon@ti.com>
+References: <20191216095712.13266-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_015605_217910_742DAC9A 
-X-CRM114-Status: GOOD (  13.93  )
+X-CRM114-CacheID: sfid-20191216_015604_798105_88338310 
+X-CRM114-Status: GOOD (  13.48  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -96,70 +99,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TI's J721E SoC uses Cadence Sierra SERDES for USB, PCIe and SGMII.
-TI has a wrapper named WIZ to control input signals to Sierra and
-Torrent SERDES.
+Add DT binding documentation for Sierra PHY IP used in TI's J721E
+SoC.
 
-This patch series:
- 1) Add support to WIZ module present in TI's J721E SoC
- 2) Adapt Cadence Sierra PHY driver to be used for J721E SoC
+Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
+ .../devicetree/bindings/phy/phy-cadence-sierra.txt  | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
 
-Changes from v3:
- *) Fix Rob's comments on dt bindings
-        -> Add properties to be added in WIZ child nodes to binding
-        -> Use '-' rather than '_' in node names
-
-Changes from v2:
- *) Deprecate "phy_clk" binding
- *) Fix Rob's comment on dt bindings
-        -> Include BSD-2-Clause license identifier
-        -> drop "oneOf" and "items" for compatible
-        -> Fixed "num-lanes" to include only scalar keywords
-        -> Change to 32-bit address space for child nodes
-*) Rename cmn_refclk/cmn_refclk1 to cmn_refclk_dig_div/
-   cmn_refclk1_dig_div
-
-Changes from v1:
- *) Change the dt binding Documentation of WIZ wrapper to YAML format
- *) Fix an issue in Sierra while doimg rmmod
-
-The series has also been pushed to
-https://github.com/kishon/linux-wip.git j7_serdes_v4
-
-Anil Varughese (1):
-  phy: cadence: Sierra: Configure both lane cdb and common cdb registers
-    for external SSC
-
-Kishon Vijay Abraham I (13):
-  dt-bindings: phy: Sierra: Add bindings for Sierra in TI's J721E
-  phy: cadence: Sierra: Make "phy_clk" and "sierra_apb" optional
-    resources
-  phy: cadence: Sierra: Use "regmap" for read and write to Sierra
-    registers
-  phy: cadence: Sierra: Add support for SERDES_16G used in J721E SoC
-  phy: cadence: Sierra: Make cdns_sierra_phy_init() as phy_ops
-  phy: cadence: Sierra: Modify register macro names to be in sync with
-    Sierra user guide
-  phy: cadence: Sierra: Get reset control "array" for each link
-  phy: cadence: Sierra: Check for PLL lock during PHY power on
-  phy: cadence: Sierra: Change MAX_LANES of Sierra to 16
-  phy: cadence: Sierra: Set cmn_refclk_dig_div/cmn_refclk1_dig_div
-    frequency to 25MHz
-  phy: cadence: Sierra: Use correct dev pointer in
-    cdns_sierra_phy_remove()
-  dt-bindings: phy: Document WIZ (SERDES wrapper) bindings
-  phy: ti: j721e-wiz: Add support for WIZ module present in TI J721E SoC
-
- .../bindings/phy/phy-cadence-sierra.txt       |  13 +-
- .../bindings/phy/ti,phy-j721e-wiz.yaml        | 204 ++++
- drivers/phy/cadence/phy-cadence-sierra.c      | 699 +++++++++++---
- drivers/phy/ti/Kconfig                        |  15 +
- drivers/phy/ti/Makefile                       |   1 +
- drivers/phy/ti/phy-j721e-wiz.c                | 898 ++++++++++++++++++
- 6 files changed, 1691 insertions(+), 139 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/phy/ti,phy-j721e-wiz.yaml
- create mode 100644 drivers/phy/ti/phy-j721e-wiz.c
-
+diff --git a/Documentation/devicetree/bindings/phy/phy-cadence-sierra.txt b/Documentation/devicetree/bindings/phy/phy-cadence-sierra.txt
+index 6e1b47bfce43..03f5939d3d19 100644
+--- a/Documentation/devicetree/bindings/phy/phy-cadence-sierra.txt
++++ b/Documentation/devicetree/bindings/phy/phy-cadence-sierra.txt
+@@ -2,21 +2,24 @@ Cadence Sierra PHY
+ -----------------------
+ 
+ Required properties:
+-- compatible:	cdns,sierra-phy-t0
+-- clocks:	Must contain an entry in clock-names.
+-		See ../clocks/clock-bindings.txt for details.
+-- clock-names:	Must be "phy_clk"
++- compatible:	Must be "cdns,sierra-phy-t0" for Sierra in Cadence platform
++		Must be "ti,sierra-phy-t0" for Sierra in TI's J721E SoC.
+ - resets:	Must contain an entry for each in reset-names.
+ 		See ../reset/reset.txt for details.
+ - reset-names:	Must include "sierra_reset" and "sierra_apb".
+ 		"sierra_reset" must control the reset line to the PHY.
+ 		"sierra_apb" must control the reset line to the APB PHY
+-		interface.
++		interface ("sierra_apb" is optional).
+ - reg:		register range for the PHY.
+ - #address-cells: Must be 1
+ - #size-cells:	Must be 0
+ 
+ Optional properties:
++- clocks:		Must contain an entry in clock-names.
++			See ../clocks/clock-bindings.txt for details.
++- clock-names:		Must contain "cmn_refclk_dig_div" and
++			"cmn_refclk1_dig_div" for configuring the frequency of
++			the clock to the lanes. "phy_clk" is deprecated.
+ - cdns,autoconf:	A boolean property whose presence indicates that the
+ 			PHY registers will be configured by hardware. If not
+ 			present, all sub-node optional properties must be
 -- 
 2.17.1
 
