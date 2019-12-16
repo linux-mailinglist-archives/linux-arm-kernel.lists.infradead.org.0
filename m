@@ -2,149 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1342F121ECE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 00:11:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0A7E121EF0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 00:27:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A0ih6v4Xaj4c+/hwz8SoRHd9bLEgRy7vBKch7NQXczE=; b=tJ+Od9QetDz9p6
-	+q4+RJ91+32UhUISdG5Jgqg9toS0wW4XbH0MdBGxpd00L1dA/z0O+SfwJZXdaqslfYiQRxoupjlHo
-	vieeqatYnOf8pnzDQ2XPbb2ls8PX/+wu/5cotpNmMJUtt5+cbYccf0V51KIshkq1hn9am/n21KixP
-	0peccZ+NrSFnQyeEoDvrk49pB2TIY6ki8Pu4ehSCOYjjWE8gVE1YQXhENJWRix/yAxUvWXC5IGPCm
-	BFVmXxom0IIZbQaJZtyzaZrdJP1XoqOuawunZPJpTmprDenRqo9id2IpQ5iXLSspeC/pJzVm7XYDI
-	XBxO6fYuCJUedeXbzHCQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BGoSC2khZmWWYT0wmhito9jUIstUS6AwsFv7woQL85Y=; b=inPL5wH4cqaLNR
+	9hU2SbmsFUPFe4OaBKBR0HEBKNPc46JctqpFbr9mVz+VrWunPvOQNYW0At2b1YaMdC/LU81a90jTU
+	Z2z/htz84wKIjG8Nts/Uxq1qFy1Hdzb51lYrHXUkGRodMbETRJdRhgSSvt9F4PGLEuDaRy5XpP2cY
+	Axati+hw0MJXm/Cj4jy48uOgeaUKzW/i5yz1kBetjOjorglX8N3hNNiwLkBGvKnEVA/qH2k4dUbFP
+	LNMfxTV9CwGk4U7cpg+SlhI56+DShdHvcfI1r7FJmvqohZV2nkrNNrWIwSgEfbSLjNU3dsY14nBDL
+	dga6KMirAmqAgtkpLOAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igzWZ-0003tG-Pm; Mon, 16 Dec 2019 23:11:35 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1igzm1-0000r4-F1; Mon, 16 Dec 2019 23:27:33 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igzWS-0003sh-CC; Mon, 16 Dec 2019 23:11:29 +0000
-Received: by mail-ed1-x541.google.com with SMTP id i16so5442926edr.5;
- Mon, 16 Dec 2019 15:11:26 -0800 (PST)
+ id 1igzls-0000qN-Ry
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 23:27:26 +0000
+Received: by mail-pl1-x643.google.com with SMTP id c13so5201088pls.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Dec 2019 15:27:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=y5VznfTlj8s5e64NXPKs/+dz6p0LXbyXo6EI0v0+3bg=;
- b=Lpc0Vb8xBfh4SwqrXPH8xDSmOddjLHwcb97uOv/iplvNpeQK76QGSASGzqD35VJgY8
- R+/9+XdsownBPt8+d0rV3CrWZZraPIAnXq36Lr4NhTOph8kPAe04KfJ1mHnSis9h9nEO
- zBjSc8U3Y2rmthloRFrsvwT7jMLf0wVkYjuwGkrykfW68RsU+7X6L4OAl2SVEjQ/jR+h
- 4ERY/JEHjhqnY6jxHAi6LcJAXIlRlYpxRwVdwo6N3GGRijk90o208zgI6ocPwzrpaCZ8
- dIAHC2rf9NniMZQQ365ygaEfVWm/fxNKaHGNI4ZjVjv+KXH0FknZ6a+kPEeR64ODwATc
- u1vg==
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=pP1hagqSYDwwA2YjZ9gfdWx6xDMgnbeyBHGfmn3+DE0=;
+ b=MMYzJp6UxQUQNh58RYjrQGcY6a+hdQWcxSmKtC7oHVd0+x7KJpndeE6yPq3xBAl3jZ
+ B/MX8003PV+SZ2nwo8AxyMJHjMHWpXKKFZsX3sWY/ZhgsSxWp3VW8rlFk3N5TVHYYYEX
+ qpki9caXNC3/QO8osDQ43QRMuA/yh72mDh6umUSu4mOhWTdU8DaM6XUsO20xR7HH/TAY
+ lE2AQsIq2ECvmaIM5v3+cWuHGSiTBIqbd/D1GSPw8a4IbTUmHJ1vwbN5KmsKT+zS7PBd
+ VmO+ZH5dNK6HKl8B0m1c0D/SeFnNP8WfLnr7i9jiwoQ/Z3YF/c3IFNfjz1CggHZdxXJ0
+ rjqQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=y5VznfTlj8s5e64NXPKs/+dz6p0LXbyXo6EI0v0+3bg=;
- b=nxAEarzF9QO7VPauO9qqdgmP+RbtMw3XXs9rrwIA5yZw4BRgfGnb/i+yZOIOfithJx
- 9/YtaO3zRxXF/ZEiPqdpzbiKepzFFTXuvHg9irEk3mSoXXlloh8hOOjx3oQShmp1GXQM
- UFHYHrD29jvPHtktVp2X1mERSWkv+Qz24bmUzDU+Qyu6vEH0rZuxA/IJotK09JO9sfzp
- dE6HO7YxTXz4TpHe7rxNUmvLlDTO4M3FRFn/C7TY7t54o0aWOr4HmvW4BP6Gwn+7u4C7
- r/174SMXYdnPQBt0RbPvKG9PBg7TJK8ToRyt8Y1l8+sqTk5v051gabMIUYNKaAgHGAu8
- 14oA==
-X-Gm-Message-State: APjAAAVQiM5U29s6yXyuDJYlMM/ItcDaBSjyEKqDHLxLR1JDYs4yBJB6
- AJ1qn697Uzvb+hL9ERWd51I=
-X-Google-Smtp-Source: APXvYqwouAl0ngezgNTeQZuIOCeL0T63mT5/n01W05QepGHghx4jejNtq0bx+0lfFjxYlKHcJTCVZw==
-X-Received: by 2002:a05:6402:21e3:: with SMTP id
- ce3mr2010079edb.165.1576537885180; 
- Mon, 16 Dec 2019 15:11:25 -0800 (PST)
-Received: from [10.67.50.53] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id b27sm72059ejg.40.2019.12.16.15.11.20
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 16 Dec 2019 15:11:24 -0800 (PST)
-Subject: Re: [PATCH v2 1/1] spi: bcm2835: no dev_err() on clk_get()
- -EPROBE_DEFER
-To: Jim Quinlan <james.quinlan@broadcom.com>, linux-spi@vger.kernel.org
-References: <20191216230802.45715-1-jquinlan@broadcom.com>
- <20191216230802.45715-2-jquinlan@broadcom.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <98362740-2ce9-41f2-a053-80ade1e72a1b@gmail.com>
-Date: Mon, 16 Dec 2019 15:11:18 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition
+ :content-transfer-encoding:in-reply-to:user-agent;
+ bh=pP1hagqSYDwwA2YjZ9gfdWx6xDMgnbeyBHGfmn3+DE0=;
+ b=FvVIb42vkEocHm9S111riaKx9fcTnRpHPcVUlzddXOXrPSXLMTb71FMVx6lulP9Sme
+ QDYOrYagp12EZfdOoKVBWQ6dttf4Yj/+4hOeGQjNQWvXA189x6nE2YRF+9GO4UmJUgW8
+ B4uJRQgmsmTnLxb+8ULerJ09euorr6gmsJ2zDRPsrSSSD1gFsXqLDH8u8UHQrdzJE8uZ
+ p4GDZwAVLCQIXW2E5Klz7n0D0/eUqOq2S2dl8IMGHnXxmj8c4eHDTrWXseBkTxL5i2eo
+ qrxiGy66hzCc5EP4q7e/jb9JMFBXJtnJF2U6zpZZ5reNz6NosMq55PLlJ48dz8OjO5rO
+ wArw==
+X-Gm-Message-State: APjAAAX2QFgYvO/Vahb5rOiyImMrr6PtTEG3LFfGAdi0t+jOIAzhVxMz
+ hg3zw8JSxPE/0MLCUtkjORI=
+X-Google-Smtp-Source: APXvYqxGQ8NGtMEivlA2YMXllL8k/BlL9MhGxi6roCjQUTeTt1nWxWnBdxfsHtWDSc0zFy7zNwVsAA==
+X-Received: by 2002:a17:90a:bd8f:: with SMTP id
+ z15mr2370209pjr.54.1576538842771; 
+ Mon, 16 Dec 2019 15:27:22 -0800 (PST)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id k9sm593648pje.26.2019.12.16.15.27.20
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 16 Dec 2019 15:27:21 -0800 (PST)
+Date: Mon, 16 Dec 2019 15:27:20 -0800
+From: Guenter Roeck <linux@roeck-us.net>
+To: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
+Subject: Re: [PATCH v11 14/14] hwmon: Add PECI dimmtemp driver
+Message-ID: <20191216232720.GA17398@roeck-us.net>
+References: <20191211194624.2872-1-jae.hyun.yoo@linux.intel.com>
+ <20191211194624.2872-15-jae.hyun.yoo@linux.intel.com>
+ <d75aaad9-ae07-feeb-966a-899ecfe9d4b3@roeck-us.net>
+ <5ed9f292-e024-ffda-a1a8-870ba0f05c58@linux.intel.com>
+ <20191216212120.GA12089@roeck-us.net>
+ <c6ccb0ff-c0b4-86b2-1768-ba63713034a4@linux.intel.com>
 MIME-Version: 1.0
-In-Reply-To: <20191216230802.45715-2-jquinlan@broadcom.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <c6ccb0ff-c0b4-86b2-1768-ba63713034a4@linux.intel.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_151128_465046_6C8F0975 
-X-CRM114-Status: GOOD (  16.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_152724_906576_82AE0728 
+X-CRM114-Status: GOOD (  22.97  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
+ provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -156,50 +110,218 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Florian Fainelli <f.fainelli@gmail.com>,
- Scott Branden <scott.branden@broadcom.com>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Ray Jui <ray.jui@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
+ Randy Dunlap <rdunlap@infradead.org>, Tomer Maimon <tmaimon77@gmail.com>,
+ devicetree@vger.kernel.org, Frederic Barrat <fbarrat@linux.vnet.ibm.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Lee Jones <lee.jones@linaro.org>,
+ Jason M Biils <jason.m.bills@linux.intel.com>,
+ Eric Sandeen <sandeen@redhat.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jonathan Corbet <corbet@lwn.net>, openbmc@lists.ozlabs.org,
+ linux-doc@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Joel Stanley <joel@jms.id.au>, "Bryant G . Ly" <bryantly@linux.vnet.ibm.com>,
+ Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de>,
+ David Kershner <david.kershner@unisys.com>, Wu Hao <hao.wu@intel.com>,
+ linux-hwmon@vger.kernel.org, Jean Delvare <jdelvare@suse.com>,
+ Arnd Bergmann <arnd@arndb.de>, Philippe Ombredanne <pombredanne@nexb.com>,
+ Johan Hovold <johan@kernel.org>, Tomohiro Kusumi <kusumi.tomohiro@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Stef van Os <stef.van.os@prodrive-technologies.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Sagar Dharia <sdharia@codeaurora.org>, linux-arm-kernel@lists.infradead.org,
+ Alan Cox <alan@linux.intel.com>, Juergen Gross <jgross@suse.com>,
+ Cyrille Pitchen <cyrille.pitchen@wedev4u.fr>, Andrew Jeffery <andrew@aj.id.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Darrick J . Wong" <darrick.wong@oracle.com>,
+ Stephen Boyd <sboyd@codeaurora.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>, Vinod Koul <vkoul@kernel.org>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ "David S . Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/16/19 3:08 PM, Jim Quinlan wrote:
-> Use dev_dbg() on -EPROBE_DEFER and dev_err() on all
-> other errors.
-> 
-> Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+On Mon, Dec 16, 2019 at 02:17:34PM -0800, Jae Hyun Yoo wrote:
+> [...]
+> =
 
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+> > > > > +static int get_dimm_temp(struct peci_dimmtemp *priv, int dimm_no)
+> > > > > +{
+> > > > > +=A0=A0=A0 int dimm_order =3D dimm_no % priv->gen_info->dimm_idx_=
+max;
+> > > > > +=A0=A0=A0 int chan_rank =3D dimm_no / priv->gen_info->dimm_idx_m=
+ax;
+> > > > > +=A0=A0=A0 struct peci_rd_pci_cfg_local_msg rp_msg;
+> > > > > +=A0=A0=A0 u8=A0 cfg_data[4];
+> > > > > +=A0=A0=A0 int ret;
+> > > > > +
+> > > > > +=A0=A0=A0 if (!peci_sensor_need_update(&priv->temp[dimm_no]))
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 return 0;
+> > > > > +
+> > > > > +=A0=A0=A0 ret =3D read_ddr_dimm_temp_config(priv, chan_rank, cfg=
+_data);
+> > > > > +=A0=A0=A0 if (ret)
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 return ret;
+> > > > > +
+> > > > > +=A0=A0=A0 priv->temp[dimm_no].value =3D cfg_data[dimm_order] * 1=
+000;
+> > > > > +
+> > > > > +=A0=A0=A0 switch (priv->gen_info->model) {
+> > > > > +=A0=A0=A0 case INTEL_FAM6_SKYLAKE_X:
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.addr =3D priv->mgr->client->addr;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.bus =3D 2;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 /*
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 10, Function 2: IMC 0 channel =
+0 -> rank 0
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 10, Function 6: IMC 0 channel =
+1 -> rank 1
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 11, Function 2: IMC 0 channel =
+2 -> rank 2
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 12, Function 2: IMC 1 channel =
+0 -> rank 3
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 12, Function 6: IMC 1 channel =
+1 -> rank 4
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 13, Function 2: IMC 1 channel =
+2 -> rank 5
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 */
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.device =3D 10 + chan_rank / 3 * 2 +
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 (chan_rank % 3 =
+=3D=3D 2 ? 1 : 0);
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.function =3D chan_rank % 3 =3D=3D 1=
+ ? 6 : 2;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.reg =3D 0x120 + dimm_order * 4;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.rx_len =3D 4;
+> > > > > +
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 ret =3D peci_command(priv->mgr->client->ad=
+apter,
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 PECI_CMD_=
+RD_PCI_CFG_LOCAL, &rp_msg);
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 if (rp_msg.cc !=3D PECI_DEV_CC_SUCCESS)
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ret =3D -EAGAIN;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 if (ret)
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return ret;
+> > > > > +
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_max[dimm_no] =3D rp_msg.pci_con=
+fig[1] * 1000;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_crit[dimm_no] =3D rp_msg.pci_co=
+nfig[2] * 1000;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 break;
+> > > > > +=A0=A0=A0 case INTEL_FAM6_SKYLAKE_XD:
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.addr =3D priv->mgr->client->addr;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.bus =3D 2;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 /*
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 10, Function 2: IMC 0 channel =
+0 -> rank 0
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 10, Function 6: IMC 0 channel =
+1 -> rank 1
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 12, Function 2: IMC 1 channel =
+0 -> rank 2
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 12, Function 6: IMC 1 channel =
+1 -> rank 3
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 */
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.device =3D 10 + chan_rank / 2 * 2;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.function =3D (chan_rank % 2) ? 6 : =
+2;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.reg =3D 0x120 + dimm_order * 4;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.rx_len =3D 4;
+> > > > > +
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 ret =3D peci_command(priv->mgr->client->ad=
+apter,
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 PECI_CMD_=
+RD_PCI_CFG_LOCAL, &rp_msg);
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 if (rp_msg.cc !=3D PECI_DEV_CC_SUCCESS)
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ret =3D -EAGAIN;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 if (ret)
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return ret;
+> > > > > +
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_max[dimm_no] =3D rp_msg.pci_con=
+fig[1] * 1000;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_crit[dimm_no] =3D rp_msg.pci_co=
+nfig[2] * 1000;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 break;
+> > > > > +=A0=A0=A0 case INTEL_FAM6_HASWELL_X:
+> > > > > +=A0=A0=A0 case INTEL_FAM6_BROADWELL_X:
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.addr =3D priv->mgr->client->addr;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.bus =3D 1;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 /*
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 20, Function 0: IMC 0 channel =
+0 -> rank 0
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 20, Function 1: IMC 0 channel =
+1 -> rank 1
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 21, Function 0: IMC 0 channel =
+2 -> rank 2
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 21, Function 1: IMC 0 channel =
+3 -> rank 3
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 23, Function 0: IMC 1 channel =
+0 -> rank 4
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 23, Function 1: IMC 1 channel =
+1 -> rank 5
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 24, Function 0: IMC 1 channel =
+2 -> rank 6
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 * Device 24, Function 1: IMC 1 channel =
+3 -> rank 7
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0 */
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.device =3D 20 + chan_rank / 2 + cha=
+n_rank / 4;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.function =3D chan_rank % 2;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.reg =3D 0x120 + dimm_order * 4;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 rp_msg.rx_len =3D 4;
+> > > > > +
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 ret =3D peci_command(priv->mgr->client->ad=
+apter,
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 PECI_CMD_=
+RD_PCI_CFG_LOCAL, &rp_msg);
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 if (rp_msg.cc !=3D PECI_DEV_CC_SUCCESS)
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 ret =3D -EAGAIN;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 if (ret)
+> > > > > +=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 return ret;
+> > > > > +
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_max[dimm_no] =3D rp_msg.pci_con=
+fig[1] * 1000;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 priv->temp_crit[dimm_no] =3D rp_msg.pci_co=
+nfig[2] * 1000;
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 break;
+> > > > > +=A0=A0=A0 default:
+> > > > > +=A0=A0=A0=A0=A0=A0=A0 return -EOPNOTSUPP;
+> > > > =
 
-> ---
->  drivers/spi/spi-bcm2835.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
-> index fb61a620effc..e4b57b751ce2 100644
-> --- a/drivers/spi/spi-bcm2835.c
-> +++ b/drivers/spi/spi-bcm2835.c
-> @@ -1305,7 +1305,10 @@ static int bcm2835_spi_probe(struct platform_device *pdev)
->  	bs->clk = devm_clk_get(&pdev->dev, NULL);
->  	if (IS_ERR(bs->clk)) {
->  		err = PTR_ERR(bs->clk);
-> -		dev_err(&pdev->dev, "could not get clk: %d\n", err);
-> +		if (err == -EPROBE_DEFER)
-> +			dev_dbg(&pdev->dev, "could not get clk: %d\n", err);
-> +		else
-> +			dev_err(&pdev->dev, "could not get clk: %d\n", err);
->  		goto out_controller_put;
->  	}
->  
-> 
+> > > > It looks like the sensors are created even on unsupported platforms,
+> > > > which would generate error messages whenever someone tries to read
+> > > > the attributes.
+> > > > =
+
+> > > > There should be some code early on checking this, and the driver
+> > > > should not even instantiate if the CPU model is not supported.
+> > > =
+
+> > > Actually, this 'default' case will not be happened because this driver
+> > > will be registered only when the CPU model is supported. The CPU model
+> > > checking code is in 'intel-peci-client.c' which is [11/14] of this
+> > > patch set.
+> > > =
+
+> > =
+
+> > That again assumes that both drivers will be modified in sync in the fu=
+ture.
+> > We can not make that assumption.
+> =
+
+> As you said, both drivers must be modified in sync in the future because
+> each Intel CPU family uses different way of reading DIMM temperature.
+> In case if supported CPU checking code updated without making sync with
+> it, this driver will return the error.
+> =
 
 
--- 
-Florian
+... and in that situation the driver should not instantiate in the
+first place. Its probe function should return -ENODEV.
+
+Guenter
 
 _______________________________________________
 linux-arm-kernel mailing list
