@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0E17121B8F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 22:11:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2BAE121B98
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 22:14:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VQg9KE2z/2Xvq+La/bPEBgfahw2WlFr6D2YtDJ+qhts=; b=O/zrT+o1bG6JLk
-	ebgPo0BSIu5DFX6X+P440qWB3BsX/CgPelrcQS5aQQQLALTIZESyilmeVzBSowGylaS2+JF1M07mI
-	BWiPQJsmY/hoXDFJSmzN3hszku+P2cxep+a63x02wKlMgvuxS4eGMxPy1evnt4ekh3mPc2DlhjJDm
-	Fwx5CRJIS+fqsWXwqBA0oCBuJpySiDpjv+SscPwYyDCkEpbGizQndelemnKJePXTJDNJbqH1ooP0Q
-	5FGo8Bbd4f7tfsoTJzNTzZw2phKaz8V50G8B4dkovYccfgNIq5TuVdWXul2HTc+EdalUT+7M6Z/HP
-	IF3v1U5seM+SoB/cT1Bg==;
+	List-Owner; bh=1cPEWL/fCihePFh0ykKaxqDkYKZHzEau1N/kVntEyO8=; b=l+14F1hVA3dGFP
+	+VNpuEsN/DJWaqaXRjAgyz7Vi11WIJ2rNG6gHLVYiEUfDUFQail6jXyNcp8HziCMxpCUiwrLB2IGx
+	ahdFl0g5Z/2Uv1F/Pzh2JOgsNNu3fRsNv4kgSbDi0FInXseaH2rWvjJ0rSFw8G/aEi77tjDNjVS11
+	XgGQX3etHh5sk7aKHtmdaYYY5bbVhqmlVuLetHr+85WjdVbBho2JnTImYj4VMIB4h8sFtc2K8heo3
+	MvHNPZLGqyW85BwpS/vLVniZL2dSNTfpJ8KQSHK56c0s5amzNDuabwofqTac4wrIoXkHxa8w7CDF5
+	OADMR8amSrRMsfaF/Nug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igxeV-0006Ee-UX; Mon, 16 Dec 2019 21:11:39 +0000
-Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
+	id 1igxhK-0006qW-5U; Mon, 16 Dec 2019 21:14:34 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igxeM-0006Di-0K
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 21:11:32 +0000
-Received: by mail-il1-x144.google.com with SMTP id a6so6573929ili.9
+ id 1igxhA-0006pd-Qr
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 21:14:26 +0000
+Received: by mail-lj1-x244.google.com with SMTP id a13so8366159ljm.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 13:11:29 -0800 (PST)
+ Mon, 16 Dec 2019 13:14:24 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=fkYJ5pa9nbKOKyFcP8C8UHZBwLa5GTQfg7UnOmnBomE=;
- b=p0lL2isV5hhyipvhkSqpkezqiNxO/gomyfNXgVp1sNiokvE7WHAgy5YsnlImH0Rcbp
- FZlC8YcC64xQb73aWSxz20NfuGmGUn5JWUrrcpX6iKK6iYlxmH9L8Er8YZQVt2CR6XZY
- CUDjfqHU9fSm7uD+buILT2h3MCCk+3b7gh5Xl4UsUEGhhoHxDK1b070+sxL3GEkCzEQD
- 1ka6D1oeH/jAsr+lvK/ENdP2aQqzNUP1t5t0vBxnC37Qz41qx2mLaAZKhqE/HodKMfUL
- nKKEBe8aTv7w5xUTv3r6Fi3ARFBjvmdU+ULTqhd8l5rSPGfacfny7kNCbG5NGNNMOHKT
- F6hg==
+ :cc; bh=CVU2QVc8cullB3PW1a2bN+Nno6c4lqAlkAVvljHtjfU=;
+ b=LPKOU/QMk5SxHjfr2dHQL6fMsZksjmG/nS+UQ8yyfcciov84en0pO+PczBe5HiSV2a
+ pAx5IwlnuQ/uc2nYtfDWdhzvsmqli4YyekYR+EN2f9VPJYLCU/XeatX5RRTWShWDlOXY
+ NsamuMfgn4sLGMeU4ct9v8UpzIbDBVFCEBBIa4+q5Gk0prJsBhMzutCAZEXMuT5BcbDY
+ +nq+7KMHAcWH586E41ZY5IHJTmwaIJebOF4npfIejcvphkhMdW9p7QO5O+mtEzEg9T6G
+ jhHE+jdPiofOecKrBVvctxWNT08r6qXqrPYMbvbpYt124CgYPtYKU7KvGqSQSPoV3StI
+ 1vCA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=fkYJ5pa9nbKOKyFcP8C8UHZBwLa5GTQfg7UnOmnBomE=;
- b=UCqLv18GL8F7yl5QtK2u1gJzMYS7pw4DvlOpU6AmK89/vLwD2FPUoNVuSyO3fYCfIo
- JGwWIZ7cAodvyWR3Xq9u1/VuyGVNgEY4MSxtGZgC9s2/tcbWNO6/7JGBYMKbx5soOtM4
- TmlWLWXcDiIsb/Q+h7OZTIScFXk7nunWJgTp53kJ46u1UW1jlOEO8E+ZtGPKnqbEzwP3
- fTRvVOSOcfWFHEwobUMYETsGishYn5BRJQXNxeAIB3PIQ3SfcjDfDeJkdzaCtggtbIlR
- BHKcaP6jOEtXskHDLC+gHrjkagCi3acpKgIRyQsGJM/w/XAXOfNoswVbKa8P+PF4qEFV
- JncQ==
-X-Gm-Message-State: APjAAAUkpkNWXQJzSSV0C8OouuAcdjd9PU4vwolsa/GkbTlPfUtqUKu0
- vrHTO2k7Dy7q2htxQIkjbJpxjr6yZkFqGp5aVb6HkQ==
-X-Google-Smtp-Source: APXvYqxVHsdIC8VlRYTzYqeb69NqWhrUbzqstR4rImviApaGK7bQAGkdHjoiFC5rrFcG91bXmTXETB1cct+Y6qGPmJU=
-X-Received: by 2002:a92:5f86:: with SMTP id i6mr13599326ill.57.1576530688363; 
- Mon, 16 Dec 2019 13:11:28 -0800 (PST)
+ bh=CVU2QVc8cullB3PW1a2bN+Nno6c4lqAlkAVvljHtjfU=;
+ b=HunluW4twGHOZLtLhmalpTByVKADjCXXpBV1tkkKX7iTZ5nH+4EqgeK7vCozlvv2mb
+ yKgXv7DW+/spKmotuFteBflhE+ZvXYV7Mw1XNPdKFnu8mO2XSWa5Pz+oDWCLzXhDozsr
+ mltPJY/9xC2BnEoiJh0/M3uCkbwPMzIvOS5ujTNWkt4TveV5oWFrBsfk1fwLTyF3GNKt
+ hZxL9u6tiNuYE6nKEf24d9TK3e3lsLrdslDlqp5KRsEeGRS/arBiLIros7zGt24q+ICn
+ Ky7pTr4QHFXk/p0q+N+9SdkbTwOUljlQiSS4J7TBbNgTuPm7+875Qztdxa/+u+cQ1uag
+ n5DA==
+X-Gm-Message-State: APjAAAWivBfA2Puk4JPTzJKWfBZRLdPERWcEc67Qezaxe9JfyB5jKoWC
+ iU142SwGhP6CPHWgS/fuIHbbrsks1Uw4YX/hTXZW+g==
+X-Google-Smtp-Source: APXvYqxq2pt3rp1m5FiZ9cPdnCmaTiiQGBTNnIVat0Mbyut/kVo8lxMGBBfseRhqdc4BP2977wafF8CCqTehXy5Gio0=
+X-Received: by 2002:a2e:b4f6:: with SMTP id s22mr797657ljm.218.1576530862685; 
+ Mon, 16 Dec 2019 13:14:22 -0800 (PST)
 MIME-Version: 1.0
-References: <20191211230959.5577-1-mike.leach@linaro.org>
-In-Reply-To: <20191211230959.5577-1-mike.leach@linaro.org>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Mon, 16 Dec 2019 14:11:17 -0700
-Message-ID: <CANLsYkx_bG4GLcP5qhdDgHNmGa0C6Wi0HaLcdzCJj1yHE0iNXQ@mail.gmail.com>
-Subject: Re: [PATCH v6 13/15] docs: coresight: Update documentation for
- CoreSight to cover CTI.
-To: Mike Leach <mike.leach@linaro.org>, Jon Corbet <corbet@lwn.net>
+References: <20191210224857.28661-1-linus.walleij@linaro.org>
+ <20191216175535.GA173588@gerhold.net>
+In-Reply-To: <20191216175535.GA173588@gerhold.net>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 16 Dec 2019 22:14:10 +0100
+Message-ID: <CACRpkdZ+u=S=8_oLEg4+gHkOR05QrhorABJfoQ_bQjaFLw_4Mw@mail.gmail.com>
+Subject: Re: [PATCH v3] drm/mcde: Some fixes to handling video mode
+To: Stephan Gerhold <stephan@gerhold.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_131130_064560_153C40E1 
-X-CRM114-Status: GOOD (  32.76  )
+X-CRM114-CacheID: sfid-20191216_131424_870364_56519AE6 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,280 +91,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
- Coresight ML <coresight@lists.linaro.org>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Sean Paul <sean@poorly.run>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 11 Dec 2019 at 16:10, Mike Leach <mike.leach@linaro.org> wrote:
->
-> Add new document covering CTI / CTM usage in CoreSight.
->
-> Add section in coresight.rst introducing CTI and CTM modules with link
-> to new document.
->
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> ---
->  .../trace/coresight/coresight-ect.rst         | 211 ++++++++++++++++++
->  Documentation/trace/coresight/coresight.rst   |  13 ++
->  2 files changed, 224 insertions(+)
->  create mode 100644 Documentation/trace/coresight/coresight-ect.rst
->
-> diff --git a/Documentation/trace/coresight/coresight-ect.rst b/Documentation/trace/coresight/coresight-ect.rst
-> new file mode 100644
-> index 000000000000..3e06588f24fa
-> --- /dev/null
-> +++ b/Documentation/trace/coresight/coresight-ect.rst
-> @@ -0,0 +1,211 @@
-> +=============================================
-> +CoreSight Embedded Cross Trigger (CTI & CTM).
-> +=============================================
-> +
-> +    :Author:   Mike Leach <mike.leach@linaro.org>
-> +    :Date:     November 2019
-> +
-> +Hardware Description
-> +--------------------
-> +
-> +The CoreSight Cross Trigger Interface (CTI) is a hardware device that takes
-> +individual input and output hardware signals known as triggers to and from
-> +devices and interconnects them via the Cross Trigger Matrix (CTM) to other
-> +devices via numbered channels, in order to propagate events between devices.
-> +
-> +e.g.::
-> +
-> + 0000000  in_trigs  :::::::
-> + 0 C   0----------->:     :             +======>(other CTI channel IO)
-> + 0  P  0<-----------:     :             v
-> + 0   U 0  out_trigs :     : Channels  *****      :::::::
-> + 0000000            : CTI :<=========>*CTM*<====>: CTI :---+
-> + #######  in_trigs  :     : (id 0-3)  *****      :::::::   v
-> + # ETM #----------->:     :                         ^   #######
-> + #     #<-----------:     :                         +---# ETR #
-> + ####### out_trigs  :::::::                             #######
-> +
-> +The CTI driver enables the programming of the CTI to attach triggers to
-> +channels. When an input trigger becomes active, the attached channel will
-> +become active. Any output trigger attached to that channel will also
-> +become active. The active channel is propagated to other CTIs via the CTM,
-> +activating connected output triggers there, unless filtered by the CTI
-> +channel gate.
-> +
-> +It is also possible to activate a channel using system software directly
-> +programming registers in the CTI.
-> +
-> +The CTIs are registered by the system to be associated with CPUs and/or other
-> +CoreSight devices on the trace data path. When these devices are enabled the
-> +attached CTIs will also be enabled. By default/on power up the CTIs have
-> +no programmed trigger/channel attachments, so will not affect the system
-> +until explicitly programmed.
-> +
-> +The hardware trigger connections between CTIs and devices is implementation
-> +defined, unless the CPU/ETM combination is a v8 architecture, in which case
-> +the connections have an architecturally defined standard layout.
-> +
-> +The hardware trigger signals can also be connected to non-CoreSight devices
-> +(e.g. UART), or be propagated off chip as hardware IO lines.
-> +
-> +All the CTI devices are associated with a CTM. On many systems there will be a
-> +single effective CTM (one CTM, or multiple CTMs all interconnected), but it is
-> +possible that systems can have nets of CTIs+CTM that are not interconnected by
-> +a CTM to each other. On these systems a CTM index is declared to associate
-> +CTI devices that are interconnected via a given CTM.
-> +
-> +Sysfs files and directories
-> +---------------------------
-> +
-> +The CTI devices appear on the existing CoreSight bus alongside the other
-> +CoreSight devices::
-> +
-> +    >$ ls /sys/bus/coresight/devices
-> +     cti_cpu0  cti_cpu2  cti_sys0  etm0  etm2  funnel0  replicator0  tmc_etr0
-> +     cti_cpu1  cti_cpu3  cti_sys1  etm1  etm3  funnel1  tmc_etf0     tpiu0
-> +
-> +The ``cti_cpu<N>`` named CTIs are associated with a CPU, and any ETM used by
-> +that core. the ``cti_sys<N>`` CTIs are general system infrastructure CTIs that
-> +can be associated with other CoreSight devices, or other system hardware
-> +capable of generating or using trigger signals.::
-> +
-> +  >$ ls /sys/bus/coresight/devices/etm0/cti_cpu0
-> +  channels  ctmid  enable  nr_trigger_cons mgmt  power  regs  subsystem
-> +  triggers0 triggers1  uevent
-> +
-> +*Key file items are:-*
-> +   * ``enable``: enables/disables the CTI.
-> +   * ``ctmid`` : associated CTM - only relevant if system has multiple CTI+CTM
-> +     clusters that are not interconnected.
-> +   * ``nr_trigger_cons`` : total connections - triggers<N> directories.
-> +
-> +*Sub-directories:-*
-> +   * ``triggers<N>``: contains list of triggers for an individual connection.
-> +   * ``channels``: Contains the channel API - CTI main programming interface.
-> +   * ``regs``: Gives access to the raw programmable CTI regs.
-> +   * ``mgmt``: the standard CoreSight management registers.
-> +
-> +
-> +triggers<N> directories
-> +~~~~~~~~~~~~~~~~~~~~~~~
-> +
-> +Individual trigger connection information. This describes trigger signals for
-> +CoreSight and non-CoreSight connections.
-> +
-> +Each triggers directory has a set of parameters describing the triggers for
-> +the connection.
-> +
-> +   * ``name`` : name of connection
-> +   * ``in_signals`` : input trigger signal indexes used in this connection.
-> +   * ``in_types`` : functional types for in signals.
-> +   * ``out_signals`` : output trigger signals for this connection.
-> +   * ``out_types`` : functional types for out signals.
-> +
-> +e.g::
-> +
-> +    >$ ls ./cti_cpu0/triggers0/
-> +    in_signals  in_types  name  out_signals  out_types
-> +    >$ cat ./cti_cpu0/triggers0/name
-> +    cpu0
-> +    >$ cat ./cti_cpu0/triggers0/out_signals
-> +    0-2
-> +    >$ cat ./cti_cpu0/triggers0/out_types
-> +    pe_edbgreq pe_dbgrestart pe_ctiirq
-> +    >$ cat ./cti_cpu0/triggers0/in_signals
-> +    0-1
-> +    >$ cat ./cti_cpu0/triggers0/in_types
-> +    pe_dbgtrigger pe_pmuirq
-> +
-> +If a connection has zero signals in either the 'in' or 'out' triggers then
-> +those parameters will be omitted.
-> +
-> +Channels API Directory
-> +~~~~~~~~~~~~~~~~~~~~~~
-> +
-> +This provides an easy way to attach triggers to channels, without needing
-> +the multiple register operations that are required if manipulating the
-> +'regs' sub-dir elements directly.
-> +
-> +A number of files provide this API::
-> +
-> +   >$ ls ./cti_sys0/channels/
-> +   chan_clear         chan_inuse         chan_xtrigs_view      trigin_detach
-> +   chan_free          chan_pulse         chan_xtrigs_view_sel  trigout_attach
-> +   chan_gate_disable  chan_set           trig_filter_enable    trigout_detach
-> +   chan_gate_enable   chan_xtrigs_reset  trigin_attach         trigout_filtered
-> +
-> +Most access to these elements take the form::
-> +
-> +  echo <chan> [<trigger>] > /<device_path>/<operation>
-> +
-> +where the optional <trigger> is only needed for trigXX_attach | detach
-> +operations.
-> +
-> +e.g.::
-> +
-> +   >$ echo 0 1 > ./cti_sys0/channels/trigout_attach
-> +   >$ echo 0 > ./cti_sys0/channels/chan_set
-> +
-> +Attaches trigout(1) to channel(0), then activates channel(0) generating a
-> +set state on cti_sys0.trigout(1)
-> +
-> +
-> +*API operations*
-> +
-> +   * ``trigin_attach, trigout_attach``: Attach a channel to a trigger signal.
-> +   * ``trigin_detach, trigout_detach``: Detach a channel from a trigger signal.
-> +   * ``chan_set``: Set the channel - the set state will be propagated around
-> +     the CTM to other connected devices.
-> +   * ``chan_clear``: Clear the channel.
-> +   * ``chan_pulse``: Set the channel for a single CoreSight clock cycle.
-> +   * ``chan_gate_enable``: Write operation sets the CTI gate to propagate
-> +     (enable) the channel to other devices. This operation takes a channel
-> +     number. CTI gate is enabled for all channels by default at power up. Read
-> +     to list the currently enabled channels on the gate.
-> +   * ``chan_gate_disable``: Write channel number to disable gate for that
-> +     channel.
-> +   * ``chan_inuse``: Show the current channels attached to any signal
-> +   * ``chan_free``: Show channels with no attached signals.
-> +   * ``chan_xtrig_view``: write a channel number to select a channel to view,
-> +     read to show the cross triggers programmed for the selected channel.
-> +   * ``trig_filter_enable``: Defaults to enabled, disable to allow potentially
-> +     dangerous output signals to be set.
-> +   * ``trigout_filtered``: Trigger out signals that are prevented from being
-> +     set if filtering ``trig_filter_enable`` is enabled. One use is to prevent
-> +     accidental ``EDBGREQ`` signals stopping a core.
-> +   * ``chan_xtrigs_reset``: Write 1 to clear all channel / trigger programming.
-> +     Resets device hardware to default state.
-> +
-> +
-> +The example below attaches input trigger index 1 to channel 2, and output
-> +trigger index 6 to the same channel. It then examines the state of the
-> +channel / trigger connections using the appropriate sysfs attributes.
-> +
-> +The settings mean that if either input trigger 1, or channel 2 go active then
-> +trigger out 6 will go active. We then enable the CTI, and use the software
-> +channel control to activate channel 2. We see the active channel on the
-> +``choutstatus`` register and the active signal on the ``trigoutstatus``
-> +register. Finally clearing the channel removes this.
-> +
-> +e.g.::
-> +
-> +   .../cti_sys0/channels# echo 2 1 > trigin_attach
-> +   .../cti_sys0/channels# echo 2 6 > trigout_attach
-> +   .../cti_sys0/channels# cat chan_free
-> +   0-1,3
-> +   .../cti_sys0/channels# cat chan_inuse
-> +   2
-> +   .../cti_sys0/channels# echo 2 > chan_xtrigs_view
-> +   .../cti_sys0/channels# cat chan_xtrigs_view
-> +   [2] IN: 1 OUT: 6
-> +   .../cti_sys0/# echo 1 > enable
-> +   .../cti_sys0/channels# echo 2 > chan_set
-> +   .../cti_sys0/channels# cat ../regs/choutstatus
-> +   0x4
-> +   .../cti_sys0/channels# cat ../regs/trigoutstatus
-> +   0x40
-> +   .../cti_sys0/channels# echo 2 > chan_clear
-> +   .../cti_sys0/channels# cat ../regs/trigoutstatus
-> +   0x0
-> +   .../cti_sys0/channels# cat ../regs/choutstatus
-> +   0x0
-> diff --git a/Documentation/trace/coresight/coresight.rst b/Documentation/trace/coresight/coresight.rst
-> index a566719f8e7e..108600ee1e12 100644
-> --- a/Documentation/trace/coresight/coresight.rst
-> +++ b/Documentation/trace/coresight/coresight.rst
-> @@ -491,8 +491,21 @@ interface provided for that purpose by the generic STM API::
->
->  Details on how to use the generic STM API can be found here:- :doc:`../stm` [#second]_.
->
-> +The CTI & CTM Modules
-> +---------------------
-> +
-> +The CTI (Cross Trigger Interface) provides a set of trigger signals between
-> +individual CTIs and components, and can propagate these between all CTIs via
-> +channels on the CTM (Cross Trigger Matrix).
-> +
-> +A separate documentation file is provided to explain the use of these devices.
-> +(:doc:`coresight-ect`) [#fourth]_.
-> +
-> +
->  .. [#first] Documentation/ABI/testing/sysfs-bus-coresight-devices-stm
->
->  .. [#second] Documentation/trace/stm.rst
->
->  .. [#third] https://github.com/Linaro/perf-opencsd
-> +
-> +.. [#fourth] Documentation/trace/coresight/coresight-ect.rst
+Hi Stephan,
 
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+I fixed up the patch according to your comments, this remains:
 
-> --
-> 2.17.1
->
+On Mon, Dec 16, 2019 at 6:55 PM Stephan Gerhold <stephan@gerhold.net> wrote:
+
+> In general I was wondering if we could benefit from using something like
+> the regmap_update_bits() helper to avoid having to write this manually
+> all the time. However, this does not have anything to do with this patch
+> - just an idea that could be discussed separately.
+
+Yeah I can take a stab at simply converting the whole thing to
+regmap-mmio, I thinkt it'd be pretty quick and we can see how
+it looks. Maybe easier to debug as well.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
