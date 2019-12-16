@@ -2,91 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA06511FE82
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 07:44:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3476311FE90
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 07:46:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zgROmNTRgIbCd581DGmkwd+81uTLxivw76oMyENIsjE=; b=HaCyyzQ7Nyojlw
-	KMkme9LGF923I9odesAdApJtFnTT1qZo59x+aSb7wl7Zov7MJl9NJqGPf8zr/8Ig9RtzFwZgbbgAj
-	R7dcyygrvBvL7HS1TDhv2IQQW15eKRSE5dyJ9xGqKAMjqoo2Bnkkj8CE/HD+4pfD4lzDBtQHqLwHe
-	wXd/84syGRUJ6xjPogM379YPsXPVyWwou0x5lq/+OmxSstCFttdpJBnoPB3pPrLPpqPge43dCqvX9
-	FoCxaVQUH00ZO+cc+C3dYc+rpR76rQ76yknJrV9HJHsARGGGS8oCqAerDujBFwL3idEwdHJSirWtp
-	P5dWECwpW2VOFT4acdrg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qzqFNfX/wB2qoBSJQlumMHOZNcff6izuhlm0VH+KWLo=; b=eu0PejFPtLNXwZ
+	OYVgR9TNhl6qTtlGmtEkFPA7tYT0BYM/uR+aiVqG5krRMZoTGkJAYdHMSqrcgBD9NYfHBauq6B/iY
+	1EHQS6i85HJI10DGKaMxiMY2Y7lB+RZM/cmt1KVsKMzOlfQXUS+ehX0qQCOoKz+P2cHDoPb7f6Rd5
+	gKzE5QkS2ZvL060ayM2WPYUnI0V2INe522XkMaz2N+FmuCvPdrW0XkBjMSyczkYAK8hdzwjKNlHj6
+	Rn/zjFRo/iNZOaKs5/lPQdC9pAp+XBN06CkbTpfyuLtsrT14VVFKG+IM3T4tWkFTg2QE9ehUD/c+a
+	Sce2rkZGh+qgvGyneArg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igk6n-00051r-9r; Mon, 16 Dec 2019 06:43:57 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1igk9Q-0006dZ-Gh; Mon, 16 Dec 2019 06:46:40 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igk6f-00051O-Ad
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 06:43:51 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id w23so2548460pjd.2
+ id 1igk9F-0006cB-SF
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 06:46:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1576478788;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=uPUbX9Jz4xx+ZUII2dhvvUhvv4VHD3gib9TjJw4FvFo=;
+ b=axvd/GuMCMCsTs+CMigP/dZ5im6iSKbMZASuAT33LNq6UiMoLwqAXtc6WMgvVGlxe4ktns
+ 1no5hUBHbNV/FC9qBK4j/cyMrB+XvnUHoVfzqSZgdeZVyNf84Us07YSRNE4Y1/1ijxIfrA
+ ifQe2KwFh8pnpgyiv2vqa5Td0DuW/U4=
+Received: from mail-lf1-f72.google.com (mail-lf1-f72.google.com
+ [209.85.167.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-333-MNF3ncyYMeClk6zB30O4UA-1; Mon, 16 Dec 2019 01:46:26 -0500
+Received: by mail-lf1-f72.google.com with SMTP id z3so412230lfq.22
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Dec 2019 22:43:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=0ux7G3MiSlS3ev/+kbJZOEXTauz/1zLMbOpd5oJaNEs=;
- b=BARMc7vmR7fmLUrTFtCSW3CaUlYVwks8CpJLZ8KcI/D9LvJqeRkjpQCg6vLYCnKJYx
- WqgdW0fkciggfydIWcknOs9sefiaS7IwbjmZ8K+wUIo3+u0R4sULSY3ZLtV9t/TFnArO
- MHBETRDDI26SPUatTvKnT1M90wqERTGDJ8eAGNnmJKzWvKEWpMbbGTmIPo4/LOyp0cya
- 8UV7JOUUqTefcg6moVIsCyEj/NWeYO8L9qZGjqS8KtMcoDOXbpQcC3SRgE3t4ullRRdW
- i4Hg96dpz1UvtrT6xi74B7rGVJ5k6kRxHONdfbWhbx+6Z6beQT3HQYaNvkc87RNMTbwC
- DFPw==
+ Sun, 15 Dec 2019 22:46:26 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=0ux7G3MiSlS3ev/+kbJZOEXTauz/1zLMbOpd5oJaNEs=;
- b=bh9/etTEAXChsHDrtgpr4PQOlqCAmWB/Tb18XVDuz83rb3Ybd50DG6HtKYKEKg9ybp
- ymW9LzO9LWktp2EDtzGn0wqiIz17pnu6vg4OQSEg4XaTvFbvTLYy8TdKwsZPo6H/l9bC
- qimFdp27SFYBrWUSxYjrQZR4hUA5TdAovRcI4FaWhANYA0qpNALWK/gfQj5Sk4DoZ42x
- N2KdvrZiVLZbsGEVjpifiJBZM8IWCGFm/lhLjX/xW/uvg2PI4DN7+OSPtCsFQG8dVjXb
- E1zoE37/NEmnbb6oqNjez6IdDUTay+HejoC181huHrymTcNtrRjqDZL5xtM5W9cw4zMf
- bNGw==
-X-Gm-Message-State: APjAAAVVPFcxIg9jE3rGjVJfPEzplbaYZn7DcRQJ8DvZGYG2NHXWfnC6
- L1zwbcP6zN/rvMj+K47XpQ4KmYzNEVk=
-X-Google-Smtp-Source: APXvYqyjExp4/F8WgIcXfWcdgponrOcUJ0xoKa5yoLp5bLwFQLCE7OA47TylREIwS9KTq6OaoebMSw==
-X-Received: by 2002:a17:902:209:: with SMTP id 9mr14722232plc.58.1576478627037; 
- Sun, 15 Dec 2019 22:43:47 -0800 (PST)
-Received: from localhost.localdomain
- (2403-5800-7100-3e00-2ac3-652d-4f7-6183.ip6.aussiebb.net.
- [2403:5800:7100:3e00:2ac3:652d:4f7:6183])
- by smtp.gmail.com with ESMTPSA id u20sm20121223pgf.29.2019.12.15.22.43.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 15 Dec 2019 22:43:46 -0800 (PST)
-From: Joel Stanley <joel@jms.id.au>
-To: linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>
-Subject: [PATCH] ARM: dts: aspeed: AST2400 disables hw checksum
-Date: Mon, 16 Dec 2019 17:41:32 +1100
-Message-Id: <20191216064132.78015-1-joel@jms.id.au>
-X-Mailer: git-send-email 2.24.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=uPUbX9Jz4xx+ZUII2dhvvUhvv4VHD3gib9TjJw4FvFo=;
+ b=VTWdoCXzbLpNKxvB2W8vkAlrs7z4T8a20ZZLbUEOYzrSS5cnFbEfUtddr0c8fLyELs
+ ujfzJDcQIwB+H2WGQdmEOe4cUgldEld6jeuj5+neJlZI2Pi7eO1bgO0nvKm8fMXiIk1b
+ zJ24tM08aSDNwvvaO0HyGka1i5mA6abQkPPt+3X1C07o8SjlLpX7anyyt6+RSniUqQnV
+ LGKmwlMxTn08sAL0LcJhu+wsEkLodXE8wdJmjrk+wONSpAX4LJHYNAVTuO1OwjTxfmXa
+ MCwrNpfjciSui/ZmluOiIWomlhxDJyvCoLBd2Z7g7ImVq+3e2clTpDO9kxp0XRviMmtZ
+ S/cA==
+X-Gm-Message-State: APjAAAWsSnEtK1E1mAmxUPqD0g05aHCLLHbJ4qYUvAyQAaz8D0nmqXik
+ UmIx3KZbMuuUyjx8VVo01wXIuMjZY7camv63lCpboPavvqFBBp2On/rFw+mH23Fdd4KUVB01Jmm
+ NiErlrZc7bEJZK/RCJdyFUWLB6aY45oOf3P3yYgHHVxvgELOuHvo=
+X-Received: by 2002:a19:f619:: with SMTP id x25mr15220149lfe.146.1576478784945; 
+ Sun, 15 Dec 2019 22:46:24 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxYIqap6RvvS/V3qRxs6d85Vgoutpx8l9xgfgCmVn0EpC3k91P2m6SYYYdmxGiRTrSSf+TXl7Fnv3bF7BQRunc=
+X-Received: by 2002:a19:f619:: with SMTP id x25mr15220124lfe.146.1576478784677; 
+ Sun, 15 Dec 2019 22:46:24 -0800 (PST)
 MIME-Version: 1.0
+References: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
+ <20191214122734.GC28635@zn.tnic>
+In-Reply-To: <20191214122734.GC28635@zn.tnic>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Mon, 16 Dec 2019 12:16:12 +0530
+Message-ID: <CACi5LpP2PPcmaQw95V4MUzhvENq9+mB7UR7eib2HADCDHLz4oA@mail.gmail.com>
+Subject: Re: [PATCH v5 0/5] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
+ for arm64 and MAX_PHYSMEM_BITS for all archs)
+To: Borislav Petkov <bp@alien8.de>
+X-MC-Unique: MNF3ncyYMeClk6zB30O4UA-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_224349_391475_041E64E1 
-X-CRM114-Status: GOOD (  10.27  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191215_224629_990516_1F91D3F6 
+X-CRM114-Status: GOOD (  12.51  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,64 +102,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tao Ren <taoren@fb.com>, Alexander Filippov <a.filippov@yadro.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Dave Anderson <anderson@redhat.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Will Deacon <will@kernel.org>, x86@kernel.org,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Kazuhito Hagio <k-hagio@ab.jp.nec.com>, James Morse <james.morse@arm.com>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
+ linuxppc-dev@lists.ozlabs.org, Ingo Molnar <mingo@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Steve Capper <steve.capper@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no need to specify this property in the device tree as the
-AST2400 does not have working hardware checksum and disables it in the
-driver.
+Hi Boris,
 
-Signed-off-by: Joel Stanley <joel@jms.id.au>
----
- arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts | 1 -
- arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts  | 1 -
- arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts        | 3 ---
- 3 files changed, 5 deletions(-)
+On Sat, Dec 14, 2019 at 5:57 PM Borislav Petkov <bp@alien8.de> wrote:
+>
+> On Fri, Nov 29, 2019 at 01:53:36AM +0530, Bhupesh Sharma wrote:
+> > Bhupesh Sharma (5):
+> >   crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
+> >   arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
+> >   Documentation/arm64: Fix a simple typo in memory.rst
+> >   Documentation/vmcoreinfo: Add documentation for 'MAX_PHYSMEM_BITS'
+> >   Documentation/vmcoreinfo: Add documentation for 'TCR_EL1.T1SZ'
+>
+> why are those last two separate patches and not part of the patches
+> which export the respective variable/define?
 
-diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
-index b1e10f0c85c9..322587b7b67d 100644
---- a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge100.dts
-@@ -76,7 +76,6 @@ &uart5 {
- 
- &mac1 {
- 	status = "okay";
--	no-hw-checksum;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
- };
-diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
-index aaa77a597d1a..54e508530dce 100644
---- a/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-facebook-wedge40.dts
-@@ -75,7 +75,6 @@ &uart5 {
- 
- &mac1 {
- 	status = "okay";
--	no-hw-checksum;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_rgmii2_default &pinctrl_mdio2_default>;
- };
-diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-index affd2c8743b1..041f28e3ac10 100644
---- a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
-@@ -107,10 +107,7 @@ flash@0 {
- 
- &mac0 {
- 	status = "okay";
--
- 	use-ncsi;
--	no-hw-checksum;
--
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_rmii1_default>;
- };
--- 
-2.24.0
+I remember there was a suggestion during the review of an earlier
+version to keep them as a separate patch(es) so that the documentation
+text is easier to review, but I have no strong preference towards the
+same.
+
+I can merge the documentation patches with the respective patches
+(which export the variables/defines to vmcoreinfo) in v6, unless other
+maintainers have an objections towards the same.
+
+Thanks,
+Bhupesh
 
 
 _______________________________________________
