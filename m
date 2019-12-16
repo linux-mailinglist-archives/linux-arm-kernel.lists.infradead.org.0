@@ -2,86 +2,130 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08075120103
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 10:28:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE5D412013B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 10:33:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=go7o5Gn5huD2OEnWkRo2PnxqdKjCs5Ey/Arh+O39SYM=; b=uOY1/h+JfKGDXP
-	f886X1gLaGJfXQoFL+1fM4ckjmZDNXkQvLVhUol8ysppjDTWmPZtv+iWmb43xU2FmP6KJosEtgTUw
-	g2ajaA/DPsdbScB80uOM23iQk83HtMOL3WN5oHzCMFhVkgD5wBOIsMEgSBKm/z0RiDPgIjKuFkFVv
-	folhcPuwNhrsxP++7rO0spLfYdsFIzbj65bRPc+mvSFNf2JqwNcXd4mwwwohavirlNaVt2O6tvGqG
-	yh+0DaNjxYGY6n/tHEdwx4FAOfI9AdPo+rsae23hyWPfTVSrNxKR9TmtdFTlkMD4BkH/cfhYNlhJC
-	rs7c08VcxGsjugLOoxLw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nEu7UzSCjzNDlSChj/y3/fNndbbf/lC9gDf4AjbG71I=; b=CKslbpv2dGy3lh
+	EQo8Vbjn1L0Kj6eEA00VAocHnfnQqB1k7GxXMyQyy8SycTPMjgkiGebOOTTGxncNboIkuRnfUTYRq
+	eZS4yTZ3GA4HhndxiXkui6zK3csSSrk5ZJjemC6TDRoa51xQch8XB2Xd8uXP4PN+//k47/0rxE1mn
+	NRDEcxd+qKYc4yHghRkIjaEQFVCH6KvHpPVk5GCg+rlq79L2lgYm3zN1QXkEiQm2TzLtc6zix1ImX
+	lqxq4edn5hH+yUtD804wwO0uoCblsIK8eNh8RX9mvuXYboGFoCgOpYG6poFigL3/ZsA8xp6Gw9eix
+	itCcztfHDZGxQNnKGUOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igmfw-0002AE-UI; Mon, 16 Dec 2019 09:28:24 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1igmkZ-00043o-7O; Mon, 16 Dec 2019 09:33:11 +0000
+Received: from comms.puri.sm ([159.203.221.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igmfo-00029C-Bd; Mon, 16 Dec 2019 09:28:17 +0000
-Received: by mail-ot1-x341.google.com with SMTP id k14so8403589otn.4;
- Mon, 16 Dec 2019 01:28:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pg5InTeU1+5SFJs1OkGX+MSzCriOaN0CGMKcgjVfhPY=;
- b=REYdlWoCppoJSnQwoBaE+mlNj/PWBu2hmjNYDPB3EHKKn9ekNqeKBaqE5S+WEvj5eP
- mIaOoJmFrZRpmT2YwDXMnszw1lDZUYFxnjs/tQVIalouwWG0HEHlE74hFo275GegcKTS
- dIvktzgT7iSkOp5KFfHf3gICWW9UVUplMnhk+UFJ3hZAdOpZE1UoJy2hwc0ZOjTJSZW0
- MHzZ+4sWJyuGy/MhabiLR4qrNTF25t3/9Ms5+WBAF1C/qEaz2ezxDv/XS3S6vEn2tWpU
- vZhy3yPAcT3xNalK5FcjqBI74kSsU+6nNY1b3r9GSfsS9o4ABXvei8js/FgwPczmKU4y
- 9CMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pg5InTeU1+5SFJs1OkGX+MSzCriOaN0CGMKcgjVfhPY=;
- b=JzC/dTeXpHDWd9EVAaixc+ZS4SON8X+KshhnCPX7mjOOnIRQXXdJwIFzTH0+g4uoGH
- cfHI3/7Fk3CPSXVRZcf3kiYCg2QFEOHF3pbkgDwrOBzdQ6oSqRmEiZvMtVpGE7v1fvcv
- B92KPrCW1DyBxAlF8ipqgOYluV/jeTavfKCuQtyZvqitNqQDGwbZqLNPsGWvqpw2Fud6
- 0L1lX/L1eWVJfbjgOaiMiG7A7lLVeCb3p/HlOHfJy9g/mApPE4QWEXsYIzSU+UNDjTB7
- pzTdC6nDzV7EAQugDUsdBT4gXWu6ztMAtV6Rx5I/T+bPKgeYSJ7N7txHeri3xTs58M3u
- 5LWg==
-X-Gm-Message-State: APjAAAWU5v5/CBZcmae2KTkq4vdzToffOhWP8cRYRz70bJeSbqBdXzbQ
- pG1WJYSndQvYclTNYQ23E1ZJsuoUwBWBlX21OJQ=
-X-Google-Smtp-Source: APXvYqyGefY4ixRGGGVDGR32f4i/isJOglkcBFAsGS3yQVb39Cm/FzUVt3sGpLUqE3PoqwHroNp3cfe6VCKqeo0YAnY=
-X-Received: by 2002:a05:6830:147:: with SMTP id
- j7mr15240871otp.44.1576488495702; 
- Mon, 16 Dec 2019 01:28:15 -0800 (PST)
-MIME-Version: 1.0
-References: <20191213084748.11210-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20191213184627.GA169673@google.com>
-In-Reply-To: <20191213184627.GA169673@google.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Mon, 16 Dec 2019 09:27:49 +0000
-Message-ID: <CA+V-a8ugehRVuV2kwYgkTVp3Vk4ftKsQVfW0=vL4L7BZbDdeNg@mail.gmail.com>
-Subject: Re: [v2 0/6] Add support for PCIe controller to work in endpoint mode
- on R-Car SoCs
-To: Bjorn Helgaas <helgaas@kernel.org>
+ id 1igmkL-00043U-JN
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 09:32:58 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by comms.puri.sm (Postfix) with ESMTP id 69BCCDFB21;
+ Mon, 16 Dec 2019 01:32:20 -0800 (PST)
+Received: from comms.puri.sm ([127.0.0.1])
+ by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id GKEeTWtZPei3; Mon, 16 Dec 2019 01:32:19 -0800 (PST)
+Subject: Re: [PATCH] arm64: dts: imx8mq-librem5-devkit: add accelerometer and
+ gyro sensor
+To: robh@kernel.org, mark.rutland@arm.com
+References: <20191203130336.18763-1-martin.kepplinger@puri.sm>
+From: Martin Kepplinger <martin.kepplinger@puri.sm>
+Autocrypt: addr=martin.kepplinger@puri.sm; keydata=
+ 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
+ ekMtxgNYb/8oDry09UFHbGHLsWn6oBo=
+Message-ID: <f8b4710b-4430-a42f-d29a-8f2f4d22b46e@puri.sm>
+Date: Mon, 16 Dec 2019 10:32:15 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
+In-Reply-To: <20191203130336.18763-1-martin.kepplinger@puri.sm>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_012816_399584_6E1B5977 
-X-CRM114-Status: GOOD (  14.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_013257_642297_E79B917F 
+X-CRM114-Status: GOOD (  14.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [159.203.221.185 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (prabhakar.csengg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,61 +137,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- Frank Rowand <frowand.list@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
- Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
- Arnd Bergmann <arnd@arndb.de>, "Lad,
- Prabhakar" <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Rob Herring <robh+dt@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>, Simon Horman <horms@verge.net.au>,
- Jingoo Han <jingoohan1@gmail.com>, Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Cc: devicetree@vger.kernel.org, kernel@puri.sm, Rob Herring <robh@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
+On 03.12.19 14:03, Martin Kepplinger wrote:
+> Now that there is driver support, describe the accel and gyro sensor parts
+> of the LSM9DS1 IMU.
+> 
+> Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
+> ---
+>  arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 7 +++++++
+>  1 file changed, 7 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+> index 683a11035643..7a92704c53ec 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
+> @@ -415,6 +415,13 @@
+>  	pinctrl-0 = <&pinctrl_i2c3>;
+>  	status = "okay";
+>  
+> +	accel_gyro@6a {
+> +		compatible = "st,lsm9ds1-imu";
+> +		reg = <0x6a>;
+> +		vdd-supply = <&reg_3v3_p>;
+> +		vddio-supply = <&reg_3v3_p>;
+> +	};
+> +
+>  	magnetometer@1e	{
+>  		compatible = "st,lsm9ds1-magn";
+>  		reg = <0x1e>;
+> 
 
-On Fri, Dec 13, 2019 at 9:06 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
->
-> On Fri, Dec 13, 2019 at 08:47:42AM +0000, Lad Prabhakar wrote:
->
-> > Lad, Prabhakar (6):
-> >   pci: pcie-rcar: preparation for adding endpoint support
-> >   pci: endpoint: add support to handle features of outbound memory
-> >   of: address: add support to parse PCI outbound-ranges
-> >   dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
-> >     controller
-> >   pci: rcar: add support for rcar pcie controller in endpoint mode
-> >   misc: pci_endpoint_test: add device-id for RZ/G2E pcie controller
->
-> The next time you post this, please update the subject lines to match
-> existing conventions (capitalize "PCI", description is a complete
-> sentence starting with a capitalized verb, etc").  Run "git log
-> --online" on the file you're changing and make yours look the same.
->
->   s/pci: /PCI: /
->   s/pcie-rcar: /rcar: /
->   s/pcie/PCIe/
->   s/device-id/Device ID/
+(adding / fixing people in CC)
 
-Thank you for the review, I'll fix the above in next iteration.
+Are there any questions about this addition or the followup fix?
 
-Cheers,
---Prabhakar
+thanks a lot,
+
+                               martin
 
 _______________________________________________
 linux-arm-kernel mailing list
