@@ -2,57 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDCD5120EE8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 17:11:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C11FA120EED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 17:13:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h7CMzrJD3oP45EbgBWdF1FEm4CXlQ54G0beCrwSyjkA=; b=ixChrcdWlCRD9u
-	LTcgWJvMiMHSUPhDd/xeqwcuoTgaoZcDtSHZmGv4MMOywryRQrUys3lk87WK5oQIDoO+zAiLaMTir
-	G9YrY/lNgJ950FWCOjNRSBshT2VBubMrTspf9fRbGuy8h6XDy7wuug7qxf/3smOFElw+HxMzqazY6
-	6Z8X1Sf6zAOGo+S1iZVpV5++VE9M65lFZGz0xPOvgsWY+xDOCsJ/srRU5LK186UuwDAE45txF/334
-	HmdbP8j+nTHmuWX+z4aDPYYeBVLupCGGW7zsndc5oU8Bx/7+KQRslo3ErXcFJUSNQ5CkBkL/ISCo2
-	M/UdTZntFzs7VGto8Unw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=I9oov9y4XlfmqYHKKvvPNmccNl+FboJ3IGE5QtodpLc=; b=fTmQTrESvNwmwqfZbTxPjjuFj
+	qLy9IQlU7om9YWU6shUtEmOw4JN5IjhcSWrnpbrk5rCNoPZ/0/uHyJEMtUWR6oydrXKZqh5bEBfdX
+	g5P8vh4Sh6qlUz1CdPaneoc8uKQwGPDCqfVQxPqoVzEwvkOcFHMSzXlnEKPyeuRLJP9ER/Z3i0pec
+	qA+t5aayUHmvri3Q4j8KOxKaIxaCb1YaIUXG5sibZbohiwhAbVVe6ktan9MxkKrsr1B3Ep6W+UtMh
+	wwP8dwBhkW5ba1XDdTBVQHpeLCVwW9eYogv6i3y/eXydD69h2Dtjd3EAvd6dCDBBDYOdigjsSfLRx
+	gWVuINqmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igsxu-00032n-0f; Mon, 16 Dec 2019 16:11:22 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1igszi-0003v3-3v; Mon, 16 Dec 2019 16:13:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igsxe-000317-E6; Mon, 16 Dec 2019 16:11:08 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id E3E5A28FC78
-Message-ID: <ca0c26d124a0139de31405eacb7d098173897d16.camel@collabora.com>
-Subject: Re: [PATCH v4 1/4] drm: bridge: dw_mipi_dsi: access registers via a
- regmap
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Adrian Ratiu <adrian.ratiu@collabora.com>, devicetree@vger.kernel.org, 
- linux-arm-kernel@lists.infradead.org,
- linux-stm32@st-md-mailman.stormreply.com, 
- linux-rockchip@lists.infradead.org
-Date: Mon, 16 Dec 2019 13:10:52 -0300
-In-Reply-To: <20191202193359.703709-2-adrian.ratiu@collabora.com>
-References: <20191202193359.703709-1-adrian.ratiu@collabora.com>
- <20191202193359.703709-2-adrian.ratiu@collabora.com>
-Organization: Collabora
-User-Agent: Evolution 3.34.1-2 
+ id 1igszW-0003qW-85
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 16:13:03 +0000
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 02A1C20717;
+ Mon, 16 Dec 2019 16:13:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576512781;
+ bh=Jef9w4OjkRq1icyigJOT8xylp8Mo2WzDKjHr6uAiULc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=bRGG0YcSlJmTEk9EfbMd4tusYJTP9xGT22BF+SgJByObFOByPlN0xPhbXAhWIPSrR
+ VUVb8gOZYb3cH7+/Ox7rA5EbXd2s3MxEMgmUJcuBmQ2QyTSdSaJEe4856ukG1N6uIA
+ fA9XmLS6WVgfrTRO2HlRJRca+A+/LF5G8GaTrAdo=
+Date: Mon, 16 Dec 2019 17:12:58 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Stefan Mavrodiev <stefan@olimex.com>
+Subject: Re: [PATCH 1/1] drm/sun4i: hdmi: Check for null pointer before cleanup
+Message-ID: <20191216161258.lmkq2ersfm746t7q@gilmour.lan>
+References: <20191216144348.7540-1-stefan@olimex.com>
 MIME-Version: 1.0
+In-Reply-To: <20191216144348.7540-1-stefan@olimex.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_081106_742460_A4774C1E 
-X-CRM114-Status: GOOD (  20.71  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191216_081302_335210_E7CFB2CC 
+X-CRM114-Status: GOOD (  17.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,129 +75,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, Neil Armstrong <narmstrong@baylibre.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Boris Brezillon <boris.brezillon@collabora.com>, linux-imx@nxp.com,
- kernel@collabora.com, Emil Velikov <emil.velikov@collabora.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: David Airlie <airlied@linux.ie>, linux-sunxi@googlegroups.com,
+ open list <linux-kernel@vger.kernel.org>,
+ "open list:DRM DRIVERS FOR ALLWINNER A10" <dri-devel@lists.freedesktop.org>,
+ Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============7614851289953687617=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Adrian,
 
-Thanks for the patch. This is nice consolidation work.
-I'm Ccing Heiko for the Rockchip part.
+--===============7614851289953687617==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="tv26vsw7yc2hguuf"
+Content-Disposition: inline
 
-See below for some comments.
 
-On Mon, 2019-12-02 at 21:33 +0200, AdrianAdrian Ratiu wrote:
-> Convert the common bridge code and the two rockchip & stm drivers
-> which currently use it to the regmap API in anticipation for further
-> changes to make it more generic and add older DSI host controller
-> support as found on i.mx6 based devices.
-> 
-> The regmap becomes an internal state of the bridge. No functional
-> changes other than requiring the platform drivers to use the
-> pre-configured regmap supplied by the bridge after its probe() call
-> instead of ioremp'ing the registers themselves.
-> 
-> In subsequent commits the bridge will become able to detect the
-> DSI host core version and init the regmap with different register
-> layouts. The platform drivers will continue to use the regmap without
-> modifications or worrying about the specific layout in use (in other
-> words the layout is abstracted away via the regmap).
-> 
-> Suggested-by: Boris Brezillon <boris.brezillon@collabora.com>
-> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-> Reviewed-by: Emil Velikov <emil.velikov@collabora.com>
-> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
+--tv26vsw7yc2hguuf
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+On Mon, Dec 16, 2019 at 04:43:48PM +0200, Stefan Mavrodiev wrote:
+> It's possible hdmi->connector and hdmi->encoder divices to be NULL.
+> This can happen when building as kernel module and you try to remove
+> the module.
+>
+> This patch make simple null check, before calling the cleanup functions.
+>
+> Signed-off-by: Stefan Mavrodiev <stefan@olimex.com>
 > ---
->  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c | 215 ++++++++++--------
->  .../gpu/drm/rockchip/dw-mipi-dsi-rockchip.c   |  17 +-
+>  drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c | 6 ++++--
+>  1 file changed, 4 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
+> index a7c4654445c7..b61e00f2ecb8 100644
+> --- a/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
+> +++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
+> @@ -685,8 +685,10 @@ static void sun4i_hdmi_unbind(struct device *dev, struct device *master,
+>  	struct sun4i_hdmi *hdmi = dev_get_drvdata(dev);
+>
+>  	cec_unregister_adapter(hdmi->cec_adap);
+> -	drm_connector_cleanup(&hdmi->connector);
+> -	drm_encoder_cleanup(&hdmi->encoder);
+> +	if (hdmi->connector.dev)
+> +		drm_connector_cleanup(&hdmi->connector);
+> +	if (hdmi->encoder.dev)
+> +		drm_encoder_cleanup(&hdmi->encoder);
 
-At least for Rockchip, I'd rather see this done in two
-steps: first some regmap infrastructure introduced,
-and then in a follow-up patch, the rockchip driver
-moved to it.
+Hmmm, this doesn't look right. Do you have more information on how you
+can reproduce it?
 
-It's safer, and better from a bisection POV, and from
-a first look it seems doable.
+Maxime
 
->  drivers/gpu/drm/stm/dw_mipi_dsi-stm.c         |  34 ++-
+--tv26vsw7yc2hguuf
+Content-Type: application/pgp-signature; name="signature.asc"
 
-It would be good to do try the same for STM. It's also
-simpler to review that way.
+-----BEGIN PGP SIGNATURE-----
 
->  include/drm/bridge/dw_mipi_dsi.h              |   2 +-
->  4 files changed, 145 insertions(+), 123 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-> index b6e793bb653c..6cb57807f3f9 100644
-> --- a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-> +++ b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c
-> @@ -15,6 +15,7 @@
->  #include <linux/module.h>
->  #include <linux/of_device.h>
->  #include <linux/pm_runtime.h>
-> +#include <linux/regmap.h>
->  #include <linux/reset.h>
->  
->  #include <video/mipi_display.h>
-> @@ -226,7 +227,7 @@ struct dw_mipi_dsi {
->  	struct mipi_dsi_host dsi_host;
->  	struct drm_bridge *panel_bridge;
->  	struct device *dev;
-> -	void __iomem *base;
-> +	struct regmap *regs;
-> 
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfetCgAKCRDj7w1vZxhR
+xSlzAQCy4c+CBbNxGZLR/c23Wqh2wxxJFng5CLDPuXkQzWCfYAEA2J3Ojg/qotg0
+t+szQiO+c0e2z1mtbxDkSMg9ZtyIVwQ=
+=fjFy
+-----END PGP SIGNATURE-----
 
-You have the regmap here...
->  
->  	struct clk *pclk;
->  
-[..]
-> @@ -954,7 +952,6 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
->  	}
->  
->  	dsi->dev = dev;
-> -	dsi->pdata.base = dsi->base;
->  	dsi->pdata.max_data_lanes = dsi->cdata->max_data_lanes;
->  	dsi->pdata.phy_ops = &dw_mipi_dsi_rockchip_phy_ops;
->  	dsi->pdata.host_ops = &dw_mipi_dsi_rockchip_host_ops;
-> @@ -970,6 +967,8 @@ static int dw_mipi_dsi_rockchip_probe(struct platform_device *pdev)
->  		goto err_clkdisable;
->  	}
->  
-> +	dsi->regs = dsi->pdata.regs;
-> +
+--tv26vsw7yc2hguuf--
 
-... and this goes for both STM and Rockchip: I don't think you need neither
-the struct dw_mipi_dsi_plat_data.regs nor the
-structdw_mipi_dsi_{rockchip, stm}.regs. You should be able to
-just access the regmap via the struct dw_mipi_dsi.
 
-[..]
->  
->  err_dsi_probe:
-> @@ -474,7 +472,7 @@ static struct platform_driver dw_mipi_dsi_stm_driver = {
->  	.remove		= dw_mipi_dsi_stm_remove,
->  	.driver		= {
->  		.of_match_table = dw_mipi_dsi_stm_dt_ids,
-> -		.name	= "stm32-display-dsi",
-> +		.name	= DRIVER_NAME,
-
-Unrelated change, please drop it.
-
->  		.pm = &dw_mipi_dsi_stm_pm_ops,
->  	},
->  };
-
-Thanks,
-Ezequiel
-
+--===============7614851289953687617==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7614851289953687617==--
+
