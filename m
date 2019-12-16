@@ -2,83 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88AAE11FCC2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 03:12:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BC5411FCDB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 03:26:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ewnW5ZhTuHNPAulKn/nh2XwjImfjbgR7ZmdhtdRfuXE=; b=PUV/NJZG9c+wVf
-	FeV6J62Oo+4JBwSMooiTzQeTV0T0Gyo7mqkIdADS6s/ipHeVLpnfIFxZm8zzFjsFa6b6qmVSUXpIN
-	Waplch0dO03hw+6WoX6Ir0cLiV/esp1z8nvOQoe6e64ESVEuO92pepFlbPCds7sqSeccgBXmGj2k6
-	d3u6xVIwNvZcV9VfJxK1bkF24tLsjqRFRzay160e7l7DgcrNQSx0h6/TLZo11t+kBnrRI+HGH4IaM
-	Uzh48rMAL/R7n4aNM+yb4FIgRMeioe1M+lX9KqpEhc4YNH0eY6ciq5AZh/V0hF3rn1PrecseGn5UR
-	YQVWE7roVZvAVayrqS5w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8IuNg38fMHf271J/JCy+WMEHEOPl2+Vvf5SRv+bbdaQ=; b=FvN3YfwdihIkzf
+	f/q/mN44N9bUFzyGGxd9iLT3ttC8uJS6QeDD1qM6TGKHljhZHTdXOQdZsO5x5yWN8kQxfgXHXDZys
+	hFry8uIkeZ+s0NjE4I/EmoftnrR7VevANAD3ZxAqPV/JVMVAdZNAkSAgSK93YYv05vv6LmP/sXQ79
+	altz7yaSVYLhbNtMWI1LnTHH92TdBMubTVx0ZPzOc4C2tRP17V3tfxlaeehIonLxBPEioY91aK4nJ
+	dRAsHq9lBlNY4LhdcRO3PWOzT965cxQ++jHPqjSrEAhXWziv9fX8/d3/B7bdo98C4tLbtliWA8c0b
+	wTN5nZMzv9Fm2IcUyESQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igfrU-0000Oc-Ai; Mon, 16 Dec 2019 02:11:52 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1igg5w-0005Ib-LF; Mon, 16 Dec 2019 02:26:48 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igfqf-0008PI-SL
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 02:11:04 +0000
-Received: by mail-pg1-x542.google.com with SMTP id r11so2763006pgf.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Dec 2019 18:11:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=rouuj09csn2DMCPTLoONYfkkA03lZ638co9mw+fOrww=;
- b=gPcvLo1sEZC65zlj2YVQF5YP2VbweT+rSoVFIUvpg8G8bf8ftaINGHlAvM8+NxGtF4
- b/R85r8yD1hWVZydnMwMbsz6AZI0QgEnpLLBaIslO4msjO5ycygiak/gPUvfjkJ1CLMq
- dtPcG6dES2iSxEI/QYHZ+dQF1Td2r7pf+oesnNkberseieIZDMrBENWwDhcW4TvX/OST
- vIEtoWxHezDFjlFcu5WdpV5OV0cn5PjpXTQmbtVyCO+AVWG9R8NlPsGkPYsSp8PngmOO
- WMp+Or8DFkANt2cd2NGXT3x2oJVCXnQolpsKsTu9zo897GOqpb/j/cKQ6WpFPRL2povX
- 5++A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=rouuj09csn2DMCPTLoONYfkkA03lZ638co9mw+fOrww=;
- b=QB/hEgFNwt1X3kQlJxVR9cDPBl27Kebx8jZF7zKziHhTM0QJzAvE8o2XfyAV5RN6CM
- j/jrnE3Wa9HauYiffVC8TTJtdLgj2MaScY80azE22hBBONfCHdMI5riHRMVzzS+mKXMo
- 3PS/GEp0oVgxdsMtvl4tuctGNPCQZfwUUmyFEBE+63Qd0kNJeyUbuY5HTMvmMvBL7Co7
- tDusHfHSjHuy1jSp9KZPD4r82XICGJ6HiFx+43zdEenzJXBJAN2OKrwv5hpyoJykva3w
- pMYoUNzrpqSz43/3ndvweiBa+kp7tcv0ufIZ6/NZZJvjz3qbNv9t+8Az3I3PZREyqacw
- 85tA==
-X-Gm-Message-State: APjAAAUQfjR7gOCCwdarHY2yrzGzdUzNQItHUn6LvvF/JxBeWOD4vnjG
- NbYcnlE0ZFNGVE9ebKfzA27zWw==
-X-Google-Smtp-Source: APXvYqyrI7ubwkGo1O338HO8iuOcDy1z6i98R+HSi9cV41Jg4uPjhLpcurYt5dJT3On0EaPsoYsjag==
-X-Received: by 2002:a63:4f54:: with SMTP id p20mr15428804pgl.246.1576462260969; 
- Sun, 15 Dec 2019 18:11:00 -0800 (PST)
-Received: from linaro.org ([121.95.100.191])
- by smtp.googlemail.com with ESMTPSA id o19sm18241044pjr.2.2019.12.15.18.11.00
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 15 Dec 2019 18:11:00 -0800 (PST)
-From: AKASHI Takahiro <takahiro.akashi@linaro.org>
-To: catalin.marinas@arm.com, will.deacon@arm.com, robh+dt@kernel.org,
- frowand.list@gmail.com
-Subject: [PATCH v4 2/2] arm64: kexec_file: add crash dump support
-Date: Mon, 16 Dec 2019 11:12:47 +0900
-Message-Id: <20191216021247.24950-3-takahiro.akashi@linaro.org>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191216021247.24950-1-takahiro.akashi@linaro.org>
-References: <20191216021247.24950-1-takahiro.akashi@linaro.org>
+ id 1igg5a-00057q-Mj
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 02:26:28 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 7C7466A76;
+ Sun, 15 Dec 2019 21:26:18 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Sun, 15 Dec 2019 21:26:18 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
+ :to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm1; bh=HY55BCVsizFE8+s5E5ZBDonzCD
+ FgxVsezznsO8iULcc=; b=W+Xc8tt9dsunJkPbmapfHbyXyhB2inF4eWJeuWOiJK
+ dZFSGVbwBCmANEChYj5alB/hZdOX4dUzeEFoCulR6wEvurJgyZnG7gZ4hNMEJw7O
+ ML17QLvkLC8b1VkW88Ipi5wwQheF9It0JizgRIcmNe6xAn+l5cUssEEANiFtuwsV
+ CJMOWeSHjGe59br2dondIo7k0FNNQwvLz17UxCeGipUeLYqTuZJaf6evkummXk1C
+ M0MXvjoK2fRv5CRh3jooRUgParRsQ4TBaqHk96kIve28gcLA3ujO0nDUMfq3mPgB
+ Dvy42fejruxyv4bE/7AICUJOBgMp8gi9zPsEKcE+8Xcw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=HY55BCVsizFE8+s5E
+ 5ZBDonzCDFgxVsezznsO8iULcc=; b=tNboqBN9XCn19Xbkqh8Z5zg0fVHL8mEOg
+ QHIpglvdl8mFrMseerat/B+VBgkasl6ht6HkflO7N2rmBPz55RuJPFDiKTSbDdzA
+ gKBt/CD9Zib6C82j4ZeZYo97BoCG/Inus+mgEzOvpT004NtkevpDVGCobqdR1Xbu
+ BN9wZfo6df4ZpUSNUkuc0Kj+mwCLhfSTrx6a8XjNepX+ZXQ+XNc/SVPQsEPB6WnY
+ Qia1/0zSo37dOLsUlH25G4Tk8u6DXAtYYD6x7RFpmp8LuBTBEpPWBLV35p+Gefud
+ ToUfeAu+a2FvEd074k17YVQx1KvnuZY8fTUALi5I7aponf3KnD9AQ==
+X-ME-Sender: <xms:Sev2XXu6NPaW4uIIrHyI8tUYiHz8u1LPn_e95Knw_XJUqNoFNSjJfg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddtgedggeehucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgggfestdekredtre
+ dttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegrjhdr
+ ihgurdgruheqnecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenucfkphepvddtvddrke
+ durddukedrfedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhi
+ ugdrrghunecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:Sev2XUvprDZT1Kq-4QFhUz7J7QSFqx5SeRu6mf3Ueu-0YukI-wVLCQ>
+ <xmx:Sev2XUY_RdiEA_vgeARq788LRe5KrHlkxMNehsCziEbPKzxR1q3XNA>
+ <xmx:Sev2XWgG_MdkKBkDd5017W2E62NgbqFMzgBzJ959uBNJ9StiVF3nDQ>
+ <xmx:Suv2XUE0TtfxRlHxN7DSR5sC2uBzlN6uKISs_F3LqXqWglTBfKeGDg>
+Received: from mistburn.au.ibm.com (bh02i525f01.au.ibm.com [202.81.18.30])
+ by mail.messagingengine.com (Postfix) with ESMTPA id EDC798005A;
+ Sun, 15 Dec 2019 21:26:12 -0500 (EST)
+From: Andrew Jeffery <andrew@aj.id.au>
+To: openipmi-developer@lists.sourceforge.net
+Subject: [PATCH v2 0/3] ipmi: kcs-bmc: Rework bindings to clean up DT warnings
+Date: Mon, 16 Dec 2019 12:57:39 +1030
+Message-Id: <cover.fe20dfec1a7c91771c6bb574814ffb4bb49e2136.1576462051.git-series.andrew@aj.id.au>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_181101_940640_40D8241F 
-X-CRM114-Status: GOOD (  20.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191215_182626_895940_4EE48C37 
+X-CRM114-Status: UNSURE (   6.14  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.230 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,229 +100,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bhsharma@redhat.com, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, AKASHI Takahiro <takahiro.akashi@linaro.org>,
- james.morse@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, minyard@acm.org,
+ arnd@arndb.de, gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ linux-aspeed@lists.ozlabs.org, robh+dt@kernel.org, joel@jms.id.au,
+ haiyue.wang@linux.intel.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enabling crash dump (kdump) includes
-* prepare contents of ELF header of a core dump file, /proc/vmcore,
-  using crash_prepare_elf64_headers(), and
-* add two device tree properties, "linux,usable-memory-range" and
-  "linux,elfcorehdr", which represent respectively a memory range
-  to be used by crash dump kernel and the header's location
+Hello,
 
-Signed-off-by: AKASHI Takahiro <takahiro.akashi@linaro.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Reviewed-by: James Morse <james.morse@arm.com>
-Tested-and-reviewed-by: Bhupesh Sharma <bhsharma@redhat.com>
----
- arch/arm64/include/asm/kexec.h         |   4 +
- arch/arm64/kernel/kexec_image.c        |   4 -
- arch/arm64/kernel/machine_kexec_file.c | 106 ++++++++++++++++++++++++-
- 3 files changed, 106 insertions(+), 8 deletions(-)
+This is a short series reworking the devicetree binding and driver for the
+ASPEED BMC KCS devices. With the number of supported ASPEED BMC devicetrees the
+changes enable removal of more than 100 lines of warning output from dtc.
 
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index 12a561a54128..d24b527e8c00 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -96,6 +96,10 @@ static inline void crash_post_resume(void) {}
- struct kimage_arch {
- 	void *dtb;
- 	unsigned long dtb_mem;
-+	/* Core ELF header buffer */
-+	void *elf_headers;
-+	unsigned long elf_headers_mem;
-+	unsigned long elf_headers_sz;
- };
- 
- extern const struct kexec_file_ops kexec_image_ops;
-diff --git a/arch/arm64/kernel/kexec_image.c b/arch/arm64/kernel/kexec_image.c
-index 29a9428486a5..af9987c154ca 100644
---- a/arch/arm64/kernel/kexec_image.c
-+++ b/arch/arm64/kernel/kexec_image.c
-@@ -47,10 +47,6 @@ static void *image_load(struct kimage *image,
- 	struct kexec_segment *kernel_segment;
- 	int ret;
- 
--	/* We don't support crash kernels yet. */
--	if (image->type == KEXEC_TYPE_CRASH)
--		return ERR_PTR(-EOPNOTSUPP);
--
- 	/*
- 	 * We require a kernel with an unambiguous Image header. Per
- 	 * Documentation/arm64/booting.rst, this is the case when image_size
-diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
-index 7b08bf9499b6..dd3ae8081b38 100644
---- a/arch/arm64/kernel/machine_kexec_file.c
-+++ b/arch/arm64/kernel/machine_kexec_file.c
-@@ -17,12 +17,15 @@
- #include <linux/memblock.h>
- #include <linux/of_fdt.h>
- #include <linux/random.h>
-+#include <linux/slab.h>
- #include <linux/string.h>
- #include <linux/types.h>
- #include <linux/vmalloc.h>
- #include <asm/byteorder.h>
- 
- /* relevant device tree properties */
-+#define FDT_PROP_KEXEC_ELFHDR	"linux,elfcorehdr"
-+#define FDT_PROP_MEM_RANGE	"linux,usable-memory-range"
- #define FDT_PROP_INITRD_START	"linux,initrd-start"
- #define FDT_PROP_INITRD_END	"linux,initrd-end"
- #define FDT_PROP_BOOTARGS	"bootargs"
-@@ -40,6 +43,10 @@ int arch_kimage_file_post_load_cleanup(struct kimage *image)
- 	vfree(image->arch.dtb);
- 	image->arch.dtb = NULL;
- 
-+	vfree(image->arch.elf_headers);
-+	image->arch.elf_headers = NULL;
-+	image->arch.elf_headers_sz = 0;
-+
- 	return kexec_image_post_load_cleanup_default(image);
- }
- 
-@@ -55,6 +62,31 @@ static int setup_dtb(struct kimage *image,
- 
- 	off = ret;
- 
-+	ret = fdt_delprop(dtb, off, FDT_PROP_KEXEC_ELFHDR);
-+	if (ret && ret != -FDT_ERR_NOTFOUND)
-+		goto out;
-+	ret = fdt_delprop(dtb, off, FDT_PROP_MEM_RANGE);
-+	if (ret && ret != -FDT_ERR_NOTFOUND)
-+		goto out;
-+
-+	if (image->type == KEXEC_TYPE_CRASH) {
-+		/* add linux,elfcorehdr */
-+		ret = fdt_appendprop_addrrange(dtb, 0, off,
-+				FDT_PROP_KEXEC_ELFHDR,
-+				image->arch.elf_headers_mem,
-+				image->arch.elf_headers_sz);
-+		if (ret)
-+			return (ret == -FDT_ERR_NOSPACE ? -ENOMEM : -EINVAL);
-+
-+		/* add linux,usable-memory-range */
-+		ret = fdt_appendprop_addrrange(dtb, 0, off,
-+				FDT_PROP_MEM_RANGE,
-+				crashk_res.start,
-+				crashk_res.end - crashk_res.start + 1);
-+		if (ret)
-+			return (ret == -FDT_ERR_NOSPACE ? -ENOMEM : -EINVAL);
-+	}
-+
- 	/* add bootargs */
- 	if (cmdline) {
- 		ret = fdt_setprop_string(dtb, off, FDT_PROP_BOOTARGS, cmdline);
-@@ -125,8 +157,8 @@ static int setup_dtb(struct kimage *image,
- }
- 
- /*
-- * More space needed so that we can add initrd, bootargs, kaslr-seed, and
-- * rng-seed.
-+ * More space needed so that we can add initrd, bootargs, kaslr-seed,
-+ * rng-seed, userable-memory-range and elfcorehdr.
-  */
- #define DTB_EXTRA_SPACE 0x1000
- 
-@@ -174,6 +206,43 @@ static int create_dtb(struct kimage *image,
- 	}
- }
- 
-+static int prepare_elf_headers(void **addr, unsigned long *sz)
-+{
-+	struct crash_mem *cmem;
-+	unsigned int nr_ranges;
-+	int ret;
-+	u64 i;
-+	phys_addr_t start, end;
-+
-+	nr_ranges = 1; /* for exclusion of crashkernel region */
-+	for_each_mem_range(i, &memblock.memory, NULL, NUMA_NO_NODE,
-+					MEMBLOCK_NONE, &start, &end, NULL)
-+		nr_ranges++;
-+
-+	cmem = kmalloc(sizeof(struct crash_mem) +
-+			sizeof(struct crash_mem_range) * nr_ranges, GFP_KERNEL);
-+	if (!cmem)
-+		return -ENOMEM;
-+
-+	cmem->max_nr_ranges = nr_ranges;
-+	cmem->nr_ranges = 0;
-+	for_each_mem_range(i, &memblock.memory, NULL, NUMA_NO_NODE,
-+					MEMBLOCK_NONE, &start, &end, NULL) {
-+		cmem->ranges[cmem->nr_ranges].start = start;
-+		cmem->ranges[cmem->nr_ranges].end = end - 1;
-+		cmem->nr_ranges++;
-+	}
-+
-+	/* Exclude crashkernel region */
-+	ret = crash_exclude_mem_range(cmem, crashk_res.start, crashk_res.end);
-+
-+	if (!ret)
-+		ret =  crash_prepare_elf64_headers(cmem, true, addr, sz);
-+
-+	kfree(cmem);
-+	return ret;
-+}
-+
- int load_other_segments(struct kimage *image,
- 			unsigned long kernel_load_addr,
- 			unsigned long kernel_size,
-@@ -181,14 +250,43 @@ int load_other_segments(struct kimage *image,
- 			char *cmdline)
- {
- 	struct kexec_buf kbuf;
--	void *dtb = NULL;
--	unsigned long initrd_load_addr = 0, dtb_len;
-+	void *headers, *dtb = NULL;
-+	unsigned long headers_sz, initrd_load_addr = 0, dtb_len;
- 	int ret = 0;
- 
- 	kbuf.image = image;
- 	/* not allocate anything below the kernel */
- 	kbuf.buf_min = kernel_load_addr + kernel_size;
- 
-+	/* load elf core header */
-+	if (image->type == KEXEC_TYPE_CRASH) {
-+		ret = prepare_elf_headers(&headers, &headers_sz);
-+		if (ret) {
-+			pr_err("Preparing elf core header failed\n");
-+			goto out_err;
-+		}
-+
-+		kbuf.buffer = headers;
-+		kbuf.bufsz = headers_sz;
-+		kbuf.mem = KEXEC_BUF_MEM_UNKNOWN;
-+		kbuf.memsz = headers_sz;
-+		kbuf.buf_align = SZ_64K; /* largest supported page size */
-+		kbuf.buf_max = ULONG_MAX;
-+		kbuf.top_down = true;
-+
-+		ret = kexec_add_buffer(&kbuf);
-+		if (ret) {
-+			vfree(headers);
-+			goto out_err;
-+		}
-+		image->arch.elf_headers = headers;
-+		image->arch.elf_headers_mem = kbuf.mem;
-+		image->arch.elf_headers_sz = headers_sz;
-+
-+		pr_debug("Loaded elf core header at 0x%lx bufsz=0x%lx memsz=0x%lx\n",
-+			 image->arch.elf_headers_mem, headers_sz, headers_sz);
-+	}
-+
- 	/* load initrd */
- 	if (initrd) {
- 		kbuf.buffer = initrd;
+v1 can be found here:
+
+https://lore.kernel.org/lkml/cover.5630f63168ad5cddf02e9796106f8e086c196907.1575376664.git-series.andrew@aj.id.au/
+
+v2 cleans up the commit message of 2/3 and changes the name of the property
+governing the LPC IO address for the KCS devices.
+
+Cheers,
+
+Andrew
+
+Andrew Jeffery (3):
+  dt-bindings: ipmi: aspeed: Introduce a v2 binding for KCS
+  ipmi: kcs: Finish configuring ASPEED KCS device before enable
+  ipmi: kcs: aspeed: Implement v2 bindings
+
+ Documentation/devicetree/bindings/ipmi/aspeed-kcs-bmc.txt |  20 +-
+ drivers/char/ipmi/kcs_bmc_aspeed.c                        | 151 +++++--
+ 2 files changed, 139 insertions(+), 32 deletions(-)
+
+base-commit: 937d6eefc716a9071f0e3bada19200de1bb9d048
 -- 
-2.24.0
-
+git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
