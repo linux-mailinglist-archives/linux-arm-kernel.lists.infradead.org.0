@@ -2,76 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7174611FF75
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:10:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84E7311FF87
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 09:19:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zI4x/Hc9A8hNw9/W7dwftnNnHTwJ0MsCzwRahcqtIek=; b=I2blj5iZ3ecck4
-	5gOeUyvPEACF8J2qYbEhg4oDZoLMxov0DCxBWE4GqmuL9bXuNUBNBOYt0FzurFhATsWVnOC5JiPtK
-	O66uXCzqsTGWx+OcVvYJrCCnM1fqwzDn/B6OzOAzvuom6mHSeBiUl7CMizC5/fRcYo25QNiWwvKkn
-	85Rb0XnCR8Cy2ezxaf/01deQ3/gi1+tLqEtOcEapBR1O3UgUVGsamHYGjUy8tLGNy8J80r/tx0YsH
-	lgEg+33FeOWsaiyOPkbGY/MdYtIrI2ChaDmdO5PDKNO9qxcCGwiN72LtI8N0FqfZt9IsDfVVjTylI
-	5L+1BNHY4TqD9lwtonEQ==;
+	List-Owner; bh=VeUKZcH5CIg+3KxdzGuM5ec9s7YRE0I83+UKRGM57QY=; b=KC+Mv+W3O6P/jM
+	2aeErPbdpG3QvRqYnqWNS8HCndh1LCsAacO0B3zXnn+HK+wPrbJ+f8kDyx3aWeLVOK2tnO2HhdpkV
+	KiaTp9zFiLSuv0WGCjqozEOxP7MDQKY/N/h6LkuhyjUFSuIAB1tdtjqcmiduZhnGTU3RD0ElZznKQ
+	469JwiuSA5X/kE3bCCnJ+t/koBzu8WLIIwV+m+bT1zDSZGj32Bksf8AzgvE7zt+izm5RcI2W9FJSn
+	QW9vefStctAqUSU90Pop07I80E6ka/JksuDd313jWUTi677NeydJJ8E6EyBr9SfbmoZa+tbJC1Lm4
+	mBdLCmS4TSrrQHSeVDEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iglSj-0006f0-1n; Mon, 16 Dec 2019 08:10:41 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iglak-0000As-VF; Mon, 16 Dec 2019 08:18:58 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iglSb-0006eX-9H
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 08:10:34 +0000
-Received: by mail-ot1-f66.google.com with SMTP id h20so8094082otn.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 00:10:32 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4j5mB296K3OjWTSnZCBs+O5j2Ao0bxQ6pvOe40JZ42w=;
- b=aiQUsJ3cne0WJZZWpfQQwINaumZ/bkjQufKezecDkkWfAllTYgS1ExByIx2Ex5qbyr
- tMjsmMNICGYPMKPsYuLfI6Zd+JP8vMVmf1Geq/e42BSXdGtPL5371eGbFxepbloEcN4V
- MZG9HQkw9/fUHRXDJXc9s99zxL7mS/1QRbATiNEnUKezA5tpYfF972Outc1iTbPeUhQA
- 4HtxN2tc98wX4YnDAgZV7YwO59qrQqJKKLXtNtjJUUA6cGXktlbnw/CZYLVg+ESpGlXi
- bo69LjjgAQcd0lOgotWRkWpziPnv3u2RYP71TN2Kx/iYYngGz/xl7AKdmTqARQv13LXc
- klrw==
-X-Gm-Message-State: APjAAAWr4NLMaheGY3lqPEaCe1XESMgsDyHRLK2Ryt5OEhTZSu0O6cOv
- wY68NwL6M4JJ6WFe6C6Uqv5UugVu0zmynxltGHo=
-X-Google-Smtp-Source: APXvYqyWZq4vxFZ0rUlordJFdD6oxjJaIIHj04emaSwV2tCBVu27DKwDtUKc+AphFf1h7JipnnYtHMfDu3xlZDC/BMg=
-X-Received: by 2002:a9d:dc1:: with SMTP id 59mr31271896ots.250.1576483831730; 
- Mon, 16 Dec 2019 00:10:31 -0800 (PST)
+ id 1iglaa-000092-Hw
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 08:18:50 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iglaW-0007fX-In; Mon, 16 Dec 2019 09:18:44 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1iglaV-0003S5-5C; Mon, 16 Dec 2019 09:18:43 +0100
+Date: Mon, 16 Dec 2019 09:18:43 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Jitao Shi <jitao.shi@mediatek.com>
+Subject: Re: [PATCH v2 1/2] pwm: fine tune pwm-mtk-disp clock control flow
+Message-ID: <20191216081843.yxe3vm674jwurwri@pengutronix.de>
+References: <20191216070123.114719-1-jitao.shi@mediatek.com>
+ <20191216070123.114719-2-jitao.shi@mediatek.com>
 MIME-Version: 1.0
-References: <87mubt3tux.wl-kuninori.morimoto.gx@renesas.com>
-In-Reply-To: <87mubt3tux.wl-kuninori.morimoto.gx@renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 16 Dec 2019 09:10:20 +0100
-Message-ID: <CAMuHMdWgPJ-m+sphVi5RDDqg=T3-v1h5aDkVCxmfjENx54DVTg@mail.gmail.com>
-Subject: Re: [PATCH] arm64: renesas: r8a77990-ebisu: remove
- clkout-lr-synchronous from rcar_sound
-To: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
+Content-Disposition: inline
+In-Reply-To: <20191216070123.114719-2-jitao.shi@mediatek.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_001033_324448_E405A4DE 
-X-CRM114-Status: GOOD (  13.19  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191216_001848_591660_FC136E06 
+X-CRM114-Status: UNSURE (   8.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,62 +69,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Linux-DT <devicetree@vger.kernel.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Patrice Chotard <patrice.chotard@st.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux-ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ CK Hu <ck.hu@mediatek.com>, sj.huang@mediatek.com,
+ Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Morimoto-san,
+Hello,
 
-On Mon, Dec 16, 2019 at 3:08 AM Kuninori Morimoto
-<kuninori.morimoto.gx@renesas.com> wrote:
-> From: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
->
-> rcar_sound doesn't support clkout-lr-synchronous in upstream.
-> It was supported under out-of-tree rcar_sound.
-> upstream rcar_sound is supporting
->         - clkout-lr-synchronous
->         + clkout-lr-asynchronous
->
-> Signed-off-by: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
+On Mon, Dec 16, 2019 at 03:01:22PM +0800, Jitao Shi wrote:
+> Match pwm clock when suspend and resume.
+> Prepare and enable disp_pwm clock when disp_pwm enable.
+> Disable and unprepare disp_pwm clock when disp_pwm disable.
 
-Thanks for your patch!
+Assuming you catched all clock operations (I didn't check), the patch
+looks fine. The commit log could however be improved. Additional to
+describing what the patch does, some words about the motivation would be
+good. Does this fix a bug? Is it to save some power while the PWM isn't
+in use?
 
-IIUIC, as no upstream code looks at this property, there is no need to
-apply this as a fix for v5.5, and it is safe to queue this for v5.6?
+Best regards
+Uwe
 
-Nevertheless, I think it is good to add
-Fixes: 56629fcba94c698d ("arm64: dts: renesas: ebisu: Enable Audio")
-No need to resend, I can add that while applying.
+-- =
 
-Thank you!
-
-> --- a/arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts
-> +++ b/arch/arm64/boot/dts/renesas/r8a77990-ebisu.dts
-> @@ -636,7 +636,6 @@
->         /* audio_clkout0/1/2/3 */
->         #clock-cells = <1>;
->         clock-frequency = <12288000 11289600>;
-> -       clkout-lr-synchronous;
->
->         status = "okay";
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
