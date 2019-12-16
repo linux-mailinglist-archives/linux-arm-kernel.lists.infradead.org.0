@@ -2,94 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2227F120384
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:16:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF575120399
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 12:18:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AEXE4Hbooqdnv3SkhZVbYsPtDl9SXA11WXWMkdV/scY=; b=FeaX9AcvVvT/1d
-	W0MKmev3c0/UyyxxZTFXQvsWHHvo3kxfXJU86kuD3yo0szrYVABAAMUckj1PDpiE6rnGfzXBWEiyw
-	wUnkygJ7pIFA15Kq14iLJsYe7vSZaYIRxoxIlfsqMPqv9YimCZ5Qa/flMXzladKCtcPxv8uV8ZXzr
-	zKhB/5G5JrHzN0urbJfZuk4VsnsyuHlqUWpSOEfJbDaF2EqzXN6XJG8/IoY9CLHTyPmq+WN7VNnUj
-	vdCQB29RuhJwNTZN/BJO+6RVEfZkH07ZkiQOBKKpGCyporG9plVcEkEFwmxEgztDnq+LukIluuTtG
-	0my0oPXUgWtCrRMvg+rA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xG2+DmEjwL1pweR3+UVqGJT69NMNNgwEs0aJuKUV+Cg=; b=lBP6axG7E/BysYXzq6n0PyB2g
+	GVlq1ky2x+frgkNQiz2pPrtEsT5oBsCSdplOZKhDK1VY3XkBLUxSbmhOtRMt76t3b5jOVSNKikiNM
+	sTBGuzwRJdqa9ttbT4XsbRd4ixEkbxIApMUilPHFFG+S3D/GnNVHWLTejFNSERkE9USQ8nNT3Cas5
+	qVl/dFRGm6EjGJrK+6yApO7WNDISz1pyHN6llRKK7f4RkCtFIg96xUs2bubJx+Qs87Lky83jwR/6f
+	YM2W1MF28tf7repGaKdXthyF8Q9vp63k7OlzJ1bBiuX6aO6Wp10B1W2iAegh3WN4mwWCToE9I7EEI
+	2bzS62Xmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igoM5-00038B-E8; Mon, 16 Dec 2019 11:16:01 +0000
-Received: from mail-yw1-xc44.google.com ([2607:f8b0:4864:20::c44])
+	id 1igoOa-0003gT-IE; Mon, 16 Dec 2019 11:18:36 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igoLu-00037S-NM
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 11:15:51 +0000
-Received: by mail-yw1-xc44.google.com with SMTP id d7so1611672ywl.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 03:15:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=AUR5yQ/XBT06UW39mN8rkGX71PlTXaLwibh2EkbRSl4=;
- b=bLf3wLEtQdqplXZbaAVgHW4CkMv36oTw85Uv6jYHflFMCdfkgBm3COKTreaqbxmTdc
- qiQgf7Asyt34117bNjfapKHllrdYu2aoKvtU54bA5PHaOuxEstcysNdqT1mGvCFn3VSr
- O7gxnRTqEZf7DdmoauTvdncvdPzLgfqI4ZcVvNs0bTv1ARLfm0oFUubEmWjQBydsLUWW
- xubQnyJpDEuXJaqnsR9P/+G+aOWXoOWmSf4Cie4ZZid8Hqmu+pL5JhTNoXt9n4RIRysI
- /CtF4UXgW2snlxoKkJRpwo28By8edBy1m5gO9aDIYx+fFAl7Szs2enxTOpGMH1bjEuYI
- RuKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=AUR5yQ/XBT06UW39mN8rkGX71PlTXaLwibh2EkbRSl4=;
- b=Lw0rnAbEfygArb+pPq5MpcY9jpLM9Q8OCFpgFCab5rtP+PP7a7Z8LqWHMyBvGljkZa
- mFGefArq31hOzIahWqPaDJxP3nnvLsDwARg4Oa+d68Hy8wzGmXKyHXcBaBUhVbT3utyq
- Ih37VeMCMDOTIiHAxbuRUgB9nmiuyoAdjQI4iG3IGt0wqzogOg4OfDJyTode0GjaRzFz
- bxerBjT3C+ID/FzoQHDDxFM43Lr7xMJhSHzsQUdPnmeLPcpAydF5jja/uN+OX/A4sG4E
- YFYhJc0Zi+CXAFxy6sfh805eiVe8yRQPnh2tdwTmU/Qcb5YLNj49L2LF9zNrxNfGhgaI
- fiuQ==
-X-Gm-Message-State: APjAAAW+tQr4rOfosgNH+69jfqgLOneLqkRHZyRmDlH0rFGeWycRfnZj
- +QoGPR3yvkv7RASUn8i9q1G9Nhjx
-X-Google-Smtp-Source: APXvYqw1gE7A6yrW3oJywOj16NPJXMW4gLQQwOzMm61XMUGaeLODWIdavMuwLNE52GKWKXjEbGrfOw==
-X-Received: by 2002:a81:3acb:: with SMTP id
- h194mr18371887ywa.406.1576494948651; 
- Mon, 16 Dec 2019 03:15:48 -0800 (PST)
-Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
- [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id o69sm7644544ywd.38.2019.12.16.03.15.47
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Dec 2019 03:15:47 -0800 (PST)
-From: Adam Ford <aford173@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: dts: imx8mm: Change SDMA1 ahb clock for imx8mm
-Date: Mon, 16 Dec 2019 05:15:30 -0600
-Message-Id: <20191216111530.29558-1-aford173@gmail.com>
-X-Mailer: git-send-email 2.20.1
+ id 1igoOQ-0003ff-FX; Mon, 16 Dec 2019 11:18:27 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 0C713AD4F;
+ Mon, 16 Dec 2019 11:18:25 +0000 (UTC)
+Message-ID: <e94310c04571b23e57d802aecb4789d7c6d35d74.camel@suse.de>
+Subject: Re: [PATCH v5 1/6] dt-bindings: PCI: Add bindings for brcmstb's
+ PCIe device
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Matthias Brugger <mbrugger@suse.com>, andrew.murray@arm.com,
+ maz@kernel.org,  linux-kernel@vger.kernel.org, Florian Fainelli
+ <f.fainelli@gmail.com>,  bcm-kernel-feedback-list@broadcom.com, Bjorn
+ Helgaas <bhelgaas@google.com>
+Date: Mon, 16 Dec 2019 12:18:23 +0100
+In-Reply-To: <39a8ab96-2b32-1d9c-63cd-8114a58f723c@suse.com>
+References: <20191216110113.30436-1-nsaenzjulienne@suse.de>
+ <20191216110113.30436-2-nsaenzjulienne@suse.de>
+ <39a8ab96-2b32-1d9c-63cd-8114a58f723c@suse.com>
+User-Agent: Evolution 3.34.2 
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_031550_782378_1FF1CD4E 
-X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-CacheID: sfid-20191216_031826_662550_4C23006C 
+X-CRM114-Status: UNSURE (   8.17  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,46 +68,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>, Jacky Bai <ping.bai@nxp.com>,
- Adam Ford <aford173@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ devicetree@vger.kernel.org, linux-pci@vger.kernel.org, phil@raspberrypi.org,
+ jeremy.linton@arm.com, Rob Herring <robh+dt@kernel.org>,
+ linux-rpi-kernel@lists.infradead.org, james.quinlan@broadcom.com,
+ linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
+Content-Type: multipart/mixed; boundary="===============2411118476195723419=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Using SDMA1 with UART1 is causing a "Timeout waiting for CH0" error.
-This patch changes to ahb clock from SDMA1_ROOT to AHB which
-fixes the timeout error.
 
-Fixes:  a05ea40eb384 ("arm64: dts: imx: Add i.mx8mm dtsi support")
+--===============2411118476195723419==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-4ZM5h4FNm971ZXqZ/T37"
 
-Signed-off-by: Adam Ford <aford173@gmail.com>
----
-A similar fix was made to the i.MX8MQ for the same reason
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 6edbdfe2d0d7..3d95b66a2d71 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -740,7 +740,7 @@
- 				reg = <0x30bd0000 0x10000>;
- 				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
- 				clocks = <&clk IMX8MM_CLK_SDMA1_ROOT>,
--					 <&clk IMX8MM_CLK_SDMA1_ROOT>;
-+					 <&clk IMX8MM_CLK_AHB>;
- 				clock-names = "ipg", "ahb";
- 				#dma-cells = <3>;
- 				fsl,sdma-ram-script-name = "imx/sdma/sdma-imx7d.bin";
--- 
-2.20.1
+--=-4ZM5h4FNm971ZXqZ/T37
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
+On Mon, 2019-12-16 at 12:14 +0100, Matthias Brugger wrote:
+> > +
+> > +  msi-controller:
+> > +    description: Identifies the node as an MSI controller.
+>=20
+> are you missing "type: boolean" here?
+
+As per RobH's suggestion[1] I assumed the type on msi-controller and msi-pa=
+rent
+is alredy defined.
+
+Regards,
+Nicolas
+
+[1] https://patchwork.kernel.org/patch/11239717/#23008585
+
+
+--=-4ZM5h4FNm971ZXqZ/T37
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl33Z/8ACgkQlfZmHno8
+x/7P7gf+NuNPpIsO6gLiH8DJTHrzG+A4soBpSgB0r3XzWZfc0Rem+xaaojNEVDTT
+po1m4X5pXKLejfpfB7srdeIweCg2xg3Pm61W6750iDhgKOtF7CNj91zkYkkSMIvs
+0lvWgo25TX1z3O/Z+dfRrPSMKMR1Rhos4KLxFALXiSakdoPsaoetmz7pkAdgXwqr
+0jKv3rerg41Q0yJi/zQSJcbvFCGd05ghq2Z+SdUtnqu5Iw/VEmorK6bo22W911w9
+3Kr9RHGM6dtTTMqS3rZWk3zfx1HuwhXjU93ObTavjtYqSL0UrCt9RCLoMgDA95hM
+f44IH0GrZdZuUqHOO0YN77qenyPzlg==
+=xgVD
+-----END PGP SIGNATURE-----
+
+--=-4ZM5h4FNm971ZXqZ/T37--
+
+
+
+--===============2411118476195723419==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2411118476195723419==--
+
+
