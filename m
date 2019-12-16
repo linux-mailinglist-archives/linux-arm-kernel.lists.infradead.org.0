@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C58312019D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 10:59:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0ACFA1201B1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 10:59:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qLorIP/D/scqnEc2Zf3Own6YP7ommrptcJSjDj4ARuE=; b=X4iAP2QR+3vUbd
-	Ht1tsO9V5WNiJIwkBBmMw2g3wS8GtFhv4YW0ilEnO7QOAFj6iaM3JrSN/Wh5AEP0R5gXzOnNpss/4
-	LArmPZf2lGMk8d6gbvyhan+1YdXtrT8aeXEeWHWymHFWMqgNJRtWztSKLxcK8O0tnLO7H2EEEm0gI
-	FCShvbl5j3MfhR9wObkK4rtLsj7QaofvU06FQfByqnnUBB2zGlZvEMRSBCv9SOyQtqONDO7CzltCP
-	fNShYZUsWLB+AhWBdA1YfnH3yVB1/eGJR11lrWcMWIELA8LoTlXd9NQx3dzfkHO2ZAvCD4jySfbMW
-	/XPgznboYYAL3bK+X1hg==;
+	List-Owner; bh=M0mrdLBSTA7aEKapHMxSIzvwqBZbp6COfox51ooy7e4=; b=uEEcpbRRL3nonJ
+	pGWQ0mN+OmFTkCpir0zAtVbBHpxC0Al03ra44BH2qD1m5D06hG33lacFXDma1aWEKgjqPD/3FASFs
+	7E4lqSaWwGr7yiO/y/Wqu/e+VIW/NZiHdfbmk2wWsytlis5I4sDFyWKClrYy/3UuxDsz81X5S3Jt/
+	Dke5DsgFlMfM728lfVGcjE3vhCYQSTfVUgVqIv9DFHlPKVxupmfOrxhHSg+2N4EvcrT4iV87yFIIM
+	Ob/53AZIBQLGwJL4o+cO31LZp5LzPiULKxBH73CLryWsv7V6SessCLOGyyCyQvPbSI7aQ9q6VVP8W
+	6OwXaCFaRpBuupvkr1Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ign9T-0007hA-U4; Mon, 16 Dec 2019 09:58:55 +0000
+	id 1ign9u-000820-5K; Mon, 16 Dec 2019 09:59:22 +0000
 Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ign74-0005dm-9b
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 09:56:29 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBG9uNvB106117;
- Mon, 16 Dec 2019 03:56:23 -0600
+ id 1ign76-0005fJ-PO
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 09:56:30 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBG9uPeO106127;
+ Mon, 16 Dec 2019 03:56:25 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576490183;
- bh=Zekc0AXiObZrPPvegTp4K5GUPS8IXJOxaEdMQ6wwWA0=;
+ s=ti-com-17Q1; t=1576490185;
+ bh=uk33OX2/IRV4qk5zeJOpsDKsk+aZEVFfOmbpkxiarpY=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=svry36Y9SEy5nqCBDS949P2MxIkwOQjKA3MD3JzF9M4taTFldpbTbhILGa09CT9sD
- u2TbCA8zg2rBfLuAys6/0p/HVhwqh/Pp9OCvfEnovIVd+gOSj7Gapwprait5EZY7aQ
- Z4MhrxKxE550fy7nOBCzMy53CA67gUtLgBNPT3JE=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBG9uN4V094791
+ b=Uo5l031VytwY+htp3tFoNwtIhjoGVm6sIm2RQ0gPw4d9I2XSz4E0Z3X+p/I2Y6+Pj
+ 7uldACES1kpYDGOWKsRUFPGzd/KAm7JEb25a99lCxKje7s/UTr0LW7YOYCaUCYwwb4
+ HR8uomFcwMpbpy8p0b2O1KLCOcPNSaFjLvW18JYw=
+Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBG9uPQG049540
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 16 Dec 2019 03:56:23 -0600
-Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 16 Dec 2019 03:56:25 -0600
+Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 16
- Dec 2019 03:56:22 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 03:56:25 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 16 Dec 2019 03:56:22 -0600
+ Frontend Transport; Mon, 16 Dec 2019 03:56:25 -0600
 Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBG9tsJS084408;
- Mon, 16 Dec 2019 03:56:20 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBG9tsJT084408;
+ Mon, 16 Dec 2019 03:56:23 -0600
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Rob Herring <robh+dt@kernel.org>, Anil Varughese <aniljoy@cadence.com>,
  Roger Quadros <rogerq@ti.com>, Jyri Sarha <jsarha@ti.com>
-Subject: [PATCH v4 09/14] phy: cadence: Sierra: Check for PLL lock during PHY
- power on
-Date: Mon, 16 Dec 2019 15:27:07 +0530
-Message-ID: <20191216095712.13266-10-kishon@ti.com>
+Subject: [PATCH v4 10/14] phy: cadence: Sierra: Change MAX_LANES of Sierra to
+ 16
+Date: Mon, 16 Dec 2019 15:27:08 +0530
+Message-ID: <20191216095712.13266-11-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191216095712.13266-1-kishon@ti.com>
 References: <20191216095712.13266-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_015626_576785_5160B683 
-X-CRM114-Status: GOOD (  16.63  )
+X-CRM114-CacheID: sfid-20191216_015629_011789_24A5D07B 
+X-CRM114-Status: GOOD (  16.11  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -99,100 +99,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Check for PLL lock during PHY power on.
+Sierra SERDES IP supports upto 16 lanes (though not all of it
+will be enabled in a platform). Allow Sierra driver to support a
+maximum of upto 16 lanes.
 
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 ---
- drivers/phy/cadence/phy-cadence-sierra.c | 33 +++++++++++++++++++++++-
- 1 file changed, 32 insertions(+), 1 deletion(-)
+ drivers/phy/cadence/phy-cadence-sierra.c | 22 +++++++++++++++++++++-
+ 1 file changed, 21 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/phy/cadence/phy-cadence-sierra.c b/drivers/phy/cadence/phy-cadence-sierra.c
-index 497c83827670..62bff4b043f0 100644
+index 62bff4b043f0..665a6dbc7816 100644
 --- a/drivers/phy/cadence/phy-cadence-sierra.c
 +++ b/drivers/phy/cadence/phy-cadence-sierra.c
-@@ -55,6 +55,7 @@
- #define SIERRA_PLLCTRL_SUBRATE_PREG			0x03A
- #define SIERRA_PLLCTRL_GEN_D_PREG			0x03E
- #define SIERRA_PLLCTRL_CPGAIN_MODE_PREG			0x03F
-+#define SIERRA_PLLCTRL_STATUS_PREG			0x044
- #define SIERRA_CLKPATH_BIASTRIM_PREG			0x04B
- #define SIERRA_DFE_BIASTRIM_PREG			0x04C
- #define SIERRA_DRVCTRL_ATTEN_PREG			0x06A
-@@ -141,11 +142,14 @@
+@@ -141,7 +141,7 @@
+ #define SIERRA_PHY_PLL_CFG				0xe
  
  #define SIERRA_MACRO_ID					0x00007364
- #define SIERRA_MAX_LANES				4
-+#define PLL_LOCK_TIME					100000
+-#define SIERRA_MAX_LANES				4
++#define SIERRA_MAX_LANES				16
+ #define PLL_LOCK_TIME					100000
  
  static const struct reg_field macro_id_type =
- 				REG_FIELD(SIERRA_MACRO_ID_REG, 0, 15);
- static const struct reg_field phy_pll_cfg_1 =
- 				REG_FIELD(SIERRA_PHY_PLL_CFG, 1, 1);
-+static const struct reg_field pllctrl_lock =
-+				REG_FIELD(SIERRA_PLLCTRL_STATUS_PREG, 0, 0);
- 
- struct cdns_sierra_inst {
- 	struct phy *phy;
-@@ -192,6 +196,7 @@ struct cdns_sierra_phy {
- 	struct regmap *regmap_common_cdb;
- 	struct regmap_field *macro_id_type;
- 	struct regmap_field *phy_pll_cfg_1;
-+	struct regmap_field *pllctrl_lock[SIERRA_MAX_LANES];
+@@ -199,6 +199,7 @@ struct cdns_sierra_phy {
+ 	struct regmap_field *pllctrl_lock[SIERRA_MAX_LANES];
  	struct clk *clk;
  	int nsubnodes;
++	u32 num_lanes;
  	bool autoconf;
-@@ -291,10 +296,25 @@ static int cdns_sierra_phy_init(struct phy *gphy)
+ };
  
- static int cdns_sierra_phy_on(struct phy *gphy)
- {
-+	struct cdns_sierra_phy *sp = dev_get_drvdata(gphy->dev.parent);
- 	struct cdns_sierra_inst *ins = phy_get_drvdata(gphy);
-+	struct device *dev = sp->dev;
-+	u32 val;
-+	int ret;
+@@ -235,6 +236,18 @@ static struct regmap_config cdns_sierra_lane_cdb_config[] = {
+ 	SIERRA_LANE_CDB_REGMAP_CONF("1"),
+ 	SIERRA_LANE_CDB_REGMAP_CONF("2"),
+ 	SIERRA_LANE_CDB_REGMAP_CONF("3"),
++	SIERRA_LANE_CDB_REGMAP_CONF("4"),
++	SIERRA_LANE_CDB_REGMAP_CONF("5"),
++	SIERRA_LANE_CDB_REGMAP_CONF("6"),
++	SIERRA_LANE_CDB_REGMAP_CONF("7"),
++	SIERRA_LANE_CDB_REGMAP_CONF("8"),
++	SIERRA_LANE_CDB_REGMAP_CONF("9"),
++	SIERRA_LANE_CDB_REGMAP_CONF("10"),
++	SIERRA_LANE_CDB_REGMAP_CONF("11"),
++	SIERRA_LANE_CDB_REGMAP_CONF("12"),
++	SIERRA_LANE_CDB_REGMAP_CONF("13"),
++	SIERRA_LANE_CDB_REGMAP_CONF("14"),
++	SIERRA_LANE_CDB_REGMAP_CONF("15"),
+ };
  
- 	/* Take the PHY lane group out of reset */
--	return reset_control_deassert(ins->lnk_rst);
-+	ret = reset_control_deassert(ins->lnk_rst);
-+	if (ret) {
-+		dev_err(dev, "Failed to take the PHY lane out of reset\n");
-+		return ret;
-+	}
+ static struct regmap_config cdns_sierra_common_cdb_config = {
+@@ -548,6 +561,8 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
+ 			}
+ 		}
+ 
++		sp->num_lanes += sp->phys[node].num_lanes;
 +
-+	ret = regmap_field_read_poll_timeout(sp->pllctrl_lock[ins->mlane],
-+					     val, val, 1000, PLL_LOCK_TIME);
-+	if (ret < 0)
-+		dev_err(dev, "PLL lock of lane failed\n");
-+
-+	return ret;
- }
+ 		gphy = devm_phy_create(dev, child, &ops);
  
- static int cdns_sierra_phy_off(struct phy *gphy)
-@@ -350,6 +370,7 @@ static int cdns_regfield_init(struct cdns_sierra_phy *sp)
- 	struct device *dev = sp->dev;
- 	struct regmap_field *field;
- 	struct regmap *regmap;
-+	int i;
- 
- 	regmap = sp->regmap_common_cdb;
- 	field = devm_regmap_field_alloc(dev, regmap, macro_id_type);
-@@ -367,6 +388,16 @@ static int cdns_regfield_init(struct cdns_sierra_phy *sp)
+ 		if (IS_ERR(gphy)) {
+@@ -561,6 +576,11 @@ static int cdns_sierra_phy_probe(struct platform_device *pdev)
  	}
- 	sp->phy_pll_cfg_1 = field;
+ 	sp->nsubnodes = node;
  
-+	for (i = 0; i < SIERRA_MAX_LANES; i++) {
-+		regmap = sp->regmap_lane_cdb[i];
-+		field = devm_regmap_field_alloc(dev, regmap, pllctrl_lock);
-+		if (IS_ERR(field)) {
-+			dev_err(dev, "P%d_ENABLE reg field init failed\n", i);
-+			return PTR_ERR(field);
-+		}
-+		sp->pllctrl_lock[i] =  field;
++	if (sp->num_lanes > SIERRA_MAX_LANES) {
++		dev_err(dev, "Invalid lane configuration\n");
++		goto put_child2;
 +	}
 +
- 	return 0;
- }
- 
+ 	/* If more than one subnode, configure the PHY as multilink */
+ 	if (!sp->autoconf && sp->nsubnodes > 1)
+ 		regmap_field_write(sp->phy_pll_cfg_1, 0x1);
 -- 
 2.17.1
 
