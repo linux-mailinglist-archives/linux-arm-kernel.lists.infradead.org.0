@@ -2,83 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C885C121BA3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 22:22:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 218D9121C20
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Dec 2019 22:46:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pjUqSGhPItBzW0gh+hnUOiwXiMahvKlG82xmYW0jYlc=; b=Cs+ZfbmmFfH8dW
-	gI/rsrmB4o0n5o1NpBisv2803oLIGQXHDn91xWdu0KT49bjWyvlmNZ8+/bHFjJJRBKHF3n9EhoZIr
-	13+3OIMMoMa5XkTOIsXDGrvpUHJc+S8Yi6+q+2yyXZw/pkvacMxLQSxr/00k7JaGbbviwcfcTLAVS
-	rbJevbw8dNVgR4922NEAddStmpzK773SqHC8Y6eTKjZchfmRfbDXyTYbdTtrwXpNG+2wuS4oOMKhc
-	Cw8RWCNMzJNi9BrXxce4SKoX/s7X5kXSEYPrtUx2WHDVAAcExmUdKE2w/fMkHOWd3nVXnd+EOhbxC
-	4WU+i/xA7u7eCYk7QpMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=T42b7aun305QViaFgPiKkOjAZY8DI1ZzQzgYXyJJrZA=; b=LlOu2g+XaGpkyz
+	1w3PcFml0XxjXRkKd1xRST8SpuCwrG8La9U1md6KviKMRzLh1IC+0+V+F73+aHCiMyOi642FdQRkC
+	yD4tNXPUcF5AjqPZSYcLvHFJn4PYDfhI1SZgOmzpFjoBb4tVFniLpgbenSYTbCdTkK9OWQ0ywNSxB
+	EEQ4WIBsIH43eUYPb7+mMq3RUNRDqTUmrGb9B7/nLUwlvEKG1/aUjXGokHECbz8wECmhLC82GaxyW
+	iso/hjqPIfxb7X01eDOhDxke1mahinulC9wlZCnSvPx4LmJRHHA73yBFo8OHczecXC9FHGZutlWqC
+	dbQU/smETojt0894HvQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igxpM-0002ZZ-IZ; Mon, 16 Dec 2019 21:22:52 +0000
-Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
+	id 1igyCO-0003HM-HZ; Mon, 16 Dec 2019 21:46:40 +0000
+Received: from mga03.intel.com ([134.134.136.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igxpD-0002Z0-Af
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 21:22:45 +0000
-Received: by mail-il1-x144.google.com with SMTP id f5so6612437ilq.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Dec 2019 13:22:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ADULMXYZJpcRkOz8oTK37UQEihg1gv7L4Ikzy6wAV8w=;
- b=mQ67J6VJ/LWSkL+e7p0f5Fk2NJWWIADY59kJlh/sRuY42DK0DHq/QjDsmKVCP7enot
- NNhbE3vWS/2WbTqxpD4BPctVOSWpLETvpgtQ+lz1q/bjvqjW00mx71xFi9kiAw8xPS5i
- BLTSVJT+8skCvNfcBilC4UOVSOTuq9v3/cgeRDL3PgmDq7W/Gxi6UOVo5KOE8EBdZF1c
- ELDU5BrKsyXcVKxRUqpvbOaUka1pdgR0vEefjodOj5fAxa04+aGLHgavSgMIrP29BBVA
- YkOgadcRtaYm1t0x7S6O/mFzzSnbberlwvfjneCy8ULEuZrzhCXo/I0vmhmXgkwtLWre
- LW8A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ADULMXYZJpcRkOz8oTK37UQEihg1gv7L4Ikzy6wAV8w=;
- b=JsSlh1CesvU1k+stlLVQ6+jZswha1o8FD+1BymUeGvsOXnKxwtPFErjzm9s/f0tabR
- COavVjXp1qQhsl2qrOgPTu5PfvKKgrziYeMsZanfRC/dnfFxI7I6yVSP0YoRxWN6TjyG
- ur4P4ZSFwQs1RgiAY47rc6PfH59fyS2OwhMJnuUS5h9aXPGvCDwcTQmEUhE6l1SJF/dD
- AqoPAuixgtC7AazFZxEq+dKa16MCqt0McFlvGKznqy20L9CkmUrv94+zbvxJSQ1ZZlPt
- f3luOTJ1J/ue+Jw+qDKx5UD8ugAVILx2w9HPnM4onGW7KvxCS6qMtSDb23jfh+Z7w8UO
- J30Q==
-X-Gm-Message-State: APjAAAUxN2I6vUALWgJURVEvi+SILHuv5PvonmgOWttbDi8Lqw1f99Zb
- ICfiWx6Y0Qte/dTS19p9py6uamCzdBx4cFRRz8f74rft
-X-Google-Smtp-Source: APXvYqxKp36+zgCZmrmmEq4UUIRfilecqGMmjdSfPKSfrEGJReCrdXjvR9aFopP+CCSdjkywQS2yOLBeyO/r9DNsSvM=
-X-Received: by 2002:a92:1711:: with SMTP id u17mr12955418ill.72.1576531362252; 
- Mon, 16 Dec 2019 13:22:42 -0800 (PST)
+ id 1igyCG-0003GZ-63
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 21:46:34 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 16 Dec 2019 13:46:28 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,323,1571727600"; d="scan'208";a="416595016"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga006.fm.intel.com with ESMTP; 16 Dec 2019 13:46:27 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1igyCA-000CP9-Oy; Tue, 17 Dec 2019 05:46:26 +0800
+Date: Tue, 17 Dec 2019 05:46:24 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: [arm:cex7 76/92] drivers/net/dsa/mt7530.c:1357:57: sparse: sparse:
+ incorrect type in argument 2 (different base types)
+Message-ID: <201912170522.BY0iCkrO%lkp@intel.com>
 MIME-Version: 1.0
-References: <20191211230717.4879-1-mike.leach@linaro.org>
-In-Reply-To: <20191211230717.4879-1-mike.leach@linaro.org>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Mon, 16 Dec 2019 14:22:30 -0700
-Message-ID: <CANLsYkzVcTYutoYt5DWiOxyB8m3kCZVPHpTJPPe7YN=OoKtj1g@mail.gmail.com>
-Subject: Re: [PATCH v6 00/15] CoreSight CTI Driver
-To: Mike Leach <mike.leach@linaro.org>
+Content-Disposition: inline
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_132243_381498_D4D9D67A 
-X-CRM114-Status: GOOD (  28.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191216_134632_268853_D15F0469 
+X-CRM114-Status: GOOD (  12.82  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,172 +68,181 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
- Coresight ML <coresight@lists.linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
- Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Russell King <rmk+kernel@armlinux.org.uk>, kbuild-all@lists.01.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 11 Dec 2019 at 16:07, Mike Leach <mike.leach@linaro.org> wrote:
->
-> CTIs are defined in the device tree and associated with other CoreSight
-> devices. The core CoreSight code has been modified to enable the registration
-> of the CTI devices on the same bus as the other CoreSight components,
-> but as these are not actually trace generation / capture devices, they
-> are not part of the Coresight path when generating trace.
->
-> However, the definition of the standard CoreSight device has been extended
-> to include a reference to an associated CTI device, and the enable / disable
-> trace path operations will auto enable/disable any associated CTI devices at
-> the same time.
->
-> Programming is at present via sysfs - a full API is provided to utilise the
-> hardware capabilities. As CTI devices are unprogrammed by default, the auto
-> enable describe above will have no effect until explicit programming takes
-> place.
->
-> A set of device tree bindings specific to the CTI topology has been defined.
-> The driver accesses these in a platform agnostic manner, so ACPI bindings
-> can be added later, once they have been agreed and defined for the CTI device.
->
-> Documentation has been updated to describe both the CTI hardware, its use and
-> programming in sysfs, and the new dts bindings required.
->
-> Tested on DB410 board and Juno board, against the Linux 5.5-rc1 tree.
->
-> Changes since v5:
-> 1) Fixed up device tree .yaml file. Using extra compatible string for
-> v8 architecture CTI connections.
-> 2) Ensure association code respects coresight mutex when setting cross
-> referenced pointers. Add in shutdown code.
-> 3) Multiple minor code fixes & rationalisation.
->
-> Changes since v4:
-> Multiple changes following feedback from Mathieu, Leo and Suzuki.
-> 1) Dropped RFC tag - wider distribution
-> 2) CTI bindings definition now presented as a .yaml file - tested with
-> with 'dt-doc-validate' from devicetree.org/dt-schema project and in kernel
-> build tree with 'make dtbs_check' per kernel docs.
-> 3) Sysfs links to other CoreSight devices moved out of this set into
-> a following set that deals with all CoreSight devices & sysfs links.
-> 4) Documentation in .rst format and new directory following patchset in [1].
-> Extended example provided in docs.
-> 5) Rationalised devicetree of_ specifics to use generic fwnode functions
-> where possible to enable easier addition of ACPI support later.
-> 6) Other minor changes as requested in feedback from last patchset.
->
-> Changes since v3:
-> 1) After discussion on CS mailing list, each CTI connection has a triggers<N>
->    sysfs directory with name and trigger signals listed for the connection.
-> 2) Initial code for creating sysfs links between CoreSight components is
->   introduced and implementation for CTI provided. This allows exploration
->   of the CoreSight topology within the sysfs infrastructure. Patches for
->   links between other CoreSight components to follow.
-> 3) Power management - CPU hotplug and idle omitted from this set as ongoing
->    developments may define required direction. Additional patch set to follow.
-> 4) Multiple fixes applied as requested by reviewers esp. Matthieu, Suzuki
->    and Leo.
->
-> Changes since v2:
-> Updates to allow for new features on coresight/next and feedback from
-> Mathieu and Leo.
->
-> 1) Rebase and restructuring to apply on top of ACPI support patch set,
-> currently on coresight/next. of_coresight_cti has been renamed to
-> coresight-cti-platform and device tree bindings added to this but accessed
-> in a platform agnostic manner using fwnode for later ACPI support
-> to be added.
-> 2) Split the sysfs patch info a series of functional patches.
-> 3) Revised the refcount and enabling support.
-> 4) Adopted the generic naming protocol - CTIs are either cti_cpuN or
-> cti_sysM
-> 5) Various minor presentation /checkpatch issues highlighted in feedback.
-> 6) revised CPU hotplug to cover missing cases needed by ETM.
->
-> Changes since v1:
-> 1) Significant restructuring of the source code. Adds cti-sysfs file and
-> cti device tree file. Patches add per feature rather than per source
-> file.
-> 2) CPU type power event handling for hotplug moved to CoreSight core,
-> with generic registration interface provided for all CPU bound CS devices
-> to use.
-> 3) CTI signal interconnection details in sysfs now generated dynamically
-> from connection lists in driver. This to fix issue with multi-line sysfs
-> output in previous version.
-> 4) Full device tree bindings for DB410 and Juno provided (to the extent
-> that CTI information is available).
-> 5) AMBA driver update for UCI IDs are now upstream so no longer included
-> in this set.
->
-> Mike Leach (15):
->   coresight: cti: Initial CoreSight CTI Driver
->   coresight: cti: Add sysfs coresight mgmt reg access.
->   coresight: cti: Add sysfs access to program function regs
->   coresight: cti: Add sysfs trigger / channel programming API
->   dt-bindings: arm: Adds CoreSight CTI hardware definitions.
->   coresight: cti: Add device tree support for v8 arch CTI
->   coresight: cti: Add device tree support for custom CTI.
->   coresight: cti: Enable CTI associated with devices.
->   coresight: cti: Add connection information to sysfs
->   dt-bindings: qcom: Add CTI options for qcom msm8916
->   dt-bindings: arm: Juno platform - add CTI entries to device tree.
->   dt-bindings: hisilicon: Add CTI bindings for hi-6220
->   docs: coresight: Update documentation for CoreSight to cover CTI.
->   docs: sysfs: coresight: Add sysfs ABI documentation for CTI
->   Update MAINTAINERS to add reviewer for CoreSight.
->
+tree:   git://git.armlinux.org.uk/~rmk/linux-arm.git cex7
+head:   806fad3799599b8167b4b0d448da9a93342b92ae
+commit: ec4c5cc56eccdb9f569494a91464835363a0f805 [76/92] net: of_get_phy_mode: Change API to solve int/unit warnings
+reproduce:
+        # apt-get install sparse
+        # sparse version: v0.6.1-104-gf934193-dirty
+        git checkout ec4c5cc56eccdb9f569494a91464835363a0f805
+        make ARCH=x86_64 allmodconfig
+        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
 
-All that needs to be sorted out in this set are the comments made by
-Maxime.  When you do address those please only resend that patch.
-Since Maxime's comments are related to yaml syntax rather than the
-bindings themselves, I have added your set to my next tree so that it
-can soak in linux-next over the next few weeks.
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
 
-Thanks,
-Mathieu
 
->  .../testing/sysfs-bus-coresight-devices-cti   |  221 ++++
->  .../bindings/arm/coresight-cti.yaml           |  303 +++++
->  .../devicetree/bindings/arm/coresight.txt     |    7 +
->  .../trace/coresight/coresight-ect.rst         |  211 +++
->  Documentation/trace/coresight/coresight.rst   |   13 +
->  MAINTAINERS                                   |    3 +
->  arch/arm64/boot/dts/arm/juno-base.dtsi        |  149 ++-
->  arch/arm64/boot/dts/arm/juno-cs-r1r2.dtsi     |   31 +-
->  arch/arm64/boot/dts/arm/juno-r1.dts           |   25 +
->  arch/arm64/boot/dts/arm/juno-r2.dts           |   25 +
->  arch/arm64/boot/dts/arm/juno.dts              |   25 +
->  .../boot/dts/hisilicon/hi6220-coresight.dtsi  |  130 +-
->  arch/arm64/boot/dts/qcom/msm8916.dtsi         |   85 +-
->  drivers/hwtracing/coresight/Kconfig           |   21 +
->  drivers/hwtracing/coresight/Makefile          |    3 +
->  .../coresight/coresight-cti-platform.c        |  485 +++++++
->  .../hwtracing/coresight/coresight-cti-sysfs.c | 1175 +++++++++++++++++
->  drivers/hwtracing/coresight/coresight-cti.c   |  748 +++++++++++
->  drivers/hwtracing/coresight/coresight-cti.h   |  235 ++++
->  .../hwtracing/coresight/coresight-platform.c  |   21 +
->  drivers/hwtracing/coresight/coresight-priv.h  |   15 +
->  drivers/hwtracing/coresight/coresight.c       |   86 +-
->  include/dt-bindings/arm/coresight-cti-dt.h    |   37 +
->  include/linux/coresight.h                     |   27 +
->  24 files changed, 4050 insertions(+), 31 deletions(-)
->  create mode 100644 Documentation/ABI/testing/sysfs-bus-coresight-devices-cti
->  create mode 100644 Documentation/devicetree/bindings/arm/coresight-cti.yaml
->  create mode 100644 Documentation/trace/coresight/coresight-ect.rst
->  create mode 100644 drivers/hwtracing/coresight/coresight-cti-platform.c
->  create mode 100644 drivers/hwtracing/coresight/coresight-cti-sysfs.c
->  create mode 100644 drivers/hwtracing/coresight/coresight-cti.c
->  create mode 100644 drivers/hwtracing/coresight/coresight-cti.h
->  create mode 100644 include/dt-bindings/arm/coresight-cti-dt.h
->
-> --
-> 2.17.1
->
+sparse warnings: (new ones prefixed by >>)
+
+>> drivers/net/dsa/mt7530.c:1357:57: sparse: sparse: incorrect type in argument 2 (different base types)
+   drivers/net/dsa/mt7530.c:1357:57: sparse:    expected unsigned int enum phy_interface_t [usertype] *interface
+   drivers/net/dsa/mt7530.c:1357:57: sparse:    got unsigned int enum phy_interface_t [addressable] [assigned] [usertype] interface
+   drivers/net/dsa/mt7530.c:1357:57: sparse: sparse: non size-preserving integer to pointer cast
+
+vim +1357 drivers/net/dsa/mt7530.c
+
+  1238	
+  1239	static int
+  1240	mt7530_setup(struct dsa_switch *ds)
+  1241	{
+  1242		struct mt7530_priv *priv = ds->priv;
+  1243		struct device_node *phy_node;
+  1244		struct device_node *mac_np;
+  1245		struct mt7530_dummy_poll p;
+  1246		phy_interface_t interface;
+  1247		struct device_node *dn;
+  1248		u32 id, val;
+  1249		int ret, i;
+  1250	
+  1251		/* The parent node of master netdev which holds the common system
+  1252		 * controller also is the container for two GMACs nodes representing
+  1253		 * as two netdev instances.
+  1254		 */
+  1255		dn = ds->ports[MT7530_CPU_PORT].master->dev.of_node->parent;
+  1256	
+  1257		if (priv->id == ID_MT7530) {
+  1258			priv->ethernet = syscon_node_to_regmap(dn);
+  1259			if (IS_ERR(priv->ethernet))
+  1260				return PTR_ERR(priv->ethernet);
+  1261	
+  1262			regulator_set_voltage(priv->core_pwr, 1000000, 1000000);
+  1263			ret = regulator_enable(priv->core_pwr);
+  1264			if (ret < 0) {
+  1265				dev_err(priv->dev,
+  1266					"Failed to enable core power: %d\n", ret);
+  1267				return ret;
+  1268			}
+  1269	
+  1270			regulator_set_voltage(priv->io_pwr, 3300000, 3300000);
+  1271			ret = regulator_enable(priv->io_pwr);
+  1272			if (ret < 0) {
+  1273				dev_err(priv->dev, "Failed to enable io pwr: %d\n",
+  1274					ret);
+  1275				return ret;
+  1276			}
+  1277		}
+  1278	
+  1279		/* Reset whole chip through gpio pin or memory-mapped registers for
+  1280		 * different type of hardware
+  1281		 */
+  1282		if (priv->mcm) {
+  1283			reset_control_assert(priv->rstc);
+  1284			usleep_range(1000, 1100);
+  1285			reset_control_deassert(priv->rstc);
+  1286		} else {
+  1287			gpiod_set_value_cansleep(priv->reset, 0);
+  1288			usleep_range(1000, 1100);
+  1289			gpiod_set_value_cansleep(priv->reset, 1);
+  1290		}
+  1291	
+  1292		/* Waiting for MT7530 got to stable */
+  1293		INIT_MT7530_DUMMY_POLL(&p, priv, MT7530_HWTRAP);
+  1294		ret = readx_poll_timeout(_mt7530_read, &p, val, val != 0,
+  1295					 20, 1000000);
+  1296		if (ret < 0) {
+  1297			dev_err(priv->dev, "reset timeout\n");
+  1298			return ret;
+  1299		}
+  1300	
+  1301		id = mt7530_read(priv, MT7530_CREV);
+  1302		id >>= CHIP_NAME_SHIFT;
+  1303		if (id != MT7530_ID) {
+  1304			dev_err(priv->dev, "chip %x can't be supported\n", id);
+  1305			return -ENODEV;
+  1306		}
+  1307	
+  1308		/* Reset the switch through internal reset */
+  1309		mt7530_write(priv, MT7530_SYS_CTRL,
+  1310			     SYS_CTRL_PHY_RST | SYS_CTRL_SW_RST |
+  1311			     SYS_CTRL_REG_RST);
+  1312	
+  1313		/* Enable Port 6 only; P5 as GMAC5 which currently is not supported */
+  1314		val = mt7530_read(priv, MT7530_MHWTRAP);
+  1315		val &= ~MHWTRAP_P6_DIS & ~MHWTRAP_PHY_ACCESS;
+  1316		val |= MHWTRAP_MANUAL;
+  1317		mt7530_write(priv, MT7530_MHWTRAP, val);
+  1318	
+  1319		priv->p6_interface = PHY_INTERFACE_MODE_NA;
+  1320	
+  1321		/* Enable and reset MIB counters */
+  1322		mt7530_mib_reset(ds);
+  1323	
+  1324		mt7530_clear(priv, MT7530_MFC, UNU_FFP_MASK);
+  1325	
+  1326		for (i = 0; i < MT7530_NUM_PORTS; i++) {
+  1327			/* Disable forwarding by default on all ports */
+  1328			mt7530_rmw(priv, MT7530_PCR_P(i), PCR_MATRIX_MASK,
+  1329				   PCR_MATRIX_CLR);
+  1330	
+  1331			if (dsa_is_cpu_port(ds, i))
+  1332				mt7530_cpu_port_enable(priv, i);
+  1333			else
+  1334				mt7530_port_disable(ds, i);
+  1335		}
+  1336	
+  1337		/* Setup port 5 */
+  1338		priv->p5_intf_sel = P5_DISABLED;
+  1339		interface = PHY_INTERFACE_MODE_NA;
+  1340	
+  1341		if (!dsa_is_unused_port(ds, 5)) {
+  1342			priv->p5_intf_sel = P5_INTF_SEL_GMAC5;
+  1343			of_get_phy_mode(ds->ports[5].dn, &interface);
+  1344		} else {
+  1345			/* Scan the ethernet nodes. look for GMAC1, lookup used phy */
+  1346			for_each_child_of_node(dn, mac_np) {
+  1347				if (!of_device_is_compatible(mac_np,
+  1348							     "mediatek,eth-mac"))
+  1349					continue;
+  1350	
+  1351				ret = of_property_read_u32(mac_np, "reg", &id);
+  1352				if (ret < 0 || id != 1)
+  1353					continue;
+  1354	
+  1355				phy_node = of_parse_phandle(mac_np, "phy-handle", 0);
+  1356				if (phy_node->parent == priv->dev->of_node->parent) {
+> 1357					of_get_phy_mode(mac_np, interface);
+  1358					id = of_mdio_parse_addr(ds->dev, phy_node);
+  1359					if (id == 0)
+  1360						priv->p5_intf_sel = P5_INTF_SEL_PHY_P0;
+  1361					if (id == 4)
+  1362						priv->p5_intf_sel = P5_INTF_SEL_PHY_P4;
+  1363				}
+  1364				of_node_put(phy_node);
+  1365				break;
+  1366			}
+  1367		}
+  1368	
+  1369		mt7530_setup_port5(ds, interface);
+  1370	
+  1371		/* Flush the FDB table */
+  1372		ret = mt7530_fdb_cmd(priv, MT7530_FDB_FLUSH, NULL);
+  1373		if (ret < 0)
+  1374			return ret;
+  1375	
+  1376		return 0;
+  1377	}
+  1378	
+
+---
+0-DAY kernel test infrastructure                 Open Source Technology Center
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
 
 _______________________________________________
 linux-arm-kernel mailing list
