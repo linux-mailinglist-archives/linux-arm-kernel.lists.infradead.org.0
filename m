@@ -2,82 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69013122616
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 09:01:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42A12122617
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 09:01:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CqtLeYF+69k5QZix9gtNOYihpb/Lm1/Px8dLuyse4ZQ=; b=XJCVEVejM0EokL
-	9l7vRXOGdg5Co2OY1AAXIGpZ6ol0wKdY6mzNfwJDQuW/r1cko2E4QHWwYZExP3A8FUki6HaPiKUH6
-	TV7hfkE81ClgYU53jkYStCC4ewWqkegKgBZPke+aANscSu+g26toijU71jaglhEOkSguQguMovREa
-	KNiVLT7VCzW4ghrgEf/XKgARsEo+Bj5i3xQWdVl2HitE/wOKcc3skeRdn2zU9q6ky+593Fbd7dz8w
-	B47R80uD8sOC7IUchRN4z6J8wcPOChvl3qQE8ZDDmBk56LwpeiYA/TXMlUlXxn1GZL/C0s0uzR8S3
-	/4pZ5msXL/OGH4zifKYA==;
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cmFuVruYHJsLmpsJ7yd5Yjc9Slr2bH3lGZjjjdVXa6I=; b=Z+k7TvJIVaLLWP
+	m0OG72UJxTsByojjvZm4Sb3OzryWoMVHuZy7WxstqGvD2mbXP/Z9sdqnJ6FXkLSusLazUe47LyadZ
+	oXeKVN6+CDgNJPOXZyvUNfcFHVRqtEEmjUjBf733amFgCHnRCWCr+0fVVgvY9oUby0QjN0WBLxBFu
+	vQx/SjTZ1A7SSIvSib24+ad8lUEDznVIpuq51NVBXvmt//Z/D3X8h8A4/Wz1Aqd+91jW+VboV5cMM
+	744Gw2tXLf6b/oyH0IW319bpTfvYInskWca5aPOrlx9chIXmlRkcS1s2oU7xVwMonMNaBUPQARq7x
+	/1eXyHfh7EZUTj7jKaOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih7n6-00033f-A2; Tue, 17 Dec 2019 08:01:12 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1ih7nQ-0003Fw-Je; Tue, 17 Dec 2019 08:01:32 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih7mt-0002uO-08
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 08:01:00 +0000
-Received: by mail-io1-xd42.google.com with SMTP id x1so861992iop.7
+ id 1ih7mz-00032y-4d
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 08:01:06 +0000
+Received: by mail-lf1-x144.google.com with SMTP id 9so6250992lfq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Dec 2019 00:00:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=fjfBTXD/0Rg93fYPAe9SEo+I0qrNg9n7YS5lPldbMxg=;
- b=Kw1586Eb7ayc/Uevj8kSs/jgbYJZ5RYqw6C/4PkUaMTeDr28DglPtZD1DpVyn1eGW3
- gdH8K+XvoTplIyxy5dARmY3R34o7vUJ7Vekk7cA71Z/jc21kJsq1tPVO0q3Vrpd/4nVf
- nem3oX3/rwi1QWu+HC4paVuGsbly6AzhY414oydHkwRHfygrV9dAovK/YbW4QSOZiucx
- vycrxUBnDwLIO0sUyaIwB9gGUNB1aJmu/4TZf3sYpeXu+lsEQnGfvJ6bvIqLFEseV7H3
- pkoJcKkz0EaZzEODKNX5LjiNY67fjwLigUHtMjkcLluVjeg/Q/oBqpu17LrvkDoh/87L
- K2SQ==
+ Tue, 17 Dec 2019 00:01:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=T2hAV6T0SoU9RE4QUFlFaUDYkKCiBGQ/+KL4OS2oxRE=;
+ b=GFeasXIhlmOZAvDrCVeoLeMIliq4ltI8161rcUH6oQdyiPXvPemIK/rXfLgagKrzaF
+ a2FfVoH0wdHmgVFLo66NoVOls0vxKGN71fc1K39sWlbuJfub10VKcgNMAV6TEpZEf30v
+ v6D+0I6NTDZ4iLnx6hZTXL9eN7d08x5ErpsiIc3b5zLsL4b7WjSAhf4xQoVZrPixB0x/
+ mM+sbBIVvObvi5Rd+Uh3mB0eqT1fJUQL8fQ/TWCMz6HPzhLZ/UbWhUCNN5G8yJCjKlQc
+ RnFBvMEOw6ZUoxDaV4LZl/fu1tR35DFf4DhgH8HYw2fqblPShTX5VVBtxgdNjg3MPWTJ
+ DSSg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=fjfBTXD/0Rg93fYPAe9SEo+I0qrNg9n7YS5lPldbMxg=;
- b=CSB2XPsaJHr4Cig/8RJW9vTarWXwHxe2g1aClDqtUbXvzyb2l3ooykHSZ0emQPImGA
- Ua4AMbcVLWPoXl9TDHc4zdTlir5wAnTUaBwUsSdkiwxrHBunebAbF4yCy/FEbMp86PU/
- S5HdXaxCPePtFRm6Vry/+ky4mthDZnBMH7/O7XLukdxss0rgh6acXOGub9HHvqRg7Dtz
- dIIMHSFkuD2+YR22wQXxDiGVDQXuELLuS6njxnEUR5Hdo6F+j8XSwOV+GDxwNAL7s++W
- zqoH4GsmozxGh1heWbVhOfZiA7SvScx/lgxqh7IfeoJaZuBIgN+KkDaXLhzctD66eFmi
- qk1g==
-X-Gm-Message-State: APjAAAVU9QQSZ6rUwLz66glWmoe1whudekUXJU8FYJqgAvGeN4AHMdF3
- KOSndURwy5EUw+2OKq0e++em1sdSOijqTHShv6miBQ==
-X-Google-Smtp-Source: APXvYqz32eReTALarnf1P0DDPtaS3epoXURcAZnKU7rDx0beSWVeeDK4EoJbvrSnuhkreRg5/vzJ1Z7KVBqugRXabrU=
-X-Received: by 2002:a02:c85b:: with SMTP id r27mr7986096jao.57.1576569655617; 
- Tue, 17 Dec 2019 00:00:55 -0800 (PST)
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=T2hAV6T0SoU9RE4QUFlFaUDYkKCiBGQ/+KL4OS2oxRE=;
+ b=aotrk1q7lidJYygHPwmHu/NAF4vYHEOX6tpP7zkPcPmwGYVURd5wEeG66/c4FIQYcs
+ 4e0B3X0RmxokXLVgJqcj5VuZ4vBF7InNAkLimBYZKnLKGs0NdSNtUQLuWHW4tBG7gNbZ
+ /CIIdOIl/oIk5wJXbHAWNnyc/toHe3u8xu4yDCkt6K9qD2IOZwcGFNwG7jBT3J/Y17eD
+ UEQjOlY/SA6qtb0OC2lEdSpSNr87eL6liUcEL1ATXNiDsRu34Z5d3+ZOLVeUehImV+Ze
+ tiF2b3L7Vk6s7/sbAS0GxmpdEEkxIIfyC7eLWq83EkBNatbRX0Y2CXuj2bneZdnApSja
+ 7u5Q==
+X-Gm-Message-State: APjAAAVRCtmlJZ1yYsLLUhiwOBHiNRubZNe/KDqP2vUO+X/DGSJpaOFw
+ HrWHZmpD6bGmXdpeyN9sN1mFADiFl3xHKtk2lwu50Q==
+X-Google-Smtp-Source: APXvYqz83h2KLIAN+HcuxDIED1AiATq4C/oNR/Z0DY3Q6pDnfQVylCmQeL1p4k0v+Z+gTceG/ppMNyh1MyCLDl14ey0=
+X-Received: by 2002:ac2:55a8:: with SMTP id y8mr1875529lfg.117.1576569658634; 
+ Tue, 17 Dec 2019 00:00:58 -0800 (PST)
 MIME-Version: 1.0
-References: <20191213162453.15691-1-brgl@bgdev.pl>
- <20191213162453.15691-2-brgl@bgdev.pl>
- <b9a28314-4fce-ebbd-be20-b0ffa2f1f15f@lechnology.com>
-In-Reply-To: <b9a28314-4fce-ebbd-be20-b0ffa2f1f15f@lechnology.com>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Tue, 17 Dec 2019 09:00:44 +0100
-Message-ID: <CAMRc=McRKwYkUcY9J8cEkwoMnGYxs7SkTnOnFsVMDZD2DkJ1Zw@mail.gmail.com>
-Subject: Re: [PATCH 1/3] clocksource: davinci: work around a clocksource
- problem on dm365 SoC
-To: David Lechner <david@lechnology.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 17 Dec 2019 09:00:47 +0100
+Message-ID: <CACRpkdYfqJ=VXkP3Qm5Lw63AuR=1ChxbUW+Y-nhw5gCX6sYfDw@mail.gmail.com>
+Subject: [GIT PULL] Ux500 DTS changes for v5.6 take one
+To: arm-soc <arm@kernel.org>, soc@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_000059_183533_68B1FC49 
-X-CRM114-Status: UNSURE (   9.71  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191217_000105_241737_59AE93F4 
+X-CRM114-Status: GOOD (  15.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,37 +87,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kevin Hilman <khilman@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Sekhar Nori <nsekhar@ti.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Stephan Gerhold <stephan@gerhold.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-cG9uLiwgMTYgZ3J1IDIwMTkgbyAxODo1OCBEYXZpZCBMZWNobmVyIDxkYXZpZEBsZWNobm9sb2d5
-LmNvbT4gbmFwaXNhxYIoYSk6Cj4KPiA+Cj4gPiArc3RhdGljIHVuc2lnbmVkIGludCBkYXZpbmNp
-X2Nsb2Nrc291cmNlX3RpbTMyX21vZGU7Cj4KPiBzdGF0aWMgdW5zaWduZWQgYm9vbCBkYXZpbmNp
-X2Nsb2Nrc291cmNlX2luaXRpYWxpemVkOwo+Cj4gPiArCj4gPiAgIHN0YXRpYyBzdHJ1Y3QgZGF2
-aW5jaV9jbG9ja2V2ZW50ICoKPiA+ICAgdG9fZGF2aW5jaV9jbG9ja2V2ZW50KHN0cnVjdCBjbG9j
-a19ldmVudF9kZXZpY2UgKmNsb2NrZXZlbnQpCj4gPiAgIHsKPiA+IEBAIC05NCw3ICs5Niw3IEBA
-IHN0YXRpYyB2b2lkIGRhdmluY2lfdGltMTJfc2h1dGRvd24odm9pZCBfX2lvbWVtICpiYXNlKQo+
-ID4gICAgICAgICogaGFsdmVzLiBJbiB0aGlzIGNhc2UgVElNMzQgcnVucyBpbiBwZXJpb2RpYyBt
-b2RlIGFuZCB3ZSBtdXN0Cj4gPiAgICAgICAgKiBub3QgbW9kaWZ5IGl0Lgo+ID4gICAgICAgICov
-Cj4gPiAtICAgICB0Y3IgfD0gREFWSU5DSV9USU1FUl9FTkFNT0RFX1BFUklPRElDIDw8Cj4gPiAr
-ICAgICB0Y3IgfD0gZGF2aW5jaV9jbG9ja3NvdXJjZV90aW0zMl9tb2RlIDw8Cj4gPiAgICAgICAg
-ICAgICAgIERBVklOQ0lfVElNRVJfRU5BTU9ERV9TSElGVF9USU0zNDsKPgo+ICAgICAgICAgaWYg
-KGRhdmluY2lfY2xvY2tzb3VyY2VfaW5pdGlhbGl6ZWQpCj4gICAgICAgICAgICAgICAgIHRjciB8
-PSBEQVZJTkNJX1RJTUVSX0VOQU1PREVfUEVSSU9ESUMgPDwKPiAgICAgICAgICAgICAgICAgICAg
-ICAgICBEQVZJTkNJX1RJTUVSX0VOQU1PREVfU0hJRlRfVElNMzQ7CgpJIHRob3VnaHQgYWJvdXQg
-ZG9pbmcgdGhpcyBpbml0aWFsbHksIGJ1dCB0aGVuIGZpZ3VyZWQgdGhpcyBjb2RlIHdvdWxkCmJl
-IGNhbGxlZCBhIGxvdCwgc28gd2h5IG5vdCBhdm9pZCBicmFuY2hpbmcgYW5kIGp1c3Qgc3RvcmUg
-dGhlIHJpZ2h0CnZhbHVlPyBBbHRlcm5hdGl2ZWx5IHdlIGNhbiBkbzoKCiAgICBpZiAobGlrZWx5
-KGRhdmluY2lfY2xvY2tzb3VyY2VfaW5pdGlhbGl6ZWQpCiAgICAgICAgLi4uLgoKQmFydAoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
-cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
-bAo=
+Hi SoC folks,
+
+here is the first set of DTS changes for Ux500 for the v5.6 kernel
+cycle, we might be sending more later, but this is a good base.
+
+You will notice that PostmarketOS champion Stephan has
+written more changes than me, which is especially nice to see,
+we have a bit of traction going on with this platform.
+
+The details are in the signed tag as usual!
+
+Please pull it in for the DTS update branch.
+
+Yours,
+Linus Walleij
+
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-stericsson.git
+tags/ux500-armsoc-v5.6-1
+
+for you to fetch changes up to 42a1e9450c27de15067d1d25f6a608e2bfeb72b2:
+
+  ARM: dts: ux500: Add devicetree for HREF520 (2019-12-09 14:45:02 +0100)
+
+----------------------------------------------------------------
+First set of Ux500 DTS changes for the v5.6 kernel:
+
+- Add the GPADC IIO channels
+- Factor out generic pin configuration
+- Add the gpio_in_nopull configuration
+- Tighten up I2C and SPI buses
+- Clean up some compatibles
+- Extract a generic DB8500 DTSI
+- Add HREF520 DTS and the associated DB8520 DTSI
+- Split TVK R2 and R3 to separate DTSI files
+
+----------------------------------------------------------------
+Linus Walleij (5):
+      ARM: dts: ux500: declare GPADC IIO ADC channels
+      ARM: dts: ux500: Drop pulls on I2C buses
+      ARM: dts: ux500: Break out DB8500 DTSI
+      ARM: dts: ux500: Split TVK DTSI files in two
+      ARM: dts: ux500: Add devicetree for HREF520
+
+Stephan Gerhold (13):
+      ARM: dts: ux500: snowball: Remove unused PRCMU cpufreq node
+      dt-bindings: arm: Document compatibles for Ux500 boards
+      ARM: dts: ux500: Move generic pin configs out of
+ste-href-family-pinctrl.dtsi
+      ARM: dts: ux500: Rename generic pin configs according to pin group
+      ARM: dts: ux500: Add alternative SDI pin configs
+      ARM: dts: ux500: Add pin configs for UART1 CTS/RTS pins
+      ARM: dts: ux500: nomadik-pinctrl: Add &gpio_in_nopull
+      ARM: dts: ux500: Disable I2C/SPI buses by default
+      ARM: dts: ux500: Add aliases for I2C and SPI buses
+      ARM: dts: ux500: Move serial aliases to ste-dbx5x0.dtsi
+      ARM: dts: ux500: Remove ux500_ prefix from ux500_serial* labels
+      ARM: dts: ux500: Add "simple-bus" compatible to soc node
+      ARM: dts: ux500: Use "arm,pl031" compatible for PL031
+
+ Documentation/devicetree/bindings/arm/ux500.yaml |  31 ++
+ MAINTAINERS                                      |   1 +
+ arch/arm/boot/dts/Makefile                       |   3 +-
+ arch/arm/boot/dts/ste-ab8500.dtsi                | 102 +++-
+ arch/arm/boot/dts/ste-db8500.dtsi                |  15 +
+ arch/arm/boot/dts/ste-db8520.dtsi                |  15 +
+ arch/arm/boot/dts/ste-dbx5x0-pinctrl.dtsi        | 632 +++++++++++++++++++++++
+ arch/arm/boot/dts/ste-dbx5x0.dtsi                |  75 ++-
+ arch/arm/boot/dts/ste-href-family-pinctrl.dtsi   | 532 +------------------
+ arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi    |  79 +++
+ arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi    |  58 +++
+ arch/arm/boot/dts/ste-href-tvk1281618.dtsi       |  71 +--
+ arch/arm/boot/dts/ste-href.dtsi                  |  67 ++-
+ arch/arm/boot/dts/ste-href520-tvk.dts            |  22 +
+ arch/arm/boot/dts/ste-hrefprev60-stuib.dts       |  10 +-
+ arch/arm/boot/dts/ste-hrefprev60-tvk.dts         |  10 +-
+ arch/arm/boot/dts/ste-hrefprev60.dtsi            |   2 +-
+ arch/arm/boot/dts/ste-hrefv60plus-stuib.dts      |  10 +-
+ arch/arm/boot/dts/ste-hrefv60plus-tvk.dts        |  10 +-
+ arch/arm/boot/dts/ste-hrefv60plus.dtsi           |   1 -
+ arch/arm/boot/dts/ste-nomadik-pinctrl.dtsi       |   5 +
+ arch/arm/boot/dts/ste-snowball.dts               |  70 ++-
+ 22 files changed, 1096 insertions(+), 725 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/ux500.yaml
+ create mode 100644 arch/arm/boot/dts/ste-db8500.dtsi
+ create mode 100644 arch/arm/boot/dts/ste-db8520.dtsi
+ create mode 100644 arch/arm/boot/dts/ste-dbx5x0-pinctrl.dtsi
+ create mode 100644 arch/arm/boot/dts/ste-href-tvk1281618-r2.dtsi
+ create mode 100644 arch/arm/boot/dts/ste-href-tvk1281618-r3.dtsi
+ create mode 100644 arch/arm/boot/dts/ste-href520-tvk.dts
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
