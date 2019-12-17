@@ -2,86 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 063E9122B0E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 13:15:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DBB9122B4E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 13:20:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UC4habLe2B9dR4gnor5zti7cZUMLNthlnmtoGSCDnc4=; b=t7ChBDi6xPFruO
-	f5uq4HOSIZKmTFmoATvY0H/xQlNa79BPl6sTx1ao8rBXdMrF0wKt61/818sG9D43R8zJhm6wXQfVT
-	jtzNrDT+31n2c7dDkJ6riOH99JI5nH8mUtdjwECLZXCEhk4tJEE/CYsfXj1PaLsMF4d2wwpw4FEOq
-	f4ULgM3j7Kmhi9HgJWDOiUvirf3RQkjy7h9sSFXd4mHtkVIWATUjwRqvwYyLl++GM1W0i3UgOFJuV
-	EPRZYlrRt8ZaaVF7/bzRgXgfmY1lPh4sgYSzBZfOEgMrpEuIHg9G7Y8vryq5gJFZEMtRVUS2ERCSj
-	Df5I5yGNGhHGD3zvwHkg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=19Q7dGPhvm2WljF4tZ8xMf35vih8e+8d+soZ+ETLQO0=; b=NlN46G4NKIZ73v
+	7PipGVmD/KwCKO+ngQuGg2mm4V7Kd8J5vW2DNQYflaw4Uz09cEOMzqH+THdFDweiqBzQcJZ/FQkod
+	vtZFovc6UnG33hmnXbYJMPTyUcaxNDvPj+lwUDxLN2tIWQWAl3d9ygLkZTdQxL5p0HUYVEvVvQoJc
+	/ghlP1X0wfuJmck2BZGna6jp895NG/t78QAQTETSX3UeeqXXcjLyc2zDVLtXbGfv82J8KEXnceHWY
+	O/Ewdn9a+y1T9AdUEhtUutonUYYdAmBx0IfIWwhxcRyjqUHdQMKT/BiuYwjxahnSVh78hX261boUa
+	lj15G0Ji0KadJBecpfyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihBlV-0000mo-Vx; Tue, 17 Dec 2019 12:15:49 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1ihBpl-0001je-Uf; Tue, 17 Dec 2019 12:20:13 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihBlJ-0000mJ-FP; Tue, 17 Dec 2019 12:15:38 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBHCFX20050766;
- Tue, 17 Dec 2019 06:15:33 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576584933;
- bh=tiBTZBVZZUyfG1wtAQA0cbMS1Uad3ftsgVbxfku27BA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=rDdNNzxMLMOiRS1WpGu33OEooLiBoWmayuhWEVcEl8xD4kephNvZ6WMOpBiVbvgF4
- NIpyvCFdqzef4VJxFzxJelT5lMPiLS3S2GxlK/eJzgeIXBLMwXt9zWUYjZIWnagyYI
- WNlIfoXDcDtukgFfwn7ijPLyYqTj6egtX2mvlVvU=
-Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBHCFXK5008159
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 17 Dec 2019 06:15:33 -0600
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 17
- Dec 2019 06:15:33 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 17 Dec 2019 06:15:33 -0600
-Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBHCFUbD038749;
- Tue, 17 Dec 2019 06:15:31 -0600
-Subject: Re: [PATCH] mmc: bcm2835: Use dma_request_chan() instead
- dma_request_slave_channel()
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, <ulf.hansson@linaro.org>, 
- <f.fainelli@gmail.com>, <rjui@broadcom.com>, <sbranden@broadcom.com>
-References: <20191217112625.30715-1-peter.ujfalusi@ti.com>
- <cd316378273d18b93b5dcad8b357821a708c7805.camel@suse.de>
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Message-ID: <1eecb651-cce7-b099-e2d2-65dcde357a71@ti.com>
-Date: Tue, 17 Dec 2019 14:15:46 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1ihBpZ-0001QY-4e
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 12:20:02 +0000
+Received: by mail-ot1-f66.google.com with SMTP id 77so13546811oty.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Dec 2019 04:20:00 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0U15JxqTWohe4GLhfwPMbmA9156s0i20ALyMdM/t43M=;
+ b=Qp/yrmOSOjxA/jRFzlGC9mVRk0+3QI9mzwT219s9pBkdtZsU1+ClMBxlF1MP781b8P
+ IfYieTkabp+eNwk104t6xn5GihJhYGKv3b4/mZ4skqgUS5taY6dBadri3E6cri5faQFf
+ 2/nOAfP3GLW+VpCTL73817JOf79tOx8NH/hhgdLufn4KQGBqJDdfXNnM7MJ4fnZUo8/5
+ O9UJzglIOBccebFuP8XdcTa4DuGPfOf1PgabLZKY3POrza/4E86ABc984RvwYDEABhQc
+ 8jqv8OOY1VbPkWjnMWU856oZrbniLywbFREDpApfHZ7l7tEFG2qstj8KD4vP/rKTl1xQ
+ v+4g==
+X-Gm-Message-State: APjAAAVfDiHtdhiWhRrbQj1fiTYMOXhT7f9pNAH42quY7p2o+syXDuNA
+ Innff3d1n9GTExDR/hM7A3ShjfXXN2ZbJYhSWCs=
+X-Google-Smtp-Source: APXvYqwkdCwHahSuzYZ+Y81qKjRN63MiahQdOtK75IEiAYkiWMv9UXYUX0fqo59WGI8tjtR25Z+A2O3DlS1vzMShzgI=
+X-Received: by 2002:a9d:2073:: with SMTP id
+ n106mr37395735ota.145.1576585199481; 
+ Tue, 17 Dec 2019 04:19:59 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <cd316378273d18b93b5dcad8b357821a708c7805.camel@suse.de>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20191216124740.16647-1-geert+renesas@glider.be>
+ <20191217120116.GA11814@vmlxhi-102.adit-jv.com>
+In-Reply-To: <20191217120116.GA11814@vmlxhi-102.adit-jv.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 17 Dec 2019 13:19:48 +0100
+Message-ID: <CAMuHMdXoKN0X+pukArrnfeSs9vaF20sW2zaf=v7UX2WD6w4G-w@mail.gmail.com>
+Subject: Re: [PATCH v2 0/6] arm64: dts: renesas: r8a77961: Add more device
+ nodes
+To: Eugeniu Rosca <erosca@de.adit-jv.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_041537_618001_C6C28A9B 
-X-CRM114-Status: GOOD (  17.88  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191217_042001_182518_E0B3EAA1 
+X-CRM114-Status: GOOD (  14.32  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,40 +85,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org, vkoul@kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Eugeniu Rosca <roscaeugeniu@gmail.com>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAxNy8xMi8yMDE5IDEzLjM3LCBOaWNvbGFzIFNhZW56IEp1bGllbm5lIHdyb3RlOgo+IEhp
-IFBldGVyLAo+IAo+IE9uIFR1ZSwgMjAxOS0xMi0xNyBhdCAxMzoyNiArMDIwMCwgUGV0ZXIgVWpm
-YWx1c2kgd3JvdGU6Cj4+IGRtYV9yZXF1ZXN0X3NsYXZlX2NoYW5uZWwoKSBpcyBhIHdyYXBwZXIg
-b24gdG9wIG9mIGRtYV9yZXF1ZXN0X2NoYW4oKQo+PiBlYXRpbmcgdXAgdGhlIGVycm9yIGNvZGUu
-Cj4+Cj4+IEJ5IHVzaW5nIGRtYV9yZXF1ZXN0X2NoYW4oKSBkaXJlY3RseSB0aGUgZHJpdmVyIGNh
-biBzdXBwb3J0IGRlZmVycmVkCj4+IHByb2JpbmcgYWdhaW5zdCBETUEuCj4+Cj4+IFNpZ25lZC1v
-ZmYtYnk6IFBldGVyIFVqZmFsdXNpIDxwZXRlci51amZhbHVzaUB0aS5jb20+Cj4+IC0tLQo+PiAg
-ZHJpdmVycy9tbWMvaG9zdC9iY20yODM1LmMgfCAxMCArKysrKysrKystCj4+ICAxIGZpbGUgY2hh
-bmdlZCwgOSBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9k
-cml2ZXJzL21tYy9ob3N0L2JjbTI4MzUuYyBiL2RyaXZlcnMvbW1jL2hvc3QvYmNtMjgzNS5jCj4+
-IGluZGV4IDk5ZjYxZmQyYTY1OC4uMzgyMWYxNTlkMzZkIDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJz
-L21tYy9ob3N0L2JjbTI4MzUuYwo+PiArKysgYi9kcml2ZXJzL21tYy9ob3N0L2JjbTI4MzUuYwo+
-PiBAQCAtMTM5Myw3ICsxMzkzLDE1IEBAIHN0YXRpYyBpbnQgYmNtMjgzNV9wcm9iZShzdHJ1Y3Qg
-cGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+PiAgCWhvc3QtPmRtYV9jaGFuID0gTlVMTDsKPj4gIAlo
-b3N0LT5kbWFfZGVzYyA9IE5VTEw7Cj4+ICAKPj4gLQlob3N0LT5kbWFfY2hhbl9yeHR4ID0gZG1h
-X3JlcXVlc3Rfc2xhdmVfY2hhbm5lbChkZXYsICJyeC10eCIpOwo+PiArCWhvc3QtPmRtYV9jaGFu
-X3J4dHggPSBkbWFfcmVxdWVzdF9jaGFuKGRldiwgInJ4LXR4Iik7Cj4+ICsJaWYgKElTX0VSUiho
-b3N0LT5kbWFfY2hhbl9yeHR4KSkgewo+PiArCQlpZiAoUFRSX0VSUihob3N0LT5kbWFfY2hhbl9y
-eHR4KSA9PSAtRVBST0JFX0RFRkVSKQo+PiArCQkJcmV0dXJuIC1FUFJPQkVfREVGRVI7Cj4gCj4g
-SSB0aGluayB5b3Ugc2hvdWxkICdnb3RvIGVycicgaGVyZSwgYXMgeW91IGhhdmUgdG8gZnJlZSB0
-aGUgbW1jIGhvc3Qgc3RydWN0dXJlCj4gYWxsb2NhdGVkIGVhcmxpZXIgaW4gdGhlIHByb2JlIGZ1
-bmN0aW9uLgoKWW91IGFyZSByaWdodC4KCj4gT3RoZXIgdGhhbiB0aGF0IHRoZSBwYXRjaCBsb29r
-cyBnb29kIHRvIG1lLgo+IAo+IFJlZ2FyZHMsCj4gTmljb2xhcwo+IAoKLSBQw6l0ZXIKClRleGFz
-IEluc3RydW1lbnRzIEZpbmxhbmQgT3ksIFBvcmtrYWxhbmthdHUgMjIsIDAwMTgwIEhlbHNpbmtp
-LgpZLXR1bm51cy9CdXNpbmVzcyBJRDogMDYxNTUyMS00LiBLb3RpcGFpa2thL0RvbWljaWxlOiBI
-ZWxzaW5raQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+Hi Eugeniu,
+
+On Tue, Dec 17, 2019 at 1:01 PM Eugeniu Rosca <erosca@de.adit-jv.com> wrote:
+> On Mon, Dec 16, 2019 at 01:47:34PM +0100, Geert Uytterhoeven wrote:
+> > This patch series broadens support for the R-Car M3-W+ (aka R-Car M3-W
+> > ES3.0) Soc (R8A77961), by adding more device nodes to its DT source
+> > file, up to what can be tested reasonably using remote access.
+> > For your convenience, it is available in the topic/r8a77961-v2 branch of
+> > my renesas-drivers git repository at
+> > git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers.git.
+>
+> I only see below r8a77961.dtsi commit on topic/r8a77961-v2:
+> 8e4529f2ac8293 ("arm64: dts: renesas: Add Renesas R8A77961 SoC support")
+
+Oops.
+
+> It looks like the patches are from one of below branches?
+>  - topic/r8a77961-extra-v2
+
+Yes, that's the right branch.
+Sorry for the confusion.
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
