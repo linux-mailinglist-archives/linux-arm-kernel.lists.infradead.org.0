@@ -2,65 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43292122C72
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:01:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23745122C83
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:07:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dfnFaRD6DzTVQGjIJKRbkAQMH1NN3kk9pVd2GLHIiT8=; b=et6RCWDEYPhRwx
-	YvuSmMmal7jfC+8A9X/tpY7rG7sqjYcTsFNe3HIKRtMZgaon6TR7yRWjnTa9uN3IF7Jb0LeAWb3fY
-	NZm+TIHftdkTUnmXm1tssIlvv6jfU92dD/LRGTuwVA6TBECO40qVAVskl3LkvnfJhCSGtTwHPTDcf
-	f6nCm+H4GqGzNSp1lxovCzLtcqqXGRbdrySq7nF3R1xwYb+HgUvpDEUgPHQB/FsSOYDePdqUVc/Z2
-	JwUu+s2MWhOHdWMWtRbOZ4S4mnsOTOiW6evQmeLHypXX1TsYR40Eqm2XGhe6HmQSCw70Rh4aygxue
-	sNKrksODlDcug/hOW8Eg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=39gt5FAmyF5fSIirYeE9EarwkCxhbOtJIfDo2Px3PXE=; b=kbHkH5TvuxIRut
+	0UgoNDcc37OvWByqZSVpUWoiNsTO5xiSFg3KaEIVeBO1WJba9ZvIWJQzsrTnO3IEEq9oMTJHghnRG
+	hHO791FENaGS8ZhbRoxAo9XpMb2WZPfuO/8z+4fKuV/v3B88YkCqmPWSY7aZQ9Zqd9nn6J2A/Ifdt
+	k9UryWThaz7wiAmKftNIorNMWoR2KcWu5pYTcyBqX1X55oZflb/poxVgHwXvD19sy/UFeTVeYShOQ
+	XSucSFHeKP2OdV6l7PvrM1EsjZSDcvB9VXx5YqAEDpeaNa+ubXmJkamDH6t2Yy5KToNHVEXo+dRb5
+	oZECzsk1mZNxgI7fuoUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihCTd-000439-Af; Tue, 17 Dec 2019 13:01:25 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1ihCZm-0005um-BC; Tue, 17 Dec 2019 13:07:46 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihCTU-000420-De
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 13:01:18 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 383559BDEB357B89426A;
- Tue, 17 Dec 2019 21:01:03 +0800 (CST)
-Received: from [127.0.0.1] (10.177.223.23) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.439.0; Tue, 17 Dec 2019
- 21:00:54 +0800
-Subject: Re: [PATCH] ACPI/IORT: fix the iort_id_map function
-To: Pankaj Bansal <pankaj.bansal@nxp.com>, Lorenzo Pieralisi
- <lorenzo.pieralisi@arm.com>, Sudeep Holla <sudeep.holla@arm.com>, "Rafael J
- . Wysocki" <rjw@rjwysocki.net>, Len Brown <lenb@kernel.org>
-References: <20191215203303.29811-1-pankaj.bansal@nxp.com>
- <ffc5a6e9-cac3-d6c6-fe16-745b4f9e481f@huawei.com>
- <VI1PR0401MB2496E243F45C82E789B867A6F1510@VI1PR0401MB2496.eurprd04.prod.outlook.com>
- <eedbf670-00e2-93ce-06ac-469d6032ce74@huawei.com>
- <VI1PR0401MB2496DEA6CDEFD57C9427883FF1510@VI1PR0401MB2496.eurprd04.prod.outlook.com>
- <VI1PR0401MB2496A549A21DD18B214A083BF1500@VI1PR0401MB2496.eurprd04.prod.outlook.com>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <3a3f4624-cbb0-390f-6285-d91663c82d87@huawei.com>
-Date: Tue, 17 Dec 2019 21:00:47 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.0
+ id 1ihCZc-0005u1-2n
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 13:07:37 +0000
+Received: by mail-io1-xd42.google.com with SMTP id v3so10933483ioj.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Dec 2019 05:07:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=79YzXGa0/bKZjTejQkahRNRf5+MjE4e315RFe1Zru6E=;
+ b=uEdL9aQ//2cvH7MK3vYjzUibPqOMpLbTDYx1ZHIvvwU2pO5qHei8XziqJDijRDJYJc
+ HpOlQ4Bv3BgBvbn0qm4M9YVmWWm9cATm4M6kDXKvkICp6eBRBdnaML5iB5AMtVrYkZxY
+ /sTSnc9hVxnVnEhbSw/HahNznZNn46SwQPIPn62mZ5zuoE6+eUYBVkPBZe2NcAuYIGgC
+ ARr2MHogOpOibXiVkAYHBd/YpByoHF8+unLbdnMqC22s8+AIY4dtlB4gkb/87fW25ZVL
+ NavvwR4u+E0Dewwms/s+luNATajh4dh6hCOj07nJj27T51LdntG2qA+h4Y6OVOG3Zfni
+ R9ww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=79YzXGa0/bKZjTejQkahRNRf5+MjE4e315RFe1Zru6E=;
+ b=UTEO97afsIgGDOLy9QrjD7KiULMdVNiMr7/dfytKXpPbnhXD74+Ze9TMPK+EG/Ul9X
+ WJl401Z8f8uZl3HK0PnpvzwZzH8cLfxmP/A5OjVW17Y3GFozirFYM1xPtn2hfqj23nyv
+ QKnPAfXhVB3nfoXgBM4AEFNVih7VsWWMh+jh6+oyt7TbH6QBpQNPBtUshjTOGM6+1UTd
+ OuOat17x1vRgnsWzlWLaRUo2PwrZZODgVSuFCDPTHMcs6Zf8M4ybx8j+arCNeMgKwOyO
+ +fDHwy/y7ZM55BgGsCzEvdmTdtJYn4zsBIkiIdFgPa8oCNvvZjQOWxukQnj4RTts6/G6
+ 0t/w==
+X-Gm-Message-State: APjAAAUhad2lv2mISGT4KqsXV18FISKkFa0MzKZ0Spef/Gxq6ZPyLcBU
+ ZO9jHpMSlfgzluZioddNYHhmR7hx/NubLby1rOE=
+X-Google-Smtp-Source: APXvYqxs0JVvmohGW3CJM38cF0ip/ZTgWWaOjkWzTyyLdlMiI3ZT24dQAZUD4JM9uMEPgvaFWrK8qOAfXcEpluXtEiM=
+X-Received: by 2002:a5d:9bd0:: with SMTP id d16mr3776062ion.78.1576588053967; 
+ Tue, 17 Dec 2019 05:07:33 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <VI1PR0401MB2496A549A21DD18B214A083BF1500@VI1PR0401MB2496.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-Originating-IP: [10.177.223.23]
-X-CFilter-Loop: Reflected
+References: <20191213153910.11235-1-aford173@gmail.com>
+ <20191213153910.11235-3-aford173@gmail.com>
+ <VI1PR0402MB3485AB1908AD6B6617CFC08C98500@VI1PR0402MB3485.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR0402MB3485AB1908AD6B6617CFC08C98500@VI1PR0402MB3485.eurprd04.prod.outlook.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Tue, 17 Dec 2019 07:07:22 -0600
+Message-ID: <CAHCN7xLrX0R7Uag2vc1qMp4z=1r3haCWrcp4qJT0H0eC3RiA4Q@mail.gmail.com>
+Subject: Re: [PATCH V2 3/3] arm64: defconfig: Enable CRYPTO_DEV_FSL_CAAM
+To: Horia Geanta <horia.geanta@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_050116_632220_B3BEB244 
-X-CRM114-Status: GOOD (  15.41  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191217_050736_152428_F3DD0E1B 
+X-CRM114-Status: GOOD (  17.54  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (aford173[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,109 +96,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- Jonathan Cameron <jonathan.cameron@huawei.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Aymen Sghaier <aymen.sghaier@nxp.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Will Deacon <will@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Catalin Marinas <catalin.marinas@arm.com>, Shawn Guo <shawnguo@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pankaj,
+On Tue, Dec 17, 2019 at 3:11 AM Horia Geanta <horia.geanta@nxp.com> wrote:
+>
+> On 12/13/2019 5:39 PM, Adam Ford wrote:
+> > Both the i.MX8MQ and i.MX8M Mini support the CAAM driver, but it
+> So do the Layerscape ARMv8-based SoCs:
+> LS1012A, LS1028A, LS1043A, LS1046A, LS1088A, LS2088A, LX2160A
+>
+> > is currently not enabled by default.
+> >
+> > This patch enables this driver by default.
+> >
+> > Signed-off-by: Adam Ford <aford173@gmail.com>
+> > ---
+> > V2:  New to series
+> >
+> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > index 6a83ba2aea3e..0212975b908b 100644
+> > --- a/arch/arm64/configs/defconfig
+> > +++ b/arch/arm64/configs/defconfig
+> > @@ -845,6 +845,7 @@ CONFIG_SECURITY=y
+> >  CONFIG_CRYPTO_ECHAINIV=y
+> >  CONFIG_CRYPTO_ANSI_CPRNG=y
+> >  CONFIG_CRYPTO_DEV_SUN8I_CE=m
+> > +CONFIG_CRYPTO_DEV_FSL_CAAM=y
+> This should probably be "m" instead.
 
-On 2019/12/17 19:58, Pankaj Bansal wrote:
-[...]
->>>>>> Number of IDs = The number of IDs in the range minus one.
->>>>>
->>>>> Hmm, the spec is confusing, the spec may need to be updated, for
->>>>> example, for a PCI bus, device ID + function ID will take 8 bits
->>>>> and will be 256 IDs for that PCI bus, not sure why we need to minus one.
->>>>>
->>>>
->>>> I agree that this "minus one" thing is confusing. Not sure why It
->>>> was put in the spec like that. I guess they wanted the number of IDs
->>>> to be 0
->>> based instead of 1 based.
->>>>
->>>>>>
->>>>>> Therefore, it's valid for ID mapping to contain single device
->>>>>> mapping which would have Number of IDs field 0.
->>>>>
->>>>> Why not use single mapping flag for this case?
->>>>
->>>> Actually single mapping flag doesn't mean that there is single
->>>> mapping in
->>> an ID mapping.
->>>> It means that Input ID should not be considered when looking for
->>>> Output
->>> ID.
->>>> If we put single id flag, then we cannot have a case where we have
->>>> an array of single mappings for one device.
->>>> e.g. an array of single mappings for one PCIe Root Complex, where we
->>>> have a unique output ID for a unique BDF(Input ID)
->>>
->>> Agreed, single mapping flag is not working for multi-entris of single
->> mappings.
->>>
->>> Do you have a real use case for this fix? I'm thinking if we will
->>> break any delivered platforms with this patch applied, since this code
->>> is not changed from 2016, and it's the key logic for mapping the IDs.
->>
->> We have this use case in our platform NXP LX2160A, where we provide the
->> array of single mappings in IORT table. Actually we can only have limited
->> number of output IDs for PCIe devices, so we allocate unique output ID to
->> each BDF connected to a PCIe root complex and pass these IDs in IORT table.
+Out of curiosity, what is the rule for when things are 'm' vs 'y'?
 
-Thanks for the detail information, it's quite useful.
+In the Code Aurora repo, it is set to 'y' and the mainline kernel for
+the i.MX6/7, the imx_v6_v7_defconfig is also set to 'y' which is why I
+used 'y' here.
 
->>
->>>
->>> I checked Hisilicon's ARM64 server platform, Number of IDs is equal to
->>> the number of IDs in the range in the firmware, which is not doing the
->>> same as the spec said, but (rid_in > map->input_base + map->id_count)
->>> is still valid with this patch applied, not sure for other platforms.
->>
->> I don't think that this patch would break any platform which has IORT table
->> defined as per spec.	
-> 
-> Let me rephase this to persuade you. This patch is *increasing* the allowed input
-> IDs. Therefore, this patch would *include* more platforms and none of the existing
-> Platforms can be affected by it, because already their Input IDs would fall in the allowed IDs.
+I can do a V3 to address the other items you noted, but I want to
+understand the rules about the defconfig so I don't make the same
+mistake again.
 
-Unfortunately it breaks systems (Number of IDs = The number of IDs in the range)
-in this way:
+thanks,
 
-PCI hostbridge mapping entry 1:
-Input base:  0x1000
-ID Count:    0x100
-Output base: 0x1000
-Output reference: 0xC4
-
-PCI hostbridge mapping entry 2:
-Input base:  0x1100
-ID Count:    0x100
-Output base: 0x2000
-Output reference: 0xD4
-
-Without your patch, Requester ID 0x1100 will be excluded to mapping
-entry1, and will map to entry 2, pointing to ITS or SMMU 0xD4;
-
-With your patch, will mapping to ITS or SMMU 0xC4. Correct me if I'm
-wrong.
-
-Also will not work if we update the firmware but leave the kernel
-not updated.
-
-Your patch is doing the right thing, but I need to figure out how to
-avoid breaking the exiting system as well, the basic idea is to
-workaroud the firmware issue with some OEM information such as
-OEM ID/Table ID/Oem Revision in IORT table, please shout if you
-have some other ideas.
-
-Thanks
-Hanjun
-
+adam
+>
+> Horia
 
 _______________________________________________
 linux-arm-kernel mailing list
