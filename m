@@ -2,81 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81F59122B5F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 13:23:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4BDB122B88
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 13:31:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LwXF/Dy3Wni31kns1zyOZVqfDN+vTMcZPJ5r1CiblUE=; b=WMF/yN/xFthPsQ
-	YAQ59eCrdVintGeq2SKjy9rQsuZLql25SWHu0CsOATEd3mBedPPmtXB9qEBzxI41H/ebgI9cvXvij
-	rQ0cCowZPCyoMNP5vkfBa3p2QYtybg+rJRlMyzIDai7TKWppxfnYddlaf6njdr7bypO5QvnHTx6/m
-	cdCwzzkwSIno6gQDCKxKsj3royHoT7DNFmRHWRRGRw4T0BLorspSJq3ULIQrYQZV6ykuio4HCB8LX
-	TT8+hWrW3jFlqCBT2VJo7i1WPP3FUIssef2/wDmjntY6CI/cAqmskeqeI/tOAMi2dFP64HvFtmyC5
-	peNjbN7PMwG5cqpcsIKw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nNeg0d57Ng/S2ySWPik7X+tqbT9lns/68semk2+2WEU=; b=Vi/fQ+uFIMs0X0
+	AGhUzyLWnn/MnIZKqlBXcYfjHzgKH8OVBqnaNqaHhfQQ3GLUbt4YhQ/BNoIYypt75XUYoOgOb44in
+	+QMk2tOlXk+NP51WuVzJqbu737Mnc+qqGNSSeqJCznxiObLJ3dooWW2LTp+oFl+OBGzheek5ukVpj
+	G8fM65rj7UK4bPO2BLQiq2sbEx5QezYg/mISw8S1wyyYLnNSLmkO4zHc4MIpbuXer7MSprEuvZJ2p
+	uDDlTEE0TNT7fCJUzMz3z7NTmAk4r58tpexUl5+xda9FSyoxgyN9JoUQnpdfOHHCr8Po6rgCMgRxJ
+	M95SpBAuSY6a3stsfbKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihBsO-00031F-TH; Tue, 17 Dec 2019 12:22:56 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1ihC0w-0006gu-Bm; Tue, 17 Dec 2019 12:31:46 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihBsD-00030r-ON; Tue, 17 Dec 2019 12:22:47 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBHCMgIe018636;
- Tue, 17 Dec 2019 06:22:42 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576585362;
- bh=qM9xJdxmrDLNaME/gOYVTnReJwrGrvAeNa92VYltRFM=;
- h=From:To:CC:Subject:Date;
- b=bM70QIlptkcNkidobo0JsKJTMLt21guPkDWa1gj2BY6HTH+1KGrOAEr/fwTXy4xe/
- rtwCTbOCi79rEhbnrtlKk76ZFwkUUSaEcSX1ISRsoX/bqY8KKw6FF46rXmAvVIHm3j
- 6+We98QHhTHmX/cwOhwWvnYfRARygw8FcETyZ3rs=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBHCMgmr017727
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 17 Dec 2019 06:22:42 -0600
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 17
- Dec 2019 06:22:42 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 17 Dec 2019 06:22:42 -0600
-Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBHCMcZh054542;
- Tue, 17 Dec 2019 06:22:39 -0600
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <ulf.hansson@linaro.org>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
- <sbranden@broadcom.com>, <nsaenzjulienne@suse.de>
-Subject: [PATCH v2] mmc: bcm2835: Use dma_request_chan() instead
- dma_request_slave_channel()
-Date: Tue, 17 Dec 2019 14:22:54 +0200
-Message-ID: <20191217122254.7103-1-peter.ujfalusi@ti.com>
-X-Mailer: git-send-email 2.24.0
+ id 1ihC0m-0006fM-OO
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 12:31:38 +0000
+Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
+ helo=dude02.lab.pengutronix.de)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1ihC0V-0005OG-Hy; Tue, 17 Dec 2019 13:31:19 +0100
+Received: from mfe by dude02.lab.pengutronix.de with local (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1ihC0S-0006OI-I9; Tue, 17 Dec 2019 13:31:16 +0100
+Date: Tue, 17 Dec 2019 13:31:16 +0100
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Adam Thomson <Adam.Thomson.Opensource@diasemi.com>
+Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
+ selection documentation
+Message-ID: <20191217123116.GB29666@pengutronix.de>
+References: <20191210094144.mxximpuouchy3fqu@pengutronix.de>
+ <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+ <20191211170918.q7kqkd4lrwwp7jl3@pengutronix.de>
+ <20191212161019.GF4310@sirena.org.uk>
+ <20191212162152.5uu3feacduetysq7@pengutronix.de>
+ <20191212165124.GJ4310@sirena.org.uk>
+ <20191216085525.csr2aglm5md4vtsw@pengutronix.de>
+ <AM5PR1001MB09941005A47B603805D3C53280510@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+ <20191217090034.GD31182@pengutronix.de>
+ <AM5PR1001MB099460B2D291644F088707BA80500@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <AM5PR1001MB099460B2D291644F088707BA80500@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 13:21:27 up 110 days, 35 min, 93 users,  load average: 0.98, 1.01,
+ 1.03
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_042245_876699_B7939F8B 
-X-CRM114-Status: GOOD (  13.38  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191217_043136_792882_0E162322 
+X-CRM114-Status: GOOD (  22.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,62 +85,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org, vkoul@kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Support Opensource <Support.Opensource@diasemi.com>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "andrew@aj.id.au" <andrew@aj.id.au>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ Mark Brown <broonie@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "lee.jones@linaro.org" <lee.jones@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dma_request_slave_channel() is a wrapper on top of dma_request_chan()
-eating up the error code.
+On 19-12-17 09:53, Adam Thomson wrote:
+> On 17 December 2019 09:01, Marco Felsch wrote:
+> 
+> > > > The enabel control signal is always available, please check [1] table
+> > > > 63. There is a mux in front of the enable pin so:
+> > > >
+> > > >              +-------------
+> > > >  Seq. |\     |   Regulator
+> > > >  GPI1 | \    |
+> > > >  GPI2 | | -- > Enable
+> > > >  GPI3 | /    |
+> > > >       |/     .
+> > > >              .
+> > > >              .
+> > > >
+> > > > Adam please correct me if this is wrong.
+> > >
+> > > Yes the register can always be configured regardless of the associated pin
+> > > configuration, but if say GPIO1 was configured as a GPO but a regulator was
+> > > configured to use GPIO1 as its GPI control mechanism, the output signal from
+> > > GPIO1 would be ignored, the sequencer control would not have any effect and
+> > > you're simply left with manual I2C control. Really we shouldn't be getting into
+> > > that situation though. If a GPIO is to be used as a regulator control signal
+> > > then it should be marked as such and I don't think we should be able to use that
+> > > pin for anything other than regulator control.
+> > 
+> > I see, so we have to guarantee that the requested gpio is configured as
+> > input. This can be done by:
+> 
+> This is one of the reasons I thought this was better suited to being done in the
+> pinctrl/pinmux side. If you configure the GPIO as for regulator control then
+> the code can automatically configure the GPIO for input. That doesn't then need
+> to be in the regulator driver.
 
-By using dma_request_chan() directly the driver can support deferred
-probing against DMA.
+I still don't prefer that way.. pls check my arguments I already made
+and I don't wanna repeat it again.
 
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
-Hi,
+> But yes we wouldn't really want to configure a regulator to be controlled via a
+> GPI when it's configured as a GPO as it makes no sense.
 
-Changes since v1:
-- instead of returning jump to err: to free up resources
+Okay, so the check is all we need to hardening the driver against wrong
+usage :)
 
 Regards,
-Peter
+  Marco
 
- drivers/mmc/host/bcm2835.c | 12 +++++++++++-
- 1 file changed, 11 insertions(+), 1 deletion(-)
+> 
+> > 
+> >   if (gpi->flags & FLAG_IS_OUT)
+> >   	return -EINVAL;
+> > 
+> > Regards,
+> >   Marco
+> 
 
-diff --git a/drivers/mmc/host/bcm2835.c b/drivers/mmc/host/bcm2835.c
-index 99f61fd2a658..c3d949847cbd 100644
---- a/drivers/mmc/host/bcm2835.c
-+++ b/drivers/mmc/host/bcm2835.c
-@@ -1393,7 +1393,17 @@ static int bcm2835_probe(struct platform_device *pdev)
- 	host->dma_chan = NULL;
- 	host->dma_desc = NULL;
- 
--	host->dma_chan_rxtx = dma_request_slave_channel(dev, "rx-tx");
-+	host->dma_chan_rxtx = dma_request_chan(dev, "rx-tx");
-+	if (IS_ERR(host->dma_chan_rxtx)) {
-+		ret = PTR_ERR(host->dma_chan_rxtx);
-+		host->dma_chan_rxtx = NULL;
-+
-+		if (ret == -EPROBE_DEFER)
-+			goto err;
-+
-+		/* Ignore errors to fall back to PIO mode */
-+	}
-+
- 
- 	clk = devm_clk_get(dev, NULL);
- 	if (IS_ERR(clk)) {
 -- 
-Peter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
