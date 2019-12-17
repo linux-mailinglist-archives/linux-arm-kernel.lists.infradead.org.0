@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65EB0123795
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 21:41:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CEFC123796
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 21:41:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=M2yBWo3YPMKDbROLehwywjMRsKySpvv8lMP1U3j/Cu4=; b=shUbMWBN65bbV1
-	rNCzBPEu2v8GEGgRkf2OgbacgDPk0rq6fK8qKBp/Y7UR4P9hByO1whjJHXEuOY1syp8EfqY2duWHn
-	kB6sxlmmpNyuy4hJZr+RWqkp5z6esKVAlVKVlYvIKODcDLlaZwWmZSoKFzm7VIydG4+W9XWgnmS80
-	XUbLu8Uwag/4YHuRPUOm5+Etz78ZjRK7AD4PZw/K4OAamQYYv/FwYlTWeY/aMeNGFREDalrjQFv9s
-	SL6MOnkU8APoff70RLsnEbxpRhMpSGCBi/FP+UMOHnbr3ixkvK7SZdHFtFTtp4wP+DWNPkBWuFHtY
-	/h7lol4xuOV9PcX+YGyQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RJYZPkoEsAzdnmh+VDMhRJaVHnXjHFiiwNhZAC4zgPY=; b=hw97FZrNjj6gK4
+	/2rZoWEamEzJnMHRF7AIIHlyUD0jDM9l5AuCMd4p8EU0dkUJi64qo9/QWFitq4VjwiMNmFOH01+2+
+	EFZ+EbHnELTwzVHMB8xgCdymFkaLO7wA4PdYKc/8BdueTHUr0FzekKLRT1UhQYE6H+2jny8b6obVX
+	S/R/H9vDTu9wU35eLU3JBc+MoifcCV2kYiX08JSImWpsc+5HRM2SqYdD4a7kq29Rw8e7m6wCMTHZu
+	Crhyrl92m79tTgrJCfKeIaBm1ok9kISBoUGz8OhKvnMAGyitENCZNRMu6u9oaVOyC5FnSV1DK9X1F
+	zudWCBMsRtRfQkSeJxGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihJee-0004oZ-64; Tue, 17 Dec 2019 20:41:16 +0000
+	id 1ihJf4-00058g-A8; Tue, 17 Dec 2019 20:41:42 +0000
 Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihJe7-0004mU-Ei
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 20:40:44 +0000
+ id 1ihJe7-0004mk-TL
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 20:40:45 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from orsmga005.jf.intel.com ([10.7.209.41])
  by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  17 Dec 2019 12:40:42 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,326,1571727600"; d="scan'208";a="389952569"
+X-IronPort-AV: E=Sophos;i="5.69,326,1571727600"; d="scan'208";a="389952572"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
  by orsmga005.jf.intel.com with ESMTP; 17 Dec 2019 12:40:42 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
@@ -37,14 +37,17 @@ To: James Hogan <jhogan@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
  Marc Zyngier <maz@kernel.org>
-Subject: [PATCH v4 00/19] KVM: Dynamically size memslot arrays
-Date: Tue, 17 Dec 2019 12:40:22 -0800
-Message-Id: <20191217204041.10815-1-sean.j.christopherson@intel.com>
+Subject: [PATCH v4 01/19] KVM: x86: Allocate new rmap and large page tracking
+ when moving memslot
+Date: Tue, 17 Dec 2019 12:40:23 -0800
+Message-Id: <20191217204041.10815-2-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20191217204041.10815-1-sean.j.christopherson@intel.com>
+References: <20191217204041.10815-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_124043_506636_590B9077 
-X-CRM114-Status: GOOD (  14.90  )
+X-CRM114-CacheID: sfid-20191217_124043_955973_620EA5F4 
+X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,102 +86,97 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The end goal of this series is to dynamically size the memslot array so
-that KVM allocates memory based on the number of memslots in use, as
-opposed to unconditionally allocating memory for the maximum number of
-memslots.  On x86, each memslot consumes 88 bytes, and so with 2 address
-spaces of 512 memslots, each VM consumes ~90k bytes for the memslots.
-E.g. given a VM that uses a total of 30 memslots, dynamic sizing reduces
-the memory footprint from 90k to ~2.6k bytes.
+Reallocate a rmap array and recalcuate large page compatibility when
+moving an existing memslot to correctly handle the alignment properties
+of the new memslot.  The number of rmap entries required at each level
+is dependent on the alignment of the memslot's base gfn with respect to
+that level, e.g. moving a large-page aligned memslot so that it becomes
+unaligned will increase the number of rmap entries needed at the now
+unaligned level.
 
-The changes required to support dynamic sizing are relatively small,
-e.g. are essentially contained in patches 17/19 and 18/19.
+Not updating the rmap array is the most obvious bug, as KVM accesses
+garbage data beyond the end of the rmap.  KVM interprets the bad data as
+pointers, leading to non-canonical #GPs, unexpected #PFs, etc...
 
-Patches 2-16 clean up the memslot code, which has gotten quite crusty,
-especially __kvm_set_memory_region().  The clean up is likely not strictly
-necessary to switch to dynamic sizing, but I didn't have a remotely
-reasonable level of confidence in the correctness of the dynamic sizing
-without first doing the clean up.
+  general protection fault: 0000 [#1] SMP
+  CPU: 0 PID: 1909 Comm: move_memory_reg Not tainted 5.4.0-rc7+ #139
+  Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 0.0.0 02/06/2015
+  RIP: 0010:rmap_get_first+0x37/0x50 [kvm]
+  Code: <48> 8b 3b 48 85 ff 74 ec e8 6c f4 ff ff 85 c0 74 e3 48 89 d8 5b c3
+  RSP: 0018:ffffc9000021bbc8 EFLAGS: 00010246
+  RAX: ffff00617461642e RBX: ffff00617461642e RCX: 0000000000000012
+  RDX: ffff88827400f568 RSI: ffffc9000021bbe0 RDI: ffff88827400f570
+  RBP: 0010000000000000 R08: ffffc9000021bd00 R09: ffffc9000021bda8
+  R10: ffffc9000021bc48 R11: 0000000000000000 R12: 0030000000000000
+  R13: 0000000000000000 R14: ffff88827427d700 R15: ffffc9000021bce8
+  FS:  00007f7eda014700(0000) GS:ffff888277a00000(0000) knlGS:0000000000000000
+  CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+  CR2: 00007f7ed9216ff8 CR3: 0000000274391003 CR4: 0000000000162eb0
+  Call Trace:
+   kvm_mmu_slot_set_dirty+0xa1/0x150 [kvm]
+   __kvm_set_memory_region.part.64+0x559/0x960 [kvm]
+   kvm_set_memory_region+0x45/0x60 [kvm]
+   kvm_vm_ioctl+0x30f/0x920 [kvm]
+   do_vfs_ioctl+0xa1/0x620
+   ksys_ioctl+0x66/0x70
+   __x64_sys_ioctl+0x16/0x20
+   do_syscall_64+0x4c/0x170
+   entry_SYSCALL_64_after_hwframe+0x44/0xa9
+  RIP: 0033:0x7f7ed9911f47
+  Code: <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 21 6f 2c 00 f7 d8 64 89 01 48
+  RSP: 002b:00007ffc00937498 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+  RAX: ffffffffffffffda RBX: 0000000001ab0010 RCX: 00007f7ed9911f47
+  RDX: 0000000001ab1350 RSI: 000000004020ae46 RDI: 0000000000000004
+  RBP: 000000000000000a R08: 0000000000000000 R09: 00007f7ed9214700
+  R10: 00007f7ed92149d0 R11: 0000000000000246 R12: 00000000bffff000
+  R13: 0000000000000003 R14: 00007f7ed9215000 R15: 0000000000000000
+  Modules linked in: kvm_intel kvm irqbypass
+  ---[ end trace 0c5f570b3358ca89 ]---
 
-The only functional change in v4 is the addition of an x86-specific bug
-fix in x86's handling of KVM_MR_MOVE.  The bug fix is not directly related
-to dynamically allocating memslots, but it has subtle and hidden conflicts
-with the cleanup patches, and the fix is higher priority than anything
-else in the series, i.e. should be merged first.
+The disallow_lpage tracking is more subtle.  Failure to update results
+in KVM creating large pages when it shouldn't, either due to stale data
+or again due to indexing beyond the end of the metadata arrays, which
+can lead to memory corruption and/or leaking data to guest/userspace.
 
-On non-x86 architectures, v3 and v4 should be functionally equivalent,
-the only non-x86 change in v4 is the dropping of a "const" in
-kvm_arch_commit_memory_region().
+Note, the arrays for the old memslot are freed by the unconditional call
+to kvm_free_memslot() in __kvm_set_memory_region().
 
-v4:
-  - Add patch 01 to fix an x86 rmap/lpage bug, and patches 10 and 11 to
-    resolve hidden conflicts with the bug fix.
-  - Collect tags [Christian, Marc, Philippe].
-  - Rebase to kvm/queue, commit e41a90be9659 ("KVM: x86/mmu: WARN if
-    root_hpa is invalid when handling a page fault").
-v3:
-  - Fix build errors on PPC and MIPS due to missed params during
-    refactoring [kbuild test robot].
-  - Rename the helpers for update_memslots() and add comments describing
-    the new algorithm and how it interacts with searching [Paolo].
-  - Remove the unnecessary and obnoxious warning regarding memslots being
-    a flexible array [Paolo].
-  - Fix typos in the changelog of patch 09/15 [Christoffer].
-  - Collect tags [Christoffer].
+Fixes: 05da45583de9b ("KVM: MMU: large page support")
+Cc: stable@vger.kernel.org
+Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
+---
+ arch/x86/kvm/x86.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-v2:
-  - Split "Drop kvm_arch_create_memslot()" into three patches to move
-    minor functional changes to standalone patches [Janosch].
-  - Rebase to latest kvm/queue (f0574a1cea5b, "KVM: x86: fix ...")
-  - Collect an Acked-by and a Reviewed-by
-
-Sean Christopherson (19):
-  KVM: x86: Allocate new rmap and large page tracking when moving
-    memslot
-  KVM: Reinstall old memslots if arch preparation fails
-  KVM: Don't free new memslot if allocation of said memslot fails
-  KVM: PPC: Move memslot memory allocation into prepare_memory_region()
-  KVM: x86: Allocate memslot resources during prepare_memory_region()
-  KVM: Drop kvm_arch_create_memslot()
-  KVM: Explicitly free allocated-but-unused dirty bitmap
-  KVM: Refactor error handling for setting memory region
-  KVM: Move setting of memslot into helper routine
-  KVM: Drop "const" attribute from old memslot in commit_memory_region()
-  KVM: x86: Free arrays for old memslot when moving memslot's base gfn
-  KVM: Move memslot deletion to helper function
-  KVM: Simplify kvm_free_memslot() and all its descendents
-  KVM: Clean up local variable usage in __kvm_set_memory_region()
-  KVM: Provide common implementation for generic dirty log functions
-  KVM: Ensure validity of memslot with respect to kvm_get_dirty_log()
-  KVM: Terminate memslot walks via used_slots
-  KVM: Dynamically size memslot array based on number of used slots
-  KVM: selftests: Add test for KVM_SET_USER_MEMORY_REGION
-
- arch/mips/include/asm/kvm_host.h              |   2 +-
- arch/mips/kvm/mips.c                          |  71 +-
- arch/powerpc/include/asm/kvm_ppc.h            |  17 +-
- arch/powerpc/kvm/book3s.c                     |  22 +-
- arch/powerpc/kvm/book3s_hv.c                  |  36 +-
- arch/powerpc/kvm/book3s_pr.c                  |  20 +-
- arch/powerpc/kvm/booke.c                      |  17 +-
- arch/powerpc/kvm/powerpc.c                    |  15 +-
- arch/s390/include/asm/kvm_host.h              |   2 +-
- arch/s390/kvm/kvm-s390.c                      |  23 +-
- arch/x86/include/asm/kvm_page_track.h         |   3 +-
- arch/x86/kvm/mmu/page_track.c                 |  15 +-
- arch/x86/kvm/x86.c                            | 114 +---
- include/linux/kvm_host.h                      |  48 +-
- tools/testing/selftests/kvm/.gitignore        |   1 +
- tools/testing/selftests/kvm/Makefile          |   3 +
- .../testing/selftests/kvm/include/kvm_util.h  |   1 +
- tools/testing/selftests/kvm/lib/kvm_util.c    |  30 +
- .../selftests/kvm/set_memory_region_test.c    | 142 ++++
- virt/kvm/arm/arm.c                            |  48 +-
- virt/kvm/arm/mmu.c                            |  20 +-
- virt/kvm/kvm_main.c                           | 621 ++++++++++++------
- 22 files changed, 736 insertions(+), 535 deletions(-)
- create mode 100644 tools/testing/selftests/kvm/set_memory_region_test.c
-
+diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
+index 8bb2fb1705ff..04d1bf89da0e 100644
+--- a/arch/x86/kvm/x86.c
++++ b/arch/x86/kvm/x86.c
+@@ -9703,6 +9703,13 @@ int kvm_arch_create_memslot(struct kvm *kvm, struct kvm_memory_slot *slot,
+ {
+ 	int i;
+ 
++	/*
++	 * Clear out the previous array pointers for the KVM_MR_MOVE case.  The
++	 * old arrays will be freed by __kvm_set_memory_region() if installing
++	 * the new memslot is successful.
++	 */
++	memset(&slot->arch, 0, sizeof(slot->arch));
++
+ 	for (i = 0; i < KVM_NR_PAGE_SIZES; ++i) {
+ 		struct kvm_lpage_info *linfo;
+ 		unsigned long ugfn;
+@@ -9777,6 +9784,10 @@ int kvm_arch_prepare_memory_region(struct kvm *kvm,
+ 				const struct kvm_userspace_memory_region *mem,
+ 				enum kvm_mr_change change)
+ {
++	if (change == KVM_MR_MOVE)
++		return kvm_arch_create_memslot(kvm, memslot,
++					       mem->memory_size >> PAGE_SHIFT);
++
+ 	return 0;
+ }
+ 
 -- 
 2.24.1
 
