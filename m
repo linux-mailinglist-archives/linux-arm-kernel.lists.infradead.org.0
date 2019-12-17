@@ -2,52 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C73EE122855
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 11:09:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 898CB12289B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 11:24:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OP1clDio01ws4K+YRidnXqtTM11OpM8DmDAUTL20L3c=; b=h0UGfiY60Jmqzv
-	9Fps9SwqQwv105a+2M3gLMGy6g3oBuF3TVL5XtqhOT27tMXUv5Ayoo5asHrHO7p3YoDxkyzbmzu75
-	X562AkVIC9Jfh4ADHJoVw2JmBXxNogIig481iEjTs+uE0OO9jUBRVRCZLYB6xTi0+030LEW5C+qMU
-	8IbzSq/CLF76cT2VhDWTyZG/4tgMvhObWSiIxbJJENjToS8JbsKqSMgxPY3EsuKonwBXcFN+NQXCj
-	4zXrdgxqip1fgQr7wJ77D2WKejJBTAvLEqfsusn9+hY4bxGCatMiPazkXarseOEGZN7JL+jJdqVxR
-	erwnwST2YPKLRQAogDCw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KVfQVsVIg26CM1SNrWsZvCp4f+ZYbZGt4Sc+vG9IgT4=; b=oDt0fUQ5qIhwLA
+	RExtoFE5ByC6/HOwQbfQXnqNbCE1iRwfytgFN88ji8N6hD5Vr+Hwl+XNxgrQ9vaeEhWW0aWi3islQ
+	jMd/vPzST4eslnjfL3PmNa30Hiij11shkhRzeExFmz1pqaqL+8q50jlfiVC68ompZWw4qxKY1/5Jk
+	o3li6Cq7bsRxLQcB+kWxEd5OOJ2WdD4JqZmjHjKMDseX1SzF2WSN07NclxyLBC5jFUY/13YggVr7E
+	0hDLLlSV4hNJm1iGcIsFoK26hUXsrnlUMMjF5XEFwdzeHROoXcL8/2SiJeilEv5x2K9qtNhw8ZRpc
+	r72+dih/nf8r13QG28vQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih9mw-0002Ix-0R; Tue, 17 Dec 2019 10:09:10 +0000
-Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
+	id 1ihA18-0007Sb-PE; Tue, 17 Dec 2019 10:23:50 +0000
+Received: from smtp1.axis.com ([195.60.68.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih9mj-0002Ht-Db
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 10:08:59 +0000
-Received: by theia.8bytes.org (Postfix, from userid 1000)
- id AAE48286; Tue, 17 Dec 2019 11:08:51 +0100 (CET)
-Date: Tue, 17 Dec 2019 11:08:50 +0100
-From: Joerg Roedel <joro@8bytes.org>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH v2 0/5] iommu: Implement iommu_put_resv_regions_simple()
-Message-ID: <20191217100850.GI8689@8bytes.org>
-References: <20191209145007.2433144-1-thierry.reding@gmail.com>
+ id 1ihA10-0007R6-DI
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 10:23:44 +0000
+IronPort-SDR: olos7RgV0aFCzW+bUUn0tK2MWoDKJsoEdL/t1GiX/kM71PMjnlnsXWjAXZLSiau3qWEvI4Lj6R
+ X2sjFQfSJfg8bkB/gNmbizfkYrWeHroDKeisiU+YEaMgQtBCGRIQYWUsiIC1vUQLY1UdEugjVq
+ +j9l43yK0Mhl1nCj2FTAkMKmTusAvdn527/q7slSaR5Ni2ENYzBzwT5zI8RKHGXrO+f15WL2Zc
+ Ur3GXjJcV/AQXpxozLus0K7XfQL9Mg6BRBoa5mtbBlMW+hBGI4RcGn6jl2nEDzrTmSQJgZChsM
+ Q9E=
+X-IronPort-AV: E=Sophos;i="5.69,325,1571695200"; 
+   d="scan'208";a="3670839"
+X-Axis-User: NO
+X-Axis-NonUser: YES
+X-Virus-Scanned: Debian amavisd-new at bastet.se.axis.com
+From: Vincent Whitchurch <vincent.whitchurch@axis.com>
+To: akpm@linux-foundation.org
+Subject: [PATCH] asm/sections: Check for overflow in memory_contains()
+Date: Tue, 17 Dec 2019 11:22:38 +0100
+Message-Id: <20191217102238.14792-1-vincent.whitchurch@axis.com>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191209145007.2433144-1-thierry.reding@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-TM-AS-GCONF: 00
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_020857_611439_66602180 
-X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-CacheID: sfid-20191217_022342_779948_E1C2ECFD 
+X-CRM114-Status: UNSURE (   8.96  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [81.169.241.247 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [195.60.68.17 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,47 +65,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
- virtualization@lists.linux-foundation.org,
- Christoph Hellwig <hch@infradead.org>, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>, David Woodhouse <dwmw2@infradead.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Vincent Whitchurch <rabinv@axis.com>, treding@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, arnd@arndb.de,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Thierry
+ARM uses memory_contains() from its stacktrace code via this function:
 
-On Mon, Dec 09, 2019 at 03:50:02PM +0100, Thierry Reding wrote:
-> From: Thierry Reding <treding@nvidia.com>
-> 
-> Most IOMMU drivers only need to free the memory allocated for each
-> reserved region. Instead of open-coding the loop to do this in each
-> driver, extract the code into a common function that can be used by
-> all these drivers.
-> 
-> Changes in v2:
-> - change subject prefix to "iommu: virtio: " for virtio-iommu.c driver
-> 
-> Thierry
-> 
-> Thierry Reding (5):
->   iommu: Implement iommu_put_resv_regions_simple()
->   iommu: arm: Use iommu_put_resv_regions_simple()
->   iommu: amd: Use iommu_put_resv_regions_simple()
->   iommu: intel: Use iommu_put_resv_regions_simple()
->   iommu: virtio: Use iommu_put_resv_regions_simple()
+ static inline bool in_entry_text(unsigned long addr)
+ {
+ 	return memory_contains(__entry_text_start, __entry_text_end,
+ 			       (void *)addr, 1);
+ }
 
-Thanks, that is a nice consolidation. Just a minor nit, can you please
-rename iommu_put_resv_regions_simple to
-generic_iommu_put_resv_regsions(). That matches the naming in other
-places where we have done similar things.
+addr is taken from the stack and can be a completely invalid.  If addr
+is 0xffffffff, there is an overflow in the pointer arithmetic in
+memory_contains() and in_entry_text() incorrectly returns true.
 
-Thanks,
+Fix this by adding an overflow check.  The check is done on unsigned
+longs to avoid undefined behaviour.
 
-	Joerg
+Signed-off-by: Vincent Whitchurch <vincent.whitchurch@axis.com>
+---
+ include/asm-generic/sections.h | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/include/asm-generic/sections.h b/include/asm-generic/sections.h
+index d1779d442aa5..e6e1b381c5df 100644
+--- a/include/asm-generic/sections.h
++++ b/include/asm-generic/sections.h
+@@ -105,7 +105,15 @@ static inline int arch_is_kernel_initmem_freed(unsigned long addr)
+ static inline bool memory_contains(void *begin, void *end, void *virt,
+ 				   size_t size)
+ {
+-	return virt >= begin && virt + size <= end;
++	unsigned long membegin = (unsigned long)begin;
++	unsigned long memend = (unsigned long)end;
++	unsigned long objbegin = (unsigned long)virt;
++	unsigned long objend = objbegin + size;
++
++	if (objend < objbegin)
++		return false;
++
++	return objbegin >= membegin && objend <= memend;
+ }
+ 
+ /**
+-- 
+2.20.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
