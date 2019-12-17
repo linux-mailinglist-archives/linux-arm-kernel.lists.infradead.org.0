@@ -2,79 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21326122AEF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 13:07:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 063E9122B0E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 13:15:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eUYmsfpQ+gHCJkmXaKCpgpP/32A0Awav9v7qjle1524=; b=kAIy3PE5XHsOXm
-	JYAyOj+rmHo2Tfx/JCxGmCd6Gx03e7QEQ3WQjEORz+oBVPD1TU4BqD6YlouT+3TNfDty2M2ZWUKlQ
-	IIsaKjucmHrYKE0kHGPfC/rvzSNhXc/nfIOkYt86l9J5pBCsBYRKCJAdluarCyzgoJX9ZmE+WgE5T
-	+/R/OQw0ToH/tG+27/Kcu1cv0GwZ54GBlV/hxDu/KNJhRQKRfABuFNiclPcBPF+oMweOCVs2mZvfG
-	wlCoPNz+PZixN4hgbY3ihUl1Ywu4m0rsdKCw3fEZOmUp2gWa5m0YmRkHpVgp1623N48FOnYrfYh7e
-	2DSpTYMjVcdZw/VBACLw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UC4habLe2B9dR4gnor5zti7cZUMLNthlnmtoGSCDnc4=; b=t7ChBDi6xPFruO
+	f5uq4HOSIZKmTFmoATvY0H/xQlNa79BPl6sTx1ao8rBXdMrF0wKt61/818sG9D43R8zJhm6wXQfVT
+	jtzNrDT+31n2c7dDkJ6riOH99JI5nH8mUtdjwECLZXCEhk4tJEE/CYsfXj1PaLsMF4d2wwpw4FEOq
+	f4ULgM3j7Kmhi9HgJWDOiUvirf3RQkjy7h9sSFXd4mHtkVIWATUjwRqvwYyLl++GM1W0i3UgOFJuV
+	EPRZYlrRt8ZaaVF7/bzRgXgfmY1lPh4sgYSzBZfOEgMrpEuIHg9G7Y8vryq5gJFZEMtRVUS2ERCSj
+	Df5I5yGNGhHGD3zvwHkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihBcr-0005wu-SG; Tue, 17 Dec 2019 12:06:53 +0000
-Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
+	id 1ihBlV-0000mo-Vx; Tue, 17 Dec 2019 12:15:49 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihBci-0005wP-SA
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 12:06:46 +0000
-Received: by mail-il1-x144.google.com with SMTP id s15so5102810iln.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Dec 2019 04:06:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kJFvFlTIidZyYqjLvZTlE95MCLu7jntYF3GzY++GrcU=;
- b=qtoUbxZKi8HQaYf/hEuyljG2Lk9x3aTYRUUhA+yNAkDKcQJk7YJ0lE6it9xS7/MtNE
- BH1N5iQvubVOF8dccCLV5moaKunrYjZQI/yqGf3BIh2A6y9OSaM4ASIGeUZi6MMVUOUL
- NaROAhN2+tEmIzppIlC25TZZFlD0N2HhlIUBw=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=kJFvFlTIidZyYqjLvZTlE95MCLu7jntYF3GzY++GrcU=;
- b=gsJ8zs5wgpIUrPKhxYZNm4BuSob3n7pYa/3sZUtR8kpDjxWnQZQ88hzqJ+Kg40zHPS
- 9SLVxWyNQfzqRwiafzKgPA5uiu2OlqJThFbLZvipxCiiB/IEr+gZKrbqsGxnefb6ERFB
- mwWWpqTatvJgFBtc1x9k8L9aA5wA3OJx392+Z/sj680L6tLKurTOm9Ld6i96nN9lLtyN
- uVbpxr6S9kghNOyO4gF1Zp98afGmdo0WyCvhS4x669GQz+Djw1i5XLyQIWNRzaTdLpdV
- uHk39XyHTJLtVzwMr9wKPOqtQWORMi+RFO8JYDekyWHL/O+thLQzr/Rxa4e9AfAxbLtv
- i8og==
-X-Gm-Message-State: APjAAAU70Fq6mTQTwo9463J8BrbRN1bbL2z4VCb0vpF6O3m/wMxMXsOg
- RHsLG+aClOgYMqcC5E4KbXbm+SyuMSwI6DHv3KKe6w==
-X-Google-Smtp-Source: APXvYqzo1LW8pYHyyqjgRw5xkXeBYSK8ws4WYpGdREfWhRvAF2p1T/KlJp3RESV+UxI8vdA2SxK9Moux+dAQE89yUZ0=
-X-Received: by 2002:a92:17cb:: with SMTP id 72mr16272735ilx.173.1576584402380; 
- Tue, 17 Dec 2019 04:06:42 -0800 (PST)
+ id 1ihBlJ-0000mJ-FP; Tue, 17 Dec 2019 12:15:38 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBHCFX20050766;
+ Tue, 17 Dec 2019 06:15:33 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1576584933;
+ bh=tiBTZBVZZUyfG1wtAQA0cbMS1Uad3ftsgVbxfku27BA=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=rDdNNzxMLMOiRS1WpGu33OEooLiBoWmayuhWEVcEl8xD4kephNvZ6WMOpBiVbvgF4
+ NIpyvCFdqzef4VJxFzxJelT5lMPiLS3S2GxlK/eJzgeIXBLMwXt9zWUYjZIWnagyYI
+ WNlIfoXDcDtukgFfwn7ijPLyYqTj6egtX2mvlVvU=
+Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBHCFXK5008159
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 17 Dec 2019 06:15:33 -0600
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 17
+ Dec 2019 06:15:33 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Tue, 17 Dec 2019 06:15:33 -0600
+Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBHCFUbD038749;
+ Tue, 17 Dec 2019 06:15:31 -0600
+Subject: Re: [PATCH] mmc: bcm2835: Use dma_request_chan() instead
+ dma_request_slave_channel()
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, <ulf.hansson@linaro.org>, 
+ <f.fainelli@gmail.com>, <rjui@broadcom.com>, <sbranden@broadcom.com>
+References: <20191217112625.30715-1-peter.ujfalusi@ti.com>
+ <cd316378273d18b93b5dcad8b357821a708c7805.camel@suse.de>
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Message-ID: <1eecb651-cce7-b099-e2d2-65dcde357a71@ti.com>
+Date: Tue, 17 Dec 2019 14:15:46 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191203134816.5319-1-jagan@amarulasolutions.com>
- <20191203134816.5319-2-jagan@amarulasolutions.com>
- <20191204133600.gnv6dnhk6upe7xod@gilmour.lan>
- <CAMty3ZDU57Hj3ZSBC6sSMFWN9-HQadA03hmXUNUVS1W0UQQ3DA@mail.gmail.com>
- <20191216112042.f4xvlgnbm4dk6wkq@gilmour.lan>
- <CAMty3ZBU-XaxR_vM5L2yVbhR5ftfbtDn3jP00qCxBF+owVyqDQ@mail.gmail.com>
- <20191216183410.akrmytbvaeg37wms@gilmour.lan>
-In-Reply-To: <20191216183410.akrmytbvaeg37wms@gilmour.lan>
-From: Jagan Teki <jagan@amarulasolutions.com>
-Date: Tue, 17 Dec 2019 17:36:31 +0530
-Message-ID: <CAMty3ZDoE6fxA3gSeUAV+WJEz0_qdQgU43Uxiq2YnH-yFuxZfg@mail.gmail.com>
-Subject: Re: [PATCH v12 1/7] dt-bindings: sun6i-dsi: Document A64 MIPI-DSI
- controller
-To: Maxime Ripard <mripard@kernel.org>
+In-Reply-To: <cd316378273d18b93b5dcad8b357821a708c7805.camel@suse.de>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_040645_053456_2884103D 
-X-CRM114-Status: GOOD (  28.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191217_041537_618001_C6C28A9B 
+X-CRM114-Status: GOOD (  17.88  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,176 +93,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- Michael Trimarchi <michael@amarulasolutions.com>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org, vkoul@kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 12:04 AM Maxime Ripard <mripard@kernel.org> wrote:
->
-> On Mon, Dec 16, 2019 at 10:29:08PM +0530, Jagan Teki wrote:
-> > On Mon, Dec 16, 2019 at 4:50 PM Maxime Ripard <mripard@kernel.org> wrote:
-> > >
-> > > On Mon, Dec 16, 2019 at 04:37:20PM +0530, Jagan Teki wrote:
-> > > > On Wed, Dec 4, 2019 at 7:06 PM Maxime Ripard <mripard@kernel.org> wrote:
-> > > > >
-> > > > > On Tue, Dec 03, 2019 at 07:18:10PM +0530, Jagan Teki wrote:
-> > > > > > The MIPI DSI controller in Allwinner A64 is similar to A33.
-> > > > > >
-> > > > > > But unlike A33, A64 doesn't have DSI_SCLK gating so it is valid
-> > > > > > to have separate compatible for A64 on the same driver.
-> > > > > >
-> > > > > > DSI_SCLK uses mod clock-names on dt-bindings, so the same
-> > > > > > is not required for A64.
-> > > > > >
-> > > > > > On that note
-> > > > > > - A64 require minimum of 1 clock like the bus clock
-> > > > > > - A33 require minimum of 2 clocks like both bus, mod clocks
-> > > > > >
-> > > > > > So, update dt-bindings so-that it can document both A33,
-> > > > > > A64 bindings requirements.
-> > > > > >
-> > > > > > Reviewed-by: Rob Herring <robh@kernel.org>
-> > > > > > Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-> > > > > > ---
-> > > > > > Changes for v12:
-> > > > > > - Use 'enum' instead of oneOf+const
-> > > > > >
-> > > > > >  .../display/allwinner,sun6i-a31-mipi-dsi.yaml | 20 +++++++++++++++++--
-> > > > > >  1 file changed, 18 insertions(+), 2 deletions(-)
-> > > > > >
-> > > > > > diff --git a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> > > > > > index dafc0980c4fa..b91446475f35 100644
-> > > > > > --- a/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> > > > > > +++ b/Documentation/devicetree/bindings/display/allwinner,sun6i-a31-mipi-dsi.yaml
-> > > > > > @@ -15,7 +15,9 @@ properties:
-> > > > > >    "#size-cells": true
-> > > > > >
-> > > > > >    compatible:
-> > > > > > -    const: allwinner,sun6i-a31-mipi-dsi
-> > > > > > +    enum:
-> > > > > > +      - allwinner,sun6i-a31-mipi-dsi
-> > > > > > +      - allwinner,sun50i-a64-mipi-dsi
-> > > > > >
-> > > > > >    reg:
-> > > > > >      maxItems: 1
-> > > > > > @@ -24,6 +26,8 @@ properties:
-> > > > > >      maxItems: 1
-> > > > > >
-> > > > > >    clocks:
-> > > > > > +    minItems: 1
-> > > > > > +    maxItems: 2
-> > > > > >      items:
-> > > > > >        - description: Bus Clock
-> > > > > >        - description: Module Clock
-> > > > > > @@ -63,13 +67,25 @@ required:
-> > > > > >    - reg
-> > > > > >    - interrupts
-> > > > > >    - clocks
-> > > > > > -  - clock-names
-> > > > > >    - phys
-> > > > > >    - phy-names
-> > > > > >    - resets
-> > > > > >    - vcc-dsi-supply
-> > > > > >    - port
-> > > > > >
-> > > > > > +allOf:
-> > > > > > +  - if:
-> > > > > > +      properties:
-> > > > > > +         compatible:
-> > > > > > +           contains:
-> > > > > > +             const: allwinner,sun6i-a31-mipi-dsi
-> > > > > > +      then:
-> > > > > > +        properties:
-> > > > > > +          clocks:
-> > > > > > +            minItems: 2
-> > > > > > +        required:
-> > > > > > +          - clock-names
-> > > > > > +
-> > > > >
-> > > > > Your else condition should check that the number of clocks items is 1
-> > > > > on the A64
-> > > >
-> > > > But the minItems mentioned as 1 in clocks, which is unchanged number
-> > > > by default. doesn't it sufficient?
-> > >
-> > > In the main schema, it's said that the clocks property can have one or
-> > > two elements (to cover the A31 case that has one, and the A64 case
-> > > that has 2).
-> > >
-> > > This is fine.
-> > >
-> > > Later on, you enforce that the A64 has two elements, and this is fine
-> > > too.
-> >
-> > Actually A31 case has 2 and A64 case has 1.
-> >
-> > >
-> > > However, you never check that on the A31 you only have one clock, and
-> > > you could very well have two and no one would notice.
-> >
-> > I did check A31 case for 2 but not in A64. this is what you mean? so
-> > adding A64 check like below would fine?
-> >
-> > allOf:
-> >   - if:
-> >       properties:
-> >          compatible:
-> >            contains:
-> >              const: allwinner,sun6i-a31-mipi-dsi
->
-> You need a new line here
-
-I couldn't see new line before then: in example schema -
-https://elixir.bootlin.com/linux/v5.5-rc2/source/Documentation/devicetree/bindings/example-schema.yaml#L208
-May be a new changes for this ML or so?
-
->
-> >       then:
->
-> This is the wrong level of indentation, it needs to be at the same level than if
-
-True, I have seen it in example schema.
-
->
-> >         properties:
-> >           clocks:
-> >             minItems: 2
->
-> Newline
->
-> >         required:
-> >           - clock-names
->
-> Newline
->
-> >   - if:
-> >       properties:
-> >          compatible:
-> >            contains:
-> >              const: allwinner,sun50i-a64-mipi-dsi
-> >       then:
-> >         properties:
-> >           clocks:
-> >             minItems: 1
->
-> (and same thing here).
->
-> But yeah, otherwise that's what I meant
-
-Thanks for the detailed review.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAxNy8xMi8yMDE5IDEzLjM3LCBOaWNvbGFzIFNhZW56IEp1bGllbm5lIHdyb3RlOgo+IEhp
+IFBldGVyLAo+IAo+IE9uIFR1ZSwgMjAxOS0xMi0xNyBhdCAxMzoyNiArMDIwMCwgUGV0ZXIgVWpm
+YWx1c2kgd3JvdGU6Cj4+IGRtYV9yZXF1ZXN0X3NsYXZlX2NoYW5uZWwoKSBpcyBhIHdyYXBwZXIg
+b24gdG9wIG9mIGRtYV9yZXF1ZXN0X2NoYW4oKQo+PiBlYXRpbmcgdXAgdGhlIGVycm9yIGNvZGUu
+Cj4+Cj4+IEJ5IHVzaW5nIGRtYV9yZXF1ZXN0X2NoYW4oKSBkaXJlY3RseSB0aGUgZHJpdmVyIGNh
+biBzdXBwb3J0IGRlZmVycmVkCj4+IHByb2JpbmcgYWdhaW5zdCBETUEuCj4+Cj4+IFNpZ25lZC1v
+ZmYtYnk6IFBldGVyIFVqZmFsdXNpIDxwZXRlci51amZhbHVzaUB0aS5jb20+Cj4+IC0tLQo+PiAg
+ZHJpdmVycy9tbWMvaG9zdC9iY20yODM1LmMgfCAxMCArKysrKysrKystCj4+ICAxIGZpbGUgY2hh
+bmdlZCwgOSBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9k
+cml2ZXJzL21tYy9ob3N0L2JjbTI4MzUuYyBiL2RyaXZlcnMvbW1jL2hvc3QvYmNtMjgzNS5jCj4+
+IGluZGV4IDk5ZjYxZmQyYTY1OC4uMzgyMWYxNTlkMzZkIDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJz
+L21tYy9ob3N0L2JjbTI4MzUuYwo+PiArKysgYi9kcml2ZXJzL21tYy9ob3N0L2JjbTI4MzUuYwo+
+PiBAQCAtMTM5Myw3ICsxMzkzLDE1IEBAIHN0YXRpYyBpbnQgYmNtMjgzNV9wcm9iZShzdHJ1Y3Qg
+cGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+PiAgCWhvc3QtPmRtYV9jaGFuID0gTlVMTDsKPj4gIAlo
+b3N0LT5kbWFfZGVzYyA9IE5VTEw7Cj4+ICAKPj4gLQlob3N0LT5kbWFfY2hhbl9yeHR4ID0gZG1h
+X3JlcXVlc3Rfc2xhdmVfY2hhbm5lbChkZXYsICJyeC10eCIpOwo+PiArCWhvc3QtPmRtYV9jaGFu
+X3J4dHggPSBkbWFfcmVxdWVzdF9jaGFuKGRldiwgInJ4LXR4Iik7Cj4+ICsJaWYgKElTX0VSUiho
+b3N0LT5kbWFfY2hhbl9yeHR4KSkgewo+PiArCQlpZiAoUFRSX0VSUihob3N0LT5kbWFfY2hhbl9y
+eHR4KSA9PSAtRVBST0JFX0RFRkVSKQo+PiArCQkJcmV0dXJuIC1FUFJPQkVfREVGRVI7Cj4gCj4g
+SSB0aGluayB5b3Ugc2hvdWxkICdnb3RvIGVycicgaGVyZSwgYXMgeW91IGhhdmUgdG8gZnJlZSB0
+aGUgbW1jIGhvc3Qgc3RydWN0dXJlCj4gYWxsb2NhdGVkIGVhcmxpZXIgaW4gdGhlIHByb2JlIGZ1
+bmN0aW9uLgoKWW91IGFyZSByaWdodC4KCj4gT3RoZXIgdGhhbiB0aGF0IHRoZSBwYXRjaCBsb29r
+cyBnb29kIHRvIG1lLgo+IAo+IFJlZ2FyZHMsCj4gTmljb2xhcwo+IAoKLSBQw6l0ZXIKClRleGFz
+IEluc3RydW1lbnRzIEZpbmxhbmQgT3ksIFBvcmtrYWxhbmthdHUgMjIsIDAwMTgwIEhlbHNpbmtp
+LgpZLXR1bm51cy9CdXNpbmVzcyBJRDogMDYxNTUyMS00LiBLb3RpcGFpa2thL0RvbWljaWxlOiBI
+ZWxzaW5raQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYXJtLWtlcm5lbAo=
