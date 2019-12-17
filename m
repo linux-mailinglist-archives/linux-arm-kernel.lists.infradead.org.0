@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89CB8122A86
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 12:45:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5928B122A82
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 12:44:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OmzQcMFXg1s59x8z+iE4KM+D3T83PHSuYpBPHKfBB1o=; b=uwpYbMWeXOH6OL7Dm54YG9vKGx
-	o0gWJpNlmk3RVVp7j/snPo9dSH9bfwgFwlCcjSwnWTDBNEP9cXQXQZlLVT2mput8EMYAVPksXTAde
-	SZQ/OoF188N6wzuiH/uEY0vDNro2iKynXzZ8qmhTS+YEwzae7q6K1SFG8loYmznHO7o41bs0vaI0N
-	4uC+8thzwbeAJrHQOKTHWnjoeU4KcLKJMzW1NXX+IkQPrm8jyazek7eXaYs+UdF0mLtnws3ORcwJS
-	kdvt5qnc53bXv07mOuoEdGr2xJOPzZ68IP8Dtc8YSjS/uMTaXmtAz1V7yAte4JowycXOm8z38h+n+
-	nJl8yK3A==;
+	bh=khZoXiXbIwq0eWXZ88jVtXOL/23D10f1dMmb7rdyvmw=; b=SMEOKPrNiua0d3nM4kONRxWBFc
+	6OYLIdoeTnilKPgWcnBg3VA2rRp/C0sVHFFi8FsFUA1/Or1ip0xtNlnbwKnntT+iMAP40kzeSRSBD
+	VAamPmGSne5tq89Czd0DEuioYodY+KAURk1GIeDftjXGk2DAsWMNYN0OERK8kmO4WXekTrzC7YbAf
+	JOzk6AXwk453MmD1hjqzaMZhj9oY70cTm/ieR6VxFlKrCoqe93IgXeRQownd0sroUURjI8ulaehp5
+	R0b0XaR6vWlkGOkIKAoFjVYi2HiF4TnMCo07cuSs5wi7tJJSJVQIN0MPq9LhQgtJTRJUShLrtbt1p
+	BmnNeBsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihBI1-00028X-Ko; Tue, 17 Dec 2019 11:45:21 +0000
-Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
- helo=smtprelay-out1.synopsys.com)
+	id 1ihBH9-0001O2-BQ; Tue, 17 Dec 2019 11:44:27 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihBFf-00008R-72
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 11:43:01 +0000
+ id 1ihBFf-00008O-6T
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 11:42:58 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3733DC00A2;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3B7D0C00AE;
  Tue, 17 Dec 2019 11:42:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576582973; bh=n+vS8YMLmx+EJMN5UhCjU7DGPOtft/OYuRFINpWV958=;
+ t=1576582973; bh=4JXJjVE53ev4CfJxLlgwEg4UYykJKXcBztnhJOlrhd4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=CDVNNarvUr6Ro9cQFdpyM/uvlTmMerdaWFGytVMBTelXG2cd6YK1w6IKXeK2mp4vT
- zJto7BN4dBbJ3Y414gYIrwk9Dt29DDa9rombUUQZLzBiEDVoKa3cOBWKxcypNRmE98
- 4RWLJW/+euT+Zwq6FzPT44U42L6mRMxY/p1P7WCHxNU7A1x8kvPrvaJA1kD6RMPf6i
- M9MLEOBl8079IMW4bNA23L4ieAtLZzBP00y2suOUR+6bKic13yy54qTrDvybfGw5pe
- 8iBsDnslQlPYjx8QIHzUZzSipb85PA8RKV/S0wr9qhlmMaQIBxE4dwlaRBXTWmPC1w
- Rr9d0WxqX//TQ==
+ b=XSN08CLAx/e8IwL0UGtZXT6EP42WewjKso9AIB/RVn6GD5J2EVHtPfizHOqlu4Aft
+ 5eqSdhtSytTv/LSydejeKa/9F70NZzB2E7obdowhLyCFE9hMsooor4XO0mH++AV13L
+ SXNd7ASjMJ+oMhQ4aSkbmDhQqEwDogntMbt77vdDjHSalyENM51EJtFjNVGnIULOjX
+ EOWdfNfxrAoGUjwTeC/WC0+S992Qkf7r5OG2Aj+/xomg8YgAw5oBYySBEL5IJispv3
+ 90s8f+BCCMSpsBclZ8M16Oudl3vpHRLhFKwFF1+wZ4XS03gX/rSspPjqoYtKvEnUfG
+ vcEUr0OLLLRVw==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id DC79FA0091;
+ by mailhost.synopsys.com (Postfix) with ESMTP id E4488A0095;
  Tue, 17 Dec 2019 11:42:50 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net v2 3/8] net: stmmac: Do not accept invalid MTU values
-Date: Tue, 17 Dec 2019 12:42:33 +0100
-Message-Id: <e53f2836e1ae054ee554bc9a230afb2376480327.1576581853.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net v2 4/8] net: stmmac: Only the last buffer has the FCS field
+Date: Tue, 17 Dec 2019 12:42:34 +0100
+Message-Id: <b8e23536316451076155f4de5cc25516ab679e2e.1576581853.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 References: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 References: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_034255_296087_C1108A13 
-X-CRM114-Status: GOOD (  13.53  )
+X-CRM114-CacheID: sfid-20191217_034255_287844_062DD33E 
+X-CRM114-Status: GOOD (  11.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,14 +95,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The maximum MTU value is determined by the maximum size of TX FIFO so
-that a full packet can fit in the FIFO. Add a check for this in the MTU
-change callback.
+Only the last received buffer contains the FCS field. Check for end of
+packet before trying to strip the FCS field.
 
-Also check if provided and rounded MTU does not passes the maximum limit
-of 16K.
-
-Fixes: 7ac6653a085b ("stmmac: Move the STMicroelectronics driver")
+Fixes: 88ebe2cf7f3f ("net: stmmac: Rework stmmac_rx()")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -117,36 +112,25 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index dfecced43f29..2ebac89049ed 100644
+index 2ebac89049ed..8c191e4d35d0 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -3827,12 +3827,22 @@ static void stmmac_set_rx_mode(struct net_device *dev)
- static int stmmac_change_mtu(struct net_device *dev, int new_mtu)
- {
- 	struct stmmac_priv *priv = netdev_priv(dev);
-+	int txfifosz = priv->plat->tx_fifo_size;
-+
-+	if (txfifosz == 0)
-+		txfifosz = priv->dma_cap.tx_fifo_size;
-+
-+	txfifosz /= priv->plat->tx_queues_to_use;
- 
- 	if (netif_running(dev)) {
- 		netdev_err(priv->dev, "must be stopped to change its MTU\n");
- 		return -EBUSY;
- 	}
- 
-+	/* If condition true, FIFO is too small or MTU too large */
-+	if ((txfifosz < new_mtu) || (new_mtu > STMMAC_ALIGN(BUF_SIZE_16KiB)))
-+		return -EINVAL;
-+
- 	dev->mtu = new_mtu;
- 
- 	netdev_update_features(dev);
+@@ -3644,8 +3644,9 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
+ 		 * feature is always disabled and packets need to be
+ 		 * stripped manually.
+ 		 */
+-		if (unlikely(priv->synopsys_id >= DWMAC_CORE_4_00) ||
+-		    unlikely(status != llc_snap)) {
++		if (likely(!(status & rx_not_ls)) &&
++		    (likely(priv->synopsys_id >= DWMAC_CORE_4_00) ||
++		     unlikely(status != llc_snap))) {
+ 			if (buf2_len)
+ 				buf2_len -= ETH_FCS_LEN;
+ 			else
 -- 
 2.7.4
 
