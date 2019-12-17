@@ -2,67 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70FEF1230BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 16:45:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3555C1230D7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 16:50:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3NKzKherzi0PdBehEU7Fq1KrEf6jftHwucM3XsVj+xE=; b=B4fVf12576U58s
-	23OKjSVVyNbHgE6Sx/ZUaZl1f0bUCdpFa5JodP9sEtZUZQ6Y1Yyb9Lx43JUVsgMHPRPOR2hleGcZJ
-	eRquDKsFn2YyyK38kfTnOGXV+Vd83+wZ/iyGwR/lenAMM+/qnzx4G1LahMCpe0Pq0+bDPDeEUl0dS
-	+Vw4ZADlPkMZkLJmewWsTWyflq5f27hUlTNrR7nNZ6pLmMSYm/VskERZHcb2e94HBQXtLsXbttIob
-	6vZjkV+g3pfCCW+enZwep9/ixUNF/Akvv6LusP/CvaThCkDKJ7pS+vNwJdVY5RTGHeUrDDmKYBdcF
-	eG/KZ10Q0eMG6sI/67MA==;
+	List-Owner; bh=IhjIIlD+M9M5cnDKNev7aOR+e54VPKKDQT2xCfvOKiw=; b=Td8VRi4aymiRMw
+	MlmlmX9X5NJcLxogPwxQrkinTrO9chZ8/dup2ToVcZAApzfo4zZINnt5VH8iE03XkkXGB71ZDChvJ
+	BDSc52VUIwoom6RC9G6YqcgQcaUCIl5vmxBgKoiLI9pfmpVKM++9P6/tfc5y8WBAY4vXZW1+MzW1P
+	8B9G0hXlPnh5uqqAfxmk/oG43JHMo11GD1ehCyfORfYmGUEDdod5WVgRWnPXDwn4wA3RNt11Z9L5w
+	6p3IV+eie049i6ih5azVZz0l4TkixPx2qMy4IJaQS+CdVxCbfqyuRJ4Fp2KAicTuOJYAMk6VkXM90
+	Kkv6EbY9o5lNOIKBzYIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihF2f-00052P-G4; Tue, 17 Dec 2019 15:45:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ihF6r-0005ea-LP; Tue, 17 Dec 2019 15:50:05 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihF2Y-00051p-42
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 15:45:39 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F21DA2465E;
- Tue, 17 Dec 2019 15:45:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576597537;
- bh=d7eBLm0I/s6DFoeNSrPqJMhc9kKOaXOaEqRZCmy2Vmo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=X4CsLVd0lOXz/T69EzqjaRx4hpxWylyCBLDEOxoWCqpBcgv0AQoJgp/WzvAF0Uv2C
- 1oy4/yMfmBWnFF0OYpXtlKw52w3N3F8G42BsTSkH4bxP52b59/nA/4nX81hzQ/gr5b
- a8Dc+Hlb2npc3p/dnY0NONQD2QCl9sMekBmCVMps=
-Date: Tue, 17 Dec 2019 16:45:35 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Alexey Brodkin <alexey.brodkin@synopsys.com>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>
-Subject: Re: [RFC PATCH v1] devres: align devres.data strictly only for
- devm_kmalloc()
-Message-ID: <20191217154535.GA3718632@kroah.com>
-References: <74ae22cd-08c1-d846-3e1d-cbc38db87442@free.fr>
+ id 1ihF6g-0005dX-8r
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 15:49:55 +0000
+Received: by mail-pf1-x443.google.com with SMTP id q8so7760568pfh.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Dec 2019 07:49:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=kSrTvcjDG2rfeDj/DoUiqKIsmDe1I17BLAhzGf2Jm4s=;
+ b=ck5P1R1EaASD/ERU56tf6luVfzFgK/8DfxUQ4I4JHl7sYKw8rIh1n4SGKasj88Wtvh
+ 8f3AN8UqbwgfHZfmVVXsqJNosqwUqvUf9X0fdOdObRXcAngL+ipReHFzgmx6EpALRcIF
+ ah+CNb7sQMFM2ujnQbAFA7fB8Sg2uAHowOje4uYLYDyEQ8YA9xLVsE7el3m/xOwoRQC+
+ TZ+KVp1TiaKeTBcCJKHrfHamTj9ar2kUCOoRpu9yc3OdFG6FhrlT8CDSPBn8kH3t25kY
+ A/lfPqUILX/jrmkrlObvqXm03CdwPtREkGJ9oin6b/6yl3ZsOXuthnWZlQG5/hD/XyiF
+ 1a1g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=kSrTvcjDG2rfeDj/DoUiqKIsmDe1I17BLAhzGf2Jm4s=;
+ b=PXZirb2+mEaoZKAhjmTBz4I3vO4EQcNogtOsFNWVZwWCvzUwog7KdBkW/WRpDpnuc0
+ xPkP3pLDS/WglfmLnlWB5VDifJfdhVn48P9IwNE5YsF7l6R1gYh6CIr0QB0Fv5uUfM/l
+ 6VbJzqDkKy9u89Ih9ASDuIUiTLdKjoDCw95CXUkzPhykyR4Ocn3FVS8SIQR2xB7GA74g
+ S56llcyGYSMQ102UjTl2zkhfujvdybT2nhzm4NGpuxkh34pX5rKmcbpSIisZDTJVyOn0
+ Rx3JheCb2GDBbfHQiCkmbtE1nsA9Hg13jw4ttknjJbbEyzsHgvFOlEf/sQOAZSyrtWdH
+ tP7g==
+X-Gm-Message-State: APjAAAU42FW4vchJG0ezK0wOsXkL59rtAjFuLTRVUZyzZ+qD3il4kzg4
+ trWiZBmXa9rnRBAgcUJZWtLurFgl
+X-Google-Smtp-Source: APXvYqxAT+2R/DrvmX06LKH0oImnzJLf2V6f1mddgkR61EuGHJZAMszwBWQ6OpqKZ9vaIBN35oKDPg==
+X-Received: by 2002:a63:4b48:: with SMTP id k8mr25732169pgl.362.1576597793355; 
+ Tue, 17 Dec 2019 07:49:53 -0800 (PST)
+Received: from localhost (c-73-241-114-122.hsd1.ca.comcast.net.
+ [73.241.114.122])
+ by smtp.gmail.com with ESMTPSA id u6sm2657561pjv.31.2019.12.17.07.49.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 17 Dec 2019 07:49:52 -0800 (PST)
+Date: Tue, 17 Dec 2019 07:49:50 -0800
+From: Richard Cochran <richardcochran@gmail.com>
+To: Radhey Shyam Pandey <radheys@xilinx.com>
+Subject: Re: [PATCH net-next 1/3] net: axienet: Propagate registration errors
+ during probe.
+Message-ID: <20191217154950.GA8163@localhost>
+References: <cover.1576520432.git.richardcochran@gmail.com>
+ <42ed0fb7ef99101d6fd8b799bccb6e2d746939c2.1576520432.git.richardcochran@gmail.com>
+ <CH2PR02MB70009FEE62CD2AB6B40911E5C7500@CH2PR02MB7000.namprd02.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <74ae22cd-08c1-d846-3e1d-cbc38db87442@free.fr>
+In-Reply-To: <CH2PR02MB70009FEE62CD2AB6B40911E5C7500@CH2PR02MB7000.namprd02.prod.outlook.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_074538_180629_73648621 
-X-CRM114-Status: GOOD (  11.65  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191217_074954_312781_3BC02AEE 
+X-CRM114-Status: GOOD (  10.66  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (richardcochran[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,46 +103,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>, Will Deacon <will@kernel.org>,
- Alexey Brodkin <alexey.brodkin@synopsys.com>,
- Rafael Wysocki <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
- Tejun Heo <tj@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Michal Simek <michals@xilinx.com>, David Miller <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 04:30:54PM +0100, Marc Gonzalez wrote:
-> Commit a66d972465d15 ("devres: Align data[] to ARCH_KMALLOC_MINALIGN")
-> increased the alignment of devres.data unconditionally.
-> 
-> Some platforms have very strict alignment requirements for DMA-safe
-> addresses, e.g. 128 bytes on arm64. There, struct devres amounts to:
-> 	3 pointers + pad_to_128 + data + pad_to_256
-> i.e. ~220 bytes of padding.
-> 
-> Let's enforce the alignment only for devm_kmalloc().
-> 
-> Suggested-by: Robin Murphy <robin.murphy@arm.com>
-> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
-> ---
-> I had not been aware that dynamic allocation granularity on arm64 was
-> 128 bytes. This means there's a lot of waste on small allocations.
-> I suppose there's no easy solution, though.
-> ---
->  drivers/base/devres.c | 23 +++++++++++++----------
->  1 file changed, 13 insertions(+), 10 deletions(-)
+On Tue, Dec 17, 2019 at 06:19:47AM +0000, Radhey Shyam Pandey wrote:
+> > -----Original Message-----
+> > From: Richard Cochran <richardcochran@gmail.com>
+> > Sent: Tuesday, December 17, 2019 12:03 AM
+> > To: netdev@vger.kernel.org
+> > Cc: linux-arm-kernel@lists.infradead.org; David Miller
+> > <davem@davemloft.net>; Michal Simek <michals@xilinx.com>; Radhey
+> > Shyam Pandey <radheys@xilinx.com>
+> > Subject: [PATCH net-next 1/3] net: axienet: Propagate registration errors
+> > during probe.
+> > 
+> > The function, axienet_mdio_setup(), calls of_mdiobus_register() which
+> > might return EDEFER_PROBE.  However, this error is not propagated to
+> EPROBE_DEFER.  In which scenario we are hitting probe_defer?
 
-You need to get Alexey to agree with this, he's the one that hit this on
-ARC :)
+Did you see the cover letter?  I am referring to this series:
 
-thanks,
+ 16.Dec'19  [PATCH V6 net-next 00/11] Peer to Peer One-Step time stamping
 
-greg k-h
+Thanks,
+Richard
 
 _______________________________________________
 linux-arm-kernel mailing list
