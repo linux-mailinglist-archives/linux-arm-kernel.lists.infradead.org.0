@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5928B122A82
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 12:44:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18689122A87
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 12:45:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=khZoXiXbIwq0eWXZ88jVtXOL/23D10f1dMmb7rdyvmw=; b=SMEOKPrNiua0d3nM4kONRxWBFc
-	6OYLIdoeTnilKPgWcnBg3VA2rRp/C0sVHFFi8FsFUA1/Or1ip0xtNlnbwKnntT+iMAP40kzeSRSBD
-	VAamPmGSne5tq89Czd0DEuioYodY+KAURk1GIeDftjXGk2DAsWMNYN0OERK8kmO4WXekTrzC7YbAf
-	JOzk6AXwk453MmD1hjqzaMZhj9oY70cTm/ieR6VxFlKrCoqe93IgXeRQownd0sroUURjI8ulaehp5
-	R0b0XaR6vWlkGOkIKAoFjVYi2HiF4TnMCo07cuSs5wi7tJJSJVQIN0MPq9LhQgtJTRJUShLrtbt1p
-	BmnNeBsQ==;
+	bh=Iw5SayoDvhAyc5jV5I1W/Qkfl7R1EYwGLta1a8nTqXw=; b=e7C1bQao4eAJ9d7rM5gnvq4g5d
+	IvK/kJ1WHDyFO/9DzsuCfD6FdTBJkT7QCfyPpuVCz2QFPLxMt5hU3CDagxEt5YT7irymXgeU/RUui
+	pSn2JTqK5K2GFzWm5tGezmFTVun1/UXcoLfEcqmAo/xWMJkeuivMMW8hEc9RQp+dRJfPQUbaxuZP4
+	JhANW9KEnEYeDSbokTydSDuBGGbungK5LiP2mvrFuyt/mVP6BInW2Zc/ED0/09E8aUoI1oYN3gD2W
+	WWvaFjnRqLL2Dc4LiE8m0S0qCF72y/GgTwt7bWYs3laRYkZVFNmI7RvhRAHcUB+4xY0t76GXOCLV8
+	HnDQrqow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihBH9-0001O2-BQ; Tue, 17 Dec 2019 11:44:27 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+	id 1ihBIF-0003a5-HO; Tue, 17 Dec 2019 11:45:35 +0000
+Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihBFf-00008O-6T
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 11:42:58 +0000
+ id 1ihBFf-00008S-9U
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 11:43:01 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3B7D0C00AE;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 468BFC00C9;
  Tue, 17 Dec 2019 11:42:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576582973; bh=4JXJjVE53ev4CfJxLlgwEg4UYykJKXcBztnhJOlrhd4=;
+ t=1576582973; bh=f1Z6qt0mb0aaiO7Qwt8NRz1uEqZUguBjtTVaqKFAPHo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=XSN08CLAx/e8IwL0UGtZXT6EP42WewjKso9AIB/RVn6GD5J2EVHtPfizHOqlu4Aft
- 5eqSdhtSytTv/LSydejeKa/9F70NZzB2E7obdowhLyCFE9hMsooor4XO0mH++AV13L
- SXNd7ASjMJ+oMhQ4aSkbmDhQqEwDogntMbt77vdDjHSalyENM51EJtFjNVGnIULOjX
- EOWdfNfxrAoGUjwTeC/WC0+S992Qkf7r5OG2Aj+/xomg8YgAw5oBYySBEL5IJispv3
- 90s8f+BCCMSpsBclZ8M16Oudl3vpHRLhFKwFF1+wZ4XS03gX/rSspPjqoYtKvEnUfG
- vcEUr0OLLLRVw==
+ b=HUyKFvzZJAAt+XNo3+Y9YwUOiBhMr5dTGPi2tkXQ/26o7xIMYbb6+i3tfFgNBbK1g
+ nNInt3QHc0y2Uf3pyn7+GhqLSgInSyovg6QnADrXmII4ZVzGOSx5zo+UCPVoR9JaDL
+ Qf8NFRsCKIcyQvMJoEgjf8ZY6r0tC6kmns1jGsIk+uZANwEKorC6cheqf/5Ngx/chi
+ QU2PHvQe8Gdsp5L/kMiwooMu0RWQQSkIYmlyGbBTk0vIJVGktbUoO89sNo9tRdVUzd
+ 00hMsHwE7isysKebHfUxHwYe/hHn9WPLK5yUKiVZgsShZ/ykA37bWYHVYeZGHNuuu7
+ RfUGiKO4Jbu7Q==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id E4488A0095;
+ by mailhost.synopsys.com (Postfix) with ESMTP id ED9B2A0099;
  Tue, 17 Dec 2019 11:42:50 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net v2 4/8] net: stmmac: Only the last buffer has the FCS field
-Date: Tue, 17 Dec 2019 12:42:34 +0100
-Message-Id: <b8e23536316451076155f4de5cc25516ab679e2e.1576581853.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net v2 5/8] net: stmmac: xgmac: Clear previous RX buffer size
+Date: Tue, 17 Dec 2019 12:42:35 +0100
+Message-Id: <bd962deb502987964ee33d5281fa66afd6316d95.1576581853.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 References: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 References: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_034255_287844_062DD33E 
-X-CRM114-Status: GOOD (  11.64  )
+X-CRM114-CacheID: sfid-20191217_034255_405836_A7ACD785 
+X-CRM114-Status: GOOD (  11.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -95,10 +96,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Only the last received buffer contains the FCS field. Check for end of
-packet before trying to strip the FCS field.
+When switching between buffer sizes we need to clear the previous value.
 
-Fixes: 88ebe2cf7f3f ("net: stmmac: Rework stmmac_rx()")
+Fixes: d6ddfacd95c7 ("net: stmmac: Add DMA related callbacks for XGMAC2")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -112,25 +112,37 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     | 2 ++
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c | 3 ++-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 2ebac89049ed..8c191e4d35d0 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -3644,8 +3644,9 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
- 		 * feature is always disabled and packets need to be
- 		 * stripped manually.
- 		 */
--		if (unlikely(priv->synopsys_id >= DWMAC_CORE_4_00) ||
--		    unlikely(status != llc_snap)) {
-+		if (likely(!(status & rx_not_ls)) &&
-+		    (likely(priv->synopsys_id >= DWMAC_CORE_4_00) ||
-+		     unlikely(status != llc_snap))) {
- 			if (buf2_len)
- 				buf2_len -= ETH_FCS_LEN;
- 			else
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
+index 3b6e559aa0b9..ef8a07c68ca7 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
+@@ -343,6 +343,8 @@
+ #define XGMAC_DMA_CH_RX_CONTROL(x)	(0x00003108 + (0x80 * (x)))
+ #define XGMAC_RxPBL			GENMASK(21, 16)
+ #define XGMAC_RxPBL_SHIFT		16
++#define XGMAC_RBSZ			GENMASK(14, 1)
++#define XGMAC_RBSZ_SHIFT		1
+ #define XGMAC_RXST			BIT(0)
+ #define XGMAC_DMA_CH_TxDESC_HADDR(x)	(0x00003110 + (0x80 * (x)))
+ #define XGMAC_DMA_CH_TxDESC_LADDR(x)	(0x00003114 + (0x80 * (x)))
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+index 22a7f0cc1b90..f3f08ccc379b 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+@@ -482,7 +482,8 @@ static void dwxgmac2_set_bfsize(void __iomem *ioaddr, int bfsize, u32 chan)
+ 	u32 value;
+ 
+ 	value = readl(ioaddr + XGMAC_DMA_CH_RX_CONTROL(chan));
+-	value |= bfsize << 1;
++	value &= ~XGMAC_RBSZ;
++	value |= bfsize << XGMAC_RBSZ_SHIFT;
+ 	writel(value, ioaddr + XGMAC_DMA_CH_RX_CONTROL(chan));
+ }
+ 
 -- 
 2.7.4
 
