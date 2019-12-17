@@ -2,86 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EA0C1232DE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 17:46:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21B9B1232E3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 17:47:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JEQc4/K1o/FNvMu2sj+g0LwyBjJYaWUrN+73hNM6wio=; b=e68U7ryvUUjKoa
-	IuddB2ciLFEJUVd9H3IJF2bYl9EpaDGrawhuoHScYUpKnvFfb/ZnawJg85GTSCaVgdAgyOaq6WSTG
-	y2M6892GdNoimujbF1raUKExo9z+/Jp2D7M0QQY0H9q+TpUY0jyud0MS8ROquSsZDqYB0gXNPHfr4
-	j+Psw4yCfmxkQ77W4szLiMttJgW8Y5HRf8U83c+0PN+G5z0O1ViQuXZYhFn5PH9ZYO8B0jSTGRoqw
-	T3yGRe2E/aV0SjBoJeIJwUW3M5/J8u+PQ49Vy3nKQLpDAq+r2qJ2WMznXEg+JoTjb8cso+7fUee3C
-	ll8Fk0q0kdpj6kSIeM1Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pTfpr7rr1DK3yp9IW150EhixeNC4gt8OxfGBc52678Q=; b=EiHwvQue7E4VyZ
+	+LDGxe/D11gdRxAUNOWzeNY1mGB+mO+/GxDU2cDkIS/z7Iwy+oiJfpqiO7qZCgQ+apXN5sjE0vHzt
+	3HdrcZeAfTzPJzLihQ6jNcin4NUZJAeYcZg9KN3J27/ySaWgdOHSyMimz1mnijvtJxSeqPm1UzTny
+	j+NtAfgLlTyVSRNclzIxEphRAq/KYyhP8l9Il8HBg0Y6N5ydyu2HYXdJhI3P4QN+SEHnBNGfmRoeU
+	HgF99yVSBGbjzkuRx20QPxceRakZZF4lqXHuwznvQYSBwb4n8Ao7ZoWejbKbU1QH3+Z2f20OwX6sd
+	+BFwTdDwKywn+JmrNK0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihFzZ-0001zP-P4; Tue, 17 Dec 2019 16:46:37 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihFzP-0001yU-13
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 16:46:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576601185;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=aKsNtbLIFJyPIxbIhkuqQwDdLTOvYVf+IcaJaDg+WqE=;
- b=Oeb/ZN3rBkmuzKXHZwq7klgJfPbEideHPVDz0UWz+gH7okkpPN7Cffepr/jmi9ifNQXu14
- 4yVyZ38nJeYKUvZoyhZuP/wTxgws2yfvO6QrmgKW+iv0srRdflelPapk6zMOak9lHtUNvh
- bjrtxvuwA2Cpo1tBKN9nQOcyZty5tT4=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-139-LUxbjDeDN6Cb23G4hPtXJw-1; Tue, 17 Dec 2019 11:46:23 -0500
-X-MC-Unique: LUxbjDeDN6Cb23G4hPtXJw-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3A25A8005B1;
- Tue, 17 Dec 2019 16:46:19 +0000 (UTC)
-Received: from [10.36.116.117] (ovpn-116-117.ams2.redhat.com [10.36.116.117])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 481785D9E1;
- Tue, 17 Dec 2019 16:46:15 +0000 (UTC)
-Subject: Re: [PATCH v3 03/13] iommu/arm-smmu-v3: Support platform SSID
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-References: <20191209180514.272727-1-jean-philippe@linaro.org>
- <20191209180514.272727-4-jean-philippe@linaro.org>
- <e5b9a017-585a-5425-77bd-be40b86010e6@redhat.com>
- <20191217152108.GB2305883@myrica>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <d3ef7adf-4e9e-6b7f-c4eb-52a8f1eaa16c@redhat.com>
-Date: Tue, 17 Dec 2019 17:46:13 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+	id 1ihFzu-0002Fe-2u; Tue, 17 Dec 2019 16:46:58 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihFzk-0002DM-Cw
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 16:46:50 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 6275E8116;
+ Tue, 17 Dec 2019 16:47:22 +0000 (UTC)
+Date: Tue, 17 Dec 2019 08:46:40 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: Pavel Machek <pavel@ucw.cz>
+Subject: Re: TI omap compile problem in 5.5-rc1? was Re: [PATCH] ARM:
+ davinci: select CONFIG_RESET_CONTROLLER
+Message-ID: <20191217164640.GX35479@atomide.com>
+References: <20191210195202.622734-1-arnd@arndb.de> <20191217104520.GA6812@amd>
 MIME-Version: 1.0
-In-Reply-To: <20191217152108.GB2305883@myrica>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+Content-Disposition: inline
+In-Reply-To: <20191217104520.GA6812@amd>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_084627_142596_11785BA3 
-X-CRM114-Status: GOOD (  14.42  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191217_084648_477882_45221D1B 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.120 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,54 +61,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, guohanjun@huawei.com,
- lorenzo.pieralisi@arm.com, will@kernel.org, linux-pci@vger.kernel.org,
- joro@8bytes.org, jonathan.cameron@huawei.com, rjw@rjwysocki.net,
- linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
- robh+dt@kernel.org, sudeep.holla@arm.com, bhelgaas@google.com,
- zhangfei.gao@linaro.org, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org, lenb@kernel.org
+Cc: mpartap@gmx.net, Arnd Bergmann <arnd@arndb.de>,
+ Sekhar Nori <nsekhar@ti.com>, merlijn@wizzup.org, martin_rysavy@centrum.cz,
+ kernel list <linux-kernel@vger.kernel.org>, stable@vger.kernel.org,
+ sre@kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ nekit1000@gmail.com, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-omap@vger.kernel.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ David Lechner <david@lechnology.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jean,
+* Pavel Machek <pavel@ucw.cz> [191217 10:46]:
+> Hi!
+> 
+> > Selecting RESET_CONTROLLER is actually required, otherwise we
+> > can get a link failure in the clock driver:
+> > 
+> > drivers/clk/davinci/psc.o: In function `__davinci_psc_register_clocks':
+> > psc.c:(.text+0x9a0): undefined reference to `devm_reset_controller_register'
+> > drivers/clk/davinci/psc-da850.o: In function `da850_psc0_init':
+> > psc-da850.c:(.text+0x24): undefined reference to
+> > `reset_controller_add_lookup'
+> 
+> Does omap need similar handing in 5.5-rc1?
+> 
+>   LD      .tmp_vmlinux1
+>   drivers/soc/ti/omap_prm.o: In function `omap_prm_probe':
+>   omap_prm.c:(.text+0x4d0): undefined reference to
+>   `devm_reset_controller_register'
+>   /data/fast/l/k/Makefile:1077: recipe for target 'vmlinux' failed
+>   make[1]: *** [vmlinux] Error 1
+> 
+> Enabling reset controller seems to help::
+> 
+> Reset Controller Support (RESET_CONTROLLER) [Y/n/?] (NEW)
+>   TI SYSCON Reset Driver (RESET_TI_SYSCON) [N/m/y/?] (NEW)
 
-On 12/17/19 4:21 PM, Jean-Philippe Brucker wrote:
-> Hi Eric,
-> 
-> On Tue, Dec 17, 2019 at 12:05:18PM +0100, Auger Eric wrote:
->>> +		fwspec = dev_iommu_fwspec_get(dev);
->>> +		if (!err && fwspec)
->>> +			of_property_read_u32(master_np, "pasid-num-bits",
->>> +					     &fwspec->num_pasid_bits);
->>> +	}
->> This patch dedicates to platform devices however I fail to understand,
->> at that stage, how/when do you retrieve/store the same max capability
->> for PCI devices?
-> 
-> For PCI devices, the max capability is only described by the PCIe PASID
-> capability, not by firmware. Patch 13 deals with PCI by setting
-> masted->ssid_bits from the PASID capability directly, ignoring
-> fwspec->num_pasid_bits.
+Yes see the patch Arnd recently posted to do that.
 
-Get it now. thank you for the explanation.
+Regards,
 
-Eric
-> 
->> Besides,
->>
->> Reviewed-by: Eric Auger <eric.auger@redhat.com>
-> 
-> Thanks!
-> Jean
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+Tony
+
 
 
 _______________________________________________
