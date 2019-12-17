@@ -2,73 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3924D122D6A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:50:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C141122DBC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:58:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5SQxJsseAyihAVnHMl647C66DFB7nEQMGJlzpSblx3w=; b=LQ0af4kDrl6jHZ
-	2BMg9ew6hJACmd72d58HjLVaLKdytPjfUnS2pOOrMXvlDl40Uw7lLjzk61QC/G1OKPKCU0c+cSeek
-	6SDclTLeYBNlWNz1jIHfCyzxWsSO0t7tYDhEGZfTZ8Fp1LKNOD3wmKlJJjD7lfurgFO/PIzoC72QB
-	7mggLDmXwwddfY+v5aV3TtsV6RwUbVRPjr3mNtREEDacp6pcAn7yBktn75fabUII24QHl22/yCdnl
-	TPXs3pjYQAZj3dqx39Q0PsbPurkGhrXl7wYQUrXG6b8aqVkZ9w1LkEolkKpOyxjZXq6dR1zHS8jHu
-	jFvIIjtACFlM2Q7mFFAA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OrEhHKdW6VU8vwM84vdR7Eus2WBZ16JoTIEw05SXCrU=; b=Unsnz3VMYzYh0B
+	0o41ToOJ23D2bEAzH5HIEeMO9OINWPjHFN2+PwwAchRrTsuOYlANmMRPaaRXk7gAMLKIXQJ8ax6jS
+	S71A7vO+o0x1tVRoHQSbK/PO0JjZQ4IrMmPn84stZghddXK0IsZbchTWBJJ4R/asV4A0IRUX9WG5f
+	/7gZ9PJbCE8xYxBfbc2Vdj7w5WmLIhV0N8pF6pLabl8BbqDa5rPpI4xU3YON4raBbWojDR55jRGQW
+	g/AbAd5pUb0d6vWUFzz131RIZwY6NLnvuS5LK3JKDo+m7ASgBrFXhuVI6Ga0TRzI8JnUW0v9EbhKE
+	EQ6/jCaT7wCeIOl/jQ7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihDEr-0005XB-L8; Tue, 17 Dec 2019 13:50:13 +0000
-Received: from mail.skyhub.de ([5.9.137.197])
+	id 1ihDMZ-00029L-Hi; Tue, 17 Dec 2019 13:58:11 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihDES-0005Ux-6N; Tue, 17 Dec 2019 13:49:49 +0000
-Received: from zn.tnic (p200300EC2F0BBF009DDBE489521279C1.dip0.t-ipconnect.de
- [IPv6:2003:ec:2f0b:bf00:9ddb:e489:5212:79c1])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 629771EC0419;
- Tue, 17 Dec 2019 14:49:32 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1576590572;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=NnxRmWgXR04lov5uUe4Y9eBEjC/dJ8PLB6ALjMhspEU=;
- b=TJ/Scu83qAvDm1yqbm7OqNy1WIybTlQX6dv1VHY4h42q+MTkWzjoQk34XOqwo3EiK3kmem
- ecsKz+yWWT5zvbpfqkBM7vYYWEFsFKi6TYdBB2AD1ej7S9TxcqKgFZjK346LuAqiCR3IXe
- xDzQYaVhKbpk/VZlK+03kUkkzkdmuS0=
-Date: Tue, 17 Dec 2019 14:49:23 +0100
-From: Borislav Petkov <bp@alien8.de>
-To: Bhupesh Sharma <bhsharma@redhat.com>
-Subject: Re: [PATCH v5 0/5] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-Message-ID: <20191217134923.GE28788@zn.tnic>
-References: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
- <20191214122734.GC28635@zn.tnic>
- <CACi5LpP2PPcmaQw95V4MUzhvENq9+mB7UR7eib2HADCDHLz4oA@mail.gmail.com>
+ id 1ihDL8-0000tr-NS
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 13:56:46 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 7104DDED043953C7AA42;
+ Tue, 17 Dec 2019 21:56:30 +0800 (CST)
+Received: from DESKTOP-1NISPDV.china.huawei.com (10.173.221.248) by
+ DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
+ 14.3.439.0; Tue, 17 Dec 2019 21:56:21 +0800
+From: <yezengruan@huawei.com>
+To: <yezengruan@huawei.com>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <kvmarm@lists.cs.columbia.edu>,
+ <kvm@vger.kernel.org>, <linux-doc@vger.kernel.org>,
+ <virtualization@lists.linux-foundation.org>
+Subject: [PATCH 0/5] KVM: arm64: vcpu preempted check support
+Date: Tue, 17 Dec 2019 21:55:44 +0800
+Message-ID: <20191217135549.3240-1-yezengruan@huawei.com>
+X-Mailer: git-send-email 2.23.0.windows.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACi5LpP2PPcmaQw95V4MUzhvENq9+mB7UR7eib2HADCDHLz4oA@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.173.221.248]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_054948_382169_1665DBBE 
-X-CRM114-Status: GOOD (  10.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191217_055642_962963_710F1B8C 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [5.9.137.197 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,46 +65,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- Dave Anderson <anderson@redhat.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Will Deacon <will@kernel.org>, x86@kernel.org,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>, James Morse <james.morse@arm.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
- Thomas Gleixner <tglx@linutronix.de>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linuxppc-dev@lists.ozlabs.org, Ingo Molnar <mingo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Steve Capper <steve.capper@arm.com>
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ daniel.lezcano@linaro.org, linux@armlinux.org.uk, steven.price@arm.com,
+ james.morse@arm.com, maz@kernel.org, will@kernel.org,
+ julien.thierry.kdev@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 12:16:12PM +0530, Bhupesh Sharma wrote:
-> I remember there was a suggestion during the review of an earlier
-> version to keep them as a separate patch(es) so that the documentation
-> text is easier to review,
+From: Zengruan Ye <yezengruan@huawei.com>
 
-Documentation text is one sentence, respectively. Not really worth a
-separate patch.
+This patch set aims to support the vcpu_is_preempted() functionality
+under KVM/arm64, which allowing the guest to obtain the vcpu is
+currently running or not. This will enhance lock performance on
+overcommitted hosts (more runnable vcpus than physical cpus in the
+system) as doing busy waits for preempted vcpus will hurt system
+performance far worse than early yielding.
 
-> I can merge the documentation patches with the respective patches
-> (which export the variables/defines to vmcoreinfo) in v6,
+We have observed some performace improvements in uninx benchmark tests.
 
-Please do.
+unix benchmark result:
+  host:  kernel 5.5.0-rc1, HiSilicon Kunpeng920, 8 cpus
+  guest: kernel 5.5.0-rc1, 16 vcpus
 
-Thx.
+               test-case                |    after-patch    |   before-patch
+----------------------------------------+-------------------+------------------
+ Dhrystone 2 using register variables   | 334600751.0 lps   | 335319028.3 lps
+ Double-Precision Whetstone             |     32856.1 MWIPS |   32849.6 MWIPS
+ Execl Throughput                       |      3662.1 lps   |    2718.0 lps
+ File Copy 1024 bufsize 2000 maxblocks  |    432906.4 KBps  |  158011.8 KBps
+ File Copy 256 bufsize 500 maxblocks    |    116023.0 KBps  |   37664.0 KBps
+ File Copy 4096 bufsize 8000 maxblocks  |   1432769.8 KBps  |  441108.8 KBps
+ Pipe Throughput                        |   6405029.6 lps   | 6021457.6 lps
+ Pipe-based Context Switching           |    185872.7 lps   |  184255.3 lps
+ Process Creation                       |      4025.7 lps   |    3706.6 lps
+ Shell Scripts (1 concurrent)           |      6745.6 lpm   |    6436.1 lpm
+ Shell Scripts (8 concurrent)           |       998.7 lpm   |     931.1 lpm
+ System Call Overhead                   |   3913363.1 lps   | 3883287.8 lps
+----------------------------------------+-------------------+------------------
+ System Benchmarks Index Score          |      1835.1       |    1327.6
+
+Zengruan Ye (5):
+  KVM: arm64: Document PV-lock interface
+  KVM: arm64: Implement PV_LOCK_FEATURES call
+  KVM: arm64: Support pvlock preempted via shared structure
+  KVM: arm64: Add interface to support vcpu preempted check
+  KVM: arm64: Support the vcpu preemption check
+
+ Documentation/virt/kvm/arm/pvlock.rst  | 31 +++++++++
+ arch/arm/include/asm/kvm_host.h        | 13 ++++
+ arch/arm64/include/asm/kvm_host.h      | 17 +++++
+ arch/arm64/include/asm/paravirt.h      | 15 ++++
+ arch/arm64/include/asm/pvlock-abi.h    | 16 +++++
+ arch/arm64/include/asm/spinlock.h      |  7 ++
+ arch/arm64/kernel/Makefile             |  2 +-
+ arch/arm64/kernel/paravirt-spinlocks.c | 13 ++++
+ arch/arm64/kernel/paravirt.c           | 95 +++++++++++++++++++++++++-
+ arch/arm64/kernel/setup.c              |  2 +
+ arch/arm64/kvm/Makefile                |  1 +
+ include/linux/arm-smccc.h              | 13 ++++
+ include/linux/cpuhotplug.h             |  1 +
+ virt/kvm/arm/arm.c                     |  8 +++
+ virt/kvm/arm/hypercalls.c              |  7 ++
+ virt/kvm/arm/pvlock.c                  | 21 ++++++
+ 16 files changed, 260 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/virt/kvm/arm/pvlock.rst
+ create mode 100644 arch/arm64/include/asm/pvlock-abi.h
+ create mode 100644 arch/arm64/kernel/paravirt-spinlocks.c
+ create mode 100644 virt/kvm/arm/pvlock.c
 
 -- 
-Regards/Gruss,
-    Boris.
+2.19.1
 
-https://people.kernel.org/tglx/notes-about-netiquette
+
 
 _______________________________________________
 linux-arm-kernel mailing list
