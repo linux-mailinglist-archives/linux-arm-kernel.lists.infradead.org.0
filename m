@@ -2,59 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5BC31226C0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 09:35:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A80912271B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 09:54:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=V9+mHoKAqLavD5oX8b3E1L0aCcmCRVTH6qdxrVXOLI4=; b=Tw1LGr7ztfTO0cl1t765k25IFf
-	hsFi0dpNOQ9MVWos1m2KYl5bInZ8wunavNhUOlGNbNyga8/dno0JWBX5CF32vfwexRzqxWR/idaKa
-	Ro2XXrFR0pvmx7uhYeLn8elW8nneuk6Z4cJzHw1nbUFeuabm42YjTG64sUUYzGic2i4FDu+tCgDZE
-	DvWtX6QBIQh1YxwcaiQH+uZOv1QHtA760nzanl5JwgRPSsjX1XnpjbMzEKLMGU/6KQYvpnYSm3/j4
-	p1IUutLwq/76bOajyvu0NoLasaGPWWh5WMVh7+/RZ8Fdcml/ZSolTasbCCEJuwQjELhAjvpCpRHnp
-	gFfUu06A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=nz/KTjtpdzMZ4RrsluwK1EhN43SxhPUyuYREzrjnEJE=; b=erB
+	QUKaeLm2dudPsNb5H90phLfZus/WcV4A8tiXkMW8rLdLq0Gaq4+y2KGyrMgY33nI/2lqlARoa/t45
+	G7dRc/U8zofaiq5Ex0OJaQba8zmFRnfpHeDXUJt0cpRJsa/kqnH7XtvB5KtSKlzDaPVvyil7wZNBt
+	f8HtJ9QEaZaK9O0hrWIjmDjiJkj2AwJjHYex+yLb/CUWpKvm+jbQKfSr9wEoaQyfKLQfv5TTwmjW0
+	navpyXuYwJz5zMnAnEaIvXBswJ6UfZ/YVtletLS+XL2TD+o8vmOfvjDjzOlThQmkIrmsFjgAzP1gB
+	U04s9CbVKt2EkJTVJTxQHOZzZ6oNfng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih8K0-0005le-H6; Tue, 17 Dec 2019 08:35:12 +0000
+	id 1ih8c9-00052F-7u; Tue, 17 Dec 2019 08:53:57 +0000
 Received: from se15e.web-hosting.com ([198.54.122.209])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih8Jl-0005l2-Az; Tue, 17 Dec 2019 08:34:58 +0000
+ id 1ih8bv-00050L-Qx; Tue, 17 Dec 2019 08:53:45 +0000
 Received: from [68.65.123.203] (helo=server153.web-hosting.com)
  by se15.registrar-servers.com with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.89)
  (envelope-from <akash@openedev.com>)
- id 1ih7l4-0002DN-R6; Mon, 16 Dec 2019 23:59:09 -0800
+ id 1ih7mh-0005Al-SA; Tue, 17 Dec 2019 00:00:55 -0800
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=openedev.com; s=default; h=References:In-Reply-To:Message-Id:Date:Subject:
- Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=diOgM+1bEFTCStq0UeCQsuK8N2c5AS/suGJiaKd7qsU=; b=gBTyf2nP2LL9YXnxdGBwJQCDY
- rUG9U4ZtV2zu5fEnIaDyZSCWJewbmuOjZm+77bZxtWH0peTGJlsfIG7v46+eGsLUCk+303YmG8EFH
- YQb8VB/UDqcbETISz5g/TpY010Iu+GYMR0tp2fqZsztVIfcRRrGbwBO6FmbZ/D6X7Lq/H6MWhKbvL
- uBguk72zOaKAdMionpcrnd4qBYtUg7eRMYDA8dQ/1wMUmlEah0PxbjqbeLSll2W8PIGC3I2ysgzlK
- qBTMUSHNBak1pDeZFxHkP1lMm8xWldrGDgC6Qtze810vzVY9YhaRACBORzf7s7B9+8TIsC4bqjzI9
- U2icuvKtA==;
-Received: from nat-inn.mentorg.com ([192.94.34.34]:44656
+ d=openedev.com; s=default; h=Message-Id:Date:Subject:Cc:To:From:Sender:
+ Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=WOid7yOYhAStMyzrZCpDkHHegb1R4RrVPY+V1fImCcI=; b=L1CT0zKoybft8bUx8N5fwwrYR+
+ bPnnAo+Q8Ix7svNn1f28DRnQcIb+BFoEaZZ73+Qsq90cJPzqeSAYbw9MdMKOgOidlCIuvEIRgL7Ul
+ YpJlYe25Q1yKniaT4ozvVCWpEJrlYs2GmY77FJanEEMfpx6TJKaX1Q6aFVgtzwbj02P8w4ApYENmx
+ odPonaTmqffeRrb5UU65HUzQA4LJYj86A1/OP5iF/yTnoeulPCirvVWRr3xTDx9+AhtriXeSe3+95
+ Sn0A88VVil6ZMj4ZgE54trevP8jEU4AUP34CC/IBKRXkmXImVdP3nSkTlZ0DUfT+70jCo3IdmPpQH
+ Up9i5nJw==;
+Received: from nat-inn.mentorg.com ([192.94.34.34]:31382
  helo=akash-vm.inn-wifi.mentorg.com)
  by server153.web-hosting.com with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
  (envelope-from <akash@openedev.com>)
- id 1ih7kz-003CWq-MW; Tue, 17 Dec 2019 02:59:06 -0500
+ id 1ih7mb-003E6s-Kr; Tue, 17 Dec 2019 03:00:46 -0500
 From: Akash Gajjar <akash@openedev.com>
 To: heiko@sntech.de
-Subject: [PATCH 2/2] phy: phy-rockchip-inno-usb2: add usb2-phy support for
- RK3308 SoC
-Date: Tue, 17 Dec 2019 13:27:15 +0530
-Message-Id: <20191217075722.11646-3-akash@openedev.com>
+Subject: [V2 1/1 PATCH] arm64: dts: rockchip: add ROCK Pi S DTS support
+Date: Tue, 17 Dec 2019 13:30:02 +0530
+Message-Id: <20191217080014.11756-1-akash@openedev.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191217075722.11646-1-akash@openedev.com>
-References: <20191217075722.11646-1-akash@openedev.com>
 X-OutGoing-Spam-Status: No, score=-1.0
 X-Originating-IP: 68.65.123.203
 X-SpamExperts-Domain: nctest.net
@@ -62,31 +58,34 @@ X-SpamExperts-Username: whmcalls3
 Authentication-Results: registrar-servers.com;
  auth=pass (login) smtp.auth=whmcalls3@nctest.net
 X-SpamExperts-Outgoing-Class: ham
-X-SpamExperts-Outgoing-Evidence: Combined (0.02)
+X-SpamExperts-Outgoing-Evidence: SB/global_tokens (0.00498862226523)
 X-Recommended-Action: accept
-X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0c2Pj46HODYmpAMVAv0J1pOpSDasLI4SayDByyq9LIhV5dqwct359/CV
- xZICQFYJSkTNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3Kk502M/hntTzIKfCMISdhHQGg
- t7nAtP8WjkKKy9v/mXRkty7kshl0qfjNTiHz6D+lTs1OFZCJnqICuBP35KwNAmisedSHrV8USIJy
- ZKu4Q0eBPJf4fBJswECxJoMRbkC3SF2DuTVJlHUR2BtY80W8dG60QfvEMzMeJ6Rw9B2oZpcFefeT
- nKVTea+Z7pU/97kaMRINxtYvoDPmxBEirO18GFgbEtxGbfWvsckv3Tqu01KJGGjsNnBvKhksFPgp
- Ju7VRAUaZyvXYsGqun+gsnRrw40vpN++k/mRssszRiW/L+aVL5CXNSk/AzmiJysF8dLHRyryw85/
- rAZb27+VZ3biGtaW8qQvbDNe5IP3ZP124DrwHHYNWMFQ3rxmq0HUMfG+c6Hob6r/eV86ndcww4rw
- IzAvtpjiIeRlwI+LpEJwnKenvHgTJm4rUod0ueKDsCR8lJjuWToZaiaFIvhnz77Y+k6uhs/Q2KE1
- Lby4XA9T8Bmj3saNZ0eUp3kqVmG1d7Vk0NCCILyLLaQ9eQTOszvxQTkjHv8L1XCo8f/lClCdnQEw
- egH725V8o9NmtwsOgq00IT3zX/Zzh6cpDYUl6c6Y0/5r1yWIc3jXLVN/s8cHerYtW55yLfDen/wr
- oS11FXNac8XwfSk5a6wPi3PS+6vBhpISIqK1GdyQE0WyMBODOy30v1Op0AWqhD2stjbU32pojN4X
- 8zAZfIZ8CjT9GInTMPN38Uyq3PQ8yDScr+8662B3D4UT/bdQYZMqtJwVgGaPV8GdcLPofFI165s+
- Fi8oQNCwxvxuh+xtfMocbqMn/Qow8uvbAccZ4WWjZTIX9MhLKTjECb0PwpN4olPuA0AI93gbcx8Z
- jKXXCSz+ofgapDj5Myrxgk8zlzkZR8hg4/tjCwvQy21RlJtzRtySOaj2KPqMwd2r4+trrKXkWu7f
- x8D6z8uZdl1/53Cf3G9hN76KRnxfIvD0xWRSasqqxNnWfwc3A8r6JfNzxEm+Adh5Il9bsJFhaqar
- dOLrAnCsmfJ3HSl/Lt1pDXWpU9yav05pkiyHpQ9cOADsvE/xCV8jXdQF5Hew752uew/O2uwTJhUB
- Z3+qi/5h4DZCfPGWm7MoPBOavov9A2tPRpxsJ/Ez2OT1H/aAwarQpYDOYx/6JtUOkfNK1xk8kTd1
- Ny+HuiOkN2mAdCO+RVfxIo7mcAZ9GMPEl9B+0hmmdOnbSMz7Y9ZIgfFrL3927nPLXidUYhzTL/6b
- zJY8ZLbVls9GTjTyP2j0DLjHCOlbYrvqvTn3lmAWHSgj8REt1LPAYpi/k8cuog==
+X-Filter-ID: Mvzo4OR0dZXEDF/gcnlw0c2Pj46HODYmpAMVAv0J1pOpSDasLI4SayDByyq9LIhVcOsCkbaPqqHd
+ rQKl0ndNRETNWdUk1Ol2OGx3IfrIJKyP9eGNFz9TW9u+Jt8z2T3Kk502M/hntTzIKfCMISdhHQGg
+ t7nAtP8WjkKKy9v/mXRkty7kshl0qfjNTiHz6D+lTs1OFZCJnqICuBP35KwNAqV1skaPpkRmI7Oy
+ xmK4vHEEpuEZQtkapPDwKmQVhwwYLCrYOizJvpoze6cTUad230/3kECQPZPKWDOpUxCPzd5brlHW
+ Xai14aDDSG6NxoO+kAqUrZRsi/CLoANte1i+ZgxRweM0HJUf31LvnjlI4h1yiQ0vVhO9IB8pOv2j
+ 9a/9yYOoB3Edt2PSJXWVDbWpnXV+HMjlK4mNe7AOtesc9x/qiGiNChwP2OJjdXJuRUzjfFZND2tA
+ 8JA0IWUZhgwtNisXK3nCt88eEtbjFEe4wotPve0USYLcdEyH7ZfqVbq/SSW8WTkFJKrk3QCrr40r
+ 15F3Rm8ytD0IqrihDfnyCUa3wL2Y4F0412ezGCyTUPan2AUIlBctiMvX5F8XBiwx5Rs40cmSL9tP
+ fD9p0Q30Opo+bd5lBrozqCj+0HE/yRZixXNOUX3LUkv9SqakBdzhOOUvg5TIg80/EueZoip8aHbu
+ 4ONX+wVRdCv4IOs1C4geIT5LUm075ewdrul30woFSUGlz8CJSOMrvzx9TVg3RkXwFZn17vRHGlcT
+ iMGaPpxhI3+BNO/vWxLUxUxbR529+jcSGt6GKtM6B+u5NgVXVJx8AoRwxB3UXPpqW9YYMmJAiIwb
+ dFqdboRlBgJOYFBIvuemT8zhVocbayAhVgkqXg+DBuG4NXpcGX0BewE6kCMGUa3FdyXge5giNlzZ
+ jmssnacbGwN9oPEGphWQkRzetKPpxOsB8gG0slV7ra6jI4BSTwrYfJFsGsxM5/ek60XeHiIhiBbv
+ 1wt8gji8ewfaR3A21jAytTM7ul2pus+MytmYMPHvc6+8qs7qroeV5HFWgQskaPHAtLJBxO9AXoKm
+ PqZHBQQL7n9+OTZ37LZfI/sWwyJSOSGKlUBLYSbGwjymBMs+y2lddnrRl/tSPbCh7uprC4QcUKGu
+ TX/23E8AyqKqJt2lL6TNy1dtcXTis6Dsj8hzB3NHYhYaYo0xHDICv1Yx6b3cWXoC6UmizshdZtj8
+ cxw3qqhc+N6cuEg4XWh5Fn4+lLgwzoFrDlzunWdf0LZdg/BKPqUSdnYelyQNvR+dkJlReKZlZpWU
+ gNiTvwv7ZcXIdc0MLkzSqE63qJ+zngn7m6CAstID+vrS5Thb0c/s7mun+E/RGrGHGDuwRkuP1qh7
+ YyoiU7NMbzmxUlDjlFLe1QlsqnWpvw1TU8J/E3GJyRN+IxZ/hz0zmaxV1xPWjLie3fMgkIagEDDY
+ 4gfnEZ4doHEpKKo/b09r+um3pKaKeKIVtFIy9LlOZCNnSGcq99Dbe7/IbgyY4V1IcY73X0gZcGQT
+ bPM5zqrjMI79CjbRoqLnS70LPBISpYNOps7qsSzkj4d0bp8lX/ci14DI8fLw5N/ojaomCoWWiTto
+ l8oIToKHMVx7fTUwDt8WIXPmYakRLzBY3AuXWIccBDJTaBcDik4cfyhwRfSZqBUJ2eng
 X-Report-Abuse-To: spam@se16.registrar-servers.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_003457_432043_01016526 
-X-CRM114-Status: GOOD (  13.74  )
+X-CRM114-CacheID: sfid-20191217_005343_898421_7E5A7499 
+X-CRM114-Status: GOOD (  15.68  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
@@ -113,99 +112,319 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- tom@radxa.com, linux-kernel@vger.kernel.org, kever.yang@rock-chips.com,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-rockchip@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ tom@radxa.com, Robin Murphy <robin.murphy@arm.com>, kever.yang@rock-chips.com,
+ Douglas Anderson <dianders@chromium.org>,
+ Markus Reichl <m.reichl@fivetechno.de>, linux-rockchip@lists.infradead.org,
  Rob Herring <robh+dt@kernel.org>, Akash Gajjar <akash@openedev.com>,
- Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
- linux-arm-kernel@lists.infradead.org
+ Nick Xie <nick@khadas.com>, Andy Yan <andy.yan@rock-chips.com>,
+ jagan@openedev.com, Matthias Kaehlcke <mka@chromium.org>,
+ Vivek Unune <npcomplete13@gmail.com>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds usb2-phy support for RK3308 SoCs and amend phy Documentation.
+ROCK Pi S is RK3308 based SBC from radxa.com. ROCK Pi S has a,
+- 256MB/512MB DDR3 RAM
+- SD, NAND flash (optional on board 1/2/4/8Gb)
+- 100MB ethernet, PoE (optional)
+- Onboard 802.11 b/g/n wifi + Bluetooth 4.0 Module
+- USB2.0 Type-A HOST x1
+- USB3.0 Type-C OTG x1
+- 26-pin expansion header
+- USB Type-C DC 5V Power Supply
+
+This patch enables
+- Console
+- NAND Flash
+- SD Card
+- USB2.0
 
 Signed-off-by: Akash Gajjar <akash@openedev.com>
 ---
- .../bindings/phy/phy-rockchip-inno-usb2.txt   |  1 +
- drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 44 +++++++++++++++++++
- 2 files changed, 45 insertions(+)
+Changes for v2
+- Use pwm-supply for vdd_core node instead of vi-supply
+- Add USB2.0 node support
 
-diff --git a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
-index 541f5298827c..e978aad34d3f 100644
---- a/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
-+++ b/Documentation/devicetree/bindings/phy/phy-rockchip-inno-usb2.txt
-@@ -5,6 +5,7 @@ Required properties (phy (parent) node):
- 	* "rockchip,px30-usb2phy"
- 	* "rockchip,rk3228-usb2phy"
- 	* "rockchip,rk3328-usb2phy"
-+	* "rockchip,rk3308-usb2phy"
- 	* "rockchip,rk3366-usb2phy"
- 	* "rockchip,rk3399-usb2phy"
- 	* "rockchip,rv1108-usb2phy"
-diff --git a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-index 680cc0c8825c..9fe817486ea1 100644
---- a/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-+++ b/drivers/phy/rockchip/phy-rockchip-inno-usb2.c
-@@ -1256,6 +1256,49 @@ static const struct rockchip_usb2phy_cfg rk3228_phy_cfgs[] = {
- 	{ /* sentinel */ }
- };
+ .../devicetree/bindings/arm/rockchip.yaml     |   5 +
+ arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+ .../boot/dts/rockchip/rk3308-rock-pi-S.dts    | 237 ++++++++++++++++++
+ 3 files changed, 243 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts
+
+diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+index d9847b306b83..48d40c928d45 100644
+--- a/Documentation/devicetree/bindings/arm/rockchip.yaml
++++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+@@ -422,6 +422,11 @@ properties:
+           - const: radxa,rockpi4
+           - const: rockchip,rk3399
  
-+static const struct rockchip_usb2phy_cfg rk3308_phy_cfgs[] = {
-+	{
-+		.reg = 0x100,
-+		.num_ports	= 2,
-+		.clkout_ctl	= { 0x0108, 4, 4, 1, 0 },
-+		.port_cfgs	= {
-+			[USB2PHY_PORT_OTG] = {
-+				.phy_sus	= { 0x0100, 8, 0, 0, 0x1d1 },
-+				.bvalid_det_en	= { 0x3020, 2, 2, 0, 1 },
-+				.bvalid_det_st	= { 0x3024, 2, 2, 0, 1 },
-+				.bvalid_det_clr = { 0x3028, 2, 2, 0, 1 },
-+				.ls_det_en	= { 0x3020, 0, 0, 0, 1 },
-+				.ls_det_st	= { 0x3024, 0, 0, 0, 1 },
-+				.ls_det_clr	= { 0x3028, 0, 0, 0, 1 },
-+				.utmi_avalid	= { 0x0120, 10, 10, 0, 1 },
-+				.utmi_bvalid	= { 0x0120, 9, 9, 0, 1 },
-+				.utmi_ls	= { 0x0120, 5, 4, 0, 1 },
-+			},
-+			[USB2PHY_PORT_HOST] = {
-+				.phy_sus	= { 0x0104, 8, 0, 0, 0x1d1 },
-+				.ls_det_en	= { 0x3020, 1, 1, 0, 1 },
-+				.ls_det_st	= { 0x3024, 1, 1, 0, 1 },
-+				.ls_det_clr	= { 0x3028, 1, 1, 0, 1 },
-+				.utmi_ls	= { 0x120, 17, 16, 0, 1 },
-+				.utmi_hstdet	= { 0x120, 19, 19, 0, 1 }
-+			}
-+		},
-+		.chg_det = {
-+			.opmode		= { 0x0100, 3, 0, 5, 1 },
-+			.cp_det		= { 0x0120, 24, 24, 0, 1 },
-+			.dcp_det	= { 0x0120, 23, 23, 0, 1 },
-+			.dp_det		= { 0x0120, 25, 25, 0, 1 },
-+			.idm_sink_en	= { 0x0108, 8, 8, 0, 1 },
-+			.idp_sink_en	= { 0x0108, 7, 7, 0, 1 },
-+			.idp_src_en	= { 0x0108, 9, 9, 0, 1 },
-+			.rdm_pdwn_en	= { 0x0108, 10, 10, 0, 1 },
-+			.vdm_src_en	= { 0x0108, 12, 12, 0, 1 },
-+			.vdp_src_en	= { 0x0108, 11, 11, 0, 1 },
-+		},
-+	},
-+	{ /* sentinel */ }
++      - description: Radxa ROCK Pi S
++        items:
++          - const: radxa,rockpis
++          - const: rockchip,rk3308
++
+       - description: Radxa Rock2 Square
+         items:
+           - const: radxa,rock2-square
+diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+index 48fb631d5451..cc9e8c824980 100644
+--- a/arch/arm64/boot/dts/rockchip/Makefile
++++ b/arch/arm64/boot/dts/rockchip/Makefile
+@@ -2,6 +2,7 @@
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-evb.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-roc-cc.dtb
++dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-rock-pi-S.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-a1.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
+ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts b/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts
+new file mode 100644
+index 000000000000..0afb24ec1cdf
+--- /dev/null
++++ b/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts
+@@ -0,0 +1,237 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2019 Akash Gajjar <akash@openedev.com>
++ * Copyright (c) 2019 Jagan Teki <jagan@openedev.com>
++ */
++
++/dts-v1/;
++#include "rk3308.dtsi"
++
++/ {
++	model = "Radxa ROCK Pi S";
++	compatible = "radxa,rockpis", "rockchip,rk3308";
++
++	chosen {
++		stdout-path = "serial0:1500000n8";
++	};
++
++	leds {
++		compatible = "gpio-leds";
++		pinctrl-names = "default";
++		pinctrl-0 = <&green_led_gio>, <&heartbeat_led_gpio>;
++
++		green-led {
++			label = "rockpis:green:power";
++			gpios = <&gpio0 RK_PA6 GPIO_ACTIVE_HIGH>;
++			linux,default-trigger = "default-on";
++			default-state = "on";
++		};
++
++		blue-led {
++			label = "rockpis:blue:user";
++			gpios = <&gpio0 RK_PA5 GPIO_ACTIVE_HIGH>;
++			default-state = "on";
++			linux,default-trigger = "heartbeat";
++		};
++	};
++
++	sdio_pwrseq: sdio-pwrseq {
++		compatible = "mmc-pwrseq-simple";
++		pinctrl-names = "default";
++		pinctrl-0 = <&wifi_enable_h>;
++		reset-gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_LOW>;
++	};
++
++	vcc5v0_sys: vcc5v0-sys {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc5v0_sys";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++	};
++
++	vdd_core: vdd-core {
++		compatible = "pwm-regulator";
++		pwms = <&pwm0 0 5000 1>;
++		regulator-name = "vdd_core";
++		regulator-min-microvolt = <827000>;
++		regulator-max-microvolt = <1340000>;
++		regulator-init-microvolt = <1015000>;
++		regulator-settling-time-up-us = <250>;
++		regulator-always-on;
++		regulator-boot-on;
++		pwm-supply = <&vcc5v0_sys>
++	};
++
++	vdd_log: vdd-log {
++		compatible = "regulator-fixed";
++		regulator-name = "vdd_log";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <1050000>;
++		regulator-max-microvolt = <1050000>;
++		vin-supply = <&vcc5v0_sys>;
++	};
++
++	vcc_ddr: vcc-ddr {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc_ddr";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <1500000>;
++		regulator-max-microvolt = <1500000>;
++		vin-supply = <&vcc5v0_sys>;
++	};
++
++	vcc_1v8: vcc-1v8 {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc_1v8";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++		vin-supply = <&vcc_io>;
++	};
++
++	vcc_io: vcc-io {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc_io";
++		regulator-always-on;
++		regulator-boot-on;
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		vin-supply = <&vcc5v0_sys>;
++	};
++
++	vcc5v0_otg: vcc5v0-otg {
++		compatible = "regulator-fixed";
++		regulator-name = "vcc5v0_otg";
++		regulator-always-on;
++		gpio = <&gpio0 RK_PC5 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++		pinctrl-names = "default";
++		pinctrl-0 = <&otg_vbus_drv>;
++		vin-supply = <&vcc5v0_sys>;
++	};
 +};
 +
- static const struct rockchip_usb2phy_cfg rk3328_phy_cfgs[] = {
- 	{
- 		.reg = 0x100,
-@@ -1425,6 +1468,7 @@ static const struct rockchip_usb2phy_cfg rv1108_phy_cfgs[] = {
- static const struct of_device_id rockchip_usb2phy_dt_match[] = {
- 	{ .compatible = "rockchip,px30-usb2phy", .data = &rk3328_phy_cfgs },
- 	{ .compatible = "rockchip,rk3228-usb2phy", .data = &rk3228_phy_cfgs },
-+	{ .compatible = "rockchip,rk3308-usb2phy", .data = &rk3308_phy_cfgs },
- 	{ .compatible = "rockchip,rk3328-usb2phy", .data = &rk3328_phy_cfgs },
- 	{ .compatible = "rockchip,rk3366-usb2phy", .data = &rk3366_phy_cfgs },
- 	{ .compatible = "rockchip,rk3399-usb2phy", .data = &rk3399_phy_cfgs },
++&cpu0 {
++	cpu-supply = <&vdd_core>;
++};
++
++&emmc {
++	bus-width = <4>;
++	cap-mmc-highspeed;
++	mmc-hs200-1_8v;
++	supports-sd;
++	disable-wp;
++	non-removable;
++	num-slots = <1>;
++	vin-supply = <&vcc_io>;
++	status = "okay";
++};
++
++&i2c1 {
++	status = "okay";
++};
++
++&sdmmc {
++	bus-width = <4>;
++	cap-mmc-highspeed;
++	cap-sd-highspeed;
++	max-frequeency = <150000000>;
++	supports-sd;
++	disable-wp;
++	num-slots = <1>;
++	pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_det &sdmmc_bus4>;
++	card-detect-delay = <800>;
++	status = "okay";
++};
++
++&spi2 {
++	status = "okay";
++	max-freq = <10000000>;
++};
++
++&pinctrl {
++	pinctrl-names = "default";
++	pinctrl-0 = <&rtc_32k>;
++
++	leds {
++		green_led_gio: green-led-gpio {
++			rockchip,pins = <0 RK_PA6 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		heartbeat_led_gpio: heartbeat-led-gpio {
++			rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
++	usb {
++		otg_vbus_drv: otg-vbus-drv {
++			rockchip,pins = <0 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
++	sdio-pwrseq {
++		wifi_enable_h: wifi-enable-h {
++			rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		wifi_host_wake: wifi-host-wake {
++			rockchip,pins = <0 RK_PA0 RK_FUNC_GPIO &pcfg_pull_down>;
++		};
++	};
++};
++
++&pwm0 {
++	status = "okay";
++	pinctrl-0 = <&pwm0_pin_pull_down>;
++};
++
++&saradc {
++	vref-supply = <&vcc_1v8>;
++	status = "okay";
++};
++
++&sdio {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	bus-width = <4>;
++	max-frequency = <1000000>;
++	cap-sd-highspeed;
++	cap-sdio-irq;
++	supports-sdio;
++	keep-power-in-suspend;
++	mmc-pwrseq = <&sdio_pwrseq>;
++	non-removable;
++	sd-uhs-sdr104;
++	status = "okay";
++};
++
++&u2phy {
++	status = "okay";
++
++	u2phy_host: host-port {
++		status = "okay";
++	};
++};
++
++&uart0 {
++	status = "okay";
++};
++
++&uart4 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart4_xfer &uart4_rts &uart4_cts>;
++	status = "okay";
++};
++
++&usb_host_ehci {
++	status = "okay";
++};
++
++&usb_host_ohci {
++	status = "okay";
++};
 -- 
 2.17.1
 
