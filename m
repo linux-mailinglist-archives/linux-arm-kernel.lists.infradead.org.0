@@ -2,66 +2,155 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45DC4121EF8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 00:31:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2F45121F2D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 01:03:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EH71muzT/8oR0zM3zVM3p4B/cWC0QViDJMoS7AhyG7A=; b=G7ZM1W8oEhUDUDMAy+r5DcfwU
-	6Mx6wvOf/scDf9CfIcqhcxLUtlAXh4w98TAyw6fvJsIQc7j6csjkJxRRXKvMH64be7HLV+YItyBiX
-	uUOxA8RZQoyC1t8SpDaI9agj3E25XQJqTSaW1h6lZU6xmHu6GErNesfSY46UpHKYxUY+HHoIUOPnm
-	Yaur0HDIe6dHjzv4N/2/iC6O5LfBuPZbfz4EP/ylLl3GA6CS73ykzzzZ8eRd6XqqeBdKGM7rP/jRc
-	HlT+SytxwtJjUQSYXt8Tx7EvdxhhhG2ppxstYirYJ/W8fxL+Zg7OGKmNRmHb2v7hFZ4TdeFuQ9LT4
-	dWeVb3qvg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dPYbJ6bMsdn8CLFqmm09xL8uHEFlqqHar7hNUkPR/ys=; b=GcwaavMiP1OL/2
+	u4vAKrdgGZCTqopHSgrooEV9u400yGNGrp3Fb4gDuKS19cnVSmOFq5qZsY0pyvrEEASdKAymUMwDi
+	ON7Jz8GGnwtvRNyyQLv7gjT+64vzDx/hogR1HzxFpYRpeJIn7LJeMitdOUBVWQpf3NOjqU+++linS
+	D1ktHZqO/hjx2vH81A7rO7urutD37iknyx3nV8lBwukgaVLGXk6AMyOtPySxG6LBVVFFXHLJCMlRB
+	J56mmwAMqiS3ZoUqTM2E335dIr/zPRyga143UnG8KSdlREScRwQqjo+PjkVhApLY23+wK8wIXy9by
+	9UU2iSuGE9nTte46FgsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igzpc-0002Yi-D0; Mon, 16 Dec 2019 23:31:16 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1ih0KP-0003c0-Lm; Tue, 17 Dec 2019 00:03:05 +0000
+Received: from rcdn-iport-5.cisco.com ([173.37.86.76])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igzpT-0002YA-3O
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Dec 2019 23:31:08 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 16 Dec 2019 15:31:04 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,323,1571727600"; d="scan'208";a="205279892"
-Received: from yoojae-mobl1.amr.corp.intel.com (HELO [10.7.153.147])
- ([10.7.153.147])
- by orsmga007.jf.intel.com with ESMTP; 16 Dec 2019 15:31:03 -0800
-Subject: Re: [PATCH v11 14/14] hwmon: Add PECI dimmtemp driver
-To: Guenter Roeck <linux@roeck-us.net>
-References: <20191211194624.2872-1-jae.hyun.yoo@linux.intel.com>
- <20191211194624.2872-15-jae.hyun.yoo@linux.intel.com>
- <d75aaad9-ae07-feeb-966a-899ecfe9d4b3@roeck-us.net>
- <5ed9f292-e024-ffda-a1a8-870ba0f05c58@linux.intel.com>
- <20191216212120.GA12089@roeck-us.net>
- <c6ccb0ff-c0b4-86b2-1768-ba63713034a4@linux.intel.com>
- <20191216232720.GA17398@roeck-us.net>
-From: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
-Message-ID: <465ac2d4-c508-0e6d-93e8-e8d5c36b05d7@linux.intel.com>
-Date: Mon, 16 Dec 2019 15:31:03 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20191216232720.GA17398@roeck-us.net>
+ id 1ih0KF-0003bI-C4
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 00:02:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+ d=cisco.com; i=@cisco.com; l=6232; q=dns/txt; s=iport;
+ t=1576540975; x=1577750575;
+ h=from:to:cc:subject:date:message-id:
+ content-transfer-encoding:mime-version;
+ bh=0Bi3u54Wc3eUmwJpKnRQCW252zfzyQBMtuOpMU6orb8=;
+ b=eHV+nPi/tj06H3gd2nEOoCxM0YOuKwWc8wrlOc3Lf7W3LmaC3IH25o0Y
+ YffmZeCoGloEDkkU+bFEe7K/i+6rib0H7NBu12Xh4XifGivOsAaes6wMw
+ GVqtcanFNcRqn0MTNj7iM/yOMengiolEsRcf1IA/guxrob15UKoxqKXJs Y=;
+IronPort-PHdr: =?us-ascii?q?9a23=3AZwdmxBZneI/95Au7sxfLqaD/LSx94ef9IxIV55?=
+ =?us-ascii?q?w7irlHbqWk+dH4MVfC4el20gabRp3VvvRDjeee87vtX2AN+96giDgDa9QNMn?=
+ =?us-ascii?q?1NksAKh0olCc+BB1f8KavxbCUgHcFLXndu/mqwNg5eH8OtL1A=3D?=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0CqBQDZGvhd/4ENJK1lHAEBAQEBBwE?=
+ =?us-ascii?q?BEQEEBAEBgX6BS1AFgUQgBAsqCodAA4sOmmWCUgNUCQEBAQwBAS0CAQGEQAK?=
+ =?us-ascii?q?CFCQ4EwIDDQEBBAEBAQIBBQRthTcMhWEWFRMGAQE3AREBPkImAQQBDQ0ahUc?=
+ =?us-ascii?q?DLgECpHACgTiIYYF0M4J+AQEFhRIYghcJFIEihRyGfBqBQT+BEUeHLAEog0C?=
+ =?us-ascii?q?CLI0/iG2YUgqCNJYgmkiOTJZYg3ECBAIEBQIOAQEFgWkigVhwFYMnUBEUjRI?=
+ =?us-ascii?q?MF4NQilN0gSiOeQElgQsBMF8BAQ?=
+X-IronPort-AV: E=Sophos;i="5.69,323,1571702400"; d="scan'208";a="454723488"
+Received: from alln-core-9.cisco.com ([173.36.13.129])
+ by rcdn-iport-5.cisco.com with ESMTP/TLS/DHE-RSA-SEED-SHA;
+ 17 Dec 2019 00:02:49 +0000
+Received: from XCH-RCD-004.cisco.com (xch-rcd-004.cisco.com [173.37.102.14])
+ by alln-core-9.cisco.com (8.15.2/8.15.2) with ESMTPS id xBH02miO003178
+ (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=FAIL);
+ Tue, 17 Dec 2019 00:02:49 GMT
+Received: from xhs-aln-003.cisco.com (173.37.135.120) by XCH-RCD-004.cisco.com
+ (173.37.102.14) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Mon, 16 Dec 2019 18:02:48 -0600
+Received: from xhs-rtp-001.cisco.com (64.101.210.228) by xhs-aln-003.cisco.com
+ (173.37.135.120) with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Mon, 16 Dec 2019 18:02:47 -0600
+Received: from NAM10-BN7-obe.outbound.protection.outlook.com (64.101.32.56) by
+ xhs-rtp-001.cisco.com (64.101.210.228) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1473.3 via Frontend Transport; Mon, 16 Dec 2019 19:02:47 -0500
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QjzEmbq00+z6SNGSW7OjKPlj+hINGTlgzW65kocBimBjuEZAwpHVcNsHRKZvmYJtTrBTYETR5Bfn4V3CNOiBlKc+J3x5DHdZstlNq17418Cl6rNUqKYwOCLxPOkkR/gy3/k1zxYFuB92/YGzDBUKvBduB8gW/Lsqxbdog39oH+tJMnBCsy0Q5Mk7Ejw9SucZCh7N1ZbDGDEFxT8l2y1aINZ21KhNlJoW9usGKPeVWRucTn9bJ+nB/v0NLjtw0BtpVg0mM7Rs5ODZLL+OB7jh8nXyNX7Mh7leGDnqidXDIzi0PoZ47uBnvkoXgYWYgpCmbvQfPDBNGAhrxfPx4woZsA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rzhjVe/DCcDMUoKgSCq2WqzafsEC5utt3tykxnb7LZY=;
+ b=dw2pt1KNeJT/ar2auThi1qDXjAUFyrazV5RCKofA4yAWQzbysRoeubezRzzBjhRNByVLN387c91BKBu/ZXYSYr0RBApTD1AJkbccWULjLDty39Npy3d69W5mlZ2i1AWFBi2A3rkCUiu0pk6LODIsuBuSVpk6xIheuEplusl7Bgy/7qc3JKYIot5oZ0lyEnwZ8EFC8UOxSPogH2wlKJ4wfRCPdI2BFriaMxJFfpicwijNMWJ27DbXG+NXICGyKlIWLQrXv+Io720P5SrXne5q1/BvJd64M5BGQ/bFYif1e9Ll6KHDk+ytxegLIYMB32wd6T1NxpniNDcHqiEyKWI3Zg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cisco.com; dmarc=pass action=none header.from=cisco.com;
+ dkim=pass header.d=cisco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cisco.onmicrosoft.com; 
+ s=selector2-cisco-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rzhjVe/DCcDMUoKgSCq2WqzafsEC5utt3tykxnb7LZY=;
+ b=UrKveS/jN/ei6cKbkce8y1EmUGYQaRTP7rVNf/H1+vM1/qvyAM2xnkuYGyiS4N2APJNLTh4pYYxTwTDvsWNAuAliW1TD5Kgyty85tMKj4TNdFkOXElCS4EYcFbSPWcG/YNko2OvelieZMYQNUbPXB/lfmtMPWmZAjArv8cTCLtM=
+Received: from BYAPR11MB2582.namprd11.prod.outlook.com (52.135.229.149) by
+ BYAPR11MB3432.namprd11.prod.outlook.com (20.177.226.10) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2538.19; Tue, 17 Dec 2019 00:02:45 +0000
+Received: from BYAPR11MB2582.namprd11.prod.outlook.com
+ ([fe80::a963:79bc:32a5:6f48]) by BYAPR11MB2582.namprd11.prod.outlook.com
+ ([fe80::a963:79bc:32a5:6f48%5]) with mapi id 15.20.2538.019; Tue, 17 Dec 2019
+ 00:02:44 +0000
+From: "Saeed Karimabadi (skarimab)" <skarimab@cisco.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Subject: Arm64 Crashkernel doesn't work with FLATMEM anymore
+Thread-Topic: Arm64 Crashkernel doesn't work with FLATMEM anymore
+Thread-Index: AdW0bU4PM3g/9KC9STy6zefeuZgKiA==
+Date: Tue, 17 Dec 2019 00:02:44 +0000
+Message-ID: <BYAPR11MB2582CB879F0B7DE06A351685CC500@BYAPR11MB2582.namprd11.prod.outlook.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=skarimab@cisco.com; 
+x-originating-ip: [128.107.241.187]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: e03055d1-5eba-4ff7-be5f-08d782847147
+x-ms-traffictypediagnostic: BYAPR11MB3432:
+x-ld-processed: 5ae1af62-9505-4097-a69a-c1553ef7840e,ExtAddr
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BYAPR11MB34329076C917E7BA1F9A2BB1CC500@BYAPR11MB3432.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 02543CD7CD
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(366004)(376002)(346002)(39860400002)(136003)(199004)(189003)(9686003)(316002)(110136005)(54906003)(478600001)(2906002)(7696005)(71200400001)(26005)(66946007)(4326008)(8936002)(5660300002)(76116006)(55016002)(66556008)(52536014)(66476007)(64756008)(66446008)(33656002)(81166006)(8676002)(45080400002)(107886003)(86362001)(6506007)(186003)(81156014);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR11MB3432;
+ H:BYAPR11MB2582.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: cisco.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 8YL3lJAbRmvTLJqV983UHh4EvyVymB66fvgq32s1brUYy05IFaaFRCQwQInEX1EpuDnrz6/HUAUIS9KGZR45J2vRGhzA1TJMxOAfsh8PKZ/q5vqMTTsFivdLl8ySEC8bKW8LLTsiUhLe/Bex3IjdWQeNZQQ2GlW1+p6oqKnq3UOIX+VJRp0v86wESqjnOAaOGki9N/jTVhLh+j3OdUSOaSWE58cBWvMOxR/TAh+AcGw0Ohbu+WXe3+DwZkmm90y2QnWUVFf9Xx8Z58BV3bXR7hhIBYI114FdcNSGXJJxCuOCy5aFQfl4Mru3Kbsu41UQZk6hxbJ2+yONfu+JM1JJuTe6kkl3+Q5hDFKLy0v4RbaPulwFITfjpRayAP3kIokb9tE2bXbnn+5XRRM8Yi0gS6MY73x+1k7WiMp/w0lgQoU43QwADEr+YE1O2qmUAViM
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: e03055d1-5eba-4ff7-be5f-08d782847147
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Dec 2019 00:02:44.2226 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 5ae1af62-9505-4097-a69a-c1553ef7840e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: B5bmWXgDxCs/CEA9+P/OdT4bL9uMaAScCZFJrvSkFIXpUvMgTe0LV3gctfRWyytkSCFVhYTcBnyB8Yl5qv9t5Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR11MB3432
+X-OriginatorOrg: cisco.com
+X-Outbound-SMTP-Client: 173.37.102.14, xch-rcd-004.cisco.com
+X-Outbound-Node: alln-core-9.cisco.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_153107_188141_8894CDA5 
-X-CRM114-Status: GOOD (  18.32  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191216_160255_560066_226F9212 
+X-CRM114-Status: GOOD (  13.02  )
+X-Spam-Score: -12.7 (------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-12.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.65 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ high trust [173.37.86.76 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [173.37.86.76 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,156 +162,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
- Randy Dunlap <rdunlap@infradead.org>, Tomer Maimon <tmaimon77@gmail.com>,
- devicetree@vger.kernel.org, Frederic Barrat <fbarrat@linux.vnet.ibm.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Lee Jones <lee.jones@linaro.org>,
- Jason M Biils <jason.m.bills@linux.intel.com>,
- Eric Sandeen <sandeen@redhat.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jonathan Corbet <corbet@lwn.net>, openbmc@lists.ozlabs.org,
- linux-doc@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Joel Stanley <joel@jms.id.au>, "Bryant G . Ly" <bryantly@linux.vnet.ibm.com>,
- Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de>,
- David Kershner <david.kershner@unisys.com>, Wu Hao <hao.wu@intel.com>,
- linux-hwmon@vger.kernel.org, Jean Delvare <jdelvare@suse.com>,
- Arnd Bergmann <arnd@arndb.de>, Philippe Ombredanne <pombredanne@nexb.com>,
- Johan Hovold <johan@kernel.org>, Tomohiro Kusumi <kusumi.tomohiro@gmail.com>,
- Rob Herring <robh+dt@kernel.org>,
- Stef van Os <stef.van.os@prodrive-technologies.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Sagar Dharia <sdharia@codeaurora.org>, linux-arm-kernel@lists.infradead.org,
- Alan Cox <alan@linux.intel.com>, Juergen Gross <jgross@suse.com>,
- Cyrille Pitchen <cyrille.pitchen@wedev4u.fr>, Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Darrick J . Wong" <darrick.wong@oracle.com>,
- Stephen Boyd <sboyd@codeaurora.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>, Vinod Koul <vkoul@kernel.org>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- "David S . Miller" <davem@davemloft.net>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "xe-linux-external\(mailer list\)" <xe-linux-external@cisco.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTIvMTYvMjAxOSAzOjI3IFBNLCBHdWVudGVyIFJvZWNrIHdyb3RlOgo+IE9uIE1vbiwgRGVj
-IDE2LCAyMDE5IGF0IDAyOjE3OjM0UE0gLTA4MDAsIEphZSBIeXVuIFlvbyB3cm90ZToKPj4gWy4u
-Ll0KPj4KPj4+Pj4+ICtzdGF0aWMgaW50IGdldF9kaW1tX3RlbXAoc3RydWN0IHBlY2lfZGltbXRl
-bXAgKnByaXYsIGludCBkaW1tX25vKQo+Pj4+Pj4gK3sKPj4+Pj4+ICvCoMKgwqAgaW50IGRpbW1f
-b3JkZXIgPSBkaW1tX25vICUgcHJpdi0+Z2VuX2luZm8tPmRpbW1faWR4X21heDsKPj4+Pj4+ICvC
-oMKgwqAgaW50IGNoYW5fcmFuayA9IGRpbW1fbm8gLyBwcml2LT5nZW5faW5mby0+ZGltbV9pZHhf
-bWF4Owo+Pj4+Pj4gK8KgwqDCoCBzdHJ1Y3QgcGVjaV9yZF9wY2lfY2ZnX2xvY2FsX21zZyBycF9t
-c2c7Cj4+Pj4+PiArwqDCoMKgIHU4wqAgY2ZnX2RhdGFbNF07Cj4+Pj4+PiArwqDCoMKgIGludCBy
-ZXQ7Cj4+Pj4+PiArCj4+Pj4+PiArwqDCoMKgIGlmICghcGVjaV9zZW5zb3JfbmVlZF91cGRhdGUo
-JnByaXYtPnRlbXBbZGltbV9ub10pKQo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgIHJldHVybiAwOwo+
-Pj4+Pj4gKwo+Pj4+Pj4gK8KgwqDCoCByZXQgPSByZWFkX2Rkcl9kaW1tX3RlbXBfY29uZmlnKHBy
-aXYsIGNoYW5fcmFuaywgY2ZnX2RhdGEpOwo+Pj4+Pj4gK8KgwqDCoCBpZiAocmV0KQo+Pj4+Pj4g
-K8KgwqDCoMKgwqDCoMKgIHJldHVybiByZXQ7Cj4+Pj4+PiArCj4+Pj4+PiArwqDCoMKgIHByaXYt
-PnRlbXBbZGltbV9ub10udmFsdWUgPSBjZmdfZGF0YVtkaW1tX29yZGVyXSAqIDEwMDA7Cj4+Pj4+
-PiArCj4+Pj4+PiArwqDCoMKgIHN3aXRjaCAocHJpdi0+Z2VuX2luZm8tPm1vZGVsKSB7Cj4+Pj4+
-PiArwqDCoMKgIGNhc2UgSU5URUxfRkFNNl9TS1lMQUtFX1g6Cj4+Pj4+PiArwqDCoMKgwqDCoMKg
-wqAgcnBfbXNnLmFkZHIgPSBwcml2LT5tZ3ItPmNsaWVudC0+YWRkcjsKPj4+Pj4+ICvCoMKgwqDC
-oMKgwqDCoCBycF9tc2cuYnVzID0gMjsKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCAvKgo+Pj4+Pj4g
-K8KgwqDCoMKgwqDCoMKgwqAgKiBEZXZpY2UgMTAsIEZ1bmN0aW9uIDI6IElNQyAwIGNoYW5uZWwg
-MCAtPiByYW5rIDAKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgICogRGV2aWNlIDEwLCBGdW5jdGlv
-biA2OiBJTUMgMCBjaGFubmVsIDEgLT4gcmFuayAxCj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoCAq
-IERldmljZSAxMSwgRnVuY3Rpb24gMjogSU1DIDAgY2hhbm5lbCAyIC0+IHJhbmsgMgo+Pj4+Pj4g
-K8KgwqDCoMKgwqDCoMKgwqAgKiBEZXZpY2UgMTIsIEZ1bmN0aW9uIDI6IElNQyAxIGNoYW5uZWwg
-MCAtPiByYW5rIDMKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgICogRGV2aWNlIDEyLCBGdW5jdGlv
-biA2OiBJTUMgMSBjaGFubmVsIDEgLT4gcmFuayA0Cj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoCAq
-IERldmljZSAxMywgRnVuY3Rpb24gMjogSU1DIDEgY2hhbm5lbCAyIC0+IHJhbmsgNQo+Pj4+Pj4g
-K8KgwqDCoMKgwqDCoMKgwqAgKi8KPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBycF9tc2cuZGV2aWNl
-ID0gMTAgKyBjaGFuX3JhbmsgLyAzICogMiArCj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqAgKGNoYW5fcmFuayAlIDMgPT0gMiA/IDEgOiAwKTsKPj4+Pj4+ICvCoMKgwqDC
-oMKgwqDCoCBycF9tc2cuZnVuY3Rpb24gPSBjaGFuX3JhbmsgJSAzID09IDEgPyA2IDogMjsKPj4+
-Pj4+ICvCoMKgwqDCoMKgwqDCoCBycF9tc2cucmVnID0gMHgxMjAgKyBkaW1tX29yZGVyICogNDsK
-Pj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBycF9tc2cucnhfbGVuID0gNDsKPj4+Pj4+ICsKPj4+Pj4+
-ICvCoMKgwqDCoMKgwqDCoCByZXQgPSBwZWNpX2NvbW1hbmQocHJpdi0+bWdyLT5jbGllbnQtPmFk
-YXB0ZXIsCj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIFBFQ0lf
-Q01EX1JEX1BDSV9DRkdfTE9DQUwsICZycF9tc2cpOwo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgIGlm
-IChycF9tc2cuY2MgIT0gUEVDSV9ERVZfQ0NfU1VDQ0VTUykKPj4+Pj4+ICvCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgIHJldCA9IC1FQUdBSU47Cj4+Pj4+PiArwqDCoMKgwqDCoMKgwqAgaWYgKHJldCkK
-Pj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldHVybiByZXQ7Cj4+Pj4+PiArCj4+Pj4+
-PiArwqDCoMKgwqDCoMKgwqAgcHJpdi0+dGVtcF9tYXhbZGltbV9ub10gPSBycF9tc2cucGNpX2Nv
-bmZpZ1sxXSAqIDEwMDA7Cj4+Pj4+PiArwqDCoMKgwqDCoMKgwqAgcHJpdi0+dGVtcF9jcml0W2Rp
-bW1fbm9dID0gcnBfbXNnLnBjaV9jb25maWdbMl0gKiAxMDAwOwo+Pj4+Pj4gK8KgwqDCoMKgwqDC
-oMKgIGJyZWFrOwo+Pj4+Pj4gK8KgwqDCoCBjYXNlIElOVEVMX0ZBTTZfU0tZTEFLRV9YRDoKPj4+
-Pj4+ICvCoMKgwqDCoMKgwqDCoCBycF9tc2cuYWRkciA9IHByaXYtPm1nci0+Y2xpZW50LT5hZGRy
-Owo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgIHJwX21zZy5idXMgPSAyOwo+Pj4+Pj4gK8KgwqDCoMKg
-wqDCoMKgIC8qCj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoCAqIERldmljZSAxMCwgRnVuY3Rpb24g
-MjogSU1DIDAgY2hhbm5lbCAwIC0+IHJhbmsgMAo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqAgKiBE
-ZXZpY2UgMTAsIEZ1bmN0aW9uIDY6IElNQyAwIGNoYW5uZWwgMSAtPiByYW5rIDEKPj4+Pj4+ICvC
-oMKgwqDCoMKgwqDCoMKgICogRGV2aWNlIDEyLCBGdW5jdGlvbiAyOiBJTUMgMSBjaGFubmVsIDAg
-LT4gcmFuayAyCj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoCAqIERldmljZSAxMiwgRnVuY3Rpb24g
-NjogSU1DIDEgY2hhbm5lbCAxIC0+IHJhbmsgMwo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqAgKi8K
-Pj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBycF9tc2cuZGV2aWNlID0gMTAgKyBjaGFuX3JhbmsgLyAy
-ICogMjsKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBycF9tc2cuZnVuY3Rpb24gPSAoY2hhbl9yYW5r
-ICUgMikgPyA2IDogMjsKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBycF9tc2cucmVnID0gMHgxMjAg
-KyBkaW1tX29yZGVyICogNDsKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBycF9tc2cucnhfbGVuID0g
-NDsKPj4+Pj4+ICsKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCByZXQgPSBwZWNpX2NvbW1hbmQocHJp
-di0+bWdyLT5jbGllbnQtPmFkYXB0ZXIsCj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgIFBFQ0lfQ01EX1JEX1BDSV9DRkdfTE9DQUwsICZycF9tc2cpOwo+Pj4+Pj4g
-K8KgwqDCoMKgwqDCoMKgIGlmIChycF9tc2cuY2MgIT0gUEVDSV9ERVZfQ0NfU1VDQ0VTUykKPj4+
-Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldCA9IC1FQUdBSU47Cj4+Pj4+PiArwqDCoMKg
-wqDCoMKgwqAgaWYgKHJldCkKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJldHVybiBy
-ZXQ7Cj4+Pj4+PiArCj4+Pj4+PiArwqDCoMKgwqDCoMKgwqAgcHJpdi0+dGVtcF9tYXhbZGltbV9u
-b10gPSBycF9tc2cucGNpX2NvbmZpZ1sxXSAqIDEwMDA7Cj4+Pj4+PiArwqDCoMKgwqDCoMKgwqAg
-cHJpdi0+dGVtcF9jcml0W2RpbW1fbm9dID0gcnBfbXNnLnBjaV9jb25maWdbMl0gKiAxMDAwOwo+
-Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgIGJyZWFrOwo+Pj4+Pj4gK8KgwqDCoCBjYXNlIElOVEVMX0ZB
-TTZfSEFTV0VMTF9YOgo+Pj4+Pj4gK8KgwqDCoCBjYXNlIElOVEVMX0ZBTTZfQlJPQURXRUxMX1g6
-Cj4+Pj4+PiArwqDCoMKgwqDCoMKgwqAgcnBfbXNnLmFkZHIgPSBwcml2LT5tZ3ItPmNsaWVudC0+
-YWRkcjsKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBycF9tc2cuYnVzID0gMTsKPj4+Pj4+ICvCoMKg
-wqDCoMKgwqDCoCAvKgo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqAgKiBEZXZpY2UgMjAsIEZ1bmN0
-aW9uIDA6IElNQyAwIGNoYW5uZWwgMCAtPiByYW5rIDAKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKg
-ICogRGV2aWNlIDIwLCBGdW5jdGlvbiAxOiBJTUMgMCBjaGFubmVsIDEgLT4gcmFuayAxCj4+Pj4+
-PiArwqDCoMKgwqDCoMKgwqDCoCAqIERldmljZSAyMSwgRnVuY3Rpb24gMDogSU1DIDAgY2hhbm5l
-bCAyIC0+IHJhbmsgMgo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqAgKiBEZXZpY2UgMjEsIEZ1bmN0
-aW9uIDE6IElNQyAwIGNoYW5uZWwgMyAtPiByYW5rIDMKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKg
-ICogRGV2aWNlIDIzLCBGdW5jdGlvbiAwOiBJTUMgMSBjaGFubmVsIDAgLT4gcmFuayA0Cj4+Pj4+
-PiArwqDCoMKgwqDCoMKgwqDCoCAqIERldmljZSAyMywgRnVuY3Rpb24gMTogSU1DIDEgY2hhbm5l
-bCAxIC0+IHJhbmsgNQo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqAgKiBEZXZpY2UgMjQsIEZ1bmN0
-aW9uIDA6IElNQyAxIGNoYW5uZWwgMiAtPiByYW5rIDYKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKg
-ICogRGV2aWNlIDI0LCBGdW5jdGlvbiAxOiBJTUMgMSBjaGFubmVsIDMgLT4gcmFuayA3Cj4+Pj4+
-PiArwqDCoMKgwqDCoMKgwqDCoCAqLwo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgIHJwX21zZy5kZXZp
-Y2UgPSAyMCArIGNoYW5fcmFuayAvIDIgKyBjaGFuX3JhbmsgLyA0Owo+Pj4+Pj4gK8KgwqDCoMKg
-wqDCoMKgIHJwX21zZy5mdW5jdGlvbiA9IGNoYW5fcmFuayAlIDI7Cj4+Pj4+PiArwqDCoMKgwqDC
-oMKgwqAgcnBfbXNnLnJlZyA9IDB4MTIwICsgZGltbV9vcmRlciAqIDQ7Cj4+Pj4+PiArwqDCoMKg
-wqDCoMKgwqAgcnBfbXNnLnJ4X2xlbiA9IDQ7Cj4+Pj4+PiArCj4+Pj4+PiArwqDCoMKgwqDCoMKg
-wqAgcmV0ID0gcGVjaV9jb21tYW5kKHByaXYtPm1nci0+Y2xpZW50LT5hZGFwdGVyLAo+Pj4+Pj4g
-K8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBQRUNJX0NNRF9SRF9QQ0lfQ0ZH
-X0xPQ0FMLCAmcnBfbXNnKTsKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBpZiAocnBfbXNnLmNjICE9
-IFBFQ0lfREVWX0NDX1NVQ0NFU1MpCj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCByZXQg
-PSAtRUFHQUlOOwo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgIGlmIChyZXQpCj4+Pj4+PiArwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gcmV0Owo+Pj4+Pj4gKwo+Pj4+Pj4gK8KgwqDCoMKgwqDC
-oMKgIHByaXYtPnRlbXBfbWF4W2RpbW1fbm9dID0gcnBfbXNnLnBjaV9jb25maWdbMV0gKiAxMDAw
-Owo+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgIHByaXYtPnRlbXBfY3JpdFtkaW1tX25vXSA9IHJwX21z
-Zy5wY2lfY29uZmlnWzJdICogMTAwMDsKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCBicmVhazsKPj4+
-Pj4+ICvCoMKgwqAgZGVmYXVsdDoKPj4+Pj4+ICvCoMKgwqDCoMKgwqDCoCByZXR1cm4gLUVPUE5P
-VFNVUFA7Cj4+Pj4+Cj4+Pj4+IEl0IGxvb2tzIGxpa2UgdGhlIHNlbnNvcnMgYXJlIGNyZWF0ZWQg
-ZXZlbiBvbiB1bnN1cHBvcnRlZCBwbGF0Zm9ybXMsCj4+Pj4+IHdoaWNoIHdvdWxkIGdlbmVyYXRl
-IGVycm9yIG1lc3NhZ2VzIHdoZW5ldmVyIHNvbWVvbmUgdHJpZXMgdG8gcmVhZAo+Pj4+PiB0aGUg
-YXR0cmlidXRlcy4KPj4+Pj4KPj4+Pj4gVGhlcmUgc2hvdWxkIGJlIHNvbWUgY29kZSBlYXJseSBv
-biBjaGVja2luZyB0aGlzLCBhbmQgdGhlIGRyaXZlcgo+Pj4+PiBzaG91bGQgbm90IGV2ZW4gaW5z
-dGFudGlhdGUgaWYgdGhlIENQVSBtb2RlbCBpcyBub3Qgc3VwcG9ydGVkLgo+Pj4+Cj4+Pj4gQWN0
-dWFsbHksIHRoaXMgJ2RlZmF1bHQnIGNhc2Ugd2lsbCBub3QgYmUgaGFwcGVuZWQgYmVjYXVzZSB0
-aGlzIGRyaXZlcgo+Pj4+IHdpbGwgYmUgcmVnaXN0ZXJlZCBvbmx5IHdoZW4gdGhlIENQVSBtb2Rl
-bCBpcyBzdXBwb3J0ZWQuIFRoZSBDUFUgbW9kZWwKPj4+PiBjaGVja2luZyBjb2RlIGlzIGluICdp
-bnRlbC1wZWNpLWNsaWVudC5jJyB3aGljaCBpcyBbMTEvMTRdIG9mIHRoaXMKPj4+PiBwYXRjaCBz
-ZXQuCj4+Pj4KPj4+Cj4+PiBUaGF0IGFnYWluIGFzc3VtZXMgdGhhdCBib3RoIGRyaXZlcnMgd2ls
-bCBiZSBtb2RpZmllZCBpbiBzeW5jIGluIHRoZSBmdXR1cmUuCj4+PiBXZSBjYW4gbm90IG1ha2Ug
-dGhhdCBhc3N1bXB0aW9uLgo+Pgo+PiBBcyB5b3Ugc2FpZCwgYm90aCBkcml2ZXJzIG11c3QgYmUg
-bW9kaWZpZWQgaW4gc3luYyBpbiB0aGUgZnV0dXJlIGJlY2F1c2UKPj4gZWFjaCBJbnRlbCBDUFUg
-ZmFtaWx5IHVzZXMgZGlmZmVyZW50IHdheSBvZiByZWFkaW5nIERJTU0gdGVtcGVyYXR1cmUuCj4+
-IEluIGNhc2UgaWYgc3VwcG9ydGVkIENQVSBjaGVja2luZyBjb2RlIHVwZGF0ZWQgd2l0aG91dCBt
-YWtpbmcgc3luYyB3aXRoCj4+IGl0LCB0aGlzIGRyaXZlciB3aWxsIHJldHVybiB0aGUgZXJyb3Iu
-Cj4+Cj4gCj4gLi4uIGFuZCBpbiB0aGF0IHNpdHVhdGlvbiB0aGUgZHJpdmVyIHNob3VsZCBub3Qg
-aW5zdGFudGlhdGUgaW4gdGhlCj4gZmlyc3QgcGxhY2UuIEl0cyBwcm9iZSBmdW5jdGlvbiBzaG91
-bGQgcmV0dXJuIC1FTk9ERVYuCgpHb3QgdGhlIHBvaW50LiBJJ2xsIGFkZCB0aGUgY2hlY2tpbmcg
-Y29kZSBldmVuIGluIHRoaXMgZHJpdmVyIG1vZHVsZQp0b28uCgpUaGFua3MgYSBsb3QhCgotSmFl
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+Hello Kernel Maintainers,
+
+Crash dump  Kernel doesn't work with FLATMEM memory model since version 4.11.0-rc3 and it 
+will panic at boot time with a page request exception. The crash happens while kernel is initializing
+the memmap zones inside memmap_init_zone function. FLATMEM memory model is very useful
+for systems with limited memory resources where it is desirable to reserve as minimum as possible
+memory for the crash kernel. 
+I'm wondering if this is a known issue or there is a patch to fix it?
+
+-- Crash Dump Kernel starts here--
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x411fd070]
+[    0.000000] Linux version 5.5.0-rc1 (user@host) (gcc version 4.7.0 (GCC)) #163 SMP PREEMPT Tue Dec 10 11:12:37 PST 2019
+[    0.000000] Machine model: linux,dummy-virt
+[    0.000000] earlycon: pl11 at MMIO 0x0000000009000000 (options '')
+[    0.000000] printk: bootconsole [pl11] enabled
+[    0.000000] efi: Getting EFI parameters from FDT:
+[    0.000000] efi: UEFI not found.
+[    0.000000] Reserving 1KB of memory at 0xbfdff000 for elfcorehdr
+[    0.000000] On node 0 totalpages: 8192
+[    0.000000]   DMA zone: 128 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 8192 pages, LIFO batch:0
+[    0.000000] Unable to handle kernel paging request at virtual address ffffff8040ccf0b8
+[    0.000000] Mem abort info:
+[    0.000000]   ESR = 0x96000045
+[    0.000000]   EC = 0x25: DABT (current EL), IL = 32 bits
+[    0.000000]   SET = 0, FnV = 0
+[    0.000000]   EA = 0, S1PTW = 0
+[    0.000000] Data abort info:
+[    0.000000]   ISV = 0, ISS = 0x00000045
+[    0.000000]   CM = 0, WnR = 1
+[    0.000000] swapper pgtable: 4k pages, 39-bit VAs, pgdp=00000000bf068000
+[    0.000000] [ffffff8040ccf0b8] pgd=0000000000000000, pud=0000000000000000
+[    0.000000] Internal error: Oops: 96000045 [#1] PREEMPT SMP
+[    0.000000] Modules linked in:
+[    0.000000] CPU: 0 PID: 0 Comm: swapper Not tainted 5.5.0-rc1 #163
+[    0.000000] Hardware name: linux,dummy-virt (DT)
+[    0.000000] pstate: 20000085 (nzCv daIf -PAN -UAO)
+[    0.000000] pc : memmap_init_zone+0x68/0xe0
+[    0.000000] lr : memmap_init+0x14/0x1c
+[    0.000000] sp : ffffffc011773d60
+[    0.000000] x29: ffffffc011773d60 x28: ffffffc01131e000
+[    0.000000] x27: ffffffc011949680 x26: ffffffc011949680
+[    0.000000] x25: 0000000000000000 x24: ffffffc011999000
+[    0.000000] x23: 0000000000001000 x22: ffffffc0111db000
+[    0.000000] x21: 0000000000000001 x20: 00000000ffffffff
+[    0.000000] x19: 00000000000bfe00 x18: 000000001fbad8f6
+[    0.000000] x17: fffffffefe695030 x16: ffffffc010c5f000
+[    0.000000] x15: 0000000000000002 x14: ffffffffffffffff
+[    0.000000] x13: 0000000000000000 x12: 0000000000000640
+[    0.000000] x11: 00000000bfdff400 x10: 00000000000bde00
+[    0.000000] x9 : 0000000000000078 x8 : ffffff803fdfffc8
+[    0.000000] x7 : 0000000000000000 x6 : 00000000bfdfffc0
+[    0.000000] x5 : ffffff803fd57080 x4 : 0000000000000000
+[    0.000000] x3 : 00000000000bde00 x2 : 0000000000000000
+[    0.000000] x1 : 0000000000f78000 x0 : ffffff8040ccf080
+[    0.000000] Call trace:
+[    0.000000]  memmap_init_zone+0x68/0xe0
+[    0.000000]  memmap_init+0x14/0x1c
+[    0.000000]  free_area_init_node+0x39c/0x3ec
+[    0.000000]  bootmem_init+0x158/0x174
+[    0.000000]  setup_arch+0x290/0x64c
+[    0.000000]  start_kernel+0x5c/0x480
+[    0.000000] Code: f945c705 cb813061 d37ae421 8b0100a0 (f9001c1f)
+[    0.000000] random: get_random_bytes called from init_oops_id+0x3c/0x48 with crng_init=0
+[    0.000000] ---[ end trace 0000000000000000 ]---
+[    0.000000] Kernel panic - not syncing: Attempted to kill the idle task!
+[    0.000000] ---[ end Kernel panic - not syncing: Attempted to kill the idle task! ]---
+
+Kernel Config:
+- Running qemu - default arm64 config 
+- 39 bit VA addresses, 
+- NUMA is disbaled
+- FLATMEM as memory model
+
+FLATMEM became broken after submission of these two patches: 
+commit 8f579b1c4e347b23bfa747bc2cc0a55dd1b7e5fa      arm64: limit memory regions based on DT property, usable-memory-range
+commit a7f8de168ace487fa7b88cb154e413cf40e87fc6       arm64: allow kernel Image to be loaded anywhere in physical memory
+
+The first patch limits the available kernel memory to what has been passed to crash kernel from the main kernel via device tree. 
+
+Breakpoint 1, fdt_enforce_memory_region () at arch/arm64/mm/init.c:213
+220                     memblock_cap_memory_range(reg.base, reg.size);
+(gdb) p/x reg
+$2 = {base = 0xbde00000, size = 0x2000000, flags = 0x0}
+
+Later on, arm64_memblock_init() will 1GB align the base address and it will round it down to 0x80000000 (=memstart_addr)
+
+arm64_memblock_init () at arch/arm64/mm/init.c:343
+240             memstart_addr = round_down(memblock_start_of_DRAM(),
+241                                        ARM64_MEMSTART_ALIGN);
+ (gdb) p/x memstart_addr
+$6 = 0x80000000
+
+The crash happens inside mm/page_alloc.c:memmap_init_zone() when kernel tries to initialize the first pfn of ZONE_DMA. The code
+ would calculate a wrong page structure pointer which is pointing beyond the end address of available memory.
+
+Breakpoint 3 at 0xffffff8008d463f0: file mm/page_alloc.c, line 5196.
+<-- Snip -->
+5276                            struct page *page = pfn_to_page(pfn);
+(gdb) p/x pfn
+$14 = 0xbde00
+(gdb) p/x page
+$16 = 0xffffffc040cd5780
+(gdb) p *page
+Cannot access memory at address 0xffffffc040cd5780
+
+for FLATMEM model pfn_to_page is defined as:
+#define __pfn_to_page(pfn)       (mem_map + ((pfn) - ARCH_PFN_OFFSET))
+ (gdb) p/x mem_map
+$17 = 0xffffffc03fd5d780
+ (gdb) x 0xffffffc040cd5780
+0xffffffc040cd5780:     Cannot access memory at address 0xffffffc040cd5780
+
+It looks like in expansion of the pfn_to_page() macro, if the kernel start address is not 1GB aligned, this part of macro ((pfn)-ARCH_PFN_OFFSET) 
+can create a huge offset from the base address of mem_map which will cause the calculated page address to point a location outside of the 
+available memory boundaries.
+
+Regards,
+Saeed Karimabadi
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
