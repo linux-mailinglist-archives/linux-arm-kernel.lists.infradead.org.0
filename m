@@ -2,138 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0EE5122FCB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 16:10:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 424AC122FCE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 16:10:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ktCTLAwFfWJZbyYq2w50usPMHlR5qes1wdI8hNUvs3s=; b=Y+Be5PNgg53ipm
-	QH89QH5/NvQHhmxozaD9VlzzD3VapCeNRVN/WFEO4DlB7gNP+92PjZHGHDysbrbINC+kgCXNMQ5Of
-	fIblMq2v+kau2uSG2E4WRA1vV1PHmISv+p6Ms5WJznsUB9/0BeJLLzkL4I1RWtdhySwn/lEZjdtMh
-	FSgF/LxygxF1EaAqSs3VtAwjz5M/ds3Ae4yiBv45tdv5BnnEfCfRb9ce/6F/GvwzuI6Gy4Ulc8Z4b
-	sc4pYqKS+KYw8hCEGTDmKL0TsIJxEpWHavhDw6fjl6BlrLgFYhLpZMlqSZyduthDCS85/zrul+srl
-	o9iQkKJO/ZacmLZ+d3vg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=H4koIoTD4bcToBE7XlwTzzldxSBTDu5+eFYiJx8YTt0=; b=PjX6pEKY9CS7+/
+	8Z0lIb49WbRbfMPG7TBFHt0I5eTEcyn5/r0pZzdHi2jW/fjyQP5VREY5/iFKTaXFvtYmbwwrTBPc6
+	tGj7UIxXRT54BAKVjWY5b9ZSZmszbxs2pmfXVVJmr5w/C5ovVh+yL9zVBvbEtWVvSMSZ/0mBlXp7W
+	YjA5C2AANX/kl9/ArHZ2eAR6z1CNKD756vQWyJM3iRPCtFv57qFbugecKHjgMLszjMNaRbes5niy1
+	nO1jmUSU1kEmqW6OVqTj2dIny7jsEEo8bJPyB1VjfVDnEwusP8jIfr+S6Inxx0SFIL/XHJdxz8Gq0
+	Wzj8DOrmpl7E/F0a6LnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihEUO-0008Fy-Ik; Tue, 17 Dec 2019 15:10:20 +0000
-Received: from mail-bn8nam12on2058.outbound.protection.outlook.com
- ([40.107.237.58] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
+	id 1ihEUe-0008Oh-7X; Tue, 17 Dec 2019 15:10:36 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihEUE-0007tu-PL
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 15:10:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Y/8O/Pg1WUfidmmlyh2Fl29zboEg8LY2zqemvv55gNpg1XR/jCcqTpIwKAQZvo6JUZCmIjoQEc4VsW9/gIPmCo82Z9nvbO85eMBE/TmIqUIJz0dN0E2UUxK2l7ZuA2u+TLlKc6H/W9cpqWsIbDbcoSDYLq9c9NYahRmiFk2EUrKQHhiVZ4grMD9e7nX4/zUnLkGNRKrDJzDiWrNFuzZR+MSXRM25jgrD83VBWh6zWTNDHC/jwAPBb7a2kHPJ9kqyZK+Qp36H8Hsw62BpURbNNx1E/13AxCweuO4MRftWONRPFGbWLovo3AHowT752WO/GWKXfpYP2ekm7zU43AYsjQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nnxs+AqOKWiciRH6hd4oTxx7mhTYdlElqpx3JVVf670=;
- b=e0Tp6lMCOaG2T9bFSI5qnW5QtwDd69WSmuOMBuFXOQxL7tjOIA5/Oyqmx57NCwaaAtGtloWAshQJxDqZAIPJRsE3REbonwegyV/iOT1am3XYIrn5bdkhlHlyZMI6ZNcXU/LoXdZguT8FC0D4APL1VuuzL5s6Tojy49suCxOzF22fXkZNL29zdO3c08DlIgjXx6O27ZcoCIJbpKjxyaX8wOwJpO2oSXrY1b+5Yg7a1z+fweS7f7GRpHXXRasCMfLaYlyd18pKWJmcjGtsH6wR02zJzHPqlkeIkWJ6uNtsXpX47EGm0QBDaF5lfEYMbK2dU93dSUcthgkd9Hn3vVar6w==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=linaro.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nnxs+AqOKWiciRH6hd4oTxx7mhTYdlElqpx3JVVf670=;
- b=fTrln1VxlkToffk70hwgMOv3xldI9rQlMEKL+HBOOk5ohLlE2Zg7SlASIhhjVtFjMnwXCjOfUXokdxwgPUkfLAZv34fhCcRD6VD9dnlpWgudAcmEOW6cqbsrQS5IVt7QuJaPlZvP7KjiD3nlTcu2W1G5ToYN0F0mYy90RKvTD7s=
-Received: from CY4PR01CA0021.prod.exchangelabs.com (2603:10b6:903:1f::31) by
- BYAPR02MB5480.namprd02.prod.outlook.com (2603:10b6:a03:9a::22) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2538.16; Tue, 17 Dec 2019 15:10:04 +0000
-Received: from CY1NAM02FT030.eop-nam02.prod.protection.outlook.com
- (2603:10b6:903:1f:cafe::b8) by CY4PR01CA0021.outlook.office365.com
- (2603:10b6:903:1f::31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2559.14 via Frontend
- Transport; Tue, 17 Dec 2019 15:10:04 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; linaro.org; dkim=none (message not signed)
- header.d=none;linaro.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- CY1NAM02FT030.mail.protection.outlook.com (10.152.75.163) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2538.14
- via Frontend Transport; Tue, 17 Dec 2019 15:10:03 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1ihEU7-0000xT-BT; Tue, 17 Dec 2019 07:10:03 -0800
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1ihEU2-0004H5-86; Tue, 17 Dec 2019 07:09:58 -0800
-Received: from xsj-pvapsmtp01 (mail.xilinx.com [149.199.38.66] (may be forged))
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xBHF9uXI000328; 
- Tue, 17 Dec 2019 07:09:56 -0800
-Received: from [172.30.17.107] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1ihETz-0004Gq-PJ; Tue, 17 Dec 2019 07:09:55 -0800
-Subject: Re: [PATCH] clocksource/drivers: Fix error handling in
- ttc_setup_clocksource
-To: Daniel Lezcano <daniel.lezcano@linaro.org>,
- Navid Emamdoost <navid.emamdoost@gmail.com>,
- Michal Simek <michal.simek@xilinx.com>
-References: <2a6cdb63-397b-280a-7379-740e8f43ddf6@xilinx.com>
- <20191023044737.2824-1-navid.emamdoost@gmail.com>
- <CAEkB2ETvi=Zryh+3UnSddrprnB+MzSObAbsms+6LHHLuiRwZjw@mail.gmail.com>
- <26da3a6b-60f3-d09b-6eff-7a3db8234d64@linaro.org>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <ff7aa6a0-3cfd-dab3-f187-7b93131378db@xilinx.com>
-Date: Tue, 17 Dec 2019 16:09:53 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1ihEUE-00082B-FF
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 15:10:12 +0000
+Received: by mail-lf1-x144.google.com with SMTP id 203so7199585lfa.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Dec 2019 07:10:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=eUTrNBFHG/sAPGjlCYuWIo9b6x1mG1NQsBvY0wsEHmI=;
+ b=WVAhB0bjZYVQ66fxE+plmcgt4T3/9sq9s7KGFU2i73bwhIACPNOM0Ke57ACOjhpIyM
+ FmLp4sU83rpA4PC+XeDx31H78V1T6ZyQ5nUZycZFjTy1FaPlQSiw9zVEKgaYD3cvb33m
+ YtAXoXG46RHbLkLOd/Vd3tiMy9mnlC8/IJDFCkvWujJYivVyTCqoSqFyGlnl/oePC3TV
+ TgFq5Cqc+Z2w+SGOXDl8WPCGa0ZyIhG1t8pJlljjyBnySCW+nnGqCo3uMy3SjeBrxX4b
+ 67XF74M9kmR2fjTceZotrIO4rbCI42jZDXSJnGE5YtZEj5Hy8hB7KnXOH/7IjnlEd69r
+ DzUQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=eUTrNBFHG/sAPGjlCYuWIo9b6x1mG1NQsBvY0wsEHmI=;
+ b=P62YTwMehSVvZs/RYd0ihJqqTWrmug1x/xH0+m6TgEhGMhuqTn/ztqQ8UPEox8NKRW
+ LOWj5M7843rYUceclNovo6vSgPbJH1pmeDlb62UvOsFaZT6Lp3bUYZhbmCZtzDb/3G+9
+ dHSPNJR/UZ3dZ/m03QT8bPdL+VjfyA6mDVnzhnBJmwyrtPA9hBiG2bKC29t1jVzwlXdD
+ p8v6DtyAtJqEwqkextR/awlvpcpqFrn1AtKAW88rRv+cbSRXV76erzd9MFd63EurlSSJ
+ /2sM4IAsGIj4Q0CNdUk7qtwDvadVPHTIrPYApG4w2/6kWIpvYO+utcYRlItzHgHXRlNA
+ nayg==
+X-Gm-Message-State: APjAAAXEGaJmTYJ2A4VKKgXDd8FxCJ3t3x8dR1KiuKx1sikyUX0SWibi
+ aZMlxasCo9b17RQzKQt8Wd9maQ==
+X-Google-Smtp-Source: APXvYqy/7UHwJMBarYWqYGkZFDWJi5F8XnYjIwXYIh+YrMZKqMKJiXVmNy8VIrhw34tFcSKZbvabnA==
+X-Received: by 2002:ac2:5983:: with SMTP id w3mr3080768lfn.137.1576595406343; 
+ Tue, 17 Dec 2019 07:10:06 -0800 (PST)
+Received: from localhost.bredbandsbolaget
+ (c-21cd225c.014-348-6c756e10.bbcust.telenor.se. [92.34.205.33])
+ by smtp.gmail.com with ESMTPSA id t27sm12862094ljd.26.2019.12.17.07.10.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 17 Dec 2019 07:10:05 -0800 (PST)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: dri-devel@lists.freedesktop.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <mripard@kernel.org>, Sean Paul <sean@poorly.run>
+Subject: [PATCH v6] drm/mcde: Some fixes to handling video mode
+Date: Tue, 17 Dec 2019 16:09:59 +0100
+Message-Id: <20191217150959.17215-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <26da3a6b-60f3-d09b-6eff-7a3db8234d64@linaro.org>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(346002)(396003)(136003)(39860400002)(199004)(189003)(44832011)(2616005)(70206006)(70586007)(2906002)(5660300002)(4744005)(9786002)(336012)(356004)(426003)(186003)(31686004)(36756003)(53546011)(478600001)(26005)(8936002)(31696002)(316002)(110136005)(54906003)(4326008)(81166006)(81156014)(8676002)(42866002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB5480; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 6c81bdcc-e28f-4972-ed79-08d7830331c5
-X-MS-TrafficTypeDiagnostic: BYAPR02MB5480:
-X-Microsoft-Antispam-PRVS: <BYAPR02MB54800BCD6882887FA8369AB5C6500@BYAPR02MB5480.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
-X-Forefront-PRVS: 02543CD7CD
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: qxknuBnoPeiI4gCj9QupBEpAcXuQJ5+Yr4p3bWoacz4J+WpTjQJS61CCmEhNrD7Lg/Kb1CUaFCpxPoREq+dJnN/V/AYrturc4jY0v4R2vwBTkqBM8sObq3FCznc/uOxYfAUbDABuguedX1Q68cfP08RDyIlMY88Y2X3WWykNAn2QXcThOQy62mzkBUeozF8F0Iu16uR3ignJO8YB/0lLu+vnkrwJ13SvCTSiZj8uWwDPevuZ+HhYEjdP4xiOUrSUOt8YrgSl5ImDgR8xmeSsxy/xeTG5WBJIrk+3gJULh+EZ/nUGKdJhGd/FEc7fxobssRYR8eRuBQCsN/qIar+fW98ywzc8uKsU+xJ/oYZSHq7Jm91vZhXf4Z+6rfXkPDj5XeOdWAsQGnK2K+q5hXhGoluDx4B1x64SSdL/0SqD7EQjV6WZZymJxwZjtUKN+/PokI+pk5c9p4YK/Ro/aCGnyJIxphc5W8PnmcW3Hj00kuku413xWQKvd2BWgGnxQW+u
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Dec 2019 15:10:03.8109 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6c81bdcc-e28f-4972-ed79-08d7830331c5
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5480
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_071010_823219_743A61B0 
-X-CRM114-Status: GOOD (  12.32  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191217_071010_532396_0251EA4E 
+X-CRM114-Status: GOOD (  31.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.237.58 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -145,34 +97,452 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Gleixner <tglx@linutronix.de>, Navid Emamdoost <emamd001@umn.edu>,
- LKML <linux-kernel@vger.kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Stephan Gerhold <stephan@gerhold.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 16. 12. 19 14:41, Daniel Lezcano wrote:
-> 
-> Hi Navid,
-> 
-> On 14/12/2019 23:54, Navid Emamdoost wrote:
->> Would you review this patch, please?
-> 
-> please fix the version number, send without in-reply-to.
-> 
-> Do the same for the other patch:
-> 
-> clocksource/drivers: Fix memory leak in ttc_setup_clockevent
-> 
-> It is a bit confuse what patch is ok or not.
+The video DSI mode had not really been tested. These fixes makes
+it more likely to work on real hardware:
+- Put the active width (x width) in the right bits and the VSA
+  (vertical sync active) in the right bits (those were swapped).
+- Calculate the packet sizes in bytes as in the vendor driver,
+  rather than in bits. Test the calculations agains a
+  spreadsheet and confirmed by debug prints to be reasonable.
+- Also verified the register values with relative confidence
+  to register dumps from the Samsung GT-I8190 boot loader
+  graphics. We are not identical but not off by far either.
+- Error out if the current mode and refresh frequency doesn't
+  work out. (In the future we may simply want to scale down
+  the vrefresh.)
+- Handle negative result in front/back/sync packages and fall
+  back to zero like in the vendor driver.
+- Put in lots of clarifying comments and references to the
+  documentation where the code is hard to understand.
+- Set the DSI_VID_VCA_SETTING2 field
+  DSI_VID_VCA_SETTING2_MAX_LINE_LIMIT to blkline_pck - 6 as in
+  the vendor driver and mask the field properly.
+- Set the DSI_VID_VCA_SETTING1 field
+  DSI_VID_VCA_SETTING1_MAX_BURST_LIMIT to blkeol_pck - 6 to
+  blkeol_duration - 6 as in the vendor driver.
 
-+1 on this. And patch looks good to me but as I said before the same
-changes should be done also in ttc_setup_clockevent. It means v2 with
-these two things together is the best way to go.
+Cc: Stephan Gerhold <stephan@gerhold.net>
+Fixes: 5fc537bfd000 ("drm/mcde: Add new driver for ST-Ericsson MCDE")
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ChangeLog v5->v6:
+- DSI_VID_VCA_SETTING1_MAX_BURST_LIMIT should be blkeol_pck - 6
+  not blkeol_duration - 6.
+- Parenthesize some calculations.
+ChangeLog v4->v5:
+- Restore log order, last verstion of the changelog inadvertedly
+  merged v3 and v4 into v3 since I thought I didn't send out v3...
+- Parens in blkeol_pck = bpl - (mode->htotal * cpp) - 6 for
+  explicit priority.
+- Use mask-and-set for DSI_VID_PCK_TIME and DSI_VID_VCA_SETTING1
+- Restore DSI_VID_VCA_SETTING2 field
+  DSI_VID_VCA_SETTING2_MAX_LINE_LIMIT to blkline_pck - 6 as in
+  the vendor driver and mask the field properly.
+ChangeLog v3->v4:
+- Calculate toward actual HS rate of the clock rather than the
+  idealized rate provided by the panel resolution, this is what
+  the vendor driver does.
+- Add much comments and elaborate with references to the manual
+  so the code can be understood as far as possible.
+- Compared register dumps to that on the Samsung GT-I8190 (Golden)
+  boot loader settings. We are now reasonably close to these,
+  it may be that the boot loader driver is using slightly different
+  settings for porches and syncs etc. But all figures makes sense.
+- Duplicated the vendor code in a spread sheet and compared to
+  what this code gives and we have an identical match with one
+  small exception that the vendor code adds a small padding of 2
+  lines to the vertical blanking area. This looks weird and might
+  be some hackishly specified porch.
+ChangeLog v2->v3:
+- Rename the "bpp" variable to "cpp" since it is "chars per pixel"
+  this was confusingly named in the vendor driver and it got
+  carried over.
+- Assign the SETTING2_EXACT_BURST_LIMIT by first shifting
+  then masking.
+- Also mask with the inverse of DSI_VID_BLKSIZE1_BLKEOL_PCK_MASK
+  before writing blkeol into DSI_VID_BLKSIZE1, so we make sure
+  to zero these bits first.
+- Also mask with DSI_VID_BLKSIZE1_BLKLINE_EVENT_PCK_MASK
+  when writing event package length.
+- Comb through the code and compare it to vendor code and try
+  to get closer to doing what the vendor driver is doing.
+ChangeLog v1->v2:
+- Fix some more comments so we understand what is going on.
+- Set up the maximum line limit size in the right register
+  instead of setting it in the burst size register portion.
+- Set some default wakeup time other than zero (still need
+  fixing more).
+---
+ drivers/gpu/drm/mcde/mcde_dsi.c      | 239 +++++++++++++++++++++------
+ drivers/gpu/drm/mcde/mcde_dsi_regs.h |   1 +
+ 2 files changed, 192 insertions(+), 48 deletions(-)
 
-Thanks,
-Michal
+diff --git a/drivers/gpu/drm/mcde/mcde_dsi.c b/drivers/gpu/drm/mcde/mcde_dsi.c
+index 21cee4d9d2fd..6613c68c0633 100644
+--- a/drivers/gpu/drm/mcde/mcde_dsi.c
++++ b/drivers/gpu/drm/mcde/mcde_dsi.c
+@@ -379,13 +379,14 @@ void mcde_dsi_te_request(struct mipi_dsi_device *mdsi)
+ static void mcde_dsi_setup_video_mode(struct mcde_dsi *d,
+ 				      const struct drm_display_mode *mode)
+ {
+-	u8 bpp = mipi_dsi_pixel_format_to_bpp(d->mdsi->format);
++	/* cpp, characters per pixel, number of bytes per pixel */
++	u8 cpp = mipi_dsi_pixel_format_to_bpp(d->mdsi->format) / 8;
++	u64 pclk;
+ 	u64 bpl;
+-	u32 hfp;
+-	u32 hbp;
+-	u32 hsa;
++	int hfp;
++	int hbp;
++	int hsa;
+ 	u32 blkline_pck, line_duration;
+-	u32 blkeol_pck, blkeol_duration;
+ 	u32 val;
+ 
+ 	val = 0;
+@@ -422,11 +423,21 @@ static void mcde_dsi_setup_video_mode(struct mcde_dsi *d,
+ 		return;
+ 	}
+ 
+-	/* TODO: TVG could be enabled here */
++	/* TODO: TVG (test video generator) could be enabled here */
+ 
+-	/* Send blanking packet */
++	/*
++	 * During vertical blanking: go to LP mode
++	 * Like with the EOL setting, if this is not set, the EOL area will be
++	 * filled with NULL or blanking packets in the vblank area.
++	 * FIXME: some Samsung phones and display panels such as s6e63m0 use
++	 * DSI_VID_MAIN_CTL_REG_BLKLINE_MODE_BLANKING here instead,
++	 * figure out how to properly configure that from the panel.
++	 */
+ 	val |= DSI_VID_MAIN_CTL_REG_BLKLINE_MODE_LP_0;
+-	/* Send EOL packet */
++	/*
++	 * During EOL: go to LP mode. If this is not set, the EOL area will be
++	 * filled with NULL or blanking packets.
++	 */
+ 	val |= DSI_VID_MAIN_CTL_REG_BLKEOL_MODE_LP_0;
+ 	/* Recovery mode 1 */
+ 	val |= 1 << DSI_VID_MAIN_CTL_RECOVERY_MODE_SHIFT;
+@@ -434,13 +445,13 @@ static void mcde_dsi_setup_video_mode(struct mcde_dsi *d,
+ 	writel(val, d->regs + DSI_VID_MAIN_CTL);
+ 
+ 	/* Vertical frame parameters are pretty straight-forward */
+-	val = mode->vdisplay << DSI_VID_VSIZE_VSA_LENGTH_SHIFT;
++	val = mode->vdisplay << DSI_VID_VSIZE_VACT_LENGTH_SHIFT;
+ 	/* vertical front porch */
+ 	val |= (mode->vsync_start - mode->vdisplay)
+ 		<< DSI_VID_VSIZE_VFP_LENGTH_SHIFT;
+ 	/* vertical sync active */
+ 	val |= (mode->vsync_end - mode->vsync_start)
+-		<< DSI_VID_VSIZE_VACT_LENGTH_SHIFT;
++		<< DSI_VID_VSIZE_VSA_LENGTH_SHIFT;
+ 	/* vertical back porch */
+ 	val |= (mode->vtotal - mode->vsync_end)
+ 		<< DSI_VID_VSIZE_VBP_LENGTH_SHIFT;
+@@ -448,36 +459,54 @@ static void mcde_dsi_setup_video_mode(struct mcde_dsi *d,
+ 
+ 	/*
+ 	 * Horizontal frame parameters:
+-	 * horizontal resolution is given in pixels and must be re-calculated
+-	 * into bytes since this is what the hardware expects.
++	 * horizontal resolution is given in pixels but must be re-calculated
++	 * into bytes since this is what the hardware expects, these registers
++	 * define the payload size of the packet.
++	 *
++	 * hfp = horizontal front porch in bytes
++	 * hbp = horizontal back porch in bytes
++	 * hsa = horizontal sync active in bytes
+ 	 *
+ 	 * 6 + 2 is HFP header + checksum
+ 	 */
+-	hfp = (mode->hsync_start - mode->hdisplay) * bpp - 6 - 2;
++	hfp = (mode->hsync_start - mode->hdisplay) * cpp - 6 - 2;
+ 	if (d->mdsi->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE) {
+ 		/*
++		 * Use sync pulse for sync: explicit HSA time
+ 		 * 6 is HBP header + checksum
+ 		 * 4 is RGB header + checksum
+ 		 */
+-		hbp = (mode->htotal - mode->hsync_end) * bpp - 4 - 6;
++		hbp = (mode->htotal - mode->hsync_end) * cpp - 4 - 6;
+ 		/*
+ 		 * 6 is HBP header + checksum
+ 		 * 4 is HSW packet bytes
+ 		 * 4 is RGB header + checksum
+ 		 */
+-		hsa = (mode->hsync_end - mode->hsync_start) * bpp - 4 - 4 - 6;
++		hsa = (mode->hsync_end - mode->hsync_start) * cpp - 4 - 4 - 6;
+ 	} else {
+ 		/*
+-		 * HBP includes both back porch and sync
++		 * Use event for sync: HBP includes both back porch and sync
+ 		 * 6 is HBP header + checksum
+ 		 * 4 is HSW packet bytes
+ 		 * 4 is RGB header + checksum
+ 		 */
+-		hbp = (mode->htotal - mode->hsync_start) * bpp - 4 - 4 - 6;
+-		/* HSA is not considered in this mode and set to 0 */
++		hbp = (mode->htotal - mode->hsync_start) * cpp - 4 - 4 - 6;
++		/* HSA is not present in this mode and set to 0 */
++		hsa = 0;
++	}
++	if (hfp < 0) {
++		dev_info(d->dev, "hfp negative, set to 0\n");
++		hfp = 0;
++	}
++	if (hbp < 0) {
++		dev_info(d->dev, "hbp negative, set to 0\n");
++		hbp = 0;
++	}
++	if (hsa < 0) {
++		dev_info(d->dev, "hsa negative, set to 0\n");
+ 		hsa = 0;
+ 	}
+-	dev_dbg(d->dev, "hfp: %u, hbp: %u, hsa: %u\n",
++	dev_dbg(d->dev, "hfp: %u, hbp: %u, hsa: %u bytes\n",
+ 		hfp, hbp, hsa);
+ 
+ 	/* Frame parameters: horizontal sync active */
+@@ -488,71 +517,185 @@ static void mcde_dsi_setup_video_mode(struct mcde_dsi *d,
+ 	val |= hfp << DSI_VID_HSIZE1_HFP_LENGTH_SHIFT;
+ 	writel(val, d->regs + DSI_VID_HSIZE1);
+ 
+-	/* RGB data length (bytes on one scanline) */
+-	val = mode->hdisplay * (bpp / 8);
++	/* RGB data length (visible bytes on one scanline) */
++	val = mode->hdisplay * cpp;
+ 	writel(val, d->regs + DSI_VID_HSIZE2);
++	dev_dbg(d->dev, "RGB length, visible area on a line: %u bytes\n", val);
+ 
+-	/* TODO: further adjustments for TVG mode here */
++	/*
++	 * Calculate the time between two pixels in picoseconds using
++	 * the supplied refresh rate and total resolution including
++	 * porches and sync.
++	 */
++	/* (ps/s) / (pixels/s) = ps/pixels */
++	pclk = DIV_ROUND_UP_ULL(1000000000000,
++				(mode->vrefresh * mode->htotal * mode->vtotal));
++	dev_dbg(d->dev, "picoseconds between two pixels: %llu\n",
++		pclk);
+ 
+ 	/*
+-	 * EOL packet length from bits per line calculations: pixel clock
+-	 * is given in kHz, calculate the time between two pixels in
+-	 * picoseconds.
++	 * How many bytes per line will this update frequency yield?
++	 *
++	 * Calculate the number of picoseconds for one scanline (1), then
++	 * divide by 1000000000000 (2) to get in pixels per second we
++	 * want to output.
++	 *
++	 * Multiply with number of bytes per second at this video display
++	 * frequency (3) to get number of bytes transferred during this
++	 * time. Notice that we use the frequency the display wants,
++	 * not what we actually get from the DSI PLL, which is hs_freq.
++	 *
++	 * These arithmetics are done in a different order to avoid
++	 * overflow.
+ 	 */
+-	bpl = mode->clock * mode->htotal;
+-	bpl *= (d->hs_freq / 8);
+-	do_div(bpl, 1000000); /* microseconds */
+-	do_div(bpl, 1000000); /* seconds */
++	bpl = pclk * mode->htotal; /* (1) picoseconds per line */
++	dev_dbg(d->dev, "picoseconds per line: %llu\n", bpl);
++	/* Multiply with bytes per second (3) */
++	bpl *= (d->mdsi->hs_rate / 8);
++	/* Pixels per second (2) */
++	bpl = DIV_ROUND_DOWN_ULL(bpl, 1000000); /* microseconds */
++	bpl = DIV_ROUND_DOWN_ULL(bpl, 1000000); /* seconds */
++	/* parallel transactions in all lanes */
+ 	bpl *= d->mdsi->lanes;
+-	dev_dbg(d->dev, "calculated bytes per line: %llu\n", bpl);
++	dev_dbg(d->dev,
++		"calculated bytes per line: %llu @ %d Hz with HS %lu Hz\n",
++		bpl, mode->vrefresh, d->mdsi->hs_rate);
++
+ 	/*
+ 	 * 6 is header + checksum, header = 4 bytes, checksum = 2 bytes
+ 	 * 4 is short packet for vsync/hsync
+ 	 */
+ 	if (d->mdsi->mode_flags & MIPI_DSI_MODE_VIDEO_SYNC_PULSE) {
+-		/* Fixme: isn't the hsync width in pixels? */
++		/* Set the event packet size to 0 (not used) */
++		writel(0, d->regs + DSI_VID_BLKSIZE1);
++		/*
++		 * FIXME: isn't the hsync width in pixels? The porch and
++		 * sync area size is in pixels here, but this -6
++		 * seems to be for bytes. It looks like this in the vendor
++		 * code though. Is it completely untested?
++		 */
+ 		blkline_pck = bpl - (mode->hsync_end - mode->hsync_start) - 6;
+ 		val = blkline_pck << DSI_VID_BLKSIZE2_BLKLINE_PULSE_PCK_SHIFT;
+ 		writel(val, d->regs + DSI_VID_BLKSIZE2);
+ 	} else {
++		/* Set the sync pulse packet size to 0 (not used) */
++		writel(0, d->regs + DSI_VID_BLKSIZE2);
++		/* Specifying payload size in bytes (-4-6 from manual) */
+ 		blkline_pck = bpl - 4 - 6;
++		if (blkline_pck > 0x1FFF)
++			dev_err(d->dev, "blkline_pck too big %d bytes\n",
++				blkline_pck);
+ 		val = blkline_pck << DSI_VID_BLKSIZE1_BLKLINE_EVENT_PCK_SHIFT;
++		val &= DSI_VID_BLKSIZE1_BLKLINE_EVENT_PCK_MASK;
+ 		writel(val, d->regs + DSI_VID_BLKSIZE1);
+ 	}
+ 
+-	line_duration = (blkline_pck + 6) / d->mdsi->lanes;
+-	dev_dbg(d->dev, "line duration %u\n", line_duration);
++	/*
++	 * The line duration is used to scale back the frequency from
++	 * the max frequency supported by the HS clock to the desired
++	 * update frequency in vrefresh.
++	 */
++	line_duration = blkline_pck + 6;
++	/*
++	 * The datasheet contains this complex condition to decreasing
++	 * the line duration by 1 under very specific circumstances.
++	 * Here we also imply that LP is used during burst EOL.
++	 */
++	if (d->mdsi->lanes == 2 && (hsa & 0x01) && (hfp & 0x01)
++	    && (d->mdsi->mode_flags & MIPI_DSI_MODE_VIDEO_BURST))
++		line_duration--;
++	line_duration = DIV_ROUND_CLOSEST(line_duration, d->mdsi->lanes);
++	dev_dbg(d->dev, "line duration %u bytes\n", line_duration);
+ 	val = line_duration << DSI_VID_DPHY_TIME_REG_LINE_DURATION_SHIFT;
+ 	/*
+ 	 * This is the time to perform LP->HS on D-PHY
+ 	 * FIXME: nowhere to get this from: DT property on the DSI?
++	 * The manual says this is "system dependent".
++	 * values like 48 and 72 seen in the vendor code.
+ 	 */
+-	val |= 0 << DSI_VID_DPHY_TIME_REG_WAKEUP_TIME_SHIFT;
++	val |= 48 << DSI_VID_DPHY_TIME_REG_WAKEUP_TIME_SHIFT;
+ 	writel(val, d->regs + DSI_VID_DPHY_TIME);
+ 
+-	/* Calculate block end of line */
+-	blkeol_pck = bpl - mode->hdisplay * bpp - 6;
+-	blkeol_duration = (blkeol_pck + 6) / d->mdsi->lanes;
+-	dev_dbg(d->dev, "blkeol pck: %u, duration: %u\n",
+-		 blkeol_pck, blkeol_duration);
+-
++	/*
++	 * See the manual figure 657 page 2203 for understanding the impact
++	 * of the different burst mode settings.
++	 */
+ 	if (d->mdsi->mode_flags & MIPI_DSI_MODE_VIDEO_BURST) {
+-		/* Set up EOL clock for burst mode */
++		int blkeol_pck, blkeol_duration;
++		/*
++		 * Packet size at EOL for burst mode, this is only used
++		 * if DSI_VID_MAIN_CTL_REG_BLKEOL_MODE_LP_0 is NOT set,
++		 * but we instead send NULL or blanking packets at EOL.
++		 * This is given in number of bytes.
++		 *
++		 * See the manual page 2198 for the 13 reg_blkeol_pck bits.
++		 */
++		blkeol_pck = bpl - (mode->htotal * cpp) - 6;
++		if (blkeol_pck < 0) {
++			dev_err(d->dev, "video block does not fit on line!\n");
++			dev_err(d->dev,
++				"calculated bytes per line: %llu @ %d Hz\n",
++				bpl, mode->vrefresh);
++			dev_err(d->dev,
++				"bytes per line (blkline_pck) %u bytes\n",
++				blkline_pck);
++			dev_err(d->dev,
++				"blkeol_pck becomes %d bytes\n", blkeol_pck);
++			return;
++		}
++		dev_dbg(d->dev, "BLKEOL packet: %d bytes\n", blkeol_pck);
++
+ 		val = readl(d->regs + DSI_VID_BLKSIZE1);
++		val &= ~DSI_VID_BLKSIZE1_BLKEOL_PCK_MASK;
+ 		val |= blkeol_pck << DSI_VID_BLKSIZE1_BLKEOL_PCK_SHIFT;
+ 		writel(val, d->regs + DSI_VID_BLKSIZE1);
+-		writel(blkeol_pck, d->regs + DSI_VID_VCA_SETTING2);
+-
+-		writel(blkeol_duration, d->regs + DSI_VID_PCK_TIME);
+-		writel(blkeol_duration - 6, d->regs + DSI_VID_VCA_SETTING1);
++		/* Use the same value for exact burst limit */
++		val = blkeol_pck <<
++			DSI_VID_VCA_SETTING2_EXACT_BURST_LIMIT_SHIFT;
++		val &= DSI_VID_VCA_SETTING2_EXACT_BURST_LIMIT_MASK;
++		writel(val, d->regs + DSI_VID_VCA_SETTING2);
++		/*
++		 * This BLKEOL duration is claimed to be the duration in clock
++		 * cycles of the BLLP end-of-line (EOL) period for each line if
++		 * DSI_VID_MAIN_CTL_REG_BLKEOL_MODE_LP_0 is set.
++		 *
++		 * It is hard to trust the manuals' claim that this is in clock
++		 * cycles as we mimic the behaviour of the vendor code, which
++		 * appears to write a number of bytes that would have been
++		 * transferred on a single lane.
++		 *
++		 * See the manual figure 657 page 2203 and page 2198 for the 13
++		 * reg_blkeol_duration bits.
++		 *
++		 * FIXME: should this also be set up also for non-burst mode
++		 * according to figure 565 page 2202?
++		 */
++		blkeol_duration = DIV_ROUND_CLOSEST(blkeol_pck + 6,
++						    d->mdsi->lanes);
++		dev_dbg(d->dev, "BLKEOL duration: %d clock cycles\n",
++			blkeol_duration);
++
++		val = readl(d->regs + DSI_VID_PCK_TIME);
++		val &= ~DSI_VID_PCK_TIME_BLKEOL_DURATION_MASK;
++		val |= blkeol_duration <<
++			DSI_VID_PCK_TIME_BLKEOL_DURATION_SHIFT;
++		writel(val, d->regs + DSI_VID_PCK_TIME);
++
++		/* Max burst limit, this is given in bytes */
++		val = readl(d->regs + DSI_VID_VCA_SETTING1);
++		val &= ~DSI_VID_VCA_SETTING1_MAX_BURST_LIMIT_MASK;
++		val |= (blkeol_pck - 6) <<
++			DSI_VID_VCA_SETTING1_MAX_BURST_LIMIT_SHIFT;
++		writel(val, d->regs + DSI_VID_VCA_SETTING1);
+ 	}
+ 
+ 	/* Maximum line limit */
+ 	val = readl(d->regs + DSI_VID_VCA_SETTING2);
+-	val |= blkline_pck <<
+-		DSI_VID_VCA_SETTING2_EXACT_BURST_LIMIT_SHIFT;
++	val &= ~DSI_VID_VCA_SETTING2_MAX_LINE_LIMIT_MASK;
++	val |= (blkline_pck - 6) <<
++		DSI_VID_VCA_SETTING2_MAX_LINE_LIMIT_SHIFT;
+ 	writel(val, d->regs + DSI_VID_VCA_SETTING2);
+-
++	dev_dbg(d->dev, "blkline pck: %d bytes\n", blkline_pck - 6);
+ }
+ 
+ static void mcde_dsi_start(struct mcde_dsi *d)
+diff --git a/drivers/gpu/drm/mcde/mcde_dsi_regs.h b/drivers/gpu/drm/mcde/mcde_dsi_regs.h
+index 8089db805c57..16551af1089e 100644
+--- a/drivers/gpu/drm/mcde/mcde_dsi_regs.h
++++ b/drivers/gpu/drm/mcde/mcde_dsi_regs.h
+@@ -228,6 +228,7 @@
+ 
+ #define DSI_VID_PCK_TIME 0x000000A8
+ #define DSI_VID_PCK_TIME_BLKEOL_DURATION_SHIFT 0
++#define DSI_VID_PCK_TIME_BLKEOL_DURATION_MASK 0x00000FFF
+ 
+ #define DSI_VID_DPHY_TIME 0x000000AC
+ #define DSI_VID_DPHY_TIME_REG_LINE_DURATION_SHIFT 0
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
