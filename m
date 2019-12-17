@@ -2,76 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACFDD1228E7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 11:32:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3263512290F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 11:41:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+En5JkpYzu6EM9wUnbDKu8vqjuXK8S/bZJOA9XblnLk=; b=WpgNKihPHUAX3a
-	fCop0MCnvbzDkAcEJlEkYBKPzTfp0HFt2Y5XWtpgaIkGeH2arGkJs79IiHOJb395xGWYkvjvOXew/
-	9CWuciOjDvEsyPtwfTTR0hLjp7DJMlzsXTT2SEk08KhEyanU6BT1Tj47Rw62Jk7ZDuu6AiNptVDoo
-	5eBCdwZUZCU+CR7LftvD2OdSpO9LOYWlXbduBHeSXBwG+z6wPcGfX53T3/I+QvDjBcz3uoe82OE9o
-	UllGUbD8Xt/0uZNKce8feunCsD3Cv6uF5D8tYTy2lgab+bAtOR0+RMNeuR6FQ6yQ+5R+DmmJS1p4o
-	q4EY+psabKxDlA1QeVeA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/Fz+9r20ttaVxCKgrewYC610IRbRZZKwLqG2628S10g=; b=BJZ3ixo3VS8eMb
+	fINF9wNkv6s63BcoCXzqJMEmkJU8b9Hlwk4+lPwxvZOifVDiHNEj/54FWDsW04lOZKVyipruNbdgl
+	Hda70B57W+NbAsr1EL7WnvzRlbyuyKc8IIdivSnxTZY38Yj9wu2SH0ZhQS7HiWwmEtYMWZY2DZ2wz
+	cuxiiCkrwf3VSwPKy+nan2f4PxH4CNJC0ErJLL89MaZaXRRO9yEuPC0yImLtv7j4Z5EeuRMfCEiKf
+	ZagJJCheRrhHoiWj96GZg7Vh63lzHpCrswSOn4B5yF4lD6OoQu8QXhI4ovNn43p8pTMxX8uTlHQoy
+	zz7qvocppg5KRbxsDApg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihA9p-00039m-I0; Tue, 17 Dec 2019 10:32:49 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1ihAIK-0006q2-NG; Tue, 17 Dec 2019 10:41:36 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihA9c-00038T-0u
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 10:32:37 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBHAWWme076204;
- Tue, 17 Dec 2019 04:32:32 -0600
+ id 1ihAIA-0006pP-7w
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 10:41:27 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBHAfNk5114661;
+ Tue, 17 Dec 2019 04:41:23 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576578752;
- bh=5z22DOMxe9ERTYZQN4IPLEVBrsRz70Mah/Vov2vIbjk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Qie8fWb/48AlIMLVc4ts4LqusyY3F1qPGN4b+o4Xz+bvUjmFuqFw87c+FzZvh9Wm2
- DzvpAJhd9MKV/aRrzCMtXmmv6cF2iXKwF53uu8+poYhTX6tpcaMcU6Jbk3D8+Lqwnw
- lk8QhnMz1yOvOLvhm2CrO6PBPB1F4tuJdnzJPqRw=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBHAWV93068770
+ s=ti-com-17Q1; t=1576579283;
+ bh=6kGmIjNfHqdZqSSE4L9c9Vu8ITPfcmfBO4lOVpn5rIo=;
+ h=From:To:CC:Subject:Date;
+ b=DM7GS2seHa5rf/EfwTB+fD3tjq47Ud8WDX5NkT62OavFHE5zixnKBANet9d02Y2kV
+ VkoRqRTjo9nbiR309GNIzbCAHNcJD58Ns39eUR0ECYzJoQ65vTjqnI6rwcpMuZ8hU9
+ KNttiuzYataLDZ6231gcQdD5wH8Lg7Yx3RxkLgr8=
+Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBHAfN5x052907
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 17 Dec 2019 04:32:31 -0600
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ Tue, 17 Dec 2019 04:41:23 -0600
+Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 17
- Dec 2019 04:32:30 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 04:41:22 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 17 Dec 2019 04:32:30 -0600
-Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBHAWSwp012173;
- Tue, 17 Dec 2019 04:32:29 -0600
-Subject: Re: [PATCH] iio: adc: at91: Use dma_request_chan() instead
- dma_request_slave_channel()
-To: <Eugen.Hristev@microchip.com>, <jic23@kernel.org>
-References: <20191217075043.23539-1-peter.ujfalusi@ti.com>
- <102e71da-8b9c-8528-3bec-b4a22895fb44@microchip.com>
+ Frontend Transport; Tue, 17 Dec 2019 04:41:22 -0600
+Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBHAfJta008859;
+ Tue, 17 Dec 2019 04:41:20 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Message-ID: <d4885bc6-4e3b-42ee-1cf6-c782fa70d3cb@ti.com>
-Date: Tue, 17 Dec 2019 12:32:43 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+To: <mchehab@kernel.org>, <hugues.fruchet@st.com>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>
+Subject: [PATCH] media: stm32-dcmi: Use dma_request_chan() instead
+ dma_request_slave_channel()
+Date: Tue, 17 Dec 2019 12:41:35 +0200
+Message-ID: <20191217104135.23554-1-peter.ujfalusi@ti.com>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-In-Reply-To: <102e71da-8b9c-8528-3bec-b4a22895fb44@microchip.com>
-Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_023236_151033_5A18DF4C 
-X-CRM114-Status: GOOD (  19.95  )
+X-CRM114-CacheID: sfid-20191217_024126_327703_084AC951 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,49 +89,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-iio@vger.kernel.org, vkoul@kernel.org,
- Ludovic.Desroches@microchip.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: vkoul@kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgRXVnZW4sCgpPbiAxNy8xMi8yMDE5IDkuNTksIEV1Z2VuLkhyaXN0ZXZAbWljcm9jaGlwLmNv
-bSB3cm90ZToKPiAKPiAKPiBPbiAxNy4xMi4yMDE5IDA5OjUwLCBQZXRlciBVamZhbHVzaSB3cm90
-ZToKPiAKPj4gZG1hX3JlcXVlc3Rfc2xhdmVfY2hhbm5lbCgpIGlzIGEgd3JhcHBlciBvbiB0b3Ag
-b2YgZG1hX3JlcXVlc3RfY2hhbigpCj4+IGVhdGluZyB1cCB0aGUgZXJyb3IgY29kZS4KPj4KPj4g
-QnkgdXNpbmcgZG1hX3JlcXVlc3RfY2hhbigpIGRpcmVjdGx5IHRoZSBkcml2ZXIgY2FuIHN1cHBv
-cnQgZGVmZXJyZWQKPj4gcHJvYmluZyBhZ2FpbnN0IERNQS4KPj4KPj4gU2lnbmVkLW9mZi1ieTog
-UGV0ZXIgVWpmYWx1c2kgPHBldGVyLnVqZmFsdXNpQHRpLmNvbT4KPj4gLS0tCj4+ICAgZHJpdmVy
-cy9paW8vYWRjL2F0OTEtc2FtYTVkMl9hZGMuYyB8IDYgKysrLS0tCj4+ICAgMSBmaWxlIGNoYW5n
-ZWQsIDMgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKPiAKPiBIaSBQZXRlciwKPiAKPiBU
-aGFuayB5b3UgZm9yIHRoZSBwYXRjaC4KPiBOaXRwaWNrIDogYXQ5MSBpcyBhbm90aGVyIGRyaXZl
-ciAob2xkIG9uZSBmb3IgZGlmZmVyZW50IHBsYXRmb3JtcyksIHNvIAo+IGNhbiB5b3UgcGxlYXNl
-IGNoYW5nZSB0aGUgY29tbWl0IG9uZWxpbmUgdG8gaWlvOiBhZGM6IGF0OTEtc2FtYTVkMl9hZGM6
-IAo+IHRvIG5vdCBiZSBjb25mdXNlZCBhYm91dCB3aGljaCBkcml2ZXIgaXMgYWZmZWN0ZWQuCgpT
-b3JyeSwganVzdCBzZW50IHYyIHdpdGggdGhlIGNvcnJlY3Qgc3ViamVjdCBwcmVmaXguCkJ5IG1p
-c3Rha2UgSSBsb29rZWQgYXQgdGhlIGdpdCBsb2cgb2YgYXQ5MV9hZGMuYyBhbmQgcGlja2VkIHRo
-ZSB3cm9uZwpwcmVmaXguCgo+IAo+IFRoYW5rcyAhCj4gRXVnZW4KPiAKPj4KPj4gZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvaWlvL2FkYy9hdDkxLXNhbWE1ZDJfYWRjLmMgYi9kcml2ZXJzL2lpby9hZGMv
-YXQ5MS1zYW1hNWQyX2FkYy5jCj4+IGluZGV4IGUxODUwZjNkNWNmMy4uYTVjNzc3MTIyN2Q1IDEw
-MDY0NAo+PiAtLS0gYS9kcml2ZXJzL2lpby9hZGMvYXQ5MS1zYW1hNWQyX2FkYy5jCj4+ICsrKyBi
-L2RyaXZlcnMvaWlvL2FkYy9hdDkxLXNhbWE1ZDJfYWRjLmMKPj4gQEAgLTE0NDQsMTAgKzE0NDQs
-MTAgQEAgc3RhdGljIHZvaWQgYXQ5MV9hZGNfZG1hX2luaXQoc3RydWN0IHBsYXRmb3JtX2Rldmlj
-ZSAqcGRldikKPj4gICAgICAgICAgaWYgKHN0LT5kbWFfc3QuZG1hX2NoYW4pCj4+ICAgICAgICAg
-ICAgICAgICAgcmV0dXJuOwo+Pgo+PiAtICAgICAgIHN0LT5kbWFfc3QuZG1hX2NoYW4gPSBkbWFf
-cmVxdWVzdF9zbGF2ZV9jaGFubmVsKCZwZGV2LT5kZXYsICJyeCIpOwo+PiAtCj4+IC0gICAgICAg
-aWYgKCFzdC0+ZG1hX3N0LmRtYV9jaGFuKSAgewo+PiArICAgICAgIHN0LT5kbWFfc3QuZG1hX2No
-YW4gPSBkbWFfcmVxdWVzdF9jaGFuKCZwZGV2LT5kZXYsICJyeCIpOwo+PiArICAgICAgIGlmIChJ
-U19FUlIoc3QtPmRtYV9zdC5kbWFfY2hhbikpICB7Cj4+ICAgICAgICAgICAgICAgICAgZGV2X2lu
-Zm8oJnBkZXYtPmRldiwgImNhbid0IGdldCBETUEgY2hhbm5lbFxuIik7Cj4+ICsgICAgICAgICAg
-ICAgICBzdC0+ZG1hX3N0LmRtYV9jaGFuID0gTlVMTDsKPj4gICAgICAgICAgICAgICAgICBnb3Rv
-IGRtYV9leGl0Owo+PiAgICAgICAgICB9Cj4+Cj4+IC0tCj4+IFBldGVyCj4+Cj4+IFRleGFzIElu
-c3RydW1lbnRzIEZpbmxhbmQgT3ksIFBvcmtrYWxhbmthdHUgMjIsIDAwMTgwIEhlbHNpbmtpLgo+
-PiBZLXR1bm51cy9CdXNpbmVzcyBJRDogMDYxNTUyMS00LiBLb3RpcGFpa2thL0RvbWljaWxlOiBI
-ZWxzaW5raQo+PgoKLSBQw6l0ZXIKClRleGFzIEluc3RydW1lbnRzIEZpbmxhbmQgT3ksIFBvcmtr
-YWxhbmthdHUgMjIsIDAwMTgwIEhlbHNpbmtpLgpZLXR1bm51cy9CdXNpbmVzcyBJRDogMDYxNTUy
-MS00LiBLb3RpcGFpa2thL0RvbWljaWxlOiBIZWxzaW5raQoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+dma_request_slave_channel() is a wrapper on top of dma_request_chan()
+eating up the error code.
+
+By using dma_request_chan() directly the driver can support deferred
+probing against DMA.
+
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+---
+ drivers/media/platform/stm32/stm32-dcmi.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
+index 9392e3409fba..55351872b0c7 100644
+--- a/drivers/media/platform/stm32/stm32-dcmi.c
++++ b/drivers/media/platform/stm32/stm32-dcmi.c
+@@ -1910,10 +1910,10 @@ static int dcmi_probe(struct platform_device *pdev)
+ 		return PTR_ERR(mclk);
+ 	}
+ 
+-	chan = dma_request_slave_channel(&pdev->dev, "tx");
+-	if (!chan) {
++	chan = dma_request_chan(&pdev->dev, "tx");
++	if (IS_ERR(chan)) {
+ 		dev_info(&pdev->dev, "Unable to request DMA channel, defer probing\n");
+-		return -EPROBE_DEFER;
++		return PTR_ERR(chan);
+ 	}
+ 
+ 	spin_lock_init(&dcmi->irqlock);
+-- 
+Peter
+
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
