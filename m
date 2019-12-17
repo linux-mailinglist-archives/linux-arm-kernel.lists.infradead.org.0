@@ -2,136 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09D34122D25
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:40:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4FF7122D29
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:42:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mkcmVtgT7DC3dmH5y0ak0WlDkOVN8TNmN1b7tLaJnfw=; b=nTLPKQtLP7Ddra
-	zUsMuhRAyu8+gatvgOgnbVWvzLTNkT0ZnPNeVH7MDlnrzuz4pen6XrvUeoZxxNRYf/BlRGHgOizI/
-	RCp45O9uQtJ06mO56rsLh7Kegba67W3q8GKYtuaei+/SjWPI/32VOrDtnikR8t0RYsX7AKv5KJao6
-	maeeZDg+KYKKxca9IR+EBTgD14LAZk0OtrnnOm/sdajvAqSDeFzsvMqSC3J4TfYoXk1OM7JCd/5/1
-	pJAzb6NhM6s1l8BVkrRx0gMmdG+Ih3xAwj0hGXUcNzWL5uDCCTqjuoln0sX5E3qDLPS/ylh1iY0ZC
-	lzFp/2dbJWEImK+QnGgQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QEz5mrvOUGomamc8Zua9iiYJxW3F2GB5BoeE1dARA/8=; b=NFfmgOSyWEWr7S
+	qfT/LrO7wBRy1o3F5jrMQpYsmI2EaT87TzJSq66eE9GQCW0ocUyuw7UGn5hZE5b5BKJf+elh1qIRD
+	dG2M3V3SV7om72fHGK5NVHqtHmdD53rJBRyRCF8NwqVOfSJdCCFFwk5eCKCT2pBFBoFGksCbRRCF7
+	oD4XKwBv2W79gMlB37GvG2uYjtjni738fM6T7K5r7iidHsq9h/azWlMjd9+z+mq5S/Y8zFqOzPPZf
+	IAUgTmiWqE6V5gl13Sfbv7bfoCWAVRKEiU3UHfHxPEKlbCpsNd1dflzhRUX/s+YjXPCRkDD4cPla7
+	l/qFRulzTSJ+/ZwNDqXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihD5P-0002YU-Tv; Tue, 17 Dec 2019 13:40:27 +0000
-Received: from mail-eopbgr760077.outbound.protection.outlook.com
- ([40.107.76.77] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
+	id 1ihD75-0002s2-At; Tue, 17 Dec 2019 13:42:11 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihD5H-0002Wz-KQ
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 13:40:21 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BY3i0y5iSqA6GUyTT91ItczGVwWFALZlPUmiEqbLBbfQjCN+Oyzfg9lgk1PzngoHdPzGYLTmz+qiX9fd3qnhnwZDG22LeHFlieQztlM2BEnRQSPhbj0m4R49f6w6rq0QFoW+gMriG4tp4aeWrlUwZsMMhxd8z4nqyLraZiJ/gHbLxUVyJSYQao/uDpzUh2Jh4kV9imVjNbBpkdJkJz4fR6NKVI+b9F8wShCCWi0FfbgW+yvEShUPJAZ1SLy/jDquEYcBTW1tnagH+RND/UGUJF3FGt3exgEqBCghf2KKJ8wCKnc9pRvppdzOL0Q955N1xqQ+FYC3H2paqxo81nnqAg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6I4/TRESJ1IE0o5Z8+a8Z1I/i6193Gvyu8oh9mHdJkY=;
- b=Z2k+rZEpu2WfABBp6J/uJXTFRqXzfu4Y3B3kmMIO5pkdo6rH+MDRV91KFgyVDBfGj8rrxuv3X0clW5oUXz/fe2pdwjg7VHNmj5Il2hxnpDUdyd5bcPkG3n40gfTXsIJNcEkNtW7L8OFuVThwHSOANd1X0OVFO8cUAs+I6GlHlRkkPiVIYStgJrDOAhTDVHRXUr6qNJbAAAZiYdWM1XA/xMjoi9M7csy8IjMeYW2JiF5XagWnou0N4LOSbQiGmgsHEDTAY1syn8O/CZkJo/U9Phoxv0Ad6F/d4/E75vqPzheJ6+pqbrT4VFDwXEwfbIzUYQFZxb5pxdqQutvVhcclCA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6I4/TRESJ1IE0o5Z8+a8Z1I/i6193Gvyu8oh9mHdJkY=;
- b=OqqNbjP5bpi5SI6OaHhyrrIEQ5nRvRJh0icOw+RGB1KEfnp9saE+zs5jMEttKrDWkrZ9mGgx1iJCaBcGO6tTobGdf7g410bHtBSdd/JqJEqVqsw8ffpuH8pOvTAF5PY9p1UZvTMtHbrqBqTzncKE0o7OEm/qR66vslXw7AgpYXk=
-Received: from MN2PR16CA0022.namprd16.prod.outlook.com (2603:10b6:208:134::35)
- by MWHPR02MB2605.namprd02.prod.outlook.com (2603:10b6:300:42::7) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2538.16; Tue, 17 Dec
- 2019 13:40:14 +0000
-Received: from BL2NAM02FT025.eop-nam02.prod.protection.outlook.com
- (2603:10b6:208:134:cafe::33) by MN2PR16CA0022.outlook.office365.com
- (2603:10b6:208:134::35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2538.15 via Frontend
- Transport; Tue, 17 Dec 2019 13:40:13 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- BL2NAM02FT025.mail.protection.outlook.com (10.152.77.151) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2538.14
- via Frontend Transport; Tue, 17 Dec 2019 13:40:13 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1ihD5A-0000e8-Oj; Tue, 17 Dec 2019 05:40:12 -0800
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1ihD55-0000mG-LL; Tue, 17 Dec 2019 05:40:07 -0800
-Received: from xsj-pvapsmtp01 (mailman.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id xBHDe3Bm010609; 
- Tue, 17 Dec 2019 05:40:04 -0800
-Received: from [172.30.17.107] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1ihD51-0000ZE-FN; Tue, 17 Dec 2019 05:40:03 -0800
-Subject: Re: [PATCH v3 0/2] drivers: soc: xilinx: Add support for init suspend
-To: Rajan Vaja <rajan.vaja@xilinx.com>, sre@kernel.org, robh+dt@kernel.org,
- mark.rutland@arm.com, michal.simek@xilinx.com, jolly.shah@xilinx.com,
- tejas.patel@xilinx.com
-References: <1574412258-17988-1-git-send-email-rajan.vaja@xilinx.com>
- <1575283131-9339-1-git-send-email-rajan.vaja@xilinx.com>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <4528868a-d443-b761-a334-b0f6035da790@xilinx.com>
-Date: Tue, 17 Dec 2019 14:40:00 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1ihD6u-0002r0-5B
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 13:42:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1576590114; bh=6t8Uyc2t+Hfu7WNUKCMbkr4L5H0F8zqAfk4qlpdk8x0=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=FzufCbM2RGiDa9KFXYh0vsRZPe9nbbhyIHzSdQd52wvGFJkd5ZK0G66OD7aV8hDXi
+ qIqLxNfM/QYUQ5tEvNr5Pn7IOWSHGm26DeX5swmUsLYsM1orNDDIYQf7QTuNUtp9Rm
+ MjcdSsmiIdOgK8PxdtrqvsdMvmoGQAqwKawP1lo4=
+Date: Tue, 17 Dec 2019 14:41:54 +0100
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Stefan Wahren <wahrenst@gmx.net>
+Subject: Re: [PATCH V4 01/10] bluetooth: hci_bcm: Fix RTS handling during
+ startup
+Message-ID: <20191217134154.zrvukziiqe272pq6@core.my.home>
+Mail-Followup-To: Stefan Wahren <wahrenst@gmx.net>,
+ Marcel Holtmann <marcel@holtmann.org>,
+ Johan Hedberg <johan.hedberg@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ linux-bluetooth@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+References: <1570375708-26965-1-git-send-email-wahrenst@gmx.net>
+ <1570375708-26965-2-git-send-email-wahrenst@gmx.net>
+ <61789264-a4c2-ac85-9d74-d186213ec70a@gmx.net>
+ <20191216132509.ofqcdpwxsd7324ql@core.my.home>
+ <6f05f4d8-fa84-ae81-ac4f-00ab12fabeea@gmx.net>
+ <5bbda434-d0e4-7162-8634-9900a4fa9148@gmx.net>
 MIME-Version: 1.0
-In-Reply-To: <1575283131-9339-1-git-send-email-rajan.vaja@xilinx.com>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(376002)(136003)(39860400002)(346002)(189003)(199004)(6636002)(15650500001)(478600001)(8676002)(81156014)(2616005)(81166006)(336012)(2906002)(36756003)(70586007)(44832011)(26005)(356004)(426003)(70206006)(4744005)(5660300002)(4326008)(186003)(316002)(9786002)(8936002)(31696002)(31686004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR02MB2605; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 00d88661-8ba2-4d89-bb53-08d782f6a4cf
-X-MS-TrafficTypeDiagnostic: MWHPR02MB2605:
-X-Microsoft-Antispam-PRVS: <MWHPR02MB2605F29836D1FC64C3CE0E65C6500@MWHPR02MB2605.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:6790;
-X-Forefront-PRVS: 02543CD7CD
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: jvjdYcPCwaINo4HtpFHvJsvzil1FvZslnZaHwZ0d64KUvpQocCanzEzMc2dPaccK4p4A+nkDXGOgzRkj+oDx/DERrBQTmyVR2STvTazKF+gIBDL7AHLKAEBumq4BbntzP+lGNLdPkL3Q3Ktm3r0ckHiHhA4okIuac8huGTullttRs8+fedWbcKmxCEuZugFxaXAx02Nq1l7g2amtrS/d3Ctp3wMtIx88UVQITdnX8kb+58xGxygFmtRwpZNeggnWsbJUsnTQXtb8m7E2pJkuzMXeytDGEaYgCZQj/YGAyKZgWNxeNnYYBOYRV1YSzM6okU+oXRp6bFah4fpwbAhr3DDoQ5B3LgRvtIVDyuFwVslexd937/8TcnPb7pY+WN4RepYtKkG6BtdwIOzaPGJw2PE4ep7v1+fzp00KkE0HqjpwgTd7ksmgTcRv4c8iTuqq
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Dec 2019 13:40:13.3116 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 00d88661-8ba2-4d89-bb53-08d782f6a4cf
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR02MB2605
+Content-Disposition: inline
+In-Reply-To: <5bbda434-d0e4-7162-8634-9900a4fa9148@gmx.net>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_054019_675384_9A374D35 
-X-CRM114-Status: GOOD (  14.23  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191217_054200_541342_B0B58CB6 
+X-CRM114-Status: GOOD (  11.78  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.76.77 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -143,44 +81,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Johan Hedberg <johan.hedberg@gmail.com>, Marcel Holtmann <marcel@holtmann.org>,
+ linux-bluetooth@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02. 12. 19 11:38, Rajan Vaja wrote:
-> Add support for init suspend in xilinx soc driver. Also update
-> documentation of zynqmp-power with IPI mailbox property.
-> 
-> Changes in v3:
->  - [PATCH v2 2/2] :
->    - select MAILBOX and ZYNQMP_IPI_MBOX as it is required in zynqmp
->      power driver.
-> Changes in v2:
->  - [PATCH 1/2] :
->    - Correct order of tx and rx in mbox-names property.
->    - Add interrupts property in example.
-> 
-> Rajan Vaja (1):
->   dt-bindings: power: reset: xilinx: Add bindings for ipi mailbox
-> 
-> Tejas Patel (1):
->   drivers: soc: xilinx: Use mailbox IPI callback
-> 
->  .../bindings/power/reset/xlnx,zynqmp-power.txt     |  43 +++++++-
->  drivers/soc/xilinx/Kconfig                         |   6 +-
->  drivers/soc/xilinx/zynqmp_power.c                  | 119 ++++++++++++++++++---
->  3 files changed, 151 insertions(+), 17 deletions(-)
-> 
-
-Queue for v5.6 and added to zynqmp/soc branch.
-
-Thanks,
-Michal
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgU3RlZmFuLAoKT24gVHVlLCBEZWMgMTcsIDIwMTkgYXQgMDE6NTk6MjZQTSArMDEwMCwgU3Rl
+ZmFuIFdhaHJlbiB3cm90ZToKPiBIaSBPbmRyZWosCj4gCj4gQW0gMTYuMTIuMTkgdW0gMTk6Mjgg
+c2NocmllYiBTdGVmYW4gV2FocmVuOgo+ID4gSGkgT25kcmVqLAo+ID4KPiA+IEFtIDE2LjEyLjE5
+IHVtIDE0OjI1IHNjaHJpZWIgT25kxZllaiBKaXJtYW46Cj4gPj4KPiA+PiBNZWFud2hpbGUgaSB3
+aWxsIHBsYXkgd2l0aCBtb2RpZmljYXRpb25zIG9mIG9yaWdpbmFsIHBhdGNoIG9uIHRoZQo+ID4+
+IFJhc3BiZXJyeSBQaSA0IGFuZCBjb21lIGJhY2sgdG8geW91Lgo+IAo+IGNvdWxkIHlvdSBwbGVh
+c2UgdGVzdCB0aGlzIHBhdGNoIFsyXSBvbiB0b3Agb2YgY3VycmVudCBibHVldG9vdGgtbmV4dD8K
+PiAKPiBUaGlzIGlzIHRoZSBzb2x1dGlvbiBpbiBjYXNlIHdlIGRvbid0IGZpbmQgdGhlIGNhdXNl
+IG9mIHRoaXMgaXNzdWUuIEkKPiBkb24ndCBwcmVmZXIgdGhpcyBvbmUsIGJlY2F1c2UgdGhpcyBp
+cyBuZXh0IHN0dWZmIGFuZCB3ZSBuZWVkIHRvIHJldmVydAo+IHRoZSBvZmZlbmRpbmcgcGF0Y2gg
+Zm9yIExpbnV4IDUuNS4KPiAKPiBbMl0gLSBodHRwczovL2dpc3QuZ2l0aHViLmNvbS9sYXRlZ29v
+ZGJ5ZS8zZDM5ZTRiMDdkNDAxZjA3ZmE5ZjljMmYxMWUxZjE3ZAoKVGhhdCBsb29rcyBlcXVpdmFs
+ZW50IHRvIHRoZSByZXZlcnQgYW5kIGl0IHdpbGwgb2J2aW91c2x5IGF2b2lkIHRoZSBpc3N1ZSwK
+YmVjYXVzZSBPcmFuZ2UgUGkgMyBoYXMgYSBkaWZmZXJlbnQgYmx1ZXRvb3RoIGRldmljZSBjb21w
+YXRpYmxlLgoKcmVnYXJkcywKCW8uCgo+ID4KPiA+IFRoYW5rcwo+ID4gU3RlZmFuCj4gPgo+ID4g
+WzFdIC0KPiA+IGh0dHA6Ly93d3cuc3BhcmtsYW4uY29tL3AyLXByb2R1Y3RzLWRldGFpbC5waHA/
+UEtleT00OTg0RlZ1a2pjcHlsemlmUWlNLVRHRkUtSUtYRC0tQkN3ZjRQMTVLZnJVJkFQNjI1Ngo+
+ID4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
