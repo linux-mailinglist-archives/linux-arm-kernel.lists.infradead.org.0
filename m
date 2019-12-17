@@ -2,66 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C6F2123A3E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 23:51:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFEDA123AC3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 00:25:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nOS1+RbY318DGfdEX2nQcL/qhriGyJbNLbqVUc5RDRk=; b=qLmVq5GXQyGY84
-	EeRWQUxzh+lApdL6KxBPZh3+EITGDLfxIbHLYIvRa8tDbzm0r4iMiS/LlHh+JnXsHTXER6AWA7p9o
-	q1pEOAxtZIykYBP78TRynoTloNIbrxWhnPAcQt7Bc6h7AEq9K6N3OKpEjVnbBlWy93PjxMeuOQJbl
-	NPkyurugFuqEqTNVmejkkR8e3F9VZjiT+219appCXFsTSte2YTWxbkSNu1lHym79NE/AtiMz+CYmj
-	MWE85ntM5E29up2Hy4QWUDVt7OUzrs6jwYdy3aq1mbTT4TLrDwcD7G++cpzT2jXL038bibXnmMlNF
-	NzdIc8RTeaj61gO23+EQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9h3tQYlk35ssmVBIIhS2IYBrR70w91Mfh3TcfLfc5Uc=; b=lRyEz2mOyM5JJxbwc062LpUtH
+	r1030RpikVQ+2wsLNi/cy06FnLhyZbdJ9nPXEhxLtVtXdz9DD53zeqNr//CRG1W2Y1w5aC7mKUVKM
+	4Giq8BH+426IFUFB230xmWK2GZVoPY9LCnLzEZ5SfNEgPaket5WP04ScKyhhMIi7H5514qedZlAzu
+	UqLTbUJhx5IN151jkKy+HsckZ6b6O+V0L0V3G6ukUMXDA9+Jx/bg4fqZRaUVbiXjA2WVhEhjTf+bC
+	tLrDXn4k/a44rR6hj7FE5LtAMlkISj/v+dMy3AzjPZxgLO7+nzGRXSpqq3MYRx9m0UO68ZzmayOCx
+	G87vs29Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihLgg-0004V3-MR; Tue, 17 Dec 2019 22:51:30 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1ihMDn-0004Jh-N8; Tue, 17 Dec 2019 23:25:43 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihLgY-0004UK-0D
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 22:51:23 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 17 Dec 2019 14:51:19 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,327,1571727600"; d="scan'208";a="247654290"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.202])
- by fmsmga002.fm.intel.com with ESMTP; 17 Dec 2019 14:51:18 -0800
-Date: Tue, 17 Dec 2019 14:51:18 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Peter Xu <peterx@redhat.com>
-Subject: Re: [PATCH v4 07/19] KVM: Explicitly free allocated-but-unused dirty
- bitmap
-Message-ID: <20191217225118.GF11771@linux.intel.com>
-References: <20191217204041.10815-1-sean.j.christopherson@intel.com>
- <20191217204041.10815-8-sean.j.christopherson@intel.com>
- <20191217222446.GK7258@xz-x1>
+ id 1ihMDe-0004Ia-Bq
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 23:25:37 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1576625135; h=Content-Transfer-Encoding: Content-Type:
+ In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
+ Subject: Sender; bh=YJEwly1+ltZDuvrkRrwDOT3yLn4EXIUPFyMApEtgGuc=;
+ b=q7J36WgEzgAj5se+ZfcEZxlna3Mgt3O0wst8SGhDXO1mNo52mTP00RKmt8YZOo81afZDOKpR
+ cDVxEDHNA5IRW0Oq0xleKmRtBEqBzxrgjcerffa1dak1q535CQmlrFVOrwNt5djw5NY9kidX
+ dOukqxupzYvp9B9DUh+jDJGE7BM=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5df963ea.7f18eb62cdf8-smtp-out-n03;
+ Tue, 17 Dec 2019 23:25:30 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 8B204C4479C; Tue, 17 Dec 2019 23:25:29 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from [10.46.161.159] (i-global254.qualcomm.com [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: asutoshd)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 480D5C433CB;
+ Tue, 17 Dec 2019 23:25:28 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 480D5C433CB
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=asutoshd@codeaurora.org
+Subject: Re: [PATCH v1 2/2] scsi: ufs: disable interrupt during clock-gating
+To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
+ martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
+ pedrom.sousa@synopsys.com, jejb@linux.ibm.com, matthias.bgg@gmail.com
+References: <1575721321-8071-1-git-send-email-stanley.chu@mediatek.com>
+ <1575721321-8071-3-git-send-email-stanley.chu@mediatek.com>
+From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
+Message-ID: <a36d111e-ef7f-9f9b-6f6a-692a9980103a@codeaurora.org>
+Date: Tue, 17 Dec 2019 15:25:27 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191217222446.GK7258@xz-x1>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <1575721321-8071-3-git-send-email-stanley.chu@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_145122_086487_B951ECBF 
-X-CRM114-Status: GOOD (  19.16  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191217_152535_333852_507C7B48 
+X-CRM114-Status: GOOD (  19.36  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [104.130.122.26 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,110 +96,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
- kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
- James Hogan <jhogan@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Cornelia Huck <cohuck@redhat.com>, linux-kernel@vger.kernel.org,
- Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>,
- kvm-ppc@vger.kernel.org, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- Jim Mattson <jmattson@google.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 05:24:46PM -0500, Peter Xu wrote:
-> On Tue, Dec 17, 2019 at 12:40:29PM -0800, Sean Christopherson wrote:
-> > Explicitly free an allocated-but-unused dirty bitmap instead of relying
-> > on kvm_free_memslot() if an error occurs in __kvm_set_memory_region().
-> > There is no longer a need to abuse kvm_free_memslot() to free arch
-> > specific resources as arch specific code is now called only after the
-> > common flow is guaranteed to succeed.  Arch code can still fail, but
-> > it's responsible for its own cleanup in that case.
-> > 
-> > Eliminating the error path's abuse of kvm_free_memslot() paves the way
-> > for simplifying kvm_free_memslot(), i.e. dropping its @dont param.
-> > 
-> > Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-> > ---
-> >  virt/kvm/kvm_main.c | 7 ++++---
-> >  1 file changed, 4 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
-> > index d403e93e3028..6b2261a9e139 100644
-> > --- a/virt/kvm/kvm_main.c
-> > +++ b/virt/kvm/kvm_main.c
-> > @@ -1096,7 +1096,7 @@ int __kvm_set_memory_region(struct kvm *kvm,
-> >  
-> >  	slots = kvzalloc(sizeof(struct kvm_memslots), GFP_KERNEL_ACCOUNT);
-> >  	if (!slots)
-> > -		goto out_free;
-> > +		goto out_bitmap;
-> >  	memcpy(slots, __kvm_memslots(kvm, as_id), sizeof(struct kvm_memslots));
-> >  
-> >  	if ((change == KVM_MR_DELETE) || (change == KVM_MR_MOVE)) {
-> > @@ -1144,8 +1144,9 @@ int __kvm_set_memory_region(struct kvm *kvm,
-> >  	if (change == KVM_MR_DELETE || change == KVM_MR_MOVE)
-> >  		slots = install_new_memslots(kvm, as_id, slots);
-> >  	kvfree(slots);
-> > -out_free:
-> > -	kvm_free_memslot(kvm, &new, &old);
-> > +out_bitmap:
-> > +	if (new.dirty_bitmap && !old.dirty_bitmap)
-> > +		kvm_destroy_dirty_bitmap(&new);
+On 12/7/2019 4:22 AM, Stanley Chu wrote:
+> Similar to suspend, ufshcd interrupt can be disabled since
+> there won't be any host controller transaction expected till
+> clocks ungated.
 > 
-> What if both the old and new have KVM_MEM_LOG_DIRTY_PAGES set?
-> kvm_free_memslot() did cover that but I see that you explicitly
-> dropped it.  Could I ask why?  Thanks,
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> ---
+>   drivers/scsi/ufs/ufshcd.c | 4 ++++
+>   1 file changed, 4 insertions(+)
+> 
+> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+> index f80bd4e811cb..5de105e82c32 100644
+> --- a/drivers/scsi/ufs/ufshcd.c
+> +++ b/drivers/scsi/ufs/ufshcd.c
+> @@ -1490,6 +1490,8 @@ static void ufshcd_ungate_work(struct work_struct *work)
+>   	spin_unlock_irqrestore(hba->host->host_lock, flags);
+>   	ufshcd_setup_clocks(hba, true);
+>   
+> +	ufshcd_enable_irq(hba);
+> +
+>   	/* Exit from hibern8 */
+>   	if (ufshcd_can_hibern8_during_gating(hba)) {
+>   		/* Prevent gating in this path */
+> @@ -1636,6 +1638,8 @@ static void ufshcd_gate_work(struct work_struct *work)
+>   		ufshcd_set_link_hibern8(hba);
+>   	}
+>   
+> +	ufshcd_disable_irq(hba);
+> +
+>   	if (!ufshcd_is_link_active(hba))
+>   		ufshcd_setup_clocks(hba, false);
+>   	else
+> 
 
-In that case, old.dirty_bitmap == new.dirty_bitmap, i.e. shouldn't be freed
-by this error path since doing so would result in a use-after-free via the
-old memslot.
+Hi,
+Does this save significant power? I see that gate/ungate of clocks 
+happen far too frequently than suspend/resume.
 
-The kvm_free_memslot() logic is the same, albeit in a very twisted way.
+Have you considered how much latency this would add to the 
+gating/ungating path?
 
-In __kvm_set_memory_region(), @old and @new start with the same dirty_bitmap.
+-asd
 
-	new = old = *slot;
-
-And @new is modified based on KVM_MEM_LOG_DIRTY_PAGES.  If LOG_DIRTY_PAGES
-is set in both @new and @old, then both the "if" and "else if" evaluate
-false, i.e. new.dirty_bitmap == old.dirty_bitmap.
-
-	/* Allocate/free page dirty bitmap as needed */
-	if (!(new.flags & KVM_MEM_LOG_DIRTY_PAGES))
-		new.dirty_bitmap = NULL;
-	else if (!new.dirty_bitmap) {
-		r = kvm_create_dirty_bitmap(&new);
-		if (r)
-			return r;
-	}
-
-Subbing "@free <= @new" and "@dont <= @old" in kvm_free_memslot()
-
-  static void kvm_free_memslot(struct kvm *kvm, struct kvm_memory_slot *free,
-			       struct kvm_memory_slot *dont)
-  {
-	if (!dont || free->dirty_bitmap != dont->dirty_bitmap)
-		kvm_destroy_dirty_bitmap(free);
-
-
-yeids this, since @old is obviously non-NULL
-
-	if (new.dirty_bitmap != old.dirty_bitmap)
-		kvm_destroy_dirty_bitmap(&new);
-
-The dirty_bitmap allocation logic guarantees that new.dirty_bitmap is
-  a) NULL (the "if" case")
-  b) != old.dirty_bitmap iff old.dirty_bitmap == NULL (the "else if" case)
-  c) == old.dirty_bitmap (the implicit "else" case).
-
-kvm_free_memslot() frees @new.dirty_bitmap iff its != @old.dirty_bitmap,
-thus the explicit destroy only needs to check for (b).
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
