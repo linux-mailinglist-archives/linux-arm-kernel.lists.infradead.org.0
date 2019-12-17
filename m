@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DFB31225C3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 08:45:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2B731225CF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 08:50:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CR7dZX1La8U5jgqx3zeaTd+gfh0EjEVKawqHIIRRkz8=; b=uKUG99pCCO7uX3
-	1cPFRe2+lyfKDqWWnt1Q6IddrbDI5XBA6UpQ1vqvdoiBhVs6Qhz3CtLRvdVyyGhJvbAUSg11UwKKP
-	AVa7yQ54Onv0GNFLnv2mm8clrim7jnxhxPwsQpBfIkIn8Df5diZY6T2Satcw9fbZ57u3f165Pv+9W
-	GUvKlHastK3HVhYARjKsj45qgn/3hqnVlbhIF8e3uN+Pg6xBcjamvhaNWuN3wEs/5Q89Sj1H3psLo
-	/40qcGnEQIRYwN9V6r1Gk4HSJWuYJroXnRLwi6/zmQagyq2Zl6RUXKpbrl49E6RsJ9AH6ZZl5f0xS
-	vcirPMmcG1IAyTlkBuIw==;
+	List-Owner; bh=2NOyKXYdmBo5Fx3vUkNVUmiM1B8FBZOYI7KwGYrmdR0=; b=mznDTOJ+O54wi2
+	5X+l2p8L+yNwh+h6dqpzmFmCHfGNhZKaD7eg21bW+66TbzUNjH6PAGKbuahw+HrZi1KoytE3YW2kT
+	ZJOyVReZ/axWZaYf3cnIFEiRFyVjwOo8C2i6OKKWEhHD1qXnyrkyM76naoKEfu1c/orbSMzA8ZE5R
+	udepvyclevkg8Ulm8z9zK2Mags6judw2HX1PDNBxkw0oyXxpaCaBafjkjOBs2IXnX4Uo4ppEY5sDV
+	A2Nu0Dc4i/S8UnkWU+ZRG6MVb8/tfSpOf+FaACPxUWQlHqAfAGU+Pl8gE1uMfULxkNMAegMrI3THP
+	Kf0qba2bdsKhoDjp+9ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih7XZ-0003DS-Q2; Tue, 17 Dec 2019 07:45:09 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1ih7cu-0006iv-SL; Tue, 17 Dec 2019 07:50:40 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih7XM-0003D7-4X
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 07:44:57 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBH7irHs010018;
- Tue, 17 Dec 2019 01:44:53 -0600
+ id 1ih7cm-0006iU-Td
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 07:50:34 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBH7oVs8082175;
+ Tue, 17 Dec 2019 01:50:31 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576568693;
- bh=b5wBk0F+R2tKX9Jfr0hu+FEeVGuPCo3CtdCMf1Fl6z0=;
+ s=ti-com-17Q1; t=1576569031;
+ bh=MaH2sErLpxeYmngtjI6q6hiIGh8Im8kVUfACGcBFcxM=;
  h=From:To:CC:Subject:Date;
- b=ocdDM+0+2oMtaIT2PjYA5ioIOdbnnk2y5S/OFwISnRwof5f8o5YTEYoBbI4+pXlSg
- iRLP3L2fcUFgREHp0QgEnZmNr5fpMTr5f6vAGxN8BO1fKCAUZYb+BIYZ3jZUDnbYxE
- PcK5OBT4wq87fxA48ONBEUB7B7ZjrAvQUsrA6Kfo=
+ b=PedRStQaXUiBsqBd4AfT4VL/96DIog1txXfMnHGsrybqDCxfPSyzFld91tz8U6+DR
+ 13N1UVnHNBYrgp8zJ/Mg9lJuefHkWDkIvWvGdGFtype1chQL2ENwJTgzLooUjFC5lg
+ +2U/4y1ERYRNd6ikLtR7D99HljeV9y2Ib0PzjRDI=
 Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBH7ir5s017765;
- Tue, 17 Dec 2019 01:44:53 -0600
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE103.ent.ti.com
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBH7oVOT047317
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 17 Dec 2019 01:50:31 -0600
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE103.ent.ti.com
  (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 17
- Dec 2019 01:44:52 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 01:50:30 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 17 Dec 2019 01:44:52 -0600
+ Frontend Transport; Tue, 17 Dec 2019 01:50:30 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBH7iopt102141;
- Tue, 17 Dec 2019 01:44:50 -0600
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBH7oSVU088646;
+ Tue, 17 Dec 2019 01:50:29 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <shawnguo@kernel.org>, <s.hauer@pengutronix.de>
-Subject: [PATCH] i2c: mxs: Use dma_request_chan() instead
+To: <jic23@kernel.org>
+Subject: [PATCH] iio: adc: at91: Use dma_request_chan() instead
  dma_request_slave_channel()
-Date: Tue, 17 Dec 2019 09:45:05 +0200
-Message-ID: <20191217074505.22527-1-peter.ujfalusi@ti.com>
+Date: Tue, 17 Dec 2019 09:50:43 +0200
+Message-ID: <20191217075043.23539-1-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_234456_221786_BDF305C2 
-X-CRM114-Status: GOOD (  12.59  )
+X-CRM114-CacheID: sfid-20191216_235032_996254_8548E77B 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -87,8 +88,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: vkoul@kernel.org, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: linux-iio@vger.kernel.org, ludovic.desroches@microchip.com,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, eugen.hristev@microchip.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -102,27 +104,27 @@ probing against DMA.
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- drivers/i2c/busses/i2c-mxs.c | 6 +++---
+ drivers/iio/adc/at91-sama5d2_adc.c | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/i2c/busses/i2c-mxs.c b/drivers/i2c/busses/i2c-mxs.c
-index 89224913f578..03f5eee9883a 100644
---- a/drivers/i2c/busses/i2c-mxs.c
-+++ b/drivers/i2c/busses/i2c-mxs.c
-@@ -836,10 +836,10 @@ static int mxs_i2c_probe(struct platform_device *pdev)
+diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
+index e1850f3d5cf3..a5c7771227d5 100644
+--- a/drivers/iio/adc/at91-sama5d2_adc.c
++++ b/drivers/iio/adc/at91-sama5d2_adc.c
+@@ -1444,10 +1444,10 @@ static void at91_adc_dma_init(struct platform_device *pdev)
+ 	if (st->dma_st.dma_chan)
+ 		return;
+ 
+-	st->dma_st.dma_chan = dma_request_slave_channel(&pdev->dev, "rx");
+-
+-	if (!st->dma_st.dma_chan)  {
++	st->dma_st.dma_chan = dma_request_chan(&pdev->dev, "rx");
++	if (IS_ERR(st->dma_st.dma_chan))  {
+ 		dev_info(&pdev->dev, "can't get DMA channel\n");
++		st->dma_st.dma_chan = NULL;
+ 		goto dma_exit;
  	}
  
- 	/* Setup the DMA */
--	i2c->dmach = dma_request_slave_channel(dev, "rx-tx");
--	if (!i2c->dmach) {
-+	i2c->dmach = dma_request_chan(dev, "rx-tx");
-+	if (IS_ERR(i2c->dmach)) {
- 		dev_err(dev, "Failed to request dma\n");
--		return -ENODEV;
-+		return PTR_ERR(i2c->dmach);
- 	}
- 
- 	platform_set_drvdata(pdev, i2c);
 -- 
 Peter
 
