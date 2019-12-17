@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC7641237FE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 21:45:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5123E123798
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 21:42:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rkCaJYDebDxkqjMq0EbAP17aFY832sErUd3cZvnpFh0=; b=HaaCEVRcJOKMBT
-	f4FX1llmARSLmMYfUxOWbF7+oGclajp0zsEokF5SD0pdZJB34baBxxVEduE8IqJg+XWm+xXUJXc7F
-	aLstZj826c/QSbzX6Nd6T+sJEwhTpzKjY9t/nDCsafc3kmjDM4/s6wGmann5la4LweHNnUY6nA9d6
-	44/cxlnEvVriI6KnTP96ExgBZJohu9tHzjmy0rvQUHjBJsdWrp9FeLmzJ8VGnArrzr8btpQIDzIvh
-	HwkOL6I9keBuLqH2xhff67tADP8KA/alUCWDnF2osQFdrqZ5WrPwqUYwAbP4+/u7gNVL8ZeH6Bn+w
-	8MZuGU3H8x3jSbtMz6hg==;
+	List-Owner; bh=mWwAXt/+fSFiXjO1/PeVYJsNaPjUIquR3wCdXMXEuHc=; b=rhe1e69xXcGkMb
+	jARz7wdDBej2LbM6QpGLawZsBwNUSBZ6GBRdHTe1eMzSohcBey4Lo0Itpfzc5KhwhFw8UhYaqVJjC
+	j3EaVTWXIwzP1X1o33XX5jZP6K0etqbQ3J35OAWjMbZFQg9MC3LAmdjVuj4Zoix+3FxqUflTRNsoB
+	WKTULoox+x8vamGhj9aVn5ODOj4fkOGsOq16uco5AFEBGyzbZ8Dycf+2/IFOcunSkju7uNCMQayWX
+	S3R/QmeCIHOojuhj7dALXy2aw5tBa1c33k7NQIcY66qnhtMhl4x9W0N1cEwFwOw61MIfzm082EK3c
+	YDDvUAnnkkjYEt4SL+3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihJj4-0001ca-9a; Tue, 17 Dec 2019 20:45:50 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1ihJfR-0005Ri-NA; Tue, 17 Dec 2019 20:42:05 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihJeF-0004mk-BP
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 20:40:55 +0000
+ id 1ihJe7-0004mj-VH
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 20:40:46 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from orsmga005.jf.intel.com ([10.7.209.41])
- by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 17 Dec 2019 12:40:43 -0800
+ by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 17 Dec 2019 12:40:42 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,326,1571727600"; d="scan'208";a="389952600"
+X-IronPort-AV: E=Sophos;i="5.69,326,1571727600"; d="scan'208";a="389952603"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
  by orsmga005.jf.intel.com with ESMTP; 17 Dec 2019 12:40:42 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
@@ -37,23 +37,26 @@ To: James Hogan <jhogan@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
  Marc Zyngier <maz@kernel.org>
-Subject: [PATCH v4 09/19] KVM: Move setting of memslot into helper routine
-Date: Tue, 17 Dec 2019 12:40:31 -0800
-Message-Id: <20191217204041.10815-10-sean.j.christopherson@intel.com>
+Subject: [PATCH v4 10/19] KVM: Drop "const" attribute from old memslot in
+ commit_memory_region()
+Date: Tue, 17 Dec 2019 12:40:32 -0800
+Message-Id: <20191217204041.10815-11-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191217204041.10815-1-sean.j.christopherson@intel.com>
 References: <20191217204041.10815-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_124051_528166_6095E401 
-X-CRM114-Status: GOOD (  16.93  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191217_124044_051383_AF49F460 
+X-CRM114-Status: GOOD (  11.51  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [192.55.52.93 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -80,95 +83,124 @@ Cc: linux-arm-kernel@lists.infradead.org,
  Suzuki K Poulose <suzuki.poulose@arm.com>, kvmarm@lists.cs.columbia.edu,
  Julien Thierry <julien.thierry.kdev@gmail.com>,
  Jim Mattson <jmattson@google.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U3BsaXQgb3V0IHRoZSBjb3JlIGZ1bmN0aW9uYWxpdHkgb2Ygc2V0dGluZyBhIG1lbXNsb3QgaW50
-byBhIHNlcGFyYXRlCmhlbHBlciBpbiBwcmVwYXJhdGlvbiBmb3IgbW92aW5nIG1lbXNsb3QgZGVs
-ZXRpb24gaW50byBpdHMgb3duIHJvdXRpbmUuCgpUZXN0ZWQtYnk6IENocmlzdG9mZmVyIERhbGwg
-PGNocmlzdG9mZmVyLmRhbGxAYXJtLmNvbT4KUmV2aWV3ZWQtYnk6IFBoaWxpcHBlIE1hdGhpZXUt
-RGF1ZMOpIDxmNGJ1Z0BhbXNhdC5vcmc+ClNpZ25lZC1vZmYtYnk6IFNlYW4gQ2hyaXN0b3BoZXJz
-b24gPHNlYW4uai5jaHJpc3RvcGhlcnNvbkBpbnRlbC5jb20+Ci0tLQogdmlydC9rdm0va3ZtX21h
-aW4uYyB8IDEwNiArKysrKysrKysrKysrKysrKysrKysrKysrKy0tLS0tLS0tLS0tLS0tLS0tLQog
-MSBmaWxlIGNoYW5nZWQsIDYzIGluc2VydGlvbnMoKyksIDQzIGRlbGV0aW9ucygtKQoKZGlmZiAt
-LWdpdCBhL3ZpcnQva3ZtL2t2bV9tYWluLmMgYi92aXJ0L2t2bS9rdm1fbWFpbi5jCmluZGV4IDlj
-NDg4YzY1MzI1Ny4uMzY2M2FjMjI5YzRkIDEwMDY0NAotLS0gYS92aXJ0L2t2bS9rdm1fbWFpbi5j
-CisrKyBiL3ZpcnQva3ZtL2t2bV9tYWluLmMKQEAgLTk4Niw2ICs5ODYsNjYgQEAgc3RhdGljIHN0
-cnVjdCBrdm1fbWVtc2xvdHMgKmluc3RhbGxfbmV3X21lbXNsb3RzKHN0cnVjdCBrdm0gKmt2bSwK
-IAlyZXR1cm4gb2xkX21lbXNsb3RzOwogfQogCitzdGF0aWMgaW50IGt2bV9zZXRfbWVtc2xvdChz
-dHJ1Y3Qga3ZtICprdm0sCisJCQkgICBjb25zdCBzdHJ1Y3Qga3ZtX3VzZXJzcGFjZV9tZW1vcnlf
-cmVnaW9uICptZW0sCisJCQkgICBjb25zdCBzdHJ1Y3Qga3ZtX21lbW9yeV9zbG90ICpvbGQsCisJ
-CQkgICBzdHJ1Y3Qga3ZtX21lbW9yeV9zbG90ICpuZXcsIGludCBhc19pZCwKKwkJCSAgIGVudW0g
-a3ZtX21yX2NoYW5nZSBjaGFuZ2UpCit7CisJc3RydWN0IGt2bV9tZW1vcnlfc2xvdCAqc2xvdDsK
-KwlzdHJ1Y3Qga3ZtX21lbXNsb3RzICpzbG90czsKKwlpbnQgcjsKKworCXNsb3RzID0ga3Z6YWxs
-b2Moc2l6ZW9mKHN0cnVjdCBrdm1fbWVtc2xvdHMpLCBHRlBfS0VSTkVMX0FDQ09VTlQpOworCWlm
-ICghc2xvdHMpCisJCXJldHVybiAtRU5PTUVNOworCW1lbWNweShzbG90cywgX19rdm1fbWVtc2xv
-dHMoa3ZtLCBhc19pZCksIHNpemVvZihzdHJ1Y3Qga3ZtX21lbXNsb3RzKSk7CisKKwlpZiAoY2hh
-bmdlID09IEtWTV9NUl9ERUxFVEUgfHwgY2hhbmdlID09IEtWTV9NUl9NT1ZFKSB7CisJCS8qCisJ
-CSAqIE5vdGUsIHRoZSBJTlZBTElEIGZsYWcgbmVlZHMgdG8gYmUgaW4gdGhlIGFwcHJvcHJpYXRl
-IGVudHJ5CisJCSAqIGluIHRoZSBmcmVzaGx5IGFsbG9jYXRlZCBtZW1zbG90cywgbm90IGluIEBv
-bGQgb3IgQG5ldy4KKwkJICovCisJCXNsb3QgPSBpZF90b19tZW1zbG90KHNsb3RzLCBvbGQtPmlk
-KTsKKwkJc2xvdC0+ZmxhZ3MgfD0gS1ZNX01FTVNMT1RfSU5WQUxJRDsKKworCQkvKgorCQkgKiBX
-ZSBjYW4gcmUtdXNlIHRoZSBvbGQgbWVtc2xvdHMsIHRoZSBvbmx5IGRpZmZlcmVuY2UgZnJvbSB0
-aGUKKwkJICogbmV3bHkgaW5zdGFsbGVkIG1lbXNsb3RzIGlzIHRoZSBpbnZhbGlkIGZsYWcsIHdo
-aWNoIHdpbGwgZ2V0CisJCSAqIGRyb3BwZWQgYnkgdXBkYXRlX21lbXNsb3RzIGFueXdheS4gIFdl
-J2xsIGFsc28gcmV2ZXJ0IHRvIHRoZQorCQkgKiBvbGQgbWVtc2xvdHMgaWYgcHJlcGFyaW5nIHRo
-ZSBuZXcgbWVtb3J5IHJlZ2lvbiBmYWlscy4KKwkJICovCisJCXNsb3RzID0gaW5zdGFsbF9uZXdf
-bWVtc2xvdHMoa3ZtLCBhc19pZCwgc2xvdHMpOworCisJCS8qIEZyb20gdGhpcyBwb2ludCBubyBu
-ZXcgc2hhZG93IHBhZ2VzIHBvaW50aW5nIHRvIGEgZGVsZXRlZCwKKwkJICogb3IgbW92ZWQsIG1l
-bXNsb3Qgd2lsbCBiZSBjcmVhdGVkLgorCQkgKgorCQkgKiB2YWxpZGF0aW9uIG9mIHNwLT5nZm4g
-aGFwcGVucyBpbjoKKwkJICoJLSBnZm5fdG9faHZhIChrdm1fcmVhZF9ndWVzdCwgZ2ZuX3RvX3Bm
-bikKKwkJICoJLSBrdm1faXNfdmlzaWJsZV9nZm4gKG1tdV9jaGVja19yb290cykKKwkJICovCisJ
-CWt2bV9hcmNoX2ZsdXNoX3NoYWRvd19tZW1zbG90KGt2bSwgc2xvdCk7CisJfQorCisJciA9IGt2
-bV9hcmNoX3ByZXBhcmVfbWVtb3J5X3JlZ2lvbihrdm0sIG5ldywgbWVtLCBjaGFuZ2UpOworCWlm
-IChyKQorCQlnb3RvIG91dF9zbG90czsKKworCXVwZGF0ZV9tZW1zbG90cyhzbG90cywgbmV3LCBj
-aGFuZ2UpOworCXNsb3RzID0gaW5zdGFsbF9uZXdfbWVtc2xvdHMoa3ZtLCBhc19pZCwgc2xvdHMp
-OworCisJa3ZtX2FyY2hfY29tbWl0X21lbW9yeV9yZWdpb24oa3ZtLCBtZW0sIG9sZCwgbmV3LCBj
-aGFuZ2UpOworCisJa3ZmcmVlKHNsb3RzKTsKKwlyZXR1cm4gMDsKKworb3V0X3Nsb3RzOgorCWlm
-IChjaGFuZ2UgPT0gS1ZNX01SX0RFTEVURSB8fCBjaGFuZ2UgPT0gS1ZNX01SX01PVkUpCisJCXNs
-b3RzID0gaW5zdGFsbF9uZXdfbWVtc2xvdHMoa3ZtLCBhc19pZCwgc2xvdHMpOworCWt2ZnJlZShz
-bG90cyk7CisJcmV0dXJuIHI7Cit9CisKIC8qCiAgKiBBbGxvY2F0ZSBzb21lIG1lbW9yeSBhbmQg
-Z2l2ZSBpdCBhbiBhZGRyZXNzIGluIHRoZSBndWVzdCBwaHlzaWNhbCBhZGRyZXNzCiAgKiBzcGFj
-ZS4KQEAgLTEwMDIsNyArMTA2Miw2IEBAIGludCBfX2t2bV9zZXRfbWVtb3J5X3JlZ2lvbihzdHJ1
-Y3Qga3ZtICprdm0sCiAJdW5zaWduZWQgbG9uZyBucGFnZXM7CiAJc3RydWN0IGt2bV9tZW1vcnlf
-c2xvdCAqc2xvdDsKIAlzdHJ1Y3Qga3ZtX21lbW9yeV9zbG90IG9sZCwgbmV3OwotCXN0cnVjdCBr
-dm1fbWVtc2xvdHMgKnNsb3RzOwogCWludCBhc19pZCwgaWQ7CiAJZW51bSBrdm1fbXJfY2hhbmdl
-IGNoYW5nZTsKIApAQCAtMTA4OSw1OCArMTE0OCwxOSBAQCBpbnQgX19rdm1fc2V0X21lbW9yeV9y
-ZWdpb24oc3RydWN0IGt2bSAqa3ZtLAogCQkJcmV0dXJuIHI7CiAJfQogCi0Jc2xvdHMgPSBrdnph
-bGxvYyhzaXplb2Yoc3RydWN0IGt2bV9tZW1zbG90cyksIEdGUF9LRVJORUxfQUNDT1VOVCk7Ci0J
-aWYgKCFzbG90cykgewotCQlyID0gLUVOT01FTTsKLQkJZ290byBvdXRfYml0bWFwOwotCX0KLQlt
-ZW1jcHkoc2xvdHMsIF9fa3ZtX21lbXNsb3RzKGt2bSwgYXNfaWQpLCBzaXplb2Yoc3RydWN0IGt2
-bV9tZW1zbG90cykpOwotCi0JaWYgKChjaGFuZ2UgPT0gS1ZNX01SX0RFTEVURSkgfHwgKGNoYW5n
-ZSA9PSBLVk1fTVJfTU9WRSkpIHsKLQkJc2xvdCA9IGlkX3RvX21lbXNsb3Qoc2xvdHMsIGlkKTsK
-LQkJc2xvdC0+ZmxhZ3MgfD0gS1ZNX01FTVNMT1RfSU5WQUxJRDsKLQotCQkvKgotCQkgKiBXZSBj
-YW4gcmUtdXNlIHRoZSBvbGQgbWVtc2xvdHMsIHRoZSBvbmx5IGRpZmZlcmVuY2UgZnJvbSB0aGUK
-LQkJICogbmV3bHkgaW5zdGFsbGVkIG1lbXNsb3RzIGlzIHRoZSBpbnZhbGlkIGZsYWcsIHdoaWNo
-IHdpbGwgZ2V0Ci0JCSAqIGRyb3BwZWQgYnkgdXBkYXRlX21lbXNsb3RzIGFueXdheS4gIFdlJ2xs
-IGFsc28gcmV2ZXJ0IHRvIHRoZQotCQkgKiBvbGQgbWVtc2xvdHMgaWYgcHJlcGFyaW5nIHRoZSBu
-ZXcgbWVtb3J5IHJlZ2lvbiBmYWlscy4KLQkJICovCi0JCXNsb3RzID0gaW5zdGFsbF9uZXdfbWVt
-c2xvdHMoa3ZtLCBhc19pZCwgc2xvdHMpOwotCi0JCS8qIEZyb20gdGhpcyBwb2ludCBubyBuZXcg
-c2hhZG93IHBhZ2VzIHBvaW50aW5nIHRvIGEgZGVsZXRlZCwKLQkJICogb3IgbW92ZWQsIG1lbXNs
-b3Qgd2lsbCBiZSBjcmVhdGVkLgotCQkgKgotCQkgKiB2YWxpZGF0aW9uIG9mIHNwLT5nZm4gaGFw
-cGVucyBpbjoKLQkJICoJLSBnZm5fdG9faHZhIChrdm1fcmVhZF9ndWVzdCwgZ2ZuX3RvX3BmbikK
-LQkJICoJLSBrdm1faXNfdmlzaWJsZV9nZm4gKG1tdV9jaGVja19yb290cykKLQkJICovCi0JCWt2
-bV9hcmNoX2ZsdXNoX3NoYWRvd19tZW1zbG90KGt2bSwgc2xvdCk7Ci0JfQotCi0JciA9IGt2bV9h
-cmNoX3ByZXBhcmVfbWVtb3J5X3JlZ2lvbihrdm0sICZuZXcsIG1lbSwgY2hhbmdlKTsKLQlpZiAo
-cikKLQkJZ290byBvdXRfc2xvdHM7Ci0KIAkvKiBhY3R1YWwgbWVtb3J5IGlzIGZyZWVkIHZpYSBv
-bGQgaW4ga3ZtX2ZyZWVfbWVtc2xvdCBiZWxvdyAqLwogCWlmIChjaGFuZ2UgPT0gS1ZNX01SX0RF
-TEVURSkgewogCQluZXcuZGlydHlfYml0bWFwID0gTlVMTDsKIAkJbWVtc2V0KCZuZXcuYXJjaCwg
-MCwgc2l6ZW9mKG5ldy5hcmNoKSk7CiAJfQogCi0JdXBkYXRlX21lbXNsb3RzKHNsb3RzLCAmbmV3
-LCBjaGFuZ2UpOwotCXNsb3RzID0gaW5zdGFsbF9uZXdfbWVtc2xvdHMoa3ZtLCBhc19pZCwgc2xv
-dHMpOwotCi0Ja3ZtX2FyY2hfY29tbWl0X21lbW9yeV9yZWdpb24oa3ZtLCBtZW0sICZvbGQsICZu
-ZXcsIGNoYW5nZSk7CisJciA9IGt2bV9zZXRfbWVtc2xvdChrdm0sIG1lbSwgJm9sZCwgJm5ldywg
-YXNfaWQsIGNoYW5nZSk7CisJaWYgKHIpCisJCWdvdG8gb3V0X2JpdG1hcDsKIAogCWt2bV9mcmVl
-X21lbXNsb3Qoa3ZtLCAmb2xkLCAmbmV3KTsKLQlrdmZyZWUoc2xvdHMpOwogCXJldHVybiAwOwog
-Ci1vdXRfc2xvdHM6Ci0JaWYgKGNoYW5nZSA9PSBLVk1fTVJfREVMRVRFIHx8IGNoYW5nZSA9PSBL
-Vk1fTVJfTU9WRSkKLQkJc2xvdHMgPSBpbnN0YWxsX25ld19tZW1zbG90cyhrdm0sIGFzX2lkLCBz
-bG90cyk7Ci0Ja3ZmcmVlKHNsb3RzKTsKIG91dF9iaXRtYXA6CiAJaWYgKG5ldy5kaXJ0eV9iaXRt
-YXAgJiYgIW9sZC5kaXJ0eV9iaXRtYXApCiAJCWt2bV9kZXN0cm95X2RpcnR5X2JpdG1hcCgmbmV3
-KTsKLS0gCjIuMjQuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+Drop the "const" attribute from @old in kvm_arch_commit_memory_region()
+to allow arch specific code to free arch specific resources in the old
+memslot without having to cast away the attribute.  Freeing resources in
+kvm_arch_commit_memory_region() paves the way for simplifying
+kvm_free_memslot() by eliminating the last usage of its @dont param.
+
+Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
+---
+ arch/mips/kvm/mips.c       | 2 +-
+ arch/powerpc/kvm/powerpc.c | 2 +-
+ arch/s390/kvm/kvm-s390.c   | 2 +-
+ arch/x86/kvm/x86.c         | 2 +-
+ include/linux/kvm_host.h   | 2 +-
+ virt/kvm/arm/mmu.c         | 2 +-
+ virt/kvm/kvm_main.c        | 2 +-
+ 7 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/arch/mips/kvm/mips.c b/arch/mips/kvm/mips.c
+index 713e5465edb0..108ed14cbcac 100644
+--- a/arch/mips/kvm/mips.c
++++ b/arch/mips/kvm/mips.c
+@@ -224,7 +224,7 @@ int kvm_arch_prepare_memory_region(struct kvm *kvm,
+ 
+ void kvm_arch_commit_memory_region(struct kvm *kvm,
+ 				   const struct kvm_userspace_memory_region *mem,
+-				   const struct kvm_memory_slot *old,
++				   struct kvm_memory_slot *old,
+ 				   const struct kvm_memory_slot *new,
+ 				   enum kvm_mr_change change)
+ {
+diff --git a/arch/powerpc/kvm/powerpc.c b/arch/powerpc/kvm/powerpc.c
+index c922711a6dd8..6fd61b9dd783 100644
+--- a/arch/powerpc/kvm/powerpc.c
++++ b/arch/powerpc/kvm/powerpc.c
+@@ -701,7 +701,7 @@ int kvm_arch_prepare_memory_region(struct kvm *kvm,
+ 
+ void kvm_arch_commit_memory_region(struct kvm *kvm,
+ 				   const struct kvm_userspace_memory_region *mem,
+-				   const struct kvm_memory_slot *old,
++				   struct kvm_memory_slot *old,
+ 				   const struct kvm_memory_slot *new,
+ 				   enum kvm_mr_change change)
+ {
+diff --git a/arch/s390/kvm/kvm-s390.c b/arch/s390/kvm/kvm-s390.c
+index 1be45bad7849..a5b917b72ca0 100644
+--- a/arch/s390/kvm/kvm-s390.c
++++ b/arch/s390/kvm/kvm-s390.c
+@@ -4516,7 +4516,7 @@ int kvm_arch_prepare_memory_region(struct kvm *kvm,
+ 
+ void kvm_arch_commit_memory_region(struct kvm *kvm,
+ 				const struct kvm_userspace_memory_region *mem,
+-				const struct kvm_memory_slot *old,
++				struct kvm_memory_slot *old,
+ 				const struct kvm_memory_slot *new,
+ 				enum kvm_mr_change change)
+ {
+diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
+index 4892ded361b3..0911b2f634c5 100644
+--- a/arch/x86/kvm/x86.c
++++ b/arch/x86/kvm/x86.c
+@@ -9842,7 +9842,7 @@ static void kvm_mmu_slot_apply_flags(struct kvm *kvm,
+ 
+ void kvm_arch_commit_memory_region(struct kvm *kvm,
+ 				const struct kvm_userspace_memory_region *mem,
+-				const struct kvm_memory_slot *old,
++				struct kvm_memory_slot *old,
+ 				const struct kvm_memory_slot *new,
+ 				enum kvm_mr_change change)
+ {
+diff --git a/include/linux/kvm_host.h b/include/linux/kvm_host.h
+index 46dd713da634..7d86dbb467f7 100644
+--- a/include/linux/kvm_host.h
++++ b/include/linux/kvm_host.h
+@@ -681,7 +681,7 @@ int kvm_arch_prepare_memory_region(struct kvm *kvm,
+ 				enum kvm_mr_change change);
+ void kvm_arch_commit_memory_region(struct kvm *kvm,
+ 				const struct kvm_userspace_memory_region *mem,
+-				const struct kvm_memory_slot *old,
++				struct kvm_memory_slot *old,
+ 				const struct kvm_memory_slot *new,
+ 				enum kvm_mr_change change);
+ bool kvm_largepages_enabled(void);
+diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+index f264de85f648..4941746929ab 100644
+--- a/virt/kvm/arm/mmu.c
++++ b/virt/kvm/arm/mmu.c
+@@ -2246,7 +2246,7 @@ int kvm_mmu_init(void)
+ 
+ void kvm_arch_commit_memory_region(struct kvm *kvm,
+ 				   const struct kvm_userspace_memory_region *mem,
+-				   const struct kvm_memory_slot *old,
++				   struct kvm_memory_slot *old,
+ 				   const struct kvm_memory_slot *new,
+ 				   enum kvm_mr_change change)
+ {
+diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
+index 3663ac229c4d..acf52fa16500 100644
+--- a/virt/kvm/kvm_main.c
++++ b/virt/kvm/kvm_main.c
+@@ -988,7 +988,7 @@ static struct kvm_memslots *install_new_memslots(struct kvm *kvm,
+ 
+ static int kvm_set_memslot(struct kvm *kvm,
+ 			   const struct kvm_userspace_memory_region *mem,
+-			   const struct kvm_memory_slot *old,
++			   struct kvm_memory_slot *old,
+ 			   struct kvm_memory_slot *new, int as_id,
+ 			   enum kvm_mr_change change)
+ {
+-- 
+2.24.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
