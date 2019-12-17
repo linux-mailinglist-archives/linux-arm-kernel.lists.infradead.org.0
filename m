@@ -2,43 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 336A4122D33
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:44:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F729122D35
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:44:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=C5L9ZUFwU2+sMwREGrLVsq8JsGZ1gC2Y1k0Gd3gWQgE=; b=IQ0
-	xda1rd9Yi2p1sxb4QamSz1zdR+kRJd0oBPBlthtU4Oivn0+jOxsvPUor9rZP430PrOFYqNwsr6oKP
-	XFAqULxkkAvX+0Rq+obn+N2LMz8z3jeCoFnSmiStnI6e3lYTe3teyQmrW6g2jYcI6SOPPnfNCsj7C
-	hmVE9cdyGr+2y5U5gJ8zIvkx4HUzRMrb80hbja5ieeqb6OGSAQYTuMGVZVebF06f/J9MEUhwAo4EY
-	E/z+gM24YABFhar9ExOcG8KYG3noXU9G9Yo/LR8yamZOb5hJNPVWGTs8qCj/PpcNFEWAScid/a1iI
-	6ko/SKX3g+NRSrgaav87T3+ETlNMCuw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=I79XgF3IKeRRCuS328+05GnVgayw5ha5lSxvSTUPEyk=; b=SYsgMnOX7+WKuG3ggGIsEzyBC/
+	6TCuGBmjCuFp7HuiPm6z6+iOvLtn4fu9OC0Cd/Jo72q2RMYOWwweJooCH7HHQ026XCAMFnfkeO+dr
+	i37MJXidGfe9UdRbEYREuY51uu1NG123My5YmjOIUPSTvZFCkgogXbu7FF35ND2NGtWaLLnHG6KXf
+	BpMPOuAZ9R3jU1P0CrQxukATDbOI19LJyqAcWMRJmc9ZK40VD3dIleHicFA3x9gAjl984VDT09ZkK
+	rGFdydu6AjFs+o4Roq/BSgBHt5C2J0cBMhWANBGV23XCxddnsgEg+QxXkAdUqdyxCgKrWEeiUsI9+
+	VVaXp0Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihD8x-0003UC-Gx; Tue, 17 Dec 2019 13:44:07 +0000
+	id 1ihD9A-0003ck-Ka; Tue, 17 Dec 2019 13:44:20 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihD8n-0003TE-8p
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 13:43:58 +0000
+ id 1ihD8o-0003TG-VU
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 13:44:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F04331FB;
- Tue, 17 Dec 2019 05:43:53 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 38A3231B;
+ Tue, 17 Dec 2019 05:43:56 -0800 (PST)
 Received: from e123648.arm.com (unknown [10.37.12.145])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 373813F719;
- Tue, 17 Dec 2019 05:43:52 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5B7003F719;
+ Tue, 17 Dec 2019 05:43:54 -0800 (PST)
 From: lukasz.luba@arm.com
 To: linux-kernel@vger.kernel.org, sudeep.holla@arm.com,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 1/2] include: trace: Add SCMI header with trace events
-Date: Tue, 17 Dec 2019 13:43:44 +0000
-Message-Id: <20191217134345.14004-1-lukasz.luba@arm.com>
+Subject: [PATCH v2 2/2] drivers: firmware: scmi: Extend SCMI transport layer
+ by trace events
+Date: Tue, 17 Dec 2019 13:43:45 +0000
+Message-Id: <20191217134345.14004-2-lukasz.luba@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191217134345.14004-1-lukasz.luba@arm.com>
+References: <20191217134345.14004-1-lukasz.luba@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_054357_398952_E0D82E16 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20191217_054359_124368_4DB97458 
+X-CRM114-Status: GOOD (  13.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,129 +73,108 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Lukasz Luba <lukasz.luba@arm.com>
 
-Adding trace events would help to measure the speed of the communication
-channel. It can be also potentially used helpful during investigation
-of some issues platforms which use different transport layer.
+The SCMI transport layer communicates via mailboxes and shared memory with
+firmware running on a microcontroller. It is platform specific how long it
+takes to pass a SCMI message. The most sensitive requests are coming from
+CPUFreq subsystem, which might be used by the scheduler.
+Thus, there is a need to measure these delays and capture anomalies.
+This change introduces trace events wrapped around transfer code.
 
-Update also MAINTAINERS file with information that the new trace events
-are maintained.
+According to Jim's suggestion a unique transfer_id is to distinguish
+similar entries which might have the same message id, protocol id and
+sequence. This is a case then there are some timeouts in transfers.
 
 Suggested-by: Jim Quinlan <james.quinlan@broadcom.com>
 Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
 ---
- MAINTAINERS                 |  1 +
- include/trace/events/scmi.h | 90 +++++++++++++++++++++++++++++++++++++
- 2 files changed, 91 insertions(+)
- create mode 100644 include/trace/events/scmi.h
+ drivers/firmware/arm_scmi/common.h |  2 ++
+ drivers/firmware/arm_scmi/driver.c | 18 ++++++++++++++++++
+ 2 files changed, 20 insertions(+)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index cc0a4a8ae06a..0182315226fc 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -15966,6 +15966,7 @@ F:	drivers/firmware/arm_scpi.c
- F:	drivers/firmware/arm_scmi/
- F:	drivers/reset/reset-scmi.c
- F:	include/linux/sc[mp]i_protocol.h
-+F:	include/trace/events/scmi.h
+diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
+index 5237c2ff79fe..df35358ff324 100644
+--- a/drivers/firmware/arm_scmi/common.h
++++ b/drivers/firmware/arm_scmi/common.h
+@@ -81,6 +81,7 @@ struct scmi_msg {
+ /**
+  * struct scmi_xfer - Structure representing a message flow
+  *
++ * @transfer_id: Unique ID for debug & profiling purpose
+  * @hdr: Transmit message header
+  * @tx: Transmit message
+  * @rx: Receive message, the buffer should be pre-allocated to store
+@@ -90,6 +91,7 @@ struct scmi_msg {
+  * @async: pointer to delayed response message received event completion
+  */
+ struct scmi_xfer {
++	int transfer_id;
+ 	struct scmi_msg_hdr hdr;
+ 	struct scmi_msg tx;
+ 	struct scmi_msg rx;
+diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+index 3eb0382491ce..15c5629ad2cd 100644
+--- a/drivers/firmware/arm_scmi/driver.c
++++ b/drivers/firmware/arm_scmi/driver.c
+@@ -29,6 +29,9 @@
  
- SYSTEM RESET/SHUTDOWN DRIVERS
- M:	Sebastian Reichel <sre@kernel.org>
-diff --git a/include/trace/events/scmi.h b/include/trace/events/scmi.h
-new file mode 100644
-index 000000000000..f076c430d243
---- /dev/null
-+++ b/include/trace/events/scmi.h
-@@ -0,0 +1,90 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#undef TRACE_SYSTEM
-+#define TRACE_SYSTEM scmi
+ #include "common.h"
+ 
++#define CREATE_TRACE_POINTS
++#include <trace/events/scmi.h>
 +
-+#if !defined(_TRACE_SCMI_H) || defined(TRACE_HEADER_MULTI_READ)
-+#define _TRACE_SCMI_H
+ #define MSG_ID_MASK		GENMASK(7, 0)
+ #define MSG_XTRACT_ID(hdr)	FIELD_GET(MSG_ID_MASK, (hdr))
+ #define MSG_TYPE_MASK		GENMASK(9, 8)
+@@ -61,6 +64,8 @@ enum scmi_error_codes {
+ static LIST_HEAD(scmi_list);
+ /* Protection for the entire list */
+ static DEFINE_MUTEX(scmi_list_mutex);
++/* Track the unique id for the transfers for debug & profiling purpose */
++static atomic_t transfer_last_id;
+ 
+ /**
+  * struct scmi_xfers_info - Structure to manage transfer information
+@@ -304,6 +309,7 @@ static struct scmi_xfer *scmi_xfer_get(const struct scmi_handle *handle,
+ 	xfer = &minfo->xfer_block[xfer_id];
+ 	xfer->hdr.seq = xfer_id;
+ 	reinit_completion(&xfer->done);
++	xfer->transfer_id = atomic_inc_return(&transfer_last_id);
+ 
+ 	return xfer;
+ }
+@@ -374,6 +380,10 @@ static void scmi_rx_callback(struct mbox_client *cl, void *m)
+ 
+ 	scmi_fetch_response(xfer, mem);
+ 
++	trace_scmi_rx_done(xfer->transfer_id, xfer->hdr.id,
++			   xfer->hdr.protocol_id, xfer->hdr.seq,
++			   msg_type);
 +
-+#include <linux/tracepoint.h>
+ 	if (msg_type == MSG_TYPE_DELAYED_RESP)
+ 		complete(xfer->async_done);
+ 	else
+@@ -439,6 +449,10 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
+ 	if (unlikely(!cinfo))
+ 		return -EINVAL;
+ 
++	trace_scmi_xfer_begin(xfer->transfer_id, xfer->hdr.id,
++			      xfer->hdr.protocol_id, xfer->hdr.seq,
++			      xfer->hdr.poll_completion);
 +
-+TRACE_EVENT(scmi_xfer_begin,
-+	TP_PROTO(int transfer_id, u8 msg_id, u8 protocol_id, u16 seq,
-+		 bool poll),
-+	TP_ARGS(transfer_id, msg_id, protocol_id, seq, poll),
+ 	ret = mbox_send_message(cinfo->chan, xfer);
+ 	if (ret < 0) {
+ 		dev_dbg(dev, "mbox send fail %d\n", ret);
+@@ -478,6 +492,10 @@ int scmi_do_xfer(const struct scmi_handle *handle, struct scmi_xfer *xfer)
+ 	 */
+ 	mbox_client_txdone(cinfo->chan, ret);
+ 
++	trace_scmi_xfer_end(xfer->transfer_id, xfer->hdr.id,
++			    xfer->hdr.protocol_id, xfer->hdr.seq,
++			    xfer->hdr.status);
 +
-+	TP_STRUCT__entry(
-+		__field(int, transfer_id)
-+		__field(u8, msg_id)
-+		__field(u8, protocol_id)
-+		__field(u16, seq)
-+		__field(bool, poll)
-+	),
-+
-+	TP_fast_assign(
-+		__entry->transfer_id = transfer_id;
-+		__entry->msg_id = msg_id;
-+		__entry->protocol_id = protocol_id;
-+		__entry->seq = seq;
-+		__entry->poll = poll;
-+	),
-+
-+	TP_printk("transfer_id=%d msg_id=%u protocol_id=%u seq=%u poll=%u",
-+		__entry->transfer_id, __entry->msg_id, __entry->protocol_id,
-+		__entry->seq, __entry->poll)
-+);
-+
-+TRACE_EVENT(scmi_xfer_end,
-+	TP_PROTO(int transfer_id, u8 msg_id, u8 protocol_id, u16 seq,
-+		 u32 status),
-+	TP_ARGS(transfer_id, msg_id, protocol_id, seq, status),
-+
-+	TP_STRUCT__entry(
-+		__field(int, transfer_id)
-+		__field(u8, msg_id)
-+		__field(u8, protocol_id)
-+		__field(u16, seq)
-+		__field(u32, status)
-+	),
-+
-+	TP_fast_assign(
-+		__entry->transfer_id = transfer_id;
-+		__entry->msg_id = msg_id;
-+		__entry->protocol_id = protocol_id;
-+		__entry->seq = seq;
-+		__entry->status = status;
-+	),
-+
-+	TP_printk("transfer_id=%d msg_id=%u protocol_id=%u seq=%u status=%u",
-+		__entry->transfer_id, __entry->msg_id, __entry->protocol_id,
-+		__entry->seq, __entry->status)
-+);
-+
-+TRACE_EVENT(scmi_rx_done,
-+	TP_PROTO(int transfer_id, u8 msg_id, u8 protocol_id, u16 seq,
-+		 u8 msg_type),
-+	TP_ARGS(transfer_id, msg_id, protocol_id, seq, msg_type),
-+
-+	TP_STRUCT__entry(
-+		__field(int, transfer_id)
-+		__field(u8, msg_id)
-+		__field(u8, protocol_id)
-+		__field(u16, seq)
-+		__field(u8, msg_type)
-+	),
-+
-+	TP_fast_assign(
-+		__entry->transfer_id = transfer_id;
-+		__entry->msg_id = msg_id;
-+		__entry->protocol_id = protocol_id;
-+		__entry->seq = seq;
-+		__entry->msg_type = msg_type;
-+	),
-+
-+	TP_printk("transfer_id=%d msg_id=%u protocol_id=%u seq=%u msg_type=%u",
-+		__entry->transfer_id, __entry->msg_id, __entry->protocol_id,
-+		__entry->seq, __entry->msg_type)
-+);
-+#endif /* _TRACE_SCMI_H */
-+
-+/* This part must be outside protection */
-+#include <trace/define_trace.h>
+ 	return ret;
+ }
+ 
 -- 
 2.17.1
 
