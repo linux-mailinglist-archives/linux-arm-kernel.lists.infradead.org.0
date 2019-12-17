@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53369121F3A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 01:09:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5ECB121F39
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 01:09:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9+BfMBIZgSQqksMeP9vQhQ4uic2c8B3AdZWLUCIo/7U=; b=QM3x+0DSyyHmES
-	NM+ZDPcVwuxwUOKZ11nZ8kZ3OBtH3OJMMFIivcvo4AiJwxfcHiNefsR1pafd6fh6B50EJ5FY/sNmS
-	FHwzCZqsJAjAH56rlXYxDPDX+91V64LLbRBgPrlETxFbv6paS6khrioa/kTAAiUENlP1kyVBe3LRb
-	yP+8nBkL7Yu/vtUkwv/CzMT9S3vVFF5JrRda9PFTQNIax6a/GNAkzKXaX6UV3f9nwrOkNsOv9Tqzn
-	VHovJRfDqV3+xbz95QANaeG19W3hkksPeOHqXdRJ4MvxVfNMyeWQ3CCLwNbfFjibrUQV+FqhPEqzN
-	ZnMNUq3yvy/TtHHY/PiA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PF7bFfP7m57gxiUPybUZEVsKdHAFrOA2/gdATA7g3KA=; b=ujix6GvMWqbvqU
+	h8INrriA1ES/OTuVqVJN2DhUkjfJ6kyOyr4/5pHwYdaPCQ4Fc95Hnnu0+vw8Yp7m6QnIgaCCIMUCE
+	o/rpG0eJ8FlCNL+f5BJose2UAu0IWSFHFAMvZniGNdVFXAGaeXlzjVBkfHk5M9/vSCPysjQm+MQA7
+	o4jTakCwoEg2HkKW7kvwLROubGYdSo6HQyC0o1NcjdDGFKr8mN53tQerrIXC0zapBTIjLdXnVZq6+
+	hZHdU8htKRL7AMokh6mMtpijWIze0g3EcmbckjjXDv2mk4ZNP+cB3WWr3FJFzsKDtfsCnnysXJhN2
+	G0PCBuLyCU4L1n6E7GeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih0Qs-0005wy-Rt; Tue, 17 Dec 2019 00:09:46 +0000
+	id 1ih0Qe-0005n8-Ua; Tue, 17 Dec 2019 00:09:32 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih0QN-0005kT-72
+ id 1ih0QN-0005ko-73
  for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 00:09:20 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id B9F45810D;
- Tue, 17 Dec 2019 00:09:51 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 6FA0E8126;
+ Tue, 17 Dec 2019 00:09:53 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 1/2] ARM: OMAP2+: Fix ti_sysc_find_one_clockdomain to check
- for to_clk_hw_omap
-Date: Mon, 16 Dec 2019 16:09:05 -0800
-Message-Id: <20191217000906.43658-1-tony@atomide.com>
+Subject: [PATCH 2/2] bus: ti-sysc: Fix iterating over clocks
+Date: Mon, 16 Dec 2019 16:09:06 -0800
+Message-Id: <20191217000906.43658-2-tony@atomide.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20191217000906.43658-1-tony@atomide.com>
+References: <20191217000906.43658-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_160915_304256_746555E7 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191216_160915_300223_FC54F8FD 
+X-CRM114-Status: GOOD (  11.38  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,43 +69,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We must bail out early if the clock is not hw_omap. Otherwise we will
-try to access invalid address with hwclk->clkdm_name:
+Commit d878970f6ce1 ("bus: ti-sysc: Add separate functions for handling
+clocks") separated handling of optional clocks from the main clocks, but
+introduced an issue where we do not necessarily allocate a slot for both
+fck and ick clocks, but still assume fixed slots for enumerating over the
+clocks.
 
-Unable to handle kernel paging request at virtual address ffffffff
-Internal error: Oops: 27 [#1] ARM
-...
-(strcmp) from [<c011b348>] (clkdm_lookup+0x40/0x60)
-[<c011b348>] (clkdm_lookup) from [<c011cb84>] (ti_sysc_clkdm_init+0x5c/0x64)
-[<c011cb84>] (ti_sysc_clkdm_init) from [<c03680a8>] (sysc_probe+0x948/0x117c)
-[<c03680a8>] (sysc_probe) from [<c03d0af4>] (platform_drv_probe+0x48/0x98)
-...
+Let's fix the issue by ensuring we always have slots for both fck and ick
+even if we don't use ick, and don't attempt to enumerate optional clocks
+if not allocated.
 
-Fixes: 2b2f7def058a ("bus: ti-sysc: Add support for missing clockdomain handling")
+In the long run we might want to simplify things a bit by only allocating
+space only for the optional clocks as we have only few devices with
+optional clocks.
+
+Fixes: d878970f6ce1 ("bus: ti-sysc: Add separate functions for handling clocks")
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/mach-omap2/pdata-quirks.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ drivers/bus/ti-sysc.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/mach-omap2/pdata-quirks.c b/arch/arm/mach-omap2/pdata-quirks.c
---- a/arch/arm/mach-omap2/pdata-quirks.c
-+++ b/arch/arm/mach-omap2/pdata-quirks.c
-@@ -306,10 +306,14 @@ static void __init dra7x_evm_mmc_quirk(void)
+diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
+--- a/drivers/bus/ti-sysc.c
++++ b/drivers/bus/ti-sysc.c
+@@ -343,6 +343,12 @@ static int sysc_get_clocks(struct sysc *ddata)
+ 		return -EINVAL;
+ 	}
  
- static struct clockdomain *ti_sysc_find_one_clockdomain(struct clk *clk)
- {
-+	struct clk_hw *hw = __clk_get_hw(clk);
- 	struct clockdomain *clkdm = NULL;
- 	struct clk_hw_omap *hwclk;
- 
--	hwclk = to_clk_hw_omap(__clk_get_hw(clk));
-+	hwclk = to_clk_hw_omap(hw);
-+	if (!omap2_clk_is_hw_omap(hw))
-+		return NULL;
++	/* Always add a slot for main clocks fck and ick even if unused */
++	if (!nr_fck)
++		ddata->nr_clocks++;
++	if (!nr_ick)
++		ddata->nr_clocks++;
 +
- 	if (hwclk && hwclk->clkdm_name)
- 		clkdm = clkdm_lookup(hwclk->clkdm_name);
+ 	ddata->clocks = devm_kcalloc(ddata->dev,
+ 				     ddata->nr_clocks, sizeof(*ddata->clocks),
+ 				     GFP_KERNEL);
+@@ -421,7 +427,7 @@ static int sysc_enable_opt_clocks(struct sysc *ddata)
+ 	struct clk *clock;
+ 	int i, error;
  
+-	if (!ddata->clocks)
++	if (!ddata->clocks || ddata->nr_clocks < SYSC_OPTFCK0 + 1)
+ 		return 0;
+ 
+ 	for (i = SYSC_OPTFCK0; i < SYSC_MAX_CLOCKS; i++) {
+@@ -455,7 +461,7 @@ static void sysc_disable_opt_clocks(struct sysc *ddata)
+ 	struct clk *clock;
+ 	int i;
+ 
+-	if (!ddata->clocks)
++	if (!ddata->clocks || ddata->nr_clocks < SYSC_OPTFCK0 + 1)
+ 		return;
+ 
+ 	for (i = SYSC_OPTFCK0; i < SYSC_MAX_CLOCKS; i++) {
 -- 
 2.24.1
 
