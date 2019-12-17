@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3B91121F5A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 01:20:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2806B121F5C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 01:21:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X8ygKaXyL8/O0BseYtHwGFuxGR7TBEx+3FmDQGPfMaI=; b=mIIropk67gJtVh
-	PIUxna3S5kYj6+dUVsjosOVjaXax+4NBysTmqHif4A6pKmjO/S2WCrHcTlRN/b3i8YNXhkv2rOS5M
-	En9cnf1U6KIgIJLPNSoUjg/YgPraawqpbhw71x/PzCK6ao/eoh3rK23J3cEz3+dN5PAw3+R7agktP
-	HX31jmlxQcFJ7rXGXu6VUdXyzD5AvsjDn7k/3jHBrCoJnnGl5SXD3VhezGLBwUrwQ0exZSG9QZU4y
-	1puUPJ8RwwogzDDznYJhdFuA882oe9OTcgJFqqL1wLDQU0VbEpZgu018hPEh9kmT0tEwlF2yz9ZC6
-	A0+O1CPQda4iZJ5Lat1Q==;
+	List-Owner; bh=4xLsjfb85sIgBbu9zftnlXgK/liZPAQ+OXSpX+RiUm0=; b=Yxp9IgWYedb05L
+	Nk6MEgbItVShNyOt0lLjl/0+T/MEXWPKyQEPR2zzqAWTf+VkpSnQi44Psbb5KnE+5VRSEimOa6exy
+	8xpp51zTtrC1ilTzfuN7bEgIeHRemXm/0ervbluB3rEhbvcuH86tuLfgJCzP60DN5z2EsOp/J55dK
+	Zls4CwyXb+McgOWG+79oh0OCCGRrJde2BR1+esGb1B764V/zqXfXhM+VkyLnB2r+6dda47pfNvOOT
+	HtDeWZYG/u3h9DhmmKsu0HMt8bV0gbB6vFN5Ku4/dt3x84nmUbJTI9ojPW+Bi0rQ3WNs9tqSYH35n
+	CDyjeb3RjJStyIlLraAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih0bY-0002rH-MJ; Tue, 17 Dec 2019 00:20:48 +0000
+	id 1ih0bn-00037v-8M; Tue, 17 Dec 2019 00:21:03 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih0aY-00019N-Bu
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 00:19:48 +0000
+ id 1ih0aa-0001AL-1Q
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 00:19:50 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 28FB981D8;
- Tue, 17 Dec 2019 00:20:25 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id BF2A68272;
+ Tue, 17 Dec 2019 00:20:26 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 02/14] ARM: dts: Configure interconnect target module for
- omap2 sdma
-Date: Mon, 16 Dec 2019 16:19:13 -0800
-Message-Id: <20191217001925.44558-3-tony@atomide.com>
+Subject: [PATCH 03/14] ARM: dts: Configure interconnect target module for
+ omap3 sdma
+Date: Mon, 16 Dec 2019 16:19:14 -0800
+Message-Id: <20191217001925.44558-4-tony@atomide.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191217001925.44558-1-tony@atomide.com>
 References: <20191217001925.44558-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_161946_466734_E88A7E04 
-X-CRM114-Status: GOOD (  10.37  )
+X-CRM114-CacheID: sfid-20191216_161948_188490_69556B51 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,8 +75,8 @@ module, but keep the legacy "ti,hwmods" peroperty to avoid new boot
 time warnings. The legacy property will be removed in later patches
 together with the legacy platform data.
 
-Note that we want to use separate compatible for omap2420 and
-omap2430 so let's do that here too while at it.
+Note that we want to use separate compatible for omap34xx and
+omap36xx so let's do that here too while at it.
 
 Cc: devicetree@vger.kernel.org
 Cc: Aaro Koskinen <aaro.koskinen@iki.fi>
@@ -86,30 +86,35 @@ Cc: Russell King <rmk+kernel@armlinux.org.uk>
 Cc: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/boot/dts/omap2.dtsi    | 42 +++++++++++++++++++++++++--------
- arch/arm/boot/dts/omap2430.dtsi |  4 ++++
- 2 files changed, 36 insertions(+), 10 deletions(-)
+ arch/arm/boot/dts/omap3-n900.dts |  5 ++++
+ arch/arm/boot/dts/omap3.dtsi     | 45 +++++++++++++++++++++++++-------
+ arch/arm/boot/dts/omap36xx.dtsi  |  4 +++
+ 3 files changed, 44 insertions(+), 10 deletions(-)
 
-diff --git a/arch/arm/boot/dts/omap2.dtsi b/arch/arm/boot/dts/omap2.dtsi
---- a/arch/arm/boot/dts/omap2.dtsi
-+++ b/arch/arm/boot/dts/omap2.dtsi
-@@ -8,6 +8,7 @@
-  * kind, whether express or implied.
-  */
+diff --git a/arch/arm/boot/dts/omap3-n900.dts b/arch/arm/boot/dts/omap3-n900.dts
+--- a/arch/arm/boot/dts/omap3-n900.dts
++++ b/arch/arm/boot/dts/omap3-n900.dts
+@@ -482,6 +482,11 @@ &vintdig {
+ 	regulator-always-on;
+ };
  
-+#include <dt-bindings/bus/ti-sysc.h>
- #include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/pinctrl/omap.h>
-@@ -79,17 +80,38 @@ intc: interrupt-controller@1 {
- 			reg = <0x480FE000 0x1000>;
++/* First two dma channels are reserved on secure omap3 */
++&sdma {
++	dma-channel-mask = <0xfffffffc>;
++};
++
+ &twl {
+ 	twl_audio: audio {
+ 		compatible = "ti,twl4030-audio";
+diff --git a/arch/arm/boot/dts/omap3.dtsi b/arch/arm/boot/dts/omap3.dtsi
+--- a/arch/arm/boot/dts/omap3.dtsi
++++ b/arch/arm/boot/dts/omap3.dtsi
+@@ -206,17 +206,42 @@ intc: interrupt-controller@48200000 {
+ 			reg = <0x48200000 0x1000>;
  		};
  
 -		sdma: dma-controller@48056000 {
--			compatible = "ti,omap2430-sdma", "ti,omap2420-sdma";
-+		target-module@48056000 {
-+			compatible = "ti,sysc-omap2", "ti,sysc";
- 			ti,hwmods = "dma";
+-			compatible = "ti,omap3630-sdma", "ti,omap3430-sdma";
 -			reg = <0x48056000 0x1000>;
 -			interrupts = <12>,
 -				     <13>,
@@ -117,7 +122,10 @@ diff --git a/arch/arm/boot/dts/omap2.dtsi b/arch/arm/boot/dts/omap2.dtsi
 -				     <15>;
 -			#dma-cells = <1>;
 -			dma-channels = <32>;
--			dma-requests = <64>;
+-			dma-requests = <96>;
++		target-module@48056000 {
++			compatible = "ti,sysc-omap2", "ti,sysc";
+ 			ti,hwmods = "dma";
 +			reg = <0x48056000 0x4>,
 +			      <0x4805602c 0x4>,
 +			      <0x48056028 0x4>;
@@ -129,41 +137,45 @@ diff --git a/arch/arm/boot/dts/omap2.dtsi b/arch/arm/boot/dts/omap2.dtsi
 +			ti,sysc-midle = <SYSC_IDLE_FORCE>,
 +					<SYSC_IDLE_NO>,
 +					<SYSC_IDLE_SMART>;
++			ti,sysc-sidle = <SYSC_IDLE_FORCE>,
++					<SYSC_IDLE_NO>,
++					<SYSC_IDLE_SMART>;
 +			ti,syss-mask = <1>;
-+			clocks = <&core_l3_ck>;
-+			clock-names = "fck";
++			/* Domains (V, P, C): core, core_pwrdm, core_l3_clkdm */
++			clocks = <&core_l3_ick>;
++			clock-names = "ick";
 +			#address-cells = <1>;
 +			#size-cells = <1>;
 +			ranges = <0 0x48056000 0x1000>;
 +
 +			sdma: dma-controller@0 {
-+				compatible = "ti,omap2420-sdma", "ti,omap-sdma";
-+				reg = <0 0x1000>;
++				compatible = "ti,omap3430-sdma", "ti,omap-sdma";
++				reg = <0x0 0x1000>;
 +				interrupts = <12>,
 +					     <13>,
 +					     <14>,
 +					     <15>;
 +				#dma-cells = <1>;
 +				dma-channels = <32>;
-+				dma-requests = <64>;
++				dma-requests = <96>;
 +			};
  		};
  
- 		i2c1: i2c@48070000 {
-diff --git a/arch/arm/boot/dts/omap2430.dtsi b/arch/arm/boot/dts/omap2430.dtsi
---- a/arch/arm/boot/dts/omap2430.dtsi
-+++ b/arch/arm/boot/dts/omap2430.dtsi
-@@ -309,6 +309,10 @@ wd_timer2: wdt@49016000 {
+ 		gpio1: gpio@48310000 {
+diff --git a/arch/arm/boot/dts/omap36xx.dtsi b/arch/arm/boot/dts/omap36xx.dtsi
+--- a/arch/arm/boot/dts/omap36xx.dtsi
++++ b/arch/arm/boot/dts/omap36xx.dtsi
+@@ -223,6 +223,10 @@ thermal_zones: thermal-zones {
  	};
  };
  
 +&sdma {
-+	compatible = "ti,omap2430-sdma", "ti,omap-sdma";
++	compatible = "ti,omap3630-sdma", "ti,omap-sdma";
 +};
 +
- &i2c1 {
- 	compatible = "ti,omap2430-i2c";
- };
+ /* OMAP3630 needs dss_96m_fck for VENC */
+ &venc {
+ 	clocks = <&dss_tv_fck>, <&dss_96m_fck>;
 -- 
 2.24.1
 
