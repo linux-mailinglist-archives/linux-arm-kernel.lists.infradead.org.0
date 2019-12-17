@@ -2,67 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD64E122C65
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 13:58:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74593122C6B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 13:59:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nYAZfwDKqBLglEUF6lX/XjmOlwUfdU0KRnXEiyNx0io=; b=LOmdUo+mPBydNAxWk5PCFPF+s
-	5GxtcZhyK/u2s/SOqc8jf5KJ35U0iUb3wGc+7pmOeAMX6H9b38exHLarKMupDlwWECXdDiamQnEnr
-	k7bqqszOeW9e6IEU5hyGR2nKxmLqlcXIZUGlVEHX4LUAZnlCKuLefFn2yVmwq+cNfpsLqupHdNCk8
-	L/nLk2V0iKJo/PTJzKNEYQez3UlRBGEPQw10se84Han637QBW/DIkyQ6KgRSZIknOZtWRaZFmC2jS
-	1oVfHoKmf61a49jGct1vdZ+GtqCr+zFTEVlKAfieUgNlvTQItis7SpFTVMY9bF4cnQ2EKEASAlPnn
-	O1DyRa2aQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aMvNx7M33lDvr2mrqCs5y+o+cTvXsFfk1cmFKwKErWo=; b=LsXwvOu1Rgoiot
+	25kE6jdERjfXZNrZgsf0Ddtm2UDW+mGxDcqX4xt9oZbcvMa8nfxUjfcOG1TK81RC9KGpC7XRnJa4S
+	OHWJQoDDi8LFQyb/jKUNO896KR64c+crruucylEPiGnM5+LfND2IRg1/IDA6S7segoT+PgqV/ZCbi
+	3ooX7/AT+OjzftPTCsvuraqhQhtcf+QZiTrqFe6MbgbbTvghbMQ5cI1+Fk4pFtMT4Rb635KXDV5I+
+	TL5w9uhrltNluU3BF3lOYAQooltTCUuDZBBPrgP4Rt6CAQZLyOf7h8QMIv8Lt38fZVRIZlwianYTC
+	3WsoLLpUVHRzJ0XI27qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihCR4-00025O-FW; Tue, 17 Dec 2019 12:58:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihCQt-00024o-V5
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 12:58:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B54A331B;
- Tue, 17 Dec 2019 04:58:34 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 34EF33F719;
- Tue, 17 Dec 2019 04:58:33 -0800 (PST)
-Date: Tue, 17 Dec 2019 12:58:32 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
- selection documentation
-Message-ID: <20191217125832.GF4755@sirena.org.uk>
-References: <20191204134631.GT1998@sirena.org.uk>
- <20191210094144.mxximpuouchy3fqu@pengutronix.de>
- <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
- <20191211170918.q7kqkd4lrwwp7jl3@pengutronix.de>
- <20191212161019.GF4310@sirena.org.uk>
- <20191212162152.5uu3feacduetysq7@pengutronix.de>
- <20191212165124.GJ4310@sirena.org.uk>
- <20191216085525.csr2aglm5md4vtsw@pengutronix.de>
- <20191216114454.GB4161@sirena.org.uk>
- <20191217073533.GC31182@pengutronix.de>
+	id 1ihCS2-0002NB-Kx; Tue, 17 Dec 2019 12:59:46 +0000
+Received: from mout.gmx.net ([212.227.17.22])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihCRs-0002Ll-Db
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 12:59:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1576587567;
+ bh=2HkFeiZwUwI8dkycGVvfX0tWo0t5jmvhNrEkAT95D7Y=;
+ h=X-UI-Sender-Class:Subject:From:To:Cc:References:Date:In-Reply-To;
+ b=krm15xqHsYEogj2zU9x5pN7IGkkGJbURAuJw0ZIvbB3AwSXilaZqdhuSIUU7GWClA
+ AYD4yfJlYtcE4MSmyY8ju1eQPzmWvHQfVCPTsPjI2HT28NZx7jBLcbDcfMoMQFLVZx
+ UhQwQ8gzsTwTBEqRF7wrXQb7b9lTRUE21eN/of5s=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.176] ([37.4.249.154]) by mail.gmx.com (mrgmx105
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1M8hVB-1id3aI2Qa1-004lVV; Tue, 17
+ Dec 2019 13:59:27 +0100
+Subject: Re: [PATCH V4 01/10] bluetooth: hci_bcm: Fix RTS handling during
+ startup
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Marcel Holtmann <marcel@holtmann.org>,
+ Johan Hedberg <johan.hedberg@gmail.com>, =?UTF-8?Q?Ond=c5=99ej_Jirman?=
+ <megous@megous.com>
+References: <1570375708-26965-1-git-send-email-wahrenst@gmx.net>
+ <1570375708-26965-2-git-send-email-wahrenst@gmx.net>
+ <61789264-a4c2-ac85-9d74-d186213ec70a@gmx.net>
+ <20191216132509.ofqcdpwxsd7324ql@core.my.home>
+ <6f05f4d8-fa84-ae81-ac4f-00ab12fabeea@gmx.net>
+Message-ID: <5bbda434-d0e4-7162-8634-9900a4fa9148@gmx.net>
+Date: Tue, 17 Dec 2019 13:59:26 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191217073533.GC31182@pengutronix.de>
-X-Cookie: Thufir's a Harkonnen now.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <6f05f4d8-fa84-ae81-ac4f-00ab12fabeea@gmx.net>
+Content-Language: en-US
+X-Provags-ID: V03:K1:J/+nhngNsiRpXFva8LhRKZOD3EwX4sty6zgKpJk4HznZvWttOsm
+ pg38SqOn6JvtHccgD/eEeBbTZpIaPNZP3x87zozi6Z9ONPXxncLRdf9XhnI5pwAUM0Mb0Wc
+ z9IFVNHrh5tI4v3dWmQr8AO1q79vn9dtdIfPtRfjniT33D1HCqZ/guQgdTPFnToxvzmNXv7
+ WBfGdfYM0rgoeBW+l719A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:qKCYXvb1phE=:6j6FxufvYMfhGTAmdw6I4H
+ 0KpswJSIboPCVLdJzdz3YKdXLdu1a5diSG0iqFDH8VqmJnAt50BAcFZDtCtk3NMp8u828IZuo
+ xqtpeLbTXCnDLCPo1RerRzmV8UxMvdOEl3HiEEu5geuGSzBEMh9wfTihO+5iZOuEu2MpwK8JE
+ 1WKTBhQ64wpvoQ8+hwzAvovwnOh8yv2N8X9TO9WP2olCnBw9FC9vL1T+7QYfB2RRjsx/pG8A5
+ qtCwgOkiFwkgBQPjFc11nIVK3juEMS/s6N16UlHTQSjlhEVhoGpO+t2emauIDVEEpR8nE1Aoh
+ s5Jd1+bd7nsCJacbBpQKyO11rLU9dAwjV2KWkAWiHZoa/fc9T27UQzXyoDLKblV4PYZh62d03
+ lyP7ok5Ry6ZMyQYHyVz8JNUDuHGC88vwYrdV57JVLTWlfhviwF2BI6/RQky+CPgiZegRQRTRW
+ nVsUKizHSWx0NsiqSdgTg5IilDxMSB6A2fmG/jCLyilAJk1+x4SP52tDmBuD3bSHHq5RldPWj
+ Gu2NkKJ6+tmENI3r6WK7jDEjXvIY/tihG3I15XcOzALDQ7RaTwtOk1XXYYn898ltR0fSNhFcT
+ 5UyCI4e9ZedcZHv3by2cJR2TIgmNEHFdi/oJAO5l6qQLITYlPbl6/tUwSdTO4XBA50Q571R8x
+ dpt0IBldQ0NXF8OzxpBsTPlydNrLJyjBB0xDDg6qkG3pXkLMLpLrOq0hi6dyzuSGbXm4FpCO3
+ tEt74TL/3JwWdimfYHmjus/EbAYb0FM/abip0zT4SQh+b3eBFuHPtWc0pKYgOXEa9wp4j5PyF
+ 4yqiQ9F/ftzcl0ghzxxaSamYT4+lLr6O4rGqoe5+Q9xePBKGqtdveLeoor1/Xbqjw6MdNy1po
+ gvFpb6pr0Nr+cvvK876r/mC26aSIhHpmN8uNSpgJ2Ad8F/wPI1s/jhA68U/Y61xBw3gdvu5G+
+ 80PLhnUakDZ9X73QfBuuTjvZQfBgg7Vtpp2VrKWTO2OpZQr8P50OS1f4xdeQm1B4LRPEB21Rw
+ jJnA2ivOlrF2B/M28yIRr/8F/PFbuRiaMkyY/ikJs8gLLW7H/ZNHzpJi02HrRbVq3sJW9/obG
+ jWq0GSWoRbzJfGvwA75RfDNJEfriBlcViruHqMTBzrYyJUcSc9T7rN4ejSGfbYGqKVILzqUSJ
+ Ya6MfWzQ1hcxsKeAvjw6444cljAR1DDF2SipO8qSFSINnPlX5N87uBX8vAJxcakNkncReRXQS
+ Ct0ZqFxIjqFXU0ULu9O+VTHZpkNxKW0DJMDUTiSzsYu8HnSBLwVwfT79BYpA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_045836_092091_477EBEA3 
-X-CRM114-Status: GOOD (  19.94  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191217_045936_790175_BD2E9445 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.22 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,104 +108,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Support Opensource <Support.Opensource@diasemi.com>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "andrew@aj.id.au" <andrew@aj.id.au>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- "lee.jones@linaro.org" <lee.jones@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============8410831952775362129=="
+Cc: linux-bluetooth@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============8410831952775362129==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="0hHDr/TIsw4o3iPK"
-Content-Disposition: inline
-
-
---0hHDr/TIsw4o3iPK
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Dec 17, 2019 at 08:35:33AM +0100, Marco Felsch wrote:
-> On 19-12-16 11:44, Mark Brown wrote:
-
-> > What I'm saying is that I think the binding needs to explicitly talk
-> > about that since at the minute it's really confusing reading it as it
-> > is, it sounds very much like it's trying to override that in a chip
-> > specific fashion as using gpiolib and the GPIO bindings for pinmuxing is
-> > really quite unusual.
-
-> Hm.. I still think that we don't mux the pin to some special function.
-> It is still a gpio input pin and if we don't request the pin we could
-> read the input from user-space too and get a 'valid' value. Muxing would
-> happen if we change the pad to so called _alternate_ function. Anyway,
-> lets find a binding description:
-
-I don't think any of this makes much difference from a user point of
-view.
-
-> IMHO this is very descriptive and needs no update.
-
-> description:
->  - A GPIO reference to a local general purpose input, [1] calls it GPI.
->    The DA9062 regulators can select between voltage-a/-b settings.
->    Each regulator has a VBUCK*_GPI or VLDO*_GPI input to determine the
->    active setting. In front of the VBUCK*_GPI/VLDO*_GPI input is a mux
->    to select between different signal sources, valid sources are: the
->    internal sequencer, GPI1, GPI2 and GPI3. See [1] table 63 for more
->    information. Most the time the internal sequencer is fine but
->    sometimes it is necessary to use the signal from the DA9062 GPI
->    pads. This binding covers the second use case.
->    Attention: Sharing the same GPI for other purposes or across multiple
->    regulators is possible but the polarity setting must equal.
-
-This doesn't say anything about how the GPIO input is expected to be
-controlled, for voltage setting any runtime control would need to be
-done by the driver and it sounds like that's all that can be controlled.
-The way this reads I'd expect one use of this to be for fast voltage
-setting for example (you could even combine that with suspend sequencing
-using the internal sequencer if you mux back to the sequencer during
-suspend).
-
---0hHDr/TIsw4o3iPK
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl340PcACgkQJNaLcl1U
-h9BQJwf/ZRW2Sc0sN6zR4aGO1ekytPGFqpZCQbZG5T5CX9CTgmD+QldwXmP9gB0A
-fAa98/pWCJQHoEVQQxbrVMEpfoFKUTONO5xv+/jA8lq5MTxo9/s9U4mZcVulaCEk
-uiWXoDvSF6LrgQvsJpkFooRbdrUDHxwF73qd+qfxGkDknsayb7XPPt1O2AWzLFCN
-dezSJXFa8Xw+qa+y3H6r1W9+siNEIGYp2qjNlUWFtltrZav2ys2TxITxYXlQundv
-9iX5+AIzFWeAMsMdoMp17Q49QWW5bYCQ4p3d3M8jtRvGN7LpZflN79S4sWYEuhQe
-XYgXLKaDfjer7VeQkopSdft+oAo3Pg==
-=iy8V
------END PGP SIGNATURE-----
-
---0hHDr/TIsw4o3iPK--
-
-
---===============8410831952775362129==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8410831952775362129==--
-
+SGkgT25kcmVqLAoKQW0gMTYuMTIuMTkgdW0gMTk6Mjggc2NocmllYiBTdGVmYW4gV2FocmVuOgo+
+IEhpIE9uZHJlaiwKPgo+IEFtIDE2LjEyLjE5IHVtIDE0OjI1IHNjaHJpZWIgT25kxZllaiBKaXJt
+YW46Cj4+Cj4+IE1lYW53aGlsZSBpIHdpbGwgcGxheSB3aXRoIG1vZGlmaWNhdGlvbnMgb2Ygb3Jp
+Z2luYWwgcGF0Y2ggb24gdGhlCj4+IFJhc3BiZXJyeSBQaSA0IGFuZCBjb21lIGJhY2sgdG8geW91
+LgoKY291bGQgeW91IHBsZWFzZSB0ZXN0IHRoaXMgcGF0Y2ggWzJdIG9uIHRvcCBvZiBjdXJyZW50
+IGJsdWV0b290aC1uZXh0PwoKVGhpcyBpcyB0aGUgc29sdXRpb24gaW4gY2FzZSB3ZSBkb24ndCBm
+aW5kIHRoZSBjYXVzZSBvZiB0aGlzIGlzc3VlLiBJCmRvbid0IHByZWZlciB0aGlzIG9uZSwgYmVj
+YXVzZSB0aGlzIGlzIG5leHQgc3R1ZmYgYW5kIHdlIG5lZWQgdG8gcmV2ZXJ0CnRoZSBvZmZlbmRp
+bmcgcGF0Y2ggZm9yIExpbnV4IDUuNS4KClsyXSAtIGh0dHBzOi8vZ2lzdC5naXRodWIuY29tL2xh
+dGVnb29kYnllLzNkMzllNGIwN2Q0MDFmMDdmYTlmOWMyZjExZTFmMTdkCgo+Cj4gVGhhbmtzCj4g
+U3RlZmFuCj4KPiBbMV0gLQo+IGh0dHA6Ly93d3cuc3BhcmtsYW4uY29tL3AyLXByb2R1Y3RzLWRl
+dGFpbC5waHA/UEtleT00OTg0RlZ1a2pjcHlsemlmUWlNLVRHRkUtSUtYRC0tQkN3ZjRQMTVLZnJV
+JkFQNjI1Ngo+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
