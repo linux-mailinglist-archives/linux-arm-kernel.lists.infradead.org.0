@@ -2,75 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DDA0122A7A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 12:43:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 309C3122A85
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 12:45:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=uNguUFvJ2naQUifwhMPrGURVHtHr3e/JJDf5xHv4J9A=; b=lAWWbH0AZ4E+F0EzjDhj3xNyvS
-	ffbeMlMlvioGffEtBBBpJzZHwx9C83MiDDFiGlr87rPdn3LF2axE1JqtQgiE6TKodLlERuu3eAb+C
-	udXbmCjCHxkXSbmrHN/fqgdB6UFvQYfhENTuQoneKM3Ko7gAw7KtYbbLGxqCYumZBBUCXjoEUrPsi
-	zJnTZaUeAVZ/E2JFnebo4njvgS6dNQADpo7tsmBSnSF/uCSAnKk4Sl7YNiGFUzK0Xx4ZOFZwG+2Ht
-	cL3JbmNB4d0sbcPpVaCuJWhtev554T2YYYFNj+FlLZZLIwwvgE163/u8E+9XCoBDWGEeKWD26z6BN
-	9DAnCAyQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gNjqVepxztIv5i5cL5JivKr2SAkf3j+d+1LmbSSQ/5A=; b=h347cRymw8fOSXbCgkv3JUWQP
+	SVgiOuupSJ30tWaePcK7O9vuxkrO6vQ2BQIcj1wrO8yFhqr7VB8yxFO6JMCX3/sipf/KZUtGUITpE
+	78eschDdsNo/zchf6XYyWDZOidUf2cyXXRP8x6zrDj1UN60joOqApwkDRu9sH3IFbtWtHRWvVsohk
+	9hvzFBIBYkvMDllvs40Q5A+xM0Ca3p8nfCAVhgZXsdkmsmCIzbWXVW7zgjmyH8EmteQjLv84wKL+t
+	NPdNyumSfa1VzWr7nems7YegnoaYOCxUGb+jqgK9upguijBHf2lvVhw7Wn58nj65npmtBCIIuC+SK
+	hbFmVYpdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihBGQ-0000f6-B5; Tue, 17 Dec 2019 11:43:42 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihBFe-00008h-KS
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 11:42:57 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 9863C4266E;
- Tue, 17 Dec 2019 11:42:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576582974; bh=bM8T9PSP5GnAoUaQXQaEg95xhnvdUPdNYJTNEqJMPNo=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=iyb7DJjqreUutfvIo0Kn0KK0dzIjdXKCcY4xXyPbtZskqAKeK+LMwgtUvjiUtKzaG
- 1EhWj+M1LZv8WwEs3mXb/eZBNjxPni+p76G7boxlYguceuUySL6vHqQs92NAe1ittp
- pUS/ySlg/gQCWABqyiaZM8xShvH1hxWGcdEPILGMyKHNxDcUFEyUuD3ExN79gvtkcz
- zpDKMBjIxF6NdKMz7ngc4eWb6V0J/hv4T7I4PrCKGX5BGy56Z4Gi6WBLBFIXF/4hCl
- WaTmeOdq3V7mpjFq1T7f+3UzLd49OBe+vfJE3jzT+glH2vXfkp9pwG2+O4wonouyNQ
- qOrNtFQJL6fZw==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 2A42FA00AE;
- Tue, 17 Dec 2019 11:42:51 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net v2 8/8] net: stmmac: Enable 16KB buffer size
-Date: Tue, 17 Dec 2019 12:42:38 +0100
-Message-Id: <54641d0f06e56ff2470f0575fc901477306a54c6.1576581853.git.Jose.Abreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1576581853.git.Jose.Abreu@synopsys.com>
-References: <cover.1576581853.git.Jose.Abreu@synopsys.com>
-In-Reply-To: <cover.1576581853.git.Jose.Abreu@synopsys.com>
-References: <cover.1576581853.git.Jose.Abreu@synopsys.com>
+	id 1ihBHd-0001ul-Mm; Tue, 17 Dec 2019 11:44:57 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihBFk-0000Df-Cr
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 11:43:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B66E831B;
+ Tue, 17 Dec 2019 03:42:59 -0800 (PST)
+Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8082C3F6CF;
+ Tue, 17 Dec 2019 03:42:58 -0800 (PST)
+Subject: Re: [PATCH v6 10/15] dt-bindings: qcom: Add CTI options for qcom
+ msm8916
+To: Mike Leach <mike.leach@linaro.org>, linux-arm-kernel@lists.infradead.org, 
+ coresight@lists.linaro.org, devicetree@vger.kernel.org
+References: <20191211230902.5414-1-mike.leach@linaro.org>
+From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
+Message-ID: <12030924-d647-7c1b-bcc2-b3e5a2955722@arm.com>
+Date: Tue, 17 Dec 2019 11:42:57 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
+MIME-Version: 1.0
+In-Reply-To: <20191211230902.5414-1-mike.leach@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_034254_670790_CC72D2F0 
-X-CRM114-Status: GOOD (  11.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191217_034300_503435_F6534A6B 
+X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,57 +66,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Jakub Kicinski <jakub.kicinski@netronome.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: lorenzo.pieralisi@arm.com, mathieu.poirier@linaro.org, liviu.dudau@arm.com,
+ agross@kernel.org, robh+dt@kernel.org, sudeep.holla@arm.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-XGMAC supports maximum MTU that can go to 16KB. Lets add this check in
-the calculation of RX buffer size.
+On 11/12/2019 23:09, Mike Leach wrote:
+> Adds system and CPU bound CTI definitions for Qualcom msm8916 platform
+> (Dragonboard DB410C).
+> System CTIs 2-11 are omitted as no information available at present.
+> 
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
 
-Fixes: 7ac6653a085b ("stmmac: Move the STMicroelectronics driver")
-Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
-
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index eb31d7fb321c..082eeff9f54b 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -1109,7 +1109,9 @@ static int stmmac_set_bfsize(int mtu, int bufsize)
- {
- 	int ret = bufsize;
- 
--	if (mtu >= BUF_SIZE_4KiB)
-+	if (mtu >= BUF_SIZE_8KiB)
-+		ret = BUF_SIZE_16KiB;
-+	else if (mtu >= BUF_SIZE_4KiB)
- 		ret = BUF_SIZE_8KiB;
- 	else if (mtu >= BUF_SIZE_2KiB)
- 		ret = BUF_SIZE_4KiB;
--- 
-2.7.4
-
+Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
