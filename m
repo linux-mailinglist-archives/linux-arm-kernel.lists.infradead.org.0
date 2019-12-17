@@ -2,78 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4BDB122B88
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 13:31:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89382122BB8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 13:35:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nNeg0d57Ng/S2ySWPik7X+tqbT9lns/68semk2+2WEU=; b=Vi/fQ+uFIMs0X0
-	AGhUzyLWnn/MnIZKqlBXcYfjHzgKH8OVBqnaNqaHhfQQ3GLUbt4YhQ/BNoIYypt75XUYoOgOb44in
-	+QMk2tOlXk+NP51WuVzJqbu737Mnc+qqGNSSeqJCznxiObLJ3dooWW2LTp+oFl+OBGzheek5ukVpj
-	G8fM65rj7UK4bPO2BLQiq2sbEx5QezYg/mISw8S1wyyYLnNSLmkO4zHc4MIpbuXer7MSprEuvZJ2p
-	uDDlTEE0TNT7fCJUzMz3z7NTmAk4r58tpexUl5+xda9FSyoxgyN9JoUQnpdfOHHCr8Po6rgCMgRxJ
-	M95SpBAuSY6a3stsfbKg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bgUbSg+m3CkbT77ONKlliqNTJXztjb8J/8J3ndq05tI=; b=kg+Bwuvm6bpndyzlhKd6x7ZuL
+	a4eVBmX2VotunNKojVRXiGEByLal94iftpKF1rH7psELs0QbzwS45BaAaM99FE21xRPzNTDTk//wq
+	Z2ZQ2l/NxZtTQCFn0AFlhvcffY1RW6ifcR+aj3fPYcszzMAgYjowYKjaSgpCDsam/XOV1zznjMf8o
+	R4iX+P/O08FkFdTpK5P8FsCGxb+oJRdIE9bFbfQVckhHx7rrFhobjZRH3GhYWccoZvPrfFSSsy7bK
+	0mqHX1oJfrMowCph2KEHpYGDjIvY8LEdfV8OZog2hH/4iCBtA7iCOgHRy367Ep1EOQwcESELI97pr
+	vrYDKr9uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihC0w-0006gu-Bm; Tue, 17 Dec 2019 12:31:46 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1ihC4J-0007ip-VH; Tue, 17 Dec 2019 12:35:15 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihC0m-0006fM-OO
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 12:31:38 +0000
-Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
- helo=dude02.lab.pengutronix.de)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1ihC0V-0005OG-Hy; Tue, 17 Dec 2019 13:31:19 +0100
-Received: from mfe by dude02.lab.pengutronix.de with local (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1ihC0S-0006OI-I9; Tue, 17 Dec 2019 13:31:16 +0100
-Date: Tue, 17 Dec 2019 13:31:16 +0100
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Adam Thomson <Adam.Thomson.Opensource@diasemi.com>
-Subject: Re: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
- selection documentation
-Message-ID: <20191217123116.GB29666@pengutronix.de>
-References: <20191210094144.mxximpuouchy3fqu@pengutronix.de>
- <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
- <20191211170918.q7kqkd4lrwwp7jl3@pengutronix.de>
- <20191212161019.GF4310@sirena.org.uk>
- <20191212162152.5uu3feacduetysq7@pengutronix.de>
- <20191212165124.GJ4310@sirena.org.uk>
- <20191216085525.csr2aglm5md4vtsw@pengutronix.de>
- <AM5PR1001MB09941005A47B603805D3C53280510@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
- <20191217090034.GD31182@pengutronix.de>
- <AM5PR1001MB099460B2D291644F088707BA80500@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+ id 1ihC3z-0007i0-3v; Tue, 17 Dec 2019 12:34:56 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 22098AD14;
+ Tue, 17 Dec 2019 12:34:53 +0000 (UTC)
+Message-ID: <d356ad7ac8387f56c03fd24d04f471d26ff9ae7c.camel@suse.de>
+Subject: Re: [PATCH v2] mmc: bcm2835: Use dma_request_chan() instead
+ dma_request_slave_channel()
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>, ulf.hansson@linaro.org, 
+ f.fainelli@gmail.com, rjui@broadcom.com, sbranden@broadcom.com
+Date: Tue, 17 Dec 2019 13:34:51 +0100
+In-Reply-To: <20191217122254.7103-1-peter.ujfalusi@ti.com>
+References: <20191217122254.7103-1-peter.ujfalusi@ti.com>
+User-Agent: Evolution 3.34.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <AM5PR1001MB099460B2D291644F088707BA80500@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 13:21:27 up 110 days, 35 min, 93 users,  load average: 0.98, 1.01,
- 1.03
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_043136_792882_0E162322 
-X-CRM114-Status: GOOD (  22.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191217_043455_306377_A54930A2 
+X-CRM114-Status: GOOD (  17.44  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,87 +63,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Support Opensource <Support.Opensource@diasemi.com>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- "andrew@aj.id.au" <andrew@aj.id.au>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
- Mark Brown <broonie@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "lee.jones@linaro.org" <lee.jones@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org, vkoul@kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============0953970573879952487=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-12-17 09:53, Adam Thomson wrote:
-> On 17 December 2019 09:01, Marco Felsch wrote:
-> 
-> > > > The enabel control signal is always available, please check [1] table
-> > > > 63. There is a mux in front of the enable pin so:
-> > > >
-> > > >              +-------------
-> > > >  Seq. |\     |   Regulator
-> > > >  GPI1 | \    |
-> > > >  GPI2 | | -- > Enable
-> > > >  GPI3 | /    |
-> > > >       |/     .
-> > > >              .
-> > > >              .
-> > > >
-> > > > Adam please correct me if this is wrong.
-> > >
-> > > Yes the register can always be configured regardless of the associated pin
-> > > configuration, but if say GPIO1 was configured as a GPO but a regulator was
-> > > configured to use GPIO1 as its GPI control mechanism, the output signal from
-> > > GPIO1 would be ignored, the sequencer control would not have any effect and
-> > > you're simply left with manual I2C control. Really we shouldn't be getting into
-> > > that situation though. If a GPIO is to be used as a regulator control signal
-> > > then it should be marked as such and I don't think we should be able to use that
-> > > pin for anything other than regulator control.
-> > 
-> > I see, so we have to guarantee that the requested gpio is configured as
-> > input. This can be done by:
-> 
-> This is one of the reasons I thought this was better suited to being done in the
-> pinctrl/pinmux side. If you configure the GPIO as for regulator control then
-> the code can automatically configure the GPIO for input. That doesn't then need
-> to be in the regulator driver.
 
-I still don't prefer that way.. pls check my arguments I already made
-and I don't wanna repeat it again.
+--===============0953970573879952487==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-tBZ5rr+Ad+DYa6kDGNIu"
 
-> But yes we wouldn't really want to configure a regulator to be controlled via a
-> GPI when it's configured as a GPO as it makes no sense.
 
-Okay, so the check is all we need to hardening the driver against wrong
-usage :)
+--=-tBZ5rr+Ad+DYa6kDGNIu
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-Regards,
-  Marco
+On Tue, 2019-12-17 at 14:22 +0200, Peter Ujfalusi wrote:
+> dma_request_slave_channel() is a wrapper on top of dma_request_chan()
+> eating up the error code.
+>=20
+> By using dma_request_chan() directly the driver can support deferred
+> probing against DMA.
+>=20
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+> ---
 
-> 
-> > 
-> >   if (gpi->flags & FLAG_IS_OUT)
-> >   	return -EINVAL;
-> > 
-> > Regards,
-> >   Marco
-> 
+Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
--- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+> Hi,
+>=20
+> Changes since v1:
+> - instead of returning jump to err: to free up resources
+>=20
+> Regards,
+> Peter
+>=20
+>  drivers/mmc/host/bcm2835.c | 12 +++++++++++-
+>  1 file changed, 11 insertions(+), 1 deletion(-)
+>=20
+> diff --git a/drivers/mmc/host/bcm2835.c b/drivers/mmc/host/bcm2835.c
+> index 99f61fd2a658..c3d949847cbd 100644
+> --- a/drivers/mmc/host/bcm2835.c
+> +++ b/drivers/mmc/host/bcm2835.c
+> @@ -1393,7 +1393,17 @@ static int bcm2835_probe(struct platform_device *p=
+dev)
+>  	host->dma_chan =3D NULL;
+>  	host->dma_desc =3D NULL;
+> =20
+> -	host->dma_chan_rxtx =3D dma_request_slave_channel(dev, "rx-tx");
+> +	host->dma_chan_rxtx =3D dma_request_chan(dev, "rx-tx");
+> +	if (IS_ERR(host->dma_chan_rxtx)) {
+> +		ret =3D PTR_ERR(host->dma_chan_rxtx);
+> +		host->dma_chan_rxtx =3D NULL;
+> +
+> +		if (ret =3D=3D -EPROBE_DEFER)
+> +			goto err;
+> +
+> +		/* Ignore errors to fall back to PIO mode */
+> +	}
+> +
+> =20
+>  	clk =3D devm_clk_get(dev, NULL);
+>  	if (IS_ERR(clk)) {
+
+
+--=-tBZ5rr+Ad+DYa6kDGNIu
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl34y2sACgkQlfZmHno8
+x/4RNQf9G4eHpfn79sBZ7cjLKSUuneBG1qqhlSE5MZC2jnxYng41/8xysCdq/WTG
+P/LOanHY0hxM3Ye6OV35L1i6Ot+0VqE2DZmDoSHdkDcogx03/u+D3e2epyLuk7fG
+HrbaNZ7bV/MP+3LFXXsAmHd/DPdgZ663iTFEwlzOtPapd/LGAT5KuVs5V+ib/XLA
+ln6xfJVQXYB7oO9m8ot7vE7yXS5gksEZvVskDWZCpXZSzMLC2DuU+CHQnHUXXonQ
+yAC4OhZ0DMhD2I8es+5lv4VwM9OwFxVPbZjgc3CQj0RpWni8L4J16t8fDNX6b2pG
+jpncC5yVkZWUhYPZNJkabnx9A7YNwQ==
+=WeHO
+-----END PGP SIGNATURE-----
+
+--=-tBZ5rr+Ad+DYa6kDGNIu--
+
+
+
+--===============0953970573879952487==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0953970573879952487==--
+
+
