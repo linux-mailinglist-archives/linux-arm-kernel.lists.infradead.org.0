@@ -2,36 +2,36 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF09E12351F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 19:40:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EEFB12351E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 19:40:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Yt//Eo3Ri9emFgsSs0KuCEXEeyNSgNKl/OcPNhnjYdg=; b=Lks
-	FN6SPaT63E9yknhuQCFql6Q5rr0WOqEoESOwaOWXdXRZdk5Esce8es5pyPRDIWOsKhCCt4uDyBino
-	QmOgpjz2Plk5ZNstcdLd1uVytAFypApJpcf9yV5HLDlblE+u3bSTmgg3ZiPMBHuXdXVmkUtfQ4j1Y
-	N6dRfZM3KS7GYysGaBJPO6U4chL8PQw4wmbSn0yUnLfMOL/zlhf4j2gLph8fiEX7+MEhgHnbBfJ31
-	tkbuYq7HUGwmBp+xVfAO/jtPX0UzeiUZXhcFAmECXfSjkcN7USEiTalnzuKDAjnxqXyXDZcbzv+fg
-	19B2g3nMvtZrXgFx5fmVRwknXrUUg9w==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=faGqDCdkqV0Pp7sQmmxFccSTCiy6kxAdHJF8tgcvdBQ=; b=iqD/77XHGD2c7gh4WHcwN9YMzJ
+	XWLLcs6UH1OLLfgzWNM+dUH6Uc2V5vaWgp6PLeSOGr9HcajLKnSWgClYFSzIW0b76vT2HI7BAa16n
+	iDnk5p3W1VNLf/ml5YJ2PEHCe0bUbPvllNHyaThBGh8+qQVnR6NsBS3pF5AtJyxuS95c9cnjy5uvH
+	+KnbDTFXMkfQNCzmD/uKGMcCQ+gUDUm8aB5HnVt1Dm3JKlYJwQTc5ALr+wkcSWqFZc8Ot0+gPkKf3
+	PgRMPAY0BN3FPMZBwpRHezYLQazrqAQrBZrne06h+huvLYHIf6drERAB3c+u8krMFuaKhk3JOz+0e
+	taZtfSVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihHlm-0005cM-2D; Tue, 17 Dec 2019 18:40:30 +0000
-Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
+	id 1ihHlU-00044s-FZ; Tue, 17 Dec 2019 18:40:12 +0000
+Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihHkB-0003EP-8T
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 18:38:55 +0000
-Received: from ramsan ([84.195.182.253])
- by baptiste.telenet-ops.be with bizsmtp
- id f6ei2100B5USYZQ016eiwo; Tue, 17 Dec 2019 19:38:47 +0100
+ id 1ihHkA-0003EK-OO
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 18:38:53 +0000
+Received: from ramsan ([84.195.182.253]) by xavier.telenet-ops.be with bizsmtp
+ id f6ei2100P5USYZQ016eiWp; Tue, 17 Dec 2019 19:38:44 +0100
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1ihHk2-0003aF-Io; Tue, 17 Dec 2019 19:38:42 +0100
+ id 1ihHk2-0003aG-JH; Tue, 17 Dec 2019 19:38:42 +0100
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1ihHk2-00007v-FM; Tue, 17 Dec 2019 19:38:42 +0100
+ id 1ihHk2-00007x-HX; Tue, 17 Dec 2019 19:38:42 +0100
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Magnus Damm <magnus.damm@gmail.com>,
  Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
@@ -39,21 +39,23 @@ To: Magnus Damm <magnus.damm@gmail.com>,
  Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
  Wolfram Sang <wsa+renesas@sang-engineering.com>,
  Eugeniu Rosca <erosca@de.adit-jv.com>
-Subject: [PATCH 0/5] arm64: renesas: Split/rename R-Car H3 support
-Date: Tue, 17 Dec 2019 19:38:36 +0100
-Message-Id: <20191217183841.432-1-geert+renesas@glider.be>
+Subject: [PATCH 1/5] arm64: dts: renesas: Rename r8a7795{-es1,
+ }* to r8a7795[01]*
+Date: Tue, 17 Dec 2019 19:38:37 +0100
+Message-Id: <20191217183841.432-2-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191217183841.432-1-geert+renesas@glider.be>
+References: <20191217183841.432-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_103851_496232_2D13A080 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191217_103851_136917_8D0275C7 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:13 listed in]
+ low trust [2a02:1800:120:4:0:0:f00:14 listed in]
  [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -79,94 +81,263 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-	Hi all,
-
 Despite using the same compatible values ("r8a7795"-based) because of
 historical reasons, R-Car H3 ES1.x (R8A77950) and R-Car H3 ES2.0+
 (R8A77951) are really different SoCs, with different part numbers.
 
-Hence this patch series splits the config symbols for R-Car H3, and
-renames the related DTS files, to maintain a clear separation between
-early (ES1.x) and later (ES2.0+) SoC revisions.  This will pave the way
-for configuring out support for early SoC revisions, which can reduce
-kernel size, especially in the pin control subsystem.
-This is similar to the recent split of R8A7796 symbols for R-Car M3-W
-(R8A77960) and M3-W+ (R8A77961)[1], and the related DTS file renames[2],
-but different due to the sharing of compatible values between R-Car H3
-ES1.x and H3 ES2.0+.
+Reflect this in the DTS files by changing their base names from
+"r8a7795-es1" and "r8a7795" to "r8a77950" resp. "r8a77951".
+Drop all "ES" references next to part numbers, as they are implied by
+the part numbers, and thus redundant.
 
-This series also includes the rename/cleanup of the ULCB DTS file names,
-as suggested by Eugeniu Rosca.  As DTS files are already being renamed
-for v5.6[2], it makes sense to combine them with other renames, to avoid
-inconveniencing the user with multiple renames in multiple kernel
-versions.
+Note that DT binding headers, definitions, and compatible values are
+not renamed, to preserve backward compatibility.
 
-The pin control part will be handled in a separate patch.
-
-For your convenience, all of this is available in the
-topic/r8a7795-rename-v1 branch of my renesas-drivers git repository at
-git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers.git.
-
-Thanks for your comments!
-
-References:
-  [1] "[PATCH v2 00/11] arm64: renesas: Add r8a77961 support"
-      https://lore.kernel.org/linux-renesas-soc/20191023123342.13100-1-geert+renesas@glider.be/
-  [2] "[PATCH/RFC] arm64: dts: renesas: Rename r8a7796* to r8a77960*"
-      https://lore.kernel.org/linux-renesas-soc/20191211131311.23661-1-geert+renesas@glider.be/
-
-Geert Uytterhoeven (5):
-  arm64: dts: renesas: Rename r8a7795{-es1,}* to r8a7795[01]*
-  arm64: dts: renesas: Drop redudant SoC prefixes from ULCB DTS file
-    names
-  arm64: dts: renesas: Sort DTBs in Makefile
-  arm64: dts: renesas: Prepare for split of ARCH_R8A7795 into
-    ARCH_R8A7795[01]
-  soc: renesas: Add ARCH_R8A7795[01] for existing R-Car H3
-
- arch/arm64/boot/dts/renesas/Makefile          | 21 ++++++++++---------
- ...salvator-x.dts => r8a77950-salvator-x.dts} |  4 ++--
- ...795-h3ulcb-kf.dts => r8a77950-ulcb-kf.dts} |  4 ++--
- ...a7795-es1-h3ulcb.dts => r8a77950-ulcb.dts} |  4 ++--
- .../{r8a7795-es1.dtsi => r8a77950.dtsi}       |  4 ++--
- ...salvator-x.dts => r8a77951-salvator-x.dts} |  4 ++--
- ...lvator-xs.dts => r8a77951-salvator-xs.dts} |  8 +++----
- ...es1-h3ulcb-kf.dts => r8a77951-ulcb-kf.dts} |  4 ++--
- .../{r8a7795-h3ulcb.dts => r8a77951-ulcb.dts} |  4 ++--
- .../renesas/{r8a7795.dtsi => r8a77951.dtsi}   |  2 +-
- ...960-m3ulcb-kf.dts => r8a77960-ulcb-kf.dts} |  2 +-
- ...{r8a77960-m3ulcb.dts => r8a77960-ulcb.dts} |  0
- ...65-m3nulcb-kf.dts => r8a77965-ulcb-kf.dts} |  2 +-
- ...r8a77965-m3nulcb.dts => r8a77965-ulcb.dts} |  0
- drivers/soc/renesas/Kconfig                   |  8 +++++++
- 15 files changed, 40 insertions(+), 31 deletions(-)
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+ arch/arm64/boot/dts/renesas/Makefile                   | 10 +++++-----
+ .../{r8a7795-h3ulcb-kf.dts => r8a77950-h3ulcb-kf.dts}  |  4 ++--
+ .../{r8a7795-es1-h3ulcb.dts => r8a77950-h3ulcb.dts}    |  4 ++--
+ ...7795-es1-salvator-x.dts => r8a77950-salvator-x.dts} |  4 ++--
+ .../dts/renesas/{r8a7795-es1.dtsi => r8a77950.dtsi}    |  4 ++--
+ ...8a7795-es1-h3ulcb-kf.dts => r8a77951-h3ulcb-kf.dts} |  4 ++--
+ .../{r8a7795-h3ulcb.dts => r8a77951-h3ulcb.dts}        |  4 ++--
+ ...{r8a7795-salvator-x.dts => r8a77951-salvator-x.dts} |  4 ++--
+ ...8a7795-salvator-xs.dts => r8a77951-salvator-xs.dts} |  8 ++++----
+ .../boot/dts/renesas/{r8a7795.dtsi => r8a77951.dtsi}   |  2 +-
+ 10 files changed, 24 insertions(+), 24 deletions(-)
+ rename arch/arm64/boot/dts/renesas/{r8a7795-h3ulcb-kf.dts => r8a77950-h3ulcb-kf.dts} (75%)
+ rename arch/arm64/boot/dts/renesas/{r8a7795-es1-h3ulcb.dts => r8a77950-h3ulcb.dts} (89%)
  rename arch/arm64/boot/dts/renesas/{r8a7795-es1-salvator-x.dts => r8a77950-salvator-x.dts} (96%)
- rename arch/arm64/boot/dts/renesas/{r8a7795-h3ulcb-kf.dts => r8a77950-ulcb-kf.dts} (75%)
- rename arch/arm64/boot/dts/renesas/{r8a7795-es1-h3ulcb.dts => r8a77950-ulcb.dts} (89%)
  rename arch/arm64/boot/dts/renesas/{r8a7795-es1.dtsi => r8a77950.dtsi} (98%)
+ rename arch/arm64/boot/dts/renesas/{r8a7795-es1-h3ulcb-kf.dts => r8a77951-h3ulcb-kf.dts} (75%)
+ rename arch/arm64/boot/dts/renesas/{r8a7795-h3ulcb.dts => r8a77951-h3ulcb.dts} (92%)
  rename arch/arm64/boot/dts/renesas/{r8a7795-salvator-x.dts => r8a77951-salvator-x.dts} (96%)
  rename arch/arm64/boot/dts/renesas/{r8a7795-salvator-xs.dts => r8a77951-salvator-xs.dts} (96%)
- rename arch/arm64/boot/dts/renesas/{r8a7795-es1-h3ulcb-kf.dts => r8a77951-ulcb-kf.dts} (75%)
- rename arch/arm64/boot/dts/renesas/{r8a7795-h3ulcb.dts => r8a77951-ulcb.dts} (92%)
  rename arch/arm64/boot/dts/renesas/{r8a7795.dtsi => r8a77951.dtsi} (99%)
- rename arch/arm64/boot/dts/renesas/{r8a77960-m3ulcb-kf.dts => r8a77960-ulcb-kf.dts} (92%)
- rename arch/arm64/boot/dts/renesas/{r8a77960-m3ulcb.dts => r8a77960-ulcb.dts} (100%)
- rename arch/arm64/boot/dts/renesas/{r8a77965-m3nulcb-kf.dts => r8a77965-ulcb-kf.dts} (92%)
- rename arch/arm64/boot/dts/renesas/{r8a77965-m3nulcb.dts => r8a77965-ulcb.dts} (100%)
 
+diff --git a/arch/arm64/boot/dts/renesas/Makefile b/arch/arm64/boot/dts/renesas/Makefile
+index d4cc3323d0668dba..12c2382c0a5427e2 100644
+--- a/arch/arm64/boot/dts/renesas/Makefile
++++ b/arch/arm64/boot/dts/renesas/Makefile
+@@ -4,11 +4,11 @@ dtb-$(CONFIG_ARCH_R8A774A1) += r8a774a1-hihope-rzg2m-ex.dtb
+ dtb-$(CONFIG_ARCH_R8A774B1) += r8a774b1-hihope-rzg2n.dtb
+ dtb-$(CONFIG_ARCH_R8A774B1) += r8a774b1-hihope-rzg2n-ex.dtb
+ dtb-$(CONFIG_ARCH_R8A774C0) += r8a774c0-cat874.dtb r8a774c0-ek874.dtb
+-dtb-$(CONFIG_ARCH_R8A7795) += r8a7795-salvator-x.dtb r8a7795-h3ulcb.dtb
+-dtb-$(CONFIG_ARCH_R8A7795) += r8a7795-h3ulcb-kf.dtb
+-dtb-$(CONFIG_ARCH_R8A7795) += r8a7795-salvator-xs.dtb
+-dtb-$(CONFIG_ARCH_R8A7795) += r8a7795-es1-salvator-x.dtb r8a7795-es1-h3ulcb.dtb
+-dtb-$(CONFIG_ARCH_R8A7795) += r8a7795-es1-h3ulcb-kf.dtb
++dtb-$(CONFIG_ARCH_R8A7795) += r8a77951-salvator-x.dtb r8a77951-h3ulcb.dtb
++dtb-$(CONFIG_ARCH_R8A7795) += r8a77951-h3ulcb-kf.dtb
++dtb-$(CONFIG_ARCH_R8A7795) += r8a77951-salvator-xs.dtb
++dtb-$(CONFIG_ARCH_R8A7795) += r8a77950-salvator-x.dtb r8a77950-h3ulcb.dtb
++dtb-$(CONFIG_ARCH_R8A7795) += r8a77950-h3ulcb-kf.dtb
+ dtb-$(CONFIG_ARCH_R8A77960) += r8a77960-salvator-x.dtb r8a77960-m3ulcb.dtb
+ dtb-$(CONFIG_ARCH_R8A77960) += r8a77960-m3ulcb-kf.dtb
+ dtb-$(CONFIG_ARCH_R8A77960) += r8a77960-salvator-xs.dtb
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-h3ulcb-kf.dts b/arch/arm64/boot/dts/renesas/r8a77950-h3ulcb-kf.dts
+similarity index 75%
+rename from arch/arm64/boot/dts/renesas/r8a7795-h3ulcb-kf.dts
+rename to arch/arm64/boot/dts/renesas/r8a77950-h3ulcb-kf.dts
+index 80791ed27539bf8f..1e84a40f1dcab353 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-h3ulcb-kf.dts
++++ b/arch/arm64/boot/dts/renesas/r8a77950-h3ulcb-kf.dts
+@@ -6,11 +6,11 @@
+  * Copyright (C) 2017 Cogent Embedded, Inc.
+  */
+ 
+-#include "r8a7795-h3ulcb.dts"
++#include "r8a77950-h3ulcb.dts"
+ #include "ulcb-kf.dtsi"
+ 
+ / {
+-	model = "Renesas H3ULCB Kingfisher board based on r8a7795 ES2.0+";
++	model = "Renesas H3ULCB Kingfisher board based on r8a77950";
+ 	compatible = "shimafuji,kingfisher", "renesas,h3ulcb",
+ 		     "renesas,r8a7795";
+ };
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-es1-h3ulcb.dts b/arch/arm64/boot/dts/renesas/r8a77950-h3ulcb.dts
+similarity index 89%
+rename from arch/arm64/boot/dts/renesas/r8a7795-es1-h3ulcb.dts
+rename to arch/arm64/boot/dts/renesas/r8a77950-h3ulcb.dts
+index 598b98168559e0e4..38a6d6a108d488ed 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-es1-h3ulcb.dts
++++ b/arch/arm64/boot/dts/renesas/r8a77950-h3ulcb.dts
+@@ -7,11 +7,11 @@
+  */
+ 
+ /dts-v1/;
+-#include "r8a7795-es1.dtsi"
++#include "r8a77950.dtsi"
+ #include "ulcb.dtsi"
+ 
+ / {
+-	model = "Renesas H3ULCB board based on r8a7795 ES1.x";
++	model = "Renesas H3ULCB board based on r8a77950";
+ 	compatible = "renesas,h3ulcb", "renesas,r8a7795";
+ 
+ 	memory@48000000 {
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts b/arch/arm64/boot/dts/renesas/r8a77950-salvator-x.dts
+similarity index 96%
+rename from arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts
+rename to arch/arm64/boot/dts/renesas/r8a77950-salvator-x.dts
+index c72968623e94b790..2438825c9b22e26d 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-es1-salvator-x.dts
++++ b/arch/arm64/boot/dts/renesas/r8a77950-salvator-x.dts
+@@ -6,11 +6,11 @@
+  */
+ 
+ /dts-v1/;
+-#include "r8a7795-es1.dtsi"
++#include "r8a77950.dtsi"
+ #include "salvator-x.dtsi"
+ 
+ / {
+-	model = "Renesas Salvator-X board based on r8a7795 ES1.x";
++	model = "Renesas Salvator-X board based on r8a77950";
+ 	compatible = "renesas,salvator-x", "renesas,r8a7795";
+ 
+ 	memory@48000000 {
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-es1.dtsi b/arch/arm64/boot/dts/renesas/r8a77950.dtsi
+similarity index 98%
+rename from arch/arm64/boot/dts/renesas/r8a7795-es1.dtsi
+rename to arch/arm64/boot/dts/renesas/r8a77950.dtsi
+index 14d8513d2a47336f..15216495e1c8b31c 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-es1.dtsi
++++ b/arch/arm64/boot/dts/renesas/r8a77950.dtsi
+@@ -1,11 +1,11 @@
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+- * Device Tree Source for the R-Car H3 (R8A77950) ES1.x SoC
++ * Device Tree Source for the R-Car H3 (R8A77950) SoC
+  *
+  * Copyright (C) 2015 Renesas Electronics Corp.
+  */
+ 
+-#include "r8a7795.dtsi"
++#include "r8a77951.dtsi"
+ 
+ &audma0 {
+ 	iommus = <&ipmmu_mp1 0>, <&ipmmu_mp1 1>,
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-es1-h3ulcb-kf.dts b/arch/arm64/boot/dts/renesas/r8a77951-h3ulcb-kf.dts
+similarity index 75%
+rename from arch/arm64/boot/dts/renesas/r8a7795-es1-h3ulcb-kf.dts
+rename to arch/arm64/boot/dts/renesas/r8a77951-h3ulcb-kf.dts
+index 2f24dfc45617baf6..647198bb3bf7746a 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-es1-h3ulcb-kf.dts
++++ b/arch/arm64/boot/dts/renesas/r8a77951-h3ulcb-kf.dts
+@@ -6,11 +6,11 @@
+  * Copyright (C) 2017 Cogent Embedded, Inc.
+  */
+ 
+-#include "r8a7795-es1-h3ulcb.dts"
++#include "r8a77951-h3ulcb.dts"
+ #include "ulcb-kf.dtsi"
+ 
+ / {
+-	model = "Renesas H3ULCB Kingfisher board based on r8a7795 ES1.x";
++	model = "Renesas H3ULCB Kingfisher board based on r8a77951";
+ 	compatible = "shimafuji,kingfisher", "renesas,h3ulcb",
+ 		     "renesas,r8a7795";
+ };
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-h3ulcb.dts b/arch/arm64/boot/dts/renesas/r8a77951-h3ulcb.dts
+similarity index 92%
+rename from arch/arm64/boot/dts/renesas/r8a7795-h3ulcb.dts
+rename to arch/arm64/boot/dts/renesas/r8a77951-h3ulcb.dts
+index 54515eaf0310f172..8ad8f2a539771de8 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-h3ulcb.dts
++++ b/arch/arm64/boot/dts/renesas/r8a77951-h3ulcb.dts
+@@ -7,11 +7,11 @@
+  */
+ 
+ /dts-v1/;
+-#include "r8a7795.dtsi"
++#include "r8a77951.dtsi"
+ #include "ulcb.dtsi"
+ 
+ / {
+-	model = "Renesas H3ULCB board based on r8a7795 ES2.0+";
++	model = "Renesas H3ULCB board based on r8a77951";
+ 	compatible = "renesas,h3ulcb", "renesas,r8a7795";
+ 
+ 	memory@48000000 {
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts b/arch/arm64/boot/dts/renesas/r8a77951-salvator-x.dts
+similarity index 96%
+rename from arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts
+rename to arch/arm64/boot/dts/renesas/r8a77951-salvator-x.dts
+index 72874f675359e7a4..a402a2fb6e3c313b 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-salvator-x.dts
++++ b/arch/arm64/boot/dts/renesas/r8a77951-salvator-x.dts
+@@ -6,11 +6,11 @@
+  */
+ 
+ /dts-v1/;
+-#include "r8a7795.dtsi"
++#include "r8a77951.dtsi"
+ #include "salvator-x.dtsi"
+ 
+ / {
+-	model = "Renesas Salvator-X board based on r8a7795 ES2.0+";
++	model = "Renesas Salvator-X board based on r8a77951";
+ 	compatible = "renesas,salvator-x", "renesas,r8a7795";
+ 
+ 	memory@48000000 {
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795-salvator-xs.dts b/arch/arm64/boot/dts/renesas/r8a77951-salvator-xs.dts
+similarity index 96%
+rename from arch/arm64/boot/dts/renesas/r8a7795-salvator-xs.dts
+rename to arch/arm64/boot/dts/renesas/r8a77951-salvator-xs.dts
+index 36667c81d43d517b..cef9da4376a3f673 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795-salvator-xs.dts
++++ b/arch/arm64/boot/dts/renesas/r8a77951-salvator-xs.dts
+@@ -1,16 +1,16 @@
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+- * Device Tree Source for the Salvator-X 2nd version board with R-Car H3 ES2.0
++ * Device Tree Source for the Salvator-X 2nd version board with R-Car H3 ES2.0+
+  *
+  * Copyright (C) 2015-2017 Renesas Electronics Corp.
+  */
+ 
+ /dts-v1/;
+-#include "r8a7795.dtsi"
++#include "r8a77951.dtsi"
+ #include "salvator-xs.dtsi"
+ 
+ / {
+-	model = "Renesas Salvator-X 2nd version board based on r8a7795 ES2.0+";
++	model = "Renesas Salvator-X 2nd version board based on r8a77951";
+ 	compatible = "renesas,salvator-xs", "renesas,r8a7795";
+ 
+ 	memory@48000000 {
+@@ -136,7 +136,7 @@
+ 	 * - On Salvator-X[S], GP6_3[01] are connected to ADV7482 as irq pins
+ 	 *   (when SW31 is the default setting on Salvator-XS).
+ 	 * - If SW31 is the default setting, you cannot use USB2.0 ch3 on
+-	 *   r8a7795 with Salvator-XS.
++	 *   r8a77951 with Salvator-XS.
+ 	 *   Hence the SW31 setting must be changed like 2) below.
+ 	 *   1) Default setting of SW31: ON-ON-OFF-OFF-OFF-OFF:
+ 	 *	- Connect GP6_3[01] to ADV7842.
+diff --git a/arch/arm64/boot/dts/renesas/r8a7795.dtsi b/arch/arm64/boot/dts/renesas/r8a77951.dtsi
+similarity index 99%
+rename from arch/arm64/boot/dts/renesas/r8a7795.dtsi
+rename to arch/arm64/boot/dts/renesas/r8a77951.dtsi
+index fde6ec122d3b4006..821891548d5fde0f 100644
+--- a/arch/arm64/boot/dts/renesas/r8a7795.dtsi
++++ b/arch/arm64/boot/dts/renesas/r8a77951.dtsi
+@@ -1,6 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0
+ /*
+- * Device Tree Source for the R-Car H3 (R8A77950) SoC
++ * Device Tree Source for the R-Car H3 (R8A77951) SoC
+  *
+  * Copyright (C) 2015 Renesas Electronics Corp.
+  */
 -- 
 2.17.1
 
-Gr{oetje,eeting}s,
-
-						Geert
-
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-							    -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
