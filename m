@@ -2,88 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88AC01234C4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 19:25:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC10B1234C7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 19:25:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kFdaGuoYIJa4l1cy0qACwFeyuNvogT66fmMA3X3ogB0=; b=mkC9HpI9GV+a8q
-	v9glDYITysuwosruHI0mptuVigpwVtowCKWlpZqluJ0aa8z6Jy0ksfWFwJgZdu3CxJbIawXcQbMKH
-	1DikCBzvXQM3jl+dqVLL/yzUGn5qD1vF6BkKNmS3RULCmMIMDbMVOtfZLLX3G4ANWJi0y4FyLGLiM
-	eBAgfyQVAkXB8Kq69JyswLeO9UQzClQCiFhvLCTLXg1c6qWw46beBMQV2EBUYyI/OcpSyDWYixaPd
-	BEIB8ALTSbigMiOaS3Iczu3yWhA78Omc0w27Z59c0MLxIf9h2scX+jT77KJ9yAZyffocMRxMkl+x5
-	U429hiHwq4IXSpknr3qg==;
+	List-Owner; bh=bDa4QMaJGJmSwiulM/gvo5+2vQ9z1ANbcH0mfARN21Q=; b=Dj9v8hhbCDCs43
+	aMracXWJKT3xCW6T0y/0g5LDDT103kq6yZBM2ER3DNDxav6HrPmVSx59AD8ZL02ExguXUaCLD2YwO
+	UMBWiqlnDsfvomFn5UlaSOxdQvHGrMyE8ieq68phT8tlamkshhKN5jAQN39WP5dr/CzErJZ7y/rRf
+	wzt9gRvt0z6KIf9ZMJ+jO9BGk9NNdm1SDZm8bYxr0XvdEEELxjo29Gae4GjSX1NH9+cxFd0Q7pDfu
+	FXDjifjzdLV2NzyaLMExrtpaTbpdlx19DYQrFicY/0edVQwvtn/O6xtqRMcuiuDpmmiwFUzqOPmYj
+	jRX3p8mE0t459HNxSwcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihHX7-0003u7-Ru; Tue, 17 Dec 2019 18:25:21 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihHWy-0003tO-KW
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 18:25:14 +0000
-Received: by mail-lj1-x241.google.com with SMTP id k8so701679ljh.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Dec 2019 10:25:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Jo3/k6HeLWByk3JzqbzlDt3Xg6ep2UUq9K6e/8xjHQg=;
- b=nuCpdps6sZn78SQU9DzoRiw3IkjpyX3fMC68SuUg1v8a4/ryJ7bFCfXkRH1s7Acdd7
- CnJ9S8UWiu5pXovzcoDEVWKANwWy4+QDo8DGKSMuAHP+t1i5A7Ky/u9lzXlq3tkV2Psc
- SJ0ptyxgT8lfa9ilAFG1ucc1muLf3QzTFrvVlUtPalcJSYToEB2jV+P7nfDAG/1p75Ug
- 4RlvmQ4srs+k2wfj0AXgsPm8+bAbQY8gcO7NRwZ3x1sjJ5yTBw6LwHeyJ7zf2+RpxnCT
- 234STMIOJNdnX1Nb5tW1QQMSg9Ve0mp+AXT+TqPUShwZS/mr5eic1Y18meRO9drwnmBU
- eM8g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Jo3/k6HeLWByk3JzqbzlDt3Xg6ep2UUq9K6e/8xjHQg=;
- b=gxd64N73zC6wYsqRE4HjjYSsxXp9xlkBe79lbuzo0SkQa4R6NoVOdT4Awo4c3sV2ng
- M1wEY370oEAReoCkkc4qysExVljPfjaHHu2WMVa9ehA9ax/wnRp2Gvm8RsdOFJKUMVEo
- C0jdfI+PNBbSubGZs/3degPqEg35Pq7xvRNBHQkQkCbk4RTg1tXnR3U3JN0VBli/W3m7
- h988u/7NP560Dl03otwsa9Do4hcWJe32Z8vtsr+5nYpUMhnwfjiF/DTD8PGKD9GZHZCe
- GGR1HECzjtWohi3Z7cu9b9wlAoml8SXt8H4pUFJK/tsLyTTAPgvFjJDgaPvfzM0ezkkK
- TVGg==
-X-Gm-Message-State: APjAAAUNKYJkDLBagQkP+NEewVNzNl3wZ1KGzJZB/dcGAm4pXJplX9OP
- l+IKTaUJ7ik+/RU4bcOfrk7Ef2dIUGxc9z2FOd0=
-X-Google-Smtp-Source: APXvYqzW1YksSJ6QtiK3LM0rolkvX9vCpmJdwLz7NfDCGnoVddPs0R2yuhQXciocVIc/pbFL+gJfSbYSUFtAqLX4HOs=
-X-Received: by 2002:a2e:b5ac:: with SMTP id f12mr4472796ljn.0.1576607110175;
- Tue, 17 Dec 2019 10:25:10 -0800 (PST)
+	id 1ihHXa-0004AN-TL; Tue, 17 Dec 2019 18:25:50 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihHXN-00048v-JE
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 18:25:39 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id BF2D38116;
+ Tue, 17 Dec 2019 18:26:16 +0000 (UTC)
+Date: Tue, 17 Dec 2019 10:25:34 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: Dave Gerlach <d-gerlach@ti.com>
+Subject: Re: [PATCH] soc: ti: wkup_m3_ipc: Fix race condition with rproc_boot
+Message-ID: <20191217182534.GD35479@atomide.com>
+References: <20191212040314.14753-1-d-gerlach@ti.com>
 MIME-Version: 1.0
-References: <20191213153910.11235-1-aford173@gmail.com>
- <20191213153910.11235-3-aford173@gmail.com>
- <VI1PR0402MB3485AB1908AD6B6617CFC08C98500@VI1PR0402MB3485.eurprd04.prod.outlook.com>
- <CAHCN7xLrX0R7Uag2vc1qMp4z=1r3haCWrcp4qJT0H0eC3RiA4Q@mail.gmail.com>
-In-Reply-To: <CAHCN7xLrX0R7Uag2vc1qMp4z=1r3haCWrcp4qJT0H0eC3RiA4Q@mail.gmail.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Tue, 17 Dec 2019 15:25:04 -0300
-Message-ID: <CAOMZO5B_CCEf_cdAWs_FDC1c6t0RG1KjRjGidoDPmPmgxY=ebg@mail.gmail.com>
-Subject: Re: [PATCH V2 3/3] arm64: defconfig: Enable CRYPTO_DEV_FSL_CAAM
-To: Adam Ford <aford173@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20191212040314.14753-1-d-gerlach@ti.com>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_102512_698424_2535C07C 
-X-CRM114-Status: GOOD (  13.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191217_102537_713195_0CFA354B 
+X-CRM114-Status: GOOD (  15.24  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ no trust [72.249.23.125 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,47 +59,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Aymen Sghaier <aymen.sghaier@nxp.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Horia Geanta <horia.geanta@nxp.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Will Deacon <will@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>
+Cc: Suman Anna <s-anna@ti.com>, linux-omap@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Santosh Shilimkar <ssantosh@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Adam,
+Hi,
 
-On Tue, Dec 17, 2019 at 10:07 AM Adam Ford <aford173@gmail.com> wrote:
+* Dave Gerlach <d-gerlach@ti.com> [191211 20:02]:
+> Any user of wkup_m3_ipc calls wkup_m3_ipc_get to get a handle and this
+> checks the value of the static variable m3_ipc_state to see if the
+> wkup_m3 is ready. Currently this is populated during probe before
+> rproc_boot has been called, meaning there is a window of time that
+> wkup_m3_ipc_get can return a valid handle but the wkup_m3 itself is not
+> ready, leading to invalid IPC calls to the wkup_m3 and system
+> instability.
+> 
+> To avoid this, move the population of the m3_ipc_state variable until
+> after rproc_boot has succeeded to guarantee a valid and usable handle
+> is always returned.
 
-> Out of curiosity, what is the rule for when things are 'm' vs 'y'?
->
-> In the Code Aurora repo, it is set to 'y' and the mainline kernel for
-> the i.MX6/7, the imx_v6_v7_defconfig is also set to 'y' which is why I
-> used 'y' here.
->
-> I can do a V3 to address the other items you noted, but I want to
-> understand the rules about the defconfig so I don't make the same
-> mistake again.
+Santosh, do you want me to pick this one into my fixes branch?
 
-In arch/arm64/configs/defconfig we try to select modules whenever possible.
+Regards,
 
-The exceptions are drivers that are vital for boot such as PMIC,
-pinctrl, clks, etc.
+Tony
 
-The CAAM driver does not fall into this category, so selecting it as
-module is preferred here.
 
-Thanks
+> Reported-by: Suman Anna <s-anna@ti.com>
+> Signed-off-by: Dave Gerlach <d-gerlach@ti.com>
+> ---
+>  drivers/soc/ti/wkup_m3_ipc.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/soc/ti/wkup_m3_ipc.c b/drivers/soc/ti/wkup_m3_ipc.c
+> index 378369d9364a..e9ece45d7a33 100644
+> --- a/drivers/soc/ti/wkup_m3_ipc.c
+> +++ b/drivers/soc/ti/wkup_m3_ipc.c
+> @@ -419,6 +419,8 @@ static void wkup_m3_rproc_boot_thread(struct wkup_m3_ipc *m3_ipc)
+>  	ret = rproc_boot(m3_ipc->rproc);
+>  	if (ret)
+>  		dev_err(dev, "rproc_boot failed\n");
+> +	else
+> +		m3_ipc_state = m3_ipc;
+>  
+>  	do_exit(0);
+>  }
+> @@ -505,8 +507,6 @@ static int wkup_m3_ipc_probe(struct platform_device *pdev)
+>  		goto err_put_rproc;
+>  	}
+>  
+> -	m3_ipc_state = m3_ipc;
+> -
+>  	return 0;
+>  
+>  err_put_rproc:
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
