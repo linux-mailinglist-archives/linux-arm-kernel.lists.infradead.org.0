@@ -2,87 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 777EB123667
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 21:05:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7917712367E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 21:07:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EIdYUMQCyxZPFG5/cepD3ic0pfzDeymwegx+2RWM4lg=; b=luHRlsQOxU8q8P
-	iD+S8vYTvj2LMA7i/xyIKgxNvtsPblSIkhNNJYht3ZQTiz/xEOUTPdLb4bO2fFvPz/jpqOx9/et09
-	pAb2nI1rA15BC1WWRb9KdBmNH/NkX3XBqMJCGgS+fQFM/2cbtrUvwPFScdKyDW6TuJG+/5h1i+SMc
-	DmeawiXfQyfeCf4eqiVWytZ4kv4HO2alSLgO3IRSRWGF/A9amT9wrFRHXPx5TSaT2lP1e+4tv0Rh3
-	raKPp7MUvLW7q+qdPhpokxMf00JIFECKI8DWHmJcHj+vkEHVHaTH2dfNa2WNnwTKH5ZkZGURFt7kD
-	ob+1wuOnfSP8iSwD7gmg==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tmvB16evs2KlDkzR3EzSpJ+h+/dR+j1hp/8bYo9YU8Y=; b=A70hINEGdtIRdI
+	L+CKq4v0Wq54gBqDK7nFepIF3tntk0JVe3fg66mvf8Gg4VixCM8EvYV24748pFJybYpxYWY9KYQ+r
+	xwi/vnZAtgjKZJ29DYcohkSbpkf5aUJmLU8gqXFu/jliq5EKZ8A8OeAHnResGpJhG7z5zdy0Iep4+
+	Od1Bw31LXC3dZ1WQiSL2TFzHiwqS69Eh99uhZLW7egNiBA6+rRGePxEUlrAJW+2VxJE9C+UBpLqRf
+	S8SizwzKLFL+p1n+tqAHM7wFLZj2BArV+Kfs1AgcS7LWfUbnGSVIh8bu6hogfSw81WA04e7wrVWF5
+	sDitXNFTMDpqZGiazkqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihJ6C-0001Et-Ax; Tue, 17 Dec 2019 20:05:40 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1ihJ8G-0001cy-EZ; Tue, 17 Dec 2019 20:07:48 +0000
+Received: from out01.mta.xmission.com ([166.70.13.231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihJ63-0001EO-BH
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 20:05:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576613128;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=r9zDOVhpgif2r8wUOSynylPPUD8w13YV6BIbZ8Cxr3I=;
- b=VEIA4q3xLdaTvnttoVaUqvgc/66g8iLrMHNJPLGXmZu9iYVGfgfiUEkL/u6BDX8p+UV60Q
- FciEVHn0y2W+ysY0EOkJrFdxzoPV3JYZkpe15twinx9sKpuhGA9ZfTNwUnLtwc7jotrEhl
- 7GuZ4hnS8/NKjFDg4pXajfVS/hb3/co=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-224-9W2NCPbKMJqPR5OnkoERkQ-1; Tue, 17 Dec 2019 15:05:20 -0500
-X-MC-Unique: 9W2NCPbKMJqPR5OnkoERkQ-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id C1DFE108598D;
- Tue, 17 Dec 2019 20:05:16 +0000 (UTC)
-Received: from llong.remote.csb (ovpn-123-81.rdu2.redhat.com [10.10.123.81])
- by smtp.corp.redhat.com (Postfix) with ESMTP id A9C7B5D9E1;
- Tue, 17 Dec 2019 20:05:13 +0000 (UTC)
-Subject: Re: [PATCH v7 5/5] locking/qspinlock: Introduce the shuffle reduction
- optimization into CNA
-To: Alex Kogan <alex.kogan@oracle.com>
-References: <f1164ae9-ebcf-41f0-8395-224cdb0f249d@default>
-From: Waiman Long <longman@redhat.com>
-Organization: Red Hat
-Message-ID: <64c7b7fd-079c-55d1-258c-8c23802b992d@redhat.com>
-Date: Tue, 17 Dec 2019 15:05:13 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1ihJ84-0001Xa-Ui
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 20:07:38 +0000
+Received: from in01.mta.xmission.com ([166.70.13.51])
+ by out01.mta.xmission.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1ihJ7T-000374-FQ; Tue, 17 Dec 2019 13:06:59 -0700
+Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
+ helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1ihJ7S-0005Fq-8R; Tue, 17 Dec 2019 13:06:58 -0700
+From: ebiederm@xmission.com (Eric W. Biederman)
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <20191211184027.20130-1-catalin.marinas@arm.com>
+ <20191211184027.20130-13-catalin.marinas@arm.com>
+ <CAK8P3a1-eaR7NddhDce65vXKCGeZD3xUMrTTAWN4U3oW0ecN=g@mail.gmail.com>
+ <87zhfxqu1q.fsf@x220.int.ebiederm.org>
+ <20191217174808.GM5624@arrakis.emea.arm.com>
+Date: Tue, 17 Dec 2019 14:06:01 -0600
+In-Reply-To: <20191217174808.GM5624@arrakis.emea.arm.com> (Catalin Marinas's
+ message of "Tue, 17 Dec 2019 17:48:10 +0000")
+Message-ID: <877e2ura3a.fsf@x220.int.ebiederm.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-In-Reply-To: <f1164ae9-ebcf-41f0-8395-224cdb0f249d@default>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-XM-SPF: eid=1ihJ7S-0005Fq-8R; ; ; mid=<877e2ura3a.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+ frm=ebiederm@xmission.com; ; ; spf=neutral
+X-XM-AID: U2FsdGVkX1/w53SFcKFMEm6MwInTxOOoRY9pew7qlnM=
+X-SA-Exim-Connect-IP: 68.227.160.95
+X-SA-Exim-Mail-From: ebiederm@xmission.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa01.xmission.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.5 required=8.0 tests=ALL_TRUSTED,BAYES_00,
+ DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,XMNoVowels autolearn=disabled
+ version=3.4.2
+X-Spam-Virus: No
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ * -3.0 BAYES_00 BODY: Bayes spam probability is 0 to 1%
+ *      [score: 0.0056]
+ *  1.5 XMNoVowels Alpha-numberic number with no vowels
+ *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
+ *      [sa01 1397; Body=1 Fuz1=1 Fuz2=1]
+X-Spam-DCC: XMission; sa01 1397; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: ;Catalin Marinas <catalin.marinas@arm.com>
+X-Spam-Relay-Country: 
+X-Spam-Timing: total 399 ms - load_scoreonly_sql: 0.03 (0.0%),
+ signal_user_changed: 4.6 (1.1%), b_tie_ro: 4.0 (1.0%), parse: 0.64
+ (0.2%), extract_message_metadata: 12 (2.9%), get_uri_detail_list: 1.59
+ (0.4%), tests_pri_-1000: 5 (1.3%), tests_pri_-950: 1.07 (0.3%),
+ tests_pri_-900: 0.86 (0.2%), tests_pri_-90: 34 (8.5%), check_bayes: 33
+ (8.2%), b_tokenize: 7 (1.7%), b_tok_get_all: 14 (3.6%), b_comp_prob:
+ 2.1 (0.5%), b_tok_touch_all: 6 (1.4%), b_finish: 0.56 (0.1%),
+ tests_pri_0: 331 (83.1%), check_dkim_signature: 0.39 (0.1%),
+ check_dkim_adsp: 2.1 (0.5%), poll_dns_idle: 0.23 (0.1%), tests_pri_10:
+ 1.79 (0.4%), tests_pri_500: 5 (1.3%), rewrite_mail: 0.00 (0.0%)
+Subject: Re: [PATCH 12/22] arm64: mte: Add specific SIGSEGV codes
+X-Spam-Flag: No
+X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
+X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_120531_461010_7376A229 
-X-CRM114-Status: GOOD (  21.21  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191217_120736_992116_1AB20469 
+X-CRM114-Status: GOOD (  17.55  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.61 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [166.70.13.231 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [166.70.13.231 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.61 listed in wl.mailspike.net]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,109 +108,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
- arnd@arndb.de, peterz@infradead.org, rahul.x.yadav@oracle.com,
- jglauber@marvell.com, guohanjun@huawei.com, dave.dice@oracle.com,
- linux@armlinux.org.uk, will.deacon@arm.com, daniel.m.jordan@oracle.com,
- mingo@redhat.com, steven.sistare@oracle.com, hpa@zytor.com, bp@alien8.de,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arch <linux-arch@vger.kernel.org>,
+ Richard Earnshaw <Richard.Earnshaw@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Linux-MM <linux-mm@kvack.org>,
+ Al Viro <viro@zeniv.linux.org.uk>, Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTIvMTAvMTkgMTo1NiBQTSwgQWxleCBLb2dhbiB3cm90ZToKPiAtLS0tLSBsb25nbWFuQHJl
-ZGhhdC5jb20gd3JvdGU6Cj4KPj4gT24gMTEvMjUvMTkgNDowNyBQTSwgQWxleCBLb2dhbiB3cm90
-ZToKPj4+IEBAIC0yMzQsMTIgKzI2MywxMyBAQCBfX2Fsd2F5c19pbmxpbmUgdTMyIGNuYV9wcmVf
-c2NhbihzdHJ1Y3QKPj4gcXNwaW5sb2NrICpsb2NrLAo+Pj4gIAlzdHJ1Y3QgY25hX25vZGUgKmNu
-ID0gKHN0cnVjdCBjbmFfbm9kZSAqKW5vZGU7Cj4+PiAgCj4+PiAgCS8qCj4+PiAtCSAqIHNldHRp
-bmcgQHByZV9zY2FuX3Jlc3VsdCB0byAxIGluZGljYXRlcyB0aGF0IG5vIHBvc3Qtc2Nhbgo+Pj4g
-KwkgKiBzZXR0aW5nIEBwcmVfc2Nhbl9yZXN1bHQgdG8gMSBvciAyIGluZGljYXRlcyB0aGF0IG5v
-IHBvc3Qtc2Nhbgo+Pj4gIAkgKiBzaG91bGQgYmUgbWFkZSBpbiBjbmFfcGFzc19sb2NrKCkKPj4+
-ICAJICovCj4+PiAgCWNuLT5wcmVfc2Nhbl9yZXN1bHQgPQo+Pj4gLQkJY24tPmludHJhX2NvdW50
-ID09IGludHJhX25vZGVfaGFuZG9mZl90aHJlc2hvbGQgPwo+Pj4gLQkJCTEgOiBjbmFfc2Nhbl9t
-YWluX3F1ZXVlKG5vZGUsIG5vZGUpOwo+Pj4gKwkJKG5vZGUtPmxvY2tlZCA8PSAxICYmIHByb2Jh
-Ymx5KFNIVUZGTEVfUkVEVUNUSU9OX1BST0JfQVJHKSkgPwo+Pj4gKwkJCTEgOiBjbi0+aW50cmFf
-Y291bnQgPT0gaW50cmFfbm9kZV9oYW5kb2ZmX3RocmVzaG9sZCA/Cj4+PiArCQkJMiA6IGNuYV9z
-Y2FuX21haW5fcXVldWUobm9kZSwgbm9kZSk7Cj4+PiAgCj4+PiAgCXJldHVybiAwOwo+Pj4gIH0K
-Pj4+IEBAIC0yNTMsMTIgKzI4MywxNSBAQCBzdGF0aWMgaW5saW5lIHZvaWQgY25hX3Bhc3NfbG9j
-ayhzdHJ1Y3QKPj4gbWNzX3NwaW5sb2NrICpub2RlLAo+Pj4gIAo+Pj4gIAl1MzIgc2NhbiA9IGNu
-LT5wcmVfc2Nhbl9yZXN1bHQ7Cj4+PiAgCj4+PiArCWlmIChzY2FuID09IDEpCj4+PiArCQlnb3Rv
-IHBhc3NfbG9jazsKPj4+ICsKPj4+ICAJLyoKPj4+ICAJICogY2hlY2sgaWYgYSBzdWNjZXNzb3Ig
-ZnJvbSB0aGUgc2FtZSBudW1hIG5vZGUgaGFzIG5vdCBiZWVuIGZvdW5kCj4+IGluCj4+PiAgCSAq
-IHByZS1zY2FuLCBhbmQgaWYgc28sIHRyeSB0byBmaW5kIGl0IGluIHBvc3Qtc2NhbiBzdGFydGlu
-ZyBmcm9tCj4+IHRoZQo+Pj4gIAkgKiBub2RlIHdoZXJlIHByZS1zY2FuIHN0b3BwZWQgKHN0b3Jl
-ZCBpbiBAcHJlX3NjYW5fcmVzdWx0KQo+Pj4gIAkgKi8KPj4+IC0JaWYgKHNjYW4gPiAxKQo+Pj4g
-KwlpZiAoc2NhbiA+IDIpCj4+PiAgCQlzY2FuID0gY25hX3NjYW5fbWFpbl9xdWV1ZShub2RlLCBk
-ZWNvZGVfdGFpbChzY2FuKSk7Cj4+PiAgCj4+PiAgCWlmICghc2NhbikgeyAvKiBpZiBmb3VuZCBh
-IHN1Y2Nlc3NvciBmcm9tIHRoZSBzYW1lIG51bWEgbm9kZSAqLwo+Pj4gQEAgLTI4MSw1ICszMTQs
-NiBAQCBzdGF0aWMgaW5saW5lIHZvaWQgY25hX3Bhc3NfbG9jayhzdHJ1Y3QKPj4gbWNzX3NwaW5s
-b2NrICpub2RlLAo+Pj4gIAkJdGFpbF8ybmQtPm5leHQgPSBuZXh0Owo+Pj4gIAl9Cj4+PiAgCj4+
-PiArcGFzc19sb2NrOgo+Pj4gIAlhcmNoX21jc19wYXNzX2xvY2soJm5leHRfaG9sZGVyLT5sb2Nr
-ZWQsIHZhbCk7Cj4+PiAgfQo+PiBJIHRoaW5rIHlvdSBtaWdodCBoYXZlIG1pc2hhbmRsZWQgdGhl
-IHByb3BlciBhY2NvdW50aW5nIG9mCj4+IGludHJhX2NvdW50Lgo+PiBIb3cgYWJvdXQgc29tZXRo
-aW5nIGxpa2U6Cj4+Cj4+IGRpZmYgLS1naXQgYS9rZXJuZWwvbG9ja2luZy9xc3BpbmxvY2tfY25h
-LmgKPj4gYi9rZXJuZWwvbG9ja2luZy9xc3BpbmxvY2tfY25hLmgKPj4gaW5kZXggZjFlZWY2YmVj
-ZTdiLi4wM2Y4ZmRlYzJiODAgMTAwNjQ0Cj4+IC0tLSBhL2tlcm5lbC9sb2NraW5nL3FzcGlubG9j
-a19jbmEuaAo+PiArKysgYi9rZXJuZWwvbG9ja2luZy9xc3BpbmxvY2tfY25hLmgKPj4gQEAgLTI2
-OCw3ICsyNjgsNyBAQCBfX2Fsd2F5c19pbmxpbmUgdTMyIGNuYV9wcmVfc2NhbihzdHJ1Y3QgcXNw
-aW5sb2NrCj4+ICpsb2NrLAo+PiDCoMKgwqDCoMKgwqDCoMKgICovCj4+IMKgwqDCoMKgwqDCoMKg
-IGNuLT5wcmVfc2Nhbl9yZXN1bHQgPQo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-KG5vZGUtPmxvY2tlZCA8PSAxICYmCj4+IHByb2JhYmx5KFNIVUZGTEVfUkVEVUNUSU9OX1BST0Jf
-QVJHKSkgPwo+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
-MSA6IGNuLT5pbnRyYV9jb3VudCA9PQo+PiBpbnRyYV9ub2RlX2hhbmRvZmZfdGhyZXNob2xkID8K
-Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIDEgOiBjbi0+
-aW50cmFfY291bnQgPj0KPj4gaW50cmFfbm9kZV9oYW5kb2ZmX3RocmVzaG9sZCA/Cj4gV2UgcmVz
-ZXQg4oCYaW50cmFfY291bnQnIGluIGNuYV9pbml0X25vZGUoKSwgd2hpY2ggaXMgY2FsbGVkIGJl
-Zm9yZSB3ZSBlbnRlciAKPiB0aGUgc2xvdyBwYXRoLCBhbmQgc2V0IGl0IGF0IG1vc3Qgb25jZSB3
-aGVuIHdlIHBhc3MgdGhlIGludGVybmFsIChDTkEpIGxvY2sKPiBieSB0YWtpbmcgdGhlIG93bmVy
-4oCZcyB2YWx1ZSArIDEuIE9ubHkgYWZ0ZXIgd2UgZ2V0IHRoZSBpbnRlcm5hbCBsb2NrLCB3ZQo+
-IGNhbGwgdGhpcyBjbmFfcHJlX3NjYW4oKSBmdW5jdGlvbiwgd2hlcmUgd2UgY2hlY2sgdGhlIHRo
-cmVzaG9sZC4gCj4gSU9XLCBoYXZpbmcgJ2ludHJhX2NvdW50ID4gaW50cmFfbm9kZV9oYW5kb2Zm
-X3RocmVzaG9sZCcgd291bGQgbWVhbiBhIGJ1ZywgCj4gYW5kIGhhdmluZyDigJw+PeKAnCB3b3Vs
-ZCBtYXNrIGl0LiAKPiBQZXJoYXBzIEkgY2FuIGFkZCBXQVJOX09OKGNuLT5pbnRyYV9jb3VudCA+
-IGludHJhX25vZGVfaGFuZG9mZl90aHJlc2hvbGQpCj4gaGVyZSBpbnN0ZWFkLCBhbHRob3VnaCBJ
-J20gbm90IHN1cmUgaWYgdGhhdCBpcyBhIGdvb2QgaWRlYSBwZXJmb3JtYW5jZS13aXNlLgoKVGhl
-IGNvZGUgdGhhdCBJIGFkZGVkIGJlbG93IGNvdWxkIGhhdmUgdGhlIHBvc3NpYmlsaXR5IG9mIG1h
-a2luZwppbnRyYV9jb3VudCA+IGludHJhX25vZGVfaGFuZG9mZl90aHJlc2hvbGQuIEkgYWdyZWUg
-d2l0aCB5b3VyIGFzc2Vzc21lbnQKb2YgdGhlIGN1cnJlbnQgY29kZS4gVGhpcyBjb25kaXRpb25h
-bCBjaGVjayBpcyBmaW5lIGlmIG5vIGZ1cnRoZXIgY2hhbmdlCmlzIG1hZGUuCgoKPj4gwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAyIDogY25hX3NjYW5fbWFp
-bl9xdWV1ZShub2RlLCBub2RlKTsKPj4gwqAKPj4gwqDCoMKgwqDCoMKgwqAgcmV0dXJuIDA7Cj4+
-IEBAIC0yODMsOSArMjgzLDYgQEAgc3RhdGljIGlubGluZSB2b2lkIGNuYV9wYXNzX2xvY2soc3Ry
-dWN0Cj4+IG1jc19zcGlubG9jawo+PiAqbm9kZSwKPj4gwqAKPj4gwqDCoMKgwqDCoMKgwqAgdTMy
-IHNjYW4gPSBjbi0+cHJlX3NjYW5fcmVzdWx0Owo+PiDCoAo+PiAtwqDCoMKgwqDCoMKgIGlmIChz
-Y2FuID09IDEpCj4+IC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGdvdG8gcGFzc19sb2Nr
-Owo+PiAtCj4gVGhlIHRoaW5nIGlzIHRoYXQgd2Ugd2FudCB0byBhdm9pZCBhcyBtdWNoIG9mIHRo
-ZSBzaHVmZmxpbmctcmVsYXRlZCBvdmVyaGVhZAo+IGFzIHdlIGNhbiB3aGVuIHRoZSBzcGlubG9j
-ayBpcyBvbmx5IGxpZ2h0bHkgY29udGVuZGVkLiBUaGF0J3Mgd2h5IHdlIGhhdmUgdGhpcwo+IGVh
-cmx5IGV4aXQgaGVyZSB0aGF0IGF2b2lkcyB0aGUgcmVzdCBvZiB0aGUgbG9naWMgb2YgdHJpYWdp
-bmcgdGhyb3VnaCBwb3NzaWJsZQo+ICdzY2FuJyB2YWx1ZXMuClRoYXQgaXMgYSB2YWxpZCBwb2lu
-dC4gTWF5YmUgeW91IGNhbiBkb2N1bWVudCB0aGF0IGZhY3QgeW91IGFyZQpvcHRpbWl6aW5nIGZv
-ciBwZXJmb3JtYW5jZSBpbnN0ZWFkIG9mIGJldHRlciBjb3JyZWN0bmVzcy4KPj4gwqDCoMKgwqDC
-oMKgwqAgLyoKPj4gwqDCoMKgwqDCoMKgwqDCoCAqIGNoZWNrIGlmIGEgc3VjY2Vzc29yIGZyb20g
-dGhlIHNhbWUgbnVtYSBub2RlIGhhcyBub3QgYmVlbgo+PiBmb3VuZCBpbgo+PiDCoMKgwqDCoMKg
-wqDCoMKgICogcHJlLXNjYW4sIGFuZCBpZiBzbywgdHJ5IHRvIGZpbmQgaXQgaW4gcG9zdC1zY2Fu
-IHN0YXJ0aW5nCj4+IGZyb20gdGhlCj4+IEBAIC0yOTQsNyArMjkxLDEzIEBAIHN0YXRpYyBpbmxp
-bmUgdm9pZCBjbmFfcGFzc19sb2NrKHN0cnVjdAo+PiBtY3Nfc3BpbmxvY2sgKm5vZGUsCj4+IMKg
-wqDCoMKgwqDCoMKgIGlmIChzY2FuID4gMikKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIHNjYW4gPSBjbmFfc2Nhbl9tYWluX3F1ZXVlKG5vZGUsIGRlY29kZV90YWlsKHNjYW4pKTsK
-Pj4gwqAKPj4gLcKgwqDCoMKgwqDCoCBpZiAoIXNjYW4pIHsgLyogaWYgZm91bmQgYSBzdWNjZXNz
-b3IgZnJvbSB0aGUgc2FtZSBudW1hIG5vZGUKPj4gKi8KPj4gK8KgwqDCoMKgwqDCoCBpZiAoc2Nh
-biA8PSAxKSB7IC8qIGlmIGZvdW5kIGEgc3VjY2Vzc29yIGZyb20gdGhlIHNhbWUgbnVtYQo+PiBu
-b2RlICovCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC8qIGluYyBAaW50cmFfY291
-bnQgaWYgdGhlIHNlY29uZGFyeSBxdWV1ZSBpcyBub3QKPj4gZW1wdHkgKi8KPj4gK8KgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqAgKChzdHJ1Y3QgY25hX25vZGUgKiluZXh0X2hvbGRlciktPmlu
-dHJhX2NvdW50ID0KPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgIGNuLT5pbnRyYV9jb3VudCArIChub2RlLT5sb2NrZWQgPiAxKTsKPj4gK8KgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqAgaWYgKChzY2FuID09IDEpCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBnb3RvIHBhc3NfbG9jazsKPj4gKwo+IEhtbSwgSSBh
-bSBub3Qgc3VyZSB0aGlzIG1ha2VzIHRoZSBjb2RlIGFueSBiZXR0ZXIvbW9yZSByZWFkYWJsZSwK
-PiB3aGlsZSB0aGlzIGRvZXMgYWRkIHRoZSBvdmVyaGVhZCBvZiBnb2luZyB0aHJvdWdoIDMgYnJh
-bmNoZXMgYmVmb3JlCj4ganVtcGluZyB0byAncGFzc19sb2NrJy4KPgpUaGlzIGlzIGp1c3QgYSBz
-dWdnZXN0aW9uIGZvciBpbXByb3ZpbmcgdGhlIGNvcnJlY3RuZXNzIG9mIHRoZSBjb2RlLiBJCmFt
-IGZpbmUgaWYgeW91IG9wdCBmb3IgYmV0dGVyIHBlcmZvcm1hbmNlLgoKQ2hlZXJzLApMb25nbWFu
-CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+Catalin Marinas <catalin.marinas@arm.com> writes:
+
+> Hi Eric,
+>
+> On Thu, Dec 12, 2019 at 12:26:41PM -0600, Eric W. Biederman wrote:
+>> Arnd Bergmann <arnd@arndb.de> writes:
+>> > On Wed, Dec 11, 2019 at 7:40 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+>> >>
+>> >> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+>> >>
+>> >> Add MTE-specific SIGSEGV codes to siginfo.h.
+>> >>
+>> >> Note that the for MTE we are reusing the same SPARC ADI codes because
+>> >> the two functionalities are similar and they cannot coexist on the same
+>> >> system.
+>> 
+>> Please Please Please don't do that.
+>> 
+>> It is actively harmful to have architecture specific si_code values.
+>> As it makes maintenance much more difficult.
+>> 
+>> Especially as the si_codes are part of union descrimanator.
+>> 
+>> If your functionality is identical reuse the numbers otherwise please
+>> just select the next numbers not yet used.
+>
+> It makes sense.
+>
+>> We have at least 256 si_codes per signal 2**32 if we really need them so
+>> there is no need to be reuse numbers.
+>> 
+>> The practical problem is that architecture specific si_codes start
+>> turning kernel/signal.c into #ifdef soup, and we loose a lot of
+>> basic compile coverage because of that.  In turn not compiling the code
+>> leads to bit-rot in all kinds of weird places.
+>
+> Fortunately for MTE we don't need to change kernel/signal.c. It's
+> sufficient to call force_sig_fault() from the arch code with the
+> corresponding signo, code and fault address.
+
+Hooray for force_sig_fault at keeping people honest about which
+parameters they are passing.
+
+So far it looks like it is just BUS_MCEERR_AR, BUS_MCEERR_AO,
+SEGV_BNDERR, and SEGV_PKUERR that are the really confusing ones,
+as they go beyond the ordinary force_sig_fault layout.
+
+But we really do need the knowledge of how all of the cases are encoded
+or things can get very confusing.  Especially when mixing 32bit and
+64bit code.
+
+>> p.s. As for coexistence there is always the possibility that one chip
+>> in a cpu family does supports one thing and another chip in a cpu
+>> family supports another.  So userspace may have to cope with the
+>> situation even if an individual chip doesn't.
+>> 
+>> I remember a similar case where sparc had several distinct page table
+>> formats and we had a single kernel that had to cope with them all.
+>
+> We have such fun on ARM as well with the big.LITTLE systems where not
+> all CPUs support the same features. For example, MTE is only enabled
+> once all the secondary CPUs have booted and confirmed to have the
+> feature.
+
+Which all makes it possible that the alternative to MTE referenced as
+ADI might show up in some future ARM chip.  Which really makes reusing
+the numbers a bad idea.
+
+Not that I actually recall what any of this functionality actually is,
+but I can tell when people are setting themselves of for a challenge
+unnecessarily.
+
+Eric
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
