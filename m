@@ -2,65 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D040D1222A3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 04:26:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC37D1222BF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 04:56:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KOeGO6oIvFNCvJVYZgOUZCyeBWL1rRZBvZG3c1SQ/GU=; b=s1aL8Agz+2HEKo
-	OPZ+SZ/ngbdE7T5Kygwbnxrpb893y+ZjVB+DZ1BUNAPIw/8Obla1gdzUN38sHjUge1W8cgdiqc1n7
-	e9Id+w+8iKs5U7J2R1nuwnLNGi309w8amQkIhHCDC9vKLt3lSowEaDS2Euz6emESE1X7UzNPjmW8A
-	P58XKIINR+UA8tyZ0fnLhdr0kuYOfw/i/qKtcirQ0HEsVrISGh3uCZaRZOxbgaxlvkLfs0ECEL8WQ
-	mVDFDlLpX2IoiMawPBMJHoMgDvtaZaIVSQIcPhssCQS96mvVn/9Xw4u1nCwqRYJ7NT9+nIzbm7tk5
-	zx/ArSQA7Rk6RHJ4EWXw==;
+	List-Owner; bh=KWdWHHA9kxByPqAaVA4Yv/i4l3Gq47G11cdyMGnEtNY=; b=BXcuR+mU2/koi/
+	WUkJf4R+zA4cQkGoy32mA1zyI2PG2IVRtzi4DQWTB9GL8zfZ+vY+FGv5+WJ2GWOb5W9FhvbEGAlgf
+	HZZAczLgDOR6nMXlJQwXMXd9wMNOLAs++foU4mYFJwsVCADMnX8dMZ3jkGrSEId4uO5sIvbxemLIZ
+	4XssiEN9+MN+5Uxi/OlRYnBkoAPx5ZoARwaUAoAUVPMaCz6lWfX8YJhXIt3+Gq5s0Lv0ooGOR9xbo
+	ZGoCHtF2EV7bRlw11rZfC450eJZEwBA7ogEN5NMR8r83IFSjf4x0yUGwx7goQYEtesxPm9koUyUkT
+	YHc1SNK5Aez9t3bPM4DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih3VA-0002G8-BW; Tue, 17 Dec 2019 03:26:24 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ih3yV-00050W-0Q; Tue, 17 Dec 2019 03:56:43 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih3V1-0002Ex-TR; Tue, 17 Dec 2019 03:26:17 +0000
-Received: from mail-wm1-f52.google.com (mail-wm1-f52.google.com
- [209.85.128.52])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 98DC320665;
- Tue, 17 Dec 2019 03:26:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576553174;
- bh=47QWm6h87QsQLH9MeRqumerTPY7a5GPPIoJOkaFh86Y=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=E196dV08cVDGBrguXFLg7ZbVbHbtSeXQLMRM2uuzk3YaaNc/WnG57fEiYsOGTYRGd
- NlyM/+5BE+lrvCG4tzfUKcCVZVGX+oyEnipXHHj2kIx074xU3NdlkVz+h3WmpAhi+U
- Lokudv+7+ArCeQrl7XO6AIKUIo5nQ6fuCasAhZ1I=
-Received: by mail-wm1-f52.google.com with SMTP id p17so1450573wma.1;
- Mon, 16 Dec 2019 19:26:14 -0800 (PST)
-X-Gm-Message-State: APjAAAVlyBXR0sLj0DJxK9VE3ef08T95TGAFXayGKgw/ym6KOgMid6Ut
- vnNh/eRhlqtXuGwpIrZZGXYlja7wRZUykdZU+WE=
-X-Google-Smtp-Source: APXvYqyi/kODA+aCa6GY+O+CLiFXju/r1hxujzR5u/QJ3+Scw3aSWc3tcBDeifj9xfMPc6i7kFxLAMrU8fChA/STtc0=
-X-Received: by 2002:a1c:4e10:: with SMTP id g16mr2603910wmh.94.1576553173160; 
- Mon, 16 Dec 2019 19:26:13 -0800 (PST)
-MIME-Version: 1.0
-References: <20191217030438.26657-1-jitao.shi@mediatek.com>
-In-Reply-To: <20191217030438.26657-1-jitao.shi@mediatek.com>
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Tue, 17 Dec 2019 11:26:02 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65v+W3-fNwiC_0uN2RpFUBRu3iL2t+OaGHLjVHHWFJVwQ@mail.gmail.com>
-Message-ID: <CAGb2v65v+W3-fNwiC_0uN2RpFUBRu3iL2t+OaGHLjVHHWFJVwQ@mail.gmail.com>
+ id 1ih3yK-000501-I9; Tue, 17 Dec 2019 03:56:34 +0000
+X-UUID: 3cf023cee9f841eaab3a3e9e9f705b5f-20191216
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=KkmyAsKPyDcGBnKBUKfiIEN/q+ZFhqtz1dZUrUzasmY=; 
+ b=AQu47qdPYZ4rF19lIlMz96C/lzXnNcMWCmHvcKFBkN7ia+QDja/BWIQIJW7UscKdZo3hO4NxmAstqoAkxAbdoihaaUCMBxVawqE+Mxhl3qXjOH0tqFx87ArUwOMysDtM+cMOaxahDPJDxXDGBut14LYojDIF9NdizBocgGR+ibU=;
+X-UUID: 3cf023cee9f841eaab3a3e9e9f705b5f-20191216
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <jitao.shi@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 245397378; Mon, 16 Dec 2019 19:56:24 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Dec 2019 19:57:33 -0800
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs05n2.mediatek.inc
+ (172.21.101.140) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Tue, 17 Dec 2019 11:55:59 +0800
+Received: from [10.16.6.141] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 17 Dec 2019 11:55:59 +0800
+Message-ID: <1576554988.19567.3.camel@mszsdaap41>
 Subject: Re: [PATCH v3 0/2] clocks don't disable when pwm_mtk_disp suspend
-To: Jitao Shi <jitao.shi@mediatek.com>
+From: Jitao Shi <jitao.shi@mediatek.com>
+To: Chen-Yu Tsai <wens@kernel.org>
+Date: Tue, 17 Dec 2019 11:56:28 +0800
+In-Reply-To: <CAGb2v65v+W3-fNwiC_0uN2RpFUBRu3iL2t+OaGHLjVHHWFJVwQ@mail.gmail.com>
+References: <20191217030438.26657-1-jitao.shi@mediatek.com>
+ <CAGb2v65v+W3-fNwiC_0uN2RpFUBRu3iL2t+OaGHLjVHHWFJVwQ@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_192615_974238_81B841D3 
-X-CRM114-Status: GOOD (  12.83  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191216_195632_610872_E44CA9F8 
+X-CRM114-Status: GOOD (  12.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -70,7 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,44 +97,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, 2019-12-17 at 11:26 +0800, Chen-Yu Tsai wrote:
+> Hi,
+> 
+> On Tue, Dec 17, 2019 at 11:08 AM Jitao Shi <jitao.shi@mediatek.com> wrote:
+> >
+> > Changes since to v2:
+> >  - Edit commit msg.
+> >
+> > Changes since to v1:
+> >  - Edit commit msg.
+> >  - Remove the register trigger in probe.
+> >  - Rebase to v5.5-rc1.
+> >
+> > Changes in patches:
+> >  - match pwm_mtk_disp clock when suspend/resume
+> >  - trigger pwm_mtk_disp reg working after config
+> >
+> > Jitao Shi (2):
+> >   pwm: fix pwm clocks not poweroff when disable pwm
+> >   pwm: keep the trigger register after pwm setting.
+> 
+> Please add appropriate tags to your patches. These are not generic pwm
+> patches, but are specific to one driver.
+> 
+> Consider the prefix: "pwm: mtk-disp: " so others can filter out the
+> noise without looking at the content.
+> 
+> ChenYu
 
-On Tue, Dec 17, 2019 at 11:08 AM Jitao Shi <jitao.shi@mediatek.com> wrote:
->
-> Changes since to v2:
->  - Edit commit msg.
->
-> Changes since to v1:
->  - Edit commit msg.
->  - Remove the register trigger in probe.
->  - Rebase to v5.5-rc1.
->
-> Changes in patches:
->  - match pwm_mtk_disp clock when suspend/resume
->  - trigger pwm_mtk_disp reg working after config
->
-> Jitao Shi (2):
->   pwm: fix pwm clocks not poweroff when disable pwm
->   pwm: keep the trigger register after pwm setting.
+OK. I'll fix this prefix.
 
-Please add appropriate tags to your patches. These are not generic pwm
-patches, but are specific to one driver.
-
-Consider the prefix: "pwm: mtk-disp: " so others can filter out the
-noise without looking at the content.
-
-ChenYu
-
->
->  drivers/pwm/pwm-mtk-disp.c | 63 ++++++++++++--------------------------
->  1 file changed, 19 insertions(+), 44 deletions(-)
->
-> --
-> 2.21.0
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Best Regards
+Jitao
+> 
+> >
+> >  drivers/pwm/pwm-mtk-disp.c | 63 ++++++++++++--------------------------
+> >  1 file changed, 19 insertions(+), 44 deletions(-)
+> >
+> > --
+> > 2.21.0
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
