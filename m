@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A52F7121F59
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 01:20:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3B91121F5A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 01:20:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6nWtqhbTxpuJdncUwYkub3rfj55h+R+vdArdqTFPexo=; b=gNbq3Fy1mCnR7s
-	FkEjlwDCb1SO4VDRiLnTwZXNOp3zG1QaQNdUuLE3qDsY/Se46xEwTqfVOosCOl8H/d49R0gKhW6Ty
-	R8D8BPxuTV274Si8OAdEBR/Nv9MWQ59+wwxikRi+rsBg9uXEiZjgWf7EJ3P8vbQAAq/60Nfk1ZW7N
-	mH0axU5HgVfLwRK77hnqHS8J2UnOB7VmeTlqJLYTQAPTYJ51WI2T2KqXwX0nr9Aase8yEHbkdNZzs
-	QkuQAqS2jyAeR86LsmvIHa333QMH6oYrXPGInBsq07RpxRxrf/ozAlUQTlD3Hju5xoofsvLu+iRbV
-	oghZk28pbVrNLK/AoKhQ==;
+	List-Owner; bh=X8ygKaXyL8/O0BseYtHwGFuxGR7TBEx+3FmDQGPfMaI=; b=mIIropk67gJtVh
+	PIUxna3S5kYj6+dUVsjosOVjaXax+4NBysTmqHif4A6pKmjO/S2WCrHcTlRN/b3i8YNXhkv2rOS5M
+	En9cnf1U6KIgIJLPNSoUjg/YgPraawqpbhw71x/PzCK6ao/eoh3rK23J3cEz3+dN5PAw3+R7agktP
+	HX31jmlxQcFJ7rXGXu6VUdXyzD5AvsjDn7k/3jHBrCoJnnGl5SXD3VhezGLBwUrwQ0exZSG9QZU4y
+	1puUPJ8RwwogzDDznYJhdFuA882oe9OTcgJFqqL1wLDQU0VbEpZgu018hPEh9kmT0tEwlF2yz9ZC6
+	A0+O1CPQda4iZJ5Lat1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ih0bB-0002XR-Ey; Tue, 17 Dec 2019 00:20:25 +0000
+	id 1ih0bY-0002rH-MJ; Tue, 17 Dec 2019 00:20:48 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ih0aW-00018t-Po
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 00:19:46 +0000
+ id 1ih0aY-00019N-Bu
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 00:19:48 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 9CC1B8126;
- Tue, 17 Dec 2019 00:20:23 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 28FB981D8;
+ Tue, 17 Dec 2019 00:20:25 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 01/14] ARM: dts: Add generic compatible for omap sdma instances
-Date: Mon, 16 Dec 2019 16:19:12 -0800
-Message-Id: <20191217001925.44558-2-tony@atomide.com>
+Subject: [PATCH 02/14] ARM: dts: Configure interconnect target module for
+ omap2 sdma
+Date: Mon, 16 Dec 2019 16:19:13 -0800
+Message-Id: <20191217001925.44558-3-tony@atomide.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191217001925.44558-1-tony@atomide.com>
 References: <20191217001925.44558-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191216_161944_870634_70F93248 
-X-CRM114-Status: UNSURE (   8.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191216_161946_466734_E88A7E04 
+X-CRM114-Status: GOOD (  10.37  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,56 +69,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We need this to pass auxdata to all the sdma instances.
+We can now probe devices with device tree only configuration using
+ti-sysc interconnect target module driver. Let's configure the
+module, but keep the legacy "ti,hwmods" peroperty to avoid new boot
+time warnings. The legacy property will be removed in later patches
+together with the legacy platform data.
+
+Note that we want to use separate compatible for omap2420 and
+omap2430 so let's do that here too while at it.
 
 Cc: devicetree@vger.kernel.org
 Cc: Aaro Koskinen <aaro.koskinen@iki.fi>
+Cc: Arnd Bergmann <arnd@arndb.de>
 Cc: Peter Ujfalusi <peter.ujfalusi@ti.com>
 Cc: Russell King <rmk+kernel@armlinux.org.uk>
 Cc: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/boot/dts/dra7-l4.dtsi  | 2 +-
- arch/arm/boot/dts/omap4-l4.dtsi | 2 +-
- arch/arm/boot/dts/omap5-l4.dtsi | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ arch/arm/boot/dts/omap2.dtsi    | 42 +++++++++++++++++++++++++--------
+ arch/arm/boot/dts/omap2430.dtsi |  4 ++++
+ 2 files changed, 36 insertions(+), 10 deletions(-)
 
-diff --git a/arch/arm/boot/dts/dra7-l4.dtsi b/arch/arm/boot/dts/dra7-l4.dtsi
---- a/arch/arm/boot/dts/dra7-l4.dtsi
-+++ b/arch/arm/boot/dts/dra7-l4.dtsi
-@@ -212,7 +212,7 @@ SYSC_OMAP2_SOFTRESET |
- 			ranges = <0x0 0x56000 0x1000>;
+diff --git a/arch/arm/boot/dts/omap2.dtsi b/arch/arm/boot/dts/omap2.dtsi
+--- a/arch/arm/boot/dts/omap2.dtsi
++++ b/arch/arm/boot/dts/omap2.dtsi
+@@ -8,6 +8,7 @@
+  * kind, whether express or implied.
+  */
  
- 			sdma: dma-controller@0 {
--				compatible = "ti,omap4430-sdma";
-+				compatible = "ti,omap4430-sdma", "ti,omap-sdma";
- 				reg = <0x0 0x1000>;
- 				interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>,
- 					     <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>,
-diff --git a/arch/arm/boot/dts/omap4-l4.dtsi b/arch/arm/boot/dts/omap4-l4.dtsi
---- a/arch/arm/boot/dts/omap4-l4.dtsi
-+++ b/arch/arm/boot/dts/omap4-l4.dtsi
-@@ -160,7 +160,7 @@ SYSC_OMAP2_SOFTRESET |
- 			ranges = <0x0 0x56000 0x1000>;
++#include <dt-bindings/bus/ti-sysc.h>
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/interrupt-controller/irq.h>
+ #include <dt-bindings/pinctrl/omap.h>
+@@ -79,17 +80,38 @@ intc: interrupt-controller@1 {
+ 			reg = <0x480FE000 0x1000>;
+ 		};
  
- 			sdma: dma-controller@0 {
--				compatible = "ti,omap4430-sdma";
-+				compatible = "ti,omap4430-sdma", "ti,omap-sdma";
- 				reg = <0x0 0x1000>;
- 				interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>,
- 					     <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>,
-diff --git a/arch/arm/boot/dts/omap5-l4.dtsi b/arch/arm/boot/dts/omap5-l4.dtsi
---- a/arch/arm/boot/dts/omap5-l4.dtsi
-+++ b/arch/arm/boot/dts/omap5-l4.dtsi
-@@ -237,7 +237,7 @@ SYSC_OMAP2_SOFTRESET |
- 			ranges = <0x0 0x56000 0x1000>;
+-		sdma: dma-controller@48056000 {
+-			compatible = "ti,omap2430-sdma", "ti,omap2420-sdma";
++		target-module@48056000 {
++			compatible = "ti,sysc-omap2", "ti,sysc";
+ 			ti,hwmods = "dma";
+-			reg = <0x48056000 0x1000>;
+-			interrupts = <12>,
+-				     <13>,
+-				     <14>,
+-				     <15>;
+-			#dma-cells = <1>;
+-			dma-channels = <32>;
+-			dma-requests = <64>;
++			reg = <0x48056000 0x4>,
++			      <0x4805602c 0x4>,
++			      <0x48056028 0x4>;
++			reg-names = "rev", "sysc", "syss";
++			ti,sysc-mask = <(SYSC_OMAP2_CLOCKACTIVITY |
++					 SYSC_OMAP2_EMUFREE |
++					 SYSC_OMAP2_SOFTRESET |
++					 SYSC_OMAP2_AUTOIDLE)>;
++			ti,sysc-midle = <SYSC_IDLE_FORCE>,
++					<SYSC_IDLE_NO>,
++					<SYSC_IDLE_SMART>;
++			ti,syss-mask = <1>;
++			clocks = <&core_l3_ck>;
++			clock-names = "fck";
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges = <0 0x48056000 0x1000>;
++
++			sdma: dma-controller@0 {
++				compatible = "ti,omap2420-sdma", "ti,omap-sdma";
++				reg = <0 0x1000>;
++				interrupts = <12>,
++					     <13>,
++					     <14>,
++					     <15>;
++				#dma-cells = <1>;
++				dma-channels = <32>;
++				dma-requests = <64>;
++			};
+ 		};
  
- 			sdma: dma-controller@0 {
--				compatible = "ti,omap4430-sdma";
-+				compatible = "ti,omap4430-sdma", "ti,omap-sdma";
- 				reg = <0x0 0x1000>;
- 				interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>,
- 					     <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>,
+ 		i2c1: i2c@48070000 {
+diff --git a/arch/arm/boot/dts/omap2430.dtsi b/arch/arm/boot/dts/omap2430.dtsi
+--- a/arch/arm/boot/dts/omap2430.dtsi
++++ b/arch/arm/boot/dts/omap2430.dtsi
+@@ -309,6 +309,10 @@ wd_timer2: wdt@49016000 {
+ 	};
+ };
+ 
++&sdma {
++	compatible = "ti,omap2430-sdma", "ti,omap-sdma";
++};
++
+ &i2c1 {
+ 	compatible = "ti,omap2430-i2c";
+ };
 -- 
 2.24.1
 
