@@ -2,89 +2,159 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70C59122C98
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:11:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6CCA122CA3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:13:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ndiF/A1amcGXZW5Ux5UNA8OOESxXN6i78gak7/oTK28=; b=GKOK4KVtoMylBW
-	481xYQ+C42vg7dh7ySp3IAOc6C7R0fm8EJeYTrSk7ZiErGllbPCRbViCQT5S7FhzTyU5JPbdKu4gn
-	LtbxIVmxzXu/bA/60C1fXiei0NoUu+KITGJm+KCUHe60z/HLfUH+ijsKfJgv4nv1h7rOxjxtdcDrU
-	j2TnNv/qMEVHmZ5nbGemAwuZvIxmwDzD3NqPTEDk98nLXWmj+mbxVXeSu9+aMWqgweuQx37D0Q3EU
-	IBjIYwkS43MmR9iVlX78zq4yCZTuEthw82MPwbIyEybtWsOQx0csMWdhUFFEudu06HCdqcMhJLHsO
-	7O6dYc9YT7kl7KHqtwjQ==;
+	List-Owner; bh=kqjIFK0P2e8I+qA90VpIwdflpr1TcETgtw9r4/ePi1o=; b=bPgLntv/zhqTBJ
+	IZ9MphR+tXTP4cI8mH9FrmZRCgCUfZkzOCcOC/cHJ05p8HIOAmTvXDxUpktjENXwpjgHjbG+uZhQS
+	1XzZ3RJ1W2lo5MkULAU4hPiZr/1oUWwH4rsXtYnTF+PsoXSHoeEB5wjOjDU5VVSGYFR3r70v8/0tz
+	9u4AqBHmAfcRWpKEoyshP/q/WmraV33XkXLr+PwnZ+MhxT8l8DGPtb+Zpxd+hkf4anN+8IDJgg8CH
+	jURWtn6DJcIMrpWpADDgrY+wg7enIQcr6FfYg3KRNX8ipP6mCL3an7x3gQekkh8+78P9JcPyqALoW
+	EsBaUHXPRuNrKDUb9neA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihCdS-0007f4-5E; Tue, 17 Dec 2019 13:11:34 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1ihCfV-00088y-PE; Tue, 17 Dec 2019 13:13:41 +0000
+Received: from mail1.bemta26.messagelabs.com ([85.158.142.3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihCdH-0007ea-33
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 13:11:24 +0000
-Received: by mail-wm1-x342.google.com with SMTP id f129so3101419wmf.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Dec 2019 05:11:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=EZSohn1ysZnbfO+3Bztlv6MzaXMOulcwi+iBjK/JuWw=;
- b=fc2Vim7oz1vcI4NLmDgMW1dhc0j8fgTDpLRrcaLg5cY39SRL+RXduKEm6XXtNlKeLx
- TOCFDNEAPs7T3Xb5xCtFVMzYDjMqGCEDtkbFKQbQPooDyqWVWTGqXlpgT/wwI7tV5Liz
- ggTVdpkqzR2EAt8HHECw0hyjZQI018s5nVgdI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=EZSohn1ysZnbfO+3Bztlv6MzaXMOulcwi+iBjK/JuWw=;
- b=WdGOd0P1mnsNj4tseI3baRCwRCu1MK+k7gXmf6zQuW5FcpoEgpkkRcZwEtaGhqXirG
- OLNHJ/J5fpTrma23jnQR68JvPl8qKNa5/0bEMe3f7F4AA2bYyMpfvlQDt432Pr9iRjCR
- 0o8CvWDdxIH9QrT5ZNGluVwQsY4ZVz80zv7PzcezYLon+q658D4PUpxzobxKnHFWCgZ4
- xkpY1jxBjgYCPWP7yueHIOnMJU80zOQsi1tBmwaWf+rclIF0jaXm5yrylC9Qqi5Dbdih
- LXvwhCK5X4c7QdV0tLXL19BG/PVhyfz5a6sEiymTBxzLs0MOhLCrsio8wbAW0ZNBecRH
- ityg==
-X-Gm-Message-State: APjAAAVTHvpYj5K7KaYpW9v9cJpJiCoPaEu09Cb1WlKI5CWQP9mBed5m
- xWM8ewRTdVoM83knb9l6JDbJVg==
-X-Google-Smtp-Source: APXvYqwnmrkbC3b8LKKLFJqsp0qQ0RvZn9NSTyd4VwnWz/FmEMNPXPPr1xwYT+qU4vMGwbEpGinYzw==
-X-Received: by 2002:a1c:1f51:: with SMTP id f78mr5256447wmf.60.1576588280808; 
- Tue, 17 Dec 2019 05:11:20 -0800 (PST)
-Received: from phenom.ffwll.local ([2a02:168:564b:0:7567:bb67:3d7f:f863])
- by smtp.gmail.com with ESMTPSA id k4sm3028383wmk.26.2019.12.17.05.11.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Dec 2019 05:11:19 -0800 (PST)
-Date: Tue, 17 Dec 2019 14:11:18 +0100
-From: Daniel Vetter <daniel@ffwll.ch>
-To: DRI Development <dri-devel@lists.freedesktop.org>
-Subject: Re: [PATCH 04/10] drm/malidp: plane_state->fb iff plane_state->crtc
-Message-ID: <20191217131118.GX624164@phenom.ffwll.local>
-References: <20191213172612.1514842-1-daniel.vetter@ffwll.ch>
- <20191213172612.1514842-4-daniel.vetter@ffwll.ch>
+ id 1ihCfB-00088I-EK
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 13:13:22 +0000
+Received: from [85.158.142.98] (using TLSv1.2 with cipher
+ DHE-RSA-AES256-GCM-SHA384 (256 bits))
+ by server-3.bemta.az-a.eu-central-1.aws.symcld.net id 89/50-12307-864D8FD5;
+ Tue, 17 Dec 2019 13:13:12 +0000
+X-Brightmail-Tracker: H4sIAAAAAAAAA1WTe0xbZRjG+XpOT886Ws+AyQcZxDQwk0FLQbM
+ ds2DMRHeMGypeoiZsO9AjrZYCbWEwE9koMK7SZUIQVi4bN6lBQpnc1VRggFwCDCQKcqtzMHZh
+ sArC0B4OTP3n5Pd+z5P3fd4v38ERl3yBJ84k6hmthlZLMCGqDACHpcqba+HyXuvTZOsoTq6a+
+ lAyf9aGkaWdg3xyY+gxQtbmt6Dk9KMuQNpvZvDILzareWTD/DifNJgHEdJSugnI0dYrGPmgdQ
+ wh0zo6BS89RY1dbBVQ9yfSBFRL0ZSAGl7uRqiG2kyMmhxvxyhLRTI1VFgOqLzHcmqlwftN4Yd
+ 8lSYiJvEMX3nxYRMW+4M48a+SeeQ8GBNmgT04ICoR2DDrnwWEDu5G4ezsPYwrLABu5K5vFyjR
+ g0Dz4jLKFi5EAQ/+tJmHcYUNwHVbMco2wwgSXu6ZwVh2I07DG6YBhDUhRCEGv+ka57GCK6GAz
+ dYUQRbAHSYGPto6yHrcCAOAX60ZBKwHJXxh43cdfJZFBA0HOnJ43LRVFBbM5QBW2EM8D1eW01
+ FuDS+4esGMsIwQ7vAXW+n2MEgQsKJ9COF4P1yY3+Jzfgb2pkwA7twfDvxs22EJLDF17rAXHCn
+ N3uGTsHjSju76+2/VYByTsCI7DWWXgYQP3LImccexcGB4gM/xQTixlLET4QD8tTCDz+4CiRoU
+ 9ndm8o0goOg/sTn2h2VtDzGO/WBV+R2kaPsu9sHeL21oGUBrwQsRWlWUUh9Nq9TSQLlcGhj4n
+ NTxPSKX0eektIyJl0YyGr2Wdqgy+qxOpkuKjlQrZBpG3wAcL1QR51TbDC7Z78qswAPnSfaL7r
+ ashbuII2IUSUpapzytjVczOis4gOMSKBKOOLR9WiaKSfxIpXa8810Z4s4SN5Fg1CGLdLF0tE4
+ VxUl9QIobF0xXERdUE6NhPN1FjayJYE3KeM2TFrt/ywjw8nQVAScnJxfnWEYbrdL/X18E7jiQ
+ uIrOsF2cVRr9k0mLjhA8R4igUDsbQk//K3me56UYN/ze2qsYuf1MSLQ8MDkEXDqS+21dQPNnj
+ DLstfLcKros75X1Y3VLQpGf+taE0bXaUFgdYCkG4R+Ygl6O+/vY6sSVoDX34/2q381R/uL71o
+ 89rqcFzz+oCkGaxovzwvpOhM01FR36ujIu4d702zPXxtMrL7+z4Ftp3nv71U+3sOm27k+Guws
+ jo4wJp0rWQnoT68nJzMY/ko7f8Ui1n/P7vK7HrK9/0e3oG212w1nq9anrAvcTp8qqcrx9p2p8
+ N5PpudiR7GDYtV7gVISN/dariLdUGYOv1m6meh99b6YlwfDuhZPf+14Ti5/NWwkXpL4/2CSuT
+ /dZ+jO8vb0utMLnxuEfQyWoTkkHHkK0OvofoY80N6gEAAA=
+X-Env-Sender: Adam.Thomson.Opensource@diasemi.com
+X-Msg-Ref: server-28.tower-223.messagelabs.com!1576588391!588152!1
+X-Originating-IP: [104.47.1.54]
+X-SYMC-ESS-Client-Auth: mailfrom-relay-check=pass
+X-StarScan-Received: 
+X-StarScan-Version: 9.44.22; banners=-,-,-
+X-VirusChecked: Checked
+Received: (qmail 20508 invoked from network); 17 Dec 2019 13:13:12 -0000
+Received: from mail-ve1eur01lp2054.outbound.protection.outlook.com (HELO
+ EUR01-VE1-obe.outbound.protection.outlook.com) (104.47.1.54)
+ by server-28.tower-223.messagelabs.com with ECDHE-RSA-AES256-GCM-SHA384
+ encrypted SMTP; 17 Dec 2019 13:13:12 -0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Blo1DsmLFKCXhJ29VU/Pv5Tzic2oMA4S1O12hBKXLz5J6vdkbU7bqCw1/UPtdBhMmnTEcU4kVjVFieq0L4GAqa4XBIcMww7o87xRvivfTyMCiOXM+YbfWCr8vhLgAD0aA4ITjXSz4CSJdIZR+uqep09XBmqoWXNWBP1O7uRyg15/FDSGFiKbFWZJKc/jk9aTOjUsk3buQdIfrtJ6ZQmcEAbRxPRs1oAOEsZW5TqVIAn43oi4CGiAGmaBjUK0GD3QC4yHEwQerQLoWBFsZhKgHDfWnH6pFiR9PPV2hP1OKy6l92rfOvVaF2cro/xu8mVDu8amezF3xTWjDZYjOhEYow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=US9NR5Y0nccgZGJYGPBfApIzIZ42oWx8TvhDqq3OsaQ=;
+ b=QdNyXAjrdrtAdT9WCd6dXeLbv8I0MJIRJY8rixVqgr4M52jltHCUB1bLZn3L8m4AZDMlbOpx8pgQ7enAfb2iisSVyXFtsWVavqn6jWxXUrRyFQlP1K4QHg4c7ygtp7xXIC912iYpQ3SF+/zKeWJAwXCc6+VlGXNNklUWiJ5G91GJ+ncJOuZ9iI9vsrIudU/q6YGFSXIJh5CiBxXT2a8254Fso6l5OVBBfqfPuRDleMmu5+VAUl9VjhHafCncHhIZQ+JQ2EuomhjhrwzR8B1+WEIJpxaGR6AyyRUlazedNqxNyjX4V/OFM/6HlHt+kVkRkYGG9ZK/YwZg94SN3pQmJg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=diasemi.com; dmarc=pass action=none header.from=diasemi.com;
+ dkim=pass header.d=diasemi.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=dialogsemiconductor.onmicrosoft.com;
+ s=selector1-dialogsemiconductor-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=US9NR5Y0nccgZGJYGPBfApIzIZ42oWx8TvhDqq3OsaQ=;
+ b=LOj0sjcwUn8gzP6mrTrUYqNp25UzCURf8Lk9ObzkZdKqLo/1bK9STK3mehmElsOW1ZwodgIulkCa0xIoBqooKJV4YyactPhb5+e8nvmiXYB6wDErQY4F9Bh++iDDo+FuETvor1I5etmZmy5EQrezdo3Eaqpn0nXmNp4OcAG1aUQ=
+Received: from AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM (10.169.154.136) by
+ AM5PR1001MB1186.EURPRD10.PROD.OUTLOOK.COM (10.169.155.142) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2538.18; Tue, 17 Dec 2019 13:13:10 +0000
+Received: from AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::ed23:3ca0:97ef:c868]) by AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM
+ ([fe80::ed23:3ca0:97ef:c868%10]) with mapi id 15.20.2538.019; Tue, 17 Dec
+ 2019 13:13:10 +0000
+From: Adam Thomson <Adam.Thomson.Opensource@diasemi.com>
+To: Marco Felsch <m.felsch@pengutronix.de>, Adam Thomson
+ <Adam.Thomson.Opensource@diasemi.com>
+Subject: RE: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
+ selection documentation
+Thread-Topic: [PATCH v3 3/6] dt-bindings: mfd: da9062: add regulator voltage
+ selection documentation
+Thread-Index: AQHVptoKIWnW5XGNx0qiesHaa7KQWaeqBMOAgAkpmQCAAfp+EIAAFOMAgAGB2oCAAAM8gIAACD8AgAXEVoCAAH+D4IABFEIAgAANuACAAC0nAIAACzSQ
+Date: Tue, 17 Dec 2019 13:13:10 +0000
+Message-ID: <AM5PR1001MB0994377F69ED2EFF2BEB580380500@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+References: <20191210094144.mxximpuouchy3fqu@pengutronix.de>
+ <AM5PR1001MB099497419E4DCA69D424EC35805A0@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+ <20191211170918.q7kqkd4lrwwp7jl3@pengutronix.de>
+ <20191212161019.GF4310@sirena.org.uk>
+ <20191212162152.5uu3feacduetysq7@pengutronix.de>
+ <20191212165124.GJ4310@sirena.org.uk>
+ <20191216085525.csr2aglm5md4vtsw@pengutronix.de>
+ <AM5PR1001MB09941005A47B603805D3C53280510@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+ <20191217090034.GD31182@pengutronix.de>
+ <AM5PR1001MB099460B2D291644F088707BA80500@AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM>
+ <20191217123116.GB29666@pengutronix.de>
+In-Reply-To: <20191217123116.GB29666@pengutronix.de>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [165.225.80.228]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: d43dab66-c529-4db0-d833-08d782f2ddb2
+x-ms-traffictypediagnostic: AM5PR1001MB1186:
+x-ms-exchange-sharedmailbox-routingagent-processed: True
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM5PR1001MB118620715EFF02B359331C8FA7500@AM5PR1001MB1186.EURPRD10.PROD.OUTLOOK.COM>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 02543CD7CD
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(366004)(376002)(39860400002)(136003)(346002)(199004)(189003)(478600001)(86362001)(33656002)(55236004)(53546011)(6506007)(64756008)(2906002)(66556008)(66476007)(52536014)(54906003)(81166006)(81156014)(55016002)(26005)(9686003)(186003)(8936002)(5660300002)(71200400001)(8676002)(316002)(7696005)(66946007)(110136005)(7416002)(4326008)(76116006)(66446008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM5PR1001MB1186;
+ H:AM5PR1001MB0994.EURPRD10.PROD.OUTLOOK.COM; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:0; MX:1; 
+received-spf: None (protection.outlook.com: diasemi.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: RMgI0cMMAKrB5CqMQ6Ymrbuke1ysRsTEqKVZTrUg7GWOOCQYBeD72m+EEP3TN7nfvMmuYCOcXLaNi6WZUxtJXesASsk20javLsVokjghHBvIcKHGH2TTAGPgh8DdoHZbEeNTPfzselIP7Twb47PxAhpUxyGJG8Wp3hJStx58XOKqAlPEN2/KMH5CXJolG0loH09OojF4TrjWiFSse547uqq2VX5WknK7OB/9joUSuGqlNQZ6xW3t0NTGZw9lmoo3WT3IJOmBOVlatwrE60PQXDlBbncQUHscO0zBRYPFVnQBUQ3mH44284DW0mASQdOYM4GA0HqUZTTnAvV4aRAXM4siOFBpyNnoGsBfD1Dn4a2FhwtXs+Tlzv2H0+cRp2jQ128dTZrPCexbwNxZjXQe4/vd7v3erpFyIj4jL7Y5WRuHAkl8gqvXHk37c3ob13d7
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191213172612.1514842-4-daniel.vetter@ffwll.ch>
-X-Operating-System: Linux phenom 5.3.0-2-amd64 
-User-Agent: Mutt/1.12.2 (2019-09-21)
+X-OriginatorOrg: diasemi.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d43dab66-c529-4db0-d833-08d782f2ddb2
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Dec 2019 13:13:10.7967 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 511e3c0e-ee96-486e-a2ec-e272ffa37b7c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: DWexB0wfG8g6nyBWjsshAbVVeSk8oK9GHXnbcvoYvBkmbiLnKVdWEpSJc6zix7/7DQGhxahjFUZ3bSRovIam4b8oTqc9wDau0WEU9ydu46g=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR1001MB1186
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_051123_196039_BAF3E1D2 
-X-CRM114-Status: GOOD (  17.09  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191217_051321_631439_5B9BEC10 
+X-CRM114-Status: GOOD (  23.26  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [85.158.142.3 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [85.158.142.3 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,58 +166,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, Philipp Zabel <p.zabel@pengutronix.de>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, Sascha Hauer <s.hauer@pengutronix.de>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Daniel Vetter <daniel.vetter@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Support Opensource <Support.Opensource@diasemi.com>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "andrew@aj.id.au" <andrew@aj.id.au>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "bgolaszewski@baylibre.com" <bgolaszewski@baylibre.com>,
+ Mark Brown <broonie@kernel.org>, "joel@jms.id.au" <joel@jms.id.au>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "lee.jones@linaro.org" <lee.jones@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 13, 2019 at 06:26:06PM +0100, Daniel Vetter wrote:
-> Checking both is one too much, so wrap a WARN_ON around it to stope
-> the copypasta.
-> 
-> Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
-> Cc: Philipp Zabel <p.zabel@pengutronix.de>
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: Sascha Hauer <s.hauer@pengutronix.de>
-> Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: NXP Linux Team <linux-imx@nxp.com>
-> Cc: linux-arm-kernel@lists.infradead.org
+On 17 December 2019 12:31, Marco Felsch wrote:
 
-Oops, subect should be drm/imx: ofc here.
--Daniel
-
-> ---
->  drivers/gpu/drm/imx/ipuv3-plane.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+> On 19-12-17 09:53, Adam Thomson wrote:
+> > On 17 December 2019 09:01, Marco Felsch wrote:
+> >
+> > > > > The enabel control signal is always available, please check [1] table
+> > > > > 63. There is a mux in front of the enable pin so:
+> > > > >
+> > > > >              +-------------
+> > > > >  Seq. |\     |   Regulator
+> > > > >  GPI1 | \    |
+> > > > >  GPI2 | | -- > Enable
+> > > > >  GPI3 | /    |
+> > > > >       |/     .
+> > > > >              .
+> > > > >              .
+> > > > >
+> > > > > Adam please correct me if this is wrong.
+> > > >
+> > > > Yes the register can always be configured regardless of the associated pin
+> > > > configuration, but if say GPIO1 was configured as a GPO but a regulator was
+> > > > configured to use GPIO1 as its GPI control mechanism, the output signal
+> from
+> > > > GPIO1 would be ignored, the sequencer control would not have any effect
+> and
+> > > > you're simply left with manual I2C control. Really we shouldn't be getting
+> into
+> > > > that situation though. If a GPIO is to be used as a regulator control signal
+> > > > then it should be marked as such and I don't think we should be able to use
+> that
+> > > > pin for anything other than regulator control.
+> > >
+> > > I see, so we have to guarantee that the requested gpio is configured as
+> > > input. This can be done by:
+> >
+> > This is one of the reasons I thought this was better suited to being done in the
+> > pinctrl/pinmux side. If you configure the GPIO as for regulator control then
+> > the code can automatically configure the GPIO for input. That doesn't then
+> need
+> > to be in the regulator driver.
 > 
-> diff --git a/drivers/gpu/drm/imx/ipuv3-plane.c b/drivers/gpu/drm/imx/ipuv3-plane.c
-> index 28826c0aa24a..6776ebb3246d 100644
-> --- a/drivers/gpu/drm/imx/ipuv3-plane.c
-> +++ b/drivers/gpu/drm/imx/ipuv3-plane.c
-> @@ -359,7 +359,7 @@ static int ipu_plane_atomic_check(struct drm_plane *plane,
->  	if (!fb)
->  		return 0;
->  
-> -	if (!state->crtc)
-> +	if (WARN_ON(!state->crtc))
->  		return -EINVAL;
->  
->  	crtc_state =
-> -- 
-> 2.24.0
-> 
+> I still don't prefer that way.. pls check my arguments I already made
+> and I don't wanna repeat it again.
 
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+Yes, I read your arguments but still can't agree :)
 
 _______________________________________________
 linux-arm-kernel mailing list
