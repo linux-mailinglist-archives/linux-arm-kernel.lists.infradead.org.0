@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84627122A80
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 12:44:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A5BE122A83
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 12:44:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=oOILYz3BIqkjr0CYzP7S/LXzIS8WgePMh/ttv00MNTs=; b=DuLlkme/wAtTAXlwCP2KKkvEIb
-	BFxn1a0CqhbiEGfTNjzQ8l7kDY/tF+8mtA5YU93kSRn3448n/UTXPPAURNgKyv+xYdmrR70g2d+XZ
-	MI9KINYoSqBYagv1KmK3RV41xP1dLjVjTPQmb0T5A4VBCkp8um5w5EsmfW7m7Ph4j8cN6T5K+Fxfc
-	oLwy4i43B7DVz0BJQTJ6uGbF5NL2LWk7ZzNS3U4gpaoZGqq2b4P73zpOCekis2ajZjUxfVhkhIWGU
-	5Fj8Kcyg9crT0ydJV23Ugj1xSzZ5MZKpwbmDZvVXdoqEMmrAY28vtGMW00sj47lUpjK0HMEbfY+QL
-	sn3Ec90A==;
+	bh=gTfR2U/dc4kEuTC3jYFqfENRRvFn6dzcbm4fXeQ97ao=; b=QisEOJk0yrj5cL3x8SqKtwu0p7
+	/PDKkp0CTiNYO24GxfZclEF85AjohjTnTpx/uVMTcQFRzyCfZKnt6zqFaI+YD+vr6SHe+BXnmExjE
+	GTUhI27cIZU5azqzu6pcUwoAWH+HP6ah6pxY1dNPS1ynCRqEAGW8LNBi0t4UIro23G7K7sPBXHqV6
+	uoTjp1AKehi/4M3DMEezpz06s2zh92tUuXhVfK5WPHjgzKi6Nmtv83SxN0x8nD+VLZynr9PkPwusL
+	uis3sqvPV8770lHbMTztLstZ6Xr1grBMPr13tRAFG5BHEalp/Ajm3JuzEPDKuSE23g4oc0rfjW3mR
+	XKFxw1Aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihBGi-0000uD-PR; Tue, 17 Dec 2019 11:44:00 +0000
+	id 1ihBHM-0001ba-AD; Tue, 17 Dec 2019 11:44:40 +0000
 Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihBFe-00008g-P7
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 11:42:57 +0000
+ id 1ihBFf-00008N-6q
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 11:43:00 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3794BC00A9;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 43846C00BD;
  Tue, 17 Dec 2019 11:42:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576582974; bh=kXQSi8uEaR0nnXI5gYaHpPekaUtZSzYB55wAuRZ7ltQ=;
+ t=1576582973; bh=QGBt5iajXK05KEIAGjP4Yq1Ag2fr6PeaLdY7M7bfxDQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=XUSvulP17QwQkw8B3QSj57ve7cn8kcRbJcx9xUTXFdr+BSI/zOYTMckaw2R2HMjAm
- WdUitAnfXfcCWp4DC2mWmbpMeF6dYDjk2OOunMp2Zp+Dc9PD2Wphj+msZYGg2EO2nP
- MqYrCe4srBXHAuqVY63iSWQp+bOuRPNR2qnunU3IMJU5XX6nxEnL+soIJwThcVK7Gx
- zdoYJC6OAA0332VNph8JrsU7BL/HnIOkufqysia0IG2w6rEL8nuuWCMg+yYXttYem5
- 9H7IzxqRACENaAeUwzeh6PgiUU6RayypGLAwjOENW5GcFi3o744IlBeE8/gMeNhJpY
- LvK72zgGYi20A==
+ b=dj55FjSsdexIenirs/O1vTgE47xvA9GStoqSsSopnT1dLf2iwW3cgQ5oZbljXjqS+
+ XjlKyp/HN5CtzJK7K0LUoEiZ+aSgTTaJL3s81qtaL8w1IZVjvMMN1PG/wjFavzCu7i
+ K7ncwYUthtrHN5SOB//ynUA+6vCt+hLvxqjVosg1TPeI04MK46loiMwUz+RLQr7bYo
+ ZugYfnH89cF+pvIgGTKjVj32LLphgqqdUnY+MWjSM1ePg9k8BbSqMNx0JMO8Idnibw
+ im9VLFTRCf3g9J39YdFeYOSzqZlKPJuEKmquNUaZCBVAI7fnXIwBNfWH1YxOjwcxiT
+ kmdLLakGw0KZg==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id BF557A0089;
+ by mailhost.synopsys.com (Postfix) with ESMTP id C7A3CA008D;
  Tue, 17 Dec 2019 11:42:50 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net v2 1/8] net: stmmac: selftests: Needs to check the number
- of Multicast regs
-Date: Tue, 17 Dec 2019 12:42:31 +0100
-Message-Id: <a59664347f6bc48b8819c228a9e1095a8b92ed1e.1576581853.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net v2 2/8] net: stmmac: Determine earlier the size of RX
+ buffer
+Date: Tue, 17 Dec 2019 12:42:32 +0100
+Message-Id: <a060ccfbcb6a57f73af0d797fb6c829a4c37c5fb.1576581853.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 References: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 References: <cover.1576581853.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_034254_845678_BD15AB80 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20191217_034255_312747_52B2F87C 
+X-CRM114-Status: GOOD (  13.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,15 +97,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When running the MC and UC filter tests we setup a multicast address
-that its expected to be blocked. If the number of available multicast
-registers is zero, driver will always pass the multicast packets which
-will fail the test.
+Split Header feature needs to know the size of RX buffer but current
+code is determining it too late. Fix this by moving the RX buffer
+computation to earlier stage
 
-Check if available multicast addresses is enough before running the
-tests.
-
-Fixes: 091810dbded9 ("net: stmmac: Introduce selftests support")
+Fixes: 67afd6d1cfdf ("net: stmmac: Add Split Header support and enable it in XGMAC cores")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
 ---
@@ -119,31 +115,68 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 24 +++++++++++------------
+ 1 file changed, 11 insertions(+), 13 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-index f3d8b9336b8e..13227909287c 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-@@ -624,6 +624,8 @@ static int stmmac_test_mcfilt(struct stmmac_priv *priv)
- 		return -EOPNOTSUPP;
- 	if (netdev_uc_count(priv->dev) >= priv->hw->unicast_filter_entries)
- 		return -EOPNOTSUPP;
-+	if (netdev_mc_count(priv->dev) >= priv->hw->multicast_filter_bins)
-+		return -EOPNOTSUPP;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+index bbc65bd332a8..dfecced43f29 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+@@ -1293,19 +1293,9 @@ static int init_dma_rx_desc_rings(struct net_device *dev, gfp_t flags)
+ 	struct stmmac_priv *priv = netdev_priv(dev);
+ 	u32 rx_count = priv->plat->rx_queues_to_use;
+ 	int ret = -ENOMEM;
+-	int bfsize = 0;
+ 	int queue;
+ 	int i;
  
- 	while (--tries) {
- 		/* We only need to check the mc_addr for collisions */
-@@ -666,6 +668,8 @@ static int stmmac_test_ucfilt(struct stmmac_priv *priv)
+-	bfsize = stmmac_set_16kib_bfsize(priv, dev->mtu);
+-	if (bfsize < 0)
+-		bfsize = 0;
+-
+-	if (bfsize < BUF_SIZE_16KiB)
+-		bfsize = stmmac_set_bfsize(dev->mtu, priv->dma_buf_sz);
+-
+-	priv->dma_buf_sz = bfsize;
+-
+ 	/* RX INITIALIZATION */
+ 	netif_dbg(priv, probe, priv->dev,
+ 		  "SKB addresses:\nskb\t\tskb data\tdma data\n");
+@@ -1347,8 +1337,6 @@ static int init_dma_rx_desc_rings(struct net_device *dev, gfp_t flags)
+ 		}
+ 	}
  
- 	if (stmmac_filter_check(priv))
- 		return -EOPNOTSUPP;
-+	if (netdev_uc_count(priv->dev) >= priv->hw->unicast_filter_entries)
-+		return -EOPNOTSUPP;
- 	if (netdev_mc_count(priv->dev) >= priv->hw->multicast_filter_bins)
- 		return -EOPNOTSUPP;
+-	buf_sz = bfsize;
+-
+ 	return 0;
  
+ err_init_rx_buffers:
+@@ -2658,6 +2646,7 @@ static void stmmac_hw_teardown(struct net_device *dev)
+ static int stmmac_open(struct net_device *dev)
+ {
+ 	struct stmmac_priv *priv = netdev_priv(dev);
++	int bfsize = 0;
+ 	u32 chan;
+ 	int ret;
+ 
+@@ -2677,7 +2666,16 @@ static int stmmac_open(struct net_device *dev)
+ 	memset(&priv->xstats, 0, sizeof(struct stmmac_extra_stats));
+ 	priv->xstats.threshold = tc;
+ 
+-	priv->dma_buf_sz = STMMAC_ALIGN(buf_sz);
++	bfsize = stmmac_set_16kib_bfsize(priv, dev->mtu);
++	if (bfsize < 0)
++		bfsize = 0;
++
++	if (bfsize < BUF_SIZE_16KiB)
++		bfsize = stmmac_set_bfsize(dev->mtu, priv->dma_buf_sz);
++
++	priv->dma_buf_sz = STMMAC_ALIGN(bfsize);
++	buf_sz = bfsize;
++
+ 	priv->rx_copybreak = STMMAC_RX_COPYBREAK;
+ 
+ 	ret = alloc_dma_desc_resources(priv);
 -- 
 2.7.4
 
