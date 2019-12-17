@@ -2,72 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3812122CBB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:17:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B42CE122CDE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 14:27:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a8rtoOQ+FzW6FNfoVn4yohsUlj5zt2/pCv5yM+Oy1Ps=; b=hbYcSf+Nr3BM/y
-	C7y8+f9K4t0ec4KsfyE46s7uBPOdzSUyxLnjzQ3bXptzlCsab/i+370PFzxZ9iqbvagvg14ahDmQ0
-	me+eF0TYYW+cHkZZRAXZbhH/vgumipnio/zGmCQrTci2HGVHPaSrzF2YmIkzbIjaoe0k1Sd3/wEi0
-	izRKlBEg1c3aUuYUgd89EZysG4qGTB/enpFYCbj776Fc9TZdnBwX6PLlVo4A341sSl+In2NI/vv5F
-	LeabO3lEPuRcvWpd8uFE1P3HB3KyPtME4gWJWgQ/31IIQNY/3WVQjQFFiZ373MsBCzdshhA7Ws92P
-	oYHsb8aC4pOf8hgQ9lpw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8B/Nlb3iEoBylMFUwYfWB+qJH4Yeqp0AH8qVIHT5LU0=; b=Ao+9guNj0Fhvzp
+	zgdSd4/Po31uUYaU2p2053igbeBJgai+8j9WnOeb9VdBZhu1FANWg5K3hUPydzNF+MV6OCWrEC4pV
+	eNhsKinMqotAnklQ7nXaB/a9USUXrXcbM57SJ2Ity1ZI6Qrwt90Obg8KNo+NpgCvE9CpLisGNdXk4
+	GCuqNbsCTplzSBNmlfU4tQ5q2KY4ljLjkaBD3SRfn2r7CidmcOmfuKEYb57cAujgKe10m1J0Y+TWE
+	ZAZz896VIWMqS4w3sZU7J+7Ka2qFi9v/UWGAdc8lqFYIAnlOeBkLw2ZTh3aIaSTabU/mxefbq3otk
+	Yr+iv10BmHFWzHaZiTzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihCj6-0001cE-0q; Tue, 17 Dec 2019 13:17:24 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ihCsw-0005UT-7U; Tue, 17 Dec 2019 13:27:34 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihCiw-0001bK-9x; Tue, 17 Dec 2019 13:17:15 +0000
-X-UUID: 72d83e69657048eaa891031c2babfac4-20191217
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=aC80HxRMBV0tY5Zddqx1ty1wteHBFoyprQsy+llvVXw=; 
- b=eypN7rEkT9HGqDDXJDSLityenSRC+M8pDXJTqc3fehKrSAh2N+90KguZszPe3ln1Vz94GZZpGeUlpmDjSxTsa3xpJqPgbd1EEu379AkepzJ7fmJxQmEV6Fb6DNwNcYlMzu0CXdBslheNoVyBiChEXO7CYp2zAXhBa4ZgwxeI3QU=;
-X-UUID: 72d83e69657048eaa891031c2babfac4-20191217
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <sam.shih@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 779452636; Tue, 17 Dec 2019 05:17:00 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 17 Dec 2019 05:17:09 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 17 Dec 2019 21:16:39 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Tue, 17 Dec 2019 21:16:32 +0800
-From: Sam Shih <sam.shih@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [v2,1/1] arm: dts: mediatek: add mt7629 pwm support
-Date: Tue, 17 Dec 2019 21:16:53 +0800
-Message-ID: <1576588613-11530-2-git-send-email-sam.shih@mediatek.com>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1576588613-11530-1-git-send-email-sam.shih@mediatek.com>
-References: <1576588613-11530-1-git-send-email-sam.shih@mediatek.com>
+ id 1ihCsd-0005PT-PE
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 13:27:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1576589234;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=pUq2a5pZ/dt2qGPzTnxHTjJcR3qch9Jn0NM29Gx0avs=;
+ b=MjdvJ18dxEdUb/b2vrA92heZduv5s8YGTK+BkpQhJdH9etVXqJyfcTOscubn9x1V5in9x5
+ SzzDYOFVYRCE3odVV0JftSL0rnL0w1quaN12C0L5JW0yg/qePTCQC418zzoJB5tfeuI+Ar
+ gklmSR6e5CNC6RyhLrzWOj/Jmrcyaj4=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-210-D7gd0hVnNieBrcFWJ_UiaQ-1; Tue, 17 Dec 2019 08:27:09 -0500
+X-MC-Unique: D7gd0hVnNieBrcFWJ_UiaQ-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 265F68017DF;
+ Tue, 17 Dec 2019 13:27:07 +0000 (UTC)
+Received: from [10.36.116.117] (ovpn-116-117.ams2.redhat.com [10.36.116.117])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 24A2060C63;
+ Tue, 17 Dec 2019 13:27:02 +0000 (UTC)
+Subject: Re: [PATCH v3 05/13] iommu/arm-smmu-v3: Prepare arm_smmu_s1_cfg for
+ SSID support
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-acpi@vger.kernel.org, devicetree@vger.kernel.org,
+ iommu@lists.linux-foundation.org
+References: <20191209180514.272727-1-jean-philippe@linaro.org>
+ <20191209180514.272727-6-jean-philippe@linaro.org>
+From: Auger Eric <eric.auger@redhat.com>
+Message-ID: <7b20be5c-0b3f-dbec-ffd6-508b4667cf1b@redhat.com>
+Date: Tue, 17 Dec 2019 14:27:01 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191209180514.272727-6-jean-philippe@linaro.org>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_051714_354998_72CF4D9D 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191217_052715_914772_BE751242 
+X-CRM114-Status: GOOD (  20.55  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -75,8 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,53 +95,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org, Sam
- Shih <sam.shih@mediatek.com>
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, robin.murphy@arm.com,
+ joro@8bytes.org, guohanjun@huawei.com, rjw@rjwysocki.net, robh+dt@kernel.org,
+ jonathan.cameron@huawei.com, sudeep.holla@arm.com, bhelgaas@google.com,
+ zhangfei.gao@linaro.org, will@kernel.org, lenb@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds pwm support for MT7629.
-Used:
-https://patchwork.kernel.org/patch/11160851/
+Hi Jean,
 
-Change since v1:
-remove unused property num-pwm
+On 12/9/19 7:05 PM, Jean-Philippe Brucker wrote:
+> When adding SSID support to the SMMUv3 driver, we'll need to manipulate
+> leaf pasid tables and context descriptors. Extract the context
+> descriptor structure and introduce a new table structure.
+> 
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Reviewed-by: Eric Auger <eric.auger@redhat.com>
 
-Signed-off-by: Sam Shih <sam.shih@mediatek.com>
----
- arch/arm/boot/dts/mt7629.dtsi | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+Thanks
 
-diff --git a/arch/arm/boot/dts/mt7629.dtsi b/arch/arm/boot/dts/mt7629.dtsi
-index 867b88103b9d..ce2a30a24017 100644
---- a/arch/arm/boot/dts/mt7629.dtsi
-+++ b/arch/arm/boot/dts/mt7629.dtsi
-@@ -241,6 +241,20 @@
- 			status = "disabled";
- 		};
- 
-+		pwm: pwm@11006000 {
-+			compatible = "mediatek,mt7629-pwm";
-+			reg = <0x11006000 0x1000>;
-+			interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_LOW>;
-+			clocks = <&topckgen CLK_TOP_PWM_SEL>,
-+				 <&pericfg CLK_PERI_PWM_PD>,
-+				 <&pericfg CLK_PERI_PWM1_PD>;
-+			clock-names = "top", "main", "pwm1";
-+			assigned-clocks = <&topckgen CLK_TOP_PWM_SEL>;
-+			assigned-clock-parents =
-+					<&topckgen CLK_TOP_UNIVPLL2_D4>;
-+			status = "disabled";
-+		};
-+
- 		i2c: i2c@11007000 {
- 			compatible = "mediatek,mt7629-i2c",
- 				     "mediatek,mt2712-i2c";
--- 
-2.17.1
+Eric
+
+> ---
+>  drivers/iommu/arm-smmu-v3.c | 44 +++++++++++++++++++++----------------
+>  1 file changed, 25 insertions(+), 19 deletions(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 837b4283b4dc..b287e303b1d7 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -553,16 +553,21 @@ struct arm_smmu_strtab_l1_desc {
+>  	dma_addr_t			l2ptr_dma;
+>  };
+>  
+> +struct arm_smmu_ctx_desc {
+> +	u16				asid;
+> +	u64				ttbr;
+> +	u64				tcr;
+> +	u64				mair;
+> +};
+> +
+> +struct arm_smmu_cd_table {
+> +	__le64				*ptr;
+> +	dma_addr_t			ptr_dma;
+> +};
+> +
+>  struct arm_smmu_s1_cfg {
+> -	__le64				*cdptr;
+> -	dma_addr_t			cdptr_dma;
+> -
+> -	struct arm_smmu_ctx_desc {
+> -		u16	asid;
+> -		u64	ttbr;
+> -		u64	tcr;
+> -		u64	mair;
+> -	}				cd;
+> +	struct arm_smmu_cd_table	table;
+> +	struct arm_smmu_ctx_desc	cd;
+>  };
+>  
+>  struct arm_smmu_s2_cfg {
+> @@ -1471,6 +1476,7 @@ static void arm_smmu_write_ctx_desc(struct arm_smmu_device *smmu,
+>  				    struct arm_smmu_s1_cfg *cfg)
+>  {
+>  	u64 val;
+> +	__le64 *cdptr = cfg->table.ptr;
+>  
+>  	/*
+>  	 * We don't need to issue any invalidation here, as we'll invalidate
+> @@ -1488,12 +1494,12 @@ static void arm_smmu_write_ctx_desc(struct arm_smmu_device *smmu,
+>  	if (smmu->features & ARM_SMMU_FEAT_STALL_FORCE)
+>  		val |= CTXDESC_CD_0_S;
+>  
+> -	cfg->cdptr[0] = cpu_to_le64(val);
+> +	cdptr[0] = cpu_to_le64(val);
+>  
+>  	val = cfg->cd.ttbr & CTXDESC_CD_1_TTB0_MASK;
+> -	cfg->cdptr[1] = cpu_to_le64(val);
+> +	cdptr[1] = cpu_to_le64(val);
+>  
+> -	cfg->cdptr[3] = cpu_to_le64(cfg->cd.mair);
+> +	cdptr[3] = cpu_to_le64(cfg->cd.mair);
+>  }
+>  
+>  /* Stream table manipulation functions */
+> @@ -1624,7 +1630,7 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
+>  		   !(smmu->features & ARM_SMMU_FEAT_STALL_FORCE))
+>  			dst[1] |= cpu_to_le64(STRTAB_STE_1_S1STALLD);
+>  
+> -		val |= (s1_cfg->cdptr_dma & STRTAB_STE_0_S1CTXPTR_MASK) |
+> +		val |= (s1_cfg->table.ptr_dma & STRTAB_STE_0_S1CTXPTR_MASK) |
+>  			FIELD_PREP(STRTAB_STE_0_CFG, STRTAB_STE_0_CFG_S1_TRANS);
+>  	}
+>  
+> @@ -2138,11 +2144,11 @@ static void arm_smmu_domain_free(struct iommu_domain *domain)
+>  	if (smmu_domain->stage == ARM_SMMU_DOMAIN_S1) {
+>  		struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
+>  
+> -		if (cfg->cdptr) {
+> +		if (cfg->table.ptr) {
+>  			dmam_free_coherent(smmu_domain->smmu->dev,
+>  					   CTXDESC_CD_DWORDS << 3,
+> -					   cfg->cdptr,
+> -					   cfg->cdptr_dma);
+> +					   cfg->table.ptr,
+> +					   cfg->table.ptr_dma);
+>  
+>  			arm_smmu_bitmap_free(smmu->asid_map, cfg->cd.asid);
+>  		}
+> @@ -2167,9 +2173,9 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
+>  	if (asid < 0)
+>  		return asid;
+>  
+> -	cfg->cdptr = dmam_alloc_coherent(smmu->dev, CTXDESC_CD_DWORDS << 3,
+> -					 &cfg->cdptr_dma, GFP_KERNEL);
+> -	if (!cfg->cdptr) {
+> +	cfg->table.ptr = dmam_alloc_coherent(smmu->dev, CTXDESC_CD_DWORDS << 3,
+> +					     &cfg->table.ptr_dma, GFP_KERNEL);
+> +	if (!cfg->table.ptr) {
+>  		dev_warn(smmu->dev, "failed to allocate context descriptor\n");
+>  		ret = -ENOMEM;
+>  		goto out_free_asid;
+> 
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
