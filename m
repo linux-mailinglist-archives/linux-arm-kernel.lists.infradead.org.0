@@ -2,103 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40C6D1239F2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 23:25:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E0931239F7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 23:28:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ppxgsfVIieF6t3ouK9Wgem4GlA5tiJ8ORuiMxaJahhI=; b=u0bwDUboS1Hevi
-	UbK6vo0OMRzr89fmqrLPB6uRtCYTu41XPpvZLt7oa2LVwumOSaSjZfER8HPsimmExS+6TfD1dihBo
-	oobvSdzVKhT/QGzHbiAW+hFz0dOCFax8Liili2MJ7OR737nhuThAOSRggBSX15Sp2qRlgR+0irwPq
-	nm11fLU70DTkz/+rWb0oxxQm/pWx/IsJq7yMBcK3Fa5W9p9ydeYBhz/g37WZBBQCZcMOTNjBfp6lf
-	1PitcF0PiLAPTi1cscjUw2E/r6D1QroFnA92cFseNqkR/VBR5nEAWLb9AbF0Vf7xaUAudqtyQrjjO
-	f1Weu/0RmEkE65bYJuDA==;
+	List-Owner; bh=4MXLjTz67zgvc62nJ0C3k/Ws9TG5yXVGrLd43xRUsBw=; b=bMYrAZ/syJCIkW
+	dTNGMOZcjJGiyT1MbyU02N72dNodcZel/k/0gObh2bpL2kTB8oL6gfk23iSOGBrfMIz06uF9TwCwt
+	WHyNhthllGlsCge5E6yUUhhk/81h7vNNTHmBlmwFBNFQip8zOw6wBTBq9qDqzLVMNTo1exDIS6VGo
+	S/QXTWMkihE/gbwDxP/2N/b0arSga5flwy9LHMGO3R8kCksTQQmo+F9KKDcKOzNxnd+tXZ43crvS2
+	mfnnTjQt623mz1nP/I92RC0rNo8XSZTfuhnmDWOgDfIdzHYIarSxpVAi7L1yWd+jYZl/KEsqtRmxZ
+	J7h0eC3A+NeUNKbQB1ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihLH1-00030A-H0; Tue, 17 Dec 2019 22:24:59 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1ihLJy-0004b6-VA; Tue, 17 Dec 2019 22:28:02 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihLGu-0002ze-AH
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 22:24:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576621491;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=Xu0GsxfGKpwtsXvGwdOyh0k7RpXc8dRb7e9p2lxb8fE=;
- b=Hgm7KYoXkGqGyMDuaI5f6H+XzWEIrvd4yKN7OJNNo8zRQTv/hMSkwhqixLDWP/c82gOpu8
- oA1ys/topOGxmnF6ANErQElcJG/kTEeTpqm2Zx6BTPk0krfGrY4hiOedXdOncf/J1/Re3E
- reaXxwUqXJkwcIFoRHyN9T/BFaEr1+c=
-Received: from mail-qt1-f198.google.com (mail-qt1-f198.google.com
- [209.85.160.198]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-255-ZuEMUUH8N4u5tNflR3chCA-1; Tue, 17 Dec 2019 17:24:49 -0500
-Received: by mail-qt1-f198.google.com with SMTP id t4so181058qtd.3
+ id 1ihLJp-0004aa-0i
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 22:27:54 +0000
+Received: by mail-io1-xd41.google.com with SMTP id i11so9759653ioi.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Dec 2019 14:24:49 -0800 (PST)
+ Tue, 17 Dec 2019 14:27:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=4BblP9/i908jShbIZSL+2c+XD+vzjaoby0xZke9Jfhs=;
+ b=hwy8ilVyYPf/1zh4cTBm0wx2snAxW5ajpSg1IftlqVKzZdwi6pnglyTnO6Rex+msFQ
+ QWXUVUx9Py7HbcUDwcYdmQobMW2HIhdLsX37LYi0Fj8Eulv3/Iw0iYwt2sA8OgK5nHPU
+ 7Z7GwHO3za6j74lqClGbx0Wzuy9Mrx97NS+38ZuGkgxpJWbfPOCJcoFVvP4Hsu22sLzR
+ SsBIHOIaHm+uHhrfGlTP9K+OaW/8umvRaddftnPJW3l/plfuIslK8EjqhEurM19qm1Dt
+ 8VUUX2sb3uvm1HNBgNjrK4CBO+fnkiycfRXlVarTE/wOHE2ZdOtIgurn5UBxoHIInaUF
+ BrXQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=n1zc/BAvLiuzmjBuBeyM8c5OGj4eP3sDEL7oyAZ0h/8=;
- b=Czi/iJq3nwKJtZutzs2IWPzhgiNkbIBsMr2iKmKHi3FRo1NXMTzYXfc/jrndwcMxdE
- r3JjlhNUK2cIO/MaMA0vgrEqO0k8a4wLx9vhlAuTCx8xiw/459ZrFRuSZxq9HAhfW39n
- Y4/0XwcU/Cb8l9EUw2nzlCgKecifh0knqkbGMUByEGgs59oyvEDyKpqOEmF+pee+jqg7
- nFDVRMouaNXx3QhWviven7SOd/jU1Vala8T9BgAbz34RA6Hz5g2O1USPpWU1icGdZEBj
- K62yC0sfpeaM268XLkP8U4ZfmxEbHggu7FCXGOxBQODcNUSvxu3Jf/6+7gtxffqq3O8z
- +PPw==
-X-Gm-Message-State: APjAAAWRkHl3eb/+CnnONG2KCiwjgXi65/wZQFinEQn8tMcFXFvK0Zo3
- iiq0ah/rQ3eGaDsbGf+ovW/nzCF+oMtJtVunto7JDjjm/AMDokhu5i4+MCUpdnMC4gXYEIW/udD
- dtNPHlyltoikWtf8+wJ8ptKF9LO0/ctLnXL4=
-X-Received: by 2002:ac8:3177:: with SMTP id h52mr248048qtb.264.1576621488930; 
- Tue, 17 Dec 2019 14:24:48 -0800 (PST)
-X-Google-Smtp-Source: APXvYqxa9aGwr5mHm2Cm0VxXNZlZXqTAo8dq2kd9eCG/gVR+l9nUybMoSUNtPMwlIhbLMlDgqBEiTQ==
-X-Received: by 2002:ac8:3177:: with SMTP id h52mr248020qtb.264.1576621488653; 
- Tue, 17 Dec 2019 14:24:48 -0800 (PST)
-Received: from xz-x1 ([104.156.64.74])
- by smtp.gmail.com with ESMTPSA id c84sm7565689qkg.78.2019.12.17.14.24.47
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Dec 2019 14:24:47 -0800 (PST)
-Date: Tue, 17 Dec 2019 17:24:46 -0500
-From: Peter Xu <peterx@redhat.com>
-To: Sean Christopherson <sean.j.christopherson@intel.com>
-Subject: Re: [PATCH v4 07/19] KVM: Explicitly free allocated-but-unused dirty
- bitmap
-Message-ID: <20191217222446.GK7258@xz-x1>
-References: <20191217204041.10815-1-sean.j.christopherson@intel.com>
- <20191217204041.10815-8-sean.j.christopherson@intel.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=4BblP9/i908jShbIZSL+2c+XD+vzjaoby0xZke9Jfhs=;
+ b=XhUi3eD4Npt/Ww+KWfW5diCfmX6hl0VMy8LwAor7uWdd78hUSKUMhJ9WMDWWzcmRiZ
+ R0r+jQenX8iiNvNqfmVg11AgF0+yguRHbig0AJbkNg78uU2lfdumJTN57GF8GePFtz6I
+ +xTWe24vcEp1spxYllNvNrkB7t9ZIQdjWmwH1vJ+uCmpzUc5cUV2v1rppGRQXsSUqO8p
+ WLiW8o6AeUTNHOkNr4o8OQjt9hd3Sfw//9dQEpcymmwIJFyZyolWn6BnomFmbvOSYviw
+ avzfuyK7GidJUzPUGaLnf41h7+YMTfmGR14eNyKpOhO/OKCGQu4w5dUNy7+8lLC7BTBT
+ c+4w==
+X-Gm-Message-State: APjAAAWj59gtFAyFoPE58M5P4zrDCmU94/9ZqhegvvdtceMSoqjppyf3
+ FYdtTSHiMYp7o95ex6+xeThOwCZ2V5l95H51Ex1OOQ==
+X-Google-Smtp-Source: APXvYqy0rRHGL9s7yY7B000MT7WR/INJXqgTqhoIz7ek+RV/ksx376sR7e4z7scCOVZr4j5vlfLhL8lZ9qPfBIdIcwc=
+X-Received: by 2002:a02:6957:: with SMTP id e84mr355902jac.11.1576621671073;
+ Tue, 17 Dec 2019 14:27:51 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191217204041.10815-8-sean.j.christopherson@intel.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-MC-Unique: ZuEMUUH8N4u5tNflR3chCA-1
-X-Mimecast-Spam-Score: 0
-Content-Disposition: inline
+References: <20191211230717.4879-1-mike.leach@linaro.org>
+ <CANLsYkzVcTYutoYt5DWiOxyB8m3kCZVPHpTJPPe7YN=OoKtj1g@mail.gmail.com>
+ <CAJ9a7VgiVGx4gsrGOUXSzSRixbgMauhtpQJfHd+aYifR43faGA@mail.gmail.com>
+In-Reply-To: <CAJ9a7VgiVGx4gsrGOUXSzSRixbgMauhtpQJfHd+aYifR43faGA@mail.gmail.com>
+From: Olof Johansson <olof@lixom.net>
+Date: Tue, 17 Dec 2019 14:27:39 -0800
+Message-ID: <CAOesGMhkH++W5DG5rYdo+t2-kM69cKSqeMvHO0G6knU6SLbyeg@mail.gmail.com>
+Subject: Re: [PATCH v6 00/15] CoreSight CTI Driver
+To: Mike Leach <mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_142452_439408_EF5B20B4 
-X-CRM114-Status: GOOD (  14.81  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191217_142753_087123_FF61072D 
+X-CRM114-Status: GOOD (  32.29  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.81 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,68 +89,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
- kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
- James Hogan <jhogan@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Cornelia Huck <cohuck@redhat.com>, linux-kernel@vger.kernel.org,
- Philippe =?utf-8?Q?Mathieu-Daud=C3=A9?= <f4bug@amsat.org>,
- kvm-ppc@vger.kernel.org, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- Jim Mattson <jmattson@google.com>
+Cc: DTML <devicetree@vger.kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
+ Coresight ML <coresight@lists.linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
+ Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 12:40:29PM -0800, Sean Christopherson wrote:
-> Explicitly free an allocated-but-unused dirty bitmap instead of relying
-> on kvm_free_memslot() if an error occurs in __kvm_set_memory_region().
-> There is no longer a need to abuse kvm_free_memslot() to free arch
-> specific resources as arch specific code is now called only after the
-> common flow is guaranteed to succeed.  Arch code can still fail, but
-> it's responsible for its own cleanup in that case.
-> 
-> Eliminating the error path's abuse of kvm_free_memslot() paves the way
-> for simplifying kvm_free_memslot(), i.e. dropping its @dont param.
-> 
-> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-> ---
->  virt/kvm/kvm_main.c | 7 ++++---
->  1 file changed, 4 insertions(+), 3 deletions(-)
-> 
-> diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
-> index d403e93e3028..6b2261a9e139 100644
-> --- a/virt/kvm/kvm_main.c
-> +++ b/virt/kvm/kvm_main.c
-> @@ -1096,7 +1096,7 @@ int __kvm_set_memory_region(struct kvm *kvm,
->  
->  	slots = kvzalloc(sizeof(struct kvm_memslots), GFP_KERNEL_ACCOUNT);
->  	if (!slots)
-> -		goto out_free;
-> +		goto out_bitmap;
->  	memcpy(slots, __kvm_memslots(kvm, as_id), sizeof(struct kvm_memslots));
->  
->  	if ((change == KVM_MR_DELETE) || (change == KVM_MR_MOVE)) {
-> @@ -1144,8 +1144,9 @@ int __kvm_set_memory_region(struct kvm *kvm,
->  	if (change == KVM_MR_DELETE || change == KVM_MR_MOVE)
->  		slots = install_new_memslots(kvm, as_id, slots);
->  	kvfree(slots);
-> -out_free:
-> -	kvm_free_memslot(kvm, &new, &old);
-> +out_bitmap:
-> +	if (new.dirty_bitmap && !old.dirty_bitmap)
-> +		kvm_destroy_dirty_bitmap(&new);
+On Tue, Dec 17, 2019 at 3:51 AM Mike Leach <mike.leach@linaro.org> wrote:
+>
+> Hi Mathieu,
+>
+> On Mon, 16 Dec 2019 at 21:22, Mathieu Poirier
+> <mathieu.poirier@linaro.org> wrote:
+> >
+> > On Wed, 11 Dec 2019 at 16:07, Mike Leach <mike.leach@linaro.org> wrote:
+> > >
+> > > CTIs are defined in the device tree and associated with other CoreSight
+> > > devices. The core CoreSight code has been modified to enable the registration
+> > > of the CTI devices on the same bus as the other CoreSight components,
+> > > but as these are not actually trace generation / capture devices, they
+> > > are not part of the Coresight path when generating trace.
+> > >
+> > > However, the definition of the standard CoreSight device has been extended
+> > > to include a reference to an associated CTI device, and the enable / disable
+> > > trace path operations will auto enable/disable any associated CTI devices at
+> > > the same time.
+> > >
+> > > Programming is at present via sysfs - a full API is provided to utilise the
+> > > hardware capabilities. As CTI devices are unprogrammed by default, the auto
+> > > enable describe above will have no effect until explicit programming takes
+> > > place.
+> > >
+> > > A set of device tree bindings specific to the CTI topology has been defined.
+> > > The driver accesses these in a platform agnostic manner, so ACPI bindings
+> > > can be added later, once they have been agreed and defined for the CTI device.
+> > >
+> > > Documentation has been updated to describe both the CTI hardware, its use and
+> > > programming in sysfs, and the new dts bindings required.
+> > >
+> > > Tested on DB410 board and Juno board, against the Linux 5.5-rc1 tree.
+> > >
+> > > Changes since v5:
+> > > 1) Fixed up device tree .yaml file. Using extra compatible string for
+> > > v8 architecture CTI connections.
+> > > 2) Ensure association code respects coresight mutex when setting cross
+> > > referenced pointers. Add in shutdown code.
+> > > 3) Multiple minor code fixes & rationalisation.
+> > >
+> > > Changes since v4:
+> > > Multiple changes following feedback from Mathieu, Leo and Suzuki.
+> > > 1) Dropped RFC tag - wider distribution
+> > > 2) CTI bindings definition now presented as a .yaml file - tested with
+> > > with 'dt-doc-validate' from devicetree.org/dt-schema project and in kernel
+> > > build tree with 'make dtbs_check' per kernel docs.
+> > > 3) Sysfs links to other CoreSight devices moved out of this set into
+> > > a following set that deals with all CoreSight devices & sysfs links.
+> > > 4) Documentation in .rst format and new directory following patchset in [1].
+> > > Extended example provided in docs.
+> > > 5) Rationalised devicetree of_ specifics to use generic fwnode functions
+> > > where possible to enable easier addition of ACPI support later.
+> > > 6) Other minor changes as requested in feedback from last patchset.
+> > >
+> > > Changes since v3:
+> > > 1) After discussion on CS mailing list, each CTI connection has a triggers<N>
+> > >    sysfs directory with name and trigger signals listed for the connection.
+> > > 2) Initial code for creating sysfs links between CoreSight components is
+> > >   introduced and implementation for CTI provided. This allows exploration
+> > >   of the CoreSight topology within the sysfs infrastructure. Patches for
+> > >   links between other CoreSight components to follow.
+> > > 3) Power management - CPU hotplug and idle omitted from this set as ongoing
+> > >    developments may define required direction. Additional patch set to follow.
+> > > 4) Multiple fixes applied as requested by reviewers esp. Matthieu, Suzuki
+> > >    and Leo.
+> > >
+> > > Changes since v2:
+> > > Updates to allow for new features on coresight/next and feedback from
+> > > Mathieu and Leo.
+> > >
+> > > 1) Rebase and restructuring to apply on top of ACPI support patch set,
+> > > currently on coresight/next. of_coresight_cti has been renamed to
+> > > coresight-cti-platform and device tree bindings added to this but accessed
+> > > in a platform agnostic manner using fwnode for later ACPI support
+> > > to be added.
+> > > 2) Split the sysfs patch info a series of functional patches.
+> > > 3) Revised the refcount and enabling support.
+> > > 4) Adopted the generic naming protocol - CTIs are either cti_cpuN or
+> > > cti_sysM
+> > > 5) Various minor presentation /checkpatch issues highlighted in feedback.
+> > > 6) revised CPU hotplug to cover missing cases needed by ETM.
+> > >
+> > > Changes since v1:
+> > > 1) Significant restructuring of the source code. Adds cti-sysfs file and
+> > > cti device tree file. Patches add per feature rather than per source
+> > > file.
+> > > 2) CPU type power event handling for hotplug moved to CoreSight core,
+> > > with generic registration interface provided for all CPU bound CS devices
+> > > to use.
+> > > 3) CTI signal interconnection details in sysfs now generated dynamically
+> > > from connection lists in driver. This to fix issue with multi-line sysfs
+> > > output in previous version.
+> > > 4) Full device tree bindings for DB410 and Juno provided (to the extent
+> > > that CTI information is available).
+> > > 5) AMBA driver update for UCI IDs are now upstream so no longer included
+> > > in this set.
+> > >
+> > > Mike Leach (15):
+> > >   coresight: cti: Initial CoreSight CTI Driver
+> > >   coresight: cti: Add sysfs coresight mgmt reg access.
+> > >   coresight: cti: Add sysfs access to program function regs
+> > >   coresight: cti: Add sysfs trigger / channel programming API
+> > >   dt-bindings: arm: Adds CoreSight CTI hardware definitions.
+> > >   coresight: cti: Add device tree support for v8 arch CTI
+> > >   coresight: cti: Add device tree support for custom CTI.
+> > >   coresight: cti: Enable CTI associated with devices.
+> > >   coresight: cti: Add connection information to sysfs
+> > >   dt-bindings: qcom: Add CTI options for qcom msm8916
+> > >   dt-bindings: arm: Juno platform - add CTI entries to device tree.
+> > >   dt-bindings: hisilicon: Add CTI bindings for hi-6220
+> > >   docs: coresight: Update documentation for CoreSight to cover CTI.
+> > >   docs: sysfs: coresight: Add sysfs ABI documentation for CTI
+> > >   Update MAINTAINERS to add reviewer for CoreSight.
+> > >
+> >
+> > All that needs to be sorted out in this set are the comments made by
+> > Maxime.  When you do address those please only resend that patch.
+> > Since Maxime's comments are related to yaml syntax rather than the
+> > bindings themselves, I have added your set to my next tree so that it
+> > can soak in linux-next over the next few weeks.
+> >
+>
+> As a result of the changes requested by Maxime - there are necessary
+> changes to the .dts for the juno bindings as well as the .yaml file -
+> juno bindings need to respect the requirement for reg = <> entries in
+> the trig-conns@ child nodes.
+>
+> These changes are still limited to devicetree so I will post just
+> these two patches next time.
 
-What if both the old and new have KVM_MEM_LOG_DIRTY_PAGES set?
-kvm_free_memslot() did cover that but I see that you explicitly
-dropped it.  Could I ask why?  Thanks,
+Note that new driver features should not require updated DTS contents.
+You might not get the new feature enabled, but continued function as
+before needs to be maintained.
 
--- 
-Peter Xu
 
+-Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
