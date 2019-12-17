@@ -2,57 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 908C0122ECD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 15:33:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69440122ED6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Dec 2019 15:34:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8sFsw5SoEz/aWuUkg5pXeD7UyhALmtWO7i0kNWIjuWI=; b=rpVeOEeX43d0eS
-	JQ6g1rhlyjpAJk+0HocWitsoslIXj9LNTY9SuqJlsgD1vFL0KsWDn3HwNstm7Xku3DgxlG1N1fzGv
-	cArA4TKGkSNd3fijvQTPot3wLdTTFrie0o1L9Cwo1/ZXiaYU4DqjD2aHIIXT1IAEEszFEO5ZIFADa
-	l3dh5ez4Y2nM6i9aJ2Ic3G3/6lHn+tTRGD7n0pPYjctDAOWPh8uAjod2mJeP1WvjhAunFvhj+lleq
-	NrvfsBBRlR9+ocflm9NLbiiUwI0D7S49DtBz0eQruIdi1s53MXFqAUg+sVTygguOK8ZIBb1Mz8R3p
-	c0mnHBQG/RMcF1Ge1yMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=rJxtdB4U6P7JB++1mr5qWZ3/2vLW4gzUN+UXl+kJ318=; b=oytCVuCn/YTJCE
+	KySwTg85TCOKd5dSp+qFASxsV/hNeQM3W9LUtsZicGkLQ3ip+Rkw/EZLOckkIO3VI80QRE0JFBaga
+	LdXbJi4H0/+6klZoZd5O+plrNBMwlL4m6wprv3FurkfOApO967K9wCHEQzZqX9hdCRsnm6+n0myUD
+	tDhGnVWBzFonLHeWKvUv83/r2sCHdnUFwtxQQ/E/wYTHerw4cr2+Qsnb/n3P8YZAP47oeE2YCotii
+	f46JM1I6rFAl150JpLcoaq7/trovRvFsoDJ2Qskp27fyz0NJ/k/cAMsOBZ2RkSIlCiRXAE5m2/qpC
+	mjJqJ920ao9Lkuvmog1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihDuV-0000oS-Ig; Tue, 17 Dec 2019 14:33:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihDuM-0000nz-IX
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Dec 2019 14:33:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C68241FB;
- Tue, 17 Dec 2019 06:33:05 -0800 (PST)
-Received: from arm.com (e112269-lin.cambridge.arm.com [10.1.196.56])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CA7893F67D;
- Tue, 17 Dec 2019 06:33:03 -0800 (PST)
-Date: Tue, 17 Dec 2019 14:33:01 +0000
-From: Steven Price <steven.price@arm.com>
-To: "yezengruan@huawei.com" <yezengruan@huawei.com>
-Subject: Re: [PATCH 3/5] KVM: arm64: Support pvlock preempted via shared
- structure
-Message-ID: <20191217143301.GC38811@arm.com>
-References: <20191217135549.3240-1-yezengruan@huawei.com>
- <20191217135549.3240-4-yezengruan@huawei.com>
+	id 1ihDvJ-00015U-St; Tue, 17 Dec 2019 14:34:05 +0000
+Received: from mail-eopbgr70075.outbound.protection.outlook.com ([40.107.7.75]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihDv9-00014w-Dg; Tue, 17 Dec 2019 14:33:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=iAFNgzKIJoRvNuhTqtN+AEnIfYt3BaHIb1xlz63RafhKFB2Py6AkQXj/+SbW/pxo6Q+8rGUAkhEB+kRuRewuw+3d17s2pyGE28rt+vJ5FNq1D5rIlJh9aiduIXfPI/R1rEicjACSg7qaBvc4Am3WlM2epSseZPZc3BsT0CkcHUnCyFoM4GpsiwXmRfOQld1dFZurCwg2kJ60O9IbgOP/MOfe0l92y7YIJEu2BqlBKSA1iFg+TJzSqBwLmCbLRvmQO1gRg0G07bnQktg11SJABmQGz8zYW/NhB8YvUyJT0YXkrpticDkElEFy1C80f1YgC+Vb5tAvwkp8vkkDhV347Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=a67BXvFyL5lSprSXzZpMAHmyDRdW/sb9BrE3UvsM554=;
+ b=m8zkFz++YpeGQyTjQQPJqRfzZGfJbPM+sVDcbR2yRbsWQgBIfAMVEWmrFioHaPDpPMjINNOfJ/x9eifLUqpSDypc/wXlykBqumV4i3kcPUKD+hsjDiBWbfyffw2hKlL4mfXlKM2V9ekZNWoqa059342EOREogCyipKX/owCec5r2kKi65ysSHvhcMnX8uQ+WfA92bDuuSpf9njNcHBejpE1wnyHvzXQrZGgv++QZZVp69EQQT/2NmQXAkI/uC9zwNRNMqKAstjhUDMAuTek/u1T/q40mctWEZSb1VCCZ8h6fdk4pmIMZdFa0tV23puBpyZvzIWPRKGzjcpUTnQ+hyw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=a67BXvFyL5lSprSXzZpMAHmyDRdW/sb9BrE3UvsM554=;
+ b=VZf0Iayo2fYacEUCid43vgViRZXQiK8CcDk2PbIhvsAGmu4PPoTG8Hfg7vvU7CPbpBVuTzMUJ4thqz+m+rWw0LCWrRb6ziP2aHyDZ9NGUZdX5GCRvoCVWIdPoSamG6meOZpoTlt3AoZWIxdarLULrVPhxApFPDoSDj4JjMSAkEo=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB5359.eurprd04.prod.outlook.com (20.178.122.92) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2538.17; Tue, 17 Dec 2019 14:33:52 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2c49:44c8:2c02:68b1]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2c49:44c8:2c02:68b1%5]) with mapi id 15.20.2538.019; Tue, 17 Dec 2019
+ 14:33:52 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Chanwoo Choi <cw00.choi@samsung.com>, "krzk@kernel.org" <krzk@kernel.org>, 
+ "robh+dt@kernel.org" <robh+dt@kernel.org>
+Subject: Re: [PATCH 2/9] PM / devfreq: Remove devfreq_get_devfreq_by_phandle
+ function
+Thread-Topic: [PATCH 2/9] PM / devfreq: Remove devfreq_get_devfreq_by_phandle
+ function
+Thread-Index: AQHVtJ3+QgbB6+oDD0SBl418fSrNCQ==
+Date: Tue, 17 Dec 2019 14:33:52 +0000
+Message-ID: <VI1PR04MB70231FA16F12ACA3A3C01772EE500@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <20191217055738.28445-1-cw00.choi@samsung.com>
+ <CGME20191217055105epcas1p2d2930402a559e381a7854f515a683d15@epcas1p2.samsung.com>
+ <20191217055738.28445-3-cw00.choi@samsung.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 87c4335f-9303-4162-ffab-08d782fe2352
+x-ms-traffictypediagnostic: VI1PR04MB5359:
+x-microsoft-antispam-prvs: <VI1PR04MB53598C0A2E09F242C3EBE713EE500@VI1PR04MB5359.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2958;
+x-forefront-prvs: 02543CD7CD
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(346002)(396003)(136003)(366004)(39860400002)(199004)(189003)(8676002)(478600001)(6506007)(53546011)(86362001)(52536014)(5660300002)(186003)(8936002)(4326008)(81156014)(91956017)(55016002)(316002)(7416002)(76116006)(54906003)(110136005)(66946007)(66446008)(9686003)(64756008)(26005)(66556008)(66476007)(2906002)(44832011)(33656002)(7696005)(71200400001)(81166006);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5359;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: kaGmMq+qiqRfPVQdn72HkdkScAhoAYVLa3DcRyr26+4wclZT/udrnlICDOwuJOQqkqtzG7CjIGdL/xd4wPPMoFdH+kPvaR6QCkX5ya+reIsDyD3Fr9YjVgnuxlgCNu8+YByclMIf9eGhjMDVvwtFuLY3BdryN/2Nasdawn81ZRyegeSJptP0puza1I0c2bTUPcear6VZwEYt5jfwIkrENCrxdyav2YCA7IXzFzZJ3ji6XZi5r7inpnSAlEMZt2Wsg0gUBwmyMI849UyT2j9n3j83CsXwCj9tJEe6gKms8JtmhbV96xaOp2u44cwVSyQ6lS89E8LxK8ogXmrnv5dUN/LfcLWnZlkFAq21h1IKutnIWV7PQwS9MrvDz/YCO+GRINmssKz97y/Pfub4QksBK+fBpIbpuUDEOHjUr7gTmVM9VAlw7g/kFvh9OEKZ3Q+V
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191217135549.3240-4-yezengruan@huawei.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 87c4335f-9303-4162-ffab-08d782fe2352
+X-MS-Exchange-CrossTenant-originalarrivaltime: 17 Dec 2019 14:33:52.0428 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: hD8RERiaMu7LEB27PHVR24KtbWvJDBWmUGf0gwwyfvvy1uHj12fk8lTfZXyEPD8VpnL3ycjOkskGVRqsYz35yQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5359
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_063306_702247_2B51F25E 
-X-CRM114-Status: GOOD (  22.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191217_063355_460835_16EC9712 
+X-CRM114-Status: GOOD (  16.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [40.107.7.75 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,206 +122,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "maz@kernel.org" <maz@kernel.org>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ "heiko@sntech.de" <heiko@sntech.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "a.swigon@samsung.com" <a.swigon@samsung.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "virtualization@lists.linux-foundation.org"
- <virtualization@lists.linux-foundation.org>, James Morse <James.Morse@arm.com>,
- "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>,
- Catalin Marinas <Catalin.Marinas@arm.com>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "will@kernel.org" <will@kernel.org>,
- "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "kyungmin.park@samsung.com" <kyungmin.park@samsung.com>,
+ "kgene@kernel.org" <kgene@kernel.org>,
+ "myungjoo.ham@samsung.com" <myungjoo.ham@samsung.com>,
+ "lukasz.luba@arm.com" <lukasz.luba@arm.com>,
+ "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 01:55:47PM +0000, yezengruan@huawei.com wrote:
-> From: Zengruan Ye <yezengruan@huawei.com>
+On 17.12.2019 07:51, Chanwoo Choi wrote:
+> Previously, devfreq core support 'devfreq' property in order to get
+> the devfreq device by phandle. But, 'devfreq' property name is not proper
+> on devicetree binding because this name doesn't mean the any h/w attribute.
 > 
-> Implement the service call for configuring a shared structure between a
-> vcpu and the hypervisor in which the hypervisor can tell the vcpu is
-> running or not.
+> The devfreq core hand over the right to decide the property name
+> for getting the devfreq device on devicetree. Each devfreq driver
+> will decide the property name on devicetree binding and then get
+> the devfreq device by using devfreq_get_devfreq_by_node().
 > 
-> The preempted field is zero if 1) some old KVM deos not support this filed.
-> 2) the vcpu is not preempted. Other values means the vcpu has been preempted.
-> 
-> Signed-off-by: Zengruan Ye <yezengruan@huawei.com>
+> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
 > ---
->  arch/arm/include/asm/kvm_host.h   | 13 +++++++++++++
->  arch/arm64/include/asm/kvm_host.h | 17 +++++++++++++++++
->  arch/arm64/kvm/Makefile           |  1 +
->  virt/kvm/arm/arm.c                |  8 ++++++++
->  virt/kvm/arm/hypercalls.c         |  4 ++++
->  virt/kvm/arm/pvlock.c             | 21 +++++++++++++++++++++
->  6 files changed, 64 insertions(+)
->  create mode 100644 virt/kvm/arm/pvlock.c
+>   drivers/devfreq/devfreq.c    | 35 -----------------------------------
+>   drivers/devfreq/exynos-bus.c | 14 ++++++++++++--
+>   include/linux/devfreq.h      |  8 --------
+>   3 files changed, 12 insertions(+), 45 deletions(-)
 > 
-> diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
-> index 556cd818eccf..098375f1c89e 100644
-> --- a/arch/arm/include/asm/kvm_host.h
-> +++ b/arch/arm/include/asm/kvm_host.h
-> @@ -356,6 +356,19 @@ static inline bool kvm_arm_is_pvtime_enabled(struct kvm_vcpu_arch *vcpu_arch)
->  	return false;
->  }
->  
-> +static inline void kvm_arm_pvlock_preempted_init(struct kvm_vcpu_arch *vcpu_arch)
+> diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
+> index cb8ca81c8973..c3d3c7c802a0 100644
+> --- a/drivers/devfreq/devfreq.c
+> +++ b/drivers/devfreq/devfreq.c
+> @@ -991,48 +991,13 @@ struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
+>   
+>   	return ERR_PTR(-ENODEV);
+>   }
+> -
+> -/*
+> - * devfreq_get_devfreq_by_phandle - Get the devfreq device from devicetree
+> - * @dev - instance to the given device
+> - * @index - index into list of devfreq
+> - *
+> - * return the instance of devfreq device
+> - */
+> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
+> -{
+> -	struct device_node *node;
+> -	struct devfreq *devfreq;
+> -
+> -	if (!dev)
+> -		return ERR_PTR(-EINVAL);
+> -
+> -	if (!dev->of_node)
+> -		return ERR_PTR(-EINVAL);
+> -
+> -	node = of_parse_phandle(dev->of_node, "devfreq", index);
+> -	if (!node)
+> -		return ERR_PTR(-ENODEV);
+> -
+> -	devfreq = devfreq_get_devfreq_by_node(node);
+> -	of_node_put(node);
+> -
+> -	return devfreq;
+> -}
+> -
+>   #else
+>   struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
+>   {
+>   	return ERR_PTR(-ENODEV);
+>   }
+> -
+> -struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev, int index)
+> -{
+> -	return ERR_PTR(-ENODEV);
+> -}
+>   #endif /* CONFIG_OF */
+>   EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_node);
+> -EXPORT_SYMBOL_GPL(devfreq_get_devfreq_by_phandle);
+>   
+>   /**
+>    * devm_devfreq_remove_device() - Resource-managed devfreq_remove_device()
+> diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
+> index 7f5917d59072..9aac2db956d5 100644
+> --- a/drivers/devfreq/exynos-bus.c
+> +++ b/drivers/devfreq/exynos-bus.c
+> @@ -146,6 +146,16 @@ static int exynos_bus_get_dev_status(struct device *dev,
+>   	return ret;
+>   }
+>   
+> +static struct devfreq *get_parent_devfreq_by_node(struct device_node *np)
 > +{
+> +	struct device_node *node = of_parse_phandle(np, "devfreq", 0);
+> +
+> +	if (!node)
+> +		return ERR_PTR(-ENODEV);
+> +
+> +	return devfreq_get_devfreq_by_node(node);
 > +}
-> +
-> +static inline bool kvm_arm_is_pvlock_preempted_ready(struct kvm_vcpu_arch *vcpu_arch)
-> +{
-> +	return false;
-> +}
-> +
-> +static inline void kvm_update_pvlock_preempted(struct kvm_vcpu *vcpu, u64 preempted)
-> +{
-> +}
-> +
->  void kvm_mmu_wp_memory_region(struct kvm *kvm, int slot);
->  
->  struct kvm_vcpu *kvm_mpidr_to_vcpu(struct kvm *kvm, unsigned long mpidr);
-> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-> index c61260cf63c5..d9b2a21a87ac 100644
-> --- a/arch/arm64/include/asm/kvm_host.h
-> +++ b/arch/arm64/include/asm/kvm_host.h
-> @@ -354,6 +354,11 @@ struct kvm_vcpu_arch {
->  		u64 last_steal;
->  		gpa_t base;
->  	} steal;
-> +
-> +	/* Guest PV lock state */
-> +	struct {
-> +		gpa_t base;
-> +	} pv;
->  };
->  
->  /* Pointer to the vcpu's SVE FFR for sve_{save,load}_state() */
-> @@ -515,6 +520,18 @@ static inline bool kvm_arm_is_pvtime_enabled(struct kvm_vcpu_arch *vcpu_arch)
->  	return (vcpu_arch->steal.base != GPA_INVALID);
->  }
->  
-> +static inline void kvm_arm_pvlock_preempted_init(struct kvm_vcpu_arch *vcpu_arch)
-> +{
-> +	vcpu_arch->pv.base = GPA_INVALID;
-> +}
-> +
-> +static inline bool kvm_arm_is_pvlock_preempted_ready(struct kvm_vcpu_arch *vcpu_arch)
-> +{
-> +	return (vcpu_arch->pv.base != GPA_INVALID);
-> +}
-> +
-> +void kvm_update_pvlock_preempted(struct kvm_vcpu *vcpu, u64 preempted);
-> +
->  void kvm_set_sei_esr(struct kvm_vcpu *vcpu, u64 syndrome);
->  
->  struct kvm_vcpu *kvm_mpidr_to_vcpu(struct kvm *kvm, unsigned long mpidr);
-> diff --git a/arch/arm64/kvm/Makefile b/arch/arm64/kvm/Makefile
-> index 5ffbdc39e780..e4591f56d5f1 100644
-> --- a/arch/arm64/kvm/Makefile
-> +++ b/arch/arm64/kvm/Makefile
-> @@ -15,6 +15,7 @@ kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/arm.o $(KVM)/arm/mmu.o $(KVM)/arm/mmio.
->  kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/psci.o $(KVM)/arm/perf.o
->  kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hypercalls.o
->  kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/pvtime.o
-> +kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/pvlock.o
->  
->  kvm-$(CONFIG_KVM_ARM_HOST) += inject_fault.o regmap.o va_layout.o
->  kvm-$(CONFIG_KVM_ARM_HOST) += hyp.o hyp-init.o handle_exit.o
-> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-> index 12e0280291ce..c562f62fdd45 100644
-> --- a/virt/kvm/arm/arm.c
-> +++ b/virt/kvm/arm/arm.c
-> @@ -383,6 +383,8 @@ int kvm_arch_vcpu_init(struct kvm_vcpu *vcpu)
->  
->  	kvm_arm_pvtime_vcpu_init(&vcpu->arch);
->  
-> +	kvm_arm_pvlock_preempted_init(&vcpu->arch);
-> +
->  	return kvm_vgic_vcpu_init(vcpu);
->  }
->  
-> @@ -421,6 +423,9 @@ void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
->  		vcpu_set_wfx_traps(vcpu);
->  
->  	vcpu_ptrauth_setup_lazy(vcpu);
-> +
-> +	if (kvm_arm_is_pvlock_preempted_ready(&vcpu->arch))
-> +		kvm_update_pvlock_preempted(vcpu, 0);
->  }
->  
->  void kvm_arch_vcpu_put(struct kvm_vcpu *vcpu)
-> @@ -434,6 +439,9 @@ void kvm_arch_vcpu_put(struct kvm_vcpu *vcpu)
->  	vcpu->cpu = -1;
->  
->  	kvm_arm_set_running_vcpu(NULL);
-> +
-> +	if (kvm_arm_is_pvlock_preempted_ready(&vcpu->arch))
-> +		kvm_update_pvlock_preempted(vcpu, 1);
->  }
->  
->  static void vcpu_power_off(struct kvm_vcpu *vcpu)
-> diff --git a/virt/kvm/arm/hypercalls.c b/virt/kvm/arm/hypercalls.c
-> index ff13871fd85a..5964982ccd05 100644
-> --- a/virt/kvm/arm/hypercalls.c
-> +++ b/virt/kvm/arm/hypercalls.c
-> @@ -65,6 +65,10 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
->  		if (gpa != GPA_INVALID)
->  			val = gpa;
->  		break;
-> +	case ARM_SMCCC_HV_PV_LOCK_PREEMPTED:
-> +		vcpu->arch.pv.base = smccc_get_arg1(vcpu);
-> +		val = SMCCC_RET_SUCCESS;
 
-It would be useful to at least do some basic validation that the address
-passed in is valid. Debugging problems with this interface will be hard
-if it always returns success even if the address cannot be used.
+The _by_node suffix here is confusing because it actually fetches a 
+property of the node unlike devfreq_get_devfreq_by_node. Maybe call this 
+get_parent_devfreq_from_node?
 
-The second patch also states that the structure should be 64 byte
-aligned, but there's nothing here to enforce that.
+Since it's a static function it could just be called get_parent_devfreq?
 
-Steve
-
-> +		break;
->  	default:
->  		return kvm_psci_call(vcpu);
->  	}
-> diff --git a/virt/kvm/arm/pvlock.c b/virt/kvm/arm/pvlock.c
-> new file mode 100644
-> index 000000000000..c3464958b0f5
-> --- /dev/null
-> +++ b/virt/kvm/arm/pvlock.c
-> @@ -0,0 +1,21 @@
-> +/* SPDX-License-Identifier: GPL-2.0-only */
-> +/*
-> + * Copyright(c) 2019 Huawei Technologies Co., Ltd
-> + * Author: Zengruan Ye <yezengruan@huawei.com>
-> + */
 > +
-> +#include <linux/arm-smccc.h>
-> +#include <linux/kvm_host.h>
-> +
-> +#include <kvm/arm_hypercalls.h>
-> +
-> +void kvm_update_pvlock_preempted(struct kvm_vcpu *vcpu, u64 preempted)
-> +{
-> +	u64 preempted_le;
-> +	u64 base;
-> +	struct kvm *kvm = vcpu->kvm;
-> +
-> +	base = vcpu->arch.pv.base;
-> +	preempted_le = cpu_to_le64(preempted);
-> +	kvm_put_guest(kvm, base, preempted_le, u64);
-> +}
-> -- 
-> 2.19.1
+>   static void exynos_bus_exit(struct device *dev)
+>   {
+>   	struct exynos_bus *bus = dev_get_drvdata(dev);
+> @@ -353,8 +363,8 @@ static int exynos_bus_profile_init_passive(struct exynos_bus *bus,
+>   	profile->exit = exynos_bus_passive_exit;
+>   
+>   	/* Get the instance of parent devfreq device */
+> -	parent_devfreq = devfreq_get_devfreq_by_phandle(dev, 0);
+> -	if (IS_ERR(parent_devfreq))
+> +	parent_devfreq = get_parent_devfreq_by_node(dev->of_node);
+> +	if (IS_ERR(parent_devfreq)) {
+>   		return -EPROBE_DEFER;
+>   
+>   	passive_data = devm_kzalloc(dev, sizeof(*passive_data), GFP_KERNEL);
+> diff --git a/include/linux/devfreq.h b/include/linux/devfreq.h
+> index e3633ae43349..3ed96426302e 100644
+> --- a/include/linux/devfreq.h
+> +++ b/include/linux/devfreq.h
+> @@ -254,8 +254,6 @@ extern void devm_devfreq_unregister_notifier(struct device *dev,
+>   				struct notifier_block *nb,
+>   				unsigned int list);
+>   extern struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node);
+> -extern struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev,
+> -						int index);
+>   
+>   #if IS_ENABLED(CONFIG_DEVFREQ_GOV_SIMPLE_ONDEMAND)
+>   /**
+> @@ -413,12 +411,6 @@ struct devfreq *devfreq_get_devfreq_by_node(struct device_node *node)
+>   	return ERR_PTR(-ENODEV);
+>   }
+>   
+> -static inline struct devfreq *devfreq_get_devfreq_by_phandle(struct device *dev,
+> -							int index)
+> -{
+> -	return ERR_PTR(-ENODEV);
+> -}
+> -
+>   static inline int devfreq_update_stats(struct devfreq *df)
+>   {
+>   	return -EINVAL;
 > 
-> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
