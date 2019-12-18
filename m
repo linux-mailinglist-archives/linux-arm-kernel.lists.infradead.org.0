@@ -2,85 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A17F3123B45
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 01:02:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04B07123B71
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 01:19:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iNO088h3o/xdmESUgZiRTHSwHVXScmg4wDjuZfJNcAo=; b=UoUEDMlaHruGba
-	JINgVjrzpJKOml50nzLLw/VOeuSvqWjYvS3Hfk8ohndPn9uzxsXUXVLmMJDRWknC1MKcbGk24YzvQ
-	Ea0aHPV2dYA6+hLoxepokm/CZxFvrEUtlHLOVlVpnuSgAEuivbLXNCyODIaO5sGhnHt8g8Ir7gask
-	tqSmL6ApAvIf/lw6UATqOQ2Twyizzb0ZwCz79t+76gjVXxVcz9CiaS7GbrwhLLVheNmeL9oWNZifQ
-	2+bq57dRDWxLZKufIg7bZVYYVghvKQvohDbFvYvl8GXUdMwOxvIEayKwsj7lXR7ER2P02X4WuGmRh
-	dKDsV2h/owOC18Ob2bMA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=s4YSaCQFOwLrVjH8W2Ll+/zLxkm4Ofn0hfpUAYeSEVg=; b=pFo
+	9Z9qs4GwWjKrOgk7TrlxnkdJLRCzGO6l/osebEdIPBjOZ/+Vy7YzXtPDEnRSa+eiJssFgzbX7ic/W
+	05VXztegupAjON6/kRXFDOC7a6M4636sUxUGB/dqxQQv+aglJdElr6oBiaLPeYqHfuFnVUPbkIszt
+	8vvYTpSUDtqNGPmU+VZIwJJroD8uDIXwz25OunBh62FkyYADGWJ09nEgVJY4vOcbMbgiAYovmVuCN
+	U8Fa2fhdNQL4VQAT3qrzlC2CL48A8ssTgpVfanEehuWLpeBMXt2uopRbum1C4rM6xhc61qogx+iQc
+	0qF51U2FkLFyz3gzLYgkQ4CNcQ9FJYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihMmz-0000iG-Q9; Wed, 18 Dec 2019 00:02:05 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1ihN3a-0005oq-KL; Wed, 18 Dec 2019 00:19:14 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihMmi-0000c5-Hk
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 00:01:49 +0000
-Received: by mail-oi1-f193.google.com with SMTP id j22so121062oij.9
+ id 1ihN3P-0005oB-HJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 00:19:04 +0000
+Received: by mail-pl1-x642.google.com with SMTP id d15so146075pll.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Dec 2019 16:01:48 -0800 (PST)
+ Tue, 17 Dec 2019 16:19:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lixom-net.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=oCKoHe1lxe0PuESdkrD15D9EeMySLR5I9RS5subxYv0=;
+ b=OegfkyV7Z/WtDb+kzEq9Eg6X6wokHNhhjYvhBDnSMS2oW/lTMraChWNqKy+XbjcIIY
+ 2MfUEgry3rg6wb+bxA+6yoLR4OrGRhso5ZNYnT0lxtpapggxOTQz8KvUWxwKpYORe89i
+ Jgt3l36325rdKDMHTTa0ALUkIi1bMVszC0+Ts0a4HAE98jJ4RCmJcKNOXdvDo436tpvl
+ g9vVGNdoQCXeNgxwNCNZzu8xIgSt32rFWKtjcqKL4Hd/iYRsRi5a4fLrxjrK5LYWs11q
+ 9qCa4vihhgMh80xY1DQY9w2T5tN88/Y1+w2lQuvATVGqc9VumhJ2JRawYCIOqd+yK64I
+ +SaA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=JP0u5snGp+xc8yKUTmrKXjEUcHiiNAHT0AftIoZKcgY=;
- b=OkukrdSdEjYuxPU7vbXHj69G3bKU4ROL8433/I6UNKNTAs18dO7VrNr/VoYSaF4N+l
- 5qszmjRKzDrR73iYSWXiAXdCMYkH2xCiQDP06YmPbLLEi00R/p9hjrwkpraHyWgmLD6l
- pVnCJ668V4Un5ArNAc3DAXFjQ41e0M2eqDluKC9HHLMAZC2wj94giK6MMXGA2uHnpQ1y
- QNieTtCqcVgde8g0HgA3R9Bk6HSVxaivrt4Uv7qgpy1h9yO2T1t9ZdjMotjNsKTrxiNa
- lFn9kD9mg9csq5yrj1OPk2mwhP82lHElt1iNrlOQfIkmNK0vx6vPs+8jsaw12TxgVONN
- f5Cw==
-X-Gm-Message-State: APjAAAU7zG7zNpbxSNMMKiRZQPidfgdS1MO0Ew+tWtlro/eaJVkyABVi
- efMGg5Bh7FMqKgEuqOMFgw==
-X-Google-Smtp-Source: APXvYqwuKoimb/fkC26Ulk74P68DdyeLLteEpSMqe8rqs1CwILHTcp7X1D54Jd94iGGt4cUdrtCBCg==
-X-Received: by 2002:aca:bb08:: with SMTP id l8mr3144897oif.47.1576627307437;
- Tue, 17 Dec 2019 16:01:47 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id m11sm169161oie.20.2019.12.17.16.01.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Dec 2019 16:01:46 -0800 (PST)
-Date: Tue, 17 Dec 2019 18:01:46 -0600
-From: Rob Herring <robh@kernel.org>
-To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Re: [PATCH 3/6] dt-bindings: dma: Convert stm32 DMAMUX bindings to
- json-schema
-Message-ID: <20191218000146.GA24153@bogus>
-References: <20191217092201.20022-1-benjamin.gaignard@st.com>
- <20191217092201.20022-4-benjamin.gaignard@st.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191217092201.20022-4-benjamin.gaignard@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=oCKoHe1lxe0PuESdkrD15D9EeMySLR5I9RS5subxYv0=;
+ b=kMwXeHDIhuDl0WQNJuPIXwEZUXHbF+AbXhcaxO9nZ47aeJUQ4sPZCrnQdB+3aI5qLy
+ WwbnVyrJ9t6xvr8VFr4fv3n73icDTC3ilmK+qnmDTI+EcMp4N4Lz3JgvpdRNIc4Wc3mj
+ znOiMspiNf6HpIjt4T34J6LXz83JYNeyNQ4mvbDB4S2oA6QNkFlSET9onwxDmybtV2Xf
+ Ftko4+ZExPSrtnjOp87su26Ky+LATEYS8dfuHPu9sDL9ENQybl4f0/Ri5KrkP/XBG4mT
+ iflZWAGwgVKiG0aNjcNNghRjK1q8RHbJ5i/QJdnResaZnyYxD+X0eXrbNHpr4S6mzEIH
+ UItQ==
+X-Gm-Message-State: APjAAAV+uXNmIFJLSq7pn6h3ZlinrbVSmTmmvljyPCpwR7Y77WMHXbcR
+ eFcIQxYBctBq7/tu7MK4KyTYAg==
+X-Google-Smtp-Source: APXvYqxB1waYmvRr3KkK8PGRDfUSYKoGNfyfaAZskT8PdRB1quQidke6t4GMeDoXYUzsHkF1aXKe1g==
+X-Received: by 2002:a17:90a:e98d:: with SMTP id
+ v13mr11895pjy.107.1576628342864; 
+ Tue, 17 Dec 2019 16:19:02 -0800 (PST)
+Received: from rip.lixom.net (99-152-116-91.lightspeed.sntcca.sbcglobal.net.
+ [99.152.116.91])
+ by smtp.gmail.com with ESMTPSA id k190sm152197pga.73.2019.12.17.16.19.00
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 17 Dec 2019 16:19:01 -0800 (PST)
+From: Olof Johansson <olof@lixom.net>
+To: Russell King <linux@armlinux.org.uk>
+Subject: [PATCH] ARM: mm: mark free_memmap as __init
+Date: Tue, 17 Dec 2019 16:18:49 -0800
+Message-Id: <20191218001849.41415-1-olof@lixom.net>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_160148_612604_482A6F86 
-X-CRM114-Status: GOOD (  10.20  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191217_161903_716281_595ED765 
+X-CRM114-Status: GOOD (  11.57  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,31 +90,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, vkoul@kernel.org, robh+dt@kernel.org,
- mcoquelin.stm32@gmail.com, dmaengine@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Benjamin Gaignard <benjamin.gaignard@st.com>
+Cc: Olof Johansson <olof@lixom.net>, patches@armlinux.co.uk,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 17 Dec 2019 10:21:58 +0100, Benjamin Gaignard wrote:
-> Convert the STM32 DMAMUX binding to DT schema format using json-schema
-> 
-> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> ---
->  .../devicetree/bindings/dma/st,stm32-dmamux.yaml   | 52 ++++++++++++++
->  .../devicetree/bindings/dma/stm32-dmamux.txt       | 84 ----------------------
->  2 files changed, 52 insertions(+), 84 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/dma/st,stm32-dmamux.yaml
->  delete mode 100644 Documentation/devicetree/bindings/dma/stm32-dmamux.txt
-> 
+As of commit ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING
+forcibly"), free_memmap() might not always be inlined, and thus is
+triggering a section warning:
 
-Applied, thanks.
+WARNING: vmlinux.o(.text.unlikely+0x904): Section mismatch in reference from the function free_memmap() to the function .meminit.text:memblock_free()
 
-Rob
+Mark it as __init, since the faller (free_unused_memmap) already is.
+
+Fixes: ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING forcibly")
+Signed-off-by: Olof Johansson <olof@lixom.net>
+---
+KernelVersion: v5.5-rc2
+
+ arch/arm/mm/init.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/mm/init.c b/arch/arm/mm/init.c
+index 3ef204137e732..054be44d1cdb4 100644
+--- a/arch/arm/mm/init.c
++++ b/arch/arm/mm/init.c
+@@ -324,7 +324,7 @@ static inline void poison_init_mem(void *s, size_t count)
+ 		*p++ = 0xe7fddef0;
+ }
+ 
+-static inline void
++static inline void __init
+ free_memmap(unsigned long start_pfn, unsigned long end_pfn)
+ {
+ 	struct page *start_pg, *end_pg;
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
