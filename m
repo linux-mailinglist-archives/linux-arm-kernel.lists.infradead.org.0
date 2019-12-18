@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8333E12563B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:05:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A1E1125641
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:06:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h86aKPtENkGrk4ZFOuk8YbbljC0JEipmQ/a/lM1HMZs=; b=XHE3gW0FVBsVWL
-	m4PCbsYx0dblhgyHHnXfdjqF0fbrhNth+y9XPWJsQVxRW2rd++rF1Ft7tFwW5v651rXYXzu5IC8WR
-	/BayqMPMaIakJX7Ydq/YiXfbI05nxMBwpOIGY52kxWxf6HwIOBGmOjZtfjk4SeuRRWYVYuVXMHHBp
-	F+0M6A9MlfLfICaEo484+441MXTTasuScLjLdpxFJ3JdO6TvNqydkrflNgsoXGwWJq30jRgZIvCAy
-	AA/KzQDibaUbduOfT1hZiGaKrTo7iaisAry8dB5QBFcaX/dw8pB9ptNPb//7fBJ3dDbomYmw4yLi2
-	UR6fAGK/R0H/tjWERHTA==;
+	List-Owner; bh=pHpwlJZwnlBTbCOPOF8ftwEBi89hROFL0NbdkRnF5j0=; b=ZbnIku0SRJ5THj
+	03XHWNi9pt50tBYEiyV3Cn1lmMUW9jLB+X4RoMuGS90ZuT8YFgbDrEvWrpDut9sdMsVpa/0xVp7Eo
+	BZwlsiESuESpJChwDxHsL+jsXK/e0+pJxOi0BUkewZll9Awz20po+EMbgDv/CtEKGU3Ehc7a2KPO5
+	rrpvmdtFzJDZLZ388zFCs1UyptqVR/4NXEPoRu3TMVf+IYZ694ftZCmkjZYFsNOyRfcZJvzCNx7lb
+	thtiAxcZlNFF8OhHO5JJVAgvb3Mpf8mQdFYjpIDQeal8q7nKeDRkmxkAsGWnV1+bjVPu+cUlZm909
+	2A+u0qJtmRK/Xrtr7khg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihhRu-0006dl-UB; Wed, 18 Dec 2019 22:05:43 +0000
+	id 1ihhSx-0000MZ-Ul; Wed, 18 Dec 2019 22:06:47 +0000
 Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihhIU-0005H7-0p
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:56:01 +0000
+ id 1ihhIV-0005BK-M6
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:56:05 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga001.fm.intel.com ([10.253.24.23])
  by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 18 Dec 2019 13:55:52 -0800
+ 18 Dec 2019 13:55:53 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108195"
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108201"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
  by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:52 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
@@ -37,16 +37,17 @@ To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH v2 44/45] KVM: Move putting of vcpu->pid to kvm_vcpu_destroy()
-Date: Wed, 18 Dec 2019 13:55:29 -0800
-Message-Id: <20191218215530.2280-45-sean.j.christopherson@intel.com>
+Subject: [PATCH v2 45/45] KVM: Move vcpu->run page allocation out of
+ kvm_vcpu_init()
+Date: Wed, 18 Dec 2019 13:55:30 -0800
+Message-Id: <20191218215530.2280-46-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_135558_162727_FA8622D9 
-X-CRM114-Status: GOOD (  12.53  )
+X-CRM114-CacheID: sfid-20191218_135559_802491_4F222D48 
+X-CRM114-Status: GOOD (  13.46  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -86,50 +87,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move the putting of vcpu->pid to kvm_vcpu_destroy().  vcpu->pid is
-guaranteed to be NULL when kvm_vcpu_uninit() is called in the error path
-of kvm_vm_ioctl_create_vcpu(), e.g. it is explicitly nullified by
-kvm_vcpu_init() and is only changed by KVM_RUN.
+Open code the allocation and freeing of the vcpu->run page in
+kvm_vm_ioctl_create_vcpu() and kvm_vcpu_destroy() respectively.  Doing
+so allows kvm_vcpu_init() to be a pure init function and eliminates
+kvm_vcpu_uninit() entirely.
 
-No functional change intended.
-
-Acked-by: Christoffer Dall <christoffer.dall@arm.com>
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- virt/kvm/kvm_main.c | 13 +++++++------
- 1 file changed, 7 insertions(+), 6 deletions(-)
+ virt/kvm/kvm_main.c | 34 +++++++++++++---------------------
+ 1 file changed, 13 insertions(+), 21 deletions(-)
 
 diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
-index 21533a472ead..6912d81ca32d 100644
+index 6912d81ca32d..220dce38cf79 100644
 --- a/virt/kvm/kvm_main.c
 +++ b/virt/kvm/kvm_main.c
-@@ -352,12 +352,6 @@ static int kvm_vcpu_init(struct kvm_vcpu *vcpu, struct kvm *kvm, unsigned id)
- 
- static void kvm_vcpu_uninit(struct kvm_vcpu *vcpu)
- {
--	/*
--	 * no need for rcu_read_lock as VCPU_RUN is the only place that
--	 * will change the vcpu->pid pointer and on uninit all file
--	 * descriptors are already gone.
--	 */
--	put_pid(rcu_dereference_protected(vcpu->pid, 1));
- 	free_page((unsigned long)vcpu->run);
+@@ -321,10 +321,8 @@ void kvm_reload_remote_mmus(struct kvm *kvm)
+ 	kvm_make_all_cpus_request(kvm, KVM_REQ_MMU_RELOAD);
  }
  
-@@ -365,6 +359,13 @@ void kvm_vcpu_destroy(struct kvm_vcpu *vcpu)
+-static int kvm_vcpu_init(struct kvm_vcpu *vcpu, struct kvm *kvm, unsigned id)
++static void kvm_vcpu_init(struct kvm_vcpu *vcpu, struct kvm *kvm, unsigned id)
  {
- 	kvm_arch_vcpu_destroy(vcpu);
+-	struct page *page;
+-
+ 	mutex_init(&vcpu->mutex);
+ 	vcpu->cpu = -1;
+ 	vcpu->kvm = kvm;
+@@ -336,23 +334,11 @@ static int kvm_vcpu_init(struct kvm_vcpu *vcpu, struct kvm *kvm, unsigned id)
+ 	vcpu->pre_pcpu = -1;
+ 	INIT_LIST_HEAD(&vcpu->blocked_vcpu_list);
  
-+	/*
-+	 * No need for rcu_read_lock as VCPU_RUN is the only place that changes
-+	 * the vcpu->pid pointer, and at destruction time all file descriptors
-+	 * are already gone.
-+	 */
-+	put_pid(rcu_dereference_protected(vcpu->pid, 1));
-+
- 	kvm_vcpu_uninit(vcpu);
+-	page = alloc_page(GFP_KERNEL | __GFP_ZERO);
+-	if (!page)
+-		return -ENOMEM;
+-	vcpu->run = page_address(page);
+-
+ 	kvm_vcpu_set_in_spin_loop(vcpu, false);
+ 	kvm_vcpu_set_dy_eligible(vcpu, false);
+ 	vcpu->preempted = false;
+ 	vcpu->ready = false;
+ 	preempt_notifier_init(&vcpu->preempt_notifier, &kvm_preempt_ops);
+-
+-	return 0;
+-}
+-
+-static void kvm_vcpu_uninit(struct kvm_vcpu *vcpu)
+-{
+-	free_page((unsigned long)vcpu->run);
+ }
+ 
+ void kvm_vcpu_destroy(struct kvm_vcpu *vcpu)
+@@ -366,7 +352,7 @@ void kvm_vcpu_destroy(struct kvm_vcpu *vcpu)
+ 	 */
+ 	put_pid(rcu_dereference_protected(vcpu->pid, 1));
+ 
+-	kvm_vcpu_uninit(vcpu);
++	free_page((unsigned long)vcpu->run);
  	kmem_cache_free(kvm_vcpu_cache, vcpu);
  }
+ EXPORT_SYMBOL_GPL(kvm_vcpu_destroy);
+@@ -2711,6 +2697,7 @@ static int kvm_vm_ioctl_create_vcpu(struct kvm *kvm, u32 id)
+ {
+ 	int r;
+ 	struct kvm_vcpu *vcpu;
++	struct page *page;
+ 
+ 	if (id >= KVM_MAX_VCPU_ID)
+ 		return -EINVAL;
+@@ -2734,13 +2721,18 @@ static int kvm_vm_ioctl_create_vcpu(struct kvm *kvm, u32 id)
+ 		goto vcpu_decrement;
+ 	}
+ 
+-	r = kvm_vcpu_init(vcpu, kvm, id);
+-	if (r)
++	page = alloc_page(GFP_KERNEL | __GFP_ZERO);
++	if (!page) {
++		r = -ENOMEM;
+ 		goto vcpu_free;
++	}
++	vcpu->run = page_address(page);
++
++	kvm_vcpu_init(vcpu, kvm, id);
+ 
+ 	r = kvm_arch_vcpu_create(vcpu);
+ 	if (r)
+-		goto vcpu_uninit;
++		goto vcpu_free_run_page;
+ 
+ 	kvm_create_vcpu_debugfs(vcpu);
+ 
+@@ -2778,8 +2770,8 @@ static int kvm_vm_ioctl_create_vcpu(struct kvm *kvm, u32 id)
+ 	mutex_unlock(&kvm->lock);
+ 	debugfs_remove_recursive(vcpu->debugfs_dentry);
+ 	kvm_arch_vcpu_destroy(vcpu);
+-vcpu_uninit:
+-	kvm_vcpu_uninit(vcpu);
++vcpu_free_run_page:
++	free_page((unsigned long)vcpu->run);
+ vcpu_free:
+ 	kmem_cache_free(kvm_vcpu_cache, vcpu);
+ vcpu_decrement:
 -- 
 2.24.1
 
