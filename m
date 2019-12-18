@@ -2,84 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C446124DFA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:39:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EECC2124E03
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:40:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UI33tBQdIbjNXGsWf/vmdzLaUDmS4FE4nw1Phv7o2MU=; b=FnHRirvbKb5Mbs
-	D4JLVVXqWw8Tkixvq4B331F7Yn6FtCVYnWyOqrkrzarxPBH0MqFCzz1t23rKAimQxjTorgrf3RWtL
-	FXe90ZrCmLcA1ClOPx381HPmXEwS3Xxru3iX1a2FRT/QF1HznyC9aCjYW11cyPZEvkynRNYBiW8qu
-	yNPlgDLMa7+AJQieO91pErmpuo5oqigVEp80qnngQt5H+eg+Hv2OFPg112PyPAnkslHcRThrLHt2Z
-	L9C0Z+dTijsObV//nbgHTysB55eaQXr8NlHuVbJ0Y1QI+gK/+NEt9Muueb59yArp+0P2+lmAtbAYG
-	sOisfjPARRTbCBbfswaA==;
+	List-Owner; bh=z/AOPOJSTl/k5xIf0pqUA0JaRVXovZyHun2a44phD5Y=; b=d70IzJZLYEg0rS
+	eiwIa7CaQQ1c/aKgRHbZxJcSUlgDsX3h63UtSwOonSdJ4y7jAgtoT33akRxIShp4Jdvvsemf8oPBf
+	ZeaeLiahHss0Sc5FnehW6SVQXeQJ/HkoNi5VeblLTNvH4ngjv9JLebrnn0ADab0/8DT5oAuZH4kec
+	L/C4dQkpHn438dwFu+BqPT0nnBYhWP7D1wo5D06jxuHHxRGZdgXc+EGA+x+qaEMq+rhTpW3xAcnFH
+	w/oeOeCAASqLJraPOpUirK5UVlu9ENMdl1H+5TgqIXETESbWm1OKM9tKbhZy6MI5X1txwvwIzg3MM
+	Fj4bFGrX7gIweGEqkC9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihcMS-0003Tz-PY; Wed, 18 Dec 2019 16:39:44 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1ihcMz-0004Ey-G0; Wed, 18 Dec 2019 16:40:17 +0000
+Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihcMH-0003Tc-CH; Wed, 18 Dec 2019 16:39:34 +0000
-Received: by mail-oi1-f193.google.com with SMTP id x14so1312045oic.10;
- Wed, 18 Dec 2019 08:39:32 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=gdAO45Po9YuV+XFMQHJe5tneYkfCGzzogZXiqxLk6H0=;
- b=F0VfYhJK1sfUyaA3wqqHXPGcj2pE8Eam1UhnmBVzmTHV0Z/CopAMQObvjCA/YjTHx2
- GkAh7vuV44a4XxC6R0RDnk5dEDQ32FXYeVwpx/s2/U7OURA4uTgWVh1aY6WEjk/1U3xm
- J6Ulax9f7Tnu8KSa+R5ZeReglM4X3yMzPsJi7g2AJgsv5N154MB/yI8hV4oqp5w72meV
- Xt9cE+6mvJdE7mq6NfL2tZRNKurPz1ehoKt7lirsiMf7p449rzebAo4VFxEiKEct/zaj
- Szi5cWycdZNy7rnJtVbhNbnZdn1GoT9uNNpt40MYi9aA/niEg4j35CzdgtLqvjDEvzJM
- QVQw==
-X-Gm-Message-State: APjAAAXf6uCJ/pQ5kGfJgX6h9aGRSshEaF6d37zMPgwUK5n/rjIF7tGh
- J5TWysBONaiwAR2D8ki08Q==
-X-Google-Smtp-Source: APXvYqwZzlCoqCU9R29CGoBnW4k+58a6Lpq7/BNdGzEN9RUDeQUc+tVmy/ur9JVEH+3B2/7X2EE1+g==
-X-Received: by 2002:aca:cf50:: with SMTP id f77mr932786oig.60.1576687171970;
- Wed, 18 Dec 2019 08:39:31 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id x15sm950375otq.30.2019.12.18.08.39.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 08:39:31 -0800 (PST)
-Date: Wed, 18 Dec 2019 10:39:30 -0600
-From: Rob Herring <robh@kernel.org>
-To: matthias.bgg@kernel.org
-Subject: Re: [resend PATCH v6 01/12] dt-bindings: display: mediatek: Add
- mmsys binding description
-Message-ID: <20191218163930.GA18363@bogus>
-References: <20191207224740.24536-1-matthias.bgg@kernel.org>
- <20191207224740.24536-2-matthias.bgg@kernel.org>
+ id 1ihcMi-00042m-Sh
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 16:40:02 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 18 Dec 2019 08:39:59 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="205898318"
+Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
+ ([10.54.74.202])
+ by orsmga007.jf.intel.com with ESMTP; 18 Dec 2019 08:39:59 -0800
+Date: Wed, 18 Dec 2019 08:39:59 -0800
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: Christian Borntraeger <borntraeger@de.ibm.com>
+Subject: Re: [PATCH v4 19/19] KVM: selftests: Add test for
+ KVM_SET_USER_MEMORY_REGION
+Message-ID: <20191218163958.GC25201@linux.intel.com>
+References: <20191217204041.10815-1-sean.j.christopherson@intel.com>
+ <20191217204041.10815-20-sean.j.christopherson@intel.com>
+ <f962fafb-3956-746f-d077-3dbcefaae7c8@de.ibm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191207224740.24536-2-matthias.bgg@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <f962fafb-3956-746f-d077-3dbcefaae7c8@de.ibm.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_083933_416559_51DF7351 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191218_084001_005041_2C26AD10 
+X-CRM114-Status: GOOD (  14.69  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.31 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,39 +70,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, rdunlap@infradead.org, airlied@linux.ie,
- mturquette@baylibre.com, dri-devel@lists.freedesktop.org,
- laurent.pinchart@ideasonboard.com, ulrich.hecht+renesas@gmail.com,
- linux-clk@vger.kernel.org, drinkcat@chromium.org, wens@csie.org,
- ck.hu@mediatek.com, linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- frank-w@public-files.de, sean.wang@mediatek.com,
- linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
- linux-arm-kernel@lists.infradead.org, mbrugger@suse.com, sboyd@kernel.org,
- sean.wang@kernel.org, linux-kernel@vger.kernel.org, p.zabel@pengutronix.de,
- enric.balletbo@collabora.com
+Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, James Hogan <jhogan@kernel.org>,
+ linux-mips@vger.kernel.org, Paul Mackerras <paulus@ozlabs.org>,
+ kvmarm@lists.cs.columbia.edu, Janosch Frank <frankja@linux.ibm.com>,
+ Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
+ Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Dec 07, 2019 at 11:47:29PM +0100, matthias.bgg@kernel.org wrote:
-> From: Matthias Brugger <mbrugger@suse.com>
+On Wed, Dec 18, 2019 at 12:39:43PM +0100, Christian Borntraeger wrote:
 > 
-> The MediaTek DRM has a block called mmsys, which sets
-> the routing and enalbes the different blocks.
-
-typo
-
-> This patch adds one line for the mmsys bindings description.
+> On 17.12.19 21:40, Sean Christopherson wrote:
+> > Add a KVM selftest to test moving the base gfn of a userspace memory
+> > region.  The test is primarily targeted at x86 to verify its memslot
+> > metadata is correctly updated, but also provides basic functionality
+> > coverage on other architectures.
+> > +static void *vcpu_worker(void *data)
+> > +{
+> > +	struct kvm_vm *vm = data;
+> > +	struct kvm_run *run;
+> > +	struct ucall uc;
+> > +	uint64_t cmd;
+> > +
+> > +	/*
+> > +	 * Loop until the guest is done.  Re-enter the guest on all MMIO exits,
+> > +	 * which will occur if the guest attempts to access a memslot while it
+> > +	 * is being moved.
+> > +	 */
+> > +	run = vcpu_state(vm, VCPU_ID);
+> > +	do {
+> > +		vcpu_run(vm, VCPU_ID);
+> > +	} while (run->exit_reason == KVM_EXIT_MMIO);
+> > +
+> > +	TEST_ASSERT(run->exit_reason == KVM_EXIT_IO,
+> > +		    "Unexpected exit reason = %d", run->exit_reason);
 > 
-> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-> ---
->  .../display/mediatek/mediatek,disp.txt        | 28 ++++++++++---------
->  1 file changed, 15 insertions(+), 13 deletions(-)
+> 
+> This will also not work for s390. Maybe just make this test x86 specific for now?
 
-Otherwise,
-
-Acked-by: Rob Herring <robh@kernel.org>
+Doh, that's obvious in hindsight.  I think the basic premise is also
+broken on arm64 as it returns -EFAULT on is_error_noslot_pfn(pfn).  So
+yeah, x86 only for now :-(
 
 _______________________________________________
 linux-arm-kernel mailing list
