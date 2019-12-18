@@ -2,58 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21AB0124AAC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 16:08:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70B65124ABF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 16:10:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IUJrxx8w6js/NCAbhci6JTdsDzX+sU+lN/ywhtcj18c=; b=A/fcezKw8C/PR/
-	ovG9aCZ5LIeZcI3P+gfM27YWGDALxyqQJcOtyNJj7WjRjzItnOi1DwyOgpFmxUygWbMmWxkqEI5Kv
-	oMvY+kCTIXMIxnnYbUfml7U8DqTeMukc9x3bjGUb0g1fZmcNTgoXX9svAq6z3DWiUKpsHsk86DDtv
-	xHwYV81lVzW5LMlFP+xK0JhIqkjXqvhfOJ9UO3qfboQNieYQFDz48sxqPMRpQNYWPHY2hNpAo+dpm
-	8qQu4ei57MDQMad9X6G7/0VIAQ9okgb14UWE3hWDZKLoA38jxmSQ9dvBrUSNe1DSg+vFUrLALLz7Q
-	YrPKYdS6rNHVh2jx9rTQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=296N/TEZQzyjabCQf6c9OcKWt7dtvewl/PNOSf1DFAE=; b=Y/0QSqlBJ3lW8y
+	3Im8vfppFOzQePSnO0IdL/CLU+5rTsOdo+Q5ZEB4UbFMvd/JahRUx8cuarVD3zmPQ8Xtx9PJdtu79
+	Q8CEulSigU/6YqrqxZJ6BS4yaF9sOatD7asFBKRSx//Z7MNLMw6uFXgF5j9YVuM7CncxPVJCkexMU
+	P45M31PSTBimGTxaax8Ax/ZbUrdALrbzBvSOChcC/h4VWRQvU9WJJV4FU13okQaiN5xj+ZoTs2VdP
+	2vqazL3bSLta3YnV0fJvlFSabAKjIcjNNraxA00Z/jpMCBsMd7547lP8Hk1PQHy63s+qSYRHYsq69
+	5Pawi2DgcQvuUQmr64+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihavn-0006tN-EV; Wed, 18 Dec 2019 15:08:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihavb-0006sZ-MC
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 15:07:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5533C30E;
- Wed, 18 Dec 2019 07:07:53 -0800 (PST)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 554673F719;
- Wed, 18 Dec 2019 07:07:51 -0800 (PST)
-Subject: Re: [PATCH 7/7] KVM: arm/arm64: Elide CMOs when unmapping a range
-To: Marc Zyngier <maz@kernel.org>
-References: <20191213182503.14460-1-maz@kernel.org>
- <20191213182503.14460-8-maz@kernel.org>
-From: James Morse <james.morse@arm.com>
-Message-ID: <0c832b27-7041-a6c8-31c0-d71a25c6f5b8@arm.com>
-Date: Wed, 18 Dec 2019 15:07:48 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1ihaxi-0007Ut-0k; Wed, 18 Dec 2019 15:10:06 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihaxS-0007SN-L9
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 15:09:51 +0000
+Received: by mail-lj1-x242.google.com with SMTP id p8so2559458ljg.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Dec 2019 07:09:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=HhJbWUsWwTIyi0nz4fJwHURTxI1Rw4XYrR+51bn6K04=;
+ b=n4CnIRpgiWYaPqhrTGDqoNhiTBR0o5Z4TZgEmVJjUqrcxs/eZ/RmRLpYvIVEjSMOuw
+ zj7m3K6IjnEBCb0Znun9ZsDmmSn1LRVTajc0FgbgZMrc6WGWZUMFHAASKtM7AI1xdD+x
+ B0nJEXFCWymrx5jxZ+vCYGBdE/nRahl8x+0BZNk01+p865de/TDTBDKa2Er4pnzvhxN5
+ 4+pmsqRkwZVO5VdTu6YWuFDTYVudquuDrwZkO5oJ4rXj00ugbbpz86t8pTfa/P+Y0w4X
+ BQfClWxwjmtj/ejYcqXHblGAqzIUXUWDmAtlo7XoQtG4Mro9KTRTQm3w/ajdp+uV8l0r
+ NDrg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HhJbWUsWwTIyi0nz4fJwHURTxI1Rw4XYrR+51bn6K04=;
+ b=jikhahAFba0WiIdBoOXSdgi7EIJS+12ixzNwUpuTdIaEj5rMDJgWc8ZSFb0hIWf2a4
+ hDVZhNFPjKCzsF5jvQCqKolj2UD0dZjS9SBqi9EHF0qnhmnlNrtz1TFgka8vV6VuNNaI
+ RN58tNyK3Wsg5Y8HK+7/jQt3835szIYvOLVxfjQCXl+7Yve1JB/oLCsfFxB4PAuuQ06C
+ /WEZiRIIoMhKTkdPHzAqqTLWKT+fMs9lOYcLEwJAd88IYCHCh3n5GILVVeoLT8gW+UPI
+ HBnjWnMnDCtd8S/G5c1syfqUPIc3K71DsmOCG6WbzC1VIl7NLSJJBo+wN9GlSSkuJeIy
+ ws1Q==
+X-Gm-Message-State: APjAAAVW9IEm/jsbd6JW3PH7zrHHGqALQ7wkpYLnfHVKqpwXbJefuYpR
+ E+H6cRnmLUuNqbnxa40e4YJG88XrAsGX48WWKGU=
+X-Google-Smtp-Source: APXvYqxcQGEJtnYA9Dox6wkCmoNhgi0nQlVxmrljxdbiXh66FZxbDmoKUQbvXOU6f+M6uubdRb2209sGGo+XVq9qTo4=
+X-Received: by 2002:a2e:814e:: with SMTP id t14mr2079402ljg.149.1576681787440; 
+ Wed, 18 Dec 2019 07:09:47 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191213182503.14460-8-maz@kernel.org>
-Content-Language: en-GB
+References: <1576672860-14420-1-git-send-email-peng.fan@nxp.com>
+ <CAOMZO5DeA24EUjr-E=V=tGNaZ7UkOEi+F5-kEBqEB288DSNSoA@mail.gmail.com>
+ <AM0PR04MB4481B3EAB2DDC42A137E8AAB88530@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <CAOMZO5BK0Pa6Aw6n7Tf+C6+Fg15WNbEUOzKCQTaWqTUu6yoPjA@mail.gmail.com>
+ <20191218145955.GE26938@lunn.ch>
+In-Reply-To: <20191218145955.GE26938@lunn.ch>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Wed, 18 Dec 2019 12:09:42 -0300
+Message-ID: <CAOMZO5BibF5A9sw=fLr3DXLf9LXYdxWy=aK7KCE3L0bt5eX+9Q@mail.gmail.com>
+Subject: Re: [PATCH 1/2] pinctrl: mvebu: armada-37xx: use use platform api
+To: Andrew Lunn <andrew@lunn.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_070755_771680_B5074CE0 
-X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-CacheID: sfid-20191218_070950_690548_691EA124 
+X-CRM114-Status: UNSURE (   9.23  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,46 +97,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm-ppc@vger.kernel.org, Wanpeng Li <wanpengli@tencent.com>,
- kvm@vger.kernel.org, =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?= <rkrcmar@redhat.com>,
- James Hogan <jhogan@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-mips@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- Paul Mackerras <paulus@ozlabs.org>, linux-arm-kernel@lists.infradead.org,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jim Mattson <jmattson@google.com>
+Cc: Peng Fan <peng.fan@nxp.com>, "jason@lakedaemon.net" <jason@lakedaemon.net>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mripard@kernel.org" <mripard@kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "wens@csie.org" <wens@csie.org>,
+ "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "sebastian.hesselbarth@gmail.com" <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+Hi Andrew,
 
-On 13/12/2019 18:25, Marc Zyngier wrote:
-> If userspace issues a munmap() on a set of pages, there is no
-> expectation that the pages are cleaned to the PoC.
+On Wed, Dec 18, 2019 at 12:00 PM Andrew Lunn <andrew@lunn.ch> wrote:
 
-(Pedantry: Clean and invalidate. If the guest wrote through a device mapping, we ditch any
-clean+stale lines with this path, meaning swapout saves the correct values)
+> Hi Fabio
+>
+> Look closer. This is not about returning an error, it is about
+> printing an error.
+>
+> I think the API could better. A %ie formatter would make a lot of
+> sense, so avoiding the ERR_PTR().
 
+Yes, I think that returning the error like:
 
-> So let's
-> not do more work than strictly necessary, and set the magic
-> flag that avoids CMOs in this case.
+dev_err(dev, "Couldn't determine irq count: %d\n", nr_irq_parent);
 
-I think this assumes the pages went from anonymous->free, so no-one cares about the contents.
+would make the code cleaner.
 
-If the pages are backed by a file, won't dirty pages will still get written back before
-the page is free? (e.g. EFI flash 'file' mmap()ed in)
-
-What if this isn't the only mapping of the page? Can't it be swapped out from another VMA?
-(tenuous example, poor man's memory mirroring?)
-
-
-Thanks,
-
-James
+Maybe just a matter of taste though ;-)
 
 _______________________________________________
 linux-arm-kernel mailing list
