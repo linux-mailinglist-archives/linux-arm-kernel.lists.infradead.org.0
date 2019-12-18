@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D85CF1255AC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 22:57:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B93551255CF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 22:58:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8efUsBrn+3rvjgNdTqWV1HJERcnEaqpTCL5p12/jcwE=; b=jeDZwzhmXY1SnS
-	0J70YfNbJWx8WekjQbWkF36pglwNtxPIWRQnZOfYE24DGp05hLcP6fVWtDMi13SwsAq2heezTtpNo
-	ZeDOc7l0kmMaUXoV+jrkA2WjN9XpjQBIFBCxs4V8Yn34njv4SAFKuau1ml5YF4pM2XC1VnBZAy2ah
-	k8PaAghdwCqGBvLAoGPSVdlUJMlFBt31OOAe8WGDqqKrsNsz72CYCA+zRLl9nOzXZLWbyAPcHWyUY
-	g0nVwRRjZqy2MKAR57tdF5xtyl6akKxf8fRyAlAN15pA8sKwLKqnh+q+EUQffXZjR0DKVTXbOttUO
-	jetR4tDolHHuxKozdCYw==;
+	List-Owner; bh=YmodmkTsBwgjAcYBTA/2g/KRPj3VUQlDsQzHgmQtgfM=; b=LT08+1Lg26+TdN
+	S2ScjiWNDxnYKmAPGSW4bVygDIxAJkhV9TimIQK+V633lY/Cc6bHjV7KO4bi8nSODSmgAb0FzdqJv
+	CvfEqw8QjxLjLTDaed1Z9FBSO3/I+Rh4BHsG6L9WEF2gf6x5Nbi2TjJJ1+Sr3lPn+pZJUJfeSjad0
+	n6h0sIl4mcB6t/NVZX9WmyMlbHnL3uo8wCghvHRLvXvNggQGA4WAn2KuHrAG1tQqJCFkvSUfcAKWS
+	qqy9dYPnYR0bG77kIIA/ojltS5UtCjNtiS8Nxmuqr9T5MNonMrgwjyYHtIM8apHJzON6u/bGao/io
+	UTzyl2aO9F/tGp5aVF4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihhKF-0006W8-AQ; Wed, 18 Dec 2019 21:57:47 +0000
+	id 1ihhKg-0006nM-4p; Wed, 18 Dec 2019 21:58:14 +0000
 Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihhIC-0004yV-U8
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:43 +0000
+ id 1ihhID-0004ya-5e
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:42 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga001.fm.intel.com ([10.253.24.23])
  by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  18 Dec 2019 13:55:34 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108026"
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108030"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
  by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:34 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
@@ -37,17 +37,17 @@ To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH v2 05/45] KVM: VMX: Use direct vcpu pointer during vCPU
+Subject: [PATCH v2 06/45] KVM: SVM: Use direct vcpu pointer during vCPU
  create/free
-Date: Wed, 18 Dec 2019 13:54:50 -0800
-Message-Id: <20191218215530.2280-6-sean.j.christopherson@intel.com>
+Date: Wed, 18 Dec 2019 13:54:51 -0800
+Message-Id: <20191218215530.2280-7-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_135541_017099_820A1B44 
-X-CRM114-Status: GOOD (  13.28  )
+X-CRM114-CacheID: sfid-20191218_135541_246697_62A33233 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -86,62 +86,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Capture the vcpu pointer in a local varaible and replace '&vmx->vcpu'
+Capture the vcpu pointer in a local varaible and replace '&svm->vcpu'
 references with a direct reference to the pointer in anticipation of
 moving bits of the code to common x86 and passing the vcpu pointer into
-vmx_create_vcpu(), i.e. eliminate unnecessary noise from future patches.
+svm_create_vcpu(), i.e. eliminate unnecessary noise from future patches.
 
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/x86/kvm/vmx/vmx.c | 42 ++++++++++++++++++++++--------------------
- 1 file changed, 22 insertions(+), 20 deletions(-)
+ arch/x86/kvm/svm.c | 30 ++++++++++++++++--------------
+ 1 file changed, 16 insertions(+), 14 deletions(-)
 
-diff --git a/arch/x86/kvm/vmx/vmx.c b/arch/x86/kvm/vmx/vmx.c
-index 2e44ef744c01..5db455796965 100644
---- a/arch/x86/kvm/vmx/vmx.c
-+++ b/arch/x86/kvm/vmx/vmx.c
-@@ -6673,17 +6673,17 @@ static void vmx_free_vcpu(struct kvm_vcpu *vcpu)
- 	nested_vmx_free_vcpu(vcpu);
- 	free_loaded_vmcs(vmx->loaded_vmcs);
- 	kvm_vcpu_uninit(vcpu);
--	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.user_fpu);
--	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.guest_fpu);
-+	kmem_cache_free(x86_fpu_cache, vcpu->arch.user_fpu);
-+	kmem_cache_free(x86_fpu_cache, vcpu->arch.guest_fpu);
- 	kmem_cache_free(kvm_vcpu_cache, vmx);
- }
+diff --git a/arch/x86/kvm/svm.c b/arch/x86/kvm/svm.c
+index 8f1b715dfde8..1afa10cf365f 100644
+--- a/arch/x86/kvm/svm.c
++++ b/arch/x86/kvm/svm.c
+@@ -2146,6 +2146,7 @@ static int avic_init_vcpu(struct vcpu_svm *svm)
  
- static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+ static struct kvm_vcpu *svm_create_vcpu(struct kvm *kvm, unsigned int id)
  {
--	int err;
 +	struct kvm_vcpu *vcpu;
- 	struct vcpu_vmx *vmx;
- 	unsigned long *msr_bitmap;
--	int i, cpu;
-+	int i, cpu, err;
+ 	struct vcpu_svm *svm;
+ 	struct page *page;
+ 	struct page *msrpm_pages;
+@@ -2161,24 +2162,25 @@ static struct kvm_vcpu *svm_create_vcpu(struct kvm *kvm, unsigned int id)
+ 		err = -ENOMEM;
+ 		goto out;
+ 	}
++	vcpu = &svm->vcpu;
  
- 	BUILD_BUG_ON_MSG(offsetof(struct vcpu_vmx, vcpu) != 0,
- 		"struct kvm_vcpu must be at offset 0 for arch usercopy region");
-@@ -6692,23 +6692,25 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
- 	if (!vmx)
- 		return ERR_PTR(-ENOMEM);
- 
--	vmx->vcpu.arch.user_fpu = kmem_cache_zalloc(x86_fpu_cache,
--			GFP_KERNEL_ACCOUNT);
--	if (!vmx->vcpu.arch.user_fpu) {
-+	vcpu = &vmx->vcpu;
-+
+-	svm->vcpu.arch.user_fpu = kmem_cache_zalloc(x86_fpu_cache,
+-						     GFP_KERNEL_ACCOUNT);
+-	if (!svm->vcpu.arch.user_fpu) {
 +	vcpu->arch.user_fpu = kmem_cache_zalloc(x86_fpu_cache,
 +						GFP_KERNEL_ACCOUNT);
 +	if (!vcpu->arch.user_fpu) {
  		printk(KERN_ERR "kvm: failed to allocate kvm userspace's fpu\n");
  		err = -ENOMEM;
- 		goto free_partial_vcpu;
+ 		goto free_partial_svm;
  	}
  
--	vmx->vcpu.arch.guest_fpu = kmem_cache_zalloc(x86_fpu_cache,
--			GFP_KERNEL_ACCOUNT);
--	if (!vmx->vcpu.arch.guest_fpu) {
+-	svm->vcpu.arch.guest_fpu = kmem_cache_zalloc(x86_fpu_cache,
+-						     GFP_KERNEL_ACCOUNT);
+-	if (!svm->vcpu.arch.guest_fpu) {
 +	vcpu->arch.guest_fpu = kmem_cache_zalloc(x86_fpu_cache,
 +						 GFP_KERNEL_ACCOUNT);
 +	if (!vcpu->arch.guest_fpu) {
@@ -150,61 +136,49 @@ index 2e44ef744c01..5db455796965 100644
  		goto free_user_fpu;
  	}
  
--	err = kvm_vcpu_init(&vmx->vcpu, kvm, id);
+-	err = kvm_vcpu_init(&svm->vcpu, kvm, id);
 +	err = kvm_vcpu_init(vcpu, kvm, id);
  	if (err)
- 		goto free_vcpu;
+ 		goto free_svm;
  
-@@ -6780,12 +6782,12 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
+@@ -2222,9 +2224,9 @@ static struct kvm_vcpu *svm_create_vcpu(struct kvm *kvm, unsigned int id)
+ 	svm->asid_generation = 0;
+ 	init_vmcb(svm);
  
- 	vmx->loaded_vmcs = &vmx->vmcs01;
- 	cpu = get_cpu();
--	vmx_vcpu_load(&vmx->vcpu, cpu);
--	vmx->vcpu.cpu = cpu;
-+	vmx_vcpu_load(vcpu, cpu);
-+	vcpu->cpu = cpu;
- 	init_vmcs(vmx);
--	vmx_vcpu_put(&vmx->vcpu);
-+	vmx_vcpu_put(vcpu);
- 	put_cpu();
--	if (cpu_need_virtualize_apic_accesses(&vmx->vcpu)) {
-+	if (cpu_need_virtualize_apic_accesses(vcpu)) {
- 		err = alloc_apic_access_page(kvm);
- 		if (err)
- 			goto free_vmcs;
-@@ -6800,7 +6802,7 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
- 	if (nested)
- 		nested_vmx_setup_ctls_msrs(&vmx->nested.msrs,
- 					   vmx_capability.ept,
--					   kvm_vcpu_apicv_active(&vmx->vcpu));
-+					   kvm_vcpu_apicv_active(vcpu));
- 	else
- 		memset(&vmx->nested.msrs, 0, sizeof(vmx->nested.msrs));
+-	svm_init_osvw(&svm->vcpu);
++	svm_init_osvw(vcpu);
  
-@@ -6818,19 +6820,19 @@ static struct kvm_vcpu *vmx_create_vcpu(struct kvm *kvm, unsigned int id)
- 
- 	vmx->ept_pointer = INVALID_PAGE;
- 
--	return &vmx->vcpu;
+-	return &svm->vcpu;
 +	return vcpu;
  
- free_vmcs:
- 	free_loaded_vmcs(vmx->loaded_vmcs);
- free_pml:
- 	vmx_destroy_pml_buffer(vmx);
- uninit_vcpu:
--	kvm_vcpu_uninit(&vmx->vcpu);
+ free_page4:
+ 	__free_page(hsave_page);
+@@ -2235,11 +2237,11 @@ static struct kvm_vcpu *svm_create_vcpu(struct kvm *kvm, unsigned int id)
+ free_page1:
+ 	__free_page(page);
+ uninit:
+-	kvm_vcpu_uninit(&svm->vcpu);
 +	kvm_vcpu_uninit(vcpu);
- 	free_vpid(vmx->vpid);
- free_vcpu:
--	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.guest_fpu);
+ free_svm:
+-	kmem_cache_free(x86_fpu_cache, svm->vcpu.arch.guest_fpu);
 +	kmem_cache_free(x86_fpu_cache, vcpu->arch.guest_fpu);
  free_user_fpu:
--	kmem_cache_free(x86_fpu_cache, vmx->vcpu.arch.user_fpu);
+-	kmem_cache_free(x86_fpu_cache, svm->vcpu.arch.user_fpu);
 +	kmem_cache_free(x86_fpu_cache, vcpu->arch.user_fpu);
- free_partial_vcpu:
- 	kmem_cache_free(kvm_vcpu_cache, vmx);
- 	return ERR_PTR(err);
+ free_partial_svm:
+ 	kmem_cache_free(kvm_vcpu_cache, svm);
+ out:
+@@ -2270,8 +2272,8 @@ static void svm_free_vcpu(struct kvm_vcpu *vcpu)
+ 	__free_page(virt_to_page(svm->nested.hsave));
+ 	__free_pages(virt_to_page(svm->nested.msrpm), MSRPM_ALLOC_ORDER);
+ 	kvm_vcpu_uninit(vcpu);
+-	kmem_cache_free(x86_fpu_cache, svm->vcpu.arch.user_fpu);
+-	kmem_cache_free(x86_fpu_cache, svm->vcpu.arch.guest_fpu);
++	kmem_cache_free(x86_fpu_cache, vcpu->arch.user_fpu);
++	kmem_cache_free(x86_fpu_cache, vcpu->arch.guest_fpu);
+ 	kmem_cache_free(kvm_vcpu_cache, svm);
+ }
+ 
 -- 
 2.24.1
 
