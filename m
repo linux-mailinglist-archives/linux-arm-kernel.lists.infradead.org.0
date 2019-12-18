@@ -2,56 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC8D0124D98
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:30:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD402124D7D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:27:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RSKn5Dpvnz2iT+bQTti6p1s6lOc7D8ru0e8vifABctA=; b=bOI9k2J3oU4ZlC
-	iGHcO3En5kIQYTSf3gcGghRlDI36sCR2FNELEb2zgcFy0hqzFWR9DtyYby3Gx8a7Mp8OfJNwl1nVX
-	sgWFiM0hE3IBr6fR1sFH4vC37D5PQzOBvxv59EemToJJUjh6EGlfI4bIFdWhLJuIT2OXzqkzcvewx
-	LfAaQJ6lB6Pr7XXufzAdUJ9uROrYKi4rXA2wejL6U9FA+I371+rcyFR3z/GOOmOY+b3zMLNn/LnUU
-	SpHyJFso5UrdFUCFUB2+85bRyJUvXvdxvCZhU+w1Ald0cAW91zV1IjfI7r4DwewVjmWn9oRW+B+C5
-	RJwsnjlWRedR3x8pat6A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MSHUyzajtQ6qgNZVbdX/kRWgRhoxhsObzLxlrTdDofc=; b=eWz0Sju7J+9xWF
+	G3Xg+4PA9Qy6hrg8J6IJOP9m+fI68AKHnb9HFot9O433OzCbred8qiKB7HGyrnRJuUsU20fprVBlv
+	/fFe1yZhwd91V5QhovLtjvxhFIuOy04pPq0snmwliEKc1j12glbPcFz40lo2reN7BpSzTKPEjkp13
+	crmL6UL4EYGWvXLA81lyGj8G2sxh1ogboEFqLKejzk1ueetiJ/Y7lWlmrBISN6CF9hLP1CbIWmVkK
+	ykCi5B2OkmXCbq7O5mZU+u1UA5p932AxgnitYap9W2VNqn7MlPrPI4Uirwub1xzX9LJmvdCk7HjAK
+	qzBlTDFVIot4ekD1meHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihcD1-0003fj-Gk; Wed, 18 Dec 2019 16:29:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihc7o-00076Y-9V
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 16:24:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9911211FB;
- Wed, 18 Dec 2019 08:24:35 -0800 (PST)
-Received: from e112269-lin.arm.com (e112269-lin.cambridge.arm.com
- [10.1.196.56])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 189C53F719;
- Wed, 18 Dec 2019 08:24:32 -0800 (PST)
-From: Steven Price <steven.price@arm.com>
-To: Andrew Morton <akpm@linux-foundation.org>,
-	linux-mm@kvack.org
-Subject: [PATCH v17 04/23] arm64: mm: Add p?d_leaf() definitions
-Date: Wed, 18 Dec 2019 16:23:43 +0000
-Message-Id: <20191218162402.45610-5-steven.price@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191218162402.45610-1-steven.price@arm.com>
-References: <20191218162402.45610-1-steven.price@arm.com>
+	id 1ihcAM-0001Nk-SQ; Wed, 18 Dec 2019 16:27:14 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihc7O-0006iJ-3v
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 16:24:12 +0000
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ Eugen.Hristev@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="Eugen.Hristev@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa5.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: Pj4dhcNBKEnadabKBkLJr6CQTYxW7OjkSOB1cANzjHJsAmlKJ9Qpl88AoCoae1+piF1VYbw+0X
+ Y4Sf+mm81IdiJyAHK2PhBPQ0N2hZCX2Rs2t1EMtI8k6PWA/IaqcD79ries6v8Knu6eSdMvybm1
+ 2+4EXdqc+hZpEqWqnXByMR3PGDoC+L5LrCpcHTes2cVQO4jmEcCMEhOwIvv/YYHa1mss21kxsC
+ i7NEYtCwznZo11l6rUF5kJjCQCg1LExMY64ewX5wuoAZniwqFAvalTMZ5YAAa5djiUW6xvr5px
+ xB0=
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="59426779"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 18 Dec 2019 09:24:01 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 18 Dec 2019 09:23:58 -0700
+Received: from NAM11-BN8-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Wed, 18 Dec 2019 09:23:58 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=RP/A+6l5W3Si9Lm4L+KmNhsrAiSJXA+PT0Z8jcibzEp4djtcW5QrovElkDbX6V9GM3VCHbxWnmHgAk1HKMevCNKB6rH31L/S57KIYtEAG6IbGKh1mytEXEe/NBn1jEJ1HvsSbg3WifV/2UPR2ewn+M+WLOkUJFA4OTgw3ao5lNm/ZMkKoodJ70Y01SUvPjmbQXOuwM1in1PKdZExyjmJiA44vlol1P9bTHt6uAeDnP6N6jTDDfNeShgpYJEo4S3eGwSJ4i2y14JP26sxDC0X1OH9DWloFZS6RPJ/PHIfeUlf3NJiPabjkkL/+J6wIl28kJ5tw62C69pPffB7IVZ78g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=nkbxb1EvYc7ZEC/RY7x0LhCxXUt8pumOzfafB8ahW5s=;
+ b=dGc1194ZqhltYd2KaGUyBmQDF0XeAV/R8A78XHcVWes0zFS69Si1ZEBD7qMke5cMHyyMdhF29y23DJM/x8bClqwchvhYzgYB4rwESiLW60UmSGOkPutQkj8CC/+Sli3HqQz+b+ERL00z50jHVRMR6i1BVveD08AzzAFBwZyElc6fGXG61e1vloxHszNvy9zoCK2QwBpxkJ5bnrQR0yyD3gaCAL6PDpamRdTKamuSfihXpDTiSEafmkQjlakbLdtUhmJi6yY/6KoyE0DZZTNujEL5AEJodNhCw6nnBYVB4GouuCbTIMl4ubDiAjUtr30KTt8xksqPW665J4ePhud8TQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=nkbxb1EvYc7ZEC/RY7x0LhCxXUt8pumOzfafB8ahW5s=;
+ b=qjM3J37Kkb62vMVODHhSHORGb1h9sckkp+O/puCV4dOd7WO6/ISJrO5QB+kPiI5aVyjhQPuktrW1R5bhIir8CKFfA15RExTFlG2WuI2BP36Qy0XgtVlLGKDVTMMnErgyrf8f2ARfQKiImkMN/07BOmEsJr8V6IvESGhDzsVmJAs=
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
+ DM5PR11MB1913.namprd11.prod.outlook.com (10.175.87.148) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2559.14; Wed, 18 Dec 2019 16:23:58 +0000
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::9039:e0e8:9032:20c1]) by DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::9039:e0e8:9032:20c1%12]) with mapi id 15.20.2559.012; Wed, 18 Dec
+ 2019 16:23:58 +0000
+From: <Eugen.Hristev@microchip.com>
+To: <jic23@kernel.org>, <robh+dt@kernel.org>, <alexandre.belloni@bootlin.com>
+Subject: [PATCH 00/10] Enhancements to at91-sama5d2_adc and rtc trigger
+Thread-Topic: [PATCH 00/10] Enhancements to at91-sama5d2_adc and rtc trigger
+Thread-Index: AQHVtb+MrR5owibMB0+1LePacD8d5g==
+Date: Wed, 18 Dec 2019 16:23:57 +0000
+Message-ID: <1576686157-11939-1-git-send-email-eugen.hristev@microchip.com>
+Accept-Language: en-US, ro-RO
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 80a705b2-8144-4f9d-da0c-08d783d6af27
+x-ms-traffictypediagnostic: DM5PR11MB1913:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM5PR11MB1913D99BDE223D6267EBE2A1E8530@DM5PR11MB1913.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0255DF69B9
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(39860400002)(346002)(376002)(136003)(396003)(199004)(189003)(2616005)(66556008)(316002)(107886003)(8676002)(71200400001)(8936002)(66476007)(26005)(6506007)(2906002)(64756008)(66446008)(66946007)(81156014)(76116006)(81166006)(5660300002)(478600001)(36756003)(54906003)(186003)(4326008)(86362001)(6512007)(110136005)(91956017)(6486002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1913;
+ H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: kMd3B5gmnN3fqJ49NdX1qCNxxpFCfRvTH3vsBDAA/WJ5z1sPhFvaE3/tCGahu8HSlHRvkchL0BU7x8YeqVNSsGBGd3+U6b63590fTylC5TYLlI/jEsU0GWZ6IbISKy8R115RX3Mb1d8bJn742UD6BlB14vqS1rutCrA8i/O8Wj+T0rUkuMKVfXAbYDCCzsQTc0T+eGBdspDlta0sKoE4hkBJb7rvWXK8OvVM/jzM0Gm8SLWr4WmAlXI0wpRJMc1sElDpgh8oUuvB1z5MQqm0jBEISCgTLSChI2oAJZSUn0do6esVxWrx0F/9WKXc3OmPyJeuZBDyFL1NXY1sE5G4nVvkmw7Y3wcx6e8kkXXpvETL4C13MThm4TMQwEeCE7R9aOoA70XELPtaqI4SuykZ/ZsZ4S5qA5euXUoHsB9ZTfhFZdhdzxvAgCpxAYu46g1M
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 80a705b2-8144-4f9d-da0c-08d783d6af27
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Dec 2019 16:23:57.9030 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: lxzwzGRzhd5qNdDoHeVBwY42NsFXqV+qYWTyiux1yXFaof4+LjpdIqkE+/SbGLLECTcfTW7rk1XzoufHgkHvDQB5GnpPGwWpN1jVjPbaTFw=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1913
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_082436_414757_8DB30184 
-X-CRM114-Status: GOOD (  12.24  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191218_082410_222391_2BC2A7AB 
+X-CRM114-Status: GOOD (  13.95  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,70 +152,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, x86@kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>,
- =?UTF-8?q?J=C3=A9r=C3=B4me=20Glisse?= <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org, "Liang,
- Kan" <kan.liang@linux.intel.com>
+Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org, a.zummo@towertech.it,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Ludovic.Desroches@microchip.com, Eugen.Hristev@microchip.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-walk_page_range() is going to be allowed to walk page tables other than
-those of user space. For this it needs to know when it has reached a
-'leaf' entry in the page tables. This information will be provided by the
-p?d_leaf() functions/macros.
+From: Eugen Hristev <eugen.hristev@microchip.com>
 
-For arm64, we already have p?d_sect() macros which we can reuse for
-p?d_leaf().
+This series includes support for having the Real Time Clock trigger
+capability for the Analog to Digital Converter in sama5d2-based SoCs
+(RTC ADC Trigger)
 
-pud_sect() is defined as a dummy function when CONFIG_PGTABLE_LEVELS < 3
-or CONFIG_ARM64_64K_PAGES is defined. However when the kernel is
-configured this way then architecturally it isn't allowed to have a
-large page at this level, and any code using these page walking macros
-is implicitly relying on the page size/number of levels being the same as
-the kernel. So it is safe to reuse this for p?d_leaf() as it is an
-architectural restriction.
+The first patch of the series has been already submitted on the iio mailing list
+as
+[PATCH] iio: adc: at91-sama5d2_adc: update for other trigger usage
+But I also include here for reference since the other commits on the driver
+use this as a base commit.
 
-CC: Catalin Marinas <catalin.marinas@arm.com>
-CC: Will Deacon <will@kernel.org>
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Steven Price <steven.price@arm.com>
----
- arch/arm64/include/asm/pgtable.h | 2 ++
- 1 file changed, 2 insertions(+)
+In short, the RTC block can trigger the ADC block to perform a conversion.
+To solve this, I created a driver named rtc-adc-trigger that shares the
+register map with the RTC. It's done in devicetree as a subnode.
+This driver will register a separate trigger inside the iio subsystem.
+This trigger can then be associated to the ADC driver (sysfs current_trigger).
+However, this is not enough. The ADC has to be aware that it;s being
+triggered by the RTC (TRGMOD and TRGSEL). So, this hardware link between
+the two IPs has been described as a phandle reference in the ADC node to the
+RTC trigger node.
+At runtime (trigger selection), the ADC will check if the assigned trigger
+is the RTC one given by the phandle link. If so, it will configure
+accordingly.
+The RTC trigger driver will also register to sysfs two attributes for
+selecting the desired trigger frequency.
+One attribute is RO : list of possible frequencies.
+Another attribute is RW: current set frequency.
 
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 5d15b4735a0e..40df7e16d397 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -445,6 +445,7 @@ extern pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
- 				 PMD_TYPE_TABLE)
- #define pmd_sect(pmd)		((pmd_val(pmd) & PMD_TYPE_MASK) == \
- 				 PMD_TYPE_SECT)
-+#define pmd_leaf(pmd)		pmd_sect(pmd)
- 
- #if defined(CONFIG_ARM64_64K_PAGES) || CONFIG_PGTABLE_LEVELS < 3
- static inline bool pud_sect(pud_t pud) { return false; }
-@@ -529,6 +530,7 @@ static inline void pte_unmap(pte_t *pte) { }
- #define pud_none(pud)		(!pud_val(pud))
- #define pud_bad(pud)		(!(pud_val(pud) & PUD_TABLE_BIT))
- #define pud_present(pud)	pte_present(pud_pte(pud))
-+#define pud_leaf(pud)		pud_sect(pud)
- #define pud_valid(pud)		pte_valid(pud_pte(pud))
- 
- static inline void set_pud(pud_t *pudp, pud_t pud)
+To achieve all this, had to make a small patch on the RTC to populate
+child nodes platform data to probe them.
+
+Fixed other issues with the adc driver: unfinished conversions on IRQ in
+triggered mode, and differential channels missing configurations in
+triggered mode.
+
+For exercising this, created DT patches for sama5d2/sama5d2_xplained.
+
+Here is a sample of how it works in sysfs:
+
+ # cat /sys/bus/iio/devices/trigger0/trigger_frequency_hz
+ 1
+ # echo 1 > /sys/bus/iio/devices/iio:device0/scan_elements/in_voltage4_en
+ # cat /sys/bus/iio/devices/
+ iio:device0/        iio_sysfs_trigger/  trigger0/           trigger1/
+ # cat /sys/bus/iio/devices/trigger0/name
+ f80480b0.at91_rtc_adc
+ # iio_generic_buffer -n fc030000.adc -t f80480b0.at91_rtc_adc -c 5
+ iio device number being used is 0
+ iio trigger number being used is 0
+ /sys/bus/iio/devices/iio:device0 f80480b0.at91_rtc_adc
+ 3298.388672
+ 3294.360352
+ 3291.943359
+ 3294.360352
+ 3291.943359
+
+
+Future work:
+In the future the node would have to be enabled for other sama5d2 based
+boards as well, and MAINTAINERS to be updated if this driver is accepted.
+
+
+Eugen Hristev (10):
+  iio: adc: at91-sama5d2_adc: update for other trigger usage
+  dt-bindings: iio: adc: at91-sama5d2: add rtc-trigger optional property
+  dt-bindings: iio: trigger: at91-rtc-trigger: add bindings
+  rtc: at91rm9200: use of_platform_populate as return value
+  iio: trigger: at91-rtc-trigger: introduce at91 rtc adc trigger driver
+  iio: adc: at91-sama5d2_adc: handle unfinished conversions
+  iio: adc: at91-sama5d2_adc: fix differential channels in triggered
+    mode
+  iio: adc: at91-sama5d2_adc: implement RTC triggering
+  ARM: dts: at91: sama5d2: add rtc_adc_trigger node
+  ARM: dts: at91: sama5d2_xplained: enable rtc_adc_trigger
+
+ .../bindings/iio/adc/at91-sama5d2_adc.txt          |   4 +
+ .../bindings/iio/trigger/at91-rtc-trigger.yaml     |  44 +++
+ arch/arm/boot/dts/at91-sama5d2_xplained.dts        |   4 +
+ arch/arm/boot/dts/sama5d2.dtsi                     |  11 +
+ drivers/iio/adc/at91-sama5d2_adc.c                 | 336 ++++++++++++++++-----
+ drivers/iio/trigger/Kconfig                        |  10 +
+ drivers/iio/trigger/Makefile                       |   1 +
+ drivers/iio/trigger/at91-rtc-trigger.c             | 213 +++++++++++++
+ drivers/rtc/rtc-at91rm9200.c                       |   2 +-
+ 9 files changed, 543 insertions(+), 82 deletions(-)
+ create mode 040000 Documentation/devicetree/bindings/iio/trigger
+ create mode 100644 Documentation/devicetree/bindings/iio/trigger/at91-rtc-trigger.yaml
+ create mode 100644 drivers/iio/trigger/at91-rtc-trigger.c
+
 -- 
-2.20.1
-
+2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
