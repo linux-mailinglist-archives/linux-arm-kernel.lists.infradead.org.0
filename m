@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 982D91247E6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 14:17:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B90C9124815
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 14:23:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mUB0gDG+Ah4vdgh6R9x1fl8XLuKOCH8bqHFw+tozF1s=; b=klLR3zwPR+Sw8A
-	zCWcM2me72JStkL6UtYdq1UeYpNE8nJAkxHNFVd0twIsqWnFZy1CY32h1SwvUtWqoPeUsWEWDKDpP
-	vnhyS0GF+OBnY6cniGnyytHSU2E4A5zeDZ5ybPjtayDMD9JM3GPI93wxU0iSftWRinO9G1gG/9XoY
-	tgRFn0gh2Opz2atPd3oVYfmt0qwUoBQVLLoUjp5C12s4JpBiDZlFE4ZQOATtSngsiJ17V0NMu2doZ
-	Z6TR6GOk0+IBQCmSaHjbNIlOfVsH6Xl8nSJjBikJSO748CZvy7BXPwu28nmc23PQFZ7WdrexRqLBv
-	fyQ/McxVio91zqYDCOIA==;
+	List-Owner; bh=tXl3kqquJKoCt0WGwGthlWnQrcsUozZbCKn1bvU4DQQ=; b=pB+ClRazdNlreJ
+	YZsnjDVkKsel8UfVm9cpnwpczv/E17/SvIi5ZLJQL/LvOoUfTKNmFW7kutYGQE+NpQ0B6cZb7gkuh
+	1tKwib1kxTpp6cf9vpPRXqHw6vxlQe8wFOQgV4QEKHRjZ28AoBFyQtEHVVuaNpbUQa0Q7t27wzLLW
+	pEQWLyol9q2wg2yOJ2r8fBYbr1O0g5PKlr4mjHOHEFIGq66oyHPXu8coEChraXk+ytgvrsDFNFkYo
+	SEA7WVFUQ+FSm/WLC5NEmm9Xv8MNlDM3oTyldO/7yUIOt+647YHvYSMBvFBMcw3pdDEjqNuQHNdUO
+	zpyxYe1YRoyTZQyEfEyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihZCX-0006hs-IH; Wed, 18 Dec 2019 13:17:17 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1ihZIj-00008n-Vo; Wed, 18 Dec 2019 13:23:42 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihZCP-0006h8-8o
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 13:17:10 +0000
-Received: by mail-wm1-x344.google.com with SMTP id d139so4635645wmd.0
+ id 1ihZIZ-00007w-L1
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 13:23:33 +0000
+Received: by mail-wr1-x443.google.com with SMTP id y17so2291072wrh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 05:17:08 -0800 (PST)
+ Wed, 18 Dec 2019 05:23:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:openpgp:autocrypt:organization
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=0zQV/dk6CoCDl2YkjNYA1VMBsxfsbhylSp6vBADm5yM=;
- b=hi8qE04O3wDqeb2AXWi9x0/PJfU5X/ZlqUWhcKdPKxlAVVwXM6VmyJGs3hZZKWUi9a
- wKiITJ+0MbQsa0ShxBXgcvxvsrgQlUVC78TJKEC2kJ0IyBwopc2s1p7eu4a1GZbd47Jn
- 9Q9jitNVu2wOi8bXfBHUF44TePhJ8RIYZCOwyNcPfXX9PYyPizDw0+W7gAbjSZ7QC9vt
- YlGerLlEGKP5pf9OiUYfcUpbUmTBGvIwG4w7OESFb612RAPEHLHgWPTyjg1NzEW+ihjI
- Wnjlapdrvx0+NSxMnQVrXPTuT06dvajL1KyQbQtaLAb4UY+Iuz8MQ88jWcJuuyfBYjbn
- N8ow==
+ bh=YeQ4SePjBedpTNW4vmpRQ+EyRFd+KTWAwguB6NVi3Qk=;
+ b=Ai2BHorBDnM1Im/k2r+UldplAQlEBy2KEpm8U6lPq/GkczDrzdbc+QRxUANOtE7dE/
+ D7rroLAkE+Aat15BkerQ8gtROwy+f0ZKSpl5i3+3LnyfjfogmZSgFod5J99WHEnxwQHL
+ UXV4VZTZGuaINjuCSUF7nQR320W8suUiM4e4uOQLi/ir11F84nTonCLo9/lvfGpzZ+Jy
+ aeHRMXg0VV13xqGrsDTu9uRpPngmwGG4oDwcr9aZ+7Q1jlVN10hzBtsQ4LUGTfv65NIT
+ VBo75EcdMDoy8/I9UX27CovuzCeE2mh2F48/iD36YLk83kkS2rYXytoWJtfbeHvoSyxV
+ vqrQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=0zQV/dk6CoCDl2YkjNYA1VMBsxfsbhylSp6vBADm5yM=;
- b=i9kVxNDWOBgdn2pkMbZqQuNWvP8E2j9jTbs/qNn8e6J6z+FeHSkCUQd+JBiFWfMPk8
- jSxWumpQqYTbb3fdzkbHVSo5D5SwPKMH2DK/nf+u4vmC2777pRoFRl8KkyDd5fapUnt1
- WyGYTU0glGp8ev4eE1N96hirjQqS1wnUHzMgUoNEOLx6SxwScev65ro4NU/VHfkE5WxC
- YEW7vgQ4Vp20Lsvmc1sxqQSMV1eGAM/EOr5zATuR88nHvsh3To8I8/8hceB95jO1bxgr
- 2unnbVW5hXdi8JwG+0kEb9m6E9Z2xeHwb9EUhOuupJRqOvq5/pl85H6aQyiKkvHVt5Ps
- 6FjA==
-X-Gm-Message-State: APjAAAXGyfjW0XPrvNhKJaoBGJbn7S0y9nIrB4DfZTEHKzEWmhUC7re9
- o+9FVitWPVdx7huP1DEt+xWjnA==
-X-Google-Smtp-Source: APXvYqwfrmTL+KPHcprouZf6b8+FiZKZGgKfwtJUYB8JPmvIRm7hNPTdamDkzKAyQAC3ODLfCKdCag==
-X-Received: by 2002:a1c:ed0e:: with SMTP id l14mr3139861wmh.74.1576675027527; 
- Wed, 18 Dec 2019 05:17:07 -0800 (PST)
-Received: from [10.2.4.230] (lfbn-nic-1-505-157.w90-116.abo.wanadoo.fr.
+ bh=YeQ4SePjBedpTNW4vmpRQ+EyRFd+KTWAwguB6NVi3Qk=;
+ b=V2TPP40HGieXeJU6huooYVwV53bN2zNrwJwLHD1NbVx5NgiK+Vc0XxbuZQ2U+u6k9K
+ zE2Cj8P3Y4GLKKMYudUNkfHHtsLJGD3YW8YEloGoykG9s0BGLWgtPqgSmJDCJl72BF+t
+ 6/HasOlUzlg0o+T1BjjoyuB0CqANxFH0kSm9UjRnco2gJxwt40ytJz9aauHAjl9FTeXS
+ q4bd5y1CmOBxNXmYZRxWQ3nN24IixOcSUwwMONTWXoR7hAKfoFNgacFKNkWXbS1dkuV8
+ Afyf1Wy5jYg0tblwPnQOS0W+l9vAEbHNXQSMGkEyPZes5pwBgmzQZl2UisB0U11EmPPG
+ Ab1w==
+X-Gm-Message-State: APjAAAVHjT/98I7fm67B1LJ3uDBoV9B8p9VejPAuJQjo1MNlsgcH+XrV
+ NLnWuIhUBzQi+Qngisj0mrPENQ==
+X-Google-Smtp-Source: APXvYqyB1lvmGkWhDquZCxGWZ7+W2A0kYeuDozzm1MPyRe4IM4c5tOYYZrOlk5bg0h0+hhl6hx3bOQ==
+X-Received: by 2002:a5d:6703:: with SMTP id o3mr2976324wru.235.1576675409536; 
+ Wed, 18 Dec 2019 05:23:29 -0800 (PST)
+Received: from [10.2.4.229] (lfbn-nic-1-505-157.w90-116.abo.wanadoo.fr.
  [90.116.92.157])
- by smtp.gmail.com with ESMTPSA id c9sm2317601wmc.47.2019.12.18.05.17.06
+ by smtp.gmail.com with ESMTPSA id c15sm2530976wrt.1.2019.12.18.05.23.27
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 18 Dec 2019 05:17:06 -0800 (PST)
-Subject: Re: [PATCH v2 3/6] phy: amlogic: Add Amlogic A1 USB2 PHY Driver
+ Wed, 18 Dec 2019 05:23:28 -0800 (PST)
+Subject: Re: [PATCH v2 4/6] usb: dwc3: Add Amlogic A1 DWC3 glue
 To: Hanjie Lin <hanjie.lin@amlogic.com>, Jerome Brunet
  <jbrunet@baylibre.com>, Rob Herring <robh@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Felipe Balbi <felipe.balbi@linux.intel.com>,
  Kevin Hilman <khilman@baylibre.com>
 References: <1576636944-196192-1-git-send-email-hanjie.lin@amlogic.com>
- <1576636944-196192-4-git-send-email-hanjie.lin@amlogic.com>
+ <1576636944-196192-5-git-send-email-hanjie.lin@amlogic.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
@@ -120,23 +120,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  VsbXrP9BZ6snXyHfebPnno/te5XRqZTL9aJOytB/1iUna+1MAwBxGFPvqeEUUyT+gx1l3Acl
  ZaTUOEkgIor5losDrePdPgE=
 Organization: Baylibre
-Message-ID: <4cbc4216-4f1b-dab2-fccd-4ece7cfedb77@baylibre.com>
-Date: Wed, 18 Dec 2019 14:17:05 +0100
+Message-ID: <d381f59c-1c28-d281-3218-f47df9f1e757@baylibre.com>
+Date: Wed, 18 Dec 2019 14:23:27 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <1576636944-196192-4-git-send-email-hanjie.lin@amlogic.com>
+In-Reply-To: <1576636944-196192-5-git-send-email-hanjie.lin@amlogic.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_051709_316731_5B83A0F7 
-X-CRM114-Status: GOOD (  23.07  )
+X-CRM114-CacheID: sfid-20191218_052331_691838_A9C1E10D 
+X-CRM114-Status: GOOD (  23.77  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -171,192 +171,205 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi,
 
 On 18/12/2019 03:42, Hanjie Lin wrote:
-> This adds support for the USB2 PHY found in the Amlogic A1 SoC Family.
+> Adds support for Amlogic A1 USB Control Glue HW.
 > 
-> It supports host mode only.
+> The Amlogic A1 SoC Family embeds 1 USB Controllers:
+> - a DWC3 IP configured as Host for USB2 and USB3
+> 
+> A glue connects the controllers to the USB2 PHY of A1 SoC.
 > 
 > Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
 > Signed-off-by: Yue Wang <yue.wang@amlogic.com>
 > ---
->  drivers/phy/amlogic/phy-meson-g12a-usb2.c | 102 ++++++++++++++++++++++--------
->  1 file changed, 74 insertions(+), 28 deletions(-)
+>  drivers/usb/dwc3/dwc3-meson-g12a.c | 69 +++++++++++++++++++++++++++-----------
+>  1 file changed, 49 insertions(+), 20 deletions(-)
 > 
-> diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb2.c b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
-> index 9065ffc..2c242d3 100644
-> --- a/drivers/phy/amlogic/phy-meson-g12a-usb2.c
-> +++ b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
-> @@ -146,11 +146,18 @@
->  #define RESET_COMPLETE_TIME					1000
->  #define PLL_RESET_COMPLETE_TIME					100
->  
-> +enum {
-> +	MESON_USB2_PHY_VERSION_10 = 0,
-> +	MESON_USB2_PHY_VERSION_11,
-
-Are these the real "versions" of the phy or it's made up ?
-
-> +	MESON_USB2_PHY_VERSION_COUNT,
-> +};
-> +
->  struct phy_meson_g12a_usb2_priv {
->  	struct device		*dev;
->  	struct regmap		*regmap;
->  	struct clk		*clk;
->  	struct reset_control	*reset;
-> +	int phy_version;
+> diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
+> index 8a3ec1a..3817daf 100644
+> --- a/drivers/usb/dwc3/dwc3-meson-g12a.c
+> +++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
+> @@ -107,10 +107,22 @@ static const char *phy_names[PHY_COUNT] = {
+>  	"usb2-phy0", "usb2-phy1", "usb3-phy0",
 >  };
 >  
->  static const struct regmap_config phy_meson_g12a_usb2_regmap_conf = {
-> @@ -192,18 +199,33 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
->  		     FIELD_PREP(PHY_CTRL_R17_MPLL_FILTER_PVT2, 2) |
->  		     FIELD_PREP(PHY_CTRL_R17_MPLL_FILTER_PVT1, 9));
->  
-> -	regmap_write(priv->regmap, PHY_CTRL_R18,
-> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
-> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
-> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
-> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
-> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
-> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
-> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
-> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
-> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
-> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
-> -		     PHY_CTRL_R18_MPLL_ACG_RANGE);
-> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10)
-> +		regmap_write(priv->regmap, PHY_CTRL_R18,
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
-> +			     PHY_CTRL_R18_MPLL_ACG_RANGE);
-> +	else if (priv->phy_version == MESON_USB2_PHY_VERSION_11)
-> +		regmap_write(priv->regmap, PHY_CTRL_R18,
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
-> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
-> +			     PHY_CTRL_R18_MPLL_ACG_RANGE |
-> +			     PHY_CTRL_R18_MPLL_DCO_CLK_SEL);
-
-The only difference is PHY_CTRL_R18_MPLL_ACG_RANGE | PHY_CTRL_R18_MPLL_DCO_CLK_SEL,
-you can easily simplify the code here by using a temp variable.
-
->  
->  	udelay(PLL_RESET_COMPLETE_TIME);
->  
-> @@ -227,13 +249,24 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
->  		     FIELD_PREP(PHY_CTRL_R20_USB2_BGR_VREF_4_0, 0) |
->  		     FIELD_PREP(PHY_CTRL_R20_USB2_BGR_DBG_1_0, 0));
->  
-> -	regmap_write(priv->regmap, PHY_CTRL_R4,
-> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_7_0, 0xf) |
-> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_15_8, 0xf) |
-> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_23_16, 0xf) |
-> -		     PHY_CTRL_R4_TEST_BYPASS_MODE_EN |
-> -		     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_1_0, 0) |
-> -		     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_3_2, 0));
-> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10)
-> +		regmap_write(priv->regmap, PHY_CTRL_R4,
-> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_7_0, 0xf) |
-> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_15_8, 0xf) |
-> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_23_16, 0xf) |
-> +			     PHY_CTRL_R4_TEST_BYPASS_MODE_EN |
-> +			     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_1_0, 0) |
-> +			     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_3_2, 0));
-> +	else if (priv->phy_version == MESON_USB2_PHY_VERSION_11) {
-> +		regmap_write(priv->regmap, PHY_CTRL_R21,
-> +			     PHY_CTRL_R21_USB2_CAL_ACK_EN |
-> +			     PHY_CTRL_R21_USB2_TX_STRG_PD |
-> +			     FIELD_PREP(PHY_CTRL_R21_USB2_OTG_ACA_TRIM_1_0, 2));
+> +static const struct clk_bulk_data meson_g12a_clocks[] = {
+> +	{ .id = NULL},
+> +};
 > +
-> +		/* Analog Settings */
-> +		regmap_write(priv->regmap, PHY_CTRL_R13,
-> +			     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
-> +	}
+> +static const struct clk_bulk_data meson_a1_clocks[] = {
+> +	{ .id = "usb_ctrl"},
+> +	{ .id = "usb_bus"},
+> +	{ .id = "xtal_usb_phy"},
+> +	{ .id = "xtal_usb_ctrl"},
+> +};
+> +
+>  struct dwc3_meson_g12a {
+>  	struct device		*dev;
+>  	struct regmap		*regmap;
+> -	struct clk		*clk;
+> +	struct clk_bulk_data    *clks;
+> +	int num_clks;
+>  	struct reset_control	*reset;
+>  	struct phy		*phys[PHY_COUNT];
+>  	enum usb_dr_mode	otg_mode;
+> @@ -151,7 +163,7 @@ static int dwc3_meson_g12a_usb2_init(struct dwc3_meson_g12a *priv)
+>  				   U2P_R0_POWER_ON_RESET,
+>  				   U2P_R0_POWER_ON_RESET);
 >  
->  	/* Tuning Disconnect Threshold */
->  	regmap_write(priv->regmap, PHY_CTRL_R3,
-> @@ -241,11 +274,13 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
->  		     FIELD_PREP(PHY_CTRL_R3_HSDIC_REF, 1) |
->  		     FIELD_PREP(PHY_CTRL_R3_DISC_THRESH, 3));
+> -		if (i == USB2_OTG_PHY) {
+> +		if (i == USB2_OTG_PHY && priv->otg_mode != USB_DR_MODE_HOST) {
+
+This is wrong for G12A, please use something else to exclude PULLUPP/VBUS to be updated on A1.
+
+>  			regmap_update_bits(priv->regmap,
+>  				U2P_R0 + (U2P_REG_SIZE * i),
+>  				U2P_R0_ID_PULLUP | U2P_R0_DRV_VBUS,
+> @@ -295,7 +307,7 @@ static int dwc3_meson_g12a_otg_mode_set(struct dwc3_meson_g12a *priv,
+>  {
+>  	int ret;
 >  
-> -	/* Analog Settings */
-> -	regmap_write(priv->regmap, PHY_CTRL_R14, 0);
-> -	regmap_write(priv->regmap, PHY_CTRL_R13,
-> -		     PHY_CTRL_R13_UPDATE_PMA_SIGNALS |
-> -		     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
-> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10) {
-> +		/* Analog Settings */
-> +		regmap_write(priv->regmap, PHY_CTRL_R14, 0);
-> +		regmap_write(priv->regmap, PHY_CTRL_R13,
-> +			     PHY_CTRL_R13_UPDATE_PMA_SIGNALS |
-> +			     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
+> -	if (!priv->phys[USB2_OTG_PHY])
+> +	if (!priv->phys[USB2_OTG_PHY] || priv->otg_mode == USB_DR_MODE_HOST)
+
+Same, this is wrong on G12A since a Host port can be switched to device, use something
+else to disable this for A1, like setting a "otg_supported" flag into the match data,
+and using it in dwc3_meson_g12a_usb2_init(), avoiding registering usb_role_switch, the
+IRQ and updating the priv->otg_mode in probe().
+
+>  		return -EINVAL;
+>  
+>  	if (mode == PHY_MODE_USB_HOST)
+> @@ -409,17 +421,32 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+>  		priv->vbus = NULL;
+>  	}
+>  
+> -	priv->clk = devm_clk_get(dev, NULL);
+> -	if (IS_ERR(priv->clk))
+> -		return PTR_ERR(priv->clk);
+> +	priv->dev = dev;
+> +
+> +	if (of_device_is_compatible(np, "amlogic,meson-g12a-usb-ctrl")) {
+> +		priv->clks = devm_kmemdup(dev, meson_g12a_clocks,
+> +					  sizeof(meson_g12a_clocks),
+> +					  GFP_KERNEL);
+> +		priv->num_clks = ARRAY_SIZE(meson_g12a_clocks);
+> +	} else if (of_device_is_compatible(np, "amlogic,meson-a1-usb-ctrl")) {
+> +		priv->clks = devm_kmemdup(dev, meson_a1_clocks,
+> +					  sizeof(meson_a1_clocks),
+> +					  GFP_KERNEL);
+> +		priv->num_clks = ARRAY_SIZE(meson_a1_clocks);
+> +	} else {
+> +		return -EINVAL;
 > +	}
+
+Like the PHY driver, please use of_device_get_match_data() and a match data for each compatible instead.
+
+> +
+> +	if (!priv->clks)
+> +		return -ENOMEM;
+>  
+> -	ret = clk_prepare_enable(priv->clk);
+> +	ret = devm_clk_bulk_get(dev, priv->num_clks, priv->clks);
+>  	if (ret)
+>  		return ret;
+>  
+> -	devm_add_action_or_reset(dev,
+> -				 (void(*)(void *))clk_disable_unprepare,
+> -				 priv->clk);
+> +	ret = clk_bulk_prepare_enable(priv->num_clks, priv->clks);
+> +	if (ret)
+> +		return ret;
+>  
+>  	platform_set_drvdata(pdev, priv);
+>  	priv->dev = dev;
+> @@ -433,16 +460,16 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+>  
+>  	ret = reset_control_reset(priv->reset);
+>  	if (ret)
+> -		return ret;
+> +		goto err_disable_clks;
+>  
+>  	ret = dwc3_meson_g12a_get_phys(priv);
+>  	if (ret)
+> -		return ret;
+> +		goto err_disable_clks;
+>  
+>  	if (priv->vbus) {
+>  		ret = regulator_enable(priv->vbus);
+>  		if (ret)
+> -			return ret;
+> +			goto err_disable_clks;
+>  	}
+>  
+>  	/* Get dr_mode */
+> @@ -458,7 +485,7 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+>  						dwc3_meson_g12a_irq_thread,
+>  						IRQF_ONESHOT, pdev->name, priv);
+>  		if (ret)
+> -			return ret;
+> +			goto err_disable_clks;
+>  	}
+>  
+>  	dwc3_meson_g12a_usb_init(priv);
+> @@ -467,7 +494,7 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+>  	for (i = 0 ; i < PHY_COUNT ; ++i) {
+>  		ret = phy_init(priv->phys[i]);
+>  		if (ret)
+> -			return ret;
+> +			goto err_disable_clks;
+>  	}
+>  
+>  	/* Set PHY Power */
+> @@ -478,10 +505,8 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+>  	}
+>  
+>  	ret = of_platform_populate(np, NULL, NULL, dev);
+> -	if (ret) {
+> -		clk_disable_unprepare(priv->clk);
+> +	if (ret)
+>  		goto err_phys_power;
+> -	}
+>  
+>  	/* Setup OTG mode corresponding to the ID pin */
+>  	if (priv->otg_mode == USB_DR_MODE_OTG) {
+> @@ -518,6 +543,9 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+>  	for (i = 0 ; i < PHY_COUNT ; ++i)
+>  		phy_exit(priv->phys[i]);
+>  
+> +err_disable_clks:
+> +	clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
+> +
+>  	return ret;
+>  }
+>  
+> @@ -547,7 +575,7 @@ static int __maybe_unused dwc3_meson_g12a_runtime_suspend(struct device *dev)
+>  {
+>  	struct dwc3_meson_g12a	*priv = dev_get_drvdata(dev);
+>  
+> -	clk_disable(priv->clk);
+> +	clk_bulk_disable_unprepare(priv->num_clks, priv->clks);
 >  
 >  	return 0;
 >  }
-> @@ -271,6 +306,7 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
->  	struct resource *res;
->  	struct phy_meson_g12a_usb2_priv *priv;
->  	struct phy *phy;
-> +	struct device_node *np = dev->of_node;
->  	void __iomem *base;
->  	int ret;
+> @@ -556,7 +584,7 @@ static int __maybe_unused dwc3_meson_g12a_runtime_resume(struct device *dev)
+>  {
+>  	struct dwc3_meson_g12a	*priv = dev_get_drvdata(dev);
 >  
-> @@ -286,14 +322,23 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
->  	if (IS_ERR(base))
->  		return PTR_ERR(base);
+> -	return clk_enable(priv->clk);
+> +	return clk_bulk_prepare_enable(priv->num_clks, priv->clks);
+>  }
 >  
-> +	if (of_device_is_compatible(np, "amlogic,g12a-usb2-phy"))
-> +		priv->phy_version = MESON_USB2_PHY_VERSION_10;
-> +	else if (of_device_is_compatible(np, "amlogic,a1-usb2-phy"))
-> +		priv->phy_version = MESON_USB2_PHY_VERSION_11;
-> +	else
-> +		return -EINVAL;
-
-Please use of_device_get_match_data() and a match data for each compatible instead.
-
-> +
->  	priv->regmap = devm_regmap_init_mmio(dev, base,
->  					     &phy_meson_g12a_usb2_regmap_conf);
->  	if (IS_ERR(priv->regmap))
->  		return PTR_ERR(priv->regmap);
+>  static int __maybe_unused dwc3_meson_g12a_suspend(struct device *dev)
+> @@ -620,6 +648,7 @@ static const struct dev_pm_ops dwc3_meson_g12a_dev_pm_ops = {
 >  
-> -	priv->clk = devm_clk_get(dev, "xtal");
-> -	if (IS_ERR(priv->clk))
-> -		return PTR_ERR(priv->clk);
-> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10) {
-> +		priv->clk = devm_clk_get(dev, "xtal");
-> +		if (IS_ERR(priv->clk))
-> +			return PTR_ERR(priv->clk);
-> +	}
->  
->  	priv->reset = devm_reset_control_get(dev, "phy");
->  	if (IS_ERR(priv->reset))
-> @@ -322,7 +367,8 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
->  
->  static const struct of_device_id phy_meson_g12a_usb2_of_match[] = {
->  	{ .compatible = "amlogic,g12a-usb2-phy", },
-> -	{ },
-> +	{ .compatible = "amlogic,a1-usb2-phy", },
-> +	{ /* Sentinel */ }
+>  static const struct of_device_id dwc3_meson_g12a_match[] = {
+>  	{ .compatible = "amlogic,meson-g12a-usb-ctrl" },
+> +	{ .compatible = "amlogic,meson-a1-usb-ctrl" },
+>  	{ /* Sentinel */ }
 >  };
->  MODULE_DEVICE_TABLE(of, phy_meson_g12a_usb2_of_match);
->  
+>  MODULE_DEVICE_TABLE(of, dwc3_meson_g12a_match);
 > 
+
 
 Thanks,
 Neil
