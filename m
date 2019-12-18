@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76A6C123B42
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 01:01:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A17F3123B45
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 01:02:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WXK+IPdhBIue9OZ/fuRzPRsYw2dH+Oli2Dstvolwn6I=; b=N2ppRmxUlS5jV7
-	s/TE6/sFnkIjVPLFNetQIcjh5vqbUgMvobbYEBa/xrFWZCXYxT7srCreI3ryTw1D5H9SSilZ/IacV
-	yiplxz1wkKSVSl9gtvPiVXglm/5Zmr6MeZ90e5zuiFGdqvRe9Yjj27Nsffc5AqZ5l836pWXNnEDrE
-	jFIiS6l3vEOy612wIgo5HjFkfgWNiyYMSLamI4iL8Dt9sMiZzCgp/FufIbQJttZHyw2+Qk8wC0vja
-	KtZxlI0eEKuwyzM5khFu83IRM2v29yAL1tLMJ1GIeMFYrH8XF6iS6B8XNQ/4qAHdMb2+aSp8caE9Y
-	G1zko8Ibnu1WfsGcxP3Q==;
+	List-Owner; bh=iNO088h3o/xdmESUgZiRTHSwHVXScmg4wDjuZfJNcAo=; b=UoUEDMlaHruGba
+	JINgVjrzpJKOml50nzLLw/VOeuSvqWjYvS3Hfk8ohndPn9uzxsXUXVLmMJDRWknC1MKcbGk24YzvQ
+	Ea0aHPV2dYA6+hLoxepokm/CZxFvrEUtlHLOVlVpnuSgAEuivbLXNCyODIaO5sGhnHt8g8Ir7gask
+	tqSmL6ApAvIf/lw6UATqOQ2Twyizzb0ZwCz79t+76gjVXxVcz9CiaS7GbrwhLLVheNmeL9oWNZifQ
+	2+bq57dRDWxLZKufIg7bZVYYVghvKQvohDbFvYvl8GXUdMwOxvIEayKwsj7lXR7ER2P02X4WuGmRh
+	dKDsV2h/owOC18Ob2bMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihMmk-0000TL-NN; Wed, 18 Dec 2019 00:01:50 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1ihMmz-0000iG-Q9; Wed, 18 Dec 2019 00:02:05 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihMmW-0000OH-80
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 00:01:37 +0000
-Received: by mail-ot1-f66.google.com with SMTP id a15so122258otf.1
+ id 1ihMmi-0000c5-Hk
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 00:01:49 +0000
+Received: by mail-oi1-f193.google.com with SMTP id j22so121062oij.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Dec 2019 16:01:36 -0800 (PST)
+ Tue, 17 Dec 2019 16:01:48 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9vg2WtMo4ZpT0ZxliZmTf/NuvDxUCffHyo9DOYsxFcQ=;
- b=uKoFqajTSDzgDZvVRtPyqBefcEYU6PpmFH3SZ83GKvT+ikt6sp7Dsptg7TwWxGed+5
- Nu6/PNX+tXoFOQgIt5R9aRU2uaZML7vgszSBl11TpK4rwSUCIojnqenxw/QCzoj0UWgY
- 7ChKVDpaRCK9G9lFLQDgV8LnJMKZmK2BJPJbeAZFCh15OpcYJzqrEcVnS5Kb7CXQHPxp
- hnP5gJb9jgJShc7fpTueN8zLC+J+ikK44GqUGBvCyKDBQmypEd/O7ZvIPF8n+eR4Ll7K
- IXBOJ/eo7gNiTVxpFhwXybDUavyUFoDQ/SS28e85RZ5H4W8vP5mdPAZwn0G375mk59E+
- 54PQ==
-X-Gm-Message-State: APjAAAWzI/KmpLcKrYLVSGOneQMzYBB3R9bXfMsm+VW9XkmdwnZ3y4rZ
- J49DNFh+yrqkmYEEXP60pw==
-X-Google-Smtp-Source: APXvYqz4KsCKLuH3i+DvdRRLBPycXfz72EfHac3NLerdd5D5i9FdA8OPgGvOfr8jCfsIYQiq+hO6Gw==
-X-Received: by 2002:a05:6830:109a:: with SMTP id
- y26mr123322oto.227.1576627295508; 
- Tue, 17 Dec 2019 16:01:35 -0800 (PST)
+ bh=JP0u5snGp+xc8yKUTmrKXjEUcHiiNAHT0AftIoZKcgY=;
+ b=OkukrdSdEjYuxPU7vbXHj69G3bKU4ROL8433/I6UNKNTAs18dO7VrNr/VoYSaF4N+l
+ 5qszmjRKzDrR73iYSWXiAXdCMYkH2xCiQDP06YmPbLLEi00R/p9hjrwkpraHyWgmLD6l
+ pVnCJ668V4Un5ArNAc3DAXFjQ41e0M2eqDluKC9HHLMAZC2wj94giK6MMXGA2uHnpQ1y
+ QNieTtCqcVgde8g0HgA3R9Bk6HSVxaivrt4Uv7qgpy1h9yO2T1t9ZdjMotjNsKTrxiNa
+ lFn9kD9mg9csq5yrj1OPk2mwhP82lHElt1iNrlOQfIkmNK0vx6vPs+8jsaw12TxgVONN
+ f5Cw==
+X-Gm-Message-State: APjAAAU7zG7zNpbxSNMMKiRZQPidfgdS1MO0Ew+tWtlro/eaJVkyABVi
+ efMGg5Bh7FMqKgEuqOMFgw==
+X-Google-Smtp-Source: APXvYqwuKoimb/fkC26Ulk74P68DdyeLLteEpSMqe8rqs1CwILHTcp7X1D54Jd94iGGt4cUdrtCBCg==
+X-Received: by 2002:aca:bb08:: with SMTP id l8mr3144897oif.47.1576627307437;
+ Tue, 17 Dec 2019 16:01:47 -0800 (PST)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id q7sm128986otn.9.2019.12.17.16.01.34
+ by smtp.gmail.com with ESMTPSA id m11sm169161oie.20.2019.12.17.16.01.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 17 Dec 2019 16:01:34 -0800 (PST)
-Date: Tue, 17 Dec 2019 18:01:34 -0600
+ Tue, 17 Dec 2019 16:01:46 -0800 (PST)
+Date: Tue, 17 Dec 2019 18:01:46 -0600
 From: Rob Herring <robh@kernel.org>
 To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Re: [PATCH 2/6] dt-bindings: dma: Convert stm32 MDMA bindings to
+Subject: Re: [PATCH 3/6] dt-bindings: dma: Convert stm32 DMAMUX bindings to
  json-schema
-Message-ID: <20191218000134.GA23692@bogus>
+Message-ID: <20191218000146.GA24153@bogus>
 References: <20191217092201.20022-1-benjamin.gaignard@st.com>
- <20191217092201.20022-3-benjamin.gaignard@st.com>
+ <20191217092201.20022-4-benjamin.gaignard@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191217092201.20022-3-benjamin.gaignard@st.com>
+In-Reply-To: <20191217092201.20022-4-benjamin.gaignard@st.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_160136_300588_036FBF48 
-X-CRM114-Status: GOOD (  10.12  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191217_160148_612604_482A6F86 
+X-CRM114-Status: GOOD (  10.20  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [209.85.167.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -78,9 +79,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,16 +102,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 17 Dec 2019 10:21:57 +0100, Benjamin Gaignard wrote:
-> Convert the STM32 MDMA binding to DT schema format using json-schema
+On Tue, 17 Dec 2019 10:21:58 +0100, Benjamin Gaignard wrote:
+> Convert the STM32 DMAMUX binding to DT schema format using json-schema
 > 
 > Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 > ---
->  .../devicetree/bindings/dma/st,stm32-mdma.yaml     | 105 +++++++++++++++++++++
->  .../devicetree/bindings/dma/stm32-mdma.txt         |  94 ------------------
->  2 files changed, 105 insertions(+), 94 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/dma/st,stm32-mdma.yaml
->  delete mode 100644 Documentation/devicetree/bindings/dma/stm32-mdma.txt
+>  .../devicetree/bindings/dma/st,stm32-dmamux.yaml   | 52 ++++++++++++++
+>  .../devicetree/bindings/dma/stm32-dmamux.txt       | 84 ----------------------
+>  2 files changed, 52 insertions(+), 84 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/dma/st,stm32-dmamux.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/dma/stm32-dmamux.txt
 > 
 
 Applied, thanks.
