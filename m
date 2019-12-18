@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3CF412457D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 12:18:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8F7E124588
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 12:18:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=tWOLhyLHrcEGlhsngt7iwoxd6TvimAlyu6InxlzoPVI=; b=lkr
-	4k+qT9rSM0w/U08Zj9HCHw/IImM8eN5ku9hDxyVGBfnjn5gSFA9MRAfnwHgciBvHhon4NX4U7voj2
-	FnGSG7hbRw717ve/0taHlGsfnQ2O8Q6WksIVyhA5dAjXbKfN9h7PDgC7OzCbALaTDll4sH8RY9sEA
-	lx+FLiqkkmT360bAe9ct124vcBSELr52eE+qEeTYmQLZQwBxn2oGqonkD5mYBf/C9TQuAlzI9povd
-	TWtnf4Dge1lM7trQU6ZJ6ZiUn8ObBC3MVLd0jtrEpAuR/3aa7eYyhA2s73ixX98K4FpVpxFzIrOhL
-	33galcPZjLh3gHflqY9hkX1FXe6uoGA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=MHSXxG1fdzD9qBpyc+sWPEIwYbOnnNoH8WpRK7D4aBA=; b=RVX1R4ZF4K1MFeak/0S4+T+o0H
+	3IL1RJZhkTj7iBb0XyAlF6V4NosEyCcTi6eeQzyqlxhIdPaYfsfmAGj+UVRNsZs0DRJgxdyKzX8+i
+	YA3OB0vOWeKLB28dQxZv72obBfoEk7QPKuIvU+esvtdnOcHpQAu8apsFwRZRYs+bQ/PmzI6DZ8m/2
+	YIhbzUAxNiKvRiJl+zeRT9MCKo5xL6KBotMrhdKY0LclfV+LDYwn3y/xp+RyrmQLLyyUNuYgdhprp
+	oXZJ5hliijNxenQFUBL5E1W7K9UhjlrvGFtPbyjHFP7zbGPJ4pJK/ONZoRGEs9gViesLjTjhhsR++
+	77p6p7Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihXL7-0002z3-Gm; Wed, 18 Dec 2019 11:18:01 +0000
+	id 1ihXLW-0003BT-2p; Wed, 18 Dec 2019 11:18:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihXKu-0002xr-QJ
+ id 1ihXKv-0002y3-BI
  for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 11:17:50 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A12D330E;
- Wed, 18 Dec 2019 03:17:47 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 826A731B;
+ Wed, 18 Dec 2019 03:17:48 -0800 (PST)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id F10D43F6CF;
- Wed, 18 Dec 2019 03:17:46 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D3A443F6CF;
+ Wed, 18 Dec 2019 03:17:47 -0800 (PST)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 00/11] firmware: arm_scmi: Add support for multiple device
+Subject: [PATCH v2 01/11] firmware: arm_scmi: Add support for multiple device
  per protocol
-Date: Wed, 18 Dec 2019 11:17:31 +0000
-Message-Id: <20191218111742.29731-1-sudeep.holla@arm.com>
+Date: Wed, 18 Dec 2019 11:17:32 +0000
+Message-Id: <20191218111742.29731-2-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191218111742.29731-1-sudeep.holla@arm.com>
+References: <20191218111742.29731-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_031748_896095_C5E44F7F 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191218_031749_470389_80CDCB02 
+X-CRM114-Status: GOOD (  14.57  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,55 +75,135 @@ Currently only one scmi device is created for each protocol enumerated.
 However, there is requirement to make use of some procotols by multiple
 kernel subsystems/frameworks. One such example is SCMI PERFORMANCE
 protocol which can be used by both cpufreq and devfreq drivers.
-Similarly, SENSOR protocol may be used by either hwmon or iio subsystems,
+Similarly, SENSOR protocol may be used by hwmon and iio subsystems,
 and POWER protocol may be used by genpd and regulator drivers.
 
-This series adds support for multiple device per protocol using scmi device
-name if one is available. It also updates existing drivers to add
-scmi device names to driver id tables.
+In order to achieve that, let us extend the scmi bus to match based
+not only protocol id but also the scmi device name if one is available.
 
-Regards,
-Sudeep
+Reviewed-by: Cristian Marussi <cristian.marussi@arm.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+---
+ drivers/firmware/arm_scmi/bus.c    | 20 +++++++++++++++++---
+ drivers/firmware/arm_scmi/driver.c |  6 +++---
+ include/linux/scmi_protocol.h      |  5 ++++-
+ 3 files changed, 24 insertions(+), 7 deletions(-)
 
-v1[1]->v2:
-	- Dropped all the changes that mixes up the device specific init
-	  with the protocol
-	- Used idr_replace to skip protocol initialisation as suggested
-	- Added collected reviewed/acked-by
-	- Reworded hwmon changes to reflect that hwmon/iio drivers will
-	  be mutually exclusive and hwmon needs to be removed if IIO
-	  support is added
-
-[1] https://lore.kernel.org/lkml/20191210145345.11616-1-sudeep.holla@arm.com/
-
-Sudeep Holla (11):
-  firmware: arm_scmi: Add support for multiple device per protocol
-  firmware: arm_scmi: Skip scmi mbox channel setup for addtional devices
-  firmware: arm_scmi: Add names to scmi devices created
-  firmware: arm_scmi: Add versions and identifier attributes using dev_groups
-  firmware: arm_scmi: Match scmi device by both name and protocol id
-  firmware: arm_scmi: Stash version in protocol init functions
-  firmware: arm_scmi: Skip protocol initialisation for additional devices
-  clk: scmi: Match scmi device by both name and protocol id
-  cpufreq: scmi: Match scmi device by both name and protocol id
-  hwmon: (scmi-hwmon) Match scmi device by both name and protocol id
-  reset: reset-scmi: Match scmi device by both name and protocol id
-
- drivers/clk/clk-scmi.c                     |  2 +-
- drivers/cpufreq/scmi-cpufreq.c             |  2 +-
- drivers/firmware/arm_scmi/bus.c            | 29 ++++++-
- drivers/firmware/arm_scmi/clock.c          |  2 +
- drivers/firmware/arm_scmi/driver.c         | 92 +++++++++++++++++++++-
- drivers/firmware/arm_scmi/perf.c           |  2 +
- drivers/firmware/arm_scmi/power.c          |  2 +
- drivers/firmware/arm_scmi/reset.c          |  2 +
- drivers/firmware/arm_scmi/scmi_pm_domain.c |  2 +-
- drivers/firmware/arm_scmi/sensors.c        |  2 +
- drivers/hwmon/scmi-hwmon.c                 |  2 +-
- drivers/reset/reset-scmi.c                 |  2 +-
- include/linux/scmi_protocol.h              |  5 +-
- 13 files changed, 134 insertions(+), 12 deletions(-)
-
+diff --git a/drivers/firmware/arm_scmi/bus.c b/drivers/firmware/arm_scmi/bus.c
+index 7a30952b463d..3714e6307b05 100644
+--- a/drivers/firmware/arm_scmi/bus.c
++++ b/drivers/firmware/arm_scmi/bus.c
+@@ -28,8 +28,12 @@ scmi_dev_match_id(struct scmi_device *scmi_dev, struct scmi_driver *scmi_drv)
+ 		return NULL;
+ 
+ 	for (; id->protocol_id; id++)
+-		if (id->protocol_id == scmi_dev->protocol_id)
+-			return id;
++		if (id->protocol_id == scmi_dev->protocol_id) {
++			if (!id->name)
++				return id;
++			else if (!strcmp(id->name, scmi_dev->name))
++				return id;
++		}
+ 
+ 	return NULL;
+ }
+@@ -125,7 +129,8 @@ static void scmi_device_release(struct device *dev)
+ }
+ 
+ struct scmi_device *
+-scmi_device_create(struct device_node *np, struct device *parent, int protocol)
++scmi_device_create(struct device_node *np, struct device *parent, int protocol,
++		   const char *name)
+ {
+ 	int id, retval;
+ 	struct scmi_device *scmi_dev;
+@@ -134,8 +139,15 @@ scmi_device_create(struct device_node *np, struct device *parent, int protocol)
+ 	if (!scmi_dev)
+ 		return NULL;
+ 
++	scmi_dev->name = kstrdup_const(name ?: "unknown", GFP_KERNEL);
++	if (!scmi_dev->name) {
++		kfree(scmi_dev);
++		return NULL;
++	}
++
+ 	id = ida_simple_get(&scmi_bus_id, 1, 0, GFP_KERNEL);
+ 	if (id < 0) {
++		kfree_const(scmi_dev->name);
+ 		kfree(scmi_dev);
+ 		return NULL;
+ 	}
+@@ -154,6 +166,7 @@ scmi_device_create(struct device_node *np, struct device *parent, int protocol)
+ 
+ 	return scmi_dev;
+ put_dev:
++	kfree_const(scmi_dev->name);
+ 	put_device(&scmi_dev->dev);
+ 	ida_simple_remove(&scmi_bus_id, id);
+ 	return NULL;
+@@ -161,6 +174,7 @@ scmi_device_create(struct device_node *np, struct device *parent, int protocol)
+ 
+ void scmi_device_destroy(struct scmi_device *scmi_dev)
+ {
++	kfree_const(scmi_dev->name);
+ 	scmi_handle_put(scmi_dev->handle);
+ 	ida_simple_remove(&scmi_bus_id, scmi_dev->id);
+ 	device_unregister(&scmi_dev->dev);
+diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+index 3eb0382491ce..dee7ce3bd815 100644
+--- a/drivers/firmware/arm_scmi/driver.c
++++ b/drivers/firmware/arm_scmi/driver.c
+@@ -803,11 +803,11 @@ scmi_mbox_txrx_setup(struct scmi_info *info, struct device *dev, int prot_id)
+ 
+ static inline void
+ scmi_create_protocol_device(struct device_node *np, struct scmi_info *info,
+-			    int prot_id)
++			    int prot_id, const char *name)
+ {
+ 	struct scmi_device *sdev;
+ 
+-	sdev = scmi_device_create(np, info->dev, prot_id);
++	sdev = scmi_device_create(np, info->dev, prot_id, name);
+ 	if (!sdev) {
+ 		dev_err(info->dev, "failed to create %d protocol device\n",
+ 			prot_id);
+@@ -892,7 +892,7 @@ static int scmi_probe(struct platform_device *pdev)
+ 			continue;
+ 		}
+ 
+-		scmi_create_protocol_device(child, info, prot_id);
++		scmi_create_protocol_device(child, info, prot_id, NULL);
+ 	}
+ 
+ 	return 0;
+diff --git a/include/linux/scmi_protocol.h b/include/linux/scmi_protocol.h
+index 881fea47c83d..5c873a59b387 100644
+--- a/include/linux/scmi_protocol.h
++++ b/include/linux/scmi_protocol.h
+@@ -257,6 +257,7 @@ enum scmi_std_protocol {
+ struct scmi_device {
+ 	u32 id;
+ 	u8 protocol_id;
++	const char *name;
+ 	struct device dev;
+ 	struct scmi_handle *handle;
+ };
+@@ -264,11 +265,13 @@ struct scmi_device {
+ #define to_scmi_dev(d) container_of(d, struct scmi_device, dev)
+ 
+ struct scmi_device *
+-scmi_device_create(struct device_node *np, struct device *parent, int protocol);
++scmi_device_create(struct device_node *np, struct device *parent, int protocol,
++		   const char *name);
+ void scmi_device_destroy(struct scmi_device *scmi_dev);
+ 
+ struct scmi_device_id {
+ 	u8 protocol_id;
++	const char *name;
+ };
+ 
+ struct scmi_driver {
 -- 
 2.17.1
 
