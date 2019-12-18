@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBAA31246DC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 13:29:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86E651246DD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 13:29:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zquBBk8zozMbVNN2N2c87igI9/+3hUKHMZXaWZfK4P4=; b=p/roAfXsnaSKdg
-	E6OmJkNdAbvu2Ag1G3bpICkVrDhLyHmRN33qdjVeUsnfKgBozN+q9gaQnEaPbTtdoaqLmAd/oVOX7
-	ePVVQ6qxgZEWSbv1sML89Pmzr5fCxJyvPvCsWGN3gIo5f/xKA6NLxQ4z7RwvFpdsLBW6KHjjHB8Cz
-	VKJXEBGpiTEhI/7FxypdqFRuYK0cyV8zEsbBvaOvJvSwBC+9DCHzacE14Eca2gKKHJJRwXU1TEVfM
-	JFULVmQISnk+ZCT3Nnx9KksEPbWc4tTysvizn92fTRVaMsOXjUZG2LN+yiU7wiVqiENSCzW/jHxkv
-	re6xJcoHDphnUkWUW40w==;
+	List-Owner; bh=tRw8tPGwHQUmCYeEIlLmmOn3jqtAt6P5JkMdY7JN04o=; b=ageibechzGWsXe
+	n33GoORO2XjieoTINw/klGGVB8nIC4+5b8zW8uqZVANEu0H1YOGVQcW4wR2wA4YD5MqfcZgf8Gyx5
+	09Io9IGVSUqYFgW5VCaFRqlKN9mG6jVB6sUQ6QovO95xEx5iZFDxM77YoFIy7VqI4MkT7MgwjG7J0
+	CWLAF1IlodTsOCkjzIhEQLR+MfLV6IVIuuC1FJ1v3x5J2Moji3zx7LnQI1gtMtdM464DC3yz6EUQw
+	GHaY43sIfjGlW6I81+9VCpsQCTWdTInhOVXtoSKth+CzAH9xpaSIQXCgMFaTDK6gS2mTXV52JhIMW
+	s88H3KsDnbwfSu6SWRmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihYSQ-0002ce-Di; Wed, 18 Dec 2019 12:29:38 +0000
+	id 1ihYSd-0002tD-Do; Wed, 18 Dec 2019 12:29:51 +0000
 Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihYRb-0001zb-QA
+ id 1ihYRc-00021l-4K
  for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 12:28:49 +0000
 Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
@@ -45,38 +45,37 @@ Authentication-Results: esa1.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: pYkUasD8xQa4jYl5/A4AC1B0RcMipD5T6P7Ws6rULLLzunqgBX0cHB401B/mZCeEu/1GTzoOAb
- fq8xeZVqOIlOURGaIbSapCpARCzMFiJJ8eCHWPs3iaVDyG/xwYijTcJe+F7GOUsRte/+ZobAiP
- G5kl9/3Yc7+WPBRjESW3+eX+CYHhiRtANiyUqxBSTCQdoFLKvxRYWuptZOenLh/aD63JV9l05k
- 1DTopQdcYIMPyfb2R2mLL9J9oh5niSB8C/0KSHIelJywW3najGjEsZswg3kPGwc+yD/ioLqpI6
- z/g=
-X-IronPort-AV: E=Sophos;i="5.69,329,1571727600"; d="scan'208";a="62156186"
+IronPort-SDR: 3T3KoRmV9Py30sZPTGEDgjAKtwTDSgm7SAz7UQP8GZQSxk3GxrpdcrK/C+j1je6uuhMUdz6OKG
+ 1ICPttIlHldLWudaJYckOz2hzh0NnH150DzQ5KQbUwF1chd97jIO5y5aCZPaVjqMB8Apf7uxoS
+ 32YDP/FHy9keakW+bZsYb9YGLhQnZsWb6gcTtSj0UkQxlhVeXHuVzOjCRuQdKQ1OcUo3XwdOWc
+ 2KbrzomS+hhbeMSQxSfaWmVsnGHHq6pZKaFWckjM0I5r2w6FkT6nIvt2cDIujswuIJfSH/qw3J
+ mwA=
+X-IronPort-AV: E=Sophos;i="5.69,329,1571727600"; d="scan'208";a="62156189"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 18 Dec 2019 05:28:44 -0700
+ 18 Dec 2019 05:28:47 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 18 Dec 2019 05:28:42 -0700
+ 15.1.1713.5; Wed, 18 Dec 2019 05:28:46 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Wed, 18 Dec 2019 05:28:41 -0700
+ 15.1.1713.5 via Frontend Transport; Wed, 18 Dec 2019 05:28:44 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <boris.brezillon@bootlin.com>, <airlied@linux.ie>,
  <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
  <lee.jones@linaro.org>, <sam@ravnborg.org>
-Subject: [PATCH v3 3/6] mfd: atmel-hlcdc: add struct device member to struct
- atmel_hlcdc_regmap
-Date: Wed, 18 Dec 2019 14:28:26 +0200
-Message-ID: <1576672109-22707-4-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH v3 4/6] mfd: atmel-hlcdc: return in case of error
+Date: Wed, 18 Dec 2019 14:28:27 +0200
+Message-ID: <1576672109-22707-5-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1576672109-22707-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1576672109-22707-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_042847_872442_A6025510 
-X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-CacheID: sfid-20191218_042848_191858_5BEDE13D 
+X-CRM114-Status: UNSURE (   9.45  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -106,36 +105,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add struct device member to struct atmel_hlcdc_regmap to be
-able to use dev_*() specific logging functions.
+For HLCDC timing engine configurations bit ATMEL_HLCDC_SIP of
+ATMEL_HLCDC_SR needs to be polled before applying new config. In case of
+timeout there is no indicator about this, so, return in case of timeout
+and also print a message about this.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 Acked-for-MFD-by: Lee Jones <lee.jones@linaro.org>
 ---
- drivers/mfd/atmel-hlcdc.c | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/mfd/atmel-hlcdc.c | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/mfd/atmel-hlcdc.c b/drivers/mfd/atmel-hlcdc.c
-index 64013c57a920..92bfcaa62ace 100644
+index 92bfcaa62ace..a1e46c87b956 100644
 --- a/drivers/mfd/atmel-hlcdc.c
 +++ b/drivers/mfd/atmel-hlcdc.c
-@@ -19,6 +19,7 @@
+@@ -40,10 +40,17 @@ static int regmap_atmel_hlcdc_reg_write(void *context, unsigned int reg,
  
- struct atmel_hlcdc_regmap {
- 	void __iomem *regs;
-+	struct device *dev;
- };
- 
- static const struct mfd_cell atmel_hlcdc_cells[] = {
-@@ -90,6 +91,8 @@ static int atmel_hlcdc_probe(struct platform_device *pdev)
- 	if (IS_ERR(hregmap->regs))
- 		return PTR_ERR(hregmap->regs);
- 
-+	hregmap->dev = &pdev->dev;
+ 	if (reg <= ATMEL_HLCDC_DIS) {
+ 		u32 status;
+-
+-		readl_poll_timeout_atomic(hregmap->regs + ATMEL_HLCDC_SR,
+-					  status, !(status & ATMEL_HLCDC_SIP),
+-					  1, 100);
++		int ret;
 +
- 	hlcdc->irq = platform_get_irq(pdev, 0);
- 	if (hlcdc->irq < 0)
- 		return hlcdc->irq;
++		ret = readl_poll_timeout_atomic(hregmap->regs + ATMEL_HLCDC_SR,
++						status,
++						!(status & ATMEL_HLCDC_SIP),
++						1, 100);
++		if (ret) {
++			dev_err(hregmap->dev,
++				"Timeout! Clock domain synchronization is in progress!\n");
++			return ret;
++		}
+ 	}
+ 
+ 	writel(val, hregmap->regs + reg);
 -- 
 2.7.4
 
