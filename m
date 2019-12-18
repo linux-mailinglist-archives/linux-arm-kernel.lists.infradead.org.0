@@ -2,58 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8338712446A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 11:23:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C94F12447D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 11:25:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bzc/Ct3PcXXIuGFYn3fEf5rEVqYEdaF2YVc+ky4uR2I=; b=ZNCqtLoXo2U4rN
-	DItsb05oPQtwn/l3RoQ3afgL+gv+NvcjsaGweBBHLSDKqybG4ZU9Tk6+BzhXcxEf/Ms+WTwnd/+0V
-	n3VaRGLS+Mm/u4AULXiulTYo8vIRpzsgbQhIhsZjPQ/mrqMWTKU4WZWaWy1qdWROon80ERlZVInb6
-	4CHwlMCXG48sMXkjg2I7GZrZuGEmh4JoHXAukBNLl8mB2Ol/HC1jiluG399T2nXOgnoQP2rtzeAFG
-	/CGbex59kvQD3iL2Az1HM2fCNEkXMXAs9jH76PwNnZz4x+1P5Uw3XbWfs+9Up1W4uF4tWHp6QS/T8
-	Ty4VR16TFpEZ/jrKGQSg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=02M9aLcuFYj7Muf2AN7B9+0z5O+X67QGpAITBzLLVAM=; b=Uek
+	sC9a5Q3xpxDdaxxaZTy1gBRpDyTTD53wUEWT661WsBzNkU9Jus1hsw3J10RFJJkGSTffEHDYCdpqG
+	iSgSI1oV8wuBRHNvHcT4I0KUukayU4kzdFhJPJVe40x+RaOkz3WoMrjizddVqSO8OCISB6IfJqy/C
+	cE2rjpLYXpB2iPQuxgmDMlB8N296PGVod7+MiwD8fUTADKOQFrtvj+Eo6IVbXHr/Fomv2Q8mdEAo3
+	dtUYFXLvDbN1sier8WDod9s39eXSLPA+rcnaRRqsfcEt4cLwHSOO/ZEIdSmLz5aCZqrktdv1GRpGK
+	LZQO39C4WOz1DlzER5UzEd/fBhYEt8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihWUQ-0001y0-6y; Wed, 18 Dec 2019 10:23:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihWT4-0000xl-TF
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 10:22:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A5FC30E;
- Wed, 18 Dec 2019 02:22:07 -0800 (PST)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F01C93F6CF;
- Wed, 18 Dec 2019 02:22:05 -0800 (PST)
-Date: Wed, 18 Dec 2019 10:22:03 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: Jon Masters <jcm@jonmasters.org>
-Subject: Re: [PATCH] pcie: Add quirk for the Arm Neoverse N1SDP platform
-Message-ID: <20191218102203.4078b011@donnerap.cambridge.arm.com>
-In-Reply-To: <dacfd8bf-0f68-f2af-9238-4b0fadfbdfe3@jonmasters.org>
-References: <20191209160638.141431-1-andre.przywara@arm.com>
- <20191209162645.GA7489@willie-the-truck>
- <dacfd8bf-0f68-f2af-9238-4b0fadfbdfe3@jonmasters.org>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
-MIME-Version: 1.0
+	id 1ihWWK-0003rR-VV; Wed, 18 Dec 2019 10:25:32 +0000
+Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihWVf-0002Q4-Uu
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 10:24:53 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 49A79C0D6B;
+ Wed, 18 Dec 2019 10:24:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1576664691; bh=veMgZV+L88MP2+NDYHlOUNPQ+DcuCryOxZrBeX5GTZQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=cCeosH2hAAuqc21s5yQbK6PoC7n2tHYD6gR2iv6ld7RpEyxKC9oKW9/o+y0qCswn1
+ pml1I0Qaf278BcCs0G9VwujMiJ/tlEeKlixJuCG+X+9ksRIR0lQxLgbMLyWOkHh9CS
+ VkyESB+65Cg/+zo636HV6ENBSvKpxn+sQdVHNDuBta/d7uth19BHRnimJgIUJKfnVM
+ LCGuBXsUgbmBOM+OyRU8YdPPKAzwWP70atrsBivDFsyDGm5Mq6nmF0/ArrODaYTSyt
+ Llp1Q4cXsfY6ELfsWnv4ba9HiE9smHaMDNlW2FxLURDcgReo7WohUk2L0L3L/SHnsd
+ fna3QKvjIeLJQ==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 183D8A0066;
+ Wed, 18 Dec 2019 10:24:49 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net-next v3 0/3] net: stmmac: Improvements for -next
+Date: Wed, 18 Dec 2019 11:24:42 +0100
+Message-Id: <cover.1576664538.git.Jose.Abreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_022211_013678_C2DE4498 
-X-CRM114-Status: GOOD (  18.42  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191218_022452_029965_19309435 
+X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,55 +77,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- linux-acpi@vger.kernel.org, linux-pci@vger.kernel.org,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Len Brown <lenb@kernel.org>
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Jakub Kicinski <jakub.kicinski@netronome.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, linux-stm32@st-md-mailman.stormreply.com,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 17 Dec 2019 21:21:17 -0500
-Jon Masters <jcm@jonmasters.org> wrote:
+Misc improvements for stmmac.
 
-Hi Jon,
+1) Adds more information regarding HW Caps in the DebugFS file.
 
-> On 12/9/19 11:26 AM, Will Deacon wrote:
-> > On Mon, Dec 09, 2019 at 04:06:38PM +0000, Andre Przywara wrote:  
-> >> From: Deepak Pandey <Deepak.Pandey@arm.com>
-> >>
-> >> The Arm N1SDP SoC suffers from some PCIe integration issues, most
-> >> prominently config space accesses to not existing BDFs being answered
-> >> with a bus abort, resulting in an SError.  
-> > 
-> > "Do as I say, not as I do"?  
-> 
-> In my former role I asked nicely that these patches not be posted 
-> upstream, but I see that they ended up being posted anyway. Hacking up 
-> upstream Linux to cover for the fact that a (reference) platform is 
-> non-standard is not only not good form but it actively harms the community.
+2) Allows interrupts to be independently enabled or disabled so that we don't
+have to schedule both TX and RX NAPIs.
 
-Please keep in mind that this platform was designed to be standards compliant, it is just due to an integration problem that this is not the case with this silicon. So we end up with the usual hardware errata, which the kernel can fix up. I agree it's not nice, and I also want it fixed in hardware, but I guess that's the usual software guy's pipe dream.
+3) Stops using a magic number in coalesce timer re-arm.
 
-> You'll have people consume this platform and not realize that it's 
-> broken, IP won't get fixed, and generally it'll be a mess.
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Ripard <mripard@kernel.org>
+Cc: Chen-Yu Tsai <wens@csie.org>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-kernel@vger.kernel.org
+---
 
-I don't see how yet another ACPI quirk in the ACPI quirk framework(!) will make a mess.
-Actually the rest of the system is standards compliant (it even uses ACPI from the very beginning ;-), so it's just this problem that prevents us from using the system in the proper, standards compliant way. Effectively we are back to the embedded times with compiling your own kernel and somehow getting a root filesystem on the hard drive.
-If there would be mainline kernel support, all of this would go away and would could use standard distro installers (given they backport the patch).
+Jose Abreu (3):
+  net: stmmac: Print more information in DebugFS DMA Capabilities file
+  net: stmmac: Let TX and RX interrupts be independently
+    enabled/disabled
+  net: stmmac: Always use TX coalesce timer value when rescheduling
 
-> Yes, it's 
-> unfortunate, but so was taping out that platform without working PCI. We 
-> all know what should have happened, and what the right move ahead is.
+ drivers/net/ethernet/stmicro/stmmac/dwmac-sun8i.c  | 24 +++++-
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.h   | 11 ++-
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_lib.c   | 47 ++++++++++--
+ drivers/net/ethernet/stmicro/stmmac/dwmac_dma.h    |  6 +-
+ drivers/net/ethernet/stmicro/stmmac/dwmac_lib.c    | 22 +++++-
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     |  2 +
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c | 24 +++++-
+ drivers/net/ethernet/stmicro/stmmac/hwif.h         |  6 +-
+ drivers/net/ethernet/stmicro/stmmac/stmmac.h       |  1 +
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  | 88 ++++++++++++++++------
+ 10 files changed, 180 insertions(+), 51 deletions(-)
 
-That may come as a surprise to some, but Arm Ltd. is actually not really in the business of *producing silicon*, so a respin of the chip was and is not an option. I too wish it would be different, but that's how it is.
+-- 
+2.7.4
 
-Cheers,
-Andre.
 
 _______________________________________________
 linux-arm-kernel mailing list
