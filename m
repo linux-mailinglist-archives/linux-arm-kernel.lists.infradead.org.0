@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FCAA125633
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:04:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3167125632
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:04:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+npQZOlll/Wu6AkYySle7fbwl9rhGgHcq58C65aqXAk=; b=FSCbfFPJxGWjo3
-	16mv+HtZwHcGuZCgwyz6FeXIcqSqneaetuoAIPBMj5iywilBU/k5KVwxrEpuFQSeXGLw4r5/DEPKC
-	0RwzRrXx69+6/2WivR/9H0rrrvfwd4y3osMySflyqZHywNuOXUV6bkDCjYwDp2BDJjPlbPLrNi6hG
-	B/qtiP6OUByzJy/nuVdGAb/1lOlHSySYFoAVFraNvMTb00OAYMc1sMTCn64+JziXwx18TDS5QRvw7
-	ICwQR0DbSGAtkXQPa3+ci3MM/jIfroYzR0l0RLRxQs0GJ+fS400p8hjgf+2He7rhou2Gt/ftmacli
-	E54IIPDJVaAggkbnuTAQ==;
+	List-Owner; bh=+yYEJBkvte4eO+XZBCDgp6kwbw99LKMBys6fPHXK530=; b=MJCIViW3bku+8d
+	a51oHk5diYMJoaBbWsbaeVVcq7qsWXF1P4sV6ATaHh5Fah+AaITnxmt3Q36bhBGqG/5xzx4K+wGUV
+	VAP9taQkZ7fZJNEbYmpJ5Ua+eRaGUGy4B3ou0bgopIjnPJWY5nC5eATDoH6DoUmRdOw4XtkJWNiQw
+	vjjF9zpmok+A87wCUjwpUJSHDdC9rYm0R5G0MeuWZlr9hIbzfxj8tkbgQtiqbvyJBCNt/tWwXAtbA
+	6D/lT4DWFdj003m4jGwuh3yx7ycxjRAe4mJTOrvSbNbJ6riRWUApJ1Ba9iiDYah5fGXgwgrNzicGI
+	9TrW+QiicBUclNZPnNbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihhQs-0005eh-RD; Wed, 18 Dec 2019 22:04:38 +0000
+	id 1ihhQh-0005QW-B6; Wed, 18 Dec 2019 22:04:27 +0000
 Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihhIQ-00059X-13
+ id 1ihhIR-0004ya-HO
  for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:58 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
@@ -29,7 +29,7 @@ Received: from fmsmga001.fm.intel.com ([10.253.24.23])
  by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  18 Dec 2019 13:55:44 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108120"
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108127"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
  by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:44 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
@@ -37,17 +37,17 @@ To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH v2 26/45] KVM: s390: Invoke kvm_vcpu_init() before allocating
- sie_page
-Date: Wed, 18 Dec 2019 13:55:11 -0800
-Message-Id: <20191218215530.2280-27-sean.j.christopherson@intel.com>
+Subject: [PATCH v2 27/45] KVM: MIPS: Invoke kvm_vcpu_uninit() immediately
+ prior to freeing vcpu
+Date: Wed, 18 Dec 2019 13:55:12 -0800
+Message-Id: <20191218215530.2280-28-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_135554_176418_B8E7673F 
-X-CRM114-Status: GOOD (  12.65  )
+X-CRM114-CacheID: sfid-20191218_135555_647776_9934119E 
+X-CRM114-Status: GOOD (  11.49  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -86,71 +86,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that s390's implementation of kvm_arch_vcpu_init() is empty, move
-the call to kvm_vcpu_init() above the allocation of the sie_page.  This
-paves the way for moving vcpu allocation and initialization into common
-KVM code without any associated functional change.
+Move the call to kvm_vcpu_uninit() in kvm_arch_vcpu_destroy() down a few
+lines so that it is invoked immediately prior to freeing the vCPU.  This
+paves the way for moving the uninit and free sequence to common KVM code
+without an associated functional change.
 
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/s390/kvm/kvm-s390.c | 18 ++++++++++--------
- 1 file changed, 10 insertions(+), 8 deletions(-)
+ arch/mips/kvm/mips.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/s390/kvm/kvm-s390.c b/arch/s390/kvm/kvm-s390.c
-index 0049b621e56a..1f8ba074cbd6 100644
---- a/arch/s390/kvm/kvm-s390.c
-+++ b/arch/s390/kvm/kvm-s390.c
-@@ -3027,10 +3027,16 @@ struct kvm_vcpu *kvm_arch_vcpu_create(struct kvm *kvm,
- 	if (!vcpu)
- 		goto out;
+diff --git a/arch/mips/kvm/mips.c b/arch/mips/kvm/mips.c
+index 2e14455aec4e..73360e021259 100644
+--- a/arch/mips/kvm/mips.c
++++ b/arch/mips/kvm/mips.c
+@@ -416,13 +416,13 @@ void kvm_arch_vcpu_destroy(struct kvm_vcpu *vcpu)
+ {
+ 	hrtimer_cancel(&vcpu->arch.comparecount_timer);
  
-+	rc = kvm_vcpu_init(vcpu, kvm, id);
-+	if (rc)
-+		goto out_free_cpu;
-+
-+	rc = -ENOMEM;
-+
- 	BUILD_BUG_ON(sizeof(struct sie_page) != 4096);
- 	sie_page = (struct sie_page *) get_zeroed_page(GFP_KERNEL);
- 	if (!sie_page)
--		goto out_free_cpu;
-+		goto out_uninit_vcpu;
- 
- 	vcpu->arch.sie_block = &sie_page->sie_block;
- 	vcpu->arch.sie_block->itdba = (unsigned long) &sie_page->itdb;
-@@ -3046,10 +3052,6 @@ struct kvm_vcpu *kvm_arch_vcpu_create(struct kvm *kvm,
- 		vcpu->arch.sie_block->gd |= GISA_FORMAT1;
- 	seqcount_init(&vcpu->arch.cputm_seqcount);
- 
--	rc = kvm_vcpu_init(vcpu, kvm, id);
--	if (rc)
--		goto out_free_sie_block;
--
- 	vcpu->arch.pfault_token = KVM_S390_PFAULT_TOKEN_INVALID;
- 	kvm_clear_async_pf_completion_queue(vcpu);
- 	vcpu->run->kvm_valid_regs = KVM_SYNC_PREFIX |
-@@ -3078,7 +3080,7 @@ struct kvm_vcpu *kvm_arch_vcpu_create(struct kvm *kvm,
- 	if (kvm_is_ucontrol(vcpu->kvm)) {
- 		rc = __kvm_ucontrol_vcpu_init(vcpu);
- 		if (rc)
--			goto out_uninit_vcpu;
-+			goto out_free_sie_block;
- 	}
- 
- 	VM_EVENT(kvm, 3, "create cpu %d at 0x%pK, sie block at 0x%pK", id, vcpu,
-@@ -3086,10 +3088,10 @@ struct kvm_vcpu *kvm_arch_vcpu_create(struct kvm *kvm,
- 	trace_kvm_s390_create_vcpu(id, vcpu, vcpu->arch.sie_block);
- 
- 	return vcpu;
--out_uninit_vcpu:
 -	kvm_vcpu_uninit(vcpu);
- out_free_sie_block:
- 	free_page((unsigned long)(vcpu->arch.sie_block));
-+out_uninit_vcpu:
+-
+ 	kvm_mips_dump_stats(vcpu);
+ 
+ 	kvm_mmu_free_memory_caches(vcpu);
+ 	kfree(vcpu->arch.guest_ebase);
+ 	kfree(vcpu->arch.kseg0_commpage);
++
 +	kvm_vcpu_uninit(vcpu);
- out_free_cpu:
  	kmem_cache_free(kvm_vcpu_cache, vcpu);
- out:
+ }
+ 
 -- 
 2.24.1
 
