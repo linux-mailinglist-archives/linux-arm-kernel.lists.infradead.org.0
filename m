@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D29912458D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 12:18:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B6AF124590
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 12:19:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZqrAbUAzsMRbHQ4et3ezeTFAf+80Zztyx5jnh9bqJP8=; b=N4XeGtOjL1OEbUadjk2EStMvwE
-	fQrw8lVFIXxJrsJtbiq1Tqw9T61q9LyiustOUkUszfT9D6OiewT7NIjOuJC+BcMElHfWSqoBsA3QB
-	YyuD1jA8IhIjKloPGL0y3kXTtEteyyc2onq9yfFlrtxNe5sctA5130ehF7yTz2GISaw+UlBt/JNHs
-	WKO99Ypn4aQ8xAZXfHygotPpkbeZ3q2Tg0ljx3mf7dIKf9K/thvDHtdt0NJ/rkiN/xRCphNWids7F
-	MMdUU7VRZ+Zu7OexZ372JFirweDGoH6lp3+yEuyakhOMpYFUZabsN3bz25udWMtJDs9plCjdulEnd
-	c8KgzKdA==;
+	bh=wjrZKytKfhx+pJeBVfgxO5xsiC2HmsiUmDnfdceE7OE=; b=Y7PfkOivVoDrxj84CTOMy5mJBH
+	OpvNQUsN4sFaSYsXY2lHv6zsABIFiXW72T9Prj8Ut1u/2MFua28J0hht5yehlDHJwuNvLDeJBcKsK
+	mfGIh/Q/rwilLmd1uCZS4D7vPiHgJQJNVggq+G+qNBywi4343OKPf4oHhqAJD5k/Xmt4wu5LP9WYO
+	uNTWGtkIaQ4U0Op1nqQsGCUpidvjdLgBhZ8/pl91bZGRY7PZxUdEH+bUf8uvS9+F0Mw6eT8qj1Gr4
+	SRYS9E2jWjcjUZpgs+XtTNAeUPkAw+Lx2G27BPHEAYouCwnP10gPGlaEnJbrarSy7guRj1mB+1wSg
+	jwZmVaLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihXLq-0003U1-Fj; Wed, 18 Dec 2019 11:18:46 +0000
+	id 1ihXM4-0003jj-7t; Wed, 18 Dec 2019 11:19:00 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihXKv-0002yH-LX
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 11:17:51 +0000
+ id 1ihXKw-0002ya-SB
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 11:17:52 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6E4CB113E;
- Wed, 18 Dec 2019 03:17:49 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 50A6E11B3;
+ Wed, 18 Dec 2019 03:17:50 -0800 (PST)
 Received: from usa.arm.com (e107155-lin.cambridge.arm.com [10.1.196.42])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B606B3F6CF;
- Wed, 18 Dec 2019 03:17:48 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A1DF33F6CF;
+ Wed, 18 Dec 2019 03:17:49 -0800 (PST)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 02/11] firmware: arm_scmi: Skip scmi mbox channel setup for
- addtional devices
-Date: Wed, 18 Dec 2019 11:17:33 +0000
-Message-Id: <20191218111742.29731-3-sudeep.holla@arm.com>
+Subject: [PATCH v2 03/11] firmware: arm_scmi: Add names to scmi devices created
+Date: Wed, 18 Dec 2019 11:17:34 +0000
+Message-Id: <20191218111742.29731-4-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191218111742.29731-1-sudeep.holla@arm.com>
 References: <20191218111742.29731-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_031749_742805_529A51D1 
-X-CRM114-Status: UNSURE (   9.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191218_031750_949946_687DA8BD 
+X-CRM114-Status: GOOD (  11.54  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,33 +70,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that the scmi bus supports adding multiple devices per protocol,
-and since scmi_create_protocol_device calls scmi_mbox_chan_setup,
-we must avoid allocating and initialising the mbox channel if it is
-already initialised.
+Now that scmi bus provides option to create named scmi device, let us
+create the default devices with names. This will help to add names for
+matching to respective drivers and eventually to add multiple devices
+and drivers per protocol.
 
 Reviewed-by: Cristian Marussi <cristian.marussi@arm.com>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/arm_scmi/driver.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/firmware/arm_scmi/driver.c | 36 +++++++++++++++++++++++++++++-
+ 1 file changed, 35 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index dee7ce3bd815..2952fcd8dd8a 100644
+index 2952fcd8dd8a..0bbdc7c9eb0f 100644
 --- a/drivers/firmware/arm_scmi/driver.c
 +++ b/drivers/firmware/arm_scmi/driver.c
-@@ -735,6 +735,11 @@ static int scmi_mbox_chan_setup(struct scmi_info *info, struct device *dev,
- 	idx = tx ? 0 : 1;
- 	idr = tx ? &info->tx_idr : &info->rx_idr;
+@@ -829,6 +829,40 @@ scmi_create_protocol_device(struct device_node *np, struct scmi_info *info,
+ 	scmi_set_handle(sdev);
+ }
  
-+	/* check if already allocated, used for multiple device per protocol */
-+	cinfo = idr_find(idr, prot_id);
-+	if (cinfo)
-+		return 0;
++#define MAX_SCMI_DEV_PER_PROTOCOL	2
++struct scmi_prot_devnames {
++	int protocol_id;
++	char *names[MAX_SCMI_DEV_PER_PROTOCOL];
++};
 +
- 	if (scmi_mailbox_check(np, idx)) {
- 		cinfo = idr_find(idr, SCMI_PROTOCOL_BASE);
- 		if (unlikely(!cinfo)) /* Possible only if platform has no Rx */
++static struct scmi_prot_devnames devnames[] = {
++	{ SCMI_PROTOCOL_POWER,  { "genpd" },},
++	{ SCMI_PROTOCOL_PERF,   { "cpufreq" },},
++	{ SCMI_PROTOCOL_CLOCK,  { "clocks" },},
++	{ SCMI_PROTOCOL_SENSOR, { "hwmon" },},
++	{ SCMI_PROTOCOL_RESET,  { "reset" },},
++};
++
++static inline void
++scmi_create_protocol_devices(struct device_node *np, struct scmi_info *info,
++			     int prot_id)
++{
++	int loop, cnt;
++
++	for (loop = 0; loop < ARRAY_SIZE(devnames); loop++) {
++		if (devnames[loop].protocol_id != prot_id)
++			continue;
++
++		for (cnt = 0; cnt < ARRAY_SIZE(devnames[loop].names); cnt++) {
++			const char *name = devnames[loop].names[cnt];
++
++			if (name)
++				scmi_create_protocol_device(np, info, prot_id,
++							    name);
++		}
++	}
++}
++
+ static int scmi_probe(struct platform_device *pdev)
+ {
+ 	int ret;
+@@ -897,7 +931,7 @@ static int scmi_probe(struct platform_device *pdev)
+ 			continue;
+ 		}
+ 
+-		scmi_create_protocol_device(child, info, prot_id, NULL);
++		scmi_create_protocol_devices(child, info, prot_id);
+ 	}
+ 
+ 	return 0;
 -- 
 2.17.1
 
