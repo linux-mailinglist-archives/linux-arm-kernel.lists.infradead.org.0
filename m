@@ -2,79 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC08612411F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 09:10:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48D671240D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 09:00:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tr5Vj/fyxa3otgI9V2XIWqFkZ+1duiXq++lpTcINLP0=; b=K3Z6E8Y3Vs967D
-	SUGlzsjj1VblvbIFGVJOSMtq3Trr25g470upbSXqDkS1IEPlijrYh0aL72GKjw0wgkP56G3sW6C8A
-	7kYtSWpMWdoAPDlS5wn3hPAkidtoYXlA//gxkmGIMRV033Zv6UNW6fJ2L2kFSAgDx0RGZkzXdhAqo
-	4VWSi7PvWjxL8MG/hFiKpxRK80//P1mbcTZ1a63wAiCErLSIzrOsq6kiZsCQoO6xYl0iAKMwcS9+M
-	gEGNMr8vLVUxqFykjSrfb+0z0qIIzgDEf8KGWy1GXr5tvuU9rBy4UqmbDqKBVfiteiDGQqCUFPgDZ
-	ElDgpLnYoedscQ3j92qA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wen4IA2Y3eQnS9cVCo0sJ8vK2t3MaaHoZV23Zz8tjiU=; b=J56F8BfRBZQIKyE1bU+Lnc1t4
+	Yi7p24RQr5Jynz5PV52B2pX+3iRUMfybGA+hSTGjhjV3Uqf/40QckcSLr4C8zgV0O7rlsUbhqFFa8
+	Pg/Q02LhNo0b2OrIwR2Q1q4if5AB9/8HD3bvu/R0zysIl8t8ar5yeIHXfU9IcYxRSj4nQnBpVxuBB
+	ccD9lmJIfOiycKziYYeG3dQhzNCh2/RqbGHzZyAStagIV82daZVnIprBRjkiqQMvG9kApBGxxezTb
+	Q0QXkMWiLlNmdLaPfLzTCTZ/et4GCXFBvJ+TlvfHXqHIj/DWvwbwwwYNZygOIsHz9VI1o/nO7J9Ms
+	6fwymal0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihUPd-0001JA-22; Wed, 18 Dec 2019 08:10:29 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ihUFs-0004G7-7V; Wed, 18 Dec 2019 08:00:24 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihUPT-0001II-Ee; Wed, 18 Dec 2019 08:10:20 +0000
-X-UUID: d7a6b468d6324b64b9e24c654c26d2a3-20191218
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=aNiLrGJZwK0lvEyneiSTQQEeAe5Qvk/0jbjSDQ3VN2c=; 
- b=RPUI1b+aKYkqYxlxBVt65fXuDdhXfdF/maf7zJ6L0bciqcu7iis8vuM2Ih7e+vA7WboexmR9qy0/ysYZMLx63ZoYn3PISoparTcxqqGjXgGAqBOPW/j4rpYPRayXKuLjBK8w59SdXXg3UmnK3seFdvqYH13lvU+XNPvF31FgJ80=;
-X-UUID: d7a6b468d6324b64b9e24c654c26d2a3-20191218
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dennis-yc.hsieh@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1496358697; Wed, 18 Dec 2019 00:10:09 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 18 Dec 2019 00:00:20 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 18 Dec 2019 15:59:48 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 18 Dec 2019 15:59:38 +0800
-Message-ID: <1576656006.5933.3.camel@mtkswgap22>
-Subject: Re: [PATCH v2 06/14] soc: mediatek: cmdq: return send msg error code
-From: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Wed, 18 Dec 2019 16:00:06 +0800
-In-Reply-To: <1575604966.6151.1.camel@mtksdaap41>
-References: <1574819937-6246-1-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1574819937-6246-8-git-send-email-dennis-yc.hsieh@mediatek.com>
- <1575604966.6151.1.camel@mtksdaap41>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1ihUFb-0004BZ-0R; Wed, 18 Dec 2019 08:00:11 +0000
+Received: from [10.28.39.99] (10.28.39.99) by mail-sz.amlogic.com (10.28.11.5)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Wed, 18 Dec
+ 2019 16:00:21 +0800
+Subject: Re: [PATCH v4 1/6] dt-bindings: clock: meson: add A1 PLL clock
+ controller bindings
+To: Maxime Ripard <maxime@cerno.tech>
+References: <20191206074052.15557-1-jian.hu@amlogic.com>
+ <20191206074052.15557-2-jian.hu@amlogic.com>
+ <20191213103856.qo7vlnuk4ajz3vq5@gilmour.lan>
+From: Jian Hu <jian.hu@amlogic.com>
+Message-ID: <ba16b846-1d5f-3d1e-e8e2-420687d11e8a@amlogic.com>
+Date: Wed, 18 Dec 2019 16:00:20 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20191213103856.qo7vlnuk4ajz3vq5@gilmour.lan>
+Content-Language: en-US
+X-Originating-IP: [10.28.39.99]
+X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
+ (10.28.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_001019_504398_FC012049 
-X-CRM114-Status: GOOD (  14.66  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191218_000007_534757_18CD22DE 
+X-CRM114-Status: GOOD (  18.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,60 +64,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Houlong Wei <houlong.wei@mediatek.com>, CK Hu <ck.hu@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, devicetree@vger.kernel.org,
+ Qiufang Dai <qiufang.dai@amlogic.com>, Chandle Zou <chandle.zou@amlogic.com>,
+ linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bibby,
+Hi Maxime
 
-On Fri, 2019-12-06 at 12:02 +0800, Bibby Hsieh wrote:
-> On Wed, 2019-11-27 at 09:58 +0800, Dennis YC Hsieh wrote:
-> > Return error code to client if send message fail,
-> > so that client has chance to error handling.
-> > 
-> This patches seems like a fix patch.
-> Please add fixes, thanks.
+Thanks for your review
+
+On 2019/12/13 18:38, Maxime Ripard wrote:
+> Hi,
 > 
-> Bibby
-
-Do you mean add *fixes* in title?
-How about *fixes flush async function return error when send fail* ?
-
-
-Regards,
-Dennis
-
-> > Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
-> > ---
-> >  drivers/soc/mediatek/mtk-cmdq-helper.c | 4 ++--
-> >  1 file changed, 2 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > index 274f6f311d05..8421b4090304 100644
-> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > @@ -353,11 +353,11 @@ int cmdq_pkt_flush_async(struct cmdq_pkt *pkt, cmdq_async_flush_cb cb,
-> >  		spin_unlock_irqrestore(&client->lock, flags);
-> >  	}
-> >  
-> > -	mbox_send_message(client->chan, pkt);
-> > +	err = mbox_send_message(client->chan, pkt);
-> >  	/* We can send next packet immediately, so just call txdone. */
-> >  	mbox_client_txdone(client->chan, 0);
-> >  
-> > -	return 0;
-> > +	return err;
-> >  }
-> >  EXPORT_SYMBOL(cmdq_pkt_flush_async);
-> >  
+> On Fri, Dec 06, 2019 at 03:40:47PM +0800, Jian Hu wrote:
+>> Add the documentation to support Amlogic A1 PLL clock driver,
+>> and add A1 PLL clock controller bindings.
+>>
+>> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
+>> ---
+>>   .../bindings/clock/amlogic,a1-pll-clkc.yaml   | 59 +++++++++++++++++++
+>>   include/dt-bindings/clock/a1-pll-clkc.h       | 16 +++++
+>>   2 files changed, 75 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
+>>   create mode 100644 include/dt-bindings/clock/a1-pll-clkc.h
+>>
+>> diff --git a/Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml b/Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
+>> new file mode 100644
+>> index 000000000000..7feeef5abf1b
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
+>> @@ -0,0 +1,59 @@
+>> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
+>> +/*
+>> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+>> + */
+>> +%YAML 1.2
+>> +---
+>> +$id: "http://devicetree.org/schemas/clock/amlogic,a1-pll-clkc.yaml#"
+>> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+>> +
+>> +title: Amlogic Meson A/C serials PLL Clock Control Unit Device Tree Bindings
+>> +
+>> +maintainers:
+>> +  - Neil Armstrong <narmstrong@baylibre.com>
+>> +  - Jerome Brunet <jbrunet@baylibre.com>
+>> +  - Jian Hu <jian.hu@jian.hu.com>
+>> +
+>> +properties:
+>> +  compatible:
+>> +    - enum:
+>> +        - amlogic,a1-pll-clkc
 > 
+> I'm not sure this works, compatible shouldn't contain a list.
+> 
+I refered to 
+Documentation/devicetree/bindings/clock/allwinner,sun4i-a10-ccu.yaml.
+
+I have used 'dt-doc-validate' tools to check, it will report something 
+wrong below.
+
+properties:compatible: [{'enum': ['amlogic,a1-pll-clkc']}] is not of 
+type 'object', 'boolean'
+
+Refer to
+https://github.com/robherring/dt-schema/blob/master/example-schema.yaml
+
+I will change it like this:
+
+properties:
+   compatible:
+     oneOf:
+       - enum:
+          - amlogic,a1-pll-clkc
+
+And It has been passed by 'dt-doc-validate' tools.
+
+Is it right?
+
+> You can write this like:
+> compatible:
+>    const: amlogic,a1-pll-clkc
+> 
+>> +  "#clock-cells":
+>> +    const: 1
+>> +
+>> +  reg:
+>> +    maxItems: 1
+>> +
+>> +clocks:
+>> +  minItems: 2
+>> +  maxItems: 2
+> 
+> This is redundant, it will be added automatically by the tools ...
+If I remove the minItems, it will pass by dt-doc-validate.
+
+Would please tell how to use dt-schema to generate automatically it?
+
+> 
+>> +  items:
+>> +   - description: Input xtal_fixpll
+>> +   - description: Input xtal_hifipll
+> 
+> ... When you have a list of items :)
+> 
+>> +
+>> +clock-names:
+>> +  minItems: 2
+>> +  maxItems: 2
+>> +  items:
+>> +     - const: xtal_fixpll
+>> +     - const: xtal_hifipll
+> 
+> Same story here
+OK, I will change it when I find the right way.
+> 
+> Maxime
 > 
 
 _______________________________________________
