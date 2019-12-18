@@ -2,87 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 302551254DB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 22:38:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68B521255A7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 22:57:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MM+TIL0m+XikPzGXYjSTk7C3glxNcpMcbBjYJSVrG7Y=; b=UBqBPvwG9dgwoA
-	KUQCT/XbqJB1x7nFl6txVok/lmqiHWbiPIENjE/RfDrcF+mfqhCAYfIn9gK2MUK5aLliO6qrV3wTG
-	jXYU+chTACvSbv7WkjZxDOZ7QkklsVfp5UZNXVPvG2Up7uWFJuOfCUy0oA6nbUO79WwJiUU0XVr4Z
-	ehVLl54V9bukazJVJWxZI3J/ISC1Xfewnndazd83HkykHGfWt4VW9IaBRHLGRGnf/jeCNpquiKaUG
-	NCV0lE/5xQiqrMWrvFIVwpoNsKZzFEa2avWQqTtkFiPM2cQ5Nx8elhQxaMHDR6xDXeZmmsz0Vs7UZ
-	+M7cBzElrschXa9+uDcw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=T0s4zeXaHOf34jBI+M1wowYM1QFGBKep7B3GB5Y2gGY=; b=uYSvohuoClGQIl
+	bMS9Sx7QuEsJRlnfiDL3tNpnpZjSFlI5HilShOcCiX1nK8t+NjLE/cUHMcbJeBKX4g6Wv4YlOKFKL
+	OvvdJlwZmpyF7ZjrUpQ4MKjh0a3872AwYgwTkzM+JMEtp2WX7o6oa0/uDM4eW2MMFeofJgryLF/c/
+	AT6zSOdu+OlfS+2EGmAx1aOfWj4XxheSsdpt8mPzAdcee0GgNJGYDs8EqsRvrruxZpJ8S/yD2LpEL
+	wXqF3JtYQJETieE9ivyS9W1sU8S6yOv917k1wSF0oCDISwF64BTghe8MhXts9w4bGK835k1Nd8oPC
+	vkU3/X7j6hzAHoNT3D8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihh1u-0006jk-H6; Wed, 18 Dec 2019 21:38:50 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1ihhJw-0006EN-8Q; Wed, 18 Dec 2019 21:57:28 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihh1g-0006j4-4u
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:38:39 +0000
-Received: by mail-ot1-f65.google.com with SMTP id k14so4236986otn.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 13:38:36 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=CThMgyYb2HnX5NohwkeG2dpFbHpKjSmonT0Rqkls07k=;
- b=QF7XS3f2G0FD9PoVF+9UkTNxJunTl4qcMDrfr7JL/dPWRdDhBNRrjQjny1BhIzo94k
- 1TPtTTZdWERPO4rvzJr7ae8KVLQW6A54JXdYyOOGgmSzGvMfu/0p2us/fKrpThQ0gtU4
- O7MXTGVHqb4e9pz/9QaD2tsGMjA/k4O+8I3aIOhQjARR3MCg7IlL2N1YwYjFGYvgvYYE
- LbWh2yb/jUc8+Znp9CqpsIPdHB6VhE5F3MCvKAzDRDGOWG9lHRl5tj2CA4Wgc/CoQEAJ
- xrJzXJZRbT+aBF8SZn4UmjWvHPzhYw7v7taMjgn0nQ/B/+2WZ/0RXwY8KIhTf4HM+EkK
- tPSw==
-X-Gm-Message-State: APjAAAVnp9Y8KWc5SENbP4bUiIXtElH4bs4xZ8u5zip41a8zzbCtcdTf
- 0l1TS0xFdmVlTPfFhUdwKQ==
-X-Google-Smtp-Source: APXvYqwWpZuMh04y4KOGVf0MBo6cIU6JiMjeV6XpwUI31E4EaD+zXg6UWvuBkSQBgYrW/Vmwdi89Ag==
-X-Received: by 2002:a9d:600e:: with SMTP id h14mr4732216otj.113.1576705115480; 
- Wed, 18 Dec 2019 13:38:35 -0800 (PST)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 101sm1284059otj.55.2019.12.18.13.38.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 13:38:34 -0800 (PST)
-Date: Wed, 18 Dec 2019 15:38:34 -0600
-From: Rob Herring <robh@kernel.org>
-To: Hanna Hawa <hhhawa@amazon.com>
-Subject: Re: [PATCH v2 5/6] dt-bindings: arm: amazon: add Amazon Annapurna
- Labs Alpine V3
-Message-ID: <20191218213834.GA662@bogus>
-References: <20191209161341.29607-1-hhhawa@amazon.com>
- <20191209161341.29607-6-hhhawa@amazon.com>
+ id 1ihhI9-0004yN-OX
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:41 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 18 Dec 2019 13:55:32 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222107997"
+Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
+ by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:31 -0800
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
+ Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
+Subject: [PATCH v2 00/45]  KVM: Refactor vCPU creation
+Date: Wed, 18 Dec 2019 13:54:45 -0800
+Message-Id: <20191218215530.2280-1-sean.j.christopherson@intel.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191209161341.29607-6-hhhawa@amazon.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_133837_009167_6BDC2992 
-X-CRM114-Status: UNSURE (   9.52  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191218_135537_822110_C037A2C7 
+X-CRM114-Status: GOOD (  13.73  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [192.55.52.93 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,29 +67,176 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, nm@ti.com, heiko@sntech.de, jonnyc@amazon.com,
- mchehab+samsung@kernel.org, ronenk@amazon.com, khilman@baylibre.com,
- hanochu@amazon.com, tsahee@annapurnalabs.com, devicetree@vger.kernel.org,
- antoine.tenart@bootlin.com, robh+dt@kernel.org, Jonathan.Cameron@huawei.com,
- tglx@linutronix.de, talel@amazon.com, linux-arm-kernel@lists.infradead.org,
- benh@amazon.com, barakw@amazon.com, hhhawa@amazon.com,
- gregkh@linuxfoundation.org, chanho.min@lge.com, linux-kernel@vger.kernel.org,
- davem@davemloft.net, dwmw@amazon.co.uk
+Cc: kvm-ppc@vger.kernel.org, Wanpeng Li <wanpengli@tencent.com>,
+ kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
+ Joerg Roedel <joro@8bytes.org>, Cornelia Huck <cohuck@redhat.com>,
+ linux-mips@vger.kernel.org,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ linux-kernel@vger.kernel.org, Greg Kurz <groug@kaod.org>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 9 Dec 2019 16:13:40 +0000, Hanna Hawa wrote:
-> This patch adds DT bindings info for Amazon Annapurna Labs Alpine V3.
-> 
-> Signed-off-by: Hanna Hawa <hhhawa@amazon.com>
-> ---
->  Documentation/devicetree/bindings/arm/amazon,al.yaml | 6 ++++++
->  1 file changed, 6 insertions(+)
-> 
+The end goal of this series is to strip down the interface between common
+KVM code and arch specific code so that there is precisely one arch hook
+for creating a vCPU and one hook for destroying a vCPU.  In addition to
+cleaning up the code base, simplifying the interface gives architectures
+more freedom to organize their vCPU creation code.  Details below.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+v2:
+  - Rebase to commit e41a90be9659 ("KVM: x86/mmu: WARN if root_hpa is
+    invalid when handling a page fault").  A few minor x86 (VMX) conflicts,
+    and one straightforward arm conflict with commit 8564d6372a7d ("KVM:
+    arm64: Support stolen time reporting via shared structure") in patch
+    "KVM: ARM: Move all vcpu init code into kvm_arch_vcpu_create()".
+  - Collect Reviews and Acks [Christoffer, Greg].
+  - Fix a warning in "KVM: arm64: Free sve_state via arm specific hook"
+    by using a "void" return type [Christoffer].
+  - Fix a bug in "KVM: PPC: Move kvm_vcpu_init() invocation to common code"
+    where the call in kvmppc_core_vcpu_create_e500mc() was inadvertantly
+    left behind.
+
+
+KVM's vCPU creation code is comically messy.  kvm_vm_ioctl_create_vcpu()
+calls three separate arch hooks: init(), create() and setup().  The init()
+call is especially nasty as it's hidden away in a common KVM function,
+kvm_init_vcpu(), that for all intents and purposes must be immediately
+invoked after the vcpu object is allocated.
+
+Not to be outdone, vCPU destruction also has three arch hooks: uninit(),
+destroy() and free(), the latter of which isn't actually invoked by common
+KVM code, but the hook declaration still exists because architectures are
+relying on its forward declaration.
+
+Eliminating the extra arch hooks is relatively straightforward, just
+tedious.  For the most part, there is no fundamental constraint that
+necessitated the proliferation of arch hooks, rather they crept in over
+time, usually when x86-centric code was moved out of generic KVM and into
+x86 code.
+
+E.g. kvm_arch_vcpu_setup() was added to allow x86 to do vcpu_load(), which
+can only be done after preempt_notifier initialization, but adding setup()
+overlooked the fact that the preempt_notifier was only initialized after
+kvm_arch_vcpu_create() because preemption support was added when x86's MMU
+setup (the vcpu_load() user) was called from common KVM code.
+
+For all intents and purposes, there is no true functional change in this
+series.  The order of some allocations will change, and a few memory leaks
+are fixed, but the actual functionality of a guest should be unaffected.
+
+Patches 01-03 are bug fixes in error handling paths that were found by
+inspection when refactoring the associated code.
+
+Patches 04-43 refactor each arch implementation so that the unwanted arch
+hooks can be dropped without a functional change, e.g. move code out of
+kvm_arch_vcpu_setup() so that all implementations are empty, then drop the
+functions and caller.
+
+Patches 44-45 are minor clean up to eliminate kvm_vcpu_uninit().
+
+The net result is to go from this:
+
+        vcpu = kvm_arch_vcpu_create(kvm, id);
+               |
+               |-> kvm_vcpu_init()
+                   |
+                   |-> kvm_arch_vcpu_init()
+
+        if (IS_ERR(vcpu)) {
+                r = PTR_ERR(vcpu);
+                goto vcpu_decrement;
+        }
+
+        preempt_notifier_init(&vcpu->preempt_notifier, &kvm_preempt_ops);
+
+        r = kvm_arch_vcpu_setup(vcpu);
+        if (r)
+                goto vcpu_destroy;
+
+
+Sean Christopherson (45):
+  KVM: PPC: Book3S HV: Uninit vCPU if vcore creation fails
+  KVM: PPC: Book3S PR: Free shared page if mmu initialization fails
+  KVM: x86: Free wbinvd_dirty_mask if vCPU creation fails
+  KVM: VMX: Allocate VPID after initializing VCPU
+  KVM: VMX: Use direct vcpu pointer during vCPU create/free
+  KVM: SVM: Use direct vcpu pointer during vCPU create/free
+  KVM: x86: Allocate vcpu struct in common x86 code
+  KVM: x86: Move FPU allocation to common x86 code
+  KVM: x86: Move allocation of pio_data page down a few lines
+  KVM: x86: Move kvm_vcpu_init() invocation to common code
+  KVM: PPC: e500mc: Add build-time assert that vcpu is at offset 0
+  KVM: PPC: Allocate vcpu struct in common PPC code
+  KVM: PPC: Book3S PR: Allocate book3s and shadow vcpu after common init
+  KVM: PPC: e500mc: Move reset of oldpir below call to kvm_vcpu_init()
+  KVM: PPC: Move kvm_vcpu_init() invocation to common code
+  KVM: MIPS: Use kvm_vcpu_cache to allocate vCPUs
+  KVM: MIPS: Drop kvm_arch_vcpu_free()
+  KVM: PPC: Drop kvm_arch_vcpu_free()
+  KVM: arm: Drop kvm_arch_vcpu_free()
+  KVM: x86: Remove spurious kvm_mmu_unload() from vcpu destruction path
+  KVM: x86: Remove spurious clearing of async #PF MSR
+  KVM: x86: Drop kvm_arch_vcpu_free()
+  KVM: Remove kvm_arch_vcpu_free() declaration
+  KVM: Add kvm_arch_vcpu_precreate() to handle pre-allocation issues
+  KVM: s390: Move guts of kvm_arch_vcpu_init() into
+    kvm_arch_vcpu_create()
+  KVM: s390: Invoke kvm_vcpu_init() before allocating sie_page
+  KVM: MIPS: Invoke kvm_vcpu_uninit() immediately prior to freeing vcpu
+  KVM: x86: Invoke kvm_vcpu_uninit() immediately prior to freeing vcpu
+  KVM: Introduce kvm_vcpu_destroy()
+  KVM: Move vcpu alloc and init invocation to common code
+  KVM: Unexport kvm_vcpu_cache and kvm_vcpu_{un}init()
+  KVM: Move initialization of preempt notifier to kvm_vcpu_init()
+  KVM: x86: Move guts of kvm_arch_vcpu_setup() into
+    kvm_arch_vcpu_create()
+  KVM: MIPS: Move .vcpu_setup() call to kvm_arch_vcpu_create()
+  KVM: s390: Manually invoke vcpu setup during kvm_arch_vcpu_create()
+  KVM: PPC: BookE: Setup vcpu during kvmppc_core_vcpu_create()
+  KVM: Drop kvm_arch_vcpu_setup()
+  KVM: x86: Move all vcpu init code into kvm_arch_vcpu_create()
+  KVM: MIPS: Move all vcpu init code into kvm_arch_vcpu_create()
+  KVM: ARM: Move all vcpu init code into kvm_arch_vcpu_create()
+  KVM: PPC: Move all vcpu init code into kvm_arch_vcpu_create()
+  KVM: arm64: Free sve_state via arm specific hook
+  KVM: Drop kvm_arch_vcpu_init() and kvm_arch_vcpu_uninit()
+  KVM: Move putting of vcpu->pid to kvm_vcpu_destroy()
+  KVM: Move vcpu->run page allocation out of kvm_vcpu_init()
+
+ arch/arm/include/asm/kvm_host.h    |   2 +-
+ arch/arm/kvm/guest.c               |   5 -
+ arch/arm64/include/asm/kvm_host.h  |   2 +-
+ arch/arm64/kvm/guest.c             |   5 -
+ arch/arm64/kvm/reset.c             |   2 +-
+ arch/mips/kvm/mips.c               |  84 ++++-------
+ arch/powerpc/include/asm/kvm_ppc.h |   6 +-
+ arch/powerpc/kvm/book3s.c          |   9 +-
+ arch/powerpc/kvm/book3s_hv.c       |  27 +---
+ arch/powerpc/kvm/book3s_pr.c       |  33 ++---
+ arch/powerpc/kvm/booke.c           |  65 ++++----
+ arch/powerpc/kvm/e500.c            |  34 +----
+ arch/powerpc/kvm/e500mc.c          |  28 +---
+ arch/powerpc/kvm/powerpc.c         |  70 ++++-----
+ arch/s390/include/asm/kvm_host.h   |   1 -
+ arch/s390/kvm/kvm-s390.c           | 110 +++++++-------
+ arch/x86/include/asm/kvm_host.h    |   2 +-
+ arch/x86/kvm/svm.c                 |  52 +------
+ arch/x86/kvm/vmx/vmx.c             |  72 +++------
+ arch/x86/kvm/x86.c                 | 230 ++++++++++++++---------------
+ include/linux/kvm_host.h           |  13 +-
+ virt/kvm/arm/arm.c                 |  80 ++++------
+ virt/kvm/kvm_main.c                |  71 +++++----
+ 23 files changed, 385 insertions(+), 618 deletions(-)
+
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
