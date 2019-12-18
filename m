@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E69BF124799
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 14:06:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CDE21247A3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 14:06:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bRfFyUq7ZOEkmWX51Q8HNrHDkbarSgcLA2+ta0H2Ti8=; b=HHpKFmEsyGiIxn
-	ZEZRjlobKK7aX8tjUuXMVVyNgzckhPsJPDcFbO6qpsiK5e2rYLwKhlVHinEqk9Yj5GXn/9QadV7V9
-	sdLrzcXHdNq7/vnHR0YdrwaBuR9w6nIkcM9lXnSrfQ8jd3uSbTgfPknAR1FYwEu5DAHp31OikBcB9
-	f10YlAzcCYmacgU1eZwoRdIOFxVcZTmkp5F0medwGQM9uUX4X9a2Oo0U+NenzSso5BXuImrXlTP4O
-	Hx9ZsREnjDKMpv0Af74ZatGfCRolEsNBCuhjsiPZm5clfhIaUrjHIYGVjjrXS6VVdpT0RHgSvhP5c
-	YU1E0ibs2+R9PoTjfQMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ie7WclEf/S2K9Bac/3f0IrLJav7FHIJqpQncCF68nqo=; b=tKexbuFz98kAMh
+	taAlnTr4ngq+DPZA/nZlnSp9nKePx7fjcuTLd5gvBtQeVhfDGCp8zvHjBybzia/7O8orFfDnP3yjz
+	zOxwyjIpjgoNtWhLZWXDaiPdt8vM4ihI9Lns7GQpaJ0o+TVgG2VNhoCECvz+NUb3m46O4WjTLWOv4
+	ieGJbnXyFJmAOjeQr9RDcKhhbLMwHTU8Ilne5Q4zmf6nt4NTolbbKuW2o8eCgrc/7xWxlCzpDVM/W
+	XYz9mKN0Vx6jymMV9E1j1Ysgkc+hevgcc7nHewDQQZyFMUG4+eKfQ/SkA2uvDCaCuH9PS8yJXWRVB
+	WtusFh9fqHSNaL/VWILA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihZ1V-0001ce-Su; Wed, 18 Dec 2019 13:05:53 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1ihZ2F-0001yQ-U5; Wed, 18 Dec 2019 13:06:39 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihZ1N-0001cI-4S
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 13:05:46 +0000
-Received: by mail-io1-xd43.google.com with SMTP id r13so1900155ioa.3
+ id 1ihZ26-0001xh-7K
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 13:06:31 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id h126so719329ywc.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 05:05:44 -0800 (PST)
+ Wed, 18 Dec 2019 05:06:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jtI02BX3MhKCqZlbqoLQVhWQvEfC77FuEIUpdmy5BAY=;
- b=aBKakUm1IyTAdGLznrQ6P38rhuzcxBW8hJbBt9thj/VSUe8BS8U0qZy/3JTsM0Wp64
- Ii5UVUHm2seUE3Y1eaIaUMpTuUD//dQYSwn20SzwEzodAiRoBBt5e9lglOEp6KvpDZBd
- Z9MWT9BmNI1ajGsK4hdZXFA+fk647WBQ/Ib8JfWCviAS8HU8x65mfiGcR4cRK5KzjA/Q
- 7nEdlAWQvd7mxEHiT8k+Gc5E6N961zRtsBOdkLVM4rsfWPnccC8AedWQr6mHlwSy6vX4
- MXIELFiacE6NpVIALXsUMDis5oTwELtouxvJPgQZT1G2zfX6e/xz/SArpHtdd1jC+YcU
- T5iA==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=LLIjdUM214rts+QdFmLT0qdowpwm43aLvVt9JtuWnSI=;
+ b=k7GOlgqxBrb7DrpjWzIRp+jbycjd5MM/XzKtDlUMxHwrUIXuBXNcVEDICBqRGEJtPs
+ lS0/nCcvc1fRc0JI+PfYd+v/L1SoiwfhttrM7O+4gXbSI55qZkJpOQZf+XhF0jes4YXk
+ 8Pq7nmCmI1wZgSbmlPdn+aLh3W8SqwV1MdiiNMN4ye6CwjFBu6cWQzT2D/+3nUeJg48O
+ /G2xqSbfH0pczNadzW+gfMhW40fV/8Cz2PFtRoWPatMgYbnMWWlRthAv3ao1Ft1ytePU
+ PTSeq/oFPE08p59UWxEsxEk0PkvWeTSOk2IsdBR+Mv5yyfviPNmC29W87cPPPdyvwAQp
+ 1WtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jtI02BX3MhKCqZlbqoLQVhWQvEfC77FuEIUpdmy5BAY=;
- b=OLOs865Ke6xaPzHxezXXIlvrymSX7GFeOlJaYctY+EZX5TI5no6XtKIPBpK/Ef/Ear
- JWP2ak96z1vPa7/BuSBLsrxy+zi6nxsPUXW1DM2X06e60tzxKJMphdfdylv3ZyEnuaNg
- EwP5dOCYjdT8e2GIpze7AV4p+ARfmbJYxj8Ejjtu3ISOrbXpzzcNYxgoYavXFztzphMh
- AmZnvTCY/8f+3E8xhGjXhS6HcNhHfiUQYFqvLn9VBSeZKq7i4nbamXEFcIxLylRUNKCG
- p16Tyha8aL7rjVKx+WfXRoh3Ma2hTkwO8eqvJvBpoiVoPtkUkDkDHiUZAmKWtU3afufk
- yQkQ==
-X-Gm-Message-State: APjAAAUtKCd271jW7ZJulLWUon/b+inz762HJb8ie+1wLGm3PgcBL01h
- b4T+AYz4luqy++3e+cgSUB4FZQN6I9L+YO67Guw=
-X-Google-Smtp-Source: APXvYqyNAwsARVArObXF0VfIKgBdiiW7WvQbMsAZzjqiVlMZu9krh0jZyV/7Nf2jXTjMZEovn1moXOEZSFAYxGNAIPg=
-X-Received: by 2002:a6b:ee07:: with SMTP id i7mr1121712ioh.78.1576674343420;
- Wed, 18 Dec 2019 05:05:43 -0800 (PST)
-MIME-Version: 1.0
-References: <20191213153910.11235-1-aford173@gmail.com>
- <20191213153910.11235-3-aford173@gmail.com>
- <VI1PR0402MB3485AB1908AD6B6617CFC08C98500@VI1PR0402MB3485.eurprd04.prod.outlook.com>
- <CAHCN7xLrX0R7Uag2vc1qMp4z=1r3haCWrcp4qJT0H0eC3RiA4Q@mail.gmail.com>
- <CAOMZO5B_CCEf_cdAWs_FDC1c6t0RG1KjRjGidoDPmPmgxY=ebg@mail.gmail.com>
-In-Reply-To: <CAOMZO5B_CCEf_cdAWs_FDC1c6t0RG1KjRjGidoDPmPmgxY=ebg@mail.gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=LLIjdUM214rts+QdFmLT0qdowpwm43aLvVt9JtuWnSI=;
+ b=kUPC3mBnrbxQ+X3egCSbjXHzWjUeZtvDev7b71ZeZXWzZEXa88TiNiP6YcM4B/rnXH
+ DE9bz2h1DcpUMbVugJad2dQsbc0OgWOtQFG2DSkA3iInhvI+6LlNozzeqdSvJbDOCCO3
+ K/aGR7FnwLKKOEEtMOqPsqVmYfQ6tvuyytjU8Ydl2CwxWiwDrLJeV9VjA4RliEPAETna
+ GiEgTCg2fWhl+9EmBQa0wip57q/AVlavt/CP3jLBiPVRPrp3AGXxyDDW9epsU2/9J2st
+ V2V+DGM6Ut33GG64tyUdk84sCQSjlmkfyy0Vd5C8CF7rf7TS1HKMYntLbjvH/S+e3Q9b
+ m7aQ==
+X-Gm-Message-State: APjAAAVLZQogv1/F0oIyZbEgc6J4If8E09Xeg5sMyYlu6xJPkQuIwP5L
+ DtP/3BIwwqh1iRgGy/BJ/X9eAEZZGHg=
+X-Google-Smtp-Source: APXvYqzBCz5/Y3IeMZDESTHiuAl8EZLblP3IJZCPORJ/K5z1qkW5EVc4+ZaGd3Qy/EH9AeRJOGyGQw==
+X-Received: by 2002:a81:b60d:: with SMTP id u13mr1834559ywh.382.1576674388055; 
+ Wed, 18 Dec 2019 05:06:28 -0800 (PST)
+Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
+ [73.37.219.234])
+ by smtp.gmail.com with ESMTPSA id r64sm909603ywg.84.2019.12.18.05.06.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 18 Dec 2019 05:06:27 -0800 (PST)
 From: Adam Ford <aford173@gmail.com>
-Date: Wed, 18 Dec 2019 07:05:32 -0600
-Message-ID: <CAHCN7xLoScZ=b=eZHXnWt4U_Tr-N3XdNg6f9DHejQNc0kYvZUA@mail.gmail.com>
-Subject: Re: [PATCH V2 3/3] arm64: defconfig: Enable CRYPTO_DEV_FSL_CAAM
-To: Fabio Estevam <festevam@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH V3 1/3] crypto: caam: Add support for i.MX8M Mini
+Date: Wed, 18 Dec 2019 07:06:14 -0600
+Message-Id: <20191218130616.13860-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_050545_178748_B3C65C5B 
-X-CRM114-Status: GOOD (  17.20  )
+X-CRM114-CacheID: sfid-20191218_050630_262869_217138EE 
+X-CRM114-Status: GOOD (  13.68  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -98,56 +99,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Aymen Sghaier <aymen.sghaier@nxp.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Horia Geanta <horia.geanta@nxp.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Will Deacon <will@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Aymen Sghaier <aymen.sghaier@nxp.com>,
+ Fabio Estevam <festevam@gmail.com>, Herbert Xu <herbert@gondor.apana.org.au>,
+ =?UTF-8?q?Horia=20Geant=C4=83?= <horia.geanta@nxp.com>,
+ devicetree@vger.kernel.org, Iuliana Prodan <iuliana.prodan@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Will Deacon <will@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Catalin Marinas <catalin.marinas@arm.com>, Adam Ford <aford173@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-crypto@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 12:25 PM Fabio Estevam <festevam@gmail.com> wrote:
->
-> Hi Adam,
->
-> On Tue, Dec 17, 2019 at 10:07 AM Adam Ford <aford173@gmail.com> wrote:
->
-> > Out of curiosity, what is the rule for when things are 'm' vs 'y'?
-> >
-> > In the Code Aurora repo, it is set to 'y' and the mainline kernel for
-> > the i.MX6/7, the imx_v6_v7_defconfig is also set to 'y' which is why I
-> > used 'y' here.
-> >
-> > I can do a V3 to address the other items you noted, but I want to
-> > understand the rules about the defconfig so I don't make the same
-> > mistake again.
->
-> In arch/arm64/configs/defconfig we try to select modules whenever possible.
->
-> The exceptions are drivers that are vital for boot such as PMIC,
-> pinctrl, clks, etc.
->
-> The CAAM driver does not fall into this category, so selecting it as
-> module is preferred here.
-
-That makes sense.  Thank you for the clarification.  I'll keep that in
-mind if I submit future updates.
-
-adam
->
-> Thanks
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIGkuTVg4TSBNaW5pIHVzZXMgdGhlIHNhbWUgY3J5cHRvIGVuZ2luZSBhcyB0aGUgaS5NWDhN
+USwgYnV0CnRoZSBkcml2ZXIgaXMgcmVzdHJpY3RpbmcgdGhlIGNoZWNrIHRvIGp1c3QgdGhlIGku
+TVg4TVEuCgpUaGlzIHBhdGNoIGV4cGFuZHMgdGhlIGNoZWNrIGZvciBlaXRoZXIgaS5NWDhNUSBv
+ciBpLk1YOE1NLgoKU2lnbmVkLW9mZi1ieTogQWRhbSBGb3JkIDxhZm9yZDE3M0BnbWFpbC5jb20+
+ClRlc3RlZC1ieTogSXVsaWFuYSBQcm9kYW4gPGl1bGlhbmEucHJvZGFuQG54cC5jb20+ClJldmll
+d2VkLWJ5OiBJdWxpYW5hIFByb2RhbiA8aXVsaWFuYS5wcm9kYW5AbnhwLmNvbT4KUmV2aWV3ZWQt
+Ynk6IEhvcmlhIEdlYW50xIMgPGhvcmlhLmdlYW50YUBueHAuY29tPgotLS0KVjM6ICBObyBDaGFu
+Z2UKVjI6ICBFeHBhbmQgdGhlIGNoZWNrIHRoYXQgZm9yY2VzIHRoZSBzZXR0aW5nIG9uIGlteDht
+cSB0byBhbHNvIGJlIHRydWUgZm9yIGlteDhtbQogICAgIEV4cGxpY3RseSBzdGF0ZSBpbXg4bW0g
+Y29tcGF0aWJsaXR5IGluc3RlYWQgb2YgbWFraW5nIGl0IGdlbmVyaWMgdG8gYWxsIGlteDhtKgog
+ICAgICB0aGlzIGlzIG1vc3RseSBkdWUgdG8gbGFjayBvZiBvdGhlciBoYXJkd2FyZSB0byB0ZXN0
+CgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9jcnlwdG8vY2FhbS9jdHJsLmMgYi9kcml2ZXJzL2NyeXB0
+by9jYWFtL2N0cmwuYwppbmRleCBkN2MzYzM4MDU2OTMuLmMwMWRkYTY5MmVjYyAxMDA2NDQKLS0t
+IGEvZHJpdmVycy9jcnlwdG8vY2FhbS9jdHJsLmMKKysrIGIvZHJpdmVycy9jcnlwdG8vY2FhbS9j
+dHJsLmMKQEAgLTEwMiw3ICsxMDIsOCBAQCBzdGF0aWMgaW5saW5lIGludCBydW5fZGVzY3JpcHRv
+cl9kZWNvMChzdHJ1Y3QgZGV2aWNlICpjdHJsZGV2LCB1MzIgKmRlc2MsCiAJICAgICAqIEFwcGFy
+ZW50bHkgb24gaS5NWDhNUSBpdCBkb2Vzbid0IG1hdHRlciBpZiB2aXJ0X2VuID09IDEKIAkgICAg
+ICogYW5kIHRoZSBmb2xsb3dpbmcgc3RlcHMgc2hvdWxkIGJlIHBlcmZvcm1lZCByZWdhcmRsZXNz
+CiAJICAgICAqLwotCSAgICBvZl9tYWNoaW5lX2lzX2NvbXBhdGlibGUoImZzbCxpbXg4bXEiKSkg
+eworCSAgICBvZl9tYWNoaW5lX2lzX2NvbXBhdGlibGUoImZzbCxpbXg4bXEiKSB8fAorCSAgICBv
+Zl9tYWNoaW5lX2lzX2NvbXBhdGlibGUoImZzbCxpbXg4bW0iKSkgewogCQljbHJzZXRiaXRzXzMy
+KCZjdHJsLT5kZWNvX3JzciwgMCwgREVDT1JTUl9KUjApOwogCiAJCXdoaWxlICghKHJkX3JlZzMy
+KCZjdHJsLT5kZWNvX3JzcikgJiBERUNPUlNSX1ZBTElEKSAmJgpAQCAtNTA5LDYgKzUxMCw3IEBA
+IHN0YXRpYyBjb25zdCBzdHJ1Y3Qgc29jX2RldmljZV9hdHRyaWJ1dGUgY2FhbV9pbXhfc29jX3Rh
+YmxlW10gPSB7CiAJeyAuc29jX2lkID0gImkuTVg2KiIsICAuZGF0YSA9ICZjYWFtX2lteDZfZGF0
+YSB9LAogCXsgLnNvY19pZCA9ICJpLk1YNyoiLCAgLmRhdGEgPSAmY2FhbV9pbXg3X2RhdGEgfSwK
+IAl7IC5zb2NfaWQgPSAiaS5NWDhNUSIsIC5kYXRhID0gJmNhYW1faW14N19kYXRhIH0sCisJeyAu
+c29jX2lkID0gImkuTVg4TU0iLCAuZGF0YSA9ICZjYWFtX2lteDdfZGF0YSB9LAogCXsgLmZhbWls
+eSA9ICJGcmVlc2NhbGUgaS5NWCIgfSwKIAl7IC8qIHNlbnRpbmVsICovIH0KIH07Ci0tIAoyLjIw
+LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
