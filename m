@@ -2,34 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B05A2125640
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:06:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB7A712563F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:06:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tH4NWLh6lHF4ynKymSF493LGRxwcjjRErbeG65ygv7M=; b=gb0gxussV2xtPW
-	Ai50yeuqKmyLRLFokQT8w2m0NTfoC/JSCD7KjRxZ35OZ0ZcBAwkHwOJs4auoBQoiBuHJc4+IiWh8M
-	IjicJceXZ8l6DxHZF1anFOJxcMeswqdj2YbfsfzYo0lq/Vsomjbx5GJqhnj8FfNTgK4qIOT2cVsd/
-	2nLBi/zpCZ/BP/K8fKv+MJDAtwsm/1iq2wVMKPQxII+AU9ldGVktA2q+r6RZoGaTvY1+68b68ymMf
-	Vf8xJy96X6JuXy4U/NiChIQ29Gr9wXjWnIb5aqMkEJYWrOaOXU1BoyKsFXpPbWn/Jwn3UWX7UMvyc
-	zgZE6hyhT8Uyou2uKC/Q==;
+	List-Owner; bh=UOJK/KxQRda98cDHFamKVaWaqfucR+MK+iagMBCOkRc=; b=Q0CjYlKZd9kleU
+	O4D69PxCDN6tD1YNMhorKLm0rnDDj/4anSp19us62j23rUpTzo1axDVQvuu6DRx345w+Hxci4/Zlz
+	kDmpT/FX+gt//aP55deDZHZBwOunYjDrsrhNpc2oFwO+T2Yw8rMKwUNdKNzn6h2TdENsAEIxLSvfq
+	ANpre1EWe+Wu/F6AIhf8gg1kpmehdFNlvaPHvJ7sNEyAfLpDCNwZPAiEYaeAPH6gn49HJosQ25aSl
+	2+RfpAqQgA9Tx3DP0eKqsAa7Epe91B8AxHsCCswxvuNmALWxe40rf9toGpH5LDKUhM3qht06ja2B1
+	jO8nceURn/0xFAYajCmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihhSk-00009w-Ih; Wed, 18 Dec 2019 22:06:34 +0000
+	id 1ihhSW-0008La-JD; Wed, 18 Dec 2019 22:06:20 +0000
 Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihhIU-00059X-Pq
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:56:02 +0000
+ id 1ihhIV-0004yN-58
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:56:04 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga001.fm.intel.com ([10.253.24.23])
  by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 18 Dec 2019 13:55:46 -0800
+ 18 Dec 2019 13:55:47 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108141"
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108144"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
  by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:46 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
@@ -37,16 +37,17 @@ To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH v2 31/45] KVM: Unexport kvm_vcpu_cache and kvm_vcpu_{un}init()
-Date: Wed, 18 Dec 2019 13:55:16 -0800
-Message-Id: <20191218215530.2280-32-sean.j.christopherson@intel.com>
+Subject: [PATCH v2 32/45] KVM: Move initialization of preempt notifier to
+ kvm_vcpu_init()
+Date: Wed, 18 Dec 2019 13:55:17 -0800
+Message-Id: <20191218215530.2280-33-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_135558_956528_098A8173 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20191218_135559_350532_2533B8D1 
+X-CRM114-Status: GOOD (  13.88  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -85,80 +86,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Unexport kvm_vcpu_cache and kvm_vcpu_{un}init() and make them static
-now that they are referenced only in kvm_main.c.
+Initialize the preempt notifier immediately in kvm_vcpu_init() to pave
+the way for removing kvm_arch_vcpu_setup(), i.e. to allow arch specific
+code to call vcpu_load() during kvm_arch_vcpu_create().
+
+Back when preemption support was added, the location of the call to init
+the preempt notifier was perfectly sane.  The overall vCPU creation flow
+featured a single arch specific hook and the preempt notifer was used
+immediately after its initialization (by vcpu_load()).  E.g.:
+
+        vcpu = kvm_arch_ops->vcpu_create(kvm, n);
+        if (IS_ERR(vcpu))
+                return PTR_ERR(vcpu);
+
+        preempt_notifier_init(&vcpu->preempt_notifier, &kvm_preempt_ops);
+
+        vcpu_load(vcpu);
+        r = kvm_mmu_setup(vcpu);
+        vcpu_put(vcpu);
+        if (r < 0)
+                goto free_vcpu;
+
+Today, the call to preempt_notifier_init() is sandwiched between two
+arch specific calls, kvm_arch_vcpu_create() and kvm_arch_vcpu_setup(),
+which needlessly forces x86 (and possibly others?) to split its vCPU
+creation flow.  Init the preempt notifier prior to any arch specific
+call so that each arch can independently decide how best to organize
+its creation flow.
 
 Acked-by: Christoffer Dall <christoffer.dall@arm.com>
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- include/linux/kvm_host.h | 4 ----
- virt/kvm/kvm_main.c      | 9 +++------
- 2 files changed, 3 insertions(+), 10 deletions(-)
+ virt/kvm/kvm_main.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
-diff --git a/include/linux/kvm_host.h b/include/linux/kvm_host.h
-index a9abd9e9f621..d24e6c134d15 100644
---- a/include/linux/kvm_host.h
-+++ b/include/linux/kvm_host.h
-@@ -157,8 +157,6 @@ static inline bool is_error_page(struct page *page)
- #define KVM_USERSPACE_IRQ_SOURCE_ID		0
- #define KVM_IRQFD_RESAMPLE_IRQ_SOURCE_ID	1
- 
--extern struct kmem_cache *kvm_vcpu_cache;
--
- extern struct mutex kvm_lock;
- extern struct list_head vm_list;
- 
-@@ -579,8 +577,6 @@ static inline int kvm_vcpu_get_idx(struct kvm_vcpu *vcpu)
- 	      memslot < slots->memslots + KVM_MEM_SLOTS_NUM && memslot->npages;\
- 		memslot++)
- 
--int kvm_vcpu_init(struct kvm_vcpu *vcpu, struct kvm *kvm, unsigned id);
--void kvm_vcpu_uninit(struct kvm_vcpu *vcpu);
- void kvm_vcpu_destroy(struct kvm_vcpu *vcpu);
- 
- void vcpu_load(struct kvm_vcpu *vcpu);
 diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
-index 1afffb0da7cc..fd8168b8c0e4 100644
+index fd8168b8c0e4..876cf3dd2c97 100644
 --- a/virt/kvm/kvm_main.c
 +++ b/virt/kvm/kvm_main.c
-@@ -104,8 +104,7 @@ static cpumask_var_t cpus_hardware_enabled;
- static int kvm_usage_count;
- static atomic_t hardware_enable_failed;
+@@ -348,6 +348,7 @@ static int kvm_vcpu_init(struct kvm_vcpu *vcpu, struct kvm *kvm, unsigned id)
+ 	kvm_vcpu_set_dy_eligible(vcpu, false);
+ 	vcpu->preempted = false;
+ 	vcpu->ready = false;
++	preempt_notifier_init(&vcpu->preempt_notifier, &kvm_preempt_ops);
  
--struct kmem_cache *kvm_vcpu_cache;
--EXPORT_SYMBOL_GPL(kvm_vcpu_cache);
-+static struct kmem_cache *kvm_vcpu_cache;
+ 	r = kvm_arch_vcpu_init(vcpu);
+ 	if (r < 0)
+@@ -2752,8 +2753,6 @@ static int kvm_vm_ioctl_create_vcpu(struct kvm *kvm, u32 id)
+ 	if (r)
+ 		goto vcpu_uninit;
  
- static __read_mostly struct preempt_ops kvm_preempt_ops;
- 
-@@ -322,7 +321,7 @@ void kvm_reload_remote_mmus(struct kvm *kvm)
- 	kvm_make_all_cpus_request(kvm, KVM_REQ_MMU_RELOAD);
- }
- 
--int kvm_vcpu_init(struct kvm_vcpu *vcpu, struct kvm *kvm, unsigned id)
-+static int kvm_vcpu_init(struct kvm_vcpu *vcpu, struct kvm *kvm, unsigned id)
- {
- 	struct page *page;
- 	int r;
-@@ -360,9 +359,8 @@ int kvm_vcpu_init(struct kvm_vcpu *vcpu, struct kvm *kvm, unsigned id)
- fail:
- 	return r;
- }
--EXPORT_SYMBOL_GPL(kvm_vcpu_init);
- 
--void kvm_vcpu_uninit(struct kvm_vcpu *vcpu)
-+static void kvm_vcpu_uninit(struct kvm_vcpu *vcpu)
- {
- 	/*
- 	 * no need for rcu_read_lock as VCPU_RUN is the only place that
-@@ -373,7 +371,6 @@ void kvm_vcpu_uninit(struct kvm_vcpu *vcpu)
- 	kvm_arch_vcpu_uninit(vcpu);
- 	free_page((unsigned long)vcpu->run);
- }
--EXPORT_SYMBOL_GPL(kvm_vcpu_uninit);
- 
- void kvm_vcpu_destroy(struct kvm_vcpu *vcpu)
- {
+-	preempt_notifier_init(&vcpu->preempt_notifier, &kvm_preempt_ops);
+-
+ 	r = kvm_arch_vcpu_setup(vcpu);
+ 	if (r)
+ 		goto vcpu_destroy;
 -- 
 2.24.1
 
