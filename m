@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F96E12561B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:00:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A3B812561C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:00:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1x3UPjZsDj3l04RSRs5AlYXTYl7kIRIH3Wg8a7h+HUc=; b=jBWwbd7v8xZrQx
-	PYbZ67WCdPjWEHibVzV+mweVUz2NsO52IqV4pbruGv/qd3m8jKItdK/SCbnaweGY7nEFNJ0FYxO2P
-	HCpHeWITEInzQZnuA8XRhBMRK1eyJwpDAt+36MDW6TsrM9wY9cjmx+ARmyCunO5IxX3vL/dvCXvoz
-	DB5S6a+EqAFBntyqAuOo9DhKFoOhdCY3mYXLu69p7ZgCv/yLpHwQnP2FFNLCzmtv9jOx9ieXyMhRV
-	FL6ofHx0EwCHKw7jClTieWabkJ3MTbcNsOt4HzeumuTMObaWiXfr0APokPOgDF6Xes51Rxd3XE4gs
-	/dx81ifvHdH2pn9A2aAg==;
+	List-Owner; bh=e1gIIsMK5C1fV0aXGg3rJZoLXlfeuwJhlah61vHca1E=; b=DoFdzetO3DlDDv
+	gmPOHQjcQNES5MXN52OGWQr8sZtY060SfkYtw1EKC2S+na5wnXBtBsiL8pR6joy9uLrfi8Nx2DJIY
+	aCZPIh0CbDkFQ8xC4/8gq6IYMGRYtAGRVyaNnuqTquRsOdt65jDF8rrMYtFWP/6RdcYbSrdz7t3BR
+	Ucm77drX2BafGvUs8tM3oUhozN3Vq8LjgVa1+xcYFkQuRqhsN1Fsos9tH2AbFASFdtc/6REhb5u2S
+	Q7jqNJgA0YavwAH4LzEQc4xiTOVm5GWi8gguyHfmZBE74QnTpq6eiZmV4dzkILVpakloQlYByubQu
+	o+ilMoy1wSC9oh3gXJ6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihhMk-0000k4-T4; Wed, 18 Dec 2019 22:00:22 +0000
+	id 1ihhMv-0001j9-SX; Wed, 18 Dec 2019 22:00:33 +0000
 Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihhII-0004yN-7O
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:48 +0000
+ id 1ihhIJ-0004yV-Ke
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:49 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga001.fm.intel.com ([10.253.24.23])
  by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  18 Dec 2019 13:55:38 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108060"
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108064"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
- by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:37 -0800
+ by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:38 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH v2 13/45] KVM: PPC: Book3S PR: Allocate book3s and shadow vcpu
- after common init
-Date: Wed, 18 Dec 2019 13:54:58 -0800
-Message-Id: <20191218215530.2280-14-sean.j.christopherson@intel.com>
+Subject: [PATCH v2 14/45] KVM: PPC: e500mc: Move reset of oldpir below call to
+ kvm_vcpu_init()
+Date: Wed, 18 Dec 2019 13:54:59 -0800
+Message-Id: <20191218215530.2280-15-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_135546_341444_21557DC6 
-X-CRM114-Status: GOOD (  12.84  )
+X-CRM114-CacheID: sfid-20191218_135547_787443_F572F892 
+X-CRM114-Status: GOOD (  13.22  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -86,76 +86,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Call kvm_vcpu_init() in kvmppc_core_vcpu_create_pr() prior to allocating
-the book3s and shadow_vcpu objects in preparation of moving said call to
-common PPC code.  Although kvm_vcpu_init() has an arch callback, the
-callback is empty for Book3S PR, i.e. barring unseen black magic, moving
-the allocation has no real functional impact.
+Move the initialization of oldpir so that the call to kvm_vcpu_init() is
+at the top of kvmppc_core_vcpu_create_e500mc().  oldpir is only use
+when loading/putting a vCPU, which currently cannot be done until after
+kvm_arch_vcpu_create() completes.  Reording the call to kvm_vcpu_init()
+paves the way for moving the invocation to common PPC code.
+
+No functional change intended.
 
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/powerpc/kvm/book3s_pr.c | 22 +++++++++++-----------
- 1 file changed, 11 insertions(+), 11 deletions(-)
+ arch/powerpc/kvm/e500mc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/powerpc/kvm/book3s_pr.c b/arch/powerpc/kvm/book3s_pr.c
-index 0d7c8a7bcb7b..10c65d412e81 100644
---- a/arch/powerpc/kvm/book3s_pr.c
-+++ b/arch/powerpc/kvm/book3s_pr.c
-@@ -1748,12 +1748,18 @@ static int kvmppc_core_vcpu_create_pr(struct kvm *kvm, struct kvm_vcpu *vcpu,
- 				      unsigned int id)
- {
- 	struct kvmppc_vcpu_book3s *vcpu_book3s;
--	int err = -ENOMEM;
- 	unsigned long p;
-+	int err;
-+
-+	err = kvm_vcpu_init(vcpu, kvm, id);
-+	if (err)
-+		return err;
-+
-+	err = -ENOMEM;
+diff --git a/arch/powerpc/kvm/e500mc.c b/arch/powerpc/kvm/e500mc.c
+index aea588f73bf7..f2902e612150 100644
+--- a/arch/powerpc/kvm/e500mc.c
++++ b/arch/powerpc/kvm/e500mc.c
+@@ -310,13 +310,13 @@ static int kvmppc_core_vcpu_create_e500mc(struct kvm *kvm, struct kvm_vcpu *vcpu
+ 	BUILD_BUG_ON(offsetof(struct kvmppc_vcpu_e500, vcpu) != 0);
+ 	vcpu_e500 = to_e500(vcpu);
  
- 	vcpu_book3s = vzalloc(sizeof(struct kvmppc_vcpu_book3s));
- 	if (!vcpu_book3s)
--		goto out;
-+		goto uninit_vcpu;
- 	vcpu->arch.book3s = vcpu_book3s;
- 
- #ifdef CONFIG_KVM_BOOK3S_32_HANDLER
-@@ -1763,14 +1769,9 @@ static int kvmppc_core_vcpu_create_pr(struct kvm *kvm, struct kvm_vcpu *vcpu,
- 		goto free_vcpu3s;
- #endif
- 
--	err = kvm_vcpu_init(vcpu, kvm, id);
--	if (err)
--		goto free_shadow_vcpu;
+-	/* Invalid PIR value -- this LPID dosn't have valid state on any cpu */
+-	vcpu->arch.oldpir = 0xffffffff;
 -
--	err = -ENOMEM;
- 	p = __get_free_page(GFP_KERNEL|__GFP_ZERO);
- 	if (!p)
--		goto uninit_vcpu;
-+		goto free_shadow_vcpu;
- 	vcpu->arch.shared = (void *)p;
- #ifdef CONFIG_PPC_BOOK3S_64
- 	/* Always start the shared struct in native endian mode */
-@@ -1807,15 +1808,14 @@ static int kvmppc_core_vcpu_create_pr(struct kvm *kvm, struct kvm_vcpu *vcpu,
+ 	err = kvm_vcpu_init(vcpu, kvm, id);
+ 	if (err)
+ 		return err;
  
- free_shared_page:
- 	free_page((unsigned long)vcpu->arch.shared);
--uninit_vcpu:
--	kvm_vcpu_uninit(vcpu);
- free_shadow_vcpu:
- #ifdef CONFIG_KVM_BOOK3S_32_HANDLER
- 	kfree(vcpu->arch.shadow_vcpu);
- free_vcpu3s:
- #endif
- 	vfree(vcpu_book3s);
--out:
-+uninit_vcpu:
-+	kvm_vcpu_uninit(vcpu);
- 	return err;
- }
- 
++	/* Invalid PIR value -- this LPID dosn't have valid state on any cpu */
++	vcpu->arch.oldpir = 0xffffffff;
++
+ 	err = kvmppc_e500_tlb_init(vcpu_e500);
+ 	if (err)
+ 		goto uninit_vcpu;
 -- 
 2.24.1
 
