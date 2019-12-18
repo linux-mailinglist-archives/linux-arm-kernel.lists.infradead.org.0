@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D96212496B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 15:24:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62D16124970
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 15:24:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=m6hW2aQi6lyZSo73QCHVuaa2c5AYPD/sfKppgQprSd4=; b=MF4BQCtAl9KzL53f7s7eqStHm
-	jDy1nbqcCDfGIJC/IbnOErmkiyQLocxc2l3uhmLfnXbyPBnt2wSFR+xgP2v4M3pXpviBjESrtnjB8
-	xlUcyXtHf7mvdJNgs6j6l99jLC+LKqxW9bOPmVi037BTqGuKZ0+XKFKFCOt9KZxGvrCO/6t5TKqWG
-	Tk65LqVoNn8RkAwUgZU1TzJwMuPEHZeb+vdBTG+WgO61WQm1Bcf7zl0POBuj6r/bOlJbZ5CzBBOeh
-	Pzyffz+nJ3mbvu9xqLUjkvNpvsABhQ7WLslp9uESEi017jGDSkN/KW4lxQ9VgM4TXi+P0DRu6BmU1
-	02Yai0gDw==;
+	 bh=4Bq9f6IHfQqBJiYfhYbs0/GCtGBe6eAHZCNp26O6qbE=; b=ugV93jMHJfD2mbPTQ1NWrqG4F
+	B9veRMEXvKmCxOYBGhf+M49M+y1hxSNcQBhIMNt4HHymiY3tyktKi/m/Ji7600ZFBUTnozxQB0QJZ
+	5B8sC7M+m7O4SNcT0PDEWDUdSUFU5WXdmcBFOOVZb9BzMrIYrDNrsYsDrr+uJbw+6QVQnDs+FcL7c
+	7KHrLYzs/WfCBBWRrjTZw2Nydxlph8X1kaBPDIWqTaPQQMON1V9kc8KRaQh6ssIcV5El4HxwozJnf
+	xPltxZpo0eQindW+j6U7VvA32NK4XTWX28Rpc2N5J8ARkm6hCXijIwCq5NpG9xoKKSPolIB3emutd
+	sjyWLNLWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihaF5-0000tH-32; Wed, 18 Dec 2019 14:23:59 +0000
+	id 1ihaFS-00017J-OJ; Wed, 18 Dec 2019 14:24:22 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihaEu-0000sw-CM
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 14:23:49 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ id 1ihaFC-00015t-B0
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 14:24:07 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xBIEMRju009267; Wed, 18 Dec 2019 15:23:40 +0100
+ xBIEI8XQ027223; Wed, 18 Dec 2019 15:24:01 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=subject : to : cc :
  references : from : message-id : date : mime-version : in-reply-to :
  content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=CqqtdBSOQzQqY2X0T5pw83xNGBYfoG1Y6eQNNcwZcOs=;
- b=sO8+RfNMnFy+X6hhI9GL6hnltJcNCoANQTxOee2pWtP2t9XSI6aMsUr+18FYUeyt5bCT
- rQYgeOsAnIRPdHlagkpf3ZjL4lsFu79+2jVdeX58pd6nMhoXOiPoO2/vqhtBYM2tu4h6
- 9SHIOLyEQIK64dOpBRuuPSiWQJqvhTqRHVcTrzbGe0Nudli8a01BQTryfnLvlBZn1mLa
- z7J6OK67HdEkDfHkru6qSaztT8KaN3XSWaiLiEQQetNIrhd1eLYG4DqPMO+/Exni8Ggx
- GaE44x0p/Z/M8Svt1rFcfJ/3BxVguwLOLXzWcRGcyk2Rg/AJ3oP0cJ55Rd7rpioRbV5O WQ== 
+ bh=iP+ouA5h5Ds2xOy1AQcTUhmRFYphYpHN7RHHBS1IQHc=;
+ b=dLE/tJJThQ588N0gz8sg+Aun1R86QQ4q5iiIX3WKpeK7SXohdeQKn2RM92q13WbF9lDF
+ hZ9g87AoWb2SJpVxrU/vOWgwBVtaObfZ7R+/NNMjpWZq2aNkxNFRTBOyXl3mQ5VuALZy
+ akpzA00zi8wB5mbbvfYSthQshxIMouWCkiTOxpIRmbYeKgTfQoU86YTotbAVnknEgYl4
+ RSfioEuuUx9J6nU9OLSybzqgTB5H/F47A5l6BJquE96f1HEKSahqi+DdZMuZMJVXuHNM
+ /7B5ZnPboRF737zclOqJXBUlUk+Qzid62Sk8DubnrvDA5cNh7FsCMCuf33UhyMBXiQ99 ww== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wvnremuku-1
+ by mx08-00178001.pphosted.com with ESMTP id 2wvqgpvhv9-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 18 Dec 2019 15:23:40 +0100
+ Wed, 18 Dec 2019 15:24:01 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2435D100038;
- Wed, 18 Dec 2019 15:23:39 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E9F76100038;
+ Wed, 18 Dec 2019 15:23:57 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 0ADDA210D29;
- Wed, 18 Dec 2019 15:23:39 +0100 (CET)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id DEEC8210D29;
+ Wed, 18 Dec 2019 15:23:57 +0100 (CET)
 Received: from lmecxl0912.lme.st.com (10.75.127.51) by SFHDAG3NODE2.st.com
  (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 18 Dec
- 2019 15:23:38 +0100
-Subject: Re: [PATCH 0/6] Convert STM32 dma to json-schema
-To: Benjamin Gaignard <benjamin.gaignard@st.com>, <vkoul@kernel.org>,
- <robh+dt@kernel.org>, <mark.rutland@arm.com>, <mcoquelin.stm32@gmail.com>
-References: <20191217092201.20022-1-benjamin.gaignard@st.com>
+ 2019 15:23:57 +0100
+Subject: Re: [PATCH] ARM: dts: stm32: update mlahb node according to the
+ bindings
+To: Arnaud Pouliquen <arnaud.pouliquen@st.com>, Rob Herring <robh@kernel.org>, 
+ Mark Rutland <mark.rutland@arm.com>
+References: <20191218085710.2142-1-arnaud.pouliquen@st.com>
 From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <925ed27e-25a4-7382-af52-fda1688ac789@st.com>
-Date: Wed, 18 Dec 2019 15:23:38 +0100
+Message-ID: <181f8e80-5042-0923-c231-c0bed47a118d@st.com>
+Date: Wed, 18 Dec 2019 15:23:57 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20191217092201.20022-1-benjamin.gaignard@st.com>
+In-Reply-To: <20191218085710.2142-1-arnaud.pouliquen@st.com>
 Content-Language: en-US
 X-Originating-IP: [10.75.127.51]
-X-ClientProxiedBy: SFHDAG5NODE2.st.com (10.75.127.14) To SFHDAG3NODE2.st.com
+X-ClientProxiedBy: SFHDAG4NODE3.st.com (10.75.127.12) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
  definitions=2019-12-18_04:2019-12-17,2019-12-18 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_062348_709433_5A1993A7 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20191218_062406_669728_A89610D8 
+X-CRM114-Status: GOOD (  17.23  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -97,7 +98,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, devicetree@vger.kernel.org,
+Cc: Fabien Dessenne <fabien.dessenne@st.com>, devicetree@vger.kernel.org,
  linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
@@ -105,38 +106,34 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Benjamin,
+Hi Arnaud
 
-On 12/17/19 10:21 AM, Benjamin Gaignard wrote:
-> This series convert STM32 dma, mdma and dmamux bindings to json-schema.
-> Yaml bindings use dma-controller and dma-router schemas where nodes names
-> are verified which lead to fix stm32f746, stm32f743 and stm32mp157 device
-> tree files.
+On 12/18/19 9:57 AM, Arnaud Pouliquen wrote:
+> Update of the mlahb node according to to DT bindings using json-schema
 > 
-> Benjamin Gaignard (6):
->    dt-bindings: dma: Convert stm32 DMA bindings to json-schema
->    dt-bindings: dma: Convert stm32 MDMA bindings to json-schema
->    dt-bindings: dma: Convert stm32 DMAMUX bindings to json-schema
->    ARM: dts: stm32: fix dma controller node name on stm32f746
->    ARM: dts: stm32: fix dma controller node name on stm32f743
->    ARM: dts: stm32: fix dma controller node name on stm32mp157c
+> Signed-off-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
+> ---
+>   arch/arm/boot/dts/stm32mp157c.dtsi | 5 +++--
+>   1 file changed, 3 insertions(+), 2 deletions(-)
 > 
->   .../devicetree/bindings/dma/st,stm32-dma.yaml      | 102 ++++++++++++++++++++
->   .../devicetree/bindings/dma/st,stm32-dmamux.yaml   |  52 ++++++++++
->   .../devicetree/bindings/dma/st,stm32-mdma.yaml     | 105 +++++++++++++++++++++
->   .../devicetree/bindings/dma/stm32-dma.txt          |  83 ----------------
->   .../devicetree/bindings/dma/stm32-dmamux.txt       |  84 -----------------
->   .../devicetree/bindings/dma/stm32-mdma.txt         |  94 ------------------
->   arch/arm/boot/dts/stm32f746.dtsi                   |   4 +-
->   arch/arm/boot/dts/stm32h743.dtsi                   |   6 +-
->   arch/arm/boot/dts/stm32mp157c.dtsi                 |   6 +-
->   9 files changed, 267 insertions(+), 269 deletions(-)
->   create mode 100644 Documentation/devicetree/bindings/dma/st,stm32-dma.yaml
->   create mode 100644 Documentation/devicetree/bindings/dma/st,stm32-dmamux.yaml
->   create mode 100644 Documentation/devicetree/bindings/dma/st,stm32-mdma.yaml
->   delete mode 100644 Documentation/devicetree/bindings/dma/stm32-dma.txt
->   delete mode 100644 Documentation/devicetree/bindings/dma/stm32-dmamux.txt
->   delete mode 100644 Documentation/devicetree/bindings/dma/stm32-mdma.txt
+> diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
+> index ed8b258256d7..be04eab7f139 100644
+> --- a/arch/arm/boot/dts/stm32mp157c.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp157c.dtsi
+> @@ -1513,10 +1513,11 @@
+>   		};
+>   	};
+>   
+> -	mlahb {
+> -		compatible = "simple-bus";
+> +	mlahb: ahb {
+> +		compatible = "st,mlahb", "simple-bus";
+>   		#address-cells = <1>;
+>   		#size-cells = <1>;
+> +		ranges;
+>   		dma-ranges = <0x00000000 0x38000000 0x10000>,
+>   			     <0x10000000 0x10000000 0x60000>,
+>   			     <0x30000000 0x30000000 0x60000>;
 > 
 
 For  DT patches, please rebase your patches on stm32-next. Major updates 
