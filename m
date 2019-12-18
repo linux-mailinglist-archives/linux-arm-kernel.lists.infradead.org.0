@@ -2,89 +2,149 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CE7A1243E9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 11:03:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17FB71243E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 11:03:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fNTG5pXH50u6xTC6KeWTsCHflnFoRY3dH6ak3JZQ13E=; b=gvicWUppa/7vlX
-	syIEKPaBfRz2u3Cac0Hmed9qeCE+Q5b/mLGkcSLD/Y01E4jd3nIThW4P4cT3/D7N7NE+4d52xWbu3
-	CVasq74E0aNoBmTyxWTaKiZByy3iYSHWEKkdxpaHuxs5p6xtG+jSw7rRJEhBfKJoS+ZL+NCRWZyVa
-	zDXnXmGi+nJwA+TfyL36NzKE/jGmlixmPOoWHXKgg6GmTxMmUG8Px9hUgtHhuQMrL9d3wjD86aeKz
-	vFXWQ3GVEgM8C2aUlRN/o7DztQfjzG5GLKNf1M54UJAQZyixNzVW+gsNhQkaRCrROFGgxmS4sFHY8
-	RDTon3zcC/gE7bOHyJlw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KYAeeXO8aXT/TB1By2Jq3KRuySiY5XccF/WIe6rS3wc=; b=dAnyGnKhvCQygD
+	MwUDTuZB2+25bDOxtnaBGCKZ0/KJzmbAzXiMw8IXhoL1OBC4cAtYGZLH85Y+T8+aEo8z5UBYO3GSY
+	Bf5X3Fa0VmZRSvdV9qssgiyZtvi8gjwefzQYMd97ECMB577/ErVUvlczNPc/zchzTM1Lx2uaHsn6Y
+	lZTOS6EYhM+Mo+s6uPRL/xwWqOw/guJdes6YJ9A1etBUbuNaVay/W4gnmF+PXkHyILDscN+JScb3x
+	uTBLEGYjMZJ7xfADQdxeaSZmeZfNekvT2Urx68z5kULwr5+k29uuPxmGDOOsGnQufJY8p4lCCV8PN
+	EC99VD8Gi4j6gQa9Sesw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihWAh-0006oc-Fz; Wed, 18 Dec 2019 10:03:11 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1ihWAP-0006fR-UX; Wed, 18 Dec 2019 10:02:53 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihWAM-0006iX-Ap
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 10:02:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576663369;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=wNl30ngwplpkjNMccFNGBwXPzMVQNo8XvrbBUj1dPsg=;
- b=Dn5QgXxafxWZWolIiPnbDcmtB9hQs2vXAU/HJ5CGMPCSV7Cy3jZW7CjF7sLqWOGKXAz86g
- Jlx2NW0rDZLpiKQWpNobDKS6kz1mqzHq+iEe81ZlPzKGxmm7Yyd22czamvJpZ1ipE8E/JY
- h4kjKNV/U+YGR38Y9y/RHNcIoPtsomk=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-86-z-uiARqFMSS96uPc4V83jw-1; Wed, 18 Dec 2019 05:02:42 -0500
-X-MC-Unique: z-uiARqFMSS96uPc4V83jw-1
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id B99D6DB24;
- Wed, 18 Dec 2019 10:02:39 +0000 (UTC)
-Received: from [10.36.116.117] (ovpn-116-117.ams2.redhat.com [10.36.116.117])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 9FA537D903;
- Wed, 18 Dec 2019 10:02:35 +0000 (UTC)
-Subject: Re: [PATCH v3 12/13] PCI/ATS: Add PASID stubs
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-acpi@vger.kernel.org, devicetree@vger.kernel.org,
- iommu@lists.linux-foundation.org
-References: <20191209180514.272727-1-jean-philippe@linaro.org>
- <20191209180514.272727-13-jean-philippe@linaro.org>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <c5fc736a-d7f6-8b9d-27eb-450b65658c36@redhat.com>
-Date: Wed, 18 Dec 2019 11:02:34 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
-MIME-Version: 1.0
-In-Reply-To: <20191209180514.272727-13-jean-philippe@linaro.org>
+ id 1ihWAE-0006eY-AQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 10:02:46 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa2.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: +x+X1YH1T2jLIbQLZgJTQhJjtcAlK4iQKEioBXgiRstcaZtOEAhhSf1sDZ5HVZPgn5sNG+zAGk
+ KsDxhPaKpAmSsvKKRzSBxfLWCnagUsb/w3wxDXogqF206dvwcG3lfopRRL1i9sFwYf7tz2D74f
+ aZG7DaQEt1xN01qs/AJL8MTgJhmFkQm6z6tpoPo7VG14RFyXdr7I7wglq+TXWJanACXbAZ5auc
+ WI7slum3NSxmXtviva8ESQrdVp+1AeNz318FsrseXGvuJuSi+qV4fpFaOEik19QfK+MLcqX7LL
+ FWY=
+X-IronPort-AV: E=Sophos;i="5.69,329,1571727600"; d="scan'208";a="60190911"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 18 Dec 2019 03:02:38 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 18 Dec 2019 03:02:41 -0700
+Received: from NAM12-MW2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.71) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Wed, 18 Dec 2019 03:02:41 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jcCZ/fUiQGkUlcsp+WByBTepJCZTHU5cEHAYwqLZAYLt9bvdQBrLtxm+YDtSKgTO+3yhdk5GvQqhmhB/49Jbqi0QY1yiWcWS8EqCl5643cnFYd0izIagHaZVgB8+NwBAlJYPpszbtVZf3bpjfTV+ezA1GBdqvpwosWrFlxxQDvKrussFAVVCQJ3kg1k5AfWYNy4to6UXZzknuCwtJ69oM9TZ7GTwvzjsNwk2JAVU219HhEww7qmOAUSvz8wjqd2nnKZkd9w+b5Zbo/lK/NjXdLQTNcOae88EWDj/7vughHtTaWJMJnYdKuhbXeEFDP+GEdBGHYcR0GLhDjFS7S2/XQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=itDf9KNGAaXDShX+UuhQUDGDD34alsWcKCFd1ExdirA=;
+ b=MU9YmruZgpvO4aDQy8IcYCUkApK2dmLVpXVYrvfVuO5wmPb8LcSrBG1c2fRdFmwM1KN/2KNmkhEjXFV2Kk4uGYZ2yKZP3mcx4gjuXLBIWsOBQC5fnT/UA7JlLW2r46p9Dwo42hJSeFAmwJOTsLCgkepq6HkrPsA3n5XADVSyHQ4tJ/SCM00AfeAUYMSyIJdTMSf6ph05cDfYzbgfxolYJpshcMbRVrdAkJoiPC0jpVscWPnGVBp3rR8yZoalTwWf/h/DgFacdhjukGGaO2K6V291cCpQFa15EFhGwTOKx4MUnh/iYbVjtB7LM8pdiBbIzShzXi3H8ej/j9f03OgtvA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=itDf9KNGAaXDShX+UuhQUDGDD34alsWcKCFd1ExdirA=;
+ b=MhJZ6WHNfArMZKFBmtxFowgh/IuXg2NB8LtlofY+dNXySnOcaqtGseoabPeX5OhC3w0b/4Bp4zHwyJJRHMfnKyDgavlfSB2O4rCcM3yzP8wcj9jG5e67X5dKGSnUPNLsEXtopMfDNA5FU7c+jzoCwajiYPNNQWdKZFSBJzEGNrE=
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.224) by
+ DM6PR11MB3643.namprd11.prod.outlook.com (20.178.231.210) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2559.14; Wed, 18 Dec 2019 10:02:36 +0000
+Received: from DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::106f:424f:ac54:1dbb]) by DM6PR11MB3225.namprd11.prod.outlook.com
+ ([fe80::106f:424f:ac54:1dbb%7]) with mapi id 15.20.2559.012; Wed, 18 Dec 2019
+ 10:02:36 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <lee.jones@linaro.org>
+Subject: Re: [PATCH v2 4/6] mfd: atmel-hlcdc: return in case of error
+Thread-Topic: [PATCH v2 4/6] mfd: atmel-hlcdc: return in case of error
+Thread-Index: AQHVtYpGJFu20kSyE0Kv6o26dzwrgA==
+Date: Wed, 18 Dec 2019 10:02:36 +0000
+Message-ID: <9340342a-a908-d4f6-3293-8571a8d3e242@microchip.com>
+References: <1576249496-4849-1-git-send-email-claudiu.beznea@microchip.com>
+ <1576249496-4849-5-git-send-email-claudiu.beznea@microchip.com>
+ <20191216162406.GQ2369@dell>
+In-Reply-To: <20191216162406.GQ2369@dell>
+Accept-Language: en-US
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: bcc8afec-5431-4ec2-c5f3-08d783a168af
+x-ms-traffictypediagnostic: DM6PR11MB3643:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR11MB364366E8BBDB450FF07B029E87530@DM6PR11MB3643.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 0255DF69B9
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(366004)(346002)(136003)(396003)(39860400002)(189003)(199004)(71200400001)(8936002)(66446008)(6486002)(81156014)(26005)(31686004)(4326008)(53546011)(54906003)(8676002)(186003)(6916009)(81166006)(6512007)(76116006)(5660300002)(64756008)(66556008)(36756003)(66476007)(91956017)(2906002)(66946007)(478600001)(31696002)(6506007)(86362001)(966005)(316002)(2616005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB3643;
+ H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: tK3yfYvMGxt6KyvgwSSh5UlwEGbSNjGtWBZnSvjfRanjJ36toqfToaXoRFj2USJ+IWC1b0V/qw5FS6ot4RWP8OvF1ED5mV4NSqYG0w6ixl6muEXuxlSx8L7QY6FwapQIJkg7CCl6m+gSD7qHoAXSRpkXBr08dPGSWIa8Vi/TrHzGwrHQOY3FMH5rB42hp2lw0tTi6R8xtVEDHeZeFjEoK/hgDO5dOkoilpl6DMuba8UCyG0vgM/ukR7hj7hnQX0XydqJFNsCMJ4V0M8dkUXzLin4MnZggSQ4rt3DnG/2BjskYjlf+f5hVP0SQxjIUFyeVKlNkmDIxaTPKEi2f/Mi6PuRPArCAVx6vl/NLwblY3Sdn4gPX3OCXlNyipYcahdkHuUVFTY+wXZ6PrWnWu0YV/st4f9lUAC7Y2hodSkm0hjv8pMz7uDB7ZWDLhfPbumY5K3QlEM//qNHhQzGmBkZ20wu/4SJrvN0K0dugtLHcJs=
+Content-ID: <88D8021AC03C524D8841C633646318F6@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: bcc8afec-5431-4ec2-c5f3-08d783a168af
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Dec 2019 10:02:36.5008 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 8KqUCmCdt7tN/viKRHuA/StOZX3p+xo9xJ6Y61jbQxSsjYiRCyOQ+WS38Zvw5/peT/1YyXPN5loK15cP3dFn6eKC1NfPFkOlEi2OCS4Lo+w=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3643
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_020250_480664_F96D6739 
-X-CRM114-Status: GOOD (  15.46  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191218_020242_442650_98084426 
+X-CRM114-Status: GOOD (  15.21  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.61 listed in list.dnswl.org]
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.61 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,51 +156,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, robin.murphy@arm.com,
- joro@8bytes.org, guohanjun@huawei.com, rjw@rjwysocki.net, robh+dt@kernel.org,
- jonathan.cameron@huawei.com, sudeep.holla@arm.com, bhelgaas@google.com,
- zhangfei.gao@linaro.org, will@kernel.org, lenb@kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alexandre.belloni@bootlin.com, bbrezillon@kernel.org, airlied@linux.ie,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Ludovic.Desroches@microchip.com, daniel@ffwll.ch, sam@ravnborg.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jean,
-
-On 12/9/19 7:05 PM, Jean-Philippe Brucker wrote:
-> The SMMUv3 driver, which may be built without CONFIG_PCI, will soon gain
-> PASID support.  Partially revert commit c6e9aefbf9db ("PCI/ATS: Remove
-> unused PRI and PASID stubs") to re-introduce the PASID stubs, and avoid
-> adding more #ifdefs to the SMMU driver.
-> 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Reviewed-by: Eric Auger <eric.auger@redhat.com>
-
-Thanks
-
-Eric
-> ---
->  include/linux/pci-ats.h | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/include/linux/pci-ats.h b/include/linux/pci-ats.h
-> index 5d62e78946a3..d08f0869f121 100644
-> --- a/include/linux/pci-ats.h
-> +++ b/include/linux/pci-ats.h
-> @@ -33,6 +33,9 @@ void pci_disable_pasid(struct pci_dev *pdev);
->  int pci_pasid_features(struct pci_dev *pdev);
->  int pci_max_pasids(struct pci_dev *pdev);
->  #else /* CONFIG_PCI_PASID */
-> +static inline int pci_enable_pasid(struct pci_dev *pdev, int features)
-> +{ return -EINVAL; }
-> +static inline void pci_disable_pasid(struct pci_dev *pdev) { }
->  static inline int pci_pasid_features(struct pci_dev *pdev)
->  { return -EINVAL; }
->  static inline int pci_max_pasids(struct pci_dev *pdev)
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQoNCk9uIDE2LjEyLjIwMTkgMTg6MjQsIExlZSBKb25lcyB3cm90ZToNCj4gRVhURVJOQUwgRU1B
+SUw6IERvIG5vdCBjbGljayBsaW5rcyBvciBvcGVuIGF0dGFjaG1lbnRzIHVubGVzcyB5b3Uga25v
+dyB0aGUgY29udGVudCBpcyBzYWZlDQo+IA0KPiBPbiBGcmksIDEzIERlYyAyMDE5LCBDbGF1ZGl1
+IEJlem5lYSB3cm90ZToNCj4gDQo+PiBGb3IgSExDREMgdGltaW5nIGVuZ2luZSBjb25maWd1cmF0
+aW9ucyBiaXQgQVRNRUxfSExDRENfU0lQIG9mDQo+PiBBVE1FTF9ITENEQ19TUiBuZWVkcyB0byBi
+ZSBwb2xsZWQgYmVmb3JlIGFwcGx5aW5nIG5ldyBjb25maWcuIEluIGNhc2Ugb2YNCj4+IHRpbWVv
+dXQgdGhlcmUgaXMgbm8gaW5kaWNhdG9yIGFib3V0IHRoaXMsIHNvLCByZXR1cm4gaW4gY2FzZSBv
+ZiB0aW1lb3V0DQo+PiBhbmQgYWxzbyBwcmludCBhIG1lc3NhZ2UgYWJvdXQgdGhpcy4NCj4+DQo+
+PiBTaWduZWQtb2ZmLWJ5OiBDbGF1ZGl1IEJlem5lYSA8Y2xhdWRpdS5iZXpuZWFAbWljcm9jaGlw
+LmNvbT4NCj4+IC0tLQ0KPj4gIGRyaXZlcnMvbWZkL2F0bWVsLWhsY2RjLmMgfCAxNSArKysrKysr
+KysrKy0tLS0NCj4+ICAxIGZpbGUgY2hhbmdlZCwgMTEgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlv
+bnMoLSkNCj4+DQo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9tZmQvYXRtZWwtaGxjZGMuYyBiL2Ry
+aXZlcnMvbWZkL2F0bWVsLWhsY2RjLmMNCj4+IGluZGV4IDkyYmZjYWE2MmFjZS4uYTFlNDZjODdi
+OTU2IDEwMDY0NA0KPj4gLS0tIGEvZHJpdmVycy9tZmQvYXRtZWwtaGxjZGMuYw0KPj4gKysrIGIv
+ZHJpdmVycy9tZmQvYXRtZWwtaGxjZGMuYw0KPj4gQEAgLTQwLDEwICs0MCwxNyBAQCBzdGF0aWMg
+aW50IHJlZ21hcF9hdG1lbF9obGNkY19yZWdfd3JpdGUodm9pZCAqY29udGV4dCwgdW5zaWduZWQg
+aW50IHJlZywNCj4+DQo+PiAgICAgICBpZiAocmVnIDw9IEFUTUVMX0hMQ0RDX0RJUykgew0KPj4g
+ICAgICAgICAgICAgICB1MzIgc3RhdHVzOw0KPj4gLQ0KPj4gLSAgICAgICAgICAgICByZWFkbF9w
+b2xsX3RpbWVvdXRfYXRvbWljKGhyZWdtYXAtPnJlZ3MgKyBBVE1FTF9ITENEQ19TUiwNCj4+IC0g
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzdGF0dXMsICEoc3RhdHVzICYg
+QVRNRUxfSExDRENfU0lQKSwNCj4+IC0gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAxLCAxMDApOw0KPj4gKyAgICAgICAgICAgICBpbnQgcmV0Ow0KPj4gKw0KPj4gKyAgICAg
+ICAgICAgICByZXQgPSByZWFkbF9wb2xsX3RpbWVvdXRfYXRvbWljKGhyZWdtYXAtPnJlZ3MgKyBB
+VE1FTF9ITENEQ19TUiwNCj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICBzdGF0dXMsDQo+PiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIShzdGF0dXMgJiBBVE1FTF9ITENEQ19TSVApLA0KPj4gKyAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDEsIDEwMCk7DQo+PiArICAgICAgICAgICAg
+IGlmIChyZXQpIHsNCj4+ICsgICAgICAgICAgICAgICAgICAgICBkZXZfZXJyKGhyZWdtYXAtPmRl
+diwNCj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJUaW1lb3V0IHdhaXRpbmcgZm9y
+IEFUTUVMX0hMQ0RDX1NJUFxuIik7DQo+IA0KPiBOaXQ6IEp1c3QgaW4gY2FzZSB5b3UgaGF2ZSB0
+byByZXdvcmsgdGhpcywgcGxhY2luZyByZWdpc3RlciBuYW1lcyBpbg0KPiB0aGUga2VybmVsIGxv
+ZyBpc24ndCB1c3VhbGx5IGhlbHBmdWwuICBDYW4geW91IHN3YXAgaXQgb3V0IGZvciBhIG1vcmUN
+Cj4gdXNlciBmcmllbmRseSBtZXNzYWdlPw0KDQpTdXJlISBJJ2xsIGRvIGEgdjMgZm9yIGl0Lg0K
+DQpUaGFuayB5b3UsDQpDbGF1ZGl1IEJlem5lYQ0KDQo+IA0KPiAiVGltZWQgb3V0IHdhaXRpbmcg
+Zm9yIC4uLiINCj4gDQo+IC4uLiBYIHN0YXR1cw0KPiAuLi4gWSB0byB1cGRhdGUNCj4gLi4uIHNl
+dHRpbmcgWiBjb25maWd1cmF0aW9uDQo+IA0KPiBFdGMuDQo+IA0KPj4gKyAgICAgICAgICAgICAg
+ICAgICAgIHJldHVybiByZXQ7DQo+PiArICAgICAgICAgICAgIH0NCj4+ICAgICAgIH0NCj4+DQo+
+PiAgICAgICB3cml0ZWwodmFsLCBocmVnbWFwLT5yZWdzICsgcmVnKTsNCj4gDQo+IC0tDQo+IExl
+ZSBKb25lcyBb5p2O55C85pavXQ0KPiBMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQNCj4g
+TGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzDQo+IEZvbGxv
+dyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJsb2cNCj4gDQo+IF9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fDQo+IGxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0DQo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZw0KPiBodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwN
+Cj4gCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
