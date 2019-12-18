@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EECC2124E03
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:40:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C59F0124E0C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:41:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z/AOPOJSTl/k5xIf0pqUA0JaRVXovZyHun2a44phD5Y=; b=d70IzJZLYEg0rS
-	eiwIa7CaQQ1c/aKgRHbZxJcSUlgDsX3h63UtSwOonSdJ4y7jAgtoT33akRxIShp4Jdvvsemf8oPBf
-	ZeaeLiahHss0Sc5FnehW6SVQXeQJ/HkoNi5VeblLTNvH4ngjv9JLebrnn0ADab0/8DT5oAuZH4kec
-	L/C4dQkpHn438dwFu+BqPT0nnBYhWP7D1wo5D06jxuHHxRGZdgXc+EGA+x+qaEMq+rhTpW3xAcnFH
-	w/oeOeCAASqLJraPOpUirK5UVlu9ENMdl1H+5TgqIXETESbWm1OKM9tKbhZy6MI5X1txwvwIzg3MM
-	Fj4bFGrX7gIweGEqkC9g==;
+	List-Owner; bh=B4SjPqocMwq0qG3/aHdyXeXRIneDSItRfRkdN8xYSb0=; b=bfWq9t8z6GzPuC
+	+W1QQlW6prSNVxqFAvARN8zubKE744PnbwGboK9NFt4+yg5zxQnb4L5KphTJJOW3sptHwyeh7JBg6
+	KIW2GPbj3tz5d76LIIDkMqFMBcVrcUc87DMEFlx4R/FBmypIMp/sRsPq+32twAZn6J5VAggT9eRD6
+	GGsDWSAGVFGeRjl0tQ5EGzzW2B88bKNJbGHeF3huAUFT8RMG3VAbQpGN6YiYSg/ibV1bgSej6BBG5
+	KLkXeGCDwchThVY7bmcFuOSJ195FTn/9nSF5XXIL7XaPA+sf2a0CY7o4HYXB/96K66BASymyYVW6w
+	CTP8eXsUo4tVMAm0UNuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihcMz-0004Ey-G0; Wed, 18 Dec 2019 16:40:17 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1ihcNa-0005m0-39; Wed, 18 Dec 2019 16:40:54 +0000
+Received: from mailoutvs15.siol.net ([185.57.226.206] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihcMi-00042m-Sh
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 16:40:02 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 18 Dec 2019 08:39:59 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="205898318"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.202])
- by orsmga007.jf.intel.com with ESMTP; 18 Dec 2019 08:39:59 -0800
-Date: Wed, 18 Dec 2019 08:39:59 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Christian Borntraeger <borntraeger@de.ibm.com>
-Subject: Re: [PATCH v4 19/19] KVM: selftests: Add test for
- KVM_SET_USER_MEMORY_REGION
-Message-ID: <20191218163958.GC25201@linux.intel.com>
-References: <20191217204041.10815-1-sean.j.christopherson@intel.com>
- <20191217204041.10815-20-sean.j.christopherson@intel.com>
- <f962fafb-3956-746f-d077-3dbcefaae7c8@de.ibm.com>
+ id 1ihcNL-0005kk-2R
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 16:40:41 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 161B1521E9F;
+ Wed, 18 Dec 2019 17:40:28 +0100 (CET)
+X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id xfVEE8OS8Kem; Wed, 18 Dec 2019 17:40:27 +0100 (CET)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 9BF6A523FB0;
+ Wed, 18 Dec 2019 17:40:27 +0100 (CET)
+Received: from jernej-laptop.localnet (cpe-86-58-102-7.static.triera.net
+ [86.58.102.7]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id 799165236CB;
+ Wed, 18 Dec 2019 17:40:26 +0100 (CET)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Subject: Re: [PATCH 1/2] media: cedrus: Fix decoding for some HEVC videos
+Date: Wed, 18 Dec 2019 17:40:25 +0100
+Message-ID: <2234008.mhVpxdDc1K@jernej-laptop>
+In-Reply-To: <20191218084047.GA2900@aptenodytes>
+References: <20191213161516.54688-1-jernej.skrabec@siol.net>
+ <20191213161516.54688-2-jernej.skrabec@siol.net>
+ <20191218084047.GA2900@aptenodytes>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f962fafb-3956-746f-d077-3dbcefaae7c8@de.ibm.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_084001_005041_2C26AD10 
-X-CRM114-Status: GOOD (  14.69  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191218_084039_276065_4983D66A 
+X-CRM114-Status: GOOD (  19.57  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.206 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,56 +71,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, James Hogan <jhogan@kernel.org>,
- linux-mips@vger.kernel.org, Paul Mackerras <paulus@ozlabs.org>,
- kvmarm@lists.cs.columbia.edu, Janosch Frank <frankja@linux.ibm.com>,
- Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
- Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>
+Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, mripard@kernel.org, hverkuil@xs4all.nl,
+ wens@csie.org, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 18, 2019 at 12:39:43PM +0100, Christian Borntraeger wrote:
-> 
-> On 17.12.19 21:40, Sean Christopherson wrote:
-> > Add a KVM selftest to test moving the base gfn of a userspace memory
-> > region.  The test is primarily targeted at x86 to verify its memslot
-> > metadata is correctly updated, but also provides basic functionality
-> > coverage on other architectures.
-> > +static void *vcpu_worker(void *data)
-> > +{
-> > +	struct kvm_vm *vm = data;
-> > +	struct kvm_run *run;
-> > +	struct ucall uc;
-> > +	uint64_t cmd;
-> > +
-> > +	/*
-> > +	 * Loop until the guest is done.  Re-enter the guest on all MMIO exits,
-> > +	 * which will occur if the guest attempts to access a memslot while it
-> > +	 * is being moved.
-> > +	 */
-> > +	run = vcpu_state(vm, VCPU_ID);
-> > +	do {
-> > +		vcpu_run(vm, VCPU_ID);
-> > +	} while (run->exit_reason == KVM_EXIT_MMIO);
-> > +
-> > +	TEST_ASSERT(run->exit_reason == KVM_EXIT_IO,
-> > +		    "Unexpected exit reason = %d", run->exit_reason);
-> 
-> 
-> This will also not work for s390. Maybe just make this test x86 specific for now?
+Hi!
 
-Doh, that's obvious in hindsight.  I think the basic premise is also
-broken on arm64 as it returns -EFAULT on is_error_noslot_pfn(pfn).  So
-yeah, x86 only for now :-(
+Dne sreda, 18. december 2019 ob 09:40:47 CET je Paul Kocialkowski napisal(a):
+> Hi,
+> 
+> On Fri 13 Dec 19, 17:15, Jernej Skrabec wrote:
+> > It seems that for some HEVC videos at least one bitstream parsing
+> > trigger must be called in order to be decoded correctly. There is no
+> > explanation why this helps, but it was observed that several videos
+> > with this fix are now decoded correctly and there is no regression with
+> > others.
+> > 
+> > Without this fix, those same videos totally crash HEVC decoder (other
+> > decoder engines are unaffected). After decoding those problematic
+> > videos, HEVC decoder always returns only green image (all zeros).
+> > Only complete HW reset helps.
+> > 
+> > This fix is similar to that for H264.
+> 
+> Thanks for the fix, interesting that the same issue shows up on HEVC!
+> I suspect that Allwinner folks never really tested the engine without
+> using it for bitstream parsing.
+
+That thought also crossed my mind. It's even worse with VP8. There you can't 
+have proper decoding at all without calling one specific bitstream parsing 
+function.
+
+> 
+> Acked-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+
+Thanks!
+
+Best regards,
+Jernej
+
+> 
+> Cheers,
+> 
+> Paul
+> 
+> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > ---
+> > 
+> >  .../staging/media/sunxi/cedrus/cedrus_h265.c  | 25 ++++++++++++++++---
+> >  .../staging/media/sunxi/cedrus/cedrus_regs.h  |  1 +
+> >  2 files changed, 23 insertions(+), 3 deletions(-)
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c index
+> > 109d3289418c..5a207f1e137c 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h265.c
+> > @@ -7,6 +7,7 @@
+> > 
+> >   * Copyright (C) 2018 Bootlin
+> >   */
+> > 
+> > +#include <linux/delay.h>
+> > 
+> >  #include <linux/types.h>
+> >  
+> >  #include <media/videobuf2-dma-contig.h>
+> > 
+> > @@ -283,6 +284,23 @@ static void cedrus_h265_write_scaling_list(struct
+> > cedrus_ctx *ctx,> 
+> >  		}
+> >  
+> >  }
+> > 
+> > +static void cedrus_h265_skip_bits(struct cedrus_dev *dev, int num)
+> > +{
+> > +	int count = 0;
+> > +
+> > +	while (count < num) {
+> > +		int tmp = min(num - count, 32);
+> > +
+> > +		cedrus_write(dev, VE_DEC_H265_TRIGGER,
+> > +			     VE_DEC_H265_TRIGGER_FLUSH_BITS |
+> > +			     VE_DEC_H265_TRIGGER_TYPE_N_BITS(tmp));
+> > +		while (cedrus_read(dev, VE_DEC_H265_STATUS) &
+> > VE_DEC_H265_STATUS_VLD_BUSY) +			udelay(1);
+> > +
+> > +		count += tmp;
+> > +	}
+> > +}
+> > +
+> > 
+> >  static void cedrus_h265_setup(struct cedrus_ctx *ctx,
+> >  
+> >  			      struct cedrus_run *run)
+> >  
+> >  {
+> > 
+> > @@ -347,10 +365,9 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
+> > 
+> >  	/* Source offset and length in bits. */
+> > 
+> > -	reg = slice_params->data_bit_offset;
+> > -	cedrus_write(dev, VE_DEC_H265_BITS_OFFSET, reg);
+> > +	cedrus_write(dev, VE_DEC_H265_BITS_OFFSET, 0);
+> > 
+> > -	reg = slice_params->bit_size - slice_params->data_bit_offset;
+> > +	reg = slice_params->bit_size;
+> > 
+> >  	cedrus_write(dev, VE_DEC_H265_BITS_LEN, reg);
+> >  	
+> >  	/* Source beginning and end addresses. */
+> > 
+> > @@ -385,6 +402,8 @@ static void cedrus_h265_setup(struct cedrus_ctx *ctx,
+> > 
+> >  	/* Initialize bitstream access. */
+> >  	cedrus_write(dev, VE_DEC_H265_TRIGGER, 
+VE_DEC_H265_TRIGGER_INIT_SWDEC);
+> > 
+> > +	cedrus_h265_skip_bits(dev, slice_params->data_bit_offset);
+> > +
+> > 
+> >  	/* Bitstream parameters. */
+> >  	
+> >  	reg = VE_DEC_H265_DEC_NAL_HDR_NAL_UNIT_TYPE(slice_params-
+>nal_unit_type)
+> >  	|
+> > 
+> > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
+> > b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h index
+> > 0d9449fe2b28..df1cceef8d93 100644
+> > --- a/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
+> > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_regs.h
+> > @@ -424,6 +424,7 @@
+> > 
+> >  #define VE_DEC_H265_TRIGGER			(VE_ENGINE_DEC_H265 + 
+0x34)
+> > 
+> > +#define VE_DEC_H265_TRIGGER_TYPE_N_BITS(x)	(((x) & 0x3f) << 8)
+> > 
+> >  #define VE_DEC_H265_TRIGGER_STCD_VC1		(0x02 << 4)
+> >  #define VE_DEC_H265_TRIGGER_STCD_AVS		(0x01 << 4)
+> >  #define VE_DEC_H265_TRIGGER_STCD_HEVC		(0x00 << 4)
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
