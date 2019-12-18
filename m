@@ -2,75 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C30312424D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 09:57:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4FC9B12426D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 10:09:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=b3G1u2E3E1TaxubwMD9KbYKly+/Hld2tLyYr47EFna8=; b=t9Q6c31B285ZrT
-	FZs6ZanbTZzDn8T0+AvIupmQ1VKjngAWw8oo6SaHp7YwiUXMFgfwbEKNKLJ7aenm8K+Q+AzQi2Lu9
-	VlMTxit+1YrxKJzpEJ0WoU+/NXeLAOLsBxGFeR8HrYR5qLtpfVGiLEDbPn9sckyBuMBZBS+u61rLM
-	rws090Vjs4FpCoEf9TmawGK0UEMMHBYUSsizGC6dWPDb9S9fkmCn8XmsZCtZa7Q9p70b5yxNab+nn
-	SotBvNICr/OnZku7Tupp+VjwH38BuPyn//yO4k4JZD6zHf6ugKMHhv7FE/F+L469gwEbTVjHbVphE
-	toUY1sutZve/oIn8SIhA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L5W6CMYlRucfMawTVp0q+1Be6nVoyZtR5zV4USat7eQ=; b=YnL7OofVYgIpxY
+	fYdV3ymZwhJVge10LdEqu2GjIVwT4gcWAplz6Ddmpsz4+pYLJ1cyE0OxWhjpGw2f9aTJj9Jm+5qBI
+	yjjHB1VrWzBaM5i7FeA7La0MQKyRJNeEOYbrCCnDRzt8QkuVEL5WNzGUpcPVSGlu6IlCdDxQL+dkU
+	Z6LubmFGi9QpePIH+y/X6eH8CsLkLJgMlMrALT9NxN4KIhgcp7791ZaB6lMau6gcH4OFOjd5RTLcJ
+	W4C9KWguseDCw4GD7W8poknIUdbuFAhbsdXb0AYOz/ThcTtTWhg+unIyUfBoahuVq/9rdowvl7cLm
+	vUnRfjVAlLRMHqgZd13w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihV9J-0005pv-Jr; Wed, 18 Dec 2019 08:57:41 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1ihVL7-0001Cu-9O; Wed, 18 Dec 2019 09:09:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihV9C-0005pa-Bf
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 08:57:35 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xBI8sRD0008071; Wed, 18 Dec 2019 09:57:25 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=xY69+K3CDt8WIn1tRsSBo05iiqi+wQiVGkvAfv6jSUA=;
- b=xCM86XwVU/qOBfZeW2/Wv3PbksC+Ts74s/aZM6VvyknPr4fHVNQoRuG3nO1VFTEO2vG7
- sjZjDMLG5JbW0EKUImtlgs0uN6o7TSUUnkbbZd/b6kDODcqUAdu3N4gL9+zM8CgpSfwQ
- J0K0f3DBANleVqZcEAHKVVaK7uZ9zmRSS1sl/IgzzLf7GEJf6ENDhQI8jSOCZOEwsYJ2
- 1y4LKjyZtCdzbv5OSqq0jknVaWV3/MQoknxXMj47HcGFuNsy2ILp3WDm6CX0VwRGrlWZ
- Mmgd3XwbNBM9j9F8mEukjU68/nxWYSqi1xzry19qyYooREdo2NT5RJ6774APcOi2/a1D Ng== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2wvpd1kam2-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 18 Dec 2019 09:57:25 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0CF3D10003B;
- Wed, 18 Dec 2019 09:57:19 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3B2E9220826;
- Wed, 18 Dec 2019 09:57:19 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG3NODE1.st.com (10.75.127.7)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 18 Dec 2019 09:57:18
- +0100
-From: Arnaud Pouliquen <arnaud.pouliquen@st.com>
-To: Rob Herring <robh@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Alexandre Torgue <alexandre.torgue@st.com>
-Subject: [PATCH] ARM: dts: stm32: update mlahb node according to the bindings
-Date: Wed, 18 Dec 2019 09:57:10 +0100
-Message-ID: <20191218085710.2142-1-arnaud.pouliquen@st.com>
-X-Mailer: git-send-email 2.17.1
+ id 1ihVKx-0001BC-0B; Wed, 18 Dec 2019 09:09:44 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5759A20717;
+ Wed, 18 Dec 2019 09:09:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576660178;
+ bh=7p1OzltEZEmB0CiHFlkfl9O1s0FHcf0C4bMyS+2zgBc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=T3Qmls+3oGDEQhywVUrCCKEOeKinH1e2EimPPT29RqOwaajYXguON53TGXGlPXSUF
+ equvOmN5ftMPc58DJZYz9M9yEOb1xIy3td/nuNDreNLt3m/+GitQdVmkk/n5lDij27
+ 0yd/eZmYEAgbU9w2vkczNbZfoK+ONs7npCr65h+U=
+Date: Wed, 18 Dec 2019 09:09:32 +0000
+From: Will Deacon <will@kernel.org>
+To: Chen Zhou <chenzhou10@huawei.com>
+Subject: Re: [PATCH v6 0/4] support reserving crashkernel above 4G on arm64
+ kdump
+Message-ID: <20191218090932.GA14061@willie-the-truck>
+References: <20190830071200.56169-1-chenzhou10@huawei.com>
+ <2a97b296-59e7-0a26-84fa-e2ddcd7987b6@huawei.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG3NODE3.st.com (10.75.127.9) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-12-18_02:2019-12-17,2019-12-18 signatures=0
+Content-Disposition: inline
+In-Reply-To: <2a97b296-59e7-0a26-84fa-e2ddcd7987b6@huawei.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_005734_772407_53F27326 
-X-CRM114-Status: GOOD (  13.07  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191218_010943_061294_FCE12806 
+X-CRM114-Status: UNSURE (   5.23  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -80,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,42 +78,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- linux-kernel@vger.kernel.org, Fabien Dessenne <fabien.dessenne@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: horms@verge.net.au, catalin.marinas@arm.com, bhsharma@redhat.com,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mingo@redhat.com,
+ james.morse@arm.com, guohanjun@huawei.com, tglx@linutronix.de,
+ dyoung@redhat.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update of the mlahb node according to to DT bindings using json-schema
+On Wed, Dec 18, 2019 at 10:07:59AM +0800, Chen Zhou wrote:
+> Friendly ping...
 
-Signed-off-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
----
- arch/arm/boot/dts/stm32mp157c.dtsi | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+You broke the build:
 
-diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
-index ed8b258256d7..be04eab7f139 100644
---- a/arch/arm/boot/dts/stm32mp157c.dtsi
-+++ b/arch/arm/boot/dts/stm32mp157c.dtsi
-@@ -1513,10 +1513,11 @@
- 		};
- 	};
- 
--	mlahb {
--		compatible = "simple-bus";
-+	mlahb: ahb {
-+		compatible = "st,mlahb", "simple-bus";
- 		#address-cells = <1>;
- 		#size-cells = <1>;
-+		ranges;
- 		dma-ranges = <0x00000000 0x38000000 0x10000>,
- 			     <0x10000000 0x10000000 0x60000>,
- 			     <0x30000000 0x30000000 0x60000>;
--- 
-2.17.1
+https://lore.kernel.org/lkml/201909010744.CDe940pv%lkp@intel.com
+https://lore.kernel.org/lkml/201909010704.4m9y2sg7%lkp@intel.com
 
+So I doubt anybody will seriously look at this.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
