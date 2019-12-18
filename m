@@ -2,69 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCC3E125458
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 22:11:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 053B812545F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 22:11:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d5wqNz8E/PJtft0TUpH1mgM5HczELA5z94CMqUHVFm4=; b=WzTlma82f5YdM4
-	W+sGwtKN2EiYuXz/ILdlxUrAexLAqkZD8TGtrkU49sHxC+PoCZVh231A3UpdkpRhaFERDb+H5J7Rt
-	e/MkcJDcN7KWlq4Vck5L0CoH47emmTPBLPaLEwuByI1XlLW71OEcS9eemTmQr4epoN5Y+HgFcAfyX
-	d43Eq1uwb/qxnuIb7Fil4yqy5gjzDInQQTIH/ZX4XWxwq6SR7RIQuIsmdJn+zwk2gC9CyM22QUxIr
-	zBTfvn2o/zSPX4g9CyWk3n4hqljhm79+f1Lc8WZlqQ5mEgZaMHVHoW7wkyQct2Dp/MPvLVGWa6ekW
-	mCRg7rvI/mWcub3+dsZA==;
+	List-Owner; bh=2GUcKdhfkif5PGy+Ah7s4V7vegl56yqDHHp+XM4IyJE=; b=ijY+RD+955Td3+
+	PhdeW3Kk9bpRozay86PinCqY1foH6CPW0xrkNXydcuk6HLCslPgK+FxvfjPvrGf12kUuHyiXurP3t
+	Rz51ufCq/bYZ+AOK3lSYP6znYZSIEFxNTXMEfERMub1ToSRQRL1ITe92D9EmaYrPcng0monMzEbXs
+	3gU/03EKWClOB90RxxeayWe15ZG7uh8/CH97H5ZR/P835rW44H9CH7pBJ0fugOdqdYEbz1UlIy1fb
+	OKJsICI+7spGucDxud7/4+FiDwNWR9XZ/bAfYLH3UQ8UDa0qzkawWlAZpGGLHSuN0KoaklUYS/glS
+	h3nXGjVC5q2V5CbP7c1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihgbL-0005YQ-Rq; Wed, 18 Dec 2019 21:11:23 +0000
+	id 1ihgbr-0005p1-P8; Wed, 18 Dec 2019 21:11:55 +0000
 Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihgbD-0005Xu-AB
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:11:16 +0000
-Received: by mail-ed1-x541.google.com with SMTP id t17so2828634eds.6
+ id 1ihgbd-0005oS-IN
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:11:42 +0000
+Received: by mail-ed1-x541.google.com with SMTP id l8so2842954edw.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 13:11:14 -0800 (PST)
+ Wed, 18 Dec 2019 13:11:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hr7toINHw/iAnDrTVS41gqcv0IO9jGOGlaJRRX6HtRc=;
- b=Yc9HL4dmvuVtA1hqpH3w649GWiSriaIdkvI8nXwcp2OqH8ZA710XQUf7rzqbIvmvSs
- wIQ2X1WO0b68Wrbnx34fUtBQ4DUY9+cutDhxyPRLLXCzDzQgIlSmRi88M4J7y5OTFAdf
- utyUH6R7V4Wg6zCugkdFlYh+oiEMcrcthwzghhD8AeCnoCByKEw/uRG4Khy9wPOpXezo
- LVA1NJynvisLO8eCsjUz5L222tAGwjRM+e+BzIAeK379y0NcuXcnvHZ3PW8pguMmhDm5
- /oUXQ4+shDdOnc0H1rtFMsxegKAuoDq2jO7t51FvxpHfoVPyfJ96EjLF8IOi51I8dG3H
- sfEg==
+ :cc; bh=gRnTtk9JZIi/3I1W9vSxQ7/mm0z0CC1gLLvuFpfUIuI=;
+ b=SDMWOZ6lQOb/VZRxOexIDEBtyrlvnLSoH+FiJyCNSXqPnRFfJ26Gn0LuQPT12y7A0c
+ lnJolpTE8N8rqaP6nxeRUdAGqO8uwJW2n+hreJFUcssOvxBco69nMD89oSqbkKa74G+n
+ RxXaI2ISeSqylE/bYEEcez6fS72xry1fa1bsuc66nnJeHlIXPW9zK3oEj6ybcmuOyPEq
+ NwahnSFrJp2yti1ljc0Raocs3d8Cp+JYUVuQCDw0K7ZvqfD/HnPCn6/+X7BeJLcGnkgF
+ z/PFEpAyrntX6BKJDaoTI9ptXkbOuQh4C81cI86Igt/lS0jNk5pVeWMmDEocZIyYQmDS
+ oI4Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=hr7toINHw/iAnDrTVS41gqcv0IO9jGOGlaJRRX6HtRc=;
- b=nE6h93/tsY9K9DlSm79PNQvVKRELX/T8rDF+QOBaKApvo6EEIoAMKp1hSGE678ClhZ
- URkrRyFWRURGK5+HRnEIisBpEdk9R0o1beyBmeDVjOgMlTanalXbkfc2o4Bv8EVYu0ht
- 2U7B/Zb5A6ACuK0eakUCEVjw1htH2qTarmKx9t1X3A8MuEJcSt1+AmY35O8ohvrUlEn9
- pith+r7ENsdK9GktrQ7ZiPWxjYtux4gJ6l58s7XGtMXAsah/cKWou4+yzC6+Qs9tcpqj
- zExIsDQCNpNLyq4JTKNproxPammNQZiWk7KxNNL0fetC/Znsg+7ApIs01npFX8luVcwR
- NsbQ==
-X-Gm-Message-State: APjAAAUw4MkKRAvJmGKGW7qWPs/MFyyAJ7rEa0aCUXomfUaOfmNwhJ+a
- cWqYhsTJvfvmaei0Rmv9dAaPfHjA+AWONrwELd6viA==
-X-Google-Smtp-Source: APXvYqxUveWYs+R5UGAvJL5Zp/Pe1Egw5UoWu7yq5s55Vn88PgYlF8axZ/QOJSQ2OANQC2UMBMt8bropFYpNPNkUfOs=
-X-Received: by 2002:a05:6402:1cbb:: with SMTP id
- cz27mr4984720edb.227.1576703472972; 
- Wed, 18 Dec 2019 13:11:12 -0800 (PST)
+ bh=gRnTtk9JZIi/3I1W9vSxQ7/mm0z0CC1gLLvuFpfUIuI=;
+ b=CQtfVNe81nQV8oS5bpQ2SjnpUHmtL/uc4c0dDwDlyO6Dr06ufk7+/Rxz1DiQUVX0JB
+ lSAPxTqr8N/3mY3qJFOdkVPes0xOdxB4xuNxzGHORtLf8CroWiWzjv4c78R/evLAHhai
+ UH0i6+TNIXIWPXmKQryuBEp72Zlmqo0gGMVAs0HaEQd/QEeSwT/jlN8YRLRlQdcAO/JI
+ cLchd1GqjRpS3fy5wwedj7L5+yiHirlUnq+/5Ita4JeEcpAtx9TnHBoZQIYDSD3UXo2l
+ FEonf1iQzSXY3ZGdjppaIiW0LpiJLug5NMc7iHMExSWmapcy9WjlKd/u+Hjto50ah0EN
+ /+cw==
+X-Gm-Message-State: APjAAAU/gRmhUbOH/2mrwHTFGnpWMe8YyB8aGga9Zzg4kIafsKoSmhXs
+ YuV8SFrQiPpvNYtUVj7BQwcNhyqN0ptaf79prcCy0w==
+X-Google-Smtp-Source: APXvYqzCSdZ2WNjJ4q1+2kgxv6xiSMyDM5buf7JnxsPCxLvV6KwaInc5wgRm4EmYWM+VKPm9g7bHq7zLHX0kZcHWPLw=
+X-Received: by 2002:aa7:d64f:: with SMTP id v15mr4964015edr.71.1576703500385; 
+ Wed, 18 Dec 2019 13:11:40 -0800 (PST)
 MIME-Version: 1.0
 References: <20191204232058.2500117-1-pasha.tatashin@soleen.com>
- <20191204232058.2500117-2-pasha.tatashin@soleen.com>
- <c5dcf342-90f4-beb5-d2b1-4a37ccedfe42@xen.org>
-In-Reply-To: <c5dcf342-90f4-beb5-d2b1-4a37ccedfe42@xen.org>
+ <20191204232058.2500117-3-pasha.tatashin@soleen.com>
+ <b3a6359a-e7df-b47b-f50d-31b716fae191@xen.org>
+In-Reply-To: <b3a6359a-e7df-b47b-f50d-31b716fae191@xen.org>
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Wed, 18 Dec 2019 16:11:02 -0500
-Message-ID: <CA+CK2bDySpttFq1ro2QK9jPoRi5unXz6bx-6Qv1OpoNimMd6Ug@mail.gmail.com>
-Subject: Re: [PATCH v4 1/6] arm/arm64/xen: hypercall.h add includes guards
+Date: Wed, 18 Dec 2019 16:11:29 -0500
+Message-ID: <CA+CK2bAw62_6UpTR6316FVE3AiNV7fH7FkF55vRjE8R4=ocd+Q@mail.gmail.com>
+Subject: Re: [PATCH v4 2/6] arm/arm64/xen: use C inlines for privcmd_call
 To: Julien Grall <julien@xen.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_131115_530486_896D89CB 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20191218_131141_600903_07EB088D 
+X-CRM114-Status: GOOD (  11.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -112,25 +111,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> >       /*
-> > -      * Whenever we re-enter userspace, the domains should always be
-> > +      * Whenever we re-enter kernel, the domains should always be
+On Mon, Dec 16, 2019 at 3:41 PM Julien Grall <julien@xen.org> wrote:
 >
-> This feels unrelated from the rest of the patch and probably want an
-> explanation. So I think this want to be in a separate patch.
-
-I will simply remove this comment fix, since I do not change anything
-else in this file anymore.
-
-> The rest of the patch looks good to me.
-
-Thank you Julien.
-
+> Hello,
 >
-> Cheers,
+> On 04/12/2019 23:20, Pavel Tatashin wrote:
+> > privcmd_call requires to enable access to userspace for the
+> > duration of the hypercall.
+> >
+> > Currently, this is done via assembly macros. Change it to C
+> > inlines instead.
+> >
+> > Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+> > Acked-by: Stefano Stabellini <sstabellini@kernel.org>
 >
-> --
-> Julien Grall
+> Reviewed-by: Julien Grall <julien@xen.org>
+
+Great, thank you!
+
+Pasha
 
 _______________________________________________
 linux-arm-kernel mailing list
