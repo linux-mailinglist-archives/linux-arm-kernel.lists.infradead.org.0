@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3956F125625
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:02:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18213125624
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:01:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4BACLYx0pmyfXz9jHA3nsN/84xm8Rj9WCatHa+a9XZ8=; b=SgDYkPzJVrZUwS
-	fJjK+8B//znVsuoY6IM0ZO6IWfW7s7xl2+AGfNqNHF8UBT+5xdYkTvbiWtgPrKfbQc0ubCiY79LWW
-	ZdPceHcKf6fcB8HIKGb4Usinu8dFQj1a7s5edPxnWGTDoiWMhmqVNMQmrK7x7ZeL7OivJdYFrRKPF
-	i9vBNN59dIFDvX/FxRv7/eENhEuzOG0iw9P6ZlJCXDUg6ZdjktNU9hqkPaWWcliXTeKJ5cpXNR79p
-	ydHsTA+v96/jJNbqu4svkM0ImIWj7HpTevcn9YNH8zlVE6/UyNKrIwvcETJuJMqJThGDyvdcISW4M
-	SMpuHi0bI7Vdri3F7WCg==;
+	List-Owner; bh=z1nKnyQyCaTbr7ajoBNY/7gF17m7QFy0mkdgNu14hEc=; b=kPgmCsPt098vUW
+	guCn5jD3uICDQuCSizK1V4i0B3B/7A3sEcNrzudirpvXMhSo9JsNZrxypSxJNyvulAcU8N4Df4wne
+	qML281tOaPWr8MidPZlvWu/FOklTYzjExJ/zXuHfo6+xhMKa+KYYd1K0HwRhFWCZ/8bW/JNpJlYay
+	KimcXLSpCEa4mKFrPRLebQOwF8FCAis7UYsfaMjuFjivNsI0hHypPscE6vMBGKxjpu2v7hTgBWPY9
+	9RWaGiKyeprqnszAofRetnlbKI5kJcBcBEJJu4cpLt/tQhRmRE05WzrdhOLmzP34Jc562380wTm47
+	YcpTphSzSx0gl4NxWgMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihhOB-0002uk-Ti; Wed, 18 Dec 2019 22:01:51 +0000
+	id 1ihhNx-0002hj-CE; Wed, 18 Dec 2019 22:01:37 +0000
 Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihhIL-0004yV-KH
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:51 +0000
+ id 1ihhIM-00059X-EE
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:52 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga001.fm.intel.com ([10.253.24.23])
  by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  18 Dec 2019 13:55:40 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108078"
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108088"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
- by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:39 -0800
+ by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:40 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH v2 17/45] KVM: MIPS: Drop kvm_arch_vcpu_free()
-Date: Wed, 18 Dec 2019 13:55:02 -0800
-Message-Id: <20191218215530.2280-18-sean.j.christopherson@intel.com>
+Subject: [PATCH v2 18/45] KVM: PPC: Drop kvm_arch_vcpu_free()
+Date: Wed, 18 Dec 2019 13:55:03 -0800
+Message-Id: <20191218215530.2280-19-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_135549_930805_2FC12499 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20191218_135550_525565_7C9984BC 
+X-CRM114-Status: GOOD (  10.02  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -92,32 +92,32 @@ arbitrary.
 
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/mips/kvm/mips.c | 9 ++-------
+ arch/powerpc/kvm/powerpc.c | 9 ++-------
  1 file changed, 2 insertions(+), 7 deletions(-)
 
-diff --git a/arch/mips/kvm/mips.c b/arch/mips/kvm/mips.c
-index 5f985773417c..d72bceb10439 100644
---- a/arch/mips/kvm/mips.c
-+++ b/arch/mips/kvm/mips.c
-@@ -156,7 +156,7 @@ void kvm_mips_free_vcpus(struct kvm *kvm)
- 	struct kvm_vcpu *vcpu;
+diff --git a/arch/powerpc/kvm/powerpc.c b/arch/powerpc/kvm/powerpc.c
+index 173f57e0a1b5..a2ba708f5cec 100644
+--- a/arch/powerpc/kvm/powerpc.c
++++ b/arch/powerpc/kvm/powerpc.c
+@@ -475,7 +475,7 @@ void kvm_arch_destroy_vm(struct kvm *kvm)
+ #endif
  
- 	kvm_for_each_vcpu(i, vcpu, kvm) {
+ 	kvm_for_each_vcpu(i, vcpu, kvm)
 -		kvm_arch_vcpu_free(vcpu);
 +		kvm_arch_vcpu_destroy(vcpu);
- 	}
  
  	mutex_lock(&kvm->lock);
-@@ -407,7 +407,7 @@ struct kvm_vcpu *kvm_arch_vcpu_create(struct kvm *kvm, unsigned int id)
- 	return ERR_PTR(err);
+ 	for (i = 0; i < atomic_read(&kvm->online_vcpus); i++)
+@@ -752,7 +752,7 @@ void kvm_arch_vcpu_postcreate(struct kvm_vcpu *vcpu)
+ {
  }
  
 -void kvm_arch_vcpu_free(struct kvm_vcpu *vcpu)
 +void kvm_arch_vcpu_destroy(struct kvm_vcpu *vcpu)
  {
- 	hrtimer_cancel(&vcpu->arch.comparecount_timer);
- 
-@@ -421,11 +421,6 @@ void kvm_arch_vcpu_free(struct kvm_vcpu *vcpu)
+ 	/* Make sure we're not using the vcpu anymore */
+ 	hrtimer_cancel(&vcpu->arch.dec_timer);
+@@ -781,11 +781,6 @@ void kvm_arch_vcpu_free(struct kvm_vcpu *vcpu)
  	kmem_cache_free(kvm_vcpu_cache, vcpu);
  }
  
@@ -126,9 +126,9 @@ index 5f985773417c..d72bceb10439 100644
 -	kvm_arch_vcpu_free(vcpu);
 -}
 -
- int kvm_arch_vcpu_ioctl_set_guest_debug(struct kvm_vcpu *vcpu,
- 					struct kvm_guest_debug *dbg)
+ int kvm_cpu_has_pending_timer(struct kvm_vcpu *vcpu)
  {
+ 	return kvmppc_core_pending_dec(vcpu);
 -- 
 2.24.1
 
