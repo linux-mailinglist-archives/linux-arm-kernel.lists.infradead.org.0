@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 403E6124DBF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:34:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 400C5124DBE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:34:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cvptswQ8vVpJYmfeS8jksZHeouQCPBQMdvz67Rov7Tw=; b=N7HdEIq9S79hYP
-	U1nF1mQOMJ35UxzcnA+y7HY25nsEhw2L8FY078Ma4G3k30I5UMBpTAWZ9ZoC7HrQUqdz+NKoRwSTL
-	qO4n6sbEcJInJQ+nl9bbBPYJHwSa4j2PuWpUYJ9qsVprGx9iqTKv1NVTIJ/fkhyP1wDzfXmM7WoZA
-	Gu2f0HSQIHR4dLR+3r3i7EC3dXHWxCPMdXSih3pAop1g5Zm9YMJjl+py0hFWRC3ppNO13qRkeNfHh
-	SA7o9JGRofnTlRhf1rcNn9P4vZGc0tA8AkcOx52z78nz1HgbiWpVKqFWZgN2NcD2zbj7A+G0c0e0q
-	+7s8R/neJd/xXX2OUVgw==;
+	List-Owner; bh=bFrrASjNZwhZzAaGBB4F4/kAs4isEOSvXl6mZB11ink=; b=Fr89kVGrJHeYIc
+	/ypsSdoGDWP1bGxicraS//ByNf7g211LRCuVet8+Pl1h2INI2D3I/0/Xb3gNcOZ9KOkdez+kXW+sx
+	/fC3jBV8jmOC97sPz4cWWPl/T2fsIw4wSjuyGtdE/2Z536Naix/zYUsv2tSs4vAtVq0EPJFAL+psK
+	fJSeCZuJXl3pP1fNqpMGGOvGA/GBJCc1iEolUmNhg8kqfh+77pd3vamUNLSpU7agtz7Dg9m5ek2wQ
+	DctWMkGPZ0SFl74k1sRSHzKfrBmt3nXCTrU/vJ4bKgkRu3jgHS5CP+Jxg1+eRk6Gdb2MWHonLbdcZ
+	EfziVy25CGhyKwPMjRag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihcHK-0000TI-2S; Wed, 18 Dec 2019 16:34:26 +0000
+	id 1ihcH1-0000De-7K; Wed, 18 Dec 2019 16:34:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihc8W-0000OM-3b
+ id 1ihc8Y-0000QU-MR
  for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 16:25:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85B1B11B3;
- Wed, 18 Dec 2019 08:25:19 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 474A1113E;
+ Wed, 18 Dec 2019 08:25:22 -0800 (PST)
 Received: from e112269-lin.arm.com (e112269-lin.cambridge.arm.com
  [10.1.196.56])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F311E3F719;
- Wed, 18 Dec 2019 08:25:16 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BB8163F719;
+ Wed, 18 Dec 2019 08:25:19 -0800 (PST)
 From: Steven Price <steven.price@arm.com>
 To: Andrew Morton <akpm@linux-foundation.org>,
 	linux-mm@kvack.org
-Subject: [PATCH v17 19/23] mm: Add generic ptdump
-Date: Wed, 18 Dec 2019 16:23:58 +0000
-Message-Id: <20191218162402.45610-20-steven.price@arm.com>
+Subject: [PATCH v17 20/23] x86: mm: Convert dump_pagetables to use
+ walk_page_range
+Date: Wed, 18 Dec 2019 16:23:59 +0000
+Message-Id: <20191218162402.45610-21-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191218162402.45610-1-steven.price@arm.com>
 References: <20191218162402.45610-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_082520_343400_A6F0625E 
-X-CRM114-Status: GOOD (  18.68  )
+X-CRM114-CacheID: sfid-20191218_082522_878099_C8C7035F 
+X-CRM114-Status: GOOD (  27.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,229 +81,499 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a generic version of page table dumping that architectures can
-opt-in to
+Make use of the new functionality in walk_page_range to remove the
+arch page walking code and use the generic code to walk the page tables.
+
+The effective permissions are passed down the chain using new fields
+in struct pg_state.
+
+The KASAN optimisation is implemented by setting action=CONTINUE in the
+callbacks to skip an entire tree of entries.
 
 Signed-off-by: Steven Price <steven.price@arm.com>
 ---
- include/linux/ptdump.h |  21 +++++++
- mm/Kconfig.debug       |  21 +++++++
- mm/Makefile            |   1 +
- mm/ptdump.c            | 139 +++++++++++++++++++++++++++++++++++++++++
- 4 files changed, 182 insertions(+)
- create mode 100644 include/linux/ptdump.h
- create mode 100644 mm/ptdump.c
+ arch/x86/Kconfig              |   1 +
+ arch/x86/Kconfig.debug        |  20 +--
+ arch/x86/mm/Makefile          |   4 +-
+ arch/x86/mm/dump_pagetables.c | 292 ++++++++--------------------------
+ 4 files changed, 70 insertions(+), 247 deletions(-)
 
-diff --git a/include/linux/ptdump.h b/include/linux/ptdump.h
-new file mode 100644
-index 000000000000..a0fb8dd2be97
---- /dev/null
-+++ b/include/linux/ptdump.h
-@@ -0,0 +1,21 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+
-+#ifndef _LINUX_PTDUMP_H
-+#define _LINUX_PTDUMP_H
-+
-+#include <linux/mm_types.h>
-+
-+struct ptdump_range {
-+	unsigned long start;
-+	unsigned long end;
-+};
-+
-+struct ptdump_state {
-+	void (*note_page)(struct ptdump_state *st, unsigned long addr,
-+			  int level, unsigned long val);
-+	const struct ptdump_range *range;
-+};
-+
-+void ptdump_walk_pgd(struct ptdump_state *st, struct mm_struct *mm);
-+
-+#endif /* _LINUX_PTDUMP_H */
-diff --git a/mm/Kconfig.debug b/mm/Kconfig.debug
-index 327b3ebf23bf..0271b22e063f 100644
---- a/mm/Kconfig.debug
-+++ b/mm/Kconfig.debug
-@@ -117,3 +117,24 @@ config DEBUG_RODATA_TEST
-     depends on STRICT_KERNEL_RWX
-     ---help---
-       This option enables a testcase for the setting rodata read-only.
-+
-+config GENERIC_PTDUMP
-+	bool
-+
-+config PTDUMP_CORE
-+	bool
-+
-+config PTDUMP_DEBUGFS
-+	bool "Export kernel pagetable layout to userspace via debugfs"
-+	depends on DEBUG_KERNEL
-+	depends on DEBUG_FS
-+	depends on GENERIC_PTDUMP
+diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
+index 5e8949953660..8a9594817874 100644
+--- a/arch/x86/Kconfig
++++ b/arch/x86/Kconfig
+@@ -119,6 +119,7 @@ config X86
+ 	select GENERIC_IRQ_RESERVATION_MODE
+ 	select GENERIC_IRQ_SHOW
+ 	select GENERIC_PENDING_IRQ		if SMP
++	select GENERIC_PTDUMP
+ 	select GENERIC_SMP_IDLE_THREAD
+ 	select GENERIC_STRNCPY_FROM_USER
+ 	select GENERIC_STRNLEN_USER
+diff --git a/arch/x86/Kconfig.debug b/arch/x86/Kconfig.debug
+index c4eab8ed33a3..2e74690b028a 100644
+--- a/arch/x86/Kconfig.debug
++++ b/arch/x86/Kconfig.debug
+@@ -62,26 +62,10 @@ config EARLY_PRINTK_USB_XDBC
+ config MCSAFE_TEST
+ 	def_bool n
+ 
+-config X86_PTDUMP_CORE
+-	def_bool n
+-
+-config X86_PTDUMP
+-	tristate "Export kernel pagetable layout to userspace via debugfs"
+-	depends on DEBUG_KERNEL
+-	select DEBUG_FS
+-	select X86_PTDUMP_CORE
+-	---help---
+-	  Say Y here if you want to show the kernel pagetable layout in a
+-	  debugfs file. This information is only useful for kernel developers
+-	  who are working in architecture specific areas of the kernel.
+-	  It is probably not a good idea to enable this feature in a production
+-	  kernel.
+-	  If in doubt, say "N"
+-
+ config EFI_PGT_DUMP
+ 	bool "Dump the EFI pagetable"
+ 	depends on EFI
+-	select X86_PTDUMP_CORE
 +	select PTDUMP_CORE
-+	help
-+	  Say Y here if you want to show the kernel pagetable layout in a
-+	  debugfs file. This information is only useful for kernel developers
-+	  who are working in architecture specific areas of the kernel.
-+	  It is probably not a good idea to enable this feature in a production
-+	  kernel.
-+
-+	  If in doubt, say N.
-diff --git a/mm/Makefile b/mm/Makefile
-index 1937cc251883..a8eff811f6c4 100644
---- a/mm/Makefile
-+++ b/mm/Makefile
-@@ -108,3 +108,4 @@ obj-$(CONFIG_ZONE_DEVICE) += memremap.o
- obj-$(CONFIG_HMM_MIRROR) += hmm.o
- obj-$(CONFIG_MEMFD_CREATE) += memfd.o
- obj-$(CONFIG_MAPPING_DIRTY_HELPERS) += mapping_dirty_helpers.o
-+obj-$(CONFIG_PTDUMP_CORE) += ptdump.o
-diff --git a/mm/ptdump.c b/mm/ptdump.c
-new file mode 100644
-index 000000000000..868638b8e404
---- /dev/null
-+++ b/mm/ptdump.c
-@@ -0,0 +1,139 @@
-+// SPDX-License-Identifier: GPL-2.0
-+
-+#include <linux/pagewalk.h>
+ 	---help---
+ 	  Enable this if you want to dump the EFI page table before
+ 	  enabling virtual mode. This can be used to debug miscellaneous
+@@ -90,7 +74,7 @@ config EFI_PGT_DUMP
+ 
+ config DEBUG_WX
+ 	bool "Warn on W+X mappings at boot"
+-	select X86_PTDUMP_CORE
++	select PTDUMP_CORE
+ 	---help---
+ 	  Generate a warning if any W+X mappings are found at boot.
+ 
+diff --git a/arch/x86/mm/Makefile b/arch/x86/mm/Makefile
+index 3b89c201ac26..ad44713b2e1e 100644
+--- a/arch/x86/mm/Makefile
++++ b/arch/x86/mm/Makefile
+@@ -28,8 +28,8 @@ obj-$(CONFIG_X86_PAT)		+= pat_interval.o
+ obj-$(CONFIG_X86_32)		+= pgtable_32.o iomap_32.o
+ 
+ obj-$(CONFIG_HUGETLB_PAGE)	+= hugetlbpage.o
+-obj-$(CONFIG_X86_PTDUMP_CORE)	+= dump_pagetables.o
+-obj-$(CONFIG_X86_PTDUMP)	+= debug_pagetables.o
++obj-$(CONFIG_PTDUMP_CORE)	+= dump_pagetables.o
++obj-$(CONFIG_PTDUMP_DEBUGFS)	+= debug_pagetables.o
+ 
+ obj-$(CONFIG_HIGHMEM)		+= highmem_32.o
+ 
+diff --git a/arch/x86/mm/dump_pagetables.c b/arch/x86/mm/dump_pagetables.c
+index 2f5f32f21f81..a0b8ffc927bb 100644
+--- a/arch/x86/mm/dump_pagetables.c
++++ b/arch/x86/mm/dump_pagetables.c
+@@ -16,6 +16,7 @@
+ #include <linux/seq_file.h>
+ #include <linux/highmem.h>
+ #include <linux/pci.h>
 +#include <linux/ptdump.h>
-+#include <linux/kasan.h>
-+
-+#ifdef CONFIG_KASAN
-+/*
-+ * This is an optimization for KASAN=y case. Since all kasan page tables
-+ * eventually point to the kasan_early_shadow_page we could call note_page()
-+ * right away without walking through lower level page tables. This saves
-+ * us dozens of seconds (minutes for 5-level config) while checking for
-+ * W+X mapping or reading kernel_page_tables debugfs file.
-+ */
-+static inline int note_kasan_page_table(struct mm_walk *walk,
-+					unsigned long addr)
+ 
+ #include <asm/e820/types.h>
+ #include <asm/pgtable.h>
+@@ -26,11 +27,12 @@
+  * when a "break" in the continuity is found.
+  */
+ struct pg_state {
++	struct ptdump_state ptdump;
+ 	int level;
+-	pgprot_t current_prot;
++	pgprotval_t current_prot;
+ 	pgprotval_t effective_prot;
++	pgprotval_t prot_levels[5];
+ 	unsigned long start_address;
+-	unsigned long current_address;
+ 	const struct addr_marker *marker;
+ 	unsigned long lines;
+ 	bool to_dmesg;
+@@ -175,9 +177,8 @@ static struct addr_marker address_markers[] = {
+ /*
+  * Print a readable form of a pgprot_t to the seq_file
+  */
+-static void printk_prot(struct seq_file *m, pgprot_t prot, int level, bool dmsg)
++static void printk_prot(struct seq_file *m, pgprotval_t pr, int level, bool dmsg)
+ {
+-	pgprotval_t pr = pgprot_val(prot);
+ 	static const char * const level_name[] =
+ 		{ "cr3", "pgd", "p4d", "pud", "pmd", "pte" };
+ 
+@@ -224,24 +225,11 @@ static void printk_prot(struct seq_file *m, pgprot_t prot, int level, bool dmsg)
+ 	pt_dump_cont_printf(m, dmsg, "%s\n", level_name[level]);
+ }
+ 
+-/*
+- * On 64 bits, sign-extend the 48 bit address to 64 bit
+- */
+-static unsigned long normalize_addr(unsigned long u)
+-{
+-	int shift;
+-	if (!IS_ENABLED(CONFIG_X86_64))
+-		return u;
+-
+-	shift = 64 - (__VIRTUAL_MASK_SHIFT + 1);
+-	return (signed long)(u << shift) >> shift;
+-}
+-
+-static void note_wx(struct pg_state *st)
++static void note_wx(struct pg_state *st, unsigned long addr)
+ {
+ 	unsigned long npages;
+ 
+-	npages = (st->current_address - st->start_address) / PAGE_SIZE;
++	npages = (addr - st->start_address) / PAGE_SIZE;
+ 
+ #ifdef CONFIG_PCI_BIOS
+ 	/*
+@@ -249,7 +237,7 @@ static void note_wx(struct pg_state *st)
+ 	 * Inform about it, but avoid the warning.
+ 	 */
+ 	if (pcibios_enabled && st->start_address >= PAGE_OFFSET + BIOS_BEGIN &&
+-	    st->current_address <= PAGE_OFFSET + BIOS_END) {
++	    addr <= PAGE_OFFSET + BIOS_END) {
+ 		pr_warn_once("x86/mm: PCI BIOS W+X mapping %lu pages\n", npages);
+ 		return;
+ 	}
+@@ -261,25 +249,44 @@ static void note_wx(struct pg_state *st)
+ 		  (void *)st->start_address);
+ }
+ 
++static inline pgprotval_t effective_prot(pgprotval_t prot1, pgprotval_t prot2)
 +{
-+	struct ptdump_state *st = walk->private;
-+
-+	st->note_page(st, addr, 5, pte_val(kasan_early_shadow_pte[0]));
-+
-+	walk->action = ACTION_CONTINUE;
-+
-+	return 0;
-+}
-+#endif
-+
-+static int ptdump_pgd_entry(pgd_t *pgd, unsigned long addr,
-+			    unsigned long next, struct mm_walk *walk)
-+{
-+	struct ptdump_state *st = walk->private;
-+	pgd_t val = READ_ONCE(*pgd);
-+
-+#if CONFIG_PGTABLE_LEVELS > 4 && defined(CONFIG_KASAN)
-+	if (pgd_page(val) == virt_to_page(lm_alias(kasan_early_shadow_p4d)))
-+		return note_kasan_page_table(walk, addr);
-+#endif
-+
-+	if (pgd_leaf(val))
-+		st->note_page(st, addr, 1, pgd_val(val));
-+
-+	return 0;
-+}
-+
-+static int ptdump_p4d_entry(p4d_t *p4d, unsigned long addr,
-+			    unsigned long next, struct mm_walk *walk)
-+{
-+	struct ptdump_state *st = walk->private;
-+	p4d_t val = READ_ONCE(*p4d);
-+
-+#if CONFIG_PGTABLE_LEVELS > 3 && defined(CONFIG_KASAN)
-+	if (p4d_page(val) == virt_to_page(lm_alias(kasan_early_shadow_pud)))
-+		return note_kasan_page_table(walk, addr);
-+#endif
-+
-+	if (p4d_leaf(val))
-+		st->note_page(st, addr, 2, p4d_val(val));
-+
-+	return 0;
-+}
-+
-+static int ptdump_pud_entry(pud_t *pud, unsigned long addr,
-+			    unsigned long next, struct mm_walk *walk)
-+{
-+	struct ptdump_state *st = walk->private;
-+	pud_t val = READ_ONCE(*pud);
-+
-+#if CONFIG_PGTABLE_LEVELS > 2 && defined(CONFIG_KASAN)
-+	if (pud_page(val) == virt_to_page(lm_alias(kasan_early_shadow_pmd)))
-+		return note_kasan_page_table(walk, addr);
-+#endif
-+
-+	if (pud_leaf(val))
-+		st->note_page(st, addr, 3, pud_val(val));
-+
-+	return 0;
-+}
-+
-+static int ptdump_pmd_entry(pmd_t *pmd, unsigned long addr,
-+			    unsigned long next, struct mm_walk *walk)
-+{
-+	struct ptdump_state *st = walk->private;
-+	pmd_t val = READ_ONCE(*pmd);
-+
-+#if defined(CONFIG_KASAN)
-+	if (pmd_page(val) == virt_to_page(lm_alias(kasan_early_shadow_pte)))
-+		return note_kasan_page_table(walk, addr);
-+#endif
-+
-+	if (pmd_leaf(val))
-+		st->note_page(st, addr, 4, pmd_val(val));
-+
-+	return 0;
++	return (prot1 & prot2 & (_PAGE_USER | _PAGE_RW)) |
++	       ((prot1 | prot2) & _PAGE_NX);
 +}
 +
-+static int ptdump_pte_entry(pte_t *pte, unsigned long addr,
-+			    unsigned long next, struct mm_walk *walk)
-+{
-+	struct ptdump_state *st = walk->private;
+ /*
+  * This function gets called on a break in a continuous series
+  * of PTE entries; the next one is different so we need to
+  * print what we collected so far.
+  */
+-static void note_page(struct pg_state *st, pgprot_t new_prot,
+-		      pgprotval_t new_eff, int level)
++static void note_page(struct ptdump_state *pt_st, unsigned long addr, int level,
++		      unsigned long val)
+ {
+-	pgprotval_t prot, cur, eff;
++	struct pg_state *st = container_of(pt_st, struct pg_state, ptdump);
++	pgprotval_t new_prot, new_eff;
++	pgprotval_t cur, eff;
+ 	static const char units[] = "BKMGTPE";
+ 	struct seq_file *m = st->seq;
+ 
++	new_prot = val & PTE_FLAGS_MASK;
 +
-+	st->note_page(st, addr, 5, pte_val(READ_ONCE(*pte)));
-+
-+	return 0;
-+}
-+
-+static int ptdump_hole(unsigned long addr, unsigned long next,
-+		       int depth, struct mm_walk *walk)
-+{
-+	struct ptdump_state *st = walk->private;
-+
-+	st->note_page(st, addr, depth + 1, 0);
-+
-+	return 0;
-+}
-+
-+static const struct mm_walk_ops ptdump_ops = {
-+	.pgd_entry	= ptdump_pgd_entry,
-+	.p4d_entry	= ptdump_p4d_entry,
-+	.pud_entry	= ptdump_pud_entry,
-+	.pmd_entry	= ptdump_pmd_entry,
-+	.pte_entry	= ptdump_pte_entry,
-+	.pte_hole	= ptdump_hole,
-+};
-+
-+void ptdump_walk_pgd(struct ptdump_state *st, struct mm_struct *mm)
-+{
-+	const struct ptdump_range *range = st->range;
-+
-+	down_read(&mm->mmap_sem);
-+	while (range->start != range->end) {
-+		walk_page_range_novma(mm, range->start, range->end,
-+				      &ptdump_ops, st);
-+		range++;
++	if (level > 1) {
++		new_eff = effective_prot(st->prot_levels[level - 2],
++					 new_prot);
++	} else {
++		new_eff = new_prot;
 +	}
-+	up_read(&mm->mmap_sem);
 +
-+	/* Flush out the last page */
-+	st->note_page(st, 0, 0, 0);
-+}
++	if (level > 0)
++		st->prot_levels[level - 1] = new_eff;
++
+ 	/*
+ 	 * If we have a "break" in the series, we need to flush the state that
+ 	 * we have now. "break" is either changing perms, levels or
+ 	 * address space marker.
+ 	 */
+-	prot = pgprot_val(new_prot);
+-	cur = pgprot_val(st->current_prot);
++	cur = st->current_prot;
+ 	eff = st->effective_prot;
+ 
+ 	if (!st->level) {
+@@ -291,14 +298,14 @@ static void note_page(struct pg_state *st, pgprot_t new_prot,
+ 		st->lines = 0;
+ 		pt_dump_seq_printf(m, st->to_dmesg, "---[ %s ]---\n",
+ 				   st->marker->name);
+-	} else if (prot != cur || new_eff != eff || level != st->level ||
+-		   st->current_address >= st->marker[1].start_address) {
++	} else if (new_prot != cur || new_eff != eff || level != st->level ||
++		   addr >= st->marker[1].start_address) {
+ 		const char *unit = units;
+ 		unsigned long delta;
+ 		int width = sizeof(unsigned long) * 2;
+ 
+ 		if (st->check_wx && (eff & _PAGE_RW) && !(eff & _PAGE_NX))
+-			note_wx(st);
++			note_wx(st, addr);
+ 
+ 		/*
+ 		 * Now print the actual finished series
+@@ -308,9 +315,9 @@ static void note_page(struct pg_state *st, pgprot_t new_prot,
+ 			pt_dump_seq_printf(m, st->to_dmesg,
+ 					   "0x%0*lx-0x%0*lx   ",
+ 					   width, st->start_address,
+-					   width, st->current_address);
++					   width, addr);
+ 
+-			delta = st->current_address - st->start_address;
++			delta = addr - st->start_address;
+ 			while (!(delta & 1023) && unit[1]) {
+ 				delta >>= 10;
+ 				unit++;
+@@ -327,7 +334,7 @@ static void note_page(struct pg_state *st, pgprot_t new_prot,
+ 		 * such as the start of vmalloc space etc.
+ 		 * This helps in the interpretation.
+ 		 */
+-		if (st->current_address >= st->marker[1].start_address) {
++		if (addr >= st->marker[1].start_address) {
+ 			if (st->marker->max_lines &&
+ 			    st->lines > st->marker->max_lines) {
+ 				unsigned long nskip =
+@@ -343,217 +350,48 @@ static void note_page(struct pg_state *st, pgprot_t new_prot,
+ 					   st->marker->name);
+ 		}
+ 
+-		st->start_address = st->current_address;
++		st->start_address = addr;
+ 		st->current_prot = new_prot;
+ 		st->effective_prot = new_eff;
+ 		st->level = level;
+ 	}
+ }
+ 
+-static inline pgprotval_t effective_prot(pgprotval_t prot1, pgprotval_t prot2)
+-{
+-	return (prot1 & prot2 & (_PAGE_USER | _PAGE_RW)) |
+-	       ((prot1 | prot2) & _PAGE_NX);
+-}
+-
+-static void walk_pte_level(struct pg_state *st, pmd_t addr, pgprotval_t eff_in,
+-			   unsigned long P)
+-{
+-	int i;
+-	pte_t *pte;
+-	pgprotval_t prot, eff;
+-
+-	for (i = 0; i < PTRS_PER_PTE; i++) {
+-		st->current_address = normalize_addr(P + i * PTE_LEVEL_MULT);
+-		pte = pte_offset_map(&addr, st->current_address);
+-		prot = pte_flags(*pte);
+-		eff = effective_prot(eff_in, prot);
+-		note_page(st, __pgprot(prot), eff, 5);
+-		pte_unmap(pte);
+-	}
+-}
+-#ifdef CONFIG_KASAN
+-
+-/*
+- * This is an optimization for KASAN=y case. Since all kasan page tables
+- * eventually point to the kasan_early_shadow_page we could call note_page()
+- * right away without walking through lower level page tables. This saves
+- * us dozens of seconds (minutes for 5-level config) while checking for
+- * W+X mapping or reading kernel_page_tables debugfs file.
+- */
+-static inline bool kasan_page_table(struct pg_state *st, void *pt)
+-{
+-	if (__pa(pt) == __pa(kasan_early_shadow_pmd) ||
+-	    (pgtable_l5_enabled() &&
+-			__pa(pt) == __pa(kasan_early_shadow_p4d)) ||
+-	    __pa(pt) == __pa(kasan_early_shadow_pud)) {
+-		pgprotval_t prot = pte_flags(kasan_early_shadow_pte[0]);
+-		note_page(st, __pgprot(prot), 0, 5);
+-		return true;
+-	}
+-	return false;
+-}
+-#else
+-static inline bool kasan_page_table(struct pg_state *st, void *pt)
+-{
+-	return false;
+-}
+-#endif
+-
+-#if PTRS_PER_PMD > 1
+-
+-static void walk_pmd_level(struct pg_state *st, pud_t addr,
+-			   pgprotval_t eff_in, unsigned long P)
+-{
+-	int i;
+-	pmd_t *start, *pmd_start;
+-	pgprotval_t prot, eff;
+-
+-	pmd_start = start = (pmd_t *)pud_page_vaddr(addr);
+-	for (i = 0; i < PTRS_PER_PMD; i++) {
+-		st->current_address = normalize_addr(P + i * PMD_LEVEL_MULT);
+-		if (!pmd_none(*start)) {
+-			prot = pmd_flags(*start);
+-			eff = effective_prot(eff_in, prot);
+-			if (pmd_large(*start) || !pmd_present(*start)) {
+-				note_page(st, __pgprot(prot), eff, 4);
+-			} else if (!kasan_page_table(st, pmd_start)) {
+-				walk_pte_level(st, *start, eff,
+-					       P + i * PMD_LEVEL_MULT);
+-			}
+-		} else
+-			note_page(st, __pgprot(0), 0, 4);
+-		start++;
+-	}
+-}
+-
+-#else
+-#define walk_pmd_level(s,a,e,p) walk_pte_level(s,__pmd(pud_val(a)),e,p)
+-#define pud_large(a) pmd_large(__pmd(pud_val(a)))
+-#define pud_none(a)  pmd_none(__pmd(pud_val(a)))
+-#endif
+-
+-#if PTRS_PER_PUD > 1
+-
+-static void walk_pud_level(struct pg_state *st, p4d_t addr, pgprotval_t eff_in,
+-			   unsigned long P)
++static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
++				       bool checkwx, bool dmesg)
+ {
+-	int i;
+-	pud_t *start, *pud_start;
+-	pgprotval_t prot, eff;
+-
+-	pud_start = start = (pud_t *)p4d_page_vaddr(addr);
+-
+-	for (i = 0; i < PTRS_PER_PUD; i++) {
+-		st->current_address = normalize_addr(P + i * PUD_LEVEL_MULT);
+-		if (!pud_none(*start)) {
+-			prot = pud_flags(*start);
+-			eff = effective_prot(eff_in, prot);
+-			if (pud_large(*start) || !pud_present(*start)) {
+-				note_page(st, __pgprot(prot), eff, 3);
+-			} else if (!kasan_page_table(st, pud_start)) {
+-				walk_pmd_level(st, *start, eff,
+-					       P + i * PUD_LEVEL_MULT);
+-			}
+-		} else
+-			note_page(st, __pgprot(0), 0, 3);
++	const struct ptdump_range ptdump_ranges[] = {
++#ifdef CONFIG_X86_64
+ 
+-		start++;
+-	}
+-}
++#define normalize_addr_shift (64 - (__VIRTUAL_MASK_SHIFT + 1))
++#define normalize_addr(u) ((signed long)((u) << normalize_addr_shift) >> \
++			   normalize_addr_shift)
+ 
++	{0, PTRS_PER_PGD * PGD_LEVEL_MULT / 2},
++	{normalize_addr(PTRS_PER_PGD * PGD_LEVEL_MULT / 2), ~0UL},
+ #else
+-#define walk_pud_level(s,a,e,p) walk_pmd_level(s,__pud(p4d_val(a)),e,p)
+-#define p4d_large(a) pud_large(__pud(p4d_val(a)))
+-#define p4d_none(a)  pud_none(__pud(p4d_val(a)))
++	{0, ~0UL},
+ #endif
++	{0, 0}
++};
+ 
+-static void walk_p4d_level(struct pg_state *st, pgd_t addr, pgprotval_t eff_in,
+-			   unsigned long P)
+-{
+-	int i;
+-	p4d_t *start, *p4d_start;
+-	pgprotval_t prot, eff;
+-
+-	if (PTRS_PER_P4D == 1)
+-		return walk_pud_level(st, __p4d(pgd_val(addr)), eff_in, P);
+-
+-	p4d_start = start = (p4d_t *)pgd_page_vaddr(addr);
+-
+-	for (i = 0; i < PTRS_PER_P4D; i++) {
+-		st->current_address = normalize_addr(P + i * P4D_LEVEL_MULT);
+-		if (!p4d_none(*start)) {
+-			prot = p4d_flags(*start);
+-			eff = effective_prot(eff_in, prot);
+-			if (p4d_large(*start) || !p4d_present(*start)) {
+-				note_page(st, __pgprot(prot), eff, 2);
+-			} else if (!kasan_page_table(st, p4d_start)) {
+-				walk_pud_level(st, *start, eff,
+-					       P + i * P4D_LEVEL_MULT);
+-			}
+-		} else
+-			note_page(st, __pgprot(0), 0, 2);
+-
+-		start++;
+-	}
+-}
++	struct pg_state st = {
++		.ptdump = {
++			.note_page	= note_page,
++			.range		= ptdump_ranges
++		},
++		.to_dmesg	= dmesg,
++		.check_wx	= checkwx,
++		.seq		= m
++	};
+ 
+-#define pgd_large(a) (pgtable_l5_enabled() ? pgd_large(a) : p4d_large(__p4d(pgd_val(a))))
+-#define pgd_none(a)  (pgtable_l5_enabled() ? pgd_none(a) : p4d_none(__p4d(pgd_val(a))))
++	struct mm_struct fake_mm = {
++		.pgd = pgd
++	};
++	init_rwsem(&fake_mm.mmap_sem);
+ 
+-static inline bool is_hypervisor_range(int idx)
+-{
+-#ifdef CONFIG_X86_64
+-	/*
+-	 * A hole in the beginning of kernel address space reserved
+-	 * for a hypervisor.
+-	 */
+-	return	(idx >= pgd_index(GUARD_HOLE_BASE_ADDR)) &&
+-		(idx <  pgd_index(GUARD_HOLE_END_ADDR));
+-#else
+-	return false;
+-#endif
+-}
+-
+-static void ptdump_walk_pgd_level_core(struct seq_file *m, pgd_t *pgd,
+-				       bool checkwx, bool dmesg)
+-{
+-	pgd_t *start = pgd;
+-	pgprotval_t prot, eff;
+-	int i;
+-	struct pg_state st = {};
+-
+-	st.to_dmesg = dmesg;
+-	st.check_wx = checkwx;
+-	st.seq = m;
+-	if (checkwx)
+-		st.wx_pages = 0;
+-
+-	for (i = 0; i < PTRS_PER_PGD; i++) {
+-		st.current_address = normalize_addr(i * PGD_LEVEL_MULT);
+-		if (!pgd_none(*start) && !is_hypervisor_range(i)) {
+-			prot = pgd_flags(*start);
+-#ifdef CONFIG_X86_PAE
+-			eff = _PAGE_USER | _PAGE_RW;
+-#else
+-			eff = prot;
+-#endif
+-			if (pgd_large(*start) || !pgd_present(*start)) {
+-				note_page(&st, __pgprot(prot), eff, 1);
+-			} else {
+-				walk_p4d_level(&st, *start, eff,
+-					       i * PGD_LEVEL_MULT);
+-			}
+-		} else
+-			note_page(&st, __pgprot(0), 0, 1);
+-
+-		cond_resched();
+-		start++;
+-	}
++	ptdump_walk_pgd(&st.ptdump, &fake_mm);
+ 
+-	/* Flush out the last page */
+-	st.current_address = normalize_addr(PTRS_PER_PGD*PGD_LEVEL_MULT);
+-	note_page(&st, __pgprot(0), 0, 0);
+ 	if (!checkwx)
+ 		return;
+ 	if (st.wx_pages)
 -- 
 2.20.1
 
