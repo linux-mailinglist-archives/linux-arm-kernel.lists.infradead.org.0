@@ -2,62 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DB3C1257C9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 00:30:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EE831257D9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 00:37:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wQ2mCqE9gTa/SgOfvk2WFsRauO4aHvh32DqCMkiH158=; b=a2Tz7d+Ob/YJKkyiVnLCuxTlN
-	7I5ND9dhd+PKhzIG5Ep2ZdFTzKTxGs5cvdF6gPLPG3UoLWVikrStAZPZbVvyuNe544JZaoNMdVXNQ
-	PkKHks6b7CZXbMDu+YY/D1xlbVG2o1rygBIIBlClV83gNg/oyFzFujDxMjDTIQVXnfVV9iGo6Ry41
-	ksyBTIc+nN7NyQNzrYnlPllPepIK/QsnnMVIWWp8Y6gGn0KQQdwuiOU+phVSTZ9U1F79A3G73Q1Ha
-	PBETEUju0DxUavNnAckMrdddnqYxdIR4FGX3SWFVtPeQbc+Ndllrt9ey1jsKN9OmXv93d3M4oL9qq
-	jwYN5aNBg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YLGzmzpKnbxsz9lSkejvRTros2ZYdqYLFKv8iw4mkg8=; b=fdpNVtI6fjrC6p
+	3bY2AfYH/CSi8midPokvig/l322tzcM/0wUntTYhY/tPpjbiaZbVSY9diLeOp4SzXyvsALB7SzHgY
+	O9j/c8R6JKQLrgyOC7hjAEBy3+y5FP22GxSEEfX9cLpn6qx3Ha3oNJdFss91NZRg+HIZTHMbPLDay
+	3721PfxGRDku16VCbAHnBtOza7ieUqmwSOR5OPYvucSHT5YSn3FhSEEwcsLYZHuyet15Iaw5SeT9m
+	RKHvS5OJ+cgEXAyYjFt1kMQRY/SZXPgqJuaBH9IMbq0r8Ok5IzUhFGWYBy2AhBLoP5PS2+iBxBR52
+	zZ5hrElwSw3vKHfxI3/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihilk-0004sZ-7X; Wed, 18 Dec 2019 23:30:16 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1ihisl-0007Y1-TS; Wed, 18 Dec 2019 23:37:31 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihilW-0004Hy-7X
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 23:30:03 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 18 Dec 2019 15:30:01 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="365890260"
-Received: from yoojae-mobl1.amr.corp.intel.com (HELO [10.7.153.143])
- ([10.7.153.143])
- by orsmga004.jf.intel.com with ESMTP; 18 Dec 2019 15:30:01 -0800
-Subject: Re: [PATCH v11 07/14] dt-bindings: peci: add NPCM PECI documentation
-To: Rob Herring <robh@kernel.org>
-References: <20191211194624.2872-1-jae.hyun.yoo@linux.intel.com>
- <20191211194624.2872-8-jae.hyun.yoo@linux.intel.com>
- <20191218144206.GA26118@bogus>
-From: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
-Message-ID: <a86e253a-5ef6-f448-0c0b-15be0467a9ef@linux.intel.com>
-Date: Wed, 18 Dec 2019 15:30:00 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1ihisY-0007X3-Eq
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 23:37:20 +0000
+Received: by mail-ot1-f68.google.com with SMTP id 59so4571177otp.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Dec 2019 15:37:17 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rVq3FctMUlxxbFCAv4Hq3F1IucA62kHuaSw0yCHlOq8=;
+ b=V7iqPeNnd/+vxfkRqzx2MYxjAGa1wF9tfDOGJhYGnYRYARGYxdjQyloNFGaW5aqsxa
+ csmO9W/jLLgRDSZizCZ8cTJH6F7BueBb86sQhVQA+7ux9bDBfB5BJcybDOYNKB9ylm0C
+ V+ebzC27ofIoYoslHJg1GcdGu3kRcGC60IZaNSBeGRMpG98vG25PTZdoif0i8SdBGClV
+ IXpu/EpIiVxnCsObaOseYFmjrKtBkoyvQGYdoTOziRakazXIRDaROGbP8mKluTm+ceyL
+ y010Va3zejPzdkqxKLPqP7fDuh7mbhtnZxjAq9XQk1+lpDMDJC5NNG9AhpbBfUXnpLWu
+ 6SLg==
+X-Gm-Message-State: APjAAAXj6BfuW6f/OIfzgbJe4z5tiiG54V7v3g4CCS432d52/GPQgLZ7
+ LN16gYau1a9PHABIYheCSg==
+X-Google-Smtp-Source: APXvYqyPh+4IInW14BHCfGHQzEnJR270O8hYZIX77r6+KeTYekhQCeI3drPFmDyVwEvselhJDCNYTg==
+X-Received: by 2002:a9d:2482:: with SMTP id z2mr5197001ota.279.1576712236059; 
+ Wed, 18 Dec 2019 15:37:16 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id c12sm1358241oic.27.2019.12.18.15.37.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 18 Dec 2019 15:37:15 -0800 (PST)
+Date: Wed, 18 Dec 2019 17:37:14 -0600
+From: Rob Herring <robh@kernel.org>
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Subject: Re: [PATCH 1/2] dt-bindings: edac: Add DT bindings for Kryo EDAC
+Message-ID: <20191218233714.GA30302@bogus>
+References: <cover.1575529553.git.saiprakash.ranjan@codeaurora.org>
+ <0101016ed57a3259-eee09e9e-e99a-40f1-ab1c-63e58a42615c-000000@us-west-2.amazonses.com>
 MIME-Version: 1.0
-In-Reply-To: <20191218144206.GA26118@bogus>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <0101016ed57a3259-eee09e9e-e99a-40f1-ab1c-63e58a42615c-000000@us-west-2.amazonses.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_153002_295793_D6E491D1 
-X-CRM114-Status: GOOD (  21.07  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191218_153718_496204_6B547414 
+X-CRM114-Status: GOOD (  19.60  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,183 +92,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Randy Dunlap <rdunlap@infradead.org>,
- Tomer Maimon <tmaimon77@gmail.com>, devicetree@vger.kernel.org,
- Frederic Barrat <fbarrat@linux.vnet.ibm.com>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Lee Jones <lee.jones@linaro.org>, Eric Sandeen <sandeen@redhat.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jonathan Corbet <corbet@lwn.net>, openbmc@lists.ozlabs.org,
- linux-doc@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Joel Stanley <joel@jms.id.au>, "Bryant G . Ly" <bryantly@linux.vnet.ibm.com>,
- Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de>,
- David Kershner <david.kershner@unisys.com>, Guenter Roeck <linux@roeck-us.net>,
- Wu Hao <hao.wu@intel.com>, linux-hwmon@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, Arnd Bergmann <arnd@arndb.de>,
- Philippe Ombredanne <pombredanne@nexb.com>, Johan Hovold <johan@kernel.org>,
- Tomohiro Kusumi <kusumi.tomohiro@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Sagar Dharia <sdharia@codeaurora.org>,
- linux-arm-kernel@lists.infradead.org, Juergen Gross <jgross@suse.com>,
- Cyrille Pitchen <cyrille.pitchen@wedev4u.fr>, Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Darrick J . Wong" <darrick.wong@oracle.com>,
- Stephen Boyd <sboyd@codeaurora.org>, Vinod Koul <vkoul@kernel.org>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- "David S . Miller" <davem@davemloft.net>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Tony Luck <tony.luck@intel.com>, psodagud@codeaurora.org,
+ linux-arm-msm@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>,
+ tsoni@codeaurora.org, linux-kernel@vger.kernel.org,
+ Evan Green <evgreen@chromium.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Robert Richter <rrichter@marvell.com>, Andy Gross <agross@kernel.org>,
+ Borislav Petkov <bp@alien8.de>, James Morse <james.morse@arm.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
-
-On 12/18/2019 6:42 AM, Rob Herring wrote:
-> On Wed, Dec 11, 2019 at 11:46:17AM -0800, Jae Hyun Yoo wrote:
->> From: Tomer Maimon <tmaimon77@gmail.com>
->>
->> Added device tree binding documentation for Nuvoton BMC
->> NPCM Platform Environment Control Interface(PECI).
->>
->> Signed-off-by: Tomer Maimon <tmaimon77@gmail.com>
->> Signed-off-by: Jae Hyun Yoo <jae.hyun.yoo@linux.intel.com>
->> ---
->> Changes since v10:
->> - Newly added in v11.
->>
->>   .../devicetree/bindings/peci/peci-npcm.yaml   | 102 ++++++++++++++++++
->>   1 file changed, 102 insertions(+)
->>   create mode 100644 Documentation/devicetree/bindings/peci/peci-npcm.yaml
->>
->> diff --git a/Documentation/devicetree/bindings/peci/peci-npcm.yaml b/Documentation/devicetree/bindings/peci/peci-npcm.yaml
->> new file mode 100644
->> index 000000000000..bcd5626e68e7
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/peci/peci-npcm.yaml
->> @@ -0,0 +1,102 @@
->> +# SPDX-License-Identifier: GPL-2.0
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/peci/peci-npcm.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Nuvoton NPCM PECI Bus Device Tree Bindings
->> +
->> +maintainers:
->> +  - Tomer Maimon <tmaimon77@gmail.com>
->> +
->> +properties:
->> +  compatible:
->> +    const: nuvoton,npcm750-peci # for the NPCM7XX BMC.
->> +
->> +  reg:
->> +    maxItems: 1
->> +
->> +  "#address-cells":
->> +    # Required to define a client address.
->> +    const: 1
->> +
->> +  "#size-cells":
->> +    # Required to define a client address.
->> +    const: 0
->> +
->> +  interrupts:
->> +    maxItems: 1
->> +
->> +  clocks:
->> +    # PECI reference clock.
->> +    maxItems: 1
->> +
->> +  cmd-timeout-ms:
->> +    # Command timeout in units of ms.
->> +    allOf:
->> +      - $ref: /schemas/types.yaml#/definitions/uint32
+On Thu, Dec 05, 2019 at 09:53:05AM +0000, Sai Prakash Ranjan wrote:
+> This adds DT bindings for Kryo EDAC implemented with RAS
+> extensions on KRYO{3,4}XX CPU cores for reporting of cache
+> errors.
 > 
-> You can drop this as standard units already have a type.
-
-I'm assuming you pointed the timeout-ms as one of standard
-units, right? I'll drop this ref.
-
->> +      - minimum: 1
->> +        maximum: 60000
->> +        default: 1000
->> +
->> +  pull-down:
->> +    description: |
->> +      Defines the PECI I/O internal pull down operation.
->> +        0: pull down always enable
->> +        1: pull down only during transactions.
->> +        2: pull down always disable.
->> +    allOf:
->> +      - $ref: /schemas/types.yaml#/definitions/uint32
->> +      - minimum: 0
->> +        maximum: 2
->> +        default: 0
->> +
->> +  host-neg-bit-rate:
->> +    description: |
->> +      Define host negotiation bit rate divider.
->> +      the host negotiation bit rate calculate with formula:
->> +      clock frequency[Hz] / [4 x {host-neg-bit-rate + 1}]
->> +    allOf:
->> +      - $ref: /schemas/types.yaml#/definitions/uint32
->> +      - minimum: 7
->> +        maximum: 31
->> +        default: 15
->> +
->> +  high-volt-range:
->> +    description: |
->> +      Adapts PECI I/O interface to voltage range.
->> +        0: PECI I/O interface voltage range of 0.8-1.06V (default)
->> +        1: PECI I/O interface voltage range of 0.95-1.26V
->> +    type: boolean
+> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> ---
+>  .../bindings/edac/qcom-kryo-edac.yaml         | 67 +++++++++++++++++++
+>  1 file changed, 67 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/edac/qcom-kryo-edac.yaml
 > 
-> These last 4 properties are vendor specific or PECI common. For the
-> former, needs a vendor prefix. For the latter, needs to be moved to
-> common location.
+> diff --git a/Documentation/devicetree/bindings/edac/qcom-kryo-edac.yaml b/Documentation/devicetree/bindings/edac/qcom-kryo-edac.yaml
+> new file mode 100644
+> index 000000000000..1a39429a73b4
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/edac/qcom-kryo-edac.yaml
+> @@ -0,0 +1,67 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/edac/qcom-kryo-edac.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Kryo Error Detection and Correction(EDAC)
+> +
+> +maintainers:
+> +  - Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> +
+> +description: |
+> +  Kryo EDAC is defined to describe on-chip error detection and correction
+> +  for the Kryo CPU cores which implement RAS extensions. It will report
+> +  all Single Bit Errors and Double Bit Errors found in L1/L2 caches in
+> +  in two registers ERXSTATUS_EL1 and ERXMISC0_EL1. L3-SCU cache errors
+> +  are reported in ERR1STATUS and ERR1MISC0 registers.
+> +    ERXSTATUS_EL1 - Selected Error Record Primary Status Register, EL1
+> +    ERXMISC0_EL1 - Selected Error Record Miscellaneous Register 0, EL1
+> +    ERR1STATUS - Error Record Primary Status Register
+> +    ERR1MISC0 - Error Record Miscellaneous Register 0
+> +  Current implementation of Kryo ECC(Error Correcting Code) mechanism is
+> +  based on interrupts.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - qcom,kryo-edac
+> +
+> +  interrupts:
+> +    minItems: 1
+> +    maxItems: 4
+> +    items:
+> +      - description: l1-l2 cache faultirq interrupt
+> +      - description: l1-l2 cache errirq interrupt
+> +      - description: l3-scu cache errirq interrupt
+> +      - description: l3-scu cache faultirq interrupt
+> +
+> +  interrupt-names:
+> +    minItems: 1
+> +    maxItems: 4
 
-These are Nuvoton vendor specifics. I'll add prefix for them and will
-check Aspeed bindings too.
+You are saying only these combinations are valid:
 
-Thanks a lot for your review!
+l1-l2-faultirq
 
--Jae
+l1-l2-faultirq
+l1-l2-errirq
 
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - "#address-cells"
->> +  - "#size-cells"
->> +  - interrupts
->> +  - clocks
->> +
->> +examples:
->> +  - |
->> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
->> +    #include <dt-bindings/clock/nuvoton,npcm7xx-clock.h>
->> +    peci: bus@100000 {
->> +        compatible = "simple-bus";
->> +        #address-cells = <1>;
->> +        #size-cells = <1>;
->> +        ranges = <0x0 0x100000 0x200>;
->> +
->> +        peci0: peci-bus@0 {
->> +            compatible = "nuvoton,npcm750-peci";
->> +            reg = <0x0 0x200>;
->> +            #address-cells = <1>;
->> +            #size-cells = <0>;
->> +            interrupts = <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
->> +            clocks = <&clk NPCM7XX_CLK_APB3>;
->> +            cmd-timeout-ms = <1000>;
->> +            pull-down = <0>;
->> +            host-neg-bit-rate = <15>;
->> +        };
->> +    };
->> +...
->> -- 
->> 2.17.1
->>
+l1-l2-faultirq
+l1-l2-errirq
+l3-scu-errirq
+
+l1-l2-faultirq
+l1-l2-errirq
+l3-scu-errirq
+l3-scu-faultirq
+
+Is that your intent?
+
+> +    items:
+> +      - const: l1-l2-faultirq
+> +      - const: l1-l2-errirq
+> +      - const: l3-scu-errirq
+> +      - const: l3-scu-faultirq
+> +
+> +required:
+> +  - compatible
+> +  - interrupts
+> +  - interrupt-names
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +    kryo_edac {
+> +      compatible = "qcom,kryo-edac";
+> +      interrupts = <GIC_PPI 6 IRQ_TYPE_LEVEL_HIGH>,
+> +                   <GIC_PPI 7 IRQ_TYPE_LEVEL_HIGH>,
+> +                   <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>,
+> +                   <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
+> +      interrupt-names = "l1-l2-faultirq",
+> +                        "l1-l2-errirq",
+> +                        "l3-scu-errirq",
+> +                        "l3-scu-faultirq";
+> +    };
+> -- 
+> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+> of Code Aurora Forum, hosted by The Linux Foundation
 > 
 
 _______________________________________________
