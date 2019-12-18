@@ -2,89 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 861271257DD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 00:37:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6780C1257E4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 00:41:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FOGfANE1ayDrls+DtW7QHps9omHuK5EtJRZTANCHZGU=; b=ez1oR/j4MjECeB0FYOk9d1KIe
-	HKUwn2prPmT01Zj61VetDOxMYva4jkzV0MeDBvQUkYbMpfX+v3+lNJY9TzL49wnOscLPcUQo0pjsc
-	vdSOt+CQ3hVg6BI+ju0YwzTqpSrmj43iD8pBpnJsoazYcHPt4+ygGp9fNZNyb7LTn+NOFXJ4G6oAL
-	cA7eoEM+TqGyX6dax/hQStVY/sxBCnLt5bzCxMc7rAsb2huhaBGUBz/BGN3xrvTV4tcuvLLHROFyr
-	QqRWEJG4ReZSF8uZdcg4CS/2ChzylrEWZxXDgZ5lt3L0L3nQYtIOv3m7WzZtGGgMmwnrBTXBZnVHy
-	ngz3IrVcg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Djwu0FVQLL4FasqmMTaCJnNlwd6ZNFljImwrFK94Znc=; b=JsrjtzFYeZ2x0o
+	dtOlHQdPB4wG8g+Pl70IU+jBFmZKdJwN6XVNG6+yflhVzCLndvrmbu+idhMn0iGE/x9iGo7TXEmZM
+	genfaHTmnewqXcBuUxNzEmGYnH4dkQEdKqRh9j64+AeXAI7/ya3SzXQzdsnTvJ6vbeYSxVxw1uvuH
+	8StLXtHBa2tM2uLb/aOBoevfzWpPq1sxyKSiw5rgxdBeUApZWfU5UQp4/jbHDsNU8nN7EbzwfJYhK
+	uzTNOQW2Dtp5XlnYWBdvHE3Em2di8/iyEpYqdXceidhjHj8REfQcjtcgWFSqNj0OiGhx2ED+6alBT
+	AbQYQK0jr9zZjyBMUgpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihit8-0007yk-9c; Wed, 18 Dec 2019 23:37:54 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1ihiwM-0001N4-Cq; Wed, 18 Dec 2019 23:41:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihisp-0007kN-Uw
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 23:37:39 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1576712254; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=aOyF/9vjrq0zND57ZRP80ePOcz7ZOQqlqlcaCLPEKJg=;
- b=FHHYBsNl6KiAbD48i5Ym8puVZsO4vUVXS65okw4lPTIcgk0CnA68/SBB2nhDQUD9bSpUmp7z
- KP/Lshn39Wrq7GQRYsf3y8/m8tUOhyku2FzB1A9Aktjy46WzKmw4uWUcoSHneWRfKVsItOiW
- i6162NrlKfuikBJWwuYzfkU0fA8=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5dfab839.7f5e987217d8-smtp-out-n01;
- Wed, 18 Dec 2019 23:37:29 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id CFD12C43383; Wed, 18 Dec 2019 23:37:29 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [10.46.161.159] (i-global254.qualcomm.com [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: asutoshd)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 016A9C4479C;
- Wed, 18 Dec 2019 23:37:26 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 016A9C4479C
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=asutoshd@codeaurora.org
-Subject: Re: [PATCH v1 2/2] scsi: ufs: disable interrupt during clock-gating
-To: Stanley Chu <stanley.chu@mediatek.com>
-References: <1575721321-8071-1-git-send-email-stanley.chu@mediatek.com>
- <1575721321-8071-3-git-send-email-stanley.chu@mediatek.com>
- <a36d111e-ef7f-9f9b-6f6a-692a9980103a@codeaurora.org>
- <1576641171.13056.16.camel@mtkswgap22>
-From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
-Message-ID: <7756630e-adf2-47e9-4815-ba2306a9dd16@codeaurora.org>
-Date: Wed, 18 Dec 2019 15:37:26 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1ihiwC-0001Ml-K5
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 23:41:06 +0000
+Received: from localhost (c-67-164-102-47.hsd1.ca.comcast.net [67.164.102.47])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 195DD218AC;
+ Wed, 18 Dec 2019 23:41:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576712463;
+ bh=fKUlrQAo+cpYx7KI6TLlwI8s49QrHGMHYG2vR0v2IZw=;
+ h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+ b=ktYT4XdHS1mFFxO3ZqlsyO7GzNJKtNhrjAIr/03aExftmmcPLuy3BO0xVemiBpAm7
+ 0gx+ixKgOH3wJbqLL/zWwvavwcq8wNIGR+wah0eVmdtsci/OJGbAIc3HBWyxv1MOQ1
+ A+7bS5y+4GA5GIqcu1XsIz1HoQYJlQkgPkrhQ9II=
+Date: Wed, 18 Dec 2019 15:40:50 -0800 (PST)
+From: Stefano Stabellini <sstabellini@kernel.org>
+X-X-Sender: sstabellini@sstabellini-ThinkPad-T480s
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH] arm64: xen: Use modern annotations for assembly functions
+In-Reply-To: <20191218123756.41363-1-broonie@kernel.org>
+Message-ID: <alpine.DEB.2.21.1912181539590.30543@sstabellini-ThinkPad-T480s>
+References: <20191218123756.41363-1-broonie@kernel.org>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-In-Reply-To: <1576641171.13056.16.camel@mtkswgap22>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_153736_132870_F26D68AA 
-X-CRM114-Status: GOOD (  19.27  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191218_154104_682287_86DD0DD3 
+X-CRM114-Status: GOOD (  14.85  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [104.130.122.26 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,75 +76,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com, pedrom.sousa@synopsys.com,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Stefano Stabellini <sstabellini@kernel.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, xen-devel@lists.xenproject.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/17/2019 7:52 PM, Stanley Chu wrote:
-> Hi Asutosh,
+On Wed, 18 Dec 2019, Mark Brown wrote:
+> In an effort to clarify and simplify the annotation of assembly functions
+> in the kernel new macros have been introduced. These replace ENTRY and
+> ENDPROC. Update the annotations in the xen code to the new macros.
 > 
-> On Tue, 2019-12-17 at 15:25 -0800, Asutosh Das (asd) wrote:
->>>
->>
->> Hi,
->> Does this save significant power? I see that gate/ungate of clocks
->> happen far too frequently than suspend/resume.
->>
->> Have you considered how much latency this would add to the
->> gating/ungating path?
->>
->> -asd
->>
+> Signed-off-by: Mark Brown <broonie@kernel.org>
+> ---
 > 
-> Yes, we have measured 200 times clk-gating/clk-ungating and latency data
-> is showed as below,
+> This is part of a wider effort to convert all the arch/arm64 code.
 > 
-> For clk-gating with interrupt disabling toggled,
+>  arch/arm64/xen/hypercall.S | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
 > 
-> 	Average latency of each clk-gating: 55.117 us
-> 	Average latency of irq-disabling during clk-gating: 4.2 us
-> 
-> For clk-ungating with interrupt enabling toggled,
-> 	Average latency of each clk-ungating: 118.324 us
-> 	Average latency of irq-enabling during clk-ungating: 2.9 us
-> 
-> The evaluation here is based on below Can's patch therefore the
-> interrupt control (enable_irq/disable_irq) latency is much shorter than
-> before (request_irq/free_irq).
-> 
-> scsi: ufs: Do not free irq in suspend
-> https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/ufs/ufshcd.c?id=8709c1f68536e256668812788af5b2bb027f49c3
-> 
-> BTW, the main purpose of this patch is aimed to protect ufshcd register
-> from accessing while host clocks are disabled to fix potential system
-> hang issue. The possible scenario is mentioned in commit message of
-> patch "scsi: ufs: disable irq before disabling clocks" in the same
-> series.
-> 
-> Thanks
-> Stanley
-> 
+> diff --git a/arch/arm64/xen/hypercall.S b/arch/arm64/xen/hypercall.S
+> index c5f05c4a4d00..305c2274b8eb 100644
+> --- a/arch/arm64/xen/hypercall.S
+> +++ b/arch/arm64/xen/hypercall.S
+> @@ -56,11 +56,11 @@
+>  #define XEN_IMM 0xEA1
+>  
+>  #define HYPERCALL_SIMPLE(hypercall)		\
+> -ENTRY(HYPERVISOR_##hypercall)			\
+> +SYM_FUNC_START(HYPERVISOR_##hypercall)			\
 
-Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
+Could you please adjust the tabs so that the '\' is aligned with the
+others?
 
-Thanks for the data.
-It'd be interesting to know more on the - misrouted interrupt recovery 
-feature though.
+With that change:
 
--
-Thanks
-Asutosh
+Reviewed-by: Stefano Stabellini <sstabellini@kernel.org>
 
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-Linux Foundation Collaborative Project
+
+>  	mov x16, #__HYPERVISOR_##hypercall;	\
+>  	hvc XEN_IMM;				\
+>  	ret;					\
+> -ENDPROC(HYPERVISOR_##hypercall)
+> +SYM_FUNC_END(HYPERVISOR_##hypercall)
+>  
+>  #define HYPERCALL0 HYPERCALL_SIMPLE
+>  #define HYPERCALL1 HYPERCALL_SIMPLE
+> @@ -86,7 +86,7 @@ HYPERCALL2(multicall);
+>  HYPERCALL2(vm_assist);
+>  HYPERCALL3(dm_op);
+>  
+> -ENTRY(privcmd_call)
+> +SYM_FUNC_START(privcmd_call)
+>  	mov x16, x0
+>  	mov x0, x1
+>  	mov x1, x2
+> @@ -109,4 +109,4 @@ ENTRY(privcmd_call)
+>  	 */
+>  	uaccess_ttbr0_disable x6, x7
+>  	ret
+> -ENDPROC(privcmd_call);
+> +SYM_FUNC_END(privcmd_call);
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
