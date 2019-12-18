@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91DA61246D7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 13:29:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A27C71246D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 13:29:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kck7vMV3lHwisNxXVO/pLldV9+qF6J2CrfTVMjqZV4Q=; b=tAyNP72Jf0WvYr
-	CgMVvoGGuK0v3LAxGXNJyye7pWIAOkoWDfRKw4r8co/a+iXZzSOKtraBIJDSncL87hteY555jGU2P
-	udkVwwzCSUcuLnVeLS76qK8XI2MXmGGkxJ4qBhpfC+vrUT4YgeYGU1/ea2m91bbArHs4uAZxknjrd
-	k6y1LGEbDWAXv9vDVS5Tp8aYlNp8GDPfZlmzK/49f5vzer48t4tv+4iSkLK8FeR9vRMbymp75sVwS
-	JyDs5nryX7TsGuzEcUm7kRoT7lVbWxqainzy7jazjlfGvkO/2XWBXHx8EjBoJggrA5NP2HdxxmbOD
-	sBL2WIZmdaWHJesbEvGA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pR0Fb2ymfIR2qnluu00H4WVw5efmrtlKFYeZNR3TMlM=; b=gpj4SdGYjfb3Ym
+	XpjWETL1HFkNRnIGn02VJ1yiSmGsG6BoTQpTp7n3XojH8KpyTbWJJECHbsh/xIWGWzsthHBz9Sz2U
+	xy7TPGA62oTl/wbkaRa+VvH2VEhJmVl4pOcpC4LcBCHMwAxPsqU933BjdLuK9QwslFf9l7RUQBa4n
+	XQpt3AswZzIjTXNITbfpAulq0xE9Pu9j4pKJshsf1WvourdXvhcsIEUkOWum/WpqQ1ukAlVYg87I2
+	Eh4fqWAbtF6zCYsemqhOc7XOfBdOlR1uYV62P/y41mak1le99vJFiGh+QGhEH1UDCh1bYbtscCTTz
+	csiCHS4LrHwMG7Q2tZhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihYRh-0001vT-6L; Wed, 18 Dec 2019 12:28:53 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1ihYS2-00029Z-9f; Wed, 18 Dec 2019 12:29:14 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihYRS-0001sl-B0
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 12:28:41 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
+ id 1ihYRV-0001tE-68
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 12:28:42 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,54 +34,56 @@ Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
  include:servers.mcsv.net include:mktomail.com
  include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
+Authentication-Results: esa2.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: mMhpzqDKffyOcoquQvlWs/uTrosHiQ7bIT/IryT2UMqI7ma5vJ2NJeK8pNZJ9N7JIXOfpvRzkV
- 8+SsrubPp0iJsBWeYWFx1AdrDba0+//DCb2x0sLZ+rQQnB0SC4BKWeOD1Vp9Yx/2OVIk/McC9o
- 4SLOMnDu6mXyqyTaIHO+fNpedRk8tJfdgYybV09Oru3BJvMvMAa3VzCHMmvwASCP65f2q5GDO+
- ILx+QKs+VqE6+FP5SBoNPOTv4a8DnakSnsXDy3BdI93M0vMRmMhJbH0D6g5SDdxuLcdTV1zvUF
- EYc=
-X-IronPort-AV: E=Sophos;i="5.69,329,1571727600"; d="scan'208";a="59399379"
+IronPort-SDR: iwa+LFGDEj2VHhKMiirVOph9liCldbkNPs3a2DdYrgytvFbPh4YLPT4L/u0zdSYqk+PC4UnATC
+ 9Jqe9z/vk7PxLqEC75pzXK9Okax4Hm1487vaK7W60DqwadiKzTAfFcGQLrN6geXR8B47CRsxgh
+ 9EAu9fR5WLOeChwzIMIITWd1fY/92Y/P5ZRUGUeiQ32vb8xbFslFq6/aNQ0wR8vpGf6jprH3b5
+ WkSSyD6uJ289KBf0fkGN038itl4DaDqPGKNtmThBMjsRdNwuYZRPT8TQW2F3UooKmKheP2GJFI
+ 0WU=
+X-IronPort-AV: E=Sophos;i="5.69,329,1571727600"; d="scan'208";a="60203831"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 18 Dec 2019 05:28:36 -0700
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 18 Dec 2019 05:28:37 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 18 Dec 2019 05:28:34 -0700
+ 15.1.1713.5; Wed, 18 Dec 2019 05:28:37 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Wed, 18 Dec 2019 05:28:31 -0700
+ 15.1.1713.5 via Frontend Transport; Wed, 18 Dec 2019 05:28:34 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <boris.brezillon@bootlin.com>, <airlied@linux.ie>,
  <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
  <lee.jones@linaro.org>, <sam@ravnborg.org>
-Subject: [PATCH v3 0/6] fixes for atmel-hlcdc
-Date: Wed, 18 Dec 2019 14:28:23 +0200
-Message-ID: <1576672109-22707-1-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH v3 1/6] drm: atmel-hlcdc: use double rate for pixel clock only
+ if supported
+Date: Wed, 18 Dec 2019 14:28:24 +0200
+Message-ID: <1576672109-22707-2-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1576672109-22707-1-git-send-email-claudiu.beznea@microchip.com>
+References: <1576672109-22707-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_042838_382615_4FE1FA54 
-X-CRM114-Status: UNSURE (   6.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191218_042841_263823_E0BF5805 
+X-CRM114-Status: GOOD (  10.38  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,42 +105,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Doubled system clock should be used as pixel cock source only if this
+is supported. This is emphasized by the value of
+atmel_hlcdc_crtc::dc::desc::fixed_clksrc.
 
-I have few fixes for atmel-hlcdc driver in this series as well
-as two reverts.
-Revert "drm: atmel-hlcdc: enable sys_clk during initalization." is
-due to the fix in in patch 2/5.
+Fixes: a6eca2abdd42 ("drm: atmel-hlcdc: add config option for clock selection")
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+---
+ drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-Thank you,
-Claudiu Beznea
-
-Changes in v3:
-- changes dev_err() message in patch 4/6
-- collect Acked-by tags
-
-Changes in v2:
-- introduce patch 3/6
-- use dev_err() inpatch 4/6
-- introduce patch 5/6 instead of reverting commit f6f7ad323461
-  ("drm/atmel-hlcdc: allow selecting a higher pixel-clock than requested")
-
-Claudiu Beznea (5):
-  drm: atmel-hlcdc: use double rate for pixel clock only if supported
-  drm: atmel-hlcdc: enable clock before configuring timing engine
-  mfd: atmel-hlcdc: add struct device member to struct
-    atmel_hlcdc_regmap
-  mfd: atmel-hlcdc: return in case of error
-  Revert "drm: atmel-hlcdc: enable sys_clk during initalization."
-
-Peter Rosin (1):
-  drm: atmel-hlcdc: prefer a lower pixel-clock than requested
-
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c | 18 ++++++++++++------
- drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_dc.c   | 19 +------------------
- drivers/mfd/atmel-hlcdc.c                      | 18 ++++++++++++++----
- 3 files changed, 27 insertions(+), 28 deletions(-)
-
+diff --git a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+index f2e73e6d46b8..5040ed8d0871 100644
+--- a/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
++++ b/drivers/gpu/drm/atmel-hlcdc/atmel_hlcdc_crtc.c
+@@ -95,14 +95,14 @@ static void atmel_hlcdc_crtc_mode_set_nofb(struct drm_crtc *c)
+ 		     (adj->crtc_hdisplay - 1) |
+ 		     ((adj->crtc_vdisplay - 1) << 16));
+ 
++	prate = clk_get_rate(crtc->dc->hlcdc->sys_clk);
++	mode_rate = adj->crtc_clock * 1000;
+ 	if (!crtc->dc->desc->fixed_clksrc) {
++		prate *= 2;
+ 		cfg |= ATMEL_HLCDC_CLKSEL;
+ 		mask |= ATMEL_HLCDC_CLKSEL;
+ 	}
+ 
+-	prate = 2 * clk_get_rate(crtc->dc->hlcdc->sys_clk);
+-	mode_rate = adj->crtc_clock * 1000;
+-
+ 	div = DIV_ROUND_UP(prate, mode_rate);
+ 	if (div < 2) {
+ 		div = 2;
 -- 
 2.7.4
 
