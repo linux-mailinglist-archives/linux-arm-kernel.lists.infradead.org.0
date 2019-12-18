@@ -2,85 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 053B812545F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 22:11:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CD821254D3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 22:37:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2GUcKdhfkif5PGy+Ah7s4V7vegl56yqDHHp+XM4IyJE=; b=ijY+RD+955Td3+
-	PhdeW3Kk9bpRozay86PinCqY1foH6CPW0xrkNXydcuk6HLCslPgK+FxvfjPvrGf12kUuHyiXurP3t
-	Rz51ufCq/bYZ+AOK3lSYP6znYZSIEFxNTXMEfERMub1ToSRQRL1ITe92D9EmaYrPcng0monMzEbXs
-	3gU/03EKWClOB90RxxeayWe15ZG7uh8/CH97H5ZR/P835rW44H9CH7pBJ0fugOdqdYEbz1UlIy1fb
-	OKJsICI+7spGucDxud7/4+FiDwNWR9XZ/bAfYLH3UQ8UDa0qzkawWlAZpGGLHSuN0KoaklUYS/glS
-	h3nXGjVC5q2V5CbP7c1Q==;
+	List-Owner; bh=5dFqnpJYAqdTyYGmG38kksGmP4meh348zChXx8DIOmI=; b=euiMmX0EfpzKLx
+	uD+14R6bwqZEmiuzgrIRcCYxEw3KJtyu5+1Oi2oKX4z+4XjtI9ALASmolGj6uLRSbJADSftS/YUx4
+	jZMzo6EEYezEjinc4OxGnYSSq/eI7H7vS0sHMi5aU1zEwVn4oFWRAL6JLe2ADImITfTGLHm2DVka8
+	1C7czcAna6eduYuyYlrXNy6Ts4uK7WKV3oPEVwLdtCQ3w1iUrgD44sja0Zb4nkZ8UDJ+WRE37T2VU
+	x0w5Dz9GOOb21W1sbWD641EmEU9ZTcpODosQzMO5NPiiAKqXbHRZP2z6mZ4Kd9WHGn/P+vgBdMHTW
+	8JX3JasRNxSkvDiakp4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihgbr-0005p1-P8; Wed, 18 Dec 2019 21:11:55 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1ihh0d-0005tf-TV; Wed, 18 Dec 2019 21:37:31 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihgbd-0005oS-IN
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:11:42 +0000
-Received: by mail-ed1-x541.google.com with SMTP id l8so2842954edw.1
+ id 1ihh0Q-0005t2-KZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:37:19 +0000
+Received: by mail-ot1-f67.google.com with SMTP id f71so4259573otf.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 13:11:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gRnTtk9JZIi/3I1W9vSxQ7/mm0z0CC1gLLvuFpfUIuI=;
- b=SDMWOZ6lQOb/VZRxOexIDEBtyrlvnLSoH+FiJyCNSXqPnRFfJ26Gn0LuQPT12y7A0c
- lnJolpTE8N8rqaP6nxeRUdAGqO8uwJW2n+hreJFUcssOvxBco69nMD89oSqbkKa74G+n
- RxXaI2ISeSqylE/bYEEcez6fS72xry1fa1bsuc66nnJeHlIXPW9zK3oEj6ybcmuOyPEq
- NwahnSFrJp2yti1ljc0Raocs3d8Cp+JYUVuQCDw0K7ZvqfD/HnPCn6/+X7BeJLcGnkgF
- z/PFEpAyrntX6BKJDaoTI9ptXkbOuQh4C81cI86Igt/lS0jNk5pVeWMmDEocZIyYQmDS
- oI4Q==
+ Wed, 18 Dec 2019 13:37:18 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=gRnTtk9JZIi/3I1W9vSxQ7/mm0z0CC1gLLvuFpfUIuI=;
- b=CQtfVNe81nQV8oS5bpQ2SjnpUHmtL/uc4c0dDwDlyO6Dr06ufk7+/Rxz1DiQUVX0JB
- lSAPxTqr8N/3mY3qJFOdkVPes0xOdxB4xuNxzGHORtLf8CroWiWzjv4c78R/evLAHhai
- UH0i6+TNIXIWPXmKQryuBEp72Zlmqo0gGMVAs0HaEQd/QEeSwT/jlN8YRLRlQdcAO/JI
- cLchd1GqjRpS3fy5wwedj7L5+yiHirlUnq+/5Ita4JeEcpAtx9TnHBoZQIYDSD3UXo2l
- FEonf1iQzSXY3ZGdjppaIiW0LpiJLug5NMc7iHMExSWmapcy9WjlKd/u+Hjto50ah0EN
- /+cw==
-X-Gm-Message-State: APjAAAU/gRmhUbOH/2mrwHTFGnpWMe8YyB8aGga9Zzg4kIafsKoSmhXs
- YuV8SFrQiPpvNYtUVj7BQwcNhyqN0ptaf79prcCy0w==
-X-Google-Smtp-Source: APXvYqzCSdZ2WNjJ4q1+2kgxv6xiSMyDM5buf7JnxsPCxLvV6KwaInc5wgRm4EmYWM+VKPm9g7bHq7zLHX0kZcHWPLw=
-X-Received: by 2002:aa7:d64f:: with SMTP id v15mr4964015edr.71.1576703500385; 
- Wed, 18 Dec 2019 13:11:40 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:content-language
+ :user-agent;
+ bh=ifuKCDLglV3cQ2NjiVrZMr22gRDHsz+j+tKyqQeTxHQ=;
+ b=Nbd3qeJ4tV9960r9IAYmMdynBaAt1p1jva0R7DEeWmdk4z80qRF7BHGO6WhPYKvday
+ s0b1utoJtbnZbOvlEj+Nv92AJpNeG6f4Zyf/HXz0H2vaeRX3KyY1rWA96+bpVQ7dVluM
+ i9obQa5B5tasjfvknO7s2JO22qjKAGtHzaQCIQa3BVUE4v0JxQ89SrjRNXgd6L4uXUu3
+ 7V4E51XJmmS2NyzdpDC+1h74PlKM4ASsIccyOtgVKg1MXmzSEfdFJlUIEoeGqbTrWaJw
+ /QZO+OVXUIA8t2Z6qLyN4K4m3LVls7u35F85P+mSG1t8CRFLH1G5Nf+kWY+kaxYDpFIw
+ +bhw==
+X-Gm-Message-State: APjAAAUjDfrfegTb0eWYn8KsNGFC/PiYNDGYVWY0ZRSj51QDsEFVf8Ct
+ piTmdj9RjWBrQ8UhzgW1Ow==
+X-Google-Smtp-Source: APXvYqyb5pOkEkq05UBSd4+BP9Qw43aHqaQLKGXY2sc4jHQcsLcCb95uhzFgK9KV8LGcg5xUOxHBnA==
+X-Received: by 2002:a05:6830:1bf1:: with SMTP id
+ k17mr4833956otb.101.1576705037550; 
+ Wed, 18 Dec 2019 13:37:17 -0800 (PST)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id g25sm1263886otr.8.2019.12.18.13.37.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 18 Dec 2019 13:37:17 -0800 (PST)
+Date: Wed, 18 Dec 2019 15:37:16 -0600
+From: Rob Herring <robh@kernel.org>
+To: Eugen.Hristev@microchip.com
+Subject: Re: [PATCH v3 1/4] dt-bindings: i2c: at91: cosmetic formatting of
+ compatible list
+Message-ID: <20191218213716.GA30887@bogus>
+References: <1575886763-19089-1-git-send-email-eugen.hristev@microchip.com>
 MIME-Version: 1.0
-References: <20191204232058.2500117-1-pasha.tatashin@soleen.com>
- <20191204232058.2500117-3-pasha.tatashin@soleen.com>
- <b3a6359a-e7df-b47b-f50d-31b716fae191@xen.org>
-In-Reply-To: <b3a6359a-e7df-b47b-f50d-31b716fae191@xen.org>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Wed, 18 Dec 2019 16:11:29 -0500
-Message-ID: <CA+CK2bAw62_6UpTR6316FVE3AiNV7fH7FkF55vRjE8R4=ocd+Q@mail.gmail.com>
-Subject: Re: [PATCH v4 2/6] arm/arm64/xen: use C inlines for privcmd_call
-To: Julien Grall <julien@xen.org>
+Content-Disposition: inline
+In-Reply-To: <1575886763-19089-1-git-send-email-eugen.hristev@microchip.com>
+Content-Language: en-US
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_131141_600903_07EB088D 
-X-CRM114-Status: GOOD (  11.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191218_133718_673932_6EA9228C 
+X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,44 +96,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Stefan Agner <stefan@agner.ch>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, Will Deacon <will@kernel.org>,
- boris.ostrovsky@oracle.com, Sasha Levin <sashal@kernel.org>,
- Stefano Stabellini <sstabellini@kernel.org>, Marc Zyngier <maz@kernel.org>,
- James Morris <jmorris@namei.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- xen-devel@lists.xenproject.org, Vladimir Murzin <vladimir.murzin@arm.com>,
- alexios.zavras@intel.com, Thomas Gleixner <tglx@linutronix.de>,
- allison@lohutok.net, jgross@suse.com, steve.capper@arm.com,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
- Andrew Cooper <andrew.cooper3@citrix.com>, info@metux.net
+Cc: robh@kernel.org, devicetree@vger.kernel.org, wsa@the-dreams.de,
+ linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ linux-i2c@vger.kernel.org, Eugen.Hristev@microchip.com,
+ Codrin.Ciubotariu@microchip.com, peda@axentia.se,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 3:41 PM Julien Grall <julien@xen.org> wrote:
->
-> Hello,
->
-> On 04/12/2019 23:20, Pavel Tatashin wrote:
-> > privcmd_call requires to enable access to userspace for the
-> > duration of the hypercall.
-> >
-> > Currently, this is done via assembly macros. Change it to C
-> > inlines instead.
-> >
-> > Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-> > Acked-by: Stefano Stabellini <sstabellini@kernel.org>
->
-> Reviewed-by: Julien Grall <julien@xen.org>
+On Mon, 9 Dec 2019 10:19:59 +0000, <Eugen.Hristev@microchip.com> wrote:
+> 
+> From: Eugen Hristev <eugen.hristev@microchip.com>
+> 
+> Format the list of compatibles with one compatible per line.
+> 
+> Suggested-by: Peter Rosin <peda@axentia.se>
+> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+> Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+> ---
+>  Documentation/devicetree/bindings/i2c/i2c-at91.txt | 14 ++++++++++----
+>  1 file changed, 10 insertions(+), 4 deletions(-)
+> 
 
-Great, thank you!
-
-Pasha
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
