@@ -2,96 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A6B1124CF8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:18:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7509C124D15
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:22:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T80F6eA0zOs4qDPlw5k0re5DUDSV+hMQsViww/ekmOo=; b=prM2jD5/bZwV21
-	SpFNLUT+lGtqdPtPzEwZ10XnhpAlW79JWjPyXqZ37ZKmdJ5X+/133u2PKINhAaHCaIlyz+zz2w6Uv
-	mq4qUToFVgfKcQZvjHPs6CwyKoGdrshgOJJzojbzd861hckE1BHa6JOzUbtvsTr3kwelPaxmEBY9a
-	Vyft4gtM2BXy0k2/Z8FIuJlP5TRMBZCnE1VlzWhds7lh21qLS7e4lJcVXWtJjyq94lZzSDq1qiDUf
-	P0d4E1Z/kqP1tbFRkOF/sX8EFUr9OwOGQMBNyeTfczlD3mTt+2DlDbX9u9b6MvuRpSFk0j0TxNItY
-	BXdKJHugCLsJweljEiuw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=nt8z4mrG9k4DCT47CNCvWzaWwSV3TtNJUfZbNSgBC6w=; b=ZGeA4gNBv7YYoJ
+	7ESLImBQ/HQ3MlcxW7SfGrQAMTPnhBRy7jt6NbkpDMSQ6+LBPmalCbt96TE37K2KvXbCAbPubggtr
+	Ef8R9m7FjIjilkTCquXEnUlm2U1xzSIX1pXHvUa06S0nl/o7C6w/SoOkGWVXuUxUqauG0W3jwYp5B
+	tyoY4xNtYLXA6W7MSeGu7h80mpcsIA3zE9af1zYmQCee25ioKPiFnimHoQem7aiu1u/GyjSfTPO+i
+	Sd3d2LJQ9xCZllNGm6GcPE8i4Z7wmEzwag/3zhYEUndOwDxUtytnawPoRPHkNnlg3KDqAf+dnzH1g
+	6fpvIuZaLgYxtYC2H21g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihc1c-0004NC-7Y; Wed, 18 Dec 2019 16:18:12 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1ihc5r-0006Ck-Mx; Wed, 18 Dec 2019 16:22:35 +0000
+Received: from mail-eopbgr40046.outbound.protection.outlook.com ([40.107.4.46]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihc1T-0004M9-5G
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 16:18:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576685880;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=y1PryEe1hkgiN96jrfgxLd4JsIip+8pRLtpoZJ1ZmPc=;
- b=g8pcMqM84ihuzUSdjUdlrO21vWYdWYI54wbX0AcJX602lH8u7u8fm7o0/8fA0Xc/8JX40S
- Pi622wSXW/DJihh/acnsw8MxPwmwYPb4EsApA9piZG2HavADCTkhScCzVhkHmdlgpIr6u7
- x79St/xISiMX0wfztkc9WBc8nCNBv0k=
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com
- [209.85.222.198]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-240-l2OxeP-uPx-LFF5ksQl-7Q-1; Wed, 18 Dec 2019 11:17:58 -0500
-Received: by mail-qk1-f198.google.com with SMTP id g28so1644026qkl.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 08:17:58 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=P88rx9cd9kQKZ8dguxvhOHW4MjtfLZb0Tzz3Us5jasg=;
- b=Xvj18DZllzrL3Ecjd1UZw3BjDtJzVqw+WflOg9jxuHfBeX0KrC3XEtCu7nhl29SPa7
- L8KuEOzDoLUIW3JD78C+cOvoy5KiTczFORgpTdmT3pv/Z4LvPIPe/pUnQynd3ioxusr+
- 3HW6rhb1Sb1qsMYASXf65T94TMk8vK07qarA2xoETZ7CfbnWBVXjAOcJboYRoxW8llFV
- PcqneqbW1zb5Oky9WH04UvpEBa2/+EQjFuGYY8pFUUbAFrccnlbKcutJ7p0uSXcsFrLu
- ddCjPGcmisJThPBjW2hNZTEL7K6fa8hnFdPp9rlxwpD6uN//V4jrDZxapTGeo6y6c3kq
- dv+w==
-X-Gm-Message-State: APjAAAUQ6wa2F+M60kLMzlh2sFPU9bDpGB2nBD5hNxgrJgg9cAo6TlhO
- MisK7RIfNIWS0mjSovgLYyIAWDAiS2z96JTp1Q/SkDJgU8Oe6kCLZay9tLJnlGx7+Zw/fZh84Cs
- Yee5CHDB2/UYGeBBQSgSVD1WiN+fbAHg//o4=
-X-Received: by 2002:ac8:7a70:: with SMTP id w16mr2877839qtt.154.1576685877632; 
- Wed, 18 Dec 2019 08:17:57 -0800 (PST)
-X-Google-Smtp-Source: APXvYqy4qHGhFCQSr/jP29aEubtfbaj7wEV9G/hOTID6lKw6YyGvv0dEeZDPR8BH6CrL2bXiQvdTHQ==
-X-Received: by 2002:ac8:7a70:: with SMTP id w16mr2877791qtt.154.1576685877330; 
- Wed, 18 Dec 2019 08:17:57 -0800 (PST)
-Received: from xz-x1 ([104.156.64.74])
- by smtp.gmail.com with ESMTPSA id o16sm769610qkj.91.2019.12.18.08.17.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 08:17:56 -0800 (PST)
-Date: Wed, 18 Dec 2019 11:17:55 -0500
-From: Peter Xu <peterx@redhat.com>
-To: Sean Christopherson <sean.j.christopherson@intel.com>
-Subject: Re: [PATCH v4 07/19] KVM: Explicitly free allocated-but-unused dirty
- bitmap
-Message-ID: <20191218161755.GB26669@xz-x1>
-References: <20191217204041.10815-1-sean.j.christopherson@intel.com>
- <20191217204041.10815-8-sean.j.christopherson@intel.com>
- <20191217222446.GK7258@xz-x1>
- <20191217225118.GF11771@linux.intel.com>
+ id 1ihc5g-0006AJ-VH
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 16:22:27 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=clRIXXL0G13Nnuh3UVWQEy1wE9Ys9ILspf7HFrwwSCDg2Z5g2+NJODBvg3ysV+xADyC9vkTIJyurb+nTMrBBPLRy3cu4IzB+DKWuznlgxFWxpe9Ht9lcutmwmrGy49b68w4cu0uA4XIowJUhbqe9VxH6NUASUq1xl0h48tG4YqH7hGUq84N1ZQ7pq84q7zU2g32p3ie7yDW2UT0AyONp+KK18aZughyRXythaJi5TOiHZt+AkOWeYZX9o+u5+AOFYhDwGnSbJiqwwtsLi5gcUX83+OeO/4A9fcHYXWEQ5oXPENBabtmuOlQFKmsuDUq+Jn0LeFJD/TpDKFXfDVvj7A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sKdab3p6OxgZ99tL83gL2haeWlKPxNNLswcCH4jOCPI=;
+ b=b9XT7tNKXlZxD0xADeS3AHCIeN8BC3XgGPTwstg79wcPPP8BN83inG/ElaeoncL/wZjvqbxfSk9LedFmVD4+dDbr20ymWsCZsVRp0LhAF4Z0rs2iqPRzljYgESFI02gsg1z8Q9m2Ge1066di+Xz4VbCq5UjlHG4SNYc4t0OXGwdmRbR2Net3BkQkNY0LOmybKfx2m0Hm9NMJKV84gjOkMcPJkkMGhtMiyD2whrY+4kwJAUgpTAYYaS2wJFIPjdA8NLq89UU1GzHFrugeGwZbtiW4Rkykz5KmDdtSkpSCkXa+PNzmlQA120Zvvjm0+YZkBDZQK9JFGXpKTZBWP20JhA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sKdab3p6OxgZ99tL83gL2haeWlKPxNNLswcCH4jOCPI=;
+ b=TkYNmdIx4K96VFR4tSamqdd5gKZYTim8pBN7TsX2bsAtQpT5wf4U/BYvpSdgvo5OIeZ4hCWqljl517Zyd9ldIUAz5lu6dewGtY6mDa43Urlwptf6C+lI3jFjERS3aUsrtgV1gB1Wc8Jp6vyg8rCv+cuiNn2dVBHkVmovRSzzTaw=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB5693.eurprd04.prod.outlook.com (20.178.126.142) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2559.14; Wed, 18 Dec 2019 16:22:21 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2c49:44c8:2c02:68b1]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::2c49:44c8:2c02:68b1%5]) with mapi id 15.20.2559.012; Wed, 18 Dec 2019
+ 16:22:21 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Adam Ford <aford173@gmail.com>, Jacky Bai <ping.bai@nxp.com>
+Subject: Re: [PATCH v7 0/5] PM / devfreq: Add dynamic scaling for imx8m ddr
+ controller
+Thread-Topic: [PATCH v7 0/5] PM / devfreq: Add dynamic scaling for imx8m ddr
+ controller
+Thread-Index: AQHVoX4nPagdJ4eJVUSp7HmX0gzdZg==
+Date: Wed, 18 Dec 2019 16:22:21 +0000
+Message-ID: <VI1PR04MB702379645745FB697033FE6BEE530@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1574458460.git.leonard.crestez@nxp.com>
+ <CAHCN7xKNwit8ueUO0OkebfYh=4hsL7_+DRWEbn2dEt0H322W4w@mail.gmail.com>
+ <VI1PR04MB70231CA0E3C4574211518359EE530@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <CAHCN7xJNy0z2hvWbM3UhLni5ruS+sCLeBH8BKiYexe3Sp=6Q0w@mail.gmail.com>
+ <VI1PR04MB70235951BC137515BDD2FDC7EE530@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <CAHCN7xKHJAb8k1A+WC3EUOmgLTx-Kbjw_5EsmwyhDkkOKCsmGQ@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 20fc3907-ca29-45c8-c1a9-08d783d675bb
+x-ms-traffictypediagnostic: VI1PR04MB5693:|VI1PR04MB5693:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB56931FE04880016924AD6C04EE530@VI1PR04MB5693.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3044;
+x-forefront-prvs: 0255DF69B9
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(366004)(396003)(376002)(136003)(39860400002)(199004)(189003)(45080400002)(55016002)(110136005)(54906003)(71200400001)(86362001)(7416002)(316002)(9686003)(2906002)(966005)(5660300002)(6636002)(33656002)(6506007)(26005)(44832011)(8936002)(52536014)(8676002)(7696005)(81156014)(53546011)(81166006)(66446008)(4326008)(66476007)(66556008)(64756008)(478600001)(66946007)(76116006)(91956017)(186003)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5693;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: x8kk0StQWxHRAgR/85IEuqKJUyt/qXeuxRStcwKAocaQ3eJUfUDY/eaD/eBjnKPBe3fwC83rto49mOspPkM4vSGdPslt9Xj7Is7Q88/A5gHRnbLe6zrm3CAcysnWYRvvXqyvtxoy7AdbEU7MRwM7SbT9NZphsOpnp/EAKF6k50erBohBrrUwcFPMT8gpZKusf+1RiicI9Kniz/pHc4mJm76MP7wH2J2cqLGVllUsR8BWqxPrCZuCv8yPQyit5AxHAxb2MdjGpsakiqoi2SreDjb3oSsPQLmIqkrstSu7DD97QisiAIdiIgW6B7yhTLJXFm82/wWM/E0y/nmvmGA0O+Tigpqt78vzzmZ/x3SLssWD/fnD+INBHzLXk51+0Nl8Yawb1W5+cDvBRihFOnr+RvTrbgq/Pl2lhFDH34wPUgb40ap8h8VjcDiwvseOfeIy3gIZb+epmlvI86Azpt0rMIi23mLr29QMdIEllrFfRsYFhw8b5fOUXS/dQu4HyBsTbhyZ72uWJZ9UfxK93QmuHA==
 MIME-Version: 1.0
-In-Reply-To: <20191217225118.GF11771@linux.intel.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-MC-Unique: l2OxeP-uPx-LFF5ksQl-7Q-1
-X-Mimecast-Spam-Score: 0
-Content-Disposition: inline
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 20fc3907-ca29-45c8-c1a9-08d783d675bb
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Dec 2019 16:22:21.6200 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: fdRdvQT2rZ19bgfhFpR/ZInT9hDPHhoTQFJwlBth/u4+CRw/pbNfV1FhxpUrqW7roX0tLR4ntqYoXYmBFbK49g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5693
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_081803_275198_51E5C7D2 
-X-CRM114-Status: GOOD (  20.59  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191218_082225_217825_D979722B 
+X-CRM114-Status: GOOD (  19.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.61 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.61 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.4.46 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -100,7 +114,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,122 +125,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
- kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
- James Hogan <jhogan@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Cornelia Huck <cohuck@redhat.com>, linux-kernel@vger.kernel.org,
- Philippe =?utf-8?Q?Mathieu-Daud=C3=A9?= <f4bug@amsat.org>,
- kvm-ppc@vger.kernel.org, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- Jim Mattson <jmattson@google.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>, Angus Ainslie <angus@akkea.ca>,
+ Alexandre Bailon <abailon@baylibre.com>, linux-clk <linux-clk@vger.kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Martin Kepplinger <martink@posteo.de>,
+ Silvano Di Ninno <silvano.dininno@nxp.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ Stephen Boyd <sboyd@kernel.org>, Matthias Kaehlcke <mka@chromium.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, Georgi Djakov <georgi.djakov@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 02:51:18PM -0800, Sean Christopherson wrote:
-> On Tue, Dec 17, 2019 at 05:24:46PM -0500, Peter Xu wrote:
-> > On Tue, Dec 17, 2019 at 12:40:29PM -0800, Sean Christopherson wrote:
-> > > Explicitly free an allocated-but-unused dirty bitmap instead of relying
-> > > on kvm_free_memslot() if an error occurs in __kvm_set_memory_region().
-> > > There is no longer a need to abuse kvm_free_memslot() to free arch
-> > > specific resources as arch specific code is now called only after the
-> > > common flow is guaranteed to succeed.  Arch code can still fail, but
-> > > it's responsible for its own cleanup in that case.
-> > > 
-> > > Eliminating the error path's abuse of kvm_free_memslot() paves the way
-> > > for simplifying kvm_free_memslot(), i.e. dropping its @dont param.
-> > > 
-> > > Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-> > > ---
-> > >  virt/kvm/kvm_main.c | 7 ++++---
-> > >  1 file changed, 4 insertions(+), 3 deletions(-)
-> > > 
-> > > diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
-> > > index d403e93e3028..6b2261a9e139 100644
-> > > --- a/virt/kvm/kvm_main.c
-> > > +++ b/virt/kvm/kvm_main.c
-> > > @@ -1096,7 +1096,7 @@ int __kvm_set_memory_region(struct kvm *kvm,
-> > >  
-> > >  	slots = kvzalloc(sizeof(struct kvm_memslots), GFP_KERNEL_ACCOUNT);
-> > >  	if (!slots)
-> > > -		goto out_free;
-> > > +		goto out_bitmap;
-> > >  	memcpy(slots, __kvm_memslots(kvm, as_id), sizeof(struct kvm_memslots));
-> > >  
-> > >  	if ((change == KVM_MR_DELETE) || (change == KVM_MR_MOVE)) {
-> > > @@ -1144,8 +1144,9 @@ int __kvm_set_memory_region(struct kvm *kvm,
-> > >  	if (change == KVM_MR_DELETE || change == KVM_MR_MOVE)
-> > >  		slots = install_new_memslots(kvm, as_id, slots);
-> > >  	kvfree(slots);
-> > > -out_free:
-> > > -	kvm_free_memslot(kvm, &new, &old);
-> > > +out_bitmap:
-> > > +	if (new.dirty_bitmap && !old.dirty_bitmap)
-> > > +		kvm_destroy_dirty_bitmap(&new);
-> > 
-> > What if both the old and new have KVM_MEM_LOG_DIRTY_PAGES set?
-> > kvm_free_memslot() did cover that but I see that you explicitly
-> > dropped it.  Could I ask why?  Thanks,
+On 18.12.2019 17:37, Adam Ford wrote:
+> On Wed, Dec 18, 2019 at 9:16 AM Leonard Crestez <leonard.crestez@nxp.com> wrote:
+>>
+>> On 18.12.2019 17:05, Adam Ford wrote:
+>>> On Wed, Dec 18, 2019 at 8:44 AM Leonard Crestez <leonard.crestez@nxp.com> wrote:
+>>>>
+>>>> On 18.12.2019 15:35, Adam Ford wrote:
+>>>>> On Fri, Nov 22, 2019 at 3:45 PM Leonard Crestez <leonard.crestez@nxp.com> wrote:
+>>>>>>
+>>>>>> This adds support for dynamic scaling of the DDR Controller (ddrc)
+>>>>>> present on i.MX8M series chips. Actual frequency switching is
+>>>>>> implemented inside TF-A, this driver wraps the SMC calls and
+>>>>>> synchronizes the clk tree.
+>>>>>>
+>>>>>> DRAM frequency switching requires clock manipulation but during this operation
+>>>>>> DRAM itself is briefly inaccessible so this operation is performed a SMC call
+>>>>>> to by TF-A which runs from a SRAM area. Upon returning to linux the clock tree
+>>>>>> is updated to correspond to hardware configuration.
+>>>>>>
+>>>>>> This is handled via CLK_GET_RATE_NO_CACHE for dividers but muxes are handled
+>>>>>> manually: the driver will prepare/enable the new parents ahead of switching (so
+>>>>>> that the expected roots are enabled) and afterwards it will call clk_set_parent
+>>>>>> to ensure the parents in clock framework are up-to-date.
+>>>>>>
+>>>>>> This series is useful standalone and roughly similar to devfreq drivers for
+>>>>>> tegra and rockchip.
+>>>>>>
+>>>>>> Running at lower dram rates saves power but can affect the functionality of
+>>>>>> other blocks in the chip (display, vpu etc). Support for in-kernel constraints
+>>>>>> will some separately.
+>>>>>>
+>>>>>> This series has no dependencies outside linux-next. The driver depends
+>>>>>> on features from the NXP branch of TF-A and will cleanly fail to probe
+>>>>>> on mainline. There are also plans to upstream dram dvfs in TF-A.
+>>>>>>
+>>>>>> Leonard Crestez (5):
+>>>>>>      clk: imx8m: Set CLK_GET_RATE_NOCACHE on dram clocks
+>>>>>>      clk: imx: Mark dram pll on 8mm and 8mn with CLK_GET_RATE_NOCACHE
+>>>>>>      dt-bindings: memory: Add bindings for imx8m ddr controller
+>>>>>>      PM / devfreq: Add dynamic scaling for imx8m ddr controller
+>>>>>>      arm64: dts: imx8m: Add ddr controller nodes
+>>>>>>
+>>>>>>     .../memory-controllers/fsl/imx8m-ddrc.yaml    |  72 +++
+>>>>>>     arch/arm64/boot/dts/freescale/imx8mm-evk.dts  |  18 +
+>>>>>>     arch/arm64/boot/dts/freescale/imx8mm.dtsi     |  10 +
+>>>>>>     .../boot/dts/freescale/imx8mn-ddr4-evk.dts    |  18 +
+>>>>>>     arch/arm64/boot/dts/freescale/imx8mn.dtsi     |  10 +
+>>>>>>     arch/arm64/boot/dts/freescale/imx8mq-evk.dts  |  24 +
+>>>>>>     arch/arm64/boot/dts/freescale/imx8mq.dtsi     |  10 +
+>>>>>>     drivers/clk/imx/clk-imx8mm.c                  |  11 +-
+>>>>>>     drivers/clk/imx/clk-imx8mn.c                  |  12 +-
+>>>>>>     drivers/clk/imx/clk-imx8mq.c                  |  12 +-
+>>>>>>     drivers/clk/imx/clk-pll14xx.c                 |   7 +
+>>>>>>     drivers/clk/imx/clk.h                         |   1 +
+>>>>>>     drivers/devfreq/Kconfig                       |   9 +
+>>>>>
+>>>>> Since there is a Kconfig change, should there me a defconfig change?
+>>>>
+>>>> Yes, you need to enable CONFIG_ARM_IMX8M_DDRC_DEVFREQ in order to test
+>>>> this. Enabling as "m" should work.
+>>>
+>>> I enabled it as 'm' but I was more curious to know if we should push
+>>> this upstream with the rest of the series.
+>>
+>> I skipped enabling because it's very experimental; maybe after imx
+>> interconnect is also enabled?
+>>
+>>>>>>     drivers/devfreq/Makefile                      |   1 +
+>>>>>>     drivers/devfreq/imx8m-ddrc.c                  | 465 ++++++++++++++++++
+>>>>>>     15 files changed, 670 insertions(+), 10 deletions(-)
+>>>>>>     create mode 100644 Documentation/devicetree/bindings/memory-controllers/fsl/imx8m-ddrc.yaml
+>>>>>>     create mode 100644 drivers/devfreq/imx8m-ddrc.c
+>>>>>
+>>>>> I applied the whole series against 5.5-rc1 and I am trying to test it.
+>>>>> I know the 4.14 kernel NXP posted on Code Aurora is capable to
+>>>>> lowering the DDRC controller to 25MHz on the 8MM when the video is
+>>>>> off.  Since there is no video support yet for the 8MM, I was expecting
+>>>>> to see the DDRC clock to be at or around 25MHz.
+>>>>>
+>>>>> Using debug FS, I can see the dram core clock is still running at
+>>>>> 750MHz, and measuring power, it shows something consistent with what I
+>>>>> see on the Code Aurora kernel with video turned on and the clock at
+>>>>> 750MHz.
+>>>>>
+>>>>> Is there some way to get the dram_core_clk to drop to 25MHz to see
+>>>>> some power reduction?  The same commands used in the Yocto build don't
+>>>>> apply here since we don't have video.
+>>>>
+>>>> Current upstream driver just keeps current frequency by default. Try the
+>>>> following:
+>>>>
+>>>> cd /sys/class/devfreq/devices/devfreq0
+>>>
+>>> can't cd to /sys/class/devfreq/devices/devfreq0: No such file or directory
+>>>
+>>> I did some checking and I found:
+>>>       imx8m-ddrc-devfreq 3d400000.memory-controller: failed to init
+>>> firmware freq info: -19
+>>>
+>>> Was there some prerequisite patches I needed to apply before your series?
+>>
+>> You need a recent version of TF-A from nxp ( upstream). Try this:
+>>
+>> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsource.codeaurora.org%2Fexternal%2Fimx%2Fimx-atf%2Flog%2F%3Fh%3Dimx_4.19.35_1.1.0&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Cc07fadd829994fe6293c08d783d02fa9%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637122802480130351&amp;sdata=dVovGr1ttwrnSz39MPNNVg%2FB8HV5AjrHXGbksO3XvVo%3D&amp;reserved=0
+>>
+>> Or this:
+>> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fcdleonard%2Farm-trusted-firmware%2Fcommits%2Fimx_2.0.y_busfreq&amp;data=02%7C01%7Cleonard.crestez%40nxp.com%7Cc07fadd829994fe6293c08d783d02fa9%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637122802480140347&amp;sdata=Q9KPq60FOxJ7GflwupNaXvbqHIR40Ej5GxeY%2BhHI658%3D&amp;reserved=0
+>>
+>> Support on upstream ATF is not yet available
 > 
-> In that case, old.dirty_bitmap == new.dirty_bitmap, i.e. shouldn't be freed
-> by this error path since doing so would result in a use-after-free via the
-> old memslot.
+> I cloned your github branch and built it per the instructions in the
+> u-boot readme file.
+> did a make clean on u-boot, copied the bl31.bin to u-boot and rebuild
+> per U-Boot's instructions.
 > 
-> The kvm_free_memslot() logic is the same, albeit in a very twisted way.
+> U-Boot booted and Linux booted, but I still get:
+> 
+>     imx8m-ddrc-devfreq 3d400000.memory-controller: failed to init
+> firmware freq info: -19
 
-Yes it is. :)
+Which version of u-boot is that, upstream? I'm subscribed to uboot 
+mailing list and I see that imx8m support has its own separate issues 
+but my familiarity is limited :(
 
-> 
-> In __kvm_set_memory_region(), @old and @new start with the same dirty_bitmap.
-> 
-> 	new = old = *slot;
-> 
-> And @new is modified based on KVM_MEM_LOG_DIRTY_PAGES.  If LOG_DIRTY_PAGES
-> is set in both @new and @old, then both the "if" and "else if" evaluate
-> false, i.e. new.dirty_bitmap == old.dirty_bitmap.
-> 
-> 	/* Allocate/free page dirty bitmap as needed */
-> 	if (!(new.flags & KVM_MEM_LOG_DIRTY_PAGES))
-> 		new.dirty_bitmap = NULL;
-> 	else if (!new.dirty_bitmap) {
-> 		r = kvm_create_dirty_bitmap(&new);
-> 		if (r)
-> 			return r;
-> 	}
-> 
-> Subbing "@free <= @new" and "@dont <= @old" in kvm_free_memslot()
-> 
->   static void kvm_free_memslot(struct kvm *kvm, struct kvm_memory_slot *free,
-> 			       struct kvm_memory_slot *dont)
->   {
-> 	if (!dont || free->dirty_bitmap != dont->dirty_bitmap)
-> 		kvm_destroy_dirty_bitmap(free);
-> 
-> 
-> yeids this, since @old is obviously non-NULL
-> 
-> 	if (new.dirty_bitmap != old.dirty_bitmap)
-> 		kvm_destroy_dirty_bitmap(&new);
-> 
-> The dirty_bitmap allocation logic guarantees that new.dirty_bitmap is
->   a) NULL (the "if" case")
->   b) != old.dirty_bitmap iff old.dirty_bitmap == NULL (the "else if" case)
->   c) == old.dirty_bitmap (the implicit "else" case).
-> 
-> kvm_free_memslot() frees @new.dirty_bitmap iff its != @old.dirty_bitmap,
-> thus the explicit destroy only needs to check for (b).
+I've only ever tested with NXP uboot and the NXP version of mkimage:
 
-Thanks for explaining with such a detail.
+https://source.codeaurora.org/external/imx/uboot-imx/log/?h=imx_v2019.04_4.19.35_1.1.0
+https://source.codeaurora.org/external/imx/imx-mkimage/
 
-Reviewed-by: Peter Xu <peterx@redhat.com>
+My bootloader prints the following BuildInfo:
+   - ATF 70fa7bc 
 
--- 
-Peter Xu
+   - U-Boot 2019.04-00019-g4d377539a119
 
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
