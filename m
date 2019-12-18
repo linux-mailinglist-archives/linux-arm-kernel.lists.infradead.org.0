@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13325125630
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:04:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2C4C125631
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:04:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5yZyiIaHwyhEDhHwtbgzrS0uFx2ibQCysDGiOH+UEjg=; b=KO7xJttFUYxMNh
-	wFLwMELejzmKxDyD5oYvRZFbybjQEmRzJIv18CW+rDEWjUfefdzU2LT/0gsSNQ/8jZrLmIms8L/UV
-	8DfSdKVZRX3sNBHvKfNuiRZ2mePbXvw94kho3J9y1/2pYdyh/tqbzo3/j23cEeM9vPOx+zDpcRFbn
-	f2vD1brhT9YUDlaLLo/USqf1BvH65/LhoF6o1eZE6JECvde71FIjtDaPURRQsirFsrQsMu8Re7wME
-	8l5Zs4a6Blk+81kx3kHDVNLOlRfiQcjSRnZqDXaABgmJzE5n1rmegtcx/xzP/MphqIDgTPA5xHCRz
-	bsl0siONugmSn2ZVnqHg==;
+	List-Owner; bh=k+tjI347Soj51Od1H0A8wwBIaIXnRY92H3gg8H8INbM=; b=ayheLyfmFNFZJl
+	JHD3W4Vp0NBgNKhxiA3IlBk+BnW4h5rUZAUjT+sNr9J0UqdPjZ62eD/SJNfV/3x5fi9qa9lwJGKGn
+	mEt3CXkKFw7rz8dLiLckvJZ2vMXeRoW249BmCkfJG1cudSJnQ9tDKzFWGeyR28Xc9EHIGZgMOeuaA
+	pzYzjrGdrUuigkC0H3B6cYGzYo77mG2UnGdi4wqUUWz/mKTTpRmeJVzZCjYdXM6HpBRUT1OkRVwvJ
+	93vJiIQoIGKIqqHkM7vztLZmj7220ggXLzMXZhkTrboYjpJmTbB+QQGs240qHPUB/mE581SiEj96E
+	LclLK8rjgEbb/vuZpvcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihhQH-0004yD-Fb; Wed, 18 Dec 2019 22:04:01 +0000
+	id 1ihhQT-0005DA-8I; Wed, 18 Dec 2019 22:04:13 +0000
 Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihhIP-0005BK-Ab
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:56 +0000
+ id 1ihhIP-0005Ct-Hy
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:57 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga001.fm.intel.com ([10.253.24.23])
  by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  18 Dec 2019 13:55:51 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108175"
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108183"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
- by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:50 -0800
+ by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:51 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH v2 40/45] KVM: ARM: Move all vcpu init code into
+Subject: [PATCH v2 41/45] KVM: PPC: Move all vcpu init code into
  kvm_arch_vcpu_create()
-Date: Wed, 18 Dec 2019 13:55:25 -0800
-Message-Id: <20191218215530.2280-41-sean.j.christopherson@intel.com>
+Date: Wed, 18 Dec 2019 13:55:26 -0800
+Message-Id: <20191218215530.2280-42-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_135553_474625_450BE049 
+X-CRM114-CacheID: sfid-20191218_135553_862173_62C2481D 
 X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -90,68 +90,90 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Fold init() into create() now that the two are called back-to-back by
 common KVM code (kvm_vcpu_init() calls kvm_arch_vcpu_init() as its last
 action, and kvm_vm_ioctl_create_vcpu() calls kvm_arch_vcpu_create()
-immediately thereafter).  This paves the way for removing
+immediately thereafter).  Rinse and repeat for kvm_arch_vcpu_uninit()
+and kvm_arch_vcpu_destroy().  This paves the way for removing
 kvm_arch_vcpu_{un}init() entirely.
 
-Note, there is no associated unwinding in kvm_arch_vcpu_uninit() that
-needs to be relocated (to kvm_arch_vcpu_destroy()).
+Note, calling kvmppc_mmu_destroy() if kvmppc_core_vcpu_create() fails
+may or may not be necessary.  Move it along with the more obvious call
+to kvmppc_subarch_vcpu_uninit() so as not to inadvertantly introduce a
+functional change and/or bug.
 
 No functional change intended.
 
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- virt/kvm/arm/arm.c | 34 ++++++++++++++++++++--------------
- 1 file changed, 20 insertions(+), 14 deletions(-)
+ arch/powerpc/kvm/powerpc.c | 36 ++++++++++++++++++++++--------------
+ 1 file changed, 22 insertions(+), 14 deletions(-)
 
-diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-index 35eab584fb57..1d87c194a6d3 100644
---- a/virt/kvm/arm/arm.c
-+++ b/virt/kvm/arm/arm.c
-@@ -292,6 +292,25 @@ int kvm_arch_vcpu_precreate(struct kvm *kvm, unsigned int id)
- 
- int kvm_arch_vcpu_create(struct kvm_vcpu *vcpu)
+diff --git a/arch/powerpc/kvm/powerpc.c b/arch/powerpc/kvm/powerpc.c
+index fce1b4776e55..91cf94d4191e 100644
+--- a/arch/powerpc/kvm/powerpc.c
++++ b/arch/powerpc/kvm/powerpc.c
+@@ -729,13 +729,29 @@ int kvm_arch_vcpu_create(struct kvm_vcpu *vcpu)
  {
-+	int err;
+ 	int err;
+ 
+-	err = kvmppc_core_vcpu_create(vcpu);
++	hrtimer_init(&vcpu->arch.dec_timer, CLOCK_REALTIME, HRTIMER_MODE_ABS);
++	vcpu->arch.dec_timer.function = kvmppc_decrementer_wakeup;
++	vcpu->arch.dec_expires = get_tb();
 +
-+	/* Force users to call KVM_ARM_VCPU_INIT */
-+	vcpu->arch.target = -1;
-+	bitmap_zero(vcpu->arch.features, KVM_VCPU_MAX_FEATURES);
-+
-+	/* Set up the timer */
-+	kvm_timer_vcpu_init(vcpu);
-+
-+	kvm_pmu_vcpu_init(vcpu);
-+
-+	kvm_arm_reset_debug_ptr(vcpu);
-+
-+	kvm_arm_pvtime_vcpu_init(&vcpu->arch);
-+
-+	err = kvm_vgic_vcpu_init(vcpu);
++#ifdef CONFIG_KVM_EXIT_TIMING
++	mutex_init(&vcpu->arch.exit_timing_lock);
++#endif
++	err = kvmppc_subarch_vcpu_init(vcpu);
+ 	if (err)
+ 		return err;
+ 
++	err = kvmppc_core_vcpu_create(vcpu);
 +	if (err)
-+		return err;
++		goto out_vcpu_uninit;
 +
- 	return create_hyp_mappings(vcpu, vcpu + 1, PAGE_HYP);
+ 	vcpu->arch.wqp = &vcpu->wq;
+ 	kvmppc_create_vcpu_debugfs(vcpu, vcpu->vcpu_id);
+ 	return 0;
++
++out_vcpu_uninit:
++	kvmppc_mmu_destroy(vcpu);
++	kvmppc_subarch_vcpu_uninit(vcpu);
++	return err;
  }
  
-@@ -341,20 +360,7 @@ void kvm_arch_vcpu_unblocking(struct kvm_vcpu *vcpu)
+ void kvm_arch_vcpu_postcreate(struct kvm_vcpu *vcpu)
+@@ -765,6 +781,9 @@ void kvm_arch_vcpu_destroy(struct kvm_vcpu *vcpu)
+ 	}
+ 
+ 	kvmppc_core_vcpu_free(vcpu);
++
++	kvmppc_mmu_destroy(vcpu);
++	kvmppc_subarch_vcpu_uninit(vcpu);
+ }
+ 
+ int kvm_cpu_has_pending_timer(struct kvm_vcpu *vcpu)
+@@ -784,23 +803,12 @@ static enum hrtimer_restart kvmppc_decrementer_wakeup(struct hrtimer *timer)
  
  int kvm_arch_vcpu_init(struct kvm_vcpu *vcpu)
  {
--	/* Force users to call KVM_ARM_VCPU_INIT */
--	vcpu->arch.target = -1;
--	bitmap_zero(vcpu->arch.features, KVM_VCPU_MAX_FEATURES);
+-	int ret;
 -
--	/* Set up the timer */
--	kvm_timer_vcpu_init(vcpu);
+-	hrtimer_init(&vcpu->arch.dec_timer, CLOCK_REALTIME, HRTIMER_MODE_ABS);
+-	vcpu->arch.dec_timer.function = kvmppc_decrementer_wakeup;
+-	vcpu->arch.dec_expires = get_tb();
 -
--	kvm_pmu_vcpu_init(vcpu);
--
--	kvm_arm_reset_debug_ptr(vcpu);
--
--	kvm_arm_pvtime_vcpu_init(&vcpu->arch);
--
--	return kvm_vgic_vcpu_init(vcpu);
+-#ifdef CONFIG_KVM_EXIT_TIMING
+-	mutex_init(&vcpu->arch.exit_timing_lock);
+-#endif
+-	ret = kvmppc_subarch_vcpu_init(vcpu);
+-	return ret;
 +	return 0;
+ }
+ 
+ void kvm_arch_vcpu_uninit(struct kvm_vcpu *vcpu)
+ {
+-	kvmppc_mmu_destroy(vcpu);
+-	kvmppc_subarch_vcpu_uninit(vcpu);
++
  }
  
  void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
