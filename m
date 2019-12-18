@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E24B124076
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 08:37:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 235D1124073
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 08:37:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TgbpHHpd/ScAdGfBTSPL6/rvikfiLBGSgvV005Rao84=; b=YYo4+v08wXed9+
-	wE3TqxfSZEEykm01TlPTUAJt8UnSNTUvQXgAbcoq0viWpm8o6gHOlYwbYYPpGoGrgLlup/aGCteef
-	JrySJ5ZqNZTcbPXgsGNHRn18KaPRdyJ4ro0dmMTW0sOiwUQpQDsC0+u+ek0lDJnbR76+6zNIeC6RW
-	UE5PmSkTOcrbRnMyr5XBQZJlrkomowo7hKnQxc//TvRomrUSatFd+UU/aTFJliAzyod91MqPZFI15
-	CoR2VnvFwGpRsDWLluFlNd+v7+okgo1LLD7mUEBrQDp6IsSDBShd6IpT2JNEtSe4muYywpQTe0w0t
-	tw0iVFAlOsB9AmMqidmg==;
+	List-Owner; bh=GqMtw4KV2v0HLNJDetLvVKBVHWCuoU/LYVKknWVK7rU=; b=VLSQrQnY0qIYcL
+	pX1d5ek6CVnTvYOa+hQfOcEkREcOMGFgNwlQphaKiUas60R68iALbDA3aTFxdHgze/CZhv+6wwkne
+	xUNxfNjyz/w+FdPZrZLLpqvKrS+4qaMhxWKFAG5NEYKBpQdlopB2QU6q17KPr2BIu16qcCDM+8WLI
+	DVf7PFaJeBoe7ZFNwcL1e+gh2PiZX3K4imuuwFMZkJ/VYckT3CxrXX/aN/i/a1RJm/Ji7M8rI0YHL
+	OqQaKj7w8wUjdCZ7sjjazgfp4/vhpHJ3Px+/PUE8h+JWtSW438ANsOG/Brm4gUbZBLehv6qyb7gS9
+	RJZ66MDwN6inkNEscdyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihTtq-0003c0-VC; Wed, 18 Dec 2019 07:37:38 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1ihTtW-0003He-SW; Wed, 18 Dec 2019 07:37:18 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihTtT-0003NM-Ki
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 07:37:17 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id g15so808164vsf.1
+ id 1ihTtK-0003Gq-Vu
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 07:37:08 +0000
+Received: by mail-wr1-x444.google.com with SMTP id z3so1115401wru.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 17 Dec 2019 23:37:15 -0800 (PST)
+ Tue, 17 Dec 2019 23:37:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=do6SVqqrSwYfkhVDYH5RikYbwbOxWPehu5jl8jI0+ro=;
- b=dRl6siJx8/e5LA8G0oj29mO4iXrBu9qbVmovo0gKnnEwC1hFh8awIvWNZc0Rr0BwEB
- loKd1AI31kRkpDHV5kbhNBbK8mvWpRSBooECgvRtbR/Lj5xgHkLRRC4wyOaiq3cOlv4O
- 1K/YhNefY9Ae1Hr/nV7LgZ/55G+zlOaK+EBZLRIVuMTAgp0WzgLvplshDV4linqhCDZC
- OC9ziugqRL/g1VLvgl8/NTkLv6ezS0iRcYKx9pvI/ioOdyWHOPYdJ90Y0ohXlrkQ6cIA
- AaJjCinfFMs7aus+bmO1E0kWvobHHMBMhTZPx97Wm10IP1BNEG4PyjeTOOxbox0v+x13
- glZg==
+ :cc; bh=Wm7hU93AeEzkUjEiOuhfHwr4fz6ZY11oRspDdjdZZhs=;
+ b=Lc2FmjwhKM5i7LkSmW+2IUBOd98sBLMgXwlHSJ12nb684aqrXa7yUVrTluka0SJloI
+ hp+urgOjviA+/XL/qloUrH9qgnhxcn4hX3nDzRx/3cCzCa7JHfYJ4isuFWm+NOeyPelF
+ n4eRxfsDqJh8rbprIDe/L7R3A1We1DXVPmrGCchDuAZFEBB4A1fjAaue6gABKViAoceV
+ 9X9aQAak794Zo/Rsia1w6DAAtgeMbGTJB5NCtj5/g+5b/vGMAPyExYaAAzZxSevr9gOW
+ 6upjMdbg9uPf1ZZOWvPon/1WqOldnDktq8n2md2XFSJBrcQGQW5mkyY0/xE/zLFbCg6J
+ uGqQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=do6SVqqrSwYfkhVDYH5RikYbwbOxWPehu5jl8jI0+ro=;
- b=s1dZuPz0HGtIMGCOTxPIQq6Lqkc+6LUHQlN6kXYlEUV5OL70zP2hIbmW/KqgfmdnzY
- OJsaPUsZoq4+Tk+LdG2EOuwsqGQ5x0S6VEQia/Nnbpueeh2LamRmb99o460j4DdT03yE
- Jxg4QtWso09AaBw3T85kRPJNMpME6V3NUPfNdY3BqLqu6ErZ+AlNsH5TbbsOIXQVBCJl
- UcjwdFv+ODSrZsbU5H+L+A64H0Qa2BeTyT8z3cimDCpnwnzPyJq42KXeiwsXsX2C3lY7
- 8S+LgUN1e1QeitsvT/UT7NxFkYOtwDcKQeEPmfM4jYRQHlNV2ZAK1AKidIeCKYW7U4DR
- GteQ==
-X-Gm-Message-State: APjAAAXplgDbxEjJIKax4ieFSsX/iyMHDsExI6ebs4K+68R4d5vLn41x
- Y/EUWyD3QtO/ka+wV8JwZ27fBjevWqgNXltWjVbr2g==
-X-Google-Smtp-Source: APXvYqwgUxsqu+XwnIdw+nD/Mf13KCyvX5NTV1GCHYpw+JayUBeFvWW3aLmH5gcfiI9UpYv2GOoClnViaDRb37oAJ/U=
-X-Received: by 2002:a67:f499:: with SMTP id o25mr488125vsn.165.1576654634125; 
- Tue, 17 Dec 2019 23:37:14 -0800 (PST)
+ bh=Wm7hU93AeEzkUjEiOuhfHwr4fz6ZY11oRspDdjdZZhs=;
+ b=mOGytrkZOYQkeCJZENfBQt1mZckC1wo8Dfw38gLn3/isXDX9ROUycT6nzJJH5VqGgt
+ xShL+qZaSSQFMa1DGmRzVMy5SFkmXf0PmW7uYZlSiXaMwzITad2UFhQqD2U9vvV9rhGX
+ NjIYST15QhOZeVSWzibZMdK2Jkwx1InxiYtZGsG4ItJdRnFkWDtpx3OStxIdYJw9sJxT
+ 4zzqVmbq4TDvsA2EMSskOB7TMKtR4o1dNAYY6cbiKjzXhONiy2+oNmV+LTm8UqLJGB8U
+ H4qAFmaRSRRU0jIAzQ6UJ1LS4GWXmxQvrwbu27J/qWOOhzF7Fo+w/IsIU7hsfqVjRVGn
+ gi1A==
+X-Gm-Message-State: APjAAAVWUZjj3R3dTX2OZ03yf7daZSvsZQ5lZyP2v9u+QsJb0Nthqffg
+ 0sZ6gZSyJSU4GwYCzNC8dKN1Ita1cP7tiGHKegCO5w==
+X-Google-Smtp-Source: APXvYqwD9bwK9Sj3A7AL/Lron7Y962wSOHMF2cwmHH+rhZuZx9x/dM4nTFvevo5lQHCM3wYRhBgLbfS1Lls5iaqW2sI=
+X-Received: by 2002:a5d:5345:: with SMTP id t5mr1122595wrv.0.1576654624393;
+ Tue, 17 Dec 2019 23:37:04 -0800 (PST)
 MIME-Version: 1.0
-References: <20191211154343.29765-1-ulf.hansson@linaro.org>
-In-Reply-To: <20191211154343.29765-1-ulf.hansson@linaro.org>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 18 Dec 2019 08:36:38 +0100
-Message-ID: <CAPDyKFoTKAs-sFZWNgY+Ym8-hQ_Ks2Qa+g3EtgfMPhEstHTddw@mail.gmail.com>
-Subject: Re: [PATCH v4 00/14] cpuidle: psci: Support hierarchical CPU
- arrangement
-To: Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, 
- Linux PM <linux-pm@vger.kernel.org>
+References: <20191126162902.16788-1-ardb@kernel.org>
+ <CAGETcx8SftK_=-Z374AzQ7vy2RGWqvF3ry+q9Y+cQ5dUhgNEew@mail.gmail.com>
+ <CAKv+Gu_-1b=3_hUq41T_RNDtaUWBbFquDWQK64sZKGNdMseHGQ@mail.gmail.com>
+ <CAGETcx8zKwbDvVGcJXgw9GC61bzQt2kC2CYcgqTfMrDnMNDBrQ@mail.gmail.com>
+In-Reply-To: <CAGETcx8zKwbDvVGcJXgw9GC61bzQt2kC2CYcgqTfMrDnMNDBrQ@mail.gmail.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Wed, 18 Dec 2019 07:36:57 +0000
+Message-ID: <CAKv+Gu8Hg5x=uX0A1z1=0ioXfyvF=+P8ztdhJv=kDgV+tK447A@mail.gmail.com>
+Subject: Re: [PATCH] efi: arm: defer probe of PCIe backed efifb on DT systems
+To: Saravana Kannan <saravanak@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_233715_708787_00D10F43 
-X-CRM114-Status: GOOD (  21.70  )
+X-CRM114-CacheID: sfid-20191217_233707_126467_164AEC0B 
+X-CRM114-Status: GOOD (  42.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -93,117 +93,202 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kevin Hilman <khilman@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Andy Gross <agross@kernel.org>,
- Lina Iyer <ilina@codeaurora.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-efi <linux-efi@vger.kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sudeep, Lorenzo,
+On Wed, 18 Dec 2019 at 04:14, Saravana Kannan <saravanak@google.com> wrote:
+>
+> On Thu, Nov 28, 2019 at 12:19 PM Ard Biesheuvel
+> <ard.biesheuvel@linaro.org> wrote:
+> >
+> > On Thu, 28 Nov 2019 at 20:29, Saravana Kannan <saravanak@google.com> wrote:
+> > >
+> > > On Tue, Nov 26, 2019 at 8:30 AM Ard Biesheuvel <ardb@kernel.org> wrote:
+> > > >
+> > > > The new of_devlink support breaks PCIe probing on ARM platforms booting
+> > > > via UEFI if the firmware exposes a EFI framebuffer that is backed by a
+> > > > PCI device.
+> > >
+> > > Thanks for testing with of_devlink enabled!
+> > >
+> >
+> > Sure, no trouble at all.
+> >
+> > > > The reason is that the probing order gets reversed,
+> > > > resulting in a resource conflict on the framebuffer memory window when
+> > > > the PCIe probes last, causing it to give up entirely.
+> > >
+> > > Just so I understand it clearly, the probe order reversal is only
+> > > between this efi-framebuffer device and the PCIe device right? Not all
+> > > PCI devices or something like that, right? Do you have any info on
+> > > what dependency causes this reversal? Just curious.
+> > >
+> >
+> > It is the probe reversal between the efi-framebuffer on the one hand
+> > and the entire PCIe hierarchy on the other.
+> >
+> > For some reason, PCIe host controllers are usually probed very early,
+> > and I wouldn't be surprised if deferring that may cause other issues
+> > as well. However, of_devlink is presumably specific to DT systems,
+> > where PCIe does not play such a fundamental role like it does on x86,
+> > for instance.
+> >
+> > > > Given that we rely on PCI quirks to deal with EFI framebuffers that get
+> > > > moved around in memory, we cannot simply drop the memory reservation, so
+> > > > instead, let's use the device link infrastructure to register this
+> > > > dependency, and force the probing to occur in the expected order.
+> > > >
+> > > > Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > > > Cc: Saravana Kannan <saravanak@google.com>
+> > > > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> > > > ---
+> > > >  drivers/firmware/efi/arm-init.c | 66 ++++++++++++++++++--
+> > > >  1 file changed, 61 insertions(+), 5 deletions(-)
+> > > >
+> > > > diff --git a/drivers/firmware/efi/arm-init.c b/drivers/firmware/efi/arm-init.c
+> > > > index 311cd349a862..617226d50774 100644
+> > > > --- a/drivers/firmware/efi/arm-init.c
+> > > > +++ b/drivers/firmware/efi/arm-init.c
+> > > > @@ -14,6 +14,7 @@
+> > > >  #include <linux/memblock.h>
+> > > >  #include <linux/mm_types.h>
+> > > >  #include <linux/of.h>
+> > > > +#include <linux/of_address.h>
+> > > >  #include <linux/of_fdt.h>
+> > > >  #include <linux/platform_device.h>
+> > > >  #include <linux/screen_info.h>
+> > > > @@ -267,15 +268,70 @@ void __init efi_init(void)
+> > > >                 efi_memmap_unmap();
+> > > >  }
+> > > >
+> > > > +static bool __init efifb_overlaps_pci_range(const struct of_pci_range *range)
+> > > > +{
+> > > > +       u64 fb_base = screen_info.lfb_base;
+> > > > +
+> > > > +       if (screen_info.capabilities & VIDEO_CAPABILITY_64BIT_BASE)
+> > > > +               fb_base |= (u64)(unsigned long)screen_info.ext_lfb_base << 32;
+> > > > +
+> > > > +       return fb_base >= range->cpu_addr &&
+> > > > +              fb_base < (range->cpu_addr + range->size);
+> > > > +}
+> > > > +
+> > > >  static int __init register_gop_device(void)
+> > > >  {
+> > > > -       void *pd;
+> > > > +       struct platform_device *pd;
+> > > > +       struct device_node *np;
+> > > > +       bool found = false;
+> > > > +       int err;
+> > > >
+> > > >         if (screen_info.orig_video_isVGA != VIDEO_TYPE_EFI)
+> > > >                 return 0;
+> > > >
+> > > > -       pd = platform_device_register_data(NULL, "efi-framebuffer", 0,
+> > > > -                                          &screen_info, sizeof(screen_info));
+> > > > -       return PTR_ERR_OR_ZERO(pd);
+> > > > +       pd = platform_device_alloc("efi-framebuffer", 0);
+> > > > +       if (!pd)
+> > > > +               return -ENOMEM;
+> > > > +
+> > > > +       err = platform_device_add_data(pd, &screen_info, sizeof(screen_info));
+> > > > +       if (err)
+> > > > +               return err;
+> > > > +
+> > > > +       /*
+> > > > +        * If the efifb framebuffer is backed by a PCI graphics controller, we
+> > > > +        * have to ensure that this relation is expressed using a device link
+> > > > +        * when running in DT mode, or the probe order may be reversed,
+> > > > +        * resulting in a resource reservation conflict on the memory window
+> > > > +        * that the efifb framebuffer steals from the PCIe host bridge.
+> > > > +        */
+> > > > +       for_each_node_by_type(np, "pci") {
+> > > > +               struct of_pci_range_parser parser;
+> > > > +               struct of_pci_range range;
+> > > > +               struct device *sup_dev;
+> > > > +
+> > > > +               if (found) {
+> > > > +                       of_node_put(np);
+> > > > +                       break;
+> > > > +               }
+> > >
+> > > It looks like you are doing this here because you can't break out of
+> > > two loops when you set found = true. Is that right? If so, I think
+> > > doing this at the end of the loop would make it more obvious on what's
+> > > going on.
+> > >
+> >
+> > Yeah, I realized that after I posted it.
+> >
+> > > > +
+> > > > +               err = of_pci_range_parser_init(&parser, np);
+> > > > +               if (err) {
+> > > > +                       pr_warn("of_pci_range_parser_init() failed: %d\n", err);
+> > > > +                       continue;
+> > > > +               }
+> > > > +
+> > > > +               sup_dev = get_dev_from_fwnode(&np->fwnode);
+> > > > +
+> > > > +               for_each_of_pci_range(&parser, &range) {
+> > > > +                       if (efifb_overlaps_pci_range(&range)) {
+> > > > +                               found = true;
+> > > > +                               if (!device_link_add(&pd->dev, sup_dev, 0))
+> > > > +                                       pr_warn("device_link_add() failed\n");
+> > >
+> > > I think dev_warn(&pd->dev,...) might make the message more useful.
+> > > Otherwise, it's so confusing.
+> > >
+> >
+> > OK
+> >
+> > > > +                               break;
+> > > > +                       }
+> > > > +               }
+> > > > +               put_device(sup_dev);
+> > >
+> > > Can't you do the if (found) here? Another option is to simply do a
+> > > "goto out;" at the end of the if block where you set found = true.
+> > >
+> >
+> > Indeed.
+> >
+> > > > +       }
+> > > > +       return platform_device_add(pd);
+> > > >  }
+> > > > -subsys_initcall(register_gop_device);
+> > > > +device_initcall(register_gop_device);
+> > >
+> > > Looks like you are doing this so that this efi-framebuffer device gets
+> > > added after the PCIe device? So that device_add_link() succeeds?
+> > >
+> >
+> > I should have mentioned this in the commit log, I suppose: I copied
+> > this from the x86 code that registers the efifb platform device, it
+> > also uses device_initcall() to prevent probing too early.
+> >
+> > > I'm wondering if it would be better to implement this as a
+> > > fwnode_operations.add_links(). Since this efi-framebuffer device won't have any
+> > > fwnode, you can create your own fwnode and implement the add_links()
+> > > property. Not a strong opinion on this, but some food for thought.
+> > >
+> >
+> > I have no idea how that would look, Could you elaborate? I'd prefer it
+> > if we could have a solution where this logic is only invoked when
+> > necessary, i.e., when we are using device links in the first place.
+>
+> I haven't forgotten this thread -- it's in my TODO list. I'm hoping to
+> get to this during the holiday weeks. I plan on sending an example
+> patch with some of your code in it and you can take it from there.
+> Does that sound good?
+>
 
-On Wed, 11 Dec 2019 at 16:43, Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> Changes in v4:
->         - Mover the check for OSI support from psci_dt_attach_cpu() to the
->         caller's side of it.
->         - Add comment in the code about using the deepest idle state as the
->         triggering point for the domain state selection.
->         - Folded in a patch to enable support for CPU hotplug.
-
-I believe I should have addressed all your provided inputs for this
-version, unless you find something new, of course.
-
-Then, would it be possible to get your blessing for this, before
-Christmas, to allow this to cook for a while in linux-next via
-Rafael's tree?
-
-Kind regards
-Uffe
-
->
-> Changes in v3:
->         - Take one step further to completely avoid executing any OSI specific
->         code from the ->enter() callback, while operating in the default PSCI
->         Platform Coordinated mode.
->         - Update example for the PSCI DT bindings to make it compile with
->         "make dt_binding_check"
->
-> Changes in v2:
->         - Avoid to affect the non-OSI path with specific changes for OSI. This
->         forced me to re-order the series and a caused more or less minor changes
->         to most of the patches.
->         - Updated the DT bindings for PSCI to clarify and to include the "psci"
->         name of the PM domain to attach to.
->         - Replaced patch1 with another patch from Sudeep, solving the same
->         problem, but in a different way.
->
-> This series enables initial support for hierarchical CPU arrangement, managed
-> by PSCI and its corresponding cpuidle driver. It's based on using the generic
-> PM domain (genpd), which nowadays also supports devices belonging to CPUs.
->
-> The last DTS patch enables the hierarchical topology to be used for the Qcom
-> 410c Dragonboard, which supports the PSCI OS-initiated mode.
->
-> More detailed background can be found from previous submissions [1].
->
-> The series is also available at:
-> git.linaro.org/people/ulf.hansson/linux-pm.git next
->
-> Kind regards
-> Ulf Hansson
->
-> [1]
-> https://lwn.net/Articles/788306/
->
->
-> Lina Iyer (1):
->   cpuidle: dt: Support hierarchical CPU idle states
->
-> Sudeep Holla (1):
->   cpuidle: psci: Align psci_power_state count with idle state count
->
-> Ulf Hansson (12):
->   dt: psci: Update DT bindings to support hierarchical PSCI states
->   firmware: psci: Export functions to manage the OSI mode
->   of: base: Add of_get_cpu_state_node() to get idle states for a CPU
->     node
->   cpuidle: psci: Simplify OF parsing of CPU idle state nodes
->   cpuidle: psci: Support hierarchical CPU idle states
->   cpuidle: psci: Add a helper to attach a CPU to its PM domain
->   cpuidle: psci: Attach CPU devices to their PM domains
->   cpuidle: psci: Prepare to use OS initiated suspend mode via PM domains
->   cpuidle: psci: Manage runtime PM in the idle path
->   cpuidle: psci: Support CPU hotplug for the hierarchical model
->   cpuidle: psci: Add support for PM domains by using genpd
->   arm64: dts: Convert to the hierarchical CPU topology layout for
->     MSM8916
->
->  .../devicetree/bindings/arm/cpus.yaml         |  15 +
->  .../devicetree/bindings/arm/psci.yaml         | 104 ++++++
->  arch/arm64/boot/dts/qcom/msm8916.dtsi         |  57 +++-
->  drivers/cpuidle/Makefile                      |   4 +-
->  drivers/cpuidle/cpuidle-psci-domain.c         | 298 ++++++++++++++++++
->  drivers/cpuidle/cpuidle-psci.c                | 161 ++++++++--
->  drivers/cpuidle/cpuidle-psci.h                |  17 +
->  drivers/cpuidle/dt_idle_states.c              |   5 +-
->  drivers/firmware/psci/psci.c                  |  18 +-
->  drivers/of/base.c                             |  36 +++
->  include/linux/cpuhotplug.h                    |   1 +
->  include/linux/of.h                            |   8 +
->  include/linux/psci.h                          |   2 +
->  13 files changed, 691 insertions(+), 35 deletions(-)
->  create mode 100644 drivers/cpuidle/cpuidle-psci-domain.c
->  create mode 100644 drivers/cpuidle/cpuidle-psci.h
->
-> --
-> 2.17.1
->
+Fine with me!
 
 _______________________________________________
 linux-arm-kernel mailing list
