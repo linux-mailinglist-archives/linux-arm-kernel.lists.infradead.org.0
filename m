@@ -2,60 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DE81124A2F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 15:50:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 811D0124A34
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 15:50:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JhbVmHMUbieKOHm8pOC5kr5VScC9u3UiHJ3nAV8kgLE=; b=FnTkWA/CFJiPkH
-	qnV8PFtyUYjiHnRnpOj24qk+H81jeXR2xU0supKWSr4V+4kjBDvF0e0cZK0sey9Iv1SvpcjReIe/I
-	LAUzt4Xraiz8rJqQPtcFCuRY054Zh1bFWjyzZb9ffhpCNBmiZweyNSBs0Zz3umDabY+HkkaOaLV1A
-	aggmHN0OI1aNw7zSsYEnX4zaRTcB/QGfI6n8I/c6jXKi2AbGvoW6OwSPutC9n3OZPCET/OG8IOw3+
-	q8LbgrpnND8wZXz1wwKiQvMzqGWtzhpjIXC51v+wE5+aehKNwOPxrkpbhED9SLqS0HlTU9GlNTeNq
-	wdeIS3fUKSgm6UNNKmbg==;
+	List-Owner; bh=I5SwyV+NQL6c6rtzx8y8OxA98tROD+p4X5HoDlRsdVo=; b=LGTPmaSZnU23lv
+	MFyQkt/WYCT0lxgb+oKwfY8h2lmHC2EYKX8/qylRIXjAoGGj8WTRe3x2KJtXRfSMcvY66LdLl/gd7
+	JeWx7Fcgn67QyAUBAaOaz4xlDz9i7gpmDDZX3MfbDSRXI6h1EvcitjWj2vBOfqgGt7J71I5DUjWvo
+	bv5jyAoifykTFE8aJDosv41Pq7aJcwRRhhzAXatsg4o/8Mpj5KeOUwVHy9mQ7zw4IDkDWPhTvfYAb
+	WCWZZT7ecbCw1XY5cj1p7HCUa2Odx4f4vbUMD+xh17ZqGl0HpV5Di3L9aM7fUDQ9/Co6zzruKN+Hs
+	cDmA4Gdu1llim710TchA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihaeZ-0007T7-L3; Wed, 18 Dec 2019 14:50:19 +0000
-Received: from smtp2.axis.com ([195.60.68.18])
+	id 1ihafB-0000Yr-9Y; Wed, 18 Dec 2019 14:50:57 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihae8-0007Cc-Ek
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 14:49:57 +0000
-IronPort-SDR: vTUCunjVXjVdRehuOm46Tk7M0Sq5tcfe897Iy+3eq8hNMAkvYYuPyyY8s1+XbFPzDkR0aUXi0i
- 6mx2DlMFWULC+a/bYxL23AzOJN4feB/IHpQg4cD5uweDmpuAaoxs2KhCzU3qYJ/t83erwAXtPj
- TfikBrJigFx/wYnKm0sZ0ifmWoRaDTySZL8CO2pt71l6tSuv20bA76DM4YvGOJP069Cozcs0jn
- h8mcaVDbp2bTBII9/YlWJiCdPcsd5aJRZZ7vhwgpRaUIIUh08LFDRLwfjaeTKx6cpc+t8sXZRJ
- Iuk=
-X-IronPort-AV: E=Sophos;i="5.69,329,1571695200"; 
-   d="scan'208";a="3614878"
-X-Axis-User: NO
-X-Axis-NonUser: YES
-X-Virus-Scanned: Debian amavisd-new at bastet.se.axis.com
-Date: Wed, 18 Dec 2019 15:49:43 +0100
-From: Vincent Whitchurch <vincent.whitchurch@axis.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH] asm/sections: Check for overflow in memory_contains()
-Message-ID: <20191218144943.bf5vqykvggtfnph7@axis.com>
-References: <20191217102238.14792-1-vincent.whitchurch@axis.com>
- <20191217102831.GP25745@shell.armlinux.org.uk>
+ id 1ihaf0-0000Xs-Rl
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 14:50:48 +0000
+Received: from lhreml709-cah.china.huawei.com (unknown [172.18.7.108])
+ by Forcepoint Email with ESMTP id 250F02B0021CA52D4578;
+ Wed, 18 Dec 2019 14:50:43 +0000 (GMT)
+Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
+ lhreml709-cah.china.huawei.com (10.201.108.32) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Wed, 18 Dec 2019 14:50:42 +0000
+Received: from localhost (10.202.226.57) by lhreml710-chm.china.huawei.com
+ (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5; Wed, 18 Dec
+ 2019 14:50:42 +0000
+Date: Wed, 18 Dec 2019 14:50:41 +0000
+From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+To: Brice Goglin <brice.goglin@gmail.com>
+Subject: Re: [PATCH V6 0/7] ACPI: Support Generic Initiator proximity domains
+Message-ID: <20191218145041.00005a11@Huawei.com>
+In-Reply-To: <dc5f5502-09c6-d476-db0e-0af3412bb031@gmail.com>
+References: <20191216153809.105463-1-Jonathan.Cameron@huawei.com>
+ <dc5f5502-09c6-d476-db0e-0af3412bb031@gmail.com>
+Organization: Huawei Technologies Research and Development (UK) Ltd.
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191217102831.GP25745@shell.armlinux.org.uk>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-TM-AS-GCONF: 00
+X-Originating-IP: [10.202.226.57]
+X-ClientProxiedBy: lhreml706-chm.china.huawei.com (10.201.108.55) To
+ lhreml710-chm.china.huawei.com (10.201.108.61)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_064952_839395_966D5032 
-X-CRM114-Status: GOOD (  16.36  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191218_065047_042362_810CEB7F 
+X-CRM114-Status: GOOD (  17.52  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [195.60.68.18 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -68,70 +71,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "akpm@linux-foundation.org" <akpm@linux-foundation.org>,
- "treding@nvidia.com" <treding@nvidia.com>, "arnd@arndb.de" <arnd@arndb.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-acpi@vger.kernel.org,
+ Tao Xu <tao3.xu@intel.com>, x86@kernel.org,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ linuxarm@huawei.com, Keith Busch <keith.busch@intel.com>, linux-mm@kvack.org,
+ jglisse@redhat.com, Sudeep Holla <sudeep.holla@arm.com>,
+ Hanjun Guo <guohanjun@huawei.com>, Andrew
+ Morton <akpm@linux-foundation.org>, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 11:28:31AM +0100, Russell King - ARM Linux admin wrote:
-> On Tue, Dec 17, 2019 at 11:22:38AM +0100, Vincent Whitchurch wrote:
-> > ARM uses memory_contains() from its stacktrace code via this function:
-> > 
-> >  static inline bool in_entry_text(unsigned long addr)
-> >  {
-> >  	return memory_contains(__entry_text_start, __entry_text_end,
-> >  			       (void *)addr, 1);
-> >  }
-> > 
-> > addr is taken from the stack and can be a completely invalid.  If addr
-> > is 0xffffffff, there is an overflow in the pointer arithmetic in
-> > memory_contains() and in_entry_text() incorrectly returns true.
-> > 
-> > Fix this by adding an overflow check.  The check is done on unsigned
-> > longs to avoid undefined behaviour.
-> > 
-> > Signed-off-by: Vincent Whitchurch <vincent.whitchurch@axis.com>
-> > ---
-> >  include/asm-generic/sections.h | 10 +++++++++-
-> >  1 file changed, 9 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/include/asm-generic/sections.h b/include/asm-generic/sections.h
-> > index d1779d442aa5..e6e1b381c5df 100644
-> > --- a/include/asm-generic/sections.h
-> > +++ b/include/asm-generic/sections.h
-> > @@ -105,7 +105,15 @@ static inline int arch_is_kernel_initmem_freed(unsigned long addr)
-> >  static inline bool memory_contains(void *begin, void *end, void *virt,
-> >  				   size_t size)
-> >  {
-> > -	return virt >= begin && virt + size <= end;
-> > +	unsigned long membegin = (unsigned long)begin;
-> > +	unsigned long memend = (unsigned long)end;
-> > +	unsigned long objbegin = (unsigned long)virt;
-> > +	unsigned long objend = objbegin + size;
-> > +
-> > +	if (objend < objbegin)
-> > +		return false;
-> > +
-> > +	return objbegin >= membegin && objend <= memend;
-> 
-> Would merely changing to:
-> 
-> 	return virt >= begin && virt <= end - size;
-> 
-> be sufficient ?  Is end - size possible to underflow?
+On Wed, 18 Dec 2019 12:32:06 +0100
+Brice Goglin <brice.goglin@gmail.com> wrote:
 
-Something like this would trigger an underflow and return an incorrect
-result with that expression, wouldn't it?
+> Le 16/12/2019 =E0 16:38, Jonathan Cameron a =E9crit=A0:
+> > Introduces a new type of NUMA node for cases where we want to represent
+> > the access characteristics of a non CPU initiator of memory requests,
+> > as these differ from all those for existing nodes containing CPUs and/or
+> > memory.
+> >
+> > These Generic Initiators are presented by the node access0 class in
+> > sysfs in the same way as a CPU.   It seems likely that there will be
+> > usecases in which the best 'CPU' is desired and Generic Initiators
+> > should be ignored.  The final few patches in this series introduced
+> > access1 which is a new performance class in the sysfs node description
+> > which presents only CPU to memory relationships.  Test cases for this
+> > are described below.  =
 
- memory_contains((void *)0x0000, (void *)0x1000, (void *)0x0, 0x1001))
+> =
 
-AFAICS no current callers actually send in an object size which is
-larger than the size of the memory, but perhaps it's best to be
-defensive?
+> =
+
+> Hello Jonathan
+> =
+
+> If I want to test this with a fake GI, what are the minimal set of
+> changes I should put in my ACPI tables? Can I just specify a dummy GI in
+> SRAT? What handle should I use there?
+
+Exactly that for a dummy GI.  Also extend HMAT and SLIT for the extra
+proximity domain / initiator.
+
+For the handle, anything is fine.  This patch set doesn't currently use it.
+That handle was a bit controversial when this spec feature was being
+discussed because it can 'disagree' with information from _PXM.
+
+The ACPI spec ended up effectively relying on them agreeing.  So any handle
+must identify a device that either doesn't have a _PXM entry or that
+has one that refers to the same proximity domain.
+
+Also note there is a fiddly corner case which is covered by an _OSC.
+If you have a device that you want to use _PXM to put in a GI only
+domain then older kernels will not know about the GI domain. Hence
+ACPI goes through a dance to ensure that a kernel that hasn't
+announced it is GI aware, doesn't get told anything is in a GI only domain.
+For testing this series though you can just ignore that.
+
+The logic to actually pass that handle based specification through to the
+devices is complex, so this set relies on _PXM in DSDT to actually associate
+any device with the Generic Initiator domain.  If doing this for a PCI
+device, note that you need the fix mentioned in the cover letter to actually
+have _PXM apply to PCI EPs.  Note that the _PXM case needs to work anyway
+as you might have a GI node with multiple GIs and there is no obligation
+for them all to be specified in SRAT.
+
+Once this initial set is in place we can work out how to use the SRAT
+handle to associate it with a device.  To be honest, I haven't really
+thought about how we'd do that yet.
+
+Thanks,
+
+Jonathan
+
+
+> =
+
+> Thanks
+> =
+
+> Brice
+> =
+
+> =
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
