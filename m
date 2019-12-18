@@ -2,57 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC98412454E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 12:05:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26B6712455F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 12:09:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0j4OFmr8NyJfFH58WJZKYMu8eskVHu537/n4AXD/AaM=; b=RmWCN5bfC9UA0O
-	Zf5GXqyxlsrCJ8vFkPuHIJUv4OYfBdW1yPwsmFTQHIFfHrFW9aoDcjxMvOGXvBKDZRKt2mBL3UFbl
-	yQhkdTp1oIL8BEQnkyJTVlmgszWlEJeY3tqQvhC/vYNA9mcqyFstylpOdWpWYGhrGWeS8LclLkbCd
-	szPeq3FhlEqT7sgOYZsbpA9Aiwhfsc1WyTYj+vDY8hQLjxNH/tbM/j0oDOoR/Zn2hmpVeY19CCk/B
-	dHtIu8G0Vh0c4r7L20MGhCHeGHba7EXHLBiPV6+ihKNnkQ07tL3rhEhjRqDoJlAA68xFqGzBDFXax
-	y9yjiBARGP4qePePmkMA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7Zhbf3AbD4mzI7j1j+pOs8SFXkkZFPXwMJ7rwykcCBw=; b=u0p+Tw3a6IbQO0
+	ZS+M1z2TPsfZaeHkGDJLCnx+G9INKzTPGr/R7lpr7kTAgBktIMJnVV5qWNsTA1Gi6zsb1e0WmcePF
+	psaYWkQHA1wkoeXLhop6GBr6oe/6rdtbxYzcifXwuU2GALw9ZDfYYL04G8QK6Qvs6/F3+VUgMzZLs
+	sIkDoS07TM6D3KS9B6vQ2oIiV6IotS9Nv04aM6XLPYsFptrqWFtnsG8JXW/qg0eW/MuTeRA3MQjtr
+	ht6lYm7w9s6R/PjvqKZPE3sdCJy4vt2R335kFwMW6ORH8Nxgh00ShRCEM3EBaUieBENOs0LT4GQuC
+	Xv2OVq9Z3MocgiJRqgVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihX9G-0007Al-FV; Wed, 18 Dec 2019 11:05:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihX97-0007A6-HF
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 11:05:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B7A9630E;
- Wed, 18 Dec 2019 03:05:36 -0800 (PST)
-Received: from [10.1.196.56] (e112269-lin.cambridge.arm.com [10.1.196.56])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B6C053F6CF;
- Wed, 18 Dec 2019 03:05:35 -0800 (PST)
-Subject: Re: [PATCH v2] arm64: cpufeature: Export matrix and other features to
- userspace
-To: Will Deacon <will@kernel.org>
-References: <20191216113337.13882-1-steven.price@arm.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <3fb4b181-76f3-4bad-c645-888b69bab758@arm.com>
-Date: Wed, 18 Dec 2019 11:05:34 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+	id 1ihXCO-0007x8-AV; Wed, 18 Dec 2019 11:09:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihXCC-0007wi-My
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 11:08:50 +0000
+Received: from mail-lj1-f179.google.com (mail-lj1-f179.google.com
+ [209.85.208.179])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DC3CB218AC
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Dec 2019 11:08:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576667328;
+ bh=tUaeqcN6CkS43pagf5qs7h+ZistztqDqO0wjuHQPfEA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=lrImmIoFd+NrnZ9DpifGyXM3GIbpnVAIKNC9vRU6KiPqFVthAzltRKmAJsvo414SP
+ cBL2TiGnNpr9Wkasn5LXyDGweB2zVBfTvv1CxMTkIj3rdo4ijmOuUCrS1DIXXyG+ge
+ BThU+akJfCGPMGwHz4RBaNs0V1NNo6KBjkeYyH9g=
+Received: by mail-lj1-f179.google.com with SMTP id u71so1640513lje.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Dec 2019 03:08:47 -0800 (PST)
+X-Gm-Message-State: APjAAAWz7LBFnOvXA/HPJplUgeAH5EqhPMVfe4z0WkaFC9sk05l1NNGl
+ JEdRnxyzobzmyXW31J+MFPHs9CIQK7EBb4wnFWk=
+X-Google-Smtp-Source: APXvYqzzwkok4ysLB1UQSv2NrLCMMmJMEEkUWjEi1zn1zHAKMRYnIIpHYHZgMKhx1IkyluFOt6OFdYUDfYSvwOE37r8=
+X-Received: by 2002:a05:651c:106f:: with SMTP id
+ y15mr1330269ljm.63.1576667326015; 
+ Wed, 18 Dec 2019 03:08:46 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191216113337.13882-1-steven.price@arm.com>
-Content-Language: en-US
+References: <20190919142236.4071-1-a.swigon@samsung.com>
+ <CGME20190919142329eucas1p2e53992eab9ec6b404f716f955b3c228e@eucas1p2.samsung.com>
+ <20190919142236.4071-10-a.swigon@samsung.com>
+ <35053bad-3f08-190a-0ffa-9aacd16da272@samsung.com>
+ <95ac6056bc6c790b1de7e975f44faa320fd9876f.camel@samsung.com>
+ <CAGTfZH1wVKBQAantrpqPP7+penwxeJud=gjH=5vVmKbzTGE=cQ@mail.gmail.com>
+ <c3c161af17023a90e0fd7a0f925dbdad8b928ff4.camel@samsung.com>
+In-Reply-To: <c3c161af17023a90e0fd7a0f925dbdad8b928ff4.camel@samsung.com>
+From: Chanwoo Choi <chanwoo@kernel.org>
+Date: Wed, 18 Dec 2019 20:08:09 +0900
+X-Gmail-Original-Message-ID: <CAGTfZH1SbN2FkQ9SuaT3zONhvmdRGz0MVD3oqHjyuYDXsfkjfg@mail.gmail.com>
+Message-ID: <CAGTfZH1SbN2FkQ9SuaT3zONhvmdRGz0MVD3oqHjyuYDXsfkjfg@mail.gmail.com>
+Subject: Re: [RFC PATCH v2 09/11] devfreq: exynos-bus: Add interconnect
+ functionality to exynos-bus
+To: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_030537_664967_0AE31130 
-X-CRM114-Status: GOOD (  19.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191218_030848_797510_CB1B1C0B 
+X-CRM114-Status: GOOD (  39.21  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,306 +93,243 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: julien@xen.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree <devicetree@vger.kernel.org>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Linux PM list <linux-pm@vger.kernel.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, inki.dae@samsung.com,
+ Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
-
-It was pointed out to me that this patch conflicts with Anshuman's
-patch[1] adding the BFloat16 support. I'd like your opinion on the best
-way of handling this.
-
-I originally extended the scope of Julien's original patch based on your
-comment[2] on his patch:
-
-  So we probably want a patch bringing all of this up to speed, rather
-  than randomly advertising some features and not others.
-
-So which outcome do you prefer:
-
- * Splitting up the features into multiple patches, i.e. Anshuman's
-BF16, followed by a version of Julien's Matrix, followed by the
-remaining features SPECRES/DGH.
-
- * A single patch adding everything in one go (i.e. this patch).
-
- * Something else I haven't thought of.
-
-Thanks,
-
-Steve
-
-[1]
-https://lore.kernel.org/linux-arm-kernel/1576145232-8311-1-git-send-email-anshuman.khandual@arm.com/
-[2]
-http://lists.infradead.org/pipermail/linux-arm-kernel/2019-October/690350.html
-
-On 16/12/2019 11:33, Steven Price wrote:
-> Export the features introduced as part of ARMv8.6 exposed in the
-> ID_AA64ISAR1_EL1 and ID_AA64ZFR0_EL1 registers. This introduces the
-> Matrix features (ARMv8.2-I8MM, ARMv8.2-F64MM and ARMv8.2-F32MM) along
-> with BFloat16 (Armv8.2-BF16), speculation invalidation (SPECRES) and
-> Data Gathering Hint (ARMv8.0-DGH).
-> 
-> Signed-off-by: Julien Grall <julien.grall@arm.com>
-> [Added other features in those registers]
-> Signed-off-by: Steven Price <steven.price@arm.com>
-> ---
-> This is a v2 of Julien's patch[1] extended to export all the new
-> features contained within the ID_AA64ISAR1_EL1 and ID_AA64ZFR0_EL1
-> registers.
-> 
-> [1] https://lore.kernel.org/linux-arm-kernel/20191025171056.30641-1-julien.grall@arm.com/
-> 
->  Documentation/arm64/cpu-feature-registers.rst | 16 ++++++++++
->  Documentation/arm64/elf_hwcaps.rst            | 31 +++++++++++++++++++
->  arch/arm64/include/asm/hwcap.h                |  8 +++++
->  arch/arm64/include/asm/sysreg.h               | 12 +++++++
->  arch/arm64/include/uapi/asm/hwcap.h           |  8 +++++
->  arch/arm64/kernel/cpufeature.c                | 20 ++++++++++++
->  arch/arm64/kernel/cpuinfo.c                   |  8 +++++
->  7 files changed, 103 insertions(+)
-> 
-> diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
-> index b6e44884e3ad..5382981533f8 100644
-> --- a/Documentation/arm64/cpu-feature-registers.rst
-> +++ b/Documentation/arm64/cpu-feature-registers.rst
-> @@ -200,6 +200,14 @@ infrastructure:
->       +------------------------------+---------+---------+
->       | Name                         |  bits   | visible |
->       +------------------------------+---------+---------+
-> +     | I8MM                         | [55-52] |    y    |
-> +     +------------------------------+---------+---------+
-> +     | DGH                          | [51-48] |    y    |
-> +     +------------------------------+---------+---------+
-> +     | BF16                         | [47-44] |    y    |
-> +     +------------------------------+---------+---------+
-> +     | SPECRES                      | [43-40] |    y    |
-> +     +------------------------------+---------+---------+
->       | SB                           | [39-36] |    y    |
->       +------------------------------+---------+---------+
->       | FRINTTS                      | [35-32] |    y    |
-> @@ -234,10 +242,18 @@ infrastructure:
->       +------------------------------+---------+---------+
->       | Name                         |  bits   | visible |
->       +------------------------------+---------+---------+
-> +     | F64MM                        | [59-56] |    y    |
-> +     +------------------------------+---------+---------+
-> +     | F32MM                        | [55-52] |    y    |
-> +     +------------------------------+---------+---------+
-> +     | I8MM                         | [47-44] |    y    |
-> +     +------------------------------+---------+---------+
->       | SM4                          | [43-40] |    y    |
->       +------------------------------+---------+---------+
->       | SHA3                         | [35-32] |    y    |
->       +------------------------------+---------+---------+
-> +     | BF16                         | [23-20] |    y    |
-> +     +------------------------------+---------+---------+
->       | BitPerm                      | [19-16] |    y    |
->       +------------------------------+---------+---------+
->       | AES                          | [7-4]   |    y    |
-> diff --git a/Documentation/arm64/elf_hwcaps.rst b/Documentation/arm64/elf_hwcaps.rst
-> index 7fa3d215ae6a..183ba86ad46e 100644
-> --- a/Documentation/arm64/elf_hwcaps.rst
-> +++ b/Documentation/arm64/elf_hwcaps.rst
-> @@ -204,6 +204,37 @@ HWCAP2_FRINT
->  
->      Functionality implied by ID_AA64ISAR1_EL1.FRINTTS == 0b0001.
->  
-> +HWCAP2_SVEI8MM
-> +
-> +    Functionality implied by ID_AA64ZFR0_EL1.I8MM == 0b0001.
-> +
-> +HWCAP2_SVEF32MM
-> +
-> +    Functionality implied by ID_AA64ZFR0_EL1.F32MM == 0b0001.
-> +
-> +HWCAP2_SVEF64MM
-> +
-> +    Functionality implied by ID_AA64ZFR0_EL1.F64MM == 0b0001.
-> +
-> +HWCAP2_SVEBF16
-> +
-> +    Functionality implied by ID_AA64ZFR0_EL1.BF16 == 0b0001.
-> +
-> +HWCAP2_I8MM
-> +
-> +    Functionality implied by ID_AA64ISAR1_EL1.I8MM == 0b0001.
-> +
-> +HWCAP2_BF16
-> +
-> +    Functionality implied by ID_AA64ISAR1_EL1.BF16 == 0b0001.
-> +
-> +HWCAP2_DGH
-> +
-> +    Functionality implied by ID_AA64ISAR1_EL1.DGH == 0b0001.
-> +
-> +HWCAP2_SPECRES
-> +
-> +    Functionality implied by ID_AA64ISAR1_EL1.SPECRES == 0b0001.
->  
->  4. Unused AT_HWCAP bits
->  -----------------------
-> diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
-> index 3d2f2472a36c..ac7180b2c20b 100644
-> --- a/arch/arm64/include/asm/hwcap.h
-> +++ b/arch/arm64/include/asm/hwcap.h
-> @@ -86,6 +86,14 @@
->  #define KERNEL_HWCAP_SVESM4		__khwcap2_feature(SVESM4)
->  #define KERNEL_HWCAP_FLAGM2		__khwcap2_feature(FLAGM2)
->  #define KERNEL_HWCAP_FRINT		__khwcap2_feature(FRINT)
-> +#define KERNEL_HWCAP_SVEI8MM		__khwcap2_feature(SVEI8MM)
-> +#define KERNEL_HWCAP_SVEF32MM		__khwcap2_feature(SVEF32MM)
-> +#define KERNEL_HWCAP_SVEF64MM		__khwcap2_feature(SVEF64MM)
-> +#define KERNEL_HWCAP_SVEBF16		__khwcap2_feature(SVEBF16)
-> +#define KERNEL_HWCAP_I8MM		__khwcap2_feature(I8MM)
-> +#define KERNEL_HWCAP_DGH		__khwcap2_feature(DGH)
-> +#define KERNEL_HWCAP_BF16		__khwcap2_feature(BF16)
-> +#define KERNEL_HWCAP_SPECRES		__khwcap2_feature(SPECRES)
->  
->  /*
->   * This yields a mask that user programs can use to figure out what
-> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-> index 6e919fafb43d..f56c4a02a127 100644
-> --- a/arch/arm64/include/asm/sysreg.h
-> +++ b/arch/arm64/include/asm/sysreg.h
-> @@ -553,6 +553,10 @@
->  #define ID_AA64ISAR0_AES_SHIFT		4
->  
->  /* id_aa64isar1 */
-> +#define ID_AA64ISAR1_I8MM_SHIFT		52
-> +#define ID_AA64ISAR1_DGH_SHIFT		48
-> +#define ID_AA64ISAR1_BF16_SHIFT		44
-> +#define ID_AA64ISAR1_SPECRES_SHIFT	40
->  #define ID_AA64ISAR1_SB_SHIFT		36
->  #define ID_AA64ISAR1_FRINTTS_SHIFT	32
->  #define ID_AA64ISAR1_GPI_SHIFT		28
-> @@ -605,12 +609,20 @@
->  #define ID_AA64PFR1_SSBS_PSTATE_INSNS	2
->  
->  /* id_aa64zfr0 */
-> +#define ID_AA64ZFR0_F64MM_SHIFT		56
-> +#define ID_AA64ZFR0_F32MM_SHIFT		52
-> +#define ID_AA64ZFR0_I8MM_SHIFT		44
->  #define ID_AA64ZFR0_SM4_SHIFT		40
->  #define ID_AA64ZFR0_SHA3_SHIFT		32
-> +#define ID_AA64ZFR0_BF16_SHIFT		20
->  #define ID_AA64ZFR0_BITPERM_SHIFT	16
->  #define ID_AA64ZFR0_AES_SHIFT		4
->  #define ID_AA64ZFR0_SVEVER_SHIFT	0
->  
-> +#define ID_AA64ZFR0_F64MM		0x1
-> +#define ID_AA64ZFR0_F32MM		0x1
-> +#define ID_AA64ZFR0_I8MM		0x1
-> +#define ID_AA64ZFR0_BF16		0x1
->  #define ID_AA64ZFR0_SM4			0x1
->  #define ID_AA64ZFR0_SHA3		0x1
->  #define ID_AA64ZFR0_BITPERM		0x1
-> diff --git a/arch/arm64/include/uapi/asm/hwcap.h b/arch/arm64/include/uapi/asm/hwcap.h
-> index a1e72886b30c..8f3f1b66f7b2 100644
-> --- a/arch/arm64/include/uapi/asm/hwcap.h
-> +++ b/arch/arm64/include/uapi/asm/hwcap.h
-> @@ -65,5 +65,13 @@
->  #define HWCAP2_SVESM4		(1 << 6)
->  #define HWCAP2_FLAGM2		(1 << 7)
->  #define HWCAP2_FRINT		(1 << 8)
-> +#define HWCAP2_SVEI8MM		(1 << 9)
-> +#define HWCAP2_SVEF32MM		(1 << 10)
-> +#define HWCAP2_SVEF64MM		(1 << 11)
-> +#define HWCAP2_SVEBF16		(1 << 12)
-> +#define HWCAP2_I8MM		(1 << 13)
-> +#define HWCAP2_BF16		(1 << 14)
-> +#define HWCAP2_DGH		(1 << 15)
-> +#define HWCAP2_SPECRES		(1 << 16)
->  
->  #endif /* _UAPI__ASM_HWCAP_H */
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 04cf64e9f0c9..bf9e9e09da0d 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -135,6 +135,10 @@ static const struct arm64_ftr_bits ftr_id_aa64isar0[] = {
->  };
->  
->  static const struct arm64_ftr_bits ftr_id_aa64isar1[] = {
-> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_I8MM_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_DGH_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_BF16_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SPECRES_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_SB_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_FRINTTS_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
-> @@ -176,10 +180,18 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr1[] = {
->  };
->  
->  static const struct arm64_ftr_bits ftr_id_aa64zfr0[] = {
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_F64MM_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_F32MM_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_I8MM_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
->  		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SM4_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
->  		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_SHA3_SHIFT, 4, 0),
-> +	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> +		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_BF16_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
->  		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ZFR0_BITPERM_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
-> @@ -1651,6 +1663,10 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
->  	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_LRCPC_SHIFT, FTR_UNSIGNED, 2, CAP_HWCAP, KERNEL_HWCAP_ILRCPC),
->  	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_FRINTTS_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_FRINT),
->  	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_SB_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SB),
-> +	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_SPECRES_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SPECRES),
-> +	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_BF16_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_BF16),
-> +	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_DGH_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_DGH),
-> +	HWCAP_CAP(SYS_ID_AA64ISAR1_EL1, ID_AA64ISAR1_I8MM_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_I8MM),
->  	HWCAP_CAP(SYS_ID_AA64MMFR2_EL1, ID_AA64MMFR2_AT_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_USCAT),
->  #ifdef CONFIG_ARM64_SVE
->  	HWCAP_CAP(SYS_ID_AA64PFR0_EL1, ID_AA64PFR0_SVE_SHIFT, FTR_UNSIGNED, ID_AA64PFR0_SVE, CAP_HWCAP, KERNEL_HWCAP_SVE),
-> @@ -1658,8 +1674,12 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
->  	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_AES_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_AES, CAP_HWCAP, KERNEL_HWCAP_SVEAES),
->  	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_AES_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_AES_PMULL, CAP_HWCAP, KERNEL_HWCAP_SVEPMULL),
->  	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_BITPERM_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_BITPERM, CAP_HWCAP, KERNEL_HWCAP_SVEBITPERM),
-> +	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_BF16_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_BF16, CAP_HWCAP, KERNEL_HWCAP_SVEBF16),
->  	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_SHA3_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_SHA3, CAP_HWCAP, KERNEL_HWCAP_SVESHA3),
->  	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_SM4_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_SM4, CAP_HWCAP, KERNEL_HWCAP_SVESM4),
-> +	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_I8MM_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_I8MM, CAP_HWCAP, KERNEL_HWCAP_SVEI8MM),
-> +	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_F32MM_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_F32MM, CAP_HWCAP, KERNEL_HWCAP_SVEF32MM),
-> +	HWCAP_CAP(SYS_ID_AA64ZFR0_EL1, ID_AA64ZFR0_F64MM_SHIFT, FTR_UNSIGNED, ID_AA64ZFR0_F64MM, CAP_HWCAP, KERNEL_HWCAP_SVEF64MM),
->  #endif
->  	HWCAP_CAP(SYS_ID_AA64PFR1_EL1, ID_AA64PFR1_SSBS_SHIFT, FTR_UNSIGNED, ID_AA64PFR1_SSBS_PSTATE_INSNS, CAP_HWCAP, KERNEL_HWCAP_SSBS),
->  #ifdef CONFIG_ARM64_PTR_AUTH
-> diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
-> index 56bba746da1c..1eaf4dc0c5a0 100644
-> --- a/arch/arm64/kernel/cpuinfo.c
-> +++ b/arch/arm64/kernel/cpuinfo.c
-> @@ -84,6 +84,14 @@ static const char *const hwcap_str[] = {
->  	"svesm4",
->  	"flagm2",
->  	"frint",
-> +	"svei8mm",
-> +	"svef32mm",
-> +	"svef64mm",
-> +	"svebf16",
-> +	"i8mm",
-> +	"bf16",
-> +	"dgh",
-> +	"specres",
->  	NULL
->  };
->  
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpJZiBwb3NzaWJsZSwgSSdkIGxpa2UgdG8gYXBwbHkgdGhlc2UgcGF0Y2hlcyB0byB2NS42
+LXJjMS4KSXQgaXMgdmVyeSB1c2VmdWwgZmVhdHVyZSB0byBzdXBwb3J0IHRoZSBRb1MgZm9yIHVz
+ZXIgZGV2aWNlIHVzaW5nIG1lbW9yeSBidXMuCgoyMDE564WEIDEy7JuUIDE47J28ICjsiJgpIOyY
+pO2bhCA3OjQ4LCBBcnR1ciDFmndpZ2/FhCA8YS5zd2lnb25Ac2Ftc3VuZy5jb20+64uY7J20IOye
+keyEsToKPgo+IE9uIFdlZCwgMjAxOS0xMi0xOCBhdCAxOTozOSArMDkwMCwgQ2hhbndvbyBDaG9p
+IHdyb3RlOgo+ID4gSGksCj4gPgo+ID4gMjAxOeuFhCAxMuyblCAxOOydvCAo7IiYKSDsmKTtm4Qg
+NzoxOSwgQXJ0dXIgxZp3aWdvxYQgPGEuc3dpZ29uQHNhbXN1bmcuY29tPuuLmOydtCDsnpHshLE6
+Cj4gPiA+Cj4gPiA+IEhpLAo+ID4gPgo+ID4gPiBUaGFuayB5b3UgZm9yIHRoZSByZXZpZXcuCj4g
+PiA+Cj4gPiA+IE9uIE1vbiwgMjAxOS0xMi0xNiBhdCAwOTo0NCArMDkwMCwgQ2hhbndvbyBDaG9p
+IHdyb3RlOgo+ID4gPiA+IEhpLAo+ID4gPiA+Cj4gPiA+ID4gT24gOS8xOS8xOSAxMToyMiBQTSwg
+QXJ0dXIgxZp3aWdvxYQgd3JvdGU6Cj4gPiA+ID4gPiBGcm9tOiBBcnR1ciDFmndpZ2/FhCA8YS5z
+d2lnb25AcGFydG5lci5zYW1zdW5nLmNvbT4KPiA+ID4gPiA+Cj4gPiA+ID4gPiBUaGlzIHBhdGNo
+IGFkZHMgaW50ZXJjb25uZWN0IGZ1bmN0aW9uYWxpdHkgdG8gdGhlIGV4eW5vcy1idXMgZGV2ZnJl
+cQo+ID4gPiA+ID4gZHJpdmVyLgo+ID4gPiA+ID4KPiA+ID4gPiA+IFRoZSBTb0MgdG9wb2xvZ3kg
+aXMgYSBncmFwaCAob3IsIG1vcmUgc3BlY2lmaWNhbGx5LCBhIHRyZWUpIGFuZCBtb3N0IG9mCj4g
+PiA+ID4gPiBpdHMgZWRnZXMgYXJlIHRha2VuIGZyb20gdGhlIGRldmZyZXEgcGFyZW50LWNoaWxk
+IGhpZXJhcmNoeSAoY2YuCj4gPiA+ID4gPiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvZGV2ZnJlcS9leHlub3MtYnVzLnR4dCkuIER1ZSB0bwo+ID4gPiA+ID4gdW5zcGVjaWZpZWQg
+cmVsYXRpdmUgcHJvYmluZyBvcmRlciwgLUVQUk9CRV9ERUZFUiBtYXkgYmUgcHJvcGFnYXRlZCB0
+bwo+ID4gPiA+ID4gZ3VhcmFudGVlIHRoYXQgYSBjaGlsZCBpcyBwcm9iZWQgYmVmb3JlIGl0cyBw
+YXJlbnQuCj4gPiA+ID4gPgo+ID4gPiA+ID4gRWFjaCBidXMgaXMgbm93IGFuIGludGVyY29ubmVj
+dCBwcm92aWRlciBhbmQgYW4gaW50ZXJjb25uZWN0IG5vZGUgYXMgd2VsbAo+ID4gPiA+ID4gKGNm
+LiBEb2N1bWVudGF0aW9uL2ludGVyY29ubmVjdC9pbnRlcmNvbm5lY3QucnN0KSwgaS5lLiBldmVy
+eSBidXMgcmVnaXN0ZXJzCj4gPiA+ID4gPiBpdHNlbGYgYXMgYSBub2RlLiBOb2RlIElEcyBhcmUg
+bm90IGhhcmRjb2RlZCBidXQgcmF0aGVyIGFzc2lnbmVkIGF0Cj4gPiA+ID4gPiBydW50aW1lLCBp
+biBwcm9iaW5nIG9yZGVyIChzdWJqZWN0IHRvIHRoZSBhYm92ZS1tZW50aW9uZWQgZXhjZXB0aW9u
+Cj4gPiA+ID4gPiByZWdhcmRpbmcgcmVsYXRpdmUgb3JkZXIpLiBUaGlzIGFwcHJvYWNoIGFsbG93
+cyBmb3IgdXNpbmcgdGhpcyBkcml2ZXIgd2l0aAo+ID4gPiA+ID4gdmFyaW91cyBFeHlub3MgU29D
+cy4KPiA+ID4gPiA+Cj4gPiA+ID4gPiBGcmVxdWVuY2llcyByZXF1ZXN0ZWQgdmlhIHRoZSBpbnRl
+cmNvbm5lY3QgQVBJIGZvciBhIGdpdmVuIG5vZGUgYXJlCj4gPiA+ID4gPiBwcm9wYWdhdGVkIHRv
+IGRldmZyZXEgdXNpbmcgZGV2X3BtX3Fvc191cGRhdGVfcmVxdWVzdCgpLiBQbGVhc2Ugbm90ZSB0
+aGF0Cj4gPiA+ID4gPiBpdCBpcyBub3QgYW4gZXJyb3Igd2hlbiBDT05GSUdfSU5URVJDT05ORUNU
+IGlzICduJywgaW4gd2hpY2ggY2FzZSBhbGwKPiA+ID4gPiA+IGludGVyY29ubmVjdCBBUEkgZnVu
+Y3Rpb25zIGFyZSBuby1vcC4KPiA+ID4gPiA+Cj4gPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBBcnR1
+ciDFmndpZ2/FhCA8YS5zd2lnb25AcGFydG5lci5zYW1zdW5nLmNvbT4KPiA+ID4gPiA+IC0tLQo+
+ID4gPiA+ID4gIGRyaXZlcnMvZGV2ZnJlcS9leHlub3MtYnVzLmMgfCAxNTMgKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKysrKysKPiA+ID4gPiA+ICAxIGZpbGUgY2hhbmdlZCwgMTUzIGlu
+c2VydGlvbnMoKykKPiA+ID4gPiA+Cj4gPiA+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9kZXZm
+cmVxL2V4eW5vcy1idXMuYyBiL2RyaXZlcnMvZGV2ZnJlcS9leHlub3MtYnVzLmMKPiA+ID4gPiA+
+IGluZGV4IDhkNDQ4MTBjYWM2OS4uZTAyMzIyMDI3MjBkIDEwMDY0NAo+ID4gPiA+ID4gLS0tIGEv
+ZHJpdmVycy9kZXZmcmVxL2V4eW5vcy1idXMuYwo+ID4gPiA+ID4gKysrIGIvZHJpdmVycy9kZXZm
+cmVxL2V4eW5vcy1idXMuYwo+ID4gPiA+ID4gQEAgLTE0LDE0ICsxNCwxOSBAQAo+ID4gPiA+ID4g
+ICNpbmNsdWRlIDxsaW51eC9kZXZmcmVxLWV2ZW50Lmg+Cj4gPiA+ID4gPiAgI2luY2x1ZGUgPGxp
+bnV4L2RldmljZS5oPgo+ID4gPiA+ID4gICNpbmNsdWRlIDxsaW51eC9leHBvcnQuaD4KPiA+ID4g
+PiA+ICsjaW5jbHVkZSA8bGludXgvaWRyLmg+Cj4gPiA+ID4gPiArI2luY2x1ZGUgPGxpbnV4L2lu
+dGVyY29ubmVjdC1wcm92aWRlci5oPgo+ID4gPiA+ID4gICNpbmNsdWRlIDxsaW51eC9tb2R1bGUu
+aD4KPiA+ID4gPiA+ICAjaW5jbHVkZSA8bGludXgvb2YuaD4KPiA+ID4gPiA+ICAjaW5jbHVkZSA8
+bGludXgvcG1fb3BwLmg+Cj4gPiA+ID4gPiArI2luY2x1ZGUgPGxpbnV4L3BtX3Fvcy5oPgo+ID4g
+PiA+ID4gICNpbmNsdWRlIDxsaW51eC9wbGF0Zm9ybV9kZXZpY2UuaD4KPiA+ID4gPiA+ICAjaW5j
+bHVkZSA8bGludXgvcmVndWxhdG9yL2NvbnN1bWVyLmg+Cj4gPiA+ID4gPgo+ID4gPiA+ID4gICNk
+ZWZpbmUgREVGQVVMVF9TQVRVUkFUSU9OX1JBVElPICAgNDAKPiA+ID4gPiA+Cj4gPiA+ID4gPiAr
+I2RlZmluZSBpY2NfdW5pdHNfdG9fa2h6KHgpICgoeCkgLyA4KQo+ID4gPiA+Cj4gPiA+ID4gaWNj
+X3VuaXRzX3RvX2toeigpIC0+IGtwYnNfdG9fa2h6KCkKPiA+ID4KPiA+ID4gT0sKPiA+ID4KPiA+
+ID4gPiA+ICsKPiA+ID4gPiA+ICBzdHJ1Y3QgZXh5bm9zX2J1cyB7Cj4gPiA+ID4gPiAgICAgc3Ry
+dWN0IGRldmljZSAqZGV2Owo+ID4gPiA+ID4KPiA+ID4gPiA+IEBAIC0zNSw2ICs0MCwxMiBAQCBz
+dHJ1Y3QgZXh5bm9zX2J1cyB7Cj4gPiA+ID4gPiAgICAgc3RydWN0IG9wcF90YWJsZSAqb3BwX3Rh
+YmxlOwo+ID4gPiA+ID4gICAgIHN0cnVjdCBjbGsgKmNsazsKPiA+ID4gPiA+ICAgICB1bnNpZ25l
+ZCBpbnQgcmF0aW87Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiArICAgLyogT25lIHByb3ZpZGVyIHBl
+ciBidXMsIG9uZSBub2RlIHBlciBwcm92aWRlciAqLwo+ID4gPiA+ID4gKyAgIHN0cnVjdCBpY2Nf
+cHJvdmlkZXIgcHJvdmlkZXI7Cj4gPiA+ID4gPiArICAgc3RydWN0IGljY19ub2RlICpub2RlOwo+
+ID4gPiA+ID4gKwo+ID4gPiA+ID4gKyAgIHN0cnVjdCBkZXZfcG1fcW9zX3JlcXVlc3QgcW9zX3Jl
+cTsKPiA+ID4gPiA+ICB9Owo+ID4gPiA+ID4KPiA+ID4gPiA+ICAvKgo+ID4gPiA+ID4gQEAgLTU5
+LDYgKzcwLDEzIEBAIGV4eW5vc19idXNfb3BzX2VkZXYoZW5hYmxlX2VkZXYpOwo+ID4gPiA+ID4g
+IGV4eW5vc19idXNfb3BzX2VkZXYoZGlzYWJsZV9lZGV2KTsKPiA+ID4gPiA+ICBleHlub3NfYnVz
+X29wc19lZGV2KHNldF9ldmVudCk7Cj4gPiA+ID4gPgo+ID4gPiA+ID4gK3N0YXRpYyBpbnQgZXh5
+bm9zX2J1c19uZXh0X2lkKHZvaWQpCj4gPiA+ID4gPiArewo+ID4gPiA+ID4gKyAgIHN0YXRpYyBE
+RUZJTkVfSURBKGV4eW5vc19idXNfaWNjX2lkYSk7Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiArICAg
+cmV0dXJuIGlkYV9hbGxvYygmZXh5bm9zX2J1c19pY2NfaWRhLCBHRlBfS0VSTkVMKTsKPiA+ID4g
+PiA+ICt9Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiAgc3RhdGljIGludCBleHlub3NfYnVzX2dldF9l
+dmVudChzdHJ1Y3QgZXh5bm9zX2J1cyAqYnVzLAo+ID4gPiA+ID4gICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIHN0cnVjdCBkZXZmcmVxX2V2ZW50X2RhdGEgKmVkYXRhKQo+ID4gPiA+ID4gIHsK
+PiA+ID4gPiA+IEBAIC0xNzEsNiArMTg5LDM4IEBAIHN0YXRpYyB2b2lkIGV4eW5vc19idXNfcGFz
+c2l2ZV9leGl0KHN0cnVjdCBkZXZpY2UgKmRldikKPiA+ID4gPiA+ICAgICBjbGtfZGlzYWJsZV91
+bnByZXBhcmUoYnVzLT5jbGspOwo+ID4gPiA+ID4gIH0KPiA+ID4gPiA+Cj4gPiA+ID4gPiArc3Rh
+dGljIGludCBleHlub3NfYnVzX2ljY19zZXQoc3RydWN0IGljY19ub2RlICpzcmMsIHN0cnVjdCBp
+Y2Nfbm9kZSAqZHN0KQo+ID4gPiA+ID4gK3sKPiA+ID4gPiA+ICsgICBzdHJ1Y3QgZXh5bm9zX2J1
+cyAqc3JjX2J1cyA9IHNyYy0+ZGF0YSwgKmRzdF9idXMgPSBkc3QtPmRhdGE7Cj4gPiA+ID4gPiAr
+ICAgczMyIHNyY19mcmVxID0gaWNjX3VuaXRzX3RvX2toeihzcmMtPmF2Z19idyk7Cj4gPiA+ID4g
+PiArICAgczMyIGRzdF9mcmVxID0gaWNjX3VuaXRzX3RvX2toeihkc3QtPmF2Z19idyk7Cj4gPiA+
+ID4gPiArCj4gPiA+ID4gPiArICAgZGV2X3BtX3Fvc191cGRhdGVfcmVxdWVzdCgmc3JjX2J1cy0+
+cW9zX3JlcSwgc3JjX2ZyZXEpOwo+ID4gPiA+Cj4gPiA+ID4gSGF2ZSB0byBjaGVjayB0aGUgcmV0
+dXJuIHZhbHVlLgo+ID4gPiA+IElmIHJldHVybiBlcnJvciwgc2hvdyB0aGUgd2FyaW5nIHdpdGgg
+ZGV2X3dhcm4uCj4gPiA+Cj4gPiA+IE9LLCBJIHdpbGwgY2hhbmdlIGl0IHRvOgo+ID4gPgo+ID4g
+PiByZXQgPSBkZXZfcG1fcW9zX3VwZGF0ZV9yZXF1ZXN0KCZzcmNfYnVzLT5xb3NfcmVxLCBzcmNf
+ZnJlcSk7Cj4gPiA+IGlmIChyZXQgPCAwKSB7Cj4gPiA+ICAgICAgICAgZGV2X3dhcm4oc3JjX2J1
+cy0+ZGV2LCAiZmFpbGVkIHRvIHVwZGF0ZSBQTSBRb1MgcmVxdWVzdCIpOwo+ID4gPiAgICAgICAg
+IHJldHVybiByZXQ7Cj4gPgo+ID4gSWYgeW91IHJldHVybiByaWdodCBhZnRlciwgYmV0dGVyIHRv
+IHVzZSBkZXZfZXJyLgo+ID4gSWYgeW91IHVzZSBkZXZfd2FybiwganVzdCBzaG93IHRoZSB3YXJu
+aW5nIG1lc3NhZ2Ugd2l0aG91dCByZXR1cm4uCj4KPiBPSywgSSB3aWxsIHVzZSBkZXZfZXJyKCku
+Cj4KPiA+ID4gfQo+ID4gPgo+ID4gPiA+ID4gKyAgIGRldl9wbV9xb3NfdXBkYXRlX3JlcXVlc3Qo
+JmRzdF9idXMtPnFvc19yZXEsIGRzdF9mcmVxKTsKPiA+ID4gPgo+ID4gPiA+IGRpdHRvLgo+ID4g
+Pgo+ID4gPiBPSyAoc2FtZSBhcyBhYm92ZSkuCj4gPgo+ID4gZGl0dG8uCj4gPgo+ID4gPgo+ID4g
+PiA+ID4gKwo+ID4gPiA+ID4gKyAgIHJldHVybiAwOwo+ID4gPiA+ID4gK30KPiA+ID4gPiA+ICsK
+PiA+ID4gPiA+ICtzdGF0aWMgaW50IGV4eW5vc19idXNfaWNjX2FnZ3JlZ2F0ZShzdHJ1Y3QgaWNj
+X25vZGUgKm5vZGUsIHUzMiB0YWcsIHUzMiBhdmdfYncsCj4gPiA+ID4gPiArICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgIHUzMiBwZWFrX2J3LCB1MzIgKmFnZ19hdmcsIHUzMiAqYWdnX3Bl
+YWspCj4gPiA+ID4gPiArewo+ID4gPiA+ID4gKyAgICphZ2dfYXZnICs9IGF2Z19idzsKPiA+ID4g
+PiA+ICsgICAqYWdnX3BlYWsgPSBtYXgoKmFnZ19wZWFrLCBwZWFrX2J3KTsKPiA+ID4gPiA+ICsK
+PiA+ID4gPiA+ICsgICByZXR1cm4gMDsKPiA+ID4gPiA+ICt9Cj4gPiA+ID4gPiArCj4gPiA+ID4g
+PiArc3RhdGljIHN0cnVjdCBpY2Nfbm9kZSAqZXh5bm9zX2J1c19pY2NfeGxhdGUoc3RydWN0IG9m
+X3BoYW5kbGVfYXJncyAqc3BlYywKPiA+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgdm9pZCAqZGF0YSkKPiA+ID4gPiA+ICt7Cj4gPiA+ID4gPiArICAgc3Ry
+dWN0IGV4eW5vc19idXMgKmJ1cyA9IGRhdGE7Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiArICAgaWYg
+KHNwZWMtPm5wICE9IGJ1cy0+ZGV2LT5vZl9ub2RlKQo+ID4gPiA+ID4gKyAgICAgICAgICAgcmV0
+dXJuIEVSUl9QVFIoLUVJTlZBTCk7Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiArICAgcmV0dXJuIGJ1
+cy0+bm9kZTsKPiA+ID4gPiA+ICt9Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiAgc3RhdGljIGludCBl
+eHlub3NfYnVzX3BhcmVudF9wYXJzZV9vZihzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wLAo+ID4gPiA+
+ID4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3RydWN0IGV4eW5vc19idXMg
+KmJ1cykKPiA+ID4gPiA+ICB7Cj4gPiA+ID4gPiBAQCAtMzY2LDYgKzQxNiwxMDEgQEAgc3RhdGlj
+IGludCBleHlub3NfYnVzX3Byb2ZpbGVfaW5pdF9wYXNzaXZlKHN0cnVjdCBleHlub3NfYnVzICpi
+dXMsCj4gPiA+ID4gPiAgICAgcmV0dXJuIDA7Cj4gPiA+ID4gPiAgfQo+ID4gPiA+ID4KPiA+ID4g
+PiA+ICtzdGF0aWMgaW50IGV4eW5vc19idXNfaWNjX2Nvbm5lY3Qoc3RydWN0IGV4eW5vc19idXMg
+KmJ1cykKPiA+ID4gPiA+ICt7Cj4gPiA+ID4gPiArICAgc3RydWN0IGRldmljZV9ub2RlICpucCA9
+IGJ1cy0+ZGV2LT5vZl9ub2RlOwo+ID4gPiA+ID4gKyAgIHN0cnVjdCBkZXZmcmVxICpwYXJlbnRf
+ZGV2ZnJlcTsKPiA+ID4gPiA+ICsgICBzdHJ1Y3QgaWNjX25vZGUgKnBhcmVudF9ub2RlID0gTlVM
+TDsKPiA+ID4gPiA+ICsgICBzdHJ1Y3Qgb2ZfcGhhbmRsZV9hcmdzIGFyZ3M7Cj4gPiA+ID4gPiAr
+ICAgaW50IHJldCA9IDA7Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiArICAgcGFyZW50X2RldmZyZXEg
+PSBkZXZmcmVxX2dldF9kZXZmcmVxX2J5X3BoYW5kbGUoYnVzLT5kZXYsIDApOwo+ID4gPiA+ID4g
+KyAgIGlmICghSVNfRVJSKHBhcmVudF9kZXZmcmVxKSkgewo+ID4gPiA+ID4gKyAgICAgICAgICAg
+c3RydWN0IGV4eW5vc19idXMgKnBhcmVudF9idXM7Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiArICAg
+ICAgICAgICBwYXJlbnRfYnVzID0gZGV2X2dldF9kcnZkYXRhKHBhcmVudF9kZXZmcmVxLT5kZXYu
+cGFyZW50KTsKPiA+ID4gPiA+ICsgICAgICAgICAgIHBhcmVudF9ub2RlID0gcGFyZW50X2J1cy0+
+bm9kZTsKPiA+ID4gPiA+ICsgICB9IGVsc2Ugewo+ID4gPiA+ID4gKyAgICAgICAgICAgLyogTG9v
+ayBmb3IgcGFyZW50IGluIERUICovCj4gPiA+ID4gPiArICAgICAgICAgICBpbnQgbnVtID0gb2Zf
+Y291bnRfcGhhbmRsZV93aXRoX2FyZ3MobnAsICJwYXJlbnQiLAo+ID4gPiA+ID4gKyAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICIjaW50ZXJjb25uZWN0LWNl
+bGxzIik7Cj4gPiA+ID4gPiArICAgICAgICAgICBpZiAobnVtICE9IDEpCj4gPiA+ID4gPiArICAg
+ICAgICAgICAgICAgICAgIGdvdG8gb3V0OyAvKiAncGFyZW50JyBpcyBvcHRpb25hbCAqLwo+ID4g
+PiA+ID4gKwo+ID4gPiA+ID4gKyAgICAgICAgICAgcmV0ID0gb2ZfcGFyc2VfcGhhbmRsZV93aXRo
+X2FyZ3MobnAsICJwYXJlbnQiLAo+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgIiNpbnRlcmNvbm5lY3QtY2VsbHMiLAo+ID4gPiA+ID4gKyAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMCwgJmFyZ3MpOwo+ID4gPiA+
+Cj4gPiA+ID4KPiA+ID4gPiBBY3R1YWxseSwgSSBhZ3JlZSB5b3VyIGFwcHJvYWNoLiBJIHRoaW5r
+IHRoYXQgaXQgaXMgdmVyeSB1c2VmdWwKPiA+ID4gPiBhbmQgbmVjZXNzYXJ5IHRvIGd1YXJhbnRl
+ZSB0aGUgUE0gUW9TIHJlcXVpcmVtZW50cyBiZXR3ZWVuIGRldmljZXMuCj4gPiA+ID4KPiA+ID4g
+PiBCdXQsCj4gPiA+ID4gQXMgSSBhbHJlYWR5IGNvbW1lbnRlZCwgSSdtIG5vdCBzdXJlIHRoYXQg
+dGhlICJwYXJlbnQiIHByb3BlcnR5Cj4gPiA+ID4gaXMgcHJvcGVyIGZvciBvbmx5IHRoaXMgZHJp
+dmVyLiBJZiBwb3NzaWJsZSwgeW91IGJldHRlciB0byBnZXQKPiA+ID4gPiB0aGUgcGFyZW50IHBo
+YW5kbGUgdGhyb3VnaCBvdGhlciB3YXkgbGlrZSBPRiBncmFwaC4KPiA+ID4gPgo+ID4gPiA+IElm
+IHlvdSBzdWdnZXN0IHRoZSBzdGFuZGFyZCB3YXkgdG8gbWFrZSB0aGUgdHJlZSBiZXR3ZWVuCj4g
+PiA+ID4gdGhlIGV4eW5vcy1idXMsIEknbGwgYWdyZWUuCj4gPiA+Cj4gPiA+IEFzIEkgY29tbWVu
+dGVkIGluIHRoZSBhbnN3ZXIgdG8gcGF0Y2ggMDgsIEkgd2lsbCB1c2UgdGhlCj4gPiA+ICdleHlu
+b3MsaW50ZXJjb25uZWN0LXBhcmVudC1ub2RlJyBwcm9wZXJ0eSBmb3IgYnVzX2Rpc3BsYXksCj4g
+PiA+IGJ1c19sZWZ0YnVzIGFuZCBidXNfZG1jLgo+ID4KPiA+IE9LLgo+ID4KPiA+ID4KPiA+ID4g
+PiBBbHNvLCBmb3IgaW50ZXJjb25uZWN0IHBhdGgsIHlvdSBoYXZlIHRvIGFkZCB0aGUgY29ubmVj
+dGlvbgo+ID4gPiA+IGJldHdlZW4gJ2J1c19kaXNwbGF5JyBhbmQgJ2J1c19sZWZ0YnVzJyByZWdh
+cmRsZXNzCj4gPiA+ID4gb2YgdGhlIGV4aXN0aW5nICdkZXZmcmVxJyBwcm9wZXJ0eS4KPiA+ID4g
+PiAtIGJ1c19kaXNwbGF5IC0gYnVzX2xlZnRidXMgLSBidXNfZG1jCj4gPiA+ID4KPiA+ID4gPiA+
+ICsgICAgICAgICAgIGlmIChyZXQgPCAwKQo+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICBn
+b3RvIG91dDsKPiA+ID4gPiA+ICsKPiA+ID4gPiA+ICsgICAgICAgICAgIG9mX25vZGVfcHV0KGFy
+Z3MubnApOwo+ID4gPiA+ID4gKwo+ID4gPiA+ID4gKyAgICAgICAgICAgcGFyZW50X25vZGUgPSBv
+Zl9pY2NfZ2V0X2Zyb21fcHJvdmlkZXIoJmFyZ3MpOwo+ID4gPiA+ID4gKyAgICAgICAgICAgaWYg
+KElTX0VSUihwYXJlbnRfbm9kZSkpIHsKPiA+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgLyog
+TWF5IGJlIC1FUFJPQkVfREVGRVIgKi8KPiA+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgcmV0
+ID0gUFRSX0VSUihwYXJlbnRfbm9kZSk7Cj4gPiA+ID4gPiArICAgICAgICAgICAgICAgICAgIGdv
+dG8gb3V0Owo+ID4gPiA+ID4gKyAgICAgICAgICAgfQo+ID4gPiA+ID4gKyAgIH0KPiA+ID4gPiA+
+ICsKPiA+ID4gPiA+ICsgICByZXQgPSBpY2NfbGlua19jcmVhdGUoYnVzLT5ub2RlLCBwYXJlbnRf
+bm9kZS0+aWQpOwo+ID4gPiA+ID4gKwo+ID4gPiA+ID4gK291dDoKPiA+ID4gPiA+ICsgICByZXR1
+cm4gcmV0Owo+ID4gPiA+ID4gK30KPiA+ID4gPiA+ICsKPiA+ID4gPiA+ICtzdGF0aWMgaW50IGV4
+eW5vc19idXNfaWNjX2luaXQoc3RydWN0IGV4eW5vc19idXMgKmJ1cykKPiA+ID4gPiA+ICt7Cj4g
+PiA+ID4gPiArICAgc3RydWN0IGRldmljZSAqZGV2ID0gYnVzLT5kZXY7Cj4gPiA+ID4gPiArICAg
+c3RydWN0IGljY19wcm92aWRlciAqcHJvdmlkZXIgPSAmYnVzLT5wcm92aWRlcjsKPiA+ID4gPiA+
+ICsgICBzdHJ1Y3QgaWNjX25vZGUgKm5vZGU7Cj4gPiA+ID4gPiArICAgaW50IGlkLCByZXQ7Cj4g
+PiA+ID4gPiArCj4gPiA+ID4gPiArICAgLyogSW5pdGlhbGl6ZSB0aGUgaW50ZXJjb25uZWN0IHBy
+b3ZpZGVyICovCj4gPiA+ID4gPiArICAgcHJvdmlkZXItPnNldCA9IGV4eW5vc19idXNfaWNjX3Nl
+dDsKPiA+ID4gPiA+ICsgICBwcm92aWRlci0+YWdncmVnYXRlID0gZXh5bm9zX2J1c19pY2NfYWdn
+cmVnYXRlOwo+ID4gPiA+ID4gKyAgIHByb3ZpZGVyLT54bGF0ZSA9IGV4eW5vc19idXNfaWNjX3hs
+YXRlOwo+ID4gPiA+ID4gKyAgIHByb3ZpZGVyLT5kZXYgPSBkZXY7Cj4gPiA+ID4gPiArICAgcHJv
+dmlkZXItPmRhdGEgPSBidXM7Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiArICAgcmV0ID0gaWNjX3By
+b3ZpZGVyX2FkZChwcm92aWRlcik7Cj4gPiA+ID4gPiArICAgaWYgKHJldCA8IDApCj4gPiA+ID4g
+PiArICAgICAgICAgICBnb3RvIG91dDsKPiA+ID4gPgo+ID4gPiA+IFJldHVybiBlcnJvciB3aXRo
+b3V0IGdvdG8gYmVjYXVzZSB0aGVyZSBpcyBubyBhbnkgcmVxdWlyZW1lbnQKPiA+ID4gPiB0byBm
+cmVlIHRoZSByZXNvdXJjZSBiZWZvcmUuCj4gPiA+Cj4gPiA+IE9LLgo+ID4gPgo+ID4gPiA+ID4g
+Kwo+ID4gPiA+ID4gKyAgIHJldCA9IGlkID0gZXh5bm9zX2J1c19uZXh0X2lkKCk7Cj4gPiA+ID4g
+PiArICAgaWYgKHJldCA8IDApCj4gPiA+ID4gPiArICAgICAgICAgICBnb3RvIGVycl9ub2RlOwo+
+ID4gPiA+ID4gKwo+ID4gPiA+ID4gKyAgIG5vZGUgPSBpY2Nfbm9kZV9jcmVhdGUoaWQpOwo+ID4g
+PiA+ID4gKyAgIGlmIChJU19FUlIobm9kZSkpIHsKPiA+ID4gPiA+ICsgICAgICAgICAgIHJldCA9
+IFBUUl9FUlIobm9kZSk7Cj4gPiA+ID4gPiArICAgICAgICAgICBnb3RvIGVycl9ub2RlOwo+ID4g
+PiA+ID4gKyAgIH0KPiA+ID4gPiA+ICsKPiA+ID4gPiA+ICsgICBidXMtPm5vZGUgPSBub2RlOwo+
+ID4gPiA+ID4gKyAgIG5vZGUtPm5hbWUgPSBkZXYtPm9mX25vZGUtPm5hbWU7Cj4gPiA+ID4gPiAr
+ICAgbm9kZS0+ZGF0YSA9IGJ1czsKPiA+ID4gPiA+ICsgICBpY2Nfbm9kZV9hZGQobm9kZSwgcHJv
+dmlkZXIpOwo+ID4gPiA+ID4gKwo+ID4gPiA+ID4gKyAgIHJldCA9IGV4eW5vc19idXNfaWNjX2Nv
+bm5lY3QoYnVzKTsKPiA+ID4gPiA+ICsgICBpZiAocmV0IDwgMCkKPiA+ID4gPiA+ICsgICAgICAg
+ICAgIGdvdG8gZXJyX2Nvbm5lY3Q7Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiArICAgcmV0ID0gZGV2
+X3BtX3Fvc19hZGRfcmVxdWVzdChidXMtPmRldmZyZXEtPmRldi5wYXJlbnQsICZidXMtPnFvc19y
+ZXEsCj4gPiA+ID4KPiA+ID4gPiBDaGVjayB3aGV0aGVyIHRoaXMgbGluZSBpcyBvdmVyIDgwIGNo
+YXIuCj4gPiA+Cj4gPiA+IEl0IGxvb2tzIGxpa2UgNzcgY29sdW1ucyB0byBtZS4KPiA+ID4KPiA+
+ID4gPgo+ID4gPiA+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgREVWX1BNX1FP
+U19NSU5fRlJFUVVFTkNZLCAwKTsKPiA+ID4gPgo+ID4gPiA+ICAgICAgIENoZWNrIHRoZSByZXR1
+cm4gdmFsdWUuCj4gPiA+Cj4gPiA+IE9LLgo+ID4gPgo+ID4gPiA+Cj4gPiA+ID4gPiArCj4gPiA+
+ID4gPiArb3V0Ogo+ID4gPiA+Cj4gPiA+ID4gUmVtb3ZlIHRoaXMgZ290byBkdWUgdG8gbm90IG5l
+Y2Vzc2FyeS4KPiA+ID4gPgo+ID4gPiA+ID4gKyAgIHJldHVybiByZXQ7Cj4gPiA+ID4KPiA+ID4g
+PiAgICAgICByZXR1cm4gMDsKPiA+ID4KPiA+ID4gT0suCj4gPiA+Cj4gPiA+IFBsZWFzZSBhbHNv
+IG5vdGUgdGhhdCB0aGlzIGZ1bmN0aW9uIGFzIHdlbGwgYXMgZXh5bm9zX2J1c19pY2NfY29ubmVj
+dCgpCj4gPiA+IHdpbGwKPiA+ID4gc2xpZ2h0bHkgY2hhbmdlIGluIHYzIGR1ZSB0byB0aGUgY2hh
+bmdlcyByZWdhcmRpbmcgRFQgcHJvcGVydGllcy4KPiA+ID4KPiA+ID4gPgo+ID4gPiA+ID4gKwo+
+ID4gPiA+ID4gK2Vycl9jb25uZWN0Ogo+ID4gPiA+ID4gKyAgIGljY19ub2RlX2RlbChub2RlKTsK
+PiA+ID4gPiA+ICsgICBpY2Nfbm9kZV9kZXN0cm95KGlkKTsKPiA+ID4gPiA+ICtlcnJfbm9kZToK
+PiA+ID4gPiA+ICsgICBpY2NfcHJvdmlkZXJfZGVsKHByb3ZpZGVyKTsKPiA+ID4gPiA+ICsKPiA+
+ID4gPiA+ICsgICByZXR1cm4gcmV0Owo+ID4gPiA+ID4gK30KPiA+ID4gPiA+ICsKPiA+ID4gPiA+
+ICBzdGF0aWMgaW50IGV4eW5vc19idXNfcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRl
+dikKPiA+ID4gPiA+ICB7Cj4gPiA+ID4gPiAgICAgc3RydWN0IGRldmljZSAqZGV2ID0gJnBkZXYt
+PmRldjsKPiA+ID4gPiA+IEBAIC00MTUsNiArNTYwLDE0IEBAIHN0YXRpYyBpbnQgZXh5bm9zX2J1
+c19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ID4gPiA+ID4gICAgIGlmIChy
+ZXQgPCAwKQo+ID4gPiA+ID4gICAgICAgICAgICAgZ290byBlcnI7Cj4gPiA+ID4gPgo+ID4gPiA+
+ID4gKyAgIC8qCj4gPiA+ID4gPiArICAgICogSW5pdGlhbGl6ZSBpbnRlcmNvbm5lY3QgcHJvdmlk
+ZXIuIEEgcmV0dXJuIHZhbHVlIG9mIC1FTk9UU1VQUCBtZWFucwo+ID4gPiA+ID4gKyAgICAqIHRo
+YXQgQ09ORklHX0lOVEVSQ09OTkVDVCBpcyBkaXNhYmxlZC4KPiA+ID4gPiA+ICsgICAgKi8KPiA+
+ID4gPiA+ICsgICByZXQgPSBleHlub3NfYnVzX2ljY19pbml0KGJ1cyk7Cj4gPiA+ID4gPiArICAg
+aWYgKHJldCA8IDAgJiYgcmV0ICE9IC1FTk9UU1VQUCkKPiA+ID4gPiA+ICsgICAgICAgICAgIGdv
+dG8gZXJyOwo+ID4gPiA+Cj4gPiA+ID4gUHJpbnQgZXJyb3IgbWVzc2FnZS4KPiA+ID4gPiAgICAg
+ICBkZXZfZXJyKGRldiwgImZhaWxlZCB0byBpbml0aWFsaXplIHRoZSBpbnRlcmNvbm5lY3QgcHJv
+dmlkZXIiKTsKPiA+ID4KPiA+ID4gT0suCj4gPiA+Cj4gPiA+ID4KPiA+ID4gPiA+ICsKPiA+ID4g
+PiA+ICAgICBtYXhfc3RhdGUgPSBidXMtPmRldmZyZXEtPnByb2ZpbGUtPm1heF9zdGF0ZTsKPiA+
+ID4gPiA+ICAgICBtaW5fZnJlcSA9IChidXMtPmRldmZyZXEtPnByb2ZpbGUtPmZyZXFfdGFibGVb
+MF0gLyAxMDAwKTsKPiA+ID4gPiA+ICAgICBtYXhfZnJlcSA9IChidXMtPmRldmZyZXEtPnByb2Zp
+bGUtPmZyZXFfdGFibGVbbWF4X3N0YXRlIC0gMV0gLyAxMDAwKTsKPiA+ID4gPiA+Cj4KPiAtLQo+
+IEFydHVyIMWad2lnb8WECj4gU2Ftc3VuZyBSJkQgSW5zdGl0dXRlIFBvbGFuZAo+IFNhbXN1bmcg
+RWxlY3Ryb25pY3MKPgo+CgoKLS0gCkJlc3QgUmVnYXJkcywKQ2hhbndvbyBDaG9pCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
