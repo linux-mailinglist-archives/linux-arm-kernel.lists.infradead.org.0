@@ -2,81 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14CD3125195
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 20:12:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B34A512524E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 20:50:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MbG1mxHhshbFnCed8feO4oZbMmwfJoPgg2V+haohVk4=; b=nQYoxi14sgk2eN
-	fJo3Xd1eUDPh6Um7kxyghSOkVs2TKOvKKsncEPWg4DLyz0IdU7npoe0gaRbw/1k61AFlSx7Su6s/b
-	srlFE0r8fEDoKBPkmLSwXodT9My6+Zy+r4SXFjTB6C4SuH7Y19JsN+Lb/kupBp4J0Q2QrE6pO8rV6
-	a/ks94XCBnwBcIW1JLWAFe5423ulT75O5tVDHn/7dfILUzxiFs9Yjm4uf0JweoKH/Filnw30YcLzD
-	i3Q+qW9dAgoBzpX24v+qBAuijUSX7aeYQ16hKuWk5knshAWh21qebqcdZAoqFEiRWIBwfGqGPQl7/
-	mICVRBvTUJ+kpn3hrBnQ==;
+	List-Owner; bh=b+hwgh7S7SS344ip2S+wkYBNTQldqxW18SMXBMO/9FU=; b=UH3yW/EW/XYjRY
+	vWgsV5gpaPZJyBMROumaRO/eCcrksPaXnbJXvDIxNWVW0zbnFTOQiYj4tpohMXsRAjNuXU6eb+3xp
+	4wgn9Xj9KjniEM85OhpTEdTY9USqrhCBO4TtRMaU2hFTOV9/N7lG7llInZlZLCFUDYII9wctHHhTg
+	hgxhHDjjN5JyVH2MdhSJRw1ut3PO5jR5zTEKB7cCTwem5ypMEAkKKtctbYCgqmkW9lY7Z2pla93Vs
+	Cm+UkW9c8OCSocHB50r8MmwzTxexY/Az8Ja212fhjNWm9kejsDpst7iPQ845eG1B5RChLjO5ffMXv
+	UaRwWXyIRYZxgHaqe00w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihekT-0002Lb-4H; Wed, 18 Dec 2019 19:12:41 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1ihfKp-0007Hg-9C; Wed, 18 Dec 2019 19:50:15 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iheip-0000tn-RB
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 19:11:01 +0000
-Received: by mail-pl1-x643.google.com with SMTP id z3so1395200plk.6
+ id 1ihfKX-0007Fo-67
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 19:49:58 +0000
+Received: by mail-il1-x144.google.com with SMTP id s15so2762168iln.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 11:10:59 -0800 (PST)
+ Wed, 18 Dec 2019 11:49:54 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=mkXpYcbeC0bnNO0q+6BYbbUdKRmj3eZu6k2PkyZZ+20=;
- b=XvGX60SydjoCIbJWbVf8oedrCs9uWiw2QPKF01BpC0G8IdFG7CMi3ix7ix2+K6CePR
- AlGHHxNcOxj8lgJf+aN+Y3gwpMR50dJThtKwZ4AuNpVxnIaaFfGV0oPsD+A8h23OHdV/
- qJcvS0JORLN0odGKH6Cuijn+Wa4kn3knxxn58=
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=D9XwghzJGJClOKGtXmrV+GeppqrxrwsjgYwMEk21AdA=;
+ b=Qb7QzufSW6yFp2/WPvKEXu37/g4K6DSsjdmhZkDc02nZH89rhMohYcZuBvEDa0zzmf
+ VLZHbn5ck1a6YFt6PPclAR/XxkSd6o7SXDQNWuz8INspjNSW8W1/FUtuCRU3kX6KlIXq
+ oWSDqkBG1IeJ32T5Kox7Xayi1guwGJzFlytgE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=mkXpYcbeC0bnNO0q+6BYbbUdKRmj3eZu6k2PkyZZ+20=;
- b=eEqmsxKuD+gNBMOB9hv7EtCRfJ3RjrpdxkHL7uMg0pEnAQbMVoGxvd7cLTnnyfBuxx
- wNAspmQPiDqJxsy2+Kb/Wls/Sp+9sPQWHQeOvCPC3L+N8qu4x/e/l5urupYQJu13tXh0
- k3QlhREABj2Y/sZfMt7vwX3Af7y2l5qw4u6wGQOT/lfVDjytm3JQHciXIzTvBJtB6jEp
- vaFk6xD+cXDL77GlqToHdCx9BoF8iTGXS+6mMKndTlXcU32YbEnKu4EVQylTILIRmPrG
- HYzWIz8aBb1SPx8OD9kea+QEpr+dlBPNs97u/v3U78AsU+mxAmx8ynvPDrHDkmaAhu8l
- RNYg==
-X-Gm-Message-State: APjAAAVyzJ4T1F59s/gClkdURlxBy36Q+ZRlGAjJavpagXW18z6RWm4m
- iWv9diAsEezhosvpcpXk/QfoYA==
-X-Google-Smtp-Source: APXvYqw3H7X1Ns8xx8UVOV2+PPAop8j4bBEeC7tvOStWErKhSESbS4Ue5fhisHGU2h9XRQElGFCMsg==
-X-Received: by 2002:a17:902:8501:: with SMTP id
- bj1mr4678564plb.84.1576696258260; 
- Wed, 18 Dec 2019 11:10:58 -0800 (PST)
-Received: from localhost.localdomain ([2405:201:c809:c7d5:78ea:e014:edb4:e862])
- by smtp.gmail.com with ESMTPSA id q7sm3745855pjd.3.2019.12.18.11.10.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 11:10:57 -0800 (PST)
-From: Jagan Teki <jagan@amarulasolutions.com>
-To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [DO NOT MERGE] [PATCH v13 7/7] arm64: dts: allwinner: bananapi-m64:
- Enable Bananapi S070WV20-CT16 DSI panel
-Date: Thu, 19 Dec 2019 00:40:17 +0530
-Message-Id: <20191218191017.2895-8-jagan@amarulasolutions.com>
-X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
-In-Reply-To: <20191218191017.2895-1-jagan@amarulasolutions.com>
-References: <20191218191017.2895-1-jagan@amarulasolutions.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=D9XwghzJGJClOKGtXmrV+GeppqrxrwsjgYwMEk21AdA=;
+ b=ELJdAwvKmVlzK0TYt3QYz+WxkAm9wK02TRic+GzDOdkSxptBpaDP065YLoMkcLL0gC
+ ke7v0wu5+2pBu+7V7PRkkSwJ3lKbjUkv9C7GutM4WYfqBQiBhmd+kxkMtFIdQmlJ5zeI
+ BeeY0lsZDHfwrn83NoMFtKboU3S4JBhZVjsWTtHFADNBCGlS8lK7mMj9WM61PH3d+xIH
+ dAGK+O3DW2DYe9v7gD/SEMwkMT5IINxctn2u2iZTG7PL1GsihFIAt4D8FxRA/lnLrC9Y
+ LvGTAAbmrtiGfQ3O1QnWhxEspjPTxB0PhNvnokjGTgGbT/puGKxsc4eojuJ2MVcjuNfY
+ UUwg==
+X-Gm-Message-State: APjAAAXemalK2G2aZw31qf6f2m6FkjwysI+UbbSrgVu7hZcQoyzTOOkg
+ /VWHptummZOYVuXf5Zvp/U+JSpGansJCwvpTOtYowg==
+X-Google-Smtp-Source: APXvYqxQciXY7zyuQqL2A13B86oOHS27uDnGdlJJMbZNIbK6SfDRvKWok7eA1VjcoE4HHXpvRoehkPkp23yVvCSkKkk=
+X-Received: by 2002:a92:3cd4:: with SMTP id j81mr3671622ilf.77.1576698593613; 
+ Wed, 18 Dec 2019 11:49:53 -0800 (PST)
 MIME-Version: 1.0
+References: <20191217080014.11756-1-akash@openedev.com>
+In-Reply-To: <20191217080014.11756-1-akash@openedev.com>
+From: Jagan Teki <jagan@amarulasolutions.com>
+Date: Thu, 19 Dec 2019 01:19:42 +0530
+Message-ID: <CAMty3ZC_Hk7=NeWJsCLwx5q2efkSDj3gBCBaT5_jGq8_aW43xA@mail.gmail.com>
+Subject: Re: [V2 1/1 PATCH] arm64: dts: rockchip: add ROCK Pi S DTS support
+To: Akash Gajjar <akash@openedev.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_111059_922728_5FC8BB77 
-X-CRM114-Status: GOOD (  12.26  )
+X-CRM114-CacheID: sfid-20191218_114957_227891_D1788874 
+X-CRM114-Status: GOOD (  19.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -98,97 +88,333 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-sunxi <linux-sunxi@googlegroups.com>,
- Jagan Teki <jagan@amarulasolutions.com>, michael@amarulasolutions.com,
- linux-amarula@amarulasolutions.com, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Douglas Anderson <dianders@chromium.org>,
+ =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, Tom Cubie <tom@radxa.com>,
+ Jagan Teki <jagan@openedev.com>, linux-kernel <linux-kernel@vger.kernel.org>,
+ Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Nick Xie <nick@khadas.com>, Andy Yan <andy.yan@rock-chips.com>,
+ Robin Murphy <robin.murphy@arm.com>, Matthias Kaehlcke <mka@chromium.org>,
+ Vivek Unune <npcomplete13@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch add support for Bananapi S070WV20-CT16 DSI panel to
-BPI-M64 board.
+On Tue, Dec 17, 2019 at 2:23 PM Akash Gajjar <akash@openedev.com> wrote:
+>
+> ROCK Pi S is RK3308 based SBC from radxa.com. ROCK Pi S has a,
+> - 256MB/512MB DDR3 RAM
+> - SD, NAND flash (optional on board 1/2/4/8Gb)
+> - 100MB ethernet, PoE (optional)
+> - Onboard 802.11 b/g/n wifi + Bluetooth 4.0 Module
+> - USB2.0 Type-A HOST x1
+> - USB3.0 Type-C OTG x1
+> - 26-pin expansion header
+> - USB Type-C DC 5V Power Supply
+>
+> This patch enables
+> - Console
+> - NAND Flash
+> - SD Card
+> - USB2.0
+>
+> Signed-off-by: Akash Gajjar <akash@openedev.com>
+> ---
+> Changes for v2
+> - Use pwm-supply for vdd_core node instead of vi-supply
+> - Add USB2.0 node support
+>
+>  .../devicetree/bindings/arm/rockchip.yaml     |   5 +
+>  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+>  .../boot/dts/rockchip/rk3308-rock-pi-S.dts    | 237 ++++++++++++++++++
+>  3 files changed, 243 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts
+>
+> diff --git a/Documentation/devicetree/bindings/arm/rockchip.yaml b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> index d9847b306b83..48d40c928d45 100644
+> --- a/Documentation/devicetree/bindings/arm/rockchip.yaml
+> +++ b/Documentation/devicetree/bindings/arm/rockchip.yaml
+> @@ -422,6 +422,11 @@ properties:
+>            - const: radxa,rockpi4
+>            - const: rockchip,rk3399
+>
+> +      - description: Radxa ROCK Pi S
+> +        items:
+> +          - const: radxa,rockpis
+> +          - const: rockchip,rk3308
+> +
+>        - description: Radxa Rock2 Square
+>          items:
+>            - const: radxa,rock2-square
+> diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
+> index 48fb631d5451..cc9e8c824980 100644
+> --- a/arch/arm64/boot/dts/rockchip/Makefile
+> +++ b/arch/arm64/boot/dts/rockchip/Makefile
+> @@ -2,6 +2,7 @@
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += px30-evb.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-evb.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-roc-cc.dtb
+> +dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3308-rock-pi-S.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-a1.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
+>  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts b/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts
+> new file mode 100644
+> index 000000000000..0afb24ec1cdf
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/rockchip/rk3308-rock-pi-S.dts
+> @@ -0,0 +1,237 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (c) 2019 Akash Gajjar <akash@openedev.com>
+> + * Copyright (c) 2019 Jagan Teki <jagan@openedev.com>
+> + */
+> +
+> +/dts-v1/;
+> +#include "rk3308.dtsi"
+> +
+> +/ {
+> +       model = "Radxa ROCK Pi S";
+> +       compatible = "radxa,rockpis", "rockchip,rk3308";
+> +
+> +       chosen {
+> +               stdout-path = "serial0:1500000n8";
+> +       };
+> +
+> +       leds {
+> +               compatible = "gpio-leds";
+> +               pinctrl-names = "default";
+> +               pinctrl-0 = <&green_led_gio>, <&heartbeat_led_gpio>;
+> +
+> +               green-led {
+> +                       label = "rockpis:green:power";
+> +                       gpios = <&gpio0 RK_PA6 GPIO_ACTIVE_HIGH>;
+> +                       linux,default-trigger = "default-on";
+> +                       default-state = "on";
+> +               };
+> +
+> +               blue-led {
+> +                       label = "rockpis:blue:user";
+> +                       gpios = <&gpio0 RK_PA5 GPIO_ACTIVE_HIGH>;
+> +                       default-state = "on";
+> +                       linux,default-trigger = "heartbeat";
+> +               };
+> +       };
+> +
+> +       sdio_pwrseq: sdio-pwrseq {
+> +               compatible = "mmc-pwrseq-simple";
+> +               pinctrl-names = "default";
+> +               pinctrl-0 = <&wifi_enable_h>;
+> +               reset-gpios = <&gpio0 RK_PA2 GPIO_ACTIVE_LOW>;
+> +       };
+> +
+> +       vcc5v0_sys: vcc5v0-sys {
+> +               compatible = "regulator-fixed";
+> +               regulator-name = "vcc5v0_sys";
+> +               regulator-always-on;
+> +               regulator-boot-on;
+> +               regulator-min-microvolt = <5000000>;
+> +               regulator-max-microvolt = <5000000>;
+> +       };
+> +
+> +       vdd_core: vdd-core {
+> +               compatible = "pwm-regulator";
+> +               pwms = <&pwm0 0 5000 1>;
+> +               regulator-name = "vdd_core";
+> +               regulator-min-microvolt = <827000>;
+> +               regulator-max-microvolt = <1340000>;
+> +               regulator-init-microvolt = <1015000>;
+> +               regulator-settling-time-up-us = <250>;
+> +               regulator-always-on;
+> +               regulator-boot-on;
+> +               pwm-supply = <&vcc5v0_sys>
 
-DSI panel connected via board DSI port with,
-- DLDO1 as VCC-DSI supply
-- DCDC1 as VDD supply
-- PD7 gpio for lcd enable pin
-- PD6 gpio for lcd reset pin
-- PD5 gpio for backlight enable pin
+Missing semi colon.
 
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
----
- .../dts/allwinner/sun50i-a64-bananapi-m64.dts | 31 +++++++++++++++++++
- 1 file changed, 31 insertions(+)
+> +       };
+> +
+> +       vdd_log: vdd-log {
+> +               compatible = "regulator-fixed";
+> +               regulator-name = "vdd_log";
+> +               regulator-always-on;
+> +               regulator-boot-on;
+> +               regulator-min-microvolt = <1050000>;
+> +               regulator-max-microvolt = <1050000>;
+> +               vin-supply = <&vcc5v0_sys>;
+> +       };
+> +
+> +       vcc_ddr: vcc-ddr {
+> +               compatible = "regulator-fixed";
+> +               regulator-name = "vcc_ddr";
+> +               regulator-always-on;
+> +               regulator-boot-on;
+> +               regulator-min-microvolt = <1500000>;
+> +               regulator-max-microvolt = <1500000>;
+> +               vin-supply = <&vcc5v0_sys>;
+> +       };
+> +
+> +       vcc_1v8: vcc-1v8 {
+> +               compatible = "regulator-fixed";
+> +               regulator-name = "vcc_1v8";
+> +               regulator-always-on;
+> +               regulator-boot-on;
+> +               regulator-min-microvolt = <1800000>;
+> +               regulator-max-microvolt = <1800000>;
+> +               vin-supply = <&vcc_io>;
+> +       };
+> +
+> +       vcc_io: vcc-io {
+> +               compatible = "regulator-fixed";
+> +               regulator-name = "vcc_io";
+> +               regulator-always-on;
+> +               regulator-boot-on;
+> +               regulator-min-microvolt = <3300000>;
+> +               regulator-max-microvolt = <3300000>;
+> +               vin-supply = <&vcc5v0_sys>;
+> +       };
+> +
+> +       vcc5v0_otg: vcc5v0-otg {
+> +               compatible = "regulator-fixed";
+> +               regulator-name = "vcc5v0_otg";
+> +               regulator-always-on;
+> +               gpio = <&gpio0 RK_PC5 GPIO_ACTIVE_HIGH>;
+> +               enable-active-high;
+> +               pinctrl-names = "default";
+> +               pinctrl-0 = <&otg_vbus_drv>;
+> +               vin-supply = <&vcc5v0_sys>;
+> +       };
+> +};
+> +
+> +&cpu0 {
+> +       cpu-supply = <&vdd_core>;
+> +};
+> +
+> +&emmc {
+> +       bus-width = <4>;
+> +       cap-mmc-highspeed;
+> +       mmc-hs200-1_8v;
+> +       supports-sd;
+> +       disable-wp;
+> +       non-removable;
+> +       num-slots = <1>;
+> +       vin-supply = <&vcc_io>;
+> +       status = "okay";
+> +};
+> +
+> +&i2c1 {
+> +       status = "okay";
+> +};
+> +
+> +&sdmmc {
+> +       bus-width = <4>;
+> +       cap-mmc-highspeed;
+> +       cap-sd-highspeed;
+> +       max-frequeency = <150000000>;
+> +       supports-sd;
+> +       disable-wp;
+> +       num-slots = <1>;
+> +       pinctrl-0 = <&sdmmc_clk &sdmmc_cmd &sdmmc_det &sdmmc_bus4>;
+> +       card-detect-delay = <800>;
+> +       status = "okay";
+> +};
+> +
+> +&spi2 {
+> +       status = "okay";
+> +       max-freq = <10000000>;
+> +};
+> +
+> +&pinctrl {
+> +       pinctrl-names = "default";
+> +       pinctrl-0 = <&rtc_32k>;
+> +
+> +       leds {
+> +               green_led_gio: green-led-gpio {
+> +                       rockchip,pins = <0 RK_PA6 RK_FUNC_GPIO &pcfg_pull_none>;
+> +               };
+> +
+> +               heartbeat_led_gpio: heartbeat-led-gpio {
+> +                       rockchip,pins = <0 RK_PA5 RK_FUNC_GPIO &pcfg_pull_none>;
+> +               };
+> +       };
+> +
+> +       usb {
+> +               otg_vbus_drv: otg-vbus-drv {
+> +                       rockchip,pins = <0 RK_PC5 RK_FUNC_GPIO &pcfg_pull_none>;
+> +               };
+> +       };
+> +
+> +       sdio-pwrseq {
+> +               wifi_enable_h: wifi-enable-h {
+> +                       rockchip,pins = <0 RK_PA2 RK_FUNC_GPIO &pcfg_pull_none>;
+> +               };
+> +
+> +               wifi_host_wake: wifi-host-wake {
+> +                       rockchip,pins = <0 RK_PA0 RK_FUNC_GPIO &pcfg_pull_down>;
+> +               };
+> +       };
+> +};
+> +
+> +&pwm0 {
+> +       status = "okay";
+> +       pinctrl-0 = <&pwm0_pin_pull_down>;
+> +};
+> +
+> +&saradc {
+> +       vref-supply = <&vcc_1v8>;
+> +       status = "okay";
+> +};
+> +
+> +&sdio {
+> +       #address-cells = <1>;
+> +       #size-cells = <0>;
+> +       bus-width = <4>;
+> +       max-frequency = <1000000>;
+> +       cap-sd-highspeed;
+> +       cap-sdio-irq;
+> +       supports-sdio;
+> +       keep-power-in-suspend;
+> +       mmc-pwrseq = <&sdio_pwrseq>;
+> +       non-removable;
+> +       sd-uhs-sdr104;
+> +       status = "okay";
+> +};
+> +
+> +&u2phy {
+> +       status = "okay";
+> +
+> +       u2phy_host: host-port {
+> +               status = "okay";
+> +       };
+> +};
+> +
+> +&uart0 {
+> +       status = "okay";
+> +};
+> +
+> +&uart4 {
+> +       pinctrl-names = "default";
+> +       pinctrl-0 = <&uart4_xfer &uart4_rts &uart4_cts>;
+> +       status = "okay";
+> +};
+> +
+> +&usb_host_ehci {
+> +       status = "okay";
+> +};
+> +
+> +&usb_host_ohci {
+> +       status = "okay";
+> +};
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-index 208373efee49..6beaecdd802a 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-bananapi-m64.dts
-@@ -45,6 +45,7 @@
- #include "sun50i-a64.dtsi"
- 
- #include <dt-bindings/gpio/gpio.h>
-+#include <dt-bindings/pwm/pwm.h>
- 
- / {
- 	model = "BananaPi-M64";
-@@ -56,6 +57,14 @@
- 		serial1 = &uart1;
- 	};
- 
-+	backlight: backlight {
-+		compatible = "pwm-backlight";
-+		pwms = <&r_pwm 0 50000 PWM_POLARITY_INVERTED>;
-+		brightness-levels = <1 2 4 8 16 32 64 128 255>;
-+		default-brightness-level = <2>;
-+		enable-gpios = <&pio 3 5 GPIO_ACTIVE_HIGH>; /* LCD-BL-EN: PD5 */
-+	};
-+
- 	chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
-@@ -116,6 +125,24 @@
- 	status = "okay";
- };
- 
-+&dphy {
-+	status = "okay";
-+};
-+
-+&dsi {
-+	vcc-dsi-supply = <&reg_dldo1>;		/* VCC3V3-DSI */
-+	status = "okay";
-+
-+	panel@0 {
-+		compatible = "bananapi,s070wv20-ct16-icn6211";
-+		reg = <0>;
-+		enable-gpios = <&pio 3 7 GPIO_ACTIVE_HIGH>; /* LCD-PWR-EN: PD7 */
-+		reset-gpios = <&pio 3 6 GPIO_ACTIVE_HIGH>; /* LCD-RST: PD6 */
-+		vdd-supply = <&reg_dcdc1>;
-+		backlight = <&backlight>;
-+	};
-+};
-+
- &ehci0 {
- 	status = "okay";
- };
-@@ -206,6 +233,10 @@
- 	status = "okay";
- };
- 
-+&r_pwm {
-+	status = "okay";
-+};
-+
- &r_rsb {
- 	status = "okay";
- 
--- 
-2.18.0.321.gffc6fa0e3
+Drop these usb nodes for initial support since these are still not
+available in dsti.
 
+Also use small S on dts file name.
 
 _______________________________________________
 linux-arm-kernel mailing list
