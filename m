@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3516124CC6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:09:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F5B2124CCB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 17:10:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vZN8qt+4fpPRSaK0MeTT4wCgqQlwFUvrI180oM22giI=; b=sXHPQCinV95avQ
-	WB5CR4VY0yMuzjcw4iJ4363VlBLbiiIUhxS8rlZNOFUb8garnpAU8kAx8b9jwp+OvSIhcfixrAGNk
-	cfK8cqMuAW2ZfffCZepb6dFLsAtHitPYBeC6Add7qCqRjVMjdxK6FuHBDehTi0yNhDz2L10dDU8zY
-	qnlrQI9f1ZMxm3l2/gTsYJ2x2VXclBGhvs1mli6DEhLu0D7LxvVMJqRky3y0k6Dh5wu7aflEQOzW4
-	jFXrDFSPhNDbSe+zMMbEpuweBFg2Z4Wf+cJ2HxfpRXewt1imFvGGu1jqAmB68x2VXvvMLS8JftSw7
-	Vf+tP0Qj4GdWYQ5X1GFQ==;
+	List-Owner; bh=AKLKFMZyKcE8hQwwpLkJ0tVsHUvDcYqzu39/BXURq/8=; b=jZgGXpVJIJRZNU
+	AaHvMAVSJe62qFHhKvIEeaJoJpuDJzRc/CdIQHKOa7NXLjmfNNe8/cy+9OiZ16K9fJ9tDg6hQ47YP
+	IISBBS4a3sbeTqX60KxGjbZr7mEBuYKTIQBFhv03NrIrrWZFtGRrRXeIT2AeT5A1vt9XMprnnAQrI
+	djsamzf7YtSobjWySWzciWwWjqNr5LZJlDD6XpLGIwih7byT6eSOEVNNliojJ2HHjLX+gqu33negm
+	oQ45X6d9m/CgZDYy9Di09gMtO4tWo24mID+rzCkFBqIZx/4xeIdJHdA30QHAsSao5OhqS5ALhmpZ1
+	DYMa/9RReP1/eG+VHc1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihbsd-0000DW-DA; Wed, 18 Dec 2019 16:08:55 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1ihbuQ-0001kR-Av; Wed, 18 Dec 2019 16:10:46 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihbsP-0000D4-Eb
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 16:08:42 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 20so2393637wmj.4
+ id 1ihbuD-0001jq-ML
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 16:10:35 +0000
+Received: by mail-wr1-x442.google.com with SMTP id y11so2907172wrt.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 08:08:41 -0800 (PST)
+ Wed, 18 Dec 2019 08:10:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=o5X12+OnlTrR6hQB7btD1TwyQhH770WeXItNc7qt5zA=;
- b=vGdwPfRl1Ha9VhwGDZb29pGKHmrCLBjEh/aU/lWfjiA+Es/jr7ZphzP4HzPPmjTJx+
- JSehVhXPNzXdOHN1KvgmcYfeFj+EOqqLkQfTn7w+aSzsmY9sA/Phabc6P4xORTt9/1CX
- ZeJvajjFb7Aa2pPQS2rmj8CC2WfmH3g8R6Icy6BCtWh0myJTrzSd94GfQGUovkp6jd2B
- rT+HoiZRDI9Poe0mNpRZQO9dQfwLmHSchdxzCs4OzzEO+QNZJtdaxkDjf9S6U0pGGXCC
- uBxrbddT9q0O1xSpIKLYhBMvxSFqGMIVi9YEcXDMHetlYODSFxx8S1+dGvzAMam0zV9q
- MZyA==
+ bh=c8CBYJotaME8s7Ii/JzatZyff2J7fay7KXQVz82AJFg=;
+ b=Sxy90pGkAdWmS2Fgg1g9dDmRYM88EKGHw+3sHdVzrc/jXY1im07pY4qUv1tGNMFQQk
+ IcekmR8ZcC3tFNKeEjDAkEGo31sQzuifBkI1yTZSgyo4SKdsyJsWbVwWFYGXwlPpAkhx
+ XRuhpq4pljIs7U5JvYnTtLM4nZitTnXapzCw5DQHNgB6SeKoZJeGkQ1klqygxkp7+RpW
+ WjEwhJC4iCG1aEKCSznQiMBQpuy+m+bSMgY28JLRnV8cBMrn15RqbaEHWG6RiNnqDhbN
+ nih4Ob9CXvxvj259j4M6yjk+0zriLR+qz1v/rwXtQ0kpWi6stqyzl02mE7nywETjkOB5
+ IjbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=o5X12+OnlTrR6hQB7btD1TwyQhH770WeXItNc7qt5zA=;
- b=tLNsagelgBSHGo8mKhdzchL5z0jxpEy5pdVFCN7UlYpsmtFjJNlKeGJyvGFhGk30r6
- cqp/30fesnQxFAVisoq//X44sQOlYNXorN6FEgFinaDfATpAPy1nlQ88PRGlauvkGkoo
- 3zYL17RJMg8VySSVlLP7oNIFLUXV2M0wiRN8N7yyuOTLt/ArWQmYHaqV574PRWLVbuCu
- q+dVugWpmsIZJGN1rSlO8fpiqrSqVgaGnFJdnyaPbmN5ucHhPaAStwNZ5iPtYky5mHQV
- EpGxnhkObSyZ/mDQ5dDzgkudOsFuGzOEBWFxfyfay2dxF1gT8BqsxhEweFyLvgpCNzga
- XMFw==
-X-Gm-Message-State: APjAAAW1nfsS5mlOL8IibdMtXelpaNU8dFWhj2eX42lQI4C3PtHXTCrm
- m5m1teZwPP1bp12VmivqbN7VlshSI2k=
-X-Google-Smtp-Source: APXvYqzGNVeQ/R7JR9UNdXnpKZSm9sCG7ntxjETJuNIvtVXZ9l8S+gdw6OnN9egWqIdDF5D4ZyEZUA==
-X-Received: by 2002:a05:600c:22c8:: with SMTP id
- 8mr3940980wmg.178.1576685320145; 
- Wed, 18 Dec 2019 08:08:40 -0800 (PST)
+ bh=c8CBYJotaME8s7Ii/JzatZyff2J7fay7KXQVz82AJFg=;
+ b=j75fbBSkQuT3HO8N+ZilgNsk5j7mz2CXhGWfmp+rR3a5hmSRxSScFUzocOn2QgDIcR
+ a+8AUXzYZ38b+vH0XoVwO8HofFyEQavtOl1sbqQM5SJLncRhLT/9IHnKtUzz/GPWcJJu
+ v0UXj4eg+JmM32z97WRyCxoDwySlNBFWr3gLGFRQoAWuAMUdLoxvzeZ6TEpMaY6MvpD4
+ 9Sn4Dqri5/qzDzXBSLalyXJ8cO2jQ6fb86q/zlxhL3lSZT5kRRONs4yPjaxek9Tk8fH2
+ JJUlmEUyMSRN5vMuK0w+9NobB7OBz+XMGay3ubTj6dzml/9mGLZgnirjEx267DsX1V5X
+ BQlw==
+X-Gm-Message-State: APjAAAVAF3nySk63oWhlxelwTpmS++pEADsRI9ayWIJ6lSoVJxD8oX0w
+ KRIoigos8X943d0Q3eQneHiGCA==
+X-Google-Smtp-Source: APXvYqzsaGjamve7e+ufvEcnCPaUD5lFGwfiwdLCMRmGmU/OQUapuquuTDlM74GkdPYUKGdDnOKsEA==
+X-Received: by 2002:a5d:4e90:: with SMTP id e16mr3895866wru.318.1576685432128; 
+ Wed, 18 Dec 2019 08:10:32 -0800 (PST)
 Received: from myrica (adsl-84-227-176-239.adslplus.ch. [84.227.176.239])
- by smtp.gmail.com with ESMTPSA id c5sm2949884wmb.9.2019.12.18.08.08.38
+ by smtp.gmail.com with ESMTPSA id 60sm3115391wrn.86.2019.12.18.08.10.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 08:08:39 -0800 (PST)
-Date: Wed, 18 Dec 2019 17:08:34 +0100
+ Wed, 18 Dec 2019 08:10:31 -0800 (PST)
+Date: Wed, 18 Dec 2019 17:10:26 +0100
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: Auger Eric <eric.auger@redhat.com>
-Subject: Re: [PATCH v3 08/13] iommu/arm-smmu-v3: Propate ssid_bits
-Message-ID: <20191218160834.GG2371701@myrica>
+Subject: Re: [PATCH v3 10/13] iommu/arm-smmu-v3: Add second level of context
+ descriptor table
+Message-ID: <20191218161026.GH2371701@myrica>
 References: <20191209180514.272727-1-jean-philippe@linaro.org>
- <20191209180514.272727-9-jean-philippe@linaro.org>
- <466bbc57-79d4-274c-67bc-4ed591da9968@redhat.com>
+ <20191209180514.272727-11-jean-philippe@linaro.org>
+ <26230082-03d2-5c01-389a-9e32dd281b57@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <466bbc57-79d4-274c-67bc-4ed591da9968@redhat.com>
+In-Reply-To: <26230082-03d2-5c01-389a-9e32dd281b57@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_080841_493444_95B13E1A 
-X-CRM114-Status: GOOD (  14.16  )
+X-CRM114-CacheID: sfid-20191218_081033_795740_5B001416 
+X-CRM114-Status: GOOD (  17.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,30 +111,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 17, 2019 at 06:07:26PM +0100, Auger Eric wrote:
-> Hi Jean,
-> 
-> On 12/9/19 7:05 PM, Jean-Philippe Brucker wrote:
-> 
-> s/Propate/Propagate in the commit title.
-> > Now that we support substream IDs, initialize s1cdmax with the number of
-> > SSID bits supported by a master and the SMMU.
-> > 
-> > Context descriptor tables are allocated once for the first master
-> > attached to a domain. Therefore attaching multiple devices with
-> > different SSID sizes is tricky, and we currently don't support it.
-> > 
-> > As a future improvement it would be nice to at least support attaching a
-> > SSID-capable device to a domain that isn't using SSID, by reallocating
-> > the SSID table.
-> Isn't that use case relevant (I mean using both devices in a non SSID
-> use case). For platform devices you can work this around with FW but for
-> PCI devices?
+On Wed, Dec 18, 2019 at 10:59:36AM +0100, Auger Eric wrote:
+> >  struct arm_smmu_s1_cfg {
+> > -	struct arm_smmu_cd_table	table;
+> > +	struct arm_smmu_cd_table	*tables;
+> > +	size_t				num_tables;
+> > +	__le64				*l1ptr;
+> you may add a comment saying that l1ptr and l1ptr_dma are only set/used
+> in non linear case and one comment saying that "tables" represent leaf
+> tables.
 
-Normally each device gets its own domain. Especially since PASID is a PCI
-Express capability, I expect them to be properly isolated with ACS, each
-with its own IOMMU group. So I don't think this is too relevant for the
-moment, it would be a quirk for a broken system.
+I now have
+	/* Leaf tables or linear table */
+and
+	/* First level tables, when two level are used */
+but I'm not entirely convinced it adds value
+
+> > +	dma_addr_t			l1ptr_dma;
+> >  	struct arm_smmu_ctx_desc	cd;
+> >  	u8				s1fmt;
+> >  	u8				s1cdmax;
+> > @@ -1521,9 +1538,53 @@ static void arm_smmu_free_cd_leaf_table(struct arm_smmu_device *smmu,
+> >  {
+> >  	size_t size = num_entries * (CTXDESC_CD_DWORDS << 3);
+> >  
+> > +	if (!table->ptr)
+> > +		return;
+> >  	dmam_free_coherent(smmu->dev, size, table->ptr, table->ptr_dma);
+> >  }
+> >  
+> > +static void arm_smmu_write_cd_l1_desc(__le64 *dst,
+> > +				      struct arm_smmu_cd_table *table)
+> > +{
+> > +	u64 val = (table->ptr_dma & CTXDESC_L1_DESC_L2PTR_MASK) |
+> > +		  CTXDESC_L1_DESC_VALID;
+> > +
+> > +	WRITE_ONCE(*dst, cpu_to_le64(val));
+> > +}
+> > +
+> > +static __le64 *arm_smmu_get_cd_ptr(struct arm_smmu_domain *smmu_domain,
+> > +				   u32 ssid)
+> > +{
+> > +	__le64 *l1ptr;
+> > +	unsigned int idx;
+> > +	struct arm_smmu_cd_table *table;
+> > +	struct arm_smmu_device *smmu = smmu_domain->smmu;
+> > +	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
+> > +
+> > +	if (cfg->s1fmt == STRTAB_STE_0_S1FMT_LINEAR) {
+> > +		table = &cfg->tables[0];
+> > +		idx = ssid;
+> > +	} else {
+> nit: you may avoid this extra indent by either returning above or go to
+> a label.
+> > +		idx = ssid >> CTXDESC_SPLIT;
+> > +		if (idx >= cfg->num_tables)
+> > +			return NULL;
+> > +
+> > +		table = &cfg->tables[idx];
+> > +		if (!table->ptr) {
+> > +			if (arm_smmu_alloc_cd_leaf_table(smmu, table,
+> > +							 CTXDESC_L2_ENTRIES))
+> > +				return NULL;
+> > +
+> > +			l1ptr = cfg->l1ptr + idx * CTXDESC_L1_DESC_DWORDS;
+> > +			arm_smmu_write_cd_l1_desc(l1ptr, table);
+> > +			/* An invalid L1CD can be cached */
+> > +			arm_smmu_sync_cd(smmu_domain, ssid, false);
+> > +		}
+> > +		idx = ssid & (CTXDESC_L2_ENTRIES - 1);
+> > +	}
+> > +	return table->ptr + idx * CTXDESC_CD_DWORDS;> +}
+> > +
+> >  static u64 arm_smmu_cpu_tcr_to_cd(u64 tcr)
+> >  {
+> >  	u64 val = 0;
+> > @@ -1556,8 +1617,10 @@ static int arm_smmu_write_ctx_desc(struct arm_smmu_domain *smmu_domain,
+> >  	u64 val;
+> >  	bool cd_live;
+> >  	struct arm_smmu_device *smmu = smmu_domain->smmu;
+> > -	__le64 *cdptr = smmu_domain->s1_cfg.table.ptr + ssid *
+> > -			CTXDESC_CD_DWORDS;
+> > +	__le64 *cdptr = arm_smmu_get_cd_ptr(smmu_domain, ssid);
+> > +
+> > +	if (!cdptr)
+> > +		return -ENOMEM;
+> -ENOMEM does not fit well with (idx >= cfg->num_tables) case
+> Besides the idx is checked against the max table capacity only in non
+> linear mode. Can't you check the ssid against cfg->s1cdmax earlier?
+
+Ok, I'll move that check here
 
 Thanks,
 Jean
