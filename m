@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A997125627
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:02:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8ADA3125629
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:02:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V25eRcRDKMvSW49u3J7YH5Q/r/bnHSclmpfajE2WxJc=; b=Y22wCx59FkzMS4
-	TwSLPIjD7KPyNa1XsuF37wGyn5fhfGp0h1m55vz6qQkn6m9dDp+Vu6UyOH9JGkqwedkU1uWQvb0L1
-	qyhniS5XeYbLGsIZRRwE4R5MGmN9pDpsl0pTWKiHIYdrTSSyfDdIE/yGxsbABZm5LBVnLcTljCffl
-	0bGfStlHUVUAIGE1i39sLGeXFppu0pc0sJjpC0mFMshrTI5tcMlLOMfVfBbAIJI3DQGm77VpOy1QZ
-	2QRHa3u13QHPpLZHvLx6uhmttW93C8iEaQEtZ8Bp/YDbCku0FDnNOEWaTdpK5wyf/Tepvp3ODSrYX
-	VQFSKyPUJwQW9AUnn1MQ==;
+	List-Owner; bh=8OK/QZz3DyhVJe63yemtO73zYEASeDRuCFHktUkVp38=; b=vBZowd7rENlMRG
+	Qxk0ycbKQbnFiDmfvSVKre3kh+cGWWvOE/Kxp0igLhIfMQZMTjEAKMReHRjAEGidR16fSYlw0L/kE
+	aBT8WtE2nAhpk6EDXCELQ5cI32/OGo6fz6Uf5bUybS517Ge8QPjDz+EfXV4JNrfB+BmJ5n5DwKTQ4
+	IO0apUemyon17GeevD6+M4OrYWbfy9Eo1P1Ye/CSACO5soYJylKrOJk7vYnjEnKRkSTe7Lr64K2ra
+	0nFcUoz762o1IbcsqlPsVY1Bi1BPlNfN5+lJLpxhUs44TOg9/TQGfS9WuXWXEvopofuoHslG4ZS3D
+	LHnhc62JBghY2wDhyF6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihhOe-0003On-SN; Wed, 18 Dec 2019 22:02:20 +0000
+	id 1ihhP7-0003pB-74; Wed, 18 Dec 2019 22:02:49 +0000
 Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihhIN-0004yV-EA
+ id 1ihhIO-00059X-3w
  for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 21:55:53 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
@@ -29,24 +29,24 @@ Received: from fmsmga001.fm.intel.com ([10.253.24.23])
  by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  18 Dec 2019 13:55:42 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108099"
+X-IronPort-AV: E=Sophos;i="5.69,330,1571727600"; d="scan'208";a="222108102"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
- by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:41 -0800
+ by fmsmga001.fm.intel.com with ESMTP; 18 Dec 2019 13:55:42 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Marc Zyngier <maz@kernel.org>, James Hogan <jhogan@kernel.org>,
  Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH v2 21/45] KVM: x86: Remove spurious clearing of async #PF MSR
-Date: Wed, 18 Dec 2019 13:55:06 -0800
-Message-Id: <20191218215530.2280-22-sean.j.christopherson@intel.com>
+Subject: [PATCH v2 22/45] KVM: x86: Drop kvm_arch_vcpu_free()
+Date: Wed, 18 Dec 2019 13:55:07 -0800
+Message-Id: <20191218215530.2280-23-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_135551_557490_6AD27382 
-X-CRM114-Status: GOOD (  10.53  )
+X-CRM114-CacheID: sfid-20191218_135552_209247_27F0339B 
+X-CRM114-Status: GOOD (  10.39  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -85,37 +85,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove a bogus clearing of apf.msr_val from kvm_arch_vcpu_destroy().
+Remove the superfluous kvm_arch_vcpu_free() as it is no longer called
+from commmon KVM code.  Note, kvm_arch_vcpu_destroy() *is* called from
+common code, i.e. choosing which function to whack is not completely
+arbitrary.
 
-apf.msr_val is only set to a non-zero value by kvm_pv_enable_async_pf(),
-which is only reachable by kvm_set_msr_common(), i.e. by writing
-MSR_KVM_ASYNC_PF_EN.  KVM does not autonomously write said MSR, i.e.
-can only be written via KVM_SET_MSRS or KVM_RUN.  Since KVM_SET_MSRS and
-KVM_RUN are vcpu ioctls, they require a valid vcpu file descriptor.
-kvm_arch_vcpu_destroy() is only called if KVM_CREATE_VCPU fails, and KVM
-declares KVM_CREATE_VCPU successful once the vcpu fd is installed and
-thus visible to userspace.  Ergo, apf.msr_val cannot be non-zero when
-kvm_arch_vcpu_destroy() is called.
-
-Fixes: 344d9588a9df0 ("KVM: Add PV MSR to enable asynchronous page faults delivery.")
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/x86/kvm/x86.c | 2 --
- 1 file changed, 2 deletions(-)
+ arch/x86/kvm/x86.c | 27 +++++++++++----------------
+ 1 file changed, 11 insertions(+), 16 deletions(-)
 
 diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
-index 19c14b786255..46626b52a4da 100644
+index 46626b52a4da..cf35169733cd 100644
 --- a/arch/x86/kvm/x86.c
 +++ b/arch/x86/kvm/x86.c
-@@ -9176,8 +9176,6 @@ void kvm_arch_vcpu_postcreate(struct kvm_vcpu *vcpu)
+@@ -9089,20 +9089,6 @@ static void fx_init(struct kvm_vcpu *vcpu)
+ 	vcpu->arch.cr0 |= X86_CR0_ET;
+ }
+ 
+-void kvm_arch_vcpu_free(struct kvm_vcpu *vcpu)
+-{
+-	kvmclock_reset(vcpu);
+-
+-	kvm_x86_ops->vcpu_free(vcpu);
+-
+-	kvm_vcpu_uninit(vcpu);
+-
+-	free_cpumask_var(vcpu->arch.wbinvd_dirty_mask);
+-	kmem_cache_free(x86_fpu_cache, vcpu->arch.user_fpu);
+-	kmem_cache_free(x86_fpu_cache, vcpu->arch.guest_fpu);
+-	kmem_cache_free(kvm_vcpu_cache, vcpu);
+-}
+-
+ struct kvm_vcpu *kvm_arch_vcpu_create(struct kvm *kvm,
+ 						unsigned int id)
+ {
+@@ -9176,7 +9162,16 @@ void kvm_arch_vcpu_postcreate(struct kvm_vcpu *vcpu)
  
  void kvm_arch_vcpu_destroy(struct kvm_vcpu *vcpu)
  {
--	vcpu->arch.apf.msr_val = 0;
--
- 	kvm_arch_vcpu_free(vcpu);
+-	kvm_arch_vcpu_free(vcpu);
++	kvmclock_reset(vcpu);
++
++	kvm_x86_ops->vcpu_free(vcpu);
++
++	kvm_vcpu_uninit(vcpu);
++
++	free_cpumask_var(vcpu->arch.wbinvd_dirty_mask);
++	kmem_cache_free(x86_fpu_cache, vcpu->arch.user_fpu);
++	kmem_cache_free(x86_fpu_cache, vcpu->arch.guest_fpu);
++	kmem_cache_free(kvm_vcpu_cache, vcpu);
  }
  
+ void kvm_vcpu_reset(struct kvm_vcpu *vcpu, bool init_event)
+@@ -9591,7 +9586,7 @@ static void kvm_free_vcpus(struct kvm *kvm)
+ 		kvm_unload_vcpu_mmu(vcpu);
+ 	}
+ 	kvm_for_each_vcpu(i, vcpu, kvm)
+-		kvm_arch_vcpu_free(vcpu);
++		kvm_arch_vcpu_destroy(vcpu);
+ 
+ 	mutex_lock(&kvm->lock);
+ 	for (i = 0; i < atomic_read(&kvm->online_vcpus); i++)
 -- 
 2.24.1
 
