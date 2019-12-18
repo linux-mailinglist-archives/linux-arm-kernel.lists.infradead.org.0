@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 296F41248AB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 14:43:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E3D71248AC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 14:43:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DHMG972SU1DgPLAoGan81+Nkqb6wpzPa/ep5zzV5d58=; b=GMcZb3PG7812an
-	XVtSmPP94WJ16qc3IVPYnYMO0OgtwdZCmaP7Nnnehssn+5YrRE4SdaELwmI59MI9vg3XEIw3wcBbS
-	rUg9lS/duadNFM4NZKrHbRG+vdd+KGJJrTkPQTLEpWQEHT+usRMwHPYnJajQtUCIf57NVm/fuTrbH
-	7pzMY0l27u2kKG79w+GDi02proBAHMMC5noO2n0caMo5uDlbGRAteN88F7WHctThI6jNiBdLG10gB
-	E2xIFqXaPRT+2W1dwkzBl28I3ZcqzBnC+MLbn/Gm6OOFatAAvI2pcJuAsh915fcqcxE7WLYvOKqnV
-	uFB68uyZhn+hS4oKviXA==;
+	List-Owner; bh=l03jh9p2Yqve8uLDS1aMM/AcoG8JQZ9lw4dr+sRbVsc=; b=CR2KmgV19J1MNp
+	JNiQhenOyKZP8FK2vm2fhP7bCJu8Hxg/6IN/ZOklXNmiTbap4LbMOd2bQTCCmP8HRzhI8wJelzNgo
+	X2mvDvjHaU6F8EcwOkyZZzEuq78nU506aZD0IpnMscELfjRmsI5d30qGZ9tEHXwl2BxtFSQuQ4ffz
+	R+v/Sag2L/FBcuPYR56FriANCBcvpCoNV+hFbthdwjvDYs8SxhgvWSfoZaxqFlBO+YWkbTQRGGhd/
+	pFuGUvRNakJX4yLl2U4n+jjafEe7oZvjw1OWJfHTf/8QheY3R7fJK0fc359vkbaJB2F6uqqJdLBxG
+	rPR/jfrpaZGxj/Ar/7ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihZbp-0000mf-C8; Wed, 18 Dec 2019 13:43:25 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1ihZc6-0000zr-MA; Wed, 18 Dec 2019 13:43:42 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihZak-0008Qi-UB
+ id 1ihZal-0008SM-Qp
  for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 13:42:21 +0000
-Received: by mail-wm1-x342.google.com with SMTP id f129so1953485wmf.2
+Received: by mail-wm1-x341.google.com with SMTP id f129so1953583wmf.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 05:42:18 -0800 (PST)
+ Wed, 18 Dec 2019 05:42:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=SGGKIHFMLqYbZpUM3Q33U5iSErWckLEQGV1WkcVEHI8=;
- b=f2l0Ln5lReEODkQsQ2uA5VClJ+tweCe1nxxLM25wOBTPUawR+6ac4Oh9JJIQXM7izU
- 279nW2ndVPAd5tnmu5o34yBm34BQ/CgXFNXfsJYRQZTwly2ugMLdHjRgJNbuOPzWgJP8
- w99o0aQmIh2BnWDic7KwjuDGuyPTQIlwxumobg6+P6U3shJ7PqzEn+FvI5yMVIcR1SH0
- EoMluYkn1DeaDPsFpZoKJQYQB+0uCRwqUzjFAdzkKEN3PWmxuSikgYRh+9y0cxoQBnLA
- lLX0ubFtEcze1SbNZtpuQDnZRGz1S1577k2poja+bugOY23uMXwe6aKHUOLM3s4LpKwx
- dlzw==
+ bh=v3rAFL7K9Q66L7E0oU9UDZZEL6mZmsWSXH1Q6ZKBGZs=;
+ b=Plvvtq6hNBzRemtmfg0OOQVAKEe2ZS0q6GtZhWvDhDXvc8xilZ19uFoCpjx74jEXpJ
+ ks8P8qCAJWKBqhbaDtBQL1Hih4Ql/EFZcnQYmPK8Aa3/syWbywIPuENOUCwYMg8OWM0N
+ Kta3CaS8pcL1eVz+IsmUITZ1gBjilPkpT22E5GKOS+U+dOu3PajJeL3B2YPKRofAlOJa
+ 3lBOjImT4w83A8/YZWoTyR1N4boV1D1OLTN9LClsnhPVs1lUYRU3EPq1MT+v93zwns+h
+ v3CI/i+73+x+7Vvtu8JjixWZXmrddJnac4ndk4DEu9LRISgOWpzi626BNfCgGsz/3sdd
+ ktVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=SGGKIHFMLqYbZpUM3Q33U5iSErWckLEQGV1WkcVEHI8=;
- b=Js/jG6Rkoa+VmVgIwKypvtUzbSsryL4QQYu+wddRgnk0i3edUZVoIN523bEMoHWSCO
- f43dCNk4Yt8a4qObDjuWgpeBxKbYX8hs9MaC9AqOrp9WqFmy7wLe4XJM0Nv4oS7GMTyB
- 1DhN8YVNX7SURThzbztEQMrk2RYB2B9VfwV4/QyCVdRZ3ymTErTb4QC0d2Q0Km3laUyh
- pK5jhoICtHLkHmpTkyttG+ghgwodiY+36vTk+zWdWTsR/mlN2af/w1IxlFN3iRFt9PLP
- IsTFVlKW6B2SlBM39LXYBgp5AVnS+QflaZY1LE2DCcejZie4SSNpOKk7f04VZZzcOa2L
- GePA==
-X-Gm-Message-State: APjAAAV0470GXC6Ou/67VJVY0XV0GHQkEWNaLbcyOiLft5vRPsZIWqbz
- Kp9Qm922rpUfxn5STXsAoxapTfFD
-X-Google-Smtp-Source: APXvYqzoxOysiicfnZ8kQPTnP3ixsfrrY57jj/OU+n4GiTzU41Y7nHqcI1DrYVt8Sbn788JPh2gokQ==
-X-Received: by 2002:a05:600c:2215:: with SMTP id
- z21mr3530551wml.55.1576676537022; 
- Wed, 18 Dec 2019 05:42:17 -0800 (PST)
+ bh=v3rAFL7K9Q66L7E0oU9UDZZEL6mZmsWSXH1Q6ZKBGZs=;
+ b=piV48fMEwS5v3/4AhOqgtkeW0aIPr1hfsuPDI3TeiWFg6t+HMHK8npdiBmv1LQrC2o
+ 6mXnQhQDHpwU7inA7/WOBibrpLCNJlfulrxCZjRcq0GqZxa/Bzh5eg3QNmbo39qhANCM
+ BLVQvBxCbcqLeRglaMRnW93DEKsIWFheluDmgikfA52GuJn2iAtKITs247FljnAhnxc4
+ rZpXf3fObA2NmMXwrHFBcaBRarYwcEjfQH4KUmX1QZTzObhjTAIheKCB2ht0pL3xFda0
+ iU8p/pAT7Nr9QM4L1nzt/RJR9cfoojV+pcBH2s53SI7Hk5zPIKoO1XA9qItBnKqwnTLZ
+ VuHQ==
+X-Gm-Message-State: APjAAAUMEFVKhdfJIU1GdlYOrBXyPBmTc3VC3Yf17dR1zXpD3JNUvyxH
+ Tlb+sepTNIyvBD4ITdHIZDk=
+X-Google-Smtp-Source: APXvYqyJ1+myPu5YtHK5IGKXWRZX/+yLfGrjNRT7nLErzDPqwiTRHjmJdpEdLCQnss548bO8HuF5Ag==
+X-Received: by 2002:a1c:6809:: with SMTP id d9mr3439282wmc.70.1576676538578;
+ Wed, 18 Dec 2019 05:42:18 -0800 (PST)
 Received: from localhost (pD9E518ED.dip0.t-ipconnect.de. [217.229.24.237])
- by smtp.gmail.com with ESMTPSA id v20sm2459763wmj.32.2019.12.18.05.42.15
+ by smtp.gmail.com with ESMTPSA id q11sm2667810wrp.24.2019.12.18.05.42.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 05:42:16 -0800 (PST)
+ Wed, 18 Dec 2019 05:42:17 -0800 (PST)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Joerg Roedel <joro@8bytes.org>
-Subject: [PATCH v3 3/5] iommu: amd: Use generic_iommu_put_resv_regions()
-Date: Wed, 18 Dec 2019 14:42:03 +0100
-Message-Id: <20191218134205.1271740-4-thierry.reding@gmail.com>
+Subject: [PATCH v3 4/5] iommu: intel: Use generic_iommu_put_resv_regions()
+Date: Wed, 18 Dec 2019 14:42:04 +0100
+Message-Id: <20191218134205.1271740-5-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191218134205.1271740-1-thierry.reding@gmail.com>
 References: <20191218134205.1271740-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_054219_003577_906E12E4 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20191218_054220_012399_A8B67BEF 
+X-CRM114-Status: GOOD (  12.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -103,7 +102,8 @@ Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
  Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
  virtualization@lists.linux-foundation.org,
  Christoph Hellwig <hch@infradead.org>, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+ Robin Murphy <robin.murphy@arm.com>, David Woodhouse <dwmw2@infradead.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -113,21 +113,22 @@ From: Thierry Reding <treding@nvidia.com>
 
 Use the new standard function instead of open-coding it.
 
+Cc: David Woodhouse <dwmw2@infradead.org>
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/iommu/amd_iommu.c | 11 +----------
+ drivers/iommu/intel-iommu.c | 11 +----------
  1 file changed, 1 insertion(+), 10 deletions(-)
 
-diff --git a/drivers/iommu/amd_iommu.c b/drivers/iommu/amd_iommu.c
-index 7a6c056b9b9c..9ea6c4b8e402 100644
---- a/drivers/iommu/amd_iommu.c
-+++ b/drivers/iommu/amd_iommu.c
-@@ -2638,15 +2638,6 @@ static void amd_iommu_get_resv_regions(struct device *dev,
- 	list_add_tail(&region->list, head);
+diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
+index 42966611a192..a6d5b7cf9183 100644
+--- a/drivers/iommu/intel-iommu.c
++++ b/drivers/iommu/intel-iommu.c
+@@ -5744,15 +5744,6 @@ static void intel_iommu_get_resv_regions(struct device *device,
+ 	list_add_tail(&reg->list, head);
  }
  
--static void amd_iommu_put_resv_regions(struct device *dev,
--				     struct list_head *head)
+-static void intel_iommu_put_resv_regions(struct device *dev,
+-					 struct list_head *head)
 -{
 -	struct iommu_resv_region *entry, *next;
 -
@@ -135,18 +136,18 @@ index 7a6c056b9b9c..9ea6c4b8e402 100644
 -		kfree(entry);
 -}
 -
- static bool amd_iommu_is_attach_deferred(struct iommu_domain *domain,
- 					 struct device *dev)
+ int intel_iommu_enable_pasid(struct intel_iommu *iommu, struct device *dev)
  {
-@@ -2685,7 +2676,7 @@ const struct iommu_ops amd_iommu_ops = {
- 	.device_group = amd_iommu_device_group,
- 	.domain_get_attr = amd_iommu_domain_get_attr,
- 	.get_resv_regions = amd_iommu_get_resv_regions,
--	.put_resv_regions = amd_iommu_put_resv_regions,
-+	.put_resv_regions = generic_iommu_put_resv_regions,
- 	.is_attach_deferred = amd_iommu_is_attach_deferred,
- 	.pgsize_bitmap	= AMD_IOMMU_PGSIZES,
- 	.flush_iotlb_all = amd_iommu_flush_iotlb_all,
+ 	struct device_domain_info *info;
+@@ -5987,7 +5978,7 @@ const struct iommu_ops intel_iommu_ops = {
+ 	.add_device		= intel_iommu_add_device,
+ 	.remove_device		= intel_iommu_remove_device,
+ 	.get_resv_regions	= intel_iommu_get_resv_regions,
+-	.put_resv_regions	= intel_iommu_put_resv_regions,
++	.put_resv_regions	= generic_iommu_put_resv_regions,
+ 	.apply_resv_region	= intel_iommu_apply_resv_region,
+ 	.device_group		= pci_device_group,
+ 	.dev_has_feat		= intel_iommu_dev_has_feat,
 -- 
 2.24.1
 
