@@ -2,80 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0DED124318
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 10:27:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3C5812432C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 10:29:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KSZx12jQNunXO+vkAhpa3U6fuc0S70hzL6x0qdnKnnY=; b=l+Ah2A2YmcFkMf
-	3p/eFvqU6j6A2t7yevjQ2YEaJlEgeQUQ0HJk1C2TZW4F5NgGea9f/qIUFJzIH4LEkxpieH9dTWmSQ
-	FP2lrgPy1rsyr53qUKVxNMUARkqFcqW+bl2veEmNy+txeG3qqyWk0McAY4x7lY3a8nOUvIqNcZgTB
-	GeT0B9nVSVDnLh5lkV7s5duZt3+zwZZjEy9AMX0BteMG0xsNrtAfLDh3irxQAP/s/Ljby+SY7ze6h
-	X0QIaRz/eQSCSPP5oMBvExEFqpbmU9ygS7UuLs2tde0g4U5Iohu4jB6g025Pqk4wV8Kf+osQhGvMd
-	gTdOZou1lvTD8jJa+3/g==;
+	List-Owner; bh=bR0Cm6GdwQIGDd+JVLKfJ1gll1uZ8GNiFiFWMZFyUSk=; b=p2qHs40ScBF7vL
+	c53Sxtq+55e05DVNQ/bl+PWB5baVQBhtC/oNF279kT8GeolyZ4BKvwarfhLImmgoRSL791PB59aYo
+	ZnsH28LY8w5ds4HB7+K9LVRz2RFc0ETTPnhvT1XeVdeax96rQAcFP5xrzwo8Vmm5f2srTDpjVbDAz
+	+CCWSoFxTm6dtYBjDH9W09s2wFPvJ3BPxW8sJ4myNeekajAQt55ydbvV6FyMQnNidmGhSV038UxVt
+	7OYOqlN7q5huiyboDpYev6U8u9biu2BvgTv1Joshv1Nuu3CSaqJtj0kdDhPZP3UrP3gn1ZBMPSpE/
+	UiqHWtVI7dHfi+bmYqmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihVcJ-0000aM-3t; Wed, 18 Dec 2019 09:27:39 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1ihVeJ-0001NI-0i; Wed, 18 Dec 2019 09:29:43 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihVc9-0000Zi-8t
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 09:27:32 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 18 Dec 2019 01:27:28 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,329,1571727600"; d="scan'208";a="205784942"
-Received: from linux.intel.com ([10.54.29.200])
- by orsmga007.jf.intel.com with ESMTP; 18 Dec 2019 01:27:27 -0800
-Received: from [10.125.252.219] (abudanko-mobl.ccr.corp.intel.com
- [10.125.252.219])
- by linux.intel.com (Postfix) with ESMTP id 6B43C5802C9;
- Wed, 18 Dec 2019 01:27:19 -0800 (PST)
-Subject: [PATCH v4 4/9] drm/i915/perf: open access for CAP_SYS_PERFMON
- privileged process
-From: Alexey Budankov <alexey.budankov@linux.intel.com>
-To: Peter Zijlstra <peterz@infradead.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
- Alexei Starovoitov <ast@kernel.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
- "james.bottomley@hansenpartnership.com"
- <james.bottomley@hansenpartnership.com>, Serge Hallyn <serge@hallyn.com>,
- James Morris <jmorris@namei.org>, Will Deacon <will.deacon@arm.com>,
- Mark Rutland <mark.rutland@arm.com>, Casey Schaufler
- <casey@schaufler-ca.com>, Robert Richter <rric@kernel.org>
-References: <c0460c78-b1a6-b5f7-7119-d97e5998f308@linux.intel.com>
-Organization: Intel Corp.
-Message-ID: <ea050255-a125-8831-ce91-ee23bd6ad08b@linux.intel.com>
-Date: Wed, 18 Dec 2019 12:27:18 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1ihVdr-00018L-9J
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 09:29:17 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBI9SFbt030551;
+ Wed, 18 Dec 2019 03:28:15 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1576661295;
+ bh=iGk7YRT+kPnqstyHZEl2eYWpUaNqZx8s0Pjx38SCwGo=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=M0503mgOmC+63+lhfjTAtturSJzFirhFDnzpQjn4VuFPV9r/pRlTAzS2AQKuysbEV
+ WVUzj8nTNILNsZJmzW7LJf62u6tY3T9krMHZ3Yvak26fJ83EO0ajFVxVX1ua68asny
+ 47Zc1haxMdZHMJ7LD5Xf6xJyf90PZ9aXphTaOfSE=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBI9SFxW120738
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 18 Dec 2019 03:28:15 -0600
+Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 18
+ Dec 2019 03:28:15 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 18 Dec 2019 03:28:15 -0600
+Received: from [10.24.69.35] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBI9S8be074543;
+ Wed, 18 Dec 2019 03:28:12 -0600
+Subject: Re: [PATCH 1/3] clocksource: davinci: work around a clocksource
+ problem on dm365 SoC
+To: Bartosz Golaszewski <brgl@bgdev.pl>, Daniel Lezcano
+ <daniel.lezcano@linaro.org>, Thomas Gleixner <tglx@linutronix.de>, David
+ Lechner <david@lechnology.com>, Kevin Hilman <khilman@kernel.org>
+References: <20191213162453.15691-1-brgl@bgdev.pl>
+ <20191213162453.15691-2-brgl@bgdev.pl>
+From: Sekhar Nori <nsekhar@ti.com>
+Message-ID: <51eb10e9-245e-7b3e-51ff-578e06e0759b@ti.com>
+Date: Wed, 18 Dec 2019 14:58:07 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <c0460c78-b1a6-b5f7-7119-d97e5998f308@linux.intel.com>
+In-Reply-To: <20191213162453.15691-2-brgl@bgdev.pl>
 Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_012730_822418_009CC544 
-X-CRM114-Status: GOOD (  13.82  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191218_012915_564371_5458F9CA 
+X-CRM114-Status: GOOD (  17.32  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,92 +95,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Stephane Eranian <eranian@google.com>, Jiri Olsa <jolsa@redhat.com>,
- Andi Kleen <ak@linux.intel.com>, Igor Lubashev <ilubashe@akamai.com>,
- oprofile-list@lists.sf.net, Kees Cook <keescook@chromium.org>,
- Jann Horn <jannh@google.com>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
- Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Tvrtko Ursulin <tvrtko.ursulin@linux.intel.com>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>,
- "bpf@vger.kernel.org" <bpf@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Bart,
 
-Open access to i915_perf monitoring for CAP_SYS_PERFMON privileged
-processes. For backward compatibility reasons access to i915_perf
-subsystem remains open for CAP_SYS_ADMIN privileged processes but
-CAP_SYS_ADMIN usage for secure i915_perf monitoring is discouraged
-with respect to CAP_SYS_PERFMON capability.
+On 13/12/19 9:54 PM, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> 
+> The DM365 platform has a strange quirk (only present when using ancient
+> u-boot - mainline u-boot v2013.01 and later works fine) where if we
+> enable the second half of the timer in periodic mode before we do its
+> initialization - the time won't start flowing and we can't boot.
+> 
+> When using more recent u-boot, we can enable the timer, then reinitialize
+> it and all works fine.
+> 
+> I've been unable to figure out why that is, but a workaround for this
+> is straightforward - just cache the enable bits for tim34.
+> 
+> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
----
- drivers/gpu/drm/i915/i915_perf.c | 13 ++++++-------
- 1 file changed, 6 insertions(+), 7 deletions(-)
+Timer Global Control Register (TGCR) has bits to reset both halves of
+timer. Does placing both halves in reset, waiting a bit (say 10ms) and
+then taking them out of reset help solve the this problem?
 
-diff --git a/drivers/gpu/drm/i915/i915_perf.c b/drivers/gpu/drm/i915/i915_perf.c
-index e42b86827d6b..e2697f8d04de 100644
---- a/drivers/gpu/drm/i915/i915_perf.c
-+++ b/drivers/gpu/drm/i915/i915_perf.c
-@@ -2748,10 +2748,10 @@ i915_perf_open_ioctl_locked(struct drm_i915_private *dev_priv,
- 	/* Similar to perf's kernel.perf_paranoid_cpu sysctl option
- 	 * we check a dev.i915.perf_stream_paranoid sysctl option
- 	 * to determine if it's ok to access system wide OA counters
--	 * without CAP_SYS_ADMIN privileges.
-+	 * without CAP_SYS_PERFMON or CAP_SYS_ADMIN privileges.
- 	 */
- 	if (privileged_op &&
--	    i915_perf_stream_paranoid && !capable(CAP_SYS_ADMIN)) {
-+	    i915_perf_stream_paranoid && !perfmon_capable()) {
- 		DRM_DEBUG("Insufficient privileges to open system-wide i915 perf stream\n");
- 		ret = -EACCES;
- 		goto err_ctx;
-@@ -2939,9 +2939,8 @@ static int read_properties_unlocked(struct drm_i915_private *dev_priv,
- 			} else
- 				oa_freq_hz = 0;
- 
--			if (oa_freq_hz > i915_oa_max_sample_rate &&
--			    !capable(CAP_SYS_ADMIN)) {
--				DRM_DEBUG("OA exponent would exceed the max sampling frequency (sysctl dev.i915.oa_max_sample_rate) %uHz without root privileges\n",
-+			if (oa_freq_hz > i915_oa_max_sample_rate && !perfmon_capable()) {
-+				DRM_DEBUG("OA exponent would exceed the max sampling frequency (sysctl dev.i915.oa_max_sample_rate) %uHz without CAP_SYS_PERFMON or CAP_SYS_ADMIN privileges\n",
- 					  i915_oa_max_sample_rate);
- 				return -EACCES;
- 			}
-@@ -3328,7 +3327,7 @@ int i915_perf_add_config_ioctl(struct drm_device *dev, void *data,
- 		return -EINVAL;
- 	}
- 
--	if (i915_perf_stream_paranoid && !capable(CAP_SYS_ADMIN)) {
-+	if (i915_perf_stream_paranoid && !perfmon_capable()) {
- 		DRM_DEBUG("Insufficient privileges to add i915 OA config\n");
- 		return -EACCES;
- 	}
-@@ -3474,7 +3473,7 @@ int i915_perf_remove_config_ioctl(struct drm_device *dev, void *data,
- 		return -ENOTSUPP;
- 	}
- 
--	if (i915_perf_stream_paranoid && !capable(CAP_SYS_ADMIN)) {
-+	if (i915_perf_stream_paranoid && !perfmon_capable()) {
- 		DRM_DEBUG("Insufficient privileges to remove i915 OA config\n");
- 		return -EACCES;
- 	}
--- 
-2.20.1
+Also, there are LPSCs controlling the timers. As an experiment, can you
+see if using LPSC_STATE_SWRSTDISABLE instead of LPSC_STATE_DISABLE in
+davinci_lpsc_clk_disable() and then doing a clk_disable() + clk_enable()
+on timer can get the timer out of this bad state.
 
+We need some way for Linux to start on a clean state after bootloader is
+done. And trying to reset the timer before use seems to be a better way
+to accomplish it.
+
+I assume the original code was just lucky in not hitting this case?
+
+Thanks,
+Sekhar
 
 _______________________________________________
 linux-arm-kernel mailing list
