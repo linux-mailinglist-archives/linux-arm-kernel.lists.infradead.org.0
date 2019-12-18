@@ -2,92 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FC5C1256C4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:31:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD5191256E9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 23:36:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pmwkU5MhoWGPyGTEI6s41nbC16d0KJV/CrRtJnqXnSo=; b=RZ3OKTf5XPMiOB
-	P8yvNXJzOGJVFTpNn0mLIG0ZJe4Mtm2nWUW1JtcuIdQhTNvVC1sLbCU+C3RGZlK3FUE60eFCIkjpd
-	rgVuOtR7lsYa+o2hjwvz2ALKwb67loRjpSWUZz//9SpYjjvxEj8q+PE6iy3XRS+79HtwqFN8Xc7pC
-	MUeDyJ9HpJLao3R+J3MFKOPr1uT9/dq9wG7ch+6X6KxCH4fX0mfRDhB9FiqEUWewPK5I+nnqVXuRH
-	StDwEy0XcHcidCJb8d0Kmf8KCWRbf5FYmHJM79RGh3NRtWE3ivaKWGD8S/Ud3LwDTpWt+VxhDdQJH
-	r4o4geaJ4Ijd8gZZOfMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qo59X6hdTzNL95B/QGB0k8wgEWCdI8BeeD5gr61UmOk=; b=cYcsdE5Af5lUtI
+	VlOhFR9woQpKAZxyuYxYW6l/Z/CNh8UBFqZ0AZ0ojYEsAm1Dx8+DRbnJahCXoiJK0gSFmXfeacQ62
+	OAhwOHgsfuO6nr/+dYv7GTpjrfIvXmV+oi853gWRuuZBmfl/lEMtBLW3qADyoTrvK3EJTjJmC6tTa
+	N/INXg0RGVtnMwfaRcZQ7ePOQ/yr0N8X5d+aOfMIMvMPoFA5wwiBcIR26xEANtBEncFajMWaz1dmK
+	4PT+C1dqzxzkRzPM3oHyJvsQtv9gvw3CdzGGggXuM/aBcfHW7tcReIXP/wOEm/Zq6fMkI3Xc2g3yi
+	i5dJlwYTHapaUUrHKdOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihhqr-0005Cz-R9; Wed, 18 Dec 2019 22:31:29 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1ihhvS-0007FM-Ng; Wed, 18 Dec 2019 22:36:14 +0000
+Received: from mout.web.de ([212.227.17.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihhqh-0005BL-De
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 22:31:21 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 239BD1E0B;
- Wed, 18 Dec 2019 17:31:14 -0500 (EST)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 18 Dec 2019 17:31:14 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm1; bh=Lzyvf/oAweCjZ5qIV56uJI0Ozerep15
- 7X4x8VBFaL2w=; b=fgkh+Wd1faRZ80tV79SqEgiqfO47hlCbRGjvMXW/tF7jki9
- WynI1IF7nJLBpyfFNBrs5kB/iD9B1kZ4Zct/KVqlmhAjbOmezDRIj68BgFn9cKrO
- 6zVbHOITS5uYfxQbYW64M2VcaKodkAdmf+8kBkA/mm8cEojiNaJ0rBJMWyM5iOrA
- cQ32L48NZETL5UM0mGXuk5qtld06H6KvTLd/QRZEBWK2uUjG/fMq3afcmeP2Ih1F
- 6wwQweBoXijypJ+cC4RH5UgCYG4mCFKK+XeG8mS/OMQRoqwSejkVoevxOJ5J8BBd
- yxNpuEGrb4n1BnHbYP8kBZFKKwJAzpuZRUsVhCg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=Lzyvf/
- oAweCjZ5qIV56uJI0Ozerep157X4x8VBFaL2w=; b=Ag20xibjqHXMkA9a8aMYoI
- ymKmoMLALOwuT3RPU4NmvqWfucAiAItau1LrU6oqlFu5Yx7AnxaOgXYQMK83j5BD
- Xi1ou27OAwT6EHUZYDWbaBwW7nB4IMXpjyYFK81CtGRS9SggF7BweRFMTXZKLofv
- kCqCYoxzUG30G17iZ0lyC3lAIjCUrYlFLS1vUlnyAANTVhmi+s5Alwy696plDaFd
- E0C+9w7DORjvdmRgIErOl5NlfrXWfyzy0F1IucCKgW3Xu4ij9y72lfbNNZK4AuLs
- upfQ+Wh+GcQNPNLmDWGZvMamMOwyk6GpA6Q+MIAHaYL0ghXKPB5vJHWjuphfW6rQ
- ==
-X-ME-Sender: <xms:rqj6XfEXRl9AX1MZQR9DICsNKazBcDuTVlw-GrXsNQfmXGJubEBsiA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrvddtledgudehkecutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
- enucfjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehn
- ughrvgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrg
- hrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushht
- vghrufhiiigvpedt
-X-ME-Proxy: <xmx:rqj6Xfa4-8pcRXygko6cwYT0kJmFx7aETOpInZFh_-vM2nBcvhtrvA>
- <xmx:rqj6XbycQMjEhwpDN8jUPmY8f2_5AiuUjH9h8oL23BayYpp2vVsdAA>
- <xmx:rqj6XZQbpq4QZV3aBoG8HOYeycBGUTb1k2zNIIiwFumDcPWv7qe7GQ>
- <xmx:sqj6XXWAf5MO83LJorjEsG5NKdLUN_wd55TeemMVrtKwttyCxseetw>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id CAC89E00A3; Wed, 18 Dec 2019 17:31:10 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-694-gd5bab98-fmstable-20191218v1
-Mime-Version: 1.0
-Message-Id: <524f6f1c-c32d-498b-b835-ae01c338a7e2@www.fastmail.com>
-In-Reply-To: <1576648806-1114-1-git-send-email-vulab@iscas.ac.cn>
-References: <1576648806-1114-1-git-send-email-vulab@iscas.ac.cn>
-Date: Thu, 19 Dec 2019 09:02:53 +1030
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Xu Wang" <vulab@iscas.ac.cn>, "Stefan M Schaeckeler" <sschaeck@cisco.com>,
- "Borislav Petkov" <bp@alien8.de>,
- "Mauro Carvalho Chehab" <mchehab@kernel.org>, tony.luck@intel.com,
- "James Morse" <james.morse@arm.com>, rrichter@marvell.com,
- "Joel Stanley" <joel@jms.id.au>
-Subject: Re: [PATCH] EDAC: aspeed: Remove unneeded semicolon
+ id 1ihhuz-0006yO-Lm; Wed, 18 Dec 2019 22:35:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1576708538;
+ bh=lAAhQWrqTZ+3NKkBxKoTqGxYRguwM1a4ntZ/kHINjrI=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=VlUfPehAqq8T8OZtJhiT4IfKDhZs/FRv88U4/8Ak1XXguF7FO55R1wdAyA9C0sM3a
+ qVH+1Krj7CYIRNz1Ovqq7RZW7xX7FRsqXsFlpyYHDmsrm1EE94/WDdXDp0llPGomRW
+ P4SowPHzAYyDfdBcBSi+QTpOjoTaAP5oethXARTg=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from localhost.localdomain ([89.204.137.218]) by smtp.web.de
+ (mrweb103 [213.165.67.124]) with ESMTPSA (Nemesis) id
+ 0MXHXF-1iEL5L0ITd-00WDAM; Wed, 18 Dec 2019 23:35:38 +0100
+From: Soeren Moch <smoch@web.de>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH v3 0/2] arm64: dts: rockchip: RockPro64: enable wifi/bt
+Date: Wed, 18 Dec 2019 23:35:21 +0100
+Message-Id: <20191218223523.30154-1-smoch@web.de>
+X-Mailer: git-send-email 2.17.1
+MIME-Version: 1.0
+X-Provags-ID: V03:K1:PHp7e4svlTVsNYUIoz5ytrInhryaO+C+w+4Ft0e59pR0Jme4QXr
+ 3yIy3GV1HnbboENPQnvjdkXooUWdaGzGjexy5+6K+6HcVN6zNTowZz86HfxgrPMsJjoXKqz
+ /ImAgfNVCaVILB9S9abOX8UOUrAVYTm9FwwTnuObKuN6K9ILaw5M0VRXa1g0Zp24Xyrl4Dg
+ KrbSf0VdhqY0P61GutUhw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:NVLy28qVaF8=:P4MJd+g3YR1SVho5Tak2vc
+ y6flSHZpnmzbvhLi1FYsOxb5GXrPGQuvPXbxGEJtZdMln5c70msn/iKqFPwqW2oRBWoB08Gg9
+ lRVw+qABI/ZwYJybhcNU4FVZBi64oi/xATFzcPb/YRI8dhif8N0PKRgDaBgpeHz9gznK9XGrR
+ sJvkavqqZZX4H7P0CXCjQgAP6qrgvD5kF/QgQrkaCL7LV31nUPEHSzNPw6fb0eMb81GVL5Edh
+ Gz5duMyxY27+I0Pyi1xVMe+wEmFx4KHGM344LnOdLv7UWPa0/Tk5FdUQCoVpB9c7NMpVAvimY
+ bMxxgnrRVyJBKjm4q0S4InSCKheAB9SOuwdfhGl0PRQ6joBU+oEGl0TIl3B2HnTQF+JVbWbje
+ T8cCE4cKGA++c2Tt6+G8OYVTauTciOY42KdmqpmUOimUQ7r5fl3m+vS2NdplDd0iOJbknlKwS
+ PIJUp66rgXO87v8Ykn7kFU26NU6ICSBkDykKoL+YBnpm8l42tpyhVj4RDCTIsLLL1X5DyKAG3
+ gr0y1jE05SqGaRg+bmslLGn2GZ+aUX8wnmmDXleWBih0bZBiN1iZ/OQ9DueWm8FSFG4DjI45Z
+ NNwbIiywAOnaqTW2QTOVnyVEC63US/LXOrdWktTccFLG0M7pocjYWfhlJn5z4YvETsJp3WSyI
+ crwvuZh83KkxxGvllps8Gc+QQfCgLMpFZaSmMHffb4C8GLCWUE4VzvUyWz0jZ48VPiokSXl5/
+ wpBFslguFInnm3FwyPscoXn6e/twVbdOpq7qBABYa2talB1thl4tRdOXeqHfRYZRZwTJhBK8s
+ y9rDcGE0EbeIPNuTvIFJf78yPs3id+07qGXRjEO/rUYHHxRaUdYESg0GC6J6apt6ebceoyp/B
+ KhzfDREN2otRpzZXwbkfdap4B1ASRd8gNvWxwY8FQBID7V81fuRtuKtb36nkONzLEoMpWXxHI
+ mMlUiqynVE1PA/v+7wn8DFUQ+IMT6GB85CDC6+q28Iqm+2NZUwZe0jAqht08FhDzE9/tYzPsb
+ wZzUH9UVHpN54Yux212XDjL71tYIp/vIRg5T21lzJFgIQV2JWr7o6aHZvKr2cdXwffcJhJG4U
+ kxtxNLO3easZRCo4HD0yXkD9FUTCKizAakSLHm5CUtD8J1ZqSANHUL0X1B0PkyXJkbHK9s4SX
+ ++FsCGkRLqS/NlzanPzfi0b3gDSQzSkR3BW3M+IqjExsRXRo7V/M3gQgyg2s4nntALHlHod+4
+ DkoFRNEilrwbc21FFOhAcmDjPk8ufmWiP/FmU9w==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_143119_671710_D0ACC531 
-X-CRM114-Status: UNSURE (   4.69  )
+X-CRM114-CacheID: sfid-20191218_143546_008511_52DE2C37 
+X-CRM114-Status: UNSURE (   7.59  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [89.204.137.218 listed in dnsbl.sorbs.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ low trust [212.227.17.12 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (smoch[at]web.de)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -96,6 +88,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.227.17.12 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,21 +102,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org
+Cc: linux-rockchip@lists.infradead.org, Soeren Moch <smoch@web.de>,
+ Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Enhance devicetree of the RockPro64 arm64/rockchip board to use an
+AP6359SA based wifi/bt combo module.
+
+Patches 1-7 of version 2 of this patch series (to add support for the
+BCM4359 chipset with SDIO interface to the brcmfmac wireless network
+driver) are already picked up for wireless-drivers-next. So this
+version 3 only contains the patches 8-9 from v2.
 
 
-On Wed, 18 Dec 2019, at 16:30, Xu Wang wrote:
-> Remove unneeded semicolon reported by coccinelle.
-> 
-> Signed-off-by: Xu Wang <vulab@iscas.ac.cn>
+Soeren Moch (2):
+  arm64: dts: rockchip: RockPro64: enable wifi module at sdio0
+  arm64: dts: rockchip: RockPro64: hook up bluetooth at uart0
 
-Acked-by: Andrew Jeffery <andrew@aj.id.au>
+ .../boot/dts/rockchip/rk3399-rockpro64.dts    | 50 ++++++++++++++++---
+ 1 file changed, 42 insertions(+), 8 deletions(-)
+
+---
+Cc: Heiko Stuebner <heiko@sntech.de>
+Cc: Robin Murphy <robin.murphy@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-rockchip@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+--
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
