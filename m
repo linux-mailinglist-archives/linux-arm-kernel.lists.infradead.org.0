@@ -2,53 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78325123D57
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 03:45:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F32A3123D61
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 03:46:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=48D5kcpEv5ROQzX6905I6ti43gODWUpaVpe7hhUn1xI=; b=W3nfejA/cCBRfX
-	jSlSaueVd+NLqOgOLtSEGJDJWPlvXnbe/BvUkMp3w4N2L0iLa1mrQbo47P4Jaxbs9cVj4bkHb1SfZ
-	Or1OS+ibpuP8uJiiA3ZCQw5BZtreXubbMkfz1vHWNmpfsNSmz/baYKEzqRvChQGhbikpg+A2qAKEk
-	UKNOjb5vZ55RgY/R8SPL9HRdevIX7Ntu59p1L5Br0xs6lYSQCLTcI4K2zMnfFUrUq33Jf0VaAviBv
-	Az2/s44XAaFNCLTiuMgLvm1D3+GEv8TjE/Zn1cs+BnbytIkTZT6QYF+SznMJGOACZtYQI77lkeZzZ
-	QdxK27JoXukUhPwkPo8g==;
+	List-Owner; bh=iaYAyFSjnnX6NQhBl7GzaFCtspWnzgNBCuuA6cGtH1s=; b=CzsJdMNU7XEl05
+	OOultakHSqRctUaewq2A1p2YY7dI7iZRMtXYyq3pJShxdclgsOJRRiQg/YNN3Os57Vr3Yv7yB8bWM
+	4sGufRgJ5SLVFlmuj/UXKKfaQRcS+GsnHWHiLEGP5Pkgyk34/z8df1YAuERfgvovDbGKEBsNmkVN0
+	id+2K4fg8mMl+lDVgBcpMRem5y8KRNsLLGmc2niLxDNa0xEtw+yImyuDy/0H0kC/0aH7+dw0iv0xh
+	zY3buPKENnNB9jcaUAF3ynJ+J5Cx9Ny57F1g1HGXsesAuImxIfAQuUTgpaiUSxC+6vOxpBnUs6MQ9
+	QtQhsAF+TkyRu4GxY4AQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihPKc-0000F3-GY; Wed, 18 Dec 2019 02:44:58 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1ihPLt-0001x4-UX; Wed, 18 Dec 2019 02:46:17 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihPIr-0006uW-L1; Wed, 18 Dec 2019 02:43:10 +0000
-Received: from droid10.amlogic.com (10.18.11.213) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Wed, 18 Dec 2019
- 10:43:25 +0800
-From: Hanjie Lin <hanjie.lin@amlogic.com>
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>, Rob Herring <robh@kernel.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Felipe Balbi <felipe.balbi@linux.intel.com>,
- Kevin Hilman <khilman@baylibre.com>
-Subject: [PATCH v2 6/6] arm64: dts: meson: a1: Enable DWC3 controller
-Date: Wed, 18 Dec 2019 10:42:24 +0800
-Message-ID: <1576636944-196192-7-git-send-email-hanjie.lin@amlogic.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1576636944-196192-1-git-send-email-hanjie.lin@amlogic.com>
-References: <1576636944-196192-1-git-send-email-hanjie.lin@amlogic.com>
+ id 1ihPLk-0001wB-2A; Wed, 18 Dec 2019 02:46:09 +0000
+Received: by mail-ed1-f68.google.com with SMTP id c26so372312eds.8;
+ Tue, 17 Dec 2019 18:46:07 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=vxwj4gd/9Empd7D3FvHODrnvOnRhpeyanogRcG726ys=;
+ b=N9w2qj4FVyUPDpeE0hfN5gphda3dQ0fYT8kK2GT+xiFtyqC0DoJbkd3/MMIw0YiNdD
+ zr50D9/VgDE0zJo1hbj4XjcSNgGUzpMp4+c0ytF/Hmx/d7AyTAxFlK6LQ58V/K0h3CaP
+ aDE8vH0vceZrcMOLK90V1JTVQLzzlghRRzyco7WogvST1qsz7LFUNywAcaG4L/OCeqpX
+ N1GTk6oYG23DXI3RTWkO7wSzgxlsn6eWWwmMDfk8AifP+Oq07khMids8tyik4PTUUkLv
+ ALhCZxU2nDNInW0lL5+Fa3EOT+sVUMaAacVDvUTwEvJQJK293UsEnCaPtaenLTfNxbPt
+ /1xw==
+X-Gm-Message-State: APjAAAUppxtEwIrmoj3iX4LW8LXbvDf5uccB5B0nxP6eeO8wjVZnZ1go
+ 1CZq0QiRCv7IDYUjzLMt2POOpLwlv7w=
+X-Google-Smtp-Source: APXvYqwJSuCj7yXW5zQ1fzUvytfkh6teQkiqVhGTdxYgtt7zdbGI3edhTDLrLn4/mjn+5YS1SE1Edw==
+X-Received: by 2002:a50:9e01:: with SMTP id z1mr1037183ede.232.1576637165200; 
+ Tue, 17 Dec 2019 18:46:05 -0800 (PST)
+Received: from mail-wr1-f49.google.com (mail-wr1-f49.google.com.
+ [209.85.221.49])
+ by smtp.gmail.com with ESMTPSA id s12sm36898eja.79.2019.12.17.18.46.04
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 17 Dec 2019 18:46:04 -0800 (PST)
+Received: by mail-wr1-f49.google.com with SMTP id g17so615959wro.2;
+ Tue, 17 Dec 2019 18:46:04 -0800 (PST)
+X-Received: by 2002:adf:81e3:: with SMTP id 90mr1136437wra.23.1576637164034;
+ Tue, 17 Dec 2019 18:46:04 -0800 (PST)
 MIME-Version: 1.0
-X-Originating-IP: [10.18.11.213]
+References: <20191214175447.25482-1-tiny.windzz@gmail.com>
+In-Reply-To: <20191214175447.25482-1-tiny.windzz@gmail.com>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Wed, 18 Dec 2019 10:45:52 +0800
+X-Gmail-Original-Message-ID: <CAGb2v67kgMcV5hhURYzMCggeTSnOoupmYKDPViS0tiYFSxOfjA@mail.gmail.com>
+Message-ID: <CAGb2v67kgMcV5hhURYzMCggeTSnOoupmYKDPViS0tiYFSxOfjA@mail.gmail.com>
+Subject: Re: [PATCH 01/10] soc: sunxi: convert to
+ devm_platform_ioremap_resource
+To: Yangtao Li <tiny.windzz@gmail.com>, Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_184309_716115_EAB5B5C0 
-X-CRM114-Status: UNSURE (   7.71  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191217_184608_108660_5A3AFED4 
+X-CRM114-Status: GOOD (  14.57  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.68 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,82 +92,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-usb@vger.kernel.org, Yue Wang <yue.wang@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Liang Yang <liang.yang@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jian Hu <jian.hu@amlogic.com>
+Cc: linuxppc-dev@lists.ozlabs.org, linux-mips@vger.kernel.org,
+ Kevin Hilman <khilman@baylibre.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Santosh Shilimkar <ssantosh@kernel.org>,
+ "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, leoyang.li@nxp.com,
+ "moderated list:ARM/SAMSUNG EXYNO..." <linux-samsung-soc@vger.kernel.org>,
+ Andy Gross <agross@kernel.org>, khalasa@piap.pl, Kukjin Kim <kgene@kernel.org>,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Jun Nie <jun.nie@linaro.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable DWC3 controller for Meson A1 SoC.
+On Sun, Dec 15, 2019 at 1:54 AM Yangtao Li <tiny.windzz@gmail.com> wrote:
+>
+> Use devm_platform_ioremap_resource() to simplify code.
+>
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 
-Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
-Signed-off-by: Yue Wang <yue.wang@amlogic.com>
----
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 33 +++++++++++++++++++++++++++++++
- 1 file changed, 33 insertions(+)
+Acked-by: Chen-Yu Tsai <wens@csie.org>
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-index bd63374a..76f787d 100644
---- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -7,6 +7,8 @@
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/power/meson-a1-power.h>
- #include <dt-bindings/reset/amlogic,meson-a1-reset.h>
-+#include <dt-bindings/clock/a1-pll-clkc.h>
-+#include <dt-bindings/clock/a1-clkc.h>
- 
- / {
- 	compatible = "amlogic,a1";
-@@ -125,6 +127,37 @@
- 			#interrupt-cells = <3>;
- 			#address-cells = <0>;
- 		};
-+
-+		usb: usb@ffe09000 {
-+			status = "okay";
-+			compatible = "amlogic,meson-a1-usb-ctrl";
-+			reg = <0x0 0xffe09000 0x0 0xa0>;
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			ranges;
-+
-+			clocks = <&clkc_periphs CLKID_USB_CTRL>,
-+				 <&clkc_periphs CLKID_USB_BUS>,
-+				 <&clkc_periphs CLKID_XTAL_USB_PHY>,
-+				 <&clkc_periphs CLKID_XTAL_USB_CTRL>;
-+			clock-names = "usb_ctrl", "usb_bus", "xtal_usb_phy",
-+					"xtal_usb_ctrl";
-+			resets = <&reset RESET_USBCTRL>;
-+
-+			dr_mode = "host";
-+
-+			phys = <&usb2_phy1>;
-+			phy-names = "usb2-phy1";
-+
-+			dwc3: usb@ff400000 {
-+				compatible = "snps,dwc3";
-+				reg = <0x0 0xff400000 0x0 0x100000>;
-+				interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-+				dr_mode = "host";
-+				snps,dis_u2_susphy_quirk;
-+				snps,quirk-frame-length-adjustment = <0x20>;
-+			};
-+		};
- 	};
- 
- 	timer {
--- 
-2.7.4
-
+> ---
+>  drivers/soc/sunxi/sunxi_sram.c | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
+>
+> diff --git a/drivers/soc/sunxi/sunxi_sram.c b/drivers/soc/sunxi/sunxi_sram.c
+> index 1b0d50f36349..f73fbcc73f51 100644
+> --- a/drivers/soc/sunxi/sunxi_sram.c
+> +++ b/drivers/soc/sunxi/sunxi_sram.c
+> @@ -320,7 +320,6 @@ static struct regmap_config sunxi_sram_emac_clock_regmap = {
+>
+>  static int sunxi_sram_probe(struct platform_device *pdev)
+>  {
+> -       struct resource *res;
+>         struct dentry *d;
+>         struct regmap *emac_clock;
+>         const struct sunxi_sramc_variant *variant;
+> @@ -331,8 +330,7 @@ static int sunxi_sram_probe(struct platform_device *pdev)
+>         if (!variant)
+>                 return -EINVAL;
+>
+> -       res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -       base = devm_ioremap_resource(&pdev->dev, res);
+> +       base = devm_platform_ioremap_resource(pdev, 0);
+>         if (IS_ERR(base))
+>                 return PTR_ERR(base);
+>
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
