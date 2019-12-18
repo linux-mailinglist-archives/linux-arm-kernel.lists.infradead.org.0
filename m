@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 704FA125185
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 20:11:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD53D125186
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 20:11:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GMFSK0Zbtrzte5D1hN+TfRIBBbim5/aF3BLFWEuekcE=; b=RYBjW/WAB3N5Cv
-	njeiDAOvQDxPd6/zpAs8cMIGP3kdXrhSd7185OBEf9bfLBMWlzNqFumd83/Y85yN9xkJtIB7zIFgY
-	Y5pz7w+Z5avdRL+Ee2po5o83Nw1Xw/ydmvpERpAbz49QKIuO/XhohVbLeIriq56kcEQ9H6mQcX/Az
-	QlNx8YtkfJfdIcpMgba/YXFbnfqJg2Aw0YfvtRIRW68rDTmIzzwf+F2C+onbW9oammCkFkZXs4NjB
-	VrKjMkP90JtBfNExxKoj6FHsp7jkoChqiSi+KPlE9ynAwUMlmee7iqYC3ThTGXhGDXKI8OCKzwu1i
-	mbJwFMXF23fOMn50smTg==;
+	List-Owner; bh=92lYcsJ3on54VgGGEiv1+0/7Kg3uebaEd9ZyVG5P/nk=; b=K90QKI6DlAu5fn
+	xsCsFEb+Phx6lly6N9sxs6kRUBsNzA4Th2l26R7uSdRA3PKbELzNJWJol7n52Q0XPN4RmBaZurtTz
+	N6v9PzPkj9792heZvRDEhl7Dmkyf12sMPf6/QH2X3SrkjPQCUBMRSgEVHGLacDnPN1Dh3/G0ouqGo
+	qOwD8BNmU7nUFpRM5YqSmyam4jc3khlaidTHcNKONZAKeZcRVY7mM4aEs1Vr4Upd8ypLF+7Sl4p77
+	Zs7UlpPSZ9hUbZjRROCED71Y/1SlRceaLvuk1LounLafqYkNBckOa2ShgAPkr+tcXykHPyurG9Vey
+	/DYYlcGPF8wUQG6zE6lQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihejE-00013p-T7; Wed, 18 Dec 2019 19:11:24 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1ihejS-0001IZ-Jm; Wed, 18 Dec 2019 19:11:38 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iheiT-0000ab-6Q
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 19:10:38 +0000
-Received: by mail-pl1-x642.google.com with SMTP id az3so1385072plb.11
+ id 1iheiY-0000eX-DK
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 19:10:44 +0000
+Received: by mail-pl1-x641.google.com with SMTP id c23so1399319plz.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 11:10:37 -0800 (PST)
+ Wed, 18 Dec 2019 11:10:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amarulasolutions.com; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=alXkMdM6X6QySpSco6rsE8zxLS76UNqtiB5B4hqdPT4=;
- b=E+8ziUEvMKi8sDEkiES60TVF+tNlUhhj8IHNiBcbbn371WCVzx44hbb9oQmdmCkXGQ
- hj8eBroZ2ihb46/3RVsdTD5NKgRbjqaf4ACgSi6PUIWdb5+180sHUakXUkH++To96gOn
- RIxHPJZtxlLOZtQ2kV8jtPPw49V5Lv4Rc3wWM=
+ bh=Hp8TQeL3yIB1KqyuldLYK5Mau4+1RzHQTjjW58JR+LE=;
+ b=ahpP2VUFj07C+YAeNRzrA76nsNFKGCa58LATV1abYF6W3evqhgS4VjoXIZF5Rxs/Zl
+ KojhYjea5pEydc4TKZ3PzW8hmG8ZtdgiQqcbtzZreiFvxQIj/c5GnNzPA0rjzyel3sRZ
+ rypwNDaFKZeKjEZwHrGEr6XO1coStIFAo1GzI=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=alXkMdM6X6QySpSco6rsE8zxLS76UNqtiB5B4hqdPT4=;
- b=tCFAa2vIYKp2ovCyCw1zu9Sf9M2F4ybIDGGZaF/F85bAfJ8uES27EgBiXZ5YmpkclP
- hgBJnzEFb1+hqlpu9W3iEXukor5jf0AH07OOCgh1xI8rhfr5YPU8zoc8NDioU/lHJnPk
- V8HZIrZyZHW0gRrx33fWhOds1OIC4MknI1QcLvpQrUBUcOsYVYexk6XHmu4XaJnM+C7U
- lg3M69crOu6mUG16iiO1qbXKPcGfu7NX4s6eSVUUWj4/o0T9TKYoaqniTIOZakZxBMYM
- pZ0ABPQGq8Clobo+pegr4tDaaF75zAp8+UFjJctSDxN4fAuJ7whAl4WfgkZp/MZjqokQ
- bN0g==
-X-Gm-Message-State: APjAAAVXuF+5G1iQaPloYOKnbeRpRKCXroD3hWaDzIcUddWs/d2KIHr3
- l4ri4M4jdAMhV8WmMBIF9hUq/g==
-X-Google-Smtp-Source: APXvYqwbe2b9Mvei8KPI9wO4JZV6Hz10WouMUmvDBFv2bWY2DwHIIMZxDNbDLq6tRccxycc9qNSXEw==
-X-Received: by 2002:a17:90a:d344:: with SMTP id
- i4mr4801276pjx.42.1576696236642; 
- Wed, 18 Dec 2019 11:10:36 -0800 (PST)
+ bh=Hp8TQeL3yIB1KqyuldLYK5Mau4+1RzHQTjjW58JR+LE=;
+ b=mHTpqz0P5udoEqKK/pNLa0wfP77AyMT8PDfw3KFVO87xoiOhOy2xdXdjebmM/PkGbp
+ 43C/M4lkK8z6FnjSy6Exh8mlkiNSykgk5hvQ4hZkxcTYSSJ4z8mJPWNkUOCcqIUWwULW
+ cgex+kLsDcSkvjwbdYDaCEQoSmMDl1vA4WZRJ5AX+BBKFJPc21E/8/OJT4RxgzcgbKtr
+ e0LoabGFIYpblsWrC8nnZxvOMhP7Q8BgvxrSqfin6kBM8UELOf2Bwe8dTdwEHFHkMXOW
+ 4qKmIe7gElKXa8T3hZa1am5TtLH6C2Wd7BKEwy6UTwSc23cd7vdowydLWXisyLVvMJP9
+ qQiw==
+X-Gm-Message-State: APjAAAXZrt1bI7CWZ0X/Bn3lpfqafL88oIVvMiNeTQs1gqWAhru45ZBT
+ tawBIyymrWnJ74bxzzKtuC4IRQ==
+X-Google-Smtp-Source: APXvYqzbv5fA1hAkQ1/0DqEdeyLCZYo/j3p0FDLo1mRnWUjMlN5AwYLYhnlRpg3B5Bk1ug5tM+pzvQ==
+X-Received: by 2002:a17:90a:fb4f:: with SMTP id
+ iq15mr4735561pjb.86.1576696240895; 
+ Wed, 18 Dec 2019 11:10:40 -0800 (PST)
 Received: from localhost.localdomain ([2405:201:c809:c7d5:78ea:e014:edb4:e862])
- by smtp.gmail.com with ESMTPSA id q7sm3745855pjd.3.2019.12.18.11.10.32
+ by smtp.gmail.com with ESMTPSA id q7sm3745855pjd.3.2019.12.18.11.10.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 11:10:36 -0800 (PST)
+ Wed, 18 Dec 2019 11:10:40 -0800 (PST)
 From: Jagan Teki <jagan@amarulasolutions.com>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v13 2/7] dt-bindings: sun6i-dsi: Add A64 DPHY compatible (w/
- A31 fallback)
-Date: Thu, 19 Dec 2019 00:40:12 +0530
-Message-Id: <20191218191017.2895-3-jagan@amarulasolutions.com>
+Subject: [PATCH v13 3/7] drm/sun4i: dsi: Get the mod clock for A31
+Date: Thu, 19 Dec 2019 00:40:13 +0530
+Message-Id: <20191218191017.2895-4-jagan@amarulasolutions.com>
 X-Mailer: git-send-email 2.18.0.321.gffc6fa0e3
 In-Reply-To: <20191218191017.2895-1-jagan@amarulasolutions.com>
 References: <20191218191017.2895-1-jagan@amarulasolutions.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_111037_283541_D8F0F0D1 
-X-CRM114-Status: GOOD (  11.42  )
+X-CRM114-CacheID: sfid-20191218_111042_700276_A9B8E01F 
+X-CRM114-Status: GOOD (  13.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,37 +107,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The MIPI DSI PHY controller on Allwinner A64 is similar
-on the one on A31.
+As per the user manual, look like mod clock is not mandatory
+for all Allwinner MIPI DSI controllers, it is connected to
+CLK_DSI_SCLK for A31 and not available in A64.
 
-Add A64 compatible and append A31 compatible as fallback.
+So, add compatible check for A31 and get mod clock accordingly.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Tested-by: Merlijn Wajer <merlijn@wizzup.org>
 Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
 ---
 Changes for v13:
-- collect Rob review tag
+- Drop has_mod_clk quirk as commented by Chen-Yu
 
- .../bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml         | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
-index fa46670de299..8841938050b2 100644
---- a/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
-+++ b/Documentation/devicetree/bindings/phy/allwinner,sun6i-a31-mipi-dphy.yaml
-@@ -15,7 +15,11 @@ properties:
-     const: 0
+diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
+index c958ca9bae63..68b88a3dc4c5 100644
+--- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
++++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
+@@ -1120,10 +1120,13 @@ static int sun6i_dsi_probe(struct platform_device *pdev)
+ 		return PTR_ERR(dsi->reset);
+ 	}
  
-   compatible:
--    const: allwinner,sun6i-a31-mipi-dphy
-+    oneOf:
-+      - const: allwinner,sun6i-a31-mipi-dphy
-+      - items:
-+          - const: allwinner,sun50i-a64-mipi-dphy
-+          - const: allwinner,sun6i-a31-mipi-dphy
+-	dsi->mod_clk = devm_clk_get(dev, "mod");
+-	if (IS_ERR(dsi->mod_clk)) {
+-		dev_err(dev, "Couldn't get the DSI mod clock\n");
+-		return PTR_ERR(dsi->mod_clk);
++	if (of_device_is_compatible(dev->of_node,
++				    "allwinner,sun6i-a31-mipi-dsi")) {
++		dsi->mod_clk = devm_clk_get(dev, "mod");
++		if (IS_ERR(dsi->mod_clk)) {
++			dev_err(dev, "Couldn't get the DSI mod clock\n");
++			return PTR_ERR(dsi->mod_clk);
++		}
+ 	}
  
-   reg:
-     maxItems: 1
+ 	/*
 -- 
 2.18.0.321.gffc6fa0e3
 
