@@ -2,67 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5157E124451
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 11:19:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E15912445B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 11:22:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=UUziQ0yPZnNQS7be5N0R5cT5LDLmri7FYsuTFsE6bmM=; b=ZCtkUd120+mMw7CZoJRtRFtr3Z
-	6fErDRS8jjc3KGUssEW6ODsvwCJD/MDbxp/Mgo3dkX6OD+9WWabuWb7eyXCdvpmxG0qS3MS3xBubg
-	ZNSu7NST3+TGcNFHeEvYiiBknYBWHFzMHX1BsLUd3/XlK/Y5IZQU5hMPFo/X3GK5gCJVTQhhZRkZw
-	OrnLeZzz87VeOYPUAaFojKaJpNe7ZaKYoU7wmNH/6y7cC/ZMf+JgyiXboTTFlm8+AfABwdF8cSBuL
-	vY11ibkjOThMYrGhOZKx1g0zFsJCFndk1Gfi12zbmxEkmsmyY5in2lPlgyDb8T9O5AS3fiFxltFgV
-	rYYxXKxQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1Dv5Lr2D63gxglZVok24GPsVnsaUjZYqHcnabe/JgO0=; b=c86r9/a1+HZdcn
+	nmy0tGfYPYqlN45GIyJwODxvAtFgB21P6LRVvMy6+wfTvZgxHpQJoFulk4dHdaFSoEr+ceqbam7kl
+	bpPMxCt0eOKgc9Ab8W/9G0/RPNmIGnwywJC3NqzHlbQjdJzCg4Uq1iECCHEvvm/qduCXFRYpJRQh2
+	Q8gNmRCpfw8MbyPjOiuV/wOP8cRa9meKaAA5k/5V15Fjin70fO1S01vXdqgSGguQzEPm9bpNMHD41
+	UUhI5uElts7I8tFV/2+0q1Nya+4OKZWB6evLpk6JgmTl/Okb0I3I1oOyr5oZ1gD0b0WLrl2Wi9pKY
+	w1fqk4SxKRM5obwpGbSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihWQn-00061C-2O; Wed, 18 Dec 2019 10:19:49 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+	id 1ihWSr-0000Zc-MO; Wed, 18 Dec 2019 10:21:57 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihWOx-0004no-Gh
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 10:18:02 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ id 1ihWPC-0004zs-Af
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 10:18:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1576664288;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=LzL7HDaM7h2etRJEiQVdhdl2GZL68l8lKd1Hg2rlDWU=;
+ b=CPgiqdY2T3pVW0bvEqhr2mpD/NtnRyJKAeDmAKjQOQohbzPigWVx4XFu82zCZ3YZVd7uxa
+ HS3DRIf67zsBEBlFfdyQwkDf2CTIxPeqZxX9X+PZf1D9J+KyksHT+WEY+SmJFPRw3K+pA0
+ G5Vo0+vG65tLYTUzmmxlhJ5phhmggNM=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-420-l4BNxwTgNk6_xZLcRT0how-1; Wed, 18 Dec 2019 05:18:03 -0500
+X-MC-Unique: l4BNxwTgNk6_xZLcRT0how-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3524BC0D73;
- Wed, 18 Dec 2019 10:17:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576664273; bh=PN/zw5afx+JL6FGmucKZcTD5gfsqr6VEQTynaLPAU2s=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=NJ7/APAlIz7QCQQR0AKFbuSAsV9PqqmaTEohty3PBEsjqy4+XUiRkF/ABp1+lpo0W
- EA2k//EehyZfLJpn+qL7pBiF/UCOupJlQUGm7CZFjyeIi2/6KZ8MKocnNM1AsXsfki
- msHxlyZm1gZLTlRBgawNUMe9L4/bENl+F1R6135Qm4O6isvvUYUNJ3R/F7IuR1knG1
- QA2O+F1Ki7/eUg+h2PzbYLVBPHSoTEtPMD3dllXL2ILCJo3K1pjNKLGa57gg1zwLt+
- NqmOnREWgru8uyal/MMyQUFQAwkyV4Kh8oSaY/+jZgaSCmOvi2YhFHARGOawBcSW1w
- pkiz4zXql/SWw==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id E49FBA00AA;
- Wed, 18 Dec 2019 10:17:51 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net v3 9/9] net: stmmac: Always arm TX Timer at end of
- transmission start
-Date: Wed, 18 Dec 2019 11:17:43 +0100
-Message-Id: <e55a5f9cbcf2a725f828e79f38db9ad23f7f7a4e.1576664156.git.Jose.Abreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1576664155.git.Jose.Abreu@synopsys.com>
-References: <cover.1576664155.git.Jose.Abreu@synopsys.com>
-In-Reply-To: <cover.1576664155.git.Jose.Abreu@synopsys.com>
-References: <cover.1576664155.git.Jose.Abreu@synopsys.com>
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D7B7E800D48;
+ Wed, 18 Dec 2019 10:18:00 +0000 (UTC)
+Received: from [10.36.116.117] (ovpn-116-117.ams2.redhat.com [10.36.116.117])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id EC21026DF8;
+ Wed, 18 Dec 2019 10:17:56 +0000 (UTC)
+Subject: Re: [PATCH v3 13/13] iommu/arm-smmu-v3: Add support for PCI PASID
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-acpi@vger.kernel.org, devicetree@vger.kernel.org,
+ iommu@lists.linux-foundation.org
+References: <20191209180514.272727-1-jean-philippe@linaro.org>
+ <20191209180514.272727-14-jean-philippe@linaro.org>
+From: Auger Eric <eric.auger@redhat.com>
+Message-ID: <551ce08c-4160-72c9-05b5-97799f6e5d25@redhat.com>
+Date: Wed, 18 Dec 2019 11:17:55 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
+MIME-Version: 1.0
+In-Reply-To: <20191209180514.272727-14-jean-philippe@linaro.org>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_021755_715386_44DCCE1F 
-X-CRM114-Status: GOOD (  11.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191218_021810_447768_2581E829 
+X-CRM114-Status: GOOD (  22.76  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -72,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,83 +94,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Jakub Kicinski <jakub.kicinski@netronome.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, robin.murphy@arm.com,
+ joro@8bytes.org, guohanjun@huawei.com, rjw@rjwysocki.net, robh+dt@kernel.org,
+ jonathan.cameron@huawei.com, sudeep.holla@arm.com, bhelgaas@google.com,
+ zhangfei.gao@linaro.org, will@kernel.org, lenb@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If TX Coalesce timer is enabled we should always arm it, otherwise we
-may hit the case where an interrupt is missed and the TX Queue will
-timeout.
+Hi Jean,
 
-Arming the timer does not necessarly mean it will run the tx_clean()
-because this function is wrapped around NAPI launcher.
+On 12/9/19 7:05 PM, Jean-Philippe Brucker wrote:
+> Enable PASID for PCI devices that support it. Since the SSID tables are
+> allocated by arm_smmu_attach_dev(), PASID has to be enabled early enough.
+> arm_smmu_dev_feature_enable() would be too late, since by that time the
+> main DMA domain has already been attached. Do it in add_device() instead.
+> 
+> Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> ---
+>  drivers/iommu/arm-smmu-v3.c | 51 ++++++++++++++++++++++++++++++++++++-
+>  1 file changed, 50 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index d20a79108f8a..cde7af39681c 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -2643,6 +2643,49 @@ static void arm_smmu_disable_ats(struct arm_smmu_master *master)
+>  	atomic_dec(&smmu_domain->nr_ats_masters);
+>  }
+>  
+> +static int arm_smmu_enable_pasid(struct arm_smmu_master *master)
+> +{
+> +	int ret;
+> +	int features;
+> +	int num_pasids;
+> +	struct pci_dev *pdev;
+> +
+> +	if (!dev_is_pci(master->dev))
+> +		return -ENODEV;
+> +
+> +	pdev = to_pci_dev(master->dev);
+> +
+> +	features = pci_pasid_features(pdev);
+> +	if (features < 0)
+> +		return -ENODEV;
+why -ENODEV?
+> +
+> +	num_pasids = pci_max_pasids(pdev);
+> +	if (num_pasids <= 0)
+> +		return -ENODEV;
+> +
+> +	ret = pci_enable_pasid(pdev, features);
+> +	if (!ret)
+> +		master->ssid_bits = min_t(u8, ilog2(num_pasids),
+> +					  master->smmu->ssid_bits);
+so here we are ;-)
+> +	return ret;
+> +}
+> +
+> +static void arm_smmu_disable_pasid(struct arm_smmu_master *master)
+> +{
+> +	struct pci_dev *pdev;
+> +
+> +	if (!dev_is_pci(master->dev))
+> +		return;
+> +
+> +	pdev = to_pci_dev(master->dev);
+> +
+> +	if (!pdev->pasid_enabled)
+> +		return;
+> +
+> +	master->ssid_bits = 0;
+> +	pci_disable_pasid(pdev);
+> +}
+> +
+>  static void arm_smmu_detach_dev(struct arm_smmu_master *master)
+>  {
+>  	unsigned long flags;
+> @@ -2851,13 +2894,16 @@ static int arm_smmu_add_device(struct device *dev)
+>  
+>  	master->ssid_bits = min(smmu->ssid_bits, fwspec->num_pasid_bits);
+>  
+> +	/* Note that PASID must be enabled before, and disabled after ATS */
+> +	arm_smmu_enable_pasid(master);
+No error handling?
+> +
+>  	if (!(smmu->features & ARM_SMMU_FEAT_2_LVL_CDTAB))
+>  		master->ssid_bits = min_t(u8, master->ssid_bits,
+>  					  CTXDESC_LINEAR_CDMAX);
+>  
+>  	ret = iommu_device_link(&smmu->iommu, dev);
+>  	if (ret)
+> -		goto err_free_master;
+> +		goto err_disable_pasid;
+>  
+>  	group = iommu_group_get_for_dev(dev);
+>  	if (IS_ERR(group)) {
+> @@ -2870,6 +2916,8 @@ static int arm_smmu_add_device(struct device *dev)
+>  
+>  err_unlink:
+>  	iommu_device_unlink(&smmu->iommu, dev);
+> +err_disable_pasid:
+> +	arm_smmu_disable_pasid(master);
+>  err_free_master:
+>  	kfree(master);
+>  	fwspec->iommu_priv = NULL;
+> @@ -2890,6 +2938,7 @@ static void arm_smmu_remove_device(struct device *dev)
+>  	arm_smmu_detach_dev(master);
+>  	iommu_group_remove_device(dev);
+>  	iommu_device_unlink(&smmu->iommu, dev);
+> +	arm_smmu_disable_pasid(master);
+>  	kfree(master);
+>  	iommu_fwspec_free(dev);
+>  }
+> 
 
-Fixes: 9125cdd1be11 ("stmmac: add the initial tx coalesce schema")
-Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
+Thanks
 
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 1cb466dd5b3f..6f51a265459d 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -3053,8 +3053,6 @@ static netdev_tx_t stmmac_tso_xmit(struct sk_buff *skb, struct net_device *dev)
- 		tx_q->tx_count_frames = 0;
- 		stmmac_set_tx_ic(priv, desc);
- 		priv->xstats.tx_set_ic_bit++;
--	} else {
--		stmmac_tx_timer_arm(priv, queue);
- 	}
- 
- 	/* We've used all descriptors we need for this skb, however,
-@@ -3125,6 +3123,7 @@ static netdev_tx_t stmmac_tso_xmit(struct sk_buff *skb, struct net_device *dev)
- 
- 	tx_q->tx_tail_addr = tx_q->dma_tx_phy + (tx_q->cur_tx * sizeof(*desc));
- 	stmmac_set_tx_tail_ptr(priv, priv->ioaddr, tx_q->tx_tail_addr, queue);
-+	stmmac_tx_timer_arm(priv, queue);
- 
- 	return NETDEV_TX_OK;
- 
-@@ -3276,8 +3275,6 @@ static netdev_tx_t stmmac_xmit(struct sk_buff *skb, struct net_device *dev)
- 		tx_q->tx_count_frames = 0;
- 		stmmac_set_tx_ic(priv, desc);
- 		priv->xstats.tx_set_ic_bit++;
--	} else {
--		stmmac_tx_timer_arm(priv, queue);
- 	}
- 
- 	/* We've used all descriptors we need for this skb, however,
-@@ -3366,6 +3363,7 @@ static netdev_tx_t stmmac_xmit(struct sk_buff *skb, struct net_device *dev)
- 
- 	tx_q->tx_tail_addr = tx_q->dma_tx_phy + (tx_q->cur_tx * sizeof(*desc));
- 	stmmac_set_tx_tail_ptr(priv, priv->ioaddr, tx_q->tx_tail_addr, queue);
-+	stmmac_tx_timer_arm(priv, queue);
- 
- 	return NETDEV_TX_OK;
- 
--- 
-2.7.4
+Eric
 
 
 _______________________________________________
