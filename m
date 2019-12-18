@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DCD61252A5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 21:06:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 274D11252B0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 21:07:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t/BLzlZsO6CKd+hn3Zm7AWGeYP41FAeKnLDfc6Y16yA=; b=LR//ECWQ4S+GAf
-	X12m/C58P2bWjq/9UxhswrA6fwwsMpBpvgm5pOHyp4IFBXyqNuQupmteJa/ooRaXFhT1+npUugze4
-	WVs0xwAqUwPD6y6sYYBqMCRhX+oMBJURoiS46Gp9hGWQbmuEjkwqo3sCnpvzjKCljB0V8r2n4HyaZ
-	sA9u4INqHdCo+EwBJRpOnFqsOwn49Fvjfj3CegMUdRLFkEcUsPZBOnqPA9NCovqcVwk5LsmTBigxc
-	Tt9LP2FLFQnVZy/JwnnaHjB57dSHfIOqcCo5TtIqzFsSInIUL7LuhHYMlzp81VupHlRCSef+Gh8xR
-	/mT8P5EwRPqtZGeeQV1Q==;
+	References:List-Owner; bh=afcorHNCo5F7627Tzu1FrqX20HsBqz+CCZMWG3YO90c=; b=u8K
+	E3bZFoAzLN2JLghXdVKGvGUhIpGKx9Ddy3Zj/g65baLyE4p8hQCMqHu6GQt80LbmguY2/HanF7bgA
+	P3zyavcE/qeSXcN2fo9sE5oT0AByUkinHf1kw+meOGe4xwjCSFKQKByAsYwkurrwmDfgop1rls7th
+	w6z9sXBpwbx9UkYGCvh+P3HYeSdPBBDVRSIOU2pL6RggDM9yT+RyLHk/DPRVziTet/8PZkrKR9e0D
+	xLIV4TsSl6rCUo5rTHTLKwQEONoqUI+Zx6aw3NYpJjQhuZUop+9P19mDwOtVXr+M3IzEefFaxtklW
+	eWKaegiPsNQEU1/8BZwl6TpEs4h1kRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihfaO-0006fF-P9; Wed, 18 Dec 2019 20:06:20 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihfaG-0006eX-I4
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 20:06:13 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f00:1c3::3d5])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id AE094153CA138;
- Wed, 18 Dec 2019 12:06:08 -0800 (PST)
-Date: Wed, 18 Dec 2019 12:06:08 -0800 (PST)
-Message-Id: <20191218.120608.957923763169948073.davem@davemloft.net>
-To: Jose.Abreu@synopsys.com
-Subject: Re: [PATCH net v3 0/9] net: stmmac: Fixes for -net
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <cover.1576664155.git.Jose.Abreu@synopsys.com>
-References: <cover.1576664155.git.Jose.Abreu@synopsys.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Wed, 18 Dec 2019 12:06:09 -0800 (PST)
+	id 1ihfas-0006wJ-NC; Wed, 18 Dec 2019 20:06:50 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihfad-0006vc-Vp
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 20:06:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9665A31B;
+ Wed, 18 Dec 2019 12:06:35 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1112B3F67D;
+ Wed, 18 Dec 2019 12:06:34 -0800 (PST)
+Date: Wed, 18 Dec 2019 20:06:33 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Applied "regulator: axp20x: Fix AXP22x ELDO2 regulator enable
+ bitmask" to the regulator tree
+In-Reply-To: <20191218044720.21990-1-wens@kernel.org>
+Message-Id: <applied-20191218044720.21990-1-wens@kernel.org>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_120612_596502_7B463101 
-X-CRM114-Status: UNSURE (   5.20  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191218_120636_063605_F08F5602 
+X-CRM114-Status: GOOD (  15.42  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,33 +63,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao.Pinto@synopsys.com, jakub.kicinski@netronome.com,
- alexandre.torgue@st.com, netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Maxime Ripard <mripard@kernel.org>, Mark Brown <broonie@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-Date: Wed, 18 Dec 2019 11:17:34 +0100
+The patch
 
-> Fixes for stmmac.
+   regulator: axp20x: Fix AXP22x ELDO2 regulator enable bitmask
 
-Series applied.
+has been applied to the regulator tree at
 
-But realistically I doubt you'll ever find a configuration where
-SMP_CACHE_BYTES is less than 16 (seriously, it is so non-sensible to
-build a cpu like that).  So you could have done something like:
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-5.5
 
-#if SMP_CACHE_BYTES < 16
-#error SMP_CACHE_BYTES too small
-#endif
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-and then add the funky double alignment code if that ever triggered.
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-But again it never will.
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From f40ddaa059fdfb472e3aeb733c6220d8e0633a47 Mon Sep 17 00:00:00 2001
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Wed, 18 Dec 2019 12:47:20 +0800
+Subject: [PATCH] regulator: axp20x: Fix AXP22x ELDO2 regulator enable bitmask
+
+A copy-paste error was introduced when bitmasks were converted to
+macros, incorrectly setting the enable bitmask for ELDO2 to the one
+for ELDO1 for the AXP22x units.
+
+Fix it by using the correct macro.
+
+On affected boards, ELDO1 and/or ELDO2 are used to power the camera,
+which is currently unsupported.
+
+Fixes: db4a555f7c4c ("regulator: axp20x: use defines for masks")
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+Link: https://lore.kernel.org/r/20191218044720.21990-1-wens@kernel.org
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/regulator/axp20x-regulator.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/regulator/axp20x-regulator.c b/drivers/regulator/axp20x-regulator.c
+index 989506bd90b1..fe369cba34fb 100644
+--- a/drivers/regulator/axp20x-regulator.c
++++ b/drivers/regulator/axp20x-regulator.c
+@@ -605,7 +605,7 @@ static const struct regulator_desc axp22x_regulators[] = {
+ 		 AXP22X_PWR_OUT_CTRL2, AXP22X_PWR_OUT_ELDO1_MASK),
+ 	AXP_DESC(AXP22X, ELDO2, "eldo2", "eldoin", 700, 3300, 100,
+ 		 AXP22X_ELDO2_V_OUT, AXP22X_ELDO2_V_OUT_MASK,
+-		 AXP22X_PWR_OUT_CTRL2, AXP22X_PWR_OUT_ELDO1_MASK),
++		 AXP22X_PWR_OUT_CTRL2, AXP22X_PWR_OUT_ELDO2_MASK),
+ 	AXP_DESC(AXP22X, ELDO3, "eldo3", "eldoin", 700, 3300, 100,
+ 		 AXP22X_ELDO3_V_OUT, AXP22X_ELDO3_V_OUT_MASK,
+ 		 AXP22X_PWR_OUT_CTRL2, AXP22X_PWR_OUT_ELDO3_MASK),
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
