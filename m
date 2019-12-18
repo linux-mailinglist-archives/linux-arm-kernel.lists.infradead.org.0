@@ -2,56 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64B3D124B8C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 16:24:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 158F5124BAA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 16:28:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D50x1/efwSdTPqPQaAc04A702dgyuOO8S9+BTjcXUxw=; b=hQHcM9crA7Agoo
-	YOwK2Abz499eHUU4HHD/0pbc7gv+OmXcJaf9UCN1eezL7xM9Dnel4iohYbwmJkyaW4NeNXRYvM82M
-	3kcimRy7SE/5YDF5WA+s9EnJ2BLK9vABxU7G9amG5k+jg1LFIh340sKXwJnKHBmuztdEkpDZPKSsT
-	Xhqc19lT2t0Yw5M8hWcfK1+TFK9d47Ev+kX71ijBwjDLJLQo3fVrEo3XiiGLf/qTGrr8gMCBH/bvv
-	zQb0AQpxp8engPShBaDmsLW9Tn6+SHadMLZcUX8QBC0smP7q9RNpI4r75B+cvuqQqA3VrpUHP3ky5
-	QN5mS+J0LNhiC3BVaU/Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JEsvX08wm/VgJf/9OXrs8Cc7+W1494Tkt+/47Re0wJA=; b=I3FkUVvbWzY+1o
+	41a817hModyuJEoaWwXCF47BwSnbTLyUkD5FwOapyY33aqpTw1cZVpDrmUZUDclm3MTyO2Rm1VeDE
+	uTK0VVIIMKPGfeExRedTT1RuIIAF/gVmp8L64ueXEKYmmn907PocELoNJoMFHeFLA1nQeyFLGRClC
+	EtHtb0vqDn8atQ6GrH8Q5aDje64QDxJUj+dPLQpim1+sGmjNajl6akthzQBS0F8RaRychdJB/dfqr
+	PxwPoyi5XywD0ZSDzwYf3FEcUcMHSyk2+L2hRt3gCrqP5Q4/ZqbDfchG5zbqiUla7Q904tnTxvywj
+	yu/f3abTXnl7qdS43IsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihbBj-00062J-Aq; Wed, 18 Dec 2019 15:24:35 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1ihbFQ-0007xb-FQ; Wed, 18 Dec 2019 15:28:24 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihbBa-00061a-98; Wed, 18 Dec 2019 15:24:27 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id E696C291739
-Subject: Re: [PATCH v21 1/2] Documentation: bridge: Add documentation for
- ps8640 DT properties
-To: Maxime Ripard <maxime@cerno.tech>
-References: <20191216135834.27775-1-enric.balletbo@collabora.com>
- <20191216135834.27775-2-enric.balletbo@collabora.com>
- <20191217142821.xitumpvfg52heb4t@gilmour.lan>
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Message-ID: <da1f3c1b-30b5-7708-9527-7f210e817a31@collabora.com>
-Date: Wed, 18 Dec 2019 16:24:21 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+ id 1ihbFH-0007ww-5f
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 15:28:16 +0000
+Received: by mail-lj1-x243.google.com with SMTP id u1so2598620ljk.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Dec 2019 07:28:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=NGB0Bht5iuAhGYY8+BK8lXynDdbbH0NCySaOeUZsF9Q=;
+ b=CElXgf2Klb0noNFucfG1GDOjLqnMBNcOXXqZdVOK6xOVs3KX9bggRS09lL5rsfFVtm
+ yXEywA9e5CfLlR0B2XhQyzUMJ9L83+aaXAO4v/mxfrwtQF/J8vTUouACtLVHSTq/RSMI
+ gUHTSBrg2ZvU8dy7xidG8UQptYGyBozEXoeaA8KCoDSpGSc+SC+eh9AqZXixC3d0Ic5d
+ N4I9FKec8Z/VeCi6whOwWsTE2jHgM2Pm/DvHM9lFERLNdaQtzoAU+O+sCqgb8MTXN59Z
+ KyLnvt3x+fgtbmF6b0dGBbUmXrUmbhL+DHQBY+MSpQrIULmHt2ZfnM7GpTDUMwQgEJr/
+ 72Zw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=NGB0Bht5iuAhGYY8+BK8lXynDdbbH0NCySaOeUZsF9Q=;
+ b=r705lB22OVuDXXTWUSZHyddQID1Y9Y82uqFDua806p0z+TcHRW4XMW9ctbjYMK2qMA
+ xDWfS8PgmPD2ATs0dpoEl40X6DBQJBMzY6AZFOj7k5HsAgRAf7U0+jISE7ctPtyjARuw
+ zcc7rvk8i4Rg92A+KVKdUdCcUgNE9dmdY5ppOA68mi+6SySfKKdhwrTY+mhu/6XG5MGM
+ H+Rr45ajcNtqPxiHb6F2+mWg6FGNaLU3AfZCMPEDC57upzxNbzJaKUzIeRvngh5+NYHt
+ MQ4yH8eZ0WAjfQvpxf0kXZVDqUKj8UjQU920tBHmIdWhW9n/8fU3juUN+FDIjE41MCzJ
+ kktg==
+X-Gm-Message-State: APjAAAUf9AAK9fWzZvn4zOsrwaN48Rh4TbP6IUvjmbRmAPDmgcKsqQDX
+ 7vh3DPL2W3jLThsUa2QYWH3kvN8VhphqRFejon8=
+X-Google-Smtp-Source: APXvYqwRXR6SYoiNPvwbThVTZFiIWXv19mPiee7yYheOO2EF59zuRJmhpBpkJVuauhHrW8NUK5B5sny+ZKnji/BawQc=
+X-Received: by 2002:a2e:6e10:: with SMTP id j16mr2223416ljc.202.1576682892704; 
+ Wed, 18 Dec 2019 07:28:12 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191217142821.xitumpvfg52heb4t@gilmour.lan>
-Content-Language: en-US
+References: <1576672860-14420-1-git-send-email-peng.fan@nxp.com>
+ <CAOMZO5DeA24EUjr-E=V=tGNaZ7UkOEi+F5-kEBqEB288DSNSoA@mail.gmail.com>
+ <AM0PR04MB4481B3EAB2DDC42A137E8AAB88530@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <CAOMZO5BK0Pa6Aw6n7Tf+C6+Fg15WNbEUOzKCQTaWqTUu6yoPjA@mail.gmail.com>
+ <20191218145955.GE26938@lunn.ch>
+ <CAOMZO5BibF5A9sw=fLr3DXLf9LXYdxWy=aK7KCE3L0bt5eX+9Q@mail.gmail.com>
+In-Reply-To: <CAOMZO5BibF5A9sw=fLr3DXLf9LXYdxWy=aK7KCE3L0bt5eX+9Q@mail.gmail.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Wed, 18 Dec 2019 12:28:07 -0300
+Message-ID: <CAOMZO5BOv2e2_NWHxXRQk0v6Q10FgKLQO-HvTgi5oF_bwUEphg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] pinctrl: mvebu: armada-37xx: use use platform api
+To: Andrew Lunn <andrew@lunn.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_072426_585915_84F248CF 
-X-CRM114-Status: GOOD (  16.82  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191218_072815_214382_E7950538 
+X-CRM114-Status: UNSURE (   8.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,120 +98,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Ulrich Hecht <uli@fpond.eu>,
- drinkcat@chromium.org, Jitao Shi <jitao.shi@mediatek.com>,
- devicetree@vger.kernel.org, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- hsinyi@chromium.org, matthias.bgg@gmail.com,
- Collabora Kernel ML <kernel@collabora.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Peng Fan <peng.fan@nxp.com>, "jason@lakedaemon.net" <jason@lakedaemon.net>,
+ "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mripard@kernel.org" <mripard@kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "wens@csie.org" <wens@csie.org>,
+ "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "sebastian.hesselbarth@gmail.com" <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
+On Wed, Dec 18, 2019 at 12:09 PM Fabio Estevam <festevam@gmail.com> wrote:
 
-Thanks for your comment, just preparing another version.
+> Yes, I think that returning the error like:
 
-On 17/12/19 15:28, Maxime Ripard wrote:
-> On Mon, Dec 16, 2019 at 02:58:33PM +0100, Enric Balletbo i Serra wrote:
->> From: Jitao Shi <jitao.shi@mediatek.com>
->>
->> Add documentation for DT properties supported by
->> ps8640 DSI-eDP converter.
->>
->> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
->> Acked-by: Rob Herring <robh@kernel.org>
->> Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
->> Signed-off-by: Ulrich Hecht <uli@fpond.eu>
->> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
->> ---
->>
->> Changes in v21: None
->> Changes in v19: None
->> Changes in v18: None
->> Changes in v17: None
->> Changes in v16: None
->> Changes in v15: None
->> Changes in v14: None
->> Changes in v13: None
->> Changes in v12: None
->> Changes in v11: None
->>
->>  .../bindings/display/bridge/ps8640.txt        | 44 +++++++++++++++++++
->>  1 file changed, 44 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/display/bridge/ps8640.txt
->>
->> diff --git a/Documentation/devicetree/bindings/display/bridge/ps8640.txt b/Documentation/devicetree/bindings/display/bridge/ps8640.txt
->> new file mode 100644
->> index 000000000000..7b13f92f7359
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/display/bridge/ps8640.txt
->> @@ -0,0 +1,44 @@
->> +ps8640-bridge bindings
->> +
->> +Required properties:
->> +	- compatible: "parade,ps8640"
->> +	- reg: first page address of the bridge.
->> +	- sleep-gpios: OF device-tree gpio specification for PD pin.
->> +	- reset-gpios: OF device-tree gpio specification for reset pin.
->> +	- vdd12-supply: OF device-tree regulator specification for 1.2V power.
->> +	- vdd33-supply: OF device-tree regulator specification for 3.3V power.
->> +	- ports: The device node can contain video interface port nodes per
->> +		 the video-interfaces bind[1]. For port@0,set the reg = <0> as
->> +		 ps8640 dsi in and port@1,set the reg = <1> as ps8640 eDP out.
->> +
->> +Optional properties:
->> +	- mode-sel-gpios: OF device-tree gpio specification for mode-sel pin.
->> +[1]: Documentation/devicetree/bindings/media/video-interfaces.txt
->> +
->> +Example:
->> +	edp-bridge@18 {
->> +		compatible = "parade,ps8640";
->> +		reg = <0x18>;
->> +		sleep-gpios = <&pio 116 GPIO_ACTIVE_LOW>;
->> +		reset-gpios = <&pio 115 GPIO_ACTIVE_LOW>;
->> +		mode-sel-gpios = <&pio 92 GPIO_ACTIVE_HIGH>;
->> +		vdd12-supply = <&ps8640_fixed_1v2>;
->> +		vdd33-supply = <&mt6397_vgp2_reg>;
->> +
->> +		ports {
->> +			#address-cells = <1>;
->> +			#size-cells = <0>;
->> +			port@0 {
->> +				reg = <0>;
->> +				ps8640_in: endpoint {
->> +					remote-endpoint = <&dsi0_out>;
->> +				};
->> +			};
->> +			port@1 {
->> +				reg = <1>;
->> +				ps8640_out: endpoint {
->> +					remote-endpoint = <&panel_in>;
->> +				};
->> +			};
->> +		};
->> +	};
-> 
-> It's not really fair to ask this after the rough history of this
-> patchset apparently, but bindings should be submitted in the YAML
-> format now.
-> 
-> This wouldn't be nice to stop it from going in just because of this,
-> so can you send a subsequent patch fixing this?
-> 
+s/returning/printing
 
-I don't mind to use YAML format for next version, in fact, I think is the best.
-
-Thanks,
- Enric
-
-
-> Thanks!
-> Maxime
-> 
+> dev_err(dev, "Couldn't determine irq count: %d\n", nr_irq_parent);
+>
+> would make the code cleaner.
+>
+> Maybe just a matter of taste though ;-)
 
 _______________________________________________
 linux-arm-kernel mailing list
