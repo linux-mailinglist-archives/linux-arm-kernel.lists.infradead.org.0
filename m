@@ -2,70 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D4FB123EA7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 05:47:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28603123F12
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 06:25:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MgkRvVbWxwTEUWJCiQGtWsVbn4B+8NEmW5FMJ6TJk9E=; b=GSLjxch3f+0oNe
-	Am2kqLnZZ6kjcPQFvmN8h+fUt7pcesmpG8HroeYD35UjbuOiFjDEY4AccbHm8FgZxcmNS0easSFAz
-	fZl7Aq6nSVxS/3whkUly4obzH4MfUhx8XmtLoCGXGLz4Ue4BoA5Sh3r3AUaKtdEhH6WSA+J8sUd+a
-	ACOt9YqnY0YIFnRWaKdqnx+kBdb1dqNY5HnDv48T+wvnSDxXuZJhVRkq37Tu64OxopjeUvNjOVmqr
-	wkAA0T/3x5VCoEZZiU7kR4Q0V1DxAKiv1UIykllVZEuc1SRwmRVkUmQE4ijvdgf3y/Rl++iOPbI4t
-	+E/FnrzVrAH9PCN2JIYg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=flRbVgMvy/+uMvKvuNip2Gnx6fFV19sWNzGZ2S0nxjw=; b=bunwS5qC8TWm8fLaLGQcyyVbS
+	1YsQ0daVMYm5gcbOleLAJ0jvIpNjumiGhvHE4sgo3XC3uXlIkYGuupN9UJbVSZYDt3ppoCU798X4b
+	zBs6thfFpnXO/rQZAp/Z4kS/jsACRkxajCcLjMAI8BryDT2xFqC/IbDxKRGZ23K9UFrB2a0O/eNQN
+	XVitfEj4UQbMac3fG333ufww0GNjYSE7w9rZ6G0PxguWEkMuUDDlBt1SRUo+qmEyLm5R+CPE/HBaW
+	88xZtuPOe5WFA9GWm0gPnPSMd+wyakUW3WE/bPp7DoKSTtFnSzWvWxHw7Yhp49q94e8Vie9eBMVhO
+	g0oPiRwHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihRFN-0002Il-RO; Wed, 18 Dec 2019 04:47:41 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ihRpl-00065Y-Uc; Wed, 18 Dec 2019 05:25:17 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihRFG-0002IS-8H
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 04:47:35 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AFF4620715;
- Wed, 18 Dec 2019 04:47:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576644452;
- bh=eC2bTR5Nkmvf2hgzbrBdYOzQGZ9iz4olZoASTWentL4=;
- h=From:To:Cc:Subject:Date:From;
- b=03panMM7i10MTKkulWSQQELugfIRDUetMkvoNf/Pepl+5CbShiE3MqAahnLqDgH0A
- VYgS+czKP01EWQHU4hwahvXS8I8TRITlEZB6Gc+QhZk8tXE1ji0WviUxnsO5L4M2I4
- NSbZLJGaTyL2OqPxzLCYbc6fT/yUcXvspnk2s8Mg=
-Received: by wens.tw (Postfix, from userid 1000)
- id 059ED5FCD0; Wed, 18 Dec 2019 12:47:28 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH RESEND] regulator: axp20x: Fix AXP22x ELDO2 regulator enable
- bitmask
-Date: Wed, 18 Dec 2019 12:47:20 +0800
-Message-Id: <20191218044720.21990-1-wens@kernel.org>
-X-Mailer: git-send-email 2.24.0
+ id 1ihRpc-0005O6-N1
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 05:25:10 +0000
+Received: by mail-qt1-x841.google.com with SMTP id 5so1023438qtz.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 17 Dec 2019 21:25:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=jonmasters-org.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:organization:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=uIMTyYXR3nXqdy95e1OaQ4blqi70Uo0OIJA0JwHv2YQ=;
+ b=zNU9URTpXbNk0H+bfxQuplRFAZ/+QuFZ6Yd096coCKdylsucVnKFkkww084LxKN7G6
+ ulzFsZdIg6SVR4tgU5cDYYlo0CXtfCmJPQycPblX0FFaYBE+cL5OKLuhei9teC6wUmmK
+ Oc84j0+Vw2gcCS4XC4WrHqz+fOgW/0CdiGR1dfMf/HODZ23IlHU7H1OJ2CmQoBfC4Z94
+ f3LbaBfhZ7wGluYaje4wnjvDGbcUfG9nrco1qf0kRn8/Ks0eSGsFKNjKDm+D7ZY8tNEi
+ OLH5Ejd9W1dUkuKA9ZRRYIkpvVpXSQKY6b9y3iYGtMQQIKB/nk3glaiVf+nHotXjSwF/
+ CilQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=uIMTyYXR3nXqdy95e1OaQ4blqi70Uo0OIJA0JwHv2YQ=;
+ b=edE3e4hlwwFXQPyLRmqOKoGKDYXSxvv4vsI3LRnsrr3Ojdh1IM9QKIhs54GLmQLKXb
+ Iedf3hvsa5zztwHm9Ay7nVSCBJk9WnVponW1YzGZlv87MwLhs8hIu0JMwV1E2aRLUiFl
+ 4UVr12MBF2TzTWr3/nwawffQyDU5qgYKhfgbhk628KNr/N+dHQ4mvfLe4oFO+1mZHlBy
+ 1p57ZZmfIGf9VOjDRKICLJIDX3SxFja9oUCPEoR9+t4vezJ/0Xkc+xcgwO9zz/eAEU22
+ i9R0UMhnbrayV6ryTxDdtnj4lwIUbmM4rpCbKGWvuv50FZgmsL7q7EqYAfvdHcM7fP1H
+ +k0g==
+X-Gm-Message-State: APjAAAVHDbytGWxXfENC9WydiIALWvK4N8ut126uM3v5XoPAFdzYNpj0
+ W9VGKJWCwWzFJJg1RhALyc2A6A==
+X-Google-Smtp-Source: APXvYqw0LJ2pIxnufMfbafewC8CwiqT+EqKHOTuPpD18gUxiTVv4YVZQUuZHJ8Y4ZurUv0V5JwW/og==
+X-Received: by 2002:ac8:2af4:: with SMTP id c49mr659933qta.367.1576646704962; 
+ Tue, 17 Dec 2019 21:25:04 -0800 (PST)
+Received: from independence.bos.jonmasters.org (Boston.jonmasters.org.
+ [50.195.43.97])
+ by smtp.gmail.com with ESMTPSA id t7sm315351qkm.136.2019.12.17.21.25.04
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 17 Dec 2019 21:25:04 -0800 (PST)
+Subject: Re: [PATCH] pcie: Add quirk for the Arm Neoverse N1SDP platform
+To: Will Deacon <will@kernel.org>, Andre Przywara <andre.przywara@arm.com>
+References: <20191209160638.141431-1-andre.przywara@arm.com>
+ <20191209162645.GA7489@willie-the-truck>
+From: Jon Masters <jcm@jonmasters.org>
+Organization: World Organi{s,z}ation of Broken Dreams
+Message-ID: <dacfd8bf-0f68-f2af-9238-4b0fadfbdfe3@jonmasters.org>
+Date: Tue, 17 Dec 2019 21:21:17 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
+In-Reply-To: <20191209162645.GA7489@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191217_204734_317401_F6C18426 
-X-CRM114-Status: GOOD (  12.36  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191217_212508_772848_024A0B53 
+X-CRM114-Status: GOOD (  13.74  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.1 DATE_IN_PAST_03_06     Date: is 3 to 6 hours before Received: date
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,56 +101,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ linux-acpi@vger.kernel.org, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
+On 12/9/19 11:26 AM, Will Deacon wrote:
+> On Mon, Dec 09, 2019 at 04:06:38PM +0000, Andre Przywara wrote:
+>> From: Deepak Pandey <Deepak.Pandey@arm.com>
+>>
+>> The Arm N1SDP SoC suffers from some PCIe integration issues, most
+>> prominently config space accesses to not existing BDFs being answered
+>> with a bus abort, resulting in an SError.
+> 
+> "Do as I say, not as I do"?
 
-A copy-paste error was introduced when bitmasks were converted to
-macros, incorrectly setting the enable bitmask for ELDO2 to the one
-for ELDO1 for the AXP22x units.
+In my former role I asked nicely that these patches not be posted 
+upstream, but I see that they ended up being posted anyway. Hacking up 
+upstream Linux to cover for the fact that a (reference) platform is 
+non-standard is not only not good form but it actively harms the community.
 
-Fix it by using the correct macro.
+You'll have people consume this platform and not realize that it's 
+broken, IP won't get fixed, and generally it'll be a mess. Yes, it's 
+unfortunate, but so was taping out that platform without working PCI. We 
+all know what should have happened, and what the right move ahead is.
 
-On affected boards, ELDO1 and/or ELDO2 are used to power the camera,
-which is currently unsupported.
+Jon.
 
-Fixes: db4a555f7c4c ("regulator: axp20x: use defines for masks")
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
-
-(Originally sent before v5.5-rc1 was tagged.)
-
-Small fix. Patches [1] supporting the camera sensor interface on the
-Allwinner R40 based BPI-M2U board depend on this at runtime to power on
-the camera correctly.
-
-[1] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=217057
-
----
- drivers/regulator/axp20x-regulator.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/regulator/axp20x-regulator.c b/drivers/regulator/axp20x-regulator.c
-index 989506bd90b1..fe369cba34fb 100644
---- a/drivers/regulator/axp20x-regulator.c
-+++ b/drivers/regulator/axp20x-regulator.c
-@@ -605,7 +605,7 @@ static const struct regulator_desc axp22x_regulators[] = {
- 		 AXP22X_PWR_OUT_CTRL2, AXP22X_PWR_OUT_ELDO1_MASK),
- 	AXP_DESC(AXP22X, ELDO2, "eldo2", "eldoin", 700, 3300, 100,
- 		 AXP22X_ELDO2_V_OUT, AXP22X_ELDO2_V_OUT_MASK,
--		 AXP22X_PWR_OUT_CTRL2, AXP22X_PWR_OUT_ELDO1_MASK),
-+		 AXP22X_PWR_OUT_CTRL2, AXP22X_PWR_OUT_ELDO2_MASK),
- 	AXP_DESC(AXP22X, ELDO3, "eldo3", "eldoin", 700, 3300, 100,
- 		 AXP22X_ELDO3_V_OUT, AXP22X_ELDO3_V_OUT_MASK,
- 		 AXP22X_PWR_OUT_CTRL2, AXP22X_PWR_OUT_ELDO3_MASK),
 -- 
-2.24.0
-
+Computer Architect
 
 _______________________________________________
 linux-arm-kernel mailing list
