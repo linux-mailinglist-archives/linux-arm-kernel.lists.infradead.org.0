@@ -2,94 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E77C124514
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 11:53:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9173124538
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 12:02:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZBNVIzBEtD9l9wbVtmF5T4B2bIQwbpO/uIVp9wlGNwI=; b=lPvPhlrlwrby9i
-	W+D3Ax8XXbtrrTrmDNFQNun436fDk2usG3fDv1V1wvLHLrOEo3y8TvzIq7ybnowCzm/5SJC2OxQVy
-	bMNOr4DrfLpGyI72BNYSIHncVQgnO9vU4K1ttZmScpbtOJpraYhOIKbdiuD+aWEGvOEQmgtCDAtxp
-	staKvCgfcasBzQfL5Hh7ZSOJEGOJGEhA6+jWEAN+zGGxQ3/6xB9sVNsN7ATR3Qh62UG8yg71Hr7zQ
-	ZINXRQm11XgbCKmC+uP565ucjVHPbwHPeI7lefEXL4mp7nvfiADiH332puGgidaL+sxnjMmRNaMzE
-	mjMW8a+Pvjb908ZQDd6A==;
+	List-Owner; bh=E445YciGaU+bOPdXlBMuSsuspgEzpf7axMcvfz4xVmM=; b=gghCkKYvrLUz3X
+	myLkJ19F7Qz28+tHFM+B0ntCnqIK3btBYYs24ws9ejIsDIOCG6hJrMH+Jwnon7jgHpVHei4PgI9G5
+	g+Kt8/ppCwEyC2wNdYQu98q9PAa0kwiCIddxSOjFFOm69fjNjQ96oM8U7/9PCD2LR294m3rm8GS0t
+	1iVnav6xSr6gcS8PsN7cCH1DxFyG9NJA25i0WjmABJWJCmlwh1LwIr2NE28TNEY9h0kw5+RaWJABj
+	clMdjQL6Tkmq5fI9rh5i1FWQvWgEpfO8OlADRb0lxqRplNxnTuRPFlUpDKvswO5R7Nm4ayXKgeUBA
+	XvTcDv344cQIzCHa5N+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihWxC-0000xd-3s; Wed, 18 Dec 2019 10:53:18 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1ihX5l-0004vF-8c; Wed, 18 Dec 2019 11:02:09 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihWx2-0000wr-RP
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 10:53:10 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xBIAgTQb021020; Wed, 18 Dec 2019 11:53:00 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=WltQl+Nrsz8fgtBLEjjq7GsetJKHtSnm0grD1Qcbr9Y=;
- b=PImSGWa9eBzHSdxhKgcdjhReUg9+BmUiNMAmwZuGTRHVfIqMSR5chg+152B+leibrTKg
- v7nFMfenJhyBu1eydlGEY+6TG4lCSvA7RIXy0eMNQYHNXEi31KIe7j3YcoTThxiy9baG
- aeG59XpksS9bmDjAVsN75SH5sAENi2dT5Q6luydI3RsvoSFyNv0hJQXIj17NKWdFS0KS
- 7G+jS4G+xSbQI8f7D844N1As5coVNhIxPXSkd0A2vJYCTnKcRJ4Vx5j8xzEw5QzbPvV8
- SldnwEbaiF403JoErbqRbKkANsJ+iExkjRfLrXmymY7FJtkDq1ID+uh3rePR31sCMOXq Cg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wvnrekyw1-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 18 Dec 2019 11:53:00 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2777D10002A;
- Wed, 18 Dec 2019 11:52:54 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 087AB2A8BF8;
- Wed, 18 Dec 2019 11:52:54 +0100 (CET)
-Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 18 Dec
- 2019 11:52:53 +0100
-Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
- SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
- 15.00.1473.003; Wed, 18 Dec 2019 11:52:53 +0100
-From: Hugues FRUCHET <hugues.fruchet@st.com>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>, "mchehab@kernel.org"
- <mchehab@kernel.org>, "mcoquelin.stm32@gmail.com"
- <mcoquelin.stm32@gmail.com>, Alexandre TORGUE <alexandre.torgue@st.com>
-Subject: Re: [PATCH] media: stm32-dcmi: Use dma_request_chan() instead
- dma_request_slave_channel()
-Thread-Topic: [PATCH] media: stm32-dcmi: Use dma_request_chan() instead
- dma_request_slave_channel()
-Thread-Index: AQHVtMaOm1nAskP+t06Lg3ivGfEhOKe/qEeA
-Date: Wed, 18 Dec 2019 10:52:53 +0000
-Message-ID: <84946ffd-8e90-7b6a-6667-a10e27d31655@st.com>
-References: <20191217104135.23554-1-peter.ujfalusi@ti.com>
-In-Reply-To: <20191217104135.23554-1-peter.ujfalusi@ti.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.48]
-Content-ID: <8055C0FD5DE0F440A5AA37D71102D704@st.com>
+ id 1ihX5c-0004sw-Vq
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 11:02:02 +0000
+Received: by mail-ed1-x544.google.com with SMTP id v28so1273847edw.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 18 Dec 2019 03:01:57 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=jOvy+Wb152d0zqbPj1ADcU3RyJlqbcpQxfTLATNTuZQ=;
+ b=PVuXNYDR30Vl0OmPK1uSJ8/tPsKevwn7uSPY4MGZ/nxyH/Oi9o8xAnX+VGgjx1AICE
+ 5aEyvWakA/ZsPGdeagJcN8I8oDlmJtuiIfkwl3blosCbdenj7/Fd8To9TQNpXKZWp+5S
+ RaA69AoMh7LiR3p6N5I6Q/DeOTk1opqaNdljEXK+LoDryFw6tdufAWouMwJa1HX+vfrh
+ cuc7LU6miJEuGhbzGzoPn644sI0wjVwZXI7VqsUFWCjQ/+F32hdIR+hIpqhiXKXDsEr7
+ cGWMZ6Lt0r6HG1O+6y9ODp459cgFAKRpR9G3SGb8FIXyZ9TLccF+8UcL03AKqM1Gy3lo
+ LgCQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jOvy+Wb152d0zqbPj1ADcU3RyJlqbcpQxfTLATNTuZQ=;
+ b=jVnHsf2Jqpd96whwBBhMFKqC5RDK7zZyXRyRVE4UOxM8Knp097uTQUQp3IgTvyQj2U
+ aNPbBO2YiexoFCR6OJBsJZ58NK+vq3V/PSLQPuN9nLQW4EwoFveCrxdtr8CZ+AdeqBW4
+ s7iXNOjITAN9KrH/0brQwhGHeDIyq/nV3atpoHu/VgUbIABLtPN/eY/Cclxb5lSXCpaW
+ J7NGtwoBneq6e8o3WorYUWfsAPwOkLdAyG5bw57i2gf9cavytqFBk31YApawn3Vo3jN3
+ ikIAvBRNVQXfvrlvPuwJlRUO/jbjrQKsYD7RrUt3kfeVP4KTSLbD6OTX8L02LP2MbIlG
+ +dxg==
+X-Gm-Message-State: APjAAAXb/5IWFV88LNOMCn4tgXI6uKzwGpuIwtFt3Z7vrmkq5G0IUGN2
+ eODLjrFmup8C4uPSsTD0YoO/pgY0Et0NF3tLx3k=
+X-Google-Smtp-Source: APXvYqwjFGNoZwWaGD+ER9s2eFutTysDIRNxst+Rt1z3axVUFONKvQSxEEiVuQXpNKTc+8p03XpM24TZxlpMY/WZM24=
+X-Received: by 2002:a50:9e01:: with SMTP id z1mr1572715ede.232.1576666916178; 
+ Wed, 18 Dec 2019 03:01:56 -0800 (PST)
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-12-18_02:2019-12-17,2019-12-18 signatures=0
+References: <1540378203-1655-1-git-send-email-shubhrajyoti.datta@gmail.com>
+ <20181024105854.GU30658@n2100.armlinux.org.uk>
+In-Reply-To: <20181024105854.GU30658@n2100.armlinux.org.uk>
+From: Shubhrajyoti Datta <shubhrajyoti.datta@gmail.com>
+Date: Wed, 18 Dec 2019 16:31:44 +0530
+Message-ID: <CAKfKVtFLssjC3j3yHvQ98TNGSf=DRdMO+YdUyMn0o91+Jn10Zw@mail.gmail.com>
+Subject: Re: [PATCH] i2c: cadence: Implement timeout
+To: Russell King - ARM Linux <linux@armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_025309_281725_B44E3F55 
-X-CRM114-Status: GOOD (  20.49  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191218_030201_072855_F4E7BAEB 
+X-CRM114-Status: GOOD (  20.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (shubhrajyoti.datta[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -109,57 +93,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "vkoul@kernel.org" <vkoul@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Michal Simek <michal.simek@xilinx.com>,
+ Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>,
+ linux-i2c <linux-i2c@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks for patching Peter,
+On Wed, Oct 24, 2018 at 4:29 PM Russell King - ARM Linux
+<linux@armlinux.org.uk> wrote:
+>
+> On Wed, Oct 24, 2018 at 04:20:03PM +0530, shubhrajyoti.datta@gmail.com wrote:
+> > From: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
+> >
+> > In some cases we are waiting in a loop. Replace the infinite wait with
+> > the  timeout.
+> >
+> > Signed-off-by: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
+> > ---
+> >  drivers/i2c/busses/i2c-cadence.c | 30 ++++++++++++++++++++++++++----
+> >  1 file changed, 26 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/drivers/i2c/busses/i2c-cadence.c b/drivers/i2c/busses/i2c-cadence.c
+> > index b136057..9c38278 100644
+> > --- a/drivers/i2c/busses/i2c-cadence.c
+> > +++ b/drivers/i2c/busses/i2c-cadence.c
+> > @@ -209,6 +209,7 @@ static irqreturn_t cdns_i2c_isr(int irq, void *ptr)
+> >       struct cdns_i2c *id = ptr;
+> >       /* Signal completion only after everything is updated */
+> >       int done_flag = 0;
+> > +     unsigned int timeout;
+> >       irqreturn_t status = IRQ_NONE;
+> >
+> >       isr_status = cdns_i2c_readreg(CDNS_I2C_ISR_OFFSET);
+> > @@ -235,6 +236,7 @@ static irqreturn_t cdns_i2c_isr(int irq, void *ptr)
+> >           ((isr_status & CDNS_I2C_IXR_COMP) ||
+> >            (isr_status & CDNS_I2C_IXR_DATA))) {
+> >               /* Read data if receive data valid is set */
+> > +             timeout = 1000;
+> >               while (cdns_i2c_readreg(CDNS_I2C_SR_OFFSET) &
+> >                      CDNS_I2C_SR_RXDV) {
+> >                       /*
+> > @@ -253,6 +255,16 @@ static irqreturn_t cdns_i2c_isr(int irq, void *ptr)
+> >
+> >                       if (cdns_is_holdquirk(id, hold_quirk))
+> >                               break;
+> > +                     timeout--;
+> > +                     if (timeout)
+> > +                             mdelay(1);
+> > +                     else
+> > +                             break;
+> > +             }
+> > +             if (!timeout) {
+> > +                     id->err_status = -ETIMEDOUT;
+> > +                     complete(&id->xfer_done);
+> > +                     return IRQ_HANDLED;
+>
+> Good kernel programming principle: Always check for the success
+> condition when exiting due to timeout rather than the fact that we
+> timed out.
+>
+> Also, is this _really_ a loop that needs a timeout condition?  Looking
+> at the original code, it looks like the purpose of the loop is to read
+> more than one byte, and you are introducing a 1ms delay between the
+> read of each byte.
+Thanks for the review.
+I agree will skip this patch.
 
-No regression observed on my side.
-
-Acked-by: Hugues Fruchet <hugues.fruchet@st.com>
-
-Best regards,
-Hugues.
-
-On 12/17/19 11:41 AM, Peter Ujfalusi wrote:
-> dma_request_slave_channel() is a wrapper on top of dma_request_chan()
-> eating up the error code.
-> 
-> By using dma_request_chan() directly the driver can support deferred
-> probing against DMA.
-> 
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-> ---
->   drivers/media/platform/stm32/stm32-dcmi.c | 6 +++---
->   1 file changed, 3 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-> index 9392e3409fba..55351872b0c7 100644
-> --- a/drivers/media/platform/stm32/stm32-dcmi.c
-> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
-> @@ -1910,10 +1910,10 @@ static int dcmi_probe(struct platform_device *pdev)
->   		return PTR_ERR(mclk);
->   	}
->   
-> -	chan = dma_request_slave_channel(&pdev->dev, "tx");
-> -	if (!chan) {
-> +	chan = dma_request_chan(&pdev->dev, "tx");
-> +	if (IS_ERR(chan)) {
->   		dev_info(&pdev->dev, "Unable to request DMA channel, defer probing\n");
-> -		return -EPROBE_DEFER;
-> +		return PTR_ERR(chan);
->   	}
->   
->   	spin_lock_init(&dcmi->irqlock);
-> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
