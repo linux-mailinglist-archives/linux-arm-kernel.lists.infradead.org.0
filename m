@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DB9D1244BC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 11:35:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3416C1244B8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 18 Dec 2019 11:34:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=GHmCsBQlFLb18resBWCqAm3zeWYsRESER0wATQED8EY=; b=DD8v/BvRK86gUFXNr4MSTc3jyh
-	r/VMYPN5aPbDpol88oN5t/MXEbQge2TLifhUQ2pA59y7X+yNy5fFvNE9XaawBmeTtHxrEKI1srIsY
-	mIdmfSN50J/AAIjzmE8pHysKJEizWPiy4ArQLM+cyjE2jV5DJ2s8WRWjEx1lcdYloV3AlZ1ocO5wj
-	HNgVe9tsaTVM+h+YzPHAURw5199DBDIV6PLJghJiJbo0VwyVRYQ+JZPXmaKIBqU27MQpdcwcuzNps
-	pTZg3NAkVc2goqGqkXcfttX+hWKds/Uz2yTfjGMaxUKy2NKVE3syzs9enhJqv5SL5MQ9yPsCs14Fm
-	Pe8Pr1wQ==;
+	bh=eHEco0plbRMZ0z+nywCEIpkeni4QO9wL9WOQDNFsGRs=; b=jBooP0tcUUycN5bQh6rpzO34sv
+	egq8EDiCVc6jgl1TQO2+Q6XTb4y9g1+iao7AjPmsmIDq6QTdofeeN7FCPqzUYV48DcT3fX8lvL5hT
+	YBo3DHqieB5WfGBQ9Mj0UESTYiBqYhhKCXSNH7eeXkT6ircUW8/Z/drEwzvm5cyJlsXn4153a7hE3
+	TCrIroEaJayYgsRHuOdKyRMaWhwbfgkT7MDlfMjYe9fXkTrZBSGxgvRxE54+zKzjTgI99gwMDg30v
+	GgkLOhX6a1tHvQw4t0HATFq/m1rn2N8OhID/v4fQI1omiwyZRBJhqMUTczcMrKsMyYqnYCWNSh29B
+	AmgFsVpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihWfk-0000ZN-0p; Wed, 18 Dec 2019 10:35:16 +0000
+	id 1ihWfL-0000JL-7u; Wed, 18 Dec 2019 10:34:51 +0000
 Received: from smtprelay-out1.synopsys.com ([149.117.73.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihWdw-0007jP-45
- for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 10:33:28 +0000
+ id 1ihWdw-0007jI-49
+ for linux-arm-kernel@lists.infradead.org; Wed, 18 Dec 2019 10:33:29 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id BFB254052A;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id DB48C405BF;
  Wed, 18 Dec 2019 10:33:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1576665201; bh=vuO/iRik/hGL2Vv+JKcoZy+K4zCKCj0tWBiTM++ZPfE=;
+ t=1576665201; bh=Rl8X5VQHKz1HG6QQrBXkDv4iSU6x7MqhJR+ess8GXRw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=PffUb5PVDywRMU9+q050nJJypTkUbmuWL+jeWOsz1iq70N7R5+/cZPEuxRN3FuuYg
- ENz87FkhHqw0nEpBDUHEPzJXP9X497BIx/nn1/roGb9jJaZ9+B3D8nlnTtIzPkvqTy
- Js4DZ19oRzfQB1J/4h3Dp2H3IJM1zQHsWEldoBuA/JySXWfSNDdKxKjo+AXD2Vubay
- 2MnS0BXSNnoJSnx4j2PBlVAk2vOQnoQ76jZD1i1sRJL5TgXAiWnJ6Oj/a4Rm7VbGyg
- 1xlDo2mj3LDpxWWX/1fbO+zN5zJu6cydW4VnP7hBQgtqNRrdAACR/wrKZpDNtCsB1D
- YrptOtWkxXltg==
+ b=QGdwmFUOadrea/TEcJqzasyLJE+8IuEaqgYhXXZGQXgRV9x/fjvaARrDRSEwVNWnC
+ DRmeAI17I57o0bnk90BDctRZ2FweqxgBFLcSVGuqaLh6uq7yxcaoKLrQQm/oMVZHlT
+ k5PJCTzK7XLaPuCyyYVLYdwNdiA3T5PfDnxKAdVZkIHQY1yobYiBnoByEWNN2yOOLp
+ Tvyv3FCypX7qoEdOunxPZKzMXJDSaJ1e7c7ca4qwqKMhp/Y3TrJRo4mW1HqSdJBTbt
+ 7d2sT08q3vzmGqeypjbSWrbo6+3ccdOS7jQlYTLYNnkr8DgN8+dUOx0BuyZ+XG3t9G
+ dOfqh7s0dmJGA==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 91E53A0098;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 9D168A00A7;
  Wed, 18 Dec 2019 10:33:19 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 4/7] net: stmmac: Add Frame Preemption support using
- TAPRIO API
-Date: Wed, 18 Dec 2019 11:33:08 +0100
-Message-Id: <54e12f671c58f14a2d8a3a54e5d6d0f7d78f1c93.1576664870.git.Jose.Abreu@synopsys.com>
+Subject: [PATCH net-next 5/7] net: stmmac: gmac5+: Add support for Frame
+ Preemption
+Date: Wed, 18 Dec 2019 11:33:09 +0100
+Message-Id: <3ad6e3561cd5d08279419037a50b5a6b55a29aeb.1576664870.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1576664870.git.Jose.Abreu@synopsys.com>
 References: <cover.1576664870.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1576664870.git.Jose.Abreu@synopsys.com>
 References: <cover.1576664870.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_023324_219457_79BDDDD8 
-X-CRM114-Status: GOOD (  15.64  )
+X-CRM114-CacheID: sfid-20191218_023324_242792_C21F695F 
+X-CRM114-Status: GOOD (  14.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,9 +97,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adds the support for Frame Preemption using TAPRIO API. This works along
-with EST feature and allows to select if preemptable traffic shall be
-sent during specific queues opening time.
+Adds the HW specific support for Frame Preemption on GMAC5+ cores.
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -114,100 +112,119 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/common.h    |  1 +
- drivers/net/ethernet/stmicro/stmmac/hwif.h      |  4 ++++
- drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c | 29 ++++++++++++++++++++++++-
- 3 files changed, 33 insertions(+), 1 deletion(-)
+ drivers/net/ethernet/stmicro/stmmac/dwmac4.h      |  3 +++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c |  2 ++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c  |  1 +
+ drivers/net/ethernet/stmicro/stmmac/dwmac5.c      | 23 +++++++++++++++++++++++
+ drivers/net/ethernet/stmicro/stmmac/dwmac5.h      |  5 +++++
+ 5 files changed, 34 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
-index 2f1fc93a9b1e..09c72025ed3e 100644
---- a/drivers/net/ethernet/stmicro/stmmac/common.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/common.h
-@@ -367,6 +367,7 @@ struct dma_features {
- 	unsigned int estwid;
- 	unsigned int estdep;
- 	unsigned int estsel;
-+	unsigned int fpesel;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
+index f7f5a2751147..2e6b60a476c6 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
+@@ -64,6 +64,8 @@
+ #define GMAC_RXQCTRL_MCBCQEN_SHIFT	20
+ #define GMAC_RXQCTRL_TACPQE		BIT(21)
+ #define GMAC_RXQCTRL_TACPQE_SHIFT	21
++#define GMAC_RXQCTRL_FPRQ		GENMASK(26, 24)
++#define GMAC_RXQCTRL_FPRQ_SHIFT		24
+ 
+ /* MAC Packet Filtering */
+ #define GMAC_PACKET_FILTER_PR		BIT(0)
+@@ -237,6 +239,7 @@ enum power_event {
+ 
+ /* MAC HW features3 bitmap */
+ #define GMAC_HW_FEAT_ASP		GENMASK(29, 28)
++#define GMAC_HW_FEAT_FPESEL		BIT(26)
+ #define GMAC_HW_FEAT_ESTWID		GENMASK(21, 20)
+ #define GMAC_HW_FEAT_ESTDEP		GENMASK(19, 17)
+ #define GMAC_HW_FEAT_ESTSEL		BIT(16)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+index 8df7496411a0..f0c0ea616032 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
+@@ -985,6 +985,7 @@ const struct stmmac_ops dwmac410_ops = {
+ 	.config_l3_filter = dwmac4_config_l3_filter,
+ 	.config_l4_filter = dwmac4_config_l4_filter,
+ 	.est_configure = dwmac5_est_configure,
++	.fpe_configure = dwmac5_fpe_configure,
  };
  
- /* GMAC TX FIFO is 8K, Rx FIFO is 16K */
-diff --git a/drivers/net/ethernet/stmicro/stmmac/hwif.h b/drivers/net/ethernet/stmicro/stmmac/hwif.h
-index e9355d05b3c2..c3ca3a3b2421 100644
---- a/drivers/net/ethernet/stmicro/stmmac/hwif.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/hwif.h
-@@ -374,6 +374,8 @@ struct stmmac_ops {
- 	void (*set_arp_offload)(struct mac_device_info *hw, bool en, u32 addr);
- 	int (*est_configure)(void __iomem *ioaddr, struct stmmac_est *cfg,
- 			     unsigned int ptp_rate);
-+	void (*fpe_configure)(void __iomem *ioaddr, u32 num_txq, u32 num_rxq,
-+			      bool enable);
+ const struct stmmac_ops dwmac510_ops = {
+@@ -1029,6 +1030,7 @@ const struct stmmac_ops dwmac510_ops = {
+ 	.config_l3_filter = dwmac4_config_l3_filter,
+ 	.config_l4_filter = dwmac4_config_l4_filter,
+ 	.est_configure = dwmac5_est_configure,
++	.fpe_configure = dwmac5_fpe_configure,
  };
  
- #define stmmac_core_init(__priv, __args...) \
-@@ -462,6 +464,8 @@ struct stmmac_ops {
- 	stmmac_do_void_callback(__priv, mac, set_arp_offload, __args)
- #define stmmac_est_configure(__priv, __args...) \
- 	stmmac_do_callback(__priv, mac, est_configure, __args)
-+#define stmmac_fpe_configure(__priv, __args...) \
-+	stmmac_do_void_callback(__priv, mac, fpe_configure, __args)
+ int dwmac4_setup(struct stmmac_priv *priv)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
+index 3552ce1201ff..213d44482ffa 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
+@@ -404,6 +404,7 @@ static void dwmac4_get_hw_feature(void __iomem *ioaddr,
  
- /* PTP and HW Timer helpers */
- struct stmmac_hwtimestamp {
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c
-index 58d4ce094381..8ff8f9b9bb22 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_tc.c
-@@ -597,6 +597,7 @@ static int tc_setup_taprio(struct stmmac_priv *priv,
- 	u32 size, wid = priv->dma_cap.estwid, dep = priv->dma_cap.estdep;
- 	struct plat_stmmacenet_data *plat = priv->plat;
- 	struct timespec64 time;
-+	bool fpe = false;
- 	int i, ret = 0;
- 
- 	if (!priv->dma_cap.estsel)
-@@ -667,8 +668,23 @@ static int tc_setup_taprio(struct stmmac_priv *priv,
- 			return -ERANGE;
- 		if (gates > GENMASK(31 - wid, 0))
- 			return -ERANGE;
--		if (qopt->entries[i].command != TC_TAPRIO_CMD_SET_GATES)
+ 	/* 5.10 Features */
+ 	dma_cap->asp = (hw_cap & GMAC_HW_FEAT_ASP) >> 28;
++	dma_cap->fpesel = (hw_cap & GMAC_HW_FEAT_FPESEL) >> 26;
+ 	dma_cap->estwid = (hw_cap & GMAC_HW_FEAT_ESTWID) >> 20;
+ 	dma_cap->estdep = (hw_cap & GMAC_HW_FEAT_ESTDEP) >> 17;
+ 	dma_cap->estsel = (hw_cap & GMAC_HW_FEAT_ESTSEL) >> 16;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac5.c b/drivers/net/ethernet/stmicro/stmmac/dwmac5.c
+index 8047f402fb3f..5d4a3c2458ea 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac5.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac5.c
+@@ -645,3 +645,26 @@ int dwmac5_est_configure(void __iomem *ioaddr, struct stmmac_est *cfg,
+ 	writel(ctrl, ioaddr + MTL_EST_CONTROL);
+ 	return 0;
+ }
 +
-+		switch (qopt->entries[i].command) {
-+		case TC_TAPRIO_CMD_SET_GATES:
-+			if (fpe)
-+				return -EINVAL;
-+			break;
-+		case TC_TAPRIO_CMD_SET_AND_HOLD:
-+			gates |= BIT(0);
-+			fpe = true;
-+			break;
-+		case TC_TAPRIO_CMD_SET_AND_RELEASE:
-+			gates &= ~BIT(0);
-+			fpe = true;
-+			break;
-+		default:
- 			return -EOPNOTSUPP;
-+		}
- 
- 		priv->plat->est->gcl[i] = delta_ns | (gates << wid);
- 	}
-@@ -681,6 +697,17 @@ static int tc_setup_taprio(struct stmmac_priv *priv,
- 	priv->plat->est->ctr[0] = (u32)(qopt->cycle_time % NSEC_PER_SEC);
- 	priv->plat->est->ctr[1] = (u32)(qopt->cycle_time / NSEC_PER_SEC);
- 
-+	if (fpe && !priv->dma_cap.fpesel)
-+		return -EOPNOTSUPP;
++void dwmac5_fpe_configure(void __iomem *ioaddr, u32 num_txq, u32 num_rxq,
++			  bool enable)
++{
++	u32 value;
 +
-+	ret = stmmac_fpe_configure(priv, priv->ioaddr,
-+				   priv->plat->tx_queues_to_use,
-+				   priv->plat->rx_queues_to_use, fpe);
-+	if (ret && fpe) {
-+		netdev_err(priv->dev, "failed to enable Frame Preemption\n");
-+		return ret;
++	if (!enable) {
++		value = readl(ioaddr + MAC_FPE_CTRL_STS);
++
++		value &= ~EFPE;
++
++		writel(value, ioaddr + MAC_FPE_CTRL_STS);
 +	}
 +
- 	ret = stmmac_est_configure(priv, priv->ioaddr, priv->plat->est,
- 				   priv->plat->clk_ptp_rate);
- 	if (ret) {
++	value = readl(ioaddr + GMAC_RXQ_CTRL1);
++	value &= ~GMAC_RXQCTRL_FPRQ;
++	value |= (num_rxq - 1) << GMAC_RXQCTRL_FPRQ_SHIFT;
++	writel(value, ioaddr + GMAC_RXQ_CTRL1);
++
++	value = readl(ioaddr + MAC_FPE_CTRL_STS);
++	value |= EFPE;
++	writel(value, ioaddr + MAC_FPE_CTRL_STS);
++}
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac5.h b/drivers/net/ethernet/stmicro/stmmac/dwmac5.h
+index 70e6d8837dd9..3e8faa96b4d4 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac5.h
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac5.h
+@@ -11,6 +11,9 @@
+ #define PRTYEN				BIT(1)
+ #define TMOUTEN				BIT(0)
+ 
++#define MAC_FPE_CTRL_STS		0x00000234
++#define EFPE				BIT(0)
++
+ #define MAC_PPS_CONTROL			0x00000b70
+ #define PPS_MAXIDX(x)			((((x) + 1) * 8) - 1)
+ #define PPS_MINIDX(x)			((x) * 8)
+@@ -102,5 +105,7 @@ int dwmac5_flex_pps_config(void __iomem *ioaddr, int index,
+ 			   u32 sub_second_inc, u32 systime_flags);
+ int dwmac5_est_configure(void __iomem *ioaddr, struct stmmac_est *cfg,
+ 			 unsigned int ptp_rate);
++void dwmac5_fpe_configure(void __iomem *ioaddr, u32 num_txq, u32 num_rxq,
++			  bool enable);
+ 
+ #endif /* __DWMAC5_H__ */
 -- 
 2.7.4
 
