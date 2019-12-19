@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94CF9126212
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 13:22:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F32D126213
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 13:22:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=UbG8M46S0buFyv5Ip3vQithmtDyYD9saSQBFlDyYd7E=; b=sweuhwQsob16noOcmr5PwxHg2/
-	Vec4nazcYBTJRRFh/ZljlMKMjHIeNlfacuT8sabemGFJXgnPfkVjMFKQP+TwsYpqP5TG1hYXTlU8f
-	eACi8V9cwEGw9uIxIosovQaDcN8U5A6tFGZLVaHmxIMJ7oRAQW7wGwJB4DmPnT903iKA0PZ7ssSiv
-	IYj0+yjlc+WUGAlGWCvaVYNUgbRKjd+FHDGv9xbSBpMH/V4+qlnCLOgDclSG8Vm1bBxkdAPZX1yOP
-	atzWgkux/rczVbohphHqDlHTys9tMTdK7qMdjbYzsULMGVphQOX3+ptOr0hjI8wxAPjQwx/TG3ZRt
-	owBW3iCA==;
+	bh=E9rKyo2gHQHHeWg9Ok3h5XmPq8Fag3SAroXonEDRt94=; b=eWkbBsdEAUiBceDkfureO1qq+z
+	hb/LutR8lB8eEqSELJWEO+iTbzf78EwugU7XOzfRaystphbQxupfn8G2w44VIvvA6uLLOkRxQyQoi
+	nfemna8+e4ObW+pskxFnI5u29dJW1P29eiiABH8MccsS0iRqsUBEY5LX4NzXSf8bYxHdCkuff3dxj
+	NPAw+lfUTwC7i7XGWEDofmLO2d7ary6yECA2NEBFw5B3wFc2gkzHxD3gM2RpZEeKxeiiBfhQce571
+	5gb8uR6dCbMMfFEWG7D5IVk706u84w9iwrDQoVvdTfFWQBbWuaRjKsI9a+zHGYnJc++2z7aKdkhhG
+	jhTwN9yQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihuog-0005GL-C5; Thu, 19 Dec 2019 12:22:06 +0000
+	id 1ihuoz-0005U7-Hc; Thu, 19 Dec 2019 12:22:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihumM-0002Hb-5L
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 12:19:43 +0000
+ id 1ihumO-0002Jj-V7
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 12:19:47 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 966C231B;
- Thu, 19 Dec 2019 04:19:41 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 237AF1007;
+ Thu, 19 Dec 2019 04:19:44 -0800 (PST)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4BE753F719;
- Thu, 19 Dec 2019 04:19:39 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CB8CD3F719;
+ Thu, 19 Dec 2019 04:19:41 -0800 (PST)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kernel@vger.kernel.org
-Subject: [RFC PATCH v3 07/12] arm64: smp: add arch specific cpu parking helper
-Date: Thu, 19 Dec 2019 12:19:00 +0000
-Message-Id: <20191219121905.26905-8-cristian.marussi@arm.com>
+Subject: [RFC PATCH v3 08/12] x86: smp: use generic SMP stop common code
+Date: Thu, 19 Dec 2019 12:19:01 +0000
+Message-Id: <20191219121905.26905-9-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191219121905.26905-1-cristian.marussi@arm.com>
 References: <20191219121905.26905-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_041942_327671_9CF3FBB6 
-X-CRM114-Status: UNSURE (   7.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191219_041945_210578_EBEC55ED 
+X-CRM114-Status: GOOD (  19.73  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -76,31 +75,189 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add an arm64 specific helper which parks the cpu in a more architecture
-efficient way.
+Make x86 use the generic SMP-stop logic provided by common code unified
+smp_send_stop() function.
+
+Introduce needed arch_smp_stop_call()/arch_smp_cpus_stop_complete()
+helpers that implement the backend architectures specific functionalities
+previously provided by native_stop_other_cpus(): common logic is now
+delegated to common SMP stop code.
+
+Remove arch-specific smp_send_stop(), and redefine original function
+native_stop_other_cpus() to rely instead on the unified common code
+version of smp_send_stop(): native_stop_other_cpus() is anyway kept
+since it is wired to smp_ops.stop_other_cpus() which get called at
+reboot time with particular waiting settings.
 
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
- arch/arm64/kernel/smp.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+Note that in this patch we kept in use the original x86 local handling
+of 'stopping_cpu' variable:
 
-diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index edb2de85507a..3f108be544f8 100644
---- a/arch/arm64/kernel/smp.c
-+++ b/arch/arm64/kernel/smp.c
-@@ -952,6 +952,12 @@ void tick_broadcast(const struct cpumask *mask)
- }
- #endif
+	atomic_cmpxchg(&stopping_cpu, -1, safe_smp_processor_id());
+
+Instead, common SMP stop code could have been easily extended to keep and
+expose to architectures backends such value using some additional helper
+like smp_stop_get_stopping_cpu_id().
+
+This has not been addressed in this series.
+
+v2 ---> v3
+- added new wait_forever change capabilities
+- better handling of x86 reboot_force flag
+---
+ arch/x86/Kconfig           |  1 +
+ arch/x86/include/asm/smp.h |  5 ---
+ arch/x86/kernel/smp.c      | 88 +++++++++++++++++++-------------------
+ 3 files changed, 44 insertions(+), 50 deletions(-)
+
+diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
+index 5e8949953660..0bc274426875 100644
+--- a/arch/x86/Kconfig
++++ b/arch/x86/Kconfig
+@@ -92,6 +92,7 @@ config X86
+ 	select ARCH_USE_BUILTIN_BSWAP
+ 	select ARCH_USE_QUEUED_RWLOCKS
+ 	select ARCH_USE_QUEUED_SPINLOCKS
++	select ARCH_USE_COMMON_SMP_STOP
+ 	select ARCH_WANT_BATCHED_UNMAP_TLB_FLUSH
+ 	select ARCH_WANTS_DYNAMIC_TASK_STRUCT
+ 	select ARCH_WANT_HUGE_PMD_SHARE
+diff --git a/arch/x86/include/asm/smp.h b/arch/x86/include/asm/smp.h
+index e15f364efbcc..e937fab6474b 100644
+--- a/arch/x86/include/asm/smp.h
++++ b/arch/x86/include/asm/smp.h
+@@ -67,11 +67,6 @@ extern void set_cpu_sibling_map(int cpu);
+ #ifdef CONFIG_SMP
+ extern struct smp_ops smp_ops;
  
-+void arch_smp_cpu_park(void)
+-static inline void smp_send_stop(void)
+-{
+-	smp_ops.stop_other_cpus(0);
+-}
+-
+ static inline void stop_other_cpus(void)
+ {
+ 	smp_ops.stop_other_cpus(1);
+diff --git a/arch/x86/kernel/smp.c b/arch/x86/kernel/smp.c
+index b8d4e9c3c070..7aeb45c512f7 100644
+--- a/arch/x86/kernel/smp.c
++++ b/arch/x86/kernel/smp.c
+@@ -147,71 +147,69 @@ static int register_stop_handler(void)
+ 
+ static void native_stop_other_cpus(int wait)
+ {
+-	unsigned long flags;
+-	unsigned long timeout;
+-
+ 	if (reboot_force)
+ 		return;
++	smp_stop_set_wait_forever(wait);
++	/* use common SMP stop code */
++	smp_send_stop();
++}
+ 
+-	/*
+-	 * Use an own vector here because smp_call_function
+-	 * does lots of things not suitable in a panic situation.
+-	 */
+-
+-	/*
+-	 * We start by using the REBOOT_VECTOR irq.
+-	 * The irq is treated as a sync point to allow critical
+-	 * regions of code on other cpus to release their spin locks
+-	 * and re-enable irqs.  Jumping straight to an NMI might
+-	 * accidentally cause deadlocks with further shutdown/panic
+-	 * code.  By syncing, we give the cpus up to one second to
+-	 * finish their work before we force them off with the NMI.
+-	 */
+-	if (num_online_cpus() > 1) {
+-		/* did someone beat us here? */
+-		if (atomic_cmpxchg(&stopping_cpu, -1, safe_smp_processor_id()) != -1)
+-			return;
+-
+-		/* sync above data before sending IRQ */
+-		wmb();
++void arch_smp_stop_call(cpumask_t *cpus, unsigned int attempt_num)
 +{
-+	while (1)
-+		cpu_park_loop();
++	static bool saved_wait;
+ 
+-		apic_send_IPI_allbutself(REBOOT_VECTOR);
++	if (attempt_num == 1) {
++		/*
++		 * We start by using the REBOOT_VECTOR irq.
++		 * The irq is treated as a sync point to allow critical
++		 * regions of code on other cpus to release their spin locks
++		 * and re-enable irqs.  Jumping straight to an NMI might
++		 * accidentally cause deadlocks with further shutdown/panic
++		 * code.  By syncing, we give the cpus up to one second to
++		 * finish their work before we force them off with the NMI.
++		 */
+ 
+ 		/*
+-		 * Don't wait longer than a second for IPI completion. The
+-		 * wait request is not checked here because that would
+-		 * prevent an NMI shutdown attempt in case that not all
+-		 * CPUs reach shutdown state.
++		 * Don't wait longer than a second for IPI completion.
++		 * Wait forever request is explicitly disabled here because
++		 * that would prevent an NMI shutdown attempt in case that
++		 * not all CPUs reach shutdown state.
+ 		 */
+-		timeout = USEC_PER_SEC;
+-		while (num_online_cpus() > 1 && timeout--)
+-			udelay(1);
+-	}
++		saved_wait = smp_stop_get_wait_settings(NULL);
++		smp_stop_set_wait_forever(false);
++		smp_stop_set_wait_timeout_us(USEC_PER_MSEC);
++
++		/* Used by NMI handler callback to skip the stopping_cpu. */
++		atomic_cmpxchg(&stopping_cpu, -1, safe_smp_processor_id());
++
++		/* sync above data before sending IRQ */
++		wmb();
++		apic->send_IPI_mask(cpus, REBOOT_VECTOR);
++	} else if (attempt_num > 1) {
++		/* if the REBOOT_VECTOR didn't work, try with the NMI */
++		smp_stop_set_wait_forever(saved_wait);
++		/* Don't wait longer than 10 ms when not asked to wait */
++		smp_stop_set_wait_timeout_us(USEC_PER_MSEC * 10);
+ 
+-	/* if the REBOOT_VECTOR didn't work, try with the NMI */
+-	if (num_online_cpus() > 1) {
+ 		/*
+ 		 * If NMI IPI is enabled, try to register the stop handler
+ 		 * and send the IPI. In any case try to wait for the other
+ 		 * CPUs to stop.
+ 		 */
+ 		if (!smp_no_nmi_ipi && !register_stop_handler()) {
+-			/* Sync above data before sending IRQ */
++			/* sync above data before sending IRQ */
+ 			wmb();
+ 
+ 			pr_emerg("Shutting down cpus with NMI\n");
+ 
+-			apic_send_IPI_allbutself(NMI_VECTOR);
++			apic->send_IPI_mask(cpus, NMI_VECTOR);
+ 		}
+-		/*
+-		 * Don't wait longer than 10 ms if the caller didn't
+-		 * reqeust it. If wait is true, the machine hangs here if
+-		 * one or more CPUs do not reach shutdown state.
+-		 */
+-		timeout = USEC_PER_MSEC * 10;
+-		while (num_online_cpus() > 1 && (wait || timeout--))
+-			udelay(1);
+ 	}
 +}
 +
- void arch_smp_cpus_stop_complete(void)
- {
- 	sdei_mask_local_cpu();
++void arch_smp_cpus_stop_complete(void)
++{
++	unsigned long flags;
+ 
+ 	local_irq_save(flags);
+ 	disable_local_APIC();
 -- 
 2.17.1
 
