@@ -2,64 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 440BF126ED2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 21:24:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29AE4126ED9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 21:24:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4o6PVLyhAxlLH538lyZCbGAA4yGCjVspfrptVi6K+Ek=; b=n9OzXVq7tfrg9O
-	/G8GfbSP+2E0vcTQi55Ew1KrFtD3LfFRUFqeRm2CNMQ+fKPpKsRBbQwVgT/W1Ryng0Vx7E4gXhIWZ
-	ufIG2ASCt0zRAXAUYLk7Wg0pQ3Is5Auo1quZlvTGRG5w5Sw+rz68GSB7ztg6qX1cazDz04mOZ7nTu
-	RWo2zKQeX5jLf65JxKJ2GkitlDvi3yYtEAfJEjA6zysklNslJd4dEmca8WMIsRQ40twu1J8607GvD
-	y+Ouco4Y0Btyxq96274vJqEU3dJx9+gkILYkYP8S8oDEbDAwKYlkkx4T2ppsF/hAADOqqXUEz4BWF
-	IOshrO5ZybkBOuVKwDfg==;
+	List-Owner; bh=02jLW2cvz2W/Kj9FNWxwFK8Gw8oc50dKQZhEyxf9QYo=; b=ZPYyzsTFywbpKB
+	geVFTS++ti7eByzvLXLOWQtalWjcB6jNEtAheZ10mCFSDTKq57ABJ/4PJdHX2co/17dgzf/qGaxO/
+	PotMcEXYksgYo9pySwZtyztfhb7K1lt/w1ifxFyU9kPcsQ44kjjB6WZ05bbRU44G+oh/On2cViVSI
+	rI/dG4QvaV5/cj47Frnu0mLyyrnMG0TiFgNMZdKubGlPEo94jgw8p0YCg40o75YCkOFsToA1dPZR5
+	KliTIMLK9awZj3cCZkTUyMBowfndgnn5pLMjzn3dxi6fGDTJk7ofu+yNy9I5renZEcJWKYcSR+QTy
+	uipt23PwK8dRyCp7jnZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii2LC-0001R5-6k; Thu, 19 Dec 2019 20:24:10 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::3])
+	id 1ii2LW-0001eB-HU; Thu, 19 Dec 2019 20:24:30 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii2Iz-0007zp-Rw
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 20:21:57 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1576786912;
+ id 1ii2J3-00083C-AC
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 20:21:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1576786915;
  s=strato-dkim-0002; d=gerhold.net;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=242MZ4oNGy59VHbDAySilGw2vsKQ/HMaVeyHMssbOd8=;
- b=SzOJsTKC8Is3zBoeQzRGeix6e/L95qLPxLhYnDVg2OQcmjlIq+E/G1wUnf3Y8F0tXZ
- hazH8C9UVAor/UcwMwTJkLg0lGx0lUedajbAxNAOWmbW5evrKDhQqhl0v7aAbkoIkBG9
- y6WehOWEAhEJb5hfUC8tavDySM/nYlMnlDau/wYV1X7lYMrla0Lbk0bHaGakQpVcf3rr
- 1wqP36eARWm9qJbONGGNNfAxm/BZaTun3IcEpof8L07CtXX8ZOL4q9Z9TIb5bpEK3r6D
- OaNmOLPmXbWOGe/snfM9AlCITP7tsdB9gnNd7bLvNsRpflYW1oEhoipIjtAv9RQQ3+Hb
- sAeQ==
+ bh=JtjZ1Nu6sfM70p1ADDmUjRAk5cVU1JLE+vgtlBuy/dc=;
+ b=AENEP45PRAGAdVgvl400BGK4yjVGwrJ96ATZ3YB3qwDl9ik9mDf1HskqwGM88B3Bru
+ y3r6ptDlzhdkWqXAEHqLYs9Y0gKrECFZEpuhL4m1Jh4wWvK3IpBvhceVN7aFbc/7oGUQ
+ zaRb8rlAUvbX/q9luv0y0lG4yQQ6V25TzFMzl08f/ndDXZ2rGIVSIAAwGYHepQWGEXk4
+ NyJwtUzqsb5qWkSp7gCPUzY5gsJG7swv4rgZbPfrAeyGM5UeMF/PX2vS09g24bqiK0M+
+ 4aHweCq/qZ1VD52vq9jSqk/PgClbVoOu8E+y8xX+AYdZKrVKpy4HO3QnJ6xvZq4m45/z
+ ER8w==
 X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVORvLd4SsytBXQrEOHTIXtszvsxM1"
 X-RZG-CLASS-ID: mo00
 Received: from localhost.localdomain by smtp.strato.de (RZmta 46.1.1 AUTH)
- with ESMTPSA id f021e2vBJKLk3ZG
+ with ESMTPSA id f021e2vBJKLk3ZH
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
  (Client did not present a certificate);
  Thu, 19 Dec 2019 21:21:46 +0100 (CET)
 From: Stephan Gerhold <stephan@gerhold.net>
 To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH 8/9] ARM: dts: ux500: samsung-golden: Add Bluetooth
-Date: Thu, 19 Dec 2019 21:20:51 +0100
-Message-Id: <20191219202052.19039-9-stephan@gerhold.net>
+Subject: [PATCH 9/9] ARM: defconfig: u8500: Enable new drivers for
+ samsung-golden
+Date: Thu, 19 Dec 2019 21:20:52 +0100
+Message-Id: <20191219202052.19039-10-stephan@gerhold.net>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191219202052.19039-1-stephan@gerhold.net>
 References: <20191219202052.19039-1-stephan@gerhold.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_122154_067204_53D16394 
-X-CRM114-Status: GOOD (  11.84  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191219_122157_527549_5CE6A195 
+X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5302:0:0:3 listed in]
+ low trust [2a01:238:20a:202:5302:0:0:2 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -70,6 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,69 +92,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-samsung-golden uses a BCM4334 WiFi+BT combo chip.
-The BT part is connected via UART and supported by the hci_bcm
-driver in mainline.
-Add the necessary device tree changes to make it load correctly.
+The new device tree for samsung-golden depends on some additional
+drivers that are not selected in the u8500 defconfig yet:
 
-It requires (seemingly) device-specific firmware that can be
-extracted from the stock Android system used on samsung-golden:
-  - /system/bin/bcm4334.hcd -> /lib/firmware/brcm/BCM4334B0.hcd
-
-On my device, scanning for other Bluetooth devices works just fine,
-but for some reason it keeps disconnecting immediately
-when attempting to connect to an other device.
+  - Bluetooth: hci_bcm
+  - WiFi: brcmfmac
+  - Touchscreen: atmel_mxt_ts
+  - Vibrator: gpio-vibra
+  - Sensors: inv_mpu6050 (IMU)
 
 Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
 ---
- .../arm/boot/dts/ste-ux500-samsung-golden.dts | 27 +++++++++++++++++++
- 1 file changed, 27 insertions(+)
+ arch/arm/configs/u8500_defconfig | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm/boot/dts/ste-ux500-samsung-golden.dts b/arch/arm/boot/dts/ste-ux500-samsung-golden.dts
-index d22b2879c46a..313f0ab16866 100644
---- a/arch/arm/boot/dts/ste-ux500-samsung-golden.dts
-+++ b/arch/arm/boot/dts/ste-ux500-samsung-golden.dts
-@@ -113,6 +113,19 @@ uart@80120000 {
- 			pinctrl-names = "default", "sleep";
- 			pinctrl-0 = <&u0_a_1_default>;
- 			pinctrl-1 = <&u0_a_1_sleep>;
-+
-+			bluetooth {
-+				compatible = "brcm,bcm4330-bt";
-+				/* GPIO222 (BT_VREG_ON) */
-+				shutdown-gpios = <&gpio6 30 GPIO_ACTIVE_HIGH>;
-+				/* GPIO199 (BT_WAKE) */
-+				device-wakeup-gpios = <&gpio6 7 GPIO_ACTIVE_HIGH>;
-+				/* GPIO97 (BT_HOST_WAKE) */
-+				host-wakeup-gpios = <&gpio3 1 GPIO_ACTIVE_HIGH>;
-+
-+				pinctrl-names = "default";
-+				pinctrl-0 = <&bluetooth_default>;
-+			};
- 		};
- 
- 		/* GPF UART */
-@@ -396,6 +409,20 @@ golden_cfg1 {
- 		};
- 	};
- 
-+	bluetooth {
-+		bluetooth_default: bluetooth_default {
-+			golden_cfg1 {
-+				pins = "GPIO199_AH23",	/* BT_WAKE */
-+				       "GPIO222_AJ9";	/* BT_VREG_ON */
-+				ste,config = <&gpio_out_lo>;
-+			};
-+			golden_cfg2 {
-+				pins = "GPIO97_D9";	/* BT_HOST_WAKE */
-+				ste,config = <&gpio_in_nopull>;
-+			};
-+		};
-+	};
-+
- 	vibrator {
- 		vibrator_default: vibrator_default {
- 			golden_cfg1 {
+diff --git a/arch/arm/configs/u8500_defconfig b/arch/arm/configs/u8500_defconfig
+index 822cddfbf1af..aff87c5ecc43 100644
+--- a/arch/arm/configs/u8500_defconfig
++++ b/arch/arm/configs/u8500_defconfig
+@@ -30,6 +30,9 @@ CONFIG_IP_PNP=y
+ CONFIG_IP_PNP_DHCP=y
+ CONFIG_NETFILTER=y
+ CONFIG_PHONET=y
++CONFIG_BT=y
++CONFIG_BT_HCIUART=m
++CONFIG_BT_HCIUART_BCM=y
+ CONFIG_CFG80211=y
+ CONFIG_CFG80211_DEBUGFS=y
+ CONFIG_MAC80211=y
+@@ -42,6 +45,7 @@ CONFIG_BLK_DEV_RAM_SIZE=65536
+ CONFIG_NETDEVICES=y
+ CONFIG_SMSC911X=y
+ CONFIG_SMSC_PHY=y
++CONFIG_BRCMFMAC=m
+ CONFIG_CW1200=y
+ CONFIG_CW1200_WLAN_SDIO=y
+ CONFIG_INPUT_EVDEV=y
+@@ -52,9 +56,11 @@ CONFIG_KEYBOARD_STMPE=y
+ CONFIG_KEYBOARD_TC3589X=y
+ # CONFIG_INPUT_MOUSE is not set
+ CONFIG_INPUT_TOUCHSCREEN=y
++CONFIG_TOUCHSCREEN_ATMEL_MXT=y
+ CONFIG_TOUCHSCREEN_BU21013=y
+ CONFIG_INPUT_MISC=y
+ CONFIG_INPUT_AB8500_PONKEY=y
++CONFIG_INPUT_GPIO_VIBRA=y
+ CONFIG_RMI4_CORE=y
+ CONFIG_RMI4_I2C=y
+ CONFIG_RMI4_F11=y
+@@ -62,7 +68,9 @@ CONFIG_RMI4_F11=y
+ # CONFIG_LEGACY_PTYS is not set
+ CONFIG_SERIAL_AMBA_PL011=y
+ CONFIG_SERIAL_AMBA_PL011_CONSOLE=y
++CONFIG_SERIAL_DEV_BUS=y
+ CONFIG_HW_RANDOM=y
++CONFIG_I2C_MUX=y
+ CONFIG_SPI=y
+ CONFIG_SPI_PL022=y
+ CONFIG_GPIO_STMPE=y
+@@ -113,6 +121,7 @@ CONFIG_IIO=y
+ CONFIG_IIO_SW_TRIGGER=y
+ CONFIG_IIO_ST_ACCEL_3AXIS=y
+ CONFIG_IIO_ST_GYRO_3AXIS=y
++CONFIG_INV_MPU6050_I2C=y
+ CONFIG_BH1780=y
+ CONFIG_AK8974=y
+ CONFIG_IIO_ST_MAGN_3AXIS=y
 -- 
 2.24.1
 
