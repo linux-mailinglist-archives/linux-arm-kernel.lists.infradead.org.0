@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A5A112620C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 13:21:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D5E812620D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 13:21:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OozWTdPyd+Boohi72hmYHc/3zmIG9+uUVaphvYx29bA=; b=IHFleaQ7mCf+GrBRR52wOVT0kb
-	T9L1jjwlyB1TZ9yhi1BrSVmBPBqqogLcVObrhQ6+gzyWdqltyPMJN8ocZ3oUU0HLMv4zgbHMYRyZx
-	rqZo9lWdqvlDSbM3ND99Mh11NZIkzE/m80uQD4U/uBDYi596pebwJgkTv6ZJwqPSWEBpXbo61v306
-	VM/8lpuMOaDDU1/Po10elojfMjKQ3FxdRxnRWeToCQotDlx4HS/MwEy9GBJZ3RHk5HwwQSE5b4KwM
-	TMCElll3OsL2Gfb4K7Igh5w64+5GZ4dbkMrmDgUK5tEb9P5wY8F7Klxw+jC+c0+FvnJ3EiDDC4BeE
-	suPlgEIA==;
+	bh=zIHlumBrSHomPPQ7xiCUtAwpsw8rShljozrYlMTKgi0=; b=Y3PW1GgpzmWw4bIVjZ33TnGuOx
+	miwfHaeYyvv9lDnrdVsuJBXQ5LPt5ZUENY9EFAY5miCnLYXumvhtRf37TIhAui197kr4cx5w7oSqp
+	HH9vT74XFjiNi1dPWhFabncIsZezUuv/a4YSsAoTYU/MZ0NVILQ2l2NLZ5P9WUJn/n/tcSqLIPxh0
+	CP1/EkysRU3GazIP0/GP2nnpZ8S1QQHyl1MJnJbGIXo9JGWyJBF9S+RUARJakvFY6X0T1zKmXo7tX
+	jN+Vt1YyBTq7UF5Us4uAtXIgqikweGu/TH7ykD1+XazcE/3/AK3FeSeQflBps7eiNUENZkKG6kLec
+	B6nnaaeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihund-0004G3-2i; Thu, 19 Dec 2019 12:21:01 +0000
+	id 1ihunv-0004Ut-ED; Thu, 19 Dec 2019 12:21:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihumB-00026A-SG
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 12:19:33 +0000
+ id 1ihumE-000290-Mt
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 12:19:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7CDC41007;
- Thu, 19 Dec 2019 04:19:31 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0D84F31B;
+ Thu, 19 Dec 2019 04:19:34 -0800 (PST)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 325E13F719;
- Thu, 19 Dec 2019 04:19:29 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B2FBD3F719;
+ Thu, 19 Dec 2019 04:19:31 -0800 (PST)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kernel@vger.kernel.org
-Subject: [RFC PATCH v3 03/12] smp: coordinate concurrent crash/smp stop calls
-Date: Thu, 19 Dec 2019 12:18:56 +0000
-Message-Id: <20191219121905.26905-4-cristian.marussi@arm.com>
+Subject: [RFC PATCH v3 04/12] smp: address races of starting CPUs while
+ stopping
+Date: Thu, 19 Dec 2019 12:18:57 +0000
+Message-Id: <20191219121905.26905-5-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191219121905.26905-1-cristian.marussi@arm.com>
 References: <20191219121905.26905-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_041932_011997_F1CEE780 
-X-CRM114-Status: GOOD (  17.24  )
+X-CRM114-CacheID: sfid-20191219_041934_872793_DF0832E7 
+X-CRM114-Status: GOOD (  19.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,214 +76,198 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Once a stop request is in progress on one CPU, it must be carefully
-evaluated what to do if another stop request is issued concurrently
-on another CPU.
+Add to SMP stop common code a best-effort retry logic, re-issuing a stop
+request when any CPU is detected to be still online after the first
+stop request cycle has completed.
 
-Given that panic and crash dump code flows are mutually exclusive,
-the only alternative possible scenario which instead could lead to
-concurrent stop requests, is represented by the simultaneous stop
-requests possibly triggered by a concurrent halt/reboot/shutdown.
+While retrying provide to architectures' helpers an 'attempt' argument
+so that, after a possible first failed attempt, they can autonomously
+decide to adopt different approaches in subsequent retries.
 
-In such a case, prioritize the panic/crash procedure and most importantly
-immediately park the offending CPU that was attempting the concurrent stop
-request: force it to idle quietly, waiting for the ongoing stop/dump
-requests to arrive.
+Address the case in which some CPUs could still be starting up when the
+stop process is initiated, remaining so undetected and coming fully online
+only after the SMP stop procedure was already started: such officially
+still offline CPUs would be missed by an ongoing stop procedure.
 
-Failing to do so would result in the offending CPU being effectively lost
-on the next possible reboot triggered by the crash dump. [1]
-
-Another scenario, where the crash/stop code path was known to be executed
-twice, was during a normal panic/crash with crash_kexec_post_notifiers=1;
-since this issue is similar, fold also this case-handling into this new
-logic.
-
-[1]
-<<<<<---------- TRIGGERED PANIC
-[  225.676014] ------------[ cut here ]------------
-[  225.676656] kernel BUG at arch/arm64/kernel/cpufeature.c:852!
-[  225.677253] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
-[  225.677660] Modules linked in:
-[  225.678458] CPU: 3 PID: 0 Comm: swapper/3 Kdump: loaded Not tainted 5.3.0-rc5-00004-gb8a210cd3c32-dirty #2
-[  225.678621] Hardware name: Foundation-v8A (DT)
-[  225.678868] pstate: 000001c5 (nzcv dAIF -PAN -UAO)
-[  225.679523] pc : has_cpuid_feature+0x35c/0x360
-[  225.679649] lr : verify_local_elf_hwcaps+0x6c/0xf0
-[  225.679759] sp : ffff0000118cbf60
-[  225.679855] x29: ffff0000118cbf60 x28: 0000000000000000
-[  225.680026] x27: 0000000000000000 x26: 0000000000000000
-[  225.680115] x25: ffff00001167a010 x24: ffff0000112f59f8
-[  225.680207] x23: 0000000000000000 x22: 0000000000000000
-[  225.680290] x21: ffff0000112ea018 x20: ffff000010fe5538
-[  225.680372] x19: ffff000010ba3f30 x18: 000000000000001e
-[  225.680465] x17: 0000000000000000 x16: 0000000000000000
-[  225.680546] x15: 0000000000000000 x14: 0000000000000008
-[  225.680629] x13: 0209018b7a9404f4 x12: 0000000000000001
-[  225.680719] x11: 0000000000000080 x10: 00400032b5503510
-[  225.680803] x9 : 0000000000000000 x8 : ffff000010b93204
-[  225.680884] x7 : 00000000800001d8 x6 : 0000000000000005
-[  225.680975] x5 : 0000000000000000 x4 : 0000000000000000
-[  225.681056] x3 : 0000000000000000 x2 : 0000000000008000
-[  225.681139] x1 : 0000000000180480 x0 : 0000000000180480
-[  225.681423] Call trace:
-[  225.681669]  has_cpuid_feature+0x35c/0x360
-[  225.681762]  verify_local_elf_hwcaps+0x6c/0xf0
-[  225.681836]  check_local_cpu_capabilities+0x88/0x118
-[  225.681939]  secondary_start_kernel+0xc4/0x168
-[  225.682432] Code: d53801e0 17ffff58 d5380600 17ffff56 (d4210000)
-[  225.683998] smp: stopping secondary CPUs
-[  225.684130] Delaying stop....   <<<<<------ INSTRUMENTED DEBUG_DELAY
-
-Rebooting.                         <<<<<------ MANUAL SIMULTANEOUS REBOOT
-[  232.647472] reboot: Restarting system
-[  232.648363] Reboot failed -- System halted
-[  239.552413] smp: failed to stop secondary CPUs 0
-[  239.554730] Starting crashdump kernel...
-[  239.555194] ------------[ cut here ]------------
-[  239.555406] Some CPUs may be stale, kdump will be unreliable.
-[  239.555802] WARNING: CPU: 3 PID: 0 at arch/arm64/kernel/machine_kexec.c:156 machine_kexec+0x3c/0x2b0
-[  239.556044] Modules linked in:
-[  239.556244] CPU: 3 PID: 0 Comm: swapper/3 Kdump: loaded Not tainted 5.3.0-rc5-00004-gb8a210cd3c32-dirty #2
-[  239.556340] Hardware name: Foundation-v8A (DT)
-[  239.556459] pstate: 600003c5 (nZCv DAIF -PAN -UAO)
-[  239.556587] pc : machine_kexec+0x3c/0x2b0
-[  239.556700] lr : machine_kexec+0x3c/0x2b0
-[  239.556775] sp : ffff0000118cbad0
-[  239.556876] x29: ffff0000118cbad0 x28: ffff80087a8c3700
-[  239.557012] x27: 0000000000000000 x26: 0000000000000000
-[  239.557278] x25: ffff000010fe3ef0 x24: 00000000000003c0
-....
-[  239.561568] Bye!
-[    0.000000] Booting Linux on physical CPU 0x0000000003 [0x410fd0f0]
-[    0.000000] Linux version 5.2.0-rc4-00001-g93bd4bc234d5-dirty
-[    0.000000] Machine model: Foundation-v8A
-...
-[    0.197991] smp: Bringing up secondary CPUs ...
-[    0.232643] psci: failed to boot CPU1 (-22)  <<<<--- LOST CPU ON REBOOT
-[    0.232861] CPU1: failed to boot: -22
-[    0.306291] Detected PIPT I-cache on CPU2
-[    0.310524] GICv3: CPU2: found redistributor 1 region 0:0x000000002f120000
-[    0.315618] CPU2: Booted secondary processor 0x0000000001 [0x410fd0f0]
-[    0.395576] Detected PIPT I-cache on CPU3
-[    0.400431] GICv3: CPU3: found redistributor 2 region 0:0x000000002f140000
-[    0.407252] CPU3: Booted secondary processor 0x0000000002 [0x410fd0f0]
-[    0.431811] smp: Brought up 1 node, 3 CPUs
-[    0.439898] SMP: Total of 3 processors activated.
+Being a best effort approach, though, it is not always guaranteed to be
+able to stop any CPU that happened to finally come online after the whole
+SMP stop retry cycle has completed.
+(i.e. the race-window is reduced but not eliminated)
 
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
 v2 --> v3
-- local var renamded
+- reviewed max_retries get/set helpers to avoid header global static
 v1 --> v2
-- using new CONFIG_USE_COMMON_SMP_STOP
+- added attempt_num param to arch helpers, to let arch implementation
+  know if a retry is ongoing because some CPU failed to stop.
+  (some arch like x86 attempts the retry with different means like NMI)
+- added some helpers to let archs decide on the number of retries
+
 ---
- include/linux/smp.h |  3 +++
- kernel/smp.c        | 48 ++++++++++++++++++++++++++++++++++++++++-----
- 2 files changed, 46 insertions(+), 5 deletions(-)
+A more deterministic approach has been also attempted in order to catch
+any concurrently starting CPUs at the very last moment and make them
+kill themselves by:
+
+- adding a new set_cpus_stopping() in cpumask.h used to set a
+  __cpus_stopping atomic internal flag
+
+- modifying set_cpu_online() to check on __cpus_stopping only when
+  coming online, and force the offending CPU to kill itself in that case
+
+Anyway it has proved tricky and complex (beside faulty) to implement the
+above 'kill-myself' phase in a reliable way while remaining architecture
+agnostic and still distingushing properly regular stops from crash kexec.
+
+So given that the main idea underlying this patch series was instead of
+simplifying and unifying code and the residual races not caught by the
+best-effort logic seemed not very likely, this more deterministic approach
+has been dropped in favour of the best effort retry logic.
+
+Moreover, the current retry logic will be anyway needed to support some
+architectures, like x86, that prefer to use different CPU's stopping
+methods in subsequent retries.
+---
+ include/linux/smp.h | 11 +++++++++--
+ kernel/smp.c        | 34 +++++++++++++++++++++++++++-------
+ 2 files changed, 36 insertions(+), 9 deletions(-)
 
 diff --git a/include/linux/smp.h b/include/linux/smp.h
-index 1886e49a65bb..42be03ac1c0c 100644
+index 42be03ac1c0c..247c78434a3d 100644
 --- a/include/linux/smp.h
 +++ b/include/linux/smp.h
-@@ -136,6 +136,9 @@ extern void arch_smp_crash_call(cpumask_t *cpus);
+@@ -78,6 +78,7 @@ int smp_call_function_single_async(int cpu, call_single_data_t *csd);
+ extern void smp_send_stop(void);
+ 
+ #ifdef CONFIG_USE_COMMON_SMP_STOP
++
+ /*
+  * An Architecture can optionally use this helper to change the default
+  * waiting behaviour of common STOP logic.
+@@ -101,12 +102,18 @@ void smp_stop_set_wait_timeout_us(unsigned long timeout);
+  */
+ bool smp_stop_get_wait_settings(unsigned long *timeout);
+ 
++/* Change common SMP STOP logic maximum retries */
++void smp_stop_set_max_retries(unsigned int max_retries);
++
++/* Get currently set maximum retries attempt */
++unsigned int smp_stop_get_max_retries(void);
++
+ /*
+  * Any Architecture willing to use STOP common logic implementation
+  * MUST at least provide the arch_smp_stop_call() helper which implements
+  * the arch-specific CPU-stop mechanism.
+  */
+-extern void arch_smp_stop_call(cpumask_t *cpus);
++extern void arch_smp_stop_call(cpumask_t *cpus, unsigned int attempt_num);
+ 
+ /*
+  * An Architecture CAN also provide the arch_smp_cpus_stop_complete()
+@@ -132,7 +139,7 @@ void arch_smp_cpus_crash_complete(void);
+  * when not provided the crash dump procedure will fallback to behave like
+  * a normal stop. (no saved regs, no arch-specific features disabled)
+  */
+-extern void arch_smp_crash_call(cpumask_t *cpus);
++extern void arch_smp_crash_call(cpumask_t *cpus, unsigned int attempt_num);
  
  /* Helper to query the outcome of an ongoing crash_stop operation */
  bool smp_crash_stop_failed(void);
-+
-+/* A generic cpu parking helper, possibly overridden by architecture code */
-+void arch_smp_cpu_park(void) __noreturn;
- #endif
- 
- /*
 diff --git a/kernel/smp.c b/kernel/smp.c
-index 6224b0b1208b..29eb6eff2063 100644
+index 29eb6eff2063..46a307d2351e 100644
 --- a/kernel/smp.c
 +++ b/kernel/smp.c
-@@ -844,6 +844,12 @@ bool smp_stop_get_wait_settings(unsigned long *timeout)
+@@ -823,6 +823,9 @@ EXPORT_SYMBOL_GPL(smp_call_on_cpu);
+ static atomic_t smp_stop_wait_forever;
+ static atomic_t smp_stop_wait_timeout = ATOMIC_INIT(USEC_PER_SEC);
+ 
++#define	DEFAULT_MAX_STOP_RETRIES	2
++static atomic_t max_stop_retries = ATOMIC_INIT(DEFAULT_MAX_STOP_RETRIES);
++
+ void smp_stop_set_wait_forever(bool wait_forever)
+ {
+ 	atomic_set(&smp_stop_wait_forever, wait_forever);
+@@ -844,6 +847,18 @@ bool smp_stop_get_wait_settings(unsigned long *timeout)
  	return atomic_read(&smp_stop_wait_forever);
  }
  
-+void __weak arch_smp_cpu_park(void)
++void smp_stop_set_max_retries(unsigned int max_retries)
 +{
-+	while (1)
-+		cpu_relax();
++	atomic_set(&max_stop_retries, max_retries);
++	/* ensure retries atomics are visible */
++	smp_mb__after_atomic();
 +}
 +
- void __weak arch_smp_cpus_stop_complete(void) { }
- 
- void __weak arch_smp_cpus_crash_complete(void)
-@@ -866,6 +872,9 @@ void __weak arch_smp_crash_call(cpumask_t *cpus)
- 	arch_smp_stop_call(cpus);
++unsigned int smp_stop_get_max_retries(void)
++{
++	return atomic_read(&max_stop_retries);
++}
++
+ void __weak arch_smp_cpu_park(void)
+ {
+ 	while (1)
+@@ -866,10 +881,10 @@ static inline bool any_other_cpus_online(cpumask_t *mask,
+ 	return !cpumask_empty(mask);
  }
  
-+#define	REASON_STOP	1
-+#define	REASON_CRASH	2
-+
- /*
-  * This centralizes the common logic to:
-  *
-@@ -881,8 +890,38 @@ static void __smp_send_stop_all(bool crash)
+-void __weak arch_smp_crash_call(cpumask_t *cpus)
++void __weak arch_smp_crash_call(cpumask_t *cpus, unsigned int attempt_num)
  {
- 	unsigned int this_cpu_id;
+ 	pr_debug("SMP: Using generic %s() as SMP crash call.\n", __func__);
+-	arch_smp_stop_call(cpus);
++	arch_smp_stop_call(cpus, attempt_num);
+ }
+ 
+ #define	REASON_STOP	1
+@@ -888,10 +903,10 @@ void __weak arch_smp_crash_call(cpumask_t *cpus)
+  */
+ static void __smp_send_stop_all(bool crash)
+ {
+-	unsigned int this_cpu_id;
  	cpumask_t mask;
-+	static atomic_t stopping;
-+	int was_stopping;
+ 	static atomic_t stopping;
+ 	int was_stopping;
++	unsigned int this_cpu_id, max_retries, attempt = 0;
  
  	this_cpu_id = smp_processor_id();
-+	/* make sure that concurrent stop requests are handled properly */
-+	was_stopping = atomic_cmpxchg(&stopping, 0,
-+				      crash ? REASON_CRASH : REASON_STOP);
-+	if (was_stopping) {
-+		/*
-+		 * This function can be called twice in panic path if
-+		 * crash_kexec is called with crash_kexec_post_notifiers=1,
-+		 * but obviously we execute this only once.
-+		 */
-+		if (crash && was_stopping == REASON_CRASH)
-+			return;
-+		/*
-+		 * In case of other concurrent STOP calls (like in a REBOOT
-+		 * started simultaneously as an ongoing PANIC/CRASH/REBOOT)
-+		 * we want to prioritize the ongoing PANIC/KEXEC call and
-+		 * force here the offending CPU that was attempting the
-+		 * concurrent STOP to just sit idle waiting to die.
-+		 * Failing to do so would result in a lost CPU on the next
-+		 * possible reboot triggered by crash_kexec().
-+		 */
-+		if (!crash) {
-+			pr_crit("CPU%d - kernel already stopping, parking myself.\n",
-+				this_cpu_id);
-+			local_irq_enable();
-+			/* does not return */
-+			arch_smp_cpu_park();
-+		}
-+	}
- 	if (any_other_cpus_online(&mask, this_cpu_id)) {
+ 	/* make sure that concurrent stop requests are handled properly */
+@@ -922,7 +937,9 @@ static void __smp_send_stop_all(bool crash)
+ 			arch_smp_cpu_park();
+ 		}
+ 	}
+-	if (any_other_cpus_online(&mask, this_cpu_id)) {
++	max_retries = smp_stop_get_max_retries();
++	while (++attempt <= max_retries &&
++	       any_other_cpus_online(&mask, this_cpu_id)) {
  		bool wait_forever;
  		unsigned long timeout;
-@@ -950,6 +989,9 @@ bool __weak smp_crash_stop_failed(void)
-  */
- void __weak crash_smp_send_stop(void)
- {
-+#ifdef CONFIG_USE_COMMON_SMP_STOP
-+	__smp_send_stop_all(true);
-+#else
- 	static int cpus_stopped;
- 
- 	/*
-@@ -959,11 +1001,7 @@ void __weak crash_smp_send_stop(void)
- 	if (cpus_stopped)
- 		return;
- 
--#ifdef CONFIG_USE_COMMON_SMP_STOP
--	__smp_send_stop_all(true);
--#else
- 	smp_send_stop();
--#endif
--
- 	cpus_stopped = 1;
-+#endif
- }
+ 		unsigned int this_cpu_online = cpu_online(this_cpu_id);
+@@ -931,9 +948,9 @@ static void __smp_send_stop_all(bool crash)
+ 			pr_crit("stopping secondary CPUs\n");
+ 		/* smp and crash arch-backends helpers are kept distinct */
+ 		if (!crash)
+-			arch_smp_stop_call(&mask);
++			arch_smp_stop_call(&mask, attempt);
+ 		else
+-			arch_smp_crash_call(&mask);
++			arch_smp_crash_call(&mask, attempt);
+ 		/*
+ 		 * Defaults to wait up to one second for other CPUs to stop;
+ 		 * architectures can modify the default timeout or request
+@@ -953,9 +970,12 @@ static void __smp_send_stop_all(bool crash)
+ 			udelay(1);
+ 		/* ensure any stopping-CPUs memory access is made visible */
+ 		smp_rmb();
+-		if (num_online_cpus() > this_cpu_online)
++		if (num_online_cpus() > this_cpu_online) {
+ 			pr_warn("failed to stop secondary CPUs %*pbl\n",
+ 				cpumask_pr_args(cpu_online_mask));
++			if (attempt < max_retries)
++				pr_warn("Retrying SMP stop call...\n");
++		}
+ 	}
+ 	/* Perform final (possibly arch-specific) work on this CPU */
+ 	if (!crash)
 -- 
 2.17.1
 
