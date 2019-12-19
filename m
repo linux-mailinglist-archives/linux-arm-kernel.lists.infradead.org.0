@@ -2,95 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9878125C43
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 08:48:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E656125CCE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 09:38:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VI8ZxnXygkmIfoMoF74hf68J97E0AVbeG0DoTsoKEG4=; b=GES1HyENaMspyE
-	4WKMkxaH9s3apdx7X8qMw19L/i1K3s131TK9BBh+FRoBuLXaBR5ZGxwbbJFGdUGgQz1brBlnVpbAE
-	F4PrB6iw/adc1W2m+7M1wjidkA4VpCMEaT/ubXWdWSElQlB5zy38egZ0Fp9d45/nH3Y/oZwlDTkny
-	Xl/bz8l4vMCOrvQnOF7B5GZLGfSOryp2I2WRDvTwDQGQ1cE0XBlraolzha2mI8qpN+iKzqjdS9Yw3
-	Mq/DwMUgHXh2Xy6/KGUnoBedLTg3ejg3/xYsC/RcOBZWFs0VmqkBt2q7kyrVUp6iXzEejKBPHMMFg
-	P3m7AzyvTMfq/bm2ydLg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JIhb0+RnLlB50izQXgQ8FmIx1kDCoGQGJz862DgFqIk=; b=kU9lDy+3M4wb90
+	uvkhXE7FrT5rRU0XO9AorTlAW3ZRbRWU4E/5tfQQZ+2a7AhiC0m+EorJCHrrLqKlDOp6xCdmiHNAo
+	Gv92e5Jfc0oOWMCiFkTivCxyyxiFxWuMESAPamrF2b0ibWxLZETxNylDPmeRSwXVvo79Oe9jBmXIV
+	kQ4F8f4wMiiwh9Nd1NH9qEidP33F168zDcs2FiPmfBGiIDaFWcDAbExkI7UgFHRTI2XMYh6Z7mnct
+	r1ccrVGpD3bkdVs/Cw54Y+qxsrcSTUIs2OiqjX/99CO+eUzm5jdtB8fdEdPzkP/75gDACYcMR3Eu7
+	Y3+PgzdinKYUInJRxPjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihqYH-0006Q9-08; Thu, 19 Dec 2019 07:48:53 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1ihrK3-0006de-Ke; Thu, 19 Dec 2019 08:38:15 +0000
+Received: from mail-sh.amlogic.com ([58.32.228.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihqY6-0006M5-DI
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 07:48:43 +0000
-Received: by mail-pl1-x641.google.com with SMTP id z3so2170236plk.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 18 Dec 2019 23:48:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=hTBaTcwtZhnl+1WkSjy+81B8m71lqLhfOOtaR07ioF4=;
- b=mmRldR65wsCwcUz+D5TDJCVDB3Zu/CH++jZeFoIYNHub11F6SsqtqgyIA833Zfw12o
- dRP73VgdDhN65zuf1j7Pw2MQqzP2wZ0PBkC18lFuGpUlWvLxd8MpYUKGgSaKVucH/rvS
- 4I/hDdTs4wrOG16MXCcxxHTQM9rY8uoR1GikHk8osZrHiAv87+hWyhWzpAlblc0lwACN
- c0fFob9gu3Ww+cHNYBFmwSrrhsc1no2fyiU/bWmju7USIpI7hHR9YGa/dEIcObbOsC1d
- NLzdUR1HxYRW7tF9jc0PXRCLnDiI3occbF02kqtzLCtXIxPl0Adl/K63hYg/pbEeL0Hc
- x/Mg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=hTBaTcwtZhnl+1WkSjy+81B8m71lqLhfOOtaR07ioF4=;
- b=LRgXhrgayZoos2cDA2/1XGbbcyNwNDVlPI3jq2trZrm0bVFS355Rgp2ugGylDThbvP
- Qyx/GCQlXNU6AlWnFizvZjQHiFcn7P++Nzljlq/pB768JnSWm2hiyLs0lFBn39agWvCn
- 0ekamNHK8dvWvkuSPz5pEI3I2aprS0Y8vFzpXp1pEDKTcRIpZOaWd8YO0ECHcPUhMBXg
- nfZ8bB2GEpWXAqvlAz7X8vtWsHnbg+IGO1TkfnTFvy15DiUrUkcSNqDcWEYCUioMPS9i
- LscuNw1Pq/hpiJ1ZU++WtIz14OQqfziEDeN73p11Yz/Zo86p9OohmDEKTH48M8wtaEdS
- tmSw==
-X-Gm-Message-State: APjAAAWjGzuoMuWM/i2RETeqxV8RJ7hs9iqDOJ614crRO7wLE7gVNIjM
- uWYGy4yqk0kDg2d5gQkEJ7QBp45I
-X-Google-Smtp-Source: APXvYqxlwqlRSa81G37VFitvZnHoRsAlv+Q1y8BTY/ZxpMKTj73l4WKLRWW6Uj1BStb9PikmK4/czw==
-X-Received: by 2002:a17:902:ac8b:: with SMTP id
- h11mr7742793plr.87.1576741721330; 
- Wed, 18 Dec 2019 23:48:41 -0800 (PST)
-Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
- by smtp.gmail.com with ESMTPSA id k4sm6423315pfk.11.2019.12.18.23.48.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 23:48:40 -0800 (PST)
-From: Chuhong Yuan <hslester96@gmail.com>
-To: 
-Subject: [PATCH v2 RFT] media: exynos4-is: add missed clk_disable_unprepare in
- remove
-Date: Thu, 19 Dec 2019 15:48:24 +0800
-Message-Id: <20191219074824.15047-1-hslester96@gmail.com>
-X-Mailer: git-send-email 2.24.0
+ id 1ihrJt-0006bv-9l; Thu, 19 Dec 2019 08:38:06 +0000
+Received: from [10.18.38.198] (10.18.38.198) by mail-sh.amlogic.com
+ (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Thu, 19 Dec
+ 2019 16:38:33 +0800
+Subject: Re: [PATCH v2 2/6] dt-bindings: usb: dwc3: Add the Amlogic A1 Family
+ DWC3 Glue Bindings
+To: Neil Armstrong <narmstrong@baylibre.com>, Jerome Brunet
+ <jbrunet@baylibre.com>, Rob Herring <robh@kernel.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Felipe Balbi <felipe.balbi@linux.intel.com>,
+ Kevin Hilman <khilman@baylibre.com>
+References: <1576636944-196192-1-git-send-email-hanjie.lin@amlogic.com>
+ <1576636944-196192-3-git-send-email-hanjie.lin@amlogic.com>
+ <daa67976-e2ad-e114-b5fd-87eb5ae00eeb@baylibre.com>
+From: Hanjie Lin <hanjie.lin@amlogic.com>
+Message-ID: <c159449b-f266-2b90-fd1b-fc8988bef9e6@amlogic.com>
+Date: Thu, 19 Dec 2019 16:38:32 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
+In-Reply-To: <daa67976-e2ad-e114-b5fd-87eb5ae00eeb@baylibre.com>
+Content-Language: en-US
+X-Originating-IP: [10.18.38.198]
+X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
+ (10.18.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_234842_444965_027F281D 
-X-CRM114-Status: GOOD (  10.61  )
-X-Spam-Score: 1.6 (+)
+X-CRM114-CacheID: sfid-20191219_003805_340561_B5AFEF29 
+X-CRM114-Status: GOOD (  14.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [202.120.40.82 listed in dnsbl.sorbs.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (hslester96[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (hslester96[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,45 +67,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Chuhong Yuan <hslester96@gmail.com>,
- linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, linux-usb@vger.kernel.org,
+ Yue Wang <yue.wang@amlogic.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Liang Yang <liang.yang@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
+ Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Jian Hu <jian.hu@amlogic.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This driver forgets to disable and unprepare clock when remove.
-Add a call to clk_disable_unprepare() to fix it.
 
-Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
----
-Changes in v2:
-  - Add a check of pm_runtime_enable() to match enable in probe.
-  - Add RFT tag.
 
- drivers/media/platform/exynos4-is/fimc-lite.c | 3 +++
- 1 file changed, 3 insertions(+)
+On 2019/12/18 21:13, Neil Armstrong wrote:
+> Hi,
+> 
+> On 18/12/2019 03:42, Hanjie Lin wrote:
+>> The Amlogic A1 SoC Family embeds 1 USB Controllers:
+>>  - a DWC3 IP configured as Host for USB2 and USB3
+>>
+>> A glue connects the controllers to the USB2 PHY of A1 SoC.
+>>
+>> Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
+>> Signed-off-by: Yue Wang <yue.wang@amlogic.com>
+>> ---
+>>  .../bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml  | 32 ++++++++++++++++++++++
+>>  1 file changed, 32 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml b/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
+>> index 4efb77b..9740027 100644
+>> --- a/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
+>> +++ b/Documentation/devicetree/bindings/usb/amlogic,meson-g12a-usb-ctrl.yaml
+>> @@ -9,6 +9,8 @@ title: Amlogic Meson G12A DWC3 USB SoC Controller Glue
+>>  
+>>  maintainers:
+>>    - Neil Armstrong <narmstrong@baylibre.com>
+>> +  - Hanjie Lin <hanjie.lin@amlogic.com>
+>> +  - Yue Wang <yue.wang@amlogic.com>
+>>  
+>>  description: |
+>>    The Amlogic G12A embeds a DWC3 USB IP Core configured for USB2 and USB3
+>> @@ -22,10 +24,14 @@ description: |
+>>    The DWC3 Glue controls the PHY routing and power, an interrupt line is
+>>    connected to the Glue to serve as OTG ID change detection.
+>>  
+>> +  The Amlogic A1 embeds a DWC3 USB IP Core configured for USB2 in
+>> +  host-only mode.
+>> +
+>>  properties:
+>>    compatible:
+>>      enum:
+>>        - amlogic,meson-g12a-usb-ctrl
+>> +      - amlogic,meson-a1-usb-ctrl
+>>  
+>>    ranges: true
+>>  
+>> @@ -124,4 +130,30 @@ examples:
+>>                snps,quirk-frame-length-adjustment;
+>>            };
+>>      };
+>> +  - |
+>> +    usb: usb@ffe09000 {
+>> +          status = "okay";
+>> +          compatible = "amlogic,meson-a1-usb-ctrl";
+>> +          reg = <0x0 0xffe09000 0x0 0xa0>;
+>> +          #address-cells = <2>;
+>> +          #size-cells = <2>;
+>> +          ranges;
+>>  
+>> +          clocks = <&clkc_periphs CLKID_USB_CTRL>,
+>> +           <&clkc_periphs CLKID_USB_BUS>,
+>> +           <&clkc_periphs CLKID_XTAL_USB_PHY>,
+>> +           <&clkc_periphs CLKID_XTAL_USB_CTRL>;
+>> +          clock-names = "usb_ctrl", "usb_bus", "xtal_usb_phy", "xtal_usb_ctrl";
+>> +          resets = <&reset RESET_USBCTRL>;
+>> +          phys = <&usb2_phy0>;
+>> +          phy-names = "usb2-phy0";
+>> +
+>> +          dwc3: usb@ff400000 {
+>> +                  compatible = "snps,dwc3";
+>> +                  reg = <0x0 0xff400000 0x0 0x100000>;
+>> +                  interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
+>> +                  dr_mode = "host";
+>> +                  snps,dis_u2_susphy_quirk;
+>> +                  snps,quirk-frame-length-adjustment = <0x20>;
+>> +          };
+>> +  };
+>>
+> 
+> I doubt this passed the dt_binding_check !
+> 
+> 
+> Please add the clock-names only for amlogic,meson-a1-usb-ctrl,
+> set the phys maxItems to 1 for amlogic,meson-a1-usb-ctrl,
+> and set dr_mode as host in the example or make it required only
+> for amlogic,meson-g12a-usb-ctrl.
+> 
+> Neil
+> 
+> .
+> 
 
-diff --git a/drivers/media/platform/exynos4-is/fimc-lite.c b/drivers/media/platform/exynos4-is/fimc-lite.c
-index e87c6a09205b..17de14fbba31 100644
---- a/drivers/media/platform/exynos4-is/fimc-lite.c
-+++ b/drivers/media/platform/exynos4-is/fimc-lite.c
-@@ -1614,6 +1614,9 @@ static int fimc_lite_remove(struct platform_device *pdev)
- 	struct fimc_lite *fimc = platform_get_drvdata(pdev);
- 	struct device *dev = &pdev->dev;
- 
-+	if (!pm_runtime_enabled(dev))
-+		clk_disable_unprepare(fimc->clock);
-+
- 	pm_runtime_disable(dev);
- 	pm_runtime_set_suspended(dev);
- 	fimc_lite_unregister_capture_subdev(fimc);
--- 
-2.24.0
+Hi Neil,
+
+It does report errors by dt_binding_check, I will check the list again.
+
+Thanks
+
+Hanjie.lin
 
 
 _______________________________________________
