@@ -2,56 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C94C1267BB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 18:13:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F4004126803
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 18:28:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=n/6PPo+XGPtymohXkiOV3GRIb1/L+JTzPDyTNBicj54=; b=CTHm/fIE7o/0qICCmJZXTrwNk
-	aoK334C46g0pL0rMi1dyHGtXUQDnzeqe9NRb5E6ZkXxdTq6rQf+UseouJSzkrBIyrhXwVuAbiKhfh
-	u7D4gG8noXXD9NzTCfdQ0+gM4vVmBE5FWUyTU8sDUZ152aGBPRccbFbs9lrKK7WZMlH1wglArXSML
-	+hiiq8U5vyAX1f2wzRCc3LMBhl5zLIOmzSV2AM4VBcTU9IgFrkUyzsX2Dheo8iNUkMfeCwqKooAtc
-	fCZcfRYYvsbYNwkD1t/OMBJeHnKxiDeDt6LZiZS0mCpSdr7hWucZkayQ31+IE7m2Q+ml7UIYKQWEm
-	BXUHzJSMA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fV12mLUR+F5YYJxt/cdUxbIhr4ViCGaeuOkuMba+iNQ=; b=mXewfqSS1aCcrL
+	NQAVmbPt2KZ9FcEjoQ8ylQKwO1fuaSM02uSW6CiUgH3myetfXmEKx+yK5UinVFJDL0Mb25yF4EcSJ
+	pZ7edSqVkCQKTDE4sT1JJuo6JNxudO1Shro3P0/HgHmM2waM3/uakU63DgrzNnKPl4DtqL2Rd7OoY
+	nLOZgF4j4tWHWg7tbNZOnkjoLEDCd4P262EN7e7PHaI/7yG+ud02rrEK1SB8uaAaRGN6sPPJTLH99
+	gU3AxUrh7tmG5JTX/7N/hKMZ3dlVn5mWyztRnQ8MHF/ALktxoiT0lkmWCMphONGQ/PH4EKE6iYDHz
+	zTTRKfcelZdIFXx8T/Zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihzMg-00005Y-Uy; Thu, 19 Dec 2019 17:13:30 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1ihzbU-0004kj-Ji; Thu, 19 Dec 2019 17:28:48 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihzMU-00004x-9y
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 17:13:20 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: sre)
- with ESMTPSA id 30A7E2927E6
-Received: by earth.universe (Postfix, from userid 1000)
- id E73423C0C7B; Thu, 19 Dec 2019 18:13:14 +0100 (CET)
-Date: Thu, 19 Dec 2019 18:13:14 +0100
-From: Sebastian Reichel <sebastian.reichel@collabora.com>
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH v3] power: reset: at91-reset: add sysfs interface to the
- power on reason
-Message-ID: <20191219171314.lgltzc5bvrvpwphs@earth.universe>
-References: <20191209094329.45638-1-kamel.bouhara@bootlin.com>
- <14a9f500-3f4a-2b6b-cd27-f48c6cb73cce@microchip.com>
- <20191209134458.GA47233@kb-xps>
+ id 1ihzbH-0004iX-KM
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 17:28:37 +0000
+Received: by mail-pg1-x541.google.com with SMTP id b137so3469618pga.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Dec 2019 09:28:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=FC3/QPaa5PZhaNcHhuFDAdfq0OHIUK1TdSdCzAHajCc=;
+ b=dy9R8z7vc/XXAEH3Rhv/7Zz2UzI+4YT7FYRMRYG4QOIcJ85CI0668ysW86zR7kZEwp
+ ryjCWDY/mOdSghg39/lNRhMPhF6u8IoZhXyvn5ahot+dLntHgepthUNUhRhty3H1FN1d
+ PEsSKcw8HruBh2pyfrfxxPgInCOU0e55yG3nARfoUOeTZGSUdHRBoOgSKkHs+1a5UkKr
+ Xs415JZcJ9xGShIbk4spwpHIOR93+/gIGju4C2xG/sQcxD0Ew9Ruudwr0dCJq5b5Kllp
+ NhI914BZRknzkfc+PSNBTN9GqkTfw8me85QmidXJQtJBx5stTy4O5krcjCjikPWHkvsg
+ WUeg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=FC3/QPaa5PZhaNcHhuFDAdfq0OHIUK1TdSdCzAHajCc=;
+ b=crI6EFughVO/YOzgP3ljRljyu6BAb3pAViyXldQSc7PYuqQ84midcjzyGBrahb28F4
+ +J0iD5zHZ/7ljctvVVtXbTT9Sj4XDXmxYhqTJTd1AKpNzfpXy86XR8+4NYcPKnA3g1j5
+ nVcW04QYZM5WXdkmL4T07YAfJlC1l2TTSEp2449le04PWWL9/+62NpRW+8ELWz+JREz1
+ rhTnIMXkjhgAFB4Hg+VHsTxUzO82J4L3Uz18I+dbXmTmigpt8cAsShLa9tbaZrvL7bcy
+ cQDFR+EPySxg1f5uNpnTO7vWqbeUAti9zcyhCrpWyxL6jsl5hyU+a9QyBIsGDipjbF+P
+ vFFw==
+X-Gm-Message-State: APjAAAWxTVNTbvVT2zu/occqBrqiTG8YE0oY/ogLwNpl377qP2qOBiyK
+ iOaQKSXKiABFaYkwOeuCX8I=
+X-Google-Smtp-Source: APXvYqwsCwPHwOMp7hPK2BsRkPhtgmogTJE3yEjGSSPfL3FD3QcZJks5+w9l7rUtELd8fzk8Qz74UQ==
+X-Received: by 2002:a62:5547:: with SMTP id j68mr11289653pfb.6.1576776513100; 
+ Thu, 19 Dec 2019 09:28:33 -0800 (PST)
+Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
+ [216.71.213.236])
+ by smtp.gmail.com with ESMTPSA id v143sm536209pfc.71.2019.12.19.09.28.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 19 Dec 2019 09:28:32 -0800 (PST)
+From: Vasily Khoruzhick <anarsoul@gmail.com>
+To: Yangtao Li <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-pm@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ =?UTF-8?q?Ond=C5=99ej=20Jirman?= <megous@megous.com>,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH v8 0/7] add thermal sensor driver for A64, A83T, H3, H5, H6,
+ R40
+Date: Thu, 19 Dec 2019 09:28:16 -0800
+Message-Id: <20191219172823.1652600-1-anarsoul@gmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <20191209134458.GA47233@kb-xps>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_091318_615171_B61688A6 
-X-CRM114-Status: GOOD (  33.40  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191219_092835_694538_B555447B 
+X-CRM114-Status: GOOD (  12.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (anarsoul[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,295 +108,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, Ludovic.Desroches@microchip.com,
- thomas.petazzoni@bootlin.com, Claudiu.Beznea@microchip.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0769244666535053049=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This patchset adds driver for thermal sensor in A64, A83T, H3, H5,
+H6 and R40 SoCs.
 
---===============0769244666535053049==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="aq2t5pw6ai5pzpeu"
-Content-Disposition: inline
+v8:
+	- [vasily] Address more Maxime's comments for dt-schema
+	- [vasily] Add myself to MAINTAINERS for the driver and schema
+	- [vasily] Round calibration data size to word boundary for H6 and A64
+	- [vasily] Change offset for A64 since it reports too low temp otherwise.
+	           Likely conversion formula in user manual is not correct.
 
+v7:
+	- [vasily] Address Maxime's comments for dt-schema
+	- [vasily] Move common part of H3 and H5 dts into sunxi-h3-h5.dtsi
+	- [vasily] Add Maxime's a-b to the driver patch 
 
---aq2t5pw6ai5pzpeu
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+v6:
+	- [ondrej, vasily] Squash all driver related changes into a
+			   single patch
+	- [ondrej] Rename calib -> calibration
+	- [ondrej] Fix thermal zone registration check
+	- [ondrej] Lower rate of sensor data interrupts to 4/sec/sensor
+	- [ondrej] Rework scale/offset values, H6 calibration
+	- [ondrej] Explicitly set mod clock to 24 MHz
+	- [ondrej] Set undocumented bits in CTRL0 for H6
+	- [ondrej] Add support for A83T
+	- [ondrej] Add dts changes for A83T, H3, H5, H6
+	- [vasily] Add dts changes for A64
+	- [vasily] Address Maxime's comments for YAML scheme
+	- [vasily] Make .calc_temp callback mandatory
+	- [vasily] Set .max_register in regmap config, so regs can be
+		   inspected using debugfs
 
-Hi,
+Ondrej Jirman (4):
+  ARM: dts: sun8i-a83t: Add thermal sensor and thermal zones
+  ARM: dts: sun8i-h3: Add thermal sensor and thermal zones
+  arm64: dts: allwinner: h5: Add thermal sensor and thermal zones
+  arm64: dts: allwinner: h6: Add thermal sensor and thermal zones
 
-On Mon, Dec 09, 2019 at 02:44:58PM +0100, Kamel Bouhara wrote:
-> On Mon, Dec 09, 2019 at 11:33:23AM +0000, Claudiu.Beznea@microchip.com wr=
-ote:
-> > On 09.12.2019 11:43, Kamel Bouhara wrote:
-> > > EXTERNAL EMAIL: Do not click links or open attachments unless you kno=
-w the content is safe
-> > >
-> > > This patch export the power on reason through the sysfs interface and
-> > > introduce some generic reset sources.
-> > > Update the ABI documentation to list current power on sources.
-> > >
-> > > Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > > Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
-> > > ---
-> > > Changes in v2
-> > > =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-> > >         - Be less specific on the crystal oscillator value
-> > >         - Add an Acked-by
-> > > Changes in v3
-> > > =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
-> > >         - Really be less specific on the crystal oscillator value
-> > >
-> > >  .../sysfs-devices-platform-power-on-reason    | 14 ++++++
-> > >  drivers/power/reset/at91-reset.c              | 44 +++++++++++++----=
---
-> > >  include/linux/power/power_on_reason.h         | 19 ++++++++
-> > >  3 files changed, 64 insertions(+), 13 deletions(-)
-> > >  create mode 100644 Documentation/ABI/testing/sysfs-devices-platform-=
-power-on-reason
-> > >  create mode 100644 include/linux/power/power_on_reason.h
-> > >
-> > > diff --git a/Documentation/ABI/testing/sysfs-devices-platform-power-o=
-n-reason b/Documentation/ABI/testing/sysfs-devices-platform-power-on-reason
-> > > new file mode 100644
-> > > index 000000000000..83daeb9b1aa2
-> > > --- /dev/null
-> > > +++ b/Documentation/ABI/testing/sysfs-devices-platform-power-on-reason
-> > > @@ -0,0 +1,14 @@
-> > > +What:          /sys/devices/platform/.../power_on_reason
-> > > +
-> > > +Date:          October 2019
-> > > +KernelVersion: 5.4
-> > > +Contact:       Kamel Bouhara <kamel.bouhara@bootlin.com>
-> > > +Description:   This file shows system power on reason.
-> > > +               The possible sources are:
-> > > +               General System Power-ON, RTC wakeup, Watchdog timeout,
-> > > +               Software Reset, User pressed reset button,
-> > > +               CPU Clock failure, 32.768kHz Oscillator Failure,
-> >
-> > Crystal oscillator value is still present here.
-> >
->=20
-> Indeed, thanks.
->=20
-> > > +               Low power mode exit, Unknown.
-> > > +
-> > > +               The file is read only.
-> > > +
-> > > diff --git a/drivers/power/reset/at91-reset.c b/drivers/power/reset/a=
-t91-reset.c
-> > > index 44ca983a49a1..3cb2df40af37 100644
-> > > --- a/drivers/power/reset/at91-reset.c
-> > > +++ b/drivers/power/reset/at91-reset.c
-> > > @@ -17,7 +17,7 @@
-> > >  #include <linux/of_address.h>
-> > >  #include <linux/platform_device.h>
-> > >  #include <linux/reboot.h>
-> > > -
-> > > +#include <linux/power/power_on_reason.h>
-> >
-> > As far as I know, headers in include/linux are only visible in kernel.
-> > Although you may use this header, in future, in other drivers (as Alexa=
-ndre
-> > specified in a previous email), at the moment it is only used by
-> > at91-reset.c. So, why not keeping them in at91-reset.c or leave it as is
-> > for the moment and introduce it when this will be necessary?
-> >
->=20
-> Well, It's been a while now the idea was proposed, I've just submitted
-> it here.
->=20
-> > Moreover, you are doing 2 things on a patch:
-> > 1/ export the reset reasons through sysfs
-> > 2/ introduce the reset reason defines
->
-> Ok, I shall split it in two patches, if it could clarify things ?
+Vasily Khoruzhick (1):
+  arm64: dts: allwinner: a64: Add thermal sensors and thermal zones
 
-Yes, please split into two patches.
+Yangtao Li (2):
+  thermal: sun8i: add thermal driver for H6/H5/H3/A64/A83T/R40
+  dt-bindings: thermal: add YAML schema for sun8i-thermal driver
+    bindings
 
-> > Thank you,
-> > Claudiu Beznea
-> >
-> > >  #include <soc/at91/at91sam9_ddrsdr.h>
-> > >  #include <soc/at91/at91sam9_sdramc.h>
-> > >
-> > > @@ -146,42 +146,42 @@ static int samx7_restart(struct notifier_block =
-*this, unsigned long mode,
-> > >         return NOTIFY_DONE;
-> > >  }
-> > >
-> > > -static void __init at91_reset_status(struct platform_device *pdev)
-> > > +static const char *at91_reset_reason(struct platform_device *pdev)
-> > >  {
-> > >         const char *reason;
-> > >         u32 reg =3D readl(at91_rstc_base + AT91_RSTC_SR);
-> > >
-> > >         switch ((reg & AT91_RSTC_RSTTYP) >> 8) {
-> > >         case RESET_TYPE_GENERAL:
-> > > -               reason =3D "general reset";
-> > > +               reason =3D POWER_ON_REASON_GENERAL;
-> > >                 break;
-> > >         case RESET_TYPE_WAKEUP:
-> > > -               reason =3D "wakeup";
-> > > +               reason =3D POWER_ON_REASON_RTC;
-> > >                 break;
-> > >         case RESET_TYPE_WATCHDOG:
-> > > -               reason =3D "watchdog reset";
-> > > +               reason =3D POWER_ON_REASON_WATCHDOG;
-> > >                 break;
-> > >         case RESET_TYPE_SOFTWARE:
-> > > -               reason =3D "software reset";
-> > > +               reason =3D POWER_ON_REASON_SOFTWARE;
-> > >                 break;
-> > >         case RESET_TYPE_USER:
-> > > -               reason =3D "user reset";
-> > > +               reason =3D POWER_ON_REASON_USER;
-> > >                 break;
-> > >         case RESET_TYPE_CPU_FAIL:
-> > > -               reason =3D "CPU clock failure detection";
-> > > +               reason =3D POWER_ON_REASON_CPU_FAIL;
-> > >                 break;
-> > >         case RESET_TYPE_XTAL_FAIL:
-> > > -               reason =3D "32.768 kHz crystal failure detection";
-> > > +               reason =3D POWER_ON_REASON_XTAL_FAIL;
-> > >                 break;
-> > >         case RESET_TYPE_ULP2:
-> > > -               reason =3D "ULP2 reset";
-> > > +               reason =3D POWER_ON_REASON_LOW_POWER;
-> > >                 break;
-> > >         default:
-> > > -               reason =3D "unknown reset";
-> > > +               reason =3D POWER_ON_REASON_UNKNOWN;
-> > >                 break;
-> > >         }
-> > >
-> > > -       dev_info(&pdev->dev, "Starting after %s\n", reason);
-> > > +       return reason;
-> > >  }
-> > >
-> > >  static const struct of_device_id at91_ramc_of_match[] =3D {
-> > > @@ -204,6 +204,17 @@ static struct notifier_block at91_restart_nb =3D=
- {
-> > >         .priority =3D 192,
-> > >  };
-> > >
-> > > +static ssize_t power_on_reason_show(struct device *dev,
-> > > +                                   struct device_attribute *attr,
-> > > +                                   char *buf)
-> > > +{
-> > > +       struct platform_device *pdev =3D to_platform_device(dev);
-> > > +
-> > > +       return sprintf(buf, "%s\n", at91_reset_reason(pdev));
-> > > +}
-> > > +
-> > > +static DEVICE_ATTR_RO(power_on_reason);
-> > > +
-> > >  static int __init at91_reset_probe(struct platform_device *pdev)
-> > >  {
-> > >         const struct of_device_id *match;
-> > > @@ -248,7 +259,14 @@ static int __init at91_reset_probe(struct platfo=
-rm_device *pdev)
-> > >                 return ret;
-> > >         }
-> > >
-> > > -       at91_reset_status(pdev);
-> > > +       ret =3D device_create_file(&pdev->dev, &dev_attr_power_on_rea=
-son);
-> > > +       if (ret) {
-> > > +               dev_err(&pdev->dev, "Could not create sysfs entry\n");
-> > > +               return ret;
-> > > +       }
-> > > +
-> > > +       dev_info(&pdev->dev, "Starting after %s reset\n",
-> > > +                at91_reset_reason(pdev));
-> > >
-> > >         return 0;
-> > >  }
-> > > diff --git a/include/linux/power/power_on_reason.h b/include/linux/po=
-wer/power_on_reason.h
-> > > new file mode 100644
-> > > index 000000000000..9c44baa52911
-> > > --- /dev/null
-> > > +++ b/include/linux/power/power_on_reason.h
-> > > @@ -0,0 +1,19 @@
-> > > +/* SPDX-License-Identifier: GPL-2.0-only */
-> > > +/*
-> > > + * Author: Kamel Bouhra <kamel.bouhara@bootlin.com>
-> > > + */
-> > > +
-> > > +#ifndef POWER_ON_REASON_H
-> > > +#define POWER_ON_REASON_H
-> > > +
-> > > +#define POWER_ON_REASON_GENERAL "General"
-> > > +#define POWER_ON_REASON_RTC "RTC wakeup"
-> > > +#define POWER_ON_REASON_WATCHDOG "Watchdog timeout"
-> > > +#define POWER_ON_REASON_SOFTWARE "Software"
-> > > +#define POWER_ON_REASON_USER "User"
+ .../thermal/allwinner,sun8i-a83t-ths.yaml     | 160 +++++
+ MAINTAINERS                                   |   8 +
+ arch/arm/boot/dts/sun8i-a83t.dtsi             |  36 +
+ arch/arm/boot/dts/sun8i-h3.dtsi               |  20 +
+ arch/arm/boot/dts/sunxi-h3-h5.dtsi            |   6 +
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi |  42 ++
+ arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi  |  26 +
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  |  33 +
+ drivers/thermal/Kconfig                       |  14 +
+ drivers/thermal/Makefile                      |   1 +
+ drivers/thermal/sun8i_thermal.c               | 639 ++++++++++++++++++
+ 11 files changed, 985 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/thermal/allwinner,sun8i-a83t-ths.yaml
+ create mode 100644 drivers/thermal/sun8i_thermal.c
 
-Is this user reset button from the sysfs file? I think just "User"
-is a bit too short. Also please make sure, that the list actually
-matches the API described in the documentation :)
+-- 
+2.24.1
 
--- Sebastian
-
-> > > +#define POWER_ON_REASON_CPU_FAIL "CPU clock Failure"
-> > > +#define POWER_ON_REASON_XTAL_FAIL "Crystal oscillator Failure"
-> > > +#define POWER_ON_REASON_LOW_POWER "Low power exit"
-> > > +#define POWER_ON_REASON_UNKNOWN "Unknown"
-> > > +
-> > > +#endif /* POWER_ON_REASON_H */
-> > > --
-> > > 2.24.0
-> > >
-> > >
-> > > _______________________________________________
-> > > linux-arm-kernel mailing list
-> > > linux-arm-kernel@lists.infradead.org
-> > > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> > >
->=20
-> --
-> Kamel Bouhara, Bootlin
-> Embedded Linux and kernel engineering
-> https://bootlin.com
-
---aq2t5pw6ai5pzpeu
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl37r6oACgkQ2O7X88g7
-+po7fA//VnzlIimPh7BXkjMCYSGpfcoP2EvyTF97+0T0HcpWbMDs2InokNE8awS7
-aywDyXz2l2TGhA5rHwndDUuE+jIx4GLxB3sriqNG5udYCFacHiZfNYaLAdgh7BLw
-09CRl9x12m0ls70vmKMO6x/j3IGNs4OiVWzAKCM9WYLnpn5uUG3FKhhL+GKImOuJ
-wNV6w56Ib+o1lpPil3CNz+eXQVDQZ/zoMgv87QM3A6pn2UvdHwAJxjio/7gt8Zlc
-ltLI45W6TxEX48c1sW7ob2RRi7ldCulA47SnJl+ndBIfafx5Lf5ryzk9z6p8mSMm
-rB8yQZhEh+q43jWQBVkh+espnyfdFwZ6r8zuzhwOl55tM6UmQ3HnJENCEnZ0qeGP
-rqB6JiejriyTFrH5XXGYlgIsUB1AJN0IWtc6BgKPWrAuHfbRoJ3uW5iMfusenU0H
-IKR+8Yt6tZAdv8YJso+roney2mNjwDkN21ko/zTzBRK5GKVXSid28VALVfB7HJD9
-wPb0YjOM+7k3EXLlXQMT95SUPBvA53MI2eBV/02VTBe/CBJfIMcGqImA2U40TzsM
-bKU4DDJH/CxcMnbdKMqR65aLrKioQKC6M/FGsWwel80xevMPu6pfWLbQ9zB7Ylex
-WLr5kO5zM57uqggqeQZaauAfduV4lQHm94oUrWsjLTzU0HRoZWM=
-=aymr
------END PGP SIGNATURE-----
-
---aq2t5pw6ai5pzpeu--
-
-
---===============0769244666535053049==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0769244666535053049==--
-
