@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA1E6126713
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 17:31:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA6C712671A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 17:32:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nu5cOMdtmDnfZmoYfFeoYIKuzUGn0xbVM/eCOWzg7hk=; b=enQhj9hspmNwJ4
-	QqzIw/IvNTaJMLVHXWrpB6XX2wpZ/V1l64DXs97nepbf7TVhlhO8p8/wl+5pmHWWP7RERw/U3tYhR
-	hRpD/AbKeVfGmGrpv+CcrPkwei3w/Xadc40ks0yWNSEDgelJIVpV+IPi6Ef+tHO6FWOyW5qTozD8H
-	gfjgCqrHW7MxA9KNS+OE6Ufn5hQEgSgsjGyKxg5/XvX13N4GxHBJ7z71Lk6OoXdj1r0KKyCC8dxCk
-	j/eHxKFVdNxVX5XjPK8JOtrNG37ab6vn3pitaCBytBh91Kxtjg3Ng2uxJJ8x7wxXjJTqj+e+0CluS
-	h8Do5BNM0LdQP/2zwqvg==;
+	List-Owner; bh=MJtq41487Zpx/4Qm81afoa+2OTa9OqbW6d86IANaVNQ=; b=gto33970nY3AAx
+	mvtI/axpukKgfpKayleD0HzzW8cqZc/TVWNpSIJlS+Y6N+pYTIF0kMC46hbpzJKr5m6cG5m837Btg
+	6BKaMCmj+MeoN94OHgcUPBTm/D7TWP/xRZBbUekDVHN7xIDAf51Yon4mNks+/jboyLP1tEOevGRok
+	Ni7G11TicvjQHyPsT58X3Zle1GU1ICXDK/MZo9VNbwswEcoTK2RTJyl9DcgSVNzbbts89KR1gAWhJ
+	FQj0o2RQLHw5MmhKxaUlkk8x7h1ckD/Spo0QYszYgmxIbSf3NWhpdz81cJuFSmgzme2IWnjm8suRV
+	i95DXtH/HjwFRW62olBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihyi8-0008QM-Om; Thu, 19 Dec 2019 16:31:36 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1ihyik-0000WK-3n; Thu, 19 Dec 2019 16:32:14 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihyhu-0008PN-3F
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 16:31:23 +0000
-Received: by mail-wm1-x343.google.com with SMTP id 20so6165288wmj.4
+ id 1ihyhv-0008Pl-Fv
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 16:31:25 +0000
+Received: by mail-wr1-x443.google.com with SMTP id q10so6604572wrm.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Dec 2019 08:31:21 -0800 (PST)
+ Thu, 19 Dec 2019 08:31:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qvpO6T6lCyQjsFcC/B3MAQOfFJPvli4NlBcE8bVnq2o=;
- b=ybmj/yFMV4WPp7svNei7QMmCl8bEZOgf5I1OmMiNuceKiEvs5FOwc+5QNBcmfQrlON
- DofenBUgXZTyi4JhcRiIepGkKcdGY4BtKidQwP7/JHO1FEOJNjzrzX8jKjeJNf5cwrSN
- tS2rRvNKSfBvhZDS+GHaReUR5s84Sru30RnnKkOevGMAjdhnFV1FNoTdrYF5xTS2C5Pz
- pBv91NSiFLc4P/2cJ1BRlji6oxczL+VzlLLYhsrAz88xLoCnUc9XjeqfwlqEjDnliWJA
- 9uGe7CZ4PKzluz2OcGmuwW1v9QwotUUAWENXlNB7vZEd8IAreHDTExzizhbd8YlzdFMR
- HnXg==
+ bh=+Rlh4fuYqJBRp2jOU8B0MlV1M4d0Kd3bn04JlNplJUI=;
+ b=DZ1mQvkj39du9c3uvhuc1sVcu9Y0A998X/z1CY268T8u5anFgELkbUT49r7j/FRZcz
+ +7ksycnZd2+fQJ6zh90kx8v00yqv95+dvo7vFBGyHIpOdKxZ0pBKHP1Ib58Ky7Fth78Z
+ VeRsmVP2kmHmNbga3t9PtcFS9+McrPng62snTWftNTaRLMsUnkTCDDJavYidq4WFXSbY
+ 4AcOnnyLgLkT3p79PmvIDRKzHsoP0jh32/SQlZwafUWUhVdz4WPCLo+VzqantlSmz8QH
+ 1+1hoBcCfokGxka6d4wDM3UGxmSx/Ms/zaBIQammeFbf2MG87txqfxqlxOs1Ib7Kb6F6
+ gRXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qvpO6T6lCyQjsFcC/B3MAQOfFJPvli4NlBcE8bVnq2o=;
- b=hx6ZczvRzpcJM7ex+m/t8xDYOwefrWNkXpSi8VBmWdm3ujmPV2O9Xxwy6ehcCSLWmo
- +Zxv89D4085H2T3G14mIGB12kIHkRYYNqtrz4vT108wnS6OcABlJBATa/BQ++AVT+l6/
- tbVmXbJ4XulE/ohXbTQA33V910ZGfdGLyUnof1vei9dx7OSxohOYuaTsawRQnt04qplH
- zlV6qAjatui86m6mycEg1Fv0y9Px8AiVsZ9pHKyUtEFpLt6/HLNEBWEh3SLGqBv5KzWW
- WY0ph+CRz199DB4dwYrPpHmGNN5YdNIJGyBEBUSmYpNPb4g91qC5zaYs1MGOIQly3620
- 5NPg==
-X-Gm-Message-State: APjAAAWTXSdl3xyQngZ9MScA9XSb2zDMcjtZXP4eJq/bgS3Rh+nJoPTb
- /oDwvP1QcXmYGj4FfB8MngH+jw==
-X-Google-Smtp-Source: APXvYqxbh4xLAjFUzI3q0HQZiQKtrGjMkp4J2NYL+c3vK40JxUXhicQB54JCrIL/QmT7sGb7qr24dA==
-X-Received: by 2002:a1c:b456:: with SMTP id d83mr10758320wmf.172.1576773080107; 
- Thu, 19 Dec 2019 08:31:20 -0800 (PST)
+ bh=+Rlh4fuYqJBRp2jOU8B0MlV1M4d0Kd3bn04JlNplJUI=;
+ b=oIaSgZsF3Iz2/o4rDk9uEGyr9/p4HzPeKM1zNULwJEEVqFBW2v6bTHnar9bJtMDZQt
+ gt1cnXV4/m0+UUJt78Op2TbuqirIuSJu+y92mjkeIVy+HxkIkhF9TLcbpsemZHTWGbPa
+ f0kGAFuHg3mUlWZKLiEoPexW3YgJ57sAp0xhgpaVE0EN25zoXcoLobykTE4lgtcma9uk
+ NRq3m3vch78f8VMQ8rDWcdfgAyzEteHcW2UA2plCrQdlk4sP25JE34V4zBarx6czXTAL
+ x9O+vBD2vcWjfGASsi7dZVeomwdnrBhhMZaAF+yXyjZFKWAF7+dLZduPKWmO6IJpo/P2
+ PNvQ==
+X-Gm-Message-State: APjAAAV+bFmeQK2K/ThtRDK5nAX+FQQMlpwVH5mGRwhPWDXMcUZTRoki
+ Co17iyxPN5XK1lshm41H7FIGjQ==
+X-Google-Smtp-Source: APXvYqyam1fWJispp04KzWY3PPXWRuIZpC4LpasQ5BFUWvh/VFFpRwbOR/7kgGSzp2MXQTFfM2Wo2Q==
+X-Received: by 2002:adf:f5cb:: with SMTP id k11mr9990514wrp.71.1576773081514; 
+ Thu, 19 Dec 2019 08:31:21 -0800 (PST)
 Received: from localhost.localdomain (adsl-84-227-176-239.adslplus.ch.
  [84.227.176.239])
- by smtp.gmail.com with ESMTPSA id u22sm7092068wru.30.2019.12.19.08.31.18
+ by smtp.gmail.com with ESMTPSA id u22sm7092068wru.30.2019.12.19.08.31.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 08:31:19 -0800 (PST)
+ Thu, 19 Dec 2019 08:31:20 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-acpi@vger.kernel.org, devicetree@vger.kernel.org,
  iommu@lists.linux-foundation.org
-Subject: [PATCH v4 01/13] iommu/arm-smmu-v3: Drop __GFP_ZERO flag from DMA
- allocation
-Date: Thu, 19 Dec 2019 17:30:21 +0100
-Message-Id: <20191219163033.2608177-2-jean-philippe@linaro.org>
+Subject: [PATCH v4 02/13] dt-bindings: document PASID property for IOMMU
+ masters
+Date: Thu, 19 Dec 2019 17:30:22 +0100
+Message-Id: <20191219163033.2608177-3-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191219163033.2608177-1-jean-philippe@linaro.org>
 References: <20191219163033.2608177-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_083122_273073_B32A38FA 
-X-CRM114-Status: GOOD (  11.05  )
+X-CRM114-CacheID: sfid-20191219_083123_528979_8355835F 
+X-CRM114-Status: GOOD (  11.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,62 +110,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since commit 518a2f1925c3 ("dma-mapping: zero memory returned from
-dma_alloc_*"), dma_alloc_* always initializes memory to zero, so there
-is no need to use dma_zalloc_* or pass the __GFP_ZERO flag anymore.
-
-The flag was introduced by commit 04fa26c71be5 ("iommu/arm-smmu: Convert
-DMA buffer allocations to the managed API"), since the managed API
-didn't provide a dmam_zalloc_coherent() function.
+On Arm systems, some platform devices behind an SMMU may support the PASID
+feature, which offers multiple address space. Let the firmware tell us
+when a device supports PASID.
 
 Reviewed-by: Eric Auger <eric.auger@redhat.com>
 Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/arm-smmu-v3.c | 9 ++++-----
- 1 file changed, 4 insertions(+), 5 deletions(-)
+ Documentation/devicetree/bindings/iommu/iommu.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index effe72eb89e7..d4e8b7f8d9f4 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -1675,7 +1675,7 @@ static int arm_smmu_init_l2_strtab(struct arm_smmu_device *smmu, u32 sid)
+diff --git a/Documentation/devicetree/bindings/iommu/iommu.txt b/Documentation/devicetree/bindings/iommu/iommu.txt
+index 5a8b4624defc..3c36334e4f94 100644
+--- a/Documentation/devicetree/bindings/iommu/iommu.txt
++++ b/Documentation/devicetree/bindings/iommu/iommu.txt
+@@ -86,6 +86,12 @@ have a means to turn off translation. But it is invalid in such cases to
+ disable the IOMMU's device tree node in the first place because it would
+ prevent any driver from properly setting up the translations.
  
- 	desc->span = STRTAB_SPLIT + 1;
- 	desc->l2ptr = dmam_alloc_coherent(smmu->dev, size, &desc->l2ptr_dma,
--					  GFP_KERNEL | __GFP_ZERO);
-+					  GFP_KERNEL);
- 	if (!desc->l2ptr) {
- 		dev_err(smmu->dev,
- 			"failed to allocate l2 stream table for SID %u\n",
-@@ -2161,8 +2161,7 @@ static int arm_smmu_domain_finalise_s1(struct arm_smmu_domain *smmu_domain,
- 		return asid;
++Optional properties:
++--------------------
++- pasid-num-bits: Some masters support multiple address spaces for DMA, by
++  tagging DMA transactions with an address space identifier. By default,
++  this is 0, which means that the device only has one address space.
++
  
- 	cfg->cdptr = dmam_alloc_coherent(smmu->dev, CTXDESC_CD_DWORDS << 3,
--					 &cfg->cdptr_dma,
--					 GFP_KERNEL | __GFP_ZERO);
-+					 &cfg->cdptr_dma, GFP_KERNEL);
- 	if (!cfg->cdptr) {
- 		dev_warn(smmu->dev, "failed to allocate context descriptor\n");
- 		ret = -ENOMEM;
-@@ -2883,7 +2882,7 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
- 
- 	l1size = cfg->num_l1_ents * (STRTAB_L1_DESC_DWORDS << 3);
- 	strtab = dmam_alloc_coherent(smmu->dev, l1size, &cfg->strtab_dma,
--				     GFP_KERNEL | __GFP_ZERO);
-+				     GFP_KERNEL);
- 	if (!strtab) {
- 		dev_err(smmu->dev,
- 			"failed to allocate l1 stream table (%u bytes)\n",
-@@ -2910,7 +2909,7 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
- 
- 	size = (1 << smmu->sid_bits) * (STRTAB_STE_DWORDS << 3);
- 	strtab = dmam_alloc_coherent(smmu->dev, size, &cfg->strtab_dma,
--				     GFP_KERNEL | __GFP_ZERO);
-+				     GFP_KERNEL);
- 	if (!strtab) {
- 		dev_err(smmu->dev,
- 			"failed to allocate linear stream table (%u bytes)\n",
+ Notes:
+ ======
 -- 
 2.24.1
 
