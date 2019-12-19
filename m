@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F160412681D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 18:30:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E5CE12681E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 18:30:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZrVuhFWXkztw6Z1rMotom4aG4IQXOi4tGY5Isje/0jc=; b=XoZgJ23aVou2d6
-	XGposBy57g4WCVv41Ebk+IRy6GGP2Z1MBvvUb42Aj373NOjeNKprVhHILqKk+TWUKaLbuV2sCQTCW
-	yA3NMLMAuQgLmKScq/wwFTGS8bVCqjLPlcOqV07P5FStEsyqLghDp+MuTJHIalbLx10V1SsRRnpIh
-	S0dJ0IBpErhBNqrM65OrkrGd7iFnUQ7PYuS2tZzK3LH0DF9MYAq26ZI4/Fc0CfAn1RZKhPnx2/xzG
-	ub0DEYkU6/yDnt+tDIrcO9MK4Mw92Oep2MvyamIz2S+0v5HDAnjhR5GNU02ns3losYWQQCw1EUDu3
-	L4hxyZ18QIEtFC3o7ddA==;
+	List-Owner; bh=yl1eVk+1/BjR9rq3rL7OiykPB4HRfa8ixNvy8FbDzPM=; b=SD/wIr8fGETM8k
+	KkjvM8sJf0lwgGRIsu9xivY10cXRIiQIKPBcWGc50tTCIZWIugLzBrFxJ2aWZ5pCW0rVW65AUVx88
+	XGw0ditOeLJW2xZZUlftBF+Tr4E4JxvNMiwFJJNCrhJyERiwwPfX3GpnOjvkel8XEdZ6qX7hrIBKS
+	CUeJZXX9oWVIs8QWp4BJ2o3+4Hszh/1QISakn0lP4BomzE+JbP71Y52K0TWGe4+QT4f9uNjzrwq1z
+	1rMsnHndxyrRSbr+VFhCrI24IvXtD6NlPLAYlry6QdTA6mdeuoCow1G7wWwn3Luk8S3dSUXsj3XaU
+	BWRBTetHBqI+eCrnCxJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihzca-0005iJ-6G; Thu, 19 Dec 2019 17:29:56 +0000
+	id 1ihzcq-0005wj-8Z; Thu, 19 Dec 2019 17:30:12 +0000
 Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihzbK-0004kV-31
+ id 1ihzbL-0004lI-5H
  for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 17:28:40 +0000
-Received: by mail-pf1-x442.google.com with SMTP id q10so3646121pfs.6
+Received: by mail-pf1-x442.google.com with SMTP id p14so3641472pfn.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Dec 2019 09:28:38 -0800 (PST)
+ Thu, 19 Dec 2019 09:28:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=PkNqtr4xDaqPvN6Vsjd/SlEQaI+42QLqvwGVf2EVSjU=;
- b=A8WKkHjgMjO9lYnzetKkZVflOAc4LP08kIWqHRxOM86qXG7wzpd5ylfGwqBY3rTTtp
- XP8dNkC1cDopPzttDX7A+W+JaEhHDfnT9DhjE5EWa6JwrUDO1P9TIwW4Z0NbkbYFdfsP
- L3rOtzqHFgx1NPUo0h1mV3aoE4ZsJzesUIXVWR8tx3meyyu5le64yu2xjjWB2soI/pQn
- xqwwBVscx7C1W7s7/5LQ/wrG4B0JG47P/7Yn3HI3EpI2EY3MzwBgHZ0Zf5N8FO/t/ZbD
- HZXjRgkjJ6tH/svSMp4XlVVrEnloOwhA2Oco59k9F9F9V7he/qf9zMsjdkhXaxEU+X9J
- BWyA==
+ bh=5JoZyySS78BiNU1aODtc8vpSYvJMQn2ITDVR9fgmYmY=;
+ b=WaaqDZqK//XLc6TXiRxt1Qqke4VgaCivw/JuTOr5sVzH2UIKthSS2zBh4NZCnAFUpG
+ kMec0K2/0GBElO2NfKNj8V/XJXihE4NGyoYF/Y805KrJ2Wh+yXcYZR3UMrris97TFeei
+ ktmy934BelNmAqIw8L9aTu8U7ukdKpCqsFBQmezt8YT+hm/ykwUQqFuJWM3AZI3mfLhR
+ KVvmVz1/jhLUWxtdzGorniiACkGqgkj89ev9294DUYfMGvxMDtEDbTiZNTE29YKZSmbB
+ yMSMpYyKyvpLC4IOUpnEOyXdB/KlKqKabiKaKjtNTgaLpFcrdVntBSuqLtdz6ojbVl9D
+ 5Tnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=PkNqtr4xDaqPvN6Vsjd/SlEQaI+42QLqvwGVf2EVSjU=;
- b=O8vxSlX/VsF2krabDRAKD295IxMFpiUdh/LF+MjS3GU0A25dC4Rtxp6suiEIgFR9bS
- ky24WBLordCXowuZvoq8Ts5w8HisG0ybsqDCFcstaHoYhBxDPPR5S2mk8ORrEc1c+2JU
- cbB7PFRpgvQRBaXy8BDCTg4yqZvmjKOPjEhbvp1AeL+16+g4KnDoclCQ/6i9olDi0T2j
- PnpIIUhTAyf+N19VfQFh1En20mTzTH8p/Y4ii6DF7KjDC7qGyKjaELIhU0gLTYvhoTH+
- jSQBSWPE8os0fNH4fOKRJvuetvOcxrSa4bFCNT7BZTEyFP3uK8nQkdJVlpe5lmlVH50V
- QTIA==
-X-Gm-Message-State: APjAAAW/RRv7rHmJBfljiR8Jr2X83vgXq2v/xO+DrZsoCFMHP9K4ufGA
- JMZxLfagsiNFGHHbjDE3cYk=
-X-Google-Smtp-Source: APXvYqzdaGLjH+p1iK/lsf/2RbMuIf5/AaD9ZMle/RdJ1ljBPI+3ZTkZaByhMP4ycU45gLNpiIdCaA==
-X-Received: by 2002:aa7:8a8b:: with SMTP id a11mr11164923pfc.207.1576776517736; 
- Thu, 19 Dec 2019 09:28:37 -0800 (PST)
+ bh=5JoZyySS78BiNU1aODtc8vpSYvJMQn2ITDVR9fgmYmY=;
+ b=Yjasv/ia9brOT7LFkV9VarNx5S0Rte9laZ8w/iz1LbFub8G4OF2ycZRzGI9d+pKTSw
+ C3GeDwJTFNgy3D6FqESOpUcvEuf5cno0XN3TbtniUZ51YK+0aVBDuSyN9h7dX4x4U/Pv
+ CoOrVkMxYP5XaWbYxxSZPjmU0RJDkVFIbQlK18mRQpgP4EYCwqCDGPL56DToRQ1sHQcB
+ Y5a4yYaotURxoTjq6jaZVkGUmIsH0vVD7CRIrtA63TWkNQDeByyYS263TQQMU5NG52GS
+ ugChF/5e/t5B2vAFM6AyJb226JSyUxw0gc5kYSpx/3yV1P/5AlZaSpXxqFEmh22qfkm8
+ v/GQ==
+X-Gm-Message-State: APjAAAXDvXX1tG55VXV/wgLOA2dH+ZusygB9Yg4bAJ4asgYgnGxlpZww
+ npf1xBo8N4PNjWnYjc2Ejgk=
+X-Google-Smtp-Source: APXvYqztENyahsDISGwV/gwDlv84foPdppuLiWeUuJmuF3CZO4dD6xdLyJPlIgJCUz5oG+jKbC+yMA==
+X-Received: by 2002:aa7:870c:: with SMTP id b12mr11025712pfo.82.1576776518627; 
+ Thu, 19 Dec 2019 09:28:38 -0800 (PST)
 Received: from anarsoul-thinkpad.lan (216-71-213-236.dyn.novuscom.net.
  [216.71.213.236])
- by smtp.gmail.com with ESMTPSA id v143sm536209pfc.71.2019.12.19.09.28.36
+ by smtp.gmail.com with ESMTPSA id v143sm536209pfc.71.2019.12.19.09.28.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 09:28:37 -0800 (PST)
+ Thu, 19 Dec 2019 09:28:38 -0800 (PST)
 From: Vasily Khoruzhick <anarsoul@gmail.com>
 To: Yangtao Li <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
  Daniel Lezcano <daniel.lezcano@linaro.org>,
@@ -69,17 +69,17 @@ To: Yangtao Li <tiny.windzz@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  =?UTF-8?q?Ond=C5=99ej=20Jirman?= <megous@megous.com>,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v8 4/7] ARM: dts: sun8i-h3: Add thermal sensor and thermal
- zones
-Date: Thu, 19 Dec 2019 09:28:20 -0800
-Message-Id: <20191219172823.1652600-5-anarsoul@gmail.com>
+Subject: [PATCH v8 5/7] arm64: dts: allwinner: h5: Add thermal sensor and
+ thermal zones
+Date: Thu, 19 Dec 2019 09:28:21 -0800
+Message-Id: <20191219172823.1652600-6-anarsoul@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191219172823.1652600-1-anarsoul@gmail.com>
 References: <20191219172823.1652600-1-anarsoul@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_092838_127028_4E6DCE3F 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20191219_092839_206234_19E4754B 
+X-CRM114-Status: GOOD (  11.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -117,26 +117,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-There is just one sensor for the CPU.
+There are two sensors, one for CPU, one for GPU.
 
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
 ---
- arch/arm/boot/dts/sun8i-h3.dtsi    | 20 ++++++++++++++++++++
- arch/arm/boot/dts/sunxi-h3-h5.dtsi |  6 ++++++
- 2 files changed, 26 insertions(+)
+ arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi | 26 ++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
-index fe773c72a69b..be8f601ab8cf 100644
---- a/arch/arm/boot/dts/sun8i-h3.dtsi
-+++ b/arch/arm/boot/dts/sun8i-h3.dtsi
-@@ -199,6 +199,26 @@ mali: gpu@1c40000 {
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
+index e92c4de5bf3b..f9df95b2d542 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
+@@ -176,6 +176,32 @@ mali: gpu@1e80000 {
  			assigned-clocks = <&ccu CLK_GPU>;
  			assigned-clock-rates = <384000000>;
  		};
 +
 +		ths: thermal-sensor@1c25000 {
-+			compatible = "allwinner,sun8i-h3-ths";
++			compatible = "allwinner,sun50i-h5-ths";
 +			reg = <0x01c25000 0x400>;
 +			interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
 +			resets = <&ccu RST_BUS_THS>;
@@ -144,7 +143,7 @@ index fe773c72a69b..be8f601ab8cf 100644
 +			clock-names = "bus", "mod";
 +			nvmem-cells = <&ths_calibration>;
 +			nvmem-cell-names = "calibration";
-+			#thermal-sensor-cells = <0>;
++			#thermal-sensor-cells = <1>;
 +		};
 +	};
 +
@@ -154,26 +153,15 @@ index fe773c72a69b..be8f601ab8cf 100644
 +			polling-delay = <0>;
 +			thermal-sensors = <&ths 0>;
 +		};
++
++		gpu_thermal {
++			polling-delay-passive = <0>;
++			polling-delay = <0>;
++			thermal-sensors = <&ths 1>;
++		};
  	};
  };
  
-diff --git a/arch/arm/boot/dts/sunxi-h3-h5.dtsi b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
-index 0afea59486c2..6e68ed831015 100644
---- a/arch/arm/boot/dts/sunxi-h3-h5.dtsi
-+++ b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
-@@ -231,6 +231,12 @@ mmc2: mmc@1c11000 {
- 		sid: eeprom@1c14000 {
- 			/* compatible is in per SoC .dtsi file */
- 			reg = <0x1c14000 0x400>;
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+
-+			ths_calibration: thermal-sensor-calibration@34 {
-+				reg = <0x34 4>;
-+			};
- 		};
- 
- 		usb_otg: usb@1c19000 {
 -- 
 2.24.1
 
