@@ -2,76 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30D52126590
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 16:20:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 251261265AD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 16:25:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tj5t1z+NMdbDYDDEXhMvoD5VxKRwZexgOAs8NcA+hfc=; b=E1LmmjJj5B/62a
-	DsKwPih33mCxOQ4yYIdZJXff6aCjP30fLEQC1urqlP7Qg7Qyg6jKyFo5nSwnrZJ8yfaMJx4hVSlan
-	3UKCfAYQcbwFwlUXILmwTsWPRwh0ZjHb7pGcfzV5e95kSt6WUY4Eh2UotE+PWd6u1IMpRFJ55kNhD
-	YOXOHIOrxF779iEAqELc0mY9sbvdttfmhxxGrERnC+qCeGSxJlN8eoY5viwv8hYBllrTiEtiBi9ex
-	39IXbCR3VkxPUVAtsZ2OrBlHHOO3fTfbebQps9voRvSofgcJibh8ad98GJVRde5Cr0x6kCj9BVlEd
-	cqI+M67smdNNzj5PiArg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RbEVmVaPuQopSYrs1VBP6VAorMXcV/wd13RLhWDvkbY=; b=qVrNaxxBv70RK2
+	Gb5akJ5ERPK0XTC3h8WyqgG7JXxb3O8NOnpXKufFQN4DK2NiTxzrskdu6KaxMYW2zF8GKUHdOk8VA
+	CUypzqGF6JZzGPWVywqtZaQ3rLUg2eL/DyETU6NZQkU6hh1MvsepUmKUXOghlTHALKAAEC3U/NwkU
+	Js9FnJFcrEwwzqJK2Yj3k6Ui2Ag0Riniv6YCg6tKIhEIxImgqIGZtEAiEiZ0nGkK/F3Hqt70DV2dj
+	HoWPq00aYr2WFSS/oTVa/NipqjmVseehwe6VXJX8m4sOSTqsnXRt5WZBy6HA757w51fUR7yU5r2aN
+	N3YAHn5Lg/ArcWdRa3Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihxbf-0007S6-0Y; Thu, 19 Dec 2019 15:20:51 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1ihxfy-0000mt-4s; Thu, 19 Dec 2019 15:25:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihxb3-0006qE-1a
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 15:20:18 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBJFK6F4034293;
- Thu, 19 Dec 2019 09:20:06 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576768806;
- bh=Ka8A++Wgy2YG9+bGEyPwISxJzp8LG98T3zLMp5VZCyw=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=BIuTc9yIXXTO1iWg42njFB8qnw4gOT/0VVKdEOwmJy0r1HDP8HHL+dIfDBmiX28gG
- w1L33R3jdG1f8d+ORIiPvTvkZphvehQI7dW+kir6SVQEln04TDK0EBAM2lM/M7EHQb
- nl+vk+8sehSds9IlmkXIoPKZQcJZ0iYsuCs4/BlM=
-Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBJFK66H089478
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 19 Dec 2019 09:20:06 -0600
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 19
- Dec 2019 09:20:05 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 19 Dec 2019 09:20:05 -0600
-Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBJFK3Ek064843;
- Thu, 19 Dec 2019 09:20:04 -0600
-Subject: Re: [PATCH 2/2] arm: use swiotlb for bounce buffer on LPAE configs
-To: Christoph Hellwig <hch@lst.de>
-References: <20190709142011.24984-1-hch@lst.de>
- <20190709142011.24984-3-hch@lst.de>
- <9bbd87c2-5b6c-069c-dd22-5105dc827428@ti.com> <20191219150259.GA3003@lst.de>
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Message-ID: <20106a84-8247-fa78-2381-2c94fad9cb6a@ti.com>
-Date: Thu, 19 Dec 2019 17:20:20 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1ihxfm-0000FA-Gr
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 15:25:08 +0000
+Received: from mail-wm1-f45.google.com (mail-wm1-f45.google.com
+ [209.85.128.45])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D77CF21D7D
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Dec 2019 15:25:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576769106;
+ bh=/oz0Lnf4DBLEQwFr/zzM8JbVGrzMMRE5/AMWXswFdtQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=kLg7lIRN7/VT2Jo+na25JWjyu7yPZTM+VkfvwR7yq9fcghHST3w/sfCThzj2FhqB5
+ oaRJ7Nh1s99P8b9QvbeY3hazzEUMhU03Pj3mhTL4CSRcwnKLUywRSjBLnmMAWOuOnp
+ upYL3uh3lUJUKnqpPk8Z7DB2hvmUvTsGA5FE1FZw=
+Received: by mail-wm1-f45.google.com with SMTP id b19so5837326wmj.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Dec 2019 07:25:05 -0800 (PST)
+X-Gm-Message-State: APjAAAV85dfwEsulE6+DzU7vjeBq0I80fBtNedIfbgAJQ/7BE/LaBMhe
+ AODivaZO02UTw9AMEYGPSVC4W1xhSz3MWuN9kaQ=
+X-Google-Smtp-Source: APXvYqyjAmLF5BxFtYYgMh0BMNtnKW8iHMmHE/m7GJOovj1r3RwzFCSGytQtjSCErxKIy8ZGsFId38iCST7gaefT5vk=
+X-Received: by 2002:a7b:cf12:: with SMTP id l18mr11402298wmg.66.1576769104353; 
+ Thu, 19 Dec 2019 07:25:04 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191219150259.GA3003@lst.de>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20191219084332.944123-1-maxime@cerno.tech>
+In-Reply-To: <20191219084332.944123-1-maxime@cerno.tech>
+From: Chen-Yu Tsai <wens@kernel.org>
+Date: Thu, 19 Dec 2019 23:24:52 +0800
+X-Gmail-Original-Message-ID: <CAGb2v643z-GwEgOV_OS96ESihDgGNOwp2s7eyJr68QFyPNqd_Q@mail.gmail.com>
+Message-ID: <CAGb2v643z-GwEgOV_OS96ESihDgGNOwp2s7eyJr68QFyPNqd_Q@mail.gmail.com>
+Subject: Re: [PATCH] dt-bindings: usb: Convert Allwinner A80 USB PHY
+ controller to a schema
+To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_072013_297220_286FA374 
-X-CRM114-Status: GOOD (  25.12  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191219_072506_613171_201A819E 
+X-CRM114-Status: GOOD (  24.57  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,166 +86,230 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQ2hyaXN0b3BoLAoKT24gMTkvMTIvMjAxOSAxNy4wMiwgQ2hyaXN0b3BoIEhlbGx3aWcgd3Jv
-dGU6Cj4gSGkgUGV0ZXIsCj4gCj4gY2FuIHlvdSB0cnkgdGhlIHBhdGNoIGJlbG93IChpdCB3aWxs
-IG5lZWQgdG8gYmUgc3BsaXQgaW50byB0d28pOgoKVGhhbmsgeW91IQoKVW5mb3J0dW5hdGVseSBp
-dCBkb2VzIG5vdCBoZWxwOgpbICAgIDAuNTk2MjA4XSBlZG1hOiBwcm9iZSBvZiAyNzAwMDAwLmVk
-bWEgZmFpbGVkIHdpdGggZXJyb3IgLTUKWyAgICAwLjU5NjYyNl0gZWRtYTogcHJvYmUgb2YgMjcy
-ODAwMC5lZG1hIGZhaWxlZCB3aXRoIGVycm9yIC01Ci4uLgpbICAgIDIuMTA4NjAyXSBzZGhjaS1v
-bWFwIDIzMDAwMDAwLm1tYzogR290IENEIEdQSU8KWyAgICAyLjExMzg5OV0gbW1jMDogRmFpbGVk
-IHRvIHNldCAzMi1iaXQgRE1BIG1hc2suClsgICAgMi4xMTg1OTJdIG1tYzA6IE5vIHN1aXRhYmxl
-IERNQSBhdmFpbGFibGUgLSBmYWxsaW5nIGJhY2sgdG8gUElPClsgICAgMi4xNTkwMzhdIG1tYzA6
-IFNESENJIGNvbnRyb2xsZXIgb24gMjMwMDAwMDAubW1jIFsyMzAwMDAwMC5tbWNdCnVzaW5nIFBJ
-TwpbICAgIDIuMTY3NTMxXSBtbWMxOiBGYWlsZWQgdG8gc2V0IDMyLWJpdCBETUEgbWFzay4KWyAg
-ICAyLjE3MjE5Ml0gbW1jMTogTm8gc3VpdGFibGUgRE1BIGF2YWlsYWJsZSAtIGZhbGxpbmcgYmFj
-ayB0byBQSU8KWyAgICAyLjIxMzg0MV0gbW1jMTogU0RIQ0kgY29udHJvbGxlciBvbiAyMzEwMDAw
-MC5tbWMgWzIzMTAwMDAwLm1tY10KdXNpbmcgUElPCgotIFDDqXRlcgoKCj4gZGlmZiAtLWdpdCBh
-L2FyY2gvYXJtL21tL2RtYS1tYXBwaW5nLmMgYi9hcmNoL2FybS9tbS9kbWEtbWFwcGluZy5jCj4g
-aW5kZXggZTgyMmFmMGQ5MjE5Li4zMGI5YzY3ODZjZTMgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0v
-bW0vZG1hLW1hcHBpbmcuYwo+ICsrKyBiL2FyY2gvYXJtL21tL2RtYS1tYXBwaW5nLmMKPiBAQCAt
-MjIxLDcgKzIyMSw4IEBAIEVYUE9SVF9TWU1CT0woYXJtX2NvaGVyZW50X2RtYV9vcHMpOwo+ICAK
-PiAgc3RhdGljIGludCBfX2RtYV9zdXBwb3J0ZWQoc3RydWN0IGRldmljZSAqZGV2LCB1NjQgbWFz
-aywgYm9vbCB3YXJuKQo+ICB7Cj4gLQl1bnNpZ25lZCBsb25nIG1heF9kbWFfcGZuID0gbWluKG1h
-eF9wZm4sIGFybV9kbWFfcGZuX2xpbWl0KTsKPiArCXVuc2lnbmVkIGxvbmcgbWF4X2RtYV9wZm4g
-PQo+ICsJCW1pbl90KHVuc2lnbmVkIGxvbmcsIG1heF9wZm4sIHpvbmVfZG1hX2xpbWl0ID4+IFBB
-R0VfU0hJRlQpOwo+ICAKPiAgCS8qCj4gIAkgKiBUcmFuc2xhdGUgdGhlIGRldmljZSdzIERNQSBt
-YXNrIHRvIGEgUEZOIGxpbWl0LiAgVGhpcwo+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9tbS9pbml0
-LmMgYi9hcmNoL2FybS9tbS9pbml0LmMKPiBpbmRleCAzZWYyMDQxMzdlNzMuLmRkMGUxNjlhMWJi
-MSAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybS9tbS9pbml0LmMKPiArKysgYi9hcmNoL2FybS9tbS9p
-bml0LmMKPiBAQCAtMTksNiArMTksNyBAQAo+ICAjaW5jbHVkZSA8bGludXgvZ2ZwLmg+Cj4gICNp
-bmNsdWRlIDxsaW51eC9tZW1ibG9jay5oPgo+ICAjaW5jbHVkZSA8bGludXgvZG1hLWNvbnRpZ3Vv
-dXMuaD4KPiArI2luY2x1ZGUgPGxpbnV4L2RtYS1kaXJlY3QuaD4KPiAgI2luY2x1ZGUgPGxpbnV4
-L3NpemVzLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9zdG9wX21hY2hpbmUuaD4KPiAgI2luY2x1ZGUg
-PGxpbnV4L3N3aW90bGIuaD4KPiBAQCAtODQsMTUgKzg1LDYgQEAgc3RhdGljIHZvaWQgX19pbml0
-IGZpbmRfbGltaXRzKHVuc2lnbmVkIGxvbmcgKm1pbiwgdW5zaWduZWQgbG9uZyAqbWF4X2xvdywK
-PiAgcGh5c19hZGRyX3QgYXJtX2RtYV96b25lX3NpemUgX19yZWFkX21vc3RseTsKPiAgRVhQT1JU
-X1NZTUJPTChhcm1fZG1hX3pvbmVfc2l6ZSk7Cj4gIAo+IC0vKgo+IC0gKiBUaGUgRE1BIG1hc2sg
-Y29ycmVzcG9uZGluZyB0byB0aGUgbWF4aW11bSBidXMgYWRkcmVzcyBhbGxvY2F0YWJsZQo+IC0g
-KiB1c2luZyBHRlBfRE1BLiAgVGhlIGRlZmF1bHQgaGVyZSBwbGFjZXMgbm8gcmVzdHJpY3Rpb24g
-b24gRE1BCj4gLSAqIGFsbG9jYXRpb25zLiAgVGhpcyBtdXN0IGJlIHRoZSBzbWFsbGVzdCBETUEg
-bWFzayBpbiB0aGUgc3lzdGVtLAo+IC0gKiBzbyBhIHN1Y2Nlc3NmdWwgR0ZQX0RNQSBhbGxvY2F0
-aW9uIHdpbGwgYWx3YXlzIHNhdGlzZnkgdGhpcy4KPiAtICovCj4gLXBoeXNfYWRkcl90IGFybV9k
-bWFfbGltaXQ7Cj4gLXVuc2lnbmVkIGxvbmcgYXJtX2RtYV9wZm5fbGltaXQ7Cj4gLQo+ICBzdGF0
-aWMgdm9pZCBfX2luaXQgYXJtX2FkanVzdF9kbWFfem9uZSh1bnNpZ25lZCBsb25nICpzaXplLCB1
-bnNpZ25lZCBsb25nICpob2xlLAo+ICAJdW5zaWduZWQgbG9uZyBkbWFfc2l6ZSkKPiAgewo+IEBA
-IC0xMDgsMTQgKzEwMCwxNCBAQCBzdGF0aWMgdm9pZCBfX2luaXQgYXJtX2FkanVzdF9kbWFfem9u
-ZSh1bnNpZ25lZCBsb25nICpzaXplLCB1bnNpZ25lZCBsb25nICpob2xlLAo+ICAKPiAgdm9pZCBf
-X2luaXQgc2V0dXBfZG1hX3pvbmUoY29uc3Qgc3RydWN0IG1hY2hpbmVfZGVzYyAqbWRlc2MpCj4g
-IHsKPiAtI2lmZGVmIENPTkZJR19aT05FX0RNQQo+IC0JaWYgKG1kZXNjLT5kbWFfem9uZV9zaXpl
-KSB7Cj4gKwlpZiAoIUlTX0VOQUJMRUQoQ09ORklHX1pPTkVfRE1BKSkgewo+ICsJCXpvbmVfZG1h
-X2xpbWl0ID0gKChwaHlzX2FkZHJfdCl+MCk7Cj4gKwl9IGVsc2UgaWYgKG1kZXNjLT5kbWFfem9u
-ZV9zaXplKSB7Cj4gIAkJYXJtX2RtYV96b25lX3NpemUgPSBtZGVzYy0+ZG1hX3pvbmVfc2l6ZTsK
-PiAtCQlhcm1fZG1hX2xpbWl0ID0gUEhZU19PRkZTRVQgKyBhcm1fZG1hX3pvbmVfc2l6ZSAtIDE7
-Cj4gLQl9IGVsc2UKPiAtCQlhcm1fZG1hX2xpbWl0ID0gMHhmZmZmZmZmZjsKPiAtCWFybV9kbWFf
-cGZuX2xpbWl0ID0gYXJtX2RtYV9saW1pdCA+PiBQQUdFX1NISUZUOwo+IC0jZW5kaWYKPiArCQl6
-b25lX2RtYV9saW1pdCA9IFBIWVNfT0ZGU0VUICsgYXJtX2RtYV96b25lX3NpemUgLSAxOwo+ICsJ
-fSBlbHNlIHsKPiArCQl6b25lX2RtYV9saW1pdCA9IDB4ZmZmZmZmZmY7Cj4gKwl9Cj4gIH0KPiAg
-Cj4gIHN0YXRpYyB2b2lkIF9faW5pdCB6b25lX3NpemVzX2luaXQodW5zaWduZWQgbG9uZyBtaW4s
-IHVuc2lnbmVkIGxvbmcgbWF4X2xvdywKPiBAQCAtMjc5LDcgKzI3MSw3IEBAIHZvaWQgX19pbml0
-IGFybV9tZW1ibG9ja19pbml0KGNvbnN0IHN0cnVjdCBtYWNoaW5lX2Rlc2MgKm1kZXNjKQo+ICAJ
-ZWFybHlfaW5pdF9mZHRfc2Nhbl9yZXNlcnZlZF9tZW0oKTsKPiAgCj4gIAkvKiByZXNlcnZlIG1l
-bW9yeSBmb3IgRE1BIGNvbnRpZ3VvdXMgYWxsb2NhdGlvbnMgKi8KPiAtCWRtYV9jb250aWd1b3Vz
-X3Jlc2VydmUoYXJtX2RtYV9saW1pdCk7Cj4gKwlkbWFfY29udGlndW91c19yZXNlcnZlKHpvbmVf
-ZG1hX2xpbWl0KTsKPiAgCj4gIAlhcm1fbWVtYmxvY2tfc3RlYWxfcGVybWl0dGVkID0gZmFsc2U7
-Cj4gIAltZW1ibG9ja19kdW1wX2FsbCgpOwo+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9tbS9tbS5o
-IGIvYXJjaC9hcm0vbW0vbW0uaAo+IGluZGV4IDg4YzEyMWFjMTRiMy4uN2RiZDc3NTU0MjczIDEw
-MDY0NAo+IC0tLSBhL2FyY2gvYXJtL21tL21tLmgKPiArKysgYi9hcmNoL2FybS9tbS9tbS5oCj4g
-QEAgLTgyLDE0ICs4Miw2IEBAIGV4dGVybiBfX2luaXQgdm9pZCBhZGRfc3RhdGljX3ZtX2Vhcmx5
-KHN0cnVjdCBzdGF0aWNfdm0gKnN2bSk7Cj4gIAo+ICAjZW5kaWYKPiAgCj4gLSNpZmRlZiBDT05G
-SUdfWk9ORV9ETUEKPiAtZXh0ZXJuIHBoeXNfYWRkcl90IGFybV9kbWFfbGltaXQ7Cj4gLWV4dGVy
-biB1bnNpZ25lZCBsb25nIGFybV9kbWFfcGZuX2xpbWl0Owo+IC0jZWxzZQo+IC0jZGVmaW5lIGFy
-bV9kbWFfbGltaXQgKChwaHlzX2FkZHJfdCl+MCkKPiAtI2RlZmluZSBhcm1fZG1hX3Bmbl9saW1p
-dCAofjB1bCA+PiBQQUdFX1NISUZUKQo+IC0jZW5kaWYKPiAtCj4gIGV4dGVybiBwaHlzX2FkZHJf
-dCBhcm1fbG93bWVtX2xpbWl0Owo+ICAKPiAgdm9pZCBfX2luaXQgYm9vdG1lbV9pbml0KHZvaWQp
-Owo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L21tL2luaXQuYyBiL2FyY2gvYXJtNjQvbW0vaW5p
-dC5jCj4gaW5kZXggYjY1ZGZmZGZiMjAxLi43YTc1MDFhY2Q3NjMgMTAwNjQ0Cj4gLS0tIGEvYXJj
-aC9hcm02NC9tbS9pbml0LmMKPiArKysgYi9hcmNoL2FybTY0L21tL2luaXQuYwo+IEBAIC00NDEs
-NyArNDQxLDcgQEAgdm9pZCBfX2luaXQgYXJtNjRfbWVtYmxvY2tfaW5pdCh2b2lkKQo+ICAJZWFy
-bHlfaW5pdF9mZHRfc2Nhbl9yZXNlcnZlZF9tZW0oKTsKPiAgCj4gIAlpZiAoSVNfRU5BQkxFRChD
-T05GSUdfWk9ORV9ETUEpKSB7Cj4gLQkJem9uZV9kbWFfYml0cyA9IEFSTTY0X1pPTkVfRE1BX0JJ
-VFM7Cj4gKwkJem9uZV9kbWFfbGltaXQgPSBETUFfQklUX01BU0soQVJNNjRfWk9ORV9ETUFfQklU
-Uyk7Cj4gIAkJYXJtNjRfZG1hX3BoeXNfbGltaXQgPSBtYXhfem9uZV9waHlzKEFSTTY0X1pPTkVf
-RE1BX0JJVFMpOwo+ICAJfQo+ICAKPiBkaWZmIC0tZ2l0IGEvYXJjaC9wb3dlcnBjL21tL21lbS5j
-IGIvYXJjaC9wb3dlcnBjL21tL21lbS5jCj4gaW5kZXggOTQ4OGI2M2RmYzg3Li4zMzdhY2UwM2Qz
-ZjAgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9wb3dlcnBjL21tL21lbS5jCj4gKysrIGIvYXJjaC9wb3dl
-cnBjL21tL21lbS5jCj4gQEAgLTIyMyw3ICsyMjMsNyBAQCBzdGF0aWMgaW50IF9faW5pdCBtYXJr
-X25vbnJhbV9ub3NhdmUodm9pZCkKPiAgICogZXZlcnl0aGluZyBlbHNlLiBHRlBfRE1BMzIgcGFn
-ZSBhbGxvY2F0aW9ucyBhdXRvbWF0aWNhbGx5IGZhbGwgYmFjayB0bwo+ICAgKiBaT05FX0RNQS4K
-PiAgICoKPiAtICogQnkgdXNpbmcgMzEtYml0IHVuY29uZGl0aW9uYWxseSwgd2UgY2FuIGV4cGxv
-aXQgem9uZV9kbWFfYml0cyB0byBpbmZvcm0gdGhlCj4gKyAqIEJ5IHVzaW5nIDMxLWJpdCB1bmNv
-bmRpdGlvbmFsbHksIHdlIGNhbiBleHBsb2l0IHpvbmVfZG1hX2xpbWl0IHRvIGluZm9ybSB0aGUK
-PiAgICogZ2VuZXJpYyBETUEgbWFwcGluZyBjb2RlLiAgMzItYml0IG9ubHkgZGV2aWNlcyAoaWYg
-bm90IGhhbmRsZWQgYnkgYW4gSU9NTVUKPiAgICogYW55d2F5KSB3aWxsIHRha2UgYSBmaXJzdCBk
-aXAgaW50byBaT05FX05PUk1BTCBhbmQgZ2V0IG90aGVyd2lzZSBzZXJ2ZWQgYnkKPiAgICogWk9O
-RV9ETUEuCj4gQEAgLTI1NywxOCArMjU3LDIwIEBAIHZvaWQgX19pbml0IHBhZ2luZ19pbml0KHZv
-aWQpCj4gIAlwcmludGsoS0VSTl9ERUJVRyAiTWVtb3J5IGhvbGUgc2l6ZTogJWxkTUJcbiIsCj4g
-IAkgICAgICAgKGxvbmcgaW50KSgodG9wX29mX3JhbSAtIHRvdGFsX3JhbSkgPj4gMjApKTsKPiAg
-Cj4gKyNpZmRlZiBDT05GSUdfWk9ORV9ETUEKPiAgCS8qCj4gIAkgKiBBbGxvdyAzMC1iaXQgRE1B
-IGZvciB2ZXJ5IGxpbWl0ZWQgQnJvYWRjb20gd2lmaSBjaGlwcyBvbiBtYW55Cj4gIAkgKiBwb3dl
-cmJvb2tzLgo+ICAJICovCj4gLQlpZiAoSVNfRU5BQkxFRChDT05GSUdfUFBDMzIpKQo+IC0JCXpv
-bmVfZG1hX2JpdHMgPSAzMDsKPiAtCWVsc2UKPiAtCQl6b25lX2RtYV9iaXRzID0gMzE7Cj4gLQo+
-IC0jaWZkZWYgQ09ORklHX1pPTkVfRE1BCj4gLQltYXhfem9uZV9wZm5zW1pPTkVfRE1BXQk9IG1p
-bihtYXhfbG93X3BmbiwKPiAtCQkJCSAgICAgIDFVTCA8PCAoem9uZV9kbWFfYml0cyAtIFBBR0Vf
-U0hJRlQpKTsKPiArCWlmIChJU19FTkFCTEVEKENPTkZJR19QUEMzMikpIHsKPiArCQl6b25lX2Rt
-YV9saW1pdCA9IERNQV9CSVRfTUFTSygzMCk7Cj4gKwkJbWF4X3pvbmVfcGZuc1taT05FX0RNQV0J
-PSBtaW4obWF4X2xvd19wZm4sCj4gKwkJCQkJICAgICAgMVVMIDw8ICgzMCAtIFBBR0VfU0hJRlQp
-KTsKPiArCX0gZWxzZSB7Cj4gKwkJem9uZV9kbWFfbGltaXQgPSBETUFfQklUX01BU0soMzEpOwo+
-ICsJCW1heF96b25lX3BmbnNbWk9ORV9ETUFdCT0gbWluKG1heF9sb3dfcGZuLAo+ICsJCQkJCSAg
-ICAgIDFVTCA8PCAoMzEgLSBQQUdFX1NISUZUKSk7Cj4gKwl9Cj4gICNlbmRpZgo+ICAJbWF4X3pv
-bmVfcGZuc1taT05FX05PUk1BTF0gPSBtYXhfbG93X3BmbjsKPiAgI2lmZGVmIENPTkZJR19ISUdI
-TUVNCj4gZGlmZiAtLWdpdCBhL2FyY2gvczM5MC9tbS9pbml0LmMgYi9hcmNoL3MzOTAvbW0vaW5p
-dC5jCj4gaW5kZXggZjBjZTIyMjIwNTY1Li5jNDAzZjYxY2I1NmIgMTAwNjQ0Cj4gLS0tIGEvYXJj
-aC9zMzkwL21tL2luaXQuYwo+ICsrKyBiL2FyY2gvczM5MC9tbS9pbml0LmMKPiBAQCAtMTE4LDcg
-KzExOCw3IEBAIHZvaWQgX19pbml0IHBhZ2luZ19pbml0KHZvaWQpCj4gIAo+ICAJc3BhcnNlX21l
-bW9yeV9wcmVzZW50X3dpdGhfYWN0aXZlX3JlZ2lvbnMoTUFYX05VTU5PREVTKTsKPiAgCXNwYXJz
-ZV9pbml0KCk7Cj4gLQl6b25lX2RtYV9iaXRzID0gMzE7Cj4gKwl6b25lX2RtYV9saW1pdCA9IERN
-QV9CSVRfTUFTSygzMSk7Cj4gIAltZW1zZXQobWF4X3pvbmVfcGZucywgMCwgc2l6ZW9mKG1heF96
-b25lX3BmbnMpKTsKPiAgCW1heF96b25lX3BmbnNbWk9ORV9ETUFdID0gUEZOX0RPV04oTUFYX0RN
-QV9BRERSRVNTKTsKPiAgCW1heF96b25lX3BmbnNbWk9ORV9OT1JNQUxdID0gbWF4X2xvd19wZm47
-Cj4gZGlmZiAtLWdpdCBhL2luY2x1ZGUvbGludXgvZG1hLWRpcmVjdC5oIGIvaW5jbHVkZS9saW51
-eC9kbWEtZGlyZWN0LmgKPiBpbmRleCAyNGI4Njg0YWEyMWQuLjIwZDU2ZDU5NzUwNiAxMDA2NDQK
-PiAtLS0gYS9pbmNsdWRlL2xpbnV4L2RtYS1kaXJlY3QuaAo+ICsrKyBiL2luY2x1ZGUvbGludXgv
-ZG1hLWRpcmVjdC5oCj4gQEAgLTYsNyArNiw3IEBACj4gICNpbmNsdWRlIDxsaW51eC9tZW1ibG9j
-ay5oPiAvKiBmb3IgbWluX2xvd19wZm4gKi8KPiAgI2luY2x1ZGUgPGxpbnV4L21lbV9lbmNyeXB0
-Lmg+Cj4gIAo+IC1leHRlcm4gdW5zaWduZWQgaW50IHpvbmVfZG1hX2JpdHM7Cj4gK2V4dGVybiBw
-aHlzX2FkZHJfdCB6b25lX2RtYV9saW1pdDsKPiAgCj4gICNpZmRlZiBDT05GSUdfQVJDSF9IQVNf
-UEhZU19UT19ETUEKPiAgI2luY2x1ZGUgPGFzbS9kbWEtZGlyZWN0Lmg+Cj4gZGlmZiAtLWdpdCBh
-L2tlcm5lbC9kbWEvZGlyZWN0LmMgYi9rZXJuZWwvZG1hL2RpcmVjdC5jCj4gaW5kZXggNmFmN2Fl
-ODNjNGFkLi41ZWExYmVkMmJhNmYgMTAwNjQ0Cj4gLS0tIGEva2VybmVsL2RtYS9kaXJlY3QuYwo+
-ICsrKyBiL2tlcm5lbC9kbWEvZGlyZWN0LmMKPiBAQCAtMjEsNyArMjEsNyBAQAo+ICAgKiBpdCBm
-b3IgZW50aXJlbHkgZGlmZmVyZW50IHJlZ2lvbnMuIEluIHRoYXQgY2FzZSB0aGUgYXJjaCBjb2Rl
-IG5lZWRzIHRvCj4gICAqIG92ZXJyaWRlIHRoZSB2YXJpYWJsZSBiZWxvdyBmb3IgZG1hLWRpcmVj
-dCB0byB3b3JrIHByb3Blcmx5Lgo+ICAgKi8KPiAtdW5zaWduZWQgaW50IHpvbmVfZG1hX2JpdHMg
-X19yb19hZnRlcl9pbml0ID0gMjQ7Cj4gK3BoeXNfYWRkcl90IHpvbmVfZG1hX2xpbWl0IF9fcm9f
-YWZ0ZXJfaW5pdCA9IERNQV9CSVRfTUFTSygyNCk7Cj4gIAo+ICBzdGF0aWMgdm9pZCByZXBvcnRf
-YWRkcihzdHJ1Y3QgZGV2aWNlICpkZXYsIGRtYV9hZGRyX3QgZG1hX2FkZHIsIHNpemVfdCBzaXpl
-KQo+ICB7Cj4gQEAgLTc0LDcgKzc0LDcgQEAgc3RhdGljIGdmcF90IF9fZG1hX2RpcmVjdF9vcHRp
-bWFsX2dmcF9tYXNrKHN0cnVjdCBkZXZpY2UgKmRldiwgdTY0IGRtYV9tYXNrLAo+ICAJICogTm90
-ZSB0aGF0IEdGUF9ETUEzMiBhbmQgR0ZQX0RNQSBhcmUgbm8gb3BzIHdpdGhvdXQgdGhlIGNvcnJl
-c3BvbmRpbmcKPiAgCSAqIHpvbmVzLgo+ICAJICovCj4gLQlpZiAoKnBoeXNfbGltaXQgPD0gRE1B
-X0JJVF9NQVNLKHpvbmVfZG1hX2JpdHMpKQo+ICsJaWYgKCpwaHlzX2xpbWl0IDw9IHpvbmVfZG1h
-X2xpbWl0KQo+ICAJCXJldHVybiBHRlBfRE1BOwo+ICAJaWYgKCpwaHlzX2xpbWl0IDw9IERNQV9C
-SVRfTUFTSygzMikpCj4gIAkJcmV0dXJuIEdGUF9ETUEzMjsKPiBAQCAtNDgzLDcgKzQ4Myw3IEBA
-IGludCBkbWFfZGlyZWN0X3N1cHBvcnRlZChzdHJ1Y3QgZGV2aWNlICpkZXYsIHU2NCBtYXNrKQo+
-ICAJdTY0IG1pbl9tYXNrOwo+ICAKPiAgCWlmIChJU19FTkFCTEVEKENPTkZJR19aT05FX0RNQSkp
-Cj4gLQkJbWluX21hc2sgPSBETUFfQklUX01BU0soem9uZV9kbWFfYml0cyk7Cj4gKwkJbWluX21h
-c2sgPSB6b25lX2RtYV9saW1pdDsKPiAgCWVsc2UKPiAgCQltaW5fbWFzayA9IERNQV9CSVRfTUFT
-SygzMik7Cj4gIAo+IAo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCj4gbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKPiBsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwKPiAKClRleGFzIEluc3RydW1lbnRzIEZpbmxhbmQg
-T3ksIFBvcmtrYWxhbmthdHUgMjIsIDAwMTgwIEhlbHNpbmtpLgpZLXR1bm51cy9CdXNpbmVzcyBJ
-RDogMDYxNTUyMS00LiBLb3RpcGFpa2thL0RvbWljaWxlOiBIZWxzaW5raQoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Dec 19, 2019 at 4:43 PM Maxime Ripard <maxime@cerno.tech> wrote:
+>
+> The Allwinner A80 SoCs have a USB PHY controller that is used by Linux,
+> with a matching Device Tree binding.
+>
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
+>
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> ---
+>  .../phy/allwinner,sun9i-a80-usb-phy.yaml      | 135 ++++++++++++++++++
+>  .../devicetree/bindings/phy/sun9i-usb-phy.txt |  37 -----
+>  2 files changed, 135 insertions(+), 37 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt
+>
+> diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+> new file mode 100644
+> index 000000000000..ded7d6f0a119
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
+> @@ -0,0 +1,135 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/phy/allwinner,sun9i-a80-usb-phy.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Allwinner A80 USB PHY Device Tree Bindings
+> +
+> +maintainers:
+> +  - Chen-Yu Tsai <wens@csie.org>
+> +  - Maxime Ripard <mripard@kernel.org>
+> +
+> +properties:
+> +  "#phy-cells":
+> +    const: 0
+> +
+> +  compatible:
+> +    const: allwinner,sun9i-a80-usb-phy
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    anyOf:
+> +      - description: Main PHY Clock
+> +
+> +      - items:
+> +          - description: Main PHY clock
+> +          - description: HSIC 12MHz clock
+> +          - description: HSIC 480MHz clock
+> +
+> +  clock-names:
+> +    oneOf:
+> +      - const: phy
+> +
+> +      - items:
+> +          - const: phy
+> +          - const: hsic_12M
+> +          - const: hsic_480M
+> +
+> +  resets:
+> +    anyOf:
+> +      - description: Normal USB PHY reset
+> +
+> +      - items:
+> +          - description: Normal USB PHY reset
+> +          - description: HSIC Reset
+> +
+> +  reset-names:
+> +    oneOf:
+> +      - const: phy
+> +
+> +      - items:
+> +          - const: phy
+> +          - const: hsic
+> +
+> +  phy_type:
+> +    const: hsic
+> +    description:
+> +      When absent, the PHY type will be assumed to be normal USB.
+> +
+> +  phy-supply:
+> +    description:
+> +      Regulator that powers VBUS
+> +
+> +required:
+> +  - "#phy-cells"
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - resets
+> +  - reset-names
+> +
+> +additionalProperties: false
+> +
+> +if:
+> +  properties:
+> +    phy_type:
+> +      const: hsic
+> +
+> +  required:
+> +    - phy_type
+> +
+> +then:
+> +  properties:
+> +    clocks:
+> +      maxItems: 3
+> +
+> +    clock-names:
+> +      maxItems: 3
+> +
+> +    resets:
+> +      maxItems: 2
+> +
+> +    reset-names:
+> +      maxItems: 2
+
+So this is slightly incorrect. If phy_type == "hsic", then the
+"phy" clock and reset should not be needed. I say should because
+no boards actually came with HSIC implemented. The A80 Optimus
+board had the HSIC lines on one of the GPIO headers, but I never
+had any HSIC chips lol.
+
+ChenYu
+
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/sun9i-a80-usb.h>
+> +    #include <dt-bindings/reset/sun9i-a80-usb.h>
+> +
+> +    usbphy1: phy@a00800 {
+> +        compatible = "allwinner,sun9i-a80-usb-phy";
+> +        reg = <0x00a00800 0x4>;
+> +        clocks = <&usb_clocks CLK_USB0_PHY>;
+> +        clock-names = "phy";
+> +        resets = <&usb_clocks RST_USB0_PHY>;
+> +        reset-names = "phy";
+> +        phy-supply = <&reg_usb1_vbus>;
+> +        #phy-cells = <0>;
+> +    };
+> +
+> +  - |
+> +    #include <dt-bindings/clock/sun9i-a80-usb.h>
+> +    #include <dt-bindings/reset/sun9i-a80-usb.h>
+> +
+> +    usbphy3: phy@a02800 {
+> +        compatible = "allwinner,sun9i-a80-usb-phy";
+> +        reg = <0x00a02800 0x4>;
+> +        clocks = <&usb_clocks CLK_USB2_PHY>,
+> +                 <&usb_clocks CLK_USB_HSIC>,
+> +                 <&usb_clocks CLK_USB2_HSIC>;
+> +        clock-names = "phy",
+> +                      "hsic_12M",
+> +                      "hsic_480M";
+> +        resets = <&usb_clocks RST_USB2_PHY>,
+> +                 <&usb_clocks RST_USB2_HSIC>;
+> +        reset-names = "phy",
+> +                      "hsic";
+> +        phy_type = "hsic";
+> +        phy-supply = <&reg_usb3_vbus>;
+> +        #phy-cells = <0>;
+> +    };
+> diff --git a/Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt b/Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt
+> deleted file mode 100644
+> index 64f7109aea1f..000000000000
+> --- a/Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt
+> +++ /dev/null
+> @@ -1,37 +0,0 @@
+> -Allwinner sun9i USB PHY
+> ------------------------
+> -
+> -Required properties:
+> -- compatible : should be one of
+> -  * allwinner,sun9i-a80-usb-phy
+> -- reg : a list of offset + length pairs
+> -- #phy-cells : from the generic phy bindings, must be 0
+> -- phy_type : "hsic" for HSIC usage;
+> -            other values or absence of this property indicates normal USB
+> -- clocks : phandle + clock specifier for the phy clocks
+> -- clock-names : depending on the "phy_type" property,
+> -  * "phy" for normal USB
+> -  * "hsic_480M", "hsic_12M" for HSIC
+> -- resets : a list of phandle + reset specifier pairs
+> -- reset-names : depending on the "phy_type" property,
+> -  * "phy" for normal USB
+> -  * "hsic" for HSIC
+> -
+> -Optional Properties:
+> -- phy-supply : from the generic phy bindings, a phandle to a regulator that
+> -              provides power to VBUS.
+> -
+> -It is recommended to list all clocks and resets available.
+> -The driver will only use those matching the phy_type.
+> -
+> -Example:
+> -       usbphy1: phy@a01800 {
+> -               compatible = "allwinner,sun9i-a80-usb-phy";
+> -               reg = <0x00a01800 0x4>;
+> -               clocks = <&usb_phy_clk 2>, <&usb_phy_clk 10>,
+> -                      <&usb_phy_clk 3>;
+> -               clock-names = "hsic_480M", "hsic_12M", "phy";
+> -               resets = <&usb_phy_clk 18>, <&usb_phy_clk 19>;
+> -               reset-names = "hsic", "phy";
+> -               #phy-cells = <0>;
+> -       };
+> --
+> 2.23.0
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
