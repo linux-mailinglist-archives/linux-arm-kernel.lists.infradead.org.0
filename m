@@ -2,72 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F3B212611C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 12:43:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C968F126127
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 12:46:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=37rS98+7zp7Emm+GW2L3DKo2moS2OnS/JW5GjufFfSI=; b=cAtx6Ldc/IZK4q
-	zrLPU/9cFdUzKxzInqXLqCbLhMBFxML2VVPBTL2r2krtqMdV9bzOVzXF0zgxvIsxfjdAIKWIPIhjt
-	iqLiFjTjmHIPcu7u3TLSfiKTSM7zK+SidpRVU7qPmLSpmK/147807vVd5rLA7VkRoM5VzeT6IjhmN
-	qo3MmQy0DzBH1DTz0kUtJz4zFP3kQ8nNJxUWI2TETeYBbk5qcrmO+FD6G2ykJVthl5S64kEkluNzs
-	ukQeyUnKc7HCtc4vkN0enkWSCzA7dDx/QHA+driWEQUQ98O9D9A8vSrapJ5/GLoDsmjCAOxFh0ujb
-	YC70JQfr0fGrI68YDEQQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fBJKNdvJcHwbZFbpqR0gVx9MqeusHa5xtivSv2Tk30I=; b=mOJ7bYpzErdTzK
+	VEjc6HVICRGItcbo76P7/+WqKENBCz9DuKT+3abWXgs1pj0Tvs/xeJNaDyxAzeHrei173oEZtPJhy
+	aDD1k9IyxxKH+EjyVWUGDDE3YzmZyPEDtH/QdYWxjTqqCtxYOSjfgLMgvZ0dx0HAozLWgrW6X83vt
+	98FkPA+AYefFlVJXI1BGb4+fCUmBjoRkr4Yz5dRWO5H8exb8SnO0ohUxsXFQ0JSDoj9kOuE6hHg1C
+	2PqgRlH2hGSfR+BwCtLDbo82XnXNddDja/u93TASpqS9z0/kM6I5Nt8TbsMn6J4/PY/5qdy3XdqMm
+	7pf6fJu+Atq+izxR5aKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihuDO-0005PN-TN; Thu, 19 Dec 2019 11:43:34 +0000
-Received: from ozlabs.org ([2401:3900:2:1::2])
+	id 1ihuGA-00074e-3S; Thu, 19 Dec 2019 11:46:26 +0000
+Received: from szxga03-in.huawei.com ([45.249.212.189] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihuDF-0005OJ-2a
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 11:43:26 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 47dqkr062jz9sQp;
- Thu, 19 Dec 2019 22:43:15 +1100 (AEDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ellerman.id.au;
- s=201909; t=1576755798;
- bh=lcmpp8435heHWbtamXbY25s9q0noKpvN6s1RHv0A4dU=;
- h=From:To:Cc:Subject:In-Reply-To:References:Date:From;
- b=MCXmEwVeEGSrPzejttS1VELaA0lq2R8UNCc4QCqV43s78jIlcRjRXv1S8XBvlhbxW
- IkoYXHNqhQIeWBcAK6QQ13jD2l+4fY8dZxbNHccQLM7IXL5pmxQI8SonUryHqe143E
- Z00iIdazUTC/s2Q8EHdFfNg7Ozt6zULqhv2xHWD+R9htzkF/bRwYvd73/AOrTTEEzZ
- RF6zQlsPZB1V6Z45dFQG3KhR0AhsMDUNphcJKr7Glfg7XsKDR/CjV++nR30kBwX+Sf
- rXWV3SJUWjIFPjwluKiKRajaxNNvAsba4tI/inSmk+mwbxQYOB9QU/pZrP4DMMAjkc
- 3czhs1rexhIeg==
-From: Michael Ellerman <mpe@ellerman.id.au>
-To: Steven Price <steven.price@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linux-mm@kvack.org
-Subject: Re: [PATCH v17 01/23] mm: Add generic p?d_leaf() macros
-In-Reply-To: <20191218162402.45610-2-steven.price@arm.com>
-References: <20191218162402.45610-1-steven.price@arm.com>
- <20191218162402.45610-2-steven.price@arm.com>
-Date: Thu, 19 Dec 2019 22:43:14 +1100
-Message-ID: <878sn8mtgt.fsf@mpe.ellerman.id.au>
+ id 1ihuFy-00072U-HF
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 11:46:17 +0000
+Received: from DGGEMM405-HUB.china.huawei.com (unknown [172.30.72.54])
+ by Forcepoint Email with ESMTP id 0245EC08727047931738;
+ Thu, 19 Dec 2019 19:45:58 +0800 (CST)
+Received: from dggeme755-chm.china.huawei.com (10.3.19.101) by
+ DGGEMM405-HUB.china.huawei.com (10.3.20.213) with Microsoft SMTP Server (TLS)
+ id 14.3.439.0; Thu, 19 Dec 2019 19:45:57 +0800
+Received: from [127.0.0.1] (10.173.221.248) by dggeme755-chm.china.huawei.com
+ (10.3.19.101) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 19
+ Dec 2019 19:45:56 +0800
+Subject: Re: [PATCH 1/5] KVM: arm64: Document PV-lock interface
+To: Steven Price <steven.price@arm.com>
+References: <20191217135549.3240-1-yezengruan@huawei.com>
+ <20191217135549.3240-2-yezengruan@huawei.com>
+ <20191217142138.GA38811@arm.com>
+From: yezengruan <yezengruan@huawei.com>
+Message-ID: <49120a3c-405d-d2e3-2a88-ba590feccbcc@huawei.com>
+Date: Thu, 19 Dec 2019 19:45:55 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
+In-Reply-To: <20191217142138.GA38811@arm.com>
+Content-Language: en-US
+X-Originating-IP: [10.173.221.248]
+X-ClientProxiedBy: dggeme707-chm.china.huawei.com (10.1.199.103) To
+ dggeme755-chm.china.huawei.com (10.3.19.101)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_034325_275849_66B767DA 
-X-CRM114-Status: GOOD (  17.47  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191219_034614_741886_3E493EAF 
+X-CRM114-Status: GOOD (  19.15  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ medium trust [45.249.212.189 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,77 +73,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, x86@kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>,
- =?utf-8?B?SsOpcsO0bWU=?= Glisse <jglisse@redhat.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org, "Liang,
- Kan" <kan.liang@linux.intel.com>
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "maz@kernel.org" <maz@kernel.org>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "virtualization@lists.linux-foundation.org"
+ <virtualization@lists.linux-foundation.org>, James Morse <James.Morse@arm.com>,
+ "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>, Catalin
+ Marinas <Catalin.Marinas@arm.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "will@kernel.org" <will@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Steven Price <steven.price@arm.com> writes:
-> Exposing the pud/pgd levels of the page tables to walk_page_range() means
-> we may come across the exotic large mappings that come with large areas
-> of contiguous memory (such as the kernel's linear map).
->
-> For architectures that don't provide all p?d_leaf() macros, provide
-> generic do nothing default that are suitable where there cannot be leaf
-> pages at that level. Futher patches will add implementations for
-> individual architectures.
->
-> The name p?d_leaf() is chosen to minimize the confusion with existing
-> uses of "large" pages and "huge" pages which do not necessary mean that
-> the entry is a leaf (for example it may be a set of contiguous entries
-> that only take 1 TLB slot). For the purpose of walking the page tables
-> we don't need to know how it will be represented in the TLB, but we do
-> need to know for sure if it is a leaf of the tree.
->
-> Signed-off-by: Steven Price <steven.price@arm.com>
-> Acked-by: Mark Rutland <mark.rutland@arm.com>
-> ---
->  include/asm-generic/pgtable.h | 20 ++++++++++++++++++++
->  1 file changed, 20 insertions(+)
->
-> diff --git a/include/asm-generic/pgtable.h b/include/asm-generic/pgtable.h
-> index 798ea36a0549..e2e2bef07dd2 100644
-> --- a/include/asm-generic/pgtable.h
-> +++ b/include/asm-generic/pgtable.h
-> @@ -1238,4 +1238,24 @@ static inline bool arch_has_pfn_modify_check(void)
->  #define mm_pmd_folded(mm)	__is_defined(__PAGETABLE_PMD_FOLDED)
->  #endif
->  
-> +/*
-> + * p?d_leaf() - true if this entry is a final mapping to a physical address.
-> + * This differs from p?d_huge() by the fact that they are always available (if
-> + * the architecture supports large pages at the appropriate level) even
-> + * if CONFIG_HUGETLB_PAGE is not defined.
-> + * Only meaningful when called on a valid entry.
-> + */
-> +#ifndef pgd_leaf
-> +#define pgd_leaf(x)	0
-> +#endif
-> +#ifndef p4d_leaf
-> +#define p4d_leaf(x)	0
-> +#endif
-> +#ifndef pud_leaf
-> +#define pud_leaf(x)	0
-> +#endif
-> +#ifndef pmd_leaf
-> +#define pmd_leaf(x)	0
-> +#endif
+Hi Steve,
 
-Any reason you made these #defines rather than static inlines?
+On 2019/12/17 22:21, Steven Price wrote:
+> On Tue, Dec 17, 2019 at 01:55:45PM +0000, yezengruan@huawei.com wrote:
+>> From: Zengruan Ye <yezengruan@huawei.com>
+>>
+>> Introduce a paravirtualization interface for KVM/arm64 to obtain the vcpu
+>> is currently running or not.
+>>
+>> A hypercall interface is provided for the guest to interrogate the
+>> hypervisor's support for this interface and the location of the shared
+>> memory structures.
+>>
+>> Signed-off-by: Zengruan Ye <yezengruan@huawei.com>
+>> ---
+>>  Documentation/virt/kvm/arm/pvlock.rst | 31 +++++++++++++++++++++++++++
+>>  1 file changed, 31 insertions(+)
+>>  create mode 100644 Documentation/virt/kvm/arm/pvlock.rst
+>>
+>> diff --git a/Documentation/virt/kvm/arm/pvlock.rst b/Documentation/virt/kvm/arm/pvlock.rst
+>> new file mode 100644
+>> index 000000000000..eec0c36edf17
+>> --- /dev/null
+>> +++ b/Documentation/virt/kvm/arm/pvlock.rst
+>> @@ -0,0 +1,31 @@
+>> +.. SPDX-License-Identifier: GPL-2.0
+>> +
+>> +Paravirtualized lock support for arm64
+>> +======================================
+>> +
+>> +KVM/arm64 provids some hypervisor service calls to support a paravirtualized
+>> +guest obtaining the vcpu is currently running or not.
+>> +
+>> +Two new SMCCC compatible hypercalls are defined:
+>> +
+>> +* PV_LOCK_FEATURES:   0xC5000040
+>> +* PV_LOCK_PREEMPTED:  0xC5000041
+> 
+> These values are in the "Standard Hypervisor Service Calls" section of
+> SMCCC - so is there a document that describes this features such that
+> other OSes or hypervisors can implement it? I'm also not entirely sure
+> of the process of ensuring that the IDs picked are non-conflicting.
+> 
+> Otherwise if this is a KVM specific interface this should probably
+> belong within the "Vendor Specific Hypervisor Service Calls" section
+> along with some probing that the hypervisor is actually KVM. Although I
+> don't see anything KVM specific.
 
-cheers
+Thanks for pointing it out to me! Actually, I also don't see any documents
+or KVM specific that describes this features. The values in the "Vendor
+Specific Hypervisor Service Calls" section may be more appropriate, such as
+the following
+
+* PV_LOCK_FEATURES:   0xC6000020
+* PV_LOCK_PREEMPTED:  0xC6000021
+
+Please let me know if you have any suggestions.
+
+> 
+>> +
+>> +The existence of the PV_LOCK hypercall should be probed using the SMCCC 1.1
+>> +ARCH_FEATURES mechanism before calling it.
+>> +
+>> +PV_LOCK_FEATURES
+>> +    ============= ========    ==========
+>> +    Function ID:  (uint32)    0xC5000040
+>> +    PV_call_id:   (uint32)    The function to query for support.
+>> +    Return value: (int64)     NOT_SUPPORTED (-1) or SUCCESS (0) if the relevant
+>> +                              PV-lock feature is supported by the hypervisor.
+>> +    ============= ========    ==========
+>> +
+>> +PV_LOCK_PREEMPTED
+>> +    ============= ========    ==========
+>> +    Function ID:  (uint32)    0xC5000041
+>> +    Return value: (int64)     NOT_SUPPORTED (-1) or SUCCESS (0) if the IPA of
+>> +                              this vcpu's pv data structure is configured by
+>> +                              the hypervisor.
+>> +    ============= ========    ==========
+> 
+>>From the code it looks like there's another argument for this SMC - the
+> physical address (or IPA) of a struct pvlock_vcpu_state. This structure
+> also needs to be described as it is part of the ABI.
+
+Will update.
+
+> 
+> Steve
+> 
+> .
+> 
+
+Thanks,
+
+Zengruan
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
