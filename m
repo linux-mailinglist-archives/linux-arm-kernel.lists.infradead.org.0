@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 792B2125FEF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 11:52:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 143D9125FF5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 11:52:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=y7mvUSc5tQcY71lRUfENURtWQpZ91Ix/hjBBKDb6fUk=; b=rygVPFzgl55k9gVRbmN6/yph7
-	arXWCiUtyN8idf0uk78juUxQL8Xb2dM+u8qbDZL/6qq7mGT+yfJetpCDCLKodWZ+gVv6uxi3uiQWo
-	WrfkyEe/jve4cQ81s2+eCUifnA88yxXQd3XISHRnsTHHIlxSFpKBzY4RDiNjSxSuEzHi0bXfqL7r1
-	ItK+sgGP7mGc7rWIQHaJRw0URS9MAYVG/ZLyy16j1Qf4bCma+vCHHyUD4ShIncLjla+zl8T2XA9Xs
-	eXbeni5s72P0NtDWl+aIfevPjayXRlqA5SI1j5zAw9TYfi4jAa0AmCYZba/e9POAfDT/fgu7xHG/J
-	wefORmnXQ==;
+	 bh=hETvXFHYe+QK4aw5RZ6VN1iEwa1Ksp+b1ZXu4wSXjek=; b=jNWe61qC19pjvnH3Z2tr1RX+u
+	wmtwLKuooak3i6IQvs+TVsR2GkLst6axunQX/f/tokOx5hgQmiiszt5ZgHVgQfHl4datW2dPCmkWa
+	iZtuKimLAj0WMzWmOtDvFCkbSHZ98CcNCXEnYwhuVHFYzrIPsYu6blPrvQ9sdwIa2CryyOoVVEJAf
+	tADvoMF2mnVXIvFO3HzR12qlLkkxUHPdyYFF43J/YEqpnlER253y7LB60qLxuXYKbZA6lSMO1g22P
+	m0525+h/mBp/9Z7ZALvIiIf/H68wzS+MU+2nCsnhcvJ3cK9Q1IBoJfSAboZ/9tPnaaSY67iGCEY0T
+	vJPWOm0MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihtPy-000590-3Y; Thu, 19 Dec 2019 10:52:30 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1ihtQJ-0005P0-99; Thu, 19 Dec 2019 10:52:51 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihtPj-00058U-7a
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 10:52:16 +0000
-Received: by mail-wm1-x344.google.com with SMTP id p9so4951694wmc.2
+ id 1ihtQ3-0005NC-4v
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 10:52:36 +0000
+Received: by mail-wr1-x442.google.com with SMTP id w15so5509125wru.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Dec 2019 02:52:14 -0800 (PST)
+ Thu, 19 Dec 2019 02:52:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=/1iWCzYi3gScJH+ZKu4IAouDVwkUnYO+J1BdKnXhQTg=;
- b=kRJeBsd8VIqqFAlxQLTEATMz0dlQldjkF/yvYns6xcit9rPY2lQWlTSwcM429xZ7S/
- QF/bR2oRu/Il5W4LQgzDYUyrHowxQfpJElyZgWln1Nq+iLDdr+Snhx8vmI1NnPnmUTjD
- pjBEYm7TZJRTlSP2wjwzu7ViRnKBCNpOolpQ0Yvnz57WHmGmoU3vhZy0R5M6WWp2a+h2
- qeyBcRPPLBxGtiswdAg2Fd6/5ofl1LLWXcaIeIx45q9omIwCsRQlpjA5v9INOy3ShcYY
- YZCxlseRTs3p986ZRv0VSTmLmgLrcSUw3LT1/Kayfzvrn78dNAc+p8BSkcZGPVsTgVQP
- OwXw==
+ bh=ZXDdUchGqcGrK25/fVfAQ7zC2o3YZYG/aF++t6v9I1o=;
+ b=KEeUqQTWTWspOZferDBKxJRiolK3KQa6C3ksapi9JX/FVu21dZ7XD8X5TJVpp/w9A1
+ 22HyzJLAY49JncZXmY6QMzGvxiyeUsGDrquAiPYLUy2dcLmaI+LbkgG0DmZsQ93c54Oc
+ EmRuD9uAXvFn/+wbycCp0IHXKeSVmIh6hstFYADSGlJlyFd0DpXtb7P0IDGFrCZf1HlU
+ yMnGbIwB0HND4fdQbeNho6qdPER/kVyFafbemsVb1Rm0w7Mbu9Kud7ZygC9ViclMhpm5
+ XCS34S3AR3yjEzp93cSvgQopEKtG78XV9LLTzYA/Kjba3Sd3to47bXP+pZ1ejTPHNa0m
+ yaPQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=/1iWCzYi3gScJH+ZKu4IAouDVwkUnYO+J1BdKnXhQTg=;
- b=OmBgO+cxhNLYF8UGuNdED8PIro08CEKfiLJSLYOCqiRCFgagizUz7rIaVKmwyjke58
- Ikr0W+e0CIf0RC9kl4+jLFKe4DDxt9ZrUTArNPHy6M9EkpNRfwp+3tyD51pPZ8FLR9A7
- C7IWb6RUzOTEiIrihHh+SFmyFzAnvEnm4Yjdrhw/f0OcGhT/1tiWIRBum6vheZuipIhP
- 3rDsqBl0Gj1PX/BoDl+SHsXwaIz4xTcbrtKPgE25qErxzueFdQ36yXgQJLD8SG+1NpaL
- vsZ4E+xQXK3PsPmDmBN8oRmvUSf0kumk9PW+OcgT9lVb2T1mm6+xcD7J8O8l4dGGcVcm
- BHog==
-X-Gm-Message-State: APjAAAWsS/iRwJzjK8YB2Kt+nybQbJ+3fFHbOHaO31iYnkoQpOMfNnfG
- Cwd3s5tQl1fpOHYJ/geKvRIfoA==
-X-Google-Smtp-Source: APXvYqzStH+1157P1Cv3/akiouCWbHXle1czPtvxUgDMCyd4SeBRSabTb/W+TZKuJ11C1gGBaJ4A8A==
-X-Received: by 2002:a1c:7901:: with SMTP id l1mr9079872wme.67.1576752733307;
- Thu, 19 Dec 2019 02:52:13 -0800 (PST)
+ bh=ZXDdUchGqcGrK25/fVfAQ7zC2o3YZYG/aF++t6v9I1o=;
+ b=Vau1JLq4Z4y6kcVVNZn6sHnnonG0FFJZYe3X5BgkMjhSaEzgRqjIBPoZ3Y7+S7UGQA
+ 40SgIqEgCJ3RCUi1fTbHSunfhY/9LuCd+F2nbNt9Yfhzm+NrEqzQe59hwKACYopTV5kP
+ VUN5WR/NQx66nFl0l67TalR5Qb7AltL0W8/D0cDxnF+jiMjbp3mrOIUM87Fg6+sdPO+f
+ ZegqOa8Urg9HseKJ6uwDhp1U/Bz0hW1AO0Gy5r/w/RXqMy5JdD8jE0fyaSfOM65O6zzN
+ A8gzhnIN8vE64BBSKWQLcM4xksq4kNoqgKu0FUBhNYF+7qGZdCeBqXJckZQyUDn+YACh
+ IDGQ==
+X-Gm-Message-State: APjAAAUmtNat/s+o7+gDmcT5BLgSZzbWkIIyJfJiIPOnIsyLLlKEU+oX
+ Gv+DQh4yG1YbqqkWZvW2/s4aCA==
+X-Google-Smtp-Source: APXvYqx/n2fEHAE3TWeuYbC9ZW46dZ6bG8quYLjNLscGuEq4UrWNQvBDKkDiHTmT+TprLK72WtL+EQ==
+X-Received: by 2002:adf:e5ce:: with SMTP id a14mr8514280wrn.214.1576752753718; 
+ Thu, 19 Dec 2019 02:52:33 -0800 (PST)
 Received: from [192.168.86.34]
  (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
- by smtp.googlemail.com with ESMTPSA id u16sm5590079wmj.41.2019.12.19.02.52.11
+ by smtp.googlemail.com with ESMTPSA id k4sm5889509wmk.26.2019.12.19.02.52.32
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 19 Dec 2019 02:52:12 -0800 (PST)
-Subject: Re: [PATCH] nvmem: imx: scu: fix write SIP
+ Thu, 19 Dec 2019 02:52:32 -0800 (PST)
+Subject: Re: [PATCH] nvmem: imx: scu: correct the fuse word index
 To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
-References: <1575340217-1402-1-git-send-email-peng.fan@nxp.com>
+References: <1575438591-12409-1-git-send-email-peng.fan@nxp.com>
 From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Message-ID: <feeeacd0-3d0e-08b8-2a43-8527e6840b94@linaro.org>
-Date: Thu, 19 Dec 2019 10:52:11 +0000
+Message-ID: <1815fe19-4d0c-fbcd-7f44-010b010c00f7@linaro.org>
+Date: Thu, 19 Dec 2019 10:52:32 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <1575340217-1402-1-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1575438591-12409-1-git-send-email-peng.fan@nxp.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_025215_276534_81CAC45E 
-X-CRM114-Status: GOOD (  11.84  )
+X-CRM114-CacheID: sfid-20191219_025235_191403_57DA578D 
+X-CRM114-Status: GOOD (  14.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,7 +101,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Alice Guo <alice.guo@nxp.com>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Andy Duan <fugang.duan@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
@@ -114,15 +114,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 03/12/2019 02:32, Peng Fan wrote:
+On 04/12/2019 05:52, Peng Fan wrote:
 > From: Peng Fan <peng.fan@nxp.com>
 > 
-> SIP number 0xC200000A is for reading, 0xC200000B is for writing.
-> And the following two args for write are word index, data to write.
+> i.MX8 fuse word row index represented as one 4-bytes word.
+> Exp:
+> - MAC0 address layout in fuse:
+> offset 708: MAC[3] MAC[2] MAC[1] MAC[0]
+> offset 709: XX     xx     MAC[5] MAC[4]
 > 
-> Fixes: 885ce72a09d0 ("nvmem: imx: scu: support write")
+> The original code takes row index * 4 as the offset, this
+> not exactly match i.MX8 fuse map documentation.
+> 
+> So update code the reflect the truth.
+> 
 > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-
+> ---
+>   drivers/nvmem/imx-ocotp-scu.c | 10 +++++-----
+>   1 file changed, 5 insertions(+), 5 deletions(-)
+> 
 Applied Thanks,
 srini
 
