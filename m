@@ -2,51 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADA33125EEA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 11:29:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E17A7125F2C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 11:36:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Rk4oFRHS9CxfTp7q/XNWrPZfNsWdWRdsTASQgSPJEVU=; b=kET9jfTWtCmiYV
-	d4C9PdPx5fLBFE8M6zLO0HZHm6dk9c2a/GD0jWJrFb0QiVWyZcGmzowc9SPxUWyzcj02GjrFrsaZR
-	YQxrHWC/obY1Nk/mPNYDHIVdWP6I38w4s9dfj14HWiekyFK6DPF63UtAt3Clh5e82FmapZUtjNZvS
-	WmPN1YqMwYg3Gae8suTzMAfA9cVYyt+dtqVPMKpbJXg7x6S8Im4ASFrZz3Yg8plNSFoTkm/DHK7Zp
-	RKTMomF4F1pS1YqLoyYJolN5rEhQJ1n5a+ILoku/wbiib8jlqBLN9uIMuAdtxAsdfGYMGWXmxd0Un
-	76od7CGZJdR4smP2hH3Q==;
+	List-Owner; bh=+uqwqyi7nq3zkcNLY82s0Y3NL4HaXv203fTM23pclQs=; b=Y118MmgmGJTGWh
+	RASG1UJl8e2zlI4bpT0ppDkz2MWAMMvezCRPsV5qkUMQYrJRfiIgvO9IdSSdtO+6xyZzuzIUSsG4T
+	bIzh0G3qKXX41allil5reN3aFJF/C59km6yKZnK/ybw56qd9Wz14VrQ8s/6QzDzmB9tTApHpGWr5L
+	INninDqTWoKf6HHMF+LMVLOK77xJPp8N+evk/c+RlR0TYfeOoJf/HinoDnvpHxWuj+nbN0sYNmH/9
+	uLvysKXOk//uVePCaRJqbdh8T1dvMf7/92do89IbyiftEd/Tg5q71qI46JW82KwImPCe4xsoj/Xeh
+	1b7MWysTEl+mGcPcgH+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iht3H-0002Ju-Tt; Thu, 19 Dec 2019 10:29:03 +0000
-Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
+	id 1ihtA9-0005tX-Sd; Thu, 19 Dec 2019 10:36:09 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iht38-0002J7-Tu
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 10:28:56 +0000
-Received: from sapphire.lan (unknown [192.168.100.188])
- by mx.tkos.co.il (Postfix) with ESMTP id E604E440360;
- Thu, 19 Dec 2019 12:28:50 +0200 (IST)
-From: Baruch Siach <baruch@tkos.co.il>
-To: Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Subject: [PATCH] arm64: dts: marvell: clearfog-gt-8k: fix switch cpu port node
-Date: Thu, 19 Dec 2019 12:28:45 +0200
-Message-Id: <18a7fd3e75a172a7bca9feecfb8a77ecb802d8af.1576751325.git.baruch@tkos.co.il>
-X-Mailer: git-send-email 2.24.0
+ id 1iht9x-0005sS-Mp
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 10:35:59 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xBJAWcHB023188; Thu, 19 Dec 2019 11:35:51 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=Iemh3RU/aIK2iehtIHFQuSP9XvVK+0CTJ21s2KN63yo=;
+ b=gXqqZMtt1rmXVv8DSNqowaaZF4CP5ipsS+CfHYPDclIlhMGNjgvC3kxymw3NCIhfk0KE
+ T5DvKrwgHt3a+8s7URBKXpykwiUPAMK3ND/B8JIsTjaSzhs11IldghDLHb7J32f4H0oV
+ HN63TEwVe7Q/GTCM9a0I6k4LJw07OtB+vRgmRELcvlpDBuVwr2fFpheErYYIMNRwoMMf
+ 4yIAMuw+E/LXFw1zUPZjrMFDr9RzHyub6GyY0sk7hCH2k19PaQjA8M2hp1SQ6fAu+Ikb
+ HA9Z9SBVGmO0SeWO6+dfv5mERJaEyTuUtbNucceK3ZAinG+jADU2H12If5VY7dmHL35H tA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2wvpd1s21e-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 19 Dec 2019 11:35:51 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 04B32100039;
+ Thu, 19 Dec 2019 11:35:41 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id C51142A467F;
+ Thu, 19 Dec 2019 11:35:40 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 19 Dec 2019 11:35:40
+ +0100
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <gregkh@linuxfoundation.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
+ <kgene@kernel.org>, <krzk@kernel.org>, <hminas@synopsys.com>
+Subject: [PATCH v2 0/2] Add yaml DWC2 bindings
+Date: Thu, 19 Dec 2019 11:35:34 +0100
+Message-ID: <20191219103536.25485-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-12-19_01:2019-12-17,2019-12-19 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_022855_184052_7286BC9D 
-X-CRM114-Status: UNSURE (   7.56  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20191219_023558_104671_278BD8B0 
+X-CRM114-Status: GOOD (  11.76  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,41 +91,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Hubert Feurstein <h.feurstein@gmail.com>, Baruch Siach <baruch@tkos.co.il>,
- Denis Odintsov <d.odintsov@traviangames.com>,
- linux-arm-kernel@lists.infradead.org,
- =?UTF-8?q?Marek=20Beh=C3=BAn?= <marek.behun@nic.cz>
+Cc: devicetree@vger.kernel.org, amelie.delaunay@st.com,
+ linux-samsung-soc@vger.kernel.org,
+ Benjamin Gaignard <benjamin.gaignard@st.com>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Explicitly set the switch cpu (upstream) port phy-mode and managed
-properties. This fixes the Marvell 88E6141 switch serdes configuration
-with the recently enabled phylink layer.
+Convert DWC2 bindings to json-schema and fix issue in dtsi file.
 
-Fixes: a612083327 ("arm64: dts: add support for SolidRun Clearfog GT 8K")
-Reported-by: Denis Odintsov <d.odintsov@traviangames.com>
-Signed-off-by: Baruch Siach <baruch@tkos.co.il>
----
- arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts | 2 ++
- 1 file changed, 2 insertions(+)
+Benjamin Gaignard (2):
+  dt-bindings: usb: Convert DWC2 bindings to json-schema
+  ARM: dts: exynos: Remove unneeded "snps,dwc2" from hsotg node
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-index bd881497b872..a211a046b2f2 100644
---- a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-@@ -408,6 +408,8 @@ port@5 {
- 				reg = <5>;
- 				label = "cpu";
- 				ethernet = <&cp1_eth2>;
-+				phy-mode = "2500base-x";
-+				managed = "in-band-status";
- 			};
- 		};
- 
+ Documentation/devicetree/bindings/usb/dwc2.txt  |  64 ----------
+ Documentation/devicetree/bindings/usb/dwc2.yaml | 152 ++++++++++++++++++++++++
+ arch/arm/boot/dts/exynos3250.dtsi               |   2 +-
+ 3 files changed, 153 insertions(+), 65 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/usb/dwc2.txt
+ create mode 100644 Documentation/devicetree/bindings/usb/dwc2.yaml
+
 -- 
-2.24.0
+2.15.0
 
 
 _______________________________________________
