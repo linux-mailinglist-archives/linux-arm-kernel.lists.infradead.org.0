@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 893A01271E7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 00:57:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C0EF1271ED
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 00:58:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hu7TUOycbQSATVGet62uI26RgdQVt4TnuTShrZ5EWX0=; b=ZdATBnkorpFmgP
-	l6892nskMc4U3UuM5NvreIB4eUHC+bOMgWB+xlH+ubBpMheAxdDyvbSsnDr6yn1UqKzTILSoAfsUh
-	2lFgNxKNpgRyo5bTuGLcA56E2VZhmYnShWCJRue/dtHP4i7nJ4xwZew+oDmkv+6+s9LZ2xtfIDZPu
-	FoHsgi9JTcA2UcGzRZ4efZAK7CI82uahbCurVxbE90aJwdHwlMjGchJCJge8NXHCMGsVo56Ckd/i5
-	TMe4aIl4DnOgWDM2CiDdN25f+2JNQaxuAUlre/rGwhwC9gf6tMlkntI/XB2gZELLZej++MzHafemc
-	nl4bj/Lr7nrTQ0G6/PTA==;
+	List-Owner; bh=6tLbQ9Ip/R+vpXq6vdExr5NrY9MdpPRsa6V3A/t9pRo=; b=rXx8TWNNrty/Fp
+	WD7wUSV+zTMuVujobHY+DlrqBQAw0HqE2w/P0eFl2vyV+jxZeJyxm3EfJsOdfQc/VjJLoPjn1ql0z
+	dMzHriAWjBO06rIJEBapVA7c2akKnLP4VSkUzwURwMPs+7BQquFPylJT+OuIYCgDc6tWVaykkAUW0
+	tByjd73l4UiZoO7Kr+XASnoCKh2g0C1ls8AIsHlxEgmi7LPLA4ddCNM9SA6HZcdVYbxJDp4G4rqFV
+	Q85gqPK53xQ5LnPZsDOMXKoC/EgItclfZwntUZ669p9SHmWtY8I2Xo1ps5724Lt+H6L0j97/SmoFW
+	4r6cb+ceEll7uLY7TIPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii5fz-0007y3-Jb; Thu, 19 Dec 2019 23:57:51 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1ii5gu-00007T-JW; Thu, 19 Dec 2019 23:58:48 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii5fq-0007xP-N5
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 23:57:43 +0000
-Received: by mail-ot1-f66.google.com with SMTP id p8so9376433oth.10
+ id 1ii5gj-000061-BA
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 23:58:38 +0000
+Received: by mail-ot1-f67.google.com with SMTP id h9so6822757otj.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Dec 2019 15:57:42 -0800 (PST)
+ Thu, 19 Dec 2019 15:58:35 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=OMWLX5Po0CxgTAHf6iS/ph0HUz8ijxk+7R2/Fb1wd4g=;
- b=kO6b8OQUtTg7AUMM48SqXjsahd+ZWJOV1uReXKL67pSA6n2fRjgpgHmlFuU1q7Kq+4
- jHQxbgGkXKk4bkOrp3iyKbWOaxbsnfV2/zDkc/aEBVaU2PEHbyeHcFVR0LcvtnrE4PPv
- JMCIoMan+eGxI7oiyU5UzuBR/Lk9p/HK3zs8CXosJgNCv3toFsbfyoIi9IMzRiVjc/Em
- plEVdyAhZaU3ed/DrdIeQqUkfgBNWSsI5CvzgRnucdkYFRXhMCiGV52EmUwnvHdFU43O
- pwhpBQX1NsgAXxASzXs8kub1Lc44g9H5aLj7WRqZqjnsEmG9yyKrvUvRGYQfgPxjWWJ7
- RrcA==
-X-Gm-Message-State: APjAAAVPn47eM1DenUdpGBL2uW4YD/N+4dRJIbDOzqCFaFT8bYNhUdXa
- 8HA7o35GaG+PVjn3wTidI/rvQ1A=
-X-Google-Smtp-Source: APXvYqxv+LQx4Guvz+TFTpgo3HvUnB9BUM567dRykno2DvnkBi1TbWKC+9CFro+YU4KP1Nf5E/9now==
-X-Received: by 2002:a9d:7a88:: with SMTP id l8mr12190373otn.187.1576799861704; 
- Thu, 19 Dec 2019 15:57:41 -0800 (PST)
+ bh=SKAwiiMoPd9Tn6Gy7OjwN1wuLYFMvkJCnI+ZJNtjSoU=;
+ b=fBkCxSfyU12Ay5ghJpCxims8rmiwr+r6+cbcajEJN5Nv+2pybPRq2JjPG2qog2ZAmL
+ 2ID63POSV3EL5dQ8DpJUVlaDbm+WDeOBtEkn2IjMR1ExZlBQGfKCdT/zBM6AQGSwbpBG
+ M7iSEbOYloM1B3PgFUiw9YnebewzOHkTjkvtkEZp05ryuFyiTJml8Eiwhg5mXlA/NpQA
+ UiLLyhejLpFbWFX2H3O8MUxNk4kyyxDSnr2b5cvPghm2EkM9ShlgdJ5PNi0seUHqBOP2
+ NZnMpb/3+0sfOfdQWRlqGFV2gHiq+/YKJahiXf54CiWR1wtLBp8+yJY0M5w078XROUqd
+ zeVg==
+X-Gm-Message-State: APjAAAXDzeCI7MvuxdDzut3pw8h0Ic55exG6jmVCWe0WcBJ0WzbPkWSd
+ U5PTwvVk5KgzFMxjerF4ew==
+X-Google-Smtp-Source: APXvYqw55kJy7t/alrW7e/PbYwZqVLZg2Ona/8Txk725xAGbNLdEpYEc3R+GsZ69sJiZdx6g/aK/dg==
+X-Received: by 2002:a9d:f26:: with SMTP id 35mr12255962ott.260.1576799914673; 
+ Thu, 19 Dec 2019 15:58:34 -0800 (PST)
 Received: from localhost (ip-184-205-174-147.ftwttx.spcsdns.net.
  [184.205.174.147])
- by smtp.gmail.com with ESMTPSA id p184sm2574797oic.40.2019.12.19.15.57.40
+ by smtp.gmail.com with ESMTPSA id e65sm2709408otb.62.2019.12.19.15.58.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 15:57:41 -0800 (PST)
-Date: Thu, 19 Dec 2019 17:57:38 -0600
+ Thu, 19 Dec 2019 15:58:34 -0800 (PST)
+Date: Thu, 19 Dec 2019 17:58:24 -0600
 From: Rob Herring <robh@kernel.org>
 To: Chen-Yu Tsai <wens@kernel.org>
-Subject: Re: [PATCH 02/14] dt-bindings: media: sun4i-csi: Add compatible for
- CSI0 on R40
-Message-ID: <20191219235738.GA11443@bogus>
+Subject: Re: [PATCH 10/14] dt-bindings: bus: sunxi: Add R40 MBUS compatible
+Message-ID: <20191219235824.GA12457@bogus>
 References: <20191215165924.28314-1-wens@kernel.org>
- <20191215165924.28314-3-wens@kernel.org>
+ <20191215165924.28314-11-wens@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191215165924.28314-3-wens@kernel.org>
+In-Reply-To: <20191215165924.28314-11-wens@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_155742_753814_8236B0AD 
-X-CRM114-Status: GOOD (  16.33  )
+X-CRM114-CacheID: sfid-20191219_155837_382738_2A02BCE0 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -78,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ [209.85.210.67 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -103,25 +102,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 16 Dec 2019 00:59:12 +0800, Chen-Yu Tsai wrote:
+On Mon, 16 Dec 2019 00:59:20 +0800, Chen-Yu Tsai wrote:
 > From: Chen-Yu Tsai <wens@csie.org>
 > 
-> The CSI0 block in the Allwinner R40 SoC looks to be the same as the one
-> in the A20. The register maps line up, and they support the same
-> features. The R40 appears to support BT.1120 based on the feature
-> overview, but it is not mentioned anywhere else. Also like the A20, the
-> ISP is not mentioned, but the CSI special clock needs to be enabled for
-> the hardware to function. The manual does state that the CSI special
-> clock is the TOP clock for all CSI hardware, but currently no hardware
-> exists for us to test if CSI1 also depends on it or not.
+> Allwinner R40 SoC also contains MBUS controller.
 > 
-> Add a compatible string for the CSI0 block in the R40, with the A20
-> compatible string as a fallback.
+> Add compatible for it.
 > 
 > Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 > ---
->  .../devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml     | 3 +++
->  1 file changed, 3 insertions(+)
+>  Documentation/devicetree/bindings/arm/sunxi/sunxi-mbus.txt | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
 Acked-by: Rob Herring <robh@kernel.org>
