@@ -2,52 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA00E1265DC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 16:36:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C99F11265F5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 16:43:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+905/UltH3stQtmgEgpwyqVd2SzApc4tFLJA5cTLewg=; b=V1CuO0vIY4MtCN
-	Mr8rpngrmRp573OhyneFfy34vXmVzkcCKM3CwuRXmQNKzeIPmg2TJtNNQ9z3J/uxaKeLCgyz4sw+s
-	wsh6MVeXm4PNO5j2qqSET5gdxJs7sn3n81wu1Fl4KDNyWrPxDp2sPSnLYUo6V7jxT62+33MIIkhV9
-	8I7cXq3qMFx642eVm6h2fKmNMY7j0YpJDP653OyGGG/Rk0LwLuq/1a8TObf+XjO6eXiQ2BtbB57c4
-	Lt+oaeGv3+YQFrOay5z6AmVMdWuhl+tWd9gE2b9HpTI5s6eukLwc1/GsxqVNnr4eEavuRK3onCAMM
-	Khv+9bfQ4vYkFP2+dI0w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=fP9tAWSBEAJHwkjXImQooHJzuOWte8XE2pVLDOBazok=; b=E4R
+	2hgqHfLtDQ0N8v5xkUI58QNCUvdsisCWQDE0sTcfONjEPRZV8PWwuf+1xtSyRkMRTYWxB/uOfbzzK
+	rWEA5a5bjjBCiGt2I29+S7rV21uwziiXSfOiisYfv5Yct+EAPs08FCBoxKjkssxG/SfMvHgCRV++P
+	kWWH4r/H5yFUx1LjXiuG5Ftg1qMY9zGGQJwOyBRkzjCam2UnNEaNvp8956CYtsDQtq4XXr2xJXZvy
+	Et6XtWZx/bkIdSpSC24MhM1u1ry0OYCkYyxYy32IXj/C6fuwOecmu2fBUuRZAqPFjPZTjPl+2b2sk
+	X4vfOvi5z3FvJKDgVPRTgeNW04u9yfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihxqa-0004IF-9i; Thu, 19 Dec 2019 15:36:16 +0000
-Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
- helo=theia.8bytes.org)
+	id 1ihxx6-0006Ps-SF; Thu, 19 Dec 2019 15:43:00 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihxqQ-0004HY-6H
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 15:36:07 +0000
-Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 20A6C431; Thu, 19 Dec 2019 16:35:56 +0100 (CET)
-Date: Thu, 19 Dec 2019 16:35:41 +0100
-From: Joerg Roedel <joro@8bytes.org>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH v3 4/5] iommu: intel: Use generic_iommu_put_resv_regions()
-Message-ID: <20191219153541.GA21694@8bytes.org>
-References: <20191218134205.1271740-1-thierry.reding@gmail.com>
- <20191218134205.1271740-5-thierry.reding@gmail.com>
- <2b3020a1-221c-f86b-6440-e9ef65f0c12e@linux.intel.com>
- <20191219124747.GA1440537@ulmo>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191219124747.GA1440537@ulmo>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1ihxwy-0006Li-8M
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 15:42:53 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 70EDA1A0B95;
+ Thu, 19 Dec 2019 16:42:50 +0100 (CET)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 63AC01A079C;
+ Thu, 19 Dec 2019 16:42:50 +0100 (CET)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 8290E203C8;
+ Thu, 19 Dec 2019 16:42:49 +0100 (CET)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>
+Subject: [PATCH] PM / devfreq: imx8m-ddrc: Remove unused defines
+Date: Thu, 19 Dec 2019 17:42:47 +0200
+Message-Id: <9e89485ca173e1d118748dbe5cfc7068f74079bf.1576769985.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_073606_381680_3E992B68 
-X-CRM114-Status: GOOD (  10.94  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191219_074252_431383_821CC723 
+X-CRM114-Status: UNSURE (   7.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -60,36 +67,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
- virtualization@lists.linux-foundation.org, iommu@lists.linux-foundation.org,
- Will Deacon <will@kernel.org>, David Woodhouse <dwmw2@infradead.org>,
- linux-arm-kernel@lists.infradead.org, Lu Baolu <baolu.lu@linux.intel.com>
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ linux-pm@vger.kernel.org, Adam Ford <aford173@gmail.com>,
+ Fabio Estevam <fabio.estevam@nxp.com>, linux-imx@nxp.com,
+ kernel@pengutronix.de, Martin Kepplinger <martink@posteo.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 19, 2019 at 01:47:47PM +0100, Thierry Reding wrote:
-> On Thu, Dec 19, 2019 at 09:53:22AM +0800, Lu Baolu wrote:
-> > Please tweak the title to
-> > 
-> > "iommu/vt-d: Use generic_iommu_put_resv_regions()"
-> > 
-> > then,
-> > 
-> > Acked-by: Lu Baolu <baolu.lu@linux.intel.com>
-> > 
-> > Best regards,
-> > baolu
-> 
-> Joerg, do you want me to resend with this change or is it more efficient
-> if you fix up the subject while applying?
+The IMX_SIP_DDR_DVFS_WAIT_CHANGE and IMX_SIP_DDR_FREQ_SET_HIGH defines
+are not used so they can be removed.
 
-No need to re-send, I'll fix it up in this patch and in the others too.
+Fixes: 518e99e2a22e ("PM / devfreq: Add dynamic scaling for imx8m ddr controller")
 
+Reported-by: Shawn Guo <shawn.guo@kernel.org>
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+---
+ drivers/devfreq/imx8m-ddrc.c | 6 ------
+ 1 file changed, 6 deletions(-)
 
-	Joerg
+diff --git a/drivers/devfreq/imx8m-ddrc.c b/drivers/devfreq/imx8m-ddrc.c
+index fea169619c59..ecbb1db05ea0 100644
+--- a/drivers/devfreq/imx8m-ddrc.c
++++ b/drivers/devfreq/imx8m-ddrc.c
+@@ -13,16 +13,10 @@
+ #include <linux/clk-provider.h>
+ #include <linux/arm-smccc.h>
+ 
+ #define IMX_SIP_DDR_DVFS			0xc2000004
+ 
+-/* Values starting from 0 switch to specific frequency */
+-#define IMX_SIP_DDR_FREQ_SET_HIGH		0x00
+-
+-/* Deprecated after moving IRQ handling to ATF */
+-#define IMX_SIP_DDR_DVFS_WAIT_CHANGE		0x0F
+-
+ /* Query available frequencies. */
+ #define IMX_SIP_DDR_DVFS_GET_FREQ_COUNT		0x10
+ #define IMX_SIP_DDR_DVFS_GET_FREQ_INFO		0x11
+ 
+ /*
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
