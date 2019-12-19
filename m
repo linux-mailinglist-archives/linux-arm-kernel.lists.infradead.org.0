@@ -2,103 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E34B412612C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 12:46:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 316F5126130
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 12:49:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=z571v4JGsJqKHXVTdzfNK1TTTBEE3BMmt47FFJSBeFw=; b=Azy2BPnAmCbbgV
-	ebA1C6SRYtu80ImDk94HkXpL07b/2FpJpCKdoQzao33Jr2ZSd5tQQb/mVCFIkSW/BkMZAGD4ZbDRM
-	eTV5ywV9y1L4BKI6Glwx8zf4MVal2LZR39UwSCmZGU1Kw/r0lYJ5mWVbBrxAUoe1JimH/4qy/SFIb
-	dMyVadPman+DDughv4zkz36eX+81KJjooGxVaWfQpUOl6Wm6NrmVPCjDAiYESpewS3nfMDsHwi/QI
-	AY01ZteLigi0c909zCcnJW+da/LpYRY5mInl7e48ptY8GY4Krwlnj9Ck3bUjsvQWE5CynJx7K8Evv
-	1EiIR7dh2fVk41B02ttQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CvXFa0nSd28Xw7jMyAA8EyRiTzKKGV84Z0TFMiTtUo4=; b=D2I9lTW4RTHi7W
+	nwW3ZaUnrvTQGY52TcbcEnzIPCiwwBcGoQD0FGChOZaOC8/pzugVBgd+GK27OgYj+bZpAWa0LN5Lm
+	DW/p4tv7ucEkPhxj4lhOmefzL1NugDUQMOcefZkz5yp5l4SC/FkQo5DsNw+ZQSTnYzviWxH0xLF37
+	9VBnbfJCYqGmHdkRJYwmhf9DzPXnrLmLCVsSfQIfipuStV9EpqYO1yRpI7oaomPzAB+n9CPj88+vi
+	nMOqUDuCAWAv+0xfPT1bH+gG3zdJd1luHysrxoj5R1oUvDuD+/2EJJVXmRdLxgNXqNEjPTz7K9scZ
+	BiowbsiYM0jBhQVj6D6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihuGc-0007Ls-9v; Thu, 19 Dec 2019 11:46:54 +0000
-Received: from mail-eopbgr80078.outbound.protection.outlook.com ([40.107.8.78]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1ihuJ7-0007kl-FX; Thu, 19 Dec 2019 11:49:29 +0000
+Received: from ozlabs.org ([2401:3900:2:1::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihuGS-0007Kv-3l
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 11:46:46 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MvsPQln/JKm3lK0R5f3egqOVjuYn7+yoiBPfhdQVdI4KiC0PrDDtV2+w6ev5dFhCgJuQu77nhctzCIS9m65Nm9dNi3U20JQWlFpifNV7K308Jmu8dDc4i/GnQu6+cC2yV7TecuBwr8XquXIj0ga4FRy+hcZJebfUzMmHbnUnjYCwA8iJqxKpJveqoTaYcHSfKihZ/+cdKwJBf9TiiycPrzLtW35f6paUUa07RBND6th2yDyDRHBpZck4r3685GfuduGvtF9eGXx5vK3LFVfZQhT86rrKMKFhTJi6dnupfVc8+HebbRI3Jx0BSKlVuI2A9G2pTKVozd7Ub3xep39hlQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Op8kVPTHZexfBO1CM7jAErGS6+66AhOKMNaWjAg2mzQ=;
- b=H9P5fj2pf2VfP9AYDEON4g//hZutnq9lKUZPjKjU4xEf4DEnvRepBQefFCWxgO6D9Y73vk+lLAFdKo0u52OY6UwSiqBL4XhlC5fei2kqqFminnbzzj43P8el0U+zbtwKOhtiyDEhu3B2L+P7ZAtVlzTuMyuMKiozYL23FI+kPB30cO+5wvT0wpwkWIsZeEkSLPpIxl47OYBxQiu+X62OhHKr0TqTOYtGxyMTHiqOaB/RoB3efGRJwVBW/W0f6G+1oBnqJ4RAzHf0YJYf5jF7njU7VqTI/cK7DxNAmsJSJT5VkvHW93EiGWQgYzq1FwbEUxKBvLNbFZITsQRPxaiRlA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Op8kVPTHZexfBO1CM7jAErGS6+66AhOKMNaWjAg2mzQ=;
- b=H0GtN4RghjsxyNzRLa+wSvBOVw9jTOfLs/FHVc2ZFCYqg/jzcwtcTmdq9tjc9IKN3q9FWFcbbkDfrl+QuwxqXp27MLt9cFqrOwrAj+z+SKxMVYsxCJqBh6F5a2KRpiKVLNHjfckaTpo8tbRQ/RCSMsR1rb8feXdW9XqXDtMFqBg=
-Received: from VI1PR04MB4480.eurprd04.prod.outlook.com (20.177.53.80) by
- VI1PR04MB5504.eurprd04.prod.outlook.com (20.178.124.29) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2559.14; Thu, 19 Dec 2019 11:46:39 +0000
-Received: from VI1PR04MB4480.eurprd04.prod.outlook.com
- ([fe80::58a6:d929:99a8:117f]) by VI1PR04MB4480.eurprd04.prod.outlook.com
- ([fe80::58a6:d929:99a8:117f%7]) with mapi id 15.20.2538.022; Thu, 19 Dec 2019
- 11:46:38 +0000
-From: Nipun Gupta <nipun.gupta@nxp.com>
-To: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
-Subject: Kernel memory depletion when application running with RT priority
-Thread-Topic: Kernel memory depletion when application running with RT priority
-Thread-Index: AdW2TAgQRuOaPS9MQsS3CtWzV9rwvw==
-Date: Thu, 19 Dec 2019 11:46:38 +0000
-Message-ID: <VI1PR04MB4480C07836FC31F113A31C6CE6520@VI1PR04MB4480.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=nipun.gupta@nxp.com; 
-x-originating-ip: [92.120.1.72]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 28078915-bc94-42d1-7d34-08d784791bd7
-x-ms-traffictypediagnostic: VI1PR04MB5504:|VI1PR04MB5504:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB5504D93F73B0F58B0BCEFF9DE6520@VI1PR04MB5504.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0256C18696
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(39860400002)(136003)(366004)(396003)(189003)(199004)(44832011)(5660300002)(2906002)(316002)(76116006)(6506007)(66946007)(66556008)(64756008)(52536014)(26005)(66476007)(186003)(66446008)(71200400001)(7696005)(6916009)(4326008)(478600001)(55016002)(8676002)(81166006)(8936002)(86362001)(81156014)(9686003)(33656002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5504;
- H:VI1PR04MB4480.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: R6WyqyAwEwAyuZDCFVpl7uGSkfElVq2HgO9r5utmEoLm8/onsV8GFamK4M4eEyTJWoKfcDjOuErWXQemp3lY6mCo3jyTx+b81p/E088s64Bgb78Yc50SKHrP8e/RMdUUpNQlOyY+2TrLywd+yJqJXxoY1c86j2ye66vHvyyXOMkH9Ny0cnCjVppRhEbnkqBZfKhSxCn7yAazKn1riH+yN6TzEvzYlAXhNW9JvTA+QtjIKDvwZa+0UrDsmgm2nA3/JQHgxz4C4D/D/ar6YBSeORRCpj6F1jmN/BZ/PWxI7XNAU51ZiT/H8jGMmLZHOREuEPDc9FHA0qqjEznJWpuc7oEc6wNRHxx4ea+nC9fBh19ZOOaOFGPD0P64c81d/GFP5eKJLH6xnjUaQpnj/WtHD8cFhkvWV9HIDPOsyF++UHIxQny27aDqf0TCCftX745S
+ id 1ihuIy-0007kA-VW
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 11:49:22 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 47dqsn6T0bz9sPh;
+ Thu, 19 Dec 2019 22:49:17 +1100 (AEDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ellerman.id.au;
+ s=201909; t=1576756159;
+ bh=m3hY81qHO7a2k47hLHQcsNjq4SjyZd/McTsEzivltVw=;
+ h=From:To:Cc:Subject:In-Reply-To:References:Date:From;
+ b=iVZiuTv82Xx6PBD5+ZkMNAHxtQgm3Q8T7MvtNs5BQ/Le5rVoL5jtfTowsYTNg6zVk
+ TQZdB+LeRGDQrwAbrTTCxlT5yq8GuZA/I4SebmZX3Bg8hOSBhFEd9ESk5kE7CQG6Ef
+ e6EdNhWAzinbIMDQEnBy+i+JXbxM8SUzfIqLg7aN6HNm50Myep5JO24puwgEs1WWPZ
+ beWQBPCIBFxfuPhkxyvdgQxbgUTdVp/+dbBMhA0uJICJaCHly3aGbeXexWvcQcSJR2
+ iCQIGMzx3cHbUs952puh+OX3lMc8+K44Q5rTMLMhn8ZR61R4Ri2WUTdlL0Y1fzqZpg
+ g1ifRi2FGLkTA==
+From: Michael Ellerman <mpe@ellerman.id.au>
+To: Steven Price <steven.price@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linux-mm@kvack.org
+Subject: Re: [PATCH v17 06/23] powerpc: mm: Add p?d_leaf() definitions
+In-Reply-To: <20191218162402.45610-7-steven.price@arm.com>
+References: <20191218162402.45610-1-steven.price@arm.com>
+ <20191218162402.45610-7-steven.price@arm.com>
+Date: Thu, 19 Dec 2019 22:49:16 +1100
+Message-ID: <877e2smt6r.fsf@mpe.ellerman.id.au>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 28078915-bc94-42d1-7d34-08d784791bd7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Dec 2019 11:46:38.7219 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 7sEGT6l+pUOmc7vuZ3PTg1h6XGaew5uGUPMhS39mNwDGqo/v3PiAc1GkRpxN38IjUA7YOxFducpA9e1d/Va9pg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5504
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_034644_230994_685016A5 
-X-CRM114-Status: UNSURE (   7.76  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191219_034921_176283_2FF618E3 
+X-CRM114-Status: GOOD (  13.31  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.78 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -119,32 +79,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Poonam Aggrwal <poonam.aggrwal@nxp.com>
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, Will Deacon <will@kernel.org>, "Liang,
+ Kan" <kan.liang@linux.intel.com>, x86@kernel.org,
+ Steven Price <steven.price@arm.com>, Ingo Molnar <mingo@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ kvm-ppc@vger.kernel.org, =?utf-8?B?SsOpcsO0bWU=?= Glisse <jglisse@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Steven Price <steven.price@arm.com> writes:
+> walk_page_range() is going to be allowed to walk page tables other than
+> those of user space. For this it needs to know when it has reached a
+> 'leaf' entry in the page tables. This information is provided by the
+> p?d_leaf() functions/macros.
+>
+> For powerpc p?d_is_leaf() functions already exist. Export them using the
+> new p?d_leaf() name.
+>
+> CC: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+> CC: Paul Mackerras <paulus@samba.org>
+> CC: Michael Ellerman <mpe@ellerman.id.au>
+> CC: linuxppc-dev@lists.ozlabs.org
+> CC: kvm-ppc@vger.kernel.org
+> Signed-off-by: Steven Price <steven.price@arm.com>
+> ---
+>  arch/powerpc/include/asm/book3s/64/pgtable.h | 3 +++
+>  1 file changed, 3 insertions(+)
 
-I have a query related to memory depletion when running application with real-time priority.
+We have fallback versions of our pmd_is_leaf() etc. in
+arch/powerpc/include/asm/pgtable.h, eg:
 
-We are running User-Space polling application (DPDK) with real time priority on one of our ARM based NXP platform with Kernel 5.4. We have set isolcpus for all the cores except core 0.
-The application (DPDK l2fwd) is running on 'core 1', taking complete CPU using command (chrt --rr 99 l2fwd -c 2 -n 1 -- -p 0x20 -T 0).
+#ifndef pmd_is_leaf
+#define pmd_is_leaf pmd_is_leaf
+static inline bool pmd_is_leaf(pmd_t pmd)
+{
+	return false;
+}
+#endif
 
-We have observed that the kernel memory continuously decreases when any command like 'cat' is run on the kernel. These commands like 'cat' are running only on 'core 0' as isolcpus is used (also confirmed using ftrace).
-Further observation is that when priority of ksoftirqd process running on 'core 1' is increased more than the application, the memory which was depleted gets freed.
+Because we support several different MMUs and most of them don't need to
+do anything.
 
-Kmemleak has shown that after each command there is memory allocation done by the kernel in the system calls made by the commands.
-This only gets freed when ksofirqd running on 'core 1' gets some time-slice to run.
+So we could put the compatibility #defines to your names along with the
+fallback versions in asm/pgtable.h, rather than in
+asm/book3s/64/pgtable.h
 
-Is this an expected behavior? My query is that why is ksofirqd process running on 'core 0' not freeing the memory; or is it waiting for ksofirqd process to run on 'core 1'?
-In case anything is running with RT priority and consuming all the CPU, should ksoftirqd process have higher priority than that process?
+But I see you also have fallbacks for your versions, so it probably
+doesn't matter either way.
 
-Please note: We are not using RT kernel.
+So I'm OK with this version, unless you think there's a compelling
+reason to do the compatibility #defines in our asm/pgtable.h
 
-Thanks,
-Nipun
+Acked-by: Michael Ellerman <mpe@ellerman.id.au>
+
+cheers
+
+
+> diff --git a/arch/powerpc/include/asm/book3s/64/pgtable.h b/arch/powerpc/include/asm/book3s/64/pgtable.h
+> index b01624e5c467..201a69e6a355 100644
+> --- a/arch/powerpc/include/asm/book3s/64/pgtable.h
+> +++ b/arch/powerpc/include/asm/book3s/64/pgtable.h
+> @@ -1355,18 +1355,21 @@ static inline bool is_pte_rw_upgrade(unsigned long old_val, unsigned long new_va
+>   * Like pmd_huge() and pmd_large(), but works regardless of config options
+>   */
+>  #define pmd_is_leaf pmd_is_leaf
+> +#define pmd_leaf pmd_is_leaf
+>  static inline bool pmd_is_leaf(pmd_t pmd)
+>  {
+>  	return !!(pmd_raw(pmd) & cpu_to_be64(_PAGE_PTE));
+>  }
+>  
+>  #define pud_is_leaf pud_is_leaf
+> +#define pud_leaf pud_is_leaf
+>  static inline bool pud_is_leaf(pud_t pud)
+>  {
+>  	return !!(pud_raw(pud) & cpu_to_be64(_PAGE_PTE));
+>  }
+>  
+>  #define pgd_is_leaf pgd_is_leaf
+> +#define pgd_leaf pgd_is_leaf
+>  static inline bool pgd_is_leaf(pgd_t pgd)
+>  {
+>  	return !!(pgd_raw(pgd) & cpu_to_be64(_PAGE_PTE));
+> -- 
+> 2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
