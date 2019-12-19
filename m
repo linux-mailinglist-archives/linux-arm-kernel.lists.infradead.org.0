@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4DE731271CC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 00:48:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5419A1271E1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 00:56:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BZXPF3P3+cbDRxQumHf8gyWYcJM2uQ4Bewt8MkeRsZ0=; b=uG3a48TZN9H+KJ
-	qA7PpHYkXjPPlLDzVk/LvPl/gdloXZksT3BrXVdO5AnH+22utr5IWjqlxaFvXRVVgjugrpwoBC6LJ
-	Pp7+lsYn/PTompbP0FIMaVhtEwOW6UGSupHghJ+tK4VnsAh6HapODMKLk4wOzBohnLq3uWnpgJupt
-	wHiLyo1/8eZ2gjz+t5U9V+hgRSHv36/J1qUIevxaZEavXyNFwS3r6s/kPL56y8w7GgWvVLwYyJU3K
-	kjQTS6BTLpYaTJ0BbayI+QHEmRlRZdo05iYZCHsShOhWxoC9lmsA3OBIwYb+X+v6PfKjHQpcoqlN1
-	5y4ObVES5vVXNgBiAOhg==;
+	List-Owner; bh=r9AVgozQBoXQohnwqVpmYOVffmumY4+mxnBrCKyNWnk=; b=WPxz3WSfb/2um2
+	VSmNBdb7XtaAGJUtJFErQhZXbAoK+Z550guNqQJf94jcHrrrosFb6Cg0KsgFP+qmxMumgSrZeTFxw
+	AmgkaexjjCrRCqSP/A08BJchCNMplxmqoUedEWt/VcJMkNp9uhPMtc9E9o9j0e+Qk/oDPIUtUkU8c
+	u4pguUcosrk8HGbuF1wNQC0DCuQYO1Fo1kZR7yBwxvt2yFU9Cq474QrNr2hg7gfNkWF4uEStj4jk5
+	FhsI5Zgv5QbLoJXPq++n14wzucLvyejCq0Z9uY8+lKtBmg3/x4/r9Grn9zneOIJooGYBpHLJz2OC9
+	P4OIwDY5VPMrErHB2vSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii5WW-0003RR-VK; Thu, 19 Dec 2019 23:48:04 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1ii5ee-0007Oy-Lf; Thu, 19 Dec 2019 23:56:28 +0000
+Received: from mail-yb1-f194.google.com ([209.85.219.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii5WJ-0003Pv-Bm; Thu, 19 Dec 2019 23:47:52 +0000
-Received: by mail-ot1-f65.google.com with SMTP id d7so4979766otf.5;
- Thu, 19 Dec 2019 15:47:51 -0800 (PST)
+ id 1ii5eU-0007Nl-Cy
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 23:56:20 +0000
+Received: by mail-yb1-f194.google.com with SMTP id i3so2904573ybe.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 19 Dec 2019 15:56:18 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=18UcAb5rbPMss22Ho10Y3g3P3ch3yNs8mlHDvPuR4oU=;
- b=cEJa1eiLvsxnAEg5bONEEGdg4AR9RP88VoJKfyuihztOVbx3HJmwj0AjZ5KOFk+FNv
- Cr2Zutj76zuAnBZA1/Mt6ra9lwIHfalT7Rffd//GFzg/k6PyKrw7uWRL/kM4WBQRqUYV
- uCQqUd2SwOgYSFADncAJE0mddwo4u1kMZQph1RpG7E2qeRoh0YGRs2LtXmI/BIzDjhQt
- MHtcbSBH54CtYF+6seSqzjJPulbdIHarD4zyt2V0O5WkbE2CoXkV79VeBeYeeVJ6AyQL
- FqFG11OAzV721W9tmnJFYD8qu/l+0/BMDzm3E7EKwrZ9aoCbeUAucz4UN8O5/bA6RObR
- jNzQ==
-X-Gm-Message-State: APjAAAUQ1vp3Rqv5HZ165HQHfkA3Z/JMCDt+b904LeYmt/lOU9JDuW7M
- kZemIPmivGDots8ri07MTPs5h4s=
-X-Google-Smtp-Source: APXvYqwn2zt/hEoslzgFitK7qNptvvyashP6FwXW1JD5npPwJGdehqnhGdzJkgQ1XfMc2/ZX5+wl9Q==
-X-Received: by 2002:a9d:6b17:: with SMTP id g23mr11137126otp.265.1576799270756; 
- Thu, 19 Dec 2019 15:47:50 -0800 (PST)
+ bh=ARCZQqxf+0FzEB5iVazPT6aK74bYUEn3HXg9HU6qLcQ=;
+ b=JznnDBhp3+rxQMPBxz7bzqtxYHihm5qn7gliK4yHmYoNAyNpJw4r3Dv6CYyTWNbb8+
+ JVkrdlJpYtI+rNCBqu0+MiQ70karl5aHuvAOvVsQ1dorIo/dPOhRvg9GD+XzCPtdJ9ut
+ jtYRi91RmZxxs4B49grhtBi4a2FzhlkEj2ZLeyKlioGV/i7FHm3Kxh53QsLS0Bzokzgu
+ 8Exw1ZUbSX9iP/1GYrmMrGof7nOsmwoSNoA0LlIU30PPZ598hSOy3l1oK6VbLV1NT8c9
+ wXWMvULQEEWnBR68v/LBx5n8J0HHvBr6Qa4MMc3BnjvZ5BeWWi0cgR9osAcLefJzUqWe
+ S71g==
+X-Gm-Message-State: APjAAAUx0TAIIBlaHh67Ycz3RESCTQ1ufhDElGy4LGyq6vZtfgYYpKqe
+ wbQ1+xhWcFwwOWZ/dnQYOf9Yfa0=
+X-Google-Smtp-Source: APXvYqywBAQDOyS21IT+zvRVl4XolNmnzFYexAWz8fo5ibiktWXARwDGoYAPr7Xhqa1RU911jzX1Pg==
+X-Received: by 2002:a9d:5885:: with SMTP id x5mr11347193otg.132.1576799776295; 
+ Thu, 19 Dec 2019 15:56:16 -0800 (PST)
 Received: from localhost (ip-184-205-174-147.ftwttx.spcsdns.net.
  [184.205.174.147])
- by smtp.gmail.com with ESMTPSA id n22sm2712400otj.36.2019.12.19.15.47.49
+ by smtp.gmail.com with ESMTPSA id z12sm2730992oti.22.2019.12.19.15.56.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 15:47:50 -0800 (PST)
-Date: Thu, 19 Dec 2019 17:47:47 -0600
+ Thu, 19 Dec 2019 15:56:15 -0800 (PST)
+Date: Thu, 19 Dec 2019 17:56:13 -0600
 From: Rob Herring <robh@kernel.org>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH 01/12] dt-bindings: display: rockchip-lvds: Declare PX30
- compatible
-Message-ID: <20191219234747.GA30229@bogus>
-References: <20191213181051.25983-1-miquel.raynal@bootlin.com>
- <20191213181051.25983-2-miquel.raynal@bootlin.com>
+To: Chen-Yu Tsai <wens@kernel.org>
+Subject: Re: [PATCH 01/14] dt-bindings: media: sun4i-csi: Add compatible for
+ CSI1 on A10/A20
+Message-ID: <20191219235613.GA9523@bogus>
+References: <20191215165924.28314-1-wens@kernel.org>
+ <20191215165924.28314-2-wens@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191213181051.25983-2-miquel.raynal@bootlin.com>
+In-Reply-To: <20191215165924.28314-2-wens@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_154751_399740_2BD52BD8 
-X-CRM114-Status: GOOD (  10.03  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191219_155618_438511_ADEE7E20 
+X-CRM114-Status: GOOD (  12.94  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
+ no trust [209.85.219.194 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -77,7 +77,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.219.194 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,29 +93,35 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, David Airlie <airlied@linux.ie>,
- Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
- linux-rockchip@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+ Mauro Carvalho Chehab <mchehab@kernel.org>, linux-kernel@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>, Chen-Yu Tsai <wens@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 13 Dec 2019 19:10:40 +0100, Miquel Raynal wrote:
-> Document the PX30 LVDS compatible.
+On Mon, 16 Dec 2019 00:59:11 +0800, Chen-Yu Tsai wrote:
+> From: Chen-Yu Tsai <wens@csie.org>
 > 
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> The CSI1 block has the same structure and layout as the CSI0 block.
+> Differences include:
+> 
+>   - Only one channel in BT.656 instead of four in CSI0
+>   - 10-bit raw data input vs 8-bit in CSI0
+>   - 24-bit RGB888/YUV444 input vs 16-bit RGB565/YUV422 in CSI0
+>   - No ISP hardware
+> 
+> The hardware found in the A20 is the same as in the A10.
+> 
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
 > ---
->  .../devicetree/bindings/display/rockchip/rockchip-lvds.txt       | 1 +
->  1 file changed, 1 insertion(+)
+>  .../bindings/media/allwinner,sun4i-a10-csi.yaml       | 11 ++++++++++-
+>  1 file changed, 10 insertions(+), 1 deletion(-)
 > 
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
