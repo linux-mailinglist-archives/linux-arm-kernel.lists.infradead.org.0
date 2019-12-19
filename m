@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0CE5126835
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 18:33:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7249126837
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 18:35:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LXHgp/2KB8aFdE7r2h1p+XNiYaOt5RcKzgwYo/RfZfY=; b=dryYpUpbTS5ik00TbScqEJNxD
-	Btxmdgpljs5cCwAy7q4WV43zhISBHtlU53Dp2ddzLH0MhkE0xGobAG1sx0CapZ5CW8khFgVLyL9B7
-	Czzsao4vXukldAmYHuZcsdOyvKJxP47whjYRf6YA23zYoTjR9W3B03fxMpkrGnkQCKc/SD7STUJuS
-	riGLqCHqAeb18DUeFIwRLfo6G735pTCW6cZyhyl2omsEGr1k8x3y6qVTMYSEwP4nOA+eYS4S7bfpP
-	8R955cYMlVgDy2IKZJqPkPUwyV8wiG6h+em1yUc+6XuHqsmwQvKC45fUYl0sMtEgOhSVvzww8yi49
-	UGOgYaYdw==;
+	 bh=fxlPNgEwPxtzqzprBu+q7z9vwqT9BIwfw8OrsFrrsbg=; b=DFhIm0HYiBkGiR2AXmnucXNU1
+	PSgE1xeJoPdOSXY4LwDJgNtDx5awdBVhFexz9NoAWXEqKxKhzoeaXSs50QAkUejsIMsqueDm9Cdhg
+	QXWnl7xq/vJB3nsky3h+qJ3LW/u7e6T0aMTWXlbamiuM3GB3kN2gLfR7ZHGxe/cKcy+51qx8enWkq
+	qhBLTlhskhRntabD95mzknbijzAHt1P2eKnNocYR333cp4PdRls+obqkGtVeYYLzyR8MV7Pu00LX0
+	hDKqNQ8ieDUsYhgahbgj3Xk6gb0hutooi5apGySI/52/k1Bj9W1SqplkS8pYgOjdrCZZb7x/Uk+Yl
+	qdq1VvH7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihzg5-0008Vo-F6; Thu, 19 Dec 2019 17:33:33 +0000
+	id 1ihzhn-0001N4-84; Thu, 19 Dec 2019 17:35:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihzfv-0008VH-Oi
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 17:33:24 +0000
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
+ id 1ihzha-0000wK-4M
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 17:35:07 +0000
+Received: from localhost (c-73-47-72-35.hsd1.nh.comcast.net [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F14EB21655;
- Thu, 19 Dec 2019 17:33:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 492B6227BF;
+ Thu, 19 Dec 2019 17:35:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576776803;
- bh=Y3xByJTEgCOaNoNsGe4pKVIS9XI0ZCLfbAdIESGvlxM=;
+ s=default; t=1576776905;
+ bh=s5oaspOL57PeyHvJJ2IZujrmMyDV5G1RgW/jNsRFpcI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=A7XHdThvled/qPuJrHfh8WDRBCGmbBlX8Qm16xJmq4b3/auOSP0X0WdRi7kcVRQft
- AxxquNXIx9tq78P+zTe7QRWMJYF+DCqi0KUdHrYBZVNzlVKfUcGChxMp8Lyc+CYNEM
- ObsJprmDL5/iDJDSnRhoA7meyAwq3o+5Ydrsv7vs=
-Date: Thu, 19 Dec 2019 18:33:21 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Vasily Khoruzhick <anarsoul@gmail.com>
-Subject: Re: [PATCH v8 0/7] add thermal sensor driver for A64, A83T, H3, H5,
- H6, R40
-Message-ID: <20191219173321.bni4tbrhfkkphv7k@gilmour.lan>
-References: <20191219172823.1652600-1-anarsoul@gmail.com>
+ b=aeu9sc1zY3qe/XYURcfyADyDRQSTY4m2jgc72uJjDA9qYqsqBUeapVh15uArYh1Pz
+ /j2mksn7HnCACdYISyc8+X3B8RSXfCmgNGfo6CFlQdR8YvP+RNFi4eBFnFfrcL5c0b
+ brTHvQUO3hWECeyPuRkD51cWKHNHIIaUCg9yeyjY=
+Date: Thu, 19 Dec 2019 12:35:04 -0500
+From: Sasha Levin <sashal@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH AUTOSEL 5.4 128/350] spi: pxa2xx: Set
+ controller->max_transfer_size in dma mode
+Message-ID: <20191219173504.GN17708@sasha-vm>
+References: <20191210210735.9077-1-sashal@kernel.org>
+ <20191210210735.9077-89-sashal@kernel.org>
+ <20191211104738.GA3870@sirena.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20191219172823.1652600-1-anarsoul@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20191211104738.GA3870@sirena.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_093323_824463_3972A37E 
-X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-CacheID: sfid-20191219_093506_222664_F9D5AAAB 
+X-CRM114-Status: UNSURE (   7.80  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,67 +80,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Amit Kucheria <amit.kucheria@verdurent.com>, linux-pm@vger.kernel.org,
- Yangtao Li <tiny.windzz@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>,
- =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8083400746461753275=="
+Cc: linux-arm-kernel@lists.infradead.org,
+ Andy Shevchenko <andriy.shevchenko@intel.com>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, linux-spi@vger.kernel.org,
+ Noralf =?iso-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Sam Ravnborg <sam@ravnborg.org>,
+ Daniel Mack <daniel@zonque.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Dec 11, 2019 at 10:47:38AM +0000, Mark Brown wrote:
+>On Tue, Dec 10, 2019 at 04:03:53PM -0500, Sasha Levin wrote:
+>> From: Daniel Vetter <daniel.vetter@ffwll.ch>
+>>
+>> [ Upstream commit b2662a164f9dc48da8822e56600686d639056282 ]
+>>
+>> In DMA mode we have a maximum transfer size, past that the driver
+>> falls back to PIO (see the check at the top of pxa2xx_spi_transfer_one).
+>> Falling back to PIO for big transfers defeats the point of a dma engine,
+>> hence set the max transfer size to inform spi clients that they need
+>> to do something smarter.
+>
+>This won't fix anything by itself, this asks other code to change how it
+>behaves which may or may not work in older kernels.
 
---===============8083400746461753275==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="w5q3jazkvks4ahe3"
-Content-Disposition: inline
+I'll drop it then, thanks!
 
-
---w5q3jazkvks4ahe3
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi,
-
-On Thu, Dec 19, 2019 at 09:28:16AM -0800, Vasily Khoruzhick wrote:
-> This patchset adds driver for thermal sensor in A64, A83T, H3, H5,
-> H6 and R40 SoCs.
-
-Thanks again for working on this.
-
-I'll merge the DT patches when the driver will have been merged.
-
-Maxime
-
---w5q3jazkvks4ahe3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXfu0YQAKCRDj7w1vZxhR
-xb1VAP4xjI8YI2zdKwYfiKElxYGUogPWWoFs7p5Em1VmwApCcwEAv4GZSBrUwgDf
-iL9xxj+jWVL/hIbcgq1jXocUjXhSiQY=
-=1zC1
------END PGP SIGNATURE-----
-
---w5q3jazkvks4ahe3--
-
-
---===============8083400746461753275==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Thanks,
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8083400746461753275==--
-
