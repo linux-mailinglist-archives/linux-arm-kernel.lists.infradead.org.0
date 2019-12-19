@@ -2,77 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AE0812661C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 16:49:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CCE312661D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 16:50:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DtD4NYV9xyDN6kMYY0/lkqqSQBy6R0KZfnyF7iPdR+g=; b=kQ98Jshczrjy/W
-	F/AjzzRn0/FRcM0E4OkUxQg+AvDFQ3Dp1Z8xKNNNJOvtDhie+hzG+8HVyYt3Gvn++fOxTHk2qXW89
-	ydPqeRQwt4zUigLFR5jJY/4k3iiKEgQYmxy12aAXQD87mT5uIJq0O9VB/dtVgUbxa99JZPd6cRtde
-	QtlUc48egs1zqc7MUAIbT3IVxgQO4TtL8NIN8UaGIOFBJHkOc1WGkw++4nCDDUM3GSq7ynmAR5HKe
-	x20XppNovngW3uXiUR61xi+rN7GMjLzHEuuy+XxlrAreQG2Og6nGDuTZlqHydm/iiZyE7xemb4hPK
-	r+901DyX2xG9x1BVoLGg==;
+	List-Owner; bh=5Y5HfeOTwqePwOEPcc0mN+JltDv+C42vEh6wExbvRBk=; b=RxGFuEz9XWDsJe
+	CrOtu5tuh8Uz+KpCDG4YvkaP14QQ4Li9uxrE35BvtJVdsRT+kau2S5hD1DfFVoEX6saCe1ceU2XyK
+	9rh5NLXiy7WLbR4eJ122pN0H0cqqbrIJWdLTq52u9zBtUnsUQtWfN3QFLoL22gJhuUCLBOeSALwP4
+	N0j5C00a772PvWcYwibC9yjsK8h5VlIRmW07z15GA9+jh08bFAwhfsT36wz411drzS7mJI5w3KGug
+	JGXIzpGSGcV5AvjiT0pqdvv1feTohAoH4uP9k2zTjIOJqqPqLw24ocdAs2cwvrLDEr/LbC2/TTWYX
+	GjWPF9mRlXXwWV/G0axQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihy3c-0000Xh-Jb; Thu, 19 Dec 2019 15:49:44 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1ihy3u-0000i4-Qi; Thu, 19 Dec 2019 15:50:03 +0000
+Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihy3A-0000IZ-J1
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 15:49:18 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id t12so4027151vso.13
+ id 1ihy3L-0000RQ-Lm
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 15:49:31 +0000
+Received: by mail-ua1-x943.google.com with SMTP id f9so2115928ual.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Dec 2019 07:49:16 -0800 (PST)
+ Thu, 19 Dec 2019 07:49:26 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=MIlvjsCfvOmlWRqcCAgvunomP0l6HJEE+6R+mmb5zvI=;
- b=qVU+p5owBD89IXyp4SeaCkLgA2uno2/z4M+x+sJ9cez3hAfckODxSZkc8dG/x35LTV
- qeUuRYR9b+sowa7ESvh6IIxVB3TJMlaF6GXo1PISp0Rn2RjP6wQONG6Yrfib/NhUKq6x
- 1KFqpgSfYB2fnnSDsRcsOGe8QoisLZVYUYWVXI70tm/bUe2TvXDnetE4yyvT/ryuDT/+
- 3v8QoZVRvWlJUoU3yBmJoiBhMoWfLlHwLguo7NM2Egqt8ubNHKHCvQQDS3TKTS1Z1KhK
- 1g93Tp71O9xAckz+v3lgzWwrCHAB8LVF5aL4EN3o7RFVkyvWyoK9PtVJrGimWHS5meGd
- 2bJg==
+ :cc; bh=lXAvb1r92TnWK6C8dcnV7rx6hUZ8P71du1awwZOMpPs=;
+ b=G0gvMHAcbaF/7lf/kFlpKzgPxYInj0tU+AECKhyI4EHND+mz3estSGIpY3oPXmKLMP
+ gPo9PxMglxm9IAXdtznEBwxDfqWF3jQBsR2BAx/2VORiVEnhKQELCSolxCXO1H5EurID
+ y1+KwpSGrgjMVhQRtqR4Ot/6v7JcGgL9GUjQE78sEUfEx8Jl1rvMbdK3ZpjnqF9lEmXi
+ vCMvxQbMAxMWIsCc3kw4yhtYgwY2kyMYt6uloDPZhSWbecC25ecMfLOz7hSjrPrviiSo
+ UigrTCd9Bwk6qy8gf6ZKiA1YiyAZrNPHFGKILVelGqsW0+iR8mykssawyJg/Dozs0Hc7
+ 5AQQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=MIlvjsCfvOmlWRqcCAgvunomP0l6HJEE+6R+mmb5zvI=;
- b=KcEsplL+Ht2FGmkiaYXa3TeKaivV3iSv1Kpi1xSHuGE3aEi5MKCCRRyMoQVdIIo2lw
- gAmwVUgUT8JHB1ly4W8zeIdSpPWRRlrBlj9u3QXVbJMdLXzWCDYzjJu0nQNCj5APiu1J
- BR4hlAIxtwVAKqNV9TZgNPKF6y3wO2lqrZuYonA3OuMut9IPCVaTWnOqEM6Ol9rAnZV+
- ctSD3aesU5FlFTEi1bIaDDbsxyppSvx5j5s2RQ0aeLcjsAQgmI9KDXCqEunMR9LIzqu8
- o4pNRRJ+fgYXICbqZkFFW9Fby4bctROCCfqy/P9dLn5/4WObWrFmJOHohRK5JB/DpICK
- 0DXQ==
-X-Gm-Message-State: APjAAAWLYzg5K52BNK+re211em4jALrbit6+wlsXE5XYCb2877v8Z03N
- aWz3EniQgYN+MV+yhpJCyRd1Yw47pwvbsnmxnLr8oSGK
-X-Google-Smtp-Source: APXvYqzCqEbI+NKtJQ1BzInOGzQQCfldsdLXyDdQEcF1rJlw+/hvaFTgBJHXAJhAg5pCi0ZHks4z70YDpdY0iacWdbo=
-X-Received: by 2002:a05:6102:5d1:: with SMTP id
- v17mr5154086vsf.200.1576770555650; 
- Thu, 19 Dec 2019 07:49:15 -0800 (PST)
+ bh=lXAvb1r92TnWK6C8dcnV7rx6hUZ8P71du1awwZOMpPs=;
+ b=Wf6KHQPFpcu6a8/1c+qhzS2+9/TNmT8UNLNvHJudfP9omxJfJRZmfj9dQQ21PjIIO3
+ Di1C8p6fN3l1tA/4ceutnnmNzFJ8t55+AH5sHpZA8MD38zEQH22vkv4TxlZspJQ/R0dm
+ gr8EDfLxNNM6xVPZWKqyWY6yPD6TNigM2gY3iHP+LSmkRW6wkJBOcsAz4KarzF8W7sEf
+ Cvlvbpe/MDSeFjQAKnOk8WOZCqXPqCUXarv2gp4T00WtBq5lkSoYe5eDbta9j7ApgWFj
+ YilFpWVzBYoG9w3vO1MJEfHg7S38QGBMZm/EvxfXVhFTP2r5HDU/uXxTQOljFfUKBNpD
+ qAvQ==
+X-Gm-Message-State: APjAAAU45TTv2FjKe9NCl9FscHZmcfH921S/zIH0r6ABYBjB4f8P3bT6
+ m6LLrRC1RwIjNXPZV0u7JsyDn856ebIkt0ss8gbwcg==
+X-Google-Smtp-Source: APXvYqzxayg//pdNpURx84BRAAl/dDcXVnta1LHOdI+qHwzENvNfTwcnpGaBIkok4+XfnyWH/9ANOFRvCIOH60V/V+c=
+X-Received: by 2002:ab0:6894:: with SMTP id t20mr5903032uar.100.1576770563346; 
+ Thu, 19 Dec 2019 07:49:23 -0800 (PST)
 MIME-Version: 1.0
 References: <20191211154343.29765-1-ulf.hansson@linaro.org>
- <20191211154343.29765-14-ulf.hansson@linaro.org>
- <20191219143427.GF20746@bogus>
-In-Reply-To: <20191219143427.GF20746@bogus>
+ <20191211154343.29765-15-ulf.hansson@linaro.org>
+ <20191219143446.GG20746@bogus>
+In-Reply-To: <20191219143446.GG20746@bogus>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 19 Dec 2019 16:48:39 +0100
-Message-ID: <CAPDyKFpPmtXkP6LSNWBbfyTJowjQXF39_4LN5YEcDtW1BzVw-g@mail.gmail.com>
-Subject: Re: [PATCH v4 13/14] cpuidle: psci: Add support for PM domains by
- using genpd
+Date: Thu, 19 Dec 2019 16:48:47 +0100
+Message-ID: <CAPDyKFpkSjq5RzuxCvj8wawU6Q15qq3qiBcrGz=H2X+1Wf3t8w@mail.gmail.com>
+Subject: Re: [PATCH v4 14/14] arm64: dts: Convert to the hierarchical CPU
+ topology layout for MSM8916
 To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_074916_686268_DDF9C430 
-X-CRM114-Status: GOOD (  31.04  )
+X-CRM114-CacheID: sfid-20191219_074928_103163_9330C004 
+X-CRM114-Status: GOOD (  16.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,26 +109,16 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Thu, 19 Dec 2019 at 15:34, Sudeep Holla <sudeep.holla@arm.com> wrote:
 >
-> On Wed, Dec 11, 2019 at 04:43:42PM +0100, Ulf Hansson wrote:
-> > When the hierarchical CPU topology layout is used in DT and the PSCI OSI
-> > mode is supported by the PSCI FW, let's initialize a corresponding PM
-> > domain topology by using genpd. This enables a CPU and a group of CPUs,
-> > when attached to the topology, to be power-managed accordingly.
+> On Wed, Dec 11, 2019 at 04:43:43PM +0100, Ulf Hansson wrote:
+> > To enable the OS to better support PSCI OS initiated CPU suspend mode,
+> > let's convert from the flattened layout to the hierarchical layout.
 > >
-> > To trigger the attempt to initialize the genpd data structures let's use a
-> > subsys_initcall, which should be early enough to allow CPUs, but also other
-> > devices to be attached.
-> >
-> > The initialization consists of parsing the PSCI OF node for the topology
-> > and the "domain idle states" DT bindings. In case the idle states are
-> > compatible with "domain-idle-state", the initialized genpd becomes
-> > responsible of selecting an idle state for the PM domain, via assigning it
-> > a genpd governor.
-> >
-> > Note that, a successful initialization of the genpd data structures, is
-> > followed by a call to psci_set_osi_mode(), as to try to enable the OSI mode
-> > in the PSCI FW. In case this fails, we fall back into a degraded mode
-> > rather than bailing out and returning an error code.
+> > In the hierarchical layout, let's create a power domain provider per CPU
+> > and describe the idle states for each CPU inside the power domain provider
+> > node. To group the CPUs into a cluster, let's add another power domain
+> > provider and make it act as the master domain. Note that, the CPU's idle
+> > states remains compatible with "arm,idle-state", while the cluster's idle
+> > state becomes compatible with "domain-idle-state".
 > >
 > > Co-developed-by: Lina Iyer <lina.iyer@linaro.org>
 > > Signed-off-by: Lina Iyer <lina.iyer@linaro.org>
@@ -140,139 +129,85 @@ On Thu, 19 Dec 2019 at 15:34, Sudeep Holla <sudeep.holla@arm.com> wrote:
 > >       - None.
 > >
 > > ---
-> >  drivers/cpuidle/cpuidle-psci-domain.c | 267 ++++++++++++++++++++++++++
-> >  drivers/cpuidle/cpuidle-psci.c        |   4 +-
-> >  drivers/cpuidle/cpuidle-psci.h        |   5 +
-> >  3 files changed, 274 insertions(+), 2 deletions(-)
+> >  arch/arm64/boot/dts/qcom/msm8916.dtsi | 57 +++++++++++++++++++++++++--
+> >  1 file changed, 53 insertions(+), 4 deletions(-)
 > >
-> > diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
-> > index 656ef3d59149..c2f94ba42222 100644
-> > --- a/drivers/cpuidle/cpuidle-psci-domain.c
-> > +++ b/drivers/cpuidle/cpuidle-psci-domain.c
-> > @@ -7,14 +7,281 @@
-> >   *
-> >   */
+> > diff --git a/arch/arm64/boot/dts/qcom/msm8916.dtsi b/arch/arm64/boot/dts/qcom/msm8916.dtsi
+> > index 8686e101905c..282c36c8fa3b 100644
+> > --- a/arch/arm64/boot/dts/qcom/msm8916.dtsi
+> > +++ b/arch/arm64/boot/dts/qcom/msm8916.dtsi
+> > @@ -102,10 +102,11 @@
+> >                       reg = <0x0>;
+> >                       next-level-cache = <&L2_0>;
+> >                       enable-method = "psci";
+> > -                     cpu-idle-states = <&CPU_SLEEP_0>;
+> >                       clocks = <&apcs>;
+> >                       operating-points-v2 = <&cpu_opp_table>;
+> >                       #cooling-cells = <2>;
+> > +                     power-domains = <&CPU_PD0>;
+> > +                     power-domain-names = "psci";
+> >               };
 > >
-> > +#define pr_fmt(fmt) "CPUidle PSCI: " fmt
-> > +
-> >  #include <linux/cpu.h>
-> >  #include <linux/device.h>
-> >  #include <linux/kernel.h>
-> >  #include <linux/pm_domain.h>
-> >  #include <linux/pm_runtime.h>
-> > +#include <linux/psci.h>
-> > +#include <linux/slab.h>
-> > +#include <linux/string.h>
+> >               CPU1: cpu@1 {
+> > @@ -114,10 +115,11 @@
+> >                       reg = <0x1>;
+> >                       next-level-cache = <&L2_0>;
+> >                       enable-method = "psci";
+> > -                     cpu-idle-states = <&CPU_SLEEP_0>;
+> >                       clocks = <&apcs>;
+> >                       operating-points-v2 = <&cpu_opp_table>;
+> >                       #cooling-cells = <2>;
+> > +                     power-domains = <&CPU_PD1>;
+> > +                     power-domain-names = "psci";
+> >               };
 > >
-> >  #include "cpuidle-psci.h"
+> >               CPU2: cpu@2 {
+> > @@ -126,10 +128,11 @@
+> >                       reg = <0x2>;
+> >                       next-level-cache = <&L2_0>;
+> >                       enable-method = "psci";
+> > -                     cpu-idle-states = <&CPU_SLEEP_0>;
+> >                       clocks = <&apcs>;
+> >                       operating-points-v2 = <&cpu_opp_table>;
+> >                       #cooling-cells = <2>;
+> > +                     power-domains = <&CPU_PD2>;
+> > +                     power-domain-names = "psci";
+> >               };
 > >
-> > +struct psci_pd_provider {
-> > +     struct list_head link;
-> > +     struct device_node *node;
-> > +};
+> >               CPU3: cpu@3 {
+> > @@ -138,10 +141,11 @@
+> >                       reg = <0x3>;
+> >                       next-level-cache = <&L2_0>;
+> >                       enable-method = "psci";
+> > -                     cpu-idle-states = <&CPU_SLEEP_0>;
+> >                       clocks = <&apcs>;
+> >                       operating-points-v2 = <&cpu_opp_table>;
+> >                       #cooling-cells = <2>;
+> > +                     power-domains = <&CPU_PD3>;
+> > +                     power-domain-names = "psci";
+> >               };
+> >
+> >               L2_0: l2-cache {
+> > @@ -161,12 +165,57 @@
+> >                               min-residency-us = <2000>;
+> >                               local-timer-stop;
+> >                       };
 > > +
-> > +static LIST_HEAD(psci_pd_providers);
-> > +static bool osi_mode_enabled;
-> > +
-> > +static int psci_pd_power_off(struct generic_pm_domain *pd)
-> > +{
-> > +     struct genpd_power_state *state = &pd->states[pd->state_idx];
-> > +     u32 *pd_state;
-> > +
-> > +     /* If we have failed to enable OSI mode, then abort power off. */
-> > +     if (!osi_mode_enabled)
-> > +             return -EBUSY;
-> > +
+> > +                     CLUSTER_RET: cluster-retention {
+> > +                             compatible = "domain-idle-state";
+> > +                             arm,psci-suspend-param = <0x41000012>;
 >
-> Why is above check needed ? Shouldn't we have disable/remove pd of
-> OSI is not enabled ?
-
-Well, failing to enable OSI should in practice not happen, while it
-theoretically it could.
-
-My approach to this has been to fall back to use a "degraded mode",
-which seems quite common for these kind of situations. The degraded
-mode means, we are preventing domain states from being used.
-
-More importantly, it also keeps the code registering the PM domains, a
-bit simpler.
-
+> If I followed the thread correctly, we are now just using the param as is
+> without any extra logic like ORing like before. i.e. The domain state
+> parameter overrides the any param below it in the hierarchy.
 >
-> > +     if (!state->data)
-> > +             return 0;
-> > +
-> > +     /* OSI mode is enabled, set the corresponding domain state. */
-> > +     pd_state = state->data;
-> > +     psci_set_domain_state(*pd_state);
-> > +
-> > +     return 0;
-> > +}
-> > +
->
-> [...]
->
-> > +static const struct of_device_id psci_of_match[] __initconst = {
-> > +     { .compatible = "arm,psci" },
->
-> I think we can drop the above one as it's for v0.1 which didn't support
-> OSI.
+> If that's correct, then
 
-Yeah, I do that.
+That's correct!
 
->
-> > +     { .compatible = "arm,psci-0.2" },
-> > +     { .compatible = "arm,psci-1.0" },
-> > +     {}
-> > +};
-> > +
-> > +static int __init psci_idle_init_domains(void)
-> > +{
-> > +     struct device_node *np = of_find_matching_node(NULL, psci_of_match);
-> > +     struct device_node *node;
-> > +     int ret = 0, pd_count = 0;
-> > +
-> > +     if (!np)
-> > +             return -ENODEV;
-> > +
-> > +     /* Currently limit the hierarchical topology to be used in OSI mode. */
-> > +     if (!psci_has_osi_support())
-> > +             goto out;
-> > +
-> > +     /*
-> > +      * Parse child nodes for the "#power-domain-cells" property and
-> > +      * initialize a genpd/genpd-of-provider pair when it's found.
-> > +      */
-> > +     for_each_child_of_node(np, node) {
-> > +             if (!of_find_property(node, "#power-domain-cells", NULL))
-> > +                     continue;
-> > +
-> > +             ret = psci_pd_init(node);
-> > +             if (ret)
-> > +                     goto put_node;
-> > +
-> > +             pd_count++;
-> > +     }
-> > +
-> > +     /* Bail out if not using the hierarchical CPU topology. */
-> > +     if (!pd_count)
-> > +             goto out;
-> > +
-> > +     /* Link genpd masters/subdomains to model the CPU topology. */
-> > +     ret = psci_pd_init_topology(np);
-> > +     if (ret)
-> > +             goto remove_pd;
-> > +
-> > +     /* Try to enable OSI mode. */
-> > +     ret = psci_set_osi_mode();
-> > +     if (ret)
-> > +             pr_warn("failed to enable OSI mode: %d\n", ret);
->
-> Same question as above: shouldn't we disable and goto remove_pd ?
+> Acked-by: Sudeep Holla <sudeep.holla@arm.com>
 
-See my answer above. Does it satisfy your concern?
-
-If so, may I add your reviewed-by tag, for the next re-spin when I
-have removed one of the compatible strings?
+Thanks!
 
 Kind regards
 Uffe
