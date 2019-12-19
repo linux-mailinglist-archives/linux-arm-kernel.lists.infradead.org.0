@@ -2,56 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9E8A125C36
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 08:46:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A207125C3B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 08:47:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=NC+DeUrKyFdSQDaWP9zs98xqHKhgg/ENV1wodoJeA8E=; b=Jdd
-	N7XtufjCqxHNpqZ7bB0s36uuOvteaqyn/HBfW8kZOdtAgLQCapQhi3o8hffsiP+Rgu/YHDnuV9ek9
-	Ecd7UfPj2c+CQ+xOro/Oq29G2j7ehhXeG0a9wv9J8tr6Y6JHHXBSXCxfDJUqJ5IOd/ndAEMXWGHqK
-	LMPdLlhM7QrTvqgdiI8UEAcilqzS/cR12IP5GEXAOLyofHGeRDMuxC8WnifvZ2L3ZTFWQxei4gEdx
-	/sW02YpbUGUYr0B1k5Bf+nEkrVpIyg04XjHdVjv9VU9NrOG+ZlUGt5ZCFmwp6DJkWBN7OktN9CjG6
-	DH0/Pu2U+wp8EcMrQSnUBLgX08LGJhw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:
+	In-Reply-To:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oVWkOc5rzt+HP5wHCmROIut4VFVw0kOSrZIzj3MpzgM=; b=Qe3jP9kK3Oe7Cx
+	rjxF5+qZzl6cCOdCWm0rD5O5aTrmWopNloUVdPFG7qdME7HiBpMAyds9rw1VHSDsRDT7ib2JrxSLo
+	keuiiEsH3XCbL5+LkyZpttXVDRVT5EeyuezTnEUIpKWUt2jFeg8nbBppiVfxxLtF/yaWoRkUDkcMO
+	HgvhgfAXH4G93neAVYu0FIsOJMzKYcnHTmwruc1SUIUILq/jjEBPALrNgC/1u+kOoJiG8StV9wwPd
+	rn1yo+Vy6hjt6FwvWOQT4ur4HIBf7k8MAechltQuoNuicsaamgF/ZgSoOh1RhE8H3J3XwzTN9/xkw
+	4dGhN2SQg+L71nDybWMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihqVx-0005m9-S4; Thu, 19 Dec 2019 07:46:29 +0000
-Received: from alexa-out-blr-02.qualcomm.com ([103.229.18.198])
+	id 1ihqWX-00062j-Hk; Thu, 19 Dec 2019 07:47:05 +0000
+Received: from mail25.static.mailgun.info ([104.130.122.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihqVq-0005lb-9u
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 07:46:24 +0000
-Received: from ironmsg01-blr.qualcomm.com ([10.86.208.130])
- by alexa-out-blr-02.qualcomm.com with ESMTP/TLS/AES256-SHA;
- 19 Dec 2019 13:15:38 +0530
-Received: from pillair-linux.qualcomm.com ([10.204.116.193])
- by ironmsg01-blr.qualcomm.com with ESMTP; 19 Dec 2019 13:15:28 +0530
-Received: by pillair-linux.qualcomm.com (Postfix, from userid 452944)
- id 3A1DF366F; Thu, 19 Dec 2019 13:15:27 +0530 (IST)
-From: Rakesh Pillai <pillair@codeaurora.org>
-To: devicetree@vger.kernel.org
-Subject: [PATCH v2] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module device
- node
-Date: Thu, 19 Dec 2019 13:15:21 +0530
-Message-Id: <1576741521-30102-1-git-send-email-pillair@codeaurora.org>
-X-Mailer: git-send-email 2.7.4
+ id 1ihqWN-00061p-2m
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 07:46:56 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1576741614; h=Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Message-ID: Date: Subject: In-Reply-To: References: Cc:
+ To: From: Sender; bh=8YiI0foaaoHDCVG3pyS8rW20b8Igs060tW2Y+QH4tNc=;
+ b=NVqq4U3lpfxSYwSq4LOfWsm810v9xS7XsfPveII/rOg946PAZM1+AdAmldfsnvnYzX4Zn944
+ AQ0qUzoTICCky+G8JUt8QSIZy/NtY/yMGkvU08yfiBj65bh9L4iBuPKFxokmzYINyv9z/aKN
+ 6oE89QrOBSrwokizbl9kZ13CN+w=
+X-Mailgun-Sending-Ip: 104.130.122.25
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5dfb2aed.7f8b23be65a8-smtp-out-n02;
+ Thu, 19 Dec 2019 07:46:53 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 1AA2BC63C67; Thu, 19 Dec 2019 07:46:53 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from Pillair
+ (blr-c-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.19.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: pillair)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 8DC98C63C50;
+ Thu, 19 Dec 2019 07:46:50 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 8DC98C63C50
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=pillair@codeaurora.org
+From: <pillair@codeaurora.org>
+To: "'Bjorn Andersson'" <bjorn.andersson@linaro.org>
+References: <0101016ed035d185-20f04863-0f38-41b7-b88d-76bc36e4dcf9-000000@us-west-2.amazonses.com>
+ <20191211075301.GI3143381@builder>
+In-Reply-To: <20191211075301.GI3143381@builder>
+Subject: RE: [PATCH] arm64: dts: qcom: sc7180: Make MSA memory fixed for wifi
+Date: Thu, 19 Dec 2019 13:16:47 +0530
+Message-ID: <000f01d5b640$7a293220$6e7b9660$@codeaurora.org>
+MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQG5QEUJ3PrdBpu9docuawAIGGG9XQL5bjGgp+I0uXA=
+Content-Language: en-us
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_234622_833379_B2256543 
-X-CRM114-Status: UNSURE (   7.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.5 (/)
+X-CRM114-CacheID: sfid-20191218_234655_182088_657B297A 
+X-CRM114-Status: GOOD (  18.60  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [103.229.18.198 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.25 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [104.130.122.25 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,88 +95,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Rakesh Pillai <pillair@codeaurora.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add device node for the ath10k SNOC platform driver probe
-and add resources required for WCN3990 on sc7180 soc.
+Sure Bjorn.
+I have sent v2 for the patch "arm64: dts: qcom: sc7180: Add WCN3990 WLAN
+module device node", where I have squashed this change as well.
 
-Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
----
- arch/arm64/boot/dts/qcom/sc7180-idp.dts |  5 +++++
- arch/arm64/boot/dts/qcom/sc7180.dtsi    | 28 ++++++++++++++++++++++++++++
- 2 files changed, 33 insertions(+)
+Thanks,
+Rakesh.
 
-diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-index 189254f..b2ca143f 100644
---- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-+++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-@@ -248,6 +248,11 @@
- 	status = "okay";
- };
- 
-+&wifi {
-+	status = "okay";
-+	qcom,msa_fixed_perm;
-+};
-+
- /* PINCTRL - additions to nodes defined in sc7180.dtsi */
- 
- &qup_i2c2_default {
-diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-index 666e9b9..ce2d2a5 100644
---- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-@@ -42,6 +42,12 @@
- 			compatible = "qcom,cmd-db";
- 			no-map;
- 		};
-+
-+		wlan_fw_mem: memory@93900000 {
-+			compatible = "removed-dma-pool";
-+			no-map;
-+			reg = <0 0x93900000 0 0x200000>;
-+		};
- 	};
- 
- 	cpus {
-@@ -1119,6 +1125,28 @@
- 				#clock-cells = <1>;
- 			};
- 		};
-+
-+		wifi: wifi@18800000 {
-+			status = "disabled";
-+			compatible = "qcom,wcn3990-wifi";
-+			reg = <0 0x18800000 0 0x800000>;
-+			reg-names = "membase";
-+			iommus = <&apps_smmu 0xC0 0x1>;
-+			interrupts =
-+				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
-+				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
-+				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
-+				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
-+				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
-+				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
-+				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
-+				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
-+				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
-+				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
-+				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
-+				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
-+			memory-region = <&wlan_fw_mem>;
-+		};
- 	};
- 
- 	timer {
--- 
-2.7.4
-
+> -----Original Message-----
+> From: Bjorn Andersson <bjorn.andersson@linaro.org>
+> Sent: Wednesday, December 11, 2019 1:23 PM
+> To: Rakesh Pillai <pillair@codeaurora.org>
+> Cc: devicetree@vger.kernel.org; linux-arm-kernel@lists.infradead.org;
+linux-
+> kernel@vger.kernel.org; linux-arm-msm@vger.kernel.org
+> Subject: Re: [PATCH] arm64: dts: qcom: sc7180: Make MSA memory fixed for
+> wifi
+> 
+> On Wed 04 Dec 01:20 PST 2019, Rakesh Pillai wrote:
+> 
+> > The MSA memory is at a fixed offset, which will be
+> > a part of reserved memory. Add this flag to indicate
+> > that wifi in sc7180 will use a fixed memory for MSA.
+> >
+> > Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
+> > ---
+> > This patchet is dependent on the below changes
+> > arm64: dts: qcom: sc7180: Add WCN3990 WLAN module device node
+> (https://lore.kernel.org/patchwork/patch/1162434/)
+> 
+> As mentioned for that patch, squash this change into that patch please.
+> 
+> Regards,
+> Bjorn
+> 
+> > dt: bindings: add dt entry flag to skip SCM call for msa region
+> (https://patchwork.ozlabs.org/patch/1192725/)
+> > ---
+> >  arch/arm64/boot/dts/qcom/sc7180-idp.dts | 1 +
+> >  1 file changed, 1 insertion(+)
+> >
+> > diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > index 8a6a760..b2ca143f 100644
+> > --- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > +++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> > @@ -250,6 +250,7 @@
+> >
+> >  &wifi {
+> >  	status = "okay";
+> > +	qcom,msa_fixed_perm;
+> >  };
+> >
+> >  /* PINCTRL - additions to nodes defined in sc7180.dtsi */
+> > --
+> > 2.7.4
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
