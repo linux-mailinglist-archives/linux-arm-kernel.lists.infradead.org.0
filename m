@@ -2,85 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4C92126E0A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 20:34:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8C87126E15
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 20:39:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zMDL8CLh5AqwMnKstdyQat3LV3PTZ3OcSkR/NfyBsJc=; b=RAtcHLW5CylaDV
-	Vd6R43DiX1OWXsC/BSRhgPxs9czbDx0b1CcfuNwbWD5M1JN/g8et1lw4COU598wPyh7j5XhB8+LG6
-	lVfhr723i3us5+uW96HxoYMNqt7OztLstaeVUBuE/8ncZsTEvo8gCljS3+Z3iWSY9E+Nbjcok25LK
-	3KNgu41Hsd1r1oJxVD1qK6YlzmKBNPF8KA73bXitMtnuXhMmNNqd7I7qohBjLVkXMQoDFMRSq+CX8
-	C6lHpZ937UXANCmk9bg/cES/P7cGtIHKz6gJAL3ffG8fX0Ph1DjP48q90EuHYPRCxLkmS/2aeB3oM
-	mjmGHUZJIdzoeegytQdg==;
+	List-Owner; bh=H5b3EGu+TvhDEuqt89/uvlJgHmkmCBuwGiKgM3m3iV4=; b=C0blXhRcnZAO26
+	a2l/9S8nkbQSON0Ppp5aPbNPgVPIZ/PjwGW0nXtVXyhutn1lkdp91lGux9vrTeLsb6sgx5zUOJUbP
+	13AdkAOIk1S61JNlTERxyL7ha3Gy6LQJsLqTXOvtUyyrsztYDnUAUXdX03Zklj1vJmlrl5aKM6rsa
+	SJqQgRwMCcmcBNPY7PMX4w3QqvTYxe8Yt73wfLHMgQkrHx/WNMuhQldXxDhkyseX2oXWhXh/RWJa7
+	VF/oau4w1HGluMIx2EAAF7wfI/vi11lRwFNGBx7kfWDl+qXqWRBmWZiFaiPwQo8KtKHFl45+HnKS9
+	nuLAjDXU9m3VybOZhTEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii1Z9-0006dF-Cq; Thu, 19 Dec 2019 19:34:31 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1ii1eG-0008JN-10; Thu, 19 Dec 2019 19:39:48 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii1Yx-0006cv-1U
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 19:34:20 +0000
-Received: by mail-ot1-f66.google.com with SMTP id 66so8520949otd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Dec 2019 11:34:18 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=4s0UeefcmQPxDO9I0vP0cU6H8/zBXgxnJhl+iNskVSk=;
- b=XVP+VIPE87zQSrscPzruBe97Ss4cmQlos93MUlkALZWrGX0hNxFz44KhiDZjf8qMKt
- VLEMCNcFGVugsGfkB7yLRbSxGyOetMVt7utZm95MQkv97xDql9naXtgs2P0YLQkn1WFA
- 8x41Aa5HLmh4MjGnYDWlUsTokm8JErBA9jrg8dbHksfqhPynSn9ugl861Pi6ob8G1DrL
- pgwpBIBHgwoaQgS72BUCYVTYz4+ReBd2Pum55InynBUo2RT4RuwoAAJhKC7kK/CSkNI3
- Uqv5ZEGgmAX6od2cmfcGzX7C/Jxc2SmXd4dq0oLHVrsiIXrE8NWlUn3pdhEMGh2YNvqM
- rRjA==
-X-Gm-Message-State: APjAAAVpq+mI1jlKWg0DdSXSbjaJYOYDjugCjEEJaYFtyig/ls3ZMPCf
- 1+mAFmG26E4L+kKviEjiKwtSnNHBRg==
-X-Google-Smtp-Source: APXvYqwRRb0TpvCkbAd8DOTvX/AnQt1KbPO4q7/X6jdpiZYbQd+IW8/opQXVYnWiRvA6JuPFH2Fx4g==
-X-Received: by 2002:a9d:6251:: with SMTP id i17mr10703698otk.14.1576784058062; 
- Thu, 19 Dec 2019 11:34:18 -0800 (PST)
-Received: from localhost ([2607:fb90:20de:fb54:3549:d84c:9720:edb4])
- by smtp.gmail.com with ESMTPSA id 97sm2469562otx.29.2019.12.19.11.34.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 11:34:17 -0800 (PST)
-Date: Thu, 19 Dec 2019 13:34:15 -0600
-From: Rob Herring <robh@kernel.org>
-To: Michael Walle <michael@walle.cc>
-Subject: Re: [PATCH v2 4/5] dt-bindings: arm: fsl: add Kontron sl28 boards
-Message-ID: <20191219193415.GA23458@bogus>
-References: <20191209234350.18994-1-michael@walle.cc>
- <20191209234350.18994-5-michael@walle.cc>
+ id 1ii1e8-0008II-GW
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 19:39:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1576784377;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=prVadGfe425gEg8krjR8jjvWKpR2WFGHzNs5x3wZo7U=;
+ b=bfRb5z/yHofqSYv+yTul2/zihQ0v44dVMuAb8dNCgJUS0dC6mq8j0kjgbAHuzEy7SPwrWa
+ XPwbBkSrnM6AENy5zgJp2flSFDxJBAn4hTLdyl8XSIXY046makft5Y3uUanQ6dBNq4s7lu
+ WSEhR+82jRU7MAephLbEdtg4phXrKF8=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-423-jCat3nvKPdKu8c4bFYo-KA-1; Thu, 19 Dec 2019 14:39:32 -0500
+X-MC-Unique: jCat3nvKPdKu8c4bFYo-KA-1
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 944D8108594D;
+ Thu, 19 Dec 2019 19:39:29 +0000 (UTC)
+Received: from gondolin (ovpn-117-134.ams2.redhat.com [10.36.117.134])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 74E355D9E2;
+ Thu, 19 Dec 2019 19:39:20 +0000 (UTC)
+Date: Thu, 19 Dec 2019 20:39:17 +0100
+From: Cornelia Huck <cohuck@redhat.com>
+To: Sean Christopherson <sean.j.christopherson@intel.com>
+Subject: Re: [PATCH v2 25/45] KVM: s390: Move guts of kvm_arch_vcpu_init()
+ into kvm_arch_vcpu_create()
+Message-ID: <20191219203917.79916aad.cohuck@redhat.com>
+In-Reply-To: <20191218215530.2280-26-sean.j.christopherson@intel.com>
+References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
+ <20191218215530.2280-26-sean.j.christopherson@intel.com>
+Organization: Red Hat GmbH
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191209234350.18994-5-michael@walle.cc>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_113419_090440_353E570C 
-X-CRM114-Status: UNSURE (   9.50  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191219_113940_629163_C1E326D0 
+X-CRM114-Status: GOOD (  11.00  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,25 +90,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Yuantian Tang <andy.tang@nxp.com>,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Michael Walle <michael@walle.cc>, linux-arm-kernel@lists.infradead.org
+Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
+ kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
+ kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Greg Kurz <groug@kaod.org>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ James Hogan <jhogan@kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
+ Vitaly Kuznetsov <vkuznets@redhat.com>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 10 Dec 2019 00:43:49 +0100, Michael Walle wrote:
-> Add the Kontron SMARC-sAL28 board, its variants and combination with
-> carriers.
-> 
-> Signed-off-by: Michael Walle <michael@walle.cc>
-> ---
->  .../devicetree/bindings/arm/fsl.yaml          | 38 +++++++++++++++++++
->  1 file changed, 38 insertions(+)
-> 
+On Wed, 18 Dec 2019 13:55:10 -0800
+Sean Christopherson <sean.j.christopherson@intel.com> wrote:
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+> Move all of kvm_arch_vcpu_init(), which is invoked at the very end of
+> kvm_vcpu_init(), into kvm_arch_vcpu_create() in preparation of moving
+> the call to kvm_vcpu_init().  Moving kvm_vcpu_init() is itself a
+> preparatory step for moving allocation and initialization to common KVM
+> code.
+> 
+> No functional change inteded.
+> 
+> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
+> ---
+>  arch/s390/kvm/kvm-s390.c | 62 ++++++++++++++++++++++------------------
+>  1 file changed, 34 insertions(+), 28 deletions(-)
+
+Reviewed-by: Cornelia Huck <cohuck@redhat.com>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
