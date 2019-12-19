@@ -2,86 +2,135 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52475126290
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 13:48:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 316C61262AE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 13:55:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=A3byI+VEi/38kC0MAIrN5mkLlO+nJ/+lWmG+Uvk+V/s=; b=Cz7yDFTeYD7TSyBoomUVhLyhe
-	P2PgzwavmfBYQt6DerKuMAd0BDnw9mQibPu8bPgrUW+tDZtweX35FUzDe8NZfGOQZ9G7NZp1AhoO9
-	2h0VeYt0rG1hKa+6OnmgFGEsAVnHmUkVxSyQktH67c69xebnOzYlWQSxTux2ztbSPfLVHcxBdc9NR
-	D0mzy2YXGmQVcw4cnQaMnAbX2fl+BS6N4wx/yxNTPTJ1SQkouqtPa2HV8EAREFVHQ/y6NMoCrNMub
-	QN4M0TtOnXvelF4jdJuGu3SDA0hQuv8dgUDijbnIzX4yFcrf8c74INk6sM5gZiyZ5nk1E3ifCvqBR
-	aERPvS2Sg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nFmafdgbqQo/x3UwigKCP2Rz7+ppo4ZcvCF1g5ACUgA=; b=I3zCHlNAiqnOP8
+	PBrrRSsN/i04qxcMCw0hX8Yqa/HrsYHfkBHvc8Laitkmsirn3UJJXbrWkxSi0y+IgMXuy4WQqWHIB
+	zLJ9gv2aAtxePEcYPjE7GbQwY6/FqrfqClF6EJw2RgfK0G+4Mjr0HbMHkJDfc1kPVed3f4nQbSmGm
+	43Eagnql/6iFD2rOur0ZgyaAyMtRZfBUMuQyPXOCmtM2GE3YQgQionURo4ofCe6uTeZlPys+/mOBS
+	MMkiudTlqOMf76f0F0BkkTH0exyTaPUK8/pLnFXZ8KYZxt3X2dpKkewneKBcYtiEIuRAOATWcmGDK
+	QSrzB+tFBDC56g2WMruQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihvDk-0008Q2-RW; Thu, 19 Dec 2019 12:48:00 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1ihvKP-0001wz-VK; Thu, 19 Dec 2019 12:54:53 +0000
+Received: from sv2-smtprelay2.synopsys.com ([149.117.73.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihvDb-0008PW-I2
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 12:47:52 +0000
-Received: by mail-wm1-x342.google.com with SMTP id m24so5291559wmc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Dec 2019 04:47:51 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=e2DBwRLOc0+NXX0lm+V606orQs3w/QtiskRtJFmTJpE=;
- b=PTKns+SdLLr4ZaCEfAh3ObI+jGZMo4+JOlU5CQQRWkDFIVSsPWz2iDbfKhjEq6MKIC
- aRbyCQCnk0cTs2UwulNsRgCaiGU5xFbr8ETxhumyOWd8x1/PXMy2lyyiNaGerK3cQHCZ
- QeXBFYNls7O+PoJIrEVsftRBKevjpiYvieUmujy9N2Ktd21t46Qo2yfAICnLpbqmV8sZ
- x7W+JNTruIQEteqTUii7U1vwxk7FLU6CCKbJhIp95hDFhijA9uokDokESBeuNby6NCnH
- QGAbDMuJK9ssD148eRuhFOTXZ4+6o1OxSY+LTgToJGv6UM3vYL+/4R7PHs2e8issXRYK
- N/fQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=e2DBwRLOc0+NXX0lm+V606orQs3w/QtiskRtJFmTJpE=;
- b=NuscEPRy5UVrg+/3odNKuigPNO01K0fqKmbElvP4ymQtyb34t/bS+SkML7aUv5Fkiy
- 8E1ytUNhgQ+W52mkBf392X6rTlUj29wBeiI7on7wT5CBtsTXr1Q8Sz77eFG/T7hKfXIP
- bsVv/aXUz6nzrnxuQmQ5jBn5GCpGz6QkIlBAckmrDU3V3HTe1QgQ/41PhiCmV7bOgidC
- f+WKwX6iO/IdCXg8sXNcxHS+NHFiV19iB1Bvs3eaiUlyiBK38bbFxxWvn290UW0XkQxA
- arxDtKcmW7+wWyPDDNEi5y7Y3YO1WEmcWZ0JIMBxQpvjlpoZ3VuxxMIAdJ4r1bEph7uo
- BGdg==
-X-Gm-Message-State: APjAAAVDpUx7I9nNyg9+L0vtPP3680k0nf+RYg5DxQbuZc5Sep5yHrVk
- MVNbCH6DKD74deSr6EZnIfM=
-X-Google-Smtp-Source: APXvYqwa9Hu0h5qRLAIYGmBsvZFeHDEip3Ga9oDqR6+Q+7HjHlER5nfEI1KMGyTaWk8sZgzSPZaIvw==
-X-Received: by 2002:a05:600c:2298:: with SMTP id
- 24mr10205863wmf.65.1576759669976; 
- Thu, 19 Dec 2019 04:47:49 -0800 (PST)
-Received: from localhost (pD9E518ED.dip0.t-ipconnect.de. [217.229.24.237])
- by smtp.gmail.com with ESMTPSA id c195sm6591110wmd.45.2019.12.19.04.47.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 04:47:48 -0800 (PST)
-Date: Thu, 19 Dec 2019 13:47:47 +0100
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Lu Baolu <baolu.lu@linux.intel.com>, Joerg Roedel <joro@8bytes.org>
-Subject: Re: [PATCH v3 4/5] iommu: intel: Use generic_iommu_put_resv_regions()
-Message-ID: <20191219124747.GA1440537@ulmo>
-References: <20191218134205.1271740-1-thierry.reding@gmail.com>
- <20191218134205.1271740-5-thierry.reding@gmail.com>
- <2b3020a1-221c-f86b-6440-e9ef65f0c12e@linux.intel.com>
+ id 1ihvKC-0001wX-HL
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 12:54:41 +0000
+Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
+ [10.192.0.17])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 3808A405BC;
+ Thu, 19 Dec 2019 12:54:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1576760080; bh=Q1ER6K86z6A3jHiaM/mR7rc+Ff3LNSGXXroWsWjqt8E=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=OHVyXXUAKtceg5/kVMHspHtuV/jssIvCqWL1u1f90HY8BTDeCsiuPrIchQI7W+1AL
+ CbmwMrUamSParJPhvBTWkLGURQ4QoGYZTS/8lP86WO7nkd7GgxGe2/NKrisIKo2QN2
+ iOmhYs5RtADeDqiYwmaB1JMKD4tIZcI6ThBQDXJZIekdFpsQlTwu9Tf8QY0pR4zK/I
+ vASzLSxCf8XifzRWRq9DyECjHiP51g29+Q4I3dGcILTNIPCSkIpWkATOrK5QMerpwl
+ FzBRlVL3TMYlvvw8Af3ZvHasEeejuXUCGR9gBJo2IgzoJ785Fb44chlGjKh0rAvQXl
+ QxhII9LUgpfkA==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id 74863A0079;
+ Thu, 19 Dec 2019 12:54:37 +0000 (UTC)
+Received: from us01hybrid1.internal.synopsys.com (10.200.27.51) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 19 Dec 2019 04:54:28 -0800
+Received: from NAM04-CO1-obe.outbound.protection.outlook.com (10.202.3.67) by
+ mrs.synopsys.com (10.200.27.51) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Thu, 19 Dec 2019 04:54:28 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Iq2k5zDMwH7AzpyzEO86x0TkOO/7F3TaiJkvh8JsFJxu/PCSHVuwwp/4uTF+756N3sPxSxls90VhhaE5ELVwlsms0QT2CM2feq5PR1RWldSdeiQa6zGlVGMZ+VtBEqrNEsW6NswfCPMODMe+rqYb0LhQFmfhvWuxP466vc8zctzfsZ2YY6x5FGWOYUXIYiLtAmUMrcn1e+5xdL/wmOWRGAzU2ivLsBkdSvbk6unaEVFaXzOnb2e0gIeAHSOR9kaa5e64amIEMHT4R+Y6AHmUVZ55dDDSfIqYzO16V/vgkeVNanZcO88E1E69jFGxFfYx5GHjvZtNu/5MJ+1KF3g3OQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Q1ER6K86z6A3jHiaM/mR7rc+Ff3LNSGXXroWsWjqt8E=;
+ b=H3x5OJpjiCecIMeh1Yf9btDMPshqLfzcDrdNe1C49MyEX7V4WmiGo/iZzBTZiAEWOs0DZkW+NLZQS82fyN5YXqErgoFx5Rgws0awry86Lnk8GM2cX1aVcARqJJZ4xJK/TYYGsqaJ+KBYQRvvHOc10N06A6zjZ3RCGLyTwXtfsb9VtHOYywSMOKcLokAZ2Rq1wzX/niGUGlpHg4MiLKr5upvIPUk8ovbsAdxg9XbozMXkpPrXnEBzjH9p8u2PD98k+Riiu00wF1pLBd/nZcervIkCZYkW9Fj1raoxiwTtFUjsam9Emq5VvjqVAwcUPP/lc+G08WwfloC5JfkHC30uCw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Q1ER6K86z6A3jHiaM/mR7rc+Ff3LNSGXXroWsWjqt8E=;
+ b=KiuKtIiXowx2l1rwC6656rnWIFmqnC0dwY7zmjFFpxl7xryOV562JJKCkkaH22wLtNbonmBSdpvkLy0BfJxmVobTbdUKpGUaH8bWT4bPxgrOGPWCmbNcEt2jdXz4ZFXx+mSEkG9ibQbecKAOYWdD0NSXzaS2EAJcYLPUc5sWlok=
+Received: from MN2PR12MB4093.namprd12.prod.outlook.com (52.135.51.203) by
+ MN2PR12MB3454.namprd12.prod.outlook.com (20.178.242.16) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2559.14; Thu, 19 Dec 2019 12:54:27 +0000
+Received: from MN2PR12MB4093.namprd12.prod.outlook.com
+ ([fe80::d0e:7272:4a88:ffeb]) by MN2PR12MB4093.namprd12.prod.outlook.com
+ ([fe80::d0e:7272:4a88:ffeb%5]) with mapi id 15.20.2538.019; Thu, 19 Dec 2019
+ 12:54:27 +0000
+From: Minas Harutyunyan <Minas.Harutyunyan@synopsys.com>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>, "gregkh@linuxfoundation.org"
+ <gregkh@linuxfoundation.org>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>, "kgene@kernel.org"
+ <kgene@kernel.org>, "krzk@kernel.org" <krzk@kernel.org>
+Subject: Re: [PATCH v2 0/2] Add yaml DWC2 bindings
+Thread-Topic: [PATCH v2 0/2] Add yaml DWC2 bindings
+Thread-Index: AQHVtlg1SWbTGIsCKUivGYMMUpd+xafBajIA
+Date: Thu, 19 Dec 2019 12:54:27 +0000
+Message-ID: <c6101bcb-1491-b9ce-b0f8-e50826202ee3@synopsys.com>
+References: <20191219103536.25485-1-benjamin.gaignard@st.com>
+In-Reply-To: <20191219103536.25485-1-benjamin.gaignard@st.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=hminas@synopsys.com; 
+x-originating-ip: [46.162.196.54]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: e911fc8a-129b-4a9e-73a7-08d7848294ba
+x-ms-traffictypediagnostic: MN2PR12MB3454:
+x-microsoft-antispam-prvs: <MN2PR12MB3454F73E4F28AE818469A2B4A7520@MN2PR12MB3454.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 0256C18696
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(396003)(39850400004)(136003)(376002)(346002)(366004)(199004)(189003)(31696002)(5660300002)(478600001)(66946007)(81156014)(76116006)(81166006)(6512007)(4326008)(6486002)(110136005)(7416002)(36756003)(186003)(31686004)(86362001)(2906002)(91956017)(71200400001)(8936002)(66476007)(8676002)(316002)(2616005)(53546011)(54906003)(4744005)(6506007)(64756008)(26005)(66446008)(66556008);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MN2PR12MB3454;
+ H:MN2PR12MB4093.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: EiM1FTjAdoffOd9KgMPY5SSON6nrGJNf27wXHsGHeW+VDidOcxe58KFkhJFREd7TAq/etHeM1BrXRIAA6vR2cYn2PZzXyRZOZiXt/m9p2RrVBWxnC53IQc92Ive/rWMROEO6IFMiFb2ue+TK4a8uCJ+Xm3R96yiKHeuuxKmqyMRhIjukTjkK9wZFMqK43ZIOpVDdXdLZrPPtBvVfEruMKN1IgIfFP0CIX8HxI4yckbHcoYzvKbbSdOMctBY96iWDnb42VMg0FooNvoOWFrPByDS8l8IvdeWfoSexAu0Y0M2duu/ZiD4/5MNWufa8GPJ9QqpBsXfoooENLLprIeywvRUy+egTkPvM2Q+pkC5ldwhsyndojCMfFEtr2/52GOtYIDtdEtDGZGcBDav4P6oy+B54V4vePSLebra3x4T9mzHpPKnSlLVFFqI9QShFm6Ut
+x-ms-exchange-transport-forked: True
+Content-ID: <C22F634CEFEC894B8CE99BABDC974744@namprd12.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <2b3020a1-221c-f86b-6440-e9ef65f0c12e@linux.intel.com>
-User-Agent: Mutt/1.13.1 (2019-12-14)
+X-MS-Exchange-CrossTenant-Network-Message-Id: e911fc8a-129b-4a9e-73a7-08d7848294ba
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Dec 2019 12:54:27.0553 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: YVGYFkMPBq5/FyCmv5ikFjz/6vhjEUVOr357SesOSHTczKPgRKomNUp0w6keKjZ3+LE4efhNQGXaQjJS75JFPw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR12MB3454
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_044751_597971_E5929409 
-X-CRM114-Status: GOOD (  19.68  )
+X-CRM114-CacheID: sfid-20191219_045440_589570_BB41BDFF 
+X-CRM114-Status: GOOD (  13.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -101,120 +150,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
- virtualization@lists.linux-foundation.org, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>, David Woodhouse <dwmw2@infradead.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8970267302768884209=="
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "amelie.delaunay@st.com" <amelie.delaunay@st.com>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ "linux-usb@vger.kernel.org" <linux-usb@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Benjamin,
 
---===============8970267302768884209==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="Q68bSM7Ycu6FN28Q"
-Content-Disposition: inline
+On 12/19/2019 2:35 PM, Benjamin Gaignard wrote:
+> Convert DWC2 bindings to json-schema and fix issue in dtsi file.
+> 
+> Benjamin Gaignard (2):
+>    dt-bindings: usb: Convert DWC2 bindings to json-schema
+>    ARM: dts: exynos: Remove unneeded "snps,dwc2" from hsotg node
+> 
+>   Documentation/devicetree/bindings/usb/dwc2.txt  |  64 ----------
+>   Documentation/devicetree/bindings/usb/dwc2.yaml | 152 ++++++++++++++++++++++++
+>   arch/arm/boot/dts/exynos3250.dtsi               |   2 +-
+>   3 files changed, 153 insertions(+), 65 deletions(-)
+>   delete mode 100644 Documentation/devicetree/bindings/usb/dwc2.txt
+>   create mode 100644 Documentation/devicetree/bindings/usb/dwc2.yaml
+> 
 
+In Maintainers file mentioned that EHCI and OHCI drivers maintainer is 
+Alan Stern, but in 2 existing yaml files (generic-ehci.yaml and 
+generic-ohci.yaml) mentioned that maintainer is Greg Kroah-Hartman.
+So, I'm not sure that in dwc2.yaml file should be written me.
+Actually I'm not familiar with documentation/bindings.
 
---Q68bSM7Ycu6FN28Q
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Dec 19, 2019 at 09:53:22AM +0800, Lu Baolu wrote:
-> Please tweak the title to
->=20
-> "iommu/vt-d: Use generic_iommu_put_resv_regions()"
->=20
-> then,
->=20
-> Acked-by: Lu Baolu <baolu.lu@linux.intel.com>
->=20
-> Best regards,
-> baolu
-
-Joerg, do you want me to resend with this change or is it more efficient
-if you fix up the subject while applying?
-
-Thierry
-
-> On 12/18/19 9:42 PM, Thierry Reding wrote:
-> > From: Thierry Reding <treding@nvidia.com>
-> >=20
-> > Use the new standard function instead of open-coding it.
-> >=20
-> > Cc: David Woodhouse <dwmw2@infradead.org>
-> > Signed-off-by: Thierry Reding <treding@nvidia.com>
-> > ---
-> >   drivers/iommu/intel-iommu.c | 11 +----------
-> >   1 file changed, 1 insertion(+), 10 deletions(-)
-> >=20
-> > diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
-> > index 42966611a192..a6d5b7cf9183 100644
-> > --- a/drivers/iommu/intel-iommu.c
-> > +++ b/drivers/iommu/intel-iommu.c
-> > @@ -5744,15 +5744,6 @@ static void intel_iommu_get_resv_regions(struct =
-device *device,
-> >   	list_add_tail(&reg->list, head);
-> >   }
-> > -static void intel_iommu_put_resv_regions(struct device *dev,
-> > -					 struct list_head *head)
-> > -{
-> > -	struct iommu_resv_region *entry, *next;
-> > -
-> > -	list_for_each_entry_safe(entry, next, head, list)
-> > -		kfree(entry);
-> > -}
-> > -
-> >   int intel_iommu_enable_pasid(struct intel_iommu *iommu, struct device=
- *dev)
-> >   {
-> >   	struct device_domain_info *info;
-> > @@ -5987,7 +5978,7 @@ const struct iommu_ops intel_iommu_ops =3D {
-> >   	.add_device		=3D intel_iommu_add_device,
-> >   	.remove_device		=3D intel_iommu_remove_device,
-> >   	.get_resv_regions	=3D intel_iommu_get_resv_regions,
-> > -	.put_resv_regions	=3D intel_iommu_put_resv_regions,
-> > +	.put_resv_regions	=3D generic_iommu_put_resv_regions,
-> >   	.apply_resv_region	=3D intel_iommu_apply_resv_region,
-> >   	.device_group		=3D pci_device_group,
-> >   	.dev_has_feat		=3D intel_iommu_dev_has_feat,
-> >=20
-
---Q68bSM7Ycu6FN28Q
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl37cW8ACgkQ3SOs138+
-s6HwMg//QTaq9qdL6boTSg1EAx8bgcGx/ElOv3yPZusDHrNbEG7C19YElgpyGquj
-7x+Amfj9QD/8vIKJg+w2Z7VpKwUgrVyteYw+dOyFzSx5gjqLE7/r5klBFwR32/Uz
-pGffIE2X3N6xtCfdzYrFt1ay9wM+cHJA0lvMy7oFX+XEOxc/eAorwm68g+UgkYAm
-QigqZ/5cjjlkIkQL2FThNHnwpwd9zAhOMchjlyz+4UZv/4AvQqX0YSilx72T4JP0
-3LOCto7pCGTmvv/4/E0bCOzIa+FOMZf56LLqOstqBhIoPeBWGuGNXUerZ5iV22E0
-ah5RgWxHM0YwGufRGyHiJ8niUQlIuuIzFsJmjvXbDHdaIM7/tZMGRVRGNcZuINBb
-5Addl123iKthkOTBBqNMoZwg9Y30E3mG07wZbH8tkZj91CRJPJ1Ui5uQsEtxlwvS
-jwGcb9kVFk3PJO0AuKvDC9VTi40K1MDYW8NLAtTYV4UhLKA5XGuOWawKZWC20Q+X
-88ie9W4l5+HhW9hgpSfawGdKAlOeeCzXTVmqzm8o5vaAIZ6qGnaf4peVVZ59YF70
-HSty77b43BATtE0oL3ps6hzLgNMNQYSAd8hOnA1cqEwK4+wyCsRgfzx64jxyMOSB
-vCaXjNxdpNsgZWqwqw5NVrsV2z3Jn/f11Wvsob4EMM5C3/ZDuVE=
-=lKCJ
------END PGP SIGNATURE-----
-
---Q68bSM7Ycu6FN28Q--
-
-
---===============8970267302768884209==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+Thanks,
+Minas
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8970267302768884209==--
-
