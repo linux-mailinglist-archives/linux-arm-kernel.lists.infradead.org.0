@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 865EC127139
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 00:06:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D68912713D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 00:06:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9o/t6/geN9mT7i/BTWS09bm/L9RV9+0MgBqkCzttBVI=; b=oZ4p9EDHBegbaF
-	KE8fnJPOZMwZN8ac0bHHhiKL6NrjEMEEjQLc5gMC6BWqbnuP0IfgUiv0FrFsmbxEZ1sosuImNMahD
-	gnQBq/3O9jodYzbQwH3Ak0TT9judUETAhF/WwA+O4V3JU1GBV87zbaJu81JLk0V69Az5j0vxR/lew
-	9wZyA1+elbaD48y6aEHvMoivBvpj1UBtha08Txg8DWUCH9pmt8jbp8dMfIVV73Gz/887rXAMc/qdU
-	mdUTViVyTxOPVdFrUF4GcpAvJ1k2n8af1T6MA0o3n+8tspALebfmXwoMpJ8CWcRU722F+Gy1XRSi3
-	jP4fGGzmZrh4ap56EzpQ==;
+	List-Owner; bh=2wBZEFfalgAq7DY4MW088+7UGNmtVMGFXrBRuFTK+W4=; b=pltFAES/TtfcZs
+	fgQLxy8FtN//8esMeREhl7/wq6wPjNEejevYm2v8405WSnHP6kajBi+PlbHruukqEGchJS0WZgELY
+	MKE12Eom8ZIxLKi43OchDA7lO2pZAHKeaI642NzIZMZQp43vQKYZtP3Dv2Ed2QXGTvmEsT1ahIr4+
+	p0AjjSdnewpqnQPAJbA4ptT9y4gMTq//V8tny42d7q2ehSkwGZDvkfVpX+0nUEd6y76XVGCJ/412+
+	6V4Pa3t3cLVi2wUxElmS4kMmzsME1tDIhN4HVVFBqfHo3AFpzA/37gPc3sl/j8C3eX83DeOVK2Q1N
+	IbhKmeF1XvikLUssYcNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii4rh-0003Ap-EE; Thu, 19 Dec 2019 23:05:53 +0000
-Received: from mail-ot1-f45.google.com ([209.85.210.45])
+	id 1ii4sR-0003Y2-0R; Thu, 19 Dec 2019 23:06:39 +0000
+Received: from mail-oi1-f170.google.com ([209.85.167.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii4rQ-000368-1O; Thu, 19 Dec 2019 23:05:37 +0000
-Received: by mail-ot1-f45.google.com with SMTP id k14so9241551otn.4;
- Thu, 19 Dec 2019 15:05:35 -0800 (PST)
+ id 1ii4sG-0003XL-Ir; Thu, 19 Dec 2019 23:06:29 +0000
+Received: by mail-oi1-f170.google.com with SMTP id c77so3425547oib.7;
+ Thu, 19 Dec 2019 15:06:28 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:content-transfer-encoding
  :in-reply-to:user-agent;
- bh=ZCQ1Dwncfy85QJcD+8lI4SZ2RUHk9BCcr6X6gMTs3cQ=;
- b=nCYkN2rPdnqI6hw02C8bY+/qptnH6ZADH/DwPwXq65tzgqJa4c/8ui/T2ge7B3MCrJ
- SSDTAsYa10FX+0Ps65S7OKLr1V1rTfsgAo7ptcco72KbQptNmvk3RhxX9fqySyzGZPOw
- U8yzrv3E3MKPvFuCbTRWAFiUHNKUWchiZiVduW/izASY4XfzH16mesGA3/84c5qgfIpn
- 5RxlUoaAyyGAbHGbIu9jPefxvlJLM9vMHdlK4VcUQWZAbEq1O3BlmPg5rl63w27bEsDO
- rGEx51u4F9FMdXzuQRIBsvSOJbpiaYUzj9YGn435v5Xm90JioyMbhYE/pCwdqGDAa3mD
- ajZw==
-X-Gm-Message-State: APjAAAWAcgxbTO1N/G4+OmSEn+WABZz1C0g6xqWGCk+MDpsFgGL83MI0
- Imuiy8jrDyPw9yn1P0WdNNWwT6EXmQ==
-X-Google-Smtp-Source: APXvYqxGFILFdnmpYvTlQh/DQsjlI6cjEEvTx4e/kHMSohnyw/QBA+Cv+Bb7YZtOB1stiIlIBzxl4A==
-X-Received: by 2002:a05:6830:160c:: with SMTP id
- g12mr11177327otr.82.1576796734931; 
- Thu, 19 Dec 2019 15:05:34 -0800 (PST)
+ bh=1yZH8V3CdOmQjuS73Msz5ZyhW6PkWuP2FDRhP7F/Hfk=;
+ b=J5tENWS4RWRrfPVRufTy92b8VlDuqBvQGnejRgTlBJ3xH4tBIJNLDk8sZHL6p/FDyI
+ CuKVwgJa5WmTNw07jbd4MCCuoCHaUpl5Np2DZp92HS3QM7OScjPaaLb4NUjzdV0hQdRl
+ xPZA47slHNDOxYs32KRdo8YD4WpFsR2J5xDRgPlgwsdWR7Q7W8KKY2tl4gNzS0JslOz0
+ MtI8FmG6qa47NI9vZU7zobWswwC13aKyqNCokhgSZcLUbeHj1NWFShYVyTrXLyAzk5tz
+ 4sLBlqEeb9gWctjYntXWJfCXwcoebM2D87QeHtWoODxizzOO9fVMS5559QMzjJ5Co+Pp
+ 6qDw==
+X-Gm-Message-State: APjAAAWnqCdAz3b3pwKPPN8HEMM4M5FDZu3vJ9QgbF1g0gRSnlbhXaZs
+ QYNTlUVjhi5VpB78Ja5ZUg==
+X-Google-Smtp-Source: APXvYqwSIAXcQUDg2gX98PBOc+oiM4Gom1haSyaRLuef1KLWXsxmd15JOd90nbJsIeaJwD3TBVTLrQ==
+X-Received: by 2002:aca:f445:: with SMTP id s66mr3072290oih.95.1576796787716; 
+ Thu, 19 Dec 2019 15:06:27 -0800 (PST)
 Received: from localhost (ip-184-205-174-147.ftwttx.spcsdns.net.
  [184.205.174.147])
- by smtp.gmail.com with ESMTPSA id q25sm2662018otf.45.2019.12.19.15.05.34
+ by smtp.gmail.com with ESMTPSA id m68sm2497501oig.50.2019.12.19.15.06.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 15:05:34 -0800 (PST)
-Date: Thu, 19 Dec 2019 17:05:32 -0600
+ Thu, 19 Dec 2019 15:06:27 -0800 (PST)
+Date: Thu, 19 Dec 2019 17:06:25 -0600
 From: Rob Herring <robh@kernel.org>
 To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
-Subject: Re: [RFC 15/25] dt-bindings: vendor-prefixes: Add Fude
- Microelectronics
-Message-ID: <20191219230532.GA6057@bogus>
+Subject: Re: [RFC 16/25] dt-bindings: leds: tm1628: Add Fude Microelectronics
+ AiP1618
+Message-ID: <20191219230625.GA7332@bogus>
 References: <20191212033952.5967-1-afaerber@suse.de>
- <20191212033952.5967-16-afaerber@suse.de>
+ <20191212033952.5967-17-afaerber@suse.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191212033952.5967-16-afaerber@suse.de>
+In-Reply-To: <20191212033952.5967-17-afaerber@suse.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_150536_113505_CA853E83 
-X-CRM114-Status: UNSURE (   7.13  )
+X-CRM114-CacheID: sfid-20191219_150628_616980_3C9E360B 
+X-CRM114-Status: UNSURE (   7.92  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -69,18 +68,15 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.45 listed in list.dnswl.org]
+ no trust [209.85.167.170 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.45 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -106,15 +102,19 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 12 Dec 2019 04:39:42 +0100, =3D?UTF-8?q?Andreas=3D20F=3DC3=3DA4rber=
+On Thu, 12 Dec 2019 04:39:43 +0100, =3D?UTF-8?q?Andreas=3D20F=3DC3=3DA4rber=
 ?=3D wrote:
-> Assign vendor prefix "szfdwdz", based on their domain name.
+> Define a compatible string for AiP1618 chipset.
 > =
 
 > Signed-off-by: Andreas F=E4rber <afaerber@suse.de>
 > ---
->  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  @Rob: This one would conditionally need to further restrict reg ranges t=
+hen.
+>  =
+
+>  Documentation/devicetree/bindings/leds/titanmec,tm1628.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 > =
 
 
