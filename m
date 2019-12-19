@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC6AB126ECC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 21:23:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85AFF126ED1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 21:24:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G4UW9YF8uLPD/TQXYGn6yYzTwPHFg39jvzD7I/e1+5w=; b=CxAdJDxOHCFXWL
-	SmGAU5If+FVhYCCK4LrJMyc/kQLGJA2XvLMcoXjyG8MnRXnMNJ1jCKW9OhGNj1P0JkH6MWTlx+Xsx
-	siGNc8NCi59xRNTXQOjwwFHBd8ZTWopvNv/RbQX5Rj4MGahOSUOWT5uGbq/KQ+y8DRLM6+bDm6uSm
-	e/JmrlPGWyXnz/vmddZ8s9XY7oLey0jMRpG5k2lKUlSiIkZDFHzythMCRKaTTVKCWY3Q12mEekg7W
-	WEj8kJwdsNB8scWqGsdNRd/BWDjeC1cBW6GANbaeRbVQFMB1j77BYgGQEkC92S7Ja9Z1VDvyAi/0v
-	JCR4QplxJaorz99W/lvw==;
+	List-Owner; bh=h24U+jPTUVAOeMQwc0CMVx2bmGmoz2+SBODwHGRrTc8=; b=QWvprGRKH1jLLD
+	ZB7cRv/1yd/KqE9kb46fUWar/mw1PWiD2rBZg8kFtR29UMs9oYJFnMLuvmAELuX/pWgGQjgvIksgJ
+	HseTMXwfGniNACNwkMNarZCFv4OGmceOqynetSxrV9sAysdOcBhmFCbYeXX4yHbb6xsyzaxSo6p++
+	CCs4uKpoTgbMIlh0zFzzjc76EAWiQwOyCdbKzn86YZONslD4LmY0OPnDNkKmiS8VkQ3aE3Abg6o7D
+	L3odf1II9rFSy8h6/1GaTkpiByIh6hRMHfU1Ux6q41sKWiEHbEHkfIUiPS6QsVTgNCwZg72YKNBp9
+	8Rh6i+ZXIosVx31QNkMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii2KA-0000Ie-Cw; Thu, 19 Dec 2019 20:23:06 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::3])
+	id 1ii2Kv-0001BN-Lk; Thu, 19 Dec 2019 20:23:53 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::4])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii2Iy-0007ys-U7
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 20:21:54 +0000
+ id 1ii2Iz-0007zF-Cd
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 20:21:57 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1576786911;
  s=strato-dkim-0002; d=gerhold.net;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=TdmaWHXYZcW1R+/Rup5KpwyfgOBgzcXrSUBNzmQYpiw=;
- b=GkuQuNStx28AmEYGM8Wkkt66pc82O/mX2UxLflPTZ38mWNfwmH2gsl1Oxx7nDTwwUO
- V5ovIxbLvFAeCo8wsMDtHuFd7gFDKTBGQTDzuUqktL9BoVUthUqXQ9fWaVzzXIyWEVlr
- JKZYKRN6XGFCB4EQEzhw3P1BOZR1xugBdqI/OtMhrvHoQw5Ic8EyRZdxvYEJ2JXRqcIv
- g+FRr18Q9huINiudoE8i44sEyR3ulJs5dXDQZNT8MY45iMbdGUqiKVDaf98yseGk4jsU
- mlXwUqr5qVTODhlzZNtRQiJPBe5ZpYHY0kIj/63xdAoU40zpdl7/JoTnGzo1I22Z1JjF
- rAnw==
+ bh=HAbd9d4NTDF2e/QveCagzTM33lrIAhUfv351iriFU0E=;
+ b=pV6Aq4ZSn0N+YKA+1CCdPY/vj3RtGi9hdOKW/eRCezIJbFv4apASiHc7Z00O/eRn/u
+ BXVfAX5l/EqbzThe9JuMYVmV4NP0mNBTz+zq8WrffRfb9YJjfwdtiigi0AGof9G05lkI
+ gAedfU5q42D63uQKTxNGXbH4zlVP3EVHvZb8vad0j3cqs08w1RjYwovGqEY7R4inO8TE
+ 9Ihp9w+DKe5jx09tfOdQfEz+1MDa2u3N0WY2tqlMKG0HNWpT3faRSRcK8EdeKq2zWI8h
+ kEFhz2aThD8iOk3LmtYPi5O5YrgaMYKTK+x1M9WlJhCXJqgq/YCDoHaeovBF4KMTKHkO
+ 3fqg==
 X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVORvLd4SsytBXQrEOHTIXtszvsxM1"
 X-RZG-CLASS-ID: mo00
 Received: from localhost.localdomain by smtp.strato.de (RZmta 46.1.1 AUTH)
- with ESMTPSA id f021e2vBJKLi3ZD
+ with ESMTPSA id f021e2vBJKLj3ZF
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
  (Client did not present a certificate);
- Thu, 19 Dec 2019 21:21:44 +0100 (CET)
+ Thu, 19 Dec 2019 21:21:45 +0100 (CET)
 From: Stephan Gerhold <stephan@gerhold.net>
 To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH 6/9] ARM: dts: ux500: samsung-golden: Add touch screen
-Date: Thu, 19 Dec 2019 21:20:49 +0100
-Message-Id: <20191219202052.19039-7-stephan@gerhold.net>
+Subject: [PATCH 7/9] ARM: dts: ux500: samsung-golden: Add WiFi
+Date: Thu, 19 Dec 2019 21:20:50 +0100
+Message-Id: <20191219202052.19039-8-stephan@gerhold.net>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191219202052.19039-1-stephan@gerhold.net>
 References: <20191219202052.19039-1-stephan@gerhold.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_122153_128806_08C727A3 
-X-CRM114-Status: GOOD (  11.55  )
+X-CRM114-CacheID: sfid-20191219_122153_595127_50D66AEA 
+X-CRM114-Status: GOOD (  13.83  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5302:0:0:3 listed in]
+ low trust [2a01:238:20a:202:5302:0:0:4 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -89,74 +89,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-samsung-golden has an Atmel mXT224S touch controller connected to I2C.
-It is supported by the existing driver for atmel,maxtouch, so all we
-need to do to make it work is to define the necessary device tree nodes.
+samsung-golden uses a BCM4334 WiFi+BT combo chip, connected to SDIO.
+It is supported by the brcmfmac driver in mainline,
+so we only need to set up the device tree to make it work correctly.
 
-The atmel_mxt_ts driver does not support controlling regulators yet,
-so add regulator-always-on for now to turn on the necessary regulators.
+Note: brcmfmac requires (proprietary) firmware + a device-specific
+NVRAM file. Both can be extracted from the stock Android system
+used on samsung-golden:
+  - /system/etc/wifi/bcmdhd_sta.bin_b2   -> /lib/firmware/brcm/brcmfmac4334-sdio.bin
+  - /system/etc/wifi/nvram_net.txt_GPIO4 -> /lib/firmware/brcm/brcmfmac4334-sdio.samsung,golden.txt
+
+brcmfmac4334-sdio.bin from linux-firmware also seems to work,
+but results in occasional errors for some reason.
 
 Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
 ---
- .../arm/boot/dts/ste-ux500-samsung-golden.dts | 31 +++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ .../arm/boot/dts/ste-ux500-samsung-golden.dts | 56 +++++++++++++++++++
+ 1 file changed, 56 insertions(+)
 
 diff --git a/arch/arm/boot/dts/ste-ux500-samsung-golden.dts b/arch/arm/boot/dts/ste-ux500-samsung-golden.dts
-index 14a084e1846b..e75a425d177e 100644
+index e75a425d177e..d22b2879c46a 100644
 --- a/arch/arm/boot/dts/ste-ux500-samsung-golden.dts
 +++ b/arch/arm/boot/dts/ste-ux500-samsung-golden.dts
-@@ -142,6 +142,26 @@ imu@68 {
- 			};
- 		};
+@@ -64,9 +64,27 @@ sdi1_per2@80118000 {
+ 			non-removable;
+ 			cap-sd-highspeed;
  
-+		i2c@80110000 {
-+			status = "okay";
++			vmmc-supply = <&wl_reg_on>;
 +
-+			pinctrl-names = "default", "sleep";
-+			pinctrl-0 = <&i2c3_c_2_default>;
-+			pinctrl-1 = <&i2c3_c_2_sleep>;
+ 			pinctrl-names = "default", "sleep";
+ 			pinctrl-0 = <&mc1_a_2_default>;
+ 			pinctrl-1 = <&mc1_a_2_sleep>;
 +
-+			touchscreen@4a {
-+				compatible = "atmel,maxtouch";
-+				reg = <0x4a>;
++			#address-cells = <1>;
++			#size-cells = <0>;
 +
-+				/* GPIO218 (TSP_INT_1V8) */
++			wifi@1 {
++				compatible = "brcm,bcm4329-fmac";
++				reg = <1>;
++
++				/* GPIO216 (WLAN_HOST_WAKE) */
 +				interrupt-parent = <&gpio6>;
-+				interrupts = <26 IRQ_TYPE_EDGE_FALLING>;
++				interrupts = <24 IRQ_TYPE_EDGE_FALLING>;
++				interrupt-names = "host-wake";
 +
 +				pinctrl-names = "default";
-+				pinctrl-0 = <&tsp_default>;
++				pinctrl-0 = <&wlan_default>;
 +			};
-+		};
+ 		};
+ 
+ 		/* eMMC */
+@@ -290,6 +308,28 @@ sd_level_translator: regulator-sd-level-translator {
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&sd_level_translator_default>;
+ 	};
 +
- 		prcmu@80157000 {
- 			ab8505 {
- 				ab8500_usb {
-@@ -161,6 +181,7 @@ ab8500_ldo_aux2 {
- 						regulator-name = "vreg_tsp_a3v3";
- 						regulator-min-microvolt = <3300000>;
- 						regulator-max-microvolt = <3300000>;
-+						regulator-always-on; /* FIXME */
- 					};
++	/*
++	 * WL_REG_ON takes WLAN out of reset and enables the internal regulators.
++	 * The voltage specified here is only used to determine the OCR mask,
++	 * the BCM chip is actually connected directly to VBAT.
++	 */
++	wl_reg_on: regulator-wl-reg-on {
++		compatible = "regulator-fixed";
++
++		regulator-name = "wl-reg-on";
++		regulator-min-microvolt = <3000000>;
++		regulator-max-microvolt = <3000000>;
++
++		startup-delay-us = <100000>;
++
++		/* GPIO215 (WLAN_EN) */
++		gpio = <&gpio6 23 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&wlan_en_default>;
++	};
+ };
  
- 					ab8500_ldo_aux3 {
-@@ -177,6 +198,7 @@ ab8500_ldo_aux5 {
- 						regulator-name = "vreg_tsp_1v8";
- 						regulator-min-microvolt = <1800000>;
- 						regulator-max-microvolt = <1800000>;
-+						regulator-always-on; /* FIXME */
- 					};
- 
- 					ab8500_ldo_aux6 {
-@@ -309,6 +331,15 @@ golden_cfg1 {
+ &pinctrl {
+@@ -340,6 +380,22 @@ golden_cfg1 {
  		};
  	};
  
-+	tsp {
-+		tsp_default: tsp_default {
++	wlan {
++		wlan_default: wlan_default {
 +			golden_cfg1 {
-+				pins = "GPIO218_AH11";	/* TSP_INT_1V8 */
-+				ste,config = <&gpio_in_nopull>;
++				pins = "GPIO216_AG12";	/* WLAN_HOST_WAKE */
++				ste,config = <&gpio_in_pd>;
++			};
++		};
++
++		wlan_en_default: wlan_en_default {
++			golden_cfg1 {
++				pins = "GPIO215_AH13";	/* WLAN_EN */
++				ste,config = <&gpio_out_lo>;
 +			};
 +		};
 +	};
