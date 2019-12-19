@@ -2,43 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93FD01261EF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 13:19:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFB721261FF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 13:20:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=rgtWIQX9gDPtWTZS9eOfyoNsGeRelqGEXh37ACUIf+w=; b=lTx
-	SHRyNFzjM2JzedZhLZNGTD4VIR3/i4m5cCixCkHjx/O5C/XQ8DVdhWsGBR7nBcJdszipYEPE/pgfA
-	EXZoVTxLQoZqOF13G8OczuXmYr2+vLVcjhxZactM9zLj+x+faQSGNOoo5aNbruD/jrS+g8YfEiNWb
-	cRyWBsxVbT9LdXQTohrI732P89dkdVc29duKzwYXQIVDDOGHKKkySgyrNL/nEYmkkyfvUF6++Xe4G
-	8yzLAsnwldy5Y//e/4nOhNSu+JVW74ZS2wgnLwfM0qTMovlgLOUeLnwP9M1R1YZHsiD7uApmNRhJl
-	3GhxBpndTssWmrssRasR3t+S7d5lMrQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=f3HaN7/YWYZG0gihe8hw7Sfv578WO/D8a7h7Qbcj67Q=; b=m4ZSRyEpyKSfBJuQei5h2IzsE5
+	zbYMACPY6WbrygMq9S1PTDyVtL1RvfmUP21J3lQeCUGLhDOzDxPvtFTr+F4oP9cv6CnWcuKKv+4pK
+	TlWuOGRckhWQMNvpipodSdwi/qhebS0Nk4N2FZzM9B5WzYKgixP7TH5A43A1jUsvmte2AtsxM4AhR
+	pbMsdY0yiUvVCzLYjpZkzAS21S9JJDTVtP7EKEG0jQHehGuPEvaFy0BjzzKeBE5jNDrpRapdVA3W2
+	kmKoGXWThynnDMWqX2utHTQAfRd+O1rdk8br7aRTJQsy07iBj59xNSpW8Pw47rRuC9uxGw7P3luze
+	urdrE0ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihumR-00026D-RX; Thu, 19 Dec 2019 12:19:47 +0000
+	id 1ihums-0002OY-AV; Thu, 19 Dec 2019 12:20:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihum8-00024K-1m
+ id 1ihum8-00024Y-NJ
  for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 12:19:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CE56231B;
- Thu, 19 Dec 2019 04:19:23 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 583EE328;
+ Thu, 19 Dec 2019 04:19:26 -0800 (PST)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 81CB73F719;
- Thu, 19 Dec 2019 04:19:21 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0E0913F719;
+ Thu, 19 Dec 2019 04:19:23 -0800 (PST)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kernel@vger.kernel.org
-Subject: [RFC PATCH v3 00/12] Unify SMP stop generic logic to common code
-Date: Thu, 19 Dec 2019 12:18:53 +0000
-Message-Id: <20191219121905.26905-1-cristian.marussi@arm.com>
+Subject: [RFC PATCH v3 01/12] smp: add generic SMP-stop support to common code
+Date: Thu, 19 Dec 2019 12:18:54 +0000
+Message-Id: <20191219121905.26905-2-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20191219121905.26905-1-cristian.marussi@arm.com>
+References: <20191219121905.26905-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_041928_361642_20AFD09E 
-X-CRM114-Status: GOOD (  13.42  )
+X-CRM114-CacheID: sfid-20191219_041928_847616_7E41663A 
+X-CRM114-Status: GOOD (  19.17  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,184 +75,215 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+There was a lot of code duplication across architectures regarding the
+SMP stop procedures' logic; moreover some of this duplicated code logic
+happened to be similarly faulty across a few architectures: while fixing
+such logic, move such generic logic as much as possible inside common
+code.
 
-the logic underlying SMP stop and kexec crash procedures, beside containing
-some arch-specific bits, is mostly generic and common across all archs:
-despite this fact, such logic is now scattered across all architectures and
-on some of them is flawed, in such a way that, under some specific
-conditions, you can end up with a CPU left still running after a panic and
-possibly lost across a subsequent kexec crash reboot. [1]
+Collect all the common logic related to SMP stop operations into the
+common SMP code; any architecture willing to use such centralized logic
+can select CONFIG_ARCH_USE_COMMON_STOP=y and provide the related
+arch-specific helpers: in such a scenario, those architectures will
+transparently start using the common code provided by smp_send_stop()
+common function.
 
-Beside the flaws on some archs, there is anyway lots of code duplication,
-so this patch series attempts to move into common code all the generic SMP
-stop and crash logic, fixing observed issues, and leaving only the arch
-specific bits inside properly provided arch-specific helpers.
+On the other side, Architectures not willing to use common code SMP stop
+logic will simply leave CONFIG_ARCH_USE_COMMON_STOP undefined and carry
+on executing their local arch-specific smp_send_stop() as before.
 
-An architecture willing to rely on this SMP common logic has to define its
-own helpers and set CONFIG_ARCH_USE_COMMON_SMP_STOP=y.
+Suggested-by: Dave Martin <Dave.Martin@arm.com>
+Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+---
+v2 --> v3
+- reviewed wait/timeout helpers avoiding broken shared static globals
+v1 --> v2
+- moved related Kconfig to common code inside arch/Kconfig
+- introduced additional CONFIG_USE_COMMON_STOP selected by
+  CONFIG_ARCH_USE_COMMON_STOP
+- introduced helpers to let architectures optionally alter
+  the default common code behaviour while waiting for CPUs:
+  change timeout or wait for ever. (will be needed by x86)
+---
+ arch/Kconfig        |  7 ++++
+ include/linux/smp.h | 39 +++++++++++++++++++
+ kernel/smp.c        | 91 +++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 137 insertions(+)
 
-This series initially wires this up for arm64, x86, arm, sparc64.
-
-Behaviour is not changed for architectures not adopting this new common
-logic.
-
-In v2/v3 the SMP common stop/crash code is generalized a bit more to
-address the needs of the newly ported architectures (x86, arm, sparc64).
-
-Tested as follows:
-
-- arm64 (FVP/JUNO 4-cpus):
- 1. boot/reboot -f
- 2. emergency reboot - sysrq(b)
- 3. kcrash - sysrq(c)
- 4. kcrash - sysrq(c) with a loaded crashkernel (kdump reboot)
- 5. panic on a starting CPU on a 2 CPUs only system (freezing properly)
- 6. kdump reboot after a panic like 5. (not losing any CPU on reboot)
- 7. kdump reboot after a panic like 5. plus a simultaneous reboot
-    (instrumenting code to delay the stop messages transmission
-     to have time to inject a reboot -f -- not losing any CPU on reboot)
- 8. kexec reboot (4 cpus on reboot)
-
-
-- x86 (QEMU virt 4-cpus):
- 1. boot/reboot -f
- 2. emergency reboot - sysrq(b)
- 3. kcrash - sysrq(c)
- 4. kcrash - sysrq(c) with a loaded crashkernel (kdump reboot)
- 5. panic on a starting CPU on a 2 CPUs only system (freezing properly)
- 6. kdump reboot after a panic like 5. (maxcpus=1 on x86-crashkernel)
- 7. kdump reboot after a panic like 5. plus a simultaneous reboot
-    (instrumenting code to delay the stop messages transmission to have
-     time to inject a reboot -f - maxcpus=1 anyway on x86 on crashkernel)
- 8. kexec reboot (4 cpus on reboot)
- 9. emergency reboot - sysrq(b) with VMX enabled
-
-
-- arm (QEMU virt 4-cpus):
- 1. boot/reboot -f
- 2. emergency reboot - sysrq(b)
- 3. kcrash - sysrq(c)
- 4. kcrash - sysrq(c) with a loaded crashkernel (kdump reboot)
- 5. panic on a starting CPU on a 2 CPUs only system (freezing properly)
- 6. kdump reboot after a panic like 5. (1-cpus on crashkernel reboot)
- 7. kexec reboot (4 cpus on reboot)
-
-
-- sparc64:
- 1. build & boot
-
-
-Any thoughts ?
-
-
-Thanks,
-
-Cristian
-
-
-Changes:
---------
-
-v2-->v3:
-- rebased on v5.5-rc2
-- fixed get/set helpers introduced broken in v2
-- x86: reviewed orce reboot handling
-- x86: simplified SMPSTOP arch helpers
-- arm: added missing barriers in SMP stop new helper
-- arm: fixed missing preemption enable/disable
-
-v1-->v2:
-- rebased on v5.3-rc8
-- moved common Kconfig bits to arch/Kconfig
-- extended SMP common stop/crash generic code to address new architectures
-  needs: custom wait/timeouts, max_retries, attempt numbers.
-- ported x86 to SMP common stop/crash code
-- ported arm to SMP common stop/crash code
-- ported sparc64 to SMP common stop code
-
-
-[1]
-
-[root@arch ~]# echo 1 > /sys/devices/system/cpu/cpu1/online
-[root@arch ~]# [  152.583368] ------------[ cut here ]------------
-[  152.583872] kernel BUG at arch/arm64/kernel/cpufeature.c:852!
-[  152.584693] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
-[  152.585228] Modules linked in:
-[  152.586040] CPU: 1 PID: 0 Comm: swapper/1 Not tainted 5.3.0-rc5-00001-gcabd12118c4a-dirty #2
-[  152.586218] Hardware name: Foundation-v8A (DT)
-[  152.586478] pstate: 000001c5 (nzcv dAIF -PAN -UAO)
-[  152.587260] pc : has_cpuid_feature+0x35c/0x360
-[  152.587398] lr : verify_local_elf_hwcaps+0x6c/0xf0
-[  152.587520] sp : ffff0000118bbf60
-[  152.587605] x29: ffff0000118bbf60 x28: 0000000000000000
-[  152.587784] x27: 0000000000000000 x26: 0000000000000000
-[  152.587882] x25: ffff00001167a010 x24: ffff0000112f59f8
-[  152.587992] x23: 0000000000000000 x22: 0000000000000000
-[  152.588085] x21: ffff0000112ea018 x20: ffff000010fe5518
-[  152.588180] x19: ffff000010ba3f30 x18: 0000000000000036
-[  152.588285] x17: 0000000000000000 x16: 0000000000000000
-[  152.588380] x15: 0000000000000000 x14: ffff80087a821210
-[  152.588481] x13: 0000000000000000 x12: 0000000000000000
-[  152.588599] x11: 0000000000000080 x10: 00400032b5503510
-[  152.588709] x9 : 0000000000000000 x8 : ffff000010b93204
-[  152.588810] x7 : 00000000800001d8 x6 : 0000000000000005
-[  152.588910] x5 : 0000000000000000 x4 : 0000000000000000
-[  152.589021] x3 : 0000000000000000 x2 : 0000000000008000
-[  152.589121] x1 : 0000000000180480 x0 : 0000000000180480
-[  152.589379] Call trace:
-[  152.589646]  has_cpuid_feature+0x35c/0x360
-[  152.589763]  verify_local_elf_hwcaps+0x6c/0xf0
-[  152.589858]  check_local_cpu_capabilities+0x88/0x118
-[  152.589968]  secondary_start_kernel+0xc4/0x168
-[  152.590530] Code: d53801e0 17ffff58 d5380600 17ffff56 (d4210000)
-[  152.592215] ---[ end trace 80ea98416149c87e ]---
-[  152.592734] Kernel panic - not syncing: Attempted to kill the idle task!
-[  152.593173] Kernel Offset: disabled
-[  152.593501] CPU features: 0x0004,20c02008
-[  152.593678] Memory Limit: none
-[  152.594208] ---[ end Kernel panic - not syncing: Attempted to kill the idle task! ]---
-[root@arch ~]# bash: echo: write error: Input/output error
-[root@arch ~]#
-[root@arch ~]#
-[root@arch ~]# echo HELO
-HELO
-
-
-Cristian Marussi (12):
-  smp: add generic SMP-stop support to common code
-  smp: unify crash_ and smp_send_stop() logic
-  smp: coordinate concurrent crash/smp stop calls
-  smp: address races of starting CPUs while stopping
-  arm64: smp: use generic SMP stop common code
-  arm64: smp: use SMP crash-stop common code
-  arm64: smp: add arch specific cpu parking helper
-  x86: smp: use generic SMP stop common code
-  x86: smp: use SMP crash-stop common code
-  arm: smp: use generic SMP stop common code
-  arm: smp: use SMP crash-stop common code
-  sparc64: smp: use generic SMP stop common code
-
- arch/Kconfig                    |   7 ++
- arch/arm/Kconfig                |   1 +
- arch/arm/kernel/machine_kexec.c |  29 ++---
- arch/arm/kernel/smp.c           |  22 +---
- arch/arm64/Kconfig              |   1 +
- arch/arm64/include/asm/smp.h    |   2 -
- arch/arm64/kernel/smp.c         | 127 ++++++-------------
- arch/sparc/Kconfig              |   1 +
- arch/sparc/kernel/smp_64.c      |  15 +--
- arch/x86/Kconfig                |   1 +
- arch/x86/include/asm/reboot.h   |   2 +
- arch/x86/include/asm/smp.h      |   6 -
- arch/x86/kernel/crash.c         |  27 +----
- arch/x86/kernel/reboot.c        |  58 +++++----
- arch/x86/kernel/smp.c           |  91 +++++++-------
- include/linux/smp.h             |  83 +++++++++++++
- kernel/panic.c                  |  26 ----
- kernel/smp.c                    | 208 ++++++++++++++++++++++++++++++++
- 18 files changed, 444 insertions(+), 263 deletions(-)
-
+diff --git a/arch/Kconfig b/arch/Kconfig
+index 48b5e103bdb0..99550754e2ea 100644
+--- a/arch/Kconfig
++++ b/arch/Kconfig
+@@ -169,6 +169,13 @@ config ARCH_USE_BUILTIN_BSWAP
+ 	 instructions should set this. And it shouldn't hurt to set it
+ 	 on architectures that don't have such instructions.
+ 
++config ARCH_USE_COMMON_SMP_STOP
++       def_bool n
++
++config USE_COMMON_SMP_STOP
++       depends on SMP && ARCH_USE_COMMON_SMP_STOP
++       def_bool y
++
+ config KRETPROBES
+ 	def_bool y
+ 	depends on KPROBES && HAVE_KRETPROBES
+diff --git a/include/linux/smp.h b/include/linux/smp.h
+index 6fc856c9eda5..22a0adeb7350 100644
+--- a/include/linux/smp.h
++++ b/include/linux/smp.h
+@@ -77,6 +77,45 @@ int smp_call_function_single_async(int cpu, call_single_data_t *csd);
+  */
+ extern void smp_send_stop(void);
+ 
++#ifdef CONFIG_USE_COMMON_SMP_STOP
++/*
++ * An Architecture can optionally use this helper to change the default
++ * waiting behaviour of common STOP logic.
++ */
++void smp_stop_set_wait_forever(bool wait_forever);
++
++/*
++ * An Architecture can optionally use this helper to change the default
++ * waiting timeout of common STOP logic.
++ * A ZERO timeout means no waiting at all as long as waiting forever was
++ * not also previously set.
++ *
++ * Note that, in this way, waiting forever and timeout period settings
++ * remain disjoint.
++ */
++void smp_stop_set_wait_timeout_us(unsigned long timeout);
++
++/*
++ * Retrieve the current SMP STOP wait settings.
++ * Returns true if waiting forever is set.
++ */
++bool smp_stop_get_wait_settings(unsigned long *timeout);
++
++/*
++ * Any Architecture willing to use STOP common logic implementation
++ * MUST at least provide the arch_smp_stop_call() helper which implements
++ * the arch-specific CPU-stop mechanism.
++ */
++extern void arch_smp_stop_call(cpumask_t *cpus);
++
++/*
++ * An Architecture CAN also provide the arch_smp_cpus_stop_complete()
++ * dedicated helper, to perform any final arch-specific operation on
++ * the local CPU once the other CPUs have been successfully stopped.
++ */
++void arch_smp_cpus_stop_complete(void);
++#endif
++
+ /*
+  * sends a 'reschedule' event to another CPU:
+  */
+diff --git a/kernel/smp.c b/kernel/smp.c
+index 7dbcb402c2fc..de29cd94a948 100644
+--- a/kernel/smp.c
++++ b/kernel/smp.c
+@@ -20,6 +20,7 @@
+ #include <linux/sched.h>
+ #include <linux/sched/idle.h>
+ #include <linux/hypervisor.h>
++#include <linux/delay.h>
+ 
+ #include "smpboot.h"
+ 
+@@ -817,3 +818,93 @@ int smp_call_on_cpu(unsigned int cpu, int (*func)(void *), void *par, bool phys)
+ 	return sscs.ret;
+ }
+ EXPORT_SYMBOL_GPL(smp_call_on_cpu);
++
++#ifdef CONFIG_USE_COMMON_SMP_STOP
++static atomic_t smp_stop_wait_forever;
++static atomic_t smp_stop_wait_timeout = ATOMIC_INIT(USEC_PER_SEC);
++
++void smp_stop_set_wait_forever(bool wait_forever)
++{
++	atomic_set(&smp_stop_wait_forever, wait_forever);
++	/* ensure wait atomic-op is visible */
++	smp_mb__after_atomic();
++}
++
++void smp_stop_set_wait_timeout_us(unsigned long timeout)
++{
++	atomic_set(&smp_stop_wait_timeout, timeout);
++	/* ensure timeout atomic-op is visible */
++	smp_mb__after_atomic();
++}
++
++bool smp_stop_get_wait_settings(unsigned long *timeout)
++{
++	if (timeout)
++		*timeout = atomic_read(&smp_stop_wait_timeout);
++	return atomic_read(&smp_stop_wait_forever);
++}
++
++void __weak arch_smp_cpus_stop_complete(void) { }
++
++static inline bool any_other_cpus_online(cpumask_t *mask,
++					 unsigned int this_cpu_id)
++{
++	cpumask_copy(mask, cpu_online_mask);
++	cpumask_clear_cpu(this_cpu_id, mask);
++
++	return !cpumask_empty(mask);
++}
++
++/*
++ * This centralizes the common logic to:
++ *
++ *  - evaluate which CPUs are online and needs to be notified for stop,
++ *    while considering properly the status of the calling CPU
++ *
++ *  - call the arch-specific helpers to request the effective stop
++ *
++ *  - wait for the stop operation to be completed across all involved CPUs
++ *    monitoring the cpu_online_mask
++ */
++void smp_send_stop(void)
++{
++	unsigned int this_cpu_id;
++	cpumask_t mask;
++
++	this_cpu_id = smp_processor_id();
++	if (any_other_cpus_online(&mask, this_cpu_id)) {
++		bool wait_forever;
++		unsigned long timeout;
++		unsigned int this_cpu_online = cpu_online(this_cpu_id);
++
++		if (system_state <= SYSTEM_RUNNING)
++			pr_crit("stopping secondary CPUs\n");
++		arch_smp_stop_call(&mask);
++
++		/*
++		 * Defaults to wait up to one second for other CPUs to stop;
++		 * architectures can modify the default timeout or request
++		 * to wait forever.
++		 *
++		 * Here we rely simply on cpu_online_mask to sync with
++		 * arch-specific stop code without bloating the code with an
++		 * additional atomic_t ad-hoc counter.
++		 *
++		 * As a consequence we'll need proper explicit memory barriers
++		 * in case the other CPUs running the arch-specific stop-code
++		 * would need to commit to memory some data (like saved_regs).
++		 */
++		wait_forever = smp_stop_get_wait_settings(&timeout);
++		while (num_online_cpus() > this_cpu_online &&
++		       (wait_forever || timeout--))
++			udelay(1);
++		/* ensure any stopping-CPUs memory access is made visible */
++		smp_rmb();
++		if (num_online_cpus() > this_cpu_online)
++			pr_warn("failed to stop secondary CPUs %*pbl\n",
++				cpumask_pr_args(cpu_online_mask));
++	}
++	/* Perform final (possibly arch-specific) work on this CPU */
++	arch_smp_cpus_stop_complete();
++}
++#endif
 -- 
 2.17.1
 
