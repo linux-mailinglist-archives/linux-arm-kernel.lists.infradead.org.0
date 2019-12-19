@@ -2,84 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 333E21264D9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 15:33:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 026021264D6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 15:33:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mC39j+nqHHF6onw1nj1wOWM6hqTJO70liPlGKMglYpU=; b=QRqCjTTpvK2JQZ
-	FJ/qte86ZNyeDfe5oL3YqOrRi94n1KydwZv3bcTnVFfIbnwYLS4EcYNs5gT739j7wxLc5A36XFYr7
-	a2hCHVmiVdJRp5Y32TsSddVJ31UIvc8YrSF/h/K+b8MCKaqEncHzzbmrO71Q+Pr3TcYhnVRnZ4cNg
-	uzjIvuoMDmFlxCykxr40rgnJqIWQ7k9Dtp/RzMT/zi1fGNw5uyaohQzABC2FU74DZzOsuk7qUnBe/
-	fC+pD4k8b1PPEkdlmZ1Q7ytWf4Iv5OS3NBwAgCkEVMy49sh3ID306eUacD8c2B+IdIxfsfUIGS/5o
-	z+p0dSME/OKs1wBhmB0g==;
+	List-Owner; bh=UdRSiHP4ZpnMHtlSkeTaVx9f5EPhWwUUpMkWYbQ/hak=; b=OA85yam2VkXMvg
+	LNZ/a6C/7PEMdikUKRTDhNOnv/7HOCxfe0Wvhpb5Ty19p+EoGPOQEtN1Wj8pAIPcmEV5J6AUJtTiP
+	apg6EDrrxK9oLRYKAhEsNrmog86zQRXk4/fyl9HBaDiBkBdZuk+5IUWfpoKcW7xMzDD8wLhzhYB7I
+	jeYMq4qE1S7iGFZEU44ooAUMWMwT4jj9qFN4e1os8JZdSlvjX4iW0U6Dv/EL4sqKztSjIlORZr1SN
+	saHocX9GY8oDc16VlwXfKqS+WA+tFOx+mqEc7Y8usWq4nLZBdMdPY+AcHlGUJI1O+hl6rzEm32Vu4
+	F2/tLf0czSB8pL3BST9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihwrZ-0004fh-Q4; Thu, 19 Dec 2019 14:33:13 +0000
-Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihwrF-0004Yw-A2
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 14:32:57 +0000
-Received: by mail-vk1-xa43.google.com with SMTP id i4so1690444vkc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Dec 2019 06:32:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=YPrqmPawyC7QTitP+v5HFjQOiA2/JytHSGJGmUaJYSo=;
- b=HnkBmt7aQRcHDcMGiqeIVNQlFoTrNa80ZEsz/jq67ZFporQI48fPP1pB//sfII7cmp
- NV++BTuBM0fMSP3sCw40kxNz704Xs6z28/t22qeVeYvFWYC+LqiHRgil6I6MFdRSAmBI
- aiKeNDuitN1aHXmZP1AraJ/vV0PUVmt0AB7kOica+Pj4G8AZKnYYiG2UqReg6Y0H1JlL
- S9oofysNrjhnJ6OBygsD7XwR4WlPNbb2uGBSFPh1X5Xi0aueoG4hPNh9WK4gDgpooymS
- Hvl2e+WE78CehJerRxhHjb3qbsP/vtPoIvX0VXkzADx4nosf40jZ0Z5QJc7BRCSVZ5wE
- LOhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=YPrqmPawyC7QTitP+v5HFjQOiA2/JytHSGJGmUaJYSo=;
- b=JollX6EUrq0xUuCCPmY7jM/w9FL9MfFL3HEudetwW/wjaSeVZobSrU6RTmNG6AxW7s
- si11ciqIDq+6dQC1P8YVVn18w63RuG98kNnK8YXlKsnevS52f5h07VncD+fsURIWCmop
- 9kV1lg5UcATBiJRs7nbZAMKHZFww9DigXjjfkOtdEXxJRn7QAom5l2qei9XSeUbWKl/v
- jA5+jIVOLPi3WO+YRS3xxxEPLnkIw0P8CHn0LpUtCZzzZg+YFzocT0T9i34joQi/IlbE
- OB1xi5QGa/Y9nOMMoOAkxcp9AI6sEX5zVDC2T5ykc6aePi05wfnbSAD2u6TMtJeOfoR8
- FX1Q==
-X-Gm-Message-State: APjAAAUv2yVioBeCqsVDUq3ISezkwBq9KK2rMh8eWJ8NT7DfR6rutldk
- a7WBpbKAM0N9hZl0qoZrnHuIkSaqlSdFrFEHLftLtA==
-X-Google-Smtp-Source: APXvYqyql89PtQng31jiu4OfIUWL4pxdszTl7Rb2Z0v5tsXV+OuRCLt9eYGrN14WQCjnYoJhY9CerE7OOqyoBGkSmMA=
-X-Received: by 2002:a1f:914b:: with SMTP id t72mr1596441vkd.101.1576765970818; 
- Thu, 19 Dec 2019 06:32:50 -0800 (PST)
+	id 1ihwrE-0004PC-Rz; Thu, 19 Dec 2019 14:32:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ihwqx-0004Mf-UW
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 14:32:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EDE5B31B;
+ Thu, 19 Dec 2019 06:32:33 -0800 (PST)
+Received: from bogus (e107155-lin.cambridge.arm.com [10.1.196.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F03403F6CF;
+ Thu, 19 Dec 2019 06:32:31 -0800 (PST)
+Date: Thu, 19 Dec 2019 14:32:29 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH v4 11/14] cpuidle: psci: Manage runtime PM in the idle path
+Message-ID: <20191219143229.GD20746@bogus>
+References: <20191211154343.29765-1-ulf.hansson@linaro.org>
+ <20191211154343.29765-12-ulf.hansson@linaro.org>
 MIME-Version: 1.0
-References: <20191217122254.7103-1-peter.ujfalusi@ti.com>
-In-Reply-To: <20191217122254.7103-1-peter.ujfalusi@ti.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Thu, 19 Dec 2019 15:32:13 +0100
-Message-ID: <CAPDyKFrsq6Kua8Nr7GCVmvEHgDT9MWV05Lue3Z3Ha-_Aa744Rg@mail.gmail.com>
-Subject: Re: [PATCH v2] mmc: bcm2835: Use dma_request_chan() instead
- dma_request_slave_channel()
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Content-Disposition: inline
+In-Reply-To: <20191211154343.29765-12-ulf.hansson@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_063253_442036_05B46162 
-X-CRM114-Status: GOOD (  20.36  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191219_063236_045108_1C9FDC07 
+X-CRM114-Status: GOOD (  11.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,77 +63,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Vinod Koul <vkoul@kernel.org>,
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
- linux-rpi-kernel@lists.infradead.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, linux-arm-msm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Andy Gross <agross@kernel.org>,
+ Lina Iyer <ilina@codeaurora.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 17 Dec 2019 at 13:22, Peter Ujfalusi <peter.ujfalusi@ti.com> wrote:
->
-> dma_request_slave_channel() is a wrapper on top of dma_request_chan()
-> eating up the error code.
->
-> By using dma_request_chan() directly the driver can support deferred
-> probing against DMA.
->
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+On Wed, Dec 11, 2019 at 04:43:40PM +0100, Ulf Hansson wrote:
+> In case we have succeeded to attach a CPU to its PM domain, let's deploy
+> runtime PM support for the corresponding attached device, to allow the CPU
+> to be powered-managed accordingly.
+> 
+> The triggering point for when runtime PM reference counting should be done,
+> has been selected to the deepest idle state for the CPU. However, from the
+> hierarchical point view, there may be good reasons to do runtime PM
+> reference counting even on shallower idle states, but at this point this
+> isn't supported, mainly due to limitations set by the generic PM domain.
 
-Applied this one and the other related patches, thanks!
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 
-Kind regards
-Uffe
-
-
-> ---
-> Hi,
->
-> Changes since v1:
-> - instead of returning jump to err: to free up resources
->
-> Regards,
-> Peter
->
->  drivers/mmc/host/bcm2835.c | 12 +++++++++++-
->  1 file changed, 11 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/mmc/host/bcm2835.c b/drivers/mmc/host/bcm2835.c
-> index 99f61fd2a658..c3d949847cbd 100644
-> --- a/drivers/mmc/host/bcm2835.c
-> +++ b/drivers/mmc/host/bcm2835.c
-> @@ -1393,7 +1393,17 @@ static int bcm2835_probe(struct platform_device *pdev)
->         host->dma_chan = NULL;
->         host->dma_desc = NULL;
->
-> -       host->dma_chan_rxtx = dma_request_slave_channel(dev, "rx-tx");
-> +       host->dma_chan_rxtx = dma_request_chan(dev, "rx-tx");
-> +       if (IS_ERR(host->dma_chan_rxtx)) {
-> +               ret = PTR_ERR(host->dma_chan_rxtx);
-> +               host->dma_chan_rxtx = NULL;
-> +
-> +               if (ret == -EPROBE_DEFER)
-> +                       goto err;
-> +
-> +               /* Ignore errors to fall back to PIO mode */
-> +       }
-> +
->
->         clk = devm_clk_get(dev, NULL);
->         if (IS_ERR(clk)) {
-> --
-> Peter
->
-> Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-> Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
->
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
