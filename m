@@ -2,83 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D68912713D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 00:06:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EA01127151
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 00:18:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:From:Subject:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2wBZEFfalgAq7DY4MW088+7UGNmtVMGFXrBRuFTK+W4=; b=pltFAES/TtfcZs
-	fgQLxy8FtN//8esMeREhl7/wq6wPjNEejevYm2v8405WSnHP6kajBi+PlbHruukqEGchJS0WZgELY
-	MKE12Eom8ZIxLKi43OchDA7lO2pZAHKeaI642NzIZMZQp43vQKYZtP3Dv2Ed2QXGTvmEsT1ahIr4+
-	p0AjjSdnewpqnQPAJbA4ptT9y4gMTq//V8tny42d7q2ehSkwGZDvkfVpX+0nUEd6y76XVGCJ/412+
-	6V4Pa3t3cLVi2wUxElmS4kMmzsME1tDIhN4HVVFBqfHo3AFpzA/37gPc3sl/j8C3eX83DeOVK2Q1N
-	IbhKmeF1XvikLUssYcNA==;
+	List-Owner; bh=V/PLoaCoFm4NiS+DZ5caV+8FtnD55j90uj1aPaR0wKA=; b=ejy6Yjwci8PD6T
+	KCbEXV/IXESY2qbCei4ApoI2eNnUqPqahSXKw2pB8JTo1WjfJsYyRsh4NqeGDPP+SeGwo/rWZ12g+
+	DiiV9n8xG0eaYS0L5ol6eomhwB9H+2I8PivcupUkOsocR+6TCCCOVpZIjN+/MpHs+8KEy3PbjHl34
+	6Rr5VYXQ4VnAaPvhkcEO4/jlDReGh/3y63dhtAQNJdhykOyt+DA6adNMXF5TV8ZC7nHYr8nLvhshb
+	6avcTbI8k12zPhdCLv5bdI1vmUlravOCbWrHm0CAuhPLCz4xwGczqdR7vLVCL/uUP2FjIL5ufaMhR
+	eobaBMTzjfnzkHJ3boVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii4sR-0003Y2-0R; Thu, 19 Dec 2019 23:06:39 +0000
-Received: from mail-oi1-f170.google.com ([209.85.167.170])
+	id 1ii53P-0007Iq-CG; Thu, 19 Dec 2019 23:17:59 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii4sG-0003XL-Ir; Thu, 19 Dec 2019 23:06:29 +0000
-Received: by mail-oi1-f170.google.com with SMTP id c77so3425547oib.7;
- Thu, 19 Dec 2019 15:06:28 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=1yZH8V3CdOmQjuS73Msz5ZyhW6PkWuP2FDRhP7F/Hfk=;
- b=J5tENWS4RWRrfPVRufTy92b8VlDuqBvQGnejRgTlBJ3xH4tBIJNLDk8sZHL6p/FDyI
- CuKVwgJa5WmTNw07jbd4MCCuoCHaUpl5Np2DZp92HS3QM7OScjPaaLb4NUjzdV0hQdRl
- xPZA47slHNDOxYs32KRdo8YD4WpFsR2J5xDRgPlgwsdWR7Q7W8KKY2tl4gNzS0JslOz0
- MtI8FmG6qa47NI9vZU7zobWswwC13aKyqNCokhgSZcLUbeHj1NWFShYVyTrXLyAzk5tz
- 4sLBlqEeb9gWctjYntXWJfCXwcoebM2D87QeHtWoODxizzOO9fVMS5559QMzjJ5Co+Pp
- 6qDw==
-X-Gm-Message-State: APjAAAWnqCdAz3b3pwKPPN8HEMM4M5FDZu3vJ9QgbF1g0gRSnlbhXaZs
- QYNTlUVjhi5VpB78Ja5ZUg==
-X-Google-Smtp-Source: APXvYqwSIAXcQUDg2gX98PBOc+oiM4Gom1haSyaRLuef1KLWXsxmd15JOd90nbJsIeaJwD3TBVTLrQ==
-X-Received: by 2002:aca:f445:: with SMTP id s66mr3072290oih.95.1576796787716; 
- Thu, 19 Dec 2019 15:06:27 -0800 (PST)
-Received: from localhost (ip-184-205-174-147.ftwttx.spcsdns.net.
- [184.205.174.147])
- by smtp.gmail.com with ESMTPSA id m68sm2497501oig.50.2019.12.19.15.06.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 15:06:27 -0800 (PST)
-Date: Thu, 19 Dec 2019 17:06:25 -0600
-From: Rob Herring <robh@kernel.org>
-To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
-Subject: Re: [RFC 16/25] dt-bindings: leds: tm1628: Add Fude Microelectronics
- AiP1618
-Message-ID: <20191219230625.GA7332@bogus>
-References: <20191212033952.5967-1-afaerber@suse.de>
- <20191212033952.5967-17-afaerber@suse.de>
+ id 1ii538-0007HN-7t; Thu, 19 Dec 2019 23:17:43 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xBJN9Vlg083950;
+ Thu, 19 Dec 2019 23:17:39 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=to : cc : subject :
+ from : references : date : in-reply-to : message-id : mime-version :
+ content-type; s=corp-2019-08-05;
+ bh=2X+MJZzOp6dCuDeJ0KornCko/xUA3DPD/Ld+FI4IMB4=;
+ b=o2ocV9kyQUB5ennM4SOPbMvLAQTJulmlksNIKiCsKqjDX7D9/8FtGhio+oWlnSnOEoKb
+ z8oNsFrRE9TsRnf315+mH/Bwz0DUFN+fhe1bsdpyhII3mqiijNUmwbMNVQaqGGr9OOVS
+ yEiL45AQ1lyvs6xMHbulUms9o/Y0qc1/fO7KLqjGWYbhuxnHNKB1l1a811OBG87fLUyu
+ efrW5z5LGbPw57bqyz8jJeNiJTpL5J9GLMAvYbp//2y6sT6uMteQk4p5yCzbJOhVpUUz
+ iEbTMIkLFRTh0aMX/xTt6NuzWOT+Q29IVm7WDuNDWDW4WrTn6m6GbPIbQ6sCy2snW4L4 Mw== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2130.oracle.com with ESMTP id 2x01jadsm4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 19 Dec 2019 23:17:39 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xBJNAaxi032210;
+ Thu, 19 Dec 2019 23:17:39 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3020.oracle.com with ESMTP id 2x0bgmkg25-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 19 Dec 2019 23:17:38 +0000
+Received: from abhmp0009.oracle.com (abhmp0009.oracle.com [141.146.116.15])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id xBJNHabU021720;
+ Thu, 19 Dec 2019 23:17:37 GMT
+Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 19 Dec 2019 15:17:36 -0800
+To: Stanley Chu <stanley.chu@mediatek.com>
+Subject: Re: [PATCH v1 0/4] scsi: ufs-mediatek: provide power management
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
+References: <1576224695-22657-1-git-send-email-stanley.chu@mediatek.com>
+Date: Thu, 19 Dec 2019 18:17:33 -0500
+In-Reply-To: <1576224695-22657-1-git-send-email-stanley.chu@mediatek.com>
+ (Stanley Chu's message of "Fri, 13 Dec 2019 16:11:31 +0800")
+Message-ID: <yq1tv5vc3ci.fsf@oracle.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191212033952.5967-17-afaerber@suse.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9476
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=958
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-1912190170
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9476
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-1912190170
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_150628_616980_3C9E360B 
-X-CRM114-Status: UNSURE (   7.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20191219_151742_412156_80DCAC63 
+X-CRM114-Status: GOOD (  10.93  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.170 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,35 +111,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
- Dan Murphy <dmurphy@ti.com>, Pavel Machek <pavel@ucw.cz>,
- linux-leds@vger.kernel.org,
- Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
- linux-arm-kernel@lists.infradead.org,
- Jacek Anaszewski <jacek.anaszewski@gmail.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ alim.akhtar@samsung.com, matthias.bgg@gmail.com, pedrom.sousa@synopsys.com,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 12 Dec 2019 04:39:43 +0100, =3D?UTF-8?q?Andreas=3D20F=3DC3=3DA4rber=
-?=3D wrote:
-> Define a compatible string for AiP1618 chipset.
-> =
 
-> Signed-off-by: Andreas F=E4rber <afaerber@suse.de>
-> ---
->  @Rob: This one would conditionally need to further restrict reg ranges t=
-hen.
->  =
+Stanley,
 
->  Documentation/devicetree/bindings/leds/titanmec,tm1628.yaml | 1 +
->  1 file changed, 1 insertion(+)
-> =
+> The patch set provides power management on MediaTek Chipsets by
 
+Had to apply this by hand. Please make sure you prepare patch
+submissions against my "queue" branch.
 
-Acked-by: Rob Herring <robh@kernel.org>
+-- 
+Martin K. Petersen	Oracle Linux Engineering
 
 _______________________________________________
 linux-arm-kernel mailing list
