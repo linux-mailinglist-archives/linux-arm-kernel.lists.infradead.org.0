@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 373E0126EC1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 21:22:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5F91126ECB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 21:22:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tqy5ZfWqJY9P6dLxwtgkTh7IWCTob9q6BBOV87+lYsU=; b=pdPu+xnBW+Nlk/
-	wp/Cn9uS9/1BV812eKxz+UXnSlTM61VdD0Lp95Qe2/Xh3cPho9rgERRXHS3VI1dZotAXta/mEyXu2
-	wtNLT5yZnHgT1jcuxiGh7E/REdNkKCFEQJdKYyKwptZm7NAZMUmVDbTFcP69e02lYs5hm4EbOVMLI
-	ub0MNO3qusffI3PSVTzBZTEbvWbfuLHkW7PkVpziCNH6hiQ95qrxsLl3mHH4UR8nOnn8QfDktvMP1
-	cw4D7EXQvYNNzFgs+cKU2WfSzqUoX9Y1Pr081b/qwJ670M68shMmIBjponDDcmudxRg2jW6JweapM
-	78rCSrNW4dN/0x3bETxQ==;
+	List-Owner; bh=NftyAfgTdZHRwQUB31FHLq88w+ix0UopSc7VTzyYpDc=; b=e+mlOvMg3I819u
+	XEWbbwCF8nUsrli0RhDzNCsiUY097rko3w7OBKjvKEAaRSK3xwiHiYxB+YbA7BNXpqcUUskTgr/Lx
+	dbfEb44JmZvKIXVWHD+vyz9dAB1W7mfP3oIv9L9EMoSjsIUZJGqVhTq6MUxu4T39VQDQtgCNe2xW8
+	m7qHWZk6Y//mVys71TC+vydM0swZhQr9dgVkvJm1rkvfpqkyllfmoouI++Crv9zHclxAewJ1lA7TN
+	UbNkrEinc7h2dEjlORdcW/InkNs0DwmJP2xY/7r0QfIExFHgtrX3R018YSwnCWeu0CDAYBcTdU2bN
+	Bfj/Gx6A2r9x2LoTkgLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii2JY-0008DD-FY; Thu, 19 Dec 2019 20:22:28 +0000
+	id 1ii2Js-0008Vs-KO; Thu, 19 Dec 2019 20:22:48 +0000
 Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii2Iw-0007wL-Bz
+ id 1ii2Iw-0007wl-CU
  for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 20:21:52 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1576786907;
  s=strato-dkim-0002; d=gerhold.net;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=Ctz9sULW//zeldx1653eIVZ0o4EECVJHJLMqzED7g8o=;
- b=Powm3EtR/cyA86KD2hOb0KZ5Qxjp0f9VWeQtCeu9lSS8EZ9PhoV3HTEgS7pJ42G1hn
- 7zvqlFcwNcux+dC3P/M37t9yTMoEpBx7gdFDUnGQ3g9V5kUKQBylbqlqBTEQ8Dc8d2uH
- Zml2WySy+qHcj4NYgr5d0bh1PKEnCnvnBKf86HwgEyhGghE6e4wuTkOGplUGNaRBm/s3
- IicVuNtNsOC66/wRg5XFco8b4jyuGwGYSv6k8G1D+O6sEpO1hdW7jfTGNF4z+jitUMmm
- SLA4TGvqebt2+6SxwuZhUgEnQRUiapRyC8ntmIYVOAUCwcE2EpZCd3d7ekGqJFl2aXym
- lWrQ==
+ bh=GfB/gxQXGyvKqOMzKZOvf0DfMPdmRi6VLaNbMgKxhW8=;
+ b=gxIzP2UcLCCaI9GkYSFvpG8yjYvjgaqXGwh/15n8e5Fz+Ku9Ig7MOyuZRkm3sSFB+S
+ zX5zAPOjE2SSkZR28WarlpWmHL8stBasvqSSXLUJTPj2IJ+Y3w0oIAVJMTPtrpnU1aon
+ cEvBfp2z0OpHzIeKP/YTfLZXvkvBe/YrGsE4hI7yLccVlxxZjWroqwk8Rc5F8/O0779+
+ zsh2q915bC8a7W8kNKyk4ZqUY8dS/VDWaa0JbxVHnGXO2VB4RxVWEIeERE1cypllzqpO
+ 0DdocVA+VJRaJlPaNg+OdBXFeVfUAZN5HeaVgLImHR0XePxw30pFus4cgZ5DOUnJfVoI
+ HnfQ==
 X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVORvLd4SsytBXQrEOHTIXtszvsxM1"
 X-RZG-CLASS-ID: mo00
 Received: from localhost.localdomain by smtp.strato.de (RZmta 46.1.1 AUTH)
- with ESMTPSA id f021e2vBJKLc3Z8
+ with ESMTPSA id f021e2vBJKLe3Z9
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
  (Client did not present a certificate);
- Thu, 19 Dec 2019 21:21:38 +0100 (CET)
+ Thu, 19 Dec 2019 21:21:40 +0100 (CET)
 From: Stephan Gerhold <stephan@gerhold.net>
 To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH 1/9] ARM: dts: ux500: Remove unused ste-href-ab8505.dtsi
-Date: Thu, 19 Dec 2019 21:20:44 +0100
-Message-Id: <20191219202052.19039-2-stephan@gerhold.net>
+Subject: [PATCH 2/9] ARM: dts: ux500: Add device tree include for AB8505
+Date: Thu, 19 Dec 2019 21:20:45 +0100
+Message-Id: <20191219202052.19039-3-stephan@gerhold.net>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191219202052.19039-1-stephan@gerhold.net>
 References: <20191219202052.19039-1-stephan@gerhold.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_122150_553931_8BDD78A3 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20191219_122150_567435_440628C2 
+X-CRM114-Status: GOOD (  13.54  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -89,264 +89,305 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pin configuration for HREF boards with AB8505 was added in
-commit 77ad9dfc2c7e ("ARM: ux500: move last AB8505 set-up to DT").
-As the commit message notes, it was unused back then and it has
-remained so even today, especially considering AB8505 did not have
-proper device tree support until recently.
+AB8505 is a slightly newer version of AB8500.
+Overall it is quite similar, but there are some differences like
+the number of GPIOs and regulators. Therefore we need a separate
+device tree definition for devices making use of AB8505.
 
-We are now preparing to add support for some Samsung smartphones
-that are using AB8505. However, they use different pin configs
-because using ste-href-ab8505.dtsi is known to break UART.
-There were not many HREFs with AB8505, so at this point it seems
-unlikely that we will ever make use of this include. Remove it.
+The AB8500-specific nodes were moved out of ste-dbx5x0.dtsi in
+commit a46f7c6762d8 ("ARM: dts: ux500: Move ab8500 nodes to ste-ab8500.dtsi").
+Add a new "ste-ab8505.dtsi" device tree include in a similar way.
+
+Keep the battery/charging related sub-devices disabled by default
+since they require additional configuration to work correctly.
 
 Signed-off-by: Stephan Gerhold <stephan@gerhold.net>
 ---
- arch/arm/boot/dts/ste-href-ab8505.dtsi | 234 -------------------------
- 1 file changed, 234 deletions(-)
- delete mode 100644 arch/arm/boot/dts/ste-href-ab8505.dtsi
+ arch/arm/boot/dts/ste-ab8505.dtsi | 275 ++++++++++++++++++++++++++++++
+ 1 file changed, 275 insertions(+)
+ create mode 100644 arch/arm/boot/dts/ste-ab8505.dtsi
 
-diff --git a/arch/arm/boot/dts/ste-href-ab8505.dtsi b/arch/arm/boot/dts/ste-href-ab8505.dtsi
-deleted file mode 100644
-index 95cf38a008e9..000000000000
---- a/arch/arm/boot/dts/ste-href-ab8505.dtsi
-+++ /dev/null
-@@ -1,234 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-or-later
--/*
-- * Copyright 2014 Linaro Ltd.
-- */
--
--/ {
--	soc {
--		prcmu@80157000 {
--			ab8505 {
--				ab8505-gpio {
--					/* Hog a few default settings */
--					pinctrl-names = "default";
--					pinctrl-0 = <&gpio2_default_mode>,
--						    <&gpio10_default_mode>,
--						    <&gpio11_default_mode>,
--						    <&gpio13_default_mode>,
--						    <&gpio34_default_mode>,
--						    <&gpio50_default_mode>,
--						    <&pwm_default_mode>,
--						    <&adi2_default_mode>,
--						    <&modsclsda_default_mode>,
--						    <&resethw_default_mode>,
--						    <&service_default_mode>;
--
--					/*
--					 * Pins 2, 10, 11, 13, 34 and 50
--					 * are muxed in as GPIO, and configured as INPUT PULL DOWN
--					 */
--					gpio2 {
--						gpio2_default_mode: gpio2_default {
--							default_mux {
--								function = "gpio";
--								groups = "gpio2_a_1";
--							};
--							default_cfg {
--								pins = "GPIO2_R5";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--					gpio10 {
--						gpio10_default_mode: gpio10_default {
--							default_mux {
--								function = "gpio";
--								groups = "gpio10_d_1";
--							};
--							default_cfg {
--								pins = "GPIO10_B16";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--					gpio11 {
--						gpio11_default_mode: gpio11_default {
--							default_mux {
--								function = "gpio";
--								groups = "gpio11_d_1";
--							};
--							default_cfg {
--								pins = "GPIO11_B17";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--					gpio13 {
--						gpio13_default_mode: gpio13_default {
--							default_mux {
--								function = "gpio";
--								groups = "gpio13_d_1";
--							};
--							default_cfg {
--								pins = "GPIO13_D17";
--								input-enable;
--								bias-disable;
--							};
--						};
--					};
--					gpio34 {
--						gpio34_default_mode: gpio34_default {
--							default_mux {
--								function = "gpio";
--								groups = "gpio34_a_1";
--							};
--							default_cfg {
--								pins = "GPIO34_H14";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--					gpio50 {
--						gpio50_default_mode: gpio50_default {
--							default_mux {
--								function = "gpio";
--								groups = "gpio50_d_1";
--							};
--							default_cfg {
--								pins = "GPIO50_L4";
--								input-enable;
--								bias-disable;
--							};
--						};
--					};
--					/* This sets up the PWM pin 14 */
--					pwm {
--						pwm_default_mode: pwm_default {
--							default_mux {
--								function = "pwmout";
--								groups = "pwmout1_d_1";
--							};
--							default_cfg {
--								pins = "GPIO14_C16";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--					/* This sets up audio interface 2 */
--					adi2 {
--						adi2_default_mode: adi2_default {
--							default_mux {
--								function = "adi2";
--								groups = "adi2_d_1";
--							};
--							default_cfg {
--								pins = "GPIO17_P2",
--									 "GPIO18_N3",
--									 "GPIO19_T1",
--									 "GPIO20_P3";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--					/* Modem I2C setup (SCL and SDA pins) */
--					modsclsda {
--						modsclsda_default_mode: modsclsda_default {
--							default_mux {
--								function = "modsclsda";
--								groups = "modsclsda_d_1";
--							};
--							default_cfg {
--								pins = "GPIO40_J15",
--									"GPIO41_J14";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--					resethw {
--						resethw_default_mode: resethw_default {
--							default_mux {
--								function = "resethw";
--								groups = "resethw_d_1";
--							};
--							default_cfg {
--								pins = "GPIO52_D16";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--					service {
--						service_default_mode: service_default {
--							default_mux {
--								function = "service";
--								groups = "service_d_1";
--							};
--							default_cfg {
--								pins = "GPIO53_D15";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--					/*
--					 * Clock output pins associated with regulators.
--					 */
--					sysclkreq2 {
--						sysclkreq2_default_mode: sysclkreq2_default {
--							default_mux {
--								function = "sysclkreq";
--								groups = "sysclkreq2_d_1";
--							};
--							default_cfg {
--								pins = "GPIO1_N4";
--								input-enable;
--								bias-disable;
--							};
--						};
--						sysclkreq2_sleep_mode: sysclkreq2_sleep {
--							default_mux {
--								function = "gpio";
--								groups = "gpio1_a_1";
--							};
--							default_cfg {
--								pins = "GPIO1_N4";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--					sysclkreq4 {
--						sysclkreq4_default_mode: sysclkreq4_default {
--							default_mux {
--								function = "sysclkreq";
--								groups = "sysclkreq4_d_1";
--							};
--							default_cfg {
--								pins = "GPIO3_P5";
--								input-enable;
--								bias-disable;
--							};
--						};
--						sysclkreq4_sleep_mode: sysclkreq4_sleep {
--							default_mux {
--								function = "gpio";
--								groups = "gpio3_a_1";
--							};
--							default_cfg {
--								pins = "GPIO3_P5";
--								input-enable;
--								bias-pull-down;
--							};
--						};
--					};
--				};
--			};
--		};
--	};
--};
+diff --git a/arch/arm/boot/dts/ste-ab8505.dtsi b/arch/arm/boot/dts/ste-ab8505.dtsi
+new file mode 100644
+index 000000000000..c72aa250bf6f
+--- /dev/null
++++ b/arch/arm/boot/dts/ste-ab8505.dtsi
+@@ -0,0 +1,275 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * Copyright 2012 Linaro Ltd
++ */
++
++#include <dt-bindings/clock/ste-ab8500.h>
++
++/ {
++	/* Essential housekeeping hardware monitors */
++	iio-hwmon {
++		compatible = "iio-hwmon";
++		io-channels = <&gpadc 0x02>, /* Battery temperature */
++			      <&gpadc 0x08>, /* Main battery voltage */
++			      <&gpadc 0x09>, /* VBUS */
++			      <&gpadc 0x0b>, /* Charger current */
++			      <&gpadc 0x0c>; /* Backup battery voltage */
++	};
++
++	soc {
++		prcmu@80157000 {
++			ab8505 {
++				compatible = "stericsson,ab8505";
++				interrupt-parent = <&intc>;
++				interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++
++				ab8500_clock: clock-controller {
++					compatible = "stericsson,ab8500-clk";
++					#clock-cells = <1>;
++				};
++
++				ab8505_gpio: ab8505-gpio {
++					compatible = "stericsson,ab8505-gpio";
++					gpio-controller;
++					#gpio-cells = <2>;
++				};
++
++				ab8500-rtc {
++					compatible = "stericsson,ab8500-rtc";
++					interrupts = <17 IRQ_TYPE_LEVEL_HIGH
++						      18 IRQ_TYPE_LEVEL_HIGH>;
++					interrupt-names = "60S", "ALARM";
++				};
++
++				gpadc: ab8500-gpadc {
++					compatible = "stericsson,ab8500-gpadc";
++					interrupts = <32 IRQ_TYPE_LEVEL_HIGH
++						      39 IRQ_TYPE_LEVEL_HIGH>;
++					interrupt-names = "HW_CONV_END", "SW_CONV_END";
++					vddadc-supply = <&ab8500_ldo_adc_reg>;
++					#address-cells = <1>;
++					#size-cells = <0>;
++					#io-channel-cells = <1>;
++
++					/* GPADC channels */
++					bat_ctrl: channel@01 {
++						reg = <0x01>;
++					};
++					btemp_ball: channel@02 {
++						reg = <0x02>;
++					};
++					acc_detect1: channel@04 {
++						reg = <0x04>;
++					};
++					acc_detect2: channel@05 {
++						reg = <0x05>;
++					};
++					adc_aux1: channel@06 {
++						reg = <0x06>;
++					};
++					adc_aux2: channel@07 {
++						reg = <0x07>;
++					};
++					main_batt_v: channel@08 {
++						reg = <0x08>;
++					};
++					vbus_v: channel@09 {
++						reg = <0x09>;
++					};
++					charger_c: channel@0b {
++						reg = <0x0b>;
++					};
++					bk_bat_v: channel@0c {
++						reg = <0x0c>;
++					};
++					usb_id: channel@0e {
++						reg = <0x0e>;
++					};
++				};
++
++				ab8500_battery: ab8500_battery {
++					status = "disabled";
++					thermistor-on-batctrl;
++				};
++
++				ab8500_fg {
++					status = "disabled";
++					compatible = "stericsson,ab8500-fg";
++					battery = <&ab8500_battery>;
++					io-channels = <&gpadc 0x08>;
++					io-channel-name = "main_bat_v";
++				};
++
++				ab8500_btemp {
++					status = "disabled";
++					compatible = "stericsson,ab8500-btemp";
++					battery = <&ab8500_battery>;
++					io-channels = <&gpadc 0x02>,
++						      <&gpadc 0x01>;
++					io-channel-name = "btemp_ball",
++							  "bat_ctrl";
++				};
++
++				ab8500_charger {
++					status = "disabled";
++					compatible = "stericsson,ab8500-charger";
++					battery = <&ab8500_battery>;
++					vddadc-supply = <&ab8500_ldo_adc_reg>;
++					io-channels = <&gpadc 0x09>,
++						      <&gpadc 0x0b>;
++					io-channel-name = "vbus_v",
++							  "usb_charger_c";
++				};
++
++				ab8500_chargalg {
++					status = "disabled";
++					compatible = "stericsson,ab8500-chargalg";
++					battery = <&ab8500_battery>;
++				};
++
++				ab8500_usb: ab8500_usb {
++					compatible = "stericsson,ab8500-usb";
++					interrupts = < 90 IRQ_TYPE_LEVEL_HIGH
++						       96 IRQ_TYPE_LEVEL_HIGH
++						       14 IRQ_TYPE_LEVEL_HIGH
++						       15 IRQ_TYPE_LEVEL_HIGH
++						       79 IRQ_TYPE_LEVEL_HIGH
++						       74 IRQ_TYPE_LEVEL_HIGH
++						       75 IRQ_TYPE_LEVEL_HIGH>;
++					interrupt-names = "ID_WAKEUP_R",
++							  "ID_WAKEUP_F",
++							  "VBUS_DET_F",
++							  "VBUS_DET_R",
++							  "USB_LINK_STATUS",
++							  "USB_ADP_PROBE_PLUG",
++							  "USB_ADP_PROBE_UNPLUG";
++					vddulpivio18-supply = <&ab8500_ldo_intcore_reg>;
++					v-ape-supply = <&db8500_vape_reg>;
++					musb_1v8-supply = <&db8500_vsmps2_reg>;
++					clocks = <&prcmu_clk PRCMU_SYSCLK>;
++					clock-names = "sysclk";
++				};
++
++				ab8500-ponkey {
++					compatible = "stericsson,ab8500-poweron-key";
++					interrupts = <6 IRQ_TYPE_LEVEL_HIGH
++						      7 IRQ_TYPE_LEVEL_HIGH>;
++					interrupt-names = "ONKEY_DBF", "ONKEY_DBR";
++				};
++
++				ab8500-sysctrl {
++					compatible = "stericsson,ab8500-sysctrl";
++				};
++
++				ab8500-pwm {
++					compatible = "stericsson,ab8500-pwm";
++					clocks = <&ab8500_clock AB8500_SYSCLK_INT>;
++					clock-names = "intclk";
++				};
++
++				ab8500-debugfs {
++					compatible = "stericsson,ab8500-debug";
++				};
++
++				codec: ab8500-codec {
++					compatible = "stericsson,ab8500-codec";
++
++					V-AUD-supply = <&ab8500_ldo_audio_reg>;
++					V-AMIC1-supply = <&ab8500_ldo_anamic1_reg>;
++					V-AMIC2-supply = <&ab8500_ldo_anamic2_reg>;
++
++					clocks = <&ab8500_clock AB8500_SYSCLK_AUDIO>;
++					clock-names = "audioclk";
++
++					stericsson,earpeice-cmv = <950>; /* Units in mV. */
++				};
++
++				ab8505-regulators {
++					compatible = "stericsson,ab8505-regulator";
++
++					ab8500_ldo_aux1_reg: ab8500_ldo_aux1 {
++						regulator-min-microvolt = <2800000>;
++						regulator-max-microvolt = <3300000>;
++					};
++
++					ab8500_ldo_aux2_reg: ab8500_ldo_aux2 {
++						regulator-min-microvolt = <1100000>;
++						regulator-max-microvolt = <3300000>;
++					};
++
++					ab8500_ldo_aux3_reg: ab8500_ldo_aux3 {
++						regulator-min-microvolt = <1100000>;
++						regulator-max-microvolt = <3300000>;
++					};
++
++					ab8500_ldo_aux4_reg: ab8500_ldo_aux4 {
++						regulator-min-microvolt = <1100000>;
++						regulator-max-microvolt = <3300000>;
++					};
++
++					ab8500_ldo_aux5_reg: ab8500_ldo_aux5 {
++						regulator-min-microvolt = <1050000>;
++						regulator-max-microvolt = <2790000>;
++					};
++
++					ab8500_ldo_aux6_reg: ab8500_ldo_aux6 {
++						regulator-min-microvolt = <1050000>;
++						regulator-max-microvolt = <2790000>;
++					};
++
++					// supply for v-intcore12; VINTCORE12 LDO
++					ab8500_ldo_intcore_reg: ab8500_ldo_intcore {
++						regulator-min-microvolt = <1250000>;
++						regulator-max-microvolt = <1350000>;
++					};
++
++					// supply for gpadc; ADC LDO
++					ab8500_ldo_adc_reg: ab8500_ldo_adc {
++					};
++
++					// supply for ab8500-vaudio; VAUDIO LDO
++					ab8500_ldo_audio_reg: ab8500_ldo_audio {
++					};
++
++					// supply for v-anamic1 VAMIC1 LDO
++					ab8500_ldo_anamic1_reg: ab8500_ldo_anamic1 {
++					};
++
++					// supply for v-amic2; VAMIC2 LDO; reuse constants for AMIC1
++					ab8500_ldo_anamic2_reg: ab8500_ldo_anamic2 {
++					};
++
++					// supply for v-aux8; VAUX8 LDO
++					ab8500_ldo_aux8_reg: ab8500_ldo_aux8 {
++					};
++
++					// supply for U8500 CSI/DSI; VANA LDO
++					ab8500_ldo_ana_reg: ab8500_ldo_ana {
++					};
++				};
++			};
++		};
++
++		sound {
++			stericsson,audio-codec = <&codec>;
++			clocks = <&prcmu_clk PRCMU_SYSCLK>, <&ab8500_clock AB8500_SYSCLK_ULP>, <&ab8500_clock AB8500_SYSCLK_INT>;
++			clock-names = "sysclk", "ulpclk", "intclk";
++		};
++
++		mcde@a0350000 {
++			vana-supply = <&ab8500_ldo_ana_reg>;
++
++			dsi@a0351000 {
++				vana-supply = <&ab8500_ldo_ana_reg>;
++			};
++			dsi@a0352000 {
++				vana-supply = <&ab8500_ldo_ana_reg>;
++			};
++			dsi@a0353000 {
++				vana-supply = <&ab8500_ldo_ana_reg>;
++			};
++		};
++	};
++};
 -- 
 2.24.1
 
