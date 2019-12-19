@@ -2,149 +2,124 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60C41125EAC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 11:13:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C00A5125ED1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 11:24:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=64fRnoKQ+FBcNC+SfV5jAzmJMJaRePnQpa4rxeLpbbs=; b=bbgEi2apRTfJ9c
-	T5jYFvgPvk0TzmHrVOhGCjY1smcPLiAMyEuuw+anuduV+jsbNfqu8/vrJR+Bbl6vJOhntEMtjav1W
-	YgRnM37o1EQzxSeOXQxEhWD9F+0CreJTI9rRATRUXt9t08gpSgD+3MbIroldL/uz/2WMVPxe3TKxh
-	F8bU49QMPNwWOC1RTdQ7dcjM7NcadED+fGBYe986tGC5aqi/ij/sHtaxKtexuKcHjEWqXImuePiNA
-	GPkTiuK+ARFGmaF5+l5CgMMipzcVr/AoCatsHGnUuFV5hkh+rdPnKMo8YwRelZrLD9ufecmcy8+4x
-	J7esjGnWq/GIfUTq1FrA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:List-Owner; bh=05g1JJWCrD/DgfhjsGxgu7J/5uyAZOV2bRBnIzgcp2c=; b=XJ
+	6+cFtd3x003O0TnD6NCCjVkhoJGCabb5eWSDDDfoYWAXTggnZ3bD7NLya8UxfhFXK4euCheDCRY0H
+	RkYhFYu05g1iSavhh27vhPGZvvDymYX1YRP8rw8bYszqBEKqQAbyk8ydpWRMo1W7Hznkm+i0llVWh
+	U6WnhnC9A74hE6/qKIE/L5jsN0dAoEPJBxN+sZuQzf1KVbjhAD+aqWFGhGrShANeawofkXLra9Twr
+	HhqUrReD/qixfFu+xAd0LVG3TBRaRfvtNPbEGpmYZFLpwOPxGBezWvIELYoMC2ycfcOO2yJ/ImlZc
+	4rgfftLT1JJysC1yZBwQRplYQYPC6UaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihsnr-0004Ub-Si; Thu, 19 Dec 2019 10:13:07 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1ihsyi-0007yM-Bg; Thu, 19 Dec 2019 10:24:20 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihsni-0004Tx-49
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 10:13:00 +0000
-Received: by mail-wr1-x441.google.com with SMTP id c9so5352290wrw.8
+ id 1ihsyZ-0007xg-7d
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 10:24:13 +0000
+Received: from epcas5p1.samsung.com (unknown [182.195.41.39])
+ by mailout4.samsung.com (KnoxPortal) with ESMTP id
+ 20191219102408epoutp0462bb1c69e73081c0ee04adebb0f86edf~hvrljU9Zt0525705257epoutp04D
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Dec 2019 02:12:57 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=PN6pgtTj4yzd4L0ViZh1lrsVzR0no/4rRFGhnwNsTvw=;
- b=hKwR/KhQlU2XaqqrNx983HkUgOqRyAk+SOPYXfQ9TuDLzdxMDSs2Tc0JMuOr3i16sg
- 0zIDGJ6E4bXDzCACOFe5DMiCmoLKkxdUY8cUMhgO6gSWe17XQDUua2EGKsD9iiOOMA27
- TSfwsyvpcrn7rL2p1DxT3J+PLsk1jzlSr5t10i38s6T+IkPejg8OYjDRPMmOyHAltv7Y
- ZqlQsGzqtTiJB0xXA7g56jWgUdLztAwRlQPfUPXNHhxFCKlm/Y9h8coAkGV3RygcEG8f
- RWfr1EZ4OcOM2XhFdD10437BuXfMguPB18t03jxJwD2DwbcUbEkFd/78WrD0fkyAJ/kW
- x38w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=PN6pgtTj4yzd4L0ViZh1lrsVzR0no/4rRFGhnwNsTvw=;
- b=pepd+OhHCQS15VKLlZLwPVY8T4np/ufx/KMgYGbvZXAapb5ByyC1u3T1E2GrDppsB1
- ywiS/2Z2BKV+0AnuSV6m0QP/tTRkK8FWxTdYPD4DAWnwpa4s5Goc7qmw2Wh/j86xttrH
- h4r3aOoN8eTbpNufVfkyh4b8wqzirNsS4thF8qdQ7xBFRD/WcJ43uTdSlYOaYfgJ6/kB
- yqnJzcXm4sYta23lJy1hsmKVTSObEmaQ9BbnZsdA5hiROM6UZBSIxPc1KgHRYyrzCamj
- 5usECMAJhn91UrEQ5dO3RvtcM2/DYJ1Yrz7YeG+lLCAHDqYcEMWjch3UdUTRqPE9yX9F
- qCeQ==
-X-Gm-Message-State: APjAAAVlqotopSjLa3PeF85BWy8MNE5toueSKvnRaP9WdckEifHCxKPc
- kz82VVd/Bt67CsRFMQ+jXis3pg==
-X-Google-Smtp-Source: APXvYqyBxurjzFz3D9NwcI1h4K33j6B1IjLmbjChbkMXhw6rTcNalNzCpm4B4UCbvOxZSyRiE4EIeQ==
-X-Received: by 2002:adf:f448:: with SMTP id f8mr8873278wrp.263.1576750376133; 
- Thu, 19 Dec 2019 02:12:56 -0800 (PST)
-Received: from [10.2.4.229] (lfbn-nic-1-505-157.w90-116.abo.wanadoo.fr.
- [90.116.92.157])
- by smtp.gmail.com with ESMTPSA id a1sm5587661wmj.40.2019.12.19.02.12.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 19 Dec 2019 02:12:55 -0800 (PST)
-Subject: Re: [PATCH v2 3/6] phy: amlogic: Add Amlogic A1 USB2 PHY Driver
-To: Hanjie Lin <hanjie.lin@amlogic.com>, Jerome Brunet
- <jbrunet@baylibre.com>, Rob Herring <robh@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Felipe Balbi <felipe.balbi@linux.intel.com>,
- Kevin Hilman <khilman@baylibre.com>
-References: <1576636944-196192-1-git-send-email-hanjie.lin@amlogic.com>
- <1576636944-196192-4-git-send-email-hanjie.lin@amlogic.com>
- <4cbc4216-4f1b-dab2-fccd-4ece7cfedb77@baylibre.com>
- <da372dff-4467-5d04-c8ae-055f89a5b11b@amlogic.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <e66d35b1-4e85-bde4-abf7-af3f569e64e8@baylibre.com>
-Date: Thu, 19 Dec 2019 11:12:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <da372dff-4467-5d04-c8ae-055f89a5b11b@amlogic.com>
-Content-Language: en-US
+ Thu, 19 Dec 2019 10:24:07 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
+ 20191219102408epoutp0462bb1c69e73081c0ee04adebb0f86edf~hvrljU9Zt0525705257epoutp04D
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1576751048;
+ bh=lNrhRejjZJSzCkKB4e9oz198En7AGkhdGjzwETzjwSA=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=KRYEj2JzULwya/Lqwzr7vEUGg8ieaFAf3rPegr29B0PVUF3SyMCsP9klN81Hb1v0F
+ ECc7o8e5so/QQv3UuwVcxFPji6Ab/CxyYfVztMOTNtOYbFxz8BKojI0vtLkS7M66Ta
+ 3ZaPRb8yNlIUrnHGCUZ5g5Hn6i5XMQy/gom60bkg=
+Received: from epsmges5p2new.samsung.com (unknown [182.195.42.74]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTP id
+ 20191219102407epcas5p1b5c225f18bdc03ded34454fd31c43f6f~hvrlMFaTh0414504145epcas5p1y;
+ Thu, 19 Dec 2019 10:24:07 +0000 (GMT)
+Received: from epcas5p4.samsung.com ( [182.195.41.42]) by
+ epsmges5p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 84.91.20197.7CF4BFD5; Thu, 19 Dec 2019 19:24:07 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20191219102407epcas5p103b26e6fb191f7135d870a3449115c89~hvrktDiNf1266012660epcas5p1U;
+ Thu, 19 Dec 2019 10:24:07 +0000 (GMT)
+Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20191219102407epsmtrp176085784dc461fe6da3d95f7ca863b62~hvrksUUAR2283122831epsmtrp1j;
+ Thu, 19 Dec 2019 10:24:07 +0000 (GMT)
+X-AuditID: b6c32a4a-781ff70000014ee5-d8-5dfb4fc75a10
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 41.F3.06569.6CF4BFD5; Thu, 19 Dec 2019 19:24:07 +0900 (KST)
+Received: from Jaguar.sa.corp.samsungelectronics.net (unknown
+ [107.108.73.139]) by epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20191219102405epsmtip2fd5ad69fdeaf24c9021b65c50e814a81~hvri16nI00195201952epsmtip2W;
+ Thu, 19 Dec 2019 10:24:04 +0000 (GMT)
+From: Padmanabhan Rajanbabu <p.rajanbabu@samsung.com>
+To: netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] net: stmmac: platform: Fix MDIO init for platforms without PHY
+Date: Thu, 19 Dec 2019 15:47:01 +0530
+Message-Id: <1576750621-78066-1-git-send-email-p.rajanbabu@samsung.com>
+X-Mailer: git-send-email 2.7.4
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmpgleLIzCtJLcpLzFFi42LZdlhTS/e4/+9Yg6/PlC02PjnNaDHnfAuL
+ xZFTS5gs7v35wGqx6fE1VovLu+awWXRde8JqcWyBmMXRjcEWi7Z+Ybf4/3oro8WsCztYLW6s
+ Z7dYsPERowOfx5aVN5k8Ni+p9+jbsorR4+A+Q4+nP/Yye2zZ/5nR4/MmuQD2KC6blNSczLLU
+ In27BK6MVZMa2Qs2clb8n7+QrYGxjaOLkYNDQsBEYsqyoC5GLg4hgd2MEmd3/mOBcD4xSmxb
+ s5+1i5ETyPnGKLFnoQ2IDdIw6/htNoiivYwSSx5OYIJwWpgkbk1+ygxSxSZgKrFqTiMrSEJE
+ oItRYteBOWCjmAUWMkm82GcJYgsLBEp82dbNAmKzCKhKbHlwhhHE5hVwl/j7dx0rxDo5iZvn
+ Opkh7CNsEl9XaELYLhLvlz9ng7CFJV4d38IOYUtJvOxvg7LLJV5+Wgx2qoRAA6PEzInTGSES
+ 9hIHrsxhAQUAs4CmxPpd+hC38Un0/n7CBAkXXomONiGIalWJ9cs3QXVKS+y7vhfK9pDoubqB
+ BRJCsRKT1xxhnsAoMwth6AJGxlWMkqkFxbnpqcWmBUZ5qeV6xYm5xaV56XrJ+bmbGMHpQstr
+ B+Oycz6HGAU4GJV4eH+4/ooVYk0sK67MPcQowcGsJMJ7u+NnrBBvSmJlVWpRfnxRaU5q8SFG
+ aQ4WJXHeSaxXY4QE0hNLUrNTUwtSi2CyTBycUg2MtgKXHZhlDwa5b13vK+t5rXEtX7X5Tr7X
+ ew7NszL866pvqH72wbIZvV6pLjp/Ze68S2SMO/nw+ax77G4F710djOwEn1/0tnF5sT8yfi9j
+ 2IX+n1sWf2n97WqUfP33xaT8r2+W/q9/ZWM4PVXLN13UKDvgnulymb939sxRCtaffrOgpSe5
+ TNpAiaU4I9FQi7moOBEANvs2axMDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrGLMWRmVeSWpSXmKPExsWy7bCSvO5x/9+xBru6GS02PjnNaDHnfAuL
+ xZFTS5gs7v35wGqx6fE1VovLu+awWXRde8JqcWyBmMXRjcEWi7Z+Ybf4/3oro8WsCztYLW6s
+ Z7dYsPERowOfx5aVN5k8Ni+p9+jbsorR4+A+Q4+nP/Yye2zZ/5nR4/MmuQD2KC6blNSczLLU
+ In27BK6MVZMa2Qs2clb8n7+QrYGxjaOLkZNDQsBEYtbx22xdjFwcQgK7GSV+LpzNBpGQlpje
+ vwfKFpZY+e85O0RRE5NE98UtYAk2AVOJVXMaWUESIgJ9jBL/F/1hAnGYBVYzSexY08IEUiUs
+ 4C9x//4LFhCbRUBVYsuDM4wgNq+Au8Tfv+tYIVbISdw818k8gZFnASPDKkbJ1ILi3PTcYsMC
+ o7zUcr3ixNzi0rx0veT83E2M4NDU0trBeOJE/CFGAQ5GJR7eH66/YoVYE8uKK3MPMUpwMCuJ
+ 8N7u+BkrxJuSWFmVWpQfX1Sak1p8iFGag0VJnFc+/1ikkEB6YklqdmpqQWoRTJaJg1OqgXGZ
+ bP8snY0e68QWK7Kq80bprA/YcKM3K0EhI73gvVDxo8C5NWJ7Xtkm1P+t29F7+rRuwBYTFaPj
+ zofvSPscrcgI8dwmEMrtHr+kz/LLI93mvh1ft9x/+CxVhi9i3qPoRzd36q9hXf/z4d8zlZEp
+ Nz2X7hFOdXhuPm/yghOWrX9u/d+0Kt85+IASS3FGoqEWc1FxIgDJWKlXSQIAAA==
+X-CMS-MailID: 20191219102407epcas5p103b26e6fb191f7135d870a3449115c89
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+X-CMS-RootMailID: 20191219102407epcas5p103b26e6fb191f7135d870a3449115c89
+References: <CGME20191219102407epcas5p103b26e6fb191f7135d870a3449115c89@epcas5p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_021258_218805_AFE46E71 
-X-CRM114-Status: GOOD (  23.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191219_022411_670782_A70A1400 
+X-CRM114-Status: GOOD (  14.99  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.34 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.34 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -156,237 +131,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-usb@vger.kernel.org,
- Yue Wang <yue.wang@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Liang Yang <liang.yang@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jian Hu <jian.hu@amlogic.com>
+Cc: Jose.Abreu@synopsys.com, jayati.sahu@samsung.com, alexandre.torgue@st.com,
+ rcsekar@samsung.com, pankaj.dubey@samsung.com,
+ Sriram Dash <sriram.dash@samsung.com>, stable@vger.kernel.org,
+ Padmanabhan Rajanbabu <p.rajanbabu@samsung.com>, peppe.cavallaro@st.com,
+ davem@davemloft.net
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19/12/2019 10:48, Hanjie Lin wrote:
-> 
-> 
-> On 2019/12/18 21:17, Neil Armstrong wrote:
->> Hi,
->>
->> On 18/12/2019 03:42, Hanjie Lin wrote:
->>> This adds support for the USB2 PHY found in the Amlogic A1 SoC Family.
->>>
->>> It supports host mode only.
->>>
->>> Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
->>> Signed-off-by: Yue Wang <yue.wang@amlogic.com>
->>> ---
->>>  drivers/phy/amlogic/phy-meson-g12a-usb2.c | 102 ++++++++++++++++++++++--------
->>>  1 file changed, 74 insertions(+), 28 deletions(-)
->>>
->>> diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb2.c b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
->>> index 9065ffc..2c242d3 100644
->>> --- a/drivers/phy/amlogic/phy-meson-g12a-usb2.c
->>> +++ b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
->>> @@ -146,11 +146,18 @@
->>>  #define RESET_COMPLETE_TIME					1000
->>>  #define PLL_RESET_COMPLETE_TIME					100
->>>  
->>> +enum {
->>> +	MESON_USB2_PHY_VERSION_10 = 0,
->>> +	MESON_USB2_PHY_VERSION_11,
->>
->> Are these the real "versions" of the phy or it's made up ?
->>
-> 
-> This version is made up and only for distinguish a1 and g12a.
+The current implementation of "stmmac_dt_phy" function initializes
+the MDIO platform bus data, even in the absence of PHY. This fix
+will skip MDIO initialization if there is no PHY present.
 
-No problem, in this case simply use the SoC family instead of 10 and 11.
+Fixes: 7437127 ("net: stmmac: Convert to phylink and remove phylib logic")
+Acked-by: Jayati Sahu <jayati.sahu@samsung.com>
+Signed-off-by: Sriram Dash <sriram.dash@samsung.com>
+Signed-off-by: Padmanabhan Rajanbabu <p.rajanbabu@samsung.com>
+---
+ drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Neil
-
-> 
->>> +	MESON_USB2_PHY_VERSION_COUNT,
->>> +};
->>> +
->>>  struct phy_meson_g12a_usb2_priv {
->>>  	struct device		*dev;
->>>  	struct regmap		*regmap;
->>>  	struct clk		*clk;
->>>  	struct reset_control	*reset;
->>> +	int phy_version;
->>>  };
->>>  
->>>  static const struct regmap_config phy_meson_g12a_usb2_regmap_conf = {
->>> @@ -192,18 +199,33 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
->>>  		     FIELD_PREP(PHY_CTRL_R17_MPLL_FILTER_PVT2, 2) |
->>>  		     FIELD_PREP(PHY_CTRL_R17_MPLL_FILTER_PVT1, 9));
->>>  
->>> -	regmap_write(priv->regmap, PHY_CTRL_R18,
->>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
->>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
->>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
->>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
->>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
->>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
->>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
->>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
->>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
->>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
->>> -		     PHY_CTRL_R18_MPLL_ACG_RANGE);
->>> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10)
->>> +		regmap_write(priv->regmap, PHY_CTRL_R18,
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
->>> +			     PHY_CTRL_R18_MPLL_ACG_RANGE);
->>> +	else if (priv->phy_version == MESON_USB2_PHY_VERSION_11)
->>> +		regmap_write(priv->regmap, PHY_CTRL_R18,
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
->>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
->>> +			     PHY_CTRL_R18_MPLL_ACG_RANGE |
->>> +			     PHY_CTRL_R18_MPLL_DCO_CLK_SEL);
->>
->> The only difference is PHY_CTRL_R18_MPLL_ACG_RANGE | PHY_CTRL_R18_MPLL_DCO_CLK_SEL,
->> you can easily simplify the code here by using a temp variable.
->>
-> 
-> Yes, it will looks more clearly.
-> 
->>>  
->>>  	udelay(PLL_RESET_COMPLETE_TIME);
->>>  
->>> @@ -227,13 +249,24 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
->>>  		     FIELD_PREP(PHY_CTRL_R20_USB2_BGR_VREF_4_0, 0) |
->>>  		     FIELD_PREP(PHY_CTRL_R20_USB2_BGR_DBG_1_0, 0));
->>>  
->>> -	regmap_write(priv->regmap, PHY_CTRL_R4,
->>> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_7_0, 0xf) |
->>> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_15_8, 0xf) |
->>> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_23_16, 0xf) |
->>> -		     PHY_CTRL_R4_TEST_BYPASS_MODE_EN |
->>> -		     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_1_0, 0) |
->>> -		     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_3_2, 0));
->>> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10)
->>> +		regmap_write(priv->regmap, PHY_CTRL_R4,
->>> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_7_0, 0xf) |
->>> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_15_8, 0xf) |
->>> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_23_16, 0xf) |
->>> +			     PHY_CTRL_R4_TEST_BYPASS_MODE_EN |
->>> +			     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_1_0, 0) |
->>> +			     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_3_2, 0));
->>> +	else if (priv->phy_version == MESON_USB2_PHY_VERSION_11) {
->>> +		regmap_write(priv->regmap, PHY_CTRL_R21,
->>> +			     PHY_CTRL_R21_USB2_CAL_ACK_EN |
->>> +			     PHY_CTRL_R21_USB2_TX_STRG_PD |
->>> +			     FIELD_PREP(PHY_CTRL_R21_USB2_OTG_ACA_TRIM_1_0, 2));
->>> +
->>> +		/* Analog Settings */
->>> +		regmap_write(priv->regmap, PHY_CTRL_R13,
->>> +			     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
->>> +	}
->>>  
->>>  	/* Tuning Disconnect Threshold */
->>>  	regmap_write(priv->regmap, PHY_CTRL_R3,
->>> @@ -241,11 +274,13 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
->>>  		     FIELD_PREP(PHY_CTRL_R3_HSDIC_REF, 1) |
->>>  		     FIELD_PREP(PHY_CTRL_R3_DISC_THRESH, 3));
->>>  
->>> -	/* Analog Settings */
->>> -	regmap_write(priv->regmap, PHY_CTRL_R14, 0);
->>> -	regmap_write(priv->regmap, PHY_CTRL_R13,
->>> -		     PHY_CTRL_R13_UPDATE_PMA_SIGNALS |
->>> -		     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
->>> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10) {
->>> +		/* Analog Settings */
->>> +		regmap_write(priv->regmap, PHY_CTRL_R14, 0);
->>> +		regmap_write(priv->regmap, PHY_CTRL_R13,
->>> +			     PHY_CTRL_R13_UPDATE_PMA_SIGNALS |
->>> +			     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
->>> +	}
->>>  
->>>  	return 0;
->>>  }
->>> @@ -271,6 +306,7 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
->>>  	struct resource *res;
->>>  	struct phy_meson_g12a_usb2_priv *priv;
->>>  	struct phy *phy;
->>> +	struct device_node *np = dev->of_node;
->>>  	void __iomem *base;
->>>  	int ret;
->>>  
->>> @@ -286,14 +322,23 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
->>>  	if (IS_ERR(base))
->>>  		return PTR_ERR(base);
->>>  
->>> +	if (of_device_is_compatible(np, "amlogic,g12a-usb2-phy"))
->>> +		priv->phy_version = MESON_USB2_PHY_VERSION_10;
->>> +	else if (of_device_is_compatible(np, "amlogic,a1-usb2-phy"))
->>> +		priv->phy_version = MESON_USB2_PHY_VERSION_11;
->>> +	else
->>> +		return -EINVAL;
->>
->> Please use of_device_get_match_data() and a match data for each compatible instead.
->>
-> 
-> OK, I will fix it in next version.
-> 
->>> +
->>>  	priv->regmap = devm_regmap_init_mmio(dev, base,
->>>  					     &phy_meson_g12a_usb2_regmap_conf);
->>>  	if (IS_ERR(priv->regmap))
->>>  		return PTR_ERR(priv->regmap);
->>>  
->>> -	priv->clk = devm_clk_get(dev, "xtal");
->>> -	if (IS_ERR(priv->clk))
->>> -		return PTR_ERR(priv->clk);
->>> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10) {
->>> +		priv->clk = devm_clk_get(dev, "xtal");
->>> +		if (IS_ERR(priv->clk))
->>> +			return PTR_ERR(priv->clk);
->>> +	}
->>>  
->>>  	priv->reset = devm_reset_control_get(dev, "phy");
->>>  	if (IS_ERR(priv->reset))
->>> @@ -322,7 +367,8 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
->>>  
->>>  static const struct of_device_id phy_meson_g12a_usb2_of_match[] = {
->>>  	{ .compatible = "amlogic,g12a-usb2-phy", },
->>> -	{ },
->>> +	{ .compatible = "amlogic,a1-usb2-phy", },
->>> +	{ /* Sentinel */ }
->>>  };
->>>  MODULE_DEVICE_TABLE(of, phy_meson_g12a_usb2_of_match);
->>>  
->>>
->>
->> Thanks,
->> Neil
->>
->> .
->>
-> 
-> Thanks,
-> Hanjie.Lin
-> 
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+index bedaff0..cc8d7e7 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_platform.c
+@@ -320,7 +320,7 @@ static int stmmac_mtl_setup(struct platform_device *pdev,
+ static int stmmac_dt_phy(struct plat_stmmacenet_data *plat,
+ 			 struct device_node *np, struct device *dev)
+ {
+-	bool mdio = true;
++	bool mdio = false;
+ 	static const struct of_device_id need_mdio_ids[] = {
+ 		{ .compatible = "snps,dwc-qos-ethernet-4.10" },
+ 		{},
+-- 
+2.7.4
 
 
 _______________________________________________
