@@ -2,73 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8C87126E15
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 20:39:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B118126E2A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 20:46:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H5b3EGu+TvhDEuqt89/uvlJgHmkmCBuwGiKgM3m3iV4=; b=C0blXhRcnZAO26
-	a2l/9S8nkbQSON0Ppp5aPbNPgVPIZ/PjwGW0nXtVXyhutn1lkdp91lGux9vrTeLsb6sgx5zUOJUbP
-	13AdkAOIk1S61JNlTERxyL7ha3Gy6LQJsLqTXOvtUyyrsztYDnUAUXdX03Zklj1vJmlrl5aKM6rsa
-	SJqQgRwMCcmcBNPY7PMX4w3QqvTYxe8Yt73wfLHMgQkrHx/WNMuhQldXxDhkyseX2oXWhXh/RWJa7
-	VF/oau4w1HGluMIx2EAAF7wfI/vi11lRwFNGBx7kfWDl+qXqWRBmWZiFaiPwQo8KtKHFl45+HnKS9
-	nuLAjDXU9m3VybOZhTEg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QsEn7k+awc3cqeD2SQyG5P5GYQdaoa1w0oaIeCLkeag=; b=UWXh7+K+KrkzH0Oju0/Dw2NgJ
+	BC1UXl7pXWgDvRGEImIHrHzc+fgvbVyT9srKa/gOK6Z+brMR7TBS/cL+lc4BhC5d4EmgNRjroF5xE
+	O8YvfBIy+/Odd6elVAVgLChVOrEx+Ci5cTRbXfcj3vzKY0zFEtuWtoIlZAmRYHYPKHlm/4OAt6tLU
+	oT8Oa2joYkoe9J7DqvbDHGoFSmGOFGjjRhLl+Cb9HVWUyxO69pdBhYWD6i0KI+jqAKaKOdz2Glk79
+	MhmL7WGkJr0/FW592XKDlTSPMZxNhFhIZKvPsru8/YVzX78xP09ua0HfbDWJqgSQz2CMFmAGc3FQq
+	qQe9ap6rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii1eG-0008JN-10; Thu, 19 Dec 2019 19:39:48 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1ii1kn-0002mu-Qg; Thu, 19 Dec 2019 19:46:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii1e8-0008II-GW
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 19:39:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576784377;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=prVadGfe425gEg8krjR8jjvWKpR2WFGHzNs5x3wZo7U=;
- b=bfRb5z/yHofqSYv+yTul2/zihQ0v44dVMuAb8dNCgJUS0dC6mq8j0kjgbAHuzEy7SPwrWa
- XPwbBkSrnM6AENy5zgJp2flSFDxJBAn4hTLdyl8XSIXY046makft5Y3uUanQ6dBNq4s7lu
- WSEhR+82jRU7MAephLbEdtg4phXrKF8=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-423-jCat3nvKPdKu8c4bFYo-KA-1; Thu, 19 Dec 2019 14:39:32 -0500
-X-MC-Unique: jCat3nvKPdKu8c4bFYo-KA-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1ii1ka-0002mZ-Lk
+ for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 19:46:21 +0000
+Received: from localhost (c-73-47-72-35.hsd1.nh.comcast.net [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 944D8108594D;
- Thu, 19 Dec 2019 19:39:29 +0000 (UTC)
-Received: from gondolin (ovpn-117-134.ams2.redhat.com [10.36.117.134])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 74E355D9E2;
- Thu, 19 Dec 2019 19:39:20 +0000 (UTC)
-Date: Thu, 19 Dec 2019 20:39:17 +0100
-From: Cornelia Huck <cohuck@redhat.com>
-To: Sean Christopherson <sean.j.christopherson@intel.com>
-Subject: Re: [PATCH v2 25/45] KVM: s390: Move guts of kvm_arch_vcpu_init()
- into kvm_arch_vcpu_create()
-Message-ID: <20191219203917.79916aad.cohuck@redhat.com>
-In-Reply-To: <20191218215530.2280-26-sean.j.christopherson@intel.com>
-References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
- <20191218215530.2280-26-sean.j.christopherson@intel.com>
-Organization: Red Hat GmbH
+ by mail.kernel.org (Postfix) with ESMTPSA id A3297227BF;
+ Thu, 19 Dec 2019 19:46:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576784779;
+ bh=xUSTFd7GGdvk10sf3+om8mg9EYMJvjpiQnqD0QauP2I=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=TlZXCHKVySipIwV8OQTf4eP3VeA0QPzE+s9nJVK5IUitaVn0l2mcL7AWC2Xvaxbju
+ l4K26akuLHBCiPdJZXw9IjzSH3PlfKq+EHYNazCz9xmkuM90nZO4pSvrwtESuW0ggT
+ 4/G6f+qMiFE1v3SEzi1TZcwsUyDIJy4Cpr3wiQ5Q=
+Date: Thu, 19 Dec 2019 14:46:18 -0500
+From: Sasha Levin <sashal@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH AUTOSEL 5.4 197/350] ASoC: SOF: imx: fix reverse
+ CONFIG_SND_SOC_SOF_OF dependency
+Message-ID: <20191219194618.GQ17708@sasha-vm>
+References: <20191210210735.9077-1-sashal@kernel.org>
+ <20191210210735.9077-158-sashal@kernel.org>
+ <20191211110005.GC3870@sirena.org.uk>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+Content-Disposition: inline
+In-Reply-To: <20191211110005.GC3870@sirena.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_113940_629163_C1E326D0 
-X-CRM114-Status: GOOD (  11.00  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191219_114620_734046_881A01AA 
+X-CRM114-Status: UNSURE (   8.05  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -90,41 +80,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
- kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
- kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Greg Kurz <groug@kaod.org>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- James Hogan <jhogan@kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
- Vitaly Kuznetsov <vkuznets@redhat.com>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jim Mattson <jmattson@google.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: alsa-devel@alsa-project.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-kernel@vger.kernel.org, stable@vger.kernel.org,
+ Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 18 Dec 2019 13:55:10 -0800
-Sean Christopherson <sean.j.christopherson@intel.com> wrote:
+On Wed, Dec 11, 2019 at 11:00:05AM +0000, Mark Brown wrote:
+>On Tue, Dec 10, 2019 at 04:05:02PM -0500, Sasha Levin wrote:
+>> From: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
+>>
+>> [ Upstream commit f9ad75468453b019b92c5296e6a04bf7c37f49e4 ]
+>>
+>> updated solution to the problem reported with randconfig:
+>>
+>> CONFIG_SND_SOC_SOF_IMX depends on CONFIG_SND_SOC_SOF, but is in
+>> turn referenced by the sof-of-dev driver. This creates a reverse
+>> dependency that manifests in a link error when CONFIG_SND_SOC_SOF_OF
+>> is built-in but CONFIG_SND_SOC_SOF_IMX=m:
+>
+>Are you sure this doesn't depend on any other Kconfig changes?
 
-> Move all of kvm_arch_vcpu_init(), which is invoked at the very end of
-> kvm_vcpu_init(), into kvm_arch_vcpu_create() in preparation of moving
-> the call to kvm_vcpu_init().  Moving kvm_vcpu_init() is itself a
-> preparatory step for moving allocation and initialization to common KVM
-> code.
-> 
-> No functional change inteded.
-> 
-> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-> ---
->  arch/s390/kvm/kvm-s390.c | 62 ++++++++++++++++++++++------------------
->  1 file changed, 34 insertions(+), 28 deletions(-)
+Nope, but it didn't fail my build tests.
 
-Reviewed-by: Cornelia Huck <cohuck@redhat.com>
-
+-- 
+Thanks,
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
