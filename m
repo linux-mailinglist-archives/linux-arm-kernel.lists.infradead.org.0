@@ -2,115 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC4EB1268C5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 19:13:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFDD11268D3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 19 Dec 2019 19:18:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GX5fmshF7W4HFfsC8b5ZS3qfJA6ANHB8QT55rfxfTos=; b=bGydXd2vHaXnwO
-	q1KotT292qtVo+PkJ/Xf5rm/gP8BVkxY9kTSc8lST+Ofz6gx10imEx0CS7RP6JgigiEoCCIPX83Ps
-	62TNNLFAUxw/tM3Xb6N03NlCwdnqJhMrN+VOy1zEzN5hTwa/aS/a/52aAFhYstL3HuCViWAqsp+SD
-	vvwO0fLhf4GPhR4Bip1sMdLMlGx+zQsJqHOh8QlVUsSd8myLNXeKZPANj64QZ9zbKWiBjuSEZ6B9l
-	Jg9TyN4k5KA2bIeh/PsrVHyFi8cmqhiLeKuMLzPeIOKsYF7qDepYPrg1KqXG3dbRbm1wyUn4f4iUK
-	SeWxJeCNbIFfUiGLG9HQ==;
+	List-Owner; bh=eFkUF/ovhWTeWAvbfNLO3AOzgkME2+CKZ7l4VsaataI=; b=Y9MSyRGl6H/sbk
+	kJuGvfYnOTxyF7Cv205KEo4UqnU6qpPiujXHfFSmra26FAKTV6225V6DPhnN03Ha5ze22V/hdW+qz
+	ATK+jnu5he86YCO7kEit+3AEmVUB11rT8FxKfAWG+gnQSMZGOU1/1mJu+AdnklVb82pu+MLPQueT5
+	FJ7Woq+a4XG48FAA3+fbsxK+kzkFXkNzH8YTZAlNPQb0XlN4yWnmND+C7fE5effycoVNR8Bowu0lj
+	26H/d1wcSWD8vQn3P73m+8gj8R0XbpPtPHPTXNSHKKlP49LqHicmZuMf7GJZwTRSVvjb3vwfZ0J4z
+	YBQbA3zjngATzqDxxYqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii0J3-0005mK-RE; Thu, 19 Dec 2019 18:13:49 +0000
-Received: from mail-dm6nam11on20626.outbound.protection.outlook.com
- ([2a01:111:f400:7eaa::626]
- helo=NAM11-DM6-obe.outbound.protection.outlook.com)
+	id 1ii0Nv-0007aY-Js; Thu, 19 Dec 2019 18:18:51 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii0Is-0005m0-SC
- for linux-arm-kernel@lists.infradead.org; Thu, 19 Dec 2019 18:13:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NcK6FyBbUCLnxz8fLfIdcJ62lHvs21xZiEulR3iJl7u2h3ZmL7j7gi/zakTfDp3YD3/OUPHguYzt3Qzu43RCLD6HAoceeN5MEOCPeMcx9DPzytA6aOktbkqhtyKF7d7xU3CkFT/IziaJHs5wj04VnOO1JH5KbrNlNtN5WFIicOu210ZvrK8U72wgnTWUheSy4T/cpgj03mQNDLCyla+Q4j1nH7XiPTHr1fm3LjHCmJ1l01EXPK3AbcJ5ewbUDeELcq1ihZpUTWYSGTwUMZzyEtDiATE8pKDexmbANZyZf7Bj0Z8LbgXKExoYUv3l79FYjRY6mjgUIxOap0lHsHHWJA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8nGxNncb09GOOpT5pc0HdcsepO9ArrrNeW+RMeIvXVA=;
- b=KbRiBMNZW4TQ2VftBMPmsg36Sg6cDu8S42OaYmqxefdXTw0KqmGj/D2IZU3NPITzJfmXOwaR+yBRVgYztEiiln0f03XJ73hzPr8LT09bG+rZjcuIP9JoJW4Zjw3Slu2D7auUXTgEdN/tTKAk5y6peUBmh8fGvxzlvQSRWjAHqMcHIqE9NgscPxgd7Q/FFGFqcvStjqnY3LrPu2DesQBS4MiDJnfIkBS06riAIUa8FFvgUviCdtaMPdjOvt90vSWMCO+s2vt8oOaFCPTzGNXdQeRyg5wHmCrk0f+riysxYjXJJXzLLK6MJQYmvPoUgojwvBjz8oH67vJ/G05P0TAuVQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8nGxNncb09GOOpT5pc0HdcsepO9ArrrNeW+RMeIvXVA=;
- b=Uvfy3B8ltIrUE/ec74EjxR5/iTH+VaIct+O88DukIVJR9mVCWoBNI8IF63UlM6WI7xuhFhoRghHazjCKVlQ2/6RSTOdmCf+Q9HHxLASkpI+r8HUOFzCn7XLYeRQZqtYnojfGHMakO2pOTdoQMTsL15EHQAVISUvpNx6XvkNnsyw=
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com (20.180.9.216) by
- CH2PR02MB6134.namprd02.prod.outlook.com (52.132.228.86) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2559.14; Thu, 19 Dec 2019 18:13:35 +0000
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::969:436f:b4b8:4899]) by CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::969:436f:b4b8:4899%7]) with mapi id 15.20.2559.012; Thu, 19 Dec 2019
- 18:13:34 +0000
-From: Radhey Shyam Pandey <radheys@xilinx.com>
-To: Richard Cochran <richardcochran@gmail.com>
-Subject: RE: [PATCH net-next 1/3] net: axienet: Propagate registration errors
- during probe.
-Thread-Topic: [PATCH net-next 1/3] net: axienet: Propagate registration errors
- during probe.
-Thread-Index: AQHVtD8/PHqqoL6sF0eYA6GsnGF+CKe92YtQgAChMQCAA0uZIA==
-Date: Thu, 19 Dec 2019 18:13:34 +0000
-Message-ID: <CH2PR02MB700039E0886AE86B9C731A90C7520@CH2PR02MB7000.namprd02.prod.outlook.com>
-References: <cover.1576520432.git.richardcochran@gmail.com>
- <42ed0fb7ef99101d6fd8b799bccb6e2d746939c2.1576520432.git.richardcochran@gmail.com>
- <CH2PR02MB70009FEE62CD2AB6B40911E5C7500@CH2PR02MB7000.namprd02.prod.outlook.com>
- <20191217154950.GA8163@localhost>
-In-Reply-To: <20191217154950.GA8163@localhost>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=radheys@xilinx.com; 
-x-originating-ip: [183.83.137.135]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 44b93b19-b0dc-4930-18d1-08d784af29a0
-x-ms-traffictypediagnostic: CH2PR02MB6134:|CH2PR02MB6134:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR02MB61348151A16AEF9A73D9192AC7520@CH2PR02MB6134.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3173;
-x-forefront-prvs: 0256C18696
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(136003)(376002)(366004)(346002)(39850400004)(199004)(13464003)(189003)(9686003)(8936002)(478600001)(81166006)(316002)(66476007)(66556008)(76116006)(64756008)(66946007)(5660300002)(66446008)(33656002)(55016002)(6916009)(54906003)(2906002)(7696005)(52536014)(53546011)(6506007)(26005)(186003)(107886003)(86362001)(81156014)(71200400001)(8676002)(4326008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6134;
- H:CH2PR02MB7000.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: h0GhVN64/jBRBLzu1NBKf0J6/4hwY0lI8UTXUhVNgWXD7ghxLAQvovKgec518J3dfekbcEQFrDs4ba3KbqNTUnHFbZTfFFp5uo8RrIPv56BlsG6FmfqRs6u5QI+vRmJ2z9XiB59n8wGyCRW/dHE0r2kgi0Li4BL0fdt7sOn8lJnZ17ncO7snJ98AZuWbVM/cGfFCeMDACDSOD/dw9LZYa06XGjYJFXf9dSuNFfI2cn5bWmIozdHIXKnHuJ0POUpPn1GJp7pv56fat0ua1gt+1q1DGTUuR+U5xp4kr0nQMKVKoG0hATnRhvMhmvN9Q+rfHrsaiUJnolg1B53B5lva1sRMQjRQi1JHJB++1jTO11/yqPrEIIuzLcJL/2z8aGe23zmCVR9Dl/HyjES5AkhiPcSJYFCgeCcWXdqiz0Cwib5fCZTGHZd9mtJviGRFgISQpAEtY2BkPpCSlCq0O9bsUx3ign7E54KkHsDBtSB07CxNv8AM/Zl4A+UJbAfSUD/c
+ id 1ii0Ng-0007Yg-Ni; Thu, 19 Dec 2019 18:18:38 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id v12so4360340vsv.5;
+ Thu, 19 Dec 2019 10:18:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hdfl3j3PUu29KvhFJr+t8q9A7l1fLtUS6dfELY8PVLE=;
+ b=tCS54bJd6f3428WApblIOzLQvg9gXUk1ry2iLEcNoz5mn+Ev/It5H2F9ixzC8H3L7O
+ gy0IKkXEef1q6L0ksBFGDnOsjR/d7EBCW93dzLdMYSzBycxQDu5ezgzhvuFSzH3C8Lm/
+ JlAmLHyjT024P+gfLHAh9AEPlaXfFD3YP4yLDycw9CpwqSePfClSIox4XVdEvj5Nr5Bn
+ FjVC6LL8OR3gYVOQ86fmVwGRCASN1MYtioAty36QxsKkpWaLkkDWk5onwgp+d+6B+dOw
+ +x6EdoeRB0BmdvaglW+aUzVAef6OztV1h6RgZVussRPpI7Udtcb9/edVA/g/XEvrPZnk
+ C5rA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hdfl3j3PUu29KvhFJr+t8q9A7l1fLtUS6dfELY8PVLE=;
+ b=UQ98q2lnx5Djit4gC4xDnOo8qAAhGsesKlxhKfX+nRP+Gguca9iCVvjmYtDaS+pARf
+ 6PC0EDu9Qx4miOAG27gikPRZAA+Yh1RyyJMzpd8XWayr/sh7tWanb8zTYsaj366ODkdf
+ /lw1ifG0fMRtfFqDtf7C09hTkxMU0TnK9cl2d3M7hr9QuwtHSaczlJ7GBh1esgFTrJ/6
+ J/6uTqh3fN3h1SAAAxwEqki+8u5d/1LFZbMDGAzHK+LugELFChJQFMW1bpkQcD0G4Ns+
+ NPt64XLkKhjZ/L+zXe5yKWCMiBzy2Y5MOCQ+jg8w8bUacYH5a/h/3EGh7me06UJzMnNg
+ n+bw==
+X-Gm-Message-State: APjAAAWQIjK71H/a3uGOumsBepVA0oLxr+qVRPdAPsjEFORGkzVFm/tR
+ 1I+v9AXrF6kGi0DNmC1WiHx0v6RnPq3/dGbwAb0=
+X-Google-Smtp-Source: APXvYqx2+nDxq2ixPv2h29IpGt0iubjleAq9aMOGE+An5nayL0a+8XISERr+3e5yfQuKP1zTRewKys0Qg4k4OKGNcqU=
+X-Received: by 2002:a05:6102:204a:: with SMTP id
+ q10mr6222578vsr.127.1576779515189; 
+ Thu, 19 Dec 2019 10:18:35 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 44b93b19-b0dc-4930-18d1-08d784af29a0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Dec 2019 18:13:34.7082 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 77Y9cRpSsx3QojgMhClZz0UPJVh804ZQHwEwHXmmZtO7CnHxvVZ/oFA6b3y8sX15GpWUZ5FJOXdIiuFuuNvpVw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6134
+References: <1576224695-22657-1-git-send-email-stanley.chu@mediatek.com>
+ <1576224695-22657-2-git-send-email-stanley.chu@mediatek.com>
+In-Reply-To: <1576224695-22657-2-git-send-email-stanley.chu@mediatek.com>
+From: Alim Akhtar <alim.akhtar@gmail.com>
+Date: Thu, 19 Dec 2019 23:47:59 +0530
+Message-ID: <CAGOxZ539Fr5Vxg8Zg=LpYhxTacwh81Ee+S9MWFybwbAPr5RgYQ@mail.gmail.com>
+Subject: Re: [PATCH v1 1/4] scsi: ufs-mediatek: introduce reference clock
+ control
+To: Stanley Chu <stanley.chu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_101338_995528_9759E6AA 
-X-CRM114-Status: UNSURE (   9.87  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191219_101836_775124_B0A568DC 
+X-CRM114-Status: GOOD (  18.37  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alim.akhtar[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,47 +93,200 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- Michal Simek <michals@xilinx.com>, David Miller <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-scsi@vger.kernel.org,
+ "Martin K. Petersen" <martin.petersen@oracle.com>, andy.teng@mediatek.com,
+ "James E.J. Bottomley" <jejb@linux.ibm.com>, chun-hung.wu@mediatek.com,
+ Kuohong Wang <kuohong.wang@mediatek.com>,
+ open list <linux-kernel@vger.kernel.org>, Avri Altman <avri.altman@wdc.com>,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ Alim Akhtar <alim.akhtar@samsung.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Pedro Sousa <pedrom.sousa@synopsys.com>, linux-arm-kernel@lists.infradead.org,
+ "Bean Huo \(beanhuo\)" <beanhuo@micron.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Richard Cochran <richardcochran@gmail.com>
-> Sent: Tuesday, December 17, 2019 9:20 PM
-> To: Radhey Shyam Pandey <radheys@xilinx.com>
-> Cc: netdev@vger.kernel.org; linux-arm-kernel@lists.infradead.org; David
-> Miller <davem@davemloft.net>; Michal Simek <michals@xilinx.com>
-> Subject: Re: [PATCH net-next 1/3] net: axienet: Propagate registration errors
-> during probe.
-> 
-> On Tue, Dec 17, 2019 at 06:19:47AM +0000, Radhey Shyam Pandey wrote:
-> > > -----Original Message-----
-> > > From: Richard Cochran <richardcochran@gmail.com>
-> > > Sent: Tuesday, December 17, 2019 12:03 AM
-> > > To: netdev@vger.kernel.org
-> > > Cc: linux-arm-kernel@lists.infradead.org; David Miller
-> > > <davem@davemloft.net>; Michal Simek <michals@xilinx.com>; Radhey
-> > > Shyam Pandey <radheys@xilinx.com>
-> > > Subject: [PATCH net-next 1/3] net: axienet: Propagate registration errors
-> > > during probe.
-> > >
-> > > The function, axienet_mdio_setup(), calls of_mdiobus_register() which
-> > > might return EDEFER_PROBE.  However, this error is not propagated to
-> > EPROBE_DEFER.  In which scenario we are hitting probe_defer?
-> 
-> Did you see the cover letter?  I am referring to this series:
+On Fri, Dec 13, 2019 at 2:23 PM Stanley Chu <stanley.chu@mediatek.com> wrote:
+>
+> Introduce reference clock control in MediaTek Chipset in order
+> to disable it if it is not necessary by UFS device to save system power.
+>
+> Currently reference clock can be disabled during system suspend, runtime
+> suspend and clock-gating after link enters hibernate state.
+>
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 
-I mean in which scenario we are hitting of_mdiobus_register defer? 
-The series you mentioned talks about one-step TS.
-> 
->  16.Dec'19  [PATCH V6 net-next 00/11] Peer to Peer One-Step time stamping
-> 
-> Thanks,
-> Richard
+Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
+
+> ---
+>  drivers/scsi/ufs/ufs-mediatek.c | 64 ++++++++++++++++++++++++++++++---
+>  drivers/scsi/ufs/ufs-mediatek.h | 20 +++++++++--
+>  2 files changed, 78 insertions(+), 6 deletions(-)
+>
+> diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
+> index 6a3ec11b16db..690483c78212 100644
+> --- a/drivers/scsi/ufs/ufs-mediatek.c
+> +++ b/drivers/scsi/ufs/ufs-mediatek.c
+> @@ -18,6 +18,11 @@
+>  #include "unipro.h"
+>  #include "ufs-mediatek.h"
+>
+> +#define ufs_mtk_ref_clk_notify(on, res) \
+> +       arm_smccc_smc(MTK_SIP_UFS_CONTROL, \
+> +                     UFS_MTK_SIP_REF_CLK_NOTIFICATION, \
+> +                     on, 0, 0, 0, 0, 0, &(res))
+> +
+>  static void ufs_mtk_cfg_unipro_cg(struct ufs_hba *hba, bool enable)
+>  {
+>         u32 tmp;
+> @@ -83,6 +88,49 @@ static int ufs_mtk_bind_mphy(struct ufs_hba *hba)
+>         return err;
+>  }
+>
+> +static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
+> +{
+> +       struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+> +       struct arm_smccc_res res;
+> +       unsigned long timeout;
+> +       u32 value;
+> +
+> +       if (host->ref_clk_enabled == on)
+> +               return 0;
+> +
+> +       if (on) {
+> +               ufs_mtk_ref_clk_notify(on, res);
+> +               ufshcd_writel(hba, REFCLK_REQUEST, REG_UFS_REFCLK_CTRL);
+> +       } else {
+> +               ufshcd_writel(hba, REFCLK_RELEASE, REG_UFS_REFCLK_CTRL);
+> +       }
+> +
+> +       /* Wait for ack */
+> +       timeout = jiffies + msecs_to_jiffies(REFCLK_REQ_TIMEOUT_MS);
+> +       do {
+> +               value = ufshcd_readl(hba, REG_UFS_REFCLK_CTRL);
+> +
+> +               /* Wait until ack bit equals to req bit */
+> +               if (((value & REFCLK_ACK) >> 1) == (value & REFCLK_REQUEST))
+> +                       goto out;
+> +
+> +               usleep_range(100, 200);
+> +       } while (time_before(jiffies, timeout));
+> +
+> +       dev_err(hba->dev, "missing ack of refclk req, reg: 0x%x\n", value);
+> +
+> +       ufs_mtk_ref_clk_notify(host->ref_clk_enabled, res);
+> +
+> +       return -ETIMEDOUT;
+> +
+> +out:
+> +       host->ref_clk_enabled = on;
+> +       if (!on)
+> +               ufs_mtk_ref_clk_notify(on, res);
+> +
+> +       return 0;
+> +}
+> +
+>  /**
+>   * ufs_mtk_setup_clocks - enables/disable clocks
+>   * @hba: host controller instance
+> @@ -107,12 +155,16 @@ static int ufs_mtk_setup_clocks(struct ufs_hba *hba, bool on,
+>
+>         switch (status) {
+>         case PRE_CHANGE:
+> -               if (!on)
+> +               if (!on) {
+> +                       ufs_mtk_setup_ref_clk(hba, on);
+>                         ret = phy_power_off(host->mphy);
+> +               }
+>                 break;
+>         case POST_CHANGE:
+> -               if (on)
+> +               if (on) {
+>                         ret = phy_power_on(host->mphy);
+> +                       ufs_mtk_setup_ref_clk(hba, on);
+> +               }
+>                 break;
+>         }
+>
+> @@ -299,8 +351,10 @@ static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+>  {
+>         struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+>
+> -       if (ufshcd_is_link_hibern8(hba))
+> +       if (ufshcd_is_link_hibern8(hba)) {
+>                 phy_power_off(host->mphy);
+> +               ufs_mtk_setup_ref_clk(hba, false);
+> +       }
+>
+>         return 0;
+>  }
+> @@ -309,8 +363,10 @@ static int ufs_mtk_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+>  {
+>         struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+>
+> -       if (ufshcd_is_link_hibern8(hba))
+> +       if (ufshcd_is_link_hibern8(hba)) {
+> +               ufs_mtk_setup_ref_clk(hba, true);
+>                 phy_power_on(host->mphy);
+> +       }
+>
+>         return 0;
+>  }
+> diff --git a/drivers/scsi/ufs/ufs-mediatek.h b/drivers/scsi/ufs/ufs-mediatek.h
+> index b03f601d3a9e..14f8a8357c09 100644
+> --- a/drivers/scsi/ufs/ufs-mediatek.h
+> +++ b/drivers/scsi/ufs/ufs-mediatek.h
+> @@ -6,7 +6,21 @@
+>  #ifndef _UFS_MEDIATEK_H
+>  #define _UFS_MEDIATEK_H
+>
+> -#include <linux/bitops.h>
+> +/*
+> + * Vendor specific UFSHCI Registers
+> + */
+> +#define REG_UFS_REFCLK_CTRL         0x144
+> +
+> +/*
+> + * Ref-clk control
+> + *
+> + * Values for register REG_UFS_REFCLK_CTRL
+> + */
+> +#define REFCLK_RELEASE              0x0
+> +#define REFCLK_REQUEST              BIT(0)
+> +#define REFCLK_ACK                  BIT(1)
+> +
+> +#define REFCLK_REQ_TIMEOUT_MS       3
+>
+>  /*
+>   * Vendor specific pre-defined parameters
+> @@ -34,7 +48,8 @@
+>  /*
+>   * SiP commands
+>   */
+> -#define UFS_MTK_SIP_DEVICE_RESET    BIT(1)
+> +#define UFS_MTK_SIP_DEVICE_RESET          BIT(1)
+> +#define UFS_MTK_SIP_REF_CLK_NOTIFICATION  BIT(3)
+>
+>  /*
+>   * VS_DEBUGCLOCKENABLE
+> @@ -55,6 +70,7 @@ enum {
+>  struct ufs_mtk_host {
+>         struct ufs_hba *hba;
+>         struct phy *mphy;
+> +       bool ref_clk_enabled;
+>  };
+>
+>  #endif /* !_UFS_MEDIATEK_H */
+> --
+> 2.18.0
+
+
+
+-- 
+Regards,
+Alim
 
 _______________________________________________
 linux-arm-kernel mailing list
