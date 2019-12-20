@@ -2,82 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6586612778B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 09:54:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5508D12779E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 09:55:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hy2Fm8L4hjIenoaZI+fXUM8oUKnTOqsPfG58v4LH9do=; b=jysFjccBbj7SNR
-	Q4+IKrh8+3EviYaqA5x+Qr7S22Cvqat0LgPQH+o3rCMSGgDJEsvi01UDKQCN9ZUDEKzsZoiVX7BPn
-	P8CNebqjur+M9k9FhFZktKfPaf+39xQSItatheczIkwBjMZsT78w+FCEdStexmZ1uUkSTUtgHH27d
-	xFhKFL6GxQCS9ajRkkdVb/7WuA4V0C2dyTX4H/QebVk1QaykWuRzSVUHVaAdnU/NNsdw5r0+64Ctq
-	uKtnqYL5buHvU2ga/vZrVBncc0sPeYMuq3E0+ySNDzKB45kmJBm8IM32Fp9Pi2cnl868aECugTAvg
-	7KbmbhJlIGb0CsDmwFCQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BXddWPrSCQ7270BLzfuSGX09zTY7fKo9WZVZPYxfnKY=; b=dlx+DrJSjsyVHM
+	DfkLpImyj+GHoseumfqVpMYQezkyiqVy0it7mXDmEpWIHB4UMWRivMx3XanIvzqZtyl0qAm5H3V7+
+	xpPkOM76CWGZisZ8R6ok+AM2f4MO+rJp2xq8dkn80jh0szmtFnDvAxgZkgzRfYSdb83xjaJ32Iybr
+	LHCc0xS3XTX+Bu+uzqzVNrDyOU68bnrEO9vVUVo/mA4ZXK5fns69hzS767j/uGH7Esmhcf3JBBSK/
+	EBPpnHvOp78x6lDIL/dds6ZUzYhHBxMpyZZHMg1LPNehGchTcYSeSohsFc32UXtpLNwtzqbrw9JHF
+	/RmuZRBmrUpXbBZPf+yQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiE3C-0008Ma-QG; Fri, 20 Dec 2019 08:54:22 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iiE4b-0001U2-7O; Fri, 20 Dec 2019 08:55:49 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiE32-0008LJ-Nf
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 08:54:14 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xBK8qWWY020203; Fri, 20 Dec 2019 09:54:03 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=PcfeG+pEnfqZoplyh2mJwZoDJP91nvCA5+R9QZfb4uA=;
- b=N1KquULSGmOYmnS1gNcYj7SIWIGei/ZPj5GLEQISsGjGE7+qTS7qDIoNKDMDr0wtsB65
- XSBhmPVGWOkYTjcinSparSn/id3AjzTBcEB0jTn44rYhQX28YuplXJv23FUNQIFmReLH
- m3p5OMdeeXGXMJrt+xOfCBFxVE7oGCyiCh4C8akv3Kqs4TxGdN3MQm0HznNyGBr1eL2A
- dcWe/WQSRw0GvClEa+rAYSVngVfhC/br/PW/h/YUH1U0ObXcqibKC4Nko9uLpGGIavX0
- rJAqk0GU90LTltDoki9mBywai1nMvuJCb9q2a9BZ1+v6XAmlKbIA6U37qmDGhtO9S27t IQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx08-00178001.pphosted.com with ESMTP id 2wvqgq5x7j-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 20 Dec 2019 09:54:03 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1B709100034;
- Fri, 20 Dec 2019 09:54:03 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 09494220841;
- Fri, 20 Dec 2019 09:54:03 +0100 (CET)
-Received: from [10.201.23.55] (10.75.127.46) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 20 Dec
- 2019 09:54:02 +0100
-Subject: Re: [PATCH] mfd: stm32-timers: Use dma_request_chan() instead
- dma_request_slave_channel()
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <lee.jones@linaro.org>,
- <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-References: <20191217105240.25648-1-peter.ujfalusi@ti.com>
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-Message-ID: <a9184949-94e0-97fb-5fa8-77693e71e99a@st.com>
-Date: Fri, 20 Dec 2019 09:54:01 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iiE4R-0001Sx-VV
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 08:55:41 +0000
+Received: by mail-io1-xd43.google.com with SMTP id x1so8617189iop.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 20 Dec 2019 00:55:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hFyk6wfDM3uJNZM3XmVJRb6zXEf3/dZ+tc8Bv4YB2yY=;
+ b=W0dWNacy+Z08VU2VNyW6cLKarj2vQSvC7GwIrBrk5kAeHpY8LUCugVbH17i6+PQmyA
+ lzshmpaK75tqkDiY8MXYJFy40HtHbIraPO0UNF/SdTr1T0MrZjg9bMNdnlBgv7STNqf6
+ AcP0G+MibU3+k6+ra+ZS/fYB+z7mO6Z7OA5uI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hFyk6wfDM3uJNZM3XmVJRb6zXEf3/dZ+tc8Bv4YB2yY=;
+ b=AHn7MMer02D8i9UXcMK4axbyAe5cBHLcmGkZZdeWGtZFjhESZ8GzbchYJPBFjJEJlV
+ hMeUVBfUgOLmjyTf/uBNsHgMa5SiKnGS8sAPVoDfWFnos35EUQFFTgGmuDLjoIb6q0Do
+ hrL/nMlHF7peotxN5FS60GuLCbF659tU8JU13aQDrxz/wHn+1GWSv9RcjJyop6SXztxG
+ 6Jo99B1rFVVzfpCJF9nP1nGozsJ95bW2Mpmm3I4G7I/lNH7m2uaobS8zd0KtEv/p4dHd
+ OXQFAxY+0JOpuEIdSlfKCEgRzowVUjxXoF5ncmBCFCHueJQTLTRAxkNmEkFqQN/Vql+6
+ ojBA==
+X-Gm-Message-State: APjAAAUBnELlZes8ZL+gn6FfHbJyJZLzLcUKGShDWU2e85iR1Uu2ZT37
+ g/csdihdNMHlp3MywrNTWYZRXKvneWkVcdrXFnKoIg==
+X-Google-Smtp-Source: APXvYqx6jNS3ruJSqRukqpBfv5nCziRlHY3HFBeibFf5MWoadOk37sDVbGh863vc8QU+b1jTv0rGaDTo6tv6CoaEyJc=
+X-Received: by 2002:a6b:3845:: with SMTP id f66mr9807832ioa.102.1576832138346; 
+ Fri, 20 Dec 2019 00:55:38 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191217105240.25648-1-peter.ujfalusi@ti.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-12-19_08:2019-12-17,2019-12-19 signatures=0
+References: <20191220081738.1895-1-enric.balletbo@collabora.com>
+ <20191220081738.1895-3-enric.balletbo@collabora.com>
+In-Reply-To: <20191220081738.1895-3-enric.balletbo@collabora.com>
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Fri, 20 Dec 2019 16:55:12 +0800
+Message-ID: <CAJMQK-h9w5a1CKyTqdBsmz6TYbcGMzhPLNwU7kYBYp56EV0PZA@mail.gmail.com>
+Subject: Re: [PATCH v22 2/2] drm/bridge: Add I2C based driver for ps8640 bridge
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_005413_136253_ABC6F067 
-X-CRM114-Status: GOOD (  22.13  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20191220_005540_040048_3F4B628D 
+X-CRM114-Status: UNSURE (   7.45  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -87,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,110 +90,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin GAIGNARD <benjamin.gaignard@st.com>, vkoul@kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Ulrich Hecht <uli@fpond.eu>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Nicolas Boichat <drinkcat@chromium.org>, Jitao Shi <jitao.shi@mediatek.com>,
+ Jonas Karlman <jonas@kwiboo.se>, David Airlie <airlied@linux.ie>,
+ Neil Armstrong <narmstrong@baylibre.com>, lkml <linux-kernel@vger.kernel.org>,
+ Daniel Kurtz <djkurtz@chromium.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ linux-mediatek@lists.infradead.org,
+ dri-devel <dri-devel@lists.freedesktop.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/17/19 11:52 AM, Peter Ujfalusi wrote:
-> dma_request_slave_channel() is a wrapper on top of dma_request_chan()
-> eating up the error code.
-> 
-> By using dma_request_chan() directly the driver can support deferred
-> probing against DMA.
-> 
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+On Fri, Dec 20, 2019 at 4:17 PM Enric Balletbo i Serra
+<enric.balletbo@collabora.com> wrote:
+>
+> From: Jitao Shi <jitao.shi@mediatek.com>
+>
+> This patch adds drm_bridge driver for parade DSI to eDP bridge chip.
+>
+> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> Reviewed-by: Daniel Kurtz <djkurtz@chromium.org>
+> Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> [uli: followed API changes, removed FW update feature]
+> Signed-off-by: Ulrich Hecht <uli@fpond.eu>
+> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Tested-by: Hsin-Yi Wang <hsinyi@chromium.org>
 > ---
->  drivers/mfd/stm32-timers.c | 31 ++++++++++++++++++++++---------
->  1 file changed, 22 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/mfd/stm32-timers.c b/drivers/mfd/stm32-timers.c
-> index efcd4b980c94..34747e8a4a40 100644
-> --- a/drivers/mfd/stm32-timers.c
-> +++ b/drivers/mfd/stm32-timers.c
-> @@ -167,10 +167,11 @@ static void stm32_timers_get_arr_size(struct stm32_timers *ddata)
->  	regmap_write(ddata->regmap, TIM_ARR, 0x0);
->  }
->  
-> -static void stm32_timers_dma_probe(struct device *dev,
-> +static int stm32_timers_dma_probe(struct device *dev,
->  				   struct stm32_timers *ddata)
->  {
->  	int i;
-> +	int ret = 0;
->  	char name[4];
->  
->  	init_completion(&ddata->dma.completion);
-> @@ -179,14 +180,22 @@ static void stm32_timers_dma_probe(struct device *dev,
->  	/* Optional DMA support: get valid DMA channel(s) or NULL */
->  	for (i = STM32_TIMERS_DMA_CH1; i <= STM32_TIMERS_DMA_CH4; i++) {
->  		snprintf(name, ARRAY_SIZE(name), "ch%1d", i + 1);
-> -		ddata->dma.chans[i] = dma_request_slave_channel(dev, name);
-> +		ddata->dma.chans[i] = dma_request_chan(dev, name);
->  	}
-> -	ddata->dma.chans[STM32_TIMERS_DMA_UP] =
-> -		dma_request_slave_channel(dev, "up");
-> -	ddata->dma.chans[STM32_TIMERS_DMA_TRIG] =
-> -		dma_request_slave_channel(dev, "trig");
-> -	ddata->dma.chans[STM32_TIMERS_DMA_COM] =
-> -		dma_request_slave_channel(dev, "com");
-> +	ddata->dma.chans[STM32_TIMERS_DMA_UP] = dma_request_chan(dev, "up");
-> +	ddata->dma.chans[STM32_TIMERS_DMA_TRIG] = dma_request_chan(dev, "trig");
-> +	ddata->dma.chans[STM32_TIMERS_DMA_COM] = dma_request_chan(dev, "com");
-> +
-> +	for (i = STM32_TIMERS_DMA_CH1; i < STM32_TIMERS_MAX_DMAS; i++) {
-> +		if (IS_ERR(ddata->dma.chans[i])) {
-> +			if (PTR_ERR(ddata->dma.chans[i]) == -EPROBE_DEFER)> +				ret = -EPROBE_DEFER;
-
-Hi Peter,
-
-Thanks for the patch,
-
-As the DMA is optional, I'd rather prefer to check explicitly there's no
-device, and return any other error case, basically:
-
-			if (PTR_ERR(ddata->dma.chans[i]) != -ENODEV)
-				return PTR_ERR(ddata->dma.chans[i]);
-
-> +
-> +			ddata->dma.chans[i] = NULL;
-> +		}
-> +	}
-> +
-> +	return ret;
-
-With that, return 0 here.
-
->  }
->  
->  static void stm32_timers_dma_remove(struct device *dev,
-> @@ -230,7 +239,11 @@ static int stm32_timers_probe(struct platform_device *pdev)
->  
->  	stm32_timers_get_arr_size(ddata);
->  
-> -	stm32_timers_dma_probe(dev, ddata);
-> +	ret = stm32_timers_dma_probe(dev, ddata);
-> +	if (ret) {
-> +		stm32_timers_dma_remove(dev, ddata);
-
-With that, stm32_timers_dma_remove() likely need to be updated:
-
--		if (ddata->dma.chans[i])
-+		if (!IS_ERR_OR_NULL(ddata->dma.chans[i]))
-			dma_release_channel(ddata->dma.chans[i]);
-
-Best regards,
-Fabrice
-
-> +		return ret;
-> +	}
->  
->  	platform_set_drvdata(pdev, ddata);
->  
-> 
+tested on mt8173 chromebook
 
 _______________________________________________
 linux-arm-kernel mailing list
