@@ -2,86 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55B2C127A3E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 12:50:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54FF1127A45
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 12:54:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jo7w0RpGg8/ztc5QVx9EHTn/qOA/HXUKol8M+YSiPE0=; b=jETVZz08zEWSdV
-	wqPjXHEGaf+n2zfI9k5YLNiPXWyxA52tsrGEeNQVmw298YSuOWRgeI/zqoCl+fGwwFqZghWfM4dzK
-	6X+CsenvcnG2+WLAC7aAAahB22vgGluOPjQZVh15rPl9JTcUlFPKU/9HzhkzAQ1nbHr0BUoomeuy8
-	42O77H9R65t4OBdr6NPG5cZYsEv1qvR5CQ6nUNl3LHv6xVa3rrNpE0S8/W5WfqGrhrYGUHU5HQ57I
-	z9o8dVTqYcyGi+11rcWMSNp8U7vS6GI9ZcmYjlzzZlkry+StYJIYvu1041/rQlSzpmOlJRQrvhhpn
-	1I1VXocWZ916nuUg74GA==;
+	List-Owner; bh=+uG0yiQJ+8ph1nA21y4yHh8dZcu8vbaDmaUAKmAKdBQ=; b=fGHmBVd7Fn//Zw
+	njsktE3ZPit4JezG88vxeu5X7e+Sd6SC33dw4xLcNoFb4cJsBE6kaUa7TQkdlfM6hFDX4cjJnhmZA
+	K0aeOe72HDcSQSRf61nzyke39sIHMwiwrmlBdnRejo1zzn3zu4kKyclYTL+KbLPVFgY7AvWkvxu3j
+	Dyg6AFbjMsYJV2IgDSUIuSWdtMFWBAstcXBOJ8I9rSvZ1803S0zZwtu4OD4gcoKYeYF9VEqghrh6M
+	DfNKNjLkMMoytRPQl+fYAIMCl/RnBmlDlSQnILAuZC+eAmwj/e6aVrBIhWeiBOUwP6XexroesHpwm
+	CBgiPorgQ3dpH580yu4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiGnx-0000i8-BU; Fri, 20 Dec 2019 11:50:49 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiGnl-0000hi-Vf; Fri, 20 Dec 2019 11:50:39 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBKBoYQM012834;
- Fri, 20 Dec 2019 05:50:34 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1576842634;
- bh=F5NzVoBOc0H3AQcimqUogeBFtzoUavarjXQ1aoFfC+w=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=UAzsxaeaHZa/6OX3d/fo2uAFhLLjO25PaTZG0YDWhMMaGMH8rWWv2O57BRHwOpUVh
- jQDc/OO/rXAXHSTHRlez4SQRqn+b+T7pNdCF3LGEdy8bvbRKJ0qdQvjIGky9milvMu
- vpfzhb3uZC1jmi57D40RpZ5qWbFHJ9XGlyFHix+A=
-Received: from DFLE113.ent.ti.com (dfle113.ent.ti.com [10.64.6.34])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBKBoX41111098
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 20 Dec 2019 05:50:34 -0600
-Received: from DFLE108.ent.ti.com (10.64.6.29) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 20
- Dec 2019 05:50:33 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE108.ent.ti.com
- (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 20 Dec 2019 05:50:33 -0600
-Received: from [10.24.69.159] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBKBoUCE033381;
- Fri, 20 Dec 2019 05:50:31 -0600
-Subject: Re: [PATCH RESEND 1/2] dt-bindings: phy: drop #clock-cells from
- rockchip,px30-dsi-dphy
-To: =?UTF-8?Q?Heiko_St=c3=bcbner?= <heiko@sntech.de>
-References: <20191216122448.27867-1-heiko@sntech.de>
- <12525836.FhlgEYrHGb@diego> <45c59145-5705-90f9-ff0e-c84cf8d17e8b@ti.com>
- <3795174.JdKOkfR0EK@diego>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <400d28a9-6ae3-5ff3-8d95-005714cfca33@ti.com>
-Date: Fri, 20 Dec 2019 17:22:14 +0530
+	id 1iiGr3-0001JH-GL; Fri, 20 Dec 2019 11:54:01 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iiGqr-0001I5-CX
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 11:53:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 395A030E;
+ Fri, 20 Dec 2019 03:53:48 -0800 (PST)
+Received: from [10.1.194.52] (e112269-lin.cambridge.arm.com [10.1.194.52])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 567D63F719;
+ Fri, 20 Dec 2019 03:53:45 -0800 (PST)
+Subject: Re: [PATCH v17 06/23] powerpc: mm: Add p?d_leaf() definitions
+To: Michael Ellerman <mpe@ellerman.id.au>,
+ Andrew Morton <akpm@linux-foundation.org>, linux-mm@kvack.org
+References: <20191218162402.45610-1-steven.price@arm.com>
+ <20191218162402.45610-7-steven.price@arm.com>
+ <877e2smt6r.fsf@mpe.ellerman.id.au>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <e99a9857-e9f4-588a-ad12-4d5f3a9de739@arm.com>
+Date: Fri, 20 Dec 2019 11:53:44 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-In-Reply-To: <3795174.JdKOkfR0EK@diego>
+In-Reply-To: <877e2smt6r.fsf@mpe.ellerman.id.au>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_035038_103247_320F4AEB 
-X-CRM114-Status: GOOD (  17.66  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191220_035349_515940_37370B4E 
+X-CRM114-Status: GOOD (  20.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,53 +66,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Rob Herring <robh@kernel.org>,
- devicetree@vger.kernel.org,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, Will Deacon <will@kernel.org>, "Liang,
+ Kan" <kan.liang@linux.intel.com>, x86@kernel.org,
+ Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Arnd Bergmann <arnd@arndb.de>, kvm-ppc@vger.kernel.org,
+ =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiAyMC8xMi8xOSA1OjA3IHBtLCBIZWlrbyBTdMO8Ym5lciB3cm90ZToKPiBIaSBLaXNo
-b24sCj4gCj4gQW0gRnJlaXRhZywgMjAuIERlemVtYmVyIDIwMTksIDEyOjIxOjI4IENFVCBzY2hy
-aWViIEtpc2hvbiBWaWpheSBBYnJhaGFtIEk6Cj4+Cj4+IE9uIDE2LzEyLzE5IDExOjMxIHBtLCBI
-ZWlrbyBTdMO8Ym5lciB3cm90ZToKPj4+IEhpIFJvYiwKPj4+Cj4+PiBBbSBNb250YWcsIDE2LiBE
-ZXplbWJlciAyMDE5LCAxODo1NjoxNSBDRVQgc2NocmllYiBSb2IgSGVycmluZzoKPj4+PiBPbiBN
-b24sIDE2IERlYyAyMDE5IDEzOjI0OjQ3ICswMTAwLCBIZWlrbyBTdHVlYm5lciB3cm90ZToKPj4+
-Pj4gRnJvbTogSGVpa28gU3R1ZWJuZXIgPGhlaWtvLnN0dWVibmVyQHRoZW9icm9tYS1zeXN0ZW1z
-LmNvbT4KPj4+Pj4KPj4+Pj4gRnVydGhlciByZXZpZXcgb2YgdGhlIGRzaSBjb21wb25lbnRzIGZv
-ciB0aGUgcHgzMCByZXZlYWxlZCB0aGF0IHRoZQo+Pj4+PiBwaHkgc2hvdWxkbid0IGV4cG9zZSB0
-aGUgcGxsIGFzIGNsb2NrIGJ1dCBpbnN0ZWFkIGhhbmRsZSBzZXR0aW5ncwo+Pj4+PiB2aWEgcGh5
-IHBhcmFtZXRlcnMuCj4+Pj4+Cj4+Pj4+IEFzIHRoZSBwaHkgYmluZGluZyBpcyBuZXcgYW5kIG5v
-dCB1c2VkIGFueXdoZXJlIHlldCwganVzdCBkcm9wIHRoZW0KPj4+Pj4gc28gdGhleSBkb24ndCBn
-ZXQgdXNlZC4KPj4+Pj4KPj4+Pj4gRml4ZXM6IDM4MTdjNzk2MTE3OSAoImR0LWJpbmRpbmdzOiBw
-aHk6IGFkZCB5YW1sIGJpbmRpbmcgZm9yIHJvY2tjaGlwLHB4MzAtZHNpLWRwaHkiKQo+Pj4+PiBT
-aWduZWQtb2ZmLWJ5OiBIZWlrbyBTdHVlYm5lciA8aGVpa28uc3R1ZWJuZXJAdGhlb2Jyb21hLXN5
-c3RlbXMuY29tPgo+Pj4+PiAtLS0KPj4+Pj4gSGkgS2lzaG9uLAo+Pj4+Pgo+Pj4+PiBtYXliZSBz
-dWl0YWJsZSBhcyBhIGZpeCBmb3IgNS41LXJjPwo+Pj4+Pgo+Pj4+PiBUaGFua3MKPj4+Pj4gSGVp
-a28KPj4+Pj4KPj4+Pj4gIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BoeS9yb2NrY2hpcCxweDMw
-LWRzaS1kcGh5LnlhbWwgICAgICB8IDUgLS0tLS0KPj4+Pj4gIDEgZmlsZSBjaGFuZ2VkLCA1IGRl
-bGV0aW9ucygtKQo+Pj4+Pgo+Pj4+Cj4+Pj4gUGxlYXNlIGFkZCBBY2tlZC1ieS9SZXZpZXdlZC1i
-eSB0YWdzIHdoZW4gcG9zdGluZyBuZXcgdmVyc2lvbnMuIEhvd2V2ZXIsCj4+Pj4gdGhlcmUncyBu
-byBuZWVkIHRvIHJlcG9zdCBwYXRjaGVzICpvbmx5KiB0byBhZGQgdGhlIHRhZ3MuIFRoZSB1cHN0
-cmVhbQo+Pj4+IG1haW50YWluZXIgd2lsbCBkbyB0aGF0IGZvciBhY2tzIHJlY2VpdmVkIG9uIHRo
-ZSB2ZXJzaW9uIHRoZXkgYXBwbHkuCj4+Pj4KPj4+PiBJZiBhIHRhZyB3YXMgbm90IGFkZGVkIG9u
-IHB1cnBvc2UsIHBsZWFzZSBzdGF0ZSB3aHkgYW5kIHdoYXQgY2hhbmdlZC4KPj4+Cj4+PiBzb3Jy
-eSBhYm91dCB0aGF0LiBUaGUgb3JpZ2luYWwgcmVzcG9uc2Ugc29tZWhvdyBkaWQgbm90IHRocmVh
-ZCBjb3JyZWN0bHkKPj4+IGluIG15IG1haWwgY2xpZW50LCBwcm9iYWJseSBzb21lIGZhdWx0IG9u
-IG15IHNpZGUsIHNvIEkndmUgb25seSBmb3VuZCB5b3VyCj4+PiBtYWlsIGp1c3Qgbm93IGJ5IGRp
-Z2dpbmcgaGFyZC4KPj4+Cj4+PiBAS2lzaG9uLCB0aGUgb3JpZ2luYWwgbWFpbCBhbHJlYWR5IGdv
-dCBhbgo+Pj4KPj4+IEFja2VkLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBrZXJuZWwub3JnPgo+Pgo+
-PiBtZXJnZWQgbm93LCBUaGFua3MhCj4gCj4gdGhhbmtzIC4uLiBqdXN0IHRvIG1ha2Ugc3VyZSwg
-ZGlkIHlvdSBhbHNvIHNlZSB0aGUgZHJpdmVyIGNoYW5nZXMgaW4gcGF0Y2gyPwo+IEFzIEkgZG9u
-J3Qgc2VlIHRoZW0gaW4gZWl0aGVyIG9mIHlvdXIgYnJhbmNoZXMgOi0pCgpGb3Igc29tZSByZWFz
-b24sIHBhdGNoIDIgb2YgdGhlICJSRVNFTkQiIHNlcmllcyBpcyBub3QgaW4gbXkgaW5ib3guCkhv
-d2V2ZXIgbG9va2luZyBhdCB5b3VyIG9yaWdpbmFsIHNlcmllcywgbG9va3MgbGlrZSB0aGlzIGlz
-IGEgY2FuZGlkYXRlCmZvciA1LjYuIEknbGwgdGFrZSBwYXRjaCAyIGZyb20geW91ciBvcmlnaW5h
-bCBzZXJpZXMuCgpUaGFua3MKS2lzaG9uCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 19/12/2019 11:49, Michael Ellerman wrote:
+> Steven Price <steven.price@arm.com> writes:
+>> walk_page_range() is going to be allowed to walk page tables other than
+>> those of user space. For this it needs to know when it has reached a
+>> 'leaf' entry in the page tables. This information is provided by the
+>> p?d_leaf() functions/macros.
+>>
+>> For powerpc p?d_is_leaf() functions already exist. Export them using the
+>> new p?d_leaf() name.
+>>
+>> CC: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+>> CC: Paul Mackerras <paulus@samba.org>
+>> CC: Michael Ellerman <mpe@ellerman.id.au>
+>> CC: linuxppc-dev@lists.ozlabs.org
+>> CC: kvm-ppc@vger.kernel.org
+>> Signed-off-by: Steven Price <steven.price@arm.com>
+>> ---
+>>  arch/powerpc/include/asm/book3s/64/pgtable.h | 3 +++
+>>  1 file changed, 3 insertions(+)
+> 
+> We have fallback versions of our pmd_is_leaf() etc. in
+> arch/powerpc/include/asm/pgtable.h, eg:
+> 
+> #ifndef pmd_is_leaf
+> #define pmd_is_leaf pmd_is_leaf
+> static inline bool pmd_is_leaf(pmd_t pmd)
+> {
+> 	return false;
+> }
+> #endif
+> 
+> Because we support several different MMUs and most of them don't need to
+> do anything.
+> 
+> So we could put the compatibility #defines to your names along with the
+> fallback versions in asm/pgtable.h, rather than in
+> asm/book3s/64/pgtable.h
+> 
+> But I see you also have fallbacks for your versions, so it probably
+> doesn't matter either way.
+> 
+> So I'm OK with this version, unless you think there's a compelling
+> reason to do the compatibility #defines in our asm/pgtable.h
+
+I was thinking that (assuming this series actually gets merged this
+time), the p?d_is_leaf() versions could be removed and replaced by
+p?d_leaf() in the future. Since the fallbacks are in the asm-generic
+code it makes sense for the pmd_leaf() definitions to be next to the
+non-fallback versions.
+
+> Acked-by: Michael Ellerman <mpe@ellerman.id.au>
+
+Thanks!
+
+Steve
+
+> cheers
+> 
+> 
+>> diff --git a/arch/powerpc/include/asm/book3s/64/pgtable.h b/arch/powerpc/include/asm/book3s/64/pgtable.h
+>> index b01624e5c467..201a69e6a355 100644
+>> --- a/arch/powerpc/include/asm/book3s/64/pgtable.h
+>> +++ b/arch/powerpc/include/asm/book3s/64/pgtable.h
+>> @@ -1355,18 +1355,21 @@ static inline bool is_pte_rw_upgrade(unsigned long old_val, unsigned long new_va
+>>   * Like pmd_huge() and pmd_large(), but works regardless of config options
+>>   */
+>>  #define pmd_is_leaf pmd_is_leaf
+>> +#define pmd_leaf pmd_is_leaf
+>>  static inline bool pmd_is_leaf(pmd_t pmd)
+>>  {
+>>  	return !!(pmd_raw(pmd) & cpu_to_be64(_PAGE_PTE));
+>>  }
+>>  
+>>  #define pud_is_leaf pud_is_leaf
+>> +#define pud_leaf pud_is_leaf
+>>  static inline bool pud_is_leaf(pud_t pud)
+>>  {
+>>  	return !!(pud_raw(pud) & cpu_to_be64(_PAGE_PTE));
+>>  }
+>>  
+>>  #define pgd_is_leaf pgd_is_leaf
+>> +#define pgd_leaf pgd_is_leaf
+>>  static inline bool pgd_is_leaf(pgd_t pgd)
+>>  {
+>>  	return !!(pgd_raw(pgd) & cpu_to_be64(_PAGE_PTE));
+>> -- 
+>> 2.20.1
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
