@@ -2,91 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE717127ABC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 13:10:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94161127AC9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 13:12:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ddcw/hlKLOn9QaNauCq8/LTOojPUzoNXuDj1jxlqgWQ=; b=uBizrVADvyG0Bd5DOfHBF5rKOc
-	s26b4kzwsdBGWvH2Z+LBIGn1riFvcp6oi0jJrICWDLL81vO4UbRC2ProYyTEHlo6gLhLUz8dxv9dI
-	F8+4m45+9o4ShIaUsjLS5cQTgWcA/A2dRjgTTaIMtB6jw+xzNkWNhDCmCnkIAs9FOFXU+gPtsF5Q9
-	aEx9pR6AUwXLd/2NluuTSoS2w21ogFYff9TgPBDAWKwmmuUx5EFNAj5JOY6RJ/JIHlSY6vH6gC+3A
-	kTAOXnpC/ysPLCwfYYF1lC1azyIwxZVdwpqjFNQ88TF7ALG8zGTbCRMYHerhhl+rVCA2gP9GI087e
-	CJSVOLWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bwN5iI5nKi4YABJs1AEDf7vh1A5VpnsoJggh+S52gNo=; b=rDIjU6q2LF1GUTYgavNgN4nRw
+	D1t2U8Npef96eUr9E1gOE/vHnllnBsRz0j0JmQvcmvcYGIyFNh1VLC4OL9HRWTPEj9d67eah/rJz7
+	0tGSHoebVOzf41nVBilZpUUtbFQPttkfAwtxEasOIx5lUEfRl8jeN9MX2h7JYMbqL61rp0c1tL/6h
+	/swPvGZjWfL+/3uT6dR6rmL6NxNnOs/Di54ku/ag278rYnxCREMTNV0Ab/91rTZvWgfe2BuyC4PEO
+	BTcIyUJOOek/hbMZYQq2eHKgYV/mwYfP7Icdf8PtFddG4KFOTo/zFtGTrLf0G9JTC5/oRvCwn8ETQ
+	r6P1Mirzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiH6x-0002EJ-9T; Fri, 20 Dec 2019 12:10:27 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiH6n-0002DM-5b; Fri, 20 Dec 2019 12:10:19 +0000
-Received: by mail-wr1-x442.google.com with SMTP id q6so9169561wro.9;
- Fri, 20 Dec 2019 04:10:16 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=X8fFKkVj4hVB9s3VYcXKcrcscgrJeT7dVkyworQG7Xs=;
- b=MslHLb5TC48pWyXB4rVGeaN6vAkMcZk2Fa4J70Qk+CY3wY0hUJFGBwlni22LS3h6Nh
- YkEn+fR3yKhiWZV/zYs/7cdNCwZdC3CEc7CFIkD7IE1PmA+1/49VH5dgYWCCh3bgxxc1
- 16tOH2klG8c+0QyUK69jc8x865EfIyboJPlg1r1t7TwOsHZTdor/R9G4DjIX6iWIEHdH
- gmwZNGoKGXc1hORo8+WyQSxyFqD5K99YNELnymcSSgj5B5qkQ4FbDqUG2cFgm0M8uCdh
- FtqEuPccZNS/5NTvodhMjvp0v3mVL6WWdOI382nHbqYW7X3stO92+huOi6gyi6oMWT14
- 3Jgw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=X8fFKkVj4hVB9s3VYcXKcrcscgrJeT7dVkyworQG7Xs=;
- b=bvgneEM7wvihqcXwH5Pt98tOCHd6/gS7jwkE7TdAPyVtncT47hnaBA/coXVvtO6mdf
- dz7BLbQDbkJKfz/poYsPS3Uf9pj909npL/cSnvWj4F/PT+12WA0DDvwVfTICFeaBLcv3
- sV3ZB8whZLUpDvrFkcuRm+j9DBBaMcnrFGyTVwURJ48C8GlwudRChnwykWcggwa0gW0q
- IrmXUgrVvOLLp5+MvrgIL5XqkAmwqdlr4Gp2y3/iyNDfx4a/v3p6C5NfHSajC7wP7mQc
- t23Ea6HAS5u9i+fBE/s3E0PWpHWAj807nctfCp6/LImAbdMLBdKbTkwVjVQr45slR9L0
- 6uHg==
-X-Gm-Message-State: APjAAAUJQ8Fi0iPCuq+7xfaAblhlhj81uf/Fbssm91D0Z+Ea5CFWbV/8
- PJtsY7ws5a38hkATU4pIAFQ=
-X-Google-Smtp-Source: APXvYqxu69/OA3v3zdnCC+w0hFNzMJZksszafbk/ti6SQ/UDJYSqsScNIR4ZDvM0JKvWKNarB+0Fwg==
-X-Received: by 2002:adf:ce87:: with SMTP id r7mr14428940wrn.245.1576843815297; 
- Fri, 20 Dec 2019 04:10:15 -0800 (PST)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id s16sm9722493wrn.78.2019.12.20.04.10.14
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 20 Dec 2019 04:10:14 -0800 (PST)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH 2/2] arm64: dts: rockchip: rk3308-roc-cc: sort nodes in
- alphabetical order
-Date: Fri, 20 Dec 2019 13:10:07 +0100
-Message-Id: <20191220121007.29337-2-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
-In-Reply-To: <20191220121007.29337-1-jbx6244@gmail.com>
-References: <20191220121007.29337-1-jbx6244@gmail.com>
+	id 1iiH8b-00032w-2c; Fri, 20 Dec 2019 12:12:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iiH8P-00031V-3w
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 12:12:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EA40830E;
+ Fri, 20 Dec 2019 04:11:54 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 683BC3F719;
+ Fri, 20 Dec 2019 04:11:54 -0800 (PST)
+Date: Fri, 20 Dec 2019 12:11:52 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Jeff Chang <richtek.jeff.chang@gmail.com>
+Subject: Re: [PATCH] ASoC: Add MediaTek MT6660 Speaker Amp Driver
+Message-ID: <20191220121152.GC4790@sirena.org.uk>
+References: <1576836934-5370-1-git-send-email-richtek.jeff.chang@gmail.com>
+MIME-Version: 1.0
+In-Reply-To: <1576836934-5370-1-git-send-email-richtek.jeff.chang@gmail.com>
+X-Cookie: I think we're in trouble.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_041018_310409_85F10646 
-X-CRM114-Status: GOOD (  11.64  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191220_041157_241884_0D8A1A5F 
+X-CRM114-Status: GOOD (  17.01  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (jbx6244[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jbx6244[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,61 +64,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org, tiwai@suse.com,
+ lgirdwood@gmail.com, jeff_chang@richtek.com, matthias.bgg@gmail.com,
+ perex@perex.cz, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5739087664045095893=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Sort nodes in alphabetical order.
-Place &pwm5 below &pwm0.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
- arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+--===============5739087664045095893==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Y5rl02BVI9TCfPar"
+Content-Disposition: inline
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts b/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
-index 23527daa7..14ba4c152 100644
---- a/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3308-roc-cc.dts
-@@ -141,12 +141,6 @@
- 	};
- };
- 
--&pwm5 {
--	status = "okay";
--	pinctrl-names = "active";
--	pinctrl-0 = <&pwm5_pin_pull_down>;
--};
--
- &pinctrl {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&rtc_32k>;
-@@ -165,8 +159,14 @@
- };
- 
- &pwm0 {
--	status = "okay";
- 	pinctrl-0 = <&pwm0_pin_pull_down>;
-+	status = "okay";
-+};
-+
-+&pwm5 {
-+	pinctrl-names = "active";
-+	pinctrl-0 = <&pwm5_pin_pull_down>;
-+	status = "okay";
- };
- 
- &sdmmc {
--- 
-2.11.0
 
+--Y5rl02BVI9TCfPar
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Fri, Dec 20, 2019 at 06:15:34PM +0800, Jeff Chang wrote:
+
+> +++ b/sound/soc/codecs/mt6660.c
+> @@ -0,0 +1,653 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2019 MediaTek Inc.
+> + */
+
+Please make the entire comment a C++ one so things look more
+intentional.
+
+> +	{ MT6660_REG_DEVID, 2},
+> +	{ MT6660_REG_TDM_CFG3, 2},
+> +	{ MT6660_REG_HCLIP_CTRL, 2},
+> +	{ MT6660_REG_DA_GAIN, 2},
+
+Missing space before the } (the same thing happens in some of the
+other tables).
+
+> +static int mt6660_component_get_volsw(struct snd_kcontrol *kcontrol,
+> +				  struct snd_ctl_elem_value *ucontrol)
+> +{
+> +	struct snd_soc_component *component =
+> +		snd_soc_kcontrol_component(kcontrol);
+> +	struct mt6660_chip *chip = (struct mt6660_chip *)
+> +		snd_soc_component_get_drvdata(component);
+> +	int ret = -EINVAL;
+> +
+> +	if (!strcmp(kcontrol->id.name, "Chip_Rev")) {
+
+Why would this be used on a different control?
+
+> +	SOC_SINGLE_EXT("BoostMode", MT6660_REG_BST_CTRL, 0, 3, 0,
+> +		       snd_soc_get_volsw, snd_soc_put_volsw),
+
+Boost Mode.  You've also got a lot of these controls that are _EXT but
+you then just use standard operations so it's not clear why you're using
+_EXT.
+
+> +	SOC_SINGLE_EXT("audio input selection", MT6660_REG_DATAO_SEL, 6, 3, 0,
+> +		       snd_soc_get_volsw, snd_soc_put_volsw),
+
+Audio Input Selection, but this looks like it should be a DAPM control
+if it's controlling audio routing.  A simple numerical setting
+definitely doesn't seem like the right thing.
+
+> +	SOC_SINGLE_EXT("AUD LOOP BACK Switch", MT6660_REG_PATH_BYPASS, 4, 1, 0,
+> +		       snd_soc_get_volsw, snd_soc_put_volsw),
+
+This sounds like it should be a DAPM thing too.
+
+> +static int mt6660_component_probe(struct snd_soc_component *component)
+> +{
+> +	struct mt6660_chip *chip = snd_soc_component_get_drvdata(component);
+> +	int ret = 0;
+> +
+> +	dev_info(component->dev, "%s\n", __func__);
+
+dev_dbg() at most but probably better to remove this and the other
+similar dev_info()s.
+
+> +static inline int _mt6660_chip_id_check(struct mt6660_chip *chip)
+> +{
+> +	u8 id[2] = {0};
+> +	int ret = 0;
+> +
+> +	ret = i2c_smbus_read_i2c_block_data(chip->i2c, MT6660_REG_DEVID, 2, id);
+> +	if (ret < 0)
+> +		return ret;
+> +	ret = (id[0] << 8) + id[1];
+> +	ret &= 0x0ff0;
+> +	if (ret != 0x00e0 && ret != 0x01e0)
+> +		return -ENODEV;
+
+It'd be better to print an error message saying we don't recognize the
+device to help people doing debugging.
+
+> +	if (of_property_read_u32(np, "rt,init_setting_num", &val)) {
+> +		dev_info(dev, "no init setting\n");
+> +		chip->plat_data.init_setting_num = 0;
+
+You should be adding a DT binding document for any new DT bindings.
+
+--Y5rl02BVI9TCfPar
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl38uogACgkQJNaLcl1U
+h9B+kQf6AzhZSat7mqBSwJVubwAXZcJ6ApJ29GlB2ypbTdOhUOTKKR8ytA2kMg6l
+Ifw88ajLzpL4jAIHwwS3NOMonMD/9KgNLfQVgMxzuzsYyRYBmj7p9lXsYICNIvoe
+nSn2nPJfw5g5PlMZ+qwxyNNMTOkui6qKCFoFS77TJq0hsbTh+x6azMfn8VVRwrL+
+VRXPN2C9mAdyrVPw/XPjkTyCrXw8P6brXK6qW23Y14FRQ8dXke0rhMumWytquybM
+ebURG75CUEXyykGbNGHoJa4ycypd5AA/LYR86mzRbs7Mxiqlmw3co8/C44n4XKM0
+QungC3A3a98p1kNSIiBM9g2Ie+cgBw==
+=pOxx
+-----END PGP SIGNATURE-----
+
+--Y5rl02BVI9TCfPar--
+
+
+--===============5739087664045095893==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5739087664045095893==--
+
