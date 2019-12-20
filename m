@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 379F5127F59
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 16:32:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 853EB127F5A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 16:32:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G4GOw9pUsdGfhc6sPyMQ8wyHJnDF51wpDiXoO7RDxFs=; b=bwL9V+edw3BbWZ
-	s5pqtD2LHvHuxQI0bxivARfuh3GERj5q2WeMex+6AtpVBGyiJKEzdmwQuTTO+Xe7BeLyZepH0wQUM
-	wM+6A0dn/U8XZ8PTZGEbirPX6sbBA8rLTNbPmOJsCB+7nlMElJK2C3tzjErp4AVJaE4Ho7RbIshJ2
-	r5jekPhtqa/1pgxRR5vJcTzac3Z8K/mdRkml3itd5oOILLUBbTEeq0JzMaciAMcqFzlls8zR0J0xi
-	KeZ6mnARy3oAvxX7PzTgdtBwa4TgQCvxe+VaeiOo0Eib2BRb8x8Xov5bhQETLNRNelLI+THM5wkO3
-	3U1P+vGQKR+JjWYPiS6w==;
+	List-Owner; bh=BIXYuxzO0Ab9A0yIH18ww2TE6mF+RO1sfd8YHOzpC+0=; b=hJf7TlwjpVrUE3
+	Xu3NSSrF5esGhPOWbvq22xZSMwqfCuwqYOatfuy+yiI/qQ3dmhbXHB6S/yBpXc2R24sNzwFFgK5N6
+	zfQd4AGfdpyj5K8yjZ8LUolin8WhF9r/+p/WHeJ/oEMqd+xgOqlSa3pdX2U/HSBSJDmU7fTDzqXA/
+	Nk0P4AhRJRJ4DmKKPZd0HWdpm/KVKjHN/ZngQLVBkLltKmALLNQJp9K01S1y982lggtb1+rzHGTpJ
+	sbZPwqutzwLg4gYx69qEJ3bIzl4b0SLakVbM0rFKiEvTsLYPjKi0K3brBvTBg6ye2UPT7oojBAsJL
+	yptGJ2m2759A1mEJ3lzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiKG2-00063t-GA; Fri, 20 Dec 2019 15:32:02 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1iiKGI-0006Fw-3Z; Fri, 20 Dec 2019 15:32:18 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiKFZ-0005nE-Lx
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 15:31:35 +0000
-Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
+ id 1iiKFj-0005uM-9R
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 15:31:44 +0000
+Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
  Claudiu.Beznea@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="Claudiu.Beznea@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,48 +34,48 @@ Received-SPF: Pass (esa6.microchip.iphmx.com: domain of
  a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
  include:servers.mcsv.net include:mktomail.com
  include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa6.microchip.iphmx.com: no sender
+Received-SPF: None (esa4.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa6.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
  envelope-from="Claudiu.Beznea@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa6.microchip.iphmx.com;
+Authentication-Results: esa4.microchip.iphmx.com;
  dkim=none (message not signed) header.i=none;
  spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: Wg3i4VSbUNNg8ON2QzDN5HgF7VLcTihk2EjuRR8WYzKOdZ2IX3jB7Osl1EGbRE90AA1uFxH1kb
- jHXqRnSyvrODDkKRgk5zBL6u+svn320qgkNkdPse9JjaJb0VxLYpgEqBemBVtbTy4ws1i0ijVV
- qXyCiRhwXQhp9vFFZ34c8ZZ1eW553hF2FjVa6qJKDkn6oTZU4X2U0BaT04xYb1PkPDvWDRJeW1
- jgQC2bZuTkyEQjy3GZVrnmU5ALch443zDA+qkDci2cIqw+EtzqM4xjRlm4ahvOeHMwjnlFis0v
- 2Dw=
-X-IronPort-AV: E=Sophos;i="5.69,336,1571727600"; d="scan'208";a="58490679"
+IronPort-SDR: FMqnboapz717VG/leNhoE9yn4xZSFAiHG/eNhNSSb9k35zssPXeFlF/xbXYOo4G80TnxyTDhuc
+ ROuEzEEuGHSk+pIO7KeTFRnLOZGtZ3X1KSgnJKGyt+Lddfi1LDwMNvgn2nIGhcyxRO+ZaRFlxq
+ wnNOlWgAXvN8mNjIaXLgUjYm01GrUa6/MrAccsdqhtf/uCUrFarSqh+HR0aaFfVJEHoMKD/Kjp
+ +54/ju4KmERvbWKu9PGYiopK0yrnGYEEcxb1chydpYEQyE6390k7Jxwk9CJf1M2YUn4e03F/y0
+ 4do=
+X-IronPort-AV: E=Sophos;i="5.69,336,1571727600"; d="scan'208";a="59174669"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 20 Dec 2019 08:31:26 -0700
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 20 Dec 2019 08:31:37 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 20 Dec 2019 08:31:30 -0700
+ 15.1.1713.5; Fri, 20 Dec 2019 08:31:28 -0700
 Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Fri, 20 Dec 2019 08:31:24 -0700
+ 15.1.1713.5 via Frontend Transport; Fri, 20 Dec 2019 08:31:26 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <nicolas.ferre@microchip.com>, <sre@kernel.org>,
  <alexandre.belloni@bootlin.com>
-Subject: [PATCH v2 1/2] power: reset: at91-poweroff: introduce struct
- shdwc_reg_config
-Date: Fri, 20 Dec 2019 17:31:17 +0200
-Message-ID: <1576855878-13213-2-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH v2 2/2] power: reset: at91-poweroff: use proper master clock
+ register offset
+Date: Fri, 20 Dec 2019 17:31:18 +0200
+Message-ID: <1576855878-13213-3-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1576855878-13213-1-git-send-email-claudiu.beznea@microchip.com>
 References: <1576855878-13213-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_073133_756013_68896E93 
-X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-CacheID: sfid-20191220_073143_399074_8650568C 
+X-CRM114-Status: UNSURE (   9.41  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -83,7 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,147 +104,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This driver uses AT91_PMC_MCKR in poweroff() function. But the
-SAM9X60's PMC versions maps AT91_PMC_MCKR functionality at different
-offset compared to the SAMA5D2's one. This patch prepares the field
-so that different AT91_PMC_MCKR's offsets to be introduced in
-struct reg_config so that proper offset to be used for AT91_PMC_MCKR
-based on compatible string.
+SAM9X60's PMC uses different offset for master clock register.
+Add a member of type struct pmc_reg_config in struct reg_config,
+fill it correspondingly for SAMA5D2 and SAM9X60 and use it in
+poweroff() function.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- drivers/power/reset/at91-sama5d2_shdwc.c | 54 +++++++++++++++++++-------------
- 1 file changed, 32 insertions(+), 22 deletions(-)
+ drivers/power/reset/at91-sama5d2_shdwc.c | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/power/reset/at91-sama5d2_shdwc.c b/drivers/power/reset/at91-sama5d2_shdwc.c
-index 1c18f465a245..84806d20846b 100644
+index 84806d20846b..2fe3a627cb53 100644
 --- a/drivers/power/reset/at91-sama5d2_shdwc.c
 +++ b/drivers/power/reset/at91-sama5d2_shdwc.c
-@@ -66,7 +66,7 @@
- 
- #define SHDW_CFG_NOT_USED	(32)
- 
--struct shdwc_config {
-+struct shdwc_reg_config {
- 	u8 wkup_pin_input;
- 	u8 mr_rtcwk_shift;
- 	u8 mr_rttwk_shift;
-@@ -74,8 +74,12 @@ struct shdwc_config {
+@@ -74,8 +74,13 @@ struct shdwc_reg_config {
  	u8 sr_rttwk_shift;
  };
  
-+struct reg_config {
-+	struct shdwc_reg_config shdwc;
++struct pmc_reg_config {
++	u8 mckr;
 +};
 +
+ struct reg_config {
+ 	struct shdwc_reg_config shdwc;
++	struct pmc_reg_config pmc;
+ };
+ 
  struct shdwc {
--	const struct shdwc_config *cfg;
-+	const struct reg_config *rcfg;
- 	struct clk *sclk;
- 	void __iomem *shdwc_base;
- 	void __iomem *mpddrc_base;
-@@ -95,6 +99,7 @@ static const unsigned long long sdwc_dbc_period[] = {
- static void __init at91_wakeup_status(struct platform_device *pdev)
- {
- 	struct shdwc *shdw = platform_get_drvdata(pdev);
-+	const struct reg_config *rcfg = shdw->rcfg;
- 	u32 reg;
- 	char *reason = "unknown";
+@@ -136,9 +141,9 @@ static void at91_poweroff(void)
+ 		"	str	%1, [%0, #" __stringify(AT91_DDRSDRC_LPR) "]\n\t"
  
-@@ -106,11 +111,11 @@ static void __init at91_wakeup_status(struct platform_device *pdev)
- 	if (!reg)
- 		return;
- 
--	if (SHDW_WK_PIN(reg, shdw->cfg))
-+	if (SHDW_WK_PIN(reg, &rcfg->shdwc))
- 		reason = "WKUP pin";
--	else if (SHDW_RTCWK(reg, shdw->cfg))
-+	else if (SHDW_RTCWK(reg, &rcfg->shdwc))
- 		reason = "RTC";
--	else if (SHDW_RTTWK(reg, shdw->cfg))
-+	else if (SHDW_RTTWK(reg, &rcfg->shdwc))
- 		reason = "RTT";
- 
- 	pr_info("AT91: Wake-Up source: %s\n", reason);
-@@ -215,6 +220,7 @@ static u32 at91_shdwc_get_wakeup_input(struct platform_device *pdev,
- static void at91_shdwc_dt_configure(struct platform_device *pdev)
- {
- 	struct shdwc *shdw = platform_get_drvdata(pdev);
-+	const struct reg_config *rcfg = shdw->rcfg;
- 	struct device_node *np = pdev->dev.of_node;
- 	u32 mode = 0, tmp, input;
- 
-@@ -227,10 +233,10 @@ static void at91_shdwc_dt_configure(struct platform_device *pdev)
- 		mode |= AT91_SHDW_WKUPDBC(at91_shdwc_debouncer_value(pdev, tmp));
- 
- 	if (of_property_read_bool(np, "atmel,wakeup-rtc-timer"))
--		mode |= SHDW_RTCWKEN(shdw->cfg);
-+		mode |= SHDW_RTCWKEN(&rcfg->shdwc);
- 
- 	if (of_property_read_bool(np, "atmel,wakeup-rtt-timer"))
--		mode |= SHDW_RTTWKEN(shdw->cfg);
-+		mode |= SHDW_RTTWKEN(&rcfg->shdwc);
- 
- 	dev_dbg(&pdev->dev, "%s: mode = %#x\n", __func__, mode);
- 	writel(mode, shdw->shdwc_base + AT91_SHDW_MR);
-@@ -239,30 +245,34 @@ static void at91_shdwc_dt_configure(struct platform_device *pdev)
- 	writel(input, shdw->shdwc_base + AT91_SHDW_WUIR);
+ 		/* Switch the master clock source to slow clock. */
+-		"1:	ldr	r6, [%4, #" __stringify(AT91_PMC_MCKR) "]\n\t"
++		"1:	ldr	r6, [%4, %5]\n\t"
+ 		"	bic	r6, r6,  #" __stringify(AT91_PMC_CSS) "\n\t"
+-		"	str	r6, [%4, #" __stringify(AT91_PMC_MCKR) "]\n\t"
++		"	str	r6, [%4, %5]\n\t"
+ 		/* Wait for clock switch. */
+ 		"2:	ldr	r6, [%4, #" __stringify(AT91_PMC_SR) "]\n\t"
+ 		"	tst	r6, #"	    __stringify(AT91_PMC_MCKRDY) "\n\t"
+@@ -153,7 +158,8 @@ static void at91_poweroff(void)
+ 		  "r" cpu_to_le32(AT91_DDRSDRC_LPDDR2_PWOFF),
+ 		  "r" (at91_shdwc->shdwc_base),
+ 		  "r" cpu_to_le32(AT91_SHDW_KEY | AT91_SHDW_SHDW),
+-		  "r" (at91_shdwc->pmc_base)
++		  "r" (at91_shdwc->pmc_base),
++		  "r" (at91_shdwc->rcfg->pmc.mckr)
+ 		: "r6");
  }
  
--static const struct shdwc_config sama5d2_shdwc_config = {
--	.wkup_pin_input = 0,
--	.mr_rtcwk_shift = 17,
--	.mr_rttwk_shift	= SHDW_CFG_NOT_USED,
--	.sr_rtcwk_shift = 5,
--	.sr_rttwk_shift = SHDW_CFG_NOT_USED,
-+static const struct reg_config sama5d2_reg_config = {
-+	.shdwc = {
-+		.wkup_pin_input = 0,
-+		.mr_rtcwk_shift = 17,
-+		.mr_rttwk_shift	= SHDW_CFG_NOT_USED,
-+		.sr_rtcwk_shift = 5,
-+		.sr_rttwk_shift = SHDW_CFG_NOT_USED,
+@@ -253,6 +259,9 @@ static const struct reg_config sama5d2_reg_config = {
+ 		.sr_rtcwk_shift = 5,
+ 		.sr_rttwk_shift = SHDW_CFG_NOT_USED,
+ 	},
++	.pmc = {
++		.mckr		= 0x30,
 +	},
  };
  
--static const struct shdwc_config sam9x60_shdwc_config = {
--	.wkup_pin_input = 0,
--	.mr_rtcwk_shift = 17,
--	.mr_rttwk_shift = 16,
--	.sr_rtcwk_shift = 5,
--	.sr_rttwk_shift = 4,
-+static const struct reg_config sam9x60_reg_config = {
-+	.shdwc = {
-+		.wkup_pin_input = 0,
-+		.mr_rtcwk_shift = 17,
-+		.mr_rttwk_shift = 16,
-+		.sr_rtcwk_shift = 5,
-+		.sr_rttwk_shift = 4,
+ static const struct reg_config sam9x60_reg_config = {
+@@ -263,6 +272,9 @@ static const struct reg_config sam9x60_reg_config = {
+ 		.sr_rtcwk_shift = 5,
+ 		.sr_rttwk_shift = 4,
+ 	},
++	.pmc = {
++		.mckr		= 0x28,
 +	},
  };
  
  static const struct of_device_id at91_shdwc_of_match[] = {
- 	{
- 		.compatible = "atmel,sama5d2-shdwc",
--		.data = &sama5d2_shdwc_config,
-+		.data = &sama5d2_reg_config,
- 	},
- 	{
- 		.compatible = "microchip,sam9x60-shdwc",
--		.data = &sam9x60_shdwc_config,
-+		.data = &sam9x60_reg_config,
- 	}, {
- 		/*sentinel*/
- 	}
-@@ -303,7 +313,7 @@ static int __init at91_shdwc_probe(struct platform_device *pdev)
- 	}
- 
- 	match = of_match_node(at91_shdwc_of_match, pdev->dev.of_node);
--	at91_shdwc->cfg = match->data;
-+	at91_shdwc->rcfg = match->data;
- 
- 	at91_shdwc->sclk = devm_clk_get(&pdev->dev, NULL);
- 	if (IS_ERR(at91_shdwc->sclk))
 -- 
 2.7.4
 
