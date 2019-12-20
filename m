@@ -2,61 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED12112769E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 08:38:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 313D31276AD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 08:45:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iQ4FFCVb2B4bG3uvou2mEIyeermelAuHC1qDLUIRS8c=; b=e4+6vFQxYyRWD1
-	zaEv7v3BuSoEo0Oa13Pb2+JyUd3rUAZbEibbH74hTAuKShdNHsRO0bv8hmZK80KrLPW7qq9DgxKSs
-	Yd6cQBu+hYuihm1oj+TnOMaYa1yvPycdX/Smdxs0N59lV4T7HUvPLyOTbL6ImlEQMMBfaGztgDXDo
-	WOFHKd3PdRi3Ym8GQUpVryzDkqxP1X6UTj9k1YHDrc7YVkCd4H63yAF6/jfyKBUTUKZ+7iT5ShLOw
-	4Ea3ylA8V3LYULG54lnKC+uB+9B8J22+Lt2ow/QePWuJwmIq4SsxcF3FzpwExqkoOOu94Uk82lihb
-	+TnXJvGymuCGkKjnEwPg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cijwCu0vhK3zO4YdxL9TuJwYq+ilvJ3Ri0fIffXmyng=; b=bjzJUMoZW9B7Bd
+	2++Ghfsox0noBKGC/ga2D7LEc3/HFTwX6E9aBb+2aVYUfx221YAG8SOdPYK/3wz2mYiyYyNEb5xAI
+	iuym/JxAguemYUODhGOapBRjvIXZLJShHDd4gAC8L3SfvUChnrtoGJMjTNMkN44bZu0FvWm8zd6Kj
+	JfMy65jRu0URwiUEnmrEdSSyvIPfi21VrdGnOffpO2pT+SrotgJWB4NDMG2gIhPSWuCV98e1kzNXv
+	ntbuxd2Yxw5GhMOfw5v59hY5E3Xvp3yEiBGcNaFqls+kvfZ9qBiDOa1Vg946EGAq3HlqftcVMK2k3
+	vXT4EJIzgBb3uAD2+Gmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiCs6-0002Cd-5D; Fri, 20 Dec 2019 07:38:50 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1iiCyH-0004uZ-3C; Fri, 20 Dec 2019 07:45:13 +0000
+Received: from mail-eopbgr130057.outbound.protection.outlook.com
+ ([40.107.13.57] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiCrd-0001yG-Ne; Fri, 20 Dec 2019 07:38:23 +0000
-Received: from [10.18.38.198] (10.18.38.198) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Fri, 20 Dec
- 2019 15:38:52 +0800
-Subject: Re: [PATCH v2 3/6] phy: amlogic: Add Amlogic A1 USB2 PHY Driver
-To: Neil Armstrong <narmstrong@baylibre.com>, Jerome Brunet
- <jbrunet@baylibre.com>, Rob Herring <robh@kernel.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Felipe Balbi <felipe.balbi@linux.intel.com>,
- Kevin Hilman <khilman@baylibre.com>
-References: <1576636944-196192-1-git-send-email-hanjie.lin@amlogic.com>
- <1576636944-196192-4-git-send-email-hanjie.lin@amlogic.com>
- <4cbc4216-4f1b-dab2-fccd-4ece7cfedb77@baylibre.com>
- <da372dff-4467-5d04-c8ae-055f89a5b11b@amlogic.com>
- <e66d35b1-4e85-bde4-abf7-af3f569e64e8@baylibre.com>
-From: Hanjie Lin <hanjie.lin@amlogic.com>
-Message-ID: <def5256a-a66c-bd46-8765-5cd0cf7fa239@amlogic.com>
-Date: Fri, 20 Dec 2019 15:38:52 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
-MIME-Version: 1.0
-In-Reply-To: <e66d35b1-4e85-bde4-abf7-af3f569e64e8@baylibre.com>
+ id 1iiCxy-0004tc-BJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 07:44:56 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=W7S1w5P1cVmIDhKmRQTx4NiCA1Ior3UZHdoV+EWiX4lS6VgUF3NplOVT/E/dYiHyip4k+Pu3ZRsoHGZJ7vJkdTBZ29moh9QGH1h8+Gt2Sh0hQtKZXQ8K6oJSklvIB5MLCA2udKbmndveAqt12j7sxF/in/ZtWTNImelvu4H+qGyWp1ocoPGjxDILM9AgK8FyMd9XMoG54o+qwaJ51oSFsS8vvSQHfgfSo2Ow5aU+mIWpP5rmBb4LW2fzrvnuFgNqGHmMEGxfO0hckVjBbIY2mdt/A+ge8IoQpT+s4fEttsp1+cQel8sOTbo+NC0YaxMa0NK9qVEHCHf0CM8wjIuWlA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=M1rZrW7YdXIPl960aKX4BqzCNhHxgTrb686+13OLQr0=;
+ b=jsgObq+3gGMhRg5M8tGpZyVBVTGljp6n9g0krRwXCB8vQCj1TdBs2GkNpJ06aHL5gjXCdyj+Zy+ncdv3noXurmOeqeGNdeggO7uQ7n6iPMjRypjfhQtxVfcqqcGSjK8YLgB6iSsM5Eut/XuGByJQ3+UyXLS+hEAXrUssOfjcJ4ggmr+lqr9oREJRUlYRgtUnXzKONlo3JiGo7hXQLn//Wxvh5ZNGHsEuPFVlV/ZBVuiTL/PMXEzK/S8mf/E3fUh+CvUt8OJ9J36NVN1pgVjWw74s3nn+sRqbKCa+B6rryCUTZJamsQXmYwrpZRSrjBRhi57E2BfZlLo/wT4ZdlkeXA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=M1rZrW7YdXIPl960aKX4BqzCNhHxgTrb686+13OLQr0=;
+ b=iJoCSDQ62o1i/Eqv1Jmsjrnm3eY7+PoxoRqM79cvBuyQuh7QSzSD3iUZGWttgz0v7BGmxjX+F9c4GmwGEDuXD+Ddqjb1zSNAq9RVpVNyYkB0SFQQvQfryo0YFdwNRk778cmPkDEgdnVJ/LFqkQCiwksi7C7yKooSYVqXABPhbvQ=
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
+ DB7PR04MB5081.eurprd04.prod.outlook.com (20.176.236.212) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2538.20; Fri, 20 Dec 2019 07:44:48 +0000
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::b40b:46af:9458:f2df]) by DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::b40b:46af:9458:f2df%6]) with mapi id 15.20.2559.016; Fri, 20 Dec 2019
+ 07:44:48 +0000
+From: Joakim Zhang <qiangqing.zhang@nxp.com>
+To: Joakim Zhang <qiangqing.zhang@nxp.com>, "maz@kernel.org" <maz@kernel.org>, 
+ "tglx@linutronix.de" <tglx@linutronix.de>, "jason@lakedaemon.net"
+ <jason@lakedaemon.net>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
+Subject: RE: [PATCH V3 1/2] dt-bindings/irq: add binding for NXP INTMUX
+ interrupt multiplexer
+Thread-Topic: [PATCH V3 1/2] dt-bindings/irq: add binding for NXP INTMUX
+ interrupt multiplexer
+Thread-Index: AQHVtwjHFdUOM6ZScEmuNnpSa/osE6fCpASQ
+Date: Fri, 20 Dec 2019 07:44:48 +0000
+Message-ID: <DB7PR04MB4618D835938530D6051A02C1E62D0@DB7PR04MB4618.eurprd04.prod.outlook.com>
+References: <1576827431-31942-1-git-send-email-qiangqing.zhang@nxp.com>
+ <1576827431-31942-2-git-send-email-qiangqing.zhang@nxp.com>
+In-Reply-To: <1576827431-31942-2-git-send-email-qiangqing.zhang@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Originating-IP: [10.18.38.198]
-X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
- (10.18.11.5)
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=qiangqing.zhang@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 5f1b6a8e-0216-4844-8b18-08d785207d73
+x-ms-traffictypediagnostic: DB7PR04MB5081:|DB7PR04MB5081:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7PR04MB5081E8460197B47B62807DCBE62D0@DB7PR04MB5081.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-forefront-prvs: 025796F161
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(136003)(346002)(376002)(396003)(39860400002)(189003)(199004)(13464003)(52536014)(478600001)(110136005)(2906002)(33656002)(54906003)(81166006)(76116006)(316002)(8676002)(81156014)(7696005)(26005)(66946007)(66446008)(7416002)(64756008)(66556008)(66476007)(55016002)(9686003)(8936002)(71200400001)(53546011)(186003)(86362001)(5660300002)(6506007)(4326008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB5081;
+ H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: SuiRB7azBDkSl+xcwmAn3E7Ud9p2jeEvLOfVGegWG8qxXBMSQHieNm3l4kwC1W9irtl+aayf7DX++OTZnJLtAIb6SfpXxNDM49iUlvw6f6EDPLWkEb4+T4zngnLa43k5xx/V/PRqmdzlKx3qOUP9ED80RBfMLvYgYfI+uhcNRftrMA6mz+g0C1CI1JFR/ZtwnMHPAlq0CPrSfvibtcpQVOIFObWpsgU6B+5lqExx7GI5ZasKpmPMFOKiZgfHikps5aeOiYkewKrQ0VHFJggv8pSnWVS482OkUCPck1Jbww6xt4NbqvKfg/Y2zsE3e6ipjfhtVRwBhJKYcIYv7cWD9E4mWrgPgs748ikBE5s0tUgNHCS2ThHgdlEHWkhm8JvE9bK4olLDbZ809YfyGqOonHVRqU5Pg+21aRtQOjELTRJa+9aoOgd7lZiQb4c34xbLaZc6vkR1CdxVV0J3xiMgq3bFSEIt6Btl5rMAEHbT9JiEMmefITUQ8dIprg8DVbTH
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5f1b6a8e-0216-4844-8b18-08d785207d73
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Dec 2019 07:44:48.5387 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: HI8Kkz3YwuZFxuHV2MG61gX6jnB4bot+fON2lfAGd4YsM2KnDrmAA5KF/GHe/xg9KPdVyC3Dn+bFtDfeNOypdg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB5081
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_233821_788420_A11BDF21 
-X-CRM114-Status: GOOD (  16.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191219_234454_589522_F858E727 
+X-CRM114-Status: GOOD (  18.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.13.57 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,252 +126,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-usb@vger.kernel.org,
- Yue Wang <yue.wang@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Liang Yang <liang.yang@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jian Hu <jian.hu@amlogic.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Andy Duan <fugang.duan@nxp.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="gb2312"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 2019/12/19 18:12, Neil Armstrong wrote:
-> On 19/12/2019 10:48, Hanjie Lin wrote:
->>
->>
->> On 2019/12/18 21:17, Neil Armstrong wrote:
->>> Hi,
->>>
->>> On 18/12/2019 03:42, Hanjie Lin wrote:
->>>> This adds support for the USB2 PHY found in the Amlogic A1 SoC Family.
->>>>
->>>> It supports host mode only.
->>>>
->>>> Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
->>>> Signed-off-by: Yue Wang <yue.wang@amlogic.com>
->>>> ---
->>>>  drivers/phy/amlogic/phy-meson-g12a-usb2.c | 102 ++++++++++++++++++++++--------
->>>>  1 file changed, 74 insertions(+), 28 deletions(-)
->>>>
->>>> diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb2.c b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
->>>> index 9065ffc..2c242d3 100644
->>>> --- a/drivers/phy/amlogic/phy-meson-g12a-usb2.c
->>>> +++ b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
->>>> @@ -146,11 +146,18 @@
->>>>  #define RESET_COMPLETE_TIME					1000
->>>>  #define PLL_RESET_COMPLETE_TIME					100
->>>>  
->>>> +enum {
->>>> +	MESON_USB2_PHY_VERSION_10 = 0,
->>>> +	MESON_USB2_PHY_VERSION_11,
->>>
->>> Are these the real "versions" of the phy or it's made up ?
->>>
->>
->> This version is made up and only for distinguish a1 and g12a.
-> 
-> No problem, in this case simply use the SoC family instead of 10 and 11.
-> 
-> Neil
-> 
-
-Of course, it looks more accurate, I will get rid of phy version in next version.
-
->>
->>>> +	MESON_USB2_PHY_VERSION_COUNT,
->>>> +};
->>>> +
->>>>  struct phy_meson_g12a_usb2_priv {
->>>>  	struct device		*dev;
->>>>  	struct regmap		*regmap;
->>>>  	struct clk		*clk;
->>>>  	struct reset_control	*reset;
->>>> +	int phy_version;
->>>>  };
->>>>  
->>>>  static const struct regmap_config phy_meson_g12a_usb2_regmap_conf = {
->>>> @@ -192,18 +199,33 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
->>>>  		     FIELD_PREP(PHY_CTRL_R17_MPLL_FILTER_PVT2, 2) |
->>>>  		     FIELD_PREP(PHY_CTRL_R17_MPLL_FILTER_PVT1, 9));
->>>>  
->>>> -	regmap_write(priv->regmap, PHY_CTRL_R18,
->>>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
->>>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
->>>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
->>>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
->>>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
->>>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
->>>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
->>>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
->>>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
->>>> -		     FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
->>>> -		     PHY_CTRL_R18_MPLL_ACG_RANGE);
->>>> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10)
->>>> +		regmap_write(priv->regmap, PHY_CTRL_R18,
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
->>>> +			     PHY_CTRL_R18_MPLL_ACG_RANGE);
->>>> +	else if (priv->phy_version == MESON_USB2_PHY_VERSION_11)
->>>> +		regmap_write(priv->regmap, PHY_CTRL_R18,
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LKW_SEL, 1) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_W, 9) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_LK_S, 0x27) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_PFD_GAIN, 1) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ROU, 7) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_DATA_SEL, 3) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BIAS_ADJ, 1) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_BB_MODE, 0) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ALPHA, 3) |
->>>> +			     FIELD_PREP(PHY_CTRL_R18_MPLL_ADJ_LDO, 1) |
->>>> +			     PHY_CTRL_R18_MPLL_ACG_RANGE |
->>>> +			     PHY_CTRL_R18_MPLL_DCO_CLK_SEL);
->>>
->>> The only difference is PHY_CTRL_R18_MPLL_ACG_RANGE | PHY_CTRL_R18_MPLL_DCO_CLK_SEL,
->>> you can easily simplify the code here by using a temp variable.
->>>
->>
->> Yes, it will looks more clearly.
->>
->>>>  
->>>>  	udelay(PLL_RESET_COMPLETE_TIME);
->>>>  
->>>> @@ -227,13 +249,24 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
->>>>  		     FIELD_PREP(PHY_CTRL_R20_USB2_BGR_VREF_4_0, 0) |
->>>>  		     FIELD_PREP(PHY_CTRL_R20_USB2_BGR_DBG_1_0, 0));
->>>>  
->>>> -	regmap_write(priv->regmap, PHY_CTRL_R4,
->>>> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_7_0, 0xf) |
->>>> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_15_8, 0xf) |
->>>> -		     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_23_16, 0xf) |
->>>> -		     PHY_CTRL_R4_TEST_BYPASS_MODE_EN |
->>>> -		     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_1_0, 0) |
->>>> -		     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_3_2, 0));
->>>> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10)
->>>> +		regmap_write(priv->regmap, PHY_CTRL_R4,
->>>> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_7_0, 0xf) |
->>>> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_15_8, 0xf) |
->>>> +			     FIELD_PREP(PHY_CTRL_R4_CALIB_CODE_23_16, 0xf) |
->>>> +			     PHY_CTRL_R4_TEST_BYPASS_MODE_EN |
->>>> +			     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_1_0, 0) |
->>>> +			     FIELD_PREP(PHY_CTRL_R4_I_C2L_BIAS_TRIM_3_2, 0));
->>>> +	else if (priv->phy_version == MESON_USB2_PHY_VERSION_11) {
->>>> +		regmap_write(priv->regmap, PHY_CTRL_R21,
->>>> +			     PHY_CTRL_R21_USB2_CAL_ACK_EN |
->>>> +			     PHY_CTRL_R21_USB2_TX_STRG_PD |
->>>> +			     FIELD_PREP(PHY_CTRL_R21_USB2_OTG_ACA_TRIM_1_0, 2));
->>>> +
->>>> +		/* Analog Settings */
->>>> +		regmap_write(priv->regmap, PHY_CTRL_R13,
->>>> +			     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
->>>> +	}
->>>>  
->>>>  	/* Tuning Disconnect Threshold */
->>>>  	regmap_write(priv->regmap, PHY_CTRL_R3,
->>>> @@ -241,11 +274,13 @@ static int phy_meson_g12a_usb2_init(struct phy *phy)
->>>>  		     FIELD_PREP(PHY_CTRL_R3_HSDIC_REF, 1) |
->>>>  		     FIELD_PREP(PHY_CTRL_R3_DISC_THRESH, 3));
->>>>  
->>>> -	/* Analog Settings */
->>>> -	regmap_write(priv->regmap, PHY_CTRL_R14, 0);
->>>> -	regmap_write(priv->regmap, PHY_CTRL_R13,
->>>> -		     PHY_CTRL_R13_UPDATE_PMA_SIGNALS |
->>>> -		     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
->>>> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10) {
->>>> +		/* Analog Settings */
->>>> +		regmap_write(priv->regmap, PHY_CTRL_R14, 0);
->>>> +		regmap_write(priv->regmap, PHY_CTRL_R13,
->>>> +			     PHY_CTRL_R13_UPDATE_PMA_SIGNALS |
->>>> +			     FIELD_PREP(PHY_CTRL_R13_MIN_COUNT_FOR_SYNC_DET, 7));
->>>> +	}
->>>>  
->>>>  	return 0;
->>>>  }
->>>> @@ -271,6 +306,7 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
->>>>  	struct resource *res;
->>>>  	struct phy_meson_g12a_usb2_priv *priv;
->>>>  	struct phy *phy;
->>>> +	struct device_node *np = dev->of_node;
->>>>  	void __iomem *base;
->>>>  	int ret;
->>>>  
->>>> @@ -286,14 +322,23 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
->>>>  	if (IS_ERR(base))
->>>>  		return PTR_ERR(base);
->>>>  
->>>> +	if (of_device_is_compatible(np, "amlogic,g12a-usb2-phy"))
->>>> +		priv->phy_version = MESON_USB2_PHY_VERSION_10;
->>>> +	else if (of_device_is_compatible(np, "amlogic,a1-usb2-phy"))
->>>> +		priv->phy_version = MESON_USB2_PHY_VERSION_11;
->>>> +	else
->>>> +		return -EINVAL;
->>>
->>> Please use of_device_get_match_data() and a match data for each compatible instead.
->>>
->>
->> OK, I will fix it in next version.
->>
->>>> +
->>>>  	priv->regmap = devm_regmap_init_mmio(dev, base,
->>>>  					     &phy_meson_g12a_usb2_regmap_conf);
->>>>  	if (IS_ERR(priv->regmap))
->>>>  		return PTR_ERR(priv->regmap);
->>>>  
->>>> -	priv->clk = devm_clk_get(dev, "xtal");
->>>> -	if (IS_ERR(priv->clk))
->>>> -		return PTR_ERR(priv->clk);
->>>> +	if (priv->phy_version == MESON_USB2_PHY_VERSION_10) {
->>>> +		priv->clk = devm_clk_get(dev, "xtal");
->>>> +		if (IS_ERR(priv->clk))
->>>> +			return PTR_ERR(priv->clk);
->>>> +	}
->>>>  
->>>>  	priv->reset = devm_reset_control_get(dev, "phy");
->>>>  	if (IS_ERR(priv->reset))
->>>> @@ -322,7 +367,8 @@ static int phy_meson_g12a_usb2_probe(struct platform_device *pdev)
->>>>  
->>>>  static const struct of_device_id phy_meson_g12a_usb2_of_match[] = {
->>>>  	{ .compatible = "amlogic,g12a-usb2-phy", },
->>>> -	{ },
->>>> +	{ .compatible = "amlogic,a1-usb2-phy", },
->>>> +	{ /* Sentinel */ }
->>>>  };
->>>>  MODULE_DEVICE_TABLE(of, phy_meson_g12a_usb2_of_match);
->>>>  
->>>>
->>>
->>> Thanks,
->>> Neil
->>>
->>> .
->>>
->>
->> Thanks,
->> Hanjie.Lin
->>
-> 
-> .
-> 
-
-
-Thanks,
-Hanjie.Lin
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+IEZyb206IEpvYWtpbSBaaGFuZyA8cWlh
+bmdxaW5nLnpoYW5nQG54cC5jb20+DQo+IFNlbnQ6IDIwMTnE6jEy1MIyMMjVIDE1OjM3DQo+IFRv
+OiBtYXpAa2VybmVsLm9yZzsgdGdseEBsaW51dHJvbml4LmRlOyBqYXNvbkBsYWtlZGFlbW9uLm5l
+dDsNCj4gcm9iaCtkdEBrZXJuZWwub3JnOyBtYXJrLnJ1dGxhbmRAYXJtLmNvbTsgc2hhd25ndW9A
+a2VybmVsLm9yZzsNCj4gcy5oYXVlckBwZW5ndXRyb25peC5kZQ0KPiBDYzoga2VybmVsQHBlbmd1
+dHJvbml4LmRlOyBkbC1saW51eC1pbXggPGxpbnV4LWlteEBueHAuY29tPjsNCj4gbGludXgta2Vy
+bmVsQHZnZXIua2VybmVsLm9yZzsgQW5keSBEdWFuIDxmdWdhbmcuZHVhbkBueHAuY29tPjsNCj4g
+bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOyBKb2FraW0gWmhhbmcNCj4gPHFp
+YW5ncWluZy56aGFuZ0BueHAuY29tPg0KPiBTdWJqZWN0OiBbUEFUQ0ggVjMgMS8yXSBkdC1iaW5k
+aW5ncy9pcnE6IGFkZCBiaW5kaW5nIGZvciBOWFAgSU5UTVVYIGludGVycnVwdA0KPiBtdWx0aXBs
+ZXhlcg0KPiANCj4gVGhpcyBwYXRjaCBhZGRzIHRoZSBEVCBiaW5kaW5ncyBmb3IgdGhlIE5YUCBJ
+TlRNVVggaW50ZXJydXB0IG11bHRpcGxleGVyIGZvcg0KPiBpLk1YOCBmYW1pbHkgU29Dcy4NCj4g
+DQo+IFNpZ25lZC1vZmYtYnk6IEpvYWtpbSBaaGFuZyA8cWlhbmdxaW5nLnpoYW5nQG54cC5jb20+
+DQo+IC0tLQ0KPiAgLi4uL2ludGVycnVwdC1jb250cm9sbGVyL2ZzbCxpbnRtdXgudHh0ICAgICAg
+IHwgMzYgKysrKysrKysrKysrKysrKysrKw0KPiAgMSBmaWxlIGNoYW5nZWQsIDM2IGluc2VydGlv
+bnMoKykNCj4gIGNyZWF0ZSBtb2RlIDEwMDY0NA0KPiBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
+YmluZGluZ3MvaW50ZXJydXB0LWNvbnRyb2xsZXIvZnNsLGludG11eC50eHQNCj4gDQo+IGRpZmYg
+LS1naXQNCj4gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvaW50ZXJydXB0LWNv
+bnRyb2xsZXIvZnNsLGludG11eC50eHQNCj4gYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
+ZGluZ3MvaW50ZXJydXB0LWNvbnRyb2xsZXIvZnNsLGludG11eC50eHQNCj4gbmV3IGZpbGUgbW9k
+ZSAxMDA2NDQNCj4gaW5kZXggMDAwMDAwMDAwMDAwLi4zZWJlOWNhYzVmMjANCj4gLS0tIC9kZXYv
+bnVsbA0KPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvaW50ZXJydXB0
+LWNvbnRyb2xsZXIvZnNsLGludG11eC4NCj4gKysrIHR4dA0KPiBAQCAtMCwwICsxLDM2IEBADQo+
+ICtGcmVlc2NhbGUgSU5UTVVYIGludGVycnVwdCBtdWx0aXBsZXhlcg0KPiArDQo+ICtSZXF1aXJl
+ZCBwcm9wZXJ0aWVzOg0KPiArDQo+ICstIGNvbXBhdGlibGU6IFNob3VsZCBiZToNCj4gKyAgIC0g
+ImZzbCxpbXgtaW50bXV4Ig0KPiArLSByZWc6IFBoeXNpY2FsIGJhc2UgYWRkcmVzcyBhbmQgc2l6
+ZSBvZiByZWdpc3RlcnMuDQo+ICstIGludGVycnVwdHM6IFNob3VsZCBjb250YWluIHRoZSBwYXJl
+bnQgaW50ZXJydXB0IGxpbmVzICh1cCB0byA4KSB1c2VkDQo+ICt0bw0KPiArICBtdWx0aXBsZXgg
+dGhlIGlucHV0IGludGVycnVwdHMuDQo+ICstIGNsb2NrczogU2hvdWxkIGNvbnRhaW4gb25lIGNs
+b2NrIGZvciBlbnRyeSBpbiBjbG9jay1uYW1lcy4NCj4gKy0gY2xvY2stbmFtZXM6DQo+ICsgICAt
+ICJpcGciOiBtYWluIGxvZ2ljIGNsb2NrDQo+ICstIGludGVycnVwdC1jb250cm9sbGVyOiBJZGVu
+dGlmaWVzIHRoZSBub2RlIGFzIGFuIGludGVycnVwdCBjb250cm9sbGVyLg0KPiArLSAjaW50ZXJy
+dXB0LWNlbGxzOiBTcGVjaWZpZXMgdGhlIG51bWJlciBvZiBjZWxscyBuZWVkZWQgdG8gZW5jb2Rl
+IGFuDQo+ICsgIGludGVycnVwdCBzb3VyY2UuIFRoZSB2YWx1ZSBtdXN0IGJlIDIuDQo+ICsgICAt
+IHRoZSAxc3QgY2VsbDogaGFyZHdhcmUgaW50ZXJydXB0IG51bWJlcg0KPiArICAgLSB0aGUgMm5k
+IGNlbGw6IGNoYW5uZWwgaW5kZXgsIHZhbHVlIG11c3Qgc21hbGxlciB0aGFuIGNoYW5uZWxzIHVz
+ZWQNCj4gKw0KPiArT3B0aW9uYWwgcHJvcGVydGllczoNCj4gKw0KPiArLSBmc2wsaW50bXV4X2No
+YW5zOiBUaGUgbnVtYmVyIG9mIGNoYW5uZWxzIHVzZWQgZm9yIGludGVycnVwdCBzb3VyY2UuDQo+
+ICtUaGUNCj4gKyAgTWF4aW11bSB2YWx1ZSBpcyA4LiBJZiB0aGlzIHByb3BlcnR5IGlzIG5vdCBz
+ZXQgaW4gRFQgdGhlbiBkcml2ZXINCj4gK3VzZXMNCj4gKyAgMSBjaGFubmVsIGJ5IGRlZmF1bHQu
+DQo+ICsNCj4gK0V4YW1wbGU6DQo+ICsNCj4gKwlpbnRtdXhAMzc0MDAwMDAgew0KPiArCQljb21w
+YXRpYmxlID0gImZzbCxpbXgtaW50bXV4IjsNCj4gKwkJcmVnID0gPDB4Mzc0MDAwMDAgMHgxMDAw
+PjsNCj4gKwkJaW50ZXJydXB0cyA9IDxHSUNfU1BJIDE2IElSUV9UWVBFX0xFVkVMX0hJR0g+Ow0K
+PiArCQljbG9ja3MgPSA8JmNsayBJTVg4UU1fQ000MF9JUEdfQ0xLPjsNCj4gKwkJY2xvY2stbmFt
+ZXMgPSAiaXBnIjsNCj4gKwkJaW50ZXJydXB0LWNvbnRyb2xsZXI7DQo+ICsJCSNpbnRlcnJ1cHQt
+Y2VsbHMgPSA8MT47DQpIaSBNYXJjLA0KDQpJIGFtIHNvIHNvcnJ5LCB0aGlzIHNob3VsZCBiZSAj
+aW50ZXJydXB0LWNlbGxzID0gPDI+LCB3aWxsIGNvcnJlY3QgaXQgaW4gbmV4dCB2ZXJzaW9uLg0K
+DQpCZXN0IFJlZ2FyZHMsDQpKb2FraW0gWmhhbmcNCj4gKwl9Ow0KPiArDQo+IC0tDQo+IDIuMTcu
+MQ0KDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
