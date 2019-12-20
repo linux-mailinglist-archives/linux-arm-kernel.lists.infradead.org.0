@@ -2,63 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07EA0127AAD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 13:05:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DFD0127ABE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 13:10:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p56icB+LQT+k7ypuuwRqHm9udZOLVZZQMWWe3mWZ+1E=; b=Pm5dd9sS0iO3W4
-	/vX9+jwVsRVIyhRWxpOvIOPJS+dB46zWAJAmmLjybQk78eKbbubKuDIxIHz6eQyspKyAtXZVvhJLd
-	sZcAdy7NYSIVdee6CoTicYGndVSKH4Bknva4AIX/E12DbQES44J3uJgV97l3UE0X3MbOlcOJWLkp4
-	Q9Vb+Ot5gQryA8FyHp1nPLMkDiMefzu/ofsktPNJ6sHRJNR3owJi3bH26wUrAQaGo10wkpN2cxCzN
-	fhQP0BTOxdY3giWoLQ/Om+nOszHwFxmgdXDB02YG8SPWE/apMVaxD7pwei8w8Ho8GJAJQzpdGIDSE
-	eFXu63l/XNi8y8iWeIrA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=qKiNDh8LGQczcWiqgP5uszPg9hoH6v9WkgSUdQZUfUE=; b=WtB
+	BrDVzl6mKFHJVVwxZ1vMIfN/W5ERCv1hlo+WXGn7EVc6vpTFNO5vODWJ1sNHm3RYIeYWSgnrEwrO9
+	yTxIcuCGHN6KIq7K00k5e9I+BUwpfpHjx3hjiCucC7d4YiOucgTn+lihCYHoHdUWhf5tKR2tMvpbQ
+	z1gaA0cs422TM30/nrVzsKWXMIDCZcDf+fTTtOUDTqRC0Y79/dvQ1HD4rxJ6zIeKUByoNse10+iCe
+	IEPUIi+SOgkmVDnnmovIMZDVm9uNA6iWUoDfddXEqldIdZ+JpxOMFNrMQ6vl2yPIdBb47HtG8i/EG
+	pdGf8HqgE179T3ImmA7jSzrxWK44zWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiH2a-0000MY-9R; Fri, 20 Dec 2019 12:05:56 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iiH7E-0002Rn-5A; Fri, 20 Dec 2019 12:10:44 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiH2Q-0000M1-8q
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 12:05:47 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id 0ED2E21875;
- Fri, 20 Dec 2019 13:05:44 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id E7CB02186A;
- Fri, 20 Dec 2019 13:05:43 +0100 (CET)
-Subject: Re: [RFC PATCH v1] devres: align devres.data strictly only for
- devm_kmalloc()
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-References: <74ae22cd-08c1-d846-3e1d-cbc38db87442@free.fr>
- <bf020a68-00fd-2bb7-c3b6-00f5befa293a@free.fr>
- <20191220102218.GA2259862@kroah.com> <20191220102256.GB2259862@kroah.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <5b12b473-bf9a-6dc9-838c-f9312eb10635@free.fr>
-Date: Fri, 20 Dec 2019 13:05:43 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <20191220102256.GB2259862@kroah.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Fri Dec 20 13:05:44 2019 +0100 (CET)
+ id 1iiH6n-0002DL-5S; Fri, 20 Dec 2019 12:10:20 +0000
+Received: by mail-wr1-x443.google.com with SMTP id t2so9220683wrr.1;
+ Fri, 20 Dec 2019 04:10:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=S0pnr3nn0AYuzGua9zuiRclMABFt/sduS8+fdDz3j0k=;
+ b=fKXaJDUb6gSLYzCgHpdACzerQMB95lJNlCiFznE8f/Ss7IY6w2rV7BK3Es5TcjAcAX
+ CEFs8mwpW19H0jmsTSD6vdZzq6CYXDsqYjan0HJU4TRvpdXddDdoXl/93Vg/EwetxI/g
+ aWWjb+YAVTkXZMJiN6QeLQtVholhbOLmhwGQh7PJ1GfHID9XkvFzm9+mK7LU2nOCzEY6
+ hJ2eDs6v8uo7b4mHtvh5o701wkZNJZ7FXeVRoiqDQOu81/RjuQSgTI92Vh6Kniqb+CzU
+ rklPjP3ZcMREuhbWF3hwSNhYJ7WCW0bAnrCh2VzOPLIh2ar63zh4O9FY4qkeufWnoRVw
+ 2DRA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=S0pnr3nn0AYuzGua9zuiRclMABFt/sduS8+fdDz3j0k=;
+ b=bFt4vh/1l7LCwV3WUMwbYdjDhBR4ZmrdGX4Yhm1cPQmErQwWFeV2Ivyepz8IrmoleJ
+ zjfAGed4+RT6Zha7oRCxq0mKf6njL6z7VSdcwOp64+G0tFQfHCyqk3uM9UmBGJShaXpj
+ L993F4Z9dGlY+4Z/0aPOIG37lhZPl2RMmhTEUPeKBsnFXx87DbwA5UVbAfP0GvyLGtx/
+ 29CVMl8Sr4KrNxmWAJRb2WC5N9Hif/JisUjcfjBnlCmyVcIls9aKazP9geoDuFHlHKPl
+ vBtWx6k4bhmJByYxFWxAOPRGwCrkhX9FpXC5Vl3HXKKpKbxxA70eTi/JhG04J02Yczdh
+ C8sQ==
+X-Gm-Message-State: APjAAAUsC1MXMzQe+9BwTnmOJaYHza84cVDF4TYixSsNitFmq1nJzcgo
+ pWywrxWsKedjCZXFohoA3UI=
+X-Google-Smtp-Source: APXvYqxz4JySI0uFXl1jq8Ac0DazRPpLLkKp56hG8npofCaMs8UjmxmgXnTjmZ8VgRgev06SnzD9iA==
+X-Received: by 2002:a5d:6ac5:: with SMTP id u5mr14874567wrw.271.1576843814425; 
+ Fri, 20 Dec 2019 04:10:14 -0800 (PST)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id s16sm9722493wrn.78.2019.12.20.04.10.13
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 20 Dec 2019 04:10:13 -0800 (PST)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [PATCH 1/2] arm64: dts: rockchip: rk3308-evb: sort nodes in
+ alphabetical order
+Date: Fri, 20 Dec 2019 13:10:06 +0100
+Message-Id: <20191220121007.29337-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_040546_475817_283AFF4C 
-X-CRM114-Status: GOOD (  12.61  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191220_041018_310940_3B0FA5A5 
+X-CRM114-Status: GOOD (  10.28  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (jbx6244[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (marc.w.gonzalez[at]free.fr)
+ provider (jbx6244[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,64 +94,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>, Will Deacon <will@kernel.org>,
- Alexey Brodkin <alexey.brodkin@synopsys.com>,
- Rafael Wysocki <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
- Tejun Heo <tj@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20/12/2019 11:22, Greg Kroah-Hartman wrote:
+Sort nodes in alphabetical order.
+Place &saradc below &pwm0.
 
-> On Fri, Dec 20, 2019 at 11:22:18AM +0100, Greg Kroah-Hartman wrote:
->
->> On Fri, Dec 20, 2019 at 11:19:27AM +0100, Marc Gonzalez wrote:
->>
->>> I keep thinking about the memory waste caused by the strict alignment requirement
->>> on arm64. Is there a way to inspect how much memory has been requested vs how much
->>> has been allocated? (Turning on SLAB DEBUG perhaps?)
->>>
->>> Couldn't there be a kmalloc flag saying "this alloc will not require strict
->>> alignment, so just give me something 8-byte aligned" ?
->>
->> Or you can not use the devm interface for lots of tiny allocations :)
-> 
-> Oh nevermind, "normal" kmalloc allocations are all aligned that way
-> anyway, so that's not going to solve anything, sorry.
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3308-evb.dts | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-(For some context, and for what it's worth, my opinion is that device-managed
-deallocation is the best thing since sliced bread.)
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308-evb.dts b/arch/arm64/boot/dts/rockchip/rk3308-evb.dts
+index 9b4f855ea..e8f15dcce 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308-evb.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3308-evb.dts
+@@ -190,11 +190,6 @@
+ 	cpu-supply = <&vdd_core>;
+ };
+ 
+-&saradc {
+-	status = "okay";
+-	vref-supply = <&vcc_1v8>;
+-};
+-
+ &pinctrl {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&rtc_32k>;
+@@ -219,8 +214,13 @@
+ };
+ 
+ &pwm0 {
+-	status = "okay";
+ 	pinctrl-0 = <&pwm0_pin_pull_down>;
++	status = "okay";
++};
++
++&saradc {
++	vref-supply = <&vcc_1v8>;
++	status = "okay";
+ };
+ 
+ &uart4 {
+-- 
+2.11.0
 
-Typical devm use-case is:
-1) user allocates a resource
-2) user registers release_func+resource_context to devm
-
-So typically, only 2 pointers (which is no issue when the alignment
-requirement is 8 bytes). By nature, these are "small" allocations.
-
-devm_kmalloc does not follow this pattern, it is a kind of optimization.
-1) user does not allocate the resource (RAM)...
-2) ...because the devm framework "merges" the user's memory request with
-its own memory request for storing metadata -- as a memory allocator does
-when it stores metadata for the request "in front of" the memory block.
-(this is the reason why devm_kmalloc_release() is a noop)
-
-
-(The following is just random thinking out loud)
-
-If "fixing" the kmalloc strict alignment requirement on arm64 is too
-hard, maybe it would be possible to shave some of the devm memory
-waste by working with (chained) arrays of devm nodes, instead
-of a straight-up linked list. (Akin to a C++ vector) Removal would
-be expensive, but that's supposed to be a rare operation, right?
-
-Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
