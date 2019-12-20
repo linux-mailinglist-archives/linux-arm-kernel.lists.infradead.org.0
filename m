@@ -2,50 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 209C312813E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 18:19:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D82AF1281B8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 18:55:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sxD3k9vllJd4s1bm9qZxCieS8iI6ako27zPW0I4A3zk=; b=fuUCu3QmUyvEcY
-	60h3u6Llxds7gVgX9UO1DF7TULaxEpeamTR8/ONClNKEnEtK6llO7NxW7P72HhAnj1a56eukVrTv7
-	EwAwe86YZjruDn1H4IMeURIk0OWO+FMoUc6zyEdOsPLNhs2qsLwKnDSX5pi/JvTThvMTHAXssCpMQ
-	HB0+75jfXkAuhhlQfEpcuH2KfO8zH7JIr/AiMC9p3BRN3UVmYcnHHrHk2X/IBEOzenrPxOLgoTc/C
-	3l8fI3T/UcmBhXHigBLtqopXpxeXEd1JYTFUgH90Sr2A4QRoal7YZ8AcQn5QGPoeQv5nTXM4btf11
-	kFx9JzSRehoHp5TfOzfA==;
+	List-Owner; bh=B/TnI5q3TwW5WfD2EoY2qZRBbK+s5Th6X3YxhZ6XgBk=; b=Ld3KnKox59x14l
+	R/17As+yHNiHX4O0gexyt9ISm/4eur4LbfqVXdbmoXMIJjaKo7Oo4fP5Qu81IOreQYybBhSt/aCNM
+	ZPwaLYQZU1SEblXUHjoMFVDxkMiaS5guT5eHK2qQaaTFOtHyYp9xou94av46aAncqppVSlF+EsFv6
+	gGcvEqRPFOTDwfNySCtYLVS8UUfHohCOn2KOy2tjBLpWtyNRM6ga17VrhgZZoFuCpboeuOHhYcuNX
+	3tjASwOK3lnjN9TLYntJbAiBC6Im5mUcQ4OvYkyYrnNe202ImWlAOxx70+jbOXMSgvC5TADWhrEn7
+	0ZjJAOb6cAmuC/Hu8CkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiLvr-0004sk-B0; Fri, 20 Dec 2019 17:19:19 +0000
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiLvg-0004sL-Id; Fri, 20 Dec 2019 17:19:08 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id C450A30038D;
- Fri, 20 Dec 2019 18:17:42 +0100 (CET)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id B755E20244791; Fri, 20 Dec 2019 18:19:06 +0100 (CET)
-Date: Fri, 20 Dec 2019 18:19:06 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Subject: Re: [RFC PATCH v1] devres: align devres.data strictly only for
- devm_kmalloc()
-Message-ID: <20191220171906.GR2827@hirez.programming.kicks-ass.net>
-References: <74ae22cd-08c1-d846-3e1d-cbc38db87442@free.fr>
- <bf020a68-00fd-2bb7-c3b6-00f5befa293a@free.fr>
- <20191220102218.GA2259862@kroah.com>
- <20191220102256.GB2259862@kroah.com>
- <5b12b473-bf9a-6dc9-838c-f9312eb10635@free.fr>
+	id 1iiMV0-00085w-0O; Fri, 20 Dec 2019 17:55:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iiMUr-000852-M8
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 17:55:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 619A01FB;
+ Fri, 20 Dec 2019 09:55:28 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2D2C13F67D;
+ Fri, 20 Dec 2019 09:55:27 -0800 (PST)
+Date: Fri, 20 Dec 2019 17:55:25 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v2 00/18] arm64: KVM: add SPE profiling support
+Message-ID: <20191220175524.GC25258@lakrids.cambridge.arm.com>
+References: <20191220143025.33853-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <5b12b473-bf9a-6dc9-838c-f9312eb10635@free.fr>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191220143025.33853-1-andrew.murray@arm.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20191220_095529_766728_4208676E 
+X-CRM114-Status: GOOD (  18.04  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,27 +63,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexey Brodkin <alexey.brodkin@synopsys.com>, Will Deacon <will@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Rafael Wysocki <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
- Tejun Heo <tj@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: kvm@vger.kernel.org, Marc Zyngier <marc.zyngier@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 20, 2019 at 01:05:43PM +0100, Marc Gonzalez wrote:
-> If "fixing" the kmalloc strict alignment requirement on arm64 is too
-> hard, maybe it would be possible to shave some of the devm memory
-> waste by working with (chained) arrays of devm nodes, instead
-> of a straight-up linked list. (Akin to a C++ vector) Removal would
-> be expensive, but that's supposed to be a rare operation, right?
+Hi Andrew,
 
-xarray might be what you're looking for.
+On Fri, Dec 20, 2019 at 02:30:07PM +0000, Andrew Murray wrote:
+> This series implements support for allowing KVM guests to use the Arm
+> Statistical Profiling Extension (SPE).
+> 
+> It has been tested on a model to ensure that both host and guest can
+> simultaneously use SPE with valid data. E.g.
+> 
+> $ perf record -e arm_spe/ts_enable=1,pa_enable=1,pct_enable=1/ \
+>         dd if=/dev/zero of=/dev/null count=1000
+> $ perf report --dump-raw-trace > spe_buf.txt
+
+What happens if I run perf record on the VMM, or on the CPU(s) that the
+VMM is running on? i.e.
+
+$ perf record -e arm_spe/ts_enable=1,pa_enable=1,pct_enable=1/ \
+        lkvm ${OPTIONS_FOR_GUEST_USING_SPE}
+
+... or:
+
+$ perf record -a -c 0 -e arm_spe/ts_enable=1,pa_enable=1,pct_enable=1/ \
+        sleep 1000 &
+$ taskset -c 0 lkvm ${OPTIONS_FOR_GUEST_USING_SPE} &
+
+> As we save and restore the SPE context, the guest can access the SPE
+> registers directly, thus in this version of the series we remove the
+> trapping and emulation.
+> 
+> In the previous series of this support, when KVM SPE isn't supported
+> (e.g. via CONFIG_KVM_ARM_SPE) we were able to return a value of 0 to
+> all reads of the SPE registers - as we can no longer do this there isn't
+> a mechanism to prevent the guest from using SPE - thus I'm keen for
+> feedback on the best way of resolving this.
+
+When not providing SPE to the guest, surely we should be trapping the
+registers and injecting an UNDEF?
+
+What happens today, without these patches?
+
+> It appears necessary to pin the entire guest memory in order to provide
+> guest SPE access - otherwise it is possible for the guest to receive
+> Stage-2 faults.
+
+AFAICT these patches do not implement this. I assume that's what you're
+trying to point out here, but I just want to make sure that's explicit.
+
+Maybe this is a reason to trap+emulate if there's something more
+sensible that hyp can do if it sees a Stage-2 fault.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
