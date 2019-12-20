@@ -2,81 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F8CD1276FF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 09:10:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0ED4D12770C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 09:18:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Japv1g4z7jbYPFwuIVHvzUgpAJXxlDKDavYYathGrk=; b=qyaj+vK3EK9YRw
-	DFKtbPw1E4b2tdbHY/GK9gRpmhuoK6teXJ9eD9YFnuRdTzL80jJB/IaZD4mdfyFYmn6uhCsWFs0ai
-	v12HeoWDsRVNQuQLw+Ptji6hlTIApGPJvGiaL+Wp2mhnwItPnVGNrHxS8+9gSkZ8mcwn4tL+41NlO
-	SSqGFmZTZoJoSCNKorCWvcGFr+axXbnAYB4rxsPAFdU93OAC9sdF0Mwpb+IT1BQfxjexUU5CjJXC2
-	fEpN9Bep9ytZ0PJ+LcjkeJJ5QwFwbqHgQcloQ1vveGkNrdmvjvKY+QYUBMqI7x0OoFKSJ6JFp8QfV
-	dAxHEGQ7USk5xkn/f5dA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4wODouzlLzA101XSd1zpLcbxd8SVuZULmY6pAJcppGY=; b=r0UPpnDmrr5kXs
+	UjAGc+uyUklVUxHMS6ELkmUcyhZPhnFvDd0OdeAmSr/IGB8gG3e5Vbj82Sr9YyjHBXV8wIr9YXoH1
+	tYFKYq+rfWhDD/Kb5w/p0uSkd5Ma9OOnoTV/pqwyDUOQirNPL8d0GTzMFL6BWJwTXyKI4pBTDyxA0
+	h6/f7ESc6tN3vkqeOc1THXty2/FvSaDQG1mNIU6y9IXWD6juomr4Qoez2wjhXwMsT3VIUZDeW85RR
+	+4xCAGuWi0f729yhhxoeqlc9tjDnBRERnJZiHbRV5LSAjOVnNuAgndOTDgUEXxiS3YtZPRf8ooL/K
+	Fnf0NN7J7ESqjc4VsawA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiDMi-0005se-4b; Fri, 20 Dec 2019 08:10:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iiDUA-0007r7-Vu; Fri, 20 Dec 2019 08:18:11 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiDMY-0005sC-K1
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 08:10:20 +0000
-Received: from mail-wm1-f52.google.com (mail-wm1-f52.google.com
- [209.85.128.52])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7C3AF24682
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Dec 2019 08:10:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1576829417;
- bh=+Ue4YMhrP/TWYQlndBEEgxM06Vnt+rRsoVr9iQWxelE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=S0oIFPQObmtIOa9rw99ptEgYXT/oj/IwIuSfBD4Nbq1CVfvNpxC7EUG0f7kL0HRkn
- SFeq/dBmmBu1c3aNPkxIAPGdUq+EyNjwanTM5M1J9nMPL24B2JZqX4hlWVnrYuCZmb
- woEBI8/f6KPjS0AS8mWBtfG6TJ7zpInKTMXfgAGg=
-Received: by mail-wm1-f52.google.com with SMTP id p9so7967286wmc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Dec 2019 00:10:17 -0800 (PST)
-X-Gm-Message-State: APjAAAWhPviYHTpr3PR7ByrYi4lDGz1oe+CX1Z/DUWAMbEmOyHQKar4J
- LGTEa4jMt8FXXEy/PUCpqWz3GWZw1Pb1PirO5kQ=
-X-Google-Smtp-Source: APXvYqxhnNTk+tBts6iL8RTAJJTNANczfG9ySH/QeJ429H9ZAEV4BLijfH7J3nM108Y2UmJVOEn06rVPMnKstFJR8BY=
-X-Received: by 2002:a1c:3c45:: with SMTP id j66mr14308187wma.2.1576829415971; 
- Fri, 20 Dec 2019 00:10:15 -0800 (PST)
+ id 1iiDTt-0007pZ-O7; Fri, 20 Dec 2019 08:17:55 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 7665B28DA32
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v22 0/2] drm/bridge: PS8640 MIPI-to-eDP bridge
+Date: Fri, 20 Dec 2019 09:17:36 +0100
+Message-Id: <20191220081738.1895-1-enric.balletbo@collabora.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20191219084332.944123-1-maxime@cerno.tech>
- <CAGb2v643z-GwEgOV_OS96ESihDgGNOwp2s7eyJr68QFyPNqd_Q@mail.gmail.com>
- <20191220080310.w2xtgzxend5bmv2q@gilmour.lan>
-In-Reply-To: <20191220080310.w2xtgzxend5bmv2q@gilmour.lan>
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Fri, 20 Dec 2019 16:10:03 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65+zpc1_0K2Co4uOUrfshzmVCf1Rc6Ob2YtmdmdsNTAvQ@mail.gmail.com>
-Message-ID: <CAGb2v65+zpc1_0K2Co4uOUrfshzmVCf1Rc6Ob2YtmdmdsNTAvQ@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: usb: Convert Allwinner A80 USB PHY
- controller to a schema
-To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_001018_700623_8C39EBAC 
-X-CRM114-Status: GOOD (  27.73  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191220_001754_044971_E23C0ED2 
+X-CRM114-Status: GOOD (  14.13  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,183 +54,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Chen-Yu Tsai <wens@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, drinkcat@chromium.org,
+ Jitao Shi <jitao.shi@mediatek.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Jonas Karlman <jonas@kwiboo.se>, David Airlie <airlied@linux.ie>,
+ Neil Armstrong <narmstrong@baylibre.com>, dri-devel@lists.freedesktop.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Ulrich Hecht <uli@fpond.eu>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, hsinyi@chromium.org,
+ matthias.bgg@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 20, 2019 at 4:03 PM Maxime Ripard <maxime@cerno.tech> wrote:
->
-> Hi,
->
-> On Thu, Dec 19, 2019 at 11:24:52PM +0800, Chen-Yu Tsai wrote:
-> > On Thu, Dec 19, 2019 at 4:43 PM Maxime Ripard <maxime@cerno.tech> wrote:
-> > >
-> > > The Allwinner A80 SoCs have a USB PHY controller that is used by Linux,
-> > > with a matching Device Tree binding.
-> > >
-> > > Now that we have the DT validation in place, let's convert the device tree
-> > > bindings for that controller over to a YAML schemas.
-> > >
-> > > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> > > ---
-> > >  .../phy/allwinner,sun9i-a80-usb-phy.yaml      | 135 ++++++++++++++++++
-> > >  .../devicetree/bindings/phy/sun9i-usb-phy.txt |  37 -----
-> > >  2 files changed, 135 insertions(+), 37 deletions(-)
-> > >  create mode 100644 Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
-> > >  delete mode 100644 Documentation/devicetree/bindings/phy/sun9i-usb-phy.txt
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
-> > > new file mode 100644
-> > > index 000000000000..ded7d6f0a119
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/phy/allwinner,sun9i-a80-usb-phy.yaml
-> > > @@ -0,0 +1,135 @@
-> > > +# SPDX-License-Identifier: GPL-2.0
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/phy/allwinner,sun9i-a80-usb-phy.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Allwinner A80 USB PHY Device Tree Bindings
-> > > +
-> > > +maintainers:
-> > > +  - Chen-Yu Tsai <wens@csie.org>
-> > > +  - Maxime Ripard <mripard@kernel.org>
-> > > +
-> > > +properties:
-> > > +  "#phy-cells":
-> > > +    const: 0
-> > > +
-> > > +  compatible:
-> > > +    const: allwinner,sun9i-a80-usb-phy
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  clocks:
-> > > +    anyOf:
-> > > +      - description: Main PHY Clock
-> > > +
-> > > +      - items:
-> > > +          - description: Main PHY clock
-> > > +          - description: HSIC 12MHz clock
-> > > +          - description: HSIC 480MHz clock
-> > > +
-> > > +  clock-names:
-> > > +    oneOf:
-> > > +      - const: phy
-> > > +
-> > > +      - items:
-> > > +          - const: phy
-> > > +          - const: hsic_12M
-> > > +          - const: hsic_480M
-> > > +
-> > > +  resets:
-> > > +    anyOf:
-> > > +      - description: Normal USB PHY reset
-> > > +
-> > > +      - items:
-> > > +          - description: Normal USB PHY reset
-> > > +          - description: HSIC Reset
-> > > +
-> > > +  reset-names:
-> > > +    oneOf:
-> > > +      - const: phy
-> > > +
-> > > +      - items:
-> > > +          - const: phy
-> > > +          - const: hsic
-> > > +
-> > > +  phy_type:
-> > > +    const: hsic
-> > > +    description:
-> > > +      When absent, the PHY type will be assumed to be normal USB.
-> > > +
-> > > +  phy-supply:
-> > > +    description:
-> > > +      Regulator that powers VBUS
-> > > +
-> > > +required:
-> > > +  - "#phy-cells"
-> > > +  - compatible
-> > > +  - reg
-> > > +  - clocks
-> > > +  - clock-names
-> > > +  - resets
-> > > +  - reset-names
-> > > +
-> > > +additionalProperties: false
-> > > +
-> > > +if:
-> > > +  properties:
-> > > +    phy_type:
-> > > +      const: hsic
-> > > +
-> > > +  required:
-> > > +    - phy_type
-> > > +
-> > > +then:
-> > > +  properties:
-> > > +    clocks:
-> > > +      maxItems: 3
-> > > +
-> > > +    clock-names:
-> > > +      maxItems: 3
-> > > +
-> > > +    resets:
-> > > +      maxItems: 2
-> > > +
-> > > +    reset-names:
-> > > +      maxItems: 2
-> >
-> > So this is slightly incorrect. If phy_type == "hsic", then the
-> > "phy" clock and reset should not be needed. I say should because
-> > no boards actually came with HSIC implemented. The A80 Optimus
-> > board had the HSIC lines on one of the GPIO headers, but I never
-> > had any HSIC chips lol.
->
-> This isn't what the previous binding was saying though :/
+Hi all,
 
-From the original binding:
+This is another version of the driver. Note that the driver changed
+significally and is a more simply because now is using the panel_bridge
+helpers. Apart from this, I addressed the comments from Maxime, Laurent
+and Ezequiel.
 
-- clock-names : depending on the "phy_type" property,
-  * "phy" for normal USB
-  * "hsic_480M", "hsic_12M" for HSIC
-- resets : a list of phandle + reset specifier pairs
-- reset-names : depending on the "phy_type" property,
-  * "phy" for normal USB
-  * "hsic" for HSIC
+This bridge is required to have the embedded display working on an Acer
+Chromebook R13 ("Elm"). Hopefully we are a bit more close to have this
+driver merged. If more changes are required, please let me know and I
+will work on it.
 
-It is recommended to list all clocks and resets available.
-The driver will only use those matching the phy_type.
+Note: Along these around 20 revisions of this driver I was unable to
+reconstruct the full changelog history, so I'm skipping this. Sorry
+about that, I promise I'll maintain the changelog for future revisions.
 
-> > > -- phy_type : "hsic" for HSIC usage;
-> > > -            other values or absence of this property indicates normal USB
-> > > -- clocks : phandle + clock specifier for the phy clocks
-> > > -- clock-names : depending on the "phy_type" property,
-> > > -  * "phy" for normal USB
-> > > -  * "hsic_480M", "hsic_12M" for HSIC
-> > > -- resets : a list of phandle + reset specifier pairs
-> > > -- reset-names : depending on the "phy_type" property,
-> > > -  * "phy" for normal USB
-> > > -  * "hsic" for HSIC
->
-> It's speficied that the reset and clock is needed. If we want to
-> revise that, we can do it, but I guess it should be in a separate
-> patch than the one doing the conversion. Here we just want to express
-> the exact same thing.
+Thanks,
+ Enric
 
-So the original binding only recommends having all clocks.
-But given that these are internal to the SoC, having them
-all is easier I suppose.
+Changes in v22:
+- Migrate to YAML format (Maxime Ripart)
+- Remove mode-sel property.
+- Rename sleep-gpios to powerdown-gpios.
+- Remove sysfs attributes because are not really used (Enric Balletbo)
+- Use enum for address page offsets (Ezequiel Garcia)
+- Remove enable tracking (Enric Balletbo)
+- Use panel_bridge API (Laurent Pinchart)
+- Do not use kernel-doc format for non kernel-doc formatted commands (Enric Balletbo)
+- Remove verbose message for PAGE1_VSTART command (Ezequiel Garcia)
+- Use time_is_after_jiffies idiom (Ezequiel Garcia)
+- Remove unused macros (Ezequiel Garcia)
+- Fix weird alignment in dsi->mode_flags (Laurent Pinchart)
+- Use drm_of_find_panel_or_bridge helper (Laurent Pinchart)
+- Remove mode-sel-gpios as is not used (Laurent Pinchart)
+- Remove error messages to get gpios as the core will already report it (Enric Balletbo)
+- Remove redundant message getting the regulators (Laurent Pinchart)
+- Rename sleep-gpios to powerdown-gpios (Laurent Pinchart)
+- Use ARRAY_SIZE(ps_bridge->page) instead of MAX_DEV when possible (Laurent Pinchart)
+- Fix race with userspace accessing the sysfs attributes (Laurent Pinchart)
+- Remove id_table as is only used on DR platforms (Laurent Pinchart)
+- Convert to new i2c device probe() (Laurent Pinchart)
+- Use i2c_smbus_read/write helpers instead of open coding it (Laurent Pinchart)
+- Remove unnused global variables (Laurent Pinchart)
+- Remove unnused fields in ps8640 struct (Laurent Pinchart)
+- Remove commented-out headers (Laurent Pinchart)
 
-ChenYu
+Changes in v21:
+ - Use devm_i2c_new_dummy_device and fix build issue using deprecated i2c_new_dummy
+ - Fix build issue due missing drm_bridge.h
+ - Do not remove in ps8640_remove device managed resources
+
+Changes in v19:
+ - fixed return value of ps8640_probe() when no panel is found
+
+Changes in v18:
+ - followed DRM API changes
+ - use DEVICE_ATTR_RO()
+ - remove firmware update code
+ - add SPDX identifier
+
+Changes in v17:
+ - remove some unused head files.
+ - add macros for ps8640 pages.
+ - remove ddc_i2c client
+ - add mipi_dsi_device_register_full
+ - remove the manufacturer from the name and i2c_device_id
+
+Changes in v16:
+ - Disable ps8640 DSI MCS Function.
+ - Rename gpios name more clearly.
+ - Tune the ps8640 power on sequence.
+
+Changes in v15:
+ - Drop drm_connector_(un)register calls from parade ps8640.
+   The main DRM driver mtk_drm_drv now calls
+   drm_connector_register_all() after drm_dev_register() in the
+   mtk_drm_bind() function. That function should iterate over all
+   connectors and call drm_connector_register() for each of them.
+   So, remove drm_connector_(un)register calls from parade ps8640.
+
+Changes in v14:
+ - update copyright info.
+ - change bridge_to_ps8640 and connector_to_ps8640 to inline function.
+ - fix some coding style.
+ - use sizeof as array counter.
+ - use drm_get_edid when read edid.
+ - add mutex when firmware updating.
+
+Changes in v13:
+ - add const on data, ps8640_write_bytes(struct i2c_client *client, const u8 *data, u16 data_len)
+ - fix PAGE2_SW_REST tyro.
+ - move the buf[3] init to entrance of the function.
+
+Changes in v12:
+ - fix hw_chip_id build warning
+
+Changes in v11:
+ - Remove depends on I2C, add DRM depends
+ - Reuse ps8640_write_bytes() in ps8640_write_byte()
+ - Use timer check for polling like the routines in <linux/iopoll.h>
+ - Fix no drm_connector_unregister/drm_connector_cleanup when ps8640_bridge_attach fail
+ - Check the ps8640 hardware id in ps8640_validate_firmware
+ - Remove fw_version check
+ - Move ps8640_validate_firmware before ps8640_enter_bl
+ - Add ddc_i2c unregister when probe fail and ps8640_remove
+
+Jitao Shi (2):
+  Documentation: bridge: Add documentation for ps8640 DT properties
+  drm/bridge: Add I2C based driver for ps8640 bridge
+
+ .../bindings/display/bridge/ps8640.yaml       | 112 ++++++
+ drivers/gpu/drm/bridge/Kconfig                |  11 +
+ drivers/gpu/drm/bridge/Makefile               |   1 +
+ drivers/gpu/drm/bridge/parade-ps8640.c        | 354 ++++++++++++++++++
+ 4 files changed, 478 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/display/bridge/ps8640.yaml
+ create mode 100644 drivers/gpu/drm/bridge/parade-ps8640.c
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
