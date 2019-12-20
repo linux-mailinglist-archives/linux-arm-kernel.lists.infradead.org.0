@@ -2,63 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED0FD12827E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 19:54:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2BF11282A4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 20:15:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tc8uueXcG004021dhExFooa38VV3hies3pM9Ur9iZnQ=; b=oep12yIWlYNXwC
-	bvXlxy3hWdGheHSyfXG1jbO+K/pXCuC3N7jTHO4oVbsQV8L0BZ4Z+3CUhHN34UrIyPuAxs30AU1K+
-	XmIYZS1bqSWGPXp7nwIdNQO2GHC5bVrU6sD6a/oqnto4pLZWM/7dHcLakwdjGIWAeLVUVL0OqSdDz
-	up2e6MmmWrS1TJB6KGP110d60p5UCX6uUH6uaZm8yGox5oA2WHS3YsR1EFvrRVZpHnys5yUJ8YdFw
-	lSUtJAgVJHJZdFkS6yJ727xxVR6GU++MVaIwYl2J86Nn7oCEAMXsIkBDHzZRkjrb77VC3aUjdpLY/
-	b6641BvW5bGs6FcSIOKw==;
+	List-Owner; bh=KB1jDJ1/44sXAmbuebaKs1jW51lAlwGTcwtHxLZIDRg=; b=uf6wIyL8n1u51l
+	C54ZOBeK/+ECovAHKv8upcf57mYSkOkfvwAGOFDUtKvansrxHOnlvIy2huv2VV5WqIqj0DC+q7Psr
+	Z52JJCraMDg7w8xgk2syGnlx2nctADKRLespCfn3ybqDVGVMnL4IztIXbUDTQ25rTLZXa4+1o/z5o
+	7l/hhOAg7OFRvBcBkOpoN+OdXS0oTJna26INreIu99H9CWFGsKt/cva+CT9rA5QbQxHYMiyJ1C5QH
+	xHxnqpL9LwwE1PTl5cRpNoZbpI8S1iMWANij8OG10u+Qx18xH5OXAAj/alVG6ri5qmQziCCstBJrS
+	iNvApz+5uud+HJm5OphQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiNQF-0002gi-Mh; Fri, 20 Dec 2019 18:54:47 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1iiNk2-0000cF-O4; Fri, 20 Dec 2019 19:15:14 +0000
+Received: from onstation.org ([52.200.56.107])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiNQ1-0002gE-Op
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 18:54:35 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 20 Dec 2019 10:54:32 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.69,336,1571727600"; d="scan'208";a="267593304"
-Received: from jpan9-mobl2.amr.corp.intel.com (HELO localhost)
- ([10.254.180.107])
- by FMSMGA003.fm.intel.com with ESMTP; 20 Dec 2019 10:54:31 -0800
-Date: Fri, 20 Dec 2019 10:54:30 -0800
-From: "Jacob Pan (Jun)" <jacob.jun.pan@intel.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [RFC 00/13] virtio-iommu on non-devicetree platforms
-Message-ID: <20191220105430.0000437b@intel.com>
-In-Reply-To: <20191218112044.GA2371701@myrica>
-References: <20191122105000.800410-1-jean-philippe@linaro.org>
- <20191122160102.00004489@intel.com>
- <20191125180247.GD945122@lophozonia>
- <20191203190136.00007171@intel.com>
- <20191218112044.GA2371701@myrica>
-Organization: intel
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; i686-w64-mingw32)
+ id 1iiNjm-0000bu-8K
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 19:14:59 +0000
+Received: from localhost (c-98-239-145-235.hsd1.wv.comcast.net
+ [98.239.145.235])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: masneyb)
+ by onstation.org (Postfix) with ESMTPSA id A0BC93E8F9;
+ Fri, 20 Dec 2019 19:14:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
+ s=default; t=1576869295;
+ bh=LluZtUkUbAmOdVnGAE/kzWOQmltL3S4yn/9qvQHJL00=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=uOxTe+Lcc2uGCoTRc6a4LloepZ9d9IIksXtI9wSFYwrlYe6xKNpKLkk9F5Bc1QQp9
+ /1GNdv1P3wpMtKD3dW9i/L7sOEDSivv11N/TasIYPUaFMSCpYSe37g5Geko8QuYvIf
+ mLdL32qYWdJbC44zy8XVbHcumMV2HturhkAafoQE=
+Date: Fri, 20 Dec 2019 14:14:55 -0500
+From: Brian Masney <masneyb@onstation.org>
+To: Loic Poulain <loic.poulain@linaro.org>
+Subject: Re: [PATCH] arm64: Add qcom Kconfig fragment
+Message-ID: <20191220191455.GA6954@onstation.org>
+References: <1576850160-1564-1-git-send-email-loic.poulain@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1576850160-1564-1-git-send-email-loic.poulain@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_105433_814505_6753CDF1 
-X-CRM114-Status: GOOD (  38.31  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191220_111458_403040_6C6A3973 
+X-CRM114-Status: GOOD (  13.64  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [52.200.56.107 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,149 +75,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: virtio-dev@lists.oasis-open.org, kevin.tian@intel.com,
- lorenzo.pieralisi@arm.com, gregkh@linuxfoundation.org,
- linux-pci@vger.kernel.org, joro@8bytes.org, sudeep.holla@arm.com,
- rjw@rjwysocki.net, virtualization@lists.linux-foundation.org,
- linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
- sebastien.boeuf@intel.com, mst@redhat.com, jacob.jun.pan@intel.com,
- eric.auger@redhat.com, guohanjun@huawei.com, bhelgaas@google.com,
- jasowang@redhat.com, linux-arm-kernel@lists.infradead.org, lenb@kernel.org
+Cc: catalin.marinas@arm.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 18 Dec 2019 12:20:44 +0100
-Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
+On Fri, Dec 20, 2019 at 02:56:00PM +0100, Loic Poulain wrote:
+> Add qcom Kconfig fragment which enables the appropriate symbols for
+> support of Qualcomm based boards, like the 'popular' dragonboards.
+> This permits to fully support the boards upstream without having to
+> rely on downstream deconfig changes.
+> 
+> This patch has been tested with Dragonboard-410c and Dragonboard-820c.
+> 
+> qcom.config fragment has been generated with ./script/diffconfig
+> 
+> Signed-off-by: Loic Poulain <loic.poulain@linaro.org>
+> ---
+>  arch/arm64/configs/qcom.config | 57 ++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 57 insertions(+)
+>  create mode 100644 arch/arm64/configs/qcom.config
+> 
+> diff --git a/arch/arm64/configs/qcom.config b/arch/arm64/configs/qcom.config
+> new file mode 100644
+> index 0000000..9358df8
+> --- /dev/null
+> +++ b/arch/arm64/configs/qcom.config
+> @@ -0,0 +1,57 @@
+> +CONFIG_ARM_QCOM_CPUFREQ_HW=y
+> +CONFIG_BT_HCIUART_3WIRE=y
+> +CONFIG_BT_HCIUART_QCA=y
+> +CONFIG_BT_HCIUART_RTL=y
+> +CONFIG_CRYPTO_DEV_QCOM_RNG=y
+> +CONFIG_EXTCON_QCOM_SPMI_MISC=y
+> +CONFIG_INTERCONNECT=y
+> +CONFIG_MFD_QCOM_RPM=y
+> +CONFIG_PHY_QCOM_PCIE2=y
+> +CONFIG_PHY_QCOM_QMP=y
+> +CONFIG_PHY_QCOM_QUSB2=y
+> +CONFIG_PHY_QCOM_UFS=y
+> +CONFIG_PM8916_WATCHDOG=y
+> +CONFIG_POWER_RESET_QCOM_PON=y
+> +CONFIG_QCOM_APR=m
+> +CONFIG_QCOM_FASTRPC=y
+> +CONFIG_QCOM_RMTFS_MEM=m
+> +CONFIG_QCOM_RPMHPD=y
+> +CONFIG_QCOM_RPMPD=y
+> +CONFIG_QCOM_SOCINFO=m
+> +CONFIG_QCOM_WCNSS_CTRL=m
+> +CONFIG_QCOM_WCNSS_PIL=m
+> +CONFIG_SCSI_UFS_QCOM=y
+> +CONFIG_SND_SOC_CROS_EC_CODEC=m
+> +CONFIG_SND_SOC_MAX98927=m
+> +CONFIG_SND_SOC_MSM8916_WCD_ANALOG=m
+> +CONFIG_SND_SOC_MSM8916_WCD_DIGITAL=m
+> +CONFIG_VIDEO_QCOM_CAMSS=m
+> +CONFIG_VIDEO_QCOM_VENUS=m
+> +CONFIG_WCN36XX=m
+> +CONFIG_BT_QCA=m
+> +CONFIG_BT_QCOMSMD=m
+> +CONFIG_INTERCONNECT_QCOM=y
+> +CONFIG_INTERCONNECT_QCOM_MSM8974=y
 
-> On Tue, Dec 03, 2019 at 07:01:36PM -0800, Jacob Pan (Jun) wrote:
-> > Hi Jean,
-> > 
-> > Sorry for the delay, I was out last week. Comments inline below.
-> > 
-> > On Mon, 25 Nov 2019 19:02:47 +0100
-> > Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
-> >   
-> > > On Fri, Nov 22, 2019 at 04:01:02PM -0800, Jacob Pan (Jun) wrote:  
-> > > > > (1) ACPI has one table per vendor (DMAR for Intel, IVRS for
-> > > > > AMD and IORT for Arm). From my point of view IORT is easier to
-> > > > > extend, since we just need to introduce a new node type. There
-> > > > > are no dependencies to Arm in the Linux IORT driver, so it
-> > > > > works well with CONFIG_X86.   
-> > > > From my limited understanding, IORT and VIOT is to solve device
-> > > > topology enumeration only? I am not sure how it can be expanded
-> > > > to cover information beyond device topology. e.g. DMAR has NUMA
-> > > > information and root port ATS, I guess they are not used today
-> > > > in the guest but might be additions in the future.    
-> > > 
-> > > The PCI root-complex node of IORT has an ATS attribute, which we
-> > > can already use. However its scope is the root complex, not
-> > > individual root ports like with DMAR.
-> > > 
-> > > I'm not very familiar with NUMA, but it looks like we just need to
-> > > specify a proximity domain in relation to the SRAT table, for each
-> > > viommu? The SMMUv3 node in IORT has a 4-bytes "proximity domain"
-> > > field for this. We can add the same to the VIOT virtio-iommu nodes
-> > > later, since the structures are extensible.
-> > >   
-> > I think there the proximity domain is more for each assigned device
-> > than vIOMMU. vIOMMU in the guest can have assigned devices belong to
-> > different pIOMMU and proximity domains. If the guest owns the first
-> > level page tables (gIOVA or SVA), we want to make sure page tables
-> > are allocated from the close proximity domain.
-> > 
-> > My understanding is virtio IOMMU supports both virtio devices and
-> > assigned devices. we could care less about the former in terms of
-> > NUMA.
-> > 
-> > In ACPI, we have _PXM method to retrieve device proximity domain. I
-> > don't know if there is something equivalent or a generic way to get
-> > _PXM information. I think VMM also need to make sure when an
-> > assigned device is used with vIOMMU, there are some memory is
-> > allocated from the device's proximity domain.
-> >   
-> > > But it might be better to keep the bare minimum information in
-> > > the FW descriptor, and put the rest in the virtio-iommu. So yes
-> > > topology enumeration is something the device cannot do itself
-> > > (not fully that is, see (2)) but for the rest, virtio-iommu's
-> > > PROBE request can provide details about each endpoint in relation
-> > > to their physical IOMMU.
-> > > 
-> > > We could for example add a bit in a PROBE property saying that the
-> > > whole path between the IOMMU and the endpoint supports ATS. For
-> > > NUMA it might also be more interesting to have a finer
-> > > granularity, since one viommu could be managing endpoints that
-> > > are behind different physical IOMMUs. If in the future we want to
-> > > allocate page tables close to the physical IOMMU for example, we
-> > > might need to describe multiple NUMA nodes per viommu, using the
-> > > PROBE request. 
-> > Should we reinvent something for NUMA or use ACPI's SRAT, _PXM?   
-> 
-> Regardless whether we put it in the VIOT or in the virtio-iommu PROBE
-> request, we necessarily need to reuse the node IDs defined by SRAT (or
-> numa-node-id on devicetree, also a 32-bit value). A virtio-pci based
-> virtio-iommu already has the _PXM of its closest bridge and wouldn't
-> need anything more in the VIOT, while a virtio-mmio based
-> virtio-iommu would need a proximity domain field in the VIOT. That
-> could be added later since the table is extensible, but as you
-> pointed out, that information might not be very useful.
-> 
-> > I am not sure how it is handled today in QEMU in terms of guest-host
-> > NUMA proximity domain mapping.  
-> 
-> It looks like the user can specify this guest-host mapping on the
-> command-line:
-> 
->   -object memory-backend-ram,id=mem0,size=4G,host-nodes=3,policy=bind
->   -object memory-backend-ram,id=mem1,size=4G,host-nodes=4,policy=bind
->   -numa node,memdev=mem0,nodeid=numa0
->   -numa node,memdev=mem1,nodeid=numa1
->   -numa cpu,node-id=numa0,socket-id=0
->   -numa cpu,node-id=numa1,socket-id=1
-> 
-> numa0 and numa1 would get proximity domains 0 and 1, corresponding to
-> host domains 3 and 4. It is also possible to specify the NUMA node of
-> a PCI bus (via the PCI expander bridge), and therefore to assign a
-> VFIO PCI device in the same proximity domain as its physical location.
-> 
->   -device pxb,id=bridge1,bus=pci.0,numa_node=1 (simplified)
->   -device vfio-pci,host=03:01.0,bus=bridge1
-> 
-Thanks a lot for the thorough explanation. I will give that a try on
-x86, I assume the ACPI tables also built to match these cmdline options.
-> Linux can use this information to allocate DMA close to the endpoint
-> (see for example __iommu_dma_alloc_pages()). For page tables
-> allocation, io-pgtables currently takes the node ID of the IOMMU
-> device, not the endpoint. For the scenario you describe (virtio-iommu
-> endpoints managed by different physical IOMMU), we would need to take
-> for example the node ID of the first endpoint in the iommu_domain for
-> which we're allocating page tables.
-> 
-If iommu_domain is shared by multiple device from different NUMA node,
-I guess taking the first one is as good as anyone. It would not be
-an optimal configuration.
-> Is it safe to assume that the pIOMMU is in the same proximity domain
-> as the physical endpoint?
-I think it is a safe assumption.
->  If that's the case, then the guest already
-> has all the information it needs. Otherwise it's easy to add a
-> proximity domain PROBE property for each endpoint. Configuring the
-> host to pass that information might be more difficult.
-> 
-I agree, guest should always allocate DMA and IOVA page tables basedon
-the endpoint. VT-d currently allocates page table pages based on IOMMU
-NUMA node, that might have to change.
-> 
-> Off topic, I've been wondering how to make iommu-sva aware of NUMA
-> topology as well, so that when handling a page request we allocate
-> memory on the faulting device's NUMA node, but I think it might
-> require invasive changes to the mm subsystem, to pass a NUMA node to
-> handle_mm_fault().
-> 
-> Thanks,
-> Jean
+msm8974 is arm32 and should be dropped.
 
+Brian
 
 _______________________________________________
 linux-arm-kernel mailing list
