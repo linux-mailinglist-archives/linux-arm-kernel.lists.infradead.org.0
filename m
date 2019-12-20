@@ -2,67 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7532127E88
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 15:48:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55D31127D1D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 15:33:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CJnSfJSKL3NIJW6xsIXuM8U+Cj7Gu5PhJg/8Zrbgw3M=; b=OdZTPW6ytzaa75
-	q3eq6nzagpMvLRJOdmBh6daLN+1V+9D1lO/KLPUCChHt+z0XgjR09ittkAMpgsLKrwCvdzMiaiLy9
-	McFMTUMciLMkNPaWltHL/+QAKNvlO/XcbpJvRBS84GdKxmXJCW4YXuxpInKg1vebqiCEWb4DqTJ71
-	aoWm87VyarL24hJMYXsneRP/e1yHMTSMhKBI1QAB9qbR1ZFMwZJHMmK8CGyK4dYOTFZeq/wNak/eH
-	gqkttLAeuOFhEXNzA1vx7iFyKUcw98XYr+CPQfOPsJkj+Ew7tFVuHm+rEdUnqN8unKpbOOGs8L2Mv
-	ijMqk6mBBzcswgERW6Nw==;
+	List-Owner; bh=/Ntai/YdZGczOrA6XMgyuFOkA8rg6uqS17TotRccs44=; b=sABL/zkmr3bC7A
+	r3a6wmuZllPd5uVoERLKIIO0mlXAP+iBn4cPLYtsiMhMK++WqjRh8DJlZX3Trq3LvdeYa3Ov697va
+	ZFSSRNZpzLqvLF9SZf6uCJ/nX2LSLSdsq165sIeyoq+75tyxYNWDOEyxM1jT54zZwiaAgfBQYsfUL
+	H4pLxMLe7c1tMeAgfnYYoBTSVGQLPsMRu7I3HnD+6zESC1DjFQeCs7xuPe1bdW304FWOTYUI7K2PE
+	7MR3Bpm8pOsKzkrJ9cfffkWCziNdBpbRuFl0scmMywJ7gTXGKxkAh7r+gHeX4ufS1TsxByWwWsgwJ
+	atxXeXNUXreq/2pBdnZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiJZj-0004fd-Mm; Fri, 20 Dec 2019 14:48:19 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiJYo-00033y-5E
- for linux-arm-kernel@bombadil.infradead.org; Fri, 20 Dec 2019 14:47:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Zl7gjN/2vxrZnxyhnVqrumTCtOfbZ4WwV+vl1egsVpI=; b=q27Jp90+vDxOZ+l5HbnokZzbU9
- 3tJNoOdI6qO8l1vTwX4LQUhp4K5GlalZCfWNmF3IvOu/Imqt6T6+5mQs581g/MvFdqq5OsM0Ig7UF
- lGqmx97hB2+881sT2ck2SUfKeZTSvzlG2/0PqkQ4ZUKikYaql/cNDmi6hp6tPkC+dpoqHcYj30U92
- Zide3eu7jMRwTozlBSnTZ8VqdzsTaQ3Ey/2h7jdEsHk5v+ZRDelCsrmhucXXwftR6Cs47E1mF6hzu
- NCMQlTQu7QrVwFBj/f/NEAiXV77RdqYq2zvr0a0GKBGHZqnrHsZSlCo6zBtQlaTX5mQSUTJHJED2R
- /tzmaZfA==;
+	id 1iiJLJ-0004Ce-OZ; Fri, 20 Dec 2019 14:33:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
- by casper.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiJJJ-0002wE-HC
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 14:31:23 +0000
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iiJIv-0002B1-0B
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 14:31:13 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 11DCF30E;
- Fri, 20 Dec 2019 06:30:52 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6220030E;
+ Fri, 20 Dec 2019 06:30:56 -0800 (PST)
 Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 39ABD3F718;
- Fri, 20 Dec 2019 06:30:50 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 89B8B3F718;
+ Fri, 20 Dec 2019 06:30:54 -0800 (PST)
 From: Andrew Murray <andrew.murray@arm.com>
 To: Marc Zyngier <marc.zyngier@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v2 09/18] arm64: KVM: enable conditional save/restore full SPE
- profiling buffer controls
-Date: Fri, 20 Dec 2019 14:30:16 +0000
-Message-Id: <20191220143025.33853-10-andrew.murray@arm.com>
+Subject: [PATCH v2 11/18] KVM: arm64: don't trap Statistical Profiling
+ controls to EL2
+Date: Fri, 20 Dec 2019 14:30:18 +0000
+Message-Id: <20191220143025.33853-12-andrew.murray@arm.com>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20191220143025.33853-1-andrew.murray@arm.com>
 References: <20191220143025.33853-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_143121_859577_C80FAD60 
-X-CRM114-Status: GOOD (  15.35  )
+X-CRM114-CacheID: sfid-20191220_063057_115346_C019BC35 
+X-CRM114-Status: GOOD (  10.28  )
 X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (0.0 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
@@ -88,125 +72,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Sudeep Holla <sudeep.holla@arm.com>
+As we now save/restore the profiler state there is no need to trap
+accesses to the statistical profiling controls. Let's unset the
+_TPMS bit.
 
-Now that we can save/restore the full SPE controls, we can enable it
-if SPE is setup and ready to use in KVM. It's supported in KVM only if
-all the CPUs in the system supports SPE.
-
-However to support heterogenous systems, we need to move the check if
-host supports SPE and do a partial save/restore.
-
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 ---
- arch/arm64/kvm/hyp/debug-sr.c | 33 ++++++++++++++++-----------------
- include/kvm/arm_spe.h         |  6 ++++++
- 2 files changed, 22 insertions(+), 17 deletions(-)
+ arch/arm64/kvm/debug.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
-index 12429b212a3a..d8d857067e6d 100644
---- a/arch/arm64/kvm/hyp/debug-sr.c
-+++ b/arch/arm64/kvm/hyp/debug-sr.c
-@@ -86,18 +86,13 @@
- 	}
- 
- static void __hyp_text
--__debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
-+__debug_save_spe_context(struct kvm_cpu_context *ctxt, bool full_ctxt)
- {
- 	u64 reg;
- 
- 	/* Clear pmscr in case of early return */
- 	ctxt->sys_regs[PMSCR_EL1] = 0;
- 
--	/* SPE present on this CPU? */
--	if (!cpuid_feature_extract_unsigned_field(read_sysreg(id_aa64dfr0_el1),
--						  ID_AA64DFR0_PMSVER_SHIFT))
--		return;
--
- 	/* Yes; is it owned by higher EL? */
- 	reg = read_sysreg_s(SYS_PMBIDR_EL1);
- 	if (reg & BIT(SYS_PMBIDR_EL1_P_SHIFT))
-@@ -142,7 +137,7 @@ __debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
- }
- 
- static void __hyp_text
--__debug_restore_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
-+__debug_restore_spe_context(struct kvm_cpu_context *ctxt, bool full_ctxt)
- {
- 	if (!ctxt->sys_regs[PMSCR_EL1])
- 		return;
-@@ -210,11 +205,14 @@ void __hyp_text __debug_restore_guest_context(struct kvm_vcpu *vcpu)
- 	struct kvm_guest_debug_arch *host_dbg;
- 	struct kvm_guest_debug_arch *guest_dbg;
- 
-+	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
-+	guest_ctxt = &vcpu->arch.ctxt;
-+
-+	__debug_restore_spe_context(guest_ctxt, kvm_arm_spe_v1_ready(vcpu));
-+
- 	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
- 		return;
- 
--	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
--	guest_ctxt = &vcpu->arch.ctxt;
- 	host_dbg = &vcpu->arch.host_debug_state.regs;
- 	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
- 
-@@ -232,8 +230,7 @@ void __hyp_text __debug_restore_host_context(struct kvm_vcpu *vcpu)
- 	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
- 	guest_ctxt = &vcpu->arch.ctxt;
- 
--	if (!has_vhe())
--		__debug_restore_spe_nvhe(host_ctxt, false);
-+	__debug_restore_spe_context(host_ctxt, kvm_arm_spe_v1_ready(vcpu));
- 
- 	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
- 		return;
-@@ -249,19 +246,21 @@ void __hyp_text __debug_restore_host_context(struct kvm_vcpu *vcpu)
- 
- void __hyp_text __debug_save_host_context(struct kvm_vcpu *vcpu)
- {
--	/*
--	 * Non-VHE: Disable and flush SPE data generation
--	 * VHE: The vcpu can run, but it can't hide.
--	 */
- 	struct kvm_cpu_context *host_ctxt;
- 
- 	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
--	if (!has_vhe())
--		__debug_save_spe_nvhe(host_ctxt, false);
-+	if (cpuid_feature_extract_unsigned_field(read_sysreg(id_aa64dfr0_el1),
-+						 ID_AA64DFR0_PMSVER_SHIFT))
-+		__debug_save_spe_context(host_ctxt, kvm_arm_spe_v1_ready(vcpu));
- }
- 
- void __hyp_text __debug_save_guest_context(struct kvm_vcpu *vcpu)
- {
-+	bool kvm_spe_ready = kvm_arm_spe_v1_ready(vcpu);
-+
-+	/* SPE present on this vCPU? */
-+	if (kvm_spe_ready)
-+		__debug_save_spe_context(&vcpu->arch.ctxt, kvm_spe_ready);
- }
- 
- u32 __hyp_text __kvm_get_mdcr_el2(void)
-diff --git a/include/kvm/arm_spe.h b/include/kvm/arm_spe.h
-index 48d118fdb174..30c40b1bc385 100644
---- a/include/kvm/arm_spe.h
-+++ b/include/kvm/arm_spe.h
-@@ -16,4 +16,10 @@ struct kvm_spe {
- 	bool irq_level;
- };
- 
-+#ifdef CONFIG_KVM_ARM_SPE
-+#define kvm_arm_spe_v1_ready(v)		((v)->arch.spe.ready)
-+#else
-+#define kvm_arm_spe_v1_ready(v)		(false)
-+#endif /* CONFIG_KVM_ARM_SPE */
-+
- #endif /* __ASM_ARM_KVM_SPE_H */
+diff --git a/arch/arm64/kvm/debug.c b/arch/arm64/kvm/debug.c
+index 43487f035385..07ca783e7d9e 100644
+--- a/arch/arm64/kvm/debug.c
++++ b/arch/arm64/kvm/debug.c
+@@ -88,7 +88,6 @@ void kvm_arm_reset_debug_ptr(struct kvm_vcpu *vcpu)
+  *  - Performance monitors (MDCR_EL2_TPM/MDCR_EL2_TPMCR)
+  *  - Debug ROM Address (MDCR_EL2_TDRA)
+  *  - OS related registers (MDCR_EL2_TDOSA)
+- *  - Statistical profiler (MDCR_EL2_TPMS/MDCR_EL2_E2PB)
+  *
+  * Additionally, KVM only traps guest accesses to the debug registers if
+  * the guest is not actively using them (see the KVM_ARM64_DEBUG_DIRTY
+@@ -111,7 +110,6 @@ void kvm_arm_setup_debug(struct kvm_vcpu *vcpu)
+ 	 */
+ 	vcpu->arch.mdcr_el2 = __this_cpu_read(mdcr_el2) & MDCR_EL2_HPMN_MASK;
+ 	vcpu->arch.mdcr_el2 |= (MDCR_EL2_TPM |
+-				MDCR_EL2_TPMS |
+ 				MDCR_EL2_TPMCR |
+ 				MDCR_EL2_TDRA |
+ 				MDCR_EL2_TDOSA);
 -- 
 2.21.0
 
