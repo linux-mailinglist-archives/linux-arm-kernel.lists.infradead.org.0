@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7C6C127624
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 08:05:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BCC912763B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 08:08:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IRONi2oKSDxJt9N9UHpJD/IxgXwtGTzSMUXqOUInF/Y=; b=uG8NKvcLEEQrM3
-	ENA/5LAPC9XgCPNdGQST6WitUpi5Ua4OBnOq1FMOcRXx8C3iZXehGJ/lLkDwCaVd91/+1KJcSeOgO
-	cTo5OSoy3P2vsDrSC51LFYilU/HhLqm1soYR0jlww4YOGL6BjPaa0Ob1d7uICGunOdYoG+odRuKpB
-	7HnASE5VehZI1K8OmJyCYdxoDyOQimNkusQT2xskwZSNyEKrKKzimE1guQjRHIhbMnN3rTLxIZGlv
-	j3Dfenbikt3lXfxcYy3v76jvbnYI/nepqkIk42/sf4QdnsXs3JmaSzBfPEkEonr7iukJmT9adWnfk
-	wZrMZ02HtSPHPwxOoI9g==;
+	List-Owner; bh=IfbK+cugG/lP7+rcaG+JuzCG7bCR0CgGOhhgyYzQJts=; b=dwqqbXTAOmm4Jo
+	qP7TJWgFgp3LX/uwFIhwFCgyN0hhXLXnL8CXlJZNFEBue4/S6Gwo/r2WVgqSdvkuz+gOrHltMi/++
+	EGm/Vv7E4G9TdOmZFvmFumB8FjGB61kR5tcUirrri5+yAE/ITPoxmubR3XWaFhTC+UJ3uRm3OVYoL
+	dxMCAw0iF8gbvl3LJlnHhXnF5sxA2WDxm8o50t7tE+NJRJn97MgbOeXcQ5zH3XXT1AGmT6Zm47n9+
+	1phmN+XPq5GsIzHWxfp8JiZYQvg1flbRpZeQTTmNY9vJjEAg4wif4m5FJN4K8VT/KByiuKjWE7nfQ
+	pn9nI0mF/GzlZelT56zQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiCLy-0005yo-0i; Fri, 20 Dec 2019 07:05:38 +0000
+	id 1iiCOH-0006ag-T4; Fri, 20 Dec 2019 07:08:01 +0000
 Received: from helcar.hmeau.com ([216.24.177.18] helo=deadmen.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiCLm-0005xp-2G
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 07:05:27 +0000
+ id 1iiCO6-0006Zu-Of
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 07:07:52 +0000
 Received: from gondobar.mordor.me.apana.org.au ([192.168.128.4] helo=gondobar)
  by deadmen.hmeau.com with esmtps (Exim 4.89 #2 (Debian))
- id 1iiCLg-0008Qq-1S; Fri, 20 Dec 2019 15:05:20 +0800
+ id 1iiCO1-000059-7j; Fri, 20 Dec 2019 15:07:45 +0800
 Received: from herbert by gondobar with local (Exim 4.89)
  (envelope-from <herbert@gondor.apana.org.au>)
- id 1iiCLd-0007pI-LO; Fri, 20 Dec 2019 15:05:17 +0800
-Date: Fri, 20 Dec 2019 15:05:17 +0800
+ id 1iiCO0-0007rP-98; Fri, 20 Dec 2019 15:07:44 +0800
+Date: Fri, 20 Dec 2019 15:07:44 +0800
 From: Herbert Xu <herbert@gondor.apana.org.au>
-To: Chuhong Yuan <hslester96@gmail.com>
-Subject: Re: [PATCH v4 resend] crypto: picoxcell: adjust the position of
- tasklet_init and fix missed tasklet_kill
-Message-ID: <20191220070517.xmo26ffufq7wjebb@gondor.apana.org.au>
-References: <20191209162144.14877-1-hslester96@gmail.com>
+To: Tudor.Ambarus@microchip.com
+Subject: Re: [PATCH 1/5] crypto: atmel-{aes,sha} - Fix incorrect use of
+ dmaengine_terminate_all()
+Message-ID: <20191220070744.zovhmup6bbeunlzr@gondor.apana.org.au>
+References: <20191213095423.6687-1-tudor.ambarus@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191209162144.14877-1-hslester96@gmail.com>
+In-Reply-To: <20191213095423.6687-1-tudor.ambarus@microchip.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_230526_253832_F967DC23 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191219_230750_954504_005D2501 
+X-CRM114-Status: GOOD (  11.95  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,31 +61,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jamie Iles <jamie@jamieiles.com>, linux-kernel@vger.kernel.org,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org
+Cc: alexandre.belloni@bootlin.com, Ludovic.Desroches@microchip.com,
+ linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 10, 2019 at 12:21:44AM +0800, Chuhong Yuan wrote:
-> Since tasklet is needed to be initialized before registering IRQ
-> handler, adjust the position of tasklet_init to fix the wrong order.
+On Fri, Dec 13, 2019 at 09:54:42AM +0000, Tudor.Ambarus@microchip.com wrote:
+> From: Tudor Ambarus <tudor.ambarus@microchip.com>
 > 
-> Besides, to fix the missed tasklet_kill, this patch adds a helper
-> function and uses devm_add_action to kill the tasklet automatically.
+> device_terminate_all() is used to abort all the pending and
+> ongoing transfers on the channel, it should be used just in the
+> error path.
 > 
-> Fixes: ce92136843cb ("crypto: picoxcell - add support for the picoxcell crypto engines")
-> Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+> Also, dmaengine_terminate_all() is deprecated and one should use
+> dmaengine_terminate_async() or dmaengine_terminate_sync(). The method
+> is not used in atomic context, use dmaengine_terminate_sync().
+> 
+> A secondary aspect of this patch is that it luckily avoids a deadlock
+> between atmel_aes and at_hdmac.c. While in tasklet with the lock held,
+> the dma controller invokes the client callback (dmaengine_terminate_all),
+> which tries to get the same lock. The at_hdmac fix would be to drop the
+> lock before invoking the client callback, a fix on at_hdmac will follow.
+> 
+> Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
 > ---
-> Changes in v4:
->   - Use devm_add_action instead of devm_add_action_or_reset.
-> 
->  drivers/crypto/picoxcell_crypto.c | 15 +++++++++++++--
->  1 file changed, 13 insertions(+), 2 deletions(-)
+>  drivers/crypto/atmel-aes.c | 32 ++------------------------------
+>  drivers/crypto/atmel-sha.c |  1 -
+>  2 files changed, 2 insertions(+), 31 deletions(-)
 
-Patch applied.  Thanks.
+All applied.  Thanks.
 -- 
 Email: Herbert Xu <herbert@gondor.apana.org.au>
 Home Page: http://gondor.apana.org.au/~herbert/
