@@ -2,50 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 410FB1277D8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 10:17:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D683E127805
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 10:22:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vxby50PHG5dNG85wS1ywmLBkJDJofgNLwrFwpqkn2aA=; b=JcnD5jGUUEjHdF
-	zAgOefzbNaTNs2RALbKZT0FQ9WqyUdXUS9C2ZRNVctcvECwUIm7kzr/7Ff8DjAWxyPeWWLiAzRqRT
-	I8BHHHrXIaRFRM0jlc+4i1ws3MTlBwtlfJ22IHjU76666nRgiDmJywHmjWjfiOGPArJanEEUlV8yz
-	rZCYSLLxBBio+9doIwh/5Xfrvx3+zsHm41jYUoh+pEIjyud3dD587TcbKnAuS9pWiTeB8V5xrjjR+
-	UI0NSbyqCAzNpwmWrSwEGZy1CQKPBBHGn9qomjfOOL3ZwjK9VLeuN27/j/ktl+YuCvrx2XsJj/hto
-	qLd9Y5rsp5/7DC7QN9TA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zcWa18mioWaEfHu1XbkvceSXcq0F/73s2DkGhbCjGKc=; b=Li5Tmu268kT0z3
+	N9fFqNY8bZqFHrhP4dy1Hr+ZyLXKjVmhEoWsV3TYyts5ZxEM0nmV7MbDL9qzfINIwFGM113Lf6B5R
+	OV1JdKpL9ZDmfExCbfaz9SibfOe3/StsACtDUP8tBL8VqsuoZP1AtSWVsVwMK8nJ6vPgAiZzcXupY
+	ZT8L7nxgDXN6ZdX95Qkcm46t03Tpc6JK4VuBoG71KjLOGlQxwzb8H4Y1rqE9zziLR/KH0ZaOT9AJm
+	tjJDSVuomFf0EenMORTCwm0dqMIZcK1YLvixMeqBWL9TxoDtZqaugqvYUQpFtwR6uUOlvcHaiikgS
+	5NJFmA8ICZPJpdR9Zdfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiEPE-00026W-K5; Fri, 20 Dec 2019 09:17:08 +0000
-Received: from cloudserver094114.home.pl ([79.96.170.134])
+	id 1iiEUW-0004oC-DQ; Fri, 20 Dec 2019 09:22:36 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiEP1-0001zT-6y
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 09:16:57 +0000
-Received: from 79.184.253.1.ipv4.supernova.orange.pl (79.184.253.1) (HELO
- kreacher.localnet)
- by serwer1319399.home.pl (79.96.170.134) with SMTP (IdeaSmtpServer 0.83.320)
- id a47d2c5878ac3e11; Fri, 20 Dec 2019 10:16:47 +0100
-From: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH 1/2] cpuidle: kirkwood: convert to
- devm_platform_ioremap_resource
-Date: Fri, 20 Dec 2019 10:16:47 +0100
-Message-ID: <2099787.FWte1BHuKm@kreacher>
-In-Reply-To: <20191215130206.30265-2-tiny.windzz@gmail.com>
-References: <20191215130206.30265-1-tiny.windzz@gmail.com>
- <20191215130206.30265-2-tiny.windzz@gmail.com>
+ id 1iiEUN-0004n6-6z
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 09:22:28 +0000
+Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id A40987FCA0F2125FF4DB;
+ Fri, 20 Dec 2019 17:22:14 +0800 (CST)
+Received: from linux-ibm.site (10.175.102.37) by
+ DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
+ 14.3.439.0; Fri, 20 Dec 2019 17:22:06 +0800
+From: Hanjun Guo <guohanjun@huawei.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Subject: [PATCH] arm64: cpu_errata: Add Hisilicon TSV110 to spectre-v2 safe
+ list
+Date: Fri, 20 Dec 2019 17:17:10 +0800
+Message-ID: <1576833430-11839-1-git-send-email-guohanjun@huawei.com>
+X-Mailer: git-send-email 1.7.12.4
 MIME-Version: 1.0
+X-Originating-IP: [10.175.102.37]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_011655_459480_5FFE66EF 
-X-CRM114-Status: GOOD (  11.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191220_012227_442863_6C720A74 
+X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -58,44 +63,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, daniel.lezcano@linaro.org,
- linux-arm-kernel@lists.infradead.org, shc_work@mail.ru,
- linux-pm@vger.kernel.org
+Cc: Wei Li <liwei391@huawei.com>, linuxarm@huawei.com,
+ linux-arm-kernel@lists.infradead.org, Hanjun Guo <guohanjun@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sunday, December 15, 2019 2:02:06 PM CET Yangtao Li wrote:
-> Use devm_platform_ioremap_resource() to simplify code.
-> 
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> ---
->  drivers/cpuidle/cpuidle-kirkwood.c | 5 +----
->  1 file changed, 1 insertion(+), 4 deletions(-)
-> 
-> diff --git a/drivers/cpuidle/cpuidle-kirkwood.c b/drivers/cpuidle/cpuidle-kirkwood.c
-> index d23d8f468c12..511c4f46027a 100644
-> --- a/drivers/cpuidle/cpuidle-kirkwood.c
-> +++ b/drivers/cpuidle/cpuidle-kirkwood.c
-> @@ -55,10 +55,7 @@ static struct cpuidle_driver kirkwood_idle_driver = {
->  /* Initialize CPU idle by registering the idle states */
->  static int kirkwood_cpuidle_probe(struct platform_device *pdev)
->  {
-> -	struct resource *res;
-> -
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	ddr_operation_base = devm_ioremap_resource(&pdev->dev, res);
-> +	ddr_operation_base = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(ddr_operation_base))
->  		return PTR_ERR(ddr_operation_base);
->  
-> 
+From: Wei Li <liwei391@huawei.com>
 
-Applied as 5.6 material, thanks!
+HiSilicon Taishan v110 CPUs didn't implement CSV2 field of the
+ID_AA64PFR0_EL1, but spectre-v2 is mitigated by hardware, so
+whitelist the MIDR in the safe list.
 
+Signed-off-by: Wei Li <liwei391@huawei.com>
+[hanjun: re-write the commit log]
+Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
+---
+ arch/arm64/kernel/cpu_errata.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-
+diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+index 6a09ca7..85f4bec 100644
+--- a/arch/arm64/kernel/cpu_errata.c
++++ b/arch/arm64/kernel/cpu_errata.c
+@@ -547,6 +547,7 @@ int get_spectre_v2_workaround_state(void)
+ 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A53),
+ 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A55),
+ 	MIDR_ALL_VERSIONS(MIDR_BRAHMA_B53),
++	MIDR_ALL_VERSIONS(MIDR_HISI_TSV110),
+ 	{ /* sentinel */ }
+ };
+ 
+-- 
+1.7.12.4
 
 
 _______________________________________________
