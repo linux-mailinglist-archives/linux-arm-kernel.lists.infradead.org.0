@@ -2,75 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2566012777A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 09:48:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EC58127749
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 09:37:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QnR5bR2ULwl0WbTsjygAn2mS1/9jQlly+Ctk5c43w68=; b=KRMxzoavvHFlxA
-	lAMGa+mZ2eJKFjpXNuH5sD2ogdcoSffP4ZbMl+c9Qq+tSnk9i0+kaXd40LXtwpTs8riZv8pNH2mCG
-	phVQG2payuQ0poCSXjAoVav9yfBg046WyWuKzA0rneRNxQfLFpvTKT90yQZFjGmYdEQ//boHZ52nM
-	/ftX8XCG1LDr5u43tDWVbpDj/RnxVQwfxHR2rNZk5LwmyM5Bkz+9c6DLZ1zqIEUr0HSZklVL2Jllc
-	iPD5zDLNTzJBYKRlrrXYTz2T3lfQt5eFhnCDEPbPDreAoKT8uIpHcZfhirDUTNWV6AlVE7vkGtscB
-	EFBuoIL3W91w5Tn6D1PQ==;
+	List-Owner; bh=ldXC0zLGWUxigyTJ/XoPtovyKfjihEiilgyZLuJc3sk=; b=u6R4NHhthI/gHj
+	eEA19w0KNiRZ8Vcye6cwxx82DcKg/rjhAI8muUAmzZy4KdyY0rnTuoaDJUyLBHthhQ8Va8BqNJFwV
+	P4TrScXrYxA+iPR758hX9FFySHgsQdvTrCK0rKDGP5T8lAMrzRMebvtSP6/9KS4r8zwHDm5y2R2WT
+	At2Klc7ei5XR0MoGFrNVQAtHow4HX4+D2zK+vSSNa1M326d1GxIs0n0WysGXHwZiFByFSNjiOIHZP
+	uHEZYt4wJ3vYrmcn8UeMFiEMm6JbBrAauF58HhRweAQoPL8MC7Yw3U6FLeD/cturvgByAbINLChhE
+	YmVbTeHDsz4z0ASVLHXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiDxD-0005ZM-6V; Fri, 20 Dec 2019 08:48:11 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1iiDn0-0000KD-Bf; Fri, 20 Dec 2019 08:37:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiDvo-0004Z2-0y; Fri, 20 Dec 2019 08:46:45 +0000
-X-UUID: 2f47a3c6483f4d7f9768a49fdab2b7fc-20191220
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=1dTM/x2XgEndTdXRTGoeD0Ozp3L9tzAYcN6PciDyt3c=; 
- b=dClNCxXhNVqDx8r6BXkfQwB5V9UU2+rjpa+fKc1h9T+wAcDpIniTtvT4Iu6Q4VJNu5U0OBOYuQRUwXR3NhoGyY1cqEpQIF/SZpwoZhaoZCpSZL7rw31YuPNY6kN1af9odjvCNWb9jS6eJDrLC7EyST4u1/eUQ0bLzMQp6xk5w20=;
-X-UUID: 2f47a3c6483f4d7f9768a49fdab2b7fc-20191220
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 726109059; Fri, 20 Dec 2019 00:46:40 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 20 Dec 2019 00:36:59 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 20 Dec 2019 16:35:59 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Fri, 20 Dec 2019 16:35:39 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>,
- <pedrom.sousa@synopsys.com>, <jejb@linux.ibm.com>, <matthias.bgg@gmail.com>,
- <f.fainelli@gmail.com>
-Subject: [PATCH v1 6/6] scsi: ufs-mediatek: configure and enable clk-gating
-Date: Fri, 20 Dec 2019 16:36:28 +0800
-Message-ID: <1576830988-22435-7-git-send-email-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <1576830988-22435-1-git-send-email-stanley.chu@mediatek.com>
-References: <1576830988-22435-1-git-send-email-stanley.chu@mediatek.com>
+ id 1iiDmg-0000FY-8H
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 08:37:20 +0000
+Received: from localhost (unknown [106.201.107.54])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C4A0A2467F;
+ Fri, 20 Dec 2019 08:37:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576831037;
+ bh=MwmGwgRhGq+RQ75KDzhynCsOSx4RNN1uA6bAbx7zxGQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=qs3ZUFjS2s6IKXqXMNe+xw4oHPJ0ryil98Uvc7u2PQ7Vlev7g9+6xq/DEPvCZFwea
+ itZLuk5mM64Ij3Hn4v4sB/iA3mixlNGx4D0to0STKet4Wcg2U1i/18E8c4/8mqoa1W
+ UX4KFY3+4mNitKcgQe1be5pFxHiy69NyNLkammhQ=
+Date: Fri, 20 Dec 2019 14:07:13 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Re: [PATCH v7 05/12] dmaengine: Add support for reporting DMA cached
+ data amount
+Message-ID: <20191220083713.GL2536@vkoul-mobl>
+References: <20191209094332.4047-1-peter.ujfalusi@ti.com>
+ <20191209094332.4047-6-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 367E02E7C7D61D709754BA5D29E13B252DAD17ECDB3D2FE27103CD478EB3C1812000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20191209094332.4047-6-peter.ujfalusi@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_004644_150308_C24D31A4 
-X-CRM114-Status: UNSURE (   8.27  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191220_003718_360987_B6A3ACE5 
+X-CRM114-Status: GOOD (  15.01  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -78,8 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,74 +77,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: leon.chen@mediatek.com, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- Stanley Chu <stanley.chu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
- beanhuo@micron.com
+Cc: nm@ti.com, devicetree@vger.kernel.org, grygorii.strashko@ti.com,
+ vigneshr@ti.com, lokeshvutla@ti.com, j-keerthy@ti.com,
+ linux-kernel@vger.kernel.org, t-kristo@ti.com, tony@atomide.com,
+ robh+dt@kernel.org, ssantosh@kernel.org, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable clk-gating with customized delayed timer value in
-MediaTek Chipsets.
+On 09-12-19, 11:43, Peter Ujfalusi wrote:
+> A DMA hardware can have big cache or FIFO and the amount of data sitting in
+> the DMA fabric can be an interest for the clients.
+> 
+> For example in audio we want to know the delay in the data flow and in case
+> the DMA have significantly large FIFO/cache, it can affect the latenc/delay
+> 
+> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+> Reviewed-by: Tero Kristo <t-kristo@ti.com>
+> ---
+>  drivers/dma/dmaengine.h   | 8 ++++++++
+>  include/linux/dmaengine.h | 2 ++
+>  2 files changed, 10 insertions(+)
+> 
+> diff --git a/drivers/dma/dmaengine.h b/drivers/dma/dmaengine.h
+> index 501c0b063f85..b0b97475707a 100644
+> --- a/drivers/dma/dmaengine.h
+> +++ b/drivers/dma/dmaengine.h
+> @@ -77,6 +77,7 @@ static inline enum dma_status dma_cookie_status(struct dma_chan *chan,
+>  		state->last = complete;
+>  		state->used = used;
+>  		state->residue = 0;
+> +		state->in_flight_bytes = 0;
+>  	}
+>  	return dma_async_is_complete(cookie, complete, used);
+>  }
+> @@ -87,6 +88,13 @@ static inline void dma_set_residue(struct dma_tx_state *state, u32 residue)
+>  		state->residue = residue;
+>  }
+>  
+> +static inline void dma_set_in_flight_bytes(struct dma_tx_state *state,
+> +					   u32 in_flight_bytes)
+> +{
+> +	if (state)
+> +		state->in_flight_bytes = in_flight_bytes;
+> +}
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
----
- drivers/scsi/ufs/ufs-mediatek.c | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+This would be used by dmaengine drivers right, so lets move it to drivers/dma/dmaengine.h
 
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 71e2e0e4ea11..282ad06ec846 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -205,6 +205,9 @@ static int ufs_mtk_init(struct ufs_hba *hba)
- 	/* Enable runtime autosuspend */
- 	hba->caps |= UFSHCD_CAP_RPM_AUTOSUSPEND;
- 
-+	/* Enable clock-gating */
-+	hba->caps |= UFSHCD_CAP_CLK_GATING;
-+
- 	/*
- 	 * ufshcd_vops_init() is invoked after
- 	 * ufshcd_setup_clock(true) in ufshcd_hba_init() thus
-@@ -293,6 +296,23 @@ static int ufs_mtk_pre_link(struct ufs_hba *hba)
- 	return ret;
- }
- 
-+static void ufs_mtk_setup_clk_gating(struct ufs_hba *hba)
-+{
-+	unsigned long flags;
-+	u32 ah_ms;
-+
-+	if (ufshcd_is_clkgating_allowed(hba)) {
-+		if (ufshcd_is_auto_hibern8_supported(hba) && hba->ahit)
-+			ah_ms = FIELD_GET(UFSHCI_AHIBERN8_TIMER_MASK,
-+					  hba->ahit);
-+		else
-+			ah_ms = 10;
-+		spin_lock_irqsave(hba->host->host_lock, flags);
-+		hba->clk_gating.delay_ms = ah_ms + 5;
-+		spin_unlock_irqrestore(hba->host->host_lock, flags);
-+	}
-+}
-+
- static int ufs_mtk_post_link(struct ufs_hba *hba)
- {
- 	/* disable device LCC */
-@@ -308,6 +328,8 @@ static int ufs_mtk_post_link(struct ufs_hba *hba)
- 			FIELD_PREP(UFSHCI_AHIBERN8_SCALE_MASK, 3));
- 	}
- 
-+	ufs_mtk_setup_clk_gating(hba);
-+
- 	return 0;
- }
- 
+lets not expose this to users :)
+
 -- 
-2.18.0
+~Vinod
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
