@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A052127AE9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 13:21:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46810127B10
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 13:32:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p0yAbihNYGMkLG2Azf7TdLShHei2+PTyLunx0jCyShs=; b=dQjiR+NoGqJLoY
-	Yi/xTv2R52lygb9v7u+MFG8DJNASC8/L8wT1jMPMFR6XlnmGvltqL3jHIM3a0DLNdcfETImKEkTMZ
-	q++CdV/FH7oXv7QHUWBMLtS3TcTvYTMDfr86y5HKCMEQ3rw+2ju1geIcz9cpjg1B1dGyzoPEr2W3L
-	GnKKuOAeDv6wE22iHIumkbD1yIL7hubQLKjUwk4SqQfTwB0EfLmjMhMEaS6W8epBPm3Mu1wMiQM8F
-	hm8cp13N8EZnBeq7Z282q5hHyARp5KZ+9S/CO49agZRI3FAp0APps72tu0ssUrevGDOLFb6+7jfkp
-	Gm+bo+DhiOCJ1h6a987w==;
+	List-Owner; bh=KDJXabEIKT8AbdrGTatOj59l/9QVeML0xc/6171v+pM=; b=tzYeQkZlR2RM6h
+	2TxTqY/PxLELMAvVhSbZb2wKCfnrHPOM4jSyQAPCRKfUAZ9zBMumC0+Q5zLctEP9kBftsHEg+kQqN
+	XewSoF0ADQLzNFMLOZMeravivCYViXA1cZuAcCdbZSxuGacV8Oje4Nsz5Ni6DNW19+tL6+V95w3wI
+	uiius88iUhlPX8fIKr0UbYhEC/dZXNNhemjNeuLMu3EhA6AuF6zTTkSUNPbPjNnM+MRHa+2bnCvRC
+	uF4bzhSkqpc989AuFrjDSlRA2l/l2HUA3z09Y3aX4u2IbI6IF/hkr7cXiBULqV4Q8drCu/wh6XLnc
+	amOOdA72ngdWAUkawqjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiHHG-0006bi-Gd; Fri, 20 Dec 2019 12:21:06 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iiHRl-0001b3-Gf; Fri, 20 Dec 2019 12:31:57 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiHH6-0006ag-VK
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 12:20:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576844455;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=nIVo2crlVc/txi8VIButrgzZivg7HgIELD3HSqFbFMs=;
- b=RlmSYoebLwThkKp70Qo5ZvoMQ8I/Zd+k8JPg4o53e9mrqWl51gL1P7KU0AmjlAykX6tokq
- pwlndqDNo/VFrwt4Jn5MNZ8XjQJgVR2lZlDTYJD2FUrdphtv4D9yQjo2+8vKmCN6XQyzCm
- /y0E983RurPFIxB68Bt5uaO2UEUuPXU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-58-KjExN_K5PJeZFLWaH5Dnig-1; Fri, 20 Dec 2019 07:20:46 -0500
-X-MC-Unique: KjExN_K5PJeZFLWaH5Dnig-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 45DE7801E66;
- Fri, 20 Dec 2019 12:20:45 +0000 (UTC)
-Received: from [10.36.116.117] (ovpn-116-117.ams2.redhat.com [10.36.116.117])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 487485DA75;
- Fri, 20 Dec 2019 12:20:41 +0000 (UTC)
-Subject: Re: [PATCH] KVM: arm/arm64: vgic: Handle GICR_PENDBASER.PTZ filed as
- RAZ
-To: Zenghui Yu <yuzenghui@huawei.com>, maz@kernel.org
-References: <20191220111833.1422-1-yuzenghui@huawei.com>
-From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <c469bc11-9cd0-531a-9bd3-46d070ec0e72@redhat.com>
-Date: Fri, 20 Dec 2019 13:20:39 +0100
+ id 1iiHRc-0001aV-Hu
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 12:31:50 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBKCVQhb094857;
+ Fri, 20 Dec 2019 06:31:26 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1576845086;
+ bh=lmntjsYZD2zvLWbmw/UGvX0UwtRYBUAg3GKS2/RioC0=;
+ h=Subject:From:To:CC:References:Date:In-Reply-To;
+ b=EdqfovjoXUhrUmZVLvo8IG25HziLhocUDtW2NRqPV9bkHbuBhEdHxyBBXNbPNRPtA
+ SMQVWE0yJrWuCdVCV8Gu3oO2MyJGbP1IipzHxhobmi9Jtr0aevopl2Qz0aJjaeDs/x
+ BtzegG4jogMKo3v20oXUXYzq+5QXzD5DmdJCPnb8=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBKCVP4F030517;
+ Fri, 20 Dec 2019 06:31:25 -0600
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 20
+ Dec 2019 06:31:25 -0600
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Fri, 20 Dec 2019 06:31:25 -0600
+Received: from [10.24.69.20] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBKCVLPG099921;
+ Fri, 20 Dec 2019 06:31:22 -0600
+Subject: Re: [PATCH V3 1/2] dt-bindings/irq: add binding for NXP INTMUX
+ interrupt multiplexer
+From: Lokesh Vutla <lokeshvutla@ti.com>
+To: Joakim Zhang <qiangqing.zhang@nxp.com>, <maz@kernel.org>,
+ <tglx@linutronix.de>, <jason@lakedaemon.net>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <shawnguo@kernel.org>, <s.hauer@pengutronix.de>
+References: <1576827431-31942-1-git-send-email-qiangqing.zhang@nxp.com>
+ <1576827431-31942-2-git-send-email-qiangqing.zhang@nxp.com>
+ <0cecd3af-8bca-c0d3-1312-925624c63dbf@ti.com>
+Message-ID: <dab8f6ba-2b5e-7b98-55c9-ace98f14842e@ti.com>
+Date: Fri, 20 Dec 2019 18:00:28 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.4.0
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <20191220111833.1422-1-yuzenghui@huawei.com>
+In-Reply-To: <0cecd3af-8bca-c0d3-1312-925624c63dbf@ti.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_042057_075577_45B62C7D 
-X-CRM114-Status: GOOD (  17.64  )
+X-CRM114-CacheID: sfid-20191220_043148_717424_45D1DBB1 
+X-CRM114-Status: GOOD (  19.88  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.61 listed in list.dnswl.org]
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.61 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,58 +95,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andre.przywara@arm.com, kvmarm@lists.cs.columbia.edu,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- wanghaibin.wang@huawei.com
+Cc: kernel@pengutronix.de, fugang.duan@nxp.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
 
-On 12/20/19 12:18 PM, Zenghui Yu wrote:
-> Although guest will hardly read and use the PTZ (Pending Table Zero)
-> bit in GICR_PENDBASER, let us emulate the architecture strictly.
-> As per IHI 0069E 9.11.30, PTZ field is WO, and reads as 0.
-> 
-> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
-nit
-s/filed/field in the commit title
 
-Eric
-> ---
+On 20/12/19 5:10 PM, Lokesh Vutla wrote:
 > 
-> Noticed when checking all fields of GICR_PENDBASER register.
-> But _not_ sure whether it's worth a fix, as Linux never sets
-> the PTZ bit before enabling LPI (set GICR_CTLR_ENABLE_LPIS).
 > 
-> And I wonder under which scenarios can this bit be written as 1.
-> It seems difficult for software to determine whether the pending
-> table contains all zeros when writing this bit.
+> On 20/12/19 1:07 PM, Joakim Zhang wrote:
+>> This patch adds the DT bindings for the NXP INTMUX interrupt multiplexer
+>> for i.MX8 family SoCs.
+>>
+>> Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
+>> ---
+>>  .../interrupt-controller/fsl,intmux.txt       | 36 +++++++++++++++++++
+>>  1 file changed, 36 insertions(+)
+>>  create mode 100644 Documentation/devicetree/bindings/interrupt-controller/fsl,intmux.txt
+>>
+>> diff --git a/Documentation/devicetree/bindings/interrupt-controller/fsl,intmux.txt b/Documentation/devicetree/bindings/interrupt-controller/fsl,intmux.txt
+>> new file mode 100644
+>> index 000000000000..3ebe9cac5f20
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/interrupt-controller/fsl,intmux.txt
+>> @@ -0,0 +1,36 @@
+>> +Freescale INTMUX interrupt multiplexer
+>> +
+>> +Required properties:
+>> +
+>> +- compatible: Should be:
+>> +   - "fsl,imx-intmux"
+>> +- reg: Physical base address and size of registers.
+>> +- interrupts: Should contain the parent interrupt lines (up to 8) used to
+>> +  multiplex the input interrupts.
+>> +- clocks: Should contain one clock for entry in clock-names.
+>> +- clock-names:
+>> +   - "ipg": main logic clock
+>> +- interrupt-controller: Identifies the node as an interrupt controller.
+>> +- #interrupt-cells: Specifies the number of cells needed to encode an
+>> +  interrupt source. The value must be 2.
+>> +   - the 1st cell: hardware interrupt number> +   - the 2nd cell: channel index, value must smaller than channels used
 > 
->  virt/kvm/arm/vgic/vgic-mmio-v3.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
-> index 7dfd15dbb308..ebc218840fc2 100644
-> --- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
-> +++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
-> @@ -414,8 +414,11 @@ static unsigned long vgic_mmio_read_pendbase(struct kvm_vcpu *vcpu,
->  					     gpa_t addr, unsigned int len)
->  {
->  	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
-> +	u64 value = vgic_cpu->pendbaser;
->  
-> -	return extract_bytes(vgic_cpu->pendbaser, addr & 7, len);
-> +	value &= ~GICR_PENDBASER_PTZ;
-> +
-> +	return extract_bytes(value, addr & 7, len);
->  }
->  
->  static void vgic_mmio_write_pendbase(struct kvm_vcpu *vcpu,
-> 
+> As per the xlate function, 1st cell is channel index and 2nd cell is hw
+> interrupt number no?
 
+Sorry my bad, I read it wrong. Ignore this comment.
+
+Thanks and regards,
+Lokesh
+
+> 
+> Thanks and regards,
+> Lokesh
+> 
+>> +
+>> +Optional properties:
+>> +
+>> +- fsl,intmux_chans: The number of channels used for interrupt source. The
+>> +  Maximum value is 8. If this property is not set in DT then driver uses
+>> +  1 channel by default.
+>> +
+>> +Example:
+>> +
+>> +	intmux@37400000 {
+>> +		compatible = "fsl,imx-intmux";
+>> +		reg = <0x37400000 0x1000>;
+>> +		interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+>> +		clocks = <&clk IMX8QM_CM40_IPG_CLK>;
+>> +		clock-names = "ipg";
+>> +		interrupt-controller;
+>> +		#interrupt-cells = <1>;
+>> +	};
+>> +
+>>
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
