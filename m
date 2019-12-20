@@ -2,154 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 732CD1282D2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 20:40:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D46271282E5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 20:52:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nxpZVRKwqAaQqpKBAWZZCybfI6ZZdG2cwFZyRgdsy+Y=; b=fgLmEMZuLm150e
-	7sbhohvTmLbP4T3pRtrfxRb2yCsaZOEnIzB2OnB65Bz7wCWGCdMm/VUbzjdwB58XwbX2dM6Tn+ER/
-	Njjbm7730PJPmO0YCRWFaScCErXI41JYt9wTCQhZ/5gjwP9JbLjd2TILwgerJcWN8sWDvprYny45r
-	+iigEPhsZJTrJwIu3wbS8tvNgXqvJtUaEFVKBlos6y8xGh2LltzYAy7YF4ShGLw5NIyMg7lG0DBtU
-	aoMygzz/vNXuEjiIa6a0d0w1rTl4kd61+k7NT2SI0vDAg3bHV8rdSw/YwBZHwB4R6tTSxkQYY1Jgk
-	n8kpK/nYFTkMOs4e8J7Q==;
+	List-Owner; bh=7kCND6biiTnk/dkdaPbFm+2gU7dUs1o8Hrk6wAYpHLg=; b=ftIu2xoRZghVoX
+	YoLMK/imwsKnUKEe8pBVACqyHNQ9Va/Xavhbs7+rcZE1Jl1xN2cpNTEk+EiqNzQWdxtpxzt3SThg6
+	ESbW1/p09c/4AnXTOhfI5Vj/feY9AvRSsk0/XgAdfRsYnYezkBUOIeXN/gYkjuz6xt/NNRDfGrnIj
+	DZeurOPF/rBdTrDfbKt5iy0B4a8EZjHg/k9NxWtxIx4/YroYZsQR4B9USeFZ8sFCm6OvgPhxft29x
+	VUWPVr28YitNnSXAAXi/Uqwwn83Ko6Wr4xjm4KktIVsWYwjHCK9ckSP4T2pzQppGaWaRq6KSJa6Lh
+	MLN0frkRapbTZktEqfrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiO8E-00012C-NP; Fri, 20 Dec 2019 19:40:14 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiO80-0000w7-85
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 19:40:01 +0000
-Received: by mail-ed1-x543.google.com with SMTP id c26so9421179eds.8
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 20 Dec 2019 11:39:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=LP6u2TfRriPNbP3wnwp2lXG25zodFCO1QI97XTLtoPU=;
- b=gBzN/2KucQWTbBDk+FEl4CM0h6+4wRZNpkiPUQdyIA9XuLmhLpxpvw+zqjPTA8Pqif
- FxLMSLSOSdZe/WUp4/jhdCfdC6rh17iSPfhmJT1FCd8h5ZjBpf66PhLUv+j9fkyx669e
- z0ooccPdJlQKijd8qg8HYElfHpsiGJTYg6Uwhm/xAcyvIX2iY273yFLuwBeVLn2kpJSZ
- 9GHmPZsWL0M2/dNVvHtSHV9IwfxrA2trsRXco3eCsAT7c2fedcehwaULDCW5LrGEpJuE
- 4craDsIe2e+HXCE7RzBKoWR1/XD0eQq2SIV7DPN7s7g5KKHvubSYkWd/iI90htRri5UZ
- Ua/A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=LP6u2TfRriPNbP3wnwp2lXG25zodFCO1QI97XTLtoPU=;
- b=LLmZpRdM369N+od+IXMn9dxhGiK0KRuAQUAMfg8J621GuOcUg7VkrS/euyspnLKGUl
- 02sJg/BES4rsFaLZYxqLP0uXp9ltakfYVL8E85PVOieGmLeWTsm+yPuOwK6uLmWZLwkg
- JD18O+Rql46QGTlDWmATBHigOlLpDy4HspaOiEJXWtaQH6Nf2Kchnh1Aei9+b4MaJg3x
- 7st6aCt/6rICNGNbaoCp5bIymeNVXTxPTII7BouwMUDhD29trTu1iMJ4JevvLM6nxaTx
- McawATSfeIWK0VWFyIPAkv91d8wZXNUYuDwdgjgjbTyN8k9Pdie1euMvWZLRxRvHWY01
- cbnA==
-X-Gm-Message-State: APjAAAW1Lt6vP0JzHtFHR6GIvcYUP3NMA23Va2nN08XwLaCMqqoxfyHg
- 6TNbRe9GexsnAri9SSWhtrO3CGfi
-X-Google-Smtp-Source: APXvYqz5PLHVgcHtJjjlDR92mP7ErJMhucdqCUjOGBDDiIbOqiOw6rVYl3Sf6c19T4BGrhMDOQILwA==
-X-Received: by 2002:a17:906:8250:: with SMTP id
- f16mr18103451ejx.304.1576870798599; 
- Fri, 20 Dec 2019 11:39:58 -0800 (PST)
-Received: from [10.67.50.49] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id l26sm1083751edq.5.2019.12.20.11.39.56
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 20 Dec 2019 11:39:57 -0800 (PST)
-Subject: Re: [PATCH v5 1/2] power: reset: Introduce generic reset reason
-To: Kamel Bouhara <kamel.bouhara@bootlin.com>,
- Sebastian Reichel <sre@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20191220102638.154206-1-kamel.bouhara@bootlin.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <372cc299-ad28-fd5b-d1bf-4675ae298c84@gmail.com>
-Date: Fri, 20 Dec 2019 11:39:54 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+	id 1iiOKD-0005RW-9J; Fri, 20 Dec 2019 19:52:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iiOK1-0005Qa-2N
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 19:52:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ED55D1FB;
+ Fri, 20 Dec 2019 11:52:17 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0EE0B3F67D;
+ Fri, 20 Dec 2019 11:52:16 -0800 (PST)
+Subject: Re: Arm64 Crashkernel doesn't work with FLATMEM anymore
+To: "Saeed Karimabadi (skarimab)" <skarimab@cisco.com>,
+ Catalin Marinas <catalin.marinas@arm.com>
+References: <BYAPR11MB2582CB879F0B7DE06A351685CC500@BYAPR11MB2582.namprd11.prod.outlook.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <c4d7ea82-7736-4cbd-4568-83473a7c2d11@arm.com>
+Date: Fri, 20 Dec 2019 19:52:15 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191220102638.154206-1-kamel.bouhara@bootlin.com>
-Content-Language: en-US
+In-Reply-To: <BYAPR11MB2582CB879F0B7DE06A351685CC500@BYAPR11MB2582.namprd11.prod.outlook.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_114000_289597_567FD0DE 
-X-CRM114-Status: GOOD (  16.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191220_115225_202367_1A502A2D 
+X-CRM114-Status: GOOD (  28.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (f.fainelli[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -161,82 +64,249 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Petazzoni <thomas.petazzoni@bootlin.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>, Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "xe-linux-external\(mailer list\)" <xe-linux-external@cisco.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/20/19 2:26 AM, Kamel Bouhara wrote:
-> This introduce some generic sources of reset reason to expose through
-> sysfs interface. Update the ABI documentation to list current power on
-> sources.
+Hi Saeed,
+
+Thanks for the bug report,
+
+(CC: +Ard, KASLR+FLATMEM?)
+
+On 17/12/2019 00:02, Saeed Karimabadi (skarimab) wrote:
+> Crash dump  Kernel doesn't work with FLATMEM memory model since version 4.11.0-rc3 and it
+
+v4.11? FLATMEM wasn't enabled until e7d4bac428edb in v4.19!
+
+Kdump support wasn't added until v4.12. Catalin's pull request here:
+http://lkml.iu.edu/hypermail/linux/kernel/1705.0/03077.html
+
+
+You can't use a kernel that doesn't know about kdump as the kdump kernel. It must
+understand the elfcorehdr and usable-memory-range DT properties, otherwise it can't know
+not to trample on all of memory.
+
+
+> will panic at boot time with a page request exception. The crash happens while kernel is initializing
+> the memmap zones inside memmap_init_zone function. FLATMEM memory model is very useful
+> for systems with limited memory resources where it is desirable to reserve as minimum as possible
+> memory for the crash kernel. 
+
+(I'd love to know how FLATMEM affects this... but we can save that for later)
+
+
+> I'm wondering if this is a known issue or there is a patch to fix it?
+
+No, I think this is new,
+
+
+> -- Crash Dump Kernel starts here--
+> [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x411fd070]
+> [    0.000000] Linux version 5.5.0-rc1 (user@host) (gcc version 4.7.0 (GCC)) #163 SMP PREEMPT Tue Dec 10 11:12:37 PST 2019
+
+gcc 4.7!
+
+> [    0.000000] Machine model: linux,dummy-virt
+> [    0.000000] earlycon: pl11 at MMIO 0x0000000009000000 (options '')
+> [    0.000000] printk: bootconsole [pl11] enabled
+
+> [    0.000000] efi: Getting EFI parameters from FDT:
+> [    0.000000] efi: UEFI not found.
+
+Hmmm,
+
+
+> [    0.000000] Reserving 1KB of memory at 0xbfdff000 for elfcorehdr
+> [    0.000000] On node 0 totalpages: 8192
+> [    0.000000]   DMA zone: 128 pages used for memmap
+> [    0.000000]   DMA zone: 0 pages reserved
+> [    0.000000]   DMA zone: 8192 pages, LIFO batch:0
+> [    0.000000] Unable to handle kernel paging request at virtual address ffffff8040ccf0b8
+> [    0.000000] Mem abort info:
+> [    0.000000]   ESR = 0x96000045
+> [    0.000000]   EC = 0x25: DABT (current EL), IL = 32 bits
+> [    0.000000]   SET = 0, FnV = 0
+> [    0.000000]   EA = 0, S1PTW = 0
+> [    0.000000] Data abort info:
+> [    0.000000]   ISV = 0, ISS = 0x00000045
+> [    0.000000]   CM = 0, WnR = 1
+> [    0.000000] swapper pgtable: 4k pages, 39-bit VAs, pgdp=00000000bf068000
+> [    0.000000] [ffffff8040ccf0b8] pgd=0000000000000000, pud=0000000000000000
+> [    0.000000] Internal error: Oops: 96000045 [#1] PREEMPT SMP
+> [    0.000000] Modules linked in:
+> [    0.000000] CPU: 0 PID: 0 Comm: swapper Not tainted 5.5.0-rc1 #163
+> [    0.000000] Hardware name: linux,dummy-virt (DT)
+> [    0.000000] pstate: 20000085 (nzCv daIf -PAN -UAO)
+> [    0.000000] pc : memmap_init_zone+0x68/0xe0
+> [    0.000000] lr : memmap_init+0x14/0x1c
+
+> [    0.000000] Call trace:
+> [    0.000000]  memmap_init_zone+0x68/0xe0
+> [    0.000000]  memmap_init+0x14/0x1c
+> [    0.000000]  free_area_init_node+0x39c/0x3ec
+> [    0.000000]  bootmem_init+0x158/0x174
+> [    0.000000]  setup_arch+0x290/0x64c
+> [    0.000000]  start_kernel+0x5c/0x480
+> [    0.000000] Code: f945c705 cb813061 d37ae421 8b0100a0 (f9001c1f)
+> [    0.000000] random: get_random_bytes called from init_oops_id+0x3c/0x48 with crng_init=0
+> [    0.000000] ---[ end trace 0000000000000000 ]---
+> [    0.000000] Kernel panic - not syncing: Attempted to kill the idle task!
+> [    0.000000] ---[ end Kernel panic - not syncing: Attempted to kill the idle task! ]---
+
+I've managed to reproduce something like this. In my case its trying to zero a bogus
+struct page.
+
+
+> FLATMEM became broken after submission of these two patches: 
+> commit 8f579b1c4e347b23bfa747bc2cc0a55dd1b7e5fa      arm64: limit memory regions based on DT property, usable-memory-range
+> commit a7f8de168ace487fa7b88cb154e413cf40e87fc6       arm64: allow kernel Image to be loaded anywhere in physical memory
+
+Those commits are in v4.12 and v4.6 respectively.
+FLATMEM wasn't enabled until e7d4bac428edb in v4.19.
+
+By 'after', you mean 'because of'?
+Given the order of events here, 'FLATMEM has never work for kdump' seems a fair summary.
+
+
+[..]
+
+> The crash happens inside mm/page_alloc.c:memmap_init_zone() when kernel tries to initialize the first pfn of ZONE_DMA. The code
+>  would calculate a wrong page structure pointer which is pointing beyond the end address of available memory.
+
+> Breakpoint 3 at 0xffffff8008d463f0: file mm/page_alloc.c, line 5196.
+> <-- Snip -->
+
+> for FLATMEM model pfn_to_page is defined as:
+> #define __pfn_to_page(pfn)       (mem_map + ((pfn) - ARCH_PFN_OFFSET))
+>  (gdb) p/x mem_map
+> $17 = 0xffffffc03fd5d780
+>  (gdb) x 0xffffffc040cd5780
+> 0xffffffc040cd5780:     Cannot access memory at address 0xffffffc040cd5780
 > 
-> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
-> ---
-> Changes in v2
-> =============
-> 	- Be less specific on the crystal oscillator value
-> 	- Add an Acked-by
-> Changes in v3
-> =============
-> 	- Really be less specific on the crystal oscillator value
-> Changes in v4
-> =============
-> 	- Rebase to 5.5-rc2
-> 	- Remove remaining crystal specific value in documentation
-> 	- Split the patch for the sake of clarity
-> 	- Match the documentation with the actual header defines
-> Changes in v5
-> =============
-> 	- Reorder patches for the sake of bisectability
+> It looks like in expansion of the pfn_to_page() macro, if the kernel start address is not 1GB
+> aligned, this part of macro ((pfn)-ARCH_PFN_OFFSET) can create a huge offset from the base address
+> of mem_map which will cause the calculated page address to point a location outside of the 
+> available memory boundaries.
 
-You may extract some common names among various SoC vendors for some
-reset reasons but their semantic is inherently specific to the reset
-architecture of the SoC and their meaning is very scope specific. For
-instance, on the SoCs that I work with (ARCH_BRCMSTB), here would be the
-possible reset reasons:
+huge offset is the cause of the problem here. ARCH_PFN_OFFSET comes from memstart_addr.
 
-"aux_chip_edge_0"
-"aux_chip_edge_1",
-"aux_chip_level_0"
-"aux_chip_level_1"
-"avs_watchdog"
-"cpu_ejtag"
-"front_panel_4sec"
-"gen_watchdog_1"
-"main_chip_input"
-"mpm"
-"overtemp"
-"overvoltage_1"
-"pcie_0_hot_boot"
-"pcie_1_hot_boot"
-"power_on"
-"s3_wakeup"
-"security_master
-"smartcard_insert"
-"software_master"
-"tap_in_system"
-"undervoltage_0"
-"undervoltage_1"
-"watchdog_timer"
+We use memstart_addr is for shifting memory's physical addresses to their offset in the
+linear map's range. Otherwise if memory started at 0x8000000000, we'd always lose a chunk
+of address space because of this.
 
-So out of the list you have defined, we share about two to three, and
-the rest appear to be AT91 specific.
+CONFIG_RANDOMIZE_BASE tinkers with this to randomise the placement of memory in the linear
+map's range.
 
-I am not sure the abstraction is at the right level here with trying to
-come up with some generically applicable set of reset reasons which
-sounds like people will either have to overlay their own reset reasons
-after the generic ones, or they will just replace them.
+Catalin found disabling CONFIG_RANDOMIZE_BASE solved the issue for him. (evidently
+kexec-tools is passing a random seed for kdump).
 
-Standardizing on the sysfs attribute name has value, and maybe that's
-where the abstraction should be, you offer a set of functions that allow
-the registration of a sysfs attribute at the right location in the sysfs
-device hierarchy, and allow passing a driver specific callback for
-returning a string and that callback can do the decoding internally?
--- 
-Florian
+Do you have this option enabled in your kdump kernel?
+
+
+The values are getting unbalanced because of FLATMEM's __page_to_pfn(). In particular
+index-0 in the mem_map array causes it to return ARCH_PFN_OFFSET which leads to
+memstart_addr, which is a value that may have been modified by CONFIG_RANDOMIZE_BASE.
+
+FLATMEM's __page_to_pfn() can ignore KASLR because its page and mem_map both exist in the
+randomised linear map.
+Instead it wants to know memblock_start_of_DRAM() so the first DRAM page is index zero in
+the array.
+
+I think ARCH_PFN_OFFSET's meaning is different for FLATMEM.
+
+Ugly hack[0] works for me. With this page_to_pfn() and pfn_to_page() seem to be producing
+better results.
+
+
+But! There are bigger problems here. memstart_addr starts out as memblock's idea of the
+base of DRAM after kdumps usable-memory-range restrictions have been applied.
+
+memblock_cap_memory_range() wont remove nomap blocks. We need to remember these are
+memory, and they are nomap. Drivers depend on this when they want to use some exotic
+memory-attributes later on. (is it memory? yes, do we have it mapped with conflicting
+attributes? no)
+
+These nomap blocks do influence memblock's idea of the base of DRAM meaning you can get a
+large hole in the flatmem mem_map...
+
+For kdump on Seattle, I see:
+| memblock_cap_memory_range(0x80bfe00000, 0x40000000)
+
+but
+| memblock_start_of_DRAM == 0x8000000000
+
+which is well below the first page.
+
+Because of these nomap memblocks, I don't think kdump is isolated enough from the systems
+memory map for the flatmem illusion to hold just because its kdump. You still need to
+access firmware table that describe the system, as well as any memory that was reserved
+with mechanisms like this. This exposes you to the platform's not-really-flatmem memory
+layout.
+
+I think the real fix here is to remove FLATMEM.
+
+
+Thanks,
+
+James
+
+
+[0]
+--------------------%<--------------------
+diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+index a4f9ca5479b0..bebeca58eda6 100644
+--- a/arch/arm64/include/asm/memory.h
++++ b/arch/arm64/include/asm/memory.h
+@@ -172,6 +172,7 @@ extern u64                  vabits_actual;
+ #include <linux/bitops.h>
+ #include <linux/mmdebug.h>
+
++extern u64                     arm64_memblock_start;
+ extern s64                     physvirt_offset;
+ extern s64                     memstart_addr;
+ /* PHYS_OFFSET - the physical address of the start of memory. */
+@@ -307,7 +308,11 @@ static inline void *phys_to_virt(phys_addr_t x)
+  *  virt_to_page(x)    convert a _valid_ virtual address to struct page *
+  *  virt_addr_valid(x) indicates whether a virtual address is valid
+  */
++#ifdef CONFIG_FLATMEM
++#define ARCH_PFN_OFFSET                ((unsigned long)arm64_memblock_start >> PAGE_SHIFT)
++#else
+ #define ARCH_PFN_OFFSET                ((unsigned long)PHYS_PFN_OFFSET)
++#endif /* CONFIG_FLATMEM */
+
+ #if !defined(CONFIG_SPARSEMEM_VMEMMAP) || defined(CONFIG_DEBUG_VIRTUAL)
+ #define virt_to_page(x)                pfn_to_page(virt_to_pfn(x))
+diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+index b65dffdfb201..8e29ca9cc9ed 100644
+--- a/arch/arm64/mm/init.c
++++ b/arch/arm64/mm/init.c
+@@ -44,6 +44,9 @@
+
+ #define ARM64_ZONE_DMA_BITS    30
+
++u64 arm64_memblock_start;
++EXPORT_SYMBOL(arm64_memblock_start);
++
+ /*
+  * We need to be able to catch inadvertent references to memstart_addr
+  * that occur (potentially in generic code) before arm64_memblock_init()
+@@ -427,6 +430,8 @@ void __init arm64_memblock_init(void)
+                }
+        }
+
++       arm64_memblock_start = memblock_start_of_DRAM();
++
+        /*
+         * Register the kernel text, kernel data, initrd, and initial
+         * pagetables with memblock.
+--------------------%<--------------------
 
 _______________________________________________
 linux-arm-kernel mailing list
