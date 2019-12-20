@@ -2,60 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA4DA127B7D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 14:07:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39BE7127B86
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 14:09:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nm1WJq2OxsS6MrvJXBfm3c37ox+7VBBCmmx9QhyPGQM=; b=fdUHndSUfvAY2725bv2NKP94V
-	6h0VJLMkcLGX1yeK/ch6dOFZ6GbUnNIUWAnFxpYri/2L8cMhuM7o7cLu/RTMnIxADlrIPO9jaFGLX
-	0He7Z3GANrVjUNRZUZMw2fLHcvTBrDRjYQ6U1SpX0qtg75OGO+xrWi53CVwSejZoSaZ/UqhRNbiEd
-	tHRNQJauvtpTw00BqR+OUh2DzLxRRrjV/cwWLOM8oYl2fgetk7QM7ighRDVNNcObECopxMgtnHwRM
-	Qd8kcrUyZzlrgiNtxaFfHDSbhMW42i4Ls0nXDK8b+5hzD1shyXe8fOIX0UwuW/wOS8jPHU1ikcw1+
-	EI88WYioA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=QjiWVvUJnrMCx1XRnSDQAFufh+qqjJ6q6v+0af7yF84=; b=gjZ
+	JAqLvgZmRh09GMZVI7VdTl0zN9AhblGm9xsijrZ5T4eWm9rumvT0TtbiPvem5Vl8uNFyq5SHYdsiU
+	4jiBlt4IxnDpmyiUPvLdSk7AGguJoXe5OUuNkQimzVabYOv77YGt3ZOzfFVcOoCKleIJNqUj6WZV2
+	jd+id0oCrl1w80APl8rn7wV0pECUXvBmmN2u6S84f1R6NnPeVpB/swepT633Y2oxvq5C9xEpayEy2
+	GSgXsWIt8L3m73xC0Bh+bzXOyyWnPAsrLckbCqEckG92f+A4+HkD5jauORkTdxe7+WcDJ+HIQA64r
+	/5vm8PNR2Jz5osCeUYDfeG0cNsOdPhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiI01-0006DW-IS; Fri, 20 Dec 2019 13:07:21 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiHzq-0006D1-S4
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 13:07:12 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1iiHzl-0005uV-GW; Fri, 20 Dec 2019 14:07:05 +0100
-To: Zenghui Yu <yuzenghui@huawei.com>
-Subject: Re: [PATCH] KVM: arm/arm64: vgic: Handle =?UTF-8?Q?GICR=5FPENDBAS?=
- =?UTF-8?Q?ER=2EPTZ=20filed=20as=20RAZ?=
-X-PHP-Originating-Script: 0:main.inc
-MIME-Version: 1.0
-Date: Fri, 20 Dec 2019 13:07:05 +0000
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <20191220111833.1422-1-yuzenghui@huawei.com>
-References: <20191220111833.1422-1-yuzenghui@huawei.com>
-Message-ID: <71e3dcc00ad5ab8dffd732bfe7381705@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, andre.przywara@arm.com,
- eric.auger@redhat.com, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, linux-kernel@vger.kernel.org,
- wanghaibin.wang@huawei.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
+	id 1iiI2D-0006cS-U7; Fri, 20 Dec 2019 13:09:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iiI1z-0006bn-6n
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 13:09:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 445FB30E;
+ Fri, 20 Dec 2019 05:09:22 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B70A73F719;
+ Fri, 20 Dec 2019 05:09:21 -0800 (PST)
+Date: Fri, 20 Dec 2019 13:09:20 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Pascal Paillet <p.paillet@st.com>
+Subject: Applied "regulator: Convert stm32-pwr regulator to json-schema" to
+ the regulator tree
+In-Reply-To: <20191205161359.20755-1-p.paillet@st.com>
+Message-Id: <applied-20191205161359.20755-1-p.paillet@st.com>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_050711_053984_0DE9EC79 
-X-CRM114-Status: GOOD (  15.05  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191220_050923_338363_711D86AC 
+X-CRM114-Status: GOOD (  15.54  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,74 +63,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andre.przywara@arm.com, linux-kernel@vger.kernel.org, eric.auger@redhat.com,
- wanghaibin.wang@huawei.com, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ p.paillet@st.com, Mark Brown <broonie@kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-20 11:18, Zenghui Yu wrote:
-> Although guest will hardly read and use the PTZ (Pending Table Zero)
-> bit in GICR_PENDBASER, let us emulate the architecture strictly.
-> As per IHI 0069E 9.11.30, PTZ field is WO, and reads as 0.
->
-> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
-> ---
->
-> Noticed when checking all fields of GICR_PENDBASER register.
-> But _not_ sure whether it's worth a fix, as Linux never sets
-> the PTZ bit before enabling LPI (set GICR_CTLR_ENABLE_LPIS).
->
-> And I wonder under which scenarios can this bit be written as 1.
-> It seems difficult for software to determine whether the pending
-> table contains all zeros when writing this bit.
+The patch
 
-This is a useless HW optimization, where it can avoid reading the
-pending table the very first time you write to this register if
-it is told that it is all zero. A decent ITS implementation
-already has a mechanism to find out about the pending bits by
-looking into the IMPDEF area (the first 1kB) of the pending table.
-PTZ is just yet another way to do the same thing.
+   regulator: Convert stm32-pwr regulator to json-schema
 
-This can only happen once in the lifetime of the system (when 
-allocating
-the table), and Linux doesn't really care. As usual, the GIC is setting
-the level of useless complexity pretty high...
+has been applied to the regulator tree at
 
->
->  virt/kvm/arm/vgic/vgic-mmio-v3.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
->
-> diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c
-> b/virt/kvm/arm/vgic/vgic-mmio-v3.c
-> index 7dfd15dbb308..ebc218840fc2 100644
-> --- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
-> +++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
-> @@ -414,8 +414,11 @@ static unsigned long
-> vgic_mmio_read_pendbase(struct kvm_vcpu *vcpu,
->  					     gpa_t addr, unsigned int len)
->  {
->  	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
-> +	u64 value = vgic_cpu->pendbaser;
->
-> -	return extract_bytes(vgic_cpu->pendbaser, addr & 7, len);
-> +	value &= ~GICR_PENDBASER_PTZ;
-> +
-> +	return extract_bytes(value, addr & 7, len);
->  }
->
->  static void vgic_mmio_write_pendbase(struct kvm_vcpu *vcpu,
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-5.6
 
-Otherwise looks good. I'll queue it with Eric's correction
-to the subject line.
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
 Thanks,
+Mark
 
-         M.
+From 130ac214294bcb5efc93229c7d10144c4992e90a Mon Sep 17 00:00:00 2001
+From: Pascal Paillet <p.paillet@st.com>
+Date: Thu, 5 Dec 2019 17:13:59 +0100
+Subject: [PATCH] regulator: Convert stm32-pwr regulator to json-schema
+
+Convert the stm32-pwr regulator binding to DT schema format using
+json-schema.
+
+Signed-off-by: Pascal Paillet <p.paillet@st.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Link: https://lore.kernel.org/r/20191205161359.20755-1-p.paillet@st.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ .../regulator/st,stm32mp1-pwr-reg.txt         | 43 -------------
+ .../regulator/st,stm32mp1-pwr-reg.yaml        | 64 +++++++++++++++++++
+ 2 files changed, 64 insertions(+), 43 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.txt
+ create mode 100644 Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.yaml
+
+diff --git a/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.txt b/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.txt
+deleted file mode 100644
+index e372dd3f0c8a..000000000000
+--- a/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.txt
++++ /dev/null
+@@ -1,43 +0,0 @@
+-STM32MP1 PWR Regulators
+------------------------
+-
+-Available Regulators in STM32MP1 PWR block are:
+-  - reg11 for regulator 1V1
+-  - reg18 for regulator 1V8
+-  - usb33 for the swtich USB3V3
+-
+-Required properties:
+-- compatible: Must be "st,stm32mp1,pwr-reg"
+-- list of child nodes that specify the regulator reg11, reg18 or usb33
+-  initialization data for defined regulators. The definition for each of
+-  these nodes is defined using the standard binding for regulators found at
+-  Documentation/devicetree/bindings/regulator/regulator.txt.
+-- vdd-supply: phandle to the parent supply/regulator node for vdd input
+-- vdd_3v3_usbfs-supply: phandle to the parent supply/regulator node for usb33
+-
+-Example:
+-
+-pwr_regulators: pwr@50001000 {
+-	compatible = "st,stm32mp1,pwr-reg";
+-	reg = <0x50001000 0x10>;
+-	vdd-supply = <&vdd>;
+-	vdd_3v3_usbfs-supply = <&vdd_usb>;
+-
+-	reg11: reg11 {
+-		regulator-name = "reg11";
+-		regulator-min-microvolt = <1100000>;
+-		regulator-max-microvolt = <1100000>;
+-	};
+-
+-	reg18: reg18 {
+-		regulator-name = "reg18";
+-		regulator-min-microvolt = <1800000>;
+-		regulator-max-microvolt = <1800000>;
+-	};
+-
+-	usb33: usb33 {
+-		regulator-name = "usb33";
+-		regulator-min-microvolt = <3300000>;
+-		regulator-max-microvolt = <3300000>;
+-	};
+-};
+diff --git a/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.yaml b/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.yaml
+new file mode 100644
+index 000000000000..8d8f38fe85dc
+--- /dev/null
++++ b/Documentation/devicetree/bindings/regulator/st,stm32mp1-pwr-reg.yaml
+@@ -0,0 +1,64 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/regulator/st,stm32mp1-pwr-reg.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: STM32MP1 PWR voltage regulators
++
++maintainers:
++  - Pascal Paillet <p.paillet@st.com>
++
++properties:
++  compatible:
++    const: st,stm32mp1,pwr-reg
++
++  reg:
++    maxItems: 1
++
++  vdd-supply:
++    description: Input supply phandle(s) for vdd input
++
++  vdd_3v3_usbfs-supply:
++    description: Input supply phandle(s) for vdd_3v3_usbfs input
++
++patternProperties:
++  "^(reg11|reg18|usb33)$":
++    type: object
++
++    allOf:
++      - $ref: "regulator.yaml#"
++
++required:
++  - compatible
++  - reg
++
++additionalProperties: false
++
++examples:
++  - |
++    pwr@50001000 {
++      compatible = "st,stm32mp1,pwr-reg";
++      reg = <0x50001000 0x10>;
++      vdd-supply = <&vdd>;
++      vdd_3v3_usbfs-supply = <&vdd_usb>;
++
++      reg11 {
++        regulator-name = "reg11";
++        regulator-min-microvolt = <1100000>;
++        regulator-max-microvolt = <1100000>;
++      };
++
++      reg18 {
++        regulator-name = "reg18";
++        regulator-min-microvolt = <1800000>;
++        regulator-max-microvolt = <1800000>;
++      };
++
++      usb33 {
++        regulator-name = "usb33";
++        regulator-min-microvolt = <3300000>;
++        regulator-max-microvolt = <3300000>;
++      };
++    };
++...
 -- 
-Jazz is not dead. It just smells funny...
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
