@@ -2,48 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 828111281BC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 18:58:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 950BA1281CA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 19:01:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7CHcjwzaeZtgc7jcL54DleCplPg1dKOoXBLHMq1nkm4=; b=i1hlf2I+JFjfZl
-	ETFVOrpGycc2DZO2hirwhtSc+zh5UHmqFkZdh0ZepAY+K9UtvMCqL1L8COHKPWTZ4PKm90NE0lx2x
-	VlwwqXLFZ5It7SFwsPMQAwy5NIRtpaJnL9Fvzq9RBhTiI0pNcjDwkyd7IbhEFyXiurvRkDlN02XK1
-	Sh/5SKa677i6SITsNTidsFROA/XmsYK+VLgqt8udlbOTr9AnhTEIkuew5AXeGqtw1o2M0U/Ii4J+H
-	6YW7GGXvYR9p0j0vtQ41xKuRwigB5Sxk2SHe2iQEv7VT6IT6xUc9XkE2V8nQKWugJe7G5hG2ZbU8g
-	5MpHln2THz6KprHVOT8Q==;
+	List-Owner; bh=ubXLBEtqNu2eh7GPaGsTaxsxw8cl73lhRnSfcgzfb64=; b=Uzk53LmOyeqY6g
+	EmLyIKaD6Wx04GCQt7usZZ++PePb5aKNPGQ1LV6I5JDL5O219jafvHXHqsW8M5l9562opcMUBaQx2
+	d2n8WP3ZMMyZCHWnKo4sz/KucycI3v/OybAMK76mORohg8GYGfCjvIhPRYMMGv09j5PbIlQlGBqgA
+	a+nY+80N+eNSxC1gGhvX3dCuuMUe6+D6PDMmQg8XvfqHwacwlZdeC+1E+n/iVpfTprM0BKBkWJJIY
+	MDpEZIP6GZ6a+PAKNfaOMzUZDa9hbxiyGUWAfXeC/BYo0By76IVtOuS/vwKkGA6/gfcc31jB+BzIf
+	KdY3v1a3b5aHP6upRjbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiMXY-0008UV-9u; Fri, 20 Dec 2019 17:58:16 +0000
+	id 1iiMaz-00025k-N3; Fri, 20 Dec 2019 18:01:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiMXL-0008S9-A9
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 17:58:04 +0000
+ id 1iiMar-00025R-8S
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 18:01:42 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AD6471FB;
- Fri, 20 Dec 2019 09:58:00 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 124921FB;
+ Fri, 20 Dec 2019 10:01:40 -0800 (PST)
 Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
  by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- E30B13F67D; Fri, 20 Dec 2019 09:57:59 -0800 (PST)
-Date: Fri, 20 Dec 2019 17:57:57 +0000
+ 620DA3F67D; Fri, 20 Dec 2019 10:01:39 -0800 (PST)
+Date: Fri, 20 Dec 2019 18:01:37 +0000
 From: Catalin Marinas <catalin.marinas@arm.com>
-To: Hanjun Guo <guohanjun@huawei.com>
-Subject: Re: [PATCH] arm64: cpu_errata: Add Hisilicon TSV110 to spectre-v2
- safe list
-Message-ID: <20191220175757.GE16428@arrakis.emea.arm.com>
-References: <1576833430-11839-1-git-send-email-guohanjun@huawei.com>
+To: Loic Poulain <loic.poulain@linaro.org>
+Subject: Re: [PATCH] arm64: Add qcom Kconfig fragment
+Message-ID: <20191220180137.GF16428@arrakis.emea.arm.com>
+References: <1576850160-1564-1-git-send-email-loic.poulain@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1576833430-11839-1-git-send-email-guohanjun@huawei.com>
+In-Reply-To: <1576850160-1564-1-git-send-email-loic.poulain@linaro.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_095803_396171_9BCC47DD 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191220_100141_343307_8B7B3289 
+X-CRM114-Status: GOOD (  10.33  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,25 +62,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wei Li <liwei391@huawei.com>, Will Deacon <will@kernel.org>,
- linuxarm@huawei.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-msm@vger.kernel.org, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 20, 2019 at 05:17:10PM +0800, Hanjun Guo wrote:
-> From: Wei Li <liwei391@huawei.com>
+On Fri, Dec 20, 2019 at 02:56:00PM +0100, Loic Poulain wrote:
+> Add qcom Kconfig fragment which enables the appropriate symbols for
+> support of Qualcomm based boards, like the 'popular' dragonboards.
+> This permits to fully support the boards upstream without having to
+> rely on downstream deconfig changes.
 > 
-> HiSilicon Taishan v110 CPUs didn't implement CSV2 field of the
-> ID_AA64PFR0_EL1, but spectre-v2 is mitigated by hardware, so
-> whitelist the MIDR in the safe list.
+> This patch has been tested with Dragonboard-410c and Dragonboard-820c.
 > 
-> Signed-off-by: Wei Li <liwei391@huawei.com>
-> [hanjun: re-write the commit log]
-> Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
+> qcom.config fragment has been generated with ./script/diffconfig
+> 
+> Signed-off-by: Loic Poulain <loic.poulain@linaro.org>
 
-Queued for 5.5. Thanks.
+Please add these to defconfig (and make sure they don't break the single
+kernel image).
+
+NAK for this patch.
 
 -- 
 Catalin
