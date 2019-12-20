@@ -2,45 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8D7F127CC1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 15:31:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B6EB127CC2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 15:31:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=pEirKfGzVBWqYOK+ithAzNRfP9daU3m/rfe/7+RDY9U=; b=mwndCKZtza8tTB
-	Qq4SLCZ/95uopVaiilEBH0whu1Hh37+ZAcHdG9BEaeKxge7oZowywy1TeRi/b+RkpiU//DnTntwLn
-	Z8vzK5Ri1bB2rK3GrJ6fw5qKcd953c5BLPprj0O2F9urNuif+tJux8lkPIPAWI/9yBg3dJOb149gx
-	7LgRbUDyx9DTJrWrNPRREpJI9WGeOBOl5byLrrjMNoMdOM2ulPRuWRtf1C7P0nYa9wSQ6CJ6RUxC/
-	YaKHCF+DoqoGmEPl4tgw5QmrPgdKrN0W3QbIxSlOSLRo+ho+xqDLJuS6MyBpfbEqvuDlO0s0sMwV/
-	nNFnHZufb47Cx1TQZK1w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KwAZdZxj0Uj4hmQRkq/ca+gYXIpa6+I3Plxy94R4d08=; b=gOJxZ6lqsfqGvA
+	cL2ERczB6yyTMYlx+4JSdD0Fk/Zcbz5sdwQJqMUl+Y9/Wzw4mNSrCcepauJl+2shXC+JVWZVRBYRl
+	dMIyFNAurSFAL4fwmvs76Z33XS3vtLFTLdNjHjgFLVniG5Ii3Dt7FQzXFuONrsIo5qvk6wlguZ2/k
+	l1dtNtsAI/Ceh5SiA4CO3YmoDojg5kS87ljSTu/hSvUHaXsNo9kA/Kw18//ja+QAHcLar83eULrpY
+	gmVyuwG3QEVSmk77oAAfq5W1YujE+aqtF1XM8LsCVwD1Co0SAmVevXWMFPu0pUpZfgW5mYEbJUQ9X
+	s7QNNwDQvQjUtLul4oXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiJJJ-0002E3-HX; Fri, 20 Dec 2019 14:31:21 +0000
+	id 1iiJJV-0002RE-DG; Fri, 20 Dec 2019 14:31:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiJIb-0001pj-Av
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 14:30:45 +0000
+ id 1iiJIb-0001rl-Jk
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 14:30:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 648A130E;
- Fri, 20 Dec 2019 06:30:32 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8CAC431B;
+ Fri, 20 Dec 2019 06:30:34 -0800 (PST)
 Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8ABF43F718;
- Fri, 20 Dec 2019 06:30:30 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B39603F718;
+ Fri, 20 Dec 2019 06:30:32 -0800 (PST)
 From: Andrew Murray <andrew.murray@arm.com>
 To: Marc Zyngier <marc.zyngier@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v2 00/18] arm64: KVM: add SPE profiling support
-Date: Fri, 20 Dec 2019 14:30:07 +0000
-Message-Id: <20191220143025.33853-1-andrew.murray@arm.com>
+Subject: [PATCH v2 01/18] dt-bindings: ARM SPE: highlight the need for PPI
+ partitions on heterogeneous systems
+Date: Fri, 20 Dec 2019 14:30:08 +0000
+Message-Id: <20191220143025.33853-2-andrew.murray@arm.com>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20191220143025.33853-1-andrew.murray@arm.com>
+References: <20191220143025.33853-1-andrew.murray@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_063037_479685_1574EAE3 
-X-CRM114-Status: GOOD (  16.26  )
+X-CRM114-CacheID: sfid-20191220_063037_718383_6E7EDF3B 
+X-CRM114-Status: GOOD (  10.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,94 +72,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series implements support for allowing KVM guests to use the Arm
-Statistical Profiling Extension (SPE).
+From: Sudeep Holla <sudeep.holla@arm.com>
 
-It has been tested on a model to ensure that both host and guest can
-simultaneously use SPE with valid data. E.g.
+It's not entirely clear for the binding document that the only way to
+express ARM SPE affined to a subset of CPUs on a heterogeneous systems
+is through the use of PPI partitions available in the interrupt
+controller bindings.
 
-$ perf record -e arm_spe/ts_enable=1,pa_enable=1,pct_enable=1/ \
-        dd if=/dev/zero of=/dev/null count=1000
-$ perf report --dump-raw-trace > spe_buf.txt
+Let's make it clear.
 
-As we save and restore the SPE context, the guest can access the SPE
-registers directly, thus in this version of the series we remove the
-trapping and emulation.
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+---
+ Documentation/devicetree/bindings/arm/spe-pmu.txt | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-In the previous series of this support, when KVM SPE isn't supported
-(e.g. via CONFIG_KVM_ARM_SPE) we were able to return a value of 0 to
-all reads of the SPE registers - as we can no longer do this there isn't
-a mechanism to prevent the guest from using SPE - thus I'm keen for
-feedback on the best way of resolving this.
-
-It appears necessary to pin the entire guest memory in order to provide
-guest SPE access - otherwise it is possible for the guest to receive
-Stage-2 faults.
-
-The last two extra patches are for the kvmtool if someone wants to play
-with it.
-
-Changes since v2:
-	- Rebased on v5.5-rc2
-	- Renamed kvm_spe structure 'irq' member to 'irq_num'
-	- Added irq_level to kvm_spe structure
-	- Clear PMBSR service bit on save to avoid spurious interrupts
-	- Update kvmtool headers to 5.4
-	- Enabled SPE in KVM init features
-	- No longer trap and emulate
-	- Add support for guest/host exclusion flags
-	- Fix virq support for SPE
-	- Adjusted sysreg_elx_s macros with merged clang build support
-
-Andrew Murray (4):
-  KVM: arm64: don't trap Statistical Profiling controls to EL2
-  perf: arm_spe: Add KVM structure for obtaining IRQ info
-  KVM: arm64: spe: Provide guest virtual interrupts for SPE
-  perf: arm_spe: Handle guest/host exclusion flags
-
-Sudeep Holla (12):
-  dt-bindings: ARM SPE: highlight the need for PPI partitions on
-    heterogeneous systems
-  arm64: KVM: reset E2PB correctly in MDCR_EL2 when exiting the
-    guest(VHE)
-  arm64: KVM: define SPE data structure for each vcpu
-  arm64: KVM: add SPE system registers to sys_reg_descs
-  arm64: KVM/VHE: enable the use PMSCR_EL12 on VHE systems
-  arm64: KVM: split debug save restore across vm/traps activation
-  arm64: KVM/debug: drop pmscr_el1 and use sys_regs[PMSCR_EL1] in
-    kvm_cpu_context
-  arm64: KVM: add support to save/restore SPE profiling buffer controls
-  arm64: KVM: enable conditional save/restore full SPE profiling buffer
-    controls
-  arm64: KVM/debug: use EL1&0 stage 1 translation regime
-  KVM: arm64: add a new vcpu device control group for SPEv1
-  KVM: arm64: enable SPE support
-  KVMTOOL: update_headers: Sync kvm UAPI headers with linux v5.5-rc2
-  KVMTOOL: kvm: add a vcpu feature for SPEv1 support
-
- .../devicetree/bindings/arm/spe-pmu.txt       |   5 +-
- Documentation/virt/kvm/devices/vcpu.txt       |  28 +++
- arch/arm64/include/asm/kvm_host.h             |  18 +-
- arch/arm64/include/asm/kvm_hyp.h              |   6 +-
- arch/arm64/include/asm/sysreg.h               |   1 +
- arch/arm64/include/uapi/asm/kvm.h             |   4 +
- arch/arm64/kvm/Kconfig                        |   7 +
- arch/arm64/kvm/Makefile                       |   1 +
- arch/arm64/kvm/debug.c                        |   2 -
- arch/arm64/kvm/guest.c                        |   6 +
- arch/arm64/kvm/hyp/debug-sr.c                 | 105 +++++---
- arch/arm64/kvm/hyp/switch.c                   |  18 +-
- arch/arm64/kvm/reset.c                        |   3 +
- arch/arm64/kvm/sys_regs.c                     |  11 +
- drivers/perf/arm_spe_pmu.c                    |  26 ++
- include/kvm/arm_spe.h                         |  82 ++++++
- include/uapi/linux/kvm.h                      |   1 +
- virt/kvm/arm/arm.c                            |  10 +-
- virt/kvm/arm/spe.c                            | 234 ++++++++++++++++++
- 19 files changed, 521 insertions(+), 47 deletions(-)
- create mode 100644 include/kvm/arm_spe.h
- create mode 100644 virt/kvm/arm/spe.c
-
+diff --git a/Documentation/devicetree/bindings/arm/spe-pmu.txt b/Documentation/devicetree/bindings/arm/spe-pmu.txt
+index 93372f2a7df9..4f4815800f6e 100644
+--- a/Documentation/devicetree/bindings/arm/spe-pmu.txt
++++ b/Documentation/devicetree/bindings/arm/spe-pmu.txt
+@@ -9,8 +9,9 @@ performance sample data using an in-memory trace buffer.
+ 	       "arm,statistical-profiling-extension-v1"
+ 
+ - interrupts : Exactly 1 PPI must be listed. For heterogeneous systems where
+-               SPE is only supported on a subset of the CPUs, please consult
+-	       the arm,gic-v3 binding for details on describing a PPI partition.
++               SPE is only supported on a subset of the CPUs, a PPI partition
++	       described in the arm,gic-v3 binding must be used to describe
++	       the set of CPUs this interrupt is affine to.
+ 
+ ** Example:
+ 
 -- 
 2.21.0
 
