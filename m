@@ -2,61 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07016128441
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 23:02:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EA491284F2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 23:36:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Bipnw2eKO5tqUd+ZZhbTF2/+1JagppdNAsXTYvPFK2A=; b=f8l0d52b9W/rB7VVviddFnv5T
-	YXXJhTcNQB5nT0MYkTv7v0WXV+vRmFbEZZZbwG7pT4AzYsoI0+qbV6GCD8vBRhDy8bQdnk19c6muS
-	UNPMq27XxsLM7z0/3AQMgbZ9a9dD3JTlBhJyRlRxsdtL7Azicds1gw5/aKFKMjHfIMh5zoTvZNTEP
-	8QhAA2IoF8rc3pXzXUwifnkKC0g9jpKSDwhm4Vb1fGA2YCoAV38xGylhoZjnN+sNQVbwaUOZvfCwX
-	LUYDitWvtQLnkLYEqha5lxBWlIq8fNwdZmUskkwc+WIDIFTE2M/RcZLjo5xdxN3yvCaUkgRq6wSVE
-	EEdIZLsCw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yRi3oxz/vXb0hpI5PZe6FYjZlzDtBzDkFQeE72rBudo=; b=j1z26PsQ07sSrb
+	ygD7b2K8eSb1ChvUwWp5Rck9nWE/6YbPY+dYHmP15zstSPbXbHM9tFXoo1JOyS/Qa7pPraV65ON+6
+	ewx8YD8HuyRG/LmgG6IQs1TXHTTPER/EC0o8FAQQfXi+2baImJ6BeRWH8L3COKihOAVlnxo3m43y6
+	xC7RrHJJAQzDUDNdxr3BGbcv+pwQr3nTExOEWoBhr4QeWcCESZoivX39ID9faQpu5E95j+01yJDib
+	BHzu4kRIVzey+jHW47toSUsICWjNYP9SFpkKEcJSp0DUft+wliCdilooTJ0PDkABWJrV1s26uc995
+	U3T11bmLS6KPU3nXLodQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiQLv-00047k-DE; Fri, 20 Dec 2019 22:02:31 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiQLi-000470-Hf
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 22:02:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 893BF30E;
- Fri, 20 Dec 2019 14:02:17 -0800 (PST)
-Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9CCEC3F67D;
- Fri, 20 Dec 2019 14:02:15 -0800 (PST)
-Subject: Re: [RFC PATCH v1] devres: align devres.data strictly only for
- devm_kmalloc()
-To: Peter Zijlstra <peterz@infradead.org>
-References: <74ae22cd-08c1-d846-3e1d-cbc38db87442@free.fr>
- <bf020a68-00fd-2bb7-c3b6-00f5befa293a@free.fr>
- <20191220140655.GN2827@hirez.programming.kicks-ass.net>
- <9be1d523-e92c-836b-b79d-37e880d092a0@arm.com>
- <20191220171359.GP2827@hirez.programming.kicks-ass.net>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <b2e0e322-a4e7-af26-d64a-1ba226e48476@arm.com>
-Date: Fri, 20 Dec 2019 22:02:13 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+	id 1iiQsi-0006bi-94; Fri, 20 Dec 2019 22:36:24 +0000
+Received: from mail-io1-f68.google.com ([209.85.166.68])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iiQsb-0006bI-Kp
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 22:36:19 +0000
+Received: by mail-io1-f68.google.com with SMTP id c16so9521002ioh.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 20 Dec 2019 14:36:11 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=r/ujD9cpeTVxLA7xaDbDkgLLbv59I8EnWN3w9PFRh2g=;
+ b=AuRdlUlqLEb9RxuV6DI/c6/DwYBgbD6DXkEg4PrY3OJx6YYb7W2JxpJlwF2CsaLcYX
+ TcRF9VYTI2GOjhum1nUe8PlLm8rLgcaJjr9E8Y2r3wQK7CH0QQlxtLZTzdC1OURWt1Jz
+ 1KF9KggY9Lz8c3BhXYQt/LrOzHeF8O3OY8TqyYhXYnTEO1hmj8G65KR7+8G8a45KHKqy
+ MuMNic29V/bgt97OwR3H+MMRMLHqO25cSaKeVnglclG+N3dq3GEZOw4xXsyVEZgQBxFW
+ 8sOwVhwtd2mpU1dGo6Z37vBkREVyervASEu31RVf8FGKCH8+o6jhEszUqQaJ37G7GAF+
+ vLhQ==
+X-Gm-Message-State: APjAAAXh8hkUtG7rEPEEsFIkOq8HkmCSNCzYoIOa/1K9qv/DJmlTEsps
+ 4tJj7ox3pB7rk7chapQSxw==
+X-Google-Smtp-Source: APXvYqznRk6G0L20Qoe2oj7Zw9Ec8BirMdFnF1btWzmGivMJBa/bk89K1dHrEAE9tQQWsYloq5Ln2g==
+X-Received: by 2002:a02:cd9c:: with SMTP id l28mr14138518jap.46.1576881370878; 
+ Fri, 20 Dec 2019 14:36:10 -0800 (PST)
+Received: from localhost ([64.188.179.251])
+ by smtp.gmail.com with ESMTPSA id e1sm5446541ill.47.2019.12.20.14.36.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 20 Dec 2019 14:36:10 -0800 (PST)
+Date: Fri, 20 Dec 2019 15:36:09 -0700
+From: Rob Herring <robh@kernel.org>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH] dt-bindings: opp: Convert Allwinner H6 OPP to a schema
+Message-ID: <20191220223609.GA8940@bogus>
+References: <20191219084623.944458-1-maxime@cerno.tech>
 MIME-Version: 1.0
-In-Reply-To: <20191220171359.GP2827@hirez.programming.kicks-ass.net>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20191219084623.944458-1-maxime@cerno.tech>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_140218_628115_68FB7019 
-X-CRM114-Status: GOOD (  14.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191220_143617_681958_92DC4649 
+X-CRM114-Status: GOOD (  11.85  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [209.85.166.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.68 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,61 +89,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexey Brodkin <alexey.brodkin@synopsys.com>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Rafael Wysocki <rjw@rjwysocki.net>, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
- Tejun Heo <tj@kernel.org>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-pm@vger.kernel.org, tiny.windzz@gmail.com, vireshk@kernel.org,
+ Maxime Ripard <mripard@kernel.org>, sboyd@kernel.org,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <maxime@cerno.tech>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-20 5:13 pm, Peter Zijlstra wrote:
-> On Fri, Dec 20, 2019 at 03:01:03PM +0000, Robin Murphy wrote:
->> On 2019-12-20 2:06 pm, Peter Zijlstra wrote:
+On Thu, 19 Dec 2019 09:46:23 +0100, Maxime Ripard wrote:
+> The Allwinner H6 SoCs use binning in order to provide binning to
+> cpufreq which is supported in Linux, with a matching Device Tree binding.
 > 
->>> 	data = kmalloc(size + sizeof(struct devres), GFP_KERNEL);
-
-[ afterthought: size could also legitimately be smaller than a pointer 
-or some odd length such that the necessary alignment of struct devres 
-itself isn't met ]
-
->> At this point, you'd still need to special-case devm_kmalloc() to ensure
->> size is rounded up to the next ARCH_KMALLOC_MINALIGN granule, or you'd go
->> back to the original problem of the struct devres fields potentially sharing
->> a cache line with the data buffer. That needs to be avoided, because if the
->> devres list is modified while the buffer is mapped for noncoherent DMA
->> (which could legitimately happen as they are nominally distinct allocations
->> with different owners) there's liable to be data corruption one way or the
->> other.
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
 > 
-> Wait up, why are you allowing non-coherent DMA at less than page size
-> granularity? Is that really sane? Is this really supported behaviour for
-> devm ?
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> ---
+>  .../allwinner,sun50i-h6-operating-points.yaml | 129 ++++++++++++++
+>  .../bindings/opp/sun50i-nvmem-cpufreq.txt     | 167 ------------------
+>  2 files changed, 129 insertions(+), 167 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/opp/allwinner,sun50i-h6-operating-points.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/opp/sun50i-nvmem-cpufreq.txt
+> 
 
-There are two DMA APIs - the coherent (or "consistent") API for 
-allocating buffers which are guaranteed safe for random access at any 
-time *is* page-based, and on non-coherent architectures typically 
-involves a non-cacheable remap. There is also the streaming API for 
-one-off transfers of data already existing at a given kernel address 
-(think network packets, USB URBs, etc), which on non-coherent 
-architectures is achieved with explicit cache maintenance plus an API 
-contract that buffers must not be explicitly accessed by CPUs for the 
-duration of the mapping. Addresses from kmalloc() are explicitly valid 
-for dma_map_single() (and indeed are about the only thing you'd ever 
-reasonably feed it), which is the primary reason why 
-ARCH_KMALLOC_MINALIGN gets so big on architectures which can be 
-non-coherent and also suffer from creative cache designs.
+Applied, thanks.
 
-See DMA-API.txt and DMA-API-HOWTO.txt in Documentation/ for more details 
-if you like.
-
-Robin.
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
