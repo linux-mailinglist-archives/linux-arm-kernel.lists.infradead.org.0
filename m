@@ -2,56 +2,140 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EC61127D1F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 15:33:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8E96127D2B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 15:35:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iq4+El2W8izCLCRwlY2qy+y6A/hyU87BB067BtGXYUw=; b=OIuZVlU+9s+GuH
-	nn93w7gbtclDOSfDlnU9u9b+d9qqNMd6qxnk4XcwwEn0sc1WxkYsDKk8JwMtsLcff2koBb1QSiMd1
-	Bq8DlABUlJgsHp5xFrUsSaREbvs9tYwUZOyWxIw2Fd5BVDt0MmOBA4uFJe2cUMkkhFKsd7elxQJTP
-	aY9wVcLK4Eb7SPHMOA7dD//Sh49E46sJ1bqkdqz04QgDgyOf9ne6YupByffvajqbDGq9brdxXpaHd
-	W1BJ8IajvODS41V3WC3HnwshCyNZL2M3m5LmGv73Vo/RfgZC0h3naIEYNrBMAFro3Vs+O/MGrZlmL
-	y/QpcZ84fmQSen+yCyaQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ecs8OagC2Rv69fItKisIwWgz/7grjUvEM0kBi8r/1y8=; b=s9IvasbZ58pMQF
+	PD9uyw97qBuzSBq2LaGBeI2RSaxRl6jg9rc4EAX7i6OkTdntZMHtsWtxWjammc2i0lu8EUHnGq9mI
+	mtM0DZ+xwGIo6At2CpowL4B3zB5/ztizFbestqvS9it++jrbZSr3Tt4e4HIjwABze1JmcHaebdeH3
+	Je1+12jkZoGzaA9kAkvziIDMI4R8Lj9OcBDtIu3F0mzftPcxjWzmYXD8oxZNjH0vMMI8bM5/9iL04
+	fqCfxRhz+0L6RgvOYgKaVwJ3mnBe3B0Awi6uTeohIFaGYnVRmQ9KhddABlvTIiD1JRWxXJgF6Gunn
+	S4yRaAiaDHJnuaxFsTWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiJLW-0004S4-CZ; Fri, 20 Dec 2019 14:33:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiJJ9-00026l-RY
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 14:31:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B240831B;
- Fri, 20 Dec 2019 06:31:11 -0800 (PST)
-Received: from e119886-lin.cambridge.arm.com (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D9AF03F718;
- Fri, 20 Dec 2019 06:31:09 -0800 (PST)
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v2 18/18, KVMTOOL] kvm: add a vcpu feature for SPEv1 support
-Date: Fri, 20 Dec 2019 14:30:25 +0000
-Message-Id: <20191220143025.33853-19-andrew.murray@arm.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20191220143025.33853-1-andrew.murray@arm.com>
-References: <20191220143025.33853-1-andrew.murray@arm.com>
+	id 1iiJN6-0005aY-NL; Fri, 20 Dec 2019 14:35:16 +0000
+Received: from mout.web.de ([217.72.192.78])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iiJL6-0004Ak-Lr
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 14:33:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=web.de;
+ s=dbaedf251592; t=1576852368;
+ bh=+C6MFj3s6IODdFsx+eagSNyCsVBad3UUv97++hQqWtg=;
+ h=X-UI-Sender-Class:To:Cc:References:Subject:From:Date:In-Reply-To;
+ b=PdJtT2L7N42Ax8ywQLZ2x2T1r8dQ3IRKqGSPyj5lO6Kt+JQ24Lar7sA6LKoq75HhK
+ 8PRVWpXAXSDQ1OHs9zG+Lx39dYNMucltyC17JLbwl8eiwlE4W9EU9TkaQwIpKkrAaZ
+ xy9YZLTsFrD52n7+cLPrWsn2h32hkIqY8zonesos=
+X-UI-Sender-Class: c548c8c5-30a9-4db5-a2e7-cb6cb037b8f9
+Received: from [192.168.1.2] ([2.244.94.196]) by smtp.web.de (mrweb102
+ [213.165.67.124]) with ESMTPSA (Nemesis) id 0Lhev7-1hw4Dh1IUj-00mv9p; Fri, 20
+ Dec 2019 15:32:48 +0100
+To: Zengruan Ye <yezengruan@huawei.com>, kvm@vger.kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ linux-doc@vger.kernel.org, virtualization@lists.linux-foundation.org
+References: <20191217135549.3240-2-yezengruan@huawei.com>
+Subject: Re: [PATCH 1/5] KVM: arm64: Document PV-lock interface
+From: Markus Elfring <Markus.Elfring@web.de>
+Autocrypt: addr=Markus.Elfring@web.de; prefer-encrypt=mutual; keydata=
+ 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 FEE=
+Message-ID: <2337a083-499f-7778-7bf3-9f525a04e17a@web.de>
+Date: Fri, 20 Dec 2019 15:32:46 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
+In-Reply-To: <20191217135549.3240-2-yezengruan@huawei.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:eJYxpqmJrjI8l7uVlPbVM9B8T1kMzgJFfkbBbqKHGvl6gjBpJJw
+ C42j0xdiOOJKFfA4VTeZNgusOx8YeKknXaQibjgixcLUtFa4nYRpyQZpoucxp1SKWgjhI9w
+ /rkiqNIKQaH85shrWQrcuaZNB7jXcwZSpVQHfu0xItAWBjjD03P9Tm6feNl/ZgumAfO3/jk
+ 9J8QaNxyfifXBhzD/DD8w==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Ckc/dqP8/+Q=:eBlZwjc9kktQVftlyG/Rbs
+ HF2tUUNsb4a6tgPoleDcI+0dcmYqjfGmLKzPr6KLI6Tq9IRTCCyYlh86dh4oNC3dARsG12H3d
+ YhsfgMQIJU92Tkkc4wqM3k1vsBu3OD4Y3j3lU3f5ZVzUgGMrSvoQFhhkxdWKl/YE9tlOIWAC9
+ usyPCZgIYPXMDLcZk/LcJvB2MUlRdcOdGi6/AR3hfV8g/KMJU8AFh9vRQHLgIMzknqz9hHNFr
+ eonFzVZEBwSo5LOXd8cPHTZ4UuO6sypD0Bdt93mkqQwtnn2lH5z9cNSDeD2El3Y0MnUx0eUjI
+ 5LaUGPdte/MZOXQ3CVEHdUFgQdXzpRYfoGMAujHpz3xhTs6glY8dntXMVo68QHLuAeGGDrcz9
+ OYvxifZg1erlIqBIZY8zJI/LAghtsFPKy5CqygL83j9E/er1cWjo7zE4TbHnRvAHE0nn0WKD1
+ fF1re7ZikB3fNctI/KeiZbozB2OYXQBNuQYIS9/J3U4v1dnuzCmphL7+sn2/OCJ/pLMNmavEg
+ 77GxRFmYJSqJEKYMAUY5YJx9PDPfC5cOI+Y6FhlSENAXGPJsyndipfiX3fEyInEUFSPp+1MjS
+ AYhglQzM2sReOmoIiFX7OHFLcQrECh5BWopsfoG40OWyjbUv5THXGcRinKv2S8mJQuclDm1gR
+ wWKtzhNHU8aKuViW7bKMzYqyJ89arVe0WUZv79OK/fhfk/e0msTMa5YBs5KN0OtKK6xQR1Jxj
+ mxyu2xPFrh8Lxs7CjeW8leJnhrTCKrmDTevieU8p0X1M5mEI2mO8WFbBt5uHhw3QfBpzf5dMH
+ cx3mtkMF9Zxr1wj/wGBYXe89IPtae/1HGnH38OYn2mfA+z5MJK0Lt+Lnb3B4RpokR2itZQEBf
+ +/Gr8bMAbXjzERzvbH01PMVOul1jpTj91Y/BExrGpj1YSGvpJA4vyUslNklaAmcjERSZFfiCj
+ 0Jf67dtSXaPhAR6hlcCfNHJXDL2JMPCTY2vNBf1nNCh7jolGUi6WoSvUtsAPARdsHocgUgzDY
+ ojpCcWJK0jZFVQ79qLCc5uBKMCS01hlMfNztZnS2i2YKJLSKnFeFE9XDYQNhZSWApKDmUZFGU
+ fWIicYLhOnuYJKRZj+awmts+TnjzSr2XR8GLmjB5OSmwoTl3V9/Oa3ngrDIWKa/42hS8YO+gm
+ VPksdPl251aFkwH22pmix8NDetfS2E8QXTOiuLdMMJ43rWll2tFroU0QpS2DQhI/5NFZGy/Q+
+ BLTgWp92CbaCPX1wgPB287F+/0LyDqTNxJ5AGdajR2T5hop/TsnD6TlFe7sk=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_063112_026909_89F6EC6E 
-X-CRM114-Status: GOOD (  18.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191220_063313_067554_97BD12A8 
+X-CRM114-Status: UNSURE (   7.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.72.192.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (markus.elfring[at]web.de)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,223 +147,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
- linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, James Morse <james.morse@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Steven Price <steven.price@arm.com>,
+ Will Deacon <will@kernel.org>, Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is a runtime configurable for KVM tool to enable Statistical
-Profiling Extensions version 1 support in guest kernel. A command line
-option --spe is required to use the same.
-
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-[ Add SPE to init features ]
-Signed-off-by: Andrew Murray <andrew.murray@arm.com>
----
- Makefile                                  |  2 +-
- arm/aarch64/arm-cpu.c                     |  2 +
- arm/aarch64/include/kvm/kvm-config-arch.h |  2 +
- arm/aarch64/include/kvm/kvm-cpu-arch.h    |  3 +-
- arm/aarch64/kvm-cpu.c                     |  4 ++
- arm/include/arm-common/kvm-config-arch.h  |  1 +
- arm/include/arm-common/spe.h              |  4 ++
- arm/spe.c                                 | 81 +++++++++++++++++++++++
- 8 files changed, 97 insertions(+), 2 deletions(-)
- create mode 100644 arm/include/arm-common/spe.h
- create mode 100644 arm/spe.c
-
-diff --git a/Makefile b/Makefile
-index 3862112c5ec6..04dddb3e7699 100644
---- a/Makefile
-+++ b/Makefile
-@@ -158,7 +158,7 @@ endif
- # ARM
- OBJS_ARM_COMMON		:= arm/fdt.o arm/gic.o arm/gicv2m.o arm/ioport.o \
- 			   arm/kvm.o arm/kvm-cpu.o arm/pci.o arm/timer.o \
--			   arm/pmu.o
-+			   arm/pmu.o arm/spe.o
- HDRS_ARM_COMMON		:= arm/include
- ifeq ($(ARCH), arm)
- 	DEFINES		+= -DCONFIG_ARM
-diff --git a/arm/aarch64/arm-cpu.c b/arm/aarch64/arm-cpu.c
-index d7572b7790b1..6ccea033f361 100644
---- a/arm/aarch64/arm-cpu.c
-+++ b/arm/aarch64/arm-cpu.c
-@@ -6,6 +6,7 @@
- #include "arm-common/gic.h"
- #include "arm-common/timer.h"
- #include "arm-common/pmu.h"
-+#include "arm-common/spe.h"
- 
- #include <linux/byteorder.h>
- #include <linux/types.h>
-@@ -17,6 +18,7 @@ static void generate_fdt_nodes(void *fdt, struct kvm *kvm)
- 	gic__generate_fdt_nodes(fdt, kvm->cfg.arch.irqchip);
- 	timer__generate_fdt_nodes(fdt, kvm, timer_interrupts);
- 	pmu__generate_fdt_nodes(fdt, kvm);
-+	spe__generate_fdt_nodes(fdt, kvm);
- }
- 
- static int arm_cpu__vcpu_init(struct kvm_cpu *vcpu)
-diff --git a/arm/aarch64/include/kvm/kvm-config-arch.h b/arm/aarch64/include/kvm/kvm-config-arch.h
-index 04be43dfa9b2..9968e1666de5 100644
---- a/arm/aarch64/include/kvm/kvm-config-arch.h
-+++ b/arm/aarch64/include/kvm/kvm-config-arch.h
-@@ -6,6 +6,8 @@
- 			"Run AArch32 guest"),				\
- 	OPT_BOOLEAN('\0', "pmu", &(cfg)->has_pmuv3,			\
- 			"Create PMUv3 device"),				\
-+	OPT_BOOLEAN('\0', "spe", &(cfg)->has_spev1,			\
-+			"Create SPEv1 device"),				\
- 	OPT_U64('\0', "kaslr-seed", &(cfg)->kaslr_seed,			\
- 			"Specify random seed for Kernel Address Space "	\
- 			"Layout Randomization (KASLR)"),
-diff --git a/arm/aarch64/include/kvm/kvm-cpu-arch.h b/arm/aarch64/include/kvm/kvm-cpu-arch.h
-index 8dfb82ecbc37..080183fa4f81 100644
---- a/arm/aarch64/include/kvm/kvm-cpu-arch.h
-+++ b/arm/aarch64/include/kvm/kvm-cpu-arch.h
-@@ -8,7 +8,8 @@
- #define ARM_VCPU_FEATURE_FLAGS(kvm, cpuid)	{				\
- 	[0] = ((!!(cpuid) << KVM_ARM_VCPU_POWER_OFF) |				\
- 	       (!!(kvm)->cfg.arch.aarch32_guest << KVM_ARM_VCPU_EL1_32BIT) |	\
--	       (!!(kvm)->cfg.arch.has_pmuv3 << KVM_ARM_VCPU_PMU_V3))		\
-+	       (!!(kvm)->cfg.arch.has_pmuv3 << KVM_ARM_VCPU_PMU_V3) |		\
-+	       (!!(kvm)->cfg.arch.has_spev1 << KVM_ARM_VCPU_SPE_V1))		\
- }
- 
- #define ARM_MPIDR_HWID_BITMASK	0xFF00FFFFFFUL
-diff --git a/arm/aarch64/kvm-cpu.c b/arm/aarch64/kvm-cpu.c
-index 9f3e8586880c..90c2e1784e97 100644
---- a/arm/aarch64/kvm-cpu.c
-+++ b/arm/aarch64/kvm-cpu.c
-@@ -140,6 +140,10 @@ void kvm_cpu__select_features(struct kvm *kvm, struct kvm_vcpu_init *init)
- 	/* Enable SVE if available */
- 	if (kvm__supports_extension(kvm, KVM_CAP_ARM_SVE))
- 		init->features[0] |= 1UL << KVM_ARM_VCPU_SVE;
-+
-+	/* Enable SPE if available */
-+	if (kvm__supports_extension(kvm, KVM_CAP_ARM_SPE_V1))
-+		init->features[0] |= 1UL << KVM_ARM_VCPU_SPE_V1;
- }
- 
- int kvm_cpu__configure_features(struct kvm_cpu *vcpu)
-diff --git a/arm/include/arm-common/kvm-config-arch.h b/arm/include/arm-common/kvm-config-arch.h
-index 5734c46ab9e6..742733e289af 100644
---- a/arm/include/arm-common/kvm-config-arch.h
-+++ b/arm/include/arm-common/kvm-config-arch.h
-@@ -9,6 +9,7 @@ struct kvm_config_arch {
- 	bool		virtio_trans_pci;
- 	bool		aarch32_guest;
- 	bool		has_pmuv3;
-+	bool		has_spev1;
- 	u64		kaslr_seed;
- 	enum irqchip_type irqchip;
- 	u64		fw_addr;
-diff --git a/arm/include/arm-common/spe.h b/arm/include/arm-common/spe.h
-new file mode 100644
-index 000000000000..bcfa40877f6f
---- /dev/null
-+++ b/arm/include/arm-common/spe.h
-@@ -0,0 +1,4 @@
-+
-+#define KVM_ARM_SPEV1_PPI			21
-+
-+void spe__generate_fdt_nodes(void *fdt, struct kvm *kvm);
-diff --git a/arm/spe.c b/arm/spe.c
-new file mode 100644
-index 000000000000..ec03b01a3866
---- /dev/null
-+++ b/arm/spe.c
-@@ -0,0 +1,81 @@
-+#include "kvm/fdt.h"
-+#include "kvm/kvm.h"
-+#include "kvm/kvm-cpu.h"
-+#include "kvm/util.h"
-+
-+#include "arm-common/gic.h"
-+#include "arm-common/spe.h"
-+
-+#ifdef CONFIG_ARM64
-+static int set_spe_attr(struct kvm *kvm, int vcpu_idx,
-+			struct kvm_device_attr *attr)
-+{
-+	int ret, fd;
-+
-+	fd = kvm->cpus[vcpu_idx]->vcpu_fd;
-+
-+	ret = ioctl(fd, KVM_HAS_DEVICE_ATTR, attr);
-+	if (!ret) {
-+		ret = ioctl(fd, KVM_SET_DEVICE_ATTR, attr);
-+		if (ret)
-+			pr_err("SPE KVM_SET_DEVICE_ATTR failed (%d)\n", ret);
-+	} else {
-+		pr_err("Unsupported SPE on vcpu%d\n", vcpu_idx);
-+	}
-+
-+	return ret;
-+}
-+
-+void spe__generate_fdt_nodes(void *fdt, struct kvm *kvm)
-+{
-+	const char compatible[] = "arm,statistical-profiling-extension-v1";
-+	int irq = KVM_ARM_SPEV1_PPI;
-+	int i, ret;
-+
-+	u32 cpu_mask = (((1 << kvm->nrcpus) - 1) << GIC_FDT_IRQ_PPI_CPU_SHIFT) \
-+		       & GIC_FDT_IRQ_PPI_CPU_MASK;
-+	u32 irq_prop[] = {
-+		cpu_to_fdt32(GIC_FDT_IRQ_TYPE_PPI),
-+		cpu_to_fdt32(irq - 16),
-+		cpu_to_fdt32(cpu_mask | IRQ_TYPE_LEVEL_HIGH),
-+	};
-+
-+	if (!kvm->cfg.arch.has_spev1)
-+		return;
-+
-+	if (!kvm__supports_extension(kvm, KVM_CAP_ARM_SPE_V1)) {
-+		pr_info("SPE unsupported\n");
-+		return;
-+	}
-+
-+	for (i = 0; i < kvm->nrcpus; i++) {
-+		struct kvm_device_attr spe_attr;
-+
-+		spe_attr = (struct kvm_device_attr){
-+			.group	= KVM_ARM_VCPU_SPE_V1_CTRL,
-+			.addr	= (u64)(unsigned long)&irq,
-+			.attr	= KVM_ARM_VCPU_SPE_V1_IRQ,
-+		};
-+
-+		ret = set_spe_attr(kvm, i, &spe_attr);
-+		if (ret)
-+			return;
-+
-+		spe_attr = (struct kvm_device_attr){
-+			.group	= KVM_ARM_VCPU_SPE_V1_CTRL,
-+			.attr	= KVM_ARM_VCPU_SPE_V1_INIT,
-+		};
-+
-+		ret = set_spe_attr(kvm, i, &spe_attr);
-+		if (ret)
-+			return;
-+	}
-+
-+	_FDT(fdt_begin_node(fdt, "spe"));
-+	_FDT(fdt_property(fdt, "compatible", compatible, sizeof(compatible)));
-+	_FDT(fdt_property(fdt, "interrupts", irq_prop, sizeof(irq_prop)));
-+	_FDT(fdt_end_node(fdt));
-+}
-+#else
-+void spe__generate_fdt_nodes(void *fdt, struct kvm *kvm) { }
-+#endif
--- 
-2.21.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+4oCmDQo+ICsrKyBiL0RvY3VtZW50YXRpb24vdmlydC9rdm0vYXJtL3B2bG9jay5yc3QNCuKApg0K
+PiArUGFyYXZpcnR1YWxpemVkIGxvY2sgc3VwcG9ydCBmb3IgYXJtNjQNCj4gKz09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09DQo+ICsNCj4gK0tWTS9hcm02NCBwcm92aWRzIHNv
+bWUg4oCmDQrigKYNCg0KSSBzdWdnZXN0IHRvIGF2b2lkIGEgdHlwbyBoZXJlLg0KDQpSZWdhcmRz
+LA0KTWFya3VzDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
