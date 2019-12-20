@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5CD2127433
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 04:52:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C6AA127437
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 04:52:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+KlIXhpcMpfQnY1zFkRMkTbzOLaxd37q0wsYKCAdzhc=; b=px9qlpoy8T/iyj
-	e8voK+jN+4iHRhiNBLuzGl7HkMxGohRImX4XBhxBYo7/2iL5g5c1Gdyafld3tDxmqtKy0mWxBY+FV
-	f6a9q4CEs538VmnKQAN7kypQufpVxxD9Miihe6dPg2cOjOExIEI0YSmNnbsa+XRFi8woNzSKbjkPU
-	OG/Bux3Y2JwmpzEfIuSIoa2S5xIpTxbeCEOm2IdzzbOlkPXqucQ4F1C2HdUd1jRO2+CqJIC1ZtsFU
-	amjNR8GxcaEI+hCVtfmSvV/gfeU/X7t/ElBkpbbtYgJr4+aZH1DV7hljsBAervWb00L44RztihzfK
-	B1//d3nrx8E2sP55Dq3g==;
+	List-Owner; bh=EOsoN1x5GOf/g/nr0e8IIJRDCeom+BM9wbKcAqtRBwA=; b=gxiaXcEIQtsJ8i
+	4LAXNuyQy5MmHug2sUkz1Mz2WYXmh6UnNYWja2Z09Mf+bwpMI95KVirZhmbGsWYinIqd2pDAHlFaK
+	3TvP9impaIJPPE6P7Zes65VYAdzwGmLcoP0wDmIEAY+y+geXy/tcZY40EBSkNL9BOqIsEKP5XzT34
+	Ho2lh1cYMfG4zDb7/0cvkQffLf6sBznW0HXBrWadh9cFSNuK/Av4IcP+sYzWtH0Navsc3gEIR8J/d
+	bGgEqLnDdDol1Jfr++rtLmIRYRuZK4ttAVTVEt8XPpsUk+W6u1yBInsaegnNWKcq1t93d4G4uVxwk
+	fvewIJ8dqv96NFzmrYow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ii9Kt-0007fq-GI; Fri, 20 Dec 2019 03:52:19 +0000
+	id 1ii9LD-0007yb-9s; Fri, 20 Dec 2019 03:52:39 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ii9Jn-0006r7-Dh; Fri, 20 Dec 2019 03:51:13 +0000
-X-UUID: 4843b3bef3454a2ab62cc92227e6b28c-20191219
+ id 1ii9Jo-0006qo-0f; Fri, 20 Dec 2019 03:51:13 +0000
+X-UUID: 0bd705c82a6d4b67b4438dba854ff845-20191219
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=a5FCEy2BZm61QcAEPy9+kPZfwRGbVTTgU0WkpB3/H0E=; 
- b=Yuyy66fAkcK/JD7P9/WSFqmfRYK+rnnCkWZK7voWwH/DessIT/Q7Gk8rlapPnnfdquEyY1xx4EN+xZ2VwXVpyKh+1spSHbOjDQpvsVBBT2B9kKHnUbrgGsrrcD4+gSViVKegqXmovNs2lbbpRgBNltW3iwQwopf3C80anGiYtYk=;
-X-UUID: 4843b3bef3454a2ab62cc92227e6b28c-20191219
+ bh=w8agqSkABPe2gpBFFdaj1Yu7esFJCdenNL3aq1JoRvw=; 
+ b=e/HnjBMBLGpgHL5pXlaaJJWFGo5cLW22hLuwwSY7mhcI8qlxXQY/Tx1YTKnHdz6t4L3e3mQbzaBwxAOwhl0qZ8M1RR4YswJzmXEncX7vk8g97NyHgF0CCyOm/emKPJjGGcjXzymz4nPBWf8tKHQB2EnDDr3+LKj5LIWKt4lbTqs=;
+X-UUID: 0bd705c82a6d4b67b4438dba854ff845-20191219
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <weiyi.lu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1861648163; Thu, 19 Dec 2019 19:51:07 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ with ESMTP id 974706840; Thu, 19 Dec 2019 19:51:07 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Thu, 19 Dec 2019 19:46:34 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 20 Dec 2019 11:45:49 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 20 Dec 2019 11:45:50 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Fri, 20 Dec 2019 11:46:07 +0800
@@ -46,17 +46,18 @@ From: Weiyi Lu <weiyi.lu@mediatek.com>
 To: Nicolas Boichat <drinkcat@chromium.org>, Matthias Brugger
  <matthias.bgg@gmail.com>, Rob Herring <robh@kernel.org>, Sascha Hauer
  <kernel@pengutronix.de>
-Subject: [PATCH v11 05/10] soc: mediatek: Remove infracfg misc driver support
-Date: Fri, 20 Dec 2019 11:45:59 +0800
-Message-ID: <1576813564-23927-6-git-send-email-weiyi.lu@mediatek.com>
+Subject: [PATCH v11 06/10] soc: mediatek: Add subsys clock control for bus
+ protection
+Date: Fri, 20 Dec 2019 11:46:00 +0800
+Message-ID: <1576813564-23927-7-git-send-email-weiyi.lu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1576813564-23927-1-git-send-email-weiyi.lu@mediatek.com>
 References: <1576813564-23927-1-git-send-email-weiyi.lu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_195111_467831_2C9A1494 
-X-CRM114-Status: GOOD (  12.94  )
+X-CRM114-CacheID: sfid-20191219_195112_075101_215B417E 
+X-CRM114-Status: GOOD (  14.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,197 +98,163 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In previous patches, we introduce scpsys-ext driver that covers
-the functions which infracfg misc driver provided.
-And then replace bus_prot_mask with bp_table of all compatibles.
-Now, we're going to remove infracfg misc drvier which is no longer
-being used.
+Add subsys CG control flow before/after the bus protect control
+due to bus protection need SMI bus relative CGs enabled to feedback
+its ack.
 
 Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
 ---
- drivers/soc/mediatek/Kconfig          | 10 -----
- drivers/soc/mediatek/Makefile         |  3 +-
- drivers/soc/mediatek/mtk-infracfg.c   | 79 -----------------------------------
- include/linux/soc/mediatek/infracfg.h | 39 -----------------
- 4 files changed, 1 insertion(+), 130 deletions(-)
- delete mode 100644 drivers/soc/mediatek/mtk-infracfg.c
- delete mode 100644 include/linux/soc/mediatek/infracfg.h
+ drivers/soc/mediatek/mtk-scpsys.c | 72 +++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 70 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/soc/mediatek/Kconfig b/drivers/soc/mediatek/Kconfig
-index 2114b56..f837b3c 100644
---- a/drivers/soc/mediatek/Kconfig
-+++ b/drivers/soc/mediatek/Kconfig
-@@ -10,21 +10,12 @@ config MTK_CMDQ
- 	depends on ARCH_MEDIATEK || COMPILE_TEST
- 	select MAILBOX
- 	select MTK_CMDQ_MBOX
--	select MTK_INFRACFG
- 	help
- 	  Say yes here to add support for the MediaTek Command Queue (CMDQ)
- 	  driver. The CMDQ is used to help read/write registers with critical
- 	  time limitation, such as updating display configuration during the
- 	  vblank.
+diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+index 763ca58..32be4b3 100644
+--- a/drivers/soc/mediatek/mtk-scpsys.c
++++ b/drivers/soc/mediatek/mtk-scpsys.c
+@@ -79,6 +79,7 @@
+ #define PWR_STATUS_WB			BIT(27)	/* MT7622 */
  
--config MTK_INFRACFG
--	bool "MediaTek INFRACFG Support"
--	select REGMAP
--	help
--	  Say yes here to add support for the MediaTek INFRACFG controller. The
--	  INFRACFG controller contains various infrastructure registers not
--	  directly associated to any device.
--
- config MTK_PMIC_WRAP
- 	tristate "MediaTek PMIC Wrapper Support"
- 	depends on RESET_CONTROLLER
-@@ -38,7 +29,6 @@ config MTK_SCPSYS
- 	bool "MediaTek SCPSYS Support"
- 	default ARCH_MEDIATEK
- 	select REGMAP
--	select MTK_INFRACFG
- 	select PM_GENERIC_DOMAINS if PM
- 	help
- 	  Say yes here to add support for the MediaTek SCPSYS power domain
-diff --git a/drivers/soc/mediatek/Makefile b/drivers/soc/mediatek/Makefile
-index b442be9..7bf7e88 100644
---- a/drivers/soc/mediatek/Makefile
-+++ b/drivers/soc/mediatek/Makefile
-@@ -1,5 +1,4 @@
- # SPDX-License-Identifier: GPL-2.0-only
- obj-$(CONFIG_MTK_CMDQ) += mtk-cmdq-helper.o
--obj-$(CONFIG_MTK_INFRACFG) += mtk-infracfg.o mtk-scpsys-ext.o
- obj-$(CONFIG_MTK_PMIC_WRAP) += mtk-pmic-wrap.o
--obj-$(CONFIG_MTK_SCPSYS) += mtk-scpsys.o
-+obj-$(CONFIG_MTK_SCPSYS) += mtk-scpsys.o mtk-scpsys-ext.o
-diff --git a/drivers/soc/mediatek/mtk-infracfg.c b/drivers/soc/mediatek/mtk-infracfg.c
-deleted file mode 100644
-index 341c7ac..0000000
---- a/drivers/soc/mediatek/mtk-infracfg.c
-+++ /dev/null
-@@ -1,79 +0,0 @@
--// SPDX-License-Identifier: GPL-2.0-only
--/*
-- * Copyright (c) 2015 Pengutronix, Sascha Hauer <kernel@pengutronix.de>
-- */
--
--#include <linux/export.h>
--#include <linux/jiffies.h>
--#include <linux/regmap.h>
--#include <linux/soc/mediatek/infracfg.h>
--#include <asm/processor.h>
--
--#define MTK_POLL_DELAY_US   10
--#define MTK_POLL_TIMEOUT    (jiffies_to_usecs(HZ))
--
--#define INFRA_TOPAXI_PROTECTEN		0x0220
--#define INFRA_TOPAXI_PROTECTSTA1	0x0228
--#define INFRA_TOPAXI_PROTECTEN_SET	0x0260
--#define INFRA_TOPAXI_PROTECTEN_CLR	0x0264
--
--/**
-- * mtk_infracfg_set_bus_protection - enable bus protection
-- * @regmap: The infracfg regmap
-- * @mask: The mask containing the protection bits to be enabled.
-- * @reg_update: The boolean flag determines to set the protection bits
-- *              by regmap_update_bits with enable register(PROTECTEN) or
-- *              by regmap_write with set register(PROTECTEN_SET).
-- *
-- * This function enables the bus protection bits for disabled power
-- * domains so that the system does not hang when some unit accesses the
-- * bus while in power down.
-- */
--int mtk_infracfg_set_bus_protection(struct regmap *infracfg, u32 mask,
--		bool reg_update)
--{
--	u32 val;
--	int ret;
--
--	if (reg_update)
--		regmap_update_bits(infracfg, INFRA_TOPAXI_PROTECTEN, mask,
--				mask);
--	else
--		regmap_write(infracfg, INFRA_TOPAXI_PROTECTEN_SET, mask);
--
--	ret = regmap_read_poll_timeout(infracfg, INFRA_TOPAXI_PROTECTSTA1,
--				       val, (val & mask) == mask,
--				       MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
--
--	return ret;
--}
--
--/**
-- * mtk_infracfg_clear_bus_protection - disable bus protection
-- * @regmap: The infracfg regmap
-- * @mask: The mask containing the protection bits to be disabled.
-- * @reg_update: The boolean flag determines to clear the protection bits
-- *              by regmap_update_bits with enable register(PROTECTEN) or
-- *              by regmap_write with clear register(PROTECTEN_CLR).
-- *
-- * This function disables the bus protection bits previously enabled with
-- * mtk_infracfg_set_bus_protection.
-- */
--
--int mtk_infracfg_clear_bus_protection(struct regmap *infracfg, u32 mask,
--		bool reg_update)
--{
--	int ret;
--	u32 val;
--
--	if (reg_update)
--		regmap_update_bits(infracfg, INFRA_TOPAXI_PROTECTEN, mask, 0);
--	else
--		regmap_write(infracfg, INFRA_TOPAXI_PROTECTEN_CLR, mask);
--
--	ret = regmap_read_poll_timeout(infracfg, INFRA_TOPAXI_PROTECTSTA1,
--				       val, !(val & mask),
--				       MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
--
--	return ret;
--}
-diff --git a/include/linux/soc/mediatek/infracfg.h b/include/linux/soc/mediatek/infracfg.h
-deleted file mode 100644
-index fd25f01..0000000
---- a/include/linux/soc/mediatek/infracfg.h
-+++ /dev/null
-@@ -1,39 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--#ifndef __SOC_MEDIATEK_INFRACFG_H
--#define __SOC_MEDIATEK_INFRACFG_H
--
--#define MT8173_TOP_AXI_PROT_EN_MCI_M2		BIT(0)
--#define MT8173_TOP_AXI_PROT_EN_MM_M0		BIT(1)
--#define MT8173_TOP_AXI_PROT_EN_MM_M1		BIT(2)
--#define MT8173_TOP_AXI_PROT_EN_MMAPB_S		BIT(6)
--#define MT8173_TOP_AXI_PROT_EN_L2C_M2		BIT(9)
--#define MT8173_TOP_AXI_PROT_EN_L2SS_SMI		BIT(11)
--#define MT8173_TOP_AXI_PROT_EN_L2SS_ADD		BIT(12)
--#define MT8173_TOP_AXI_PROT_EN_CCI_M2		BIT(13)
--#define MT8173_TOP_AXI_PROT_EN_MFG_S		BIT(14)
--#define MT8173_TOP_AXI_PROT_EN_PERI_M0		BIT(15)
--#define MT8173_TOP_AXI_PROT_EN_PERI_M1		BIT(16)
--#define MT8173_TOP_AXI_PROT_EN_DEBUGSYS		BIT(17)
--#define MT8173_TOP_AXI_PROT_EN_CQ_DMA		BIT(18)
--#define MT8173_TOP_AXI_PROT_EN_GCPU		BIT(19)
--#define MT8173_TOP_AXI_PROT_EN_IOMMU		BIT(20)
--#define MT8173_TOP_AXI_PROT_EN_MFG_M0		BIT(21)
--#define MT8173_TOP_AXI_PROT_EN_MFG_M1		BIT(22)
--#define MT8173_TOP_AXI_PROT_EN_MFG_SNOOP_OUT	BIT(23)
--
--#define MT2701_TOP_AXI_PROT_EN_MM_M0		BIT(1)
--#define MT2701_TOP_AXI_PROT_EN_CONN_M		BIT(2)
--#define MT2701_TOP_AXI_PROT_EN_CONN_S		BIT(8)
--
--#define MT7622_TOP_AXI_PROT_EN_ETHSYS		(BIT(3) | BIT(17))
--#define MT7622_TOP_AXI_PROT_EN_HIF0		(BIT(24) | BIT(25))
--#define MT7622_TOP_AXI_PROT_EN_HIF1		(BIT(26) | BIT(27) | \
--						 BIT(28))
--#define MT7622_TOP_AXI_PROT_EN_WB		(BIT(2) | BIT(6) | \
--						 BIT(7) | BIT(8))
--
--int mtk_infracfg_set_bus_protection(struct regmap *infracfg, u32 mask,
--		bool reg_update);
--int mtk_infracfg_clear_bus_protection(struct regmap *infracfg, u32 mask,
--		bool reg_update);
--#endif /* __SOC_MEDIATEK_INFRACFG_H */
+ #define MAX_CLKS	3
++#define MAX_SUBSYS_CLKS 10
+ 
+ /**
+  * struct scp_domain_data - scp domain data for power on/off flow
+@@ -88,6 +89,8 @@
+  * @sram_pdn_bits: The mask for sram power control bits.
+  * @sram_pdn_ack_bits: The mask for sram power control acked bits.
+  * @basic_clk_name: The basic clocks required by this power domain.
++ * @subsys_clk_prefix: The prefix name of the clocks need to be enabled
++ *                     before releasing bus protection.
+  * @caps: The flag for active wake-up action.
+  * @bp_table: The mask table for multiple step bus protection.
+  */
+@@ -98,6 +101,7 @@ struct scp_domain_data {
+ 	u32 sram_pdn_bits;
+ 	u32 sram_pdn_ack_bits;
+ 	const char *basic_clk_name[MAX_CLKS];
++	const char *subsys_clk_prefix;
+ 	u8 caps;
+ 	struct bus_prot bp_table[MAX_STEPS];
+ };
+@@ -108,6 +112,7 @@ struct scp_domain {
+ 	struct generic_pm_domain genpd;
+ 	struct scp *scp;
+ 	struct clk *clk[MAX_CLKS];
++	struct clk *subsys_clk[MAX_SUBSYS_CLKS];
+ 	const struct scp_domain_data *data;
+ 	struct regulator *supply;
+ };
+@@ -301,16 +306,22 @@ static int scpsys_power_on(struct generic_pm_domain *genpd)
+ 	val |= PWR_RST_B_BIT;
+ 	writel(val, ctl_addr);
+ 
+-	ret = scpsys_sram_enable(scpd, ctl_addr);
++	ret = scpsys_clk_enable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
+ 	if (ret < 0)
+ 		goto err_pwr_ack;
+ 
++	ret = scpsys_sram_enable(scpd, ctl_addr);
++	if (ret < 0)
++		goto err_sram;
++
+ 	ret = scpsys_bus_protect_disable(scpd);
+ 	if (ret < 0)
+-		goto err_pwr_ack;
++		goto err_sram;
+ 
+ 	return 0;
+ 
++err_sram:
++	scpsys_clk_disable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
+ err_pwr_ack:
+ 	scpsys_clk_disable(scpd->clk, MAX_CLKS);
+ err_clk:
+@@ -337,6 +348,8 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+ 	if (ret < 0)
+ 		goto out;
+ 
++	scpsys_clk_disable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
++
+ 	/* subsys power off */
+ 	val = readl(ctl_addr);
+ 	val |= PWR_ISO_BIT;
+@@ -374,6 +387,48 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+ 	return ret;
+ }
+ 
++static int init_subsys_clks(struct platform_device *pdev,
++		const char *prefix, struct clk **clk)
++{
++	struct device_node *node = pdev->dev.of_node;
++	u32 prefix_len, sub_clk_cnt = 0;
++	struct property *prop;
++	const char *clk_name;
++
++	if (!node) {
++		dev_err(&pdev->dev, "Cannot find scpsys node: %ld\n",
++			PTR_ERR(node));
++		return PTR_ERR(node);
++	}
++
++	prefix_len = strlen(prefix);
++
++	of_property_for_each_string(node, "clock-names", prop, clk_name) {
++		if (!strncmp(clk_name, prefix, prefix_len) &&
++				(clk_name[prefix_len] == '-')) {
++			if (sub_clk_cnt >= MAX_SUBSYS_CLKS) {
++				dev_err(&pdev->dev,
++					"subsys clk out of range %d\n",
++					sub_clk_cnt);
++				return -ENOMEM;
++			}
++
++			clk[sub_clk_cnt] = devm_clk_get(&pdev->dev,
++						clk_name);
++
++			if (IS_ERR(clk[sub_clk_cnt])) {
++				dev_err(&pdev->dev,
++					"Subsys clk get fail %ld\n",
++					PTR_ERR(clk[sub_clk_cnt]));
++				return PTR_ERR(clk[sub_clk_cnt]);
++			}
++			sub_clk_cnt++;
++		}
++	}
++
++	return sub_clk_cnt;
++}
++
+ static int init_basic_clks(struct platform_device *pdev, struct clk **clk,
+ 			const char * const *name)
+ {
+@@ -466,6 +521,7 @@ static struct scp *init_scp(struct platform_device *pdev,
+ 		struct scp_domain *scpd = &scp->domains[i];
+ 		struct generic_pm_domain *genpd = &scpd->genpd;
+ 		const struct scp_domain_data *data = &scp_domain_data[i];
++		int clk_cnt;
+ 
+ 		pd_data->domains[i] = genpd;
+ 		scpd->scp = scp;
+@@ -476,6 +532,18 @@ static struct scp *init_scp(struct platform_device *pdev,
+ 		if (ret)
+ 			return ERR_PTR(ret);
+ 
++		if (data->subsys_clk_prefix) {
++			clk_cnt = init_subsys_clks(pdev,
++					data->subsys_clk_prefix,
++					scpd->subsys_clk);
++			if (clk_cnt < 0) {
++				dev_err(&pdev->dev,
++					"%s: subsys clk unavailable\n",
++					data->name);
++				return ERR_PTR(clk_cnt);
++			}
++		}
++
+ 		genpd->name = data->name;
+ 		genpd->power_off = scpsys_power_off;
+ 		genpd->power_on = scpsys_power_on;
 -- 
 1.8.1.1.dirty
 _______________________________________________
