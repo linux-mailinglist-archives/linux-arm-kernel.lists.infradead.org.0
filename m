@@ -2,48 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D83E1281F7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 19:10:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D4BF128201
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 19:15:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LUk0vtV9jhQukCH55L/r20c/TGWr0VeXHCdER/4nlNQ=; b=NryIM8IZ/ynNKk
-	mtBb4Py0/zJ3dXt5L75jH6ShwzYbomrUQWOlyye3zVvdf5o5wtQPUq3nxzKU9s9Im+CVc5TyK67jN
-	vg//gboss/jLQjt4kib49q6Fd+1tA47tP8LW4johJubCV255zRhJwBIMN/xT0+a5kGnlActq1ZMAS
-	C++raaqA5jX9mu2idPC/L3E2FBQS5IbTUbLAWsegXnUpPVSUzIo+P6sPMxHW7YCSStrLAxIAl8sBA
-	tnWrgLzdgJ2gVnrbEcxNorITwA+I+e6+pfbBg/Gf7AX9pqqJisIZk+PJXRs4K0Xk/hcZtcCJXB5h2
-	ksdbR/SSd2LLpUgbSJhA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4+8+/HfnKa5pvEhlaNX9APi/33YP3KeL/q7tHe3bMwU=; b=day5hv1DReeEYf
+	r0yHyqLWQG323etclhbhC4458wkB9v6blZwY+hXi8bFso//nuva6C+yw9Duu0tHxht0mvViC7AF7e
+	iMrM96BvtCGBO7mjsbZVONw/ApJr14i07uRzl79AYLn4nDmFkhQLs5DPi7u6VtKDCfgPTvGamZ55I
+	KhHaXnwtUwAPoFY5y3huRYkyUPam0NV/Ab91WzRmfZ81bLSXdPl7rtTepRZO6iJzzJbbOdIs0miuc
+	MrXVLIQI3XD0lhdGOeEaeTXVZhDdVm6F1lRcqcra0qXIR7ZNtMdFEj02Rhoeo7zNVIuGgPev5s1Js
+	fi2yU22rOUeHf5EWDIhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiMjA-00051K-Cf; Fri, 20 Dec 2019 18:10:16 +0000
+	id 1iiMo0-0006tT-UC; Fri, 20 Dec 2019 18:15:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiMiy-0004dl-6u
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 18:10:05 +0000
+ id 1iiMno-0006Hu-1r
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 18:15:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B45D61FB;
- Fri, 20 Dec 2019 10:10:03 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7A1F73F67D;
- Fri, 20 Dec 2019 10:10:02 -0800 (PST)
-Date: Fri, 20 Dec 2019 18:10:00 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v2 15/18] perf: arm_spe: Handle guest/host exclusion flags
-Message-ID: <20191220180959.GF25258@lakrids.cambridge.arm.com>
-References: <20191220143025.33853-1-andrew.murray@arm.com>
- <20191220143025.33853-16-andrew.murray@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8AE721FB;
+ Fri, 20 Dec 2019 10:15:01 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.197.42])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ BDD5F3F67D; Fri, 20 Dec 2019 10:15:00 -0800 (PST)
+Date: Fri, 20 Dec 2019 18:14:58 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Linus Torvalds <torvalds@linux-foundation.org>
+Subject: [GIT PULL] arm64 fixes for 5.5-rc3
+Message-ID: <20191220181456.GA13898@arrakis.emea.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191220143025.33853-16-andrew.murray@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_101004_311021_F16331B6 
-X-CRM114-Status: GOOD (  16.42  )
+X-CRM114-CacheID: sfid-20191220_101504_144391_3B8F4F03 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,51 +60,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 20, 2019 at 02:30:22PM +0000, Andrew Murray wrote:
-> A side effect of supporting the SPE in guests is that we prevent the
-> host from collecting data whilst inside a guest thus creating a black-out
-> window. This occurs because instead of emulating the SPE, we share it
-> with our guests.
+Hi Linus,
 
-We used to permit this; do we know if anyone is using it?
+Please pull the arm64 fixes below. Thanks and Merry Christmas!
 
-Thanks,
-Mark.
+The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 
-> Let's accurately describe our capabilities by using the perf exclude
-> flags to prevent !exclude_guest and exclude_host flags from being used.
-> 
-> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> ---
->  drivers/perf/arm_spe_pmu.c | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/drivers/perf/arm_spe_pmu.c b/drivers/perf/arm_spe_pmu.c
-> index 2d24af4cfcab..3703dbf459de 100644
-> --- a/drivers/perf/arm_spe_pmu.c
-> +++ b/drivers/perf/arm_spe_pmu.c
-> @@ -679,6 +679,9 @@ static int arm_spe_pmu_event_init(struct perf_event *event)
->  	if (attr->exclude_idle)
->  		return -EOPNOTSUPP;
->  
-> +	if (!attr->exclude_guest || attr->exclude_host)
-> +		return -EOPNOTSUPP;
-> +
->  	/*
->  	 * Feedback-directed frequency throttling doesn't work when we
->  	 * have a buffer of samples. We'd need to manually count the
-> -- 
-> 2.21.0
-> 
+  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux tags/arm64-fixes
+
+for you to fetch changes up to aa638cfe3e7358122a15cb1d295b622aae69e006:
+
+  arm64: cpu_errata: Add Hisilicon TSV110 to spectre-v2 safe list (2019-12-20 17:57:22 +0000)
+
+----------------------------------------------------------------
+arm64 fixes:
+
+- Leftover put_cpu() in the perf/smmuv3 error path.
+
+- Add Hisilicon TSV110 to spectre-v2 safe list
+
+----------------------------------------------------------------
+Hanjun Guo (1):
+      perf/smmuv3: Remove the leftover put_cpu() in error path
+
+Wei Li (1):
+      arm64: cpu_errata: Add Hisilicon TSV110 to spectre-v2 safe list
+
+ arch/arm64/kernel/cpu_errata.c | 1 +
+ drivers/perf/arm_smmuv3_pmu.c  | 4 +---
+ 2 files changed, 2 insertions(+), 3 deletions(-)
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
