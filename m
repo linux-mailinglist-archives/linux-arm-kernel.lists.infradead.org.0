@@ -2,84 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AE711274ED
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 06:10:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B44521274F2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 06:11:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5JZzFW2NZek3svWaVwkASzfH/y9I8beodHwjO7gwTeY=; b=nO0yCBVnCDwXzy
-	t9v+maOy2+FdRIkrEHApoqQpsYhDHgh/LO1OfaeY2lcjAqNQOVxg4ytiWUNGPnUCKRnWTwmzEZgP/
-	dLJd5ifjwHlPAV3BaDJBRQrv9BNVdYY8hN23ing5Gd/L90vRlG5CCIW8q6zvKZE0l5NaG6+YKGdZM
-	Gu7M37S1ixwtzBrOp+TW34S3MXyrfZXTP7/6+gPBq8z8pEHP6JkUxy6JXctY94CCi6fExuf3+lSpQ
-	4ZZXToaAznxxhOrpZwjjHdEDa7DCjjYR10zQbms6winH6G9yF+rzCho6cK8NNu1J+Zafz2rzSV/L2
-	0e07XHOn0LQgnNPILsEw==;
+	List-Owner; bh=n/+gcEAwKDWmWsK72qn6z4AoERfNOKFNWaZwITnc6s8=; b=ZCyuYGtXSbXMp/
+	tJ6VDSeDtvqPKrzp52AFteZZHThVD6fQchr/1NtS7ut3DTzm9Gzpqs4xZ8GXHsQePoNEIxMNafbO7
+	cJM86LDapDIgQ61Ki5y/8bU/U9OzqMjY5XcNoHzeaztsyr30HOe6gcVhfc9K01gbXtL4LaoedMvY6
+	iO/YjhH4fgjk8ePCQmBWnuH7MLdcJliqzG3YYW3Bi7w8SqFA5kXelCX+uioW77HuW7o7fRr57XRu9
+	kHjRIj37cQmYfT97/2s9k0HfgBwbVr4zIJk6Dn644B+btEPYoW2S8f2hsZrcuCN2RXJX0SQrc2Hxm
+	dd2jMHvGBjk2V3OBxDGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiAYn-0002bu-Na; Fri, 20 Dec 2019 05:10:45 +0000
-Received: from mail-lj1-f195.google.com ([209.85.208.195])
+	id 1iiAZo-0002yi-RT; Fri, 20 Dec 2019 05:11:48 +0000
+Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiAYN-0002Lr-Tu
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 05:10:21 +0000
-Received: by mail-lj1-f195.google.com with SMTP id l2so8646746lja.6
+ id 1iiAZe-0002x6-JY
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 05:11:40 +0000
+Received: by mail-qv1-xf43.google.com with SMTP id f16so3172776qvi.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 19 Dec 2019 21:10:17 -0800 (PST)
+ Thu, 19 Dec 2019 21:11:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=3zWGDL/rJJvF4OGWHgWe2M4m9MBg78+Q3j/Wyllah+s=;
+ b=IiaVVoIq8oepGs9n62+pph8JnNyoebo7WEO1vMBGFj+1u17MTAcQkANj77APhy5ThQ
+ s89VHwe9+wqueL6iQdTaxyHB7duKUVpEqLLg4Jw0COQ01PuWUEcDrcP6LMdIO2hKe6+J
+ U8I+f0QrhFndop3oYFVY/hOfW2z7Q9iCHwzCo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=kLySkqD/LApGvm4F01o6HLsM+dST2BfCFVYrBB8urA8=;
- b=ClArrJq2YCBEayxXfXId3t6eUtEf7u8S94ty7rAQpJ3lZNEIKRYL10VIRymt2S2Kgw
- +Oasn052NuBQGKHG74eNiDA05H6aoh5s1GTkBtJvPgw/MarGb4wvlqW6c1TXZL4pZHR6
- UK6SRp2TC1m+HU1bwFUdbjruF6x6rCg3wRS/qVM5OL1OSuBvrr0vBtBxtj1etM9VzJLd
- QDjJtNLurNuY6L4IzLMFD9CHnDsjVBuK/1Qhg+Ba0YcLPizrNBCBuuKXe8p9Z7CIjte0
- /HsH/1LpyknXD0D4PJ/Xjeoz2ZOroNYbroapFE2mMItyK61MGTZ6Pfcv4PWHjrTe+cZW
- 3ldA==
-X-Gm-Message-State: APjAAAXWny9tiwmNxhjtjulyLQ8YNWwJX4x7zG0Pg7HCmH5fEsuU+A0w
- z8770z8KW3Vsgpj6UcIn2ic=
-X-Google-Smtp-Source: APXvYqwT/scfxUoqxxaSzUcn6Q7kYRhDPvctLjzlJ+YEwuVAiS4OIEi2ROw/CrHGZ2kBcaj4C3pJbA==
-X-Received: by 2002:a2e:9cd8:: with SMTP id g24mr8328286ljj.243.1576818616049; 
- Thu, 19 Dec 2019 21:10:16 -0800 (PST)
-Received: from xi.terra (c-14b8e655.07-184-6d6c6d4.bbcust.telenor.se.
- [85.230.184.20])
- by smtp.gmail.com with ESMTPSA id m8sm3408222lfp.4.2019.12.19.21.10.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 19 Dec 2019 21:10:15 -0800 (PST)
-Received: from johan by xi.terra with local (Exim 4.92.3)
- (envelope-from <johan@kernel.org>)
- id 1iiAYH-0004MT-P2; Fri, 20 Dec 2019 06:10:13 +0100
-Date: Fri, 20 Dec 2019 06:10:13 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Navid Emamdoost <navid.emamdoost@gmail.com>
-Subject: Re: [PATCH] clocksource/drivers: Fix memory leaks in
- ttc_setup_clockevent and ttc_setup_clocksource
-Message-ID: <20191220051013.GT22665@localhost>
-References: <20191220000923.9924-1-navid.emamdoost@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=3zWGDL/rJJvF4OGWHgWe2M4m9MBg78+Q3j/Wyllah+s=;
+ b=qBcNaQHuC6yL48tm7gRYl4CI3Tzg4HLIfIHXUsppGuHr4SU3BL+iLH3k1SvBn7Es2q
+ bBQ/XUKAjW6zR0s3hgQ9fVVPVcM4mjFThDeA/RCSXMN8UJqeym5Kp2L1FfcJ7w+liugB
+ tAe9M8JE8snkCoJ6wRj+g5SfsKJ2CuSytm07KOP/5zEYTUZ2hj+jIPw47feo7sXSUyXS
+ vH3Hji1DPnVcSLim8a+xTIFpCuNuXdy1eZ48HF+s/wsM8qiUsO0EZDsJb3RaLyzWl9wo
+ Ly453un56hcuJ3lYrT5w+Ma5Jr9SZ8NTPO2XZjUV/wmnKhOarFeaXvAWIFq07EPl2iQ0
+ EiJw==
+X-Gm-Message-State: APjAAAX1YNeO6JqLKwhNjzZkoKMK0iBGTN7CH5IRHivZaHuR/ULcY2Pe
+ 2NLFki/Ba4OfhY4BI9C57U1R3r+6b7uW34VtnaHibA==
+X-Google-Smtp-Source: APXvYqwz3qzVGEJocSaVXlW0xpE4ZpN2+r+dt+k/eZcevA/dcgNmWOhM7zMTdu1zQPv9PRQ5La5jJ5CiXUwDdoRK8Z4=
+X-Received: by 2002:a0c:f703:: with SMTP id w3mr10940876qvn.6.1576818697391;
+ Thu, 19 Dec 2019 21:11:37 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191220000923.9924-1-navid.emamdoost@gmail.com>
+References: <1576813564-23927-1-git-send-email-weiyi.lu@mediatek.com>
+ <1576813564-23927-9-git-send-email-weiyi.lu@mediatek.com>
+In-Reply-To: <1576813564-23927-9-git-send-email-weiyi.lu@mediatek.com>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Fri, 20 Dec 2019 13:11:26 +0800
+Message-ID: <CANMq1KATUJxEAvMMbF7C24BXW6RkzugWDLzT47SEyKSVRHH51g@mail.gmail.com>
+Subject: Re: [PATCH v11 08/10] soc: mediatek: Add MT8183 scpsys support
+To: Weiyi Lu <weiyi.lu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_211019_994770_B2D5754D 
-X-CRM114-Status: GOOD (  16.13  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191219_211138_650313_C7CC4EB9 
+X-CRM114-Status: GOOD (  14.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.195 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jhovold[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.195 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,66 +86,376 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Lezcano <daniel.lezcano@linaro.org>,
- Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
- emamd001@umn.edu,
- =?iso-8859-1?Q?S=F6ren?= Brinkmann <soren.brinkmann@xilinx.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, srv_heupstream <srv_heupstream@mediatek.com>,
+ James Liao <jamesjj.liao@mediatek.com>, lkml <linux-kernel@vger.kernel.org>,
+ Fan Chen <fan.chen@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 19, 2019 at 06:09:21PM -0600, Navid Emamdoost wrote:
-> In the implementation of ttc_setup_clockevent() and
-> ttc_setup_clocksource(), the allocated memory for ttccs is leaked when
-> clk_notifier_register() fails. Use goto to direct the execution into error
-> handling path.
+On Fri, Dec 20, 2019 at 11:46 AM Weiyi Lu <weiyi.lu@mediatek.com> wrote:
+>
+> Add scpsys driver for MT8183
+> And minor fix to add a comma at the end
 
-No, that memory was never leaked since that function did not return on
-registration errors before your patch.
+I'll leave it up to the maintainer, but those minor fixes outside of
+new mt8183 code should probably be done as a separate CL.
 
-> Fixes: 70504f311d4b ("clocksource/drivers/cadence_ttc: Convert init function to return error")
-
-Perhaps you meant to fix the actual leak that was added by this commit
-in a different function, ttc_setup_clockevent(), when returning on
-notifier-registration errors?
-
-Also should the clock be left enabled on errors?
-
-> Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
+>
+> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+> Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
 > ---
->  drivers/clocksource/timer-cadence-ttc.c | 22 +++++++++++++---------
->  1 file changed, 13 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/clocksource/timer-cadence-ttc.c b/drivers/clocksource/timer-cadence-ttc.c
-> index c6d11a1cb238..46d69982ad33 100644
-> --- a/drivers/clocksource/timer-cadence-ttc.c
-> +++ b/drivers/clocksource/timer-cadence-ttc.c
-> @@ -328,10 +328,8 @@ static int __init ttc_setup_clocksource(struct clk *clk, void __iomem *base,
->  	ttccs->ttc.clk = clk;
->  
->  	err = clk_prepare_enable(ttccs->ttc.clk);
-> -	if (err) {
-> -		kfree(ttccs);
-> -		return err;
-> -	}
-> +	if (err)
-> +		goto release_ttcce;
->  
->  	ttccs->ttc.freq = clk_get_rate(ttccs->ttc.clk);
->  
-> @@ -341,8 +339,10 @@ static int __init ttc_setup_clocksource(struct clk *clk, void __iomem *base,
->  
->  	err = clk_notifier_register(ttccs->ttc.clk,
->  				    &ttccs->ttc.clk_rate_change_nb);
-> -	if (err)
-> +	if (err) {
->  		pr_warn("Unable to register clock notifier.\n");
-> +		goto release_ttcce;
-> +	}
-
-Johan
+>  drivers/soc/mediatek/mtk-scpsys.c | 233 +++++++++++++++++++++++++++++++++++++-
+>  drivers/soc/mediatek/scpsys-ext.h |  28 +++++
+>  2 files changed, 255 insertions(+), 6 deletions(-)
+>
+> diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+> index 1972726..b8b72fa 100644
+> --- a/drivers/soc/mediatek/mtk-scpsys.c
+> +++ b/drivers/soc/mediatek/mtk-scpsys.c
+> @@ -19,6 +19,7 @@
+>  #include <dt-bindings/power/mt7622-power.h>
+>  #include <dt-bindings/power/mt7623a-power.h>
+>  #include <dt-bindings/power/mt8173-power.h>
+> +#include <dt-bindings/power/mt8183-power.h>
+>
+>  #define MTK_POLL_DELAY_US   10
+>  #define MTK_POLL_TIMEOUT    USEC_PER_SEC
+> @@ -1082,12 +1083,218 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>         {MT8173_POWER_DOMAIN_MFG_2D, MT8173_POWER_DOMAIN_MFG},
+>  };
+>
+> +/*
+> + * MT8183 power domain support
+> + */
+> +
+> +static const struct scp_domain_data scp_domain_data_mt8183[] = {
+> +       [MT8183_POWER_DOMAIN_AUDIO] = {
+> +               .name = "audio",
+> +               .sta_mask = PWR_STATUS_AUDIO,
+> +               .ctl_offs = 0x0314,
+> +               .sram_pdn_bits = GENMASK(11, 8),
+> +               .sram_pdn_ack_bits = GENMASK(15, 12),
+> +               .basic_clk_name = {"audio", "audio1", "audio2"},
+> +       },
+> +       [MT8183_POWER_DOMAIN_CONN] = {
+> +               .name = "conn",
+> +               .sta_mask = PWR_STATUS_CONN,
+> +               .ctl_offs = 0x032c,
+> +               .sram_pdn_bits = 0,
+> +               .sram_pdn_ack_bits = 0,
+> +               .bp_table = {
+> +                       BUS_PROT(IFR_TYPE, 0x2a0, 0x2a4, 0, 0x228,
+> +                               MT8183_TOP_AXI_PROT_EN_CONN),
+> +               },
+> +       },
+> +       [MT8183_POWER_DOMAIN_MFG_ASYNC] = {
+> +               .name = "mfg_async",
+> +               .sta_mask = PWR_STATUS_MFG_ASYNC,
+> +               .ctl_offs = 0x0334,
+> +               .sram_pdn_bits = 0,
+> +               .sram_pdn_ack_bits = 0,
+> +               .basic_clk_name = {"mfg"},
+> +       },
+> +       [MT8183_POWER_DOMAIN_MFG] = {
+> +               .name = "mfg",
+> +               .sta_mask = PWR_STATUS_MFG,
+> +               .ctl_offs = 0x0338,
+> +               .sram_pdn_bits = GENMASK(8, 8),
+> +               .sram_pdn_ack_bits = GENMASK(12, 12),
+> +       },
+> +       [MT8183_POWER_DOMAIN_MFG_CORE0] = {
+> +               .name = "mfg_core0",
+> +               .sta_mask = BIT(7),
+> +               .ctl_offs = 0x034c,
+> +               .sram_pdn_bits = GENMASK(8, 8),
+> +               .sram_pdn_ack_bits = GENMASK(12, 12),
+> +       },
+> +       [MT8183_POWER_DOMAIN_MFG_CORE1] = {
+> +               .name = "mfg_core1",
+> +               .sta_mask = BIT(20),
+> +               .ctl_offs = 0x0310,
+> +               .sram_pdn_bits = GENMASK(8, 8),
+> +               .sram_pdn_ack_bits = GENMASK(12, 12),
+> +       },
+> +       [MT8183_POWER_DOMAIN_MFG_2D] = {
+> +               .name = "mfg_2d",
+> +               .sta_mask = PWR_STATUS_MFG_2D,
+> +               .ctl_offs = 0x0348,
+> +               .sram_pdn_bits = GENMASK(8, 8),
+> +               .sram_pdn_ack_bits = GENMASK(12, 12),
+> +               .bp_table = {
+> +                       BUS_PROT(IFR_TYPE, 0x2a8, 0x2ac, 0, 0x258,
+> +                               MT8183_TOP_AXI_PROT_EN_1_MFG),
+> +                       BUS_PROT(IFR_TYPE, 0x2a0, 0x2a4, 0, 0x228,
+> +                               MT8183_TOP_AXI_PROT_EN_MFG),
+> +               },
+> +       },
+> +       [MT8183_POWER_DOMAIN_DISP] = {
+> +               .name = "disp",
+> +               .sta_mask = PWR_STATUS_DISP,
+> +               .ctl_offs = 0x030c,
+> +               .sram_pdn_bits = GENMASK(8, 8),
+> +               .sram_pdn_ack_bits = GENMASK(12, 12),
+> +               .basic_clk_name = {"mm"},
+> +               .subsys_clk_prefix = "mm",
+> +               .bp_table = {
+> +                       BUS_PROT(IFR_TYPE, 0x2a8, 0x2ac, 0, 0x258,
+> +                               MT8183_TOP_AXI_PROT_EN_1_DISP),
+> +                       BUS_PROT(IFR_TYPE, 0x2a0, 0x2a4, 0, 0x228,
+> +                               MT8183_TOP_AXI_PROT_EN_DISP),
+> +                       BUS_PROT(SMI_TYPE, 0x3c4, 0x3c8, 0, 0x3c0,
+> +                               MT8183_SMI_COMMON_SMI_CLAMP_DISP),
+> +               },
+> +       },
+> +       [MT8183_POWER_DOMAIN_CAM] = {
+> +               .name = "cam",
+> +               .sta_mask = BIT(25),
+> +               .ctl_offs = 0x0344,
+> +               .sram_pdn_bits = GENMASK(9, 8),
+> +               .sram_pdn_ack_bits = GENMASK(13, 12),
+> +               .basic_clk_name = {"cam"},
+> +               .subsys_clk_prefix = "cam",
+> +               .bp_table = {
+> +                       BUS_PROT(IFR_TYPE, 0x2d4, 0x2d8, 0, 0x2ec,
+> +                               MT8183_TOP_AXI_PROT_EN_MM_CAM),
+> +                       BUS_PROT(IFR_TYPE, 0x2a0, 0x2a4, 0, 0x228,
+> +                               MT8183_TOP_AXI_PROT_EN_CAM),
+> +                       BUS_PROT_IGN(IFR_TYPE, 0x2d4, 0x2d8, 0, 0x2ec,
+> +                               MT8183_TOP_AXI_PROT_EN_MM_CAM_2ND),
+> +                       BUS_PROT(SMI_TYPE, 0x3c4, 0x3c8, 0, 0x3c0,
+> +                               MT8183_SMI_COMMON_SMI_CLAMP_CAM),
+> +               },
+> +       },
+> +       [MT8183_POWER_DOMAIN_ISP] = {
+> +               .name = "isp",
+> +               .sta_mask = PWR_STATUS_ISP,
+> +               .ctl_offs = 0x0308,
+> +               .sram_pdn_bits = GENMASK(9, 8),
+> +               .sram_pdn_ack_bits = GENMASK(13, 12),
+> +               .basic_clk_name = {"isp"},
+> +               .subsys_clk_prefix = "isp",
+> +               .bp_table = {
+> +                       BUS_PROT(IFR_TYPE, 0x2d4, 0x2d8, 0, 0x2ec,
+> +                               MT8183_TOP_AXI_PROT_EN_MM_ISP),
+> +                       BUS_PROT_IGN(IFR_TYPE, 0x2d4, 0x2d8, 0, 0x2ec,
+> +                               MT8183_TOP_AXI_PROT_EN_MM_ISP_2ND),
+> +                       BUS_PROT(SMI_TYPE, 0x3c4, 0x3c8, 0, 0x3c0,
+> +                               MT8183_SMI_COMMON_SMI_CLAMP_ISP),
+> +               },
+> +       },
+> +       [MT8183_POWER_DOMAIN_VDEC] = {
+> +               .name = "vdec",
+> +               .sta_mask = BIT(31),
+> +               .ctl_offs = 0x0300,
+> +               .sram_pdn_bits = GENMASK(8, 8),
+> +               .sram_pdn_ack_bits = GENMASK(12, 12),
+> +               .bp_table = {
+> +                       BUS_PROT(SMI_TYPE, 0x3c4, 0x3c8, 0, 0x3c0,
+> +                               MT8183_SMI_COMMON_SMI_CLAMP_VDEC),
+> +               },
+> +       },
+> +       [MT8183_POWER_DOMAIN_VENC] = {
+> +               .name = "venc",
+> +               .sta_mask = PWR_STATUS_VENC,
+> +               .ctl_offs = 0x0304,
+> +               .sram_pdn_bits = GENMASK(11, 8),
+> +               .sram_pdn_ack_bits = GENMASK(15, 12),
+> +               .bp_table = {
+> +                       BUS_PROT(SMI_TYPE, 0x3c4, 0x3c8, 0, 0x3c0,
+> +                               MT8183_SMI_COMMON_SMI_CLAMP_VENC),
+> +               },
+> +       },
+> +       [MT8183_POWER_DOMAIN_VPU_TOP] = {
+> +               .name = "vpu_top",
+> +               .sta_mask = BIT(26),
+> +               .ctl_offs = 0x0324,
+> +               .sram_pdn_bits = GENMASK(8, 8),
+> +               .sram_pdn_ack_bits = GENMASK(12, 12),
+> +               .basic_clk_name = {"vpu", "vpu1"},
+> +               .subsys_clk_prefix = "vpu",
+> +               .bp_table = {
+> +                       BUS_PROT(IFR_TYPE, 0x2d4, 0x2d8, 0, 0x2ec,
+> +                               MT8183_TOP_AXI_PROT_EN_MM_VPU_TOP),
+> +                       BUS_PROT(IFR_TYPE, 0x2a0, 0x2a4, 0, 0x228,
+> +                               MT8183_TOP_AXI_PROT_EN_VPU_TOP),
+> +                       BUS_PROT(IFR_TYPE, 0x2d4, 0x2d8, 0, 0x2ec,
+> +                               MT8183_TOP_AXI_PROT_EN_MM_VPU_TOP_2ND),
+> +                       BUS_PROT(SMI_TYPE, 0x3c4, 0x3c8, 0, 0x3c0,
+> +                               MT8183_SMI_COMMON_SMI_CLAMP_VPU_TOP),
+> +               },
+> +       },
+> +       [MT8183_POWER_DOMAIN_VPU_CORE0] = {
+> +               .name = "vpu_core0",
+> +               .sta_mask = BIT(27),
+> +               .ctl_offs = 0x33c,
+> +               .sram_iso_ctrl = true,
+> +               .sram_pdn_bits = GENMASK(11, 8),
+> +               .sram_pdn_ack_bits = GENMASK(13, 12),
+> +               .basic_clk_name = {"vpu2"},
+> +               .bp_table = {
+> +                       BUS_PROT(IFR_TYPE, 0x2c4, 0x2c8, 0, 0x2e4,
+> +                               MT8183_TOP_AXI_PROT_EN_MCU_VPU_CORE0),
+> +                       BUS_PROT(IFR_TYPE, 0x2c4, 0x2c8, 0, 0x2e4,
+> +                               MT8183_TOP_AXI_PROT_EN_MCU_VPU_CORE0_2ND),
+> +               },
+> +       },
+> +       [MT8183_POWER_DOMAIN_VPU_CORE1] = {
+> +               .name = "vpu_core1",
+> +               .sta_mask = BIT(28),
+> +               .ctl_offs = 0x0340,
+> +               .sram_iso_ctrl = true,
+> +               .sram_pdn_bits = GENMASK(11, 8),
+> +               .sram_pdn_ack_bits = GENMASK(13, 12),
+> +               .basic_clk_name = {"vpu3"},
+> +               .bp_table = {
+> +                       BUS_PROT(IFR_TYPE, 0x2c4, 0x2c8, 0, 0x2e4,
+> +                               MT8183_TOP_AXI_PROT_EN_MCU_VPU_CORE1),
+> +                       BUS_PROT(IFR_TYPE, 0x2c4, 0x2c8, 0, 0x2e4,
+> +                               MT8183_TOP_AXI_PROT_EN_MCU_VPU_CORE1_2ND),
+> +               },
+> +       },
+> +};
+> +
+> +static const struct scp_subdomain scp_subdomain_mt8183[] = {
+> +       {MT8183_POWER_DOMAIN_MFG_ASYNC, MT8183_POWER_DOMAIN_MFG},
+> +       {MT8183_POWER_DOMAIN_MFG, MT8183_POWER_DOMAIN_MFG_2D},
+> +       {MT8183_POWER_DOMAIN_MFG, MT8183_POWER_DOMAIN_MFG_CORE0},
+> +       {MT8183_POWER_DOMAIN_MFG, MT8183_POWER_DOMAIN_MFG_CORE1},
+> +       {MT8183_POWER_DOMAIN_DISP, MT8183_POWER_DOMAIN_CAM},
+> +       {MT8183_POWER_DOMAIN_DISP, MT8183_POWER_DOMAIN_ISP},
+> +       {MT8183_POWER_DOMAIN_DISP, MT8183_POWER_DOMAIN_VDEC},
+> +       {MT8183_POWER_DOMAIN_DISP, MT8183_POWER_DOMAIN_VENC},
+> +       {MT8183_POWER_DOMAIN_DISP, MT8183_POWER_DOMAIN_VPU_TOP},
+> +       {MT8183_POWER_DOMAIN_VPU_TOP, MT8183_POWER_DOMAIN_VPU_CORE0},
+> +       {MT8183_POWER_DOMAIN_VPU_TOP, MT8183_POWER_DOMAIN_VPU_CORE1},
+> +};
+> +
+>  static const struct scp_soc_data mt2701_data = {
+>         .domains = scp_domain_data_mt2701,
+>         .num_domains = ARRAY_SIZE(scp_domain_data_mt2701),
+>         .regs = {
+>                 .pwr_sta_offs = SPM_PWR_STATUS,
+> -               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND
+> +               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND,
+>         },
+>  };
+>
+> @@ -1098,7 +1305,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>         .num_subdomains = ARRAY_SIZE(scp_subdomain_mt2712),
+>         .regs = {
+>                 .pwr_sta_offs = SPM_PWR_STATUS,
+> -               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND
+> +               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND,
+>         },
+>  };
+>
+> @@ -1109,7 +1316,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>         .num_subdomains = ARRAY_SIZE(scp_subdomain_mt6797),
+>         .regs = {
+>                 .pwr_sta_offs = SPM_PWR_STATUS_MT6797,
+> -               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND_MT6797
+> +               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND_MT6797,
+>         },
+>  };
+>
+> @@ -1118,7 +1325,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>         .num_domains = ARRAY_SIZE(scp_domain_data_mt7622),
+>         .regs = {
+>                 .pwr_sta_offs = SPM_PWR_STATUS,
+> -               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND
+> +               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND,
+>         },
+>  };
+>
+> @@ -1127,7 +1334,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>         .num_domains = ARRAY_SIZE(scp_domain_data_mt7623a),
+>         .regs = {
+>                 .pwr_sta_offs = SPM_PWR_STATUS,
+> -               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND
+> +               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND,
+>         },
+>  };
+>
+> @@ -1138,10 +1345,21 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>         .num_subdomains = ARRAY_SIZE(scp_subdomain_mt8173),
+>         .regs = {
+>                 .pwr_sta_offs = SPM_PWR_STATUS,
+> -               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND
+> +               .pwr_sta2nd_offs = SPM_PWR_STATUS_2ND,
+>         },
+>  };
+>
+> +static const struct scp_soc_data mt8183_data = {
+> +       .domains = scp_domain_data_mt8183,
+> +       .num_domains = ARRAY_SIZE(scp_domain_data_mt8183),
+> +       .subdomains = scp_subdomain_mt8183,
+> +       .num_subdomains = ARRAY_SIZE(scp_subdomain_mt8183),
+> +       .regs = {
+> +               .pwr_sta_offs = 0x0180,
+> +               .pwr_sta2nd_offs = 0x0184,
+> +       }
+> +};
+> +
+>  /*
+>   * scpsys driver init
+>   */
+> @@ -1166,6 +1384,9 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>                 .compatible = "mediatek,mt8173-scpsys",
+>                 .data = &mt8173_data,
+>         }, {
+> +               .compatible = "mediatek,mt8183-scpsys",
+> +               .data = &mt8183_data,
+> +       }, {
+>                 /* sentinel */
+>         }
+>  };
+> diff --git a/drivers/soc/mediatek/scpsys-ext.h b/drivers/soc/mediatek/scpsys-ext.h
+> index 458b2c5..0f90e5d 100644
+> --- a/drivers/soc/mediatek/scpsys-ext.h
+> +++ b/drivers/soc/mediatek/scpsys-ext.h
+> @@ -43,6 +43,34 @@
+>  #define MT8173_TOP_AXI_PROT_EN_MFG_M1          BIT(22)
+>  #define MT8173_TOP_AXI_PROT_EN_MFG_SNOOP_OUT   BIT(23)
+>
+> +#define MT8183_TOP_AXI_PROT_EN_DISP                    (BIT(10) | BIT(11))
+> +#define MT8183_TOP_AXI_PROT_EN_CONN                    (BIT(13) | BIT(14))
+> +#define MT8183_TOP_AXI_PROT_EN_MFG                     (BIT(21) | BIT(22))
+> +#define MT8183_TOP_AXI_PROT_EN_CAM                     BIT(28)
+> +#define MT8183_TOP_AXI_PROT_EN_VPU_TOP                 BIT(27)
+> +#define MT8183_TOP_AXI_PROT_EN_1_DISP                  (BIT(16) | BIT(17))
+> +#define MT8183_TOP_AXI_PROT_EN_1_MFG                   GENMASK(21, 19)
+> +#define MT8183_TOP_AXI_PROT_EN_MM_ISP                  (BIT(3) | BIT(8))
+> +#define MT8183_TOP_AXI_PROT_EN_MM_ISP_2ND              BIT(10)
+> +#define MT8183_TOP_AXI_PROT_EN_MM_CAM                  (BIT(4) | BIT(5) | \
+> +                                                        BIT(9) | BIT(13))
+> +#define MT8183_TOP_AXI_PROT_EN_MM_VPU_TOP              (GENMASK(9, 6) | \
+> +                                                        BIT(12))
+> +#define MT8183_TOP_AXI_PROT_EN_MM_VPU_TOP_2ND          (BIT(10) | BIT(11))
+> +#define MT8183_TOP_AXI_PROT_EN_MM_CAM_2ND              BIT(11)
+> +#define MT8183_TOP_AXI_PROT_EN_MCU_VPU_CORE0_2ND       (BIT(0) | BIT(2) | \
+> +                                                        BIT(4))
+> +#define MT8183_TOP_AXI_PROT_EN_MCU_VPU_CORE1_2ND       (BIT(1) | BIT(3) | \
+> +                                                        BIT(5))
+> +#define MT8183_TOP_AXI_PROT_EN_MCU_VPU_CORE0           BIT(6)
+> +#define MT8183_TOP_AXI_PROT_EN_MCU_VPU_CORE1           BIT(7)
+> +#define MT8183_SMI_COMMON_SMI_CLAMP_DISP               GENMASK(7, 0)
+> +#define MT8183_SMI_COMMON_SMI_CLAMP_VENC               BIT(1)
+> +#define MT8183_SMI_COMMON_SMI_CLAMP_ISP                BIT(2)
+> +#define MT8183_SMI_COMMON_SMI_CLAMP_CAM                (BIT(3) | BIT(4))
+> +#define MT8183_SMI_COMMON_SMI_CLAMP_VPU_TOP            (BIT(5) | BIT(6))
+> +#define MT8183_SMI_COMMON_SMI_CLAMP_VDEC               BIT(7)
+> +
+>  enum regmap_type {
+>         INVALID_TYPE = 0,
+>         IFR_TYPE,
+> --
+> 1.8.1.1.dirty
 
 _______________________________________________
 linux-arm-kernel mailing list
