@@ -2,58 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F4186127FC3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 16:44:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C9DA128014
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 16:53:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iRNVqG654EzkKpCc0YN4gaqQWyglN9a1mj/7fccpW14=; b=k5mz8dsQ4l/bkO
-	Pzf7i5cOowZDaV6zBzl5W0SO1T6ggbQPTVDCmmlpfmDsgINF9vypx/I2RGw9uN4JZRmIoOPTZ4UNu
-	SO+m3xsQJDP4K0oLnGYqiPM09Esh0LVSW39bWHjBekRu8VCJc/iCwuCwDnF4Msz2QaIJlzlZE5Zmi
-	0f2G3d65eES948Go/MgNwR6I+hWKhT/crftVsmWMYo2t4MbJe7Z+NVK+nr4v1wWH5fEhDdNq1Frg6
-	+kcqRyTUV+yUfz0NjtG2geKcsFzD9ZiTFHMZfYBFkmNxvrmFUvsMOzPHwogb0/iPmNbfgNauAhheH
-	aFP5EoveAw2CkDlxFQ1w==;
+	List-Owner; bh=qtzJYqa0PFLwNFf/lJWrHs3sSQimu46fn6spZWTWfXI=; b=fnptVKr4tgOfof
+	GqmviRLgkDM7uyhZtZGnR+j5lGOv9+9Ow4q+9iwUQZHmJr1On2MkeKjCNoPG8NkzEOl65W5UUi3HR
+	a0m7oeo94cbuonht1K9ZUpPgRUTWLAr2bqpHsAwFVJR5f+jEyzD3rvCSgcLifWWv+DlgPlAfRwa1/
+	TEC0Y4+zACce4rC6Yxtj3WPhEbbJJSTa7YzIWUsiQf+pI7JNCXXAPNbP8LdoQmlxVnyOYw+FHGwY3
+	+ULNLY8BHLfS/QGzIxvUasNlfc7aO3uSoMQ0eHaxYKCsnoIaNItQ3OuwTllNUvy+zfsVaeFg0a5OZ
+	1qiAFbVkf7FjZBizL1/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiKSO-0003zX-A5; Fri, 20 Dec 2019 15:44:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiKSF-0003zD-Fp
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 15:44:40 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1306F30E;
- Fri, 20 Dec 2019 07:44:39 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9B9943F6CF;
- Fri, 20 Dec 2019 07:44:37 -0800 (PST)
-Date: Fri, 20 Dec 2019 15:44:35 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH 3/3] KVM: arm/arm64: correct AArch32 SPSR on exception
- entry
-Message-ID: <20191220154434.GB25258@lakrids.cambridge.arm.com>
-References: <20191220150549.31948-1-mark.rutland@arm.com>
- <20191220150549.31948-4-mark.rutland@arm.com>
- <8e3719bf81f135508eac2378bfee60f2@www.loen.fr>
+	id 1iiKb0-0007tO-Mw; Fri, 20 Dec 2019 15:53:42 +0000
+Received: from mga03.intel.com ([134.134.136.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iiKar-0007sc-Bj
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 15:53:34 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 20 Dec 2019 07:53:31 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.69,336,1571727600"; d="scan'208";a="222513815"
+Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
+ ([10.54.74.202])
+ by fmsmga001.fm.intel.com with ESMTP; 20 Dec 2019 07:53:30 -0800
+Date: Fri, 20 Dec 2019 07:53:30 -0800
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: Cornelia Huck <cohuck@redhat.com>
+Subject: Re: [PATCH v2 30/45] KVM: Move vcpu alloc and init invocation to
+ common code
+Message-ID: <20191220155330.GA21021@linux.intel.com>
+References: <20191218215530.2280-1-sean.j.christopherson@intel.com>
+ <20191218215530.2280-31-sean.j.christopherson@intel.com>
+ <20191220103325.34fc2bf0.cohuck@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8e3719bf81f135508eac2378bfee60f2@www.loen.fr>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20191220103325.34fc2bf0.cohuck@redhat.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_074439_571255_3C5D8D03 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191220_075333_443043_B4EEB14A 
+X-CRM114-Status: GOOD (  13.84  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,37 +70,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>, Drew Jones <drjones@redhat.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Will Deacon <will@kernel.org>,
- stable@vger.kernel.org, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org,
- Alexandru Elisei <alexandru.elisei@arm.com>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
+ kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
+ kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Greg Kurz <groug@kaod.org>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ James Hogan <jhogan@kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
+ Vitaly Kuznetsov <vkuznets@redhat.com>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 20, 2019 at 03:36:47PM +0000, Marc Zyngier wrote:
-> On 2019-12-20 15:05, Mark Rutland wrote:
-> > +static inline unsigned long host_spsr_to_spsr32(unsigned long spsr)
-> > +{
-> > +	const unsigned long overlap = BIT(24) | BIT(21);
-> > +	unsigned long dit = !!(spsr & PSR_AA32_DIT_BIT);
+On Fri, Dec 20, 2019 at 10:33:25AM +0100, Cornelia Huck wrote:
+> On Wed, 18 Dec 2019 13:55:15 -0800
+> Sean Christopherson <sean.j.christopherson@intel.com> wrote:
+> > +int kvm_arch_vcpu_create(struct kvm_vcpu *vcpu)
+> >  {
+> > -	struct kvm_vcpu *vcpu;
+> >  	struct sie_page *sie_page;
+> >  	int rc;
+> >  
+> > -	rc = -ENOMEM;
+> > -
+> > -	vcpu = kmem_cache_zalloc(kvm_vcpu_cache, GFP_KERNEL);
+> > -	if (!vcpu)
+> > -		goto out;
+> > -
+> > -	rc = kvm_vcpu_init(vcpu, kvm, id);
+> > -	if (rc)
+> > -		goto out_free_cpu;
+> > -
+> > -	rc = -ENOMEM;
+> > -
+> >  	BUILD_BUG_ON(sizeof(struct sie_page) != 4096);
+> >  	sie_page = (struct sie_page *) get_zeroed_page(GFP_KERNEL);
+> >  	if (!sie_page)
+> > -		goto out_uninit_vcpu;
+> > +		return -ENOMEM;
+> >  
+> >  	vcpu->arch.sie_block = &sie_page->sie_block;
+> >  	vcpu->arch.sie_block->itdba = (unsigned long) &sie_page->itdb;
+> > @@ -3087,15 +3070,11 @@ struct kvm_vcpu *kvm_arch_vcpu_create(struct kvm *kvm,
+> >  		 vcpu->arch.sie_block);
+> >  	trace_kvm_s390_create_vcpu(id, vcpu, vcpu->arch.sie_block);
+> >  
+> > -	return vcpu;
+> > +	return 0;
 > > +
-> > +	spsr &= overlap;
+> >  out_free_sie_block:
+> >  	free_page((unsigned long)(vcpu->arch.sie_block));
+> > -out_uninit_vcpu:
+> > -	kvm_vcpu_uninit(vcpu);
+> > -out_free_cpu:
+> > -	kmem_cache_free(kvm_vcpu_cache, vcpu);
+> > -out:
+> > -	return ERR_PTR(rc);
+> > +	return rc;
 > 
-> Are you sure this is what you want to do? This doesn't leave
-> that many bits set in SPSR... :-/
+> This is getting a bit hard to follow across the patches, but I think rc
+> is now only set for ucontrol guests. So this looks correct right now,
+> but feels a bit brittle... should we maybe init rc to 0 and always
+> return rc instead?
 
-Oh, whoops. :(
+Yes, but only for a few patches until kvm_s390_vcpu_setup() is introduced,
+at which point @rc is unconditionally set at the end.
 
-> Apart from what I believe is a missing ~ above, this looks good.
+        rc = kvm_s390_vcpu_setup(vcpu);
+        if (rc)
+                goto out_free_ucontrol_gmap;
+        return 0;
 
-I've added the missing '~' and pushed out the updated branch.
+My personal preference is to use "return 0;" when the return is known to
+be zero as it makes the success path obvious at a glance.  I also didn't
+want to intialize @rc at he beginning because then the sie_page allocation
+would look a bit funky:
 
-Thanks,
-Mark.
+	int rc = 0;
+
+        BUILD_BUG_ON(sizeof(struct sie_page) != 4096);
+        sie_page = (struct sie_page *) get_zeroed_page(GFP_KERNEL);
+        if (!sie_page)
+                return -ENOMEM;
+
+
+An alternative would be to init @rc to -ENOMEM:
+
+        int rc = -ENOMEM;
+
+        BUILD_BUG_ON(sizeof(struct sie_page) != 4096);
+        sie_page = (struct sie_page *) get_zeroed_page(GFP_KERNEL);
+        if (!sie_page)
+                return rc;
+
+This would be my preference if you'd prefer to init @rc right away,
+especially if  __kvm_ucontrol_vcpu_init() is open coded here (discussion
+in patch 35, "KVM: s390: Manually invoke vcpu setup during 
+kvm_arch_vcpu_create()", e.g.:
+
+        int rc = -ENOMEM;
+
+        BUILD_BUG_ON(sizeof(struct sie_page) != 4096);
+        sie_page = (struct sie_page *) get_zeroed_page(GFP_KERNEL);
+        if (!sie_page)
+                return rc;
+
+	...
+
+        if (kvm_is_ucontrol(vcpu->kvm)) {
+                vcpu->arch.gmap = gmap_create(current->mm, -1UL);
+                if (!vcpu->arch.gmap)
+                        goto out_free_sie_block;
+                vcpu->arch.gmap->private = vcpu->kvm;
+        }
+
+        VM_EVENT(kvm, 3, "create cpu %d at 0x%pK, sie block at 0x%pK", id, vcpu,
+                 vcpu->arch.sie_block);
+        trace_kvm_s390_create_vcpu(id, vcpu, vcpu->arch.sie_block);
+
+        rc = kvm_s390_vcpu_setup(vcpu);
+        if (rc)
+                goto out_free_ucontrol_gmap;
+        return 0;
+
+out_free_ucontrol_gmap:
+        if (kvm_is_ucontrol(vcpu->kvm))
+                gmap_remove(vcpu->arch.gmap);
+out_free_sie_block:
+        free_page((unsigned long)(vcpu->arch.sie_block));
+        return rc;
 
 _______________________________________________
 linux-arm-kernel mailing list
