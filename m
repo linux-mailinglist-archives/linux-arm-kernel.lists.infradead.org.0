@@ -2,57 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94161127AC9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 13:12:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CCA8127AE2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 13:19:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bwN5iI5nKi4YABJs1AEDf7vh1A5VpnsoJggh+S52gNo=; b=rDIjU6q2LF1GUTYgavNgN4nRw
-	D1t2U8Npef96eUr9E1gOE/vHnllnBsRz0j0JmQvcmvcYGIyFNh1VLC4OL9HRWTPEj9d67eah/rJz7
-	0tGSHoebVOzf41nVBilZpUUtbFQPttkfAwtxEasOIx5lUEfRl8jeN9MX2h7JYMbqL61rp0c1tL/6h
-	/swPvGZjWfL+/3uT6dR6rmL6NxNnOs/Di54ku/ag278rYnxCREMTNV0Ab/91rTZvWgfe2BuyC4PEO
-	BTcIyUJOOek/hbMZYQq2eHKgYV/mwYfP7Icdf8PtFddG4KFOTo/zFtGTrLf0G9JTC5/oRvCwn8ETQ
-	r6P1Mirzw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GqJey4tHiQLhy08MxedQ07gR+kSrXcWVraDG6NbiYiI=; b=BSYaXCzg1Dehg2
+	gonUCdMUHiZHmW6jywqDFSBbOH+EW+huN6aJ6iEfrePThcWALr7UjGQFE0UHRR7H+Zp4td9OssFa7
+	rScVW4wO3TBtZt7/0zRDISY9NbbZum07KTEg9tBvOh3AuYq/epO1P1hiVHg7+NW2VzYAkLypnqcPz
+	AaX4zTi1as3GGfWVQShlRg72IXkaQOPL7t3hR6v2T6EtNiBdDLyfqjjqZdC8vSm/l3G4sT0T59m72
+	yZ9qVJbQ+iS9CWqSEPqtGPo/L6dNj2qwFCIdyA9ZN+ggnKI10nmbCH9CUInXNCmYl4JoMIx6fUmgS
+	txyMcVGR6kxC3g2/t27w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiH8b-00032w-2c; Fri, 20 Dec 2019 12:12:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiH8P-00031V-3w
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 12:12:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EA40830E;
- Fri, 20 Dec 2019 04:11:54 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 683BC3F719;
- Fri, 20 Dec 2019 04:11:54 -0800 (PST)
-Date: Fri, 20 Dec 2019 12:11:52 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Jeff Chang <richtek.jeff.chang@gmail.com>
-Subject: Re: [PATCH] ASoC: Add MediaTek MT6660 Speaker Amp Driver
-Message-ID: <20191220121152.GC4790@sirena.org.uk>
-References: <1576836934-5370-1-git-send-email-richtek.jeff.chang@gmail.com>
+	id 1iiHFG-0004zS-Q6; Fri, 20 Dec 2019 12:19:02 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iiHF6-0004z6-QM
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 12:18:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1576844330;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=+uqLwzuT4/p/TrN/iMvSErZDSEuFtnJzWf7maJMj2iM=;
+ b=SOEfbmKV63iZIOBynpMSAsfzNyGXEVzhmg1McNcDPSJoDsRkZkCQ05wQ9gA7/bwA505hnc
+ 5ymwiu9ecWoDrhuufQtBSpvPcJj2RTjD+mdvoJMj1U9KMcqWmlSkKdtZDvEHueq+PNE0qM
+ tNlMIPyuGOc7X48gtMnK/TYZwhA1PPA=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-369-pvLJVYDBOgu0tNOhkYFqLQ-1; Fri, 20 Dec 2019 07:18:48 -0500
+X-MC-Unique: pvLJVYDBOgu0tNOhkYFqLQ-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 358EC185432C;
+ Fri, 20 Dec 2019 12:18:47 +0000 (UTC)
+Received: from [10.36.116.117] (ovpn-116-117.ams2.redhat.com [10.36.116.117])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 2086A5C3F8;
+ Fri, 20 Dec 2019 12:18:41 +0000 (UTC)
+Subject: Re: [PATCH] KVM: arm/arm64: vgic: Handle GICR_PENDBASER.PTZ filed as
+ RAZ
+To: Zenghui Yu <yuzenghui@huawei.com>, maz@kernel.org
+References: <20191220111833.1422-1-yuzenghui@huawei.com>
+From: Auger Eric <eric.auger@redhat.com>
+Message-ID: <8f8b063c-45cf-166d-bd94-ff96831314c0@redhat.com>
+Date: Fri, 20 Dec 2019 13:18:40 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
 MIME-Version: 1.0
-In-Reply-To: <1576836934-5370-1-git-send-email-richtek.jeff.chang@gmail.com>
-X-Cookie: I think we're in trouble.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191220111833.1422-1-yuzenghui@huawei.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_041157_241884_0D8A1A5F 
-X-CRM114-Status: GOOD (  17.01  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191220_041852_931712_4BA8090F 
+X-CRM114-Status: GOOD (  17.65  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,136 +91,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org, tiwai@suse.com,
- lgirdwood@gmail.com, jeff_chang@richtek.com, matthias.bgg@gmail.com,
- perex@perex.cz, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5739087664045095893=="
+Cc: andre.przywara@arm.com, kvmarm@lists.cs.columbia.edu,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ wanghaibin.wang@huawei.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Zenghui,
 
---===============5739087664045095893==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Y5rl02BVI9TCfPar"
-Content-Disposition: inline
-
-
---Y5rl02BVI9TCfPar
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Fri, Dec 20, 2019 at 06:15:34PM +0800, Jeff Chang wrote:
-
-> +++ b/sound/soc/codecs/mt6660.c
-> @@ -0,0 +1,653 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (c) 2019 MediaTek Inc.
-> + */
-
-Please make the entire comment a C++ one so things look more
-intentional.
-
-> +	{ MT6660_REG_DEVID, 2},
-> +	{ MT6660_REG_TDM_CFG3, 2},
-> +	{ MT6660_REG_HCLIP_CTRL, 2},
-> +	{ MT6660_REG_DA_GAIN, 2},
-
-Missing space before the } (the same thing happens in some of the
-other tables).
-
-> +static int mt6660_component_get_volsw(struct snd_kcontrol *kcontrol,
-> +				  struct snd_ctl_elem_value *ucontrol)
-> +{
-> +	struct snd_soc_component *component =
-> +		snd_soc_kcontrol_component(kcontrol);
-> +	struct mt6660_chip *chip = (struct mt6660_chip *)
-> +		snd_soc_component_get_drvdata(component);
-> +	int ret = -EINVAL;
+On 12/20/19 12:18 PM, Zenghui Yu wrote:
+> Although guest will hardly read and use the PTZ (Pending Table Zero)
+> bit in GICR_PENDBASER, let us emulate the architecture strictly.
+> As per IHI 0069E 9.11.30, PTZ field is WO, and reads as 0.
+> 
+> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
+> ---
+> 
+> Noticed when checking all fields of GICR_PENDBASER register.
+> But _not_ sure whether it's worth a fix, as Linux never sets
+> the PTZ bit before enabling LPI (set GICR_CTLR_ENABLE_LPIS).
+> 
+> And I wonder under which scenarios can this bit be written as 1.
+> It seems difficult for software to determine whether the pending
+> table contains all zeros when writing this bit.
+> 
+>  virt/kvm/arm/vgic/vgic-mmio-v3.c | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+> index 7dfd15dbb308..ebc218840fc2 100644
+> --- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
+> +++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+> @@ -414,8 +414,11 @@ static unsigned long vgic_mmio_read_pendbase(struct kvm_vcpu *vcpu,
+>  					     gpa_t addr, unsigned int len)
+>  {
+>  	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+> +	u64 value = vgic_cpu->pendbaser;
+>  
+> -	return extract_bytes(vgic_cpu->pendbaser, addr & 7, len);
+> +	value &= ~GICR_PENDBASER_PTZ;
 > +
-> +	if (!strcmp(kcontrol->id.name, "Chip_Rev")) {
+> +	return extract_bytes(value, addr & 7, len);
+>  }
+>  
+>  static void vgic_mmio_write_pendbase(struct kvm_vcpu *vcpu,
+> 
+Reviewed-by: Eric Auger <eric.auger@redhat.com>
 
-Why would this be used on a different control?
+Thanks
 
-> +	SOC_SINGLE_EXT("BoostMode", MT6660_REG_BST_CTRL, 0, 3, 0,
-> +		       snd_soc_get_volsw, snd_soc_put_volsw),
+Eric
 
-Boost Mode.  You've also got a lot of these controls that are _EXT but
-you then just use standard operations so it's not clear why you're using
-_EXT.
-
-> +	SOC_SINGLE_EXT("audio input selection", MT6660_REG_DATAO_SEL, 6, 3, 0,
-> +		       snd_soc_get_volsw, snd_soc_put_volsw),
-
-Audio Input Selection, but this looks like it should be a DAPM control
-if it's controlling audio routing.  A simple numerical setting
-definitely doesn't seem like the right thing.
-
-> +	SOC_SINGLE_EXT("AUD LOOP BACK Switch", MT6660_REG_PATH_BYPASS, 4, 1, 0,
-> +		       snd_soc_get_volsw, snd_soc_put_volsw),
-
-This sounds like it should be a DAPM thing too.
-
-> +static int mt6660_component_probe(struct snd_soc_component *component)
-> +{
-> +	struct mt6660_chip *chip = snd_soc_component_get_drvdata(component);
-> +	int ret = 0;
-> +
-> +	dev_info(component->dev, "%s\n", __func__);
-
-dev_dbg() at most but probably better to remove this and the other
-similar dev_info()s.
-
-> +static inline int _mt6660_chip_id_check(struct mt6660_chip *chip)
-> +{
-> +	u8 id[2] = {0};
-> +	int ret = 0;
-> +
-> +	ret = i2c_smbus_read_i2c_block_data(chip->i2c, MT6660_REG_DEVID, 2, id);
-> +	if (ret < 0)
-> +		return ret;
-> +	ret = (id[0] << 8) + id[1];
-> +	ret &= 0x0ff0;
-> +	if (ret != 0x00e0 && ret != 0x01e0)
-> +		return -ENODEV;
-
-It'd be better to print an error message saying we don't recognize the
-device to help people doing debugging.
-
-> +	if (of_property_read_u32(np, "rt,init_setting_num", &val)) {
-> +		dev_info(dev, "no init setting\n");
-> +		chip->plat_data.init_setting_num = 0;
-
-You should be adding a DT binding document for any new DT bindings.
-
---Y5rl02BVI9TCfPar
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl38uogACgkQJNaLcl1U
-h9B+kQf6AzhZSat7mqBSwJVubwAXZcJ6ApJ29GlB2ypbTdOhUOTKKR8ytA2kMg6l
-Ifw88ajLzpL4jAIHwwS3NOMonMD/9KgNLfQVgMxzuzsYyRYBmj7p9lXsYICNIvoe
-nSn2nPJfw5g5PlMZ+qwxyNNMTOkui6qKCFoFS77TJq0hsbTh+x6azMfn8VVRwrL+
-VRXPN2C9mAdyrVPw/XPjkTyCrXw8P6brXK6qW23Y14FRQ8dXke0rhMumWytquybM
-ebURG75CUEXyykGbNGHoJa4ycypd5AA/LYR86mzRbs7Mxiqlmw3co8/C44n4XKM0
-QungC3A3a98p1kNSIiBM9g2Ie+cgBw==
-=pOxx
------END PGP SIGNATURE-----
-
---Y5rl02BVI9TCfPar--
-
-
---===============5739087664045095893==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5739087664045095893==--
-
