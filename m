@@ -2,63 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FD4A1276A7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 08:41:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DB3112769C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 08:38:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=CiiQz+1EUizOoljCw6kcZr1R45rEWRHWmYmlXkszDfg=; b=bj7sQwBTyFn+ZsB8NHlZltgFD7
-	LMQOy+PSyBrIbvNzGIQCF/KPVe8IQYuuojl9w4RhP7pg+ZXrrxMNGqegGi3/yvRI5dDybYRctyAhQ
-	Fa19TXB7ztK/G1IfbRT3QT9ZkdsFZFg1cSrTKqfGSpo/62FtIPbi3FE/VkTSUVdiZr0sycqnb1s1h
-	PmzQEYdV6WjPBRZAc1qPHr3PezA/fVUdZMvBrlo4Qrb38KynwVdfbTq9Ohlgj/SFAbJq1VEMFa85X
-	89cQIOvhQDFBl0fnhs3u+XVFGvo6lu83NoMLqIFMZgL5YJJ9wwRII04NPv2FUk6aG7PUTpuTU2dun
-	foFp/VUg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ewzT3gjWGr0l/K8UPWgVU24VjcFkO55LxEXLjxhrjc0=; b=myf/8F9weM/CQa
+	l3XP6k/DHDh0Lb9WJ5m9ZiwVSYBFMYN0p6EB253+aPYjmsYTvyj9Z7GH2SRVFsitkAuPQaxEyZBG5
+	HImCnvg62qrVlvwxcWZepB1sM88teoNPeQid3cTsOi3JmMJ8Y0wb8/5+en1J0s7fFrc0phx2ynaI+
+	ztMRQMvDoYui9QgOVFHbK5f7CrQSLBv49b8kzp1TxtpMRbw1cwSprDBFz40WygQMyssX+iMPc8QKK
+	jNUCqCfzI23PTbvVkN1WkcIQ1F/ql+VA0q/WJgku8hRYuJBkVlqT2MHEZJwaXMZ4l17FJNRTxDjuB
+	CROBgHU64guAjhfXKEhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiCuV-0004Fj-HU; Fri, 20 Dec 2019 07:41:19 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iiCrh-0001sI-5b; Fri, 20 Dec 2019 07:38:25 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiCtv-0003rZ-L6
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 07:40:46 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id CA00B1A02E7;
- Fri, 20 Dec 2019 08:40:41 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 04DC91A0A2B;
- Fri, 20 Dec 2019 08:40:35 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id C40AA402D5;
- Fri, 20 Dec 2019 15:40:26 +0800 (SGT)
-From: Joakim Zhang <qiangqing.zhang@nxp.com>
-To: maz@kernel.org, tglx@linutronix.de, jason@lakedaemon.net,
- robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de
-Subject: [PATCH V3 2/2] drivers/irqchip: add NXP INTMUX interrupt multiplexer
- support
-Date: Fri, 20 Dec 2019 15:37:11 +0800
-Message-Id: <1576827431-31942-3-git-send-email-qiangqing.zhang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1576827431-31942-1-git-send-email-qiangqing.zhang@nxp.com>
-References: <1576827431-31942-1-git-send-email-qiangqing.zhang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iiCrH-0001hg-AG
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 07:38:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1576827476;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=ik9zblcACLAYgG8OzsfmWBMKQZGOxI4PWyiE7YKno5I=;
+ b=VzTl+FWdBJLgUfSzDxWUlJgzuLQxGaoltgeKhuS9d7exycSynIUCw/8gT/m6ZTSysPh4PW
+ Ia34F+NMKCRVZHGk3fRKyLiQnnnwxcKf25XSqbcn7hQU0Yys0cbz59TfS8m1Kat/bG1paW
+ 8qI+UK9knXwYECO5bpE+/uqaKvGLpJo=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-53-Yj7cv9uRPJKIqWgx-7vRcw-1; Fri, 20 Dec 2019 02:37:52 -0500
+X-MC-Unique: Yj7cv9uRPJKIqWgx-7vRcw-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 2A04C107ACC4;
+ Fri, 20 Dec 2019 07:37:49 +0000 (UTC)
+Received: from [10.36.116.117] (ovpn-116-117.ams2.redhat.com [10.36.116.117])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 9336263BA1;
+ Fri, 20 Dec 2019 07:37:39 +0000 (UTC)
+Subject: Re: [PATCH v4 10/13] iommu/arm-smmu-v3: Add second level of context
+ descriptor table
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-acpi@vger.kernel.org, devicetree@vger.kernel.org,
+ iommu@lists.linux-foundation.org
+References: <20191219163033.2608177-1-jean-philippe@linaro.org>
+ <20191219163033.2608177-11-jean-philippe@linaro.org>
+From: Auger Eric <eric.auger@redhat.com>
+Message-ID: <d663f79a-d53b-d410-1757-979c50436ce3@redhat.com>
+Date: Fri, 20 Dec 2019 08:37:36 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.4.0
+MIME-Version: 1.0
+In-Reply-To: <20191219163033.2608177-11-jean-philippe@linaro.org>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191219_234044_119019_6B3D3E2E 
-X-CRM114-Status: GOOD (  16.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191219_233759_446479_50F05FAD 
+X-CRM114-Status: GOOD (  25.02  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [207.211.31.81 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.81 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,379 +97,271 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: fugang.duan@nxp.com, Shengjiu Wang <shengjiu.wang@nxp.com>,
- Joakim Zhang <qiangqing.zhang@nxp.com>, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, robin.murphy@arm.com,
+ joro@8bytes.org, guohanjun@huawei.com, rjw@rjwysocki.net, robh+dt@kernel.org,
+ jonathan.cameron@huawei.com, sudeep.holla@arm.com, bhelgaas@google.com,
+ zhangfei.gao@linaro.org, will@kernel.org, lenb@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Interrupt Multiplexer (INTMUX) expands the number of peripherals
-that can interrupt the core:
-* The INTMUX has 8 channels that are assigned to 8 NVIC interrupt slots.
-* Each INTMUX channel can receive up to 32 interrupt sources and has 1
-  interrupt output.
-* The INTMUX routes the interrupt sources to the interrupt outputs.
+Hi Jean,
 
-Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
-Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
----
- drivers/irqchip/Kconfig          |   6 +
- drivers/irqchip/Makefile         |   1 +
- drivers/irqchip/irq-imx-intmux.c | 311 +++++++++++++++++++++++++++++++
- 3 files changed, 318 insertions(+)
- create mode 100644 drivers/irqchip/irq-imx-intmux.c
+On 12/19/19 5:30 PM, Jean-Philippe Brucker wrote:
+> The SMMU can support up to 20 bits of SSID. Add a second level of page
+> tables to accommodate this. Devices that support more than 1024 SSIDs now
+> have a table of 1024 L1 entries (8kB), pointing to tables of 1024 context
+> descriptors (64kB), allocated on demand.
+> 
+> Tested-by: Zhangfei Gao <zhangfei.gao@linaro.org>
+> Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Reviewed-by: Eric Auger <eric.auger@redhat.com>
 
-diff --git a/drivers/irqchip/Kconfig b/drivers/irqchip/Kconfig
-index ba152954324b..7e2b1e9d0b45 100644
---- a/drivers/irqchip/Kconfig
-+++ b/drivers/irqchip/Kconfig
-@@ -457,6 +457,12 @@ config IMX_IRQSTEER
- 	help
- 	  Support for the i.MX IRQSTEER interrupt multiplexer/remapper.
- 
-+config IMX_INTMUX
-+	def_bool y if ARCH_MXC
-+	select IRQ_DOMAIN
-+	help
-+	  Support for the i.MX INTMUX interrupt multiplexer.
-+
- config LS1X_IRQ
- 	bool "Loongson-1 Interrupt Controller"
- 	depends on MACH_LOONGSON32
-diff --git a/drivers/irqchip/Makefile b/drivers/irqchip/Makefile
-index e806dda690ea..af976a79d1fb 100644
---- a/drivers/irqchip/Makefile
-+++ b/drivers/irqchip/Makefile
-@@ -100,6 +100,7 @@ obj-$(CONFIG_CSKY_MPINTC)		+= irq-csky-mpintc.o
- obj-$(CONFIG_CSKY_APB_INTC)		+= irq-csky-apb-intc.o
- obj-$(CONFIG_SIFIVE_PLIC)		+= irq-sifive-plic.o
- obj-$(CONFIG_IMX_IRQSTEER)		+= irq-imx-irqsteer.o
-+obj-$(CONFIG_IMX_INTMUX)		+= irq-imx-intmux.o
- obj-$(CONFIG_MADERA_IRQ)		+= irq-madera.o
- obj-$(CONFIG_LS1X_IRQ)			+= irq-ls1x.o
- obj-$(CONFIG_TI_SCI_INTR_IRQCHIP)	+= irq-ti-sci-intr.o
-diff --git a/drivers/irqchip/irq-imx-intmux.c b/drivers/irqchip/irq-imx-intmux.c
-new file mode 100644
-index 000000000000..94c67fdd7163
---- /dev/null
-+++ b/drivers/irqchip/irq-imx-intmux.c
-@@ -0,0 +1,311 @@
-+// SPDX-License-Identifier: GPL-2.0
-+// Copyright 2017 NXP
-+
-+/*                     INTMUX Block Diagram
-+ *
-+ *                               ________________
-+ * interrupt source #  0  +---->|                |
-+ *                        |     |                |
-+ * interrupt source #  1  +++-->|                |
-+ *            ...         | |   |   channel # 0  |--------->interrupt out # 0
-+ *            ...         | |   |                |
-+ *            ...         | |   |                |
-+ * interrupt source # X-1 +++-->|________________|
-+ *                        | | |
-+ *                        | | |
-+ *                        | | |  ________________
-+ *                        +---->|                |
-+ *                        | | | |                |
-+ *                        | +-->|                |
-+ *                        | | | |   channel # 1  |--------->interrupt out # 1
-+ *                        | | +>|                |
-+ *                        | | | |                |
-+ *                        | | | |________________|
-+ *                        | | |
-+ *                        | | |
-+ *                        | | |       ...
-+ *                        | | |       ...
-+ *                        | | |
-+ *                        | | |  ________________
-+ *                        +---->|                |
-+ *                          | | |                |
-+ *                          +-->|                |
-+ *                            | |   channel # N  |--------->interrupt out # N
-+ *                            +>|                |
-+ *                              |                |
-+ *                              |________________|
-+ *
-+ *
-+ * N: Interrupt Channel Instance Number (N=7)
-+ * X: Interrupt Source Number for each channel (X=32)
-+ *
-+ * The INTMUX interrupt multiplexer has 8 channels, each channel receives 32
-+ * interrupt sources and generates 1 interrupt output.
-+ *
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/interrupt.h>
-+#include <linux/irq.h>
-+#include <linux/irqchip/chained_irq.h>
-+#include <linux/irqdomain.h>
-+#include <linux/kernel.h>
-+#include <linux/of_irq.h>
-+#include <linux/of_platform.h>
-+#include <linux/spinlock.h>
-+
-+#define CHANIER(n)	(0x10 + (0x40 * n))
-+#define CHANIPR(n)	(0x20 + (0x40 * n))
-+
-+#define CHAN_MAX_NUM		0x8
-+
-+struct intmux_irqchip_data {
-+	int			chanidx;
-+	int			irq;
-+	struct irq_domain	*domain;
-+};
-+
-+struct intmux_data {
-+	raw_spinlock_t			lock;
-+	void __iomem			*regs;
-+	struct clk			*ipg_clk;
-+	int				channum;
-+	struct intmux_irqchip_data	irqchip_data[];
-+};
-+
-+static void imx_intmux_irq_mask(struct irq_data *d)
-+{
-+	struct intmux_irqchip_data *irqchip_data = d->chip_data;
-+	int idx = irqchip_data->chanidx;
-+	struct intmux_data *data = container_of(irqchip_data, struct intmux_data,
-+						irqchip_data[idx]);
-+	unsigned long flags;
-+	void __iomem *reg;
-+	u32 val;
-+
-+	raw_spin_lock_irqsave(&data->lock, flags);
-+	reg = data->regs + CHANIER(idx);
-+	val = readl_relaxed(reg);
-+	/* disable the interrupt source of this channel */
-+	val &= ~BIT(d->hwirq);
-+	writel_relaxed(val, reg);
-+	raw_spin_unlock_irqrestore(&data->lock, flags);
-+}
-+
-+static void imx_intmux_irq_unmask(struct irq_data *d)
-+{
-+	struct intmux_irqchip_data *irqchip_data = d->chip_data;
-+	int idx = irqchip_data->chanidx;
-+	struct intmux_data *data = container_of(irqchip_data, struct intmux_data,
-+						irqchip_data[idx]);
-+	unsigned long flags;
-+	void __iomem *reg;
-+	u32 val;
-+
-+	raw_spin_lock_irqsave(&data->lock, flags);
-+	reg = data->regs + CHANIER(idx);
-+	val = readl_relaxed(reg);
-+	/* enable the interrupt source of this channel */
-+	val |= BIT(d->hwirq);
-+	writel_relaxed(val, reg);
-+	raw_spin_unlock_irqrestore(&data->lock, flags);
-+}
-+
-+static struct irq_chip imx_intmux_irq_chip = {
-+	.name		= "intmux",
-+	.irq_mask	= imx_intmux_irq_mask,
-+	.irq_unmask	= imx_intmux_irq_unmask,
-+};
-+
-+static int imx_intmux_irq_map(struct irq_domain *h, unsigned int irq,
-+			      irq_hw_number_t hwirq)
-+{
-+	irq_set_status_flags(irq, IRQ_LEVEL);
-+	irq_set_chip_data(irq, h->host_data);
-+	irq_set_chip_and_handler(irq, &imx_intmux_irq_chip, handle_level_irq);
-+
-+	return 0;
-+}
-+
-+static int imx_intmux_irq_xlate(struct irq_domain *d, struct device_node *node,
-+				const u32 *intspec, unsigned int intsize,
-+				unsigned long *out_hwirq, unsigned int *out_type)
-+{
-+	struct intmux_irqchip_data *irqchip_data = d->host_data;
-+	int idx = irqchip_data->chanidx;
-+	struct intmux_data *data = container_of(irqchip_data, struct intmux_data,
-+						irqchip_data[idx]);
-+
-+	/* two cells needed in interrupt specifier:
-+	 * the 1st cell: hw interrupt number
-+	 * the 2nd cell: channel index
-+	 */
-+	if (WARN_ON(intsize != 2))
-+		return -EINVAL;
-+
-+	if (WARN_ON(intspec[1] >= data->channum))
-+		return -EINVAL;
-+
-+	*out_hwirq = intspec[0];
-+	*out_type = IRQ_TYPE_NONE;
-+
-+	return 0;
-+}
-+
-+static int imx_intmux_irq_select(struct irq_domain *d, struct irq_fwspec *fwspec,
-+				 enum irq_domain_bus_token bus_token)
-+{
-+	struct intmux_irqchip_data *irqchip_data = d->host_data;
-+
-+	/* Not for us */
-+	if (fwspec->fwnode != d->fwnode)
-+		return false;
-+
-+	if (irqchip_data->chanidx == fwspec->param[1])
-+		return true;
-+	else
-+		return false;
-+}
-+
-+static const struct irq_domain_ops imx_intmux_domain_ops = {
-+	.map		= imx_intmux_irq_map,
-+	.xlate		= imx_intmux_irq_xlate,
-+	.select		= imx_intmux_irq_select,
-+};
-+
-+static void imx_intmux_irq_handler(struct irq_desc *desc)
-+{
-+	struct intmux_irqchip_data *irqchip_data = irq_desc_get_handler_data(desc);
-+	int idx = irqchip_data->chanidx;
-+	struct intmux_data *data = container_of(irqchip_data, struct intmux_data,
-+						irqchip_data[idx]);
-+	unsigned long irqstat;
-+	int pos, virq;
-+
-+	chained_irq_enter(irq_desc_get_chip(desc), desc);
-+
-+	/* read the interrupt source pending status of this channel */
-+	irqstat = readl_relaxed(data->regs + CHANIPR(idx));
-+
-+	for_each_set_bit(pos, &irqstat, 32) {
-+		virq = irq_find_mapping(irqchip_data->domain, pos);
-+		if (virq)
-+			generic_handle_irq(virq);
-+	}
-+
-+	chained_irq_exit(irq_desc_get_chip(desc), desc);
-+}
-+
-+static int imx_intmux_probe(struct platform_device *pdev)
-+{
-+	struct device_node *np = pdev->dev.of_node;
-+	struct intmux_data *data;
-+	int channum;
-+	int i, ret;
-+
-+	ret = of_property_read_u32(np, "fsl,intmux_chans", &channum);
-+	if (ret) {
-+		channum = 1;
-+	} else if (channum > CHAN_MAX_NUM) {
-+		dev_err(&pdev->dev, "supports up to %d multiplex channels\n",
-+			CHAN_MAX_NUM);
-+		return -EINVAL;
-+	}
-+
-+	data = devm_kzalloc(&pdev->dev, sizeof(*data) +
-+			    channum * sizeof(data->irqchip_data[0]), GFP_KERNEL);
-+	if (!data)
-+		return -ENOMEM;
-+
-+	data->regs = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(data->regs)) {
-+		dev_err(&pdev->dev, "failed to initialize reg\n");
-+		return PTR_ERR(data->regs);
-+	}
-+
-+	data->ipg_clk = devm_clk_get(&pdev->dev, "ipg");
-+	if (IS_ERR(data->ipg_clk)) {
-+		ret = PTR_ERR(data->ipg_clk);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "failed to get ipg clk: %d\n", ret);
-+		return ret;
-+	}
-+
-+	data->channum = channum;
-+	raw_spin_lock_init(&data->lock);
-+
-+	ret = clk_prepare_enable(data->ipg_clk);
-+	if (ret) {
-+		dev_err(&pdev->dev, "failed to enable ipg clk: %d\n", ret);
-+		return ret;
-+	}
-+
-+	for (i = 0; i < channum; i++) {
-+		data->irqchip_data[i].chanidx = i;
-+
-+		data->irqchip_data[i].irq = irq_of_parse_and_map(np, i);
-+		if (data->irqchip_data[i].irq <= 0) {
-+			ret = -EINVAL;
-+			dev_err(&pdev->dev, "failed to get irq\n");
-+			goto out;
-+		}
-+
-+		data->irqchip_data[i].domain =
-+			irq_domain_add_linear(np, 32, &imx_intmux_domain_ops,
-+					      &data->irqchip_data[i]);
-+		if (!data->irqchip_data[i].domain) {
-+			ret = -ENOMEM;
-+			dev_err(&pdev->dev, "failed to create IRQ domain\n");
-+			goto out;
-+		}
-+
-+		irq_set_chained_handler_and_data(data->irqchip_data[i].irq,
-+						 imx_intmux_irq_handler,
-+						 &data->irqchip_data[i]);
-+
-+		/* disable interrupt sources of this channel firstly */
-+		writel_relaxed(0, data->regs + CHANIER(i));
-+	}
-+
-+	platform_set_drvdata(pdev, data);
-+
-+	return 0;
-+out:
-+	clk_disable_unprepare(data->ipg_clk);
-+	return ret;
-+}
-+
-+static int imx_intmux_remove(struct platform_device *pdev)
-+{
-+	struct intmux_data *data = platform_get_drvdata(pdev);
-+	int i;
-+
-+	for (i = 0; i < data->channum; i++) {
-+		/* clear interrupt sources pending status of this channel */
-+		writel_relaxed(0, data->regs + CHANIPR(i));
-+
-+		irq_set_chained_handler_and_data(data->irqchip_data[i].irq,
-+						 NULL, NULL);
-+
-+		irq_domain_remove(data->irqchip_data[i].domain);
-+	}
-+
-+	clk_disable_unprepare(data->ipg_clk);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id imx_intmux_id[] = {
-+	{ .compatible = "fsl,imx-intmux", },
-+	{ /* sentinel */ },
-+};
-+
-+static struct platform_driver imx_intmux_driver = {
-+	.driver = {
-+		.name = "imx-intmux",
-+		.of_match_table = imx_intmux_id,
-+	},
-+	.probe = imx_intmux_probe,
-+	.remove = imx_intmux_remove,
-+};
-+builtin_platform_driver(imx_intmux_driver);
--- 
-2.17.1
+Thanks
+
+Eric
+
+> ---
+>  drivers/iommu/arm-smmu-v3.c | 154 +++++++++++++++++++++++++++++++++---
+>  1 file changed, 144 insertions(+), 10 deletions(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index b825a5639afc..bf106a7b53eb 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -224,6 +224,7 @@
+>  
+>  #define STRTAB_STE_0_S1FMT		GENMASK_ULL(5, 4)
+>  #define STRTAB_STE_0_S1FMT_LINEAR	0
+> +#define STRTAB_STE_0_S1FMT_64K_L2	2
+>  #define STRTAB_STE_0_S1CTXPTR_MASK	GENMASK_ULL(51, 6)
+>  #define STRTAB_STE_0_S1CDMAX		GENMASK_ULL(63, 59)
+>  
+> @@ -263,7 +264,20 @@
+>  
+>  #define STRTAB_STE_3_S2TTB_MASK		GENMASK_ULL(51, 4)
+>  
+> -/* Context descriptor (stage-1 only) */
+> +/*
+> + * Context descriptors.
+> + *
+> + * Linear: when less than 1024 SSIDs are supported
+> + * 2lvl: at most 1024 L1 entries,
+> + *       1024 lazy entries per table.
+> + */
+> +#define CTXDESC_SPLIT			10
+> +#define CTXDESC_L2_ENTRIES		(1 << CTXDESC_SPLIT)
+> +
+> +#define CTXDESC_L1_DESC_DWORDS		1
+> +#define CTXDESC_L1_DESC_VALID		1
+> +#define CTXDESC_L1_DESC_L2PTR_MASK	GENMASK_ULL(51, 12)
+> +
+>  #define CTXDESC_CD_DWORDS		8
+>  #define CTXDESC_CD_0_TCR_T0SZ		GENMASK_ULL(5, 0)
+>  #define ARM64_TCR_T0SZ			GENMASK_ULL(5, 0)
+> @@ -575,7 +589,12 @@ struct arm_smmu_cd_table {
+>  };
+>  
+>  struct arm_smmu_s1_cfg {
+> -	struct arm_smmu_cd_table	table;
+> +	/* Leaf tables or linear table */
+> +	struct arm_smmu_cd_table	*tables;
+> +	size_t				num_tables;
+> +	/* First level tables, when two levels are used */
+> +	__le64				*l1ptr;
+> +	dma_addr_t			l1ptr_dma;
+>  	struct arm_smmu_ctx_desc	cd;
+>  	u8				s1fmt;
+>  	u8				s1cdmax;
+> @@ -1521,9 +1540,48 @@ static void arm_smmu_free_cd_leaf_table(struct arm_smmu_device *smmu,
+>  {
+>  	size_t size = num_entries * (CTXDESC_CD_DWORDS << 3);
+>  
+> +	if (!table->ptr)
+> +		return;
+>  	dmam_free_coherent(smmu->dev, size, table->ptr, table->ptr_dma);
+>  }
+>  
+> +static void arm_smmu_write_cd_l1_desc(__le64 *dst,
+> +				      struct arm_smmu_cd_table *table)
+> +{
+> +	u64 val = (table->ptr_dma & CTXDESC_L1_DESC_L2PTR_MASK) |
+> +		  CTXDESC_L1_DESC_VALID;
+> +
+> +	WRITE_ONCE(*dst, cpu_to_le64(val));
+> +}
+> +
+> +static __le64 *arm_smmu_get_cd_ptr(struct arm_smmu_domain *smmu_domain,
+> +				   u32 ssid)
+> +{
+> +	__le64 *l1ptr;
+> +	unsigned int idx;
+> +	struct arm_smmu_cd_table *table;
+> +	struct arm_smmu_device *smmu = smmu_domain->smmu;
+> +	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
+> +
+> +	if (cfg->s1fmt == STRTAB_STE_0_S1FMT_LINEAR)
+> +		return cfg->tables[0].ptr + ssid * CTXDESC_CD_DWORDS;
+> +
+> +	idx = ssid >> CTXDESC_SPLIT;
+> +	table = &cfg->tables[idx];
+> +	if (!table->ptr) {
+> +		if (arm_smmu_alloc_cd_leaf_table(smmu, table,
+> +						 CTXDESC_L2_ENTRIES))
+> +			return NULL;
+> +
+> +		l1ptr = cfg->l1ptr + idx * CTXDESC_L1_DESC_DWORDS;
+> +		arm_smmu_write_cd_l1_desc(l1ptr, table);
+> +		/* An invalid L1CD can be cached */
+> +		arm_smmu_sync_cd(smmu_domain, ssid, false);
+> +	}
+> +	idx = ssid & (CTXDESC_L2_ENTRIES - 1);
+> +	return table->ptr + idx * CTXDESC_CD_DWORDS;
+> +}
+> +
+>  static u64 arm_smmu_cpu_tcr_to_cd(u64 tcr)
+>  {
+>  	u64 val = 0;
+> @@ -1556,8 +1614,14 @@ static int arm_smmu_write_ctx_desc(struct arm_smmu_domain *smmu_domain,
+>  	u64 val;
+>  	bool cd_live;
+>  	struct arm_smmu_device *smmu = smmu_domain->smmu;
+> -	__le64 *cdptr = smmu_domain->s1_cfg.table.ptr + ssid *
+> -			CTXDESC_CD_DWORDS;
+> +	__le64 *cdptr;
+> +
+> +	if (WARN_ON(ssid >= (1 << smmu_domain->s1_cfg.s1cdmax)))
+> +		return -E2BIG;
+> +
+> +	cdptr = arm_smmu_get_cd_ptr(smmu_domain, ssid);
+> +	if (!cdptr)
+> +		return -ENOMEM;
+>  
+>  	val = le64_to_cpu(cdptr[0]);
+>  	cd_live = !!(val & CTXDESC_CD_0_V);
+> @@ -1604,20 +1668,87 @@ static int arm_smmu_write_ctx_desc(struct arm_smmu_domain *smmu_domain,
+>  
+>  static int arm_smmu_alloc_cd_tables(struct arm_smmu_domain *smmu_domain)
+>  {
+> +	int ret;
+> +	size_t size = 0;
+> +	size_t max_contexts;
+>  	struct arm_smmu_device *smmu = smmu_domain->smmu;
+>  	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
+>  
+> -	cfg->s1fmt = STRTAB_STE_0_S1FMT_LINEAR;
+> -	return arm_smmu_alloc_cd_leaf_table(smmu, &cfg->table,
+> -					    1 << cfg->s1cdmax);
+> +	max_contexts = 1 << cfg->s1cdmax;
+> +
+> +	if (!(smmu->features & ARM_SMMU_FEAT_2_LVL_CDTAB) ||
+> +	    max_contexts <= CTXDESC_L2_ENTRIES) {
+> +		cfg->s1fmt = STRTAB_STE_0_S1FMT_LINEAR;
+> +		cfg->num_tables = 1;
+> +	} else {
+> +		cfg->s1fmt = STRTAB_STE_0_S1FMT_64K_L2;
+> +		cfg->num_tables = DIV_ROUND_UP(max_contexts,
+> +					       CTXDESC_L2_ENTRIES);
+> +
+> +		size = cfg->num_tables * (CTXDESC_L1_DESC_DWORDS << 3);
+> +		cfg->l1ptr = dmam_alloc_coherent(smmu->dev, size,
+> +						 &cfg->l1ptr_dma,
+> +						 GFP_KERNEL);
+> +		if (!cfg->l1ptr) {
+> +			dev_warn(smmu->dev,
+> +				 "failed to allocate L1 context table\n");
+> +			return -ENOMEM;
+> +		}
+> +	}
+> +
+> +	cfg->tables = devm_kzalloc(smmu->dev, sizeof(struct arm_smmu_cd_table) *
+> +				   cfg->num_tables, GFP_KERNEL);
+> +	if (!cfg->tables) {
+> +		ret = -ENOMEM;
+> +		goto err_free_l1;
+> +	}
+> +
+> +	/*
+> +	 * Only allocate a leaf table for linear case. With two levels, leaf
+> +	 * tables are allocated lazily.
+> +	 */
+> +	if (cfg->s1fmt == STRTAB_STE_0_S1FMT_LINEAR) {
+> +		ret = arm_smmu_alloc_cd_leaf_table(smmu, &cfg->tables[0],
+> +						   max_contexts);
+> +		if (ret)
+> +			goto err_free_tables;
+> +	}
+> +
+> +	return 0;
+> +
+> +err_free_tables:
+> +	devm_kfree(smmu->dev, cfg->tables);
+> +	cfg->tables = NULL;
+> +err_free_l1:
+> +	if (cfg->l1ptr) {
+> +		dmam_free_coherent(smmu->dev, size, cfg->l1ptr, cfg->l1ptr_dma);
+> +		cfg->l1ptr = NULL;
+> +		cfg->l1ptr_dma = 0;
+> +	}
+> +	return ret;
+>  }
+>  
+>  static void arm_smmu_free_cd_tables(struct arm_smmu_domain *smmu_domain)
+>  {
+> +	int i;
+>  	struct arm_smmu_device *smmu = smmu_domain->smmu;
+>  	struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
+> +	size_t num_leaf_entries = 1 << cfg->s1cdmax;
+> +	struct arm_smmu_cd_table *table = cfg->tables;
+> +
+> +	if (cfg->l1ptr) {
+> +		size_t size = cfg->num_tables * (CTXDESC_L1_DESC_DWORDS << 3);
+>  
+> -	arm_smmu_free_cd_leaf_table(smmu, &cfg->table, 1 << cfg->s1cdmax);
+> +		dmam_free_coherent(smmu->dev, size, cfg->l1ptr, cfg->l1ptr_dma);
+> +		cfg->l1ptr = NULL;
+> +		cfg->l1ptr_dma = 0;
+> +		num_leaf_entries = CTXDESC_L2_ENTRIES;
+> +	}
+> +
+> +	for (i = 0; i < cfg->num_tables; i++, table++)
+> +		arm_smmu_free_cd_leaf_table(smmu, table, num_leaf_entries);
+> +	devm_kfree(smmu->dev, cfg->tables);
+> +	cfg->tables = NULL;
+>  }
+>  
+>  /* Stream table manipulation functions */
+> @@ -1737,6 +1868,9 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
+>  	}
+>  
+>  	if (s1_cfg) {
+> +		dma_addr_t ptr_dma = s1_cfg->l1ptr ? s1_cfg->l1ptr_dma :
+> +				     s1_cfg->tables[0].ptr_dma;
+> +
+>  		BUG_ON(ste_live);
+>  		dst[1] = cpu_to_le64(
+>  			 FIELD_PREP(STRTAB_STE_1_S1DSS, STRTAB_STE_1_S1DSS_SSID0) |
+> @@ -1749,7 +1883,7 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
+>  		   !(smmu->features & ARM_SMMU_FEAT_STALL_FORCE))
+>  			dst[1] |= cpu_to_le64(STRTAB_STE_1_S1STALLD);
+>  
+> -		val |= (s1_cfg->table.ptr_dma & STRTAB_STE_0_S1CTXPTR_MASK) |
+> +		val |= (ptr_dma & STRTAB_STE_0_S1CTXPTR_MASK) |
+>  			FIELD_PREP(STRTAB_STE_0_CFG, STRTAB_STE_0_CFG_S1_TRANS) |
+>  			FIELD_PREP(STRTAB_STE_0_S1CDMAX, s1_cfg->s1cdmax) |
+>  			FIELD_PREP(STRTAB_STE_0_S1FMT, s1_cfg->s1fmt);
+> @@ -2265,7 +2399,7 @@ static void arm_smmu_domain_free(struct iommu_domain *domain)
+>  	if (smmu_domain->stage == ARM_SMMU_DOMAIN_S1) {
+>  		struct arm_smmu_s1_cfg *cfg = &smmu_domain->s1_cfg;
+>  
+> -		if (cfg->table.ptr) {
+> +		if (cfg->tables) {
+>  			arm_smmu_free_cd_tables(smmu_domain);
+>  			arm_smmu_bitmap_free(smmu->asid_map, cfg->cd.asid);
+>  		}
+> 
 
 
 _______________________________________________
