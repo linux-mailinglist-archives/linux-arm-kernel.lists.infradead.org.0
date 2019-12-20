@@ -2,75 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CCA8127AE2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 13:19:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A052127AE9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 20 Dec 2019 13:21:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GqJey4tHiQLhy08MxedQ07gR+kSrXcWVraDG6NbiYiI=; b=BSYaXCzg1Dehg2
-	gonUCdMUHiZHmW6jywqDFSBbOH+EW+huN6aJ6iEfrePThcWALr7UjGQFE0UHRR7H+Zp4td9OssFa7
-	rScVW4wO3TBtZt7/0zRDISY9NbbZum07KTEg9tBvOh3AuYq/epO1P1hiVHg7+NW2VzYAkLypnqcPz
-	AaX4zTi1as3GGfWVQShlRg72IXkaQOPL7t3hR6v2T6EtNiBdDLyfqjjqZdC8vSm/l3G4sT0T59m72
-	yZ9qVJbQ+iS9CWqSEPqtGPo/L6dNj2qwFCIdyA9ZN+ggnKI10nmbCH9CUInXNCmYl4JoMIx6fUmgS
-	txyMcVGR6kxC3g2/t27w==;
+	List-Owner; bh=p0yAbihNYGMkLG2Azf7TdLShHei2+PTyLunx0jCyShs=; b=dQjiR+NoGqJLoY
+	Yi/xTv2R52lygb9v7u+MFG8DJNASC8/L8wT1jMPMFR6XlnmGvltqL3jHIM3a0DLNdcfETImKEkTMZ
+	q++CdV/FH7oXv7QHUWBMLtS3TcTvYTMDfr86y5HKCMEQ3rw+2ju1geIcz9cpjg1B1dGyzoPEr2W3L
+	GnKKuOAeDv6wE22iHIumkbD1yIL7hubQLKjUwk4SqQfTwB0EfLmjMhMEaS6W8epBPm3Mu1wMiQM8F
+	hm8cp13N8EZnBeq7Z282q5hHyARp5KZ+9S/CO49agZRI3FAp0APps72tu0ssUrevGDOLFb6+7jfkp
+	Gm+bo+DhiOCJ1h6a987w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iiHFG-0004zS-Q6; Fri, 20 Dec 2019 12:19:02 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1iiHHG-0006bi-Gd; Fri, 20 Dec 2019 12:21:06 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iiHF6-0004z6-QM
- for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 12:18:54 +0000
+ id 1iiHH6-0006ag-VK
+ for linux-arm-kernel@lists.infradead.org; Fri, 20 Dec 2019 12:20:58 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576844330;
+ s=mimecast20190719; t=1576844455;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=+uqLwzuT4/p/TrN/iMvSErZDSEuFtnJzWf7maJMj2iM=;
- b=SOEfbmKV63iZIOBynpMSAsfzNyGXEVzhmg1McNcDPSJoDsRkZkCQ05wQ9gA7/bwA505hnc
- 5ymwiu9ecWoDrhuufQtBSpvPcJj2RTjD+mdvoJMj1U9KMcqWmlSkKdtZDvEHueq+PNE0qM
- tNlMIPyuGOc7X48gtMnK/TYZwhA1PPA=
+ bh=nIVo2crlVc/txi8VIButrgzZivg7HgIELD3HSqFbFMs=;
+ b=RlmSYoebLwThkKp70Qo5ZvoMQ8I/Zd+k8JPg4o53e9mrqWl51gL1P7KU0AmjlAykX6tokq
+ pwlndqDNo/VFrwt4Jn5MNZ8XjQJgVR2lZlDTYJD2FUrdphtv4D9yQjo2+8vKmCN6XQyzCm
+ /y0E983RurPFIxB68Bt5uaO2UEUuPXU=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-369-pvLJVYDBOgu0tNOhkYFqLQ-1; Fri, 20 Dec 2019 07:18:48 -0500
-X-MC-Unique: pvLJVYDBOgu0tNOhkYFqLQ-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-58-KjExN_K5PJeZFLWaH5Dnig-1; Fri, 20 Dec 2019 07:20:46 -0500
+X-MC-Unique: KjExN_K5PJeZFLWaH5Dnig-1
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 358EC185432C;
- Fri, 20 Dec 2019 12:18:47 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 45DE7801E66;
+ Fri, 20 Dec 2019 12:20:45 +0000 (UTC)
 Received: from [10.36.116.117] (ovpn-116-117.ams2.redhat.com [10.36.116.117])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 2086A5C3F8;
- Fri, 20 Dec 2019 12:18:41 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 487485DA75;
+ Fri, 20 Dec 2019 12:20:41 +0000 (UTC)
 Subject: Re: [PATCH] KVM: arm/arm64: vgic: Handle GICR_PENDBASER.PTZ filed as
  RAZ
 To: Zenghui Yu <yuzenghui@huawei.com>, maz@kernel.org
 References: <20191220111833.1422-1-yuzenghui@huawei.com>
 From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <8f8b063c-45cf-166d-bd94-ff96831314c0@redhat.com>
-Date: Fri, 20 Dec 2019 13:18:40 +0100
+Message-ID: <c469bc11-9cd0-531a-9bd3-46d070ec0e72@redhat.com>
+Date: Fri, 20 Dec 2019 13:20:39 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.4.0
 MIME-Version: 1.0
 In-Reply-To: <20191220111833.1422-1-yuzenghui@huawei.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191220_041852_931712_4BA8090F 
-X-CRM114-Status: GOOD (  17.65  )
+X-CRM114-CacheID: sfid-20191220_042057_075577_45B62C7D 
+X-CRM114-Status: GOOD (  17.64  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.120 listed in list.dnswl.org]
+ medium trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.139.110.61 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,7 +101,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Zenghui,
+Hi,
 
 On 12/20/19 12:18 PM, Zenghui Yu wrote:
 > Although guest will hardly read and use the PTZ (Pending Table Zero)
@@ -107,6 +109,10 @@ On 12/20/19 12:18 PM, Zenghui Yu wrote:
 > As per IHI 0069E 9.11.30, PTZ field is WO, and reads as 0.
 > 
 > Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
+nit
+s/filed/field in the commit title
+
+Eric
 > ---
 > 
 > Noticed when checking all fields of GICR_PENDBASER register.
@@ -138,11 +144,6 @@ On 12/20/19 12:18 PM, Zenghui Yu wrote:
 >  
 >  static void vgic_mmio_write_pendbase(struct kvm_vcpu *vcpu,
 > 
-Reviewed-by: Eric Auger <eric.auger@redhat.com>
-
-Thanks
-
-Eric
 
 
 _______________________________________________
