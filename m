@@ -2,73 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B78B9128AB1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Dec 2019 18:59:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 051E7128AC3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Dec 2019 19:19:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SSb7El8niEUcAOK1ANnI6fZwwDhQ3XvHPWFqjfbaTOI=; b=dxEPbL900gG6ci
-	XUGnUhtl//Exy87FtQZ5eP4PRSrfbSQEKiNvT74TA/5vze8H+5X4diwgyafV0+YiaR5Xqp5Wxoosj
-	1+SMojLaD2QrlneOX2ap0hZzI4YNMU/S0vLnE1sAyiDXiali3MnR+s4sOOglm4vsye0J8YtRGrsZS
-	JXv7DrI7N2oVuAAZpbTCCDN0Kvreu1upVYBHTn3xQhsoCJDzwxB73cRx2crX8mlnnYp+1Rmcusd+5
-	EncbY0304J684SrtE/CHgKOeq6F+JuO+4kbaMhN1W6+r9tK4Pv+GfqhYi7oFPvwQzVmwyWxy1wdnP
-	5SdxN7/NS5OkD4VYH6NA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=hTarNMzfduXGKMNo3kKWVHE7ael1LNbvYFXMWr0887A=; b=OLr
+	XBWXr+H8feA4jgQ81aMYBQlDsojSm9uiHtp6qNY4Cz6Y5ySSMD5RUwnlpe9HI+jPHOzPXR8RAFNQh
+	KHmmRAUitPjTIILfKyMPI+Hz0YOzqvD1pV+MRxFefDUoQMfHL/mCXml3GIcBimQ5T74C3OLBHzO/Q
+	Lo+jhCeldUakjp55lDTSlxlgTJOVww/LazdXaim/u1QymZIuwzRL+TLU1IkW5JcPEJsfHtv1fCF4t
+	AbTSZRfMMJ0ILX+YnLlwQWgtZ6Q0uCKeXYTsWFZ2Uw/a217f4MHFpRo8wTx/LEXqkGPdyBaLAnQuv
+	aajtru2WHf7tqZGMTDkaoqdJnjp7ItQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iij26-0001xP-ST; Sat, 21 Dec 2019 17:59:18 +0000
-Received: from mail-sender210.upb.ro ([141.85.13.210] helo=mx.upb.ro)
+	id 1iijLL-0000md-83; Sat, 21 Dec 2019 18:19:11 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iij1y-0001vU-Aw
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Dec 2019 17:59:12 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mx.upb.ro (Postfix) with ESMTP id 4D484B56279B;
- Sat, 21 Dec 2019 19:58:55 +0200 (EET)
-Received: from mx.upb.ro ([127.0.0.1])
- by localhost (mx.upb.ro [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id rS-wCd-Av3WE; Sat, 21 Dec 2019 19:58:53 +0200 (EET)
-Received: from localhost (localhost [127.0.0.1])
- by mx.upb.ro (Postfix) with ESMTP id 89D7EB56279C;
- Sat, 21 Dec 2019 19:58:53 +0200 (EET)
-DKIM-Filter: OpenDKIM Filter v2.10.3 mx.upb.ro 89D7EB56279C
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=upb.ro;
- s=96342B8A-77E4-11E5-BA93-D93D0963A2DF; t=1576951133;
- bh=X+42fjabk+WLOB1bPd12eCpPGYMZu89kQtWGOPGu13I=;
- h=Message-ID:From:To:Date:MIME-Version;
- b=dZumlSXGZqk7S3vz0l3XH/E8QmWrWWByIdVC01rPRR7aoeOkRxc3uj07nRP6x9y7A
- PmxsYJL7TXSM3eOnSIIgub/Fue2hFRpmw8e+EJ6S77WDFyNbt/WlDuMA//J0hlldMu
- quytGl4caIT7zp5A4K1MSOTs2ONSdh17zC7RjTG0=
-X-Virus-Scanned: amavisd-new at upb.ro
-Received: from mx.upb.ro ([127.0.0.1])
- by localhost (mx.upb.ro [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id 5FG3taiS2m5M; Sat, 21 Dec 2019 19:58:53 +0200 (EET)
-Received: from sabertoorh (unknown [86.120.75.237])
- by mx.upb.ro (Postfix) with ESMTPSA id ECE47B56279B;
- Sat, 21 Dec 2019 19:58:52 +0200 (EET)
-Message-ID: <0a09d9ed5fc5ae6c651491dead5f81bfecdbca4b.camel@upb.ro>
-Subject: Re: [PATCH] i2c: cadence: Added slave support
-From: Radu Nicolae Pirea <radu_nicolae.pirea@upb.ro>
-To: Shubhrajyoti Datta <shubhrajyoti.datta@gmail.com>
-Date: Sat, 21 Dec 2019 19:58:50 +0200
-In-Reply-To: <CAKfKVtFqbtovQGQuzgCYzTu4bHOmAOmTz-tZMD89iUkMPc8awA@mail.gmail.com>
-References: <20191219124120.53754-1-radu_nicolae.pirea@upb.ro>
- <20191219130501.GA958@kunai>
- <6504123809effc310ade02dbb8a63f10db6b6c92.camel@upb.ro>
- <CAKfKVtFqbtovQGQuzgCYzTu4bHOmAOmTz-tZMD89iUkMPc8awA@mail.gmail.com>
-User-Agent: Evolution 3.34.2 
-MIME-Version: 1.0
+ id 1iijL9-0000lq-RM
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Dec 2019 18:19:01 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 195so6152946pfw.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 21 Dec 2019 10:18:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=bwbzx/0lyuLyDgYjlpKZwdoDwlYToxmSNQqN2Jns3/U=;
+ b=iafzJSRx/Oh+GsjR2eJ4ZkqzB5Pw0i+xDji0iUrPwKNsBXCMR/h7rRSPzD0vZlMela
+ 6/GMUqYS/4BARhHl0hNwVUAuXSKviN70XHxuqnmaSokLKcW9GMr20YleqNvxBuI05GMI
+ 5zefIMIKTzIXxMx1KYw33LQnboH+Qj+LodgB1d/l5GsN91jedf/bt1b0T37ydml6moDG
+ 6Rz/1uEp+h1r+qtjE2LEIwjE4ZCpMCGJmpVplFWbTp7QPtfj4vWS5X60x1xEP3Dcl4iG
+ iRzdyYLvTo1d6oXwKTshMXs/0+TZySPVTUTiCF5Weqvp/egm7AyJIzQplp8tvj1gIA9+
+ D+Ow==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=bwbzx/0lyuLyDgYjlpKZwdoDwlYToxmSNQqN2Jns3/U=;
+ b=L2hC+erpigUFJJmcv7sMX5kG704Ed91+dVashQwCUNqqyDMjjKTFrNeXLt+FoQTqNz
+ N1nFNFUl8mybookcOFYya4w2BpQQk4nbsjYxf/0DLN0PPY8xaBxQbdHj6b4t1MmI6SYJ
+ B9zUAZbCAxgLg/WSyTzpM8Pu1Uoh6rkEL/NfpxI+/lONgQ/MeEsFkizYCyGoD0IeyI8z
+ 6NcZay0m+9hEHNGiTcctXY833yQUuPAFBtEZJElfeSk6Y5lhrE3LPyD3HhvxACdC0nEC
+ 1UxodzK+SHYwq6ehzz4z5UM+oM5jMSuwe9PFRHE98n+rhZ53TOTrBsVs/XJnMyYG+1zg
+ ZZLg==
+X-Gm-Message-State: APjAAAVOpYM30tZekcbcuf8j2RhPyhH07CTSunQZI8daZvZbPyDcyqKa
+ EhIFCJFv1rLKOOsUwaCGgSM=
+X-Google-Smtp-Source: APXvYqwCQ2pikuGus5t9NRDx8dicrxR/iMjGdpMtjiAyPYt4OsDp/uwZ/85qHhf7prm6ugOwlBoVNA==
+X-Received: by 2002:a65:488f:: with SMTP id n15mr23158105pgs.61.1576952338290; 
+ Sat, 21 Dec 2019 10:18:58 -0800 (PST)
+Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
+ by smtp.gmail.com with ESMTPSA id m71sm17264906pje.0.2019.12.21.10.18.57
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 21 Dec 2019 10:18:57 -0800 (PST)
+From: Yangtao Li <tiny.windzz@gmail.com>
+To: cw00.choi@samsung.com, myungjoo.ham@samsung.com, kyungmin.park@samsung.com,
+ kgene@kernel.org, krzk@kernel.org, linux-pm@vger.kernel.org,
+ linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH 1/2] PM / devfreq: rk3399_dmc: Add missing
+ devfreq_event_disable_edev
+Date: Sat, 21 Dec 2019 18:18:54 +0000
+Message-Id: <20191221181855.31380-1-tiny.windzz@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191221_095910_717262_358FD75B 
-X-CRM114-Status: GOOD (  11.80  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191221_101859_913652_C1E0111C 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.85.13.210 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tiny.windzz[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,52 +97,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel <linux-kernel@vger.kernel.org>,
- Michal Simek <michal.simek@xilinx.com>, linux-i2c <linux-i2c@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Wolfram Sang <wsa@the-dreams.de>
+Cc: Yangtao Li <tiny.windzz@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-12-20 at 14:55 +0530, Shubhrajyoti Datta wrote:
-> Hi ,
-> 
-> On Thu, Dec 19, 2019 at 7:00 PM Radu Pirea <radu_nicolae.pirea@upb.ro
-> > wrote:
-> > On Thu, 2019-12-19 at 14:05 +0100, Wolfram Sang wrote:
-> > > > +/**
-> > > > + * enum cdns_i2c_mode - I2C Controller current operating mode
-> > > > + *
-> > > > + * @CDNS_I2C_MODE_SLAVE:       I2C controller operating in
-> > > > slave
-> > > > mode
-> > > > + * @CDNS_I2C_MODE_MASTER:      I2C Controller operating in
-> > > > master
-> > > > mode
-> > > > + */
-> > > 
-> > > Can't the hardware operate as master and slave at the same time?
-> > > 
-> > 
-> > Of course, it can. If the driver has a slave registered wait and
-> > listens and if the subsystem needs to use the controller as master,
-> > the
-> > driver changes the state of the controller to master, sends and
-> > reads
-> > data from the bus and after this change the state of the controller
-> > to
-> > slave.
-> 
-> However that should be done only if no master is talking to the slave
-> right?
+The probe process may fail, but the devfreq event device remains
+enabled. Call devfreq_event_disable_edev on the error return path.
 
-Yes. The state of the slave must be IDLE, otherwise
-cdns_i2c_master_xfer will return -EAGAIN.
+Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+---
+ drivers/devfreq/rk3399_dmc.c | 17 ++++++++++++-----
+ 1 file changed, 12 insertions(+), 5 deletions(-)
 
-> 
-> > In cdns_i2c_master_xfer is done all the magic.
+diff --git a/drivers/devfreq/rk3399_dmc.c b/drivers/devfreq/rk3399_dmc.c
+index 2f1027c5b647..4f4e7c041888 100644
+--- a/drivers/devfreq/rk3399_dmc.c
++++ b/drivers/devfreq/rk3399_dmc.c
+@@ -364,7 +364,8 @@ static int rk3399_dmcfreq_probe(struct platform_device *pdev)
+ 			if (res.a0) {
+ 				dev_err(dev, "Failed to set dram param: %ld\n",
+ 					res.a0);
+-				return -EINVAL;
++				ret = -EINVAL;
++				goto err_disable_edev;
+ 			}
+ 		}
+ 	}
+@@ -373,8 +374,10 @@ static int rk3399_dmcfreq_probe(struct platform_device *pdev)
+ 	if (node) {
+ 		data->regmap_pmu = syscon_node_to_regmap(node);
+ 		of_node_put(node);
+-		if (IS_ERR(data->regmap_pmu))
+-			return PTR_ERR(data->regmap_pmu);
++		if (IS_ERR(data->regmap_pmu)) {
++			ret = PTR_ERR(data->regmap_pmu);
++			goto err_disable_edev;
++		}
+ 	}
+ 
+ 	regmap_read(data->regmap_pmu, RK3399_PMUGRF_OS_REG2, &val);
+@@ -392,7 +395,8 @@ static int rk3399_dmcfreq_probe(struct platform_device *pdev)
+ 		data->odt_dis_freq = data->timing.lpddr4_odt_dis_freq;
+ 		break;
+ 	default:
+-		return -EINVAL;
++		ret = -EINVAL;
++		goto err_disable_edev;
+ 	};
+ 
+ 	arm_smccc_smc(ROCKCHIP_SIP_DRAM_FREQ, 0, 0,
+@@ -426,7 +430,8 @@ static int rk3399_dmcfreq_probe(struct platform_device *pdev)
+ 	 */
+ 	if (dev_pm_opp_of_add_table(dev)) {
+ 		dev_err(dev, "Invalid operating-points in device tree.\n");
+-		return -EINVAL;
++		ret = -EINVAL;
++		goto err_disable_edev;
+ 	}
+ 
+ 	of_property_read_u32(np, "upthreshold",
+@@ -464,6 +469,8 @@ static int rk3399_dmcfreq_probe(struct platform_device *pdev)
+ 
+ 	return 0;
+ 
++err_disable_edev:
++	devfreq_event_disable_edev(data->edev);
+ err_free_opp:
+ 	dev_pm_opp_of_remove_table(&pdev->dev);
+ 	return ret;
+-- 
+2.17.1
 
 
 _______________________________________________
