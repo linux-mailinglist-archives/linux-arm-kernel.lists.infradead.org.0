@@ -2,52 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84941128A5D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Dec 2019 17:21:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF354128A92
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Dec 2019 18:21:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=P13nOaDPE39C/A/lvMHq7xApLPuEnR5x7QQHMlHPSyY=; b=DtT3P4xhaWvUB9wb+jakTPBA4
-	hSBDv3998WSbqI4dp13OFlVmv8IBVdVQpmrUjPA0vGjjGo+lKRAnUXsPZfTyECBe05VkrfGyR1xXj
-	xQWi/2oW7gWY+Svn1I/b4riIT0qRa1fPxVp5LKwUDkb6FvlacoOkIveUaGinWOGepEZRFgQ8koQRA
-	0NfSjlERD6RNKHfFQL4U6NBLEtiAnzv/rZbIC330pYeUdK//Rxm/QooUX2awWRWPgqVDpzVgaMJmt
-	OOCk2K5QlqfdgQBfMK+YRDb6FLEhONDIMYQABPMCc0Y9R8wKa7RAPqYoOpnBPJqoU1C/Llqtb47yE
-	1hihtKeGw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4g+UIDUjHmO5bUYuj0qWNso7J/6aEDvTRGCcsb3pCNo=; b=esJhMoCHlY+Yuz
+	xlqPX0u+nuwcA6rPkETDrTIRuWiYsAuXae18aUTmMfOgBIUShVI7z/fKPD22zRNE2i3HdK/gbMIdq
+	AEVyt82ci/mBAROXpkj1o8M1BXArtb6HNeABR9jeOV4fTd8FO9uCLSnyHEfJNEcuazXk/SBY8ukPX
+	zrF0/ivRHrQevuDi68rnFbP/iF1cjfxuD0DXB0ogl1sfu68BD8uBARtqo8sd6iIMzwH20d7/UpORR
+	8icuyuBcOdk7DLDUjEN27cahzdeb2noF5CxtS8f6vOAb9cRi0uPognxgX48dDlO+8r69/HNFHE6MA
+	2GskGei1ySgcNVGtpjrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iihVA-0004NA-Df; Sat, 21 Dec 2019 16:21:12 +0000
-Received: from jabberwock.ucw.cz ([46.255.230.98])
+	id 1iiiRG-0006ja-JY; Sat, 21 Dec 2019 17:21:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iihV1-0004Lv-9T
- for linux-arm-kernel@lists.infradead.org; Sat, 21 Dec 2019 16:21:05 +0000
-Received: by jabberwock.ucw.cz (Postfix, from userid 1017)
- id 600AC1C24DF; Sat, 21 Dec 2019 17:20:56 +0100 (CET)
-Date: Sat, 21 Dec 2019 17:20:55 +0100
-From: Pavel Machek <pavel@ucw.cz>
-To: Tony Lindgren <tony@atomide.com>
-Subject: Re: TI omap compile problem in 5.5-rc1? was Re: [PATCH] ARM:
- davinci: select CONFIG_RESET_CONTROLLER
-Message-ID: <20191221162055.GA28997@amd>
-References: <20191210195202.622734-1-arnd@arndb.de> <20191217104520.GA6812@amd>
- <20191217164640.GX35479@atomide.com>
+ id 1iiiR6-0006it-Ts
+ for linux-arm-kernel@lists.infradead.org; Sat, 21 Dec 2019 17:21:07 +0000
+Received: from mail-lj1-f172.google.com (mail-lj1-f172.google.com
+ [209.85.208.172])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 93E83222C2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 21 Dec 2019 17:21:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1576948862;
+ bh=ygQ+LLKc6onkKQohUjB4VeER1S5nL8ISyedIw3igvFQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=x96NU+fxBzmg38mKk0TGitI2DkyJtAaQKY/5VTvgo818kI3m0Av9s6mvDML47ta94
+ P1eHg6Bp/jv5P0xoqarNn0EvL7tEDDphKBnvcv1WmbmRKyCHkjtqHCfJCQwI+86fG9
+ w1y42YhGVRdJIfTYdIwHvOCJNRQyDKTs2czaTwV0=
+Received: by mail-lj1-f172.google.com with SMTP id o13so1843066ljg.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 21 Dec 2019 09:21:02 -0800 (PST)
+X-Gm-Message-State: APjAAAXgJJ+FA3K6DUcvegW3duvyfDzWxlk2SlHGr7SMWU3kTz7cwHP9
+ hdb4lul7S6yj06AvrUcDVykXw+vHiREmonFPaYU=
+X-Google-Smtp-Source: APXvYqzxQbblDkSAhXsYJzBSq3hDVzSm7VnGs1SPM1HBdZJYbyVd5kmZbEvVMHb9JsKwPhMwlDsc1nNYruHS7j121S0=
+X-Received: by 2002:a2e:8551:: with SMTP id u17mr8218439ljj.165.1576948860712; 
+ Sat, 21 Dec 2019 09:21:00 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191217164640.GX35479@atomide.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+References: <CGME20191220120142eucas1p1f43c7a862d9c0faa72e14b21d7d697e9@eucas1p1.samsung.com>
+ <20191220115653.6487-1-a.swigon@samsung.com>
+ <20191220115653.6487-3-a.swigon@samsung.com>
+In-Reply-To: <20191220115653.6487-3-a.swigon@samsung.com>
+From: Chanwoo Choi <chanwoo@kernel.org>
+Date: Sun, 22 Dec 2019 02:20:24 +0900
+X-Gmail-Original-Message-ID: <CAGTfZH2mh4xcUUa+z=thdnrFsEgZ7NR5nmL4sK2ybARndhn01A@mail.gmail.com>
+Message-ID: <CAGTfZH2mh4xcUUa+z=thdnrFsEgZ7NR5nmL4sK2ybARndhn01A@mail.gmail.com>
+Subject: Re: [RFC PATCH v3 2/7] interconnect: Relax requirement in
+ of_icc_get_from_provider()
+To: =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191221_082103_481523_A6B8D6F2 
-X-CRM114-Status: GOOD (  13.42  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191221_092104_984738_FB468E3D 
+X-CRM114-Status: GOOD (  18.44  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.255.230.98 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,93 +88,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mpartap@gmx.net, Arnd Bergmann <arnd@arndb.de>,
- Sekhar Nori <nsekhar@ti.com>, merlijn@wizzup.org, martin_rysavy@centrum.cz,
- kernel list <linux-kernel@vger.kernel.org>, stable@vger.kernel.org,
- sre@kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- nekit1000@gmail.com, Philipp Zabel <p.zabel@pengutronix.de>,
- linux-omap@vger.kernel.org,
+Cc: devicetree <devicetree@vger.kernel.org>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ Linux PM list <linux-pm@vger.kernel.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, inki.dae@samsung.com,
+ Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- David Lechner <david@lechnology.com>
-Content-Type: multipart/mixed; boundary="===============5654096588490748844=="
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============5654096588490748844==
-Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="sm4nu43k4a2Rpi4c"
-Content-Disposition: inline
-
-
---sm4nu43k4a2Rpi4c
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi!
-
-> > > Selecting RESET_CONTROLLER is actually required, otherwise we
-> > > can get a link failure in the clock driver:
-> > >=20
-> > > drivers/clk/davinci/psc.o: In function `__davinci_psc_register_clocks=
-':
-> > > psc.c:(.text+0x9a0): undefined reference to `devm_reset_controller_re=
-gister'
-> > > drivers/clk/davinci/psc-da850.o: In function `da850_psc0_init':
-> > > psc-da850.c:(.text+0x24): undefined reference to
-> > > `reset_controller_add_lookup'
-> >=20
-> > Does omap need similar handing in 5.5-rc1?
-> >=20
-> >   LD      .tmp_vmlinux1
-> >   drivers/soc/ti/omap_prm.o: In function `omap_prm_probe':
-> >   omap_prm.c:(.text+0x4d0): undefined reference to
-> >   `devm_reset_controller_register'
-> >   /data/fast/l/k/Makefile:1077: recipe for target 'vmlinux' failed
-> >   make[1]: *** [vmlinux] Error 1
-> >=20
-> > Enabling reset controller seems to help::
-> >=20
-> > Reset Controller Support (RESET_CONTROLLER) [Y/n/?] (NEW)
-> >   TI SYSCON Reset Driver (RESET_TI_SYSCON) [N/m/y/?] (NEW)
->=20
-> Yes see the patch Arnd recently posted to do that.
-
-Thanks for the hint and sorry for the noise.
-
-Best regards,
-									Pavel
---=20
-(english) http://www.livejournal.com/~pavelmachek
-(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
-g.html
-
---sm4nu43k4a2Rpi4c
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: Digital signature
-
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1
-
-iEYEARECAAYFAl3+RmcACgkQMOfwapXb+vKm5gCdFEsAX+EXEf7Ut87c0ONSz54l
-qhkAn1USmYq8ChLyUnMRl1fbdwed6pTk
-=PjuJ
------END PGP SIGNATURE-----
-
---sm4nu43k4a2Rpi4c--
-
-
---===============5654096588490748844==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5654096588490748844==--
-
+SGksCgpPbiBGcmksIERlYyAyMCwgMjAxOSBhdCA5OjAzIFBNIEFydHVyIMWad2lnb8WEIDxhLnN3
+aWdvbkBzYW1zdW5nLmNvbT4gd3JvdGU6Cj4KPiBUaGlzIHBhdGNoIHJlbGF4ZXMgdGhlIGNvbmRp
+dGlvbiBpbiBvZl9pY2NfZ2V0X2Zyb21fcHJvdmlkZXIoKSBzbyB0aGF0IGl0Cj4gaXMgbm8gbG9u
+Z2VyIHJlcXVpcmVkIHRvIHNldCAjaW50ZXJjb25uZWN0LWNlbGxzID0gPDE+IGluIHRoZSBEVC4g
+SW4gY2FzZQo+IG9mIHRoZSBkZXZmcmVxIGRyaXZlciBmb3IgZXh5bm9zLWJ1cywgI2ludGVyY29u
+bmVjdC1jZWxscyBpcyBhbHdheXMgemVyby4KCkl0IGRvZXNuJ3QgY29udGFpbiB3aHkgZG9uJ3Qg
+bmVlZCB0byByZXF1aXJlIGl0LiBJZiB5b3UgYWRkIG1vcmUgZGV0YWlsZWQKZGVzY3JpcHRpb24s
+IGl0IGlzIGJldHRlciB0byB1bmRlcnN0YW5kLgoKPgo+IFNpZ25lZC1vZmYtYnk6IEFydHVyIMWa
+d2lnb8WEIDxhLnN3aWdvbkBzYW1zdW5nLmNvbT4KPiBBY2tlZC1ieTogS3J6eXN6dG9mIEtvemxv
+d3NraSA8a3J6a0BrZXJuZWwub3JnPgo+IC0tLQo+ICBkcml2ZXJzL2ludGVyY29ubmVjdC9jb3Jl
+LmMgfCAyICstCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigt
+KQo+Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaW50ZXJjb25uZWN0L2NvcmUuYyBiL2RyaXZlcnMv
+aW50ZXJjb25uZWN0L2NvcmUuYwo+IGluZGV4IGU2MDM1YzE5OTM2OS4uNzRjNjg4OThhMzUwIDEw
+MDY0NAo+IC0tLSBhL2RyaXZlcnMvaW50ZXJjb25uZWN0L2NvcmUuYwo+ICsrKyBiL2RyaXZlcnMv
+aW50ZXJjb25uZWN0L2NvcmUuYwo+IEBAIC0zMzUsNyArMzM1LDcgQEAgc3RydWN0IGljY19ub2Rl
+ICpvZl9pY2NfZ2V0X2Zyb21fcHJvdmlkZXIoc3RydWN0IG9mX3BoYW5kbGVfYXJncyAqc3BlYykK
+PiAgICAgICAgIHN0cnVjdCBpY2Nfbm9kZSAqbm9kZSA9IEVSUl9QVFIoLUVQUk9CRV9ERUZFUik7
+Cj4gICAgICAgICBzdHJ1Y3QgaWNjX3Byb3ZpZGVyICpwcm92aWRlcjsKPgo+IC0gICAgICAgaWYg
+KCFzcGVjIHx8IHNwZWMtPmFyZ3NfY291bnQgIT0gMSkKPiArICAgICAgIGlmICghc3BlYykKPiAg
+ICAgICAgICAgICAgICAgcmV0dXJuIEVSUl9QVFIoLUVJTlZBTCk7Cj4KPiAgICAgICAgIG11dGV4
+X2xvY2soJmljY19sb2NrKTsKPiAtLQo+IDIuMTcuMQo+CgoKLS0gCkJlc3QgUmVnYXJkcywKQ2hh
+bndvbyBDaG9pCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
