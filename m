@@ -2,52 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1803F128B9C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Dec 2019 22:04:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B7D8128BA5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 21 Dec 2019 22:08:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iXvja/VeX8z33/K1A2JWCBI1JeyTgEAtKZE5pa0wi3c=; b=AlWj+Gh31XhTOvlDsqnAmOI75
-	1w7AKgKQi5uNY/njumpMAamhRzwJgCU7gvEoXMDb+/Gg5U4nrmQQj8Jt90kKQKz0i9fDiUlNDSp89
-	Dcy5TT8HoDNxSNO/TWRzFQ3ONNEETwH+GrZbQhw8tegLFfsNwqHBFG3VV0s4zfJTL807YHUiHm9dS
-	Ry6Jb6kTdN7h+b/+nHib7eL+lSdFgjxTLqCSORIDiRD0sgO8KPJXvHJre2nOVBzKBVrcnG6s9WIfK
-	5cir33jM3xb+su3uKKZOGrl5omdcz7cfZsrO22xQRThHoahj5P1sJxz75vJZtQmVHLDGoz36nOKV3
-	n91cV9oiw==;
+	 bh=r8PWA+2iv/eYMi45CWlnzzMD5dJS/9s2h1ADm6eJ0qQ=; b=tB3/S9e/WNTsyO/6weoHbbEsi
+	wMocwWL0N8nMekk752dU3PNLmTmTga6261t+iTX1u8eR3gm1XuYJ7YbRQonkgDyi/vlDImHPENR4x
+	uH2//ODGQiwgDNoGKHF1nvQStDiszIPfaggrAI+2fcJHaibMHj2tlYCdJBWu449A3qnjiDT3ECmmY
+	RKmZJobxNjFYdKVsKmJUyUxpbc6lQfpT7wLaL4tk2Q9gvlyw136qGADU0wa25cPPecWvBq0l+oKhk
+	lPUK1L5rpkxSBDgQYP1k1nKSMP2XNSDx3vkzUzyrMrw0rDQobOSjxra2WXikhb453atXazzSuMLCh
+	sPczUkb+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iilvE-00055S-IH; Sat, 21 Dec 2019 21:04:24 +0000
-Received: from jabberwock.ucw.cz ([46.255.230.98])
+	id 1iilyj-0006py-7r; Sat, 21 Dec 2019 21:08:01 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iilv4-00054j-0o; Sat, 21 Dec 2019 21:04:15 +0000
-Received: by jabberwock.ucw.cz (Postfix, from userid 1017)
- id 183EC1C24A9; Sat, 21 Dec 2019 22:04:12 +0100 (CET)
-Date: Sat, 21 Dec 2019 22:04:06 +0100
-From: Pavel Machek <pavel@ucw.cz>
-To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
-Subject: Re: [RFC 22/25] leds: tm1826: Add combined glyph support
-Message-ID: <20191221210406.GA13125@amd>
+ id 1iilyW-0006oV-JQ; Sat, 21 Dec 2019 21:07:50 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 2E76FACEC;
+ Sat, 21 Dec 2019 21:07:46 +0000 (UTC)
+Subject: Re: [RFC 00/25] arm64: realtek: Add Xnano X5 and implement
+ TM1628/FD628/AiP1618 LED controllers
+To: Pavel Machek <pavel@ucw.cz>
 References: <20191212033952.5967-1-afaerber@suse.de>
- <20191212033952.5967-23-afaerber@suse.de>
- <20191221202755.GN32732@amd>
- <506d0697-1820-7811-1b38-910355812948@suse.de>
+ <20191221182057.GA32732@amd>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <e26f985b-ceca-ca2c-a709-e7dc40c7fdd1@suse.de>
+Date: Sat, 21 Dec 2019 22:07:44 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.1
 MIME-Version: 1.0
-In-Reply-To: <506d0697-1820-7811-1b38-910355812948@suse.de>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20191221182057.GA32732@amd>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191221_130414_215665_7E14A603 
-X-CRM114-Status: GOOD (  13.61  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191221_130748_932632_6511E5DC 
+X-CRM114-Status: GOOD (  17.83  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.255.230.98 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,112 +66,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
- Geert Uytterhoeven <geert@linux-m68k.org>, Dan Murphy <dmurphy@ti.com>,
- linux-leds@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jacek Anaszewski <jacek.anaszewski@gmail.com>
-Content-Type: multipart/mixed; boundary="===============3697311115670444907=="
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>,
+ linux-realtek-soc@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, devicetree@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Dan Murphy <dmurphy@ti.com>,
+ linux-amlogic@lists.infradead.org, Rob Herring <robh@kernel.org>,
+ linux-leds@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="windows-1252"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Pavel,
 
---===============3697311115670444907==
-Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="0F1p//8PRICkK4MW"
-Content-Disposition: inline
+[- Roc He, - chipset vendors]
 
+Am 21.12.19 um 19:20 schrieb Pavel Machek:
+>> It goes on to add a "text" attribute to the driver that enables DT-confi=
+gured
+>> seven-segment displays; I was expecting to find precedence in auxdisplay
+>> subsystem but came up empty. So my driver currently integrates its own
+>> generic (but incomplete) character-to-8-segments mapping, as well as in a
+>> second step a combined-characters-to-8-segments mapping, which then gets
+>> mapped to the chipset's available output lines. Doing this as sysfs
+>> device
+> =
 
---0F1p//8PRICkK4MW
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+> I did not investigate this in great detail; but if it is displaying
+> characters, auxdisplay is probably right subsystem to handle that.
 
-Hi!
+ausdisplay does not have any common API AFAICS. Most of them are =
 
-> >>Allow to squeeze the text "HEllO" into a 4-digit display,
-> >>as seen on MeLE V9 TV box.
-> >>
-> >>Enable this combining mode only if the text would overflow.
-> >
-> >"HEll,nO"!
-> >
-> >:-)
-> >
-> >Ok, it is kind of cool, but... Can you take a look at
-> >drivers/auxdisplay/charlcd.c ? It seems to support some kind of text
-> >displays...
->=20
-> Why don't you look at it before making such a suggestion? ;) It is in no =
-way
-> useful, as I pointed out in my cover letter. The only thing related today,
-> as Geert pointed out, is in the input subsystem.
+high-level displays with some parallel interface to set text and =
 
-Okay, so maybe we should get
+metadata. Half of them hardcode the text to Linux or maybe offer a =
 
-AUXILIARY DISPLAY DRIVERS
-M:      Miguel Ojeda Sandonis <miguel.ojeda.sandonis@gmail.com>
+Kconfig option to override it; the other half implements their own =
 
-on the Cc: list? What you really have is a display, not a bunch of LEDs.
+character device file with ABI specific to that driver.
 
-> If you don't want this in leds, you'll have to help make leds subsystem m=
-ore
-> useful to external users - the latest function refactoring has been anyth=
-ing
-> but helpful here, as you've seen with the indicators, and we're completely
-> lacking any indexing or bulk operations on the LED controller level, since
-> you treat each LED as a standalone device. That's precisely why this code=
- is
-> here in leds although - as I pointed out - it shouldn't belong here.
+> I
+> guess LEDs can still take the low-level parts...
 
-Well, your introduction mail was kind of long :-).
+I'd hope so, but I believe we're missing multiple things there:
 
-If someone wants to do heartbeat on
+1) A bulk-update API for setting multiple LEDs at once. =
 
- --
-|  | <- this segment
- --
-|  |
- --
+.brightness_set[_blocking]() is all we have on the device side, which =
 
-they are probably crazy. We may not want to support that. What about
-doing it as auxdisplay driver, and then exporting the indicators
-around that as LEDs?
+here results in two SPI commands. led_set_brightness[_sync]() is all I =
 
-Having USB activity trigger on 'USB' icon makes sense, on the other
-hand. That would still be supported.
+see on the API side. We'd need an API that takes an array of LEDs and =
 
-Hmm?
-									Pavel
---=20
-(english) http://www.livejournal.com/~pavelmachek
-(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
-g.html
+brightness values and allows a common driver rather than individual =
 
---0F1p//8PRICkK4MW
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: Digital signature
+devices to update the Display RAM via SPI from an internal buffer.
 
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1
+2) DT is currently limited to one node per LED device. We'd need =
 
-iEYEARECAAYFAl3+iMYACgkQMOfwapXb+vLZQgCghm+4BSW3+dMlaHTM2YeWiyDT
-cAAAoKpPCbi0WzsihqRnnB2sB8k3SOLa
-=w2fT
------END PGP SIGNATURE-----
+#led-cells, with current LED nodes defaulting to zero. That way we could =
 
---0F1p//8PRICkK4MW--
+address LEDs from an external, e.g., auxdisplay driver via a two-cell =
 
+index for these LED controllers, without needing to have DT nodes for =
 
---===============3697311115670444907==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+each and every display segment.
+
+3) Better LED device names. More "function" values, or a reversal of the =
+
+label deprecation. Or an alternative API to register LEDs with manual name.
+
+4) LED triggers controlling more than one LED. linux,default-trigger =
+
+seems to assign one per LED, so that two heartbeats are quickly out of =
+
+sync. Doing it from code would probably be simpler than finding a way to =
+
+model this in DT, but I don't yet see how.
+
+Alternatively we could expose those LED output lines as a gpiochip, =
+
+which we can already index in DT, and consider the display GPIO-based, =
+
+but then we're in the situation again that GregKH was telling people to =
+
+either go screw themselves in userspace or move things into leds, which =
+
+now you're against.
+
+Also, if you don't allow displays in leds, then we can't have LED =
+
+triggers for them either.
+
+> =
+
+> Oh, and common dimming for many LEDs is seen on other hardware, too
+> (Turris routers). Not sure how to handle that, either :-(.
+
+That part I have indeed successfully solved with a backlight device.
+
+My current problem (WIP blocking a push) is the key input handling - not =
+
+sure how to model both LEDs and keys as DT child nodes - do we need a =
+
+compatible to distinguish between them? Unit addresses and reg values =
+
+would be in different ranges, making this awkward, not to mention the =
+
+problem of naming a compatible, given the incredible diverse chipsets.
+
+Regards,
+Andreas
+
+-- =
+
+SUSE Software Solutions Germany GmbH
+Maxfeldstr. 5, 90409 N=FCrnberg, Germany
+GF: Felix Imend=F6rffer
+HRB 36809 (AG N=FCrnberg)
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3697311115670444907==--
-
