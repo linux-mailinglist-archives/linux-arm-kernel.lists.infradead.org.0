@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 502EC128E6F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 15:12:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C577128E70
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 15:12:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OxYvXcynGx1XC0NJydEUPWIlvTnn/QEdUciFy4SlvBs=; b=h+wSDmbkBLG1ts
-	1ZETlgPxnNTRSxaR9uLww9m9sZPP+elL3VYmadtV3CmrQvRK7Xj9qczKTiJoRBY4348FmpCyued24
-	66uFVSLrUNnEXfvO4PKDOmFVYgbQnVH+x8bkf+PEnFRCvMpVj+yXvW+Skx9I3HDRAhmo0LrWa1qR9
-	b0XNd1MTcg4I47SFZG3EBWGgOb9THc8T/wMl97oZgdCcWIBMEZLoysk391/Ac1zU7AhrCPkqXxy0c
-	ALTfcM/BemsOMpZXhANPx8BmbbY9gClypH8uvqtxGNOohq5oLYEqplvmJDvkNW+0PlOF6eBM/e0Jn
-	CH0auQfjUgn83y0L/2Uw==;
+	List-Owner; bh=jKQJuy0vLLzBSJN+94s5sh/ZLbI+wauHqR0ZgVkWPig=; b=aL7PGAlYo3MnrV
+	Or886WtudcTKsRRXzUAvZU4CG3OPbfwasBFOzVPdqFtjsSERd6AirQstO0JVkBuP2INU4gqmeoGiJ
+	5pUfURLqaUqWuyQYnePGBzjpfCmn050j92VU1g8ajkX7pTSdM55x2iegGnLGEyKdsSUQnQ9HnqezE
+	Cnne5Mz86bklqc8xaIubrXVXIH2er8aow9JwE0wNNGqiWnxIptXIUlwxHsXaCuuMZUYzO/tgHwA+M
+	6qxrOJMsT85zSlNcWkqJA00wJv6Ey+rHKI8Cbhp/s0c2zkJUSj3RFwMI+9AI7A3uJDtVRQHhbvKHD
+	yTthfNCoCPSlLbFLgLOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ij1xp-0002Uj-5y; Sun, 22 Dec 2019 14:12:09 +0000
+	id 1ij1y6-0002f4-35; Sun, 22 Dec 2019 14:12:26 +0000
 Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ij1wT-0001YD-RN
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 14:10:47 +0000
-Received: by mail-wm1-x344.google.com with SMTP id t14so13676399wmi.5
+ id 1ij1wU-0001Zv-Sg
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 14:10:48 +0000
+Received: by mail-wm1-x344.google.com with SMTP id b19so13358433wmj.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 22 Dec 2019 06:10:45 -0800 (PST)
+ Sun, 22 Dec 2019 06:10:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=gypWLRrVcyfmXsR2Lq/xNfZI590shTJoNFs/LRxFM9k=;
- b=fPtWVoeZOG+Jis11ejJC365MxwVBPDZ7g+QyhTF8O+IdzM8l2PadMus/O68hVIW7dS
- kExO0Sd95JI9dUPUMBZ4o2D/rgVdqaks9iXncDetUxmKh3aLr49iOb7pdIDGKNswqNdb
- dTv+eGmE4da/N8WeZaSeM7bnVJpuCmzju1lAFJxNysMvBFhI8tPArJ7fYy5VLHvOHRBl
- GJ7PL5V3b6XI604zjQ7H6S/px+QwhtWSl727uzuTeViD9fRXOx7QnwJWfcYuOILyhUBe
- AJu+FXRo/72xSql53PnOc6CxSfphtgYSFrDd5JdIXj0uzGc5X8uY9X9OPC3FIX67Ldbv
- 6Tsg==
+ bh=1/mOro4NgYwnpZevvzpvIEMzpkoj/ksBreNeBpDTYAo=;
+ b=jwAlx0mOsatYHy659lNHs1JqYLJfwOW7+lDE/v1+aWLfc/ysrbCmdr3v9o/hLAjxKP
+ 2hUvC3lm6hWE2fyKnK61Rq36WqdvgiLx3i7w0wVik41w/8yfHrRf6/xOV7UETxhgVffA
+ 7L2oKnsmbRGH71Tn0A61uLqXa7JDv5deudZZViRbpaWD7zBxraKtzafK91lMTiOTbMBk
+ hgeT4eB/PY/AoFD7YodB+vafhDj8oi/TnyiqAcXakHJjxs1UATYmWNUIDbOu4YgDQKAi
+ +OF+mCJOnzxM5lSzlouewcTgKnXMMy7U3jus6qZjZwFUQ4vRyiCNShJad+uuu5Toiu7i
+ 850Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=gypWLRrVcyfmXsR2Lq/xNfZI590shTJoNFs/LRxFM9k=;
- b=HsHFrV8A7F/r/R0Np2+5kgBf/P4lG7T/KwugWqT5xaIUC8RWOESqvy+D1zyssTz80h
- B4IVd/ahzQuUOy4Q3FMWrjloR0ZHyiBNeJCwDMknGdg0PPZS3Z+DOFw185mA8iUwQKJb
- c6jZwS5xrvG7sEjdyQojLnTfGteg/ysSFG+kKL2mqz5lYiSK4VE5okmlUxVg7CaI0NEh
- ZX67HHnrOI8c4nI5dCiO9XXnYDwBy/lXRAi4mKG09VI/mfK5nDmJOfjEnAcgZv4pNgcR
- nIpTXRWSarcI80FQttnLUCmh22NZK+zFTCGSncTKrpkMF1GaMciOhSVWN4YIFPPa3+JR
- iE9w==
-X-Gm-Message-State: APjAAAXV3xOJC2lD5M0ZodGt5o4YsC0DPSiBm6bhnQv1FbvJErCIWV16
- EyiPM/YwcAs5xcBhsE0RJD0=
-X-Google-Smtp-Source: APXvYqwfQQ/i9Xw8UCOw53luspQWYcwLDoCCJmQaYEcZnycgiR6FaeP9pkigflvubw3L7Ds34KO/fg==
-X-Received: by 2002:a1c:7901:: with SMTP id l1mr26455323wme.67.1577023844301; 
- Sun, 22 Dec 2019 06:10:44 -0800 (PST)
+ bh=1/mOro4NgYwnpZevvzpvIEMzpkoj/ksBreNeBpDTYAo=;
+ b=FEZ2LgkBsQqkn0tXsZ4VT+JS6UpanIlDLVajwRBN6NqfiolspHuVyxe/T7QLFDCf0M
+ VGjgRThD1DmH4ywyvfCZvFS88NeKGQLfaqnVAgOOLrMh86Hh5HGpwL0OhbVIrTNLLIPO
+ vyJJp2cAAvVS55t2ngjxZXBUwZAmtfknsiHKd8f8BhGmHB3IbBzg9Vlzg/ywqz+koDDW
+ M1O/E8F98cSmSKiF24reUUyfGAVPuuwev6WO83xNhYBYptFYzw6vOXwtBRjMOghWI1iP
+ vAKjciotZB829dp59XFzxjxwaM4mLpQSsu8ceDejA9o2pqnyXIjzCWDM2CZdfzmd40E+
+ YJOg==
+X-Gm-Message-State: APjAAAVIQGf/YWO5Iw76ViKS5F1M6Efm19JBhyYkL2Zff5iOpPDPVK1s
+ SEx+ms4qcK3qeUHGtCJdDdA=
+X-Google-Smtp-Source: APXvYqziLMOLPfZ2htSrLwZmXGW0Pd0oOIxjqj2jMcn+NCV3zxFx4bNvvnbirf3o0UrmwIrgXs4a2Q==
+X-Received: by 2002:a1c:a745:: with SMTP id q66mr25711997wme.167.1577023845756; 
+ Sun, 22 Dec 2019 06:10:45 -0800 (PST)
 Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
- by smtp.gmail.com with ESMTPSA id c4sm16570126wml.7.2019.12.22.06.10.43
+ by smtp.gmail.com with ESMTPSA id p18sm17057478wmb.8.2019.12.22.06.10.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 22 Dec 2019 06:10:43 -0800 (PST)
+ Sun, 22 Dec 2019 06:10:45 -0800 (PST)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 04/13] memory: tegra: Rename tegra_mc to tegra186_mc on
- Tegra186
-Date: Sun, 22 Dec 2019 15:10:26 +0100
-Message-Id: <20191222141035.1649937-5-thierry.reding@gmail.com>
+Subject: [PATCH 05/13] memory: tegra: Add per-SoC data for Tegra186
+Date: Sun, 22 Dec 2019 15:10:27 +0100
+Message-Id: <20191222141035.1649937-6-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191222141035.1649937-1-thierry.reding@gmail.com>
 References: <20191222141035.1649937-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_061045_938968_9BB34FF7 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20191222_061046_931300_C3C740EA 
+X-CRM114-Status: GOOD (  15.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,60 +108,99 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-This is just for consistency with the rest of the driver.
+Instead of hard-coding the memory client table, use per-SoC data in
+preparation for adding support for other SoCs.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/memory/tegra/tegra186.c | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
+ drivers/memory/tegra/tegra186.c | 29 +++++++++++++++++++----------
+ 1 file changed, 19 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/memory/tegra/tegra186.c b/drivers/memory/tegra/tegra186.c
-index 441213a35930..f72e89877295 100644
+index f72e89877295..ad5c353dba6e 100644
 --- a/drivers/memory/tegra/tegra186.c
 +++ b/drivers/memory/tegra/tegra186.c
-@@ -15,7 +15,7 @@ struct tegra_mc {
- 	void __iomem *regs;
- };
+@@ -6,15 +6,11 @@
+ #include <linux/io.h>
+ #include <linux/module.h>
+ #include <linux/mod_devicetable.h>
++#include <linux/of_device.h>
+ #include <linux/platform_device.h>
  
--struct tegra_mc_client {
-+struct tegra186_mc_client {
+ #include <dt-bindings/memory/tegra186-mc.h>
+ 
+-struct tegra_mc {
+-	struct device *dev;
+-	void __iomem *regs;
+-};
+-
+ struct tegra186_mc_client {
  	const char *name;
  	unsigned int sid;
- 	struct {
-@@ -24,7 +24,13 @@ struct tegra_mc_client {
+@@ -24,10 +20,16 @@ struct tegra186_mc_client {
  	} regs;
  };
  
--static const struct tegra_mc_client tegra186_mc_clients[] = {
-+struct tegra186_mc {
-+	struct memory_controller base;
-+	struct device *dev;
-+	void __iomem *regs;
++struct tegra186_mc_soc {
++	const struct tegra186_mc_client *clients;
++	unsigned int num_clients;
 +};
 +
-+static const struct tegra186_mc_client tegra186_mc_clients[] = {
- 	{
- 		.name = "ptcr",
- 		.sid = TEGRA186_SID_PASSTHROUGH,
-@@ -534,8 +540,8 @@ static const struct tegra_mc_client tegra186_mc_clients[] = {
+ struct tegra186_mc {
+-	struct memory_controller base;
+ 	struct device *dev;
+ 	void __iomem *regs;
++
++	const struct tegra186_mc_soc *soc;
+ };
  
+ static const struct tegra186_mc_client tegra186_mc_clients[] = {
+@@ -538,17 +540,24 @@ static const struct tegra186_mc_client tegra186_mc_clients[] = {
+ 	},
+ };
+ 
++static const struct tegra186_mc_soc tegra186_mc_soc = {
++	.num_clients = ARRAY_SIZE(tegra186_mc_clients),
++	.clients = tegra186_mc_clients,
++};
++
  static int tegra186_mc_probe(struct platform_device *pdev)
  {
-+	struct tegra186_mc *mc;
+ 	struct tegra186_mc *mc;
  	struct resource *res;
--	struct tegra_mc *mc;
  	unsigned int i;
- 	int err = 0;
+-	int err = 0;
++	int err;
  
-@@ -551,7 +557,7 @@ static int tegra186_mc_probe(struct platform_device *pdev)
+ 	mc = devm_kzalloc(&pdev->dev, sizeof(*mc), GFP_KERNEL);
+ 	if (!mc)
+ 		return -ENOMEM;
+ 
++	mc->soc = of_device_get_match_data(&pdev->dev);
++
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	mc->regs = devm_ioremap_resource(&pdev->dev, res);
+ 	if (IS_ERR(mc->regs))
+@@ -556,8 +565,8 @@ static int tegra186_mc_probe(struct platform_device *pdev)
+ 
  	mc->dev = &pdev->dev;
  
- 	for (i = 0; i < ARRAY_SIZE(tegra186_mc_clients); i++) {
--		const struct tegra_mc_client *client = &tegra186_mc_clients[i];
-+		const struct tegra186_mc_client *client = &tegra186_mc_clients[i];
+-	for (i = 0; i < ARRAY_SIZE(tegra186_mc_clients); i++) {
+-		const struct tegra186_mc_client *client = &tegra186_mc_clients[i];
++	for (i = 0; i < mc->soc->num_clients; i++) {
++		const struct tegra186_mc_client *client = &mc->soc->clients[i];
  		u32 override, security;
  
  		override = readl(mc->regs + client->regs.override);
+@@ -583,7 +592,7 @@ static int tegra186_mc_probe(struct platform_device *pdev)
+ }
+ 
+ static const struct of_device_id tegra186_mc_of_match[] = {
+-	{ .compatible = "nvidia,tegra186-mc", },
++	{ .compatible = "nvidia,tegra186-mc", .data = &tegra186_mc_soc },
+ 	{ /* sentinel */ }
+ };
+ MODULE_DEVICE_TABLE(of, tegra186_mc_of_match);
 -- 
 2.24.1
 
