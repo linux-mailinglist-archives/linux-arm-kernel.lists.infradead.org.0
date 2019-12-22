@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 708FC128E7A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 15:14:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDA84128E7E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 15:16:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=grss71c79PEFvJIzLsDlFkptvNsutaQgkOn0Q+CRimM=; b=SGZaBTRH1yd2ga
-	Zcuz2fc+XBHKmTqfowFpQ8j1leHEa3gsun1em0mIofHe2wEFv82OZxlughk3RbjLMd788V0ma+JBe
-	hkh2WbGEBR2vZrGc70P7ug3m6kKByk3kH6EajOMjoqrCDhE1YOrAxhXQ5YwvAKJ5t3OLmvQtNKiM4
-	ZITfaMoZXCO1aiazKX/9uToI1D9Lb5bTb9MllGOs1/LhflIvv+JQ6BKy7dKTgHzkflbnbQ9+GH50L
-	GNzD8uGQ8Eo5BDR1IBar1YaK6F/FpyDjEoPlFUgeyJS6J3k2mBHz/xpXGz8wAQygGtSJYP+I3bVno
-	a7Df+rptAwUIyToUr8Qw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7A3qlq5YP/2438AQozQHsQrW2xIxVL6HIXyELfCGnjo=; b=hjMWIo+SXSYqrQb+GvnWF/cPt
+	EvocV/YhPHDdW85ddw27pgqURJDVRrUf8auy+wQlOUyw4ve67L2oaqzxLxlD5TGr8qtk0uUz9c+TG
+	eto43WVWg9u2u5G95a2YccAUd1Av2Z1xqV55AQnBxLyxAaQoGgBo8arikql7WHc4QvmJBng+NORF/
+	UK4NqrZXQOke/kgUVSS9xdwE0uMtrksNm6X04wNriBriaQ15w1ohHZHIirZmUvR1kmiEyvnUvNEfe
+	9c1qe5HCf7pJPgkO+TOueMK0ikuQLMpPxwxuzDb3OW5DV1IT1BZfjjsDNJDvcwGUVYppK0gfuPyFF
+	U4gqxfV6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ij20I-0004ed-Au; Sun, 22 Dec 2019 14:14:42 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1ij220-0006Nt-Si; Sun, 22 Dec 2019 14:16:28 +0000
+Received: from smtp-fw-6002.amazon.com ([52.95.49.90])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ij1wj-0001lM-9e
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 14:11:04 +0000
-Received: by mail-wr1-x441.google.com with SMTP id d16so13911648wre.10
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 22 Dec 2019 06:11:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=IZ2ifsUJ0JDecwnLRVKVryT2ldTM9sS1JLZapFRyFbA=;
- b=aIuz0c3DIOIV/V+RoJaNOt6Nn5j607gJYUni3sEgec5lT2zUWSZPU+Yj6XQ0G7MofH
- /DUytOuJemu6cW+YXcGa9hLeNq/rqhKyp7/fPTej2dWEtKuJHSp9hY+IOlChisFnR4dD
- ugg2D1RyA3GjfZrXmxU5Sf9qTZqo8OmsCDUe39MsJgpKkQnUKWoXAVHU4gkl/+jt9bu8
- GUqNf/XVUC0UEmw2nZlY8uMmCd/3Wivkx9pshLdC6AZAtJHXT0nXHZ++W8mWhRl1q5V0
- 3ZGlxCbqtbfRXj1F8PJoUcoXHEbVnLoRRVTKVMfc/TCxe09p9CFAZpCp26SVekLHVgAK
- Sb7A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=IZ2ifsUJ0JDecwnLRVKVryT2ldTM9sS1JLZapFRyFbA=;
- b=OgksMXafFZJ1ZgyntEz2sUVqU0o74IxdCRhxscxLerfXy9nP0gYeD4HmqNVh4okZFp
- UNJPogAXN+yuu0tEB83dbFGW4FuZThkyNZXBSko7ouqnAruESFNmjnOut2kLUZMAgzfo
- kQFbDT/bbgMzDQ/ZCGo7erdz9v+qGQh6rtrfYVQ1BSwg9Q9RL3WDGQbAvMKJz25PLFLV
- yfUV0HnGGyHwyjQOw8f6ka6U/RcZPxZUrogaedPQTRJMzBdwMbCMPzrWPC4FePbyfO4F
- FNlEwn849D3atf33MDU+aYBWI2h3rtZQH5viECsYvfeXpopQsghYtijZeBCnx33iWxNm
- 8UWw==
-X-Gm-Message-State: APjAAAXdWuwpdQy3pPnYbEhXEfiqif0eThrLoH72GiT4Zt+xPfUGEBlS
- 3BQZw+NquIp1t/BvRCI6Vv3dfsvX
-X-Google-Smtp-Source: APXvYqzIPId95QD1p9h5yyQqJIuAkR5ecaXNbnqV/zOLqeN67IxeDaDqVDQUlrB6cCQ/CY+ZiuuuVw==
-X-Received: by 2002:a5d:4c85:: with SMTP id z5mr24874687wrs.42.1577023859107; 
- Sun, 22 Dec 2019 06:10:59 -0800 (PST)
-Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
- by smtp.gmail.com with ESMTPSA id e6sm16834831wru.44.2019.12.22.06.10.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 22 Dec 2019 06:10:58 -0800 (PST)
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 13/13] arm64: tegra: Add the memory subsystem on Tegra194
-Date: Sun, 22 Dec 2019 15:10:35 +0100
-Message-Id: <20191222141035.1649937-14-thierry.reding@gmail.com>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20191222141035.1649937-1-thierry.reding@gmail.com>
-References: <20191222141035.1649937-1-thierry.reding@gmail.com>
+ id 1ij21o-0006N6-36
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 14:16:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1577024176; x=1608560176;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=CNx8e3kHQFoIpdL1EMY1OXlDabpj1/Nv34ArIVup6ak=;
+ b=Sa+iin2rste9myviKc0V2f6FsV/anqrxyeqt7ZZObTIO1GaF+9zVMxFL
+ UJVJYAkTLZfVsw9FKMyyhJ38yxn45U0+/rWWh3lNwJzn1fBq7vK307A5c
+ kctfDw4tTOeYRTbwcOKUDhw/f63OBSJJOYj+BrtXdw6fJxn2aY532MsVL o=;
+IronPort-SDR: FFCoFpm8BcEoo4Mc181HL2HDprlFNG0b3mftV/0PZDK2EkURbyM+gn0j5RkwFwQEcDFs8f+uPH
+ M0ZFiysFQdng==
+X-IronPort-AV: E=Sophos;i="5.69,343,1571702400"; 
+   d="scan'208";a="8754041"
+Received: from iad12-co-svc-p1-lb1-vlan3.amazon.com (HELO
+ email-inbound-relay-1a-715bee71.us-east-1.amazon.com) ([10.43.8.6])
+ by smtp-border-fw-out-6002.iad6.amazon.com with ESMTP;
+ 22 Dec 2019 14:16:04 +0000
+Received: from EX13MTAUWA001.ant.amazon.com
+ (iad55-ws-svc-p15-lb9-vlan2.iad.amazon.com [10.40.159.162])
+ by email-inbound-relay-1a-715bee71.us-east-1.amazon.com (Postfix) with ESMTPS
+ id 8CFC3A258C; Sun, 22 Dec 2019 14:15:59 +0000 (UTC)
+Received: from EX13D13UWA001.ant.amazon.com (10.43.160.136) by
+ EX13MTAUWA001.ant.amazon.com (10.43.160.58) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Sun, 22 Dec 2019 14:15:58 +0000
+Received: from EX13MTAUWC001.ant.amazon.com (10.43.162.135) by
+ EX13D13UWA001.ant.amazon.com (10.43.160.136) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Sun, 22 Dec 2019 14:15:58 +0000
+Received: from [10.107.3.31] (10.107.3.31) by mail-relay.amazon.com
+ (10.43.162.232) with Microsoft SMTP Server (TLS) id 15.0.1367.3 via Frontend
+ Transport; Sun, 22 Dec 2019 14:15:52 +0000
+Subject: Re: [PATCH v2 6/6] arm64: dts: amazon: add Amazon's Annapurna Labs
+ Alpine v3 support
+To: Rob Herring <robh@kernel.org>
+References: <20191209161341.29607-1-hhhawa@amazon.com>
+ <20191209161341.29607-7-hhhawa@amazon.com> <20191219190304.GA4786@bogus>
+From: "Hawa, Hanna" <hhhawa@amazon.com>
+Message-ID: <10a6ff94-98fc-e88f-64c0-5648586613db@amazon.com>
+Date: Sun, 22 Dec 2019 16:15:50 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
+In-Reply-To: <20191219190304.GA4786@bogus>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_061101_650125_8061FF00 
-X-CRM114-Status: GOOD (  16.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191222_061616_333102_E00CE6BA 
+X-CRM114-Status: GOOD (  18.58  )
+X-Spam-Score: -10.0 (----------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-10.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [52.95.49.90 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -87,6 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,116 +99,489 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Jon Hunter <jonathanh@nvidia.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, nm@ti.com, heiko@sntech.de, jonnyc@amazon.com,
+ mchehab+samsung@kernel.org, ronenk@amazon.com, khilman@baylibre.com,
+ talel@amazon.com, tsahee@annapurnalabs.com, devicetree@vger.kernel.org,
+ antoine.tenart@bootlin.com, Jonathan.Cameron@huawei.com, tglx@linutronix.de,
+ hanochu@amazon.com, linux-arm-kernel@lists.infradead.org, benh@amazon.com,
+ barakw@amazon.com, gregkh@linuxfoundation.org, chanho.min@lge.com,
+ linux-kernel@vger.kernel.org, davem@davemloft.net, dwmw@amazon.co.uk
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thierry Reding <treding@nvidia.com>
+Hi Rob,
 
-The memory subsystem on Tegra194 encompasses both the memory and
-external memory controllers. The EMC is represented as a subnode of the
-MC and a ranges property is used to describe the register ranges.
+On 12/19/2019 9:03 PM, Rob Herring wrote:
+> On Mon, Dec 09, 2019 at 04:13:41PM +0000, Hanna Hawa wrote:
+>> From: Ronen Krupnik <ronenk@amazon.com>
+>>
+>> This patch adds the initial support for the Amazon's Annapurna Labs
+>> Alpine v3 Soc and Evaluation Platform (EVP).
+>>
+>> Signed-off-by: Ronen Krupnik <ronenk@amazon.com>
+>> ---
+>>   arch/arm64/boot/dts/amazon/Makefile          |   1 +
+>>   arch/arm64/boot/dts/amazon/alpine-v3-evp.dts |  23 ++
+>>   arch/arm64/boot/dts/amazon/alpine-v3.dtsi    | 371 +++++++++++++++++++
+>>   3 files changed, 395 insertions(+)
+>>   create mode 100644 arch/arm64/boot/dts/amazon/alpine-v3-evp.dts
+>>   create mode 100644 arch/arm64/boot/dts/amazon/alpine-v3.dtsi
+>>
+>> diff --git a/arch/arm64/boot/dts/amazon/Makefile b/arch/arm64/boot/dts/amazon/Makefile
+>> index d79822dc30cd..ba9e11544905 100644
+>> --- a/arch/arm64/boot/dts/amazon/Makefile
+>> +++ b/arch/arm64/boot/dts/amazon/Makefile
+>> @@ -1,2 +1,3 @@
+>>   # SPDX-License-Identifier: GPL-2.0-only
+>>   dtb-$(CONFIG_ARCH_ALPINE)	+= alpine-v2-evp.dtb
+>> +dtb-$(CONFIG_ARCH_ALPINE)	+= alpine-v3-evp.dtb
+>> diff --git a/arch/arm64/boot/dts/amazon/alpine-v3-evp.dts b/arch/arm64/boot/dts/amazon/alpine-v3-evp.dts
+>> new file mode 100644
+>> index 000000000000..8c1e11cf5855
+>> --- /dev/null
+>> +++ b/arch/arm64/boot/dts/amazon/alpine-v3-evp.dts
+>> @@ -0,0 +1,23 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+>> + */
+>> +
+>> +#include "alpine-v3.dtsi"
+>> +
+>> +/ {
+>> +	model = "Amazon's Annapurna Labs Alpine v3 Evaluation Platform (EVP)";
+>> +	compatible = "amazon,al-alpine-v3-evp", "amazon,al-alpine-v3";
+>> +
+>> +	aliases {
+>> +		serial0 = &uart0;
+>> +	};
+>> +
+>> +	chosen {
+>> +		stdout-path = "serial0:115200n8";
+>> +	};
+>> +};
+>> +
+>> +&uart0 {
+>> +	status = "okay";
+>> +};
+>> diff --git a/arch/arm64/boot/dts/amazon/alpine-v3.dtsi b/arch/arm64/boot/dts/amazon/alpine-v3.dtsi
+>> new file mode 100644
+>> index 000000000000..4945087f59e6
+>> --- /dev/null
+>> +++ b/arch/arm64/boot/dts/amazon/alpine-v3.dtsi
+>> @@ -0,0 +1,371 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * Copyright 2019, Amazon.com, Inc. or its affiliates. All Rights Reserved
+>> + */
+>> +
+>> +/dts-v1/;
+>> +
+>> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+>> +
+>> +/ {
+>> +	model = "Amazon's Annapurna Labs Alpine v3";
+>> +	compatible = "amazon,al-alpine-v3";
+>> +
+>> +	#address-cells = <2>;
+>> +	#size-cells = <2>;
+>> +
+>> +	cpus {
+>> +		#address-cells = <1>;
+>> +		#size-cells = <0>;
+>> +
+>> +		cpu@0 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x0>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+> 
+> We only define cache attributes if not discoverable or the cache ID
+> registers are wrong and you need to override what's discoverable.
 
-A dma-ranges property is also added to describe that all memory clients
-can address up to 39 bits using the memory controller client interface
-(MCCIF), unless otherwise limited by the DMA engines of the hardware. A
-memory client can technically use 40 bits of addresses, but the memory
-controller on Tegra194 uses bit 39 to determine the XBAR format used to
-access memory. Use of this bit needs to be explicitly controlled by the
-operating system drivers for devices that can use this on-the-fly format
-conversion. Using the dma-ranges property prevents the operating system
-from using the bit implicitly, for example in I/O virtual address
-mappings.
+The cache attributes are not discoverable, so we need to define the 
+attributes in the device tree for L1/L2.
 
-Signed-off-by: Thierry Reding <treding@nvidia.com>
----
- .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi |  4 ++
- arch/arm64/boot/dts/nvidia/tegra194.dtsi      | 43 +++++++++++++++++++
- 2 files changed, 47 insertions(+)
+Commit a8d4636f96ad075dc6d6af182b3de0b5498dc301
+("arm64: cacheinfo: Remove CCSIDR-based cache information probing") 
+removed mechanism to extract cache information based on CCSIDR register.
 
-diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-index b6ffd5dde20d..cc23d59240ac 100644
---- a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-+++ b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-@@ -48,6 +48,10 @@ phy: phy@0 {
- 			};
- 		};
- 
-+		memory-controller@2c00000 {
-+			status = "okay";
-+		};
-+
- 		serial@3110000 {
- 			status = "okay";
- 		};
-diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-index 9f000bb7fca7..73e23ca158dc 100644
---- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-+++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-@@ -7,6 +7,7 @@
- #include <dt-bindings/power/tegra194-powergate.h>
- #include <dt-bindings/reset/tegra194-reset.h>
- #include <dt-bindings/thermal/tegra194-bpmp-thermal.h>
-+#include <dt-bindings/memory/tegra194-mc.h>
- 
- / {
- 	compatible = "nvidia,tegra194";
-@@ -166,6 +167,48 @@ clkreq {
- 			};
- 		};
- 
-+		mc: memory-controller@2c00000 {
-+			compatible = "nvidia,tegra194-mc";
-+			reg = <0x02c00000 0x100000>,
-+			      <0x02b80000 0x040000>,
-+			      <0x01700000 0x100000>;
-+			status = "disabled";
-+
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+
-+			ranges = <0x01700000 0x0 0x01700000 0x0 0x100000>,
-+				 <0x02b80000 0x0 0x02b80000 0x0 0x040000>,
-+				 <0x02c00000 0x0 0x02c00000 0x0 0x100000>;
-+
-+			/*
-+			 * Bit 39 of addresses passing through the memory
-+			 * controller selects the XBAR format used when memory
-+			 * is accessed. This is used to transparently access
-+			 * memory in the XBAR format used by the discrete GPU
-+			 * (bit 39 set) or Tegra (bit 39 clear).
-+			 *
-+			 * As a consequence, the operating system must ensure
-+			 * that bit 39 is never used implicitly, for example
-+			 * via an I/O virtual address mapping of an IOMMU. If
-+			 * devices require access to the XBAR switch, their
-+			 * drivers must set this bit explicitly.
-+			 *
-+			 * Limit the DMA range for memory clients to [38:0].
-+			 */
-+			dma-ranges = <0x0 0x0 0x0 0x80 0x0>;
-+
-+			emc: external-memory-controller@2c60000 {
-+				compatible = "nvidia,tegra194-emc";
-+				reg = <0x0 0x02c60000 0x0 0x90000>,
-+				      <0x0 0x01780000 0x0 0x80000>;
-+				clocks = <&bpmp TEGRA194_CLK_EMC>;
-+				clock-names = "emc";
-+
-+				nvidia,bpmp = <&bpmp>;
-+			};
-+		};
-+
- 		uarta: serial@3100000 {
- 			compatible = "nvidia,tegra194-uart", "nvidia,tegra20-uart";
- 			reg = <0x03100000 0x40>;
--- 
-2.24.1
+> 
+>> +			next-level-cache = <&cluster0_l2>;
+>> +		};
+>> +
+>> +		cpu@1 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x1>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster0_l2>;
+>> +		};
+>> +
+>> +		cpu@2 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x2>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster0_l2>;
+>> +		};
+>> +
+>> +		cpu@3 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x3>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster0_l2>;
+>> +		};
+>> +
+>> +		cpu@100 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x100>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster1_l2>;
+>> +		};
+>> +
+>> +		cpu@101 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x101>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster1_l2>;
+>> +		};
+>> +
+>> +		cpu@102 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x102>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster1_l2>;
+>> +		};
+>> +
+>> +		cpu@103 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x103>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster1_l2>;
+>> +		};
+>> +
+>> +		cpu@200 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x200>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster2_l2>;
+>> +		};
+>> +
+>> +		cpu@201 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x201>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster2_l2>;
+>> +		};
+>> +
+>> +		cpu@202 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x202>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster2_l2>;
+>> +		};
+>> +
+>> +		cpu@203 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x203>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster2_l2>;
+>> +		};
+>> +
+>> +		cpu@300 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x300>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster3_l2>;
+>> +		};
+>> +
+>> +		cpu@301 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x301>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster3_l2>;
+>> +		};
+>> +
+>> +		cpu@302 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x302>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster3_l2>;
+>> +		};
+>> +
+>> +		cpu@303 {
+>> +			device_type = "cpu";
+>> +			compatible = "arm,cortex-a72";
+>> +			reg = <0x303>;
+>> +			enable-method = "psci";
+>> +			d-cache-size = <0x8000>;
+>> +			d-cache-line-size = <64>;
+>> +			d-cache-sets = <256>;
+>> +			i-cache-size = <0xc000>;
+>> +			i-cache-line-size = <64>;
+>> +			i-cache-sets = <256>;
+>> +			next-level-cache = <&cluster3_l2>;
+>> +		};
+>> +
+>> +		cluster0_l2: cache@0 {
+>> +			compatible = "cache";
+>> +			cache-size = <0x200000>;
+>> +			cache-line-size = <64>;
+>> +			cache-sets = <2048>;
+>> +			cache-level = <2>;
+>> +		};
+>> +
+>> +		cluster1_l2: cache@100 {
+>> +			compatible = "cache";
+>> +			cache-size = <0x200000>;
+>> +			cache-line-size = <64>;
+>> +			cache-sets = <2048>;
+>> +			cache-level = <2>;
+>> +		};
+>> +
+>> +		cluster2_l2: cache@200 {
+>> +			compatible = "cache";
+>> +			cache-size = <0x200000>;
+>> +			cache-line-size = <64>;
+>> +			cache-sets = <2048>;
+>> +			cache-level = <2>;
+>> +		};
+>> +
+>> +		cluster3_l2: cache@300 {
+>> +			compatible = "cache";
+>> +			cache-size = <0x200000>;
+>> +			cache-line-size = <64>;
+>> +			cache-sets = <2048>;
+>> +			cache-level = <2>;
+>> +		};
+>> +
+>> +	};
+>> +
+>> +	reserved-memory {
+>> +		#address-cells = <2>;
+>> +		#size-cells = <2>;
+>> +		ranges;
+>> +
+>> +		secmon@0 {
+>> +			reg = <0x0 0x0 0x0 0x100000>;
+>> +			no-map;
+>> +		};
+>> +	};
+>> +
+>> +	psci {
+>> +		compatible = "arm,psci-0.2";
+>> +		method = "smc";
+>> +	};
+>> +
+>> +	soc {
+>> +		compatible = "simple-bus";
+>> +		#address-cells = <2>;
+>> +		#size-cells = <2>;
+>> +
+>> +		interrupt-parent = <&gic>;
+>> +		ranges;
+>> +
+>> +		arch-timer {
+> 
+> Move up a level. There's no mmio regs.
 
+Ack, will be fixed.
+Will move pmu node also.
+
+> 
+>> +			compatible = "arm,armv8-timer";
+>> +			interrupts = <GIC_PPI 0xd IRQ_TYPE_LEVEL_LOW>,
+>> +				     <GIC_PPI 0xe IRQ_TYPE_LEVEL_LOW>,
+>> +				     <GIC_PPI 0xb IRQ_TYPE_LEVEL_LOW>,
+>> +				     <GIC_PPI 0xa IRQ_TYPE_LEVEL_LOW>;
+>> +		};
+>> +
+>> +		gic: interrupt-controller@f0000000 {
+>> +			compatible = "arm,gic-v3";
+>> +			#interrupt-cells = <3>;
+>> +			#address-cells = <0>;
+>> +			interrupt-controller;
+>> +			reg = <0x0 0xf0800000 0 0x10000>,
+>> +			      <0x0 0xf0a00000 0 0x200000>,
+>> +			      <0x0 0xf0000000 0 0x2000>,
+>> +			      <0x0 0xf0010000 0 0x1000>,
+>> +			      <0x0 0xf0020000 0 0x2000>;
+>> +			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
+>> +		};
+>> +
+>> +		msix: msix@fbe00000 {
+>> +			compatible = "al,alpine-msix";
+>> +			reg = <0x0 0xfbe00000 0x0 0x100000>;
+>> +			interrupt-controller;
+>> +			msi-controller;
+>> +			al,msi-base-spi = <160>;
+>> +			al,msi-num-spis = <800>;
+>> +			interrupt-parent = <&gic>;
+>> +		};
+>> +
+>> +		pmu {
+>> +			compatible = "arm,cortex-a72-pmu";
+>> +			interrupts = <GIC_PPI 7 IRQ_TYPE_LEVEL_HIGH>;
+>> +		};
+>> +
+>> +		uart0: serial@fd883000 {
+>> +			compatible = "ns16550a";
+>> +			device_type = "serial";
+> 
+> Drop device_type.
+
+Ack, will be fixed.
+
+> 
+>> +			reg = <0x0 0xfd883000 0x0 0x1000>;
+>> +			clock-frequency = <0>;
+>> +			interrupts = <GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>;
+>> +			reg-shift = <2>;
+>> +			reg-io-width = <4>;
+>> +		};
+>> +
+>> +		pci@fbd00000 {
+> 
+> pcie@...
+
+Ack, will be fixed.
+
+Thanks for reviewing.
+
+Thanks,
+Hanna
+
+> 
+>> +			compatible = "pci-host-ecam-generic";
+>> +			device_type = "pci";
+>> +			#size-cells = <2>;
+>> +			#address-cells = <3>;
+>> +			#interrupt-cells = <1>;
+>> +			reg = <0x0 0xfbd00000 0x0 0x100000>;
+>> +			interrupt-map-mask = <0xf800 0 0 7>;
+>> +			/* 8 x legacy interrupts for SATA only */
+>> +			interrupt-map = <0x4000 0 0 1 &gic 0 57 IRQ_TYPE_LEVEL_HIGH>,
+>> +					<0x4800 0 0 1 &gic 0 58 IRQ_TYPE_LEVEL_HIGH>,
+>> +					<0x5000 0 0 1 &gic 0 59 IRQ_TYPE_LEVEL_HIGH>,
+>> +					<0x5800 0 0 1 &gic 0 60 IRQ_TYPE_LEVEL_HIGH>,
+>> +					<0x6000 0 0 1 &gic 0 61 IRQ_TYPE_LEVEL_HIGH>,
+>> +					<0x6800 0 0 1 &gic 0 62 IRQ_TYPE_LEVEL_HIGH>,
+>> +					<0x7000 0 0 1 &gic 0 63 IRQ_TYPE_LEVEL_HIGH>,
+>> +					<0x7800 0 0 1 &gic 0 64 IRQ_TYPE_LEVEL_HIGH>;
+>> +			ranges = <0x02000000 0x0 0xfe000000 0x0 0xfe000000 0x0 0x1000000>;
+>> +			bus-range = <0x00 0x00>;
+>> +			msi-parent = <&msix>;
+>> +		};
+>> +	};
+>> +};
+>> -- 
+>> 2.17.1
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
