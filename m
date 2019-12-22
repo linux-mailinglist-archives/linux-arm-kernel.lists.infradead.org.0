@@ -2,41 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBC5F128DD5
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 13:08:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B19A3128DDC
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 13:11:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C/xQBbjWe/NOw20cHtMfDBOj0XZx/6SDc4dF9cTFu/E=; b=bdz0h7sxOduZDt
-	D3hKNz3dUF3KEDtY4iNpaV/0BncvPTG7KQcvJ5TYMSkGt/2bPmzbDAx7BFqMv+y77ICo8HoR0dEay
-	gjYla9/Kh5DqQa4sDC5qqrbV0GwMsP5m3XdjX2EwkajmtvL1h8TxA8piWe8idPCvQ7zFsocd3LEki
-	YLWPxpBDd3yoCIAlEK9T9RnmX41TuiswmlPf8mA0B/Bs7SRYEl61LC864rehdQGQJzPGALnJlQy+2
-	ktHncwPV6CYyyILn33RUyDNMLfElv5Dp0hxapDDjXU9QW+usge20CywC7q4hnVJeV1xCrdWUM4jYD
-	LDqC+3pVJQ12TX7Hmk2A==;
+	List-Owner; bh=IT/PvZfyD1yC+8iw4qU8u5sluQjRz/Bb9Zm/CEPULgo=; b=FXoBovgFgC7yYi
+	NOEoqG1lWHhFTunAOilrj04236L3wiJma0VZHq0jgd8SwcpwHzr1EEcdaBKgTKvjQJivOiTjS+Cku
+	q9BF30XSSphMss1R6TzO/ULyLBoZFVb0hsTrUejFqLmK4rQczTiL7sbQ9AgGXlwnJDbmgmZEsL+uL
+	NeHKz7Z6Uv1qtC3gSHvxwPa7qSGvHQwgS4Mk66m8KGZHUPOSVmh5I8YD0kbUS9F2JNG1cqnuQh1OS
+	XkGRyTB7kJSxPQzXoakPL1ZA0+nJYU1BJNk8ylh0baoe8YAnQ1/L6MfugsVKI/n5YJ+5crOF9C7Oc
+	oyMojB+pZGnxwOPiqT/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ij01o-0004Bh-5h; Sun, 22 Dec 2019 12:08:08 +0000
+	id 1ij04h-0005pA-3J; Sun, 22 Dec 2019 12:11:07 +0000
 Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ij01f-0004B3-8Y
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 12:08:01 +0000
+ id 1ij04X-0005oj-Bq
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 12:10:58 +0000
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=big-swifty.misterjones.org)
  by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
  (Exim 4.80) (envelope-from <maz@kernel.org>)
- id 1ij01X-0007ou-JP; Sun, 22 Dec 2019 13:07:51 +0100
-Date: Sun, 22 Dec 2019 12:07:50 +0000
-Message-ID: <867e2oimw9.wl-maz@kernel.org>
+ id 1ij04T-0007sI-T2; Sun, 22 Dec 2019 13:10:54 +0100
+Date: Sun, 22 Dec 2019 12:10:52 +0000
+Message-ID: <865zi8imr7.wl-maz@kernel.org>
 From: Marc Zyngier <maz@kernel.org>
 To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v2 14/18] KVM: arm64: spe: Provide guest virtual
- interrupts for SPE
-In-Reply-To: <20191220143025.33853-15-andrew.murray@arm.com>
+Subject: Re: [PATCH v2 15/18] perf: arm_spe: Handle guest/host exclusion flags
+In-Reply-To: <20191220143025.33853-16-andrew.murray@arm.com>
 References: <20191220143025.33853-1-andrew.murray@arm.com>
- <20191220143025.33853-15-andrew.murray@arm.com>
+ <20191220143025.33853-16-andrew.murray@arm.com>
 User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
  FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
  (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
@@ -50,8 +49,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_040759_448772_DB1B3229 
-X-CRM114-Status: GOOD (  26.12  )
+X-CRM114-CacheID: sfid-20191222_041057_549239_E41C514F 
+X-CRM114-Status: GOOD (  15.75  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -79,205 +78,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 20 Dec 2019 14:30:21 +0000,
+On Fri, 20 Dec 2019 14:30:22 +0000,
 Andrew Murray <andrew.murray@arm.com> wrote:
 > 
-> Upon the exit of a guest, let's determine if the SPE device has generated
-> an interrupt - if so we'll inject a virtual interrupt to the guest.
+> A side effect of supporting the SPE in guests is that we prevent the
+> host from collecting data whilst inside a guest thus creating a black-out
+> window. This occurs because instead of emulating the SPE, we share it
+> with our guests.
 > 
-> Upon the entry and exit of a guest we'll also update the state of the
-> physical IRQ such that it is active when a guest interrupt is pending
-> and the guest is running.
-> 
-> Finally we map the physical IRQ to the virtual IRQ such that the guest
-> can deactivate the interrupt when it handles the interrupt.
+> Let's accurately describe our capabilities by using the perf exclude
+> flags to prevent !exclude_guest and exclude_host flags from being used.
 > 
 > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 > ---
->  include/kvm/arm_spe.h |  6 ++++
->  virt/kvm/arm/arm.c    |  5 ++-
->  virt/kvm/arm/spe.c    | 71 +++++++++++++++++++++++++++++++++++++++++++
->  3 files changed, 81 insertions(+), 1 deletion(-)
+>  drivers/perf/arm_spe_pmu.c | 3 +++
+>  1 file changed, 3 insertions(+)
 > 
-> diff --git a/include/kvm/arm_spe.h b/include/kvm/arm_spe.h
-> index 9c65130d726d..91b2214f543a 100644
-> --- a/include/kvm/arm_spe.h
-> +++ b/include/kvm/arm_spe.h
-> @@ -37,6 +37,9 @@ static inline bool kvm_arm_support_spe_v1(void)
->  						      ID_AA64DFR0_PMSVER_SHIFT);
->  }
+> diff --git a/drivers/perf/arm_spe_pmu.c b/drivers/perf/arm_spe_pmu.c
+> index 2d24af4cfcab..3703dbf459de 100644
+> --- a/drivers/perf/arm_spe_pmu.c
+> +++ b/drivers/perf/arm_spe_pmu.c
+> @@ -679,6 +679,9 @@ static int arm_spe_pmu_event_init(struct perf_event *event)
+>  	if (attr->exclude_idle)
+>  		return -EOPNOTSUPP;
 >  
-> +void kvm_spe_flush_hwstate(struct kvm_vcpu *vcpu);
-> +inline void kvm_spe_sync_hwstate(struct kvm_vcpu *vcpu);
+> +	if (!attr->exclude_guest || attr->exclude_host)
+> +		return -EOPNOTSUPP;
 > +
->  int kvm_arm_spe_v1_set_attr(struct kvm_vcpu *vcpu,
->  			    struct kvm_device_attr *attr);
->  int kvm_arm_spe_v1_get_attr(struct kvm_vcpu *vcpu,
-> @@ -49,6 +52,9 @@ int kvm_arm_spe_v1_enable(struct kvm_vcpu *vcpu);
->  #define kvm_arm_support_spe_v1()	(false)
->  #define kvm_arm_spe_irq_initialized(v)	(false)
->  
-> +static inline void kvm_spe_flush_hwstate(struct kvm_vcpu *vcpu) {}
-> +static inline void kvm_spe_sync_hwstate(struct kvm_vcpu *vcpu) {}
-> +
->  static inline int kvm_arm_spe_v1_set_attr(struct kvm_vcpu *vcpu,
->  					  struct kvm_device_attr *attr)
->  {
-> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-> index 340d2388ee2c..a66085c8e785 100644
-> --- a/virt/kvm/arm/arm.c
-> +++ b/virt/kvm/arm/arm.c
-> @@ -741,6 +741,7 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
->  		preempt_disable();
->  
->  		kvm_pmu_flush_hwstate(vcpu);
-> +		kvm_spe_flush_hwstate(vcpu);
->  
->  		local_irq_disable();
->  
-> @@ -782,6 +783,7 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
->  		    kvm_request_pending(vcpu)) {
->  			vcpu->mode = OUTSIDE_GUEST_MODE;
->  			isb(); /* Ensure work in x_flush_hwstate is committed */
-> +			kvm_spe_sync_hwstate(vcpu);
->  			kvm_pmu_sync_hwstate(vcpu);
->  			if (static_branch_unlikely(&userspace_irqchip_in_use))
->  				kvm_timer_sync_hwstate(vcpu);
-> @@ -816,11 +818,12 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
->  		kvm_arm_clear_debug(vcpu);
->  
->  		/*
-> -		 * We must sync the PMU state before the vgic state so
-> +		 * We must sync the PMU and SPE state before the vgic state so
->  		 * that the vgic can properly sample the updated state of the
->  		 * interrupt line.
->  		 */
->  		kvm_pmu_sync_hwstate(vcpu);
-> +		kvm_spe_sync_hwstate(vcpu);
 
-The *HUGE* difference is that the PMU is purely a virtual interrupt,
-while you're trying to deal with a HW interrupt here.
-
->  
->  		/*
->  		 * Sync the vgic state before syncing the timer state because
-> diff --git a/virt/kvm/arm/spe.c b/virt/kvm/arm/spe.c
-> index 83ac2cce2cc3..097ed39014e4 100644
-> --- a/virt/kvm/arm/spe.c
-> +++ b/virt/kvm/arm/spe.c
-> @@ -35,6 +35,68 @@ int kvm_arm_spe_v1_enable(struct kvm_vcpu *vcpu)
->  	return 0;
->  }
->  
-> +static inline void set_spe_irq_phys_active(struct arm_spe_kvm_info *info,
-> +					   bool active)
-> +{
-> +	int r;
-> +	r = irq_set_irqchip_state(info->physical_irq, IRQCHIP_STATE_ACTIVE,
-> +				  active);
-> +	WARN_ON(r);
-> +}
-> +
-> +void kvm_spe_flush_hwstate(struct kvm_vcpu *vcpu)
-> +{
-> +	struct kvm_spe *spe = &vcpu->arch.spe;
-> +	bool phys_active = false;
-> +	struct arm_spe_kvm_info *info = arm_spe_get_kvm_info();
-> +
-> +	if (!kvm_arm_spe_v1_ready(vcpu))
-> +		return;
-> +
-> +	if (irqchip_in_kernel(vcpu->kvm))
-> +		phys_active = kvm_vgic_map_is_active(vcpu, spe->irq_num);
-> +
-> +	phys_active |= spe->irq_level;
-> +
-> +	set_spe_irq_phys_active(info, phys_active);
-
-So you're happy to mess with the HW interrupt state even when you
-don't have a HW irqchip? If you are going to copy paste the timer code
-here, you'd need to support it all the way (no, don't).
-
-> +}
-> +
-> +void kvm_spe_sync_hwstate(struct kvm_vcpu *vcpu)
-> +{
-> +	struct kvm_spe *spe = &vcpu->arch.spe;
-> +	u64 pmbsr;
-> +	int r;
-> +	bool service;
-> +	struct kvm_cpu_context *ctxt = &vcpu->arch.ctxt;
-> +	struct arm_spe_kvm_info *info = arm_spe_get_kvm_info();
-> +
-> +	if (!kvm_arm_spe_v1_ready(vcpu))
-> +		return;
-> +
-> +	set_spe_irq_phys_active(info, false);
-> +
-> +	pmbsr = ctxt->sys_regs[PMBSR_EL1];
-> +	service = !!(pmbsr & BIT(SYS_PMBSR_EL1_S_SHIFT));
-> +	if (spe->irq_level == service)
-> +		return;
-> +
-> +	spe->irq_level = service;
-> +
-> +	if (likely(irqchip_in_kernel(vcpu->kvm))) {
-> +		r = kvm_vgic_inject_irq(vcpu->kvm, vcpu->vcpu_id,
-> +					spe->irq_num, service, spe);
-> +		WARN_ON(r);
-> +	}
-> +}
-> +
-> +static inline bool kvm_arch_arm_spe_v1_get_input_level(int vintid)
-> +{
-> +	struct kvm_vcpu *vcpu = kvm_arm_get_running_vcpu();
-> +	struct kvm_spe *spe = &vcpu->arch.spe;
-> +
-> +	return spe->irq_level;
-> +}
-
-This isn't what such a callback is for. It is supposed to sample the
-HW, an nothing else.
-
-> +
->  static int kvm_arm_spe_v1_init(struct kvm_vcpu *vcpu)
->  {
->  	if (!kvm_arm_support_spe_v1())
-> @@ -48,6 +110,7 @@ static int kvm_arm_spe_v1_init(struct kvm_vcpu *vcpu)
->  
->  	if (irqchip_in_kernel(vcpu->kvm)) {
->  		int ret;
-> +		struct arm_spe_kvm_info *info;
->  
->  		/*
->  		 * If using the SPE with an in-kernel virtual GIC
-> @@ -57,10 +120,18 @@ static int kvm_arm_spe_v1_init(struct kvm_vcpu *vcpu)
->  		if (!vgic_initialized(vcpu->kvm))
->  			return -ENODEV;
->  
-> +		info = arm_spe_get_kvm_info();
-> +		if (!info->physical_irq)
-> +			return -ENODEV;
-> +
->  		ret = kvm_vgic_set_owner(vcpu, vcpu->arch.spe.irq_num,
->  					 &vcpu->arch.spe);
->  		if (ret)
->  			return ret;
-> +
-> +		ret = kvm_vgic_map_phys_irq(vcpu, info->physical_irq,
-> +					    vcpu->arch.spe.irq_num,
-> +					    kvm_arch_arm_spe_v1_get_input_level);
-
-You're mapping the interrupt int the guest, and yet you have never
-forwarded the interrupt the first place. All this flow is only going
-to wreck the host driver as soon as an interrupt occurs.
-
-I think you should rethink the interrupt handling altogether. It would
-make more sense if the interrupt was actually completely
-virtualized. If you can isolate the guest state and compute the
-interrupt state in SW (and from the above, it seems that you can),
-then you shouldn't mess with the whole forwarding *at all*, as it
-isn't designed for devices shared between host and guests.
+I have the opposite approach. If the host decides to profile the
+guest, why should that be denied? If there is a black hole, it should
+take place in the guest. Today, the host does expect this to work, and
+there is no way that we unconditionally allow it to regress.
 
 	M.
 
