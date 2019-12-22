@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDA84128E7E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 15:16:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5331A128E99
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 15:58:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7A3qlq5YP/2438AQozQHsQrW2xIxVL6HIXyELfCGnjo=; b=hjMWIo+SXSYqrQb+GvnWF/cPt
-	EvocV/YhPHDdW85ddw27pgqURJDVRrUf8auy+wQlOUyw4ve67L2oaqzxLxlD5TGr8qtk0uUz9c+TG
-	eto43WVWg9u2u5G95a2YccAUd1Av2Z1xqV55AQnBxLyxAaQoGgBo8arikql7WHc4QvmJBng+NORF/
-	UK4NqrZXQOke/kgUVSS9xdwE0uMtrksNm6X04wNriBriaQ15w1ohHZHIirZmUvR1kmiEyvnUvNEfe
-	9c1qe5HCf7pJPgkO+TOueMK0ikuQLMpPxwxuzDb3OW5DV1IT1BZfjjsDNJDvcwGUVYppK0gfuPyFF
-	U4gqxfV6A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Rxwnd0NQ+YtOUDiy9VKwaaIucIryaMvTOli3AUtQtHE=; b=NtuukHaBcB1L2r
+	VCmjb7L7MfQ8lhAo1EBzcRw0mGiEUX/Ejg36zT1Ar1hlzHORV//bP21IQnxCtX9veGqcY+BiawC43
+	c1xqJGPRZNgatonLys9tkUlH3iT5bkWahKdgySXhGwVbG7SPvP10aeTxiPupCd7BoDY3mPjg4T2AL
+	oggdrKVC7oPUsx5xyhC2XZ2Ma0oTM3b9FlaMwDTNSROFzY98+RnDuFjUYwWdGPTEpjGogt7RM43Ec
+	kRHdbM8UMmJEQNcuVhLg6Xfc+zYasq2WIVSBzi29Xbo448fcomxspGf8EDkO3HwlegUgD36JdhiBC
+	V/wl5mkIZSNgeFeL3ogQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ij220-0006Nt-Si; Sun, 22 Dec 2019 14:16:28 +0000
-Received: from smtp-fw-6002.amazon.com ([52.95.49.90])
+	id 1ij2gz-0001v9-G4; Sun, 22 Dec 2019 14:58:49 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ij21o-0006N6-36
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 14:16:18 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
- t=1577024176; x=1608560176;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=CNx8e3kHQFoIpdL1EMY1OXlDabpj1/Nv34ArIVup6ak=;
- b=Sa+iin2rste9myviKc0V2f6FsV/anqrxyeqt7ZZObTIO1GaF+9zVMxFL
- UJVJYAkTLZfVsw9FKMyyhJ38yxn45U0+/rWWh3lNwJzn1fBq7vK307A5c
- kctfDw4tTOeYRTbwcOKUDhw/f63OBSJJOYj+BrtXdw6fJxn2aY532MsVL o=;
-IronPort-SDR: FFCoFpm8BcEoo4Mc181HL2HDprlFNG0b3mftV/0PZDK2EkURbyM+gn0j5RkwFwQEcDFs8f+uPH
- M0ZFiysFQdng==
-X-IronPort-AV: E=Sophos;i="5.69,343,1571702400"; 
-   d="scan'208";a="8754041"
-Received: from iad12-co-svc-p1-lb1-vlan3.amazon.com (HELO
- email-inbound-relay-1a-715bee71.us-east-1.amazon.com) ([10.43.8.6])
- by smtp-border-fw-out-6002.iad6.amazon.com with ESMTP;
- 22 Dec 2019 14:16:04 +0000
-Received: from EX13MTAUWA001.ant.amazon.com
- (iad55-ws-svc-p15-lb9-vlan2.iad.amazon.com [10.40.159.162])
- by email-inbound-relay-1a-715bee71.us-east-1.amazon.com (Postfix) with ESMTPS
- id 8CFC3A258C; Sun, 22 Dec 2019 14:15:59 +0000 (UTC)
-Received: from EX13D13UWA001.ant.amazon.com (10.43.160.136) by
- EX13MTAUWA001.ant.amazon.com (10.43.160.58) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Sun, 22 Dec 2019 14:15:58 +0000
-Received: from EX13MTAUWC001.ant.amazon.com (10.43.162.135) by
- EX13D13UWA001.ant.amazon.com (10.43.160.136) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Sun, 22 Dec 2019 14:15:58 +0000
-Received: from [10.107.3.31] (10.107.3.31) by mail-relay.amazon.com
- (10.43.162.232) with Microsoft SMTP Server (TLS) id 15.0.1367.3 via Frontend
- Transport; Sun, 22 Dec 2019 14:15:52 +0000
-Subject: Re: [PATCH v2 6/6] arm64: dts: amazon: add Amazon's Annapurna Labs
- Alpine v3 support
-To: Rob Herring <robh@kernel.org>
-References: <20191209161341.29607-1-hhhawa@amazon.com>
- <20191209161341.29607-7-hhhawa@amazon.com> <20191219190304.GA4786@bogus>
-From: "Hawa, Hanna" <hhhawa@amazon.com>
-Message-ID: <10a6ff94-98fc-e88f-64c0-5648586613db@amazon.com>
-Date: Sun, 22 Dec 2019 16:15:50 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+ id 1ij2gq-0001qr-05
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 14:58:41 +0000
+Received: by mail-io1-xd44.google.com with SMTP id n21so12360466ioo.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 22 Dec 2019 06:58:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=e46uQFQTWmPxySVGOnVDnMR0Vq/breujBptRTHkRtEo=;
+ b=Dsq6D07hwAfWRqT+mst18Y6cyq6FdUxNdpkwpkJIP0tcuj2QR2/IfItcBqXITPHDQj
+ yskKG7ykem1MW+85i27wBUULgefjjH0t/UgG137z4Zi0C7YHJ9zBtHhdXW1OIzyBQcDw
+ YQlCoTUCQaEHwxrDG7y211gxClhfrgBV80PXie+Y5Bb591HN5QqSK50445+We2ZSsDL6
+ Y1TBB04O3T5l2iG4bjXjVclYL659VnwSYlAe0bmItEzTnKOSYMpFayesD9WVSERCB2Nw
+ 1qufae1STYXwX63cZY9B8wmCbi/E655mVNWUwAXPRyZSxYDuCkg4OE/tb5cv6A8BpN4Q
+ 0sFw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=e46uQFQTWmPxySVGOnVDnMR0Vq/breujBptRTHkRtEo=;
+ b=FcldRcbY8eeMp1QaqFmy2Ag+D1TfIXMfwpf9p/YYBlvWza0rYX/XJQQEc7V/NXqso2
+ tHWOsxR8sHXx0NXcw6jmGLELvIaB7o02rQsByxNApZvfrQ2PfyBgk3i6yVczDqHy7JtT
+ wR6vEYysoiuEcyY5ml0ngymgugKWBeFiiSuuEnKk0DVUCVIAFu7z6PyfIgJiUA+oaiKs
+ PUG0VRjmuVLBjyfRLq6/ke7uVtero01c4YPQQouwTBdgVDtZk5q/JjsSw85jVVXQltl/
+ Grr+1VAYezaYdcCBRWgUlPY82M3O83KmG0EtnY6Grlg1hwczKN6VoNFosn3ggrUWxMYE
+ Thjw==
+X-Gm-Message-State: APjAAAVC/a0s90mD8yvvA+NkPD7g9DccN+RQ9/NFDnXwGkYag82gjvCM
+ zqRzbUpY7poqOHQlD9zfo+EZ7FbPV4PqL0iNeiw=
+X-Google-Smtp-Source: APXvYqzEZ4N1k3wco5tAG7OfTqaUYpIinWmS9sijseBxbpCF6TmbB3laZ71W4Lov8h4mdE4ETTqg/ObVe5ScUZhjayM=
+X-Received: by 2002:a05:6638:76c:: with SMTP id
+ y12mr20529558jad.95.1577026715317; 
+ Sun, 22 Dec 2019 06:58:35 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191219190304.GA4786@bogus>
-Content-Language: en-US
+References: <20191213160542.15757-1-aford173@gmail.com>
+ <CAHCN7xKuVCGqgRpixa9UPkWq92Gg=dm4XxAczBKAZCoMzcBVJg@mail.gmail.com>
+ <DB7PR04MB5178EA739587B2DB084570B9872F0@DB7PR04MB5178.eurprd04.prod.outlook.com>
+In-Reply-To: <DB7PR04MB5178EA739587B2DB084570B9872F0@DB7PR04MB5178.eurprd04.prod.outlook.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Sun, 22 Dec 2019 08:58:23 -0600
+Message-ID: <CAHCN7xKa1+=_K_cYXvZW3vfT1gEoYDyK=_8ERBdxvOhB3gTvww@mail.gmail.com>
+Subject: Re: [PATCH V2 0/7] soc: imx: Enable additional functionality of
+ i.MX8M Mini
+To: Jacky Bai <ping.bai@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_061616_333102_E00CE6BA 
-X-CRM114-Status: GOOD (  18.58  )
-X-Spam-Score: -10.0 (----------)
+X-CRM114-CacheID: sfid-20191222_065840_072394_64CF5C77 
+X-CRM114-Status: GOOD (  39.18  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-10.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [52.95.49.90 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (aford173[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -87,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,489 +98,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, nm@ti.com, heiko@sntech.de, jonnyc@amazon.com,
- mchehab+samsung@kernel.org, ronenk@amazon.com, khilman@baylibre.com,
- talel@amazon.com, tsahee@annapurnalabs.com, devicetree@vger.kernel.org,
- antoine.tenart@bootlin.com, Jonathan.Cameron@huawei.com, tglx@linutronix.de,
- hanochu@amazon.com, linux-arm-kernel@lists.infradead.org, benh@amazon.com,
- barakw@amazon.com, gregkh@linuxfoundation.org, chanho.min@lge.com,
- linux-kernel@vger.kernel.org, davem@davemloft.net, dwmw@amazon.co.uk
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Peng Fan <peng.fan@nxp.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+On Sun, Dec 22, 2019 at 2:33 AM Jacky Bai <ping.bai@nxp.com> wrote:
+>
+> > -----Original Message-----
+> > From: Adam Ford <aford173@gmail.com>
+> > Sent: Saturday, December 21, 2019 11:07 PM
+> > To: arm-soc <linux-arm-kernel@lists.infradead.org>
+> > Cc: Peng Fan <peng.fan@nxp.com>; Jacky Bai <ping.bai@nxp.com>; Rob
+> > Herring <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>;
+> > Shawn Guo <shawnguo@kernel.org>; Sascha Hauer
+> > <s.hauer@pengutronix.de>; Pengutronix Kernel Team
+> > <kernel@pengutronix.de>; Fabio Estevam <festevam@gmail.com>;
+> > dl-linux-imx <linux-imx@nxp.com>; devicetree <devicetree@vger.kernel.org>;
+> > Linux Kernel Mailing List <linux-kernel@vger.kernel.org>; Leonard Crestez
+> > <leonard.crestez@nxp.com>
+> > Subject: Re: [PATCH V2 0/7] soc: imx: Enable additional functionality of
+> > i.MX8M Mini
+> >
+> > On Fri, Dec 13, 2019 at 10:05 AM Adam Ford <aford173@gmail.com> wrote:
+> > >
+> > > The GPCv2 controller on the i.MX8M Mini is compatible with the driver
+> > > used for the i.MX8MQ except for the register locations and names.
+> > > The GPCv2 controller is used to enable additional periperals currently
+> > > unavailable on the i.MX8M Mini.  In order to make them function, the
+> > > GPCv2 needs to be adapted so the drivers can associate their power
+> > > domain to the GPCv2 to enable them.
+> > >
+> > > This series makes one include file slightly more generic, adds the
+> > > iMX8M Mini entries, updates the bindings, adds them to the device
+> > > tree, then associates the new power domain to both the OTG and PCIe
+> > > controllers.
+> > >
+> > > Some peripherals may need additional power domain drivers in the
+> > > future due to limitations of the GPC driver, but the drivers for VPU
+> > > and others are not available yet.
+> >
+> > Before I do a V3 to address Rob's comments, I am thinking I'll drop the items
+> > on the GPC that Jacky suggested would not work, and we don't have drivers
+> > for those other peripherals (GPU, VPU, etc.) anyway.  My main goal here was
+> > to try and get the USB OTG ports working, so I'd like to enabled enough of the
+> > items on the GPC that are similar to the i.MX8MQ and leave the more
+> > challenging items until we have either a better driver available and/or actual
+> > peripheral support coming.  I haven't seen LCDIF or DSI drivers pushed
+> > upstream yet, so I doubt we'll see GPU or VPU yet until those are done.
+> >
+> > Does anyone from the NXP team have any other comments/concerns?
+> >
+>
+> If you look into NXP's release code, you will find that it is not easy to handle the
+> power domain more generically in GPCv2 driver for imx8mm. That's the reason why we use
+> SIP service to handle all the power domain in TF-A. we tried to upstream the SIP version
+> power domain that can be reused for all i.MX8M, but rejected by ARM guys. they think
+> we need to use SCMI to implement it. as there is no SCMI over SMC available, upstream is
+> on the way, so the power domain for i.MX8MM/MN is pending.
+>
 
-On 12/19/2019 9:03 PM, Rob Herring wrote:
-> On Mon, Dec 09, 2019 at 04:13:41PM +0000, Hanna Hawa wrote:
->> From: Ronen Krupnik <ronenk@amazon.com>
->>
->> This patch adds the initial support for the Amazon's Annapurna Labs
->> Alpine v3 Soc and Evaluation Platform (EVP).
->>
->> Signed-off-by: Ronen Krupnik <ronenk@amazon.com>
->> ---
->>   arch/arm64/boot/dts/amazon/Makefile          |   1 +
->>   arch/arm64/boot/dts/amazon/alpine-v3-evp.dts |  23 ++
->>   arch/arm64/boot/dts/amazon/alpine-v3.dtsi    | 371 +++++++++++++++++++
->>   3 files changed, 395 insertions(+)
->>   create mode 100644 arch/arm64/boot/dts/amazon/alpine-v3-evp.dts
->>   create mode 100644 arch/arm64/boot/dts/amazon/alpine-v3.dtsi
->>
->> diff --git a/arch/arm64/boot/dts/amazon/Makefile b/arch/arm64/boot/dts/amazon/Makefile
->> index d79822dc30cd..ba9e11544905 100644
->> --- a/arch/arm64/boot/dts/amazon/Makefile
->> +++ b/arch/arm64/boot/dts/amazon/Makefile
->> @@ -1,2 +1,3 @@
->>   # SPDX-License-Identifier: GPL-2.0-only
->>   dtb-$(CONFIG_ARCH_ALPINE)	+= alpine-v2-evp.dtb
->> +dtb-$(CONFIG_ARCH_ALPINE)	+= alpine-v3-evp.dtb
->> diff --git a/arch/arm64/boot/dts/amazon/alpine-v3-evp.dts b/arch/arm64/boot/dts/amazon/alpine-v3-evp.dts
->> new file mode 100644
->> index 000000000000..8c1e11cf5855
->> --- /dev/null
->> +++ b/arch/arm64/boot/dts/amazon/alpine-v3-evp.dts
->> @@ -0,0 +1,23 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
->> + */
->> +
->> +#include "alpine-v3.dtsi"
->> +
->> +/ {
->> +	model = "Amazon's Annapurna Labs Alpine v3 Evaluation Platform (EVP)";
->> +	compatible = "amazon,al-alpine-v3-evp", "amazon,al-alpine-v3";
->> +
->> +	aliases {
->> +		serial0 = &uart0;
->> +	};
->> +
->> +	chosen {
->> +		stdout-path = "serial0:115200n8";
->> +	};
->> +};
->> +
->> +&uart0 {
->> +	status = "okay";
->> +};
->> diff --git a/arch/arm64/boot/dts/amazon/alpine-v3.dtsi b/arch/arm64/boot/dts/amazon/alpine-v3.dtsi
->> new file mode 100644
->> index 000000000000..4945087f59e6
->> --- /dev/null
->> +++ b/arch/arm64/boot/dts/amazon/alpine-v3.dtsi
->> @@ -0,0 +1,371 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Copyright 2019, Amazon.com, Inc. or its affiliates. All Rights Reserved
->> + */
->> +
->> +/dts-v1/;
->> +
->> +#include <dt-bindings/interrupt-controller/arm-gic.h>
->> +
->> +/ {
->> +	model = "Amazon's Annapurna Labs Alpine v3";
->> +	compatible = "amazon,al-alpine-v3";
->> +
->> +	#address-cells = <2>;
->> +	#size-cells = <2>;
->> +
->> +	cpus {
->> +		#address-cells = <1>;
->> +		#size-cells = <0>;
->> +
->> +		cpu@0 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x0>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
-> 
-> We only define cache attributes if not discoverable or the cache ID
-> registers are wrong and you need to override what's discoverable.
+Thank you for the background. I appreciate it.
 
-The cache attributes are not discoverable, so we need to define the 
-attributes in the device tree for L1/L2.
+> Actually, I am confused why we can't use SIP service, even if the SCMI over SMC is ready in
+> the future, It seems the SMCC function ID still need to choose from SIP service function id bank.
+>
+> Another concern for adding power domain support in GPCv2 is that, each time a new
+> SOC is added, we need to add hundred lines of code in GPCv2 driver. it is not a best way
+> to keep driver reuse. The GPCv2 driver is originally used for i.MX7D, then reused by i.MX8MQ,
+> as i.MX8MQ has very simple power domain design as i.MX7D. But for i.MX8MM, it is not the
+> case.
 
-Commit a8d4636f96ad075dc6d6af182b3de0b5498dc301
-("arm64: cacheinfo: Remove CCSIDR-based cache information probing") 
-removed mechanism to extract cache information based on CCSIDR register.
+There are some entries on the 8MM which can be used the same way as
+the 8MM.  I have been able to get USB OTG working using the 8MQ's GPC
+table.
 
-> 
->> +			next-level-cache = <&cluster0_l2>;
->> +		};
->> +
->> +		cpu@1 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x1>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster0_l2>;
->> +		};
->> +
->> +		cpu@2 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x2>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster0_l2>;
->> +		};
->> +
->> +		cpu@3 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x3>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster0_l2>;
->> +		};
->> +
->> +		cpu@100 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x100>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster1_l2>;
->> +		};
->> +
->> +		cpu@101 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x101>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster1_l2>;
->> +		};
->> +
->> +		cpu@102 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x102>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster1_l2>;
->> +		};
->> +
->> +		cpu@103 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x103>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster1_l2>;
->> +		};
->> +
->> +		cpu@200 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x200>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster2_l2>;
->> +		};
->> +
->> +		cpu@201 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x201>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster2_l2>;
->> +		};
->> +
->> +		cpu@202 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x202>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster2_l2>;
->> +		};
->> +
->> +		cpu@203 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x203>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster2_l2>;
->> +		};
->> +
->> +		cpu@300 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x300>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster3_l2>;
->> +		};
->> +
->> +		cpu@301 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x301>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster3_l2>;
->> +		};
->> +
->> +		cpu@302 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x302>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster3_l2>;
->> +		};
->> +
->> +		cpu@303 {
->> +			device_type = "cpu";
->> +			compatible = "arm,cortex-a72";
->> +			reg = <0x303>;
->> +			enable-method = "psci";
->> +			d-cache-size = <0x8000>;
->> +			d-cache-line-size = <64>;
->> +			d-cache-sets = <256>;
->> +			i-cache-size = <0xc000>;
->> +			i-cache-line-size = <64>;
->> +			i-cache-sets = <256>;
->> +			next-level-cache = <&cluster3_l2>;
->> +		};
->> +
->> +		cluster0_l2: cache@0 {
->> +			compatible = "cache";
->> +			cache-size = <0x200000>;
->> +			cache-line-size = <64>;
->> +			cache-sets = <2048>;
->> +			cache-level = <2>;
->> +		};
->> +
->> +		cluster1_l2: cache@100 {
->> +			compatible = "cache";
->> +			cache-size = <0x200000>;
->> +			cache-line-size = <64>;
->> +			cache-sets = <2048>;
->> +			cache-level = <2>;
->> +		};
->> +
->> +		cluster2_l2: cache@200 {
->> +			compatible = "cache";
->> +			cache-size = <0x200000>;
->> +			cache-line-size = <64>;
->> +			cache-sets = <2048>;
->> +			cache-level = <2>;
->> +		};
->> +
->> +		cluster3_l2: cache@300 {
->> +			compatible = "cache";
->> +			cache-size = <0x200000>;
->> +			cache-line-size = <64>;
->> +			cache-sets = <2048>;
->> +			cache-level = <2>;
->> +		};
->> +
->> +	};
->> +
->> +	reserved-memory {
->> +		#address-cells = <2>;
->> +		#size-cells = <2>;
->> +		ranges;
->> +
->> +		secmon@0 {
->> +			reg = <0x0 0x0 0x0 0x100000>;
->> +			no-map;
->> +		};
->> +	};
->> +
->> +	psci {
->> +		compatible = "arm,psci-0.2";
->> +		method = "smc";
->> +	};
->> +
->> +	soc {
->> +		compatible = "simple-bus";
->> +		#address-cells = <2>;
->> +		#size-cells = <2>;
->> +
->> +		interrupt-parent = <&gic>;
->> +		ranges;
->> +
->> +		arch-timer {
-> 
-> Move up a level. There's no mmio regs.
+Until sometime better is available, would you entertain a limited use
+of the 8MQ's GPC where the device tree nodes only contain a limited
+number of entries (like USB OTG) where we can re-use the similar
+functions 8MQ without expanding the driver functions?  I know its not
+ideal, but it would be a temporary solution unless you think the
+upstream power domain support is coming quickly.  I looked through the
+mailing list history and it looked like there were some attempts about
+6 months ago, then it appeared to stop.
 
-Ack, will be fixed.
-Will move pmu node also.
+Once the newer driver is available upstream, we could then remove GPC
+references from the 8MM device tree and point it to the new driver.
 
-> 
->> +			compatible = "arm,armv8-timer";
->> +			interrupts = <GIC_PPI 0xd IRQ_TYPE_LEVEL_LOW>,
->> +				     <GIC_PPI 0xe IRQ_TYPE_LEVEL_LOW>,
->> +				     <GIC_PPI 0xb IRQ_TYPE_LEVEL_LOW>,
->> +				     <GIC_PPI 0xa IRQ_TYPE_LEVEL_LOW>;
->> +		};
->> +
->> +		gic: interrupt-controller@f0000000 {
->> +			compatible = "arm,gic-v3";
->> +			#interrupt-cells = <3>;
->> +			#address-cells = <0>;
->> +			interrupt-controller;
->> +			reg = <0x0 0xf0800000 0 0x10000>,
->> +			      <0x0 0xf0a00000 0 0x200000>,
->> +			      <0x0 0xf0000000 0 0x2000>,
->> +			      <0x0 0xf0010000 0 0x1000>,
->> +			      <0x0 0xf0020000 0 0x2000>;
->> +			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
->> +		};
->> +
->> +		msix: msix@fbe00000 {
->> +			compatible = "al,alpine-msix";
->> +			reg = <0x0 0xfbe00000 0x0 0x100000>;
->> +			interrupt-controller;
->> +			msi-controller;
->> +			al,msi-base-spi = <160>;
->> +			al,msi-num-spis = <800>;
->> +			interrupt-parent = <&gic>;
->> +		};
->> +
->> +		pmu {
->> +			compatible = "arm,cortex-a72-pmu";
->> +			interrupts = <GIC_PPI 7 IRQ_TYPE_LEVEL_HIGH>;
->> +		};
->> +
->> +		uart0: serial@fd883000 {
->> +			compatible = "ns16550a";
->> +			device_type = "serial";
-> 
-> Drop device_type.
+It would increase some limited functionality for the short term.  I
+know Leonard has been working on the DDRC modifications and power
+reduction.  I have been trying to use them, but unsuccessful so far.
+>
+> There is another concern, we don't want to export GPC module to rich OS side, it is not a must.
 
-Ack, will be fixed.
+What about doing it in the U-Boot stage if Linux isn't an option and
+ATF isn't accepting them?
 
-> 
->> +			reg = <0x0 0xfd883000 0x0 0x1000>;
->> +			clock-frequency = <0>;
->> +			interrupts = <GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>;
->> +			reg-shift = <2>;
->> +			reg-io-width = <4>;
->> +		};
->> +
->> +		pci@fbd00000 {
-> 
-> pcie@...
-
-Ack, will be fixed.
-
-Thanks for reviewing.
-
-Thanks,
-Hanna
-
-> 
->> +			compatible = "pci-host-ecam-generic";
->> +			device_type = "pci";
->> +			#size-cells = <2>;
->> +			#address-cells = <3>;
->> +			#interrupt-cells = <1>;
->> +			reg = <0x0 0xfbd00000 0x0 0x100000>;
->> +			interrupt-map-mask = <0xf800 0 0 7>;
->> +			/* 8 x legacy interrupts for SATA only */
->> +			interrupt-map = <0x4000 0 0 1 &gic 0 57 IRQ_TYPE_LEVEL_HIGH>,
->> +					<0x4800 0 0 1 &gic 0 58 IRQ_TYPE_LEVEL_HIGH>,
->> +					<0x5000 0 0 1 &gic 0 59 IRQ_TYPE_LEVEL_HIGH>,
->> +					<0x5800 0 0 1 &gic 0 60 IRQ_TYPE_LEVEL_HIGH>,
->> +					<0x6000 0 0 1 &gic 0 61 IRQ_TYPE_LEVEL_HIGH>,
->> +					<0x6800 0 0 1 &gic 0 62 IRQ_TYPE_LEVEL_HIGH>,
->> +					<0x7000 0 0 1 &gic 0 63 IRQ_TYPE_LEVEL_HIGH>,
->> +					<0x7800 0 0 1 &gic 0 64 IRQ_TYPE_LEVEL_HIGH>;
->> +			ranges = <0x02000000 0x0 0xfe000000 0x0 0xfe000000 0x0 0x1000000>;
->> +			bus-range = <0x00 0x00>;
->> +			msi-parent = <&msix>;
->> +		};
->> +	};
->> +};
->> -- 
->> 2.17.1
->>
+adam
+>
+> BR
+> Jacky Bai
+>
+> > adam
+> > >
+>
+> > > Adam Ford (7):
+> > >   soc: imx: gpcv2: Rename imx8mq-power.h to imx8m-power.h
+> > >   soc: imx: gpcv2: Update imx8m-power.h to include iMX8M Mini
+> > >   soc: imx: gpcv2: add support for i.MX8M Mini SoC
+> > >   dt-bindings: imx-gpcv2: Update bindings to support i.MX8M Mini
+> > >   arm64: dts: imx8mm: add GPC power domains
+> > >   ARM64: dts: imx8mm: Fix clocks and power domain for USB OTG
+> > >   arm64: dts: imx8mm: Add PCIe support
+> > >
+> > >  .../bindings/power/fsl,imx-gpcv2.txt          |   6 +-
+> > >  arch/arm64/boot/dts/freescale/imx8mm.dtsi     | 127 ++++++++-
+> > >  arch/arm64/boot/dts/freescale/imx8mq.dtsi     |   2 +-
+> > >  drivers/soc/imx/gpcv2.c                       | 246
+> > +++++++++++++++++-
+> > >  .../power/{imx8mq-power.h => imx8m-power.h}   |  14 +
+> > >  5 files changed, 387 insertions(+), 8 deletions(-)  rename
+> > > include/dt-bindings/power/{imx8mq-power.h => imx8m-power.h} (57%)
+> > >
+> > > --
+> > > 2.20.1
+> > >
 
 _______________________________________________
 linux-arm-kernel mailing list
