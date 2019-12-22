@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10A96128E78
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 15:14:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02BC5128E79
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 15:14:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v9bvlUvq0KYp9rJPYrx1eFum8rXa5iJbC5BkC1Zk5SU=; b=GZJ76SrlYq8DV1
-	oU6BMRK0kbEurxkz+Ou7ez9iAv/LmKbJ4GbACVlw4RQhU1qdKOOuIXI8Pd7fYniaEsShlhKbZj/Ae
-	NkwM/iLa95+QNhrxv1IewluE2MHLKUuQbW+6eGnYw3j4wSO4174cz3WZKMurEJVdqB790ZcrTncGG
-	KrYXKr5v//C4WuW3+FBGx52svWb7ftXGGzF6Ae7x4E4yM8cQwZvxpFiqednV0SZw9iWMnVoFJfnMD
-	exnBAISBR8/3v5/TYO6lrO0xHTBtaKtnCJ8A+sJIE5tdF6H8XSAAgxky6StLPFfm1UysEK9JEh6mu
-	c9n8SNyErWrGCwzf/nFQ==;
+	List-Owner; bh=kBhLf1MsqxT5BjwQ0SC0IgUO+aCkFL0AWMzOegX6D4U=; b=N0qaEy09K0UQha
+	1COiq4+BlYqph/d0vsM0YeupPstVXfh4knod0/+Beo8blfKst8tlCM7DrXaA78Y/2r9WqFBhtmauD
+	23zbDLYfygCfQNkgM4kNuEsOFlpDd2AW0LlltouEIA0OihVvYZEtnBrh17XwKV+zuw+0hjY6rxPeR
+	y+gcT3XU19Dz1fZoMCKxH/5wkJvXp2VeKGiSTOQPqo46BcCMkP55OXbMSSd/Itx4lLyuH66eJmBM7
+	EUjKObMfIKOb6VtwFC89i2Cr5P8ZUWE3gzzAFH5LLXiGCF2r0DyXoX+dIsZdrjK6Zue9qmA88d+nt
+	GOd6uRvVdo5r4svDQIEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ij1zf-00048t-Fv; Sun, 22 Dec 2019 14:14:03 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1ij1zx-0004Ne-Ll; Sun, 22 Dec 2019 14:14:21 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ij1wf-0001ij-PB
+ id 1ij1wh-0001kR-Ry
  for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 14:11:03 +0000
-Received: by mail-wr1-x442.google.com with SMTP id y17so13965186wrh.5
+Received: by mail-wr1-x444.google.com with SMTP id q6so13900652wro.9
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 22 Dec 2019 06:10:57 -0800 (PST)
+ Sun, 22 Dec 2019 06:10:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=vzFYuc95AWY6svq+EBkTgwMguKL8GySeZ2TwbGI8OIM=;
- b=uLUP93BWw0o+JzGgvJbHS+JQq2j1+NBwmhp+m4Ik109/D6oaX5YQAmSL97SKYfWENj
- 9U3hX5wRhynx3P/ymFwsgDAiQlvfSSoAoSyyoULEMnlaqPsc64jHQQLDlfRc7hGKjZ8m
- RkEUeiqYjQW+OG7JZROkofNpcYfASzs8CLN6WRihBpRh7zNO6hm8KKmnKFceUkx5f3DX
- 4XeySBgPFwdUYAaOPuVgwj0oblL5rCXAvU14LkZTn76fQfE7x4jqAh45YvYgleyxNqAc
- EV2DBP5T4M48S/NnnqlZHiNveDd0i5hN8ZycFqoBb309C0x8tk6HfTnJyxnGOVU4oG5D
- USJg==
+ bh=9NLd2mHZgSanSF4J79TwmNol8PZQ1XjUStKYPMmwtKY=;
+ b=pHezw3KgOalhagOA8ELZM/hrh4fQ8lAGOKSnJXcC1LfySeZAeMTRvGB02qX6RwTjIi
+ LgPx2hiGAxsNdsvD52YPPI50k3Q2OO0xrZRSpZgDqHN61SkaI94lyaMh3r0dQiylmSmn
+ /XS47KLgP83xghibqMP0a0ASi3mWcjeRvpvBCK4LVemxShy+qYSafIiALVnaDj6rXJBv
+ 1CErmlegu57ZvPDSY9A4e9eY47urKn2fM7mgHnfUAJEar7/qCPpfBQ892bkbYTSeCa0L
+ YckvpvcqKpqeiX9fY/4OSOOCRne4KZobZRnrvmuEojjGsys7LF3KE9+2l3jYEeOY9/Z3
+ 1LfQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=vzFYuc95AWY6svq+EBkTgwMguKL8GySeZ2TwbGI8OIM=;
- b=kDSyqbZ28gbUQX2xdUrhmRRaNiiSHe1e4Ap/XxcDZvyk2TBjrTWg9fYx2WAZr8BVGp
- ieoDamy4r43AScAlZ8cqYi3WoSVJwyEwDshL/OAcqpyEqrQUXPtF5KICz005Qt8S+0dH
- 9k5ASHFxF/w+5iS5/esuUtx9PDRsdyJ26Ef+TiAnlZqP5ySTYMDuWr9nbMZpe1pCLXVT
- OoNxcVLzFhIMJ9S6wTdrK6do1sdM/dH4lYNlevwHrFAjW+AuZyH280L8Mk1TxBc3ji0n
- WEZXCOQNA4FFFkj/z1PyLEKqEw4YeQnVmLew+Hbi4pPfrW6hgZ2weYOQ6/RvfkFHUF2L
- zRsQ==
-X-Gm-Message-State: APjAAAU+a3LvI9uvqcMvO4D5a6ZXZv5BBzudfvkIB76mndLockKWPE1v
- J/0ipMLMLBK/2YLmX8x6eOzTislX
-X-Google-Smtp-Source: APXvYqzAiT+VAg4ExN9JaDt0Y33c1cY7telDW1fwAubpR0qMOkVKKO0fuJ7ozhYjeykY1C+d8exOHg==
-X-Received: by 2002:adf:ee45:: with SMTP id w5mr24860066wro.352.1577023855885; 
- Sun, 22 Dec 2019 06:10:55 -0800 (PST)
+ bh=9NLd2mHZgSanSF4J79TwmNol8PZQ1XjUStKYPMmwtKY=;
+ b=UFx5/rVCdshO8uHsOW2Plrn63qS+2UsHABieyXLi0G23jValv1Kqjzk1m6gMvsnrbX
+ pXoJVE8UfyK7GC6iqNtg0jbyd7BFu2Mw1zMeDYWa8wuyPUx7Z7ol2l5C85+KOvU2lFrQ
+ e3nSONvCaRL1nEOZ40k6aNSHstF9mNp1Q4DH8VUUB+34SgXVtGWuth+rH+2ZBLITx+oF
+ dC3XznZyadLBkDyUPMsQ8RNpQE4wpi2RQPNKUa9afV2ljm33UAviR2t1dS9ufeRMx11m
+ n7r3/uNytrf0zQko8JcuOnjf7WFcVJku9Tedbx2jE7waLg1boGbGIqvNVBtEQFZa1E4P
+ 4sZw==
+X-Gm-Message-State: APjAAAW+kBXCrgU/bG/DiVPfVw8rpsrj9c2P8WV4lJMLiEn+16es93s6
+ D+7EFR1Pc/GQPq7D/7kSeHo=
+X-Google-Smtp-Source: APXvYqxRYGHgLZemcl/o8PPZd4p2Lzq1fSAv3l9MR1in32eLNeV1VqBcGboJgv2+yaSFlVoDnWG8vA==
+X-Received: by 2002:adf:f70b:: with SMTP id r11mr27216079wrp.388.1577023857414; 
+ Sun, 22 Dec 2019 06:10:57 -0800 (PST)
 Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
- by smtp.gmail.com with ESMTPSA id c5sm16640151wmb.9.2019.12.22.06.10.54
+ by smtp.gmail.com with ESMTPSA id f16sm17271848wrm.65.2019.12.22.06.10.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 22 Dec 2019 06:10:54 -0800 (PST)
+ Sun, 22 Dec 2019 06:10:56 -0800 (PST)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 11/13] arm64: tegra: Add interrupt for memory controller on
- Tegra186
-Date: Sun, 22 Dec 2019 15:10:33 +0100
-Message-Id: <20191222141035.1649937-12-thierry.reding@gmail.com>
+Subject: [PATCH 12/13] arm64: tegra: Add external memory controller on Tegra186
+Date: Sun, 22 Dec 2019 15:10:34 +0100
+Message-Id: <20191222141035.1649937-13-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191222141035.1649937-1-thierry.reding@gmail.com>
 References: <20191222141035.1649937-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_061057_927086_5372AEB2 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20191222_061059_914309_ADEF8440 
+X-CRM114-Status: GOOD (  13.26  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,27 +108,53 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-The memory controller can be interrupted by certain conditions. Add the
-interrupt to the device tree node to allow drivers to trap these
-conditions.
+Add the external memory controller as a child device of the memory
+controller on Tegra186. The memory controller really represents the
+memory subsystem that encompasses both the memory and external memory
+controllers. The external memory controller uses the BPMP to obtain the
+list of supported EMC frequencies and set the EMC frequency.
+
+Also set up the dma-ranges property to describe that all memory clients
+can address up to 40 bits using the memory controller client interface
+(MCCIF), unless otherwise limited by the DMA engines of the hardware.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- arch/arm64/boot/dts/nvidia/tegra186.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/nvidia/tegra186.dtsi | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/nvidia/tegra186.dtsi b/arch/arm64/boot/dts/nvidia/tegra186.dtsi
-index 7dc7fa8bcc39..584498a999d4 100644
+index 584498a999d4..dba7f57469c5 100644
 --- a/arch/arm64/boot/dts/nvidia/tegra186.dtsi
 +++ b/arch/arm64/boot/dts/nvidia/tegra186.dtsi
-@@ -142,6 +142,7 @@ agic: interrupt-controller@2a40000 {
- 	memory-controller@2c00000 {
- 		compatible = "nvidia,tegra186-mc";
+@@ -144,6 +144,27 @@ memory-controller@2c00000 {
  		reg = <0x0 0x02c00000 0x0 0xb0000>;
-+		interrupts = <GIC_SPI 223 IRQ_TYPE_LEVEL_HIGH>;
+ 		interrupts = <GIC_SPI 223 IRQ_TYPE_LEVEL_HIGH>;
  		status = "disabled";
++
++		#address-cells = <2>;
++		#size-cells = <2>;
++
++		ranges = <0x0 0x02c00000 0x0 0x02c00000 0x0 0xb0000>;
++
++		/*
++		 * Memory clients have access to all 40 bits that the memory
++		 * controller can address.
++		 */
++		dma-ranges = <0x0 0x0 0x0 0x0 0x100 0x0>;
++
++		emc: external-memory-controller@2c60000 {
++			compatible = "nvidia,tegra186-emc";
++			reg = <0x0 0x02c60000 0x0 0x50000>;
++			interrupts = <GIC_SPI 224 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&bpmp TEGRA186_CLK_EMC>;
++			clock-names = "emc";
++
++			nvidia,bpmp = <&bpmp>;
++		};
  	};
  
+ 	timer@3010000 {
 -- 
 2.24.1
 
