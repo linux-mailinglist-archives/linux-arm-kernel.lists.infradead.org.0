@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 429CD128F9A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 19:52:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF47E128F9C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 19:53:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,49 +11,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=gGzQj1P2++itloC9s1+/35T78iO3oSF0IGNxZ5wtTBI=; b=HmOVWCI2ZynyjDMCdquIsBteYs
-	vBm4NiYwQVjB5IKYM8grYu5Oj8eVUNrEdGGcRDne91X+klmY2q3wMbC+I7ymuEwZOLQFPNMGr69FB
-	+erkKoxkzVYl4NVuYytmr0OC14hNbuSpd2V06Y28J0VXPvFf0Ezn05bcX2rNRfwphKbS/JeUJsJ1+
-	EueQ/ju1gSyfJpuKppy57Tbc0+wxSdJsYzb1m07Fm/QjG6H/SfPYZ7uAtYDFJA1BLGgkG7TjDkx4c
-	H5QKBRs5ZjEjCwmydR9vaNXzWtk+cORDlYsXxXVKqgzBMMnxeIr7A0KgKXtfcLVJFb/3ucBakPcQp
-	PDcB9Jyw==;
+	bh=jBYtg5313shE1faHj1V/pxXcJfZoPI//6bLDqRSbsrs=; b=c38XtQoQ1roJJ5Pvx7TtRvu6S9
+	LaJarMZeZCncRXo5icyPw8s/qp07hFGqcytbTjKNtCEV692yZpHL17g3GMyflri8lfSx/VMUKLIC0
+	lJ9GzYwtZKGmxkyLujItiJ8e1l10z3UWtnsQmeRVNI6RxX2fUPlm3aUqyVIHeYrM7xurjEL4xQjWZ
+	lFaNrSzUuE3Nz18d7HwUNgXBIbrcvZdn+xb8YUSr9bVbNQ7CZFafjk4zzAGioQrH0RnDTsMAnxFLF
+	by0iWPqitXOl8oeJ+AvMlxPIFG6lQyNaCpapO5oC5F99wxEd6wyLv5XalXMQDicc6ofZP58yp0CI+
+	YWZD2OyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ij6LQ-0004oR-8S; Sun, 22 Dec 2019 18:52:48 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1ij6Ls-0005Hk-Kv; Sun, 22 Dec 2019 18:53:16 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ij6JV-0003K9-TC; Sun, 22 Dec 2019 18:50:51 +0000
-Received: by mail-pf1-x441.google.com with SMTP id x185so8083806pfc.5;
- Sun, 22 Dec 2019 10:50:49 -0800 (PST)
+ id 1ij6JX-0003LU-8U; Sun, 22 Dec 2019 18:50:52 +0000
+Received: by mail-pl1-x641.google.com with SMTP id y8so6309503pll.13;
+ Sun, 22 Dec 2019 10:50:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=2mMsPo8M3x876TJIPv/V9kMTnJlbEepMVzpgXqdmw0I=;
- b=ZpEDu81zRHBqo3RV+PuHNZpFGIZ0wGCPWy0hCPcLUTHwoe6j+6Tx2+RBVyksDlngTK
- myaP/2Gs758aoeYWPfu+UwIVsRkdRh2WRHJJyVIsT7SjBgdU7nrLOVzdkap7wePcNF65
- 51ANI8s4JJowIaPkgDAgKgcHJxo9wbPnrF7Ym5oE7or4f8qY7FDW17B4k+Dlz5gzBAsB
- 4an4A++rTJeqU75iqy9JoNdAXj+vCb4XLdhvt7NKIL26hxzEjqKLOa1p5Kg3Ia1AUxMB
- Vnq+ZdjHbajAsFP/w/hTbmnry1R/ur7tTeDdaXUVtwEWnLybI/lMITQ/Ostu/yvnJ7TJ
- OGbA==
+ bh=obMvYqnbW6FnclvcaTw1U7yQPLStwyHiLSMoMgJ8DMo=;
+ b=RdmiiwF6babAQFWUpUGLy2DZqAwZAi8V33zgiNx7dj87h8phOlTYHtZOMDCQtXFOit
+ coQqalsXFCLZlPp6YJ4THC2t7m8EEi9PnxcIXgnqBv8YojpdwQ8b1z12w3XbHM6gRe2N
+ 9cXHFVzTg5EsYmr3AiWsmm30sn/yrNbhfuYIlptfe1Mjzl/GJ0cPIIf7zQeTlWRApwyt
+ ceX5KsTvJkHVzT/jsg270BpkQa+0B9D2w9kYdnxox243iMIwwKPCl092zGtmcZOreNl2
+ ops0dZYFpd4iyt33sNOKbW/8D9fDi76pS+zAn59mN4DcCTF39VQKSGfc5uBhAnozFnSr
+ F3RA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=2mMsPo8M3x876TJIPv/V9kMTnJlbEepMVzpgXqdmw0I=;
- b=VDHVYwm2LwbJxQ6Kza/cGEU0H5twCAZB6vL9xLXk5aq6RmFpXHRNX22JFKAvt/fE+1
- 30OVaUuuqAi6yXcmkJEZ3hW8EudZSCOUxioXxE01kws2uV1a0gzD+mT6ptxNup+iFrSz
- RoEKDFfox1pgWA2ZcWjQWTD63p3O4ANFOI0Pq0yrBZMrPSJSuGana9oU8emLfL5hLNle
- jKvoVKCLGC+bV8rmB2sM2AngeDGEWkOTPZ3iTwKPoYtmZ/4wRIN5RwdB9HSgGIQQlgOS
- qOt4lTe77AcbJELG/xiI3dka20D6QTU2ZxnDLknPD2E6mEc0XdxL1NRrOiH7P+aWtiyC
- isxw==
-X-Gm-Message-State: APjAAAVw8fmzMZNcnbgE9Lh3S3hVPcIQ4j8EvlIY3Dw38+ymF5FVmgtZ
- pGHYLzWMFl9FGYrnErreJyM=
-X-Google-Smtp-Source: APXvYqy/rBMV+0mmOMQ2OMs4KFh2sPHwhPOhJ+NSHNisuaZbPxtgXlTivp/vRnvcVVkI8GuQChVzcg==
-X-Received: by 2002:a63:f64a:: with SMTP id u10mr26539866pgj.16.1577040649079; 
- Sun, 22 Dec 2019 10:50:49 -0800 (PST)
+ bh=obMvYqnbW6FnclvcaTw1U7yQPLStwyHiLSMoMgJ8DMo=;
+ b=CqpONEmweCQMU1yVGtWinS4D1R/uFVwbw3rhF9UWVK+mwoGVLh6qXdkx32fqAJxZ+N
+ /i4Ayg2Zh7PKXrmD20CpJBelQM+xpf24NYukijD3mZsfHkrzL+GS09EjxldglAFghFFz
+ 9tp+FfMeFf0469jH/zyZAOAxm8wdcQKqXVdWuR2vKC/3V919kOuk9EHMYujVaDwwTEvl
+ gczbif1p2Rm1hDoHLUoTRFtmPhbVtI1gvNgnBI9rcM/456nRidU9JeXgUQZISDV/Yf+h
+ 1F3avmELckmOZpZUu4rfiOGx87BcA/k0j35itF8g0zSFjIbieMf7JkfqsArV7vBrquwz
+ 4gVg==
+X-Gm-Message-State: APjAAAU/7T9Mjbo0Jb5Xh9ILkXyY+h/1ehYenigFcWQv5HdXxPaXH1ch
+ 34nFc/Yhj6l1Peg9UWGyg/Y=
+X-Google-Smtp-Source: APXvYqynfZtZtMfgSs1bDem4Zo+v6lSrgRDKxVTy4vingOzHr5+fBrYwncpXVgh6n1vtEUTebtVYcQ==
+X-Received: by 2002:a17:902:6bc9:: with SMTP id
+ m9mr26918356plt.260.1577040650351; 
+ Sun, 22 Dec 2019 10:50:50 -0800 (PST)
 Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
- by smtp.gmail.com with ESMTPSA id a12sm18584043pga.11.2019.12.22.10.50.48
+ by smtp.gmail.com with ESMTPSA id x8sm21284906pfd.76.2019.12.22.10.50.49
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 22 Dec 2019 10:50:48 -0800 (PST)
+ Sun, 22 Dec 2019 10:50:49 -0800 (PST)
 From: Yangtao Li <tiny.windzz@gmail.com>
 To: ssantosh@kernel.org, paul@crapouillou.net, matthias.bgg@gmail.com,
  rogerq@ti.com, tony@atomide.com, lukasz.luba@arm.com, kgene@kernel.org,
@@ -66,22 +67,22 @@ To: ssantosh@kernel.org, paul@crapouillou.net, matthias.bgg@gmail.com,
  linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
  linux-omap@vger.kernel.org, linux-pm@vger.kernel.org,
  linux-samsung-soc@vger.kernel.org, linux-tegra@vger.kernel.org
-Subject: [PATCH 8/9] memory: mtk-smi: convert to devm_platform_ioremap_resource
-Date: Sun, 22 Dec 2019 18:50:33 +0000
-Message-Id: <20191222185034.4665-8-tiny.windzz@gmail.com>
+Subject: [PATCH 9/9] memory: omap-gpmc: switch to platform_get_irq
+Date: Sun, 22 Dec 2019 18:50:34 +0000
+Message-Id: <20191222185034.4665-9-tiny.windzz@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191222185034.4665-1-tiny.windzz@gmail.com>
 References: <20191222185034.4665-1-tiny.windzz@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_105049_978820_F43350B2 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20191222_105051_383341_8EEB65BE 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -112,63 +113,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify code.
+platform_get_resource(pdev, IORESOURCE_IRQ) is not recommended for
+requesting IRQ's resources, as they can be not ready yet. Using
+platform_get_irq() instead is preferred for getting IRQ even if it
+was not retrieved earlier.
 
 Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 ---
- drivers/memory/mtk-smi.c | 11 +++--------
- 1 file changed, 3 insertions(+), 8 deletions(-)
+ drivers/memory/omap-gpmc.c | 10 +++-------
+ 1 file changed, 3 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/memory/mtk-smi.c b/drivers/memory/mtk-smi.c
-index a113e811faab..1cc5d94036a2 100644
---- a/drivers/memory/mtk-smi.c
-+++ b/drivers/memory/mtk-smi.c
-@@ -269,7 +269,6 @@ static const struct of_device_id mtk_smi_larb_of_ids[] = {
- static int mtk_smi_larb_probe(struct platform_device *pdev)
- {
- 	struct mtk_smi_larb *larb;
--	struct resource *res;
- 	struct device *dev = &pdev->dev;
- 	struct device_node *smi_node;
- 	struct platform_device *smi_pdev;
-@@ -279,8 +278,7 @@ static int mtk_smi_larb_probe(struct platform_device *pdev)
- 		return -ENOMEM;
+diff --git a/drivers/memory/omap-gpmc.c b/drivers/memory/omap-gpmc.c
+index eff26c1b1394..6dd19d168f75 100644
+--- a/drivers/memory/omap-gpmc.c
++++ b/drivers/memory/omap-gpmc.c
+@@ -2366,13 +2366,9 @@ static int gpmc_probe(struct platform_device *pdev)
+ 	if (IS_ERR(gpmc_base))
+ 		return PTR_ERR(gpmc_base);
  
- 	larb->larb_gen = of_device_get_match_data(dev);
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	larb->base = devm_ioremap_resource(dev, res);
-+	larb->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(larb->base))
- 		return PTR_ERR(larb->base);
+-	res = platform_get_resource(pdev, IORESOURCE_IRQ, 0);
+-	if (!res) {
+-		dev_err(&pdev->dev, "Failed to get resource: irq\n");
+-		return -ENOENT;
+-	}
+-
+-	gpmc->irq = res->start;
++	gpmc->irq = platform_get_irq(pdev, 0);
++	if (gpmc->irq < 0)
++		return gpmc->irq;
  
-@@ -419,7 +417,6 @@ static int mtk_smi_common_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct mtk_smi *common;
--	struct resource *res;
- 	int ret;
- 
- 	common = devm_kzalloc(dev, sizeof(*common), GFP_KERNEL);
-@@ -453,8 +450,7 @@ static int mtk_smi_common_probe(struct platform_device *pdev)
- 	 * base.
- 	 */
- 	if (common->plat->gen == MTK_SMI_GEN1) {
--		res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--		common->smi_ao_base = devm_ioremap_resource(dev, res);
-+		common->smi_ao_base = devm_platform_ioremap_resource(pdev, 0);
- 		if (IS_ERR(common->smi_ao_base))
- 			return PTR_ERR(common->smi_ao_base);
- 
-@@ -466,8 +462,7 @@ static int mtk_smi_common_probe(struct platform_device *pdev)
- 		if (ret)
- 			return ret;
- 	} else {
--		res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--		common->base = devm_ioremap_resource(dev, res);
-+		common->base = devm_platform_ioremap_resource(pdev, 0);
- 		if (IS_ERR(common->base))
- 			return PTR_ERR(common->base);
- 	}
+ 	gpmc_l3_clk = devm_clk_get(&pdev->dev, "fck");
+ 	if (IS_ERR(gpmc_l3_clk)) {
 -- 
 2.17.1
 
