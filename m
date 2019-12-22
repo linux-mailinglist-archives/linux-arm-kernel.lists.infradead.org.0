@@ -2,84 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5331A128E99
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 15:58:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECF53128EB2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 16:52:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rxwnd0NQ+YtOUDiy9VKwaaIucIryaMvTOli3AUtQtHE=; b=NtuukHaBcB1L2r
-	VCmjb7L7MfQ8lhAo1EBzcRw0mGiEUX/Ejg36zT1Ar1hlzHORV//bP21IQnxCtX9veGqcY+BiawC43
-	c1xqJGPRZNgatonLys9tkUlH3iT5bkWahKdgySXhGwVbG7SPvP10aeTxiPupCd7BoDY3mPjg4T2AL
-	oggdrKVC7oPUsx5xyhC2XZ2Ma0oTM3b9FlaMwDTNSROFzY98+RnDuFjUYwWdGPTEpjGogt7RM43Ec
-	kRHdbM8UMmJEQNcuVhLg6Xfc+zYasq2WIVSBzi29Xbo448fcomxspGf8EDkO3HwlegUgD36JdhiBC
-	V/wl5mkIZSNgeFeL3ogQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JHZqlK0heP5wv81z3Bhg69+y6lrp2uw2wAFeWNRybw8=; b=DBeEiqZiyZbX44
+	77PYbi+rlAUmHh2GlukAcbla4jchguCEenzMJI4f8QXzutlIAmlkzurOpLvVHZLmebeEPHZtVQ5vl
+	snXPJM1UzKPyqEln/Of0dsmReUE/H2C2rtrKrqMsI9NAeSkv4jOl5kO9KI1vUVqMpTeD7M3QZUpxx
+	DqGVn431zl3MTRqnmlaOCOHW/s4uXaa8q/jKAew7Hweb4O5w5UFERQ6BT1/5nRyhxulFVEGo2xb90
+	+qrOoHmxqKbSuZ2unqj2FSmSB9a+NablDyMphwqGQIpt+dsFKiLGGh2br+IngSGDAJtrlgiLnp5xs
+	hPSTofwxZ3UJxhwUAdeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ij2gz-0001v9-G4; Sun, 22 Dec 2019 14:58:49 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1ij3WK-0001bY-TV; Sun, 22 Dec 2019 15:51:52 +0000
+Received: from smtp-fw-2101.amazon.com ([72.21.196.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ij2gq-0001qr-05
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 14:58:41 +0000
-Received: by mail-io1-xd44.google.com with SMTP id n21so12360466ioo.10
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 22 Dec 2019 06:58:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=e46uQFQTWmPxySVGOnVDnMR0Vq/breujBptRTHkRtEo=;
- b=Dsq6D07hwAfWRqT+mst18Y6cyq6FdUxNdpkwpkJIP0tcuj2QR2/IfItcBqXITPHDQj
- yskKG7ykem1MW+85i27wBUULgefjjH0t/UgG137z4Zi0C7YHJ9zBtHhdXW1OIzyBQcDw
- YQlCoTUCQaEHwxrDG7y211gxClhfrgBV80PXie+Y5Bb591HN5QqSK50445+We2ZSsDL6
- Y1TBB04O3T5l2iG4bjXjVclYL659VnwSYlAe0bmItEzTnKOSYMpFayesD9WVSERCB2Nw
- 1qufae1STYXwX63cZY9B8wmCbi/E655mVNWUwAXPRyZSxYDuCkg4OE/tb5cv6A8BpN4Q
- 0sFw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=e46uQFQTWmPxySVGOnVDnMR0Vq/breujBptRTHkRtEo=;
- b=FcldRcbY8eeMp1QaqFmy2Ag+D1TfIXMfwpf9p/YYBlvWza0rYX/XJQQEc7V/NXqso2
- tHWOsxR8sHXx0NXcw6jmGLELvIaB7o02rQsByxNApZvfrQ2PfyBgk3i6yVczDqHy7JtT
- wR6vEYysoiuEcyY5ml0ngymgugKWBeFiiSuuEnKk0DVUCVIAFu7z6PyfIgJiUA+oaiKs
- PUG0VRjmuVLBjyfRLq6/ke7uVtero01c4YPQQouwTBdgVDtZk5q/JjsSw85jVVXQltl/
- Grr+1VAYezaYdcCBRWgUlPY82M3O83KmG0EtnY6Grlg1hwczKN6VoNFosn3ggrUWxMYE
- Thjw==
-X-Gm-Message-State: APjAAAVC/a0s90mD8yvvA+NkPD7g9DccN+RQ9/NFDnXwGkYag82gjvCM
- zqRzbUpY7poqOHQlD9zfo+EZ7FbPV4PqL0iNeiw=
-X-Google-Smtp-Source: APXvYqzEZ4N1k3wco5tAG7OfTqaUYpIinWmS9sijseBxbpCF6TmbB3laZ71W4Lov8h4mdE4ETTqg/ObVe5ScUZhjayM=
-X-Received: by 2002:a05:6638:76c:: with SMTP id
- y12mr20529558jad.95.1577026715317; 
- Sun, 22 Dec 2019 06:58:35 -0800 (PST)
+ id 1ij3WB-0001a7-Cm
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 15:51:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1577029903; x=1608565903;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=/Fh7HdunH+kE47+Fy1RMY3WL0/mbaLdbtzbtulqhoOs=;
+ b=soMmIhNsIG1dNdWQbYieeA7WspeB6W0ajH98glmpNEzIW16vVHvXhThg
+ Zj9vDQET6s4qPFktJS5ge3EvmlBmpbaRUxjwkC+PLrK8COWbuBIRjMiwG
+ mkjijfLkoYEk8I1YP/z13eAzRbSNwWgabuRQiE3NI4FToQEm7mcJJdof8 8=;
+IronPort-SDR: cDmNsvmmyVGLKi6byOCZzQpzL4F3WKIVtDwB5Nvwru6K2bJb+csg6zC/JfJ8sv1EFBxkva5B0m
+ +Bwpp2AqvLjg==
+X-IronPort-AV: E=Sophos;i="5.69,344,1571702400"; 
+   d="scan'208";a="9682117"
+Received: from iad12-co-svc-p1-lb1-vlan2.amazon.com (HELO
+ email-inbound-relay-2b-baacba05.us-west-2.amazon.com) ([10.43.8.2])
+ by smtp-border-fw-out-2101.iad2.amazon.com with ESMTP;
+ 22 Dec 2019 15:51:37 +0000
+Received: from EX13MTAUEA001.ant.amazon.com
+ (pdx4-ws-svc-p6-lb7-vlan2.pdx.amazon.com [10.170.41.162])
+ by email-inbound-relay-2b-baacba05.us-west-2.amazon.com (Postfix) with ESMTPS
+ id 2D062A1F5A; Sun, 22 Dec 2019 15:51:36 +0000 (UTC)
+Received: from EX13D19EUB003.ant.amazon.com (10.43.166.69) by
+ EX13MTAUEA001.ant.amazon.com (10.43.61.243) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Sun, 22 Dec 2019 15:51:35 +0000
+Received: from u8a88181e7b2355.ant.amazon.com (10.43.162.9) by
+ EX13D19EUB003.ant.amazon.com (10.43.166.69) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Sun, 22 Dec 2019 15:51:24 +0000
+From: Hanna Hawa <hhhawa@amazon.com>
+To: <robh+dt@kernel.org>, <mark.rutland@arm.com>, <tsahee@annapurnalabs.com>, 
+ <antoine.tenart@bootlin.com>, <hhhawa@amazon.com>,
+ <mchehab+samsung@kernel.org>, <davem@davemloft.net>,
+ <gregkh@linuxfoundation.org>, <Jonathan.Cameron@huawei.com>,
+ <tglx@linutronix.de>, <xuwei5@hisilicon.com>, <scott.branden@broadcom.com>,
+ <dinguyen@kernel.org>, <zhang.lyra@gmail.com>, <treding@nvidia.com>
+Subject: [PATCH v3 0/6] Amazon's Annapurna Labs Alpine v3 device-tree
+Date: Sun, 22 Dec 2019 17:50:32 +0200
+Message-ID: <20191222155038.30633-1-hhhawa@amazon.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20191213160542.15757-1-aford173@gmail.com>
- <CAHCN7xKuVCGqgRpixa9UPkWq92Gg=dm4XxAczBKAZCoMzcBVJg@mail.gmail.com>
- <DB7PR04MB5178EA739587B2DB084570B9872F0@DB7PR04MB5178.eurprd04.prod.outlook.com>
-In-Reply-To: <DB7PR04MB5178EA739587B2DB084570B9872F0@DB7PR04MB5178.eurprd04.prod.outlook.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Sun, 22 Dec 2019 08:58:23 -0600
-Message-ID: <CAHCN7xKa1+=_K_cYXvZW3vfT1gEoYDyK=_8ERBdxvOhB3gTvww@mail.gmail.com>
-Subject: Re: [PATCH V2 0/7] soc: imx: Enable additional functionality of
- i.MX8M Mini
-To: Jacky Bai <ping.bai@nxp.com>
+X-Originating-IP: [10.43.162.9]
+X-ClientProxiedBy: EX13D19UWA002.ant.amazon.com (10.43.160.204) To
+ EX13D19EUB003.ant.amazon.com (10.43.166.69)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_065840_072394_64CF5C77 
-X-CRM114-Status: GOOD (  39.18  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20191222_075143_566787_BE613D68 
+X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -12.7 (------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-12.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [72.21.196.25 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [72.21.196.25 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -87,6 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,139 +101,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Peng Fan <peng.fan@nxp.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, barakw@amazon.com, benh@amazon.com,
+ linux-kernel@vger.kernel.org, hanochu@amazon.com, dwmw@amazon.co.uk,
+ jonnyc@amazon.com, ronenk@amazon.com, talel@amazon.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Dec 22, 2019 at 2:33 AM Jacky Bai <ping.bai@nxp.com> wrote:
->
-> > -----Original Message-----
-> > From: Adam Ford <aford173@gmail.com>
-> > Sent: Saturday, December 21, 2019 11:07 PM
-> > To: arm-soc <linux-arm-kernel@lists.infradead.org>
-> > Cc: Peng Fan <peng.fan@nxp.com>; Jacky Bai <ping.bai@nxp.com>; Rob
-> > Herring <robh+dt@kernel.org>; Mark Rutland <mark.rutland@arm.com>;
-> > Shawn Guo <shawnguo@kernel.org>; Sascha Hauer
-> > <s.hauer@pengutronix.de>; Pengutronix Kernel Team
-> > <kernel@pengutronix.de>; Fabio Estevam <festevam@gmail.com>;
-> > dl-linux-imx <linux-imx@nxp.com>; devicetree <devicetree@vger.kernel.org>;
-> > Linux Kernel Mailing List <linux-kernel@vger.kernel.org>; Leonard Crestez
-> > <leonard.crestez@nxp.com>
-> > Subject: Re: [PATCH V2 0/7] soc: imx: Enable additional functionality of
-> > i.MX8M Mini
-> >
-> > On Fri, Dec 13, 2019 at 10:05 AM Adam Ford <aford173@gmail.com> wrote:
-> > >
-> > > The GPCv2 controller on the i.MX8M Mini is compatible with the driver
-> > > used for the i.MX8MQ except for the register locations and names.
-> > > The GPCv2 controller is used to enable additional periperals currently
-> > > unavailable on the i.MX8M Mini.  In order to make them function, the
-> > > GPCv2 needs to be adapted so the drivers can associate their power
-> > > domain to the GPCv2 to enable them.
-> > >
-> > > This series makes one include file slightly more generic, adds the
-> > > iMX8M Mini entries, updates the bindings, adds them to the device
-> > > tree, then associates the new power domain to both the OTG and PCIe
-> > > controllers.
-> > >
-> > > Some peripherals may need additional power domain drivers in the
-> > > future due to limitations of the GPC driver, but the drivers for VPU
-> > > and others are not available yet.
-> >
-> > Before I do a V3 to address Rob's comments, I am thinking I'll drop the items
-> > on the GPC that Jacky suggested would not work, and we don't have drivers
-> > for those other peripherals (GPU, VPU, etc.) anyway.  My main goal here was
-> > to try and get the USB OTG ports working, so I'd like to enabled enough of the
-> > items on the GPC that are similar to the i.MX8MQ and leave the more
-> > challenging items until we have either a better driver available and/or actual
-> > peripheral support coming.  I haven't seen LCDIF or DSI drivers pushed
-> > upstream yet, so I doubt we'll see GPU or VPU yet until those are done.
-> >
-> > Does anyone from the NXP team have any other comments/concerns?
-> >
->
-> If you look into NXP's release code, you will find that it is not easy to handle the
-> power domain more generically in GPCv2 driver for imx8mm. That's the reason why we use
-> SIP service to handle all the power domain in TF-A. we tried to upstream the SIP version
-> power domain that can be reused for all i.MX8M, but rejected by ARM guys. they think
-> we need to use SCMI to implement it. as there is no SCMI over SMC available, upstream is
-> on the way, so the power domain for i.MX8MM/MN is pending.
->
+This series organize the Amazon's Annapurna Labs Alpine device tree
+bindings, device tree folder and adds new device tree for Alpine v3.
 
-Thank you for the background. I appreciate it.
+Changes since v2:
+-----------------
+- Move up a level for DT node without mmio regs.
+- Drop device_type from serial@fd883000 node.
+- Minor change name of PCIe node to: pcie@fbd00000
 
-> Actually, I am confused why we can't use SIP service, even if the SCMI over SMC is ready in
-> the future, It seems the SMCC function ID still need to choose from SIP service function id bank.
->
-> Another concern for adding power domain support in GPCv2 is that, each time a new
-> SOC is added, we need to add hundred lines of code in GPCv2 driver. it is not a best way
-> to keep driver reuse. The GPCv2 driver is originally used for i.MX7D, then reused by i.MX8MQ,
-> as i.MX8MQ has very simple power domain design as i.MX7D. But for i.MX8MM, it is not the
-> case.
+Changes since v1:
+-----------------
+- Rename al,alpine DT binding to amazon,alpine
+- Rename al folder to be amazon
+- Update maintainers of amazon,alpine DT
+- Add missing alpine-v2 DT binding
+- Fix yaml schemas for alpine-v3-evp.dts:
+	- #size-cells:0:0: 0 is not one of [1, 2]
+	- arch-timer: interrupts: [[1, 13, 8, 1, 14, 8, 1, 11, 8, 1, 10,
+	8]] is too short
+- Change compatible string of alpine-v3-evp to amazon,al
 
-There are some entries on the 8MM which can be used the same way as
-the 8MM.  I have been able to get USB OTG working using the 8MQ's GPC
-table.
+Hanna Hawa (5):
+  dt-bindings: arm: amazon: rename al,alpine DT binding to amazon,al
+  arm64: dts: amazon: rename al folder to be amazon
+  dt-bindings: arm: amazon: update maintainers of amazon,al DT bindings
+  dt-bindings: arm: amazon: add missing alpine-v2 DT binding
+  dt-bindings: arm: amazon: add Amazon Annapurna Labs Alpine V3
 
-Until sometime better is available, would you entertain a limited use
-of the 8MQ's GPC where the device tree nodes only contain a limited
-number of entries (like USB OTG) where we can re-use the similar
-functions 8MQ without expanding the driver functions?  I know its not
-ideal, but it would be a temporary solution unless you think the
-upstream power domain support is coming quickly.  I looked through the
-mailing list history and it looked like there were some attempts about
-6 months ago, then it appeared to stop.
+Ronen Krupnik (1):
+  arm64: dts: amazon: add Amazon's Annapurna Labs Alpine v3 support
 
-Once the newer driver is available upstream, we could then remove GPC
-references from the 8MM device tree and point it to the new driver.
+ .../devicetree/bindings/arm/al,alpine.yaml    |  21 -
+ .../devicetree/bindings/arm/amazon,al.yaml    |  33 ++
+ MAINTAINERS                                   |   2 +-
+ arch/arm64/boot/dts/Makefile                  |   2 +-
+ arch/arm64/boot/dts/{al => amazon}/Makefile   |   1 +
+ .../boot/dts/{al => amazon}/alpine-v2-evp.dts |   0
+ .../boot/dts/{al => amazon}/alpine-v2.dtsi    |   0
+ arch/arm64/boot/dts/amazon/alpine-v3-evp.dts  |  23 ++
+ arch/arm64/boot/dts/amazon/alpine-v3.dtsi     | 371 ++++++++++++++++++
+ 9 files changed, 430 insertions(+), 23 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/al,alpine.yaml
+ create mode 100644 Documentation/devicetree/bindings/arm/amazon,al.yaml
+ rename arch/arm64/boot/dts/{al => amazon}/Makefile (64%)
+ rename arch/arm64/boot/dts/{al => amazon}/alpine-v2-evp.dts (100%)
+ rename arch/arm64/boot/dts/{al => amazon}/alpine-v2.dtsi (100%)
+ create mode 100644 arch/arm64/boot/dts/amazon/alpine-v3-evp.dts
+ create mode 100644 arch/arm64/boot/dts/amazon/alpine-v3.dtsi
 
-It would increase some limited functionality for the short term.  I
-know Leonard has been working on the DDRC modifications and power
-reduction.  I have been trying to use them, but unsuccessful so far.
->
-> There is another concern, we don't want to export GPC module to rich OS side, it is not a must.
+-- 
+2.17.1
 
-What about doing it in the U-Boot stage if Linux isn't an option and
-ATF isn't accepting them?
-
-adam
->
-> BR
-> Jacky Bai
->
-> > adam
-> > >
->
-> > > Adam Ford (7):
-> > >   soc: imx: gpcv2: Rename imx8mq-power.h to imx8m-power.h
-> > >   soc: imx: gpcv2: Update imx8m-power.h to include iMX8M Mini
-> > >   soc: imx: gpcv2: add support for i.MX8M Mini SoC
-> > >   dt-bindings: imx-gpcv2: Update bindings to support i.MX8M Mini
-> > >   arm64: dts: imx8mm: add GPC power domains
-> > >   ARM64: dts: imx8mm: Fix clocks and power domain for USB OTG
-> > >   arm64: dts: imx8mm: Add PCIe support
-> > >
-> > >  .../bindings/power/fsl,imx-gpcv2.txt          |   6 +-
-> > >  arch/arm64/boot/dts/freescale/imx8mm.dtsi     | 127 ++++++++-
-> > >  arch/arm64/boot/dts/freescale/imx8mq.dtsi     |   2 +-
-> > >  drivers/soc/imx/gpcv2.c                       | 246
-> > +++++++++++++++++-
-> > >  .../power/{imx8mq-power.h => imx8m-power.h}   |  14 +
-> > >  5 files changed, 387 insertions(+), 8 deletions(-)  rename
-> > > include/dt-bindings/power/{imx8mq-power.h => imx8m-power.h} (57%)
-> > >
-> > > --
-> > > 2.20.1
-> > >
 
 _______________________________________________
 linux-arm-kernel mailing list
