@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95166128EBE
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 16:52:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8A78128EB8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 22 Dec 2019 16:52:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AnqiNvXIwQ7cyzRjoZeZA7khwH6x+cdgaVQ/hcZcze4=; b=FrcxtqoJMtGJmZ
-	fSPserYn4AhKNakPz5tWNGIJ8DLFLKvOSZkXobN8IKAGaL0WsR6yz/1Ig/8b8k5/kwgeGHDqXTzAq
-	lbu3EkHjfzVhw4EXCEOHNnt9rGGy0gF9q4+R48Pg3znfMd1ehpQvT3P/tUx8dnj1eiFUXaPdFwetv
-	w7uqV7eqqVkOnVF9+aex43JLZr36oXUNaJSrJDptJR41t1Hedmq1a7KJd8aRT0Gdc+BDEiCYSh5hO
-	m4ajx1VekW6twfvoyB+VXyVPoP0wf//mXRYXPRAbdxwSp3Hg2jibEfd4kjgdJ76Yiw71WCAXHcHC0
-	VRe3j8JVWhM0q2FlktHA==;
+	List-Owner; bh=+C+cPGL2EtoV7ZWuBbgcPxZpk3jGz/ZdKGs55LM4JgQ=; b=Nf2LJHLK/cKUw5
+	zKOCLwxuzXsR7lAQHVzaOITO7pEReQ6IazcTqO2XEJWzYe6t62iTXi3z0k/C7rs1TNSWSv7Kifsla
+	Gf2BQPrWxeEu/NzGct6G/E78qWQvU/0E+msOvCxetRhNEc1yfHniOqLtRKGq1PwVFjVWMWtJil62i
+	ki+eT+D9LfWwcY2sNK1jSmLSl80v17rG+rvtvP5Y1q2ywKbAUX9aMqDzGWdk423wKhhRVb8vbTQte
+	bmX6VaIdCdSNtm0OB9vHOC8FohGgMCtveHQS3E6i6tbNimNBJbCZWFbT38Li6furYtm398UtsxYY6
+	lALbF4ZSgOn5qJknmPlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ij3Wy-000244-VH; Sun, 22 Dec 2019 15:52:32 +0000
+	id 1ij3Wg-0001r4-3n; Sun, 22 Dec 2019 15:52:14 +0000
 Received: from smtp-fw-9101.amazon.com ([207.171.184.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ij3WZ-0001qI-00
- for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 15:52:08 +0000
+ id 1ij3WX-0001qI-KA
+ for linux-arm-kernel@lists.infradead.org; Sun, 22 Dec 2019 15:52:06 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
- t=1577029927; x=1608565927;
+ t=1577029925; x=1608565925;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version;
- bh=OPMX17Omz7JYkY/istcTHVeb5cJ/SKsg2S1n95nmmHo=;
- b=RSTxgRvQ+Pw8Jp109O7rxZfmrL37321WIlutUx/y1MIkffmP9mdTroZj
- cXxpXG1uwQuF+NS8CwAm46eBPmz7FpUxcItyGzOVZwIv7JIlYEoVFnyQQ
- 8+jY6OMH8CWR+KPMZiC4ukf+QIx+xbyRWcIvPSLsAA4InerScAO+mzeCf M=;
-IronPort-SDR: B1F4uyfQ9UM6VLR390tWOMVdU+7cpK5QGPa46Tufzt0j5Ys7c0QqZmVQPFq9mQq/FxX1hyUksX
- HpcyWXA7/9KA==
+ bh=I3EYtzQbRAfNRK5hA12CxBpw3x/2mYR4qU/x1I+vIWU=;
+ b=Y5m40p2SMWzMXtKDb60AcD4KAmuR2fQ0+LhwCH9i5AEC44BEdTZp9K60
+ x9EoXd//vCsLBYm5AbtjAmMcXtsWmgp54IkDaoxxTTqisofTR7MFRSiWG
+ b1K4n52F9w4QDP0I+J0pCmxpfyXFjWeCp5vgJXPHwQXMFTtX3nbONeeXQ 4=;
+IronPort-SDR: mEON2zOetAv/BvMLusKPQnyHXXDVRYBpi03R9eUSfQ1x4vwipA6r+bmp0ghqHcvGBLPhEhL4O8
+ H8guyOHvvYZA==
 X-IronPort-AV: E=Sophos;i="5.69,344,1571702400"; 
-   d="scan'208";a="6616119"
+   d="scan'208";a="6616124"
 Received: from sea32-co-svc-lb4-vlan3.sea.corp.amazon.com (HELO
- email-inbound-relay-1e-303d0b0e.us-east-1.amazon.com) ([10.47.23.38])
+ email-inbound-relay-2a-1c1b5cdd.us-west-2.amazon.com) ([10.47.23.38])
  by smtp-border-fw-out-9101.sea19.amazon.com with ESMTP;
- 22 Dec 2019 15:51:53 +0000
-Received: from EX13MTAUEA002.ant.amazon.com
- (iad55-ws-svc-p15-lb9-vlan3.iad.amazon.com [10.40.159.166])
- by email-inbound-relay-1e-303d0b0e.us-east-1.amazon.com (Postfix) with ESMTPS
- id EE7FBA17FE; Sun, 22 Dec 2019 15:51:47 +0000 (UTC)
+ 22 Dec 2019 15:51:58 +0000
+Received: from EX13MTAUEA001.ant.amazon.com
+ (pdx4-ws-svc-p6-lb7-vlan2.pdx.amazon.com [10.170.41.162])
+ by email-inbound-relay-2a-1c1b5cdd.us-west-2.amazon.com (Postfix) with ESMTPS
+ id 2FEB2A215C; Sun, 22 Dec 2019 15:51:57 +0000 (UTC)
 Received: from EX13D19EUB003.ant.amazon.com (10.43.166.69) by
- EX13MTAUEA002.ant.amazon.com (10.43.61.77) with Microsoft SMTP Server (TLS)
- id 15.0.1236.3; Sun, 22 Dec 2019 15:51:46 +0000
+ EX13MTAUEA001.ant.amazon.com (10.43.61.243) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Sun, 22 Dec 2019 15:51:56 +0000
 Received: from u8a88181e7b2355.ant.amazon.com (10.43.162.9) by
  EX13D19EUB003.ant.amazon.com (10.43.166.69) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Sun, 22 Dec 2019 15:51:35 +0000
+ id 15.0.1367.3; Sun, 22 Dec 2019 15:51:45 +0000
 From: Hanna Hawa <hhhawa@amazon.com>
 To: <robh+dt@kernel.org>, <mark.rutland@arm.com>, <tsahee@annapurnalabs.com>, 
  <antoine.tenart@bootlin.com>, <hhhawa@amazon.com>,
@@ -57,10 +57,9 @@ To: <robh+dt@kernel.org>, <mark.rutland@arm.com>, <tsahee@annapurnalabs.com>,
  <gregkh@linuxfoundation.org>, <Jonathan.Cameron@huawei.com>,
  <tglx@linutronix.de>, <xuwei5@hisilicon.com>, <scott.branden@broadcom.com>,
  <dinguyen@kernel.org>, <zhang.lyra@gmail.com>, <treding@nvidia.com>
-Subject: [PATCH v3 1/6] dt-bindings: arm: amazon: rename al,
- alpine DT binding to amazon, al
-Date: Sun, 22 Dec 2019 17:50:33 +0200
-Message-ID: <20191222155038.30633-2-hhhawa@amazon.com>
+Subject: [PATCH v3 2/6] arm64: dts: amazon: rename al folder to be amazon
+Date: Sun, 22 Dec 2019 17:50:34 +0200
+Message-ID: <20191222155038.30633-3-hhhawa@amazon.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191222155038.30633-1-hhhawa@amazon.com>
 References: <20191222155038.30633-1-hhhawa@amazon.com>
@@ -69,8 +68,8 @@ X-Originating-IP: [10.43.162.9]
 X-ClientProxiedBy: EX13D19UWA002.ant.amazon.com (10.43.160.204) To
  EX13D19EUB003.ant.amazon.com (10.43.166.69)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_075207_087789_0C0693ED 
-X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-CacheID: sfid-20191222_075205_699722_56282E79 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -12.7 (------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -112,35 +111,59 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 As preparation to add device tree binding for Amazon's Annapurna Labs
-Alpine v3 support. Rename al,alpine DT binding to amazon,al.
+Alpine v3 support. Rename al device tree folder to be amazon.
 
 Signed-off-by: Hanna Hawa <hhhawa@amazon.com>
-Acked-by: Rob Herring <robh@kernel.org>
 ---
- .../bindings/arm/{al,alpine.yaml => amazon,al.yaml}           | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
- rename Documentation/devicetree/bindings/arm/{al,alpine.yaml => amazon,al.yaml} (74%)
+ MAINTAINERS                                          | 2 +-
+ arch/arm64/boot/dts/Makefile                         | 2 +-
+ arch/arm64/boot/dts/{al => amazon}/Makefile          | 0
+ arch/arm64/boot/dts/{al => amazon}/alpine-v2-evp.dts | 0
+ arch/arm64/boot/dts/{al => amazon}/alpine-v2.dtsi    | 0
+ 5 files changed, 2 insertions(+), 2 deletions(-)
+ rename arch/arm64/boot/dts/{al => amazon}/Makefile (100%)
+ rename arch/arm64/boot/dts/{al => amazon}/alpine-v2-evp.dts (100%)
+ rename arch/arm64/boot/dts/{al => amazon}/alpine-v2.dtsi (100%)
 
-diff --git a/Documentation/devicetree/bindings/arm/al,alpine.yaml b/Documentation/devicetree/bindings/arm/amazon,al.yaml
-similarity index 74%
-rename from Documentation/devicetree/bindings/arm/al,alpine.yaml
-rename to Documentation/devicetree/bindings/arm/amazon,al.yaml
-index a70dff277e05..58eb4ad55a76 100644
---- a/Documentation/devicetree/bindings/arm/al,alpine.yaml
-+++ b/Documentation/devicetree/bindings/arm/amazon,al.yaml
-@@ -1,10 +1,10 @@
+diff --git a/MAINTAINERS b/MAINTAINERS
+index cc0a4a8ae06a..eb02eda3761a 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -1519,7 +1519,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Maintained
+ F:	arch/arm/mach-alpine/
+ F:	arch/arm/boot/dts/alpine*
+-F:	arch/arm64/boot/dts/al/
++F:	arch/arm64/boot/dts/amazon/*
+ F:	drivers/*/*alpine*
+ 
+ ARM/ARTPEC MACHINE SUPPORT
+diff --git a/arch/arm64/boot/dts/Makefile b/arch/arm64/boot/dts/Makefile
+index f19b762c008d..6f3e1556ce42 100644
+--- a/arch/arm64/boot/dts/Makefile
++++ b/arch/arm64/boot/dts/Makefile
+@@ -1,8 +1,8 @@
  # SPDX-License-Identifier: GPL-2.0
- %YAML 1.2
- ---
--$id: http://devicetree.org/schemas/arm/al,alpine.yaml#
-+$id: http://devicetree.org/schemas/arm/amazon,al.yaml#
- $schema: http://devicetree.org/meta-schemas/core.yaml#
- 
--title: Annapurna Labs Alpine Platform Device Tree Bindings
-+title: Amazon's Annapurna Labs Alpine Platform Device Tree Bindings
- 
- maintainers:
-   - Tsahee Zidenberg <tsahee@annapurnalabs.com>
+ subdir-y += actions
+-subdir-y += al
+ subdir-y += allwinner
+ subdir-y += altera
++subdir-y += amazon
+ subdir-y += amd
+ subdir-y += amlogic
+ subdir-y += apm
+diff --git a/arch/arm64/boot/dts/al/Makefile b/arch/arm64/boot/dts/amazon/Makefile
+similarity index 100%
+rename from arch/arm64/boot/dts/al/Makefile
+rename to arch/arm64/boot/dts/amazon/Makefile
+diff --git a/arch/arm64/boot/dts/al/alpine-v2-evp.dts b/arch/arm64/boot/dts/amazon/alpine-v2-evp.dts
+similarity index 100%
+rename from arch/arm64/boot/dts/al/alpine-v2-evp.dts
+rename to arch/arm64/boot/dts/amazon/alpine-v2-evp.dts
+diff --git a/arch/arm64/boot/dts/al/alpine-v2.dtsi b/arch/arm64/boot/dts/amazon/alpine-v2.dtsi
+similarity index 100%
+rename from arch/arm64/boot/dts/al/alpine-v2.dtsi
+rename to arch/arm64/boot/dts/amazon/alpine-v2.dtsi
 -- 
 2.17.1
 
