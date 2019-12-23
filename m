@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 050441291F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 07:35:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F75B129202
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 07:43:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bf+pTvht17QJknfwIyIRC/PsC86NtYp3caHx5JYGqKg=; b=f2ZfHr9IQ80Cjn
-	UpdUWJvEd9wXJD4VWtjCLQ0R4HLqGJGh2VH/0an9/RrXu/lzgXHzoOf/Bkt2mSbGfBmUVX5FraeD3
-	hA6IiFDqkIQTn5XYiA3MGBxjwRoyjtoRLcj+Y+3rNaI6nsOkLfSG+cRHniC9j+5JJHgz4zSdRjegY
-	75p3WUE1TkO/i6kTbDjvViZSChGwJxb8IKeNWWMJpMyC4S2by8IUc2DAHxEHGBNg/N9ppwyJ7wkLi
-	eriMBUPtNGNmWgAGIl7ae+vXC5tXJII/apVsI2QmwJlIxCqtd4mJnOBrXzR0dbGqZgAqTQcv2G9DW
-	/c7DI64lnT3FJQKk3IIQ==;
+	List-Owner; bh=FclQZu0qqTkFqkA2Kv1pC9zh0ORnDwk4XbtmgPCNzLo=; b=fLBnpROOth0gva
+	J+uBa0IfTUaEftks/OFXXPdm+BIGPr7dHf/2fK9LYyunjgKB4xBt7vGBTER7Zx5VcD0BcBzHU/whj
+	wZdxnLCIjQWGJTW5vbyk5fhVlPuMLtkwGwhhii9Dailsw3NJ+/SoBPeLpEG0/zRCKOWrZkEt9L1En
+	fQkJYjbNzjpEe8Abbo+wdY/ANN6/174W+7UnYI7U3KfFU6wJPNahbAF8rYKHzaenZQJtWQHpRLUCz
+	uYDWIVD0m7UPwGhiaJz8A2y4+y2v6DHhd2ynnwVo3uGftZXZuGVMTtSdldTBi4UrWMOczdPLeKA2H
+	E30YY4Zo+k8TARUbWugA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijHJF-0002t8-9r; Mon, 23 Dec 2019 06:35:17 +0000
+	id 1ijHRP-0006Ls-5m; Mon, 23 Dec 2019 06:43:43 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijHIx-0002n4-NQ
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 06:35:00 +0000
+ id 1ijHRF-0006LS-Ho
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 06:43:34 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 212CE206B7;
- Mon, 23 Dec 2019 06:34:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D697420709;
+ Mon, 23 Dec 2019 06:43:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577082899;
- bh=aifSwT+U001Tz3mMLZeIPRYImgdEpSnQcl6GRyY93G0=;
+ s=default; t=1577083413;
+ bh=jzHTI8WiVGxPNfK1Jb/+TploBriVtYYWmvmKPhAOjOI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=efuDH9mMieMlJxEhmlramS97GV2GsH7iKIAKFsJ2/alazix2bloyp7RP4bb6FJbHm
- jBxfuPbk9zd6TAdphAkmFkyJ8K87rPUUZyj9hRJTUuYdN2K9pwF+Z1yNF3u7LoWWGC
- UnEdZfKwLzCv2pwEZhEIRrR00tTGK/KttrMNUG6Y=
-Date: Mon, 23 Dec 2019 14:34:39 +0800
+ b=blI3EauGJ8VEsiIryOqTagcs7fQ4PQzc8A8xgxjYMmeGkwwYnJeR3VTmigWGeorBf
+ qkMkMcRdgf3XJbtRNhsIZ+BEq1v2Dk8Gsk1FFi7/KaonabSv3Tyj8y8hAIWXU7IB1W
+ 258MsF/Q1mChsD5Tvm3g/9h4o6k/9jEl5hxRUCYA=
+Date: Mon, 23 Dec 2019 14:43:11 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH] ARM: dts: imx6q-dhcom: fix rtc compatible
-Message-ID: <20191223063437.GM11523@dragon>
-References: <20191212230814.66663-1-alexandre.belloni@bootlin.com>
+To: Yinbo Zhu <yinbo.zhu@nxp.com>
+Subject: Re: [PATCH v2 1/2] arm64: dts: ls1028a-rdb: enable emmc hs400 mode
+Message-ID: <20191223064311.GN11523@dragon>
+References: <20191213021839.23517-1-yinbo.zhu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191212230814.66663-1-alexandre.belloni@bootlin.com>
+In-Reply-To: <20191213021839.23517-1-yinbo.zhu@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_223459_783202_499706C8 
-X-CRM114-Status: UNSURE (   8.35  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191222_224333_609607_F7A7C6C3 
+X-CRM114-Status: GOOD (  13.88  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,21 +76,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Ludwig Zenz <lzenz@dh-electronics.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, xiaobo.xie@nxp.com, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, jiafei.pan@nxp.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Dec 13, 2019 at 12:08:14AM +0100, Alexandre Belloni wrote:
-> The only correct and documented compatible string for the rv3029 is
-> microcrystal,rv3029. Fix it up.
+On Fri, Dec 13, 2019 at 10:18:38AM +0800, Yinbo Zhu wrote:
+> This patch is to enable emmc hs400 mode for ls1028ardb
 > 
-> Fixes: 52c7a088badd ("ARM: dts: imx6q: Add support for the DHCOM iMX6 SoM and PDK2")
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
+> Acked-by: Shawn Guo <shawnguo@kernel.org>
+
+Did I?  You can only add the tag when people explicitly gave it.
 
 Applied, thanks.
+
+Shawn
+
+> Acked-by: Yangbo Lu <yangbo.lu@nxp.com>
+> ---
+> Change in v2:
+> 		add Acked-by 
+> 
+>  arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+> index 9720a190049f..61c4f772e3a6 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
+> @@ -93,6 +93,8 @@
+>  
+>  &esdhc1 {
+>  	mmc-hs200-1_8v;
+> +	mmc-hs400-1_8v;
+> +	bus-width = <8>;
+>  	status = "okay";
+>  };
+>  
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
