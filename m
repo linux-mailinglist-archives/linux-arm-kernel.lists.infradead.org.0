@@ -2,57 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E177129841
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 16:29:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E234112985A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 16:39:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xiQ+b2F4cw8tzlX4uEzhxSKj4SrOKUYpG94iHgqS6BY=; b=DuM/jPEk7XnvEz
-	1bTTmlErQmMcRela4WatbgL1nCE5wQoTnKV4t59jLhhJhP+PT2oqKXU2OmshngwimbpLvqVrUsJPX
-	oATvFXZH+bwonigOmfPtOqKVaGUm1BUYY8obGATYfUjQgNz9aLYlm2HiJJXA32XYUYcjUMf/jNW/Q
-	LnfEWRW42CMUYP1owpNUMH3B9oUGTbAIZmOFPpmWk/FqTr/FB494PW0YAiPlRYPsGXrwytGaAjz+A
-	qH0EX3TZ9hbZIhuvDQGJ5ICyOfiHGrbCKHpEyvDaVP1BOgTGtVXCGhEDHT2UPqqc+L1c/ZXanaIu+
-	FZTtB/XBAb/kRb1MiCJw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LbCVYJkLCS8LjGePnbuayHWO5ONd66mNfkgfjDx5EZY=; b=UKS/ux/08TQqHEhu4sFkNw3Kw
+	3VcholLFco9aQ2q+BDAiKtHzUnL4THbTlBZiQmmCJP0//Ary4qj4kPGetU/d/6VDy/kzbMEbqULX8
+	ppssMhO9eclP9KCsaoqkLTJcIuMKUpHSqIMAFo9IXF/FKkcX5SXEzeXLlrzwPqEY84Sbmebw/p02j
+	NuQU2LTqXsuF2ofoCuHAcqJLKW4j8M/ZazxSgScQv3YrKKKORhlsY8tTNwTiMu3duOi2xU88ueVp0
+	GySKE/0cRHv3ty2yZFZi7dKlh8lKptpf/Os7fcCRCn+JTW7s97qgnN0NT/FtluooPO6Q4aoApqX/s
+	BVmc0K/kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijPe8-0008Ja-PH; Mon, 23 Dec 2019 15:29:24 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijPcN-0006zQ-Od; Mon, 23 Dec 2019 15:27:37 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id F084ABCDE26DCA5B8009;
- Mon, 23 Dec 2019 23:27:29 +0800 (CST)
-Received: from localhost.localdomain.localdomain (10.175.113.25) by
- DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
- 14.3.439.0; Mon, 23 Dec 2019 23:27:19 +0800
-From: Chen Zhou <chenzhou10@huawei.com>
-To: <tglx@linutronix.de>, <mingo@redhat.com>, <catalin.marinas@arm.com>,
- <will@kernel.org>, <james.morse@arm.com>, <dyoung@redhat.com>,
- <bhsharma@redhat.com>
-Subject: [PATCH v7 4/4] kdump: update Documentation about crashkernel on arm64
-Date: Mon, 23 Dec 2019 23:23:49 +0800
-Message-ID: <20191223152349.180172-5-chenzhou10@huawei.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191223152349.180172-1-chenzhou10@huawei.com>
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
+	id 1ijPnt-00040V-2g; Mon, 23 Dec 2019 15:39:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ijPnh-000401-5r
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 15:39:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8C9491FB;
+ Mon, 23 Dec 2019 07:39:13 -0800 (PST)
+Received: from [10.37.12.81] (unknown [10.37.12.81])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DA2613F6CF;
+ Mon, 23 Dec 2019 07:39:11 -0800 (PST)
+Subject: Re: [PATCH 1/2] include: trace: Add SCMI header with trace events
+To: Jim Quinlan <james.quinlan@broadcom.com>,
+ Sudeep Holla <sudeep.holla@arm.com>
+References: <20191216161650.21844-1-lukasz.luba@arm.com>
+ <20191218120900.GA28599@bogus>
+ <7b59a2f1-0786-d24f-a653-76a60c15a8ae@broadcom.com>
+ <CA+-6iNxn29WpUrbc9gL4EMTJfZj7FRCeO-_QaUqbjJYd1JAEKA@mail.gmail.com>
+ <7fe599d3-1ce2-1fde-2911-9516a26090b6@arm.com>
+ <9befbc13-ba00-094d-0064-0d97c1ccbb63@broadcom.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <abad5f94-ce0d-99c9-bb9a-754c56849aee@arm.com>
+Date: Mon, 23 Dec 2019 15:39:09 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-Originating-IP: [10.175.113.25]
-X-CFilter-Loop: Reflected
+In-Reply-To: <9befbc13-ba00-094d-0064-0d97c1ccbb63@broadcom.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_072735_967517_520E5333 
-X-CRM114-Status: GOOD (  10.11  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191223_073917_263983_B548A4CA 
+X-CRM114-Status: GOOD (  15.96  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,94 +69,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: xiexiuqi@huawei.com, chenzhou10@huawei.com, linux-doc@vger.kernel.org,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org, horms@verge.net.au,
+Cc: mingo@redhat.com, rostedt@goodmis.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now we support crashkernel=X,[low] on arm64, update the Documentation.
-
-Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
----
- Documentation/admin-guide/kdump/kdump.rst       | 13 +++++++++++--
- Documentation/admin-guide/kernel-parameters.txt | 12 +++++++++++-
- 2 files changed, 22 insertions(+), 3 deletions(-)
-
-diff --git a/Documentation/admin-guide/kdump/kdump.rst b/Documentation/admin-guide/kdump/kdump.rst
-index ac7e131..e55173e 100644
---- a/Documentation/admin-guide/kdump/kdump.rst
-+++ b/Documentation/admin-guide/kdump/kdump.rst
-@@ -299,7 +299,13 @@ Boot into System Kernel
-    "crashkernel=64M@16M" tells the system kernel to reserve 64 MB of memory
-    starting at physical address 0x01000000 (16MB) for the dump-capture kernel.
- 
--   On x86 and x86_64, use "crashkernel=64M@16M".
-+   On x86 use "crashkernel=64M@16M".
-+
-+   On x86_64, use "crashkernel=Y[@X]" to select a region under 4G first, and
-+   fall back to reserve region above 4G when '@offset' hasn't been specified.
-+   We can also use "crashkernel=X,high" to select a region above 4G, which
-+   also tries to allocate at least 256M below 4G automatically and
-+   "crashkernel=Y,low" can be used to allocate specified size low memory.
- 
-    On ppc64, use "crashkernel=128M@32M".
- 
-@@ -316,8 +322,11 @@ Boot into System Kernel
-    kernel will automatically locate the crash kernel image within the
-    first 512MB of RAM if X is not given.
- 
--   On arm64, use "crashkernel=Y[@X]".  Note that the start address of
-+   On arm64, use "crashkernel=Y[@X]". Note that the start address of
-    the kernel, X if explicitly specified, must be aligned to 2MiB (0x200000).
-+   If crashkernel=Z,low is specified simultaneously, reserve spcified size
-+   low memory for crash kdump kernel devices firstly and then reserve memory
-+   above 4G.
- 
- Load the Dump-capture Kernel
- ============================
-diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index ade4e6e..bde3ab4 100644
---- a/Documentation/admin-guide/kernel-parameters.txt
-+++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -706,6 +706,9 @@
- 			[KNL, x86_64] select a region under 4G first, and
- 			fall back to reserve region above 4G when '@offset'
- 			hasn't been specified.
-+			[KNL, arm64] If crashkernel=X,low is specified, reserve
-+			spcified size low memory for crash kdump kernel devices
-+			firstly, and then reserve memory above 4G.
- 			See Documentation/admin-guide/kdump/kdump.rst for further details.
- 
- 	crashkernel=range1:size1[,range2:size2,...][@offset]
-@@ -730,12 +733,19 @@
- 			requires at least 64M+32K low memory, also enough extra
- 			low memory is needed to make sure DMA buffers for 32-bit
- 			devices won't run out. Kernel would try to allocate at
--			at least 256M below 4G automatically.
-+			least 256M below 4G automatically.
- 			This one let user to specify own low range under 4G
- 			for second kernel instead.
- 			0: to disable low allocation.
- 			It will be ignored when crashkernel=X,high is not used
- 			or memory reserved is below 4G.
-+			[KNL, arm64] range under 4G.
-+			This one let user to specify own low range under 4G
-+			for crash dump kernel instead.
-+			Different with x86_64, kernel allocates specified size
-+			physical memory region only when this parameter is specified
-+			instead of trying to allocate at least 256M below 4G
-+			automatically.
- 
- 	cryptomgr.notests
- 			[KNL] Disable crypto self-tests
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Ck9uIDEyLzIwLzE5IDQ6MjQgUE0sIEppbSBRdWlubGFuIHdyb3RlOgo+IAo+PiBUaGFuayB5b3Ug
+Zm9yIHNoYXJpbmcgeW91ciBleHBlcmltZW50cyBhbmQgdGhvdWdodHMuIEkgaGF2ZSBwcm9iYWJs
+eQo+PiBzaW1pbGFyIHNldHVwIGZvciBzdHJlc3NpbmcgdGhlIGNvbW11bmljYXRpb24gY2hhbm5l
+bCwgYnV0IEkgZG8gYWxzbwo+PiBzb21lIHdpcmVkIHRoaW5ncyBpbiB0aGUgZmlybXdhcmUuIFRo
+YXQncyB3aHkgSSBuZWVkIHRvIG1lYXN1cmUgdGhlc2UKPj4gZGVsYXlzLiBJIGFtIGhhcHB5IHRo
+YXQgaXQgaXMgdXNlZnVsIGZvciB5b3UgYWxzby4KPj4KPj4gSSBkb24ndCBrbm93IGlmIHlvdXIg
+ZmlybXdhcmUgc3VwcG9ydHMgJ2Zhc3QgY2hhbm5lbCcsIGJ1dCBwbGVhc2Uga2VlcAo+PiBpbiBt
+aW5kIHRoYXQgaXQgaXMgbm90IHRyYWNrZWQgaW4gdGhpcyAndHJhbnNmZXJfaWQnLgo+PiBUaGlz
+IHRyYW5zZmVyX2lkIGluIHYyIHZlcnNpb24gZG9lcyBub3Qgc2hvdyB0aGUgcmVhbCB0cmFuc2Zl
+cnMKPj4gdG8gdGhlIGZpcm13YXJlIHNpbmNlIHRoZXJlIGlzIGFub3RoZXIgcGF0aCBjYWxsZWQg
+J2Zhc3QgY2hhbm5lbCcgb3IKPj4gJ2Zhc3Rfc3dpdGNoJyBpbiB0aGUgQ1BVZnJlcS4gSXQgaXMg
+aW4gZHJpdmVycy9maXJtd2FyZS9hcm1fc2NtaS9wZXJmLmMKPj4gYW5kIHRoZSBhdG9taWMgdmFy
+aWFibGUgaXMgbm90IGluY3JlbWVudGVkIGluIHRoYXQgcGF0aC4gQWRkaW5nIGl0IGFsc28KPj4g
+dGhlcmUganVzdCBmb3IgYXRvbWljX2luYygpIHByb2JhYmx5IHdvdWxkIGFkZCBkZWxheXMgaW4g
+dGhlIGZhc3Rfc3dpdGNoCj4+IGFuZCBhbHNvIGJyaW5ncyBsaXR0bGUgdmFsdWUuCj4+IEZvciB0
+aGUgbm9ybWFsIGNoYW5uZWwsIHdoZXJlIHdlIGhhdmUgc3BpbmxvY2tzIGFuZCBvdGhlciBzdHVm
+ZiwgdGhpcwo+PiBhdG9taWNfaW5jKCkgY291bGQgc3RheSBpbiBteSBvcGluaW9uLgo+Pgo+PiBS
+ZWdhcmRzLAo+PiBMdWthc3oKPiBIaSBMdWthc3osCj4gCj4gV2UgY3VycmVudGx5IGRvIG5vdCB1
+c2UgImZhc3QgY2hhbm5lbHMiIC0gYWx0aG91Z2ggaXQgaXMgcG9zc2libGUgd2UgbWlnaHQgc29t
+ZWRheS4KPiBJIGZpbmQgdGhlIHRyYW5zZmVyX2lkIHVzZWZ1bCBwZXIgeW91ciB2MiBldmVuIGlm
+IGl0IGRvZXNuJ3QgY292ZXIgRkMuwqAgVGhhbmtzIGZvcgo+IHN1Ym1pdHRpbmcgYW5kIGRpc2N1
+c3NpbmcgdGhpcyEKClRoYW5rIHlvdSBmb3IgY29vcGVyYXRpb24uCgpSZWdhcmRzLApMdWthc3oK
+Cj4gCj4gUmVnYXJkcywKPiBKaW0gUXVpbmxhbgo+IAoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
