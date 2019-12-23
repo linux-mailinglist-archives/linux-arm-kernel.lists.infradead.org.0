@@ -2,59 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C96D129454
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 11:38:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62BA0129492
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 12:05:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZTYL3Ec9x+Vdg4E8/hmfEl343gykuCCwDT6eBn4lbkc=; b=cOu0rd9bdzn6d7
-	ZFyXZyj0njuMtnyngkLoN4bWD7buq4ineMVaVG2LL0F2XZZi9oplNYXuYPrPzrwXbmtIDtJACUnEn
-	x4dJ7mNilXeUYYo0KdFwxUrLKXk9muzlfny4NGXRuihRnb7/MYgqVw+XeRyQR2PDHTqHHLMpxrKxH
-	MrPNkhvprfxnwcQfuRACFxoy85ZPc8jkYSWG4SdRfi41lC8kSniwwmzMMZW7NqniQmq8uQcrLN2Ch
-	CDpJgfsUZ+QCmoZfAYTDxbKcHvTNYvvxKw3+ZotnYXy93UZmGhGx9p1Sv+HIFs6ymUPYH7Tyr8AuV
-	ITQGg8P2Vp4fuGJEpoww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=g1adkWJzwi7HB8KjH3yS/ukIF7imcxmFMykMAS587Tw=; b=KWrdaYnDn0zyTn
+	EU3YXRhb2B9PYOPAEOchi9hKJ8azgh7EJtiMrVAi3XIX3rAwwvOA1lCwVT2GPAywynheIznG+hlI5
+	k/dnun82GavjqD+Ex7TYlJWFIgatHwhBJ2MlZg5Mvi2ntc5hNsTII8z7F3Zo5MdiDENSeUsGfZKCI
+	qbP5HNDu5goM7YdM+xF2UcJVhP3nhE4mYbX38qLFQKpEDmp5LybBoP63D9T3P+PPmSsngLSZ3rBQD
+	KDVKM42g02kOmp6qKMhLG3SHQNK6mP57gsbF4wU/CqYfrPSu5+pKqsh4bPQovMRwhS7Vqrx0xIagz
+	Av8QpJu51sRlQF8kUlMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijL6M-0000cZ-2p; Mon, 23 Dec 2019 10:38:14 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1ijLWa-0000bX-E0; Mon, 23 Dec 2019 11:05:20 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijL6B-0000ai-66; Mon, 23 Dec 2019 10:38:04 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 23 Dec 2019 02:38:01 -0800
-X-IronPort-AV: E=Sophos;i="5.69,347,1571727600"; d="scan'208";a="211517217"
-Received: from jnikula-mobl3.fi.intel.com (HELO localhost) ([10.237.66.161])
- by orsmga008-auth.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 23 Dec 2019 02:37:49 -0800
-From: Jani Nikula <jani.nikula@linux.intel.com>
-To: Tom Murphy <murphyt7@tcd.ie>, iommu@lists.linux-foundation.org
-Subject: Re: [PATCH 0/8] Convert the intel iommu driver to the dma-iommu api
-In-Reply-To: <20191221150402.13868-1-murphyt7@tcd.ie>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-References: <20191221150402.13868-1-murphyt7@tcd.ie>
-Date: Mon, 23 Dec 2019 12:37:47 +0200
-Message-ID: <87blrzwcn8.fsf@intel.com>
+ id 1ijLWD-0000ax-D9
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 11:04:59 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBNB4iGi031784;
+ Mon, 23 Dec 2019 05:04:44 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1577099085;
+ bh=raSKwiiUYxjoLuY4+NT6kny2GpLANO/tx7HTDpBqk2o=;
+ h=From:To:CC:Subject:Date;
+ b=pqVXEHdmBUuJlKk3pxTyypXEAWN+AGUCFlcH2IDZln26lwbKDtTdpWk2TMVEgFy2r
+ bHq6b4lGwjQjRpYXHXRe4kOLoaGQgMC/NcKscS33Tu5J/iQGyGABRJryfQF6eqt/F4
+ /oH+5uuDGkqsauHOcn4zmgIlwUlP/owXis2EOzFk=
+Received: from DLEE104.ent.ti.com (dlee104.ent.ti.com [157.170.170.34])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBNB4imv039890
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 23 Dec 2019 05:04:44 -0600
+Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 23
+ Dec 2019 05:04:44 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 23 Dec 2019 05:04:44 -0600
+Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBNB4eM7025693;
+ Mon, 23 Dec 2019 05:04:40 -0600
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+To: <vkoul@kernel.org>, <robh+dt@kernel.org>, <nm@ti.com>,
+ <ssantosh@kernel.org>
+Subject: [PATCH v8 00/18] dmaengine/soc: Add Texas Instruments UDMA support
+Date: Mon, 23 Dec 2019 13:04:40 +0200
+Message-ID: <20191223110458.30766-1-peter.ujfalusi@ti.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_023803_266316_7C9820AE 
-X-CRM114-Status: GOOD (  17.03  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191223_030457_532645_EB3FE6CE 
+X-CRM114-Status: GOOD (  30.83  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,69 +88,432 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, kvm@vger.kernel.org,
- David Airlie <airlied@linux.ie>,
- Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
- dri-devel@lists.freedesktop.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-tegra@vger.kernel.org, Julien Grall <julien.grall@arm.com>,
- Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
- linux-samsung-soc@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, linux-rockchip@lists.infradead.org,
- Andy Gross <agross@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-s390@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, Eric Auger <eric.auger@redhat.com>,
- Alex Williamson <alex.williamson@redhat.com>,
- linux-mediatek@lists.infradead.org, Rodrigo Vivi <rodrigo.vivi@intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- virtualization@lists.linux-foundation.org,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- David Woodhouse <dwmw2@infradead.org>, Cornelia Huck <cohuck@redhat.com>,
- linux-kernel@vger.kernel.org, Tom Murphy <murphyt7@tcd.ie>,
- Rob Clark <robdclark@gmail.com>, Kukjin Kim <kgene@kernel.org>,
- Daniel Vetter <daniel@ffwll.ch>, Robin Murphy <robin.murphy@arm.com>,
- Lu Baolu <baolu.lu@linux.intel.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, grygorii.strashko@ti.com, vigneshr@ti.com,
+ lokeshvutla@ti.com, j-keerthy@ti.com, linux-kernel@vger.kernel.org,
+ t-kristo@ti.com, tony@atomide.com, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, frowand.list@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU2F0LCAyMSBEZWMgMjAxOSwgVG9tIE11cnBoeSA8bXVycGh5dDdAdGNkLmllPiB3cm90ZToK
-PiBUaGlzIHBhdGNoc2V0IGNvbnZlcnRzIHRoZSBpbnRlbCBpb21tdSBkcml2ZXIgdG8gdGhlIGRt
-YS1pb21tdSBhcGkuCj4KPiBXaGlsZSBjb252ZXJ0aW5nIHRoZSBkcml2ZXIgSSBleHBvc2VkIGEg
-YnVnIGluIHRoZSBpbnRlbCBpOTE1IGRyaXZlcgo+IHdoaWNoIGNhdXNlcyBhIGh1Z2UgYW1vdW50
-IG9mIGFydGlmYWN0cyBvbiB0aGUgc2NyZWVuIG9mIG15Cj4gbGFwdG9wLiBZb3UgY2FuIHNlZSBh
-IHBpY3R1cmUgb2YgaXQgaGVyZToKPiBodHRwczovL2dpdGh1Yi5jb20vcGlwcHkzNjAva2VybmVs
-UGF0Y2hlcy9ibG9iL21hc3Rlci9JTUdfMjAxOTEyMTlfMjI1OTIyLmpwZwo+Cj4gVGhpcyBpc3N1
-ZSBpcyBtb3N0IGxpa2VseSBpbiB0aGUgaTkxNSBkcml2ZXIgYW5kIGlzIG1vc3QgbGlrZWx5IGNh
-dXNlZAo+IGJ5IHRoZSBkcml2ZXIgbm90IHJlc3BlY3RpbmcgdGhlIHJldHVybiB2YWx1ZSBvZiB0
-aGUKPiBkbWFfbWFwX29wczo6bWFwX3NnIGZ1bmN0aW9uLiBZb3UgY2FuIHNlZSB0aGUgZHJpdmVy
-IGlnbm9yaW5nIHRoZQo+IHJldHVybiB2YWx1ZSBoZXJlOgo+IGh0dHBzOi8vZ2l0aHViLmNvbS90
-b3J2YWxkcy9saW51eC9ibG9iLzdlMDE2NWIyZjFhOTEyYTA2ZTM4MWU5MWYwZjRlNDk1ZjRhYzM3
-MzYvZHJpdmVycy9ncHUvZHJtL2k5MTUvZ2VtL2k5MTVfZ2VtX2RtYWJ1Zi5jI0w1MQo+Cj4gUHJl
-dmlvdXNseSB0aGlzIGRpZG7igJl0IGNhdXNlIGlzc3VlcyBiZWNhdXNlIHRoZSBpbnRlbCBtYXBf
-c2cgYWx3YXlzCj4gcmV0dXJuZWQgdGhlIHNhbWUgbnVtYmVyIG9mIGVsZW1lbnRzIGFzIHRoZSBp
-bnB1dCBzY2F0dGVyIGdhdGhlciBsaXN0Cj4gYnV0IHdpdGggdGhlIGNoYW5nZSB0byB0aGlzIGRt
-YS1pb21tdSBhcGkgdGhpcyBpcyBubyBsb25nZXIgdGhlCj4gY2FzZS4gSSB3YXNu4oCZdCBhYmxl
-IHRvIHRyYWNrIHRoZSBidWcgZG93biB0byBhIHNwZWNpZmljIGxpbmUgb2YgY29kZQo+IHVuZm9y
-dHVuYXRlbHkuCj4KPiBDb3VsZCBzb21lb25lIGZyb20gdGhlIGludGVsIHRlYW0gbG9vayBhdCB0
-aGlzPwoKTGV0IG1lIGdldCB0aGlzIHN0cmFpZ2h0LiBUaGVyZSBpcyBjdXJyZW50IEFQSSB0aGF0
-IG9uIHN1Y2Nlc3MgYWx3YXlzCnJldHVybnMgdGhlIHNhbWUgbnVtYmVyIG9mIGVsZW1lbnRzIGFz
-IHRoZSBpbnB1dCBzY2F0dGVyIGdhdGhlcgpsaXN0LiBZb3UgcHJvcG9zZSB0byBjaGFuZ2UgdGhl
-IEFQSSBzbyB0aGF0IHRoaXMgaXMgbm8gbG9uZ2VyIHRoZSBjYXNlPwoKQSBxdWljayBjaGVjayBv
-ZiB2YXJpb3VzIGRtYV9tYXBfc2coKSBjYWxscyBpbiB0aGUga2VybmVsIHNlZW1zIHRvCmluZGlj
-YXRlIGNoZWNraW5nIGZvciAwIGZvciBlcnJvcnMgYW5kIHRoZW4gaWdub3JpbmcgdGhlIG5vbi16
-ZXJvIHJldHVybgppcyBhIGNvbW1vbiBwYXR0ZXJuLiBBcmUgeW91IHN1cmUgaXQncyBva2F5IHRv
-IG1ha2UgdGhlIGNoYW5nZSB5b3UncmUKcHJvcG9zaW5nPwoKQW55d2F5LCBkdWUgdG8gdGhlIHRp
-bWUgb2YgeWVhciBhbmQgYWxsLCBJJ2QgbGlrZSB0byBhc2sgeW91IHRvIGZpbGUgYQpidWcgYWdh
-aW5zdCBpOTE1IGF0IFsxXSBzbyB0aGlzIGlzIG5vdCBmb3Jnb3R0ZW4sIGFuZCBwbGVhc2UgbGV0
-J3Mgbm90Cm1lcmdlIHRoZSBjaGFuZ2VzIGJlZm9yZSB0aGlzIGlzIHJlc29sdmVkLgoKClRoYW5r
-cywKSmFuaS4KCgpbMV0gaHR0cHM6Ly9naXRsYWIuZnJlZWRlc2t0b3Aub3JnL2RybS9pbnRlbC9p
-c3N1ZXMvbmV3CgoKLS0gCkphbmkgTmlrdWxhLCBJbnRlbCBPcGVuIFNvdXJjZSBHcmFwaGljcyBD
-ZW50ZXIKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+Hi,
+
+Vinod, Nishanth, Tero, Santosh: the ti_sci patch in this series was sent
+upstream over a month ago:
+https://lore.kernel.org/lkml/20191025084715.25098-1-peter.ujfalusi@ti.com/
+
+I'm still waiting on it's fate (Tero has given his r-b).
+The ti_sci patch did not made it to 5.5-rc1, but I included it in the series and
+let the maintainers decide if it can go via DMAengine for 5.6 or to later
+releases (5.6 probably for the ti_sci and 5.7 for the UDMA driver patch).
+
+Patch 1-11 is the initial DMA support which can be applied as it is.
+Patch 12-13 adds support for j721e tdtype for ti_sci and the UDMAP driver
+Patch 14-15 exports the currently unexported functions:
+		devm_ti_sci_get_of_resource()
+		of_msi_get_domain()
+Patch 16-18 makes the ringacc, DMAengine and glue layer buildable as module.
+
+Changes since v7:
+(https://lore.kernel.org/lkml/20191209094332.4047-1-peter.ujfalusi@ti.com/)
+
+- Added Tested-by from Keerthy
+- Added Reviewed-by from Grygorii
+
+- DMAengine:
+ - helper function for converting direction value to text
+
+- DMAengine metadata support:
+ - Improve documentation and comments inside the code
+
+- ringacc driver:
+ - Do not allow it to be built as a module for now as two exports are missing
+   from kernel:
+    - devm_ti_sci_get_of_resource()
+    - of_msi_get_domain()
+
+- cppi5 header
+ - Remove cppi5_hdesc_get_psdata32()
+ - Define for default flow: CPPI5_INFO1_DESC_FLOWID_DEFAULT
+
+- UDMAP DT bindings:
+ - Typo fixes.
+
+- UDMAP DMAengine driver:
+ - Do not allow it to be built as a module for now as two exports are missing
+   from kernel:
+    - devm_ti_sci_get_of_resource()
+    - of_msi_get_domain()
+ - channel (runtime) configuration moved to a struct and using memset/memcpy on
+   it when needed.
+ - Corrected the udma_tx_status for pause reporting
+ - Use GFP_NOWAIT in prep callback paths
+ - Magic number for packet length changed to >= SZ_4M
+ - Use define for default flow number (0x3fff)
+ - Use the generic of_msi_get_domain()
+ - No casting from void *
+
+- UDMAP glue layer:
+ - Do not allow it to be built as a module for now as two exports are missing
+   from kernel:
+    - devm_ti_sci_get_of_resource()
+    - of_msi_get_domain()
+
+Changes since v6:
+(https://patchwork.kernel.org/project/linux-dmaengine/list/?series=209455&state=*)
+
+- UDMAP DMAengine driver:
+ - Squashed the split patches
+ - Squashed the early TX completion handling update
+   (https://patchwork.kernel.org/project/linux-dmaengine/list/?series=210713&state=*)
+ - Hard reset fix for RX channels to avoid channel lockdown
+ - Correct completed descriptor's residue value
+
+Changes since v5:
+(https://patchwork.kernel.org/project/linux-dmaengine/list/?series=201051&state=*)
+- Based on 5.4
+
+- cppi5 header
+ - clear the bits before setting new value with '|='
+
+- UDMAP DT bindings:
+ - valid compatibles as single enum list
+
+- UDMAP DMAengine driver:
+ - Fix udma_is_chan_running()
+ - Use flags for acc32, burst support instead of a bool in udma_match_data
+   struct
+ - TDTYPE handling (teardown completion handling for j721e) is moved to separate
+   patch as the tisci core patch has not moved for over a month.
+   Both ti_sci and the iterative patch to udma is included in the series.
+
+Changes since v4
+(https://patchwork.kernel.org/project/linux-dmaengine/list/?series=196619&state=*)
+- Based on 5.4-rc7
+
+- ringacc DT bindings:
+ - clarify the meaning of ti,sci-dev-id
+
+- ringacc driver:
+ - Remove 'default y' from Kconfig
+ - Fix struct comments
+ - Move try_module_get() earlier in k3_ringacc_request_ring()
+
+- PSI-L thread database:
+ - Add kernel style struct/enum documentation
+ - Add missing thread description for sa2ul second interface
+ - Change EXPORT_SYMBOL to EXPORT_SYMBOL_GPL
+
+- UDMAP DT bindings:
+ - move to dual license
+ - change compatible from const to enum
+ - items dropped for ti,sci-rm-ranges-*
+ - description text moved from literal block when it is sensible
+ - example fixed to compile cleanly
+  - added parent to provide correct address-cells
+  - navss is moved to simple-mfd from simple-bus
+
+- UDMAP DMAengine driver:
+ - move fd_ring/r_ring under rflow
+ - get rid of unused iomem for rflows
+ - Remove 'default y' from Kconfig
+ - Use defines for rflow src/dst tag selection
+ - Merge the udma_ring_callback() and udma_tr_event_callback() to their
+   corresponding interrupt handler
+ - Create new defines for tx/rx channel's tisci valid parameter flags
+ - Remove re-initialization to 0 of tisci request struct members
+ - Make sure that vchan tasklets are also stopped when removing the module
+ - Additional checkpatch --strict fixes when it made sense
+  - make W=1 was clean
+
+- UDMAP glue layer:
+ - Remove 'default y' from Kconfig
+ - commit message update for features needing the glue layer
+
+Changes since v3
+(https://patchwork.kernel.org/project/linux-dmaengine/list/?series=180679&state=*):
+- Based on 5.4-rc5
+- Fixed typos pointed out by Tero
+- Added reviewed-by tags from Tero
+
+- ring accelerator driver
+ - TODO_GS is removed from the header
+ - pm_runtime removed as NAVSS and it's components are always on
+ - Check validity of Message mode setup (element size > 8 bytes must use proxy)
+
+- cppi5 header
+ - add commit message
+
+- UDMAP DT bindings
+ - Drop the psil-config node use on the remote PSI-L side and use only one cell
+   which is the remote threadID:
+
+     dmas = <&main_udmap 0xc400>, <&main_udmap 0x4400>;
+     dma-names = "tx", "rx";
+
+ - The PSI-L thread configuration description is moved to kernel as a new module:
+   k3-psil/k3-psil-am654/k3-psil-j721e
+ - ti,psil-base has been removed and moved to kernel
+ - removed the no longer needed dt-bindings/dma/k3-udma.h
+ - Convert the document to schema (yaml)
+
+- NEW PSI-L endpoint configuration database
+ - a simple database holding the remote end's configuration needed for UDMAP
+   configuration. All previous parameters from DT has been moved here and merged
+   with the linux only tr mode channel flag.
+ - Client drivers can update the remote endpoint configuration as it can be
+   different based on system configuration and the endpoint itself is under the
+   control of the peripheral driver.
+ - database for am654 and j721e
+
+- UDMAP DMAengine driver
+ - pm_runtime removed as NAVSS and it's components are always on
+ - rchan_oes_offset added to MSI dommain allocation
+ - Use the new PSI-L endpoint database for UDMAP configuration
+ - Support for waiting for PDMA teardown completion on j721e instead of
+   returning right away. depends on:
+   https://lkml.org/lkml/2019/10/25/189
+   Not included in this series, but it is in the branch I have prepared.
+ - psil-base is moved from DT to be part of udma_match_data
+ - tr_thread maps is removed and using the PSI-L endpoint configuration for it
+
+- UDMAP glue layer
+ - pm_runtime removed as NAVSS and it's components are always on
+ - Use the new PSI-L endpoint database for UDMAP configuration
+
+Changes since v2
+(https://patchwork.kernel.org/project/linux-dmaengine/list/?series=152609&state=*)
+- Based on 5.4-rc1
+- Support for Flow only data transfer for the glue layer
+
+- cppi5 header
+ - comments converted to kernel-doc style
+ - Remove the excessive WARN_ONs and rely on the user for sanity
+ - new macro for checking TearDown Completion Message
+
+- ring accelerator driver
+ - fixed up th commit message (SoB, TI-SCI)
+ - fixed ring reset
+ - CONFIG_TI_K3_RINGACC_DEBUG is removed along with the dbg_write/read functions
+   and use dev_dbg()
+ - k3_ringacc_ring_dump() is moved to static
+ - step numbering removed from k3_ringacc_ring_reset_dma()
+ - Add clarification comment for shared ring usage in k3_ringacc_ring_cfg()
+ - Magic shift values in k3_ringacc_ring_cfg_proxy() got defined
+ - K3_RINGACC_RING_MODE_QM is removed as it is not supported
+
+- UDMAP DT bindings
+ - Fix property prefixing: s/pdma,/ti,pdma-
+ - Add ti,notdpkt property to suppress teardown completion message on tchan
+ - example updated accordingly
+
+- UDMAP DMAengine driver
+ - Change __raw_readl/writel to readl/writel
+ - Split up the udma_tisci_channel_config() into m2m, tx and rx tisci
+   configuration functions for clarity
+ - DT bindings change: s/pdma,/ti,pdma-
+ - Cleanup of udma_tx_status():
+  - residue calculation fix for m2m
+  - no need to read packet counter as it is not used
+  - peer byte counter only available in PDMAs
+  - Proper locking to avoid race with interrupt handler (polled m2m fix)
+ - Support for ti,notdpkt
+ - RFLOW management rework to support data movement without channel:
+  - the channel is not controlled by Linux but other core and we only have
+    rflows and rings to do the DMA transfers.
+    This mode is only supported by the Glue layer for now.
+
+- UDMAP glue layer
+ - Debug print improvements
+ - Support for rflow/ring only data movement
+
+Changes since v1
+(https://patchwork.kernel.org/project/linux-dmaengine/list/?series=114105&state=*)
+- Added support for j721e
+- Based on 5.3-rc2
+- dropped ti_sci API patch for RM management as it is already upstream
+- dropped dmadev_get_slave_channel() patch, using __dma_request_channel()
+- Added Rob's Reviewed-by to ringacc DT binding document patch
+- DT bindings changes:
+ - linux,udma-mode is gone, I have a simple lookup table in the driver to flag
+   TR channels.
+ - Support for j721e
+- Fix bug in of_node_put() handling in xlate function
+
+Changes since RFC (https://patchwork.kernel.org/cover/10612465/):
+- Based on linux-next (20190506) which now have the ti_sci interrupt support
+- The series can be applied and the UDMA via DMAengine API will be functional
+- Included in the series: ti_sci Resource management API, cppi5 header and
+  driver for the ring accelerator.
+- The DMAengine core patches have been updated as per the review comments for
+  earlier submittion.
+- The DMAengine driver patch is artificially split up to 6 smaller patches
+
+The k3-udma driver implements the Data Movement Architecture described in
+AM65x TRM (http://www.ti.com/lit/pdf/spruid7) and
+j721e TRM (http://www.ti.com/lit/pdf/spruil1)
+
+This DMA architecture is a big departure from 'traditional' architecture where
+we had either EDMA or sDMA as system DMA.
+
+Packet DMAs were used as dedicated DMAs to service only networking (Kesytone2)
+or USB (am335x) while other peripherals were serviced by EDMA.
+
+In AM65x/j721e the UDMA (Unified DMA) is used for all data movment within the
+SoC, tasked to service all peripherals (UART, McSPI, McASP, networking, etc). 
+
+The NAVSS/UDMA is built around CPPI5 (Communications Port Programming Interface)
+and it supports Packet mode (similar to CPPI4.1 in Keystone2 for networking) and
+TR mode (similar to EDMA descriptor).
+The data movement is done within a PSI-L fabric, peripherals (including the
+UDMA-P) are not addressed by their I/O register as with traditional DMAs but
+with their PSI-L thread ID.
+
+In AM65x/j721e we have two main type of peripherals:
+Legacy: McASP, McSPI, UART, etc.
+ to provide connectivity they are serviced by PDMA (Peripheral DMA)
+ PDMA threads are locked to service a given peripheral, for example PSI-L thread
+ 0x4400/0xc400 is to service McASP0 rx/tx.
+ The PDMa configuration can be done via the UDMA Real Time Peer registers.
+Native: Networking, security accelerator
+ these peripherals have native support for PSI-L.
+
+To be able to use the DMA the following generic steps need to be taken:
+- configure a DMA channel (tchan for TX, rchan for RX)
+ - channel mode: Packet or TR mode
+ - for memcpy a tchan and rchan pair is used.
+ - for packet mode RX we also need to configure a receive flow to configure the
+   packet receiption
+- the source and destination threads must be paired
+- at minimum one pair of rings need to be configured:
+ - tx: transfer ring and transfer completion ring
+ - rx: free descriptor ring and receive ring
+- two interrupts: UDMA-P channel interrupt and ring interrupt for tc_ring/r_ring
+ - If the channel is in packet mode or configured to memcpy then we only need
+   one interrupt from the ring, events from UDMAP is not used.
+
+When the channel setup is completed we only interract with the rings:
+- TX: push a descriptor to t_ring and wait for it to be pushed to the tc_ring by
+  the UDMA-P
+- RX: push a descriptor to the fd_ring and waith for UDMA-P to push it back to
+  the r_ring.
+
+Since we have FIFOs in the DMA fabric (UDMA-P, PSI-L and PDMA) which was not the
+case in previous DMAs we need to report the amount of data held in these FIFOs
+to clients (delay calculation for ALSA, UART FIFO flush support).
+
+Metadata support:
+DMAengine user driver was posted upstream based/tested on the v1 of the UDMA
+series: https://lkml.org/lkml/2019/6/28/20
+SA2UL is using the metadata DMAengine API.
+
+Note on the last patch:
+In Keystone2 the networking had dedicated DMA (packet DMA) which is not the case
+anymore and the DMAengine API currently missing support for the features we
+would need to support networking, things like
+- support for receive descriptor 'classification'
+ - we need to support several receive queues for a channel.
+ - the queues are used for packet priority handling for example, but they can be
+   used to have pools of descriptors for different sizes.
+- out of order completion of descriptors on a channel
+ - when we have several queues to handle different priority packets the
+   descriptors will be completed 'out-of-order'
+- NAPI type of operation (polling instead of interrupt driven transfer)
+ - without this we can not sustain gigabit speeds and we need to support NAPI
+ - not to limit this to networking, but other high performance operations
+
+It is my intention to work on these to be able to remove the 'glue' layer and
+switch to DMAengine API - or have an API aside of DMAengine to have generic way
+to support networking, but given how controversial and not trivial these changes
+are we need something to support networking.
+
+The series (+DT patches to enabled DMA on AM65x and j721e) on top of 5.5-rc3 is
+available:
+https://github.com/omap-audio/linux-audio.git peter/udma/series_v8-5.5-rc3
+
+Regards,
+Peter
+---
+Grygorii Strashko (3):
+  bindings: soc: ti: add documentation for k3 ringacc
+  soc: ti: k3: add navss ringacc driver
+  dmaengine: ti: k3-udma: Add glue layer for non DMAengine users
+
+Matthias Brugger (1):
+  of: irq: Export of_msi_get_domain
+
+Peter Ujfalusi (14):
+  dmaengine: doc: Add sections for per descriptor metadata support
+  dmaengine: Add metadata_ops for dma_async_tx_descriptor
+  dmaengine: Add support for reporting DMA cached data amount
+  dmaengine: Add helper function to convert direction value to text
+  dmaengine: ti: Add cppi5 header for K3 NAVSS/UDMA
+  dmaengine: ti: k3 PSI-L remote endpoint configuration
+  dt-bindings: dma: ti: Add document for K3 UDMA
+  dmaengine: ti: New driver for K3 UDMA
+  firmware: ti_sci: rm: Add support for tx_tdtype parameter for tx
+    channel
+  dmaengine: ti: k3-udma: Wait for peer teardown completion if supported
+  firmware: ti_sci: Export devm_ti_sci_get_of_resource for modules
+  dmaengine: ti: k3-udma: Allow the driver to be built as module
+  dmaengine: ti: k3-udma-glue: Allow the driver to be built as module
+  soc: ti: k3-ringacc: Allow the driver to be built as module
+
+ .../devicetree/bindings/dma/ti/k3-udma.yaml   |  184 +
+ .../devicetree/bindings/soc/ti/k3-ringacc.txt |   59 +
+ Documentation/driver-api/dmaengine/client.rst |   87 +
+ .../driver-api/dmaengine/provider.rst         |   48 +
+ drivers/dma/dmaengine.c                       |   73 +
+ drivers/dma/dmaengine.h                       |    8 +
+ drivers/dma/ti/Kconfig                        |   24 +
+ drivers/dma/ti/Makefile                       |    3 +
+ drivers/dma/ti/k3-psil-am654.c                |  175 +
+ drivers/dma/ti/k3-psil-j721e.c                |  222 ++
+ drivers/dma/ti/k3-psil-priv.h                 |   39 +
+ drivers/dma/ti/k3-psil.c                      |   93 +
+ drivers/dma/ti/k3-udma-glue.c                 | 1200 ++++++
+ drivers/dma/ti/k3-udma-private.c              |  133 +
+ drivers/dma/ti/k3-udma.c                      | 3465 +++++++++++++++++
+ drivers/dma/ti/k3-udma.h                      |  151 +
+ drivers/firmware/ti_sci.c                     |    2 +
+ drivers/firmware/ti_sci.h                     |    7 +
+ drivers/of/irq.c                              |    1 +
+ drivers/soc/ti/Kconfig                        |   11 +
+ drivers/soc/ti/Makefile                       |    1 +
+ drivers/soc/ti/k3-ringacc.c                   | 1180 ++++++
+ include/linux/dma/k3-psil.h                   |   71 +
+ include/linux/dma/k3-udma-glue.h              |  134 +
+ include/linux/dma/ti-cppi5.h                  | 1059 +++++
+ include/linux/dmaengine.h                     |  133 +
+ include/linux/soc/ti/k3-ringacc.h             |  244 ++
+ include/linux/soc/ti/ti_sci_protocol.h        |    2 +
+ 28 files changed, 8809 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/dma/ti/k3-udma.yaml
+ create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-ringacc.txt
+ create mode 100644 drivers/dma/ti/k3-psil-am654.c
+ create mode 100644 drivers/dma/ti/k3-psil-j721e.c
+ create mode 100644 drivers/dma/ti/k3-psil-priv.h
+ create mode 100644 drivers/dma/ti/k3-psil.c
+ create mode 100644 drivers/dma/ti/k3-udma-glue.c
+ create mode 100644 drivers/dma/ti/k3-udma-private.c
+ create mode 100644 drivers/dma/ti/k3-udma.c
+ create mode 100644 drivers/dma/ti/k3-udma.h
+ create mode 100644 drivers/soc/ti/k3-ringacc.c
+ create mode 100644 include/linux/dma/k3-psil.h
+ create mode 100644 include/linux/dma/k3-udma-glue.h
+ create mode 100644 include/linux/dma/ti-cppi5.h
+ create mode 100644 include/linux/soc/ti/k3-ringacc.h
+
+-- 
+Peter
+
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
