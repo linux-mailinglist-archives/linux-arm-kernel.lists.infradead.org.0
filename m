@@ -2,62 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7059A12913F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 04:57:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BE7412915A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 05:45:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XEhgoc/QaUk3LVG7Eq1ErN240u4ldFgp1zStoE/LaAk=; b=F3RkdwkBqFDJkZ
-	Qfcjw+Q6270D8L/sd0QjK+NY3WfJdQjvknGjNS1DIUOYB2LD/ESIXc2PqeUeJnguPBansqGr8iMZ+
-	1ObpkvKcdjOTDWbaD3dEZHFehpXq5xCQBDj4MbsKLNX9kraoW5+kH3JStbK9y2kCkyD8XR0wT87JV
-	xcBVkwPdO6HMODIH35s4j/+UfQL84XOUgl0nDqbto1TQuRVtGhrWN5/9u1528qtO8fPN/LRt3FEP5
-	mgdIwaUQrsodaI7ywUSEToGwIT8IDUSbpPEscfUtQFAkgD7wOPPl3+/gu2oPYXDfa7Sog0StaQtkd
-	eBD1XSrisYgEycXG9wQQ==;
+	List-Owner; bh=gJtzYC3dL28H2Xi86ZRjHpqwZ0Tp5xfDnMkeb3vEvek=; b=q9nRMxR7Oi78DI
+	1vomfA+6gPLfrjI+RpnzPbxmvthqdif+KGZ3JewZs4mGOv3xaRNW4voi2/3iE3UVcm9COuXsgj2GH
+	4tNvvvj4buyehhZbrTtFRpiDn6SvviOMG9Uo/fsIyq8rkzfsymr9YuPcCF5M9I/qTaXnRXOsvpSqp
+	aSz8mjUBk/pSkWEMjAYY19SkeUbQ2u3gN2F4XMTWgpVhDCiTEf2qRxGbMQCiKzNVnFszG+jK4C26Q
+	nbEKblMGP6jjedSzeY8vZ0sfk5gGsgK8O54omSaBgdRA2XN2e9scGrVLbaprXPB3nEKVHcKnFORDO
+	7KeFRWtc2DEuJEyMQqYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijEqc-0005sy-Bx; Mon, 23 Dec 2019 03:57:34 +0000
+	id 1ijFak-0002cR-TN; Mon, 23 Dec 2019 04:45:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijEqS-0005sf-Ei
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 03:57:25 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ id 1ijFaY-0002DP-Mf
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 04:45:03 +0000
+Received: from localhost (unknown [223.226.34.186])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 47A3E20709;
- Mon, 23 Dec 2019 03:57:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C68D720409;
+ Mon, 23 Dec 2019 04:44:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577073444;
- bh=HMWmu7fLzjD4zHWaJI1X0iL80kRp1P9VNuoGUhoQRKM=;
+ s=default; t=1577076298;
+ bh=LhjIg4WZNPsnnra5trcrEQpZecG9BSH6bVukeQv/Z6E=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=xJzoeeF1/dw1fgzu36QaQ97BE8OM0U2I1GejPfCl/ybUsDko7hz9wVs/TpOoKeqXB
- zI8e03xUgf/NVbcZFVre+m7tAV5sDvB0/uxkYHkrxvky6uU+e5I9AztgISvrqW7AIh
- 8krSe87z2BpOaWjH4TJVpWzP0qJ2pXGN0A1GxenQ=
-Date: Mon, 23 Dec 2019 11:57:01 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Peng Ma <peng.ma@nxp.com>
-Subject: Re: [v5 2/3] arm64: dts: ls1028a: Update edma compatible to fit eDMA
- driver
-Message-ID: <20191223035701.GK11523@dragon>
-References: <20191212033714.4090-1-peng.ma@nxp.com>
- <20191212033714.4090-2-peng.ma@nxp.com>
+ b=Rs8TSHPpYxxMsjCz/jrkHpVZBhoJNHNbBGrso+nMv4dKephYRCGz8ro5HYAs8+63i
+ S3y+XIrZ8fX9JsV4ZEc/50o9EVAfvtd0zKdjKqVJDleNLE8bfPBD+8GyvEEbWZplzq
+ QdnWWHc5W4VPexPjGjml67mSM9RFAYuhX0h8iFUE=
+Date: Mon, 23 Dec 2019 10:14:54 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+Subject: Re: [PATCH] arm64: defconfig: Enable ATH10K_SNOC
+Message-ID: <20191223044454.GT2536@vkoul-mobl>
+References: <20191028171837.3907550-1-bjorn.andersson@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191212033714.4090-2-peng.ma@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <20191028171837.3907550-1-bjorn.andersson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_195724_511671_F27CFCCC 
-X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-CacheID: sfid-20191222_204502_769667_60049030 
+X-CRM114-Status: UNSURE (   8.36  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -67,6 +62,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -79,27 +76,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- Robin Gong <yibin.gong@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Anson Huang <Anson.Huang@nxp.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Dinh Nguyen <dinguyen@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
+ linux-arm-msm@vger.kernel.org, Olof Johansson <olof@lixom.net>,
+ Shawn Guo <shawnguo@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 12, 2019 at 03:38:15AM +0000, Peng Ma wrote:
-> The eDMA of LS1028A soc has a little bit different from others, So we
-> should distinguish them in driver by compatible.
-> 
-> Signed-off-by: Peng Ma <peng.ma@nxp.com>
+On 28-10-19, 10:18, Bjorn Andersson wrote:
+> The ath10k snoc is found on the Qualcomm QCS404 and SDM845, so enable
+> the driver for this.
 
-Applied, thanks.
+Reviewed-by: Vinod Koul <vkoul@kernel.org>
+
+-- 
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
