@@ -2,43 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47DB912978D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 15:36:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84A67129790
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 15:36:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=j38Fbb0rhn3FYDKDZAYuoSzgrlORlhUXZob17LHHbSc=; b=PNo2WOpLhS/Av9
-	V+dp9L9HY5LtuEsIm+oiXc2B9fNlrxsfodqZ6i7NAUz7EOPA5Wb3QQbNnBfY9WDHMRI/mFc3aNVqO
-	G0ioJwrG6UVoudyS+ez9m7jdYmZM1ZdfH6D64d1onE942Dwq4Q+xsVaoVfjfaGm5Mq4eDVCkQk/YK
-	+sOD/urwg22IUcRTQC+Lb1Ev1lqh1QrQKHNz0oWfFWWEIQLLJCYOOBEHCBdhbgejBdZp2eronK3+2
-	XZNn3Jc+/HeiC1w4FODdDpvD1QKf7oEku8TPqISSRamnauZxLCiFcUJI7SNjHRNtU2RH7Oo7f3k0J
-	4kzfIcAt/pW++ruk9Y8w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H+Zdm2yjne3DKCZdvwmpDZGE8S+eTm1RfqJVaHi4jYc=; b=DaxEBco6ua34v2
+	29xslpQpN2NilFjamLsrHBBiv1T+HUjd9nI/rCSN0OA/1yvX2Z0psYU4OgBPHW7Ags7bx76W6FEDD
+	EHaMQtX3stzYxG4vTKDiE1bFLPRt/eyHXoS5SWFM3ec8qCXyEAk0B9f9AyI6/yLJuJUe1qowIGVbn
+	j1CYJWqczIIJ9WqPs7luxdNCqXZYB+0jNBvgANqUV7uBzJmF5NmAZ//Ewh02kQn31wUriTqpM0Fow
+	kEIse6SjhXqrs5G39jiDmhjOUJDSPsbRj1dFtO20n7/GsjEWg0Oz+ycS1zFn1F64nJDbi9l4NbXoj
+	aDLPcTPXu/XDma/fbT6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijOoX-0005dK-Fc; Mon, 23 Dec 2019 14:36:05 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1ijOos-0005sL-S6; Mon, 23 Dec 2019 14:36:26 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijOoG-0005bp-0A; Mon, 23 Dec 2019 14:35:49 +0000
+ id 1ijOoG-0005bv-Kk; Mon, 23 Dec 2019 14:35:50 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id C88CA28A3A8
+ (Authenticated sender: eballetbo) with ESMTPSA id 459872921D8
 From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v22 0/2] drm/bridge: PS8640 MIPI-to-eDP bridge
-Date: Mon, 23 Dec 2019 15:35:36 +0100
-Message-Id: <20191223143538.20327-1-enric.balletbo@collabora.com>
+Subject: [PATCH v22 1/2] Documentation: bridge: Add documentation for ps8640
+ DT properties
+Date: Mon, 23 Dec 2019 15:35:37 +0100
+Message-Id: <20191223143538.20327-2-enric.balletbo@collabora.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20191223143538.20327-1-enric.balletbo@collabora.com>
+References: <20191223143538.20327-1-enric.balletbo@collabora.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_063548_301557_A0C55F6D 
-X-CRM114-Status: GOOD (  14.56  )
+X-CRM114-CacheID: sfid-20191223_063548_939688_A40849FA 
+X-CRM114-Status: GOOD (  10.60  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -54,148 +59,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, drinkcat@chromium.org,
- Jitao Shi <jitao.shi@mediatek.com>, Daniel Vetter <daniel@ffwll.ch>,
- Jonas Karlman <jonas@kwiboo.se>, David Airlie <airlied@linux.ie>,
- Neil Armstrong <narmstrong@baylibre.com>, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>, Ulrich Hecht <uli@fpond.eu>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, hsinyi@chromium.org,
- matthias.bgg@gmail.com, Collabora Kernel ML <kernel@collabora.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ drinkcat@chromium.org, Jitao Shi <jitao.shi@mediatek.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Ulrich Hecht <uli@fpond.eu>,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ hsinyi@chromium.org, matthias.bgg@gmail.com,
+ Collabora Kernel ML <kernel@collabora.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+From: Jitao Shi <jitao.shi@mediatek.com>
 
-This is another version of the driver. Note that the driver changed
-significally and is a more simply because now is using the panel_bridge
-helpers. Apart from this, I addressed the comments from Maxime, Laurent
-and Ezequiel.
+Add documentation for DT properties supported by
+ps8640 DSI-eDP converter.
 
-This bridge is required to have the embedded display working on an Acer
-Chromebook R13 ("Elm"). Hopefully we are a bit more close to have this
-driver merged. If more changes are required, please let me know and I
-will work on it.
+Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+Signed-off-by: Ulrich Hecht <uli@fpond.eu>
+Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+---
+I maintained the ack from Rob Herring and the review from Philipp
+because in essence the only thing I did is migrate to YAML format and
+check that no errors are reported via dtbs_check. Just let me know if
+you're not agree.
 
-Note: Along these around 20 revisions of this driver I was unable to
-reconstruct the full changelog history, so I'm skipping this. Sorry
-about that, I promise I'll maintain the changelog for future revisions.
+Apart from this note that I removed the mode-sel property because is not
+used and I renamed sleep-gpios to powerdown-gpios.
 
-Thanks,
- Enric
-
-Changes in v23:
-- Merge mute/unmute functions into one (Nicolas Boichat)
-- Use enum for ENABLE/DISABLE instead of bool (Ezequiel Garcia)
-- Rename mute/unmute to vdo_control and fix error messages (Nicolas Boichat and Enric)
-- Add space between address and address parameter 'address%02x' (Nicolas Boichat)
-- Add Tested-by Hsin-Yi
-- Added me as author after the refactor
-
+Changes in v23: None
 Changes in v22:
 - Migrate to YAML format (Maxime Ripart)
 - Remove mode-sel property.
 - Rename sleep-gpios to powerdown-gpios.
-- Remove sysfs attributes because are not really used (Enric Balletbo)
-- Use enum for address page offsets (Ezequiel Garcia)
-- Remove enable tracking (Enric Balletbo)
-- Use panel_bridge API (Laurent Pinchart)
-- Do not use kernel-doc format for non kernel-doc formatted commands (Enric Balletbo)
-- Remove verbose message for PAGE1_VSTART command (Ezequiel Garcia)
-- Use time_is_after_jiffies idiom (Ezequiel Garcia)
-- Remove unused macros (Ezequiel Garcia)
-- Fix weird alignment in dsi->mode_flags (Laurent Pinchart)
-- Use drm_of_find_panel_or_bridge helper (Laurent Pinchart)
-- Remove mode-sel-gpios as is not used (Laurent Pinchart)
-- Remove error messages to get gpios as the core will already report it (Enric Balletbo)
-- Remove redundant message getting the regulators (Laurent Pinchart)
-- Rename sleep-gpios to powerdown-gpios (Laurent Pinchart)
-- Use ARRAY_SIZE(ps_bridge->page) instead of MAX_DEV when possible (Laurent Pinchart)
-- Fix race with userspace accessing the sysfs attributes (Laurent Pinchart)
-- Remove id_table as is only used on DR platforms (Laurent Pinchart)
-- Convert to new i2c device probe() (Laurent Pinchart)
-- Use i2c_smbus_read/write helpers instead of open coding it (Laurent Pinchart)
-- Remove unnused global variables (Laurent Pinchart)
-- Remove unnused fields in ps8640 struct (Laurent Pinchart)
-- Remove commented-out headers (Laurent Pinchart)
 
-Changes in v21:
- - Use devm_i2c_new_dummy_device and fix build issue using deprecated i2c_new_dummy
- - Fix build issue due missing drm_bridge.h
- - Do not remove in ps8640_remove device managed resources
+Changes in v21: None
+Changes in v19: None
+Changes in v18: None
+Changes in v17: None
+Changes in v16: None
+Changes in v15: None
+Changes in v14: None
+Changes in v13: None
+Changes in v12: None
+Changes in v11: None
 
-Changes in v19:
- - fixed return value of ps8640_probe() when no panel is found
-
-Changes in v18:
- - followed DRM API changes
- - use DEVICE_ATTR_RO()
- - remove firmware update code
- - add SPDX identifier
-
-Changes in v17:
- - remove some unused head files.
- - add macros for ps8640 pages.
- - remove ddc_i2c client
- - add mipi_dsi_device_register_full
- - remove the manufacturer from the name and i2c_device_id
-
-Changes in v16:
- - Disable ps8640 DSI MCS Function.
- - Rename gpios name more clearly.
- - Tune the ps8640 power on sequence.
-
-Changes in v15:
- - Drop drm_connector_(un)register calls from parade ps8640.
-   The main DRM driver mtk_drm_drv now calls
-   drm_connector_register_all() after drm_dev_register() in the
-   mtk_drm_bind() function. That function should iterate over all
-   connectors and call drm_connector_register() for each of them.
-   So, remove drm_connector_(un)register calls from parade ps8640.
-
-Changes in v14:
- - update copyright info.
- - change bridge_to_ps8640 and connector_to_ps8640 to inline function.
- - fix some coding style.
- - use sizeof as array counter.
- - use drm_get_edid when read edid.
- - add mutex when firmware updating.
-
-Changes in v13:
- - add const on data, ps8640_write_bytes(struct i2c_client *client, const u8 *data, u16 data_len)
- - fix PAGE2_SW_REST tyro.
- - move the buf[3] init to entrance of the function.
-
-Changes in v12:
- - fix hw_chip_id build warning
-
-Changes in v11:
- - Remove depends on I2C, add DRM depends
- - Reuse ps8640_write_bytes() in ps8640_write_byte()
- - Use timer check for polling like the routines in <linux/iopoll.h>
- - Fix no drm_connector_unregister/drm_connector_cleanup when ps8640_bridge_attach fail
- - Check the ps8640 hardware id in ps8640_validate_firmware
- - Remove fw_version check
- - Move ps8640_validate_firmware before ps8640_enter_bl
- - Add ddc_i2c unregister when probe fail and ps8640_remove
-
-Jitao Shi (2):
-  Documentation: bridge: Add documentation for ps8640 DT properties
-  drm/bridge: Add I2C based driver for ps8640 bridge
-
- .../bindings/display/bridge/ps8640.yaml       | 112 ++++++
- drivers/gpu/drm/bridge/Kconfig                |  11 +
- drivers/gpu/drm/bridge/Makefile               |   1 +
- drivers/gpu/drm/bridge/parade-ps8640.c        | 348 ++++++++++++++++++
- 4 files changed, 472 insertions(+)
+ .../bindings/display/bridge/ps8640.yaml       | 112 ++++++++++++++++++
+ 1 file changed, 112 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/display/bridge/ps8640.yaml
- create mode 100644 drivers/gpu/drm/bridge/parade-ps8640.c
 
+diff --git a/Documentation/devicetree/bindings/display/bridge/ps8640.yaml b/Documentation/devicetree/bindings/display/bridge/ps8640.yaml
+new file mode 100644
+index 000000000000..5dff93641bea
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/bridge/ps8640.yaml
+@@ -0,0 +1,112 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/bridge/ps8640.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: MIPI DSI to eDP Video Format Converter Device Tree Bindings
++
++maintainers:
++  - Nicolas Boichat <drinkcat@chromium.org>
++  - Enric Balletbo i Serra <enric.balletbo@collabora.com>
++
++description: |
++  The PS8640 is a low power MIPI-to-eDP video format converter supporting
++  mobile devices with embedded panel resolutions up to 2048 x 1536. The
++  device accepts a single channel of MIPI DSI v1.1, with up to four lanes
++  plus clock, at a transmission rate up to 1.5Gbit/sec per lane. The
++  device outputs eDP v1.4, one or two lanes, at a link rate of up to
++  3.24Gbit/sec per lane.
++
++properties:
++  compatible:
++    const: parade,ps8640
++
++  reg:
++    maxItems: 1
++    description: Base I2C address of the device.
++
++  powerdown-gpios:
++    maxItems: 1
++    description: GPIO connected to active low powerdown.
++
++  reset-gpios:
++    maxItems: 1
++    description: GPIO connected to active low reset.
++
++  vdd12-supply:
++    maxItems: 1
++    description: Regulator for 1.2V digital core power.
++
++  vdd33-supply:
++    maxItems: 1
++    description: Regulator for 3.3V digital core power.
++
++  ports:
++    type: object
++    description:
++      A node containing DSI input & output port nodes with endpoint
++      definitions as documented in
++      Documentation/devicetree/bindings/media/video-interfaces.txt
++      Documentation/devicetree/bindings/graph.txt
++    properties:
++      port@0:
++        type: object
++        description: |
++          Video port for DSI input
++
++      port@1:
++        type: object
++        description: |
++          Video port for eDP output (panel or connector).
++
++    required:
++      - port@0
++
++required:
++  - compatible
++  - reg
++  - powerdown-gpios
++  - reset-gpios
++  - vdd12-supply
++  - vdd33-supply
++  - ports
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/gpio/gpio.h>
++    i2c0 {
++        #address-cells = <1>;
++        #size-cells = <0>;
++
++        ps8640: edp-bridge@18 {
++            compatible = "parade,ps8640";
++            reg = <0x18>;
++            powerdown-gpios = <&pio 116 GPIO_ACTIVE_LOW>;
++            reset-gpios = <&pio 115 GPIO_ACTIVE_LOW>;
++            vdd12-supply = <&ps8640_fixed_1v2>;
++            vdd33-supply = <&mt6397_vgp2_reg>;
++
++            ports {
++                #address-cells = <1>;
++                #size-cells = <0>;
++
++                port@0 {
++                    reg = <0>;
++                    ps8640_in: endpoint {
++                        remote-endpoint = <&dsi0_out>;
++                    };
++                };
++
++                port@1 {
++                    reg = <1>;
++                    ps8640_out: endpoint {
++                        remote-endpoint = <&panel_in>;
++                   };
++                };
++            };
++        };
++    };
++
 -- 
 2.20.1
 
