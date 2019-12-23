@@ -2,63 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B91F1299B7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 19:02:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FAF6129A1F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 19:59:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h/QDSdHHgzfnXfxYfNi5x/A22YN8uINx1qaGtqyhYcg=; b=mGWV6EKo7lz5+y
-	djaVP25hhh/s3wzYhKawtiK7oLs8sLB2j54dBWnKq5LJz94G/A5PkQFoil/V3vM4QMna97o2H4sZX
-	1Sr8JHvRgfzX3XSytDFCAjPatPtbZ/CmfB9a++ha+4m4A8PbhRddaAG1W0ZXG/VbO6xvmSSkWrr8t
-	zpdkYHRHVL83nihvg9OM9B3jZF2NCGbquJtJINfosAoiOImGdH+ZHWhP3+SRoYpg/Gyzd86JTHZGT
-	wrvcFhF8GpfrqAXULfXTy8d1oY1vcdhSFIJCEvepY/ToG9HgzlmSTOUfsqhyZP3fShDxocUKb1rGI
-	IzP/Ql2fpN9wtTBLIdJg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=M5LNNqSqjOAXcG3ff9x8hkn8f7z5FVJDn/5kJ/dVL1Y=; b=PEk
+	mslcw3f4Y+QCXoqq5qsWD+J7uFhzEJXUEj7kAa4Xk67WPbpgUFfoLVN+M5xIgif/FwYgVv3Z1cebY
+	wv6zmVlZSc555sDbalqsM0kVl73Yjy7SsvKnSDoPgfaHXrscw6WjoQOogm7NJlfioXccyFY5aC5la
+	Kb+zCExzLsuvDRN7JwLsgpVX8RccG5eT9P55tGTejK1jXXfCJvtn2XYis/ka7JDPp1GxUUAoiwH9B
+	aIeljZ4HkWMocFICR2pJTmUFbfgoj6K4OXVBRkCMM3AFKDq2h3qt/Z67UvdPwMyH9pSUDQ3BAe5VX
+	F+rC1nwPzZGdXqiMANTxqQsaVXYgDYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijS29-0001cM-Vx; Mon, 23 Dec 2019 18:02:22 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ijSvf-0002UP-PF; Mon, 23 Dec 2019 18:59:43 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijS1r-0001bP-Me
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 18:02:04 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2627420643;
- Mon, 23 Dec 2019 18:02:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577124122;
- bh=MLg4g5Ofa/wkZ1A5nGhyBam3JNTaXHswT+qU5Xu90d0=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=DDBWmD15tYJKGCh8E1rW4nr88u8YLoROxnQz5Hv9+/1+xNjhYJjDOn83dhC0u4ZBs
- AYk2iSXaNzDmzIaq9FQ7GEgiIVseqIC2eL8oWQnldtz7b9MFCYkFdyKc++VLcg0qFO
- FiFmvLk4Iu2v3KVty5JNpy2O76CjLGGcWbEKCmB0=
-Date: Mon, 23 Dec 2019 18:01:57 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2] dt-bindings: iio: adc: convert sd modulator to
- json-schema
-Message-ID: <20191223180157.49b971f0@archlinux>
-In-Reply-To: <20191218223032.GA8641@bogus>
-References: <20191206100058.26767-1-olivier.moysan@st.com>
- <20191218223032.GA8641@bogus>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
+ id 1ijSvK-0002TY-6G; Mon, 23 Dec 2019 18:59:23 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id t101so143423pjb.4;
+ Mon, 23 Dec 2019 10:59:21 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=TCR4AR5ucUHlq9yNJFguI2NxlI68W/tsOUZcT+YMNl0=;
+ b=eb4L4pil+JCG+cmdA0+Y497EM/NtrHh8JtUYUrydX0icSwue7g/LT7YybIYtTTcV/M
+ MDaDFzfK3rGsshR2RJN/EE3X86kt4E4btFV3briwaxtCutIASq/3rWfK0hgKIeBr+pCL
+ 1DrjLmswrvXHxs3IvDOhgMcK+NehUow+N4Tv6eZIfMecsqBWCVjOwfJB/B9FMksOPQ/b
+ fk3OA/ihwGFJVxTedK7BuI7EMQMK1YysKr8bZUBHso5sGbkgqhpLR2KssbBPoVEOEyug
+ qB+K4Y29piISqu3qBMy6P1HWvW8dFPImPXFO3HIM7wgp0lRloRUfgj2KHzIbucnt9eu/
+ uC1Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=TCR4AR5ucUHlq9yNJFguI2NxlI68W/tsOUZcT+YMNl0=;
+ b=SfJCLk8JbmlJODGZOEQeqDC8wQjPSM8UJz2toIfy4sqSzwfrF4W6n3O1oNzMdt+eKz
+ 8zGwYfOuEvcFfoDFVE8Fcx2kk2DvDLdZGo5RsGidz/dOGROBOJaZyJ7PTVHGmOzC8HkW
+ ECT6Z3aLIuf2nY7ymAFRhxru9SRFx16G9teKRUjaIcQOFmDNqV3aoqDzb01rcPlaDLf9
+ T4EOGP8cRJQfv2Tsmk1HY73Gx8+ZWcxi6VEfMGlU+rXrPvt4RsAtqJiLwcE3e8G39dTB
+ qYJYlmC5M+8mUVLmA2+WVpZR1ojt1OG48iNY5etpQzikuzl8iP6TMJl/+vmZ1+vtUOuG
+ Un6Q==
+X-Gm-Message-State: APjAAAXF+6bO/b6sDiKpfciTYOd172NqKChcXlAjBrj0PuiIiz3FJUEY
+ b2T9WsjUZQjISWCpVbWzxrTIafVPcXQ=
+X-Google-Smtp-Source: APXvYqz84TR8y+QXxgUTlt23B6h//l3KypRdsMB1YXrNQMBidJsu/m2w0mjr/wrZCM0wu9iBN7SuOQ==
+X-Received: by 2002:a17:902:b186:: with SMTP id
+ s6mr32565870plr.333.1577127561141; 
+ Mon, 23 Dec 2019 10:59:21 -0800 (PST)
+Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
+ by smtp.gmail.com with ESMTPSA id r62sm25858012pfc.89.2019.12.23.10.59.20
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 23 Dec 2019 10:59:20 -0800 (PST)
+From: Yangtao Li <tiny.windzz@gmail.com>
+To: m.szyprowski@samsung.com, joro@8bytes.org, kgene@kernel.org,
+ krzk@kernel.org, matthias.bgg@gmail.com, agross@kernel.org,
+ bjorn.andersson@linaro.org, robdclark@gmail.com, heiko@sntech.de,
+ mst@redhat.com, jasowang@redhat.com, iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ virtualization@lists.linux-foundation.org
+Subject: [PATCH 1/6] iommu/omap: convert to devm_platform_ioremap_resource
+Date: Mon, 23 Dec 2019 18:59:12 +0000
+Message-Id: <20191223185918.9877-1-tiny.windzz@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_100203_763769_41AC3BBD 
-X-CRM114-Status: GOOD (  11.03  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191223_105922_260799_C64E33FC 
+X-CRM114-Status: UNSURE (   8.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (tiny.windzz[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -66,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,44 +97,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
- Olivier Moysan <olivier.moysan@st.com>, pmeerw@pmeerw.net,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- mcoquelin.stm32@gmail.com, knaack.h@gmx.de, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Yangtao Li <tiny.windzz@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 18 Dec 2019 16:30:32 -0600
-Rob Herring <robh@kernel.org> wrote:
+Use devm_platform_ioremap_resource() to simplify code.
 
-> On Fri, 6 Dec 2019 11:00:58 +0100, Olivier Moysan wrote:
-> > Convert the sigma delta modulator bindings
-> > to DT schema format using json-schema.
-> > 
-> > Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-> > ---
-> > Changes since v1:
-> > - add additionalProperties
-> > - remove unit-address in example
-> > ---
-> >  .../iio/adc/sigma-delta-modulator.txt         | 13 -------
-> >  .../iio/adc/sigma-delta-modulator.yaml        | 37 +++++++++++++++++++
-> >  2 files changed, 37 insertions(+), 13 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/iio/adc/sigma-delta-modulator.txt
-> >  create mode 100644 Documentation/devicetree/bindings/iio/adc/sigma-delta-modulator.yaml
-> >   
-> 
-> Reviewed-by: Rob Herring <robh@kernel.org>
-Applied to the togreg branch of iio.git and pushed out as testing for the
-autobuilders to play with it.
+Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+---
+ drivers/iommu/omap-iommu.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-Thanks,
-
-Jonathan
-
+diff --git a/drivers/iommu/omap-iommu.c b/drivers/iommu/omap-iommu.c
+index be551cc34be4..297c1be7ecb0 100644
+--- a/drivers/iommu/omap-iommu.c
++++ b/drivers/iommu/omap-iommu.c
+@@ -1175,7 +1175,6 @@ static int omap_iommu_probe(struct platform_device *pdev)
+ 	int err = -ENODEV;
+ 	int irq;
+ 	struct omap_iommu *obj;
+-	struct resource *res;
+ 	struct device_node *of = pdev->dev.of_node;
+ 	struct orphan_dev *orphan_dev, *tmp;
+ 
+@@ -1218,8 +1217,7 @@ static int omap_iommu_probe(struct platform_device *pdev)
+ 	spin_lock_init(&obj->iommu_lock);
+ 	spin_lock_init(&obj->page_table_lock);
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	obj->regbase = devm_ioremap_resource(obj->dev, res);
++	obj->regbase = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(obj->regbase))
+ 		return PTR_ERR(obj->regbase);
+ 
+-- 
+2.17.1
 
 
 _______________________________________________
