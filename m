@@ -2,43 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76997129743
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 15:23:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67184129744
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 15:23:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6upWrRWoWPxhvRhGXCW4zzFGzibGAspWsVCPzLJgWMY=; b=bva
-	+ld4dD8oXY2FfkTDiuJXeAsij/nRkJjMo8Mx4axBldbuROvfthRJ6say7t1CPUHhKSm/TbEEKpnBy
-	7f8fMaFaYB7cE6eycv4Vtl5Dl/RaPWawORHkuxDbhesQ/he7NVVtV1kS2vDS98BEsGjUcpUJJ656l
-	RHztOtKOOBwBR9cwbcmkRXctjuo4kC7GstI0AJZ4ZdmC1A+FdUovKW89W7H7Hm+M4/vZ4UJMeaKnr
-	X+3o6H2DL2Cp9dJZyye+3HrJ+aZlzuqXY5SFyP+LqC9snGimxZ01nTXIhi+ITWAtVf+yo/V2QvGxA
-	XDaMJ3/twnsK8eu900U9gQAfCmg4rKg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=F1t8/y0vuFap2Pe4av6S1qsEZfKdURsMXOMtw5df/OM=; b=BY0SEr2705+JdWivWf90yWpWPO
+	u6x692Zhb8nDmQM4+LwnuJqcvndRhv7BNfnA0aPshScu7hPLKq6Gx7Z5/FH7sKE+6yLKuFZUJDk4i
+	GsGZX6TS+wKHlVyBW8XPVhUbT2oy73AXThyAW5QwuZ6P9bVajC2Wo3aZjROqeApQJj4W30DMRUVCR
+	HC+jShogLiFmUNKlsHqLOHtxnzzXySKzNDIv3KxjD+LsuvIn5T/f23MV3mdMoIZ8GTTFOIqvvCr0e
+	d/q1Zx+9NseqvF3rlhox+uQFhB7OFELwa6BepHgjw47Tl1yTAnut4F18S1zWbnfAtkjVyNCq0WCjd
+	rZGzMrtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijOcI-0004Lh-BR; Mon, 23 Dec 2019 14:23:26 +0000
-Received: from out30-43.freemail.mail.aliyun.com ([115.124.30.43])
+	id 1ijOcY-0004Xv-Ne; Mon, 23 Dec 2019 14:23:42 +0000
+Received: from out30-130.freemail.mail.aliyun.com ([115.124.30.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijOc4-0004Kk-EC
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 14:23:14 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R891e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e07487;
+ id 1ijOcA-0004Ls-QM
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 14:23:20 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R961e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e04426;
  MF=zhangliguang@linux.alibaba.com; NM=1; PH=DS; RN=4; SR=0;
- TI=SMTPD_---0TlkllZi_1577110976; 
+ TI=SMTPD_---0Tll1RuF_1577110987; 
 Received: from localhost(mailfrom:zhangliguang@linux.alibaba.com
- fp:SMTPD_---0TlkllZi_1577110976) by smtp.aliyun-inc.com(127.0.0.1);
- Mon, 23 Dec 2019 22:23:05 +0800
+ fp:SMTPD_---0Tll1RuF_1577110987) by smtp.aliyun-inc.com(127.0.0.1);
+ Mon, 23 Dec 2019 22:23:15 +0800
 From: luanshi <zhangliguang@linux.alibaba.com>
 To: James Morse <james.morse@arm.com>
-Subject: [PATCH 1/3] firmware: arm_sdei: fix possible deadlock
-Date: Mon, 23 Dec 2019 22:22:53 +0800
-Message-Id: <1577110975-54782-1-git-send-email-zhangliguang@linux.alibaba.com>
+Subject: [PATCH 2/3] firmware: arm_sdei: Removed multiple white lines.
+Date: Mon, 23 Dec 2019 22:22:54 +0800
+Message-Id: <1577110975-54782-2-git-send-email-zhangliguang@linux.alibaba.com>
 X-Mailer: git-send-email 1.8.3.1
+In-Reply-To: <1577110975-54782-1-git-send-email-zhangliguang@linux.alibaba.com>
+References: <1577110975-54782-1-git-send-email-zhangliguang@linux.alibaba.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_062313_019880_BB152F54 
-X-CRM114-Status: UNSURE (   8.22  )
+X-CRM114-CacheID: sfid-20191223_062319_070032_7C1E9497 
+X-CRM114-Status: UNSURE (   6.26  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -46,7 +49,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.30.43 listed in list.dnswl.org]
+ no trust [115.124.30.130 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
@@ -76,49 +79,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Liguang Zhang <zhangliguang@linux.alibaba.com>
 
-We call sdei_reregister_event() with sdei_list_lock held but
-_sdei_event_register() and sdei_event_destroy() also acquires
-sdei_list_lock thus creating A-A deadlock.
+Remove one unnecessary white line.
 
-Fixes: da351827240e ("firmware: arm_sdei: Add support for CPU and system power states")
 Signed-off-by: Liguang Zhang <zhangliguang@linux.alibaba.com>
 ---
- drivers/firmware/arm_sdei.c | 17 ++++++++---------
- 1 file changed, 8 insertions(+), 9 deletions(-)
+ drivers/firmware/arm_sdei.c | 1 -
+ 1 file changed, 1 deletion(-)
 
 diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
-index a479023..b122927 100644
+index b122927..0a366cf 100644
 --- a/drivers/firmware/arm_sdei.c
 +++ b/drivers/firmware/arm_sdei.c
-@@ -651,20 +651,19 @@ static int sdei_reregister_event(struct sdei_event *event)
+@@ -595,7 +595,6 @@ static int _sdei_event_register(struct sdei_event *event)
+ 					       event->registered,
+ 					       SDEI_EVENT_REGISTER_RM_ANY, 0);
  
- 	lockdep_assert_held(&sdei_events_lock);
- 
--	err = _sdei_event_register(event);
-+	err = sdei_api_event_register(event->event_num,
-+				       sdei_entry_point,
-+				       event->registered,
-+				       SDEI_EVENT_REGISTER_RM_ANY, 0);
- 	if (err) {
- 		pr_err("Failed to re-register event %u\n", event->event_num);
--		sdei_event_destroy(event);
-+		list_del(&event->list);
-+		kfree(event->registered);
- 		return err;
- 	}
- 
--	if (event->reenable) {
--		if (event->type == SDEI_EVENT_TYPE_SHARED)
--			err = sdei_api_event_enable(event->event_num);
--		else
--			err = sdei_do_cross_call(_local_event_enable, event);
--	}
 -
-+	if (event->reenable)
-+		err = sdei_api_event_enable(event->event_num);
- 	if (err)
- 		pr_err("Failed to re-enable event %u\n", event->event_num);
- 
+ 	err = sdei_do_cross_call(_local_event_register, event);
+ 	if (err) {
+ 		spin_lock(&sdei_list_lock);
 -- 
 1.8.3.1
 
