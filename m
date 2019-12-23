@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6047112936A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 10:00:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A58012938F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 10:15:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NghZi7Vpkf8MmVH0+j/XlcN9LCQIncTdSHHivsrji20=; b=NUJDMUr9THNQjs
-	LpitJPilP+cpuwaD4pzJaKVBvnx14w4HiL284esN6qFV7ZIqJORVZAuDLXec9DigU8FGweyCBCnN+
-	lNNt8RE548NrT39DhobOzVF9qxk8U2nL84t8NkNOIYM5Oqpx3Y2COgcIUPPNCrsz0VdnjOu5gcu81
-	krYNLglF6r116YZYqZGCVpOyUYCrOz1uLf2F+ysJM/iBnS664mYsiLlPL6IRv8i4d0kx3F8FJ0F8P
-	yI3nOr18as8HoGil2UZHk5Lgl1Hc29U5MHnpnwlQ/7MpB0R/+FcoPcc9usQkuLQopQHidIyp2cs+X
-	KS1rL9L7DDhn9dgOM9Gg==;
+	List-Owner; bh=YtOL0UMJSWmW4C9p92/gxwe06b/gCTFvfUW1+Less+M=; b=UX2rBt4U7V4QUI
+	e63xZPt/vCSIK/g1v33s4iMAM+2TNyhNNXep+OMsfcXFFcOiKwnileX8XZiA0Y2C6cyxKcQrC03fh
+	Zss5kR/cmPipn9CoKHzGAjW1f9LZ6Tc3ppYGqJ2thgVZBNBpffTKuwYa4SFvYkDlo2G9Kwu0kUsR9
+	/salNATPX0Zqvl21ff9GwzR0h0NJRfjOM1viZFsPXcpkFZqtzncHFitG+cPkLOueK7v8RO9U/xHsZ
+	HHfKiOcBBOe/I3Eaghs8gfpsb9vskuIMSDAIcxvm/OCN8H98tqBQiJ4vPK6/TWImw7E3KKhqHudLL
+	FxHCEep9oUQBtGLwhG1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijJZV-0006C2-CK; Mon, 23 Dec 2019 09:00:13 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ijJo3-0003Sl-8x; Mon, 23 Dec 2019 09:15:15 +0000
+Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijJZ3-000658-DZ; Mon, 23 Dec 2019 08:59:46 +0000
-X-UUID: 609bbc7b2854433c85a6e3a1ca71a477-20191223
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=GIxkr6Z3J7HgwOFSpLaPB2mv26seiJrHqASnjdQ/WuM=; 
- b=c1jKL4cTWnGtOxIq36oOVI39ctbinDcNdvG/SnInr75JnU8Xvp9tSrrTEwttbrLIW36IXiT07fliI3/ncn99PJdV0Xva0MAe6szb/mHs1GC4NpxlN3WSmlZRIKirhNuuv3w//vtn23sem0lkDfj3FXFCF3Jr0RXfRdyTlx22ThE=;
-X-UUID: 609bbc7b2854433c85a6e3a1ca71a477-20191223
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1956565631; Mon, 23 Dec 2019 00:59:39 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 23 Dec 2019 01:00:09 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 23 Dec 2019 16:59:16 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 23 Dec 2019 16:59:48 +0800
-Message-ID: <1577091576.20525.4.camel@mtksdaap41>
-Subject: Re: [PATCH v5 6/7] drm/mediatek: support CMDQ interface in ddp
- component
-From: CK Hu <ck.hu@mediatek.com>
-To: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Mon, 23 Dec 2019 16:59:36 +0800
-In-Reply-To: <CAJMQK-jdMwoC54XpWj-XYW_yZkM=TcGcJpy94DTdYBN2t1wqmw@mail.gmail.com>
-References: <20191210050526.4437-1-bibby.hsieh@mediatek.com>
- <20191210050526.4437-7-bibby.hsieh@mediatek.com>
- <CAJMQK-jdMwoC54XpWj-XYW_yZkM=TcGcJpy94DTdYBN2t1wqmw@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1ijJnh-0003Qv-QM
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 09:14:55 +0000
+Received: by mail-qv1-xf44.google.com with SMTP id dp13so6127884qvb.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Dec 2019 01:14:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gu/ztFiRQ3wq9XQZk4WFXx+978qv3TNkjDk+Rg1DcEQ=;
+ b=JChcZAmP16y+mbW1Asq7N8aJZsXBv8p86qgVulBr2n85kEF6ZYqrML12yiQ0Jliii0
+ Knr104cQRfUO4BGBfzSyzaSqSTy7iNiXrG2Pax060fVdsPFaMX5BYTNmR6Bk3WqDIm35
+ 0/RGy6FmY5hwcu3+ywUuX0yVkdqKLZKYFXpqU=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gu/ztFiRQ3wq9XQZk4WFXx+978qv3TNkjDk+Rg1DcEQ=;
+ b=PxPCwSEnp43wemdT1ynZAPUoyFMtp3p0495PF7poeaWdGeLzhuUuC5IqiUPOBWhM6q
+ tTsIJZAI9iRx/jjwRQOEq1NukmHAIkvCta4RK+QYXXJAMXBAhPgd/wWriOpccfXt+CZV
+ 5rozf7aDNebz5BFOTVE8JxEEw0LdA5Np2vpQv+fvIXL6Q/l+4qndlQlUGjfxiuIuFZvS
+ Buk8yGYWoo1AAwh2yA74yvLPqobpgIppJ7ZTWV3Z2amT52Htk6OOkGckIuPn3j8P9mjO
+ 5lBJcUTRhJ7xWgFETV8lSxFt0OJL+Rh6Jbh2AB1edykDlHplAsbxh4E2KTxo+uk1FRAQ
+ R4Qg==
+X-Gm-Message-State: APjAAAU3esUot5d+0h2YzlGIgvo0/psqs/dM3Od4ardnN61ir6scZf1o
+ xWhwKS19XGCtH1bWQUcxHvtSY+VYG/ri9iOk2bVjrg==
+X-Google-Smtp-Source: APXvYqxSGh8tEsYM4HGrQMAIpi4RkLM4nlV0RIDeW/C6zkKppoWb1uEylH2teSbPYDtcvEwo1nKoLSIXM3xw4c24zSA=
+X-Received: by 2002:ad4:4182:: with SMTP id e2mr23692671qvp.187.1577092492136; 
+ Mon, 23 Dec 2019 01:14:52 -0800 (PST)
 MIME-Version: 1.0
-X-MTK: N
+References: <20191220081738.1895-1-enric.balletbo@collabora.com>
+ <20191220081738.1895-3-enric.balletbo@collabora.com>
+ <CANMq1KBHsc8oqcjWnjLPCpRToyOm16X6EcQqmqPjZf=D7wA2-Q@mail.gmail.com>
+ <05db638b-02a6-0e3a-43ed-44a0a1458d87@collabora.com>
+In-Reply-To: <05db638b-02a6-0e3a-43ed-44a0a1458d87@collabora.com>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Mon, 23 Dec 2019 17:14:41 +0800
+Message-ID: <CANMq1KA4mp648p1LicOzAyra6tdgN2qdDY=N0XyDYhgt6BP26w@mail.gmail.com>
+Subject: Re: [PATCH v22 2/2] drm/bridge: Add I2C based driver for ps8640 bridge
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_005945_463733_1A15A8CE 
-X-CRM114-Status: UNSURE (   7.16  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191223_011453_873233_37189EE5 
+X-CRM114-Status: GOOD (  15.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -75,8 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,57 +88,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Boichat <drinkcat@chromium.org>,
- Yongqiang Niu <yongqiang.niu@mediatek.com>, srv_heupstream@mediatek.com,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- lkml <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Tomasz
- Figa <tfiga@chromium.org>, Thierry Reding <thierry.reding@gmail.com>,
- linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, "moderated list:ARM/FREESCALE IMX /
- MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
+Cc: Ulrich Hecht <uli@fpond.eu>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Jitao Shi <jitao.shi@mediatek.com>, Jonas Karlman <jonas@kwiboo.se>,
+ David Airlie <airlied@linux.ie>, Neil Armstrong <narmstrong@baylibre.com>,
+ lkml <linux-kernel@vger.kernel.org>, Daniel Kurtz <djkurtz@chromium.org>,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Hsin-yi:
-
-On Fri, 2019-12-20 at 21:27 +0800, Hsin-Yi Wang wrote:
-> On Tue, Dec 10, 2019 at 5:05 AM Bibby Hsieh <bibby.hsieh@mediatek.com> wrote:
-> 
+On Mon, Dec 23, 2019 at 3:10 PM Enric Balletbo i Serra
+<enric.balletbo@collabora.com> wrote:
+>
+> Hi Nicolas,
+>
+> Many thanks for you review. Just preparing a new version with your comments
+> addressed.
+>
+> On 20/12/19 9:44, Nicolas Boichat wrote:
+> > On Fri, Dec 20, 2019 at 4:17 PM Enric Balletbo i Serra
+> > <enric.balletbo@collabora.com> wrote:
+> >>
+> >> From: Jitao Shi <jitao.shi@mediatek.com>
+> >>
+> >> This patch adds drm_bridge driver for parade DSI to eDP bridge chip.
+> >>
+> >> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+> >> Reviewed-by: Daniel Kurtz <djkurtz@chromium.org>
+> >> Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> >> [uli: followed API changes, removed FW update feature]
+> >> Signed-off-by: Ulrich Hecht <uli@fpond.eu>
+> >> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> >> ---
+> [snip]
+> >> +       ret = i2c_smbus_write_byte_data(client, PAGE2_MCS_EN,
+> >> +                                       status & ~MCS_EN);
+> >> +       if (ret < 0) {
+> >> +               DRM_ERROR("failed write PAGE2_MCS_EN: %d\n", ret);
+> >> +               goto err_regulators_disable;
+> >> +       }
+> >> +
+> >> +       ret = ps8640_bridge_unmute(ps_bridge);
+> >> +       if (ret)
+> >> +               DRM_ERROR("failed to enable unmutevideo: %d\n", ret);
 > >
-> > +void mtk_ddp_write(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-> > +                  struct mtk_ddp_comp *comp, unsigned int offset)
-> > +{
-> > +#if IS_ENABLED(CONFIG_MTK_CMDQ)
-> Should we use #ifdef like in v4? https://patchwork.kernel.org/patch/11274439/
-> 
-> We got warnings while compiling kernels if CONFIG_MTK_CMDQ is not set,
-> since cmdq_pkt_write() would still be compiled.
-> Similar in other #if IS_ENABLED(CONFIG_MTK_CMDQ) (also in 7/7
-> https://patchwork.kernel.org/patch/11281349/)
-> 
+> > failed to unmute? Or failed to enable?
+> >
+>
+> failed to unmute sound more clear to me.
 
-I've changed IS_ENABLED() to IS_REACHABLE()in mediatek-drm-next-5.6 [1]
-for the correct relationship between MTK_DRM and MTK_CMDQ.
+I may be wrong, but I have the feeling that the functions
+"mute/unmute" video/display, actually... And that the function naming
+is strange...
 
-[1]
-https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-next-5.6
+You could just try to remove the calls, as there is no audio on the
+board you have (elm), so if video still works, maybe this is actually
+audio ,-)
 
-Regards,
-CK
-
-> 
-> > +       if (cmdq_pkt)
-> > +               cmdq_pkt_write(cmdq_pkt, comp->subsys,
-> > +                              comp->regs_pa + offset, value);
-> > +       else
-> > +#endif
-> > +               writel(value, comp->regs + offset);
-> > +}
-> > +
+Thanks,
 
 _______________________________________________
 linux-arm-kernel mailing list
