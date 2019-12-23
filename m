@@ -2,47 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35B3112939F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 10:29:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 587021293A0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 10:29:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=i1EdvKGOpIJ9/2muKk97jUSondsGa/Gt9E5+LlArfgQ=; b=PrpOsBb52WbmYh
-	tdQ7pWmQe6Q96ncjaQi4K7Ycy8AauLi6DWfEFAE/vou1So78mh3faCsY2CtHSJThmRg0xzVeukaRo
-	Z7ZwykzR3su65d7iMirfYAE/WXA0nBZhugo9RnoDVewMQJIZi6VCIvI6Bu+mqSbLuRL3TAjNIzozM
-	6LyKTSgeLkJZNTNBu6So+RFALoJ0Dh1prDbaMx9sFRUl6QV6T1RsmiQCNcD1pzRRmmXi6cblXoTEt
-	ETl4/jTR8AqX43bsTU1qAyKurVRZVdKdVkKx2JvbqA9M9+tQVspFjG0VHoLUC3OgNnDFflpF0iqUc
-	YYiNyjfFahwEc/cI8mfg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=alDvqUlUpFMk877UXuz+ECB8jMHja8Ki7saqxun0nIA=; b=YR8ps08xuj5M4S
+	pTo4g9wOuFrxg2mCqT/SGsYrS48XUAS7jW9IODHhj6gZRD1F790+tmK3sdBAVhotk45W0fU6bpzwT
+	BewcwYfnRhfwaDuES9MB5G0WAZioq/FHqAPXlQZuN5O3pWIl4ROvfMh8QXs5S9zaFVV02xqyHJDfO
+	3x7i3GLESyZgNUzlVqjOyaaFU8I87bhR3M4SiA1P73OZXpfLxiSGFaaOpHSkIUcZd83qUtupAiKAB
+	0fqBj4Kcq9AaQ+Hb9J3CosPolUjXZ5hpTjnMhYaEeCGUgRn259ciDPcqIFk73BDa2QHfYeYHyHNcK
+	fPma3gm3tPhlzpBBz3jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijK1D-0000rH-9y; Mon, 23 Dec 2019 09:28:51 +0000
+	id 1ijK1Q-00012m-F0; Mon, 23 Dec 2019 09:29:04 +0000
 Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijK0z-0000qB-FK
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 09:28:39 +0000
+ id 1ijK12-0000rF-HH
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 09:28:42 +0000
 Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id E6CCE65D4C28A1E9BEFB;
- Mon, 23 Dec 2019 17:28:23 +0800 (CST)
+ by Forcepoint Email with ESMTP id 27F3C245AD9346E61920;
+ Mon, 23 Dec 2019 17:28:39 +0800 (CST)
 Received: from linux-ibm.site (10.175.102.37) by
  DGGEMS406-HUB.china.huawei.com (10.3.19.206) with Microsoft SMTP Server id
- 14.3.439.0; Mon, 23 Dec 2019 17:28:17 +0800
+ 14.3.439.0; Mon, 23 Dec 2019 17:28:29 +0800
 From: Hanjun Guo <guohanjun@huawei.com>
 To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Sudeep Holla
  <sudeep.holla@arm.com>, "Rafael J. Wysocki" <rafael@kernel.org>, "Pankaj
  Bansal" <pankaj.bansal@nxp.com>, Erik Schmauss <erik.schmauss@intel.com>
-Subject: [RFC PATCH 1/2] ACPICA/IORT: Correct the comment for id_count
-Date: Mon, 23 Dec 2019 17:23:16 +0800
-Message-ID: <1577092997-9852-1-git-send-email-guohanjun@huawei.com>
+Subject: [RFC PATCH 2/2] ACPI/IORT: Workaround for IORT ID count "minus one"
+ issue
+Date: Mon, 23 Dec 2019 17:23:17 +0800
+Message-ID: <1577092997-9852-2-git-send-email-guohanjun@huawei.com>
 X-Mailer: git-send-email 1.7.12.4
+In-Reply-To: <1577092997-9852-1-git-send-email-guohanjun@huawei.com>
+References: <1577092997-9852-1-git-send-email-guohanjun@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.175.102.37]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_012837_671672_9EC449D5 
-X-CRM114-Status: GOOD (  10.44  )
+X-CRM114-CacheID: sfid-20191223_012840_756366_A892FB3A 
+X-CRM114-Status: GOOD (  16.88  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -70,31 +73,140 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In IORT spec
-(http://infocenter.arm.com/help/topic/com.arm.doc.den0049d/DEN0049D_IO_Remapping_Table.pdf),
-id_num means Number of IDs minus one, update the comment.
+The IORT spec [0] says Number of IDs = The number of IDs in the range minus
+one, it is confusing but it was written down in the first version of the
+IORT spec. But the IORT ID mapping function iort_id_map() did something
+wrong from the start, which bails out if:
 
+the request ID >= the input base + number of IDs
+
+This is wrong because it ignored the "minus one", and breaks some valid
+usecases such as ID mapping to contain single device mapping without
+single mapping flag set.
+
+Pankaj Bansal proposed a solution to fix the issue [1], which bails
+out if:
+
+the request ID > the input base + number of IDs
+
+This works as the spec defined, unfortunately some firmware didn't
+minus one for the number of IDs in the range, and the propoased
+solution will break those systems in this way:
+
+PCI hostbridge mapping entry 1:
+Input base:  0x1000
+ID Count:    0x100
+Output base: 0x1000
+Output reference: 0xC4  //ITS reference
+
+PCI hostbridge mapping entry 2:
+Input base:  0x1100
+ID Count:    0x100
+Output base: 0x2000
+Output reference: 0xD4  //ITS reference
+
+Two mapping entries which the second entry's Input base = the first
+entry's Input base + ID count, so for requester ID 0x1100 will map
+to ITS 0xC4 not 0xD4 if we update '>=' to '>'.
+
+So introduce a workaround to match the IORT's OEM information for
+the broken firmware, also update the logic of the ID mapping for
+firmwares report the number of IDs as the IORT spec defined, to
+make the code compatible for both kinds of system.
+
+I checked the ACPI tables in the tianocore/edk2-platforms [2], only
+HiSilicon HIP07/08 did wrong, so just add HIP07/08 to the workaround
+info table, if we break other platforms, we can add that later.
+
+[0]: http://infocenter.arm.com/help/topic/com.arm.doc.den0049d/DEN0049D_IO_Remapping_Table.pdf
+[1]: https://patchwork.kernel.org/patch/11292823/
+[2]: https://github.com/tianocore/edk2-platforms
+
+Cc: Pankaj Bansal <pankaj.bansal@nxp.com>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
 ---
+ drivers/acpi/arm64/iort.c | 54 ++++++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 51 insertions(+), 3 deletions(-)
 
-This patch just for comments, needs to be upstream in ACPICA first.
-
- include/acpi/actbl2.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/include/acpi/actbl2.h b/include/acpi/actbl2.h
-index e45ced2..382642f 100644
---- a/include/acpi/actbl2.h
-+++ b/include/acpi/actbl2.h
-@@ -104,7 +104,7 @@ enum acpi_iort_node_type {
+diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+index 33f7198..112b1b0 100644
+--- a/drivers/acpi/arm64/iort.c
++++ b/drivers/acpi/arm64/iort.c
+@@ -298,6 +298,41 @@ static acpi_status iort_match_node_callback(struct acpi_iort_node *node,
+ 	return status;
+ }
  
- struct acpi_iort_id_mapping {
- 	u32 input_base;		/* Lowest value in input range */
--	u32 id_count;		/* Number of IDs */
-+	u32 id_count;		/* Number of IDs in the range minus one */
- 	u32 output_base;	/* Lowest value in output range */
- 	u32 output_reference;	/* A reference to the output node */
- 	u32 flags;
++struct iort_workaround_oem_info {
++	char oem_id[ACPI_OEM_ID_SIZE + 1];
++	char oem_table_id[ACPI_OEM_TABLE_ID_SIZE + 1];
++	u32 oem_revision;
++};
++
++static bool apply_id_count_workaround;
++
++static struct iort_workaround_oem_info wa_info[] __initdata = {
++	{
++		.oem_id		= "HISI  ",
++		.oem_table_id	= "HIP07   ",
++		.oem_revision	= 0,
++	}, {
++		.oem_id		= "HISI  ",
++		.oem_table_id	= "HIP08   ",
++		.oem_revision	= 0,
++	}
++};
++
++static void __init
++iort_check_id_count_workaround(struct acpi_table_header *tbl)
++{
++	int i;
++
++	for (i = 0; i < ARRAY_SIZE(wa_info); i++) {
++		if (!memcmp(wa_info[i].oem_id, tbl->oem_id, ACPI_OEM_ID_SIZE) &&
++		    !memcmp(wa_info[i].oem_table_id, tbl->oem_table_id, ACPI_OEM_TABLE_ID_SIZE) &&
++		    wa_info[i].oem_revision == tbl->oem_revision) {
++			apply_id_count_workaround = true;
++			break;
++		}
++	}
++}
++
+ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+ 		       u32 *rid_out)
+ {
+@@ -314,9 +349,21 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+ 		return -ENXIO;
+ 	}
+ 
+-	if (rid_in < map->input_base ||
+-	    (rid_in >= map->input_base + map->id_count))
+-		return -ENXIO;
++	/*
++	 * IORT spec says Number of IDs = The number of IDs in the range minus
++	 * one, but the IORT code ingored the "minus one", and some firmware
++	 * did that too, so apply a workaround here to keep compatible with
++	 * both new and old versions of the firmware.
++	 */
++	if (apply_id_count_workaround) {
++		if (rid_in < map->input_base ||
++			(rid_in >= map->input_base + map->id_count))
++			return -ENXIO;
++	} else {
++		if (rid_in < map->input_base ||
++			(rid_in > map->input_base + map->id_count))
++			return -ENXIO;
++	}
+ 
+ 	*rid_out = map->output_base + (rid_in - map->input_base);
+ 	return 0;
+@@ -1631,5 +1678,6 @@ void __init acpi_iort_init(void)
+ 		return;
+ 	}
+ 
++	iort_check_id_count_workaround(iort_table);
+ 	iort_init_platform_devices();
+ }
 -- 
 1.7.12.4
 
