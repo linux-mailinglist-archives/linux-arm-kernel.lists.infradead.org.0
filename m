@@ -2,85 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C93BE129A43
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 20:02:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1836129A57
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 20:19:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ZEUorF5hZn3WpwcWCbaSh7rCGg5pNr4uDpg1bdHXGl0=; b=VjRbY71NCqXfZ1noGSyH5GFjXx
-	Tb0l+aKy5xvpZzD31o/54+1CcFFptirlLpLBw3H9rYE6NVn+aQo6CGYA99JZhz9RaHB2AGb/IhdT0
-	HNa82aPpyUAQdJvxjOpR3jsd8uR/Kixen/+KT6EBE9VA1gJEhPV9K7aPDBjtwwNjc6/5vS45VtDIz
-	kCFxx/ifjFbZdTAvdxQBxXyxO+w9leqv71hCyXJxuMoU7vNYLMp94K/gNb/BlrOmKdoAFH+oD9VtV
-	no5wvQWTEaORmId0yvQgT/5FjOrgmyv843KtuLkRTpxWh3Cvaev/rGaFmcYeyQMXrhqVkMYZEhT/C
-	5JHD8zng==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=W46YBMeeNs3T1ljq+DHinE6/N/JZYgJiu5yq7jATF6Y=; b=FAy
+	2msZGG7l/783FijYtoG7lzciUUih6fMhCw/AJ0Oh0GiHa8bkmYXm5zoH4CXI2L2Mx3Bp1wmsSumaB
+	zjNB7kmHVIL66K8PO9N3GPnvypsEcydcqlKd5ShtOxm3cMcoJ52hbR4UBcjZkqOtRrOzSe5wa0Pb7
+	xrpmOBCRE6sV/QshusC9+DxaY8dZqGdwvigIvt58QobG43v7xgd8AQOzaaumNq6KFzQT8LCunIGNV
+	xHsQOss7NFSPvnLBKScUKLIGGXxj5Bw5oVMBIqBo7nbHR3PScNOyORax2VvofGDwgfsQXQyD4Il/0
+	5KhArD/Jmd80ZOjWEtobHWay/EpzMuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijSy0-0005xs-26; Mon, 23 Dec 2019 19:02:08 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1ijTEt-0002lO-5R; Mon, 23 Dec 2019 19:19:35 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijSwp-0004q3-27; Mon, 23 Dec 2019 19:00:56 +0000
-Received: by mail-io1-xd41.google.com with SMTP id x1so17070488iop.7;
- Mon, 23 Dec 2019 11:00:54 -0800 (PST)
+ id 1ijTEk-0002kt-A1
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 19:19:27 +0000
+Received: by mail-pf1-x441.google.com with SMTP id x185so9621534pfc.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Dec 2019 11:19:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=5WjW3vD2cx3BUd8M8ubJSzV7k9hmJV/MjBgFD4V36+U=;
- b=SfdIJwjQd53LNcv5/C/cr6A9iEyMN7mtz3lYF9IKVOqEJF4K/GVWvOWQb1Kcd791wO
- 78vVQCVClSM/UdNaSwbCDwWR2jbpSt6wIcGgF6Fmr0HxzOX+mFetSE5kyXy1IHA0B2my
- DoJQiMO+vOPmtRaInuM2Fwt72TC1vzyknqOYRgvk/JLMKeP2yIX4+ZuP/VDK8u4fzpYj
- URmGVaJLjdvXbrgjsALnwGUzPTgVQ7B7JftpvLnvVhxko3Eh3aiesJmQE3pannLAC87a
- RehuChGYDJbbt7hUZrQ6xHXdrCoGMGIZWB6SbrjJ5yzrICvMwvOAcdqO+6iyhfQkVpyJ
- graQ==
+ h=from:to:cc:subject:date:message-id;
+ bh=4psQtWa90JQilxXsmGId8ARflofhAVS5Nu5SDmjn/4g=;
+ b=cdxjrTgxNE4436krgq5tzOVmG2nYo+ZXj9106NQMnj/n7qcx0yGRnpiPPSV0NMwTMz
+ 8QGY/kv3u/vbc7/dILKMb3h1h0l7xBmgZSNRucKj5D//JpIcyel9Ztjcv2I4o9LI8+PI
+ bPmw5aV9lS+Gh80O2TFL/0FxwoP/zJA57WaNbDC72FndUeiEuHQGo6FtHCOTyCm5vyyI
+ GDUjzD7nrEij04BTpH18qWhML9jhKQTqPRWx6h2yQ96TZQKINLJpfv6m53860V14vBjB
+ k9Xqmxcl4c8MdibdpKSUXCoa/GvwHKTbdT9eP78OgM7j2ZAUBIrvTkq6dtXHIcs7Ld2z
+ qW0w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=5WjW3vD2cx3BUd8M8ubJSzV7k9hmJV/MjBgFD4V36+U=;
- b=ktWTJJL8mArWd/j/kWTEF0vqrYwEBHAJiZeLetYPydIQJjC7E9SHO2Pk491nIcoCdD
- sx7C3/gKZU50fktpUc1sBUcsUuY19SCnv+d1YTK6t4Z00QAoYhDpmxcdgbG8g0xYDRU3
- rwoli2jp7w+uql7B+tpKT2Rfx1X2Ce6MgmvJ7aFJew9/atHsEQoKdK0iFH8KU1t4Uwhd
- 5u6mLfN6lfRhLG8AzLExmZ9lxAH3WdM02PRY4FfKO2rIK7Jw0JYEi0l3SSpgAXh1HDrY
- hKJhbqKFn1H5kYm48TJumtsjLU4mMOpa1nnFUwCYCmdG8kTgmxxVyaa6GVvFS+Zj8QhD
- 68Yg==
-X-Gm-Message-State: APjAAAWGhNF1Y1Rp01VqXeRGBo352L2CyHCicpUdY6xSp1cpa+4Kf3lK
- 73CNEs8Fat8l2ozW+n+pstmvISqB4DqwP0a7TMQ=
-X-Google-Smtp-Source: APXvYqwaFZg7aCu6nzs0ZutPtYsj9R32aQwWIh0wX+JYOxpu64SuDTLXdlqTyVyvXRJJzV59D2yYDwSiSzYDcnKN32Y=
-X-Received: by 2002:a6b:b941:: with SMTP id j62mr22074614iof.168.1577127653723; 
- Mon, 23 Dec 2019 11:00:53 -0800 (PST)
-MIME-Version: 1.0
-References: <20191223185918.9877-1-tiny.windzz@gmail.com>
- <20191223185918.9877-2-tiny.windzz@gmail.com>
-In-Reply-To: <20191223185918.9877-2-tiny.windzz@gmail.com>
-From: Frank Lee <tiny.windzz@gmail.com>
-Date: Tue, 24 Dec 2019 03:00:42 +0800
-Message-ID: <CAEExFWu771PdyjqHa3vF5W46ch_YecE6Dvv8iF42r5799yuF7A@mail.gmail.com>
-Subject: Re: [PATCH] virtio-mmio: convert to devm_platform_ioremap_resource
-To: m.szyprowski@samsung.com, joro@8bytes.org, Kukjin Kim <kgene@kernel.org>, 
- Krzysztof Kozlowski <krzk@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, agross@kernel.org, 
- bjorn.andersson@linaro.org, Rob Clark <robdclark@gmail.com>, 
- =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>, mst@redhat.com, 
- jasowang@redhat.com, iommu@lists.linux-foundation.org, 
- Linux ARM <linux-arm-kernel@lists.infradead.org>, 
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>, 
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org, 
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>, 
- virtualization@lists.linux-foundation.org
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=4psQtWa90JQilxXsmGId8ARflofhAVS5Nu5SDmjn/4g=;
+ b=LR9b6kLI8BBEXoEb6CRe+06/DWuu4cpOIeGC6A73aImLYoxa5ptLuUqwwP5m0r957M
+ PTlSbgP8ETlJ2NoQg2yKLx93vN1z+rpvDONxALKmroFXdR8CKNlxtuODr1MYl4x7GfUb
+ 2zJkzudMZej6vW3iPe/8xZNp7Xm+jnbgXCp0Uyf7YkFNxAPjV/KeDwjIIlePyV9o0A3Y
+ E1SeEMEhEkH04Db7a9FHNvPwgCvp21oFWQAuEPceDOjO6Fj6xe72H1Y+5WpRukGI/RH8
+ bmV9Nf7rBfxUKfwrIhPGH4Re8fNICkUcot14z11uTQM9UoddMYk1A01pvNU2K9wbXnw9
+ QyXg==
+X-Gm-Message-State: APjAAAXr+Is7uSvejLenT/B1RZW8A1icTVjyBEfHGx7fJ1xCk3v9d6PX
+ QkT00kZacWrCz/GAk9QXzbo=
+X-Google-Smtp-Source: APXvYqxJoI9edkamQRQwobrhpyZtT7J3qbiDFkybKTc/HflCC2LJMWXBcj1bU3zoVC3UyW+JX9lxKw==
+X-Received: by 2002:a63:7b44:: with SMTP id k4mr32966608pgn.140.1577128765493; 
+ Mon, 23 Dec 2019 11:19:25 -0800 (PST)
+Received: from localhost ([2001:19f0:6001:12c8:5400:2ff:fe72:6403])
+ by smtp.gmail.com with ESMTPSA id h7sm27175292pfq.36.2019.12.23.11.19.24
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 23 Dec 2019 11:19:24 -0800 (PST)
+From: Yangtao Li <tiny.windzz@gmail.com>
+To: cw00.choi@samsung.com, myungjoo.ham@samsung.com, kyungmin.park@samsung.com,
+ kgene@kernel.org, krzk@kernel.org
+Subject: [PATCH] PM / devfreq: exynos-bus: Add error log when get event fails
+Date: Mon, 23 Dec 2019 19:19:23 +0000
+Message-Id: <20191223191923.10450-1-tiny.windzz@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_110055_163369_2534920C 
-X-CRM114-Status: UNSURE (   3.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191223_111926_431079_DA271D81 
+X-CRM114-Status: GOOD (  12.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,14 +94,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Yangtao Li <tiny.windzz@gmail.com>, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Please ignore this patch.
+Adding an error log makes it easier to trace the function's error path.
+Because the error code may be rewritten on return, print error code here.
 
-Thx!
+Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+---
+ drivers/devfreq/exynos-bus.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
+index 948e9340f91c..634d63fd00ea 100644
+--- a/drivers/devfreq/exynos-bus.c
++++ b/drivers/devfreq/exynos-bus.c
+@@ -126,6 +126,8 @@ static int exynos_bus_get_dev_status(struct device *dev,
+ 
+ 	ret = exynos_bus_get_event(bus, &edata);
+ 	if (ret < 0) {
++		dev_err(dev, "failed to get event from devfreq-event devices %d\n",
++			ret);
+ 		stat->total_time = stat->busy_time = 0;
+ 		goto err;
+ 	}
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
