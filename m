@@ -2,59 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F5291294E9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 12:16:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC8031294FC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 12:26:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p0cPnEST4HbWZy3mYKFVyWW/zG8w/a6ORlB03UzRNvU=; b=baQrJ60AdSYkyb
-	NpfaOg8Tc2d6MQ5Xw3dKtP5p13zGz5vNK56lLggQSbZYO3QP2+mto+DA5ylvhAjMzveRnkB087x+q
-	gPL4eGPUfTO138Xart9YvCOuAC+MWWBBijFb4OQL4BghbFgrEtZVRDpUuOwr+eu+FBv9B/0JXL5iq
-	uQpWJY006JNx5yPWMg925BfNA/tBTTF2sJcLNfjzWkUVAYHgwHhYu3CrLMe64mc+Sslzefo+CACIO
-	oSapck5bTJiwXpJ73MBDI5U50Vw32CWE7BY0Ry8NUBYMO5dnpmMlHYmKx0F0/zR1y5smdqEjdly/v
-	81KKk6W/i8Yx+Fll7GLg==;
+	List-Owner; bh=XsrwerCfVVhtTy0ai4yldeuSVV0vVRM1/LS1A5H+lyM=; b=YuX2f80QLgMvEh
+	xf9MDFi61iLIJ+im8N7GVHc0Hqx+EA1YcrAwkfDxmPWSz6knjpSfRr5ISTpsH1I7rtZwtgpuFaalq
+	t/f4gk+3k5qIalIEb8GpDPE9iyveJIDxg90j/OwLxoO8sYf0WezBf3vVJVCDwosfMcyjpqnJeQk4K
+	uY3dM7rWOhLNIVXhPcww4x1o/eVGnWYloOpV9lgGqo13JpsHw9GjzDErufAjwgJEwMgIBPr9Hqong
+	TjUiNu80OhP7j+UQS+JB7wbbwsfVP4BlPvVmSd8IFf+6t+AjTWs/GBXK6CboadB4+fiGjkE0okOlR
+	CaNNy4Azw2YevoSPTHpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijLhi-0001UT-If; Mon, 23 Dec 2019 11:16:50 +0000
+	id 1ijLrG-0004rq-09; Mon, 23 Dec 2019 11:26:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijLha-0001U2-Bk
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 11:16:43 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
+ id 1ijLr1-0004rH-O1
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 11:26:29 +0000
+Received: from localhost (unknown [223.226.34.186])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D6736206D3;
- Mon, 23 Dec 2019 11:16:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 83040207FF;
+ Mon, 23 Dec 2019 11:26:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577099801;
- bh=xGLGE31Xwh18pncBblQVgK8mlKFPGu9zTopz+g6QchE=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=wGGbAnN85TdnRe8X5bBQUW1NcJrt9ju9qrIRIrrSR99dAyaSppay1+iMrH3ciW2Bz
- vA/ihWAMcV7tMU8XZujCgsRDibtJNxvgf4zCK/Cr3toa1eFkRiADZZt+bbSZQH8sWj
- uDVfZylf5vJ9p+13u06it86FdW+BzlycytGe3R4Y=
-Date: Mon, 23 Dec 2019 11:16:36 +0000
-From: Jonathan Cameron <jic23@kernel.org>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH 04/10] rtc: at91rm9200: use of_platform_populate as
- return value
-Message-ID: <20191223111636.4698123b@archlinux>
-In-Reply-To: <20191219102321.GR695889@piout.net>
-References: <1576686157-11939-1-git-send-email-eugen.hristev@microchip.com>
- <1576686157-11939-5-git-send-email-eugen.hristev@microchip.com>
- <20191218164348.GN695889@piout.net>
- <04264cb0-61a9-aba3-82ad-e7d12fd8441e@microchip.com>
- <20191218165831.GO695889@piout.net>
- <91cc67e1-7e14-f7b9-da77-b16d9e158f20@microchip.com>
- <20191219102321.GR695889@piout.net>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ s=default; t=1577100387;
+ bh=U674jlYACjQhhGCy4e3+CzEaPgiSjsEmvjKCwhbFzqw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=eroF/x42FAFqJKFuiVMDn5gYmfp+YgrmPRGgnjhd4c9dKvwJB7A1iMuS5bamcLlIk
+ HL+DKo0W06Yey+iPDZ+l97Ca4a9P+7vi679IhZ4hpHK7VfFnZH0qIxJFFHZ0ydILBj
+ 9puTCrdym62yreuoQBN3bvWGm7HublXnyBDANolg=
+Date: Mon, 23 Dec 2019 16:56:23 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Re: [PATCH v7 09/12] dmaengine: ti: New driver for K3 UDMA
+Message-ID: <20191223112623.GF2536@vkoul-mobl>
+References: <20191209094332.4047-1-peter.ujfalusi@ti.com>
+ <20191209094332.4047-10-peter.ujfalusi@ti.com>
+ <20191223073425.GV2536@vkoul-mobl>
+ <ea473fed-276f-6b71-070b-02ab1f51ed89@ti.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <ea473fed-276f-6b71-070b-02ab1f51ed89@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_031642_440581_CB7D50E8 
-X-CRM114-Status: GOOD (  25.93  )
+X-CRM114-CacheID: sfid-20191223_032627_825111_43687DC7 
+X-CRM114-Status: GOOD (  14.19  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,89 +78,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org, a.zummo@towertech.it,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org,
- Ludovic.Desroches@microchip.com, robh+dt@kernel.org,
- Eugen.Hristev@microchip.com, linux-arm-kernel@lists.infradead.org
+Cc: nm@ti.com, devicetree@vger.kernel.org, grygorii.strashko@ti.com,
+ vigneshr@ti.com, lokeshvutla@ti.com, j-keerthy@ti.com,
+ linux-kernel@vger.kernel.org, t-kristo@ti.com, tony@atomide.com,
+ robh+dt@kernel.org, ssantosh@kernel.org, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 19 Dec 2019 11:23:21 +0100
-Alexandre Belloni <alexandre.belloni@bootlin.com> wrote:
+On 23-12-19, 10:59, Peter Ujfalusi wrote:
 
-> On 19/12/2019 09:15:02+0000, Eugen.Hristev@microchip.com wrote:
+> >> +static void udma_reset_counters(struct udma_chan *uc)
+> >> +{
+> >> +	u32 val;
+> >> +
+> >> +	if (uc->tchan) {
+> >> +		val = udma_tchanrt_read(uc->tchan, UDMA_TCHAN_RT_BCNT_REG);
+> >> +		udma_tchanrt_write(uc->tchan, UDMA_TCHAN_RT_BCNT_REG, val);
 > > 
+> > so you read back from UDMA_TCHAN_RT_BCNT_REG and write same value to
+> > it??
+> 
+> Yes, that's correct. This is how we can reset it. The counter is
+> decremented with the value you have written to the register.
+
+aha, with so many read+write back I would have added a helper.. Not a
+big deal though can be updated later
+
+> >> +static struct udma_desc *udma_alloc_tr_desc(struct udma_chan *uc,
+> >> +					    size_t tr_size, int tr_count,
+> >> +					    enum dma_transfer_direction dir)
+> >> +{
+> >> +	struct udma_hwdesc *hwdesc;
+> >> +	struct cppi5_desc_hdr_t *tr_desc;
+> >> +	struct udma_desc *d;
+> >> +	u32 reload_count = 0;
+> >> +	u32 ring_id;
+> >> +
+> >> +	switch (tr_size) {
+> >> +	case 16:
+> >> +	case 32:
+> >> +	case 64:
+> >> +	case 128:
+> >> +		break;
+> >> +	default:
+> >> +		dev_err(uc->ud->dev, "Unsupported TR size of %zu\n", tr_size);
+> >> +		return NULL;
+> >> +	}
+> >> +
+> >> +	/* We have only one descriptor containing multiple TRs */
+> >> +	d = kzalloc(sizeof(*d) + sizeof(d->hwdesc[0]), GFP_ATOMIC);
 > > 
-> > On 18.12.2019 18:58, Alexandre Belloni wrote:  
-> > > On 18/12/2019 16:52:21+0000, Eugen.Hristev@microchip.com wrote:  
-> > >>
-> > >>
-> > >> On 18.12.2019 18:43, Alexandre Belloni wrote:
-> > >>  
-> > >>> Hi,
-> > >>>
-> > >>> On 18/12/2019 16:24:00+0000, Eugen.Hristev@microchip.com wrote:  
-> > >>>> From: Eugen Hristev <eugen.hristev@microchip.com>
-> > >>>>
-> > >>>> This allows the RTC node to have child nodes in DT.
-> > >>>> This allows subnodes to be probed.
-> > >>>>
-> > >>>> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
-> > >>>> ---
-> > >>>>    drivers/rtc/rtc-at91rm9200.c | 2 +-
-> > >>>>    1 file changed, 1 insertion(+), 1 deletion(-)
-> > >>>>
-> > >>>> diff --git a/drivers/rtc/rtc-at91rm9200.c b/drivers/rtc/rtc-at91rm9200.c
-> > >>>> index 3b833e0..f1b5b3d 100644
-> > >>>> --- a/drivers/rtc/rtc-at91rm9200.c
-> > >>>> +++ b/drivers/rtc/rtc-at91rm9200.c
-> > >>>> @@ -421,7 +421,7 @@ static int __init at91_rtc_probe(struct platform_device *pdev)
-> > >>>>         at91_rtc_write_ier(AT91_RTC_SECEV);
-> > >>>>
-> > >>>>         dev_info(&pdev->dev, "AT91 Real Time Clock driver.\n");
-> > >>>> -     return 0;
-> > >>>> +     return of_platform_populate(pdev->dev.of_node, NULL, NULL, &pdev->dev);
-> > >>>>  
-> > >>>
-> > >>> You can avoid the DT binding change and DT parsing by using
-> > >>> platform_add_device here. I don't think there is any point describing
-> > >>> the trigger as a child node (a watchdog functionality wouldn't be
-> > >>> described for example).
-> > >>>  
-> > >>
-> > >> Hi,
-> > >>
-> > >> It's needed because the ADC needs a link to the trigger device. This is
-> > >> a hardware link inside the SoC, so I thought the best way is to describe
-> > >> this hardware is in the Device Tree.
-> > >> Otherwise the ADC node is unaware of the RTC triggering possibility.
-> > >> If we just assign the RTC trigger device to the ADC through the sysfs,
-> > >> the ADC cannot distinguish between the RTC trigger and other various
-> > >> triggers which can be attached.
-> > >>  
-> > > 
-> > > I'm not sure this links is required but I will let Jonathan review. Even
-> > > if it is needed, you can still use the rtc node to describe that link.  
+> > this is invoked from prep_ so should use GFP_NOWAIT, we dont use
+> > GFP_ATOMIC :)
+> 
+> Ok. btw: EDMA and sDMA driver is using GFP_ATOMIC :o
+
+heh, we made sure to document this bit :)
+
+> >> +static int udma_configure_statictr(struct udma_chan *uc, struct udma_desc *d,
+> >> +				   enum dma_slave_buswidth dev_width,
+> >> +				   u16 elcnt)
+> >> +{
+> >> +	if (uc->ep_type != PSIL_EP_PDMA_XY)
+> >> +		return 0;
+> >> +
+> >> +	/* Bus width translates to the element size (ES) */
+> >> +	switch (dev_width) {
+> >> +	case DMA_SLAVE_BUSWIDTH_1_BYTE:
+> >> +		d->static_tr.elsize = 0;
+> >> +		break;
+> >> +	case DMA_SLAVE_BUSWIDTH_2_BYTES:
+> >> +		d->static_tr.elsize = 1;
+> >> +		break;
+> >> +	case DMA_SLAVE_BUSWIDTH_3_BYTES:
+> >> +		d->static_tr.elsize = 2;
+> >> +		break;
+> >> +	case DMA_SLAVE_BUSWIDTH_4_BYTES:
+> >> +		d->static_tr.elsize = 3;
+> >> +		break;
+> >> +	case DMA_SLAVE_BUSWIDTH_8_BYTES:
+> >> +		d->static_tr.elsize = 4;
 > > 
-> > Actually, the RTC node could potentially have two different ADC 
-> > triggers. There is another OUT1 field that can do a second trigger for 
-> > the ADC only for the last channel. Future development might add this 
-> > trigger, so, with that in mind, I think it's best to link the exact 
-> > trigger and not the RTC node.  
+> > seems like ffs(dev_width) to me?
 > 
-> Nothing prevents you from using an index with the phandle (and I would
-> add a type in that case then). Having subnodes in the DT is not really a
-> good idea. The IP is the RTC, it just happens to have some outputs.
-> See what has been done for the PMC.
-> 
-> 
+> Not really:
+> ffs(DMA_SLAVE_BUSWIDTH_1_BYTE) = 1
+> ffs(DMA_SLAVE_BUSWIDTH_2_BYTES) = 2
+> ffs(DMA_SLAVE_BUSWIDTH_3_BYTES) = 1
 
-If it can be done either way, let's avoid adding to the rtc dt binding.
+I missed this!
 
-Jonathan
+> ffs(DMA_SLAVE_BUSWIDTH_4_BYTES) = 3
+> ffs(DMA_SLAVE_BUSWIDTH_8_BYTES) = 4
 
+Otherwise you are ffs() - 1
+
+-- 
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
