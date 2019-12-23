@@ -2,86 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A8ED129237
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 08:26:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10B99129242
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 08:34:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8KvkEVGvUM1NATx3meL4FuwaiBN9p1pBUM2wfdu6Qs0=; b=iMvs/IvaQjhsflkGjoVG9xgya
-	NJCjOMuamjoOrlzuCNzOyeUZdYoVJlvxSdq0W0R6s5cRuFJPgZtcU5ANsoyDrKofFncSnL8eDqs2X
-	QdWq8sRYf5ASDwpcHZDLMtO8U6oDjIPK6gTsCUI9IJg1lNU6jokcZNEcm3IyUtI9O/7O3nEVRslyx
-	1UokF+1hEe686o1L1+z+knb8JkdksqQqb7sCSmuqjxFxA/6AW3eoe24qHzS5whxjjQB+h5634lpUS
-	XKpS++NWPZt4lnu4stPv5NodITxb6B3aQNaccf4ShUheVZOgECegSS3AyN+RIZ3tJOBXDV3ymcY7r
-	f4LlNAkkA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qf7xiZzOiTFdUxqj3itncerjosPRClq1X5xipSZiC/o=; b=gEzo9rT1ADmVAQ
+	FC1Z+THDufg850GdC2wvY7Ra+ThTQ5RFvXr7cKBNWRIRej9kRuR3fQHapNnQqbK2XWthsVx2U7Bwx
+	ryOjMZ0ykbLFebQdClb3mRlCwPZRk9ehSTx9rJJCPWOoa/7QMxPDFJi6BeaGIEy5abCJ22czPRkzd
+	elim19ycNkFk3H+v0NMhzje+hiSCF2ZS/WaOtBCILckdFs6KjLy8ibRDpXviVM+3uJQtL/kxAJwQn
+	pQAOMhBbCvmPpx3o96xrKH/7jt7f0xgHKLNcM/bUu8gLcSF2/2gk3chK7TEdXyR+k/eFf5YwB1yKQ
+	Y/iKzM26Ru9fHrbuyiMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijI6W-0005mU-8J; Mon, 23 Dec 2019 07:26:12 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1ijIEl-0007nU-Tc; Mon, 23 Dec 2019 07:34:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijI6L-0005ku-7c; Mon, 23 Dec 2019 07:26:02 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBN7PSNE092418;
- Mon, 23 Dec 2019 01:25:28 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1577085928;
- bh=TZCdQwanBajUmjnrjOmrqqKE92Iuel2n9DhlReItHps=;
- h=Subject:To:References:From:Date:In-Reply-To;
- b=hPz3RnaVl31ARYBIL0RBmD5SzKuqviJ1KkCDboXFBZxeOJ9IcZzvmsXZHdkQFxI6B
- Oz2OLdqF2IrpsXzqxe/wyQ6tZKGMEnhZuTUXG072+jQU9lzBfvdxi3+C27Z7O3J3z1
- A7WMeFB+ewaknC0/CBCcFJqM/AZiK2GJJxucI/+g=
-Received: from DFLE111.ent.ti.com (dfle111.ent.ti.com [10.64.6.32])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBN7PSuh040126
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 23 Dec 2019 01:25:28 -0600
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 23
- Dec 2019 01:25:27 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 23 Dec 2019 01:25:27 -0600
-Received: from [192.168.2.14] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBN7PL0n037979;
- Mon, 23 Dec 2019 01:25:21 -0600
-Subject: Re: [PATCH 9/9] memory: omap-gpmc: switch to platform_get_irq
-To: Yangtao Li <tiny.windzz@gmail.com>, <ssantosh@kernel.org>,
- <paul@crapouillou.net>, <matthias.bgg@gmail.com>, <tony@atomide.com>,
- <lukasz.luba@arm.com>, <kgene@kernel.org>, <krzk@kernel.org>,
- <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
- <allison@lohutok.net>, <tglx@linutronix.de>, <yong.wu@mediatek.com>,
- <jroedel@suse.de>, <evgreen@chromium.org>, <rfontana@redhat.com>,
- <digetx@gmail.com>, <pdeschrijver@nvidia.com>, <john@phrozen.org>,
- <alexios.zavras@intel.com>, <sboyd@kernel.org>,
- <kstewart@linuxfoundation.org>, <info@metux.net>,
- <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-mediatek@lists.infradead.org>, <linux-omap@vger.kernel.org>,
- <linux-pm@vger.kernel.org>, <linux-samsung-soc@vger.kernel.org>,
- <linux-tegra@vger.kernel.org>
-References: <20191222185034.4665-1-tiny.windzz@gmail.com>
- <20191222185034.4665-9-tiny.windzz@gmail.com>
-From: Roger Quadros <rogerq@ti.com>
-Message-ID: <7dc78b4c-d1a7-a990-669c-8d3ddbacee0d@ti.com>
-Date: Mon, 23 Dec 2019 09:25:20 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.1
+ id 1ijIEc-0007mQ-AB
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 07:34:35 +0000
+Received: from localhost (unknown [223.226.34.186])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8C1E1206D3;
+ Mon, 23 Dec 2019 07:34:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577086471;
+ bh=fc0vBGUMxGca4/eK9EQKsfeCIREgxwImKP2Or6ThPsM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=M9y1IaGl8hEx0poB3+dGztg99Npyw9AfOcUje4SZW6kixyrwu9V2yxEjs27FJxBHd
+ 5Cz7Kw1tA7Xa5TvvDwDF3EH5Bn3yhOJnI67l4gR2z/SZgvcUGy58rlLGde2Z9LIy3+
+ NIsbCK2HDVXK19x41WEi+fQM5hO0ZpIeoW/HMjfk=
+Date: Mon, 23 Dec 2019 13:04:25 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Subject: Re: [PATCH v7 09/12] dmaengine: ti: New driver for K3 UDMA
+Message-ID: <20191223073425.GV2536@vkoul-mobl>
+References: <20191209094332.4047-1-peter.ujfalusi@ti.com>
+ <20191209094332.4047-10-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
-In-Reply-To: <20191222185034.4665-9-tiny.windzz@gmail.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20191209094332.4047-10-peter.ujfalusi@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_232601_354905_AF0F72D1 
-X-CRM114-Status: GOOD (  16.31  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191222_233434_394687_203CA92F 
+X-CRM114-Status: GOOD (  14.10  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -103,55 +76,275 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: nm@ti.com, devicetree@vger.kernel.org, grygorii.strashko@ti.com,
+ vigneshr@ti.com, lokeshvutla@ti.com, j-keerthy@ti.com,
+ linux-kernel@vger.kernel.org, t-kristo@ti.com, tony@atomide.com,
+ robh+dt@kernel.org, ssantosh@kernel.org, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 09-12-19, 11:43, Peter Ujfalusi wrote:
 
-On 22/12/2019 20:50, Yangtao Li wrote:
-> platform_get_resource(pdev, IORESOURCE_IRQ) is not recommended for
-> requesting IRQ's resources, as they can be not ready yet. Using
-> platform_get_irq() instead is preferred for getting IRQ even if it
-> was not retrieved earlier.
-> 
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> +#include <linux/kernel.h>
+> +#include <linux/dmaengine.h>
+> +#include <linux/dma-mapping.h>
+> +#include <linux/dmapool.h>
+> +#include <linux/err.h>
+> +#include <linux/init.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/list.h>
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/slab.h>
+> +#include <linux/spinlock.h>
+> +#include <linux/of.h>
+> +#include <linux/of_dma.h>
+> +#include <linux/of_device.h>
+> +#include <linux/of_irq.h>
 
-Acked-by: Roger Quadros <rogerq@ti.com>
+to many of headers, do we need all!
 
-> ---
->   drivers/memory/omap-gpmc.c | 10 +++-------
->   1 file changed, 3 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/memory/omap-gpmc.c b/drivers/memory/omap-gpmc.c
-> index eff26c1b1394..6dd19d168f75 100644
-> --- a/drivers/memory/omap-gpmc.c
-> +++ b/drivers/memory/omap-gpmc.c
-> @@ -2366,13 +2366,9 @@ static int gpmc_probe(struct platform_device *pdev)
->   	if (IS_ERR(gpmc_base))
->   		return PTR_ERR(gpmc_base);
->   
-> -	res = platform_get_resource(pdev, IORESOURCE_IRQ, 0);
-> -	if (!res) {
-> -		dev_err(&pdev->dev, "Failed to get resource: irq\n");
-> -		return -ENOENT;
-> -	}
-> -
-> -	gpmc->irq = res->start;
-> +	gpmc->irq = platform_get_irq(pdev, 0);
-> +	if (gpmc->irq < 0)
-> +		return gpmc->irq;
->   
->   	gpmc_l3_clk = devm_clk_get(&pdev->dev, "fck");
->   	if (IS_ERR(gpmc_l3_clk)) {
-> 
+> +static char *udma_get_dir_text(enum dma_transfer_direction dir)
+> +{
+> +	switch (dir) {
+> +	case DMA_DEV_TO_MEM:
+> +		return "DEV_TO_MEM";
+> +	case DMA_MEM_TO_DEV:
+> +		return "MEM_TO_DEV";
+> +	case DMA_MEM_TO_MEM:
+> +		return "MEM_TO_MEM";
+> +	case DMA_DEV_TO_DEV:
+> +		return "DEV_TO_DEV";
+> +	default:
+> +		break;
+> +	}
+> +
+> +	return "invalid";
+> +}
 
+this seems generic which other ppl may need, can we move it to core.
+
+> +
+> +static void udma_reset_uchan(struct udma_chan *uc)
+> +{
+> +	uc->state = UDMA_CHAN_IS_IDLE;
+> +	uc->remote_thread_id = -1;
+> +	uc->dir = DMA_MEM_TO_MEM;
+> +	uc->pkt_mode = false;
+> +	uc->ep_type = PSIL_EP_NATIVE;
+> +	uc->enable_acc32 = 0;
+> +	uc->enable_burst = 0;
+> +	uc->channel_tpl = 0;
+> +	uc->psd_size = 0;
+> +	uc->metadata_size = 0;
+> +	uc->hdesc_size = 0;
+> +	uc->notdpkt = 0;
+
+rather than do setting zero, why note memset and then set the nonzero
+members only?
+
+> +static void udma_reset_counters(struct udma_chan *uc)
+> +{
+> +	u32 val;
+> +
+> +	if (uc->tchan) {
+> +		val = udma_tchanrt_read(uc->tchan, UDMA_TCHAN_RT_BCNT_REG);
+> +		udma_tchanrt_write(uc->tchan, UDMA_TCHAN_RT_BCNT_REG, val);
+
+so you read back from UDMA_TCHAN_RT_BCNT_REG and write same value to
+it??
+
+> +
+> +		val = udma_tchanrt_read(uc->tchan, UDMA_TCHAN_RT_SBCNT_REG);
+> +		udma_tchanrt_write(uc->tchan, UDMA_TCHAN_RT_SBCNT_REG, val);
+> +
+> +		val = udma_tchanrt_read(uc->tchan, UDMA_TCHAN_RT_PCNT_REG);
+> +		udma_tchanrt_write(uc->tchan, UDMA_TCHAN_RT_PCNT_REG, val);
+> +
+> +		val = udma_tchanrt_read(uc->tchan, UDMA_TCHAN_RT_PEER_BCNT_REG);
+> +		udma_tchanrt_write(uc->tchan, UDMA_TCHAN_RT_PEER_BCNT_REG, val);
+> +	}
+> +
+> +	if (uc->rchan) {
+> +		val = udma_rchanrt_read(uc->rchan, UDMA_RCHAN_RT_BCNT_REG);
+> +		udma_rchanrt_write(uc->rchan, UDMA_RCHAN_RT_BCNT_REG, val);
+> +
+> +		val = udma_rchanrt_read(uc->rchan, UDMA_RCHAN_RT_SBCNT_REG);
+> +		udma_rchanrt_write(uc->rchan, UDMA_RCHAN_RT_SBCNT_REG, val);
+> +
+> +		val = udma_rchanrt_read(uc->rchan, UDMA_RCHAN_RT_PCNT_REG);
+> +		udma_rchanrt_write(uc->rchan, UDMA_RCHAN_RT_PCNT_REG, val);
+> +
+> +		val = udma_rchanrt_read(uc->rchan, UDMA_RCHAN_RT_PEER_BCNT_REG);
+> +		udma_rchanrt_write(uc->rchan, UDMA_RCHAN_RT_PEER_BCNT_REG, val);
+
+True for all of these, what am I missing :)
+
+> +static int udma_start(struct udma_chan *uc)
+> +{
+> +	struct virt_dma_desc *vd = vchan_next_desc(&uc->vc);
+> +
+> +	if (!vd) {
+> +		uc->desc = NULL;
+> +		return -ENOENT;
+> +	}
+> +
+> +	list_del(&vd->node);
+> +
+> +	uc->desc = to_udma_desc(&vd->tx);
+> +
+> +	/* Channel is already running and does not need reconfiguration */
+> +	if (udma_is_chan_running(uc) && !udma_chan_needs_reconfiguration(uc)) {
+> +		udma_start_desc(uc);
+> +		goto out;
+
+How about the case where settings are different than the current one?
+
+> +static struct udma_desc *udma_alloc_tr_desc(struct udma_chan *uc,
+> +					    size_t tr_size, int tr_count,
+> +					    enum dma_transfer_direction dir)
+> +{
+> +	struct udma_hwdesc *hwdesc;
+> +	struct cppi5_desc_hdr_t *tr_desc;
+> +	struct udma_desc *d;
+> +	u32 reload_count = 0;
+> +	u32 ring_id;
+> +
+> +	switch (tr_size) {
+> +	case 16:
+> +	case 32:
+> +	case 64:
+> +	case 128:
+> +		break;
+> +	default:
+> +		dev_err(uc->ud->dev, "Unsupported TR size of %zu\n", tr_size);
+> +		return NULL;
+> +	}
+> +
+> +	/* We have only one descriptor containing multiple TRs */
+> +	d = kzalloc(sizeof(*d) + sizeof(d->hwdesc[0]), GFP_ATOMIC);
+
+this is invoked from prep_ so should use GFP_NOWAIT, we dont use
+GFP_ATOMIC :)
+
+> +static struct udma_desc *
+> +udma_prep_slave_sg_tr(struct udma_chan *uc, struct scatterlist *sgl,
+> +		      unsigned int sglen, enum dma_transfer_direction dir,
+> +		      unsigned long tx_flags, void *context)
+> +{
+> +	enum dma_slave_buswidth dev_width;
+> +	struct scatterlist *sgent;
+> +	struct udma_desc *d;
+> +	size_t tr_size;
+> +	struct cppi5_tr_type1_t *tr_req = NULL;
+> +	unsigned int i;
+> +	u32 burst;
+> +
+> +	if (dir == DMA_DEV_TO_MEM) {
+> +		dev_width = uc->cfg.src_addr_width;
+> +		burst = uc->cfg.src_maxburst;
+> +	} else if (dir == DMA_MEM_TO_DEV) {
+> +		dev_width = uc->cfg.dst_addr_width;
+> +		burst = uc->cfg.dst_maxburst;
+> +	} else {
+> +		dev_err(uc->ud->dev, "%s: bad direction?\n", __func__);
+> +		return NULL;
+> +	}
+> +
+> +	if (!burst)
+> +		burst = 1;
+> +
+> +	/* Now allocate and setup the descriptor. */
+> +	tr_size = sizeof(struct cppi5_tr_type1_t);
+> +	d = udma_alloc_tr_desc(uc, tr_size, sglen, dir);
+> +	if (!d)
+> +		return NULL;
+> +
+> +	d->sglen = sglen;
+> +
+> +	tr_req = (struct cppi5_tr_type1_t *)d->hwdesc[0].tr_req_base;
+
+cast away from void *?
+
+> +static int udma_configure_statictr(struct udma_chan *uc, struct udma_desc *d,
+> +				   enum dma_slave_buswidth dev_width,
+> +				   u16 elcnt)
+> +{
+> +	if (uc->ep_type != PSIL_EP_PDMA_XY)
+> +		return 0;
+> +
+> +	/* Bus width translates to the element size (ES) */
+> +	switch (dev_width) {
+> +	case DMA_SLAVE_BUSWIDTH_1_BYTE:
+> +		d->static_tr.elsize = 0;
+> +		break;
+> +	case DMA_SLAVE_BUSWIDTH_2_BYTES:
+> +		d->static_tr.elsize = 1;
+> +		break;
+> +	case DMA_SLAVE_BUSWIDTH_3_BYTES:
+> +		d->static_tr.elsize = 2;
+> +		break;
+> +	case DMA_SLAVE_BUSWIDTH_4_BYTES:
+> +		d->static_tr.elsize = 3;
+> +		break;
+> +	case DMA_SLAVE_BUSWIDTH_8_BYTES:
+> +		d->static_tr.elsize = 4;
+
+seems like ffs(dev_width) to me?
+
+> +static struct udma_desc *
+> +udma_prep_slave_sg_pkt(struct udma_chan *uc, struct scatterlist *sgl,
+> +		       unsigned int sglen, enum dma_transfer_direction dir,
+> +		       unsigned long tx_flags, void *context)
+> +{
+> +	struct scatterlist *sgent;
+> +	struct cppi5_host_desc_t *h_desc = NULL;
+> +	struct udma_desc *d;
+> +	u32 ring_id;
+> +	unsigned int i;
+> +
+> +	d = kzalloc(sizeof(*d) + sglen * sizeof(d->hwdesc[0]), GFP_ATOMIC);
+
+GFP_NOWAIT here and few other places
+
+> +static struct udma_desc *
+> +udma_prep_dma_cyclic_pkt(struct udma_chan *uc, dma_addr_t buf_addr,
+> +			 size_t buf_len, size_t period_len,
+> +			 enum dma_transfer_direction dir, unsigned long flags)
+> +{
+> +	struct udma_desc *d;
+> +	u32 ring_id;
+> +	int i;
+> +	int periods = buf_len / period_len;
+> +
+> +	if (periods > (K3_UDMA_DEFAULT_RING_SIZE - 1))
+> +		return NULL;
+> +
+> +	if (period_len > 0x3FFFFF)
+
+Magic?
+
+> +static enum dma_status udma_tx_status(struct dma_chan *chan,
+> +				      dma_cookie_t cookie,
+> +				      struct dma_tx_state *txstate)
+> +{
+> +	struct udma_chan *uc = to_udma_chan(chan);
+> +	enum dma_status ret;
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&uc->vc.lock, flags);
+> +
+> +	ret = dma_cookie_status(chan, cookie, txstate);
+> +
+> +	if (!udma_is_chan_running(uc))
+> +		ret = DMA_COMPLETE;
+
+Even for paused, not started channel? Not sure what will be return on those cases
 -- 
-cheers,
--roger
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
