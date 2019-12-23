@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CE3E12913B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 04:55:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7059A12913F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 04:57:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8edrCiGybFubMezpakSy4H6dF4cewulRVfIFReUeB0M=; b=pzzu0XGYkhnX0B
-	J5WD/R57LE+fXSJxigmTP8R8qfW8F/JIQse93k3wRpEJPlygVVvB3owbgAk8L50lOhYdOsztTxh8y
-	6QSOQhZiQel6yhYZ3VzvgHGYAFVNDs8aSNzIOSBe9IJeQ96FfDX7J/bJgqacJZzsCId118jUV3Oyy
-	NZPB2XW7/gonhl4zjcRcM+1PqqhkfGDQaBX0rFNC65/v2P6W6T2SLATRocXRXfgXrQv19IUSNllTP
-	lKNwlRBLeUJMOYhlVMeLUGdUdXNeWOTKT9vTtvY4nnZHra/qZwMmyq9SqmJ7wHVMOBXxmqlkoGWOG
-	nceMWyU0RO+Y6Z30hIFQ==;
+	List-Owner; bh=XEhgoc/QaUk3LVG7Eq1ErN240u4ldFgp1zStoE/LaAk=; b=F3RkdwkBqFDJkZ
+	Qfcjw+Q6270D8L/sd0QjK+NY3WfJdQjvknGjNS1DIUOYB2LD/ESIXc2PqeUeJnguPBansqGr8iMZ+
+	1ObpkvKcdjOTDWbaD3dEZHFehpXq5xCQBDj4MbsKLNX9kraoW5+kH3JStbK9y2kCkyD8XR0wT87JV
+	xcBVkwPdO6HMODIH35s4j/+UfQL84XOUgl0nDqbto1TQuRVtGhrWN5/9u1528qtO8fPN/LRt3FEP5
+	mgdIwaUQrsodaI7ywUSEToGwIT8IDUSbpPEscfUtQFAkgD7wOPPl3+/gu2oPYXDfa7Sog0StaQtkd
+	eBD1XSrisYgEycXG9wQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijEol-0005PY-I4; Mon, 23 Dec 2019 03:55:39 +0000
+	id 1ijEqc-0005sy-Bx; Mon, 23 Dec 2019 03:57:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijEoa-0005P1-IK
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 03:55:29 +0000
+ id 1ijEqS-0005sf-Ei
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 03:57:25 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 41E9320709;
- Mon, 23 Dec 2019 03:55:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 47A3E20709;
+ Mon, 23 Dec 2019 03:57:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577073328;
- bh=KCMQZhD1mVjLDJIA293/6aCmpbbUlV0yYWK8z7gdVk4=;
+ s=default; t=1577073444;
+ bh=HMWmu7fLzjD4zHWaJI1X0iL80kRp1P9VNuoGUhoQRKM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ln9P1t9FQ9aBOjULON7v2ti0QyMxmLICTm3RTlLByf3znwQG4JK7PKRPb9/5QiHTK
- zxtQy/06479Vd5qY+Z2LkJNV3bpWduX7VgUm8nwRsVW6ASQejsr6i6LIwBbe9WTXrV
- 0eEHwNM6/M2I7LwcG20lM6Mf5qatzvmRE3seT47k=
-Date: Mon, 23 Dec 2019 11:55:04 +0800
+ b=xJzoeeF1/dw1fgzu36QaQ97BE8OM0U2I1GejPfCl/ybUsDko7hz9wVs/TpOoKeqXB
+ zI8e03xUgf/NVbcZFVre+m7tAV5sDvB0/uxkYHkrxvky6uU+e5I9AztgISvrqW7AIh
+ 8krSe87z2BpOaWjH4TJVpWzP0qJ2pXGN0A1GxenQ=
+Date: Mon, 23 Dec 2019 11:57:01 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH] arm64: dts: imx8m: drop "fsl,aips-bus" and
- "fsl,imx8mq-aips-bus"
-Message-ID: <20191223035503.GJ11523@dragon>
-References: <1576120601-28698-1-git-send-email-peng.fan@nxp.com>
+To: Peng Ma <peng.ma@nxp.com>
+Subject: Re: [v5 2/3] arm64: dts: ls1028a: Update edma compatible to fit eDMA
+ driver
+Message-ID: <20191223035701.GK11523@dragon>
+References: <20191212033714.4090-1-peng.ma@nxp.com>
+ <20191212033714.4090-2-peng.ma@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1576120601-28698-1-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <20191212033714.4090-2-peng.ma@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_195528_626404_6076A91F 
-X-CRM114-Status: UNSURE (   7.99  )
+X-CRM114-CacheID: sfid-20191222_195724_511671_F27CFCCC 
+X-CRM114-Status: UNSURE (   8.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,31 +81,23 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
  "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
- Daniel Baluta <daniel.baluta@nxp.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
- "angus@akkea.ca" <angus@akkea.ca>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Abel Vesa <abel.vesa@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jun Li <jun.li@nxp.com>
+ Leo Li <leoyang.li@nxp.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ Robin Gong <yibin.gong@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 12, 2019 at 03:19:25AM +0000, Peng Fan wrote:
-> From: Peng Fan <peng.fan@nxp.com>
+On Thu, Dec 12, 2019 at 03:38:15AM +0000, Peng Ma wrote:
+> The eDMA of LS1028A soc has a little bit different from others, So we
+> should distinguish them in driver by compatible.
 > 
-> There is no binding doc for these compatible string
-> "fsl,imx8mq-aips-bus" and "fsl,aips-bus", "simple-bus" is enough
-> for aips usage, so drop the upper two.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> Signed-off-by: Peng Ma <peng.ma@nxp.com>
 
 Applied, thanks.
 
