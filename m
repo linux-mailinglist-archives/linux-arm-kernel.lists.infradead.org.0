@@ -2,53 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8548F1290AF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 02:35:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5FD11290B9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 02:41:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2eUg4J/kII5v+vfVnXmvO+NtR2SEp1JoUfoodKGOTu0=; b=MBKSnu5qfebATm
-	ZafxBcMRyX07eQsd89OTMKKs+0/EJf11+xFQgdgxFbHtncPwrZH4rrCAExXRQNKT9Va+xRZCXSUGH
-	31JgFcS1tf+3Qp5piagxEGt1VEQhRTJLb7p0x+vRtzzrcPpcH/SSXHAngmYJSAaZbIJVvfjrQaFSN
-	C5mq7bUoWBccx9tPIf0Fh7MZVuRBwwIrOMTTgwYCVbvrZrEAyMBovEVYvvzpEC+z9gZBtxh1AybyV
-	YkrYr7atTk6YcFVt2bpKxU0un/2wWO4/nQBaTL1f5Tz7sURjqf/tq6D4UArqUt68d82lDR/EVrZmw
-	9WIjgp9jvZYwXFoI1iCQ==;
+	List-Owner; bh=u/BswMVcrAuTBJx2HwLRETsckHi65F9R0xhWy3N6Eq4=; b=D4VbULpWrtDROq
+	XBZVflWIl3pHc8wpOoegLQ/2On8INAVPOVxCWqqC6I49gDP0P1TdWt4Ok98xH+BqSt5sCYJf8kxgl
+	dmzcEPmxgGFR8lj3cRZZFarCPztSs4mdDkJvELXaJOXz0x60DrYhnHrxXqY89wCedw0DYZihDPlOG
+	lAyvuFw26NWHbWWaArKMfA6CUyNhOlmbSESfdfVzjzefQduolvf7RJDzzoJ1Ex3ftJEvCHiwVUR0c
+	5rBa4tK0fHjXMKM3RQv2MKYhIG3nDmsVtwpaMU6D6GQrQdydyKW8lHBJU0DxOXr5QngImNMnM2klR
+	6G2ql2J6LUp9/fbn9+Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijCd6-0005Ho-PY; Mon, 23 Dec 2019 01:35:28 +0000
+	id 1ijCjC-0007GJ-KY; Mon, 23 Dec 2019 01:41:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijCcx-0005Ga-JX
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 01:35:20 +0000
+ id 1ijCir-00075K-6s
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 01:41:26 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 58163206B7;
- Mon, 23 Dec 2019 01:35:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2D14B2067C;
+ Mon, 23 Dec 2019 01:41:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577064916;
- bh=jQLYVwMMyYcEWqK6/IFzR9AduPaoKnyANcTsHakSj9A=;
+ s=default; t=1577065284;
+ bh=E/kka9OXm0qYxQhxNuqLXHMpmTHBqe4nWeazON9zZ/4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=pOfCSlmgZbNgN0s0MwtUZUTBnVJDpD7si/VSXf+mKY6hxK2+7U9JaqoqJbLUbhkJ0
- J4XHl1AMtvjKcSBxuc41z4RercNfc3q3Q3X6x1hokywtQFTTMzXw3SVFP120X4sS7u
- nQcHplv5uA5fEpq6tU4WKWRchoYZwSZFVSU8G8Vw=
-Date: Mon, 23 Dec 2019 09:34:52 +0800
+ b=jgfU/fk9gHUM8QCkQdO6cQdmQC2ijdDDJqG4xyhXJXMGylA6GqCpjXufw2uZFLZ13
+ 2LfXz7kK/cbcceOrh3Q2dv2SVXm0yOdgcf2cK47KLfS5LIzhQg65Reoo0b9N7KXz7G
+ N/2fcGyTZ0WOx5r4UKqAxx7Nn1HySFcNQznK70Q4=
+Date: Mon, 23 Dec 2019 09:41:02 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Robert Jones <rjones@gateworks.com>
-Subject: Re: [PATCH v2] ARM: dts: imx: Add GW5907 board support
-Message-ID: <20191223013451.GB11523@dragon>
-References: <20191205220825.22915-1-rjones@gateworks.com>
- <20191212195212.30433-1-rjones@gateworks.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH 1/2] arm64: dts: lx2160a: add MDIO descriptions
+Message-ID: <20191223014101.GC11523@dragon>
+References: <20191209120010.GG25745@shell.armlinux.org.uk>
+ <E1ieHiP-0004wT-2O@rmk-PC.armlinux.org.uk>
+ <20191211073330.GO15858@dragon>
+ <20191216110253.GE25745@shell.armlinux.org.uk>
+ <20191216113455.GF25745@shell.armlinux.org.uk>
+ <20191216123442.GG25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191212195212.30433-1-rjones@gateworks.com>
+In-Reply-To: <20191216123442.GG25745@shell.armlinux.org.uk>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_173519_667167_86217D16 
-X-CRM114-Status: GOOD (  10.04  )
+X-CRM114-CacheID: sfid-20191222_174125_346594_42FB76BB 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,33 +83,26 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, Tim Harvey <tharvey@gateworks.com>,
+ Jon Nettleton <jon@solid-run.com>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Rabeeh Khoury <rabeeh@solid-run.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 12, 2019 at 11:52:12AM -0800, Robert Jones wrote:
-> The Gateworks GW5907 is an IMX6 SoC based single board computer with:
->  - IMX6Q or IMX6DL
->  - 32bit DDR3 DRAM
->  - FEC GbE Phy
->  - bi-color front-panel LED
->  - 256MB NAND boot device
->  - Gateworks System Controller (hwmon, pushbutton controller, EEPROM)
->  - Digital IO expander (pca9555)
->  - Joystick 12bit adc (ads1015)
+On Mon, Dec 16, 2019 at 12:34:42PM +0000, Russell King - ARM Linux admin wrote:
+> Okay, I finally found it at:
 > 
-> Signed-off-by: Tim Harvey <tharvey@gateworks.com>
-> Signed-off-by: Robert Jones <rjones@gateworks.com>
+> https://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git/patch/?id=6e1b8fae892daa7ffb48570264b8e43b3f807e9a
+> 
+> Note that that was unnecessarily difficult - google was unable to find
+> it.  Ioana's patch should have been copied to linux-arm-kernel as per
+> MAINTAINERS, but wasn't.  Is copying the appropriate mailing lists for
+> a patch now optional?
 
-It doesn't apply to my imx/dt branch.  Please rebase and resend.  Also
-could you make a patch series to include this one and the other 3 adding
-GW5910, GW5912 and GW5913 support?
+Absolutely no.  I will remind people to copy appropriate mailing lists
+when sending patches.  Sorry.
 
 Shawn
 
