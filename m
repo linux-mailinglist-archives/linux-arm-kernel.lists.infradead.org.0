@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16F151294CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 12:07:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64EA11294B9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 12:06:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7dd239yBbLLXoUxxeZ4XHg/DaOg+kiuoy8S898IRH1o=; b=UiezgniNnvrdC7
-	ClIJ9eqkJPq4KMzwA2vEe2x1m28Nmgc/9AqXJFNMuwY6I0NivKnhzW3MQSyuDynuWzRuH+7hvhuVH
-	1idgAQ/GB2Ezy8xAkUILH+Ae5FHjhDcId8elN4R9aDA5Zj3LWFptWjFSsq5qTioLxxpV0k3Yf25/X
-	gARuLhB0Uf0HNXGhdegNcdDVHVVk6FKTaBCLkev6k8WCvS1yV35qcwidBgYcHMftj31I2kyvZSefa
-	+6dIjqLD1vwRECSGwan+1zeBSDG1b718ox+nRkf8e7oixjAghxfhhxUBw/rotHVIQsr1ffbcR9wUd
-	yuP0HixKFa4i0gJ6pL7g==;
+	List-Owner; bh=MWNMslIIOABqTfeWcU9twDhyf0ZHsPTULE/PshmX+i8=; b=Snwz7bK3d7wo0V
+	4NhTgRjZ7i815W+OMMZSpJlemUIHz/0CQBiyodJiCF51fmzdAK1zgzuW0izf1bjsZoUOFonC3UC9/
+	SQQUJgooVbx6CRXznygUBW131I/+zbfu7LHdf2OFbSZjhalJDxiEvwfzOg/k7xH+r9pb3LHGpv7VD
+	bhaRSxTNGy7+RDA0RRbcxu47tNq+My7kSh07HOgC25hg1IOLZghv0TaQUKg8qsDlA4/D+kjIKHXkB
+	r7Tv5N4dTk3a+aV3jib6Fmc6gra48URGF5wRS5aDNQ1lgSRu0j7bTSAvLMz+nOUxF3S0joApg7juq
+	5EXMHXvv1dUHJZlZPagQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijLYt-0003YT-5W; Mon, 23 Dec 2019 11:07:43 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1ijLXj-0002iA-IE; Mon, 23 Dec 2019 11:06:31 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijLWZ-00024i-Bt
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 11:05:21 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBNB5D1n110565;
- Mon, 23 Dec 2019 05:05:13 -0600
+ id 1ijLWT-0001bS-UP
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 11:05:15 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBNB58JQ085642;
+ Mon, 23 Dec 2019 05:05:08 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1577099113;
- bh=InxUgyvU8lymSAtilFp+vD1kDqNPZsdnOQIPWDDC2Kc=;
+ s=ti-com-17Q1; t=1577099108;
+ bh=yfoeRD47afhb+LjeVfQOdleb+v6AX3JXFvJ9Nn4f53s=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=TlhDqKNG0Rfe30Pc+Pl+QdNXGOZ4KB59QZ672eUZ/0cHduxZdL1LwYNpm/jOKL4k0
- iKHNfGggrBBhAa/62K/KjyKRuyMrITjdoI4Iy/dmO/nvCuv2VTv0eejD5htHtxjLbY
- fS9zzumP9UyQ1EroIpqQ1c6tZufCLJgta36o8/VY=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBNB5D1i106727
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 23 Dec 2019 05:05:13 -0600
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ b=aeG/KIw1uwJy2AKeOrDQ6+4KERloMCKDQCtpeYGM9DihnfDRYyAS58Rc2KxQm+9XK
+ wU6Ceq53+yx/+HWx6X1PtmX30AZIvxSurpFH3tNy4yoli7Z9uD/3JFs2GnEPcWUsQ+
+ WxOpbu6x4intBld+hnXEvZkvFBsS7TfFBWVfYf/c=
+Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBNB58Ku037203;
+ Mon, 23 Dec 2019 05:05:08 -0600
+Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 23
- Dec 2019 05:05:04 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 05:05:08 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 23 Dec 2019 05:05:04 -0600
+ Frontend Transport; Mon, 23 Dec 2019 05:05:08 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBNB4eMC025693;
- Mon, 23 Dec 2019 05:05:00 -0600
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBNB4eMD025693;
+ Mon, 23 Dec 2019 05:05:04 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <vkoul@kernel.org>, <robh+dt@kernel.org>, <nm@ti.com>,
  <ssantosh@kernel.org>
-Subject: [PATCH v8 05/18] dmaengine: Add support for reporting DMA cached data
- amount
-Date: Mon, 23 Dec 2019 13:04:45 +0200
-Message-ID: <20191223110458.30766-6-peter.ujfalusi@ti.com>
+Subject: [PATCH v8 06/18] dmaengine: Add helper function to convert direction
+ value to text
+Date: Mon, 23 Dec 2019 13:04:46 +0200
+Message-ID: <20191223110458.30766-7-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191223110458.30766-1-peter.ujfalusi@ti.com>
 References: <20191223110458.30766-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_030519_504988_A94E78D7 
-X-CRM114-Status: GOOD (  13.80  )
+X-CRM114-CacheID: sfid-20191223_030514_148397_02F06862 
+X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -101,65 +101,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A DMA hardware can have big cache or FIFO and the amount of data sitting in
-the DMA fabric can be an interest for the clients.
-
-For example in audio we want to know the delay in the data flow and in case
-the DMA have significantly large FIFO/cache, it can affect the latenc/delay
+dmaengine_get_direction_text() can be useful when the direction is printed
+out. The text is easier to comprehend than the number.
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Reviewed-by: Tero Kristo <t-kristo@ti.com>
-Tested-by: Keerthy <j-keerthy@ti.com>
-Reviewed-by: Grygorii Strashko <grygorii.strashko@ti.com>
 ---
- drivers/dma/dmaengine.h   | 8 ++++++++
- include/linux/dmaengine.h | 2 ++
- 2 files changed, 10 insertions(+)
+ include/linux/dmaengine.h | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
-diff --git a/drivers/dma/dmaengine.h b/drivers/dma/dmaengine.h
-index 501c0b063f85..b0b97475707a 100644
---- a/drivers/dma/dmaengine.h
-+++ b/drivers/dma/dmaengine.h
-@@ -77,6 +77,7 @@ static inline enum dma_status dma_cookie_status(struct dma_chan *chan,
- 		state->last = complete;
- 		state->used = used;
- 		state->residue = 0;
-+		state->in_flight_bytes = 0;
- 	}
- 	return dma_async_is_complete(cookie, complete, used);
- }
-@@ -87,6 +88,13 @@ static inline void dma_set_residue(struct dma_tx_state *state, u32 residue)
- 		state->residue = residue;
- }
- 
-+static inline void dma_set_in_flight_bytes(struct dma_tx_state *state,
-+					   u32 in_flight_bytes)
-+{
-+	if (state)
-+		state->in_flight_bytes = in_flight_bytes;
-+}
-+
- struct dmaengine_desc_callback {
- 	dma_async_tx_callback callback;
- 	dma_async_tx_callback_result callback_result;
 diff --git a/include/linux/dmaengine.h b/include/linux/dmaengine.h
-index 81ce9d2480c4..7f9a7150a632 100644
+index 7f9a7150a632..9852ba7399db 100644
 --- a/include/linux/dmaengine.h
 +++ b/include/linux/dmaengine.h
-@@ -686,11 +686,13 @@ static inline struct dma_async_tx_descriptor *txd_next(struct dma_async_tx_descr
-  * @residue: the remaining number of bytes left to transmit
-  *	on the selected transfer for states DMA_IN_PROGRESS and
-  *	DMA_PAUSED if this is implemented in the driver, else 0
-+ * @in_flight_bytes: amount of data in bytes cached by the DMA.
-  */
- struct dma_tx_state {
- 	dma_cookie_t last;
- 	dma_cookie_t used;
- 	u32 residue;
-+	u32 in_flight_bytes;
- };
+@@ -1537,4 +1537,23 @@ static inline struct dma_chan
  
- /**
+ 	return __dma_request_channel(mask, fn, fn_param, NULL);
+ }
++
++static inline char *
++dmaengine_get_direction_text(enum dma_transfer_direction dir)
++{
++	switch (dir) {
++	case DMA_DEV_TO_MEM:
++		return "DEV_TO_MEM";
++	case DMA_MEM_TO_DEV:
++		return "MEM_TO_DEV";
++	case DMA_MEM_TO_MEM:
++		return "MEM_TO_MEM";
++	case DMA_DEV_TO_DEV:
++		return "DEV_TO_DEV";
++	default:
++		break;
++	}
++
++	return "invalid";
++}
+ #endif /* DMAENGINE_H */
 -- 
 Peter
 
