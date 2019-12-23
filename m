@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B9DC1294DF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 12:11:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A95321294DC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 12:11:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vDwZ4mq7LixuA38d4Gre9ZAj/Y9ySGKEBBKPMvy0CCE=; b=YVNo391JZSwUPo
-	geNis2R1DpcZAuw6doaGf/5o2bwwW4mhN4s6Ij7CXYwIr0/0kFIFn9jjNXIKcawiKHP1ddrloawpe
-	Q8w6XRacnzThiSTgllHDoKQp0MjgRNTkqQBYARTHzA0+6vv45UJu7h//Yc6MhC423pP1ACemw0ACN
-	R4f8yBLKoKsgR8mIVZ3PJzvGT9AZpgp11EBDkXb7QRo7GzvJN8RIQ9eTvKpHnySpVML3SH7/nZ3SG
-	1MHeY5q4vUXE5RSeVw1KvUnMdLJp1c2mGTVzlA0td45bAREisaUr0Hgr2s2iJvqmZxuB/ZkjSt78v
-	hjPaOlAWRxfbOKN+2fzA==;
+	List-Owner; bh=ynPjLlxE/en6OzZQPByCEu7O/vgnMHo5pzYKr5OX1Vg=; b=Lbl959KN2UZ0PE
+	qmurzFDrKyxM9FNLjATd7TZxeb5l6IYsOOKIAEt2196x5hA2RbD1QnWsDr9m0hA6c0lYzBr84w+1j
+	K7LeRj9/wh24Na1eJY5iSBtRpXYywbT/IrXSvZAe4gqq9WmOVRqzXQRRaREYtrWvcdPnwmeYUziX8
+	Zjps/hs2a56EhLPha/pmjbptFfaT89VHvLLv6u5lpJUeTjkunaotJ9+XgZlmEpknO98UrZvNyYnOB
+	b/aj/t7Mzbe6HOr8q0fx/t39n2UUO0P7+reEhdiR8bmm/nZ61xcCoRC1koVLQ51tvEL2MsKgcEE1D
+	bEbaePhtsTQSW5uKALiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijLbP-0006tP-FN; Mon, 23 Dec 2019 11:10:19 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1ijLbb-0006vi-JG; Mon, 23 Dec 2019 11:10:31 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijLXA-0002Ub-3k
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 11:06:03 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBNB5pFZ032320;
- Mon, 23 Dec 2019 05:05:51 -0600
+ id 1ijLXE-0002Xs-Ms
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 11:06:05 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBNB5txe067332;
+ Mon, 23 Dec 2019 05:05:55 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1577099151;
- bh=rp/62BQYhqoboYRxDYwm8GGofs63IPLsPbjQvI9zhO4=;
+ s=ti-com-17Q1; t=1577099155;
+ bh=VgdWAAJ3Cz8tiJk/iLF7p/5t+YnecUVQdlQ8kNoKFXU=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=SEmFS4yU+Ye4liFn8IDs48Dmku+Fd2i06zwMpWmUJ0x2tL6nti6tHJbiozeT+sWuM
- Cy+VKPC6qySjnpnR39Zn0ko0TnyUpiw7BxYo8aVca+kXXan0aSq/p+UfCpV1EMiGSE
- vulJHo8jxf4D4IKfkKRtZIZPpCnSzmpQkQOETmm0=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBNB5p1M026258
+ b=UoxeAjlYwCQ2sLKXKo2e9e6TOQhzNiiMKWLsTvljz/X0oleqHX+A9Bl8IJUh1FQnJ
+ HBoP/HcHIvF5H/Zn5cGwoRVnF5aTyyomxVrlVGK7jUg4GjQFJK0Ky9eB7hbZ4ZCkQg
+ 92hWHY1bcsTDib4jaKxFU2nFJDUJbfLbatbKBzpU=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBNB5tJJ041498
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 23 Dec 2019 05:05:51 -0600
-Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 23 Dec 2019 05:05:55 -0600
+Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 23
- Dec 2019 05:05:51 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 05:05:55 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE107.ent.ti.com
+ (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 23 Dec 2019 05:05:51 -0600
+ Frontend Transport; Mon, 23 Dec 2019 05:05:55 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBNB4eMO025693;
- Mon, 23 Dec 2019 05:05:47 -0600
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBNB4eMP025693;
+ Mon, 23 Dec 2019 05:05:51 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <vkoul@kernel.org>, <robh+dt@kernel.org>, <nm@ti.com>,
  <ssantosh@kernel.org>
-Subject: [PATCH v8 17/18] dmaengine: ti: k3-udma-glue: Allow the driver to be
- built as module
-Date: Mon, 23 Dec 2019 13:04:57 +0200
-Message-ID: <20191223110458.30766-18-peter.ujfalusi@ti.com>
+Subject: [PATCH v8 18/18] soc: ti: k3-ringacc: Allow the driver to be built as
+ module
+Date: Mon, 23 Dec 2019 13:04:58 +0200
+Message-ID: <20191223110458.30766-19-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191223110458.30766-1-peter.ujfalusi@ti.com>
 References: <20191223110458.30766-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_030556_308854_D330AA51 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20191223_030600_954264_05A0878E 
+X-CRM114-Status: GOOD (  14.96  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -108,29 +108,29 @@ Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 Tested-by: Keerthy <j-keerthy@ti.com>
 Reviewed-by: Grygorii Strashko <grygorii.strashko@ti.com>
 ---
- drivers/dma/ti/Kconfig        | 2 +-
- drivers/dma/ti/k3-udma-glue.c | 4 +++-
- 2 files changed, 4 insertions(+), 2 deletions(-)
+ drivers/soc/ti/Kconfig      |  2 +-
+ drivers/soc/ti/k3-ringacc.c | 29 ++++++++++++++++++++++++++---
+ 2 files changed, 27 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/dma/ti/Kconfig b/drivers/dma/ti/Kconfig
-index beb000be7d1b..987339e6f517 100644
---- a/drivers/dma/ti/Kconfig
-+++ b/drivers/dma/ti/Kconfig
-@@ -48,7 +48,7 @@ config TI_K3_UDMA
- 	  DMA engine is used in AM65x and j721e.
+diff --git a/drivers/soc/ti/Kconfig b/drivers/soc/ti/Kconfig
+index 4486e055794c..bdce98f68a3e 100644
+--- a/drivers/soc/ti/Kconfig
++++ b/drivers/soc/ti/Kconfig
+@@ -81,7 +81,7 @@ config TI_SCI_PM_DOMAINS
+ 	  rootfs may be available.
  
- config TI_K3_UDMA_GLUE_LAYER
--	bool "Texas Instruments UDMA Glue layer for non DMAengine users"
-+	tristate "Texas Instruments UDMA Glue layer for non DMAengine users"
+ config TI_K3_RINGACC
+-	bool "K3 Ring accelerator Sub System"
++	tristate "K3 Ring accelerator Sub System"
  	depends on ARCH_K3 || COMPILE_TEST
- 	depends on TI_K3_UDMA
+ 	depends on TI_SCI_INTA_IRQCHIP
  	help
-diff --git a/drivers/dma/ti/k3-udma-glue.c b/drivers/dma/ti/k3-udma-glue.c
-index c1511298ece2..fe3f96f6e0a1 100644
---- a/drivers/dma/ti/k3-udma-glue.c
-+++ b/drivers/dma/ti/k3-udma-glue.c
-@@ -10,7 +10,7 @@
- #include <linux/delay.h>
+diff --git a/drivers/soc/ti/k3-ringacc.c b/drivers/soc/ti/k3-ringacc.c
+index 5fb2ee2ac978..fd9f35b7c9a6 100644
+--- a/drivers/soc/ti/k3-ringacc.c
++++ b/drivers/soc/ti/k3-ringacc.c
+@@ -7,7 +7,7 @@
+ 
  #include <linux/dma-mapping.h>
  #include <linux/io.h>
 -#include <linux/init.h>
@@ -138,12 +138,71 @@ index c1511298ece2..fe3f96f6e0a1 100644
  #include <linux/of.h>
  #include <linux/platform_device.h>
  #include <linux/soc/ti/k3-ringacc.h>
-@@ -1196,3 +1196,5 @@ int k3_udma_glue_rx_get_irq(struct k3_udma_glue_rx_channel *rx_chn,
- 	return flow->virq;
+@@ -264,6 +264,11 @@ struct k3_ring *k3_ringacc_request_ring(struct k3_ringacc *ringacc,
+ 
+ 	mutex_lock(&ringacc->req_lock);
+ 
++	if (!try_module_get(ringacc->dev->driver->owner)) {
++		mutex_unlock(&ringacc->req_lock);
++		return NULL;
++	}
++
+ 	if (id == K3_RINGACC_RING_ID_ANY) {
+ 		/* Request for any general purpose ring */
+ 		struct ti_sci_resource_desc *gp_rings =
+@@ -308,6 +313,7 @@ struct k3_ring *k3_ringacc_request_ring(struct k3_ringacc *ringacc,
+ 	return &ringacc->rings[id];
+ 
+ error:
++	module_put(ringacc->dev->driver->owner);
+ 	mutex_unlock(&ringacc->req_lock);
+ 	return NULL;
  }
- EXPORT_SYMBOL_GPL(k3_udma_glue_rx_get_irq);
+@@ -488,6 +494,8 @@ int k3_ringacc_ring_free(struct k3_ring *ring)
+ no_init:
+ 	clear_bit(ring->ring_id, ringacc->rings_inuse);
+ 
++	module_put(ringacc->dev->driver->owner);
++
+ out:
+ 	mutex_unlock(&ringacc->req_lock);
+ 	return 0;
+@@ -1140,18 +1148,33 @@ static int k3_ringacc_probe(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static int k3_ringacc_remove(struct platform_device *pdev)
++{
++	struct k3_ringacc *ringacc = dev_get_drvdata(&pdev->dev);
++
++	mutex_lock(&k3_ringacc_list_lock);
++	list_del(&ringacc->list);
++	mutex_unlock(&k3_ringacc_list_lock);
++	return 0;
++}
++
+ /* Match table for of_platform binding */
+ static const struct of_device_id k3_ringacc_of_match[] = {
+ 	{ .compatible = "ti,am654-navss-ringacc", },
+ 	{},
+ };
++MODULE_DEVICE_TABLE(of, k3_ringacc_of_match);
+ 
+ static struct platform_driver k3_ringacc_driver = {
+ 	.probe		= k3_ringacc_probe,
++	.remove		= k3_ringacc_remove,
+ 	.driver		= {
+ 		.name	= "k3-ringacc",
+ 		.of_match_table = k3_ringacc_of_match,
+-		.suppress_bind_attrs = true,
+ 	},
+ };
+-builtin_platform_driver(k3_ringacc_driver);
++module_platform_driver(k3_ringacc_driver);
 +
 +MODULE_LICENSE("GPL v2");
++MODULE_DESCRIPTION("TI Ringacc driver for K3 SOCs");
++MODULE_AUTHOR("Grygorii Strashko <grygorii.strashko@ti.com>");
 -- 
 Peter
 
