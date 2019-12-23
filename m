@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E37812912B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 04:38:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E47BD12912C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 04:40:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X6AG456ViPpdIhufnRpcQ4aATEgrve7FhA3SuT0w2lc=; b=MdQMFD/n214xmC
-	IVJNSH21vSNCi5cSinTFXSeNDzimyOUgUe/0TZB8IeLmhxcnejxQkImRTa009QpBWP+7fc/OgUe0N
-	Ujrsl/RGtOid+TY/bK67Apv+ycnNxeRJfcxvzmkB4De8mZaENwPWsIFiQeigiyVWI1Hb103VUsF0k
-	hwngUCv7HvWc8NxpBFU37wf073xsxGDYW8yv2aSgTFH8m6XYezx13j4upSG1q+qzsFQcUABS4rSgq
-	Bl5/vz9gEokdsNv1DYbA/1OJdw7IdWF8g5W7n6g9Ets6UZKqXZwNSMCIChOvIbmUsrrEBbNvC+48A
-	1hVIkLec7iJ+bG8n8x3g==;
+	List-Owner; bh=OD691JvnaT/Rq8JBb3FjeR2tFUdJcsMI8ZWLr3NyXRE=; b=TcRZedSEeXVBdu
+	0Nn9XZyYpKyq8lAfHfyw+slHsdBwoB+Rg3i5cIEdJsFrzpQKuELhYoYYrHRf8S7Vz+e+isrODjVUB
+	5nDk8iiZMk6MdBSZuCy3KUNGLUgI5UvpM+SeSh/pnN+Js7cU8Iq4oFbV0+6V3ERUAEjkLAKOAJLxu
+	Oo7gebWiCCZ10HZyi+bPCg/cGy3C20h9mBQtYzGoY5ZudsQmYuoYgkq3DGv6mjOEqc76GdOaJOIa6
+	LVttwsalg43wlsV5UTEssQ8n3LZBg5UZMRtOs9HdlE11Sdti1BO1INnDKnzZBbN2MINX9AEylneb1
+	2cluJRSKEdAlVE+RWBOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijEXv-0006sV-KK; Mon, 23 Dec 2019 03:38:15 +0000
+	id 1ijEZt-0007om-AY; Mon, 23 Dec 2019 03:40:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijEXk-0006s1-CS
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 03:38:05 +0000
+ id 1ijEZf-0007RF-BH
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 03:40:04 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7C9E3206D3;
- Mon, 23 Dec 2019 03:38:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 547CB206D3;
+ Mon, 23 Dec 2019 03:40:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577072283;
- bh=byu92t4rRZcTmj4uQmg4Cq+RCMhLO6AQbfs1oyQJ8QQ=;
+ s=default; t=1577072402;
+ bh=1+1asmXN2lmwgHub8l9qH1q3+Y5oVPh68xB8JmZg28M=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=FEiT2kK2KUKtp/RS4hR+N+9kPautjSI06XktyChIvRRO3R7zAirpcdCUx0T186lV9
- 74qXSNOv4IMvbAkDXflXyAlNhGiV+vzvtpaADHy3REGgEXtjVYEwTmvn7yK/9CfmNv
- 0BfKbRwpUajXGfaiOqGK0cw7gGOisv9qsKpTYSHs=
-Date: Mon, 23 Dec 2019 11:37:42 +0800
+ b=w+NULim+Ltl1GUAIzSucYkVoN+Epx18+M4zhV7oIHEVk++6D2dmlrJeZeDr1RhlRl
+ HCTv8h1/D5rLOfg8qD+g0JlayamSdk6L6SY/WtRn8fJl9nrQpvfNuPnmwYcmZJAYlO
+ bx/tcbcIBBB02nQsvS1Wq2ngOPz1OFQqO5q8FZxs=
+Date: Mon, 23 Dec 2019 11:39:42 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH v2 0/2] Add support for Solidrun CEX7 platforms
-Message-ID: <20191223033741.GF11523@dragon>
-References: <20191216124042.GH25745@shell.armlinux.org.uk>
+To: Sascha Hauer <s.hauer@pengutronix.de>
+Subject: Re: [PATCH] ARM: imx_v6_v7_defconfig: Enable NFS_V4_1 and NFS_V4_2
+ support
+Message-ID: <20191223033941.GG11523@dragon>
+References: <20191210112737.8298-1-s.hauer@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191216124042.GH25745@shell.armlinux.org.uk>
+In-Reply-To: <20191210112737.8298-1-s.hauer@pengutronix.de>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191222_193804_447393_0F4C9B4C 
-X-CRM114-Status: GOOD (  11.66  )
+X-CRM114-CacheID: sfid-20191222_194003_414457_0EFD36E4 
+X-CRM114-Status: UNSURE (   7.46  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,39 +78,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jon Nettleton <jon@solid-run.com>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Rabeeh Khoury <rabeeh@solid-run.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Pengutronix Kernel Team <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org, NXP Linux Team <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Dec 16, 2019 at 12:40:42PM +0000, Russell King - ARM Linux admin wrote:
-> Hi,
+On Tue, Dec 10, 2019 at 12:27:37PM +0100, Sascha Hauer wrote:
+> Enable NFS_V4_1 and NFS_V4_2 to support NFS servers providing that
+> protocol.
 > 
-> This series adds support for the Solidrun Clearfog CX and Honeycomb
-> platforms that various developers have access to.
-> 
-> v2: fix review comments.
-> 
->  arch/arm64/boot/dts/freescale/Makefile             |   2 +
->  .../arm64/boot/dts/freescale/fsl-lx2160a-cex7.dtsi | 127 +++++++++++++++++++++
->  .../boot/dts/freescale/fsl-lx2160a-clearfog-cx.dts |  15 +++
->  .../dts/freescale/fsl-lx2160a-clearfog-itx.dtsi    |  57 +++++++++
->  .../boot/dts/freescale/fsl-lx2160a-honeycomb.dts   |  15 +++
->  arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi     |  10 ++
->  6 files changed, 226 insertions(+)
->  create mode 100644 arch/arm64/boot/dts/freescale/fsl-lx2160a-cex7.dtsi
->  create mode 100644 arch/arm64/boot/dts/freescale/fsl-lx2160a-clearfog-cx.dts
->  create mode 100644 arch/arm64/boot/dts/freescale/fsl-lx2160a-clearfog-itx.dtsi
->  create mode 100644 arch/arm64/boot/dts/freescale/fsl-lx2160a-honeycomb.dts
+> Signed-off-by: Sascha Hauer <s.hauer@pengutronix.de>
 
-I applied both patches.  Please send a follow-up patch to document new
-board compatibles.
-
-Shawn
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
