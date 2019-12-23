@@ -2,65 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 411C61294E1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 12:11:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE2571294DB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 23 Dec 2019 12:11:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VohKJtg64UZUrpZ9wTF6srdJWyJ/hoyUGnNO3EWKI5Q=; b=jYozxHKFgnzigm
-	BrylevmRQccGLN5AvpAHTJlXn0ZPKXE/I2GSbqjtrYuhFPTNyWMelwC9PkwZxrUpv7IwUdQ4kNOXD
-	23ToP41qegGJ3tzknLplv2uBBmLBhC+DPoryDcnmHmqf6zNPlVUUef7BsSkbBPn4gJ0q0u5P4Cnsc
-	+T3aJvAv3r/zmzhterw7EiGRvwVbBOZryJe+lGTOcC25AX5lInL1WaYk23+oODjc38SH0tisLvY8R
-	ueqYov2yhXvZ9Hx/8yjV2gROp+Px12HL1ZG/WHSeOpnCfbbiH6Wj/+5Aqx0yUL84S+TW5tzHwF7za
-	nPpUAZpVpmgsrHSgEMAg==;
+	List-Owner; bh=EjxR/zgcZNYNxyQHWQmbdbXl0tGK1jcC0bKvITozlwg=; b=u3XWdSPfhmbx0H
+	9ID78zfHE4u5e2TyhKcMvc3Ab0u4ChTtRxTMHZ4k4EerRbJv2ix4zAQ526NX/AQdcv1jZirEHVLlu
+	EFw8ho+YC/WMxx3llMQTSboC/At7KmEU5TSeDycnkgWfO8iU6RNiK54ZxiuotvvMrvOhGRbZ+RUMS
+	RGxDISJVhYe6i/2FzE1986EA3RAFbg/Wiz9WkMS1LlJ+J7eaAebsIrErMePtgBbWtFSK8go+EQlQl
+	o8J4l8vKIb6V33R2RZmq4odMIKW2NmWgwNMkCIVbQVPQ33thLUVBSojc+HFesSaWZPxkW/klTX46t
+	LFpjhp2CWfvJXK3AOtGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijLbH-0005xb-1r; Mon, 23 Dec 2019 11:10:11 +0000
+	id 1ijLbL-0006WS-MO; Mon, 23 Dec 2019 11:10:15 +0000
 Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijLX0-0002Og-TO
- for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 11:06:00 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBNB5eGN032255;
- Mon, 23 Dec 2019 05:05:40 -0600
+ id 1ijLX8-0002TL-8m
+ for linux-arm-kernel@lists.infradead.org; Mon, 23 Dec 2019 11:06:02 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id xBNB5hDi032275;
+ Mon, 23 Dec 2019 05:05:43 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1577099140;
- bh=M1ivEh29hpV8EdEIdoVxe758e9/ZAjRIkjB2WDihgI0=;
+ s=ti-com-17Q1; t=1577099143;
+ bh=zhvQmTLM+XZ4UpY0FgtkZPM6ZBm+GuHxJy3X/1/zk2E=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=hYUVfMXssJk1iZU5wrCs5NLKOQ9vWueJuucBE+anjp+E9hthXch9UDkOGg+6OmbT5
- xTvIixaGdnlm6T6Eiic2t8zkm1IR7pn4oRIzFWof3/y0ExBTUxuRyefJo9cwdCyNY7
- zIjolHX0wCr5kfnrfQxj/kbkNnTCjFuNQJb++08E=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBNB5eTs037678;
- Mon, 23 Dec 2019 05:05:40 -0600
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ b=Bpz2aGitISC+LJkm9NUfgJtELurXbXP6LmLJydD7z/LK2+kgLWJYU4OyE1+hiUYmi
+ k5kzRjk127TZoxlQ3fA7HCqzKfDMNoNEK9L+r2XMOA52hHXowyMKGQDtSa0LUCNCer
+ /rys5b4xuVLGyZyEE+I87+yaF0k+zmj5o8yu5qdY=
+Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id xBNB5h8v026157
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 23 Dec 2019 05:05:43 -0600
+Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 23
- Dec 2019 05:05:39 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ Dec 2019 05:05:43 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE104.ent.ti.com
+ (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 23 Dec 2019 05:05:39 -0600
+ Frontend Transport; Mon, 23 Dec 2019 05:05:43 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBNB4eML025693;
- Mon, 23 Dec 2019 05:05:35 -0600
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id xBNB4eMM025693;
+ Mon, 23 Dec 2019 05:05:39 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <vkoul@kernel.org>, <robh+dt@kernel.org>, <nm@ti.com>,
  <ssantosh@kernel.org>
-Subject: [PATCH v8 14/18] of: irq: Export of_msi_get_domain
-Date: Mon, 23 Dec 2019 13:04:54 +0200
-Message-ID: <20191223110458.30766-15-peter.ujfalusi@ti.com>
+Subject: [PATCH v8 15/18] firmware: ti_sci: Export devm_ti_sci_get_of_resource
+ for modules
+Date: Mon, 23 Dec 2019 13:04:55 +0200
+Message-ID: <20191223110458.30766-16-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191223110458.30766-1-peter.ujfalusi@ti.com>
 References: <20191223110458.30766-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_030547_027334_5FDAF049 
-X-CRM114-Status: GOOD (  10.63  )
+X-CRM114-CacheID: sfid-20191223_030554_400907_5263EF8F 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -99,29 +102,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Matthias Brugger <matthias.bgg@gmail.com>
+Allow devm_ti_sci_get_of_resource() to be usable from modules.
 
-Export of_mis_get_domain to enable it for users from outside.
-
-Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-Acked-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- drivers/of/irq.c | 1 +
+ drivers/firmware/ti_sci.c | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/of/irq.c b/drivers/of/irq.c
-index a296eaf52a5b..73017506ef00 100644
---- a/drivers/of/irq.c
-+++ b/drivers/of/irq.c
-@@ -673,6 +673,7 @@ struct irq_domain *of_msi_get_domain(struct device *dev,
+diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
+index f13e4a96f3b7..3d8241cb6921 100644
+--- a/drivers/firmware/ti_sci.c
++++ b/drivers/firmware/ti_sci.c
+@@ -3332,6 +3332,7 @@ devm_ti_sci_get_of_resource(const struct ti_sci_handle *handle,
  
- 	return NULL;
+ 	return ERR_PTR(-EINVAL);
  }
-+EXPORT_SYMBOL_GPL(of_msi_get_domain);
++EXPORT_SYMBOL_GPL(devm_ti_sci_get_of_resource);
  
- /**
-  * of_msi_configure - Set the msi_domain field of a device
+ static int tisci_reboot_handler(struct notifier_block *nb, unsigned long mode,
+ 				void *cmd)
 -- 
 Peter
 
