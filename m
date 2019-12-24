@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B83C112A287
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 15:41:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55F3A12A288
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 15:42:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ha6IGzFwg+PQ+LnjmMTHl8BYnGAvJMso9ZPdnDaQ5Jw=; b=iCj07y0MhZevho
-	yJRBIL7G7CJXguj1alGaPtVElxiB04pamxsKbtNSPOdvf82oFyaDBGHUVS43aV0dY3g6YxN7lgdMw
-	t8A1VAr9kqTEjAEOgcy8mLhU6HNzhpou4Dsa5RuovzewB3y/fbaAdCUOMzD93q0uXyilUKCrYyzM8
-	Eynm6OsIuKwfnTaGq97t020Fk+6Eovm6dDXeH5CAZhUWqFGFvvMIr/qOdQIeVtjP+M7+zNxmhCFvG
-	I4jIp1UZGJAcsZIkuZnkbfFoigttNm9ecpuFU+HXkuQ0Xg2ltY/CjaV+n4YWfldPqycH+xZX++ksF
-	9bJznyXIDk94bKdvK5gw==;
+	List-Owner; bh=p6mMMeQg8uNVFWr3MgUupRClmF3XJUYIhv5Gqz39jHM=; b=TX/cA6P4HLXpl8
+	1jpfoM2lClmA7jpoiDSfWaymJO2da7ESdso4OykQl+R5hub0chBX9AEG/6cn6/HLOsbNuEe8FT8kv
+	Czo2hzHj6QtPrzuDyxcEfxyha+NfdasbKFjyRCHeMIdV54wzdgfX6SgX9dSTsr16fOv3xFyfkkoTp
+	6cM7iHpGVz8LAY9gTsXgb5y0XiY0lgPhVO49SxK32m3YY8YG64t3Wuqx7ruQEH3pl8hq51cdgcLUI
+	I6kkcK4+zanlVGvdco4Ewb4tqkOiUU7NKvilCbStd9Lj7ls6zVsQURMPhJNmfERSfyXTaB1W1uTs5
+	IdfetKnacRA7KTx+dPag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijlNb-0004ul-NL; Tue, 24 Dec 2019 14:41:47 +0000
+	id 1ijlNr-00057I-Kn; Tue, 24 Dec 2019 14:42:03 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijlLK-0001re-4i; Tue, 24 Dec 2019 14:39:27 +0000
+ id 1ijlLL-0001xQ-Ki; Tue, 24 Dec 2019 14:39:30 +0000
 X-Originating-IP: 91.224.148.103
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id AA3BFE000A;
- Tue, 24 Dec 2019 14:39:22 +0000 (UTC)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id 7EF70E000E;
+ Tue, 24 Dec 2019 14:39:24 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Sandy Huang <hjc@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
  <linux-rockchip@lists.infradead.org>
-Subject: [PATCH v2 07/11] drm/rockchip: lvds: Helpers should return decent
- values
-Date: Tue, 24 Dec 2019 15:38:56 +0100
-Message-Id: <20191224143900.23567-8-miquel.raynal@bootlin.com>
+Subject: [PATCH v2 08/11] drm/rockchip: lvds: Pack functions together
+Date: Tue, 24 Dec 2019 15:38:57 +0100
+Message-Id: <20191224143900.23567-9-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191224143900.23567-1-miquel.raynal@bootlin.com>
 References: <20191224143900.23567-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_063926_333540_2B77E584 
-X-CRM114-Status: GOOD (  13.66  )
+X-CRM114-CacheID: sfid-20191224_063928_001288_E337B199 
+X-CRM114-Status: GOOD (  12.24  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -78,76 +77,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Return errors instead of returning void from internal helpers. When
-these helpers are called, check the returned value and print an error
-message in this case.
+Reorganize a bit the functions order to clarify the driver. This
+change only moves functions around, there is no functional change.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- drivers/gpu/drm/rockchip/rockchip_lvds.c | 31 ++++++++++++++++++------
- 1 file changed, 23 insertions(+), 8 deletions(-)
+ drivers/gpu/drm/rockchip/rockchip_lvds.c | 90 ++++++++++++------------
+ 1 file changed, 45 insertions(+), 45 deletions(-)
 
 diff --git a/drivers/gpu/drm/rockchip/rockchip_lvds.c b/drivers/gpu/drm/rockchip/rockchip_lvds.c
-index 731aba25bec5..40fa49fe9fa5 100644
+index 40fa49fe9fa5..f2ece09e4e24 100644
 --- a/drivers/gpu/drm/rockchip/rockchip_lvds.c
 +++ b/drivers/gpu/drm/rockchip/rockchip_lvds.c
-@@ -214,8 +214,8 @@ struct drm_connector_helper_funcs rockchip_lvds_connector_helper_funcs = {
- 	.get_modes = rockchip_lvds_connector_get_modes,
- };
+@@ -97,6 +97,40 @@ static inline int rockchip_lvds_name_to_output(const char *s)
+ 	return -EINVAL;
+ }
  
--static void rk3288_lvds_grf_config(struct drm_encoder *encoder,
--				   struct drm_display_mode *mode)
-+static int rk3288_lvds_grf_config(struct drm_encoder *encoder,
-+				  struct drm_display_mode *mode)
++static const struct drm_connector_funcs rockchip_lvds_connector_funcs = {
++	.fill_modes = drm_helper_probe_single_connector_modes,
++	.destroy = drm_connector_cleanup,
++	.reset = drm_atomic_helper_connector_reset,
++	.atomic_duplicate_state = drm_atomic_helper_connector_duplicate_state,
++	.atomic_destroy_state = drm_atomic_helper_connector_destroy_state,
++};
++
++static int rockchip_lvds_connector_get_modes(struct drm_connector *connector)
++{
++	struct rockchip_lvds *lvds = connector_to_lvds(connector);
++	struct drm_panel *panel = lvds->panel;
++
++	return drm_panel_get_modes(panel);
++}
++
++static const
++struct drm_connector_helper_funcs rockchip_lvds_connector_helper_funcs = {
++	.get_modes = rockchip_lvds_connector_get_modes,
++};
++
++static int
++rockchip_lvds_encoder_atomic_check(struct drm_encoder *encoder,
++				   struct drm_crtc_state *crtc_state,
++				   struct drm_connector_state *conn_state)
++{
++	struct rockchip_crtc_state *s = to_rockchip_crtc_state(crtc_state);
++
++	s->output_mode = ROCKCHIP_OUT_MODE_P888;
++	s->output_type = DRM_MODE_CONNECTOR_LVDS;
++
++	return 0;
++}
++
+ static int rk3288_lvds_poweron(struct rockchip_lvds *lvds)
+ {
+ 	int ret;
+@@ -193,27 +227,6 @@ static void rk3288_lvds_poweroff(struct rockchip_lvds *lvds)
+ 	clk_disable(lvds->pclk);
+ }
+ 
+-static const struct drm_connector_funcs rockchip_lvds_connector_funcs = {
+-	.fill_modes = drm_helper_probe_single_connector_modes,
+-	.destroy = drm_connector_cleanup,
+-	.reset = drm_atomic_helper_connector_reset,
+-	.atomic_duplicate_state = drm_atomic_helper_connector_duplicate_state,
+-	.atomic_destroy_state = drm_atomic_helper_connector_destroy_state,
+-};
+-
+-static int rockchip_lvds_connector_get_modes(struct drm_connector *connector)
+-{
+-	struct rockchip_lvds *lvds = connector_to_lvds(connector);
+-	struct drm_panel *panel = lvds->panel;
+-
+-	return drm_panel_get_modes(panel);
+-}
+-
+-static const
+-struct drm_connector_helper_funcs rockchip_lvds_connector_helper_funcs = {
+-	.get_modes = rockchip_lvds_connector_get_modes,
+-};
+-
+ static int rk3288_lvds_grf_config(struct drm_encoder *encoder,
+ 				  struct drm_display_mode *mode)
+ {
+@@ -267,19 +280,6 @@ static int rk3288_lvds_set_vop_source(struct rockchip_lvds *lvds,
+ 	return 0;
+ }
+ 
+-static int
+-rockchip_lvds_encoder_atomic_check(struct drm_encoder *encoder,
+-				   struct drm_crtc_state *crtc_state,
+-				   struct drm_connector_state *conn_state)
+-{
+-	struct rockchip_crtc_state *s = to_rockchip_crtc_state(crtc_state);
+-
+-	s->output_mode = ROCKCHIP_OUT_MODE_P888;
+-	s->output_type = DRM_MODE_CONNECTOR_LVDS;
+-
+-	return 0;
+-}
+-
+ static void rk3288_lvds_encoder_enable(struct drm_encoder *encoder)
  {
  	struct rockchip_lvds *lvds = encoder_to_lvds(encoder);
- 	u8 pin_hsync = (mode->flags & DRM_MODE_FLAG_PHSYNC) ? 1 : 0;
-@@ -240,10 +240,10 @@ static void rk3288_lvds_grf_config(struct drm_encoder *encoder,
- 	val |= (pin_dclk << 8) | (pin_hsync << 9);
- 	val |= (0xffff << 16);
- 	ret = regmap_write(lvds->grf, RK3288_LVDS_GRF_SOC_CON7, val);
--	if (ret != 0) {
-+	if (ret)
- 		DRM_DEV_ERROR(lvds->dev, "Could not write to GRF: %d\n", ret);
--		return;
--	}
-+
-+	return ret;
+@@ -321,6 +321,17 @@ static void rk3288_lvds_encoder_disable(struct drm_encoder *encoder)
+ 	drm_panel_unprepare(lvds->panel);
  }
  
- static int rk3288_lvds_set_vop_source(struct rockchip_lvds *lvds,
-@@ -287,13 +287,28 @@ static void rk3288_lvds_encoder_enable(struct drm_encoder *encoder)
- 	int ret;
- 
- 	drm_panel_prepare(lvds->panel);
++static const
++struct drm_encoder_helper_funcs rk3288_lvds_encoder_helper_funcs = {
++	.enable = rk3288_lvds_encoder_enable,
++	.disable = rk3288_lvds_encoder_disable,
++	.atomic_check = rockchip_lvds_encoder_atomic_check,
++};
 +
- 	ret = rk3288_lvds_poweron(lvds);
- 	if (ret < 0) {
--		DRM_DEV_ERROR(lvds->dev, "failed to power on lvds: %d\n", ret);
-+		DRM_DEV_ERROR(lvds->dev, "failed to power on LVDS: %d\n", ret);
- 		drm_panel_unprepare(lvds->panel);
-+		return;
- 	}
--	rk3288_lvds_grf_config(encoder, mode);
--	rk3288_lvds_set_vop_source(lvds, encoder);
++static const struct drm_encoder_funcs rockchip_lvds_encoder_funcs = {
++	.destroy = drm_encoder_cleanup,
++};
 +
-+	ret = rk3288_lvds_grf_config(encoder, mode);
-+	if (ret) {
-+		DRM_DEV_ERROR(lvds->dev, "failed to configure LVDS: %d\n", ret);
-+		drm_panel_unprepare(lvds->panel);
-+		return;
-+	}
-+
-+	ret = rk3288_lvds_set_vop_source(lvds, encoder);
-+	if (ret) {
-+		DRM_DEV_ERROR(lvds->dev, "failed to set VOP source: %d\n", ret);
-+		drm_panel_unprepare(lvds->panel);
-+		return;
-+	}
-+
- 	drm_panel_enable(lvds->panel);
+ static int rk3288_lvds_probe(struct platform_device *pdev,
+ 			     struct rockchip_lvds *lvds)
+ {
+@@ -367,17 +378,6 @@ static int rk3288_lvds_probe(struct platform_device *pdev,
+ 	return 0;
  }
  
+-static const
+-struct drm_encoder_helper_funcs rk3288_lvds_encoder_helper_funcs = {
+-	.enable = rk3288_lvds_encoder_enable,
+-	.disable = rk3288_lvds_encoder_disable,
+-	.atomic_check = rockchip_lvds_encoder_atomic_check,
+-};
+-
+-static const struct drm_encoder_funcs rockchip_lvds_encoder_funcs = {
+-	.destroy = drm_encoder_cleanup,
+-};
+-
+ static const struct rockchip_lvds_soc_data rk3288_lvds_data = {
+ 	.probe = rk3288_lvds_probe,
+ 	.helper_funcs = &rk3288_lvds_encoder_helper_funcs,
 -- 
 2.20.1
 
