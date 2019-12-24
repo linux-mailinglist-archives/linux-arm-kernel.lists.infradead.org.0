@@ -2,58 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E45712A0FA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 13:02:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7845D12A101
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 13:05:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
+	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eGMKAC2p1la6rlaR+8tvvMNuu3/J7ssD7r3kPFO/dFI=; b=o/u5NxYDN2qJKY
-	Rag0uwPGGzLbroH0P508s0Te96Ivy2CV0X98wyftdnKsgYGCvWoqIoCd1AbWexJg8IY2Acdf/aFlW
-	6qAMZKvGfAHyD7ryzgzMEOeodP3FwK2lLQUtLWEW2v9DvoeWKVI+ZUoIqeDlUHknHNTaeGR/dkvj0
-	tlNpQDC3WAV2X/GuLPM26cBjLAmoxJ6IDKPb3dczARVqo1odg3ydQashwhCoSqOxr0rMZIqmeNfLx
-	uJ8z3p9BYSPeLw2uouraq0JkV3bVooukrfYyzxb8q6M+B7ldWw+x0Ex1B8eCwee5+DG5sSAuhclLT
-	75+4tKO5r+CItjURi1gg==;
+	List-Owner; bh=4+q65yxv09NOU5KLfYoEv6AMg431aNrUmtSVd8V96kg=; b=PKvW3MTobttoiE
+	aEkemgTeddHHmDAxGAhvOKwapPBFBdYzrF/hfT3Bza8NXDpJSUnzkkm2RkSj6CGQIUQFHj5PvNzuK
+	ic0G+/0ZDoBIrTus8DoknQLrNrxQoAtUFmLUJjxb0nm9FMCmrmoTppSTllmk/d8r9mNjhCY+rp8mF
+	5DIM90tF8b4n0GTC/JKCsromjR53sNvzvTVt50nE/jnrbl0hMiuG0RdT8nBrld0fp9s5tq1eVbPqT
+	WOki9XMfLPEiNwRt3yZWaGT6uyWbF5DHIQ2OgInnWCtrNQpcxHWuTzx/LqkOxZhkdOeIdfFvRQsYW
+	Y+OBaV985RfXz+CDbrKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijisu-0005Vd-FM; Tue, 24 Dec 2019 12:01:56 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijisj-0005Uq-J7
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 12:01:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2A6A61FB;
- Tue, 24 Dec 2019 04:01:43 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 92BDB3F534;
- Tue, 24 Dec 2019 04:01:42 -0800 (PST)
-Date: Tue, 24 Dec 2019 12:01:40 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v2 03/18] arm64: KVM: define SPE data structure for each
- vcpu
-Message-ID: <20191224120140.GH42593@e119886-lin.cambridge.arm.com>
-References: <20191220143025.33853-1-andrew.murray@arm.com>
- <20191220143025.33853-4-andrew.murray@arm.com>
- <20191221131936.21fa2dfa@why>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191221131936.21fa2dfa@why>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+	id 1ijivq-000656-AU; Tue, 24 Dec 2019 12:04:58 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ijivX-0005uK-Ce
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 12:04:40 +0000
+Received: by mail-pl1-x644.google.com with SMTP id s21so5663474plr.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Dec 2019 04:04:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amacapital-net.20150623.gappssmtp.com; s=20150623;
+ h=content-transfer-encoding:from:mime-version:subject:date:message-id
+ :references:cc:in-reply-to:to;
+ bh=VHzH6WH6Y51Hv8qWhxgK6vx35XDhgJUQtiy7D9VMqAM=;
+ b=AQugnPU1j3l+UliZJ1cFDWfn1gfoQcO/nzfL11rOcYeTLX/P87iqPaaJmBaMlSz7f1
+ /DhGazm2NTR2ZIaiN+mUvEAnOZrI7Ge0Mg1zI2ZlVdeTi0aTgDWcWRqSCId8E113LX3m
+ 6HCYlixeRMc9TaLMlaAzwKbLAUzigX1Ncl8C866LmmeME3vMRc45SQjPLyr6MHX+L6Cw
+ vv52P5dueRyUQBwwusD+tHpoqoHbOj8XjhE0q9U9hlqCHn27d/gBrcaQanBO29ITAp34
+ bn7tzg79vFow2UHY2TlVVezhuLVq4rXQXKJzfTff9415HHT3maptkAcWgSZsizcHzud6
+ 8efg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:content-transfer-encoding:from:mime-version
+ :subject:date:message-id:references:cc:in-reply-to:to;
+ bh=VHzH6WH6Y51Hv8qWhxgK6vx35XDhgJUQtiy7D9VMqAM=;
+ b=uWg7qnMiTQT/EQvcWgrylTzSd+JZC1dZEB3AycSbxBfJStVQcUZoxDaXVUpEZSYUG/
+ KaxSJYUmN+lHJsJB7BoRX5f294qGxFm3G8ugqtmrkovYRJlrz28E9OcRQkUkjfryWjmo
+ OiLN+JK22w0wvJ2bHD39r/D1dlV4SMZ2/SaCXR8XSQ4lici38vQKphjeBz/sOaGINw6A
+ dxAmPT0jgB5pk6rUJcyvtMIuHHs0/A0tYgnB8Sn23Mp+kXkLDvPc0yv9MN9GomGSLZ9W
+ kUAXY8gkiMzGxwr3PbZxe+R+dOpGJGWQMQ0l8IA1Y+QM9HQCLJeTCYdXycm7JIxv/FeG
+ ObYg==
+X-Gm-Message-State: APjAAAUmZ2RXHDY+ubG+IlwRLHgFq9zc3yRtRkCwJ6fVfWjRWRFOisWR
+ Xl4gR16qR5JZ1mwL9cK0/mGmew==
+X-Google-Smtp-Source: APXvYqyJXa2dY59EyR45IM7PX4/Dja/wo48oiNHNLhyt3TL1GWpIJ61wHLTCUZ3QRkI0SvFitogUkA==
+X-Received: by 2002:a17:902:7288:: with SMTP id
+ d8mr34182926pll.341.1577189076952; 
+ Tue, 24 Dec 2019 04:04:36 -0800 (PST)
+Received: from [192.168.0.9] (111-255-104-19.dynamic-ip.hinet.net.
+ [111.255.104.19])
+ by smtp.gmail.com with ESMTPSA id k21sm14926039pfa.63.2019.12.24.04.04.35
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 24 Dec 2019 04:04:36 -0800 (PST)
+From: Andy Lutomirski <luto@amacapital.net>
+Mime-Version: 1.0 (1.0)
+Subject: Re: [RFC PATCH v2 07/10] lib: vdso: don't use READ_ONCE() in
+ __c_kernel_time()
+Date: Tue, 24 Dec 2019 20:04:33 +0800
+Message-Id: <98C1F790-7647-4203-9B31-4B8FED8CCA12@amacapital.net>
+References: <abc4b4a6-d355-4dfd-a207-603e877b2b23@c-s.fr>
+In-Reply-To: <abc4b4a6-d355-4dfd-a207-603e877b2b23@c-s.fr>
+To: christophe leroy <christophe.leroy@c-s.fr>
+X-Mailer: iPhone Mail (17C54)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_040145_718766_07B50779 
-X-CRM114-Status: GOOD (  27.01  )
+X-CRM114-CacheID: sfid-20191224_040439_500250_1C07F7CC 
+X-CRM114-Status: GOOD (  10.51  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,142 +96,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- will@kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Arnd Bergmann <arnd@arndb.de>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, X86 ML <x86@kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>,
+ "open list:MIPS" <linux-mips@vger.kernel.org>,
+ Paul Mackerras <paulus@samba.org>, Andy Lutomirski <luto@kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Dec 21, 2019 at 01:19:36PM +0000, Marc Zyngier wrote:
-> On Fri, 20 Dec 2019 14:30:10 +0000
-> Andrew Murray <andrew.murray@arm.com> wrote:
-> 
-> > From: Sudeep Holla <sudeep.holla@arm.com>
-> > 
-> > In order to support virtual SPE for guest, so define some basic structs.
-> > This features depends on host having hardware with SPE support.
-> > 
-> > Since we can support this only on ARM64, add a separate config symbol
-> > for the same.
-> > 
-> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> > [ Add irq_level, rename irq to irq_num for kvm_spe ]
-> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > ---
-> >  arch/arm64/include/asm/kvm_host.h |  2 ++
-> >  arch/arm64/kvm/Kconfig            |  7 +++++++
-> >  include/kvm/arm_spe.h             | 19 +++++++++++++++++++
-> >  3 files changed, 28 insertions(+)
-> >  create mode 100644 include/kvm/arm_spe.h
-> > 
-> > diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-> > index c61260cf63c5..f5dcff912645 100644
-> > --- a/arch/arm64/include/asm/kvm_host.h
-> > +++ b/arch/arm64/include/asm/kvm_host.h
-> > @@ -35,6 +35,7 @@
-> >  #include <kvm/arm_vgic.h>
-> >  #include <kvm/arm_arch_timer.h>
-> >  #include <kvm/arm_pmu.h>
-> > +#include <kvm/arm_spe.h>
-> >  
-> >  #define KVM_MAX_VCPUS VGIC_V3_MAX_CPUS
-> >  
-> > @@ -302,6 +303,7 @@ struct kvm_vcpu_arch {
-> >  	struct vgic_cpu vgic_cpu;
-> >  	struct arch_timer_cpu timer_cpu;
-> >  	struct kvm_pmu pmu;
-> > +	struct kvm_spe spe;
-> >  
-> >  	/*
-> >  	 * Anything that is not used directly from assembly code goes
-> > diff --git a/arch/arm64/kvm/Kconfig b/arch/arm64/kvm/Kconfig
-> > index a475c68cbfec..af5be2c57dcb 100644
-> > --- a/arch/arm64/kvm/Kconfig
-> > +++ b/arch/arm64/kvm/Kconfig
-> > @@ -35,6 +35,7 @@ config KVM
-> >  	select HAVE_KVM_EVENTFD
-> >  	select HAVE_KVM_IRQFD
-> >  	select KVM_ARM_PMU if HW_PERF_EVENTS
-> > +	select KVM_ARM_SPE if (HW_PERF_EVENTS && ARM_SPE_PMU)
-> >  	select HAVE_KVM_MSI
-> >  	select HAVE_KVM_IRQCHIP
-> >  	select HAVE_KVM_IRQ_ROUTING
-> > @@ -61,6 +62,12 @@ config KVM_ARM_PMU
-> >  	  Adds support for a virtual Performance Monitoring Unit (PMU) in
-> >  	  virtual machines.
-> >  
-> > +config KVM_ARM_SPE
-> > +	bool
-> > +	---help---
-> > +	  Adds support for a virtual Statistical Profiling Extension(SPE) in
-> > +	  virtual machines.
-> > +
-> >  config KVM_INDIRECT_VECTORS
-> >         def_bool KVM && (HARDEN_BRANCH_PREDICTOR || HARDEN_EL2_VECTORS)
-> >  
-> > diff --git a/include/kvm/arm_spe.h b/include/kvm/arm_spe.h
-> > new file mode 100644
-> > index 000000000000..48d118fdb174
-> > --- /dev/null
-> > +++ b/include/kvm/arm_spe.h
-> > @@ -0,0 +1,19 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright (C) 2019 ARM Ltd.
-> > + */
-> > +
-> > +#ifndef __ASM_ARM_KVM_SPE_H
-> > +#define __ASM_ARM_KVM_SPE_H
-> > +
-> > +#include <uapi/linux/kvm.h>
-> > +#include <linux/kvm_host.h>
-> 
-> I don't believe these are required at this stage.
-> 
-> > +
-> > +struct kvm_spe {
-> > +	int irq_num;
-> 
-> 'irq' was the right name *if* this represents a Linux irq. If this
-> instead represents a guest PPI, then it should be named 'intid'.
-> 
-> In either case, please document what this represents.
-> 
-> > +	bool ready; /* indicates that SPE KVM instance is ready for use */
-> > +	bool created; /* SPE KVM instance is created, may not be ready yet */
-> > +	bool irq_level;
-> 
-> What does this represent? The state of the interrupt on the host? The
-> guest? Something else? Also, please consider grouping related fields
-> together.
-
-It should be the state of the interrupt on the guest.
-
-> 
-> > +};
-> 
-> If you've added a config option that controls the selection of the SPE
-> feature, why doesn't this result in an empty structure when it isn't
-> selected?
-
-OK, all noted.
-
-Andrew Murray
-
-> 
-> > +
-> > +#endif /* __ASM_ARM_KVM_SPE_H */
-> 
-> Thanks,
-> 
-> 	M.
-> -- 
-> Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cj4gT24gRGVjIDI0LCAyMDE5LCBhdCA3OjEyIFBNLCBjaHJpc3RvcGhlIGxlcm95IDxjaHJpc3Rv
+cGhlLmxlcm95QGMtcy5mcj4gd3JvdGU6Cj4gCj4g77u/Cj4gCj4+IExlIDI0LzEyLzIwMTkgw6Ag
+MDI6NTgsIEFuZHkgTHV0b21pcnNraSBhIMOpY3JpdCA6Cj4+PiBPbiBNb24sIERlYyAyMywgMjAx
+OSBhdCA2OjMxIEFNIENocmlzdG9waGUgTGVyb3kKPj4+IDxjaHJpc3RvcGhlLmxlcm95QGMtcy5m
+cj4gd3JvdGU6Cj4+PiAKPj4+IFJFQURfT05DRSgpIGZvcmNlcyB0aGUgcmVhZCBvZiB0aGUgNjQg
+Yml0IHZhbHVlIG9mCj4+PiB2ZFtDU19IUkVTX0NPQVJTRV0uYmFzZXRpbWVbQ0xPQ0tfUkVBTFRJ
+TUVdLnNlYyBhbGx0aG91Z2gKPj4+IG9ubHkgdGhlIGxvd2VyIHBhcnQgaXMgbmVlZGVkLgo+PiBT
+ZWVtcyByZWFzb25hYmxlIGFuZCB2ZXJ5IHVubGlrZWx5IHRvIGJlIGhhcm1mdWwuICBUaGF0IGJl
+aW5nIHNhaWQsCj4+IHRoaXMgZnVuY3Rpb24gcmVhbGx5IG91Z2h0IHRvIGJlIGNvbnNpZGVyZWQg
+ZGVwcmVjYXRlZCAtLSAzMi1iaXQKPj4gdGltZV90IGlzIGluc3VmZmljaWVudC4KPj4gRG8geW91
+IGdldCBldmVuIGJldHRlciBjb2RlIGlmIHlvdSBtb3ZlIHRoZSByZWFkIGludG8gdGhlIGlmIHN0
+YXRlbWVudD8KPiAKPiBFdWggLi4uCj4gCj4gSG93IGNhbiB5b3UgcmV0dXJuIHQgd2hlbiB0aW1l
+IHBvaW50ZXIgaXMgTlVMTCBpZiB5b3UgcmVhZCB0IG9ubHkgd2hlbiB0aW1lIHBvaW50ZXIgaXMg
+bm90IE5VTEwgPwo+IAo+IAoKRHVoLCBuZXZlciBtaW5kLgoKQnV0IHRoaXMgbWVhbnMgeW91ciBw
+YXRjaCBtYXkgYmUgYnVnZ3k6IHlvdSBuZWVkIHRvIG1ha2Ugc3VyZSB0aGUgY29tcGlsZXIgcmV0
+dXJucyB0aGUgKnNhbWUqIHZhbHVlIGl0IHN0b3Jlcy4gTWF5YmUgeW914oCZcmUgc2F2ZWQgYnkg
+dGhlIHBvdGVudGlhbCBhbGlhc2luZyBiZXR3ZWVuIHRoZSBkYXRhIHBhZ2UgYW5kIHRoZSBwYXNz
+ZWQgcGFyYW1ldGVyIGFuZCB0aGUgdmFsdWUgeW91IHJlYWQsIGJ1dCB0aGF04oCZc2EgYmFkIHRo
+aW5nIHRvIHJlbHkgb24uCgpUcnkgYmFycmllcigpIGFmdGVyIHRoZSByZWFkLgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
