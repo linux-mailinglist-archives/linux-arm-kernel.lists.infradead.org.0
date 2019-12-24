@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3820F129C83
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 03:00:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A955E129C98
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 03:07:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lAio8erRfUXSUTkpUklREA5VSW2D+sdu8zDjkz1erGs=; b=cU32No7deJB4vT
-	ea+tCrvhpfQYenOaZscx70fPYtlR8bYLmo+i+QsG1s8rNCrBPfPJCQ6OZKRHcI8UM+hRi+cQvgedu
-	GCwrlJ38i6hhnzF6vQd3mYb2jypAFvLVr2oSlanVvGM3bafKZabmkPczFrBTLkN2epUBPfQZjC/pG
-	zw8hB47KYHEqoDqLui+bf/CCVDPSOElgg58OMN30ln0NYh0HNreJnJxoC087CkxKQ4uI5WBBg9ncg
-	jerwHY7p0WHVBS4PhtrRKANesBf7kmIl4JXiIzPOBNofOuEGFx1BKlUr3QDUdyLi1gyjzNQRTlCTl
-	wqiTWXnoleAXLJlQ+y1A==;
+	List-Owner; bh=9ESaaiokmn00uGGKIQpdADl9vetDJH8kxRK8VRxiZLQ=; b=BwdRZmY8kHBk6M
+	+HXfHRZ+kovvv4kzKZ7FUNo19VR8yTCnZ8OXC2GiJLF7L9uPRGL3INArwc0T+5qZpJGUeog6PtD2E
+	saZSPhFGmDxLPxO7cv3PL1BCEM6RJhtNrLFKbIxKmyKKrP2pFBk4oOSL/GmGEwSxGFXXHtEW2onZ7
+	B3XjQ5N6T4hg8uHcw7b2qv7CG4pGgF2QqfkhRA5uHSmODR3Lgjep6EX0ZDZjDNK1IxYgQMf4Ksvop
+	eHGoHI60xkj+wD1A0mYFgHI6eQW+IDffdgP7EWUNAvaE2a2ll5NLm8bwOZ+lRNmxIWPeQllko7plN
+	8AUDNVcqKfzMZ5X+kCqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijZUO-0000M3-K6; Tue, 24 Dec 2019 02:00:00 +0000
+	id 1ijZc0-0003rP-PK; Tue, 24 Dec 2019 02:07:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijZUF-0000Lb-Fp
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 01:59:52 +0000
-Received: from mail-wr1-f50.google.com (mail-wr1-f50.google.com
- [209.85.221.50])
+ id 1ijZbs-0003qo-St
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 02:07:46 +0000
+Received: from mail-wr1-f47.google.com (mail-wr1-f47.google.com
+ [209.85.221.47])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 88BBB20828
+ by mail.kernel.org (Postfix) with ESMTPSA id 4FA7A21775
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Dec 2019 01:59:50 +0000 (UTC)
+ Tue, 24 Dec 2019 02:07:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577152790;
- bh=mZIM8/IGO6yj32EzkYlDoUvjeWHo1IO0ajLflWLHJ1E=;
+ s=default; t=1577153264;
+ bh=nuWZ8yhnitZpPr2h+5PU5xzGudc3XC10lX5Ec91GR+s=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=gQGYXs7XTcbdCfx0BUILVDNAMT4zxirLNFz98MThf9EREN5BxfkbsJw1pENHZhpvR
- MLaDU2z5hlCSoTZKzvSyt5ddAtld9M3HziJaduUZk8pJMfEqoz5qyPbPWjvDQ7yqcS
- gb1Iu7wGTPj/8sHQNHy4Kn8t7wlqyf4zPSt/wAiA=
-Received: by mail-wr1-f50.google.com with SMTP id q10so18577920wrm.11
+ b=E6kVU9g202rFhym4tXVVBYm1fF7zrf4imuKY1UsLFAoqO0HfSsUASADU8FpcnUTFX
+ au8dQB0MMEwRaITZ7AkOA+CdDJ26kZ865Lo1+fULgI1ZCLw1Y/TN1ZP2AMm5x/siU4
+ pk8YakrCG+Ck+yePKWOcsbZyKUUeS+p1lIRxmwIs=
+Received: by mail-wr1-f47.google.com with SMTP id z7so18534973wrl.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Dec 2019 17:59:50 -0800 (PST)
-X-Gm-Message-State: APjAAAU/N4WrATpmJ7W+U5T4dRWHJdOJF0r3R61Yw6IRe1KhiEaT2NdF
- hJeJ7c0QTAtk8oJulSe9enoYiZoBJ/qTdTN3jaX2Ow==
-X-Google-Smtp-Source: APXvYqxAMnRl94bz0dtBWu5DeU1T1h7ThWeUzu+q0KQ6Q4rmgmqNaGXBhJRposss35afzcm4hhvUi2inaUTSmKyfilU=
-X-Received: by 2002:adf:f2c1:: with SMTP id d1mr31723699wrp.111.1577152789083; 
- Mon, 23 Dec 2019 17:59:49 -0800 (PST)
+ Mon, 23 Dec 2019 18:07:44 -0800 (PST)
+X-Gm-Message-State: APjAAAVrAp9yCH7dId5VLH1HQ2dfugteKJJikFI7xToFflUf9AwhV7Vi
+ PtohsOvUN+7PaZpm+GOTYE7U/ucnqADjbH0BmVOgwA==
+X-Google-Smtp-Source: APXvYqykVrvy0YjrN0kH0ZW9RItFuTqBfOCiQcjlBJoCQ0o5yZwU56b/UhrC0QUXlKV7VRHUBN0rn8CMmknayBiXVnU=
+X-Received: by 2002:adf:eb09:: with SMTP id s9mr34073707wrn.61.1577153262733; 
+ Mon, 23 Dec 2019 18:07:42 -0800 (PST)
 MIME-Version: 1.0
 References: <cover.1577111363.git.christophe.leroy@c-s.fr>
- <fdf1a968a8f7edd61456f1689ac44082ebb19c15.1577111367.git.christophe.leroy@c-s.fr>
-In-Reply-To: <fdf1a968a8f7edd61456f1689ac44082ebb19c15.1577111367.git.christophe.leroy@c-s.fr>
+ <47701b5fb73cf536db074031db8e6e3fa3695168.1577111365.git.christophe.leroy@c-s.fr>
+In-Reply-To: <47701b5fb73cf536db074031db8e6e3fa3695168.1577111365.git.christophe.leroy@c-s.fr>
 From: Andy Lutomirski <luto@kernel.org>
-Date: Mon, 23 Dec 2019 17:59:36 -0800
-X-Gmail-Original-Message-ID: <CALCETrUZ8rhvhJSYutypUoSf2tGBZPais79fx+8BHWH=Vk4dBw@mail.gmail.com>
-Message-ID: <CALCETrUZ8rhvhJSYutypUoSf2tGBZPais79fx+8BHWH=Vk4dBw@mail.gmail.com>
-Subject: Re: [RFC PATCH v2 08/10] lib: vdso: Avoid duplication in
- __cvdso_clock_getres()
+Date: Mon, 23 Dec 2019 18:07:30 -0800
+X-Gmail-Original-Message-ID: <CALCETrULuV5iAU3kSjMdcpV6DFGEw1z2so0DfDca6hoLB4X4cA@mail.gmail.com>
+Message-ID: <CALCETrULuV5iAU3kSjMdcpV6DFGEw1z2so0DfDca6hoLB4X4cA@mail.gmail.com>
+Subject: Re: [RFC PATCH v2 01/10] lib: vdso: ensure all arches have 32bit
+ fallback
 To: Christophe Leroy <christophe.leroy@c-s.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_175951_550267_4BD0D1B4 
-X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-CacheID: sfid-20191223_180744_955975_E7D86926 
+X-CRM114-Status: UNSURE (   9.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -105,13 +105,18 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Mon, Dec 23, 2019 at 6:31 AM Christophe Leroy
 <christophe.leroy@c-s.fr> wrote:
 >
-> VDSO_HRES and VDSO_RAW clocks are handled the same way.
->
-> Don't duplicate code.
->
-> Signed-off-by: Christophe Leroy <christophe.leroy@c-s.fr>
+> In order to simplify next step which moves fallback call at arch
+> level, ensure all arches have a 32bit fallback instead of handling
+> the lack of 32bit fallback in the common code based
+> on VDSO_HAS_32BIT_FALLBACK
 
-Reviewed-by: Andy Lutomirski <luto@kernel.org>
+I don't like this.  You've implemented what appear to be nonsensical
+fallbacks (the 32-bit fallback for a 64-bit vDSO build?  There's no
+such thing).
+
+How exactly does this simplify patch 2?
+
+--Andy
 
 _______________________________________________
 linux-arm-kernel mailing list
