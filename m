@@ -2,57 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5945A129E55
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 08:06:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93702129EA6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 08:49:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gGWOv5X2tKSmh0aeiyVnpWypTTNztm9s3Nz0QekLo2k=; b=i2p/HIkIVuCDvN
-	X1KSumbLEJYdSOsX88abAp71YwJ9ZMZfhaEaEA+FhfO6lFKbxFzmfyhMrlwIo/ehgJfxnUFWoy6IU
-	lHp9yJ8xdqAUjdFr0Yi9Po7lsjZelS0IyOX49egKsR655vzWCKpHIuss2g7uE85P7zhoxmfTn96ai
-	zzHDaYTgaHEg0AsVKEAUmQdNPxrM6W+b0zche2P1QWik3p9SuXEMgGv9s+R0zEcutiXQcnoeEBXqG
-	zdk7FnUaaAaa5eQRuBLdmTVnvVcEJGXxTGxtJ/jb1W5v2HQ7XUHipZAM9Ew/asxedLRYRQV8eoVWS
-	kTIGZPzEFaGQqu/WukdQ==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HA09ncY6FwNeJ0JiuDlWEUFu7l6pvfLnsl6kKO5uhJc=; b=nHrRyIHGYIDnhn
+	1z8biW1df5ymSK3UvDt+2V4LZY06hF2XsIhhvm0LPN73TrdsXnJpsW0/jDCKtsJDw7Oi0ur5vRmyz
+	UOkzofcpUfqYkXTI2SMhCHQaauXdQHRC4AkMRvwDTRcbHZY8BM28CIjvA63JZZTf0z0AVcjUCJpsz
+	dHttIeW39gc0H4bkNOTHZkfTgxUKtvVJcdo8GpQQIV306UFGhkmqqRf9czyctPtiOadNAS8jh3ATI
+	aOVVPgJGLQ05SUTo2OF2ukRQLPhX6NqXc90GxlI3rZMyHdY9g4NIFnKIz3ZO/WCh3DVR49KsgopnG
+	rr3qd02wzjfFFWmUOwPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijeGe-0005Ln-Pl; Tue, 24 Dec 2019 07:06:08 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijeGV-0005LB-GB
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 07:06:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7957431B;
- Mon, 23 Dec 2019 23:05:55 -0800 (PST)
-Received: from [10.163.1.130] (unknown [10.163.1.130])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B2BE43F6CF;
- Mon, 23 Dec 2019 23:08:53 -0800 (PST)
-Subject: Re: [PATCH] arm64: Set SSBS for user threads while creation
-To: Srinivas Ramana <sramana@codeaurora.org>, will@kernel.org,
- catalin.marinas@arm.com, maz@kernel.org, will.deacon@arm.com
-References: <1577106146-8999-1-git-send-email-sramana@codeaurora.org>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <d490d6ce-8b07-ce79-4580-ac80f239312a@arm.com>
-Date: Tue, 24 Dec 2019 12:36:34 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1ijewM-0000Vz-7b; Tue, 24 Dec 2019 07:49:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ijewC-0000V4-6m
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 07:49:05 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C9CF620706;
+ Tue, 24 Dec 2019 07:49:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577173742;
+ bh=GTiuJToEf1rYPyFg+M8KQHlG48XsZfpkE1FmUWz15rw=;
+ h=In-Reply-To:References:Cc:From:To:Subject:Date:From;
+ b=LtYDFR5QH+rp40jWZrHpHHIfROItwwLlOpd1+T0oPEZYQQD8VyVLoeikFdTwtapxN
+ Fmwpw8nLFLqTN5794+J0FC5rz/Bdfektw2hYboggdM7vjugpp4ZEP/CLzvHEOdp1kB
+ oHDxRvHk+ROafWKtHk2qh4a6yopx1uDFfcTNxY3c=
 MIME-Version: 1.0
-In-Reply-To: <1577106146-8999-1-git-send-email-sramana@codeaurora.org>
-Content-Language: en-US
+In-Reply-To: <20191210145345.11616-13-sudeep.holla@arm.com>
+References: <20191210145345.11616-1-sudeep.holla@arm.com>
+ <20191210145345.11616-13-sudeep.holla@arm.com>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH 12/15] clk: scmi: Match scmi device by both name and
+ protocol id
+User-Agent: alot/0.8.1
+Date: Mon, 23 Dec 2019 23:49:02 -0800
+Message-Id: <20191224074902.C9CF620706@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_230559_582182_95882658 
-X-CRM114-Status: GOOD (  19.07  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191223_234904_267457_7156C03C 
+X-CRM114-Status: UNSURE (   9.36  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,59 +79,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
+ Cristian Marussi <cristian.marussi@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 12/23/2019 06:32 PM, Srinivas Ramana wrote:
-> Current SSBS implementation takes care of setting the
-> SSBS bit in start_thread() for user threads. While this works
-> for tasks launched with fork/clone followed by execve, for cases
-> where userspace would just call fork (eg, Java applications) this
-> leaves the SSBS bit unset. This results in performance
-> regression for such tasks.
+Quoting Sudeep Holla (2019-12-10 06:53:42)
+> The scmi bus now has support to match the driver with devices not only
+> based on their protocol id but also based on their device name if one is
+> available. This was added to cater the need to support multiple devices
+> and drivers for the same protocol.
 > 
-> It is understood that commit cbdf8a189a66 ("arm64: Force SSBS
-> on context switch") masks this issue, but that was done for a
-> different reason where heterogeneous CPUs(both SSBS supported
-> and unsupported) are present. It is appropriate to take care
-> of the SSBS bit for all threads while creation itself.
-
-So this fixes the situation (i.e low performance) from the creation time
-of a task with fork() which will never see a subsequent execve, till it
-gets context switched for the very first time ?
-
+> Let us add the name "clocks" to scmi_device_id table in the driver so
+> that in matches only with device with the same name and protocol id
+> SCMI_PROTOCOL_CLOCK.
 > 
-> Fixes: 8f04e8e6e29c ("arm64: ssbd: Add support for PSTATE.SSBS rather than trapping to EL3")
-> Signed-off-by: Srinivas Ramana <sramana@codeaurora.org>
+> Cc: Michael Turquette <mturquette@baylibre.com>
+> Cc: Stephen Boyd <sboyd@kernel.org>
+> Cc: linux-clk@vger.kernel.org
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 > ---
->  arch/arm64/kernel/process.c | 7 +++++++
->  1 file changed, 7 insertions(+)
-> 
-> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> index 71f788cd2b18..a8f05cc39261 100644
-> --- a/arch/arm64/kernel/process.c
-> +++ b/arch/arm64/kernel/process.c
-> @@ -399,6 +399,13 @@ int copy_thread(unsigned long clone_flags, unsigned long stack_start,
->  		 */
->  		if (clone_flags & CLONE_SETTLS)
->  			p->thread.uw.tp_value = childregs->regs[3];
-> +
-> +		if (arm64_get_ssbd_state() != ARM64_SSBD_FORCE_ENABLE) {
-> +			if (is_compat_thread(task_thread_info(p)))
-> +				set_compat_ssbs_bit(childregs);
-> +			else
-> +				set_ssbs_bit(childregs);
-> +		}
->  	} else {
->  		memset(childregs, 0, sizeof(struct pt_regs));
->  		childregs->pstate = PSR_MODE_EL1h;
-> 
+
+Acked-by: Stephen Boyd <sboyd@kernel.org>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
