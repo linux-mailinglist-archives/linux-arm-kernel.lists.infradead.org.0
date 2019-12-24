@@ -2,89 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83976129EF7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 09:30:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70F53129F81
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 10:02:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nAhcpnUunGWt7Q252tZzYKi+6u8KPoqh6HVXbuICitE=; b=EZGr0EYYiVHt9wWs0Dy+ZR+Xe
-	xtCCXuDZ9vCZFDqKdZWJZZ80wtZeKy5oNVcCwPMTUj9oWSnCgRnWqblSCMC1aJERv0LKWtSBa29h/
-	QNZkSC93/bafqGr4eKth8W3lye7FtPz/5JOyiQzXU0oojEIYH5l7qzJXDtXf86ljP874zU7YCNvUN
-	sn3r7uZL/B3HhBkGHm6bmgEz4HZtsIqu21W0Aw0glcWGrOK2tOyMoBYc2H/Dvqiygh0ge/cKZFMiq
-	WngdFP3UrHq0Gn5HmEL1Pv4Y6KNRbH3pUJ23SHzIDwtszQi7llrRqFmJuJ8dGupPhYUCHBvlqWitf
-	o4OH2Fk1Q==;
+	 bh=M7ZrNzJHLkzlqEzpo9Jw4f17RLdIDR5webJLCDxxnCQ=; b=nDjYY+7KUB5w7CtwLTxtaAgXn
+	mDKovbKnRhAEoZy111UvHu5ZcG3ZsTYYUFpQ1dwJsZBrQ4/sxpwm4Ms/FHfNT1UJTxDQKwVrW/ICH
+	v4wyzwAroBvt2AvfkjeGeCe3iJtFZmCqkGBEETeyTNciq6uHCjoVnyp0pCroRFTQbkSVZSWtVNJ3d
+	LuWz7ZxwZrqqKwTm0n88tvAK/FUV7k/e1WV5Yn6OznaYdluzhOqbjIiA4Ir+tMLFY5ZF6D1175pAb
+	r9Xx4zXsk5Wb30x4xqTdy8A51JHYdXBAuPOVKTrmTyOFyMDQzMsLCnT4LURyDUhub3ZsJkXHIr5pT
+	3Ygv7YKeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijfaG-0006rz-S7; Tue, 24 Dec 2019 08:30:28 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1ijg52-0000Qp-4B; Tue, 24 Dec 2019 09:02:16 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijfa7-0006r6-07
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 08:30:21 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1577176219; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=ZRku7WBdBHXtA+hx/XFQP6Kg96ShJ6vt8/K+Drr0o4M=;
- b=fUF/vdyOHC5GgdoU6iBqtE7IWt1BW3BtIE9jq70uyfSR+XuRRjNyidY1+WOS8G4xC0lsItRP
- BK+FRnQSF1G8dOJfpv4OHa0f3NSfNQQvq6aZpKHD3IaDr4xc6reFEi2ib9zGBpqY54JtOkp1
- CX5br4inuAB38w+9fF2LBUG8UoU=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e01cc93.7fb68e583998-smtp-out-n01;
- Tue, 24 Dec 2019 08:30:11 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 58673C4479C; Tue, 24 Dec 2019 08:30:11 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [10.204.79.159]
- (blr-c-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.19.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: sramana)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 65DB0C43383;
- Tue, 24 Dec 2019 08:30:08 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 65DB0C43383
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=sramana@codeaurora.org
-Subject: Re: [PATCH] arm64: Set SSBS for user threads while creation
-To: Anshuman Khandual <anshuman.khandual@arm.com>, will@kernel.org,
- catalin.marinas@arm.com, maz@kernel.org, will.deacon@arm.com
-References: <1577106146-8999-1-git-send-email-sramana@codeaurora.org>
- <d490d6ce-8b07-ce79-4580-ac80f239312a@arm.com>
-From: Srinivas Ramana <sramana@codeaurora.org>
-Message-ID: <3a50c921-b37b-ea3d-1b9e-87113d3d3fd3@codeaurora.org>
-Date: Tue, 24 Dec 2019 14:00:05 +0530
+ id 1ijg4n-0000P7-7s
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 09:02:02 +0000
+Received: by mail-wm1-x341.google.com with SMTP id p9so1868604wmc.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Dec 2019 01:01:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=JpIUPsCQ4mUZV8clqM6x3//3zxhuxnyUCEItvWS4lIE=;
+ b=EJ2m8BgGEtcQm8iSYsrb6jbllbscoKNSW55IMHI0wPcev4mLznd5VMRKwg2/sTmJx7
+ 6B0CFsO0Hi5zcoPBFR5UJazH++6qulEdmR+LgsQTpX43ge6h4U8J8ZJNVTYRJqa9zOoX
+ KHYdGmdBFl3qmjTINlKlX73vsGbpXDplIawOo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=JpIUPsCQ4mUZV8clqM6x3//3zxhuxnyUCEItvWS4lIE=;
+ b=s5crMWSMuVL4VHOzRdXNEEYj03tq3wqyxfopMlKuomYlVoLJKd8w61NmtkD/sTneXK
+ JqRAurWkRqSUY/Wc/CLYZdjH3iO8QwKv+N3ajTPoFddiw6f71M+AzjvcNHnyZGIhSmiC
+ uXqNKHLnU8z1aHBw/CCvsuFQI5v6NbmH0tvgDR0txNAh7FKOBfS9S2uMa8DB21YpH2ew
+ l5hW7VYWTJa5ZdwOfKaYvQIqSpp8Vato9R4rrxjCRJwLrpzuOZfBAGpgVCOrvtastTsg
+ Ok1+LYrUU4N/bD+0p1R6FX+dFpc6WTZIKSxWiQJtlR6B6XTR8s7eKEZzLxJd7yu7Ppkn
+ hDCA==
+X-Gm-Message-State: APjAAAXenvgPA0RRjbTMyP4YNK/AEFKnhrtQV9i2Z9Q+1/hIutKbCg1c
+ LwBuspzUv4LMXR6mSngdkABVkQ==
+X-Google-Smtp-Source: APXvYqwaDJpckqJ1JrVbZPbh8vFZ6XADgxx76CNzAlm8TnNSIoHONxdbgCmk6gW2sYiAbh73ok449A==
+X-Received: by 2002:a1c:4b01:: with SMTP id y1mr3010277wma.12.1577178118405;
+ Tue, 24 Dec 2019 01:01:58 -0800 (PST)
+Received: from [10.230.41.59] ([192.19.215.251])
+ by smtp.gmail.com with ESMTPSA id v22sm1942400wml.11.2019.12.24.01.01.56
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 24 Dec 2019 01:01:57 -0800 (PST)
+Subject: Re: [PATCH v2 0/9] brcmfmac: add support for BCM4359 SDIO chipset
+To: Christian Hewitt <christianshewitt@gmail.com>, Soeren Moch <smoch@web.de>
+References: <20191211235253.2539-1-smoch@web.de>
+ <D1B53CE9-E87C-4514-A2D7-0FE70A4D1A5D@gmail.com>
+ <cb3ac55f-4c8f-b0a0-41ee-f16b3232c87e@web.de>
+ <47DB71CE-ACC4-431D-9E66-D28A8C18C0A4@gmail.com>
+From: Arend Van Spriel <arend.vanspriel@broadcom.com>
+Message-ID: <3c42d6de-670d-fee8-aa81-99f44d447e87@broadcom.com>
+Date: Tue, 24 Dec 2019 10:01:56 +0100
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-In-Reply-To: <d490d6ce-8b07-ce79-4580-ac80f239312a@arm.com>
+In-Reply-To: <47DB71CE-ACC4-431D-9E66-D28A8C18C0A4@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_003020_026552_45395967 
-X-CRM114-Status: GOOD (  18.24  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191224_010201_287584_F876BF70 
+X-CRM114-Status: GOOD (  14.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [104.130.122.25 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,70 +100,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: brcm80211-dev-list.pdl@broadcom.com, Heiko Stuebner <heiko@sntech.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ brcm80211-dev-list@cypress.com, Kalle Valo <kvalo@codeaurora.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/24/2019 12:36 PM, Anshuman Khandual wrote:
+On 12/22/2019 5:35 AM, Christian Hewitt wrote:
 > 
-> 
-> On 12/23/2019 06:32 PM, Srinivas Ramana wrote:
->> Current SSBS implementation takes care of setting the
->> SSBS bit in start_thread() for user threads. While this works
->> for tasks launched with fork/clone followed by execve, for cases
->> where userspace would just call fork (eg, Java applications) this
->> leaves the SSBS bit unset. This results in performance
->> regression for such tasks.
+>> On 19 Dec 2019, at 2:04 am, Soeren Moch <smoch@web.de> wrote:
 >>
->> It is understood that commit cbdf8a189a66 ("arm64: Force SSBS
->> on context switch") masks this issue, but that was done for a
->> different reason where heterogeneous CPUs(both SSBS supported
->> and unsupported) are present. It is appropriate to take care
->> of the SSBS bit for all threads while creation itself.
+>> I guess you need similar enhancements of the board device tree as in
+>> patch 8 of this series for your VIM3 board.
 > 
-> So this fixes the situation (i.e low performance) from the creation time
-> of a task with fork() which will never see a subsequent execve, till it
-> gets context switched for the very first time ?
-> 
-Yes, that is correct.
+> Wider testing now points to a known SDIO issue (SoC bug) with Amlogic G12A/B hardware. The merged workaround for the bug was only tested with bcmdhd and brcmfmac may require tweaking as the same issue exhibits on an Amlogic G12B device with BCM4356 chip. Testing the series with Amlogic GXM (older) and SM1 (newer) hardware to exclude the SoC bug shows everything working as expected.
 
->>
->> Fixes: 8f04e8e6e29c ("arm64: ssbd: Add support for PSTATE.SSBS rather than trapping to EL3")
->> Signed-off-by: Srinivas Ramana <sramana@codeaurora.org>
->> ---
->>   arch/arm64/kernel/process.c | 7 +++++++
->>   1 file changed, 7 insertions(+)
->>
->> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
->> index 71f788cd2b18..a8f05cc39261 100644
->> --- a/arch/arm64/kernel/process.c
->> +++ b/arch/arm64/kernel/process.c
->> @@ -399,6 +399,13 @@ int copy_thread(unsigned long clone_flags, unsigned long stack_start,
->>   		 */
->>   		if (clone_flags & CLONE_SETTLS)
->>   			p->thread.uw.tp_value = childregs->regs[3];
->> +
->> +		if (arm64_get_ssbd_state() != ARM64_SSBD_FORCE_ENABLE) {
->> +			if (is_compat_thread(task_thread_info(p)))
->> +				set_compat_ssbs_bit(childregs);
->> +			else
->> +				set_ssbs_bit(childregs);
->> +		}
->>   	} else {
->>   		memset(childregs, 0, sizeof(struct pt_regs));
->>   		childregs->pstate = PSR_MODE_EL1h;
->>
+Hi Christian,
 
-Thanks,
--- Srinivas R
+Can you elaborate on the "known SDIO issue"? Is it an issue with ADMA or 
+something else. I am asking because there is a workaround in brcmfmac to 
+avoid scatter-gather lists, which may or may not address the issue.
 
--- 
-Qualcomm India Private Limited, on behalf of Qualcomm Innovation
-Center, Inc., is a member of Code Aurora Forum, a Linux Foundation
-Collaborative Project
+Regards,
+Arend
 
 _______________________________________________
 linux-arm-kernel mailing list
