@@ -2,109 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A10E12A30A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 16:47:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2EB512A30F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 16:48:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GmDsHRZAX1K0W3oxpfDItUNEvqhGldKxA3TjZ2KetZ0=; b=Q+j+6VhuuTuDl5
-	Jp0X5QqN2iWCWhMrvcjI9gjXu3ieP3DTixidgKPpP9wZzAcFyKqIUVONA6GljLYxLlrvoL9ZDatfv
-	IPuIyxuhVZ+PDQwKp4veqerBvkx6dl7WQvvwk7AbmK5qI1wSQQldBGTasZDOG6bOylTER5OLBEwT0
-	qiRG69wJ7PZBmUVKLyly389AypCEGw2QIhGftMZJosMMdzIs8/SPI5qzj2Tcrwnzeo11uAMeSWe2u
-	qe/KmzEBZO/5t0eAcLCYblvz26fj240vsrmdKc0dj56t3pB6LfGNOaiyqq/v3UipYJJaBf5EF97sT
-	pGYWmtRtyVHdVmAU2wtQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YXHyGkb4yUQg09cyubkfe07pL0iGYdFY4Q8GIbvmtjI=; b=bcHduvzN5folmc
+	uabJYImC+x2cDiw3Y9qX3z6O6MdP/h+Y9VLndd8Jq7Fgg2m45bCXjTBxrp54A3x6uWjsYtTvpTIfS
+	uACwXifhduPK5qr40opoGsVvSccKDzeSHqii5FGwImL7EBF2RgE+iceBkDGJGetZZl2O6K95dYhrp
+	G10K2fWgSg/ppndS1fPMyYKARJJedZafLae5U2vgktTjeGuvJwc751+jIdPF6TDZY7+tIYE8GtnOl
+	VpH8y9KxWwlvPVkGItYcfakHxblF5FzAWnWYGzJbyqrcf6piqNfmUgt6tDyuSvbYaPtM6bFykZq9i
+	oBwPGpZFNxHejUrXGnjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijmPK-0001bJ-Po; Tue, 24 Dec 2019 15:47:38 +0000
-Received: from mail-pg1-f195.google.com ([209.85.215.195])
+	id 1ijmQS-0001z7-Dn; Tue, 24 Dec 2019 15:48:48 +0000
+Received: from inca-roads.misterjones.org ([213.251.177.50])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijmP9-0001ae-3J; Tue, 24 Dec 2019 15:47:28 +0000
-Received: by mail-pg1-f195.google.com with SMTP id s64so10542820pgb.9;
- Tue, 24 Dec 2019 07:47:26 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=tRZbwjsZiLdv5LPfBH5AaEk9IY4yrV1a4chfsCyzuvo=;
- b=LEzsjzCZvCROkUZMGgAPS6a6l4R8w+Pn7i2Bgt2f7B7JROIjEpNUSM2AT22UmyqcAU
- TxvcwbJS5yoJpbZHcwiws/M5c+z2qIOOOEK8wcrLAF/XTEE2BRi/ft2aZbZ3sC5DVcCf
- +mQP1yl5luFZvCIC3DR0daVMg2gMQP9ybfhDdqiNyWbjTkn0P20xnXc5AyOm9fUwx/AC
- J4K0FP66+2RggaJ5al9VHJafAXHa8morluE7WVvPJ6zvxfInzTZwHV7fvivFvyY72uca
- gy5MU6ab62QHlfuLDVBd/t6G9WMO8PTrG3Ld1ACo7PhPnWi2sl+COkUB1ljd5/YGIglY
- TAJQ==
-X-Gm-Message-State: APjAAAVOJ1ILx3C5rnyI9cA+eYw0cVAnE+79NKEYRlf2N/AGLlImLilk
- X+JXy0zN0oH3uOL8LJeS/D4=
-X-Google-Smtp-Source: APXvYqyU3/YxRP76cum9fxpksf5dFUrNFqEVZXrDKO5xc0U7alnCtnPHr/Wdeg9VUGMXJItluJheLA==
-X-Received: by 2002:a63:cb09:: with SMTP id p9mr38168685pgg.105.1577202446338; 
- Tue, 24 Dec 2019 07:47:26 -0800 (PST)
-Received: from ?IPv6:2601:647:4000:1206:80fd:a97:a7d:f0c8?
- ([2601:647:4000:1206:80fd:a97:a7d:f0c8])
- by smtp.gmail.com with ESMTPSA id y38sm26414530pgk.33.2019.12.24.07.47.24
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 24 Dec 2019 07:47:25 -0800 (PST)
-Subject: Re: [PATCH v1 2/2] scsi: ufs: use ufshcd_vops_dbg_register_dump for
- vendor specific dumps
-To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
- martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
- pedrom.sousa@synopsys.com, jejb@linux.ibm.com, matthias.bgg@gmail.com
-References: <1577192466-20762-1-git-send-email-stanley.chu@mediatek.com>
- <1577192466-20762-3-git-send-email-stanley.chu@mediatek.com>
-From: Bart Van Assche <bvanassche@acm.org>
-Autocrypt: addr=bvanassche@acm.org; prefer-encrypt=mutual; keydata=
- mQENBFSOu4oBCADcRWxVUvkkvRmmwTwIjIJvZOu6wNm+dz5AF4z0FHW2KNZL3oheO3P8UZWr
- LQOrCfRcK8e/sIs2Y2D3Lg/SL7qqbMehGEYcJptu6mKkywBfoYbtBkVoJ/jQsi2H0vBiiCOy
- fmxMHIPcYxaJdXxrOG2UO4B60Y/BzE6OrPDT44w4cZA9DH5xialliWU447Bts8TJNa3lZKS1
- AvW1ZklbvJfAJJAwzDih35LxU2fcWbmhPa7EO2DCv/LM1B10GBB/oQB5kvlq4aA2PSIWkqz4
- 3SI5kCPSsygD6wKnbRsvNn2mIACva6VHdm62A7xel5dJRfpQjXj2snd1F/YNoNc66UUTABEB
- AAG0JEJhcnQgVmFuIEFzc2NoZSA8YnZhbmFzc2NoZUBhY20ub3JnPokBOQQTAQIAIwUCVI67
- igIbAwcLCQgHAwIBBhUIAgkKCwQWAgMBAh4BAheAAAoJEHFcPTXFzhAJ8QkH/1AdXblKL65M
- Y1Zk1bYKnkAb4a98LxCPm/pJBilvci6boefwlBDZ2NZuuYWYgyrehMB5H+q+Kq4P0IBbTqTa
- jTPAANn62A6jwJ0FnCn6YaM9TZQjM1F7LoDX3v+oAkaoXuq0dQ4hnxQNu792bi6QyVdZUvKc
- macVFVgfK9n04mL7RzjO3f+X4midKt/s+G+IPr4DGlrq+WH27eDbpUR3aYRk8EgbgGKvQFdD
- CEBFJi+5ZKOArmJVBSk21RHDpqyz6Vit3rjep7c1SN8s7NhVi9cjkKmMDM7KYhXkWc10lKx2
- RTkFI30rkDm4U+JpdAd2+tP3tjGf9AyGGinpzE2XY1K5AQ0EVI67igEIAKiSyd0nECrgz+H5
- PcFDGYQpGDMTl8MOPCKw/F3diXPuj2eql4xSbAdbUCJzk2ETif5s3twT2ER8cUTEVOaCEUY3
- eOiaFgQ+nGLx4BXqqGewikPJCe+UBjFnH1m2/IFn4T9jPZkV8xlkKmDUqMK5EV9n3eQLkn5g
- lco+FepTtmbkSCCjd91EfThVbNYpVQ5ZjdBCXN66CKyJDMJ85HVr5rmXG/nqriTh6cv1l1Js
- T7AFvvPjUPknS6d+BETMhTkbGzoyS+sywEsQAgA+BMCxBH4LvUmHYhpS+W6CiZ3ZMxjO8Hgc
- ++w1mLeRUvda3i4/U8wDT3SWuHcB3DWlcppECLkAEQEAAYkBHwQYAQIACQUCVI67igIbDAAK
- CRBxXD01xc4QCZ4dB/0QrnEasxjM0PGeXK5hcZMT9Eo998alUfn5XU0RQDYdwp6/kMEXMdmT
- oH0F0xB3SQ8WVSXA9rrc4EBvZruWQ+5/zjVrhhfUAx12CzL4oQ9Ro2k45daYaonKTANYG22y
- //x8dLe2Fv1By4SKGhmzwH87uXxbTJAUxiWIi1np0z3/RDnoVyfmfbbL1DY7zf2hYXLLzsJR
- mSsED/1nlJ9Oq5fALdNEPgDyPUerqHxcmIub+pF0AzJoYHK5punqpqfGmqPbjxrJLPJfHVKy
- goMj5DlBMoYqEgpbwdUYkH6QdizJJCur4icy8GUNbisFYABeoJ91pnD4IGei3MTdvINSZI5e
-Message-ID: <b95b94f9-4db3-89d2-95d7-dbcfc9ac6369@acm.org>
-Date: Tue, 24 Dec 2019 07:47:24 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
-MIME-Version: 1.0
-In-Reply-To: <1577192466-20762-3-git-send-email-stanley.chu@mediatek.com>
-Content-Language: en-US
+ id 1ijmQK-0001yC-7H
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 15:48:41 +0000
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=big-swifty.misterjones.org)
+ by cheepnis.misterjones.org with esmtpsa (TLSv1.2:AES256-GCM-SHA384:256)
+ (Exim 4.80) (envelope-from <maz@kernel.org>)
+ id 1ijmQD-00050u-Uq; Tue, 24 Dec 2019 16:48:34 +0100
+Date: Tue, 24 Dec 2019 15:48:33 +0000
+Message-ID: <8636d9iv1q.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v2 08/18] arm64: KVM: add support to save/restore SPE
+ profiling buffer controls
+In-Reply-To: <20191224151739.GP42593@e119886-lin.cambridge.arm.com>
+References: <20191220143025.33853-1-andrew.murray@arm.com>
+ <20191220143025.33853-9-andrew.murray@arm.com>
+ <20191221135755.70a6e8df@why>
+ <20191224104929.GE42593@e119886-lin.cambridge.arm.com>
+ <20191224151739.GP42593@e119886-lin.cambridge.arm.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: andrew.murray@arm.com, kvm@vger.kernel.org,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org, sudeep.holla@arm.com,
+ will@kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_074727_139168_A1EDF1DB 
-X-CRM114-Status: GOOD (  14.30  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20191224_074840_406360_C679466F 
+X-CRM114-Status: GOOD (  39.36  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.215.195 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.215.195 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (bart.vanassche[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,38 +73,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: kvm@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-24 05:01, Stanley Chu wrote:
-> We already have ufshcd_vops_dbg_register_dump() thus all
-> "hba->vops->dbg_register_dump" references can be replaced by it.
+On Tue, 24 Dec 2019 15:17:39 +0000,
+Andrew Murray <andrew.murray@arm.com> wrote:
 > 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> ---
->  drivers/scsi/ufs/ufshcd.c |    3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
-> 
-> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> index b6b9665..1ac9272 100644
-> --- a/drivers/scsi/ufs/ufshcd.c
-> +++ b/drivers/scsi/ufs/ufshcd.c
-> @@ -428,8 +428,7 @@ static void ufshcd_print_host_regs(struct ufs_hba *hba)
->  
->  	ufshcd_print_clk_freqs(hba);
->  
-> -	if (hba->vops && hba->vops->dbg_register_dump)
-> -		hba->vops->dbg_register_dump(hba);
-> +	ufshcd_vops_dbg_register_dump(hba);
->  }
+> On Tue, Dec 24, 2019 at 10:49:30AM +0000, Andrew Murray wrote:
+> > On Sat, Dec 21, 2019 at 01:57:55PM +0000, Marc Zyngier wrote:
+> > > On Fri, 20 Dec 2019 14:30:15 +0000
+> > > Andrew Murray <andrew.murray@arm.com> wrote:
+> > > 
+> > > > From: Sudeep Holla <sudeep.holla@arm.com>
+> > > > 
+> > > > Currently since we don't support profiling using SPE in the guests,
+> > > > we just save the PMSCR_EL1, flush the profiling buffers and disable
+> > > > sampling. However in order to support simultaneous sampling both in
+> > > 
+> > > Is the sampling actually simultaneous? I don't believe so (the whole
+> > > series would be much simpler if it was).
+> > 
+> > No the SPE is used by either the guest or host at any one time. I guess
+> > the term simultaneous was used to refer to illusion given to both guest
+> > and host that they are able to use it whenever they like. I'll update
+> > the commit message to drop the magic.
+> >  
+> > 
+> > > 
+> > > > the host and guests, we need to save and reatore the complete SPE
+> > > 
+> > > s/reatore/restore/
+> > 
+> > Noted.
+> > 
+> > 
+> > > 
+> > > > profiling buffer controls' context.
+> > > > 
+> > > > Let's add the support for the same and keep it disabled for now.
+> > > > We can enable it conditionally only if guests are allowed to use
+> > > > SPE.
+> > > > 
+> > > > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> > > > [ Clear PMBSR bit when saving state to prevent spurious interrupts ]
+> > > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > > > ---
+> > > >  arch/arm64/kvm/hyp/debug-sr.c | 51 +++++++++++++++++++++++++++++------
+> > > >  1 file changed, 43 insertions(+), 8 deletions(-)
+> > > > 
+> > > > diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
+> > > > index 8a70a493345e..12429b212a3a 100644
+> > > > --- a/arch/arm64/kvm/hyp/debug-sr.c
+> > > > +++ b/arch/arm64/kvm/hyp/debug-sr.c
+> > > > @@ -85,7 +85,8 @@
+> > > >  	default:	write_debug(ptr[0], reg, 0);			\
+> > > >  	}
+> > > >  
+> > > > -static void __hyp_text __debug_save_spe_nvhe(struct kvm_cpu_context *ctxt)
+> > > > +static void __hyp_text
+> > > > +__debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
+> > > 
+> > > nit: don't split lines like this if you can avoid it. You can put the
+> > > full_ctxt parameter on a separate line instead.
+> > 
+> > Yes understood.
+> > 
+> > 
+> > > 
+> > > >  {
+> > > >  	u64 reg;
+> > > >  
+> > > > @@ -102,22 +103,46 @@ static void __hyp_text __debug_save_spe_nvhe(struct kvm_cpu_context *ctxt)
+> > > >  	if (reg & BIT(SYS_PMBIDR_EL1_P_SHIFT))
+> > > >  		return;
+> > > >  
+> > > > -	/* No; is the host actually using the thing? */
+> > > > -	reg = read_sysreg_s(SYS_PMBLIMITR_EL1);
+> > > > -	if (!(reg & BIT(SYS_PMBLIMITR_EL1_E_SHIFT)))
+> > > > +	/* Save the control register and disable data generation */
+> > > > +	ctxt->sys_regs[PMSCR_EL1] = read_sysreg_el1(SYS_PMSCR);
+> > > > +
+> > > > +	if (!ctxt->sys_regs[PMSCR_EL1])
+> > > 
+> > > Shouldn't you check the enable bits instead of relying on the whole
+> > > thing being zero?
+> > 
+> > Yes that would make more sense (E1SPE and E0SPE).
+> > 
+> > I feel that this check makes an assumption about the guest/host SPE
+> > driver... What happens if the SPE driver writes to some SPE registers
+> > but doesn't enable PMSCR? If the guest is also using SPE then those
+> > writes will be lost, when the host returns and the SPE driver enables
+> > SPE it won't work.
+> >
+> > With a quick look at the SPE driver I'm not sure this will happen, but
+> > even so it makes me nervous relying on these assumptions. I wonder if
+> > this risk is present in other devices?
 
-Reviewed-by: Bart Van Assche <bvanassche@acm.org>
+As a rule of thumb, you should always save whatever you're about to
+overwrite if the registers are not under exclusive control of KVM. No
+exception.
+
+So if the guest is willing to use SPE *and* that it isn't enabled on
+the host, these registers have to be saved on vcpu_load() and restored
+on vcpu_put().
+
+If SPE is enabled on the host, then trapping has to be enabled, and no
+tracing occurs in the guest for this time slice.
+
+> In fact, this may be a good reason to trap the SPE registers - this would
+> allow you to conditionally save/restore based on a dirty bit. It would
+> also allow you to re-evaluate the SPE interrupt (for example when the guest
+> clears the status register) and thus potentially reduce any black hole.
+
+I don't see what trapping buys you in the expected case (where the
+guest is tracing and the host isn't). To clear PMBSR_EL1.S, you first
+need to know that an interrupt has fired. So this brings you exactly
+nothing in this particular case, and just adds overhead for everything
+else. The whole point of the architecture is that in the non-contended
+case, we can give SPE to the guest and mostly forget about it.
+
+I strongly suggest that you start with the simplest possible, non
+broken implementation. It doesn't matter if the black holes last for
+seconds for now. Once you have something that looks reasonable, we can
+evaluate how to improve on it by throwing actual HW and workloads at
+it.
+
+	M.
+
+-- 
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
