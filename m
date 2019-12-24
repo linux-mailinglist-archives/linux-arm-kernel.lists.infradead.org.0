@@ -2,88 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4284212A2A1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 15:51:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E4CC12A2A8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 16:03:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eA8lJEgKG7hU6oyCbM+vVvO+aVgoaKgsE9tB24+vS2M=; b=mu0R3PxASvh01m
-	C9EEP17BxkyksVA8plQQo7WcY4CAR4sXbIcVDcQYCjOqItIHowWeNVGvucNO1pLhT//xb7xfKBzCK
-	qdWlG71SNGmU+xywk/Gi6sU5J+0iYKaEL2YEN7etMqXpOvq4aOvnugLBsYaCyaXP8IHLTvbTEcpJE
-	mqSE7MW2GK/GRIOZ4B2dS2uS0TtG4rOYIOOfAxSyI+BwIC6+ulLJjt9ZZ1kUPCt4Kxc58+ZQPXzm1
-	gXmumSBMsEaLGfpjcrjwYLQmMb8SToc3kiOammZ7I91ODvEwOxCKGoWeSRiiz/xs2Gb09RMz40bDk
-	2HTgz4a/XkyI0jqFBKWQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sVn3+VCz5ccmfejJRUZYgc58oSleci2fuppUWc8SuUY=; b=sMhlUNdOzoLaR9kAhGUOcWKrx
+	v7uui4l2Ja5e85VsMx9tdy3Kt3zj9S3zetotqZprZn6YCWHE9SR35njkrxGC0Xb9E+49oQJ4pcv47
+	Si3eQeKvZIKt/QPpHNo9e4leWzk82oDMPGrLF1jJkiKHuXspVYVs2U2r9Oy7qyo+Mco5OuoGjuB0h
+	YYxqD8cSQzeZ61OeM3RO9l4fOFKmm1/tj6rKLFmdP/3aASp25qmvA/sFYB2cI8QYBi6AKHRXz0dnm
+	AiTjH4McAVMlfmDh7He1vWZhfVzmZffmOMyCA0aVotkF+sxY3drQ3dxtajBLlMZ8v4Yt6iQ5FDW8/
+	tBMvosl7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijlXJ-0001Iz-LY; Tue, 24 Dec 2019 14:51:49 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijlXC-0001Ia-Re
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 14:51:44 +0000
-Received: by mail-io1-xd41.google.com with SMTP id x1so19316147iop.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Dec 2019 06:51:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=HA9SF07pomUf/mhFGeOHvPX1/YV6Atxy36iIR2tYUwc=;
- b=vIZYFYQdzUfJmTpJC+q5NIi8BYa6+DWw959lZLAuayQW3H+rhE9SRRujDIn3jIB7/u
- +UK4PiTNIrzYzzNO+Cq1xIqvuQlbnA1oMKm0XzqSs+J6wCVhQ87fZe6V/7y9nzE9HSVr
- Et8HQGgg3B90f77+UO0CLaJlWcubtJoq8Z1dBGIteQElbBYxA+BI/QHaW/KAXyJGOD0l
- 3U8nc6e2Uaa9QwmniMP53YaE8uFTXY4ExSArH/Ro37qvbAhZL5/9A9Unop+xBkuiFREv
- KGW5+qjFYgmZLMbjD1qEdd7kHvyjMH7qtkCwtP0m1eN8tmq4C/5nESdZ8XHLtbSAjILj
- oajg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=HA9SF07pomUf/mhFGeOHvPX1/YV6Atxy36iIR2tYUwc=;
- b=atp/SwKHzCcJAYelWdVhy6c3H85UuGQvFTmrhvf0APyDbn8qZdwMLHvHArum8F4uOD
- r/BhHASXf1m7l3Zi8MKGw9G0R540NA+IqroX0GVjPDPtNZaapttYgbapWCNKTap/rHi3
- X3zAzEpGXo8DZHlEt0gg5S0Sd63VobBqoXW5tFYFB2Be+NxXcsysGwCIjWzRzWTPNAEh
- pjPuqJlqJ1KswrEVTbG6Txewi/z7h8Ui3PB72xb7SJwv0GKpCBr6kdwL7SL0PmwPXiEP
- TxuwwSea5pMR9BL4YefpNGgTtSart7mtB+CrrLV6Huh6zdm2Pm2U8jeJy/aetU2SE35Y
- 2v3g==
-X-Gm-Message-State: APjAAAUyrD7x50uGIBNzw/uB6Kb/YQ3fTCX5hbIsWYUCYtp/++ihMeri
- T9B6/KbSyrs9De1QQACOtrDpQC5Od+orHzQJ/QY=
-X-Google-Smtp-Source: APXvYqyTA0h9UaY01CHPo22LrNq/F1xXrEI8zP9Isq32dA7+ynxUzAzjdJ1cR2bA+G2udw/5Th5u66brm9gGwVDtkeU=
-X-Received: by 2002:a5d:9eda:: with SMTP id a26mr24747238ioe.238.1577199101880; 
- Tue, 24 Dec 2019 06:51:41 -0800 (PST)
+	id 1ijlip-0004k6-Nd; Tue, 24 Dec 2019 15:03:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ijlif-0004jL-NU
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 15:03:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 44E841FB;
+ Tue, 24 Dec 2019 07:03:29 -0800 (PST)
+Received: from [10.1.195.17] (e123572-lin.cambridge.arm.com [10.1.195.17])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 802B13F6CF;
+ Tue, 24 Dec 2019 07:03:25 -0800 (PST)
+Subject: Re: [PATCH 22/22] arm64: mte: Add Memory Tagging Extension
+ documentation
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20191211184027.20130-1-catalin.marinas@arm.com>
+ <20191211184027.20130-23-catalin.marinas@arm.com>
+From: Kevin Brodsky <kevin.brodsky@arm.com>
+Message-ID: <268ef441-0817-e97d-b752-826be24ca191@arm.com>
+Date: Tue, 24 Dec 2019 15:03:22 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-References: <CGME20191223191928epcas1p128d39bb875b8654d61ae21364e466ec7@epcas1p1.samsung.com>
- <20191223191923.10450-1-tiny.windzz@gmail.com>
- <7230b556-7a96-14d1-ed22-43b5a6cd5a71@samsung.com>
-In-Reply-To: <7230b556-7a96-14d1-ed22-43b5a6cd5a71@samsung.com>
-From: Frank Lee <tiny.windzz@gmail.com>
-Date: Tue, 24 Dec 2019 22:51:30 +0800
-Message-ID: <CAEExFWs6Wtg9dJbx9nwq4F53Lc5e__rzRn0QedJt2ffJTKU3uA@mail.gmail.com>
-Subject: Re: [PATCH] PM / devfreq: exynos-bus: Add error log when get event
- fails
-To: Chanwoo Choi <cw00.choi@samsung.com>
+In-Reply-To: <20191211184027.20130-23-catalin.marinas@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_065142_894321_F0225134 
-X-CRM114-Status: GOOD (  20.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191224_070333_854625_A8CC5DAE 
+X-CRM114-Status: GOOD (  36.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,83 +66,347 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Linux PM <linux-pm@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, Marc Zyngier <maz@kernel.org>,
+ linux-mm@kvack.org, Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 24, 2019 at 12:00 PM Chanwoo Choi <cw00.choi@samsung.com> wrote:
+On 11/12/2019 18:40, Catalin Marinas wrote:
+> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 >
-> Hi,
+> Memory Tagging Extension (part of the ARMv8.5 Extensions) provides
+> a mechanism to detect the sources of memory related errors which
+> may be vulnerable to exploitation, including bounds violations,
+> use-after-free, use-after-return, use-out-of-scope and use before
+> initialization errors.
 >
-> I think that you better to use 'devfreq-event' instead of just 'event'
-> as following:
+> Add Memory Tagging Extension documentation for the arm64 linux
+> kernel support.
 >
-> PM / devfreq: exynos-bus: Add error log when fail to get devfreq-event
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> Co-developed-by: Catalin Marinas <catalin.marinas@arm.com>
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+>   Documentation/arm64/cpu-feature-registers.rst |   4 +
+>   Documentation/arm64/elf_hwcaps.rst            |   4 +
+>   Documentation/arm64/index.rst                 |   1 +
+>   .../arm64/memory-tagging-extension.rst        | 229 ++++++++++++++++++
+>   4 files changed, 238 insertions(+)
+>   create mode 100644 Documentation/arm64/memory-tagging-extension.rst
 >
-> On 12/24/19 4:19 AM, Yangtao Li wrote:
-> > Adding an error log makes it easier to trace the function's error path.
-> > Because the error code may be rewritten on return, print error code here.
-> >
-> > Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> > ---
-> >  drivers/devfreq/exynos-bus.c | 2 ++
-> >  1 file changed, 2 insertions(+)
-> >
-> > diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
-> > index 948e9340f91c..634d63fd00ea 100644
-> > --- a/drivers/devfreq/exynos-bus.c
-> > +++ b/drivers/devfreq/exynos-bus.c
-> > @@ -126,6 +126,8 @@ static int exynos_bus_get_dev_status(struct device *dev,
-> >
-> >       ret = exynos_bus_get_event(bus, &edata);
-> >       if (ret < 0) {
-> > +             dev_err(dev, "failed to get event from devfreq-event devices %d\n",
-> > +                     ret);
+> diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
+> index b6e44884e3ad..67305a5f613a 100644
+> --- a/Documentation/arm64/cpu-feature-registers.rst
+> +++ b/Documentation/arm64/cpu-feature-registers.rst
+> @@ -172,8 +172,12 @@ infrastructure:
+>        +------------------------------+---------+---------+
+>        | Name                         |  bits   | visible |
+>        +------------------------------+---------+---------+
+> +     | MTE                          | [11-8]  |    y    |
+> +     +------------------------------+---------+---------+
+>        | SSBS                         | [7-4]   |    y    |
+>        +------------------------------+---------+---------+
+> +     | BT                           | [3-0]   |    n    |
+> +     +------------------------------+---------+---------+
 
-Emmm, it looks a bit strange to me...
-V2 has been sent.
+Not sure the BTI bits should be in this patch.
 
-Yours,
-Yangtao
+>     4) MIDR_EL1 - Main ID Register
+> diff --git a/Documentation/arm64/elf_hwcaps.rst b/Documentation/arm64/elf_hwcaps.rst
+> index 7fa3d215ae6a..0f52d22c28af 100644
+> --- a/Documentation/arm64/elf_hwcaps.rst
+> +++ b/Documentation/arm64/elf_hwcaps.rst
+> @@ -204,6 +204,10 @@ HWCAP2_FRINT
+>   
+>       Functionality implied by ID_AA64ISAR1_EL1.FRINTTS == 0b0001.
+>   
+> +HWCAP2_MTE
+> +
+> +    Functionality implied by ID_AA64PFR1_EL1.MTE == 0b0010.
+> +    Documentation/arm64/memory-tagging-extension.rst.
 
+Nit: to be consistent with the PAC bits, the text should be something like "implied 
+by ..., as described by Documentation/..."
 
->
-> Better to make it under 80 char as following:
->
-> diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
-> index f5d4c369c7fb..10f4fa1a0363 100644
-> --- a/drivers/devfreq/exynos-bus.c
-> +++ b/drivers/devfreq/exynos-bus.c
-> @@ -126,7 +126,8 @@ static int exynos_bus_get_dev_status(struct device *dev,
->
->         ret = exynos_bus_get_event(bus, &edata);
->         if (ret < 0) {
-> -               dev_err(dev, "failed to get event from devfreq-event devices %d\n",
-> +               dev_err(dev,
-> +                       "failed to get event from devfreq-event devices %d\n",
->                         ret);
->                 stat->total_time = stat->busy_time = 0;
->                 goto err;
->
->
-> >               stat->total_time = stat->busy_time = 0;
-> >               goto err;
-> >       }
-> >
->
->
-> --
-> Best Regards,
-> Chanwoo Choi
-> Samsung Electronics
+>   4. Unused AT_HWCAP bits
+>   -----------------------
+> diff --git a/Documentation/arm64/index.rst b/Documentation/arm64/index.rst
+> index 5c0c69dc58aa..82970c6d384f 100644
+> --- a/Documentation/arm64/index.rst
+> +++ b/Documentation/arm64/index.rst
+> @@ -13,6 +13,7 @@ ARM64 Architecture
+>       hugetlbpage
+>       legacy_instructions
+>       memory
+> +    memory-tagging-extension
+>       pointer-authentication
+>       silicon-errata
+>       sve
+> diff --git a/Documentation/arm64/memory-tagging-extension.rst b/Documentation/arm64/memory-tagging-extension.rst
+> new file mode 100644
+> index 000000000000..ae02f0771971
+> --- /dev/null
+> +++ b/Documentation/arm64/memory-tagging-extension.rst
+> @@ -0,0 +1,229 @@
+> +===============================================
+> +Memory Tagging Extension (MTE) in AArch64 Linux
+> +===============================================
+> +
+> +Authors: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> +         Catalin Marinas <catalin.marinas@arm.com>
+> +
+> +Date: 2019-11-29
+> +
+> +This document describes the provision of the Memory Tagging Extension
+> +functionality in AArch64 Linux.
+> +
+> +Introduction
+> +============
+> +
+> +ARMv8.5 based processors introduce the Memory Tagging Extension (MTE)
+> +feature. MTE is built on top of the ARMv8.0 virtual address tagging TBI
+> +(Top Byte Ignore) feature and allows software to access a 4-bit
+> +allocation tag for each 16-byte granule in the physical address space.
+> +Such memory range must be mapped with the Normal-Tagged memory
+> +attribute. A logical tag is derived from bits 59-56 of the virtual
+> +address used for the memory access. A CPU with MTE enabled will compare
+> +the logical tag against the allocation tag and potentially raise an
+> +exception on mismatch, subject to system registers configuration.
+> +
+> +Userspace Support
+> +=================
+> +
+> +Memory Tagging Extension Linux support depends on AArch64 Tagged Address
+> +ABI being enabled in the kernel.
+
+This is not very clear. Does it mean that the thread must have PR_TAGGED_ADDR_ENABLE 
+set? In fact, as per patch 19, it is perfectly possible to enable tag checking 
+without enabling the tagged address ABI, and this can work as long as no tagged 
+pointer is passed to a syscall. Therefore enabling the tagged address ABI should be a 
+recommendation and not a requirement.
+
+>   For more details on AArch64 Tagged
+> +Address ABI refer to Documentation/arm64/tagged-address-abi.rst.
+> +
+> +When ``CONFIG_ARM64_MTE`` is selected and Memory Tagging Extension is
+> +supported by the hardware, the kernel advertises the feature to
+> +userspace via ``HWCAP2_MTE``.
+> +
+> +PROT_MTE
+> +--------
+> +
+> +To access the allocation tags, a user process must enable the Tagged
+> +memory attribute on an address range using a new ``prot`` flag for
+> +``mmap()`` and ``mprotect()``:
+> +
+> +``PROT_MTE`` - Pages allow access to the MTE allocation tags.
+> +
+> +The allocation tag is set to 0 when such pages are first mapped in the
+> +user address space and preserved on copy-on-write. ``MAP_SHARED`` is
+> +supported and the allocation tags can be shared between processes.
+> +
+> +**Note**: ``PROT_MTE`` is only supported on ``MAP_ANONYMOUS`` and
+> +RAM-based file mappings (``tmpfs``, ``memfd``). Passing it to other
+> +types of mapping will result in ``-EINVAL`` returned by these system
+> +calls.
+> +
+> +**Note**: The ``PROT_MTE`` flag (and corresponding memory type) cannot
+> +be cleared by ``mprotect()``. If this is desirable, ``munmap()``
+> +(followed by ``mmap()``) must be used.
+
+Or mmap(addr, ..., MAP_FIXED) to "overwrite" the mapping. Maybe it's better to just 
+say that a new mapping must be created.
+
+> +
+> +Tag Check Faults
+> +----------------
+> +
+> +When ``PROT_MTE`` is enabled on an address range and a mismatch between
+> +the logical and allocation tags occurs on access, there are three
+> +configurable behaviours:
+> +
+> +- *Ignore* - This is the default mode. The CPU (and kernel) ignores the
+> +  tag check fault.
+> +
+> +- *Synchronous* - The kernel raises a ``SIGSEGV`` synchronously, with
+> +  ``.si_code = SEGV_MTESERR`` and ``.si_addr = <fault-address>``. The
+> +  memory access is not performed.
+> +
+> +- *Asynchronous* - The kernel raises a ``SIGSEGV``, in the current
+> +  thread, asynchronously following one or multiple tag check faults,
+> +  with ``.si_code = SEGV_MTEAERR`` and ``.si_addr = 0``.
+> +
+> +**Note**: There are no *match-all* logical tags available for user
+> +applications.
+> +
+> +The user can select the above modes, per thread, using the
+> +``prctl(PR_SET_TAGGED_ADDR_CTRL, flags, 0, 0, 0)`` system call where
+> +``flags`` contain one of the following values in the ``PR_MTE_TCF_MASK``
+> +bit-field:
+> +
+> +- ``PR_MTE_TCF_NONE``  - *Ignore* tag check faults
+> +- ``PR_MTE_TCF_SYNC``  - *Synchronous* tag check fault mode
+> +- ``PR_MTE_TCF_ASYNC`` - *Asynchronous* tag check fault mode
+> +
+> +Tag checking can also be disabled for a user thread by setting the
+> +``PSTATE.TCO`` bit with ``MSR TCO, #1``.
+> +
+> +**Note**: Signal handlers are always invoked with ``PSTATE.TCO = 0``,
+> +irrespective of the interrupted context.
+> +
+> +**Note**: Kernel accesses to user memory (e.g. ``read()`` system call)
+> +do not generate a tag check fault.
+> +
+> +Excluding Tags in the ``IRG``, ``ADDG`` and ``SUBG`` instructions
+> +-----------------------------------------------------------------
+> +
+> +The architecture allows excluding certain tags to be randomly generated
+> +via the ``GCR_EL1.Exclude`` register bit-field. This can be configured,
+> +per thread, using the ``prctl(PR_SET_TAGGED_ADDR_CTRL, flags, 0, 0, 0)``
+> +system call where ``flags`` contains the exclusion bitmap in the
+> +``PR_MTE_EXCL_MASK`` bit-field.
+> +
+> +Example of correct usage
+> +========================
+> +
+> +*MTE Example code*
+> +
+> +.. code-block:: c
+> +
+> +    /*
+> +     * To be compiled with -march=armv8.5-a+memtag
+> +     */
+> +    #include <errno.h>
+> +    #include <stdio.h>
+> +    #include <stdlib.h>
+> +    #include <unistd.h>
+> +    #include <sys/auxv.h>
+> +    #include <sys/mman.h>
+> +    #include <sys/prctl.h>
+> +
+> +    /*
+> +     * From arch/arm64/include/uapi/asm/hwcap.h
+> +     */
+> +    #define HWCAP2_MTE              (1 << 10)
+> +
+> +    /*
+> +     * From arch/arm64/include/uapi/asm/mman.h
+> +     */
+> +    #define PROT_MTE                 0x20
+> +
+> +    /*
+> +     * From include/uapi/linux/prctl.h
+> +     */
+> +    #define PR_SET_TAGGED_ADDR_CTRL 55
+> +    #define PR_GET_TAGGED_ADDR_CTRL 56
+> +    # define PR_TAGGED_ADDR_ENABLE  (1UL << 0)
+> +    # define PR_MTE_TCF_SHIFT       1
+> +    # define PR_MTE_TCF_NONE        (0UL << PR_MTE_TCF_SHIFT)
+> +    # define PR_MTE_TCF_SYNC        (1UL << PR_MTE_TCF_SHIFT)
+> +    # define PR_MTE_TCF_ASYNC       (2UL << PR_MTE_TCF_SHIFT)
+> +    # define PR_MTE_TCF_MASK        (3UL << PR_MTE_TCF_SHIFT)
+> +    # define PR_MTE_EXCL_SHIFT      3
+> +    # define PR_MTE_EXCL_MASK       (0xffffUL << PR_MTE_EXCL_SHIFT)
+> +
+> +    /*
+> +     * Insert a random logical tag into the given pointer.
+> +     */
+> +    #define insert_random_tag(ptr) ({                       \
+> +            __u64 __val;                                    \
+> +            asm("irg %0, %1" : "=r" (__val) : "r" (ptr));   \
+> +            __val;                                          \
+> +    })
+> +
+> +    /*
+> +     * Set the allocation tag on the destination address.
+> +     */
+> +    #define set_tag(tag, addr) do {                                 \
+> +            asm volatile("stg %0, [%1]" : : "r" (tag), "r" (addr)); \
+
+Since STG modifies the memory, "memory" should be added to the clobber list. 
+`volatile` makes no difference since there's no output operand.
+
+To simplify the example for people less familiar with MTE, I would also suggest for 
+this macro to only take one argument, and use it for both operands of STG. The 
+two-operand form is a relatively recent addition to the architecture, and using 
+different operands is very rarely needed (especially in userspace).
+
+Otherwise the documentation and example look good to me.
+
+Kevin
+
+> +    } while (0)
+> +
+> +    int main()
+> +    {
+> +            unsigned long *a;
+> +            unsigned long page_sz = getpagesize();
+> +            unsigned long hwcap2 = getauxval(AT_HWCAP2);
+> +
+> +            /* check if MTE is present */
+> +            if (!(hwcap2 & HWCAP2_MTE))
+> +                    return -1;
+> +
+> +            /*
+> +             * Enable the tagged address ABI, synchronous MTE tag check faults and
+> +             * exclude tag 0 from the randomly generated set.
+> +             */
+> +            if (prctl(PR_SET_TAGGED_ADDR_CTRL,
+> +                      PR_TAGGED_ADDR_ENABLE | PR_MTE_TCF_SYNC | (1 << PR_MTE_EXCL_SHIFT),
+> +                      0, 0, 0)) {
+> +                    perror("prctl() failed");
+> +                    return -1;
+> +            }
+> +
+> +            a = mmap(0, page_sz, PROT_READ | PROT_WRITE,
+> +                     MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+> +            if (a == MAP_FAILED) {
+> +                    perror("mmap() failed");
+> +                    return -1;
+> +            }
+> +
+> +            /*
+> +             * Enable MTE on the above anonymous mmap. The flag could be passed
+> +             * directly to mmap() and skip this step.
+> +             */
+> +            if (mprotect(a, page_sz, PROT_READ | PROT_WRITE | PROT_MTE)) {
+> +                    perror("mprotect() failed");
+> +                    return -1;
+> +            }
+> +
+> +            /* access with the default tag (0) */
+> +            a[0] = 1;
+> +            a[1] = 2;
+> +
+> +            printf("a[0] = %lu a[1] = %lu\n", a[0], a[1]);
+> +
+> +            /* set the logical and allocation tags */
+> +            a = (unsigned long *)insert_random_tag(a);
+> +            set_tag(a, a);
+> +
+> +            printf("%p\n", a);
+> +
+> +            /* non-zero tag access */
+> +            a[0] = 3;
+> +            printf("a[0] = %lu a[1] = %lu\n", a[0], a[1]);
+> +
+> +            /*
+> +             * If MTE is enabled correctly the next instruction will generate an
+> +             * exception.
+> +             */
+> +            printf("Expecting SIGSEGV...\n");
+> +            a[2] = 0xdead;
+> +
+> +            /* this should not be printed in the PR_MTE_TCF_SYNC mode */
+> +            printf("...done\n");
+> +
+> +            return 0;
+> +    }
+
 
 _______________________________________________
 linux-arm-kernel mailing list
