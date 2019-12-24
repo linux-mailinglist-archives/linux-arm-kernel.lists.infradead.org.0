@@ -2,56 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44919129FE0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 11:01:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FB56129FEB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 11:04:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=FLy6ZImp5KTq+acqyb6mxtk0vdfIVCDNv/OHXkRw/xo=; b=D4J
-	pxvCi6dw0YT/XHN4a7/pQNUOGKmdtbyg72p0iM0miUQcWbcuqkIk+kh7D2ojlYz0uS0hJVNmtGrx7
-	SWoCzeiJ01ARBjTkkitj3xyD9OtMMfiJqzt+s/NFNW+rOn6/7QigHscdllUN6nt0iOfrBl72YX77K
-	p3Ig/z10vhbK3nE5ZyYmKvVAPjY7UMWiB4UEHC/yp3DZn6YqeU03RZw+uUzyhoIcYz54iDAEoEwia
-	5pNd/8H2gWiVori/GHfso67iMnvT7lZhHMdpr7e6W26fKGTPGSg80VhrNSoUJda91EXgddMtMtUmd
-	M315/UTEO9V1tkdLdgq/xjQ8al6ToXw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iQlH+MzVmAmKUYpoWg52aSOUtDeJeW8H4he2jPrxfio=; b=rqMGfQYCa9m31Q
+	47ObMlqegjo6e0G4avbcr5pWqKzlCpe5rr423Ty8EKgdaxdTPqMlgpjCZOHRNuVka5QGr5fJLrx8T
+	wklvvUYjxktzeFHO32gvvw/YD87DYL0W9La9vc9HdzSKU5HBzbkCS6iv0/GGIyaAmLRRfIme7bTwY
+	97QP/hmDrUKTRkMtMGpWTajV1ux285k6caA3oVLKzh3HAr3uqp/Qe+Jo9MrPOrC+PzGJWaYT61Aju
+	4ekel0MNUWXnuHHBGRtWr23L2Me8If5llpF3CsEZgqttY/YJkDE6bpqWwi0T7WRKQCzT33C/V8bB4
+	g/MQ4e1zxb0cI2SmWQSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijh0T-0005ck-F9; Tue, 24 Dec 2019 10:01:37 +0000
-Received: from alexa-out-blr-02.qualcomm.com ([103.229.18.198])
+	id 1ijh2i-0005y7-CY; Tue, 24 Dec 2019 10:03:56 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijh0J-0005bM-Lo
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 10:01:29 +0000
-Received: from ironmsg01-blr.qualcomm.com ([10.86.208.130])
- by alexa-out-blr-02.qualcomm.com with ESMTP/TLS/AES256-SHA;
- 24 Dec 2019 15:29:51 +0530
-Received: from pillair-linux.qualcomm.com ([10.204.116.193])
- by ironmsg01-blr.qualcomm.com with ESMTP; 24 Dec 2019 15:29:41 +0530
-Received: by pillair-linux.qualcomm.com (Postfix, from userid 452944)
- id AC35E37AC; Tue, 24 Dec 2019 15:29:40 +0530 (IST)
-From: Rakesh Pillai <pillair@codeaurora.org>
-To: devicetree@vger.kernel.org
-Subject: [PATCH v3] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module device
- node
-Date: Tue, 24 Dec 2019 15:29:35 +0530
-Message-Id: <1577181575-25788-1-git-send-email-pillair@codeaurora.org>
-X-Mailer: git-send-email 2.7.4
+ id 1ijh2M-0005x5-Ga
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 10:03:35 +0000
+Received: by mail-wr1-x441.google.com with SMTP id w15so6753681wru.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Dec 2019 02:03:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0ZsZKg1YffuHIcf56+MEUis8ScLI3mY9i8Ph7Sk75GI=;
+ b=MqNoyAvZ3bGV01kIgcBYs1dNiN581FYUQQc5XaPPAIQrRYR8jRjcW5+NOmrQLnXOMy
+ +rAdfSiseXRONB7FOkhf3d2UzhrhonApn8hApIqDWdT3mMkVA5qtjmzHize2rHJq6hjh
+ x5Gypq5oQKI0hV9OgmDdUDui/m/s+7/fEenqycRCKy4Yj4mgkR+GxPr4/AJiaCecatAg
+ gxLmy1Fmsh7QSvkVHgzctxYdMS6cJFILWzYj2oSBN5RZtO47skOpMwIH0g8ytPcq8Xtg
+ RDFRBsnqmmUfF4hVtceBDuXn8lfTiN+q8SPTGf5Nr5H45LD+39BRm+KcvoIf1gD3uBFD
+ Ivyw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0ZsZKg1YffuHIcf56+MEUis8ScLI3mY9i8Ph7Sk75GI=;
+ b=rQL4ExQdDBH0Xr1+kbs4178mVtjuZfX8kI6afz5C66+T+nEUrnapcXBZqvzcLjjep9
+ z1HWUxWoErmenKxSuHK1Gv5OSq+bW4wl09aUQhM1ZoZ1nw7ua1dT6rV1+trsSvrP5mJp
+ I46vPnNtiB3/I1La6rdNUyPYdGYnn6f4BEsdC6VJFXq1OX/j8geWW2ZTqBPK58LyKzF+
+ qch+jsnumKCIWDEGHxdlVg3YLmbGKzqXY4QolWfOEKeq3sI/IWA8GJrhSdemJIbKHDiI
+ WznhIVINXTI5sQYkMnGCXnZUYN8qaST3OOBAKegYfg1vDIADi32OWJL53bKhzxsWU/nS
+ LEjA==
+X-Gm-Message-State: APjAAAXV5Jc2wBg4l9arGVGxaY70Mym8OgmQ9EMQ8Pu3SKRJGpejP+5C
+ 4qgJ7FVUUD6rILTChScMDr5Z4w==
+X-Google-Smtp-Source: APXvYqxnYJvSlllHtbmLwHwhMKGkVlozEQqfStZhaKxgmu+TbXc2bIVZQuE3KOYfHzT0kcTJo5Ol/Q==
+X-Received: by 2002:a5d:6305:: with SMTP id i5mr35261141wru.119.1577181812545; 
+ Tue, 24 Dec 2019 02:03:32 -0800 (PST)
+Received: from debian-brgl.home ([2a01:cb1d:af:5b00:6d6c:8493:1ab5:dad7])
+ by smtp.gmail.com with ESMTPSA id a184sm2164048wmf.29.2019.12.24.02.03.31
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 24 Dec 2019 02:03:31 -0800 (PST)
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+To: Sekhar Nori <nsekhar@ti.com>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Thomas Gleixner <tglx@linutronix.de>, David Lechner <david@lechnology.com>,
+ Kevin Hilman <khilman@kernel.org>
+Subject: [PATCH v2 0/3] ARM: davinci: convert dm365 to using the new
+ clocksource driver
+Date: Tue, 24 Dec 2019 11:03:25 +0100
+Message-Id: <20191224100328.13608-1-brgl@bgdev.pl>
+X-Mailer: git-send-email 2.23.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_020128_222628_D2FEB466 
-X-CRM114-Status: UNSURE (   8.47  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.5 (/)
+X-CRM114-CacheID: sfid-20191224_020334_572744_7FE86A05 
+X-CRM114-Status: GOOD (  14.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [103.229.18.198 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,90 +94,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Rakesh Pillai <pillair@codeaurora.org>,
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add device node for the ath10k SNOC platform driver probe
-and add resources required for WCN3990 on sc7180 soc.
+From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
----
-This change is dependent on the below set of changes
-arm64: dts: sc7180: Add qupv3_0 and qupv3_1 (https://lore.kernel.org/patchwork/patch/1150367/)
----
- arch/arm64/boot/dts/qcom/sc7180-idp.dts |  5 +++++
- arch/arm64/boot/dts/qcom/sc7180.dtsi    | 28 ++++++++++++++++++++++++++++
- 2 files changed, 33 insertions(+)
+Hi Sekhar,
 
-diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-index 189254f..b2ca143f 100644
---- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-+++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-@@ -248,6 +248,11 @@
- 	status = "okay";
- };
- 
-+&wifi {
-+	status = "okay";
-+	qcom,msa_fixed_perm;
-+};
-+
- /* PINCTRL - additions to nodes defined in sc7180.dtsi */
- 
- &qup_i2c2_default {
-diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-index 666e9b9..7efb97f 100644
---- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-@@ -42,6 +42,12 @@
- 			compatible = "qcom,cmd-db";
- 			no-map;
- 		};
-+
-+		wlan_fw_mem: memory@93900000 {
-+			compatible = "removed-dma-pool";
-+			no-map;
-+			reg = <0 0x93900000 0 0x200000>;
-+		};
- 	};
- 
- 	cpus {
-@@ -1119,6 +1125,28 @@
- 				#clock-cells = <1>;
- 			};
- 		};
-+
-+		wifi: wifi@18800000 {
-+			compatible = "qcom,wcn3990-wifi";
-+			reg = <0 0x18800000 0 0x800000>;
-+			reg-names = "membase";
-+			iommus = <&apps_smmu 0xC0 0x1>;
-+			interrupts =
-+				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
-+				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
-+				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
-+				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
-+				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
-+				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
-+				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
-+				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
-+				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
-+				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
-+				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
-+				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
-+			memory-region = <&wlan_fw_mem>;
-+			status = "disabled";
-+		};
- 	};
- 
- 	timer {
+I'm resending this (with fixes) as other solutions have failed and I
+think that this is a correct thing to do after all. In the end: with
+this patch we do bring the clock to a defined state before enabling it.
+
+Let me know what you think about it.
+
+---
+
+This is a follow-up to the big series converting DaVinci to using
+a proper clocksource driver. Last time we couldn't merge the entire
+series because of a bug that only appears on dm365 Soc when using
+ancient u-boot.
+
+This series contains a workaround for this problem, a patch finally
+converting the platform as well as a removal of all obsolete code.
+
+v1 -> v2:
+- simplify patch 1/3 by using a boolean flag instead of caching the
+  value bits for TIM34
+
+Bartosz Golaszewski (3):
+  clocksource: davinci: only enable tim34 in periodic mode once it's
+    initialized
+  ARM: davinci: dm365: switch to using the clocksource driver
+  ARM: davinci: remove legacy timer support
+
+ arch/arm/mach-davinci/Makefile              |   3 +-
+ arch/arm/mach-davinci/devices-da8xx.c       |   1 -
+ arch/arm/mach-davinci/devices.c             |  19 -
+ arch/arm/mach-davinci/dm365.c               |  22 +-
+ arch/arm/mach-davinci/include/mach/common.h |  17 -
+ arch/arm/mach-davinci/include/mach/time.h   |  33 --
+ arch/arm/mach-davinci/time.c                | 400 --------------------
+ drivers/clocksource/timer-davinci.c         |  13 +-
+ 8 files changed, 25 insertions(+), 483 deletions(-)
+ delete mode 100644 arch/arm/mach-davinci/include/mach/time.h
+ delete mode 100644 arch/arm/mach-davinci/time.c
+
 -- 
-2.7.4
+2.23.0
 
 
 _______________________________________________
