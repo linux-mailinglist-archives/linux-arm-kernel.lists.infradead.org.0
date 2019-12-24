@@ -2,61 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B646129CED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 03:52:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47C4D129CF8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 03:57:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nj0TyTkjE+X8TZethxAIwF1oEKZqbHoyrHvbIMKX9DM=; b=jWJV0wRWkE6zlCZLprRMKicMI
-	lcj/OCIX0T8K7Ytct2BGVNjGy0fRnIVeI1KYfIDO+cwAkwR+HKADg4w/z68APewU6eXehResqvN/T
-	MSx3wYr4hi95YRhBygPTQ9aQrAYqkusslgIpW7EhnMCFGFqScZwiBiXra7RJwdfwzEaj+yiLWrnmQ
-	uL4ybWsgYhu5wJCoQgd6aoDWUCBeemRsKdnFSovTqNtt5SUOHfPzKuK1e9cpn9hPTeRjyScjK3zBJ
-	3VaWea1OfLF1zms1yhjc6rFSj4dxFqOahZ7vNYpJgU5nEtoXIpUd9eWqMm08OoR3tvZQInCKExiba
-	+Zm5WmYwA==;
+	 bh=PUNi/pVNooM9FqIeO9KJQsys6rtYPLnesv/FS/l3MuU=; b=HzCYik3s8TLT4EiH1YfEmrPqd
+	bsFnuV/dc66aaP48U3FZSYGcPHtDS+YvANZCNRDP2IV6qmmCSFd71QhZIRkK8zU10HBhgHisHQcRH
+	bTI2uXw0it2GATbbFoub1EzLCGRD9hRtVQWIGUoY5mBZe+IQkvaVq2fm+0D8TB8PHrmFPWnJ6XhFP
+	h278v7rFfydvJqd3vIy7opjVAAnJMHu8UQwz07AZK0WNVySKxvecc9keNv4BcwVFm1E669C+sUUeU
+	Vbz/fD+sI2MMWzOTEJYpyidoz1KTS3MJVQCEv6W2EGObcsHvBCUIAxkOaWuylhC0/prYqTrdNovh5
+	ylX366GyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijaJX-0001ao-TX; Tue, 24 Dec 2019 02:52:51 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1ijaOF-0003CR-3C; Tue, 24 Dec 2019 02:57:43 +0000
+Received: from mail25.static.mailgun.info ([104.130.122.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijaJN-0001Zz-TA
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 02:52:43 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 1582691D5E6EDCC03903;
- Tue, 24 Dec 2019 10:52:35 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.439.0; Tue, 24 Dec 2019
- 10:52:27 +0800
-Subject: Re: [PATCH] KVM: arm/arm64: vgic: Handle GICR_PENDBASER.PTZ filed as
- RAZ
-To: Marc Zyngier <maz@kernel.org>
-References: <20191220111833.1422-1-yuzenghui@huawei.com>
- <3a729559-d0eb-e042-d6bd-b69bacb0dd23@huawei.com>
- <c084aa29c029f97cdfb1b5dc9e6b29ac@www.loen.fr>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <1225d839-3cf7-d513-778e-698e12e94875@huawei.com>
-Date: Tue, 24 Dec 2019 10:52:26 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1ijaO4-0003C5-Hh
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 02:57:34 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1577156251; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=mF5Yk5W/LFHhcmsl8A7AIYFZxAxJ+b22oU+U2E97r6g=;
+ b=YWrQ/E8ynl3I0+ZGXzdNpqeBsC6J/Ckm9zm9rwGGeT/J4+gKhE0WDw63myqWnRgUAG1nB8nm
+ vtBSuSLbYwB1nKlGWqTSMiOJoPWaWOcuftyRblEgMNXcC52ITqA+BICavB1fEnaOwHV48UQC
+ iLAyqjFduAmPL6ACFScRkB8ZW3s=
+X-Mailgun-Sending-Ip: 104.130.122.25
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e017e9a.7fc6d5df4ce0-smtp-out-n01;
+ Tue, 24 Dec 2019 02:57:30 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 9B16CC447A0; Tue, 24 Dec 2019 02:57:29 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,URIBL_BLOCKED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested) (Authenticated sender: smasetty)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id C5E8DC43383;
+ Tue, 24 Dec 2019 02:57:28 +0000 (UTC)
 MIME-Version: 1.0
-In-Reply-To: <c084aa29c029f97cdfb1b5dc9e6b29ac@www.loen.fr>
-Content-Language: en-US
-X-Originating-IP: [10.173.222.27]
-X-CFilter-Loop: Reflected
+Date: Tue, 24 Dec 2019 08:27:28 +0530
+From: smasetty@codeaurora.org
+To: Jordan Crouse <jcrouse@codeaurora.org>
+Subject: Re: [PATCH v3 5/5] drm/msm/a6xx: Support split pagetables
+In-Reply-To: <1576514271-15687-6-git-send-email-jcrouse@codeaurora.org>
+References: <1576514271-15687-1-git-send-email-jcrouse@codeaurora.org>
+ <1576514271-15687-6-git-send-email-jcrouse@codeaurora.org>
+Message-ID: <8aec2a4f74fede1cf616b9e2eece3e8e@codeaurora.org>
+X-Sender: smasetty@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_185242_112821_38ABE857 
-X-CRM114-Status: GOOD (  18.44  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191223_185732_974351_050EEB6E 
+X-CRM114-Status: GOOD (  23.56  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.25 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [104.130.122.25 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,77 +88,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andre.przywara@arm.com, linux-kernel@vger.kernel.org, eric.auger@redhat.com,
- wanghaibin.wang@huawei.com, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Sean Paul <sean@poorly.run>, David Airlie <airlied@linux.ie>,
+ freedreno@lists.freedesktop.org, robin.murphy@arm.com,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, linux-arm-msm@vger.kernel.org,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWFyYywgRXJpYywKCk9uIDIwMTkvMTIvMjMgMjI6MDcsIE1hcmMgWnluZ2llciB3cm90ZToK
-PiBIaSBaZW5naHVpLAo+IAo+IE9uIDIwMTktMTItMjMgMTM6NDMsIFplbmdodWkgWXUgd3JvdGU6
-Cj4+IE9uIDIwMTkvMTIvMjAgMTk6MTgsIFplbmdodWkgWXUgd3JvdGU6Cj4+PiBBbHRob3VnaCBn
-dWVzdCB3aWxsIGhhcmRseSByZWFkIGFuZCB1c2UgdGhlIFBUWiAoUGVuZGluZyBUYWJsZSBaZXJv
-KQo+Pj4gYml0IGluIEdJQ1JfUEVOREJBU0VSLCBsZXQgdXMgZW11bGF0ZSB0aGUgYXJjaGl0ZWN0
-dXJlIHN0cmljdGx5Lgo+Pj4gQXMgcGVyIElISSAwMDY5RSA5LjExLjMwLCBQVFogZmllbGQgaXMg
-V08sIGFuZCByZWFkcyBhcyAwLgo+Pj4gU2lnbmVkLW9mZi1ieTogWmVuZ2h1aSBZdSA8eXV6ZW5n
-aHVpQGh1YXdlaS5jb20+Cj4+PiAtLS0KPj4+IE5vdGljZWQgd2hlbiBjaGVja2luZyBhbGwgZmll
-bGRzIG9mIEdJQ1JfUEVOREJBU0VSIHJlZ2lzdGVyLgo+Pj4gQnV0IF9ub3RfIHN1cmUgd2hldGhl
-ciBpdCdzIHdvcnRoIGEgZml4LCBhcyBMaW51eCBuZXZlciBzZXRzCj4+PiB0aGUgUFRaIGJpdCBi
-ZWZvcmUgZW5hYmxpbmcgTFBJIChzZXQgR0lDUl9DVExSX0VOQUJMRV9MUElTKS4KPj4+IEFuZCBJ
-IHdvbmRlciB1bmRlciB3aGljaCBzY2VuYXJpb3MgY2FuIHRoaXMgYml0IGJlIHdyaXR0ZW4gYXMg
-MS4KPj4+IEl0IHNlZW1zIGRpZmZpY3VsdCBmb3Igc29mdHdhcmUgdG8gZGV0ZXJtaW5lIHdoZXRo
-ZXIgdGhlIHBlbmRpbmcKPj4+IHRhYmxlIGNvbnRhaW5zIGFsbCB6ZXJvcyB3aGVuIHdyaXRpbmcg
-dGhpcyBiaXQuCj4+PiB2aXJ0L2t2bS9hcm0vdmdpYy92Z2ljLW1taW8tdjMuYyB8IDUgKysrKy0K
-Pj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKPj4+
-IGRpZmYgLS1naXQgYS92aXJ0L2t2bS9hcm0vdmdpYy92Z2ljLW1taW8tdjMuYyAKPj4+IGIvdmly
-dC9rdm0vYXJtL3ZnaWMvdmdpYy1tbWlvLXYzLmMKPj4+IGluZGV4IDdkZmQxNWRiYjMwOC4uZWJj
-MjE4ODQwZmMyIDEwMDY0NAo+Pj4gLS0tIGEvdmlydC9rdm0vYXJtL3ZnaWMvdmdpYy1tbWlvLXYz
-LmMKPj4+ICsrKyBiL3ZpcnQva3ZtL2FybS92Z2ljL3ZnaWMtbW1pby12My5jCj4+PiBAQCAtNDE0
-LDggKzQxNCwxMSBAQCBzdGF0aWMgdW5zaWduZWQgbG9uZyAKPj4+IHZnaWNfbW1pb19yZWFkX3Bl
-bmRiYXNlKHN0cnVjdCBrdm1fdmNwdSAqdmNwdSwKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgZ3BhX3QgYWRkciwgdW5zaWduZWQgaW50IGxl
-bikKPj4+IMKgIHsKPj4+IMKgwqDCoMKgwqAgc3RydWN0IHZnaWNfY3B1ICp2Z2ljX2NwdSA9ICZ2
-Y3B1LT5hcmNoLnZnaWNfY3B1Owo+Pj4gK8KgwqDCoCB1NjQgdmFsdWUgPSB2Z2ljX2NwdS0+cGVu
-ZGJhc2VyOwo+Pj4gwqAgLcKgwqDCoCByZXR1cm4gZXh0cmFjdF9ieXRlcyh2Z2ljX2NwdS0+cGVu
-ZGJhc2VyLCBhZGRyICYgNywgbGVuKTsKPj4+ICvCoMKgwqAgdmFsdWUgJj0gfkdJQ1JfUEVOREJB
-U0VSX1BUWjsKPj4+ICsKPj4+ICvCoMKgwqAgcmV0dXJuIGV4dHJhY3RfYnl0ZXModmFsdWUsIGFk
-ZHIgJiA3LCBsZW4pOwo+Pj4gwqAgfQo+Pj4gwqAgc3RhdGljIHZvaWQgdmdpY19tbWlvX3dyaXRl
-X3BlbmRiYXNlKHN0cnVjdCBrdm1fdmNwdSAqdmNwdSwKPj4+Cj4+Cj4+IEkgbm90aWNlZCB0aGVy
-ZSBpcyBubyB1c2Vyc3BhY2UgYWNjZXNzIGNhbGxiYWNrcyBmb3IgR0lDUl9QRU5EQkFTRVIsCj4+
-IHNvIHRoaXMgcGF0Y2ggd2lsbCBtYWtlIHRoZSBQVFogZmllbGQgYWxzbyAnUmVhZCBBcyBaZXJv
-JyBieSB1c2Vyc3BhY2UuCj4+IFNob3VsZCB3ZSBjb25zaWRlciBhZGRpbmcgYSB1YWNjZXNzX3Jl
-YWQgY2FsbGJhY2sgZm9yIEdJQ1JfUEVOREJBU0VSCj4+IHdoaWNoIGp1c3QgcmV0dXJucyB0aGUg
-dW5jaGFuZ2VkIHZnaWNfY3B1LT5wZW5kYmFzZXIgdG8gdXNlcnNwYWNlPwo+PiAoVGhvdWdoIHRo
-aXMgaXMgcmVhbGx5IG5vdCBhIGJpZyBkZWFsLiBXZSBub3cgYWx3YXlzIGVtdWxhdGUgdGhlIFBU
-Wgo+PiBmaWVsZCB0byBndWVzdCBhcyBSQVouIEFuZCAndmdpY19jcHUtPnBlbmRiYXNlciAmIEdJ
-Q1JfUEVOREJBU0VSX1BUWicKPj4gb25seSBpbmRpY2F0ZXMgd2hldGhlciBLVk0gd2lsbCBvcHRp
-bWl6ZSB0aGUgTFBJIGVuYWJsaW5nIHByb2Nlc3MsCj4+IHdoZXJlIFJlYWQgQXMgWmVybyBpbmRp
-Y2F0ZXMgbmV2ZXIgb3B0aW1pemUuLikKPiAKPiBJIGRvbid0IHRoaW5rIGFkZGluZyBhIHVzZXJz
-cGFjZSBhY2Nlc3NvciB3b3VsZCBoZWxwIG11Y2guIEFsbCB0aGlzCj4gYml0IHRlbGxzIHVzZXJz
-cGFjZSBpcyB0aGF0IHRoZSBndWVzdCBoYXMgcHJvZ3JhbW1lZCBhIHplcm8gZmlsbGVkCj4gdGFi
-bGUuIE9uIHJlc3RvcmUsIHdlJ2QgYXZvaWQgYSByZXNjYW4gb2YgdGhlIHRhYmxlIGlmIHRoZXJl
-IHdhcwo+IG5vIExQSSBtYXBwZWQuCgpZZXMsIEkgYWdyZWUuCgo+IEFuZCB0aGlua2luZyBvZiBp
-dCwgdGhpcyBmaXhlcyBhIGJ1ZyBmb3Igbm9uLUxpbnV4IGd1ZXN0czogSWYgeW91IHdyaXRlCj4g
-UFRaPTEsIHdlIG5ldmVyIGNsZWFyIGl0LiBXaGljaCBtZWFucyB0aGF0IGlmIHVzZXJzcGFjZSBz
-YXZlcyBhbmQgcmVzdG9yZXMKPiBQRU5EQkFTRVIgd2l0aCBQVFogc2V0LCB3ZSdsbCBuZXZlciBy
-ZXN0b3JlIHRoZSBwZW5kaW5nIGJpdHMsIHdoaWNoIGlzCj4gcHJldHR5IGJhZCAoc2VlIHZnaWNf
-ZW5hYmxlX2xwaXMoKSkuCgpCdXQgSSdtIGFmcmFpZCBJIGNhbid0IGZvbGxvdyB0aGlzIHBvaW50
-LiBBZnRlciByZWFkaW5nIHRoZSBjb2RlICh3aXRoClFlbXUpIGEgYml0IGZ1cnRoZXIsIHRoZSBS
-ZWRpc3RyaWJ1dG9ycyBhcmUgcmVzdG9yZWQgYmVmb3JlIHRoZSBJVFMuIFNvCnRoZXJlIHNob3Vs
-ZCBiZSBfbm9fIExQSSBoYXMgYmVlbiBtYXBwZWQgd2hlbiB3ZSdyZSByZXN0b3JpbmcgR0lDUl9D
-VExSCmFuZCBlbmFibGluZyBMUEksIHdoaWNoIHNheXMgd2Ugd2lsbCBub3Qgc2NhbiB0aGUgd2hv
-bGUgcGVuZGluZyB0YWJsZQphbmQgcmVzdG9yZSBwZW5kaW5nIGJ5IHZnaWNfZW5hYmxlX2xwaXMo
-KS9pdHNfc3luY19scGlfcGVuZGluZ190YWJsZSgpLApyZWdhcmRsZXNzIG9mIHdoYXQgdGhlIFBU
-WiBpcy4KCkluc3RlYWQsIHZnaWNfaXRzX3Jlc3RvcmVfaXRlKCkvdmdpY192M19scGlfc3luY19w
-ZW5kaW5nX3N0YXR1cygpIGlzCndoZXJlIHdlIGFjdHVhbGx5IHJlYWQgdGhlIGd1ZXN0IFJBTSBh
-bmQgcmVzdG9yZSB0aGUgTFBJIHBlbmRpbmcgc3RhdGUuCldoaWNoIG1lYW5zIHdlIHdpbGwgc3Rp
-bGwgZG8gdGhlIHJpZ2h0IHRoaW5nIGV2ZW4gZm9yIG5vbi1MaW51eCBndWVzdHMuCk5vdCBzdXJl
-IGlmIEkndmUgZ290IHRoaW5ncyBjb3JyZWN0bHkgaGVyZS4KCkluIHRoZSBlbmQsIGxldCdzIGtl
-ZXAgdGhlIHBhdGNoIGFzIGl0IGlzLgoKPiAKPiBUaGlzIHBhdGNoIG9uIGl0cyBvd24gZml4ZXMg
-bW9yZSB0aGFuIG9uZSBidWchCj4gCgpJZiBzbywganVzdCBieSBsdWNrIDstKQoKClRoYW5rcywK
-WmVuZ2h1aQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+On 2019-12-16 22:07, Jordan Crouse wrote:
+> Attempt to enable split pagetables if the arm-smmu driver supports it.
+> This will move the default address space from the default region to
+> the address range assigned to TTBR1. The behavior should be transparent
+> to the driver for now but it gets the default buffers out of the way
+> when we want to start swapping TTBR0 for context-specific pagetables.
+> 
+> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+> ---
+> 
+>  drivers/gpu/drm/msm/adreno/a6xx_gpu.c | 52 
+> ++++++++++++++++++++++++++++++++++-
+>  1 file changed, 51 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
+> b/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
+> index 5dc0b2c..1c6da93 100644
+> --- a/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
+> +++ b/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
+> @@ -811,6 +811,56 @@ static unsigned long a6xx_gpu_busy(struct msm_gpu 
+> *gpu)
+>  	return (unsigned long)busy_time;
+>  }
+> 
+> +static struct msm_gem_address_space *
+> +a6xx_create_address_space(struct msm_gpu *gpu, struct platform_device 
+> *pdev)
+> +{
+> +	struct iommu_domain *iommu = iommu_domain_alloc(&platform_bus_type);
+> +	struct msm_gem_address_space *aspace;
+> +	struct msm_mmu *mmu;
+> +	u64 start, size;
+> +	u32 val = 1;
+> +	int ret;
+> +
+> +	if (!iommu)
+> +		return ERR_PTR(-ENOMEM);
+> +
+> +	/*
+> +	 * Try to request split pagetables - the request has to be made 
+> before
+> +	 * the domian is attached
+> +	 */
+> +	iommu_domain_set_attr(iommu, DOMAIN_ATTR_SPLIT_TABLES, &val);
+> +
+> +	mmu = msm_iommu_new(&pdev->dev, iommu);
+> +	if (IS_ERR(mmu)) {
+> +		iommu_domain_free(iommu);
+> +		return ERR_CAST(mmu);
+> +	}
+> +
+> +	/*
+> +	 * After the domain is attached, see if the split tables were 
+> actually
+> +	 * successful.
+> +	 */
+> +	ret = iommu_domain_get_attr(iommu, DOMAIN_ATTR_SPLIT_TABLES, &val);
+> +	if (!ret && val) {
+> +		/*
+> +		 * The aperture start will be at the beginning of the TTBR1
+> +		 * space so use that as a base
+> +		 */
+> +		start = iommu->geometry.aperture_start;
+> +		size = 0xffffffff;
+This should be the va_end and not the size
+> +	} else {
+> +		/* Otherwise use the legacy 32 bit region */
+> +		start = SZ_16M;
+> +		size = 0xffffffff - SZ_16M;
+same as above
+> +	}
+> +
+> +	aspace = msm_gem_address_space_create(mmu, "gpu", start, size);
+> +	if (IS_ERR(aspace))
+> +		iommu_domain_free(iommu);
+> +
+> +	return aspace;
+> +}
+> +
+>  static const struct adreno_gpu_funcs funcs = {
+>  	.base = {
+>  		.get_param = adreno_get_param,
+> @@ -832,7 +882,7 @@ static const struct adreno_gpu_funcs funcs = {
+>  #if defined(CONFIG_DRM_MSM_GPU_STATE)
+>  		.gpu_state_get = a6xx_gpu_state_get,
+>  		.gpu_state_put = a6xx_gpu_state_put,
+> -		.create_address_space = adreno_iommu_create_address_space,
+> +		.create_address_space = a6xx_create_address_space,
+>  #endif
+>  	},
+>  	.get_timestamp = a6xx_get_timestamp,
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
