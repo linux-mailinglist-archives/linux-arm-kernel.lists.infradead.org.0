@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E86AF129D04
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 04:03:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E974E129D18
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 04:36:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qND1kKpC17ZbyYdfniUmH7yerzu+UvKtjUJAOvcEI8Q=; b=NydjMcVbmleP4+
-	UaIFWqnGIUUpHx7XIimVCVbky5aS8h4h1ZeMpa3+TneznP2vmJCTNgr0sq+YZvyHPY6VuKlAWZfa+
-	d+dmA9HjIZdxDwK304KPI+je31pl7VXCiWuTGm/5XV8KwZ5ZwSLQOHkmUgj41pL66EHeLMaHLLjy8
-	a4MEr6102V2H8Fd5MWcfZWxFJSlWxg3rlYRP6qts3eDn3eNMv5MGe3q4RqZYwzTzg8sc8EbXc+Kd1
-	bosFRD+cHSC/mCllax2+xq4pmluun6NKOlfyqbQoy0LpnbsjBEr8mpj4Mm6FSj1+8JXNFErymknso
-	FK6Pr6824dmf0HR6jLcA==;
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uBVnvweqUjZYWjKsbEAwDcAoRli7X+TXrET+wJShHVA=; b=YsXNkYs01wbOX3
+	FqwAIVV0+mAEjh1EerXCdqKRTccpm98g9MbpSTDglV8BWd8u2cvWjG0vBZFEbfHWHDtm2MaqyGSQn
+	er9N/s/UptOU43GGsKoGwY5ekc23A4pbN/owtTPHvfrUAnDbwKnAr40csn+6wZhP7yQF3XsPxtxzz
+	K9bGjY4pGpIWhYerXvW2cQNLuuP/TSxjDs1ppzMSGASC9i52F4Tc8kv9S9SKo7Q60FXgaEgAxsmUM
+	Ep7ojOeg9odHShF1Tdn/wj5I69e9UKtCse6fjOxG1+uXyqI9JoOBwlgtK91I61BeO+bMFOuGW5RMv
+	lnFZdGp8LcmroJPM3/Kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijaTL-0004xF-FA; Tue, 24 Dec 2019 03:02:59 +0000
+	id 1ijb03-0006ib-9d; Tue, 24 Dec 2019 03:36:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijaTD-0004wv-Tt
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 03:02:53 +0000
-Received: from wens.tw (mirror2.csie.ntu.edu.tw [140.112.30.76])
+ id 1ijazs-0006hk-OK; Tue, 24 Dec 2019 03:36:38 +0000
+Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 36B24206B7;
- Tue, 24 Dec 2019 03:02:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1BB3F206B7;
+ Tue, 24 Dec 2019 03:36:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577156571;
- bh=4dZHptUocDTk3SMP2Sv3sZ8BavU3pNtaSpQenIapHsM=;
- h=From:To:Cc:Subject:Date:From;
- b=KIw6j9qg7Ahaw+bH3ikbPbfqAcxtMxiS2GED2BhbCiix+4T5HZu6btbxvQT/mZA7K
- aJSd0SXB1C804B6pCGWWIrPoCNlYbzOZneiNYO5b9p29TD9RRVUkMDmA6MKRQTcer6
- AtEV6BvJQUzoyo3P5v/Fr7Ru0qThqqQ4CL8ZdQQg=
-Received: by wens.tw (Postfix, from userid 1000)
- id E77AF5FC87; Tue, 24 Dec 2019 11:02:47 +0800 (CST)
-From: Chen-Yu Tsai <wens@kernel.org>
-To: Russell King <linux@armlinux.org.uk>, Christoph Hellwig <hch@lst.de>,
- Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH RESEND v2] ARM: dma-api: fix max_pfn off-by-one error in
- __dma_supported()
-Date: Tue, 24 Dec 2019 11:02:39 +0800
-Message-Id: <20191224030239.5656-1-wens@kernel.org>
-X-Mailer: git-send-email 2.24.1
+ s=default; t=1577158596;
+ bh=hKOk/K7hTl+yIynX4qaqBR8jYeq8G7LYQWQa8oBkIlg=;
+ h=In-Reply-To:References:Cc:From:To:Subject:Date:From;
+ b=hHtreC+yvNjl49/8yHJTSGyyOzkmVhJrs1i0vH3I48Q//kO9OhuqlsYbFZGZS7UD9
+ qF0SxC4zVszjRT+VAwWZk0iEidiQxCbragcL3l+teGxjSjc766HzB2K4bdsAaELmKj
+ qbAK1MUf9hu4AjzTbfwKLPgpXxAodx8v5psEzWvs=
 MIME-Version: 1.0
+In-Reply-To: <1jlfrcaxmm.fsf@starbuckisacylon.baylibre.com>
+References: <20191215210153.1449067-1-martin.blumenstingl@googlemail.com>
+ <1jr214bpl0.fsf@starbuckisacylon.baylibre.com>
+ <20191216175015.2A642206EC@mail.kernel.org>
+ <1jlfrcaxmm.fsf@starbuckisacylon.baylibre.com>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Jerome Brunet <jbrunet@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org, narmstrong@baylibre.com
+Subject: Re: [PATCH 0/1] clk: Meson8/8b/8m2: fix the mali clock flags
+User-Agent: alot/0.8.1
+Date: Mon, 23 Dec 2019 19:36:35 -0800
+Message-Id: <20191224033636.1BB3F206B7@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_190251_984642_3DE3AC7E 
-X-CRM114-Status: GOOD (  17.87  )
+X-CRM114-CacheID: sfid-20191223_193636_834019_AC021A4E 
+X-CRM114-Status: GOOD (  30.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,84 +79,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mturquette@baylibre.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@csie.org>
+Quoting Jerome Brunet (2019-12-16 11:17:21)
+> 
+> On Mon 16 Dec 2019 at 18:50, Stephen Boyd <sboyd@kernel.org> wrote:
+> 
+> > Quoting Jerome Brunet (2019-12-16 01:13:31)
+> >> 
+> >> *updated last* which crucial to your use case.
+> >> 
+> >> I just wonder if this crucial part something CCF guarantee and you can
+> >> rely on it ... or if it might break in the future.
+> >> 
+> >> Stephen, any thoughts on this ?
+> >
+> > We have problems with the order in which we call the set_rate clk_op.
+> > Sometimes clk providers want us to call from leaf to root but instead we
+> > call from root to leaf because of implementation reasons. Controlling
+> > the order in which clk operations are done is an unsolved problem. But
+> > yes, in the future I'd like to see us introduce the vaporware that is
+> > coordinated clk rates that would allow clk providers to decide what this
+> > order should be, instead of having to do this "root-to-leaf" update.
+> > Doing so would help us with the clk dividers that have some parent
+> > changing rate that causes the downstream device to be overclocked while
+> > we change the parent before the divider.
+> >
+> > If there are more assumptions like this about how the CCF is implemented
+> > then we'll have to be extra careful to not disturb the "normal" order of
+> > operations when introducing something that allows clk providers to
+> > modify it.
+> 
+> I understand that CCR would, in theory, allow to define that sort of
+> details. Still defining (and documenting) the default behavior would be
+> nice.
+> 
+> So the question is:
+>  * Can we rely set_rate() doing a root-to-leaf update until CCR comes
+>    around ?
+>  * If not, for use cases like the one described by Martin, I guess we
+>    are stuck with the notifier ? Or would you have something else to
+>    propose ?
 
-max_pfn, as set in arch/arm/mm/init.c:
+I suppose we should just state that clk_set_rate() should do a
+root-to-leaf update. It's not like anyone is interested in changing
+this behavior. The notifier is not ideal. I've wanted to add a new
+clk_op that would cover some amount of the notifier users by having a
+'pre_set_rate' clk op that can mux the clk over to something safe or
+setup a divider to something that is known to be safe and work. Then we
+can avoid having to register for a notifier just to do something right
+before the root-to-leaf update happens.
 
-    static void __init find_limits(unsigned long *min,
-				   unsigned long *max_low,
-				   unsigned long *max_high)
-    {
-	    *max_low = PFN_DOWN(memblock_get_current_limit());
-	    *min = PFN_UP(memblock_start_of_DRAM());
-	    *max_high = PFN_DOWN(memblock_end_of_DRAM());
-    }
+>    
+> >
+> > Also, isn't CLK_SET_RATE_GATE broken in the case that clk_set_rate()
+> > isn't called on that particular clk? I seem to recall that the flag only
+> > matters when it's applied to the "leaf" or entry point into the CCF from
+> > a consumer API.
+> 
+> It did but not anymore
+> 
+> > I've wanted to fix that but never gotten around to it.
+> 
+> I fixed that already :P
+> CLK_SET_RATE_GATE is a special case of clock protect. The clock is
+> protecting itself so it is going down through the tree.
+> 
 
-with memblock_end_of_DRAM() pointing to the next byte after DRAM. As
-such, max_pfn points to the PFN after the end of DRAM.
+Ahaha ok. As you can see I'm trying to forget clock protect ;-)
 
-Thus when using max_pfn to check DMA masks, we should subtract one
-when checking DMA ranges against it.
 
-Commit 8bf1268f48ad ("ARM: dma-api: fix off-by-one error in
-__dma_supported()") fixed the same issue, but missed this spot.
+> 
+> > The whole flag sort of irks me because I don't understand what consumers
+> > are supposed to do when this flag is set on a clk. How do they discover
+> > it?
+> 
+> Actually (ATM) the consumer is not even aware of it. If a clock with
+> CLK_SET_RATE_GATE is enabled, it will return the current rate to
+> .round_rate() and .set_rate() ... as if it was fixed.
 
-This issue was found while working on the sun4i-csi v4l2 driver on the
-Allwinner R40 SoC. On Allwinner SoCs, DRAM is offset at 0x40000000,
-and we are starting to use of_dma_configure() with the "dma-ranges"
-property in the device tree to have the DMA API handle the offset.
+And then when the clk is disabled it will magically "unstick" and start
+to accept the same rate request again?
 
-In this particular instance, dma-ranges was set to the same range as
-the actual available (2 GiB) DRAM. The following error appeared when
-the driver attempted to allocate a buffer:
+> 
+> > They're supposed to "just know" and turn off the clk first and then
+> > call clk_set_rate()?
+> 
+> ATM, yes ... if CCF cannot switch to another "unlocked" subtree (the
+> case here)
+> 
+> > Why can't the framework do this all in the clk_set_rate() call?
+> 
+> When there is multiple consumers the behavior would become a bit
+> difficult to predict and drivers may have troubles anticipating that,
+> maybe, the clock is locked.
 
-    sun4i-csi 1c09000.csi: Coherent DMA mask 0x7fffffff (pfn 0x40000-0xc0000)
-    covers a smaller range of system memory than the DMA zone pfn 0x0-0xc0001
-    sun4i-csi 1c09000.csi: dma_alloc_coherent of size 307200 failed
-
-Fixing the off-by-one error makes things work.
-
-Fixes: 11a5aa32562e ("ARM: dma-mapping: check DMA mask against available memory")
-Fixes: 9f28cde0bc64 ("ARM: another fix for the DMA mapping checks")
-Fixes: ab746573c405 ("ARM: dma-mapping: allow larger DMA mask than supported")
-Cc: <stable@vger.kernel.org>
-Signed-off-by: Chen-Yu Tsai <wens@csie.org>
----
-
-It's been close to two weeks since I sent this. I wasn't sure if I
-reached the right maintainers, so I'm resending this to more people.
-
-Changes since v1:
-
-  - correct max_pfn offset in the correct place.
-
----
- arch/arm/mm/dma-mapping.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
-index e822af0d9219..9414d72f664b 100644
---- a/arch/arm/mm/dma-mapping.c
-+++ b/arch/arm/mm/dma-mapping.c
-@@ -221,7 +221,7 @@ EXPORT_SYMBOL(arm_coherent_dma_ops);
- 
- static int __dma_supported(struct device *dev, u64 mask, bool warn)
- {
--	unsigned long max_dma_pfn = min(max_pfn, arm_dma_pfn_limit);
-+	unsigned long max_dma_pfn = min(max_pfn - 1, arm_dma_pfn_limit);
- 
- 	/*
- 	 * Translate the device's DMA mask to a PFN limit.  This
--- 
-2.24.1
+Fun times!
 
 
 _______________________________________________
