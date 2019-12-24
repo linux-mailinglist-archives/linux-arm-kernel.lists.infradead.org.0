@@ -2,66 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEE87129CA7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 03:18:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E0FA129CB5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 03:24:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ce3SFoNIrDlZNBOF/MdfZ1+bJ+nHZCZLU9vXLRScPEA=; b=oV1yESW9fPUFv2
-	BRcUmLJIJ1o/vqCzQwwkDB3ZS8HZQ27JzI/LXOJwG7+lUSDBJm4eaDLwpgHcmvoD6cqT713NvvoUq
-	yLe3aZX9NFKfOPmbXIDpkqncixAiUUC9kQiSBK0ySfv+/oFvzbF7SbPDK02afAAlx/q+4TQ4hgVgv
-	qzzzJ4kXVzKbHQ1PlUFUzohYhHw9vKH+T/2ZqYgJ9lWLnmwoa6tLohrmtAifGsI3htLi8omRgtIjO
-	GSgXRSbaZZXaOAZH/pm91TLYM7B1+hUQKigvkYXGIiYKKj79WZNksYIik9pwKQQlR37IQY1Q1QHhT
-	oDNp/WuaaCgJOHWvfB/w==;
+	List-Owner; bh=GhpSyF6XUbTyEnH6iRPJ8UkyrauWPURgMr9j2UGZV+A=; b=O/dNgugQzVDinJ
+	ZhhZGaUbaSLlch7iPcpmGSwYh14TQVlgRCK+XLAFv/ZQceSotTiKZk7UbiIyeRC6wYjNygLfaxsNv
+	+xbAX25JJ4qWxhbJ4dTzb9fYsTj4663JNCQ0y/Y44l8GGlhKfBjiEyTGPKWU7bT/PBmc9t93qo8ws
+	+gYHzrn3RppGwj76cdnawRSpAbeX5RsezYU9oj2M4ZC6rzwknohfQCGNpCKgUU2u+u97KzT1s/6xE
+	c9mGTwx9A1AtgzxN/21m8y/vBovNuGINnPmL/4cJDxxzoKln+dvtjxHo2EAPcs/rGUuQq3lHRFYPt
+	HDe5BDoCOtEha6ZAmCTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijZmR-00075D-Cd; Tue, 24 Dec 2019 02:18:39 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1ijZs5-0000On-RE; Tue, 24 Dec 2019 02:24:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijZmF-00074c-U0; Tue, 24 Dec 2019 02:18:29 +0000
-X-UUID: 39782599e70840c398b2dd28b4ea8ac8-20191223
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=16xFo3KU0nEDG/VMlRzWi955Bc53HVQ+4UJtznpAulY=; 
- b=k3JkGaibHrVFzAu3Qcxh5/QGdxvmPDpx6tWUsID67zbA/2b2ro+aDr2o/jBxwqtN2r9Wo+nwmNT21cSb4DV+oQDYFDYTKeggACAOLlurmjgedQ9EsQy2fbNbxM2vseUQSZa05DdW+Mbday+ndNPq40sGrGZbstWwrDyYO8rfLkI=;
-X-UUID: 39782599e70840c398b2dd28b4ea8ac8-20191223
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1714018685; Mon, 23 Dec 2019 18:18:23 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 23 Dec 2019 18:18:45 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 24 Dec 2019 10:17:15 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 24 Dec 2019 10:17:22 +0800
-Message-ID: <1577153898.15019.0.camel@mtksdaap41>
-Subject: Re: [PATCH v2, 0/2] drm/mediatek: Add ctm property support
-From: CK Hu <ck.hu@mediatek.com>
-To: Yongqiang Niu <yongqiang.niu@mediatek.com>
-Date: Tue, 24 Dec 2019 10:18:18 +0800
-In-Reply-To: <1576222132-31586-1-git-send-email-yongqiang.niu@mediatek.com>
-References: <1576222132-31586-1-git-send-email-yongqiang.niu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1ijZrx-0000OT-0r
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 02:24:22 +0000
+Received: from mail-wr1-f44.google.com (mail-wr1-f44.google.com
+ [209.85.221.44])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3BB5821775
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 24 Dec 2019 02:24:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577154260;
+ bh=SPQ7Bj4a4eNp21OAcqYrY8SxuFJJaC2a6yGdIeeRS1o=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=oPvK6VPzi1k2yyEjQny+BqytBOGY+Pvm5TAIa+d74eS8hvsJFnqaOLMcPbR1MVHcg
+ TJAbv69cwFBjDUU1LcTUwFGC1sdBHfjcRbhYXPuD/8fDpRJfQhxnnenWDdYNTNMhtK
+ WQtdttyNyw+EIZ8phdY7Uk7eLt21kAD5fLV0wvro=
+Received: by mail-wr1-f44.google.com with SMTP id b6so18666313wrq.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 23 Dec 2019 18:24:20 -0800 (PST)
+X-Gm-Message-State: APjAAAUue2CyMbwNQ/kTIaNtA+vqqY4T0idbqBCM07wdqG6ZJ6+E5bKv
+ s45KOWAFQThHRNLOAU6JGc4yCLxP82eJPROanp86wQ==
+X-Google-Smtp-Source: APXvYqxjzD58lmej1/f4cJSP7HhlmKnh8jXfi6lwDjHJL4b+9GZQPe+XjiFw3YmwCo3ewdHy4fkwT46pqN+EiY2Rfws=
+X-Received: by 2002:adf:f491:: with SMTP id l17mr32117348wro.149.1577154258620; 
+ Mon, 23 Dec 2019 18:24:18 -0800 (PST)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 038CC378C24033B372078724DE10872FC6D2686BD2692C93E805E6EC8F9A94AA2000:8
-X-MTK: N
+References: <cover.1577111363.git.christophe.leroy@c-s.fr>
+ <de073962c1a5911343e13c183fbbdef0fe95449e.1577111365.git.christophe.leroy@c-s.fr>
+In-Reply-To: <de073962c1a5911343e13c183fbbdef0fe95449e.1577111365.git.christophe.leroy@c-s.fr>
+From: Andy Lutomirski <luto@kernel.org>
+Date: Mon, 23 Dec 2019 18:24:05 -0800
+X-Gmail-Original-Message-ID: <CALCETrXWHk9J-pYm+eopMuW3x7Jr_LnzRjr94gq8g66xOO6SBg@mail.gmail.com>
+Message-ID: <CALCETrXWHk9J-pYm+eopMuW3x7Jr_LnzRjr94gq8g66xOO6SBg@mail.gmail.com>
+Subject: Re: [RFC PATCH v2 02/10] lib: vdso: move call to fallback out of
+ common code.
+To: Christophe Leroy <christophe.leroy@c-s.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_181827_975702_02558095 
-X-CRM114-Status: UNSURE (   9.13  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191223_182421_083474_FFA1578B 
+X-CRM114-Status: GOOD (  15.92  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -71,10 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,43 +87,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, X86 ML <x86@kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>,
+ "open list:MIPS" <linux-mips@vger.kernel.org>,
+ Paul Mackerras <paulus@samba.org>, Andrew Lutomirski <luto@kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>, Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Yongqiang:
+On Mon, Dec 23, 2019 at 6:31 AM Christophe Leroy
+<christophe.leroy@c-s.fr> wrote:
+>
+> On powerpc, VDSO functions and syscalls cannot be implemented in C
+> because the Linux kernel ABI requires that CR[SO] bit is set in case
+> of error and cleared when no error.
+>
+> As this cannot be done in C, C VDSO functions and syscall'based
+> fallback need a trampoline in ASM.
+>
+> By moving the fallback calls out of the common code, arches like
+> powerpc can implement both the call to C VDSO and the fallback call
+> in a single trampoline function.
 
-On Fri, 2019-12-13 at 15:28 +0800, Yongqiang Niu wrote:
-> Changes since v1:
-> -separate gamma patch
-> -remove cmdq support for ctm setting
-> 
+Maybe the issue is that I'm not a powerpc person, but I don't
+understand this.  The common vDSO code is in C.  Presumably this means
+that you need an asm trampoline no matter what to call the C code.  Is
+the improvement that, with this change, you can have the asm
+trampoline do a single branch, so it's logically:
 
-For this series, applied to mediatek-drm-next-5.6 [1], thanks.
+ret = [call the C code];
+if (ret == 0) {
+ set success bit;
+} else {
+ ret = fallback;
+ if (ret == 0)
+  set success bit;
+else
+  set failure bit;
+}
 
-[1]
-https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-next-5.6
+return ret;
 
-Regards,
-CK
+instead of:
 
-> 
-> Yongqiang Niu (2):
->   drm/mediatek: Fix gamma correction issue
->   drm/mediatek: Add ctm property support
-> 
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 18 +++++++--
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 62 ++++++++++++++++++++++++++++-
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  9 +++++
->  3 files changed, 85 insertions(+), 4 deletions(-)
-> 
+ret = [call the C code, which includes the fallback];
+if (ret == 0)
+  set success bit;
+else
+  set failure bit;
+
+It's not obvious to me that the former ought to be faster.
+
+>
+> The two advantages are:
+> - No need play back and forth with CR[SO] and negative return value.
+> - No stack frame is required in VDSO C functions for the fallbacks.
+
+How is no stack frame required?  Do you mean that the presence of the
+fallback causes worse code generation?  Can you improve the fallback
+instead?
 
 _______________________________________________
 linux-arm-kernel mailing list
