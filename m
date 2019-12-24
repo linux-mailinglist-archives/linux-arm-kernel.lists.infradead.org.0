@@ -2,57 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87A6312A17A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 13:57:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C18E12A189
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 14:02:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r46pk6xtCyq8ZZLAyq3yhYwWwBkITYvHsenLmPFAOjo=; b=t5u2l9NuheZuGU
-	9EfFmjmy3ZYjzTApaX6EFNVkQc0FU5XsXfXgBcGtT+gRetr0QEaUlqZPRbAdvWoN3KbPY+8UIdG97
-	3+E9bZOuHjOqEVsaHXMlNw15kq9RU/+IvlsoRLUhhozGRdFi06HALO+rGKJKw8736YJKTeU34Mwgl
-	l+/Tvo050lDLvNfUWONO/YWyZsfMvO3FEl2UPvFK0kEW3ErIdOmuOMxQuNxVedOkPlAIPDTxZyKUU
-	UnjGc4C49sjq5ExKJ+lp3r10r0M2GIeAah4ZCAfs8C6SA0WGO2KQkmxyd3nBu5QiCEeHnjLHcV0PE
-	UKgC+6bHSYjAW2xD3ZIg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rWbA3f8/U6vWPUMitqhHO67iECgmCcFvS2PzaNieIxA=; b=G5g3S4OVlT77MN
+	Y5r/Rl2g2koEXz8cPL0LO3nnrME6YEWK7nUkgB+XMoFSdjU/7XCvPQi1zLti4ShN9QGqnMkFOnYuV
+	iRQcCLuMwr3qXFc07+L+DD739iHqky5KTbnwarH8Xix9+wW/hRRwqdrJuGDa3CK4mxR5VY7tQ0N3g
+	3KD96rJ+KjNb10UhgeQheRuFxGY3/OXKZN4GqudDNqARjRj8DBaYgV9WihxoHrVZEHid5dJzIWZLR
+	k6D5CSrs+Z7oJ5HUf+WQjnZ1P/e/2SUvTjxKfGqit8QSnC58ueetpAYCC0euKS77EvQJ27+850r96
+	CIlpjsEK4XOczw4a0wzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijjkD-0001Jx-Om; Tue, 24 Dec 2019 12:57:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijjk6-0001J7-G9
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 12:56:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CC4991FB;
- Tue, 24 Dec 2019 04:56:53 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 446093F534;
- Tue, 24 Dec 2019 04:56:53 -0800 (PST)
-Date: Tue, 24 Dec 2019 12:56:51 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v2 00/18] arm64: KVM: add SPE profiling support
-Message-ID: <20191224125651.GM42593@e119886-lin.cambridge.arm.com>
-References: <20191220143025.33853-1-andrew.murray@arm.com>
- <f023f5529361cc1e2d799daa70f196c2@www.loen.fr>
- <864kxsim8d.wl-maz@kernel.org>
+	id 1ijjp1-0003Qz-Vv; Tue, 24 Dec 2019 13:02:00 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ijjoY-0003BK-EN; Tue, 24 Dec 2019 13:01:31 +0000
+X-UUID: f1ccb035708442c4ad06f6760968cc5c-20191224
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=ln+yfQ/ZBRXQ4iYsXUo9UdtHgaO9UZj0Crnusbw+dEg=; 
+ b=p1RWa2OA1tBuFIAGoRrucUQstKaB0fO1g2wjjuqcDyLTIhg28EXLvhHr0s9YekD4923D2JMV8d4SQ5GbiZbXwPEPMxlHbkr8GQpuxsCt2+bgdQi3S4IYAo9RHMtB2LVb2mkSjQ7HnPIFRo7Na4qNx7WAVePy4wIqCi3Z4ZqJTC4=;
+X-UUID: f1ccb035708442c4ad06f6760968cc5c-20191224
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 305110095; Tue, 24 Dec 2019 05:01:23 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 24 Dec 2019 05:01:45 -0800
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 24 Dec 2019 21:00:29 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Tue, 24 Dec 2019 21:00:05 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>,
+ <pedrom.sousa@synopsys.com>, <jejb@linux.ibm.com>, <matthias.bgg@gmail.com>
+Subject: [PATCH v1 0/2] scsi: ufs: use existed well-defined functions
+Date: Tue, 24 Dec 2019 21:01:04 +0800
+Message-ID: <1577192466-20762-1-git-send-email-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <864kxsim8d.wl-maz@kernel.org>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_045654_622844_6984D381 
-X-CRM114-Status: GOOD (  31.76  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191224_050130_484595_E70AA957 
+X-CRM114-Status: UNSURE (   4.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,102 +87,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- will@kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ Stanley Chu <stanley.chu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Dec 22, 2019 at 12:22:10PM +0000, Marc Zyngier wrote:
-> On Sat, 21 Dec 2019 10:48:16 +0000,
-> Marc Zyngier <maz@kernel.org> wrote:
-> > 
-> > [fixing email addresses]
-> > 
-> > Hi Andrew,
-> > 
-> > On 2019-12-20 14:30, Andrew Murray wrote:
-> > > This series implements support for allowing KVM guests to use the Arm
-> > > Statistical Profiling Extension (SPE).
-> > 
-> > Thanks for this. In future, please Cc me and Will on email addresses
-> > we can actually read.
-> > 
-> > > It has been tested on a model to ensure that both host and guest can
-> > > simultaneously use SPE with valid data. E.g.
-> > > 
-> > > $ perf record -e arm_spe/ts_enable=1,pa_enable=1,pct_enable=1/ \
-> > >         dd if=/dev/zero of=/dev/null count=1000
-> > > $ perf report --dump-raw-trace > spe_buf.txt
-> > > 
-> > > As we save and restore the SPE context, the guest can access the SPE
-> > > registers directly, thus in this version of the series we remove the
-> > > trapping and emulation.
-> > > 
-> > > In the previous series of this support, when KVM SPE isn't
-> > > supported (e.g. via CONFIG_KVM_ARM_SPE) we were able to return a
-> > > value of 0 to all reads of the SPE registers - as we can no longer
-> > > do this there isn't a mechanism to prevent the guest from using
-> > > SPE - thus I'm keen for feedback on the best way of resolving
-> > > this.
-> > 
-> > Surely there is a way to conditionally trap SPE registers, right? You
-> > should still be able to do this if SPE is not configured for a given
-> > guest (as we do for other feature such as PtrAuth).
-> > 
-> > > It appears necessary to pin the entire guest memory in order to
-> > > provide guest SPE access - otherwise it is possible for the guest
-> > > to receive Stage-2 faults.
-> > 
-> > Really? How can the guest receive a stage-2 fault? This doesn't fit
-> > what I understand of the ARMv8 exception model. Or do you mean a SPE
-> > interrupt describing a S2 fault?
+Hi,
 
-Yes the latter.
+This patchset fixes two small place to use existed well-defined functions to replace legacy statements.
 
+Stanley Chu (2):
+  scsi: ufs: unify scsi_block_requests usage
+  scsi: ufs: use ufshcd_vops_dbg_register_dump for vendor specific
+    dumps
 
-> > 
-> > And this is not just pinning the memory either. You have to ensure that
-> > all S2 page tables are created ahead of SPE being able to DMA to guest
-> > memory. This may have some impacts on the THP code...
-> > 
-> > I'll have a look at the actual series ASAP (but that's not very soon).
-> 
-> I found some time to go through the series, and there is clearly a lot
-> of work left to do:
-> 
-> - There so nothing here to handle memory pinning whatsoever. If it
->   works, it is only thanks to some side effect.
-> 
-> - The missing trapping is deeply worrying. Given that this is an
->   optional feature, you cannot just let the guest do whatever it wants
->   in an uncontrolled manner.
+ drivers/scsi/ufs/ufshcd.c |    7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
-Yes I'll add this.
-
-
-> 
-> - The interrupt handling is busted. You mix concepts picked from both
->   the PMU and the timer code, while the SPE device doesn't behave like
->   any of these two (it is neither a fully emulated device, nor a
->   device that is exclusively owned by a guest at any given time).
-> 
-> I expect some level of discussion on the list including at least Will
-> and myself before you respin this.
-
-Thanks for the quick feedback.
-
-Andrew Murray
-
-> 
-> 	M.
-> 
-> -- 
-> Jazz is not dead, it just smells funny.
-
+-- 
+1.7.9.5
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
