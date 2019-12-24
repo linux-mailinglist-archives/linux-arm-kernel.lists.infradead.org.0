@@ -2,94 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CC25129FC7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 10:45:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44919129FE0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 11:01:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eeAKxEpq59S2iGP6Tl0zkeZTGYoWaPQUmUamR+PoM6g=; b=li4/KQQv/iCqjb
-	RnQTGYbCTvIp9Fh+oWGxsny9SO7ac+TAYe7D6NxiDKBwlwGiSsis1/FdUSD/vUWnG7253NjPsgla0
-	2RAZuzn4f0HfXX6A5ZS/B1rtRgwxX7zinCmnbEwg4PSFDdMUZO5Xz3WR6AdiWKRw3MkD8/CvZdGu5
-	pdvtfv+jorj8wuVrFNff8z3YKYHl8NGeR7sTsShxVeaAT2Cx6stVW0PscGCvjobckb/g303MnPqZ8
-	iA+/8IhaPykuai+pkZBIaVNOWExMR95tIZIpuW/iLxEuCg7UxvAXxzf9pflvfFwN8AVAFFRIAw/sn
-	phkVS3Kiny9CyZEbPdEg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FLy6ZImp5KTq+acqyb6mxtk0vdfIVCDNv/OHXkRw/xo=; b=D4J
+	pxvCi6dw0YT/XHN4a7/pQNUOGKmdtbyg72p0iM0miUQcWbcuqkIk+kh7D2ojlYz0uS0hJVNmtGrx7
+	SWoCzeiJ01ARBjTkkitj3xyD9OtMMfiJqzt+s/NFNW+rOn6/7QigHscdllUN6nt0iOfrBl72YX77K
+	p3Ig/z10vhbK3nE5ZyYmKvVAPjY7UMWiB4UEHC/yp3DZn6YqeU03RZw+uUzyhoIcYz54iDAEoEwia
+	5pNd/8H2gWiVori/GHfso67iMnvT7lZhHMdpr7e6W26fKGTPGSg80VhrNSoUJda91EXgddMtMtUmd
+	M315/UTEO9V1tkdLdgq/xjQ8al6ToXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijgkg-0007Yu-5g; Tue, 24 Dec 2019 09:45:18 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1ijh0T-0005ck-F9; Tue, 24 Dec 2019 10:01:37 +0000
+Received: from alexa-out-blr-02.qualcomm.com ([103.229.18.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijgkR-0006kt-V5; Tue, 24 Dec 2019 09:45:05 +0000
-Received: by mail-lj1-x241.google.com with SMTP id l2so20322076lja.6;
- Tue, 24 Dec 2019 01:45:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=P6IbNtAeZX26SPmEoOJPgBtk2mM++6U9PCnvdGJBX/k=;
- b=e+MwYW7oNYxt3VheW4hLM/PG7DtRwDCUyVZEs6t0T7+8CE+Yl7MfenhngT0/OgHYUG
- 1lrshywM55Sw3A3VTCUPBRuE3JJbu1kuaAxioCZ7faxd1bBQIlZmcWnEG1Fj7RK+fOSt
- 2Lv23+L1v+oV4bsxI0R2inbM9Q1S93sv1Zh+5pjyczVpfhGPOg4d5esrH2SdkLPYLf3Z
- xXvoKb5lmt2a7hFNWx7/qU8Nm4tBa7JfacilrwSEZroidCpRIy/6ApFJF9ziTBrxehx0
- oPv7Fli/WO1dT6FbrP9AqdpphfO53BKok986EyjqmbOoXUxJuuAk9G/X5O0ohvp+lAaq
- WbzA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=P6IbNtAeZX26SPmEoOJPgBtk2mM++6U9PCnvdGJBX/k=;
- b=Ut7roK8WaZqdX+16HuV+Udox4/OE5K7LSIKKAne9+2iaQw+OIHHzeTqTEGzBgy/QWG
- 3uCWkrY5aXa7cDj771yD2BdhKGX1w8SuCfa4dGuDlAV/3Z57Vf6cnXyrhxnIRx/0i4eN
- mVcGwwymxwj2NBAQb5xfblObs63Bc5jL8wWaiXr1flMR8gbmKblBnZNhoAJFkS971Tma
- 0FwoqDqYcwHbYcm/myoCDE/5dBsHb7X3ZRhNxh+YuofXnrw9i1uz1vbkFRppcY2gmfEH
- nfMNJNR+IkHXzabBtWcoqi8rkSZFX7Nes46cOwcDZTCvg/k/JCoxR35Q4WN6z5LbnP8a
- o60w==
-X-Gm-Message-State: APjAAAXSlbBkr6wQqRSvhVIvaMI8Qg8x7zi2ek3lNGO9lCAFMeDxOkmH
- elcY+K8p4Qi6ySpneqLBmvg=
-X-Google-Smtp-Source: APXvYqyKB74FAyB/+SJCoryM883h5LTWtyijzg+2Mk4n5Qh+uy4iWs79Zblpjyc+J6oIVQxrgDw6DQ==
-X-Received: by 2002:a2e:2283:: with SMTP id
- i125mr20593893lji.244.1577180700841; 
- Tue, 24 Dec 2019 01:45:00 -0800 (PST)
-Received: from [172.16.20.20] ([87.200.95.144])
- by smtp.gmail.com with ESMTPSA id n30sm11591851lfi.54.2019.12.24.01.44.57
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 24 Dec 2019 01:45:00 -0800 (PST)
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Subject: Re: [PATCH v2 0/9] brcmfmac: add support for BCM4359 SDIO chipset
-From: Christian Hewitt <christianshewitt@gmail.com>
-In-Reply-To: <3c42d6de-670d-fee8-aa81-99f44d447e87@broadcom.com>
-Date: Tue, 24 Dec 2019 13:44:55 +0400
-Message-Id: <F311713B-D7DC-4029-90F2-5E162648349D@gmail.com>
-References: <20191211235253.2539-1-smoch@web.de>
- <D1B53CE9-E87C-4514-A2D7-0FE70A4D1A5D@gmail.com>
- <cb3ac55f-4c8f-b0a0-41ee-f16b3232c87e@web.de>
- <47DB71CE-ACC4-431D-9E66-D28A8C18C0A4@gmail.com>
- <3c42d6de-670d-fee8-aa81-99f44d447e87@broadcom.com>
-To: Arend Van Spriel <arend.vanspriel@broadcom.com>
-X-Mailer: Apple Mail (2.3445.104.11)
+ id 1ijh0J-0005bM-Lo
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 10:01:29 +0000
+Received: from ironmsg01-blr.qualcomm.com ([10.86.208.130])
+ by alexa-out-blr-02.qualcomm.com with ESMTP/TLS/AES256-SHA;
+ 24 Dec 2019 15:29:51 +0530
+Received: from pillair-linux.qualcomm.com ([10.204.116.193])
+ by ironmsg01-blr.qualcomm.com with ESMTP; 24 Dec 2019 15:29:41 +0530
+Received: by pillair-linux.qualcomm.com (Postfix, from userid 452944)
+ id AC35E37AC; Tue, 24 Dec 2019 15:29:40 +0530 (IST)
+From: Rakesh Pillai <pillair@codeaurora.org>
+To: devicetree@vger.kernel.org
+Subject: [PATCH v3] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module device
+ node
+Date: Tue, 24 Dec 2019 15:29:35 +0530
+Message-Id: <1577181575-25788-1-git-send-email-pillair@codeaurora.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_014504_038154_0B75DA90 
-X-CRM114-Status: GOOD (  10.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191224_020128_222628_D2FEB466 
+X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [103.229.18.198 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (christianshewitt[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,37 +63,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: brcm80211-dev-list.pdl@broadcom.com, Heiko Stuebner <heiko@sntech.de>,
- Neil Armstrong <narmstrong@baylibre.com>, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Soeren Moch <smoch@web.de>,
- linux-arm-kernel@lists.infradead.org, brcm80211-dev-list@cypress.com,
- Kalle Valo <kvalo@codeaurora.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-msm@vger.kernel.org, Rakesh Pillai <pillair@codeaurora.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIDI0IERlYyAyMDE5LCBhdCAxOjAxIHBtLCBBcmVuZCBWYW4gU3ByaWVsIDxhcmVuZC52
-YW5zcHJpZWxAYnJvYWRjb20uY29tPiB3cm90ZToKPiAKPiBDYW4geW91IGVsYWJvcmF0ZSBvbiB0
-aGUgImtub3duIFNESU8gaXNzdWUiPyBJcyBpdCBhbiBpc3N1ZSB3aXRoIEFETUEgb3Igc29tZXRo
-aW5nIGVsc2UuIEkgYW0gYXNraW5nIGJlY2F1c2UgdGhlcmUgaXMgYSB3b3JrYXJvdW5kIGluIGJy
-Y21mbWFjIHRvIGF2b2lkIHNjYXR0ZXItZ2F0aGVyIGxpc3RzLCB3aGljaCBtYXkgb3IgbWF5IG5v
-dCBhZGRyZXNzIHRoZSBpc3N1ZS4KClRoaXMgZGVzY3JpYmVzIHRoZSBpc3N1ZTogaHR0cHM6Ly9w
-YXRjaHdvcmsua2VybmVsLm9yZy9jb3Zlci8xMDk2Mjk3NS8KCkJlbG93IGlzIHRoZSBjdXJyZW50
-IHdvcmthcm91bmQgSeKAmW0gdXNpbmcsIHdoaWNoIHJlc3RyaWN0cyB0aGUgaGFjayB0byBBbWxv
-Z2ljIEcxMkEgYW5kIEcxMkIgZGV2aWNlcyB0aGF0IGluaGVyaXQg4oCcYW1sb2dpYyxkcmFtLWFj
-Y2Vzcy1xdWlya+KAnSBmcm9tIGEgY29tbW9uIFNvQyBkdHNpLgoKaHR0cHM6Ly9naXRodWIuY29t
-L2NoZXdpdHQvbGludXgvY29tbWl0LzE4NzUyNzc0Nzg2MWIwNDdjODM1ZjQ5NGZlMzI2N2Q5YjQ5
-NTliZTEKClRlc3RpbmcgYnkgS2hhZGFzIHN0YWZmIGZvdW5kIHRoZSBtYXhfc2Vncy9tYXhfYmxr
-X2NvdW50IHZhbHVlcyBhbmQgc2hvd3MgYSBwZXJmb3JtYW5jZSBpbXBhY3QgKG5vdCBhIGJpZyBz
-dXJwcmlzZSkgYnV0IHRoZXkgYXBwZWFyIHRvIGdpdmUgYSBzdGFibGUgY29ubmVjdGlvbiwgd2hp
-Y2ggaXMgYmV0dGVyIHRoYW4gYSB2ZXJ5IHVuc3RhYmxlIG9uZS4gSeKAmXZlIGZsYWdnZWQgdGhp
-bmdzIHRvIGxpbnV4LWFtbG9naWMgbWFpbnRhaW5lciBOZWlsIEFybXN0cm9uZyAob24gQ0MpIGFu
-ZCBJIGV4cGVjdCBoZSBvciBjb2xsZWFndWVzIHdpbGwgdGFrZSBhIG1vcmUgc2NpZW50aWZpYyBs
-b29rIGluIEphbnVhcnkuCgpOQjogSeKAmW0gaGFwcHkgdG8gdGVzdCBvdGhlciB0aGluZ3MuIEp1
-c3QgcmVtZW1iZXIgdGhhdCBJIGRvbuKAmXQgY29kZSBzbyB5b3UgbmVlZCB0byBzcG9vbi1mZWVk
-IG1lIHdpdGggcGF0Y2hlcyBub3Qgc3VnZ2VzdGlvbnMuCgpDaHJpc3RpYW4KX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Add device node for the ath10k SNOC platform driver probe
+and add resources required for WCN3990 on sc7180 soc.
+
+Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
+---
+This change is dependent on the below set of changes
+arm64: dts: sc7180: Add qupv3_0 and qupv3_1 (https://lore.kernel.org/patchwork/patch/1150367/)
+---
+ arch/arm64/boot/dts/qcom/sc7180-idp.dts |  5 +++++
+ arch/arm64/boot/dts/qcom/sc7180.dtsi    | 28 ++++++++++++++++++++++++++++
+ 2 files changed, 33 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+index 189254f..b2ca143f 100644
+--- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
++++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+@@ -248,6 +248,11 @@
+ 	status = "okay";
+ };
+ 
++&wifi {
++	status = "okay";
++	qcom,msa_fixed_perm;
++};
++
+ /* PINCTRL - additions to nodes defined in sc7180.dtsi */
+ 
+ &qup_i2c2_default {
+diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+index 666e9b9..7efb97f 100644
+--- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
++++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+@@ -42,6 +42,12 @@
+ 			compatible = "qcom,cmd-db";
+ 			no-map;
+ 		};
++
++		wlan_fw_mem: memory@93900000 {
++			compatible = "removed-dma-pool";
++			no-map;
++			reg = <0 0x93900000 0 0x200000>;
++		};
+ 	};
+ 
+ 	cpus {
+@@ -1119,6 +1125,28 @@
+ 				#clock-cells = <1>;
+ 			};
+ 		};
++
++		wifi: wifi@18800000 {
++			compatible = "qcom,wcn3990-wifi";
++			reg = <0 0x18800000 0 0x800000>;
++			reg-names = "membase";
++			iommus = <&apps_smmu 0xC0 0x1>;
++			interrupts =
++				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
++				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
++				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
++				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
++				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
++				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
++				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
++				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
++				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
++				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
++				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
++				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
++			memory-region = <&wlan_fw_mem>;
++			status = "disabled";
++		};
+ 	};
+ 
+ 	timer {
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
