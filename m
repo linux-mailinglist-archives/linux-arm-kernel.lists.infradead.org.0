@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 481D912A305
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 16:46:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A10E12A30A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 16:47:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d9iZ67zupe1MdjfgecX79BgJ6ZlnBK5vnduXplSHgIQ=; b=DBilMiALLfT178
-	ssVaJ9td6OPzorP7FiPP8FBdHr34O3PirLLcQXwdsyD2STpfSZxESxxFKGy/b2tL8K74ntA+apmLT
-	3oueqimEOQFPJvANWhK43EPFknJ34Xe0G/Kc53Yhepk0Qe6xn35hb8y9OgkL65Hh9/IMw9c25pMI2
-	omm3jBlGbaBKUqMbWYWOPv88CUMREdLr8w32gdM5yjf+DWxNYiu7coCV5igmOCd+lDl8qYpwIMKqH
-	VTmu8QdZet/8jJmFqKYl+DzBH9x2FWJ0MqyYOQ6okx1cyH12Lv1VuymVvbjP1h53C4z2i0tlPT3Qy
-	JXqZ+an+VXAX5Ip6dneA==;
+	List-Owner; bh=GmDsHRZAX1K0W3oxpfDItUNEvqhGldKxA3TjZ2KetZ0=; b=Q+j+6VhuuTuDl5
+	Jp0X5QqN2iWCWhMrvcjI9gjXu3ieP3DTixidgKPpP9wZzAcFyKqIUVONA6GljLYxLlrvoL9ZDatfv
+	IPuIyxuhVZ+PDQwKp4veqerBvkx6dl7WQvvwk7AbmK5qI1wSQQldBGTasZDOG6bOylTER5OLBEwT0
+	qiRG69wJ7PZBmUVKLyly389AypCEGw2QIhGftMZJosMMdzIs8/SPI5qzj2Tcrwnzeo11uAMeSWe2u
+	qe/KmzEBZO/5t0eAcLCYblvz26fj240vsrmdKc0dj56t3pB6LfGNOaiyqq/v3UipYJJaBf5EF97sT
+	pGYWmtRtyVHdVmAU2wtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijmOL-0001I6-HU; Tue, 24 Dec 2019 15:46:37 +0000
-Received: from mail-pj1-f65.google.com ([209.85.216.65])
+	id 1ijmPK-0001bJ-Po; Tue, 24 Dec 2019 15:47:38 +0000
+Received: from mail-pg1-f195.google.com ([209.85.215.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijmOA-0001HU-Pt; Tue, 24 Dec 2019 15:46:29 +0000
-Received: by mail-pj1-f65.google.com with SMTP id m13so1369648pjb.2;
- Tue, 24 Dec 2019 07:46:25 -0800 (PST)
+ id 1ijmP9-0001ae-3J; Tue, 24 Dec 2019 15:47:28 +0000
+Received: by mail-pg1-f195.google.com with SMTP id s64so10542820pgb.9;
+ Tue, 24 Dec 2019 07:47:26 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=0ui3frYlfiXdTUjqfeUJDp5cIjjrIwzBPWUplqeRkEk=;
- b=gg2ey8bUo2PVr1r3955zWwkmi0+mpByeIbi+Dk23D+BVl7MvF4aeVREjUDe8puZF89
- EtcAk8r+sAEPnI6ye4mOCQXC3zj69gvFoSG3hJ3dRADCbGG0/oKrDLdD3jwVQZFPhjPz
- LTdj1L5FAS0N5fqmrHnjf3hso91dCF59c4fQWBA8O3DkAYIuj5KR3T712OtwVSVS1rZE
- vXIsZAMwF9rMrvXNi3vENRnGoneFA1YS750jOA/i7QA1BhsTWZ9YgsXYkEzUlIu86qr1
- bBFwOSoeZB73X2793eThj2Gn3jnJ9KcZatS/PJ89lSBWcnQCacNjmTVlkeWBl77AxjGP
- XBKw==
-X-Gm-Message-State: APjAAAWQdbeRNHVuH3I9v3UYjLp+MY+b1Au8qeVoJCDZgY/GR8zS/ZH1
- YRb8RH9dMiL1DjwXZN4v+J0=
-X-Google-Smtp-Source: APXvYqz6iZAH2fqKHGMMuLejkF7qSezx7mDt7SYKF2IxG3sn/bcC/8HKxqA19xeTQtTHJV6egAKYeg==
-X-Received: by 2002:a17:902:708c:: with SMTP id
- z12mr15543251plk.15.1577202384233; 
- Tue, 24 Dec 2019 07:46:24 -0800 (PST)
+ bh=tRZbwjsZiLdv5LPfBH5AaEk9IY4yrV1a4chfsCyzuvo=;
+ b=LEzsjzCZvCROkUZMGgAPS6a6l4R8w+Pn7i2Bgt2f7B7JROIjEpNUSM2AT22UmyqcAU
+ TxvcwbJS5yoJpbZHcwiws/M5c+z2qIOOOEK8wcrLAF/XTEE2BRi/ft2aZbZ3sC5DVcCf
+ +mQP1yl5luFZvCIC3DR0daVMg2gMQP9ybfhDdqiNyWbjTkn0P20xnXc5AyOm9fUwx/AC
+ J4K0FP66+2RggaJ5al9VHJafAXHa8morluE7WVvPJ6zvxfInzTZwHV7fvivFvyY72uca
+ gy5MU6ab62QHlfuLDVBd/t6G9WMO8PTrG3Ld1ACo7PhPnWi2sl+COkUB1ljd5/YGIglY
+ TAJQ==
+X-Gm-Message-State: APjAAAVOJ1ILx3C5rnyI9cA+eYw0cVAnE+79NKEYRlf2N/AGLlImLilk
+ X+JXy0zN0oH3uOL8LJeS/D4=
+X-Google-Smtp-Source: APXvYqyU3/YxRP76cum9fxpksf5dFUrNFqEVZXrDKO5xc0U7alnCtnPHr/Wdeg9VUGMXJItluJheLA==
+X-Received: by 2002:a63:cb09:: with SMTP id p9mr38168685pgg.105.1577202446338; 
+ Tue, 24 Dec 2019 07:47:26 -0800 (PST)
 Received: from ?IPv6:2601:647:4000:1206:80fd:a97:a7d:f0c8?
  ([2601:647:4000:1206:80fd:a97:a7d:f0c8])
- by smtp.gmail.com with ESMTPSA id 199sm30715193pfv.81.2019.12.24.07.46.21
+ by smtp.gmail.com with ESMTPSA id y38sm26414530pgk.33.2019.12.24.07.47.24
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 24 Dec 2019 07:46:23 -0800 (PST)
-Subject: Re: [PATCH v1 1/2] scsi: ufs: unify scsi_block_requests usage
+ Tue, 24 Dec 2019 07:47:25 -0800 (PST)
+Subject: Re: [PATCH v1 2/2] scsi: ufs: use ufshcd_vops_dbg_register_dump for
+ vendor specific dumps
 To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
  martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
  pedrom.sousa@synopsys.com, jejb@linux.ibm.com, matthias.bgg@gmail.com
 References: <1577192466-20762-1-git-send-email-stanley.chu@mediatek.com>
- <1577192466-20762-2-git-send-email-stanley.chu@mediatek.com>
+ <1577192466-20762-3-git-send-email-stanley.chu@mediatek.com>
 From: Bart Van Assche <bvanassche@acm.org>
 Autocrypt: addr=bvanassche@acm.org; prefer-encrypt=mutual; keydata=
  mQENBFSOu4oBCADcRWxVUvkkvRmmwTwIjIJvZOu6wNm+dz5AF4z0FHW2KNZL3oheO3P8UZWr
@@ -77,29 +77,29 @@ Autocrypt: addr=bvanassche@acm.org; prefer-encrypt=mutual; keydata=
  //x8dLe2Fv1By4SKGhmzwH87uXxbTJAUxiWIi1np0z3/RDnoVyfmfbbL1DY7zf2hYXLLzsJR
  mSsED/1nlJ9Oq5fALdNEPgDyPUerqHxcmIub+pF0AzJoYHK5punqpqfGmqPbjxrJLPJfHVKy
  goMj5DlBMoYqEgpbwdUYkH6QdizJJCur4icy8GUNbisFYABeoJ91pnD4IGei3MTdvINSZI5e
-Message-ID: <e9a8fbc0-5f08-75f5-b23b-2bbaa28a6222@acm.org>
-Date: Tue, 24 Dec 2019 07:46:21 -0800
+Message-ID: <b95b94f9-4db3-89d2-95d7-dbcfc9ac6369@acm.org>
+Date: Tue, 24 Dec 2019 07:47:24 -0800
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.3.0
 MIME-Version: 1.0
-In-Reply-To: <1577192466-20762-2-git-send-email-stanley.chu@mediatek.com>
+In-Reply-To: <1577192466-20762-3-git-send-email-stanley.chu@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_074626_839471_FBF2B310 
-X-CRM114-Status: GOOD (  15.81  )
+X-CRM114-CacheID: sfid-20191224_074727_139168_A1EDF1DB 
+X-CRM114-Status: GOOD (  14.30  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.216.65 listed in list.dnswl.org]
+ no trust [209.85.215.195 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.216.65 listed in wl.mailspike.net]
+ [209.85.215.195 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (bart.vanassche[at]gmail.com)
  -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -126,60 +126,28 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 2019-12-24 05:01, Stanley Chu wrote:
-> Currently UFS driver has ufshcd_scsi_block_requests() with
-> reference counter mechanism to avoid possible racing of blocking and
-> unblocking requests flow. Unify all users in UFS driver to use the
-> same function.
+> We already have ufshcd_vops_dbg_register_dump() thus all
+> "hba->vops->dbg_register_dump" references can be replaced by it.
 > 
 > Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 > ---
->  drivers/scsi/ufs/ufshcd.c |    4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+>  drivers/scsi/ufs/ufshcd.c |    3 +--
+>  1 file changed, 1 insertion(+), 2 deletions(-)
 > 
 > diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> index ed02a70..b6b9665 100644
+> index b6b9665..1ac9272 100644
 > --- a/drivers/scsi/ufs/ufshcd.c
 > +++ b/drivers/scsi/ufs/ufshcd.c
-> @@ -5177,7 +5177,7 @@ static void ufshcd_exception_event_handler(struct work_struct *work)
->  	hba = container_of(work, struct ufs_hba, eeh_work);
+> @@ -428,8 +428,7 @@ static void ufshcd_print_host_regs(struct ufs_hba *hba)
 >  
->  	pm_runtime_get_sync(hba->dev);
-> -	scsi_block_requests(hba->host);
-> +	ufshcd_scsi_block_requests(hba);
->  	err = ufshcd_get_ee_status(hba, &status);
->  	if (err) {
->  		dev_err(hba->dev, "%s: failed to get exception status %d\n",
-> @@ -5191,7 +5191,7 @@ static void ufshcd_exception_event_handler(struct work_struct *work)
->  		ufshcd_bkops_exception_event_handler(hba);
+>  	ufshcd_print_clk_freqs(hba);
 >  
->  out:
-> -	scsi_unblock_requests(hba->host);
-> +	ufshcd_scsi_unblock_requests(hba);
->  	pm_runtime_put_sync(hba->dev);
->  	return;
+> -	if (hba->vops && hba->vops->dbg_register_dump)
+> -		hba->vops->dbg_register_dump(hba);
+> +	ufshcd_vops_dbg_register_dump(hba);
 >  }
 
-Hi Stanley,
-
-From the SCSI core:
-
-void scsi_block_requests(struct Scsi_Host *shost)
-{
-	shost->host_self_blocked = 1;
-}
-
-In other words, neither scsi_block_requests() nor
-ufshcd_scsi_block_requests() wait for ongoing ufshcd_queuecommand()
-calls to finish. Is it required to wait for these calls to finish before
-exceptions are handled? If not, can the scsi_block_requests() and
-scsi_unblock_requests() calls be left out? If it is required to wait for
-ongoing ufshcd_queuecommand() calls to finish then I think the
-scsi_block_requests() and scsi_unblock_requests() will have to be
-changed into something else.
-
-Thanks,
-
-Bart.
+Reviewed-by: Bart Van Assche <bvanassche@acm.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
