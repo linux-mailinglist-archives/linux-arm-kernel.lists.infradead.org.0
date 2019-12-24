@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1404129C31
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 01:59:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3596129C2B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 01:59:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,41 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3ZORrcmxm/G31t20tpDLHhZYO9nxR364MifL6ty0EmE=; b=SXE3t99tu8165AkjnhfHMKPUOj
-	d3f98qRiGQwT7Ugyv2IwFCiW64+PerjQoUjOFqYhey0lH6+xs9bJedzh+eFeXEWTiQxGTBgsf/RYW
-	uZk0o1RZbUPRkNp+oSCSWThB5Ffa5vjYqtPU3o6PuO8cCp371Gqg3/cmx50bANjLP+n5xJCdkELZt
-	Cf3fWtp4FUdmxp1wwJiq242vqgbEsI4AzLymaGTUNGDoYNFpOsvI8NFoB/K/hC2TJhPUGdfsU63n4
-	ylNgeT8TTS67IZENTlQareB1h9NGa7ntmCxiQEziKQ+K3w4oYovPv6B/r4lHt0Vy1l58MRz6Vg3N7
-	dDXXvV3Q==;
+	bh=rjAv+EPPuEHAyJmYoJF0kdwrtJ8wT/Njqdy3zqpRs6Y=; b=l93EFcv6KYmOsJsS3h0JgYNH3N
+	6zHSaDnhhLtJO+yv0TYbprQp7ob+SI9SP9GQNuvlRoYsqp4WzJ3EImTcksow7dOe9CzVf3Emjs3Ld
+	KE3hLHt4ab7ldp95ozBUxW26naWk+hWh7aJf7RoPkiJSRKUAQeWGTAhj9at1cCV6Tm2pmri+7cdkN
+	UwkR0lUDVEETg/iw6pWb04qL8I2MWJ3VFcLeMqhHHe5/ZKp9oriQKpF+VbOJ9cyQdLnVMPD3b5rBj
+	Nnl5pH5cRDQWXxGC1UK7sjBys99H6/6BI/S35jvthW9s1fW6hgtZJhgsc1833KdCq7uHzn0666knG
+	kiJ+IaxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijYXp-0002kv-Nc; Tue, 24 Dec 2019 00:59:29 +0000
+	id 1ijYXK-0002JY-LC; Tue, 24 Dec 2019 00:58:58 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijYXC-0002Hw-41
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 00:58:52 +0000
-Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
- by mx.socionext.com with ESMTP; 24 Dec 2019 09:58:46 +0900
+ id 1ijYXB-0002HP-Fi
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 00:58:50 +0000
+Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
+ by mx.socionext.com with ESMTP; 24 Dec 2019 09:58:47 +0900
 Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 36DD018008B;
- Tue, 24 Dec 2019 09:58:46 +0900 (JST)
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id BD1AF603AB;
+ Tue, 24 Dec 2019 09:58:47 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Tue, 24 Dec 2019 09:59:25 +0900
+ Tue, 24 Dec 2019 09:59:27 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 04B7B1A01CF;
- Tue, 24 Dec 2019 09:58:46 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 29E371A01CF;
+ Tue, 24 Dec 2019 09:58:47 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Mark Brown <broonie@kernel.org>,
 	linux-spi@vger.kernel.org
-Subject: [PATCH 1/5] spi: uniphier: Fix FIFO threshold
-Date: Tue, 24 Dec 2019 09:58:23 +0900
-Message-Id: <1577149107-30670-2-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH 2/5] spi: uniphier: Change argument of irq functions to
+ private structure
+Date: Tue, 24 Dec 2019 09:58:24 +0900
+Message-Id: <1577149107-30670-3-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1577149107-30670-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1577149107-30670-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_165850_372567_85D2AB9C 
-X-CRM114-Status: GOOD (  16.30  )
+X-CRM114-CacheID: sfid-20191223_165849_648525_FEE6F431 
+X-CRM114-Status: GOOD (  11.78  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -78,91 +79,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rx threshold means the value to inform the receiver when the number of words
-in Rx FIFO is equal to or more than the value. Similarly, Tx threshold means
-the value to inform the sender when the number of words in Tx FIFO is equal
-to or less than the value. The controller triggers the driver to start
-the transfer.
+This changes each argument of functions uniphier_irq_{enable,disable}()
+to uniphier_spi_priv because these functions are used not only for
+spi_device but also for the entire controller.
 
-In case of Rx, the driver wants to detect that the specified number of words
-N are in Rx FIFO, so the value of Rx threshold should be N. In case of Tx,
-the driver wants to detect that the same number of spaces as Rx are in
-Tx FIFO, so the value of Tx threshold should be (FIFO size - N).
-
-For example, in order for the driver to receive at least 3 words from
-Rx FIFO, set 3 to Rx threshold.
-   +-+-+-+-+-+-+-+-+
-   | | | | | |*|*|*|
-   +-+-+-+-+-+-+-+-+
-
-In order for the driver to send at least 3 words to Tx FIFO, because
-it needs at least 3 spaces, set 8(FIFO size) - 3 = 5 to Tx threshold.
-   +-+-+-+-+-+-+-+-+
-   |*|*|*|*|*| | | |
-   +-+-+-+-+-+-+-+-+
-
-This adds new function uniphier_spi_set_fifo_threshold() to set
-threshold value to the register.
-
-And more, FIFO counts by 'words', so this renames 'fill_bytes' with
-'fill_words', and fixes the calculation using bytes_per_words.
-
-Fixes: 37ffab817098 ("spi: uniphier: introduce polling mode")
-Cc: Keiji Hayashibara <hayashibara.keiji@socionext.com>
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- drivers/spi/spi-uniphier.c | 31 +++++++++++++++++++------------
- 1 file changed, 19 insertions(+), 12 deletions(-)
+ drivers/spi/spi-uniphier.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/spi/spi-uniphier.c b/drivers/spi/spi-uniphier.c
-index 47cde186..ce9b301 100644
+index ce9b301..3859649 100644
 --- a/drivers/spi/spi-uniphier.c
 +++ b/drivers/spi/spi-uniphier.c
-@@ -290,25 +290,32 @@ static void uniphier_spi_recv(struct uniphier_spi_priv *priv)
- 	}
+@@ -93,9 +93,9 @@ static inline unsigned int bytes_per_word(unsigned int bits)
+ 	return bits <= 8 ? 1 : (bits <= 16 ? 2 : 4);
  }
  
--static void uniphier_spi_fill_tx_fifo(struct uniphier_spi_priv *priv)
-+static void uniphier_spi_set_fifo_threshold(struct uniphier_spi_priv *priv,
-+					    unsigned int threshold)
+-static inline void uniphier_spi_irq_enable(struct spi_device *spi, u32 mask)
++static inline void uniphier_spi_irq_enable(struct uniphier_spi_priv *priv,
++					   u32 mask)
  {
--	unsigned int fifo_threshold, fill_bytes;
+-	struct uniphier_spi_priv *priv = spi_master_get_devdata(spi->master);
  	u32 val;
  
--	fifo_threshold = DIV_ROUND_UP(priv->rx_bytes,
--				bytes_per_word(priv->bits_per_word));
--	fifo_threshold = min(fifo_threshold, SSI_FIFO_DEPTH);
--
--	fill_bytes = fifo_threshold - (priv->rx_bytes - priv->tx_bytes);
--
--	/* set fifo threshold */
- 	val = readl(priv->base + SSI_FC);
- 	val &= ~(SSI_FC_TXFTH_MASK | SSI_FC_RXFTH_MASK);
--	val |= FIELD_PREP(SSI_FC_TXFTH_MASK, fifo_threshold);
--	val |= FIELD_PREP(SSI_FC_RXFTH_MASK, fifo_threshold);
-+	val |= FIELD_PREP(SSI_FC_TXFTH_MASK, SSI_FIFO_DEPTH - threshold);
-+	val |= FIELD_PREP(SSI_FC_RXFTH_MASK, threshold);
- 	writel(val, priv->base + SSI_FC);
-+}
-+
-+static void uniphier_spi_fill_tx_fifo(struct uniphier_spi_priv *priv)
-+{
-+	unsigned int fifo_threshold, fill_words;
-+	unsigned int bpw = bytes_per_word(priv->bits_per_word);
-+
-+	fifo_threshold = DIV_ROUND_UP(priv->rx_bytes, bpw);
-+	fifo_threshold = min(fifo_threshold, SSI_FIFO_DEPTH);
-+
-+	uniphier_spi_set_fifo_threshold(priv, fifo_threshold);
-+
-+	fill_words = fifo_threshold -
-+		DIV_ROUND_UP(priv->rx_bytes - priv->tx_bytes, bpw);
- 
--	while (fill_bytes--)
-+	while (fill_words--)
- 		uniphier_spi_send(priv);
+ 	val = readl(priv->base + SSI_IE);
+@@ -103,9 +103,9 @@ static inline void uniphier_spi_irq_enable(struct spi_device *spi, u32 mask)
+ 	writel(val, priv->base + SSI_IE);
  }
  
+-static inline void uniphier_spi_irq_disable(struct spi_device *spi, u32 mask)
++static inline void uniphier_spi_irq_disable(struct uniphier_spi_priv *priv,
++					    u32 mask)
+ {
+-	struct uniphier_spi_priv *priv = spi_master_get_devdata(spi->master);
+ 	u32 val;
+ 
+ 	val = readl(priv->base + SSI_IE);
+@@ -346,12 +346,12 @@ static int uniphier_spi_transfer_one_irq(struct spi_master *master,
+ 
+ 	uniphier_spi_fill_tx_fifo(priv);
+ 
+-	uniphier_spi_irq_enable(spi, SSI_IE_RCIE | SSI_IE_RORIE);
++	uniphier_spi_irq_enable(priv, SSI_IE_RCIE | SSI_IE_RORIE);
+ 
+ 	time_left = wait_for_completion_timeout(&priv->xfer_done,
+ 					msecs_to_jiffies(SSI_TIMEOUT_MS));
+ 
+-	uniphier_spi_irq_disable(spi, SSI_IE_RCIE | SSI_IE_RORIE);
++	uniphier_spi_irq_disable(priv, SSI_IE_RCIE | SSI_IE_RORIE);
+ 
+ 	if (!time_left) {
+ 		dev_err(dev, "transfer timeout.\n");
 -- 
 2.7.4
 
