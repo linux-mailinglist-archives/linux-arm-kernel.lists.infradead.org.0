@@ -2,59 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8677312A2E7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 16:18:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 481D912A305
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 16:46:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HTSzCON3XmbFEd1+XYMQE79Q1ldil7D35k87Xgi+X4w=; b=gASPi6H0NIi/xr
-	sHHjnI5H7UG7jnc5h7ulMqGMt+qeUMxvjP6xc9iSJn5CcKY8SxL+OlmxDRS8gS4zSZUeu5rHwcODS
-	rwjnSpB6ZEUfVnoSVyVa4XCfMqH4UPyN7LXawsYoyCLLF0k2GlZS4TaGb+uIULgMBRfehUEmPY39I
-	XwXnUWCzHRmd+DX2j6EgaFqWQVXXEFhNsYA3984T9I1Hr43fCQ7Mkqne94bwiBl4c48AaCway/UMI
-	KEkdk+nsDWwkCTnpI+pzto9RtDcq8iDLhEr8xUS8Y77RKIWYfWuA6B11CuKUh+2tXrz+oh1SCYk+8
-	S5prE8MsDT8N30BKzZXw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d9iZ67zupe1MdjfgecX79BgJ6ZlnBK5vnduXplSHgIQ=; b=DBilMiALLfT178
+	ssVaJ9td6OPzorP7FiPP8FBdHr34O3PirLLcQXwdsyD2STpfSZxESxxFKGy/b2tL8K74ntA+apmLT
+	3oueqimEOQFPJvANWhK43EPFknJ34Xe0G/Kc53Yhepk0Qe6xn35hb8y9OgkL65Hh9/IMw9c25pMI2
+	omm3jBlGbaBKUqMbWYWOPv88CUMREdLr8w32gdM5yjf+DWxNYiu7coCV5igmOCd+lDl8qYpwIMKqH
+	VTmu8QdZet/8jJmFqKYl+DzBH9x2FWJ0MqyYOQ6okx1cyH12Lv1VuymVvbjP1h53C4z2i0tlPT3Qy
+	JXqZ+an+VXAX5Ip6dneA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijlwY-0000tE-Cj; Tue, 24 Dec 2019 15:17:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijlwN-0000si-In
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 15:17:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3037E1FB;
- Tue, 24 Dec 2019 07:17:42 -0800 (PST)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 97CCD3F6CF;
- Tue, 24 Dec 2019 07:17:41 -0800 (PST)
-Date: Tue, 24 Dec 2019 15:17:39 +0000
-From: Andrew Murray <andrew.murray@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v2 08/18] arm64: KVM: add support to save/restore SPE
- profiling buffer controls
-Message-ID: <20191224151739.GP42593@e119886-lin.cambridge.arm.com>
-References: <20191220143025.33853-1-andrew.murray@arm.com>
- <20191220143025.33853-9-andrew.murray@arm.com>
- <20191221135755.70a6e8df@why>
- <20191224104929.GE42593@e119886-lin.cambridge.arm.com>
+	id 1ijmOL-0001I6-HU; Tue, 24 Dec 2019 15:46:37 +0000
+Received: from mail-pj1-f65.google.com ([209.85.216.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ijmOA-0001HU-Pt; Tue, 24 Dec 2019 15:46:29 +0000
+Received: by mail-pj1-f65.google.com with SMTP id m13so1369648pjb.2;
+ Tue, 24 Dec 2019 07:46:25 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=0ui3frYlfiXdTUjqfeUJDp5cIjjrIwzBPWUplqeRkEk=;
+ b=gg2ey8bUo2PVr1r3955zWwkmi0+mpByeIbi+Dk23D+BVl7MvF4aeVREjUDe8puZF89
+ EtcAk8r+sAEPnI6ye4mOCQXC3zj69gvFoSG3hJ3dRADCbGG0/oKrDLdD3jwVQZFPhjPz
+ LTdj1L5FAS0N5fqmrHnjf3hso91dCF59c4fQWBA8O3DkAYIuj5KR3T712OtwVSVS1rZE
+ vXIsZAMwF9rMrvXNi3vENRnGoneFA1YS750jOA/i7QA1BhsTWZ9YgsXYkEzUlIu86qr1
+ bBFwOSoeZB73X2793eThj2Gn3jnJ9KcZatS/PJ89lSBWcnQCacNjmTVlkeWBl77AxjGP
+ XBKw==
+X-Gm-Message-State: APjAAAWQdbeRNHVuH3I9v3UYjLp+MY+b1Au8qeVoJCDZgY/GR8zS/ZH1
+ YRb8RH9dMiL1DjwXZN4v+J0=
+X-Google-Smtp-Source: APXvYqz6iZAH2fqKHGMMuLejkF7qSezx7mDt7SYKF2IxG3sn/bcC/8HKxqA19xeTQtTHJV6egAKYeg==
+X-Received: by 2002:a17:902:708c:: with SMTP id
+ z12mr15543251plk.15.1577202384233; 
+ Tue, 24 Dec 2019 07:46:24 -0800 (PST)
+Received: from ?IPv6:2601:647:4000:1206:80fd:a97:a7d:f0c8?
+ ([2601:647:4000:1206:80fd:a97:a7d:f0c8])
+ by smtp.gmail.com with ESMTPSA id 199sm30715193pfv.81.2019.12.24.07.46.21
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 24 Dec 2019 07:46:23 -0800 (PST)
+Subject: Re: [PATCH v1 1/2] scsi: ufs: unify scsi_block_requests usage
+To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
+ martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
+ pedrom.sousa@synopsys.com, jejb@linux.ibm.com, matthias.bgg@gmail.com
+References: <1577192466-20762-1-git-send-email-stanley.chu@mediatek.com>
+ <1577192466-20762-2-git-send-email-stanley.chu@mediatek.com>
+From: Bart Van Assche <bvanassche@acm.org>
+Autocrypt: addr=bvanassche@acm.org; prefer-encrypt=mutual; keydata=
+ mQENBFSOu4oBCADcRWxVUvkkvRmmwTwIjIJvZOu6wNm+dz5AF4z0FHW2KNZL3oheO3P8UZWr
+ LQOrCfRcK8e/sIs2Y2D3Lg/SL7qqbMehGEYcJptu6mKkywBfoYbtBkVoJ/jQsi2H0vBiiCOy
+ fmxMHIPcYxaJdXxrOG2UO4B60Y/BzE6OrPDT44w4cZA9DH5xialliWU447Bts8TJNa3lZKS1
+ AvW1ZklbvJfAJJAwzDih35LxU2fcWbmhPa7EO2DCv/LM1B10GBB/oQB5kvlq4aA2PSIWkqz4
+ 3SI5kCPSsygD6wKnbRsvNn2mIACva6VHdm62A7xel5dJRfpQjXj2snd1F/YNoNc66UUTABEB
+ AAG0JEJhcnQgVmFuIEFzc2NoZSA8YnZhbmFzc2NoZUBhY20ub3JnPokBOQQTAQIAIwUCVI67
+ igIbAwcLCQgHAwIBBhUIAgkKCwQWAgMBAh4BAheAAAoJEHFcPTXFzhAJ8QkH/1AdXblKL65M
+ Y1Zk1bYKnkAb4a98LxCPm/pJBilvci6boefwlBDZ2NZuuYWYgyrehMB5H+q+Kq4P0IBbTqTa
+ jTPAANn62A6jwJ0FnCn6YaM9TZQjM1F7LoDX3v+oAkaoXuq0dQ4hnxQNu792bi6QyVdZUvKc
+ macVFVgfK9n04mL7RzjO3f+X4midKt/s+G+IPr4DGlrq+WH27eDbpUR3aYRk8EgbgGKvQFdD
+ CEBFJi+5ZKOArmJVBSk21RHDpqyz6Vit3rjep7c1SN8s7NhVi9cjkKmMDM7KYhXkWc10lKx2
+ RTkFI30rkDm4U+JpdAd2+tP3tjGf9AyGGinpzE2XY1K5AQ0EVI67igEIAKiSyd0nECrgz+H5
+ PcFDGYQpGDMTl8MOPCKw/F3diXPuj2eql4xSbAdbUCJzk2ETif5s3twT2ER8cUTEVOaCEUY3
+ eOiaFgQ+nGLx4BXqqGewikPJCe+UBjFnH1m2/IFn4T9jPZkV8xlkKmDUqMK5EV9n3eQLkn5g
+ lco+FepTtmbkSCCjd91EfThVbNYpVQ5ZjdBCXN66CKyJDMJ85HVr5rmXG/nqriTh6cv1l1Js
+ T7AFvvPjUPknS6d+BETMhTkbGzoyS+sywEsQAgA+BMCxBH4LvUmHYhpS+W6CiZ3ZMxjO8Hgc
+ ++w1mLeRUvda3i4/U8wDT3SWuHcB3DWlcppECLkAEQEAAYkBHwQYAQIACQUCVI67igIbDAAK
+ CRBxXD01xc4QCZ4dB/0QrnEasxjM0PGeXK5hcZMT9Eo998alUfn5XU0RQDYdwp6/kMEXMdmT
+ oH0F0xB3SQ8WVSXA9rrc4EBvZruWQ+5/zjVrhhfUAx12CzL4oQ9Ro2k45daYaonKTANYG22y
+ //x8dLe2Fv1By4SKGhmzwH87uXxbTJAUxiWIi1np0z3/RDnoVyfmfbbL1DY7zf2hYXLLzsJR
+ mSsED/1nlJ9Oq5fALdNEPgDyPUerqHxcmIub+pF0AzJoYHK5punqpqfGmqPbjxrJLPJfHVKy
+ goMj5DlBMoYqEgpbwdUYkH6QdizJJCur4icy8GUNbisFYABeoJ91pnD4IGei3MTdvINSZI5e
+Message-ID: <e9a8fbc0-5f08-75f5-b23b-2bbaa28a6222@acm.org>
+Date: Tue, 24 Dec 2019 07:46:21 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191224104929.GE42593@e119886-lin.cambridge.arm.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <1577192466-20762-2-git-send-email-stanley.chu@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_071743_707650_00EF7050 
-X-CRM114-Status: GOOD (  38.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191224_074626_839471_FBF2B310 
+X-CRM114-Status: GOOD (  15.81  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ no trust [209.85.216.65 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.216.65 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (bart.vanassche[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,219 +116,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Dec 24, 2019 at 10:49:30AM +0000, Andrew Murray wrote:
-> On Sat, Dec 21, 2019 at 01:57:55PM +0000, Marc Zyngier wrote:
-> > On Fri, 20 Dec 2019 14:30:15 +0000
-> > Andrew Murray <andrew.murray@arm.com> wrote:
-> > 
-> > > From: Sudeep Holla <sudeep.holla@arm.com>
-> > > 
-> > > Currently since we don't support profiling using SPE in the guests,
-> > > we just save the PMSCR_EL1, flush the profiling buffers and disable
-> > > sampling. However in order to support simultaneous sampling both in
-> > 
-> > Is the sampling actually simultaneous? I don't believe so (the whole
-> > series would be much simpler if it was).
+On 2019-12-24 05:01, Stanley Chu wrote:
+> Currently UFS driver has ufshcd_scsi_block_requests() with
+> reference counter mechanism to avoid possible racing of blocking and
+> unblocking requests flow. Unify all users in UFS driver to use the
+> same function.
 > 
-> No the SPE is used by either the guest or host at any one time. I guess
-> the term simultaneous was used to refer to illusion given to both guest
-> and host that they are able to use it whenever they like. I'll update
-> the commit message to drop the magic.
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> ---
+>  drivers/scsi/ufs/ufshcd.c |    4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+> index ed02a70..b6b9665 100644
+> --- a/drivers/scsi/ufs/ufshcd.c
+> +++ b/drivers/scsi/ufs/ufshcd.c
+> @@ -5177,7 +5177,7 @@ static void ufshcd_exception_event_handler(struct work_struct *work)
+>  	hba = container_of(work, struct ufs_hba, eeh_work);
 >  
-> 
-> > 
-> > > the host and guests, we need to save and reatore the complete SPE
-> > 
-> > s/reatore/restore/
-> 
-> Noted.
-> 
-> 
-> > 
-> > > profiling buffer controls' context.
-> > > 
-> > > Let's add the support for the same and keep it disabled for now.
-> > > We can enable it conditionally only if guests are allowed to use
-> > > SPE.
-> > > 
-> > > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
-> > > [ Clear PMBSR bit when saving state to prevent spurious interrupts ]
-> > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > > ---
-> > >  arch/arm64/kvm/hyp/debug-sr.c | 51 +++++++++++++++++++++++++++++------
-> > >  1 file changed, 43 insertions(+), 8 deletions(-)
-> > > 
-> > > diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
-> > > index 8a70a493345e..12429b212a3a 100644
-> > > --- a/arch/arm64/kvm/hyp/debug-sr.c
-> > > +++ b/arch/arm64/kvm/hyp/debug-sr.c
-> > > @@ -85,7 +85,8 @@
-> > >  	default:	write_debug(ptr[0], reg, 0);			\
-> > >  	}
-> > >  
-> > > -static void __hyp_text __debug_save_spe_nvhe(struct kvm_cpu_context *ctxt)
-> > > +static void __hyp_text
-> > > +__debug_save_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
-> > 
-> > nit: don't split lines like this if you can avoid it. You can put the
-> > full_ctxt parameter on a separate line instead.
-> 
-> Yes understood.
-> 
-> 
-> > 
-> > >  {
-> > >  	u64 reg;
-> > >  
-> > > @@ -102,22 +103,46 @@ static void __hyp_text __debug_save_spe_nvhe(struct kvm_cpu_context *ctxt)
-> > >  	if (reg & BIT(SYS_PMBIDR_EL1_P_SHIFT))
-> > >  		return;
-> > >  
-> > > -	/* No; is the host actually using the thing? */
-> > > -	reg = read_sysreg_s(SYS_PMBLIMITR_EL1);
-> > > -	if (!(reg & BIT(SYS_PMBLIMITR_EL1_E_SHIFT)))
-> > > +	/* Save the control register and disable data generation */
-> > > +	ctxt->sys_regs[PMSCR_EL1] = read_sysreg_el1(SYS_PMSCR);
-> > > +
-> > > +	if (!ctxt->sys_regs[PMSCR_EL1])
-> > 
-> > Shouldn't you check the enable bits instead of relying on the whole
-> > thing being zero?
-> 
-> Yes that would make more sense (E1SPE and E0SPE).
-> 
-> I feel that this check makes an assumption about the guest/host SPE
-> driver... What happens if the SPE driver writes to some SPE registers
-> but doesn't enable PMSCR? If the guest is also using SPE then those
-> writes will be lost, when the host returns and the SPE driver enables
-> SPE it won't work.
-> 
-> With a quick look at the SPE driver I'm not sure this will happen, but
-> even so it makes me nervous relying on these assumptions. I wonder if
-> this risk is present in other devices?
+>  	pm_runtime_get_sync(hba->dev);
+> -	scsi_block_requests(hba->host);
+> +	ufshcd_scsi_block_requests(hba);
+>  	err = ufshcd_get_ee_status(hba, &status);
+>  	if (err) {
+>  		dev_err(hba->dev, "%s: failed to get exception status %d\n",
+> @@ -5191,7 +5191,7 @@ static void ufshcd_exception_event_handler(struct work_struct *work)
+>  		ufshcd_bkops_exception_event_handler(hba);
+>  
+>  out:
+> -	scsi_unblock_requests(hba->host);
+> +	ufshcd_scsi_unblock_requests(hba);
+>  	pm_runtime_put_sync(hba->dev);
+>  	return;
+>  }
 
-In fact, this may be a good reason to trap the SPE registers - this would
-allow you to conditionally save/restore based on a dirty bit. It would
-also allow you to re-evaluate the SPE interrupt (for example when the guest
-clears the status register) and thus potentially reduce any black hole.
+Hi Stanley,
+
+From the SCSI core:
+
+void scsi_block_requests(struct Scsi_Host *shost)
+{
+	shost->host_self_blocked = 1;
+}
+
+In other words, neither scsi_block_requests() nor
+ufshcd_scsi_block_requests() wait for ongoing ufshcd_queuecommand()
+calls to finish. Is it required to wait for these calls to finish before
+exceptions are handled? If not, can the scsi_block_requests() and
+scsi_unblock_requests() calls be left out? If it is required to wait for
+ongoing ufshcd_queuecommand() calls to finish then I think the
+scsi_block_requests() and scsi_unblock_requests() will have to be
+changed into something else.
 
 Thanks,
 
-Andrew Murray
-
-> 
-> 
-> > 
-> > >  		return;
-> > >  
-> > >  	/* Yes; save the control register and disable data generation */
-> > > -	ctxt->sys_regs[PMSCR_EL1] = read_sysreg_el1(SYS_PMSCR);
-> > 
-> > You've already saved the control register...
-> 
-> I'll remove that.
-> 
-> 
-> > 
-> > >  	write_sysreg_el1(0, SYS_PMSCR);
-> > >  	isb();
-> > >  
-> > >  	/* Now drain all buffered data to memory */
-> > >  	psb_csync();
-> > >  	dsb(nsh);
-> > > +
-> > > +	if (!full_ctxt)
-> > > +		return;
-> > > +
-> > > +	ctxt->sys_regs[PMBLIMITR_EL1] = read_sysreg_s(SYS_PMBLIMITR_EL1);
-> > > +	write_sysreg_s(0, SYS_PMBLIMITR_EL1);
-> > > +
-> > > +	/*
-> > > +	 * As PMBSR is conditionally restored when returning to the host we
-> > > +	 * must ensure the service bit is unset here to prevent a spurious
-> > > +	 * host SPE interrupt from being raised.
-> > > +	 */
-> > > +	ctxt->sys_regs[PMBSR_EL1] = read_sysreg_s(SYS_PMBSR_EL1);
-> > > +	write_sysreg_s(0, SYS_PMBSR_EL1);
-> > > +
-> > > +	isb();
-> > > +
-> > > +	ctxt->sys_regs[PMSICR_EL1] = read_sysreg_s(SYS_PMSICR_EL1);
-> > > +	ctxt->sys_regs[PMSIRR_EL1] = read_sysreg_s(SYS_PMSIRR_EL1);
-> > > +	ctxt->sys_regs[PMSFCR_EL1] = read_sysreg_s(SYS_PMSFCR_EL1);
-> > > +	ctxt->sys_regs[PMSEVFR_EL1] = read_sysreg_s(SYS_PMSEVFR_EL1);
-> > > +	ctxt->sys_regs[PMSLATFR_EL1] = read_sysreg_s(SYS_PMSLATFR_EL1);
-> > > +	ctxt->sys_regs[PMBPTR_EL1] = read_sysreg_s(SYS_PMBPTR_EL1);
-> > >  }
-> > >  
-> > > -static void __hyp_text __debug_restore_spe_nvhe(struct kvm_cpu_context *ctxt)
-> > > +static void __hyp_text
-> > > +__debug_restore_spe_nvhe(struct kvm_cpu_context *ctxt, bool full_ctxt)
-> > >  {
-> > >  	if (!ctxt->sys_regs[PMSCR_EL1])
-> > >  		return;
-> > > @@ -126,6 +151,16 @@ static void __hyp_text __debug_restore_spe_nvhe(struct kvm_cpu_context *ctxt)
-> > >  	isb();
-> > >  
-> > >  	/* Re-enable data generation */
-> > > +	if (full_ctxt) {
-> > > +		write_sysreg_s(ctxt->sys_regs[PMBPTR_EL1], SYS_PMBPTR_EL1);
-> > > +		write_sysreg_s(ctxt->sys_regs[PMBLIMITR_EL1], SYS_PMBLIMITR_EL1);
-> > > +		write_sysreg_s(ctxt->sys_regs[PMSFCR_EL1], SYS_PMSFCR_EL1);
-> > > +		write_sysreg_s(ctxt->sys_regs[PMSEVFR_EL1], SYS_PMSEVFR_EL1);
-> > > +		write_sysreg_s(ctxt->sys_regs[PMSLATFR_EL1], SYS_PMSLATFR_EL1);
-> > > +		write_sysreg_s(ctxt->sys_regs[PMSIRR_EL1], SYS_PMSIRR_EL1);
-> > > +		write_sysreg_s(ctxt->sys_regs[PMSICR_EL1], SYS_PMSICR_EL1);
-> > > +		write_sysreg_s(ctxt->sys_regs[PMBSR_EL1], SYS_PMBSR_EL1);
-> > > +	}
-> > >  	write_sysreg_el1(ctxt->sys_regs[PMSCR_EL1], SYS_PMSCR);
-> > >  }
-> > >  
-> > > @@ -198,7 +233,7 @@ void __hyp_text __debug_restore_host_context(struct kvm_vcpu *vcpu)
-> > >  	guest_ctxt = &vcpu->arch.ctxt;
-> > >  
-> > >  	if (!has_vhe())
-> > > -		__debug_restore_spe_nvhe(host_ctxt);
-> > > +		__debug_restore_spe_nvhe(host_ctxt, false);
-> > >  
-> > >  	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
-> > >  		return;
-> > > @@ -222,7 +257,7 @@ void __hyp_text __debug_save_host_context(struct kvm_vcpu *vcpu)
-> > >  
-> > >  	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
-> > >  	if (!has_vhe())
-> > > -		__debug_save_spe_nvhe(host_ctxt);
-> > > +		__debug_save_spe_nvhe(host_ctxt, false);
-> > >  }
-> > >  
-> > >  void __hyp_text __debug_save_guest_context(struct kvm_vcpu *vcpu)
-> > 
-> > So all of this is for non-VHE. What happens in the VHE case?
-> 
-> By the end of the series this ends up in __debug_save_host_context which is
-> called for both VHE/nVHE - on the re-spin I'll make it not look so confusing.
-> 
-> Thanks,
-> 
-> Andrew Murray
-> 
-> > 
-> > 	M.
-> > -- 
-> > Jazz is not dead. It just smells funny...
-> _______________________________________________
-> kvmarm mailing list
-> kvmarm@lists.cs.columbia.edu
-> https://lists.cs.columbia.edu/mailman/listinfo/kvmarm
+Bart.
 
 _______________________________________________
 linux-arm-kernel mailing list
