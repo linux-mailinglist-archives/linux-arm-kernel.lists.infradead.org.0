@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E0FA129CB5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 03:24:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10173129CBD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 03:28:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GhpSyF6XUbTyEnH6iRPJ8UkyrauWPURgMr9j2UGZV+A=; b=O/dNgugQzVDinJ
-	ZhhZGaUbaSLlch7iPcpmGSwYh14TQVlgRCK+XLAFv/ZQceSotTiKZk7UbiIyeRC6wYjNygLfaxsNv
-	+xbAX25JJ4qWxhbJ4dTzb9fYsTj4663JNCQ0y/Y44l8GGlhKfBjiEyTGPKWU7bT/PBmc9t93qo8ws
-	+gYHzrn3RppGwj76cdnawRSpAbeX5RsezYU9oj2M4ZC6rzwknohfQCGNpCKgUU2u+u97KzT1s/6xE
-	c9mGTwx9A1AtgzxN/21m8y/vBovNuGINnPmL/4cJDxxzoKln+dvtjxHo2EAPcs/rGUuQq3lHRFYPt
-	HDe5BDoCOtEha6ZAmCTg==;
+	List-Owner; bh=KqVdXQebnIAFrUK70kEv8HIwpHKDbZd0p6LQBv1kOeU=; b=KR2VQ28intjCzT
+	RRALegwlzV8q4lg8QHdoHddIMEXnNaTqkh1MVVtj80UQYmb4lbjUEbE8jy16/kiyXTRKdm6yjNGDt
+	l9sdfzeYkXY52fPOvbEj2u8ckH3oqMednZkWnNZ+gte/Ho+NhVrnTmvB6pgoV/VqeGphmnZ8SBcdz
+	MWR0uzY0IRTubfxYxGDlzaxDS6mjM9vqJcZgpejT/3E1m9n3CgssIDjCcKupjDDs87gpfFEm7c//v
+	sXGrnFcJJ6ONtkmi305CZJUtoMlcdKUHvt+HST8lqtVQI72H2D7gFe8dvwBVa2iZACIDCNLJOyBsN
+	2goAtyOsHCjpS4z5tsRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijZs5-0000On-RE; Tue, 24 Dec 2019 02:24:29 +0000
+	id 1ijZvY-0002H9-EI; Tue, 24 Dec 2019 02:28:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijZrx-0000OT-0r
- for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 02:24:22 +0000
-Received: from mail-wr1-f44.google.com (mail-wr1-f44.google.com
- [209.85.221.44])
+ id 1ijZvP-0002Gf-0S
+ for linux-arm-kernel@lists.infradead.org; Tue, 24 Dec 2019 02:27:56 +0000
+Received: from mail-wr1-f46.google.com (mail-wr1-f46.google.com
+ [209.85.221.46])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3BB5821775
+ by mail.kernel.org (Postfix) with ESMTPSA id 7226B2075B
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 24 Dec 2019 02:24:20 +0000 (UTC)
+ Tue, 24 Dec 2019 02:27:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577154260;
- bh=SPQ7Bj4a4eNp21OAcqYrY8SxuFJJaC2a6yGdIeeRS1o=;
+ s=default; t=1577154474;
+ bh=urdNwQ/OTeq2Z4hdgMEm4P258E+sy9JNDdnsxX/A+m0=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=oPvK6VPzi1k2yyEjQny+BqytBOGY+Pvm5TAIa+d74eS8hvsJFnqaOLMcPbR1MVHcg
- TJAbv69cwFBjDUU1LcTUwFGC1sdBHfjcRbhYXPuD/8fDpRJfQhxnnenWDdYNTNMhtK
- WQtdttyNyw+EIZ8phdY7Uk7eLt21kAD5fLV0wvro=
-Received: by mail-wr1-f44.google.com with SMTP id b6so18666313wrq.0
+ b=e5/A2TMzWmvgBVcYJhSASriiw23lUwDkTKRRrtVzBPcnxYy86U7OFXx0HfahVlJoE
+ gR4r6zzD7UbCJZ6hzzKPUkP9RiRaHMYXHegUwL+YEO5JXAbwTkd+koSfO5sdzwK5Kg
+ cSsvwQzIEipkLbhYGIOw86xV4zgHkcuJxD1NzlXU=
+Received: by mail-wr1-f46.google.com with SMTP id j42so18590811wrj.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 23 Dec 2019 18:24:20 -0800 (PST)
-X-Gm-Message-State: APjAAAUue2CyMbwNQ/kTIaNtA+vqqY4T0idbqBCM07wdqG6ZJ6+E5bKv
- s45KOWAFQThHRNLOAU6JGc4yCLxP82eJPROanp86wQ==
-X-Google-Smtp-Source: APXvYqxjzD58lmej1/f4cJSP7HhlmKnh8jXfi6lwDjHJL4b+9GZQPe+XjiFw3YmwCo3ewdHy4fkwT46pqN+EiY2Rfws=
-X-Received: by 2002:adf:f491:: with SMTP id l17mr32117348wro.149.1577154258620; 
- Mon, 23 Dec 2019 18:24:18 -0800 (PST)
+ Mon, 23 Dec 2019 18:27:54 -0800 (PST)
+X-Gm-Message-State: APjAAAVBrzegnz259z54h13gSlW9rSgk6FmMpCcBdFk/yOgTnnt8yXbZ
+ xYWCHBHgCcqMrqQqVlg53SdPNUJ1IK4dWwU/ZqhgPg==
+X-Google-Smtp-Source: APXvYqzX7Wx0WQQGQxSsSx/rylu702E8XhFQtmBzrPd/vN45dmJAZ0EePwEz406rgBkEgebEu04CDi9IHkjEhDWde+I=
+X-Received: by 2002:adf:f20b:: with SMTP id p11mr31631213wro.195.1577154472974; 
+ Mon, 23 Dec 2019 18:27:52 -0800 (PST)
 MIME-Version: 1.0
 References: <cover.1577111363.git.christophe.leroy@c-s.fr>
- <de073962c1a5911343e13c183fbbdef0fe95449e.1577111365.git.christophe.leroy@c-s.fr>
-In-Reply-To: <de073962c1a5911343e13c183fbbdef0fe95449e.1577111365.git.christophe.leroy@c-s.fr>
+ <02861d0a05c2d48db4e9ee9093e2e2598093c372.1577111366.git.christophe.leroy@c-s.fr>
+In-Reply-To: <02861d0a05c2d48db4e9ee9093e2e2598093c372.1577111366.git.christophe.leroy@c-s.fr>
 From: Andy Lutomirski <luto@kernel.org>
-Date: Mon, 23 Dec 2019 18:24:05 -0800
-X-Gmail-Original-Message-ID: <CALCETrXWHk9J-pYm+eopMuW3x7Jr_LnzRjr94gq8g66xOO6SBg@mail.gmail.com>
-Message-ID: <CALCETrXWHk9J-pYm+eopMuW3x7Jr_LnzRjr94gq8g66xOO6SBg@mail.gmail.com>
-Subject: Re: [RFC PATCH v2 02/10] lib: vdso: move call to fallback out of
- common code.
+Date: Mon, 23 Dec 2019 18:27:40 -0800
+X-Gmail-Original-Message-ID: <CALCETrW9hsrVVzudvRY22AqakcsrVzqp=SdwOTwW2zRBK+kEaA@mail.gmail.com>
+Message-ID: <CALCETrW9hsrVVzudvRY22AqakcsrVzqp=SdwOTwW2zRBK+kEaA@mail.gmail.com>
+Subject: Re: [RFC PATCH v2 04/10] lib: vdso: get pointer to vdso data from the
+ arch
 To: Christophe Leroy <christophe.leroy@c-s.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_182421_083474_FFA1578B 
-X-CRM114-Status: GOOD (  15.92  )
+X-CRM114-CacheID: sfid-20191223_182755_068019_02A0999A 
+X-CRM114-Status: GOOD (  11.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,54 +104,22 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Mon, Dec 23, 2019 at 6:31 AM Christophe Leroy
 <christophe.leroy@c-s.fr> wrote:
 >
-> On powerpc, VDSO functions and syscalls cannot be implemented in C
-> because the Linux kernel ABI requires that CR[SO] bit is set in case
-> of error and cleared when no error.
+> On powerpc, __arch_get_vdso_data() clobbers the link register,
+> requiring the caller to set a stack frame in order to save it.
 >
-> As this cannot be done in C, C VDSO functions and syscall'based
-> fallback need a trampoline in ASM.
->
-> By moving the fallback calls out of the common code, arches like
-> powerpc can implement both the call to C VDSO and the fallback call
-> in a single trampoline function.
+> As the parent function already has to set a stack frame and save
+> the link register to call the C vdso function, retriving the
+> vdso data pointer there is lighter.
 
-Maybe the issue is that I'm not a powerpc person, but I don't
-understand this.  The common vDSO code is in C.  Presumably this means
-that you need an asm trampoline no matter what to call the C code.  Is
-the improvement that, with this change, you can have the asm
-trampoline do a single branch, so it's logically:
+I'm confused.  Can't you inline __arch_get_vdso_data()?  Or is the
+issue that you can't retrieve the program counter on power without
+clobbering the link register?
 
-ret = [call the C code];
-if (ret == 0) {
- set success bit;
-} else {
- ret = fallback;
- if (ret == 0)
-  set success bit;
-else
-  set failure bit;
-}
+I would imagine that this patch generates worse code on any
+architecture with PC-relative addressing modes (which includes at
+least x86_64, and I would guess includes most modern architectures).
 
-return ret;
-
-instead of:
-
-ret = [call the C code, which includes the fallback];
-if (ret == 0)
-  set success bit;
-else
-  set failure bit;
-
-It's not obvious to me that the former ought to be faster.
-
->
-> The two advantages are:
-> - No need play back and forth with CR[SO] and negative return value.
-> - No stack frame is required in VDSO C functions for the fallbacks.
-
-How is no stack frame required?  Do you mean that the presence of the
-fallback causes worse code generation?  Can you improve the fallback
-instead?
+--Andy
 
 _______________________________________________
 linux-arm-kernel mailing list
