@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F23E12A280
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 15:40:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6104512A281
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 24 Dec 2019 15:40:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nssxmuy/8H6yIabzFRMXEHlq2u8Y32iYZxiAJCIm85g=; b=HpAcQdS/H0Mer0
-	QOYwtJRrr6MWNquH+koEnqqRqNStF7cAyH7UpUealt4lML429QqIY6FJbQOZwPXsX9+JSuDhl3k/z
-	VlDOSExq4C0wDgDLaa/4vAXOHvQ6SlRaesQvzy12Rimdso72w2NueDVDq8wvBA/gaw5a0InTCG81I
-	VK0ol4O2KfNMW3CH5i6jTAFZYj6YuZzKecU/26nU2To+h/D6GkzPEXj3Uzgtk+jNTqgEM9RntgNRM
-	sFS2cdiQEy7gP8XLSbebn8U4IMW8DzAb5wOqF+GF7KpqhcDj0R8cYm3l35A/aOTDdIWv/AdZNIuNz
-	kesJeJ2qEWX3AO17Zh1g==;
+	List-Owner; bh=TIwmoxRHTH4zrAOxeD7VZq/RFyOBMwVqrMNSm1ifyIY=; b=kQmhZwuYxFaeeM
+	xj1QTCxFBAl501i57OYGescinnIo3VTqg+PE5YmZqKHUCkluJYxayFRstg3wq2mBy0rquJ2Ur1pfH
+	WgaJwQf+gjsYfR4DTK+ZALRQfWCmsJJr9P16yVwNsrHQgFe8YmtdrRruOKpZZnCDLaFCeNBd3vsuu
+	6+c9+P+s+sdN0nM0tE5mBYDJ/IkpH1/cOIp/75huBozubss3TM7qEV0mQQulDXcPi8W6VM1IEO0YF
+	7+3Tecqj/pD+Sk3oo+e7O3cXDxlEeS0R02mLI9mxs/9m3oYbimC1+w8c8ddp2ZlDiabdR6cQktwx3
+	6HxN6uSXwplZyVpeVmjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijlMM-0003Pa-9D; Tue, 24 Dec 2019 14:40:30 +0000
+	id 1ijlMc-0003v8-MA; Tue, 24 Dec 2019 14:40:46 +0000
 Received: from relay4-d.mail.gandi.net ([217.70.183.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijlL9-0001iR-Un; Tue, 24 Dec 2019 14:39:17 +0000
+ id 1ijlLB-0001jE-T1; Tue, 24 Dec 2019 14:39:19 +0000
 X-Originating-IP: 91.224.148.103
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id AC761E000A;
- Tue, 24 Dec 2019 14:39:12 +0000 (UTC)
+ by relay4-d.mail.gandi.net (Postfix) with ESMTPSA id A0A96E0005;
+ Tue, 24 Dec 2019 14:39:14 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
  Sandy Huang <hjc@rock-chips.com>, Heiko Stuebner <heiko@sntech.de>,
  <linux-rockchip@lists.infradead.org>
-Subject: [PATCH v2 02/11] dt-bindings: display: rockchip-lvds: Document PX30
- PHY
-Date: Tue, 24 Dec 2019 15:38:51 +0100
-Message-Id: <20191224143900.23567-3-miquel.raynal@bootlin.com>
+Subject: [PATCH v2 03/11] drm/rockchip: lvds: Fix indentation of a #define
+Date: Tue, 24 Dec 2019 15:38:52 +0100
+Message-Id: <20191224143900.23567-4-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191224143900.23567-1-miquel.raynal@bootlin.com>
 References: <20191224143900.23567-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_063916_125121_F2CEB4D1 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20191224_063918_087732_46DAD57A 
+X-CRM114-Status: GOOD (  11.67  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -78,29 +77,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-PX30 SoCs use a single PHY shared by two display pipelines: MIPI DSI
-and LVDS. In the case of the LVDS IP, document the possibility to fill
-a PHY handle.
+Fix a #define indentation before adding more lines.
 
+Fixes: 34cc0aa25456 ("drm/rockchip: Add support for Rockchip Soc LVDS")
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- .../devicetree/bindings/display/rockchip/rockchip-lvds.txt     | 3 +++
- 1 file changed, 3 insertions(+)
+ drivers/gpu/drm/rockchip/rockchip_lvds.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt b/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt
-index aa5663a6fd42..aaf8c44cf90f 100644
---- a/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt
-+++ b/Documentation/devicetree/bindings/display/rockchip/rockchip-lvds.txt
-@@ -19,6 +19,9 @@ Required properties:
- - rockchip,grf: phandle to the general register files syscon
- - rockchip,output: "rgb", "lvds" or "duallvds", This describes the output interface
+diff --git a/drivers/gpu/drm/rockchip/rockchip_lvds.h b/drivers/gpu/drm/rockchip/rockchip_lvds.h
+index 029bad8e1a14..1387bcbc4bc0 100644
+--- a/drivers/gpu/drm/rockchip/rockchip_lvds.h
++++ b/drivers/gpu/drm/rockchip/rockchip_lvds.h
+@@ -70,7 +70,7 @@
+ #define RK3288_LVDS_CFG_REG21			0x84
+ #define RK3288_LVDS_CFG_REG21_TX_ENABLE		0x92
+ #define RK3288_LVDS_CFG_REG21_TX_DISABLE	0x00
+-#define RK3288_LVDS_CH1_OFFSET                 0x100
++#define RK3288_LVDS_CH1_OFFSET			0x100
  
-+- phys: LVDS/DSI DPHY (px30 only)
-+- phy-names: name of the PHY, must be "dphy" (px30 only)
-+
- Optional properties:
- - pinctrl-names: must contain a "lcdc" entry.
- - pinctrl-0: pin control group to be used for this controller.
+ /* fbdiv value is split over 2 registers, with bit8 in reg2 */
+ #define RK3288_LVDS_PLL_FBDIV_REG2(_fbd) \
 -- 
 2.20.1
 
