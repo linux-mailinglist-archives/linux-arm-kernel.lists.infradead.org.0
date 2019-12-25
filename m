@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 095F212A514
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 01:09:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68DCE12A523
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 01:10:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=76tl/HxDZyy/f8R4P/A4HHL/W6opR2DHX6YgRS3dB3Y=; b=OTY
-	h+6Uon+x7HfrSTWtZD6zXspm42XpkMB5aMvQLvVc0enQ6lpp/7K8jLBOkHQ9hmlkgSk41zo9sj0f5
-	tU4QJ0Xfv4OXH/IS6e0p71bBZWS6ELrP4MbCONSPBrJSmy7dl4DzNFQQ48hdrz4H/tCVVCwUw93Ld
-	iQ6ymyfkqdaO2eqO/OUIJb03717PbtUBRPJOxVqHQVo3eURPSRxSOpUMtusyRVXAOeYHDmLF/x+sH
-	IY+kSuakgp6LVUpIUDUAz3wT4GZEquQCXIrCS3jp3Z16rurwvrde05+UemCt25v4DGlBri3YHPnF9
-	oyIJ6rLFH6yJdqKAaXVt/r5fAxuWXow==;
+	References:List-Owner; bh=8blfL7AGSnN3+48eVUqoJbY1vTKBqjJ2C9+iBDOYhCI=; b=fw8
+	zYwRwaRlRLg48gGD/idCoSldcMiJ0LnS7yD9OZ51VlUEBu08ejsyDRUciELQtmWnD87YakDV1Lzas
+	TxvvkvIhTORxnQUOZ7T30eIhMctHe2PGArNKUkV+lcHlEZb6l6X8OCuc+V0gRz6KmcUzIbuV1cJwT
+	Z7q9W+CxALcBrlxJfnR7jkVAmJwEltGFkcjlx4/AGe+iQMI5OEZPaK8GjVGVQJH7OftTz9Id8ynJj
+	uK9syf3vJtWSHhRNwRiNnXzVnr3P8nuQYQCmMqDBVaVBpAJEodMiC3khwaxIJ9FfNaofZQ5hDBDOq
+	H+aDtgWfd1tSkQXIkbskCb2wriqp5Kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijuFB-0004vD-OG; Wed, 25 Dec 2019 00:09:41 +0000
+	id 1ijuFg-00056Q-MH; Wed, 25 Dec 2019 00:10:12 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijuEg-0004eg-18
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 00:09:11 +0000
+ id 1ijuEh-0004fH-3Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 00:09:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=kl38DjUk9o2U/FwQRMbYB7NV347FDsumGC5L5YiNVQ0=; b=u6NttF2u5BRh
- 5nhem86XSs2X/DlZxobkKy+mRK2TXg4SLI+xhrAorgkCUJ4p610ldGWpRMdag6pU4LViRd8HiTMsR
- gGzvGriqTlbHgNguWO5Lk47jwJPlKJK9oWqT/Jdakpirgfxjw+Y14+Zxo/LSNIsXy2R5NivfFDE2K
- JOW3g=;
+ List-Archive; bh=2GeG6xR/J7VM2a/ObwQ0fm8SxgMna4I+z6ph1YDl5Rs=; b=LfGTMjJEKuyE
+ ea2zyxLVkyi/yF1/sjsO/UviCdqxEIx6SmUAf7MFxvGMd6I8DPh1SDStqKKqQXjLH489wNc3RxTX3
+ XIJvnfZFcRRD6MmFMjE8SqAl826vjxoKHWJbEacnMcrwy4WqFPWWimrMW2kz7gYxPh4hzAfikFEGO
+ oNTC4=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=fitzroy.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1ijuEc-0007Lq-1I; Wed, 25 Dec 2019 00:09:06 +0000
+ id 1ijuEd-0007M2-Vr; Wed, 25 Dec 2019 00:09:08 +0000
 Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 8B1C6D01957; Wed, 25 Dec 2019 00:09:05 +0000 (GMT)
+ id 7D617D01957; Wed, 25 Dec 2019 00:09:07 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: stm32: spdifrx: fix race condition in irq handler" to
- the asoc tree
-In-Reply-To: <20191204154333.7152-3-olivier.moysan@st.com>
-Message-Id: <applied-20191204154333.7152-3-olivier.moysan@st.com>
+Subject: Applied "ASoC: stm32: spdifrx: fix inconsistent lock state" to the
+ asoc tree
+In-Reply-To: <20191204154333.7152-2-olivier.moysan@st.com>
+Message-Id: <applied-20191204154333.7152-2-olivier.moysan@st.com>
 X-Patchwork-Hint: ignore
-Date: Wed, 25 Dec 2019 00:09:05 +0000 (GMT)
+Date: Wed, 25 Dec 2019 00:09:07 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_160910_074339_6D112C8E 
-X-CRM114-Status: GOOD (  16.48  )
+X-CRM114-CacheID: sfid-20191224_160911_141775_1F51A76D 
+X-CRM114-Status: GOOD (  15.54  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -92,7 +92,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: stm32: spdifrx: fix race condition in irq handler
+   ASoC: stm32: spdifrx: fix inconsistent lock state
 
 has been applied to the asoc tree at
 
@@ -117,110 +117,92 @@ to this mail.
 Thanks,
 Mark
 
-From 86e1956af4c863d653136fd6e5694adf2054dbaa Mon Sep 17 00:00:00 2001
+From 2859b1784031b5709446af8f6039c467f136e67d Mon Sep 17 00:00:00 2001
 From: Olivier Moysan <olivier.moysan@st.com>
-Date: Wed, 4 Dec 2019 16:43:32 +0100
-Subject: [PATCH] ASoC: stm32: spdifrx: fix race condition in irq handler
+Date: Wed, 4 Dec 2019 16:43:31 +0100
+Subject: [PATCH] ASoC: stm32: spdifrx: fix inconsistent lock state
 
-When snd_pcm_stop() is called in interrupt routine,
-substream context may have already been released.
-Add protection on substream context.
+In current spdifrx driver locks may be requested as follows:
+- request lock on iec capture control, when starting synchronization.
+- request lock in interrupt context, when spdifrx stop is called
+from IRQ handler.
+
+Take lock with IRQs disabled, to avoid the possible deadlock.
+
+Lockdep report:
+[   74.278059] ================================
+[   74.282306] WARNING: inconsistent lock state
+[   74.290120] --------------------------------
+...
+[   74.314373]        CPU0
+[   74.314377]        ----
+[   74.314381]   lock(&(&spdifrx->lock)->rlock);
+[   74.314396]   <Interrupt>
+[   74.314400]     lock(&(&spdifrx->lock)->rlock);
 
 Fixes: 03e4d5d56fa5 ("ASoC: stm32: Add SPDIFRX support")
 
 Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Link: https://lore.kernel.org/r/20191204154333.7152-3-olivier.moysan@st.com
+Link: https://lore.kernel.org/r/20191204154333.7152-2-olivier.moysan@st.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/stm/stm32_spdifrx.c | 24 +++++++++++++++++++-----
- 1 file changed, 19 insertions(+), 5 deletions(-)
+ sound/soc/stm/stm32_spdifrx.c | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
 
 diff --git a/sound/soc/stm/stm32_spdifrx.c b/sound/soc/stm/stm32_spdifrx.c
-index 9c6beb610c17..3cb8e6db3eeb 100644
+index 3fd28ee01675..9c6beb610c17 100644
 --- a/sound/soc/stm/stm32_spdifrx.c
 +++ b/sound/soc/stm/stm32_spdifrx.c
-@@ -220,6 +220,7 @@
-  * @slave_config: dma slave channel runtime config pointer
-  * @phys_addr: SPDIFRX registers physical base address
-  * @lock: synchronization enabling lock
-+ * @irq_lock: prevent race condition with IRQ on stream state
-  * @cs: channel status buffer
-  * @ub: user data buffer
-  * @irq: SPDIFRX interrupt line
-@@ -240,6 +241,7 @@ struct stm32_spdifrx_data {
- 	struct dma_slave_config slave_config;
- 	dma_addr_t phys_addr;
- 	spinlock_t lock;  /* Sync enabling lock */
-+	spinlock_t irq_lock; /* Prevent race condition on stream state */
- 	unsigned char cs[SPDIFRX_CS_BYTES_NB];
- 	unsigned char ub[SPDIFRX_UB_BYTES_NB];
- 	int irq;
-@@ -667,7 +669,6 @@ static const struct regmap_config stm32_h7_spdifrx_regmap_conf = {
- static irqreturn_t stm32_spdifrx_isr(int irq, void *devid)
+@@ -320,6 +320,7 @@ static void stm32_spdifrx_dma_ctrl_stop(struct stm32_spdifrx_data *spdifrx)
+ static int stm32_spdifrx_start_sync(struct stm32_spdifrx_data *spdifrx)
  {
- 	struct stm32_spdifrx_data *spdifrx = (struct stm32_spdifrx_data *)devid;
--	struct snd_pcm_substream *substream = spdifrx->substream;
- 	struct platform_device *pdev = spdifrx->pdev;
- 	unsigned int cr, mask, sr, imr;
- 	unsigned int flags, sync_state;
-@@ -747,14 +748,19 @@ static irqreturn_t stm32_spdifrx_isr(int irq, void *devid)
- 			return IRQ_HANDLED;
- 		}
+ 	int cr, cr_mask, imr, ret;
++	unsigned long flags;
  
--		if (substream)
--			snd_pcm_stop(substream, SNDRV_PCM_STATE_DISCONNECTED);
-+		spin_lock(&spdifrx->irq_lock);
-+		if (spdifrx->substream)
-+			snd_pcm_stop(spdifrx->substream,
-+				     SNDRV_PCM_STATE_DISCONNECTED);
-+		spin_unlock(&spdifrx->irq_lock);
+ 	/* Enable IRQs */
+ 	imr = SPDIFRX_IMR_IFEIE | SPDIFRX_IMR_SYNCDIE | SPDIFRX_IMR_PERRIE;
+@@ -327,7 +328,7 @@ static int stm32_spdifrx_start_sync(struct stm32_spdifrx_data *spdifrx)
+ 	if (ret)
+ 		return ret;
  
- 		return IRQ_HANDLED;
+-	spin_lock(&spdifrx->lock);
++	spin_lock_irqsave(&spdifrx->lock, flags);
+ 
+ 	spdifrx->refcount++;
+ 
+@@ -362,7 +363,7 @@ static int stm32_spdifrx_start_sync(struct stm32_spdifrx_data *spdifrx)
+ 				"Failed to start synchronization\n");
  	}
  
--	if (err_xrun && substream)
--		snd_pcm_stop_xrun(substream);
-+	spin_lock(&spdifrx->irq_lock);
-+	if (err_xrun && spdifrx->substream)
-+		snd_pcm_stop_xrun(spdifrx->substream);
-+	spin_unlock(&spdifrx->irq_lock);
+-	spin_unlock(&spdifrx->lock);
++	spin_unlock_irqrestore(&spdifrx->lock, flags);
  
- 	return IRQ_HANDLED;
+ 	return ret;
  }
-@@ -763,9 +769,12 @@ static int stm32_spdifrx_startup(struct snd_pcm_substream *substream,
- 				 struct snd_soc_dai *cpu_dai)
+@@ -370,11 +371,12 @@ static int stm32_spdifrx_start_sync(struct stm32_spdifrx_data *spdifrx)
+ static void stm32_spdifrx_stop(struct stm32_spdifrx_data *spdifrx)
  {
- 	struct stm32_spdifrx_data *spdifrx = snd_soc_dai_get_drvdata(cpu_dai);
-+	unsigned long flags;
- 	int ret;
- 
-+	spin_lock_irqsave(&spdifrx->irq_lock, flags);
- 	spdifrx->substream = substream;
-+	spin_unlock_irqrestore(&spdifrx->irq_lock, flags);
- 
- 	ret = clk_prepare_enable(spdifrx->kclk);
- 	if (ret)
-@@ -841,8 +850,12 @@ static void stm32_spdifrx_shutdown(struct snd_pcm_substream *substream,
- 				   struct snd_soc_dai *cpu_dai)
- {
- 	struct stm32_spdifrx_data *spdifrx = snd_soc_dai_get_drvdata(cpu_dai);
+ 	int cr, cr_mask, reg;
 +	unsigned long flags;
  
-+	spin_lock_irqsave(&spdifrx->irq_lock, flags);
- 	spdifrx->substream = NULL;
-+	spin_unlock_irqrestore(&spdifrx->irq_lock, flags);
-+
- 	clk_disable_unprepare(spdifrx->kclk);
+-	spin_lock(&spdifrx->lock);
++	spin_lock_irqsave(&spdifrx->lock, flags);
+ 
+ 	if (--spdifrx->refcount) {
+-		spin_unlock(&spdifrx->lock);
++		spin_unlock_irqrestore(&spdifrx->lock, flags);
+ 		return;
+ 	}
+ 
+@@ -393,7 +395,7 @@ static void stm32_spdifrx_stop(struct stm32_spdifrx_data *spdifrx)
+ 	regmap_read(spdifrx->regmap, STM32_SPDIFRX_DR, &reg);
+ 	regmap_read(spdifrx->regmap, STM32_SPDIFRX_CSR, &reg);
+ 
+-	spin_unlock(&spdifrx->lock);
++	spin_unlock_irqrestore(&spdifrx->lock, flags);
  }
  
-@@ -946,6 +959,7 @@ static int stm32_spdifrx_probe(struct platform_device *pdev)
- 	spdifrx->pdev = pdev;
- 	init_completion(&spdifrx->cs_completion);
- 	spin_lock_init(&spdifrx->lock);
-+	spin_lock_init(&spdifrx->irq_lock);
- 
- 	platform_set_drvdata(pdev, spdifrx);
- 
+ static int stm32_spdifrx_dma_ctrl_register(struct device *dev,
 -- 
 2.20.1
 
