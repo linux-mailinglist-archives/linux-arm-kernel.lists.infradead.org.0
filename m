@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0846E12A54C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 01:58:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FB9212A54D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 01:58:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=F38oR+L9B55DpmGYhz0O8uFRXq7rQxBIVEOPkmpktMg=; b=n3iVAmYpD+VSMP
-	trDh1QZwhvZPlq231u7aEgu7OGHJjS2HJq0fhPl8G5NcByhDjFJ/H9PCso2PsTnLaYDs9ngtvZAhh
-	pma+DS8q4k6QoNC3aPte+FhyeOQ29BoYOdMnAnpyB85dpC06gnWxm9h1IAqFp7V+2mAm4dQsa5/7H
-	qAOLTYEOSNzkEnV4i08ZzA7rEQXPLdLf5UPXpZ0phXsJqkj3K9eW8G6wiXbcm7HL678l5xNbbfW8f
-	EpTCuWBTPoHAM9MxUjcHHLU6OncQ7tF2pG8olxxk2oMxSWT52bveZHhbiz3pjwZwgbKoP+ZEFpBAV
-	cwbbdq9disl8tGPIkjbw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2DXwV1sqTSjiPTiir2EX0hJy8VdOddcMZ5LK0WNOZ+4=; b=FIrbC9Vfxgq9j9
+	ehsAyNXKzEqfr9ix1x62ySeRZ1uvyfm8uCpe12Rx3TqvJkzyuS0BJSpIfgSgY2ABgIIDqRw7Jad8v
+	EsITZG8WRIhrAqxNVT06LRJDRvtpqxI4fINtNrHcrjtZtd7qgMQA5UlWrKIrwpfofVmzzSwRU1Br+
+	godeOqOy36xQjV/VTnxSjvtlvn7voUiSG3AkPvNN2peYz+qa5if120+19GHfzUqSyGLdptmgCvm8J
+	HIDD0FtTcMNvN2KiwJkV0ndqcM3zP/T3mRWmJkqtGsQ8XNxSIGcSqmgeC9U/2/eWGxlB9/1cKLUj+
+	ryCTHm1QRnYAMcNRV86A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijv07-0004xk-Hn; Wed, 25 Dec 2019 00:58:11 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1ijv0R-0005GA-NY; Wed, 25 Dec 2019 00:58:31 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijuzr-0004vj-8d; Wed, 25 Dec 2019 00:57:56 +0000
-Received: by mail-wm1-x344.google.com with SMTP id p17so3529188wma.1;
- Tue, 24 Dec 2019 16:57:54 -0800 (PST)
+ id 1ijuzs-0004vk-0Z; Wed, 25 Dec 2019 00:57:57 +0000
+Received: by mail-wm1-x341.google.com with SMTP id d139so2799124wmd.0;
+ Tue, 24 Dec 2019 16:57:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=VotzchowBWia33SBZNWvtqHuElucwAtYumoZTzGpWCQ=;
- b=aNXqgDezUiPP92OPEEgyn6ex0MJJ6tkJa1iQLQ3x7tPeF92q1JidZhcqqXoZq/cqIe
- hI33UVV6w97dO3Io4itkMlCA5gfJh3Cv5DjCYNlz0Fb5nUGZMkuN5wYA52KfiTqvISIU
- XeVzRKIDZMV33Qs9uzua+D3v4QYNQFOwOlWhRUWqGRGUnJTg/gD51DETHTr2P34cg77i
- 8KgduyphFPuHG9G+ZMHQQ1pJJyTOlk+JzCQTFC2+mU1hc1TKLyaV2eCQGcVhQlcq2UUK
- lhNnaA040a2/80/4FSVcGuKrfqG+FW/GzMixMLDW5ccq2YA82/i6ttml9s/VY0qWjYfl
- mAwg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=6qx3JuRWucxWSZ+edEqkzvKfjwC/qHMJGDM4MA7mRVg=;
+ b=WAwEyf9Z6R6RPOxZ66EqNRQZQ/elC7tzeA/mn5bIOlxp8yZz+nS/BxDaKgYaFwfrwf
+ 9b6O3XYC0Z6/4CSU1raIO9xqGyG0UXjUsvZuz6PihpBJc3JyAT76iT76Xxv2PhW+F69E
+ YcBYqaIDmNM3HZZmTC6kLjY9vQng9uwX75RxEuhAKlrNji9btuO8khgsADSUsGWlB08p
+ vSaG//6exaCwKeBBy5q29SFW4ugGU7isTDy0weKFZJ2ZD3TinNdcT22uPYuDz3fjjH2s
+ EpO7/UY1LUXPzIiFg9eku7VkHkUjW4p/bJZX8DogDpQOAYAdMwbZHgKZZz03BQx5YKlu
+ L57g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=VotzchowBWia33SBZNWvtqHuElucwAtYumoZTzGpWCQ=;
- b=saGl2NIrlZx+cu+iabB/c/L7uXEytmT8o0gxxmg4dM0pwJvmr4V1YLxeQBx7dsT8Z+
- 1MSzMiWDdqwO1rY2qZJeS9wmZkxp/O20fcF0xqU5oxm+PxtuFxmirVVksP9eRvEvMjTj
- 1OCgDrL4fHcdJ2WVFoURmv7uuknbZpNfYNR3jJuJM4YFw/RlMRQAQOEtfxW9P4ukcx8g
- Wk0WI8v41Df8/xdCMs0OpkTsQoTOJ1j4wCcnJMEF0iaHeVOsjAWFFz2+K5wdfoe8lX7v
- 930rKyx1FUYeali8qpUtWxGhnsTh8zKFj5hgfGTZsBl9UkZsc5k40rTzrb3M8Ee2EnEf
- K4Pw==
-X-Gm-Message-State: APjAAAVI3zenLFNmwFAXhkNzCN6969f7Z4mJH6fQCzDVzehX34KvYqU0
- EsFkQpdiVyoRAMpGrB+2R5pBCqnp
-X-Google-Smtp-Source: APXvYqxT1GuAR0B1XYM3pxm/0fTXXYbqGvbrMnzYbqu3FXAimku+BcOGTgmHUUv4jgJzrLt3vo/FbA==
-X-Received: by 2002:a05:600c:2046:: with SMTP id
- p6mr6444994wmg.110.1577235473304; 
- Tue, 24 Dec 2019 16:57:53 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=6qx3JuRWucxWSZ+edEqkzvKfjwC/qHMJGDM4MA7mRVg=;
+ b=aEc8NRuQIuCq+Nyj+IM1pjny0dTgy89gEX/TTqoUBzvetzcIR0KkIA3EezYPP3Mt15
+ 5m9s43i24LKI6oGaecXUiBZTvPTodJ/zNeBBbnA6n1dIsgumIHuHhk5dJNlZwbOlzB21
+ QI9EH696v7QRSl5yhe2PBxYXIgNq2MNgitVeF5W2xy+29FJgYozyr9HvBV+kObWb3UOc
+ AqHWB4iSMXS4C7pYhT+A5N6IFL7lVJYI2kcP8GSeaiTOiDWJcNzurdhKWa9c6/5Fl2F1
+ b1qvqVXElpn50mJxZK5ExBoIdnLVju4egDvZzkS0m1uD+ogf4CPBFWefMHaHakjYQ8Eo
+ veHA==
+X-Gm-Message-State: APjAAAUotv4oEVFLdk+gL2iDgU3ES6Mqkxwx08QzkXoLSnwaf+bRktfK
+ +7d7Mc8EkY94zh2cHM/Vlg7nnp1d
+X-Google-Smtp-Source: APXvYqxXWv43UCTkk1HCYbZEh4PBsUSaBygIx+bAc3UIAf86L9GvuTHsdSzps77k73Ih82tygfr34w==
+X-Received: by 2002:a7b:c957:: with SMTP id i23mr6473304wml.49.1577235474370; 
+ Tue, 24 Dec 2019 16:57:54 -0800 (PST)
 Received: from localhost.localdomain
  (p200300F1373A1900428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:373a:1900:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id e18sm26034448wrw.70.2019.12.24.16.57.51
+ by smtp.googlemail.com with ESMTPSA id e18sm26034448wrw.70.2019.12.24.16.57.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 24 Dec 2019 16:57:52 -0800 (PST)
+ Tue, 24 Dec 2019 16:57:53 -0800 (PST)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: linux-amlogic@lists.infradead.org, netdev@vger.kernel.org,
  davem@davemloft.net, khilman@baylibre.com
-Subject: [PATCH 0/3] Meson8b/8m2: Ethernet RGMII TX delay fixes
-Date: Wed, 25 Dec 2019 01:56:52 +0100
-Message-Id: <20191225005655.1502037-1-martin.blumenstingl@googlemail.com>
+Subject: [PATCH 1/3] net: stmmac: dwmac-meson8b: Fix the RGMII TX delay on
+ Meson8b/8m2 SoCs
+Date: Wed, 25 Dec 2019 01:56:53 +0100
+Message-Id: <20191225005655.1502037-2-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20191225005655.1502037-1-martin.blumenstingl@googlemail.com>
+References: <20191225005655.1502037-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_165755_329794_6307EC43 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20191224_165756_052304_C42EF274 
+X-CRM114-Status: GOOD (  13.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (martin.blumenstingl[at]googlemail.com)
@@ -109,56 +111,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Ethernet TX performance has been historically bad on Meson8b and
-Meson8m2 SoCs because high packet loss was seen. Today I (presumably)
-found out why this is: the input clock (which feeds the RGMII TX clock)
-has to be at least 4 times 125MHz. With the fixed "divide by 2" in the
-clock tree this means that m250_div needs to be at least 2.
+GXBB and newer SoCs use the fixed FCLK_DIV2 (1GHz) clock as input for
+the m250_sel clock. Meson8b and Meson8m2 use MPLL2 instead, whose rate
+can be adjusted at runtime.
 
-Now the PRG_ETH0 register in Linux matches what u-boot and the vendor
-3.10 kernel use. iperf3 output on my Odroid-C1 (where this series has
-been tested):
-# iperf3 -c 192.168.1.100
-Connecting to host 192.168.1.100, port 5201
-[  5] local 192.168.1.163 port 42636 connected to 192.168.1.100 port 5201
-[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
-[  5]   0.00-1.00   sec   105 MBytes   878 Mbits/sec    0    609 KBytes       
-[  5]   1.00-2.00   sec   106 MBytes   885 Mbits/sec    0    683 KBytes       
-[  5]   2.00-3.09   sec  73.7 MBytes   570 Mbits/sec    0    683 KBytes       
-[  5]   3.09-4.00   sec  81.9 MBytes   754 Mbits/sec    0    795 KBytes       
-[  5]   4.00-5.00   sec   104 MBytes   869 Mbits/sec    0    877 KBytes       
-[  5]   5.00-6.00   sec   105 MBytes   878 Mbits/sec    0    877 KBytes       
-[  5]   6.00-7.00   sec  68.0 MBytes   571 Mbits/sec    0    877 KBytes       
-[  5]   7.00-8.00   sec  80.7 MBytes   676 Mbits/sec    0    877 KBytes       
-[  5]   8.00-9.01   sec   102 MBytes   853 Mbits/sec    0    877 KBytes       
-[  5]   9.01-10.00  sec   101 MBytes   859 Mbits/sec    0    877 KBytes       
-- - - - - - - - - - - - - - - - - - - - - - - - -
+So far we have been running MPLL2 with ~250MHz (and the internal
+m250_div with value 1), which worked enough that we could transfer data
+with an TX delay of 4ns. Unfortunately there is high packet loss with
+an RGMII PHY when transferring data (receiving data works fine though).
+Odroid-C1's u-boot is running with a TX delay of only 2ns as well as
+the internal m250_div set to 2 - no lost (TX) packets can be observed
+with that setting in u-boot.
+
+Manual testing has shown that the TX packet loss goes away when using
+the following settings in Linux:
+- MPLL2 clock set to ~500MHz
+- m250_div set to 2
+- TX delay set to 2ns
+
+Update the m250_div divider settings to only accept dividers greater or
+equal 2. This will allow the Meson8 and Meson8m2 .dts to be updated to
+use a TX delay of 2ns (instead of 4ns) to fix the TX packet loss.
+
+iperf3 results before the change:
 [ ID] Interval           Transfer     Bitrate         Retr
-[  5]   0.00-10.00  sec   927 MBytes   778 Mbits/sec    0             sender
-[  5]   0.00-10.01  sec   927 MBytes   777 Mbits/sec                  receiver
+[  5]   0.00-10.00  sec   182 MBytes   153 Mbits/sec  514      sender
+[  5]   0.00-10.00  sec   182 MBytes   152 Mbits/sec           receiver
 
+iperf3 results after the change (including an updated TX delay of 2ns):
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-10.00  sec   927 MBytes   778 Mbits/sec    0      sender
+[  5]   0.00-10.01  sec   927 MBytes   777 Mbits/sec           receiver
 
-@David: please only apply patch #1 from this series. I included the .dts
-changes so others can test them together with the driver update (as the
-.dts has to be updated to fully fix the TX packet loss - with the old TX
-delay in the .dts there is still packet loss, even with a fixed driver).
-
-I will ask Kevin to apply patches #2 and #3 through his linux-amlogic
-tree - or resend them. When applying the .dts patches without the fix in
-the driver then I get 100% packet loss on my Odroid-C1. So unfortunately
-there's a hard dependency between patch 1 and 2/3.
-
-
-Martin Blumenstingl (3):
-  net: stmmac: dwmac-meson8b: Fix the RGMII TX delay on Meson8b/8m2 SoCs
-  ARM: dts: meson8b: odroidc1: use the same RGMII TX delay as u-boot
-  ARM: dts: meson8m2: mxiii-plus: use the same RGMII TX delay as u-boot
-
- arch/arm/boot/dts/meson8b-odroidc1.dts             |  2 +-
- arch/arm/boot/dts/meson8m2-mxiii-plus.dts          |  2 +-
+Fixes: 4f6a71b84e1afd ("net: stmmac: dwmac-meson8b: fix internal RGMII clock configuration")
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+---
  .../net/ethernet/stmicro/stmmac/dwmac-meson8b.c    | 14 +++++++++++---
- 3 files changed, 13 insertions(+), 5 deletions(-)
+ 1 file changed, 11 insertions(+), 3 deletions(-)
 
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
+index bd6c01004913..0e2fa14f1423 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
+@@ -112,6 +112,14 @@ static int meson8b_init_rgmii_tx_clk(struct meson8b_dwmac *dwmac)
+ 	struct device *dev = dwmac->dev;
+ 	const char *parent_name, *mux_parent_names[MUX_CLK_NUM_PARENTS];
+ 	struct meson8b_dwmac_clk_configs *clk_configs;
++	static const struct clk_div_table div_table[] = {
++		{ .div = 2, .val = 2, },
++		{ .div = 3, .val = 3, },
++		{ .div = 4, .val = 4, },
++		{ .div = 5, .val = 5, },
++		{ .div = 6, .val = 6, },
++		{ .div = 7, .val = 7, },
++	};
+ 
+ 	clk_configs = devm_kzalloc(dev, sizeof(*clk_configs), GFP_KERNEL);
+ 	if (!clk_configs)
+@@ -146,9 +154,9 @@ static int meson8b_init_rgmii_tx_clk(struct meson8b_dwmac *dwmac)
+ 	clk_configs->m250_div.reg = dwmac->regs + PRG_ETH0;
+ 	clk_configs->m250_div.shift = PRG_ETH0_CLK_M250_DIV_SHIFT;
+ 	clk_configs->m250_div.width = PRG_ETH0_CLK_M250_DIV_WIDTH;
+-	clk_configs->m250_div.flags = CLK_DIVIDER_ONE_BASED |
+-				CLK_DIVIDER_ALLOW_ZERO |
+-				CLK_DIVIDER_ROUND_CLOSEST;
++	clk_configs->m250_div.table = div_table;
++	clk_configs->m250_div.flags = CLK_DIVIDER_ALLOW_ZERO |
++				      CLK_DIVIDER_ROUND_CLOSEST;
+ 	clk = meson8b_dwmac_register_clk(dwmac, "m250_div", &parent_name, 1,
+ 					 &clk_divider_ops,
+ 					 &clk_configs->m250_div.hw);
 -- 
 2.24.1
 
