@@ -2,61 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA4BB12A8B2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 18:45:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12CF712A8BF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 19:01:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KfIUfhYjUZploS3Rj43qu2mKSPavbtlLn35leNwsmKw=; b=Np/S7e+YPPbm+y5r4IMo9ioSW
-	VZLueus8TphsGaHuvuXP6ug45rSXsPQZKOINjdBeBunEeAHNO9Z0wSMGbph3kqnPiNwOhwZWrI2Qq
-	qSb3Is2H/rnD5jmkPEfmd9ASG5QHrE36xcu0IUagl2BxhwoT0reK3gaPJykihglCBm8CvIMiGTuZq
-	FDybLS1Z8WOjcM9inp1SCxNZIRMDJp0Gp7GKKO21Fo0rhjvFmWcEQENFS6F7/0MthYIfW8MT2w8hv
-	L4Akxai2ilby84BkXZaQoc6FvM/qC/nsq+ESXQ4RK88Y1PdhAXVndEVWgieZbv4V3vuwWufKsg9yF
-	fp7frrHvw==;
+	 bh=OlX2poFC7gJpLhltO+r/WHcaI5fvme0FkOq3VQl9Mtg=; b=UJIZXieKZRPhhIeHyTdVFpB0s
+	faLP/A9lAbiVjOczroey4B/s9/+vud03p5h9Pkofn05+alDiP5LsoCEzy1Px6NBigw70JM//cCE3H
+	BPYTd51cooMckOpZbmnWXW30ajCbkZgTNBKSOY4ti8L8Ey8B3ZC6lnLNNSwLi1yTI1GQUhSOXGUHL
+	1V4DqPftURdwUrEg24jg4F58ENqZ6PozV8RYbOMdYr78Zgkd7SsJqn+6pkF1bjYbpu8P1fou4BZh2
+	rgOf13p42KdxmgstKuuJrdWehHIEU1xCNx+bKPgBYMVkNL+0Ld1LxSqvqKUJuqjnoNr+qDphsHZK8
+	2yNXr89oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikAjB-0005vI-FR; Wed, 25 Dec 2019 17:45:45 +0000
+	id 1ikAyo-00027q-Ub; Wed, 25 Dec 2019 18:01:54 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikAiy-0005ut-LE
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 17:45:34 +0000
+ id 1ikAye-00027W-V3
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 18:01:46 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=sqZ9HRtCdnjD8DXcSEjuElmOGdM4XxRfBfU9GjfcdkE=; b=xh2L9IAY8F6aToclrkfPNsiKO
- R8JsvHw7bcWKqp0cboXhHjwtyrucBbi1vATkutReqRA4LzuzYDlH02xLmnb8ciFJWajJdZIgafPTZ
- U/yVAsVzL3fUesDItZipgPIS4Ije67vI/Ktfkce9tGLz6u/jKaG116BPMHbDjrM8DMOXU=;
+ bh=Bq+UAHBLC8Yr9R0oLnqOKgljdZDdLqNGM6yBAh/5KII=; b=G5VKURfpViKG43vYhpo+eMr1e
+ Z5LBDMi61V+PSTSnYgw2bNDEb5B5aUFFK6mhH/oo4OYqVzhTReT5TK2Z0EEiOHlO8fmoy1wmkZKfE
+ M9DG6tdAaLXtDLm1ttVb0dqM5SZndP1vi1/ueBizRHUALU7HOKhPjk42cb3dd8XIEZxvo=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=fitzroy.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1ikAiu-0001hl-Qx; Wed, 25 Dec 2019 17:45:28 +0000
+ id 1ikAyc-0001lO-HO; Wed, 25 Dec 2019 18:01:42 +0000
 Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 14D67D01A22; Wed, 25 Dec 2019 17:45:27 +0000 (GMT)
-Date: Wed, 25 Dec 2019 17:45:27 +0000
+ id 0D103D01A24; Wed, 25 Dec 2019 18:01:42 +0000 (GMT)
+Date: Wed, 25 Dec 2019 18:01:42 +0000
 From: Mark Brown <broonie@kernel.org>
-To: =?utf-8?B?amVmZl9jaGFuZyjlvLXkuJbkvbMp?= <jeff_chang@richtek.com>
-Subject: Re: [PATCH] ASoC: Add MediaTek MT6660 Speaker Amp Driver
-Message-ID: <20191225174527.GB27497@sirena.org.uk>
-References: <1576836934-5370-1-git-send-email-richtek.jeff.chang@gmail.com>
- <20191220121152.GC4790@sirena.org.uk>
- <7a9bcf5d414c4a74ae8e101c54c9e46f@ex1.rt.l>
- <20191224235145.GA27497@sirena.org.uk>
- <938f562e322849328d5a7782b2c1de97@ex1.rt.l>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Subject: Re: [PATCH 4/5] spi: uniphier: Add SPI_LOOP to the capabilities
+Message-ID: <20191225180142.GD27497@sirena.org.uk>
+References: <1577149107-30670-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <1577149107-30670-5-git-send-email-hayashi.kunihiko@socionext.com>
 MIME-Version: 1.0
-In-Reply-To: <938f562e322849328d5a7782b2c1de97@ex1.rt.l>
+In-Reply-To: <1577149107-30670-5-git-send-email-hayashi.kunihiko@socionext.com>
 X-Cookie: I have many CHARTS and DIAGRAMS..
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191225_094533_286031_F1216CA8 
-X-CRM114-Status: UNSURE (   8.13  )
+X-CRM114-CacheID: sfid-20191225_100144_998778_4BE06731 
+X-CRM114-Status: UNSURE (   9.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -85,70 +82,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "tiwai@suse.com" <tiwai@suse.com>, "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
- Jeff Chang <richtek.jeff.chang@gmail.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "perex@perex.cz" <perex@perex.cz>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============5906820695761849196=="
+Cc: Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Keiji Hayashibara <hayashibara.keiji@socionext.com>,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Jassi Brar <jaswinder.singh@linaro.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5012014079568881247=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5906820695761849196==
+--===============5012014079568881247==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="IrhDeMKUP4DT/M7F"
+	protocol="application/pgp-signature"; boundary="fOHHtNG4YXGJ0yqR"
 Content-Disposition: inline
 
 
---IrhDeMKUP4DT/M7F
-Content-Type: text/plain; charset=utf-8
+--fOHHtNG4YXGJ0yqR
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-On Wed, Dec 25, 2019 at 01:45:43AM +0000, jeff_chang(=E5=BC=B5=E4=B8=96=E4=
-=BD=B3) wrote:
+On Tue, Dec 24, 2019 at 09:58:26AM +0900, Kunihiko Hayashi wrote:
+> Add SPI_LOOP to the capabilities to support loopback mode.
 
-> This is adau1997 driver on upstream branch
+>  	master->min_speed_hz = DIV_ROUND_UP(clk_rate, SSI_MAX_CLK_DIVIDER);
+> -	master->mode_bits = SPI_CPOL | SPI_CPHA | SPI_CS_HIGH | SPI_LSB_FIRST;
+> +	master->mode_bits = SPI_CPOL | SPI_CPHA | SPI_CS_HIGH | SPI_LSB_FIRST |
+> +			    SPI_LOOP;
 
-> @ sound/soc/codecs/adau1997.c
+I'd expect to see a matching change that configures the hardware
+in loopback mode when the driver is in SPI_MODE?  There's nothing
+in the existing driver.
 
-> // SPDX-License-Identifier: GPL-2.0-only
-> /*
->  * ADAU1977/ADAU1978/ADAU1979 driver
-
-This is the result of an automatic conversion which wasn't
-reviewed, it's not ideal.
-
-> It seems not whole comment use c++. Only first line at source file, Right?
-
-Please do it like this:
-
-// SPDX-License-Identifier: GPL-2.0-only
-//
-// ADAU1977/ADAU1978/ADAU1979 driver
-
---IrhDeMKUP4DT/M7F
+--fOHHtNG4YXGJ0yqR
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4DoDMACgkQJNaLcl1U
-h9Dp2Af/aU0nU+b2UxZTkVGZHR3/l8NBevpw5Tzd3SGjZgaPfnLnnupSxFRHbMJh
-AYQybA/K1pTWIJsLSNcPjn0x/YstXMil9in42PqCANDLY6qQxi1nHQpqWo26S2+O
-u6x9f+rSrJA5zzbjVcbxvBFaEjUtl/O7DTfvf6LNKZ2Nr6DtIlO4vyX8Q5RjhtG8
-zvotyES221ovg8TpQ9uv140oUlNtxDyBzstcRQhNXK7gaKqTIHde082f7uqmTspi
-xdwhz8EVLpe2LDDYLO5lFH5TKDeektnfhFfelKj26AJ3aFj7Qfn7faKPSNJR3Udy
-kXcrZVVgsxfIAjdAGGxzwXGoqw7gLQ==
-=YJiP
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl4DpAUACgkQJNaLcl1U
+h9DGCwf8CErpoN6/aSizdxhROvbaxbMpt+6Wh6FxMDWHCl0b/S5wOEioBxEI6mnD
+8xn4n0sNUZ9qnymFxuGoDrNN/qNl3UnJ9QyjxRCNg6fC6PI10I+SfzIZwe9BFDs5
+RrDvozuG4OGgJbuE5BWHtaBTVP2afnzeFla+yszRxI7/j7Urg1Qlm7wUZjueXRd3
+ifEjUTZNjmH3nx8+CV8WiiP0KFlzgQM/r0Gcjoj8NwW8UZj7Kepxg+XUs6vrOvwv
+0i2iZwE/zFSKnDav0Whjjstv9HDwO17W1swi6bQbZanUkjzghYSLqdGOQm7vqB2r
+aVLi2EgBy54qeK1Zg5zKZ56TK8PexQ==
+=XK8L
 -----END PGP SIGNATURE-----
 
---IrhDeMKUP4DT/M7F--
+--fOHHtNG4YXGJ0yqR--
 
 
---===============5906820695761849196==
+--===============5012014079568881247==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -159,5 +143,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5906820695761849196==--
+--===============5012014079568881247==--
 
