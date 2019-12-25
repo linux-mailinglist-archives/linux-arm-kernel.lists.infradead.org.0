@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C56D412A524
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 01:10:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA0F912A526
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 01:10:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=lOxPfuvCe1h+JCgY4BRULeDftubncyRGMJU9wTwdQfk=; b=tHs
-	mDV0UIQ6JTYHl44iDTtDrroFX4p67jdmYsGAX0cESJHMqWk4ynf8H8EFzG7/tcXDE64ew8xv3RzXr
-	QNp4Q7ohmVXvBG7DaQgx9ooo7hd2oHvhXxX6QFaaalq5KY2YOlOnY2q1D+Soj/6M0oAbGzVi4liUb
-	JsVbST2jgCcNMIUn5NdPNiZIh5OLSYKTWEj5SvYEBo/U+daRqAxCu40EOLGdZD2AwqOSaeBr6mt3d
-	9BrDFnekIg8M4441fHJeQdSkkg4KbBA5quJ9Elg6y3XV0LwqMdehCFiyiODJhQ2QL1v9Yq18MbPX5
-	useSi6Y8UPxc3AWOzXoJ7kHvINykIUw==;
+	References:List-Owner; bh=Tu7dxgeqMRnF6Irtrkc1t63/wVX+C6Ol6NDlVYk2UTs=; b=SdK
+	yOtl3kWtIzy07CWrFHZVzOYjOYMJUS8W2iiiCdh9n+kMSPjn5Tbe2cHeJFSKMOtkTmWFvkXpyOM0n
+	UuPYU19jyACkvPr71n2Cxk6joIDOWp0iXKkNZnuKP+MuCOoqbpfQv5q7y7lG6f3veDVexfFzWILlG
+	mlDXGn+zniZW88SCb11ufpbJDmQ5dkAzVX4dAMmLINjJXU1WGY+vyaIyYBmRP97uOy5FIKTrhiZ65
+	bQgIOX4vTiQKmGT+aVmz5pRCBNax0EaswhR0D8Z/8v9c3IbBVqjCOtgyZeEKesK0C6a43fCj23c+n
+	sa/CexOkcEm6klNI6Kz2U24RuABRmgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijuG0-0006Iu-Rx; Wed, 25 Dec 2019 00:10:32 +0000
+	id 1ijuGE-0006pR-MR; Wed, 25 Dec 2019 00:10:46 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijuEn-0004kT-Q1
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 00:09:19 +0000
+ id 1ijuEs-0004pG-7B
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 00:09:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=bEZvX6CrllH0JlHEqZn5tWeyLbTXuuTkTNuWN7wm62Q=; b=PZktTYDu3E3y
- x1C1fcnOVPvjuJcW0KWfuKhwpnfEqBi5T1FkLy5PUYaty5bTUxz4BLFDfOmy2hOZvj1H3OOQwXpAo
- iyexXvFcsE9U8PWC5aK2t91qTdWPoXoSzhzCzTSwOQklGEG5Mx1QdAY+j6U08rXwy5Q3Q0cH6AdhW
- JXgVg=;
+ List-Archive; bh=XHO12lr1qLB4FKdbh6ys7+jy8rW61hg1/mw41eet/vI=; b=Mtpl63TU2Fv6
+ qcc+jUPgG3t3sObYqw3qJntc+jQ4uZINU2M1k868I2OCc5Pud3blFUcYCeHQIkBzsOsgptBIZ54Cj
+ ZWXWfzCq8Qz+RUCkV5eUOepHvLvxwtoNAl0nxJRNCa3qrtS83ZQXcggQNxHstk4cbci6icVmJdT6e
+ x6aVo=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=fitzroy.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1ijuEj-0007Mf-Qr; Wed, 25 Dec 2019 00:09:13 +0000
+ id 1ijuEp-0007N2-Fd; Wed, 25 Dec 2019 00:09:19 +0000
 Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 58ABCD01957; Wed, 25 Dec 2019 00:09:13 +0000 (GMT)
+ id 00AA5D01963; Wed, 25 Dec 2019 00:09:18 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
-To: Colin Ian King <colin.king@canonical.com>
-Subject: Applied "ASoC: SOF: imx8: fix memory allocation failure check on
- priv->pd_dev" to the asoc tree
-In-Reply-To: <20191204124816.1415359-1-colin.king@canonical.com>
-Message-Id: <applied-20191204124816.1415359-1-colin.king@canonical.com>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Subject: Applied "spi: uniphier: Change argument of irq functions to private
+ structure" to the spi tree
+In-Reply-To: <1577149107-30670-3-git-send-email-hayashi.kunihiko@socionext.com>
+Message-Id: <applied-1577149107-30670-3-git-send-email-hayashi.kunihiko@socionext.com>
 X-Patchwork-Hint: ignore
-Date: Wed, 25 Dec 2019 00:09:13 +0000 (GMT)
+Date: Wed, 25 Dec 2019 00:09:18 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_160917_956883_1E70321A 
-X-CRM114-Status: GOOD (  14.84  )
+X-CRM114-CacheID: sfid-20191224_160922_270025_8BB07C0D 
+X-CRM114-Status: GOOD (  13.84  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -80,15 +80,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- Daniel Baluta <daniel.baluta@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Takashi Iwai <tiwai@suse.com>, kernel-janitors@vger.kernel.org,
- Liam Girdwood <lgirdwood@gmail.com>, Jaroslav Kysela <perex@perex.cz>,
- Mark Brown <broonie@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Keiji Hayashibara <hayashibara.keiji@socionext.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, Jassi Brar <jaswinder.singh@linaro.org>,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -97,11 +93,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: SOF: imx8: fix memory allocation failure check on priv->pd_dev
+   spi: uniphier: Change argument of irq functions to private structure
 
-has been applied to the asoc tree at
+has been applied to the spi tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git 
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.6
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -122,39 +118,66 @@ to this mail.
 Thanks,
 Mark
 
-From 98910e1d61384430a080b4bcf986c3b0cf3fdf46 Mon Sep 17 00:00:00 2001
-From: Colin Ian King <colin.king@canonical.com>
-Date: Wed, 4 Dec 2019 12:48:16 +0000
-Subject: [PATCH] ASoC: SOF: imx8: fix memory allocation failure check on
- priv->pd_dev
+From 9859db51387df8a7e8564a211158ff8bf263b0a8 Mon Sep 17 00:00:00 2001
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Date: Tue, 24 Dec 2019 09:58:24 +0900
+Subject: [PATCH] spi: uniphier: Change argument of irq functions to private
+ structure
 
-The memory allocation failure check for priv->pd_dev is incorrectly
-pointer checking priv instead of priv->pd_dev. Fix this.
+This changes each argument of functions uniphier_irq_{enable,disable}()
+to uniphier_spi_priv because these functions are used not only for
+spi_device but also for the entire controller.
 
-Addresses-Coverity: ("Logically dead code")
-Fixes: 202acc565a1f ("ASoC: SOF: imx: Add i.MX8 HW support")
-Signed-off-by: Colin Ian King <colin.king@canonical.com>
-Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
-Acked-by: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
-Link: https://lore.kernel.org/r/20191204124816.1415359-1-colin.king@canonical.com
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Link: https://lore.kernel.org/r/1577149107-30670-3-git-send-email-hayashi.kunihiko@socionext.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/sof/imx/imx8.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/spi/spi-uniphier.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
-diff --git a/sound/soc/sof/imx/imx8.c b/sound/soc/sof/imx/imx8.c
-index cfefcfd92798..9d926b1df0d7 100644
---- a/sound/soc/sof/imx/imx8.c
-+++ b/sound/soc/sof/imx/imx8.c
-@@ -209,7 +209,7 @@ static int imx8_probe(struct snd_sof_dev *sdev)
+diff --git a/drivers/spi/spi-uniphier.c b/drivers/spi/spi-uniphier.c
+index 47cde1864630..a44a1a5fb7b0 100644
+--- a/drivers/spi/spi-uniphier.c
++++ b/drivers/spi/spi-uniphier.c
+@@ -93,9 +93,9 @@ static inline unsigned int bytes_per_word(unsigned int bits)
+ 	return bits <= 8 ? 1 : (bits <= 16 ? 2 : 4);
+ }
  
- 	priv->pd_dev = devm_kmalloc_array(&pdev->dev, priv->num_domains,
- 					  sizeof(*priv->pd_dev), GFP_KERNEL);
--	if (!priv)
-+	if (!priv->pd_dev)
- 		return -ENOMEM;
+-static inline void uniphier_spi_irq_enable(struct spi_device *spi, u32 mask)
++static inline void uniphier_spi_irq_enable(struct uniphier_spi_priv *priv,
++					   u32 mask)
+ {
+-	struct uniphier_spi_priv *priv = spi_master_get_devdata(spi->master);
+ 	u32 val;
  
- 	priv->link = devm_kmalloc_array(&pdev->dev, priv->num_domains,
+ 	val = readl(priv->base + SSI_IE);
+@@ -103,9 +103,9 @@ static inline void uniphier_spi_irq_enable(struct spi_device *spi, u32 mask)
+ 	writel(val, priv->base + SSI_IE);
+ }
+ 
+-static inline void uniphier_spi_irq_disable(struct spi_device *spi, u32 mask)
++static inline void uniphier_spi_irq_disable(struct uniphier_spi_priv *priv,
++					    u32 mask)
+ {
+-	struct uniphier_spi_priv *priv = spi_master_get_devdata(spi->master);
+ 	u32 val;
+ 
+ 	val = readl(priv->base + SSI_IE);
+@@ -339,12 +339,12 @@ static int uniphier_spi_transfer_one_irq(struct spi_master *master,
+ 
+ 	uniphier_spi_fill_tx_fifo(priv);
+ 
+-	uniphier_spi_irq_enable(spi, SSI_IE_RCIE | SSI_IE_RORIE);
++	uniphier_spi_irq_enable(priv, SSI_IE_RCIE | SSI_IE_RORIE);
+ 
+ 	time_left = wait_for_completion_timeout(&priv->xfer_done,
+ 					msecs_to_jiffies(SSI_TIMEOUT_MS));
+ 
+-	uniphier_spi_irq_disable(spi, SSI_IE_RCIE | SSI_IE_RORIE);
++	uniphier_spi_irq_disable(priv, SSI_IE_RCIE | SSI_IE_RORIE);
+ 
+ 	if (!time_left) {
+ 		dev_err(dev, "transfer timeout.\n");
 -- 
 2.20.1
 
