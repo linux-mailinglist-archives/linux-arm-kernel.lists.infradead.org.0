@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C76BF12A8A7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 18:25:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70A0912A8A8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 18:25:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zv723t5rn9UbDqStud6Zx+HDU6W60qRD0oaVj3PITJc=; b=efqqeDYh18fdfT
-	FlYwzSNMgHKQRagmyzFzqEcsSwwaIB54aHwNN16guN+6Qa1+IWMTcg5byndHoFbbqThQ8hnL6hN5Q
-	a7iU65vuhfwkXEj7ShKNeFWX9ucoJAnwP7aN9jU2UxGm+AG2g4RXAysDhRUlUwEmQI/ihc0oMOssm
-	c3UX4XA64oRahCJcyyJvpXw+I3K6tTzfY+yF4bDymgacmQyPxPfIcG3BBe0/227XUQXPW9NPhnXVQ
-	QlKWXaUuHo+JTBJaJ0cnggK1sGpEjFTGv+3Tp59HkFNB86R1gENcKlp74cgTtrwhRDaA5IVJ+2gbk
-	SkiVN2a+yXAYt4vwHHYQ==;
+	List-Owner; bh=3LvxuhF7B7ODFCzWayGFkNEH3omlnp+JMpDmJ0qMk6o=; b=sLBcQxqu6Gjhpt
+	R2qPRWHpvCzEMebVy4kxY+lqrDgO7Jdd0ZIa7DAbMiG8KYhSMjsiqxesGn0d+twDk+Du4c/0foGBF
+	EKCWb0mMxb34iFFFLE+dKhG/gaeyQ2nI8Cbb+9z+6Pds8AKTihTUqU3QJ/WU8Pgabn+40fHXlxTw3
+	D5WVh9BYaSrM99clVCYWrrRkJke2NWkRYoShtVD91JcVPqzW64Is2M2gedUdTwpnPQ9nHWI8+MScP
+	QfdZjpbejr0liXZ08eE5DKk59WJIGZEMZ+A7PD3nL3c2wKn5AMCX6yaYa1PFQ1qf9Y9MXYxKTOQIX
+	7dhn5Fe7LeJBfmJzpjIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikAPP-0007PK-RK; Wed, 25 Dec 2019 17:25:19 +0000
-Received: from relay9-d.mail.gandi.net ([217.70.183.199])
+	id 1ikAPc-00082u-Rx; Wed, 25 Dec 2019 17:25:32 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikAPA-0006ev-2p
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 17:25:06 +0000
-X-Originating-IP: 94.238.217.212
+ id 1ikAPN-0007xl-1a
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 17:25:19 +0000
 Received: from localhost (unknown [94.238.217.212])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 933CAFF802;
- Wed, 25 Dec 2019 17:24:51 +0000 (UTC)
-Date: Wed, 25 Dec 2019 18:24:50 +0100
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 47887100002;
+ Wed, 25 Dec 2019 17:25:04 +0000 (UTC)
+Date: Wed, 25 Dec 2019 18:25:04 +0100
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Claudiu Beznea <claudiu.beznea@microchip.com>
-Subject: Re: [PATCH 1/2] ARM: at91: pm: use SAM9X60 PMC's compatible
-Message-ID: <20191225172450.GB1111840@piout.net>
+Subject: Re: [PATCH 2/2] ARM: at91: pm: use of_device_id array to find the
+ proper shdwc node
+Message-ID: <20191225172504.GC1111840@piout.net>
 References: <1576062248-18514-1-git-send-email-claudiu.beznea@microchip.com>
- <1576062248-18514-2-git-send-email-claudiu.beznea@microchip.com>
+ <1576062248-18514-3-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1576062248-18514-2-git-send-email-claudiu.beznea@microchip.com>
+In-Reply-To: <1576062248-18514-3-git-send-email-claudiu.beznea@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191225_092504_266409_592EDECD 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20191225_092517_332403_5B316C62 
+X-CRM114-Status: UNSURE (   8.74  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.199 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.199 listed in wl.mailspike.net]
+ low trust [217.70.178.231 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,16 +69,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/12/2019 13:04:07+0200, Claudiu Beznea wrote:
-> SAM9X60 PMC's has a different PMC. It was not integrated at the moment
-> commit 01c7031cfa73 ("ARM: at91: pm: initial PM support for SAM9X60")
-> was published.
+On 11/12/2019 13:04:08+0200, Claudiu Beznea wrote:
+> Use of_device_id array to find the proper shdwc compatibile node.
+> SAM9X60's shdwc changes were not integrated when
+> commit eaedc0d379da ("ARM: at91: pm: add ULP1 support for SAM9X60")
+> was integrated.
 > 
-> Fixes: 01c7031cfa73 ("ARM: at91: pm: initial PM support for SAM9X60")
+> Fixes: eaedc0d379da ("ARM: at91: pm: add ULP1 support for SAM9X60")
 > Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > ---
->  arch/arm/mach-at91/pm.c | 1 +
->  1 file changed, 1 insertion(+)
+>  arch/arm/mach-at91/pm.c | 8 +++++++-
+>  1 file changed, 7 insertions(+), 1 deletion(-)
 > 
 Applied, thanks.
 
