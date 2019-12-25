@@ -2,80 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E577212A86F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 16:34:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF5F912A89C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 18:01:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dOqfcylb+HT+UiY9pjPoSwL7oUEle0YlZJBzvfG7S+M=; b=YKoDZU5tgcVPd1
-	NmT2UhPuhQOO6DN9UMT2XK8y1wcFEyyenJ7MHulxnj110hGVh/FdXWeMHcfYillhCBPZbjTrnwYz/
-	bC3gyBtLIcz7mm3Juh5eRiU6wsaKbYPDzZ68eECK4SWspvj3SM6+t7oYToE5zawWO4QGgwUKR/3c3
-	o7YDyJsc8x4G+e/IyFfCwOHomjMMsc9c+ZBIszW8N6M2EPuUFtl9n3EJ+l17g1fXP/nL3PwzEoVpi
-	tdUounL/nrcCU8gomcJq4TfHyM2BO2CGeKy64497ZwPSXn3lR9ezUIGWE5F81Qjfg6RW+g0bbFqJI
-	wqJuguCY+jYNwioeiH2w==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1DGfsYpFV/XzQQmaNw1zSaM6Bo1EUmWGo2r654Ji86w=; b=gwq2SMTokiCC9Y
+	HkLxPwuUPuNy8yTWADI83HSsGgO5Gu6ReIS04/B3wXJhH+j3/Xd7u3dE8+VsxtyRLN6RozIrvQkKk
+	7/RHH5ldMJBSfXZUcdMQy6XkorMMIETCPnTZZzf/4sqoXBTFvMYptg5+hocOH1WRF/BylTs3ikAvS
+	4muqRJf7nSg8qkpDHu+68ym9a1nHxpm53hbXZslyJ/QsN4oLb3P6U+rWcqtfhTJ5Rcuy2YlJfUukO
+	TPz0M6LhS5+ZMx/D2DXlNICg9H7u2rxvjLJ0aHurre+oCRnej8eiH8DLxxwPGvWZL3X1hBPFCW0uc
+	wTVqK15ZiZeWtj1ScPdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ik8fr-0007uK-EQ; Wed, 25 Dec 2019 15:34:11 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1ikA2i-0000cL-58; Wed, 25 Dec 2019 17:01:52 +0000
+Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ik8fe-0007tK-I5; Wed, 25 Dec 2019 15:34:00 +0000
-Received: by mail-ed1-x541.google.com with SMTP id c26so20143002eds.8;
- Wed, 25 Dec 2019 07:33:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=IQuzNAwmqgU7RYVLn7PTMJDVE0GkXT3f08VIotAoPf8=;
- b=maKl18YnhUUwUWP34Z6+xmQFT4wWqYgGuloO+Qfp31P46l/mqFeex62X+uUYBEm0Mo
- wHj3kE01FUyhYyaKwLfvVZBK8cP6LSV8H3m9C75Y+/eBEBqhwN35q+fuW6zQXhvoCPz1
- un7GRiTmnZJewA/yQSAPonkVILnYGbWjaMWGyjMuFGqB05+ChJQDdKb5TUmJg5o3+4l7
- s1jsnQi+RIp07ucvGziUVeq590FbZ9CBblMiBlAOQCaQyvQkCU3j3VYy3DBt0ItJ7WR+
- w1r1odrANJYueogE9h94yCZ6/I8A4sPpuVMZjdCT24qSZWDPU0Y4wYQK+cm5w7H5eSkS
- xjVw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=IQuzNAwmqgU7RYVLn7PTMJDVE0GkXT3f08VIotAoPf8=;
- b=UJqFqOqo9onHgq6H08ox8I/QwPiO+Gp645uNk/UZHvCEYK1D1P5UryeimYt0OdcWwt
- 52rXVYhZ+LG0nx76iajq2RHq5p0mY3bO2xk0Lep4yJllZ4MqnJjgYlmpwwqEnkxHiDJJ
- hOVHie6MFbTKOtvAU+sW2AbOK52r/SiqvXNB5OuhG6S4Fi3OT1noBIPzY+xq3bj/3OBa
- REzJKaWEPxYp85QpNilxMeursM6QNJ9WLihgMdnpK+tJxD5+CRXVdH2MikaUX7tSPFNU
- JTJRiTH78isYJ3FuXMKlQ6TwZrIoFFQClYiG4U8KH1wIHPK4wthy46+ph6HoB6lawTjs
- 5Uwg==
-X-Gm-Message-State: APjAAAW341Fkh5Na1WtJaP8uZazyVZyM+YlELgXY/Upp5bljn0fAu6fR
- tzaR8KTb6TLJ7Q8Vh91MEJcjLxEmm+n4lpcpvBc=
-X-Google-Smtp-Source: APXvYqycWgQrP2PDwcVEuoLkCCTA3pbXwZSoDU21360+ihalDIq0VLY6VnQxJCDFoH/GxYuVOPQ1BtRm6wr/QHLgmWM=
-X-Received: by 2002:a50:fb96:: with SMTP id e22mr44962782edq.18.1577288035378; 
- Wed, 25 Dec 2019 07:33:55 -0800 (PST)
-MIME-Version: 1.0
-References: <20191225005655.1502037-1-martin.blumenstingl@googlemail.com>
- <20191225005655.1502037-2-martin.blumenstingl@googlemail.com>
- <20191225150845.GA16671@lunn.ch>
-In-Reply-To: <20191225150845.GA16671@lunn.ch>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Wed, 25 Dec 2019 16:33:44 +0100
-Message-ID: <CAFBinCA4X1e5_5nBiHmNiB40uJyr9Nm1b2VkF9NqM+wb7-1xmw@mail.gmail.com>
-Subject: Re: [PATCH 1/3] net: stmmac: dwmac-meson8b: Fix the RGMII TX delay on
- Meson8b/8m2 SoCs
-To: Andrew Lunn <andrew@lunn.ch>
+ id 1ikA2Y-0000bl-4D
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 17:01:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1577293290;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=OoOmW3Xk0QeJPZM69nPutxxHH8KJBgrsbAwySS3OQwQ=;
+ b=K7F8tZzqOGP9cMPfu4xN33YFXDM+MdS5VZomvrjwrpPYuChr8QUzDOIhBL93+uFn+Q
+ U90kXXB5J7wpCXf2v366tl42TqvzNqlvtIaMqJZNhenQLisL2qz7naMYTEGK0373JWzy
+ 90rSjhvnhV2H/218ut2/qyX+Og+SBPM7zU7w3qpCsJgyWpBojKSntfjkh3GKed1Y2Rdh
+ 2RrvqZOX1BOyCEJJG8UlMpsSamh5fmcoC+2OgSH9AoPzWp/teCg7i8lq19Vt2zDSWlX2
+ BRcY5n8CirkQr/q0z3BzHXt6gQ25wrSH1dY0Lwa1ziyBJ8l3aw4SFvE8cWU1EQqVkVdL
+ Qyyw==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBi5wp385lpdu3KwbY="
+X-RZG-CLASS-ID: mo00
+Received: from [192.168.2.8] by smtp.strato.de (RZmta 46.1.3 DYNA|AUTH)
+ with ESMTPSA id a09dafvBPH1T4hq
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
+ ECDH bits, eq. 3072 bits RSA))
+ (Client did not present a certificate);
+ Wed, 25 Dec 2019 18:01:29 +0100 (CET)
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+Subject: Re: [PATCH] ARM: dts: Add omap3-echo
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <20191224184503.GK35479@atomide.com>
+Date: Wed, 25 Dec 2019 18:01:33 +0100
+Message-Id: <60412339-53BF-4DC1-8AF6-4FB0E75D429C@goldelico.com>
+References: <20191224161005.28083-1-nerv@dawncrow.de>
+ <20191224184503.GK35479@atomide.com>
+To: Tony Lindgren <tony@atomide.com>
+X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191225_073358_623024_B574B33A 
-X-CRM114-Status: GOOD (  21.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191225_090142_755038_ED56A867 
+X-CRM114-Status: GOOD (  10.95  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5301:0:0:10 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -94,106 +83,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linus.luessing@c0d3.blue, balbes-150@yandex.ru, khilman@baylibre.com,
- linux-kernel@vger.kernel.org, ingrassia@epigenesys.com, netdev@vger.kernel.org,
- linux-amlogic@lists.infradead.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org, jbrunet@baylibre.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, =?utf-8?Q?Andr=C3=A9_Hentschel?= <nerv@dawncrow.de>,
+ linux@arm.linux.org.uk, webmaster@dawncrow.de, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, robh+dt@kernel.org, bcousson@baylibre.com,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
-
-thank you as always for taking a close look at my patches :-)
-
-On Wed, Dec 25, 2019 at 4:08 PM Andrew Lunn <andrew@lunn.ch> wrote:
->
-> On Wed, Dec 25, 2019 at 01:56:53AM +0100, Martin Blumenstingl wrote:
-> > GXBB and newer SoCs use the fixed FCLK_DIV2 (1GHz) clock as input for
-> > the m250_sel clock. Meson8b and Meson8m2 use MPLL2 instead, whose rate
-> > can be adjusted at runtime.
-> >
-> > So far we have been running MPLL2 with ~250MHz (and the internal
-> > m250_div with value 1), which worked enough that we could transfer data
-> > with an TX delay of 4ns. Unfortunately there is high packet loss with
-> > an RGMII PHY when transferring data (receiving data works fine though).
-> > Odroid-C1's u-boot is running with a TX delay of only 2ns as well as
-> > the internal m250_div set to 2 - no lost (TX) packets can be observed
-> > with that setting in u-boot.
-> >
-> > Manual testing has shown that the TX packet loss goes away when using
-> > the following settings in Linux:
-> > - MPLL2 clock set to ~500MHz
-> > - m250_div set to 2
-> > - TX delay set to 2ns
->
-> Hi Martin
->
-> The delay will depend on the PHY, the value of phy-mode, and the PCB
-> layout.
->
-> https://ethernetfmc.com/rgmii-interface-timing-considerations/
->
-> RGMII requires a delay of 2ns between the data and the clock
-> signal. There are at least three ways this can happen.
->
-> 1) The MAC adds the delay
->
-> 2) The PCB adds the delay by making the clock line longer than the
-> data line.
->
-> 3) The PHY adds the delay.
->
-> In linux you configure this using the phy-mode in DT.
->
->       # RX and TX delays are added by the MAC when required
->       - rgmii
->
->       # RGMII with internal RX and TX delays provided by the PHY,
->       # the MAC should not add the RX or TX delays in this case
->       - rgmii-id
->
->       # RGMII with internal RX delay provided by the PHY, the MAC
->       # should not add an RX delay in this case
->       - rgmii-rxid
->
->       # RGMII with internal TX delay provided by the PHY, the MAC
->       # should not add an TX delay in this case
->       - rgmii-txid
->
-> So ideally, you want the MAC to add no delay at all, and then use the
-> correct phy-mode so the PHY adds the correct delay. This gives you the
-> most flexibility in terms of PHY and PCB design. This does however
-> require that the PHY implements the delay, which not all do.
-these boards (with RGMII PHY) that I am aware of are using an RTL8211F
-PHY which implements a 2ns PHY TX delay
-however, the 3.10 vendor kernel also supports Micrel RGMII (and RMII)
-PHYs where I don't know if they implement a (configurable) TX delay.
-
-> Looking at patches 2 and 3, the phy-mode is set to rgmii. What you
-> might actually need to do is set this to rgmii-txid, or maybe
-> rgmii-id, once you have the MAC not inserting any delay.
-please let us split this discussion:
-1) I believe that this patch is still correct and required whenever
-the MAC *has to* generate the TX delay (one use-case could be the
-Micrel PHYs I mentioned above)
-2) the correct phy-mode and where the TX delay is being generated. I
-have tried "rgmii-txid" on my own Odroid-C1 and it's working fine
-there. however, it's the only board with RGMII PHY that I have from
-this generation of SoCs (and other testers are typically rare for this
-platform, because it's an older SoC). so my idea was to use the same
-settings as the 3.10 vendor kernel because these seem to be the "known
-working" ones.
-
-what do you think about 2)? my main concern is that this *could* break
-Ethernet on other people's boards.
-on the other hand I have no idea how likely that actually is.
-
-
-Martin
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgo+IEFtIDI0LjEyLjIwMTkgdW0gMTk6NDUgc2NocmllYiBUb255IExpbmRncmVuIDx0b255
+QGF0b21pZGUuY29tPjoKPiAKPiAqIEFuZHLDqSBIZW50c2NoZWwgPG5lcnZAZGF3bmNyb3cuZGU+
+IFsxOTEyMjQgMTY6MTFdOgo+PiBUaGlzIGlzIHRoZSBmaXJzdCBnZW5lcmF0aW9uIEFtYXpvbiBF
+Y2hvIGZyb20gMjAxNi4KPj4gQXVkaW8gc3VwcG9ydCBpcyBub3QgeWV0IGltcGxlbWVudGVkLgo+
+IAo+IE9LIGxvb2tzIGdvb2QgdG8gbWUsIGp1c3Qgd29ycmllZCBhYm91dCBvbmUgcGFydDoKPiAK
+Pj4gKyZzZ3hfbW9kdWxlIHsKPj4gKwlzdGF0dXMgPSAiZGlzYWJsZWQiOwo+PiArfTsKPiAKPiBX
+ZSBzaG91bGQgaGF2ZSBhIHNlcGFyYXRlIGFtMzcwMy5kdHNpIG9yIHdoYXRldmVyIHRoZSBTb0Mg
+bW9kZWwKPiBkaXNhYmxpbmcgc2d4IGlmIG5vdCB0aGVyZSBvbiB0aGUgU29DLgoKSSB0aGluayB0
+aGUgYW0zNzAzIGlzIGEgZG0zNzMwIChvbWFwMzYzMCkgd2hlcmUgdGhlIFNHWCBhbmQgdGhlCkRT
+UCBoYXZlIG5vdCBwYXNzZWQgcHJvZHVjdGlvbiB0ZXN0IGFuZCBhcmUgImRpc2FibGVkIiBieSBl
+RnVzZXMuClRoaXMgaXMgYSBjb21tb24gcHJvY2VkdXJlIGluIHNpbGljb24gcHJvZHVjdGlvbiB0
+byBpbmNyZWFzZSB5aWVsZC4KClRoZXJlZm9yZSwgdGhlcmUgaXMgYSByZWdpc3RlciB3aGljaCBh
+bGxvd3MgdG8gZHluYW1pY2FsbHkgZGV0ZXJtaW5lCndoYXQgY29tcG9uZW50cyAoU0dYIGFuZCBE
+U1ApIGFyZSBhdmFpbGFibGUgb24gYSBzcGVjaWZpYyBTb0MgY2hpcC4KU2VlICJUYWJsZSAxLTYu
+IENoaXAgSWRlbnRpZmljYXRpb24iIGluIHRoZSBjb21tb24KIkFNL0RNMzd4IE11bHRpbWVkaWEg
+RGV2aWNlIFRSTSIuCgpTdWNoIGJpdHMgZXhpc3RzIGZvciBvbWFwMzR4eCBhbmQgZm9yIG9tYXAz
+Nnh4IChha2EgYW0zN3h4L2RtMzd4eCkuCgpUaGF0IHdheSB0aGVyZSBpcyBubyBuZWVkIHRvIGRp
+c2FibGUvZW5hYmxlIHNneCB0aHJvdWdoIGRldmljZSB0cmVlCnZhcmlhdGlvbnMgYW5kIGludHJv
+ZHVjaW5nIG1vcmUgY29tcGxleGl0eSBieSBpbnRyb2R1Y2luZyBtb3JlIGFuZCBtb3JlCkRUUyBm
+b3IgdmFyaWFudHMgKGFtMzcwMy5kdHNpLCBhbTM3MTUuZHRzaSwgZG0zNzIwLmR0c2ksIGRtMzcz
+MC5kdHNpPykuCgpCVFc6IHdoYXQgYWJvdXQgYSBib2FyZCB0aGF0IGlzL3dhcyBwcm9kdWNlZCBp
+biBlaXRoZXIgYW0zNzAzIG9yIGRtMzczMAp2YXJpYW50cz8gQ2FuIHRoZXkgc3RpbGwgc2hhcmUg
+YW4gb21hcDM2eHguZHRzaSBiYXNlZCBEVEI/CgpTbyBJTUhPIGlmIHRoZXJlIGlzIGFuIGlzc3Vl
+IHdpdGggc2d4IGVuYWJsZWQgb24gYW0zNzAzIGJ1dCBubyBTR1gKaGFyZHdhcmUgYXZhaWxhYmxl
+IG9uIGEgc3BlY2lmaWMgU29DLCB0aGUgc3lzYyBzZXR1cCBzaG91bGQgc29tZWhvdyByZWFkCnRo
+ZSBiaXRzIGFuZCBlZmZlY3RpdmVseSBkaXNhYmxlIGFsbCBTR1ggcmVsYXRlZCBzZXR1cCBpZiBp
+dCBpcyBub3QKYXZhaWxhYmxlIG9uIHRoZSBTb0MuIElmIEkgcmVtZW1iZXIgY29ycmVjdGx5LCBz
+b21lIG9sZGVyIGh3bW9kcyBkaWQKc3VjaCB0aGluZ3MgYnkgY2hlY2tpbmcgU29DIHZhcmlhbnQg
+Yml0cy4KCkJSIGFuZCB0aGFua3MsCk5pa29sYXVzCgoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
