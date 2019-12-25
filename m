@@ -2,72 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 630D012A8D4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 19:22:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B453A12A8EA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 19:50:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=XkuN/826G69PeZ+s204Dgg2C2J/hk4vZMw/A1p5KkSI=; b=VxY
-	D+2W747SZqUEnyrN8UoKBF68w2M71amT7j+gVK5YjHkg1f+LHcz7LHbZdiPPqr6wQ7lbyHE5Zh5zf
-	LcJiPmUQ9Q7JduzcdQi2Coc29e/woan2OdsBcNSrVUDbJPcnIPQ+3iRDZHPKaJ6nEDb2V+kPTPEcH
-	OXiI71uzX2TQcbiSCCqiuTU1oBlkiT9hYTeYqpsB9jjmLH1MftQuQI3XokO1xxXR3AHE0G21igU6y
-	TNGX1P29pRUIOqd+IHGbQEGIwz152mo9EWb3wzDIluI55ES4nh4aNW2Hy+yOhJdgXh18bzswSYh8g
-	sJSgovA8srvk2EPgCqkkKTHNFE+XDPg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=oNDzherdTXE9DVGTDzyxbTLz9OiCebL0AmgQpXlFsa4=; b=Wop2f7ZmI9CKmFqAaYO08agwj
+	Q1LECwC8exscOohadX6gZ38AuwYJ3ER0bTgtLgy2MPgck0ly7VsDDLlox32A3yQXdTc6595SM1dqn
+	1jeMExmSNQqg2lqNOgXl4D5GWL9vfGk8DZT4CGIn0hGDvrUX8Pjecejr5LoMMkSgkzMpqizXwCWPx
+	g6KRKAycAGXH1PFRXRtG8XJWg1cYBtX7NPuJjpZ/AEC+C5T7IQvO6gLYxnyeDK9cAQW464x0u5XkJ
+	p0gEm5UVyx2BEKtATz659zfNXhW9CYfCyLYDm/s59JMTdYdhZ47b+ELLleQEVzGmTFAeNO1I5YEwe
+	KbyrkmAow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikBIb-0007u3-85; Wed, 25 Dec 2019 18:22:21 +0000
-Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+	id 1ikBjM-0006yQ-Tp; Wed, 25 Dec 2019 18:50:00 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikBIQ-0007sl-9Z
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 18:22:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=oFZfdu3FayRWkFOptQ3TVsdzB2BuspkdPu1Jk5+RMDg=; b=Aq34xpKGL2a/
- Dyhx0ABuiNq5yDFUPUhx/qHvI28DeJQ4oIbwsXP3MVs8cG8BpPkEyuHL0Z3p8BE6Piv31GxOm67gi
- YcjUpSL8oen21WfcVTQ5DLfskURatqEsWfynQu1m2D252+oIyvkf1GnqVaPsZkOlkbHY+QQLXHxKv
- i21gM=;
-Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
- ([82.37.168.47] helo=fitzroy.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1ikBIN-0001ow-1r; Wed, 25 Dec 2019 18:22:07 +0000
-Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 8F905D01A24; Wed, 25 Dec 2019 18:22:06 +0000 (GMT)
-From: Mark Brown <broonie@kernel.org>
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: Applied "spi: uniphier: Add DMA transfer mode support" to the spi tree
-In-Reply-To: <1577149107-30670-6-git-send-email-hayashi.kunihiko@socionext.com>
-Message-Id: <applied-1577149107-30670-6-git-send-email-hayashi.kunihiko@socionext.com>
-X-Patchwork-Hint: ignore
-Date: Wed, 25 Dec 2019 18:22:06 +0000 (GMT)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1ikBjF-0006xE-Oz
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 18:49:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1577299788;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=285kDepmv9QK1DA/8vrnMjbxXwuHVWfi0yZmFm9MG4s=;
+ b=ZcnzPFqWfq7ZHhkG3ZYYH1yDUklTgfhbTPRozc1lOFyU9JCuqhr8urQD1CIW19w/yLcSnt
+ HJ6+nWsT/TeMGgTthwpyKpLIC48Ldh015qkafFcqamP9a/yHlZ0o3m3B52bhahS6CJS/C4
+ FIZkgr9OEjmNMLJEXuHenZIzCE3ovMA=
+Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com
+ [209.85.216.69]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-423-jCZ6rsf9N_-eBIBnPOVTcA-1; Wed, 25 Dec 2019 13:49:47 -0500
+Received: by mail-pj1-f69.google.com with SMTP id ie20so1206105pjb.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 25 Dec 2019 10:49:47 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=285kDepmv9QK1DA/8vrnMjbxXwuHVWfi0yZmFm9MG4s=;
+ b=XtKV1KTDd71qcoYtFMe4VufJGon0mcVza7e7PY5r3Lwbl2DeTwtdqKcsJRI9VFs4q1
+ Rs6W77u7YIHjkM650WVVFxNIe+mSHcJJgiegKvyEP/H+GH3hMz+JXSWmvVbOkZfAPgbA
+ GdArhJT7r2nMryhPBCwIAZRROmfIQZBUDnUw6ufLa8l3oAirRnD6epcHWowEo+a41RYm
+ oBSngF5FMrc6DgyVrR72wEGy0Ct7cbxKByXgKc4bOb1nxM7k5OUCgTTosATkRhhY+MVY
+ mEJ+6ZxAB5Nz+F4K4eKhE4RBkI7edBQbpv36td62Mjg0RnKULNdMhuPYZc68nrm9QqhR
+ P8Xg==
+X-Gm-Message-State: APjAAAVv/eMVVEZGwNTYOg6pxobb/Nu8cPar/zfWdHougRr/UavDcPgF
+ JH58V312JaS3liRs1mdnuiG2ZFdcqb/6jQR2nrcgjbpn4KW6//P5b2tyXk/sLQo2ym/LeYSuAJp
+ v0etSdvHc0eRIgLggRe5iYNaZwRElbU+cVjE=
+X-Received: by 2002:a17:902:5a85:: with SMTP id
+ r5mr43181280pli.222.1577299785848; 
+ Wed, 25 Dec 2019 10:49:45 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyZq0WNOzdua1RfDEkn3HqURrkcIdrDtqUjWUQg9SWvt9FzZCJpCtHEmlsjvv06Sjav1Dxdww==
+X-Received: by 2002:a62:7c54:: with SMTP id x81mr43381216pfc.180.1577299783422; 
+ Wed, 25 Dec 2019 10:49:43 -0800 (PST)
+Received: from localhost.localdomain ([122.177.237.105])
+ by smtp.gmail.com with ESMTPSA id b98sm7539818pjc.16.2019.12.25.10.49.38
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 25 Dec 2019 10:49:42 -0800 (PST)
+Subject: Re: [RESEND PATCH v5 5/5] Documentation/vmcoreinfo: Add documentation
+ for 'TCR_EL1.T1SZ'
+To: James Morse <james.morse@arm.com>, linux-kernel@vger.kernel.org
+References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
+ <1575057559-25496-6-git-send-email-bhsharma@redhat.com>
+ <8a982138-f1fa-34e8-18fd-49a79cea3652@arm.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Message-ID: <b7d8d603-d9fe-3e18-c754-baf2015acd16@redhat.com>
+Date: Thu, 26 Dec 2019 00:19:35 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.1
+MIME-Version: 1.0
+In-Reply-To: <8a982138-f1fa-34e8-18fd-49a79cea3652@arm.com>
+Content-Language: en-US
+X-MC-Unique: jCZ6rsf9N_-eBIBnPOVTcA-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191225_102210_528163_1BFA453E 
-X-CRM114-Status: GOOD (  21.28  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191225_104953_886868_C8A8D7E9 
+X-CRM114-Status: GOOD (  20.83  )
+X-Spam-Score: -1.0 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [172.104.155.198 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [122.177.237.105 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.81 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.81 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,372 +116,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Keiji Hayashibara <hayashibara.keiji@socionext.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, Jassi Brar <jaswinder.singh@linaro.org>,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-doc@vger.kernel.org,
+ Will Deacon <will@kernel.org>, x86@kernel.org, kexec@lists.infradead.org,
+ Kazuhito Hagio <k-hagio@ab.jp.nec.com>, Dave Anderson <anderson@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, bhupesh.linux@gmail.com,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ Steve Capper <steve.capper@arm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+Hi James,
 
-   spi: uniphier: Add DMA transfer mode support
+On 12/12/2019 04:02 PM, James Morse wrote:
+> Hi Bhupesh,
 
-has been applied to the spi tree at
+I am sorry this review mail skipped my attention due to holidays and 
+focus on other urgent issues.
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.6
+> On 29/11/2019 19:59, Bhupesh Sharma wrote:
+>> Add documentation for TCR_EL1.T1SZ variable being added to
+>> vmcoreinfo.
+>>
+>> It indicates the size offset of the memory region addressed by TTBR1_EL1
+> 
+>> and hence can be used for determining the vabits_actual value.
+> 
+> used for determining random-internal-kernel-variable, that might not exist tomorrow.
+> 
+> Could you describe how this is useful/necessary if a debugger wants to walk the page
+> tables from the core file? I think this is a better argument.
+> 
+> Wouldn't the documentation be better as part of the patch that adds the export?
+> (... unless these have to go via different trees? ..)
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+Ok, will fix the same in v6 version.
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+>> diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
+>> index 447b64314f56..f9349f9d3345 100644
+>> --- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
+>> +++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
+>> @@ -398,6 +398,12 @@ KERNELOFFSET
+>>   The kernel randomization offset. Used to compute the page offset. If
+>>   KASLR is disabled, this value is zero.
+>>   
+>> +TCR_EL1.T1SZ
+>> +------------
+>> +
+>> +Indicates the size offset of the memory region addressed by TTBR1_EL1
+> 
+>> +and hence can be used for determining the vabits_actual value.
+> 
+> 'vabits_actual' may not exist when the next person comes to read this documentation (its
+> going to rot really quickly).
+> 
+> I think the first half of this text is enough to say what this is for. You should include
+> words to the effect that its the hardware value that goes with swapper_pg_dir. You may
+> want to point readers to the arm-arm for more details on what the value means.
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+Ok, got it. Fixed this in v6, which should be on its way shortly.
 
 Thanks,
-Mark
-
-From 28d1dddc59f6b7fc085093e7c1e978b33f0caf4c Mon Sep 17 00:00:00 2001
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Date: Tue, 24 Dec 2019 09:58:27 +0900
-Subject: [PATCH] spi: uniphier: Add DMA transfer mode support
-
-This adds DMA transfer mode support for UniPhier SPI controller.
-
-Since this controller requires simulteaneous transmission and reception,
-this indicates SPI_CONTROLLER_MUST_RX and SPI_CONTROLLER_MUST_TX.
-
-Because the supported dma controller has alignment restiction,
-there is also a restriction that 'maxburst' parameters in dma_slave_config
-corresponds to one word width.
-
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Link: https://lore.kernel.org/r/1577149107-30670-6-git-send-email-hayashi.kunihiko@socionext.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- drivers/spi/spi-uniphier.c | 200 ++++++++++++++++++++++++++++++++++++-
- 1 file changed, 198 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/spi/spi-uniphier.c b/drivers/spi/spi-uniphier.c
-index c4e3b96b1038..0fa50979644d 100644
---- a/drivers/spi/spi-uniphier.c
-+++ b/drivers/spi/spi-uniphier.c
-@@ -8,6 +8,7 @@
- #include <linux/bitops.h>
- #include <linux/clk.h>
- #include <linux/delay.h>
-+#include <linux/dmaengine.h>
- #include <linux/interrupt.h>
- #include <linux/io.h>
- #include <linux/module.h>
-@@ -23,6 +24,7 @@
- 
- struct uniphier_spi_priv {
- 	void __iomem *base;
-+	dma_addr_t base_dma_addr;
- 	struct clk *clk;
- 	struct spi_master *master;
- 	struct completion xfer_done;
-@@ -32,6 +34,7 @@ struct uniphier_spi_priv {
- 	unsigned int rx_bytes;
- 	const u8 *tx_buf;
- 	u8 *rx_buf;
-+	atomic_t dma_busy;
- 
- 	bool is_save_param;
- 	u8 bits_per_word;
-@@ -61,11 +64,16 @@ struct uniphier_spi_priv {
- #define   SSI_FPS_FSTRT		BIT(14)
- 
- #define SSI_SR			0x14
-+#define   SSI_SR_BUSY		BIT(7)
- #define   SSI_SR_RNE		BIT(0)
- 
- #define SSI_IE			0x18
-+#define   SSI_IE_TCIE		BIT(4)
- #define   SSI_IE_RCIE		BIT(3)
-+#define   SSI_IE_TXRE		BIT(2)
-+#define   SSI_IE_RXRE		BIT(1)
- #define   SSI_IE_RORIE		BIT(0)
-+#define   SSI_IE_ALL_MASK	GENMASK(4, 0)
- 
- #define SSI_IS			0x1c
- #define   SSI_IS_RXRS		BIT(9)
-@@ -87,6 +95,10 @@ struct uniphier_spi_priv {
- #define SSI_RXDR		0x24
- 
- #define SSI_FIFO_DEPTH		8U
-+#define SSI_FIFO_BURST_NUM	1
-+
-+#define SSI_DMA_RX_BUSY		BIT(1)
-+#define SSI_DMA_TX_BUSY		BIT(0)
- 
- static inline unsigned int bytes_per_word(unsigned int bits)
- {
-@@ -334,6 +346,128 @@ static void uniphier_spi_set_cs(struct spi_device *spi, bool enable)
- 	writel(val, priv->base + SSI_FPS);
- }
- 
-+static bool uniphier_spi_can_dma(struct spi_master *master,
-+				 struct spi_device *spi,
-+				 struct spi_transfer *t)
-+{
-+	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
-+	unsigned int bpw = bytes_per_word(priv->bits_per_word);
-+
-+	if ((!master->dma_tx && !master->dma_rx)
-+	    || (!master->dma_tx && t->tx_buf)
-+	    || (!master->dma_rx && t->rx_buf))
-+		return false;
-+
-+	return DIV_ROUND_UP(t->len, bpw) > SSI_FIFO_DEPTH;
-+}
-+
-+static void uniphier_spi_dma_rxcb(void *data)
-+{
-+	struct spi_master *master = data;
-+	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
-+	int state = atomic_fetch_andnot(SSI_DMA_RX_BUSY, &priv->dma_busy);
-+
-+	uniphier_spi_irq_disable(priv, SSI_IE_RXRE);
-+
-+	if (!(state & SSI_DMA_TX_BUSY))
-+		spi_finalize_current_transfer(master);
-+}
-+
-+static void uniphier_spi_dma_txcb(void *data)
-+{
-+	struct spi_master *master = data;
-+	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
-+	int state = atomic_fetch_andnot(SSI_DMA_TX_BUSY, &priv->dma_busy);
-+
-+	uniphier_spi_irq_disable(priv, SSI_IE_TXRE);
-+
-+	if (!(state & SSI_DMA_RX_BUSY))
-+		spi_finalize_current_transfer(master);
-+}
-+
-+static int uniphier_spi_transfer_one_dma(struct spi_master *master,
-+					 struct spi_device *spi,
-+					 struct spi_transfer *t)
-+{
-+	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
-+	struct dma_async_tx_descriptor *rxdesc = NULL, *txdesc = NULL;
-+	int buswidth;
-+
-+	atomic_set(&priv->dma_busy, 0);
-+
-+	uniphier_spi_set_fifo_threshold(priv, SSI_FIFO_BURST_NUM);
-+
-+	if (priv->bits_per_word <= 8)
-+		buswidth = DMA_SLAVE_BUSWIDTH_1_BYTE;
-+	else if (priv->bits_per_word <= 16)
-+		buswidth = DMA_SLAVE_BUSWIDTH_2_BYTES;
-+	else
-+		buswidth = DMA_SLAVE_BUSWIDTH_4_BYTES;
-+
-+	if (priv->rx_buf) {
-+		struct dma_slave_config rxconf = {
-+			.direction = DMA_DEV_TO_MEM,
-+			.src_addr = priv->base_dma_addr + SSI_RXDR,
-+			.src_addr_width = buswidth,
-+			.src_maxburst = SSI_FIFO_BURST_NUM,
-+		};
-+
-+		dmaengine_slave_config(master->dma_rx, &rxconf);
-+
-+		rxdesc = dmaengine_prep_slave_sg(
-+			master->dma_rx,
-+			t->rx_sg.sgl, t->rx_sg.nents,
-+			DMA_DEV_TO_MEM, DMA_PREP_INTERRUPT | DMA_CTRL_ACK);
-+		if (!rxdesc)
-+			goto out_err_prep;
-+
-+		rxdesc->callback = uniphier_spi_dma_rxcb;
-+		rxdesc->callback_param = master;
-+
-+		uniphier_spi_irq_enable(priv, SSI_IE_RXRE);
-+		atomic_or(SSI_DMA_RX_BUSY, &priv->dma_busy);
-+
-+		dmaengine_submit(rxdesc);
-+		dma_async_issue_pending(master->dma_rx);
-+	}
-+
-+	if (priv->tx_buf) {
-+		struct dma_slave_config txconf = {
-+			.direction = DMA_MEM_TO_DEV,
-+			.dst_addr = priv->base_dma_addr + SSI_TXDR,
-+			.dst_addr_width = buswidth,
-+			.dst_maxburst = SSI_FIFO_BURST_NUM,
-+		};
-+
-+		dmaengine_slave_config(master->dma_tx, &txconf);
-+
-+		txdesc = dmaengine_prep_slave_sg(
-+			master->dma_tx,
-+			t->tx_sg.sgl, t->tx_sg.nents,
-+			DMA_MEM_TO_DEV, DMA_PREP_INTERRUPT | DMA_CTRL_ACK);
-+		if (!txdesc)
-+			goto out_err_prep;
-+
-+		txdesc->callback = uniphier_spi_dma_txcb;
-+		txdesc->callback_param = master;
-+
-+		uniphier_spi_irq_enable(priv, SSI_IE_TXRE);
-+		atomic_or(SSI_DMA_TX_BUSY, &priv->dma_busy);
-+
-+		dmaengine_submit(txdesc);
-+		dma_async_issue_pending(master->dma_tx);
-+	}
-+
-+	/* signal that we need to wait for completion */
-+	return (priv->tx_buf || priv->rx_buf);
-+
-+out_err_prep:
-+	if (rxdesc)
-+		dmaengine_terminate_sync(master->dma_rx);
-+
-+	return -EINVAL;
-+}
-+
- static int uniphier_spi_transfer_one_irq(struct spi_master *master,
- 					 struct spi_device *spi,
- 					 struct spi_transfer *t)
-@@ -395,6 +529,7 @@ static int uniphier_spi_transfer_one(struct spi_master *master,
- {
- 	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
- 	unsigned long threshold;
-+	bool use_dma;
- 
- 	/* Terminate and return success for 0 byte length transfer */
- 	if (!t->len)
-@@ -402,6 +537,10 @@ static int uniphier_spi_transfer_one(struct spi_master *master,
- 
- 	uniphier_spi_setup_transfer(spi, t);
- 
-+	use_dma = master->can_dma ? master->can_dma(master, spi, t) : false;
-+	if (use_dma)
-+		return uniphier_spi_transfer_one_dma(master, spi, t);
-+
- 	/*
- 	 * If the transfer operation will take longer than
- 	 * SSI_POLL_TIMEOUT_US, it should use irq.
-@@ -445,7 +584,17 @@ static void uniphier_spi_handle_err(struct spi_master *master,
- 	val = SSI_FC_TXFFL | SSI_FC_RXFFL;
- 	writel(val, priv->base + SSI_FC);
- 
--	uniphier_spi_irq_disable(priv, SSI_IE_RCIE | SSI_IE_RORIE);
-+	uniphier_spi_irq_disable(priv, SSI_IE_ALL_MASK);
-+
-+	if (atomic_read(&priv->dma_busy) & SSI_DMA_TX_BUSY) {
-+		dmaengine_terminate_async(master->dma_tx);
-+		atomic_andnot(SSI_DMA_TX_BUSY, &priv->dma_busy);
-+	}
-+
-+	if (atomic_read(&priv->dma_busy) & SSI_DMA_RX_BUSY) {
-+		dmaengine_terminate_async(master->dma_rx);
-+		atomic_andnot(SSI_DMA_RX_BUSY, &priv->dma_busy);
-+	}
- }
- 
- static irqreturn_t uniphier_spi_handler(int irq, void *dev_id)
-@@ -493,6 +642,9 @@ static int uniphier_spi_probe(struct platform_device *pdev)
- {
- 	struct uniphier_spi_priv *priv;
- 	struct spi_master *master;
-+	struct resource *res;
-+	struct dma_slave_caps caps;
-+	u32 dma_tx_burst = 0, dma_rx_burst = 0;
- 	unsigned long clk_rate;
- 	int irq;
- 	int ret;
-@@ -507,11 +659,13 @@ static int uniphier_spi_probe(struct platform_device *pdev)
- 	priv->master = master;
- 	priv->is_save_param = false;
- 
--	priv->base = devm_platform_ioremap_resource(pdev, 0);
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	priv->base = devm_ioremap_resource(&pdev->dev, res);
- 	if (IS_ERR(priv->base)) {
- 		ret = PTR_ERR(priv->base);
- 		goto out_master_put;
- 	}
-+	priv->base_dma_addr = res->start;
- 
- 	priv->clk = devm_clk_get(&pdev->dev, NULL);
- 	if (IS_ERR(priv->clk)) {
-@@ -555,7 +709,44 @@ static int uniphier_spi_probe(struct platform_device *pdev)
- 	master->unprepare_transfer_hardware
- 				= uniphier_spi_unprepare_transfer_hardware;
- 	master->handle_err = uniphier_spi_handle_err;
-+	master->can_dma = uniphier_spi_can_dma;
-+
- 	master->num_chipselect = 1;
-+	master->flags = SPI_CONTROLLER_MUST_RX | SPI_CONTROLLER_MUST_TX;
-+
-+	master->dma_tx = dma_request_chan(&pdev->dev, "tx");
-+	if (IS_ERR_OR_NULL(master->dma_tx)) {
-+		if (PTR_ERR(master->dma_tx) == -EPROBE_DEFER)
-+			goto out_disable_clk;
-+		master->dma_tx = NULL;
-+		dma_tx_burst = INT_MAX;
-+	} else {
-+		ret = dma_get_slave_caps(master->dma_tx, &caps);
-+		if (ret) {
-+			dev_err(&pdev->dev, "failed to get TX DMA capacities: %d\n",
-+				ret);
-+			goto out_disable_clk;
-+		}
-+		dma_tx_burst = caps.max_burst;
-+	}
-+
-+	master->dma_rx = dma_request_chan(&pdev->dev, "rx");
-+	if (IS_ERR_OR_NULL(master->dma_rx)) {
-+		if (PTR_ERR(master->dma_rx) == -EPROBE_DEFER)
-+			goto out_disable_clk;
-+		master->dma_rx = NULL;
-+		dma_rx_burst = INT_MAX;
-+	} else {
-+		ret = dma_get_slave_caps(master->dma_rx, &caps);
-+		if (ret) {
-+			dev_err(&pdev->dev, "failed to get RX DMA capacities: %d\n",
-+				ret);
-+			goto out_disable_clk;
-+		}
-+		dma_rx_burst = caps.max_burst;
-+	}
-+
-+	master->max_dma_len = min(dma_tx_burst, dma_rx_burst);
- 
- 	ret = devm_spi_register_master(&pdev->dev, master);
- 	if (ret)
-@@ -575,6 +766,11 @@ static int uniphier_spi_remove(struct platform_device *pdev)
- {
- 	struct uniphier_spi_priv *priv = platform_get_drvdata(pdev);
- 
-+	if (priv->master->dma_tx)
-+		dma_release_channel(priv->master->dma_tx);
-+	if (priv->master->dma_rx)
-+		dma_release_channel(priv->master->dma_rx);
-+
- 	clk_disable_unprepare(priv->clk);
- 
- 	return 0;
--- 
-2.20.1
+Bhupesh
 
 
 _______________________________________________
