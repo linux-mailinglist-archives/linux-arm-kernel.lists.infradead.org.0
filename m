@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17DF812A511
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 01:09:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 095F212A514
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 01:09:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=+zHkSPS0jJFEW32+ncULCZ27qPvv+jgSWaPRedl6LyE=; b=UvK
-	cgD0D5hxiU4Oyf8If1yoDHEflrP3wJxBo/JrdYRG4Oh2Ha4h5O4fmvkVW3ECFaoPqh13FD1NzYeMZ
-	WvBC2wFHvfwHLVYplMgH3Q92tCgfNKGZh7WSF99sl5TtKwib783yE/VPKwY3zrehZBkpZkaXiICzH
-	/WvuX7aV8rYGGMZXpwLYFdCFpLhCzNibIowibSquBtbhGokvC8sQKuHOwsz5PzIiApiV4pNH11l5V
-	oAZSd+RB7rZh7lOu8o/u5CkmXjii8wj5b1ekAvqzfAbLN702eMuGVs2v3SMRp0r+aDIEG/99ebRZa
-	dD8GHSn1Qr2VNKAyLWsNtiQ7PrErfAA==;
+	References:List-Owner; bh=76tl/HxDZyy/f8R4P/A4HHL/W6opR2DHX6YgRS3dB3Y=; b=OTY
+	h+6Uon+x7HfrSTWtZD6zXspm42XpkMB5aMvQLvVc0enQ6lpp/7K8jLBOkHQ9hmlkgSk41zo9sj0f5
+	tU4QJ0Xfv4OXH/IS6e0p71bBZWS6ELrP4MbCONSPBrJSmy7dl4DzNFQQ48hdrz4H/tCVVCwUw93Ld
+	iQ6ymyfkqdaO2eqO/OUIJb03717PbtUBRPJOxVqHQVo3eURPSRxSOpUMtusyRVXAOeYHDmLF/x+sH
+	IY+kSuakgp6LVUpIUDUAz3wT4GZEquQCXIrCS3jp3Z16rurwvrde05+UemCt25v4DGlBri3YHPnF9
+	oyIJ6rLFH6yJdqKAaXVt/r5fAxuWXow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijuEq-0004fV-No; Wed, 25 Dec 2019 00:09:20 +0000
+	id 1ijuFB-0004vD-OG; Wed, 25 Dec 2019 00:09:41 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijuEe-0004eO-7k
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 00:09:09 +0000
+ id 1ijuEg-0004eg-18
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 00:09:11 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=ZAC+d2JhJHnHloKpHt3+Xps6PellG/fLmAlbtuVbLVU=; b=bRt/n1MCrO/u
- xCRVANLJ6/mrTO6xb79b49qi0iI5agKkGFWVD0uD8ka0JAabDUX8Mziun4Vnwg6rZFc+ifcZjTNc1
- IkaLM+fqNt3PcvicCGJMYiNLA/6xcu1cUvsd6VPvRIVriCjEq92WZb1NqBMnmZEWKS0rP78ZSs33I
- Ik8ak=;
+ List-Archive; bh=kl38DjUk9o2U/FwQRMbYB7NV347FDsumGC5L5YiNVQ0=; b=u6NttF2u5BRh
+ 5nhem86XSs2X/DlZxobkKy+mRK2TXg4SLI+xhrAorgkCUJ4p610ldGWpRMdag6pU4LViRd8HiTMsR
+ gGzvGriqTlbHgNguWO5Lk47jwJPlKJK9oWqT/Jdakpirgfxjw+Y14+Zxo/LSNIsXy2R5NivfFDE2K
+ JOW3g=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=fitzroy.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1ijuEa-0007Ld-4Y; Wed, 25 Dec 2019 00:09:04 +0000
+ id 1ijuEc-0007Lq-1I; Wed, 25 Dec 2019 00:09:06 +0000
 Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 9713CD01957; Wed, 25 Dec 2019 00:09:03 +0000 (GMT)
+ id 8B1C6D01957; Wed, 25 Dec 2019 00:09:05 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: stm32: spdifrx: fix input pin state management" to the
- asoc tree
-In-Reply-To: <20191204154333.7152-4-olivier.moysan@st.com>
-Message-Id: <applied-20191204154333.7152-4-olivier.moysan@st.com>
+Subject: Applied "ASoC: stm32: spdifrx: fix race condition in irq handler" to
+ the asoc tree
+In-Reply-To: <20191204154333.7152-3-olivier.moysan@st.com>
+Message-Id: <applied-20191204154333.7152-3-olivier.moysan@st.com>
 X-Patchwork-Hint: ignore
-Date: Wed, 25 Dec 2019 00:09:03 +0000 (GMT)
+Date: Wed, 25 Dec 2019 00:09:05 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_160908_319853_6AB6AC06 
-X-CRM114-Status: GOOD (  13.25  )
+X-CRM114-CacheID: sfid-20191224_160910_074339_6D112C8E 
+X-CRM114-Status: GOOD (  16.48  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -92,7 +92,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: stm32: spdifrx: fix input pin state management
+   ASoC: stm32: spdifrx: fix race condition in irq handler
 
 has been applied to the asoc tree at
 
@@ -117,59 +117,110 @@ to this mail.
 Thanks,
 Mark
 
-From 3b7658679d88b5628939f9bdc8e613f79cd821f9 Mon Sep 17 00:00:00 2001
+From 86e1956af4c863d653136fd6e5694adf2054dbaa Mon Sep 17 00:00:00 2001
 From: Olivier Moysan <olivier.moysan@st.com>
-Date: Wed, 4 Dec 2019 16:43:33 +0100
-Subject: [PATCH] ASoC: stm32: spdifrx: fix input pin state management
+Date: Wed, 4 Dec 2019 16:43:32 +0100
+Subject: [PATCH] ASoC: stm32: spdifrx: fix race condition in irq handler
 
-Changing input state in iec capture control is not safe,
-as the pin state may be changed concurrently by ASoC
-framework.
-Remove pin state handling in iec capture control.
+When snd_pcm_stop() is called in interrupt routine,
+substream context may have already been released.
+Add protection on substream context.
 
-Note: This introduces a restriction on capture control,
-when pin sleep state is defined in device tree. In this case
-channel status can be captured only when an audio stream
-capture is active.
-
-Fixes: f68c2a682d44 ("ASoC: stm32: spdifrx: add power management")
+Fixes: 03e4d5d56fa5 ("ASoC: stm32: Add SPDIFRX support")
 
 Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Link: https://lore.kernel.org/r/20191204154333.7152-4-olivier.moysan@st.com
+Link: https://lore.kernel.org/r/20191204154333.7152-3-olivier.moysan@st.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/stm/stm32_spdifrx.c | 4 ----
- 1 file changed, 4 deletions(-)
+ sound/soc/stm/stm32_spdifrx.c | 24 +++++++++++++++++++-----
+ 1 file changed, 19 insertions(+), 5 deletions(-)
 
 diff --git a/sound/soc/stm/stm32_spdifrx.c b/sound/soc/stm/stm32_spdifrx.c
-index 3cb8e6db3eeb..3769d9ce5dbe 100644
+index 9c6beb610c17..3cb8e6db3eeb 100644
 --- a/sound/soc/stm/stm32_spdifrx.c
 +++ b/sound/soc/stm/stm32_spdifrx.c
-@@ -12,7 +12,6 @@
- #include <linux/delay.h>
- #include <linux/module.h>
- #include <linux/of_platform.h>
--#include <linux/pinctrl/consumer.h>
- #include <linux/regmap.h>
- #include <linux/reset.h>
+@@ -220,6 +220,7 @@
+  * @slave_config: dma slave channel runtime config pointer
+  * @phys_addr: SPDIFRX registers physical base address
+  * @lock: synchronization enabling lock
++ * @irq_lock: prevent race condition with IRQ on stream state
+  * @cs: channel status buffer
+  * @ub: user data buffer
+  * @irq: SPDIFRX interrupt line
+@@ -240,6 +241,7 @@ struct stm32_spdifrx_data {
+ 	struct dma_slave_config slave_config;
+ 	dma_addr_t phys_addr;
+ 	spinlock_t lock;  /* Sync enabling lock */
++	spinlock_t irq_lock; /* Prevent race condition on stream state */
+ 	unsigned char cs[SPDIFRX_CS_BYTES_NB];
+ 	unsigned char ub[SPDIFRX_UB_BYTES_NB];
+ 	int irq;
+@@ -667,7 +669,6 @@ static const struct regmap_config stm32_h7_spdifrx_regmap_conf = {
+ static irqreturn_t stm32_spdifrx_isr(int irq, void *devid)
+ {
+ 	struct stm32_spdifrx_data *spdifrx = (struct stm32_spdifrx_data *)devid;
+-	struct snd_pcm_substream *substream = spdifrx->substream;
+ 	struct platform_device *pdev = spdifrx->pdev;
+ 	unsigned int cr, mask, sr, imr;
+ 	unsigned int flags, sync_state;
+@@ -747,14 +748,19 @@ static irqreturn_t stm32_spdifrx_isr(int irq, void *devid)
+ 			return IRQ_HANDLED;
+ 		}
  
-@@ -484,8 +483,6 @@ static int stm32_spdifrx_get_ctrl_data(struct stm32_spdifrx_data *spdifrx)
- 	memset(spdifrx->cs, 0, SPDIFRX_CS_BYTES_NB);
- 	memset(spdifrx->ub, 0, SPDIFRX_UB_BYTES_NB);
+-		if (substream)
+-			snd_pcm_stop(substream, SNDRV_PCM_STATE_DISCONNECTED);
++		spin_lock(&spdifrx->irq_lock);
++		if (spdifrx->substream)
++			snd_pcm_stop(spdifrx->substream,
++				     SNDRV_PCM_STATE_DISCONNECTED);
++		spin_unlock(&spdifrx->irq_lock);
  
--	pinctrl_pm_select_default_state(&spdifrx->pdev->dev);
--
- 	ret = stm32_spdifrx_dma_ctrl_start(spdifrx);
- 	if (ret < 0)
- 		return ret;
-@@ -517,7 +514,6 @@ static int stm32_spdifrx_get_ctrl_data(struct stm32_spdifrx_data *spdifrx)
+ 		return IRQ_HANDLED;
+ 	}
  
- end:
- 	clk_disable_unprepare(spdifrx->kclk);
--	pinctrl_pm_select_sleep_state(&spdifrx->pdev->dev);
+-	if (err_xrun && substream)
+-		snd_pcm_stop_xrun(substream);
++	spin_lock(&spdifrx->irq_lock);
++	if (err_xrun && spdifrx->substream)
++		snd_pcm_stop_xrun(spdifrx->substream);
++	spin_unlock(&spdifrx->irq_lock);
  
- 	return ret;
+ 	return IRQ_HANDLED;
  }
+@@ -763,9 +769,12 @@ static int stm32_spdifrx_startup(struct snd_pcm_substream *substream,
+ 				 struct snd_soc_dai *cpu_dai)
+ {
+ 	struct stm32_spdifrx_data *spdifrx = snd_soc_dai_get_drvdata(cpu_dai);
++	unsigned long flags;
+ 	int ret;
+ 
++	spin_lock_irqsave(&spdifrx->irq_lock, flags);
+ 	spdifrx->substream = substream;
++	spin_unlock_irqrestore(&spdifrx->irq_lock, flags);
+ 
+ 	ret = clk_prepare_enable(spdifrx->kclk);
+ 	if (ret)
+@@ -841,8 +850,12 @@ static void stm32_spdifrx_shutdown(struct snd_pcm_substream *substream,
+ 				   struct snd_soc_dai *cpu_dai)
+ {
+ 	struct stm32_spdifrx_data *spdifrx = snd_soc_dai_get_drvdata(cpu_dai);
++	unsigned long flags;
+ 
++	spin_lock_irqsave(&spdifrx->irq_lock, flags);
+ 	spdifrx->substream = NULL;
++	spin_unlock_irqrestore(&spdifrx->irq_lock, flags);
++
+ 	clk_disable_unprepare(spdifrx->kclk);
+ }
+ 
+@@ -946,6 +959,7 @@ static int stm32_spdifrx_probe(struct platform_device *pdev)
+ 	spdifrx->pdev = pdev;
+ 	init_completion(&spdifrx->cs_completion);
+ 	spin_lock_init(&spdifrx->lock);
++	spin_lock_init(&spdifrx->irq_lock);
+ 
+ 	platform_set_drvdata(pdev, spdifrx);
+ 
 -- 
 2.20.1
 
