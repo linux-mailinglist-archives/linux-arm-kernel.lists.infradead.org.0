@@ -2,88 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B453A12A8EA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 19:50:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 508BB12A8F6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 20:01:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oNDzherdTXE9DVGTDzyxbTLz9OiCebL0AmgQpXlFsa4=; b=Wop2f7ZmI9CKmFqAaYO08agwj
-	Q1LECwC8exscOohadX6gZ38AuwYJ3ER0bTgtLgy2MPgck0ly7VsDDLlox32A3yQXdTc6595SM1dqn
-	1jeMExmSNQqg2lqNOgXl4D5GWL9vfGk8DZT4CGIn0hGDvrUX8Pjecejr5LoMMkSgkzMpqizXwCWPx
-	g6KRKAycAGXH1PFRXRtG8XJWg1cYBtX7NPuJjpZ/AEC+C5T7IQvO6gLYxnyeDK9cAQW464x0u5XkJ
-	p0gEm5UVyx2BEKtATz659zfNXhW9CYfCyLYDm/s59JMTdYdhZ47b+ELLleQEVzGmTFAeNO1I5YEwe
-	KbyrkmAow==;
+	 bh=v3q9cEnXHheYhxBmFhXQ6EUkvev4H02yqnFyCQy3uGg=; b=WfhyC4aNKEAgNQUKVjjUCuHYe
+	fsq5HWce3qvDWxpf+oPjXhWfGYlHLtVA6ipoSwhOx3iM960l0MTD6hb1ylv1M5akQtb5f96d6JKGz
+	Yfr3dbzChLtoBVMxbnIs8GxNDvAIazUrM/KisRYyMK1VOuu2ahOxI7ZLpZnCPgYC6IoZTZ68h1DLV
+	AkGyS+tmOuzXnB7we8MhYYvhyMz3i9U/EJ60bPYhPlKdr9Wir6S0gs1L0/jy42V+mPq64R+yH1U41
+	HLCfR9NdIQbu/CjdeOWldJVYewbR0jmMbYNupODi35LSY4icmlX4gOAhmIbezVJYWNovOSON9cYF1
+	I/3mgLgXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikBjM-0006yQ-Tp; Wed, 25 Dec 2019 18:50:00 +0000
+	id 1ikBuq-00030A-Pe; Wed, 25 Dec 2019 19:01:52 +0000
 Received: from us-smtp-1.mimecast.com ([207.211.31.81]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikBjF-0006xE-Oz
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 18:49:55 +0000
+ id 1ikBue-0002zj-LA
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 19:01:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1577299788;
+ s=mimecast20190719; t=1577300497;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=285kDepmv9QK1DA/8vrnMjbxXwuHVWfi0yZmFm9MG4s=;
- b=ZcnzPFqWfq7ZHhkG3ZYYH1yDUklTgfhbTPRozc1lOFyU9JCuqhr8urQD1CIW19w/yLcSnt
- HJ6+nWsT/TeMGgTthwpyKpLIC48Ldh015qkafFcqamP9a/yHlZ0o3m3B52bhahS6CJS/C4
- FIZkgr9OEjmNMLJEXuHenZIzCE3ovMA=
-Received: from mail-pj1-f69.google.com (mail-pj1-f69.google.com
- [209.85.216.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-423-jCZ6rsf9N_-eBIBnPOVTcA-1; Wed, 25 Dec 2019 13:49:47 -0500
-Received: by mail-pj1-f69.google.com with SMTP id ie20so1206105pjb.8
+ bh=vXL6M/v1cLO/JOoBiBUbtLoMBRFpX7bcoPYQWy5enEk=;
+ b=HJZprIAwaFGiCjsIEltJfingZFltotvaXuP/wL1leNyto76lmvyDrbp7M4KNHss7N9YaVr
+ BPo8b2ElvHALiXBZCEB1o6NNUh9brZtNBrC6VijVAMutHkFwjYKrF/mFBFeilvv5hHm/rX
+ tv9MawKgmKByEoTCeSarBYjkd4+BTuc=
+Received: from mail-pj1-f71.google.com (mail-pj1-f71.google.com
+ [209.85.216.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-151-XsahpVWNMkaIqhOhCR6m1g-1; Wed, 25 Dec 2019 14:01:36 -0500
+Received: by mail-pj1-f71.google.com with SMTP id l8so4498865pje.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 25 Dec 2019 10:49:47 -0800 (PST)
+ Wed, 25 Dec 2019 11:01:36 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=285kDepmv9QK1DA/8vrnMjbxXwuHVWfi0yZmFm9MG4s=;
- b=XtKV1KTDd71qcoYtFMe4VufJGon0mcVza7e7PY5r3Lwbl2DeTwtdqKcsJRI9VFs4q1
- Rs6W77u7YIHjkM650WVVFxNIe+mSHcJJgiegKvyEP/H+GH3hMz+JXSWmvVbOkZfAPgbA
- GdArhJT7r2nMryhPBCwIAZRROmfIQZBUDnUw6ufLa8l3oAirRnD6epcHWowEo+a41RYm
- oBSngF5FMrc6DgyVrR72wEGy0Ct7cbxKByXgKc4bOb1nxM7k5OUCgTTosATkRhhY+MVY
- mEJ+6ZxAB5Nz+F4K4eKhE4RBkI7edBQbpv36td62Mjg0RnKULNdMhuPYZc68nrm9QqhR
- P8Xg==
-X-Gm-Message-State: APjAAAVv/eMVVEZGwNTYOg6pxobb/Nu8cPar/zfWdHougRr/UavDcPgF
- JH58V312JaS3liRs1mdnuiG2ZFdcqb/6jQR2nrcgjbpn4KW6//P5b2tyXk/sLQo2ym/LeYSuAJp
- v0etSdvHc0eRIgLggRe5iYNaZwRElbU+cVjE=
-X-Received: by 2002:a17:902:5a85:: with SMTP id
- r5mr43181280pli.222.1577299785848; 
- Wed, 25 Dec 2019 10:49:45 -0800 (PST)
-X-Google-Smtp-Source: APXvYqyZq0WNOzdua1RfDEkn3HqURrkcIdrDtqUjWUQg9SWvt9FzZCJpCtHEmlsjvv06Sjav1Dxdww==
-X-Received: by 2002:a62:7c54:: with SMTP id x81mr43381216pfc.180.1577299783422; 
- Wed, 25 Dec 2019 10:49:43 -0800 (PST)
+ bh=vXL6M/v1cLO/JOoBiBUbtLoMBRFpX7bcoPYQWy5enEk=;
+ b=NuR34uYdvw4wgyTaIfkqZXa4Zs0mD53pXr6WSLt6htdoOqQOCsBlGG9damMH9O3F94
+ 8DwdsBKY+3WVSu7DABZKLnzjOaPawhQUkgzsi6KpCYDOn85V2fS4fq+8PB/EZAkXxsxi
+ 8iTOde3Ivmw9D9kS1iCAbdU8bv2wm9xjayv9X6CmZxvw1TK6y4gpnqkqEoloc/b/JImN
+ +V9b2VzKbOKjfq9oZAXUhoCW803JBPyBl33cavi8QoQvoo1srEuajevYm0y8+2pgN4fR
+ 2caGXqlW3UWhkzhPw4qZ4axZIkf+HroU7pn5X5WQoE13TJAstESvafRIfZt+LxUB8mE3
+ rf+g==
+X-Gm-Message-State: APjAAAUrSLd/uGMRNPWHOTFcyHIJQC4PhBLy5qXqdnkK6DN39HAiDWj9
+ 7Cr5lBM20xahwNUh+YORjImMjvspO0/xuIb3ernC4+okkIWKOz1est2483xNyll0Xn9M7KFU1Do
+ CgT+824+8x8j6XC5nfkl2dsF/b2+gIz3w90g=
+X-Received: by 2002:a62:1746:: with SMTP id 67mr28390452pfx.45.1577300495263; 
+ Wed, 25 Dec 2019 11:01:35 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxIwvYJF0Vmy7pc049WdLIXroBQQIkXYRns8gxHAM77TrZXjaETfikXFa/P4h4Wb8/yLyJk/A==
+X-Received: by 2002:a62:1746:: with SMTP id 67mr28390426pfx.45.1577300494996; 
+ Wed, 25 Dec 2019 11:01:34 -0800 (PST)
 Received: from localhost.localdomain ([122.177.237.105])
- by smtp.gmail.com with ESMTPSA id b98sm7539818pjc.16.2019.12.25.10.49.38
+ by smtp.gmail.com with ESMTPSA id hg11sm7447136pjb.14.2019.12.25.11.01.29
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 25 Dec 2019 10:49:42 -0800 (PST)
-Subject: Re: [RESEND PATCH v5 5/5] Documentation/vmcoreinfo: Add documentation
- for 'TCR_EL1.T1SZ'
+ Wed, 25 Dec 2019 11:01:34 -0800 (PST)
+Subject: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ in
+ vmcoreinfo
 To: James Morse <james.morse@arm.com>, linux-kernel@vger.kernel.org
 References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
- <1575057559-25496-6-git-send-email-bhsharma@redhat.com>
- <8a982138-f1fa-34e8-18fd-49a79cea3652@arm.com>
+ <1575057559-25496-3-git-send-email-bhsharma@redhat.com>
+ <63d6e63c-7218-d2dd-8767-4464be83603f@arm.com>
 From: Bhupesh Sharma <bhsharma@redhat.com>
-Message-ID: <b7d8d603-d9fe-3e18-c754-baf2015acd16@redhat.com>
-Date: Thu, 26 Dec 2019 00:19:35 +0530
+Message-ID: <af0fd2b0-99db-9d58-bc8d-0dd9d640b1eb@redhat.com>
+Date: Thu, 26 Dec 2019 00:31:27 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
  Thunderbird/52.2.1
 MIME-Version: 1.0
-In-Reply-To: <8a982138-f1fa-34e8-18fd-49a79cea3652@arm.com>
+In-Reply-To: <63d6e63c-7218-d2dd-8767-4464be83603f@arm.com>
 Content-Language: en-US
-X-MC-Unique: jCZ6rsf9N_-eBIBnPOVTcA-1
+X-MC-Unique: XsahpVWNMkaIqhOhCR6m1g-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191225_104953_886868_C8A8D7E9 
-X-CRM114-Status: GOOD (  20.83  )
+X-CRM114-CacheID: sfid-20191225_110140_776153_5BAAD9EB 
+X-CRM114-Status: GOOD (  30.87  )
 X-Spam-Score: -1.0 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-1.0 points)
@@ -91,12 +90,12 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [122.177.237.105 listed in dnsbl.sorbs.net]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.81 listed in wl.mailspike.net]
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.81 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -132,51 +131,137 @@ Hi James,
 
 On 12/12/2019 04:02 PM, James Morse wrote:
 > Hi Bhupesh,
-
-I am sorry this review mail skipped my attention due to holidays and 
-focus on other urgent issues.
-
+> 
 > On 29/11/2019 19:59, Bhupesh Sharma wrote:
->> Add documentation for TCR_EL1.T1SZ variable being added to
->> vmcoreinfo.
+>> vabits_actual variable on arm64 indicates the actual VA space size,
+>> and allows a single binary to support both 48-bit and 52-bit VA
+>> spaces.
 >>
->> It indicates the size offset of the memory region addressed by TTBR1_EL1
+>> If the ARMv8.2-LVA optional feature is present, and we are running
+>> with a 64KB page size; then it is possible to use 52-bits of address
+>> space for both userspace and kernel addresses. However, any kernel
+>> binary that supports 52-bit must also be able to fall back to 48-bit
+>> at early boot time if the hardware feature is not present.
+>>
+>> Since TCR_EL1.T1SZ indicates the size offset of the memory region
+>> addressed by TTBR1_EL1 (and hence can be used for determining the
+>> vabits_actual value) it makes more sense to export the same in
+>> vmcoreinfo rather than vabits_actual variable, as the name of the
+>> variable can change in future kernel versions, but the architectural
+>> constructs like TCR_EL1.T1SZ can be used better to indicate intended
+>> specific fields to user-space.
+>>
+>> User-space utilities like makedumpfile and crash-utility, need to
+>> read/write this value from/to vmcoreinfo
 > 
->> and hence can be used for determining the vabits_actual value.
-> 
-> used for determining random-internal-kernel-variable, that might not exist tomorrow.
-> 
-> Could you describe how this is useful/necessary if a debugger wants to walk the page
-> tables from the core file? I think this is a better argument.
-> 
-> Wouldn't the documentation be better as part of the patch that adds the export?
-> (... unless these have to go via different trees? ..)
+> (write?)
 
-Ok, will fix the same in v6 version.
+Yes, also write so that the vmcoreinfo from an (crashing) arm64 system 
+can be used for analysis of the root-cause of panic/crash on say an 
+x86_64 host using utilities like crash-utility/gdb.
 
->> diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
->> index 447b64314f56..f9349f9d3345 100644
->> --- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
->> +++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
->> @@ -398,6 +398,12 @@ KERNELOFFSET
->>   The kernel randomization offset. Used to compute the page offset. If
->>   KASLR is disabled, this value is zero.
->>   
->> +TCR_EL1.T1SZ
->> +------------
->> +
->> +Indicates the size offset of the memory region addressed by TTBR1_EL1
+>> for determining if a virtual address lies in the linear map range.
 > 
->> +and hence can be used for determining the vabits_actual value.
-> 
-> 'vabits_actual' may not exist when the next person comes to read this documentation (its
-> going to rot really quickly).
-> 
-> I think the first half of this text is enough to say what this is for. You should include
-> words to the effect that its the hardware value that goes with swapper_pg_dir. You may
-> want to point readers to the arm-arm for more details on what the value means.
+> I think this is a fragile example. The debugger shouldn't need to know this.
 
-Ok, got it. Fixed this in v6, which should be on its way shortly.
+Well that the current user-space utility design, so I am not sure we can 
+tweak that too much.
+
+>> The user-space computation for determining whether an address lies in
+>> the linear map range is the same as we have in kernel-space:
+>>
+>>    #define __is_lm_address(addr)	(!(((u64)addr) & BIT(vabits_actual - 1)))
+> 
+> This was changed with 14c127c957c1 ("arm64: mm: Flip kernel VA space"). If user-space
+> tools rely on 'knowing' the kernel memory layout, they must have to constantly be fixed
+> and updated. This is a poor argument for adding this to something that ends up as ABI.
+
+See above. The user-space has to rely on some ABI/guaranteed 
+hardware-symbols which can be used for 'determining' the kernel memory 
+layout.
+
+> I think a better argument is walking the kernel page tables from the core dump.
+> Core code's vmcoreinfo exports the location of the kernel page tables, but in the example
+> above you can't walk them without knowing how T1SZ was configured.
+
+Sure, both makedumpfile and crash-utility (which walks the kernel page 
+tables from the core dump) use this (and similar) information currently 
+in the user-space.
+
+> On older kernels, user-space that needs this would have to assume the value it computes
+> from VA_BITs (also in vmcoreinfo) is the value in use.
+
+Yes, backward compatibility has been handled in the user-space already.
+
+> ---%<---
+>> I have sent out user-space patches for makedumpfile and crash-utility
+>> to add features for obtaining vabits_actual value from TCR_EL1.T1SZ (see
+>> [0] and [1]).
+>>
+>> Akashi reported that he was able to use this patchset and the user-space
+>> changes to get user-space working fine with the 52-bit kernel VA
+>> changes (see [2]).
+>>
+>> [0]. http://lists.infradead.org/pipermail/kexec/2019-November/023966.html
+>> [1]. http://lists.infradead.org/pipermail/kexec/2019-November/024006.html
+>> [2]. http://lists.infradead.org/pipermail/kexec/2019-November/023992.html
+> ---%<---
+> 
+> This probably belongs in the cover letter instead of the commit log.
+
+Ok.
+
+> (From-memory: one of vmcore/kcore is virtually addressed, the other physically. Does this
+> fix your poblem in both cases?)
+> 
+> 
+>> diff --git a/arch/arm64/kernel/crash_core.c b/arch/arm64/kernel/crash_core.c
+>> index ca4c3e12d8c5..f78310ba65ea 100644
+>> --- a/arch/arm64/kernel/crash_core.c
+>> +++ b/arch/arm64/kernel/crash_core.c
+>> @@ -7,6 +7,13 @@
+>>   #include <linux/crash_core.h>
+>>   #include <asm/memory.h>
+> 
+> You need to include asm/sysreg.h for read_sysreg(), and asm/pgtable-hwdef.h for the macros
+> you added.
+
+Ok. Will check as I did not get any compilation errors without the same 
+and build-bot also did not raise a flag for the missing include files.
+
+>> +static inline u64 get_tcr_el1_t1sz(void);
+
+> Why do you need to do this?
+
+Without this I was getting a missing declaration error, while compiling 
+the code.
+
+>> +static inline u64 get_tcr_el1_t1sz(void)
+>> +{
+>> +	return (read_sysreg(tcr_el1) & TCR_T1SZ_MASK) >> TCR_T1SZ_OFFSET;
+>> +}
+> 
+> (We don't modify this one, and its always the same one very CPU, so this is fine.
+> This function is only called once when the stringy vmcoreinfo elf_note is created...)
+
+Right.
+
+>>   void arch_crash_save_vmcoreinfo(void)
+>>   {
+>>   	VMCOREINFO_NUMBER(VA_BITS);
+>> @@ -15,5 +22,7 @@ void arch_crash_save_vmcoreinfo(void)
+>>   						kimage_voffset);
+>>   	vmcoreinfo_append_str("NUMBER(PHYS_OFFSET)=0x%llx\n",
+>>   						PHYS_OFFSET);
+>> +	vmcoreinfo_append_str("NUMBER(tcr_el1_t1sz)=0x%llx\n",
+>> +						get_tcr_el1_t1sz());
+> 
+> You document the name as being upper-case.
+> The two values either values either side are upper-case.
+Ok, will fix this in v6. Thanks for your inputs.
+
+>>   	vmcoreinfo_append_str("KERNELOFFSET=%lx\n", kaslr_offset());
+>>   }
 
 Thanks,
 Bhupesh
