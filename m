@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA0F912A526
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 01:10:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56B6E12A528
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 25 Dec 2019 01:11:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=Tu7dxgeqMRnF6Irtrkc1t63/wVX+C6Ol6NDlVYk2UTs=; b=SdK
-	yOtl3kWtIzy07CWrFHZVzOYjOYMJUS8W2iiiCdh9n+kMSPjn5Tbe2cHeJFSKMOtkTmWFvkXpyOM0n
-	UuPYU19jyACkvPr71n2Cxk6joIDOWp0iXKkNZnuKP+MuCOoqbpfQv5q7y7lG6f3veDVexfFzWILlG
-	mlDXGn+zniZW88SCb11ufpbJDmQ5dkAzVX4dAMmLINjJXU1WGY+vyaIyYBmRP97uOy5FIKTrhiZ65
-	bQgIOX4vTiQKmGT+aVmz5pRCBNax0EaswhR0D8Z/8v9c3IbBVqjCOtgyZeEKesK0C6a43fCj23c+n
-	sa/CexOkcEm6klNI6Kz2U24RuABRmgA==;
+	References:List-Owner; bh=3sh91tjQ2VCiEMPCwS+wgHILBUU1puB7eT7ZgGqiez0=; b=shg
+	+67MQLcxNjMEkAHnbNEsjj/7P3uJRh3GNxnUKQvAuj1Kw5tFAGLkydQPyUYpcHsfMyCm+Q2EhNPF1
+	bUXn/mMax/4Wcop18zazwnUS8F6lQjqZBwLcr0PaYSQzAy5lwOBkx+D38BF74EQMTsxWhUdQj3U+Z
+	eagBwh+99wLpGtbHkkH2b+l0QMHFJuf89hWkBVZqeVBINkm4GIqq5nPyCJHaJYQvAL4ZoMK8+O/um
+	vyT19VPPMFfiIYR5feyu70wRBmIIQFEU8nmZk4/wQRTuqG0x3U/dzyotZPwR/CQ6AMqfqkuUsfsSG
+	UBnuq/KY2uc2fsV9KbuLlFve4cFCv0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijuGE-0006pR-MR; Wed, 25 Dec 2019 00:10:46 +0000
+	id 1ijuGi-0007HZ-Sm; Wed, 25 Dec 2019 00:11:16 +0000
 Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijuEs-0004pG-7B
- for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 00:09:24 +0000
+ id 1ijuEs-0004pD-9n
+ for linux-arm-kernel@lists.infradead.org; Wed, 25 Dec 2019 00:09:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=XHO12lr1qLB4FKdbh6ys7+jy8rW61hg1/mw41eet/vI=; b=Mtpl63TU2Fv6
- qcc+jUPgG3t3sObYqw3qJntc+jQ4uZINU2M1k868I2OCc5Pud3blFUcYCeHQIkBzsOsgptBIZ54Cj
- ZWXWfzCq8Qz+RUCkV5eUOepHvLvxwtoNAl0nxJRNCa3qrtS83ZQXcggQNxHstk4cbci6icVmJdT6e
- x6aVo=;
+ List-Archive; bh=GUJdf/ACw1h6vNsMgaiSztgePla3xUya9eRu6bc4itI=; b=KnnQl599gDI9
+ T8itH2oIzonwBjm1/YrLKb7JJAvDvQd7JXcYwdPA7RxlZvOVSCyg6blvnycrW+wtMmsiwg9i26ck6
+ kPy9A1BhFFh63ej535mU9DbkUq+veJF54d6TnvVgF4mkM8N5SzLTp4WfT1fHg5AJgRdjWscxBIjCQ
+ +uPws=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=fitzroy.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1ijuEp-0007N2-Fd; Wed, 25 Dec 2019 00:09:19 +0000
+ id 1ijuEp-0007N1-CE; Wed, 25 Dec 2019 00:09:19 +0000
 Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 00AA5D01963; Wed, 25 Dec 2019 00:09:18 +0000 (GMT)
+ id DB0FBD01957; Wed, 25 Dec 2019 00:09:18 +0000 (GMT)
 From: Mark Brown <broonie@kernel.org>
 To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: Applied "spi: uniphier: Change argument of irq functions to private
- structure" to the spi tree
-In-Reply-To: <1577149107-30670-3-git-send-email-hayashi.kunihiko@socionext.com>
-Message-Id: <applied-1577149107-30670-3-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: Applied "spi: uniphier: Add handle_err callback function" to the spi
+ tree
+In-Reply-To: <1577149107-30670-4-git-send-email-hayashi.kunihiko@socionext.com>
+Message-Id: <applied-1577149107-30670-4-git-send-email-hayashi.kunihiko@socionext.com>
 X-Patchwork-Hint: ignore
 Date: Wed, 25 Dec 2019 00:09:18 +0000 (GMT)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191224_160922_270025_8BB07C0D 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20191224_160922_387585_94E3DBB6 
+X-CRM114-Status: GOOD (  13.56  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -93,7 +93,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   spi: uniphier: Change argument of irq functions to private structure
+   spi: uniphier: Add handle_err callback function
 
 has been applied to the spi tree at
 
@@ -118,66 +118,56 @@ to this mail.
 Thanks,
 Mark
 
-From 9859db51387df8a7e8564a211158ff8bf263b0a8 Mon Sep 17 00:00:00 2001
+From 11299c5cd8868479e9acfc525ba3c2e882c7ba0c Mon Sep 17 00:00:00 2001
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Date: Tue, 24 Dec 2019 09:58:24 +0900
-Subject: [PATCH] spi: uniphier: Change argument of irq functions to private
- structure
+Date: Tue, 24 Dec 2019 09:58:25 +0900
+Subject: [PATCH] spi: uniphier: Add handle_err callback function
 
-This changes each argument of functions uniphier_irq_{enable,disable}()
-to uniphier_spi_priv because these functions are used not only for
-spi_device but also for the entire controller.
+This adds master->handle_err() callback function to stop transfer due to
+error. The function also resets FIFOs and disables interrupt.
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Link: https://lore.kernel.org/r/1577149107-30670-3-git-send-email-hayashi.kunihiko@socionext.com
+Link: https://lore.kernel.org/r/1577149107-30670-4-git-send-email-hayashi.kunihiko@socionext.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- drivers/spi/spi-uniphier.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ drivers/spi/spi-uniphier.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
 diff --git a/drivers/spi/spi-uniphier.c b/drivers/spi/spi-uniphier.c
-index 47cde1864630..a44a1a5fb7b0 100644
+index a44a1a5fb7b0..0b255597fdcb 100644
 --- a/drivers/spi/spi-uniphier.c
 +++ b/drivers/spi/spi-uniphier.c
-@@ -93,9 +93,9 @@ static inline unsigned int bytes_per_word(unsigned int bits)
- 	return bits <= 8 ? 1 : (bits <= 16 ? 2 : 4);
+@@ -425,6 +425,22 @@ static int uniphier_spi_unprepare_transfer_hardware(struct spi_master *master)
+ 	return 0;
  }
  
--static inline void uniphier_spi_irq_enable(struct spi_device *spi, u32 mask)
-+static inline void uniphier_spi_irq_enable(struct uniphier_spi_priv *priv,
-+					   u32 mask)
- {
--	struct uniphier_spi_priv *priv = spi_master_get_devdata(spi->master);
- 	u32 val;
- 
- 	val = readl(priv->base + SSI_IE);
-@@ -103,9 +103,9 @@ static inline void uniphier_spi_irq_enable(struct spi_device *spi, u32 mask)
- 	writel(val, priv->base + SSI_IE);
- }
- 
--static inline void uniphier_spi_irq_disable(struct spi_device *spi, u32 mask)
-+static inline void uniphier_spi_irq_disable(struct uniphier_spi_priv *priv,
-+					    u32 mask)
- {
--	struct uniphier_spi_priv *priv = spi_master_get_devdata(spi->master);
- 	u32 val;
- 
- 	val = readl(priv->base + SSI_IE);
-@@ -339,12 +339,12 @@ static int uniphier_spi_transfer_one_irq(struct spi_master *master,
- 
- 	uniphier_spi_fill_tx_fifo(priv);
- 
--	uniphier_spi_irq_enable(spi, SSI_IE_RCIE | SSI_IE_RORIE);
-+	uniphier_spi_irq_enable(priv, SSI_IE_RCIE | SSI_IE_RORIE);
- 
- 	time_left = wait_for_completion_timeout(&priv->xfer_done,
- 					msecs_to_jiffies(SSI_TIMEOUT_MS));
- 
--	uniphier_spi_irq_disable(spi, SSI_IE_RCIE | SSI_IE_RORIE);
++static void uniphier_spi_handle_err(struct spi_master *master,
++				    struct spi_message *msg)
++{
++	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
++	u32 val;
++
++	/* stop running spi transfer */
++	writel(0, priv->base + SSI_CTL);
++
++	/* reset FIFOs */
++	val = SSI_FC_TXFFL | SSI_FC_RXFFL;
++	writel(val, priv->base + SSI_FC);
++
 +	uniphier_spi_irq_disable(priv, SSI_IE_RCIE | SSI_IE_RORIE);
++}
++
+ static irqreturn_t uniphier_spi_handler(int irq, void *dev_id)
+ {
+ 	struct uniphier_spi_priv *priv = dev_id;
+@@ -531,6 +547,7 @@ static int uniphier_spi_probe(struct platform_device *pdev)
+ 				= uniphier_spi_prepare_transfer_hardware;
+ 	master->unprepare_transfer_hardware
+ 				= uniphier_spi_unprepare_transfer_hardware;
++	master->handle_err = uniphier_spi_handle_err;
+ 	master->num_chipselect = 1;
  
- 	if (!time_left) {
- 		dev_err(dev, "transfer timeout.\n");
+ 	ret = devm_spi_register_master(&pdev->dev, master);
 -- 
 2.20.1
 
