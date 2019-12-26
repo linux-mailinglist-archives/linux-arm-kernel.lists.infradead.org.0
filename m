@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14D2A12AE3A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 20:13:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2624B12AE3B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 20:13:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sfSdjmXq8x+ndnb6ZBAIHmkgAYlrdxJDxRfk3f2fy2M=; b=Y6ujOt29UJ5mpZ
-	z5JiSerGqq6FjXDWflvhUemoH4mcF9Ftwnr6u1Tt5xqvIVt6rsIARd5yGG4itNl78hBPnr9mAvjyM
-	5H5weLsSNKYZXYKLJPs8EoI0u28Dfg+DSPIX6m0dS9aCjSlrMYSy/IRtMMIMHqlQfCJkq1zCFk5Dl
-	zkTCLqMue38ixzzab43BricSvo9XRcZUINZOAh6asyuFP9lcodefVvaLZZwaNFXgKBcnl0C3Eeeq4
-	EoE15QKWQDfLMnieECWXx/wosKKd5OuHiObktqL7bVBnR3RJjsRlwE8v9CZobEU/GtRTwJy7fgrt2
-	NXTIhMZwSxozLw7EYkdQ==;
+	List-Owner; bh=CfnH+OK/D9s36Iyjr2NSSR8lG2uqqSXvzcep9H0Kui0=; b=Ea3G2ANiZB9O8p
+	GOUniTLFjGu5uZYQaycN+1F2A6lj2IQVMkYbqrmLWRBV0dPMlipuvl9/hvWXYOETuILws1/1JZ8sU
+	rmA+yNMkbPl2o4z9gD5yG4Y/11N9LtmWaTnwVtYz246MtYM5Qx+k1LmyIJojbE0mY582KKvOMCrgC
+	GC96YRsuomeGdTqcXVFa4eiHaC5N7Tm6XA/q5WjZUst5Oc0iYmmYo6wHmMcutf3lQuP1e46TENCOM
+	MbLpX7TeY30NXsTA6R8OSYl89Jkax0TuPnKo7vpDH3Ai+vryedJ9asr45eZZ1IMih8TfWhB+zfTFC
+	PwJvSBisx1G2JcKTBTxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikYZP-0001rC-6R; Thu, 26 Dec 2019 19:13:15 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1ikYZh-0002Ak-Jj; Thu, 26 Dec 2019 19:13:33 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikYYv-0001WK-Kv; Thu, 26 Dec 2019 19:12:46 +0000
-Received: by mail-wm1-x343.google.com with SMTP id d139so5565836wmd.0;
- Thu, 26 Dec 2019 11:12:45 -0800 (PST)
+ id 1ikYYw-0001Wl-OK; Thu, 26 Dec 2019 19:12:48 +0000
+Received: by mail-wr1-x441.google.com with SMTP id w15so11719416wru.4;
+ Thu, 26 Dec 2019 11:12:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=tt36REs6xTGhoAu/DRKUVnoYElZnOVVi2F4lvnCzwxk=;
- b=nN/5xERvRFlldF3gW7sAZTJtfO1cS4PM2gDnf67/zENyO5n4o77HOWTbJd+ZG9QQEk
- rRmgS1gcOjN3hRQiIL+owsaJVLwFqTfL1/vG+uggrbXC0yBGM+RxK1zFTo6OGeRaCvvr
- 2bIXCEAwf2NTdJkSs9YLL71Y1MeiMYh+cgkFAqIiuMUmEUldmHj5l+11ytV6bc1yFMBx
- KSK2b/dgA5OZI681Yv5LvSHPpYjq5STPnwC0M/RjXSjn/F7jJrOyJThiJKZl71YehIwR
- pNI8Gvuz2bqniQpEFgzsYaEu9XkhkxVZNHC6U7sQeTE0867hzRQ7yq0Gjwpl4SU2o4WP
- c7yg==
+ bh=mmT0zF9OrkbiD8lj/0dOwJG0ayj5vgSHBwzc+nFQ5Gg=;
+ b=klF/ucA9NSUXwoHRk1+Si9sfnX9CSLC+s/ebG98azsGLVJj1eJB4Gh6K3XoDxFlgwf
+ e4nZ54SihxAA0YFfk6F238dYP9TkFDlIdBWYh29QftbkX6XICz13muXv7qfEFCaUuUQp
+ CoschbCdrD2XhSLd6SH9cxWtcrwocY4bonRfJDgF/CSuyvksP5uvGZLJz34FGSHXsrYg
+ zsLYDYhhxGFxKmdmRKvL1TWzEJnbemd/PDUm2ivSnrRB7Y9/J1HMeXM/nofk/edIPYUi
+ LHC/Mn0XfMUpeWAegjzOMgII4GO2Y5c/8pyPTtVL95QBAq4GwW17CZ6pacVbQsAwGKv0
+ faqA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=tt36REs6xTGhoAu/DRKUVnoYElZnOVVi2F4lvnCzwxk=;
- b=s8V6mImHpyxzuNSg+k+2LxPGFKsYPQAs7CdHaF3dgS5nJXGg/eiGAmIyqfT1tLP3LX
- 652/A2RVj/TJ95+Lz+7FOVXQG8CNeTUFjr6dMVcSH/1RAynxsZA2gk297Mr6o66sJWY7
- KOavLdkLFrZxJLvkLatOxigjeh9iKQ1IDVH3C9O/g/jev7HoyZQ0sBC1rEpDTwASUgRo
- ghW8wdYLfh93c4uzzitJtGTGSB/jIO9RXMBihrwhPOp+CRAcrQLlvi/gQuCh1LHl6zri
- INsDDVd8svVSrmU2l0CPJ1MHumlFIjuPzqv1pXJ6h+J1HLuLsPNK4/Mun3XxdlqqjwhM
- beBw==
-X-Gm-Message-State: APjAAAVgXy216YKqpE7zxsp3VM/aNO+uTF7lu1JOc3cGWNem0e4BKzHo
- nvRmMJ+qSb64wBM4Uy7EcHOevTsU3NQ=
-X-Google-Smtp-Source: APXvYqzZGxtmKwZ1j7QZvBVzxdXGXdom8ptwX/pQlRuThGcOkzVdWLF8jTR6H/5QaAJYZ0p+Ul4wvw==
-X-Received: by 2002:a05:600c:290f:: with SMTP id
- i15mr15657682wmd.115.1577387564126; 
- Thu, 26 Dec 2019 11:12:44 -0800 (PST)
+ bh=mmT0zF9OrkbiD8lj/0dOwJG0ayj5vgSHBwzc+nFQ5Gg=;
+ b=S3JvuBZzA61qfpgP8S4cWdfppggw8K1bbJte/IHQaJTuuCQ27/nbZO5Kd9lGtRUTRW
+ JTNKE8JSWKNg9SM4/1eThlhCcteN/l/7+iKRKV7NMSg6r3h4ijBA46EaX1SJyxD/Ty+u
+ QCDfeP1B8nIaOMP7edENk7OPRNX/r9Ss4XgJJeNtr7E2AScDDt33Hk/H1EfxRr3ObwKV
+ nTMrx+vgiYdhAJd9+WRwn1EDFHZiMnEHsoqyWjsW5sxUoOKTNB09/HqCYm3C8aAokRCl
+ xNkPvPK+ODSsnF3pHwtFQAXQdt6ehlOaMX/tb011iOTniozAjtz7i2Ta9KmVIttjHcgG
+ 5PVg==
+X-Gm-Message-State: APjAAAV1oiWStr6oc9DKG09fEuaXIOgsWcsjQGasNwEJkuwNOxyHd1VL
+ sv0M2RJJyIiwRyOCmwcTJVuzdX2kQM0=
+X-Google-Smtp-Source: APXvYqzFEhUhoMbvJ+dMFP1fHZY7u43hjf0Ydx1AtPN8kQZ0UFLEecCP0onL5y0FIk42usYSrzPz3A==
+X-Received: by 2002:a5d:4085:: with SMTP id o5mr45964730wrp.321.1577387565138; 
+ Thu, 26 Dec 2019 11:12:45 -0800 (PST)
 Received: from localhost.localdomain
  (p200300F1373A1900428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:373a:1900:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id o7sm8965937wmh.11.2019.12.26.11.12.43
+ by smtp.googlemail.com with ESMTPSA id o7sm8965937wmh.11.2019.12.26.11.12.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Dec 2019 11:12:43 -0800 (PST)
+ Thu, 26 Dec 2019 11:12:44 -0800 (PST)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: linux-amlogic@lists.infradead.org, jbrunet@baylibre.com, sboyd@kernel.org
-Subject: [PATCH v2 1/2] clk: meson: meson8b: make the CCF use the glitch-free
- "mali" mux
-Date: Thu, 26 Dec 2019 20:12:23 +0100
-Message-Id: <20191226191224.3785282-2-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v2 2/2] clk: clarify that clk_set_rate() does updates from top
+ to bottom
+Date: Thu, 26 Dec 2019 20:12:24 +0100
+Message-Id: <20191226191224.3785282-3-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20191226191224.3785282-1-martin.blumenstingl@googlemail.com>
 References: <20191226191224.3785282-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_111245_681062_47E794EF 
-X-CRM114-Status: GOOD (  15.01  )
+X-CRM114-CacheID: sfid-20191226_111246_789911_F5C55CB4 
+X-CRM114-Status: GOOD (  12.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (martin.blumenstingl[at]googlemail.com)
@@ -110,57 +109,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The "mali_0" or "mali_1" clock trees should not be updated while the
-clock is running. Enforce this by setting CLK_SET_RATE_GATE on the
-"mali_0" and "mali_1" gates. This makes the CCF switch to the "mali_1"
-tree when "mali_0" is currently active and vice versa, which is exactly
-what the vendor driver does when updating the frequency of the mali
-clock.
+clk_set_rate() currently starts updating the rate for a clock at the
+top-most affected clock and then walks down the tree to update the
+bottom-most affected clock last.
+This behavior is important for protected clocks where we can switch
+between multiple parents to achieve the same output.
 
-This fixes a potential hang when changing the GPU frequency at runtime.
+An example for this is the mali clock tree on Amlogic SoCs:
+  mali_0_mux (must not change when enabled)
+    mali_0_div (must not change when enabled)
+     mali_0 (gate)
+  mali_1_mux (must not change when enabled)
+    mali_1_div (must not change when enabled)
+      mali_1 (gate)
+The final output can either use mali_0_gate or mali_1. To change the
+final output we must switch to the "inactive" tree. Assuming mali_0 is
+active, then we need to prepare mali_1 with the new desired rate and
+finally switch the output to the mali_1 tree. This process will then
+protect the mali_1 tree and at the same time unprotect the mali_0 tree.
+The next call to clk_set_rate() will then switch from the mali_1 tree
+back to mali_0.
 
-Fixes: 74e1f2521f16ff ("clk: meson: meson8b: add the GPU clock tree")
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- drivers/clk/meson/meson8b.c | 11 +++++++----
- 1 file changed, 7 insertions(+), 4 deletions(-)
+ include/linux/clk.h | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
-index 3408297bff65..9fd31f23b2a9 100644
---- a/drivers/clk/meson/meson8b.c
-+++ b/drivers/clk/meson/meson8b.c
-@@ -1772,8 +1772,11 @@ static struct clk_regmap meson8b_hdmi_sys = {
- 
- /*
-  * The MALI IP is clocked by two identical clocks (mali_0 and mali_1)
-- * muxed by a glitch-free switch on Meson8b and Meson8m2. Meson8 only
-- * has mali_0 and no glitch-free mux.
-+ * muxed by a glitch-free switch on Meson8b and Meson8m2. The CCF can
-+ * actually manage this glitch-free mux because it does top-to-bottom
-+ * updates the each clock tree and switches to the "inactive" one when
-+ * CLK_SET_RATE_GATE is set.
-+ * Meson8 only has mali_0 and no glitch-free mux.
+diff --git a/include/linux/clk.h b/include/linux/clk.h
+index 18b7b95a8253..7fd6a1febcf4 100644
+--- a/include/linux/clk.h
++++ b/include/linux/clk.h
+@@ -627,6 +627,9 @@ long clk_round_rate(struct clk *clk, unsigned long rate);
+  * @clk: clock source
+  * @rate: desired clock rate in Hz
+  *
++ * Updating the rate starts at the top-most affected clock and then
++ * walks the tree down to the bottom-most clock that needs updating.
++ *
+  * Returns success (0) or negative errno.
   */
- static const struct clk_parent_data meson8b_mali_0_1_parent_data[] = {
- 	{ .fw_name = "xtal", .name = "xtal", .index = -1, },
-@@ -1838,7 +1841,7 @@ static struct clk_regmap meson8b_mali_0 = {
- 			&meson8b_mali_0_div.hw
- 		},
- 		.num_parents = 1,
--		.flags = CLK_SET_RATE_PARENT,
-+		.flags = CLK_SET_RATE_GATE | CLK_SET_RATE_PARENT,
- 	},
- };
- 
-@@ -1893,7 +1896,7 @@ static struct clk_regmap meson8b_mali_1 = {
- 			&meson8b_mali_1_div.hw
- 		},
- 		.num_parents = 1,
--		.flags = CLK_SET_RATE_PARENT,
-+		.flags = CLK_SET_RATE_GATE | CLK_SET_RATE_PARENT,
- 	},
- };
- 
+ int clk_set_rate(struct clk *clk, unsigned long rate);
 -- 
 2.24.1
 
