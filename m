@@ -2,82 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2520712AEB7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 22:08:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D311A12AEE2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 22:22:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sqJNoLXT8y53iFGCRfnp6P/w2c+UJOhffqvqrCEBvQ4=; b=f3Fzz5K2XxRiQJ
-	HRSktJFmtxcFHgKYndDnIN9p+wIWpe+TjXRgLwotepelPoIdi3a6mcgdYpOcCr4TMzE33bO0Dfae7
-	wgIVWrPyB/guDcQGL3g47YrV/5MVqOA0bhyPOyLdp3US10VENvSsWTmHXZTwNQTDTiFI5FBa0op1k
-	NTdrOgVYcg7Odpe7YqvKVkKYoOQYpxZq7mtgX9mHlLsYiT51QHcoHKarKm1FHrm9RdItkLxXOToAE
-	g9g4hWgLHQ9oCYchFVebmyHhE5w23Y5R4p4A7fJ+7KHyplkcLit6Axtunr452JAQJHo2OrZvc3aPP
-	VV4dpmIBAJP+vkBi6TIQ==;
+	List-Owner; bh=ka6NV4rrY4m59NWnfpH6vg/ssfMLTil0HyZ7o2p4/4s=; b=WBgk4X/8IO7wSX
+	X/7DihKeRG8iQiZ8GVzOYbh/PqGEy9rbUiOvKqC1ctFEuonEI5eiOeEiAQa8ElAWGJXoUJwb9t1Vw
+	C/JiClOxwpGe0foytrPgLzXuZwSgZvHGAI9JKbNPNmhuNk271kSTBTCPOCVGyODqCySu1xKVIYF+V
+	fuuH9BlaklxSQKD/KlHUZvH2zPzqe/nfVo2A24SRflY6odnZxXmdAtDGquG3l5MpHfvFMrn5My+Gn
+	AJqORgjb4+BHkZcbh3skd9NzovOs6zbzhxLHLO/Z690pdvUxnMKOMxss3NM4Bl+2ZYo5ofg8fNhxL
+	U2KVtdOMU2MJPPb9us5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikaMY-0007AW-64; Thu, 26 Dec 2019 21:08:06 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1ikaau-0003MJ-I2; Thu, 26 Dec 2019 21:22:56 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikaMM-00079o-Vt; Thu, 26 Dec 2019 21:07:56 +0000
-Received: by mail-il1-f196.google.com with SMTP id s15so21039623iln.1;
- Thu, 26 Dec 2019 13:07:51 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9k7wtgHRpTwMfH9WAD4FBjZIk1Pn3L2y9QCGxHvomLY=;
- b=sdHsz2BDDixPQxUpb3rXqL4zbtzMZeUbXutf1hAjlHJm06jW9ZGM9aTxE7OuDfTHWZ
- JKH5Xn+DmGUXoFPnDrcTts6/2tNCWZoDlNPuhw0XKn7ImlgumWwYCCKY+SZmIxyyD1rk
- Q2FcuU+nWQ+Kpzjb4NNAlBARla7L9j5YnvUAKAiRHCfkcq7Qjd/je9IE5ey1sO24TQwz
- djAXPUu91NIvlYlHqehF5HDWtW1UDqkG6zZoDhehr+t81/nEimKXQRUQg0xLnvQGJI44
- orMdJ3zyeo+Rw6R/TxuZK0ZzOsV5SpICLgqduEFmsu7Ov7lXHrwWzZ/SrcwJdecB9roe
- pbbg==
-X-Gm-Message-State: APjAAAXqDxZz87e83D3bBr+RhAEuKWMFdGTf+h90W3JiJW1T9Lj4k/1+
- iGzNZ9FDOaaEi8ySYEdeJA==
-X-Google-Smtp-Source: APXvYqwxReudgDker7RqATUPrRlMIKQR3psE0VCnX9ECL4NfM9Ca/U71NcgWX1o7p7T/fabL70b0iA==
-X-Received: by 2002:a92:8904:: with SMTP id n4mr7990735ild.88.1577394470816;
- Thu, 26 Dec 2019 13:07:50 -0800 (PST)
-Received: from localhost ([64.188.179.250])
- by smtp.gmail.com with ESMTPSA id u13sm8968291iof.2.2019.12.26.13.07.49
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Dec 2019 13:07:50 -0800 (PST)
-Date: Thu, 26 Dec 2019 14:07:48 -0700
-From: Rob Herring <robh@kernel.org>
-To: Akash Gajjar <akash@openedev.com>
-Subject: Re: [PATCH 2/2] phy: phy-rockchip-inno-usb2: add usb2-phy support
- for RK3308 SoC
-Message-ID: <20191226210748.GA27760@bogus>
-References: <20191217075722.11646-1-akash@openedev.com>
- <20191217075722.11646-3-akash@openedev.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191217075722.11646-3-akash@openedev.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1ikaag-0003L0-G7; Thu, 26 Dec 2019 21:22:44 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:1c3::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 927D91513DD33;
+ Thu, 26 Dec 2019 13:22:36 -0800 (PST)
+Date: Thu, 26 Dec 2019 13:22:35 -0800 (PST)
+Message-Id: <20191226.132235.1870219915908299554.davem@davemloft.net>
+To: martin.blumenstingl@googlemail.com
+Subject: Re: [PATCH 0/2] RTL8211F: RGMII RX/TX delay configuration improvements
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20191226185148.3764251-1-martin.blumenstingl@googlemail.com>
+References: <20191226185148.3764251-1-martin.blumenstingl@googlemail.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Thu, 26 Dec 2019 13:22:36 -0800 (PST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_130755_025524_76B84D04 
-X-CRM114-Status: GOOD (  11.23  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20191226_132242_536569_22AF581A 
+X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,28 +62,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- heiko@sntech.de, tom@radxa.com, linux-kernel@vger.kernel.org,
- kever.yang@rock-chips.com, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-rockchip@lists.infradead.org, Akash Gajjar <akash@openedev.com>,
- Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
+Cc: andrew@lunn.ch, f.fainelli@gmail.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 17 Dec 2019 13:27:15 +0530, Akash Gajjar wrote:
-> This patch adds usb2-phy support for RK3308 SoCs and amend phy Documentation.
-> 
-> Signed-off-by: Akash Gajjar <akash@openedev.com>
-> ---
->  .../bindings/phy/phy-rockchip-inno-usb2.txt   |  1 +
->  drivers/phy/rockchip/phy-rockchip-inno-usb2.c | 44 +++++++++++++++++++
->  2 files changed, 45 insertions(+)
-> 
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Thu, 26 Dec 2019 19:51:46 +0100
 
-Acked-by: Rob Herring <robh@kernel.org>
+> In discussion with Andrew [0] we figured out that it would be best to
+> make the RX delay of the RTL8211F PHY configurable (just like the TX
+> delay is already configurable).
+> 
+> While here I took the opportunity to add some logging to the TX delay
+> configuration as well.
+ ...
+
+Series applied to net-next, thank you.
 
 _______________________________________________
 linux-arm-kernel mailing list
