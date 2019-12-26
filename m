@@ -2,93 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85F3B12AE3F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 20:14:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEC8612AE49
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 20:20:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dKqif+GXD91zDEWno3ONQQ0MTMlE5fjLUM6eApGK8Rg=; b=rDJU7wos5ryFXe
-	GOyfh/5yYes75LIPmyFyL8zHym3dYbLve4LGbXNkDAUxQlITpXsN/KIy57W6fqVuQEz9HcMJiyq3w
-	qvjZxmKmkuKI5S5V6UZ0rcRakMFZ1IyokcP4yzuZSBzom+e3HZ1bgMb6ZDG8OJ59rb2Fd5aXcRGVO
-	Cgjo79pc9HvlbFVJINqOILUTPQaP7+IVC1mnTDyXHz77RKl7eFkJYKqtFJMkflKXY0EeGCf+qrCdp
-	xatAPe31DSQjwL+Aiz7stpjVb3KUrljh6jm9Yt5pCEsHfLhRZrAMMghRPnQJ1xsfBVdkcb2WY0lyR
-	nep3MD73+kFMoDLHFyGQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3cAnY2SkLyuT2DX9B+8/7Lo4F+ic5Qi8OmQnUasllws=; b=UwpSkGhOVjkEHl
+	/Iy6z8sNDP1i3A40t1heStmaaeFKr2Os55TiLnPybcfi3uifa6t6fOZt1fjHLEQAJFpO63zhke9vV
+	OIXJwUaYALAmQ9020kqffaJbeSrivoy5ib9kOHlloY0EO6VFQX86IAbJpvBFkuVf/StwmkIfTLaZ5
+	kIBmFMMqagoaJ0g03PgvKjIe9UIjqyMVLzmZdYzoWDlUrNzdx93mTZOd+CQJzqEZYVuxZli34Kp7f
+	vChx68mo//nCF4qMY/wdgv11rtRxeDwBAvT6KEeYUAM/pTIISOh/EYRLT1S5QboiU5+vnNxmO7S1i
+	9OpMumsRqonKS9qQSoWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikYax-0002Vu-4B; Thu, 26 Dec 2019 19:14:51 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1ikYft-0004WS-09; Thu, 26 Dec 2019 19:19:57 +0000
+Received: from mail-il1-f193.google.com ([209.85.166.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikYam-0002UN-Ju; Thu, 26 Dec 2019 19:14:42 +0000
-Received: by mail-wr1-x443.google.com with SMTP id g17so24333352wro.2;
- Thu, 26 Dec 2019 11:14:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RdDU189IRzDSSQuuwdRp+bg/X99qADOf/XTXJFRaKx4=;
- b=KVjxXtkb4O7D1uapjkYYG0rrjj+A1LKb0U6nGIXmA9OI/zMOsCv7TdGZeAOkECxRL8
- 2ShuVJVy6Oq042w8o/wXJXRKtn9lViF42w0H9TnZon49HDJIU5wzP7hvSKycahF+xx2h
- uoGglak/WFzV0BJgyvdxA9EVGQG/QdUFGPxctFrSHlYw9fLFv+N4NNzX+l+QfKsCsHeW
- R6LMMvku0xaCYf5U7B95QmZm7DUAYT+xLQTfLstIKdtMgJ+bDDbGkb8AHcwDhRuX8D6n
- NQfeyhtxX2s1eXCFUBdteMva1kKruFL9VyEpxNN9G5W+j8yfQ0zZ4Ctu/K1Xh6c8A1Ba
- JqtQ==
+ id 1ikYfk-0004VR-0U; Thu, 26 Dec 2019 19:19:49 +0000
+Received: by mail-il1-f193.google.com with SMTP id v69so20793629ili.10;
+ Thu, 26 Dec 2019 11:19:44 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RdDU189IRzDSSQuuwdRp+bg/X99qADOf/XTXJFRaKx4=;
- b=ToUt3+5YN+rsdkD+o5QENO+LmYN+o+ttTPRIZlEdKgiFYIo1T+XFEwOqAOkhEjbC2t
- qP49ZVu4fPkdauyeHfYbmrYcZOMMIax38y8hn0GuwzrSiSv+RZzlpkifU0FRTtX1Z2rs
- nyJePhtlRH9ldXJWV4a1giajdbTYn/Y51xMJUeXj9xMuISnVZ83O80FMQLwRdrAGQ0qK
- 3NA+C2ANeQm4P6IvehSagXQ3Y+NYxNl4BD/ETRKqXTrVBvn4S4h5psVRMqv6Yt9O3ph/
- Kf/6L/bPIWGSVmHQO4uGVsQiHKtikRbNWW98Dw9w/zwE1L9ytCxZq4hBEwC6GMA1d6Ly
- 9eDw==
-X-Gm-Message-State: APjAAAVrMOymIlXubr4ekah0A5dsIkOJc9/k0tGujJzLy7K4KtNFpiBf
- BZ495n+xzvCFCYGLKQ+X3HQ=
-X-Google-Smtp-Source: APXvYqzurwb5xdQo8gGlQM8ofNX/VGIdzgCohcUjwg5XUj0XVHKV+JN1pgFVp4z/TFKgeDxZP+Shcg==
-X-Received: by 2002:a5d:6390:: with SMTP id p16mr6977473wru.170.1577387679392; 
- Thu, 26 Dec 2019 11:14:39 -0800 (PST)
-Received: from localhost.localdomain
- (p200300F1373A1900428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:373a:1900:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id s128sm9098950wme.39.2019.12.26.11.14.38
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=AqWJxAJe8Vgf4p53OHB9TkZmIbkYP+Pma79n+C2GBLc=;
+ b=FQ+YgZIjrkfd0QtMKnpunbYsbGyEwDzDyb52f2WVo1ePo2HNPzE1q/znzBD3ilXOe4
+ TUr7JRoVE3MevfbAmKWGBTEQTcF8UidF7LfVQww7mXk6WYHHXhWlfZW8OGxHpGlBE+2O
+ TfCtswY6p56JaSqlFqIHxEJmfz7NOBPKprA/kR6DexvVjy99gX82kmuwU2xLajMnskqG
+ 8RVZZLIaQB2j2DaOg6D+K/g3McQHPEeMJipjY+6kgj0Ph7Pz4vrzIspUHsoxmM771cVD
+ kwMQigSmGRzk2YyRVY56FkMrgTPK7m0QGU59PHe18Xumrmc2lFZX7DgFG5CzxtnUfCvd
+ O9JA==
+X-Gm-Message-State: APjAAAXyLbbqEoSWuTaeA88FJe7Mhm8qU3BayBnN0DgSF1yO1r09DvST
+ jweolLiCUDCXhY9/mKJJxpcSYTY=
+X-Google-Smtp-Source: APXvYqzB6YGqCYlO6/M0ZHv5gof0FiLkRfYe1t/A15ZE+3JvhhyuAj2WMHUSJkh5iVeABFNEK6ImJg==
+X-Received: by 2002:a92:5a56:: with SMTP id o83mr37720479ilb.97.1577387984062; 
+ Thu, 26 Dec 2019 11:19:44 -0800 (PST)
+Received: from localhost ([64.188.179.250])
+ by smtp.gmail.com with ESMTPSA id m24sm8871530ioc.37.2019.12.26.11.19.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Dec 2019 11:14:38 -0800 (PST)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: linus.walleij@linaro.org, linux-gpio@vger.kernel.org,
- linux-amlogic@lists.infradead.org
-Subject: [PATCH] pinctrl: meson: meson8b: add the GPIOH pinmux settings for
- ETH_RXD{2, 3}
-Date: Thu, 26 Dec 2019 20:14:25 +0100
-Message-Id: <20191226191425.3797490-1-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.24.1
+ Thu, 26 Dec 2019 11:19:43 -0800 (PST)
+Date: Thu, 26 Dec 2019 12:19:42 -0700
+From: Rob Herring <robh@kernel.org>
+To: Qianggui Song <qianggui.song@amlogic.com>
+Subject: Re: [PATCH v2 1/4] dt-bindings: interrupt-controller: New binding
+ for Meson-A1 SoCs
+Message-ID: <20191226191942.GA17451@bogus>
+References: <20191216123645.10099-1-qianggui.song@amlogic.com>
+ <20191216123645.10099-2-qianggui.song@amlogic.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191216123645.10099-2-qianggui.song@amlogic.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_111440_654343_6CB76E07 
-X-CRM114-Status: GOOD (  10.50  )
-X-Spam-Score: 2.3 (++)
+X-CRM114-CacheID: sfid-20191226_111948_054020_E47BC97C 
+X-CRM114-Status: UNSURE (   8.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.3 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [209.85.166.193 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ provider (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,66 +90,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Qianggui Song <qianggui.song@amlogic.com>, devicetree@vger.kernel.org,
+ Hanjie Lin <hanjie.lin@amlogic.com>, Jason Cooper <jason@lakedaemon.net>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, Marc Zyngier <maz@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Kevin Hilman <khilman@baylibre.com>, linux-amlogic@lists.infradead.org,
+ Thomas Gleixner <tglx@linutronix.de>, Xingyu Chen <xingyu.chen@amlogic.com>,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-GPIOH_5 and GPIOH_6 can have two Ethernet related functions:
-- GPIOH_5 can be ETH_TXD1 or ETH_RXD3
-- GPIOH_6 can be ETH_TXD0 or ETH_RXD2
+On Mon, 16 Dec 2019 20:36:42 +0800, Qianggui Song wrote:
+> Update dt-binding document for GPIO interrupt controller of Meson-A1 SoCs
+> 
+> Signed-off-by: Qianggui Song <qianggui.song@amlogic.com>
+> ---
+>  .../bindings/interrupt-controller/amlogic,meson-gpio-intc.txt    | 1 +
+>  1 file changed, 1 insertion(+)
+> 
 
-Add the bits for eth_rxd3_h and eth_rxd2_h so the ETH_RXD function can
-be disabled when using the ETH_TXD function of GPIOH_{5,6}. No problem
-was observed so far, but in theory this could lead to two different
-signals being routed to the same pad (which could break Ethernet).
-
-These settings were found in the public "Amlogic Ethernet controller
-user guide":
-http://openlinux.amlogic.com/@api/deki/files/75/=Amlogic_Ethenet_controller_user_Guide.pdf
-
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- drivers/pinctrl/meson/pinctrl-meson8b.c | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/pinctrl/meson/pinctrl-meson8b.c b/drivers/pinctrl/meson/pinctrl-meson8b.c
-index 2d5339edd0b7..6cd4b3ec1b40 100644
---- a/drivers/pinctrl/meson/pinctrl-meson8b.c
-+++ b/drivers/pinctrl/meson/pinctrl-meson8b.c
-@@ -233,6 +233,8 @@ static const unsigned int hdmi_scl_pins[]	= { GPIOH_2 };
- static const unsigned int hdmi_cec_0_pins[]	= { GPIOH_3 };
- static const unsigned int eth_txd1_0_pins[]	= { GPIOH_5 };
- static const unsigned int eth_txd0_0_pins[]	= { GPIOH_6 };
-+static const unsigned int eth_rxd3_h_pins[]	= { GPIOH_5 };
-+static const unsigned int eth_rxd2_h_pins[]	= { GPIOH_6 };
- static const unsigned int clk_24m_out_pins[]	= { GPIOH_9 };
- 
- static const unsigned int spi_ss1_pins[]	= { GPIOH_0 };
-@@ -535,6 +537,8 @@ static struct meson_pmx_group meson8b_cbus_groups[] = {
- 	GROUP(spi_miso_1,	9,	12),
- 	GROUP(spi_mosi_1,	9,	11),
- 	GROUP(spi_sclk_1,	9,	10),
-+	GROUP(eth_rxd3_h,	6,	15),
-+	GROUP(eth_rxd2_h,	6,	14),
- 	GROUP(eth_txd3,		6,	13),
- 	GROUP(eth_txd2,		6,	12),
- 	GROUP(eth_tx_clk,	6,	11),
-@@ -746,7 +750,8 @@ static const char * const ethernet_groups[] = {
- 	"eth_tx_clk", "eth_tx_en", "eth_txd1_0", "eth_txd1_1",
- 	"eth_txd0_0", "eth_txd0_1", "eth_rx_clk", "eth_rx_dv",
- 	"eth_rxd1", "eth_rxd0", "eth_mdio_en", "eth_mdc", "eth_ref_clk",
--	"eth_txd2", "eth_txd3", "eth_rxd3", "eth_rxd2"
-+	"eth_txd2", "eth_txd3", "eth_rxd3", "eth_rxd2",
-+	"eth_rxd3_h", "eth_rxd2_h"
- };
- 
- static const char * const i2c_a_groups[] = {
--- 
-2.24.1
-
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
