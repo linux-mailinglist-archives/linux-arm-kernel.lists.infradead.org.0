@@ -2,58 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2A8B12ACA3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 15:01:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AF2D12ACB5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 15:04:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RzvOKhtvC8vmJq5W8pw/wmk1TO6sLZtOwALatu6GEKU=; b=t2SWSwntZo0x+y
-	bZ7lR0M/+OtLiF5FfvBnoslJOzaMuzqq7iH/dzmVA6DIgnPog30fltpxJJuLhtz9Q245AoAZZHyWq
-	CqhicQ5A1N8zSNL20GOzTxxRWRpRP1ssxTAozWnoMTq+p2u+PfWQmihXxK7N5odkKZlfBuMp5/TbG
-	K+WGc1jaHYgvaLRz0IKZimHkJgG2/DMl0GF8MNzkcLYuEk+EXIzLn5O4pYRPC999SXjIHPoY0/oty
-	aYbuXJFz0NFaUDjYqAaPHDzVXUIrI0uHdQB2U3TdsWYT8HQ2NExbR4vxvI6ZzgtsQHvavqbHFs1PA
-	JYwGXkxguzc/FOWlnOfw==;
+	List-Owner; bh=ZuN4t8rS7ytjssJLxsbV01c3dE/dID4+fNZ/4J07DAs=; b=MMoywqCDyxd0+G
+	hvbzxdUyQyFmrpmnxBWE5PeRpd+Pg1zW0UYX1nj/3etiUACTkFlEUXtZITGzGOEjppfU4NRo4ub+1
+	xkzd/V342xex9ueOPcxqDMFSGYez4IlI4Oe6DVl4hrXGm3qF5TIj+uumiFXJfog0tdz+s/ediA034
+	puqbsjL7J4MhgJ2J1KGKiPhydXFVcW+R6ISe/JrCIZye6O72/ySqFGbo6B7+qA01vsnv1F7UOdRnC
+	4OnSbvDDFP4PcoRsRlCqS3Zu9OqbrJ/82I9KH3py6HL0BMgWNPnXk0OhqvnLJNOzBgawWyupe0kO7
+	O3mHlZgasvzw+UCyPJOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikThE-00081Y-6f; Thu, 26 Dec 2019 14:01:00 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1ikTko-0000T7-Qf; Thu, 26 Dec 2019 14:04:42 +0000
+Received: from mail-eopbgr10068.outbound.protection.outlook.com ([40.107.1.68]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikTfU-0005Pr-Ju
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 13:59:14 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 2A822159E44F7CA5A66F;
- Thu, 26 Dec 2019 21:59:07 +0800 (CST)
-Received: from DESKTOP-1NISPDV.china.huawei.com (10.173.221.248) by
- DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
- 14.3.439.0; Thu, 26 Dec 2019 21:58:56 +0800
-From: Zengruan Ye <yezengruan@huawei.com>
-To: <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
- <linux-doc@vger.kernel.org>, <virtualization@lists.linux-foundation.org>
-Subject: [PATCH v2 6/6] KVM: arm64: Support the VCPU preemption check
-Date: Thu, 26 Dec 2019 21:58:33 +0800
-Message-ID: <20191226135833.1052-7-yezengruan@huawei.com>
-X-Mailer: git-send-email 2.23.0.windows.1
-In-Reply-To: <20191226135833.1052-1-yezengruan@huawei.com>
-References: <20191226135833.1052-1-yezengruan@huawei.com>
+ id 1ikTkf-0000Ry-LW
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 14:04:35 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Q1lEAqOi+u5enHhacTjsCnAhwFhfkjh4QbbAHSZB7Ebq2aVTwbyfI2+M4KjqUS6ec6aR3GOlBONhgJ/oF9KN5vDEQEEGpZc2k1S/wHqPsPkSC4rACcuIsC+nd0BjlMBC/En8muzaKLaQm7xGu34ekka1zBbNZP3SeOHl9jBxNpHN09FyH97ykcdVx505wIj9vZjNxJSiyiJlX076aBX3Ui1r4z0tSd76OsbTcW19zMAlVI1HhdPwluYHpTw5uKQOEjxkcjMBy3zC2TeQPQl9AaLObyCREVOr8T0LZpu0z7jXmkHz/mbtlP10RCfScqG+H1MWpxk9pzR8F1JYChztIw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=HdeEwGufP9ZrXewH9YszJbbm5IsOTiS9gXj7hzsa+DY=;
+ b=azwmVgNydjLnh9Zro9CRKwPGelGkN6fDdTBA1lWn8yLTvJspQq6pI3UyO0q5TpQIjezQZl1MvmwvdQYaX7a9lLnoZc1M5o+TLhzY83u5jlQrTUBYbqLH5Sd6l9O8NLuOPUV+871vB6w1WlysXKM7SgeXL/X2sRRoXM45tc+oHvgtgQd3swPZ8g4kBzC5mgS7aqf9bOqBmfCztmu1xy0n+ZksxF9e5S11mBmoJNWGAURSGBlQmjEiRXgzkgtgMNetSCjgU23t8LYJ8q1P71WLpRZDzgZ5LTkCfPRlnBSiYWcEhj8LNG+wPL3R833y6uHAWzIaBTUFUGSPk4ni0MpNJw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=HdeEwGufP9ZrXewH9YszJbbm5IsOTiS9gXj7hzsa+DY=;
+ b=RNaQ1gJQD0er9jF4aar5VugS4UidfFHafySUZ2eCsjzKEVjHOGClG6z3GFvTlgM2Zh/K5uzFfs5UTPnTiiSSTqZzm0TjScLGOAqJQC4E89wWXacwSnf7InevFUU1A/6Ig4blaOohZjAZtvHS/cGJWjLFovhXd8SDBItSXByJA3s=
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com (20.178.202.151) by
+ AM0PR04MB5060.eurprd04.prod.outlook.com (20.177.41.18) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2581.11; Thu, 26 Dec 2019 14:04:28 +0000
+Received: from AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::6d52:5678:e02f:95f4]) by AM0PR04MB5779.eurprd04.prod.outlook.com
+ ([fe80::6d52:5678:e02f:95f4%3]) with mapi id 15.20.2581.007; Thu, 26 Dec 2019
+ 14:04:28 +0000
+Received: from localhost (89.37.124.34) by
+ AM5PR0601CA0032.eurprd06.prod.outlook.com (2603:10a6:203:68::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2581.11 via Frontend
+ Transport; Thu, 26 Dec 2019 14:04:27 +0000
+From: Abel Vesa <abel.vesa@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH 2/2] cpufreq: imx-cpufreq-dt: Add i.MX8MP support
+Thread-Topic: [PATCH 2/2] cpufreq: imx-cpufreq-dt: Add i.MX8MP support
+Thread-Index: AQHVu7mKaZLuFaepI0S7Z4SaC6NlIKfMc1AA
+Date: Thu, 26 Dec 2019 14:04:28 +0000
+Message-ID: <20191226140426.ip2vb6dom5hckenc@fsr-ub1664-175>
+References: <1577343167-16376-1-git-send-email-Anson.Huang@nxp.com>
+ <1577343167-16376-2-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1577343167-16376-2-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM5PR0601CA0032.eurprd06.prod.outlook.com
+ (2603:10a6:203:68::18) To AM0PR04MB5779.eurprd04.prod.outlook.com
+ (2603:10a6:208:131::23)
+x-originating-ip: [89.37.124.34]
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=abel.vesa@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: d51eed90-c363-43d2-ff4e-08d78a0c8568
+x-ms-traffictypediagnostic: AM0PR04MB5060:|AM0PR04MB5060:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB50609D366D9596CAD6282654F62B0@AM0PR04MB5060.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 02638D901B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(7916004)(396003)(366004)(346002)(136003)(39860400002)(376002)(189003)(199004)(5660300002)(66446008)(186003)(16526019)(2906002)(66476007)(8936002)(6862004)(86362001)(1076003)(52116002)(81166006)(6496006)(8676002)(53546011)(66946007)(64756008)(66556008)(26005)(81156014)(71200400001)(54906003)(316002)(44832011)(6486002)(4326008)(956004)(478600001)(33716001)(6636002)(9686003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5060;
+ H:AM0PR04MB5779.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: CEhE1rkYukRZOPVEANut4o4U8hFudjiGvGqIt2XArQr0PBaWE1cvDjR6ZE6qQ0Y5nYlzXx7tGZkZmBzzKGC6i0hWyd/PMS0cUK/le6r7/uV3cf1ajohvQ5T9/S+u8+oJ/T6FVe/P9t3TIr72H/9Dejb3dgCTIN2GXW2iNtyO6+6LtyxcIZLyRLjBPobjTn4m+RebxoJyk2LQSfUoWXFa8feBeaHPjlJrUG08/JYb638sWXKJiDZXLyMNrY2Lm4Zf0aFfP8dpvegzxjwkGfBlO7Nq0D4Lxz8Co+NvoaEVWtu0RkGfypEInz/Ez93X5rlzapxnQmsPYu3xufq2LDwFrGbkwLWgRwPFR2sPAbP1napU7JAjsENtjjKAvBTcUSzoVgBXP8KBt+TuSCkqWu8cnsHiUEO4sRYnA5GzIIfKankMqQrj53AVNODsoj+gg97K
+Content-ID: <8F23C618A82F824C80C1441332F2773D@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.173.221.248]
-X-CFilter-Loop: Reflected
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d51eed90-c363-43d2-ff4e-08d78a0c8568
+X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Dec 2019 14:04:28.1254 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: BCiT2gmbSgN40DgIsZSYRCnUW5fHfLnfeJwjKRtrNQcUQzEwQScM5pkTc3WsjQGWDiekjn9UbaBKWY8SAST0aQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5060
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_055912_844820_32A0EAC8 
-X-CRM114-Status: GOOD (  13.56  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191226_060433_799728_1F27CD56 
+X-CRM114-Status: GOOD (  18.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.68 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,238 +130,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, maz@kernel.org,
- daniel.lezcano@linaro.org, linux@armlinux.org.uk, steven.price@arm.com,
- yezengruan@huawei.com, james.morse@arm.com, catalin.marinas@arm.com,
- will@kernel.org, julien.thierry.kdev@gmail.com
+Cc: "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support the vcpu_is_preempted() functionality under KVM/arm64. This will
-enhance lock performance on overcommitted hosts (more runnable VCPUs
-than physical CPUs in the system) as doing busy waits for preempted
-VCPUs will hurt system performance far worse than early yielding.
+On 19-12-26 14:52:47, Anson Huang wrote:
+> Add i.MX8MP cpufreq DT support for speed grading and market
+> segment check.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+>  drivers/cpufreq/imx-cpufreq-dt.c | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
+> index 85a6efd..912e93d 100644
+> --- a/drivers/cpufreq/imx-cpufreq-dt.c
+> +++ b/drivers/cpufreq/imx-cpufreq-dt.c
+> @@ -35,7 +35,7 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		return ret;
+>  
+> -	if (of_machine_is_compatible("fsl,imx8mn"))
+> +	if (of_machine_is_compatible("fsl,imx8mn") || of_machine_is_compatible("fsl,imx8mp"))
 
-unix benchmark result:
-  host:  kernel 5.5.0-rc1, HiSilicon Kunpeng920, 8 CPUs
-  guest: kernel 5.5.0-rc1, 16 VCPUs
+Is there a way we could do this more generic so we won't have to add
+another of_machine_is_compatible if a new imx8m comes around ?
 
-               test-case                |    after-patch    |   before-patch
-----------------------------------------+-------------------+------------------
- Dhrystone 2 using register variables   | 334600751.0 lps   | 335319028.3 lps
- Double-Precision Whetstone             |     32856.1 MWIPS |     32849.6 MWIPS
- Execl Throughput                       |      3662.1 lps   |      2718.0 lps
- File Copy 1024 bufsize 2000 maxblocks  |    432906.4 KBps  |    158011.8 KBps
- File Copy 256 bufsize 500 maxblocks    |    116023.0 KBps  |     37664.0 KBps
- File Copy 4096 bufsize 8000 maxblocks  |   1432769.8 KBps  |    441108.8 KBps
- Pipe Throughput                        |   6405029.6 lps   |   6021457.6 lps
- Pipe-based Context Switching           |    185872.7 lps   |    184255.3 lps
- Process Creation                       |      4025.7 lps   |      3706.6 lps
- Shell Scripts (1 concurrent)           |      6745.6 lpm   |      6436.1 lpm
- Shell Scripts (8 concurrent)           |       998.7 lpm   |       931.1 lpm
- System Call Overhead                   |   3913363.1 lps   |   3883287.8 lps
-----------------------------------------+-------------------+------------------
- System Benchmarks Index Score          |      1835.1       |      1327.6
+If not, please drop the second one on a new line to follow the 80 chars rule.
 
-Signed-off-by: Zengruan Ye <yezengruan@huawei.com>
----
- arch/arm64/include/asm/paravirt.h |   3 +
- arch/arm64/kernel/paravirt.c      | 117 ++++++++++++++++++++++++++++++
- arch/arm64/kernel/setup.c         |   2 +
- include/linux/cpuhotplug.h        |   1 +
- 4 files changed, 123 insertions(+)
+Then you can add:
+Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
 
-diff --git a/arch/arm64/include/asm/paravirt.h b/arch/arm64/include/asm/paravirt.h
-index 7b1c81b544bb..ca3a2c7881f3 100644
---- a/arch/arm64/include/asm/paravirt.h
-+++ b/arch/arm64/include/asm/paravirt.h
-@@ -29,6 +29,8 @@ static inline u64 paravirt_steal_clock(int cpu)
- 
- int __init pv_time_init(void);
- 
-+int __init pv_lock_init(void);
-+
- __visible bool __native_vcpu_is_preempted(int cpu);
- 
- static inline bool pv_vcpu_is_preempted(int cpu)
-@@ -39,6 +41,7 @@ static inline bool pv_vcpu_is_preempted(int cpu)
- #else
- 
- #define pv_time_init() do {} while (0)
-+#define pv_lock_init() do {} while (0)
- 
- #endif // CONFIG_PARAVIRT
- 
-diff --git a/arch/arm64/kernel/paravirt.c b/arch/arm64/kernel/paravirt.c
-index d8f1ba8c22ce..bd2ad6a17a26 100644
---- a/arch/arm64/kernel/paravirt.c
-+++ b/arch/arm64/kernel/paravirt.c
-@@ -22,6 +22,7 @@
- #include <asm/paravirt.h>
- #include <asm/pvclock-abi.h>
- #include <asm/smp_plat.h>
-+#include <asm/pvlock-abi.h>
- 
- struct static_key paravirt_steal_enabled;
- struct static_key paravirt_steal_rq_enabled;
-@@ -35,6 +36,10 @@ struct pv_time_stolen_time_region {
- 	struct pvclock_vcpu_stolen_time *kaddr;
- };
- 
-+struct pv_lock_state_region {
-+	struct pvlock_vcpu_state *kaddr;
-+};
-+
- static DEFINE_PER_CPU(struct pv_time_stolen_time_region, stolen_time_region);
- 
- static bool steal_acc = true;
-@@ -158,3 +163,115 @@ int __init pv_time_init(void)
- 
- 	return 0;
- }
-+
-+static DEFINE_PER_CPU(struct pv_lock_state_region, lock_state_region);
-+
-+static bool kvm_vcpu_is_preempted(int cpu)
-+{
-+	struct pv_lock_state_region *reg;
-+	__le64 preempted_le;
-+
-+	reg = per_cpu_ptr(&lock_state_region, cpu);
-+	if (!reg->kaddr) {
-+		pr_warn_once("PV lock enabled but not configured for cpu %d\n",
-+			     cpu);
-+		return false;
-+	}
-+
-+	preempted_le = le64_to_cpu(READ_ONCE(reg->kaddr->preempted));
-+
-+	return !!(preempted_le & 1);
-+}
-+
-+static int pvlock_vcpu_state_dying_cpu(unsigned int cpu)
-+{
-+	struct pv_lock_state_region *reg;
-+
-+	reg = this_cpu_ptr(&lock_state_region);
-+	if (!reg->kaddr)
-+		return 0;
-+
-+	memunmap(reg->kaddr);
-+	memset(reg, 0, sizeof(*reg));
-+
-+	return 0;
-+}
-+
-+static int init_pvlock_vcpu_state(unsigned int cpu)
-+{
-+	struct pv_lock_state_region *reg;
-+	struct arm_smccc_res res;
-+
-+	reg = this_cpu_ptr(&lock_state_region);
-+
-+	arm_smccc_1_1_invoke(ARM_SMCCC_HV_PV_LOCK_PREEMPTED, &res);
-+
-+	if (res.a0 == SMCCC_RET_NOT_SUPPORTED) {
-+		pr_warn("Failed to init PV lock data structure\n");
-+		return -EINVAL;
-+	}
-+
-+	reg->kaddr = memremap(res.a0,
-+			      sizeof(struct pvlock_vcpu_state),
-+			      MEMREMAP_WB);
-+
-+	if (!reg->kaddr) {
-+		pr_warn("Failed to map PV lock data structure\n");
-+		return -ENOMEM;
-+	}
-+
-+	return 0;
-+}
-+
-+static int kvm_arm_init_pvlock(void)
-+{
-+	int ret;
-+
-+	ret = cpuhp_setup_state(CPUHP_AP_ARM_KVM_PVLOCK_STARTING,
-+				"hypervisor/arm/pvlock:starting",
-+				init_pvlock_vcpu_state,
-+				pvlock_vcpu_state_dying_cpu);
-+	if (ret < 0) {
-+		pr_warn("PV-lock init failed\n");
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static bool has_kvm_pvlock(void)
-+{
-+	struct arm_smccc_res res;
-+
-+	/* To detect the presence of PV lock support we require SMCCC 1.1+ */
-+	if (psci_ops.smccc_version < SMCCC_VERSION_1_1)
-+		return false;
-+
-+	arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
-+			     ARM_SMCCC_HV_PV_LOCK_FEATURES, &res);
-+
-+	if (res.a0 != SMCCC_RET_SUCCESS)
-+		return false;
-+
-+	return true;
-+}
-+
-+int __init pv_lock_init(void)
-+{
-+	int ret;
-+
-+	if (is_hyp_mode_available())
-+		return 0;
-+
-+	if (!has_kvm_pvlock())
-+		return 0;
-+
-+	ret = kvm_arm_init_pvlock();
-+	if (ret)
-+		return ret;
-+
-+	pv_ops.lock.vcpu_is_preempted = kvm_vcpu_is_preempted;
-+	pr_info("using PV-lock preempted\n");
-+
-+	return 0;
-+}
-diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-index 56f664561754..aa3a8b9e710f 100644
---- a/arch/arm64/kernel/setup.c
-+++ b/arch/arm64/kernel/setup.c
-@@ -341,6 +341,8 @@ void __init setup_arch(char **cmdline_p)
- 	smp_init_cpus();
- 	smp_build_mpidr_hash();
- 
-+	pv_lock_init();
-+
- 	/* Init percpu seeds for random tags after cpus are set up. */
- 	kasan_init_tags();
- 
-diff --git a/include/linux/cpuhotplug.h b/include/linux/cpuhotplug.h
-index e51ee772b9f5..f72ff95ab63a 100644
---- a/include/linux/cpuhotplug.h
-+++ b/include/linux/cpuhotplug.h
-@@ -138,6 +138,7 @@ enum cpuhp_state {
- 	CPUHP_AP_DUMMY_TIMER_STARTING,
- 	CPUHP_AP_ARM_XEN_STARTING,
- 	CPUHP_AP_ARM_KVMPV_STARTING,
-+	CPUHP_AP_ARM_KVM_PVLOCK_STARTING,
- 	CPUHP_AP_ARM_CORESIGHT_STARTING,
- 	CPUHP_AP_ARM64_ISNDEP_STARTING,
- 	CPUHP_AP_SMPCFD_DYING,
--- 
-2.19.1
-
-
+>  		speed_grade = (cell_value & IMX8MN_OCOTP_CFG3_SPEED_GRADE_MASK)
+>  			      >> OCOTP_CFG3_SPEED_GRADE_SHIFT;
+>  	else
+> @@ -54,7 +54,8 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
+>  		if (of_machine_is_compatible("fsl,imx8mm") ||
+>  		    of_machine_is_compatible("fsl,imx8mq"))
+>  			speed_grade = 1;
+> -		if (of_machine_is_compatible("fsl,imx8mn"))
+> +		if (of_machine_is_compatible("fsl,imx8mn") ||
+> +			of_machine_is_compatible("fsl,imx8mp"))
+>  			speed_grade = 0xb;
+>  	}
+>  
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
