@@ -2,62 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EA3F12AAB3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 07:56:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4A3012AAAA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 07:54:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mGkKcoW0IOBtMxpN/v4pJE/LJag6Katn06Yjp73jhLw=; b=ZPIorEUsPpwfGfo829mVizlCfS
-	QhZAWlICPP4yehhMdMCU1dHanEXkuEeeF7QDb6Ftb9lcodqaZakDGaAAgfCW28jX3uqvdK1MAL2xh
-	jokU7H6ok4pAEULWBXkRVmmIskkl8Mmm4/+QElgZbTTFXWz84h5pjgEp4acGRijUxmbWDY5Q4RF5/
-	pyWbuHy8HQFfyi9ZCPK/Fp+A+yv5rWVJO2PgN1NAHC3aXx0fx7iejH+11g9x1mb0kgNGIIrOFXAlj
-	eXjTCdr59gfJx6AYCXjXsQDqhxekeqmL9WorN0FJ5QDsqDLoVm+0E0R8srYZR5uYxqlfcKlGVmUZY
-	Ch1y642A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qa7EQhe2u8eVB6ueNBb4tme0GCX2CrP2LkB/BrAovaQ=; b=QsPu5jadp2aRBn
+	74MswhXZSlqnWMnYBknCMnZ8/xhL6DMIo3K1JUSRi3U+BXw3I2Emqug3HKXZNEnanWOIzXYhUQTGv
+	tlqc/pItHH2qqeCBEmqkQh64hdBnYnrl6lD3xy7XPkeJO5g9HEels3ZC8MzTkWg7qtMjLgjWfnsgW
+	61rAsLYFjDy1duCHzZ5n14sjwxCpXAlqdNQ4rLVO7vtznIw4qyX9Ed/UJSailk1yTzDCRDVpoz2zS
+	P2N3U16F4OQ2CkMV1vsrmrY5GYrMWTCU/HY/6gNBZFAEqm23hJ7JmuR3iS2c9sZa1oCVWyXZ5JZ9G
+	U8UKJ46c5m0Zk0xmMCuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikN4a-0006jo-3U; Thu, 26 Dec 2019 06:56:40 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikN40-0006Ym-Mi
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 06:56:06 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 78D541A163E;
- Thu, 26 Dec 2019 07:56:03 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8E5F71A0BFA;
- Thu, 26 Dec 2019 07:55:58 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 48DE7402B3;
- Thu, 26 Dec 2019 14:55:52 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: rjw@rjwysocki.net, viresh.kumar@linaro.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] cpufreq: imx-cpufreq-dt: Add i.MX8MP support
-Date: Thu, 26 Dec 2019 14:52:47 +0800
-Message-Id: <1577343167-16376-2-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1577343167-16376-1-git-send-email-Anson.Huang@nxp.com>
-References: <1577343167-16376-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1ikN1w-00054B-35; Thu, 26 Dec 2019 06:53:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ikN1m-00053o-Ps
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 06:53:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE66431B;
+ Wed, 25 Dec 2019 22:53:42 -0800 (PST)
+Received: from [10.163.1.130] (unknown [10.163.1.130])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2FA4D3F68F;
+ Wed, 25 Dec 2019 22:56:54 -0800 (PST)
+Subject: Re: [PATCH] arm64: Remove __exception_text_start and
+ __exception_text_end from asm/section.h
+To: Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+References: <1576917150-31678-1-git-send-email-pkushwaha@marvell.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <d717351f-df64-19d1-86c5-14de67e5d649@arm.com>
+Date: Thu, 26 Dec 2019 12:24:35 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
+MIME-Version: 1.0
+In-Reply-To: <1576917150-31678-1-git-send-email-pkushwaha@marvell.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191225_225604_877070_E6487023 
-X-CRM114-Status: UNSURE (   8.31  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191225_225346_886249_71B7B9BB 
+X-CRM114-Status: GOOD (  14.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -71,46 +65,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Kamlakant Patel <kamlakantp@marvell.com>, James Morse <james.morse@arm.com>,
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add i.MX8MP cpufreq DT support for speed grading and market
-segment check.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- drivers/cpufreq/imx-cpufreq-dt.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/cpufreq/imx-cpufreq-dt.c b/drivers/cpufreq/imx-cpufreq-dt.c
-index 85a6efd..912e93d 100644
---- a/drivers/cpufreq/imx-cpufreq-dt.c
-+++ b/drivers/cpufreq/imx-cpufreq-dt.c
-@@ -35,7 +35,7 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
- 
--	if (of_machine_is_compatible("fsl,imx8mn"))
-+	if (of_machine_is_compatible("fsl,imx8mn") || of_machine_is_compatible("fsl,imx8mp"))
- 		speed_grade = (cell_value & IMX8MN_OCOTP_CFG3_SPEED_GRADE_MASK)
- 			      >> OCOTP_CFG3_SPEED_GRADE_SHIFT;
- 	else
-@@ -54,7 +54,8 @@ static int imx_cpufreq_dt_probe(struct platform_device *pdev)
- 		if (of_machine_is_compatible("fsl,imx8mm") ||
- 		    of_machine_is_compatible("fsl,imx8mq"))
- 			speed_grade = 1;
--		if (of_machine_is_compatible("fsl,imx8mn"))
-+		if (of_machine_is_compatible("fsl,imx8mn") ||
-+			of_machine_is_compatible("fsl,imx8mp"))
- 			speed_grade = 0xb;
- 	}
- 
--- 
-2.7.4
+On 12/21/2019 02:02 PM, Prabhakar Kushwaha wrote:
+> Linux commit b6e43c0e3129 ("arm64: remove __exception annotations") has
+> removed __exception_text_start and __exception_text_end sections.
+> 
+> So removing reference of __exception_text_start and __exception_text_end
+> from from asm/section.h.
+> 
+> Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
+> Cc: James Morse <james.morse@arm.com>
+
+Looks good.
+
+Reviewed-by: Anshuman Khandual <anshuman.khandual@arm.com>
+
+> ---
+>  arch/arm64/include/asm/sections.h | 1 -
+>  1 file changed, 1 deletion(-)
+> 
+> diff --git a/arch/arm64/include/asm/sections.h b/arch/arm64/include/asm/sections.h
+> index 25a73aab438f..3994169985ef 100644
+> --- a/arch/arm64/include/asm/sections.h
+> +++ b/arch/arm64/include/asm/sections.h
+> @@ -8,7 +8,6 @@
+>  #include <asm-generic/sections.h>
+>  
+>  extern char __alt_instructions[], __alt_instructions_end[];
+> -extern char __exception_text_start[], __exception_text_end[];
+>  extern char __hibernate_exit_text_start[], __hibernate_exit_text_end[];
+>  extern char __hyp_idmap_text_start[], __hyp_idmap_text_end[];
+>  extern char __hyp_text_start[], __hyp_text_end[];
+> 
 
 
 _______________________________________________
