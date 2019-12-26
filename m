@@ -2,70 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6FEF12AB6A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 10:52:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B9F712AB70
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 10:54:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=IrXwYC6Gh8VBvI9iSdWDvjA7ERUZcDvOrsv7zGAyIOc=; b=bn+ER9Flwg96UzxgJlvB57rvL+
-	9wJ9cD7NyVjOhWL299mOn45r9e031pcF5S6dn+RNz3Y/x7sgpnoyoL0lupqba8AGfmQhTCBxXwR8x
-	cq2DlHIsZBGk8YyBxn44BApf7Umdp2lWV7g1LndrnlhReu71n4Q9QrqBXJD8VdwUZpGqwu32N5NJ6
-	GJDngIkVgBUJCIA9yITe0j+wzVLilymvP1LUcQ3a2SMiYt/8G4FScinoTz7WJmZG6AFZrZtFMiT+N
-	m5xAkTIdDmzc5QA2ygxEKH5j+euvpZ1cr60IQgWdy0AMYhfpYHxSaob3F0IH6trVzrQ7LhbBcp/+m
-	5MUwZSRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4chB0w5bOHEgjR6glQd/lT1mwZ99iw/wB0Ts8jpw0Rg=; b=IYfbaCj93oLfPmGntoQy3NPpN
+	c4FFgEnKz1+b0dVNSDIKbnKSkPb4u/MsERj71RZ7UlV5A01W/lv/hLwS0qk0acDkbspxzM8/2kuaL
+	zfKUBz1eL0FoZt/B+b80Eg99PixYiRNPzfQME+3SP3CPQpTPwR3NhZJG9sxWqc62AzPOrDeZum9jn
+	WayMScgb+uZoTYfwNtBZoUbDK9ZHVEZIKHH4Yk+jf+o7OUydQsSuRbfYkjguVqozi/xxzMCWnSnUP
+	RPKhrzbXMVZJ7Nt7NbQrcngaznitWcGtV3fhFxEveLF/MQB2sLkY7xf7gEaMqqXoQuw2FrBeiv9wx
+	9oGPuQQww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikPoe-000445-2Z; Thu, 26 Dec 2019 09:52:24 +0000
-Received: from conuserg-10.nifty.com ([210.131.2.77])
+	id 1ikPqA-0004ec-U0; Thu, 26 Dec 2019 09:53:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikPoU-00043Y-0t
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 09:52:15 +0000
-Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
- [153.142.97.92]) (authenticated)
- by conuserg-10.nifty.com with ESMTP id xBQ9pgNY023812;
- Thu, 26 Dec 2019 18:51:43 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-10.nifty.com xBQ9pgNY023812
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1577353904;
- bh=ZLGd9Sa7OALWrLmeWhKg0zq7ZvRRBITnevotAyP+VUY=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=oMWsgAD7R/WJ2a2AIefVtYY9nZ9TdqVt884C1haeLpabCj7Fd2Xf4zuc3jhuQk30K
- yjjIxwdEdN2KbihzBeV7tl0m0LqoCaihEX/dETE7W/li8pQqaH85rnWM/s+ojNu2Xz
- 203MHgdB5eUJBhu9KvHsOKMuWvmQ7KzJycDHx6Fzg7evPmc34l0qY1TdGdVdZvXCrF
- /aIGwh8lWfh1dMQyXw5GDKKywIecYr1hq+0y47ELlRUPnsV5Ty+IeHMdCDzOb0qgDp
- LZU34q1ozlbJdJvz++YtUNDTbHztD+AQXSZQ6cKTSxj0w0CkMes0JrI31FZaQCIb9s
- 5syvPjmEpHsVA==
-X-Nifty-SrcIP: [153.142.97.92]
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org, Joerg Roedel <joro@8bytes.org>,
- iommu@lists.linux-foundation.org
-Subject: [PATCH 2/2] iommu/arm-smmu-v3: simplify parse_driver_options()
-Date: Thu, 26 Dec 2019 18:51:41 +0900
-Message-Id: <20191226095141.30352-2-yamada.masahiro@socionext.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191226095141.30352-1-yamada.masahiro@socionext.com>
-References: <20191226095141.30352-1-yamada.masahiro@socionext.com>
+ id 1ikPpy-0004dm-OK
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 09:53:48 +0000
+Received: from localhost (lfbn-lyo-1-633-204.w90-119.abo.wanadoo.fr
+ [90.119.206.204])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8DD252080D;
+ Thu, 26 Dec 2019 09:53:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577354026;
+ bh=dGwRFsRQln5B894HkC1AQaBbrX1OHeeRML8iSWjpZgE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Dgn/DuDz+L/BUxnVLvQlzq2ES7WPkunjwb+MU50mPr9kHx/cQ5bm4vXbrRoiSR2mg
+ enWr6QOIn1W/J+HOPP7oQWFtVLVgF26bgngE+q4/zfrSD5sVSTkuQpoGAKCWFYAzpO
+ 5cKA0Hxrb2SEob+emBTjwVQNxaUIrYWwBnKrzJWc=
+Date: Thu, 26 Dec 2019 10:55:07 +0100
+From: Maxime Ripard <mripard@kernel.org>
+To: Chen-Yu Tsai <wens@kernel.org>
+Subject: Re: [PATCH] ARM: dts: sunxi: Add Libre Computer ALL-H3-IT H5 board
+Message-ID: <20191226095507.olorn47y7xmddgin@hendrix.home>
+References: <20191224061555.18358-1-wens@kernel.org>
+MIME-Version: 1.0
+In-Reply-To: <20191224061555.18358-1-wens@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_015214_278096_31CDA451 
-X-CRM114-Status: UNSURE (   9.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20191226_015346_808691_B2CAC69E 
+X-CRM114-Status: GOOD (  15.94  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.77 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,59 +75,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masahiro Yamada <yamada.masahiro@socionext.com>,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4484193161988800671=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Using ARRAY_SIZE() instead of the sentinel is slightly simpler, IMHO.
 
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
----
+--===============4484193161988800671==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="lweqfbwsvdz4r4jl"
+Content-Disposition: inline
 
- drivers/iommu/arm-smmu-v3.c | 7 +++----
- 1 file changed, 3 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index ed9933960370..b27489b7f9d8 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -676,7 +676,6 @@ struct arm_smmu_option_prop {
- static const struct arm_smmu_option_prop arm_smmu_options[] = {
- 	{ ARM_SMMU_OPT_SKIP_PREFETCH, "hisilicon,broken-prefetch-cmd" },
- 	{ ARM_SMMU_OPT_PAGE0_REGS_ONLY, "cavium,cn9900-broken-page1-regspace"},
--	{ 0, NULL},
- };
- 
- static inline void __iomem *arm_smmu_page1_fixup(unsigned long offset,
-@@ -696,16 +695,16 @@ static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
- 
- static void parse_driver_options(struct arm_smmu_device *smmu)
- {
--	int i = 0;
-+	int i;
- 
--	do {
-+	for (i = 0; i < ARRAY_SIZE(arm_smmu_options); i++) {
- 		if (of_property_read_bool(smmu->dev->of_node,
- 						arm_smmu_options[i].prop)) {
- 			smmu->options |= arm_smmu_options[i].opt;
- 			dev_notice(smmu->dev, "option %s\n",
- 				arm_smmu_options[i].prop);
- 		}
--	} while (arm_smmu_options[++i].opt);
-+	};
- }
- 
- /* Low-level queue manipulation functions */
--- 
-2.17.1
+--lweqfbwsvdz4r4jl
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
+On Tue, Dec 24, 2019 at 02:15:55PM +0800, Chen-Yu Tsai wrote:
+> From: Chen-Yu Tsai <wens@csie.org>
+>
+> The Libre Computer ALL-H3-IT board is a small single board computer that
+> is roughly the same size as the Raspberry Pi Zero, or around 20% smaller
+> than a credit card.
+>
+> The board features:
+>
+>   - H2, H3, or H5 SoC from Allwinner
+>   - 2 DDR3 DRAM chips
+>   - Realtek RTL8821CU based WiFi module
+>   - 128 Mbit SPI-NOR flash
+>   - micro-SD card slot
+>   - micro HDMI video output
+>   - FPC connector for camera sensor module
+>   - generic Raspberri-Pi style 40 pin GPIO header
+>   - additional pin headers for extra USB host ports, ananlog audio and
+>     IR receiver
+>
+> Only H5 variant test samples were made available, but the vendor does
+> have plans to include at least an H3 variant. Thus the device tree is
+> split much like the ALL-H3-CC, with a common dtsi file for the board
+> design, and separate dts files including the common board file and the
+> SoC dtsi file. The other variants will be added as they are made
+> available.
+>
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+
+Applied, thanks!
+Maxime
+
+--lweqfbwsvdz4r4jl
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXgSDewAKCRDj7w1vZxhR
+xdlUAP4/EcPmWRKjD8xeYE9H+HSdokqIYjvzND2KP2yG9ujTsgEAkKWq6a5Igzyn
+/wXdS4/5tQyqvruVUJaIsmeNwKAxTAY=
+=RYso
+-----END PGP SIGNATURE-----
+
+--lweqfbwsvdz4r4jl--
+
+
+--===============4484193161988800671==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4484193161988800671==--
+
