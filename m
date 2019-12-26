@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2C4A12AE0E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 19:53:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8E4D12AE26
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 20:01:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E39IJ1wA6Ndri476MW7g2nx4DgkPfv2mEtlhXfCm1YA=; b=b8o8TTnRwor0+w
-	kc5UNOyMijolqPU2DDZgFSc3cAY0JNPSIHTRwbt2DKtWNanhSXFrT2Wy5ixi8MGwbpjzqthCcliZs
-	UhLflVOC5adcpar5bcSFZWen94uGPG/kn+GsxdGP9ruK5SGcAHyh7voP1SO/4eKYUZcs3zPm+O7w6
-	XEgUjfskQNtkhP683sa5SblpaApwhFPsj+/vbXd0NwZUrmoCeK1vojoog2K+ltyVpyWkg+dztxHSf
-	28RVCVTI9uip/DM8w/hNOZTtUd3FmNGLari0sbW4rKQ7s+ezBBWcu0Sll4NQKrNRYR7XLHAEYQ0dD
-	RSJQpquXZ9f3h2XwvXaw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=okygmG3G/x+IDp1TJcc7mTHQGG6h6eE5NTXrSiUqwjs=; b=Ir2K8wuRLE1b4/
+	GR7ZFHpYPpSPF2biPnWJd5P6DtPF9ldNSw8WKrOFIQ3yzRwVHCtXNHGWLbGRQw4klNdTOe1/RY3TK
+	TboWrm6PbNlX/mMV5h39KUmOehm3brNpu4TawyFaiL8ed+wjx2CymCvJmTjk0maaP9YHXwDjrEcaq
+	UQTjk/Q27WpycJ4YKiDpq2qaKNxxCK1GqeBK0LrQ9ek/CzlZZtfHTRpwspsYgEsB1m7TyJx0zP6Tw
+	VvjQ58KQm0U17WXW65Fq59LZPiQunRA6TT12P2YS1heUJx3cOaQIn01bj/RY4Qdyc7HqWI17oUdq1
+	hHjIk6m6rZ8ZezmVI/ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikYFw-0002rf-80; Thu, 26 Dec 2019 18:53:08 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1ikYO4-0006Ob-34; Thu, 26 Dec 2019 19:01:32 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikYFJ-0002Jj-U1; Thu, 26 Dec 2019 18:52:31 +0000
-Received: by mail-wm1-x343.google.com with SMTP id m24so6477747wmc.3;
- Thu, 26 Dec 2019 10:52:29 -0800 (PST)
+ id 1ikYNn-0006MP-Hk; Thu, 26 Dec 2019 19:01:18 +0000
+Received: by mail-wm1-x341.google.com with SMTP id u2so6666215wmc.3;
+ Thu, 26 Dec 2019 11:01:15 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=Tdk21lW1THUxHtY9vlZ1nRwe59sn6+TCzl9IK6kCrxY=;
- b=iy5TYbCSAWLEklxNjWcYw/NjNKf0lb/V+hYcCMh1kVbwFjgAETRmR2NieVU29nMbjG
- 3ColCXXTQ0PqfbprUmdkgtLUaHb1vYj82WbM2M/V3MNOvimf47w7XFn01bmr4+V9CDLK
- VWhuREDvC+8s9OkXhnDIVropP7Wv9E2KuFnhipf4sMbrS+Q9h4uWq5HyeZz6go9/OJoM
- 9KdREoM6V0gppd2Won4vWzgUqUB4sR9b9uYDLszLW0kvy0uU5a/C3zGcuBCdNegAsxsu
- mv9mWq+YqWxpj8gUDTonZkALbmA1v3Hu8iYaWXNZSoI9accUVyGZsewf/zxHDGFth1Qu
- mF2A==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ncp0cKjiqSNqZtUZj6kSVhT3fNnvKYgj+9vZwHCvLHU=;
+ b=OG2vGorWxsVVWtHw8LcxkzPlVF8DTxDoodaUSMIy1WNJTNkvvSkZRVTN8+QAcO4TF+
+ BeA84DgZvW64FGHilCuwScNiEckg8lvJjC1G4siYN5zQujILB1NMUkzwKGzEC3KGGlUZ
+ Tkm578bVH9QmfnZYmUFbaErWmfWeqB1PK8jdwfkme/0Jldsdqi4XI3A1cVO52nwz6mD7
+ EJ+izmSGSCbYVk9y9J4DcSuMczsoLYpsXPnf7WTcFeQ+r5pUpUeGQQHK8qHx9KjjOLXT
+ dxYkeNK3g9ji0vmpZd2jeU9cI3WrTFSTtfFnbD7spBii7q20Hbe6/Cd8a4no2QihtKF+
+ SHzw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=Tdk21lW1THUxHtY9vlZ1nRwe59sn6+TCzl9IK6kCrxY=;
- b=Gtm7PwrLij88IqNVHjwFat/PEw1zI4U1Q2MM3H3Y8miX2c9sUWanL5h5x3fgRgh+6n
- OzIqTcieNsEzQ7TnhfgrEWH0hTuDZoAS5AaqeA5Qvw3WHk5DCBX7Bb+yG9QQTc0aZM8Q
- x8467qZYlp0c/tJ+xHcAwoGR0tUzX1XP17P8Ed4s3TvRmv1zgEvB4FCJ7iau6gCQzLcU
- gZP9QD9sYn89hSOSnymp0Ogyvu2BfloyXP1q/yX/LyngJkIpnM5RfinHEjpJ8PS+T6tV
- hoj1QxW/lBEihX09X46700W1LjFbCT9j7jkQQNrVZwwjeT6e3a0t/RxTcEMRI7XA+OOG
- H7Hg==
-X-Gm-Message-State: APjAAAWrWPWbSe8E//DuNSgKwoPNcOlzxeCgsKhiDUpfF6sBDIdjBaT6
- CjmH0MycwjIUtdiMvOCOwAQ=
-X-Google-Smtp-Source: APXvYqytWCvSfGTkES4SMiUhI/nM1xVgQh7JR7YbzW2kovtBSDGlDHHDJAYkz2oB1+Ao2XlCczoPDw==
-X-Received: by 2002:a1c:a745:: with SMTP id q66mr14592494wme.167.1577386348409; 
- Thu, 26 Dec 2019 10:52:28 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ncp0cKjiqSNqZtUZj6kSVhT3fNnvKYgj+9vZwHCvLHU=;
+ b=QEB364iR6GUYx1RhSKGoppBfNEl1p2hhSfV8ZcavbDaUN8rgHkY1lbCYpkoHnXrnhF
+ fcDVNkJ2xz/d4pSBU9y6gRHnv4zUJK/X3A1h+6KVpuVTJslqEFQY6PQcXMvPhd7Vfjk3
+ 0d0TtbbS1C/5xsMrZstQn8hIdg+cMNjn2sht3jSdNws7HeqcxWi3u9df6P70GWxHl37z
+ JGk4c8mjk491WUBORQXmqz/Pj9TBYtrxiC/r138ygDWoSnpG2E5i7ND3AqXtL6TMXypJ
+ TBOluU4bYv0Gk33w6j5bmd/34IjOQVfcPnadHL44FMGr5FQORS0kisPOSweqdnEJdLC0
+ TO/g==
+X-Gm-Message-State: APjAAAVH09ViY82Yht+TIa//b6z1uQI78EeZTaqyWRzt09ft+tVQFm/n
+ BYGdyPInq5NtVJt041p0O9Y=
+X-Google-Smtp-Source: APXvYqwyHmDN753nFzJKANB8LWnP8tdzNpfU5bel2yfMTlsatjTbMVaemA+4OF1AHv2hPmAbPF+juQ==
+X-Received: by 2002:a7b:c08d:: with SMTP id r13mr16253154wmh.104.1577386873950; 
+ Thu, 26 Dec 2019 11:01:13 -0800 (PST)
 Received: from localhost.localdomain
  (p200300F1373A1900428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:373a:1900:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id j12sm32129352wrt.55.2019.12.26.10.52.27
+ by smtp.googlemail.com with ESMTPSA id u18sm31777854wrt.26.2019.12.26.11.01.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Dec 2019 10:52:27 -0800 (PST)
+ Thu, 26 Dec 2019 11:01:13 -0800 (PST)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: andrew@lunn.ch, f.fainelli@gmail.com, davem@davemloft.net,
  netdev@vger.kernel.org, linux-amlogic@lists.infradead.org
-Subject: [PATCH 2/2] net: phy: realtek: add support for configuring the RX
- delay on RTL8211F
-Date: Thu, 26 Dec 2019 19:51:48 +0100
-Message-Id: <20191226185148.3764251-3-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v2 0/1] dwmac-meson8b: Ethernet RGMII TX delay fix
+Date: Thu, 26 Dec 2019 20:01:00 +0100
+Message-Id: <20191226190101.3766479-1-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20191226185148.3764251-1-martin.blumenstingl@googlemail.com>
-References: <20191226185148.3764251-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_105229_966612_BE33F292 
-X-CRM114-Status: GOOD (  18.36  )
+X-CRM114-CacheID: sfid-20191226_110115_610877_C0E76073 
+X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (martin.blumenstingl[at]googlemail.com)
@@ -108,113 +106,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On RTL8211F the RX and TX delays (2ns) can be configured in two ways:
-- pin strapping (RXD1 for the TX delay and RXD0 for the RX delay, LOW
-  means "off" and HIGH means "on") which is read during PHY reset
-- using software to configure the TX and RX delay registers
+The Ethernet TX performance has been historically bad on Meson8b and
+Meson8m2 SoCs because high packet loss was seen. Today I (presumably)
+found out why this is: the input clock (which feeds the RGMII TX clock)
+has to be at least 4 times 125MHz. With the fixed "divide by 2" in the
+clock tree this means that m250_div needs to be at least 2.
 
-So far only the configuration using pin strapping has been supported.
-Add support for enabling or disabling the RGMII RX delay based on the
-phy-mode to be able to get the RX delay into a known state. This is
-important because the RX delay has to be coordinated between the PHY,
-MAC and the PCB design (trace length). With an invalid RX delay applied
-(for example if both PHY and MAC add a 2ns RX delay) Ethernet may not
-work at all.
+With this patch and a 2ns TX delay generated by either the MAC *or* the
+PHY this results in improved Ethernet TX performance and no packet loss
+anymore:
+# iperf3 -c 192.168.1.100
+Connecting to host 192.168.1.100, port 5201
+[  5] local 192.168.1.163 port 42636 connected to 192.168.1.100 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec   105 MBytes   878 Mbits/sec    0    609 KBytes       
+[  5]   1.00-2.00   sec   106 MBytes   885 Mbits/sec    0    683 KBytes       
+[  5]   2.00-3.09   sec  73.7 MBytes   570 Mbits/sec    0    683 KBytes       
+[  5]   3.09-4.00   sec  81.9 MBytes   754 Mbits/sec    0    795 KBytes       
+[  5]   4.00-5.00   sec   104 MBytes   869 Mbits/sec    0    877 KBytes       
+[  5]   5.00-6.00   sec   105 MBytes   878 Mbits/sec    0    877 KBytes       
+[  5]   6.00-7.00   sec  68.0 MBytes   571 Mbits/sec    0    877 KBytes       
+[  5]   7.00-8.00   sec  80.7 MBytes   676 Mbits/sec    0    877 KBytes       
+[  5]   8.00-9.01   sec   102 MBytes   853 Mbits/sec    0    877 KBytes       
+[  5]   9.01-10.00  sec   101 MBytes   859 Mbits/sec    0    877 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-10.00  sec   927 MBytes   778 Mbits/sec    0             sender
+[  5]   0.00-10.01  sec   927 MBytes   777 Mbits/sec                  receiver
 
-Also add debug logging when configuring the RX delay (just like the TX
-delay) because this is a common source of problems.
 
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- drivers/net/phy/realtek.c | 46 ++++++++++++++++++++++++++++++---------
- 1 file changed, 36 insertions(+), 10 deletions(-)
+The .dts of these boards are still using an incorrect TX delay of 4ns.
+This will be fixed in follow-up patches when it's clear whether the MAC
+really generates an RX delay and how this can be configured.
 
-diff --git a/drivers/net/phy/realtek.c b/drivers/net/phy/realtek.c
-index 879ca37c8508..f5fa2fff3ddc 100644
---- a/drivers/net/phy/realtek.c
-+++ b/drivers/net/phy/realtek.c
-@@ -29,6 +29,8 @@
- #define RTL8211F_INSR				0x1d
- 
- #define RTL8211F_TX_DELAY			BIT(8)
-+#define RTL8211F_RX_DELAY			BIT(3)
-+
- #define RTL8211E_TX_DELAY			BIT(1)
- #define RTL8211E_RX_DELAY			BIT(2)
- #define RTL8211E_MODE_MII_GMII			BIT(3)
-@@ -172,38 +174,62 @@ static int rtl8211c_config_init(struct phy_device *phydev)
- static int rtl8211f_config_init(struct phy_device *phydev)
- {
- 	struct device *dev = &phydev->mdio.dev;
--	u16 val;
-+	u16 val_txdly, val_rxdly;
- 	int ret;
- 
--	/* enable TX-delay for rgmii-{id,txid}, and disable it for rgmii and
--	 * rgmii-rxid. The RX-delay can be enabled by the external RXDLY pin.
--	 */
- 	switch (phydev->interface) {
- 	case PHY_INTERFACE_MODE_RGMII:
-+		val_txdly = 0;
-+		val_rxdly = 0;
-+		break;
-+
- 	case PHY_INTERFACE_MODE_RGMII_RXID:
--		val = 0;
-+		val_txdly = 0;
-+		val_rxdly = RTL8211F_RX_DELAY;
- 		break;
--	case PHY_INTERFACE_MODE_RGMII_ID:
-+
- 	case PHY_INTERFACE_MODE_RGMII_TXID:
--		val = RTL8211F_TX_DELAY;
-+		val_txdly = RTL8211F_TX_DELAY;
-+		val_rxdly = 0;
-+		break;
-+
-+	case PHY_INTERFACE_MODE_RGMII_ID:
-+		val_txdly = RTL8211F_TX_DELAY;
-+		val_rxdly = RTL8211F_RX_DELAY;
- 		break;
-+
- 	default: /* the rest of the modes imply leaving delay as is. */
- 		return 0;
- 	}
- 
- 	ret = phy_modify_paged_changed(phydev, 0xd08, 0x11, RTL8211F_TX_DELAY,
--				       val);
-+				       val_txdly);
- 	if (ret < 0) {
- 		dev_err(dev, "Failed to update the TX delay register\n");
- 		return ret;
- 	} else if (ret) {
- 		dev_dbg(dev,
- 			"%s 2ns TX delay (and changing the value from pin-strapping RXD1 or the bootloader)\n",
--			val ? "Enabling" : "Disabling");
-+			val_txdly ? "Enabling" : "Disabling");
- 	} else {
- 		dev_dbg(dev,
- 			"2ns TX delay was already %s (by pin-strapping RXD1 or bootloader configuration)\n",
--			val ? "enabled" : "disabled");
-+			val_txdly ? "enabled" : "disabled");
-+	}
-+
-+	ret = phy_modify_paged_changed(phydev, 0xd08, 0x15, RTL8211F_RX_DELAY,
-+				       val_rxdly);
-+	if (ret < 0) {
-+		dev_err(dev, "Failed to update the RX delay register\n");
-+		return ret;
-+	} else if (ret) {
-+		dev_dbg(dev,
-+			"%s 2ns RX delay (and changing the value from pin-strapping RXD0 or the bootloader)\n",
-+			val_rxdly ? "Enabling" : "Disabling");
-+	} else {
-+		dev_dbg(dev,
-+			"2ns RX delay was already %s (by pin-strapping RXD0 or bootloader configuration)\n",
-+			val_rxdly ? "enabled" : "disabled");
- 	}
- 
- 	return 0;
+
+Changes since v1 [0]:
+- update cover-letter title
+- dropped the .dts patches after discussion with Andrew in [1]
+- slightly reworded the patch description of patch #1 to indicate that
+  the goal is to fix the TX delay generated by the MAC, without
+  suggesting that it's recommended to let the MAC actually generate it.
+
+
+[0] https://patchwork.kernel.org/cover/11309887/
+[1] https://patchwork.kernel.org/patch/11309891/
+
+
+Martin Blumenstingl (1):
+  net: stmmac: dwmac-meson8b: Fix the RGMII TX delay on Meson8b/8m2 SoCs
+
+ .../net/ethernet/stmicro/stmmac/dwmac-meson8b.c    | 14 +++++++++++---
+ 1 file changed, 11 insertions(+), 3 deletions(-)
+
 -- 
 2.24.1
 
