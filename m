@@ -2,52 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 723E312AD7D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 17:39:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CA9212ADA1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 18:15:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+/czoa23E2GztyBT36Ic6E7NlWvoAM+hHVlLYHPYFn4=; b=YdHnOhLWxBaUQV
-	bNiBsmIExMLEFOJiSloOk75fLvCzq+Yvu/dDM9TKFIpQtEeCiu0VtGbkSAlu+Z1EYOnG5H4ovsTQj
-	ao6jMnVfS368GTXwpIiQs2+pqEcdPP9qOdNnLP4nFETkiS7YXqqkOdHpdv/ELERTK6FBFsCht+SNk
-	/mU54xxfAvxSovZzebcEtnguJy/3sWq4iTCzgYvHP6vhEu2fSg/n7vLEDOPYNQrBFpIY2KwOOWeKU
-	vaG1c5GdrBCMAbzhVv3jZ3XW3tDDmM7B1APPC16z1X3BQH5baG5NhV8xnp0IxE7axUAdZV2dfwhhN
-	OTiAwlE5v0SbzxxTkwfg==;
+	List-Owner; bh=uycnt0aGwaLt/YSZm8TN5sNvf1p7rV6yYaV041xmRwM=; b=IsqxO1g6hjzCiU
+	Ne5dzBlt2HCKTGA0JAdE+R7vwGd48Aegx/j89/ft9agNoD1gx/5sLz2xhGrhMS5p5dsNeU9ppgVlI
+	4hqjTIzzSewrlA74w+HtE2aH7Li3EM1VBX2bESPwBLKNyqcjRqA68YzXDdXwYbiILNEOHZ4bhP5zm
+	rHyti1TPJAmt266xRoMR9BBPawq71J94pvTDHpuo160cRqeeVC5IYgOi9QKxaaRw8ziYNDDpUn+/p
+	cStFrSnXRgtrh+QVclB5hI1zwzzvQ978revFNMe4UArsbDKB6P6WsAhbnJDjNtc4qZkZ8PlhHD4Vh
+	bwH3OFT0N3UJdtrs8a/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikWA5-0006WE-Uv; Thu, 26 Dec 2019 16:38:57 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1ikWin-0008Ok-F6; Thu, 26 Dec 2019 17:14:49 +0000
+Received: from us03-smtprelay2.synopsys.com ([149.117.87.133]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikW9u-0006Vp-NW; Thu, 26 Dec 2019 16:38:49 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id BDB13292054
-Message-ID: <c7dd37a21c0b43d1b05242f6077102414a3d81d9.camel@collabora.com>
-Subject: Re: [PATCH v22 2/2] drm/bridge: Add I2C based driver for ps8640 bridge
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>, 
- linux-kernel@vger.kernel.org
-Date: Thu, 26 Dec 2019 13:38:28 -0300
-In-Reply-To: <20191223143538.20327-3-enric.balletbo@collabora.com>
-References: <20191223143538.20327-1-enric.balletbo@collabora.com>
- <20191223143538.20327-3-enric.balletbo@collabora.com>
-Organization: Collabora
-User-Agent: Evolution 3.34.1-2 
+ id 1ikWif-0008No-GP
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 17:14:42 +0000
+Received: from mailhost.synopsys.com (badc-mailhost2.synopsys.com
+ [10.192.0.18])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 14305C096E;
+ Thu, 26 Dec 2019 17:14:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1577380476; bh=le4nA7EEjIQ/8dDjq/zddFgh/LFz5D/hv7vEtLT/MXQ=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To:From;
+ b=TDSn+jT+zVxCM459OfDnrzPiZ5IwRY6fWxTt6dN0z5FpDVFkS4IlEQ3m0AdGofa5P
+ p+/VKKSxpiNcCsoSuXkpYhSspzJWNI9r5O5MFNDQyLBjouilfA3TS78vZXofn27EwL
+ x8cdYlRso+Q5Ksb5Ddxffu/GRNnEkKGZADoTql6G0uXMKsVqfUxAw3cyUogajm1+Ia
+ 6CDBFjFd3B4zgZ29P8FB58BPXmK7Nd66AXYY7HLSKIBFMBBr90DRtvF9amfAg9CgIX
+ /adpjQRskw6hMhQ0NsPzZ9TWdAmEAQqbScPR50CDPxLgi+k1q4HdO4NO0tk9f0JTtk
+ y3x0PF2negbTQ==
+Received: from US01WEHTC3.internal.synopsys.com
+ (us01wehtc3.internal.synopsys.com [10.15.84.232])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mailhost.synopsys.com (Postfix) with ESMTPS id D288AA007E;
+ Thu, 26 Dec 2019 17:14:33 +0000 (UTC)
+Received: from US01HYBRID2.internal.synopsys.com (10.15.246.24) by
+ US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Thu, 26 Dec 2019 09:14:23 -0800
+Received: from NAM11-DM6-obe.outbound.protection.outlook.com (10.202.3.67) by
+ mrs.synopsys.com (10.15.246.24) with Microsoft SMTP Server (TLS) id
+ 14.3.408.0; Thu, 26 Dec 2019 09:14:22 -0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=lf8pyPC+mugwc/qRwl7wrNhhuv/4pQu7J5XaYBgmes+kEacNFIIZXaUGlELcE0LvpVo+3yKvtTXsEGhHh1V8sQocPUvYUMAXIqftjm9tr94MnXMiFP7tFTmWb7COvNu1KZvHEv0CZ6iuHM5IS0sX81oC6UC6cfTdsWUUrG9K+Bt/3H+FzO3+YwEzPyLOFymXNNpWhDaeT49WNTjVtsGKszgkdmwD5G13CQiGfkwpKsqvNa3lEV2xqCZjr7JHg0qeXXDZy4vlhphMYx7paweRfbogVEEvG1YdjEnL9niT/4XKBqKGkgqRKPwiK6OVfeijLVbBLMEb3ZgbZlvuGA4HjA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=le4nA7EEjIQ/8dDjq/zddFgh/LFz5D/hv7vEtLT/MXQ=;
+ b=jQj0dyUgjEmz1ebiVb7tdifDFC4PuvSrLVjZhPS1pXk+YspwB26pDpAdRiRxI2/OaUl+Bdpoo95ydWGooDprvR2Q0pBqJWWQDDhfq2p8gJaVm2w/vpDXtdpCqXwYKZXptuN8LFXqXgC1WjtJxyheKY31Xb2RMjBYjfAzBoKek9cfsZFbhCJYisb0AzhTNHSXM1t2e+ZRd8uiriqjKCVDnBjPBJusNe5DWnh7wLNoBiWD/eoSGch8iLTTyi4MYdiOMKd3JVYzmArfPGpDuqCwJLjgwpvVpnMEYMxHU7JP1sU9UWfsy40XydKYWaEygXu8VM/Ve7IfKEzRm0V1Z7eJtw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
+ dkim=pass header.d=synopsys.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=synopsys.onmicrosoft.com; s=selector2-synopsys-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=le4nA7EEjIQ/8dDjq/zddFgh/LFz5D/hv7vEtLT/MXQ=;
+ b=ZXNnWdDo+eu2qe9NLZyCVCYyLTWnX0gDf0wszsxtRrrTWQO6iaUcCKvNcjwU3oL2X+6Vh4oqSpQWgDu3H/PjKCsAoD6OG9ceaC8EnKdr+/evQp1Y/I76darmgFvqbLaIBJH30opwraIH5RAOrFZYSLKRvZC7IANdjYH2/WPc03Q=
+Received: from BN8PR12MB3266.namprd12.prod.outlook.com (20.179.67.145) by
+ BN8PR12MB3235.namprd12.prod.outlook.com (20.179.67.147) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2559.15; Thu, 26 Dec 2019 17:14:21 +0000
+Received: from BN8PR12MB3266.namprd12.prod.outlook.com
+ ([fe80::3d20:3a36:3b64:4510]) by BN8PR12MB3266.namprd12.prod.outlook.com
+ ([fe80::3d20:3a36:3b64:4510%7]) with mapi id 15.20.2581.007; Thu, 26 Dec 2019
+ 17:14:21 +0000
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: Colin Ian King <colin.king@canonical.com>, "David S. Miller"
+ <davem@davemloft.net>, Giuseppe Cavallaro <peppe.cavallaro@st.com>, Alexandre
+ Torgue <alexandre.torgue@st.com>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, "netdev@vger.kernel.org"
+ <netdev@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
+Subject: RE: net: stmmac: Add basic EST support for GMAC5+
+Thread-Topic: net: stmmac: Add basic EST support for GMAC5+
+Thread-Index: AQHVt5AvYOAfEKP32kajpx2asGgxD6fMsE8A
+Date: Thu, 26 Dec 2019 17:14:20 +0000
+Message-ID: <BN8PR12MB326646266EF7CEA29685CF0AD32B0@BN8PR12MB3266.namprd12.prod.outlook.com>
+References: <c1b6b4cc-bc94-8ed6-0098-de9e5321722a@canonical.com>
+In-Reply-To: <c1b6b4cc-bc94-8ed6-0098-de9e5321722a@canonical.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=joabreu@synopsys.com; 
+x-originating-ip: [188.251.69.242]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: efe4d2ec-6943-4a75-631e-08d78a270c70
+x-ms-traffictypediagnostic: BN8PR12MB3235:
+x-microsoft-antispam-prvs: <BN8PR12MB32353C7D2F3A9FD4BC87C9FBD32B0@BN8PR12MB3235.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4303;
+x-forefront-prvs: 02638D901B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(376002)(346002)(39860400002)(136003)(396003)(366004)(51914003)(189003)(199004)(71200400001)(316002)(86362001)(8676002)(110136005)(66946007)(76116006)(26005)(6506007)(8936002)(52536014)(33656002)(81156014)(81166006)(186003)(5660300002)(2906002)(9686003)(55016002)(64756008)(66476007)(66446008)(7696005)(66556008)(4326008)(478600001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:BN8PR12MB3235;
+ H:BN8PR12MB3266.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: synopsys.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: ooaZTlnb5x4NdPu75Of9zALmdLfFosk6YoMv4zSS+OmKcNDX+R2YE0DiMNOv61zNmxgZUAYtHlgmZ+ASC+bhE3zax4gPD0MVGXPtyDRL9hjRt0KT0ZptXcYfVCG1phqK4dk1SIyzFKtFHT8ls28ACDuERWGE2N705RSISA+89J2GBChNCBQGAmKbuAknrwrr/bPr3P0ziXbXx3AscqVh/AzK/HrPi0KznnLdpUDJCMcVcK/Q5tl6TTEGd7Uq7XLFaXWqU4nFkoaDP6BliriO3XR1oZjjNbL1/rXjXlBGWUryuJRB81sIpyFIOZ5Mc12ExPHiymZjuwj5AlIIBLFnEwQMX2/qYpy/fPvPgUn8rJW8ux+d0Id4anJn+pmhG0D8xvF5+h8C4pMDzsE5setbEHoemkpL6ajuIaGPWDPwwit5JfGl7IQVHkccZs8ZJzLgJclghaP+4ttKcsog57C1J5yNo0106ZSGEi3kLuX/QaVFtqF5Wabw+hcUI4oqWtMn
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: efe4d2ec-6943-4a75-631e-08d78a270c70
+X-MS-Exchange-CrossTenant-originalarrivaltime: 26 Dec 2019 17:14:21.0305 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: RFZDm1voRoN4GsI3W0bWEdT9k6T3qyaDPJxtxaXB0GCH28xUAsFJ+rVkjj3V9ZpTJOoCAVwo2ctW7pC20ZXuTg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8PR12MB3235
+X-OriginatorOrg: synopsys.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_083847_045526_096BCAAB 
-X-CRM114-Status: GOOD (  35.08  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20191226_091441_643543_3465E272 
+X-CRM114-Status: GOOD (  14.61  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,574 +149,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulrich Hecht <uli@fpond.eu>, Jernej Skrabec <jernej.skrabec@siol.net>,
- drinkcat@chromium.org, Jitao Shi <jitao.shi@mediatek.com>,
- Jonas Karlman <jonas@kwiboo.se>, David Airlie <airlied@linux.ie>,
- Neil Armstrong <narmstrong@baylibre.com>, Daniel Kurtz <djkurtz@chromium.org>,
- Andrzej Hajda <a.hajda@samsung.com>, linux-mediatek@lists.infradead.org,
- dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
- hsinyi@chromium.org, matthias.bgg@gmail.com,
- Collabora Kernel ML <kernel@collabora.com>,
- linux-arm-kernel@lists.infradead.org,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Enric,
+From: Colin Ian King <colin.king@canonical.com>
+Date: Dec/20/2019, 23:49:02 (UTC+00:00)
 
-Note that this series is marked as v22, but it's really the 23th.
-Some minor comments below, it's looking really now.
-
-Reviewed-by: Ezequiel Garcia <ezequiel@collabora.com>
-
-On Mon, 2019-12-23 at 15:35 +0100, Enric Balletbo i Serra wrote:
-> From: Jitao Shi <jitao.shi@mediatek.com>
+> Hi,
 > 
-> This patch adds drm_bridge driver for parade DSI to eDP bridge chip.
+> Static analysis with Coverity has detected a potential issue with the
+> following commit:
 > 
-> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-> Reviewed-by: Daniel Kurtz <djkurtz@chromium.org>
-> [uli: followed API changes, removed FW update feature]
-> Signed-off-by: Ulrich Hecht <uli@fpond.eu>
-> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> Tested-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> ---
-> One of the reviews from Laurent was to use 'i2c_new_ancillary_device'. I
-> didn't change this for two reasons.
-> 1) It doesn't have a devm version, so the remove path is more simple
-> using the devm_i2c_new_dummy_device family.
-> 2) IIUC the ancillary function is useful when you want to retrieve the
-> address from the firmware or DT, that's not really the case here, as we
-> have a base address and fixed offset to the base address which I think
-> is not configurable.
+> commit 504723af0d85434be5fb6f2dde0b62644a7f1ead
+> Author: Jose Abreu <joabreu@synopsys.com>
+> Date:   Wed Dec 18 11:33:05 2019 +0100
 > 
-> Let me know if you still think that I should use the ancillary call.
-> 
-> Changes in v23:
-> - Merge mute/unmute functions into one (Nicolas Boichat)
-> - Use enum for ENABLE/DISABLE instead of bool (Ezequiel Garcia)
-> - Rename mute/unmute to vdo_control and fix error messages (Nicolas Boichat and Enric)
-> - Add space between address and address parameter 'address%02x' (Nicolas Boichat)
-> - Add Tested-by Hsin-Yi
-> - Added me as author after the refactor
-> 
-> Changes in v22:
-> - Remove sysfs attributes because are not really used (Enric Balletbo)
-> - Use enum for address page offsets (Ezequiel Garcia)
-> - Remove enable tracking (Enric Balletbo)
-> - Use panel_bridge API (Laurent Pinchart)
-> - Do not use kernel-doc format for non kernel-doc formatted commands (Enric Balletbo)
-> - Remove verbose message for PAGE1_VSTART command (Ezequiel Garcia)
-> - Use time_is_after_jiffies idiom (Ezequiel Garcia)
-> - Remove unused macros (Ezequiel Garcia)
-> - Fix weird alignment in dsi->mode_flags (Laurent Pinchart)
-> - Use drm_of_find_panel_or_bridge helper (Laurent Pinchart)
-> - Remove mode-sel-gpios as is not used (Laurent Pinchart)
-> - Remove error messages to get gpios as the core will already report it (Enric Balletbo)
-> - Remove redundant message getting the regulators (Laurent Pinchart)
-> - Rename sleep-gpios to powerdown-gpios (Laurent Pinchart)
-> - Use ARRAY_SIZE(ps_bridge->page) instead of MAX_DEV when possible (Laurent Pinchart)
-> - Fix race with userspace accessing the sysfs attributes (Laurent Pinchart)
-> - Remove id_table as is only used on DR platforms (Laurent Pinchart)
-> - Convert to new i2c device probe() (Laurent Pinchart)
-> - Use i2c_smbus_read/write helpers instead of open coding it (Laurent Pinchart)
-> - Remove unnused global variables (Laurent Pinchart)
-> - Remove unnused fields in ps8640 struct (Laurent Pinchart)
-> - Remove commented-out headers (Laurent Pinchart)
-> 
-> Changes in v21:
->  - Use devm_i2c_new_dummy_device and fix build issue using deprecated i2c_new_dummy
->  - Fix build issue due missing drm_bridge.h
->  - Do not remove in ps8640_remove device managed resources
-> 
-> Changes in v19:
->  - fixed return value of ps8640_probe() when no panel is found
-> 
-> Changes in v18:
->  - followed DRM API changes
->  - use DEVICE_ATTR_RO()
->  - remove firmware update code
->  - add SPDX identifier
-> 
-> Changes in v17:
->  - remove some unused head files.
->  - add macros for ps8640 pages.
->  - remove ddc_i2c client
->  - add mipi_dsi_device_register_full
->  - remove the manufacturer from the name and i2c_device_id
-> 
-> Changes in v16:
->  - Disable ps8640 DSI MCS Function.
->  - Rename gpios name more clearly.
->  - Tune the ps8640 power on sequence.
-> 
-> Changes in v15:
->  - Drop drm_connector_(un)register calls from parade ps8640.
->    The main DRM driver mtk_drm_drv now calls
->    drm_connector_register_all() after drm_dev_register() in the
->    mtk_drm_bind() function. That function should iterate over all
->    connectors and call drm_connector_register() for each of them.
->    So, remove drm_connector_(un)register calls from parade ps8640.
-> 
-> Changes in v14:
->  - update copyright info.
->  - change bridge_to_ps8640 and connector_to_ps8640 to inline function.
->  - fix some coding style.
->  - use sizeof as array counter.
->  - use drm_get_edid when read edid.
->  - add mutex when firmware updating.
-> 
-> Changes in v13:
->  - add const on data, ps8640_write_bytes(struct i2c_client *client, const u8 *data, u16 data_len)
->  - fix PAGE2_SW_REST tyro.
->  - move the buf[3] init to entrance of the function.
-> 
-> Changes in v12:
->  - fix hw_chip_id build warning
-> 
-> Changes in v11:
->  - Remove depends on I2C, add DRM depends
->  - Reuse ps8640_write_bytes() in ps8640_write_byte()
->  - Use timer check for polling like the routines in <linux/iopoll.h>
->  - Fix no drm_connector_unregister/drm_connector_cleanup when ps8640_bridge_attach fail
->  - Check the ps8640 hardware id in ps8640_validate_firmware
->  - Remove fw_version check
->  - Move ps8640_validate_firmware before ps8640_enter_bl
->  - Add ddc_i2c unregister when probe fail and ps8640_remove
-> 
->  drivers/gpu/drm/bridge/Kconfig         |  11 +
->  drivers/gpu/drm/bridge/Makefile        |   1 +
->  drivers/gpu/drm/bridge/parade-ps8640.c | 348 +++++++++++++++++++++++++
->  3 files changed, 360 insertions(+)
->  create mode 100644 drivers/gpu/drm/bridge/parade-ps8640.c
-> 
-> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
-> index 4734f6993858..3e0a63011723 100644
-> --- a/drivers/gpu/drm/bridge/Kconfig
-> +++ b/drivers/gpu/drm/bridge/Kconfig
-> @@ -101,6 +101,17 @@ config DRM_PARADE_PS8622
->  	---help---
->  	  Parade eDP-LVDS bridge chip driver.
->  
-> +config DRM_PARADE_PS8640
-> +	tristate "Parade PS8640 MIPI DSI to eDP Converter"
-
-Not a showstopper, but perhaps later you can amend the other
-Parade bridge menuconfig entry. Right now it's
-"Parade eDP/LVDS bridge". It would be nice to have
-consistency between Parade bridges.
-
-> +	depends on OF
-> +	select DRM_KMS_HELPER
-> +	select DRM_MIPI_DSI
-> +	select DRM_PANEL
-> +	help
-> +	  Choose this option if you have PS8640 for display
-> +	  The PS8640 is a high-performance and low-power
-> +	  MIPI DSI to eDP converter
-> +
->  config DRM_SIL_SII8620
->  	tristate "Silicon Image SII8620 HDMI/MHL bridge"
->  	depends on OF
-> diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
-> index 1c0c92667ac4..91490c595b38 100644
-> --- a/drivers/gpu/drm/bridge/Makefile
-> +++ b/drivers/gpu/drm/bridge/Makefile
-> @@ -8,6 +8,7 @@ obj-$(CONFIG_DRM_LVDS_ENCODER) += lvds-encoder.o
->  obj-$(CONFIG_DRM_MEGACHIPS_STDPXXXX_GE_B850V3_FW) += megachips-stdpxxxx-ge-b850v3-fw.o
->  obj-$(CONFIG_DRM_NXP_PTN3460) += nxp-ptn3460.o
->  obj-$(CONFIG_DRM_PARADE_PS8622) += parade-ps8622.o
-> +obj-$(CONFIG_DRM_PARADE_PS8640) += parade-ps8640.o
->  obj-$(CONFIG_DRM_SIL_SII8620) += sil-sii8620.o
->  obj-$(CONFIG_DRM_SII902X) += sii902x.o
->  obj-$(CONFIG_DRM_SII9234) += sii9234.o
-> diff --git a/drivers/gpu/drm/bridge/parade-ps8640.c b/drivers/gpu/drm/bridge/parade-ps8640.c
-> new file mode 100644
-> index 000000000000..646ac649d175
-> --- /dev/null
-> +++ b/drivers/gpu/drm/bridge/parade-ps8640.c
-> @@ -0,0 +1,348 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright (c) 2016 MediaTek Inc.
-> + */
-> +
-> +#include <linux/delay.h>
-> +#include <linux/err.h>
-> +#include <linux/gpio/consumer.h>
-> +#include <linux/i2c.h>
-> +#include <linux/module.h>
-> +#include <linux/of_graph.h>
-> +#include <linux/regulator/consumer.h>
-> +
-> +#include <drm/drm_bridge.h>
-> +#include <drm/drm_mipi_dsi.h>
-> +#include <drm/drm_of.h>
-> +#include <drm/drm_panel.h>
-> +#include <drm/drm_print.h>
-> +
-> +#define PAGE2_GPIO_H		0xa7
-> +#define PS_GPIO9		BIT(1)
-> +#define PAGE2_I2C_BYPASS	0xea
-> +#define I2C_BYPASS_EN		0xd0
-> +#define PAGE2_MCS_EN		0xf3
-> +#define MCS_EN			BIT(0)
-> +#define PAGE3_SET_ADD		0xfe
-> +#define VDO_CTL_ADD		0x13
-> +#define VDO_DIS			0x18
-> +#define VDO_EN			0x1c
-> +
-> +/*
-> + * PS8640 uses multiple addresses:
-> + * page[0]: for DP control
-> + * page[1]: for VIDEO Bridge
-> + * page[2]: for control top
-> + * page[3]: for DSI Link Control1
-> + * page[4]: for MIPI Phy
-> + * page[5]: for VPLL
-> + * page[6]: for DSI Link Control2
-> + * page[7]: for SPI ROM mapping
-> + */
-> +enum page_addr_offset {
-> +	PAGE0_DP_CNTL = 0,
-> +	PAGE1_VDO_BDG,
-> +	PAGE2_TOP_CNTL,
-> +	PAGE3_DSI_CNTL1,
-> +	PAGE4_MIPI_PHY,
-> +	PAGE5_VPLL,
-> +	PAGE6_DSI_CNTL2,
-> +	PAGE7_SPI_CNTL,
-> +	MAX_DEVS
-> +};
-> +
-> +enum ps8640_vdo_control {
-> +	DISABLE = VDO_DIS,
-> +	ENABLE = VDO_EN,
-> +};
-> +
-> +struct ps8640 {
-> +	struct drm_bridge bridge;
-> +	struct drm_bridge *panel_bridge;
-> +	struct mipi_dsi_device *dsi;
-> +	struct i2c_client *page[MAX_DEVS];
-> +	struct regulator_bulk_data supplies[2];
-> +	struct gpio_desc *gpio_reset;
-> +	struct gpio_desc *gpio_powerdown;
-> +};
-> +
-> +static inline struct ps8640 *bridge_to_ps8640(struct drm_bridge *e)
-> +{
-> +	return container_of(e, struct ps8640, bridge);
-> +}
-> +
-> +static int ps8640_bridge_vdo_control(struct ps8640 *ps_bridge,
-> +				     const enum ps8640_vdo_control ctrl)
-> +{
-> +	struct i2c_client *client = ps_bridge->page[PAGE3_DSI_CNTL1];
-> +	u8 vdo_ctrl_buf[] = { VDO_CTL_ADD, ctrl };
-> +	int ret;
-> +
-> +	ret = i2c_smbus_write_i2c_block_data(client, PAGE3_SET_ADD,
-> +					     sizeof(vdo_ctrl_buf),
-> +					     vdo_ctrl_buf);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	return 0;
-> +}
-> +
-> +static void ps8640_pre_enable(struct drm_bridge *bridge)
-> +{
-> +	struct ps8640 *ps_bridge = bridge_to_ps8640(bridge);
-> +	struct i2c_client *client = ps_bridge->page[PAGE2_TOP_CNTL];
-> +	unsigned long timeout;
-> +	int ret, status;
-> +
-> +	ret = regulator_bulk_enable(ARRAY_SIZE(ps_bridge->supplies),
-> +				    ps_bridge->supplies);
-> +	if (ret < 0) {
-> +		DRM_ERROR("cannot enable regulators %d\n", ret);
-> +		return;
-> +	}
-> +
-> +	gpiod_set_value(ps_bridge->gpio_powerdown, 1);
-> +	gpiod_set_value(ps_bridge->gpio_reset, 0);
-> +	usleep_range(2000, 2500);
-> +	gpiod_set_value(ps_bridge->gpio_reset, 1);
-> +
-> +	/*
-> +	 * Wait for the ps8640 embedded MCU to be ready
-> +	 * First wait 200ms and then check the MCU ready flag every 20ms
-> +	 */
-> +	msleep(200);
-> +
-> +	timeout = jiffies + msecs_to_jiffies(200) + 1;
-> +
-> +	while (time_is_after_jiffies(timeout)) {
-> +		status = i2c_smbus_read_byte_data(client, PAGE2_GPIO_H);
-> +		if (status < 0) {
-> +			DRM_ERROR("failed read PAGE2_GPIO_H: %d\n", status);
-> +			goto err_regulators_disable;
-> +		}
-> +		if ((status & PS_GPIO9) == PS_GPIO9)
-> +			break;
-> +
-> +		msleep(20);
-> +	}
-> +
-> +	msleep(50);
-> +
-> +	/*
-> +	 * The Manufacturer Command Set (MCS) is a device dependent interface
-> +	 * intended for factory programming of the display module default
-> +	 * parameters. Once the display module is configured, the MCS shall be
-> +	 * disabled by the manufacturer. Once disabled, all MCS commands are
-> +	 * ignored by the display interface.
-> +	 */
-> +	status = i2c_smbus_read_byte_data(client, PAGE2_MCS_EN);
-> +	if (status < 0) {
-> +		DRM_ERROR("failed read PAGE2_MCS_EN: %d\n", status);
-> +		goto err_regulators_disable;
-> +	}
-> +
-> +	ret = i2c_smbus_write_byte_data(client, PAGE2_MCS_EN,
-> +					status & ~MCS_EN);
-> +	if (ret < 0) {
-> +		DRM_ERROR("failed write PAGE2_MCS_EN: %d\n", ret);
-> +		goto err_regulators_disable;
-> +	}
-> +
-> +	ret = ps8640_bridge_vdo_control(ps_bridge, ENABLE);
-
-That's much better than mute/unmute!
-
-> +	if (ret) {
-> +		DRM_ERROR("failed to enable VDO: %d\n", ret);
-> +		goto err_regulators_disable;
-> +	}
-> +
-> +	/* Switch access edp panel's edid through i2c */
-> +	ret = i2c_smbus_write_byte_data(client, PAGE2_I2C_BYPASS,
-> +					I2C_BYPASS_EN);
-> +	if (ret < 0) {
-> +		DRM_ERROR("failed write PAGE2_I2C_BYPASS: %d\n", ret);
-> +		goto err_regulators_disable;
-> +	}
-> +
-> +	return;
-> +
-> +err_regulators_disable:
-> +	regulator_bulk_disable(ARRAY_SIZE(ps_bridge->supplies),
-> +			       ps_bridge->supplies);
-> +}
-> +
-> +static void ps8640_post_disable(struct drm_bridge *bridge)
-> +{
-> +	struct ps8640 *ps_bridge = bridge_to_ps8640(bridge);
-> +	int ret;
-> +
-> +	ret = ps8640_bridge_vdo_control(ps_bridge, DISABLE);
-> +	if (ret < 0)
-> +		DRM_ERROR("failed to disable VDO: %d\n", ret);
-> +
-> +	gpiod_set_value(ps_bridge->gpio_reset, 0);
-> +	gpiod_set_value(ps_bridge->gpio_powerdown, 0);
-> +	ret = regulator_bulk_disable(ARRAY_SIZE(ps_bridge->supplies),
-> +				     ps_bridge->supplies);
-> +	if (ret < 0)
-> +		DRM_ERROR("cannot disable regulators %d\n", ret);
-> +}
-> +
-> +int ps8640_bridge_attach(struct drm_bridge *bridge)
-
-Compiling this with static analyzers says this should be 'static'.
-
-> +{
-> +	struct ps8640 *ps_bridge = bridge_to_ps8640(bridge);
-> +	struct device *dev = &ps_bridge->page[0]->dev;
-> +	struct device_node *in_ep, *dsi_node;
-> +	struct mipi_dsi_device *dsi;
-> +	struct mipi_dsi_host *host;
-> +	int ret;
-> +	const struct mipi_dsi_device_info info = { .type = "ps8640",
-> +						   .channel = 0,
-> +						   .node = NULL,
-> +						 };
-> +	/* port@0 is ps8640 dsi input port */
-> +	in_ep = of_graph_get_endpoint_by_regs(dev->of_node, 0, -1);
-> +	if (!in_ep)
-> +		return -ENODEV;
-> +
-> +	dsi_node = of_graph_get_remote_port_parent(in_ep);
-> +	of_node_put(in_ep);
-> +	if (!dsi_node)
-> +		return -ENODEV;
-> +
-> +	host = of_find_mipi_dsi_host_by_node(dsi_node);
-> +	of_node_put(dsi_node);
-> +	if (!host)
-> +		return -ENODEV;
-> +
-> +	dsi = mipi_dsi_device_register_full(host, &info);
-> +	if (IS_ERR(dsi)) {
-> +		dev_err(dev, "failed to create dsi device\n");
-> +		ret = PTR_ERR(dsi);
-> +		return ret;
-> +	}
-> +
-> +	ps_bridge->dsi = dsi;
-> +
-> +	dsi->host = host;
-> +	dsi->mode_flags = MIPI_DSI_MODE_VIDEO |
-> +			  MIPI_DSI_MODE_VIDEO_SYNC_PULSE;
-> +	dsi->format = MIPI_DSI_FMT_RGB888;
-> +	dsi->lanes = 4;
-
-I'm not an expert here, so maybe this makes no sense:
-are you sure you don't need to take the number of lanes from the
-device-tree?
-
-From the yaml spec:
-
-"""
-The device accepts a single channel of
-MIPI DSI v1.1, with up to four lanes [..]
-"""
-
-If it's OK to hardcode to 4, maybe use a macro for clarity?
-
-> +	ret = mipi_dsi_attach(dsi);
-> +	if (ret)
-> +		goto err_dsi_attach;
-> +
-> +	/* Attach the panel-bridge to the dsi bridge */
-> +	return drm_bridge_attach(bridge->encoder, ps_bridge->panel_bridge,
-> +				 &ps_bridge->bridge);
-> +
-> +err_dsi_attach:
-> +	mipi_dsi_device_unregister(dsi);
-> +	return ret;
-> +}
-> +
-> +static const struct drm_bridge_funcs ps8640_bridge_funcs = {
-> +	.attach = ps8640_bridge_attach,
-> +	.post_disable = ps8640_post_disable,
-> +	.pre_enable = ps8640_pre_enable,
-> +};
-> +
-> +static int ps8640_probe(struct i2c_client *client)
-> +{
-> +	struct device *dev = &client->dev;
-> +	struct device_node *np = dev->of_node;
-> +	struct ps8640 *ps_bridge;
-> +	struct drm_panel *panel;
-> +	int ret;
-> +	u32 i;
-> +
-> +	ps_bridge = devm_kzalloc(dev, sizeof(*ps_bridge), GFP_KERNEL);
-> +	if (!ps_bridge)
-> +		return -ENOMEM;
-> +
-> +	/* port@1 is ps8640 output port */
-
-Hm, regarding my comment on patch 1/2 about required port@0,
-perhaps this really requires both port@0 and port@1.
-
-> +	ret = drm_of_find_panel_or_bridge(np, 1, 0, &panel, NULL);
-> +	if (ret < 0)
-> +		return ret;
-> +	if (!panel)
-> +		return -ENODEV;
-> +
-> +	panel->connector_type = DRM_MODE_CONNECTOR_eDP;
-> +
-> +	ps_bridge->panel_bridge = devm_drm_panel_bridge_add(dev, panel);
-> +	if (IS_ERR(ps_bridge->panel_bridge))
-> +		return PTR_ERR(ps_bridge->panel_bridge);
-> +
-> +	ps_bridge->supplies[0].supply = "vdd33";
-> +	ps_bridge->supplies[1].supply = "vdd12";
-> +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(ps_bridge->supplies),
-> +				      ps_bridge->supplies);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ps_bridge->gpio_powerdown = devm_gpiod_get(&client->dev, "powerdown",
-> +						   GPIOD_OUT_LOW);
-> +	if (IS_ERR(ps_bridge->gpio_powerdown))
-> +		return PTR_ERR(ps_bridge->gpio_powerdown);
-> +
-> +	/*
-> +	 * Request the reset pin low to avoid the bridge being
-> +	 * initialized prematurely
-> +	 */
-> +	ps_bridge->gpio_reset = devm_gpiod_get(&client->dev, "reset",
-> +					       GPIOD_OUT_LOW);
-> +	if (IS_ERR(ps_bridge->gpio_reset))
-> +		return PTR_ERR(ps_bridge->gpio_reset);
-> +
-> +	ps_bridge->bridge.funcs = &ps8640_bridge_funcs;
-> +	ps_bridge->bridge.of_node = dev->of_node;
-> +
-> +	ps_bridge->page[PAGE0_DP_CNTL] = client;
-> +
-> +	for (i = 1; i < ARRAY_SIZE(ps_bridge->page); i++) {
-> +		ps_bridge->page[i] = devm_i2c_new_dummy_device(&client->dev,
-> +							     client->adapter,
-> +							     client->addr + i);
-> +		if (IS_ERR(ps_bridge->page[i])) {
-> +			dev_err(dev, "failed i2c dummy device, address %02x\n",
-> +				client->addr + i);
-> +			return PTR_ERR(ps_bridge->page[i]);
-> +		}
-> +	}
-> +
-> +	i2c_set_clientdata(client, ps_bridge);
-> +
-> +	drm_bridge_add(&ps_bridge->bridge);
-> +
-> +	return 0;
-> +}
-> +
-> +static int ps8640_remove(struct i2c_client *client)
-> +{
-> +	struct ps8640 *ps_bridge = i2c_get_clientdata(client);
-> +
-> +	drm_bridge_remove(&ps_bridge->bridge);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id ps8640_match[] = {
-> +	{ .compatible = "parade,ps8640" },
-> +	{ }
-> +};
-> +MODULE_DEVICE_TABLE(of, ps8640_match);
-> +
-> +static struct i2c_driver ps8640_driver = {
-> +	.probe_new = ps8640_probe,
-> +	.remove = ps8640_remove,
-> +	.driver = {
-> +		.name = "ps8640",
-> +		.of_match_table = ps8640_match,
-> +	},
-> +};
-> +module_i2c_driver(ps8640_driver);
-> +
-> +MODULE_AUTHOR("Jitao Shi <jitao.shi@mediatek.com>");
-> +MODULE_AUTHOR("CK Hu <ck.hu@mediatek.com>");
-> +MODULE_AUTHOR("Enric Balletbo i Serra <enric.balletbo@collabora.com>");
-> +MODULE_DESCRIPTION("PARADE ps8640 DSI-eDP converter driver");
-> +MODULE_LICENSE("GPL v2");
-> -- 
-> 2.20.1
+>     net: stmmac: Add basic EST support for GMAC5+
 > 
 > 
+> In function dwmac5_est_configure() we have a u64 total_ctr being
+> assigned as follows:
+> 
+> 	total_ctr = cfg->ctr[0] + cfg->ctr[1] * 1000000000;
+> 
+> The cfg->ctr[1] is a u32, the multiplication of cfg->ctr[1] is a u32
+> multiplication operation, so multiplying by 1000000000 can potentially
+> cause an overflow.  Either cfg->ctr[1] needs to be cast to a u64 or
+> 1000000000 should be at least a 1000000000UL to avoid this overflow. I
+> was going to fix this but on further inspection I was not sure if the
+> original code was intended as:
+> 
+> 	total_ctr = cfg->ctr[0] + cfg->ctr[1] * 1000000000UL;
+> or:
+> 	total_ctr = (cfg->ctr[0] + cfg->ctr[1]) * 1000000000UL;
+> 
+> ..hence I'm flagging this up as potential error.
 
+Thanks for the report. The first option is the correct one as ctr[1] is 
+seconds and ctr[0] is nanoseconds. Can you send a fix-up patch ?
 
-
+---
+Thanks,
+Jose Miguel Abreu
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
