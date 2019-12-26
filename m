@@ -2,78 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 870D012AAD1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 08:43:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44A9412AAF6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 09:34:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/AVIg57L2Qb0UI0LnCgK6Ha/vRkkOAN5tokLyUC9Jvw=; b=geiE3nhypOxpow
-	nu/fmwUrePwTh3pCMLJdwhLCrvZMpc/rDod0nkuqTvMFkWI5Jh0EfhNt98lDVyytDQjqI+Ohm3Y2B
-	rU7QzP+i/yFdEvafp19T2CI2IgNyqdVmt4X0d3P7E5m5Ps4SbNrIVf9ZWEqcPWZWKSmc0cAsr/BM8
-	kGv9a9nVhdgLAmYkCY71/DTuN0iGhU5H0K4y55JG247UELQ1Y2tlAebmps5M24M+xVhXa0tZTxM0U
-	tAaNJuo3RfguaveQ4n44DSN0vti8HNmBbeakibgd9CD2Nfb57moZhgzZEemefi5dF/OeDm0rGr2eq
-	0SmWWa9WvpgXaYZ2CUHg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VpySM+QpvqrdIcpXvexHwmGhRe1t8MtZN4nYbJrKSew=; b=szp9r7rHbPRliR
+	D7N/wHWx65oLuLOkEk7Qy2VNXj/UfhWD9lV/nIx2F++tDI01iub76ZDh0V0/03F7/hHqQ40JTddmU
+	igl7gKAdFuv1XNPwHFKEbe0/fXysrMQV76bL4inhl1YCNhpfm3iEmPd46fKiVXuTYWBm24AAhF6LC
+	9ABiuxVEWHl3ed+J+zMGvpIGEwBkeSIPL8vZQA+5Nd5JdGQAOuqNP81OG5EbfYyT7oDn3wXCoklVL
+	hmqhWQtXrdhrwLrcyZ3SNqMVswJVIYBjj5kciQwDhDGbNE+qxiZMmbIHWgabAShhBiSjaiCVjgxxj
+	ptgwL/GTU0ckmzGjgw6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikNnP-0003mE-ES; Thu, 26 Dec 2019 07:42:59 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1ikOb7-0001Q0-FE; Thu, 26 Dec 2019 08:34:21 +0000
+Received: from szxga01-in.huawei.com ([45.249.212.187] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikNnD-0003ld-Ox; Thu, 26 Dec 2019 07:42:50 +0000
-X-UUID: e88a83898ede4aa48abeeb6d3b494270-20191225
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=B8FgD3ZrjisgjSkL3JaHceiILrlLNx2yrKhwr8RakCI=; 
- b=LZdR0xLrEYvhQJGiDA3Mue8i2JMovgNzQ6JSwmdkVunNdVu5g16UY4b002ZkDZrKeOkDIil+AgRb4p9gyjb4yRweZJYwQQhzqVfr6SJAMeTSH6gQTYr+0iKQ9X097YLztJtWKa+9Qoon34gxo9W8ZOM2vSqo23WQrLiHgKFSRio=;
-X-UUID: e88a83898ede4aa48abeeb6d3b494270-20191225
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <yong.liang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 995227162; Wed, 25 Dec 2019 23:42:40 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 25 Dec 2019 23:43:03 -0800
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 26 Dec 2019 15:42:07 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 26 Dec 2019 15:42:28 +0800
-Message-ID: <1577346109.20923.3.camel@mhfsdcap03>
-Subject: Re: [PATCH v6 2/2] watchdog: mtk_wdt: mt8183: Add reset controller
-From: Yong Liang <yong.liang@mediatek.com>
-To: Philipp Zabel <p.zabel@pengutronix.de>
-Date: Thu, 26 Dec 2019 15:41:49 +0800
-In-Reply-To: <fe8b8b2aac6d92a1d7ffc32ea012db9898ab6857.camel@pengutronix.de>
-References: <1576081356-18298-1-git-send-email-jiaxin.yu@mediatek.com>
- <1576081356-18298-3-git-send-email-jiaxin.yu@mediatek.com>
- <fe8b8b2aac6d92a1d7ffc32ea012db9898ab6857.camel@pengutronix.de>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1ikOav-0001Of-Kt
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 08:34:11 +0000
+Received: from DGGEMM404-HUB.china.huawei.com (unknown [172.30.72.56])
+ by Forcepoint Email with ESMTP id 6735E18ECE6BEEBE7A1E;
+ Thu, 26 Dec 2019 16:33:57 +0800 (CST)
+Received: from dggeme755-chm.china.huawei.com (10.3.19.101) by
+ DGGEMM404-HUB.china.huawei.com (10.3.20.212) with Microsoft SMTP Server (TLS)
+ id 14.3.439.0; Thu, 26 Dec 2019 16:33:31 +0800
+Received: from [127.0.0.1] (10.173.221.248) by dggeme755-chm.china.huawei.com
+ (10.3.19.101) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 26
+ Dec 2019 16:33:30 +0800
+Subject: Re: [PATCH 3/5] KVM: arm64: Support pvlock preempted via shared
+ structure
+To: Steven Price <steven.price@arm.com>
+References: <20191217135549.3240-1-yezengruan@huawei.com>
+ <20191217135549.3240-4-yezengruan@huawei.com>
+ <20191217143301.GC38811@arm.com>
+From: yezengruan <yezengruan@huawei.com>
+Message-ID: <31f9d0b2-1366-26f9-2628-61583fb4a50d@huawei.com>
+Date: Thu, 26 Dec 2019 16:33:28 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 8574F099F3B0AD104410C800107372672A0E4739F5A4B188550EFA2C7F63128E2000:8
-X-MTK: N
+In-Reply-To: <20191217143301.GC38811@arm.com>
+Content-Language: en-US
+X-Originating-IP: [10.173.221.248]
+X-ClientProxiedBy: dggeme719-chm.china.huawei.com (10.1.199.115) To
+ dggeme755-chm.china.huawei.com (10.3.19.101)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191225_234247_820980_AA4289DE 
-X-CRM114-Status: GOOD (  23.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191226_003410_047696_26042043 
+X-CRM114-Status: GOOD (  20.97  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,191 +74,220 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "maz@kernel.org" <maz@kernel.org>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jiaxin Yu =?UTF-8?Q?=28=E4=BF=9E=E5=AE=B6=E9=91=AB=29?=
- <Jiaxin.Yu@mediatek.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- Yingjoe Chen =?UTF-8?Q?=28=E9=99=B3=E8=8B=B1=E6=B4=B2=29?=
- <Yingjoe.Chen@mediatek.com>, "wim@linux-watchdog.org" <wim@linux-watchdog.org>,
- "linux@roeck-us.net" <linux@roeck-us.net>
+ "virtualization@lists.linux-foundation.org"
+ <virtualization@lists.linux-foundation.org>, James Morse <James.Morse@arm.com>,
+ "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>, Catalin
+ Marinas <Catalin.Marinas@arm.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "will@kernel.org" <will@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-12-12 at 00:44 +0800, Philipp Zabel wrote:
-> Hi,
-> 
-> On Thu, 2019-12-12 at 00:22 +0800, Jiaxin Yu wrote:
-> > From: "yong.liang" <yong.liang@mediatek.com>
-> > 
-> > Add reset controller API in watchdog driver.
-> > Besides watchdog, MTK toprgu module alsa provide sub-system (eg, audio,
-> > camera, codec and connectivity) software reset functionality.
-> 
-> Do any of the listed sub-systems use the reset_control_reset()
-> functionality? Is there no delay requirement between assert and
-> deassert? Otherwise it would be safer not to implement the .reset()
-> operation at all.
-> 
-> > Audio use this reset API to reset audio, and it works well.
-    It is no need to add delay between assert and deassert.
+Hi Steve,
 
-> > Signed-off-by: yong.liang <yong.liang@mediatek.com>
-> > ---
-> >  drivers/watchdog/Kconfig   |   1 +
-> >  drivers/watchdog/mtk_wdt.c | 109 ++++++++++++++++++++++++++++++++++++-
-> >  2 files changed, 109 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-> > index 2e07caab9db2..629249fe5305 100644
-> > --- a/drivers/watchdog/Kconfig
-> > +++ b/drivers/watchdog/Kconfig
-> > @@ -717,6 +717,7 @@ config MEDIATEK_WATCHDOG
-> >  	tristate "Mediatek SoCs watchdog support"
-> >  	depends on ARCH_MEDIATEK || COMPILE_TEST
-> >  	select WATCHDOG_CORE
-> > +	select RESET_CONTROLLER
-> >  	help
-> >  	  Say Y here to include support for the watchdog timer
-> >  	  in Mediatek SoCs.
-> > diff --git a/drivers/watchdog/mtk_wdt.c b/drivers/watchdog/mtk_wdt.c
-> > index 9c3d0033260d..667380031dfd 100644
-> > --- a/drivers/watchdog/mtk_wdt.c
-> > +++ b/drivers/watchdog/mtk_wdt.c
-> > @@ -9,6 +9,9 @@
-> >   * Based on sunxi_wdt.c
-> >   */
-> >  
-> > +#include <dt-bindings/reset-controller/mt2712-resets.h>
-> > +#include <dt-bindings/reset-controller/mt8183-resets.h>
-> > +#include <linux/delay.h>
-> >  #include <linux/err.h>
-> >  #include <linux/init.h>
-> >  #include <linux/io.h>
-> > @@ -16,10 +19,12 @@
-> >  #include <linux/module.h>
-> >  #include <linux/moduleparam.h>
-> >  #include <linux/of.h>
-> > +#include <linux/of_device.h>
-> >  #include <linux/platform_device.h>
-> > +#include <linux/reset-controller.h>
-> > +#include <linux/slab.h>
+On 2019/12/17 22:33, Steven Price wrote:
+> On Tue, Dec 17, 2019 at 01:55:47PM +0000, yezengruan@huawei.com wrote:
+>> From: Zengruan Ye <yezengruan@huawei.com>
+>>
+>> Implement the service call for configuring a shared structure between a
+>> vcpu and the hypervisor in which the hypervisor can tell the vcpu is
+>> running or not.
+>>
+>> The preempted field is zero if 1) some old KVM deos not support this filed.
+>> 2) the vcpu is not preempted. Other values means the vcpu has been preempted.
+>>
+>> Signed-off-by: Zengruan Ye <yezengruan@huawei.com>
+>> ---
+>>  arch/arm/include/asm/kvm_host.h   | 13 +++++++++++++
+>>  arch/arm64/include/asm/kvm_host.h | 17 +++++++++++++++++
+>>  arch/arm64/kvm/Makefile           |  1 +
+>>  virt/kvm/arm/arm.c                |  8 ++++++++
+>>  virt/kvm/arm/hypercalls.c         |  4 ++++
+>>  virt/kvm/arm/pvlock.c             | 21 +++++++++++++++++++++
+>>  6 files changed, 64 insertions(+)
+>>  create mode 100644 virt/kvm/arm/pvlock.c
+>>
+>> diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
+>> index 556cd818eccf..098375f1c89e 100644
+>> --- a/arch/arm/include/asm/kvm_host.h
+>> +++ b/arch/arm/include/asm/kvm_host.h
+>> @@ -356,6 +356,19 @@ static inline bool kvm_arm_is_pvtime_enabled(struct kvm_vcpu_arch *vcpu_arch)
+>>  	return false;
+>>  }
+>>  
+>> +static inline void kvm_arm_pvlock_preempted_init(struct kvm_vcpu_arch *vcpu_arch)
+>> +{
+>> +}
+>> +
+>> +static inline bool kvm_arm_is_pvlock_preempted_ready(struct kvm_vcpu_arch *vcpu_arch)
+>> +{
+>> +	return false;
+>> +}
+>> +
+>> +static inline void kvm_update_pvlock_preempted(struct kvm_vcpu *vcpu, u64 preempted)
+>> +{
+>> +}
+>> +
+>>  void kvm_mmu_wp_memory_region(struct kvm *kvm, int slot);
+>>  
+>>  struct kvm_vcpu *kvm_mpidr_to_vcpu(struct kvm *kvm, unsigned long mpidr);
+>> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+>> index c61260cf63c5..d9b2a21a87ac 100644
+>> --- a/arch/arm64/include/asm/kvm_host.h
+>> +++ b/arch/arm64/include/asm/kvm_host.h
+>> @@ -354,6 +354,11 @@ struct kvm_vcpu_arch {
+>>  		u64 last_steal;
+>>  		gpa_t base;
+>>  	} steal;
+>> +
+>> +	/* Guest PV lock state */
+>> +	struct {
+>> +		gpa_t base;
+>> +	} pv;
+>>  };
+>>  
+>>  /* Pointer to the vcpu's SVE FFR for sve_{save,load}_state() */
+>> @@ -515,6 +520,18 @@ static inline bool kvm_arm_is_pvtime_enabled(struct kvm_vcpu_arch *vcpu_arch)
+>>  	return (vcpu_arch->steal.base != GPA_INVALID);
+>>  }
+>>  
+>> +static inline void kvm_arm_pvlock_preempted_init(struct kvm_vcpu_arch *vcpu_arch)
+>> +{
+>> +	vcpu_arch->pv.base = GPA_INVALID;
+>> +}
+>> +
+>> +static inline bool kvm_arm_is_pvlock_preempted_ready(struct kvm_vcpu_arch *vcpu_arch)
+>> +{
+>> +	return (vcpu_arch->pv.base != GPA_INVALID);
+>> +}
+>> +
+>> +void kvm_update_pvlock_preempted(struct kvm_vcpu *vcpu, u64 preempted);
+>> +
+>>  void kvm_set_sei_esr(struct kvm_vcpu *vcpu, u64 syndrome);
+>>  
+>>  struct kvm_vcpu *kvm_mpidr_to_vcpu(struct kvm *kvm, unsigned long mpidr);
+>> diff --git a/arch/arm64/kvm/Makefile b/arch/arm64/kvm/Makefile
+>> index 5ffbdc39e780..e4591f56d5f1 100644
+>> --- a/arch/arm64/kvm/Makefile
+>> +++ b/arch/arm64/kvm/Makefile
+>> @@ -15,6 +15,7 @@ kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/arm.o $(KVM)/arm/mmu.o $(KVM)/arm/mmio.
+>>  kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/psci.o $(KVM)/arm/perf.o
+>>  kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hypercalls.o
+>>  kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/pvtime.o
+>> +kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/pvlock.o
+>>  
+>>  kvm-$(CONFIG_KVM_ARM_HOST) += inject_fault.o regmap.o va_layout.o
+>>  kvm-$(CONFIG_KVM_ARM_HOST) += hyp.o hyp-init.o handle_exit.o
+>> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+>> index 12e0280291ce..c562f62fdd45 100644
+>> --- a/virt/kvm/arm/arm.c
+>> +++ b/virt/kvm/arm/arm.c
+>> @@ -383,6 +383,8 @@ int kvm_arch_vcpu_init(struct kvm_vcpu *vcpu)
+>>  
+>>  	kvm_arm_pvtime_vcpu_init(&vcpu->arch);
+>>  
+>> +	kvm_arm_pvlock_preempted_init(&vcpu->arch);
+>> +
+>>  	return kvm_vgic_vcpu_init(vcpu);
+>>  }
+>>  
+>> @@ -421,6 +423,9 @@ void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
+>>  		vcpu_set_wfx_traps(vcpu);
+>>  
+>>  	vcpu_ptrauth_setup_lazy(vcpu);
+>> +
+>> +	if (kvm_arm_is_pvlock_preempted_ready(&vcpu->arch))
+>> +		kvm_update_pvlock_preempted(vcpu, 0);
+>>  }
+>>  
+>>  void kvm_arch_vcpu_put(struct kvm_vcpu *vcpu)
+>> @@ -434,6 +439,9 @@ void kvm_arch_vcpu_put(struct kvm_vcpu *vcpu)
+>>  	vcpu->cpu = -1;
+>>  
+>>  	kvm_arm_set_running_vcpu(NULL);
+>> +
+>> +	if (kvm_arm_is_pvlock_preempted_ready(&vcpu->arch))
+>> +		kvm_update_pvlock_preempted(vcpu, 1);
+>>  }
+>>  
+>>  static void vcpu_power_off(struct kvm_vcpu *vcpu)
+>> diff --git a/virt/kvm/arm/hypercalls.c b/virt/kvm/arm/hypercalls.c
+>> index ff13871fd85a..5964982ccd05 100644
+>> --- a/virt/kvm/arm/hypercalls.c
+>> +++ b/virt/kvm/arm/hypercalls.c
+>> @@ -65,6 +65,10 @@ int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+>>  		if (gpa != GPA_INVALID)
+>>  			val = gpa;
+>>  		break;
+>> +	case ARM_SMCCC_HV_PV_LOCK_PREEMPTED:
+>> +		vcpu->arch.pv.base = smccc_get_arg1(vcpu);
+>> +		val = SMCCC_RET_SUCCESS;
 > 
-> What is this required for?
+> It would be useful to at least do some basic validation that the address
+> passed in is valid. Debugging problems with this interface will be hard
+> if it always returns success even if the address cannot be used.
+> 
+> The second patch also states that the structure should be 64 byte
+> aligned, but there's nothing here to enforce that.
 
-  It is no use. I will remove it.
+Thanks for posting this. I'll update the code.
+
 > 
-> >  #include <linux/types.h>
-> >  #include <linux/watchdog.h>
-> > -#include <linux/delay.h>
-> >
-> >  #define WDT_MAX_TIMEOUT		31
-> >  #define WDT_MIN_TIMEOUT		1
-> > @@ -44,6 +49,9 @@
-> >  #define WDT_SWRST		0x14
-> >  #define WDT_SWRST_KEY		0x1209
-> >  
-> > +#define WDT_SWSYSRST		0x18U
-> > +#define WDT_SWSYS_RST_KEY	0x88000000
-> > +
-> >  #define DRV_NAME		"mtk-wdt"
-> >  #define DRV_VERSION		"1.0"
-> >  
-> > @@ -53,8 +61,97 @@ static unsigned int timeout;
-> >  struct mtk_wdt_dev {
-> >  	struct watchdog_device wdt_dev;
-> >  	void __iomem *wdt_base;
-> > +	spinlock_t lock; /* protects WDT_SWSYSRST reg */
-> > +	struct reset_controller_dev rcdev;
-> > +};
-> > +
-> > +struct mtk_wdt_data {
-> > +	int infracfg_sw_rst_num;
+> Steve
 > 
-> This is not used at all, better remove it.
-  I will remove it.
+>> +		break;
+>>  	default:
+>>  		return kvm_psci_call(vcpu);
+>>  	}
+>> diff --git a/virt/kvm/arm/pvlock.c b/virt/kvm/arm/pvlock.c
+>> new file mode 100644
+>> index 000000000000..c3464958b0f5
+>> --- /dev/null
+>> +++ b/virt/kvm/arm/pvlock.c
+>> @@ -0,0 +1,21 @@
+>> +/* SPDX-License-Identifier: GPL-2.0-only */
+>> +/*
+>> + * Copyright(c) 2019 Huawei Technologies Co., Ltd
+>> + * Author: Zengruan Ye <yezengruan@huawei.com>
+>> + */
+>> +
+>> +#include <linux/arm-smccc.h>
+>> +#include <linux/kvm_host.h>
+>> +
+>> +#include <kvm/arm_hypercalls.h>
+>> +
+>> +void kvm_update_pvlock_preempted(struct kvm_vcpu *vcpu, u64 preempted)
+>> +{
+>> +	u64 preempted_le;
+>> +	u64 base;
+>> +	struct kvm *kvm = vcpu->kvm;
+>> +
+>> +	base = vcpu->arch.pv.base;
+>> +	preempted_le = cpu_to_le64(preempted);
+>> +	kvm_put_guest(kvm, base, preempted_le, u64);
+>> +}
+>> -- 
+>> 2.19.1
+>>
+>>
 > 
-> > +	int toprgu_sw_rst_num;
-> > +};
-> > +
-> > +static const struct mtk_wdt_data mt2712_data = {
-> > +	.toprgu_sw_rst_num = MT2712_TOPRGU_SW_RST_NUM,
-> > +};
-> > +
-> > +static const struct mtk_wdt_data mt8183_data = {
-> > +	.infracfg_sw_rst_num = MT8183_INFRACFG_SW_RST_NUM,
+> .
 > 
-> Same as above.
-  I will remove it.
-> 
-> > +	.toprgu_sw_rst_num = MT8183_TOPRGU_SW_RST_NUM,
-> > +};
-> > +
-> > +static int toprgu_reset_update(struct reset_controller_dev *rcdev,
-> > +			       unsigned long id, bool assert)
-> > +{
-> > +	unsigned int tmp;
-> > +	unsigned long flags;
-> > +
-> 
-> This empty line can be removed.
-  I will remove it.
-> 
-> > +	struct mtk_wdt_dev *data =
-> > +		 container_of(rcdev, struct mtk_wdt_dev, rcdev);
-> > +
-> > +	spin_lock_irqsave(&data->lock, flags);
-> > +
-> > +	tmp = readl(data->wdt_base + WDT_SWSYSRST);
-> > +	if (assert)
-> > +		tmp |= BIT(id);
-> > +	else
-> > +		tmp &= ~BIT(id);
-> > +	tmp |= WDT_SWSYS_RST_KEY;
-> > +	writel(tmp, data->wdt_base + WDT_SWSYSRST);
-> > +
-> > +	spin_unlock_irqrestore(&data->lock, flags);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int toprgu_reset_assert(struct reset_controller_dev *rcdev,
-> > +			       unsigned long id)
-> > +{
-> > +	return toprgu_reset_update(rcdev, id, true);
-> > +}
-> > +
-> > +static int toprgu_reset_deassert(struct reset_controller_dev *rcdev,
-> > +				 unsigned long id)
-> > +{
-> > +	return toprgu_reset_update(rcdev, id, false);
-> > +}
-> > +
-> > +static int toprgu_reset(struct reset_controller_dev *rcdev,
-> > +			unsigned long id)
-> > +{
-> > +	int ret;
-> > +
-> > +	ret = toprgu_reset_assert(rcdev, id);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	return toprgu_reset_deassert(rcdev, id);
-> > +}
-> 
-> As mentioned above, is this needed? Does this work for all modules?
-> Only implement this if you are sure both are true.
-  I think it's safe. Many modules has used it in MTK inside.
-> 
-> regards
-> Philipp
-> 
+
+Thanks,
+
+Zengruan
+
 
 _______________________________________________
 linux-arm-kernel mailing list
