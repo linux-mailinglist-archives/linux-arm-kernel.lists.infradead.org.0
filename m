@@ -2,89 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B59FB12ABAF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 11:44:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5088012ABBC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 11:51:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kwpnvYAmRi0ejujGKqqPADdDBhwAF2M/S3a7+V4M7Lw=; b=UanPKq08qMDIfi
-	KxzXUyLFrclwqdVas+1gFhqFa5fy5S0wGexZ4UTlhT/AIgVWzHngKCaJwZcUPVIavLK17IlaNJVQ5
-	r2ArVgv6wQUtrvXJPvajLydwjiuPimHIHW0J74lR1o8yAoYJX4b7wb2xf5HA99dUrYzAdxJHug7HM
-	H5sDoCHNqojhRuQ2zRDCO0Iy+8HFmq2TZ+2e/YVBqkmLFDVeKhF6QJtEO7ebW+ztScYlZpJSykHfq
-	J31W7BFeNUdecZfKWfGmySwseX1HTI91R8JCX37RhQ78HNpx58W1s/MiHkW8vLpGZSBoVN2Oxg+f0
-	TYtMDBDAUasSLtpEfS2A==;
+	List-Owner; bh=3aMxZK+0kkH3Hv9n72bEm6fZ4jmLyxHr/4ynN0L82tw=; b=U09ZLAqLh5cAKt
+	HfR4jUMllIiq0jzqfUD5uU1nZ7uaIR7hE529x+lk+S6+g0npCn8NslwpT9/RZqgRYaHnM4t4uiIGa
+	6l+AUignJp5el9t3A9+kkUF33lklE3ZZphlGTyGNuREqXCKZM8wTx9WJ406B4rss8zUQz3+nM2ZIb
+	DHbjMWknI4P+1eNZP3wTdEdQbeEwvSnmED8b8yJicrjQehjs9zlAVv6jtAqJq9eTik+8VQk9vXAU8
+	Ss1BNQqeG4WD0bNon5FthvZax4ympqToE/u6uXt1UKXy6lSRPKwNvN6d7Y9rygHNc59vt4mDMHUdy
+	f/P0P0oFnsd+WJLoAKRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikQd8-0003Al-HI; Thu, 26 Dec 2019 10:44:34 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1ikQjW-0006Ai-Ax; Thu, 26 Dec 2019 10:51:10 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikQcy-0003AC-PW
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 10:44:26 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z3so23374549wru.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Dec 2019 02:44:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=W6Af4lIIOy516w1HZJv41QRub9HWiIk1RJOzz7dfgEQ=;
- b=RRWj7QJRVGD7qhdqdeqYLZtA3GNeE24HteoqtMAQy9EdtyETZbqpILSloz8G+1S5l3
- Cy8XV31tpQBWog6+NhQ5HZyK+hIMRWTEzlZDq+OY5LOH2PWHZAt54XpNkSFW9VNYvK7+
- qOD+l/zTDhOjfG1WiXgWamWyNGx6mvp/eV7109emFx6+YLbOFGlnsQBka54AfSjekt3u
- 5bTHFNQZ7V3MphobXR5/U8bc0spT9mDwNzvS+LweUtl1Fe5JO8PmXYFYJbH3Vq6l48qN
- ua7ud5NKDlQsiX8s1jsxKYZO3y1Qn6lYP536Y1fUhm8GTSH2duSQ/2CNMuBi732zoPwH
- Swdw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=W6Af4lIIOy516w1HZJv41QRub9HWiIk1RJOzz7dfgEQ=;
- b=djg3Zn90bVGJCsXcaYrzLsTd8xVMVLKb9XvpMFpQY3FA3TbwcMFQHCjYrwpFHimrrx
- Mq54mCsiL5AfVrisMEElTJuW6r/cfLgQfPMRCtrfoN36hrlriwym21W/bCGxk/ToSXfU
- Wl09PHYRlDI7m1OuZdH1gYoOdl95EcGyzc2Q+td6M7UWd//UkUvrV9JyPjsu5/ivRY/6
- +bqAXJk8MaD0P8Tx/xtYjg2477YHzQz7wFZyIF8ZSGi/dj0FtVFUvXEsv9iilo9rR94d
- anrhH3ZO7Q0zrjYjmYMdm7OVCH1xT1EpV9qjJu15JBQnzLXgPQBT8nYMz9b8Z2LqcTOq
- QHOg==
-X-Gm-Message-State: APjAAAUItDWtRUV0Y6RVtQh5yI5x9TVz4C3suYjjsx5yvF/2iOYXZkTP
- 5SP42b0ZvaaXNkMp2dakFag=
-X-Google-Smtp-Source: APXvYqzgFYTin+GSIcMwEioDi0ZQwh5k4QJ4YC+vSqSVqZpzHffcKVk3xA1ydLymrJcfkxNAOQOngA==
-X-Received: by 2002:a5d:6ca1:: with SMTP id a1mr43133454wra.36.1577357062602; 
- Thu, 26 Dec 2019 02:44:22 -0800 (PST)
-Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id y20sm7891048wmi.25.2019.12.26.02.44.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Dec 2019 02:44:21 -0800 (PST)
-Date: Thu, 26 Dec 2019 11:44:19 +0100
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH v8 0/7] add thermal sensor driver for A64, A83T, H3, H5,
- H6, R40
-Message-ID: <20191226104419.GA26677@Red>
-References: <20191219172823.1652600-1-anarsoul@gmail.com>
- <20191219173321.bni4tbrhfkkphv7k@gilmour.lan>
- <4015380d-33ef-312c-a886-6e8bf65c976a@linaro.org>
- <20191226092751.dc3boaxsaeivuhw4@hendrix.home>
+ id 1ikQjL-00069T-RC; Thu, 26 Dec 2019 10:51:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=WWQCvAOj9VPIiUVGyfQ33Wwo9TwBrEqStTy3iF0TRKI=; b=5ENSPtWuCLATBd8/kwa0/36DDH
+ LgALFZw7cT3ojHPLSyxbRZynys24RXrvRE+4Hoa9l1gxwiTtzjWZ7v1ndSEl+oCZqWVHzg6NgsDfy
+ toS1nInW/8n8kzoXlBewdmyw3zos4MOsbNjS5iw3G9T8kM6A4qeCczP0Bcz7SHQsSvNg=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1ikQj6-00013d-GX; Thu, 26 Dec 2019 11:50:44 +0100
+Date: Thu, 26 Dec 2019 11:50:44 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH 1/3] net: stmmac: dwmac-meson8b: Fix the RGMII TX delay
+ on Meson8b/8m2 SoCs
+Message-ID: <20191226105044.GC1480@lunn.ch>
+References: <20191225005655.1502037-1-martin.blumenstingl@googlemail.com>
+ <20191225005655.1502037-2-martin.blumenstingl@googlemail.com>
+ <20191225150845.GA16671@lunn.ch>
+ <CAFBinCA4X1e5_5nBiHmNiB40uJyr9Nm1b2VkF9NqM+wb7-1xmw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191226092751.dc3boaxsaeivuhw4@hendrix.home>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAFBinCA4X1e5_5nBiHmNiB40uJyr9Nm1b2VkF9NqM+wb7-1xmw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_024424_853167_6BA4DB76 
-X-CRM114-Status: GOOD (  17.85  )
+X-CRM114-CacheID: sfid-20191226_025059_878126_2CDB925D 
+X-CRM114-Status: GOOD (  23.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -103,51 +77,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Amit Kucheria <amit.kucheria@verdurent.com>, linux-pm@vger.kernel.org,
- Yangtao Li <tiny.windzz@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>,
- =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Florian Fainelli <f.fainelli@gmail.com>, linus.luessing@c0d3.blue,
+ balbes-150@yandex.ru, khilman@baylibre.com, linux-kernel@vger.kernel.org,
+ ingrassia@epigenesys.com, netdev@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org, jbrunet@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 26, 2019 at 10:27:51AM +0100, Maxime Ripard wrote:
-> On Tue, Dec 24, 2019 at 07:30:55PM +0100, Daniel Lezcano wrote:
-> > On 19/12/2019 18:33, Maxime Ripard wrote:
-> > > Hi,
-> > >
-> > > On Thu, Dec 19, 2019 at 09:28:16AM -0800, Vasily Khoruzhick wrote:
-> > >> This patchset adds driver for thermal sensor in A64, A83T, H3, H5,
-> > >> H6 and R40 SoCs.
-> > >
-> > > Thanks again for working on this.
-> > >
-> > > I'll merge the DT patches when the driver will have been merged.
+> >       # RX and TX delays are added by the MAC when required
+> >       - rgmii
 > >
-> > I've applied patches 1 & 2.
+> >       # RGMII with internal RX and TX delays provided by the PHY,
+> >       # the MAC should not add the RX or TX delays in this case
+> >       - rgmii-id
 > >
-> > They are in the testing branch and will go to the linux-next branch as
-> > soon as the kernelci passes.
+> >       # RGMII with internal RX delay provided by the PHY, the MAC
+> >       # should not add an RX delay in this case
+> >       - rgmii-rxid
+> >
+> >       # RGMII with internal TX delay provided by the PHY, the MAC
+> >       # should not add an TX delay in this case
+> >       - rgmii-txid
+> >
+> > So ideally, you want the MAC to add no delay at all, and then use the
+> > correct phy-mode so the PHY adds the correct delay. This gives you the
+> > most flexibility in terms of PHY and PCB design. This does however
+> > require that the PHY implements the delay, which not all do.
+> these boards (with RGMII PHY) that I am aware of are using an RTL8211F
+> PHY which implements a 2ns PHY TX delay
+
+We need to be careful here...
+
+Earlier this year we got into a mess with a PHY driver wrongly
+implemented these delays. DT contained 'rgmii', but the PHY driver
+actually implemented rgmii-id'. Boards worked, because they actually
+needed rgmii-id. But then came along a board which really did need
+rgmii. We took the decision, maybe the wrong decision, to fix the PHY
+driver, and fixup DT files as we found boards which had the incorrect
+setting. We broke a lot of boards for a while and caused lots of
+people pain.
+
+You might have something which works, but i want to be sure it is
+actually correct, not two bugs cancelling each other out.
+
+You say the RTL8211F PHY implements a 2ns PHY TX delay. So in DT, do
+you have the phy-mode of 'rgmii-txid'? That would be the correct
+setting to say that the PHY provides only the TX delay.
+
+> however, the 3.10 vendor kernel also supports Micrel RGMII (and RMII)
+> PHYs where I don't know if they implement a (configurable) TX delay.
 > 
-> I just merged all the other patches (except the patch 6, for the H6,
-> as requested by Vasily on IRC).
-> 
+> > Looking at patches 2 and 3, the phy-mode is set to rgmii. What you
+> > might actually need to do is set this to rgmii-txid, or maybe
+> > rgmii-id, once you have the MAC not inserting any delay.
+> please let us split this discussion:
+> 1) I believe that this patch is still correct and required whenever
+> the MAC *has to* generate the TX delay (one use-case could be the
+> Micrel PHYs I mentioned above)
 
-Hello
+I think this patch splits into two parts. One is getting a 25MHz
+clock. That part i can agree with straight away. The second part is
+setting a 2ns TX delay. This we need to be careful of. What is the MAC
+actually doing after this patch? What is the configured RX delay? Does
+the driver explicitly configure the RX delay? To what?
 
-Vasily asked to not apply H6 due to my test failling on h6 and since he didnt own any H6 hw.
-But it was failling due my fault (a failling build).
+If you look at the definitions above, if the phy-mode is rgmii, the
+MAC is responsible for both RX and TX delay. 
 
-So the patchset work perfect on H6 (opi1+, opi3, pineH64 both model A and B) as reported by my answer to this thread.
+> 2) the correct phy-mode and where the TX delay is being generated. I
+> have tried "rgmii-txid" on my own Odroid-C1 and it's working fine
+> there. however, it's the only board with RGMII PHY that I have from
+> this generation of SoCs (and other testers are typically rare for this
+> platform, because it's an older SoC). so my idea was to use the same
+> settings as the 3.10 vendor kernel because these seem to be the "known
+> working" ones.
 
-Regards
+Vendor kernels have the alternative of 'vendor crap' for a good
+reason. Just because it works does not mean it is correct.
+
+> what do you think about 2)? my main concern is that this *could* break
+> Ethernet on other people's boards.
+> on the other hand I have no idea how likely that actually is.
+
+From what i understand, Ethernet is already broken? Or is it broken on
+just some boards?
+
+Looking at the function rtl8211f_config_init(), that PHY driver can
+only control TX delays. RX delays are controlled by a strapping pin.
+
+The Micrel PHY driver can also control its clock skew, but it does it
+in an odd way, not via the phy-mode, but via additional
+properties. See the binding document.
+
+What we normally say is make the MAC add no delays, and pass the
+correct configuration to the PHY so it adds the delay. But due to the
+strapping pin on the rtl8211f, we are in a bit of a grey area. I would
+suggest the MAC adds no delay, phy-mode is set to rmgii-id, the PHY
+driver adds TX delay in software, we assume the strapping pin is set
+to add RX delay, and we add a big fat comment in the DT.
+
+For the Micrel PHY, we do the same, plus add the vendor properties to
+configure the clock skew.
+
+But as i said, we are in a bit of a grey area. We can consider other
+options, but everything needs to be self consistent, between what the
+MAC is doing, what the PHY is doing, and what phy-mode is set to in
+DT.
+
+    Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
