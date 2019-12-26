@@ -2,68 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E06E12AA83
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 07:28:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAC3B12AA90
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 07:43:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=07IEiLQIa69pk98bxU7xmKFx23dJFjjyEOwzFOg0u3k=; b=Wrnuv/AVvvH7i0VjT2CIUrSrON
-	z9lMgYEC9UDK3FCTs7sNUfMSWdnPHmNn7u4bYKYqxQiIYyylY1sI6E8dlqEffltTglstO058+QMyk
-	j7tGSjFrmhcrspHvZQj1e1AG4LiKWv7IayCDEQL33m4t/5ozVaJlxKnCvfYAghLfm+DcIbOM8BTwq
-	skXfNScUJxHefcCUsjORH4CuTuiptUeY9dIp5k3Z/DB01D7vngBe6oNJVEUdrnHV4fk9f6shM0/Bm
-	NINpcU6ahVpa9kP2xmOTBrmxwEBRkx4sikAxbPmdEgHagLJZPlQzXWR2ImDz4y+GQJgPwuHb97p7q
-	FnSfKFcQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5c0l1oqdtQejNystoPqZFDzzwQS62hX/i5Dr0vYdtfI=; b=Ywq
+	w6RhW1Z5RkRiNKrDvirjggQboxR/xCkANrxfIBareT9bAC71DkE95lVg0cm8fzdMjfWVj1cM7az64
+	oKgvsbWj9qYJCXARemuHEcS6OTAXMDqGDYDvuXFlhc2AGIyHsU++mwd5nZIm1mzieM+etUZqktpR4
+	qSI3DJnp4crI9xxs4p92s4ngj3pta2MX+x2OD3befooMQQnLM3yNw/3ucOSxNqyeXNI8BrVM66udz
+	TD9aCVKAlDTD0rYKDywnG1BYCkqHx/Rmqtfjsobj2mJG6Lyx5SEMxNbKpu1oM2xBO1mzE1CbtyOHA
+	zNdlvbDAVs66+rYiHboWKd/oPEzpuyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikMcz-000522-Ib; Thu, 26 Dec 2019 06:28:09 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1ikMrv-0001JP-9E; Thu, 26 Dec 2019 06:43:35 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikMcV-0004tO-Dk
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 06:27:41 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2755B1A05AA;
- Thu, 26 Dec 2019 07:27:34 +0100 (CET)
+ id 1ikMrf-0001Ik-Nf
+ for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 06:43:21 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 32426200130;
+ Thu, 26 Dec 2019 07:43:18 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1F6A41A052B;
- Thu, 26 Dec 2019 07:27:24 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 49CD620034B;
+ Thu, 26 Dec 2019 07:43:13 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E229F402DF;
- Thu, 26 Dec 2019 14:27:11 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 05B6B402B3;
+ Thu, 26 Dec 2019 14:43:06 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
-To: aisheng.dong@nxp.com, festevam@gmail.com, shawnguo@kernel.org,
- stefan@agner.ch, kernel@pengutronix.de, linus.walleij@linaro.org,
- robh+dt@kernel.org, mark.rutland@arm.com, s.hauer@pengutronix.de,
- catalin.marinas@arm.com, will@kernel.org, bjorn.andersson@linaro.org,
- olof@lixom.net, maxime@cerno.tech, leonard.crestez@nxp.com,
- dinguyen@kernel.org, marcin.juszkiewicz@linaro.org,
- linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 3/3] arm64: defconfig: Select CONFIG_PINCTRL_IMX8MP by default
-Date: Thu, 26 Dec 2019 14:24:03 +0800
-Message-Id: <1577341443-474-3-git-send-email-Anson.Huang@nxp.com>
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, leonard.crestez@nxp.com, abel.vesa@nxp.com,
+ l.stach@pengutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] soc: imx: Add i.MX8MP SoC driver support
+Date: Thu, 26 Dec 2019 14:40:02 +0800
+Message-Id: <1577342402-12329-1-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1577341443-474-1-git-send-email-Anson.Huang@nxp.com>
-References: <1577341443-474-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191225_222739_597985_341F1DE0 
-X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-CacheID: sfid-20191225_224319_904456_464CCBF7 
+X-CRM114-Status: UNSURE (   6.23  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,26 +75,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable CONFIG_PINCTRL_IMX8MP by default to support i.MX8MP
-pinctrl driver.
+Add i.MX8MP SoC driver support:
+
+root@imx8mpevk:~# cat /sys/devices/soc0/family
+Freescale i.MX
+
+root@imx8mpevk:~# cat /sys/devices/soc0/machine
+FSL i.MX8MP EVK
+
+root@imx8mpevk:~# cat /sys/devices/soc0/soc_id
+i.MX8MP
+
+root@imx8mpevk:~# cat /sys/devices/soc0/revision
+1.0
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/soc/imx/soc-imx8.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index f123840..c7a94c4ff 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -400,6 +400,7 @@ CONFIG_PINCTRL_SINGLE=y
- CONFIG_PINCTRL_MAX77620=y
- CONFIG_PINCTRL_IMX8MM=y
- CONFIG_PINCTRL_IMX8MN=y
-+CONFIG_PINCTRL_IMX8MP=y
- CONFIG_PINCTRL_IMX8MQ=y
- CONFIG_PINCTRL_IMX8QXP=y
- CONFIG_PINCTRL_IPQ8074=y
+diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8.c
+index 964ff84..719e1f18 100644
+--- a/drivers/soc/imx/soc-imx8.c
++++ b/drivers/soc/imx/soc-imx8.c
+@@ -142,10 +142,16 @@ static const struct imx8_soc_data imx8mn_soc_data = {
+ 	.soc_revision = imx8mm_soc_revision,
+ };
+ 
++static const struct imx8_soc_data imx8mp_soc_data = {
++	.name = "i.MX8MP",
++	.soc_revision = imx8mm_soc_revision,
++};
++
+ static const struct of_device_id imx8_soc_match[] = {
+ 	{ .compatible = "fsl,imx8mq", .data = &imx8mq_soc_data, },
+ 	{ .compatible = "fsl,imx8mm", .data = &imx8mm_soc_data, },
+ 	{ .compatible = "fsl,imx8mn", .data = &imx8mn_soc_data, },
++	{ .compatible = "fsl,imx8mp", .data = &imx8mp_soc_data, },
+ 	{ }
+ };
+ 
 -- 
 2.7.4
 
