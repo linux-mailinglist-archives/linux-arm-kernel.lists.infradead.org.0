@@ -2,63 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9769D12AB43
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 10:26:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0FBA12AB5D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 26 Dec 2019 10:41:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=h0A6nuyMDFTViiz+1Krrn0pOwGOaTmTw+joGNcBmghg=; b=hgHXEZMBdv+10z+/Kb7uRIY1R
-	TVBc8nwrS4vejFKf7DNwVSarzktxyWDovBJeVEpqbgLC32LcSZO25QFwiw9JDljwTO8N54dVo6wXC
-	zTA106oroiqi7V8jphohL2PersFeH7UEYtYRx8pyOjdgnOiFXyxMo2aMfSotWqSDcDrACmL36xFOb
-	40Qcfa4Z0I3DSmow6F7kaEpBVYry+fkscRFGuJt0fUHJUNUabqFHDCiGGR94rD/POmpv5O7cF30Xq
-	oTgmcr9Fb09Ferl5TO9o26J3BeEubKw3mZgiTzHCGsufcm3s7Rjg/ZlofdzxqHNGPXYSOCgWVFafa
-	PPxJits9A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7iOBYPr81PN5O/NQonLmP30aMtoJb2wO67mr5gCvoWo=; b=CM+eFL2+G43j4d
+	m0ooPeb4C9HlxvaCGAA/Igi8ViZvvHUsbvzubumTsiyk8VHUZ59ZzQR//5igPeRYZHwpsTmNhBnK9
+	CY5c892DF/Gt+GYSZGZKgNKEPaunfW6btVlDZhsudhPPzcdTxXldqidilDmxmb5Ke5vVVCY5QZDi4
+	5SJrmT+zfKzG/jAJgk0hCAJBBpcNo7D9LpjO5XEsFxWkb++51dPhSnn62LHCjFgr4gPF2Qp5LAbpj
+	FPwFqX9QJxo8osrpJpd5X5jYOS+0A1c4nUiUszjB4uC/nylaQzcr1jkrs8Ier37yc9Y1EsXoywOlr
+	Q7gkwLamPjjafJ+x+HQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikPPu-0003uu-9K; Thu, 26 Dec 2019 09:26:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ikPdn-0000bs-UC; Thu, 26 Dec 2019 09:41:11 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikPPb-0003tA-VV
- for linux-arm-kernel@lists.infradead.org; Thu, 26 Dec 2019 09:26:33 +0000
-Received: from localhost (lfbn-lyo-1-633-204.w90-119.abo.wanadoo.fr
- [90.119.206.204])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C6C6E20882;
- Thu, 26 Dec 2019 09:26:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577352391;
- bh=CkarfyCauXn8wfEDBs9qybSmPYfMeIjIMe3oVYoPHVo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WaOnm7esK2ROl3hesRkx1Q9V+CUBQ9D7tRemrBSlQGoakMaVb7IYQ9996xNiLvtd7
- Kcq+cqu892ies3iBcFxDtBxMcKAQG7yNJn4jqHFs/eRo71GLMzscQGHCuAOerG6MeC
- YkoRtkj5QT259JCKnYIMP/nBijTXHD4uwXgsn+iw=
-Date: Thu, 26 Dec 2019 10:27:51 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: Re: [PATCH v8 0/7] add thermal sensor driver for A64, A83T, H3, H5,
- H6, R40
-Message-ID: <20191226092751.dc3boaxsaeivuhw4@hendrix.home>
-References: <20191219172823.1652600-1-anarsoul@gmail.com>
- <20191219173321.bni4tbrhfkkphv7k@gilmour.lan>
- <4015380d-33ef-312c-a886-6e8bf65c976a@linaro.org>
+ id 1ikPdP-0000Oh-MG; Thu, 26 Dec 2019 09:40:48 +0000
+X-UUID: 60f5d5b86dc9442e9f3fc38ed9d8f288-20191226
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=9SQXUGBNxpgO25fWqd8mw3IbIEvxUZSz2zkrYuaQ0yA=; 
+ b=B1JyazKw6pYk2gHa7csfQVlLhdIlvREvcNUN7ZcdXg/D2s2+DXp22oq8/Si8JvyHOaTjyzIyvg1Abh1Bi5DUfnG3TRzx1mYOrgBr0GFhvpn823vCgnU2cxc0x35Ji9ySPY1QrkJwVQ8EjPN+exCyDSoBxU8meq59Kp/RlntWnF4=;
+X-UUID: 60f5d5b86dc9442e9f3fc38ed9d8f288-20191226
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <yong.liang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1831300774; Thu, 26 Dec 2019 01:40:37 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 26 Dec 2019 01:41:02 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 26 Dec 2019 17:40:08 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 26 Dec 2019 17:40:04 +0800
+From: Yong Liang <yong.liang@mediatek.com>
+To: <matthias.bgg@gmail.com>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-mediatek@lists.infradead.org>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH v1 0/1] add reset-cells in infracfg
+Date: Thu, 26 Dec 2019 17:39:29 +0800
+Message-ID: <20191226093930.22413-1-yong.liang@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <4015380d-33ef-312c-a886-6e8bf65c976a@linaro.org>
+X-TM-SNTS-SMTP: 97C84BC2B8A49CB7C8717539FF71FCF59914B28A370C366D17C699BFD4E77F722000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_012632_046959_458F7E01 
-X-CRM114-Status: GOOD (  15.36  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191226_014047_747406_C571E97D 
+X-CRM114-Status: UNSURE (   4.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -66,7 +76,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,77 +89,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Amit Kucheria <amit.kucheria@verdurent.com>, linux-pm@vger.kernel.org,
- Yangtao Li <tiny.windzz@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>,
- =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3265528286256431907=="
+Cc: "yong.liang" <yong.liang@mediatek.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: "yong.liang" <yong.liang@mediatek.com>
 
---===============3265528286256431907==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="rog6f2soycavkabo"
-Content-Disposition: inline
+Include mt8183-reset.h and add reset-cells in infracfg
+in dtsi file.
 
+yong.liang (1):
+  amr64: dts: modify mt8183.dtsi
 
---rog6f2soycavkabo
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 2 ++
+ 1 file changed, 2 insertions(+)
 
-On Tue, Dec 24, 2019 at 07:30:55PM +0100, Daniel Lezcano wrote:
-> On 19/12/2019 18:33, Maxime Ripard wrote:
-> > Hi,
-> >
-> > On Thu, Dec 19, 2019 at 09:28:16AM -0800, Vasily Khoruzhick wrote:
-> >> This patchset adds driver for thermal sensor in A64, A83T, H3, H5,
-> >> H6 and R40 SoCs.
-> >
-> > Thanks again for working on this.
-> >
-> > I'll merge the DT patches when the driver will have been merged.
->
-> I've applied patches 1 & 2.
->
-> They are in the testing branch and will go to the linux-next branch as
-> soon as the kernelci passes.
-
-I just merged all the other patches (except the patch 6, for the H6,
-as requested by Vasily on IRC).
-
-Thanks to everyone involved!
-Maxime
-
---rog6f2soycavkabo
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXgR9FwAKCRDj7w1vZxhR
-xbdXAPsGHYwewHWWZwWJLF/9xp5VSraGYyM5zFe9REMEM+rRYwD/VjwfBOp0ldc4
-8dHM5uzYOaKYBLrqF1yORYBeEDtCYQw=
-=MvoE
------END PGP SIGNATURE-----
-
---rog6f2soycavkabo--
-
-
---===============3265528286256431907==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+-- 
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3265528286256431907==--
-
