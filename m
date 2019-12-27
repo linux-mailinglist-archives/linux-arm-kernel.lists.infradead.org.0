@@ -2,79 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A71F12AFEF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 01:34:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB32312B03D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 02:33:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=abqjlNbCzc1ngedqqPLyXecy6AKCZ5PCaz/BrWgIz5Y=; b=eNMYCwVIbOGnxr
-	JYbIhFGNwolcEdvc7ze88Xrld/Nt/71rp/8Weq+NdI8YLaNl5ZXCEAITAJFtY1QCv/DhgD+/dc0Tc
-	vYdv7owWm+vbO4YPZpbQ/aK9dvUishlfjUTLFONbR8ZIsRTl5mAm14HDj/nlxNoEjdZex72plB00X
-	8qVZZYT18r3rmbgm133yw5uHoKWqlgDGytWfBzMlc8T7eK1vpJjT5DblkOktiLxYTR4QjCSbw3Gnq
-	N+16M6PxXIsBNruZyu9IU8AEGeasQl99F6yqUXzvYX0g9Do4Nrf/6cdiGSi4oI3U9hgN9x5Q+2PO2
-	7xYDBGsAq0PqW/cqc/Cw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:From:
+	References:In-Reply-To:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=wlma4A/d5BK+EepqflXTIGDi+45g7Jz8JNyT4lk4j/8=; b=KJ8Wksxr11KXGKm6W/ygDHipVq
+	yXt/i3dXpSrnkVzA8WOOeG3tnDTZJxs6yUklSY6WJuj90RVJB1W437c0qjZxoOsldIGw+c0Bfsa47
+	HXh1pEUMyVLHbqT2A0rtNNqQ2WEYGOBGS3sNWMdq7O50aUf5DyFljl7t3NkI3kNuJwtCr4Cm0wFpT
+	qXjXH5as/3KHSV6IFfBHEe+o15de8gaHCh87dET4caNtL8itdwoePRrn/57CaSziSi2vAzqgbAo4S
+	J4XgJ+Ef5nzhuHz2iyQ8z+3Q8vsbuhkoeLmg/jMJJ7reoDEriovGGS4F9ebKKowEqGiIp9PmfymMU
+	BXqR1+VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikdaO-00060x-OS; Fri, 27 Dec 2019 00:34:36 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1ikeVN-0006s1-5v; Fri, 27 Dec 2019 01:33:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikdaE-00060d-E2
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 00:34:27 +0000
-Received: by mail-lf1-x141.google.com with SMTP id 15so19513456lfr.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Dec 2019 16:34:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=A0ugGKSdy996G5cCplSFEOG0vQpDh89551RLNUPVsrY=;
- b=RJXCsoTJsJ6edGiu8VS+CH+D/Dbj3WTIrX4aUJgPw9NYhOJTOvubQ0t/Ibr04akdir
- Fu6Ai+dWwPh6wOi0pbuhcbNC5hyjwFcF7b9HKCGYnkgyO1gINGyedIAR+CAZ4PPjK5rx
- NFFn9i4fsO+15oum1AQ5YLYbvJ6MGnp9mUaDgEJvGQGd5PFyjaStWnc6lD+xm66Y78c2
- UE8yLgl5l7l1Dg1HzL0pO/OTmLbf2sQbEYVaHGLCybnkkT6qEFz7SRBjj1cpeoRvkB8z
- xcCXdDZL/7k+upNyso0Vnzp8DnU4dvZprpqNC7mv4dpkCwGAqFYcjd9sWfRBreCjAYXf
- 3h8A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=A0ugGKSdy996G5cCplSFEOG0vQpDh89551RLNUPVsrY=;
- b=PEPy91KjA2zGorYiaIISZ4m3iY1fRnRNPVpgGCXA/0jUWSGjI4tsZtDVbVoC5gYXF/
- xxwaPt0POulHqlVMSUKqPdyVR29b0+r6rSXfz+X4+x1UZ+VSw63cYrP1kU5qzKAJE71V
- qJ6Q6JmsDA+FdRMAij8CrUUnTkX/NgoYv3PmeOR5fxf+1FclhfQuOVxZ5by5Hg5PEhVY
- 3UqOU51Q3ECE6Vu3skPIm7iwf31SlqrXk1DCMYW6qBJa4S7z+X7kA03BTYb38RGQMoDS
- 8BZWdWWBWdrMeVUvxXfzoxmIRgKncJZ+8YXn7OA/4DoveXuZN1hrNK3LqBscD7MWICOi
- RYhg==
-X-Gm-Message-State: APjAAAXNuRYFvmNIHPTFZkKYUJuq5Sz5vSU/q86wJ4HaazdgPXdEMaUV
- ktO7rKxK4M+DGYqWYCzVnOwMTmmjUmOzk1uI2Yg=
-X-Google-Smtp-Source: APXvYqxY1gE2xluutA0vYW3bQC/tuQsvTnlKskNTUihkMrt/0z56p8xevQaK89OQG00nOvNGggLiZOMqj1+rHfr3cMA=
-X-Received: by 2002:a19:2d0d:: with SMTP id k13mr26787903lfj.12.1577406863391; 
- Thu, 26 Dec 2019 16:34:23 -0800 (PST)
+ id 1ikeVD-0006r5-73
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 01:33:20 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C7E912080D;
+ Fri, 27 Dec 2019 01:33:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577410397;
+ bh=5Yx3y9PHsdQln0iIJjCGPleS3otmhTjrs6Rx8bNhXJI=;
+ h=In-Reply-To:References:From:To:Subject:Date:From;
+ b=XI+Zisoxpm8SwwYJNDsvSQkTzHwpTwZsSfUEWofgzSM16z8W8FIw6ba4xmhq+xBK2
+ fBHr9PUlNxRqckDZJeXlJj4ucC70RecitokBRLdysZ0XaCyun70yO9W/kHDpwt5w2v
+ awLJaUtqmWgnr8E6hc2tLTjRoD90CRRlb9mflaOQ=
 MIME-Version: 1.0
-References: <20191224010020.15969-1-rjones@gateworks.com>
- <20191224010020.15969-2-rjones@gateworks.com>
- <20191226232625.GA2186@bogus>
-In-Reply-To: <20191226232625.GA2186@bogus>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 26 Dec 2019 21:34:06 -0300
-Message-ID: <CAOMZO5Aj+PfzXrYoV8LxKStdQ-B0BLdMV16L3ya0NokozG479g@mail.gmail.com>
-Subject: Re: [PATCH v4 1/5] dt-bindings: arm: fsl: Add Gateworks Ventana
- i.MX6DL/Q compatibles
-To: Rob Herring <robh@kernel.org>
+In-Reply-To: <1576752109-24497-6-git-send-email-sricharan@codeaurora.org>
+References: <1576752109-24497-1-git-send-email-sricharan@codeaurora.org>
+ <1576752109-24497-6-git-send-email-sricharan@codeaurora.org>
+From: Stephen Boyd <sboyd@kernel.org>
+To: agross@kernel.org, devicetree@vger.kernel.org, linus.walleij@linaro.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-clk@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-soc@vger.kernel.org, robh+dt@kernel.org,
+ sivaprak@codeaurora.org, sricharan@codeaurora.org
+Subject: Re: [PATCH V2 5/7] clk: qcom: Add ipq6018 Global Clock Controller
+ support
+User-Agent: alot/0.8.1
+Date: Thu, 26 Dec 2019 17:33:16 -0800
+Message-Id: <20191227013317.C7E912080D@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_163426_496079_A951225C 
-X-CRM114-Status: GOOD (  12.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191226_173319_300817_96F1C6A1 
+X-CRM114-Status: GOOD (  16.80  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -84,6 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,63 +82,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Robert Jones <rjones@gateworks.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+Quoting Sricharan R (2019-12-19 02:41:47)
+> diff --git a/drivers/clk/qcom/Kconfig b/drivers/clk/qcom/Kconfig
+> index 3b33ef1..d0392f1 100644
+> --- a/drivers/clk/qcom/Kconfig
+> +++ b/drivers/clk/qcom/Kconfig
+> @@ -95,6 +95,14 @@ config IPQ_GCC_4019
+>           Say Y if you want to use peripheral devices such as UART, SPI,
+>           i2c, USB, SD/eMMC, etc.
+>  
+> +config IPQ_GCC_6018
+> +       tristate "IPQ6018 Global Clock Controller"
+> +       help
+> +         Support for global clock controller on ipq6018 devices.
+> +         Say Y if you want to use peripheral devices such as UART, SPI,
+> +         i2c, USB, SD/eMMC, etc. Select this for the root clock
+> +         of ipq6018.
 
-On Thu, Dec 26, 2019 at 8:26 PM Rob Herring <robh@kernel.org> wrote:
->
-> On Mon, Dec 23, 2019 at 05:00:16PM -0800, Robert Jones wrote:
-> > Add the compatible enum entries for Gateworks Ventana boards.
-> >
-> > Signed-off-by: Robert Jones <rjones@gateworks.com>
-> > ---
-> >  Documentation/devicetree/bindings/arm/fsl.yaml | 2 ++
-> >  1 file changed, 2 insertions(+)
-> >
-> > diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-> > index f79683a..a02e980 100644
-> > --- a/Documentation/devicetree/bindings/arm/fsl.yaml
-> > +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-> > @@ -126,6 +126,7 @@ properties:
-> >                - toradex,apalis_imx6q-ixora      # Apalis iMX6 Module on Ixora
-> >                - toradex,apalis_imx6q-ixora-v1.1 # Apalis iMX6 Module on Ixora V1.1
-> >                - variscite,dt6customboard
-> > +              - gw,ventana                # Gateworks i.MX6DL or i.MX6Q Ventana
->
-> Keep entries sorted.
+What is the root clock of ipq6018?
 
-Just for clarification: shouldn't the entries inside fsl.yaml match
-the dtb file names?
+> +
+>  config IPQ_GCC_806X
+>         tristate "IPQ806x Global Clock Controller"
+>         help
+> diff --git a/drivers/clk/qcom/gcc-ipq6018.c b/drivers/clk/qcom/gcc-ipq6018.c
+> new file mode 100644
+> index 0000000..b6f0148
+> --- /dev/null
+> +++ b/drivers/clk/qcom/gcc-ipq6018.c
+> @@ -0,0 +1,4674 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2018, The Linux Foundation. All rights reserved.
+> + */
+> +
+> +#include <linux/kernel.h>
+> +#include <linux/err.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_device.h>
+> +#include <linux/clk-provider.h>
+> +#include <linux/regmap.h>
+> +
+> +#include <linux/reset-controller.h>
+> +#include <dt-bindings/clock/qcom,gcc-ipq6018.h>
+> +#include <dt-bindings/reset/qcom,gcc-ipq6018.h>
+> +
+> +#include "common.h"
+> +#include "clk-regmap.h"
+> +#include "clk-pll.h"
+> +#include "clk-rcg.h"
+> +#include "clk-branch.h"
+> +#include "clk-alpha-pll.h"
+> +#include "clk-regmap-divider.h"
+> +#include "clk-regmap-mux.h"
+> +#include "reset.h"
+> +
+> +#define F(f, s, h, m, n) { (f), (s), (2 * (h) - 1), (m), (n) }
+> +
+> +enum {
+> +       P_XO,
+> +       P_BIAS_PLL,
+> +       P_UNIPHY0_RX,
+> +       P_UNIPHY0_TX,
+> +       P_UNIPHY1_RX,
+> +       P_BIAS_PLL_NSS_NOC,
+> +       P_UNIPHY1_TX,
+> +       P_PCIE20_PHY0_PIPE,
+> +       P_USB3PHY_0_PIPE,
+> +       P_GPLL0,
+> +       P_GPLL0_DIV2,
+> +       P_GPLL2,
+> +       P_GPLL4,
+> +       P_GPLL6,
+> +       P_SLEEP_CLK,
+> +       P_UBI32_PLL,
+> +       P_NSS_CRYPTO_PLL,
+> +       P_PI_SLEEP,
+> +};
+> +
+> +static const struct clk_parent_data gcc_xo_gpll0_gpll0_out_main_div2[] = {
+> +       { .fw_name = "xo", .name = "xo"},
+> +       { .fw_name = "gpll0", .name = "gpll0"},
+> +       { .fw_name = "gpll0_out_main_div2", .name = "gpll0_out_main_div2"},
 
-In case of the i.MX6Q based gateworks board, this should be:
+Because we aren't migrating this from existing DT to new DT we should be
+able to leave out .name in all these structs. That's the legacy fallback
+mechanism used to migrate DT over to the new way.
 
-gw,imx6q-gw51xx
-gw,imx6q-gw52xx
-gw,imx6q-gw53xx
-gw,imx6q-gw5400-a
-gw,imx6q-gw54xx
-gw,imx6q-gw551x
-gw,imx6q-gw552x
-gw,imx6q-gw553x
-gw,imx6q-gw560x
-gw,imx6q-gw5903
-gw,imx6q-gw5904
+> +};
+> +
+> +static const struct parent_map gcc_xo_gpll0_gpll0_out_main_div2_map[] = {
+> +       { P_XO, 0 },
+> +       { P_GPLL0, 1 },
+> +       { P_GPLL0_DIV2, 4 },
+> +};
+> +
+[...]
+> +
+> +static int gcc_ipq6018_probe(struct platform_device *pdev)
+> +{
+> +       int i, ret;
+> +       struct regmap *regmap;
+> +       struct clk *clk;
+> +       struct device *dev = &pdev->dev;
+> +
+> +       regmap = qcom_cc_map(pdev, &gcc_ipq6018_desc);
+> +       if (IS_ERR(regmap))
+> +               return PTR_ERR(regmap);
+> +
+> +       for (i = 0; i < ARRAY_SIZE(gcc_ipq6018_hws); i++) {
+> +               clk = devm_clk_register(&pdev->dev, gcc_ipq6018_hws[i]);
+> +               if (IS_ERR(clk))
+> +                       return PTR_ERR(clk);
+> +       }
+> +
+> +       clk_register_fixed_rate(dev, "pcie20_phy0_pipe_clk", NULL, 0, 250000000);
 
-Please advise.
+Why do we need to register this? Can it come from DT then? Also what if
+it fails? And what if really_probe fails? Then we'll need to undo this
+registration. Ideally this is created somewhere else.
+
+> +
+> +       /* Disable SW_COLLAPSE for USB0 GDSCR */
+> +       regmap_update_bits(regmap, 0x3e078, BIT(0), 0x0);
+> +       /* Enable SW_OVERRIDE for USB0 GDSCR */
+> +       regmap_update_bits(regmap, 0x3e078, BIT(2), BIT(2));
+> +       /* Disable SW_COLLAPSE for USB1 GDSCR */
+> +       regmap_update_bits(regmap, 0x3f078, BIT(0), 0x0);
+> +       /* Enable SW_OVERRIDE for USB1 GDSCR */
+> +       regmap_update_bits(regmap, 0x3f078, BIT(2), BIT(2));
+> +
+> +       /* SW Workaround for UBI Huyara PLL */
+> +       regmap_update_bits(regmap, 0x2501c, BIT(26), BIT(26));
+> +
+> +       clk_alpha_pll_configure(&ubi32_pll_main, regmap, &ubi32_pll_config);
+> +
+> +       clk_alpha_pll_configure(&nss_crypto_pll_main, regmap,
+> +                               &nss_crypto_pll_config);
+> +
+> +       ret = qcom_cc_really_probe(pdev, &gcc_ipq6018_desc, regmap);
+> +
+> +       dev_dbg(&pdev->dev, "Registered ipq6018 clock provider");
+
+Please remove this and just return the result of really_probe.
+
+> +
+> +       return ret;
+> +}
 
 _______________________________________________
 linux-arm-kernel mailing list
