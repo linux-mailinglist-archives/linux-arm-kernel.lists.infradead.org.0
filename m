@@ -2,68 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE03F12B089
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 03:17:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A1FB12B0AC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 03:39:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=MzN3dfRk+VWrhGb6Rqn+S5c8ntO3hGuayhCLJg4SgNM=; b=Wi/3Sr7ZEssCKE1UaBNOg4SRNu
-	5dCr7hE2xeyIpVtk8qbBGIRhQQ/Q7MxCnHU1dMM3hMZWaN4K783gShZ13Vcvedf5oBIrg3AM9zlzs
-	ngUEGzWT7yroFg/HFHXc/2ZZRfag2qj1jHZY/JRv7KeUzBzZetrRYtbvVePOIEfd8y4ypbhr4+BUs
-	QshRTvNmpg7tA99+kxE8gUzTf3qLFkOzea7LzG4I4P0gYvH8Ik8B8WFEFUNbFusr7HqMmDIuW/3lQ
-	TwFMRVHMXffanntWCW9aMNSVBBXwcJn3aK/jBrdxEjPqOOCHgOWgNjdYiCLlJKYSwVgvQWulImDpr
-	gjaD8nUA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Rk07xdJd05NgtSWWo8TzGFr52KJ6NPGi8ELMDNRKC88=; b=nXMAUwdjTqJaXO
+	8RVB/uSzARHKR/BpwJ9vjoCahKNMJ0q/ouGnGgjldCcp7y/Aoz8YaXEBzqMZLzPqRg16v231rYJAP
+	S0Tvbak7i62X5sxBEqicZjLnpgvg63bOxxb7rcpfl0wPVIlM3KKizwZ2JxyYcCVDLSb2sGIO6Jzqt
+	z3YsuUJAF/DqU7u0J6Yn0y63y79C2ZUFEXblWHitoc3KJckX8KvZFXKob+N3+kcln97hm3WkwSes5
+	jzCQGpo2oNnQQ4Gl+QbtAgtschRIORDJ73ek3yceL3TB9TmEZipw/OXMHPUglBOnNSUcj/yXhxJWI
+	mVZW4Yr/vEPBYwLbuIfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikfBe-000563-Vg; Fri, 27 Dec 2019 02:17:10 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1ikfXT-0002q0-Cb; Fri, 27 Dec 2019 02:39:43 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikfAc-0004WN-1j
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 02:16:08 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 70C7C1A1008;
- Fri, 27 Dec 2019 03:16:02 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1427F1A0683;
- Fri, 27 Dec 2019 03:15:52 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 6063D40291;
- Fri, 27 Dec 2019 10:15:39 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
- mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, catalin.marinas@arm.com,
- will@kernel.org, bjorn.andersson@linaro.org, olof@lixom.net,
- maxime@cerno.tech, leonard.crestez@nxp.com, dinguyen@kernel.org,
- marcin.juszkiewicz@linaro.org, ping.bai@nxp.com, abel.vesa@nxp.com,
- linux-clk@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 3/3] arm64: defconfig: Enable CONFIG_CLK_IMX8MP by default
-Date: Fri, 27 Dec 2019 10:12:28 +0800
-Message-Id: <1577412748-28213-3-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1577412748-28213-1-git-send-email-Anson.Huang@nxp.com>
-References: <1577412748-28213-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1ikfXI-0002p0-C9
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 02:39:34 +0000
+Received: by mail-wm1-x343.google.com with SMTP id b19so7073106wmj.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 26 Dec 2019 18:39:31 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=lNlw2hvCqhTrh/hZvwaoyx35sWfAeV4bWBqxx7AGW0w=;
+ b=F2dPTR2AStguUI0ZR5BTvAtM2jM+BLo5sQxmbXTSSJlXPEQQ3GktJ6lkZ5oYt89sOV
+ zB3Ni790ffOppqiBjBCnN/Hg3BkMX4Xlw0drIGqguSuIriiMYFxGllaetqKDkZsYspTI
+ YYJS571HnR+MNI6xs/xYaeOqgnPfdnj2h8PdNjmdJcrcHAwujiu8/VV6SpS3/wy/sMAv
+ ZCvGGSnfBWFGEb4hHSXKAaBXzaHoJ5f1MoWLNKmcUfgVlyEnFa8wahVAOn/S0sA5zgKK
+ EI6my1UCUKT3/xv81m48pJXo/4LUdFtmfe98hTijeCe+DVhlzhmDQZQRlYy8iWhQmAhP
+ tA7w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=lNlw2hvCqhTrh/hZvwaoyx35sWfAeV4bWBqxx7AGW0w=;
+ b=QOI6LKP5pziwL6zKiiiba3K/+9s+G2WSK0MLLekTY252BemcOtwoYK9pZOAeDpBKq+
+ TDVCaYuz37oArEQ1oIIYubCA9/cJoVf+czpw9wU7eA8D2D+55Ny0+YkPKt52V4OHNCbZ
+ sBVjWx9K4vx5968apGZ3U4T1vlFA3tih9zGxYcsAf17LhEU+bpy1cn4RIfs8469MBaFH
+ X1V6QnyCLGMjeNrkhNCwTR07sDJev88rdLdQxcipKRucvIkjoDwWctJKuM+Uz6R/XZpa
+ xV+hGAqlrJ4vLYhuTG34s9zG30/e9q+z8sl6DtIx7T3bOP006ZVkxuaHga1Oakd4+H4l
+ pDYQ==
+X-Gm-Message-State: APjAAAUCRGVbqi1UX69CaJ354OL/GmARq8pRCGOxjdd8ZiJ3toAe1G+j
+ +1it3bzefm6lv4l1JdIdVJw=
+X-Google-Smtp-Source: APXvYqx5WlxQynErEfGANcFG7+r9Q10F6BhK86BjHYn2T+iVZVD9jxFpM5SEG6hdH91wW3UV673v7A==
+X-Received: by 2002:a7b:c151:: with SMTP id z17mr16595270wmi.137.1577414370684; 
+ Thu, 26 Dec 2019 18:39:30 -0800 (PST)
+Received: from zhanggen-UX430UQ ([95.179.219.143])
+ by smtp.gmail.com with ESMTPSA id p18sm9733931wmb.8.2019.12.26.18.39.27
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 26 Dec 2019 18:39:30 -0800 (PST)
+Date: Fri, 27 Dec 2019 10:39:21 +0800
+From: Gen Zhang <blackgod016574@gmail.com>
+To: nsekhar@ti.com, bgolaszewski@baylibre.com, linux@armlinux.org.uk
+Subject: [PATCH] board-dm644x-evm: fix 2 missing-check bugs in evm_led_setup()
+Message-ID: <20191227023921.GA21233@zhanggen-UX430UQ>
+MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_181606_228633_C78F9D35 
-X-CRM114-Status: UNSURE (   6.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191226_183932_418241_C4E1E400 
+X-CRM114-Status: GOOD (  10.32  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (blackgod016574[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (blackgod016574[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,35 +98,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Select CONFIG_CLK_IMX8MP by default to support i.MX8MP clock driver.
+In evm_led_setup(), the allocation result of platform_device_alloc() and 
+platform_device_add_data() should be checked.
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Signed-off-by: Gen Zhang <blackgod016574@gmail.com>
 ---
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index c7a94c4ff..8d9b9ce 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -701,6 +701,7 @@ CONFIG_COMMON_CLK_PWM=y
- CONFIG_CLK_RASPBERRYPI=m
- CONFIG_CLK_IMX8MM=y
- CONFIG_CLK_IMX8MN=y
-+CONFIG_CLK_IMX8MP=y
- CONFIG_CLK_IMX8MQ=y
- CONFIG_CLK_IMX8QXP=y
- CONFIG_TI_SCI_CLK=y
--- 
-2.7.4
-
+diff --git a/arch/arm/mach-davinci/board-dm644x-evm.c b/arch/arm/mach-davinci/board-dm644x-evm.c
+index 9d87d4e..9cd2785 100644
+--- a/arch/arm/mach-davinci/board-dm644x-evm.c
++++ b/arch/arm/mach-davinci/board-dm644x-evm.c
+@@ -352,15 +352,20 @@ evm_led_setup(struct i2c_client *client, int gpio, unsigned ngpio, void *c)
+ 	 * device unregistration ...
+ 	 */
+ 	evm_led_dev = platform_device_alloc("leds-gpio", 0);
+-	platform_device_add_data(evm_led_dev,
++	if (!evm_led_dev)
++		return -ENOMEM;
++	status = platform_device_add_data(evm_led_dev,
+ 			&evm_led_data, sizeof evm_led_data);
++	if (status)
++		goto err;
+ 
+ 	evm_led_dev->dev.parent = &client->dev;
+ 	status = platform_device_add(evm_led_dev);
+-	if (status < 0) {
+-		platform_device_put(evm_led_dev);
+-		evm_led_dev = NULL;
+-	}
++	if (status)
++		goto err;
++err:
++	platform_device_put(evm_led_dev);
++	evm_led_dev = NULL;
+ 	return status;
+ }
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
