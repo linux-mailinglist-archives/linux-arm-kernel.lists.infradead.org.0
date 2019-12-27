@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5469B12B3B7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 10:48:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B315912B3C9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 11:09:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LT67HeIUTO3LO0+ZaH8ADAjENvtnKtlIG7F5qYIdu+g=; b=E52Hy7CHLGJEnL
-	zzm0yJD7NC3ZuKRNORfxBfhiTq4MPB3VyIjlSyYanQM6KqD4XrJ2xtAc3QpeCQ+BLfkGYgWApqRn1
-	1/LF/nflOx6sflbuPza/KVEozx146ysHrAJaHaBVldHFYailD+tzjciSYJaZEBLYW7TQDqIs+GUqX
-	W/xrUA2qMU3gf8fF+uBkz6bft8cytb56RJfzas/sJZPXNxx1MYu7FNB5CRHhsrdw5BhjT+dHnwFP5
-	XTvUx7kUGE+KUVy9/hzhPR0eUOT5jZFupIWx2twqls8aRgZfvl0/0DkteZS+DDJ3JQ0Pe1LPTmMqL
-	O1a6JNH+NhpdT2u+7RBw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y65QOCQ+2t3qGFZbyfv/K5sTVcFSLf/VfRnca6oQ1DY=; b=dgZw5H8tMHyTXo
+	2CKhFAOcZehZZqUYU8X5M3G/xXoOCWtQF0iZro7ZfEFJSahFX25DuCHCL7DVCZWw2/BrTOfWUuejC
+	6qZsvlm+7T29djBJzvQ6jy1x3lqtsbOqEBq2vwI5DOBiHo7xqWPMgFuxEE85bvR07CJgb9RKmcI/0
+	BcVViJmBrnuMA8iurtiorQGqRZyLRCzcfhVpOFJpk1+6F6HPzLVuGITKQM9NZf8XzjTbgHBqctd1k
+	2KdosNsMtYSxv2GzNxyLqiPM07Pm4thRNtnghm0mA8aPI4Qm1lTbtVdnniuKFijFjnjAEO58w6j3U
+	ALxw4wlxgVZZMmmL3C8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikmEU-0004MK-F8; Fri, 27 Dec 2019 09:48:34 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1ikmYR-00031M-1L; Fri, 27 Dec 2019 10:09:11 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikmDP-0003dc-1n; Fri, 27 Dec 2019 09:47:35 +0000
-Received: from droid15-sz.amlogic.com (10.28.8.25) by mail-sz.amlogic.com
- (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10; Fri, 27 Dec 2019
- 17:47:45 +0800
-From: Jian Hu <jian.hu@amlogic.com>
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-Subject: [PATCH v5 5/5] clk: meson: a1: add support for Amlogic A1 Peripheral
- clock driver
-Date: Fri, 27 Dec 2019 17:46:06 +0800
-Message-ID: <20191227094606.143637-6-jian.hu@amlogic.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191227094606.143637-1-jian.hu@amlogic.com>
-References: <20191227094606.143637-1-jian.hu@amlogic.com>
+ id 1ikmYC-00030w-S8; Fri, 27 Dec 2019 10:08:59 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id F16B529256C
+Subject: Re: [PATCH v22 2/2] drm/bridge: Add I2C based driver for ps8640 bridge
+To: Ezequiel Garcia <ezequiel@collabora.com>, linux-kernel@vger.kernel.org
+References: <20191223143538.20327-1-enric.balletbo@collabora.com>
+ <20191223143538.20327-3-enric.balletbo@collabora.com>
+ <c7dd37a21c0b43d1b05242f6077102414a3d81d9.camel@collabora.com>
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Message-ID: <85e9054f-aa69-71a7-e5af-299ef77bc547@collabora.com>
+Date: Fri, 27 Dec 2019 11:08:50 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-X-Originating-IP: [10.28.8.25]
+In-Reply-To: <c7dd37a21c0b43d1b05242f6077102414a3d81d9.camel@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_014727_640070_26BCD569 
-X-CRM114-Status: GOOD (  14.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191227_020857_204314_03BA8F83 
+X-CRM114-Status: GOOD (  28.51  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,2463 +60,600 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
- linux-arm-kernel@lists.infradead.org, Qiufang Dai <qiufang.dai@amlogic.com>,
- linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
- Chandle Zou <chandle.zou@amlogic.com>
+Cc: Ulrich Hecht <uli@fpond.eu>, Jernej Skrabec <jernej.skrabec@siol.net>,
+ drinkcat@chromium.org, Jitao Shi <jitao.shi@mediatek.com>,
+ Jonas Karlman <jonas@kwiboo.se>, David Airlie <airlied@linux.ie>,
+ Neil Armstrong <narmstrong@baylibre.com>, Daniel Kurtz <djkurtz@chromium.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, linux-mediatek@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
+ hsinyi@chromium.org, matthias.bgg@gmail.com,
+ Collabora Kernel ML <kernel@collabora.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add Amlogic Meson A1 peripheral clock driver, it depends
-on the A1 PLL driver.
+Hi Ezequiel,
 
-Signed-off-by: Jian Hu <jian.hu@amlogic.com>
----
- drivers/clk/meson/Kconfig  |    9 +
- drivers/clk/meson/Makefile |    1 +
- drivers/clk/meson/a1.c     | 2263 ++++++++++++++++++++++++++++++++++++
- drivers/clk/meson/a1.h     |  120 ++
- 4 files changed, 2393 insertions(+)
- create mode 100644 drivers/clk/meson/a1.c
- create mode 100644 drivers/clk/meson/a1.h
+On 26/12/19 17:38, Ezequiel Garcia wrote:
+> Hi Enric,
+> 
+> Note that this series is marked as v22, but it's really the 23th.
+> Some minor comments below, it's looking really now.
+> 
+> Reviewed-by: Ezequiel Garcia <ezequiel@collabora.com>
+> 
+> On Mon, 2019-12-23 at 15:35 +0100, Enric Balletbo i Serra wrote:
+>> From: Jitao Shi <jitao.shi@mediatek.com>
+>>
+>> This patch adds drm_bridge driver for parade DSI to eDP bridge chip.
+>>
+>> Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+>> Reviewed-by: Daniel Kurtz <djkurtz@chromium.org>
+>> [uli: followed API changes, removed FW update feature]
+>> Signed-off-by: Ulrich Hecht <uli@fpond.eu>
+>> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+>> Tested-by: Hsin-Yi Wang <hsinyi@chromium.org>
+>> ---
+>> One of the reviews from Laurent was to use 'i2c_new_ancillary_device'. I
+>> didn't change this for two reasons.
+>> 1) It doesn't have a devm version, so the remove path is more simple
+>> using the devm_i2c_new_dummy_device family.
+>> 2) IIUC the ancillary function is useful when you want to retrieve the
+>> address from the firmware or DT, that's not really the case here, as we
+>> have a base address and fixed offset to the base address which I think
+>> is not configurable.
+>>
+>> Let me know if you still think that I should use the ancillary call.
+>>
+>> Changes in v23:
+>> - Merge mute/unmute functions into one (Nicolas Boichat)
+>> - Use enum for ENABLE/DISABLE instead of bool (Ezequiel Garcia)
+>> - Rename mute/unmute to vdo_control and fix error messages (Nicolas Boichat and Enric)
+>> - Add space between address and address parameter 'address%02x' (Nicolas Boichat)
+>> - Add Tested-by Hsin-Yi
+>> - Added me as author after the refactor
+>>
+>> Changes in v22:
+>> - Remove sysfs attributes because are not really used (Enric Balletbo)
+>> - Use enum for address page offsets (Ezequiel Garcia)
+>> - Remove enable tracking (Enric Balletbo)
+>> - Use panel_bridge API (Laurent Pinchart)
+>> - Do not use kernel-doc format for non kernel-doc formatted commands (Enric Balletbo)
+>> - Remove verbose message for PAGE1_VSTART command (Ezequiel Garcia)
+>> - Use time_is_after_jiffies idiom (Ezequiel Garcia)
+>> - Remove unused macros (Ezequiel Garcia)
+>> - Fix weird alignment in dsi->mode_flags (Laurent Pinchart)
+>> - Use drm_of_find_panel_or_bridge helper (Laurent Pinchart)
+>> - Remove mode-sel-gpios as is not used (Laurent Pinchart)
+>> - Remove error messages to get gpios as the core will already report it (Enric Balletbo)
+>> - Remove redundant message getting the regulators (Laurent Pinchart)
+>> - Rename sleep-gpios to powerdown-gpios (Laurent Pinchart)
+>> - Use ARRAY_SIZE(ps_bridge->page) instead of MAX_DEV when possible (Laurent Pinchart)
+>> - Fix race with userspace accessing the sysfs attributes (Laurent Pinchart)
+>> - Remove id_table as is only used on DR platforms (Laurent Pinchart)
+>> - Convert to new i2c device probe() (Laurent Pinchart)
+>> - Use i2c_smbus_read/write helpers instead of open coding it (Laurent Pinchart)
+>> - Remove unnused global variables (Laurent Pinchart)
+>> - Remove unnused fields in ps8640 struct (Laurent Pinchart)
+>> - Remove commented-out headers (Laurent Pinchart)
+>>
+>> Changes in v21:
+>>  - Use devm_i2c_new_dummy_device and fix build issue using deprecated i2c_new_dummy
+>>  - Fix build issue due missing drm_bridge.h
+>>  - Do not remove in ps8640_remove device managed resources
+>>
+>> Changes in v19:
+>>  - fixed return value of ps8640_probe() when no panel is found
+>>
+>> Changes in v18:
+>>  - followed DRM API changes
+>>  - use DEVICE_ATTR_RO()
+>>  - remove firmware update code
+>>  - add SPDX identifier
+>>
+>> Changes in v17:
+>>  - remove some unused head files.
+>>  - add macros for ps8640 pages.
+>>  - remove ddc_i2c client
+>>  - add mipi_dsi_device_register_full
+>>  - remove the manufacturer from the name and i2c_device_id
+>>
+>> Changes in v16:
+>>  - Disable ps8640 DSI MCS Function.
+>>  - Rename gpios name more clearly.
+>>  - Tune the ps8640 power on sequence.
+>>
+>> Changes in v15:
+>>  - Drop drm_connector_(un)register calls from parade ps8640.
+>>    The main DRM driver mtk_drm_drv now calls
+>>    drm_connector_register_all() after drm_dev_register() in the
+>>    mtk_drm_bind() function. That function should iterate over all
+>>    connectors and call drm_connector_register() for each of them.
+>>    So, remove drm_connector_(un)register calls from parade ps8640.
+>>
+>> Changes in v14:
+>>  - update copyright info.
+>>  - change bridge_to_ps8640 and connector_to_ps8640 to inline function.
+>>  - fix some coding style.
+>>  - use sizeof as array counter.
+>>  - use drm_get_edid when read edid.
+>>  - add mutex when firmware updating.
+>>
+>> Changes in v13:
+>>  - add const on data, ps8640_write_bytes(struct i2c_client *client, const u8 *data, u16 data_len)
+>>  - fix PAGE2_SW_REST tyro.
+>>  - move the buf[3] init to entrance of the function.
+>>
+>> Changes in v12:
+>>  - fix hw_chip_id build warning
+>>
+>> Changes in v11:
+>>  - Remove depends on I2C, add DRM depends
+>>  - Reuse ps8640_write_bytes() in ps8640_write_byte()
+>>  - Use timer check for polling like the routines in <linux/iopoll.h>
+>>  - Fix no drm_connector_unregister/drm_connector_cleanup when ps8640_bridge_attach fail
+>>  - Check the ps8640 hardware id in ps8640_validate_firmware
+>>  - Remove fw_version check
+>>  - Move ps8640_validate_firmware before ps8640_enter_bl
+>>  - Add ddc_i2c unregister when probe fail and ps8640_remove
+>>
+>>  drivers/gpu/drm/bridge/Kconfig         |  11 +
+>>  drivers/gpu/drm/bridge/Makefile        |   1 +
+>>  drivers/gpu/drm/bridge/parade-ps8640.c | 348 +++++++++++++++++++++++++
+>>  3 files changed, 360 insertions(+)
+>>  create mode 100644 drivers/gpu/drm/bridge/parade-ps8640.c
+>>
+>> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kconfig
+>> index 4734f6993858..3e0a63011723 100644
+>> --- a/drivers/gpu/drm/bridge/Kconfig
+>> +++ b/drivers/gpu/drm/bridge/Kconfig
+>> @@ -101,6 +101,17 @@ config DRM_PARADE_PS8622
+>>  	---help---
+>>  	  Parade eDP-LVDS bridge chip driver.
+>>  
+>> +config DRM_PARADE_PS8640
+>> +	tristate "Parade PS8640 MIPI DSI to eDP Converter"
+> 
+> Not a showstopper, but perhaps later you can amend the other
+> Parade bridge menuconfig entry. Right now it's
+> "Parade eDP/LVDS bridge". It would be nice to have
+> consistency between Parade bridges.
+> 
+>> +	depends on OF
+>> +	select DRM_KMS_HELPER
+>> +	select DRM_MIPI_DSI
+>> +	select DRM_PANEL
+>> +	help
+>> +	  Choose this option if you have PS8640 for display
+>> +	  The PS8640 is a high-performance and low-power
+>> +	  MIPI DSI to eDP converter
+>> +
+>>  config DRM_SIL_SII8620
+>>  	tristate "Silicon Image SII8620 HDMI/MHL bridge"
+>>  	depends on OF
+>> diff --git a/drivers/gpu/drm/bridge/Makefile b/drivers/gpu/drm/bridge/Makefile
+>> index 1c0c92667ac4..91490c595b38 100644
+>> --- a/drivers/gpu/drm/bridge/Makefile
+>> +++ b/drivers/gpu/drm/bridge/Makefile
+>> @@ -8,6 +8,7 @@ obj-$(CONFIG_DRM_LVDS_ENCODER) += lvds-encoder.o
+>>  obj-$(CONFIG_DRM_MEGACHIPS_STDPXXXX_GE_B850V3_FW) += megachips-stdpxxxx-ge-b850v3-fw.o
+>>  obj-$(CONFIG_DRM_NXP_PTN3460) += nxp-ptn3460.o
+>>  obj-$(CONFIG_DRM_PARADE_PS8622) += parade-ps8622.o
+>> +obj-$(CONFIG_DRM_PARADE_PS8640) += parade-ps8640.o
+>>  obj-$(CONFIG_DRM_SIL_SII8620) += sil-sii8620.o
+>>  obj-$(CONFIG_DRM_SII902X) += sii902x.o
+>>  obj-$(CONFIG_DRM_SII9234) += sii9234.o
+>> diff --git a/drivers/gpu/drm/bridge/parade-ps8640.c b/drivers/gpu/drm/bridge/parade-ps8640.c
+>> new file mode 100644
+>> index 000000000000..646ac649d175
+>> --- /dev/null
+>> +++ b/drivers/gpu/drm/bridge/parade-ps8640.c
+>> @@ -0,0 +1,348 @@
+>> +// SPDX-License-Identifier: GPL-2.0-only
+>> +/*
+>> + * Copyright (c) 2016 MediaTek Inc.
+>> + */
+>> +
+>> +#include <linux/delay.h>
+>> +#include <linux/err.h>
+>> +#include <linux/gpio/consumer.h>
+>> +#include <linux/i2c.h>
+>> +#include <linux/module.h>
+>> +#include <linux/of_graph.h>
+>> +#include <linux/regulator/consumer.h>
+>> +
+>> +#include <drm/drm_bridge.h>
+>> +#include <drm/drm_mipi_dsi.h>
+>> +#include <drm/drm_of.h>
+>> +#include <drm/drm_panel.h>
+>> +#include <drm/drm_print.h>
+>> +
+>> +#define PAGE2_GPIO_H		0xa7
+>> +#define PS_GPIO9		BIT(1)
+>> +#define PAGE2_I2C_BYPASS	0xea
+>> +#define I2C_BYPASS_EN		0xd0
+>> +#define PAGE2_MCS_EN		0xf3
+>> +#define MCS_EN			BIT(0)
+>> +#define PAGE3_SET_ADD		0xfe
+>> +#define VDO_CTL_ADD		0x13
+>> +#define VDO_DIS			0x18
+>> +#define VDO_EN			0x1c
+>> +
+>> +/*
+>> + * PS8640 uses multiple addresses:
+>> + * page[0]: for DP control
+>> + * page[1]: for VIDEO Bridge
+>> + * page[2]: for control top
+>> + * page[3]: for DSI Link Control1
+>> + * page[4]: for MIPI Phy
+>> + * page[5]: for VPLL
+>> + * page[6]: for DSI Link Control2
+>> + * page[7]: for SPI ROM mapping
+>> + */
+>> +enum page_addr_offset {
+>> +	PAGE0_DP_CNTL = 0,
+>> +	PAGE1_VDO_BDG,
+>> +	PAGE2_TOP_CNTL,
+>> +	PAGE3_DSI_CNTL1,
+>> +	PAGE4_MIPI_PHY,
+>> +	PAGE5_VPLL,
+>> +	PAGE6_DSI_CNTL2,
+>> +	PAGE7_SPI_CNTL,
+>> +	MAX_DEVS
+>> +};
+>> +
+>> +enum ps8640_vdo_control {
+>> +	DISABLE = VDO_DIS,
+>> +	ENABLE = VDO_EN,
+>> +};
+>> +
+>> +struct ps8640 {
+>> +	struct drm_bridge bridge;
+>> +	struct drm_bridge *panel_bridge;
+>> +	struct mipi_dsi_device *dsi;
+>> +	struct i2c_client *page[MAX_DEVS];
+>> +	struct regulator_bulk_data supplies[2];
+>> +	struct gpio_desc *gpio_reset;
+>> +	struct gpio_desc *gpio_powerdown;
+>> +};
+>> +
+>> +static inline struct ps8640 *bridge_to_ps8640(struct drm_bridge *e)
+>> +{
+>> +	return container_of(e, struct ps8640, bridge);
+>> +}
+>> +
+>> +static int ps8640_bridge_vdo_control(struct ps8640 *ps_bridge,
+>> +				     const enum ps8640_vdo_control ctrl)
+>> +{
+>> +	struct i2c_client *client = ps_bridge->page[PAGE3_DSI_CNTL1];
+>> +	u8 vdo_ctrl_buf[] = { VDO_CTL_ADD, ctrl };
+>> +	int ret;
+>> +
+>> +	ret = i2c_smbus_write_i2c_block_data(client, PAGE3_SET_ADD,
+>> +					     sizeof(vdo_ctrl_buf),
+>> +					     vdo_ctrl_buf);
+>> +	if (ret < 0)
+>> +		return ret;
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static void ps8640_pre_enable(struct drm_bridge *bridge)
+>> +{
+>> +	struct ps8640 *ps_bridge = bridge_to_ps8640(bridge);
+>> +	struct i2c_client *client = ps_bridge->page[PAGE2_TOP_CNTL];
+>> +	unsigned long timeout;
+>> +	int ret, status;
+>> +
+>> +	ret = regulator_bulk_enable(ARRAY_SIZE(ps_bridge->supplies),
+>> +				    ps_bridge->supplies);
+>> +	if (ret < 0) {
+>> +		DRM_ERROR("cannot enable regulators %d\n", ret);
+>> +		return;
+>> +	}
+>> +
+>> +	gpiod_set_value(ps_bridge->gpio_powerdown, 1);
+>> +	gpiod_set_value(ps_bridge->gpio_reset, 0);
+>> +	usleep_range(2000, 2500);
+>> +	gpiod_set_value(ps_bridge->gpio_reset, 1);
+>> +
+>> +	/*
+>> +	 * Wait for the ps8640 embedded MCU to be ready
+>> +	 * First wait 200ms and then check the MCU ready flag every 20ms
+>> +	 */
+>> +	msleep(200);
+>> +
+>> +	timeout = jiffies + msecs_to_jiffies(200) + 1;
+>> +
+>> +	while (time_is_after_jiffies(timeout)) {
+>> +		status = i2c_smbus_read_byte_data(client, PAGE2_GPIO_H);
+>> +		if (status < 0) {
+>> +			DRM_ERROR("failed read PAGE2_GPIO_H: %d\n", status);
+>> +			goto err_regulators_disable;
+>> +		}
+>> +		if ((status & PS_GPIO9) == PS_GPIO9)
+>> +			break;
+>> +
+>> +		msleep(20);
+>> +	}
+>> +
+>> +	msleep(50);
+>> +
+>> +	/*
+>> +	 * The Manufacturer Command Set (MCS) is a device dependent interface
+>> +	 * intended for factory programming of the display module default
+>> +	 * parameters. Once the display module is configured, the MCS shall be
+>> +	 * disabled by the manufacturer. Once disabled, all MCS commands are
+>> +	 * ignored by the display interface.
+>> +	 */
+>> +	status = i2c_smbus_read_byte_data(client, PAGE2_MCS_EN);
+>> +	if (status < 0) {
+>> +		DRM_ERROR("failed read PAGE2_MCS_EN: %d\n", status);
+>> +		goto err_regulators_disable;
+>> +	}
+>> +
+>> +	ret = i2c_smbus_write_byte_data(client, PAGE2_MCS_EN,
+>> +					status & ~MCS_EN);
+>> +	if (ret < 0) {
+>> +		DRM_ERROR("failed write PAGE2_MCS_EN: %d\n", ret);
+>> +		goto err_regulators_disable;
+>> +	}
+>> +
+>> +	ret = ps8640_bridge_vdo_control(ps_bridge, ENABLE);
+> 
+> That's much better than mute/unmute!
+> 
+>> +	if (ret) {
+>> +		DRM_ERROR("failed to enable VDO: %d\n", ret);
+>> +		goto err_regulators_disable;
+>> +	}
+>> +
+>> +	/* Switch access edp panel's edid through i2c */
+>> +	ret = i2c_smbus_write_byte_data(client, PAGE2_I2C_BYPASS,
+>> +					I2C_BYPASS_EN);
+>> +	if (ret < 0) {
+>> +		DRM_ERROR("failed write PAGE2_I2C_BYPASS: %d\n", ret);
+>> +		goto err_regulators_disable;
+>> +	}
+>> +
+>> +	return;
+>> +
+>> +err_regulators_disable:
+>> +	regulator_bulk_disable(ARRAY_SIZE(ps_bridge->supplies),
+>> +			       ps_bridge->supplies);
+>> +}
+>> +
+>> +static void ps8640_post_disable(struct drm_bridge *bridge)
+>> +{
+>> +	struct ps8640 *ps_bridge = bridge_to_ps8640(bridge);
+>> +	int ret;
+>> +
+>> +	ret = ps8640_bridge_vdo_control(ps_bridge, DISABLE);
+>> +	if (ret < 0)
+>> +		DRM_ERROR("failed to disable VDO: %d\n", ret);
+>> +
+>> +	gpiod_set_value(ps_bridge->gpio_reset, 0);
+>> +	gpiod_set_value(ps_bridge->gpio_powerdown, 0);
+>> +	ret = regulator_bulk_disable(ARRAY_SIZE(ps_bridge->supplies),
+>> +				     ps_bridge->supplies);
+>> +	if (ret < 0)
+>> +		DRM_ERROR("cannot disable regulators %d\n", ret);
+>> +}
+>> +
+>> +int ps8640_bridge_attach(struct drm_bridge *bridge)
+> 
+> Compiling this with static analyzers says this should be 'static'.
+> 
 
-diff --git a/drivers/clk/meson/Kconfig b/drivers/clk/meson/Kconfig
-index 31613c3bbbc7..44e60828b7be 100644
---- a/drivers/clk/meson/Kconfig
-+++ b/drivers/clk/meson/Kconfig
-@@ -102,6 +102,15 @@ config COMMON_CLK_A1_PLL
- 	  Support for the PLL clock controller on Amlogic A113L device,
- 	  aka a1. Say Y if you want PLL to work.
- 
-+config COMMON_CLK_A1
-+	bool
-+	depends on ARCH_MESON
-+	select COMMON_CLK_MESON_DUALDIV
-+	select COMMON_CLK_MESON_REGMAP
-+	help
-+	  Support for the Peripheral clock controller on Amlogic A113L device,
-+	  aka a1. Say Y if you want Peripherals to work.
-+
- config COMMON_CLK_G12A
- 	bool
- 	depends on ARCH_MESON
-diff --git a/drivers/clk/meson/Makefile b/drivers/clk/meson/Makefile
-index 71d3b8e6fb8a..0f3890030118 100644
---- a/drivers/clk/meson/Makefile
-+++ b/drivers/clk/meson/Makefile
-@@ -17,6 +17,7 @@ obj-$(CONFIG_COMMON_CLK_MESON_VID_PLL_DIV) += vid-pll-div.o
- obj-$(CONFIG_COMMON_CLK_AXG) += axg.o axg-aoclk.o
- obj-$(CONFIG_COMMON_CLK_AXG_AUDIO) += axg-audio.o
- obj-$(CONFIG_COMMON_CLK_A1_PLL) += a1-pll.o
-+obj-$(CONFIG_COMMON_CLK_A1) += a1.o
- obj-$(CONFIG_COMMON_CLK_GXBB) += gxbb.o gxbb-aoclk.o
- obj-$(CONFIG_COMMON_CLK_G12A) += g12a.o g12a-aoclk.o
- obj-$(CONFIG_COMMON_CLK_MESON8B) += meson8b.o
-diff --git a/drivers/clk/meson/a1.c b/drivers/clk/meson/a1.c
-new file mode 100644
-index 000000000000..4d8a668ee4fc
---- /dev/null
-+++ b/drivers/clk/meson/a1.c
-@@ -0,0 +1,2263 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-+ * Author: Jian Hu <jian.hu@amlogic.com>
-+ */
-+
-+#include <linux/clk-provider.h>
-+#include <linux/of_device.h>
-+#include <linux/platform_device.h>
-+#include "a1.h"
-+#include "clk-dualdiv.h"
-+#include "meson-eeclk.h"
-+
-+/* PLLs clock in gates, its parent is xtal */
-+static struct clk_regmap a1_xtal_clktree = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SYS_OSCIN_CTRL,
-+		.bit_idx = 0,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "xtal_clktree",
-+		.ops = &clk_regmap_gate_ro_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_xtal_fixpll = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SYS_OSCIN_CTRL,
-+		.bit_idx = 1,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "xtal_fixpll",
-+		.ops = &clk_regmap_gate_ro_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_xtal_usb_phy = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SYS_OSCIN_CTRL,
-+		.bit_idx = 2,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "xtal_usb_phy",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_xtal_usb_ctrl = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SYS_OSCIN_CTRL,
-+		.bit_idx = 3,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "xtal_usb_ctrl",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_xtal_hifipll = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SYS_OSCIN_CTRL,
-+		.bit_idx = 4,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "xtal_hifipll",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_xtal_syspll = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SYS_OSCIN_CTRL,
-+		.bit_idx = 5,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "xtal_syspll",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_xtal_dds = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SYS_OSCIN_CTRL,
-+		.bit_idx = 6,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "xtal_dds",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static const struct clk_parent_data sys_clk_parents[] = {
-+	{ .fw_name = "xtal" },
-+	{ .fw_name = "fclk_div2"},
-+	{ .fw_name = "fclk_div3"},
-+	{ .fw_name = "fclk_div5"},
-+};
-+
-+static struct clk_regmap a1_sys_b_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = SYS_CLK_CTRL0,
-+		.mask = 0x7,
-+		.shift = 26,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "sys_b_sel",
-+		.ops = &clk_regmap_mux_ro_ops,
-+		.parent_data = sys_clk_parents,
-+		.num_parents = ARRAY_SIZE(sys_clk_parents),
-+	},
-+};
-+
-+static struct clk_regmap a1_sys_b_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = SYS_CLK_CTRL0,
-+		.shift = 16,
-+		.width = 10,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "sys_b_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_sys_b_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_sys_b = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SYS_CLK_CTRL0,
-+		.bit_idx = 29,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "sys_b",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_sys_b_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_sys_a_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = SYS_CLK_CTRL0,
-+		.mask = 0x7,
-+		.shift = 10,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "sys_a_sel",
-+		.ops = &clk_regmap_mux_ro_ops,
-+		.parent_data = sys_clk_parents,
-+		.num_parents = ARRAY_SIZE(sys_clk_parents),
-+	},
-+};
-+
-+static struct clk_regmap a1_sys_a_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = SYS_CLK_CTRL0,
-+		.shift = 0,
-+		.width = 10,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "sys_a_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_sys_a_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_sys_a = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SYS_CLK_CTRL0,
-+		.bit_idx = 13,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "sys_a",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_sys_a_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_sys_clk = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = SYS_CLK_CTRL0,
-+		.mask = 0x1,
-+		.shift = 31,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "sys_clk",
-+		.ops = &clk_regmap_mux_ro_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_sys_a.hw, &a1_sys_b.hw,
-+		},
-+		.num_parents = 2,
-+		/*
-+		 * This clock is used by APB bus which setted in Romcode
-+		 * and is required by the platform to operate correctly.
-+		 * Until the following condition are met, we need this clock to
-+		 * be marked as critical:
-+		 * a) Mark the clock used by a firmware resource, if possible
-+		 * b) CCF has a clock hand-off mechanism to make the sure the
-+		 *    clock stays on until the proper driver comes along
-+		 */
-+		.flags = CLK_SET_RATE_PARENT | CLK_IS_CRITICAL,
-+	},
-+};
-+
-+static struct clk_regmap a1_rtc_32k_clkin = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = RTC_BY_OSCIN_CTRL0,
-+		.bit_idx = 31,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "rtc_32k_clkin",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static const struct meson_clk_dualdiv_param a1_32k_div_table[] = {
-+	{
-+		.dual		= 1,
-+		.n1		= 733,
-+		.m1		= 8,
-+		.n2		= 732,
-+		.m2		= 11,
-+	},
-+	{}
-+};
-+
-+static struct clk_regmap a1_rtc_32k_div = {
-+	.data = &(struct meson_clk_dualdiv_data){
-+		.n1 = {
-+			.reg_off = RTC_BY_OSCIN_CTRL0,
-+			.shift   = 0,
-+			.width   = 12,
-+		},
-+		.n2 = {
-+			.reg_off = RTC_BY_OSCIN_CTRL0,
-+			.shift   = 12,
-+			.width   = 12,
-+		},
-+		.m1 = {
-+			.reg_off = RTC_BY_OSCIN_CTRL1,
-+			.shift   = 0,
-+			.width   = 12,
-+		},
-+		.m2 = {
-+			.reg_off = RTC_BY_OSCIN_CTRL1,
-+			.shift   = 12,
-+			.width   = 12,
-+		},
-+		.dual = {
-+			.reg_off = RTC_BY_OSCIN_CTRL0,
-+			.shift   = 28,
-+			.width   = 1,
-+		},
-+		.table = a1_32k_div_table,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "rtc_32k_div",
-+		.ops = &meson_clk_dualdiv_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_rtc_32k_clkin.hw
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_rtc_32k_xtal = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = RTC_BY_OSCIN_CTRL1,
-+		.bit_idx = 24,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "rtc_32k_xtal",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_rtc_32k_clkin.hw
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_rtc_32k_sel = {
-+	.data = &(struct clk_regmap_mux_data) {
-+		.offset = RTC_CTRL,
-+		.mask = 0x3,
-+		.shift = 0,
-+		.flags = CLK_MUX_ROUND_CLOSEST,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "rtc_32k_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_rtc_32k_xtal.hw,
-+			&a1_rtc_32k_div.hw,
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+struct clk_regmap a1_rtc_clk = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = RTC_BY_OSCIN_CTRL0,
-+		.bit_idx = 30,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "rtc_clk",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_rtc_32k_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static u32 mux_table_dsp_ab[] = { 0, 1, 2, 3, 4, 7 };
-+static const struct clk_parent_data dsp_ab_clk_parent_data[] = {
-+	{ .fw_name = "xtal", },
-+	{ .fw_name = "fclk_div2", },
-+	{ .fw_name = "fclk_div3", },
-+	{ .fw_name = "fclk_div5", },
-+	{ .fw_name = "hifi_pll", },
-+	{ .hw = &a1_rtc_clk.hw },
-+};
-+
-+static struct clk_regmap a1_dspa_a_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = DSPA_CLK_CTRL0,
-+		.mask = 0x7,
-+		.shift = 10,
-+		.table = mux_table_dsp_ab,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dspa_a_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = dsp_ab_clk_parent_data,
-+		.num_parents = ARRAY_SIZE(dsp_ab_clk_parent_data),
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspa_a_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = DSPA_CLK_CTRL0,
-+		.shift = 0,
-+		.width = 10,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dspa_a_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspa_a_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspa_a = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = DSPA_CLK_CTRL0,
-+		.bit_idx = 13,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "dspa_a",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspa_a_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspa_b_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = DSPA_CLK_CTRL0,
-+		.mask = 0x7,
-+		.shift = 26,
-+		.table = mux_table_dsp_ab,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dspa_b_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = dsp_ab_clk_parent_data,
-+		.num_parents = ARRAY_SIZE(dsp_ab_clk_parent_data),
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspa_b_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = DSPA_CLK_CTRL0,
-+		.shift = 16,
-+		.width = 10,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dspa_b_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspa_b_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspa_b = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = DSPA_CLK_CTRL0,
-+		.bit_idx = 29,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "dspa_b",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspa_b_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspa_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = DSPA_CLK_CTRL0,
-+		.mask = 0x1,
-+		.shift = 15,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dspa_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .hw = &a1_dspa_a.hw },
-+			{ .hw = &a1_dspa_b.hw },
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspa_en = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = DSPA_CLK_EN,
-+		.bit_idx = 1,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "dspa_en",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspa_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspa_en_nic = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = DSPA_CLK_EN,
-+		.bit_idx = 0,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "dspa_en_nic",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspa_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspb_a_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = DSPB_CLK_CTRL0,
-+		.mask = 0x7,
-+		.shift = 10,
-+		.table = mux_table_dsp_ab,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dspb_a_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = dsp_ab_clk_parent_data,
-+		.num_parents = ARRAY_SIZE(dsp_ab_clk_parent_data),
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspb_a_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = DSPB_CLK_CTRL0,
-+		.shift = 0,
-+		.width = 10,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dspb_a_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspb_a_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspb_a = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = DSPB_CLK_CTRL0,
-+		.bit_idx = 13,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "dspb_a",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspb_a_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspb_b_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = DSPB_CLK_CTRL0,
-+		.mask = 0x7,
-+		.shift = 26,
-+		.table = mux_table_dsp_ab,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dspb_b_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = dsp_ab_clk_parent_data,
-+		.num_parents = ARRAY_SIZE(dsp_ab_clk_parent_data),
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspb_b_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = DSPB_CLK_CTRL0,
-+		.shift = 16,
-+		.width = 10,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dspb_b_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspb_b_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspb_b = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = DSPB_CLK_CTRL0,
-+		.bit_idx = 29,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "dspb_b",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspb_b_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspb_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = DSPB_CLK_CTRL0,
-+		.mask = 0x1,
-+		.shift = 15,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dspb_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspb_a.hw, &a1_dspb_b.hw,
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspb_en = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = DSPB_CLK_EN,
-+		.bit_idx = 1,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "dspb_en",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspb_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-+	},
-+};
-+
-+static struct clk_regmap a1_dspb_en_nic = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = DSPB_CLK_EN,
-+		.bit_idx = 0,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "dspb_en_nic",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dspb_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT | CLK_IGNORE_UNUSED,
-+	},
-+};
-+
-+static struct clk_regmap a1_24m = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = CLK12_24_CTRL,
-+		.bit_idx = 11,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "24m",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_fixed_factor a1_24m_div2 = {
-+	.mult = 1,
-+	.div = 2,
-+	.hw.init = &(struct clk_init_data){
-+		.name = "24m_div2",
-+		.ops = &clk_fixed_factor_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_24m.hw
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_12m = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = CLK12_24_CTRL,
-+		.bit_idx = 10,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "12m",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_24m_div2.hw
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_fclk_div2_divn_pre = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = CLK12_24_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "fclk_div2_divn_pre",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "fclk_div2",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_fclk_div2_divn = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = CLK12_24_CTRL,
-+		.bit_idx = 12,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "fclk_div2_divn",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_fclk_div2_divn_pre.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+/*
-+ * the second parent is sys_pll_div16, it will complete in the CPU clock,
-+ * the forth parent is the clock measurement source, it relies on
-+ * the clock measurement register configuration.
-+ */
-+static u32 gen_clk_table[] = { 0, 1, 3, 5, 6, 7, 8 };
-+static const struct clk_parent_data gen_clk_parent_data[] = {
-+	{ .fw_name = "xtal", },
-+	{ .hw = &a1_rtc_clk.hw },
-+	{ .fw_name = "hifi_pll", },
-+	{ .fw_name = "fclk_div2", },
-+	{ .fw_name = "fclk_div3", },
-+	{ .fw_name = "fclk_div5", },
-+	{ .fw_name = "fclk_div7", },
-+};
-+
-+static struct clk_regmap a1_gen_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = GEN_CLK_CTRL,
-+		.mask = 0xf,
-+		.shift = 12,
-+		.table = gen_clk_table,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "gen_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = gen_clk_parent_data,
-+		.num_parents = ARRAY_SIZE(gen_clk_parent_data),
-+	},
-+};
-+
-+static struct clk_regmap a1_gen_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = GEN_CLK_CTRL,
-+		.shift = 0,
-+		.width = 11,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "gen_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_gen_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_gen = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = GEN_CLK_CTRL,
-+		.bit_idx = 11,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "gen",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_gen_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_saradc_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = SAR_ADC_CLK_CTRL,
-+		.mask = 0x1,
-+		.shift = 9,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "saradc_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .fw_name = "xtal", },
-+			{ .hw = &a1_sys_clk.hw, },
-+		},
-+		.num_parents = 2,
-+	},
-+};
-+
-+static struct clk_regmap a1_saradc_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = SAR_ADC_CLK_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "saradc_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_saradc_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_saradc_clk = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SAR_ADC_CLK_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "saradc_clk",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_saradc_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_a_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = PWM_CLK_AB_CTRL,
-+		.mask = 0x1,
-+		.shift = 9,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_a_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .fw_name = "xtal", },
-+			{ .hw = &a1_sys_clk.hw, },
-+		},
-+		.num_parents = 2,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_a_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = PWM_CLK_AB_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_a_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_a_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_a = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = PWM_CLK_AB_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "pwm_a",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_a_div.hw
-+		},
-+		.num_parents = 1,
-+		/*
-+		 * The CPU working voltage is controlled by pwm_a
-+		 * in BL2 firmware. add the CLK_IS_CRITICAL flag
-+		 * to avoid changing at runtime.
-+		 * and is required by the platform to operate correctly.
-+		 * About critical, refer to a1_sys_clk
-+		 */
-+		.flags = CLK_SET_RATE_PARENT | CLK_IS_CRITICAL,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_b_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = PWM_CLK_AB_CTRL,
-+		.mask = 0x1,
-+		.shift = 25,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_b_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .fw_name = "xtal", },
-+			{ .hw = &a1_sys_clk.hw, },
-+		},
-+		.num_parents = 2,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_b_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = PWM_CLK_AB_CTRL,
-+		.shift = 16,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_b_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_b_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_b = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = PWM_CLK_AB_CTRL,
-+		.bit_idx = 24,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "pwm_b",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_b_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_c_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = PWM_CLK_CD_CTRL,
-+		.mask = 0x1,
-+		.shift = 9,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_c_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .fw_name = "xtal", },
-+			{ .hw = &a1_sys_clk.hw, },
-+		},
-+		.num_parents = 2,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_c_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = PWM_CLK_CD_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_c_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_c_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_c = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = PWM_CLK_CD_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "pwm_c",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_c_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_d_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = PWM_CLK_CD_CTRL,
-+		.mask = 0x1,
-+		.shift = 25,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_d_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .fw_name = "xtal", },
-+			{ .hw = &a1_sys_clk.hw, },
-+		},
-+		.num_parents = 2,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_d_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = PWM_CLK_CD_CTRL,
-+		.shift = 16,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_d_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_d_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_d = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = PWM_CLK_CD_CTRL,
-+		.bit_idx = 24,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "pwm_d",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_d_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static const struct clk_parent_data pwm_ef_parent_data[] = {
-+	{ .fw_name = "xtal", },
-+	{ .hw = &a1_sys_clk.hw },
-+	{ .fw_name = "fclk_div5", },
-+	{ .hw = &a1_rtc_clk.hw },
-+};
-+
-+static struct clk_regmap a1_pwm_e_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = PWM_CLK_EF_CTRL,
-+		.mask = 0x3,
-+		.shift = 9,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_e_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = pwm_ef_parent_data,
-+		.num_parents = ARRAY_SIZE(pwm_ef_parent_data),
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_e_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = PWM_CLK_EF_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_e_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_e_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_e = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = PWM_CLK_EF_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "pwm_e",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_e_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_f_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = PWM_CLK_EF_CTRL,
-+		.mask = 0x3,
-+		.shift = 25,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_f_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = pwm_ef_parent_data,
-+		.num_parents = ARRAY_SIZE(pwm_ef_parent_data),
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_f_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = PWM_CLK_EF_CTRL,
-+		.shift = 16,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "pwm_f_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_f_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_pwm_f = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = PWM_CLK_EF_CTRL,
-+		.bit_idx = 24,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "pwm_f",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_pwm_f_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+/*
-+ * spicc clk
-+ *    div2   |\         |\       _____
-+ *  ---------| |---DIV--| |     |     |    spicc out
-+ *  ---------| |        | |-----|GATE |---------
-+ *     ..... |/         | /     |_____|
-+ *  --------------------|/
-+ *                 24M
-+ */
-+static const struct clk_parent_data spicc_parents[] = {
-+	{ .fw_name = "fclk_div2"},
-+	{ .fw_name = "fclk_div3"},
-+	{ .fw_name = "fclk_div5"},
-+	{ .fw_name = "hifi_pll" },
-+};
-+
-+static struct clk_regmap a1_spicc_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = SPICC_CLK_CTRL,
-+		.mask = 0x3,
-+		.shift = 9,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spicc_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = spicc_parents,
-+		.num_parents = 4,
-+	},
-+};
-+
-+static struct clk_regmap a1_spicc_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = SPICC_CLK_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spicc_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_spicc_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_spicc_sel2 = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = SPICC_CLK_CTRL,
-+		.mask = 0x1,
-+		.shift = 15,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spicc_sel2",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .hw = &a1_spicc_div.hw },
-+			{ .fw_name = "xtal", },
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_spicc = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SPICC_CLK_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "spicc",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_spicc_sel2.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_ts_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = TS_CLK_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "ts_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_ts = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = TS_CLK_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "ts",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_ts_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_spifc_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = SPIFC_CLK_CTRL,
-+		.mask = 0x3,
-+		.shift = 9,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spifc_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		/* the same parent with spicc */
-+		.parent_data = spicc_parents,
-+		.num_parents = 4,
-+	},
-+};
-+
-+static struct clk_regmap a1_spifc_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = SPIFC_CLK_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spifc_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_spifc_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_spifc_sel2 = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = SPIFC_CLK_CTRL,
-+		.mask = 0x1,
-+		.shift = 15,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spifc_sel2",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .hw = &a1_spifc_div.hw },
-+			{ .fw_name = "xtal", },
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_spifc = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SPIFC_CLK_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "spifc",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_spifc_sel2.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static const struct clk_parent_data usb_bus_parent_data[] = {
-+	{ .fw_name = "xtal", },
-+	{ .hw = &a1_sys_clk.hw },
-+	{ .fw_name = "fclk_div3", },
-+	{ .fw_name = "fclk_div5", },
-+};
-+
-+static struct clk_regmap a1_usb_bus_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = USB_BUSCLK_CTRL,
-+		.mask = 0x3,
-+		.shift = 9,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "usb_bus_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = usb_bus_parent_data,
-+		.num_parents = ARRAY_SIZE(usb_bus_parent_data),
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_usb_bus_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = USB_BUSCLK_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "usb_bus_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_usb_bus_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_usb_bus = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = USB_BUSCLK_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "usb_bus",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_usb_bus_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static const struct clk_parent_data sd_emmc_parents[] = {
-+	{ .fw_name = "fclk_div2", },
-+	{ .fw_name = "fclk_div3", },
-+	{ .fw_name = "fclk_div5", },
-+	{ .fw_name = "hifi_pll", },
-+};
-+
-+static struct clk_regmap a1_sd_emmc_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = SD_EMMC_CLK_CTRL,
-+		.mask = 0x3,
-+		.shift = 9,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "sd_emmc_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = sd_emmc_parents,
-+		.num_parents = 4,
-+	},
-+};
-+
-+static struct clk_regmap a1_sd_emmc_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = SD_EMMC_CLK_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "sd_emmc_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_sd_emmc_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_sd_emmc_sel2 = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = SD_EMMC_CLK_CTRL,
-+		.mask = 0x1,
-+		.shift = 15,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "sd_emmc_sel2",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .hw = &a1_sd_emmc_div.hw },
-+			{ .fw_name = "xtal", },
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_sd_emmc = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = SD_EMMC_CLK_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "sd_emmc",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_sd_emmc_sel2.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_psram_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = PSRAM_CLK_CTRL,
-+		.mask = 0x3,
-+		.shift = 9,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "psram_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		/* the same parent with sd_emmc */
-+		.parent_data = sd_emmc_parents,
-+		.num_parents = 4,
-+	},
-+};
-+
-+static struct clk_regmap a1_psram_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = PSRAM_CLK_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "psram_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_psram_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_psram_sel2 = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = PSRAM_CLK_CTRL,
-+		.mask = 0x1,
-+		.shift = 15,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "psram_sel2",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .hw = &a1_psram_div.hw },
-+			{ .fw_name = "xtal", },
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_psram = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = PSRAM_CLK_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "psram",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_psram_sel2.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dmc_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = DMC_CLK_CTRL,
-+		.mask = 0x3,
-+		.shift = 9,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dmc_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = sd_emmc_parents,
-+		.num_parents = 4,
-+	},
-+};
-+
-+static struct clk_regmap a1_dmc_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = DMC_CLK_CTRL,
-+		.shift = 0,
-+		.width = 8,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dmc_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dmc_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dmc_sel2 = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = DMC_CLK_CTRL,
-+		.mask = 0x1,
-+		.shift = 15,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "dmc_sel2",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = (const struct clk_parent_data []) {
-+			{ .hw = &a1_dmc_div.hw },
-+			{ .fw_name = "xtal", },
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_dmc = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = DMC_CLK_CTRL,
-+		.bit_idx = 8,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "dmc",
-+		.ops = &clk_regmap_gate_ro_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_dmc_sel2.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_ceca_32k_clkin = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = CECA_CLK_CTRL0,
-+		.bit_idx = 31,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "ceca_32k_clkin",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_ceca_32k_div = {
-+	.data = &(struct meson_clk_dualdiv_data){
-+		.n1 = {
-+			.reg_off = CECA_CLK_CTRL0,
-+			.shift   = 0,
-+			.width   = 12,
-+		},
-+		.n2 = {
-+			.reg_off = CECA_CLK_CTRL0,
-+			.shift   = 12,
-+			.width   = 12,
-+		},
-+		.m1 = {
-+			.reg_off = CECA_CLK_CTRL1,
-+			.shift   = 0,
-+			.width   = 12,
-+		},
-+		.m2 = {
-+			.reg_off = CECA_CLK_CTRL1,
-+			.shift   = 12,
-+			.width   = 12,
-+		},
-+		.dual = {
-+			.reg_off = CECA_CLK_CTRL0,
-+			.shift   = 28,
-+			.width   = 1,
-+		},
-+		.table = a1_32k_div_table,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "ceca_32k_div",
-+		.ops = &meson_clk_dualdiv_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_ceca_32k_clkin.hw
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_ceca_32k_sel_pre = {
-+	.data = &(struct clk_regmap_mux_data) {
-+		.offset = CECA_CLK_CTRL1,
-+		.mask = 0x1,
-+		.shift = 24,
-+		.flags = CLK_MUX_ROUND_CLOSEST,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "ceca_32k_sel_pre",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_ceca_32k_div.hw,
-+			&a1_ceca_32k_clkin.hw,
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_ceca_32k_sel = {
-+	.data = &(struct clk_regmap_mux_data) {
-+		.offset = CECA_CLK_CTRL1,
-+		.mask = 0x1,
-+		.shift = 31,
-+		.flags = CLK_MUX_ROUND_CLOSEST,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "ceca_32k_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_ceca_32k_sel_pre.hw,
-+			&a1_rtc_clk.hw,
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_ceca_32k_clkout = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = CECA_CLK_CTRL0,
-+		.bit_idx = 30,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "ceca_32k_clkout",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_ceca_32k_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_cecb_32k_clkin = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = CECB_CLK_CTRL0,
-+		.bit_idx = 31,
-+	},
-+	.hw.init = &(struct clk_init_data) {
-+		.name = "cecb_32k_clkin",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_data = &(const struct clk_parent_data) {
-+			.fw_name = "xtal",
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_cecb_32k_div = {
-+	.data = &(struct meson_clk_dualdiv_data){
-+		.n1 = {
-+			.reg_off = CECB_CLK_CTRL0,
-+			.shift   = 0,
-+			.width   = 12,
-+		},
-+		.n2 = {
-+			.reg_off = CECB_CLK_CTRL0,
-+			.shift   = 12,
-+			.width   = 12,
-+		},
-+		.m1 = {
-+			.reg_off = CECB_CLK_CTRL1,
-+			.shift   = 0,
-+			.width   = 12,
-+		},
-+		.m2 = {
-+			.reg_off = CECB_CLK_CTRL1,
-+			.shift   = 12,
-+			.width   = 12,
-+		},
-+		.dual = {
-+			.reg_off = CECB_CLK_CTRL0,
-+			.shift   = 28,
-+			.width   = 1,
-+		},
-+		.table = a1_32k_div_table,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "cecb_32k_div",
-+		.ops = &meson_clk_dualdiv_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_cecb_32k_clkin.hw
-+		},
-+		.num_parents = 1,
-+	},
-+};
-+
-+static struct clk_regmap a1_cecb_32k_sel_pre = {
-+	.data = &(struct clk_regmap_mux_data) {
-+		.offset = CECB_CLK_CTRL1,
-+		.mask = 0x1,
-+		.shift = 24,
-+		.flags = CLK_MUX_ROUND_CLOSEST,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "cecb_32k_sel_pre",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_cecb_32k_div.hw,
-+			&a1_cecb_32k_clkin.hw,
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_cecb_32k_sel = {
-+	.data = &(struct clk_regmap_mux_data) {
-+		.offset = CECB_CLK_CTRL1,
-+		.mask = 0x1,
-+		.shift = 31,
-+		.flags = CLK_MUX_ROUND_CLOSEST,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "cecb_32k_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_cecb_32k_sel_pre.hw,
-+			&a1_rtc_clk.hw,
-+		},
-+		.num_parents = 2,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap a1_cecb_32k_clkout = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = CECB_CLK_CTRL0,
-+		.bit_idx = 30,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "cecb_32k_clkout",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&a1_cecb_32k_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+#define MESON_GATE(_name, _reg, _bit) \
-+	MESON_PCLK(_name, _reg, _bit, &a1_sys_clk.hw)
-+
-+static MESON_GATE(a1_clk_tree,		SYS_CLK_EN0,	0);
-+static MESON_GATE(a1_reset_ctrl,	SYS_CLK_EN0,	1);
-+static MESON_GATE(a1_analog_ctrl,	SYS_CLK_EN0,	2);
-+static MESON_GATE(a1_pwr_ctrl,		SYS_CLK_EN0,	3);
-+static MESON_GATE(a1_pad_ctrl,		SYS_CLK_EN0,	4);
-+static MESON_GATE(a1_sys_ctrl,		SYS_CLK_EN0,	5);
-+static MESON_GATE(a1_temp_sensor,	SYS_CLK_EN0,	6);
-+static MESON_GATE(a1_am2axi_dev,	SYS_CLK_EN0,	7);
-+static MESON_GATE(a1_spicc_b,		SYS_CLK_EN0,	8);
-+static MESON_GATE(a1_spicc_a,		SYS_CLK_EN0,	9);
-+static MESON_GATE(a1_clk_msr,		SYS_CLK_EN0,	10);
-+static MESON_GATE(a1_audio,		SYS_CLK_EN0,	11);
-+static MESON_GATE(a1_jtag_ctrl,		SYS_CLK_EN0,	12);
-+static MESON_GATE(a1_saradc,		SYS_CLK_EN0,	13);
-+static MESON_GATE(a1_pwm_ef,		SYS_CLK_EN0,	14);
-+static MESON_GATE(a1_pwm_cd,		SYS_CLK_EN0,	15);
-+static MESON_GATE(a1_pwm_ab,		SYS_CLK_EN0,	16);
-+static MESON_GATE(a1_cec,		SYS_CLK_EN0,	17);
-+static MESON_GATE(a1_i2c_s,		SYS_CLK_EN0,	18);
-+static MESON_GATE(a1_ir_ctrl,		SYS_CLK_EN0,	19);
-+static MESON_GATE(a1_i2c_m_d,		SYS_CLK_EN0,	20);
-+static MESON_GATE(a1_i2c_m_c,		SYS_CLK_EN0,	21);
-+static MESON_GATE(a1_i2c_m_b,		SYS_CLK_EN0,	22);
-+static MESON_GATE(a1_i2c_m_a,		SYS_CLK_EN0,	23);
-+static MESON_GATE(a1_acodec,		SYS_CLK_EN0,	24);
-+static MESON_GATE(a1_otp,		SYS_CLK_EN0,	25);
-+static MESON_GATE(a1_sd_emmc_a,		SYS_CLK_EN0,	26);
-+static MESON_GATE(a1_usb_phy,		SYS_CLK_EN0,	27);
-+static MESON_GATE(a1_usb_ctrl,		SYS_CLK_EN0,	28);
-+static MESON_GATE(a1_sys_dspb,		SYS_CLK_EN0,	29);
-+static MESON_GATE(a1_sys_dspa,		SYS_CLK_EN0,	30);
-+static MESON_GATE(a1_dma,		SYS_CLK_EN0,	31);
-+static MESON_GATE(a1_irq_ctrl,		SYS_CLK_EN1,	0);
-+static MESON_GATE(a1_nic,		SYS_CLK_EN1,	1);
-+static MESON_GATE(a1_gic,		SYS_CLK_EN1,	2);
-+static MESON_GATE(a1_uart_c,		SYS_CLK_EN1,	3);
-+static MESON_GATE(a1_uart_b,		SYS_CLK_EN1,	4);
-+static MESON_GATE(a1_uart_a,		SYS_CLK_EN1,	5);
-+static MESON_GATE(a1_sys_psram,		SYS_CLK_EN1,	6);
-+static MESON_GATE(a1_rsa,		SYS_CLK_EN1,	8);
-+static MESON_GATE(a1_coresight,		SYS_CLK_EN1,	9);
-+static MESON_GATE(a1_am2axi_vad,	AXI_CLK_EN,	0);
-+static MESON_GATE(a1_audio_vad,		AXI_CLK_EN,	1);
-+static MESON_GATE(a1_axi_dmc,		AXI_CLK_EN,	3);
-+static MESON_GATE(a1_axi_psram,		AXI_CLK_EN,	4);
-+static MESON_GATE(a1_ramb,		AXI_CLK_EN,	5);
-+static MESON_GATE(a1_rama,		AXI_CLK_EN,	6);
-+static MESON_GATE(a1_axi_spifc,		AXI_CLK_EN,	7);
-+static MESON_GATE(a1_axi_nic,		AXI_CLK_EN,	8);
-+static MESON_GATE(a1_axi_dma,		AXI_CLK_EN,	9);
-+static MESON_GATE(a1_cpu_ctrl,		AXI_CLK_EN,	10);
-+static MESON_GATE(a1_rom,		AXI_CLK_EN,	11);
-+static MESON_GATE(a1_prod_i2c,		AXI_CLK_EN,	12);
-+
-+/* Array of all clocks provided by this provider */
-+static struct clk_hw_onecell_data a1_periphs_hw_onecell_data = {
-+	.hws = {
-+		[CLKID_SYS_B_SEL]		= &a1_sys_b_sel.hw,
-+		[CLKID_SYS_B_DIV]		= &a1_sys_b_div.hw,
-+		[CLKID_SYS_B]			= &a1_sys_b.hw,
-+		[CLKID_SYS_A_SEL]		= &a1_sys_a_sel.hw,
-+		[CLKID_SYS_A_DIV]		= &a1_sys_a_div.hw,
-+		[CLKID_SYS_A]			= &a1_sys_a.hw,
-+		[CLKID_SYS_CLK]			= &a1_sys_clk.hw,
-+		[CLKID_XTAL_CLKTREE]		= &a1_xtal_clktree.hw,
-+		[CLKID_XTAL_FIXPLL]		= &a1_xtal_fixpll.hw,
-+		[CLKID_XTAL_USB_PHY]		= &a1_xtal_usb_phy.hw,
-+		[CLKID_XTAL_USB_CTRL]		= &a1_xtal_usb_ctrl.hw,
-+		[CLKID_XTAL_HIFIPLL]		= &a1_xtal_hifipll.hw,
-+		[CLKID_XTAL_SYSPLL]		= &a1_xtal_syspll.hw,
-+		[CLKID_XTAL_DDS]		= &a1_xtal_dds.hw,
-+		[CLKID_CLKTREE]			= &a1_clk_tree.hw,
-+		[CLKID_RESET_CTRL]		= &a1_reset_ctrl.hw,
-+		[CLKID_ANALOG_CTRL]		= &a1_analog_ctrl.hw,
-+		[CLKID_PWR_CTRL]		= &a1_pwr_ctrl.hw,
-+		[CLKID_PAD_CTRL]		= &a1_pad_ctrl.hw,
-+		[CLKID_SYS_CTRL]		= &a1_sys_ctrl.hw,
-+		[CLKID_TEMP_SENSOR]		= &a1_temp_sensor.hw,
-+		[CLKID_AM2AXI_DIV]		= &a1_am2axi_dev.hw,
-+		[CLKID_SPICC_B]			= &a1_spicc_b.hw,
-+		[CLKID_SPICC_A]			= &a1_spicc_a.hw,
-+		[CLKID_CLK_MSR]			= &a1_clk_msr.hw,
-+		[CLKID_AUDIO]			= &a1_audio.hw,
-+		[CLKID_JTAG_CTRL]		= &a1_jtag_ctrl.hw,
-+		[CLKID_SARADC]			= &a1_saradc.hw,
-+		[CLKID_PWM_EF]			= &a1_pwm_ef.hw,
-+		[CLKID_PWM_CD]			= &a1_pwm_cd.hw,
-+		[CLKID_PWM_AB]			= &a1_pwm_ab.hw,
-+		[CLKID_CEC]			= &a1_cec.hw,
-+		[CLKID_I2C_S]			= &a1_i2c_s.hw,
-+		[CLKID_IR_CTRL]			= &a1_ir_ctrl.hw,
-+		[CLKID_I2C_M_D]			= &a1_i2c_m_d.hw,
-+		[CLKID_I2C_M_C]			= &a1_i2c_m_c.hw,
-+		[CLKID_I2C_M_B]			= &a1_i2c_m_b.hw,
-+		[CLKID_I2C_M_A]			= &a1_i2c_m_a.hw,
-+		[CLKID_ACODEC]			= &a1_acodec.hw,
-+		[CLKID_OTP]			= &a1_otp.hw,
-+		[CLKID_SD_EMMC_A]		= &a1_sd_emmc_a.hw,
-+		[CLKID_USB_PHY]			= &a1_usb_phy.hw,
-+		[CLKID_USB_CTRL]		= &a1_usb_ctrl.hw,
-+		[CLKID_SYS_DSPB]		= &a1_sys_dspb.hw,
-+		[CLKID_SYS_DSPA]		= &a1_sys_dspa.hw,
-+		[CLKID_DMA]			= &a1_dma.hw,
-+		[CLKID_IRQ_CTRL]		= &a1_irq_ctrl.hw,
-+		[CLKID_NIC]			= &a1_nic.hw,
-+		[CLKID_GIC]			= &a1_gic.hw,
-+		[CLKID_UART_C]			= &a1_uart_c.hw,
-+		[CLKID_UART_B]			= &a1_uart_b.hw,
-+		[CLKID_UART_A]			= &a1_uart_a.hw,
-+		[CLKID_SYS_PSRAM]		= &a1_sys_psram.hw,
-+		[CLKID_RSA]			= &a1_rsa.hw,
-+		[CLKID_CORESIGHT]		= &a1_coresight.hw,
-+		[CLKID_AM2AXI_VAD]		= &a1_am2axi_vad.hw,
-+		[CLKID_AUDIO_VAD]		= &a1_audio_vad.hw,
-+		[CLKID_AXI_DMC]			= &a1_axi_dmc.hw,
-+		[CLKID_AXI_PSRAM]		= &a1_axi_psram.hw,
-+		[CLKID_RAMB]			= &a1_ramb.hw,
-+		[CLKID_RAMA]			= &a1_rama.hw,
-+		[CLKID_AXI_SPIFC]		= &a1_axi_spifc.hw,
-+		[CLKID_AXI_NIC]			= &a1_axi_nic.hw,
-+		[CLKID_AXI_DMA]			= &a1_axi_dma.hw,
-+		[CLKID_CPU_CTRL]		= &a1_cpu_ctrl.hw,
-+		[CLKID_ROM]			= &a1_rom.hw,
-+		[CLKID_PROC_I2C]		= &a1_prod_i2c.hw,
-+		[CLKID_DSPA_A_SEL]		= &a1_dspa_a_sel.hw,
-+		[CLKID_DSPA_A_DIV]		= &a1_dspa_a_div.hw,
-+		[CLKID_DSPA_A]			= &a1_dspa_a.hw,
-+		[CLKID_DSPA_B_SEL]		= &a1_dspa_b_sel.hw,
-+		[CLKID_DSPA_B_DIV]		= &a1_dspa_b_div.hw,
-+		[CLKID_DSPA_B]			= &a1_dspa_b.hw,
-+		[CLKID_DSPA_SEL]		= &a1_dspa_sel.hw,
-+		[CLKID_DSPB_A_SEL]		= &a1_dspb_a_sel.hw,
-+		[CLKID_DSPB_A_DIV]		= &a1_dspb_a_div.hw,
-+		[CLKID_DSPB_A]			= &a1_dspb_a.hw,
-+		[CLKID_DSPB_B_SEL]		= &a1_dspb_b_sel.hw,
-+		[CLKID_DSPB_B_DIV]		= &a1_dspb_b_div.hw,
-+		[CLKID_DSPB_B]			= &a1_dspb_b.hw,
-+		[CLKID_DSPB_SEL]		= &a1_dspb_sel.hw,
-+		[CLKID_DSPA_EN]			= &a1_dspa_en.hw,
-+		[CLKID_DSPA_EN_NIC]		= &a1_dspa_en_nic.hw,
-+		[CLKID_DSPB_EN]			= &a1_dspb_en.hw,
-+		[CLKID_DSPB_EN_NIC]		= &a1_dspb_en_nic.hw,
-+		[CLKID_24M]			= &a1_24m.hw,
-+		[CLKID_24M_DIV2]		= &a1_24m_div2.hw,
-+		[CLKID_12M]			= &a1_12m.hw,
-+		[CLKID_DIV2_PRE]		= &a1_fclk_div2_divn_pre.hw,
-+		[CLKID_FCLK_DIV2_DIVN]		= &a1_fclk_div2_divn.hw,
-+		[CLKID_GEN_SEL]			= &a1_gen_sel.hw,
-+		[CLKID_GEN_DIV]			= &a1_gen_div.hw,
-+		[CLKID_GEN]			= &a1_gen.hw,
-+		[CLKID_SARADC_SEL]		= &a1_saradc_sel.hw,
-+		[CLKID_SARADC_DIV]		= &a1_saradc_div.hw,
-+		[CLKID_SARADC_CLK]		= &a1_saradc_clk.hw,
-+		[CLKID_PWM_A_SEL]		= &a1_pwm_a_sel.hw,
-+		[CLKID_PWM_A_DIV]		= &a1_pwm_a_div.hw,
-+		[CLKID_PWM_A]			= &a1_pwm_a.hw,
-+		[CLKID_PWM_B_SEL]		= &a1_pwm_b_sel.hw,
-+		[CLKID_PWM_B_DIV]		= &a1_pwm_b_div.hw,
-+		[CLKID_PWM_B]			= &a1_pwm_b.hw,
-+		[CLKID_PWM_C_SEL]		= &a1_pwm_c_sel.hw,
-+		[CLKID_PWM_C_DIV]		= &a1_pwm_c_div.hw,
-+		[CLKID_PWM_C]			= &a1_pwm_c.hw,
-+		[CLKID_PWM_D_SEL]		= &a1_pwm_d_sel.hw,
-+		[CLKID_PWM_D_DIV]		= &a1_pwm_d_div.hw,
-+		[CLKID_PWM_D]			= &a1_pwm_d.hw,
-+		[CLKID_PWM_E_SEL]		= &a1_pwm_e_sel.hw,
-+		[CLKID_PWM_E_DIV]		= &a1_pwm_e_div.hw,
-+		[CLKID_PWM_E]			= &a1_pwm_e.hw,
-+		[CLKID_PWM_F_SEL]		= &a1_pwm_f_sel.hw,
-+		[CLKID_PWM_F_DIV]		= &a1_pwm_f_div.hw,
-+		[CLKID_PWM_F]			= &a1_pwm_f.hw,
-+		[CLKID_SPICC_SEL]		= &a1_spicc_sel.hw,
-+		[CLKID_SPICC_DIV]		= &a1_spicc_div.hw,
-+		[CLKID_SPICC_SEL2]		= &a1_spicc_sel2.hw,
-+		[CLKID_SPICC]			= &a1_spicc.hw,
-+		[CLKID_TS_DIV]			= &a1_ts_div.hw,
-+		[CLKID_TS]			= &a1_ts.hw,
-+		[CLKID_SPIFC_SEL]		= &a1_spifc_sel.hw,
-+		[CLKID_SPIFC_DIV]		= &a1_spifc_div.hw,
-+		[CLKID_SPIFC_SEL2]		= &a1_spifc_sel2.hw,
-+		[CLKID_SPIFC]			= &a1_spifc.hw,
-+		[CLKID_USB_BUS_SEL]		= &a1_usb_bus_sel.hw,
-+		[CLKID_USB_BUS_DIV]		= &a1_usb_bus_div.hw,
-+		[CLKID_USB_BUS]			= &a1_usb_bus.hw,
-+		[CLKID_SD_EMMC_SEL]		= &a1_sd_emmc_sel.hw,
-+		[CLKID_SD_EMMC_DIV]		= &a1_sd_emmc_div.hw,
-+		[CLKID_SD_EMMC_SEL2]		= &a1_sd_emmc_sel2.hw,
-+		[CLKID_SD_EMMC]			= &a1_sd_emmc.hw,
-+		[CLKID_PSRAM_SEL]		= &a1_psram_sel.hw,
-+		[CLKID_PSRAM_DIV]		= &a1_psram_div.hw,
-+		[CLKID_PSRAM_SEL2]		= &a1_psram_sel2.hw,
-+		[CLKID_PSRAM]			= &a1_psram.hw,
-+		[CLKID_DMC_SEL]			= &a1_dmc_sel.hw,
-+		[CLKID_DMC_DIV]			= &a1_dmc_div.hw,
-+		[CLKID_DMC_SEL2]		= &a1_dmc_sel2.hw,
-+		[CLKID_DMC]			= &a1_dmc.hw,
-+		[CLKID_RTC_32K_CLKIN]		= &a1_rtc_32k_clkin.hw,
-+		[CLKID_RTC_32K_DIV]		= &a1_rtc_32k_div.hw,
-+		[CLKID_RTC_32K_XTAL]		= &a1_rtc_32k_xtal.hw,
-+		[CLKID_RTC_32K_SEL]		= &a1_rtc_32k_sel.hw,
-+		[CLKID_RTC_CLK]			= &a1_rtc_clk.hw,
-+		[CLKID_CECA_32K_CLKIN]		= &a1_ceca_32k_clkin.hw,
-+		[CLKID_CECA_32K_DIV]		= &a1_ceca_32k_div.hw,
-+		[CLKID_CECA_32K_SEL_PRE]	= &a1_ceca_32k_sel_pre.hw,
-+		[CLKID_CECA_32K_SEL]		= &a1_ceca_32k_sel.hw,
-+		[CLKID_CECA_32K]		= &a1_ceca_32k_clkout.hw,
-+		[CLKID_CECB_32K_CLKIN]		= &a1_cecb_32k_clkin.hw,
-+		[CLKID_CECB_32K_DIV]		= &a1_cecb_32k_div.hw,
-+		[CLKID_CECB_32K_SEL_PRE]	= &a1_cecb_32k_sel_pre.hw,
-+		[CLKID_CECB_32K_SEL]		= &a1_cecb_32k_sel.hw,
-+		[CLKID_CECB_32K]		= &a1_cecb_32k_clkout.hw,
-+		[NR_CLKS]			= NULL,
-+	},
-+	.num = NR_CLKS,
-+};
-+
-+/* Convenience table to populate regmap in .probe */
-+static struct clk_regmap *const a1_periphs_regmaps[] = {
-+	&a1_xtal_clktree,
-+	&a1_xtal_fixpll,
-+	&a1_xtal_usb_phy,
-+	&a1_xtal_usb_ctrl,
-+	&a1_xtal_hifipll,
-+	&a1_xtal_syspll,
-+	&a1_xtal_dds,
-+	&a1_clk_tree,
-+	&a1_reset_ctrl,
-+	&a1_analog_ctrl,
-+	&a1_pwr_ctrl,
-+	&a1_sys_ctrl,
-+	&a1_temp_sensor,
-+	&a1_am2axi_dev,
-+	&a1_spicc_b,
-+	&a1_spicc_a,
-+	&a1_clk_msr,
-+	&a1_audio,
-+	&a1_jtag_ctrl,
-+	&a1_saradc,
-+	&a1_pwm_ef,
-+	&a1_pwm_cd,
-+	&a1_pwm_ab,
-+	&a1_cec,
-+	&a1_i2c_s,
-+	&a1_ir_ctrl,
-+	&a1_i2c_m_d,
-+	&a1_i2c_m_c,
-+	&a1_i2c_m_b,
-+	&a1_i2c_m_a,
-+	&a1_acodec,
-+	&a1_otp,
-+	&a1_sd_emmc_a,
-+	&a1_usb_phy,
-+	&a1_usb_ctrl,
-+	&a1_sys_dspb,
-+	&a1_sys_dspa,
-+	&a1_dma,
-+	&a1_irq_ctrl,
-+	&a1_nic,
-+	&a1_gic,
-+	&a1_uart_c,
-+	&a1_uart_b,
-+	&a1_uart_a,
-+	&a1_sys_psram,
-+	&a1_rsa,
-+	&a1_coresight,
-+	&a1_am2axi_vad,
-+	&a1_audio_vad,
-+	&a1_axi_dmc,
-+	&a1_axi_psram,
-+	&a1_ramb,
-+	&a1_rama,
-+	&a1_axi_spifc,
-+	&a1_axi_nic,
-+	&a1_axi_dma,
-+	&a1_cpu_ctrl,
-+	&a1_rom,
-+	&a1_prod_i2c,
-+	&a1_dspa_a_sel,
-+	&a1_dspa_a_div,
-+	&a1_dspa_a,
-+	&a1_dspa_b_sel,
-+	&a1_dspa_b_div,
-+	&a1_dspa_b,
-+	&a1_dspa_sel,
-+	&a1_dspb_a_sel,
-+	&a1_dspb_a_div,
-+	&a1_dspb_a,
-+	&a1_dspb_b_sel,
-+	&a1_dspb_b_div,
-+	&a1_dspb_b,
-+	&a1_dspb_sel,
-+	&a1_dspa_en,
-+	&a1_dspa_en_nic,
-+	&a1_dspb_en,
-+	&a1_dspb_en_nic,
-+	&a1_24m,
-+	&a1_12m,
-+	&a1_fclk_div2_divn_pre,
-+	&a1_fclk_div2_divn,
-+	&a1_gen_sel,
-+	&a1_gen_div,
-+	&a1_gen,
-+	&a1_saradc_sel,
-+	&a1_saradc_div,
-+	&a1_saradc_clk,
-+	&a1_pwm_a_sel,
-+	&a1_pwm_a_div,
-+	&a1_pwm_a,
-+	&a1_pwm_b_sel,
-+	&a1_pwm_b_div,
-+	&a1_pwm_b,
-+	&a1_pwm_c_sel,
-+	&a1_pwm_c_div,
-+	&a1_pwm_c,
-+	&a1_pwm_d_sel,
-+	&a1_pwm_d_div,
-+	&a1_pwm_d,
-+	&a1_pwm_e_sel,
-+	&a1_pwm_e_div,
-+	&a1_pwm_e,
-+	&a1_pwm_f_sel,
-+	&a1_pwm_f_div,
-+	&a1_pwm_f,
-+	&a1_spicc_sel,
-+	&a1_spicc_div,
-+	&a1_spicc_sel2,
-+	&a1_spicc,
-+	&a1_ts_div,
-+	&a1_ts,
-+	&a1_spifc_sel,
-+	&a1_spifc_div,
-+	&a1_spifc_sel2,
-+	&a1_spifc,
-+	&a1_usb_bus_sel,
-+	&a1_usb_bus_div,
-+	&a1_usb_bus,
-+	&a1_sd_emmc_sel,
-+	&a1_sd_emmc_div,
-+	&a1_sd_emmc_sel2,
-+	&a1_sd_emmc,
-+	&a1_psram_sel,
-+	&a1_psram_div,
-+	&a1_psram_sel2,
-+	&a1_psram,
-+	&a1_dmc_sel,
-+	&a1_dmc_div,
-+	&a1_dmc_sel2,
-+	&a1_dmc,
-+	&a1_sys_b_sel,
-+	&a1_sys_b_div,
-+	&a1_sys_b,
-+	&a1_sys_a_sel,
-+	&a1_sys_a_div,
-+	&a1_sys_a,
-+	&a1_sys_clk,
-+	&a1_rtc_32k_clkin,
-+	&a1_rtc_32k_div,
-+	&a1_rtc_32k_xtal,
-+	&a1_rtc_32k_sel,
-+	&a1_rtc_clk,
-+	&a1_ceca_32k_clkin,
-+	&a1_ceca_32k_div,
-+	&a1_ceca_32k_sel_pre,
-+	&a1_ceca_32k_sel,
-+	&a1_ceca_32k_clkout,
-+	&a1_cecb_32k_clkin,
-+	&a1_cecb_32k_div,
-+	&a1_cecb_32k_sel_pre,
-+	&a1_cecb_32k_sel,
-+	&a1_cecb_32k_clkout,
-+};
-+
-+static struct regmap_config clkc_regmap_config = {
-+	.reg_bits       = 32,
-+	.val_bits       = 32,
-+	.reg_stride     = 4,
-+};
-+
-+static int meson_a1_periphs_probe(struct platform_device *pdev)
-+{
-+	const struct meson_eeclkc_data *data;
-+	struct device *dev = &pdev->dev;
-+	struct resource *res;
-+	void __iomem *base;
-+	struct regmap *map;
-+	int ret, i;
-+
-+	data = of_device_get_match_data(dev);
-+	if (!data)
-+		return -EINVAL;
-+
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+
-+	base = devm_ioremap_resource(dev, res);
-+	if (IS_ERR(base))
-+		return PTR_ERR(base);
-+
-+	map = devm_regmap_init_mmio(dev, base, &clkc_regmap_config);
-+	if (IS_ERR(map))
-+	       return PTR_ERR(map);
-+
-+	/* Populate regmap for the regmap backed clocks */
-+	for (i = 0; i < data->regmap_clk_num; i++)
-+		data->regmap_clks[i]->map = map;
-+
-+	for (i = 0; i < data->hw_onecell_data->num; i++) {
-+		/* array might be sparse */
-+		if (!data->hw_onecell_data->hws[i])
-+			continue;
-+
-+		ret = devm_clk_hw_register(dev, data->hw_onecell_data->hws[i]);
-+		if (ret) {
-+			dev_err(dev, "Clock registration failed\n");
-+			return ret;
-+		}
-+	}
-+
-+	return devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get,
-+					   data->hw_onecell_data);
-+}
-+
-+static const struct meson_eeclkc_data a1_periphs_data = {
-+		.regmap_clks = a1_periphs_regmaps,
-+		.regmap_clk_num = ARRAY_SIZE(a1_periphs_regmaps),
-+		.hw_onecell_data = &a1_periphs_hw_onecell_data,
-+};
-+
-+static const struct of_device_id clkc_match_table[] = {
-+	{
-+		.compatible = "amlogic,a1-periphs-clkc",
-+		.data = &a1_periphs_data
-+	},
-+	{}
-+};
-+
-+static struct platform_driver a1_periphs_driver = {
-+	.probe		= meson_a1_periphs_probe,
-+	.driver		= {
-+		.name	= "a1-periphs-clkc",
-+		.of_match_table = clkc_match_table,
-+	},
-+};
-+
-+builtin_platform_driver(a1_periphs_driver);
-diff --git a/drivers/clk/meson/a1.h b/drivers/clk/meson/a1.h
-new file mode 100644
-index 000000000000..1ae5e04848d6
---- /dev/null
-+++ b/drivers/clk/meson/a1.h
-@@ -0,0 +1,120 @@
-+/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
-+/*
-+ * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-+ */
-+
-+#ifndef __A1_H
-+#define __A1_H
-+
-+/* peripheral clock controller register offset */
-+#define SYS_OSCIN_CTRL			0x0
-+#define RTC_BY_OSCIN_CTRL0		0x4
-+#define RTC_BY_OSCIN_CTRL1		0x8
-+#define RTC_CTRL			0xc
-+#define SYS_CLK_CTRL0			0x10
-+#define AXI_CLK_CTRL0			0x14
-+#define SYS_CLK_EN0			0x1c
-+#define SYS_CLK_EN1			0x20
-+#define AXI_CLK_EN			0x24
-+#define DSPA_CLK_EN			0x28
-+#define DSPB_CLK_EN			0x2c
-+#define DSPA_CLK_CTRL0			0x30
-+#define DSPB_CLK_CTRL0			0x34
-+#define CLK12_24_CTRL			0x38
-+#define GEN_CLK_CTRL			0x3c
-+#define TIMESTAMP_CTRL0			0x40
-+#define TIMESTAMP_CTRL1			0x44
-+#define TIMESTAMP_CTRL2			0x48
-+#define TIMESTAMP_VAL0			0x4c
-+#define TIMESTAMP_VAL1			0x50
-+#define TIMEBASE_CTRL0			0x54
-+#define TIMEBASE_CTRL1			0x58
-+#define SAR_ADC_CLK_CTRL		0xc0
-+#define PWM_CLK_AB_CTRL			0xc4
-+#define PWM_CLK_CD_CTRL			0xc8
-+#define PWM_CLK_EF_CTRL			0xcc
-+#define SPICC_CLK_CTRL			0xd0
-+#define TS_CLK_CTRL			0xd4
-+#define SPIFC_CLK_CTRL			0xd8
-+#define USB_BUSCLK_CTRL			0xdc
-+#define SD_EMMC_CLK_CTRL		0xe0
-+#define CECA_CLK_CTRL0			0xe4
-+#define CECA_CLK_CTRL1			0xe8
-+#define CECB_CLK_CTRL0			0xec
-+#define CECB_CLK_CTRL1			0xf0
-+#define PSRAM_CLK_CTRL			0xf4
-+#define DMC_CLK_CTRL			0xf8
-+#define FCLK_DIV1_SEL			0xfc
-+#define TST_CTRL			0x100
-+
-+#define CLKID_XTAL_CLKTREE		0
-+#define CLKID_SYS_A_SEL			89
-+#define CLKID_SYS_A_DIV			90
-+#define CLKID_SYS_A			91
-+#define CLKID_SYS_B_SEL			92
-+#define CLKID_SYS_B_DIV			93
-+#define CLKID_SYS_B			94
-+#define CLKID_DSPA_A_SEL		95
-+#define CLKID_DSPA_A_DIV		96
-+#define CLKID_DSPA_A			97
-+#define CLKID_DSPA_B_SEL		98
-+#define CLKID_DSPA_B_DIV		99
-+#define CLKID_DSPA_B			100
-+#define CLKID_DSPB_A_SEL		101
-+#define CLKID_DSPB_A_DIV		102
-+#define CLKID_DSPB_A			103
-+#define CLKID_DSPB_B_SEL		104
-+#define CLKID_DSPB_B_DIV		105
-+#define CLKID_DSPB_B			106
-+#define CLKID_RTC_32K_CLKIN		107
-+#define CLKID_RTC_32K_DIV		108
-+#define CLKID_RTC_32K_XTAL		109
-+#define CLKID_RTC_32K_SEL		110
-+#define CLKID_CECB_32K_CLKIN		111
-+#define CLKID_CECB_32K_DIV		112
-+#define CLKID_CECB_32K_SEL_PRE		113
-+#define CLKID_CECB_32K_SEL		114
-+#define CLKID_CECA_32K_CLKIN		115
-+#define CLKID_CECA_32K_DIV		116
-+#define CLKID_CECA_32K_SEL_PRE		117
-+#define CLKID_CECA_32K_SEL		118
-+#define CLKID_DIV2_PRE			119
-+#define CLKID_24M_DIV2			120
-+#define CLKID_GEN_SEL			121
-+#define CLKID_GEN_DIV			122
-+#define CLKID_SARADC_DIV		123
-+#define CLKID_PWM_A_SEL			124
-+#define CLKID_PWM_A_DIV			125
-+#define CLKID_PWM_B_SEL			126
-+#define CLKID_PWM_B_DIV			127
-+#define CLKID_PWM_C_SEL			128
-+#define CLKID_PWM_C_DIV			129
-+#define CLKID_PWM_D_SEL			130
-+#define CLKID_PWM_D_DIV			131
-+#define CLKID_PWM_E_SEL			132
-+#define CLKID_PWM_E_DIV			133
-+#define CLKID_PWM_F_SEL			134
-+#define CLKID_PWM_F_DIV			135
-+#define CLKID_SPICC_SEL			136
-+#define CLKID_SPICC_DIV			137
-+#define CLKID_SPICC_SEL2		138
-+#define CLKID_TS_DIV			139
-+#define CLKID_SPIFC_SEL			140
-+#define CLKID_SPIFC_DIV			141
-+#define CLKID_SPIFC_SEL2		142
-+#define CLKID_USB_BUS_SEL		143
-+#define CLKID_USB_BUS_DIV		144
-+#define CLKID_SD_EMMC_SEL		145
-+#define CLKID_SD_EMMC_DIV		146
-+#define CLKID_SD_EMMC_SEL2		147
-+#define CLKID_PSRAM_SEL			148
-+#define CLKID_PSRAM_DIV			149
-+#define CLKID_PSRAM_SEL2		150
-+#define CLKID_DMC_SEL			151
-+#define CLKID_DMC_DIV			152
-+#define CLKID_DMC_SEL2			153
-+#define NR_CLKS				154
-+
-+#include <dt-bindings/clock/a1-clkc.h>
-+
-+#endif /* __A1_H */
--- 
-2.24.0
+Ack, done in next version.
 
+>> +{
+>> +	struct ps8640 *ps_bridge = bridge_to_ps8640(bridge);
+>> +	struct device *dev = &ps_bridge->page[0]->dev;
+>> +	struct device_node *in_ep, *dsi_node;
+>> +	struct mipi_dsi_device *dsi;
+>> +	struct mipi_dsi_host *host;
+>> +	int ret;
+>> +	const struct mipi_dsi_device_info info = { .type = "ps8640",
+>> +						   .channel = 0,
+>> +						   .node = NULL,
+>> +						 };
+>> +	/* port@0 is ps8640 dsi input port */
+>> +	in_ep = of_graph_get_endpoint_by_regs(dev->of_node, 0, -1);
+>> +	if (!in_ep)
+>> +		return -ENODEV;
+>> +
+>> +	dsi_node = of_graph_get_remote_port_parent(in_ep);
+>> +	of_node_put(in_ep);
+>> +	if (!dsi_node)
+>> +		return -ENODEV;
+>> +
+>> +	host = of_find_mipi_dsi_host_by_node(dsi_node);
+>> +	of_node_put(dsi_node);
+>> +	if (!host)
+>> +		return -ENODEV;
+>> +
+>> +	dsi = mipi_dsi_device_register_full(host, &info);
+>> +	if (IS_ERR(dsi)) {
+>> +		dev_err(dev, "failed to create dsi device\n");
+>> +		ret = PTR_ERR(dsi);
+>> +		return ret;
+>> +	}
+>> +
+>> +	ps_bridge->dsi = dsi;
+>> +
+>> +	dsi->host = host;
+>> +	dsi->mode_flags = MIPI_DSI_MODE_VIDEO |
+>> +			  MIPI_DSI_MODE_VIDEO_SYNC_PULSE;
+>> +	dsi->format = MIPI_DSI_FMT_RGB888;
+>> +	dsi->lanes = 4;
+> 
+> I'm not an expert here, so maybe this makes no sense:
+> are you sure you don't need to take the number of lanes from the
+> device-tree?
+> 
+
+For the comment below looks like it might be configurable, yes, but like you I
+don't have the datasheet so I can't really answer.
+
+> From the yaml spec:
+> 
+> """
+> The device accepts a single channel of
+> MIPI DSI v1.1, with up to four lanes [..]
+> """
+> 
+> If it's OK to hardcode to 4, maybe use a macro for clarity?
+> 
+
+Ok, I'll wait for if anyone can confirm, and if not I'll hardcode the value as
+is known to workand the use case I can test.
+
+>> +	ret = mipi_dsi_attach(dsi);
+>> +	if (ret)
+>> +		goto err_dsi_attach;
+>> +
+>> +	/* Attach the panel-bridge to the dsi bridge */
+>> +	return drm_bridge_attach(bridge->encoder, ps_bridge->panel_bridge,
+>> +				 &ps_bridge->bridge);
+>> +
+>> +err_dsi_attach:
+>> +	mipi_dsi_device_unregister(dsi);
+>> +	return ret;
+>> +}
+>> +
+>> +static const struct drm_bridge_funcs ps8640_bridge_funcs = {
+>> +	.attach = ps8640_bridge_attach,
+>> +	.post_disable = ps8640_post_disable,
+>> +	.pre_enable = ps8640_pre_enable,
+>> +};
+>> +
+>> +static int ps8640_probe(struct i2c_client *client)
+>> +{
+>> +	struct device *dev = &client->dev;
+>> +	struct device_node *np = dev->of_node;
+>> +	struct ps8640 *ps_bridge;
+>> +	struct drm_panel *panel;
+>> +	int ret;
+>> +	u32 i;
+>> +
+>> +	ps_bridge = devm_kzalloc(dev, sizeof(*ps_bridge), GFP_KERNEL);
+>> +	if (!ps_bridge)
+>> +		return -ENOMEM;
+>> +
+>> +	/* port@1 is ps8640 output port */
+> 
+> Hm, regarding my comment on patch 1/2 about required port@0,
+> perhaps this really requires both port@0 and port@1.
+> 
+
+As I commented on patch 1/2 to your question, I am not sure about if port@1 is
+required or not. My understanding is that no, but I might be wrong. What is true
+is that the code below only covers the case where a panel is connected and fails
+otherwise. You can also have another bridge (not covered by the below code), or
+just a connector so I am not sure whether I should support all the possible
+cases or just support the ones I can test for now.
+
+Will wait for the DRM experts here to know how to proceed.
+
+Thanks,
+ Enric
+
+>> +	ret = drm_of_find_panel_or_bridge(np, 1, 0, &panel, NULL);
+>> +	if (ret < 0)
+>> +		return ret;
+>> +	if (!panel)
+>> +		return -ENODEV;
+>> +
+>> +	panel->connector_type = DRM_MODE_CONNECTOR_eDP;
+>> +
+>> +	ps_bridge->panel_bridge = devm_drm_panel_bridge_add(dev, panel);
+>> +	if (IS_ERR(ps_bridge->panel_bridge))
+>> +		return PTR_ERR(ps_bridge->panel_bridge);
+>> +
+>> +	ps_bridge->supplies[0].supply = "vdd33";
+>> +	ps_bridge->supplies[1].supply = "vdd12";
+>> +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(ps_bridge->supplies),
+>> +				      ps_bridge->supplies);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	ps_bridge->gpio_powerdown = devm_gpiod_get(&client->dev, "powerdown",
+>> +						   GPIOD_OUT_LOW);
+>> +	if (IS_ERR(ps_bridge->gpio_powerdown))
+>> +		return PTR_ERR(ps_bridge->gpio_powerdown);
+>> +
+>> +	/*
+>> +	 * Request the reset pin low to avoid the bridge being
+>> +	 * initialized prematurely
+>> +	 */
+>> +	ps_bridge->gpio_reset = devm_gpiod_get(&client->dev, "reset",
+>> +					       GPIOD_OUT_LOW);
+>> +	if (IS_ERR(ps_bridge->gpio_reset))
+>> +		return PTR_ERR(ps_bridge->gpio_reset);
+>> +
+>> +	ps_bridge->bridge.funcs = &ps8640_bridge_funcs;
+>> +	ps_bridge->bridge.of_node = dev->of_node;
+>> +
+>> +	ps_bridge->page[PAGE0_DP_CNTL] = client;
+>> +
+>> +	for (i = 1; i < ARRAY_SIZE(ps_bridge->page); i++) {
+>> +		ps_bridge->page[i] = devm_i2c_new_dummy_device(&client->dev,
+>> +							     client->adapter,
+>> +							     client->addr + i);
+>> +		if (IS_ERR(ps_bridge->page[i])) {
+>> +			dev_err(dev, "failed i2c dummy device, address %02x\n",
+>> +				client->addr + i);
+>> +			return PTR_ERR(ps_bridge->page[i]);
+>> +		}
+>> +	}
+>> +
+>> +	i2c_set_clientdata(client, ps_bridge);
+>> +
+>> +	drm_bridge_add(&ps_bridge->bridge);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int ps8640_remove(struct i2c_client *client)
+>> +{
+>> +	struct ps8640 *ps_bridge = i2c_get_clientdata(client);
+>> +
+>> +	drm_bridge_remove(&ps_bridge->bridge);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static const struct of_device_id ps8640_match[] = {
+>> +	{ .compatible = "parade,ps8640" },
+>> +	{ }
+>> +};
+>> +MODULE_DEVICE_TABLE(of, ps8640_match);
+>> +
+>> +static struct i2c_driver ps8640_driver = {
+>> +	.probe_new = ps8640_probe,
+>> +	.remove = ps8640_remove,
+>> +	.driver = {
+>> +		.name = "ps8640",
+>> +		.of_match_table = ps8640_match,
+>> +	},
+>> +};
+>> +module_i2c_driver(ps8640_driver);
+>> +
+>> +MODULE_AUTHOR("Jitao Shi <jitao.shi@mediatek.com>");
+>> +MODULE_AUTHOR("CK Hu <ck.hu@mediatek.com>");
+>> +MODULE_AUTHOR("Enric Balletbo i Serra <enric.balletbo@collabora.com>");
+>> +MODULE_DESCRIPTION("PARADE ps8640 DSI-eDP converter driver");
+>> +MODULE_LICENSE("GPL v2");
+>> -- 
+>> 2.20.1
+>>
+>>
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
