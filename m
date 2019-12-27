@@ -2,92 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68B3C12B207
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 07:39:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BE4B12B226
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 07:52:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2sbmNMkXQg9LQh7bQyIZgHUlocbNQZ5vUtcjTM24jZU=; b=niI078nW/WFq7n
-	Ph76auwmcvBWmYF3XtvqMyQ5aNns6vT5Kodu73HEbHHEGwjxfVjbKJoAUEH9Br+5PI9RV0Gh5oThq
-	8R55969sQ4EUfpz24JGDpHfx3DOW1hwZ0+MpgZhpkoxLCDK/SQ+tCC9LhhZpC0zWfgtXkF9SlgtBd
-	FCxMhJ2XciotDykiAOQfhp+pjMl+gTkhjgpXxeITF+Uy2jwuryeb2BUJGcGzLXE/zM9MuMOJsh5/3
-	ZRu63Uzz6nAP+plWgQrdKEOFPqbx7eePeejYg4Nb1hVhc0WK+UfytwHnPuVbdFC8l+QY1CRyR6eNp
-	vvB26gslT8RMmWS9ddTg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Grmbz0sIuxw3vUXSjskhGbsgoIEB2cvRSSy8/05JlNk=; b=dDPdlF2ejEJdDu
+	pI3lxILIgOPyXR8XqiM6oqYqU+eRJ9ViohiObBNPukBaTKJqAUOgZc7rsRhTkAeskh/uvLSSt6PKX
+	ckWsVDnS+LD4JVRnbPi/R64ctL2m2YVZaQWPyneHNWOrvAWnGVoGjTi+rTu49Fd+Js/VMCXbPZRKy
+	qYx2iAC9qAQXsFGrNouNSzMie0/rGdr7ZVO295a7LREJ5Vha5AUCBA7RbBu3B3XtxQnglLg+NekG6
+	omrAiIbZbnZ9VxRhKAzYMAQDf9VFoc63UuUD6b6gZjaPg3rH9oRRqgRwpyPcX2ae+jZlE+dE6MkYg
+	aaj5onFfsW5JplWu24rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikjHh-0001NP-PB; Fri, 27 Dec 2019 06:39:41 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1ikjU6-0005mH-Ot; Fri, 27 Dec 2019 06:52:30 +0000
+Received: from szxga01-in.huawei.com ([45.249.212.187] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikjHW-0001Mu-FZ
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 06:39:32 +0000
-Received: by mail-pl1-x643.google.com with SMTP id b22so11361646pls.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 26 Dec 2019 22:39:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=t0JhfQXqwvsrBVHIc9FoCtLnTmKQkndMD2Zq+leqajk=;
- b=ATeg/AZpEVVu/zzKxM41Gi38Tego1wb4/bAhm5+kH/7D3iosOE0ZaLSI4hsJ2sw3Py
- yi9T+xKB8IiYFZsxGDS5EqPNS4pQ3m9uz/n/rILt/Z61xaxMKGgGuApZ2wWNvK6VI/Xc
- 1+IKM8EQ1fNer+hMWAou4/OhTnYjoaKcq8oCerlJGjm5iPDAwimFyuMCIWtO1MPlKRsF
- ZxzjGVvdYzTgntX/o2FgtZq0BiGycxuLPuSM0WpjH37YnMmZkuu5iK2KiMnCf87tDLjF
- +NZYtuEqX7qm5nQ1s1MnGonfwqXCxW4u7JygoPXpi/opDP4XG+KlmKUACFoQW7IdqATY
- oqYQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=t0JhfQXqwvsrBVHIc9FoCtLnTmKQkndMD2Zq+leqajk=;
- b=H+3Qg6RNl5sJqxczfoBmu8flXRRAqnZzCzAB4zj3cgLWTQPg3C2M4IF3JVsVZfa129
- HwMUjbOaJ9qPtMjMIE9/unm3G6vy+6bBj9qIbt9tmEAkKq7hRWlM/Ytm7yzk3qUI9f9X
- QlIhUXZhQQpXUeCThSq0jX0WXE3hJUJwLCpN00zJlUSm62jtP61GafUpLvC+ETj2U1F3
- ZKCD9hln3AGNA1G8l3OTQqxhQATNKBjG7PawxLOJ3fM5S27ys4xwTXS+HVR2xm5a/P3g
- Nw1KgUwQjfUTqBJZSc3Cck3XRqMMB02hYR9tUwPBJW8IqSXMncVPpwI8DGDsowjfQRgR
- 1cuw==
-X-Gm-Message-State: APjAAAXvXiN0AFyDvciu4RBg2lzP8T0P+K/m9h8HeqiC53dJmdHV3Ay5
- kuG9/G9mmNGhWHgTxCcR9R9uSA==
-X-Google-Smtp-Source: APXvYqyFA5E8nGzaiWY8T+cpTP6ABUjEiZB7ONgvKrMEFw6iP/g3fmeY4/Xr2ZWP5NFoXB4htPGF+w==
-X-Received: by 2002:a17:902:b609:: with SMTP id
- b9mr50522157pls.70.1577428769647; 
- Thu, 26 Dec 2019 22:39:29 -0800 (PST)
-Received: from ripper (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id l9sm35705531pgh.34.2019.12.26.22.39.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 26 Dec 2019 22:39:29 -0800 (PST)
-Date: Thu, 26 Dec 2019 22:39:15 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Loic Poulain <loic.poulain@linaro.org>
-Subject: Re: [PATCH] arm64: Add qcom Kconfig fragment
-Message-ID: <20191227063915.GI1908628@ripper>
-References: <1576850160-1564-1-git-send-email-loic.poulain@linaro.org>
+ id 1ikjTy-0005ln-8S
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 06:52:24 +0000
+Received: from DGGEMM402-HUB.china.huawei.com (unknown [172.30.72.57])
+ by Forcepoint Email with ESMTP id 78BE4E4F3F2AAFF53153;
+ Fri, 27 Dec 2019 14:52:16 +0800 (CST)
+Received: from dggeme755-chm.china.huawei.com (10.3.19.101) by
+ DGGEMM402-HUB.china.huawei.com (10.3.20.210) with Microsoft SMTP Server (TLS)
+ id 14.3.439.0; Fri, 27 Dec 2019 14:52:15 +0800
+Received: from [127.0.0.1] (10.173.221.248) by dggeme755-chm.china.huawei.com
+ (10.3.19.101) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 27
+ Dec 2019 14:52:15 +0800
+Subject: Re: [PATCH v2 5/6] KVM: arm64: Add interface to support VCPU
+ preempted check
+To: kbuild test robot <lkp@intel.com>
+References: <20191226135833.1052-6-yezengruan@huawei.com>
+ <201912270236.nkxsDrid%lkp@intel.com>
+From: yezengruan <yezengruan@huawei.com>
+Message-ID: <47879233-4437-4166-b61a-2d1cc8e7e44b@huawei.com>
+Date: Fri, 27 Dec 2019 14:52:13 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1576850160-1564-1-git-send-email-loic.poulain@linaro.org>
+In-Reply-To: <201912270236.nkxsDrid%lkp@intel.com>
+Content-Language: en-US
+X-Originating-IP: [10.173.221.248]
+X-ClientProxiedBy: dggeme709-chm.china.huawei.com (10.1.199.105) To
+ dggeme755-chm.china.huawei.com (10.3.19.101)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_223930_643420_00DF7A68 
-X-CRM114-Status: GOOD (  17.18  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20191226_225222_504012_E25B376A 
+X-CRM114-Status: GOOD (  24.00  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,146 +73,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
+Cc: mark.rutland@arm.com, daniel.lezcano@linaro.org, kbuild-all@lists.01.org,
+ kvm@vger.kernel.org, linux-doc@vger.kernel.org, maz@kernel.org,
+ suzuki.poulose@arm.com, linux-kernel@vger.kernel.org,
+ virtualization@lists.linux-foundation.org, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, catalin.marinas@arm.com, linux@armlinux.org.uk,
+ steven.price@arm.com, will@kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri 20 Dec 05:56 PST 2019, Loic Poulain wrote:
+Hi,
 
-> Add qcom Kconfig fragment which enables the appropriate symbols for
-> support of Qualcomm based boards, like the 'popular' dragonboards.
-> This permits to fully support the boards upstream without having to
-> rely on downstream deconfig changes.
+On 2019/12/27 2:51, kbuild test robot wrote:
+> Hi Zengruan,
 > 
-> This patch has been tested with Dragonboard-410c and Dragonboard-820c.
+> Thank you for the patch! Yet something to improve:
 > 
-
-As Catalin said, this should be added to the generic defconfig. I have a
-few of these queued up already for v5.6 in linux-next, but please do
-send me additional patches and I'll include them in the qcom/defconfig
-branch.
-
-> qcom.config fragment has been generated with ./script/diffconfig
+> [auto build test ERROR on kvmarm/next]
+> [also build test ERROR on kvm/linux-next linus/master v5.5-rc3 next-20191220]
+> [cannot apply to arm64/for-next/core]
+> [if your patch is applied to the wrong git tree, please drop us a note to help
+> improve the system. BTW, we also suggest to use '--base' option to specify the
+> base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
 > 
-> Signed-off-by: Loic Poulain <loic.poulain@linaro.org>
+> url:    https://github.com/0day-ci/linux/commits/Zengruan-Ye/KVM-arm64-VCPU-preempted-check-support/20191227-000637
+> base:   https://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git next
+> config: arm64-alldefconfig (attached as .config)
+> compiler: aarch64-linux-gcc (GCC) 7.5.0
+> reproduce:
+>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         # save the attached .config to linux build tree
+>         GCC_VERSION=7.5.0 make.cross ARCH=arm64 
+> 
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All errors (new ones prefixed by >>):
+> 
+>    In file included from include/linux/spinlock.h:89:0,
+>                     from include/linux/radix-tree.h:16,
+>                     from include/linux/idr.h:15,
+>                     from include/linux/kernfs.h:13,
+>                     from include/linux/sysfs.h:16,
+>                     from include/linux/kobject.h:20,
+>                     from include/linux/of.h:17,
+>                     from include/linux/irqdomain.h:35,
+>                     from include/linux/acpi.h:13,
+>                     from include/acpi/apei.h:9,
+>                     from include/acpi/ghes.h:5,
+>                     from include/linux/arm_sdei.h:8,
+>                     from arch/arm64/kernel/asm-offsets.c:10:
+>    arch/arm64/include/asm/spinlock.h: In function 'vcpu_is_preempted':
+>>> arch/arm64/include/asm/spinlock.h:18:9: error: implicit declaration of function 'pv_vcpu_is_preempted'; did you mean 'vcpu_is_preempted'? [-Werror=implicit-function-declaration]
+>      return pv_vcpu_is_preempted(cpu);
+>             ^~~~~~~~~~~~~~~~~~~~
+>             vcpu_is_preempted
+>    cc1: some warnings being treated as errors
+>    make[2]: *** [arch/arm64/kernel/asm-offsets.s] Error 1
+>    make[2]: Target '__build' not remade because of errors.
+>    make[1]: *** [prepare0] Error 2
+>    make[1]: Target 'prepare' not remade because of errors.
+>    make: *** [sub-make] Error 2
+>    27 real  5 user  7 sys  48.63% cpu 	make prepare
+> 
+> vim +18 arch/arm64/include/asm/spinlock.h
+> 
+>     14	
+>     15	#define vcpu_is_preempted vcpu_is_preempted
+>     16	static inline bool vcpu_is_preempted(long cpu)
+>     17	{
+>   > 18		return pv_vcpu_is_preempted(cpu);
+>     19	}
+>     20	
+> 
 > ---
->  arch/arm64/configs/qcom.config | 57 ++++++++++++++++++++++++++++++++++++++++++
->  1 file changed, 57 insertions(+)
->  create mode 100644 arch/arm64/configs/qcom.config
+> 0-DAY kernel test infrastructure                 Open Source Technology Center
+> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
 > 
-> diff --git a/arch/arm64/configs/qcom.config b/arch/arm64/configs/qcom.config
-> new file mode 100644
-> index 0000000..9358df8
-> --- /dev/null
-> +++ b/arch/arm64/configs/qcom.config
-> @@ -0,0 +1,57 @@
-> +CONFIG_ARM_QCOM_CPUFREQ_HW=y
-> +CONFIG_BT_HCIUART_3WIRE=y
-> +CONFIG_BT_HCIUART_QCA=y
-> +CONFIG_BT_HCIUART_RTL=y
-> +CONFIG_CRYPTO_DEV_QCOM_RNG=y
 
-=m
+Thanks for posting this, I'll update the code to fix this issue.
 
-> +CONFIG_EXTCON_QCOM_SPMI_MISC=y
-> +CONFIG_INTERCONNECT=y
-> +CONFIG_MFD_QCOM_RPM=y
+Thanks,
 
-This is for 32-bit targets.
+Zengruan
 
-> +CONFIG_PHY_QCOM_PCIE2=y
 
-=m
+---
+ arch/arm64/include/asm/spinlock.h | 2 ++
+ 1 file changed, 2 insertions(+)
 
-> +CONFIG_PHY_QCOM_QMP=y
+diff --git a/arch/arm64/include/asm/spinlock.h b/arch/arm64/include/asm/spinlock.h
+index 45ff1b2949a6..b5d1982414c5 100644
+--- a/arch/arm64/include/asm/spinlock.h
++++ b/arch/arm64/include/asm/spinlock.h
+@@ -12,10 +12,12 @@
+ /* See include/linux/spinlock.h */
+ #define smp_mb__after_spinlock()	smp_mb()
 
-=m
++#ifdef CONFIG_PARAVIRT
+ #define vcpu_is_preempted vcpu_is_preempted
+ static inline bool vcpu_is_preempted(long cpu)
+ {
+ 	return pv_vcpu_is_preempted(cpu);
+ }
++#endif // CONFIG_PARAVIRT
 
-> +CONFIG_PHY_QCOM_QUSB2=y
+ #endif /* __ASM_SPINLOCK_H */
+-- 
+2.19.1
 
-=m
 
-> +CONFIG_PHY_QCOM_UFS=y
 
-I recently proposed a patch to add 8996 UFS support to the common QMP
-driver, so hopefully we can get that merged for v5.6 instead.
 
-> +CONFIG_PM8916_WATCHDOG=y
-
-=m
-
-> +CONFIG_POWER_RESET_QCOM_PON=y
-
-=m
-
-> +CONFIG_QCOM_APR=m
-> +CONFIG_QCOM_FASTRPC=y
-
-=m
-
-> +CONFIG_QCOM_RMTFS_MEM=m
-> +CONFIG_QCOM_RPMHPD=y
-> +CONFIG_QCOM_RPMPD=y
-> +CONFIG_QCOM_SOCINFO=m
-> +CONFIG_QCOM_WCNSS_CTRL=m
-> +CONFIG_QCOM_WCNSS_PIL=m
-> +CONFIG_SCSI_UFS_QCOM=y
-
-=m
-
-> +CONFIG_SND_SOC_CROS_EC_CODEC=m
-> +CONFIG_SND_SOC_MAX98927=m
-> +CONFIG_SND_SOC_MSM8916_WCD_ANALOG=m
-> +CONFIG_SND_SOC_MSM8916_WCD_DIGITAL=m
-> +CONFIG_VIDEO_QCOM_CAMSS=m
-> +CONFIG_VIDEO_QCOM_VENUS=m
-> +CONFIG_WCN36XX=m
-> +CONFIG_BT_QCA=m
-> +CONFIG_BT_QCOMSMD=m
-> +CONFIG_INTERCONNECT_QCOM=y
-> +CONFIG_INTERCONNECT_QCOM_MSM8974=y
-> +CONFIG_INTERCONNECT_QCOM_QCS404=y
-> +CONFIG_INTERCONNECT_QCOM_SDM845=y
-> +CONFIG_INTERCONNECT_QCOM_SMD_RPM=y
-
-Selected as needed by previous options.
-
-> +CONFIG_PHY_QCOM_UFS_14NM=y
-
-Follows CONFIG_PHY_QCOM_UFS, and should be replaced by
-CONFIG_PHY_QCOM_QMP
-
-> +CONFIG_QCOM_CLK_RPM=y
-> +CONFIG_REGULATOR_QCOM_RPM=y
-
-These two are for 32-bit targets.
-
-Regards,
-Bjorn
-
-> +CONFIG_SND_COMPRESS_OFFLOAD=y
-> +CONFIG_SND_SOC_COMPRESS=y
-> +CONFIG_SND_SOC_MSM8996=m
-> +CONFIG_SND_SOC_QCOM_COMMON=m
-> +CONFIG_SND_SOC_QDSP6=m
-> +CONFIG_SND_SOC_QDSP6_ADM=m
-> +CONFIG_SND_SOC_QDSP6_AFE=m
-> +CONFIG_SND_SOC_QDSP6_AFE_DAI=m
-> +CONFIG_SND_SOC_QDSP6_ASM=m
-> +CONFIG_SND_SOC_QDSP6_ASM_DAI=m
-> +CONFIG_SND_SOC_QDSP6_COMMON=m
-> +CONFIG_SND_SOC_QDSP6_CORE=m
-> +CONFIG_SND_SOC_QDSP6_ROUTING=m
-> +CONFIG_SND_SOC_RT5663=m
-> +CONFIG_SND_SOC_SDM845=m
-> +CONFIG_VIDEOBUF2_DMA_SG=m
-> +CONFIG_WCN36XX_DEBUGFS=y
-> -- 
-> 2.7.4
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
