@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43DFB12B239
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 08:01:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFF3E12B259
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 08:21:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IjVzv1AyCrQCJM+1BMIvHWkBDfgfNbGxbBSfGRD3Duc=; b=ZrAS3PmcCWDa9V
-	hX8x22c2kx2rd90maH63CVz9G0RIrYwNhizCoBXmS4UVgS3dWqzugH+tcJP9tK4DZLdx75dXzqp/e
-	ad08CtX8dwp/UcRizkVLMfRLv5O4NWh/CKa90RbOLEfCQ9MWMXaR+8HEtu/vELOZ6iIzon5Wr69Js
-	fe5AAYrFeEPJRq8p2WXCi8PCopO43k72si5jMYwAJhYOne5aj10Wcy1V/5+Btr1JMQMgq0I/lY6tU
-	JnSes12fc4SQpLZtlulAodDgi3s1/oQHoHfzyTuzVQuDGwBwn64f1IlfW/tyQVtgPWXoWc/FrgEWG
-	krhvh9kucWQ0SGQ7xeuQ==;
+	List-Owner; bh=HQMZ3GflCNJGUVxipv7jJfYtmAX8JCh6sBTvmnI2caU=; b=PTScwY3OEF6uLP
+	u/YZlardgPnDdgYSXqrmaofApF2jSLZL5z6RilsURRIUQ750cUCaOTdjvOD5SdIW9AUzBIbbcmpMG
+	wPv/ifcBJTjr8oav+OvoMvtU7RXYBzQdomHhwwtGPy5W8QAhfWGUKdl6rGkfqQ7toKD7DG1AGVBGV
+	/VseVK6rcrhCxaZCEc4CKXbShfQ54TCpVUVYf0znNgAzX2ShIM/zq8mRDHHoiTJBrKsxi0Acwgy8q
+	ApgqxjpatKdMv6R1ISlA0eUP2qlrcM6fZwphU+8asiLtfKFe5hfxOak133l0CnxXEl1h6kEOojg1I
+	gj9QsbBjBubyDhe1yVQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikjcq-0000U3-2M; Fri, 27 Dec 2019 07:01:32 +0000
+	id 1ikjvm-00075H-OF; Fri, 27 Dec 2019 07:21:06 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikjce-0000SF-A8; Fri, 27 Dec 2019 07:01:22 +0000
-X-UUID: 378f0f958361487884fb75a71844ea1e-20191226
+ id 1ikjvb-00073v-Tu; Fri, 27 Dec 2019 07:20:57 +0000
+X-UUID: 3f355523aef84840b7600bee9f9f8183-20191226
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=bhYU9ZH9G3H/CFlJU6OWPko4ggU1WP/IycBCw41lHR0=; 
- b=cOggosKrOxXxFxughOuTfMklrkhJVJo5yoW00P0OEqRDY3sRAtOyQzYawgNcbv+QQIaM3tFtu1nr3sJk4pFgD6znDsopMNNC7yMwPGWEsfMUirEoLTu3k0VURLoB1K9gihJQvaftnZlAICmI/SH6iAJa57IFyrwY9JW8rJJr+g8=;
-X-UUID: 378f0f958361487884fb75a71844ea1e-20191226
+ bh=z5QPChCFCnrwSBOU/2Lo2wcqlt1P6qSqzfoKolmXANM=; 
+ b=M2ZRvpQWAPfJAHNjxGR5tS6vD5ofpC8/xmSze+LQ3UwW0DWHpOh0lXfGBczA/sd2DkLbyIiHmgamJSx02CC0EwcYK3GLy2XhXP00AqrIvfgI1EJOUPQcM1FrLYGXb5tRnwuQrwMbzwuKJABLhPGMXXFpZI2+4R0CX3tHor6Q86I=;
+X-UUID: 3f355523aef84840b7600bee9f9f8183-20191226
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <roger.lu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1751727858; Thu, 26 Dec 2019 23:01:08 -0800
+ with ESMTP id 1337187444; Thu, 26 Dec 2019 23:20:54 -0800
 Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 26 Dec 2019 22:51:17 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 26 Dec 2019 23:15:07 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
  mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 27 Dec 2019 14:50:23 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ 15.0.1395.4; Fri, 27 Dec 2019 15:14:21 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 27 Dec 2019 14:50:19 +0800
-Message-ID: <1577429450.10290.47.camel@mtksdaap41>
-Subject: Re: [PATCH v5 1/3] dt-bindings: soc: add mtk svs dt-bindings
+ Transport; Fri, 27 Dec 2019 15:14:38 +0800
+Message-ID: <1577430889.10290.49.camel@mtksdaap41>
+Subject: Re: [PATCH v5 3/3] PM / AVS: SVS: Introduce SVS engine
 From: Roger Lu <roger.lu@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Fri, 27 Dec 2019 14:50:50 +0800
-In-Reply-To: <20190930133548.GA24574@bogus>
+To: Pi-Hsun Shih <pihsun@chromium.org>
+Date: Fri, 27 Dec 2019 15:14:49 +0800
+In-Reply-To: <CANdKZ0eEMQe+OFOJxOs37gyUm2vGQ2F-NeAkcxmgYXVKvRzQBw@mail.gmail.com>
 References: <20190906100514.30803-1-roger.lu@mediatek.com>
- <20190906100514.30803-2-roger.lu@mediatek.com>
- <20190930133548.GA24574@bogus>
+ <20190906100514.30803-4-roger.lu@mediatek.com>
+ <CANdKZ0eEMQe+OFOJxOs37gyUm2vGQ2F-NeAkcxmgYXVKvRzQBw@mail.gmail.com>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_230120_362575_59972020 
-X-CRM114-Status: GOOD (  21.27  )
+X-CRM114-CacheID: sfid-20191226_232055_982753_778D3C29 
+X-CRM114-Status: GOOD (  24.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -87,166 +87,297 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
- Angus Lin <Angus.Lin@mediatek.com>, Kevin Hilman <khilman@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, HenryC
+ Angus Lin <Angus.Lin@mediatek.com>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Kevin Hilman <khilman@kernel.org>,
+ open list <linux-kernel@vger.kernel.org>, HenryC
  Chen <HenryC.Chen@mediatek.com>, yt.lee@mediatek.com,
- Fan Chen <fan.chen@mediatek.com>, devicetree@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Matthias
- Brugger <matthias.bgg@gmail.com>, Nishanth Menon <nm@ti.com>,
- linux-arm-kernel@lists.infradead.org
+ Fan Chen <fan.chen@mediatek.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE
+ BINDINGS" <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Nishanth Menon <nm@ti.com>,
+ "moderated
+ list:ARM/Mediatek SoC support" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dear Rob,
+Dear Pi-Hsun,
 
 Sorry for the late reply.
 
-On Mon, 2019-09-30 at 08:35 -0500, Rob Herring wrote:
-> On Fri, Sep 06, 2019 at 06:05:13PM +0800, Roger Lu wrote:
-> > Document the binding for enabling mtk svs on MediaTek SoC.
-> > 
+On Thu, 2019-11-14 at 15:41 +0800, Pi-Hsun Shih wrote:
+> Hi Roger,
+> 
+> On Fri, Sep 6, 2019 at 6:06 PM Roger Lu <roger.lu@mediatek.com> wrote:
+> >
+> > The SVS (Smart Voltage Scaling) engine is a piece of hardware which is
+> > used to calculate optimized voltage values of several power domains, e.g.
+> > CPU/GPU/CCI, according to chip process corner, temperatures, and other
+> > factors. Then DVFS driver could apply those optimized voltage values to
+> > reduce power consumption.
+> >
 > > Signed-off-by: Roger Lu <roger.lu@mediatek.com>
 > > ---
-> >  .../devicetree/bindings/power/mtk-svs.txt     | 88 +++++++++++++++++++
-> >  1 file changed, 88 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/power/mtk-svs.txt
-> > 
-> > diff --git a/Documentation/devicetree/bindings/power/mtk-svs.txt b/Documentation/devicetree/bindings/power/mtk-svs.txt
+> >  drivers/power/avs/Kconfig     |   10 +
+> >  drivers/power/avs/Makefile    |    1 +
+> >  drivers/power/avs/mtk_svs.c   | 2075 +++++++++++++++++++++++++++++++++
+> >  include/linux/power/mtk_svs.h |   23 +
+> >  4 files changed, 2109 insertions(+)
+> >  create mode 100644 drivers/power/avs/mtk_svs.c
+> >  create mode 100644 include/linux/power/mtk_svs.h
+> >
+> > [...]
+> > diff --git a/drivers/power/avs/mtk_svs.c b/drivers/power/avs/mtk_svs.c
 > > new file mode 100644
-> > index 000000000000..6a71992ef162
+> > index 000000000000..78ec93c3a4a5
 > > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/power/mtk-svs.txt
-> > @@ -0,0 +1,88 @@
-> > +* Mediatek Smart Voltage Scaling (MTK SVS)
+> > +++ b/drivers/power/avs/mtk_svs.c
+> > [...]
+> > +static int svs_set_volts(struct svs_bank *svsb, bool force_update)
+> > +{
+> > +       u32 i, svsb_volt, opp_volt, low_temp_offset = 0;
+> > +       int zone_temp, ret;
 > > +
-> > +This describes the device tree binding for the MTK SVS controller (bank)
-> > +which helps provide the optimized CPU/GPU/CCI voltages. This device also
-> > +needs thermal data to calculate thermal slope for accurately compensate
-> > +the voltages when temperature change.
+> > +       mutex_lock(&svsb->lock);
 > > +
-> > +Required properties:
-> > +- compatible:
-> > +  - "mediatek,mt8183-svs" : For MT8183 family of SoCs
-> > +- reg: Address range of the MTK SVS controller.
-> > +- interrupts: IRQ for the MTK SVS controller.
-> > +- clocks, clock-names: Clocks needed for the svs controller. required
-> > +                       clocks are:
-> > +		       "main_clk": Main clock needed for register access
+> > +       /* If bank is suspended, it means init02 voltage is applied.
+> > +        * Don't need to update opp voltage anymore.
+> > +        */
+> > +       if (svsb->suspended && !force_update) {
+> > +               pr_notice("%s: bank is suspended\n", svsb->name);
+> > +               mutex_unlock(&svsb->lock);
+> > +               return -EPERM;
+> > +       }
+> > +
+> > +       /* get thermal effect */
+> > +       if (svsb->phase == SVS_PHASE_MON) {
+> > +               if (svsb->svs_temp > svsb->upper_temp_bound &&
+> > +                   svsb->svs_temp < svsb->lower_temp_bound) {
+> > +                       pr_err("%s: svs_temp is abnormal (0x%x)?\n",
+> > +                              svsb->name, svsb->svs_temp);
+> > +                       mutex_unlock(&svsb->lock);
+> > +                       return -EINVAL;
+> > +               }
+> > +
+> > +               ret = svs_get_zone_temperature(svsb, &zone_temp);
+> > +               if (ret) {
+> > +                       pr_err("%s: cannot get zone \"%s\" temperature\n",
+> > +                              svsb->name, svsb->zone_name);
+> > +                       pr_err("%s: add low_temp_offset = %u\n",
+> > +                              svsb->name, svsb->low_temp_offset);
+> > +                       zone_temp = svsb->low_temp_threashold;
+> > +               }
+> > +
+> > +               if (zone_temp <= svsb->low_temp_threashold)
+> > +                       low_temp_offset = svsb->low_temp_offset;
+> > +       }
+> > +
+> > +       /* vmin <= svsb_volt (opp_volt) <= signed-off voltage */
+> > +       for (i = 0; i < svsb->opp_count; i++) {
+> > +               if (svsb->phase == SVS_PHASE_MON) {
+> > +                       svsb_volt = max((svsb->volts[i] + svsb->volt_offset +
+> > +                                        low_temp_offset), svsb->vmin);
+> > +                       opp_volt = svs_volt_to_opp_volt(svsb_volt,
+> > +                                                       svsb->volt_step,
+> > +                                                       svsb->volt_base);
+> > +               } else if (svsb->phase == SVS_PHASE_INIT02) {
+> > +                       svsb_volt = max((svsb->init02_volts[i] +
+> > +                                        svsb->volt_offset), svsb->vmin);
+> > +                       opp_volt = svs_volt_to_opp_volt(svsb_volt,
+> > +                                                       svsb->volt_step,
+> > +                                                       svsb->volt_base);
+> > +               } else if (svsb->phase == SVS_PHASE_ERROR) {
+> > +                       opp_volt = svsb->opp_volts[i];
+> > +               } else {
+> > +                       pr_err("%s: unknown phase: %u?\n",
+> > +                              svsb->name, svsb->phase);
+> > +                       mutex_unlock(&svsb->lock);
+> > +                       return -EINVAL;
+> > +               }
+> > +
+> > +               opp_volt = min(opp_volt, svsb->opp_volts[i]);
+> > +               ret = dev_pm_opp_adjust_voltage(svsb->dev, svsb->opp_freqs[i],
+> > +                                               opp_volt);
 > 
-> '_clk' is redundant.
+> The version of this function in opp tree
+> (https://git.kernel.org/pub/scm/linux/kernel/git/vireshk/pm.git/commit/?h=opp/linux-next&id=25cb20a212a1f989385dfe23230817e69c62bee5)
+> has a different function signature, so this should be changed too.
 
-Oh Okay. I'll remove _clk. Thanks.
-
-> 
-> > +- nvmem-cells: Phandle to the calibration data provided by a nvmem device.
-> > +- nvmem-cell-names: Should be "svs-calibration-data" and "calibration-data"
-> > +
-> > +Subnodes:
-> > +- svs_cpu_little: SVS bank device node of little CPU
-> > +  compatible: "mediatek,mt8183-svs-cpu-little"
-> > +  operating-points-v2: OPP table hooked by SVS little CPU bank.
-> > +		       SVS will optimze this OPP table voltage part.
-> > +  vcpu-little-supply: PMIC buck of little CPU
-> > +- svs_cpu_big: SVS bank device node of big CPU
-> > +  compatible: "mediatek,mt8183-svs-cpu-big"
-> > +  operating-points-v2: OPP table hooked by SVS big CPU bank.
-> > +		       SVS will optimze this OPP table voltage part.
-> > +  vcpu-big-supply: PMIC buck of big CPU
-> > +- svs_cci: SVS bank device node of CCI
-> > +  compatible: "mediatek,mt8183-svs-cci"
-> > +  operating-points-v2: OPP table hooked by SVS CCI bank.
-> > +		       SVS will optimze this OPP table voltage part.
-> > +  vcci-supply: PMIC buck of CCI
-> > +- svs_gpu: SVS bank device node of GPU
-> > +  compatible: "mediatek,mt8183-svs-gpu"
-> > +  operating-points-v2: OPP table hooked by SVS GPU bank.
-> > +		       SVS will optimze this OPP table voltage part.
-> > +  vgpu-spply: PMIC buck of GPU
-> > +
-> > +Example:
-> > +
-> > +	svs: svs@1100b000 {
-> > +		compatible = "mediatek,mt8183-svs";
-> > +		reg = <0 0x1100b000 0 0x1000>;
-> > +		interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW 0>;
-> 
-> GIC interrupts are 3 cells, you have 4.
-
-Oops, I'll remove the fourth parameter. Thanks a lot.
-
-> 
-> > +		clocks = <&infracfg CLK_INFRA_THERM>;
-> > +		clock-names = "main_clk";
-> > +		nvmem-cells = <&svs_calibration>, <&thermal_calibration>;
-> > +		nvmem-cell-names = "svs-calibration-data", "calibration-data";
-> > +
-> > +		svs_cpu_little: svs_cpu_little {
-> 
-> Don't use '_' in node names.
-
-Okay. I'll replace it with '-'. Thanks.
-
-> 
-> > +			compatible = "mediatek,mt8183-svs-cpu-little";
-> > +			operating-points-v2 = <&cluster0_opp>;
-> > +		};
-> > +
-> > +		svs_cpu_big: svs_cpu_big {
-> > +			compatible = "mediatek,mt8183-svs-cpu-big";
-> > +			operating-points-v2 = <&cluster1_opp>;
-> > +		};
-> > +
-> > +		svs_cci: svs_cci {
-> > +			compatible = "mediatek,mt8183-svs-cci";
-> > +			operating-points-v2 = <&cci_opp>;
-> > +		};
-> > +
-> > +		svs_gpu: svs_gpu {
-> > +			compatible = "mediatek,mt8183-svs-gpu";
-> > +			power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
-> > +			operating-points-v2 = <&gpu_opp_table>;
-> > +		};
-> > +	};
-> > +
-> > +	&svs_cpu_little {
-> > +		vcpu-little-supply = <&mt6358_vproc12_reg>;
-> 
-> It's already defined to have OPP and supply in the cpu nodes. Parse them
-> to get this information rather than duplicating it here.
-> 
-> The same should apply to the CCI and GPU.
-
-Please let me explain the reason why I add SVS sub-nodes. I ever try to
-parse other nodes to get desired power-domains/OPP table. However, it
-makes SVS driver harder to develop and maintain.
-
-1. When a SVS-controller-init wants GPU_CORE0's OPP table in one node
-but it needs power-domains(GPU_MFG_2D) in another node, it becomes
-complicated and confusing when SVS sub-node tries to parse many nodes.
-Therefore, we want SVS sub-node to focus on what SVS bank requires by
-how we do in this patch.
-
-2. In hardware point of view, SVS controller depends on other hardware's
-power only. All the SVS controller registers are in SVS hardware. So, we
-think It's good that SVS sub-node describes what SVS controller requires
-instead of linking other subsys nodes and parse the property that SVS
-controller needs.
-
-3. We want SVS driver to have a generic way to attain subsys device for
-using "pm_runtime and OPP framework" API. If SVS driver tries to parse
-CPU(little/big core) and other subsys device node(e.g cci/gpu), it means
-SVS driver has to maintain different methodologies(cpu-specific?
-devfreq? others?) in order to get CPU(little/big core) and other subsys
-device(e.g cci/gpu) for using "pm_runtime and OPP framework" API.
+Sure. I'll update it in the next patch.
 
 > 
-> Rob
+> > +               if (ret) {
+> > +                       pr_err("%s: set voltage failed: %d\n", svsb->name, ret);
+> > +                       mutex_unlock(&svsb->lock);
+> > +                       return ret;
+> > +               }
+> > +       }
+> > +
+> > +       mutex_unlock(&svsb->lock);
+> > +
+> > +       return 0;
+> > +}
+> > +
+> > [...]
+> > +static int svs_init01(struct mtk_svs *svs)
+> > +{
+> > +       const struct svs_platform *svsp = svs->platform;
+> > +       struct svs_bank *svsb;
+> > +       struct pm_qos_request qos_request = { {0} };
+> > +       unsigned long flags, time_left;
+> > +       bool search_done;
+> > +       int ret = -EINVAL;
+> > +       u32 opp_freqs, opp_vboot, buck_volt, idx, i;
+> > +
+> > +       /* Let CPUs leave idle-off state for initializing svs_init01. */
+> > +       pm_qos_add_request(&qos_request, PM_QOS_CPU_DMA_LATENCY, 0);
+> > +
+> > +       /* Sometimes two svs_bank use the same buck.
+> > +        * Therefore, we set each svs_bank to vboot voltage first.
+> > +        */
+> > +       for (idx = 0; idx < svsp->bank_num; idx++) {
+> > +               svsb = &svsp->banks[idx];
+> > +               search_done = false;
+> > +
+> > +               if (!svsb->init01_support)
+> > +                       continue;
+> > +
+> > +               ret = regulator_set_mode(svsb->buck, REGULATOR_MODE_FAST);
+> > +               if (ret)
+> > +                       pr_notice("%s: fail to set fast mode: %d\n",
+> > +                                 svsb->name, ret);
+> > +
+> > +               if (svsb->mtcmos_request) {
+> > +                       ret = regulator_enable(svsb->buck);
+> > +                       if (ret) {
+> > +                               pr_err("%s: fail to enable %s power: %d\n",
+> > +                                      svsb->name, svsb->buck_name, ret);
+> > +                               goto init01_finish;
+> > +                       }
+> > +
+> > +                       ret = dev_pm_domain_attach(svsb->dev, false);
+> > +                       if (ret) {
+> > +                               pr_err("%s: attach pm domain fail: %d\n",
+> > +                                      svsb->name, ret);
+> > +                               goto init01_finish;
+> > +                       }
+> > +
+> > +                       pm_runtime_enable(svsb->dev);
+> > +                       ret = pm_runtime_get_sync(svsb->dev);
+> > +                       if (ret < 0) {
+> > +                               pr_err("%s: turn mtcmos on fail: %d\n",
+> > +                                      svsb->name, ret);
+> > +                               goto init01_finish;
+> > +                       }
+> > +               }
+> > +
+> > +               /* Find the fastest freq that can be run at vboot and
+> > +                * fix to that freq until svs_init01 is done.
+> > +                */
+> > +               opp_vboot = svs_volt_to_opp_volt(svsb->vboot,
+> > +                                                svsb->volt_step,
+> > +                                                svsb->volt_base);
+> > +
+> > +               for (i = 0; i < svsb->opp_count; i++) {
+> > +                       opp_freqs = svsb->opp_freqs[i];
+> > +                       if (!search_done && svsb->opp_volts[i] <= opp_vboot) {
+> > +                               ret = dev_pm_opp_adjust_voltage(svsb->dev,
+> > +                                                               opp_freqs,
+> > +                                                               opp_vboot);
+> 
+> Same here.
 
-Sincerely,
-Roger Lu.
+Sure. I'll update it in the next patch.
+
+> 
+> > +                               if (ret) {
+> > +                                       pr_err("%s: set voltage failed: %d\n",
+> > +                                              svsb->name, ret);
+> > +                                       goto init01_finish;
+> > +                               }
+> > +
+> > +                               search_done = true;
+> > +                       } else {
+> > +                               dev_pm_opp_disable(svsb->dev,
+> > +                                                  svsb->opp_freqs[i]);
+> > +                       }
+> > +               }
+> > +       }
+> > +
+> > +       for (idx = 0; idx < svsp->bank_num; idx++) {
+> > +               svsb = &svsp->banks[idx];
+> > +               svs->bank = svsb;
+> > +
+> > +               if (!svsb->init01_support)
+> > +                       continue;
+> > +
+> > +               opp_vboot = svs_volt_to_opp_volt(svsb->vboot,
+> > +                                                svsb->volt_step,
+> > +                                                svsb->volt_base);
+> > +
+> > +               buck_volt = regulator_get_voltage(svsb->buck);
+> > +               if (buck_volt != opp_vboot) {
+> > +                       pr_err("%s: buck voltage: %u, expected vboot: %u\n",
+> > +                              svsb->name, buck_volt, opp_vboot);
+> > +                       ret = -EPERM;
+> > +                       goto init01_finish;
+> > +               }
+> > +
+> > +               init_completion(&svsb->init_completion);
+> > +               flags = claim_mtk_svs_lock();
+> > +               svs_set_phase(svs, SVS_PHASE_INIT01);
+> > +               release_mtk_svs_lock(flags);
+> > +               time_left =
+> > +                       wait_for_completion_timeout(&svsb->init_completion,
+> > +                                                   msecs_to_jiffies(2000));
+> > +               if (time_left == 0) {
+> > +                       pr_err("%s: init01 completion timeout\n", svsb->name);
+> > +                       ret = -EBUSY;
+> > +                       goto init01_finish;
+> > +               }
+> > +       }
+> > +
+> > +init01_finish:
+> > +       for (idx = 0; idx < svsp->bank_num; idx++) {
+> > +               svsb = &svsp->banks[idx];
+> > +
+> > +               if (!svsb->init01_support)
+> > +                       continue;
+> > +
+> > +               for (i = 0; i < svsb->opp_count; i++)
+> > +                       dev_pm_opp_enable(svsb->dev, svsb->opp_freqs[i]);
+> > +
+> > +               if (regulator_set_mode(svsb->buck, REGULATOR_MODE_NORMAL))
+> > +                       pr_notice("%s: fail to set normal mode: %d\n",
+> > +                                 svsb->name, ret);
+> > +
+> > +               if (svsb->mtcmos_request) {
+> > +                       if (pm_runtime_put_sync(svsb->dev))
+> > +                               pr_err("%s: turn mtcmos off fail: %d\n",
+> > +                                      svsb->name, ret);
+> > +                       pm_runtime_disable(svsb->dev);
+> > +                       dev_pm_domain_detach(svsb->dev, 0);
+> > +                       if (regulator_disable(svsb->buck))
+> > +                               pr_err("%s: fail to disable %s power: %d\n",
+> > +                                      svsb->name, svsb->buck_name, ret);
+> > +               }
+> > +       }
+> > +
+> > +       pm_qos_remove_request(&qos_request);
+> > +
+> > +       return ret;
+> > +}
+> > +
+> > [...]
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
