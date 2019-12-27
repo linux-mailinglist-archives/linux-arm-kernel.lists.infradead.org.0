@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61D6912B739
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 18:48:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66C7C12B73A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 18:48:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JrVe8fi4Vem1mWncwBtXSxuuH8yzt323oM7R8CH/bOU=; b=j2HEuWXyx7WP41
-	ukpB4qt5M3eTuNA7ikHMdnutH+xLK+eQGvLE2O7JbrKTnEeT8aijiwKrJDSdLWZEQc9TLioPp4QY8
-	qIO5FA58Tz3hKn0eucDX4fR3Ayov+5INaeBcXEJF06CEVjqAQykJZ7hc0ywA4Z6sbYH2SLwcAVPdY
-	C0zEAsMPSi07+mZpzkj/8Gsx4lwounhbSCX4MXZObjAy+l8sBcMxucgzmHFiqmAXUumTxJPg2Qqgk
-	zfymTg5DEzL/svpZa/rHYFsWrr8Nm2nRW5qbJq2RsUNZUruO6DX+DbI9V2lZxKdoAinhe1eyV26tp
-	oiTo2d6aVvGSbumqMLUA==;
+	List-Owner; bh=66RBPqrdzlnvpv5Q6qCk5H6Gw9WoCu1OsMLFd9lAxts=; b=J3ozQb4j86LlEY
+	8cCCb7rqVi7R5MD2QKgs5VjSQCOP8iK1u8YoJt322fGPt/mfF8ZeEcTe+rWWYx5y7tbIlLef4pKmF
+	swnqJqBlm7zmGmRfXziEljSx5S/ees/9Gj+R4h5HpwhcKLA0syu/hzPgB9ZNcpEZrduZCbFA1kPe5
+	gDZ9z8k5sIDFhOAp2iY+NugseHsAMqZZC2l+GibCowahIKBVjeFJC6FMRY6blozSX+QOUZs/DG8he
+	JT4wup1j8Ek/byVCK8mzNF/FZLGKcPRIFRSnxJZk2Yb6qtc1tIJAn7dDWIH4d8HoGdC1lUOWYKcTy
+	Kg5mfFz/OVtpucGwD0kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iktiW-0005gI-NN; Fri, 27 Dec 2019 17:48:04 +0000
+	id 1iktin-0005yQ-EY; Fri, 27 Dec 2019 17:48:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iktfn-0003QW-QA
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 17:45:17 +0000
+ id 1iktfo-0003RI-TT
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 17:45:20 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E5FC024653;
- Fri, 27 Dec 2019 17:45:13 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 287CB24125;
+ Fri, 27 Dec 2019 17:45:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577468714;
- bh=Ip+IIaODiV15hv7n3lJiWcwHnWf8dWUAsBCm4PN9k/k=;
+ s=default; t=1577468716;
+ bh=qFaFhA/v8t/Rov8CR3MaVpvPyNkIPH9jwaowkLAYxUY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=1aLR2SHbGn3w06Hs6Fqd5quWH85JLE0TO2o5sTXdJdwVxbqzv7+n2AoLDQ5RbYYR1
- hGANspV2Vvg1IfbmHfsWHrZucWwqAzgHFygHJCG9kIVRT3gvfVcs+VyZtZI2ZXcXQb
- ujNKnOT/K6WSPjPzrhz9Z/2e3GIDDoZCTw9Fw4M0=
+ b=QuCJfo0yGx6pLfMMZN1rLtmHNZdurwUTry2bBVsOexugkloCXThYomM3FWL0OlME5
+ WQV/5QB+9fk5ZlYjR+GILx+CrY5soX5u2TQpJAo53tsfGYAsoZRsSHd4zDaX3g6A3o
+ b+lRJKfb3KuiAEIUVxFe6NmaAB8mFqPsp7uT+fqs=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 69/84] net: stmmac: Do not accept invalid MTU
- values
-Date: Fri, 27 Dec 2019 12:43:37 -0500
-Message-Id: <20191227174352.6264-69-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 70/84] net: stmmac: xgmac: Clear previous RX
+ buffer size
+Date: Fri, 27 Dec 2019 12:43:38 -0500
+Message-Id: <20191227174352.6264-70-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191227174352.6264-1-sashal@kernel.org>
 References: <20191227174352.6264-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_094515_923393_E14F9C9B 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20191227_094517_153663_08B6EF1F 
+X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,55 +91,46 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 
-[ Upstream commit eaf4fac478077d4ed57cbca2c044c4b58a96bd98 ]
+[ Upstream commit 11d55fd9975f8e46a0e5e19c14899544e81e1e15 ]
 
-The maximum MTU value is determined by the maximum size of TX FIFO so
-that a full packet can fit in the FIFO. Add a check for this in the MTU
-change callback.
+When switching between buffer sizes we need to clear the previous value.
 
-Also check if provided and rounded MTU does not passes the maximum limit
-of 16K.
-
-Changes from v2:
-- Align MTU before checking if its valid
-
-Fixes: 7ac6653a085b ("stmmac: Move the STMicroelectronics driver")
+Fixes: d6ddfacd95c7 ("net: stmmac: Add DMA related callbacks for XGMAC2")
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h     | 2 ++
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c | 3 ++-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 014fe93ed2d8..ec37ef7521e9 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -3604,12 +3604,24 @@ static void stmmac_set_rx_mode(struct net_device *dev)
- static int stmmac_change_mtu(struct net_device *dev, int new_mtu)
- {
- 	struct stmmac_priv *priv = netdev_priv(dev);
-+	int txfifosz = priv->plat->tx_fifo_size;
-+
-+	if (txfifosz == 0)
-+		txfifosz = priv->dma_cap.tx_fifo_size;
-+
-+	txfifosz /= priv->plat->tx_queues_to_use;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
+index 0a80fa25afe3..209745294751 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
+@@ -169,6 +169,8 @@
+ #define XGMAC_DMA_CH_RX_CONTROL(x)	(0x00003108 + (0x80 * (x)))
+ #define XGMAC_RxPBL			GENMASK(21, 16)
+ #define XGMAC_RxPBL_SHIFT		16
++#define XGMAC_RBSZ			GENMASK(14, 1)
++#define XGMAC_RBSZ_SHIFT		1
+ #define XGMAC_RXST			BIT(0)
+ #define XGMAC_DMA_CH_TxDESC_LADDR(x)	(0x00003114 + (0x80 * (x)))
+ #define XGMAC_DMA_CH_RxDESC_LADDR(x)	(0x0000311c + (0x80 * (x)))
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+index 1c3930527444..27942c53b567 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+@@ -379,7 +379,8 @@ static void dwxgmac2_set_bfsize(void __iomem *ioaddr, int bfsize, u32 chan)
+ 	u32 value;
  
- 	if (netif_running(dev)) {
- 		netdev_err(priv->dev, "must be stopped to change its MTU\n");
- 		return -EBUSY;
- 	}
+ 	value = readl(ioaddr + XGMAC_DMA_CH_RX_CONTROL(chan));
+-	value |= bfsize << 1;
++	value &= ~XGMAC_RBSZ;
++	value |= bfsize << XGMAC_RBSZ_SHIFT;
+ 	writel(value, ioaddr + XGMAC_DMA_CH_RX_CONTROL(chan));
+ }
  
-+	new_mtu = STMMAC_ALIGN(new_mtu);
-+
-+	/* If condition true, FIFO is too small or MTU too large */
-+	if ((txfifosz < new_mtu) || (new_mtu > BUF_SIZE_16KiB))
-+		return -EINVAL;
-+
- 	dev->mtu = new_mtu;
- 
- 	netdev_update_features(dev);
 -- 
 2.20.1
 
