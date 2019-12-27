@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F7F012B9EE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 19:15:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B57F12BA0C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 19:16:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wy7dgdjVPgwEB999kkRulo9dkskr2NSFpBx8C8zvAUI=; b=oJGgGh4MkWhKlQ
-	33Oz4u2PiPPWXfVdO+2GWBXFBXriOPhUv6foUwR41tPYid7huLegYFp8MJrmto+TI/zWEUww2ww83
-	2CrdcFeT6gvgBFuSxqnnmSYiO7udEQqwMl5c1+ZA98kJRuMJTmKUUmbdynzExAn6xJJ4qKuTIHmUs
-	H6d3dTFSjoxeKt0KIPvsTLNSQQiFNjoXrDBLJEOB7Zi+xNAPLXTLuURmkUWhemIa0wlxBvion9KTw
-	RozSvTPw4FHdZDLOx0+E1JshDbE38T5bGwZh0VQF4VLixnDgUszN+LJPdSyfiIE6Bk9YIuA9ke65u
-	n+TUS5zn85bKgXyB90Jw==;
+	List-Owner; bh=lUWf/nzJRiDmYIexJDWaW2W+tQpNzODZVp666jkg0e0=; b=LrlEQr5gNGUsa+
+	0bXZLEuWXuGJKTGrtQJBgspBnu+l9dsIK07xCdga6D2DHwgFnvXDKupHxuAN/Bbff//y4MCZJ2Hmz
+	HspE9l76NcDEANq8H6TSI3m18pCkNZ4g3g81oCi4Elge3Ui9GKEUaAH1UUfTrSCIhah5DJ09FKMqT
+	W2ipQLvEBx98GlnSEyDJ9EOn/t7eRi8tRtQ7UuCQxvYawQmcyN+Jc+mkWQPgiE8Ev+iVKkqDaXymi
+	ueRi/jbgvjqKh2AEP2eU7GWRasEFy8uYj/2zW97F55+GnbB1CDZosIQMGPLBOyVL2BafP9i/FRbOd
+	Ute646ZXdaknw+0d/MDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iku91-0001oY-MT; Fri, 27 Dec 2019 18:15:27 +0000
+	id 1iku9c-0002CF-Ok; Fri, 27 Dec 2019 18:16:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iku8p-0001nf-CG
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 18:15:17 +0000
+ id 1iku9S-0002BQ-6O
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 18:15:55 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3898C222C3;
- Fri, 27 Dec 2019 18:15:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F2BD421744;
+ Fri, 27 Dec 2019 18:15:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577470515;
- bh=cxid6C6F9WrArkdBSO7ewILRRUwrf6B52AkZM6I+OZc=;
+ s=default; t=1577470553;
+ bh=B/WPZinwqaU3N5CEePyKCWSzXduU7EUxFTX6m0gZr/s=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=2qG01NYOn0Y37GwO8gHApB7RtMv2izzTlXK3jcOEL7HOTytQAO0MDtCGQDxRa2O4d
- x52toZX6Aff+HdI5lRhiC3srnikgk25R7MwJCENPS88goK+Pnwud9cTEmt0GaqPm3E
- e7UMkpF8KRIh1dQb4nWe+oEFyHJEbyApqoqxyeG4=
+ b=JfXJC/+P+Te4cAnTPKqaUHsFhlHuLP80RocKgWzPr2ZkvMp6OO8fAOY4loBM0Ovcg
+ 49JWPQig5CwlzN+bm2ltgodj6QU9hV+plgG39Yq3Rg+PFi13mMAqwHON2v/P2YI+rq
+ wNq5JWEtlpzn59Hm5acoe9Wee1vtTHSS8y/s+56Y=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 32/38] net: stmmac: RX buffer size must be 16 byte
- aligned
-Date: Fri, 27 Dec 2019 13:14:29 -0500
-Message-Id: <20191227181435.7644-32-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.4 03/25] ARM: vexpress: Set-up shared OPP table
+ instead of individual for each CPU
+Date: Fri, 27 Dec 2019 13:15:27 -0500
+Message-Id: <20191227181549.8040-3-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191227181435.7644-1-sashal@kernel.org>
-References: <20191227181435.7644-1-sashal@kernel.org>
+In-Reply-To: <20191227181549.8040-1-sashal@kernel.org>
+References: <20191227181549.8040-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_101515_830853_064193DB 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191227_101554_250463_9C72EDB0 
+X-CRM114-Status: GOOD (  13.29  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,45 +80,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Sasha Levin <sashal@kernel.org>,
- netdev@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ Dietmar Eggemann <dietmar.eggemann@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jose Abreu <Jose.Abreu@synopsys.com>
+From: Sudeep Holla <sudeep.holla@arm.com>
 
-[ Upstream commit 8d558f0294fe92e04af192e221d0d0f6a180ee7b ]
+[ Upstream commit 2a76352ad2cc6b78e58f737714879cc860903802 ]
 
-We need to align the RX buffer size to at least 16 byte so that IP
-doesn't mis-behave. This is required by HW.
+Currently we add individual copy of same OPP table for each CPU within
+the cluster. This is redundant and doesn't reflect the reality.
 
-Changes from v2:
-- Align UP and not DOWN (David)
+We can't use core cpumask to set policy->cpus in ve_spc_cpufreq_init()
+anymore as it gets called via cpuhp_cpufreq_online()->cpufreq_online()
+->cpufreq_driver->init() and the cpumask gets updated upon CPU hotplug
+operations. It also may cause issues when the vexpress_spc_cpufreq
+driver is built as a module.
 
-Fixes: 7ac6653a085b ("stmmac: Move the STMicroelectronics driver")
-Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
-Signed-off-by: David S. Miller <davem@davemloft.net>
+Since ve_spc_clk_init is built-in device initcall, we should be able to
+use the same topology_core_cpumask to set the opp sharing cpumask via
+dev_pm_opp_set_sharing_cpus and use the same later in the driver via
+dev_pm_opp_get_sharing_cpus.
+
+Cc: Liviu Dudau <liviu.dudau@arm.com>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
+Tested-by: Dietmar Eggemann <dietmar.eggemann@arm.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/mach-vexpress/spc.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 5ac48a594951..a2b7c685cbf1 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -55,7 +55,7 @@
- #include <linux/of_mdio.h>
- #include "dwmac1000.h"
+diff --git a/arch/arm/mach-vexpress/spc.c b/arch/arm/mach-vexpress/spc.c
+index 5766ce2be32b..29eb945075e3 100644
+--- a/arch/arm/mach-vexpress/spc.c
++++ b/arch/arm/mach-vexpress/spc.c
+@@ -555,8 +555,9 @@ static struct clk *ve_spc_clk_register(struct device *cpu_dev)
  
--#define	STMMAC_ALIGN(x)		__ALIGN_KERNEL(x, SMP_CACHE_BYTES)
-+#define	STMMAC_ALIGN(x)		ALIGN(ALIGN(x, SMP_CACHE_BYTES), 16)
- #define	TSO_MAX_BUFF_SIZE	(SZ_16K - 1)
+ static int __init ve_spc_clk_init(void)
+ {
+-	int cpu;
++	int cpu, cluster;
+ 	struct clk *clk;
++	bool init_opp_table[MAX_CLUSTERS] = { false };
  
- /* Module parameters */
+ 	if (!info)
+ 		return 0; /* Continue only if SPC is initialised */
+@@ -582,8 +583,17 @@ static int __init ve_spc_clk_init(void)
+ 			continue;
+ 		}
+ 
++		cluster = topology_physical_package_id(cpu_dev->id);
++		if (init_opp_table[cluster])
++			continue;
++
+ 		if (ve_init_opp_table(cpu_dev))
+ 			pr_warn("failed to initialise cpu%d opp table\n", cpu);
++		else if (dev_pm_opp_set_sharing_cpus(cpu_dev,
++			 topology_core_cpumask(cpu_dev->id)))
++			pr_warn("failed to mark OPPs shared for cpu%d\n", cpu);
++		else
++			init_opp_table[cluster] = true;
+ 	}
+ 
+ 	platform_device_register_simple("vexpress-spc-cpufreq", -1, NULL, 0);
 -- 
 2.20.1
 
