@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75F9712B653
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 18:42:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB66512B654
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 18:42:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xe3E9eq34z+GODQtTTiW7yxHKZ+KrPyiMJaFNdjZW2k=; b=Zf6DCVGy8dWGXo
-	1NJxK6Wm0g8vywnCTrXv6SlA+tHQkIQM0ESKllC9PCkTM5yyn2zqYT6U8g9d5GX805jH0CnM+ZP1S
-	G+fiTojzswKZwEQgnjC7v8WYXYKq6WetqL0C9Q/QQJs1SrdvjwQXthtL+90R4kTLx8QGOm8gSN9EF
-	B84JEhwxh0zeRiXOya5UJmWcsQYgUCHVG+Fr94qETH0OF5BnHS9Yg5KWhASk6lvJiYmQh11wTsCNs
-	ml6qQlk9gvyIvzpXvQpunzlEQ4Ew2dT4Hg+DcmEtJwFoK5/5qC6zc/wGIZcPuWnXZrX1mMmzkLrR9
-	fDU3+Nj/6IqXh0k0Nmig==;
+	List-Owner; bh=a76bWEUqFUNaznljVdD+LCRAFxCXrlGwZZH+a9xf0E4=; b=alrjCfXB6yeYYR
+	+5gDmf0cvkv0QcKMINh7XyYB0veWAOWcJaxTMhIZ8hpr7sCxOYWlOPUZthVkqJ0Cve0UMNzUXxsqz
+	mm0/9F2nM6TxF7UKDiUahRzLiy3esq8RvRdm8My/nKVjh+rWoUG8+Ni9YRWm6qnJ2HQDuzhxExu9C
+	+ICp5XH6f9bBMNxnEywgaHggLLyDQIPuHxm6M8/66olMMTSQm73v3ByLOQyeOyfHrYkK50e0UJhXs
+	WVONdPmLfJZa9rAZ17HJNOrxcHgIspVa+GGIFNZxdbXpcEuZoGGl48JF42Gt4q3PpPKBTuIwVGSVT
+	FotzhzVY+weyqByQ0lfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iktcW-0007Xw-AO; Fri, 27 Dec 2019 17:41:52 +0000
+	id 1iktco-0007mf-58; Fri, 27 Dec 2019 17:42:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iktcF-0007Wj-HS
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 17:41:36 +0000
+ id 1iktcG-0007XB-Ph
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 17:41:38 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5329721775;
- Fri, 27 Dec 2019 17:41:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 95A5A227BF;
+ Fri, 27 Dec 2019 17:41:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577468495;
- bh=HJ0ymcUkdCCjoz9nZLNfodLIvHB94KyevMzMw3Nhzz8=;
+ s=default; t=1577468496;
+ bh=dCuaddNahKCIMhTzWPxdn0qVvTPLXRYoth7KSZ37i4g=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZAh7GBGUU2igbVkSXBMyyXdEGiawjjdwywsuhfOM6+vWGP7H8gN0mRJ2OebqxYjW/
- sNe6Rwym4m5rmsnlBjh//+C5ldb3IHuvBfE1YSMASIL9UHkCJ4UMMT4eSCfEklZLKo
- 21iTR6Q+Yk37NTTmgwTcIeD2gUdQ2MyVeapKWVio=
+ b=0zE8IFjMgJ9TIuhTYpBtUuuuvEg7KHyUB1ub0N8OQImPjTeAKAPvCjOVtbEEHd5es
+ A5r/QvmBaYsVSbowzQ8EIL6Yu5Z//UGmL8+1myoVK9VND6FNxeutXSYeY94jdjk2by
+ gyZOpA1YGAG2jQ2RbHkMIMzY9l87yNehl5NI3a1M=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 030/187] ARM: dts: imx6ul: imx6ul-14x14-evk.dtsi:
- Fix SPI NOR probing
-Date: Fri, 27 Dec 2019 12:38:18 -0500
-Message-Id: <20191227174055.4923-30-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 031/187] ARM: vexpress: Set-up shared OPP table
+ instead of individual for each CPU
+Date: Fri, 27 Dec 2019 12:38:19 -0500
+Message-Id: <20191227174055.4923-31-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20191227174055.4923-1-sashal@kernel.org>
 References: <20191227174055.4923-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_094135_594054_1D7CF44F 
-X-CRM114-Status: GOOD (  11.59  )
+X-CRM114-CacheID: sfid-20191227_094136_849392_727A955B 
+X-CRM114-Status: GOOD (  12.80  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,46 +80,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>,
- Frieder Schrempf <frieder.schrempf@kontron.de>, Stefan Roese <sr@denx.de>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Liviu Dudau <liviu.dudau@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ Dietmar Eggemann <dietmar.eggemann@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stefan Roese <sr@denx.de>
+From: Sudeep Holla <sudeep.holla@arm.com>
 
-[ Upstream commit 0aeb1f2b74f3402e9cdb7c0b8e2c369c9767301e ]
+[ Upstream commit 2a76352ad2cc6b78e58f737714879cc860903802 ]
 
-Without this "jedec,spi-nor" compatible property, probing of the SPI NOR
-does not work on the NXP i.MX6ULL EVK. Fix this by adding this
-compatible property to the DT.
+Currently we add individual copy of same OPP table for each CPU within
+the cluster. This is redundant and doesn't reflect the reality.
 
-Fixes: 7d77b8505aa9 ("ARM: dts: imx6ull: fix the imx6ull-14x14-evk configuration")
-Signed-off-by: Stefan Roese <sr@denx.de>
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
-Reviewed-by: Frieder Schrempf <frieder.schrempf@kontron.de>
-Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+We can't use core cpumask to set policy->cpus in ve_spc_cpufreq_init()
+anymore as it gets called via cpuhp_cpufreq_online()->cpufreq_online()
+->cpufreq_driver->init() and the cpumask gets updated upon CPU hotplug
+operations. It also may cause issues when the vexpress_spc_cpufreq
+driver is built as a module.
+
+Since ve_spc_clk_init is built-in device initcall, we should be able to
+use the same topology_core_cpumask to set the opp sharing cpumask via
+dev_pm_opp_set_sharing_cpus and use the same later in the driver via
+dev_pm_opp_get_sharing_cpus.
+
+Cc: Liviu Dudau <liviu.dudau@arm.com>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
+Tested-by: Dietmar Eggemann <dietmar.eggemann@arm.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/imx6ul-14x14-evk.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/mach-vexpress/spc.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi b/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-index c2a9dd57e56a..aa86341adaaa 100644
---- a/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-+++ b/arch/arm/boot/dts/imx6ul-14x14-evk.dtsi
-@@ -215,7 +215,7 @@
- 	flash0: n25q256a@0 {
- 		#address-cells = <1>;
- 		#size-cells = <1>;
--		compatible = "micron,n25q256a";
-+		compatible = "micron,n25q256a", "jedec,spi-nor";
- 		spi-max-frequency = <29000000>;
- 		spi-rx-bus-width = <4>;
- 		spi-tx-bus-width = <4>;
+diff --git a/arch/arm/mach-vexpress/spc.c b/arch/arm/mach-vexpress/spc.c
+index 354e0e7025ae..1da11bdb1dfb 100644
+--- a/arch/arm/mach-vexpress/spc.c
++++ b/arch/arm/mach-vexpress/spc.c
+@@ -551,8 +551,9 @@ static struct clk *ve_spc_clk_register(struct device *cpu_dev)
+ 
+ static int __init ve_spc_clk_init(void)
+ {
+-	int cpu;
++	int cpu, cluster;
+ 	struct clk *clk;
++	bool init_opp_table[MAX_CLUSTERS] = { false };
+ 
+ 	if (!info)
+ 		return 0; /* Continue only if SPC is initialised */
+@@ -578,8 +579,17 @@ static int __init ve_spc_clk_init(void)
+ 			continue;
+ 		}
+ 
++		cluster = topology_physical_package_id(cpu_dev->id);
++		if (init_opp_table[cluster])
++			continue;
++
+ 		if (ve_init_opp_table(cpu_dev))
+ 			pr_warn("failed to initialise cpu%d opp table\n", cpu);
++		else if (dev_pm_opp_set_sharing_cpus(cpu_dev,
++			 topology_core_cpumask(cpu_dev->id)))
++			pr_warn("failed to mark OPPs shared for cpu%d\n", cpu);
++		else
++			init_opp_table[cluster] = true;
+ 	}
+ 
+ 	platform_device_register_simple("vexpress-spc-cpufreq", -1, NULL, 0);
 -- 
 2.20.1
 
