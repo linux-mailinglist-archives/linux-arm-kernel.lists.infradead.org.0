@@ -2,82 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DB1912B5AA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 16:36:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C96F712B5AF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 16:42:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Tk4+Zo8g5lcUky+lsqmtCFiLmy/EJwVemo6v8R/4H1k=; b=e/5LrBkGNnbo+1UlxmPf43BJ2
-	OtLG3X0MYmYct1GjDLYHo6bHtA+vaD0wQQ9JZK8D+9omPMDS7CQg9HVTM/pciODejwi124eqKva/t
-	Zu2GvOFD4qLWtbNBIgao9btkQf8DaQ5jfrwpC8fz96R9pgnIYGoVwXPlNauc4+v5+P1qir2FK/inN
-	klaRTIZRl9kFWz83jPQ0v5IUJHjpIG58RRCnd/tNuuYVwyDUJcp8VWOFhULSPfYI/Zw00eceTI4UU
-	uhNRiiEpUZQQ0j74KF7OZIKGhVPf8U/jLSnINcoLkoHBcmyovfDuZPRO3HFzEU+b6LxPcT4fK0e8o
-	jf9h9/L1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V7dLcIUUIAP+FO04ZA7nz9nQkgv1wNppbkTvEXMqykA=; b=mqHvqtm3t+zSwU
+	Ium0S8DRANakbU2m7WUJ19mL4gbtOhJw03+oQSxSfN5vhD33Ei3xoEgNlLC0xEyRCPmjFO5oBELkb
+	nxPZ4Gbm3/XZuSMoTewkZOh25MgUg8FT8lG7CkccCcLXpN8VDJ9HUdKKdWobaMkaA2Iqc6zf5FPJR
+	ypL/KdlykY7cEuCQ2gUtuAJO01XKDbwypyC/nmervlqjTPMHCmm1zCDkzZSVgoITFV3MXmwHPpFEy
+	nJuelDMd3z/M8pc2JuDb8msIkyyKfqR8A7PqaooPW54yvMosit6tdux12QoKH1PR3QBpHMNVOjWZg
+	5grdoWHGtIZYs8fCA3jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikrem-0007Ke-Oz; Fri, 27 Dec 2019 15:36:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikrec-0007K6-Sq
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 15:35:56 +0000
-Received: from localhost (lfbn-lyo-1-633-204.w90-119.abo.wanadoo.fr
- [90.119.206.204])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3FAC720740;
- Fri, 27 Dec 2019 15:35:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577460953;
- bh=7r56deXllU1oGrb23gXCZ4pIfhEB/Z0xwJCja1MXEL4=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=ycFG5d8GqzOqg09g3YY78naztjMaftPaJseNHozA9qOdVLhpzmJayZr5yMvzdQGkD
- FJ+zXXFFgeMuKtTlgCxENE2LDnqVqslEdmYK4XG+W2l9PBwhuZ8jkoTlR8vKV0K8ZU
- MRjVrRKwrch2A7BuGUTX+BaXagKluHzmx+7UyZA8=
-Date: Fri, 27 Dec 2019 16:37:15 +0100
-From: Maxime Ripard <mripard@kernel.org>
-To: Daniel Lezcano <daniel.lezcano@linaro.org>,
- Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- linux-pm@vger.kernel.org, Yangtao Li <tiny.windzz@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v8 0/7] add thermal sensor driver for A64, A83T, H3, H5,
- H6, R40
-Message-ID: <20191227153715.m7o6h6lniwg2456h@hendrix.home>
-References: <20191219172823.1652600-1-anarsoul@gmail.com>
- <20191219173321.bni4tbrhfkkphv7k@gilmour.lan>
- <4015380d-33ef-312c-a886-6e8bf65c976a@linaro.org>
- <20191226092751.dc3boaxsaeivuhw4@hendrix.home>
- <20191226103739.bz3i73gjmn5q5veu@core.my.home>
+	id 1ikrlI-0000a8-57; Fri, 27 Dec 2019 15:42:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ikrl5-0000Zc-Nj
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 15:42:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 714D61FB;
+ Fri, 27 Dec 2019 07:42:34 -0800 (PST)
+Received: from [10.37.8.128] (unknown [10.37.8.128])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 474BF3F68F;
+ Fri, 27 Dec 2019 07:42:31 -0800 (PST)
+Subject: Re: [PATCH 2/3] KVM: arm/arm64: correct CPSR on exception entry
+To: Mark Rutland <mark.rutland@arm.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, maz@kernel.org
+References: <20191220150549.31948-1-mark.rutland@arm.com>
+ <20191220150549.31948-3-mark.rutland@arm.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <775a6053-ad90-bf2f-43f0-11f71d34f4a1@arm.com>
+Date: Fri, 27 Dec 2019 15:42:34 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191226103739.bz3i73gjmn5q5veu@core.my.home>
+In-Reply-To: <20191220150549.31948-3-mark.rutland@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_073554_953134_D38A2EC1 
-X-CRM114-Status: GOOD (  17.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191227_074235_862261_2128F66A 
+X-CRM114-Status: GOOD (  25.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,76 +65,248 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============7975254495087660953=="
+Cc: Peter Maydell <peter.maydell@linaro.org>, Drew Jones <drjones@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, stable@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Will Deacon <will@kernel.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============7975254495087660953==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="gfd3qq7a2xnbetqt"
-Content-Disposition: inline
-
-
---gfd3qq7a2xnbetqt
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Dec 26, 2019 at 11:37:39AM +0100, Ond=C5=99ej Jirman wrote:
-> On Thu, Dec 26, 2019 at 10:27:51AM +0100, Maxime Ripard wrote:
-> > On Tue, Dec 24, 2019 at 07:30:55PM +0100, Daniel Lezcano wrote:
-> > > On 19/12/2019 18:33, Maxime Ripard wrote:
-> > > > Hi,
-> > > >
-> > > > On Thu, Dec 19, 2019 at 09:28:16AM -0800, Vasily Khoruzhick wrote:
-> > > >> This patchset adds driver for thermal sensor in A64, A83T, H3, H5,
-> > > >> H6 and R40 SoCs.
-> > > >
-> > > > Thanks again for working on this.
-> > > >
-> > > > I'll merge the DT patches when the driver will have been merged.
-> > >
-> > > I've applied patches 1 & 2.
-> > >
-> > > They are in the testing branch and will go to the linux-next branch as
-> > > soon as the kernelci passes.
-> >
-> > I just merged all the other patches (except the patch 6, for the H6,
-> > as requested by Vasily on IRC).
+On 12/20/19 3:05 PM, Mark Rutland wrote:
+> When KVM injects an exception into a guest, it generates the CPSR value
+> from scratch, configuring CPSR.{M,A,I,T,E}, and setting all other
+> bits to zero.
 >
-> Hello,
+> This isn't correct, as the architecture specifies that some CPSR bits
+> are (conditionally) cleared or set upon an exception, and others are
+> unchanged from the original context.
 >
-> I think you can apply H6 patch. This was just some misunderstanding
-> and H6 is working.
+> This patch adds logic to match the architectural behaviour. To make this
+> simple to follow/audit/extend, documentation references are provided,
+> and bits are configured in order of their layout in SPSR_EL2. This
 
-Done, thanks!
-Maxime
+This patch applies equally well to 32bit KVM, where we have a SPSR register.
 
---gfd3qq7a2xnbetqt
-Content-Type: application/pgp-signature; name="signature.asc"
+> layout can be seen in the diagram on ARM DDI 0487E.a page C5-426.
+>
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> Cc: Alexandru Elisei <alexandru.elisei@arm.com>
+> Cc: Drew Jones <drjones@redhat.com>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
+> Cc: Marc Zyngier <maz@kernel.org>
+> Cc: Peter Maydell <peter.maydell@linaro.org>
+> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: stable@vger.kernel.org
+> ---
+>  arch/arm/include/asm/kvm_emulate.h |  12 ++++
+>  arch/arm64/include/asm/ptrace.h    |   1 +
+>  virt/kvm/arm/aarch32.c             | 110 +++++++++++++++++++++++++++++++++----
+>  3 files changed, 113 insertions(+), 10 deletions(-)
+>
+> diff --git a/arch/arm/include/asm/kvm_emulate.h b/arch/arm/include/asm/kvm_emulate.h
+> index 40002416efec..dee2567661ed 100644
+> --- a/arch/arm/include/asm/kvm_emulate.h
+> +++ b/arch/arm/include/asm/kvm_emulate.h
+> @@ -14,13 +14,25 @@
+>  #include <asm/cputype.h>
+>  
+>  /* arm64 compatibility macros */
+> +#define PSR_AA32_MODE_FIQ	FIQ_MODE
+> +#define PSR_AA32_MODE_SVC	SVC_MODE
+>  #define PSR_AA32_MODE_ABT	ABT_MODE
+>  #define PSR_AA32_MODE_UND	UND_MODE
+>  #define PSR_AA32_T_BIT		PSR_T_BIT
+> +#define PSR_AA32_F_BIT		PSR_F_BIT
+>  #define PSR_AA32_I_BIT		PSR_I_BIT
+>  #define PSR_AA32_A_BIT		PSR_A_BIT
+>  #define PSR_AA32_E_BIT		PSR_E_BIT
+>  #define PSR_AA32_IT_MASK	PSR_IT_MASK
+> +#define PSR_AA32_GE_MASK	0x000f0000
+> +#define PSR_AA32_PAN_BIT	0x00400000
+> +#define PSR_AA32_SSBS_BIT	0x00800000
+> +#define PSR_AA32_DIT_BIT	0x01000000
 
------BEGIN PGP SIGNATURE-----
+This is actually PSR_J_BIT on arm. Maybe it's worth defining it like that to
+make the overlap obvious.
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXgYlKwAKCRDj7w1vZxhR
-xQkMAQC/ZoYUxPX5yzTlvbMxIWHNJ1u1lQvxfppZLauJ5rHWxgD8Cx+nXvhe72Cl
-ka9ZcT3Up4uJM95blHhx4KnSXMipwgQ=
-=Fewg
------END PGP SIGNATURE-----
+> +#define PSR_AA32_Q_BIT		PSR_Q_BIT
+> +#define PSR_AA32_V_BIT		PSR_V_BIT
+> +#define PSR_AA32_C_BIT		PSR_C_BIT
+> +#define PSR_AA32_Z_BIT		PSR_Z_BIT
+> +#define PSR_AA32_N_BIT		PSR_N_BIT
+>  
+> unsigned long *vcpu_reg(struct kvm_vcpu *vcpu, u8 reg_num);
+>  
+> diff --git a/arch/arm64/include/asm/ptrace.h b/arch/arm64/include/asm/ptrace.h
+> index fbebb411ae20..bf57308fcd63 100644
+> --- a/arch/arm64/include/asm/ptrace.h
+> +++ b/arch/arm64/include/asm/ptrace.h
+> @@ -62,6 +62,7 @@
+>  #define PSR_AA32_I_BIT		0x00000080
+>  #define PSR_AA32_A_BIT		0x00000100
+>  #define PSR_AA32_E_BIT		0x00000200
+> +#define PSR_AA32_PAN_BIT	0x00400000
+>  #define PSR_AA32_SSBS_BIT	0x00800000
+>  #define PSR_AA32_DIT_BIT	0x01000000
+>  #define PSR_AA32_Q_BIT		0x08000000
+> diff --git a/virt/kvm/arm/aarch32.c b/virt/kvm/arm/aarch32.c
+> index c4c57ba99e90..17bcde5c2451 100644
+> --- a/virt/kvm/arm/aarch32.c
+> +++ b/virt/kvm/arm/aarch32.c
+> @@ -10,6 +10,7 @@
+>   * Author: Christoffer Dall <c.dall@virtualopensystems.com>
+>   */
+>  
+> +#include <linux/bits.h>
+>  #include <linux/kvm_host.h>
+>  #include <asm/kvm_emulate.h>
+>  #include <asm/kvm_hyp.h>
+> @@ -28,22 +29,111 @@ static const u8 return_offsets[8][2] = {
+>  	[7] = { 4, 4 },		/* FIQ, unused */
+>  };
+>  
+> +/*
+> + * When an exception is taken, most CPSR fields are left unchanged in the
+> + * handler. However, some are explicitly overridden (e.g. M[4:0]).
+> + *
+> + * The SPSR/SPSR_ELx layouts differ, and the below is intended to work with
+> + * either format. Note: SPSR.J bit doesn't exist in SPSR_ELx, but this bit was
+> + * obsoleted by the ARMv7 virtualization extensions and is RES0.
+> + *
+> + * For the SPSR layout seen from AArch32, see:
+> + * - ARM DDI 0406C.d, page B1-1148
+> + * - ARM DDI 0487E.a, page G8-6264
+> + *
+> + * For the SPSR_ELx layout for AArch32 seen from AArch64, see:
+> + * - ARM DDI 0487E.a, page C5-426
+> + *
+> + * Here we manipulate the fields in order of the AArch32 SPSR_ELx layout, from
+> + * MSB to LSB.
+> + */
+> +static unsigned long get_except32_cpsr(struct kvm_vcpu *vcpu, u32 mode)
+> +{
+> +	u32 sctlr = vcpu_cp15(vcpu, c1_SCTLR);
+> +	unsigned long old, new;
+> +
+> +	old = *vcpu_cpsr(vcpu);
+> +	new = 0;
+> +
+> +	new |= (old & PSR_AA32_N_BIT);
+> +	new |= (old & PSR_AA32_Z_BIT);
+> +	new |= (old & PSR_AA32_C_BIT);
+> +	new |= (old & PSR_AA32_V_BIT);
+> +	new |= (old & PSR_AA32_Q_BIT);
+> +
+> +	// CPSR.IT[7:0] are set to zero upon any exception
+> +	// See ARM DDI 0487E.a, section G1.12.3
+> +	// See ARM DDI 0406C.d, section B1.8.3
+> +
+> +	new |= (old & PSR_AA32_DIT_BIT);
+> +
+> +	// CPSR.SSBS is set to SCTLR.DSSBS upon any exception
+> +	// See ARM DDI 0487E.a, page G8-6244
+> +	if (sctlr & BIT(31))
+> +		new |= PSR_AA32_SSBS_BIT;
+> +
+> +	// CPSR.PAN is unchanged unless overridden by SCTLR.SPAN
+> +	// See ARM DDI 0487E.a, page G8-6246
+> +	new |= (old & PSR_AA32_PAN_BIT);
+> +	if (sctlr & BIT(23))
+> +		new |= PSR_AA32_PAN_BIT;
 
---gfd3qq7a2xnbetqt--
+PSTATE.PAN is unconditionally set when SCTLR.SPAN is clear.
 
+> +
+> +	// SS does not exist in AArch32, so ignore
+> +
+> +	// CPSR.IL is set to zero upon any exception
+> +	// See ARM DDI 0487E.a, page G1-5527
+> +
+> +	new |= (old & PSR_AA32_GE_MASK);
+> +
+> +	// CPSR.IT[7:0] are set to zero upon any exception
+> +	// See prior comment above
+> +
+> +	// CPSR.E is set to SCTLR.EE upon any exception
+> +	// See ARM DDI 0487E.a, page G8-6245
+> +	// See ARM DDI 0406C.d, page B4-1701
+> +	if (sctlr & BIT(25))
+> +		new |= PSR_AA32_E_BIT;
+> +
+> +	// CPSR.A is unchanged upon an exception to Undefined, Supervisor
+> +	// CPSR.A is set upon an exception to other modes
+> +	// See ARM DDI 0487E.a, pages G1-5515 to G1-5516
+> +	// See ARM DDI 0406C.d, page B1-1182
+> +	new |= (old & PSR_AA32_A_BIT);
+> +	if (mode != PSR_AA32_MODE_UND && mode != PSR_AA32_MODE_SVC)
+> +		new |= PSR_AA32_A_BIT;
+> +
+> +	// CPSR.I is set upon any exception
+> +	// See ARM DDI 0487E.a, pages G1-5515 to G1-5516
+> +	// See ARM DDI 0406C.d, page B1-1182
+> +	new |= PSR_AA32_I_BIT;
+> +
+> +	// CPSR.F is set upon an exception to FIQ
+> +	// CPSR.F is unchanged upon an exception to other modes
+> +	// See ARM DDI 0487E.a, pages G1-5515 to G1-5516
+> +	// See ARM DDI 0406C.d, page B1-1182
+> +	new |= (old & PSR_AA32_F_BIT);
+> +	if (mode == PSR_AA32_MODE_FIQ)
+> +		new |= PSR_AA32_F_BIT;
+> +
+> +	// CPSR.T is set to SCTLR.TE upon any exception
+> +	// See ARM DDI 0487E.a, page G8-5514
+> +	// See ARM DDI 0406C.d, page B1-1181
+> +	if (sctlr & BIT(30))
+> +		new |= PSR_AA32_T_BIT;
+> +
+> +	new |= mode;
+> +
+> +	return new;
+> +}
+> +
+>  static void prepare_fault32(struct kvm_vcpu *vcpu, u32 mode, u32 vect_offset)
+>  {
+> -	unsigned long cpsr;
+>  	unsigned long new_spsr_value = *vcpu_cpsr(vcpu);
+>  	bool is_thumb = (new_spsr_value & PSR_AA32_T_BIT);
+>  	u32 return_offset = return_offsets[vect_offset >> 2][is_thumb];
+>  	u32 sctlr = vcpu_cp15(vcpu, c1_SCTLR);
+>  
+> -	cpsr = mode | PSR_AA32_I_BIT;
+> -
+> -	if (sctlr & (1 << 30))
+> -		cpsr |= PSR_AA32_T_BIT;
+> -	if (sctlr & (1 << 25))
+> -		cpsr |= PSR_AA32_E_BIT;
+> -
+> -	*vcpu_cpsr(vcpu) = cpsr;
+> +	*vcpu_cpsr(vcpu) = get_except32_cpsr(vcpu, mode);
+>  
+>  	/* Note: These now point to the banked copies */
+>  	vcpu_write_spsr(vcpu, new_spsr_value);
+> @@ -84,7 +174,7 @@ static void inject_abt32(struct kvm_vcpu *vcpu, bool is_pabt,
+>  		fsr = &vcpu_cp15(vcpu, c5_DFSR);
+>  	}
+>  
+> -	prepare_fault32(vcpu, PSR_AA32_MODE_ABT | PSR_AA32_A_BIT, vect_offset);
+> +	prepare_fault32(vcpu, PSR_AA32_MODE_ABT, vect_offset);
+>  
+>  	*far = addr;
+>  
 
---===============7975254495087660953==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+I've also checked that the ARM documentation references match the code.
+
+Thanks,
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7975254495087660953==--
-
