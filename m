@@ -2,57 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42D7E12B53D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 15:35:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6FC012B59B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 16:29:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PPKS17YxHym64gbiUW+CSC4srm4MXLxRj0EakcZDnfw=; b=kRynYVXKN1iaNCzG/CycWuEJM
-	bmrClfdIjROwiQKZhI3zWMrWq/I+A5SrYWv3rJP4xZvJDa8rqp0P8D7LS/0cejxII5BoM91SAXYsb
-	nURO+4BZen3eTy4924B970nC+ia16bU/RGHcyawhv+nIblZF7g6x3Xux8zhRQ7sRrf89mf7CMENhx
-	FxyALjJ+3jTXQYjrC1AyWA4fXkEwtDgx3emYhcxds8qvGoco8yLu+vuQ/BiM8gWmo6sdYGLzPe7Yf
-	nO7PP5dyiJLvnX1NL614uxgJiPvPq3e+SBpb5Dcnub1ZM94CPa4uzyugA5fM3L9SKMZydZK5pNO2z
-	iznt5Ay3g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y/t7C0HW6cpf7Flp91mg3zwFhWw7ttc3UnI5REbaxak=; b=iozfNrDHE5zIJ9
+	e/qTwAXevFDIa4OWh5L/pxMHiwfPUJbqbVAaun/juZWmgRE+Hq+RvoayNm7hzz7vkUjnr6nz4r4d0
+	S85YjYeYXtortPgqf16yeBprc//YpwsjPZRoEszWijgBCKDe26zlqFb6/AmCI0dHKKeFpUzjXueJp
+	yG+EkJSigyBbLX/IQulR//q25410nqmOBDzyoufb2SNcHTn7HDyY9KilGyNHf/iPQyj8hDjxpG3Xx
+	HZNdvGNZfQmM/o02REj5Gxa7ab5Izt8oquLvFpe1U+NaG7TbGEKWvOeqt9ilkAY49gu0utufLHunj
+	ttjWX88G+2MBWUGux30w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikqhZ-0002eO-4R; Fri, 27 Dec 2019 14:34:53 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikqhP-0002da-EW
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 14:34:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E33431FB;
- Fri, 27 Dec 2019 06:34:37 -0800 (PST)
-Received: from [10.1.195.17] (e123572-lin.cambridge.arm.com [10.1.195.17])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 96FCB3F68F;
- Fri, 27 Dec 2019 06:34:36 -0800 (PST)
-Subject: Re: [PATCH 19/22] arm64: mte: Allow user control of the tag check
- mode via prctl()
-To: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20191211184027.20130-1-catalin.marinas@arm.com>
- <20191211184027.20130-20-catalin.marinas@arm.com>
-From: Kevin Brodsky <kevin.brodsky@arm.com>
-Message-ID: <cdd9d203-00c8-0a63-69b5-66234c0e9d9a@arm.com>
-Date: Fri, 27 Dec 2019 14:34:32 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+	id 1ikrYV-0003hI-7E; Fri, 27 Dec 2019 15:29:35 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ikrYL-0003gb-B8
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 15:29:27 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 8AEF2634C86;
+ Fri, 27 Dec 2019 17:28:43 +0200 (EET)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1ikrXf-00017l-PU; Fri, 27 Dec 2019 17:28:43 +0200
+Date: Fri, 27 Dec 2019 17:28:43 +0200
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Subject: Re: [PATCH 3/5] media: i2c: imx290: Add RAW12 mode support
+Message-ID: <20191227152843.GF861@valkosipuli.retiisi.org.uk>
+References: <20191129190541.30315-1-manivannan.sadhasivam@linaro.org>
+ <20191129190541.30315-4-manivannan.sadhasivam@linaro.org>
+ <20191203085417.GB5282@valkosipuli.retiisi.org.uk>
+ <20191215174606.GC11427@Mani-XPS-13-9360>
 MIME-Version: 1.0
-In-Reply-To: <20191211184027.20130-20-catalin.marinas@arm.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20191215174606.GC11427@Mani-XPS-13-9360>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_063443_577513_C6187AA5 
-X-CRM114-Status: GOOD (  26.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191227_072925_567159_59A23396 
+X-CRM114-Status: GOOD (  21.82  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,261 +69,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>, Marc Zyngier <maz@kernel.org>,
- linux-mm@kvack.org, Andrey Konovalov <andreyknvl@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
+Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
+ linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Not just related to this patch, but here goes. While trying to debug an MTE-enabled 
-process, I realised that there's no way to tell the tagged addr / MTE thread 
-configuration from outside of the thread. At this point I thought it'd be really nice 
-if this were to be exposed in /proc/pid, maybe in /proc/pid/status. Unfortunately 
-there seems to be no precedent for an arch-specific feature to be exposed there. I 
-guess a ptrace call would work as well, although it wouldn't be as practical without 
-using a debugger.
+Hi Manivannan,
 
-Any thoughts?
+On Sun, Dec 15, 2019 at 11:16:06PM +0530, Manivannan Sadhasivam wrote:
+> Hi Sakari,
+> 
+> On Tue, Dec 03, 2019 at 10:54:17AM +0200, Sakari Ailus wrote:
+> > Hi Manivannan,
+> > 
+> > On Sat, Nov 30, 2019 at 12:35:39AM +0530, Manivannan Sadhasivam wrote:
+> > > IMX290 is capable of outputting frames in both Raw Bayer (packed) 10 and
+> > > 12 bit formats. Since the driver already supports RAW10 mode, let's add
+> > > the missing RAW12 mode as well.
+> > > 
+> > > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> > > ---
+> > >  drivers/media/i2c/imx290.c | 32 ++++++++++++++++++++++++++++++++
+> > >  1 file changed, 32 insertions(+)
+> > > 
+> > > diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
+> > > index e218c959a729..d5bb3a59ac46 100644
+> > > --- a/drivers/media/i2c/imx290.c
+> > > +++ b/drivers/media/i2c/imx290.c
+> > > @@ -75,6 +75,7 @@ struct imx290 {
+> > >  	struct clk *xclk;
+> > >  	struct regmap *regmap;
+> > >  	int nlanes;
+> > > +	u8 bpp;
+> > >  
+> > >  	struct v4l2_subdev sd;
+> > >  	struct v4l2_fwnode_endpoint ep;
+> > > @@ -98,6 +99,7 @@ struct imx290_pixfmt {
+> > >  
+> > >  static const struct imx290_pixfmt imx290_formats[] = {
+> > >  	{ MEDIA_BUS_FMT_SRGGB10_1X10 },
+> > > +	{ MEDIA_BUS_FMT_SRGGB12_1X12 },
+> > >  };
+> > >  
+> > >  static const struct regmap_config imx290_regmap_config = {
+> > > @@ -265,6 +267,18 @@ static const struct imx290_regval imx290_10bit_settings[] = {
+> > >  	{ 0x300b, 0x00},
+> > >  };
+> > >  
+> > > +static const struct imx290_regval imx290_12bit_settings[] = {
+> > > +	{ 0x3005, 0x01 },
+> > > +	{ 0x3046, 0x01 },
+> > > +	{ 0x3129, 0x00 },
+> > > +	{ 0x317c, 0x00 },
+> > > +	{ 0x31ec, 0x0e },
+> > > +	{ 0x3441, 0x0c },
+> > > +	{ 0x3442, 0x0c },
+> > > +	{ 0x300a, 0xf0 },
+> > > +	{ 0x300b, 0x00 },
+> > > +};
+> > > +
+> > >  /* supported link frequencies */
+> > >  static const s64 imx290_link_freq[] = {
+> > >  	IMX290_DEFAULT_LINK_FREQ,
+> > > @@ -550,6 +564,21 @@ static int imx290_write_current_format(struct imx290 *imx290,
+> > >  			dev_err(imx290->dev, "Could not set format registers\n");
+> > >  			return ret;
+> > >  		}
+> > > +
+> > > +		imx290->bpp = 10;
+> > > +
+> > > +		break;
+> > > +	case MEDIA_BUS_FMT_SRGGB12_1X12:
+> > > +		ret = imx290_set_register_array(imx290, imx290_12bit_settings,
+> > > +						ARRAY_SIZE(
+> > > +							imx290_12bit_settings));
+> > > +		if (ret < 0) {
+> > > +			dev_err(imx290->dev, "Could not set format registers\n");
+> > > +			return ret;
+> > > +		}
+> > > +
+> > > +		imx290->bpp = 12;
+> > > +
+> > >  		break;
+> > >  	default:
+> > >  		dev_err(imx290->dev, "Unknown pixel format\n");
+> > > @@ -910,6 +939,9 @@ static int imx290_probe(struct i2c_client *client)
+> > >  		goto free_err;
+> > >  	}
+> > >  
+> > > +	/* Default bits per pixel value */
+> > > +	imx290->bpp = 10;
+> > 
+> > Where is the format being initialised at the moment? Nowhere?
+> > 
+> > If that is the case, I think it should be fixed before this patch.
+> > 
+> 
+> Sorry, I don't quite understand what you're suggesting here. The bpp
+> is initialised because that's the default bit value at power up and
+> this value is being used below in imx290_calc_pixel_rate(). I'm not sure
+> why we need to initialise the format before set_fmt!
 
-Kevin
+Alternatively set_fmt needs to be called then.
 
-On 11/12/2019 18:40, Catalin Marinas wrote:
-> By default, even if PROT_MTE is set on a memory range, there is no tag
-> check fault reporting (SIGSEGV). Introduce a set of option to the
-> exiting prctl(PR_SET_TAGGED_ADDR_CTRL) to allow user control of the tag
-> check fault mode:
->
->    PR_MTE_TCF_NONE  - no reporting (default)
->    PR_MTE_TCF_SYNC  - synchronous tag check fault reporting
->    PR_MTE_TCF_ASYNC - asynchronous tag check fault reporting
->
-> These options translate into the corresponding SCTLR_EL1.TCF0 bitfield,
-> context-switched by the kernel. Note that uaccess done by the kernel is
-> not checked and cannot be configured by the user.
->
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> ---
->   arch/arm64/include/asm/processor.h |   3 +
->   arch/arm64/kernel/process.c        | 119 +++++++++++++++++++++++++++--
->   include/uapi/linux/prctl.h         |   6 ++
->   3 files changed, 123 insertions(+), 5 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
-> index 5ba63204d078..91aa270afc7d 100644
-> --- a/arch/arm64/include/asm/processor.h
-> +++ b/arch/arm64/include/asm/processor.h
-> @@ -148,6 +148,9 @@ struct thread_struct {
->   #ifdef CONFIG_ARM64_PTR_AUTH
->   	struct ptrauth_keys	keys_user;
->   #endif
-> +#ifdef CONFIG_ARM64_MTE
-> +	u64			sctlr_tcf0;
-> +#endif
->   };
->   
->   static inline void arch_thread_struct_whitelist(unsigned long *offset,
-> diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> index dd98d539894e..47ce98f47253 100644
-> --- a/arch/arm64/kernel/process.c
-> +++ b/arch/arm64/kernel/process.c
-> @@ -317,11 +317,22 @@ static void flush_tagged_addr_state(void)
->   		clear_thread_flag(TIF_TAGGED_ADDR);
->   }
->   
-> +#ifdef CONFIG_ARM64_MTE
-> +static void flush_mte_state(void)
-> +{
-> +	if (!system_supports_mte())
-> +		return;
-> +
-> +	/* clear any pending asynchronous tag fault */
-> +	clear_thread_flag(TIF_MTE_ASYNC_FAULT);
-> +	/* disable tag checking */
-> +	current->thread.sctlr_tcf0 = 0;
-> +}
-> +#else
->   static void flush_mte_state(void)
->   {
-> -	if (system_supports_mte())
-> -		clear_thread_flag(TIF_MTE_ASYNC_FAULT);
->   }
-> +#endif
->   
->   void flush_thread(void)
->   {
-> @@ -484,6 +495,29 @@ static void ssbs_thread_switch(struct task_struct *next)
->   		set_ssbs_bit(regs);
->   }
->   
-> +#ifdef CONFIG_ARM64_MTE
-> +static void update_sctlr_el1_tcf0(u64 tcf0)
-> +{
-> +	/* no need for ISB since this only affects EL0, implicit with ERET */
-> +	sysreg_clear_set(sctlr_el1, SCTLR_EL1_TCF0_MASK, tcf0);
-> +}
-> +
-> +/* Handle MTE thread switch */
-> +static void mte_thread_switch(struct task_struct *next)
-> +{
-> +	if (!system_supports_mte())
-> +		return;
-> +
-> +	/* avoid expensive SCTLR_EL1 accesses if no change */
-> +	if (current->thread.sctlr_tcf0 != next->thread.sctlr_tcf0)
-> +		update_sctlr_el1_tcf0(next->thread.sctlr_tcf0);
-> +}
-> +#else
-> +static void mte_thread_switch(struct task_struct *next)
-> +{
-> +}
-> +#endif
-> +
->   /*
->    * We store our current task in sp_el0, which is clobbered by userspace. Keep a
->    * shadow copy so that we can restore this upon entry from userspace.
-> @@ -514,6 +548,7 @@ __notrace_funcgraph struct task_struct *__switch_to(struct task_struct *prev,
->   	uao_thread_switch(next);
->   	ptrauth_thread_switch(next);
->   	ssbs_thread_switch(next);
-> +	mte_thread_switch(next);
->   
->   	/*
->   	 * Complete any pending TLB or cache maintenance on this CPU in case
-> @@ -574,6 +609,67 @@ void arch_setup_new_exec(void)
->   	ptrauth_thread_init_user(current);
->   }
->   
-> +#ifdef CONFIG_ARM64_MTE
-> +static long set_mte_ctrl(unsigned long arg)
-> +{
-> +	u64 tcf0;
-> +
-> +	if (!system_supports_mte())
-> +		return 0;
-> +
-> +	switch (arg & PR_MTE_TCF_MASK) {
-> +	case PR_MTE_TCF_NONE:
-> +		tcf0 = 0;
-> +		break;
-> +	case PR_MTE_TCF_SYNC:
-> +		tcf0 = SCTLR_EL1_TCF0_SYNC;
-> +		break;
-> +	case PR_MTE_TCF_ASYNC:
-> +		tcf0 = SCTLR_EL1_TCF0_ASYNC;
-> +		break;
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +
-> +	/*
-> +	 * mte_thread_switch() checks current->thread.sctlr_tcf0 as an
-> +	 * optimisation. Disable preemption so that it does not see
-> +	 * the variable update before the SCTLR_EL1.TCF0 one.
-> +	 */
-> +	preempt_disable();
-> +	current->thread.sctlr_tcf0 = tcf0;
-> +	update_sctlr_el1_tcf0(tcf0);
-> +	preempt_enable();
-> +
-> +	return 0;
-> +}
-> +
-> +static long get_mte_ctrl(void)
-> +{
-> +	if (!system_supports_mte())
-> +		return 0;
-> +
-> +	switch (current->thread.sctlr_tcf0) {
-> +	case SCTLR_EL1_TCF0_SYNC:
-> +		return PR_MTE_TCF_SYNC;
-> +	case SCTLR_EL1_TCF0_ASYNC:
-> +		return PR_MTE_TCF_ASYNC;
-> +	}
-> +
-> +	return 0;
-> +}
-> +#else
-> +static long set_mte_ctrl(unsigned long arg)
-> +{
-> +	return 0;
-> +}
-> +
-> +static long get_mte_ctrl(void)
-> +{
-> +	return 0;
-> +}
-> +#endif
-> +
->   #ifdef CONFIG_ARM64_TAGGED_ADDR_ABI
->   /*
->    * Control the relaxed ABI allowing tagged user addresses into the kernel.
-> @@ -582,9 +678,15 @@ static unsigned int tagged_addr_disabled;
->   
->   long set_tagged_addr_ctrl(unsigned long arg)
->   {
-> +	unsigned long valid_mask = PR_TAGGED_ADDR_ENABLE;
-> +
->   	if (is_compat_task())
->   		return -EINVAL;
-> -	if (arg & ~PR_TAGGED_ADDR_ENABLE)
-> +
-> +	if (system_supports_mte())
-> +		valid_mask |= PR_MTE_TCF_MASK;
-> +
-> +	if (arg & ~valid_mask)
->   		return -EINVAL;
->   
->   	/*
-> @@ -594,6 +696,9 @@ long set_tagged_addr_ctrl(unsigned long arg)
->   	if (arg & PR_TAGGED_ADDR_ENABLE && tagged_addr_disabled)
->   		return -EINVAL;
->   
-> +	if (set_mte_ctrl(arg) != 0)
-> +		return -EINVAL;
-> +
->   	update_thread_flag(TIF_TAGGED_ADDR, arg & PR_TAGGED_ADDR_ENABLE);
->   
->   	return 0;
-> @@ -601,13 +706,17 @@ long set_tagged_addr_ctrl(unsigned long arg)
->   
->   long get_tagged_addr_ctrl(void)
->   {
-> +	long ret = 0;
-> +
->   	if (is_compat_task())
->   		return -EINVAL;
->   
->   	if (test_thread_flag(TIF_TAGGED_ADDR))
-> -		return PR_TAGGED_ADDR_ENABLE;
-> +		ret = PR_TAGGED_ADDR_ENABLE;
->   
-> -	return 0;
-> +	ret |= get_mte_ctrl();
-> +
-> +	return ret;
->   }
->   
->   /*
-> diff --git a/include/uapi/linux/prctl.h b/include/uapi/linux/prctl.h
-> index 7da1b37b27aa..5e9323e66a38 100644
-> --- a/include/uapi/linux/prctl.h
-> +++ b/include/uapi/linux/prctl.h
-> @@ -233,5 +233,11 @@ struct prctl_mm_map {
->   #define PR_SET_TAGGED_ADDR_CTRL		55
->   #define PR_GET_TAGGED_ADDR_CTRL		56
->   # define PR_TAGGED_ADDR_ENABLE		(1UL << 0)
-> +/* MTE tag check fault modes */
-> +# define PR_MTE_TCF_SHIFT		1
-> +# define PR_MTE_TCF_NONE		(0UL << PR_MTE_TCF_SHIFT)
-> +# define PR_MTE_TCF_SYNC		(1UL << PR_MTE_TCF_SHIFT)
-> +# define PR_MTE_TCF_ASYNC		(2UL << PR_MTE_TCF_SHIFT)
-> +# define PR_MTE_TCF_MASK		(3UL << PR_MTE_TCF_SHIFT)
->   
->   #endif /* _LINUX_PRCTL_H */
+It looks like you can call VIDIOC_SUBDEV_G_FMT without the format being
+initialised first, and if that's the case, then it's a driver bug. I don't
+have the sensor so I can't test it.
 
+-- 
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
