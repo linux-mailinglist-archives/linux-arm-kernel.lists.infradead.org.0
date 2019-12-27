@@ -2,45 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A59312B3AA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 10:47:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6C8E12B3AD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 10:47:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uEPCT9fi8JC5jq6dvtcB2TBCygR8t5GTcVng7rL30cc=; b=Wa7OMV0EHHgdJe
-	qNJnXO7CYCLcToCD+Vhmf2lcseKWJGKuDzDwdFh9UiY60Aq4PAjRghF6Pvs7A49r9gQ5yM/amDzc3
-	d1gGXwbNLCbtOh/g+zD0DPoQo+RycTmwuN9D/QBe4y/S2kgzz38c6qIQtMCAF5b81R9/b6Ac5cQpI
-	vbx9h7CfJurT8lPh+zpPHMSHAfg6K4lZgOnqfO7GFvjhib8BDnCyos8uglAeNRK6h11G0RoLndTbs
-	VFGa2BWd9mhCpvSaaX0ETT4+CvrCYNQjNH1c2e6gtCBf5Lvewia0JVbMwUmb+mDndwVnN0282g5Qj
-	quqWMB25R4Lcz8CyUOhg==;
+	List-Owner; bh=dmA5lu0agFO+woxEZxffkqfNl44obA5z0jWqBw2pCcg=; b=CkUKHLSbqD5UrR
+	39kBHwSaFShHE2oVf5ruPsFlUJB2FjF7namte6xaKNhzXAzHm5tO4iWi6V262OFiIg6bqPMxOYKbD
+	E9aaKupfMEDhTEB9RLiaQeujWt1vmJDLSShoBPNysai7h46fmZwK9ehnU/OLiUUVqnoidaIshDx3i
+	GIU27JzOr0Mo+J4Y/PH0sh3S7a+hJ/3eDKXFhRS6Er4qKqxawjllQ3jx9HQyHXde4G+yUwborZn61
+	VAJRmTluleGPMyTZH14Qvr87pbZP5OO2bB7zxjfsclUmNoIjSiuRvB9V4ZF6cTJct6msISqXmOeFP
+	rzok1CBE6vKRbFFphBGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikmD1-00032C-8V; Fri, 27 Dec 2019 09:47:03 +0000
+	id 1ikmDE-0003Hb-Mr; Fri, 27 Dec 2019 09:47:16 +0000
 Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikmCR-0002mi-GW; Fri, 27 Dec 2019 09:46:31 +0000
+ id 1ikmCV-0002mi-R1; Fri, 27 Dec 2019 09:46:33 +0000
 Received: from droid15-sz.amlogic.com (10.28.8.25) by mail-sz.amlogic.com
  (10.28.11.5) with Microsoft SMTP Server id 15.1.1591.10; Fri, 27 Dec 2019
  17:46:34 +0800
 From: Jian Hu <jian.hu@amlogic.com>
 To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
  <narmstrong@baylibre.com>
-Subject: [PATCH v5 1/5] dt-bindings: clock: meson: add A1 PLL clock controller
- bindings
-Date: Fri, 27 Dec 2019 17:46:02 +0800
-Message-ID: <20191227094606.143637-2-jian.hu@amlogic.com>
+Subject: [PATCH v5 2/5] clk: meson: add support for A1 PLL clock ops
+Date: Fri, 27 Dec 2019 17:46:03 +0800
+Message-ID: <20191227094606.143637-3-jian.hu@amlogic.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20191227094606.143637-1-jian.hu@amlogic.com>
 References: <20191227094606.143637-1-jian.hu@amlogic.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.28.8.25]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_014627_547466_3511138D 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191227_014631_896524_3BECE3CE 
+X-CRM114-Status: GOOD (  13.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,99 +71,115 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the documentation to support Amlogic A1 PLL clock driver,
-and add A1 PLL clock controller bindings.
+Compared with the previous SoCs, self-adaption module current
+is newly added for A1, And there is no reset parm except the
+fixed pll. In A1 PLL the PLL enable sequence is different, Using
+the new power-on sequence to enable the PLL.
 
 Signed-off-by: Jian Hu <jian.hu@amlogic.com>
 ---
- .../bindings/clock/amlogic,a1-pll-clkc.yaml   | 54 +++++++++++++++++++
- include/dt-bindings/clock/a1-pll-clkc.h       | 16 ++++++
- 2 files changed, 70 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
- create mode 100644 include/dt-bindings/clock/a1-pll-clkc.h
+ drivers/clk/meson/clk-pll.c | 40 ++++++++++++++++++++++++++++++++-----
+ drivers/clk/meson/clk-pll.h |  2 ++
+ 2 files changed, 37 insertions(+), 5 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml b/Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
-new file mode 100644
-index 000000000000..7a327bb174b8
---- /dev/null
-+++ b/Documentation/devicetree/bindings/clock/amlogic,a1-pll-clkc.yaml
-@@ -0,0 +1,54 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: "http://devicetree.org/schemas/clock/amlogic,a1-pll-clkc.yaml#"
-+$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+diff --git a/drivers/clk/meson/clk-pll.c b/drivers/clk/meson/clk-pll.c
+index ddb1e5634739..9eb7d465d123 100644
+--- a/drivers/clk/meson/clk-pll.c
++++ b/drivers/clk/meson/clk-pll.c
+@@ -283,10 +283,14 @@ static void meson_clk_pll_init(struct clk_hw *hw)
+ 	struct meson_clk_pll_data *pll = meson_clk_pll_data(clk);
+ 
+ 	if (pll->init_count) {
+-		meson_parm_write(clk->map, &pll->rst, 1);
++		if (MESON_PARM_APPLICABLE(&pll->rst))
++			meson_parm_write(clk->map, &pll->rst, 1);
 +
-+title: Amlogic Meson A/C serials PLL Clock Control Unit Device Tree Bindings
+ 		regmap_multi_reg_write(clk->map, pll->init_regs,
+ 				       pll->init_count);
+-		meson_parm_write(clk->map, &pll->rst, 0);
 +
-+maintainers:
-+  - Neil Armstrong <narmstrong@baylibre.com>
-+  - Jerome Brunet <jbrunet@baylibre.com>
-+  - Jian Hu <jian.hu@jian.hu.com>
++		if (MESON_PARM_APPLICABLE(&pll->rst))
++			meson_parm_write(clk->map, &pll->rst, 0);
+ 	}
+ }
+ 
+@@ -294,9 +298,12 @@ static int meson_clk_pll_is_enabled(struct clk_hw *hw)
+ {
+ 	struct clk_regmap *clk = to_clk_regmap(hw);
+ 	struct meson_clk_pll_data *pll = meson_clk_pll_data(clk);
++	int ret = 0;
+ 
+-	if (meson_parm_read(clk->map, &pll->rst) ||
+-	    !meson_parm_read(clk->map, &pll->en) ||
++	if (MESON_PARM_APPLICABLE(&pll->rst))
++		ret = meson_parm_read(clk->map, &pll->rst);
 +
-+properties:
-+  compatible:
-+    const: amlogic,a1-pll-clkc
++	if (ret || !meson_parm_read(clk->map, &pll->en) ||
+ 	    !meson_parm_read(clk->map, &pll->l))
+ 		return 0;
+ 
+@@ -321,6 +328,23 @@ static int meson_clk_pll_enable(struct clk_hw *hw)
+ 	/* do nothing if the PLL is already enabled */
+ 	if (clk_hw_is_enabled(hw))
+ 		return 0;
++	/*
++	 * Compared with the previous SoCs, self-adaption module current
++	 * is newly added for A1, keep the new power-on sequence to enable the
++	 * PLL.
++	 */
++	if (MESON_PARM_APPLICABLE(&pll->current_en)) {
++		/* Enable the pll */
++		meson_parm_write(clk->map, &pll->en, 1);
++		udelay(10);
++		/* Enable the pll self-adaption module current */
++		meson_parm_write(clk->map, &pll->current_en, 1);
++		udelay(40);
++		/* Enable lock detect module */
++		meson_parm_write(clk->map, &pll->l_detect, 1);
++		meson_parm_write(clk->map, &pll->l_detect, 0);
++		goto out;
++	}
+ 
+ 	/* Make sure the pll is in reset */
+ 	meson_parm_write(clk->map, &pll->rst, 1);
+@@ -331,6 +355,7 @@ static int meson_clk_pll_enable(struct clk_hw *hw)
+ 	/* Take the pll out reset */
+ 	meson_parm_write(clk->map, &pll->rst, 0);
+ 
++out:
+ 	if (meson_clk_pll_wait_lock(hw))
+ 		return -EIO;
+ 
+@@ -343,10 +368,15 @@ static void meson_clk_pll_disable(struct clk_hw *hw)
+ 	struct meson_clk_pll_data *pll = meson_clk_pll_data(clk);
+ 
+ 	/* Put the pll is in reset */
+-	meson_parm_write(clk->map, &pll->rst, 1);
++	if (MESON_PARM_APPLICABLE(&pll->rst))
++		meson_parm_write(clk->map, &pll->rst, 1);
+ 
+ 	/* Disable the pll */
+ 	meson_parm_write(clk->map, &pll->en, 0);
 +
-+  "#clock-cells":
-+    const: 1
-+
-+  reg:
-+    maxItems: 1
-+
-+clocks:
-+  maxItems: 2
-+  items:
-+   - description: Input xtal_fixpll
-+   - description: Input xtal_hifipll
-+
-+clock-names:
-+  maxItems: 2
-+  items:
-+     - const: xtal_fixpll
-+     - const: xtal_hifipll
-+
-+required:
-+  - compatible
-+  - "#clock-cells"
-+  - reg
-+  - clocks
-+  - clock-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    clkc_pll: pll-clock-controller@7c80 {
-+                compatible = "amlogic,a1-pll-clkc";
-+                reg = <0 0x7c80 0 0x18c>;
-+                #clock-cells = <1>;
-+                clocks = <&clkc_periphs CLKID_XTAL_FIXPLL>,
-+                         <&clkc_periphs CLKID_XTAL_HIFIPLL>;
-+                clock-names = "xtal_fixpll", "xtal_hifipll";
-+    };
-diff --git a/include/dt-bindings/clock/a1-pll-clkc.h b/include/dt-bindings/clock/a1-pll-clkc.h
-new file mode 100644
-index 000000000000..58eae237e503
---- /dev/null
-+++ b/include/dt-bindings/clock/a1-pll-clkc.h
-@@ -0,0 +1,16 @@
-+/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
-+/*
-+ * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-+ */
-+
-+#ifndef __A1_PLL_CLKC_H
-+#define __A1_PLL_CLKC_H
-+
-+#define CLKID_FIXED_PLL				1
-+#define CLKID_FCLK_DIV2				6
-+#define CLKID_FCLK_DIV3				7
-+#define CLKID_FCLK_DIV5				8
-+#define CLKID_FCLK_DIV7				9
-+#define CLKID_HIFI_PLL				10
-+
-+#endif /* __A1_PLL_CLKC_H */
++	/* Disable PLL internal self-adaption module current */
++	if (MESON_PARM_APPLICABLE(&pll->current_en))
++		meson_parm_write(clk->map, &pll->current_en, 0);
+ }
+ 
+ static int meson_clk_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+diff --git a/drivers/clk/meson/clk-pll.h b/drivers/clk/meson/clk-pll.h
+index 367efd0f6410..a2228c0fdce5 100644
+--- a/drivers/clk/meson/clk-pll.h
++++ b/drivers/clk/meson/clk-pll.h
+@@ -36,6 +36,8 @@ struct meson_clk_pll_data {
+ 	struct parm frac;
+ 	struct parm l;
+ 	struct parm rst;
++	struct parm current_en;
++	struct parm l_detect;
+ 	const struct reg_sequence *init_regs;
+ 	unsigned int init_count;
+ 	const struct pll_params_table *table;
 -- 
 2.24.0
 
