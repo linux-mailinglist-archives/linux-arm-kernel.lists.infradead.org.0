@@ -2,86 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 159E812B191
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 06:55:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECDBE12B19E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 07:03:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YDSG+VRO0cabX02VA7LMgE5P4ABlIi6wDU7X59L1fTA=; b=Xn/QDAc73SL9dQ
-	qiJ9/oAPbB9R5AnwTIVEpeIhuXPaVUk15Y7CqtdDGBa5PmCo3RaGsW2LjJD7mAQcmSGTIqwO6BAz7
-	3UhyABHxhxSrmNnTleNMl3BGF+ZJFTejbspOQHo9Zeg6MjF3m+ZXsFdGjLtYpSrPqPqKR1M0VvogI
-	+K9zHkXp5nzL1I/nwXMeoGXH35cbKw9ldsV5s4Boiymx4JExHIdy5H+ibxTb1njYlb35v2EoWtYaS
-	MUIs1/ndHYGNIrSrdNTVpJHHDsQO0q7/mKjZcYCoKuF2s01CBeLzqDHOXKjTUHhOGPGTvVl8b3rfJ
-	PPDKoohvGUEwIx1f28yQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=R9BskqE3zztLSf5ZlavZB45+qI7MvvLrCzWrg28JqN8=; b=rlW
+	hawpQXZUd+qTXMNYE+K0OMb12XSIPibnFGdeTw5yT3Gdl1Qkr1g4l5PtdUuQO4/4WPKAP5DOIwDYV
+	Vr42sDu5PC6T2z812jzO5ue60SCsOtThaNo8IDvBpKGsNsKiESDF3LkYPTP3SjyHNxUfD6SjBuuLy
+	scf/CWeBLBioh3ennpjn9wTRrUcU6MGtXgbKUadvVPS7xY8MXqIqp6VrrV9xBi6vQke5OyNWAVZHl
+	wr76TlS7Mdwkmgcfn7o44cPHophpwpDpJjD8Vqpwv6vXimEk9aLFNeT6mSPqMH58gNFnAbMgtBB0T
+	0cwIyE/QJvIK7RKHSZep4GtUHheER5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikib0-000356-4O; Fri, 27 Dec 2019 05:55:34 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1ikiiy-00058A-4u; Fri, 27 Dec 2019 06:03:48 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikiam-00032I-0V
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 05:55:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1577426115;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=CDCJ0wtNCrL+fR1tcwdUWUd7m2cEmirnYMwnVMZ9tV8=;
- b=Cl88xt/kwGjCi2o8LwVsKqY0PWC7vTMpr+XwOUX5yVofW5HhxySFGjMoDhSQ8viwVt8q/z
- aithHZmB/JLmK1gv5CFxp4yFr9OtAHx4IGwVuL4Q+VCV8p1R/TdwkrttTkhOtyjLYOq8Dy
- qkaGHwXMi/PaDEyGn3cDSU+6BwWatFU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-221-Ak3uIyxrMjyXll19vTtZIw-1; Fri, 27 Dec 2019 00:55:13 -0500
-X-MC-Unique: Ak3uIyxrMjyXll19vTtZIw-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A436B18557C0;
- Fri, 27 Dec 2019 05:55:10 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-134.pek2.redhat.com
- [10.72.12.134])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 9F9E0271B5;
- Fri, 27 Dec 2019 05:55:02 +0000 (UTC)
-Date: Fri, 27 Dec 2019 13:54:58 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Chen Zhou <chenzhou10@huawei.com>
-Subject: Re: [PATCH v7 1/4] x86: kdump: move reserve_crashkernel_low() into
- crash_core.c
-Message-ID: <20191227055458.GA14893@dhcp-128-65.nay.redhat.com>
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
- <20191223152349.180172-2-chenzhou10@huawei.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191223152349.180172-2-chenzhou10@huawei.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+ id 1ikiiT-0004vh-0F
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 06:03:19 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B55C01A17BE;
+ Fri, 27 Dec 2019 07:03:14 +0100 (CET)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 2AE5C1A0DF5;
+ Fri, 27 Dec 2019 07:03:04 +0100 (CET)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E45ED402AF;
+ Fri, 27 Dec 2019 14:02:51 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ manivannan.sadhasivam@linaro.org, andrew.smirnov@gmail.com,
+ marcel.ziswiler@toradex.com, sebastien.szymanski@armadeus.com,
+ aisheng.dong@nxp.com, l.stach@pengutronix.de, angus@akkea.ca,
+ cosmin.stoica@nxp.com, gary.bisson@boundarydevices.com,
+ leonard.crestez@nxp.com, abel.vesa@nxp.com, jun.li@nxp.com,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/3] arm64: dts: freescale: Add i.MX8MP dtsi support
+Date: Fri, 27 Dec 2019 13:59:43 +0800
+Message-Id: <1577426385-31273-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_215520_134302_F1EECF39 
-X-CRM114-Status: GOOD (  26.78  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191226_220317_469619_3EBAED8B 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.81 listed in wl.mailspike.net]
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,311 +73,636 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild test robot <lkp@intel.com>, horms@verge.net.au,
- linux-doc@vger.kernel.org, catalin.marinas@arm.com, bhsharma@redhat.com,
- xiexiuqi@huawei.com, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- mingo@redhat.com, james.morse@arm.com, tglx@linutronix.de, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On 12/23/19 at 11:23pm, Chen Zhou wrote:
-> In preparation for supporting reserve_crashkernel_low in arm64 as
-> x86_64 does, move reserve_crashkernel_low() into kernel/crash_core.c.
-> 
-> Note, in arm64, we reserve low memory if and only if crashkernel=X,low
-> is specified. Different with x86_64, don't set low memory automatically.
+The i.MX8M Plus Media Applications Processor is part of the growing
+mScale family targeting the consumer and industrial market. It brings
+an effective Machine Learning and AI accelerator that enables a new
+class of applications. It is built in Samsung 14LPP to achieve both
+high performance and low power consumption and relies on a powerful
+fully coherent core complex based on a quad core ARM Cortex-A53 cluster
+and Cortex-M7 low-power coprocessor, audio digital signal processor,
+machine learning and graphics accelerators.
 
-Do you have any reason for the difference?  I'd expect we have same
-logic if possible and remove some of the ifdefs.
+Add the basic dtsi support for i.MX8MP.
 
-> 
-> Reported-by: kbuild test robot <lkp@intel.com>
-> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
-> ---
->  arch/x86/kernel/setup.c    | 62 ++++-----------------------------
->  include/linux/crash_core.h |  3 ++
->  include/linux/kexec.h      |  2 --
->  kernel/crash_core.c        | 87 ++++++++++++++++++++++++++++++++++++++++++++++
->  kernel/kexec_core.c        | 17 ---------
->  5 files changed, 96 insertions(+), 75 deletions(-)
-> 
-> diff --git a/arch/x86/kernel/setup.c b/arch/x86/kernel/setup.c
-> index cedfe20..5f38942 100644
-> --- a/arch/x86/kernel/setup.c
-> +++ b/arch/x86/kernel/setup.c
-> @@ -486,59 +486,6 @@ static void __init memblock_x86_reserve_range_setup_data(void)
->  # define CRASH_ADDR_HIGH_MAX	SZ_64T
->  #endif
->  
-> -static int __init reserve_crashkernel_low(void)
-> -{
-> -#ifdef CONFIG_X86_64
-> -	unsigned long long base, low_base = 0, low_size = 0;
-> -	unsigned long total_low_mem;
-> -	int ret;
-> -
-> -	total_low_mem = memblock_mem_size(1UL << (32 - PAGE_SHIFT));
-> -
-> -	/* crashkernel=Y,low */
-> -	ret = parse_crashkernel_low(boot_command_line, total_low_mem, &low_size, &base);
-> -	if (ret) {
-> -		/*
-> -		 * two parts from kernel/dma/swiotlb.c:
-> -		 * -swiotlb size: user-specified with swiotlb= or default.
-> -		 *
-> -		 * -swiotlb overflow buffer: now hardcoded to 32k. We round it
-> -		 * to 8M for other buffers that may need to stay low too. Also
-> -		 * make sure we allocate enough extra low memory so that we
-> -		 * don't run out of DMA buffers for 32-bit devices.
-> -		 */
-> -		low_size = max(swiotlb_size_or_default() + (8UL << 20), 256UL << 20);
-> -	} else {
-> -		/* passed with crashkernel=0,low ? */
-> -		if (!low_size)
-> -			return 0;
-> -	}
-> -
-> -	low_base = memblock_find_in_range(0, 1ULL << 32, low_size, CRASH_ALIGN);
-> -	if (!low_base) {
-> -		pr_err("Cannot reserve %ldMB crashkernel low memory, please try smaller size.\n",
-> -		       (unsigned long)(low_size >> 20));
-> -		return -ENOMEM;
-> -	}
-> -
-> -	ret = memblock_reserve(low_base, low_size);
-> -	if (ret) {
-> -		pr_err("%s: Error reserving crashkernel low memblock.\n", __func__);
-> -		return ret;
-> -	}
-> -
-> -	pr_info("Reserving %ldMB of low memory at %ldMB for crashkernel (System low RAM: %ldMB)\n",
-> -		(unsigned long)(low_size >> 20),
-> -		(unsigned long)(low_base >> 20),
-> -		(unsigned long)(total_low_mem >> 20));
-> -
-> -	crashk_low_res.start = low_base;
-> -	crashk_low_res.end   = low_base + low_size - 1;
-> -	insert_resource(&iomem_resource, &crashk_low_res);
-> -#endif
-> -	return 0;
-> -}
-> -
->  static void __init reserve_crashkernel(void)
->  {
->  	unsigned long long crash_size, crash_base, total_mem;
-> @@ -602,9 +549,12 @@ static void __init reserve_crashkernel(void)
->  		return;
->  	}
->  
-> -	if (crash_base >= (1ULL << 32) && reserve_crashkernel_low()) {
-> -		memblock_free(crash_base, crash_size);
-> -		return;
-> +	if (crash_base >= (1ULL << 32)) {
-> +		if (reserve_crashkernel_low()) {
-> +			memblock_free(crash_base, crash_size);
-> +			return;
-> +		}
-> +		insert_resource(&iomem_resource, &crashk_low_res);
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ arch/arm64/boot/dts/freescale/imx8mp.dtsi | 598 ++++++++++++++++++++++++++++++
+ 1 file changed, 598 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8mp.dtsi
 
-Some specific reason to move insert_resouce out of the
-reserve_crashkernel_low function?
-
->  	}
->  
->  	pr_info("Reserving %ldMB of memory at %ldMB for crashkernel (System RAM: %ldMB)\n",
-> diff --git a/include/linux/crash_core.h b/include/linux/crash_core.h
-> index 525510a..4df8c0b 100644
-> --- a/include/linux/crash_core.h
-> +++ b/include/linux/crash_core.h
-> @@ -63,6 +63,8 @@ phys_addr_t paddr_vmcoreinfo_note(void);
->  extern unsigned char *vmcoreinfo_data;
->  extern size_t vmcoreinfo_size;
->  extern u32 *vmcoreinfo_note;
-> +extern struct resource crashk_res;
-> +extern struct resource crashk_low_res;
->  
->  Elf_Word *append_elf_note(Elf_Word *buf, char *name, unsigned int type,
->  			  void *data, size_t data_len);
-> @@ -74,5 +76,6 @@ int parse_crashkernel_high(char *cmdline, unsigned long long system_ram,
->  		unsigned long long *crash_size, unsigned long long *crash_base);
->  int parse_crashkernel_low(char *cmdline, unsigned long long system_ram,
->  		unsigned long long *crash_size, unsigned long long *crash_base);
-> +int __init reserve_crashkernel_low(void);
->  
->  #endif /* LINUX_CRASH_CORE_H */
-> diff --git a/include/linux/kexec.h b/include/linux/kexec.h
-> index 1776eb2..5d5d963 100644
-> --- a/include/linux/kexec.h
-> +++ b/include/linux/kexec.h
-> @@ -330,8 +330,6 @@ extern int kexec_load_disabled;
->  
->  /* Location of a reserved region to hold the crash kernel.
->   */
-> -extern struct resource crashk_res;
-> -extern struct resource crashk_low_res;
->  extern note_buf_t __percpu *crash_notes;
->  
->  /* flag to track if kexec reboot is in progress */
-> diff --git a/kernel/crash_core.c b/kernel/crash_core.c
-> index 9f1557b..eb72fd6 100644
-> --- a/kernel/crash_core.c
-> +++ b/kernel/crash_core.c
-> @@ -7,6 +7,8 @@
->  #include <linux/crash_core.h>
->  #include <linux/utsname.h>
->  #include <linux/vmalloc.h>
-> +#include <linux/memblock.h>
-> +#include <linux/swiotlb.h>
->  
->  #include <asm/page.h>
->  #include <asm/sections.h>
-> @@ -19,6 +21,22 @@ u32 *vmcoreinfo_note;
->  /* trusted vmcoreinfo, e.g. we can make a copy in the crash memory */
->  static unsigned char *vmcoreinfo_data_safecopy;
->  
-> +/* Location of the reserved area for the crash kernel */
-> +struct resource crashk_res = {
-> +	.name  = "Crash kernel",
-> +	.start = 0,
-> +	.end   = 0,
-> +	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
-> +	.desc  = IORES_DESC_CRASH_KERNEL
-> +};
-> +struct resource crashk_low_res = {
-> +	.name  = "Crash kernel",
-> +	.start = 0,
-> +	.end   = 0,
-> +	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
-> +	.desc  = IORES_DESC_CRASH_KERNEL
-> +};
-> +
->  /*
->   * parsing the "crashkernel" commandline
->   *
-> @@ -292,6 +310,75 @@ int __init parse_crashkernel_low(char *cmdline,
->  				"crashkernel=", suffix_tbl[SUFFIX_LOW]);
->  }
->  
-> +#if defined(CONFIG_X86_64)
-> +#define CRASH_ALIGN		SZ_16M
-> +#elif defined(CONFIG_ARM64)
-> +#define CRASH_ALIGN		SZ_2M
-> +#endif
-
-I think no need to have the #ifdef, although I can not think out of
-reason we have 16M for X86, maybe move it to 2M as well if no other
-objections.  Then it will be easier to reserve crashkernel successfully
-considering nowadays we have KASLR and other stuff it becomes harder.
-
-> +
-> +int __init reserve_crashkernel_low(void)
-> +{
-> +#if defined(CONFIG_X86_64) || defined(CONFIG_ARM64)
-> +	unsigned long long base, low_base = 0, low_size = 0;
-> +	unsigned long total_low_mem;
-> +	int ret;
-> +
-> +	total_low_mem = memblock_mem_size(1UL << (32 - PAGE_SHIFT));
-> +
-> +	/* crashkernel=Y,low */
-> +	ret = parse_crashkernel_low(boot_command_line, total_low_mem, &low_size,
-> +			&base);
-> +	if (ret) {
-> +#ifdef CONFIG_X86_64
-> +		/*
-> +		 * two parts from lib/swiotlb.c:
-> +		 * -swiotlb size: user-specified with swiotlb= or default.
-> +		 *
-> +		 * -swiotlb overflow buffer: now hardcoded to 32k. We round it
-> +		 * to 8M for other buffers that may need to stay low too. Also
-> +		 * make sure we allocate enough extra low memory so that we
-> +		 * don't run out of DMA buffers for 32-bit devices.
-> +		 */
-> +		low_size = max(swiotlb_size_or_default() + (8UL << 20),
-> +				256UL << 20);
-> +#else
-> +		/*
-> +		 * in arm64, reserve low memory if and only if crashkernel=X,low
-> +		 * specified.
-> +		 */
-> +		return -EINVAL;
-> +#endif
-
-As said before, can you explore about why it needs different logic, it
-would be good to keep two arches same.
-
-> +	} else {
-> +		/* passed with crashkernel=0,low ? */
-> +		if (!low_size)
-> +			return 0;
-> +	}
-> +
-> +	low_base = memblock_find_in_range(0, 1ULL << 32, low_size, CRASH_ALIGN);
-> +	if (!low_base) {
-> +		pr_err("Cannot reserve %ldMB crashkernel low memory, please try smaller size.\n",
-> +		       (unsigned long)(low_size >> 20));
-> +		return -ENOMEM;
-> +	}
-> +
-> +	ret = memblock_reserve(low_base, low_size);
-> +	if (ret) {
-> +		pr_err("%s: Error reserving crashkernel low memblock.\n",
-> +				__func__);
-> +		return ret;
-> +	}
-> +
-> +	pr_info("Reserving %ldMB of low memory at %ldMB for crashkernel (System low RAM: %ldMB)\n",
-> +		(unsigned long)(low_size >> 20),
-> +		(unsigned long)(low_base >> 20),
-> +		(unsigned long)(total_low_mem >> 20));
-> +
-> +	crashk_low_res.start = low_base;
-> +	crashk_low_res.end   = low_base + low_size - 1;
-> +#endif
-> +	return 0;
-> +}
-> +
->  Elf_Word *append_elf_note(Elf_Word *buf, char *name, unsigned int type,
->  			  void *data, size_t data_len)
->  {
-> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-> index 15d70a9..458d093 100644
-> --- a/kernel/kexec_core.c
-> +++ b/kernel/kexec_core.c
-> @@ -53,23 +53,6 @@ note_buf_t __percpu *crash_notes;
->  /* Flag to indicate we are going to kexec a new kernel */
->  bool kexec_in_progress = false;
->  
-> -
-> -/* Location of the reserved area for the crash kernel */
-> -struct resource crashk_res = {
-> -	.name  = "Crash kernel",
-> -	.start = 0,
-> -	.end   = 0,
-> -	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
-> -	.desc  = IORES_DESC_CRASH_KERNEL
-> -};
-> -struct resource crashk_low_res = {
-> -	.name  = "Crash kernel",
-> -	.start = 0,
-> -	.end   = 0,
-> -	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
-> -	.desc  = IORES_DESC_CRASH_KERNEL
-> -};
-> -
->  int kexec_should_crash(struct task_struct *p)
->  {
->  	/*
-> -- 
-> 2.7.4
-> 
-
-Thanks
-Dave
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+new file mode 100644
+index 0000000..0fb29cc
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+@@ -0,0 +1,598 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright 2019 NXP
++ */
++
++#include <dt-bindings/clock/imx8mp-clock.h>
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
++#include <dt-bindings/interrupt-controller/arm-gic.h>
++
++#include "imx8mp-pinfunc.h"
++
++/ {
++	interrupt-parent = <&gic>;
++	#address-cells = <2>;
++	#size-cells = <2>;
++
++	aliases {
++		ethernet0 = &fec;
++		gpio0 = &gpio1;
++		gpio1 = &gpio2;
++		gpio2 = &gpio3;
++		gpio3 = &gpio4;
++		gpio4 = &gpio5;
++		mmc0 = &usdhc1;
++		mmc1 = &usdhc2;
++		mmc2 = &usdhc3;
++		serial0 = &uart1;
++		serial1 = &uart2;
++		serial2 = &uart3;
++		serial3 = &uart4;
++	};
++
++	cpus {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		A53_0: cpu@0 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53";
++			reg = <0x0>;
++			clock-latency = <61036>;
++			clocks = <&clk IMX8MP_CLK_ARM>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_1: cpu@1 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53";
++			reg = <0x1>;
++			clock-latency = <61036>;
++			clocks = <&clk IMX8MP_CLK_ARM>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_2: cpu@2 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53";
++			reg = <0x2>;
++			clock-latency = <61036>;
++			clocks = <&clk IMX8MP_CLK_ARM>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_3: cpu@3 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a53";
++			reg = <0x3>;
++			clock-latency = <61036>;
++			clocks = <&clk IMX8MP_CLK_ARM>;
++			enable-method = "psci";
++			next-level-cache = <&A53_L2>;
++		};
++
++		A53_L2: l2-cache0 {
++			compatible = "cache";
++		};
++	};
++
++	osc_32k: clock-osc-32k {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <32768>;
++		clock-output-names = "osc_32k";
++	};
++
++	osc_24m: clock-osc-24m {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <24000000>;
++		clock-output-names = "osc_24m";
++	};
++
++	clk_ext1: clock-ext1 {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <133000000>;
++		clock-output-names = "clk_ext1";
++	};
++
++	clk_ext2: clock-ext2 {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <133000000>;
++		clock-output-names = "clk_ext2";
++	};
++
++	clk_ext3: clock-ext3 {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <133000000>;
++		clock-output-names = "clk_ext3";
++	};
++
++	clk_ext4: clock-ext4 {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency= <133000000>;
++		clock-output-names = "clk_ext4";
++	};
++
++	psci {
++		compatible = "arm,psci-1.0";
++		method = "smc";
++	};
++
++	timer {
++		compatible = "arm,armv8-timer";
++		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_LOW)>;
++		clock-frequency = <8000000>;
++		arm,no-tick-in-suspend;
++	};
++
++	soc@0 {
++		compatible = "simple-bus";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges = <0x0 0x0 0x0 0x3e000000>;
++
++		aips1: bus@30000000 {
++			compatible = "simple-bus";
++			reg = <0x30000000 0x400000>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges;
++
++			gpio1: gpio@30200000 {
++				compatible = "fsl,imx8mp-gpio", "fsl,imx35-gpio";
++				reg = <0x30200000 0x10000>;
++				interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 65 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_GPIO1_ROOT>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++				gpio-ranges = <&iomuxc 0 5 30>;
++			};
++
++			gpio2: gpio@30210000 {
++				compatible = "fsl,imx8mp-gpio", "fsl,imx35-gpio";
++				reg = <0x30210000 0x10000>;
++				interrupts = <GIC_SPI 66 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 67 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_GPIO2_ROOT>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++				gpio-ranges = <&iomuxc 0 35 21>;
++			};
++
++			gpio3: gpio@30220000 {
++				compatible = "fsl,imx8mp-gpio", "fsl,imx35-gpio";
++				reg = <0x30220000 0x10000>;
++				interrupts = <GIC_SPI 68 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 69 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_GPIO3_ROOT>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++				gpio-ranges = <&iomuxc 0 56 26>, <&iomuxc 0 144 4>;
++			};
++
++			gpio4: gpio@30230000 {
++				compatible = "fsl,imx8mp-gpio", "fsl,imx35-gpio";
++				reg = <0x30230000 0x10000>;
++				interrupts = <GIC_SPI 70 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_GPIO4_ROOT>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++				gpio-ranges = <&iomuxc 0 82 32>;
++			};
++
++			gpio5: gpio@30240000 {
++				compatible = "fsl,imx8mp-gpio", "fsl,imx35-gpio";
++				reg = <0x30240000 0x10000>;
++				interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 73 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_GPIO5_ROOT>;
++				gpio-controller;
++				#gpio-cells = <2>;
++				interrupt-controller;
++				#interrupt-cells = <2>;
++				gpio-ranges = <&iomuxc 0 114 30>;
++			};
++
++			wdog1: watchdog@30280000 {
++				compatible = "fsl,imx8mp-wdt", "fsl,imx21-wdt";
++				reg = <0x30280000 0x10000>;
++				interrupts = <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_WDOG1_ROOT>;
++				status = "disabled";
++			};
++
++			iomuxc: pinctrl@30330000 {
++				compatible = "fsl,imx8mp-iomuxc";
++				reg = <0x30330000 0x10000>;
++			};
++
++			gpr: iomuxc-gpr@30340000 {
++				compatible = "fsl,imx8mp-iomuxc-gpr", "syscon";
++				reg = <0x30340000 0x10000>;
++			};
++
++			ocotp: ocotp-ctrl@30350000 {
++				compatible = "fsl,imx8mp-ocotp", "fsl,imx8mm-ocotp", "syscon";
++				reg = <0x30350000 0x10000>;
++				clocks = <&clk IMX8MP_CLK_OCOTP_ROOT>;
++				/* For nvmem subnodes */
++				#address-cells = <1>;
++				#size-cells = <1>;
++
++				cpu_speed_grade: speed-grade@10 {
++					reg = <0x10 4>;
++				};
++			};
++
++			anatop: anatop@30360000 {
++				compatible = "fsl,imx8mp-anatop", "fsl,imx8mm-anatop",
++					     "syscon";
++				reg = <0x30360000 0x10000>;
++			};
++
++			snvs: snvs@30370000 {
++				compatible = "fsl,sec-v4.0-mon","syscon", "simple-mfd";
++				reg = <0x30370000 0x10000>;
++
++				snvs_rtc: snvs-rtc-lp {
++					compatible = "fsl,sec-v4.0-mon-rtc-lp";
++					regmap =<&snvs>;
++					offset = <0x34>;
++					interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
++						     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
++					clocks = <&clk IMX8MP_CLK_SNVS_ROOT>;
++					clock-names = "snvs-rtc";
++				};
++
++				snvs_pwrkey: snvs-powerkey {
++					compatible = "fsl,sec-v4.0-pwrkey";
++					regmap = <&snvs>;
++					interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
++					linux,keycode = <KEY_POWER>;
++					wakeup-source;
++					status = "disabled";
++				};
++			};
++
++			clk: clock-controller@30380000 {
++				compatible = "fsl,imx8mp-ccm";
++				reg = <0x30380000 0x10000>;
++				#clock-cells = <1>;
++				clocks = <&osc_32k>, <&osc_24m>, <&clk_ext1>, <&clk_ext2>,
++					 <&clk_ext3>, <&clk_ext4>;
++				clock-names = "osc_32k", "osc_24m", "clk_ext1", "clk_ext2",
++					      "clk_ext3", "clk_ext4";
++				assigned-clocks = <&clk IMX8MP_CLK_AUDIO_AHB>,
++						  <&clk IMX8MP_CLK_IPG_AUDIO_ROOT>,
++						  <&clk IMX8MP_AUDIO_PLL1>,
++						  <&clk IMX8MP_AUDIO_PLL2>;
++			};
++
++			src: src@30390000 {
++				compatible = "fsl,imx8mp-src", "fsl,imx8mq-src", "syscon";
++				reg = <0x30390000 0x10000>;
++				interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
++				#reset-cells = <1>;
++			};
++		};
++
++		aips2: bus@30400000 {
++			compatible = "simple-bus";
++			reg = <0x30400000 0x400000>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges;
++
++			pwm1: pwm@30660000 {
++				compatible = "fsl,imx8mp-pwm", "fsl,imx27-pwm";
++				reg = <0x30660000 0x10000>;
++				interrupts = <GIC_SPI 81 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_PWM1_ROOT>,
++					 <&clk IMX8MP_CLK_PWM1_ROOT>;
++				clock-names = "ipg", "per";
++				#pwm-cells = <2>;
++				status = "disabled";
++			};
++
++			pwm2: pwm@30670000 {
++				compatible = "fsl,imx8mp-pwm", "fsl,imx27-pwm";
++				reg = <0x30670000 0x10000>;
++				interrupts = <GIC_SPI 82 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_PWM2_ROOT>,
++					 <&clk IMX8MP_CLK_PWM2_ROOT>;
++				clock-names = "ipg", "per";
++				#pwm-cells = <2>;
++				status = "disabled";
++			};
++
++			pwm3: pwm@30680000 {
++				compatible = "fsl,imx8mp-pwm", "fsl,imx27-pwm";
++				reg = <0x30680000 0x10000>;
++				interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_PWM3_ROOT>,
++					 <&clk IMX8MP_CLK_PWM3_ROOT>;
++				clock-names = "ipg", "per";
++				#pwm-cells = <2>;
++				status = "disabled";
++			};
++
++			pwm4: pwm@30690000 {
++				compatible = "fsl,imx8mp-pwm", "fsl,imx27-pwm";
++				reg = <0x30690000 0x10000>;
++				interrupts = <GIC_SPI 84 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_PWM4_ROOT>,
++					 <&clk IMX8MP_CLK_PWM4_ROOT>;
++				clock-names = "ipg", "per";
++				#pwm-cells = <2>;
++				status = "disabled";
++			};
++		};
++
++		aips3: bus@30800000 {
++			compatible = "simple-bus";
++			reg = <0x30800000 0x400000>;
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges;
++
++			ecspi1: spi@30820000 {
++				#address-cells = <1>;
++				#size-cells = <0>;
++				compatible = "fsl,imx8mp-ecspi", "fsl,imx51-ecspi";
++				reg = <0x30820000 0x10000>;
++				interrupts = <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_ECSPI1_ROOT>,
++					 <&clk IMX8MP_CLK_ECSPI1_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 0 7 1>, <&sdma1 1 7 2>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			ecspi2: spi@30830000 {
++				#address-cells = <1>;
++				#size-cells = <0>;
++				compatible = "fsl,imx8mp-ecspi", "fsl,imx51-ecspi";
++				reg = <0x30830000 0x10000>;
++				interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_ECSPI2_ROOT>,
++					 <&clk IMX8MP_CLK_ECSPI2_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 2 7 1>, <&sdma1 3 7 2>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			ecspi3: spi@30840000 {
++				#address-cells = <1>;
++				#size-cells = <0>;
++				compatible = "fsl,imx8mp-ecspi", "fsl,imx51-ecspi";
++				reg = <0x30840000 0x10000>;
++				interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_ECSPI3_ROOT>,
++					 <&clk IMX8MP_CLK_ECSPI3_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 4 7 1>, <&sdma1 5 7 2>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			uart1: serial@30860000 {
++				compatible = "fsl,imx8mp-uart", "fsl,imx6q-uart";
++				reg = <0x30860000 0x10000>;
++				interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_UART1_ROOT>,
++					 <&clk IMX8MP_CLK_UART1_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 22 4 0>, <&sdma1 23 4 0>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			uart3: serial@30880000 {
++				compatible = "fsl,imx8mp-uart", "fsl,imx6q-uart";
++				reg = <0x30880000 0x10000>;
++				interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_UART3_ROOT>,
++					 <&clk IMX8MP_CLK_UART3_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 26 4 0>, <&sdma1 27 4 0>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			uart2: serial@30890000 {
++				compatible = "fsl,imx8mp-uart", "fsl,imx6q-uart";
++				reg = <0x30890000 0x10000>;
++				interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_UART2_ROOT>,
++					 <&clk IMX8MP_CLK_UART2_ROOT>;
++				clock-names = "ipg", "per";
++				status = "disabled";
++			};
++
++			i2c1: i2c@30a20000 {
++				compatible = "fsl,imx8mp-i2c", "fsl,imx21-i2c";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30a20000 0x10000>;
++				interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_I2C1_ROOT>;
++				status = "disabled";
++			};
++
++			i2c2: i2c@30a30000 {
++				compatible = "fsl,imx8mp-i2c", "fsl,imx21-i2c";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30a30000 0x10000>;
++				interrupts = <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_I2C2_ROOT>;
++				status = "disabled";
++			};
++
++			i2c3: i2c@30a40000 {
++				compatible = "fsl,imx8mm-i2c", "fsl,imx21-i2c";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30a40000 0x10000>;
++				interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_I2C3_ROOT>;
++				status = "disabled";
++			};
++
++			i2c4: i2c@30a50000 {
++				compatible = "fsl,imx8mp-i2c", "fsl,imx21-i2c";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30a50000 0x10000>;
++				interrupts = <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_I2C4_ROOT>;
++				status = "disabled";
++			};
++
++			uart4: serial@30a60000 {
++				compatible = "fsl,imx8mp-uart", "fsl,imx6q-uart";
++				reg = <0x30a60000 0x10000>;
++				interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_UART4_ROOT>,
++					 <&clk IMX8MP_CLK_UART4_ROOT>;
++				clock-names = "ipg", "per";
++				dmas = <&sdma1 28 4 0>, <&sdma1 29 4 0>;
++				dma-names = "rx", "tx";
++				status = "disabled";
++			};
++
++			i2c5: i2c@30ad0000 {
++				compatible = "fsl,imx8mp-i2c", "fsl,imx21-i2c";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30ad0000 0x10000>;
++				interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_I2C5_ROOT>;
++				status = "disabled";
++			};
++
++			i2c6: i2c@30ae0000 {
++				compatible = "fsl,imx8mp-i2c", "fsl,imx21-i2c";
++				#address-cells = <1>;
++				#size-cells = <0>;
++				reg = <0x30ae0000 0x10000>;
++				interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_I2C6_ROOT>;
++				status = "disabled";
++			};
++
++			usdhc1: mmc@30b40000 {
++				compatible = "fsl,imx8mm-usdhc", "fsl,imx7d-usdhc";
++				reg = <0x30b40000 0x10000>;
++				interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_DUMMY>,
++					 <&clk IMX8MP_CLK_NAND_USDHC_BUS>,
++					 <&clk IMX8MP_CLK_USDHC1_ROOT>;
++				clock-names = "ipg", "ahb", "per";
++				fsl,tuning-start-tap = <20>;
++				fsl,tuning-step= <2>;
++				bus-width = <4>;
++				status = "disabled";
++			};
++
++			usdhc2: mmc@30b50000 {
++				compatible = "fsl,imx8mm-usdhc", "fsl,imx7d-usdhc";
++				reg = <0x30b50000 0x10000>;
++				interrupts = <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_DUMMY>,
++					 <&clk IMX8MP_CLK_NAND_USDHC_BUS>,
++					 <&clk IMX8MP_CLK_USDHC2_ROOT>;
++				clock-names = "ipg", "ahb", "per";
++				fsl,tuning-start-tap = <20>;
++				fsl,tuning-step= <2>;
++				bus-width = <4>;
++				status = "disabled";
++			};
++
++			usdhc3: mmc@30b60000 {
++				compatible = "fsl,imx8mm-usdhc", "fsl,imx7d-usdhc";
++				reg = <0x30b60000 0x10000>;
++				interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_DUMMY>,
++					 <&clk IMX8MP_CLK_NAND_USDHC_BUS>,
++					 <&clk IMX8MP_CLK_USDHC3_ROOT>;
++				clock-names = "ipg", "ahb", "per";
++				fsl,tuning-start-tap = <20>;
++				fsl,tuning-step= <2>;
++				bus-width = <4>;
++				status = "disabled";
++			};
++
++			sdma1: dma-controller@30bd0000 {
++				compatible = "fsl,imx8mp-sdma", "fsl,imx8mq-sdma";
++				reg = <0x30bd0000 0x10000>;
++				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_SDMA1_ROOT>,
++					 <&clk IMX8MP_CLK_SDMA1_ROOT>;
++				clock-names = "ipg", "ahb";
++				#dma-cells = <3>;
++				fsl,sdma-ram-script-name = "imx/sdma/sdma-imx7d.bin";
++			};
++
++			fec: ethernet@30be0000 {
++				compatible = "fsl,imx8mm-fec", "fsl,imx8mq-fec", "fsl,imx6sx-fec";
++				reg = <0x30be0000 0x10000>;
++				interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MP_CLK_ENET1_ROOT>,
++					 <&clk IMX8MP_CLK_SIM_ENET_ROOT>,
++					 <&clk IMX8MP_CLK_ENET_TIMER>,
++					 <&clk IMX8MP_CLK_ENET_REF>,
++					 <&clk IMX8MP_CLK_ENET_PHY_REF>;
++				clock-names = "ipg", "ahb", "ptp",
++					      "enet_clk_ref", "enet_out";
++				assigned-clocks = <&clk IMX8MP_CLK_ENET_AXI>,
++						  <&clk IMX8MP_CLK_ENET_TIMER>,
++						  <&clk IMX8MP_CLK_ENET_REF>,
++						  <&clk IMX8MP_CLK_ENET_TIMER>;
++				assigned-clock-parents = <&clk IMX8MP_SYS_PLL1_266M>,
++							 <&clk IMX8MP_SYS_PLL2_100M>,
++							 <&clk IMX8MP_SYS_PLL2_125M>;
++				assigned-clock-rates = <0>, <0>, <125000000>, <100000000>;
++				fsl,num-tx-queues = <3>;
++				fsl,num-rx-queues = <3>;
++				status = "disabled";
++			};
++		};
++
++		gic: interrupt-controller@38800000 {
++			compatible = "arm,gic-v3";
++			reg = <0x38800000 0x10000>,
++			      <0x38880000 0xc0000>;
++			#interrupt-cells = <3>;
++			interrupt-controller;
++			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-parent = <&gic>;
++		};
++	};
++};
+-- 
+2.7.4
 
 
 _______________________________________________
