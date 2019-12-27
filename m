@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DCD912B607
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 18:05:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F31012B619
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 18:23:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ymSPvNWk79NeWp8q0KDJEROFvJTiTlyh65wmi6rsNH8=; b=jP9cM/qACFAKYB
-	H2VqvWw3NaoDgR2pqrqmwhUo3rUJEw7hM8mJB9wIQ2TkvOyUhUe3pWY5tNbFDB+rQBZ4X4tKi9Pop
-	PhIZtgrGWjeG3gnmrWij7Wo8EpSbXLLt04a076dNd+JvfVWkIHF5pqIFdaWtra6+uza9s/7qajSad
-	2V7kEUgoWHcLrjSmJ1tBsjHlC2zEsrResxPNYmqH+gRBfuAqfBganIw8/1i91hQDlujfPZ9W3nVyA
-	yrZ+Lxk1FLCAP7Z57Gee6PJXoz78glp2JTSXHmf5Tcn2F6X2A1StgVt2zrr00k85xqLHGnDzzOmxA
-	BgAwhmKT51Y4KMwwoa4A==;
+	List-Owner; bh=hzZmdHFwHZrXS/mhSuU1t/YMSCk7CZYH+rVx/V9GldQ=; b=D48ezyz0GvZV5e
+	DBj0mcRe5nMhYQASI01VoS9LNXc+98ngUksBjJkGigmDpCi8sSHIVOLAbBzqyrLLsI5jI3gZCWkFa
+	9Vv2R2eOYJCdQhUHX8BfvYlcFXwJl27i66g27tcfjvnuK+zv30nu9yDuXQt4u7p6mVOq2p2StWa7z
+	HVoGwA6BqwU5KOId9Z4jrRHrwswj8oV0H8AR2JzKwIjWGDo92B+uwYSMrlN6pSsUWFToJvTQKALGQ
+	1EMQBSt/Xt+gCr+eDLCcMQxN/cq+MIz/aMVFF39q/mhgoOQSIUG5rucExi5sOadgcVOlWq6hRK1/l
+	aSHiV5YM8G/CDcns2Xhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikt2n-0002rC-Dy; Fri, 27 Dec 2019 17:04:57 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1iktKX-0000JY-NP; Fri, 27 Dec 2019 17:23:17 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikt2c-0002pw-9O; Fri, 27 Dec 2019 17:04:47 +0000
-Received: by mail-ed1-x544.google.com with SMTP id j17so25789328edp.3;
- Fri, 27 Dec 2019 09:04:46 -0800 (PST)
+ id 1iktKK-0000Hm-Q1; Fri, 27 Dec 2019 17:23:06 +0000
+Received: by mail-ed1-x541.google.com with SMTP id i16so25853348edr.5;
+ Fri, 27 Dec 2019 09:23:04 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BoVbc5pFxgDga02d7WpROu4QcXo0Jnx36QL7mAbHE+o=;
- b=GKlBMroYHKZ+NeE9hZTwNpzDD2un2MsXbWFiIqXLUAlw4zHJf04GITHmWpvNDseB8q
- Bqz59shO329cyZVFllXLlGDUGpRZYX76XIM7ABBWAWEPOeZL32U3z/idBD0dKFyhDWiQ
- oIcbi38+6nV4daU80bI/u+HYvi2+fCTk3D0hIiCeD6wauLvlZxum7/KLwq9Xx2tMR9Ld
- 0oUIE7SNzoo8g+yibPu98/Ks5OOEhrRUQ1t4uBWXMiOq45e+PkJJnFlZXbOn/CPOeISi
- c8sDROdDLLtOZtVqSAzwODofVPqJfrD9YGnYQ01cLL5KTF4tjMFXDEsJQPiDqxUsgBT6
- LJfQ==
+ :cc; bh=0UU+ysXx+Shc0uhfL0eYU+6BwpIeAsm7S9P/UHU0eAg=;
+ b=iUba+NWNA3cOXpD5+r04DSS11HD3AciHWRXYHS97zSESLqL4y0CXv4NzzuOaX99bzt
+ ijCXSOhYV7ucxVIFQWm5EEk/PHpCHm262LIdFhKd3Rj0m8MgP13uJJMMPxutIF12TVyt
+ NeWqHxRT6MtNP4fmJIauTMBXbxKxEjttj5+94a23FLWXoIAoodB+HyGqa6S8lOrIe75v
+ i60FDLNZzZLYOIW5tvr+PcsslPbLLmKqP+wm0iZRMRi6GIy9xPTVDyI4MDcgS98s5Z5k
+ 0s44aKJRenjj9Cfz02DFsvOurf9rWc/4pyIoPOH42pX6++sh94sq7PqyE2MsZ3kWiC4a
+ Fk1A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=BoVbc5pFxgDga02d7WpROu4QcXo0Jnx36QL7mAbHE+o=;
- b=EopZ8TD3LxYg+499/Q49ypa4fHixcKWFO3X4fcDMNz8ZbSLAn4pAvCU6aihWlwFyIu
- D3pKnPiDbP4P1ufq0ykEngFFX1TCvsRNWUuTNMDqX7lLvbPyQNYN6DyueBr3WTb/jHeu
- kwqjqTJA3yhnnHh3k+hYDeoJqlVBUNyIXfNqAjIHYJlviqLSF2vSbN/1uUIG8OEEOYdR
- B2eTJpV+6t+wmX3/co8E37n+WxwuAWi1jIgBilbd7ov9bx+k71RHQ1WFEhL62cIJHV31
- 7aOSvvanmgPQk7J+bA8MB0ydI2WtMvgyfwLB6EvchRz3qSIwIlPXDDTa5GqMCZ6tCFD+
- QKLQ==
-X-Gm-Message-State: APjAAAWB1iHe90HDss+jFSxE0CSVd5HUF9f5Z4L5fo0e7qkhgPGo3CaX
- K34JFIkU0PrSfzpkki07ojzXOR74xaqhzGWBedM=
-X-Google-Smtp-Source: APXvYqxb40zU5q6fp02+uSgYoDnGWDNjt9ky8oUSBuCmkdvIsTYbQe34JEzsFayd1/qdz0Dqt0rB7GiW2uX4tkdpQik=
-X-Received: by 2002:a17:906:cc8b:: with SMTP id
- oq11mr56006300ejb.193.1577466284880; 
- Fri, 27 Dec 2019 09:04:44 -0800 (PST)
+ bh=0UU+ysXx+Shc0uhfL0eYU+6BwpIeAsm7S9P/UHU0eAg=;
+ b=pCSBsUgINGUI4mc4j8lUQbSKnuS5fN33MGAaRocV6wDvvUI+2Kj5WIADlZXK1Lzb6O
+ 5knKKSwbjMqQ/NZdsl9kcYYQQl6GjgXwxZKBpVWt6LOgxKczliAju7AkTxVU0kwZ0ekk
+ f7Fp1L7pNgxay5ADE8LvyzbhbOZDSIxPJ6ZpI+Udubdb8az/UJfdDk28FIbL7V5YT3Jw
+ 6dEgv5jSurT5emVW7DqDMCgLCTDtTPgrBkrqSrBL8bruVxmhO6vjEPmzMarN8z65JA3Z
+ my8bHwkCTKck0ZiSxEncX6lZvodSrV0L4eFxtfc5QLzq7BclLwrnF5rhs2jkatpRV6qf
+ S+Yw==
+X-Gm-Message-State: APjAAAWsIa9KdKPdM7qJFr1G4/pkuvIJjfyKtmQUVRQ5yQdFPFewvV+U
+ cEVmXU36Sjvwxd+GNDzruTc40/r3SKmZ5n8XxKE=
+X-Google-Smtp-Source: APXvYqygztpCwMZ2tOw2bt5blxVcse049EWJn1V8ypi9uRoEfMAWYxJV7H8W3FniudLtvI6csg6ZP2n5//ATD5ueUVI=
+X-Received: by 2002:a50:bae1:: with SMTP id x88mr39175305ede.10.1577467383228; 
+ Fri, 27 Dec 2019 09:23:03 -0800 (PST)
 MIME-Version: 1.0
 References: <20191227094606.143637-1-jian.hu@amlogic.com>
- <20191227094606.143637-4-jian.hu@amlogic.com>
-In-Reply-To: <20191227094606.143637-4-jian.hu@amlogic.com>
+ <20191227094606.143637-6-jian.hu@amlogic.com>
+In-Reply-To: <20191227094606.143637-6-jian.hu@amlogic.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Fri, 27 Dec 2019 18:04:33 +0100
-Message-ID: <CAFBinCB2XF1unfEGbApuoXR3ZBRMwgc4EuqSjgKWKm_2G16S5g@mail.gmail.com>
-Subject: Re: [PATCH v5 3/5] clk: meson: a1: add support for Amlogic A1 PLL
- clock driver
+Date: Fri, 27 Dec 2019 18:22:52 +0100
+Message-ID: <CAFBinCB_0+k6rGxChpB77rPUrb-0mzxt_nQWXbiztCJnJq8XnQ@mail.gmail.com>
+Subject: Re: [PATCH v5 5/5] clk: meson: a1: add support for Amlogic A1
+ Peripheral clock driver
 To: Jian Hu <jian.hu@amlogic.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_090446_353114_30B4929A 
-X-CRM114-Status: GOOD (  13.78  )
+X-CRM114-CacheID: sfid-20191227_092304_870806_DAFC6662 
+X-CRM114-Status: GOOD (  17.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,74 +106,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jian,
+ Hi Jian,
 
-On Fri, Dec 27, 2019 at 10:46 AM Jian Hu <jian.hu@amlogic.com> wrote:
+my comments and questions below
+please keep in mind that I don't have access to the A1 datasheets, so
+I may ask stupid questions :)
+
+On Fri, Dec 27, 2019 at 10:47 AM Jian Hu <jian.hu@amlogic.com> wrote:
 [...]
-> +               .parent_data = &(const struct clk_parent_data){
-> +                       .fw_name = "xtal_fixpll",
+> +/* PLLs clock in gates, its parent is xtal */
+yes. doesn't the code below describe exactly this (what is so special
+about it that we need an extra comment)?
+
+[...]
+> +static const struct clk_parent_data sys_clk_parents[] = {
+> +       { .fw_name = "xtal" },
+> +       { .fw_name = "fclk_div2"},
+> +       { .fw_name = "fclk_div3"},
+> +       { .fw_name = "fclk_div5"},
+the last three values are missing a space before "}"
+
+[...]
+> +       .hw.init = &(struct clk_init_data){
+> +               .name = "sys_clk",
+> +               .ops = &clk_regmap_mux_ro_ops,
+> +               .parent_hws = (const struct clk_hw *[]) {
+> +                       &a1_sys_a.hw, &a1_sys_b.hw,
 > +               },
-in the Meson8b and G12A (I assume it's the same on GXBB, I didn't
-check it) we have a space between " clk_parent_data)" and "{"
-this applies to at least one more occurrence below
-
-[...]
+> +               .num_parents = 2,
 > +               /*
 > +                * This clock is used by APB bus which setted in Romcode
-nit-pick: I'm not sure about the grammar here: setted -> "is set"?
-and to make sure I understand this correctly: do you mean the "boot
-ROM" with "Romcode"?
+like in the PLL clkc patch:
+- setted -> "is set"
+- Romcode == boot ROM ?
 
 [...]
-> +static int meson_a1_pll_probe(struct platform_device *pdev)
-> +{
-> +       const struct meson_eeclkc_data *data;
-what do you need this "data" variable for?
-
-> +       struct device *dev = &pdev->dev;
-> +       struct resource *res;
-> +       void __iomem *base;
-> +       struct regmap *map;
-> +       int ret, i;
-> +
-> +       data = of_device_get_match_data(dev);
-> +       if (!data)
-> +               return -EINVAL;
-> +
-> +       res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +
-> +       base = devm_ioremap_resource(dev, res);
-> +       if (IS_ERR(base))
-> +               return PTR_ERR(base);
-> +
-> +       map = devm_regmap_init_mmio(dev, base, &clkc_regmap_config);
-> +       if (IS_ERR(map))
-> +              return PTR_ERR(map);
-> +
-> +       /* Populate regmap for the regmap backed clocks */
-> +       for (i = 0; i < data->regmap_clk_num; i++)
-> +               data->regmap_clks[i]->map = map;
-why can't we use a1_pll_regmaps directly here?
-
-> +
-> +       for (i = 0; i < data->hw_onecell_data->num; i++) {
-> +               /* array might be sparse */
-> +               if (!data->hw_onecell_data->hws[i])
-> +                       continue;
-> +
-> +               ret = devm_clk_hw_register(dev, data->hw_onecell_data->hws[i]);
-and why can't we use a1_pll_hw_onecell_data directly here?
+> +static struct clk_regmap a1_rtc_32k_sel = {
+> +       .data = &(struct clk_regmap_mux_data) {
+> +               .offset = RTC_CTRL,
+> +               .mask = 0x3,
+> +               .shift = 0,
+> +               .flags = CLK_MUX_ROUND_CLOSEST,
+CLK_MUX_ROUND_CLOSEST means the common clock framework will also
+accept rates greater than 32kHz.
+is that fine for this case?
 
 [...]
-> +static const struct meson_eeclkc_data a1_pll_data = {
-> +               .regmap_clks = a1_pll_regmaps,
-> +               .regmap_clk_num = ARRAY_SIZE(a1_pll_regmaps),
-> +               .hw_onecell_data = &a1_pll_hw_onecell_data,
+> +/*
+> + * the second parent is sys_pll_div16, it will complete in the CPU clock,
+I was confused by this but I assume you mean the parent with index 2?
+
+> + * the forth parent is the clock measurement source, it relies on
+> + * the clock measurement register configuration.
+...and parent with index 4 here
+
+[...]
+> +static struct clk_regmap a1_pwm_a = {
+> +       .data = &(struct clk_regmap_gate_data){
+> +               .offset = PWM_CLK_AB_CTRL,
+> +               .bit_idx = 8,
+> +       },
+> +       .hw.init = &(struct clk_init_data) {
+> +               .name = "pwm_a",
+> +               .ops = &clk_regmap_gate_ops,
+> +               .parent_hws = (const struct clk_hw *[]) {
+> +                       &a1_pwm_a_div.hw
+> +               },
+> +               .num_parents = 1,
+> +               /*
+> +                * The CPU working voltage is controlled by pwm_a
+> +                * in BL2 firmware. add the CLK_IS_CRITICAL flag
+> +                * to avoid changing at runtime.
+on G12A and G12B Linux has to manage the CPU voltage regulator
+can you confirm that for the A1 SoC this is really done by BL2? (I'm
+wondering since A1 is newer than G12)
+
+> +/*
+> + * spicc clk
+> + *    div2   |\         |\       _____
+> + *  ---------| |---DIV--| |     |     |    spicc out
+> + *  ---------| |        | |-----|GATE |---------
+> + *     ..... |/         | /     |_____|
+> + *  --------------------|/
+> + *                 24M
+does that "div2" stand for fclk_div2?
+
+[...]
+> +static const struct meson_eeclkc_data a1_periphs_data = {
+> +               .regmap_clks = a1_periphs_regmaps,
+> +               .regmap_clk_num = ARRAY_SIZE(a1_periphs_regmaps),
+> +               .hw_onecell_data = &a1_periphs_hw_onecell_data,
 > +};
-if _probe would access these directly then you can drop meson_eeclkc_data
-that is a good thing in my opinion because I was confused by the
-"eeclk" since the patch description says that there's no EE or AO
-domain on the A1 SoCs
+same comment as for the PLL clkc: please drop this and use the
+variables directly inside _probe to get rid of the struct
+meson_eeclkc_data (so I won't be confused about "EE clocks" on A1,
+while according to your description there's no "EE" domain)
 
 
 Martin
