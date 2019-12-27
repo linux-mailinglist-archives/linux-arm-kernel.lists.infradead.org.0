@@ -2,131 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4791F12AFDA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 01:03:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A71F12AFEF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 01:34:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fPViXMiNpODXgLFM9lQuhUkkyIWoIMLZiBOSKOkKiZw=; b=fN7Op224M6lfDY
-	jXf9HUjZYUTplW7qFraZq6Og0qAKl97I3AmTX2LbfW7hfphUnTW6LzglAsyNc4ENLVASc0X38lH5L
-	s5HAO0K45RQs03u0aE5GyVKWJrRs2PBLAJqiR0gkNSt1TdMz6ee6pRd+2FD5zs5rBTf6N3tG9q+Be
-	qs0IGkQygfqlXoycJmly/BsslvZ+18DcqbmP1rahunYnhRgcR0Um5Y87AN5gWIHODXP6i539TwFIO
-	MVQKvzzLt7NnrzGCWxz38wuFIVINrErwjbinMB5LSTREM/cRPKweucZHmh+w5J5Iospza3mcJk637
-	yjFrHCwkm9k14fhl7/uw==;
+	List-Owner; bh=abqjlNbCzc1ngedqqPLyXecy6AKCZ5PCaz/BrWgIz5Y=; b=eNMYCwVIbOGnxr
+	JYbIhFGNwolcEdvc7ze88Xrld/Nt/71rp/8Weq+NdI8YLaNl5ZXCEAITAJFtY1QCv/DhgD+/dc0Tc
+	vYdv7owWm+vbO4YPZpbQ/aK9dvUishlfjUTLFONbR8ZIsRTl5mAm14HDj/nlxNoEjdZex72plB00X
+	8qVZZYT18r3rmbgm133yw5uHoKWqlgDGytWfBzMlc8T7eK1vpJjT5DblkOktiLxYTR4QjCSbw3Gnq
+	N+16M6PxXIsBNruZyu9IU8AEGeasQl99F6yqUXzvYX0g9Do4Nrf/6cdiGSi4oI3U9hgN9x5Q+2PO2
+	7xYDBGsAq0PqW/cqc/Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikd6R-0004Xs-4c; Fri, 27 Dec 2019 00:03:39 +0000
-Received: from mailout2.samsung.com ([203.254.224.25])
+	id 1ikdaO-00060x-OS; Fri, 27 Dec 2019 00:34:36 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikd6E-0004Wc-4D
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 00:03:28 +0000
-Received: from epcas1p4.samsung.com (unknown [182.195.41.48])
- by mailout2.samsung.com (KnoxPortal) with ESMTP id
- 20191227000313epoutp026daee740a583c9206de22a7fe06fd01e~kEXva_D3F0195301953epoutp02S
+ id 1ikdaE-00060d-E2
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 00:34:27 +0000
+Received: by mail-lf1-x141.google.com with SMTP id 15so19513456lfr.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Dec 2019 00:03:13 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
- 20191227000313epoutp026daee740a583c9206de22a7fe06fd01e~kEXva_D3F0195301953epoutp02S
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1577404993;
- bh=WA59LNYJUt2fnjJ+DhnIp9dd0bE/LhrRH5GQ+S7fr+8=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=LujLXdySbgmVSnLvmbx0qEdxSXjnpK5LREJVtstvOlodTCHAdnWOfnKD8bje6BbPr
- D6a12SfNG2i+wSQDFuXaruUWnDr0rhY11C235N3cG6O+pf6ocVRqv1/z7b5N+Iyc0w
- ZZkGzlhZW5fd+7OPUZMFTiu47iaRSaaiUnMRoRm4=
-Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTP id
- 20191227000312epcas1p4173878ecd8739fcbb83c0ade834d68fe~kEXu6yDgY2314223142epcas1p4K;
- Fri, 27 Dec 2019 00:03:12 +0000 (GMT)
-Received: from epsmges1p3.samsung.com (unknown [182.195.40.154]) by
- epsnrtp4.localdomain (Postfix) with ESMTP id 47kRqL0DZZzMqYkg; Fri, 27 Dec
- 2019 00:03:10 +0000 (GMT)
-Received: from epcas1p1.samsung.com ( [182.195.41.45]) by
- epsmges1p3.samsung.com (Symantec Messaging Gateway) with SMTP id
- B5.D2.52419.D3A450E5; Fri, 27 Dec 2019 09:03:09 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20191227000309epcas1p145ab877d7254a2e5e29c1a33b02dd583~kEXrrYIFK2734127341epcas1p1W;
- Fri, 27 Dec 2019 00:03:09 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20191227000309epsmtrp14501116d06ad2fdf45a87ae9326beeaf~kEXrqBTRL0742607426epsmtrp1R;
- Fri, 27 Dec 2019 00:03:09 +0000 (GMT)
-X-AuditID: b6c32a37-59fff7000001ccc3-8b-5e054a3d28a2
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 1A.41.10238.C3A450E5; Fri, 27 Dec 2019 09:03:09 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20191227000308epsmtip2d2aa064d3f8397a927215c21eb2df2a5~kEXraFDV_2373323733epsmtip2Y;
- Fri, 27 Dec 2019 00:03:08 +0000 (GMT)
-Subject: Re: [PATCH 4/9] PM / devfreq: exynos-bus: Replace deprecated
- 'devfreq' property
-To: Rob Herring <robh@kernel.org>
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <a54e4275-012e-77d9-bdbe-1aab64b5c12b@samsung.com>
-Date: Fri, 27 Dec 2019 09:09:58 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:59.0) Gecko/20100101
- Thunderbird/59.0
+ Thu, 26 Dec 2019 16:34:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=A0ugGKSdy996G5cCplSFEOG0vQpDh89551RLNUPVsrY=;
+ b=RJXCsoTJsJ6edGiu8VS+CH+D/Dbj3WTIrX4aUJgPw9NYhOJTOvubQ0t/Ibr04akdir
+ Fu6Ai+dWwPh6wOi0pbuhcbNC5hyjwFcF7b9HKCGYnkgyO1gINGyedIAR+CAZ4PPjK5rx
+ NFFn9i4fsO+15oum1AQ5YLYbvJ6MGnp9mUaDgEJvGQGd5PFyjaStWnc6lD+xm66Y78c2
+ UE8yLgl5l7l1Dg1HzL0pO/OTmLbf2sQbEYVaHGLCybnkkT6qEFz7SRBjj1cpeoRvkB8z
+ xcCXdDZL/7k+upNyso0Vnzp8DnU4dvZprpqNC7mv4dpkCwGAqFYcjd9sWfRBreCjAYXf
+ 3h8A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=A0ugGKSdy996G5cCplSFEOG0vQpDh89551RLNUPVsrY=;
+ b=PEPy91KjA2zGorYiaIISZ4m3iY1fRnRNPVpgGCXA/0jUWSGjI4tsZtDVbVoC5gYXF/
+ xxwaPt0POulHqlVMSUKqPdyVR29b0+r6rSXfz+X4+x1UZ+VSw63cYrP1kU5qzKAJE71V
+ qJ6Q6JmsDA+FdRMAij8CrUUnTkX/NgoYv3PmeOR5fxf+1FclhfQuOVxZ5by5Hg5PEhVY
+ 3UqOU51Q3ECE6Vu3skPIm7iwf31SlqrXk1DCMYW6qBJa4S7z+X7kA03BTYb38RGQMoDS
+ 8BZWdWWBWdrMeVUvxXfzoxmIRgKncJZ+8YXn7OA/4DoveXuZN1hrNK3LqBscD7MWICOi
+ RYhg==
+X-Gm-Message-State: APjAAAXNuRYFvmNIHPTFZkKYUJuq5Sz5vSU/q86wJ4HaazdgPXdEMaUV
+ ktO7rKxK4M+DGYqWYCzVnOwMTmmjUmOzk1uI2Yg=
+X-Google-Smtp-Source: APXvYqxY1gE2xluutA0vYW3bQC/tuQsvTnlKskNTUihkMrt/0z56p8xevQaK89OQG00nOvNGggLiZOMqj1+rHfr3cMA=
+X-Received: by 2002:a19:2d0d:: with SMTP id k13mr26787903lfj.12.1577406863391; 
+ Thu, 26 Dec 2019 16:34:23 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191226210119.GA8706@bogus>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrAJsWRmVeSWpSXmKPExsWy7bCmrq6tF2ucQcMSG4v781oZLeYfOcdq
- 8f/Ra1aL/sevmS3On9/AbnG26Q27xYq7H1ktNj2+xmpxedccNovPvUcYLT49+M9sMeP8PiaL
- hU0t7BZrj9xlt1h6/SKTxe3GFWwW//fsYHcQ9Fgzbw2jx6ZVnWwem5fUe2x8t4PJo2/LKkaP
- 7dfmMXt83iQXwB6VbZORmpiSWqSQmpecn5KZl26r5B0c7xxvamZgqGtoaWGupJCXmJtqq+Ti
- E6DrlpkD9IGSQlliTilQKCCxuFhJ386mKL+0JFUhI7+4xFYptSAlp8CyQK84Mbe4NC9dLzk/
- 18rQwMDIFKgwITvj8fMXbAV/RSpWH/3B0sA4XbCLkZNDQsBEYuP9Y+wgtpDADkaJ0x99uhi5
- gOxPjBI7Vr9hhXC+MUrMOPIPyOEA6/i0yREivpdR4tXM34wQzntGidkfG9lARgkLRElsO7CI
- FcQWEVCU+N02DWwSs8AaZom2Kb9ZQBJsAloS+1/cAGvgByq6+uMxI4jNK2An8fbsBGYQm0VA
- VeLIkWdg9aICYRInt7VA1QhKnJz5BCzOCTTnxcqPYMuYBcQlbj2ZzwRhy0tsfzuHGWSxhMAx
- dokzE5uZIJ52kZh6+SiULSzx6vgWdghbSuJlfxuUXS2x8uQRNojmDkaJLfsvsEIkjCX2L53M
- BAoLZgFNifW79CHCihI7f89lhFjMJ/Huaw80uHglOtqEIEqUJS4/uAu1VlJicXsn2wRGpVlI
- 3pmF5IVZSF6YhbBsASPLKkax1ILi3PTUYsMCY+TY3sQITt1a5jsYN5zzOcQowMGoxMPbsYsl
- Tog1say4MvcQowQHs5II7+oixjgh3pTEyqrUovz4otKc1OJDjKbA0J7ILCWanA/MK3kl8Yam
- RsbGxhYmhmamhoZK4rwcPy7GCgmkJ5akZqemFqQWwfQxcXBKNTB26X883hietu9N98/8E4fc
- wqRVJ0coJCxLXtK6eLrp24KzflmPPZM/X4xSm3NQ6In2al/Bkm+7835WSdQWfeCcsGrKnM+e
- 018y5PR0ZcXsd9ISuPbeg0PjEot6xNH6pMKEK7vbYwtkuf68+7lb7f/Ch9tetLiVz2e1XGgw
- sf+qnOPRRQvuXjVUYinOSDTUYi4qTgQAq4eALvMDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrFIsWRmVeSWpSXmKPExsWy7bCSvK6tF2ucwdIgi/vzWhkt5h85x2rx
- /9FrVov+x6+ZLc6f38BucbbpDbvFirsfWS02Pb7GanF51xw2i8+9RxgtPj34z2wx4/w+JouF
- TS3sFmuP3GW3WHr9IpPF7cYVbBb/9+xgdxD0WDNvDaPHplWdbB6bl9R7bHy3g8mjb8sqRo/t
- 1+Yxe3zeJBfAHsVlk5Kak1mWWqRvl8CV8fj5C7aCvyIVq4/+YGlgnC7YxcjBISFgIvFpk2MX
- IxeHkMBuRomdFxezdTFyAsUlJaZdPMoMUSMscfhwMUTNW0aJ7R8fgtUIC0RJbDuwiBXEFhFQ
- lPjdNo0VpIhZYA2zxPmebhaIjruMEvt2NTGCVLEJaEnsf3EDrJsfqOPqj8dgcV4BO4m3Zycw
- g9gsAqoSR448YwGxRQXCJHYuecwEUSMocXLmE7A4J9CcFys/gm1mFlCX+DPvEjOELS5x68l8
- JghbXmL72znMExiFZyFpn4WkZRaSlllIWhYwsqxilEwtKM5Nzy02LDDMSy3XK07MLS7NS9dL
- zs/dxAiOYS3NHYyXl8QfYhTgYFTi4e3YxRInxJpYVlyZe4hRgoNZSYR3dRFjnBBvSmJlVWpR
- fnxRaU5q8SFGaQ4WJXHep3nHIoUE0hNLUrNTUwtSi2CyTBycUg2MTirzBWe0Xu0+nLptsdTs
- Qm2R/PmtLFvbtWQeWgp3hQZnGHKcWx+yj8X37o9JHbd0twWIsTetFbt/fJnz7L8WQYyWfsaL
- RA3a0nL8Zpzl704O/TFRYrqBQvF82fBN/bOfH5XkY9ko5yYcVLpn0wuF/Wb99YqVYWEfXaRC
- /at45d7G3vqp8FeJpTgj0VCLuag4EQA70uBv3QIAAA==
-X-CMS-MailID: 20191227000309epcas1p145ab877d7254a2e5e29c1a33b02dd583
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20191217055106epcas1p11f2bc81d6bb2db3fc4bc257d78c337b9
-References: <20191217055738.28445-1-cw00.choi@samsung.com>
- <CGME20191217055106epcas1p11f2bc81d6bb2db3fc4bc257d78c337b9@epcas1p1.samsung.com>
- <20191217055738.28445-5-cw00.choi@samsung.com> <20191226210119.GA8706@bogus>
+References: <20191224010020.15969-1-rjones@gateworks.com>
+ <20191224010020.15969-2-rjones@gateworks.com>
+ <20191226232625.GA2186@bogus>
+In-Reply-To: <20191226232625.GA2186@bogus>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Thu, 26 Dec 2019 21:34:06 -0300
+Message-ID: <CAOMZO5Aj+PfzXrYoV8LxKStdQ-B0BLdMV16L3ya0NokozG479g@mail.gmail.com>
+Subject: Re: [PATCH v4 1/5] dt-bindings: arm: fsl: Add Gateworks Ventana
+ i.MX6DL/Q compatibles
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191226_160326_506315_0FB34029 
-X-CRM114-Status: GOOD (  22.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191226_163426_496079_A951225C 
+X-CRM114-Status: GOOD (  12.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.25 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (festevam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -134,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -146,84 +95,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, heiko@sntech.de,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org,
- a.swigon@samsung.com, krzk@kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, kyungmin.park@samsung.com,
- kgene@kernel.org, myungjoo.ham@samsung.com, leonard.crestez@nxp.com,
- lukasz.luba@arm.com, m.szyprowski@samsung.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Robert Jones <rjones@gateworks.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/27/19 6:01 AM, Rob Herring wrote:
-> On Tue, Dec 17, 2019 at 02:57:33PM +0900, Chanwoo Choi wrote:
->> In order to remove the deprecated 'devfreq' property, replace with
->> new 'exynos,parent-bus' property in order to get the parent devfreq device
->> in devicetree file instead of 'devfreq' property. But, to guarantee the
->> backward-compatibility, keep the support 'devfreq' property.
->>
->> Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
->> ---
->>  .../bindings/devfreq/exynos-bus.txt           | 16 +++++++--------
->>  drivers/devfreq/exynos-bus.c                  | 20 ++++++++++++-------
->>  2 files changed, 21 insertions(+), 15 deletions(-)
->>
->> diff --git a/Documentation/devicetree/bindings/devfreq/exynos-bus.txt b/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
->> index e71f752cc18f..c948cee01124 100644
->> --- a/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
->> +++ b/Documentation/devicetree/bindings/devfreq/exynos-bus.txt
->> @@ -45,7 +45,7 @@ Required properties only for parent bus device:
->>    of buses.
->>  
->>  Required properties only for passive bus device:
->> -- devfreq: the parent bus device.
->> +- exynos,parent-bus: the parent bus device.
-> 
-> If you are going to do something new, why not use the interconnect 
-> binding here?
+Hi Rob,
 
-As I knew, interconnect make the data path among multiple nodes
-and set the average and peak bandwidth to the specific data path.
+On Thu, Dec 26, 2019 at 8:26 PM Rob Herring <robh@kernel.org> wrote:
+>
+> On Mon, Dec 23, 2019 at 05:00:16PM -0800, Robert Jones wrote:
+> > Add the compatible enum entries for Gateworks Ventana boards.
+> >
+> > Signed-off-by: Robert Jones <rjones@gateworks.com>
+> > ---
+> >  Documentation/devicetree/bindings/arm/fsl.yaml | 2 ++
+> >  1 file changed, 2 insertions(+)
+> >
+> > diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
+> > index f79683a..a02e980 100644
+> > --- a/Documentation/devicetree/bindings/arm/fsl.yaml
+> > +++ b/Documentation/devicetree/bindings/arm/fsl.yaml
+> > @@ -126,6 +126,7 @@ properties:
+> >                - toradex,apalis_imx6q-ixora      # Apalis iMX6 Module on Ixora
+> >                - toradex,apalis_imx6q-ixora-v1.1 # Apalis iMX6 Module on Ixora V1.1
+> >                - variscite,dt6customboard
+> > +              - gw,ventana                # Gateworks i.MX6DL or i.MX6Q Ventana
+>
+> Keep entries sorted.
 
-It means that some data will be flowed from node_a to node_d
-or the reverse way because each node has the tightly coupled
-dependency for data flow.
+Just for clarification: shouldn't the entries inside fsl.yaml match
+the dtb file names?
 
-	node_a <-> node_b <-> node_c <-> node_d
+In case of the i.MX6Q based gateworks board, this should be:
 
+gw,imx6q-gw51xx
+gw,imx6q-gw52xx
+gw,imx6q-gw53xx
+gw,imx6q-gw5400-a
+gw,imx6q-gw54xx
+gw,imx6q-gw551x
+gw,imx6q-gw552x
+gw,imx6q-gw553x
+gw,imx6q-gw560x
+gw,imx6q-gw5903
+gw,imx6q-gw5904
 
-On the other hand, exynos-bus.c driver is not related to 'data path'.
-Each bus just need to control the their own frequency and voltage.
-But, share the power line (regulator) between exynos-bus device
-even if there are no any dependency of data flow.
-
-'exynos,parent-bus' property just indicate the specific
-devfreq device(parent bus device) which controls
-the shared power line(regulator) in order to prevent
-the h/w problem due to the wrong pair of frequency and voltage.
-
-'exynos,parent-bus' property is only used to catch
-the change timing of shared power line.
-
-
-And,
-as you commented, there are some data path among the exynos-bus
-devices for the display h/w as following:
-
-	bus_display -> bus_leftbus -> bus_dmc
-
-In order to make the data path between bus devices,
-interconnect binding is required. This approach[1] was posted.
-[1] https://patchwork.kernel.org/cover/11305265/
-- [RFC,v3,0/7] PM / devfreq: Simple QoS for exynos-bus using interconnect
-
--- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
+Please advise.
 
 _______________________________________________
 linux-arm-kernel mailing list
