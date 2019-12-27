@@ -2,59 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E891212B5B6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 16:47:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0A5912B5BB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 16:56:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pts2GgoXVB19QSEXLTCfdiCJLrIinIxnBAszu33MgYw=; b=OuJv5yW0/ZJRkS
-	h3YuWPetX5b5f9SpLSseY5XM7KSwlWy4EYAbaFoy2FSy+VGx0k4wgDvd7CFUTYNbpSYPov2UBGYJu
-	/uY2YyPnxQZQjpeyGHQjg1b5XXKOwxefNNcDPw9HYWMAPLZtaCBLdGNlYxTAJDsSR6SDwnk6oiJS3
-	6+A8UxkFut3S+5x1Nq/mCusBlIIcxHPN+OBikbzPy2qL94FI5BKLy9Kka3CvNhUbVgLV5QaoGhnBK
-	rSI5ymsu+P9gawM199jJl//xqrOj5IjDVriV6HUtcoygvrJakgfxXkGutPWWVkdQgeJ/qIXycopcN
-	KQ2CL/AJL2LzWUmtf0LQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TG8mpkXDFg+jjc2tAJUqRFCve1rgzFRgT+IwQtSUGA4=; b=WFhqRszyIdCB0P
+	rGLlWxsInLpa7pSCFOYlq9hG339lDDQ0Yu2FMXcRUttjCEYed7R4w6GGuYNcpTbvJNJHJ3PsGaa9X
+	S6wCZmFClmk0qkWheOsIp2esWhJ052jSvbo8j2G72HourcW0bcs/Dlw2N6kmWiT6i/cRnDpVl6tK8
+	kg2pivfYcLC0DRdXyev2uYa3KSZ2oC9YzQWI49NuXSlWa8ihUwIn+FPT0HN7mQ1n2D5Kgsxfebihy
+	573a3Oub7eOR6OHDn+VKKt/ItKGWLeP0GV6E/aaxLls+V3L148Ij5LP0XjfhNH2pKzgHgyn8VLRjW
+	unCh9l/GGaQUnwXf2rjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikrpT-0002D1-Jv; Fri, 27 Dec 2019 15:47:07 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikrpG-0002CT-8e
- for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 15:46:56 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 4D9AB634C86;
- Fri, 27 Dec 2019 17:46:17 +0200 (EET)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1ikrof-000181-JN; Fri, 27 Dec 2019 17:46:17 +0200
-Date: Fri, 27 Dec 2019 17:46:17 +0200
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: Re: [PATCH v2 5/6] media: i2c: imx290: Add configurable link
- frequency and pixel rate
-Message-ID: <20191227154617.GH861@valkosipuli.retiisi.org.uk>
-References: <20191219182222.18961-1-manivannan.sadhasivam@linaro.org>
- <20191219182222.18961-6-manivannan.sadhasivam@linaro.org>
+	id 1ikryu-0005Tp-7Y; Fri, 27 Dec 2019 15:56:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ikryk-0005TN-Tt
+ for linux-arm-kernel@lists.infradead.org; Fri, 27 Dec 2019 15:56:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4957331B;
+ Fri, 27 Dec 2019 07:56:41 -0800 (PST)
+Received: from [10.37.8.128] (unknown [10.37.8.128])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 823E83F68F;
+ Fri, 27 Dec 2019 07:56:37 -0800 (PST)
+Subject: Re: [PATCH 3/3] KVM: arm/arm64: correct AArch32 SPSR on exception
+ entry
+To: Mark Rutland <mark.rutland@arm.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, maz@kernel.org
+References: <20191220150549.31948-1-mark.rutland@arm.com>
+ <20191220150549.31948-4-mark.rutland@arm.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <1c1682fc-547a-87c1-0e13-63b0058eaa0c@arm.com>
+Date: Fri, 27 Dec 2019 15:56:40 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191219182222.18961-6-manivannan.sadhasivam@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191220150549.31948-4-mark.rutland@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_074654_671043_2FA1E16D 
-X-CRM114-Status: GOOD (  19.89  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20191227_075643_053673_FCF25D71 
+X-CRM114-Status: GOOD (  25.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,294 +66,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Peter Maydell <peter.maydell@linaro.org>, Drew Jones <drjones@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, stable@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Will Deacon <will@kernel.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Manivannan,
+Hi,
 
-On Thu, Dec 19, 2019 at 11:52:21PM +0530, Manivannan Sadhasivam wrote:
-> IMX290 operates with multiple link frequency and pixel rate combinations.
-> The initial driver used a single setting for both but since we now have
-> the lane count support in place, let's add configurable link frequency
-> and pixel rate.
-> 
-> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+On 12/20/19 3:05 PM, Mark Rutland wrote:
+> Confusingly, there are three SPSR layouts that a kernel may need to deal
+> with:
+>
+> (1) An AArch64 SPSR_ELx view of an AArch64 pstate
+> (2) An AArch64 SPSR_ELx view of an AArch32 pstate
+> (3) An AArch32 SPSR_* view of an AArch32 pstate
+>
+> When the KVM AArch32 support code deals with SPSR_{EL2,HYP}, it's either
+> dealing with #2 or #3 consistently. On arm64 the PSR_AA32_* definitions
+> match the AArch64 SPSR_ELx view, and on arm the PSR_AA32_* definitions
+> match the AArch32 SPSR_* view.
+>
+> However, when we inject an exception into an AArch32 guest, we have to
+> synthesize the AArch32 SPSR_* that the guest will see. Thus, an AArch64
+> host needs to synthesize layout #3 from layout #2.
+>
+> This patch adds a new host_spsr_to_spsr32() helper for this, and makes
+> use of it in the KVM AArch32 support code. For arm64 we need to shuffle
+> the DIT bit around, and remove the SS bit, while for arm we can use the
+> value as-is.
+>
+> I've open-coded the bit manipulation for now to avoid having to rework
+> the existing PSR_* definitions into PSR64_AA32_* and PSR32_AA32_*
+> definitions. I hope to perform a more thorough refactoring in future so
+> that we can handle pstate view manipulation more consistently across the
+> kernel tree.
+>
+> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+> Cc: Alexandru Elisei <alexandru.elisei@arm.com>
+> Cc: Drew Jones <drjones@redhat.com>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
+> Cc: Marc Zyngier <maz@kernel.org>
+> Cc: Peter Maydell <peter.maydell@linaro.org>
+> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: stable@vger.kernel.org
 > ---
->  drivers/media/i2c/imx290.c | 155 +++++++++++++++++++++----------------
->  1 file changed, 89 insertions(+), 66 deletions(-)
-> 
-> diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
-> index a1974340e6fa..52f1e470b507 100644
-> --- a/drivers/media/i2c/imx290.c
-> +++ b/drivers/media/i2c/imx290.c
-> @@ -45,8 +45,6 @@
->  #define IMX290_HMAX_2_720 0x19C8
->  #define IMX290_HMAX_4_720 0x0CE4
->  
-> -#define IMX290_DEFAULT_LINK_FREQ 445500000
-> -
->  static const char * const imx290_supply_name[] = {
->  	"vdda",
->  	"vddd",
-> @@ -63,8 +61,6 @@ struct imx290_regval {
->  struct imx290_mode {
->  	u32 width;
->  	u32 height;
-> -	u32 pixel_rate;
-> -	u32 link_freq_index;
->  
->  	const struct imx290_regval *data;
->  	u32 data_size;
-> @@ -281,7 +277,10 @@ static const struct imx290_regval imx290_12bit_settings[] = {
->  
->  /* supported link frequencies */
->  static const s64 imx290_link_freq[] = {
-> -	IMX290_DEFAULT_LINK_FREQ,
-> +	891000000, /* 1920x1080 -  2 lane */
-> +	445500000, /* 1920x1080 -  4 lane */
-> +	594000000, /* 1280x720  -  2 lane */
-> +	297000000, /* 1280x720  -  4 lane */
-
-Please use different arrays for different lane configurations. That makes
-this a lot cleaner.
-
-This patch should precede the one adding support for 12 bpp.
-
->  };
->  
->  /* Mode configs */
-> @@ -291,16 +290,12 @@ static const struct imx290_mode imx290_modes[] = {
->  		.height = 1080,
->  		.data = imx290_1080p_settings,
->  		.data_size = ARRAY_SIZE(imx290_1080p_settings),
-> -		.pixel_rate = 178200000,
-> -		.link_freq_index = 0,
->  	},
->  	{
->  		.width = 1280,
->  		.height = 720,
->  		.data = imx290_720p_settings,
->  		.data_size = ARRAY_SIZE(imx290_720p_settings),
-> -		.pixel_rate = 178200000,
-> -		.link_freq_index = 0,
->  	},
->  };
->  
-> @@ -509,6 +504,73 @@ static int imx290_get_fmt(struct v4l2_subdev *sd,
->  	return 0;
+>  arch/arm/include/asm/kvm_emulate.h   |  5 +++++
+>  arch/arm64/include/asm/kvm_emulate.h | 32 ++++++++++++++++++++++++++++++++
+>  virt/kvm/arm/aarch32.c               |  6 +++---
+>  3 files changed, 40 insertions(+), 3 deletions(-)
+>
+> diff --git a/arch/arm/include/asm/kvm_emulate.h b/arch/arm/include/asm/kvm_emulate.h
+> index dee2567661ed..b811576bc456 100644
+> --- a/arch/arm/include/asm/kvm_emulate.h
+> +++ b/arch/arm/include/asm/kvm_emulate.h
+> @@ -53,6 +53,11 @@ static inline void vcpu_write_spsr(struct kvm_vcpu *vcpu, unsigned long v)
+>  	*__vcpu_spsr(vcpu) = v;
 >  }
 >  
-> +static s64 imx290_get_link_freq_index(struct imx290 *imx290)
+> +static inline unsigned long host_spsr_to_spsr32(unsigned long spsr)
 > +{
-> +	const struct imx290_mode *cur_mode = imx290->current_mode;
-> +	u8 index;
-> +
-> +	if (cur_mode->width == 1920)
-> +		index = imx290->nlanes / 4;
-> +	else
-> +		index = (imx290->nlanes / 4) + 2;
-> +
-> +	return index;
+> +	return spsr;
 > +}
 > +
-> +static s64 imx290_get_link_freq(struct imx290 *imx290)
-> +{
-> +	u8 index = imx290_get_link_freq_index(imx290);
-> +
-> +	return imx290_link_freq[index];
-> +}
-> +
-> +static u64 imx290_calc_pixel_rate(struct imx290 *imx290)
-> +{
-> +	s64 link_freq = imx290_get_link_freq(imx290);
-> +	u8 nlanes = imx290->nlanes;
-> +
-> +	/* pixel rate = link_freq * 2 * nr_of_lanes / bits_per_sample */
-> +	return (link_freq * 2 * nlanes / imx290->bpp);
-> +}
-> +
-> +static int imx290_write_current_format(struct imx290 *imx290,
-> +				       struct v4l2_mbus_framefmt *format)
-> +{
-> +	int ret;
-> +
-> +	switch (format->code) {
-> +	case MEDIA_BUS_FMT_SRGGB10_1X10:
-> +		ret = imx290_set_register_array(imx290, imx290_10bit_settings,
-> +						ARRAY_SIZE(
-> +							imx290_10bit_settings));
-> +		if (ret < 0) {
-> +			dev_err(imx290->dev, "Could not set format registers\n");
-> +			return ret;
-> +		}
-> +
-> +		imx290->bpp = 10;
-> +
-> +		break;
-> +	case MEDIA_BUS_FMT_SRGGB12_1X12:
-> +		ret = imx290_set_register_array(imx290, imx290_12bit_settings,
-> +						ARRAY_SIZE(
-> +							imx290_12bit_settings));
-> +		if (ret < 0) {
-> +			dev_err(imx290->dev, "Could not set format registers\n");
-> +			return ret;
-> +		}
-> +
-> +		imx290->bpp = 12;
-> +
-> +		break;
-> +	default:
-> +		dev_err(imx290->dev, "Unknown pixel format\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->  static int imx290_set_fmt(struct v4l2_subdev *sd,
->  			  struct v4l2_subdev_pad_config *cfg,
->  		      struct v4l2_subdev_format *fmt)
-> @@ -517,6 +579,7 @@ static int imx290_set_fmt(struct v4l2_subdev *sd,
->  	const struct imx290_mode *mode;
->  	struct v4l2_mbus_framefmt *format;
->  	unsigned int i;
-> +	int ret = 0;
->  
->  	mutex_lock(&imx290->lock);
->  
-> @@ -542,17 +605,27 @@ static int imx290_set_fmt(struct v4l2_subdev *sd,
->  		format = v4l2_subdev_get_try_format(sd, cfg, fmt->pad);
->  	} else {
->  		format = &imx290->current_format;
-> -		__v4l2_ctrl_s_ctrl(imx290->link_freq, mode->link_freq_index);
-> -		__v4l2_ctrl_s_ctrl_int64(imx290->pixel_rate, mode->pixel_rate);
-> -
->  		imx290->current_mode = mode;
-> +
-> +		/* Set current frame format */
-> +		ret = imx290_write_current_format(imx290, &fmt->format);
-> +		if (ret < 0) {
-> +			dev_err(imx290->dev, "Could not set frame format\n");
-> +			goto err_out;
-> +		}
-> +
-> +		__v4l2_ctrl_s_ctrl(imx290->link_freq,
-> +				   imx290_get_link_freq_index(imx290));
-> +		__v4l2_ctrl_s_ctrl_int64(imx290->pixel_rate,
-> +					 imx290_calc_pixel_rate(imx290));
->  	}
->  
->  	*format = fmt->format;
->  
-> +err_out:
->  	mutex_unlock(&imx290->lock);
->  
-> -	return 0;
-> +	return ret;
->  }
->  
->  static int imx290_entity_init_cfg(struct v4l2_subdev *subdev,
-> @@ -569,44 +642,6 @@ static int imx290_entity_init_cfg(struct v4l2_subdev *subdev,
->  	return 0;
->  }
->  
-> -static int imx290_write_current_format(struct imx290 *imx290,
-> -				       struct v4l2_mbus_framefmt *format)
-> -{
-> -	int ret;
-> -
-> -	switch (format->code) {
-> -	case MEDIA_BUS_FMT_SRGGB10_1X10:
-> -		ret = imx290_set_register_array(imx290, imx290_10bit_settings,
-> -						ARRAY_SIZE(
-> -							imx290_10bit_settings));
-> -		if (ret < 0) {
-> -			dev_err(imx290->dev, "Could not set format registers\n");
-> -			return ret;
-> -		}
-> -
-> -		imx290->bpp = 10;
-> -
-> -		break;
-> -	case MEDIA_BUS_FMT_SRGGB12_1X12:
-> -		ret = imx290_set_register_array(imx290, imx290_12bit_settings,
-> -						ARRAY_SIZE(
-> -							imx290_12bit_settings));
-> -		if (ret < 0) {
-> -			dev_err(imx290->dev, "Could not set format registers\n");
-> -			return ret;
-> -		}
-> -
-> -		imx290->bpp = 12;
-> -
-> -		break;
-> -	default:
-> -		dev_err(imx290->dev, "Unknown pixel format\n");
-> -		return -EINVAL;
-> -	}
-> -
-> -	return 0;
-> -}
-> -
->  static int imx290_set_hmax(struct imx290 *imx290, u32 val)
+>  static inline unsigned long vcpu_get_reg(struct kvm_vcpu *vcpu,
+>  					 u8 reg_num)
 >  {
->  	int ret;
-> @@ -640,13 +675,6 @@ static int imx290_start_streaming(struct imx290 *imx290)
->  		return ret;
->  	}
+> diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
+> index d69c1efc63e7..98672938f9f9 100644
+> --- a/arch/arm64/include/asm/kvm_emulate.h
+> +++ b/arch/arm64/include/asm/kvm_emulate.h
+> @@ -204,6 +204,38 @@ static inline void vcpu_write_spsr(struct kvm_vcpu *vcpu, unsigned long v)
+>  		vcpu_gp_regs(vcpu)->spsr[KVM_SPSR_EL1] = v;
+>  }
 >  
-> -	/* Set current frame format */
-> -	ret = imx290_write_current_format(imx290, &imx290->current_format);
-> -	if (ret < 0) {
-> -		dev_err(imx290->dev, "Could not set frame format\n");
-> -		return ret;
-> -	}
-> -
->  	/* Apply default values of current mode */
->  	ret = imx290_set_register_array(imx290, imx290->current_mode->data,
->  					imx290->current_mode->data_size);
-> @@ -904,12 +932,6 @@ static int imx290_probe(struct i2c_client *client)
->  		goto free_err;
->  	}
+> +/*
+> + * The layout of SPSR for an AArch32 state is different when observed from an
+> + * AArch64 SPSR_ELx or an AArch32 SPSR_*. This function generates the AArch32
+> + * view given an AArch64 view.
+> + *
+> + * In ARM DDI 0487E.a see:
+> + *
+> + * - The AArch64 view (SPSR_EL2) in section C5.2.18, page C5-426
+> + * - The AArch32 view (SPSR_abt) in section G8.2.126, page G8-6256
+> + * - The AArch32 view (SPSR_und) in section G8.2.132, page G8-6280
+> + *
+> + * Which show the following differences:
+> + *
+> + * | Bit | AA64 | AA32 | Notes                       |
+> + * +-----+------+------+-----------------------------|
+> + * | 24  | DIT  | J    | J is RES0 in ARMv8          |
+> + * | 21  | SS   | DIT  | SS doesn't exist in AArch32 |
+> + *
+> + * ... and all other bits are (currently) common.
+> + */
+> +static inline unsigned long host_spsr_to_spsr32(unsigned long spsr)
+> +{
+> +	const unsigned long overlap = BIT(24) | BIT(21);
+> +	unsigned long dit = !!(spsr & PSR_AA32_DIT_BIT);
+> +
+> +	spsr &= overlap;
+> +
+> +	spsr |= dit << 21;
+> +
+> +	return spsr;
+> +}
+> +
+>  static inline bool vcpu_mode_priv(const struct kvm_vcpu *vcpu)
+>  {
+>  	u32 mode;
+> diff --git a/virt/kvm/arm/aarch32.c b/virt/kvm/arm/aarch32.c
+> index 17bcde5c2451..115210e64682 100644
+> --- a/virt/kvm/arm/aarch32.c
+> +++ b/virt/kvm/arm/aarch32.c
+> @@ -128,15 +128,15 @@ static unsigned long get_except32_cpsr(struct kvm_vcpu *vcpu, u32 mode)
 >  
-> -	if (imx290->ep.link_frequencies[0] != IMX290_DEFAULT_LINK_FREQ) {
-> -		dev_err(dev, "Unsupported link frequency\n");
-> -		ret = -EINVAL;
-> -		goto free_err;
-> -	}
-> -
->  	/* Only CSI2 is supported for now */
->  	if (imx290->ep.bus_type != V4L2_MBUS_CSI2_DPHY) {
->  		dev_err(dev, "Unsupported bus type, should be CSI2\n");
-> @@ -976,14 +998,15 @@ static int imx290_probe(struct i2c_client *client)
->  				       &imx290_ctrl_ops,
->  				       V4L2_CID_LINK_FREQ,
->  				       ARRAY_SIZE(imx290_link_freq) - 1,
-> -				       0, imx290_link_freq);
-> +				       (imx290->nlanes / 4),
-> +				       imx290_link_freq);
->  	if (imx290->link_freq)
->  		imx290->link_freq->flags |= V4L2_CTRL_FLAG_READ_ONLY;
+>  static void prepare_fault32(struct kvm_vcpu *vcpu, u32 mode, u32 vect_offset)
+>  {
+> -	unsigned long new_spsr_value = *vcpu_cpsr(vcpu);
+> -	bool is_thumb = (new_spsr_value & PSR_AA32_T_BIT);
+> +	unsigned long spsr = *vcpu_cpsr(vcpu);
+> +	bool is_thumb = (spsr & PSR_AA32_T_BIT);
+>  	u32 return_offset = return_offsets[vect_offset >> 2][is_thumb];
+>  	u32 sctlr = vcpu_cp15(vcpu, c1_SCTLR);
 >  
->  	imx290->pixel_rate = v4l2_ctrl_new_std(&imx290->ctrls, &imx290_ctrl_ops,
->  					       V4L2_CID_PIXEL_RATE, 1,
->  					       INT_MAX, 1,
-> -					       imx290_modes[0].pixel_rate);
-> +					       imx290_calc_pixel_rate(imx290));
+>  	*vcpu_cpsr(vcpu) = get_except32_cpsr(vcpu, mode);
 >  
->  	v4l2_ctrl_new_std_menu_items(&imx290->ctrls, &imx290_ctrl_ops,
->  				     V4L2_CID_TEST_PATTERN,
+>  	/* Note: These now point to the banked copies */
+> -	vcpu_write_spsr(vcpu, new_spsr_value);
+> +	vcpu_write_spsr(vcpu, host_spsr_to_spsr32(spsr));
+>  	*vcpu_reg32(vcpu, 14) = *vcpu_pc(vcpu) + return_offset;
+>  
+>  	/* Branch to exception vector */
 
--- 
-Regards,
+With Marc's comment fixed:
 
-Sakari Ailus
+Reviewed-by: Alexandru Elisei <alexandru.elisei@arm.com>
+
+Thanks,
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
