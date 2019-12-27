@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 948EC12B5F2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 17:38:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72C9C12B5F6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 17:41:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qJz2I6IGzRCLPv/my8qiteWhDJJ35jxuzeJsfqsSmjg=; b=t3OXU2BSknG+/U
-	XTk2e8k2ZezB2aEbBq/nAJ+4HcSn8csatwSaSYPHGLP8JVWxqFybsBYFTZESdYVvmRfXwI8BNiBLm
-	Vy6Iq40dXQzzVaqRoGh96FGYz5a7CwPhl7xWye05uGP6VJ4qqV+sX1BJDL/m1GXtvIxE7OEwo9JT0
-	whtrIdWJ1igHtQMd4lNDzrmf4XBFhisH/lFSHY1wqkCe+XENTOHvh71SJn9WK+UNRJ7Ushk+KWw04
-	U7tElY+Yc63lFxUJRrozlIaEI4k74YYq7au3JyjQy5DxVoEpYwKni+Vt3BR0FNKiHNsOWR4RA46nv
-	Ck9xFabZ16a1qKnHZt/Q==;
+	List-Owner; bh=rkDEwyo4ee+E56s6vUsvgHwdDWxpSEvnKTk1jPVoOuU=; b=fj753CjD5DrnKV
+	rhE8/B1Qi+Z3Uc3E+/98JOuCB5ErdI4ZdfZ16XlNdUDWkUMC51VWscUL1MoTi51btlxMSGplKITTD
+	5O5x93F4+5LL0PILlAZqN6U0FsJlAQKFqMQiEePsFcxtVWZNsky6Y7nj/LiY7lsDg3zC0SvsaQbm3
+	oUer8AVZKG31j6ovDQd2yOKR3b1lY7gBH8SC3lJgjeamB5n4AT9HbJQBtOTGYKWucxx/JPM6slnnF
+	ckrWuxL+82Wdx+WPffCwPR7ePzOkV57SLXJgF9cC7qg0Hg+msanXG7x5adD9wbQKViW6DS1T42BVh
+	68OedwsWfy9RvV4/kNpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iksdJ-0001Ch-7W; Fri, 27 Dec 2019 16:38:37 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1iksfb-0004YV-Ui; Fri, 27 Dec 2019 16:40:59 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iksd3-0001Bj-FQ; Fri, 27 Dec 2019 16:38:23 +0000
-Received: by mail-ed1-x543.google.com with SMTP id i16so25715375edr.5;
- Fri, 27 Dec 2019 08:38:19 -0800 (PST)
+ id 1iksfM-0004X1-Ui; Fri, 27 Dec 2019 16:40:46 +0000
+Received: by mail-ed1-x544.google.com with SMTP id c26so25707909eds.8;
+ Fri, 27 Dec 2019 08:40:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6YTB1fNIm79m/hiZxeT3tYKFD5H8aAnuxvQfJh9UTTA=;
- b=rCb6yLvYVvl/bhWTiHwA3cx/pPDMQSYDZjENCpcrW46hTqEU+37cxTsRfQbFZWgxnQ
- 8lAZ3VnOW6o4VNL4GLpbT+x7T62C1KAFCX6q78uC1Jqr2tffxf0f3GWDIYdHlOmMn6c0
- D2gFJ28f+y57Us0+szO7vgqbXxMi15owj96gWUV2Vsc826+PMIOSLSe3X9FX6RzD8LA9
- VHlwek/F+/vnefGNtzo/32g1LnHSVG9grbquv7p1Qafnn7SenyEgVHxIWNyfaCLBR8LU
- uWOlhhWEOQpoGiItymVbpilrcKbra+UJRHiyIzE1CTuloR4yCh+mMaQiU/deAi2BA+j7
- 72Ug==
+ :cc; bh=xgrOcm9k9IAQcFI+FWINNDCQ0Z4VaYkcjqiXu7nzoSs=;
+ b=Yf6Cu8DGYWlCJdHGMC0bCW0kyLJBuSPvgcu9lEwGombWcvTkBDMvNqz5BXObWo3yok
+ p5el38LSnq5WwV5xPaxH2kD1uC1zQLDc90NKaHzo5pMnK5IM3t5+g7M6Dy89kSbkesBD
+ PKuPfIb9Ne2DPhT2T1AyR9N4f1vZHB8G2afcutDR21ntb4f5EV1WNUttItuiRsGW8lO3
+ oagm92RwvJIfhFK20d9NRpGz+rCQDCS24AeDaFlUwM9TI5mAPRcuwVkhqJOw521B+iVu
+ Fw2LLTkI4p8vCWe4nn2jFEx3hCfknLrdce2dS+tW5Z5HpnuhBts1ssj/AkZzzy4Yc5KX
+ T1yg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=6YTB1fNIm79m/hiZxeT3tYKFD5H8aAnuxvQfJh9UTTA=;
- b=ZshB0TPAPDBKjeQ3MNFAqmBRueKEKwOa0BtrtIkFtJmGVTNImOHgDA2r1k3QhbH7u1
- 63KgbLSLTSDS7EzdzQmtTb2Hh4AwkQrXppsiFaO+uiSpaUYvJRYVTQMwzkq239UARHJo
- v26pKI6w+3346OUA2UVgsOrBMb8UWOGlgCpxVxJgwk9zVlr1bsOAptuZOnPZNlrPbTYG
- T+pUOIEMJ8SenmVWypOUj0H8zI+2RZW+6o9C4Yzu0XcN7STSm1UJyQatWEVoSY7DBTWc
- e0sTTezV5HlMqwChVOHo3u20DlxNoFhh6XW178V/6481izsWGyvhvT830bX+jKy1dsS0
- 2WcQ==
-X-Gm-Message-State: APjAAAVLHLh9XTDnbQSxm5TDA75u5+sJqpd4nApEVdpJQ1EyMaxE3ttS
- t8zngzzvFku3stUi/XMP5EYR1QXio4FE93hb5so=
-X-Google-Smtp-Source: APXvYqzXINFtgDqMBlIV6U4EBXznckvgHZpZ4LhokGGqjDtkp3WySsLLrOwjy/HccteQFMutQpmQt9YGz45Q+BIy3TM=
-X-Received: by 2002:a17:906:e219:: with SMTP id
- gf25mr54733718ejb.51.1577464697886; 
- Fri, 27 Dec 2019 08:38:17 -0800 (PST)
+ bh=xgrOcm9k9IAQcFI+FWINNDCQ0Z4VaYkcjqiXu7nzoSs=;
+ b=K6IOJI3NDBJNZ3P5Dh8q8pS+Fpkvk1GGVqLTISv8ibXSDTrWd8XqCm6SorEcgD+NtP
+ kjRZ7Yd9RrAJgS2WEEv1Dxd3uW9X4b4lu78eN85wo+e+7E/Xsh370alAfPyppt422n38
+ nmKTlxRbLO13GxwkvGgSRYZJJ3jdFycaMw5UBw6u1ne7ZpMrEZC4sLGB8Esh29op0Rqs
+ EKJCOvbw40Nzv77ginCNOXhoYJETqgw3FJUc059B2xsmcDTdSPJCRDeINO6lkviLLdgS
+ SrFEWkGOYvy+U5eGbFVv71z+GVia5f5gFC9QTfs1G5IQmx999aarzi7T1B/uiD+AqsyG
+ 9zbA==
+X-Gm-Message-State: APjAAAU7k7QVE2Ubgh+/4Rqo3/HE6lHg+b0sDw22eAA9CiUXSLZi9U+j
+ 3/RqciKOdQRUahlJvj7KsnbQuFzKMK2wrE7EIBw=
+X-Google-Smtp-Source: APXvYqxkHYAyndioq3rkIDvgR0cbdviWKBnIZcDlDoZQCfu0BNG7PYKVTKcaxVPiAWtYOYRzgvoWo7ltBXVq83a0o5o=
+X-Received: by 2002:a50:bae1:: with SMTP id x88mr38955946ede.10.1577464842282; 
+ Fri, 27 Dec 2019 08:40:42 -0800 (PST)
 MIME-Version: 1.0
 References: <1577428606-69855-1-git-send-email-hanjie.lin@amlogic.com>
- <1577428606-69855-5-git-send-email-hanjie.lin@amlogic.com>
-In-Reply-To: <1577428606-69855-5-git-send-email-hanjie.lin@amlogic.com>
+ <1577428606-69855-4-git-send-email-hanjie.lin@amlogic.com>
+In-Reply-To: <1577428606-69855-4-git-send-email-hanjie.lin@amlogic.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Fri, 27 Dec 2019 17:38:07 +0100
-Message-ID: <CAFBinCD8V-Swihz+VJ780sXJtM9cXprDcGCHVuHjjCx0DEOodQ@mail.gmail.com>
-Subject: Re: [PATCH v3 4/6] usb: dwc3: Add Amlogic A1 DWC3 glue
+Date: Fri, 27 Dec 2019 17:40:31 +0100
+Message-ID: <CAFBinCCEz-xezKatuHDPRURRWa3YNmgMObbr85GSvaT_bLFcNQ@mail.gmail.com>
+Subject: Re: [PATCH v3 3/6] phy: amlogic: Add Amlogic A1 USB2 PHY Driver
 To: Hanjie Lin <hanjie.lin@amlogic.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_083821_540119_15F500D4 
-X-CRM114-Status: GOOD (  16.98  )
+X-CRM114-CacheID: sfid-20191227_084045_072651_16781EE7 
+X-CRM114-Status: UNSURE (   8.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,76 +109,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Hanjie,
+Hi Hanjie,
 
-sorry that it took me so long to look at this
-you can find my comments below
+overall this looks good to me and I have one question
 
 On Fri, Dec 27, 2019 at 7:37 AM Hanjie Lin <hanjie.lin@amlogic.com> wrote:
 [...]
-> +static const struct clk_bulk_data meson_g12a_clocks[] = {
-> +       { .id = NULL},
-> +};
-> +
-> +static const struct clk_bulk_data meson_a1_clocks[] = {
-> +       { .id = "usb_ctrl"},
-> +       { .id = "usb_bus"},
-> +       { .id = "xtal_usb_phy"},
-> +       { .id = "xtal_usb_ctrl"},
-> +};
-nit-pick: the values in meson_g12a_clocks and meson_a1_clocks all have
-a space after the opening "{" but no space before the closing "}"
-we should be consistent here (personally I prefer the variant with
-space after "{" and before "}", but having no space in both cases is
-fine for me too)
+> +       if (priv->soc_id == MESON_SOC_A1)
+> +               value |= PHY_CTRL_R18_MPLL_DCO_CLK_SEL;
+...here we have some CLK_SEL bit
 
 [...]
->  static void dwc3_meson_g12a_usb2_set_mode(struct dwc3_meson_g12a *priv,
-> @@ -138,10 +156,13 @@ static int dwc3_meson_g12a_usb2_init(struct dwc3_meson_g12a *priv)
->  {
->         int i;
->
-> -       if (priv->otg_mode == USB_DR_MODE_PERIPHERAL)
-> -               priv->otg_phy_mode = PHY_MODE_USB_DEVICE;
-> -       else
-> -               priv->otg_phy_mode = PHY_MODE_USB_HOST;
-> +       /* only G12A supports otg mode */
+> -       priv->clk = devm_clk_get(dev, "xtal");
+> -       if (IS_ERR(priv->clk))
+> -               return PTR_ERR(priv->clk);
 > +       if (priv->soc_id == MESON_SOC_G12A) {
-> +               if (priv->otg_mode == USB_DR_MODE_PERIPHERAL)
-> +                       priv->otg_phy_mode = PHY_MODE_USB_DEVICE;
-> +               else
-> +                       priv->otg_phy_mode = PHY_MODE_USB_HOST;
+> +               priv->clk = devm_clk_get(dev, "xtal");
+> +               if (IS_ERR(priv->clk))
+> +                       return PTR_ERR(priv->clk);
 > +       }
-can you comment on future Amlogic SoCs and how this code will look in
-the future?
-I would like to avoid having to adjust this "if" for every new SoC,
-but I don't know if the majority of the SoCs will have OTG support
-
-also one idea that just came to my mind:
-you could define in the .yaml binding that for A1 only dr_mode =
-"host" is allowed
-then you may not need extra logic in the driver at all
-
-[...]
-> -               if (i == USB2_OTG_PHY) {
-> +               if (priv->soc_id == MESON_SOC_G12A && i == USB2_OTG_PHY) {
-on GXL we have two PHYs (0 and 1), the second one is OTG capable
-on GXM we have three PHYs (0..2), the second one is OTG capable
-on G12A/G12B we have two PHYs (0 and 1), the second one is OTG capable
-
-you already wrote that there is only one USB2 PHY on the A1 SoC
-is really only the second PHY port ("usb2-phy1" instead of
-"usb2-phy0") used on A1?
-if "usb2-phy0" is correct then you don't need these checks (there are
-more checks like this below)
-
-[...]
-> -       usb_role_switch_unregister(priv->role_switch);
-> +       if (priv->soc_id == MESON_SOC_G12A)
-> +               usb_role_switch_unregister(priv->role_switch);
-I didn't expect this because in _probe usb_role_switch_register is still called
-on A1 we now call usb_role_switch_register() but we never call
-usb_role_switch_unregister()
+but here we don't need any parent/input clock?
+does this mean that the USB2 PHY on the A1 SoC doesn't have any clock
+inputs? how does it generate the correct clock for itself then?
 
 
 Martin
