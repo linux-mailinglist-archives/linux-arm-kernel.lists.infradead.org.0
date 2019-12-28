@@ -2,75 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DA4B12BCDB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 07:16:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BE7912BCE6
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 07:44:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Rb6uZvKef32bg6rKNFUOZ/36amBMZjxiKlaxh6jl20o=; b=OLD
-	HqG5PN+Pms0d6BlU19XZpOd8iIEXtbp8L9i4cjmHZn4QQAJzRYBSGIrc5PkVRjbwQATsDJxFD3dmw
-	KNXVSYcqf0oITrGtlBQ39dHpj+cpCfGBSY1BDo5l784NxfNFzKy+dAuMQn3pKxd/3Swih/9xBCYWe
-	lA2es4K743a/MgJowi4avy6AXeFVqsdyiFjCy+WHPVOICOUj7j7NdzIk3xdQBp5LfHNprZfPBWb4K
-	/4ajOF25lcwKsCniPPBmUx90+uma5WXy62VZNeboC7Lp4iZj7d2mxbJsSmr/RwRY0HJN/tjhbp09D
-	CNeoZS/z1R2v44ApgC9gpI6iC/rz4Cw==;
+	References:List-Owner; bh=N0Lb4ciD7osONlVuVOI985f42DjR/EZVZGXwMf+46hg=; b=cSg
+	Ye8ojhFRyqbZVR8lYNRA3WmvU2mhl6u4pm3fnIMpJbvTWgwcdgJR0g/KPA9MQbem8ESbEVpDLP+XJ
+	bO4snl3IGlUyXKoopQZamOycM4AsV7b2DPIlPAroPrEVwCXwuWGrPAj/ul/BYfivt9MnJULHg/+fE
+	Z0VnIY8GDks+Vr6xiGzmQMzFexkDJcUMX2PFyx9W2PJ/9St5Od0lcB3bBta2pvn3L3C0vNgNsFRVK
+	TCzn2B7ChxTN8ahoIO7NdWiwe9r2xtGkaljxy4PcZCQOxBQueYvSjoDDlSs1AXJrNVURh6cH20TM5
+	QOctIqFHjIStEPBLgz9Jq6RJ13Zbh5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1il5O8-00025P-Gj; Sat, 28 Dec 2019 06:15:48 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1il5pi-0000ml-RJ; Sat, 28 Dec 2019 06:44:18 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1il5Ny-00024U-Tf
- for linux-arm-kernel@lists.infradead.org; Sat, 28 Dec 2019 06:15:40 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id t101so5835231pjb.4
+ id 1il5pV-0000mP-T1
+ for linux-arm-kernel@lists.infradead.org; Sat, 28 Dec 2019 06:44:07 +0000
+Received: by mail-pg1-x542.google.com with SMTP id a33so15470051pgm.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 27 Dec 2019 22:15:38 -0800 (PST)
+ Fri, 27 Dec 2019 22:44:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=qe6cSiGPXPhmquRmJ+vPfyD3fRySMNawHDWjAW0LBjw=;
- b=mSbekCGB4AVcrFqm765lc5SaSM4aAYaisiGXUoW/1H2dX9x3XCyGFhyYGvJ7CAxF0Q
- i3k//4abu6O5iYqmX0H5lFXruYG78sTBGK3mocMEcU5pUqKdsJ/Qhs8SShcAW1+mvn8k
- LCvJ1sNGbRlpgMJ+nECm555asbw4gIq1l7liz6zRp12cYiCFQUv45axwicQY0n8WbGDo
- ZejPXP7ufiq0d0sC5o/MD8vNS6TVAozMG2QFHE5Q0FzQ4cyMBe0jyc8hxb3irxY86sWX
- AYIl7Le9dcORNFwYb7IkRbUEbB457F+6Urp/7tFbwMHcE6StbYQ5l5MIdz/Vxa1HyEkm
- pGOg==
+ bh=k/Zh0wd0iyh47HJcj26AK+VtSYrhhFOp9r5l6dctHRg=;
+ b=cQ87Up34bttOiGDEXDLiZ+4e4O19HR8fqNNWjDzMEWGjLJeDt12PbmxIzk/sHUID9c
+ yPTUXIf5hAOPK1T2/s1zzolWudNsW/MYZkhVlRhXpj3Q8czVxQcMThExn6rkBiilqYLq
+ dz6cInYDh3jNyF8o/vex+/jNRJSs1g+OnegrFoWJtB/Ygj9clWo4AGnQsxtPXXK+K/mg
+ Jpd7VylXheG7lEVoyg9PUUlvvGYkyMSef7i/+xpgeTk0nUggIvdaAyX7jBWjWjKBLOn/
+ aDjUziw1rZ2zHCWzWzdk0QbXv70r+eWvqiN1mNHhZyUnzLWetCycgQMezieDHqOWEB9M
+ ZCCw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=qe6cSiGPXPhmquRmJ+vPfyD3fRySMNawHDWjAW0LBjw=;
- b=FNoVi6pCQlF9/J6HhE6m8PPGjKw53GNDBvIf8m/rLMhyRQSzJh7kj3DiOz/y/t++t0
- l//czTB5nWrhQz4uRXO2jUzRlfxByBQszw+4FzHqUdLRBJ+QYjzhX1ta1tf9OdwKC/2b
- fdqiZhS/l/zDdkKoU5PsWBmmKOUJ240N5dV9H8AOaAlLxtIPOwOz07I9iO4tA0HRXNG+
- E+A4D8bDjZWARv7CaOKWYqpjV8B2w/XIIgcGm6YDNAWSzbT87DcLRnK05A8NG/rzW7ac
- gkOFhQoizBV/8ct+yYKc36b8+0H0gf3NuXKsK/TIimNVXoVAzYDT3GhRMEa1EuY9QMCu
- bWSA==
-X-Gm-Message-State: APjAAAUe3Qd06BYLbp7FtvlIkx1hhdytc627ZOSbA4Au8fsNGOoZxhyt
- KT3Y/BBCnPMVn/UIgNAXBlE=
-X-Google-Smtp-Source: APXvYqz2bcxQFOhSNl7uvapbX387WUr60/UnSgG+VSIdTO4YpwUM2lqbK73iE31Un0HN1Uc2lN2I/g==
-X-Received: by 2002:a17:90a:300b:: with SMTP id
- g11mr30676779pjb.123.1577513737609; 
- Fri, 27 Dec 2019 22:15:37 -0800 (PST)
+ bh=k/Zh0wd0iyh47HJcj26AK+VtSYrhhFOp9r5l6dctHRg=;
+ b=i7TWCKTrhz/l+UFpTTNdpZ1neOyjKe6DigvvzjXMuA9XDUGInhLfUeYlq6gikJyccl
+ rsWAqUcUSxrKihl5geqVf1757lOSpGBNR/nB8AvmTRUNSsfQS0MorLzl/iXqd+PZTiYQ
+ b2AXDiywy85AFd+ZhMEfOO8NqucG4eyaoFDHOuVLXSFzL9xSJN8UPqmYwBo/r9tIXE5V
+ lrf5f+TFI4dPDWQEAwkxI3UDfAB79qaSPrJa/s9Ue7UxnBvpLRbypZ3HoppWMukpkaaw
+ pVJ5B3n6RrlwGTt67TiZ3bYrN65IcbJ6Wp4bsPMgX1nQUDQU8vxzutN7pt4+BA5GEVnH
+ BSww==
+X-Gm-Message-State: APjAAAWPG5cuwe7DWOtiMTzCgL7m0qDYR3JnJH21NPdyErESuoCoEZVl
+ qUZA0d9RjqqX/9eU7JqYx2g=
+X-Google-Smtp-Source: APXvYqxS56Xo+lxmahknG9q55wIA+ODBR3wY7WgCdNMBd37PV7FVIa4xuPsJ37k352RZ05q1fDWlBA==
+X-Received: by 2002:a65:66d7:: with SMTP id c23mr60290506pgw.40.1577515444820; 
+ Fri, 27 Dec 2019 22:44:04 -0800 (PST)
 Received: from localhost ([43.224.245.179])
- by smtp.gmail.com with ESMTPSA id x65sm44401182pfb.171.2019.12.27.22.15.36
+ by smtp.gmail.com with ESMTPSA id q15sm39751585pgi.55.2019.12.27.22.44.03
  (version=TLS1_2 cipher=AES128-SHA bits=128/128);
- Fri, 27 Dec 2019 22:15:37 -0800 (PST)
+ Fri, 27 Dec 2019 22:44:04 -0800 (PST)
 From: qiwuchen55@gmail.com
-To: mmayer@broadcom.com, rjw@rjwysocki.net, viresh.kumar@linaro.org,
- f.fainelli@gmail.com
-Subject: [PATCH] cpufreq: brcmstb-avs-cpufreq: avoid a stuck risk and UAF
- issue in brcm_avs_cpufreq_get()
-Date: Sat, 28 Dec 2019 14:15:30 +0800
-Message-Id: <1577513730-14254-1-git-send-email-qiwuchen55@gmail.com>
+To: kgene@kernel.org, krzk@kernel.org, rjw@rjwysocki.net,
+ viresh.kumar@linaro.org
+Subject: [PATCH] cpufreq: s3c: avoid use after free issue in
+ xxx_cpufreq_reboot_notifier_evt()
+Date: Sat, 28 Dec 2019 14:43:59 +0800
+Message-Id: <1577515439-14477-1-git-send-email-qiwuchen55@gmail.com>
 X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_221538_982743_469589B0 
-X-CRM114-Status: GOOD (  10.96  )
+X-CRM114-CacheID: sfid-20191227_224405_963002_CF9E83FB 
+X-CRM114-Status: GOOD (  11.11  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (qiwuchen55[at]gmail.com)
@@ -95,7 +97,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: chenqiwu <chenqiwu@xiaomi.com>, bcm-kernel-feedback-list@broadcom.com,
+Cc: linux-samsung-soc@vger.kernel.org, chenqiwu <chenqiwu@xiaomi.com>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-pm@vger.kernel.org
 MIME-Version: 1.0
@@ -106,62 +108,67 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: chenqiwu <chenqiwu@xiaomi.com>
 
-brcm_avs_cpufreq_get() calls cpufreq_cpu_get() to get cpufreq policy,
-meanwhile, it also increments the kobject reference count of policy to
-mark it busy. However, a corresponding call to cpufreq_cpu_put() is
-ignored to decrement the kobject reference count back, which may lead
-to a potential stuck risk that cpuhp thread deadly wait for dropping
-of refcount when cpufreq policy free.
-
-The call trace of stuck risk could be:
-cpufreq_online()	//cpufreq initialization failed, goto out_free_policy.
-    ->cpufreq_policy_free()	//do cpufreq_policy free.
-	->cpufreq_policy_put_kobj()
-            ->kobject_put()	//skip if policy kfref count is not 1.
-                ->cpufreq_sysfs_release()
-                    ->complete()	//complete policy->kobj_unregister.
-                ->wait_for_completion() //wait for policy->kobj_unregister.
-
-A simple way to avoid this stuck risk is use cpufreq_cpu_get_raw() instead
-of cpufreq_cpu_get(), since brcmstb-avs driver just want to get cpufreq
-policy in cpufreq_notify_transition().
-
-What's more, there is a potential UAF issue in cpufreq_notify_transition()
-that the cpufreq policy of current cpu has been released before using it.
-So we should make a judgement to avoid it.
-
-Thanks!
-Qiwu
+There is a potential UAF issue in xxx_cpufreq_reboot_notifier_evt() that
+the cpufreq policy of cpu0 has been released before using it. So we should
+make a judgement to avoid it.
 
 Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
 ---
- drivers/cpufreq/brcmstb-avs-cpufreq.c | 13 +++++++++++--
- 1 file changed, 11 insertions(+), 2 deletions(-)
+ drivers/cpufreq/s3c2416-cpufreq.c | 11 ++++++++++-
+ drivers/cpufreq/s5pv210-cpufreq.c | 10 +++++++++-
+ 2 files changed, 19 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/cpufreq/brcmstb-avs-cpufreq.c b/drivers/cpufreq/brcmstb-avs-cpufreq.c
-index 77b0e5d..31aa76f 100644
---- a/drivers/cpufreq/brcmstb-avs-cpufreq.c
-+++ b/drivers/cpufreq/brcmstb-avs-cpufreq.c
-@@ -452,8 +452,17 @@ static bool brcm_avs_is_firmware_loaded(struct private_data *priv)
- 
- static unsigned int brcm_avs_cpufreq_get(unsigned int cpu)
+diff --git a/drivers/cpufreq/s3c2416-cpufreq.c b/drivers/cpufreq/s3c2416-cpufreq.c
+index 1069103..0f576ba 100644
+--- a/drivers/cpufreq/s3c2416-cpufreq.c
++++ b/drivers/cpufreq/s3c2416-cpufreq.c
+@@ -304,6 +304,7 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
  {
--	struct cpufreq_policy *policy = cpufreq_cpu_get(cpu);
--	struct private_data *priv = policy->driver_data;
-+	struct cpufreq_policy *policy = cpufreq_cpu_get_raw(cpu);
-+	struct private_data *priv;
+ 	struct s3c2416_data *s3c_freq = &s3c2416_cpufreq;
+ 	int ret;
++	struct cpufreq_policy policy;
+ 
+ 	mutex_lock(&cpufreq_lock);
+ 
+@@ -318,7 +319,15 @@ static int s3c2416_cpufreq_reboot_notifier_evt(struct notifier_block *this,
+ 	 */
+ 	if (s3c_freq->is_dvs) {
+ 		pr_debug("cpufreq: leave dvs on reboot\n");
+-		ret = cpufreq_driver_target(cpufreq_cpu_get(0), FREQ_SLEEP, 0);
 +
++		memset(&policy, 0, sizeof(policy));
++		ret = cpufreq_get_policy(&policy, 0);
++		if (ret < 0) {
++			pr_debug("cpufreq: get no policy for cpu0\n");
++			return NOTIFY_BAD;
++		}
++
++		ret = cpufreq_driver_target(&policy, FREQ_SLEEP, 0);
+ 		if (ret < 0)
+ 			return NOTIFY_BAD;
+ 	}
+diff --git a/drivers/cpufreq/s5pv210-cpufreq.c b/drivers/cpufreq/s5pv210-cpufreq.c
+index 5d10030..d99b4b1 100644
+--- a/drivers/cpufreq/s5pv210-cpufreq.c
++++ b/drivers/cpufreq/s5pv210-cpufreq.c
+@@ -555,8 +555,16 @@ static int s5pv210_cpufreq_reboot_notifier_event(struct notifier_block *this,
+ 						 unsigned long event, void *ptr)
+ {
+ 	int ret;
++	struct cpufreq_policy *policy;
+ 
+-	ret = cpufreq_driver_target(cpufreq_cpu_get(0), SLEEP_FREQ, 0);
++	policy = cpufreq_cpu_get(0);
 +	if (!policy) {
-+		dev_warn(dev, "cpu %d: CPUFreq policy not found\n", cpu);
-+		return NULL;
++		pr_debug("cpufreq: get no policy for cpu0\n");
++		return NOTIFY_BAD;
 +	}
 +
-+	priv = policy->driver_data;
-+	if (!priv || !priv->base)
-+		return NULL;
++	ret = cpufreq_driver_target(policy, SLEEP_FREQ, 0);
++	cpufreq_cpu_put(policy);
+ 	if (ret < 0)
+ 		return NOTIFY_BAD;
  
- 	return brcm_avs_get_frequency(priv->base);
- }
 -- 
 1.9.1
 
