@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59F5812BB0F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 27 Dec 2019 21:06:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1713712BBFC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 28 Dec 2019 01:34:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZtrN9OsbI5l+a+B44+qD64kPPLHky/LLkEzCo5fuI8A=; b=UUrJPycmTqucSU
-	gqC4sy4nSWqdxsUSm/iviIZx6QwYGBRHYVLiZ134U4bKPjRT5+OQmChkQ8WlvtnKk6RYuiqNQNCq/
-	bgT6puV4sWEj7r95VPAWqdvFKdxHjyPwdRpaUetWUbBd9wgyPgu9Sb2jaQmjifh2s6dHDNEC3F7Gp
-	Pw+/KRol00/ywtCl7IKxGqhPrjSffP5ytsuWCJeDdRIhEqpUoKrbI5nSStF+w8km7GZF1DBRaiEVd
-	nJRabojY/wfThAfDvpKpk0NoVBwq7mUwhl/50XT3vvK4uh12WFpH4Qmz4brPnFbJuCGkfxiRI8Z2W
-	rwyulIv9gdmgEhZ9rTFw==;
+	List-Owner; bh=NSvhzP8onwfj++EGjOxOkQkD+2CnPiAmCyDeLgY2IF4=; b=dFlSJZX5jfU4oq
+	ue+G9zs4vl++4tfzKqmsWdwJ2B+O2MI73tKxkeZ+5NQTwvxgrmJ9bYNpl/YVdztyOrFUaAyvVC4UI
+	0D7r5eFOmm7gwbzkIt/kHPLHakhZEUMdmCYkpI01GVRurKFI7X4PhOMd3qdsnGQLD8Yu6tDdQ+5xC
+	Vs6z2YAE2ANHrplYPhQQqEornc45/DpH8vOAVdEdx85TXv03u7gSclW6D8qvCntQ9+bEUnn6q0ByX
+	GtzWxGpTDpKAx8I6JP3vhDY0T8RhU3Pb4riISyRg9FF+Q3q2N2k55JSBD4QXSIFMYcaO/Danahvw8
+	7LGsDNgup8wsc6/+vnpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ikvs4-00041Z-1Q; Fri, 27 Dec 2019 20:06:04 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1il03S-0000Ej-7o; Sat, 28 Dec 2019 00:34:06 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ikvox-0000VO-BI; Fri, 27 Dec 2019 20:02:54 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: koike) with ESMTPSA id 9F50528A768
-From: Helen Koike <helen.koike@collabora.com>
-To: linux-rockchip@lists.infradead.org
-Subject: [PATCH v12 11/11] MAINTAINERS: add entry for Rockchip ISP1 driver
-Date: Fri, 27 Dec 2019 17:01:16 -0300
-Message-Id: <20191227200116.2612137-12-helen.koike@collabora.com>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191227200116.2612137-1-helen.koike@collabora.com>
-References: <20191227200116.2612137-1-helen.koike@collabora.com>
-MIME-Version: 1.0
+ id 1il03I-0000Dk-5h; Sat, 28 Dec 2019 00:33:57 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:1c3::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 39CAE154D1158;
+ Fri, 27 Dec 2019 16:33:49 -0800 (PST)
+Date: Fri, 27 Dec 2019 16:33:48 -0800 (PST)
+Message-Id: <20191227.163348.1668601477335834984.davem@davemloft.net>
+To: martin.blumenstingl@googlemail.com
+Subject: Re: [PATCH 0/3] Meson8b/8m2: Ethernet RGMII TX delay fixes
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20191225005655.1502037-1-martin.blumenstingl@googlemail.com>
+References: <20191225005655.1502037-1-martin.blumenstingl@googlemail.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Fri, 27 Dec 2019 16:33:49 -0800 (PST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_120251_523183_1DB6D188 
-X-CRM114-Status: UNSURE (   5.72  )
+X-CRM114-CacheID: sfid-20191227_163356_212691_62B604B9 
+X-CRM114-Status: UNSURE (   5.76  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,58 +62,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, eddie.cai.linux@gmail.com,
- kernel@collabora.com, heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
- ezequiel@collabora.com, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, tfiga@chromium.org,
- Helen Koike <helen.koike@collabora.com>, robh+dt@kernel.org,
- hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
- sakari.ailus@linux.intel.com, joacim.zetterling@gmail.com, mchehab@kernel.org,
- andrey.konovalov@linaro.org, jacob-chen@iotwrt.com,
- linux-media@vger.kernel.org
+Cc: linus.luessing@c0d3.blue, balbes-150@yandex.ru, khilman@baylibre.com,
+ linux-kernel@vger.kernel.org, ingrassia@epigenesys.com, netdev@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ jbrunet@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add MAINTAINERS entry for the rockchip isp1 driver.
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Wed, 25 Dec 2019 01:56:52 +0100
 
-Signed-off-by: Helen Koike <helen.koike@collabora.com>
+> The Ethernet TX performance has been historically bad on Meson8b and
+> Meson8m2 SoCs because high packet loss was seen. Today I (presumably)
+> found out why this is: the input clock (which feeds the RGMII TX clock)
+> has to be at least 4 times 125MHz. With the fixed "divide by 2" in the
+> clock tree this means that m250_div needs to be at least 2.
+ ...
 
----
+It looks there needs to be more discussion on this series, please respin
+once the discussions are resolved.
 
-Changes in v12: None
-Changes in v11: None
-Changes in v10: None
-Changes in v9:
-- Move to staging
-
-Changes in v8: None
-Changes in v7: None
-
- MAINTAINERS | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 87f3d89d44a2..5ed1287cbb1c 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -14117,6 +14117,12 @@ F:	drivers/hid/hid-roccat*
- F:	include/linux/hid-roccat*
- F:	Documentation/ABI/*/sysfs-driver-hid-roccat*
- 
-+ROCKCHIP ISP V1 DRIVER
-+M:	Helen Koike <helen.koike@collabora.com>
-+L:	linux-media@vger.kernel.org
-+S:	Maintained
-+F:	drivers/staging/media/rkisp1/
-+
- ROCKCHIP RASTER 2D GRAPHIC ACCELERATION UNIT DRIVER
- M:	Jacob Chen <jacob-chen@iotwrt.com>
- M:	Ezequiel Garcia <ezequiel@collabora.com>
--- 
-2.24.0
-
+Thank you.
 
 _______________________________________________
 linux-arm-kernel mailing list
